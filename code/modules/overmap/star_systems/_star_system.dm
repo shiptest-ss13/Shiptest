@@ -169,6 +169,7 @@
 		center = new startype(list("x" = round(size / 2 + 1), "y" = round(size / 2 + 1)), src)
 		if(starname)
 			center.name = starname
+			center.alter_token_appearance()
 		radius_positions = list()
 		for(var/x in 1 to size)
 			for(var/y in 1 to size)
