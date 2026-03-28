@@ -37,6 +37,10 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/corpo_resort/supply)
+"af" = (
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "al" = (
 /obj/item/door_seal{
 	pixel_x = -4;
@@ -322,6 +326,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
+"bx" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 2
+	},
+/turf/open/floor/wood/birch/beach/lit{
+	icon_state = "wood-broken3"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "by" = (
 /obj/item/shard,
 /obj/structure/cable{
@@ -755,8 +768,10 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/corpo_resort/electrical)
 "dC" = (
-/obj/effect/turf_decal/corner/opaque/warrablue/full,
-/turf/open/floor/plasteel/white,
+/obj/effect/turf_decal/corner/opaque/warrablue{
+	dir = 5
+	},
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/office)
 "dI" = (
 /mob/living/simple_animal/hostile/human/ramzi/melee/runt{
@@ -4417,7 +4432,13 @@
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "xz" = (
-/turf/open/floor/plasteel/white,
+/obj/effect/turf_decal/corner/opaque/warrablue{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 6
+	},
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/office)
 "xC" = (
 /obj/effect/turf_decal/siding/wood/end{
@@ -5394,6 +5415,9 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/corner/opaque/warrablue{
+	dir = 9
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
@@ -6813,6 +6837,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/beach/corpo_resort/office)
+"KG" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch/beach/lit{
+	icon_state = "wood-broken7"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "KO" = (
 /mob/living/basic/hivebot/mechanic,
 /obj/structure/spacevine,
@@ -6983,6 +7016,12 @@
 	icon_state = "wood-broken7"
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"LR" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating,
+/area/ruin/beach/corpo_resort/office)
 "LZ" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -13522,12 +13561,12 @@ rX
 Tp
 Xo
 aQ
-xQ
+Uz
 Pd
 Cq
 Ig
 ra
-xQ
+LR
 cR
 qT
 Wf
@@ -14007,7 +14046,7 @@ Tx
 zs
 Wb
 mP
-PP
+LH
 Cw
 Tt
 UQ
@@ -14084,7 +14123,7 @@ zs
 Wb
 Fv
 mP
-PP
+KG
 PE
 LJ
 wl
@@ -14161,8 +14200,8 @@ Wb
 Fv
 mP
 mP
-PP
-iu
+af
+bx
 mP
 tj
 qW
@@ -14238,7 +14277,7 @@ mP
 mP
 mP
 mP
-PP
+VU
 ye
 mP
 tj
