@@ -319,7 +319,7 @@
 	name = "Ramzi Clique Initiate"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They clutch a compact sidearm, seeming to shiver a bit at every slight movement."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt
-	retreat_distance = 7 //they run more because they're untrained
+	retreat_distance = 3 //they don't run as much because they suck at aiming
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/runt/flapcap
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt/flapcap //i was considering making it random but i dont think itd end well
