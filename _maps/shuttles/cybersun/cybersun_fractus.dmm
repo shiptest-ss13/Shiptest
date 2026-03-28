@@ -1068,7 +1068,7 @@
 /obj/docking_port/stationary{
 	dheight = 1;
 	dwidth = 10;
-	height = 30;
+	height = 60;
 	name = "Fractus Airlock Dock";
 	width = 40;
 	dir = 2;
@@ -4139,12 +4139,10 @@
 	},
 /obj/effect/turf_decal/industrial/warning/cee,
 /obj/docking_port/stationary{
-	dheight = 1;
 	dwidth = 10;
-	height = 30;
+	height = 60;
 	name = "Fractus Cargo Dock";
-	width = 40;
-	disable_on_owner_ship_dock = 1
+	width = 40
 	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
