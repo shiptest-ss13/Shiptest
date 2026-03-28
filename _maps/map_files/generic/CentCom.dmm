@@ -1165,7 +1165,8 @@
 	icon_state = "plant-22"
 	},
 /obj/machinery/light_switch{
-	pixel_y = -23
+	pixel_y = -23;
+	dir = 1
 	},
 /turf/open/floor/wood,
 /area/centcom/ferry)
@@ -2464,7 +2465,8 @@
 "aAo" = (
 /obj/structure/closet/crate/bin,
 /obj/machinery/light_switch{
-	pixel_y = -23
+	pixel_y = -23;
+	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -5147,7 +5149,7 @@
 "aUJ" = (
 /obj/machinery/light/directional/east,
 /obj/machinery/light_switch{
-	dir = 4;
+	dir = 8;
 	pixel_x = 23
 	},
 /turf/open/floor/plasteel/grimy,
@@ -5603,7 +5605,7 @@
 /area/centcom/supplypod)
 "aXW" = (
 /obj/machinery/light_switch{
-	dir = 8;
+	dir = 4;
 	pixel_x = -23
 	},
 /turf/open/floor/plasteel/grimy,
@@ -5840,7 +5842,6 @@
 /area/centcom/control)
 "aZr" = (
 /obj/machinery/light_switch{
-	dir = 1;
 	pixel_y = 23
 	},
 /turf/open/floor/wood,
