@@ -765,6 +765,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
@@ -1325,7 +1326,7 @@
 /obj/structure/platform/wood{
 	dir = 9
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "fB" = (
 /obj/structure/flora/grass/jungle/b,
@@ -1445,7 +1446,7 @@
 /obj/structure/platform/wood/corner{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "gf" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1561,6 +1562,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/wood/maple,
 /area/ruin/beach/corpo_resort/hotel)
 "gL" = (
@@ -1788,6 +1790,10 @@
 "hV" = (
 /turf/template_noop,
 /area/template_noop)
+"hX" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "hY" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
@@ -2107,6 +2113,9 @@
 	dir = 1
 	},
 /obj/machinery/door/window/northleft,
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = -32
+	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/corpo_resort/bar)
 "jz" = (
@@ -2359,6 +2368,7 @@
 /obj/structure/platform/wood{
 	dir = 10
 	},
+/obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "kK" = (
@@ -2433,6 +2443,10 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/beach/corpo_resort/electrical)
+"kT" = (
+/obj/structure/flora/junglebush/large,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "kW" = (
 /obj/machinery/porta_turret/ruin/ramzi/light{
 	dir = 10;
@@ -2551,6 +2565,7 @@
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
+/obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "lu" = (
@@ -3125,6 +3140,7 @@
 /area/ruin/beach/corpo_resort/security)
 "ok" = (
 /obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/driftwood,
 /turf/open/water/beach{
 	color = "#617B64"
 	},
@@ -3412,6 +3428,12 @@
 	},
 /turf/open/floor/wood/birch/beach/lit{
 	icon_state = "wood-broken6"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"pn" = (
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/open/water/beach{
+	color = "#617B64"
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "pp" = (
@@ -4021,6 +4043,15 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/beach/corpo_resort/hotel)
+"rE" = (
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/dead,
+/obj/machinery/newscaster/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ruin/beach/corpo_resort/security)
 "rF" = (
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 5
@@ -4614,10 +4645,8 @@
 /turf/open/floor/carpet/red,
 /area/ruin/beach/corpo_resort/hotel)
 "tW" = (
-/obj/structure/platform/wood{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/obj/structure/flora/driftlog,
+/turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "uc" = (
 /turf/open/floor/carpet/red,
@@ -4961,8 +4990,10 @@
 /obj/structure/chair/office/light{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/ramzi/melee/machete,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
@@ -5158,6 +5189,10 @@
 /obj/structure/foamedmetal/iron,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"wr" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ws" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#D2BC9D"
@@ -5226,6 +5261,7 @@
 "wN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/dim/directional/east,
+/obj/effect/turf_decal/box/white,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/corpo_resort/electrical)
 "wR" = (
@@ -5787,6 +5823,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ruin/beach/corpo_resort/bar)
+"yN" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "yQ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6466,6 +6506,10 @@
 /obj/structure/spacevine/dead,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/corpo_resort/security)
+"BY" = (
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ca" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer2{
 	dir = 8
@@ -7045,8 +7089,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/obj/structure/mopbucket,
+/obj/item/mop,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/beach/corpo_resort/electrical)
+"EE" = (
+/obj/structure/spacevine,
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "EF" = (
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/components/unary/passive_vent/layer2{
@@ -7721,6 +7772,10 @@
 	icon_state = "wood-broken7"
 	},
 /area/ruin/beach/corpo_resort/ramzi_tent)
+"If" = (
+/obj/structure/flora/ausbushes/fernybush,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ig" = (
 /obj/effect/turf_decal/warra/old/tile/bottom_right,
 /obj/effect/decal/cleanable/crayon{
@@ -8423,6 +8478,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/electrical)
+"Lh" = (
+/obj/structure/spacevine/weak,
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Li" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
@@ -8612,6 +8672,10 @@
 /turf/open/floor/wood/birch/beach/lit{
 	icon_state = "wood-broken7"
 	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"LR" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "LZ" = (
 /obj/structure/cable/yellow{
@@ -8938,7 +9002,6 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/corpo_resort/staff_dorms)
 "NQ" = (
-/obj/structure/reagent_dispensers/watertank,
 /obj/item/reagent_containers/glass/bucket/wooden{
 	pixel_x = 10;
 	pixel_y = -12
@@ -8947,6 +9010,7 @@
 	pixel_x = -1;
 	pixel_y = -11
 	},
+/obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "NS" = (
@@ -8996,6 +9060,11 @@
 /obj/structure/closet/crate/bin,
 /turf/open/floor/wood,
 /area/ruin/beach/corpo_resort/bar)
+"NY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/box/white,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/beach/corpo_resort/electrical)
 "NZ" = (
 /obj/structure/spacevine,
 /obj/item/mine/pressure/explosive/rusty/live,
@@ -9257,6 +9326,13 @@
 	dir = 8
 	},
 /turf/open/floor/wood/birch/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Pg" = (
+/obj/structure/platform{
+	dir = 8
+	},
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ph" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9682,7 +9758,7 @@
 /obj/structure/platform/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Rf" = (
 /obj/structure/cable{
@@ -10140,9 +10216,14 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"Th" = (
+/obj/structure/spacevine/dense,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Tj" = (
-/obj/structure/flora/tree/jungle,
 /obj/structure/spacevine,
+/obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Tk" = (
@@ -11132,6 +11213,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
+"WN" = (
+/obj/structure/flora/junglebush/large,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "WR" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D";
@@ -11418,6 +11503,11 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Ym" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/closet/l3closet/janitor,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Yn" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/borderfloor{
@@ -11446,10 +11536,8 @@
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Yp" = (
-/obj/structure/platform/wood/corner{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Yr" = (
 /obj/machinery/door/window/westleft,
@@ -11614,8 +11702,8 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/beach/corpo_resort/electrical)
 "Zb" = (
-/obj/structure/flora/stump,
-/turf/open/floor/plating/asteroid/dirt/beach,
+/obj/structure/flora/driftwood,
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Zc" = (
 /obj/structure/barricade/sandbags,
@@ -12252,7 +12340,7 @@ Zd
 Fi
 Fi
 Fi
-Fi
+Un
 Fi
 Fi
 Fi
@@ -12477,7 +12565,7 @@ XN
 XN
 XN
 gO
-gO
+tW
 gO
 Nm
 zX
@@ -13087,7 +13175,7 @@ xR
 eh
 eJ
 GC
-Zb
+Qf
 xn
 ux
 Uf
@@ -13434,7 +13522,7 @@ sN
 sN
 gO
 gO
-gO
+UC
 Fi
 Fi
 Fi
@@ -13884,7 +13972,7 @@ Wj
 YS
 Wj
 Wj
-mP
+LR
 mP
 mP
 Yo
@@ -14482,8 +14570,8 @@ rt
 iu
 uH
 NQ
-mP
-mP
+wU
+kK
 oa
 DM
 RP
@@ -14720,7 +14808,7 @@ mP
 aI
 EC
 mP
-mP
+fB
 Bg
 dh
 UX
@@ -14796,7 +14884,7 @@ GC
 Qf
 TW
 WR
-mP
+kT
 GC
 GC
 dY
@@ -14879,7 +14967,7 @@ ML
 dY
 UX
 Jz
-RO
+pn
 ds
 hC
 Sm
@@ -14947,7 +15035,7 @@ Hb
 GC
 GC
 GC
-mP
+kK
 TW
 oJ
 kF
@@ -15019,16 +15107,16 @@ xR
 mu
 rt
 MV
+yN
 mP
 mP
 mP
-mP
-mP
+If
 mP
 kM
 WR
 GC
-GC
+hX
 mP
 UU
 EG
@@ -15054,7 +15142,7 @@ hC
 qd
 gO
 gO
-gO
+tW
 Fi
 Fi
 Fi
@@ -15159,7 +15247,7 @@ FQ
 Gk
 cM
 AR
-Jv
+Pg
 bg
 wT
 WU
@@ -15209,7 +15297,7 @@ hC
 hv
 hv
 gO
-gO
+UC
 Fi
 Fi
 Fi
@@ -15277,7 +15365,7 @@ JH
 hC
 hC
 Zf
-Jf
+NY
 wN
 UO
 oI
@@ -15308,7 +15396,7 @@ Fi
 gO
 hv
 rb
-mP
+kF
 Rj
 hU
 hU
@@ -15402,7 +15490,7 @@ Nb
 wU
 mP
 mP
-mP
+gN
 mP
 mP
 GC
@@ -15421,7 +15509,7 @@ HW
 GC
 GC
 GC
-FS
+Ym
 al
 SZ
 ti
@@ -15433,8 +15521,8 @@ qd
 FS
 uV
 da
-eJ
-Tc
+Tj
+Th
 NZ
 Wj
 hv
@@ -15477,7 +15565,7 @@ xQ
 SA
 zE
 Rf
-mP
+gN
 Qf
 mP
 mP
@@ -15556,7 +15644,7 @@ ix
 zE
 Mz
 mP
-mP
+kF
 Qf
 Fv
 nq
@@ -15585,8 +15673,8 @@ tj
 Hi
 bR
 tj
-mP
-mP
+kK
+yN
 mP
 Wj
 Wj
@@ -15799,7 +15887,7 @@ yo
 ID
 HM
 Wb
-vZ
+Lh
 PP
 iu
 tj
@@ -15847,7 +15935,7 @@ gO
 hv
 hv
 hv
-mP
+fB
 mP
 xQ
 rV
@@ -15951,12 +16039,12 @@ Fi
 Fi
 GC
 vk
-bf
+rE
 Wb
 sO
 oZ
 iu
-mP
+uH
 tj
 dp
 jr
@@ -15977,7 +16065,7 @@ tj
 hv
 hv
 hv
-gO
+UC
 gO
 gO
 Fi
@@ -16033,7 +16121,7 @@ Wb
 GC
 PP
 iu
-mP
+Yp
 tj
 TB
 Fx
@@ -16107,7 +16195,7 @@ fV
 OR
 FW
 Wb
-GC
+Hb
 LH
 Kf
 Uf
@@ -16157,7 +16245,7 @@ gO
 hv
 hv
 sN
-Wj
+EE
 SA
 xQ
 xQ
@@ -16201,8 +16289,8 @@ rB
 om
 YF
 wl
-GC
-GC
+hv
+hv
 hv
 hv
 hv
@@ -16283,7 +16371,7 @@ hv
 hv
 hv
 gO
-gO
+tW
 gO
 Fi
 Fi
@@ -16326,7 +16414,7 @@ za
 za
 za
 za
-mP
+LR
 Qf
 Fv
 Wb
@@ -16341,7 +16429,7 @@ mP
 mP
 UU
 gw
-mP
+yN
 tj
 Wz
 SF
@@ -16357,7 +16445,7 @@ wl
 hv
 hv
 hv
-hv
+Zb
 gO
 gO
 gO
@@ -16401,7 +16489,7 @@ xQ
 xQ
 hv
 hv
-GC
+BY
 GC
 GC
 Mo
@@ -16413,12 +16501,12 @@ mP
 mP
 GZ
 mP
-mP
+gN
 mP
 mP
 VU
 ye
-mP
+uH
 tj
 tj
 wl
@@ -16484,7 +16572,7 @@ GC
 GC
 mP
 mP
-mP
+gN
 lU
 mP
 mP
@@ -16492,7 +16580,7 @@ mP
 GC
 GC
 GC
-mP
+uH
 PP
 Kf
 cz
@@ -16505,7 +16593,7 @@ zX
 zX
 nt
 VW
-hv
+wr
 hv
 hv
 hv
@@ -16566,7 +16654,7 @@ mP
 GC
 GC
 GC
-GC
+WN
 GC
 GC
 GC
@@ -16581,7 +16669,7 @@ nl
 vy
 DZ
 kO
-tW
+VW
 hv
 hv
 hv
@@ -16646,7 +16734,7 @@ GC
 GC
 GC
 Tq
-GC
+BY
 GC
 MH
 MH
@@ -16661,7 +16749,7 @@ fy
 ge
 hv
 hv
-gO
+hv
 gO
 gO
 gO
@@ -16730,18 +16818,18 @@ hv
 hv
 GC
 hv
-Yp
+HK
 Rc
 Rc
 Rc
 ge
 hv
+hv
+hv
 gO
 gO
 gO
 gO
-gO
-Fi
 Fi
 Fi
 Fi
@@ -16811,12 +16899,12 @@ hv
 hv
 hv
 hv
+hv
+hv
 gO
 gO
 gO
 gO
-gO
-Fi
 Fi
 Fi
 Fi
@@ -16887,12 +16975,12 @@ hv
 hv
 hv
 hv
+hv
+hv
 gO
 gO
+UC
 gO
-gO
-gO
-Fi
 Fi
 Fi
 Fi
@@ -16965,9 +17053,9 @@ gO
 gO
 gO
 gO
-Fi
-Fi
-Fi
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -17029,21 +17117,21 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
