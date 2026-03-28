@@ -13,6 +13,9 @@
 #define COMSIG_OVERMAP_UNDOCK "overmap_undock"
 /// From load_level() of when a dynamic, outpost or static datum
 #define COMSIG_OVERMAP_LOADED "overmap_loaded"
+/// From destroy of a dynamic encounter datum
+#define COMSIG_OVERMAP_PLANET_UNLOADED "overmap_planet_unloaded"
+
 
 /// From overmap jump points: (/datum/overmap_star_system, new_x, new_y)
 #define COMSIG_OVERMAP_CALIBRATE_JUMP "overmap_calibrate_jump"

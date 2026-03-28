@@ -102,6 +102,10 @@
 	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the pallete
 	var/can_be_selected_randomly = TRUE
 
+	//What system comes 'next' in the chain?
+	var/datum/overmap_star_system/next_overmap
+
+
 	/// Datum type for the main outpost spawned here
 	var/datum/overmap/outpost/default_outpost_type
 

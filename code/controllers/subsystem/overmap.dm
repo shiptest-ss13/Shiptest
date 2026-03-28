@@ -120,6 +120,7 @@ SUBSYSTEM_DEF(overmap)
 			target_system = tracked_star_systems[1]
 		else
 			target_system = tracked_star_systems[i+1]
+		source_system.next_overmap = target_system
 		source_system.create_jump_point(target_system, jump_dirs[i])
 
 /**

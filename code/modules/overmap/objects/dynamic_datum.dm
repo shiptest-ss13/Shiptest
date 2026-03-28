@@ -84,6 +84,9 @@
 	ruin_turfs = null
 	SSovermap.dynamic_encounters -= src
 	current_overmap.dynamic_encounters -= src
+	for(var/datum/overmap/outpost/target_outpost as anything in SSovermap.outposts)
+		if(target_outpost.mission_system == current_overmap)
+			SEND_SIGNAL(target_outpost, COMSIG_OVERMAP_PLANET_UNLOADED, planet.planet)
 	. = ..()
 	//This NEEDS to be last so any docked ships get deleted properly
 	if(mapzone)

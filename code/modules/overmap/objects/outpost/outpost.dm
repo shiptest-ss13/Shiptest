@@ -72,6 +72,7 @@
 	var/valid_spawn_location = FALSE
 
 /datum/overmap/outpost/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
+	RegisterSignal(src, COMSIG_OVERMAP_PLANET_UNLOADED, PROC_REF(update_mission_list))
 	. = ..()
 	// init our template vars with the correct singletons
 	main_template = SSmapping.outpost_templates[main_template]
@@ -98,7 +99,7 @@
 		market.name = "[name] market"
 
 /datum/overmap/outpost/on_overmaps_loaded()
-	mission_system = SSovermap.wild_sectors[1]
+	mission_system = current_overmap.next_overmap
 	fill_missions()
 	addtimer(CALLBACK(src, PROC_REF(cycle_missions)), 30 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
@@ -172,6 +173,20 @@
 			if(3)
 				person_name = vox_name()
 	return person_name
+
+/datum/overmap/outpost/proc/update_mission_list()
+	for(var/datum/mission/target_mission as anything in missions)
+		for(var/location in target_mission.required_locations)
+			if(check_for_planet_type(location))
+				continue
+			qdel(target_mission)
+	fill_missions()
+
+/datum/overmap/outpost/proc/check_for_planet_type(planet_id)
+	for(var/datum/overmap/dynamic/encounter as anything in mission_system.dynamic_encounters)
+		if(encounter.planet.planet == planet_id)
+			return TRUE
+	return FALSE
 
 /datum/overmap/outpost/proc/fill_missions()
 	max_missions = min(20 + (SSovermap.controlled_ships.len * 2), 40)
