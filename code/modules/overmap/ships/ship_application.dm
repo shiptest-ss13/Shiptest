@@ -150,4 +150,4 @@
 			SEND_SOUND(app_mob, sound('sound/misc/server-ready.ogg', volume=50))
 		if(SHIP_APPLICATION_DENIED)
 			to_chat(app_mob, span_warning("Your application to [parent_ship] was denied!"), MESSAGE_TYPE_INFO)
-			SEND_SOUND(M, sound('sound/machines/buzz-sigh.ogg', volume=50))
+			SEND_SOUND(app_mob, sound('sound/machines/buzz-sigh.ogg', volume=50))
