@@ -34,50 +34,39 @@
 	desc = "A lightweight, unarmored space suit designed for exosuit and shuttle pilots. Special attachment points make mounting and dismounting from exosuits much easier."
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | FAST_EMBARK
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+	supports_variations = DIGITIGRADE_VARIATION
+	unique_reskin = list("navy pilot space suit" = "space-pilot",
+						"surplus pilot space suit" = "space-pilot-surplus",
+						"civilian pilot space suit" = "space-pilot-civvie"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/suit/space/pilot/olive
+	name = "surplus pilot space suit"
+	icon_state = "space-pilot-surplus"
+	item_state = "space-pilot-surplus"
+
+/obj/item/clothing/suit/space/pilot/orange
+	name = "civilian pilot space suit"
+	icon_state = "space-pilot-civvie"
+	item_state = "space-pilot-civvie"
 
 /obj/item/clothing/head/helmet/space/pilot
 	name = "pilot helmet"
-	icon_state = "space-pilot-plain0"
-	item_state = "space-pilot-plain"
+	icon_state = "space-pilot0"
+	item_state = "space-pilot"
 	desc = "A specialized space helmet designed for exosuit and shuttle pilots. Offers limited impact protection."
-	var/skin = "plain"
-	var/blurb = " Its simple design is quite ancient."
-	up = FALSE
-	actions_types = list(/datum/action/item_action/toggle_helmet)
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70, "wound" = 5) //less wound armor. give em the fokker special
 	visor_flags_inv = HIDEMASK
 	visor_flags = STOPSPRESSUREDAMAGE | ALLOWINTERNALS
+	supports_variations = SNOUTED_VARIATION
+	up = FALSE
+	actions_types = list(/datum/action/item_action/toggle_helmet)
 
 /obj/item/clothing/head/helmet/space/pilot/update_icon_state()
-	icon_state = "space-pilot-[skin][up]"
+	icon_state = "space-pilot[up]"
 	return ..()
-
-/obj/item/clothing/head/helmet/space/pilot/New()
-	..()
-	switch(skin)
-		if("plain")
-			blurb = " Its simple design is quite ancient."
-		if("shark")
-			blurb = " It bears a classic shark mouth decoration on both cheeks."
-		if("checker")
-			blurb = " A bold checker stripe runs over the top of the helmet."
-		if("ace")
-			blurb = " A large ace of spades decorates the back of the helmet."
-		if("mobius")
-			blurb = " There is an unusual blue ribbon painted on the back. Something about it is strangely inspiring."
-		if("viper")
-			blurb = " It bears a menacing orange \"V\" on the brow. Somebody has scratched \"Speed is life\" inside the helmet."
-		if("luke")
-			blurb = " Strange red trefoils are painted on either side of the helmet. Wearing it gives you a headache."
-		if("corvid")
-			blurb = " It is sloppily painted with thin teal and red paint. There are some dark stains on the lining..."
-
-	desc = "A specialized space helmet designed for exosuit and shuttle pilots. Offers limited impact protection.[blurb]"
-	update_icon_state()
-
-/obj/item/clothing/head/helmet/space/pilot/random/New()
-	skin = pick(40;"plain", 20;"shark", 20;"checker", 20;"ace", 5;"mobius", 5;"viper", 5;"luke", 5;"corvid",)
-	..()
 
 /obj/item/clothing/head/helmet/space/pilot/attack_self(mob/user) //pilot helmet toggle
 	if(!isturf(user.loc))

@@ -352,8 +352,8 @@
 //Cybersun Hardsuit
 /obj/item/clothing/suit/space/hardsuit/syndi/cybersun
 	name = "neutron-star combat hardsuit"
-	desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in EVA mode. Produced by Cybersun Industries."
-	alt_desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in travel mode. Produced by Cybersun Industries."
+	desc = "Designed with fighting Makosso-Warra weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in EVA mode. Produced by Cybersun Industries."
+	alt_desc = "Designed with fighting Makosso-Warra weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in travel mode. Produced by Cybersun Industries."
 	icon_state = "hardsuit1-cybersun"
 	hardsuit_type = "cybersun"
 	armor = list("melee" = 30, "bullet" = 35, "laser" = 60, "energy" = 60, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
@@ -364,8 +364,8 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun
 	name = "neutron-star combat hardsuit helmet"
-	desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in EVA mode. Produced by Cybersun Industries."
-	alt_desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in travel mode. Produced by Cybersun Industries."
+	desc = "Designed with fighting Makosso-Warra weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in EVA mode. Produced by Cybersun Industries."
+	alt_desc = "Designed with fighting Makosso-Warra weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in travel mode. Produced by Cybersun Industries."
 	icon_state = "hardsuit1-cybersun"
 	hardsuit_type = "cybersun"
 	armor = list("melee" = 30, "bullet" = 35, "laser" = 60, "energy" = 60, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
@@ -407,11 +407,23 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/stealth/cybersun
 	name = "\improper Magnetar hardsuit helmet"
-	desc = "Thin, slick plates part into a visor of light reflective material. Sensors aboard function as a nightvision unit"
+	desc = "Thin, slick plates let off a light reflection. Sensors aboard function as a nightvision unit."
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
 	icon_state = "hardsuit0-cyberstealth"
 	hardsuit_type = "cyberstealth"
+	supports_variations = SNOUTED_VARIATION
+
+//mask
+
+/obj/item/clothing/mask/gas/cybersun
+	name = "Cybersun gas mask"
+	desc = "A protective gas mask manufactured by Cybersun Biodynamics. This model holds in a single reinforced filter built into the front of the mask, minimizing weight and allowing for easier head movement."
+	icon = 'icons/obj/clothing/faction/cybersun/mask.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/mask.dmi'
+	icon_state = "cybersun_gas"
+	item_state = "cybersun_gas"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /* BELTS */
 
