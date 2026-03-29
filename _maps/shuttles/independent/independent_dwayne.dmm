@@ -231,7 +231,7 @@
 "cw" = (
 /obj/machinery/holopad/emergency/command,
 /obj/effect/turf_decal/box/white{
-	color = "#283674"
+	color = "#2270d0"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -441,7 +441,9 @@
 /area/ship/crew/canteen)
 "fq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 2
+	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/light_switch{
 	dir = 8;
@@ -853,7 +855,12 @@
 	},
 /obj/structure/sink/kitchen{
 	dir = 1;
-	pixel_x = 7;
+	pixel_x = -6;
+	pixel_y = 16
+	},
+/obj/structure/sink/kitchen{
+	dir = 1;
+	pixel_x = 11;
 	pixel_y = 16
 	},
 /turf/open/floor/plasteel,
@@ -1018,6 +1025,9 @@
 	},
 /obj/effect/turf_decal/borderfloor/full{
 	layer = 2.038
+	},
+/obj/effect/turf_decal/warraspaceworks_small/right{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
@@ -1902,6 +1912,9 @@
 /obj/effect/turf_decal/borderfloor/full{
 	layer = 2.038
 	},
+/obj/effect/turf_decal/warraspaceworks_small/left{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "sb" = (
@@ -2078,18 +2091,6 @@
 "tD" = (
 /obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
-/obj/machinery/coffeemaker{
-	pixel_y = 9
-	},
-/obj/item/coffee_cartridge/bootleg{
-	pixel_x = 6;
-	pixel_y = -2
-	},
-/obj/item/coffee_cartridge/bootleg{
-	pixel_x = -5;
-	pixel_y = -2
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "tG" = (
@@ -2394,6 +2395,10 @@
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/corner{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "wh" = (
@@ -2476,10 +2481,17 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
 	},
-/obj/structure/sink/kitchen{
-	dir = 1;
-	pixel_x = -8;
-	pixel_y = 16
+/obj/machinery/coffeemaker{
+	pixel_y = 10;
+	pixel_x = 1
+	},
+/obj/item/coffee_cartridge/bootleg{
+	pixel_x = 7;
+	pixel_y = -1
+	},
+/obj/item/coffee_cartridge/bootleg{
+	pixel_x = -4;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -2664,6 +2676,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/corner,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "yN" = (
@@ -3001,6 +3014,22 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/atmospherics)
+"Bq" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "Bx" = (
 /obj/structure/railing,
 /obj/structure/cable/cyan{
@@ -3397,6 +3426,9 @@
 /obj/effect/turf_decal/industrial/outline/blue,
 /obj/machinery/atmospherics/components/unary/tank/oxygen{
 	dir = 1
+	},
+/obj/structure/sign/poster/official/moth/piping{
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -4156,6 +4188,9 @@
 	},
 /obj/effect/turf_decal/borderfloor/full{
 	layer = 2.038
+	},
+/obj/effect/turf_decal/warraspaceworks_small{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
@@ -6203,7 +6238,7 @@ ck
 dh
 Pl
 vQ
-Ka
+Bq
 yJ
 bx
 Zf
