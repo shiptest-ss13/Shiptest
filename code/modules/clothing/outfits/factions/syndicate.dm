@@ -294,17 +294,12 @@
 	job_icon = "cargotechnician"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
-	uniform = /obj/item/clothing/under/syndicate/donk
-	suit = /obj/item/clothing/suit/hazardvest/donk
+	uniform = /obj/item/clothing/under/syndicate
+	suit = /obj/item/clothing/suit/hazardvest
 
 	alt_suit = /obj/item/clothing/suit/hazardvest
 	l_hand = /obj/item/export_scanner
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
-
-
-/datum/outfit/job/syndicate/cargo_tech/donk
-	name = "Syndicate - Customer Associate (Donk)"
-	id_assignment = "Customer Associate"
 
 //chemist
 
@@ -374,7 +369,7 @@
 	faction = FACTION_NGR
 
 	head = /obj/item/clothing/head/hardhat/ngr/foreman
-	ears = /obj/item/radio/headset/syndicate/alt
+	ears = /obj/item/radio/headset/syndicate/alt/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/ngr
@@ -390,7 +385,7 @@
 	id_assignment = "Medical Instructor"
 
 	uniform = /obj/item/clothing/under/syndicate/suns/doctorscrubs
-	ears = /obj/item/radio/headset/syndicate/alt/captain
+	ears = /obj/item/radio/headset/syndicate/alt/suns
 	id = /obj/item/card/id/syndicate_command/captain_id
 	shoes = /obj/item/clothing/shoes/combat/suns
 	l_pocket = /obj/item/pinpointer/crew
@@ -432,7 +427,7 @@
 	faction = FACTION_NGR
 	id_assignment = "Ensign"
 
-	ears = /obj/item/radio/headset/syndicate
+	ears = /obj/item/radio/headset/syndicate/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	head = /obj/item/clothing/head/ngr
 	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
@@ -522,7 +517,7 @@
 	shoes = /obj/item/clothing/shoes/combat/suns
 	head = /obj/item/clothing/head/welding/suns/hos
 	glasses = /obj/item/clothing/glasses/hud/security/suns
-	suit_store = /obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns
+	suit_store = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
 
 	backpack = /obj/item/storage/backpack
 	satchel  = /obj/item/storage/backpack/satchel
@@ -683,23 +678,13 @@
 	id = /obj/item/card/id/syndicate_command/captain_id
 
 	ears = /obj/item/radio/headset/syndicate/alt
-	uniform = /obj/item/clothing/under/syndicate/donk/qm
-	suit = /obj/item/clothing/suit/hazardvest/donk/qm
+	uniform = /obj/item/clothing/under/syndicate
+	suit = /obj/item/clothing/suit/hazardvest
 	ears = /obj/item/radio/headset/syndicate/alt
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_hand = /obj/item/clipboard
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
-
-/datum/outfit/job/syndicate/quartermaster/donk
-	name = "Syndicate - Manager (Donk)"
-	id = /obj/item/card/id/syndicate_command/captain_id
-
-	ears = /obj/item/radio/headset/syndicate/alt
-	uniform = /obj/item/clothing/under/syndicate/donk/qm
-	suit = /obj/item/clothing/suit/hazardvest/donk/qm
-	ears = /obj/item/radio/headset/syndicate/alt
-	shoes = /obj/item/clothing/shoes/laceup
 
 //scientists
 

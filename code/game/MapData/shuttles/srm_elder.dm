@@ -114,7 +114,7 @@
 			emulate such glory.<br>
 			Many of the SRM are contracted mercenaries, mostly hired aboard independent
 			vessels. The religious habits amongst members of the organization make them
-			less popular hires for many corporate or government factions. However Nanotrasen
+			less popular hires for many corporate or government factions. However Makosso-Warra
 			doesn't disallow veneration of the Ashen Huntsman on their vessels, making
 			them one of the more common factions for SRM members to serve.<br>
 			The SRM itself is structured around individual companies of hunters. Each SRM

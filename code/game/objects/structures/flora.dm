@@ -1120,17 +1120,40 @@
 	. = ..()
 
 /obj/structure/flora/rock/crystal
+	name = "crystal growth"
+	desc = "A towering, opaque crystal. You could probably shave something off this."
 	icon_state = "crystal"
 	base_icon_state = "crystal"
-	desc = "A towering, obaque crystal. You could probably shave something off this."
 	icon = 'icons/effects/32x64.dmi'
 	resistance_flags = FIRE_PROOF
 	density = TRUE
 	max_integrity = 100
-	mineResult = /obj/item/crystal_shard
+	mineResult = /obj/effect/decal/cleanable/glass/strange
 
 	hitsound_type = PROJECTILE_HITSOUND_STONE
 
+	///shaving the rock with a knife gives you this item
+	var/obj/shaving_type = /obj/item/crystal_shard
+	///how much can we shave the rock?
+	var/max_shavings = 3
+	///shaving count on the rock
+	var/shaving_count = 0
+
 /obj/structure/flora/rock/crystal/Initialize()
 	. = ..()
+	max_shavings = rand(src::max_shavings-2, src::max_shavings+2)
 	icon_state = "[base_icon_state]"
+
+/obj/structure/flora/rock/crystal/attackby(obj/item/tool, mob/user, params)
+	if(tool.sharpness && tool.tool_behaviour != TOOL_MINING && user.a_intent != INTENT_HARM)
+		if(shaving_count >= max_shavings)
+			to_chat(user, span_warning("There are no good places to cut [src]."))
+			return
+		playsound(src, 'sound/effects/fuse.ogg')
+		to_chat(user, span_notice("You start shaving a crystal off [src]..."))
+		if(tool.use_tool(src, user, 6 SECONDS, volume=50))
+			new shaving_type(loc)
+			shaving_count++
+			to_chat(user, span_notice("You cut a [shaving_type.name] off of [src]."))
+		return
+	return ..()

@@ -54,7 +54,7 @@
 		deaf = 1
 
 /obj/item/organ/ears/proc/adjustEarDamage(ddmg, ddeaf)
-	applyOrganDamage(-ddmg * damage_multiplier)
+	applyOrganDamage(ddmg * damage_multiplier)
 	deaf = max(deaf + (ddeaf*damage_multiplier), 0)
 
 /obj/item/organ/ears/proc/minimumDeafTicks(value)
