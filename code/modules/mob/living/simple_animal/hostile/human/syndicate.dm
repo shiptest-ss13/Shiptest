@@ -315,6 +315,15 @@
 	rapid_melee = 1
 	l_hand =/obj/item/gun/ballistic/automatic/pistol/ringneck
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/himehabu
+	name = "Ramzi Clique Runt"
+	desc = "A terrified deserter from the Gorlex Marauders turned pirate, with nothing but fear in their eyes. They cradle a pitiful .22 pistol, shivering and hoping it might just buy them another second."
+	armor_base = /obj/item/clothing/suit/ramzi
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour
+	casingtype = /obj/item/ammo_casing/c22lr
+	projectilesound = 'sound/weapons/gun/pistol/himehabu.ogg'
+	l_hand = /obj/item/gun/ballistic/automatic/pistol/himehabu
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/runt
 	name = "Ramzi Clique Initiate"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They clutch a compact sidearm, seeming to shiver a bit at every slight movement."
