@@ -403,7 +403,7 @@
  * * requesting_interactor - The overmap datum requesting the options.
  */
 /datum/overmap/ship/controlled/relay_message(mob/living/user, datum/overmap/requesting_interactor, message)
-	priority_announce("[html_decode(message)]", "Incoming Hail", 'sound/effects/hail.ogg', sender_override = requesting_interactor.name, zlevel = shuttle_port.virtual_z())
+	priority_announce("[html_decode(message)]", "Incoming Hail from [requesting_interactor]", 'sound/effects/hail.ogg', sender_override = requesting_interactor.name, zlevel = shuttle_port.virtual_z())
 	return
 
 /**
