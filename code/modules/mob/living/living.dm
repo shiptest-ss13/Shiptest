@@ -1029,7 +1029,7 @@
 			final_where = where
 
 		if(!what.mob_can_equip(who, src, final_where, TRUE, TRUE))
-			to_chat(src, span_warning("You can't put \the [what.name] there!"))
+			to_chat(src, span_warning("\The [what.name] doesn't fit in that place!"))
 			return
 		if(istype(what,/obj/item/clothing))
 			var/obj/item/clothing/c = what
