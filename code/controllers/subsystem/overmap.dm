@@ -120,7 +120,6 @@ SUBSYSTEM_DEF(overmap)
 			target_system = tracked_star_systems[1]
 		else
 			target_system = tracked_star_systems[i+1]
-		source_system.next_overmap = target_system
 		source_system.create_jump_point(target_system, jump_dirs[i])
 
 /**
@@ -337,7 +336,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/proc/outpost_recall()
 	var/datum/overmap/outpost/outpost_of_the_day = pick(outposts)
 	var/datum/overmap/outpost/loser_outpost = pick(outposts - outpost_of_the_day)
-	priority_announce("[outpost_of_the_day] has activated a bluespace lighthouse, all vessels in the area are advised to jump directly back to port.", "Bluespace Beacon", null, sender_override = "[outpost_of_the_day] Communications")
+	priority_announce("[outpost_of_the_day] has activated a bluespace lighthouse, all vessels in the area are advised to jump directly to port.", "Bluespace Beacon", null, sender_override = "[outpost_of_the_day] Communications")
 	outpost_of_the_day.current_overmap.can_jump_to = TRUE
 	for (var/datum/overmap/ship/controlled/target_ship in controlled_ships)
 		target_ship.blacklisted[loser_outpost] = "[loser_outpost] has closed for the incoming bluespace stormfront."
