@@ -3950,19 +3950,19 @@
 	},
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_x = -8;
-	pixel_y = 12
+	pixel_y = -4
 	},
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_x = -8;
-	pixel_y = 10
+	pixel_y = -4
 	},
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_x = -8;
-	pixel_y = 8
+	pixel_y = 0
 	},
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_x = -8;
-	pixel_y = 6
+	pixel_y = 0
 	},
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_x = -8;
@@ -3970,46 +3970,39 @@
 	},
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_x = -8;
-	pixel_y = 2
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8
+	pixel_y = 4
 	},
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_x = -8;
-	pixel_y = -2
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = 6;
 	pixel_y = 8
 	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_x = -8;
+	pixel_y = 8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_x = 6;
+	pixel_y = -3
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_x = 6;
+	pixel_y = -3
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_x = 6;
+	pixel_y = 1
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_x = 6;
+	pixel_y = 1
+	},
 /obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = 6;
-	pixel_y = 4
+	pixel_y = 5
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = 6;
+	pixel_y = 5
 	},
 /obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 4
@@ -5738,8 +5731,15 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "GY" = (
+<<<<<<< HEAD
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
+=======
+/obj/item/storage/guncase/pistol/kalixpistol{
+	pixel_y = -12;
+	pixel_x = -1;
+	mag_count = 3
+>>>>>>> 16349c08e88a079b6268f4352153be466c83ed45
 	},
 /obj/effect/turf_decal/techfloor/orange,
 /obj/structure/table/reinforced,
@@ -5926,6 +5926,33 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/south,
+<<<<<<< HEAD
+=======
+/obj/item/storage/guncase/energy/sgr9{
+	pixel_y = -12;
+	mag_count = 3
+	},
+/obj/item/clothing/suit/armor/gezena/marine{
+	pixel_y = -5;
+	pixel_x = -11
+	},
+/obj/item/storage/belt/military/gezena{
+	pixel_x = -1;
+	pixel_y = -6
+	},
+/obj/item/clothing/head/helmet/gezena{
+	pixel_y = 11;
+	pixel_x = -11
+	},
+/obj/item/clothing/glasses/sunglasses/pgf{
+	pixel_y = 3;
+	pixel_x = -10
+	},
+/obj/item/clothing/accessory/holster{
+	pixel_y = -6;
+	pixel_x = -14
+	},
+>>>>>>> 16349c08e88a079b6268f4352153be466c83ed45
 /obj/structure/closet/secure_closet{
 	anchored = 1;
 	can_be_unanchored = 1;
@@ -6308,9 +6335,6 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/neutral/full,
 /obj/machinery/light/directional/north,
-/obj/item/gun/energy/kalix/pistol{
-	pixel_y = -8
-	},
 /obj/item/gun/energy/kalix/pgf/nock{
 	pixel_y = -1
 	},
@@ -6321,7 +6345,13 @@
 	pixel_x = -3;
 	pixel_y = 11
 	},
+<<<<<<< HEAD
 /obj/effect/turf_decal/corner/opaque/purple/border,
+=======
+/obj/item/gun/energy/kalix/pistol{
+	pixel_y = -8
+	},
+>>>>>>> 16349c08e88a079b6268f4352153be466c83ed45
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "Kt" = (
@@ -7507,6 +7537,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
 "Rm" = (
+<<<<<<< HEAD
 /obj/structure/closet/secure_closet/wall/directional/south{
 	icon_door = "sec_wall";
 	name = "lieutenant's locker";
@@ -7515,6 +7546,61 @@
 	dir = 4;
 	pixel_y = 0;
 	pixel_x = 28
+=======
+/obj/item/storage/lockbox/medal{
+	pixel_y = -10;
+	pixel_x = null
+	},
+/obj/item/storage/backpack/satchel/cap{
+	pixel_y = -9;
+	pixel_x = -8
+	},
+/obj/item/storage/backpack/duffelbag/captain{
+	pixel_x = 6;
+	pixel_y = -10
+	},
+/obj/item/clothing/head/gezena/captain{
+	pixel_y = 16;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/gezena/flap/captain{
+	pixel_y = 13;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/gezena/captain{
+	pixel_y = 7;
+	pixel_x = -8
+	},
+/obj/item/clothing/suit/armor/gezena/captain{
+	pixel_y = 7;
+	pixel_x = 8
+	},
+/obj/item/storage/guncase/pistol/kalixpistol{
+	pixel_y = -9;
+	pixel_x = -1;
+	mag_count = 3
+	},
+/obj/item/clothing/shoes/combat/gezena{
+	pixel_y = -4;
+	pixel_x = -11
+	},
+/obj/item/clothing/neck/cloak/gezena/captain{
+	pixel_y = 6;
+	pixel_x = 3
+	},
+/obj/item/clothing/gloves/gezena/captain{
+	pixel_y = -3
+	},
+/obj/item/storage/belt/sabre/pgf{
+	pixel_x = -2
+	},
+/obj/item/radio/headset/pgf/alt/captain{
+	pixel_x = 10;
+	pixel_y = 1
+	},
+/obj/item/radio/headset/pgf/captain{
+	pixel_x = -10
+>>>>>>> 16349c08e88a079b6268f4352153be466c83ed45
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 8
@@ -8150,8 +8236,12 @@
 	name = "secure storage access";
 	pixel_x = -10;
 	pixel_y = -20;
+<<<<<<< HEAD
 	req_one_access = list(1, 10);
 	req_ship_access = 1
+=======
+	req_one_access = list(1, 10)
+>>>>>>> 16349c08e88a079b6268f4352153be466c83ed45
 	},
 /obj/machinery/firealarm/directional/south{
 	pixel_x = 5
@@ -9059,19 +9149,22 @@
 "Zt" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/neutral/full,
-/obj/item/gun/energy/kalix/pgf{
-	pixel_y = 3
-	},
-/obj/item/gun/energy/kalix/pgf{
-	pixel_y = 10
-	},
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/item/gun/energy/kalix/pgf/medium{
 	pixel_x = -2;
 	pixel_y = -4
 	},
+<<<<<<< HEAD
 /obj/effect/turf_decal/corner/opaque/purple/border,
+=======
+/obj/item/gun/energy/kalix/pgf{
+	pixel_y = 10
+	},
+/obj/item/gun/energy/kalix/pgf{
+	pixel_y = 3
+	},
+>>>>>>> 16349c08e88a079b6268f4352153be466c83ed45
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "Zu" = (
