@@ -282,15 +282,19 @@
 	damage = 40
 	bullet_identifier = "pulse"
 	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS | PROJECTILE_BONUS_DAMAGE_WALLS | PROJECTILE_BONUS_DAMAGE_RWALLS
-	wall_damage_override = 200
+	wall_damage_override = 250
+	demolition_mod = 5
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
 	impact_type = /obj/effect/projectile/impact/pulse
+	var/starts_fires = TRUE
 
 /obj/projectile/beam/pulse/on_hit(atom/target, blocked = FALSE)
 	. = ..()
+	if(!starts_fires)
+		return
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
 		return
@@ -299,10 +303,12 @@
 /obj/projectile/beam/pulse/sharplite_turret
 	wall_damage_flags = null
 	wall_damage_override = 0
+	demolition_mod = 0
 	speed = 0.4
 
 /obj/projectile/beam/pulse/shotgun
 	damage = 40
+	starts_fires = FALSE
 
 /obj/projectile/beam/pulse/condor
 	range = 128
