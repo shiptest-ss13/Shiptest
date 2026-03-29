@@ -9,7 +9,7 @@
 	force = 5
 	throwforce = 15
 	armour_penetration = 40
-	demolition_mod = 2
+	demolition_mod = 2.5
 	sharpness = SHARP_NONE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
@@ -24,7 +24,7 @@
 
 /obj/item/melee/sledgehammer/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = 30, icon_wielded="[base_icon_state]_w")
+	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = 40, icon_wielded="[base_icon_state]_w")
 
 /obj/item/melee/sledgehammer/update_icon_state()
 	icon_state = "[base_icon_state]"

@@ -171,8 +171,6 @@
 		to_chat(M, span_boldwarning("[high_message]"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "salted", /datum/mood_event/stimulant_heavy, name)
 	M.adjustStaminaLoss(-10, 0)
-	if(prob(40))
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	M.hallucination += 5
 	..()
 	. = 1
