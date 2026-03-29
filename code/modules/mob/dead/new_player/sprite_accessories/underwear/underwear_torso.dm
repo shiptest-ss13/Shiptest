@@ -59,6 +59,14 @@
 	name = "Camisole"
 	icon_state = "camisole"
 
+/datum/sprite_accessory/undershirt/camisleeve
+	name = "Camisole (sleeved)"
+	icon_state = "camisleeve"
+
+/datum/sprite_accessory/undershirt/spaghettitop
+	name = "Spaghetti Top"
+	icon_state = "spaghettitop"
+
 /datum/sprite_accessory/undershirt/onepiece
 	name = "One Piece Swimsuit"
 	icon_state = "onepiece"

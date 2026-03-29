@@ -66,7 +66,7 @@
 
 /obj/item/weaponcrafting/gunkit/capgun_ugrade_kit
 	name = "experimental gun upgrade kit"
-	desc = "A suitcase containing the necessary gun parts to tranform a antique laser gun into something even better. A faded Nanotrasen Security symbol is on the side."
+	desc = "A suitcase containing the necessary gun parts to tranform a antique laser gun into something even better. A faded Sharplite Research & Development symbol is on the side."
 	icon = 'icons/obj/improvised.dmi'
 	icon_state = "kitsuitcase"
 
@@ -100,10 +100,10 @@
 
 /obj/item/crystal_shard
 	name = "crystal shard"
-	icon = 'icons/obj/lavaland/artefacts.dmi'
-	desc = "A wing with a terminal infection of the strange crystals."
-	icon_state = "watcher_wing_crystal"
-	grind_results = list(/datum/reagent/crystal_reagent = 25)
+	desc = "A broken-off crystal cut from a strange growth. Handle it carefully."
+	icon = 'icons/obj/lavaland/ash_flora.dmi'
+	icon_state = "unnamed_crystal"
+	grind_results = list(/datum/reagent/crystal_reagent = 10)
 
 /obj/item/strange_crystal/attackby(obj/item/item, mob/user, params)
 	. = ..()

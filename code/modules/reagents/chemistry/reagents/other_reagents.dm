@@ -92,7 +92,7 @@
 		mytray.adjustPests(rand(2,3))
 
 /datum/reagent/liquidgibs
-	name = "Liquid gibs"
+	name = "Liquid Gibs"
 	color = "#CC4633"
 	description = "You don't even want to think about what's in here."
 	taste_description = "gross iron"
@@ -260,10 +260,10 @@
 	name = "Hollow Water"
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen, but it looks kinda hollow."
 	color = "#88878777"
-	taste_description = "emptyiness"
+	taste_description = "emptiness"
 
 /datum/reagent/hydrogen_peroxide
-	name = "Hydrogen peroxide"
+	name = "Hydrogen Peroxide"
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen and oxygen." //intended intended
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
 	taste_description = "burning water"
@@ -421,7 +421,7 @@
 
 /datum/reagent/ozone
 	name = "Ozone"
-	description = "A pale blue gas, with a distinct smell. While it is oxygen with an extra molecule attached, it is quite dangerous."
+	description = "A pale blue gas with a distinct smell. While it is oxygen with an extra molecule attached, it is quite dangerous."
 	reagent_state = GAS
 	metabolization_rate = REAGENTS_METABOLISM * 0.5
 	color = "#a1a1e6"
@@ -509,7 +509,7 @@
 
 /datum/reagent/sulfur
 	name = "Sulfur"
-	description = "A sickly yellow solid mostly known for its nasty smell. It's actually much more helpful than it looks in biochemisty."
+	description = "A sickly yellow solid mostly known for its nasty smell. It's actually much more helpful than it looks in biochemistry."
 	reagent_state = SOLID
 	color = "#f0e518"
 	taste_description = "rotten eggs"
@@ -529,7 +529,7 @@
 
 /datum/reagent/chlorine
 	name = "Chlorine"
-	description = "A pale yellow gas that's well known as an oxidizer. While it forms many harmless molecules in its elemental form it is far from harmless."
+	description = "A pale yellow gas that's well known as an oxidizer. While it forms many harmless molecules in its elemental form, it is far from harmless."
 	reagent_state = GAS
 	metabolization_rate = REAGENTS_METABOLISM * 0.5
 	color = "#FFFB89" //pale yellow? let's make it light gray
@@ -598,7 +598,7 @@
 
 /datum/reagent/fluorine
 	name = "Fluorine"
-	description = "A comically-reactive chemical element. The universe does not want this stuff to exist in this form in the slightest."
+	description = "A comically reactive chemical element. The universe does not want this stuff to exist in this form in the slightest."
 	reagent_state = GAS
 	color = "#808080" // rgb: 128, 128, 128
 	taste_description = "acid"
@@ -659,7 +659,7 @@
 
 /datum/reagent/lithium
 	name = "Lithium"
-	description = "A silver metal, its claim to fame is its remarkably low density. Using it is a bit too effective in calming oneself down."
+	description = "A silver metal. Its claim to fame is its remarkably low density. Using it is a bit too effective in calming oneself down."
 	reagent_state = SOLID
 	color = "#808080" // rgb: 128, 128, 128
 	taste_description = "metal"
@@ -727,7 +727,7 @@
 
 /datum/reagent/uranium
 	name ="Uranium"
-	description = "A jade-green metallic chemical element in the actinide series, weakly radioactive."
+	description = "A jade-green metallic chemical element in the actinide series. Weakly radioactive."
 	reagent_state = SOLID
 	color = "#5E9964" //this used to be silver, but liquid uranium can still be green and it's more easily noticeable as uranium like this so why bother?
 	taste_description = "the inside of a reactor"
@@ -788,7 +788,7 @@
 
 /datum/reagent/bluespace
 	name = "Bluespace Dust"
-	description = "A dust composed of microscopic bluespace crystals, with minor space-warping properties."
+	description = "A dust composed of microscopic bluespace crystals with minor space-warping properties."
 	reagent_state = SOLID
 	color = "#0000CC"
 	taste_description = "fizzling blue"
@@ -848,7 +848,7 @@
 				return TRUE
 	return
 /datum/reagent/fuel
-	name = "Welding fuel"
+	name = "Welding Fuel"
 	description = "Required for welders. Flammable."
 	color = "#660000" // rgb: 102, 0, 0
 	taste_description = "gross metal"
@@ -870,7 +870,7 @@
 	return TRUE
 
 /datum/reagent/space_cleaner
-	name = "Space cleaner"
+	name = "Space Cleaner"
 	description = "A compound used to clean things. Now with 50% more sodium hypochlorite!"
 	color = "#A5F0EE" // rgb: 165, 240, 238
 	taste_description = "sourness"
@@ -994,14 +994,14 @@
 	taste_description = "metal"
 
 /datum/reagent/foaming_agent// Metal foaming agent. This is lithium hydride. Add other recipes (e.g. LiH + H2O -> LiOH + H2) eventually.
-	name = "Foaming agent"
+	name = "Foaming Agent"
 	description = "An agent that yields metallic foam when mixed with light metal and a strong acid."
 	reagent_state = SOLID
 	color = "#664B63" // rgb: 102, 75, 99
 	taste_description = "metal"
 
 /datum/reagent/smart_foaming_agent //Smart foaming agent. Functions similarly to metal foam, but conforms to walls.
-	name = "Smart foaming agent"
+	name = "Smart Foaming Agent"
 	description = "An agent that yields metallic foam which conforms to area boundaries when mixed with light metal and a strong acid."
 	reagent_state = SOLID
 	color = "#664B63" // rgb: 102, 75, 99
@@ -1025,7 +1025,7 @@
 
 /datum/reagent/diethylamine
 	name = "Diethylamine"
-	description = "A secondary amine, mildly corrosive."
+	description = "A secondary amine. Mildly corrosive."
 	color = "#604030" // rgb: 96, 64, 48
 	taste_description = "iron"
 
@@ -1217,7 +1217,7 @@
 
 /datum/reagent/freon
 	name = "Freon"
-	description = "A powerful heat adsorbant."
+	description = "A powerful refrigerant."
 	reagent_state = GAS
 	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Because stimulum/nitryl/freon are handled through gas breathing, metabolism must be lower for breathcode to keep up
 	color = "90560B"
@@ -1343,7 +1343,7 @@
 //////////////////////////////////Hydroponics stuff///////////////////////////////
 
 /datum/reagent/plantnutriment
-	name = "Generic nutriment"
+	name = "Generic Nutriment"
 	description = "Some kind of nutriment. You can't really tell what it is. You should probably report it, along with how you obtained it."
 	color = "#000000" // RBG: 0, 0, 0
 	var/tox_prob = 0
@@ -1395,7 +1395,7 @@
 
 /datum/reagent/plantnutriment/endurogrow
 	name = "Enduro Grow"
-	description = "A specialized nutriment, which decreases product quantity and potency, but strengthens the plants endurance."
+	description = "A specialized nutriment that decreases product quantity and potency but strengthens the plant's endurance."
 	color = "#a06fa7" // RBG: 160, 111, 167
 	tox_prob = 15
 
@@ -1408,7 +1408,7 @@
 
 /datum/reagent/plantnutriment/liquidearthquake
 	name = "Liquid Earthquake"
-	description = "A specialized nutriment, which increases the plant's production speed, as well as it's susceptibility to weeds."
+	description = "A specialized nutriment that increases the plant's production speed as well as its susceptibility to weeds."
 	color = "#912e00" // RBG: 145, 46, 0
 	tox_prob = 25
 
@@ -1423,7 +1423,7 @@
 
 /datum/reagent/fuel/oil
 	name = "Oil"
-	description = "Burns in a small smoky fire, can be used to get Ash."
+	description = "Burns in a small smoky fire. Can be used to produce ash."
 	reagent_state = LIQUID
 	color = "#2D2D2D"
 	taste_description = "oil"
@@ -1431,7 +1431,7 @@
 
 /datum/reagent/stable_plasma
 	name = "Stable Plasma"
-	description = "Non-flammable plasma locked into a liquid form that cannot ignite or become gaseous/solid."
+	description = "Non-flammable plasma locked in a liquid form that cannot ignite or change states."
 	reagent_state = LIQUID
 	color = "#2D2D2D"
 	taste_description = "bitterness"
@@ -1444,7 +1444,7 @@
 
 /datum/reagent/iodine
 	name = "Iodine"
-	description = "Commonly added to table salt as a nutrient. On its own it tastes far less pleasing."
+	description = "Commonly added to table salt as a nutrient. On its own, it tastes far less pleasing."
 	reagent_state = LIQUID
 	color = "#BC8A00"
 	taste_description = "metal"
@@ -1472,7 +1472,7 @@
 
 /datum/reagent/carpet/black
 	name = "Black Carpet"
-	description = "The carpet also comes in... BLAPCK" //yes, the typo is intentional
+	description = "The carpet also comes in... BLAPCK." //yes, the typo is intentional
 	color = "#1E1E1E"
 	taste_description = "licorice"
 	carpet_type = /turf/open/floor/carpet/black
@@ -1525,14 +1525,14 @@
 
 /datum/reagent/carpet/royal/black
 	name = "Royal Black Carpet"
-	description = "For those that feel the need to show off their timewasting skills."
+	description = "For those that feel the need to show off their time-wasting skills."
 	color = "#000000"
 	taste_description = "royalty"
 	carpet_type = /turf/open/floor/carpet/royalblack
 
 /datum/reagent/carpet/royal/blue
 	name = "Royal Blue Carpet"
-	description = "For those that feel the need to show off their timewasting skills.. in BLUE."
+	description = "For those that feel the need to show off their time-wasting skills... in BLUE."
 	color = "#5A64C8"
 	taste_description = "blueyalty" //also intentional
 	carpet_type = /turf/open/floor/carpet/royalblue
@@ -1579,7 +1579,7 @@
 
 		if(istype(terraform_target, /turf/open/floor/plating/asteroid/purple))
 			terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/sand/terraform, flags = CHANGETURF_INHERIT_AIR)
-			terraform_target.visible_message("<span class='notice'>The chemicals in the sand disolve, and the sand looks more natural.</span>")
+			terraform_target.visible_message("<span class='notice'>The chemicals in the sand dissolve, and the sand looks more natural.</span>")
 			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
 			return ..()
 
@@ -1594,10 +1594,10 @@
 			for(var/obj/object as anything in terraform_target.contents)
 				if(!istype(object, /obj/structure/flora))
 					continue
-				terraform_target.visible_message("<span class='danger'>Theres already flora on the tile!</span>")
+				terraform_target.visible_message("<span class='danger'>There's already flora on the tile!</span>")
 				return ..()
 
-			terraform_target.visible_message("<span class='notice'>As the serum touches the grass, suddenly flora grows out of it!</span>")
+			terraform_target.visible_message("<span class='notice'>As the serum touches the grass, flora suddenly grows out of it!</span>")
 			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
 			if(prob(70))
 				new /obj/effect/spawner/random/flower(exposed_turf)
@@ -1813,13 +1813,13 @@
 
 /datum/reagent/lye
 	name = "Lye"
-	description = "Also known as sodium hydroxide. As a profession making this is somewhat underwhelming."
+	description = "Also known as sodium hydroxide. As a profession, making this is somewhat underwhelming."
 	reagent_state = LIQUID
 	color = "#FFFFD6" // very very light yellow
 	taste_description = "acid"
 
 /datum/reagent/drying_agent
-	name = "Drying agent"
+	name = "Drying Agent"
 	description = "A desiccant. Can be used to dry things."
 	reagent_state = LIQUID
 	color = "#A70FFF"
@@ -1832,52 +1832,52 @@
 // Virology virus food chems.
 
 /datum/reagent/toxin/mutagen/mutagenvirusfood
-	name = "mutagenic agar"
+	name = "Mutagenic Agar"
 	color = "#A3C00F" // rgb: 163,192,15
 	taste_description = "sourness"
 
 /datum/reagent/toxin/mutagen/mutagenvirusfood/sugar
-	name = "sucrose agar"
+	name = "Sucrose Agar"
 	color = "#41B0C0" // rgb: 65,176,192
 	taste_description = "sweetness"
 
 /datum/reagent/medicine/synaptizine/synaptizinevirusfood
-	name = "virus rations"
+	name = "Virus Rations"
 	color = "#D18AA5" // rgb: 209,138,165
 	taste_description = "bitterness"
 
 /datum/reagent/toxin/plasma/plasmavirusfood
-	name = "virus plasma"
+	name = "Virus Plasma"
 	color = "#A270A8" // rgb: 166,157,169
 	taste_description = "bitterness"
 	taste_mult = 1.5
 
 /datum/reagent/toxin/plasma/plasmavirusfood/weak
-	name = "weakened virus plasma"
+	name = "Weakened Virus Plasma"
 	color = "#A28CA5" // rgb: 206,195,198
 	taste_description = "bitterness"
 	taste_mult = 1.5
 
 /datum/reagent/uranium/uraniumvirusfood
-	name = "decaying uranium gel"
+	name = "Decaying Uranium Gel"
 	color = "#67ADBA" // rgb: 103,173,186
 	taste_description = "the inside of a reactor"
 
 /datum/reagent/uranium/uraniumvirusfood/unstable
-	name = "unstable uranium gel"
+	name = "Unstable Uranium Gel"
 	color = "#2FF2CB" // rgb: 47,242,203
 	taste_description = "the inside of a reactor"
 
 /datum/reagent/uranium/uraniumvirusfood/stable
-	name = "stable uranium gel"
+	name = "Stable Uranium Gel"
 	color = "#04506C" // rgb: 4,80,108
 	taste_description = "the inside of a reactor"
 
 // Bee chemicals
 
 /datum/reagent/royal_bee_jelly
-	name = "royal bee jelly"
-	description = "Royal Bee Jelly, if injected into a Queen Space Bee said bee will split into two bees."
+	name = "Royal Bee Jelly"
+	description = "Royal Bee Jelly. Injecting this into a Queen Space Bee will cause her to split into two bees."
 	color = "#00ff80"
 	taste_description = "strange honey"
 
@@ -1887,10 +1887,10 @@
 	name = "Romerol"
 	// the REAL zombie powder
 	description = "Romerol is a highly experimental bioterror agent \
-		which causes dormant nodules to be etched into the grey matter of \
-		the subject. These nodules only become active upon death of the \
-		host, upon which, the secondary structures activate and take control \
-		of the host body."
+		that causes dormant nodules to be etched into the grey matter of \
+		the subject. These nodules only become active upon the death of the \
+		host, at which time the secondary structures activate and take \
+		control of the host body."
 	color = "#123524" // RGB (18, 53, 36)
 	metabolization_rate = INFINITY
 	can_synth = FALSE
@@ -1905,7 +1905,7 @@
 
 /datum/reagent/magillitis
 	name = "Magillitis"
-	description = "An experimental serum which causes rapid muscular growth in Hominidae. Side-affects may include hypertrichosis, violent outbursts, and an unending affinity for bananas."
+	description = "An experimental serum that causes rapid muscular growth in Hominidae. Side effects may include hypertrichosis, violent outbursts, and an unending affinity for bananas."
 	reagent_state = LIQUID
 	color = "#00f041"
 
@@ -1916,7 +1916,7 @@
 
 /datum/reagent/growthserum
 	name = "Growth Serum"
-	description = "A strange chemical that causes growth, but wears off over time. The growth effect is limited."
+	description = "A strange chemical that causes growth but wears off over time. The growth effect is limited."
 	color = "#ff0000"//strong red. rgb 255, 0, 0
 	var/current_size = RESIZE_DEFAULT_SIZE
 	taste_description = "bitterness"
@@ -1932,14 +1932,14 @@
 	..()
 
 /datum/reagent/plastic_polymers
-	name = "plastic polymers"
-	description = "the petroleum based components of plastic."
+	name = "Plastic Polymers"
+	description = "Petroleum-based components of plastic."
 	color = "#f7eded"
 	taste_description = "plastic"
 
 /datum/reagent/glitter
-	name = "generic glitter"
-	description = "if you can see this description, contact a coder."
+	name = "Generic Glitter"
+	description = "If you can see this description, contact a coder."
 	color = "#FFFFFF" //pure white
 	taste_description = "plastic"
 	reagent_state = SOLID
@@ -1951,19 +1951,19 @@
 	new glitter_type(T)
 
 /datum/reagent/glitter/pink
-	name = "pink glitter"
-	description = "pink sparkles that get everywhere"
+	name = "Pink Glitter"
+	description = "Pink sparkles that get everywhere."
 	color = "#ff8080" //A light pink color
 	glitter_type = /obj/effect/decal/cleanable/glitter/pink
 
 /datum/reagent/glitter/white
-	name = "white glitter"
-	description = "white sparkles that get everywhere"
+	name = "White Glitter"
+	description = "White sparkles that get everywhere."
 	glitter_type = /obj/effect/decal/cleanable/glitter/white
 
 /datum/reagent/glitter/blue
-	name = "blue glitter"
-	description = "blue sparkles that get everywhere"
+	name = "Blue Glitter"
+	description = "Blue sparkles that get everywhere."
 	color = "#4040FF" //A blueish color
 	glitter_type = /obj/effect/decal/cleanable/glitter/blue
 
@@ -1983,7 +1983,7 @@
 	..()
 
 /datum/reagent/bz_metabolites
-	name = "BZ metabolites"
+	name = "BZ Metabolites"
 	description = "A harmless metabolite of BZ gas."
 	color = "#FAFF00"
 	taste_description = "acrid cinnamon"
@@ -2015,7 +2015,7 @@
 
 /datum/reagent/peaceborg/confuse
 	name = "Dizzying Solution"
-	description = "Makes the target off balance and dizzy"
+	description = "Makes the target off balance and dizzy."
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	taste_description = "dizziness"
 	can_synth = TRUE
@@ -2030,7 +2030,7 @@
 
 /datum/reagent/peaceborg/tire
 	name = "Tiring Solution"
-	description = "An extremely weak stamina-toxin that tires out the target. Completely harmless."
+	description = "An extremely weak stamina toxin that tires out the target. Completely harmless."
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	taste_description = "tiredness"
 	can_synth = TRUE
@@ -2045,7 +2045,7 @@
 
 /datum/reagent/spider_extract
 	name = "Spider Extract"
-	description = "A highly specialized extract coming from the Australicus sector, used to create broodmother spiders."
+	description = "A highly specialized extract coming from the Australicus sector. Used to create broodmother spiders."
 	color = "#ED2939"
 	taste_description = "upside down"
 	can_synth = FALSE
@@ -2055,7 +2055,7 @@
 	name = "Organic Slurry"
 	description = "A mixture of various colors of fluid. Induces vomiting."
 	glass_name = "glass of ...yuck!"
-	glass_desc = "It smells like a carcass, and doesn't look much better."
+	glass_desc = "It smells like a carcass and doesn't look much better."
 	color = "#545000"
 	taste_description = "insides"
 	taste_mult = 4
@@ -2119,7 +2119,7 @@
 /datum/reagent/metalgen
 	name = "Metalgen"
 	data = list("material"=null)
-	description = "A purple metal morphic liquid, said to impose it's metallic properties on whatever it touches."
+	description = "A purple metal morphic liquid said to impose its metallic properties on whatever it touches."
 	color = "#b000aa"
 	taste_mult = 0 // oderless and tasteless
 	var/applied_material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR
@@ -2154,7 +2154,7 @@
 
 /datum/reagent/gravitum
 	name = "Gravitum"
-	description = "A rare kind of null fluid, capable of temporalily removing all weight of whatever it touches." //i dont even
+	description = "A rare kind of null fluid capable of temporarily removing all weight of whatever it touches." //i dont even
 	color = "#050096" // rgb: 5, 0, 150
 	taste_mult = 0 // oderless and tasteless
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM //20 times as long, so it's actually viable to use
@@ -2173,7 +2173,7 @@
 
 /datum/reagent/cellulose
 	name = "Cellulose Fibers"
-	description = "A crystaline polydextrose polymer, plants swear by this stuff."
+	description = "A crystaline polydextrose polymer. Plants swear by this stuff."
 	reagent_state = SOLID
 	color = "#E6E6DA"
 	taste_mult = 0
@@ -2188,9 +2188,9 @@
 
 /datum/reagent/liquidadamantine
 	name = "Liquid Adamantine"
-	description = "A legengary lifegiving metal liquified."
+	description = "A legendary life-giving metal, liquified."
 	color = "#10cca6" //RGB: 16, 204, 166
-	taste_description = "lifegiving metal"
+	taste_description = "life-giving metal"
 	can_synth = FALSE
 
 /datum/reagent/determination
@@ -2282,8 +2282,8 @@
 	description = "Out on the edge of human space, at the limits of scientific understanding and \
 	cultural taboo, people develop and dose themselves with substances that would curl the hair on \
 	a brinker's vatgrown second head. Three Eye is one of the most notorious narcotics to ever come \
-	out of the independant habitats, and has about as much in common with recreational drugs as a \
-	Stok does with an Unathi strike trooper. It is equally effective on humans, Skrell, dionaea and \
+	out of the independent habitats, and it has about as much in common with recreational drugs as a \
+	Stok does with an Unathi strike trooper. It is equally effective on humans, Skrell, dionaea, and \
 	probably the Captain's cat, and distributing it will get you guaranteed jail time in every \
 	human territory."
 	reagent_state = LIQUID
@@ -2333,7 +2333,7 @@
 	if(L.client?.holder) //You are worthy.
 		worthy = TRUE
 		L.visible_message(span_danger("[L] grips their head and dances around, collapsing to the floor!"), \
-		span_danger("Visions of a realm BYOND your own flash across your eyes, before it all goes black..."))
+		span_danger("Visions of a realm BYOND your own flash across your eyes before it all goes black..."))
 		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, set_sleeping), 40 SECONDS), 10 SECONDS)
 		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)
 		return
@@ -2380,7 +2380,7 @@
 	. = ..()
 	L.remove_client_colour(/datum/client_colour/thirdeye)
 	if(overdosed && !worthy)
-		to_chat(L, span_danger("<font size = 6>Your mind reels and the world begins to fade away...</font>"))
+		to_chat(L, span_danger("<font size = 6>Your mind reels, and the world begins to fade away...</font>"))
 		if(iscarbon(L))
 			var/mob/living/carbon/C = L
 			addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon, adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 5 SECONDS) //Deathblow to the brain
@@ -2389,7 +2389,7 @@
 
 /datum/reagent/concrete_mix
 	name = "Concrete Mix"
-	description = "Pre-made concrete mix, ideal for lazy engineers."
+	description = "Pre-made concrete mix. Ideal for lazy engineers."
 	color = "#c4c0bc"
 	taste_description = "chalky concrete"
 	harmful = TRUE
@@ -2447,7 +2447,7 @@
 	units_per_aggregate = 2
 
 /datum/reagent/cement/roadmix
-	name = "Road mixture"
+	name = "Road Mixture"
 	description = "A mix of cement and asphalt. Looks less tasty than normal cement."
 	color = "#5c6361"
 	potency = 3
@@ -2455,7 +2455,7 @@
 
 /datum/reagent/concrete
 	name = "Concrete"
-	description = "A mix of cement and aggregate, commonly used as a bulk building material."
+	description = "A mix of cement and aggregate. Commonly used as a bulk building material."
 	color = "#a8988a"
 	taste_description = "rocks"
 	var/units_per_wall = 10
@@ -2507,13 +2507,13 @@
 
 /datum/reagent/concrete/pavement
 	name = "Pavement"
-	description = "Road surface, blacktop, asphalt concrete, whatever you call it, it's the most common material used in constructing runways for ships and roadways for vehicles."
+	description = "Road surface, blacktop, asphalt concrete - whatever you call it, it's the most common material used in constructing runways for ships and roadways for vehicles."
 	color = "#3f4543"
 	floor_type = /turf/open/floor/concrete/pavement
 
 /datum/reagent/calcium
 	name = "Calcium"
-	description = "A dull gray metal important to bones."
+	description = "A dull grey metal important to bones."
 	reagent_state = SOLID
 	color = "#68675c"
 	metabolization_rate = REAGENTS_METABOLISM
@@ -2546,7 +2546,7 @@
 
 /datum/reagent/polar_bear_fur //used for icewine crafting
 	name = "Polar Bear Fur"
-	description = "Fur obtained from griding up a polar bears hide"
+	description = "Fur obtained from griding up a polar bear's hide."
 	reagent_state = SOLID
 	color = "#eeeeee" // rgb: 238, 238, 238
 
@@ -2559,10 +2559,10 @@
 //anti rad foam
 /datum/reagent/anti_radiation_foam
 	name = "Anti-Radiation Foam"
-	description = "A tried and tested foam, used for decontaminating nuclear disasters."
+	description = "A tried-and-tested foam used for decontaminating nuclear disasters."
 	reagent_state = LIQUID
 	color = "#A6FAFF55"
-	taste_description = "bitter, foamy awfulness."
+	taste_description = "bitter, foamy awfulness"
 
 /datum/reagent/anti_radiation_foam/expose_turf(turf/open/T, reac_volume)
 	if (!istype(T))

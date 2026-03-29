@@ -1,6 +1,6 @@
 /obj/item/gun/energy/kalix
 	name = "\improper Etherbor BG-12"
-	desc = "Etherbor Industries's current civilian energy weapon model. The BG-12 energy beam gun is identical to the military model, minus the removal of the full auto mode. Otherwise, it's no different from older hunting beams from Kalixcis's history."
+	desc = "The BG-12 is Etherbor Industries's current civilian beam gun model. The BG-12 energy beam gun is practically identical to the military model barring the removal of the full auto mode. Otherwise, it's no different from older hunting beams from Kalixcis's history."
 	icon_state = "kalixgun"
 	item_state = "kalixgun"
 	icon = 'icons/obj/guns/manufacturer/etherbor/48x32.dmi'
@@ -16,6 +16,9 @@
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
 
+	spread = 3
+	spread_unwielded = 10
+
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/kalix,
@@ -28,6 +31,17 @@
 	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
 
 	manufacturer = MANUFACTURER_PGF
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 15,
+		)
+	)
 
 /obj/item/ammo_casing/energy/kalix
 	projectile_type = /obj/projectile/beam/hitscan/kalix
@@ -71,7 +85,7 @@
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/nock
 	projectile_type = /obj/projectile/beam/hitscan/disabler
-	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
+	fire_sound = 'sound/weapons/taser2.ogg'
 	e_cost = 312 //10 bursts per cell
 	select_name = "disable"
 
@@ -100,6 +114,18 @@
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_MUZZLE = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 25,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 17,
+			"y" = 15,
+		)
 	)
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
@@ -134,13 +160,13 @@
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/nock
 	projectile_type = /obj/projectile/beam/hitscan/disabler
-	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
+	fire_sound = 'sound/weapons/taser2.ogg'
 	e_cost = 250 //16 bursts per cell
 	select_name = "disable"
 
 /obj/item/gun/energy/kalix/pgf/nock
 	name = "\improper Etherbor VG-A5"
-	desc = "Piggybacking off the success of the VG-F3, the Etherbor Industries VG-A5 Beam Volleygun was designed specifically for contract sale to the PGFMC. With the addition of a stronger capacitor and a forward grip, the VG-A5 has found itself popular among marine raiders for its ability to take control of tight spaces."
+	desc = "Piggybacking off the success of the VG-F3, the Etherbor Industries VG-A5 Beam Volleygun was designed specifically for contract sale to the PGF armed forces. With the addition of a stronger capacitor and a forward grip, the VG-A5 has found itself popular among marine raiders for its ability to take control of tight spaces."
 	icon_state = "pgfnock"
 	item_state = "pgfnock"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
@@ -163,6 +189,18 @@
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_MUZZLE = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 25,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 17,
+			"y" = 15,
+		)
 	)
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
@@ -185,7 +223,7 @@
 
 /obj/item/gun/energy/kalix/pgf
 	name = "\improper Etherbor BG-16"
-	desc = "The BG-16 is the military-grade beam gun designed and manufactured by Etherbor Industries as the standard-issue close-range weapon of the PGF."
+	desc = "Designed as the PGF armed forces primary close-combat weapon, the Etherbor BG-16 trades stability and power at range for an impressive shot capacity."
 	icon_state = "pgfgun"
 	item_state = "pgfgun"
 
@@ -194,6 +232,17 @@
 
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 15,
+		)
+	)
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
 	allowed_ammo_types = list(
@@ -230,7 +279,7 @@
 
 /obj/item/gun/energy/kalix/pistol //blue
 	name = "\improper Etherbor SG-8"
-	desc = "Etherbor's current and sidearm offering. While marketed for the military, it's also available for civillians as an upgrade over older and obsolete beam pistols."
+	desc = "Handy and remarkably accurate, the SG-8 is Etherbor's current sidearm offering. While marketed for the military, it's also available for civillians as an upgrade over older and more obsolete beam pistols."
 	icon_state = "kalixpistol"
 	item_state = "kalixpistol"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -241,6 +290,17 @@
 
 	spread = 2
 	spread_unwielded = 5
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 22,
+			"y" = 14,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 15,
+			"y" = 17,
+		)
+	)
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
 	allowed_ammo_types = list(
@@ -254,11 +314,14 @@
 
 	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
 
-	//refused_attachments = list(
-	//	/obj/item/attachment/gun,
-	//	)
+/obj/projectile/beam/hitscan/kalix/pistol
+	name = "concentrated energy beam"
+	damage_constant = 0.7
+	damage = 25
+	armour_penetration = -10
 
 /obj/item/ammo_casing/energy/kalix/pistol
+	projectile_type = /obj/projectile/beam/hitscan/kalix/pistol
 	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
 	e_cost = 1000 //12 shots per cell
 	delay = 0
@@ -272,9 +335,90 @@
 		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 
+/obj/item/gun/energy/kalix/pgf/pdw
+	name = "\improper Etherbor SGR-9"
+	desc = "Favored by vehicle crews, artillerymen, logistics personnel and more, the compact frame of the Etherbor SGR-9 is ideal for rear echelon troops who may still expect to see some action."
+	icon_state = "pgfpdw"
+	item_state = "pgfpdw"
+	w_class = WEIGHT_CLASS_NORMAL
+	modifystate = TRUE
+
+	gun_firemodes = list(FIREMODE_BURST, FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_BURST
+
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = LASER_PISTOL_SLOWDOWN
+
+	burst_size = 2
+	burst_delay = 0.1 SECONDS
+	fire_delay = 0.5 SECONDS
+
+	spread = 9
+	spread_unwielded = 10
+
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_STOCK = 1,
+	)
+
+	unique_attachments = list(
+		/obj/item/attachment/foldable_stock/pgfpdw
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 27,
+			"y" = 14,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 26,
+			"y" = 15,
+		)
+	)
+	default_attachments = list(/obj/item/attachment/foldable_stock/pgfpdw)
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
+	)
+	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf/pdw,/obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/pdw)
+
+
+	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
+
+/obj/projectile/beam/hitscan/kalix/pgf/pdw
+	name = "concentrated energy beam"
+	damage_constant = 0.9
+	damage = 20
+	armour_penetration = 10
+
+/obj/item/ammo_casing/energy/kalix/pgf/pdw
+	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/pdw
+	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
+	e_cost = 765 //26 shots per cell
+	select_name = "kill"
+
+/obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/pdw
+	projectile_type = /obj/projectile/beam/hitscan/disabler
+	fire_sound = 'sound/weapons/taser2.ogg'
+	e_cost = 765 //26 shots per cell
+	select_name = "disable"
+
+/obj/item/gun/energy/kalix/pgf/pdw/empty_cell
+	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
+	)
+
 /obj/item/gun/energy/kalix/pgf/medium
 	name = "\improper Etherbor BGC-10"
-	desc = "Etherbor's answer to the PGFMC's request for a carbine style weapon; the BGC-10 offers greater accuracy and power than the BG-16, while being less cumbersome than the DMR mode equipped HBG series rifles."
+	desc = "Etherbor's answer to the PGF armed forces's request for a carbine style weapon; the BGC-10 offers greater accuracy and power than the BG-16, while being less cumbersome than the DMR mode equipped HBG series rifles."
 	icon_state = "pgfmedium"
 	item_state = "pgfmedium"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
@@ -292,6 +436,17 @@
 	spread = 0.5
 	spread_unwielded = 15
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 31,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 24,
+			"y" = 15,
+		)
+	)
+
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/disabler/hitscan/heavy)
 
 /obj/item/gun/energy/kalix/pgf/medium/empty_cell
@@ -305,7 +460,7 @@
 
 /obj/item/gun/energy/kalix/pgf/heavy
 	name = "\improper Etherbor HBG-7"
-	desc = "The HBG-7 is the standard-issue rifle weapon of the PGF. It comes with a special DMR mode that has greater armor piercing for dealing with armored targets."
+	desc = "The HBG-7 is the standard-issue rifle weapon of the PGF armed forces. It comes equipped with a special DMR mode that has greater armor piercing for dealing with armored targets."
 	icon_state = "pgfheavy"
 	item_state = "pgfheavy"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
@@ -322,6 +477,17 @@
 
 	spread = 0
 	spread_unwielded = 20
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 32,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 26,
+			"y" = 15,
+		)
+	)
 
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/pgf/sniper)
 
@@ -369,7 +535,7 @@
 
 /obj/item/gun/energy/kalix/pgf/heavy/sniper
 	name = "\improper Etherbor HBG-7L"
-	desc = "HBG-7 with a longer barrel and scope. Intended to get the best use out of the DMR mode, it suffers from longer wield times and slowdown, but it's longer barrel makes it ideal for accuracy."
+	desc = "HBG-7 with a longer barrel and scope. Intended to get the best use out of the DMR mode, it suffers from longer wield times and greater slowdown, but it's longer barrel makes it ideal for precision shooting."
 	icon_state = "pgfheavy_sniper"
 	item_state = "pgfheavy_sniper"
 
@@ -382,6 +548,17 @@
 
 	wield_slowdown = LASER_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 36,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 26,
+			"y" = 15,
+		)
+	)
 
 /obj/item/gun/energy/kalix/pgf/heavy/sniper/empty_cell
 	spawn_no_ammo = TRUE
