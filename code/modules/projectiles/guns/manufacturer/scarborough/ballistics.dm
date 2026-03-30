@@ -1118,6 +1118,9 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 			"y" = 18,
 		)
 	)
+
+
+
 	default_attachments = list(/obj/item/attachment/foldable_stock/gaboon)
 	wield_slowdown = HEAVY_REVOLVER_SLOWDOWN
 	spread = 8
@@ -1127,6 +1130,8 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	recoil_unwielded = 6
 
 	wield_delay = 0.4 SECONDS
+
+EMPTY_GUN_HELPER(shotgun/gaboon)
 
 /obj/item/gun/ballistic/rocketlauncher/mako
 	name = "RR-86 \"Mako\""
