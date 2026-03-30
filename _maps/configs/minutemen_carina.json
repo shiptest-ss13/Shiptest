@@ -1,0 +1,49 @@
+	{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Carina-class Patrol Cutter",
+	"prefix": "CMSV",
+	"manufacturer": "Lanchester Shipyards",
+	"namelists": ["GENERAL", "BRITISH_NAVY", "MYTHOLOGICAL", "BEASTS"],
+	"tags": [
+		"Combat",
+		"Generalist"
+	],
+	"map_short_name": "Carina-class",
+	"faction": "/datum/faction/clip",
+	"starting_funds": 2000,
+	"map_path": "_maps/shuttles/good_ships/minutemen_carina.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/clip/minutemen/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Bridge Officer": {
+			"outfit": "/datum/outfit/job/clip/minutemen/bridge_officer",
+			"officer": true,
+			"slots": 1
+		},
+		"Field Medic": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/medic",
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/clip/minutemen/engineer",
+			"slots": 1
+		},
+		"Armorer": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/lead",
+			"slots": 1
+		},
+		"Minuteman": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt",
+			"slots": 3
+		},
+		"Cadet": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/reserve",
+			"slots": 5
+		}
+	},
+	"enabled": true
+}

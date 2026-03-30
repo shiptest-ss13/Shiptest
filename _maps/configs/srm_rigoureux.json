@@ -1,0 +1,37 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Saint-Roumain Modified Rigoureux-class Auxiliary Cutter",
+	"faction": "/datum/faction/srm",
+	"prefix": "SRSV",
+	"namelists": [
+		"SAINT-ROUMAIN",
+		"BEASTS"
+	],
+	"map_short_name": "Rigoureux-class",
+	"map_path": "_maps/shuttles/good_ships/srm_rigger.dmm",
+	"tags": [
+		"Combat",
+		"Specialist"
+	],
+	"limit": 1,
+	"job_slots": {
+		"Hunter Montagne": {
+			"outfit": "/datum/outfit/job/roumain/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Hunter Doctor": {
+			"outfit": "/datum/outfit/job/roumain/doctor",
+			"slots": 1
+		},
+		"Hunter": {
+			"outfit": "/datum/outfit/job/roumain/security",
+			"slots": 3
+		},
+		"Shadow": {
+			"outfit": "/datum/outfit/job/roumain/assistant",
+			"slots": 3
+		}
+	},
+	"enabled": true
+}

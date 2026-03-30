@@ -420,7 +420,6 @@
 		is_antag = TRUE
 
 	client.prefs.copy_to(H, antagonist = is_antag)
-	update_names_joined_list(H.real_name)
 	H.dna.update_dna_identity()
 	if(mind)
 		if(transfer_after)
