@@ -594,16 +594,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
-"kw" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "ns_quail_portnac"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines/port)
 "kz" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -1306,12 +1296,6 @@
 /obj/effect/turf_decal/siding/thinplating,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway)
-"vg" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines/port)
 "vB" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2025,8 +2009,15 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/storage/equip)
 "Gr" = (
-/obj/machinery/power/shuttle/engine/electric{
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "ns_quail_portnac"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -2398,10 +2389,16 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Lv" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/door/airlock/external/glass,
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering/electrical)
+/obj/docking_port/stationary{
+	dwidth = 20;
+	height = 31;
+	width = 41;
+	dir = 2;
+	disable_on_owner_ship_dock = 1;
+	dheight = 1
+	},
+/turf/template_noop,
+/area/template_noop)
 "LB" = (
 /obj/machinery/door/airlock/external/glass{
 	dir = 8
@@ -3159,15 +3156,15 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
 "Yc" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/door/airlock/external/glass,
+/obj/docking_port/mobile{
+	launch_status = 0;
+	preferred_direction = 4;
+	port_direction = 4
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "ns_quail_starboardnac"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines/starboard)
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering/electrical)
 "Yt" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/storage/equip)
@@ -3205,7 +3202,7 @@
 TN
 Uo
 MO
-vg
+MO
 Uo
 TN
 TN
@@ -3214,15 +3211,16 @@ TN
 TN
 sa
 kb
-Gr
+kb
 sa
+TN
 TN
 "}
 (2,1,1) = {"
 TN
 Uo
 MR
-kw
+MR
 Uo
 TN
 TN
@@ -3231,8 +3229,9 @@ TN
 TN
 sa
 Iz
-Yc
+Gr
 sa
+TN
 TN
 "}
 (3,1,1) = {"
@@ -3251,6 +3250,7 @@ OX
 RD
 sa
 TN
+TN
 "}
 (4,1,1) = {"
 TN
@@ -3267,6 +3267,7 @@ sa
 qp
 gc
 sa
+TN
 TN
 "}
 (5,1,1) = {"
@@ -3285,6 +3286,7 @@ NT
 gk
 NT
 NT
+TN
 "}
 (6,1,1) = {"
 Jt
@@ -3302,6 +3304,7 @@ CJ
 Pb
 Jr
 NT
+TN
 "}
 (7,1,1) = {"
 Jt
@@ -3318,6 +3321,7 @@ aE
 uv
 XY
 GE
+Yc
 Lv
 "}
 (8,1,1) = {"
@@ -3336,6 +3340,7 @@ NT
 LB
 NT
 NT
+TN
 "}
 (9,1,1) = {"
 Jt
@@ -3353,6 +3358,7 @@ rY
 ty
 WM
 NT
+TN
 "}
 (10,1,1) = {"
 tj
@@ -3370,6 +3376,7 @@ yp
 cT
 xK
 CC
+TN
 "}
 (11,1,1) = {"
 tj
@@ -3387,6 +3394,7 @@ jS
 qO
 mF
 CC
+TN
 "}
 (12,1,1) = {"
 Dq
@@ -3404,6 +3412,7 @@ Wv
 NT
 NT
 NT
+TN
 "}
 (13,1,1) = {"
 Dq
@@ -3421,6 +3430,7 @@ np
 wp
 pj
 Yt
+TN
 "}
 (14,1,1) = {"
 Dq
@@ -3438,6 +3448,7 @@ QI
 ka
 gC
 Yt
+TN
 "}
 (15,1,1) = {"
 Dq
@@ -3455,6 +3466,7 @@ zM
 pX
 EG
 Yt
+TN
 "}
 (16,1,1) = {"
 Dq
@@ -3472,6 +3484,7 @@ Uh
 FI
 Yt
 Yt
+TN
 "}
 (17,1,1) = {"
 TN
@@ -3488,6 +3501,7 @@ xu
 Vk
 iL
 vN
+TN
 TN
 "}
 (18,1,1) = {"
@@ -3506,6 +3520,7 @@ Kp
 Ip
 vN
 TN
+TN
 "}
 (19,1,1) = {"
 TN
@@ -3522,6 +3537,7 @@ Zg
 Zg
 Zg
 Sw
+TN
 TN
 "}
 (20,1,1) = {"
@@ -3540,6 +3556,7 @@ zH
 Zg
 pb
 TN
+TN
 "}
 (21,1,1) = {"
 TN
@@ -3556,6 +3573,7 @@ bz
 DM
 Zg
 gI
+TN
 TN
 "}
 (22,1,1) = {"
@@ -3574,6 +3592,7 @@ Zg
 Zg
 rr
 TN
+TN
 "}
 (23,1,1) = {"
 TN
@@ -3589,6 +3608,7 @@ rS
 PI
 UD
 oy
+TN
 TN
 TN
 "}
@@ -3608,6 +3628,7 @@ uI
 mK
 TN
 TN
+TN
 "}
 (25,1,1) = {"
 TN
@@ -3623,6 +3644,7 @@ YN
 cs
 Uc
 mK
+TN
 TN
 TN
 "}
@@ -3642,6 +3664,7 @@ NJ
 mK
 TN
 TN
+TN
 "}
 (27,1,1) = {"
 TN
@@ -3657,6 +3680,7 @@ bq
 Jh
 oy
 oy
+TN
 TN
 TN
 "}
@@ -3676,6 +3700,7 @@ ur
 TN
 TN
 TN
+TN
 "}
 (29,1,1) = {"
 TN
@@ -3689,6 +3714,7 @@ qs
 fS
 sq
 ur
+TN
 TN
 TN
 TN
@@ -3710,6 +3736,7 @@ TN
 TN
 TN
 TN
+TN
 "}
 (31,1,1) = {"
 TN
@@ -3723,6 +3750,7 @@ lR
 kM
 QY
 ml
+TN
 TN
 TN
 TN
@@ -3744,6 +3772,7 @@ TN
 TN
 TN
 TN
+TN
 "}
 (33,1,1) = {"
 TN
@@ -3756,6 +3785,7 @@ ml
 fC
 fC
 ml
+TN
 TN
 TN
 TN
