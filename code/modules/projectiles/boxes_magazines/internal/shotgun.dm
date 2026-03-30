@@ -45,7 +45,7 @@
 	name = "gaboon internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "12ga"
-	max_ammo = 6
+	max_ammo = 5
 
 /obj/item/ammo_box/magazine/internal/shot/bounty
 	name = "triple-barrel shotgun internal magazine"
