@@ -1031,6 +1031,14 @@
 /obj/effect/turf_decal/corner/opaque/purple/bordercee{
 	dir = 4
 	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 7;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 7;
+	pixel_x = -8
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "lw" = (
@@ -2304,16 +2312,6 @@
 /area/ship/medical)
 "EZ" = (
 /obj/structure/rack,
-/obj/item/clothing/head/helmet/bulletproof/x11{
-	pixel_y = -3;
-	pixel_x = -5;
-	unique_reskin = list("None" = "x11helm", "Snow" = "x11helm_snow")
-	},
-/obj/item/clothing/head/helmet/bulletproof/x11{
-	pixel_y = -3;
-	pixel_x = 5;
-	unique_reskin = list("None" = "x11helm", "Snow" = "x11helm_snow")
-	},
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 1
 	},
@@ -2323,14 +2321,24 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/obj/item/clothing/head/helmet/bulletproof/x11{
-	pixel_y = 5;
-	unique_reskin = list("None" = "x11helm", "Snow" = "x11helm_snow")
-	},
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_y = -11;
 	pixel_x = 20
+	},
+/obj/item/clothing/head/helmet/m10{
+	unique_reskin = list("None" = "m10helm", "Snow" = "m10helm_snow");
+	pixel_y = 0;
+	pixel_x = -7
+	},
+/obj/item/clothing/head/helmet/m10{
+	unique_reskin = list("None" = "m10helm", "Snow" = "m10helm_snow");
+	pixel_y = 8
+	},
+/obj/item/clothing/head/helmet/m10{
+	unique_reskin = list("None" = "m10helm", "Snow" = "m10helm_snow");
+	pixel_y = 0;
+	pixel_x = 7
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
@@ -2875,7 +2883,7 @@
 /obj/machinery/light/directional/west,
 /obj/structure/closet/crate/wooden{
 	desc = "A sturdy wooden crate with the label 'MINING EQUIPMENT' stamped into the lid.";
-	name = "mining equipment"
+	name = "mining equipment crate"
 	},
 /obj/item/storage/bag/ore{
 	pixel_x = -7
@@ -3654,6 +3662,10 @@
 	},
 /obj/effect/turf_decal/corner/opaque/purple/bordercee{
 	dir = 4
+	},
+/obj/item/gun/energy/kalix/pgf/pdw{
+	pixel_x = -5;
+	pixel_y = -9
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)

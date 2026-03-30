@@ -157,9 +157,9 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "nail_starboard_engine_blast"
+/obj/machinery/door/poddoor/shutters{
+	id = "nail_starboard_engine_blast";
+	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
@@ -347,8 +347,7 @@
 	name = "boarding saw crate"
 	},
 /obj/item/gear_pack/anglegrinder{
-	name = "boarding saw";
-	desc = "Supplies the high voltage needed to run the attached grinder. 'Knock-Knock' is scrawled onto the side in permenant marker."
+	desc = "Supplies the high voltage needed to run the attached grinder. 'Knock-Knock' is scrawled onto the side in permanant marker."
 	},
 /obj/item/radio/headset/alt{
 	pixel_x = 2;
@@ -656,9 +655,9 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "nail_port_engine_blast"
+/obj/machinery/door/poddoor/shutters{
+	id = "nail_port_engine_blast";
+	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
