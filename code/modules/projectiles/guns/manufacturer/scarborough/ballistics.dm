@@ -1071,6 +1071,63 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	name = "shotgun drum magazine (12g meteor slugs)"
 	ammo_type = /obj/item/ammo_casing/shotgun/meteorslug
 
+/obj/item/gun/ballistic/shotgun/gaboon
+	name = "CSG-12 \"Gaboon\""
+	desc = "A compact pump-action shotgun designed by Scarborough Arms. While not often seen during the ICW and being a less popular sister to the Bulldog, the Gaboon finds itself favored by those running covert operations and clearing cramped maintenence tunnels. Chambered in 12g."
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+	icon_state = "gaboon"
+	item_state = "gaboon"
+
+	fire_sound = 'sound/weapons/gun/shotgun/brimstone.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/rack.ogg'
+
+	manufacturer = MANUFACTURER_SCARBOROUGH
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = list(
+	/obj/item/attachment/foldable_stock/gaboon
+	)
+
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/riot
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/riot,
+	)
+
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_NORMAL
+
+	fire_delay = 0.1 SECONDS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_STOCK = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 34,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 26,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 8,
+			"y" = 18,
+		)
+	)
+	default_attachments = list(/obj/item/attachment/foldable_stock/gaboon)
+	wield_slowdown = HEAVY_REVOLVER_SLOWDOWN
+	spread = 3
+	spread_unwielded = 10
+
+	recoil = 3
+	recoil_unwielded = 6
+
+	wield_delay = 0.4 SECONDS
+
 /obj/item/gun/ballistic/rocketlauncher/mako
 	name = "RR-86 \"Mako\""
 	desc = "A large, four-tube rocket launcher, the Mako fires (relatively) small rockets filled with incendiary compound, designed to cause fires and deny enemy movement. Capable of causing significant damage to exosuits on impact, as well."
