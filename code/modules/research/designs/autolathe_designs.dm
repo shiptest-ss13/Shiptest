@@ -700,7 +700,7 @@
 	category = list("initial", "T-Comm")
 
 /datum/design/bounced_radio
-	name = "Subspace Bounced Radio"
+	name = "Shortwave Radio"
 	id = "bounced_radio"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 75, /datum/material/glass = 25)

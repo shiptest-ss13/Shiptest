@@ -2197,7 +2197,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							level_options["[option] ([cost ? (cost - discount) : 0])"] = option
 						var/understanding = level_options[tgui_input_list(
 							user,
-							"Select level of understanding for [selected_lang.name].[discount ? "Discounted by [discount] points due to mutual intelligibility." : ""]",
+							"Select level of understanding for [selected_lang.name]. [discount ? "Discounted by [discount] points due to mutual intelligibility." : ""]",
 							"Learn Language",
 							level_options,
 						)]
