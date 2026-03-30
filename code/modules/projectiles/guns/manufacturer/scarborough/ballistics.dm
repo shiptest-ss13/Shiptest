@@ -1120,8 +1120,8 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	)
 	default_attachments = list(/obj/item/attachment/foldable_stock/gaboon)
 	wield_slowdown = HEAVY_REVOLVER_SLOWDOWN
-	spread = 6
-	spread_unwielded = 10
+	spread = 8
+	spread_unwielded = 12
 
 	recoil = 3
 	recoil_unwielded = 6
