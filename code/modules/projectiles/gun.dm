@@ -1298,9 +1298,6 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	aiming_lastangle = lastangle
 	var/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/P = new
 	P.gun = src
-	// P.wall_pierce_amount = wall_pierce_amount
-	// P.structure_pierce_amount = structure_piercing
-	// P.do_pierce = projectile_setting_pierce
 	if(aiming_time)
 		var/percent = ((100/aiming_time)*aiming_time_left)
 		P.color = rgb(255 * percent,255 * ((100 - percent) / 100),0)
