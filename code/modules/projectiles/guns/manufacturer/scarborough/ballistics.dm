@@ -1090,9 +1090,9 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	/obj/item/attachment/foldable_stock/gaboon
 	)
 
-	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/riot
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/gaboon
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/internal/shot/riot,
+		/obj/item/ammo_box/magazine/internal/shot/gaboon,
 	)
 
 	weapon_weight = WEAPON_MEDIUM
