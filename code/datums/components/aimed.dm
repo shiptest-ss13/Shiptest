@@ -91,3 +91,10 @@
 	shooter = null
 	parent.UnregisterSignal(parent, COMSIG_AIMEDFIRE_SHOT)
 	parent.UnregisterSignal(src, COMSIG_AIMEDFIRE_ONMOUSEDOWN)
+
+/datum/component/automatic_fire/proc/on_client_login(mob/source)
+	SIGNAL_HANDLER
+	if(!source.client)
+		return
+	if(source.is_holding(parent))
+		autofire_on(source.client)
