@@ -559,23 +559,58 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet)
 "jS" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
+/obj/structure/closet/secure_closet/miner{
+	populate = 0;
+	name = "miner's locker";
+	anchored = 1
 	},
-/obj/effect/turf_decal/stairs{
-	dir = 9
+/obj/item/storage/backpack/explorer{
+	pixel_y = 5
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/item/storage/backpack/satchel/explorer,
+/obj/item/clothing/under/warra/supply/miner{
+	pixel_x = -5
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
+/obj/item/clothing/shoes/workboots{
+	pixel_x = -5;
+	pixel_y = -8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 5;
+	pixel_y = -9
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ship/engineering/electrical)
+/obj/item/clothing/gloves/color/black{
+	pixel_x = 5
+	},
+/obj/item/clothing/suit/warra/vest{
+	pixel_x = 5
+	},
+/obj/item/clothing/head/hardhat/warra{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/clothing/head/warra/cap/supply{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/clothing/glasses/meson,
+/obj/item/melee/knife/survival,
+/obj/item/radio/headset/alt,
+/obj/item/gps/mining{
+	pixel_x = 8
+	},
+/obj/effect/turf_decal/borderfloor{
+	layer = 2.030;
+	dir = 6
+	},
+/obj/machinery/firealarm/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 10;
+	pixel_y = 23
+	},
+/obj/item/storage/belt/mining/alt,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage/equip)
 "ka" = (
 /obj/effect/turf_decal/borderfloor{
 	layer = 2.030;
@@ -788,17 +823,29 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/cryo)
 "oo" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
+/obj/item/storage/bag/construction{
+	pixel_y = 4
 	},
-/obj/effect/turf_decal/stairs{
+/obj/item/storage/bag/construction,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/electrical{
+	pixel_y = -6
+	},
+/obj/item/clothing/head/welding{
+	pixel_x = 8;
+	pixel_y = -9
+	},
+/obj/item/geiger_counter{
+	pixel_y = -8
+	},
+/obj/effect/turf_decal/borderfloor{
+	layer = 2.030;
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/cargo)
+/obj/structure/rack,
+/obj/item/plasmacutter,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage/equip)
 "oy" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo/office)
@@ -865,42 +912,25 @@
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "pj" = (
-/obj/item/storage/bag/construction{
-	pixel_y = 4
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/item/storage/bag/construction{
-	pixel_y = 2
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
 	},
-/obj/item/storage/bag/construction,
-/obj/item/storage/bag/construction{
-	pixel_y = -2
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
 	},
-/obj/item/storage/toolbox/mechanical,
-/obj/item/storage/toolbox/electrical{
-	pixel_y = -6
+/obj/effect/turf_decal/stairs{
+	dir = 9;
+	color = "#a3a2a0"
 	},
-/obj/item/clothing/head/welding{
-	pixel_x = 8;
-	pixel_y = -9
-	},
-/obj/item/geiger_counter{
-	pixel_y = -8
-	},
-/obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
+/obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/structure/rack,
-/obj/item/circuitboard/machine/pacman{
-	pixel_y = -5
-	},
-/obj/item/circuitboard/machine/turret,
-/obj/item/circuitboard/machine/turret{
-	pixel_y = 5
-	},
-/obj/item/plasmacutter,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/storage/equip)
+/obj/effect/turf_decal/siding/white,
+/turf/open/floor/plasteel/mono,
+/area/ship/crew/canteen)
 "py" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	name = "exhaust injector";
@@ -1296,6 +1326,30 @@
 /obj/effect/turf_decal/siding/thinplating,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway)
+"vg" = (
+/obj/effect/turf_decal/borderfloor{
+	layer = 2.030;
+	dir = 2
+	},
+/obj/structure/closet/secure_closet/wall/directional/south{
+	icon_door = "sec_wall";
+	icon_state = "sec_wall";
+	req_access_txt = "1";
+	name = "emergency armory locker"
+	},
+/obj/item/storage/box/ammo/a12g_buckshot{
+	pixel_y = -7
+	},
+/obj/effect/turf_decal/siding/white,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/item/storage/box/ammo/a12g_buckshot,
+/obj/item/gun/ballistic/shotgun/automatic/negotiator/empty,
+/obj/item/attachment/rail_light,
+/obj/item/attachment/bayonet,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ship/storage/equip)
 "vB" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1844,55 +1898,21 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "EG" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
 	},
-/obj/structure/closet/secure_closet/engineering_personal{
-	populate = 0;
-	req_access = list(10);
-	name = "field technician's locker"
+/obj/effect/turf_decal/stairs{
+	dir = 1;
+	color = "#a3a2a0"
 	},
-/obj/item/storage/backpack/industrial{
-	pixel_y = 5
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/item/storage/backpack/satchel/eng,
-/obj/item/storage/backpack/duffelbag/engineering{
-	pixel_y = -5
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
 	},
-/obj/item/clothing/under/warra/engineering{
-	pixel_x = -5
-	},
-/obj/item/clothing/shoes/workboots{
-	pixel_x = -5;
-	pixel_y = -8
-	},
-/obj/item/clothing/shoes/workboots/mining{
-	pixel_x = 5;
-	pixel_y = -9
-	},
-/obj/item/clothing/gloves/color/yellow{
-	pixel_x = 5
-	},
-/obj/item/clothing/suit/warra/vest/blue{
-	pixel_x = 5
-	},
-/obj/item/clothing/head/hardhat/warra/blue{
-	pixel_y = 5;
-	pixel_x = 5
-	},
-/obj/item/clothing/head/warra/cap/supply{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/clothing/glasses/meson/engine/tray,
-/obj/item/storage/belt/utility/full/engi,
-/obj/item/melee/knife/survival,
-/obj/item/radio/headset/alt,
-/obj/item/gps/engineering{
-	pixel_x = 8
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/storage/equip)
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/cargo)
 "EK" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /obj/structure/chair/stool{
@@ -1911,25 +1931,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"EY" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/white,
-/obj/effect/turf_decal/stairs{
-	dir = 9
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono,
-/area/ship/crew/canteen)
 "Fg" = (
 /obj/effect/turf_decal/warra/ns/top_right,
 /obj/effect/turf_decal/industrial/warning{
@@ -1978,49 +1979,16 @@
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/atmospherics)
-"FI" = (
-/obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
-	dir = 2
-	},
-/obj/structure/closet/secure_closet/wall/directional/south{
-	icon_door = "sec_wall";
-	icon_state = "sec_wall";
-	req_access_txt = "1";
-	name = "emergency armory locker"
-	},
-/obj/item/storage/box/ammo/a12g_slug{
-	pixel_y = -8
-	},
-/obj/item/storage/box/ammo/a12g_buckshot,
-/obj/item/storage/box/ammo/c9mm{
-	pixel_y = 8
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 4
-	},
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/gun/ballistic/shotgun/automatic/negotiator,
-/obj/item/gun/ballistic/automatic/pistol/challenger,
-/obj/effect/turf_decal/siding/white,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ship/storage/equip)
 "Gr" = (
-/obj/structure/cable{
-	icon_state = "0-8"
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/door/airlock/external/glass,
+/obj/docking_port/mobile{
+	launch_status = 0;
+	preferred_direction = 4;
+	port_direction = 4
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "ns_quail_portnac"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines/starboard)
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering/electrical)
 "Gt" = (
 /obj/machinery/computer/atmos_control/external{
 	dir = 1;
@@ -2475,58 +2443,24 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Mt" = (
-/obj/structure/closet/secure_closet/miner{
-	populate = 0;
-	name = "miner's locker";
-	anchored = 1
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
 	},
-/obj/item/storage/backpack/explorer{
-	pixel_y = 5
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/item/storage/backpack/satchel/explorer,
-/obj/item/clothing/under/warra/supply/miner{
-	pixel_x = -5
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
 	},
-/obj/item/clothing/shoes/workboots{
-	pixel_x = -5;
-	pixel_y = -8
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
-/obj/item/clothing/shoes/workboots/mining{
-	pixel_x = 5;
-	pixel_y = -9
+/obj/effect/turf_decal/stairs{
+	dir = 9;
+	color = "#a3a2a0"
 	},
-/obj/item/clothing/gloves/color/black{
-	pixel_x = 5
-	},
-/obj/item/clothing/suit/warra/vest{
-	pixel_x = 5
-	},
-/obj/item/clothing/head/hardhat/warra{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/clothing/head/warra/cap/supply{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/clothing/glasses/meson,
-/obj/item/storage/belt/mining/alt,
-/obj/item/melee/knife/survival,
-/obj/item/radio/headset/alt,
-/obj/item/gps/mining{
-	pixel_x = 8
-	},
-/obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
-	dir = 6
-	},
-/obj/machinery/firealarm/directional/north,
-/obj/machinery/light_switch{
-	pixel_x = 10;
-	pixel_y = 23
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/storage/equip)
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ship/engineering/electrical)
 "MF" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -3026,16 +2960,14 @@
 /area/ship/cargo/office)
 "UL" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 4
+	dir = 8
 	},
 /obj/effect/turf_decal/stairs{
-	dir = 1
+	dir = 1;
+	color = "#a3a2a0"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
@@ -3156,15 +3088,55 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
 "Yc" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/door/airlock/external/glass,
-/obj/docking_port/mobile{
-	launch_status = 0;
-	preferred_direction = 4;
-	port_direction = 4
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
 	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering/electrical)
+/obj/structure/closet/secure_closet/engineering_personal{
+	populate = 0;
+	req_access = list(10);
+	name = "field technician's locker"
+	},
+/obj/item/storage/backpack/industrial{
+	pixel_y = 5
+	},
+/obj/item/clothing/under/warra/engineering{
+	pixel_x = -5
+	},
+/obj/item/clothing/gloves/color/yellow{
+	pixel_x = 5
+	},
+/obj/item/clothing/head/hardhat/warra/blue{
+	pixel_y = 5;
+	pixel_x = 5
+	},
+/obj/item/clothing/head/warra/cap/supply{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/clothing/glasses/meson/engine/tray,
+/obj/item/melee/knife/survival,
+/obj/item/radio/headset/alt,
+/obj/item/gps/engineering{
+	pixel_x = 8
+	},
+/obj/item/storage/backpack/satchel/eng,
+/obj/item/clothing/suit/warra/vest/blue{
+	pixel_x = 5
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 5;
+	pixel_y = -9
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = -5;
+	pixel_y = -8
+	},
+/obj/item/storage/backpack/duffelbag/engineering{
+	pixel_y = -5
+	},
+/obj/item/storage/belt/utility/full/engi,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage/equip)
 "Yt" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/storage/equip)
@@ -3229,7 +3201,7 @@ TN
 TN
 sa
 Iz
-Gr
+Iz
 sa
 TN
 TN
@@ -3321,7 +3293,7 @@ aE
 uv
 XY
 GE
-Yc
+Gr
 Lv
 "}
 (8,1,1) = {"
@@ -3390,7 +3362,7 @@ TN
 TN
 el
 CC
-jS
+Mt
 qO
 mF
 CC
@@ -3400,7 +3372,7 @@ TN
 Dq
 js
 nn
-EY
+pj
 Dq
 Sw
 GG
@@ -3428,7 +3400,7 @@ Yt
 dc
 np
 wp
-pj
+oo
 Yt
 TN
 "}
@@ -3461,10 +3433,10 @@ vZ
 nH
 kz
 Yt
-Mt
+jS
 zM
 pX
-EG
+Yc
 Yt
 TN
 "}
@@ -3481,7 +3453,7 @@ QA
 pL
 SR
 Uh
-FI
+vg
 Yt
 Yt
 TN
@@ -3536,7 +3508,7 @@ Zg
 Zg
 Zg
 Zg
-Sw
+Zg
 TN
 TN
 "}
@@ -3619,7 +3591,7 @@ tL
 tU
 LO
 Aj
-UL
+EG
 gR
 iS
 yE
@@ -3655,7 +3627,7 @@ xv
 Fg
 Qp
 zB
-oo
+UL
 tt
 MS
 Nw
