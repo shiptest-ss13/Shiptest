@@ -17,29 +17,32 @@
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/food/sosjerky
-	name = "\improper Scaredy's Private Reserve Beef Jerky"
-	icon_state = "sosjerky"
-	desc = "Beef jerky made from the finest space cows."
-	trash_type = /obj/item/trash/sosjerky
+/obj/item/food/channeler_meats
+	name = "\improper Channeler Meat Candy"
+	icon_state = "channelercandy"
+	desc = "A traditional treat from the Antechannal League, each sugary piece of meat is individually wrapped to preserve the contents."
+	trash_type = /obj/item/trash/channelercandy
 	food_reagents = list(
-		/datum/reagent/consumable/nutriment/protein = 3,
-		/datum/reagent/consumable/sugar = 2,
-		/datum/reagent/consumable/sodiumchloride = 2,
+		/datum/reagent/consumable/nutriment/protein = 4,
+		/datum/reagent/consumable/sugar = 3,
 	)
 	junkiness = 25
-	tastes = list("dried meat" = 1)
+	tastes = list("channeler meat" = 3, "sugar" = 2)
 	w_class = WEIGHT_CLASS_SMALL
 	foodtypes = JUNKFOOD | MEAT | SUGAR
 
-/obj/item/food/sosjerky/healthy
+/obj/item/food/homemade_jerky
 	name = "homemade beef jerky"
 	desc = "Homemade beef jerky made from the finest space cows."
+	trash_type = /obj/item/trash/sosjerky
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment/protein = 6,
 		/datum/reagent/consumable/nutriment/vitamin = 1
 	)
 	junkiness = 0
+	tastes = list("dried meat" = 1)
+	w_class = WEIGHT_CLASS_SMALL
+	foodtypes = JUNKFOOD | MEAT | SUGAR
 
 /obj/item/food/chips
 	name = "chips"
@@ -95,18 +98,18 @@
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/food/cheesiehonkers
-	name = "\improper Cheesie Honkers"
-	desc = "Bite sized cheesie snacks that will honk all over your mouth."
-	icon_state = "cheesie_honkers"
-	trash_type = /obj/item/trash/cheesie
+/obj/item/food/gummycarps
+	name = "\improper Ringer's Carps"
+	desc = "A bag full of smiling gummy versions of the ever-common Space Carp, with several colors to match the common variants. A tag at the bottom reads, \"'Produced proudly in the Pan-Gezenan Federation!\"."
+	icon_state = "gummy_carps"
+	trash_type = /obj/item/trash/gummycarps
 	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 1,
-		/datum/reagent/consumable/sugar = 3,
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/consumable/sugar = 2,
 	)
 	junkiness = 25
-	tastes = list("cheese" = 5, "crisps" = 2)
-	foodtypes = JUNKFOOD | DAIRY | SUGAR
+	tastes = list("gummy" = 5, "artificial fruitiness" = 2)
+	foodtypes = JUNKFOOD | SUGAR
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/syndicake
