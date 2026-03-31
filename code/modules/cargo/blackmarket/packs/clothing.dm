@@ -232,7 +232,7 @@
 	return B
 
 /datum/blackmarket_item/clothing/full_spacesuit_set
-	name = "\improper Nanotrasen Branded Spacesuit Set"
+	name = "\improper Makosso-Warra Branded Spacesuit Set"
 	desc = "A few boxes of \"Old Style\" space suits fell off the back of a space truck."
 	item = /obj/item/storage/backpack/duffelbag
 
@@ -244,7 +244,7 @@
 /datum/blackmarket_item/clothing/full_spacesuit_set/spawn_item(loc)
 	var/obj/item/storage/backpack/duffelbag/B = ..()
 	B.name = "Spacesuit Duffelbag"
-	B.desc = "It has a NT logo on it."
+	B.desc = "It has a Makosso-Warra logo on it."
 	new /obj/item/clothing/suit/space(B)
 	new /obj/item/clothing/head/helmet/space(B)
 	return B

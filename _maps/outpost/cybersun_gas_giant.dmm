@@ -17578,7 +17578,9 @@
 /area/outpost/cargo/office)
 "PJ" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax/admin/outpost,
+/obj/machinery/fax/admin/outpost{
+	low_priority = 1
+	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D";
 	dir = 8
@@ -20716,7 +20718,9 @@
 /area/outpost/crew/court)
 "WT" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax/admin/outpost,
+/obj/machinery/fax/admin/outpost{
+	low_priority = 1
+	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
 	dir = 1

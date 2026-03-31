@@ -157,6 +157,14 @@
 	icon_state = "hood_inteq_alt"
 	item_state = "hood_inteq_alt"
 
+/obj/item/clothing/suit/toggle/flight/inteq
+	name = "Inteq Pilot Jacket"
+	desc = "A standard-issue flight jacket for subshuttle pilots. Lined with fur for any cold occasion."
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	icon_state = "flightinteq"
+	unique_reskin = null
+
 /obj/item/clothing/suit/space/inteq
 	name = "inteq space suit"
 	desc = "A lightly armored space suit for IRMG personnel for EVA operations, it seems more flexible than most space suits."
@@ -215,6 +223,23 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
 	icon_state = "hardsuit0-inteqeod"
 	hardsuit_type = "inteqeod"
+
+/obj/item/clothing/suit/space/hardsuit/stealth/inteq
+	name = "Inteq Ranger hardsuit"
+	desc = "A lightweight infiltration suit dating from the late ICW, reacquired and refitted by the IRMG. Many systems seem the same as its predecessor, but due to the rarity of original models and difficult production, these hardsuits are in limited quantity."
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	icon_state = "hardsuit-ranger"
+	hardsuit_type = "ranger"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/stealth/inteq
+
+/obj/item/clothing/head/helmet/space/hardsuit/stealth/inteq
+	name = "Inteq Ranger hardsuit helmet"
+	desc = "A lightweight hardsuit helm with integrated night vision in its vertical camera setup."
+	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
+	icon_state = "hardsuit0-ranger"
+	hardsuit_type = "ranger"
 
 //Boulder Hardsuit
 /obj/item/clothing/suit/space/hardsuit/security/inteq/boulder

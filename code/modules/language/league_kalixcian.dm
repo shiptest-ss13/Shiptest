@@ -27,6 +27,6 @@
 	icon_state = "clip_kalixcian"
 	default_priority = 80
 	mutual_understanding = list(
-		/datum/language/zohil_kalixcian = 90, // enough to sort of understand each other, but not perfectly
-		/datum/language/gezena_kalixcian = 80,
+		/datum/language/zohil_kalixcian = 95,
+		/datum/language/gezena_kalixcian = 65,
 	)
