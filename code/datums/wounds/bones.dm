@@ -185,7 +185,6 @@
 	occur_text = "janks violently and becomes unseated"
 	severity = WOUND_SEVERITY_MODERATE
 	wound_flags = ACCEPTS_SPLINT | PLATING_DAMAGE
-	excluded_zones = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST)
 	interaction_efficiency_penalty = 1.2
 	limp_slowdown = 2.25
 	limp_chance = 50
@@ -199,6 +198,7 @@
 
 	wound_path_to_generate = /datum/wound/blunt/bone/moderate
 
+	excluded_zones = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST)
 	required_limb_biostate = BIO_JOINTED
 
 	threshold_minimum = 35

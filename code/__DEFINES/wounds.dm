@@ -18,6 +18,8 @@
 #define WOUND_DEFAULT_WEIGHT 50
 /// Chance to roll a muscle wound from brute damage
 #define WOUND_MUSCLE_WEIGHT 15
+/// Chance to lose an eye from pierce damage
+#define WOUND_EYE_SCAR_WEIGHT 5
 
 // ~wound severities
 #define WOUND_SEVERITY_TRIVIAL 0
@@ -27,6 +29,10 @@
 /// outright dismemberment of limb
 #define WOUND_SEVERITY_LOSS 4
 
+// how much blood the limb needs to be losing per tick (not counting laying down/self grasping modifiers) to get the different bleed icons
+#define BLEED_OVERLAY_LOW 0.5
+#define BLEED_OVERLAY_MED 1.5
+#define BLEED_OVERLAY_GUSH 3.25
 
 // ~wound categories: wounding_types
 /// any brute weapon/attack that doesn't have sharpness. rolls for blunt bone and metal buckling wounds

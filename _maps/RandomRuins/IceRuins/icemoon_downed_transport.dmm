@@ -182,10 +182,6 @@
 	icon_state = "monotile_light"
 	},
 /area/ruin/unpowered/icemoon/downed_transport/crew_accomodations)
-"bG" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/carbon_input,
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/overmap_encounter/planetoid/ice/explored)
 "bH" = (
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/box,
@@ -2633,11 +2629,15 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "tW" = (
-/obj/item/stack/medical/gauze,
 /obj/item/stock_parts/cell/gun/pgf/empty{
 	pixel_y = -6;
 	pixel_x = 6
 	},
+/obj/item/stock_parts/cell/gun/pgf/empty{
+	pixel_y = -8;
+	pixel_x = -8
+	},
+/obj/item/stack/medical/gauze,
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
 "ua" = (
@@ -5329,8 +5329,9 @@
 	pixel_x = 27
 	},
 /obj/effect/mob_spawn/human/corpse/pgf/skeleton_marine,
-/obj/item/gun/energy/kalix/pgf/medium/empty_cell{
-	pixel_y = -11
+/obj/item/gun/energy/kalix/pgf/pdw/empty_cell{
+	pixel_x = -8;
+	pixel_y = -10
 	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -6904,7 +6905,7 @@ yu
 yu
 yu
 yu
-bG
+yu
 yu
 yu
 yu

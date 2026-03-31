@@ -1157,15 +1157,15 @@
 /obj/item/clothing/head/soft/cybersun{
 	pixel_y = 9
 	},
-/obj/item/clothing/under/syndicate/cybersun{
+/obj/item/clothing/under/cybersun{
 	pixel_x = 9;
 	pixel_y = -5
 	},
-/obj/item/clothing/under/syndicate/cybersun{
+/obj/item/clothing/under/cybersun{
 	pixel_x = -8;
 	pixel_y = -5
 	},
-/obj/item/clothing/under/syndicate/cybersun{
+/obj/item/clothing/under/cybersun{
 	pixel_y = -5
 	},
 /obj/item/clothing/shoes/combat{
@@ -1283,7 +1283,7 @@
 /obj/structure/closet/wall/orange/directional/north{
 	name = "technician's closet"
 	},
-/obj/item/clothing/under/syndicate/cybersun/research{
+/obj/item/clothing/under/cybersun/coverall{
 	pixel_y = 9
 	},
 /obj/item/clothing/shoes/combat{
@@ -1320,10 +1320,7 @@
 	pixel_x = 7;
 	pixel_y = -8
 	},
-/obj/item/clothing/mask/gas/syndicate{
-	pixel_x = -4;
-	pixel_y = -3
-	},
+/obj/item/clothing/mask/gas/cybersun,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "xx" = (
@@ -1508,17 +1505,17 @@
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 5
 	},
-/obj/item/clothing/mask/gas/syndicate{
+/obj/item/clothing/mask/gas/cybersun{
 	pixel_x = -7;
-	pixel_y = 8
+	pixel_y = 6
 	},
-/obj/item/clothing/mask/gas/syndicate{
+/obj/item/clothing/mask/gas/cybersun{
 	pixel_x = -7;
-	pixel_y = 2
+	pixel_y = 0
 	},
-/obj/item/clothing/mask/gas/syndicate{
-	pixel_x = -7;
-	pixel_y = -4
+/obj/item/clothing/mask/gas/cybersun{
+	pixel_x = -8;
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2157,20 +2154,20 @@
 	pixel_y = 10;
 	pixel_x = 5
 	},
-/obj/item/clothing/suit/armor/vest/capcarapace/cybersun{
+/obj/item/clothing/suit/armor/cybersun{
 	pixel_x = -5
 	},
-/obj/item/clothing/suit/cybersun_suit{
+/obj/item/clothing/suit/cybersun{
 	pixel_x = -6
 	},
-/obj/item/clothing/under/syndicate/cybersun/officer{
+/obj/item/clothing/under/cybersun/officer{
 	pixel_x = 8
 	},
 /obj/item/clothing/shoes/jackboots{
 	pixel_y = -7
 	},
 /obj/item/clothing/gloves/combat,
-/obj/item/clothing/head/HoS/cybersun{
+/obj/item/clothing/head/cybersun{
 	pixel_y = 8
 	},
 /obj/machinery/light_switch{
@@ -2183,6 +2180,7 @@
 	pixel_y = 5
 	},
 /obj/item/radio/headset/syndicate/alt/captain/cybersun,
+/obj/item/radio/headset/syndicate/captain/cybersun,
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
 "KN" = (

@@ -42,8 +42,6 @@
 	/// Either WOUND_SEVERITY_TRIVIAL, WOUND_SEVERITY_MODERATE, WOUND_SEVERITY_SEVERE, WOUND_SEVERITY_CRITICAL, WOUND_SEVERITY_LOSS. FALSE prevents it from rolling.
 	var/severity = FALSE
 
-	/// What body zones can we NOT affect
-	var/list/excluded_zones = list()
 	/// Who owns the body part that we're wounding
 	var/mob/living/carbon/victim = null
 	/// The bodypart we're parented to. Not guaranteed to be non-null, especially after/during removal or if we haven't been applied

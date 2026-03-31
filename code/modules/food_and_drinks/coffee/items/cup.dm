@@ -6,8 +6,8 @@
 	possible_transfer_amounts = list(10)
 	volume = 30
 	spillable = TRUE
-	fill_icon_state = "coffee_cup"
-	fill_icon_thresholds = list(0, 1)
+	fill_icon_state = "coffeecupfilling"
+	fill_icon_thresholds = list(25)
 
 /obj/item/reagent_containers/food/drinks/coffee/empty
 	name = "empty paper coffee cup"

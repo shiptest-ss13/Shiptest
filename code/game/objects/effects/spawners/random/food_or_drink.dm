@@ -3,14 +3,14 @@
 	desc = "Nom nom nom"
 	icon_state = "soup"
 
-/obj/effect/spawner/random/food_or_drink/donkpockets
-	name = "donk pocket box spawner"
-	icon_state = "donkpocket"
+/obj/effect/spawner/random/food_or_drink/shoalpockets
+	name = "shoal pocket box spawner"
+	icon_state = "shoalpocket"
 	loot = list(
-		/obj/item/storage/box/donkpockets/donkpocketspicy = 1,
-		/obj/item/storage/box/donkpockets/donkpocketteriyaki = 1,
-		/obj/item/storage/box/donkpockets/donkpocketpizza = 1,
-		/obj/item/storage/box/donkpockets/donkpocketberry = 1,
+		/obj/item/storage/box/shoalpockets/shoalpocketspicy = 1,
+		/obj/item/storage/box/shoalpockets/shoalpocketteriyaki = 1,
+		/obj/item/storage/box/shoalpockets/shoalpocketpizza = 1,
+		/obj/item/storage/box/shoalpockets/shoalpocketberry = 1,
 		)
 
 /obj/effect/spawner/random/food_or_drink/ration

@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 43
+#define SAVEFILE_VERSION_MAX 44
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -124,7 +124,17 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			pronouns = "It"
 		else
 			pronouns = "They"
-
+	if(current_version < 44)
+		for(var/datum/language/lang_type as anything in learned_languages)
+			switch(learned_languages[lang_type])
+				if("Unknown (0)")
+					learned_languages[lang_type] = LANGUAGE_UNKNOWN
+				if("Recognized (1)")
+					learned_languages[lang_type] = LANGUAGE_FAMILIAR
+				if("Familiar (2)")
+					learned_languages[lang_type] = LANGUAGE_CONVERSATIONAL
+				if("Fluent (3)")
+					learned_languages[lang_type] = LANGUAGE_FLUENT
 
 /// checks through keybindings for outdated unbound keys and updates them
 /datum/preferences/proc/check_keybindings()
@@ -446,7 +456,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["socks_color"], socks_color)
 	READ_FILE(S["backpack"], backpack)
 	READ_FILE(S["jumpsuit_style"], jumpsuit_style)
-	READ_FILE(S["phobia"], phobia)
+	READ_FILE(S["scarred_eye_side"], scarred_eye_side)
 	READ_FILE(S["generic_adjective"], generic_adjective)
 	READ_FILE(S["randomise"],  randomise)
 	READ_FILE(S["height_filter"], height_filter)
@@ -655,7 +665,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["backpack"]					, backpack)
 	WRITE_FILE(S["randomise"]					, randomise)
 	WRITE_FILE(S["species"]						, pref_species.id)
-	WRITE_FILE(S["phobia"]						, phobia)
+	WRITE_FILE(S["scarred_eye_side"]			, scarred_eye_side)
 	WRITE_FILE(S["generic_adjective"]			, generic_adjective)
 	WRITE_FILE(S["height_filter"]				, height_filter)
 	WRITE_FILE(S["prosthetic_limbs"]			, prosthetic_limbs)

@@ -284,12 +284,6 @@
 	item_state = "tile-carpet-royalblue"
 	turf_type = /turf/open/floor/carpet/stellar
 
-/obj/item/stack/tile/carpet/donk
-	name = "donk co promotional carpet"
-	icon_state = "tile_carpet_donk"
-	item_state = "tile-carpet-orange"
-	turf_type = /turf/open/floor/carpet/donk
-
 /obj/item/stack/tile/carpet/nanoweave
 	name = "nanoweave carpet"
 	icon = 'icons/obj/tiles.dmi'
