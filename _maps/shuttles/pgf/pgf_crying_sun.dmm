@@ -1656,7 +1656,7 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/vault,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "ie" = (
 /obj/structure/cable{
@@ -1741,7 +1741,7 @@
 	pixel_y = -6;
 	gpstag = "ECHO-LEAD"
 	},
-/turf/open/floor/vault,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "iv" = (
 /obj/structure/cable{
@@ -2235,7 +2235,7 @@
 	pixel_y = 2;
 	pixel_x = 5
 	},
-/turf/open/floor/vault,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "ky" = (
 /obj/structure/sink/kitchen{
@@ -5093,7 +5093,7 @@
 	pixel_x = -3;
 	pixel_y = 8
 	},
-/turf/open/floor/vault,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "AC" = (
 /obj/effect/turf_decal/corner_steel_grid/full{
@@ -7358,7 +7358,6 @@
 	req_access_txt = "1"
 	},
 /obj/machinery/airalarm/directional/east,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/storage/backpack/satchel/sec/gezena{
 	pixel_x = -8;
 	pixel_y = -12
@@ -7418,7 +7417,7 @@
 	pixel_x = -1;
 	pixel_y = -10
 	},
-/turf/open/floor/vault,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Kk" = (
 /obj/effect/turf_decal/techfloor/orange{
@@ -8799,7 +8798,7 @@
 	pixel_x = -6;
 	pixel_y = -5
 	},
-/turf/open/floor/vault,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Qx" = (
 /obj/effect/turf_decal/spline/fancy/opaque/green,
@@ -10250,6 +10249,14 @@
 	dir = 1;
 	req_ship_access = 1
 	},
+/obj/machinery/button/door{
+	id = "c-sun_range_access_shut";
+	name = "Range Access Shutters";
+	dir = 8;
+	pixel_y = 0;
+	req_access = list(3);
+	pixel_x = 20
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "WM" = (
@@ -10695,6 +10702,10 @@
 	req_access = list(3);
 	name = "Firing Range";
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "c-sun_range_access_shut";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)

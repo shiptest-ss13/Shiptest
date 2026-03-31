@@ -1468,7 +1468,7 @@
 	pixel_x = -5;
 	pixel_y = 10
 	},
-/turf/open/floor/vault,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "jg" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
@@ -1961,17 +1961,26 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/range)
 "mh" = (
-/obj/structure/railing{
-	dir = 5
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 5
 	},
-/obj/structure/rack,
-/obj/item/multitool{
-	pixel_x = 8
+/obj/effect/turf_decal/techfloor{
+	dir = 5
 	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/table/reinforced,
+/obj/machinery/recharger{
+	pixel_x = 8;
+	pixel_y = 6
+	},
+/obj/machinery/button/door{
+	dir = 2;
+	id = "bolide_win_bridge";
+	name = "window shutters";
+	pixel_y = 20;
+	layer = 5.1;
+	pixel_x = 0
+	},
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "mo" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -2272,7 +2281,7 @@
 	pixel_x = 2;
 	pixel_y = -7
 	},
-/turf/open/floor/vault,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "nL" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
@@ -2406,25 +2415,11 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/engineering/communications)
 "om" = (
-/obj/structure/railing/corner{
-	dir = 4
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/newscaster/directional/east,
-/obj/machinery/button/door{
-	dir = 8;
-	id = "bolide_win_bridge";
-	name = "window shutters";
-	pixel_x = -5;
-	pixel_y = 6
-	},
-/obj/machinery/recharger{
-	pixel_x = 6;
-	pixel_y = 6
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "oq" = (
@@ -4011,7 +4006,7 @@
 /obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 4
 	},
-/turf/open/floor/vault,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "yu" = (
 /obj/structure/sign/warning/fire{
@@ -4423,7 +4418,7 @@
 	pixel_y = 6;
 	pixel_x = 1
 	},
-/turf/open/floor/vault,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "AC" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -5165,7 +5160,7 @@
 	desc = "An automatic grenade launcher utilizing a rotary magazine with space for three grenades."
 	},
 /obj/effect/turf_decal/corner/opaque/purple/border,
-/turf/open/floor/vault,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "DO" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -5676,7 +5671,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/obj/machinery/light/directional/west,
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = -10;
@@ -5914,29 +5908,12 @@
 /area/ship/external/dark)
 "IK" = (
 /obj/effect/turf_decal/corner/opaque/neutral/full,
-/obj/effect/turf_decal/corner/opaque/purple/border{
-	dir = 1
-	},
-/obj/machinery/light/directional/south,
-/obj/item/clothing/suit/armor/gezena/marine{
-	pixel_y = -5;
-	pixel_x = -11
-	},
-/obj/item/storage/belt/military/gezena{
-	pixel_x = -1;
-	pixel_y = -6
-	},
-/obj/item/clothing/head/helmet/gezena{
-	pixel_y = 11;
-	pixel_x = -11
-	},
-/obj/item/clothing/glasses/sunglasses/pgf{
-	pixel_y = 3;
-	pixel_x = -10
-	},
-/obj/item/clothing/accessory/holster{
-	pixel_y = -6;
-	pixel_x = -14
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	can_be_unanchored = 1;
+	icon_state = "armory";
+	name = "squad leader's locker";
+	req_access_txt = "1"
 	},
 /obj/item/storage/backpack/satchel/sec/gezena{
 	pixel_x = -8;
@@ -5953,7 +5930,7 @@
 /obj/item/storage/backpack/duffelbag{
 	pixel_y = -6
 	},
-/obj/item/storage/guncase/energy/sgr9{
+/obj/item/storage/guncase/pistol/kalixpistol{
 	pixel_y = -13;
 	mag_count = 3
 	},
@@ -5986,8 +5963,8 @@
 	pixel_x = -4
 	},
 /obj/item/radio/headset/pgf/alt/captain{
-	pixel_y = 2;
-	pixel_x = 11
+	pixel_y = 4;
+	pixel_x = 8
 	},
 /obj/item/clothing/gloves/gezena/marine{
 	pixel_x = 6;
@@ -5997,7 +5974,11 @@
 	pixel_x = -1;
 	pixel_y = -10
 	},
-/turf/open/floor/vault,
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 1
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "IM" = (
 /obj/item/storage/lockbox/medal{
@@ -6146,6 +6127,10 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10,
+/obj/structure/railing/corner{
+	dir = 8;
+	layer = 5
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Jm" = (
@@ -6326,7 +6311,8 @@
 /obj/item/gun/energy/kalix/pistol{
 	pixel_y = -9
 	},
-/turf/open/space/basic,
+/obj/effect/turf_decal/corner/opaque/purple/border,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Kt" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -6529,15 +6515,15 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/port)
 "Lj" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 4
-	},
 /obj/structure/chair/office{
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
@@ -6570,6 +6556,9 @@
 "Lt" = (
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/railing{
+	layer = 5
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4;
@@ -6965,14 +6954,6 @@
 /obj/item/storage/backpack/security/gezena{
 	pixel_x = 2;
 	pixel_y = -15
-	},
-/obj/item/storage/backpack/duffelbag{
-	pixel_x = 1;
-	pixel_y = -10
-	},
-/obj/item/storage/backpack/duffelbag{
-	pixel_x = 1;
-	pixel_y = -10
 	},
 /obj/item/clothing/neck/cloak/gezena{
 	pixel_x = -4;
@@ -7511,75 +7492,25 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
 "Rm" = (
-/obj/item/storage/backpack/satchel/cap{
-	pixel_y = -9;
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 8;
 	pixel_x = -8
-	},
-/obj/item/storage/backpack/duffelbag/captain{
-	pixel_x = 6;
-	pixel_y = -10
-	},
-/obj/item/clothing/head/gezena/captain{
-	pixel_y = 16;
-	pixel_x = -8
-	},
-/obj/item/clothing/head/gezena/flap/captain{
-	pixel_y = 13;
-	pixel_x = 8
-	},
-/obj/item/clothing/under/gezena/captain{
-	pixel_y = 7;
-	pixel_x = -8
-	},
-/obj/item/clothing/suit/armor/gezena/captain{
-	pixel_y = 7;
-	pixel_x = 8
-	},
-/obj/item/storage/guncase/pistol/kalixpistol{
-	pixel_y = -9;
-	pixel_x = -1;
-	mag_count = 3
-	},
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_y = -4;
-	pixel_x = -11
-	},
-/obj/item/clothing/neck/cloak/gezena/captain{
-	pixel_y = 6;
-	pixel_x = 3
-	},
-/obj/item/clothing/gloves/gezena/captain{
-	pixel_y = -3
-	},
-/obj/item/storage/belt/sabre/pgf{
-	pixel_x = -2
-	},
-/obj/item/radio/headset/pgf/alt/captain{
-	pixel_x = 10;
-	pixel_y = 1
-	},
-/obj/item/radio/headset/pgf/captain{
-	pixel_x = -10
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/green{
-	dir = 8
-	},
-/obj/machinery/light/directional/north,
-/obj/item/clothing/under/gezena/marine{
-	pixel_x = -9;
-	pixel_y = -1
-	},
-/obj/item/clothing/suit/toggle/gezena/marine{
-	pixel_y = -2;
-	pixel_x = 8
 	},
 /obj/item/clothing/head/gezena/marine{
 	pixel_y = 10;
 	pixel_x = 8
 	},
-/obj/item/clothing/head/gezena/flap/marine{
-	pixel_y = 8;
-	pixel_x = -6
+/obj/item/clothing/suit/toggle/gezena/marine{
+	pixel_y = -2;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/gezena/marine{
+	pixel_x = -9;
+	pixel_y = -1
+	},
+/obj/item/clothing/neck/cloak/gezena/command{
+	pixel_y = -9;
+	pixel_x = -7
 	},
 /obj/item/clothing/shoes/combat/gezena/marine{
 	pixel_y = -9;
@@ -7590,12 +7521,21 @@
 	pixel_y = 0
 	},
 /obj/item/radio/headset/pgf/captain{
-	pixel_x = -10;
-	pixel_y = -1
+	pixel_x = -12;
+	pixel_y = 1
 	},
-/obj/item/clothing/neck/cloak/gezena/command{
-	pixel_y = -9;
-	pixel_x = -2
+/obj/effect/turf_decal/spline/fancy/opaque/green{
+	dir = 8
+	},
+/obj/machinery/light/directional/north,
+/obj/structure/closet/secure_closet/wall/directional/south{
+	icon_door = "sec_wall";
+	name = "lieutenant's locker";
+	icon_state = "sec_wall";
+	req_access = list(3);
+	dir = 4;
+	pixel_y = 0;
+	pixel_x = 28
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/commad)
@@ -7957,7 +7897,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/light/small/directional/north,
 /obj/item/radio/intercom/wideband/directional/west,
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -7995,6 +7934,9 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
 	name = "grav couch"
+	},
+/obj/structure/railing{
+	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -9140,7 +9082,8 @@
 	pixel_y = -3;
 	pixel_x = 1
 	},
-/turf/open/space/basic,
+/obj/effect/turf_decal/corner/opaque/purple/border,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Zu" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
