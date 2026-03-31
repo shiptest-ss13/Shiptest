@@ -2,8 +2,8 @@
 	name = "ERT - Frontiersman Basic"
 	jobtype = /datum/job/officer
 
-	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	head = /obj/item/clothing/head/beret/sec/frontier
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	suit_store = /obj/item/gun/ballistic/rifle/illestren
 	belt = /obj/item/storage/belt/security/military/frontiersmen/illestren
 	uniform = /obj/item/clothing/under/frontiersmen
@@ -178,12 +178,6 @@
 	belt = null
 	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen=1, /obj/item/ammo_box/magazine/c22lr_pounder_pan=2)
 
-/datum/outfit/job/frontiersmen/ert/wasp_smg
-	name = "ERT - Frontiersman Grunt (Wasp SMG)"
-
-	suit_store = /obj/item/gun/energy/laser/wasp
-	belt = /obj/item/storage/belt/security/military/frontiersmen/wasp_ammo
-
 /datum/outfit/job/frontiersmen/ert/leader
 	name = "ERT - Frontiersman Officer"
 
@@ -230,7 +224,7 @@
 	suit = /obj/item/clothing/suit/frontiersmen
 	suit_store = null
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/storage/firstaid/regular, /obj/item/ammo_box/magazine/m9mm_mauler/extended = 2, /obj/item/gun/ballistic/automatic/pistol/mauler)
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/storage/firstaid/regular, /obj/item/ammo_box/magazine/m9mm_mauler = 2, /obj/item/gun/ballistic/automatic/pistol/mauler)
 
 /datum/outfit/job/frontiersmen/ert/medic/heavy
 	name = "ERT - Frontiersman Medic (Shock Troop)"
@@ -242,7 +236,7 @@
 	belt = /obj/item/storage/belt/medical/webbing/frontiersmen/combat
 	glasses = /obj/item/clothing/glasses/hud/health
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/storage/firstaid/medical=1, /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 3, /obj/item/ammo_box/magazine/m9mm_mauler/extended=2)
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/storage/firstaid/medical=1, /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 3, /obj/item/ammo_box/magazine/m9mm_mauler=2)
 
 /datum/outfit/job/frontiersmen/ert/engineer
 	name = "ERT - Frontiersman Engineer"
@@ -279,13 +273,13 @@
 /datum/outfit/job/frontiersmen/ert/sentry
 	name = "ERT - Frontiersman Sentry (SKM-24v LMG)"
 
-	head = /obj/item/clothing/head/helmet/heavy_frontier
+	head = /obj/item/clothing/head/helmet/frontier
 	mask = /obj/item/clothing/mask/balaclava
 	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
 	suit_store = /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag
 	gloves = /obj/item/clothing/gloves/combat
 
-	belt = /obj/item/gun/ballistic/revolver/viper/indie
+	belt = /obj/item/gun/ballistic/revolver/mateba
 
 	backpack_contents = list(/obj/item/ammo_box/magazine/skm_762_40/drum=2,/obj/item/ammo_box/a357=2,/obj/item/grenade/frag=1,/obj/item/radio=1)
 
@@ -296,10 +290,3 @@
 	l_hand = /obj/item/gun/ballistic/automatic/hmg/shredder // this doesnt even fit on the suit storage slot
 
 	backpack_contents = list(/obj/item/ammo_box/magazine/m12_shredder=2,/obj/item/ammo_box/a357=2,/obj/item/grenade/frag=1,/obj/item/radio=1)
-
-/datum/outfit/job/frontiersmen/ert/sentry/mower
-	name = "ERT - Frontiersman Sentry (Mower LMG)"
-
-	suit_store = /obj/item/gun/ballistic/automatic/hmg/mower
-
-	backpack_contents = list(/obj/item/ammo_box/magazine/mower_lmg_308=2,/obj/item/ammo_box/a357=2,/obj/item/grenade/frag=1,/obj/item/radio=1)
