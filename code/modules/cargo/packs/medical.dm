@@ -240,7 +240,7 @@
 
 /datum/supply_pack/medical/vials/dylo_vial
 	name = "Pancrazine Vial Crate"
-	desc = "Contains a spare dylovene vial, for usage in a Hypospray."
+	desc = "Contains a spare pancrazine vial, for usage in a Hypospray."
 	cost = 400
 	contains = list(
 		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/pancrazine,
