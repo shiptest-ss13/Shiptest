@@ -24,7 +24,7 @@
 
 /datum/weather/nuclear_fallout/weather_act(mob/living/akimov)
 	akimov.rad_act(100)
-	to_chat(akimov, span_notice("You taste metal."))
+	to_chat(akimov, "<span class='notice'>You taste metal.</span>")
 
 /datum/weather/nuclear_fallout/normal
 	name = "dust storm"

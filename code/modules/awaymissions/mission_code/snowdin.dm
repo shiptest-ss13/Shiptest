@@ -328,19 +328,19 @@
 
 /obj/structure/flora/rock/icy
 	name = "icy rock"
-	icon_state = "snowrock_1"
+	icon_state = "icemoonrock1"
 
 /obj/structure/flora/rock/icy/Initialize()
 	. = ..()
-	icon_state = "snowrock_[rand(1,4)]"
+	icon_state = "icemoonrock[rand(1,3)]"
 
 /obj/structure/flora/rock/pile/icy
 	name = "icey rocks"
-	icon_state = "snowrock_4"
+	icon_state = "icemoonrock4"
 
 /obj/structure/flora/rock/pile/icy/Initialize()
 	. = ..()
-	icon_state = "snowrock_4"
+	icon_state = "icemoonrock4"
 
 //decals//--
 /obj/effect/turf_decal/snowdin_station_sign

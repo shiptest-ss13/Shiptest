@@ -95,7 +95,6 @@ const SharedContent = (_props, context) => {
           <Table.Row bold>
             <Table.Cell>Name</Table.Cell>
             {!isViewer && <Table.Cell>Act</Table.Cell>}
-            {!isViewer && <Table.Cell>Dock</Table.Cell>}
           </Table.Row>
           {otherInfo.map((ship) => (
             <Table.Row key={ship.name}>
@@ -108,33 +107,10 @@ const SharedContent = (_props, context) => {
                     icon="circle"
                     disabled={
                       // I hate this so much
-                      isViewer
+                      isViewer || data.speed > 0 || data.docked || data.docking
                     }
                     onClick={() =>
                       act('act_overmap', {
-                        ship_to_act: ship.ref,
-                      })
-                    }
-                  />
-                </Table.Cell>
-              )}
-              {!isViewer && (
-                <Table.Cell>
-                  <Button
-                    tooltip="Quick Dock"
-                    tooltipPosition="left"
-                    icon="anchor"
-                    color={'red'}
-                    disabled={
-                      // I hate this so much
-                      isViewer ||
-                      data.speed > 0 ||
-                      data.docked ||
-                      data.docking ||
-                      !ship.candock
-                    }
-                    onClick={() =>
-                      act('quick_dock', {
                         ship_to_act: ship.ref,
                       })
                     }
@@ -159,7 +135,6 @@ const ShipContent = (_props, context) => {
     burnPercentage,
     speed,
     heading,
-    sector,
     eta,
     x,
     y,
@@ -193,9 +168,6 @@ const ShipContent = (_props, context) => {
             <AnimatedNumber value={x} />
             /Y
             <AnimatedNumber value={y} />
-          </LabeledList.Item>
-          <LabeledList.Item label="Sector">
-            <AnimatedNumber value={sector} />
           </LabeledList.Item>
           <LabeledList.Item label="ETA">
             <AnimatedNumber value={eta} />

@@ -37,9 +37,6 @@
 
 	flags = GAS_FLAG_DANGEROUS
 
-	fusion_power = 0
-	enthalpy = -110500
-
 /datum/gas/carbon_dioxide //what the fuck is this?
 	id = GAS_CO2
 	specific_heat = 30
@@ -205,7 +202,7 @@
 	specific_heat = 22
 	name = "Sulfur Dioxide"
 	flags = GAS_FLAG_DANGEROUS
-	moles_visible = MOLES_GAS_VISIBLE * 60
+	moles_visible = MOLES_GAS_VISIBLE * 40
 	gas_overlay = "generic"
 	color = "#d4cb28"
 	enthalpy = -296800

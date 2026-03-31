@@ -237,8 +237,6 @@
 /proc/Gibberish(text, replace_characters = FALSE, chance = 50)
 	text = html_decode(text)
 	. = ""
-	if(!chance)
-		return sanitize(.)
 	var/rawchar = ""
 	var/letter = ""
 	var/lentext = length(text)

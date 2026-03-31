@@ -6,12 +6,12 @@
 		log_test("Loading [map.name]")
 		try
 			// they'll spawn in empty space, and won't be docked
-			new /datum/overmap/ship/controlled(list("x" = 1, "y" = 1), SSovermap.default_system, map)
+			new /datum/overmap/ship/controlled(list("x" = 1, "y" = 1), map)
 		catch(var/exception/e)
 			Fail("Runtime error loading ship type ([map.name]): [e]\n[e.desc]", e.file, e.line)
 
 	for(var/outpost_type in subtypesof(/datum/overmap/outpost))
-		var/datum/overmap/outpost/test_outpost = new outpost_type(null, SSovermap.default_system)
+		var/datum/overmap/outpost/test_outpost = new outpost_type()
 
 		log_test("Testing [test_outpost.type]")
 
@@ -23,7 +23,7 @@
 			// all ships which start undocked will end the loop undocked, so this shouldn't cause any ships to be wrongfully skipped.
 			if(cur_ship.docked_to)
 				continue
-			cur_ship.Dock(test_outpost, force = TRUE)
+			cur_ship.Dock(test_outpost, TRUE)
 
 			var/obj/docking_port/stationary/ship_dock = cur_ship.shuttle_port.docked
 			var/found_dock = FALSE

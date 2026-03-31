@@ -7,7 +7,7 @@
 	var/salvageable_parts = list()
 	var/frame_type = /obj/structure/frame/machine
 
-/obj/structure/salvageable/examine(mob/user)
+/obj/item/stack/ore/salvage/examine(mob/user)
 	. = ..()
 	. += "You can use a crowbar to salvage this."
 
@@ -378,7 +378,6 @@
 	name = "salvage"
 	icon = 'icons/obj/salvage_structure.dmi'
 	icon_state = "smetal"
-	refined_type = null
 
 /obj/item/stack/ore/salvage/examine(mob/user)
 	. = ..()
@@ -390,6 +389,7 @@
 	points = 1
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/metal
 
 /obj/item/stack/ore/salvage/scrapmetal/five
 	amount = 5
@@ -407,6 +407,7 @@
 	points = 50
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/mineral/titanium
 
 /obj/item/stack/ore/salvage/scraptitanium/five
 	amount = 5
@@ -418,6 +419,7 @@
 	points = 16
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/silver=MINERAL_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/mineral/silver
 
 /obj/item/stack/ore/salvage/scrapsilver/five
 	amount = 5
@@ -429,6 +431,7 @@
 	points = 18
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/gold=MINERAL_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/mineral/gold
 
 /obj/item/stack/ore/salvage/scrapgold/five
 	amount = 5
@@ -440,6 +443,7 @@
 	points = 15
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/mineral/plasma
 
 /obj/item/stack/ore/salvage/scrapplasma/five
 	amount = 5
@@ -451,6 +455,7 @@
 	points = 30
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/uranium=MINERAL_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/mineral/uranium
 
 /obj/item/stack/ore/salvage/scrapuranium/five
 	amount = 5
@@ -462,6 +467,7 @@
 	points = 50
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/bluespace_crystal
 
 /obj/item/stack/ore/salvage/scrapbluespace/five
 	amount = 5

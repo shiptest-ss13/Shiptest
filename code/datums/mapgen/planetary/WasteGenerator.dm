@@ -133,10 +133,7 @@
 		/obj/effect/radiation/waste = 30,
 		/obj/effect/radiation/waste/intense = 10,
 		/obj/structure/geyser/random = 1,
-		/obj/effect/spawner/random/anomaly/waste = 1,
-		/obj/structure/vein/waste = 4,
-		/obj/structure/vein/waste/classtwo = 6,
-		/obj/structure/vein/waste/classthree = 2,
+		/obj/effect/spawner/random/anomaly/waste = 1
 	)
 
 	mob_spawn_list = list(
@@ -152,7 +149,7 @@
 	)
 
 	flora_spawn_chance = 25
-	feature_spawn_chance = 0.75
+	feature_spawn_chance = 0.5
 	mob_spawn_chance = 2
 
 /datum/biome/waste/crater
@@ -221,13 +218,6 @@
 		/turf/open/water/tar/waste/lit = 1
 	)
 	flora_spawn_chance = 0
-
-	feature_spawn_list = list(
-		/obj/effect/radiation/waste = 30,
-		/obj/effect/radiation/waste/intense = 10,
-		/obj/structure/geyser/random = 1,
-		/obj/effect/spawner/random/anomaly/waste = 1,
-	)
 
 /datum/biome/waste/metal
 	open_turf_types = list(
@@ -327,10 +317,7 @@
 		/obj/effect/radiation/waste = 30,
 		/obj/effect/radiation/waste/intense = 10,
 		/obj/structure/geyser/random = 1,
-		/obj/effect/spawner/random/anomaly/waste/cave = 1,
-		/obj/structure/vein/waste = 8,
-		/obj/structure/vein/waste/classtwo = 4,
-		/obj/structure/vein/waste/classthree = 1,
+		/obj/effect/spawner/random/anomaly/waste/cave = 1
 	)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/hivebot/strong = 20,
@@ -358,12 +345,6 @@
 		/turf/open/water/tar/waste = 1
 	)
 	flora_spawn_chance = 0
-	feature_spawn_list = list(
-		/obj/effect/radiation/waste = 30,
-		/obj/effect/radiation/waste/intense = 10,
-		/obj/structure/geyser/random = 1,
-		/obj/effect/spawner/random/anomaly/waste/cave = 1
-	)
 
 /datum/biome/cave/waste/rad
 	flora_spawn_list = list(
@@ -457,9 +438,8 @@
 	)
 	mob_spawn_chance = 30
 	feature_spawn_list = list(
-		/obj/structure/spawner/hivebot = 10,
+		/obj/structure/spawner/hivebot = 1,
 		)
-
 	feature_spawn_chance = 2 //hivebot biomes should have their dongles
 
 /datum/biome/cave/waste/conc //da concrete jungle baybee

@@ -1,6 +1,6 @@
 /datum/export/material
-	cost = 5 // Cost per MINERAL_MATERIAL_AMOUNT, which is 2000 cm3 (single sheet) as of March 2025.
-	desc = "Credit value is equal to 2000 cm3, the standard printing volume of a single sheet of any material."
+	cost = 5 // Cost per MINERAL_MATERIAL_AMOUNT, which is 2000cm3 as of April 2016.
+	desc = "Credit value is equal to 2000 cm3 of material. The standard sheet printing volume."
 
 	elasticity_coeff = 0.0002
 	recovery_ds = 0.02 MINUTES
@@ -30,43 +30,42 @@
 
 	return round(amount/MINERAL_MATERIAL_AMOUNT)
 
-// - Material exports.
-// Prices have been heavily nerfed from the original values; mining is boring, so it shouldn't be a good way to make money.
+// Materials. Prices have been heavily nerfed from the original values; mining is boring, so it shouldn't be a good way to make money.
 
 /datum/export/material/diamond
 	cost = 125
-	unit_name = "sheet of diamond"
+	unit_name = "cm3 of diamond"
 	material_id = /datum/material/diamond
 
 /datum/export/material/plasma
 	cost = 25
-	unit_name = "sheet of plasma"
+	unit_name = "cm3 of plasma"
 	material_id = /datum/material/plasma
 
 /datum/export/material/uranium
 	cost = 25
-	unit_name = "sheet of uranium"
+	unit_name = "cm3 of uranium"
 	material_id = /datum/material/uranium
 
 /datum/export/material/gold
 	cost = 30
-	unit_name = "sheet of gold"
+	unit_name = "cm3 of gold"
 	material_id = /datum/material/gold
 
 /datum/export/material/silver
-	cost = 20
-	unit_name = "sheet of silver"
+	cost = 10
+	unit_name = "cm3 of silver"
 	material_id = /datum/material/silver
 
 /datum/export/material/titanium
-	cost = 20
-	unit_name = "sheet of titanium"
+	cost = 30
+	unit_name = "cm3 of titanium"
 	material_id = /datum/material/titanium
 
 /*
 /datum/export/material/hellstone
 	cost = 125
-	unit_name = "sheet of hellstone"
+	unit_name = "cm3 of hellstone"
 	material_id = /datum/material/hellstone
 */
 
@@ -76,12 +75,12 @@
 	material_id = /datum/material/bluespace
 
 /datum/export/material/plastic
-	unit_name = "sheet of plastic"
+	unit_name = "cm3 of plastic"
 	cost = 2
 	material_id = /datum/material/plastic
 
 /datum/export/material/metal
-	unit_name = "sheet of metal"
+	unit_name = "cm3 of metal"
 	cost = 2
 	material_id = /datum/material/iron
 	export_types = list(
@@ -92,13 +91,8 @@
 		/obj/item/coin
 	)
 
-/datum/export/material/copper
-	unit_name = "sheet of copper"
-	cost = 1.25
-	material_id = /datum/material/copper
-
 /datum/export/material/glass
-	unit_name = "sheet of glass"
+	unit_name = "cm3 of glass"
 	cost = 1
 	material_id = /datum/material/glass
 	export_types = list(
@@ -106,28 +100,3 @@
 		/obj/item/stack/ore,
 		/obj/item/shard
 	)
-
-/datum/export/material/quartz
-	unit_name = "sheet of quartz"
-	cost = 0.25
-	material_id = /datum/material/quartz
-
-/datum/export/material/carbon
-	unit_name = "sheet of carbon"
-	cost = 0.5
-	material_id = /datum/material/carbon
-
-/datum/export/material/silicon
-	cost = 5
-	unit_name = "sheet of silicon"
-	material_id = /datum/material/silicon
-
-/datum/export/material/sulfur
-	cost = 15
-	unit_name = "sheet of sulfur"
-	material_id = /datum/material/sulfur
-
-/datum/export/material/lead
-	cost = 5
-	unit_name = "sheet of lead"
-	material_id = /datum/material/lead

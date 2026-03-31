@@ -158,10 +158,10 @@
 	src.key_len = key_len
 
 /// Load the parsed map into the world. See [/proc/load_map] for arguments.
-/datum/parsed_map/proc/load(x_offset, y_offset, z_offset, cropMap, no_changeturf, x_lower, x_upper, y_lower, y_upper, placeOnTop, whitelist = FALSE, timeout)
+/datum/parsed_map/proc/load(x_offset, y_offset, z_offset, cropMap, no_changeturf, x_lower, x_upper, y_lower, y_upper, placeOnTop, whitelist = FALSE)
 	//How I wish for RAII
 	Master.StartLoadingMap()
-	. = _load_impl(x_offset, y_offset, z_offset, cropMap, no_changeturf, x_lower, x_upper, y_lower, y_upper, placeOnTop, timeout)
+	. = _load_impl(x_offset, y_offset, z_offset, cropMap, no_changeturf, x_lower, x_upper, y_lower, y_upper, placeOnTop)
 	Master.StopLoadingMap()
 
 
@@ -172,17 +172,13 @@
 		SSatoms.map_loader_begin(); \
 	}
 // Do not call except via load() above.
-/datum/parsed_map/proc/_load_impl(x_offset = 1, y_offset = 1, z_offset = world.maxz + 1, cropMap = FALSE, no_changeturf = FALSE, x_lower = -INFINITY, x_upper = INFINITY, y_lower = -INFINITY, y_upper = INFINITY, placeOnTop = FALSE, timeout = null)
+/datum/parsed_map/proc/_load_impl(x_offset = 1, y_offset = 1, z_offset = world.maxz + 1, cropMap = FALSE, no_changeturf = FALSE, x_lower = -INFINITY, x_upper = INFINITY, y_lower = -INFINITY, y_upper = INFINITY, placeOnTop = FALSE)
 	PRIVATE_PROC(TRUE)
 	var/list/modelCache = build_cache(no_changeturf)
 	var/space_key = modelCache[SPACE_KEY]
 	var/list/bounds
 	var/key_len = src.key_len
 	src.bounds = bounds = list(1.#INF, 1.#INF, 1.#INF, -1.#INF, -1.#INF, -1.#INF)
-	/// The world.time when we abort loading. Useful for maps that might cause lag when loading, so if they take too long due to lag they cancel.
-	var/timeout_time
-	if(timeout)
-		timeout_time = world.time + timeout
 
 	// Tell ss atoms that we're doing maploading
 	// We'll have to account for this in the following tick_checks so it doesn't overflow
@@ -345,12 +341,6 @@
 		bounds[MAP_MAXX] = max(bounds[MAP_MAXX], last_x)
 		bounds[MAP_MAXY] = max(bounds[MAP_MAXY], first_y)
 		bounds[MAP_MAXZ] = max(bounds[MAP_MAXZ], zcrd)
-
-		if(timeout_time)
-			if(timeout_time < world.time)
-				break //we overstayed our welcome
-
-
 
 	// And we are done lads, call it off
 	SSatoms.map_loader_stop()

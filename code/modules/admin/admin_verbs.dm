@@ -133,9 +133,6 @@ GLOBAL_LIST_INIT(admin_verbs_spawn, list(
 	/datum/admins/proc/beaker_panel,
 	/datum/admins/proc/gift,
 	/client/proc/spawn_ruin,
-	/client/proc/spawn_outpost, /* Allows admins to spawn a new outpost. */
-	/client/proc/spawn_overmap,
-	/client/proc/spawn_jump_point,
 	/client/proc/enable_royale_mode,
 	))
 GLOBAL_PROTECT(admin_verbs_spawn)

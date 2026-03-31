@@ -2,7 +2,6 @@
 
 /turf/open/floor/plating/asteroid/wasteplanet
 	name = "dry rock"
-	icon = 'icons/turf/planetary/wasteplanet.dmi'
 	icon_state = "wasteplanet0"
 	base_icon_state = "wasteplanet"
 	turf_type = /turf/open/floor/plating/asteroid/wasteplanet
