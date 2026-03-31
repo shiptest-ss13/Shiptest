@@ -1,9 +1,10 @@
 /obj/mecha/combat/durand
-	desc = "An aging and extremely well-armored combat exosuit utilized by the Nanotrasen corporation. Originally developed to combat hostile alien lifeforms."
+	desc = "An aging and extremely well-armored combat exosuit utilized by the Makosso-Warra corporation. Originally developed to combat hostile alien lifeforms."
 	name = "\improper Durand"
 	icon_state = "durand"
 	step_in = 4
-	dir_in = 1 //Facing North.
+	dir = NORTH
+	dir_in = NORTH
 	max_integrity = 300
 	deflect_chance = 15
 	repair_multiplier = 0.5
@@ -17,7 +18,7 @@
 	var/shield_passive_drain = 300
 
 /obj/mecha/combat/durand/clip
-	desc = "An aging combat exosuit specially modified for the CMM-BARD anti-xenofauna division. Features improved close-combat armor and a modified defence grid able to electrocute melee attackers, at the cost of its ability to block projectiles."
+	desc = "An aging combat exosuit specially modified for CLIP-BARD's anti-xenofauna division. Features improved close-combat armor and a modified defence grid able to electrocute melee attackers, at the cost of its ability to block projectiles."
 	name = "\improper Paladin"
 	icon_state = "clipdurand"
 	armor = list("melee" = 75, "bullet" = 50, "laser" = 50, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
@@ -156,7 +157,7 @@ own integrity back to max. Shield is automatically dropped if we run out of powe
 	invisibility = INVISIBILITY_MAXIMUM //no showing on right-click
 	pixel_y = 4
 	max_integrity = 10000
-	obj_integrity = 10000
+	atom_integrity = 10000
 	anchored = TRUE
 	light_system = MOVABLE_LIGHT
 	light_range = MINIMUM_USEFUL_LIGHT_RANGE
@@ -200,13 +201,13 @@ the shield is disabled by means other than the action button (like running out o
 	if(switching && !signal_args[1])
 		return
 	if(!chassis.defense_mode && (!chassis.cell || chassis.cell.charge < 100)) //If it's off, and we have less than 100 units of power
-		chassis.occupant_message("<span class='warn'>Insufficient power; cannot activate defense mode.</span>")
+		chassis.occupant_message(span_warning("Insufficient power; cannot activate defense mode."))
 		return
 	switching = TRUE
 	chassis.defense_mode = !chassis.defense_mode
 	chassis.defense_action.button_icon_state = "mech_defense_mode_[chassis.defense_mode ? "on" : "off"]" //This is backwards because we haven't changed the var yet
 	if(!signal_args[1])
-		chassis.occupant_message("<span class='notice'>Defense mode [chassis.defense_mode?"enabled":"disabled"].</span>")
+		chassis.occupant_message(span_notice("Defense mode [chassis.defense_mode?"enabled":"disabled"]."))
 		chassis.log_message("User has toggled defense mode -- now [chassis.defense_mode?"enabled":"disabled"].", LOG_MECHA)
 	else
 		chassis.log_message("defense mode state changed -- now [chassis.defense_mode?"enabled":"disabled"].", LOG_MECHA)
@@ -232,7 +233,7 @@ the shield is disabled by means other than the action button (like running out o
 	icon_state = "shield_null"
 	invisibility = INVISIBILITY_MAXIMUM //no showing on right-click
 
-/obj/durand_shield/take_damage()
+/obj/durand_shield/take_damage(damage_amount, damage_type = BRUTE, damage_flag = "", sound_effect = TRUE, attack_dir, armour_penetration = 0)
 	if(!chassis)
 		qdel(src)
 		return
@@ -240,10 +241,10 @@ the shield is disabled by means other than the action button (like running out o
 		return
 	. = ..()
 	flick("shield_impact", src)
-	if(!chassis.use_power(max(1, (max_integrity - obj_integrity + 15) * (10 - chassis.capacitor.rating))))
+	if(!chassis.use_power(max(1, (max_integrity - atom_integrity + 15) * (10 - chassis.capacitor.rating))))
 		chassis.cell?.charge = 0
 		chassis.defense_action.Activate(forced_state = TRUE)
-	obj_integrity = 10000
+	atom_integrity = 10000
 
 /obj/durand_shield/play_attack_sound()
 	playsound(src, 'sound/mecha/mech_shield_deflect.ogg', 100, TRUE)

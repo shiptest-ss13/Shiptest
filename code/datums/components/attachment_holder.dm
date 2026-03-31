@@ -24,18 +24,20 @@
 	src.valid_types = typecacheof(valid_types)
 	src.slot_offsets = slot_offsets
 
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(handle_attack))
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(handle_examine))
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE_MORE, PROC_REF(handle_examine_more))
-	RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(handle_qdel))
-	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(handle_item_pre_attack))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACKBY, PROC_REF(handle_attack))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACKBY_SECONDARY, PROC_REF(handle_secondary_attack))
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(handle_examine))
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINE_MORE, PROC_REF(handle_examine_more))
+	RegisterSignal(parent, COMSIG_QDELETING, PROC_REF(handle_qdel))
+	RegisterSignal(parent, COMSIG_GUN_TRY_FIRE, PROC_REF(handle_gun_try_fire))
+	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK_SECONDARY, PROC_REF(handle_item_pre_attack))
 	RegisterSignal(parent, COMSIG_TWOHANDED_WIELD, PROC_REF(handle_item_wield))
 	RegisterSignal(parent, COMSIG_TWOHANDED_UNWIELD, PROC_REF(handle_item_unwield))
-	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, PROC_REF(handle_hand_attack))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND_SECONDARY, PROC_REF(handle_hand_attack))
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, PROC_REF(handle_ctrl_shift_click))
 	RegisterSignal(parent, COMSIG_CLICK_CTRL, PROC_REF(handle_ctrl_click))
 	RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(handle_alt_click))
-	RegisterSignal(parent, COMSIG_CLICK_UNIQUE_ACTION, PROC_REF(handle_unique_action))
+	RegisterSignal(parent, COMSIG_CLICK_SECONDARY_ACTION, PROC_REF(handle_secondary_action))
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(handle_overlays))
 
 	if(length(default_attachments))
@@ -85,13 +87,8 @@
 /datum/component/attachment_holder/proc/handle_alt_click(obj/item/parent, mob/user)
 	SIGNAL_HANDLER
 
-	if(user.a_intent == INTENT_HARM)
-		INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, user)
-		return TRUE
-	else
-		for(var/obj/item/attach as anything in attachments)
-			if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_ALT_CLICK, parent, user))
-				return TRUE
+	INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, user)
+	return TRUE
 
 /datum/component/attachment_holder/proc/handle_ctrl_click(obj/item/parent, mob/user)
 	SIGNAL_HANDLER
@@ -149,10 +146,10 @@
 /datum/component/attachment_holder/proc/do_detach(obj/item/attachment, mob/user)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
 	slot = attachment_slot_from_bflag(slot)
-	if(slot in slot_room)
-		slot_room[slot]++
 	. = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_DETACH, parent, user)
 	if(.)
+		if(slot in slot_room)
+			slot_room[slot]++
 		attachments -= attachment
 		var/atom/parent = src.parent
 		parent.update_icon()
@@ -196,10 +193,20 @@
 		INVOKE_ASYNC(src, PROC_REF(do_attach), item, user)
 		return TRUE
 
+/datum/component/attachment_holder/proc/handle_secondary_attack(obj/item/parent, obj/item/item, mob/user)
+	SIGNAL_HANDLER
+
 	for(var/obj/item/attach as anything in attachments)
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_ATTACK, parent, item, user))
 			parent.update_icon()
 			return TRUE
+
+/datum/component/attachment_holder/proc/handle_gun_try_fire(obj/item/gun/parent_gun, mob/user, atom/target, flag, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_TRY_FIRE_GUN, parent_gun, user, target, flag, params))
+			return COMPONENT_CANCEL_GUN_FIRE
 
 /datum/component/attachment_holder/proc/handle_item_pre_attack(obj/item/parent, atom/target_atom, mob/user, params)
 	SIGNAL_HANDLER
@@ -234,4 +241,11 @@
 
 	for(var/obj/item/attach as anything in attachments)
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UNIQUE_ACTION, parent, user, params))
+			return TRUE
+
+/datum/component/attachment_holder/proc/handle_secondary_action(obj/item/parent, mob/user, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_SECONDARY_ACTION, parent, user, params))
 			return TRUE

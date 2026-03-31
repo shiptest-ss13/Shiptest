@@ -78,7 +78,7 @@
 	if(istype(M))
 		if(method != INGEST && method != INJECT)
 			M.adjust_fire_stacks(min(reac_volume/5, 10))
-			M.IgniteMob()
+			M.ignite_mob()
 			if(!locate(/obj/effect/hotspot) in M.loc)
 				new /obj/effect/hotspot(M.loc)
 
@@ -155,6 +155,14 @@
 	color = "#C8C8C8"
 	taste_description = "smoke"
 
+/datum/reagent/dense_smoke_powder
+	name = "Dense Smoke Powder"
+	description = "Makes a large cloud of thick smoke that can carry reagents."
+	category = "Pyrotechnics"
+	reagent_state = LIQUID
+	color = "#C8C8C8"
+	taste_description = "smoke"
+
 /datum/reagent/sonic_powder
 	name = "Sonic Powder"
 	description = "Makes a deafening noise."
@@ -178,7 +186,7 @@
 	M.adjust_fire_stacks(1)
 	var/burndmg = max(0.3*M.fire_stacks, 0.3)
 	M.adjustFireLoss(burndmg, 0)
-	M.IgniteMob()
+	M.ignite_mob()
 	..()
 
 /datum/reagent/phlogiston/on_mob_life(mob/living/carbon/M)
@@ -249,8 +257,8 @@
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 
 /datum/reagent/pyrosium/on_mob_life(mob/living/carbon/M)
-	if(M.reagents.has_reagent(/datum/reagent/oxygen))
-		M.reagents.remove_reagent(/datum/reagent/oxygen, 0.5)
+	if(holder.has_reagent(/datum/reagent/oxygen))
+		holder.remove_reagent(/datum/reagent/oxygen, 0.5)
 		M.adjust_bodytemperature(5)
 	..()
 
@@ -303,7 +311,7 @@
 
 /datum/reagent/firefighting_foam
 	name = "Firefighting Foam"
-	description = "A historical fire suppressant. Originally believed to simply displace oxygen to starve fires, it actually interferes with the combustion reaction itself. Vastly superior to the cheap water-based extinguishers found on NT vessels."
+	description = "A historical fire suppressant. Originally believed to simply displace oxygen to starve fires, it actually interferes with the combustion reaction itself. Vastly superior to the cheap water-based extinguishers found on Makosso-Warra vessels."
 	category = "Pyrotechnics"
 	reagent_state = LIQUID
 	color = "#A6FAFF55"
@@ -320,20 +328,13 @@
 		else if(istype(F))
 			F.lifetime = initial(F.lifetime) //reduce object churn a little bit when using smoke by keeping existing foam alive a bit longer
 
-	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)
-	if(hotspot && !isspaceturf(T))
-		if(T.air)
-			var/datum/gas_mixture/G = T.air
-			if(G.return_temperature() > T20C)
-				G.set_temperature(max(G.return_temperature()/2,T20C))
-			G.react(src)
-			qdel(hotspot)
+	T.extinguish_turf()
 
 /datum/reagent/firefighting_foam/expose_obj(obj/O, reac_volume)
 	O.extinguish()
 
 /datum/reagent/firefighting_foam/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method in list(VAPOR, TOUCH, SMOKE))
+	if(method in list(VAPOR, TOUCH))
 		M.adjust_fire_stacks(-reac_volume)
-		M.ExtinguishMob()
+		M.extinguish_mob()
 	..()

@@ -82,7 +82,7 @@ slowing hazards! either requires laying down, has a chance to stick, or requires
 /obj/structure/hazard/slowdown/proc/sticky_checks(atom/movable/mover)
 	if(isliving(mover))
 		if(prob(stick_chance))
-			to_chat(mover, "<span class='danger'>You get stuck in \the [src] for a moment.</span>")
+			to_chat(mover, span_danger("You get stuck in \the [src] for a moment."))
 			return FALSE
 		return TRUE
 	else if(istype(mover, /obj/projectile))

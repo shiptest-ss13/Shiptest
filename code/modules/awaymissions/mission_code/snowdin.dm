@@ -20,10 +20,10 @@
 /turf/open/lava/plasma/attackby(obj/item/I, mob/user, params)
 	var/obj/item/reagent_containers/glass/C = I
 	if(C.reagents.total_volume >= C.volume)
-		to_chat(user, "<span class='danger'>[C] is full.</span>")
+		to_chat(user, span_danger("[C] is full."))
 		return
 	C.reagents.add_reagent(/datum/reagent/toxin/plasma, rand(5, 10))
-	user.visible_message("<span class='notice'>[user] scoops some plasma from the [src] with \the [C].</span>", "<span class='notice'>You scoop out some plasma from the [src] using \the [C].</span>")
+	user.visible_message(span_notice("[user] scoops some plasma from the [src] with \the [C]."), span_notice("You scoop out some plasma from the [src] using \the [C]."))
 	return TRUE
 
 /turf/open/lava/plasma/burn_stuff(AM)
@@ -74,12 +74,15 @@
 					if(istype(S, /datum/species/plasmaman) || istype(S, /datum/species/android)) //ignore plasmamen/robotic species
 						continue
 
-					for(var/BP in PP.bodyparts)
-						var/obj/item/bodypart/NN = BP
-						if(IS_ORGANIC_LIMB(NN) && NN.limb_id != "plasmaman") //getting every organic, non-plasmaman limb (augments/androids are immune to this)
-							plasma_parts += NN
-						if(!IS_ORGANIC_LIMB(NN))
-							robo_parts += NN
+					var/obj/item/bodypart/limb
+					for(var/zone in PP.bodyparts)
+						limb = PP.bodyparts[zone]
+						if(!limb)
+							continue
+						if(IS_ORGANIC_LIMB(limb) && limb.limb_id != "plasmaman") //getting every organic, non-plasmaman limb (augments/androids are immune to this)
+							plasma_parts += limb
+						if(!IS_ORGANIC_LIMB(limb))
+							robo_parts += limb
 
 					if(prob(35)) //checking if the delay is over & if the victim actually has any parts to nom
 						PP.adjustToxLoss(15)
@@ -93,18 +96,18 @@
 							PP.force_scream()
 							if(!HAS_TRAIT(PP, TRAIT_ANALGESIA))
 								PP.visible_message(
-									"<span class='warning'>[L] screams in pain as [L.p_their()] [NB] melts down to the bone!</span>",
-									"<span class='userdanger'>You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!</span>")
+									span_warning("[L] screams in pain as [L.p_their()] [NB] melts down to the bone!"),
+									span_userdanger("You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!"))
 							else
 								PP.visible_message(
-									"<span class='warning'>[L] lets out panicked gasps as [L.p_their()] [NB] melts down to the bone!</span>",
-									"<span class='userdanger'>You gasp in shock as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!</span>")
+									span_warning("[L] lets out panicked gasps as [L.p_their()] [NB] melts down to the bone!"),
+									span_userdanger("You gasp in shock as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!"))
 						if(!plasma_parts.len && !robo_parts.len) //a person with no potential organic limbs left AND no robotic limbs, time to turn them into a plasmaman
-							PP.IgniteMob()
+							PP.ignite_mob()
 							PP.set_species(/datum/species/plasmaman)
 							PP.visible_message(
-								"<span class='warning'>[L] bursts into a brilliant purple flame as [L.p_their()] entire body is that of a skeleton!</span>",
-								"<span class='userdanger'>Your senses numb as all of your remaining flesh is turned into a purple slurry, sloshing off your body and leaving only your bones to show in a vibrant purple!</span>")
+								span_warning("[L] bursts into a brilliant purple flame as [L.p_their()] entire body is that of a skeleton!"),
+								span_userdanger("Your senses numb as all of your remaining flesh is turned into a purple slurry, sloshing off your body and leaving only your bones to show in a vibrant purple!"))
 
 
 /obj/vehicle/ridden/lavaboat/plasma
@@ -124,7 +127,7 @@
 
 /obj/item/paper/crumpled/ruins/snowdin/misc1
 	name = "Mission Prologue"
-	default_raw_text = {"Holy shit, what a rush! Those Nanotrasen bastards didn't even know what hit 'em! All five of us dropped in right on the captain, didn't even have time to yell! We were in and out with that disk in mere minutes!
+	default_raw_text = {"Holy shit, what a rush! Those Makosso-Warra bastards didn't even know what hit 'em! All five of us dropped in right on the captain, didn't even have time to yell! We were in and out with that disk in mere minutes!
 	Crew didn't even know what was happening till the delta alert went down and by then we were already gone. We got a case to drink on the way home to celebrate, fuckin' job well done!"}
 
 /obj/item/paper/crumpled/ruins/snowdin/dontdeadopeninside
@@ -155,11 +158,11 @@
 	DELAY 45
 	NAME Elizabeth Queef
 	DELAY 10
-	SAY Nah. I've been feeding the AI the results for the past 2 weeks to sift through the garbage and haven't seen anything out of the usual, at least whatever Nanotrasen is looking for.
+	SAY Nah. I've been feeding the AI the results for the past 2 weeks to sift through the garbage and haven't seen anything out of the usual, at least whatever Makosso-Warra is looking for.
 	DELAY 45
 	NAME Jacob Ullman
 	DELAY 10
-	SAY Figured as much. Dunno what Nanotrasen expects to find out here past the plasma. At least we're getting paid to fuck around for a couple months while the AI does the hard work.
+	SAY Figured as much. Dunno what Makosso-Warra expects to find out here past the plasma. At least we're getting paid to fuck around for a couple months while the AI does the hard work.
 	DELAY 45
 	NAME Elizabeth Queef
 	DELAY 10
@@ -174,7 +177,7 @@
 	PRESET /datum/preset_holoimage/captain
 	NAME Caleb Reed
 	DELAY 10
-	SAY Paid in experience! That's the Nanotrasen Motto!
+	SAY Paid in experience! That's the Makosso-Warra Motto!
 	DELAY 30;"}
 
 /obj/item/disk/holodisk/snowdin/welcometodie
@@ -187,14 +190,14 @@
 	DELAY 30
 	SAY You have been selected out of $)@! potential candidates for this post!
 	DELAY 30
-	SAY Nanotrasen is pleased to have you working in one of the many top-of-the-line research posts within the $%@!! sector!
+	SAY Makosso-Warra is pleased to have you working in one of the many top-of-the-line research posts within the $%@!! sector!
 	DELAY 30
 	SAY Further job assignment information can be found at your local security post! Have a secure day!
 	DELAY 20;"}
 
 /obj/item/disk/holodisk/snowdin/overrun
 	name = "Conversation #AOP#55"
-	preset_image_type = /datum/preset_holoimage/nanotrasenprivatesecurity
+	preset_image_type = /datum/preset_holoimage/warraprivatesecurity
 	preset_record_text = {"
 	NAME James Reed
 	DELAY 10
@@ -205,7 +208,7 @@
 	DELAY 10
 	SAY Hell if I know! Just shoot it already!
 	DELAY 30
-	PRESET /datum/preset_holoimage/nanotrasenprivatesecurity
+	PRESET /datum/preset_holoimage/warraprivatesecurity
 	NAME James Reed
 	DELAY 10
 	SOUND sound/weapons/laser.ogg
@@ -304,7 +307,7 @@
 	faction = ROLE_SYNDICATE
 	outfit = /datum/outfit/snowsyndie
 	short_desc = "You are a syndicate operative recently awoken from cryostasis in an underground outpost."
-	flavour_text = "You are a syndicate operative recently awoken from cryostasis in an underground outpost. Monitor Nanotrasen communications and record information. All intruders should be \
+	flavour_text = "You are a syndicate operative recently awoken from cryostasis in an underground outpost. Monitor Makosso-Warra communications and record information. All intruders should be \
 	disposed of swiftly to assure no gathered information is stolen or lost. Try not to wander too far from the outpost as the caves can be a deadly place even for a trained operative such as yourself."
 
 /datum/outfit/snowsyndie
@@ -328,19 +331,23 @@
 
 /obj/structure/flora/rock/icy
 	name = "icy rock"
-	icon_state = "icemoonrock1"
+	icon_state = "snowrock_1"
+	density = FALSE
 
 /obj/structure/flora/rock/icy/Initialize()
 	. = ..()
-	icon_state = "icemoonrock[rand(1,3)]"
+	icon_state = "snowrock_[rand(1,4)]"
+
+	if(icon_state == "snowrock_1")
+		density = TRUE
 
 /obj/structure/flora/rock/pile/icy
-	name = "icey rocks"
-	icon_state = "icemoonrock4"
+	name = "icy rocks"
+	icon_state = "snowrock_4"
 
 /obj/structure/flora/rock/pile/icy/Initialize()
 	. = ..()
-	icon_state = "icemoonrock4"
+	icon_state = "snowrock_4"
 
 //decals//--
 /obj/effect/turf_decal/snowdin_station_sign

@@ -3,10 +3,10 @@
 	desc = "Irradiated dust falls down everywhere."
 
 	telegraph_duration = 20 SECONDS
-	telegraph_message = "<span class='boldwarning'>The air suddenly becomes dusty..</span>"
+	telegraph_message = span_boldwarning("The air suddenly becomes dusty..")
 	telegraph_overlay = "fallout"
 
-	weather_message = "<span class='userdanger'><i>You feel a wave of hot ash fall down on you.</i></span>"
+	weather_message = span_userdanger("<i>You feel a wave of hot ash fall down on you.</i>")
 	weather_overlay = "snowfall_heavy"
 	weather_duration_lower = 600
 	weather_duration_upper = 1500
@@ -19,20 +19,20 @@
 	weather_sound = 'sound/weather/fallout/falloutwind.ogg'
 	end_duration = 100
 
-	end_message = "<span class='notice'>The ash stops falling.</span>"
+	end_message = span_notice("The ash stops falling.")
 	immunity_type = "rad"
 
 /datum/weather/nuclear_fallout/weather_act(mob/living/akimov)
 	akimov.rad_act(100)
-	to_chat(akimov, "<span class='notice'>You taste metal.</span>")
+	to_chat(akimov, span_notice("You taste metal."))
 
 /datum/weather/nuclear_fallout/normal
 	name = "dust storm"
 	desc = "The extreme dust creates a harsh wind, harmless."
 
-	weather_message = "<span class='notice'>You feel a wave of dusty air blow through you.</span>"
+	weather_message = span_notice("You feel a wave of dusty air blow through you.")
 	weather_overlay = "dust"
 
-	end_message = "<span class='notice'>The dust stops blowing.</span>"
+	end_message = span_notice("The dust stops blowing.")
 
 	aesthetic = TRUE

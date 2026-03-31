@@ -18,7 +18,7 @@
 	kitty_ears.Insert(src, special = TRUE, drop_if_replaced = FALSE) //Gives nonhumans cat tail and ears
 	kitty_tail.Insert(src, special = TRUE, drop_if_replaced = FALSE)
 	if(!silent)
-		to_chat(src, "<span class='boldnotice'>Something is nya~t right.</span>")
+		to_chat(src, span_boldnotice("Something is nya~t right."))
 		SEND_SOUND(src, 'sound/effects/meow1.ogg')
 
 /mob/living/carbon/human/proc/purrbation_remove(silent = FALSE)
@@ -37,4 +37,4 @@
 		var/obj/item/organ/new_ears = new dna.species.mutantears
 		new_ears.Insert(src, TRUE, FALSE)
 	if(!silent)
-		to_chat(src, "<span class='boldnotice'>You are no longer a cat.</span>")
+		to_chat(src, span_boldnotice("You are no longer a cat."))

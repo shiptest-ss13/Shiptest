@@ -30,5 +30,5 @@
 	name = "Vickland battle rifle internal magazine"
 	ammo_type = /obj/item/ammo_casing/a8_50r
 	caliber = "8x50mmR"
-	max_ammo = 8
+	max_ammo = 10
 	instant_load = TRUE

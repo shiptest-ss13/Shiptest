@@ -264,12 +264,12 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		if(flags & FALL_STOP_INTERCEPTING)
 			break
 	if(prev_turf && !(flags & FALL_NO_MESSAGE))
-		prev_turf.visible_message("<span class='danger'>[mov_name] falls through [prev_turf]!</span>")
+		prev_turf.visible_message(span_danger("[mov_name] falls through [prev_turf]!"))
 	if(flags & FALL_INTERCEPTED)
 		return
 	if(zFall(A, ++levels))
 		return FALSE
-	A.visible_message("<span class='danger'>[A] crashes into [src]!</span>")
+	A.visible_message(span_danger("[A] crashes into [src]!"))
 	A.onZImpact(src, levels)
 	return TRUE
 
@@ -372,15 +372,15 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		return (mover.movement_type & PHASING) || (mover.pass_flags & pass_flags_self) // If they can phase through us, let them in. If not, don't.
 	return TRUE
 
-/turf/open/Entered(atom/movable/AM)
-	. =..()
+/turf/open/Entered(atom/movable/arrived)
+	. = ..()
 	//melting
-	if(isobj(AM) && air?.return_temperature() > T0C)
-		var/obj/O = AM
+	if(isobj(arrived) && air?.return_temperature() > T0C)
+		var/obj/O = arrived
 		if(O.obj_flags & FROZEN)
 			O.make_unfrozen()
-	if(!AM.zfalling)
-		zFall(AM)
+	if(!arrived.zfalling)
+		zFall(arrived)
 
 // Initializes the baseturfs list, given an optional "fake_baseturf_type".
 // If "fake_baseturf_type" is a list, then this turf's baseturfs are set to that list.
@@ -457,7 +457,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	if(.)
 		return
 	if(length(src_object.contents()))
-		to_chat(usr, "<span class='notice'>You start dumping out the contents...</span>")
+		to_chat(usr, span_notice("You start dumping out the contents..."))
 		if(!do_after(usr, 20, target=src_object.parent))
 			return FALSE
 
@@ -620,15 +620,22 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 			clear_reagents_to_vomit_pool(C,V, purge)
 
 /proc/clear_reagents_to_vomit_pool(mob/living/carbon/M, obj/effect/decal/cleanable/vomit/V, purge = FALSE)
-	var/chemicals_lost = M.reagents.total_volume / 10
+	var/obj/item/organ/stomach/belly = M.getorganslot(ORGAN_SLOT_STOMACH)
+	if(!belly)
+		return
+	var/chemicals_lost = belly.reagents.total_volume * 0.1
 	if(purge)
-		chemicals_lost = (2 * M.reagents.total_volume)/3				//For detoxification surgery, we're manually pumping the stomach out of chemcials, so it's far more efficient.
-	M.reagents.trans_to(V, chemicals_lost, transfered_by = M)
-	for(var/datum/reagent/R as anything in M.reagents.reagent_list)                //clears the stomach of anything that might be digested as food
-		if(istype(R, /datum/reagent/consumable) || purge)
-			var/datum/reagent/consumable/nutri_check = R
-			if(nutri_check.nutriment_factor >0)
-				M.reagents.remove_reagent(R.type, min(R.volume, 10))
+		chemicals_lost = belly.reagents.total_volume * 0.67 //For detoxification surgery, we're manually pumping the stomach out of chemcials, so it's far more efficient.
+	belly.reagents.trans_to(V, chemicals_lost, transfered_by = M)
+	//clear the stomach of anything even not food
+	for(var/bile in belly.reagents.reagent_list)
+		var/datum/reagent/reagent = bile
+		if(!belly.food_reagents[reagent.type])
+			belly.reagents.remove_reagent(reagent.type, min(reagent.volume, 10))
+		else
+			var/bit_vol = reagent.volume - belly.food_reagents[reagent.type]
+			if(bit_vol > 0)
+				belly.reagents.remove_reagent(reagent.type, min(bit_vol, 10))
 
 //Whatever happens after high temperature fire dies out or thermite reaction works.
 //Should return new turf
@@ -657,7 +664,10 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 			continue
 		content.wash(clean_types)
 
-/turf/proc/IgniteTurf(power, fire_color = "red")
+/turf/proc/ignite_turf(power, fire_color = "red")
+	return SEND_SIGNAL(src, COMSIG_TURF_IGNITED, power, fire_color)
+
+/turf/proc/extinguish_turf()
 	return
 
 /turf/proc/on_turf_saved()
@@ -678,11 +688,11 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
  * Returns adjacent turfs to this turf that are reachable, in all cardinal directions
  *
  * Arguments:
- * * caller: The movable, if one exists, being used for mobility checks to see what tiles it can reach
+ * * requester: The movable, if one exists, being used for mobility checks to see what tiles it can reach
  * * ID: An ID card that decides if we can gain access to doors that would otherwise block a turf
  * * simulated_only: Do we only worry about turfs with simulated atmos, most notably things that aren't space?
 */
-/turf/proc/reachableAdjacentTurfs(caller, ID, simulated_only)
+/turf/proc/reachableAdjacentTurfs(requester, ID, simulated_only)
 	var/static/space_type_cache = typecacheof(/turf/open/space)
 	. = list()
 
@@ -690,6 +700,6 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		var/turf/turf_to_check = get_step(src,iter_dir)
 		if(!turf_to_check || (simulated_only && space_type_cache[turf_to_check.type]))
 			continue
-		if(turf_to_check.density || LinkBlockedWithAccess(turf_to_check, caller, ID))
+		if(turf_to_check.density || LinkBlockedWithAccess(turf_to_check, requester, ID))
 			continue
 		. += turf_to_check

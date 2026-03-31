@@ -2,8 +2,8 @@
 	name = "Vegetarian"
 	desc = "You find the idea of eating meat morally and physically repulsive."
 	value = 0
-	gain_text = "<span class='notice'>You feel repulsion at the idea of eating meat.</span>"
-	lose_text = "<span class='notice'>You feel like eating meat isn't that bad.</span>"
+	gain_text = span_notice("You feel repulsion at the idea of eating meat.")
+	lose_text = span_notice("You feel like eating meat isn't that bad.")
 	medical_record_text = "Patient reports a vegetarian diet."
 
 /datum/quirk/vegetarian/add()

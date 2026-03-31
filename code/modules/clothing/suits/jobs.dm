@@ -92,27 +92,37 @@
 	resistance_flags = NONE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
-/obj/item/clothing/suit/hazardvest/solgov
-	name = "SolGov hazard vest"
-	desc = "A high-visibility vest used in work zones by solarian engineers."
-	icon_state = "hazard_solgov"
-	item_state = "hazard_solgov"
-	blood_overlay_type = "armor"
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
-	resistance_flags = NONE
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
 
 /obj/item/clothing/suit/toggle/hazard
 	name = "high-visibility jacket"
-	desc = "A highlighter-yellow jacket with reflective stripes."
+	desc = "A bright-yellow jacket with reflective stripes."
 	icon_state = "jacket_hazard"
 	item_state = "jacket_hazard"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	togglename = "zipper"
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
 	resistance_flags = NONE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
+/obj/item/clothing/suit/toggle/hazard/orange
+	name = "high-visibility jacket"
+	desc = "An orange jacket with reflective stripes."
+	icon_state = "jacket_hazardo"
+	item_state = "jacket_hazardo"
+
+/obj/item/clothing/suit/toggle/hazard/lime
+	name = "high-visibility jacket"
+	desc = "A highlighter-yellow jacket with reflective stripes."
+	icon_state = "jacket_hazardl"
+	item_state = "jacket_hazardl"
 
 /obj/item/clothing/suit/toggle/industrial
 	name = "industrial jacket"
@@ -146,25 +156,29 @@
 	icon_state = "suitjacket_purp"
 	item_state = "suitjacket_purp"
 
-/obj/item/clothing/suit/toggle/lawyer/black
+/obj/item/clothing/suit/lawyer
 	name = "black suit jacket"
 	desc = "A professional suit jacket."
+	icon = 'icons/obj/clothing/suits/toggle.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
 	icon_state = "suitjacket_black"
 	item_state = "ro_suit"
+	blood_overlay_type = "coat"
+	body_parts_covered = CHEST|ARMS
 
-/obj/item/clothing/suit/toggle/lawyer/burgundy
+/obj/item/clothing/suit/lawyer/burgundy
 	name = "burgundy suit jacket"
 	desc = "A burgundy suit jacket. Makes you want to psychoanalyze."
 	icon_state = "suitjacket_burgundy"
 	item_state = "suitjacket_burgundy"
 
-/obj/item/clothing/suit/toggle/lawyer/navy
+/obj/item/clothing/suit/lawyer/navy
 	name = "navy suit jacket"
 	desc = "An orderly dress jacket."
 	icon_state = "suitjacket_navy"
 	item_state = "suitjacket_navy"
 
-/obj/item/clothing/suit/toggle/lawyer/charcoal
+/obj/item/clothing/suit/lawyer/charcoal
 	name = "charcoal suit jacket"
 	desc = "An enterprising dress jacket."
 	icon_state = "suitjacket_charcoal"
@@ -200,7 +214,6 @@
 	desc = "A foppish dress jacket."
 	icon_state = "suitjacket_light_blue"
 
-//Mime
 /obj/item/clothing/suit/toggle/suspenders
 	name = "suspenders"
 	desc = "The symbol of hard labor and dirty jobs."
@@ -215,67 +228,6 @@
 	desc = "A sterile blue surgical apron."
 	icon_state = "surgical"
 	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
-
-//SolGov suits
-
-/obj/item/clothing/suit/solgov
-	name = "SolGov robe"
-	desc = "A set of plain SolGov robes, commonly used by civilians."
-	body_parts_covered = CHEST|GROIN|ARMS
-	icon_state = "solgov_robe"
-	item_state = "solgov_robe"
-
-/obj/item/clothing/suit/solgov/dress
-	name = "SolGov dress"
-	desc = "A plain SolGov dress, commonly used by civilians."
-	body_parts_covered = CHEST|GROIN
-	icon_state = "solgov_dress"
-	item_state = "solgov_dress"
-
-/obj/item/clothing/suit/solgov/suit
-	name = "SolGov suit"
-	desc = "A formal SolGov suit, commonly used by civilians."
-	body_parts_covered = CHEST|GROIN
-	icon_state = "solgov_suit"
-	item_state = "solgov_suit"
-
-/obj/item/clothing/suit/solgov/bureaucrat
-	name = "SolGov bureaucrat robe"
-	desc = "A set of unique SolGov robes, utilized by Solarian Bureaucrats."
-	body_parts_covered = CHEST|GROIN|ARMS
-	icon_state = "solgov_bureaucrat_robe"
-	item_state = "solgov_bureaucrat_robe"
-
-/obj/item/clothing/suit/solgov/overcoat
-	name = "SolGov overcoat"
-	desc = "A traditional solarian overcoat, used by cilivians and ship crews alike."
-	body_parts_covered = CHEST|GROIN|ARMS
-	icon_state = "solgov_overcoat"
-	item_state = "solgov_overcoat"
-	supports_variations = DIGITIGRADE_VARIATION
-
-/obj/item/clothing/suit/solgov/jacket
-	name = "SolGov jacket"
-	desc = "A plain SolGov jacket, commonly used by civilians."
-	body_parts_covered = CHEST|GROIN|ARMS
-	icon_state = "solgov_jacket"
-	item_state = "solgov_jacket"
-
-/obj/item/clothing/suit/toggle/solgov
-	name = "\improper SolGov coat"
-	desc = "An armored coat worn for special occasions. This one is dyed in SolGov blue."
-	body_parts_covered = CHEST|GROIN|ARMS|HANDS
-	icon_state = "coat_solgov"
-	item_state = "coat_solgov"
-	blood_overlay_type = "coat"
-	togglename = "buttons"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-
-/obj/item/clothing/suit/toggle/solgov/terragov
-	name = "\improper Terragov coat"
-	desc = "An armored coat worn for special occasions. This one is still dyed in original TerraGov green."
-	icon_state = "coat_terragov"
-	item_state = "coat_terragov"
 
 /obj/item/clothing/suit/armor/witchhunter
 	name = "witchunter garb"

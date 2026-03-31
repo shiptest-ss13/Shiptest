@@ -32,25 +32,25 @@
 		return FALSE
 
 	if(M == user)
-		M.visible_message("<span class='notice'>[user] attempts to [apply_method] [src].</span>")
+		M.visible_message(span_notice("[user] attempts to [apply_method] [src]."))
 		if(self_delay)
 			if(!do_after(user, self_delay, M))
 				return FALSE
-		to_chat(M, "<span class='notice'>You [apply_method] [src].</span>")
+		to_chat(M, span_notice("You [apply_method] [src]."))
 
 	else
-		M.visible_message("<span class='danger'>[user] attempts to force [M] to [apply_method] [src].</span>", \
-							"<span class='userdanger'>[user] attempts to force you to [apply_method] [src].</span>")
+		M.visible_message(span_danger("[user] attempts to force [M] to [apply_method] [src]."), \
+							span_userdanger("[user] attempts to force you to [apply_method] [src]."))
 		if(!do_after(user, target = M))
 			return FALSE
-		M.visible_message("<span class='danger'>[user] forces [M] to [apply_method] [src].</span>", \
-							"<span class='userdanger'>[user] forces you to [apply_method] [src].</span>")
+		M.visible_message(span_danger("[user] forces [M] to [apply_method] [src]."), \
+							span_userdanger("[user] forces you to [apply_method] [src]."))
 
 	if(icon_state == "pill4" && prob(5)) //you take the red pill - you stay in Wonderland, and I show you how deep the rabbit hole goes
-		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), M, "<span class='notice'>[pick(strings(REDPILL_FILE, "redpill_questions"))]</span>"), 50)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), M, span_notice("[pick(strings(REDPILL_FILE, "redpill_questions"))]")), 50)
 
 	if(reagents.total_volume)
-		reagents.trans_to(M, reagents.total_volume, transfered_by = user, method = apply_type)
+		reagents.trans_to(M, reagents.total_volume, transfered_by = user, methods = apply_type)
 	qdel(src)
 	return TRUE
 
@@ -62,14 +62,14 @@
 	if(!dissolvable || !target.is_refillable())
 		return
 	if(target.is_drainable() && !target.reagents.total_volume)
-		to_chat(user, "<span class='warning'>[target] is empty! There's nothing to dissolve [src] in.</span>")
+		to_chat(user, span_warning("[target] is empty! There's nothing to dissolve [src] in."))
 		return
 
 	if(target.reagents.holder_full())
-		to_chat(user, "<span class='warning'>[target] is full.</span>")
+		to_chat(user, span_warning("[target] is full."))
 		return
 
-	user.visible_message("<span class='warning'>[user] slips something into [target]!</span>", "<span class='notice'>You dissolve [src] in [target].</span>", null, 2)
+	user.visible_message(span_warning("[user] slips something into [target]!"), span_notice("You dissolve [src] in [target]."), null, 2)
 	reagents.trans_to(target, reagents.total_volume, transfered_by = user)
 	qdel(src)
 
@@ -146,18 +146,18 @@
 	list_reagents = list(/datum/reagent/medicine/mutadone = 50)
 	rename_with_volume = TRUE
 
-/obj/item/reagent_containers/pill/salicylic
-	name = "salicylic acid pill"
-	desc = "Used to dull pain."
+/obj/item/reagent_containers/pill/silfrine
+	name = "silfrine pill"
+	desc = "Used to stimulate brute healing."
 	icon_state = "pill9"
-	list_reagents = list(/datum/reagent/medicine/sal_acid = 24)
+	list_reagents = list(/datum/reagent/medicine/silfrine = 15)
 	rename_with_volume = TRUE
 
-/obj/item/reagent_containers/pill/oxandrolone
-	name = "oxandrolone pill"
+/obj/item/reagent_containers/pill/ysiltane
+	name = "ysiltane pill"
 	desc = "Used to stimulate burn healing."
 	icon_state = "pill11"
-	list_reagents = list(/datum/reagent/medicine/oxandrolone = 24)
+	list_reagents = list(/datum/reagent/medicine/ysiltane = 15)
 	rename_with_volume = TRUE
 
 /obj/item/reagent_containers/pill/insulin
@@ -192,13 +192,6 @@
 	name = "lithium carbonate pill"
 	desc = "Used to treat depression."
 	list_reagents = list(/datum/reagent/medicine/lithium_carbonate = 10)
-	icon_state = "pill22"
-	rename_with_volume = TRUE
-
-/obj/item/reagent_containers/pill/hsh
-	name = "HSH pill"
-	desc = "A pill of Human Sleep Hormone."
-	list_reagents = list(/datum/reagent/medicine/melatonin = 10)
 	icon_state = "pill22"
 	rename_with_volume = TRUE
 
@@ -286,17 +279,6 @@
 	icon_state = "pill18"
 	list_reagents = list(/datum/reagent/drug/finobranc = 5)
 
-/*WS Begin - No Cobbychem
-
-/obj/item/reagent_containers/pill/c2/probital
-	name = "Probital pill"
-	desc = "Used to treat brute damage of minor and moderate severity.The carving in the pill says 'Eat before ingesting'. Causes fatigue and diluted with granibitaluri."
-	icon_state = "pill12"
-	list_reagents = list(/datum/reagent/medicine/c2/probital = 5, /datum/reagent/medicine/granibitaluri = 10)
-	rename_with_volume = TRUE
-
-WS End */
-
 /obj/item/reagent_containers/pill/iron
 	name = "iron pill"
 	desc = "Used to reduce bloodloss slowly."
@@ -304,11 +286,11 @@ WS End */
 	list_reagents = list(/datum/reagent/iron = 30)
 	rename_with_volume = TRUE
 
-/obj/item/reagent_containers/pill/trophazole
-	name = "Trophazole pill"
+/obj/item/reagent_containers/pill/indomide
+	name = "indomide pill"
 	desc = "Used to treat brute damage of minor and moderate severity.The carving in the pill says 'Eat before ingesting'."
 	icon_state = "pill12"
-	list_reagents = list(/datum/reagent/medicine/trophazole = 15)
+	list_reagents = list(/datum/reagent/medicine/indomide = 15)
 	rename_with_volume = TRUE
 
 /obj/item/reagent_containers/pill/stardrop
@@ -323,8 +305,20 @@ WS End */
 	icon_state = "pill11"
 	list_reagents = list(/datum/reagent/drug/stardrop/starlight = 10)
 
-/obj/item/reagent_containers/spray/rhigoxane
-	name = "medical spray (rhigoxane)"
-	desc = "A medical spray bottle.This one contains rhigoxane, it is used to treat burns and cool down temperature if applied with spray."
+/obj/item/reagent_containers/spray/quardexane
+	name = "medical spray (quardexane)"
+	desc = "A medical spray bottle.This one contains quardexane, it is used to treat burns and cool down temperature if applied with spray."
 	icon_state = "sprayer"
-	list_reagents = list(/datum/reagent/medicine/rhigoxane = 100)
+	list_reagents = list(/datum/reagent/medicine/quardexane = 100)
+
+/obj/item/reagent_containers/pill/placebatol
+	name = "prescription pill"
+	desc = "A pill composed of a white, powdery substance. Take as prescribed."
+	icon_state = "pill9"
+	list_reagents = list(/datum/reagent/drug/placebatol = 10)
+
+/obj/item/reagent_containers/pill/rcyte
+	name = "R-Cyte tablet"
+	desc = "A pill composed of a white, powdery substance. Take as prescribed."
+	icon_state = "pill0"
+	list_reagents = list(/datum/reagent/drug/cytodron = 10)

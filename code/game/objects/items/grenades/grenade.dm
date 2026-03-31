@@ -42,18 +42,8 @@
 		qdel(src)
 
 /obj/item/grenade/proc/botch_check(mob/living/carbon/human/user)
-	var/clumsy = HAS_TRAIT(user, TRAIT_CLUMSY)
-	if(clumsy && (clumsy_check == GRENADE_CLUMSY_FUMBLE))
-		if(prob(50))
-			to_chat(user, "<span class='warning'>Huh? How does this thing work?</span>")
-			preprime(user, 5, FALSE)
-			return TRUE
-	else if(!clumsy && (clumsy_check == GRENADE_NONCLUMSY_FUMBLE))
-		to_chat(user, "<span class='warning'>You pull the pin on [src]. Attached to it is a pink ribbon that says, \"<span class='clown'>HONK</span>\"</span>")
-		preprime(user, 5, FALSE)
-		return TRUE
-	else if(sticky && prob(50)) // to add risk to sticky tape grenade cheese, no return cause we still prime as normal after
-		to_chat(user, "<span class='warning'>What the... [src] is stuck to your hand!</span>")
+	if(sticky && prob(50)) // to add risk to sticky tape grenade cheese, no return cause we still prime as normal after
+		to_chat(user, span_warning("What the... [src] is stuck to your hand!"))
 		ADD_TRAIT(src, TRAIT_NODROP, STICKY_NODROP)
 
 /obj/item/grenade/examine(mob/user)
@@ -67,9 +57,9 @@
 
 /obj/item/grenade/attack_self(mob/user)
 	if(HAS_TRAIT(src, TRAIT_NODROP))
-		to_chat(user, "<span class='notice'>You try prying [src] off your hand...</span>")
+		to_chat(user, span_notice("You try prying [src] off your hand..."))
 		if(do_after(user, 70, target=src))
-			to_chat(user, "<span class='notice'>You manage to remove [src] from your hand.</span>")
+			to_chat(user, span_notice("You manage to remove [src] from your hand."))
 			REMOVE_TRAIT(src, TRAIT_NODROP, STICKY_NODROP)
 
 		return
@@ -87,7 +77,7 @@
 	if(user)
 		add_fingerprint(user)
 		if(msg)
-			to_chat(user, "<span class='warning'>You prime [src]! [capitalize(DisplayTimeText(det_time))]!</span>")
+			to_chat(user, span_warning("You prime [src]! [capitalize(DisplayTimeText(det_time))]!"))
 	if(shrapnel_type && shrapnel_radius)
 		shrapnel_initialized = TRUE
 		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
@@ -117,13 +107,13 @@
 			var/newtime = text2num(stripped_input(user, "Please enter a new detonation time", name))
 			if (newtime != null && user.canUseTopic(src, BE_CLOSE))
 				if(change_det_time(newtime))
-					to_chat(user, "<span class='notice'>You modify the time delay. It's set for [DisplayTimeText(det_time)].</span>")
+					to_chat(user, span_notice("You modify the time delay. It's set for [DisplayTimeText(det_time)]."))
 					if (round(newtime * 10) != det_time)
-						to_chat(user, "<span class='warning'>The new value is out of bounds. The lowest possible time is 3 seconds and highest is 5 seconds. Instant detonations are also possible.</span>")
+						to_chat(user, span_warning("The new value is out of bounds. The lowest possible time is 3 seconds and highest is 5 seconds. Instant detonations are also possible."))
 			return
 		else if(W.tool_behaviour == TOOL_SCREWDRIVER)
 			if(change_det_time())
-				to_chat(user, "<span class='notice'>You modify the time delay. It's set for [DisplayTimeText(det_time)].</span>")
+				to_chat(user, span_notice("You modify the time delay. It's set for [DisplayTimeText(det_time)]."))
 	else
 		return ..()
 
@@ -162,7 +152,7 @@
 			valid_hands[2] = TRUE
 
 	if(damage && attack_type == PROJECTILE_ATTACK && P.damage_type != STAMINA && (valid_hands[1] || valid_hands[2]) && prob(5)) //5% chance to go off
-		owner.visible_message("<span class='danger'>[attack_text] hits [owner]'s [src], setting it off! What a shot!</span>")
+		owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], setting it off! What a shot!"))
 		var/turf/T = get_turf(src)
 		log_game("A projectile ([hitby]) detonated a grenade held by [key_name(owner)] at [COORD(T)]")
 		message_admins("A projectile ([hitby]) detonated a grenade held by [key_name_admin(owner)] at [ADMIN_COORDJMP(T)]")

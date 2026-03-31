@@ -1,7 +1,7 @@
 /// Tucking element, for things that can be tucked into bed.
 /datum/element/bed_tuckable
 	element_flags = ELEMENT_BESPOKE|ELEMENT_DETACH
-	id_arg_index = 2
+	argument_hash_start_idx = 2
 	/// our pixel_x offset - how much the item moves x when in bed (+x is closer to the pillow)
 	var/x_offset = 0
 	/// our pixel_y offset - how much the item move y when in bed (-y is closer to the middle)
@@ -46,7 +46,7 @@
 	if(!tucker.transferItemToLoc(tucked, target_bed.drop_location()))
 		return
 
-	to_chat(tucker, "<span class='notice'>You lay [tucked] out on [target_bed].</span>")
+	to_chat(tucker, span_notice("You lay [tucked] out on [target_bed]."))
 	tucked.pixel_x = x_offset + target_bed.tucked_x_shift
 	tucked.pixel_y = y_offset + target_bed.tucked_y_shift
 	if(rotation_degree)

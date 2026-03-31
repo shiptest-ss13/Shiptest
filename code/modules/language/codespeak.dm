@@ -6,29 +6,24 @@
 	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
 	icon_state = "codespeak"
 
-/datum/language/codespeak/scramble(input)
-	var/lookup = check_cache(input)
-	if(lookup)
-		return lookup
+/datum/language/codespeak/scramble_sentence(input, list/mutual_languages)
+	var/sentence = read_word_cache(input)
+	if(sentence)
+		return sentence
 
-	. = ""
+	sentence = ""
 	var/list/words = list()
-	while(length_char(.) < length_char(input))
+	while(length_char(sentence) < length_char(input))
 		words += generate_code_phrase(return_list=TRUE)
-		. = jointext(words, ", ")
+		sentence = jointext(words, ", ")
 
-	. = capitalize(.)
+	sentence = capitalize(sentence)
 
-	var/input_ending = copytext_char(input, -1)
+	sentence += find_last_punctuation(input)
 
-	var/static/list/endings
-	if(!endings)
-		endings = list("!", "?", ".")
+	write_word_cache(input, sentence)
 
-	if(input_ending in endings)
-		. += input_ending
-
-	add_to_cache(input, .)
+	return sentence
 
 /obj/item/codespeak_manual
 	name = "codespeak manual"
@@ -42,10 +37,10 @@
 		return
 
 	if(user.has_language(/datum/language/codespeak))
-		to_chat(user, "<span class='boldwarning'>You start skimming through [src], but you already know Codespeak.</span>")
+		to_chat(user, span_boldwarning("You start skimming through [src], but you already know Codespeak."))
 		return
 
-	to_chat(user, "<span class='boldannounce'>You start skimming through [src], and suddenly your mind is filled with codewords and responses.</span>")
+	to_chat(user, span_boldannounce("You start skimming through [src], and suddenly your mind is filled with codewords and responses."))
 	user.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
 	use_charge(user)
@@ -60,11 +55,11 @@
 	playsound(loc, "punch", 25, TRUE, -1)
 
 	if(M.stat == DEAD)
-		M.visible_message("<span class='danger'>[user] smacks [M]'s lifeless corpse with [src].</span>", "<span class='userdanger'>[user] smacks your lifeless corpse with [src].</span>", "<span class='hear'>You hear smacking.</span>")
+		M.visible_message(span_danger("[user] smacks [M]'s lifeless corpse with [src]."), span_userdanger("[user] smacks your lifeless corpse with [src]."), span_hear("You hear smacking."))
 	else if(M.has_language(/datum/language/codespeak))
-		M.visible_message("<span class='danger'>[user] beats [M] over the head with [src]!</span>", "<span class='userdanger'>[user] beats you over the head with [src]!</span>", "<span class='hear'>You hear smacking.</span>")
+		M.visible_message(span_danger("[user] beats [M] over the head with [src]!"), span_userdanger("[user] beats you over the head with [src]!"), span_hear("You hear smacking."))
 	else
-		M.visible_message("<span class='notice'>[user] teaches [M] by beating [M.p_them()] over the head with [src]!</span>", "<span class='boldnotice'>As [user] hits you with [src], codewords and responses flow through your mind.</span>", "<span class='hear'>You hear smacking.</span>")
+		M.visible_message(span_notice("[user] teaches [M] by beating [M.p_them()] over the head with [src]!"), span_boldnotice("As [user] hits you with [src], codewords and responses flow through your mind."), span_hear("You hear smacking."))
 		M.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 		use_charge(user)
 
@@ -72,7 +67,7 @@
 	charges--
 	if(!charges)
 		var/turf/T = get_turf(src)
-		T.visible_message("<span class='warning'>The cover and contents of [src] start shifting and changing!</span>")
+		T.visible_message(span_warning("The cover and contents of [src] start shifting and changing!"))
 
 		qdel(src)
 		var/obj/item/book/manual/random/book = new(T)

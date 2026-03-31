@@ -19,6 +19,7 @@
 /datum/sprite_accessory/body_markings/lbelly
 	name = "Light Belly"
 	icon_state = "lbelly"
+	gender_specific = TRUE
 
 /datum/sprite_accessory/body_markings/cracks
 	name = "Cracks"
@@ -29,11 +30,11 @@
 /datum/sprite_accessory/tails
 	icon = 'icons/mob/species/lizard/tails.dmi'
 	body_zone = BODY_ZONE_CHEST
-	secondary_color = TRUE
+	secondary_color_overlay = TRUE
 
 /datum/sprite_accessory/tails_animated
 	icon = 'icons/mob/species/lizard/tails.dmi'
-	secondary_color = TRUE
+	secondary_color_overlay = TRUE
 	body_zone = BODY_ZONE_CHEST
 
 /datum/sprite_accessory/tails/lizard/smooth
@@ -47,7 +48,7 @@
 /datum/sprite_accessory/tails/lizard/smooth_onecolor
 	name = "Smooth (One color)"
 	icon_state = "smooth2"
-	secondary_color = FALSE
+	secondary_color_overlay = FALSE
 
 /datum/sprite_accessory/tails_animated/lizard/smooth_onecolor
 	name = "Smooth (One color)"
@@ -166,14 +167,13 @@
 
 /datum/sprite_accessory/frills
 	icon = 'icons/mob/species/lizard/frills.dmi'
-	secondary_color = TRUE
+	secondary_color_overlay = TRUE
 
 /datum/sprite_accessory/frills/none
 	name = "None"
 	icon_state = "none"
 
 //Ears are here because having frills+ears would overlap and be weird.
-
 /datum/sprite_accessory/frills/aquatic
 	name = "Aquatic"
 	icon_state = "aqua"
@@ -183,9 +183,16 @@
 	icon_state = "droopy"
 
 /datum/sprite_accessory/frills/ears
-	name = "Normal ears"
+	name = "Ears"
 	icon_state = "ears"
 
+/datum/sprite_accessory/frills/ears_long
+	name = "Ears (Long)"
+	icon_state = "long"
+
+/datum/sprite_accessory/frills/ears_curved
+	name = "Ears (curved)"
+	icon_state = "curved"
 //End ears
 
 /datum/sprite_accessory/frills/frillhawk
@@ -263,14 +270,3 @@
 /datum/sprite_accessory/spines_animated/aquatic
 	name = "Aquatic"
 	icon_state = "aqua"
-
-//Leg stuff, no better place to put it, no point in a legs.dm file
-
-/datum/sprite_accessory/legs 	//legs are a special case, they aren't actually sprite_accessories but are updated with them.
-	icon = null					//These datums exist for selecting legs on preference, and little else
-
-/datum/sprite_accessory/legs/none
-	name = "Normal Legs"
-
-/datum/sprite_accessory/legs/digitigrade_lizard
-	name = "Digitigrade Legs"

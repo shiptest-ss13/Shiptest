@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile
-	faction = list("hostile")
+	faction = list(FACTION_HOSTILE)
 	stop_automated_movement_when_pulled = 0
 	obj_damage = 40
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES //Bitflags. Set to ENVIRONMENT_SMASH_STRUCTURES to break closets,tables,racks, etc; ENVIRONMENT_SMASH_WALLS for walls; ENVIRONMENT_SMASH_RWALLS for rwalls
@@ -407,7 +407,7 @@
 	..(gibbed)
 
 /mob/living/simple_animal/hostile/proc/summon_backup(distance, exact_faction_match)
-	do_alert_animation(src)
+	do_alert_animation()
 	playsound(loc, 'sound/machines/chime.ogg', 50, TRUE, -1)
 	var/atom/target_from = GET_TARGETS_FROM(src)
 	for(var/mob/living/simple_animal/hostile/M in oview(distance, target_from))
@@ -429,7 +429,7 @@
 /mob/living/simple_animal/hostile/proc/OpenFire(atom/A)
 	if(CheckFriendlyFire(A))
 		return
-	visible_message("<span class='danger'><b>[src]</b> [ranged_message] at [A]!</span>")
+	visible_message(span_danger("<b>[src]</b> [ranged_message] at [A]!"))
 
 
 	if(rapid > 1)
@@ -450,6 +450,7 @@
 		var/obj/item/ammo_casing/casing = new casingtype(startloc)
 		playsound(src, projectilesound, 100, TRUE)
 		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), rand(-spread, spread),  src)
+		casing.on_eject(src)
 	else if(projectiletype)
 		var/obj/projectile/P = new projectiletype(startloc)
 		playsound(src, projectilesound, 100, TRUE)
@@ -542,7 +543,7 @@
 			A.attack_animal(src)
 		return 1
 
-/mob/living/simple_animal/hostile/RangedAttack(atom/A, params) //Player firing
+/mob/living/simple_animal/hostile/RangedAttack(atom/A, modifiers) //Player firing
 	if(ranged && ranged_cooldown <= world.time)
 		GiveTarget(A)
 		OpenFire(A)
@@ -634,7 +635,7 @@
 	Shake(15, 15, 1 SECONDS)
 	var/obj/effect/temp_visual/decoy/new_decoy = new /obj/effect/temp_visual/decoy(loc,src)
 	animate(new_decoy, alpha = 0, color = "#5a5858", transform = matrix()*2, time = 3)
-	target.visible_message("<span class='danger'>[src] prepares to pounce!</span>")
+	target.visible_message(span_danger("[src] prepares to pounce!"))
 	addtimer(CALLBACK(src, PROC_REF(handle_charge_target), target), 1.5 SECONDS, TIMER_STOPPABLE)
 
 /**
@@ -678,7 +679,7 @@
 				if(H.check_shields(src, 0, "the [name]", attack_type = LEAP_ATTACK))
 					blocked = TRUE
 			if(!blocked)
-				L.visible_message(("<span class='danger'>[src] pounces onto[L]!</span>"), ("<span class='userdanger'>[src] pounces on you!</span>"))
+				L.visible_message((span_danger("[src] pounces onto[L]!")), (span_userdanger("[src] pounces on you!")))
 				L.Knockdown(knockdown_time)
 			else
 				Stun((knockdown_time * 2), ignore_canstun = TRUE)
@@ -705,10 +706,10 @@
 
 /mob/living/simple_animal/hostile/proc/add_target(new_target)
 	if(target)
-		UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(target, COMSIG_QDELETING)
 	target = new_target
 	if(target)
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(handle_target_del), TRUE)
+		RegisterSignal(target, COMSIG_QDELETING, PROC_REF(handle_target_del), TRUE)
 
 /mob/living/simple_animal/hostile/proc/set_camp_faction(tag)
 	src.faction = list()
@@ -724,13 +725,13 @@
 		new /obj/effect/hotspot(T)
 		T.hotspot_expose(700,50,1)
 		if(ignite_turfs)
-			T.IgniteTurf(power,flame_color)
+			T.ignite_turf(power,flame_color)
 		for(var/mob/living/L in T.contents)
 			if((L in hit_list) || L == source)
 				continue
 			hit_list += L
 			L.adjustFireLoss(20)
-			to_chat(L, "<span class='userdanger'>You're hit by [source]'s [fire_source]!</span>")
+			to_chat(L, span_userdanger("You're hit by [source]'s [fire_source]!"))
 
 		// deals damage to mechs
 		for(var/obj/mecha/M in T.contents)

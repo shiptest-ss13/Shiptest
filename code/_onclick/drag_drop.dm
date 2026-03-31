@@ -105,10 +105,10 @@
 	if(mouseObject != over_object)
 		if(mouseObject)
 			// unregister signal to current mouseObject
-			UnregisterSignal(mouseObject, COMSIG_PARENT_QDELETING)
+			UnregisterSignal(mouseObject, COMSIG_QDELETING)
 		mouseObject = over_object
 		// register signal to new mouseObject
-		RegisterSignal(mouseObject, COMSIG_PARENT_QDELETING, PROC_REF(clear_mouseObject))
+		RegisterSignal(mouseObject, COMSIG_QDELETING, PROC_REF(clear_mouseObject))
 	mouseControlObject = over_control
 	if(selected_target[1] && over_object && over_object.IsAutoclickable())
 		selected_target[1] = over_object
@@ -119,7 +119,7 @@
 	SEND_SIGNAL(src, COMSIG_CLIENT_MOUSEDRAG, src_object, over_object, src_location, over_location, src_control, over_control, params)
 
 /client/proc/clear_mouseObject()
-	UnregisterSignal(mouseObject, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(mouseObject, COMSIG_QDELETING)
 	mouseObject = null
 	mouseControlObject = null
 	mouseLocation = null

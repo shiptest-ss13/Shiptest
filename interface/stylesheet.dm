@@ -42,13 +42,16 @@ em						{font-style: normal;	font-weight: bold;}
 .binarysay a			{color: #00ff00;}
 .binarysay a:active, .binarysay a:visited {color: #88ff88;}
 .radio					{color: #008000;}
-.ntradio				{color: #4e3399;}
+.warraradio				{color: #4e3399;}
 .emrgradio				{color: #a30000;}
 .pirradio				{color: #948f02;}
 .clipradio				{color: #337296;}
 .irmgradio				{color: #885231;}
 .pgfradio				{color: #127a35;}
 .syndradio				{color: ##612425;}
+.cyradio				{color: #4C9C9C;}
+.ngrradio				{color: #c59973;}
+.sunsradio				{color: #8f67a1;}
 .centcomradio			{color: #686868;}
 .redteamradio			{color: #ff0000;}
 .blueteamradio			{color: #0000ff;}
@@ -63,6 +66,8 @@ h1.alert, h2.alert		{color: #000000;}
 
 .userdanger				{color: #ff0000;	font-weight: bold;	font-size: 3;}
 .danger					{color: #ff0000;}
+.tinydanger				{color: #ff0000; 	font-size: 85%;}
+.smalldanger			{color: #ff0000; 	font-size: 90%;}
 .warning				{color: #ff0000;	font-style: italic;}
 .boldwarning			{color: #ff0000;	font-style: italic;	font-weight: bold}
 .announce				{color: #228b22;	font-weight: bold;}
@@ -72,6 +77,10 @@ h1.alert, h2.alert		{color: #000000;}
 .rose					{color: #ff5050;}
 .info					{color: #0000CC;}
 .notice					{color: #000099;}
+.tinynotice				{color: #000099; 	font-size: 85%;}
+.tinynoticeital			{color: #000099; 	font-style: italic; font-size: 85%;}
+.smallnotice			{color: #000099; 	font-size: 90%;}
+.smallnoticeital		{color: #000099; 	font-style: italic;	font-size: 90%;}
 .boldnotice				{color: #000099;	font-weight: bold;}
 .hear					{color: #000099;	font-style: italic;}
 .adminnotice			{color: #0000ff;}
@@ -126,7 +135,6 @@ h1.alert, h2.alert		{color: #000000;}
 .extremelybig			{font-size: 5;}
 .greentext				{color: #00FF00;	font-size: 3;}
 .redtext				{color: #FF0000;	font-size: 3;}
-.clown					{color: #FF69Bf;	font-size: 3;	font-family: "Comic Sans MS", cursive, sans-serif;	font-weight: bold;}
 .singing				{font-family: "Trebuchet MS", cursive, sans-serif; font-style: italic;}
 .hypnophrase			{color: #3bb5d3;	font-weight: bold;	animation: hypnocolor 1500ms infinite; animation-direction: alternate;}
 	@keyframes hypnocolor {

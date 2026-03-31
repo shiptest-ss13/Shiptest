@@ -94,7 +94,7 @@
 	var/obj/item/seeds/our_seed = our_plant.get_plant_seed()
 	to_chat(target, span_danger("You are lit on fire from the intense heat of [our_plant]!"))
 	target.adjust_fire_stacks(round(our_seed.potency / 20))
-	if(target.IgniteMob())
+	if(target.ignite_mob())
 		message_admins("[ADMIN_LOOKUPFLW(user)] set [ADMIN_LOOKUPFLW(target)] on fire with [our_plant] at [AREACOORD(user)]")
 		user.log_message("set [key_name(target)] on fire with [our_plant]", LOG_ATTACK)
 		target.log_message("was set on fire by [key_name(user)] with [our_plant].", LOG_ATTACK)

@@ -14,7 +14,7 @@
 		playsound(loc, 'sound/items/welder.ogg', 100, TRUE)
 
 
-/obj/structure/spider/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
+/obj/structure/spider/run_atom_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
 	if(damage_flag == "melee")
 		switch(damage_type)
 			if(BURN)
@@ -46,7 +46,7 @@
 		if(istype(mover.pulledby, /mob/living/simple_animal/hostile/poison/giant_spider))
 			return TRUE
 		if(prob(50))
-			to_chat(mover, "<span class='danger'>You get stuck in \the [src] for a moment.</span>")
+			to_chat(mover, span_danger("You get stuck in \the [src] for a moment."))
 			return FALSE
 	else if(istype(mover, /obj/projectile))
 		return prob(30)
@@ -68,10 +68,15 @@
 		if(REF(mover.pulledby) == allowed_mob_reference)
 			return TRUE
 		if(prob(50))
-			to_chat(mover, "<span class='danger'>You get stuck in \the [src] for a moment.</span>")
+			to_chat(mover, span_danger("You get stuck in \the [src] for a moment."))
 			return FALSE
 	else if(istype(mover, /obj/projectile))
 		return prob(30)
+
+/obj/structure/spider/fake_eggcluster // if you dont want them to spawn one million spiders
+	name = "egg cluster"
+	desc = "They seem to pulse slightly with an inner life."
+	icon_state = "eggs"
 
 /obj/structure/spider/eggcluster
 	name = "egg cluster"
@@ -118,7 +123,7 @@
 	var/list/faction = list("spiders")
 
 /obj/structure/spider/spiderling/Destroy()
-	new/obj/item/reagent_containers/food/snacks/spiderling(get_turf(src))
+	new /obj/item/food/spiderling(get_turf(src))
 	walk(src, 0) //Clean up reference for pathing
 	. = ..()
 
@@ -169,7 +174,7 @@
 		return
 
 	if(prob(50))
-		audible_message("<span class='hear'>You hear something scampering through the ventilation ducts.</span>")
+		audible_message(span_hear("You hear something scampering through the ventilation ducts."))
 
 	addtimer(CALLBACK(src, PROC_REF(finish_vent_move), exit_vent), travel_time)
 
@@ -197,7 +202,7 @@
 			var/obj/machinery/atmospherics/components/unary/vent_pump/exit_vent = pick(vents)
 			if(prob(50))
 				visible_message("<B>[src] scrambles into the ventilation ducts!</B>", \
-								"<span class='hear'>You hear something scampering through the ventilation ducts.</span>")
+								span_hear("You hear something scampering through the ventilation ducts."))
 
 			addtimer(CALLBACK(src, PROC_REF(vent_move), exit_vent), rand(20,60))
 
@@ -209,7 +214,7 @@
 			var/target_atom = pick(nearby)
 			walk_to(src, target_atom)
 			if(prob(40))
-				src.visible_message("<span class='notice'>\The [src] skitters[pick(" away"," around","")].</span>")
+				src.visible_message(span_notice("\The [src] skitters[pick(" away"," around","")]."))
 	else if(prob(10))
 		//ventcrawl!
 		for(var/obj/machinery/atmospherics/components/unary/vent_pump/v in view(7,src))
@@ -240,17 +245,18 @@
 	desc = "Something wrapped in silky spider web."
 	icon_state = "cocoon1"
 	max_integrity = 60
+	var/possible_cocoons = list("cocoon1","cocoon2","cocoon3")
 
 /obj/structure/spider/cocoon/Initialize()
-	icon_state = pick("cocoon1","cocoon2","cocoon3")
+	icon_state = pick(possible_cocoons)
 	. = ..()
 
 /obj/structure/spider/cocoon/container_resist_act(mob/living/user)
 	var/breakout_time = 600
 	user.changeNext_move(CLICK_CD_BREAKOUT)
 	user.last_special = world.time + CLICK_CD_BREAKOUT
-	to_chat(user, "<span class='notice'>You struggle against the tight bonds... (This will take about [DisplayTimeText(breakout_time)].)</span>")
-	visible_message("<span class='notice'>You see something struggling and writhing in \the [src]!</span>")
+	to_chat(user, span_notice("You struggle against the tight bonds... (This will take about [DisplayTimeText(breakout_time)].)"))
+	visible_message(span_notice("You see something struggling and writhing in \the [src]!"))
 	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src)
 			return
@@ -260,7 +266,17 @@
 
 /obj/structure/spider/cocoon/Destroy()
 	var/turf/T = get_turf(src)
-	src.visible_message("<span class='warning'>\The [src] splits open.</span>")
+	src.visible_message(span_warning("\The [src] splits open."))
 	for(var/atom/movable/A in contents)
 		A.forceMove(T)
 	return ..()
+
+/obj/structure/spider/cocoon/person
+	desc = "Someone wrapped in silky spider web."
+	icon_state = "cocoon_large3"
+	possible_cocoons = list("cocoon_large1","cocoon_large2","cocoon_large3")
+
+/obj/structure/spider/cocoon/person/deconstruct(disassembled)
+	. = ..()
+	var/turf/T = get_turf(src)
+	new /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/dwarf(T)

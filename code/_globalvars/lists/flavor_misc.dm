@@ -13,8 +13,8 @@ GLOBAL_LIST_EMPTY(underwear_list)		//stores /datum/sprite_accessory/underwear in
 GLOBAL_LIST_EMPTY(undershirt_list) 	//stores /datum/sprite_accessory/undershirt indexed by name
 	//Socks
 GLOBAL_LIST_EMPTY(socks_list)		//stores /datum/sprite_accessory/socks indexed by name
-	//Body Sizes
-GLOBAL_LIST_INIT(body_sizes, list("Normal" = BODY_SIZE_NORMAL, "Short" = BODY_SIZE_SHORT, "Tall" = BODY_SIZE_TALL))
+	//Height Filter names
+GLOBAL_LIST_INIT(height_filters, list("Shorter" = HUMAN_HEIGHT_SHORTEST, "Short" = HUMAN_HEIGHT_SHORT, "Normal" = HUMAN_HEIGHT_MEDIUM, "Tall" = HUMAN_HEIGHT_TALL, "Taller" = HUMAN_HEIGHT_TALLER))
 	//lizard Bits (all datum lists indexed by name)
 GLOBAL_LIST_EMPTY(body_markings_list)
 GLOBAL_LIST_EMPTY(tails_list_lizard)
@@ -23,7 +23,6 @@ GLOBAL_LIST_EMPTY(face_markings_list)
 GLOBAL_LIST_EMPTY(horns_list)
 GLOBAL_LIST_EMPTY(frills_list)
 GLOBAL_LIST_EMPTY(spines_list)
-GLOBAL_LIST_EMPTY(legs_list)
 GLOBAL_LIST_EMPTY(animated_spines_list)
 
 	//Mutant Human bits
@@ -40,6 +39,7 @@ GLOBAL_LIST_EMPTY(squid_face_list)
 GLOBAL_LIST_EMPTY(ipc_screens_list)
 GLOBAL_LIST_EMPTY(ipc_antennas_list)
 GLOBAL_LIST_EMPTY(ipc_tail_list)
+GLOBAL_LIST_EMPTY(alternative_body_list)
 GLOBAL_LIST_EMPTY(ipc_chassis_list)
 GLOBAL_LIST_INIT(ipc_brain_list, list("Posibrain", "Man-Machine Interface"))
 GLOBAL_LIST_EMPTY(spider_legs_list)
@@ -133,7 +133,7 @@ GLOBAL_LIST_INIT(ai_core_display_screens, sortList(list(
 	"Matrix",
 	"Monochrome",
 	"Murica",
-	"Nanotrasen",
+	"Makosso-Warra",
 	"Not Malf",
 	"President",
 	"Random",
@@ -155,8 +155,6 @@ GLOBAL_LIST_INIT(ai_core_display_screens, sortList(list(
 		if(input == "Random")
 			input = pick(GLOB.ai_core_display_screens - "Random")
 		return "ai-[lowertext(input)]"
-
-GLOBAL_LIST_INIT(security_depts_prefs, sortList(list(SEC_DEPT_RANDOM, SEC_DEPT_NONE, SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, SEC_DEPT_SCIENCE, SEC_DEPT_SUPPLY)))
 
 	//Backpacks
 #define GBACKPACK "Grey Backpack"
@@ -183,12 +181,6 @@ GLOBAL_LIST_INIT(jumpsuitlist, list(PREF_SUIT, PREF_SKIRT, PREF_ALTSUIT, PREF_GR
 #define PREF_ALTEXOWEAR "Alternate Exowear"
 #define PREF_COATEXOWEAR "Departmental Winter Coat"
 GLOBAL_LIST_INIT(exowearlist, list(PREF_NOEXOWEAR, PREF_EXOWEAR, PREF_ALTEXOWEAR, PREF_COATEXOWEAR))
-
-//Uplink spawn loc
-#define UPLINK_PDA "PDA"
-#define UPLINK_RADIO "Radio"
-#define UPLINK_PEN "Pen" //like a real spy!
-GLOBAL_LIST_INIT(uplink_spawn_loc_list, list(UPLINK_PDA, UPLINK_RADIO, UPLINK_PEN))
 
 //favorite cigarette brand
 #define PREF_CIG_SPACE "Space Cigarettes"
@@ -259,7 +251,7 @@ GLOBAL_LIST_INIT(TAGGERLOCATIONS, list("Disposals",
 	"Robotics", "Head of Personnel's Office", "Library", "Chapel", "Theatre",
 	"Bar", "Kitchen", "Hydroponics", "Janitor Closet","Genetics",
 	"Experimentor Lab", "Toxins", "Dormitories", "Virology",
-	, "Law Office","Detective's Office"))
+	"Law Office","Detective's Office"))
 
 GLOBAL_LIST_INIT(station_prefixes, world.file2list("strings/station_prefixes.txt"))
 
@@ -292,4 +284,13 @@ GLOBAL_LIST_INIT(planet_prefixes, world.file2list("strings/planet_prefixes.txt")
 
 GLOBAL_LIST_INIT(station_numerals, greek_letters + phonetic_alphabet + numbers_as_words + generate_number_strings())
 
-GLOBAL_LIST_INIT(admiral_messages, list("Do you know how expensive these stations are?","Stop wasting my time.","I was sleeping, thanks a lot.","Stand and fight you cowards!","You knew the risks coming in.","Stop being paranoid.","Whatever's broken just build a new one.","No.", "<i>null</i>","<i>Error: No comment given.</i>", "It's a good day to die!"))
+/// 1000 element long list containing the 1000 most common words in the English language.
+/// Indexed by word, value is the rank of the word in the list. So accessing it is fasta.
+GLOBAL_LIST_INIT(most_common_words, init_common_words())
+
+/proc/init_common_words()
+	. = list()
+	var/i = 1
+	for(var/word in world.file2list("strings/1000_most_common.txt"))
+		.[word] = i
+		i += 1

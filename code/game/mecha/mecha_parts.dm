@@ -11,9 +11,9 @@
 
 /obj/item/mecha_parts/proc/try_attach_part(mob/user, obj/mecha/M) //For attaching parts to a finished mech
 	if(!user.transferItemToLoc(src, M))
-		to_chat(user, "<span class='warning'>\The [src] is stuck to your hand, you cannot put it in \the [M]!</span>")
+		to_chat(user, span_warning("\The [src] is stuck to your hand, you cannot put it in \the [M]!"))
 		return FALSE
-	user.visible_message("<span class='notice'>[user] attaches [src] to [M].</span>", "<span class='notice'>You attach [src] to [M].</span>")
+	user.visible_message(span_notice("[user] attaches [src] to [M]."), span_notice("You attach [src] to [M]."))
 	return TRUE
 
 /obj/item/mecha_parts/part/try_attach_part(mob/user, obj/mecha/M)
@@ -198,44 +198,6 @@
 	name = "\improper Firefighter chassis"
 	construct_type = /datum/component/construction/unordered/mecha_chassis/firefighter
 
-
-////////// HONK
-
-/obj/item/mecha_parts/chassis/honker
-	name = "\improper H.O.N.K chassis"
-	construct_type = /datum/component/construction/unordered/mecha_chassis/honker
-
-/obj/item/mecha_parts/part/honker_torso
-	name = "\improper H.O.N.K torso"
-	desc = "A torso part of H.O.N.K. Contains chuckle unit, bananium core and honk support systems."
-	icon_state = "honker_harness"
-
-/obj/item/mecha_parts/part/honker_head
-	name = "\improper H.O.N.K head"
-	desc = "A H.O.N.K head. Appears to lack a face plate."
-	icon_state = "honker_head"
-
-/obj/item/mecha_parts/part/honker_left_arm
-	name = "\improper H.O.N.K left arm"
-	desc = "A H.O.N.K left arm. With unique sockets that accept odd weaponry designed by clown scientists."
-	icon_state = "honker_l_arm"
-
-/obj/item/mecha_parts/part/honker_right_arm
-	name = "\improper H.O.N.K right arm"
-	desc = "A H.O.N.K right arm. With unique sockets that accept odd weaponry designed by clown scientists."
-	icon_state = "honker_r_arm"
-
-/obj/item/mecha_parts/part/honker_left_leg
-	name = "\improper H.O.N.K left leg"
-	desc = "A H.O.N.K left leg. The foot appears just large enough to fully accommodate a clown shoe."
-	icon_state = "honker_l_leg"
-
-/obj/item/mecha_parts/part/honker_right_leg
-	name = "\improper H.O.N.K right leg"
-	desc = "A H.O.N.K right leg. The foot appears just large enough to fully accommodate a clown shoe."
-	icon_state = "honker_r_leg"
-
-
 ////////// Phazon
 
 /obj/item/mecha_parts/chassis/phazon
@@ -325,18 +287,6 @@
 
 /obj/item/circuitboard/mecha/durand/main
 	name = "Durand Central Control module (Exosuit Board)"
-	icon_state = "mainboard"
-
-/obj/item/circuitboard/mecha/honker/peripherals
-	name = "H.O.N.K Peripherals Control module (Exosuit Board)"
-	icon_state = "mcontroller"
-
-/obj/item/circuitboard/mecha/honker/targeting
-	name = "H.O.N.K Weapon Control and Targeting module (Exosuit Board)"
-	icon_state = "mcontroller"
-
-/obj/item/circuitboard/mecha/honker/main
-	name = "H.O.N.K Central Control module (Exosuit Board)"
 	icon_state = "mainboard"
 
 /obj/item/circuitboard/mecha/odysseus/peripherals

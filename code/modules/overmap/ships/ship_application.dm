@@ -26,8 +26,8 @@
 	// these are registered so we can cancel the application fill-out if the ship
 	// gets deleted before the application is finalized, or the character spawns in.
 	// your currently-open tgui windows don't get removed if you spawn into a body
-	RegisterSignal(app_mob, COMSIG_PARENT_QDELETING, PROC_REF(applicant_deleting))
-	RegisterSignal(parent_ship, COMSIG_PARENT_QDELETING, PROC_REF(important_deleting_during_apply))
+	RegisterSignal(app_mob, COMSIG_QDELETING, PROC_REF(applicant_deleting))
+	RegisterSignal(parent_ship, COMSIG_QDELETING, PROC_REF(important_deleting_during_apply))
 
 /datum/ship_application/Destroy()
 	SStgui.close_uis(src)
@@ -35,7 +35,7 @@
 		LAZYREMOVE(parent_ship.applications, ckey(app_key))
 		if(app_mob)
 			SEND_SOUND(app_mob, sound('sound/misc/server-ready.ogg', volume=50))
-			to_chat(app_mob, "<span class='warning'>Your application to [parent_ship] has been deleted.</span>", MESSAGE_TYPE_INFO)
+			to_chat(app_mob, span_warning("Your application to [parent_ship] has been deleted."), MESSAGE_TYPE_INFO)
 	app_mob = null
 	parent_ship = null
 	. = ..()
@@ -53,7 +53,7 @@
 	// we are now ready to finalize
 	// unregister the ship qdel signal -- we add ourselves to the ship's applications, and it qdels us
 	// when it deletes, so we don't need to worry about that anymore. we keep the applicant deletion signal
-	UnregisterSignal(parent_ship, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(parent_ship, COMSIG_QDELETING)
 	LAZYSET(parent_ship.applications, ckey(app_key), src)
 
 	if(parent_ship.owner_mob != null)
@@ -70,15 +70,15 @@
 	SIGNAL_HANDLER
 	if(status == SHIP_APPLICATION_UNFINISHED)
 		return important_deleting_during_apply()
-	UnregisterSignal(app_mob, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(app_mob, COMSIG_QDELETING)
 	app_mob = null
 
 // we should get deleted soon, which clears up the references, since this can only fire if
 // the applicant is in the midst of writing their application
 /datum/ship_application/proc/important_deleting_during_apply()
 	SIGNAL_HANDLER
-	UnregisterSignal(parent_ship, COMSIG_PARENT_QDELETING)
-	UnregisterSignal(app_mob, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(parent_ship, COMSIG_QDELETING)
+	UnregisterSignal(app_mob, COMSIG_QDELETING)
 	status = SHIP_APPLICATION_CANCELLED
 
 /datum/ship_application/ui_interact(mob/user, datum/tgui/ui)
@@ -136,7 +136,7 @@
 	if(status != SHIP_APPLICATION_PENDING)
 		return
 	status = new_status
-	to_chat(usr, "<span class='notice'>Application [status].</span>", MESSAGE_TYPE_INFO)
+	to_chat(usr, span_notice("Application [status]."), MESSAGE_TYPE_INFO)
 
 	if(parent_ship.owner_act)
 		parent_ship.owner_act.check_blinking()
@@ -146,6 +146,6 @@
 	SEND_SOUND(app_mob, sound('sound/misc/server-ready.ogg', volume=50))
 	switch(status)
 		if(SHIP_APPLICATION_ACCEPTED)
-			to_chat(app_mob, "<span class='notice'>Your application to [parent_ship] was accepted!</span>", MESSAGE_TYPE_INFO)
+			to_chat(app_mob, span_notice("Your application to [parent_ship] was accepted!"), MESSAGE_TYPE_INFO)
 		if(SHIP_APPLICATION_DENIED)
-			to_chat(app_mob, "<span class='warning'>Your application to [parent_ship] was denied!</span>", MESSAGE_TYPE_INFO)
+			to_chat(app_mob, span_warning("Your application to [parent_ship] was denied!"), MESSAGE_TYPE_INFO)

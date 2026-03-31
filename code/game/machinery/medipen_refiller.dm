@@ -11,8 +11,8 @@
 		/obj/item/reagent_containers/hypospray/medipen = /datum/reagent/medicine/epinephrine,
 		/obj/item/reagent_containers/hypospray/medipen/atropine = /datum/reagent/medicine/atropine,
 		/obj/item/reagent_containers/hypospray/medipen/salbutamol = /datum/reagent/medicine/salbutamol,
-		/obj/item/reagent_containers/hypospray/medipen/oxandrolone = /datum/reagent/medicine/oxandrolone,
-		/obj/item/reagent_containers/hypospray/medipen/salacid = /datum/reagent/medicine/sal_acid,
+		/obj/item/reagent_containers/hypospray/medipen/ysiltane = /datum/reagent/medicine/ysiltane,
+		/obj/item/reagent_containers/hypospray/medipen/silfrine = /datum/reagent/medicine/silfrine,
 		/obj/item/reagent_containers/hypospray/medipen/penacid = /datum/reagent/medicine/pen_acid
 	)
 	/// var to prevent glitches in the animation
@@ -38,24 +38,24 @@
 /// handles the messages and animation, calls refill to end the animation
 /obj/machinery/medipen_refiller/attackby(obj/item/I, mob/user, params)
 	if(busy)
-		to_chat(user, "<span class='danger'>The machine is busy.</span>")
+		to_chat(user, span_danger("The machine is busy."))
 		return
 	if(istype(I, /obj/item/reagent_containers) && I.is_open_container())
 		var/obj/item/reagent_containers/RC = I
 		var/units = RC.reagents.trans_to(src, RC.amount_per_transfer_from_this, transfered_by = user)
 		if(units)
-			to_chat(user, "<span class='notice'>You transfer [units] units of the solution to the [name].</span>")
+			to_chat(user, span_notice("You transfer [units] units of the solution to the [name]."))
 			return
 		else
-			to_chat(user, "<span class='danger'>The [name] is full.</span>")
+			to_chat(user, span_danger("The [name] is full."))
 			return
 	if(istype(I, /obj/item/reagent_containers/hypospray/medipen))
 		var/obj/item/reagent_containers/hypospray/medipen/P = I
 		if(!(LAZYFIND(allowed, P.type)))
-			to_chat(user, "<span class='danger'>Error! Unknown schematics.</span>")
+			to_chat(user, span_danger("Error! Unknown schematics."))
 			return
 		if(P.reagents?.reagent_list.len)
-			to_chat(user, "<span class='notice'>The medipen is already filled.</span>")
+			to_chat(user, span_notice("The medipen is already filled."))
 			return
 		if(reagents.has_reagent(allowed[P.type], 10))
 			busy = TRUE
@@ -63,14 +63,14 @@
 			addtimer(CALLBACK(src, PROC_REF(refill), P, user), 20)
 			qdel(P)
 			return
-		to_chat(user, "<span class='danger'>There aren't enough reagents to finish this operation.</span>")
+		to_chat(user, span_danger("There aren't enough reagents to finish this operation."))
 		return
 	..()
 
 /obj/machinery/medipen_refiller/plunger_act(obj/item/plunger/P, mob/living/user)
-	to_chat(user, "<span class='notice'>You start furiously plunging [name].</span>")
+	to_chat(user, span_notice("You start furiously plunging [name]."))
 	if(do_after(user, 30, target = src))
-		to_chat(user, "<span class='notice'>You finish plunging the [name].</span>")
+		to_chat(user, span_notice("You finish plunging the [name]."))
 		reagents.expose(get_turf(src), TOUCH)
 		reagents.clear_reagents()
 
@@ -95,4 +95,4 @@
 	reagents.remove_reagent(allowed[P.type], 10)
 	cut_overlays()
 	busy = FALSE
-	to_chat(user, "<span class='notice'>Medipen refilled.</span>")
+	to_chat(user, span_notice("Medipen refilled."))

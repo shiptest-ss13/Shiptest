@@ -3,7 +3,7 @@ import { Stack, Button, Flex, Icon } from '../../components';
 
 import { capitalizeFirst } from 'common/string';
 
-import { getDisplayColor, getDisplayName } from './helpers';
+import { getDisplayColor } from './helpers';
 import { Antagonist, Observable, OrbitData } from './types';
 
 type Props = {
@@ -33,9 +33,7 @@ export const OrbitItem = (props: Props, context) => {
     >
       <Button color={getDisplayColor(item, color)} pl={validIcon && 0.5}>
         <Stack>
-          <Stack.Item>
-            {capitalizeFirst(getDisplayName(full_name, name))}
-          </Stack.Item>
+          <Stack.Item>{capitalizeFirst(full_name)}</Stack.Item>
           {!!orbiters && (
             <Stack.Item>
               <Icon name="ghost" />

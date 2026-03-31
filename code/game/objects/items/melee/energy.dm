@@ -1,5 +1,5 @@
 /obj/item/melee/energy
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	icon = 'icons/obj/weapon/energy.dmi'
@@ -14,13 +14,15 @@
 	var/sword_color
 	/// The heat given off when active.
 	var/active_heat = 3500
+	/// Damage type used while active.
+	var/active_damtype = BURN
 
 	/// Force while active.
 	var/active_force = 30
 	/// Throwforce while active.
 	var/active_throwforce = 20
 	/// Sharpness while active.
-	var/active_sharpness = IS_SHARP
+	var/active_sharpness = SHARP_EDGED
 	/// Hitsound played attacking while active.
 	var/active_hitsound = 'sound/weapons/blade1.ogg'
 	/// Weight class while active.
@@ -56,11 +58,13 @@
 
 	if(active)
 		heat = active_heat
+		damtype = active_damtype
 		START_PROCESSING(SSobj, src)
 		if(sword_color)
 			icon_state = "[base_icon_state][sword_color]"
 	else
 		heat = initial(heat)
+		damtype = initial(damtype)
 		STOP_PROCESSING(SSobj, src)
 
 	tool_behaviour = (active ? TOOL_SAW : NONE) //Lets energy weapons cut trees. Also lets them do bonecutting surgery, which is kinda metal!
@@ -94,7 +98,7 @@
 		var/mob/living/carbon/C = user
 		if(C.wear_mask)
 			in_mouth = ", barely missing [C.p_their()] nose"
-	. = "<span class='warning'>[user] swings [user.p_their()] [name][in_mouth]. [user.p_they(TRUE)] light[user.p_s()] [user.p_their()] [A.name] in the process.</span>"
+	. = span_warning("[user] swings [user.p_their()] [name][in_mouth]. [user.p_they(TRUE)] light[user.p_s()] [user.p_their()] [A.name] in the process.")
 	playsound(loc, hitsound, get_clamped_volume(), TRUE, -1)
 	add_fingerprint(user)
 
@@ -121,7 +125,7 @@
 
 /obj/item/melee/energy/sword
 	name = "energy sword"
-	desc = "For when a katana isn't enough. While Nanotrasen and the Syndicate both produce the so-called e-swords, they are visually and functionaly identical."
+	desc = "For when a katana isn't enough. While Makosso-Warra and the Syndicate both produce the so-called e-swords, they are visually and functionaly identical."
 	icon_state = "sword"
 	base_icon_state = "sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -132,7 +136,7 @@
 	attack_verb = list("tapped", "poked")
 	throw_speed = 3
 	throw_range = 5
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	embedding = list("embed_chance" = 75, "impact_pain_mult" = 10)
 	armour_penetration = 35
 	block_chance = 50
@@ -151,7 +155,7 @@
 		var/obj/item/stock_parts/cell/C = R.cell
 		if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE) && !(C.use(hitcost)))
 			attack_self(R)
-			to_chat(R, "<span class='notice'>It's out of charge!</span>")
+			to_chat(R, span_notice("It's out of charge!"))
 			return
 		return ..()
 
@@ -166,7 +170,7 @@
 	sword_color = null //stops icon from breaking when turned on.
 	hitcost = 75 //Costs more than a standard cyborg esword
 	w_class = WEIGHT_CLASS_NORMAL
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	light_color = LIGHT_COLOR_LIGHT_CYAN
 	tool_behaviour = TOOL_SAW
 	toolspeed = 0.7 //faster as a saw
@@ -211,13 +215,13 @@
 		if(!hacked)
 			hacked = TRUE
 			sword_color = "rainbow"
-			to_chat(user, "<span class='warning'>RNBW_ENGAGE</span>")
+			to_chat(user, span_warning("RNBW_ENGAGE"))
 
 			if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 				icon_state = "[base_icon_state]rainbow"
 				user.update_inv_hands()
 		else
-			to_chat(user, "<span class='warning'>It's already fabulous!</span>")
+			to_chat(user, span_warning("It's already fabulous!"))
 	else
 		return ..()
 
@@ -259,7 +263,7 @@
 	throw_range = 1
 	w_class = WEIGHT_CLASS_BULKY//So you can't hide it in your pocket or some such.
 	var/datum/effect_system/spark_spread/spark_system
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 
 //Most of the other special functions are handled in their own files. aka special snowflake code so kewl
 /obj/item/melee/energy/blade/Initialize()
@@ -287,7 +291,7 @@
 	icon_state = "plasmasword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	armour_penetration = 200
 	block_chance = 0
 	force = 0
@@ -303,9 +307,96 @@
 	if(active)
 		icon_state = "plasmasword_on"
 	playsound(user, active ? 'sound/weapons/SolGov_sword_arm.ogg' : 'sound/weapons/saberoff.ogg', 35, TRUE)
-	to_chat(user, "<span class='notice'>[src] [active ? "is now active":"can now be concealed"].</span>")
+	to_chat(user, span_notice("[src] [active ? "is now active":"can now be concealed"]."))
 	return COMPONENT_NO_DEFAULT_MESSAGE
 
 /obj/item/melee/energy/ctf/solgov
 	armour_penetration = 40
 	active_force = 34 //desword grade, but 0 blocking
+
+/obj/item/melee/energy/flyssa
+	name = "energy flyssa"
+	desc = "Also known as a static-field flyssa, a powerful energy field is generated at the edge of a microforged filament, creating unheard of cutting power."
+	icon_state = "flyssa"
+	base_icon_state = "flyssa"
+	item_state = "flyssa"
+
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
+
+	throwforce = 5
+	active_throwforce = 20
+	force = 10
+	active_force = 35
+	wound_bonus = -35
+	bare_wound_bonus = -10
+	armour_penetration = -20
+
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+
+	active_hitsound = 'sound/weapons/blade1.ogg'
+
+	var/cell_override = /obj/item/stock_parts/cell/high
+	power_use_amount = 200
+
+/obj/item/melee/energy/flyssa/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/cell, cell_override, _cell_can_be_removed=FALSE, _has_cell_overlays=FALSE)
+	RegisterSignal(src, COMSIG_TRANSFORMING_PRE_TRANSFORM, PROC_REF(check_power))
+	update_appearance()
+
+/obj/item/melee/energy/flyssa/AltClick(mob/user)
+	. = ..()
+	update_appearance()
+
+/obj/item/melee/energy/flyssa/get_cell()
+	var/datum/component/cell/our_cell = GetComponent(/datum/component/cell)
+	return our_cell.inserted_cell
+
+/obj/item/melee/energy/flyssa/update_overlays()
+	. = ..()
+	var/datum/component/cell/our_cell = GetComponent(/datum/component/cell)
+	if(!our_cell.inserted_cell)
+		return cut_overlays()
+	var/charge = our_cell.inserted_cell.percent()
+	switch(charge)
+		if(86 to 100)
+			. += "flyssa-1"
+		if(70 to 85)
+			. += "flyssa-2"
+		if(55 to 69)
+			. += "flyssa-3"
+		if(40 to 54)
+			. += "flyssa-4"
+		if(25 to 39)
+			. += "flyssa-5"
+		if(0 to 25)
+			. += "flyssa-6"
+
+/obj/item/melee/energy/flyssa/proc/check_power()
+	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
+		playsound(src, 'sound/machines/button1.ogg', 10)
+		return COMPONENT_BLOCK_TRANSFORM
+
+/obj/item/melee/energy/flyssa/process(seconds_per_tick)
+	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
+		SEND_SIGNAL(src, COMSIG_ITEM_FORCE_TRANSFORM, "no_power")
+		on_transform()
+		playsound(src, 'sound/weapons/saberoff.ogg', 35)
+		STOP_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/item/melee/energy/flyssa/on_transform(obj/item/source, mob/user, active)
+	if(active)
+		icon_state = "[base_icon_state]-on"
+		item_state = "[base_icon_state]-on"
+		armour_penetration = 60
+		slot_flags = null
+	else
+		icon_state = base_icon_state
+		item_state = base_icon_state
+		armour_penetration = -20
+		slot_flags = ITEM_SLOT_BELT
+	. = ..()

@@ -94,7 +94,8 @@
 /obj/item/radio/Destroy()
 	remove_radio_all(src) //Just to be sure
 	QDEL_NULL(wires)
-	QDEL_NULL(keyslot)
+	if(istype(keyslot))
+		QDEL_NULL(keyslot)
 	return ..()
 
 /obj/item/radio/Initialize()
@@ -103,6 +104,8 @@
 		wires.cut(WIRE_TX) // OH GOD WHY
 	secure_radio_connections = new
 	. = ..()
+	if(ispath(keyslot))
+		keyslot = new keyslot()
 	frequency = sanitize_frequency(frequency, freerange)
 	set_frequency(frequency)
 
@@ -122,7 +125,7 @@
 		return
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		broadcasting = !broadcasting
-		to_chat(user, "<span class='notice'>You toggle broadcasting [broadcasting ? "on" : "off"].</span>")
+		to_chat(user, span_notice("You toggle broadcasting [broadcasting ? "on" : "off"]."))
 
 /obj/item/radio/CtrlShiftClick(mob/user)
 	if(headset)
@@ -131,7 +134,13 @@
 		return
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		listening = !listening
-		to_chat(user, "<span class='notice'>You toggle speaker [listening ? "on" : "off"].</span>")
+		to_chat(user, span_notice("You toggle speaker [listening ? "on" : "off"]."))
+
+/obj/item/radio/attack_hand_secondary(mob/user, modifiers)
+	if((!headset && command) && user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
+		use_command = !use_command
+		to_chat(user, span_notice("You toggle high volume [use_command ? "on" : "off"]."))
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/radio/interact(mob/user)
 	if(unscrewed && !isAI(user))
@@ -221,10 +230,16 @@
 				. = TRUE
 
 /obj/item/radio/talk_into(atom/movable/M, message, channel, list/spans, datum/language/language, list/message_mods)
+	if(SEND_SIGNAL(M, COMSIG_MOVABLE_USING_RADIO, src) & COMPONENT_CANNOT_USE_RADIO)
+		return
+	if(SEND_SIGNAL(src, COMSIG_RADIO_NEW_MESSAGE, M, message, channel) & COMPONENT_CANNOT_USE_RADIO)
+		return
 	if(!spans)
 		spans = list(M.speech_span)
 	if(!language)
 		language = M.get_selected_language()
+	if((initial(language?.flags) & SIGNED_LANGUAGE) && !HAS_TRAIT(M, TRAIT_CAN_SIGN_ON_COMMS))
+		return
 	INVOKE_ASYNC(src, PROC_REF(talk_into_impl), M, message, channel, spans.Copy(), language, message_mods)
 	return ITALICS | REDUCE_RANGE
 
@@ -273,14 +288,20 @@
 	// Determine the identity information which will be attached to the signal.
 	var/atom/movable/virtualspeaker/speaker = new(null, M, src)
 
+	// Check for the overmap's interference level
+	var/interference_level = SSovermap.get_overmap_interference(src)
+
 	// Construct the signal
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, message_mods)
+	signal.data["interference"] = interference_level
+	signal.data["sfx"] = 'sound/effects/radio_chatter.ogg'
 
 	// Independent radios, on the CentCom frequency, reach all independent radios
 	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND))
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
 		signal.map_zones = list(0)  // reaches all Z-levels
+		signal.data["sfx"] = 'sound/effects/overmap/wideband.ogg'
 		signal.broadcast()
 		return
 
@@ -364,22 +385,22 @@
 /obj/item/radio/examine(mob/user)
 	. = ..()
 	if (frequency && in_range(src, user))
-		. += "<span class='notice'>It is set to broadcast over the [frequency/10] frequency.</span>"
+		. += span_notice("It is set to broadcast over the [frequency/10] frequency.")
 	if (unscrewed)
-		. += "<span class='notice'>It can be attached and modified.</span>"
+		. += span_notice("It can be attached and modified.")
 	else
-		. += "<span class='notice'>It cannot be modified or attached.</span>"
+		. += span_notice("It cannot be modified or attached.")
 	if (in_range(src, user)&& !headset)
-		. += "<span class='info'>Ctrl-Shift-click on the [name] to toggle speaker.<br/>Alt-click on the [name] to toggle broadcasting.</span>"
+		. += span_info("Ctrl-Shift-click on the [name] to toggle speaker.<br/>Alt-click on the [name] to toggle broadcasting.")
 
 /obj/item/radio/attackby(obj/item/W, mob/user, params)
 	add_fingerprint(user)
 	if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		unscrewed = !unscrewed
 		if(unscrewed)
-			to_chat(user, "<span class='notice'>The radio can now be attached and modified!</span>")
+			to_chat(user, span_notice("The radio can now be attached and modified!"))
 		else
-			to_chat(user, "<span class='notice'>The radio can no longer be modified or attached!</span>")
+			to_chat(user, span_notice("The radio can no longer be modified or attached!"))
 	else
 		return ..()
 
@@ -390,7 +411,7 @@
 	emped++ //There's been an EMP; better count it
 	var/curremp = emped //Remember which EMP this was
 	if (listening && ismob(loc))	// if the radio is turned on and on someone's person they notice
-		to_chat(loc, "<span class='warning'>\The [src] overloads.</span>")
+		to_chat(loc, span_warning("\The [src] overloads."))
 	broadcasting = FALSE
 	listening = FALSE
 	for (var/ch_name in channels)
@@ -424,7 +445,7 @@
 	. = ..()
 
 /obj/item/radio/borg/syndicate
-	keyslot = new /obj/item/encryptionkey/syndicate
+	keyslot = /obj/item/encryptionkey/syndicate
 
 /obj/item/radio/borg/syndicate/Initialize()
 	. = ..()
@@ -446,14 +467,14 @@
 					keyslot = null
 
 			recalculateChannels()
-			to_chat(user, "<span class='notice'>You pop out the encryption key in the radio.</span>")
+			to_chat(user, span_notice("You pop out the encryption key in the radio."))
 
 		else
-			to_chat(user, "<span class='warning'>This radio doesn't have any encryption keys!</span>")
+			to_chat(user, span_warning("This radio doesn't have any encryption keys!"))
 
 	else if(istype(W, /obj/item/encryptionkey/))
 		if(keyslot)
-			to_chat(user, "<span class='warning'>The radio can't hold another key!</span>")
+			to_chat(user, span_warning("The radio can't hold another key!"))
 			return
 
 		if(!keyslot)
@@ -467,3 +488,9 @@
 	name = "old radio"
 	icon_state = "radio"
 	desc = "An old handheld radio. You could use it, if you really wanted to."
+
+/obj/item/radio/command
+	name = "command radio"
+	icon_state = "cmd_radio"
+	desc = "A handheld radio with a configurable volume knob. Useful for making your voice carry farther."
+	command = TRUE

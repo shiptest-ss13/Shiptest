@@ -72,7 +72,7 @@
 	icon = 'icons/obj/food/donuts.dmi'
 	icon_state = "donutbox_inner"
 	base_icon_state = "donutbox"
-	spawn_type = /obj/item/reagent_containers/food/snacks/donut
+	spawn_type = /obj/item/food/donut
 	is_open = TRUE
 	appearance_flags = KEEP_TOGETHER
 	contents_tag = "donut"
@@ -81,7 +81,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/donut))
+	STR.set_holdable(list(/obj/item/food/donut))
 
 /obj/item/storage/fancy/donut_box/PopulateContents()
 	. = ..()
@@ -100,7 +100,7 @@
 	var/donuts = 0
 
 	for(var/_donut in contents)
-		var/obj/item/reagent_containers/food/snacks/donut/donut = _donut
+		var/obj/item/food/donut/donut = _donut
 		if (!istype(donut))
 			continue
 
@@ -124,14 +124,14 @@
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	name = "egg box"
 	desc = "A carton for containing eggs."
-	spawn_type = /obj/item/reagent_containers/food/snacks/egg
+	spawn_type = /obj/item/food/egg
 	contents_tag = "egg"
 
 /obj/item/storage/fancy/egg_box/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 12
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/egg))
+	STR.set_holdable(list(/obj/item/food/egg))
 
 /obj/item/storage/fancy/egg_box/update_icon_state()
 	. = ..()
@@ -143,7 +143,7 @@
 	if(!is_open)
 		return
 	var/egg_count = 0
-	for(var/obj/item/reagent_containers/food/snacks/egg as anything in contents)
+	for(var/obj/item/food/egg as anything in contents)
 		egg_count++
 		if(!egg)
 			return
@@ -207,19 +207,50 @@
 
 /obj/item/storage/fancy/cigarettes/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to extract contents.</span>"
+	. += span_notice("Alt-click to extract contents.")
 
-/obj/item/storage/fancy/cigarettes/AltClick(mob/living/carbon/user)
+/obj/item/storage/fancy/cigarettes/afterattack_secondary(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	if(!proximity_flag)
+		return
+	if(ishuman(target) && contents.len)
+		var/mob/living/carbon/human/bumming_a_smoke = target
+		if(do_after(user, 15, bumming_a_smoke, show_progress = FALSE))
+			var/obj/item/clothing/mask/cigarette/british_slang = locate(/obj/item/clothing/mask/cigarette) in contents
+			if(british_slang)
+				SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, british_slang, user)
+				if(bumming_a_smoke.equip_to_slot_if_possible(british_slang, ITEM_SLOT_MASK, disable_warning=TRUE))
+					user.visible_message(span_notice("[user] puts a cigarette in [bumming_a_smoke]'s lips"), span_notice("You put a cigarette in [bumming_a_smoke]'s lips"))
+				else
+					bumming_a_smoke.put_in_hand(british_slang)
+					user.visible_message(span_notice("[user] puts a cigarette in [bumming_a_smoke]'s hand"), span_notice("You put a cigarette in [bumming_a_smoke]'s hands"))
+				contents -= british_slang
+
+/obj/item/storage/fancy/cigarettes/attack_self_secondary(mob/living/carbon/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
-	var/obj/item/clothing/mask/cigarette/W = locate(/obj/item/clothing/mask/cigarette) in contents
-	if(W && contents.len > 0)
-		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
-		user.put_in_hands(W)
-		contents -= W
-		to_chat(user, "<span class='notice'>You take \a [W] out of the pack.</span>")
+	get_cigarette(user)
+
+/obj/item/storage/fancy/cigarettes/AltClick(mob/living/carbon/user)
+	. = ..()
+	var/obj/item/lighter/the_zippo = locate(/obj/item/lighter) in contents
+	if(the_zippo)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, the_zippo, user)
+		user.put_in_hands(the_zippo)
+		contents -= the_zippo
 	else
-		to_chat(user, "<span class='notice'>There are no [contents_tag]s left in the pack.</span>")
+		get_cigarette(user)
+
+/obj/item/storage/fancy/cigarettes/proc/get_cigarette(mob/living/carbon/user)
+	var/obj/item/clothing/mask/cigarette/british_slang = locate(/obj/item/clothing/mask/cigarette) in contents
+	if(british_slang)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, british_slang, user)
+		user.put_in_hands(british_slang)
+		contents -= british_slang
+		to_chat(user, span_notice("You take \a [british_slang] out of the pack."))
+	else
+		to_chat(user, span_notice("There are no [contents_tag]s left in the pack."))
+
 
 /obj/item/storage/fancy/cigarettes/update_icon_state()
 	. = ..()
@@ -255,7 +286,7 @@
 
 	var/obj/item/clothing/mask/cigarette/cig = locate() in contents
 	if(!cig)
-		to_chat(user, "<span class='notice'>There are no [contents_tag]s left in the pack.</span>")
+		to_chat(user, span_notice("There are no [contents_tag]s left in the pack."))
 		return
 	if(target != user || !contents.len || user.wear_mask)
 		return ..()
@@ -263,7 +294,7 @@
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, cig, target)
 	target.equip_to_slot_if_possible(cig, ITEM_SLOT_MASK)
 	contents -= cig
-	to_chat(user, "<span class='notice'>You take \a [cig] out of the pack.</span>")
+	to_chat(user, span_notice("You take \a [cig] out of the pack."))
 	return
 
 /obj/item/storage/fancy/cigarettes/dromedaryco
@@ -329,13 +360,6 @@
 	if(prob(7))
 		spawn_type = /obj/item/clothing/mask/cigarette/candy/nicotine //uh oh!
 
-/obj/item/storage/fancy/cigarettes/cigpack_xeno
-	name = "\improper Xeno Filtered packet"
-	desc = "Loaded with 100% pure slime. And also nicotine."
-	icon_state = "slime"
-	base_icon_state = "slime"
-	spawn_type = /obj/item/clothing/mask/cigarette/xeno
-
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis
 	name = "\improper Freak Brothers' Special packet"
 	desc = "A label on the packaging reads, \"Endorsed by Phineas, Freddy and Franklin.\""
@@ -352,7 +376,7 @@
 
 /obj/item/storage/fancy/rollingpapers
 	name = "rolling paper pack"
-	desc = "A pack of Nanotrasen brand rolling papers."
+	desc = "A pack of Makosso-Warra brand rolling papers."
 	w_class = WEIGHT_CLASS_TINY
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "cig_paper_pack"
@@ -397,9 +421,9 @@
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
 		user.put_in_hands(W)
 		contents -= W
-		to_chat(user, "<span class='notice'>You take \a [W] out of the pack.</span>")
+		to_chat(user, span_notice("You take \a [W] out of the pack."))
 	else
-		to_chat(user, "<span class='notice'>There are no items left in the pack.</span>")
+		to_chat(user, span_notice("There are no items left in the pack."))
 
 /obj/item/storage/fancy/cigarettes/derringer/PopulateContents()
 	new spawn_type(src)
@@ -476,15 +500,14 @@
 	base_icon_state = "chocolatebox"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
-	spawn_type = /obj/item/reagent_containers/food/snacks/tinychocolate
+	spawn_type = /obj/item/food/bonbon
 	contents_tag = "chocolate"
 
 /obj/item/storage/fancy/heart_box/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 8
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/tinychocolate))
-
+	STR.set_holdable(list(/obj/item/food/bonbon))
 
 /obj/item/storage/fancy/nugget_box
 	name = "nugget box"
@@ -493,10 +516,10 @@
 	icon_state = "nuggetbox"
 	base_icon_state = "nuggetbox"
 	contents_tag = "nugget"
-	spawn_type = /obj/item/reagent_containers/food/snacks/nugget
+	spawn_type = /obj/item/food/nugget
 
 /obj/item/storage/fancy/nugget_box/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/nugget))
+	STR.set_holdable(list(/obj/item/food/nugget))

@@ -34,7 +34,7 @@
 
 
 	if(A.stage >= 3)
-		M.dizziness = max(0, M.dizziness - 2)
+		M.adjust_timed_status_effect(4 SECONDS, /datum/status_effect/dizziness)
 		M.drowsyness = max(0, M.drowsyness - 2)
 		M.slurring = max(0, M.slurring - 2)
 		M.confused = max(0, M.confused - 2)
@@ -42,7 +42,7 @@
 			M.reagents.remove_all_type(/datum/reagent/consumable/ethanol, 3)
 			if(ishuman(M))
 				var/mob/living/carbon/human/H = M
-				H.drunkenness = max(H.drunkenness - 5, 0)
+				H.adjust_drunk_effect(-5)
 
 	if(A.stage >= 4)
 		M.drowsyness = max(0, M.drowsyness - 2)
@@ -89,13 +89,13 @@
 
 			if(HAS_TRAIT_FROM(M, TRAIT_BLIND, EYE_DAMAGE))
 				if(prob(20))
-					to_chat(M, "<span class='notice'>Your vision slowly returns...</span>")
+					to_chat(M, span_notice("Your vision slowly returns..."))
 					M.cure_blind(EYE_DAMAGE)
 					M.cure_nearsighted(EYE_DAMAGE)
 					M.blur_eyes(35)
 
 				else if(HAS_TRAIT_FROM(M, TRAIT_NEARSIGHT, EYE_DAMAGE))
-					to_chat(M, "<span class='notice'>You can finally focus your eyes on distant objects.</span>")
+					to_chat(M, span_notice("You can finally focus your eyes on distant objects."))
 					M.cure_nearsighted(EYE_DAMAGE)
 					M.blur_eyes(10)
 
@@ -106,4 +106,4 @@
 					eyes.applyOrganDamage(-1)
 		else
 			if(prob(base_message_chance))
-				to_chat(M, "<span class='notice'>[pick("Your eyes feel great.","You feel like your eyes can focus more clearly.", "You don't feel the need to blink.","Your ears feel great.","Your healing feels more acute.")]</span>")
+				to_chat(M, span_notice("[pick("Your eyes feel great.","You feel like your eyes can focus more clearly.", "You don't feel the need to blink.","Your ears feel great.","Your healing feels more acute.")]"))

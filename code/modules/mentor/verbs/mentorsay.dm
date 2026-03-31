@@ -11,13 +11,13 @@
 
 	mob.log_talk(msg, LOG_MSAY)
 
-	msg = "<span class='[check_rights(R_ADMIN, 0) ? "mentoradmin" : "mentor"]'><span class='boldnotice'>MENTOR:</span> <EM>[key_name(usr, 0, 0)]</EM>: <span class='message'>[msg]</span></span>"
+	msg = "<span class='[check_rights(R_ADMIN, 0) ? "mentoradmin" : "mentor"]'>[span_boldnotice("MENTOR:")] <EM>[key_name(usr, 0, 0)]</EM>: [span_message("[msg]")]</span>"
 	to_chat(GLOB.mentors,
 		msg,
 		MESSAGE_TYPE_MENTORCHAT,
 		confidential = TRUE)
 
-	SSblackbox.record_feedback("tally", "mentor_verb", 1, "Msay") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("tally", "mentor_verb", 1, "Msay")
 
 /client/proc/get_mentor_say()
 	var/msg = input(src, null, "msay \"text\"") as text|null

@@ -5,7 +5,7 @@
  */
 /datum/element/tool_bang
 	element_flags = ELEMENT_BESPOKE
-	id_arg_index = 2
+	argument_hash_start_idx = 2
 	/// Strength of the bang
 	var/bang_strength
 

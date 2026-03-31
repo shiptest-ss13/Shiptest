@@ -16,7 +16,7 @@
 	item_state = "banner"
 	lefthand_file = 'icons/mob/inhands/equipment/banners_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/banners_righthand.dmi'
-	desc = "A banner with Nanotrasen's logo on it."
+	desc = "A banner with Makosso-Warra's logo on it."
 	slowdown = 2
 	throw_speed = 0
 	throw_range = 1
@@ -40,21 +40,21 @@
 	if(!reset)
 		reset = new reset_path(get_turf(src))
 		reset.flag = src
-	RegisterSignal(src, COMSIG_PARENT_PREQDELETED, PROC_REF(reset_flag)) //just in case CTF has some map hazards (read: chasms).
+	RegisterSignal(src, COMSIG_PREQDELETED, PROC_REF(reset_flag)) //just in case CTF has some map hazards (read: chasms).
 
 /obj/item/ctf/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed)
 
 /obj/item/ctf/process(seconds_per_tick)
-	if(is_ctf_target(loc)) //don't reset from someone's hands.
+	if(is_ctf_player(loc)) //don't reset from someone's hands.
 		return PROCESS_KILL
 	if(world.time > reset_cooldown)
 		forceMove(get_turf(src.reset))
 		for(var/mob/M in GLOB.player_list)
 			var/area/mob_area = get_area(M)
 			if(istype(mob_area, /area/ctf))
-				to_chat(M, "<span class='userdanger'>\The [src] has been returned to base!</span>")
+				to_chat(M, span_userdanger("\The [src] has been returned to base!"))
 		STOP_PROCESSING(SSobj, src)
 
 /obj/item/ctf/proc/reset_flag(capture = FALSE)
@@ -68,18 +68,18 @@
 		var/area/mob_area = get_area(M)
 		if(istype(mob_area, /area/ctf))
 			if(!capture)
-				to_chat(M, "<span class='userdanger'>[src] has been returned to the base!</span>")
+				to_chat(M, span_userdanger("[src] has been returned to the base!"))
 	STOP_PROCESSING(SSobj, src)
 	return TRUE //so if called by a signal, it doesn't delete
 
 //working with attack hand feels like taking my brain and putting it through an industrial pill press so i'm gonna be a bit liberal with the comments
 /obj/item/ctf/attack_hand(mob/living/user, list/modifiers)
 	//pre normal check item stuff, this is for our special flag checks
-	if(!is_ctf_target(user) && !anyonecanpickup)
-		to_chat(user, "<span class='warning'>Non-players shouldn't be moving the flag!</span>")
+	if(!is_ctf_player(user) && !anyonecanpickup)
+		to_chat(user, span_warning("Non-players shouldn't be moving the flag!"))
 		return
 	if(team in user.faction)
-		to_chat(user, "<span class='warning'>You can't move your own flag!</span>")
+		to_chat(user, span_warning("You can't move your own flag!"))
 		return
 	if(loc == user)
 		if(!user.dropItemToGround(src))
@@ -94,7 +94,7 @@
 	for(var/mob/M in GLOB.player_list)
 		var/area/mob_area = get_area(M)
 		if(istype(mob_area, /area/ctf))
-			to_chat(M, "<span class='userdanger'>\The [src] has been taken!</span>")
+			to_chat(M, span_userdanger("\The [src] has been taken!"))
 	STOP_PROCESSING(SSobj, src)
 	..()
 
@@ -107,7 +107,7 @@
 	for(var/mob/M in GLOB.player_list)
 		var/area/mob_area = get_area(M)
 		if(istype(mob_area, /area/ctf))
-			to_chat(M, "<span class='userdanger'>\The [src] has been dropped!</span>")
+			to_chat(M, span_userdanger("\The [src] has been dropped!"))
 	anchored = TRUE
 
 
@@ -132,7 +132,7 @@
 	name = "banner landmark"
 	icon = 'icons/obj/banner.dmi'
 	icon_state = "banner"
-	desc = "This is where a banner with Nanotrasen's logo on it would go."
+	desc = "This is where a banner with Makosso-Warra's logo on it would go."
 	layer = LOW_ITEM_LAYER
 	var/obj/item/ctf/flag
 
@@ -247,7 +247,7 @@
 			people_who_want_to_play.Cut()
 			toggle_all_ctf()
 		else
-			to_chat(user, "<span class='notice'>CTF has been requested. [num]/[CTF_REQUIRED_PLAYERS] have readied up.</span>")
+			to_chat(user, span_notice("CTF has been requested. [num]/[CTF_REQUIRED_PLAYERS] have readied up."))
 
 		return
 
@@ -255,7 +255,7 @@
 		return
 	if(user.ckey in team_members)
 		if(user.ckey in recently_dead_ckeys)
-			to_chat(user, "<span class='warning'>It must be more than [DisplayTimeText(respawn_cooldown)] from your last death to respawn!</span>")
+			to_chat(user, span_warning("It must be more than [DisplayTimeText(respawn_cooldown)] from your last death to respawn!"))
 			return
 		var/client/new_team_member = user.client
 		if(user.mind && user.mind.current)
@@ -267,10 +267,10 @@
 		if(CTF == src || CTF.ctf_enabled == FALSE)
 			continue
 		if(user.ckey in CTF.team_members)
-			to_chat(user, "<span class='warning'>No switching teams while the round is going!</span>")
+			to_chat(user, span_warning("No switching teams while the round is going!"))
 			return
 		if(CTF.team_members.len < src.team_members.len)
-			to_chat(user, "<span class='warning'>[src.team] has more team members than [CTF.team]! Try joining [CTF.team] team to even things up.</span>")
+			to_chat(user, span_warning("[src.team] has more team members than [CTF.team]! Try joining [CTF.team] team to even things up."))
 			return
 	team_members |= user.ckey
 	var/client/new_team_member = user.client
@@ -292,7 +292,6 @@
 /obj/machinery/capture_the_flag/proc/spawn_team_member(client/new_team_member)
 	var/mob/living/carbon/human/M = new/mob/living/carbon/human(get_turf(src))
 	new_team_member.prefs.copy_to(M)
-	M.set_species(/datum/species/human)
 	M.key = new_team_member.key
 	M.faction += team
 	M.equipOutfit(ctf_gear)
@@ -322,7 +321,7 @@
 		var/area/mob_area = get_area(M)
 		if(istype(mob_area, /area/ctf))
 			to_chat(M, "<span class='narsie [team_span]'>[team] team wins!</span>")
-			to_chat(M, "<span class='userdanger'>Teams have been cleared. Click on the machines to vote to begin another round.</span>")
+			to_chat(M, span_userdanger("Teams have been cleared. Click on the machines to vote to begin another round."))
 			for(var/obj/item/ctf/W in M)
 				M.dropItemToGround(W)
 			M.dust()
@@ -372,7 +371,7 @@
 			continue
 		if(isstructure(atm))
 			var/obj/structure/S = atm
-			S.obj_integrity = S.max_integrity
+			S.update_integrity(S.max_integrity)
 		else if(!is_type_in_typecache(atm, ctf_object_typecache))
 			qdel(atm)
 
@@ -402,105 +401,160 @@
 			CTF.ctf_gear = initial(ctf_gear)
 			CTF.respawn_cooldown = DEFAULT_RESPAWN
 
-/obj/item/ammo_box/magazine/m50/ctf
-	ammo_type = /obj/item/ammo_casing/a50/ctf
-
-/obj/item/ammo_casing/a50/ctf
-	projectile_type = /obj/projectile/bullet/ctf
-
-/obj/projectile/bullet/ctf
-	damage = 0
-
-/obj/projectile/bullet/ctf/prehit_pierce(atom/target)
-	if(is_ctf_target(target))
-		damage = 60
-		return PROJECTILE_PIERCE_NONE	/// hey uhh don't hit anyone behind them
-	. = ..()
-
-/obj/item/gun/ballistic/automatic/laser/ctf
-	default_ammo_type = /obj/item/ammo_box/magazine/recharge/ctf
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/recharge/ctf,
-	)
-	desc = "This looks like it could really hurt in melee."
-	force = 50
-
-/obj/item/gun/ballistic/automatic/laser/ctf/dropped()
-	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
-
-/obj/item/gun/ballistic/automatic/laser/ctf/proc/floor_vanish()
-	if(isturf(loc))
-		qdel(src)
-
-/obj/item/ammo_box/magazine/recharge/ctf
-	ammo_type = /obj/item/ammo_casing/caseless/laser/ctf
-
-/obj/item/ammo_box/magazine/recharge/ctf/dropped()
-	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
-
-/obj/item/ammo_box/magazine/recharge/ctf/proc/floor_vanish()
-	if(isturf(loc))
-		qdel(src)
-
-/obj/item/ammo_casing/caseless/laser/ctf
-	projectile_type = /obj/projectile/beam/ctf
-
-/obj/projectile/beam/ctf
-	damage = 0
-	icon_state = "omnilaser"
-
-/obj/projectile/beam/ctf/prehit_pierce(atom/target)
-	if(is_ctf_target(target))
-		damage = 150
-		return PROJECTILE_PIERCE_NONE		/// hey uhhh don't hit anyone behind them
-	. = ..()
-
-/proc/is_ctf_target(atom/target)
-	. = FALSE
-	if(istype(target, /obj/structure/barricade/security/ctf))
-		. = TRUE
-	if(ishuman(target))
-		var/mob/living/carbon/human/H = target
-		if(istype(H.wear_suit, /obj/item/clothing/suit/space/hardsuit/shielded/ctf))
-			. = TRUE
+/obj/item/gun/ballistic/automatic/laser
+	bad_type = /obj/item/gun/ballistic/automatic/laser
+	spawn_blacklisted = TRUE
 
 // RED TEAM GUNS
 
-/obj/item/gun/ballistic/automatic/laser/ctf/red
-	default_ammo_type = /obj/item/ammo_box/magazine/recharge/ctf/red
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/recharge/ctf/red,
-	)
+/obj/item/gun/ballistic/automatic/assault/skm/ctf
+	desc = "An obsolete model of assault rifle once used by CLIP. This rifle will disintegrate if dropped."
 
-/obj/item/ammo_box/magazine/recharge/ctf/red
-	ammo_type = /obj/item/ammo_casing/caseless/laser/ctf/red
+/obj/item/gun/ballistic/automatic/assault/skm/ctf/dropped()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 30)
 
-/obj/item/ammo_casing/caseless/laser/ctf/red
-	projectile_type = /obj/projectile/beam/ctf/red
+/obj/item/gun/ballistic/automatic/assault/skm/ctf/proc/floor_vanish()
+	if(isturf(loc))
+		qdel(src)
 
-/obj/projectile/beam/ctf/red
-	icon_state = "laser"
-	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
+/obj/item/ammo_box/magazine/skm_762_40/ctf
+	desc = "A slightly curved, 20-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These magazines will disintegrate if dropped."
+
+/obj/item/ammo_box/magazine/skm_762_40/ctf/dropped()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
+
+/obj/item/ammo_box/magazine/skm_762_40/ctf/proc/floor_vanish()
+	if(isturf(loc))
+		qdel(src)
+
+/obj/item/storage/belt/security/military/frontiersmen/skm_ammo/ctf/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 6
+
+/obj/item/storage/belt/security/military/frontiersmen/skm_ammo/ctf/PopulateContents()
+	for(var/i in 1 to 3)
+		new /obj/item/ammo_box/magazine/skm_762_40/ctf(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/gun/ballistic/automatic/pistol/mauler/regular/ctf(src)
+	new /obj/item/melee/knife/combat/ctf(src)
+
+/obj/item/gun/ballistic/automatic/pistol/mauler/regular/ctf
+	desc = "A semi-automatic 9mm handgun frequently used by the Frontiersmen. This sidearm will disintegrate if dropped."
+
+/obj/item/gun/ballistic/automatic/pistol/mauler/regular/ctf/dropped()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 30)
+
+/obj/item/gun/ballistic/automatic/pistol/mauler/regular/ctf/proc/floor_vanish()
+	if(isturf(loc))
+		qdel(src)
+
+/obj/item/ammo_box/magazine/m9mm_mauler/ctf
+	desc = "A 8-round magazine designed for the Mauler pistol. These magazines will disintegrate if dropped."
+
+/obj/item/ammo_box/magazine/m9mm_mauler/ctf/dropped()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
+
+/obj/item/ammo_box/magazine/m9mm_mauler/ctf/proc/floor_vanish()
+	if(isturf(loc))
+		qdel(src)
 
 // BLUE TEAM GUNS
 
-/obj/item/gun/ballistic/automatic/laser/ctf/blue
-	default_ammo_type = /obj/item/ammo_box/magazine/recharge/ctf/blue
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/recharge/ctf/blue,
-	)
+/obj/item/gun/ballistic/automatic/assault/cm82/ctf
+	desc = "CLIP's standard assault rifle, a relatively new service weapon. This rifle will disintegrate if dropped."
 
-/obj/item/ammo_box/magazine/recharge/ctf/blue
-	ammo_type = /obj/item/ammo_casing/caseless/laser/ctf/blue
+/obj/item/gun/ballistic/automatic/assault/cm82/ctf/dropped()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 30)
 
-/obj/item/ammo_casing/caseless/laser/ctf/blue
-	projectile_type = /obj/projectile/beam/ctf/blue
+/obj/item/gun/ballistic/automatic/assault/cm82/ctf/proc/floor_vanish()
+	if(isturf(loc))
+		qdel(src)
 
-/obj/projectile/beam/ctf/blue
-	icon_state = "bluelaser"
-	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+/obj/item/ammo_box/magazine/p16/ctf
+	desc = "A simple, 30-round magazine for 5.56x42mm CLIP assault rifles. These magazines will disintegrate if dropped."
+
+/obj/item/ammo_box/magazine/p16/ctf/dropped()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
+
+/obj/item/ammo_box/magazine/p16/ctf/proc/floor_vanish()
+	if(isturf(loc))
+		qdel(src)
+
+/obj/item/storage/belt/military/clip/cm82/ctf/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 6
+
+/obj/item/storage/belt/military/clip/cm82/ctf/PopulateContents()
+	for(var/i in 1 to 3)
+		new /obj/item/ammo_box/magazine/p16/ctf(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/gun/ballistic/automatic/pistol/cm23/ctf(src)
+	new /obj/item/melee/knife/combat/ctf(src)
+
+/obj/item/gun/ballistic/automatic/pistol/cm23/ctf
+	desc = "CLIP's standard service pistol, chambered in 10mm. This sidearm will disintegrate if dropped."
+
+/obj/item/gun/ballistic/automatic/pistol/cm23/ctf/dropped()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 30)
+
+/obj/item/gun/ballistic/automatic/pistol/cm23/ctf/proc/floor_vanish()
+	if(isturf(loc))
+		qdel(src)
+
+/obj/item/ammo_box/magazine/cm23/ctf
+		desc = "An 10-round magazine magazine designed for the CM-23 pistol. These magazines will disintegrate if dropped."
+
+/obj/item/ammo_box/magazine/cm23/ctf/dropped()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
+
+/obj/item/ammo_box/magazine/cm23/ctf/proc/floor_vanish()
+	if(isturf(loc))
+		qdel(src)
+
+/proc/is_ctf_player(atom/target)
+	. = FALSE
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		if(istype(H.wear_suit, /obj/item/clothing/suit/armor/vest/bulletproof))
+			return TRUE
+
+// CTF MISCELLANEOUS
+
+/obj/item/storage/pouch/medical/ctf
+
+/obj/item/storage/pouch/medical/ctf/dropped()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
+
+/obj/item/storage/pouch/medical/ctf/proc/floor_vanish()
+	if(isturf(loc))
+		qdel(src)
+
+/obj/item/melee/knife/combat/ctf
+	desc = "A standard issue combat knife. This could really hurt someone."
+	force = 25
+	throwforce = 25
+
+/obj/item/melee/knife/combat/ctf/dropped()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 60)
+
+/obj/item/melee/knife/combat/ctf/proc/floor_vanish()
+	if(isturf(loc))
+		qdel(src)
+
+
+// OUTFITS
 
 /datum/outfit/ctf
 	name = "CTF"
@@ -511,10 +565,6 @@
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	id = /obj/item/card/id/away
-	belt = /obj/item/gun/ballistic/automatic/pistol/cm357
-	l_pocket = /obj/item/ammo_box/magazine/recharge/ctf
-	r_pocket = /obj/item/ammo_box/magazine/recharge/ctf
-	r_hand = /obj/item/gun/ballistic/automatic/laser/ctf
 
 /datum/outfit/ctf/post_equip(mob/living/carbon/human/H, visualsOnly=FALSE)
 	if(visualsOnly)
@@ -541,12 +591,17 @@
 	shoes = /obj/item/clothing/shoes/jackboots/fast
 
 /datum/outfit/ctf/red
-	name = "CTF (Red)"
+	name = "CTF (Frontiersman)"
 
-	suit = /obj/item/clothing/suit/space/hardsuit/shielded/ctf/red
-	r_hand = /obj/item/gun/ballistic/automatic/laser/ctf/red
-	l_pocket = /obj/item/ammo_box/magazine/recharge/ctf/red
-	r_pocket = /obj/item/ammo_box/magazine/recharge/ctf/red
+	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	uniform = /obj/item/clothing/under/frontiersmen
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/color/black
+	suit_store = /obj/item/gun/ballistic/automatic/assault/skm/ctf
+	l_pocket = /obj/item/ammo_box/magazine/m9mm_mauler/ctf
+	r_pocket = /obj/item/storage/pouch/medical/ctf
+	belt = /obj/item/storage/belt/security/military/frontiersmen/skm_ammo/ctf
 	id = /obj/item/card/id/syndicate_command //it's red
 
 /datum/outfit/ctf/red/instagib
@@ -556,12 +611,17 @@
 	shoes = /obj/item/clothing/shoes/jackboots/fast
 
 /datum/outfit/ctf/blue
-	name = "CTF (Blue)"
+	name = "CTF (Minuteman)"
 
-	suit = /obj/item/clothing/suit/space/hardsuit/shielded/ctf/blue
-	r_hand = /obj/item/gun/ballistic/automatic/laser/ctf/blue
-	l_pocket = /obj/item/ammo_box/magazine/recharge/ctf/blue
-	r_pocket = /obj/item/ammo_box/magazine/recharge/ctf/blue
+	head = /obj/item/clothing/head/helmet/bulletproof/x11/clip
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
+	uniform = /obj/item/clothing/under/clip/minutemen
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/color/black
+	suit_store = /obj/item/gun/ballistic/automatic/assault/cm82/ctf
+	l_pocket = /obj/item/ammo_box/magazine/cm23/ctf
+	r_pocket = /obj/item/storage/pouch/medical/ctf
+	belt = /obj/item/storage/belt/military/clip/cm82/ctf
 	id = /obj/item/card/id/centcom //it's blue
 
 /datum/outfit/ctf/blue/instagib
@@ -584,8 +644,6 @@
 	R.independent = TRUE
 	H.dna.species.stunmod = 0
 
-
-
 /obj/structure/trap/ctf
 	name = "Spawn protection"
 	desc = "Stay outta the enemy spawn!"
@@ -600,10 +658,10 @@
 	return
 
 /obj/structure/trap/ctf/trap_effect(mob/living/L)
-	if(!is_ctf_target(L))
+	if(!is_ctf_player(L))
 		return
 	if(!(src.team in L.faction))
-		to_chat(L, "<span class='danger'><B>Stay out of the enemy spawn!</B></span>")
+		to_chat(L, span_danger("<B>Stay out of the enemy spawn!</B>"))
 		L.death()
 
 /obj/structure/trap/ctf/red
@@ -668,7 +726,7 @@
 			for(var/obj/item/gun/G in M)
 				qdel(G)
 			O.equip(M)
-			to_chat(M, "<span class='notice'>Ammunition reloaded!</span>")
+			to_chat(M, span_notice("Ammunition reloaded!"))
 			playsound(get_turf(M), 'sound/weapons/gun/shotgun/rack.ogg', 50, TRUE, -1)
 			qdel(src)
 			break
@@ -731,7 +789,7 @@
 				for(var/mob/M in GLOB.player_list)
 					var/area/mob_area = get_area(M)
 					if(istype(mob_area, /area/ctf))
-						to_chat(M, "<span class='userdanger'>[user.real_name] has captured \the [src], claiming it for [CTF.team]! Go take it back!</span>")
+						to_chat(M, span_userdanger("[user.real_name] has captured \the [src], claiming it for [CTF.team]! Go take it back!"))
 				break
 
 #undef WHITE_TEAM

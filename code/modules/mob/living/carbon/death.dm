@@ -36,7 +36,7 @@
 		spray_blood(pick(GLOB.alldirs), rand(1,6))
 	for(var/mob/M in src)
 		M.forceMove(Tsec)
-		visible_message("<span class='danger'>[M] bursts out of [src]!</span>")
+		visible_message(span_danger("[M] bursts out of [src]!"))
 	. = ..()
 
 /mob/living/carbon/spill_organs(no_brain, no_organs, no_bodyparts)
@@ -72,6 +72,10 @@
 
 
 /mob/living/carbon/spread_bodyparts()
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
-		BP.drop_limb()
-		BP.throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),5)
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
+		limb.drop_limb()
+		limb.throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),5)

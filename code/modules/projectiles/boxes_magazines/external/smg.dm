@@ -1,59 +1,10 @@
-/obj/item/ammo_box/magazine/wt550m9
-	name = "wt550 magazine (4.6x30mm)"
-	desc = "A compact, 30-round top-loading magazine for the WT-550 Automatic Rifle. These rounds do okay damage with average performance against armor."
-	icon_state = "46x30mmt-30"
-	base_icon_state = "46x30mmt"
-	ammo_type = /obj/item/ammo_casing/c46x30mm
-	caliber = "4.6x30mm"
-	max_ammo = 30
-
-/obj/item/ammo_box/magazine/wt550m9/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[round(ammo_count(), 6)]"
-
-/obj/item/ammo_box/magazine/wt550m9/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/wt550m9/ap
-	name = "wt550 magazine (4.6x30mm AP)"
-	desc = "A compact, 30-round top-loading magazine for the WT-550 Automatic Rifle. These armor-piercing rounds are great at piercing protective equipment, but lose some stopping power."
-	icon_state = "46x30mmtA-30"
-	base_icon_state = "46x30mmtA"
-	ammo_type = /obj/item/ammo_casing/c46x30mm/ap
-
-/obj/item/ammo_box/magazine/smgm9mm
-	name = "SMG magazine (9mm)"
-	desc = "A 30-round magazine for 9mm submachine guns. These rounds do okay damage, but struggle against armor."
-	icon_state = "smg9mm-42"
-	base_icon_state = "smg9mm"
-	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
-	max_ammo = 30
-
-/obj/item/ammo_box/magazine/smgm9mm/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[ammo_count() ? 42 : 0]"
-
-/obj/item/ammo_box/magazine/smgm9mm/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/smgm9mm/ap
-	name = "SMG magazine (9mm AP)"
-	desc = "A 30-round magazine for 9mm submachine guns. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
-	ammo_type = /obj/item/ammo_casing/c9mm/ap
-
-/obj/item/ammo_box/magazine/smgm9mm/rubber
-	name = "SMG Magazine (9mm rubber)"
-	desc = "A 30-round magazine for 9mm submachine guns. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
-	ammo_type = /obj/item/ammo_casing/c9mm/rubber
-
 /obj/item/ammo_box/magazine/smgm10mm
-	name = "Mongrel magazine (10mm)"
+	name = "Mongrel magazine (10x22mm)"
 	desc = "A 24-round magazine for the SKM-44v. These rounds do moderate damage, but struggle against armor."
 	icon_state = "mongrel_mag-24"
 	base_icon_state = "mongrel_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10mm"
+	caliber = "10x22mm"
 	max_ammo = 24
 
 /obj/item/ammo_box/magazine/smgm10mm/update_icon_state()
@@ -64,7 +15,7 @@
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/smgm10mm/rubber
-	name = "SMG magazine (10mm rubber)"
+	name = "SMG magazine (10x22mm rubber)"
 	desc = "A 24-round magazine for the SkM-44(k). These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
 	ammo_type = /obj/item/ammo_casing/c10mm/rubber
 

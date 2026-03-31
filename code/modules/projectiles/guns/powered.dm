@@ -1,4 +1,5 @@
 /obj/item/gun/ballistic/automatic/powered
+	bad_type = /obj/item/gun/ballistic/automatic/powered
 	default_ammo_type = /obj/item/ammo_box/magazine/gauss
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/gauss,
@@ -21,9 +22,9 @@
 /obj/item/gun/ballistic/automatic/powered/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += "<span class='notice'>[src]'s cell is [round(cell.charge / cell.maxcharge, 0.1) * 100]% full.</span>"
+		. += "\The [name]'s cell has [cell.percent()]% charge remaining."
 	else
-		. += "<span class='notice'>[src] doesn't seem to have a cell!</span>"
+		. += span_notice("[src] doesn't seem to have a cell!")
 
 /obj/item/gun/ballistic/automatic/powered/can_shoot()
 	if(QDELETED(cell))
@@ -36,9 +37,9 @@
 		return FALSE
 	return ..()
 
-/obj/item/gun/ballistic/automatic/powered/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+/obj/item/gun/ballistic/automatic/powered/before_firing(atom/target, mob/user)
 	var/obj/item/ammo_casing/caseless/gauss/shot = chambered
-	if(shot?.energy_cost)
+	if(shot.energy_cost)
 		cell.use(shot.energy_cost)
 	return ..()
 
@@ -57,12 +58,12 @@
 /obj/item/gun/ballistic/automatic/powered/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(user.transferItemToLoc(C, src))
 		cell = C
-		to_chat(user, "<span class='notice'>You load the [C] into \the [src].</span>")
+		to_chat(user, span_notice("You load the [C] into \the [src]."))
 		playsound(src, load_sound, load_sound_volume, load_sound_vary)
 		update_appearance()
 		return TRUE
 	else
-		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
+		to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
 		return FALSE
 
 /obj/item/gun/ballistic/automatic/powered/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
@@ -72,14 +73,14 @@
 	cell = null
 	user.put_in_hands(old_cell)
 	old_cell.update_appearance()
-	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
+	to_chat(user, span_notice("You pull the cell out of \the [src]."))
 	update_appearance()
 
 /obj/item/gun/ballistic/automatic/powered/screwdriver_act(mob/living/user, obj/item/I)
 	if(cell && !internal_cell)
-		to_chat(user, "<span class='notice'>You begin unscrewing and pulling out the cell...</span>")
+		to_chat(user, span_notice("You begin unscrewing and pulling out the cell..."))
 		if(I.use_tool(src, user, unscrewing_time, volume=100))
-			to_chat(user, "<span class='notice'>You remove the power cell.</span>")
+			to_chat(user, span_notice("You remove the power cell."))
 			eject_cell(user)
 	return ..()
 

@@ -157,7 +157,6 @@
 	pixel_x = -17
 	},
 /obj/effect/decal/cleanable/blood/old,
-/obj/item/clothing/mask/gas/explorer/old,
 /obj/item/ammo_casing/spent{
 	pixel_x = 13;
 	pixel_y = -6
@@ -270,7 +269,7 @@
 /area/ruin/whitesands/saloon)
 "hp" = (
 /obj/structure/table/wood/poker,
-/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/saloon)
 "hr" = (
@@ -1027,13 +1026,7 @@
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/gun/energy/plasmacutter{
-	icon_state = "pulse_carbine";
-	name = "pulse rifle";
-	desc = "A supposedly heavy-duty, multifaceted energy rifle. The barrel looks off and the casing seems to be made of plastic";
-	item_state = "pulse";
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	},
+/obj/item/plasmacutter,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "EY" = (
@@ -1176,10 +1169,6 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
-/area/ruin/whitesands/saloon)
-"IE" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/mineral/wood,
 /area/ruin/whitesands/saloon)
 "IP" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
@@ -1947,7 +1936,7 @@ eQ
 eQ
 Eq
 Eq
-IE
+Eq
 Eq
 Eq
 Eq
@@ -2334,7 +2323,7 @@ dq
 Yo
 mx
 ti
-IE
+Eq
 tp
 Ua
 tp
@@ -2366,7 +2355,7 @@ Eq
 mx
 mx
 mx
-IE
+Eq
 eV
 mx
 CB

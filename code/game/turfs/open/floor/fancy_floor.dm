@@ -19,6 +19,7 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	color = WOOD_COLOR_GENERIC
+	flammability = 3
 
 /turf/open/floor/wood/mahogany
 	color = WOOD_COLOR_RICH
@@ -26,11 +27,20 @@
 /turf/open/floor/wood/maple
 	color = WOOD_COLOR_PALE
 
+/turf/open/floor/wood/maple/chlorine
+	initial_gas_mix = COMBAT_CHLORINE
+
 /turf/open/floor/wood/ebony
 	color = WOOD_COLOR_BLACK
 
+/turf/open/floor/wood/ebony/cold
+	initial_gas_mix = "o2=22;n2=82;TEMP=275.65" // normal air but 2.5 degrees
+
 /turf/open/floor/wood/walnut
 	color = WOOD_COLOR_CHOCOLATE
+
+/turf/open/floor/wood/walnut/chlorine
+	initial_gas_mix = COMBAT_CHLORINE
 
 /turf/open/floor/wood/bamboo
 	color = WOOD_COLOR_PALE2
@@ -43,7 +53,7 @@
 
 /turf/open/floor/wood/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>There's a few <b>screws</b> and a <b>small crack</b> visible.</span>"
+	. += span_notice("There's a few <b>screws</b> and a <b>small crack</b> visible.")
 
 /turf/open/floor/wood/screwdriver_act(mob/living/user, obj/item/I)
 	if(..())
@@ -72,16 +82,16 @@
 		broken = 0
 		burnt = 0
 		if(user && !silent)
-			to_chat(user, "<span class='notice'>You remove the broken planks.</span>")
+			to_chat(user, span_notice("You remove the broken planks."))
 	else
 		if(make_tile)
 			if(user && !silent)
-				to_chat(user, "<span class='notice'>You unscrew the planks.</span>")
+				to_chat(user, span_notice("You unscrew the planks."))
 			if(floor_tile)
 				new floor_tile(src)
 		else
 			if(user && !silent)
-				to_chat(user, "<span class='notice'>You forcefully pry off the planks, destroying them in the process.</span>")
+				to_chat(user, span_notice("You forcefully pry off the planks, destroying them in the process."))
 	return make_plating()
 
 /turf/open/floor/wood/airless
@@ -102,6 +112,7 @@
 	var/ore_type = /obj/item/stack/ore/glass
 	var/turfverb = "uproot"
 	tiled_dirt = FALSE
+	flammability = 2 // california simulator
 
 /turf/open/floor/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -113,7 +124,7 @@
 /turf/open/floor/grass/attackby(obj/item/C, mob/user, params)
 	if((C.tool_behaviour == TOOL_SHOVEL) && params)
 		new ore_type(src, 2)
-		user.visible_message("<span class='notice'>[user] digs up [src].</span>", "<span class='notice'>You [turfverb] [src].</span>")
+		user.visible_message(span_notice("[user] digs up [src]."), span_notice("You [turfverb] [src]."))
 		playsound(src, 'sound/effects/shovel_dig.ogg', 50, TRUE)
 		make_plating()
 	if(..())
@@ -148,10 +159,11 @@
 	initial_gas_mix = FROZEN_ATMOS
 	slowdown = 2
 	bullet_sizzle = TRUE
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	flammability = -5 // absolutely not
 
 /turf/open/floor/grass/snow/spawniconchange()
 	return
@@ -161,20 +173,6 @@
 
 /turf/open/floor/grass/snow/crowbar_act(mob/living/user, obj/item/I)
 	return
-
-/turf/open/floor/grass/snow/basalt //By your powers combined, I am captain planet
-	gender = NEUTER
-	name = "volcanic floor"
-	icon = 'icons/turf/floors.dmi'
-	icon_state = "basalt"
-	ore_type = /obj/item/stack/ore/glass/basalt
-	initial_gas_mix = OPENTURF_LOW_PRESSURE
-	slowdown = 0
-
-/turf/open/floor/grass/snow/basalt/spawniconchange()
-	if(prob(15))
-		icon_state = "basalt[rand(0, 12)]"
-		set_basalt_light(src)
 
 /turf/open/floor/grass/snow/safe
 	slowdown = 1.5
@@ -190,15 +188,10 @@
 	ore_type = /obj/item/stack/ore/glass/basalt
 	turfverb = "dig up"
 	slowdown = 0
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-
-/turf/open/floor/grass/fakebasalt/spawniconchange()
-	if(prob(15))
-		icon_state = "basalt[rand(0, 12)]"
-		set_basalt_light(src)
 
 /turf/open/floor/carpet
 	name = "carpet"
@@ -218,10 +211,11 @@
 	clawfootstep = FOOTSTEP_CARPET_BAREFOOT
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
+	flammability = 5
 
 /turf/open/floor/carpet/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>There's a <b>small crack</b> on the edge of it.</span>"
+	. += span_notice("There's a <b>small crack</b> on the edge of it.")
 
 /turf/open/floor/carpet/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -341,15 +335,6 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_STELLAR)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_STELLAR)
 
-/turf/open/floor/carpet/donk
-	name = "Donk Co. carpet"
-	icon = 'icons/turf/floors/carpet_donk.dmi'
-	icon_state = "donk_carpet-255"
-	base_icon_state = "donk_carpet"
-	floor_tile = /obj/item/stack/tile/carpet/donk
-	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_DONK)
-	canSmoothWith = list(SMOOTH_GROUP_CARPET_DONK)
-
 /turf/open/floor/carpet/nanoweave
 	name = "nanoweave carpet"
 	desc = "A padded piece of plasteel plating, used to make space-based installations a feel little less soulless."
@@ -425,6 +410,9 @@
 
 /turf/open/floor/carpet/royalblue/airless
 	initial_gas_mix = AIRLESS_ATMOS
+
+/turf/open/floor/carpet/blue/plasma
+	initial_gas_mix = ATMOS_TANK_PLASMAHALF
 
 /turf/open/floor/carpet/narsie_act(force, ignore_mobs, probability = 20)
 	. = (force || prob(probability))

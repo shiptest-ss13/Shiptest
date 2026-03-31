@@ -73,6 +73,9 @@ GLOBAL_VAR(restart_counter)
 	if(NO_INIT_PARAMETER in params)
 		return
 
+	// Init the debugger first so we can debug Master
+	Debugger = new
+
 	Master.Initialize(10, FALSE, TRUE)
 
 	#ifdef UNIT_TESTS
@@ -209,7 +212,7 @@ GLOBAL_VAR(restart_counter)
 		if(PRcounts[id] > PR_ANNOUNCEMENTS_PER_ROUND)
 			return
 
-	var/final_composed = "<span class='announce'>PR: [announcement]</span>"
+	var/final_composed = span_announce("PR: [announcement]")
 	for(var/client/C in GLOB.clients)
 		C.AnnouncePR(final_composed)
 
@@ -239,9 +242,9 @@ GLOBAL_VAR(restart_counter)
 		if (usr)
 			log_admin("[key_name(usr)] Has requested an immediate world restart via client side debugging tools")
 			message_admins("[key_name_admin(usr)] Has requested an immediate world restart via client side debugging tools")
-		to_chat(world, "<span class='boldannounce'>Rebooting World immediately due to host request.</span>")
+		to_chat(world, span_boldannounce("Rebooting World immediately due to host request."))
 	else
-		to_chat(world, "<span class='boldannounce'>Rebooting world...</span>")
+		to_chat(world, span_boldannounce("Rebooting world..."))
 		Master.Shutdown()	//run SS shutdowns
 
 	TgsReboot()
@@ -270,6 +273,7 @@ GLOBAL_VAR(restart_counter)
 		if(do_hard_reboot)
 			log_world("World hard rebooted at [time_stamp()]")
 			shutdown_logging() // See comment below.
+			QDEL_NULL(Debugger)
 			TgsEndProcess()
 
 	log_world("World rebooted at [time_stamp()]")
@@ -280,9 +284,7 @@ GLOBAL_VAR(restart_counter)
 
 /world/Del()
 	shutdown_logging() // makes sure the thread is closed before end, else we terminate
-	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
-	if (debug_server)
-		LIBCALL(debug_server, "auxtools_shutdown")()
+	QDEL_NULL(Debugger)
 	..()
 
 /world/proc/update_status()

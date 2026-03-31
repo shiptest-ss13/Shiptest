@@ -5,6 +5,10 @@
 #define RADIO_EXTENSION "department specific"
 #define RADIO_KEY "department specific key"
 #define LANGUAGE_EXTENSION "language specific"
+#define SAY_MOD_VERB "say_mod_verb"
+
+/// Message mod which contains a list of bonus "mutual understanding" to allow arbitrary understanding of any speech
+#define LANGUAGE_MUTUAL_BONUS "language mutual bonus"
 
 //Message modes. Each one defines a radio channel, more or less.
 #define MODE_HEADSET "headset"
@@ -16,9 +20,16 @@
 #define MODE_L_HAND "left hand"
 #define MODE_KEY_L_HAND "l"
 
+#define MODE_EXOSUIT "exosuit"
+#define MODE_KEY_EXOSUIT "z"
+
 #define MODE_INTERCOM "intercom"
 #define MODE_KEY_INTERCOM "i"
 #define MODE_TOKEN_INTERCOM ":i"
+
+#define MODE_WIDEBAND "wideband"
+#define MODE_KEY_WIDEBAND "w"
+#define MODE_TOKEN_WIDEBAND ":w"
 
 #define MODE_BINARY "binary"
 #define MODE_KEY_BINARY "b"
@@ -69,7 +80,6 @@
 #define SPAN_PAPYRUS "papyrus"
 #define SPAN_REALLYBIG "reallybig"
 #define SPAN_COMMAND "command_headset"
-#define SPAN_CLOWN "clown"
 #define SPAN_SINGING "singing"
 #define SPAN_SGA "sga"
 

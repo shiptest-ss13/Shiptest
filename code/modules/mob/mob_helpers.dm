@@ -237,6 +237,8 @@
 /proc/Gibberish(text, replace_characters = FALSE, chance = 50)
 	text = html_decode(text)
 	. = ""
+	if(!chance)
+		return sanitize(.)
 	var/rawchar = ""
 	var/letter = ""
 	var/lentext = length(text)
@@ -422,8 +424,8 @@
 			continue
 		var/orbit_link
 		if (source && action == NOTIFY_ORBIT)
-			orbit_link = " <a href='?src=[REF(O)];follow=[REF(source)]'>(Orbit)</a>"
-		to_chat(O, "<span class='ghostalert'>[message][(enter_link) ? " [enter_link]" : ""][orbit_link]</span>")
+			orbit_link = " <a href='byond://?src=[REF(O)];follow=[REF(source)]'>(Orbit)</a>"
+		to_chat(O, span_ghostalert("[message][(enter_link) ? " [enter_link]" : ""][orbit_link]"))
 		if(ghost_sound)
 			SEND_SOUND(O, sound(ghost_sound, volume = notify_volume))
 		if(flashwindow)
@@ -443,38 +445,6 @@
 				alert_overlay.layer = FLOAT_LAYER
 				alert_overlay.plane = FLOAT_PLANE
 				A.add_overlay(alert_overlay)
-
-/**
- * Heal a robotic body part on a mob
- */
-/proc/item_heal_robotic(mob/living/carbon/human/H, mob/user, brute_heal, burn_heal, integrity_loss=0)
-	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
-	if(affecting && (!IS_ORGANIC_LIMB(affecting)))
-		var/dam //changes repair text based on how much brute/burn was supplied
-		if(brute_heal > burn_heal)
-			dam = 1
-		else
-			dam = 0
-		if((brute_heal > 0 && affecting.brute_dam > 0) || (burn_heal > 0 && affecting.burn_dam > 0))
-			if(affecting.uses_integrity)
-				var/integrity_damage_incurred = (affecting.get_curable_damage() >= affecting.integrity_threshold) || (affecting.max_damage - affecting.integrity_loss >= affecting.integrity_threshold)
-				if(affecting.get_curable_damage(integrity_damage_incurred ? integrity_loss : 0) <= 0)
-					var/limb_hp_loss = affecting.integrity_loss-affecting.integrity_ignored
-					if(limb_hp_loss+integrity_loss >= affecting.max_damage)
-						to_chat(user, "<span class='warning'>[affecting] is destroyed! It needs structural repairs to be repaired any further.</span>")
-					else
-						to_chat(user, "<span class='warning'>[affecting] has taken too much structural damage, and needs surgery to improve any further.</span>")
-					return
-				if (integrity_damage_incurred)
-					affecting.take_integrity_damage(integrity_loss)
-
-			if(affecting.heal_damage(brute_heal, burn_heal, 0, BODYTYPE_ROBOTIC))
-				H.update_damage_overlays()
-			user.visible_message("[user] has fixed some of the [dam ? "dents on" : "burnt wires in"] [H]'s [parse_zone(affecting.body_zone)].", \
-			"<span class='notice'>You fix some of the [dam ? "dents on" : "burnt wires in"] [H == user ? "your" : "[H]'s"] [parse_zone(affecting.body_zone)].</span>")
-			return 1 //successful heal
-		else
-			to_chat(user, "<span class='warning'>[affecting] is already in good condition!</span>")
 
 ///Is the passed in mob a ghost with admin powers, doesn't check for AI interact like isAdminGhost() used to
 /proc/isAdminObserver(mob/user)
@@ -528,15 +498,6 @@
 		to_chat(M, "There were no ghosts willing to take control.")
 		message_admins("No ghosts were willing to take control of [ADMIN_LOOKUPFLW(M)])")
 		return FALSE
-
-///Is the mob a flying mob
-/mob/proc/is_flying()
-	return (movement_type & FLYING)
-
-///Is the mob a floating mob
-/mob/proc/is_floating()
-	return (movement_type & FLOATING)
-
 
 ///Clicks a random nearby mob with the source from this mob
 /mob/proc/click_random_mob()
@@ -612,7 +573,7 @@
 			dissectionmsg = " via Experimental Dissection"
 		else if(HAS_TRAIT_FROM(src, TRAIT_DISSECTED,"Thorough Dissection"))
 			dissectionmsg = " via Thorough Dissection"
-		. += "<span class='notice'>This body has been dissected and analyzed[dissectionmsg].</span><br>"
+		. += "[span_notice("This body has been dissected and analyzed[dissectionmsg].")]<br>"
 
 /**
  * Get the list of keywords for policy config

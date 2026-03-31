@@ -40,6 +40,9 @@
 	//slowdown, which increases the slowdown of the turf the hazard is on. All hazards can use this.
 	var/slowdown = 0
 
+	//whether alarms like from trophy cases can set off this hazard
+	var/alarm_sensitive = FALSE
+
 /*
 procs used to set off effects
 */
@@ -81,6 +84,15 @@ evil 'code' that sets off the above procs. mappers beware!
 	disabled = TRUE
 	update_appearance()
 
+/obj/structure/hazard/proc/alarm()
+	if(alarm_sensitive)
+		turn_on()
+		alarm_act()
+
+/obj/structure/hazard/proc/alarm_act()
+	random_effect()
+	return
+
 //real code
 
 /obj/structure/hazard/Initialize()
@@ -95,6 +107,7 @@ evil 'code' that sets off the above procs. mappers beware!
 			COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 		)
 		AddElement(/datum/element/connect_loc, loc_connections)
+	update_appearance()
 
 /obj/structure/hazard/update_icon_state()
 	if(disabled)

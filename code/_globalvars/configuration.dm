@@ -10,6 +10,7 @@ GLOBAL_VAR_INIT(hub_visibility, FALSE)
 
 GLOBAL_VAR_INIT(ooc_allowed, TRUE)	// used with admin verbs to disable ooc - not a config option apparently
 GLOBAL_VAR_INIT(looc_allowed, TRUE)
+GLOBAL_VAR_INIT(deadchat_allowed, TRUE)
 GLOBAL_VAR_INIT(dooc_allowed, TRUE)
 GLOBAL_VAR_INIT(enter_allowed, TRUE)
 GLOBAL_VAR_INIT(shuttle_frozen, FALSE)
@@ -21,6 +22,8 @@ GLOBAL_VAR_INIT(tinted_weldhelh, TRUE)
 // Debug2 is used in conjunction with a lot of admin verbs and therefore is actually legit.
 GLOBAL_VAR_INIT(Debug, FALSE)	// global debug switch
 GLOBAL_VAR_INIT(Debug2, FALSE)
+
+GLOBAL_VAR_INIT(ship_spawn_enabled, TRUE)
 
 //This was a define, but I changed it to a variable so it can be changed in-game.(kept the all-caps definition because... code...) -Errorage
 //Protecting these because the proper way to edit them is with the config/secrets

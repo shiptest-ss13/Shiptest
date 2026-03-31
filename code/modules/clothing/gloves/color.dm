@@ -26,11 +26,11 @@
 		var/success = C.equip_to_slot_if_possible(new /obj/item/clothing/gloves/color/yellow/sprayon, ITEM_SLOT_GLOVES, TRUE, TRUE)
 		if(success)
 			if(C == user)
-				C.visible_message("<span class='notice'>[U] sprays their hands with glittery rubber!</span>")
+				C.visible_message(span_notice("[U] sprays their hands with glittery rubber!"))
 			else
-				C.visible_message("<span class='warning'>[U] sprays glittery rubber on the hands of [C]!</span>")
+				C.visible_message(span_warning("[U] sprays glittery rubber on the hands of [C]!"))
 		else
-			C.visible_message("<span class='warning'>The rubber fails to stick to [C]'s hands!</span>")
+			C.visible_message(span_warning("The rubber fails to stick to [C]'s hands!"))
 
 		qdel(src)
 
@@ -79,7 +79,7 @@
 		shocks_remaining--
 	if(shocks_remaining <= 0)
 		playsound(user, 'sound/items/poster_ripped.ogg', 30)
-		to_chat(user, "<span class='danger'>\The [src] fall apart into useless scraps!</span>")
+		to_chat(user, span_danger("\The [src] fall apart into useless scraps!"))
 		qdel(src)
 
 
@@ -118,7 +118,7 @@
 /obj/item/clothing/gloves/color/black/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WIRECUTTER)
 		if(can_be_cut && icon_state == initial(icon_state))//only if not dyed
-			to_chat(user, "<span class='notice'>You snip the fingertips off of [src].</span>")
+			to_chat(user, span_notice("You snip the fingertips off of [src]."))
 			I.play_tool_sound(src)
 			new /obj/item/clothing/gloves/fingerless(drop_location())
 			qdel(src)
@@ -189,10 +189,10 @@
 	strip_delay = 60
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 50)
 
-/obj/item/clothing/gloves/color/captain/nt
+/obj/item/clothing/gloves/color/captain/warra
 	desc = "Regal blue gloves with gold trim and a fire and acid-resistant coating. Swanky."
 	name = "captain's gloves"
-	icon_state = "captainnt"
+	icon_state = "captainwarra"
 
 /obj/item/clothing/gloves/color/latex
 	name = "latex gloves"
@@ -235,11 +235,6 @@
 	permeability_coefficient = 0.3
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
-/obj/item/clothing/gloves/color/latex/nitrile/inteq
-	name = "green nitrile gloves"
-	desc = "Thick sterile gloves that reach up to the elbows, colored in a pine green shade. Transfers combat medic knowledge into the user via nanochips."
-	icon_state = "nitrile_inteq"
-
 /obj/item/clothing/gloves/color/latex/engineering
 	name = "tinker's gloves"
 	desc = "Overdesigned engineering gloves that have automated construction subrutines dialed in, allowing for faster construction while worn."
@@ -270,3 +265,28 @@
 	icon_state = "maid_arms"
 	item_state = "lgloves"
 	supports_variations = VOX_VARIATION
+
+//long gloves
+
+/obj/item/clothing/gloves/long
+	name = "long gloves"
+	desc = "Stylish, elbow-length gloves."
+	icon = 'icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/hands.dmi'
+	icon_state = "longgloveswhite"
+	item_state = "longgloveswhite"
+	unique_reskin = list(
+		"white long gloves" = "longgloveswhite",
+		"black long gloves" = "longglovesblack",
+	)
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/gloves/long/white
+	name = "white long gloves"
+	icon_state = "longgloveswhite"
+	current_skin = "white long gloves"
+
+/obj/item/clothing/gloves/long/black
+	name = "black long gloves"
+	icon_state = "longglovesblack"
+	current_skin = "black long gloves"

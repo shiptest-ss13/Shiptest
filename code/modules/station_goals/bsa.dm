@@ -11,7 +11,7 @@
 	We need you to construct BSA-[rand(1,99)] Artillery position aboard your station.
 
 	Base parts are available for shipping via cargo.
-	-Nanotrasen Naval Command
+	-Vigilitas Intervention Division Management
 	"}
 
 /datum/station_goal/bluespace_cannon/check_completion()
@@ -42,7 +42,7 @@
 		return
 	var/obj/item/multitool/M = I
 	M.buffer = src
-	to_chat(user, "<span class='notice'>You store linkage information in [I]'s buffer.</span>")
+	to_chat(user, span_notice("You store linkage information in [I]'s buffer."))
 	return TRUE
 
 /obj/machinery/bsa/front
@@ -55,12 +55,12 @@
 		return
 	var/obj/item/multitool/M = I
 	M.buffer = src
-	to_chat(user, "<span class='notice'>You store linkage information in [I]'s buffer.</span>")
+	to_chat(user, span_notice("You store linkage information in [I]'s buffer."))
 	return TRUE
 
 /obj/machinery/bsa/middle
 	name = "Bluespace Artillery Fusor"
-	desc = "Contents classified by Nanotrasen Naval Command. Needs to be linked with the other BSA parts using multitool."
+	desc = "Contents classified by Vigilitas Intervention Division Management. Needs to be linked with the other BSA parts using multitool."
 	icon_state = "fuel_chamber"
 	var/obj/machinery/bsa/back/back
 	var/obj/machinery/bsa/front/front
@@ -73,13 +73,13 @@
 		if(istype(M.buffer, /obj/machinery/bsa/back))
 			back = M.buffer
 			M.buffer = null
-			to_chat(user, "<span class='notice'>You link [src] with [back].</span>")
+			to_chat(user, span_notice("You link [src] with [back]."))
 		else if(istype(M.buffer, /obj/machinery/bsa/front))
 			front = M.buffer
 			M.buffer = null
-			to_chat(user, "<span class='notice'>You link [src] with [front].</span>")
+			to_chat(user, span_notice("You link [src] with [front]."))
 	else
-		to_chat(user, "<span class='warning'>[I]'s data buffer is empty!</span>")
+		to_chat(user, span_warning("[I]'s data buffer is empty!"))
 	return TRUE
 
 /obj/machinery/bsa/middle/proc/check_completion()

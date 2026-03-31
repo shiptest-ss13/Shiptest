@@ -21,6 +21,10 @@
 	display_name = "jackboots"
 	path = /obj/item/clothing/shoes/jackboots
 
+/datum/gear/footwear/combatboots
+	display_name = "combat boots"
+	path = /obj/item/clothing/shoes/combat
+
 /datum/gear/footwear/miningboots
 	display_name = "mining boots"
 	path = /obj/item/clothing/shoes/workboots/mining
@@ -28,6 +32,11 @@
 /datum/gear/footwear/workboots
 	display_name = "work boots"
 	path = /obj/item/clothing/shoes/workboots
+
+/datum/gear/footwear/heels
+	display_name = "heels, recolorable"
+	path = /obj/item/clothing/shoes/heels
+
 //Sneakers
 
 /datum/gear/footwear/color

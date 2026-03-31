@@ -9,7 +9,7 @@
 	role = "Gunnery Sergeant"
 
 /datum/antagonist/ert/gezena/engineer
-	name = "PGF Combat Engineer"
+	name = "PGF Pioneer"
 	outfit = /datum/outfit/job/gezena/ert/engineer
 	role = "Engineer"
 

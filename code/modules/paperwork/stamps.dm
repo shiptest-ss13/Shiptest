@@ -71,11 +71,6 @@
 	icon_state = "stamp-syndicate"
 	dye_color = DYE_SYNDICATE
 
-/obj/item/stamp/donk
-	name = "Donk! Co. rubber stamp"
-	icon_state = "stamp-donk"
-	dye_color = DYE_SYNDICATE
-
 /obj/item/stamp/cybersun
 	name = "Cybersun Virtual Solutions rubber stamp"
 	icon_state = "stamp-cybersun"
@@ -142,85 +137,104 @@
 	icon_state = "stamp-inteq_corpsman"
 
 /obj/item/stamp/clip
-	name = "CLIP Minutemen rubber stamp"
-	icon_state = "stamp-cmm"
+	name = "CLIP rubber stamp"
+	icon_state = "stamp-clip"
 	dye_color = DYE_FO
+
+/obj/item/stamp/clip/cmm
+	name = "CLIP Minutemen rubber stamp"
+	icon_state = "stamp-clip_cmm"
+	dye_color = DYE_CAPTAIN
 
 /obj/item/stamp/clip/gold
-	name = "GOLD rubber stamp"
-	icon_state = "stamp-gold"
-	dye_color = DYE_FO
+	name = "CLIP-GOLD rubber stamp"
+	icon_state = "stamp-clip_gold"
 
 /obj/item/stamp/clip/bard
-	name = "BARD rubber stamp"
-	icon_state = "stamp-bard"
-	dye_color = DYE_FO
+	name = "CLIP-BARD rubber stamp"
+	icon_state = "stamp-clip_bard"
+
+/obj/item/stamp/clip/lord
+	name = "CLIP-LORD rubber stamp"
+	icon_state = "stamp-clip_lord"
+
+/obj/item/stamp/clip/land
+	name = "CLIP-LAND rubber stamp"
+	icon_state = "stamp-clip_land"
+
+/obj/item/stamp/clip/meld
+	name = "CLIP-MELD rubber stamp"
+	icon_state = "stamp-clip_meld"
+
+/obj/item/stamp/clip/deed
+	name = "CLIP-DEED rubber stamp"
+	icon_state = "stamp-clip_deed"
 
 /obj/item/stamp/suns
 	name = "SUNS rubber stamp"
 	icon_state = "stamp-suns"
 	dye_color = DYE_PURPLE
 
-/obj/item/stamp/nanotrasen
-	name = "Nanotrasen rubber stamp"
+/obj/item/stamp/warra
+	name = "Makosso-Warra rubber stamp"
 	desc = "A small rubber stamp for stamping important documents."
-	icon_state = "stamp-nt"
+	icon_state = "stamp-warra"
 	dye_color = DYE_BLUE
 
-/obj/item/stamp/nanotrasen/captain
+/obj/item/stamp/warra/captain
 	name = "NT Captain's rubber stamp"
-	icon_state = "stamp-nt_cap"
+	icon_state = "stamp-warra_cap"
 
-/obj/item/stamp/nanotrasen/officer
+/obj/item/stamp/warra/officer
 	name = "NT Officer's rubber stamp"
-	icon_state = "stamp-nt_fo"
+	icon_state = "stamp-warra_fo"
 
-/obj/item/stamp/nanotrasen/engineering
+/obj/item/stamp/warra/engineering
 	name = "NT Engineering Director's rubber stamp"
-	icon_state = "stamp-nt_engdir"
+	icon_state = "stamp-warra_engdir"
 
-/obj/item/stamp/nanotrasen/medical
+/obj/item/stamp/warra/medical
 	name = "NT Medical Director's rubber stamp"
-	icon_state = "stamp-nt_meddir"
+	icon_state = "stamp-warra_meddir"
 
-/obj/item/stamp/nanotrasen/science
+/obj/item/stamp/warra/science
 	name = "NT Science Director's rubber stamp"
-	icon_state = "stamp-nt_scidir"
+	icon_state = "stamp-warra_scidir"
 
-/obj/item/stamp/nanotrasen/ns
+/obj/item/stamp/warra/ns
 	name = "N+S Logistics rubber stamp"
 	icon_state = "stamp-ns"
 	dye_color = DYE_ORANGE
 
-/obj/item/stamp/nanotrasen/ns/captain
+/obj/item/stamp/warra/ns/captain
 	name = "N+S Captain's rubber stamp"
 	icon_state = "stamp-ns_cap"
 
-/obj/item/stamp/nanotrasen/ns/supply
+/obj/item/stamp/warra/ns/supply
 	name = "N+S Supply Director's rubber stamp"
 	icon_state = "stamp-ns_supdir"
 
-/obj/item/stamp/nanotrasen/vigilitas
+/obj/item/stamp/warra/vigilitas
 	name = "Vigilitas Interstellar rubber stamp"
 	icon_state = "stamp-vi"
 	dye_color = DYE_HOS
 
-/obj/item/stamp/nanotrasen/vigilitas/captain
+/obj/item/stamp/warra/vigilitas/captain
 	name = "VI Captain's rubber stamp"
 	icon_state = "stamp-vi_cap"
 
-/obj/item/stamp/nanotrasen/vigilitas/security
+/obj/item/stamp/warra/vigilitas/security
 	name = "VI Security Director's rubber stamp"
 	icon_state = "stamp-vi_secdir"
 
-/obj/item/stamp/nanotrasen/vigilitas/loss_prevention
+/obj/item/stamp/warra/vigilitas/loss_prevention
 	name = "VI Loss Prevention rubber stamp"
 	icon_state = "stamp-vi_lp"
 
-/obj/item/stamp/nanotrasen/central
+/obj/item/stamp/warra/central
 	name = "NT Central Command rubber stamp"
-	desc = "A rubber stamp for stamping important documents." // Needed, because base nt has "small" added.
-	icon_state = "stamp-nt_central"
+	desc = "A rubber stamp for stamping important documents." // Needed, because base warra has "small" added.
+	icon_state = "stamp-warra_central"
 
 /obj/item/stamp/attack_paw(mob/user)
 	return attack_hand(user)

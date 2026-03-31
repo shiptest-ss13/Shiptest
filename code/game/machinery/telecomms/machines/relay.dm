@@ -73,10 +73,10 @@
 	toggled = FALSE
 	autolinkers = list("r_relay")
 
-/obj/machinery/telecomms/relay/preset/nanotrasen
-	freq_listening = list(FREQ_EMERGENCY, FREQ_NANOTRASEN)
-	id = "Nanotrasen Relay"
-	network = "nt_commnet"
+/obj/machinery/telecomms/relay/preset/warra
+	freq_listening = list(FREQ_EMERGENCY, FREQ_WARRA)
+	id = "Makosso-Warra Relay"
+	network = "warra_commnet"
 
 /obj/machinery/telecomms/relay/preset/inteq
 	freq_listening = list(FREQ_EMERGENCY, FREQ_INTEQ)
@@ -97,6 +97,21 @@
 	freq_listening = list(FREQ_EMERGENCY, FREQ_SYNDICATE)
 	id = "Syndicate Relay"
 	network = "synd_commnet"
+
+/obj/machinery/telecomms/relay/preset/cybersun
+	freq_listening = list(FREQ_EMERGENCY, FREQ_SYNDICATE, FREQ_CYBERSUN)
+	id = "Cybersun Relay"
+	network = "cybersun_commnet"
+
+/obj/machinery/telecomms/relay/preset/ngr
+	freq_listening = list(FREQ_EMERGENCY, FREQ_SYNDICATE, FREQ_NGR)
+	id = "New Gorlex Relay"
+	network = "ngr_commnet"
+
+/obj/machinery/telecomms/relay/preset/suns
+	freq_listening = list(FREQ_EMERGENCY, FREQ_SYNDICATE, FREQ_SUNS)
+	id = "SUNS Relay"
+	network = "suns_commnet"
 
 /obj/machinery/telecomms/relay/preset/frontiersmen
 	freq_listening = list(FREQ_EMERGENCY, FREQ_PIRATE)

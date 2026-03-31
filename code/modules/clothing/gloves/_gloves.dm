@@ -40,7 +40,7 @@
 			. += setup_blood_overlay()
 
 
-/obj/item/clothing/gloves/update_clothes_damaged_state(damaging = TRUE)
+/obj/item/clothing/gloves/update_clothes_damaged_state(damaged_state = CLOTHING_DAMAGED)
 	..()
 	if(ismob(loc))
 		var/mob/M = loc

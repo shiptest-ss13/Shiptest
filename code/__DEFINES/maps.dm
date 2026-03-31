@@ -34,6 +34,7 @@ require only minor tweaks.
 #define ZTRAIT_RESERVED "Reserved"
 #define ZTRAIT_AWAY "Away Mission"
 #define ZTRAIT_SPACE_RUINS "Space Ruins"
+#define ZTRAIT_GAS_GIANT "Gas Giant"
 
 // enum - how SSsun should calculate sun exposure on this level
 // if left null, AZIMUTH is assumed
@@ -124,8 +125,11 @@ require only minor tweaks.
 
 #define ALLOCATION_FREE 1
 #define ALLOCATION_QUADRANT 2
+//Only used for unit testing at the moment, technically splits it into 16 but I didn't like the word for that
+#define ALLOCATION_OCTODRANT 3
 
 #define QUADRANT_MAP_SIZE 127
+#define OCTODRANT_MAP_SIZE 63
 
 #define QUADRANT_SIZE_BORDER 3
 #define TRANSIT_SIZE_BORDER 3

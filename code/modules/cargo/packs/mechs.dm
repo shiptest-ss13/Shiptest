@@ -1,6 +1,7 @@
 /datum/supply_pack/mech
-	group = "Exosuit Construction"
+	category = "Exosuit Construction"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 
 /*
@@ -44,7 +45,6 @@ Build Your Own Suit
 		/obj/item/mecha_parts/chassis/odysseus,
 		/obj/item/mecha_parts/part/odysseus_head,
 		/obj/item/mecha_parts/part/odysseus_torso,
-		/obj/item/mecha_parts/part/odysseus_left_arm,
 		/obj/item/mecha_parts/part/odysseus_left_arm,
 		/obj/item/mecha_parts/part/odysseus_right_arm,
 		/obj/item/mecha_parts/part/odysseus_left_leg,
@@ -341,7 +341,7 @@ weapons
 		/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun
 	)
 
-/datum/supply_pack/mech/weapon/carbine
+/*/datum/supply_pack/mech/weapon/carbine
 	name = "Downpour kit"
 	desc = "A rapid fire energy carbine designed for combat usage."
 	cost = 1000
@@ -355,7 +355,7 @@ weapons
 	cost = 2000
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
-	)
+	)*/
 
 /datum/supply_pack/mech/weapon/ion_cannon
 	name = "MK4 ion cannon kit"
@@ -381,13 +381,15 @@ weapons
 		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
 	)
 
-/datum/supply_pack/mech/weapon/missile_rack
-	name = "BRM-6 kit"
-	desc = "Contains a low-explosive missile launcher, excellent for breaching through obstacles."
-	cost = 3000
+/datum/supply_pack/mech/weapon/railgun
+	name = "PR-05 kit"
+	desc = "Contains a plasma railgun to mount on combat exosuits. Be sure to not overcharge it."
+	cost = 2700
 	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/breaching
+		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/railgun
 	)
+	faction = /datum/faction/warra
+	faction_discount = 20
 
 /*
 ammo
@@ -401,7 +403,7 @@ ammo
 /datum/supply_pack/mech/ammo/scattershot_ammo
 	name = "LBX-10 ammo box"
 	desc = "Contains a twenty four round box of upscaled buckshot, to be loaded directly in a mounted LBX-10."
-	cost = 500
+	cost = 750 //24*8*24 = 1536 total damage assuming all rounds connect
 	contains = list(
 		/obj/item/mecha_ammo/scattershot
 	)
@@ -409,15 +411,18 @@ ammo
 /datum/supply_pack/mech/ammo/lmg_ammo
 	name = "UMG-2 ammo box"
 	desc = "Contains a two hundred-round box of heavy ammunition for the UMG-2."
-	cost = 500
+	cost = 2500 //200*25 = 5000 damage if all rounds connect
 	contains = list(
 		/obj/item/mecha_ammo/lmg
 	)
 
-/datum/supply_pack/mech/ammo/missile_rack_ammo
-	name = "BRM-6 missile box"
-	desc = "Contains a box of six breaching missiles designed to explode upon striking hard surfaces."
-	cost = 1000
+/datum/supply_pack/mech/ammo/railgun_ammo
+	name = "Railgun ammo box"
+	desc = "A box containing thirty iron-tungsten rods for the PR-05 Plasma Railgun."
+	cost = 900 //60 * 30 = 1800 damage if all rounds connect
 	contains = list(
-		/obj/item/mecha_ammo/missiles_br
+		/obj/item/mecha_ammo/railgun_ammo
 	)
+	faction = /datum/faction/warra
+	faction_discount = 20
+

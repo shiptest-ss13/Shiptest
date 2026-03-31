@@ -1,7 +1,7 @@
 //Gutlunches, passive mods that devour blood and gibs
 /mob/living/simple_animal/hostile/asteroid/gutlunch
 	name = "gutlunch"
-	desc = "A scavenger that eats raw meat, often found alongside ash walkers. Produces a thick, nutritious milk."
+	desc = "A scavenger that eats raw meat. Produces a thick, nutritious milk."
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "gutlunch"
 	icon_living = "gutlunch"
@@ -44,7 +44,7 @@
 
 	var/mutable_appearance/gutlunch_full_overlay
 
-	wanted_objects = list(/obj/effect/decal/cleanable/xenoblood/xgibs, /obj/effect/decal/cleanable/blood/gibs/, /obj/item/organ, /obj/item/reagent_containers/food/snacks/meat/slab)
+	wanted_objects = list(/obj/effect/decal/cleanable/xenoblood/xgibs, /obj/effect/decal/cleanable/blood/gibs/, /obj/item/organ, /obj/item/food/meat/slab)
 
 /mob/living/simple_animal/hostile/asteroid/gutlunch/Initialize()
 	. = ..()
@@ -90,8 +90,7 @@
 /mob/living/simple_animal/hostile/asteroid/gutlunch/gubbuck/Initialize()
 	. = ..()
 	add_atom_colour(pick("#E39FBB", "#D97D64", "#CF8C4A"), FIXED_COLOUR_PRIORITY)
-	resize = 0.85
-	update_transform()
+	update_transform(0.85)
 
 //Lady gutlunch. They make the babby.
 /mob/living/simple_animal/hostile/asteroid/gutlunch/guthen
@@ -107,8 +106,7 @@
 /mob/living/simple_animal/hostile/asteroid/gutlunch/grublunch/Initialize()
 	. = ..()
 	add_atom_colour("#9E9E9E", FIXED_COLOUR_PRIORITY) //Somewhat hidden
-	resize = 0.45
-	update_transform()
+	update_transform(0.45)
 
 /mob/living/simple_animal/hostile/asteroid/gutlunch/grublunch/Life()
 	..()
@@ -126,5 +124,5 @@
 	L.faction = faction
 	L.setDir(dir)
 	L.Stun(20, ignore_canstun = TRUE)
-	visible_message("<span class='notice'>[src] grows up into [L].</span>")
+	visible_message(span_notice("[src] grows up into [L]."))
 	qdel(src)

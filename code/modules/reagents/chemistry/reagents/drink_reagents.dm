@@ -6,7 +6,7 @@
 
 /datum/reagent/consumable/orangejuice
 	name = "Orange Juice"
-	description = "Both delicious AND rich in Vitamin C, what more do you need?"
+	description = "Delicious AND rich in Vitamin C. What more do you need?"
 	color = "#E78108" // rgb: 231, 129, 8
 	taste_description = "oranges"
 	glass_icon_state = "glass_orange"
@@ -36,12 +36,12 @@
 
 /datum/reagent/consumable/limejuice
 	name = "Lime Juice"
-	description = "The sweet-sour juice of limes."
+	description = "The sour juice of limes."
 	color = "#669933" // rgb: 54, 94, 48
 	taste_description = "unbearable sourness"
 	glass_icon_state = "glass_green"
 	glass_name = "glass of lime juice"
-	glass_desc = "A glass of intensely sour lime juice. You wonder to yourself: how much do you really need to ward off scurvy for it to come to the point?"
+	glass_desc = "A glass of intensely sour lime juice. You wonder to yourself: how much do you really need to ward off scurvy for it to come to this point?"
 
 /datum/reagent/consumable/limejuice/on_mob_life(mob/living/carbon/M)
 	if(M.getToxLoss() && prob(20))
@@ -55,7 +55,7 @@
 	color = "#cb650c"
 	taste_description = "carrots"
 	glass_icon_state = "carrotjuice"
-	glass_name = "glass of  carrot juice"
+	glass_name = "glass of carrot juice"
 	glass_desc = "Mildly sweet, but it won't actually improve your eyesight all that much beyond the baseline..."
 
 /datum/reagent/consumable/carrotjuice/on_mob_life(mob/living/carbon/M)
@@ -99,6 +99,33 @@
 	. = 1
 	..()
 
+/datum/reagent/consumable/dote_juice
+	name = "Dote Juice"
+	description = "A delicious juice made from dote berries."
+	color = "#2359a0"
+	taste_description = "sweet berries"
+	glass_icon_state = "berryjuice"
+	glass_name = "glass of dote juice"
+	glass_desc = "Dote juice is good hot, cold, and anywhere between the poles."
+
+/datum/reagent/consumable/dotu_juice
+	name = "Dotu Juice"
+	description = "A neutral juice made from ripe dotu fruit."
+	color = "#2359a0"
+	taste_description = "bitter fruit"
+	glass_icon_state = "berryjuice"
+	glass_name = "glass of dotu juice"
+	glass_desc = "Dotu juice is said to be bitter, if not plain, but when it's used as a mixer? Anything can happen."
+
+/datum/reagent/consumable/refa_li
+	name = "Refa-Li Juice"
+	description = "Juice made from Refa-Li, a small spicy cave fruit with earthy notes."
+	color = "#d8702b"
+	taste_description = "pungent spice"
+	glass_icon_state = "berryjuice"
+	glass_name = "glass of refa-li juice"
+	glass_desc = "Refa-Li is spicy unless the seeds have been removed, in which case it takes on a mellower, earthy note."
+
 /datum/reagent/consumable/watermelonjuice
 	name = "Watermelon Juice"
 	description = "Delicious juice made from watermelon."
@@ -115,7 +142,7 @@
 	taste_description = "sourness"
 	glass_icon_state  = "lemonglass"
 	glass_name = "glass of lemon juice"
-	glass_desc = "A glass of intensely sour lime juice. You wonder to yourself: how much do you really need to ward off scurvy for it to come to the point?"
+	glass_desc = "A glass of intensely sour lime juice. You wonder to yourself: how much do you really need to ward off scurvy for it to come to this point?"
 
 /datum/reagent/consumable/banana
 	name = "Banana Juice"
@@ -126,12 +153,6 @@
 	glass_name = "glass of banana juice"
 	glass_desc = "While staring down at this glass, some part of you wonders what went through the minds of those who decided to add this to milk."
 
-/datum/reagent/consumable/banana/on_mob_life(mob/living/carbon/M)
-	if((ishuman(M) && M.job == "Clown") || ismonkey(M))
-		M.heal_bodypart_damage(1,1, 0)
-		. = 1
-	..()
-
 /datum/reagent/consumable/nothing
 	name = "Nothing"
 	description = "Absolutely nothing."
@@ -141,39 +162,6 @@
 	glass_desc = "Absolutely nothing."
 	shot_glass_icon_state = "shotglass"
 
-/datum/reagent/consumable/nothing/on_mob_life(mob/living/carbon/M)
-	if(ishuman(M) && M.mind?.miming)
-		M.silent = max(M.silent, MIMEDRINK_SILENCE_DURATION)
-		M.heal_bodypart_damage(1,1)
-		. = 1
-	..()
-
-/datum/reagent/consumable/laughter
-	name = "Laughter"
-	description = "Some say that this is the best medicine, but recent studies have proven that to be untrue."
-	metabolization_rate = INFINITY
-	color = "#FF4DD2"
-	taste_description = "laughter"
-
-/datum/reagent/consumable/laughter/on_mob_life(mob/living/carbon/M)
-	M.emote("laugh")
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "chemical_laughter", /datum/mood_event/chemical_laughter)
-	..()
-
-/datum/reagent/consumable/superlaughter
-	name = "Super Laughter"
-	description = "Funny until you're the one laughing."
-	metabolization_rate = 1.5 * REAGENTS_METABOLISM
-	color = "#FF4DD2"
-	taste_description = "laughter"
-
-/datum/reagent/consumable/superlaughter/on_mob_life(mob/living/carbon/M)
-	if(prob(30))
-		M.visible_message("<span class='danger'>[M] bursts out into a fit of uncontrollable laughter!</span>", "<span class='userdanger'>You burst out in a fit of uncontrollable laughter!</span>")
-		M.Stun(5)
-		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "chemical_laughter", /datum/mood_event/chemical_superlaughter)
-	..()
-
 /datum/reagent/consumable/potato_juice
 	name = "Potato Juice"
 	description = "Juice of the potato. Bleh."
@@ -182,7 +170,7 @@
 	taste_description = "starchy water"
 	glass_icon_state = "glass_brown"
 	glass_name = "glass of potato juice"
-	glass_desc = "Starchy. It coats your mouth with a filament afterwards, which really isn't helping it's case."
+	glass_desc = "Starchy. It coats your mouth with a filament afterwards, which really isn't helping its case."
 
 /datum/reagent/consumable/grapejuice
 	name = "Grape Juice"
@@ -205,6 +193,25 @@
 		. = 1
 	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
+	..()
+
+/datum/reagent/consumable/tiris_milk
+	name = "Tiris Milk"
+	description = "A strong, tangy milk made by a Tiris. Makes a very good cheese."
+	color = "#e2c5c5"
+	taste_description = "milk"
+	glass_icon_state = "glass_white"
+	glass_name = "glass of milk"
+	glass_desc = "A glass of heavy milk. You wonder what animal this could have come from."
+
+/datum/reagent/consumable/tiris_milk/on_mob_life(mob/living/carbon/M)
+	if(M.getBruteLoss() && prob(20))
+		M.heal_bodypart_damage(1,0, 0)
+		. = 1
+	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
+		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
+	if(holder.has_reagent(/datum/reagent/consumable/refa_li))
+		holder.remove_reagent(/datum/reagent/consumable/refa_li, 2)
 	..()
 
 /datum/reagent/consumable/soymilk
@@ -249,11 +256,11 @@
 	glass_desc = "Black coffee, served straight. It'll be pretty bitter without anything else in it!"
 
 /datum/reagent/consumable/coffee/overdose_process(mob/living/M)
-	M.adjust_jitter(5, max = 200)
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/coffee/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
+	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40)
 	//310.15 is the normal bodytemp.
@@ -262,6 +269,13 @@
 		holder.remove_reagent(/datum/reagent/consumable/frostoil, 5)
 	..()
 	. = 1
+
+/datum/reagent/consumable/creamer
+	name = "Coffee Creamer"
+	description = "Powdered milk for cheap coffee. How delightful."
+	taste_description = "milk"
+	color = "#efeff0"
+	nutriment_factor = 1.5 * REAGENTS_METABOLISM
 
 /datum/reagent/consumable/tea
 	name = "Tea"
@@ -274,9 +288,9 @@
 	glass_desc = "There's a latent desire to drink this out of a teacup, but there's no time for teatime out here."
 
 /datum/reagent/consumable/tea/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-2)
+	M.adjust_timed_status_effect(-4 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-1)
-	M.adjust_jitter(max(0,M.jitteriness-3))
+	M.adjust_timed_status_effect(-6 SECONDS * REM, /datum/status_effect/jitter)
 	M.AdjustSleeping(-20)
 	if(M.getToxLoss() && prob(20))
 		M.adjustToxLoss(-1, 0)
@@ -307,7 +321,7 @@
 
 /datum/reagent/consumable/tea/arnold_palmer/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
-		to_chat(M, "<span class='notice'>[pick("You remember to square your shoulders.","You remember to keep your head down.","You can't decide between squaring your shoulders and keeping your head down.","You remember to relax.","You think about how someday you'll get two strokes off your golf game... whatever that is.")]</span>")
+		to_chat(M, span_notice("[pick("You remember to square your shoulders.","You remember to keep your head down.","You can't decide between squaring your shoulders and keeping your head down.","You remember to relax.","You think about how someday you'll get two strokes off your golf game... whatever that is.")]"))
 	..()
 	. = 1
 
@@ -320,14 +334,14 @@
 	taste_description = "bitter coldness"
 	glass_icon_state = "icedcoffeeglass"
 	glass_name = "iced coffee"
-	glass_desc = "Iced black coffee. It's still going to be pretty bitter on it's own, though!"
+	glass_desc = "Iced black coffee. It's still going to be pretty bitter on its own, though!"
 
 /datum/reagent/consumable/icecoffee/overdose_process(mob/living/M)
-	M.adjust_jitter(5)
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/icecoffee/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
+	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
@@ -336,7 +350,7 @@
 
 /datum/reagent/consumable/hot_ice_coffee
 	name = "Hot Ice Coffee"
-	description = "Coffee with pulsing ice shards"
+	description = "Coffee with pulsing ice shards."
 	color = "#132043" // rgb: 16, 40, 56
 	nutriment_factor = 0
 	overdose_threshold = 80
@@ -347,11 +361,11 @@
 	glass_desc = "The wonders of fusion mixed into a cup of coffee, resulting in an extremely hot-cold drink."
 
 /datum/reagent/consumable/hot_ice_coffee/overdose_process(mob/living/M)
-	M.adjust_jitter(5, max = 200)
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/hot_ice_coffee/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
+	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-60)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
@@ -370,7 +384,7 @@
 	glass_desc = "A much more appealing way to have tea while dealing with the heat."
 
 /datum/reagent/consumable/icetea/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-2)
+	M.adjust_timed_status_effect(-4 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-1)
 	M.AdjustSleeping(-40)
 	if(M.getToxLoss() && prob(20))
@@ -412,8 +426,8 @@
 	..()
 
 /datum/reagent/consumable/crosstalk/on_mob_life(mob/living/carbon/M)
-	M.adjust_jitter(10, max = 200)
-	M.dizziness +=1
+	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.adjust_timed_status_effect(1 SECONDS, /datum/status_effect/dizziness, 2 SECONDS)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
@@ -432,7 +446,7 @@
 	M.drowsyness = max(0,M.drowsyness-7)
 	M.AdjustSleeping(-20)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
-	M.adjust_jitter(5, max = 100)
+	M.set_timed_status_effect(1 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 	. = 1
 
@@ -483,7 +497,7 @@
 
 /datum/reagent/consumable/molten/plasma_fizz
 	name = "Plasma Fizz"
-	description = "A  spinoff of the popular Molten Bubbles drink from Kalixcis, made to emulate the flavor of spiced grape instead. It's... not exactly convincing or a very good mix."
+	description = "A spinoff of the popular Molten Bubbles drink from Kalixcis, made to emulate the flavor of spiced grape instead. It's... not exactly convincing or a very good mix."
 	color = "#5f2010"
 	taste_description = "spiced grape soda"
 	glass_icon_state = "plasma_fizz_glass"
@@ -526,13 +540,14 @@
 	..()
 	if(C?.mind?.get_skill_level(/datum/skill/gaming) >= SKILL_LEVEL_LEGENDARY && method==INGEST && !HAS_TRAIT(C, TRAIT_GAMERGOD))
 		ADD_TRAIT(C, TRAIT_GAMERGOD, "pwr_game")
-		to_chat(C, "<span class='nicegreen'>As you imbibe the PAC-Fuel, your gamer third eye opens... \
-		You feel as though a great secret of the universe has been made known to you...</span>")
+		to_chat(C, span_nicegreen("As you imbibe the PAC-Fuel, your gamer third eye opens... \
+		You feel as though a great secret of the universe has been made known to you..."))
 
 /datum/reagent/consumable/pacfuel/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
-	if(prob(10))
-		M?.mind.adjust_experience(/datum/skill/gaming, 5)
+	if(M.mind)
+		if(prob(10))
+			M?.mind.adjust_experience(/datum/skill/gaming, 5)
 	..()
 
 /datum/reagent/consumable/shoal_punch
@@ -557,7 +572,7 @@
 	glass_desc = "Soda water. You feel like you should add something to this..."
 
 /datum/reagent/consumable/sodawater/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
+	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
@@ -572,7 +587,7 @@
 	glass_desc = "Quinine and carbonated water. You really should add something to this..."
 
 /datum/reagent/consumable/tonic/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
+	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
@@ -590,8 +605,8 @@
 	glass_desc = "A glass of Xeno Energy. It seems to swirl and roil outside of the can..."
 
 /datum/reagent/consumable/xeno_energy/on_mob_life(mob/living/carbon/M)
-	M.adjust_jitter(10, max = 200)
-	M.dizziness +=1
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.adjust_timed_status_effect(2 SECONDS, /datum/status_effect/dizziness, 20 SECONDS)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
@@ -608,7 +623,7 @@
 
 /datum/reagent/consumable/ice
 	name = "Ice"
-	description = "Frozen water, your dentist wouldn't like you chewing this."
+	description = "Frozen water. Your dentist wouldn't like you chewing this."
 	reagent_state = SOLID
 	color = "#619494" // rgb: 97, 148, 148
 	taste_description = "ice"
@@ -632,11 +647,11 @@
 	glass_desc = "A nice and refreshing beverage. It goes well with a book, if you have the time to read."
 
 /datum/reagent/consumable/soy_latte/overdose_process(mob/living/M)
-	M.adjust_jitter(2, max = 100)
+	M.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/soy_latte/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
+	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.set_sleeping(0)
 	M.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
@@ -647,21 +662,21 @@
 
 /datum/reagent/consumable/cafe_latte
 	name = "Cafe Latte"
-	description = "A nice, strong and tasty beverage while you are reading."
+	description = "A nice, strong beverage to enjoy while you are reading."
 	color = "#664300" // rgb: 102, 67, 0
 	quality = DRINK_NICE
 	overdose_threshold = 80
 	taste_description = "bitter cream"
 	glass_icon_state = "cafe_latte"
 	glass_name = "cafe latte"
-	glass_desc = "A nice, strong and refreshing beverage. It goes well with a book, if you have the time to read."
+	glass_desc = "A nice, strong, refreshing beverage. It goes well with a book, if you have the time to read."
 
 /datum/reagent/consumable/cafe_latte/overdose_process(mob/living/M)
-	M.adjust_jitter(5, max = 200)
+	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/cafe_latte/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
+	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.set_sleeping(0)
 	M.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
@@ -777,10 +792,10 @@
 	taste_description = "extreme sourness"
 	glass_icon_state = "triplecitrus" //needs own sprite mine are trash //your sprite is great tho
 	glass_name = "glass of triple citrus"
-	glass_desc = "A mixture of citrus juices. Intensely sour, and leaves you reeling afterwards."
+	glass_desc = "A mixture of citrus juices. Intensely sour and leaves you reeling afterwards."
 
 /datum/reagent/consumable/grape_soda
-	name = "Grape soda"
+	name = "Grape Soda"
 	description = "Artificial grape soda."
 	color = "#E6CDFF"
 	taste_description = "grape soda"
@@ -805,7 +820,7 @@
 	quality = DRINK_NICE
 	taste_description = "sweet herbs and lingering bitterness"
 	glass_name = "glass of Lunapunch"
-	glass_desc = "An herbal-sweet soft drink. The bitter bite after each sip is enough to make you wince, but leaves you wanting more."
+	glass_desc = "An herbal-sweet soft drink. The bitter bite after each sip is enough to make you wince but leaves you wanting more."
 /datum/reagent/consumable/hot_coco
 	name = "Hot Cocoa"
 	description = "Made with love and cocoa beans. Or from a vending machine."
@@ -855,7 +870,7 @@
 	color = "#FFA500"
 	taste_description = "parsnip"
 	glass_name = "glass of parsnip juice"
-	glass_desc = "It doesn't really count as a soup this way. Maybe it'd better if it was a soup."
+	glass_desc = "It doesn't really count as a soup this way. Maybe it'd be better if it were a soup."
 
 /datum/reagent/consumable/pineapplejuice
 	name = "Pineapple Juice"
@@ -916,17 +931,13 @@
 		return ..()
 	var/newsize = pick(0.5, 0.75, 1, 1.50, 2)
 	newsize *= RESIZE_DEFAULT_SIZE
-	H.resize = newsize/current_size
-	current_size = newsize
-	H.update_transform()
+	H.update_transform(newsize/current_size)
 	if(prob(40))
 		H.emote("sneeze")
 	..()
 
 /datum/reagent/consumable/red_queen/on_mob_end_metabolize(mob/living/M)
-	M.resize = RESIZE_DEFAULT_SIZE/current_size
-	current_size = RESIZE_DEFAULT_SIZE
-	M.update_transform()
+	M.update_transform(RESIZE_DEFAULT_SIZE/current_size)
 	..()
 
 /datum/reagent/consumable/bungojuice
@@ -938,8 +949,16 @@
 	glass_name = "glass of bungo juice"
 	glass_desc = "A botanical experiment in creating a new fruit. It smells faintly citrusy, along with a hint of... banana?"
 
+/datum/reagent/consumable/beefbroth
+	name = "Beef Broth"
+	color = "#100800" // rgb: 16, 8, 0 , just like cola
+	taste_description = "pure beef essence"
+	glass_icon_state  = "glass_brown"
+	glass_name = "glass of Master Cola?"
+	glass_desc = "A glass of what appears to be refreshing Space Cola."
+
 /datum/reagent/consumable/prunomix
-	name = "pruno mixture"
+	name = "Pruno Mixture"
 	color = "#E78108"
 	description = "Fruit, sugar, yeast, and water pulped together into a pungent slurry."
 	taste_description = "garbage"
@@ -967,9 +986,9 @@
 	description = "The drank that makes you go wheezy."
 	color = "#DE55ED"
 	quality = DRINK_NICE
-	taste_description = "purple and a hint of opioid."
+	taste_description = "purple with a hint of opioid"
 	glass_icon_state = "lean"
-	glass_name = "Lean"
+	glass_name = "glass of lean"
 	glass_desc = "You just don't often get to see cough syrup out here, and someone had enough to mix it with soda. You're left wondering why."
 
 /datum/reagent/consumable/lean/on_mob_life(mob/living/carbon/M)

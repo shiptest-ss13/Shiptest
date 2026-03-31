@@ -1,19 +1,6 @@
 /datum/supply_pack/tools
-	group = "Tools & Tanks"
+	category = "Tools & Tanks"
 	crate_type = /obj/structure/closet/crate/engineering
-
-/*
-		Vehicles
-*/
-
-/datum/supply_pack/tools/all_terrain_vehicle
-	name = "All Terrain Vehicle"
-	desc = "Contains one ATV and a key, for when you want to explore the frontier in style."
-	cost = 2000
-	contains = list(/obj/vehicle/ridden/atv,
-					/obj/item/key)
-	crate_name = "ATV crate"
-	crate_type = /obj/structure/closet/crate/large
 
 /*
 		Actual tools
@@ -30,30 +17,39 @@
 
 /datum/supply_pack/tools/engigear
 	name = "Engineering Gear Crate"
-	desc = "Contains three toolbelts and 2 sets of meson goggles."
-	cost = 750
+	desc = "Contains one toolbelt and a set of meson goggles."
+	cost = 250
 	contains = list(/obj/item/storage/belt/utility,
-					/obj/item/storage/belt/utility,
-					/obj/item/storage/belt/utility,
-					/obj/item/clothing/glasses/meson/engine,
 					/obj/item/clothing/glasses/meson/engine)
 	crate_name = "engineering gear crate"
 
+/datum/supply_pack/tools/command_radio
+	name = "Command Radio Crate"
+	desc = "Contains a specialty radio that can transmit radio signals at an enhanced volume."
+	contains = list(/obj/item/radio/command)
+	cost = 750
+	crate_name = "radio crate"
+
 /datum/supply_pack/tools/bodycamera
 	name = "Body Camera Crate"
-	desc = "Contains two portable cameras, designed to help keep track of a working group at all times."
-	cost = 250
-	contains = list(/obj/item/bodycamera,
-					/obj/item/bodycamera,
-					/obj/item/paper/guides/bodycam)
+	desc = "Contains one portable camera, designed to help keep track of a working group at all times."
+	cost = 100
+	contains = list(/obj/item/bodycamera)
 	crate_name = "bodycamera crate"
 
 /datum/supply_pack/tools/assbelt
-	name = "Assault Belt"
+	name = "Assault Belt Crate"
 	desc = "Contains an assault belt, with not one, not two, but six pockets."
-	cost = 500
+	cost = 300
 	contains = list(/obj/item/storage/belt/military/assault)
 	crate_name = "assault belt crate"
+
+/datum/supply_pack/tools/chestrig
+	name = "Chest Rig Crate"
+	desc = "Contains a chest rig, with seven places to store small items."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military)
+	crate_name = "chest rig crate"
 
 /datum/supply_pack/tools/cellcharger
 	name = "Cell Charger Crate"
@@ -70,17 +66,33 @@
 
 /datum/supply_pack/tools/mining
 	name = "Basic Mining Crate"
-	desc = "Contains two pickaxes, two ore bags, and two manual mining scanners."
-	cost = 500 //cheaper to send your legions to war (mining) (also you can just print all this asides the scanners so what's the point anyway)
+	desc = "Contains one miniature pickaxe, an ore bag, and a manual mining scanner."
+	cost = 250 //cheaper to send your legions to war (mining) (also you can just print all this asides the scanners so what's the point anyway)
 	contains = list(
-		/obj/item/pickaxe,
 		/obj/item/pickaxe/mini,
 		/obj/item/storage/bag/ore,
-		/obj/item/storage/bag/ore,
-		/obj/item/mining_scanner,
 		/obj/item/mining_scanner)
 	crate_name = "basic mining crate"
-	faction = /datum/faction/nt/ns_logi
+	faction = /datum/faction/warra/ns_logi
+
+/datum/supply_pack/tools/entrenching
+	name = "Entrenching Tool Crate"
+	desc = "Contains one dual-purpose mining tool, useful as a pickaxe, shovel, and weapon. Fits in your bag."
+	cost = 500
+	contains = list(/obj/item/trench_tool)
+	crate_name = "mining crate"
+	faction = /datum/faction/syndicate/ngr
+	faction_discount = 20
+
+/datum/supply_pack/tools/entrenching_gezena
+	name = "PGF Entrenching Tool Crate"
+	desc = "Contains one dual-purpose mining tool, useful as a pickaxe, shovel, and weapon. Fits in your bag, and personally manufactured for PGF use."
+	cost = 500
+	contains = list(/obj/item/trench_tool/gezena)
+	crate_name = "mining crate"
+	faction = /datum/faction/pgf
+	faction_locked = TRUE
+	faction_discount = 20
 
 /datum/supply_pack/tools/jackhammer
 	name = "Jackhammer Crate"
@@ -109,7 +121,7 @@
 	cost = 750
 	contains = list(/obj/item/inducer)
 	crate_name = "inducer crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 
 /datum/supply_pack/tools/jetpack
 	name = "Jetpack Crate"
@@ -124,6 +136,12 @@
 	desc = "A compact jetpack harness for those who don't wish to be weighed down by larger traditional jetpacks."
 	cost = 1500
 	contains = list(/obj/item/tank/jetpack/oxygen/harness)
+
+/datum/supply_pack/tools/jetpack/suit
+	name = "Hardsuit Jetpack Upgrade Crate"
+	desc = "A standardized jetpack attachment designed for direct integration with hardsuits. For when every gram matters."
+	cost = 2000
+	contains = list(/obj/item/tank/jetpack/suit)
 
 /datum/supply_pack/tools/anglegrinder
 	name = "Angle Grinder"
@@ -153,7 +171,7 @@
 	name = "Plasmacutter Crate"
 	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
 	cost = 2500
-	contains = list(/obj/item/gun/energy/plasmacutter)
+	contains = list(/obj/item/plasmacutter)
 	crate_name = "plasmacutter crate"
 
 /datum/supply_pack/tools/sledgehammer
@@ -177,6 +195,7 @@
 	contains = list(/obj/structure/reagent_dispensers/fueltank)
 	crate_name = "fuel tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/tools/watertank
 	name = "Fresh Water Supply Crate"
@@ -185,6 +204,7 @@
 	contains = list(/obj/structure/reagent_dispensers/watertank)
 	crate_name = "water tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/tools/hightank
 	name = "Large Fresh Water Supply Crate"
@@ -193,6 +213,7 @@
 	contains = list(/obj/structure/reagent_dispensers/watertank/high)
 	crate_name = "high-capacity water tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/tools/foamtank
 	name = "Firefighting Foam Tank Crate"
@@ -201,6 +222,7 @@
 	contains = list(/obj/structure/reagent_dispensers/foamtank)
 	crate_name = "foam tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/tools/radfoamtank
 	name = "Radiation Foam Tank Crate"
@@ -212,3 +234,4 @@
 	)
 	crate_name = "foam tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE

@@ -30,7 +30,7 @@
 	emagged = 2
 	remote_disabled = 1
 	locked = TRUE
-	faction = list("mining", "silicon" , "turret")
+	faction = list("mining", "silicon" , FACTION_TURRET)
 	declare_arrests = FALSE
 
 /mob/living/simple_animal/bot/secbot/ed209/rockplanet/stun_attack(atom/A)

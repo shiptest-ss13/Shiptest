@@ -109,7 +109,7 @@
 
 /datum/plant_gene/core/potency
 	name = "Potency"
-	value = 10
+	value = 25
 
 /datum/plant_gene/core/potency/apply_stat(obj/item/seeds/S)
 	S.potency = value
@@ -230,12 +230,12 @@
 	return TRUE
 
 /*
- * on_new_plant is called for every plant trait on an /obj/item/grown or /obj/item/reagent_containers/food/snacks/grown when initialized.
+ * on_new_plant is called for every plant trait on an /obj/item/grown or /obj/item/food/grown when initialized.
  *
  * our_plant - the source plant being created
  * newloc - the loc of the plant
  */
-/datum/plant_gene/trait/proc/on_new_plant(obj/item/reagent_containers/food/snacks/grown/our_plant, newloc)
+/datum/plant_gene/trait/proc/on_new_plant(obj/item/food/grown/our_plant, newloc)
 	// Plants should always have seeds, but if a plant gene is somehow being instantiated on a plant with no seed, stop initializing genes
 	// (Plants hold their genes on their seeds, so we can't really add them to something that doesn't exist)
 	if(isnull(our_plant.get_plant_seed()))
@@ -244,7 +244,7 @@
 
 	// Add on any bonus lines on examine
 	if(description)
-		RegisterSignal(our_plant, COMSIG_PARENT_EXAMINE, PROC_REF(examine))
+		RegisterSignal(our_plant, COMSIG_ATOM_EXAMINE, PROC_REF(examine))
 	return TRUE
 
 /*
@@ -256,24 +256,30 @@
 	return TRUE
 
 /// Add on any unique examine text to the plant's examine text.
-/datum/plant_gene/trait/proc/examine(obj/item/reagent_containers/food/snacks/grown/our_plant, mob/examiner, list/examine_list)
+/datum/plant_gene/trait/proc/examine(obj/item/food/grown/our_plant, mob/examiner, list/examine_list)
 	SIGNAL_HANDLER
 
 	examine_list += span_info("[description]")
 
-/datum/plant_gene/trait/proc/on_consume(obj/item/reagent_containers/food/snacks/grown/G, mob/living/carbon/target)
+/datum/plant_gene/trait/proc/on_new(obj/item/food/grown/G, newloc)
 	return
 
-/datum/plant_gene/trait/proc/on_slip(obj/item/reagent_containers/food/snacks/grown/G, mob/living/carbon/target)
+/datum/plant_gene/trait/proc/on_consume(obj/item/food/grown/G, mob/living/carbon/target)
 	return
 
-/datum/plant_gene/trait/proc/on_squash(obj/item/reagent_containers/food/snacks/grown/G, atom/target)
+/datum/plant_gene/trait/proc/on_slip(obj/item/food/grown/G, mob/living/carbon/target)
 	return
 
-/datum/plant_gene/trait/proc/on_attackby(obj/item/reagent_containers/food/snacks/grown/G, obj/item/I, mob/user)
+/datum/plant_gene/trait/proc/on_squash(obj/item/food/grown/G, atom/target)
 	return
 
-/datum/plant_gene/trait/proc/on_throw_impact(obj/item/reagent_containers/food/snacks/grown/G, atom/target)
+/datum/plant_gene/trait/proc/on_squashreact(obj/item/food/grown/G, atom/target)
+	return
+
+/datum/plant_gene/trait/proc/on_attackby(obj/item/food/grown/G, obj/item/I, mob/user)
+	return
+
+/datum/plant_gene/trait/proc/on_throw_impact(obj/item/food/grown/G, atom/target)
 	return
 
 ///This proc triggers when the tray processes and a roll is sucessful, the success chance scales with production.
@@ -289,7 +295,7 @@
 	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 
 // Register a signal that our plant can be squashed on add.
-/datum/plant_gene/trait/squash/on_new_plant(obj/item/reagent_containers/food/snacks/grown/our_plant, newloc)
+/datum/plant_gene/trait/squash/on_new_plant(obj/item/food/grown/our_plant, newloc)
 	. = ..()
 	if(!.)
 		return
@@ -305,7 +311,7 @@
  * our_plant - the plant this trait belongs to.
  * target - the atom being hit by this squashed plant.
  */
-/datum/plant_gene/trait/squash/proc/squash_plant(obj/item/reagent_containers/food/snacks/grown/our_plant, atom/target)
+/datum/plant_gene/trait/squash/proc/squash_plant(obj/item/food/grown/our_plant, atom/target)
 	SIGNAL_HANDLER
 
 	var/turf/our_turf = get_turf(target)
@@ -348,8 +354,8 @@
 	if(!.)
 		return
 
-	var/obj/item/reagent_containers/food/snacks/grown/grown_plant = our_plant
-	if(istype(grown_plant) && ispath(grown_plant.trash, /obj/item/grown))
+	var/obj/item/food/grown/grown_plant = our_plant
+	if(istype(grown_plant) && ispath(grown_plant.trash_type, /obj/item/grown))
 		return
 
 	var/obj/item/seeds/our_seed = our_plant.get_plant_seed()
@@ -361,7 +367,7 @@
 	our_plant.AddComponent(/datum/component/slippery, min(stun_len, 140), NONE, CALLBACK(src, PROC_REF(handle_slip), our_plant))
 
 /// On slip, sends a signal that our plant was slipped on out.
-/datum/plant_gene/trait/slip/proc/handle_slip(obj/item/reagent_containers/food/snacks/grown/our_plant, mob/slipped_target)
+/datum/plant_gene/trait/slip/proc/handle_slip(obj/item/food/grown/our_plant, mob/slipped_target)
 	SEND_SIGNAL(our_plant, COMSIG_PLANT_ON_SLIP, slipped_target)
 
 
@@ -455,7 +461,7 @@
 /datum/plant_gene/trait/glow/proc/glow_power(obj/item/seeds/S)
 	return max(S.potency*(rate + 0.01), 0.1)
 
-/datum/plant_gene/trait/glow/on_new_plant(obj/item/reagent_containers/food/snacks/grown/G, newloc)
+/datum/plant_gene/trait/glow/on_new_plant(obj/item/food/grown/G, newloc)
 	. = ..()
 	G.light_system = MOVABLE_LIGHT
 	G.AddComponent(/datum/component/overlay_lighting, glow_range(G.seed), glow_power(G.seed), glow_color)
@@ -582,7 +588,7 @@
 	rate = 2
 	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 
-/datum/plant_gene/trait/maxchem/on_new_plant(obj/item/reagent_containers/food/snacks/grown/our_plant, newloc)
+/datum/plant_gene/trait/maxchem/on_new_plant(obj/item/food/grown/our_plant, newloc)
 	. = ..()
 	if(!.)
 		return
@@ -618,7 +624,7 @@
 	if(!.)
 		return
 
-	RegisterSignal(our_plant, COMSIG_PARENT_ATTACKBY, PROC_REF(make_battery))
+	RegisterSignal(our_plant, COMSIG_ATOM_ATTACKBY, PROC_REF(make_battery))
 
 /*
  * When a plant with this gene is hit (attackby) with cables, we turn it into a battery.
@@ -694,7 +700,7 @@
 	var/obj/item/seeds/our_seed = our_plant.get_plant_seed()
 	if(living_target.reagents && living_target.can_inject())
 		var/injecting_amount = max(1, our_seed.potency * 0.2) // Minimum of 1, max of 20
-		our_plant.reagents.trans_to(living_target, injecting_amount, method = INJECT)
+		our_plant.reagents.trans_to(living_target, injecting_amount, methods = INJECT)
 		to_chat(target, span_danger("You are pricked by [our_plant]!"))
 		log_combat(our_plant, living_target, "pricked and attempted to inject reagents from [our_plant] to [living_target]. Last touched by: [our_plant.fingerprintslast].")
 		our_plant.investigate_log("pricked and injected [key_name(living_target)] and injected [injecting_amount] reagents at [AREACOORD(living_target)]. Last touched by: [our_plant.fingerprintslast].", INVESTIGATE_BOTANY)
@@ -719,7 +725,7 @@
  * our_plant - our plant being squashed and smoked
  * target - the atom the plant was squashed on
  */
-/datum/plant_gene/trait/smoke/proc/make_smoke(obj/item/reagent_containers/food/snacks/grown/our_plant, atom/target)
+/datum/plant_gene/trait/smoke/proc/make_smoke(obj/item/food/grown/our_plant, atom/target)
 	SIGNAL_HANDLER
 
 	our_plant.investigate_log("made smoke at [AREACOORD(target)]. Last touched by: [our_plant.fingerprintslast].", INVESTIGATE_BOTANY)

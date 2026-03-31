@@ -2,20 +2,20 @@
 /obj
 	animate_movement = SLIDE_STEPS
 	speech_span = SPAN_ROBOT
+
+	bad_type = /obj
 	var/obj_flags = CAN_BE_HIT
 	var/set_obj_flags // ONLY FOR MAPPING: Sets flags from a string list, handled in Initialize. Usage: set_obj_flags = "EMAGGED;!CAN_BE_HIT" to set EMAGGED and clear CAN_BE_HIT.
 
 	var/damtype = BRUTE
 	var/force = 0
+	var/armour_penetration = 0
 
-	var/datum/armor/armor
-	var/obj_integrity	//defaults to max_integrity
-	var/max_integrity = 500
-	var/integrity_failure = 0 //0 if we have no special broken behavior, otherwise is a percentage of at what point the obj breaks. 0.5 being 50%
-	///Damage under this value will be completely ignored
-	var/damage_deflection = 0
 
-	var/resistance_flags = NONE // INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ON_FIRE | UNACIDABLE | ACID_PROOF | LANDING_PROOF | HYPERSPACE_PROOF
+	/// How good a given object is at causing wounds on carbons. Higher values equal better shots at creating serious wounds.
+	var/wound_bonus = 0
+	/// If this attacks a human with no wound armor on the affected body part, add this to the wound mod. Some attacks may be significantly worse at wounding if there's even a slight layer of armor to absorb some of it vs bare flesh
+	var/bare_wound_bonus = 0
 
 	var/acid_level = 0 //how much acid is on that obj
 
@@ -53,15 +53,6 @@
 	return ..()
 
 /obj/Initialize(mapload)
-	if (islist(armor))
-		armor = getArmor(arglist(armor))
-	else if (!armor)
-		armor = getArmor()
-	else if (!istype(armor, /datum/armor))
-		stack_trace("Invalid type [armor.type] found in .armor during /obj Initialize()")
-	if(obj_integrity == null)
-		obj_integrity = max_integrity
-
 	. = ..() //Do this after, else mat datums is mad.
 
 	if (set_obj_flags)
@@ -76,6 +67,11 @@
 	if((obj_flags & ON_BLUEPRINTS) && isturf(loc) && mapload)
 		var/turf/T = loc
 		T.add_blueprints(src)
+	if(obj_flags & ELEVATED_SURFACE)
+		var/static/list/loc_connections = list(
+			COMSIG_TURF_OPEN_FLAME = PROC_REF(on_open_flame),
+		)
+		AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/Destroy(force=FALSE)
 	if(!ismachinery(src))
@@ -89,7 +85,7 @@
 /obj/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE, quickstart = TRUE)
 	. = ..()
 	if(obj_flags & FROZEN)
-		visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
+		visible_message(span_danger("[src] shatters into a million pieces!"))
 		qdel(src)
 
 
@@ -209,7 +205,7 @@
 	SIGNAL_HANDLER
 	if(!machine)
 		return
-	UnregisterSignal(machine, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(machine, COMSIG_QDELETING)
 	machine.on_unset_machine(src)
 	machine = null
 
@@ -223,7 +219,7 @@
 	if(machine)
 		unset_machine()
 	machine = O
-	RegisterSignal(O, COMSIG_PARENT_QDELETING, PROC_REF(unset_machine))
+	RegisterSignal(O, COMSIG_QDELETING, PROC_REF(unset_machine))
 	if(istype(O))
 		O.obj_flags |= IN_USE
 
@@ -249,10 +245,10 @@
  * Arguments:
  * * ID- An ID card representing what access we have (and thus if we can open things like airlocks or windows to pass through them). The ID card's physical location does not matter, just the reference
  * * to_dir- What direction we're trying to move in, relevant for things like directional windows that only block movement in certain directions
- * * caller- The movable we're checking pass flags for, if we're making any such checks
+ * * requester- The movable we're checking pass flags for, if we're making any such checks
  **/
-/obj/proc/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/caller)
-	if(istype(caller) && (caller.pass_flags & pass_flags_self))
+/obj/proc/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if(istype(requester) && (requester.pass_flags & pass_flags_self))
 		return TRUE
 	. = !density
 
@@ -296,7 +292,7 @@
 					acid = text2num(result["values"]["acid"])
 				)
 				log_admin("[key_name(usr)] modified the armor on [src] ([type]) to melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid]")
-				message_admins("<span class='notice'>[key_name_admin(usr)] modified the armor on [src] ([type]) to melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid]</span>")
+				message_admins(span_notice("[key_name_admin(usr)] modified the armor on [src] ([type]) to melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid]"))
 	if(href_list[VV_HK_MASS_DEL_TYPE])
 		if(check_rights(R_DEBUG|R_SERVER))
 			var/action_type = alert("Strict type ([type]) or type and all subtypes?",,"Strict type","Type and subtypes","Cancel")
@@ -322,7 +318,7 @@
 						to_chat(usr, "No objects of this type exist")
 						return
 					log_admin("[key_name(usr)] deleted all objects of type [O_type] ([i] objects deleted) ")
-					message_admins("<span class='notice'>[key_name(usr)] deleted all objects of type [O_type] ([i] objects deleted) </span>")
+					message_admins(span_notice("[key_name(usr)] deleted all objects of type [O_type] ([i] objects deleted) "))
 				if("Type and subtypes")
 					var/i = 0
 					for(var/obj/Obj in world)
@@ -334,17 +330,17 @@
 						to_chat(usr, "No objects of this type exist")
 						return
 					log_admin("[key_name(usr)] deleted all objects of type or subtype of [O_type] ([i] objects deleted) ")
-					message_admins("<span class='notice'>[key_name(usr)] deleted all objects of type or subtype of [O_type] ([i] objects deleted) </span>")
+					message_admins(span_notice("[key_name(usr)] deleted all objects of type or subtype of [O_type] ([i] objects deleted) "))
 
 /obj/examine(mob/user)
 	. = ..()
 	if(obj_flags & UNIQUE_RENAME)
-		. += "<span class='notice'>Use a pen on it to rename it or change its description.</span>"
+		. += span_notice("Use a pen on it to rename it or change its description.")
 
 /obj/deconstruct_act(mob/living/user, obj/item/I)
 	if(resistance_flags & INDESTRUCTIBLE)
 		to_chat(user, span_warning("[src] cannot be deconstructed!"))
-		return FALSE
+		return TRUE
 	return ..()
 
 /obj/analyzer_act(mob/living/user, obj/item/I)
@@ -355,14 +351,17 @@
 /obj/proc/plunger_act(obj/item/plunger/P, mob/living/user)
 	return
 
+/obj/proc/on_open_flame(datum/source, flame_heat)
+	return BLOCK_TURF_IGNITION
+
 // Should move all contained objects to it's location.
 /obj/proc/dump_contents()
 	CRASH("Unimplemented.")
 
 /obj/handle_ricochet(obj/projectile/P)
 	. = ..()
-	if(. && ricochet_damage_mod)
-		take_damage(P.damage * ricochet_damage_mod, P.damage_type, P.flag, 0, turn(P.dir, 180), P.armour_penetration) // pass along ricochet_damage_mod damage to the structure for the ricochet
+	if(. && receive_ricochet_damage_coeff)
+		take_damage(P.damage * receive_ricochet_damage_coeff, P.damage_type, P.flag, 0, turn(P.dir, 180), P.armour_penetration) // pass along receive_ricochet_damage_coeff damage to the structure for the ricochet
 
 /obj/update_overlays()
 	. = ..()

@@ -35,23 +35,23 @@
 	. = TRUE
 	if(toggling_smooth)
 		if(!atom_supports_smoothing(target))
-			to_chat(user, "<span class='warning'>\the [src] makes a tart buzz. \the [target] doesn't appear to support smoothing.</span>")
+			to_chat(user, span_warning("\the [src] makes a tart buzz. \the [target] doesn't appear to support smoothing."))
 			return ..()
 		smooth_atom(target, user)
 	else
 		if(!atom_supports_diagonal(target))
-			to_chat(user, "<span class='warning'>\the [src] makes a tart buzz. \the [target] doesn't appear to support smoothed corners.</span>")
+			to_chat(user, span_warning("\the [src] makes a tart buzz. \the [target] doesn't appear to support smoothed corners."))
 			return ..()
 		smooth_atom_diagonal(target, user)
 	return
 
 /obj/item/chisel/attack_self(mob/user)
 	toggling_smooth = !toggling_smooth
-	to_chat(user, "<span class='notice'>\the [src] is now set to reform the [(toggling_smooth ? "smoothness" : "corners")] of objects.</span>")
+	to_chat(user, span_notice("\the [src] is now set to reform the [(toggling_smooth ? "smoothness" : "corners")] of objects."))
 
 /obj/item/chisel/proc/smooth_atom(atom/target, mob/living/user)
 	target.smoothing_flags ^= SMOOTH_BITMASK
-	to_chat(user, "<span class='notice'>\the [src] vibrates gently as it reforms \the [target] to be [((target.smoothing_flags & SMOOTH_BITMASK) ? "smooth" : "rough")].</span>")
+	to_chat(user, span_notice("\the [src] vibrates gently as it reforms \the [target] to be [((target.smoothing_flags & SMOOTH_BITMASK) ? "smooth" : "rough")]."))
 	if(target.smoothing_flags & SMOOTH_BITMASK)
 		pre_smooth_state_cache[target] = target.icon_state
 	else
@@ -74,7 +74,7 @@
 		QUEUE_SMOOTH_NEIGHBORS(target)
 		if(iswallturf(target))
 			add_turf_underlay(target)
-	to_chat(user, "<span class='notice'>\the [src] vibrates intensely as it reforms \the [target]'s corners.</span>")
+	to_chat(user, span_notice("\the [src] vibrates intensely as it reforms \the [target]'s corners."))
 
 #define UNDERLAY_FOUND 1
 #define UNDERLAY_MISSING 3

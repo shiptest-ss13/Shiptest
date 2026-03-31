@@ -12,12 +12,12 @@
 	high_threshold = 0.3 * STANDARD_ORGAN_THRESHOLD	//threshold at 30
 	low_threshold = 0.2 * STANDARD_ORGAN_THRESHOLD	//threshold at 20
 
-	low_threshold_passed = "<span class='info'>Distant objects become somewhat less tangible.</span>"
-	high_threshold_passed = "<span class='info'>Everything starts to look a lot less clear.</span>"
-	now_failing = "<span class='warning'>Darkness envelopes you, as your eyes go blind!</span>"
-	now_fixed = "<span class='info'>Color and shapes are once again perceivable.</span>"
-	high_threshold_cleared = "<span class='info'>Your vision functions passably once more.</span>"
-	low_threshold_cleared = "<span class='info'>Your vision is cleared of any ailment.</span>"
+	low_threshold_passed = span_info("Distant objects become somewhat less tangible.")
+	high_threshold_passed = span_info("Everything starts to look a lot less clear.")
+	now_failing = span_warning("Darkness envelopes you, as your eyes go blind!")
+	now_fixed = span_info("Color and shapes are once again perceivable.")
+	high_threshold_cleared = span_info("Your vision functions passably once more.")
+	low_threshold_cleared = span_info("Your vision is cleared of any ailment.")
 
 	var/sight_flags = 0
 	var/see_in_dark = 2
@@ -32,9 +32,13 @@
 	var/lighting_alpha
 	var/no_glasses
 	var/damaged	= FALSE	//damaged indicates that our eyes are undergoing some level of negative effect
+	/// Scarring on this organ
+	var/scarring = NONE
 
 /obj/item/organ/eyes/Insert(mob/living/carbon/M, special = FALSE, drop_if_replaced = FALSE, initialising)
-	. = ..()
+	if(!..())
+		return FALSE
+
 	if(ishuman(owner))
 		var/mob/living/carbon/human/human_owner = owner
 		old_eye_color = human_owner.eye_color
@@ -49,37 +53,107 @@
 		else
 			sclera_color = human_owner.sclera_color
 
+	if(scarring)
+		apply_scarring_effects()
 	M.update_tint()
+	if(organ_flags & ORGAN_FAILING)
+		M.become_blind(EYE_DAMAGE)
 	owner.update_sight()
 	if(M.has_dna() && ishuman(M))
 		M.dna.species.handle_body(M) //updates eye icon
+	RegisterSignal(M, COMSIG_ATOM_BULLET_ACT, PROC_REF(on_bullet_act))
+	return TRUE
 
 /obj/item/organ/eyes/Remove(mob/living/carbon/M, special = 0)
+	UnregisterSignal(M, COMSIG_ATOM_BULLET_ACT)
 	..()
 	if(ishuman(M) && eye_color)
 		var/mob/living/carbon/human/human_owner = M
 		human_owner.eye_color = old_eye_color
 		human_owner.regenerate_icons()
+	if(damaged)
+		M.clear_fullscreen("eye_damage")
+	if(scarring)
+		M.cure_blind(EYE_SCARRING_TRAIT)
+		M.clear_fullscreen(EYE_SCARRING_TRAIT)
+		REMOVE_TRAIT(M, TRAIT_SCARRED_EYE, EYE_SCARRING_TRAIT)
 	M.cure_blind(EYE_DAMAGE)
 	M.cure_nearsighted(EYE_DAMAGE)
 	M.set_blindness(0)
 	M.set_blurriness(0)
 	M.update_sight()
 
+/obj/item/organ/eyes/proc/on_bullet_act(mob/living/carbon/source, obj/projectile/proj, def_zone)
+	SIGNAL_HANDLER
+
+	// Once-a-dozen-rounds level of rare
+	if(def_zone != BODY_ZONE_HEAD || !prob(proj.damage * 0.05 + 2) || !(proj.damage_type == BRUTE || proj.damage_type == BURN))
+		return
+
+	var/obj/item/clothing/eye_protection = owner.get_item_by_slot(ITEM_SLOT_EYES)
+	if(isclothing(eye_protection) && (eye_protection.clothing_flags & SEALS_EYES))
+		to_chat(source, span_notice("[proj] strikes your [eye_protection.name]!"))
+		return // you'll shoot your eye out!
+
+	var/valid_sides = list()
+	if(!(scarring & RIGHT_EYE_SCAR))
+		valid_sides += RIGHT_EYE_SCAR
+	if(!(scarring & LEFT_EYE_SCAR))
+		valid_sides += LEFT_EYE_SCAR
+	if(!prob(50 * length(valid_sides)))
+		return
+
+	var/picked_side = pick(valid_sides)
+	// oof ouch my eyes
+	applyOrganDamage(rand((maxHealth - high_threshold) * 0.5, maxHealth - low_threshold))
+	var/datum/wound/pierce/bleed/severe/eye/eye_puncture = new
+	eye_puncture.apply_wound(source.get_bodypart(BODY_ZONE_HEAD), wound_source = "bullet impact", eye_scar = picked_side)
+
+/obj/item/organ/eyes/update_overlays()
+	. = ..()
+	if(scarring & RIGHT_EYE_SCAR)
+		. += mutable_appearance('icons/obj/surgery.dmi', "eye_scar_right")
+	if(scarring & LEFT_EYE_SCAR)
+		. += mutable_appearance('icons/obj/surgery.dmi', "eye_scar_left")
+
+/obj/item/organ/eyes/proc/apply_scar(side)
+	if(scarring & side)
+		return
+	scarring |= side
+	maxHealth -= 15
+	update_appearance()
+	apply_scarring_effects()
+
+/obj/item/organ/eyes/proc/apply_scarring_effects()
+	if(!owner)
+		return
+	ADD_TRAIT(owner, TRAIT_SCARRED_EYE, EYE_SCARRING_TRAIT)
+	if((scarring & RIGHT_EYE_SCAR) && (scarring & LEFT_EYE_SCAR))
+		owner.become_blind(EYE_SCARRING_TRAIT)
+	owner.overlay_fullscreen(EYE_SCARRING_TRAIT, /atom/movable/screen/fullscreen/impaired, 1)
+	owner.update_body()
+
+/obj/item/organ/eyes/proc/fix_scar(side)
+	if(!(scarring & side))
+		return
+	scarring &= ~side
+	maxHealth += 15
+	update_appearance()
+	if(!owner)
+		return
+	if(!scarring)
+		REMOVE_TRAIT(owner, TRAIT_SCARRED_EYE, EYE_SCARRING_TRAIT)
+		owner.clear_fullscreen(EYE_SCARRING_TRAIT)
+	owner.cure_blind(EYE_SCARRING_TRAIT)
+	owner.update_body()
 
 /obj/item/organ/eyes/on_life()
 	..()
 	var/mob/living/carbon/C = owner
-	//since we can repair fully damaged eyes, check if healing has occurred
-	if((organ_flags & ORGAN_FAILING) && (damage < maxHealth))
-		organ_flags &= ~ORGAN_FAILING
-		C.cure_blind(EYE_DAMAGE)
 	//various degrees of "oh fuck my eyes", from "point a laser at your eye" to "staring at the Sun" intensities
 	if(damage > 20)
 		damaged = TRUE
-		if((organ_flags & ORGAN_FAILING))
-			C.become_blind(EYE_DAMAGE)
-		else if(damage > 30)
+		if(damage > 30)
 			C.overlay_fullscreen("eye_damage", /atom/movable/screen/fullscreen/impaired, 2)
 		else
 			C.overlay_fullscreen("eye_damage", /atom/movable/screen/fullscreen/impaired, 1)
@@ -88,6 +162,16 @@
 		damaged = FALSE
 		C.clear_fullscreen("eye_damage")
 	return
+
+/obj/item/organ/eyes/on_organ_fail()
+	. = ..()
+	if(owner)
+		owner.become_blind(EYE_DAMAGE)
+
+/obj/item/organ/eyes/on_organ_restore()
+	. = ..()
+	if(owner)
+		owner.cure_blind(EYE_DAMAGE)
 
 /obj/item/organ/eyes/lizard
 	name = "lizard eyes"
@@ -150,13 +234,21 @@
 /obj/item/organ/eyes/robotic/kepori
 	eye_icon_state = "eyes_kepori_synth"
 
+/obj/item/organ/eyes/robotic/mono
+	name = "monoeye"
+	eye_icon_state = "eyes_mono"
+
+/obj/item/organ/eyes/robotic/circle
+	name = "circle monitor"
+	eye_icon_state = "eyes_circle"
+
 /obj/item/organ/eyes/robotic/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
 	if(prob(10 * severity))
 		return
-	to_chat(owner, "<span class='warning'>Static obfuscates your vision!</span>")
+	to_chat(owner, span_warning("Static obfuscates your vision!"))
 	owner.flash_act(visual = 1)
 
 /obj/item/organ/eyes/robotic/xray
@@ -316,14 +408,14 @@
 /obj/item/organ/eyes/robotic/glow/proc/activate(silent = FALSE)
 	start_visuals()
 	if(!silent)
-		to_chat(owner, "<span class='warning'>Your [src] clicks and makes a whining noise, before shooting out a beam of light!</span>")
+		to_chat(owner, span_warning("Your [src] clicks and makes a whining noise, before shooting out a beam of light!"))
 	active = TRUE
 	cycle_mob_overlay()
 
 /obj/item/organ/eyes/robotic/glow/proc/deactivate(silent = FALSE)
 	clear_visuals()
 	if(!silent)
-		to_chat(owner, "<span class='warning'>Your [src] shuts off!</span>")
+		to_chat(owner, span_warning("Your [src] shuts off!"))
 	active = FALSE
 	remove_mob_overlay()
 

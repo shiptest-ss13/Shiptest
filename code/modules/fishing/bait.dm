@@ -27,9 +27,9 @@
 /obj/item/bait_can/worm
 	name = "can o' worm"
 	desc = "this can got worms."
-	bait_type = /obj/item/reagent_containers/food/snacks/bait/worm
+	bait_type = /obj/item/food/bait/worm
 
 /obj/item/bait_can/worm/premium
 	name = "can o' worm deluxe"
 	desc = "this can got fancy worms."
-	bait_type = /obj/item/reagent_containers/food/snacks/bait/worm/premium
+	bait_type = /obj/item/food/bait/worm/premium

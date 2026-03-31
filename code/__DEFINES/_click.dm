@@ -6,6 +6,9 @@
 #define RIGHT_CLICK "right" //used in buildmode
 #define MIDDLE_CLICK "middle"
 #define LEFT_CLICK "left"
+#define BUTTON4 "xbutton1"
+#define BUTTON5 "xbutton2"
+
 
 //Keys held down during the mouse action
 #define CTRL_CLICK "ctrl"

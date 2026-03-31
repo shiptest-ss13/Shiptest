@@ -1,0 +1,60 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Goliath-class Fleet Tender",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "Hardline Salvage and Mining",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL",
+		"NATURAL_AGGRESSIVE"
+	],
+	"map_short_name": "Goliath-class",
+	"map_path": "_maps/shuttles/independent/independent_goliath.dmm",
+	"token_icon_state": "ship_mid_generic",
+	"description": "One of Hardlines older vessels, Goliath-class vessels were originally designed as fleet tenders and logistical hubs as well as resting points for flotillas of independent vessels, fitted with spacious crew accommodations unusual for Hardline vessels, telecommunications arrays, fuel mixing, and decent medical services. However with shortages caused by the ICW and the vessels high price-point for all its tech, most have been downgraded and reimagined; mostly involving selling off non-critical equipment and trading the expensive Brood-class ferries for cheaper June-class dropships. Nowadays most Goliath-class vessels operate solo, using their shuttles to mine or as away-vessels or continuing in their original role as fleet tenders for Independent flotillas.",
+	"tags": [
+		"Generalist",
+		"Engineering",
+		"Medical",
+		"Telecomms",
+		"Subshuttle"
+	],
+	"starting_funds": 3000,
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"First Officer": {
+			"outfit": "/datum/outfit/job/independent/hop",
+			"officer": true,
+			"slots": 1
+		},
+		"Shuttle Pilot": {
+			"outfit": "/datum/outfit/job/independent/quartermaster",
+			"officer": true,
+			"slots": 1
+		},
+		"Technician": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 2
+		},
+		"Security Detail": {
+			"outfit": "/datum/outfit/job/independent/security/disarmed",
+			"slots": 2
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/independent/doctor",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 3
+		}
+	},
+	"enabled": true
+}

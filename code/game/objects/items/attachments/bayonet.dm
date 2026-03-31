@@ -2,13 +2,16 @@
 	name = "bayonet"
 	desc = "Stabby-Stabby"
 	icon_state = "bayonet"
+	item_state = "bayonet"
+	lefthand_file = 'icons/mob/inhands/weapons/knifes_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/knifes_righthand.dmi'
 	force = 15
 	throwforce = 10
 	pickup_sound =  'sound/items/handling/knife1_pickup.ogg'
 	drop_sound = 'sound/items/handling/knife3_drop.ogg'
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	sharpness = IS_SHARP_ACCURATE
+	sharpness = SHARP_POINTY
 	slot = ATTACHMENT_SLOT_MUZZLE
 
 	pixel_shift_x = 1

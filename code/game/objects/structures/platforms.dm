@@ -6,9 +6,11 @@
 	flags_1 = ON_BORDER_1
 	layer = RAILING_LAYER
 	pass_flags_self = LETPASSTHROW
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	density = TRUE
 	anchored = TRUE
 	climbable = TRUE
+	climb_time = 4 SECONDS
 
 /obj/structure/platform/Initialize()
 	. = ..()
@@ -48,6 +50,23 @@
 	density = FALSE
 	climbable = FALSE
 
+/obj/structure/platform/industrial_alt/indestructible
+	icon_state = "industrial2_platform"
+	climbable = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/structure/platform/industrial_alt/indestructible/CanPass(atom/movable/mover, border_dir)
+	. = ..()
+	if(border_dir & dir)
+		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
+	return FALSE
+
+/obj/structure/platform/industrial_alt/corner/indestructible
+	icon_state = "ind2_platform_corners"
+	density = FALSE
+	climbable = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
 /obj/structure/platform/military
 	icon_state = "military_platform"
 
@@ -79,6 +98,21 @@
 	icon_state = "ship3_platform_corners"
 	density = FALSE
 	climbable = FALSE
+
+/obj/structure/platform/ship_three/indestructible
+	climbable = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/structure/platform/ship_three/indestructible/CanPass(atom/movable/mover, border_dir)
+	. = ..()
+	if(border_dir & dir)
+		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
+	return FALSE
+
+/obj/structure/platform/ship_three/corner/indestructible
+	density = FALSE
+	climbable = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/structure/platform/ship_four
 	icon_state = "ship4_platform"
@@ -113,13 +147,13 @@
 	add_fingerprint(user)
 
 	if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP)
-		if(obj_integrity < max_integrity)
-			if(!I.tool_start_check(user, amount=0))
+		if(atom_integrity < max_integrity)
+			if(!I.tool_start_check(user, src, amount=0))
 				return
 
 			to_chat(user, span_notice("You begin repairing [src]..."))
 			if(I.use_tool(src, user, 40, volume=50))
-				obj_integrity = max_integrity
+				atom_integrity = max_integrity
 				to_chat(user, span_notice("You repair [src]."))
 		else
 			to_chat(user, span_warning("[src] is already in good condition!"))
@@ -129,7 +163,7 @@
 	. = ..()
 	if(.)
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
 	if(I.use_tool(src, user, 3 SECONDS, volume=0))
 		to_chat(user, span_warning("You cut apart the platform."))
@@ -148,6 +182,12 @@
 	if(border_dir & dir)
 		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
 	return TRUE
+
+/obj/structure/platform/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if (!(to_dir & dir))
+		return TRUE
+	return ..()
+
 
 /obj/structure/platform/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER

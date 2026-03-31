@@ -19,9 +19,10 @@
 	burst_size = 3
 	item_flags = NONE
 	casing_ejector = FALSE
-	manufacturer = MANUFACTURER_DONKCO
+	manufacturer = MANUFACTURER_NONE
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
+	wear_rate = 0
 
 
 /obj/item/gun/ballistic/automatic/toy/pistol
@@ -71,10 +72,12 @@
 	fire_sound = 'sound/items/syringeproj.ogg'
 	item_flags = NONE
 	casing_ejector = FALSE
-	manufacturer = MANUFACTURER_DONKCO
+	manufacturer = MANUFACTURER_NONE
 	pb_knockback = 0
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
+	wear_rate = 0
+	door_breaching_weapon = FALSE
 
 /obj/item/gun/ballistic/shotgun/toy/process_chamber(empty_chamber = 0, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter)
 	. = ..()

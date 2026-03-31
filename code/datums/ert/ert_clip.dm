@@ -51,8 +51,8 @@
 
 /datum/ert/minutemen/journalist
 	teamsize = 3
-	leader_role = /datum/antagonist/ert/minutemen/correspondant
-	roles = list(/datum/antagonist/ert/minutemen/correspondant)
+	leader_role = /datum/antagonist/ert/minutemen/correspondent
+	roles = list(/datum/antagonist/ert/minutemen/correspondent)
 	mission = "Inform the public of the frontier's news."
 	rename_team = "C-MM Correspondants"
 	polldesc = "a C-MM media team"

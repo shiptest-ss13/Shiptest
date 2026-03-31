@@ -6,6 +6,7 @@
 	caliber = ".357"
 	icon_state = "magnum-brass"
 	projectile_type = /obj/projectile/bullet/a357
+	stack_size = 12
 
 /obj/item/ammo_casing/a357/match
 	name = ".357 match bullet casing"
@@ -59,6 +60,7 @@
 	name = ".38 surplus bullet casing"
 	desc = "A .38 surplus bullet casing."
 	projectile_type = /obj/projectile/bullet/c38/surplus
+	wear_modifier = 2
 
 /obj/item/ammo_casing/c38/trac
 	name = ".38 TRAC bullet casing"
@@ -122,6 +124,7 @@
 	caliber = ".44 Roumain"
 	icon_state = "pistol-steel"
 	projectile_type = /obj/projectile/bullet/a44roum
+	stack_size = 12
 
 /obj/item/ammo_casing/a44roum/rubber
 	name = ".44 roumain rubber bullet casing"

@@ -16,6 +16,7 @@
 	throw_range = 7
 	amount_per_transfer_from_this = 10
 	volume = 60
+	custom_materials = list(/datum/material/plastic=200, /datum/material/iron=400)
 	var/can_fill_from_container = TRUE
 	var/apply_type = PATCH
 	var/apply_method = "spray" //the thick gel is sprayed and then dries into patch like film.
@@ -38,32 +39,32 @@
 		amount_per_transfer_from_this = squirt_amount
 	else
 		amount_per_transfer_from_this = initial(amount_per_transfer_from_this)
-	to_chat(user, "<span class='notice'>You will now apply the medigel's contents in [squirt_mode ? "short bursts":"extended sprays"]. You'll now use [amount_per_transfer_from_this] units per use.</span>")
+	to_chat(user, span_notice("You will now apply the medigel's contents in [squirt_mode ? "short bursts":"extended sprays"]. You'll now use [amount_per_transfer_from_this] units per use."))
 
 /obj/item/reagent_containers/medigel/attack(mob/M, mob/user, def_zone)
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, span_warning("[src] is empty!"))
 		return
 
 	if(M == user)
-		M.visible_message("<span class='notice'>[user] attempts to [apply_method] [src] on [user.p_them()]self.</span>")
+		M.visible_message(span_notice("[user] attempts to [apply_method] [src] on [user.p_them()]self."))
 		if(self_delay)
 			if(!do_after(user, self_delay, M))
 				return
 			if(!reagents || !reagents.total_volume)
 				return
-		to_chat(M, "<span class='notice'>You [apply_method] yourself with [src].</span>")
+		to_chat(M, span_notice("You [apply_method] yourself with [src]."))
 
 	else
 		log_combat(user, M, "attempted to apply", src, reagents.log_list())
-		M.visible_message("<span class='danger'>[user] attempts to [apply_method] [src] on [M].</span>", \
-							"<span class='userdanger'>[user] attempts to [apply_method] [src] on you.</span>")
+		M.visible_message(span_danger("[user] attempts to [apply_method] [src] on [M]."), \
+							span_userdanger("[user] attempts to [apply_method] [src] on you."))
 		if(!do_after(user, target = M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return
-		M.visible_message("<span class='danger'>[user] [apply_method]s [M] down with [src].</span>", \
-							"<span class='userdanger'>[user] [apply_method]s you down with [src].</span>")
+		M.visible_message(span_danger("[user] [apply_method]s [M] down with [src]."), \
+							span_userdanger("[user] [apply_method]s you down with [src]."))
 
 	if(!reagents || !reagents.total_volume)
 		return
@@ -71,20 +72,20 @@
 	else
 		log_combat(user, M, "applied", src, reagents.log_list())
 		playsound(src, 'sound/effects/spray.ogg', 30, TRUE, -6)
-		reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, method = apply_type)
+		reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, methods = apply_type)
 	return
 
-/obj/item/reagent_containers/medigel/styptic
-	name = "medical gel (styptic powder)"
-	desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap. This one contains styptic powder, for treating cuts and bruises."
+/obj/item/reagent_containers/medigel/hadrakine
+	name = "medical gel (hadrakine powder)"
+	desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap. This one contains hadrakine powder, for treating cuts and bruises."
 	icon_state = "brutegel"
-	list_reagents = list(/datum/reagent/medicine/styptic_powder = 60)
+	list_reagents = list(/datum/reagent/medicine/hadrakine = 60)
 
-/obj/item/reagent_containers/medigel/silver_sulf
-	name = "medical gel (silver sulfadiazine)"
-	desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap. This one contains silver sulfadiazine, useful for treating burns."
+/obj/item/reagent_containers/medigel/quardexane
+	name = "medical gel (quardexane)"
+	desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap. This one contains quardexane, useful for treating burns."
 	icon_state = "burngel"
-	list_reagents = list(/datum/reagent/medicine/silver_sulfadiazine = 60)
+	list_reagents = list(/datum/reagent/medicine/quardexane = 60)
 
 /obj/item/reagent_containers/medigel/synthflesh
 	name = "medical gel (synthflesh)"

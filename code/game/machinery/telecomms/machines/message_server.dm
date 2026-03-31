@@ -29,20 +29,20 @@
 	if(stored)
 		user.put_in_hands(stored)
 		stored = null
-		to_chat(user, "<span class='notice'>You remove the blackbox from [src]. The tapes stop spinning.</span>")
+		to_chat(user, span_notice("You remove the blackbox from [src]. The tapes stop spinning."))
 		update_appearance()
 		return
 	else
-		to_chat(user, "<span class='warning'>It seems that the blackbox is missing...</span>")
+		to_chat(user, span_warning("It seems that the blackbox is missing..."))
 		return
 
 /obj/machinery/blackbox_recorder/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/blackbox))
 		if(HAS_TRAIT(I, TRAIT_NODROP) || !user.transferItemToLoc(I, src))
-			to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
+			to_chat(user, span_warning("[I] is stuck to your hand!"))
 			return
-		user.visible_message("<span class='notice'>[user] clicks [I] into [src]!</span>", \
-		"<span class='notice'>You press the device into [src], and it clicks into place. The tapes begin spinning again.</span>")
+		user.visible_message(span_notice("[user] clicks [I] into [src]!"), \
+		span_notice("You press the device into [src], and it clicks into place. The tapes begin spinning again."))
 		playsound(src, 'sound/machines/click.ogg', 50, TRUE)
 		stored = I
 		update_appearance()
@@ -90,17 +90,12 @@
 	var/list/datum/data_pda_msg/pda_msgs = list()
 	var/list/datum/data_rc_msg/rc_msgs = list()
 	var/decryptkey = "password"
-	var/calibrating = 15 MINUTES //Init reads this and adds world.time, then becomes 0 when that time has passed and the machine works
 
 /obj/machinery/telecomms/message_server/Initialize(mapload)
 	. = ..()
 	if (!decryptkey)
 		decryptkey = GenerateKey()
 
-	if (calibrating)
-		calibrating += world.time
-		say("Calibrating... Estimated wait time: [rand(3, 9)] minutes.")
-		pda_msgs += new /datum/data_pda_msg("System Administrator", "system", "This is an automated message. System calibration started at [station_time_timestamp()]")
 	else
 		pda_msgs += new /datum/data_pda_msg("System Administrator", "system", MESSAGE_SERVER_FUNCTIONING_MESSAGE)
 
@@ -112,8 +107,6 @@
 
 /obj/machinery/telecomms/message_server/examine(mob/user)
 	. = ..()
-	if(calibrating)
-		. += "<span class='warning'>It's still calibrating.</span>"
 
 /obj/machinery/telecomms/message_server/proc/GenerateKey()
 	var/newKey
@@ -122,15 +115,9 @@
 	newKey += pick("1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
 	return newKey
 
-/obj/machinery/telecomms/message_server/process(seconds_per_tick)
-	. = ..()
-	if(calibrating && calibrating <= world.time)
-		calibrating = 0
-		pda_msgs += new /datum/data_pda_msg("System Administrator", "system", MESSAGE_SERVER_FUNCTIONING_MESSAGE)
-
 /obj/machinery/telecomms/message_server/receive_information(datum/signal/subspace/messaging/signal, obj/machinery/telecomms/machine_from)
 	// can't log non-message signals
-	if(!istype(signal) || !signal.data["message"] || !on || calibrating)
+	if(!istype(signal) || !signal.data["message"] || !on)
 		return
 
 	// log the signal
@@ -149,13 +136,6 @@
 	// pass it along to either the hub or the broadcaster
 	if(!relay_information(signal, /obj/machinery/telecomms/hub))
 		relay_information(signal, /obj/machinery/telecomms/broadcaster)
-
-/obj/machinery/telecomms/message_server/update_overlays()
-	. = ..()
-
-	if(calibrating)
-		. += "message_server_calibrate"
-
 
 // Root messaging signal datum
 /datum/signal/subspace/messaging
@@ -271,4 +251,3 @@
 	network = "tcommsat"
 	autolinkers = list("messaging")
 	decryptkey = null //random
-	calibrating = 0

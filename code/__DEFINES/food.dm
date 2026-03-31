@@ -14,11 +14,34 @@
 #define BREAKFAST (1<<13)
 #define CLOTH (1<<14)
 #define GRILLED (1<<15)
-/*#define NUTS (1<<16)
+#define NUTS (1<<16)
 #define SEAFOOD (1<<17)
 #define ORANGES (1<<18)
-#define BUGS (1<<19)*/
+#define BUGS (1<<19)
 #define GORE (1<<20)
+
+DEFINE_BITFIELD(foodtypes, list(
+	"MEAT" = MEAT,
+	"VEGETABLES" = VEGETABLES,
+	"RAW" = RAW,
+	"JUNKFOOD" = JUNKFOOD,
+	"GRAIN" = GRAIN,
+	"FRUIT" = FRUIT,
+	"DAIRY" = DAIRY,
+	"FRIED" = FRIED,
+	"ALCOHOL" = ALCOHOL,
+	"SUGAR" = SUGAR,
+	"GROSS" = GROSS,
+	"TOXIC" = TOXIC,
+	"PINEAPPLE" = PINEAPPLE,
+	"BREAKFAST" = BREAKFAST,
+	"CLOTH" = CLOTH,
+	"NUTS" = NUTS,
+	"SEAFOOD" = SEAFOOD,
+	"ORANGES" = ORANGES,
+	"BUGS" = BUGS,
+	"GORE" = GORE,
+))
 
 /// IC meaning (more or less) for food flags
 #define FOOD_FLAGS_IC list( \
@@ -54,6 +77,11 @@
 /// Finger food can be eaten while walking / running around
 #define FOOD_FINGER_FOOD (1<<1)
 
+DEFINE_BITFIELD(food_types, list(
+	"FOOD_FINGER_FOOD" = FOOD_FINGER_FOOD,
+	"FOOD_IN_CONTAINER" = FOOD_IN_CONTAINER,
+))
+
 #define STOP_SERVING_BREAKFAST (15 MINUTES)
 
 ///Amount of reagents you start with on crafted food excluding the used parts
@@ -62,3 +90,11 @@
 #define CRAFTED_FOOD_INGREDIENT_REAGENT_MODIFIER 0.5
 
 #define IS_EDIBLE(O) (O.GetComponent(/datum/component/edible))
+
+///Food trash flags
+#define FOOD_TRASH_POPABLE (1<<0)
+#define FOOD_TRASH_OPENABLE (1<<1)
+
+#define FOOD_LIKED 1
+#define FOOD_DISLIKED 2
+#define FOOD_TOXIC 3

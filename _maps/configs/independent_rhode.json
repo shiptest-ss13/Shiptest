@@ -1,0 +1,39 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Rhode-class Cargo Freighter",
+	"map_short_name": "Rhode-class",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "Miskilamo Spacefaring",
+	"description": "Another shining example of Miskilamo craftsmanship, the Rhode class is a scrapheap ball made of the bare minimum metal bits to keep a hull spaceproof. The often complimented spacious interiors are done for cost saving measures, not luxury. Most of these vessels have found themselves to be far from well-off cargo freighters, picking up the scrap and remains of the frontier to make more of these unfortunate hulls.",
+	"tags": [
+		"Combat",
+		"Engineering",
+		"Generalist"
+	],
+	"namelists": [
+		"GENERAL",
+		"SPACE"
+	],
+	"map_path": "_maps/shuttles/independent/independent_rhode.dmm",
+	"token_icon_state": "ship_small_generic",
+	"limit": 1,
+	"starting_funds": 1500,
+	"tranist_x_offset": -15,
+	"tranist_y_offset": -10,
+	"job_slots": {
+		"Foreman": {
+			"outfit": "/datum/outfit/job/independent/captain/cheap",
+			"officer": true,
+			"slots": 1
+		},
+		"Salvager": {
+			"outfit": "/datum/outfit/job/independent/engineer/salvage",
+			"slots": 2
+		},"Asteroid Miner": {
+			"outfit": "/datum/outfit/job/independent/miner/hazard",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

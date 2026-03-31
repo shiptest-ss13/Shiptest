@@ -11,18 +11,18 @@ its mentors, not actual dangerous perms
 	if(!check_rights(R_PERMISSIONS))
 		return
 	if(!SSdbcore.IsConnected())
-		to_chat(src, "<span class='danger'>Failed to establish database connection.</span>")
+		to_chat(src, span_danger("Failed to establish database connection."))
 		return
 
 	var/html = ""
-	html += "<A HREF='?mentor_edit=add'>Add a Mentor</A>\n"
+	html += "<A href='byond://?mentor_edit=add'>Add a Mentor</A>\n"
 	html += "<table style='width: 100%' border=1>\n"
 	html += "<tr><th>Mentor Ckey</th><th>Remove</th></tr>\n"
 
 	var/datum/DBQuery/query_mentor_list = SSdbcore.NewQuery("SELECT ckey FROM [format_table_name("mentor")]")
 	query_mentor_list.Execute()
 	while(query_mentor_list.NextRow())
-		html += "<tr><td>[query_mentor_list.item[1]]</td><td><A HREF='?mentor_edit=remove;mentor_ckey=[query_mentor_list.item[1]]'>X</A></td></tr>\n"
+		html += "<tr><td>[query_mentor_list.item[1]]</td><td><A href='byond://?mentor_edit=remove;mentor_ckey=[query_mentor_list.item[1]]'>X</A></td></tr>\n"
 
 	html += "</table>"
 

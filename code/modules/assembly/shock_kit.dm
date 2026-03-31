@@ -15,7 +15,7 @@
 
 /obj/item/assembly/shock_kit/wrench_act(mob/living/user, obj/item/I)
 	..()
-	to_chat(user, "<span class='notice'>You disassemble [src].</span>")
+	to_chat(user, span_notice("You disassemble [src]."))
 	if(part1)
 		part1.forceMove(drop_location())
 		part1.master = null

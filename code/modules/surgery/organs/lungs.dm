@@ -11,14 +11,14 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
-	low_threshold_passed = "<span class='warning'>You feel short of breath.</span>"
-	high_threshold_passed = "<span class='warning'>You feel some sort of constriction around your chest as your breathing becomes shallow and rapid.</span>"
-	now_fixed = "<span class='warning'>Your lungs seem to once again be able to hold air.</span>"
-	low_threshold_cleared = "<span class='info'>You can breathe normally again.</span>"
-	high_threshold_cleared = "<span class='info'>The constriction around your chest loosens as your breathing calms down.</span>"
+	low_threshold_passed = span_warning("You feel short of breath.")
+	high_threshold_passed = span_warning("You feel some sort of constriction around your chest as your breathing becomes shallow and rapid.")
+	now_fixed = span_warning("Your lungs seem to once again be able to hold air.")
+	low_threshold_cleared = span_info("You can breathe normally again.")
+	high_threshold_cleared = span_info("The constriction around your chest loosens as your breathing calms down.")
 
 
-	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/medicine/salbutamol = 5)
+	food_reagents = list(/datum/reagent/consumable/nutriment/organ_tissue = 5, /datum/reagent/medicine/salbutamol = 5)
 
 	//Breath damage
 
@@ -52,6 +52,10 @@
 	var/BZ_brain_damage_min = 1
 	var/gas_stimulation_min = 0.002 //Nitryl, Stimulum and Freon
 
+	/// All incoming breaths will have their pressure multiplied against this. Higher values allow more air to be breathed at once,
+	/// while lower values can cause suffocation in low pressure environments.
+	var/received_pressure_mult = 1
+
 	var/cold_message = "your face freezing and an icicle forming"
 	var/chilly_message = "chilly air"
 	var/chlly_threshold = T20C-20
@@ -83,6 +87,11 @@
 	. = ..()
 	populate_gas_info()
 
+/obj/item/organ/lungs/Insert(mob/living/carbon/M, special, drop_if_replaced)
+	. = ..()
+	if(.)
+		update_bronchodilation_alerts()
+
 /obj/item/organ/lungs/proc/populate_gas_info()
 	gas_min[breathing_class] = safe_breath_min
 	gas_max[breathing_class] = safe_breath_max
@@ -101,7 +110,7 @@
 		return
 
 	if(!breath || (breath.total_moles() == 0))
-		if(H.reagents.has_reagent(crit_stabilizing_reagent))
+		if(H.reagents.has_reagent(crit_stabilizing_reagent, needs_metabolizing = TRUE))
 			return
 		if(H.health >= H.crit_threshold)
 			H.adjustOxyLoss(HUMAN_MAX_OXYLOSS)
@@ -125,9 +134,11 @@
 			H.throw_alert(alert_category, alert_type)
 		return FALSE
 
-	#define PP_MOLES(X) ((X / total_moles) * pressure)
+	#define PP_MOLES(X) ((X / total_moles) * pressure * received_pressure_mult)
 
 	#define PP(air, gas) PP_MOLES(air.get_moles(gas))
+
+	SEND_SIGNAL(H, COMSIG_CARBON_INHALED_GAS, breath, received_pressure_mult)
 
 	var/gas_breathed = 0
 
@@ -179,7 +190,7 @@
 		else
 			H.failed_last_breath = FALSE
 			if(H.health >= H.crit_threshold)
-				H.adjustOxyLoss(-breathModifier)
+				H.adjustOxyLoss(-breathModifier * received_pressure_mult)
 			if(alert_category)
 				H.clear_alert(alert_category)
 	var/list/danger_reagents = GLOB.gas_data.breath_reagents_dangerous
@@ -194,7 +205,7 @@
 			alert_category = breathing_class.high_alert_category
 			alert_type = breathing_class.high_alert_datum
 			danger_reagent = breathing_class.danger_reagent
-			found_pp = breathing_class.get_effective_pp(breath)
+			found_pp = breathing_class.get_effective_pp(breath) * received_pressure_mult
 		else
 			danger_reagent = danger_reagents[entry]
 			if(entry in breath_alert_info)
@@ -212,12 +223,20 @@
 				H.throw_alert(alert_category, alert_type)
 		else if(alert_category)
 			H.clear_alert(alert_category)
+
+	var/inflammatory_kpa = 0
 	var/list/breath_reagents = GLOB.gas_data.breath_reagents
 	for(var/gas in breath.get_gases())
+		var/breath_moles = breath.get_moles(gas)
+		if(GLOB.gas_data.flags[gas] & GAS_FLAG_IRRITANT)
+			inflammatory_kpa += PP_MOLES(breath_moles)
 		if(gas in breath_reagents)
-			var/datum/reagent/R = breath_reagents[gas]
-			H.reagents.add_reagent(R, breath.get_moles(gas) * 2) // 2 represents molarity of O2, we don't have citadel molarity
-			mole_adjustments[gas] = (gas in mole_adjustments) ? mole_adjustments[gas] - breath.get_moles(gas) : -breath.get_moles(gas)
+			var/datum/reagent/breath_reagent = new breath_reagents[gas]
+			breath_reagent.expose_mob(H, INHALE, breath_moles * 2) // 2 represents molarity of O2, we don't have citadel molarity
+			mole_adjustments[gas] = (gas in mole_adjustments) ? mole_adjustments[gas] - breath_moles : -breath_moles
+
+	if(inflammatory_kpa)
+		H.adjust_lung_inflammation(inflammatory_kpa * (HAS_TRAIT(H, TRAIT_ASTHMATIC) ? 10 : 2))
 
 	if(can_smell)
 		handle_smell(breath, H)
@@ -263,12 +282,12 @@
 	// Freon
 		var/freon_pp = PP(breath,GAS_FREON)
 		if (prob(freon_pp))
-			to_chat(H, "<span class='alert'>Your mouth feels like it's burning!</span>")
+			to_chat(H, span_alert("Your mouth feels like it's burning!"))
 		if (freon_pp >40)
 			H.emote("gasp")
 			H.adjustOxyLoss(15)
 			if (prob(freon_pp/2))
-				to_chat(H, "<span class='alert'>Your throat closes up!</span>")
+				to_chat(H, span_alert("Your throat closes up!"))
 				H.silent = max(H.silent, 3)
 		else
 			H.adjustOxyLoss(freon_pp/4)
@@ -312,11 +331,13 @@
 
 		breath.adjust_moles(GAS_HYDROGEN_CHLORIDE, -gas_breathed)
 
+	//TODO: This probably should be a status effect, While all gas effects are standardized here, monoxide is way too complicated for this system.
 	// Carbon Monoxide
+	/* commenting out while it's not a status effect
 		var/carbon_monoxide_pp = PP(breath,GAS_CO)
 		if (carbon_monoxide_pp > gas_stimulation_min)
-			H.reagents.add_reagent(/datum/reagent/carbon_monoxide, 1)
-			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.reagents.has_reagent(/datum/reagent/carbon_monoxide)
+			H.reagents.add_reagent(/datum/reagent/carbon_monoxide, 2)
+			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.has_reagent(/datum/reagent/carbon_monoxide)
 			if(monoxide_reagent.volume > 10)
 				monoxide_reagent.metabolization_rate = (10 - carbon_monoxide_pp)
 			else
@@ -337,12 +358,12 @@
 					monoxide_reagent.accumulation = max(monoxide_reagent.accumulation, 450)
 					H.reagents.add_reagent(/datum/reagent/carbon_monoxide,16)
 		else
-			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.reagents.has_reagent(/datum/reagent/carbon_monoxide)
+			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.has_reagent(/datum/reagent/carbon_monoxide)
 			if(monoxide_reagent)
 				monoxide_reagent.accumulation = min(monoxide_reagent.accumulation, 150)
 				monoxide_reagent.metabolization_rate = 10 //purges 10 per tick
 		breath.adjust_moles(GAS_CO, -gas_breathed)
-
+	*/
 	// Sulfur Dioxide
 		var/sulfur_dioxide_pp = PP(breath,GAS_SO2)
 		if (prob(sulfur_dioxide_pp) && !HAS_TRAIT(H, TRAIT_ANALGESIA))
@@ -477,13 +498,15 @@
 
 		if(breath_temperature < cold_level_1_threshold)
 			if(prob(sqrt(breath_effect_prob) * 6))
-				to_chat(breather, "<span class='warning'>You feel [cold_message] in your [name]!</span>")
+				to_chat(breather, span_warning("You feel [cold_message] in your [name]!"))
 		else if(breath_temperature < chlly_threshold)
 			if(!breath_effect_prob)
 				breath_effect_prob = 20
 			if(prob(sqrt(breath_effect_prob) * 6))
-				to_chat(breather, "<span class='warning'>You feel [chilly_message] in your [name].</span>")
+				to_chat(breather, span_warning("You feel [chilly_message] in your [name]."))
 		if(breath_temperature < chlly_threshold)
+			if(HAS_TRAIT(breather, TRAIT_ASTHMATIC)) // cold air typically causes problems in my experience
+				breather.adjust_lung_inflammation(round(1 + (chlly_threshold - breath_temperature) / 30, 0.1))
 			if(breath_effect_prob)
 				// Breathing into your mask, no particle. We can add fogged up glasses later
 				if(breather.is_mouth_covered())
@@ -509,17 +532,52 @@
 
 		if(breath_temperature > heat_level_1_threshold)
 			if(prob(sqrt(heat_message_prob) * 6))
-				to_chat(breather, "<span class='warning'>You feel [hot_message] in your [name]!</span>")
+				to_chat(breather, span_warning("You feel [hot_message] in your [name]!"))
 		else if(breath_temperature > warm_threshold)
 			if(!heat_message_prob)
 				heat_message_prob = 20
 			if(prob(sqrt(heat_message_prob) * 6))
-				to_chat(breather, "<span class='warning'>You feel [warm_message] in your [name].</span>")
+				to_chat(breather, span_warning("You feel [warm_message] in your [name]."))
 
 
 
 	// The air you breathe out should match your body temperature
 	breath.set_temperature(breather.bodytemperature)
+
+/// Adjusting proc for [received_pressure_mult]. Updates bronchodilation alerts.
+/obj/item/organ/lungs/proc/adjust_received_pressure_mult(adjustment)
+	set_received_pressure_mult(received_pressure_mult + adjustment)
+
+/// Setter proc for [received_pressure_mult]. Updates bronchodilation alerts.
+/obj/item/organ/lungs/proc/set_received_pressure_mult(new_value)
+	if(new_value <= 0 && received_pressure_mult > 0)
+		ADD_TRAIT(owner, TRAIT_MUTE, ALERT_BRONCHOCONSTRICTION)
+	else if(new_value > 0 && received_pressure_mult <= 0)
+		REMOVE_TRAIT(owner, TRAIT_MUTE, ALERT_BRONCHOCONSTRICTION)
+	received_pressure_mult = max(new_value, 0)
+	update_bronchodilation_alerts()
+
+#define LUNG_CAPACITY_ALERT_BUFFER 0.003
+/// Depending on [received_pressure_mult], gives either a bronchocontraction or bronchoconstriction alert to our owner (if we have one), or clears the alert
+/// if [received_pressure_mult] is near 1.
+/obj/item/organ/lungs/proc/update_bronchodilation_alerts()
+	if (!owner)
+		return
+
+	var/initial_value = initial(received_pressure_mult)
+
+	// you wont really notice if youre only breathing a bit more or a bit less
+	var/dilated = (received_pressure_mult > (initial_value + LUNG_CAPACITY_ALERT_BUFFER))
+	var/constricted = (received_pressure_mult < (initial_value - LUNG_CAPACITY_ALERT_BUFFER))
+
+	if (dilated)
+		owner.throw_alert(ALERT_BRONCHODILATION, /atom/movable/screen/alert/bronchodilated)
+	else if (constricted)
+		owner.throw_alert(ALERT_BRONCHODILATION, /atom/movable/screen/alert/bronchoconstricted)
+	else
+		owner.clear_alert(ALERT_BRONCHODILATION)
+
+#undef LUNG_CAPACITY_ALERT_BUFFER
 
 /obj/item/organ/lungs/on_life()
 	. = ..()
@@ -531,7 +589,7 @@
 		if(do_i_cough)
 			owner.emote("cough")
 	if(organ_flags & ORGAN_FAILING && owner.stat == CONSCIOUS)
-		owner.visible_message("<span class='danger'>[owner] grabs [owner.p_their()] throat, struggling for breath!</span>", "<span class='userdanger'>You suddenly feel like you can't breathe!</span>")
+		owner.visible_message(span_danger("[owner] grabs [owner.p_their()] throat, struggling for breath!"), span_userdanger("You suddenly feel like you can't breathe!"))
 		failed = TRUE
 
 /obj/item/organ/lungs/get_availability(datum/species/S)
@@ -545,6 +603,14 @@
 	breathing_class = BREATH_PLASMA
 
 	can_smell = FALSE
+
+/obj/item/organ/lungs/plasmaman/Insert(mob/living/carbon/new_owner, special, drop_if_replaced)
+	. = ..()
+	ADD_TRAIT(new_owner, TRAIT_ANTI_INFLAMMATORY, REF(src)) // they're not even "lungs" and shouldn't be constricting in the first place
+
+/obj/item/organ/lungs/plasmaman/Remove(mob/living/carbon/old_owner, special)
+	REMOVE_TRAIT(old_owner, TRAIT_ANTI_INFLAMMATORY, REF(src))
+	return ..()
 
 /obj/item/organ/lungs/plasmaman/populate_gas_info()
 	..()
@@ -602,7 +668,7 @@
 	if(. & EMP_PROTECT_SELF)
 		return
 	if(world.time > severe_cooldown) //So we cant just spam emp to kill people.
-		owner.losebreath += 20
+		owner.losebreath += 10
 		severe_cooldown = world.time + 30 SECONDS
 
 #undef PP

@@ -91,6 +91,8 @@
 	master.force = max(0, master.force + quality)
 	master.throwforce = max(0, master.throwforce + quality)
 	master.armor = master.armor?.modifyAllRatings(quality)
+	master.wound_bonus += quality
+	master.bare_wound_bonus += quality
 
 	var/newName = originalName
 	for(var/i in affixes)
@@ -121,6 +123,8 @@
 	master.force = max(0, master.force - quality)
 	master.throwforce = max(0, master.throwforce - quality)
 	master.armor = master.armor?.modifyAllRatings(-quality)
+	master.wound_bonus -= quality
+	master.bare_wound_bonus -= quality
 
 	master.name = originalName
 
@@ -133,6 +137,6 @@
 		effect_description = "<span class='heavy_brass'>shimmering golden glow</span>"
 	else
 		span = "<span class='danger'>"
-		effect_description = "<span class='bold'>mottled black glow</span>"
+		effect_description = span_bold("mottled black glow")
 
 	location.visible_message("[span][originalName] is covered by a [effect_description] and then transforms into [parent]!</span>")

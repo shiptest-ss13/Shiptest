@@ -2,9 +2,9 @@ GLOBAL_LIST_INIT(ore_probability, list(
 	/obj/item/stack/ore/plasma = 75,
 	/obj/item/stack/ore/iron = 75,
 	/obj/item/stack/ore/titanium = 50,
-	/obj/item/stack/ore/silver = 50,
 	/obj/item/stack/ore/gold = 50,
 	/obj/item/stack/ore/uranium = 50,
+	/obj/item/stack/ore/silver = 50,
 	/obj/item/stack/ore/diamond = 25,
 	/obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 25,
 	/obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 25,
@@ -45,7 +45,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
  */
 /obj/structure/spawner/burrow/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
-	visible_message("<span class='boldannounce'>[src] collapses, sealing everything inside!</span>\n<span class='warning'>Ores fall out of the burrow as it is destroyed!</span>")
+	visible_message(span_boldannounce("[src] collapses, sealing everything inside!</span>\n<span class='warning'>Ores fall out of the burrow as it is destroyed!"))
 
 /**
  * Drops items after the spawner is destroyed
@@ -77,7 +77,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 /obj/structure/spawner/burrow/ice_planet
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf,
-		/mob/living/simple_animal/hostile/asteroid/polarbear
+		/mob/living/basic/bear/polar
 	)
 
 /obj/structure/spawner/burrow/ice_planet/hard

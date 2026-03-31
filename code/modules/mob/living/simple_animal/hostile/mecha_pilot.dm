@@ -18,9 +18,10 @@ Featuring:
 
 */
 
+///dont use these, they are super broken
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot
-	name = "Syndicate Exosuit Pilot"
-	desc = "Death to Nanotrasen. This variant comes in MECHA DEATH flavour."
+	name = "Ramzi Clique Exowarrior"
+	desc = "A highly-trained pilot of the Clique, specialized in Exosuit operations."
 	wanted_objects = list()
 	search_objects = 0
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
@@ -29,6 +30,7 @@ Featuring:
 	var/obj/mecha/mecha //Ref to pilot's mecha instance
 	var/required_mecha_charge = 7500 //If the pilot doesn't have a mecha, what charge does a potential Grand Theft Mecha need? (Defaults to half a battery)
 	var/mecha_charge_evacuate = 50 //Amount of charge at which the pilot tries to abandon the mecha
+	var/mecha_bail_threshold = 0.3 //Amount of integrity left at which the pilot tries to eject
 
 	//Vars that control when the pilot uses their mecha's abilities (if the mecha has that ability)
 	var/threat_use_mecha_smoke = 5 //5 mobs is enough to engage crowd control
@@ -44,21 +46,20 @@ Featuring:
 	. = ..()
 	wanted_objects = typecacheof(/obj/mecha/combat, TRUE)
 
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/nanotrasen //nanotrasen are syndies! no it's just a weird path.
-	name = "\improper Nanotrasen Mecha Pilot"
+/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/warra //makosso-warra are syndies! no it's just a weird path.
+	name = "\improper Makosso-Warra Mecha Pilot"
 	desc = "Death to the Syndicate. This variant comes in MECHA DEATH flavour."
-	icon_living = "nanotrasen"
-	icon_state = "nanotrasen"
-	faction = list("nanotrasen")
+	icon_living = "warra"
+	icon_state = "warra"
+	faction = list("warra")
 	spawn_mecha_type = /obj/mecha/combat/marauder/loaded
 
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech/nanotrasen
-	name = "\improper Nanotrasen Mecha Pilot"
+/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech/warra
+	name = "\improper Makosso-Warra Mecha Pilot"
 	desc = "Death to the Syndicate. This variant comes in MECHA DEATH flavour."
-	icon_living = "nanotrasen"
-	icon_state = "nanotrasen"
-	faction = list("nanotrasen")
-
+	icon_living = "warra"
+	icon_state = "warra"
+	faction = list("warra")
 
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/Initialize()
 	. = ..()
@@ -66,7 +67,6 @@ Featuring:
 		var/obj/mecha/M = new spawn_mecha_type (get_turf(src))
 		if(istype(M))
 			INVOKE_ASYNC(src, PROC_REF(enter_mecha), M)
-
 
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/proc/enter_mecha(obj/mecha/M)
 	if(!M)
@@ -123,7 +123,7 @@ Featuring:
 		return 0
 	if(!M.has_charge(required_mecha_charge))
 		return 0
-	if(M.obj_integrity < M.max_integrity*0.5)
+	if(M.atom_integrity < M.max_integrity*0.5)
 		return 0
 	return 1
 
@@ -217,7 +217,7 @@ Featuring:
 				return
 
 			//Too Much Damage - Eject
-			if(mecha.obj_integrity < mecha.max_integrity*0.1)
+			if(mecha.atom_integrity < mecha.max_integrity*mecha_bail_threshold)
 				exit_mecha(mecha)
 				return
 
@@ -227,7 +227,7 @@ Featuring:
 					mecha.smoke_action.Activate()
 
 			//Heavy damage - Defense Power or Retreat
-			if(mecha.obj_integrity < mecha.max_integrity*0.25)
+			if(mecha.atom_integrity < mecha.max_integrity*0.25)
 				if(prob(defense_mode_chance))
 					if(mecha.defense_action && mecha.defense_action.owner && !mecha.defense_mode)
 						mecha.leg_overload_mode = 0

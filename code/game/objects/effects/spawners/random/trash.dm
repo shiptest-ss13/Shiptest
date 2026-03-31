@@ -57,7 +57,7 @@
 	icon_state = "chips"
 	loot = list(
 		/obj/item/trash/raisins = 2,
-		/obj/item/trash/cheesie = 2,
+		/obj/item/trash/gummycarps = 2,
 		/obj/item/trash/candy = 2,
 		/obj/item/trash/chips = 2,
 		/obj/item/trash/sosjerky = 2,
@@ -222,7 +222,7 @@
 		/obj/item/bikehorn/rubberducky = 20,
 		/obj/item/soap/homemade = 20,
 		/obj/item/soap/deluxe = 15,
-		/obj/item/soap/nanotrasen = 10,
+		/obj/item/soap/warra = 10,
 	)
 
 /obj/effect/spawner/random/trash/box

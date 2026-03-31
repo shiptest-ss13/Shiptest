@@ -1,6 +1,6 @@
 /datum/map_generator/planet_generator/sand
 	mountain_height = 0.8
-	perlin_zoom = 65
+	perlin_zoom = 70
 
 	primary_area_type = /area/overmap_encounter/planetoid/sand
 
@@ -29,23 +29,23 @@
 		),
 		BIOME_TEMPERATE = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/sand,
-			BIOME_LOW_HUMIDITY = /datum/biome/sand/riverbed,
-			BIOME_MEDIUM_HUMIDITY = /datum/biome/sand/grass/dead,
+			BIOME_LOW_HUMIDITY = /datum/biome/sand/grass/dead,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/sand/grass,
 			BIOME_HIGH_HUMIDITY = /datum/biome/sand/grass,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/sand/grass
 		),
 		BIOME_HOT = list(
-			BIOME_LOWEST_HUMIDITY =/datum/biome/sand/acid,
-			BIOME_LOW_HUMIDITY = /datum/biome/sand/wasteland,
+			BIOME_LOWEST_HUMIDITY = /datum/biome/sand/sulfur_plains,
+			BIOME_LOW_HUMIDITY = /datum/biome/sand/sulfur_plains,
 			BIOME_MEDIUM_HUMIDITY = /datum/biome/sand/riverbed,
-			BIOME_HIGH_HUMIDITY = /datum/biome/sand,
+			BIOME_HIGH_HUMIDITY = /datum/biome/sand/grass,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/sand/grass
 		),
 		BIOME_HOTTEST = list(
-			BIOME_LOWEST_HUMIDITY = /datum/biome/sand/acid/total,
-			BIOME_LOW_HUMIDITY = /datum/biome/sand/acid,
-			BIOME_MEDIUM_HUMIDITY = /datum/biome/sand/riverbed,
-			BIOME_HIGH_HUMIDITY = /datum/biome/sand/wasteland,
+			BIOME_LOWEST_HUMIDITY = /datum/biome/sand/sulfur_plains,
+			BIOME_LOW_HUMIDITY = /datum/biome/sand/sulfur_plains,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/sand/sulfur_plains,
+			BIOME_HIGH_HUMIDITY = /datum/biome/sand/sulfur_plains,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/sand
 		)
 	)
@@ -82,7 +82,7 @@
 	)
 
 /datum/biome/sand
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 5, /turf/open/floor/plating/asteroid/whitesands/rocky = 1)
 	flora_spawn_chance = 3
 	flora_spawn_list = list(
 		/obj/structure/flora/ash/leaf_shroom = 4 ,
@@ -91,16 +91,18 @@
 	)
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(
-		/obj/structure/geyser/random = 4,
-		/obj/structure/vein = 8,
-		/obj/structure/vein/classtwo = 4,
-		/obj/structure/vein/classthree = 2,
-		/obj/effect/spawner/random/anomaly/sand = 2,
-		/obj/effect/spawner/minefield = 1,
+		/obj/structure/geyser/random = 8,
+		/obj/structure/vein/sand = 8,
+		/obj/structure/vein/sand/classtwo = 4,
+		/obj/structure/vein/sand/classtwo/rare = 2,
+		/obj/structure/vein/sand/classthree = 2,
+		/obj/structure/vein/sand/classthree/rare = 1,
+		/obj/effect/spawner/random/anomaly/sand = 1,
+		/obj/effect/greeble_spawner/whitesands/oasis = 1,
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 50,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/obj/effect/spawner/random/hermit = 25,
@@ -166,19 +168,19 @@
 	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried/lit = 1)
 	flora_spawn_chance = 0
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 40,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 40,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 30,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 20,
 		/obj/effect/spawner/random/hermit = 40,
 	)
 
-/datum/biome/sand/acid //plains
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 10, /turf/open/water/acid/whitesands = 1)
-
-/datum/biome/sand/acid/total
-	open_turf_types = list(/turf/open/water/acid/whitesands = 1)
+/datum/biome/sand/sulfur_plains //plains
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 1)
 	flora_spawn_chance = 0
-	feature_spawn_chance = 0
+	feature_spawn_chance = 1.4
+	feature_spawn_list = list(
+		/obj/effect/spawner/random/greeble/sulfurpool = 1
+	)
 	mob_spawn_chance = 0
 
 /datum/biome/cave/sand
@@ -195,24 +197,24 @@
 		/obj/structure/flora/ash/puce = 1,
 	)
 	feature_spawn_list = list(
-		/obj/structure/vein = 8,
+		/obj/structure/vein/sand = 8,
 		/obj/structure/geyser/random = 4,
-		/obj/structure/vein/classtwo = 4,
+		/obj/structure/vein/sand/classtwo = 4,
 		/obj/effect/spawner/random/anomaly/sand/cave = 1
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 50,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
 	)
 
 /datum/biome/cave/sand/deep
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 5, /turf/open/floor/plating/asteroid/whitesands/rocky = 5)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/random = 50,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 20,
@@ -227,4 +229,5 @@
 	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 7, /turf/open/lava = 1)
 
 /datum/biome/cave/sand/volcanic/acidic
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 8, /turf/open/water/acid/whitesands = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 1, /turf/open/water/whitesands = 8)
+

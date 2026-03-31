@@ -59,7 +59,7 @@
 	QDEL_NULL(wires)
 	return ..()
 
-/obj/machinery/roulette/obj_break(damage_flag)
+/obj/machinery/roulette/atom_break(damage_flag)
 	prize_theft(0.05)
 	. = ..()
 
@@ -408,7 +408,7 @@
 
 /obj/item/roulette_wheel_beacon
 	name = "roulette wheel beacon"
-	desc = "An NT-approved roulette wheel beacon. Toss it down, and a complementary roulette wheel will be delivered to you."
+	desc = "A roulette wheel beacon. Toss it down, and a complementary roulette wheel will be delivered to you."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "floor_beacon"
 	var/used

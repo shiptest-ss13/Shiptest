@@ -6,14 +6,14 @@
 	. = ..()
 	storedinfo = list(
 		"\[00:00\] Recording started.",
-		"\[00:06\] [span_name("firm elzousa")] drawls \"Now I figure that... give or take a few months a' tradin out here, I'll 'ave enough money t' pay you boys forra 'nother year.\"",
-		"\[00:14\] [span_name("muffled rachnid woman")] declares \"Caelum. If you don't have payment rendered soon we this contract is called.\"",
-		"\[00:23\] [span_name("firm elzousa")] drawls \"I know. I know. I gotcha few more weeks of pay annif I don' make any trades, then 's done.\"",
-		"\[00:32\] [span_name("firm elzousa")] drawls \"Don'tcha wave those things at me.\"",
-		"\[00:37\] [span_name("muffled rachnid woman")] declares \"You have two weeks. My enforcers are reporting that the area is drawing the attention of scrapbots.\"",
-		"\[00:46\] [span_name("muffled rachnid woman")] declares \"If we don't have the money to buy more ammo, I don't need to tell you what'll happen.\"",
-		"\[00:50\] [span_name("firm elzousa")] lets out a sigh.",
-		"\[00:53\] [span_name("firm elzousa")] drawls \" Cour ma'am. Cour. \"",
+		"\[00:06\] firm elzousa drawls \"Now I figure that... give or take a few months a' tradin out here, I'll 'ave enough money t' pay you boys forra 'nother year.\"",
+		"\[00:14\] muffled rachnid woman declares \"Caelum. If you don't have payment rendered soon we this contract is called.\"",
+		"\[00:23\] firm elzousa drawls \"I know. I know. I gotcha few more weeks of pay annif I don' make any trades, then 's done.\"",
+		"\[00:32\] firm elzousa drawls \"Don'tcha wave those things at me.\"",
+		"\[00:37\] muffled rachnid woman declares \"You have two weeks. My enforcers are reporting that the area is drawing the attention of scrapbots.\"",
+		"\[00:46\] muffled rachnid woman declares \"If we don't have the money to buy more ammo, I don't need to tell you what'll happen.\"",
+		"\[00:50\] firm elzousa lets out a sigh.",
+		"\[00:53\] firm elzousa drawls \" Cour ma'am. Cour. \"",
 	)
 	timestamp = list(
 		0,

@@ -1,6 +1,7 @@
 /turf/open/water/acid
 	name = "acid lake"
 	desc = "A lake of acid."
+	icon = 'icons/turf/floors/ws_floors.dmi'
 	icon_state = "acid"
 	baseturfs = /turf/open/water/acid
 	slowdown = 2
@@ -64,30 +65,8 @@
 	underlay_appearance.icon_state = "basalt"
 	return TRUE
 
-/turf/open/water/acid/attackby(obj/item/_item, mob/user, params)
-	..()
-	if(istype(_item, /obj/item/stack/rods))
-		var/obj/item/stack/rods/R = _item
-		var/obj/structure/lattice/H = locate(/obj/structure/lattice, src)
-		if(H)
-			to_chat(user, span_warning("There is already a lattice here!"))
-			return
-		if(R.use(2))
-			to_chat(user, span_notice("You construct a catwalk."))
-			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
-			new /obj/structure/lattice/catwalk(locate(x, y, z))
-		else
-			to_chat(user, span_warning("You need one rod to build a lattice."))
-		return
-
 /turf/open/water/acid/proc/is_safe_to_cross()
-	//if anything matching this typecache is found in the lava, we don't burn things
-	var/static/list/acid_safeties_typecache = typecacheof(list(/obj/structure/catwalk, /obj/structure/stone_tile, /obj/structure/lattice/))
-	var/list/found_safeties = typecache_filter_list(contents, acid_safeties_typecache)
-	for(var/obj/structure/stone_tile/stone_tile in found_safeties)
-		if(stone_tile.fallen)
-			LAZYREMOVE(found_safeties, stone_tile)
-	return LAZYLEN(found_safeties)
+	return HAS_TRAIT(src, TRAIT_ACID_STOPPED)
 
 
 /turf/open/water/acid/proc/melt_stuff(thing_to_melt)
@@ -109,7 +88,7 @@
 				object_to_melt.resistance_flags &= ~UNACIDABLE
 			if(object_to_melt.armor.acid == 100) //acid proof armor will probably be acid proof
 				continue
-			object_to_melt.acid_act(10, 20)
+			object_to_melt.acid_act(10, 1)
 
 		else if (isliving(thing))
 			. = TRUE
@@ -146,3 +125,7 @@
 /turf/open/water/acid/whitesands
 	planetary_atmos = TRUE
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/water/acid/waste
+	planetary_atmos = TRUE
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS

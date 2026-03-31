@@ -7,7 +7,7 @@
 	var/salvageable_parts = list()
 	var/frame_type = /obj/structure/frame/machine
 
-/obj/item/stack/ore/salvage/examine(mob/user)
+/obj/structure/salvageable/examine(mob/user)
 	. = ..()
 	. += "You can use a crowbar to salvage this."
 
@@ -23,12 +23,12 @@
 	. = ..()
 	if(user.a_intent == INTENT_HARM)
 		return FALSE
-	user.visible_message("<span class='notice'>[user] starts dismantling [src].</span>", \
-					"<span class='notice'>You start salvaging anything useful from [src]...</span>")
+	user.visible_message(span_notice("[user] starts dismantling [src]."), \
+					span_notice("You start salvaging anything useful from [src]..."))
 	tool.play_tool_sound(src, 100)
 	if(do_after(user, 8 SECONDS, target = src))
-		user.visible_message("<span class='notice'>[user] dismantles [src].</span>", \
-						"<span class='notice'>You salvage [src].</span>")
+		user.visible_message(span_notice("[user] dismantles [src]."), \
+						span_notice("You salvage [src]."))
 		dismantle(user)
 		tool.play_tool_sound(src, 100)
 		qdel(src)
@@ -38,11 +38,11 @@
 	. = ..()
 	if(.)
 		return FALSE
-	user.visible_message("<span class='notice'>[user] starts slicing [src].</span>", \
-					"<span class='notice'>You start salvaging anything useful from [src]...</span>")
+	user.visible_message(span_notice("[user] starts slicing [src]."), \
+					span_notice("You start salvaging anything useful from [src]..."))
 	if(tool.use_tool(src, user, 6 SECONDS))
-		user.visible_message("<span class='notice'>[user] dismantles [src].</span>", \
-						"<span class='notice'>You salvage [src].</span>")
+		user.visible_message(span_notice("[user] dismantles [src]."), \
+						span_notice("You salvage [src]."))
 		dismantle(user)
 		qdel(src)
 	return TRUE
@@ -220,17 +220,17 @@
 	var/danger_level = rand(1,100)
 	switch(danger_level) //scary.
 		if(1 to 40)
-			audible_message("<span class='notice'>You can hear the sound of broken glass in the [src].</span>")
+			audible_message(span_notice("You can hear the sound of broken glass in the [src]."))
 		if(41 to 60)
-			visible_message("<span class='danger'>You flinch as the [src]'s laser apparatus lights up, but your tool destroys it before it activates...</span>")
+			visible_message(span_danger("You flinch as the [src]'s laser apparatus lights up, but your tool destroys it before it activates..."))
 		if(61 to 79)
-			visible_message("<span class='danger'>You see a dim light from the [src] before the laser reactivates in your face!</span>")
+			visible_message(span_danger("You see a dim light from the [src] before the laser reactivates in your face!"))
 			shoot_projectile(user, /obj/projectile/beam/scatter)
 		if(80 to 89)
-			visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
+			visible_message(span_danger("You see a bright light from the [src] before the laser reactivates in your face!"))
 			shoot_projectile(user, /obj/projectile/beam)
 		if(90 to 100)
-			visible_message("<span class='danger'>You see an intense light from the [src] before the laser reactivates in your face!</span>")
+			visible_message(span_danger("You see an intense light from the [src] before the laser reactivates in your face!"))
 			shoot_projectile(user, /obj/projectile/beam/laser/heavylaser) //i'd like to make this flash people. but i'm not sure how to do that. shame!
 
 /obj/structure/salvageable/destructive_analyzer/proc/shoot_projectile(mob/living/target, obj/projectile/projectile_to_shoot)
@@ -280,22 +280,22 @@
 	var/danger_level = rand(1,100)
 	switch(danger_level) //ever wanted the extreme danger of turn based rng but in space station 13?
 		if(1 to 45)
-			audible_message("<span class='notice'>The [src] makes a crashing sound as its salvaged.</span>")
+			audible_message(span_notice("The [src] makes a crashing sound as its salvaged."))
 
 		if(46 to 89)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
-			audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
+			audible_message(span_danger("You hear a buzz from the [src] and a voice,"))
 			new /mob/living/simple_animal/bot/medbot/rockplanet(get_turf(src))
 
 		if(95 to 100)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
-			audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
+			audible_message(span_danger("You hear a buzz from the [src] and a voice,"))
 
 			new /mob/living/simple_animal/bot/firebot/rockplanet(get_turf(src))
 
 		if(90 to 94)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
-			audible_message("<span class='danger'>You hear as buzz from the [src] as an abandoned security bot rolls out from the [src]!!</span>")
+			audible_message(span_danger("You hear as buzz from the [src] as an abandoned security bot rolls out from the [src]!!"))
 
 			new /mob/living/simple_animal/bot/secbot/ed209/rockplanet(get_turf(src))
 
@@ -361,16 +361,16 @@
 	var/danger_level = rand(1,100)
 	switch(danger_level)
 		if(1 to 50)
-			audible_message("<span class='notice'>The [src] buzzes softly as it falls apart.</span>")
+			audible_message(span_notice("The [src] buzzes softly as it falls apart."))
 
 		if(51 to 80)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
-			audible_message("<span class='danger'>As the [src] collapses, an oversized tomato lunges out from inside!</span>")
+			audible_message(span_danger("As the [src] collapses, an oversized tomato lunges out from inside!"))
 			new /mob/living/simple_animal/hostile/killertomato(get_turf(src))
 
 		if(81 to 100)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
-			audible_message("<span class='danger'>A bundle of vines unfurls from inside the [src]!</span>")
+			audible_message(span_danger("A bundle of vines unfurls from inside the [src]!"))
 			new /mob/living/simple_animal/hostile/venus_human_trap(get_turf(src))
 
 //scrap item, mostly for fluff
@@ -378,6 +378,7 @@
 	name = "salvage"
 	icon = 'icons/obj/salvage_structure.dmi'
 	icon_state = "smetal"
+	refined_type = null
 
 /obj/item/stack/ore/salvage/examine(mob/user)
 	. = ..()
@@ -389,7 +390,6 @@
 	points = 1
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/metal
 
 /obj/item/stack/ore/salvage/scrapmetal/five
 	amount = 5
@@ -407,7 +407,6 @@
 	points = 50
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/titanium
 
 /obj/item/stack/ore/salvage/scraptitanium/five
 	amount = 5
@@ -419,7 +418,6 @@
 	points = 16
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/silver=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/silver
 
 /obj/item/stack/ore/salvage/scrapsilver/five
 	amount = 5
@@ -431,7 +429,6 @@
 	points = 18
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/gold=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/gold
 
 /obj/item/stack/ore/salvage/scrapgold/five
 	amount = 5
@@ -443,7 +440,6 @@
 	points = 15
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/plasma
 
 /obj/item/stack/ore/salvage/scrapplasma/five
 	amount = 5
@@ -455,7 +451,6 @@
 	points = 30
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/uranium=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/uranium
 
 /obj/item/stack/ore/salvage/scrapuranium/five
 	amount = 5
@@ -467,7 +462,6 @@
 	points = 50
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/bluespace_crystal
 
 /obj/item/stack/ore/salvage/scrapbluespace/five
 	amount = 5

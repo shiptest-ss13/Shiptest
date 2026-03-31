@@ -13,7 +13,7 @@
 	icon_state = "montagne"
 	item_state = "hp_generic"
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	spread_unwielded = 15
+	spread_unwielded = 8
 	recoil = 0
 
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
@@ -113,7 +113,7 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 	unique_reskin_changes_inhand = TRUE
 
 	recoil = 0
-	spread_unwielded = 10
+	spread_unwielded = 8
 
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
 	. = ..()
@@ -123,7 +123,7 @@ EMPTY_GUN_HELPER(revolver/shadow)
 
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper HP Detective Special"
-	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
+	desc = "A small law enforcement firearm. Originally commissioned by Vigilitas Interstellar for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot_light.ogg'
 	icon_state = "detective"
 	item_state = "hp_generic"
@@ -162,7 +162,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	if(magazine.caliber != initial(magazine.caliber))
 		if(prob(100 - (magazine.ammo_count() * 5)))	//minimum probability of 70, maximum of 95
 			playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
-			to_chat(user, "<span class='userdanger'>[src] blows up in your face!</span>")
+			to_chat(user, span_userdanger("[src] blows up in your face!"))
 			user.take_bodypart_damage(0,20)
 			explosion(src, 0, 0, 1, 1)
 			user.dropItemToGround(src)
@@ -173,33 +173,33 @@ EMPTY_GUN_HELPER(revolver/detective)
 	if(..())
 		return TRUE
 	if(magazine.caliber == "38")
-		to_chat(user, "<span class='notice'>You begin to reinforce the barrel of [src]...</span>")
+		to_chat(user, span_notice("You begin to reinforce the barrel of [src]..."))
 		if(magazine.ammo_count())
 			afterattack(user, user)	//you know the drill
-			user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='userdanger'>[src] goes off in your face!</span>")
+			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
 			return TRUE
 		if(I.use_tool(src, user, 30))
 			if(magazine.ammo_count())
-				to_chat(user, "<span class='warning'>You can't modify it!</span>")
+				to_chat(user, span_warning("You can't modify it!"))
 				return TRUE
 			magazine.caliber = ".357"
 			fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 			desc = "The barrel and chamber assembly seems to have been modified."
-			to_chat(user, "<span class='notice'>You reinforce the barrel of [src]. Now it will fire .357 rounds.</span>")
+			to_chat(user, span_notice("You reinforce the barrel of [src]. Now it will fire .357 rounds."))
 	else
-		to_chat(user, "<span class='notice'>You begin to revert the modifications to [src]...</span>")
+		to_chat(user, span_notice("You begin to revert the modifications to [src]..."))
 		if(magazine.ammo_count())
 			afterattack(user, user)	//and again
-			user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='userdanger'>[src] goes off in your face!</span>")
+			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
 			return TRUE
 		if(I.use_tool(src, user, 30))
 			if(magazine.ammo_count())
-				to_chat(user, "<span class='warning'>You can't modify it!</span>")
+				to_chat(user, span_warning("You can't modify it!"))
 				return
 			magazine.caliber = ".38"
 			fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 			desc = initial(desc)
-			to_chat(user, "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
+			to_chat(user, span_notice("You remove the modifications on [src]. Now it will fire .38 rounds."))
 	return TRUE
 
 ///pistols
@@ -228,6 +228,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	show_magazine_on_sprite = TRUE
+	wear_rate = 0.66 //HP weapons are more resistant to wear
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -251,6 +252,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor)
 /obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
 	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
 	item_state = "hp_generic_fresh"
+	wear_rate = 0.6 //factory guns are now OBJECTIVELY better. if they happen to be candors.
 
 NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
@@ -287,6 +289,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	bolt_type = BOLT_TYPE_OPEN
 	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
 	fire_sound = 'sound/weapons/gun/smg/firestorm.ogg'
+	wear_rate = 0.4 //HP weapons are more resistant to wear
 
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
@@ -339,7 +342,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	weapon_weight = WEAPON_MEDIUM
 	force = 10
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/dual,
@@ -382,7 +385,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/unique_action(mob/living/user)
 	if (bolt_locked == FALSE)
-		to_chat(user, "<span class='notice'>You snap open the [bolt_wording] of \the [src].</span>")
+		to_chat(user, span_notice("You snap open the [bolt_wording] of \the [src]."))
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 		chambered = null
 		var/num_unloaded = 0
@@ -404,7 +407,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 /obj/item/gun/ballistic/shotgun/doublebarrel/drop_bolt(mob/user = null)
 	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, FALSE)
 	if (user)
-		to_chat(user, "<span class='notice'>You snap the [bolt_wording] of \the [src] closed.</span>")
+		to_chat(user, span_notice("You snap the [bolt_wording] of \the [src] closed."))
 	chamber_round()
 	bolt_locked = FALSE
 	update_appearance()
@@ -416,9 +419,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/attackby(obj/item/A, mob/user, params)
 	if (!bolt_locked)
-		if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, A, user, params) & COMPONENT_NO_AFTERATTACK)
+		if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACKBY, A, user, params) & COMPONENT_NO_AFTERATTACK)
 			return TRUE
-		to_chat(user, "<span class='notice'>The [bolt_wording] is shut closed!</span>")
+		to_chat(user, span_notice("The [bolt_wording] is shut closed!"))
 		return
 	return ..()
 
@@ -459,7 +462,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel)
 	sawn_off = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	wield_slowdown = 0.15
 	wield_delay = 0.3 SECONDS //OP? maybe
@@ -484,6 +487,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/presawn)
 	icon_state = "dshotgun_srm"
 	item_state = "dshotgun_srm"
 	unique_reskin = null
+
+EMPTY_GUN_HELPER(shotgun/doublebarrel/roumain)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/roumain/sawoff(forced = FALSE)
 	. = ..()
@@ -615,7 +620,7 @@ EMPTY_GUN_HELPER(shotgun/hellfire)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/winchester/conflagration,
 	)
-
+	door_breaching_weapon = TRUE
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 47,
@@ -768,6 +773,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	icon_state = "illestren_factory"
 	item_state = "illestren_factory"
 
+EMPTY_GUN_HELPER(rifle/illestren/factory)
+
 /obj/item/gun/ballistic/rifle/illestren/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
@@ -837,6 +844,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 		)
 	)
 
+	door_breaching_weapon = FALSE
+
 EMPTY_GUN_HELPER(shotgun/flamingarrow)
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/update_icon_state()
@@ -861,7 +870,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	fire_delay = src::fire_delay
 	if(fan)
 		rack()
-		to_chat(user, "<span class='notice'>You quickly rack the [bolt_wording] of \the [src]!</span>")
+		to_chat(user, span_notice("You quickly rack the [bolt_wording] of \the [src]!"))
 		balloon_alert_to_viewers("quickly racks!")
 		fire_delay = 0 SECONDS
 
@@ -884,6 +893,15 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 		recoil = 0
 		recoil_unwielded = 3
 
+//pre sawn off flaming arrow
+/obj/item/gun/ballistic/shotgun/flamingarrow/presawn/Initialize(mapload, spawn_empty)
+	. = ..()
+	sawoff(TRUE)
+/obj/item/gun/ballistic/shotgun/flamingarrow/presawn
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/presawn
+
+EMPTY_GUN_HELPER(shotgun/flamingarrow/presawn)
+
 /obj/item/gun/ballistic/shotgun/flamingarrow/factory
 	desc = "A sturdy and lightweight lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. This example has been kept in excellent shape and may as well be fresh out of the workshop. Chambered in .38."
 	icon_state = "flamingarrow_factory"
@@ -896,12 +914,23 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 		item_state = "flamingarrow_factory_sawn"
 		mob_overlay_state = item_state
 
+//pre sawn off Factoryyy flaming arrow
+/obj/item/gun/ballistic/shotgun/flamingarrow/factory/presawn/Initialize(mapload, spawn_empty)
+	. = ..()
+	sawoff(TRUE)
+/obj/item/gun/ballistic/shotgun/flamingarrow/factory/presawn
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/presawn
+
+EMPTY_GUN_HELPER(shotgun/flamingarrow/factory/presawn)
+
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt
 	name = "HP Flaming Bolt"
 	desc = "A sturdy, excellently-made lever-action rifle. This one appears to be a genuine antique, kept in incredibly good condition despite its advanced age. Chambered in .38."
 	base_icon_state = "flamingbolt"
 	icon_state = "flamingbolt"
 	item_state = "flamingbolt"
+
+EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt/sawoff(forced = FALSE)
 	. = ..()
@@ -968,11 +997,63 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 		item_state = "absolution_factory_sawn"
 		mob_overlay_state = item_state
 
+/obj/item/gun/ballistic/shotgun/flamingarrow/pyre
+	name = "HP Pyre"
+	base_icon_state = "pyre"
+	icon_state = "pyre"
+	item_state = "pyre"
+	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
+	desc = "A powerful lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 5 round ammunition capacity. Bulky and unwieldy but devastatingly powerful. Chambered in .45-70."
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/pyre
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/winchester/pyre,
+	)
+	fire_delay = 0.8 SECONDS
+	wield_slowdown = HEAVY_RIFLE_SLOWDOWN
+	wield_delay = 1 SECONDS
+	spread_unwielded = 15
+	spread = 0
+	recoil = 1.5
+	recoil_unwielded = 4
+	gunslinger_recoil_bonus = 0
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/bayonet
+		)
+	unique_attachments = list(/obj/item/attachment/scope)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 25,
+			"y" = 21,
+		)
+	)
+
+	can_be_sawn_off = FALSE
+
+EMPTY_GUN_HELPER(shotgun/flamingarrow/pyre)
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/pyre/factory
+	base_icon_state = "pyre_factory"
+	icon_state = "pyre_factory"
+	item_state = "pyre_factory"
+	desc = "A powerful lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 5 round ammunition capacity, in pristine wood furniture lined with brass. Bulky and unwieldy but devastatingly powerful. Chambered in .45-70."
+
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
 	name = "HP Beacon"
-	desc = "A single-shot break-action rifle made by Hunter's Pride and sold to civilian hunters. Boasts excellent accuracy and stopping power. Uses .45-70 ammo."
-	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
+	desc = "A break-action rifle made by Hunter's Pride and sold to civilian hunters. Boasts excellent accuracy and stopping power. Uses .45-70 ammo."
+	sawn_desc= "A break-action pistol chambered in .45-70. A bit difficult to aim."
 	base_icon_state = "beacon"
 	icon_state = "beacon"
 	item_state = "beacon"
@@ -1042,8 +1123,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory
-	desc = "A single-shot break-action rifle made by Hunter's Pride and sold to civilian hunters. This example has been kept in excellent shape and may as well be fresh out of the workshop. Uses .45-70 ammo."
-	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
+	desc = "A break-action rifle made by Hunter's Pride and sold to civilian hunters. This example has been kept in excellent shape and may as well be fresh out of the workshop. Uses .45-70 ammo."
+	sawn_desc= "A break-action pistol chambered in .45-70. A bit difficult to aim."
 	base_icon_state = "beacon_factory"
 	icon_state = "beacon_factory"
 	item_state = "beacon_factory"
@@ -1057,10 +1138,10 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 //pre sawn off beacon
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn
 	name = "HP Beacon"
-	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
+	sawn_desc= "A break-action pistol chambered in .45-70. A bit difficult to aim."
 	sawn_off = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	weapon_weight = WEAPON_MEDIUM
 
@@ -1128,6 +1209,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 		)
 	)
 
+	wear_rate = 0.8 //HP weapons are more resistant to wear
+
 /obj/item/gun/ballistic/rifle/scout
 	name = "HP Scout"
 	desc = "A powerful bolt-action rifle usually given to mercenary hunters of the Saint-Roumain Militia, equally suited for taking down big game or two-legged game. Chambered in .300 Magnum."
@@ -1153,8 +1236,10 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 5
 
-	recoil = 1
-	recoil_unwielded = 8
+	wield_slowdown = SNIPER_SLOWDOWN
+
+	recoil = 3
+	recoil_unwielded = 10
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
@@ -1168,3 +1253,82 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 			"y" = 14,
 		)
 	)
+
+/obj/item/gun/ballistic/automatic/assault/invictus
+	name = "HP Invictus"
+	desc = "An unwieldy automatic rifle fielded by the Saint-Roumain Militia, commonly sold to police forces and private buyers. This one has a smooth wood finish and is in pristine condition. Chambered in .308."
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+
+	icon_state = "invictus"
+	item_state = "invictus"
+
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	default_ammo_type = /obj/item/ammo_box/magazine/invictus_308_mag
+	allowed_ammo_types = /obj/item/ammo_box/magazine/invictus_308_mag
+
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+
+	fire_delay = 0.25 SECONDS
+
+	spread = 3
+	spread_unwielded = 20
+
+	recoil = 1
+	recoil_unwielded = 4
+
+	wear_rate = 0.6
+
+	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
+
+	unique_attachments = list(/obj/item/attachment/bayonet)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 40,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 20,
+		)
+	)
+
+EMPTY_GUN_HELPER(automatic/assault/invictus)
+NO_MAG_GUN_HELPER(automatic/assault/invictus)
+
+/obj/item/gun/ballistic/automatic/assault/invictus/old
+	desc = "An unwieldy automatic rifle fielded by the Saint-Roumain Militia, commonly sold to police forces and private buyers. Chambered in .308."
+	icon_state = "invictus_old"
+	item_state = "invictus_old"
+
+	wear_rate = 1
+
+/obj/item/ammo_box/magazine/invictus_308_mag
+	name = "Invictus magazine (.308)"
+	desc = "A 20 round box magazine for the Invictus automatic rifle. These rounds do good damage with significant armor penetration."
+	base_icon_state = "invictus_mag"
+	icon_state = "invictus_mag-1"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
+	max_ammo = 20
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/invictus_308_mag/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/invictus_308_mag/empty
+	start_empty = TRUE

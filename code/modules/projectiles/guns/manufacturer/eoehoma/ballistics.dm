@@ -22,7 +22,7 @@
 	default_firemode = FIREMODE_OTHER
 
 	weapon_weight = WEAPON_MEDIUM
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	show_magazine_on_sprite = TRUE
 	ammo_counter = TRUE
@@ -99,13 +99,13 @@
 		return
 	return ..()
 
-/obj/item/gun/ballistic/automatic/assault/e40/AltClick(mob/living/user)
+/obj/item/gun/ballistic/automatic/assault/e40/unique_action(mob/living/user)
 	var/current_firemode = gun_firemodes[firemode_index]
 	if(current_firemode == FIREMODE_OTHER)
 		if(secondary.latch_closed)
 			to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
 			if(do_after(user, secondary.latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
-				to_chat(user, span_notice("You unlatch [src]'s power cell retainment clip " + "<span class='red'>OPEN</span>" + "."))
+				to_chat(user, span_notice("You unlatch [src]'s power cell retainment clip " + span_red("OPEN") + "."))
 				playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
 				secondary.tac_reloads = TRUE
 				secondary.latch_closed = FALSE
@@ -114,7 +114,7 @@
 		else
 			to_chat(user, span_warning("You start to latch the [src]'s power cell retainment clip..."))
 			if (do_after(user, secondary.latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
-				to_chat(user, span_notice("You latch [src]'s power cell retainment clip " + "<span class='green'>CLOSED</span>" + "."))
+				to_chat(user, span_notice("You latch [src]'s power cell retainment clip " + span_green("CLOSED") + "."))
 				playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
 				secondary.tac_reloads = FALSE
 				secondary.latch_closed = TRUE
@@ -180,7 +180,7 @@
 
 /obj/item/gun/ballistic/automatic/assault/e40/toggle_safety(mob/user, silent=FALSE)
 	. = ..()
-	secondary.toggle_safety(user, silent=TRUE)
+	secondary.safety = safety
 
 /obj/item/gun/ballistic/automatic/assault/e40/fire_select(mob/living/carbon/human/user)
 	. = ..()
@@ -195,7 +195,7 @@
 /obj/item/gun/ballistic/automatic/assault/e40/examine(mob/user)
 	. = ..()
 	if(!secondary.internal_magazine)
-		. += "The cell retainment latch is [secondary.latch_closed ? "<span class='green'>CLOSED</span>" : "<span class='red'>OPEN</span>"]. Alt-Click to toggle the latch."
+		. += "The cell retainment latch is [secondary.latch_closed ? span_green("CLOSED") : span_red("OPEN")]. Use the Unique Action Key to toggle the latch while on laser mode. By default, this is <b>space</b>."
 	var/obj/item/ammo_casing/energy/shot = secondary.ammo_type[select]
 	if(secondary.cell)
 		. += "\The [name]'s cell has [secondary.cell.percent()]% charge remaining."
@@ -226,7 +226,7 @@
 	fire_delay = 0.2 SECONDS
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
-	latch_toggle_delay = 1.2 SECONDS
+	latch_toggle_delay = 0.6 SECONDS
 	valid_attachments = list()
 
 	spread_unwielded = 20

@@ -189,7 +189,7 @@
 ///Dispenser - Dispenses an item after a time passes.
 /obj/item/mod/module/dispenser
 	name = "MOD burger dispenser module"
-	desc = "A rare piece of technology reverse-engineered from a prototype found in a Donk Corporation vessel. \
+	desc = "A rare piece of technology reverse-engineered from a prototype found in a culinary vessel. \
 		This can draw incredible amounts of power from the suit's charge to create edible organic matter in the \
 		palm of the wearer's glove; however, research seemed to have entirely stopped at burgers. \
 		Notably, all attempts to get it to dispense Earl Grey tea have failed."
@@ -200,7 +200,7 @@
 	incompatible_modules = list(/obj/item/mod/module/dispenser)
 	cooldown_time = 5 SECONDS
 	/// Path we dispense.
-	var/dispense_type = /obj/item/reagent_containers/food/snacks/burger
+	var/dispense_type = /obj/item/food/burger
 	/// Time it takes for us to dispense.
 	var/dispense_time = 0 SECONDS
 
@@ -352,7 +352,7 @@
 	desc = "A simple set of deployable stands, directly atop one's head; \
 		these will deploy under a select few hats to keep them from falling off, allowing them to be worn atop the sealed helmet. \
 		You still need to take the hat off your head while the helmet deploys, though. \
-		This is a must-have for Nanotrasen Captains, enabling them to show off their authoritative hat even while in their MODsuit."
+		This is a must-have for Makosso-Warra Captains, enabling them to show off their authoritative hat even while in their MODsuit."
 	icon_state = "hat_holder"
 	incompatible_modules = list(/obj/item/mod/module/hat_stabilizer)
 	/*Intentionally left inheriting 0 complexity and removable = TRUE;
@@ -383,8 +383,8 @@
 			))
 
 /obj/item/mod/module/hat_stabilizer/on_suit_activation()
-	RegisterSignal(mod.helmet, COMSIG_PARENT_EXAMINE, PROC_REF(add_examine))
-	RegisterSignal(mod.helmet, COMSIG_PARENT_ATTACKBY, PROC_REF(place_hat))
+	RegisterSignal(mod.helmet, COMSIG_ATOM_EXAMINE, PROC_REF(add_examine))
+	RegisterSignal(mod.helmet, COMSIG_ATOM_ATTACKBY, PROC_REF(place_hat))
 	RegisterSignal(mod.helmet, COMSIG_CLICK_ALT, PROC_REF(remove_hat))
 
 /obj/item/mod/module/hat_stabilizer/on_suit_deactivation(deleting = FALSE)
@@ -392,8 +392,8 @@
 		return
 	if(attached_hat)	//knock off the helmet if its on their head. Or, technically, auto-rightclick it for them; that way it saves us code, AND gives them the bubble
 		remove_hat(src, mod.wearer)
-	UnregisterSignal(mod.helmet, COMSIG_PARENT_EXAMINE)
-	UnregisterSignal(mod.helmet, COMSIG_PARENT_ATTACKBY)
+	UnregisterSignal(mod.helmet, COMSIG_ATOM_EXAMINE)
+	UnregisterSignal(mod.helmet, COMSIG_ATOM_ATTACKBY)
 	UnregisterSignal(mod.helmet, COMSIG_CLICK_ALT)
 
 /obj/item/mod/module/hat_stabilizer/proc/add_examine(datum/source, mob/user, list/base_examine)

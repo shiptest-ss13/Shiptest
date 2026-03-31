@@ -1,7 +1,7 @@
-/obj/machinery/porta_turret/ship/nt/light/mining_base
+/obj/machinery/porta_turret/ship/warra/light/mining_base
 	lethal = TRUE
 
-/obj/machinery/porta_turret/ship/nt/light/mining_base/Initialize()
+/obj/machinery/porta_turret/ship/warra/light/mining_base/Initialize()
 	. = ..()
 	take_damage(rand(120, 150),BRUTE)
 
@@ -10,17 +10,17 @@
 	mob_gender = MALE
 	mob_species = /datum/species/lizard
 	icon_state = "corpsehuman"
-	outfit = /datum/outfit/job/nanotrasen/quartermaster
+	outfit = /datum/outfit/job/warra/quartermaster
 	brute_damage = 120
 
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner
-	outfit = /datum/outfit/job/nanotrasen/miner
+	outfit = /datum/outfit/job/warra/miner
 
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner/armored
-	outfit = /datum/outfit/job/nanotrasen/miner/armored
+	outfit = /datum/outfit/job/warra/miner/armored
 
-/datum/outfit/job/nanotrasen/miner/armored
-	name = "Nanotrasen - Armored Miner"
+/datum/outfit/job/warra/miner/armored
+	name = "N+S Logistics - Armored Miner"
 	suit = /obj/item/clothing/suit/hooded/explorer
 	mask = /obj/item/clothing/mask/gas/explorer
 
@@ -47,23 +47,23 @@
 	. = ..()
 	storedinfo = list(
 		"\[00:00\] Recording started.",
-		"\[00:02\] [span_name("gruff sarathi man")] firmly declares \"-urn in hell for thisss.\"",
-		"\[00:05\] [span_name("stern human woman")] retorts \"A hell of my own making.\"",
-		"\[00:08\] [span_name("gruff sarathi man")] states \"And we'll sssend you-\"",
-		"\[00:11\] [span_name("gruff sarathi man")] suddenly gasps",
-		"\[00:12\] [span_name("stern human woman")] confidently delivers \"If you're so sure, why aren't you the one with the gun?\"",
-		"\[00:17\] [span_name("gruff sarathi man")] stammers \"y-you won't get away with thisss\"",
-		"\[00:20\] [span_name("stern human woman")] says \"The last Nanotrasen cuck I killed said that too~\"",
+		"\[00:02\] gruff sarathi man firmly declares \"-urn in hell for thisss.\"",
+		"\[00:05\] stern human woman retorts \"A hell of my own making.\"",
+		"\[00:08\] gruff sarathi man states \"And we'll sssend you-\"",
+		"\[00:11\] gruff sarathi man suddenly gasps",
+		"\[00:12\] stern human woman confidently delivers \"If you're so sure, why aren't you the one with the gun?\"",
+		"\[00:17\] gruff sarathi man stammers \"y-you won't get away with thisss\"",
+		"\[00:20\] stern human woman says \"The last Tri-corp cuck I killed said that too~\"",
 		"\[00:25\] sudden clattering and a dull thump.",
-		"\[00:26\] [span_name("gruff sarathi man")] gasps for breath!",
-		"\[00:27\] [span_name("stern human woman")] contemptously declares \"Different boot. Same pathetic people.\"",
+		"\[00:26\] gruff sarathi man gasps for breath!",
+		"\[00:27\] stern human woman contemptously declares \"Different boot. Same pathetic people.\"",
 		"\[00:30\] A pistol's slide is racked.",
-		"\[00:32\] [span_name("stern human woman")] says \"Burn in hell.\"",
+		"\[00:32\] stern human woman says \"Burn in hell.\"",
 		"\[00:33\] A pistol is fired!",
-		"\[00:36\] [span_name("stern human woman")] states \"Get moving. I want us out and a garrison deployed within the hour.\"",
+		"\[00:36\] stern human woman states \"Get moving. I want us out and a garrison deployed within the hour.\"",
 		"\[00:38\] armored footsteps thump against a metal floor",
 		"\[00:44\] an airlock hisses open.",
-		"\[00:45\] [span_name("stern human woman")] taunts \"tchuss, tovai.\"",
+		"\[00:45\] stern human woman taunts \"tchuss, tovai.\"",
 		"\[00:50\] an airlock suddenly closes!",
 		"\[02:00\] Recording ended.",
 	)

@@ -46,10 +46,10 @@
 	if(!active && !(flags_1 & NODECONSTRUCT_1))
 		if(O.tool_behaviour == TOOL_WRENCH)
 			if(!anchored && !isinspace())
-				to_chat(user,"<span class='notice'>You secure [src] to the floor.</span>")
+				to_chat(user,span_notice("You secure [src] to the floor."))
 				set_anchored(TRUE)
 			else if(anchored)
-				to_chat(user,"<span class='notice'>You unsecure and disconnect [src].</span>")
+				to_chat(user,span_notice("You unsecure and disconnect [src]."))
 				set_anchored(FALSE)
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			return
@@ -61,14 +61,14 @@
 
 /obj/machinery/jukebox/ui_status(mob/user)
 	if(!anchored)
-		to_chat(user,"<span class='warning'>This device must be anchored by a wrench!</span>")
+		to_chat(user,span_warning("This device must be anchored by a wrench!"))
 		return UI_CLOSE
 	if(!allowed(user) && !isobserver(user))
-		to_chat(user,"<span class='warning'>Error: Access Denied.</span>")
+		to_chat(user,span_warning("Error: Access Denied."))
 		user.playsound_local(src, 'sound/misc/compiler-failure.ogg', 25, TRUE)
 		return UI_CLOSE
-	if(!SSjukeboxes.songs.len && !isobserver(user)) //WS Edit Cit #7367
-		to_chat(user,"<span class='warning'>Error: No music tracks have been authorized for this sector. Petition the local authority to resolve this issue.</span>")
+	if(!SSjukeboxes.songs.len && !isobserver(user))
+		to_chat(user,span_warning("Error: No music tracks have been authorized for this sector. Petition the local authority to resolve this issue."))
 		playsound(src, 'sound/misc/compiler-failure.ogg', 25, TRUE)
 		return UI_CLOSE
 	return ..()
@@ -83,18 +83,16 @@
 	var/list/data = list()
 	data["active"] = active
 	data["songs"] = list()
-	for(var/datum/track/S in SSjukeboxes.songs) //WS Edit Cit #7367
+	for(var/datum/track/S in SSjukeboxes.songs)
 		var/list/track_data = list(
 			name = S.song_name
 		)
 		data["songs"] += list(track_data)
 	data["track_selected"] = null
 	data["track_length"] = null
-	data["track_beat"] = null
 	if(selection)
 		data["track_selected"] = selection.song_name
 		data["track_length"] = DisplayTimeText(selection.song_length)
-		data["track_beat"] = selection.song_beat
 	data["volume"] = volume
 	return data
 
@@ -109,15 +107,15 @@
 				return
 			if(!active)
 				if(stop > world.time)
-					to_chat(usr, "<span class='warning'>Error: The device is still resetting from the last activation, it will be ready again in [DisplayTimeText(stop-world.time)].</span>")
+					to_chat(usr, span_warning("Error: The device is still resetting from the last activation, it will be ready again in [DisplayTimeText(stop-world.time)]."))
 					playsound(src, 'sound/misc/compiler-failure.ogg', 50, TRUE)
 					return
-				if(!istype(selection)) //WS Edit Cit #7367
-					to_chat(usr, "<span class='warning'>Error: Severe user incompetence detected.</span>")
+				if(!istype(selection))
+					to_chat(usr, span_warning("Error: Severe user incompetence detected."))
 					playsound(src, 'sound/misc/compiler-failure.ogg', 50, TRUE)
 					return
-				if(!activate_music()) //WS Edit Cit #7367
-					to_chat(usr, "<span class='warning'>Error: Generic hardware failure.</span>")
+				if(!activate_music())
+					to_chat(usr, span_warning("Error: Generic hardware failure."))
 					playsound(src, 'sound/misc/compiler-failure.ogg', 50, TRUE)
 					return
 				return TRUE
@@ -126,10 +124,10 @@
 				return TRUE
 		if("select_track")
 			if(active)
-				to_chat(usr, "<span class='warning'>Error: You cannot change the song until the current one is over.</span>")
+				to_chat(usr, span_warning("Error: You cannot change the song until the current one is over."))
 				return
 			var/list/available = list()
-			for(var/datum/track/S in SSjukeboxes.songs) //WS Edit Cit #7367
+			for(var/datum/track/S in SSjukeboxes.songs)
 				available[S.song_name] = S
 			var/selected = params["track"]
 			if(QDELETED(src) || !selected || !istype(available[selected], /datum/track))
@@ -152,7 +150,7 @@
 				return TRUE
 
 /obj/machinery/jukebox/proc/activate_music()
-	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, selection, 2) //WS Edit Cit #7367 & #7458
+	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, selection, 2)
 	if(jukeboxslottotake)
 		active = TRUE
 		update_appearance()
@@ -200,8 +198,8 @@
 /obj/machinery/jukebox/disco/proc/hierofunk()
 	for(var/i in 1 to 10)
 		spawn_atom_to_turf(/obj/effect/temp_visual/hierophant/telegraph/edge, src, 1, FALSE)
-		sleep(5)
-		if(QDELETED(src)) //WS Edit Cit #11039
+		sleep(0.5 SECONDS)
+		if(QDELETED(src))
 			return
 
 #define DISCO_INFENO_RANGE (rand(85, 115)*0.01)
@@ -223,9 +221,7 @@
 			if(25)
 				S.pixel_y = 7
 				S.forceMove(get_turf(src))
-		sleep(7)
-	if(selection.song_name == "Engineering's Ultimate High-Energy Hustle")
-		sleep(280)
+		sleep(0.7 SECONDS)
 	for(var/s in sparkles)
 		var/obj/effect/overlay/sparkles/reveal = s
 		reveal.alpha = 255
@@ -297,7 +293,7 @@
 					glow.even_cycle = !glow.even_cycle
 		if(prob(2))  // Unique effects for the dance floor that show up randomly to mix things up
 			INVOKE_ASYNC(src, PROC_REF(hierofunk))
-		sleep(selection.song_beat)
+		sleep(selection.song_beat_deciseconds)
 		if(QDELETED(src))
 			return
 
@@ -449,7 +445,7 @@
 	QDEL_LIST(sparkles)
 
 /obj/machinery/jukebox/process(seconds_per_tick)
-	if(active && world.time >= stop) //WS Edit Cit #7367
+	if(active && world.time >= stop)
 		active = FALSE
 		dance_over()
 		playsound(src,'sound/machines/terminal_off.ogg',50,TRUE)

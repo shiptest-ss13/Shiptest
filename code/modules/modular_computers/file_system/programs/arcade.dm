@@ -1,6 +1,6 @@
 /datum/computer_file/program/arcade
 	filename = "dsarcade"
-	filedesc = "Donksoft Micro Arcade"
+	filedesc = "mwOS Micro Arcade"
 	program_icon_state = "arcade"
 	extended_desc = "This port of the classic game 'Outbomb Cuban Pete', redesigned to run on tablets, with thrilling graphics and chilling storytelling."
 	requires_ntnet = FALSE
@@ -18,7 +18,7 @@
 	var/player_mp = 10
 	var/ticket_count = 0
 	///Shows what text is shown on the app, usually showing the log of combat actions taken by the player.
-	var/heads_up = "Nanotrasen says, winners make us money."
+	var/heads_up = "Makosso-Warra says, winners make us money."
 	var/boss_name = "Cuban Pete's Minion"
 	///Determines which boss image to use on the UI.
 	var/boss_id = 1
@@ -147,20 +147,20 @@
 			return TRUE
 		if("Dispense_Tickets")
 			if(!printer)
-				to_chat(usr, "<span class='notice'>Hardware error: A printer is required to redeem tickets.</span>")
+				to_chat(usr, span_notice("Hardware error: A printer is required to redeem tickets."))
 				return
 			if(printer.stored_paper <= 0)
-				to_chat(usr, "<span class='notice'>Hardware error: Printer is out of paper.</span>")
+				to_chat(usr, span_notice("Hardware error: Printer is out of paper."))
 				return
 			else
-				computer.visible_message("<span class='notice'>\The [computer] prints out paper.</span>")
+				computer.visible_message(span_notice("\The [computer] prints out paper."))
 				if(ticket_count >= 1)
 					new /obj/item/stack/arcadeticket((get_turf(computer)), 1)
-					to_chat(usr, "<span class='notice'>[src] dispenses a ticket!</span>")
+					to_chat(usr, span_notice("[src] dispenses a ticket!"))
 					ticket_count -= 1
 					printer.stored_paper -= 1
 				else
-					to_chat(usr, "<span class='notice'>You don't have any stored tickets!</span>")
+					to_chat(usr, span_notice("You don't have any stored tickets!"))
 				return TRUE
 		if("Start_Game")
 			game_active = TRUE

@@ -12,8 +12,8 @@
 	pressure_resistance = 2
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
-/obj/item/documents/nanotrasen
-	desc = "\"Top Secret\" Nanotrasen documents, filled with complex diagrams and lists of names, dates and coordinates."
+/obj/item/documents/warra
+	desc = "\"Top Secret\" Makosso-Warra documents, filled with complex diagrams and lists of names, dates and coordinates."
 	icon_state = "docs_verified"
 
 /obj/item/documents/solgov
@@ -81,11 +81,11 @@
 /obj/item/documents/photocopy/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/toy/crayon/red) || istype(O, /obj/item/toy/crayon/blue))
 		if (forgedseal)
-			to_chat(user, "<span class='warning'>You have already forged a seal on [src]!</span>")
+			to_chat(user, span_warning("You have already forged a seal on [src]!"))
 		else
 			var/obj/item/toy/crayon/C = O
 			name = "[C.crayon_color] secret documents"
 			icon_state = "docs_[C.crayon_color]"
 			forgedseal = C.crayon_color
-			to_chat(user, "<span class='notice'>You forge the official seal with a [C.crayon_color] crayon. No one will notice... right?</span>")
+			to_chat(user, span_notice("You forge the official seal with a [C.crayon_color] crayon. No one will notice... right?"))
 			update_appearance()

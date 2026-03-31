@@ -4,30 +4,6 @@
 	new /obj/item/reagent_containers/food/drinks/bottle/rum(src)
 	new /obj/item/reagent_containers/food/drinks/bottle/absinthe(src)
 
-/obj/item/paper/fluff/ship/cthonian
-	name = "Blank Federated Navy Paperwork"
-	default_raw_text = {"<html>
-			<head>
-			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-			</head>
-			<body>
-			<hr>
-			<font face="Courier New">
-				<table align=/"center/" width="100%">
-					<tr>
-						<td>logo here (one day)</td>
-						<td style="padding-top:10%">
-							<b>Pan Gezenan Federation Navy<br> Bolide-class Lander</b>
-						</td>
-						<td>XX - XX - 506</td>
-					</tr>
-				</table>
-			</font>
-			<hr>
-			<div style=/"margin-left:5%;margin-right:5%/"><strong>FOR IMMEDIATE DISTRIBUTION</strong><br>
-			<strong>SUBJECT: </strong>
-			"}
-
 /obj/item/paper/fluff/ship/cthonian/one
 	name = "Official Briefing"
 	default_raw_text = {"<html>
@@ -35,18 +11,22 @@
 			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 			</head>
 			<body>
+			<font face="serif" size="2">
+			<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			</head>
+			<body>
 			<hr>
-			<font face="Courier New">
-				<table align=/"center/" width="100%">
-					<tr>
-						<td>logo here (one day)</td>
-						<td style="padding-top:10%">
-							<b>Pan Gezenan Federation Navy<br>Office of Naval Deployment</b>
-						</td>
-						<td>XX - XX - 506</td>
-					</tr>
-				</table>
-			</font>
+			<table align=/"center/" width="100%">
+			<tr>
+			<td>Department of<br>Navy Issuances</td>
+			<td style="padding-top:%">
+			<b>Official Briefing<br> Woeful Cthonian-class Patrol Cutter</b>
+			</td>
+			<td>05 - 12 - 505</td>
+			</tr>
+			</table>
+			<font>
 			<hr>
 			<div style=/"margin-left:5%;margin-right:5%/"><strong>FOR IMMEDIATE DISTRIBUTION</strong><br>
 			<strong>SUBJECT: Briefing Crew of Vessel</strong>

@@ -2,6 +2,7 @@
 
 /turf/open/floor/plating/asteroid/wasteplanet
 	name = "dry rock"
+	icon = 'icons/turf/planetary/wasteplanet.dmi'
 	icon_state = "wasteplanet0"
 	base_icon_state = "wasteplanet"
 	turf_type = /turf/open/floor/plating/asteroid/wasteplanet
@@ -99,6 +100,22 @@
 /turf/open/floor/plasteel/dark/wasteplanet/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return
 
+/turf/open/floor/plasteel/stairs/wasteplanet
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	baseturfs = /turf/open/floor/plating/wasteplanet
+
+/turf/open/floor/plasteel/stairs/wasteplanet/lit
+	light_color = COLOR_WASTEPLANET_LIGHT
+
+/turf/open/floor/pod/wasteplanet
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	baseturfs = /turf/open/floor/plating/wasteplanet
+
+/turf/open/floor/pod/wasteplanet/lit
+	light_color = COLOR_WASTEPLANET_LIGHT
+
 /turf/open/floor/wood/waste
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
@@ -159,26 +176,6 @@
 	light_range = 2
 	light_power = 0.2
 
-///biological-ish turfs
-
-/turf/open/floor/plating/grass/wasteplanet
-	icon_state = "junglegrass"
-	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/floor/plating/dirt/old/waste
-	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/floor/plating/grass/wasteplanet/lit
-	light_range = 2
-	light_power = 0.2
-
-/turf/open/floor/plating/dirt/old/waste/lit
-	light_range = 2
-	light_power = 0.2
 
 ///cement turfs
 
@@ -220,27 +217,6 @@
 /turf/open/floor/concrete/pavement/wasteplanet/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return
 
-
-
-///Biological Turfs
-
-/turf/open/floor/plating/grass/wasteplanet
-	icon_state = "junglegrass"
-	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/floor/plating/dirt/old/waste
-	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	baseturfs = /turf/open/floor/plating/asteroid/wasteplanet
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-
-
-
-
-
 //open turfs then open lits.
 
 /turf/open/floor/plating/wasteplanet/lit
@@ -274,16 +250,6 @@
 	light_power = 0.2
 	light_color = COLOR_WASTEPLANET_LIGHT
 
-/turf/open/floor/plating/dirt/old/waste/lit
-	light_range = 2
-	light_power = 0.2
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/floor/plating/grass/wasteplanet/lit
-	light_range = 2
-	light_power = 0.2
-	light_color = COLOR_WASTEPLANET_LIGHT
-
 /turf/open/water/waste/lit //do not drink
 	light_range = 2
 	light_power = 0.2
@@ -292,7 +258,7 @@
 //closed turfs are a thing
 /turf/closed/wall/r_wall/wasteplanet
 	max_integrity = 800
-	integrity = 800
+	atom_integrity = 800
 	baseturfs = /turf/open/floor/plating/wasteplanet
 	girder_type = /obj/structure/girder/wasteworld
 
@@ -304,7 +270,7 @@
 
 /turf/closed/wall/r_wall/rust/wasteplanet
 	max_integrity = 600
-	integrity = 600
+	atom_integrity = 600
 	baseturfs = /turf/open/floor/plating/wasteplanet/rust
 	girder_type = /obj/structure/girder/wasteworld
 
@@ -315,7 +281,7 @@
 
 /turf/closed/wall/wasteplanet
 	max_integrity = 200
-	integrity = 200
+	atom_integrity = 200
 	baseturfs = /turf/open/floor/plating/wasteplanet
 	girder_type = /obj/structure/girder/wasteworld
 
@@ -326,7 +292,7 @@
 
 /turf/closed/wall/rust/wasteplanet
 	max_integrity = 100
-	integrity = 100
+	atom_integrity = 100
 	baseturfs = /turf/open/floor/plating/wasteplanet/rust
 	girder_type = /obj/structure/girder/wasteworld
 
@@ -337,7 +303,7 @@
 
 /turf/closed/wall/concrete/wasteplanet
 	max_integrity = 200
-	integrity = 200
+	atom_integrity = 200
 	baseturfs = /turf/open/floor/concrete/wasteplanet
 
 /turf/closed/wall/concrete/wasteplanet/Initialize(mapload, inherited_virtual_z)
@@ -347,7 +313,7 @@
 
 /turf/closed/wall/concrete/reinforced/wasteplanet
 	max_integrity = 700
-	integrity = 700
+	atom_integrity = 700
 	baseturfs = /turf/open/floor/concrete/wasteplanet
 
 /turf/closed/wall/concrete/reinforced/wasteplanet/Initialize(mapload, inherited_virtual_z)

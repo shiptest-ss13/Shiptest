@@ -33,6 +33,9 @@
 	damage = 20
 	speed = BULLET_SPEED_PDW
 	armour_penetration = 10
+	wound_bonus = -5
+	bare_wound_bonus = 5
+	embed_falloff_tile = -4
 	bullet_identifier = "small bullet"
 
 /obj/projectile/bullet/c46x30mm/recycled
@@ -76,7 +79,6 @@
 
 /obj/projectile/bullet/c556mm/surplus
 	name = "5.56mm HITP surplus bullet"
-	damage = 15
 	speed_mod = BULLET_SPEED_SURPLUS_MOD
 
 /obj/projectile/bullet/c556mm/ap

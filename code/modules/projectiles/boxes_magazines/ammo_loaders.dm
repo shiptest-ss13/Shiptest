@@ -96,11 +96,12 @@
 
 /obj/item/ammo_box/vickland_a8_50r
 	name = "stripper clip (8x50mmR)"
-	desc = "An 8-round stripper clip for the Vickland battle rifle. These rounds do good damage with significant armor penetration."
-	icon_state = "stripper_8_50r-8"
-	base_icon_state = "stripper_8_50r"
+	desc = "An 5-round stripper clip for the Vickland battle rifle. These rounds do good damage with significant armor penetration."
+	icon_state = "850-5"
+	base_icon_state = "850"
 	ammo_type = /obj/item/ammo_casing/a8_50r
-	max_ammo = 8
+	caliber = "8x50mmR"
+	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
@@ -116,6 +117,7 @@
 	desc = "A 5-round stripper clip for the Scout Rifle. These rounds do great damage with significant armor penetration."
 	icon_state = "300m"
 	ammo_type = /obj/item/ammo_casing/a300
+	caliber = "a300"
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_TINY
@@ -125,13 +127,31 @@
 /obj/item/ammo_box/a300/empty
 	start_empty = TRUE
 
+// .45-70 Stripper Clip
+
+/obj/item/ammo_box/a4570
+	name = "stripper clip (.45-70)"
+	desc = "A 5-round stripper clip for the Pyre Rifle. These rounds do devastating damage with average armor penetration."
+	icon_state = "850-5"
+	base_icon_state = "850"
+	ammo_type = /obj/item/ammo_casing/a4570
+	caliber = ".45-70"
+	max_ammo = 5
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	w_class = WEIGHT_CLASS_TINY
+	instant_load = TRUE
+	custom_materials = list(/datum/material/iron = 500)
+
+/obj/item/ammo_box/a4570/empty
+	start_empty = TRUE
+
 // .300 Blackout Stripper Clip
 
 /obj/item/ammo_box/a762_stripper
 	name = "stripper clip (7.62)"
 	desc = "A 5-round stripper clip for makeshift bolt-action rifles. These rounds do good damage with good armor penetration."
-	icon_state = "stripper_308-5"
-	base_icon_state = "stripper_308"
+	icon_state = "300m-5"
+	base_icon_state = "300m"
 	ammo_type = /obj/item/ammo_casing/a762_40
 	caliber = "7.62x40mm"
 	max_ammo = 5

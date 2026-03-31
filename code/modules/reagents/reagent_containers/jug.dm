@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/glass/chem_jug
 	name = "chemical jug"
-	desc = "A large jug used for storing bulk ammounts chemicals. Provided with a tamper seal which ensures that the contents are pure"
+	desc = "A large jug used for storing bulk quantities of chemicals. Provided with an anti-tamper seal which ensures that the contents are pure."
 	icon = 'icons/obj/chemical/chem_jug.dmi' // the coloring of labels for elemental chemicals is based on the chemical group block coloring at https://pubchem.ncbi.nlm.nih.gov/periodic-table/ . Everything else is whatever.
 	icon_state = "chem_jug"
 	item_state = "sheet-plastic"
@@ -22,23 +22,23 @@
 	lefthand_file = 'icons/mob/inhands/misc/sheets_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/sheets_righthand.dmi'
 
-/obj/item/reagent_containers/glass/chem_jug/AltClick(mob/user)
+/obj/item/reagent_containers/glass/chem_jug/attack_self_secondary(mob/user)
 	. = ..()
 	if(tamper && !cap_on)
 		tamper = FALSE
 		cap_overlay = mutable_appearance(icon, tamper_cap_icon_state)
 		playsound(src, 'sound/items/poster_ripped.ogg', 50, 1)
-		to_chat(user, "<span class='notice'>You rip the tamper seal off of [src].</span>")
+		to_chat(user, span_notice("You rip the tamper seal off of [src]."))
 
 /obj/item/reagent_containers/glass/chem_jug/examine(mob/user)
 	. = ..()
 	if(tamper)
 		if(!cap_on)
-			. += "<span class='info'>The tamper seal hasn't been applied yet.</span>"
+			. += span_info("The tamper seal hasn't been applied yet.")
 			return
-		. += "<span class='green'>The tamper seal is <b>intact</b>.</span>"
+		. += span_green("The tamper seal is <b>intact</b>.")
 	else
-		. += "<span class='warning'>The tamper seal is <b>broken</b>.</span>"
+		. += span_warning("The tamper seal is <b>broken</b>.")
 
 
 /obj/item/reagent_containers/glass/chem_jug/SplashReagents(atom/target, thrown = FALSE)
@@ -51,8 +51,8 @@
 		var/mob/M = target
 		var/R
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
-		target.visible_message("<span class='danger'>[M] is splashed with something!</span>", \
-						"<span class='userdanger'>[M] is splashed with something!</span>")
+		target.visible_message(span_danger("[M] is splashed with something!"), \
+						span_userdanger("[M] is splashed with something!"))
 		for(var/datum/reagent/A in reagents.reagent_list)
 			R += "[A.type]  ([num2text(A.volume)]),"
 
@@ -61,7 +61,7 @@
 		reagents.expose(target, TOUCH, 0.3)
 
 	else if(bartender_check(target) && thrown)
-		visible_message("<span class='notice'>[src] lands onto the [target.name] without spilling a single drop.</span>")
+		visible_message(span_notice("[src] lands onto the [target.name] without spilling a single drop."))
 		return
 
 	else
@@ -70,7 +70,7 @@
 			log_game("[key_name(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
 			message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [ADMIN_VERBOSEJMP(target)].")
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
-		visible_message("<span class='notice'>[src] spills its contents all over [target].</span>")
+		visible_message(span_notice("[src] spills its contents all over [target]."))
 		reagents.expose(target, TOUCH, 0.3)
 		if(QDELETED(src))
 			return

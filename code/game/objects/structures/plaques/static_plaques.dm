@@ -37,7 +37,7 @@
 
 /obj/structure/sign/plaques/kiddie/perfect_man
 	name = "\improper 'Perfect Man' sign"
-	desc = "A guide to the exhibit, explaining how recent developments in mindshield implant and cloning technologies by Nanotrasen Corporation have led to the development and the effective immortality of the 'perfect man', the loyal Nanotrasen Employee."
+	desc = "A guide to the exhibit, explaining how recent developments in mindshield implant and cloning technologies by Makosso-Warra Corporation have led to the development and the effective immortality of the 'perfect man', the loyal Makosso-Warra Employee."
 
 /obj/structure/sign/plaques/kiddie/perfect_drone
 	name = "\improper 'Perfect Drone' sign"
@@ -48,6 +48,10 @@
 	desc = "Under the painting a plaque reads: 'While the meat grinder may not have spared you, fear not. Not one part of you has gone to waste... You were delicious.'"
 	icon_state = "monkey_painting"
 
+/obj/structure/sign/plaques/blank
+	name = "Blank Plaque"
+	icon_state = "kiddieplaque"
+
 /obj/structure/plaque/listeningpost
 	name = "Listening Post Commemoration Plaque"
 	engraved = TRUE
@@ -55,3 +59,5 @@
 /obj/structure/plaque/listeningpost/Initialize()
 	. = ..()
 	desc = "Cybersun Virtual Solutions - Field Listening Post #[rand(107,356)]. Proudly built in [rand(478, 497)]."
+
+
