@@ -232,3 +232,24 @@
 /area/ruin/powered/hunts/shuttle
 	name = "Shuttle"
 	icon_state = "shuttle"
+
+// Big Hole
+/area/ruin/powered/bighole/canteen
+	name = "Canteen"
+	icon_state = "cafeteria"
+
+/area/ruin/powered/bighole/dormitory
+	name = "Dormitory"
+	icon_state = "crew_quarters"
+
+/area/ruin/powered/bighole/medbay
+	name = "Medical Bay"
+	icon_state = "red"
+
+/area/ruin/powered/bighole/secoffice
+	name = "Security Office"
+	icon_state = "security"
+
+/area/ruin/jungle/bighole/clipmine
+	name = "Borehole Facility"
+	icon_state = "green"

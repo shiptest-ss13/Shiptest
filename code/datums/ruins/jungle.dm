@@ -45,3 +45,10 @@
 	description = "Serene Outdoor's premier hunting resort and outlet. Well, it was until all the animals got out anyways."
 	suffix = "jungle_serene_hunts.dmm"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE, RUIN_TAG_HAZARDOUS)
+
+/datum/map_template/ruin/jungle/bighole
+	name = "Big Hole"
+	id = "bighole"
+	description = "A massive CLIP-LAND borehole in the jungle, researching & sampling the mineral wealth of the planet."
+	suffix = "jungle_bighole.dmm"
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE, RUIN_TAG_MAJOR_LOOT)
