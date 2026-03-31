@@ -13,7 +13,6 @@
 	head = /obj/item/clothing/head/beret/sec/frontier
 	gloves = /obj/item/clothing/gloves/color/black
 	neck = /obj/item/clothing/neck/dogtag/frontier
-	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 /datum/outfit/frontier/internals
 	name = "Frontiersman Corpse Internals"
