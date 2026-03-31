@@ -4143,9 +4143,6 @@
 /area/ruin/beach/corpo_resort/ramzi_tent)
 "qU" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/retro/random{
-	pixel_y = -32
-	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/corpo_resort/security)
 "qV" = (
@@ -9054,6 +9051,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/beach/corpo_resort/bar)
+"Kj" = (
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/dead,
+/obj/structure/sign/poster/retro/random{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/beach/corpo_resort/security)
 "Kl" = (
 /obj/item/ammo_casing/spent/pistol_steel,
 /turf/open/floor/plating/asteroid/dirt/beach,
@@ -17188,7 +17196,7 @@ YQ
 fh
 fV
 OR
-bf
+Kj
 Wb
 vr
 LH
