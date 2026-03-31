@@ -661,7 +661,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/sol_dry
 	name = "Kepori Pyramid"
-	desc = "An incredibly controversial rebrand of Sol Dry sold on the anniversary of first contact with Teceti. It differs only in branding, and apparently came to Sol Dry's marketing team in a dream. The source of the attached controversy is unknown."
+	desc = "An incredibly controversial rebrand of Sol Dry sold on the anniversary of first contact with Teceti. It differs only in branding, and apparently came to Sol Dry's marketing team in a dream. The source of the attached controversy is a headache to discern for casual observers, but the rebranded cans are now rather rare when they are not in production."
 	icon_state = "sol_dry"
 	list_reagents = list(/datum/reagent/consumable/sol_dry = 30)
 	foodtype = SUGAR
