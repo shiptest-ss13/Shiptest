@@ -209,6 +209,7 @@
 	equip_delay_self = EQUIP_DELAY_HELMET
 	equip_delay_other = EQUIP_DELAY_HELMET * 1.5
 	strip_delay = EQUIP_DELAY_HELMET * 1.5
+	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/head/motorcycle/black
 	name = "black motorcycle helmet"
