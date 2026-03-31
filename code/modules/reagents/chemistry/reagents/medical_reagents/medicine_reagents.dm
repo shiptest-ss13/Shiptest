@@ -418,12 +418,11 @@
 	color = "#c3915d"
 
 /datum/reagent/medicine/pancrazine/on_mob_life(mob/living/carbon/human/M)
-	var/bonus = 0 //will always be at least one since it has itself
+	var/bonus = 0 //in practice will always be at least one since it has itself
 	for(var/r in M.reagents.reagent_list)
 		bonus += 1
 	M.adjustToxLoss(-0.5 * (bonus + 1))
-	if(prob(10 * bonus))
-		holder.add_reagent(/datum/reagent/consumable/ethanol, pick(1, 5)) //makes you drunk
+	M.adjust_drunk_effect(sqrt(volume) * (pick(5,30) + 15 * bonus) * ALCOHOL_RATE * REM)
 	..()
 	return TRUE
 
