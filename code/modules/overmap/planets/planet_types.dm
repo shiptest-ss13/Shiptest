@@ -33,6 +33,14 @@
 	var/interference_power = 0
 
 
+	var/royale_common_upper = 35
+	var/royale_common_lower = 15
+
+
+	var/royale_rare_upper = 6
+	var/royale_rare_lower = 3
+
+
 /datum/planet_type/lava
 	name = "lava planetoid"
 	desc = "A planet rife with seismic and volcanic activity. High temperatures and dangerous xenofauna render it dangerous for the unprepared."
@@ -50,6 +58,8 @@
 		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/plasma,
 		)
+
+	royale_common_lower = 25
 
 
 /datum/planet_type/ice
@@ -69,6 +79,13 @@
 		/obj/item/stack/ore/gold,
 		)
 
+	royale_common_upper = 40
+	royale_common_lower = 30
+
+
+	royale_rare_upper = 7
+	royale_rare_lower = 5
+
 /datum/planet_type/jungle
 	name = "jungle planetoid"
 	desc = "A densely forested world, filled with vines, animals, and underbrush. Surprisingly habitable with a machete."
@@ -80,6 +97,9 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_JUNGLE
+
+	royale_common_lower = 10
+	royale_common_upper = 20
 	primary_ores = list(\
 		/obj/item/stack/ore/gold,
 		/obj/item/stack/ore/diamond, //this isnt very common, but it's more common here than every other planet, so i list it here
@@ -133,6 +153,13 @@
 		/obj/item/stack/ore/plasma,
 		)
 
+	royale_common_upper = 25
+	royale_common_lower = 15
+
+
+	royale_rare_upper = 5
+	royale_rare_lower = 5
+
 /datum/planet_type/reebe
 	name = "???"
 	desc = "Some sort of strange portal. There's no identification of what this is."
@@ -169,6 +196,7 @@
 		/obj/item/stack/ore/iron,
 		)
 
+
 /datum/planet_type/spaceruin
 	name = "weak energy signal"
 	desc = "A very weak energy signal originating from space."
@@ -200,9 +228,12 @@
 	selfloop = TRUE
 #endif
 
+	royale_rare_upper = 10
+	royale_rare_lower = 6
+
 /datum/planet_type/waste
 	name = "waste disposal planetoid"
-	desc = "A highly oxygenated world, coated in garbage, radiation, and rust."
+	desc = "A highly oxygenated world, coated in garbage, radiation, and rust. Over 3 generation of pill classers came and died here, and you will likely be next."
 	planet = DYNAMIC_WORLD_WASTEPLANET
 	icon_state = "waste"
 	color = "#a9883e"
@@ -211,6 +242,13 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE
+
+	royale_common_upper = 40
+	royale_common_lower = 30
+
+
+	royale_rare_upper = 7
+	royale_rare_lower = 5
 	interference_power = 0
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,

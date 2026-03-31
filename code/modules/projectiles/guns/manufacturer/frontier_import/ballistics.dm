@@ -111,6 +111,9 @@
 	caliber = "9x18mm"
 	max_ammo = 12
 
+/obj/item/ammo_box/magazine/m9mm_mauler/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/m9mm_mauler/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
@@ -194,6 +197,9 @@
 	caliber = "9x18mm"
 	max_ammo = 30
 
+/obj/item/ammo_box/magazine/spitter_9mm/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/spitter_9mm/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
@@ -266,6 +272,9 @@
 	caliber = "22lr"
 	max_ammo = 50
 	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/magazine/c22lr_pounder_pan/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/c22lr_pounder_pan/update_icon_state()
 	. = ..()

@@ -136,6 +136,18 @@
 		/datum/weather/snowfall = 5,
 	)
 
+/datum/weather_controller/random
+	possible_weathers = list()
+
+/datum/weather_controller/random/New(datum/map_zone/passed_mapzone)
+	. = ..()
+	possible_weathers = subtypesof(/datum/weather)
+	for(var/datum/weather/cur_weather in possible_weathers)
+		possible_weathers[cur_weather] = round(rand(10,80))
+		if(prob(98) && possible_weathers.len > 1)
+			qdel(cur_weather)
+	roll_next_weather()
+
 /datum/weather_controller/rockplanet_safe
 	possible_weathers = list(
 		/datum/weather/sandstorm/rockplanet/harmless = 50,
