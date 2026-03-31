@@ -484,25 +484,16 @@
 	dir = 5;
 	layer = 2.030
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/machinery/light_switch{
-	pixel_x = -12;
-	pixel_y = -20;
-	dir = 1
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen/corner{
+	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "1-8"
 	},
-/obj/effect/turf_decal/steeldecal/steel_decals_central7{
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -1123,6 +1114,13 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security)
+"fU" = (
+/obj/machinery/light/directional/west,
+/obj/structure/closet/wall/directional/north{
+	name = "radio locker"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "gc" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
@@ -1399,9 +1397,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "hg" = (
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 1
 	},
@@ -1419,6 +1414,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/structure/sign/poster/rilena/random{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/port)
@@ -2301,10 +2299,16 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "kP" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi'
+/obj/structure/railing{
+	dir = 10
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 2
+	},
+/obj/machinery/cryopod{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
 /area/ship/crew/cryo)
 "kT" = (
 /obj/structure/platform/military/corner{
@@ -2352,6 +2356,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/floor,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "lj" = (
@@ -3599,11 +3604,11 @@
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
+/obj/machinery/light/small/directional/east,
+/obj/machinery/computer/cryopod/directional/south,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
 	},
-/obj/machinery/airalarm/directional/south,
-/obj/machinery/computer/cryopod/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
 "sx" = (
@@ -4225,11 +4230,16 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew)
 "wc" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi'
+/obj/effect/turf_decal/techfloor{
+	dir = 2
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
 "we" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -4728,6 +4738,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/floor,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "yp" = (
@@ -5553,99 +5564,14 @@
 /area/ship/crew/toilet/two)
 "Cq" = (
 /obj/structure/table,
-/obj/structure/closet/wall/directional/south{
-	name = "radio locker";
-	dir = 4;
-	pixel_y = 0;
-	pixel_x = 28
+/obj/item/storage/box/bubblegum{
+	desc = "The packaging is entirely in some made up language. You can't make out a single word of it.";
+	pixel_x = -1;
+	pixel_y = 8
 	},
-/obj/item/radio{
-	pixel_x = 8;
-	pixel_y = 11
-	},
-/obj/item/radio{
-	pixel_x = 8;
-	pixel_y = 11
-	},
-/obj/item/radio{
-	pixel_x = 8;
-	pixel_y = 11
-	},
-/obj/item/radio{
-	pixel_x = 8;
-	pixel_y = 6
-	},
-/obj/item/radio{
-	pixel_x = 8;
-	pixel_y = 6
-	},
-/obj/item/radio{
-	pixel_x = 8;
-	pixel_y = 6
-	},
-/obj/item/radio{
-	pixel_x = -2;
-	pixel_y = 11
-	},
-/obj/item/radio{
-	pixel_x = -2;
-	pixel_y = 11
-	},
-/obj/item/radio{
-	pixel_x = -2;
-	pixel_y = 11
-	},
-/obj/item/radio{
-	pixel_x = -2;
-	pixel_y = 6
-	},
-/obj/item/radio{
-	pixel_x = -2;
-	pixel_y = 6
-	},
-/obj/item/radio{
-	pixel_x = -2;
-	pixel_y = 6
-	},
-/obj/item/radio{
-	pixel_x = -2;
-	pixel_y = 6
-	},
-/obj/item/hand_labeler{
-	pixel_y = -5;
-	pixel_x = 3
-	},
-/obj/item/radio/headset/pgf{
-	pixel_x = -7;
-	pixel_y = 10
-	},
-/obj/item/radio/headset/pgf{
-	pixel_x = -7;
-	pixel_y = 10
-	},
-/obj/item/radio/headset/pgf{
-	pixel_x = -7;
-	pixel_y = 10
-	},
-/obj/item/radio/headset/pgf{
-	pixel_x = -7;
-	pixel_y = 10
-	},
-/obj/item/radio/headset/pgf{
-	pixel_x = -7;
-	pixel_y = -1
-	},
-/obj/item/radio/headset/pgf{
-	pixel_x = -7;
-	pixel_y = -1
-	},
-/obj/item/radio/headset/pgf{
-	pixel_x = -7;
-	pixel_y = -1
-	},
-/obj/item/radio/headset/pgf{
-	pixel_x = -7;
-	pixel_y = -1
+/obj/item/food/no_raisin{
+	pixel_x = 7;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
@@ -6121,6 +6047,9 @@
 	},
 /obj/item/clothing/glasses/safety{
 	pixel_y = 7
+	},
+/obj/effect/turf_decal/industrial/traffic/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
@@ -7028,6 +6957,9 @@
 	name = "cargobay holofield switch";
 	pixel_x = 5;
 	pixel_y = 20
+	},
+/obj/effect/turf_decal/industrial/traffic/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -8595,9 +8527,106 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
 "PA" = (
-/obj/machinery/cryopod,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
+/obj/item/radio/headset/pgf{
+	pixel_x = -7;
+	pixel_y = 10
+	},
+/obj/item/radio/headset/pgf{
+	pixel_x = -7;
+	pixel_y = 10
+	},
+/obj/item/radio/headset/pgf{
+	pixel_x = -7;
+	pixel_y = 10
+	},
+/obj/item/radio/headset/pgf{
+	pixel_x = -7;
+	pixel_y = 10
+	},
+/obj/item/radio/headset/pgf{
+	pixel_x = -7;
+	pixel_y = -1
+	},
+/obj/item/radio/headset/pgf{
+	pixel_x = -7;
+	pixel_y = -1
+	},
+/obj/item/radio/headset/pgf{
+	pixel_x = -7;
+	pixel_y = -1
+	},
+/obj/item/radio/headset/pgf{
+	pixel_x = -7;
+	pixel_y = -1
+	},
+/obj/structure/table/reinforced,
+/obj/structure/closet/wall/directional/north{
+	name = "radio locker"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
+	dir = 4
+	},
+/obj/structure/noticeboard{
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/item/radio{
+	pixel_x = -2;
+	pixel_y = 11
+	},
+/obj/item/radio{
+	pixel_x = -2;
+	pixel_y = 11
+	},
+/obj/item/radio{
+	pixel_x = -2;
+	pixel_y = 11
+	},
+/obj/item/radio{
+	pixel_x = 8;
+	pixel_y = 11
+	},
+/obj/item/radio{
+	pixel_x = 8;
+	pixel_y = 11
+	},
+/obj/item/radio{
+	pixel_x = 8;
+	pixel_y = 11
+	},
+/obj/item/radio{
+	pixel_x = 8;
+	pixel_y = 6
+	},
+/obj/item/radio{
+	pixel_x = 8;
+	pixel_y = 6
+	},
+/obj/item/radio{
+	pixel_x = 8;
+	pixel_y = 6
+	},
+/obj/item/radio{
+	pixel_x = -2;
+	pixel_y = 6
+	},
+/obj/item/radio{
+	pixel_x = -2;
+	pixel_y = 6
+	},
+/obj/item/radio{
+	pixel_x = -2;
+	pixel_y = 6
+	},
+/obj/item/radio{
+	pixel_x = -2;
+	pixel_y = 6
+	},
+/obj/item/hand_labeler{
+	pixel_y = -5;
+	pixel_x = 3
+	},
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
 "PD" = (
 /turf/closed/wall/mineral/titanium/exterior,
@@ -8632,6 +8661,17 @@
 "PP" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
+"PU" = (
+/obj/machinery/cryopod,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/pod/dark,
+/area/ship/crew/cryo)
 "PV" = (
 /obj/structure/chair/bench/beige/directional/west,
 /obj/effect/turf_decal/siding/thinplating{
@@ -8849,12 +8889,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "QP" = (
-/obj/effect/turf_decal/techfloor/orange{
-	dir = 1
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/plasteel/stairs{
+	icon = 'icons/obj/stairs.dmi';
+	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/crew/cryo)
 "QQ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -9770,9 +9809,7 @@
 /area/ship/security/armory)
 "Ud" = (
 /obj/effect/turf_decal/corner/opaque/lime/diagonal,
-/obj/machinery/vending/snack/orange{
-	all_items_free = 0
-	},
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Uo" = (
@@ -9892,14 +9929,12 @@
 /area/ship/crew/dorm/commad)
 "UY" = (
 /obj/effect/turf_decal/corner/opaque/lime/diagonal,
-/obj/machinery/vending/cola/pwr_game{
-	all_items_free = 0
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/vending/cola,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Vh" = (
@@ -10219,12 +10254,22 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
 "WB" = (
-/obj/effect/turf_decal/techfloor/orange{
-	dir = 1
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
+	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/item/radio/intercom/directional/west,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = -11
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central7{
+	dir = 2
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "WH" = (
 /obj/machinery/meter,
@@ -10703,9 +10748,9 @@
 	name = "Firing Range";
 	dir = 8
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = "c-sun_range_access_shut";
-	dir = 4
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "c-sun_range_access_shut"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
@@ -11559,7 +11604,7 @@ RS
 RS
 RS
 Lr
-PA
+PU
 QP
 kP
 sv
@@ -11629,7 +11674,7 @@ Ny
 wi
 QW
 ur
-QW
+fU
 lj
 Ny
 sQ
