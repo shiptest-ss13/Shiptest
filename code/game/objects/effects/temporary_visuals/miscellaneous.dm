@@ -541,6 +541,10 @@
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = "big_slash"
 	duration = 0.3 SECONDS
+
+/obj/effect/temp_visual/dir_setting/item_swing/big_swipe/reverse
+	icon_state = "big_slash_reverse"
+
 /obj/effect/muzzle_flash
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "muzzle_flash"

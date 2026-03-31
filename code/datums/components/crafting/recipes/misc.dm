@@ -207,6 +207,12 @@
 				/obj/item/gun/ballistic/automatic/pistol/candor = 1)
 	category = CAT_MISC
 
+/datum/crafting_recipe/hiddensword
+	name = "??? Broadsword"
+	result = /obj/item/melee/sword/volcano
+	reqs = list(/obj/item/stack/sheet/mineral/hidden = 20)
+	category = CAT_MISC
+
 /datum/crafting_recipe/bonfire
 	name = "Bonfire"
 	time = 60

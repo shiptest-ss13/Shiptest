@@ -378,7 +378,13 @@
 			effect_type = null
 			show_sweetspot = FALSE
 			var/turf/cleave_effect_loc = get_step(get_turf(src), SOUTHWEST)
-			new /obj/effect/temp_visual/dir_setting/item_swing/big_swipe(cleave_effect_loc, user.dir)
+
+			var/hand_used = user.held_index_to_dir(user.active_hand_index)
+			switch(hand_used)
+				if("l")
+					new /obj/effect/temp_visual/dir_setting/item_swing/big_swipe/reverse(cleave_effect_loc, user.dir)
+				if("r")
+					new /obj/effect/temp_visual/dir_setting/item_swing/big_swipe(cleave_effect_loc, user.dir)
 
 			for(var/ranged_turf in RANGE_TURFS(1, user))
 				if(get_dir(user, ranged_turf) & user.dir) //the three tiles in front of the user
@@ -438,13 +444,21 @@
 			//furthest tile, 3 tiles away is a guranteed sweetspot
 			affected_turfs[front_turf_3range] = 2
 
-			var/turf/cleave_effect_loc = get_step(get_turf(src), SOUTHWEST)
-			new /obj/effect/temp_visual/dir_setting/item_swing/big_swipe(cleave_effect_loc, user.dir)
+			var/obj/slash2
+			if(lefthanding)
+				new /obj/effect/temp_visual/dir_setting/item_swing/big_swipe/reverse(get_step(get_turf(src), SOUTHWEST), user.dir)
+				slash2 = new /obj/effect/temp_visual/dir_setting/item_swing/big_swipe/reverse(get_step(front_turf, SOUTHWEST), user.dir)
+			else
+				new /obj/effect/temp_visual/dir_setting/item_swing/big_swipe(get_step(get_turf(src), SOUTHWEST), user.dir)
+				slash2 = new /obj/effect/temp_visual/dir_setting/item_swing/big_swipe(get_step(front_turf, SOUTHWEST), user.dir)
+
+			slash2.color = "red"
 
 			if(user.dir & NORTHWEST) //makes it so you always swing the same way around
 				reverseRange(affected_turfs)
 
-	COOLDOWN_START(user, swing_cooldown, SWING_COOLDOWN_TIME)
+	user.changeNext_move(attack_cooldown)
+	COOLDOWN_START(user, swing_cooldown, swing_attack_cooldown)
 	var/swing_num = 0
 	for(var/turf in affected_turfs)
 		var/turf/T = turf
@@ -457,6 +471,7 @@
 //		return // funny hitting through windows time
 	if(effect_type) // if we have an effect type show it, if not just ignore it
 		var/obj/effect/slash_effect = new effect_type(src)
+		slash_effect.layer = WALL_OBJ_LAYER
 
 		if(!show_sweetspot) //turns the effect red IF it does 1x damage or more, if sweetspot is turned off it all shows as white
 			return

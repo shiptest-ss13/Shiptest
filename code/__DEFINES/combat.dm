@@ -227,7 +227,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 #define SWINGABLE_THRUST "thrust"
 #define SWINGABLE_CLEAVE "cleave"
 
-#define SWING_COOLDOWN_TIME		1 SECONDS
+#define SWING_COOLDOWN_TIME 1 SECONDS
 /// Calls the effects of flashes. Screen overlays and such.
 #define FLASH_EFFECT (1<<0)
 /// Whether the flash should cause eye damage.

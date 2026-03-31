@@ -1,4 +1,5 @@
 /obj/item/melee/axe
+
 	icon = 'icons/obj/weapon/axes/axe.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
