@@ -238,7 +238,7 @@
 	)
 	crate_name = "alvitane vial crate"
 
-/datum/supply_pack/medical/vials/dylo_vial
+/datum/supply_pack/medical/vials/panc_vial
 	name = "Pancrazine Vial Crate"
 	desc = "Contains a spare pancrazine vial, for usage in a Hypospray."
 	cost = 400
