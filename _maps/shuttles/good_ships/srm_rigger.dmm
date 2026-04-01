@@ -846,9 +846,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "mH" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
@@ -1130,9 +1127,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "pw" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -1517,6 +1511,9 @@
 	dir = 8;
 	pixel_x = 19;
 	pixel_y = -12
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/wood/yew,
 /area/ship/hallway/central)
@@ -3874,9 +3871,6 @@
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "WG" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -4014,9 +4008,6 @@
 /turf/open/floor/wood/yew,
 /area/ship/crew/chapel)
 "Yb" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -4121,9 +4112,6 @@
 	icon_state = "1-2"
 	},
 /obj/item/wrench,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
