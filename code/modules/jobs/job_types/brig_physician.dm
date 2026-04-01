@@ -24,7 +24,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
 	alt_suit = /obj/item/clothing/suit/armor/vest/security/brig_phys
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
-	suit_store = /obj/item/flashlight/pen
+	suit_store = /obj/item/flashlight/pen/paramedic
 	l_hand = /obj/item/storage/firstaid/regular
 	head = /obj/item/clothing/head/soft/sec/brig_phys
 	implants = list(/obj/item/implant/mindshield)

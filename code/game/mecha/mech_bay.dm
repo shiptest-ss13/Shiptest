@@ -47,7 +47,7 @@
 /obj/machinery/mech_bay_recharge_port/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Base recharge rate at <b>[max_charge]J</b> per cycle.</span>"
+		. += span_notice("The status display reads: Base recharge rate at <b>[max_charge]J</b> per cycle.")
 
 /obj/machinery/mech_bay_recharge_port/process(seconds_per_tick)
 	if(machine_stat & NOPOWER || !recharge_console)
@@ -120,7 +120,7 @@
 	if(recharge_port && !QDELETED(recharge_port))
 		data["recharge_port"] = list("mech" = null)
 		if(recharge_port.recharging_mech && !QDELETED(recharge_port.recharging_mech))
-			data["recharge_port"]["mech"] = list("health" = recharge_port.recharging_mech.obj_integrity, "maxhealth" = recharge_port.recharging_mech.max_integrity, "cell" = null, "name" = recharge_port.recharging_mech.name,)
+			data["recharge_port"]["mech"] = list("health" = recharge_port.recharging_mech.atom_integrity, "maxhealth" = recharge_port.recharging_mech.max_integrity, "cell" = null, "name" = recharge_port.recharging_mech.name,)
 			if(recharge_port.recharging_mech.cell && !QDELETED(recharge_port.recharging_mech.cell))
 				data["recharge_port"]["mech"]["cell"] = list(
 				"charge" = recharge_port.recharging_mech.cell.charge,

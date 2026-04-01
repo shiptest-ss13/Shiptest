@@ -1,6 +1,7 @@
 //TODO: rename this file to lmg.dm and: /obj/item/gun/ballistic/automatic/hmg --> /obj/item/gun/ballistic/automatic/lmg
 
 /obj/item/gun/ballistic/automatic/hmg
+	bad_type = /obj/item/gun/ballistic/automatic/hmg
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = 0
 	weapon_weight = WEAPON_HEAVY
@@ -27,7 +28,7 @@
 	///is the bipod deployed?
 	var/bipod_deployed = FALSE
 	///how long do we need to deploy the bipod?
-	var/deploy_time = 2 SECONDS
+	var/deploy_time = 0.5 SECONDS
 
 	///we add these two values to recoi/spread when we have the bipod deployed
 	var/deploy_recoil_bonus = -1
@@ -41,6 +42,9 @@
 	/obj/structure/railing,
 	/obj/structure/flippedtable
 	)
+	wear_minor_threshold = 300
+	wear_major_threshold = 900
+	wear_maximum = 1500
 
 
 /obj/item/gun/ballistic/automatic/hmg/Initialize()
@@ -51,7 +55,7 @@
 
 /obj/item/gun/ballistic/automatic/hmg/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, list(COMSIG_ITEM_EQUIPPED,COMSIG_MOVABLE_MOVED), PROC_REF(retract_bipod))
+	RegisterSignals(src, list(COMSIG_ITEM_EQUIPPED,COMSIG_MOVABLE_MOVED), PROC_REF(retract_bipod))
 
 /datum/action/item_action/deploy_bipod //TODO: Make this an accessory when that's added
 	name = "Deploy Bipod"
@@ -90,7 +94,7 @@
 		return
 
 	if(!wielded_fully)
-		to_chat(user, "<span class='warning'>You need to fully grip [src] to deploy it's bipod!</span>")
+		to_chat(user, span_warning("You need to fully grip [src] to deploy it's bipod!"))
 		return
 
 	if(wielder.body_position != LYING_DOWN) //are we braced against the ground? if not, we check for objects to brace against
@@ -106,13 +110,13 @@
 
 
 	if(!can_deploy)
-		to_chat(user, "<span class='warning'>You need to brace against something to deploy [src]'s bipod! Either lie on the floor or stand next to a waist high object like a table!</span>")
+		to_chat(user, span_warning("You need to brace against something to deploy [src]'s bipod! Either lie on the floor or stand next to a waist high object like a table!"))
 		return
 	if(!do_after(user, deploy_time, src, NONE, TRUE, CALLBACK(src, PROC_REF(is_wielded))))
-		to_chat(user, "<span class='warning'>You need to hold still to deploy [src]'s bipod!</span>")
+		to_chat(user, span_warning("You need to hold still to deploy [src]'s bipod!"))
 		return
 	playsound(src, 'sound/machines/click.ogg', 75, TRUE)
-	to_chat(user, "<span class='notice'>You deploy [src]'s bipod.</span>")
+	to_chat(user, span_notice("You deploy [src]'s bipod."))
 	bipod_deployed = TRUE
 
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(retract_bipod))
@@ -125,7 +129,7 @@
 	if(!user || !ismob(user))
 		user = loc
 	playsound(src, 'sound/machines/click.ogg', 75, TRUE)
-	to_chat(user, "<span class='notice'>The bipod undeploys itself.</span>")
+	to_chat(user, span_notice("The bipod undeploys itself."))
 	bipod_deployed = FALSE
 
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
@@ -170,58 +174,4 @@
 	w_class = WEIGHT_CLASS_BULKY
 	manufacturer = MANUFACTURER_SOLARARMORIES
 
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg
-	name = "\improper SKM-24u"
-	desc = "What appears to be a standard SKM-24 at first glance is actually a light machine gun conversion, with an extended, heavy barrel and overhauled internals. Its weight, bulk, and robust fire rate make it difficult to handle without using the bipod in a prone position or against appropriate cover such as a table. Chambered in 7.62x40mm CLIP."
 
-	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
-
-	icon_state = "skm_lmg"
-	item_state = "skm_lmg"
-
-	fire_sound = 'sound/weapons/gun/rifle/skm.ogg'
-	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
-	load_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
-	eject_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
-
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
-	default_firemode = FIREMODE_SEMIAUTO
-
-	show_magazine_on_sprite = TRUE
-	unique_mag_sprites_for_variants = TRUE
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-	manufacturer = MANUFACTURER_IMPORT
-	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/skm_762_40,
-	)
-
-	fire_delay = 0.13 SECONDS
-
-	spread = 7 //you can hipfire, but why?
-	spread_unwielded = 25
-
-	recoil = 1 //identical to other LMGS
-	recoil_unwielded = 4 //same as skm
-
-	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
-	wield_delay = 0.85 SECONDS //faster than normal lmgs, slower than stock skm
-
-	has_bipod = TRUE
-
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/ComponentInitialize()
-	. = ..()
-	AddElement(/datum/element/update_icon_updates_onmob)
-
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended //spawns with the proper extended magazine, for erts
-	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/extended
-
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
-	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/drum

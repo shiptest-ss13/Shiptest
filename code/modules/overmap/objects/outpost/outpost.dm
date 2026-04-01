@@ -1,11 +1,19 @@
 /datum/overmap/outpost
 	name = "outpost"
 	char_rep = "T"
-	token_icon_state = "station_0"
+	token_icon_state = "outpost_small"
+	interference_power = -50
+
+	interaction_options = list(INTERACTION_OVERMAP_DOCK, INTERACTION_OVERMAP_QUICKDOCK)
+
 
 	// The map template used for the outpost. If null, there will be no central area loaded.
 	// Set to an instance of the singleton for its type in New.
 	var/datum/map_template/outpost/main_template = null
+
+	var/list/obj/docking_port/stationary/reserve_docks = list()
+
+	var/list/obj/docking_port/stationary/main_floor_docks = list()
 
 	var/datum/map_template/outpost/elevator_template = null
 	/// List of hangar templates. This list should contain hangar templates sufficient for any ship to dock within one,
@@ -35,20 +43,25 @@
 	/// The mapzone used by the outpost level and hangars. Using a single mapzone means networked radio messages.
 	var/datum/map_zone/mapzone
 	var/list/datum/hangar_shaft/shaft_datums = list()
+	///The weather the virtual z will have. If null, the outpost will have no weather.
+	var/datum/weather_controller/weather_controller_type
+
 
 	/// The maximum number of missions that may be offered by the outpost at one time.
 	/// Missions which have been accepted do not count against this limit.
 	var/max_missions
 	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
-	/// List of all of the things this outpost offers
-	var/list/supply_packs = list()
-	/// our 'Order number'
-	var/ordernum = 1
+
+	var/datum/cargo_market/outpost/market
+
 	/// Our faction of the outpost
 	var/datum/faction/faction
+	/// simple var that toggles the flag on/off, intended to show that this place is "inhabited". Turn off during events when something happens that causes the place to no longer be inhabited.
+	var/flag_overlay = TRUE
+	var/outpost_name
 
-/datum/overmap/outpost/Initialize(position, ...)
+/datum/overmap/outpost/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	. = ..()
 	// init our template vars with the correct singletons
 	main_template = SSmapping.outpost_templates[main_template]
@@ -70,9 +83,14 @@
 	// doing this after the main level is loaded means that the outpost areas are all renamed for us
 	Rename(gen_outpost_name())
 
+	if(!market)
+		market = new()
+		market.name = "[name] market"
+
 	fill_missions()
-	populate_cargo()
-	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+	addtimer(CALLBACK(src, PROC_REF(cycle_missions)), 1 HOURS, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 30 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+
 
 /datum/overmap/outpost/Destroy(...)
 	SSpoints_of_interest.remove_point_of_interest(token)
@@ -99,6 +117,7 @@
 	. = ..()
 	if(!.)
 		return
+	alter_token_appearance()
 	var/list/hangar_vlevels = mapzone.virtual_levels.Copy()
 	mapzone.name = name
 
@@ -125,6 +144,8 @@
 
 // Shamelessly cribbed from how Elite: Dangerous does station names.
 /datum/overmap/outpost/proc/gen_outpost_name()
+	if(main_template?.outpost_name)
+		return "[main_template.outpost_name]"
 	return "[random_species_name()] [pick(GLOB.station_suffixes)]"
 
 /proc/random_species_name()
@@ -133,34 +154,29 @@
 		// fun fact: "Hutton" is in last_names
 		person_name = pick(GLOB.last_names)
 	else
-		switch(rand(1, 4))
+		switch(rand(1, 3))
 			if(1)
 				person_name = pick(prob(50) ? GLOB.lizard_names_male : GLOB.lizard_names_female)
 			if(2)
-				person_name = spider_name()
-			if(3)
 				person_name = kepori_name()
-			if(4)
+			if(3)
 				person_name = vox_name()
 	return person_name
 
 /datum/overmap/outpost/proc/fill_missions()
-	max_missions = min(10 + (SSovermap.controlled_ships.len * 2), 25)
+	max_missions = min(20 + (SSovermap.controlled_ships.len * 2), 40)
 	while(LAZYLEN(missions) < max_missions)
 		var/mission_type = SSmissions.get_weighted_mission_type()
-		var/datum/mission/outpost/M = new mission_type(src)
+		var/datum/mission/M = new mission_type(src)
 		LAZYADD(missions, M)
 
-/datum/overmap/outpost/proc/populate_cargo()
-	ordernum = rand(1, 99000)
-
-	for(var/datum/supply_pack/current_pack as anything in subtypesof(/datum/supply_pack))
-		current_pack = new current_pack()
-		if(current_pack.faction)
-			current_pack.faction = SSfactions.factions[current_pack.faction]
-		if(!current_pack.contains)
-			continue
-		supply_packs += current_pack
+/datum/overmap/outpost/proc/cycle_missions()
+	for(var/datum/mission/target_mission as anything in missions)
+		//don't blow up active missions or high priority ones
+		if(!target_mission.accepted && !target_mission.high_priority)
+			LAZYREMOVE(missions, target_mission)
+			qdel(target_mission)
+	fill_missions()
 
 /datum/overmap/outpost/proc/load_main_level()
 	if(!main_template)
@@ -182,6 +198,9 @@
 
 	main_template.load(vlevel.get_unreserved_bottom_left_turf())
 
+	if(weather_controller_type)
+		new weather_controller_type(mapzone)
+
 	// assoc list of lists of landmarks in a shaft, starting with the main landmark
 	var/list/list/shaft_lists = list()
 	for(var/obj/effect/landmark/outpost/elevator/ele_mark in GLOB.outpost_landmarks)
@@ -196,6 +215,8 @@
 	if(!shaft_lists.len)
 		stack_trace("No elevator shafts found while loading [main_template]! The map will be inaccessible!")
 
+	SEND_SIGNAL(src, COMSIG_OVERMAP_LOADED)
+
 	// now we get the machine landmarks (button, doors) and add them to the shaft list
 	for(var/obj/effect/landmark/outpost/elevator_machine/mach_mark in GLOB.outpost_landmarks)
 		if(!vlevel.is_in_bounds(mach_mark))
@@ -206,6 +227,13 @@
 		else
 			shaft_lists[mach_mark.shaft] += mach_mark
 
+	for(var/obj/effect/landmark/outpost/subshuttle_dock/sub_dock in GLOB.outpost_landmarks)
+		sub_dock.set_up_dock(src)
+
+	for(var/obj/docking_port/stationary/docks in main_floor_docks)
+		docks.name = "[name] subshuttle dock"
+		docks.load_roundstart()
+
 	for(var/shaft_name in shaft_lists)
 		var/list/obj/shaft_li = shaft_lists[shaft_name]
 		var/obj/effect/landmark/outpost/elevator/anchor_landmark = shaft_li[1]
@@ -213,15 +241,22 @@
 
 		// load the template
 		elevator_template.load(anchor_landmark.loc)
-		plat = locate() in anchor_landmark.loc
+		plat = locate(/obj/structure/elevator_platform) in anchor_landmark.loc
 		// create the shaft datum
 		shaft_datums += new /datum/hangar_shaft(shaft_name, plat.master_datum)
 		// give the elevator a first floor
 		plat.master_datum.add_floor_landmarks(anchor_landmark, shaft_li - anchor_landmark)
 
-/datum/overmap/outpost/pre_docked(datum/overmap/ship/controlled/dock_requester)
+/datum/overmap/outpost/pre_docked(datum/overmap/ship/controlled/dock_requester, override_dock)
 	var/obj/docking_port/stationary/h_dock
 	var/datum/map_template/outpost/h_template = get_hangar_template(dock_requester.shuttle_port)
+
+	if(src in dock_requester.blacklisted)
+		return new /datum/docking_ticket(_docking_error = "Docking request denied: [dock_requester.blacklisted[src]]")
+
+	if(override_dock)
+		return new /datum/docking_ticket(override_dock, src, dock_requester)
+
 	if(!h_template || !length(shaft_datums))
 		return FALSE
 
@@ -233,11 +268,22 @@
 		)
 		return FALSE
 
-	if(src in dock_requester.blacklisted)
-		return new /datum/docking_ticket(_docking_error = "Docking request denied: [dock_requester.blacklisted[src]]")
-
-	adjust_dock_to_shuttle(h_dock, dock_requester.shuttle_port)
 	return new /datum/docking_ticket(h_dock, src, dock_requester)
+
+/datum/overmap/outpost/get_dockable_locations(datum/overmap/requesting_interactor)
+	var/list/docks = list()
+	for(var/datum/hangar_shaft/h_shaft as anything in shaft_datums)
+		for(var/obj/docking_port/stationary/h_dock as anything in h_shaft.hangar_docks)
+			if(!h_dock.docked && !h_dock.current_docking_ticket)
+				LAZYADD(docks, h_dock)
+	for(var/obj/docking_port/stationary/reserve_dock as anything in reserve_docks)
+		if(!reserve_dock.docked && !reserve_dock.current_docking_ticket)
+			LAZYADD(docks, reserve_dock)
+	if(requesting_interactor.outpost_special_dock_perms == TRUE)
+		for(var/obj/docking_port/stationary/main_floor_dock as anything in main_floor_docks)
+			if(!main_floor_dock.docked && !main_floor_dock.current_docking_ticket)
+				LAZYADD(docks, main_floor_dock)
+	return docks
 
 /datum/overmap/outpost/post_docked(datum/overmap/ship/controlled/dock_requester)
 	for(var/mob/M as anything in GLOB.player_list)
@@ -349,14 +395,16 @@
 		CRASH("[src] ([src.type]) could not find a hangar docking port landmark for its spawned hangar [h_template]!")
 
 	var/obj/docking_port/stationary/h_dock = new(dock_turf)
+	h_dock.adjust_dock_for_landing = TRUE
 	h_dock.dir = NORTH
 	h_dock.width = h_template.dock_width
 	h_dock.height = h_template.dock_height
+	h_dock.initial_hangar_template = h_template
 	shaft.hangar_docks += h_dock
 
 	// important not to CHECK_TICK after this point, so that the number is guaranteed to be correct
 	var/hangar_num = length(shaft.hangar_docks)
-	var/hangar_name = "[src.name] Hangar [shaft.name]-[hangar_num]"
+	var/hangar_name = "Elevator [shaft.name] - Floor [hangar_num] ([src.name])"
 	h_dock.name = hangar_name
 	vlevel.name = hangar_name
 	// hangar area has UNIQUE_AREA, so do not rename it (annoying)
@@ -366,6 +414,10 @@
 		if(!vlevel.is_in_bounds(num_mark))
 			continue
 		num_mark.write_number(hangar_num) // deletes the mark
+	for(var/obj/effect/landmark/outpost/shaft_number/shaft_mark in GLOB.outpost_landmarks)
+		if(!vlevel.is_in_bounds(shaft_mark))
+			continue
+		shaft_mark.write_number(shaft.name) // deletes the mark
 	for(var/obj/effect/landmark/outpost/hangar_crate_spawner/crate_spawner_mark in GLOB.outpost_landmarks)
 		if(!vlevel.is_in_bounds(crate_spawner_mark))
 			continue
@@ -391,6 +443,14 @@
 		shaft.shaft_elevator.add_floor_landmarks(anchor_mark, mach_marks)
 	return h_dock
 
+/datum/overmap/outpost/alter_token_appearance()
+	. = ..()
+	token.icon_state = token_icon_state
+	token.color = current_overmap.secondary_structure_color
+	if(flag_overlay)
+		token.cut_overlays()
+		token.add_overlay("colonized")
+
 /*
 	Hangar shafts
 */
@@ -399,6 +459,7 @@
 /datum/hangar_shaft
 	var/name
 
+	var/datum/map_template/outpost/hangar/shaft_hangar
 	var/datum/elevator_master/shaft_elevator
 	var/list/obj/docking_port/stationary/hangar_docks = list()
 
@@ -407,3 +468,44 @@
 		name = _name
 	if(_elevator)
 		shaft_elevator = _elevator
+
+/// Not the best way of handling this, but it will Work. If a docking port fails to adjust 3 times, then we essentially "Reset" the docking port
+/datum/overmap/outpost/proc/fix_docking_port(obj/docking_port/stationary/port_to_fix)
+	var/obj/docking_port/mobile/our_mobile_port = port_to_fix.docked
+	var/datum/hangar_shaft/our_shaft
+
+	if(!istype(port_to_fix))
+		return FALSE
+
+	if(istype(our_mobile_port))
+		our_mobile_port.current_ship.complete_undock()
+	port_to_fix.is_adjusting_now = TRUE
+
+	//checks all shafts if the docking port is in them
+	for(var/datum/hangar_shaft/h_shaft as anything in shaft_datums)
+		for(var/obj/docking_port/stationary/h_dock as anything in h_shaft.hangar_docks)
+			//if it's in this hangar's docks, set our targetted shaft to it, then break
+			if(port_to_fix in h_shaft.hangar_docks)
+				our_shaft = h_shaft
+				break
+		//ditto
+		if(our_shaft)
+			break
+	//If we didnt ourselves on this outpost, then return
+	if(!our_shaft)
+		port_to_fix.is_adjusting_now = FALSE
+		return FALSE
+	var/turf/initial_turf = locate(port_to_fix.initial_location["x"], port_to_fix.initial_location["y"], port_to_fix.initial_location["z"])
+
+	if(!port_to_fix.forceMove(initial_turf) || !port_to_fix.initial_hangar_template)
+		return FALSE
+
+	port_to_fix.adjust_dock_for_landing = TRUE
+	port_to_fix.dir = NORTH
+	port_to_fix.width = port_to_fix.initial_hangar_template.dock_width
+	port_to_fix.height = port_to_fix.initial_hangar_template.dock_height
+	port_to_fix.dwidth = 0
+	port_to_fix.dheight = 0
+	//fixed? return to service after
+	port_to_fix.is_adjusting_now = FALSE
+	return TRUE

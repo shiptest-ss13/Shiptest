@@ -65,6 +65,11 @@
 	poster_type = /obj/structure/sign/poster/rilena/random
 	icon_state = "rolled_rilena"
 
+/obj/item/poster/random_pgf
+	name = "random pgf poster"
+	poster_type = /obj/structure/sign/poster/pgf/random
+	icon_state = "rolled_poster"
+
 // The poster sign/structure
 
 /obj/structure/sign/poster
@@ -132,10 +137,10 @@
 	if(I.tool_behaviour == TOOL_WIRECUTTER)
 		I.play_tool_sound(src, 100)
 		if(ruined)
-			to_chat(user, "<span class='notice'>You remove the remnants of the poster.</span>")
+			to_chat(user, span_notice("You remove the remnants of the poster."))
 			qdel(src)
 		else
-			to_chat(user, "<span class='notice'>You carefully remove the poster from the wall.</span>")
+			to_chat(user, span_notice("You carefully remove the poster from the wall."))
 			roll_and_drop(user.loc)
 
 /obj/structure/sign/poster/attack_hand(mob/user)
@@ -145,10 +150,10 @@
 	if(ruined)
 		return
 	if(user.a_intent != INTENT_HARM)
-		to_chat(user, "<span class='danger'>You aren't HARMFUL enough to rip the poster off the wall.</span>") //preventing accidental ripping posters off wall if not on harm intent
+		to_chat(user, span_danger("You aren't HARMFUL enough to rip the poster off the wall.")) //preventing accidental ripping posters off wall if not on harm intent
 		return
 
-	visible_message("<span class='danger'>[user] rips [src] in a single, decisive motion!</span>" )
+	visible_message(span_danger("[user] rips [src] in a single, decisive motion!") )
 	playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
 
 	var/obj/structure/sign/poster/ripped/R = new(loc)
@@ -170,7 +175,7 @@
 //separated to reduce code duplication. Moved here for ease of reference and to unclutter r_wall/attackby()
 /turf/closed/wall/proc/place_poster(obj/item/poster/P, mob/user)
 	if(!P.poster_structure)
-		to_chat(user, "<span class='warning'>[P] has no poster... inside it? Inform a coder!</span>")
+		to_chat(user, span_warning("[P] has no poster... inside it? Inform a coder!"))
 		return
 
 	// Deny placing posters on currently-diagonal walls, although the wall may change in the future.
@@ -183,14 +188,14 @@
 	var/stuff_on_wall = 0
 	for(var/obj/O in contents) //Let's see if it already has a poster on it or too much stuff
 		if(istype(O, /obj/structure/sign/poster))
-			to_chat(user, "<span class='warning'>The wall is far too cluttered to place a poster!</span>")
+			to_chat(user, span_warning("The wall is far too cluttered to place a poster!"))
 			return
 		stuff_on_wall++
 		if(stuff_on_wall == 3)
-			to_chat(user, "<span class='warning'>The wall is far too cluttered to place a poster!</span>")
+			to_chat(user, span_warning("The wall is far too cluttered to place a poster!"))
 			return
 
-	to_chat(user, "<span class='notice'>You start placing the poster on the wall...</span>"	)
+	to_chat(user, span_notice("You start placing the poster on the wall...")	)
 
 	var/obj/structure/sign/poster/D = P.poster_structure
 
@@ -205,10 +210,10 @@
 			return
 
 		if(iswallturf(src) && user && user.loc == temp_loc)	//Let's check if everything is still there
-			to_chat(user, "<span class='notice'>You place the poster!</span>")
+			to_chat(user, span_notice("You place the poster!"))
 			return
 
-	to_chat(user, "<span class='notice'>The poster falls down!</span>")
+	to_chat(user, span_notice("The poster falls down!"))
 	D.roll_and_drop(temp_loc)
 
 // Various possible posters follow
@@ -229,7 +234,7 @@
 
 /obj/structure/sign/poster/contraband
 	poster_item_name = "contraband poster"
-	poster_item_desc = "This poster comes with its own automatic adhesive mechanism, for easy pinning to any vertical surface. Its vulgar themes have marked it as contraband aboard Nanotrasen space facilities."
+	poster_item_desc = "This poster comes with its own automatic adhesive mechanism, for easy pinning to any vertical surface. Its vulgar themes have marked it as contraband aboard Makosso-Warra space facilities."
 	poster_item_icon_state = "rolled_poster"
 
 /obj/structure/sign/poster/contraband/random
@@ -252,12 +257,12 @@
 
 /obj/structure/sign/poster/contraband/atmosia_independence
 	name = "Atmosia Declaration of Independence"
-	desc = "A relic of a failed rebellion on a Nanotrasen station, highly ridiculed due to the absurdity of it."
+	desc = "A relic of a failed rebellion on a Makosso-Warra station, highly ridiculed due to the absurdity of it."
 	icon_state = "poster_independence"
 
 /obj/structure/sign/poster/contraband/fun_police
 	name = "Fun Police"
-	desc = "A poster condemning Nanotrasen's corporate security forces about being the 'fun police.' The creator of this poster is currently in jail for 2 counts of manslaughter and 1 murder."
+	desc = "A poster condemning Vigilitas security officers for being the 'fun police.' The creator of this poster is currently in jail for 2 counts of manslaughter and 1 murder."
 	icon_state = "poster_fun_police"
 
 /obj/structure/sign/poster/contraband/lusty_xenomorph
@@ -282,7 +287,7 @@
 
 /obj/structure/sign/poster/contraband/missing_gloves
 	name = "Missing Gloves"
-	desc = "This poster references the uproar that followed Nanotrasen's financial cuts toward insulated-glove purchases."
+	desc = "This poster references the uproar that followed Makosso-Warra's financial cuts toward insulated-glove purchases."
 	icon_state = "poster_insul_gloves"
 
 /obj/structure/sign/poster/contraband/hacking_guide
@@ -312,7 +317,7 @@
 
 /obj/structure/sign/poster/contraband/tools
 	name = "Tools"
-	desc = "This poster looks like an advertisement for tools, but is in fact a subliminal jab at the tools on Nanotrasen stations."
+	desc = "This poster looks like an advertisement for tools, but is in fact a subliminal jab at the tools on Makosso-Warra stations."
 	icon_state = "poster_tools"
 
 /obj/structure/sign/poster/contraband/power
@@ -352,7 +357,7 @@
 
 /obj/structure/sign/poster/contraband/engis_unite
 	name = "Engineers Unite!"
-	desc = "A poster sponsered by the Galactic Engineer's Concordat urging to vote YES to the formation of a engineers union on NT Shipyard 22-A."
+	desc = "A poster sponsered by the Galactic Engineer's Concordat urging to vote YES to the formation of a engineers union on Makosso-Warra Shipyard 22-A."
 	icon_state = "poster_unite"
 
 /obj/structure/sign/poster/contraband/c20r
@@ -398,7 +403,7 @@
 
 /obj/structure/sign/poster/contraband/ntos
 	name = "Ntos V"
-	desc = "A advertisement for Ntos V. Unlike earlier iterations of the system, Nanotrasen has opted to update this version continously, instead of release a new version every so often, much to the dismay of older system users."
+	desc = "A advertisement for Ntos V. Unlike earlier iterations of the system, Makosso-Warra has opted to update this version continously, instead of release a new version every so often, much to the dismay of older system users."
 	icon_state = "poster_ntos"
 
 /obj/structure/sign/poster/contraband/punch_shit
@@ -410,11 +415,6 @@
 	name = "The Griffin"
 	desc = "The Griffin commands you to be the worst you can be. Will you?"
 	icon_state = "poster_griffin"
-
-/obj/structure/sign/poster/contraband/pgf
-	name = "PGF Marine"
-	desc = "This poster depicts a PGF marine with a E-40. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
-	icon_state = "poster_pgf"
 
 /obj/structure/sign/poster/contraband/free_drone
 	name = "Free Drone"
@@ -503,8 +503,8 @@
 
 /obj/structure/sign/poster/contraband/aclf
 	name = "Syndicate Support Poster"
-	desc = "An poster made by ACLF protestors in support of the Syndicate, listing Nanotrasen's abuses of their workers. While this poster was made during for the ICW, it seems like some keep it up as it still resonates with them."
-	icon_state = "poster-aclf_antint"
+	desc = "An poster made by ACLF protestors in support of the Syndicate, listing Makosso-Warra's abuses of their workers. While this poster was made during for the ICW, it seems like some keep it up as it still resonates with them."
+	icon_state = "poster-aclf_antiwarra"
 
 /obj/structure/sign/poster/contraband/bulldog
 	name = "Bulldog Shotgun"
@@ -516,10 +516,10 @@
 	desc = "A poster advertising the Scarborough M90. Burst action with a grenade launcher, for some reason."
 	icon_state = "poster-m90"
 
-/obj/structure/sign/poster/contraband/inteq_nt
+/obj/structure/sign/poster/contraband/inteq_warra
 	name = "Inteq Recruitment"
-	desc = "Tired of your underpaying and abusive job at Nanotrasen? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and earn higher pay!"
-	icon_state = "poster-inteq_poaching_nt"
+	desc = "Tired of your underpaying and abusive job at Makosso-Warra? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and earn higher pay!"
+	icon_state = "poster-inteq_poaching_warra"
 
 /obj/structure/sign/poster/contraband/inteq_gec
 	name = "Inteq Recruitment"
@@ -547,10 +547,101 @@
 	desc = "Captain Cardinal would like to remind you that the left of the ship is port, and the right of the ship is starBIRD! Get it, right?"
 	icon_state = "poster-cardinal-2"
 
-//beginning of Nanotrasen approved posters. Expect corprate propaganda and motavation. You will usually only see this on Nanotrasen ships and stations
+/obj/structure/sign/poster/contraband/bigass_horns
+	name = "Bigass Horns"
+	desc = "This poster depicts a trio of PGF sailors. The elzuose's horns are sticking up through the text block. \"Get your bigass horns out of the caption!\""
+	icon_state = "poster-pgf_bigass-horns"
+
+/obj/structure/sign/poster/contraband/diet_guide
+	name = "Dietary Guide"
+	desc = "It's a food safety infographic outlining the types of food that different species can and cannot eat."
+	icon_state = "poster-diet-guide"
+	/// Static string containing the pre-generated diet guide.
+	var/static/diet_guide_text
+	/// Static list with positioning of the food icons.
+	var/static/list/icon_positions = list()
+	var/base_text = {"
+<center><h1>Species Dietary Guide</h1></center>
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="table-layout: fixed;" class="main">
+	DIET_DATA_HERE
+</table>
+<br />
+<table align="center" width="300px" border="1" cellpadding="0" cellspacing="0" style="table-layout: fixed">
+	<tr bgcolor="d9f5e1">
+		<td><font size="6" color="3bbf2a"><center>✓</center></font></td>
+		<td><b><center>Safe to eat</b></center></td>
+	</tr>
+	<tr bgcolor="ffffff">
+		<td><font size="6" color="fc8403"><center>✗</center></font></td>
+		<td><b><center>Cannot be digested</center></b></td>
+	</tr>
+	<tr bgcolor="d9f5e1">
+		<td><font size="6" color="c91625"><center>✗</center></font></td>
+		<td><b><center>Toxic if ingested</center></b></td>
+	</tr>
+</table>
+"}
+
+/obj/structure/sign/poster/contraband/diet_guide/ComponentInitialize()
+	. = ..()
+	if(!diet_guide_text || !LAZYLEN(icon_positions))
+		var/static/list/food_images = list(
+			"Meat, Eggs" = "food-cooked_meat",
+			"Raw Meat" = "food-raw_meat",
+			"Grains" = "food-bread",
+			"Fruits" = "food-fruit",
+			"Veggies" = "food-vegetable",
+			"Dairy" = "food-dairy",
+			"Cloth" = "food-cloth",
+			"Fried Foods" = "food-fried",
+		)
+		var/diet_text_data = "<tr><td width=\"80px\" valign=\"top\" bgcolor=\"80c294\" />"
+		var/stamp_x_pos = 81
+		for(var/food_name in food_images) // <img src=\"[food_sprites[food_name]]\" /><br / >
+			diet_text_data += "<th valign=\"center\" bgcolor=\"ffffff\" width=\"80px\" height=\"80px\"><br/><br/><br/><center>[food_name]</center></th>"
+			icon_positions[food_images[food_name]] = stamp_x_pos
+			stamp_x_pos += 62
+		diet_text_data += "</td></tr>"
+		var/species_count = 0
+		var/static/list/food_groups = list(MEAT, RAW, GRAIN, FRUIT, VEGETABLES, DAIRY, CLOTH, FRIED)
+		for(var/species_id in GLOB.roundstart_races)
+			var/datum/species/species = GLOB.species_list[species_id]
+			species = new species()
+			if(species.reagent_tag == PROCESS_SYNTHETIC)
+				continue // you don't need a poster to tell you that robots don't eat food
+			if(TRAIT_NOHUNGER in species.inherent_traits)
+				continue // duh
+			species_count++
+			diet_text_data += "<tr><td width=\"96px\" bgcolor=\"80c294\"><b><center>[replacetext(species.name, "\improper ", "")]</center></b></td>"
+			var/background_color = (species_count % 2) ? "d9f5e1" : "ffffff"
+			for(var/food_group in food_groups)
+				diet_text_data += "<td width=\"80px\" bgcolor=\"[background_color]\">"
+				if(species.toxic_food & food_group)
+					diet_text_data += "<font size=\"6\" color=\"c91625\"><center>✗</center></font></td>"
+					continue
+				if(species.disliked_food & food_group)
+					diet_text_data += "<font size=\"6\" color=\"fc8403\"><center>✗</center></font></td>"
+					continue
+				diet_text_data += "<font size=\"6\" color=\"3bbf2a\"><center>✓</center></font></td>"
+			diet_text_data += "</tr>"
+			qdel(species)
+		diet_guide_text = replacetext(base_text, "DIET_DATA_HERE", diet_text_data)
+
+	var/datum/component/writing/diet_guide = AddComponent(/datum/component/writing, \
+		raw_text = diet_guide_text, \
+		window_width = 600, \
+		window_height = 640, \
+		resizable = FALSE, \
+	)
+
+	var/datum/asset/spritesheet/simple/paper_assets = get_asset_datum(/datum/asset/spritesheet/simple/paper)
+	for(var/food_name in icon_positions)
+		diet_guide.add_graphic(paper_assets.icon_class_name(food_name), icon_positions[food_name], 44, 0, food_name)
+
+//beginning of Makosso-Warra approved posters. Expect corprate propaganda and motavation. You will usually only see this on Makosso-Warra ships and stations
 /obj/structure/sign/poster/official
 	poster_item_name = "motivational poster"
-	poster_item_desc = "An official Nanotrasen-issued poster to foster a compliant and obedient workforce. It comes with state-of-the-art adhesive backing, for easy pinning to any vertical surface."
+	poster_item_desc = "An official Makosso-Warra-issued poster to foster a compliant and obedient workforce. It comes with state-of-the-art adhesive backing, for easy pinning to any vertical surface."
 	poster_item_icon_state = "rolled_legit"
 
 /obj/structure/sign/poster/official/random
@@ -562,13 +653,13 @@
 
 /obj/structure/sign/poster/official/here_for_your_safety
 	name = "Here For Your Safety"
-	desc = "A poster glorifying the Nanotrasen private security forces."
+	desc = "A poster glorifying the Makosso-Warra private security forces."
 	icon_state = "poster_saftey"
 
-/obj/structure/sign/poster/official/nanotrasen_logo
-	name = "\improper Nanotrasen logo"
-	desc = "A poster depicting the Nanotrasen logo."
-	icon_state = "poster_nanotrasen"
+/obj/structure/sign/poster/official/warra_logo
+	name = "\improper Makosso-Warra logo"
+	desc = "A poster depicting the Makosso-Warra logo."
+	icon_state = "poster_warra"
 
 /obj/structure/sign/poster/official/cleanliness
 	name = "Cleanliness"
@@ -682,7 +773,7 @@
 
 /obj/structure/sign/poster/official/pda_ad
 	name = "PDA Ad"
-	desc = "A poster advertising the latest PDA from Nanotrasen suppliers."
+	desc = "A poster advertising the latest PDA from Makosso-Warra suppliers."
 	icon_state = "poster_pda"
 
 /obj/structure/sign/poster/official/mini_energy_gun
@@ -692,8 +783,8 @@
 
 /obj/structure/sign/poster/official/enlist
 	name = "Enlist" // but I thought deathsquad was never acknowledged
-	// desc = "Enlist in the Nanotrasen Deathsquadron reserves today!" // I refuse to acknowledge this bullshit - Zeta
-	desc = "A poster urging all across the NT umbrella to join the Nanotrasen Private Security forces. This was made specifically for the ICW, so someone probably forgot to take this down."
+	// desc = "Join the Death Squad today!" // I refuse to acknowledge this bullshit - Zeta
+	desc = "Merchandise for the popular Death Squad comic series, done up as a convincingly fake recruitment poster for the titular Death Squad. True fans know you don't choose the Death Squad - the Death Squad chooses you."
 	icon_state = "poster_enlist"
 
 /obj/structure/sign/poster/official/high_class_martini
@@ -723,14 +814,14 @@
 	icon_state = "poster-focus"
 
 /obj/structure/sign/poster/official/miners
-	name = "Nanotrasen Mining-Exploratory Corps Recruitment"
-	desc = "A poster recruiting more miners and explorers for new Nanotrasen holdings. It tells about how advanced Nanotrasen mining equipment and how it relates to the history of Nanotrasen."
+	name = "Makosso-Warra Mining-Exploratory Corps Recruitment" //Shouldn't this be N+S?
+	desc = "A poster recruiting more miners and explorers for new Makosso-Warra holdings. It tells about how advanced Makosso-Warra mining equipment and how it relates to the history of the company."
 	icon_state = "posters-minersneeded"
 
-//Retro naontrasen posters. very inspired by the early apple logos and 70s-90s tech logos. Expect to see these on ancient Nanotrasen ships and stations, collectables, or callbacks to retro NT
+//Retro naontrasen posters. very inspired by the early apple logos and 70s-90s tech logos. Expect to see these on ancient Makosso-Warra ships and stations, collectables, or callbacks to retro MW
 /obj/structure/sign/poster/retro
 	poster_item_name = "retro poster"
-	poster_item_desc = "A really old Nanotrasen poster that probably sells for a lot now days. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_desc = "A really old Makosso-Warra poster that probably sells for a lot now days. It comes with adhesive backing, for easy pinning to any vertical surface."
 	poster_item_icon_state = "rolled_legit"
 
 /obj/structure/sign/poster/retro/random
@@ -740,15 +831,15 @@
 	random_basetype = /obj/structure/sign/poster/retro
 	random_type = POSTER_SUBTYPES
 
-/obj/structure/sign/poster/retro/nanotrasen_logo_70s
-	name = "\improper Ancient Nanotrasen logo"
-	desc = "A poster depicting the Nanotrasen logo. This thing is ancient."
-	icon_state = "poster-nanotrasen70s_retro"
+/obj/structure/sign/poster/retro/warra_logo_70s
+	name = "\improper Ancient Makosso-Warra logo"
+	desc = "A poster depicting an older Makosso-Warra logo. This thing is ancient."
+	icon_state = "poster-warra70s_retro"
 
-/obj/structure/sign/poster/retro/nanotrasen_logo_80s
-	name = "\improper Nanotrasen logo"
-	desc = "A poster depicting the Nanotrasen logo. It has a nice aesthetic."
-	icon_state = "poster-nanotrasen_retro"
+/obj/structure/sign/poster/retro/warra_logo_80s
+	name = "\improper Makosso-Warra logo"
+	desc = "A poster depicting Makosso-Warra's ICW-era logo. It has a nice aesthetic."
+	icon_state = "poster-warra_retro"
 
 /obj/structure/sign/poster/retro/smile
 	name = "Smile"
@@ -772,7 +863,7 @@
 
 /obj/structure/sign/poster/retro/pdaancient
 	name = "PDA Ad"
-	desc = "A poster advertising the original Thinkitronic PDA after the company was aquired by Nanotrasen. This thing shipped with severe problems such as PDA message 'bombing' and memory errors. Despite this, it's fondly remembered. This thing is ancient."
+	desc = "A poster advertising the original Thinkitronic PDA after the company was aquired by Makosso-Warra. This thing shipped with severe problems such as PDA message 'bombing' and memory errors. Despite this, it's fondly remembered. This thing is ancient."
 	icon_state = "poster-pda70_retro"
 
 /obj/structure/sign/poster/retro/lasergun
@@ -787,7 +878,7 @@
 
 /obj/structure/sign/poster/retro/radio
 	name = "Radio"
-	desc = "A poster advertising one of Nanotrasen's earliest products, a radio. One of its main selling points was a integrated OS and two way automatic translation for Solarian Common, and Kalixcian Common, which made it a smash hit. This thing is ancient."
+	desc = "A poster advertising one of Makosso-Warra's earliest products, a radio. One of its main selling points was a integrated OS and two way automatic translation for Solarian Common and Gezenan, which made it a smash hit. This thing is ancient."
 	icon_state = "poster-radio70_retro"
 
 //Safety moth posters, credit to AspEv for the art which the below posters are based on and to Ayy-Robotics for the sprites.
@@ -844,7 +935,7 @@
 
 /obj/structure/sign/poster/contraband/mothpill
 	name = "Safety Pill - Methamphetamine"
-	desc = "A decommisioned poster that uses Safety Pill(TM?) to promote less-than-legal chemicals. This is one of the reasons Nanotrasen stopped outsourcing their posters. It's partially signed by 'AspEv'."
+	desc = "A decommisioned poster that uses Safety Pill(TM?) to promote less-than-legal chemicals. This is one of the reasons Makosso-Warra stopped outsourcing their posters. It's partially signed by 'AspEv'."
 	icon_state = "poster_moth_pill"
 
 //SolGov poster pool. expect a focus on solarian based products and places. Expect these on solgov ships
@@ -931,7 +1022,7 @@
 
 /obj/structure/sign/poster/solgov/suns
 	name = "Student Union of Natural Sciences"
-	desc = "SUNS, best known for it's diverse variety of top students from various solarian universities, dealing with internal fighting via dueling with swords, and being sued by Nanotrasen for trademark infrigement on their old name \"NSV.\""
+	desc = "SUNS, best known for it's diverse variety of top students from various solarian universities, and dealing with internal fighting via dueling with swords." //Makosso-Warra ruined the NSV joke and the rule of three, RIP
 	icon_state = "poster-solgov_suns"
 
 //CLIP poster pool. This is quite limited, so don't use more than 3 random ones at once. Expect to see these on CLIP ships.
@@ -954,13 +1045,13 @@
 	icon_state = "poster-clip_enlist"
 
 /obj/structure/sign/poster/clip/bard
-	name = "CMM-BARD"
-	desc = "A poster made by soldiers to recruit people into the BARD, depecting a \"Sergeant Clues\" mowing down waves and waves of xenofauna, and them exploding into blood. Something tells you that service is a lot less interesting than this."
+	name = "CLIP-BARD"
+	desc = "A poster made by soldiers to recruit people into CLIP-BARD, depecting a \"Sergeant Clues\" mowing down waves and waves of xenofauna, and them exploding into blood. Something tells you that service is a lot less interesting than this."
 	icon_state = "poster-clip_bard"
 
 /obj/structure/sign/poster/clip/gold
 	name = "CLIP-GOLD"
-	desc = "A poster listing job positions open in the CLIP GOLD and asking for applications, listing important but uninteresting benifits like health insurance and such."
+	desc = "A poster listing job positions open in the CLIP-GOLD and asking for applications, listing important but uninteresting benifits like health insurance and such."
 	icon_state = "poster-clip_gold"
 
 /obj/structure/sign/poster/clip/lunatown
@@ -1054,6 +1145,69 @@
 	desc = "A RILENA: LMR poster split in two to represent the series' disregard for conventional timeline aspects."
 	icon_state = "poster-rilena_timeline"
 
+//PGF recruitment diversity posters.
+/obj/structure/sign/poster/pgf
+	poster_item_name = "pgf poster"
+	poster_item_desc = "A poster that is produced by the armed forces of the PGF. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_icon_state = "rolled_legit"
+
+/obj/structure/sign/poster/pgf/random
+	name = "random official poster"
+	random_basetype = /obj/structure/sign/poster/pgf
+	icon_state = "poster-pgf_random"
+	never_random = TRUE
+	random_type = POSTER_SUBTYPES
+
+/obj/structure/sign/poster/pgf/marine
+	name = "PGF Marine"
+	desc = "This poster depicts a human PGF Marine armed with a BGC-10. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_marine"
+
+/obj/structure/sign/poster/pgf/sergeant
+	name = "PGF Marine Sergeant"
+	desc = "This poster depicts a sarathi PGF Marine sergeant armed with a HBG-7. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_sergeant"
+
+/obj/structure/sign/poster/pgf/corpsman
+	name = "PGF Marine Corpsman"
+	desc = "This poster depicts an elzuose PGF Marine corpsman. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_corpsman"
+
+/obj/structure/sign/poster/pgf/pioneer
+	name = "PGF Marine Pioneer"
+	desc = "This poster depicts a vox PGF Marine pioneer with armed with a VG-A5. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_pioneer"
+
+/obj/structure/sign/poster/pgf/captain
+	name = "PGF Navy Captain"
+	desc = "This poster depicts a kepori PGF Navy captain. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_captain"
+
+/obj/structure/sign/poster/pgf/engineer
+	name = "PGF Navy Engineer"
+	desc = "This poster depicts a synthetic PGF Navy engineer. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_engineer"
+
+/obj/structure/sign/poster/pgf/officer
+	name = "PGF Navy Officer"
+	desc = "This poster depicts a rachnid PGF Navy officer. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_officer"
+
+/obj/structure/sign/poster/pgf/choose
+	name = "Choose Your Path"
+	desc = "This poster depicts a sarathi split between PGF Marine Corps and Navy dress. \"Fight with the Pan-Gezena Federation and choose your own path!\""
+	icon_state = "poster-pgf_choose"
+
+/obj/structure/sign/poster/pgf/hero
+	name = "How About You"
+	desc = "This poster depicts a Vox marine stepping forward from between two silhouettes. \"Heroes don't back down and neither do Marines. How about you?\""
+	icon_state = "poster-pgf_hero"
+
+/obj/structure/sign/poster/pgf/together
+	name = "In It Together"
+	desc = "This poster depicts a trio of PGF sailors. \"All together now!\""
+	icon_state = "poster-pgf_together"
+
 //PGF Mission Accomplished
 /obj/structure/sign/poster/pgf/mission_accomplished_1
 	name = "MISSION ACCOMPLISHED! 1"
@@ -1132,6 +1286,104 @@
 	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_7
 	icon_state = "rolled_poster"
 
+// dont use random radio anywhere but indies or else it might throw up radio gorlex on a PGF ship
+
+/obj/structure/sign/poster/contraband/radiofreefrontier
+	name = "RFF"
+	desc = "An amateur, slapdash poster for the 'Radio Free Frontier', a pirate radio station ran from the Shoal and maintained through the collective power of thousands of layabouts, vagabonds, and script-kiddies setting up signal amplifiers across Frontier space."
+	icon_state = "poster-radio_RFF"
+
+/obj/item/poster/radiofreefrontier
+	name = "RFF Poster"
+	poster_type = /obj/structure/sign/poster/contraband/radiofreefrontier
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/random
+	name = "random radio station poster"
+	icon_state = "random_radio"
+	never_random = TRUE
+	random_basetype = /obj/structure/sign/poster/radio
+	random_type = POSTER_SUBTYPES
+
+/obj/structure/sign/poster/radio/icf
+	name = "ICF"
+	desc = "A poster for the 'Independent Collected Frequencies', a rough network of unionized radio stations in the Frontier."
+	icon_state = "poster-radio_ICF"
+
+/obj/item/poster/icf
+	name = "ICF poster"
+	poster_type = /obj/structure/sign/poster/radio/icf
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/arf
+	name = "ARF"
+	desc = "A poster for New Gorlex's 'All Republic First', a hybrid talk-show radio station. It's host is famous for her fluffy ears and cheerful demeanor."
+	icon_state = "poster-radio_ARF"
+
+/obj/item/poster/arf
+	name = "ARF poster"
+	poster_type = /obj/structure/sign/poster/radio/arf
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/vkxs
+	name = "VKXS"
+	desc = "A poster advertizing the PGF's 'Voice of Kalixcis' radio station. It offers patriotic hymns, homeland nostalgia, and the only true democratic commentary on Frontier events."
+	icon_state = "poster-radio_VKXS"
+
+/obj/item/poster/vkxs
+	name = "VKXS poster"
+	poster_type = /obj/structure/sign/poster/radio/vkxs
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/lt101
+	name = "LT101"
+	desc = "A poster for CLIP's Luna-Town 101 radio broadcast. Provides weather and emergency information hourly, and some post-war new wave in between."
+	icon_state = "poster-radio_LT101"
+
+/obj/item/poster/lt101
+	name = "LT101 poster"
+	poster_type = /obj/structure/sign/poster/radio/lt101
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/soft
+	name = "SOFT"
+	desc = "A poster for the easy-listening radio station SOFT. The background to many a summertime tryst in Frontier space."
+	icon_state = "poster-radio_SOFT"
+
+/obj/item/poster/soft
+	name = "SOFT poster"
+	poster_type = /obj/structure/sign/poster/radio/soft
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/orn
+	name = "ORN"
+	desc = "A poster for Outpost Radio Network, ran out of Installation Trifuge in Independent space. This station plays mostly spacer folk tunes."
+	icon_state = "poster-radio_ORN"
+
+/obj/item/poster/soft
+	name = "ORN poster"
+	poster_type = /obj/structure/sign/poster/radio/orn
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/mwra
+	name = "MWRA"
+	desc = "A Makosso-Warra Radio poster. Despite all that's happened, communication is still M-W's game, and the airwaves are just another Frontier to establish market dominance in."
+	icon_state = "poster-radio_MWRA"
+
+/obj/item/poster/mwra
+	name = "MWRA poster"
+	poster_type = /obj/structure/sign/poster/radio/mwra
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/pris
+	name = "PRIS"
+	desc = "A poster for PRIS, an independent electronic music station run by a collection of university students from the Frontier."
+	icon_state = "poster-radio_PRIS"
+
+/obj/item/poster/pris
+	name = "PRIS poster"
+	poster_type = /obj/structure/sign/poster/radio/pris
+	icon_state = "rolled_poster"
 
 #undef PLACE_SPEED
 #undef POSTER_SUBTYPES

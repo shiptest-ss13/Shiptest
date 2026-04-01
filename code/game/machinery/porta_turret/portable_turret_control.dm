@@ -71,13 +71,31 @@
 	if(machine_stat & BROKEN)
 		return
 
-	if(I.tool_behaviour == TOOL_MULTITOOL)
-		if(!multitool_check_buffer(user, I))
+	switch(I.tool_behaviour)
+		if(TOOL_MULTITOOL)
+			if(locked)
+				to_chat(user, span_warning("The controls are locked."))
+				return
+			if(!multitool_check_buffer(user, I))
+				return
+
+			var/obj/item/multitool/tool_to_use = I
+			tool_to_use.buffer = src
+			to_chat(user, span_notice("You store [src] in the buffer."))
 			return
-		var/obj/item/multitool/M = I
-		if(M.buffer && istype(M.buffer, /obj/machinery/porta_turret))
-			turret_refs |= WEAKREF(M.buffer)
-			to_chat(user, "<span class='notice'>You link \the [M.buffer] with \the [src].</span>")
+
+		if(TOOL_WRENCH)
+			if(can_dismantle(user))
+				to_chat(user, span_notice("You start dismantling \the [src]..."))
+				if(I.use_tool(src, user, 40, volume=75, extra_checks=CALLBACK(src, PROC_REF(can_dismantle), user, TRUE)))
+					user.visible_message(
+						span_notice("[user] dismantles \the [src]."), //Generally speaking, \the is unncessary, but I am not sure if most codebases use \improper in their item names.
+						span_notice("You dismantle \the [src].")
+					)
+					var/obj/item/wallframe/turret_control/frame = new /obj/item/wallframe/turret_control()
+					try_put_in_hand(frame, user)
+					playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
+					qdel(src)
 			return
 
 	if(issilicon(user))
@@ -85,6 +103,17 @@
 
 	if(istype(I, /obj/item/card/id))
 		toggle_lock(user)
+
+	else //If it's not any of those, smack it.
+		return ..()
+
+///This proc checks to see if the turret controls can be dismantled and is also called on during use_tool().
+/obj/machinery/turretid/proc/can_dismantle(mob/user, silent = FALSE)
+	if(locked)
+		if(!silent) //It will silently fail on callback as we don't need to announce this again.
+			to_chat(user, span_warning("[src] has to be unlocked to be dismantled."))
+		return FALSE
+	return TRUE
 
 /obj/machinery/turretid/AltClick(mob/user)
 	. = ..()
@@ -239,3 +268,4 @@
 	result_path = /obj/machinery/turretid
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
 	inverse_pixel_shift = TRUE
+	inverse = FALSE //So that it attaches to where you are facing.

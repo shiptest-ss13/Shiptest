@@ -86,17 +86,17 @@
 	if(M != user)
 		return ..()
 	user.visible_message(
-		"<span class='warning'>[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!</span>", \
-		"<span class='danger'>An unnatural hunger consumes you. You raise [src] your mouth and devour it!</span>")
+		span_warning("[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!"), \
+		span_danger("An unnatural hunger consumes you. You raise [src] your mouth and devour it!"))
 	playsound(user, 'sound/magic/demon_consume.ogg', 50, TRUE)
 	for(var/obj/effect/proc_holder/spell/knownspell in user.mind.spell_list)
 		if(knownspell.type == /obj/effect/proc_holder/spell/bloodcrawl)
-			to_chat(user, "<span class='warning'>...and you don't feel any different.</span>")
+			to_chat(user, span_warning("...and you don't feel any different."))
 			qdel(src)
 			return
 	user.visible_message(
-		"<span class='warning'>[user]'s eyes flare a deep crimson!</span>", \
-		"<span class='userdanger'>You feel a strange power seep into your body... you have absorbed the demon's blood-travelling powers!</span>")
+		span_warning("[user]'s eyes flare a deep crimson!"), \
+		span_userdanger("You feel a strange power seep into your body... you have absorbed the demon's blood-travelling powers!"))
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	src.Insert(user) //Consuming the heart literally replaces your heart with a demon heart. H A R D C O R E
 
@@ -112,86 +112,3 @@
 
 /obj/item/organ/heart/demon/Stop()
 	return 0 // Always beating.
-
-/mob/living/simple_animal/slaughter/laughter
-	// The laughter demon! It's everyone's best friend! It just wants to hug
-	// them so much, it wants to hug everyone at once!
-	name = "laughter demon"
-	real_name = "laughter demon"
-	desc = "A large, adorable creature covered in armor with pink bows."
-	speak_emote = list("giggles","titters","chuckles")
-	emote_hear = list("guffaws","laughs")
-	response_help_continuous = "hugs"
-	attack_verb_continuous = "wildly tickles"
-	attack_verb_simple = "wildly tickle"
-
-	attack_sound = 'sound/items/bikehorn.ogg'
-	feast_sound = 'sound/spookoween/scary_horn2.ogg'
-	deathsound = 'sound/misc/sadtrombone.ogg'
-
-	icon_state = "bowmon"
-	icon_living = "bowmon"
-	deathmessage = "fades out, as all of its friends are released from its \
-		prison of hugs."
-	loot = list(/mob/living/simple_animal/pet/cat/kitten{name = "Laughter"})
-
-	// Keep the people we hug!
-	var/list/consumed_mobs = list()
-
-	playstyle_string = "<span class='big bold'>You are a laughter \
-	demon,</span><B> a wonderful creature from another realm. You have a single \
-	desire: <span class='clown'>To hug and tickle.</span><BR>\
-	You may use the \"Blood Crawl\" ability near blood pools to travel \
-	through them, appearing and disappearing from the station at will. \
-	Pulling a dead or unconscious mob while you enter a pool will pull \
-	them in with you, allowing you to hug them and regain your health.<BR> \
-	You move quickly upon leaving a pool of blood, but the material world \
-	will soon sap your strength and leave you sluggish.<BR>\
-	What makes you a little sad is that people seem to die when you tickle \
-	them; but don't worry! When you die, everyone you hugged will be \
-	released and fully healed, because in the end it's just a jape, \
-	sibling!</B>"
-
-/mob/living/simple_animal/slaughter/laughter/Initialize()
-	. = ..()
-	if(SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
-		icon_state = "honkmon"
-
-/mob/living/simple_animal/slaughter/laughter/Destroy()
-	release_friends()
-	. = ..()
-
-/mob/living/simple_animal/slaughter/laughter/ex_act(severity)
-	switch(severity)
-		if(1)
-			death()
-		if(2)
-			adjustBruteLoss(60)
-		if(3)
-			adjustBruteLoss(30)
-
-/mob/living/simple_animal/slaughter/laughter/proc/release_friends()
-	if(!consumed_mobs)
-		return
-
-	for(var/mob/living/M in consumed_mobs)
-		if(!M)
-			continue
-		var/turf/T = find_safe_turf()
-		if(!T)
-			T = get_turf(src)
-		M.forceMove(T)
-		if(M.revive(full_heal = TRUE, admin_revive = TRUE))
-			M.grab_ghost(force = TRUE)
-			playsound(T, feast_sound, 50, TRUE, -1)
-			to_chat(M, "<span class='clown'>You leave [src]'s warm embrace,	and feel ready to take on the world.</span>")
-
-/mob/living/simple_animal/slaughter/laughter/bloodcrawl_swallow(mob/living/victim)
-	if(consumed_mobs)
-		// Keep their corpse so rescue is possible
-		consumed_mobs += victim
-	else
-		// Be safe and just eject the corpse
-		victim.forceMove(get_turf(victim))
-		victim.exit_blood_effect()
-		victim.visible_message("<span class='warning'>[victim] falls out of the air, covered in blood, looking highly confused. And dead.</span>")

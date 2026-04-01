@@ -46,8 +46,6 @@ GLOBAL_LIST_INIT(service_positions, list(
 	"Psychologist",
 	"Lawyer",
 	"Chaplain",
-	"Clown",
-	"Mime",
 	"Prisoner",
 	"Assistant"))
 

@@ -4,7 +4,7 @@
 	icon_state = "m17_barrel"
 
 	slot = ATTACHMENT_SLOT_MUZZLE
-	spread_mod = -40
-	size_mod = 2
+	spread_mod = -30
+	size_mod = 1
 	pixel_shift_x = 1
 	pixel_shift_y = 1

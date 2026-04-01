@@ -98,7 +98,7 @@
 	if(isanimal(target) || isalien(target) || iscyborg(target))
 		if(faction_check_mob(living_target))
 			return FALSE
-		visible_message("<span class='danger'>[src] smashes against [target], but can't seem to latch on!</span>", "<span class='userdanger'>[src] smashes against you, but can't seem to latch on!</span>")
+		visible_message(span_danger("[src] smashes against [target], but can't seem to latch on!"), span_userdanger("[src] smashes against you, but can't seem to latch on!"))
 		if(!sterile)
 			living_target.adjustBruteLoss(melee_damage_upper)
 			return TRUE
@@ -108,7 +108,7 @@
 
 	//Check for headlessness
 	if(!carbon_target.get_bodypart(BODY_ZONE_HEAD))
-		visible_message("<span class='danger'>[src] smashes against [target], but can't latch on!</span>", "<span class='userdanger'>[src] smashes against you, but cant latch on!</span>")
+		visible_message(span_danger("[src] smashes against [target], but can't latch on!"), span_userdanger("[src] smashes against you, but cant latch on!"))
 		if(!sterile)
 			carbon_target.adjustBruteLoss(melee_damage_upper)
 		return FALSE
@@ -117,7 +117,7 @@
 	if(ishuman(carbon_target))
 		var/mob/living/carbon/human/human_target = carbon_target
 		if(human_target.is_mouth_covered(head_only = TRUE))
-			human_target.visible_message("<span class='danger'>[src] smashes against [target]'s [human_target.head]!</span>", "<span class='userdanger'>[src] smashes against your [human_target.head]!</span>")
+			human_target.visible_message(span_danger("[src] smashes against [target]'s [human_target.head]!"), span_userdanger("[src] smashes against your [human_target.head]!"))
 			COOLDOWN_START(src, coupling_cooldown, couple_retry_time)
 			return FALSE
 
@@ -127,13 +127,13 @@
 		if(istype(mask, /obj/item/clothing/mask/facehugger_item))
 			return FALSE
 		if(carbon_target.dropItemToGround(mask))
-			carbon_target.visible_message("<span class='danger'>[src] tears [mask] off of [target]'s face!</span>", "<span class='userdanger'>[src] tears [mask] off of your face!</span>")
+			carbon_target.visible_message(span_danger("[src] tears [mask] off of [target]'s face!"), span_userdanger("[src] tears [mask] off of your face!"))
 		else
-			carbon_target.visible_message("<span class='danger'>[src] tries to tear [mask] off of [target]'s face, but fails!</span>", "<span class='userdanger'>[src] trys to tear [mask] off of your face, but fails!</span>")
+			carbon_target.visible_message(span_danger("[src] tries to tear [mask] off of [target]'s face, but fails!"), span_userdanger("[src] trys to tear [mask] off of your face, but fails!"))
 			COOLDOWN_START(src, coupling_cooldown, couple_retry_time)
 			return FALSE
 
-	target.visible_message("<span class='danger'>[src] leaps at [target]'s face!</span>", "<span class='userdanger'>[src] leaps at your face!</span>")
+	target.visible_message(span_danger("[src] leaps at [target]'s face!"), span_userdanger("[src] leaps at your face!"))
 	var/obj/item/clothing/mask/facehugger_item/hugger_item = BecomeItem()
 	if(!carbon_target.wear_mask && carbon_target.equip_to_slot_if_possible(hugger_item, ITEM_SLOT_MASK, FALSE, TRUE, TRUE))
 		hugger_item.Attach(carbon_target)
@@ -226,7 +226,7 @@
 		var/turf/T = get_turf(target)
 		log_game("[key_name(target)] was impregnated by a facehugger at [loc_name(T)]")
 
-	target.visible_message("<span class='danger'>[src] falls limp after violating [target]'s face!</span>", "<span class='userdanger'>[src] falls limp after violating your face!</span>")
+	target.visible_message(span_danger("[src] falls limp after violating [target]'s face!"), span_userdanger("[src] falls limp after violating your face!"))
 	facehugger_mob.icon_dead = "facehugger_impregnated"
 	facehugger_mob.death()
 	target.dropItemToGround(src)

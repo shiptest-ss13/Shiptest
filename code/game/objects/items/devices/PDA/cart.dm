@@ -2,16 +2,14 @@
 #define CART_ENGINE (1<<1)
 #define CART_ATMOS (1<<2)
 #define CART_MEDICAL (1<<3)
-#define CART_CLOWN (1<<5)
-#define CART_MIME (1<<6)
-#define CART_JANITOR (1<<7)
-#define CART_REAGENT_SCANNER (1<<8)
-#define CART_NEWSCASTER (1<<9)
-#define CART_REMOTE_DOOR (1<<10)
-#define CART_STATUS_DISPLAY (1<<11)
-#define CART_QUARTERMASTER (1<<12)
-#define CART_HYDROPONICS (1<<13)
-#define CART_DRONEPHONE (1<<14)
+#define CART_JANITOR (1<<4)
+#define CART_REAGENT_SCANNER (1<<5)
+#define CART_NEWSCASTER (1<<6)
+#define CART_REMOTE_DOOR (1<<7)
+#define CART_STATUS_DISPLAY (1<<8)
+#define CART_QUARTERMASTER (1<<9)
+#define CART_HYDROPONICS (1<<10)
+#define CART_DRONEPHONE (1<<11)
 
 
 /obj/item/cartridge
@@ -184,7 +182,7 @@
 	name = "\improper Value-PAK cartridge"
 	desc = "Now with 350% more value!" //Give the Captain...EVERYTHING! (Except Mime, Clown, and Syndie)
 	icon_state = "cart-c"
-	access = ~(CART_CLOWN | CART_MIME | CART_REMOTE_DOOR | CART_NEWSCASTER)
+	access = ~(CART_REMOTE_DOOR | CART_NEWSCASTER)
 	bot_access_flags = SEC_BOT | MULE_BOT | FLOOR_BOT | CLEAN_BOT | MED_BOT | FIRE_BOT
 	spam_enabled = 1
 
@@ -239,15 +237,15 @@ Code:
 		if (42) //status displays
 			menu = "<h4>[PDAIMG(status)] Station Status Display Interlink</h4>"
 
-			menu += "\[ <A HREF='?src=[REF(src)];choice=Status;statdisp=blank'>Clear</A> \]<BR>"
-			menu += "\[ <A HREF='?src=[REF(src)];choice=Status;statdisp=shuttle'>Shuttle ETA</A> \]<BR>"
-			menu += "\[ <A HREF='?src=[REF(src)];choice=Status;statdisp=message'>Message</A> \]"
-			menu += "<ul><li> Line 1: <A HREF='?src=[REF(src)];choice=Status;statdisp=setmsg1'>[ message1 ? message1 : "(None)"]</A>"
-			menu += "<li> Line 2: <A HREF='?src=[REF(src)];choice=Status;statdisp=setmsg2'>[ message2 ? message2 : "(None)"]</A></ul><br>"
-			menu += "\[ Alert: <A HREF='?src=[REF(src)];choice=Status;statdisp=alert;alert=default'>None</A> |"
-			menu += " <A HREF='?src=[REF(src)];choice=Status;statdisp=alert;alert=redalert'>Red Alert</A> |"
-			menu += " <A HREF='?src=[REF(src)];choice=Status;statdisp=alert;alert=lockdown'>Lockdown</A> |"
-			menu += " <A HREF='?src=[REF(src)];choice=Status;statdisp=alert;alert=biohazard'>Biohazard</A> \]<BR>"
+			menu += "\[ <A href='byond://?src=[REF(src)];choice=Status;statdisp=blank'>Clear</A> \]<BR>"
+			menu += "\[ <A href='byond://?src=[REF(src)];choice=Status;statdisp=shuttle'>Shuttle ETA</A> \]<BR>"
+			menu += "\[ <A href='byond://?src=[REF(src)];choice=Status;statdisp=message'>Message</A> \]"
+			menu += "<ul><li> Line 1: <A href='byond://?src=[REF(src)];choice=Status;statdisp=setmsg1'>[ message1 ? message1 : "(None)"]</A>"
+			menu += "<li> Line 2: <A href='byond://?src=[REF(src)];choice=Status;statdisp=setmsg2'>[ message2 ? message2 : "(None)"]</A></ul><br>"
+			menu += "\[ Alert: <A href='byond://?src=[REF(src)];choice=Status;statdisp=alert;alert=default'>None</A> |"
+			menu += " <A href='byond://?src=[REF(src)];choice=Status;statdisp=alert;alert=redalert'>Red Alert</A> |"
+			menu += " <A href='byond://?src=[REF(src)];choice=Status;statdisp=alert;alert=lockdown'>Lockdown</A> |"
+			menu += " <A href='byond://?src=[REF(src)];choice=Status;statdisp=alert;alert=biohazard'>Biohazard</A> \]<BR>"
 
 		if (43)
 			menu = "<h4>[PDAIMG(power)] Power Monitors - Please select one</h4><BR>"
@@ -270,7 +268,7 @@ Code:
 
 
 			if(!powercount)
-				menu += "<span class='danger'>No connection<BR></span>"
+				menu += span_danger("No connection<BR>")
 			else
 
 				menu += "<FONT SIZE=-1>"
@@ -284,7 +282,7 @@ Code:
 		if (433)
 			menu = "<h4>[PDAIMG(power)] Power Monitor </h4><BR>"
 			if(!powmonitor || !powmonitor.get_powernet())
-				menu += "<span class='danger'>No connection<BR></span>"
+				menu += span_danger("No connection<BR>")
 			else
 				var/list/L = list()
 				var/datum/powernet/connected_powernet = powmonitor.get_powernet()
@@ -439,21 +437,6 @@ Code:
 		if (54) // Beepsky, Medibot, Floorbot, and Cleanbot access
 			menu = "<h4>[PDAIMG(medbot)] Bots Interlink</h4>"
 			bot_control()
-		if (55) // Emoji Guidebook for mimes
-			menu = "<h4>[PDAIMG(emoji)] Emoji Guidebook</h4>"
-			var/static/list/emoji_icon_states
-			var/static/emoji_table
-			if(!emoji_table)
-				var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/chat)
-				var/list/collate = list("<br><table>")
-				for(var/emoji in sortList(icon_states(icon(EMOJI_SET))))
-					var/tag = sheet.icon_tag("emoji-[emoji]")
-					collate += "<tr><td>[emoji]</td><td>[tag]</td></tr>"
-				collate += "</table><br>"
-				emoji_table = collate.Join()
-
-			menu += "<br> To use an emoji in a pda message, refer to the guide and add \":\" around the emoji. Your PDA supports the following emoji:<br>"
-			menu += emoji_table
 
 		if (99) //Newscaster message permission error
 			menu = "<h5> ERROR : NOT AUTHORIZED [host_pda.id ? "" : "- ID SLOT EMPTY"] </h5>"

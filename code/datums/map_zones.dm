@@ -116,6 +116,8 @@
 	var/reserved_margin = 0
 	/// Margin for dockers and ruins to avoid placing things
 	var/mapping_margin = MAPPING_MARGIN
+	///what is our star system? usually null
+	var/datum/overmap_star_system/current_systen
 
 /datum/virtual_level/proc/is_in_mapping_bounds(atom/Atom)
 	if(Atom.x >= low_x + mapping_margin && Atom.x <= high_x - mapping_margin && Atom.y >= low_y + mapping_margin && Atom.y <= high_y - mapping_margin && Atom.z == z_value)
@@ -164,7 +166,7 @@
 	if(!crosslinked["[direction]"])
 		CRASH("Virtual level tried to unlink a direction that wasn't linked.")
 	var/datum/virtual_level/other_zone = crosslinked["[direction]"]
-	var/reversed_dir = REVERSE_DIR(direction)
+	var/reversed_dir = REVERSE_DIR(text2num(direction))
 	crosslinked -= "[direction]"
 	other_zone.crosslinked -= "[reversed_dir]"
 	clear_dir_linkage(direction)
@@ -205,6 +207,8 @@
 	var/turf/ending = locate(end_x, end_y, z_value)
 	var/list/turfblock = block(beginning, ending)
 	for(var/turf/closed/indestructible/edge/edgy_turf as anything in turfblock)
+		if(!istype(edgy_turf))
+			continue
 		edgy_turf.density = TRUE
 		edgy_turf.opacity = TRUE
 		edgy_turf.destination_z = null

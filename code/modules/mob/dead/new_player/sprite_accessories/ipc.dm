@@ -178,7 +178,7 @@
 
 /datum/sprite_accessory/ipc_antennas
 	icon = 'icons/mob/ipc_accessories.dmi'
-	color_src = HAIR
+	color_src = FACEHAIR
 
 /datum/sprite_accessory/ipc_antennas/none
 	name = "None"
@@ -270,104 +270,53 @@
 	name = "Synthetic Sarathi"
 	icon_state = "synth"
 
+/datum/sprite_accessory/ipc_tail/lizard/secondary
+	name = "Synthetic Sarathi (Secondary Color)"
+	color_src = MUTCOLORS_SECONDARY
+
 /datum/sprite_accessory/ipc_tail/lizard_big
 	name = "Synthetic Sarathi Large"
 	icon_state = "large"
 
+/datum/sprite_accessory/ipc_tail/lizard_big/secondary
+	name = "Synthetic Sarathi Large (Secondary Color)"
+	color_src = MUTCOLORS_SECONDARY
+
 /datum/sprite_accessory/ipc_tail/plug
 	name = "Power Plug"
 	icon_state = "plug"
-	secondary_color = TRUE
+	color_src = MUTCOLORS_SECONDARY
+	primary_color_overlay = TRUE
+
+/datum/sprite_accessory/ipc_tail/plug/secondary
+	name = "Power Plug (Secondary Color)"
+	icon_state = "plug"
+	color_src = MUTCOLORS
+	secondary_color_overlay = TRUE
 
 /datum/sprite_accessory/ipc_tail/cat
 	name = "Pawsitrons Cat"
 	icon_state = "cat"
 
+/datum/sprite_accessory/ipc_tail/cat/secondary
+	name = "Pawsitrons Cat (Secondary Color)"
+	icon_state = "cat"
+	color_src = MUTCOLORS_SECONDARY
+
 /datum/sprite_accessory/ipc_tail/fox
 	name = "Pawsitrons Fox"
 	icon_state = "fox"
+
+/datum/sprite_accessory/ipc_tail/cat/secondary
+	name = "Pawsitrons Fox (Secondary Color)"
+	icon_state = "fox"
+	color_src = MUTCOLORS_SECONDARY
 
 /datum/sprite_accessory/ipc_tail/fox_alt
 	name = "Pawsitrons Fox 2"
 	icon_state = "fox2"
 
-// Start chassis - the worst thing ever please rework this
-
-/datum/sprite_accessory/ipc_chassis // Used for changing limb icons, doesn't need to hold the actual icon. That's handled in ipc.dm
-	icon = null
-	icon_state = "who cares fuck you" // In order to pull the chassis correctly, we need AN icon_state(see line 36-39). It doesn't have to be useful, because it isn't used.
-	color_src = 0
-	var/use_eyes = FALSE //do we use normal robotic eyes? used when we dont want a screen but still want visible eyes
-	var/has_screen = TRUE //do we have a screen to toggle
-	var/has_overlay = FALSE //does this chasis have a overlay icon?
-	var/is_digi = FALSE //does this chasis use digitigrade
-	var/has_snout = FALSE
-
-/datum/sprite_accessory/ipc_chassis/mcgreyscale
-	name = "Morpheus Cyberkinetics (Custom)"
-	limbs_id = "mcgipc"
-	color_src = MUTCOLORS
-
-/datum/sprite_accessory/ipc_chassis/bishopcyberkinetics
-	name = "Bishop Cyberkinetics"
-	limbs_id = "bshipc"
-
-/datum/sprite_accessory/ipc_chassis/bishopcyberkinetics2
-	name = "Bishop Cyberkinetics 2.0"
-	limbs_id = "bs2ipc"
-
-/datum/sprite_accessory/ipc_chassis/hephaestussindustries
-	name = "Hephaestus Industries"
-	limbs_id = "hsiipc"
-
-/datum/sprite_accessory/ipc_chassis/hephaestussindustries2
-	name = "Hephaestus Industries 2.0"
-	limbs_id = "hi2ipc"
-
-/datum/sprite_accessory/ipc_chassis/pawsitronsunited
-	name = "Pawsitrons United"
-	limbs_id = "pawsitrons"
-
-/datum/sprite_accessory/ipc_chassis/shellguardmunitions
-	name = "Shellguard Munitions Standard Series"
-	limbs_id = "sgmipc"
-
-/datum/sprite_accessory/ipc_chassis/wardtakahashimanufacturing
-	name = "Ward-Takahashi Manufacturing"
-	limbs_id = "wtmipc"
-
-/datum/sprite_accessory/ipc_chassis/xionmanufacturinggroup
-	name = "Xion Manufacturing Group"
-	limbs_id = "xmgipc"
-
-/datum/sprite_accessory/ipc_chassis/xionmanufacturinggroup2
-	name = "Xion Manufacturing Group 2.0"
-	limbs_id = "xm2ipc"
-
-/datum/sprite_accessory/ipc_chassis/zenghupharmaceuticals
-	name = "Zeng-Hu Pharmaceuticals"
-	limbs_id = "zhpipc"
-
-/datum/sprite_accessory/ipc_chassis/pgfmechanicsplantigrade
-	name = "PGF MECHANICS TYPE-P"
-	limbs_id = "pgfipc-p"
-	has_screen = FALSE
-	color_src = MUTCOLORS
-	has_overlay = TRUE
-	use_eyes = TRUE
-	has_snout = TRUE
-
-/datum/sprite_accessory/ipc_chassis/pgfmechanicsdigigrade
-	name = "PGF MECHANICS TYPE-D"
-	limbs_id = "pgfipc-p" //the digigrade var makes it so we use digi leg variant instead
-	has_screen = FALSE
-	color_src = MUTCOLORS
-	has_overlay = TRUE
-	use_eyes = TRUE
-	is_digi = TRUE
-	has_snout = TRUE
-
-/datum/sprite_accessory/ipc_chassis/inteqsprinter
-	name = "Inteq Mothership 'Sprinter'"
-	limbs_id = "inteqsprinter"
-	has_screen = FALSE
+/datum/sprite_accessory/ipc_tail/fox_alt/secondary
+	name = "Pawsitrons Fox 2 (Secondary Color)"
+	icon_state = "fox2"
+	color_src = MUTCOLORS_SECONDARY

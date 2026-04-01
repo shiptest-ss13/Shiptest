@@ -13,26 +13,29 @@
 		"Specialist"
 	],
 	"map_path": "_maps/shuttles/cybersun/cybersun_nimbus.dmm",
+	"tranist_x_offset": -15,
+	"tranist_y_offset": -10,
+	"token_icon_state": "ship_small_generic",
 	"namelists": [
 		"SPACE",
 		"BEASTS"
 	],
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/syndicate/captain/cybersun",
+			"outfit": "/datum/outfit/job/cybersun/officer/captain",
 			"officer": true,
 			"slots": 1
 		},
 		"Troubleshooter": {
-			"outfit": "/datum/outfit/job/syndicate/miner/cybersun",
+			"outfit": "/datum/outfit/job/cybersun/troubleshooter",
 			"slots": 2
 		},
 		"Technician": {
-			"outfit": "/datum/outfit/job/syndicate/engineer/cybersun",
+			"outfit": "/datum/outfit/job/cybersun/engineer",
 			"slots": 1
 		},
 		"Ship's Aide": {
-			"outfit": "/datum/outfit/job/syndicate/assistant/cybersun",
+			"outfit": "/datum/outfit/job/cybersun/assistant",
 			"slots": 1
 		}
 	},

@@ -54,19 +54,18 @@
 
 #define MANUFACTURER_NONE null
 #define MANUFACTURER_SHARPLITE "the Sharplite Defense logo"
-#define MANUFACTURER_SHARPLITE_NEW "the Nanotrasen-Sharplite logo"
+#define MANUFACTURER_SHARPLITE_NEW "the Makosso-Warra-Sharplite logo"
 #define MANUFACTURER_HUNTERSPRIDE "the Hunter's Pride Arms and Ammunition logo"
 #define MANUFACTURER_SOLARARMORIES "the Solarbundswaffenkammer emblem"
 #define MANUFACTURER_SCARBOROUGH "the Scarborough Arms logo"
 #define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
-#define MANUFACTURER_NANOTRASEN_OLD "an outdated Nanotrasen logo"
-#define MANUFACTURER_NANOTRASEN "the Nanotrasen logo"
-#define MANUFACTURER_VIGILITAS "the Vigilitas Interstellar logo"
+#define MANUFACTURER_WARRA_OLD "an outdated Makosso-Warra logo"
+#define MANUFACTURER_WARRA "the Makosso-Warra logo"
+#define MANUFACTURER_VIGILITAS "the Makosso-Warra Advantage logo"
 #define MANUFACTURER_BRAZIL "a green flag with a blue circle and a yellow diamond around it"
 #define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"
 #define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
 #define MANUFACTURER_MINUTEMAN_LASER "the Clover Photonics logo"
-#define MANUFACTURER_DONKCO "the Donk! Co. logo"
 #define MANUFACTURER_PGF "the Etherbor Industries emblem"
 #define MANUFACTURER_IMPORT "Lanchester Import Co."
 #define MANUFACTURER_SERENE "the Serene Outdoors logo"
@@ -106,6 +105,7 @@
 #define HEAVY_RIFLE_SLOWDOWN 0.6
 #define DMR_SLOWDOWN 0.6
 #define SAW_SLOWDOWN 0.7
+#define LIGHT_SNIPER_SLOWDOWN 0.75
 #define SNIPER_SLOWDOWN 0.9
 #define HMG_SLOWDOWN 1
 #define AMR_SLOWDOWN 1
@@ -128,6 +128,7 @@
 #define COMSIG_ATTACHMENT_DETACH "attach-detach"
 #define COMSIG_ATTACHMENT_EXAMINE "attach-examine"
 #define COMSIG_ATTACHMENT_EXAMINE_MORE "attach-examine-more"
+#define COMSIG_ATTACHMENT_TRY_FIRE_GUN "attach-try-fire-gun"
 #define COMSIG_ATTACHMENT_PRE_ATTACK "attach-pre-attack"
 #define COMSIG_ATTACHMENT_AFTER_ATTACK "attach-after-attack"
 #define COMSIG_ATTACHMENT_ATTACK "attach-attacked"
@@ -135,13 +136,16 @@
 #define COMSIG_ATTACHMENT_UNWIELD "attach-unwield"
 #define COMSIG_ATTACHMENT_UPDATE_OVERLAY "attach-overlay"
 #define COMSIG_ATTACHMENT_UNIQUE_ACTION "attach-unique-action"
+#define COMSIG_ATTACHMENT_SECONDARY_ACTION "attach-secondary-action"
 #define COMSIG_ATTACHMENT_CTRL_CLICK "attach-ctrl-click"
 #define COMSIG_ATTACHMENT_ALT_CLICK "attach-alt-click"
 #define COMSIG_ATTACHMENT_ATTACK_HAND "attach-attack-hand"
 
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
+#define COMSIG_ATTACHMENT_TOGGLE_AMMO "attach-ammo"
 
 #define COMSIG_ATTACHMENT_GET_SLOT "attach-slot-who"
+#define COMSIG_ATTACHMENT_CHANGE_SLOT "change_attach_slot"
 #define ATTACHMENT_SLOT_MUZZLE "muzzle"
 #define ATTACHMENT_SLOT_SCOPE "scope"
 #define ATTACHMENT_SLOT_GRIP "grip"
@@ -189,6 +193,7 @@
 #define ATTACH_REMOVABLE_TOOL (1<<1)
 #define ATTACH_TOGGLE (1<<2)
 #define ATTACH_NO_SPRITE (1<<3)
+#define ATTACH_AMMOMODE (1<<4)
 
 /////////////////
 // PROJECTILES //

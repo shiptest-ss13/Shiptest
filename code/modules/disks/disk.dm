@@ -59,7 +59,7 @@
 /obj/item/disk/attackby(obj/item/object, mob/user, params)
 	if(istype(object, /obj/item/pen))
 		if(!user.is_literate())
-			to_chat(user, "<span class='notice'>You scribble illegibly on the cover of [src]!</span>")
+			to_chat(user, span_notice("You scribble illegibly on the cover of [src]!"))
 			return
 		var/inputvalue = stripped_input(user, "What would you like to label the Disk?", "Disk Labelling", "", MAX_NAME_LEN)
 

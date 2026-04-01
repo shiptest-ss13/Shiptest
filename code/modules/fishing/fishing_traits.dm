@@ -67,9 +67,9 @@
 /datum/fishing_trait/carnivore/catch_weight_mod(obj/item/fishing_rod/rod, mob/fisherman)
 	. = ..()
 	.[MULTIPLICATIVE_FISHING_MOD] = 0
-	if(rod.bait && istype(rod.bait, /obj/item/reagent_containers/food/snacks))
-		var/obj/item/reagent_containers/food/food_bait = rod.bait
-		if(food_bait.foodtype & MEAT)
+	if(rod.bait && istype(rod.bait, /obj/item/food))
+		var/obj/item/food/food_bait = rod.bait
+		if(food_bait.foodtypes & MEAT)
 			.[MULTIPLICATIVE_FISHING_MOD] = 1
 
 /datum/fishing_trait/vegan
@@ -78,5 +78,5 @@
 /datum/fishing_trait/vegan/catch_weight_mod(obj/item/fishing_rod/rod, mob/fisherman)
 	. = ..()
 	.[MULTIPLICATIVE_FISHING_MOD] = 0
-	if(rod.bait && istype(rod.bait, /obj/item/reagent_containers/food/snacks/grown))
+	if(rod.bait && istype(rod.bait, /obj/item/food/grown))
 		.[MULTIPLICATIVE_FISHING_MOD] = 1

@@ -22,6 +22,14 @@ and then spawns a crate at the spawner's turf
 	anchored = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | LANDING_PROOF | HYPERSPACE_PROOF
 
+/obj/hangar_crate_spawner/Initialize(mapload)
+	. = ..()
+	SScargo.cargo_landing_zones += src
+
+/obj/hangar_crate_spawner/Destroy(force)
+	SScargo.cargo_landing_zones -= src
+	return ..()
+
 /obj/hangar_crate_spawner/proc/handle_order(datum/supply_order/order)
 	order.generate(get_turf(src))
 

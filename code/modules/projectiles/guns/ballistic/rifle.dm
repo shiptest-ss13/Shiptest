@@ -5,13 +5,14 @@
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "hunting"
 	item_state = "hunting"
+	bad_type = /obj/item/gun/ballistic/rifle
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/boltaction,
 	)
 	bolt_wording = "bolt"
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	bolt_type = BOLT_TYPE_STANDARD
 	semi_auto = FALSE
 	internal_magazine = TRUE
@@ -43,7 +44,7 @@
 
 /obj/item/gun/ballistic/rifle/rack(mob/living/user)
 	if (bolt_locked == FALSE)
-		to_chat(user, "<span class='notice'>You open the bolt of \the [src].</span>")
+		to_chat(user, span_notice("You open the bolt of \the [src]."))
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 		process_chamber(FALSE, FALSE, FALSE, shooter = user)
 		bolt_locked = TRUE
@@ -67,7 +68,7 @@
 
 /obj/item/gun/ballistic/rifle/attackby(obj/item/A, mob/user, params)
 	if (!bolt_locked)
-		if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, A, user, params) & COMPONENT_NO_AFTERATTACK)
+		if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACKBY, A, user, params) & COMPONENT_NO_AFTERATTACK)
 			return TRUE
 		to_chat(user, span_notice("The bolt is closed!"))
 		return
@@ -80,10 +81,16 @@
 /obj/item/gun/ballistic/rifle/polymer
 	name = "polymer survivor rifle"
 	desc = "A bolt-action rifle made of scrap, desperation, and luck. Likely to shatter at any moment. Chambered in 7.62x40mm."
-	icon = 'icons/obj/guns/projectile.dmi'
-	icon_state = "crackhead_rifle"
-	item_state = "crackhead_rifle"
-	weapon_weight = WEAPON_HEAVY
+	icon_state = "methrifle"
+	item_state = "methrifle"
+	icon = 'icons/obj/guns/manufacturer/hermits/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hermits/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hermits/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hermits/onmob.dmi'
+	has_safety = FALSE
+	safety = FALSE
+	safety_multiplier = 2
+	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/polymer
 	allowed_ammo_types = list(

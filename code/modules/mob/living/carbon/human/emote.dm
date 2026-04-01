@@ -56,8 +56,6 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
-	if(H.mind?.miming)
-		return
 	if(ishumanbasic(H))
 		if(user.gender == FEMALE)
 			return pick('sound/voice/human/femalescream_1.ogg', 'sound/voice/human/femalescream_2.ogg', 'sound/voice/human/femalescream_3.ogg', 'sound/voice/human/femalescream_4.ogg', 'sound/voice/human/femalescream_5.ogg')
@@ -110,6 +108,20 @@
 		return
 	if(!isnull(user.getorgan(/obj/item/organ/tail)) || (isvox(user)))
 		return 'sound/voice/lizard/tailthump.ogg' //https://freesound.org/people/TylerAM/sounds/389665/
+
+/datum/emote/living/carbon/human/stomp
+	key = "stomp"
+	key_third_person = "stomps their foot"
+	message = "stomps their foot!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/human/stomp/get_sound(mob/living/user)
+	if(ishuman(user))
+		if(!user.get_bodypart(BODY_ZONE_L_LEG) || !user.get_bodypart(BODY_ZONE_R_LEG))
+			return
+		else
+			return 'sound/voice/lizard/tailthump.ogg' //https://freesound.org/people/TylerAM/sounds/389665/
 
 /datum/emote/living/carbon/human/weh //lizard
 	key = "weh"
@@ -278,7 +290,7 @@
 /datum/emote/living/carbon/human/robot_tongue/no
 	key = "no"
 	key_third_person = "no"
-	message = "emits an negative blip."
+	message = "emits a negative blip."
 
 /datum/emote/living/carbon/human/robot_tongue/no/run_emote(mob/user, params)
 	. = ..()
@@ -315,9 +327,6 @@
 	. = ..()
 	if(.)
 		playsound(user.loc, 'sound/machines/synth_yes.ogg', 50)
-
-// the following emote were originally clown-locked and synthetic exclusive
-// since clowns have been removed I see no reason to let it collect dust
 
 /datum/emote/living/carbon/human/robot_tongue/sad
 	key = "sad"

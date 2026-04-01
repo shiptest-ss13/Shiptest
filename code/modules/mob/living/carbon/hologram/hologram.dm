@@ -120,7 +120,7 @@
 					emh.set_holo(src, src)
 					holopad = emh
 					forceMove(get_turf(emh.loc))
-					to_chat(src, "<span class='danger'>Your current holoprojector stops working, and you reset to your primary one!</span>")
+					to_chat(src, span_danger("Your current holoprojector stops working, and you reset to your primary one!"))
 	if(holopad)
 		holopad.update_holoray(src, get_turf(newloc))
 		if(!holopad.validate_location(get_turf(newloc), FALSE, FALSE))
@@ -136,7 +136,7 @@
 					holopad = another
 					return
 			forceMove(get_turf(holopad.loc))
-			to_chat(src, "<span class='danger'>You've gone too far from your holoprojector!</span>")
+			to_chat(src, span_danger("You've gone too far from your holoprojector!"))
 
 /mob/living/simple_animal/hologram/emag_act(mob/user)
 	. = ..()
@@ -148,10 +148,10 @@
 			flavortext = str
 		else
 			flavortext = "Serve [user]."
-		to_chat(user, "<span class='notice'>You [density ? "poke [src] with your card" : "slide your card through the air where [src] is"], and set their laws to [str].</span>")
-	src.visible_message("<span class='danger'>[src] starts flickering!</span>",
-						"<span class='userdanger'>You start flickering, and detect an unauthorized law change!</span>",
-						"<span class='danger'>You hear a strange buzzing noise!</span>")
+		to_chat(user, span_notice("You [density ? "poke [src] with your card" : "slide your card through the air where [src] is"], and set their laws to [str]."))
+	src.visible_message(span_danger("[src] starts flickering!"),
+						span_userdanger("You start flickering, and detect an unauthorized law change!"),
+						span_danger("You hear a strange buzzing noise!"))
 	possible_a_intents |= list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 	show_laws()
 	disco(src)
@@ -223,9 +223,9 @@
 	set name = "Show Laws"
 	set desc = "Show the laws you're required to follow."
 	var/formatted_laws = "<b>Hologram law:</b>\n"
-	formatted_laws += flavortext ? "<big><span class='warning'>[flavortext]</span></big>" : "<big>No laws set!</big>" //If flavortext set, show it, else show "No laws set!"
-	formatted_laws += "\n<span class='notice'>Emergency holograms are ghost spawns that can majorly affect the round due to their versatility. Act with common sense.</span>\n"+\
-					"<span class='notice'>Using the role to grief or metagame against your set laws will be met with a silicon ban.</span>\n"
+	formatted_laws += flavortext ? "<big>[span_warning("[flavortext]")]</big>" : "<big>No laws set!</big>" //If flavortext set, show it, else show "No laws set!"
+	formatted_laws += "\n[span_notice("Emergency holograms are ghost spawns that can majorly affect the round due to their versatility. Act with common sense.")]\n"+\
+					"[span_notice("Using the role to grief or metagame against your set laws will be met with a silicon ban.")]\n"
 
 	var/policy = get_policy(ROLE_POSIBRAIN) //if we need something different than the use of posibrains for policy and bans, ping mark and he'll add a new define for it
 	if(policy)
@@ -312,10 +312,6 @@
 /mob/living/simple_animal/hologram/cargo
 	job_type = new /datum/job/qm
 	dex_item = /obj/item/export_scanner
-
-/mob/living/simple_animal/hologram/clown
-	job_type = new /datum/job/clown
-	dex_item = /obj/item/reagent_containers/spray/waterflower/lube
 
 /mob/living/simple_animal/hologram/detective
 	job_type = new /datum/job/detective

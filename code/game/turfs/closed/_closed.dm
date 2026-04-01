@@ -19,8 +19,6 @@
 	// force, damage type, tool behavior, and sharpness. This is the minimum
 	// amount of force that a blunt, brute item must have to damage the wall.
 	var/min_dam = 0
-	var/max_integrity = 100
-	var/integrity
 	var/brute_mod = 1
 	var/burn_mod = 1
 	// Projectiles that do extra damage to the wall
@@ -37,8 +35,8 @@
 
 /turf/closed/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	if(integrity == null)
-		integrity = max_integrity
+	if(atom_integrity == null)
+		atom_integrity = max_integrity
 
 /turf/closed/copyTurf(turf/T, copy_air, flags)
 	. = ..()
@@ -50,7 +48,7 @@
 /turf/closed/update_overlays()
 	. = ..()
 	damage_overlay = null
-	var/adj_dam_pct = 1 - (integrity/(max_integrity))
+	var/adj_dam_pct = 1 - (atom_integrity/(max_integrity))
 	if(adj_dam_pct < 0)
 		adj_dam_pct = 0
 	if(!damage_overlay)
@@ -81,13 +79,13 @@
 	. += damage_hints(user)
 
 /turf/closed/proc/damage_hints(mob/user)
-	switch(integrity / max_integrity)
+	switch(atom_integrity / max_integrity)
 		if(0.5 to 0.99)
 			return "[p_they(TRUE)] look[p_s()] slightly damaged."
 		if(0.25 to 0.5)
 			return "[p_they(TRUE)] appear[p_s()] heavily damaged."
 		if(0 to 0.25)
-			return "<span class='warning'>[p_theyre(TRUE)] falling apart!</span>"
+			return span_warning("[p_theyre(TRUE)] falling apart!")
 	return
 
 /turf/closed/AfterChange()
@@ -102,15 +100,15 @@
 // negative values reduce integrity, positive values increase integrity.
 // Devastate forces a devestate, safe decon prevents it.
 /turf/closed/proc/alter_integrity(damage, mob/user, devastate = FALSE, safe_decon = FALSE)
-	integrity += damage
-	if(integrity >= max_integrity)
-		integrity = max_integrity
-	if(integrity <= 0)
+	atom_integrity += damage
+	if(atom_integrity >= max_integrity)
+		atom_integrity = max_integrity
+	if(atom_integrity <= 0)
 		if(safe_decon)
 			dismantle_wall(FALSE, user)
 			return FALSE
 		// if damage put us 50 points or more below 0, and not safe decon we got proper demolished
-		if(integrity <= -50)
+		if(atom_integrity <= -50)
 			dismantle_wall(TRUE, user)
 			return FALSE
 		if(devastate)
@@ -118,14 +116,14 @@
 			return FALSE
 		dismantle_wall(FALSE,user)
 		return FALSE
-	integrity = min(integrity, max_integrity)
+	atom_integrity = min(atom_integrity, max_integrity)
 	update_stats()
-	return integrity
+	return atom_integrity
 
 /turf/closed/proc/set_integrity(amount,devastate = FALSE, mob/user)
-	integrity = amount
+	atom_integrity = amount
 	update_stats()
-	if(integrity <= 0)
+	if(atom_integrity <= 0)
 		dismantle_wall(devastate, user)
 
 /turf/closed/proc/dismantle_wall(devastate = FALSE, mob/user)
@@ -144,18 +142,19 @@
 	if(!dam)
 		return
 	if(P.suppressed != SUPPRESSED_VERY)
-		visible_message("<span class='danger'>[src] is hit by \a [P]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+		visible_message(span_danger("[src] is hit by \a [P]!"), null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src))
 		add_dent(WALL_DENT_SHOT)
 		alter_integrity(-dam, shooter)
 
-/turf/closed/proc/get_item_damage(obj/item/used_item, t_min = min_dam)
+/turf/closed/proc/get_item_damage(obj/item/used_item, mob/user, t_min = min_dam)
+	used_item.closed_turf_attack(src,user)
 	var/damage = used_item.force * used_item.demolition_mod
 	// if dam is below t_min, then the hit has no effect
 	return (damage < t_min ? 0 : damage)
 
 /turf/closed/proc/get_proj_damage(obj/projectile/P, t_min = min_dam)
-	var/dam = P.damage
+	var/dam = P.damage * P.demolition_mod
 	if(proj_bonus_damage_flags & P.wall_damage_flags)
 		dam = P.wall_damage_override
 	else
@@ -179,9 +178,9 @@
 			NT.contents_explosion(severity, target)
 			return
 		if(EXPLODE_HEAVY)
-			alter_integrity(rand(-500, -800))
+			alter_integrity(rand(-300, -500))
 		if(EXPLODE_LIGHT)
-			alter_integrity(rand(-200, -700))
+			alter_integrity(rand(-100, -200))
 
 /turf/closed/attack_paw(mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -192,14 +191,14 @@
 	if(.)
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
-	to_chat(user, "<span class='notice'>You push \the [src] but nothing happens!</span>")
+	to_chat(user, span_notice("You push \the [src] but nothing happens!"))
 	playsound(src, 'sound/weapons/genhit.ogg', 25, TRUE)
 	add_fingerprint(user)
 
 /turf/closed/attackby(obj/item/W, mob/user, params)
 	user.changeNext_move(W.attack_cooldown)
 	if (!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		to_chat(user, span_warning("You don't have the dexterity to do this!"))
 		return
 
 	//get the user's location
@@ -210,22 +209,22 @@
 
 	var/turf/T = user.loc	//get user's location for delay checks
 
-	attack_override(W,user,T)
+	attack_override(W, user, T, params2list(params))
 	return ..()
 
-/turf/closed/proc/attack_override(obj/item/W, mob/user, turf/loc)
+/turf/closed/proc/attack_override(obj/item/W, mob/user, turf/loc, list/modifiers)
 	if(!isclosedturf(src))
 		return
 	//the istype cascade has been spread among various procs for easy overriding or if we want to call something specific
 	if(try_decon(W, user, loc) || try_destroy(W, user, loc))
-		return
+		return TRUE
 
 // catch-all for using most items on the closed turf -- attempt to smash
 /turf/closed/proc/try_destroy(obj/item/used_item, mob/user, turf/T)
-	var/total_damage = get_item_damage(used_item)
+	var/total_damage = get_item_damage(used_item, user)
 	user.do_attack_animation(src)
 	if(total_damage <= 0)
-		to_chat(user, "<span class='warning'>[used_item] isn't strong enough to damage [src]!</span>")
+		to_chat(user, span_warning("[used_item] isn't strong enough to damage [src]!"))
 		playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
 		return TRUE
 	log_combat(user, src, "attacked", used_item)
@@ -237,18 +236,19 @@
 		if(BURN)
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
 	add_dent(WALL_DENT_HIT)
+	//used_item.closed_turf_attack(T,user)
 	alter_integrity(-total_damage, user)
 	return TRUE
 
 /turf/closed/proc/try_decon(obj/item/I, mob/user, turf/T)
 	var/act_duration = breakdown_duration
 	if(I.tool_behaviour == TOOL_WELDER)
-		if(!I.tool_start_check(user, amount=0))
+		if(!I.tool_start_check(user, src, amount=0))
 			return FALSE
-		to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
+		to_chat(user, span_notice("You begin slicing through the outer plating..."))
 		while(I.use_tool(src, user, act_duration, volume=50))
 			if(iswallturf(src))
-				to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
+				to_chat(user, span_notice("You slice through some of the outer plating..."))
 				if(!alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE))
 					return TRUE
 			else
@@ -261,12 +261,12 @@
 	if(breakdown_duration == -1)
 		to_chat(user, span_warning("[src] cannot be deconstructed!"))
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
-	to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
+	to_chat(user, span_notice("You begin slicing through the outer plating..."))
 	while(I.use_tool(src, user, act_duration, volume=100))
 		if(iswallturf(src))
-			to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
+			to_chat(user, span_notice("You slice through some of the outer plating..."))
 			if(!alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE))
 				return TRUE
 		else
@@ -286,13 +286,13 @@
 
 
 	if(prob(hardness + M.force) && M.force > 20)
-		M.visible_message("<span class='danger'>[M.name] hits [src] with great force!</span>", \
-					"<span class='danger'>You hit [src] with incredible force!</span>", null, COMBAT_MESSAGE_RANGE)
+		M.visible_message(span_danger("[M.name] hits [src] with great force!"), \
+					span_danger("You hit [src] with incredible force!"), null, COMBAT_MESSAGE_RANGE)
 		dismantle_wall(TRUE)
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 	else
-		M.visible_message("<span class='danger'>[M.name] hits [src]!</span>", \
-					"<span class='danger'>You hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
+		M.visible_message(span_danger("[M.name] hits [src]!"), \
+					span_danger("You hit [src]!"), null, COMBAT_MESSAGE_RANGE)
 		alter_integrity(M.force * 20)
 
 /turf/closed/attack_hulk(mob/living/carbon/user)
@@ -301,9 +301,9 @@
 	if(!arm || arm.bodypart_disabled)
 		return
 	alter_integrity(-250,user)
-	user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
-				"<span class='danger'>You smash \the [src]!</span>", \
-				"<span class='hear'>You hear a booming smash!</span>")
+	user.visible_message(span_danger("[user] smashes \the [src]!"), \
+				span_danger("You smash \the [src]!"), \
+				span_hear("You hear a booming smash!"))
 	return TRUE
 
 /turf/closed/attack_animal(mob/living/simple_animal/M)
@@ -313,3 +313,10 @@
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 		alter_integrity(-400)
 		return
+
+/turf/closed/zap_act(power, zap_flags, shocked_targets)
+	if(QDELETED(src))
+		return FALSE
+	if(alter_integrity(-power) >= 0)
+		return TRUE
+	return power / 2

@@ -74,8 +74,8 @@ ALERT_GREEN All threats to the sector have passed. Local security personnel may 
 ALERT_BLUE_UPTO Potentially dangerous conditions have been reported in this sector. Corporate security staff have been granted increased powers, and security sweeps will now be organized.
 ALERT_BLUE_DOWNTO The immediate threat to personal safety has passed. Corporate security may no longer have weapons drawn at all times, but may continue to have them visible. Privacy laws will continue to be suspended until an all-clear has been posted.
 ALERT_RED_UPTO There is an immediate and serious threat to the sector. Local Security forces may have weapons unholstered at all times. Random searches will be allowed and advised. Colonial emergency supply restrictions have been lifted.
-ALERT_RED_DOWNTO The sector's immediate destruction has been averted. There may, however, remain deadly threats to personal safety. Random searches will be allowed and advised to Nanotrasen peacekeepers.
-ALERT_DELTA The destruction of the sector is imminent. All local persons are instructed to obey commands by Nanotrasen personnel. Any violations of these orders may be punishable by death. This is not a drill.
+ALERT_RED_DOWNTO The sector's immediate destruction has been averted. There may, however, remain deadly threats to personal safety. Random searches will be allowed and advised to Vigilitas peacekeepers.
+ALERT_DELTA The destruction of the sector is imminent. All local persons are instructed to obey commands by Makosso-Warra personnel. Any violations of these orders may be punishable by death. This is not a drill.
 
 
 
@@ -213,12 +213,18 @@ DYNAMIC_CONFIG_ENABLED
 ALLOW_RANDOM_EVENTS
 
 ## Multiplier for earliest start time of dangerous events.
-## Set to 0 to make dangerous events avaliable from round start.
+## Set to 0 to make dangerous events available from round start.
 EVENTS_MIN_TIME_MUL 1
 
 ## Multiplier for minimal player count (players = alive non-AFK humans) for dangerous events to start.
-## Set to 0 to make dangerous events avaliable for all populations.
+## Set to 0 to make dangerous events available for all populations.
 EVENTS_MIN_PLAYERS_MUL 1
+
+## The lower bound, in deciseconds, for how soon another random event can be scheduled.
+EVENTS_FREQUENCY_LOWER 18000
+
+## The upper bound, in deciseconds, for how soon another random event can be scheduled.
+EVENTS_FREQUENCY_UPPER 36000
 
 
 ## AI ###
@@ -389,7 +395,7 @@ ROUNDSTART_RACES vox
 
 ## Races that are better than humans in some ways, but worse in others
 ROUNDSTART_RACES elzuose
-ROUNDSTART_RACES jelly
+#ROUNDSTART_RACES jelly
 #ROUNDSTART_RACES golem
 #ROUNDSTART_RACES adamantine
 #ROUNDSTART_RACES plasma
@@ -415,7 +421,7 @@ ROUNDSTART_RACES jelly
 #ROUNDSTART_NO_HARD_CHECK felinid
 
 ## The amount of loadout items players are allowed to spawn with. Default 10
-MAX_LOADOUT_ITEMS 10
+MAX_LOADOUT_ITEMS 20
 
 ## Overflow slot cap. Set to -1 for unlimited. If limited, it will still open up if every other job is full.
 OVERFLOW_CAP -1
@@ -508,7 +514,7 @@ OVERMAP_GENERATOR_TYPE solar_system
 OVERMAP_ENCOUNTER_SIZE 127
 
 ## Max dynamic mission count active per ship
-MAX_DYNAMIC_MISSIONS 1
+MAX_DYNAMIC_MISSIONS 0.66
 
 ## The time required before a ship is allowed to bluespace jump. -1 disables it entirely
 ## In deciseconds, valid values are -1 to INFINITY
@@ -523,3 +529,6 @@ AUTH_ADMIN_TESTING
 ## HEART COMMENDATIONS ###
 ## Uncomment this if you'd like to enable commendation pollings for this percentage of players near the end of the round (5% suggested)
 COMMENDATION_PERCENT_POLL 0.05
+
+## Whether native FoV is enabled for all people.
+#NATIVE_FOV

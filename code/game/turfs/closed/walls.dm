@@ -55,7 +55,7 @@
 	. += deconstruction_hints(user)
 
 /turf/closed/wall/proc/deconstruction_hints(mob/user)
-	return "<span class='notice'>The outer plating is <b>welded</b> firmly in place.</span>"
+	return span_notice("The outer plating is <b>welded</b> firmly in place.")
 
 /turf/closed/wall/attack_tk()
 	return
@@ -84,28 +84,32 @@
 		return new girder_type(src)
 	return null
 
-/turf/closed/wall/attack_override(obj/item/W, mob/user, turf/loc)
+/turf/closed/wall/attack_override(obj/item/W, mob/user, turf/loc, list/modifiers)
 	if(!iswallturf(src))
 		return
-	if(try_clean(W, user, loc) || try_wallmount(W, user, loc) || try_decon(W, user, loc) || try_destroy(W, user, loc))
-		return
+	if(try_clean(W, user, loc, modifiers) || try_wallmount(W, user, loc) || try_decon(W, user, loc) || try_destroy(W, user, loc))
+		return TRUE
 
-/turf/closed/wall/proc/try_clean(obj/item/W, mob/user, turf/T)
-	if((user.a_intent != INTENT_HELP))
+/turf/closed/wall/proc/try_clean(obj/item/W, mob/user, turf/T, list/modifiers)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		return FALSE
 
 	if(W.tool_behaviour == TOOL_WELDER)
-		if(!W.tool_start_check(user, amount=0) || (integrity >= max_integrity))
+		if(!W.tool_start_check(user, src, amount=0))
 			return FALSE
 
-		to_chat(user, "<span class='notice'>You begin fixing dents on the wall...</span>")
+		if(atom_integrity >= max_integrity)
+			to_chat(user, span_notice("[src] doesn't have any visible damage!"))
+			return TRUE
+
+		to_chat(user, span_notice("You begin fixing dents on the wall..."))
 		if(W.use_tool(src, user, breakdown_duration, volume=100))
 			if(iswallturf(src) && LAZYLEN(dent_decals))
-				to_chat(user, "<span class='notice'>You fix some dents on the wall.</span>")
+				to_chat(user, span_notice("You fix some dents on the wall."))
 				dent_decals = null
 				update_appearance()
 			alter_integrity(repair_amount)
-			return TRUE
+		return TRUE
 
 	return FALSE
 
@@ -161,7 +165,7 @@
 /turf/closed/wall/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_DECONSTRUCT)
-			to_chat(user, "<span class='notice'>You deconstruct the wall.</span>")
+			to_chat(user, span_notice("You deconstruct the wall."))
 			ScrapeAway()
 			return TRUE
 	return FALSE

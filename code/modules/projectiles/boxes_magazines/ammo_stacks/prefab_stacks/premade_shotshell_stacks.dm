@@ -72,3 +72,29 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/improvised
 	ammo_type = /obj/item/ammo_casing/shotgun/improvised
+
+/obj/item/storage/box/ammo/pulseslug
+	name = "box of 12ga pulse slugs"
+	desc = "A box of 12-gauge pulse shells, designed for increased accuracy and destruction."
+	icon_state = "12gbox-rubbershot"
+
+/obj/item/storage/box/ammo/pulseslug/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/pulseslug = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/pulseslug
+	ammo_type = /obj/item/ammo_casing/shotgun/pulseslug
+
+/obj/item/storage/box/ammo/a12g_dart
+	name = "box of 12ga dart"
+	desc = "A box of 12-gauge dart shells, for injecting targets."
+	icon_state = "12gbox-beanbag"
+
+/obj/item/storage/box/ammo/a12g_dart/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/dart = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/dart
+	ammo_type = /obj/item/ammo_casing/shotgun/dart

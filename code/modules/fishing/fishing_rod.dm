@@ -89,7 +89,7 @@
 	var/datum/beam/fishing_line/fishing_line_beam = new(user, target, icon_state = "fishing_line", beam_color = beam_color, override_target_pixel_y = target_py)
 	fishing_line_beam.lefthand = user.get_held_index_of_item(src) % 2 == 1
 	RegisterSignal(fishing_line_beam, COMSIG_BEAM_BEFORE_DRAW, PROC_REF(check_los))
-	RegisterSignal(fishing_line_beam, COMSIG_PARENT_QDELETING, PROC_REF(clear_line))
+	RegisterSignal(fishing_line_beam, COMSIG_QDELETING, PROC_REF(clear_line))
 	fishing_lines += fishing_line_beam
 	INVOKE_ASYNC(fishing_line_beam, TYPE_PROC_REF(/datum/beam, Start))
 	user.update_inv_hands()
@@ -199,8 +199,8 @@
 
 	if(bait)
 		var/bait_state = "worm_overlay" //default to worm overlay for anything without specific one
-		if(istype(bait, /obj/item/reagent_containers/food/snacks/bait))
-			var/obj/item/reagent_containers/food/snacks/bait/real_bait = bait
+		if(istype(bait, /obj/item/food/bait))
+			var/obj/item/food/bait/real_bait = bait
 			bait_state = real_bait.rod_overlay_icon_state
 		. += bait_state
 
@@ -359,7 +359,7 @@
 
 /obj/item/fishing_rod/tech/Initialize(mapload)
 	. = ..()
-	var/obj/item/reagent_containers/food/snacks/bait/doughball/synthetic/infinite_supply_of_bait = new(src)
+	var/obj/item/food/bait/doughball/synthetic/infinite_supply_of_bait = new(src)
 	bait = infinite_supply_of_bait
 	update_appearance()
 

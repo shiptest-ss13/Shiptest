@@ -36,6 +36,25 @@
 	/// The shape we're currently in.
 	var/shape = TOWEL_FOLDED
 
+/obj/item/towel/full
+	shape = TOWEL_FULL
+	icon_state = "towel-chest"
+	slot_flags = ITEM_SLOT_OCLOTHING
+
+/obj/item/towel/waist
+	shape = TOWEL_WAIST
+	icon_state = "towel-waist"
+	slot_flags = ITEM_SLOT_OCLOTHING
+
+/obj/item/towel/head
+	shape = TOWEL_HEAD
+	icon_state = "towel-head"
+	slot_flags = ITEM_SLOT_HEAD
+
+/obj/item/towel/Initialize()
+	. = ..()
+	change_towel_shape(null, shape)
+
 /obj/item/towel/examine(mob/user)
 	. = ..()
 
@@ -88,13 +107,20 @@
 			transfer_fingerprints_to(shreds)
 			shreds.add_fingerprint(user)
 		qdel(src)
-		to_chat(user, "<span class='notice'>You tear [src] up.</span>")
+		to_chat(user, span_notice("You tear [src] up."))
 	else
 		return ..()
 
+/obj/item/towel/attack(mob/living/target_mob, mob/living/user)
+	. = ..()
+	while(target_mob.has_status_effect(/datum/status_effect/fire_handler/wet_stacks) && do_after(user, 15, target = target_mob, hidden = TRUE))
+		target_mob.adjust_wet_stacks(-1)
+	to_chat(user, span_notice("You dry [target_mob] off with your towel."))
+
 /obj/item/towel/CtrlClick(mob/user)
 	. = ..()
-
+	if(!user.canUseTopic(src, BE_CLOSE))
+		return
 	if(. == FALSE)
 		return
 	if(shape == TOWEL_FOLDED)

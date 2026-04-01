@@ -106,6 +106,14 @@
 				playsound(loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 				qdel(src)
 
+		if(istype(W, /obj/item/pen))
+			var/new_name = stripped_input(user, "Enter a new name for the button.", "Rename Button", name, MAX_NAME_LEN)
+			if(!new_name || !panel_open || !in_range(src, user)) //Mostly copy pasted from airlocks.
+				return
+			else
+				name = new_name
+				return //Do not need to update the appearance.
+
 		update_appearance()
 		return
 

@@ -34,7 +34,14 @@
 
 /obj/item/multitool/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Its buffer [buffer ? "contains [buffer]." : "is empty."]</span>"
+	if(!buffer)
+		. += span_notice("Its buffer is empty.")
+		return
+	var/buffer_text = "[buffer]"
+	if(isweakref(buffer))
+		var/datum/weakref/buffer_ref = buffer
+		buffer_text = "[buffer_ref.resolve()]"
+	. += span_notice("Its buffer contains [buffer_text].")
 
 // Syndicate device disguised as a multitool; it will turn red when an AI camera is nearby.
 
@@ -89,7 +96,7 @@
 /obj/item/multitool/ai_detect/proc/toggle_hud(mob/user)
 	hud_on = !hud_on
 	if(user)
-		to_chat(user, "<span class='notice'>You toggle the ai detection HUD on [src] [hud_on ? "on" : "off"].</span>")
+		to_chat(user, span_notice("You toggle the ai detection HUD on [src] [hud_on ? "on" : "off"]."))
 	if(hud_on)
 		show_hud(user)
 	else

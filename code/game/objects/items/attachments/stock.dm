@@ -46,3 +46,28 @@
 /obj/item/attachment/foldable_stock/sidewinder
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	icon_state = "sidewinder_stock"
+
+/obj/item/attachment/foldable_stock/resolution
+	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
+	icon_state = "resolution_stock"
+
+/obj/item/attachment/foldable_stock/resolution_inteq
+	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	icon_state = "resolution_inteq_stock"
+
+/obj/item/attachment/foldable_stock/pgfpdw
+	icon = 'icons/obj/guns/manufacturer/etherbor/48x32.dmi'
+	icon_state = "pgfpdw_stock"
+
+/obj/item/attachment/foldable_stock/wasp
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	icon_state = "wasp_stock"
+	pixel_shift_x = 16
+	pixel_shift_y = 0
+
+/obj/item/attachment/foldable_stock/wasp/toggle_attachment(obj/item/gun/gun, mob/user)
+	. = ..()
+	if(toggled)
+		pixel_shift_x = 32
+	else
+		pixel_shift_x = 16

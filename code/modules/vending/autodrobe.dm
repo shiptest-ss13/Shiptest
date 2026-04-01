@@ -50,8 +50,6 @@
 		/obj/item/clothing/under/dress/sundress = 1,
 		/obj/item/staff/broom = 1,
 		/obj/item/staff = 3,
-		/obj/item/clothing/under/rank/civilian/mime/sexy = 1,
-		/obj/item/clothing/under/rank/civilian/mime/skirt = 1,
 		/obj/item/clothing/mask/rat/bat = 1,
 		/obj/item/clothing/mask/rat/bee = 1,
 		/obj/item/clothing/mask/rat/bear = 1,
@@ -61,7 +59,10 @@
 		/obj/item/clothing/mask/frog = 1,
 		/obj/item/clothing/mask/rat/tribal = 1,
 		/obj/item/clothing/mask/rat = 1,
-		/obj/item/clothing/suit/apron/overalls = 1,
+		/obj/item/clothing/under/overalls = 2,
+		/obj/item/clothing/under/overalls/black = 2,
+		/obj/item/clothing/under/overalls/olive = 2,
+		/obj/item/clothing/under/overalls/brown = 2,
 		/obj/item/clothing/head/maidheadband = 1,
 		/obj/item/clothing/under/costume/maid = 1,
 		/obj/item/clothing/gloves/maid = 1,
@@ -86,7 +87,6 @@
 		/obj/item/clothing/head/helmet/roman/fake = 1,
 		/obj/item/clothing/head/helmet/roman/legionnaire/fake = 1,
 		/obj/item/clothing/under/costume/roman = 1,
-		/obj/item/shield/riot/roman/fake = 1,
 		/obj/item/skub = 1)
 	refill_canister = /obj/item/vending_refill/autodrobe
 	default_price = 90

@@ -119,7 +119,7 @@
 /obj/machinery/pipedispenser/attackby(obj/item/W, mob/user, params)
 	add_fingerprint(user)
 	if (istype(W, /obj/item/pipe) || istype(W, /obj/item/pipe_meter))
-		to_chat(usr, "<span class='notice'>You put [W] back into [src].</span>")
+		to_chat(usr, span_notice("You put [W] back into [src]."))
 		qdel(W)
 		return
 	else
@@ -135,7 +135,7 @@
 /obj/machinery/pipedispenser/screwdriver_act(mob/user, obj/item/I)
 	panel_open = !panel_open
 	I.play_tool_sound(src)
-	to_chat(user, "<span class='notice'>You [panel_open?"open":"close"] the panel on [src].</span>")
+	to_chat(user, span_notice("You [panel_open?"open":"close"] the panel on [src]."))
 	return TRUE
 
 /obj/machinery/pipedispenser/crowbar_act(mob/living/user, obj/item/I)
@@ -143,14 +143,14 @@
 	return TRUE
 
 //Allow you to drag-drop disposal pipes and transit tubes into it
-/obj/machinery/pipedispenser/MouseDrop_T(obj/structure/pipe, mob/usr)
-	if(usr.incapacitated())
+/obj/machinery/pipedispenser/MouseDrop_T(obj/structure/pipe, mob/user)
+	if(user.incapacitated())
 		return
 
 	if(!istype(pipe, /obj/structure/disposalconstruct) && !istype(pipe, /obj/structure/c_transit_tube) && !istype(pipe, /obj/structure/c_transit_tube_pod))
 		return
 
-	if(get_dist(usr, src) > 1 || get_dist(src,pipe) > 1)
+	if(get_dist(user, src) > 1 || get_dist(src,pipe) > 1)
 		return
 
 	if(pipe.anchored)

@@ -50,7 +50,7 @@
 	if(!ishuman(user))
 		return
 	used_wrench.play_tool_sound(user)
-	to_chat(user, "<span class='notice'>You start undeploying the [src]...</span>")
+	to_chat(user, span_notice("You start undeploying the [src]..."))
 	if(!do_after(user, undeploy_time))
 		return
 	var/obj/undeployed_object = new spawned_on_undeploy(src)
@@ -199,7 +199,7 @@
 
 /obj/machinery/deployable_turret/hmg
 	name = "heavy machine gun turret"
-	desc = "A heavy calibre machine gun commonly used by Nanotrasen forces, famed for it's ability to give people on the recieving end more holes than normal."
+	desc = "A heavy calibre machine gun commonly used by Makosso-Warra forces, famed for it's ability to give people on the recieving end more holes than normal."
 	icon_state = "hmg"
 	max_integrity = 250
 	projectile_type = /obj/projectile/bullet/manned_turret/hmg

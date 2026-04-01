@@ -6,7 +6,7 @@
 	earliest_start = 0 MINUTES
 	var/mobs_to_dupe = 0
 
-/datum/round_event_control/wizard/petsplosion/preRunEvent()
+/datum/round_event_control/wizard/petsplosion/prerun_event()
 	for(var/mob/living/simple_animal/F in GLOB.alive_mob_list)
 		if(!ishostile(F))
 			mobs_to_dupe++
@@ -16,7 +16,7 @@
 	..()
 
 /datum/round_event/wizard/petsplosion
-	endWhen = 61 //1 minute (+1 tick for endWhen not to interfere with tick)
+	end_when = 61 //1 minute (+1 tick for end_when not to interfere with tick)
 	var/countdown = 0
 	var/mobs_duped = 0
 

@@ -66,8 +66,6 @@
 /obj/effect/decal/cleanable/blood/splatter
 	icon_state = "gibbl1"
 	random_icon_states = list("gibbl1", "gibbl2", "gibbl3", "gibbl4", "gibbl5")
-	dryname = "dried tracks"
-	drydesc = "Some old bloody tracks left by wheels. Machines are evil, perhaps."
 	///Absorb the /squirt subtype when it exists on the turf
 	var/absorb_squirts = TRUE
 
@@ -185,8 +183,8 @@
 	dry()
 	add_blood_DNA(list("Non-human DNA" = random_blood_type()))
 	if(move_on_init)
-		pixel_x = rand(-16,16)
-		pixel_y = rand(-16, 16)
+		pixel_x = rand(-5, 5)
+		pixel_y = rand(-5, 5)
 
 
 /obj/effect/decal/cleanable/blood/drip/can_bloodcrawl_in()
@@ -306,8 +304,6 @@
 	var/splatter_strength = 3
 	/// Insurance so that we don't keep moving once we hit a stoppoint
 	var/hit_endpoint = FALSE
-//	///Absorb the /squirt subtype when it exists on the turf
-//	var/absorb_squirts = TRUE
 
 /obj/effect/decal/cleanable/blood/hitsplatter/Initialize(mapload, splatter_strength)
 	. = ..()

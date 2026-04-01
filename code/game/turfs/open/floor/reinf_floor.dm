@@ -11,11 +11,11 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
-
+	flammability = 0 // fireproof!
 
 /turf/open/floor/engine/examine(mob/user)
 	. += ..()
-	. += "<span class='notice'>The reinforcement sheet is <b>wrenched</b> firmly in place.</span>"
+	. += span_notice("The reinforcement sheet is <b>wrenched</b> firmly in place.")
 
 /turf/open/floor/engine/airless
 	initial_gas_mix = AIRLESS_ATMOS
@@ -45,7 +45,7 @@
 
 /turf/open/floor/engine/wrench_act(mob/living/user, obj/item/I)
 	..()
-	to_chat(user, "<span class='notice'>You begin removing the sheet...</span>")
+	to_chat(user, span_notice("You begin removing the sheet..."))
 	if(I.use_tool(src, user, 30, volume=80))
 		if(!istype(src, /turf/open/floor/engine))
 			return TRUE

@@ -6,10 +6,10 @@
 			if(!IsParalyzed())
 				emote("collapse")
 			Paralyze(RAD_MOB_KNOCKDOWN_AMOUNT)
-			to_chat(src, "<span class='danger'>You feel weak.</span>")
+			to_chat(src, span_danger("You feel weak."))
 		if(radiation > RAD_MOB_MUTATE)
 			if(prob(1))
-				to_chat(src, "<span class='danger'>You mutate!</span>")
+				to_chat(src, span_danger("You mutate!"))
 				easy_randmut(NEGATIVE+MINOR_NEGATIVE)
 				emote("gasp")
 				domutcheck()
@@ -105,29 +105,3 @@
 	if(wear_mask)
 		if(wear_mask.clothing_flags & BLOCK_GAS_SMOKE_EFFECT)
 			return 1
-
-/mob/living/carbon/monkey/handle_fire()
-	. = ..()
-	if(.) //if the mob isn't on fire anymore
-		return
-
-	//the fire tries to damage the exposed clothes and items
-	var/list/burning_items = list()
-	//HEAD//
-	var/list/obscured = check_obscured_slots(TRUE)
-	if(wear_mask && !(ITEM_SLOT_MASK in obscured))
-		burning_items += wear_mask
-	if(wear_neck && !(ITEM_SLOT_NECK in obscured))
-		burning_items += wear_neck
-	if(head)
-		burning_items += head
-
-	if(back)
-		burning_items += back
-
-	for(var/X in burning_items)
-		var/obj/item/I = X
-		I.fire_act((fire_stacks * 50)) //damage taken is reduced to 2% of this value by fire_act()
-
-	adjust_bodytemperature(HUMAN_BODYTEMP_HEATING_MAX)
-	SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)

@@ -26,18 +26,6 @@
 	database_id = MEDAL_RODSUPLEX
 	icon = "featofstrength"
 
-/datum/award/achievement/misc/round_and_full
-	name = "Round and Full"
-	desc = "Well at least you aren't down the river, I hear they eat people there."
-	database_id = MEDAL_CLOWNCARKING
-	icon = "clownking"
-
-/datum/award/achievement/misc/the_best_driver
-	name = "The Best Driver"
-	desc = "100 honks later"
-	database_id = MEDAL_THANKSALOT
-	icon = "clownthanks"
-
 /datum/award/achievement/misc/helbitaljanken
 	name = "Helbitaljanken"
 	desc = "You janked hard"

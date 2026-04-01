@@ -37,7 +37,7 @@
 
 /obj/item/paper/guides/jobs/security/labor_camp
 	name = "Labor Camp Operating Guide"
-	default_raw_text = "<b>Labor Camp Facility Operation Guide</b><br><br>Hello there, proud operator of an NT-Sec Prisoner Rehabilitation Center.  A solution to rising crime rates and falling productivity, these facilities are specifically designed for the safe, productive imprisonment of your most dangerous criminals.  <br><br>To press a long-term prisoner into the service of the station, replace his equipment with prisoners' garb at one of the prison lockers, as per normal operating procedure.  Before assigning a prisoner his ID, insert the ID into a prisoner management console and assign the prisoner a quota, based on the severity of his crime.  <br>A single sheet of most materials produces five points for the prisoner, and points can be expected to be produced at a rate of about 100 per minute, though punishments as severe as forced labor should be reserved for serious crimes of sentences not less than five minutes long.<br>Once you have prepared the prisoner, place him in the secure northern half of the labor shuttle, and send him to the station.  Once he meets his quota by feeding sheets to the stacker, he will be allowed to return to the station, and will be able to open the secure door to the prisoner release area.<br><br>In the case of dangerous prisoners, surveillance may be needed. To that end, there is a prisoner monitoring room on the mining station, equipped with a remote flasher and a lockdown button.  The mine itself is patrolled by a securibot, so the nearby security records console can also be used to secure hostile prisoners on the mine."
+	default_raw_text = "<b>Labor Camp Facility Operation Guide</b><br><br>Hello there, proud operator of a Vigilitas Prisoner Rehabilitation Center.  A solution to rising crime rates and falling productivity, these facilities are specifically designed for the safe, productive imprisonment of your most dangerous criminals.  <br><br>To press a long-term prisoner into the service of the station, replace his equipment with prisoners' garb at one of the prison lockers, as per normal operating procedure.  Before assigning a prisoner his ID, insert the ID into a prisoner management console and assign the prisoner a quota, based on the severity of his crime.  <br>A single sheet of most materials produces five points for the prisoner, and points can be expected to be produced at a rate of about 100 per minute, though punishments as severe as forced labor should be reserved for serious crimes of sentences not less than five minutes long.<br>Once you have prepared the prisoner, place him in the secure northern half of the labor shuttle, and send him to the station.  Once he meets his quota by feeding sheets to the stacker, he will be allowed to return to the station, and will be able to open the secure door to the prisoner release area.<br><br>In the case of dangerous prisoners, surveillance may be needed. To that end, there is a prisoner monitoring room on the mining station, equipped with a remote flasher and a lockdown button.  The mine itself is patrolled by a securibot, so the nearby security records console can also be used to secure hostile prisoners on the mine."
 
 /obj/item/paper/fluff/jobs/jobs
 	name = "paper- 'Job Information'"
@@ -103,7 +103,7 @@
 
 /obj/item/paper/fluff/stations/centcom/bulletin
 	name = "paper- 'Official Bulletin'"
-	default_raw_text = "<BR>CentCom Security<BR>Port Division<BR>Official Bulletin<BR><BR>Inspector,<BR>There is an emergency shuttle arriving today.<BR><BR>Approval is restricted to Nanotrasen employees only. Deny all other entrants.<BR><BR>CentCom Port Commissioner"
+	default_raw_text = "<BR>CentCom Security<BR>Port Division<BR>Official Bulletin<BR><BR>Inspector,<BR>There is an emergency shuttle arriving today.<BR><BR>Approval is restricted to Makosso-Warra employees only. Deny all other entrants.<BR><BR>CentCom Port Commissioner"
 
 
 ///////////	Lavaland
@@ -113,14 +113,6 @@
 	default_raw_text = "A hastily written note has been scribbled here... <br><br> Please use the ore redemption machine in the cargo office for smelting. PLEASE! <br><br>--The Research Staff"
 
 //////////// Ruins
-
-/obj/item/paper/crumpled/bloody/fluff/ruin/icemoon/cellar_warning
-	name = "\improper Scrawled Note"
-	default_raw_text = "<center> <br><h1>HEY! YOU. </h1><br><h2>Yeah. You. <br>One of the Hunters got away and holed up in the cellar and set up a whole bunch of traps. Crazy asshole has already killed like four of our guys in the murder basement. So boss says keep the door sealed and let the prick starve.<br><br> SO DONT OPEN IT.</h2>"
-
-/obj/item/paper/crumpled/bloody/fluff/ruin/icemoon/tally_sheet
-	name = "\improper Tally Sheet"
-	default_raw_text = "<center><h1> Marksmanship Leaderboard </h1></center><br><head><table bgcolor=white width=100% height=15%><center><td><div align = left><table style=width: 100%; border=2><tbody><td width=30%><center><b><code>Name</td><td width= 10%><center><b><code>Points</td><td width= 60%><center><b><code>Notes</td><tr bgcolor =#D6EEEE><td><center>Lance Phillips</td><td><center>10</td><td><center>Hit 2 out of 3 targets.</td></tr><tr><td><center>Hetchel Catuwe-Plakat</td><td><center>0</td><td><center>Missed every shot. Relegated to knife duty.</td></tr><tr bgcolor =#D6EEEE><td><center>Weer-Topith</td><td><center>30</td><td><center>Hit all three targets.</td></tr><tr><td><center>Kahyarawkkahskre</td><td><center>50</td><td><center>Hit all three targets one handed with a revolver.</td></tr><tr bgcolor =#D6EEEE><td><center>Salhree-Yik</td><td><center>100</td><td><center>Hit all three targets while blindfolded.</td><tr><td><center>Kiahkkati</td><td><center>-1000</td><td><center>Tried to one up Salhree and spun three times blindfolded before firing. Hit me in the knee.</td></tr>"
 
 /obj/item/paper/crumpled/bloody/fluff/ruin/space/ramzistation/toilet
 	name = "\improper Out of Order Notice"
@@ -133,3 +125,37 @@
 /obj/item/paper/crumpled/fluff/abandoned_crate
 	name = "\improper Hastily Written Note"
 	default_raw_text = "SORRY NOTHING IOU ONE REWARD"
+
+/obj/item/paper/crumpled/fluff/fueling/command
+	name = "\improper Hastily Written Note"
+	default_raw_text = "dont trust Ozeen-Jur, big plume of plasma came up in medical during break. saw them welding scrubbers, said it was 'maintenance'. ACLF traitor piece of SHIT , sent out an order to close off ventilation to prevent any leakage elsewhere until the evac came in. any cleanup crews coming in, do NOT under ANY circumstances unweld the vents or use the airlocks"
+
+/obj/item/paper/crumpled/fluff/prisoners
+	name = "\improper DONT FORGET"
+	default_raw_text = "Yes, you. These ID's aren't set, you'll need to ask the captain to set access with their console. Don't cause a fuss over not being able to read."
+
+/obj/item/paper/crumpled/fluff/ruin/space/deepstorage/diary
+	name = "\improper Written Diary"
+	default_raw_text = "Finally got a small shipment, this time. At first I thought it was a blessing, then they told me the contents. Apparently the big shots say they're trying to make a reliable cure for it, and that we've gotta keep this shit under the radar as usual. Little thing of note, apparently the shipping vessel was paranoid about some readings following them. Probably just sensor ghosts, again. Still, think I'm finally moving up in the chain since they told me the contents of the cargo!"
+
+/obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders
+	name = "\improper Written Log"
+	default_raw_text = "You know the drill, people. Shoot anyone on sight approaching the station. This includes our own colors, conducts the same as usual. Give fair warning to our boys, unless shots have already been fired. Cargo's more valuable this time, and we've gotta get our shit together to get that sweet, sweet raise."
+
+/obj/item/paper/fluff/ruins/wasteplanet/vault
+	name = "\improper Vault Button"
+	default_raw_text = "The vault's button is bugged out, if you need to get in, head up to security and yell at em to use their remote access, just pray they ain't in the middle of a game."
+
+/obj/item/paper/fluff/ruins/wasteplanet/reminder
+	name = "\improper LAST REMINDER"
+	default_raw_text = "If one of you dumbasses forgets to pick up your spent ammo casings again, I will personally send you out to escort the salvage team with nothing but a knife, and if you let one of em die ill put your head on the next crate out of here, got it?"
+
+/obj/item/paper/crumpled/fluff/ruins/wasteplanet/doors
+	name = "\improper Shitty doors!"
+	default_raw_text = "the blastdoors on the inner engineering airlock bugged out again! whoever chose this spot for construction deserves to be shot, everything keeps falling apart! Drill won't work, whoever is reading this, grab the salvage saw from the vault and cut it open, or blow it to bits, just don't break anything or the Boss will make you hive target practice."
+
+/obj/item/paper/fluff/ruins/wasteplanet/derringer
+	name = "\improper DO NOT READ."
+	default_raw_text = "Keep forgetting where I put my derringer everytime I leave it somewhere, so im keeping it in the safe. REMINDER: The safe is besides the only plant that seems to survive in this dumb habitat."
+
+

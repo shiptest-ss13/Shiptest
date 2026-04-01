@@ -22,6 +22,8 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
+
+	var/list/greeble_templates = list()
 	// List mapping TYPES of outpost map templates to instances of their singletons.
 	var/list/outpost_templates = list()
 
@@ -113,10 +115,14 @@ SUBSYSTEM_DEF(mapping)
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
 
+	greeble_templates = SSmapping.greeble_templates
+
 	outpost_templates = SSmapping.outpost_templates
 
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
+
+	greeble_templates = SSmapping.greeble_templates
 
 	areas_in_z = SSmapping.areas_in_z
 	map_zones = SSmapping.map_zones
@@ -128,7 +134,7 @@ SUBSYSTEM_DEF(mapping)
 	virtual_z_translation = SSmapping.virtual_z_translation
 	z_list = SSmapping.z_list
 
-#define INIT_ANNOUNCE(X) to_chat(world, "<span class='boldannounce'>[X]</span>"); log_world(X)
+#define INIT_ANNOUNCE(X) to_chat(world, span_boldannounce("[X]")); log_world(X)
 
 /datum/controller/subsystem/mapping/proc/preloadTemplates(path = "_maps/templates/") //see master controller setup
 	var/list/filelist = flist(path)
@@ -199,11 +205,15 @@ SUBSYSTEM_DEF(mapping)
 		CHECK_LIST_EXISTS("job_slots")
 		var/datum/map_template/shuttle/S = new(data["map_path"], data["map_name"], TRUE)
 		S.file_name = data["map_path"]
+		S.ship_class = data["map_name"]
 
 		if(istext(data["map_short_name"]))
 			S.short_name = data["map_short_name"]
 		else
 			S.short_name = copytext(S.name, 1, 20)
+
+		if(istext(data["token_icon_state"]))
+			S.token_icon_state = data["token_icon_state"]
 
 		if(istext(data["faction"]))
 			var/type = text2path(data["faction"])
@@ -231,7 +241,7 @@ SUBSYSTEM_DEF(mapping)
 		if(islist(data["namelists"]))
 			S.name_categories = data["namelists"]
 
-		if(isnum(data["unique_ship_access"] && data["unique_ship_access"]))
+		if(isnum(data["unique_ship_access"]))
 			S.unique_ship_access = data["unique_ship_access"]
 
 		if(istext(data["description"]))
@@ -277,6 +287,12 @@ SUBSYSTEM_DEF(mapping)
 
 		if(isnum(data["starting_funds"]))
 			S.starting_funds = data["starting_funds"]
+
+		if(isnum(data["tranist_x_offset"]))
+			S.tranist_x_offset = data["tranist_x_offset"]
+
+		if(isnum(data["tranist_y_offset"]))
+			S.tranist_y_offset = data["tranist_y_offset"]
 
 		if(isnum(data["enabled"]) && data["enabled"])
 			S.enabled = TRUE
@@ -378,6 +394,8 @@ SUBSYSTEM_DEF(mapping)
 				allocation_name = "Free Allocation"
 			if(ALLOCATION_QUADRANT)
 				allocation_name = "Quadrant Allocation"
+			if(ALLOCATION_OCTODRANT)
+				allocation_name = "Octodrant Allocation"
 			else
 				allocation_name = "Unaccounted Allocation"
 

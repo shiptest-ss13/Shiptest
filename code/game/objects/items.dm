@@ -19,6 +19,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	name = "item"
 	icon = 'icons/obj/items.dmi'
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
+	///percentage of armour effectiveness to remove
+	armour_penetration = 0
 	///icon state name for inhand overlays
 	var/item_state = null
 	///Icon file for left hand inhand overlays
@@ -142,8 +144,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/siemens_coefficient = 1
 	/// How much clothing is slowing you down. Negative values speeds you up
 	var/slowdown = 0
-	///percentage of armour effectiveness to remove
-	var/armour_penetration = 0
 	///What objects the suit storage can store
 	var/list/allowed = null
 	///In deciseconds, how long an item takes to equip; counts only for normal clothing slots, not pockets etc.
@@ -171,13 +171,13 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
 
 	///Does it embed and if yes, what kind of embed
-	var/list/embedding = NONE
+	var/list/embedding
 
 	///for flags such as [GLASSESCOVERSEYES]
 	var/flags_cover = 0
 	var/heat = 0
-	///All items with sharpness of IS_SHARP or higher will automatically get the butchering component.
-	var/sharpness = IS_BLUNT
+	///All items with sharpness of SHARP_EDGED or higher will automatically get the butchering component.
+	var/sharpness = SHARP_NONE
 
 	///How a tool acts when you use it on something, such as wirecutters cutting wires while multitools measure power
 	var/tool_behaviour = NONE
@@ -236,6 +236,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	/// If reskins change inhands as well
 	var/unique_reskin_changes_inhand = FALSE
 	var/unique_reskin_changes_name = FALSE
+
+	bad_type = /obj/item
 
 /obj/item/Initialize()
 
@@ -298,7 +300,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		CRASH("item add_item_action got a type or instance of something that wasn't an action.")
 
 	LAZYADD(actions, action)
-	RegisterSignal(action, COMSIG_PARENT_QDELETING, PROC_REF(on_action_deleted))
+	RegisterSignal(action, COMSIG_QDELETING, PROC_REF(on_action_deleted))
 	grant_action_to_bearer(action)
 	return action
 
@@ -314,7 +316,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(!action)
 		return
 
-	UnregisterSignal(action, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(action, COMSIG_QDELETING)
 	LAZYREMOVE(actions, action)
 	qdel(action)
 
@@ -367,32 +369,34 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	. = ..()
 
 	if(unique_reskin && !current_skin)
-		. += "<span class='notice'>Alt-click it to reskin it.</span>"
+		. += span_notice("<b>Alt-click</b> it to reskin it.")
 
-	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item."
+	. += span_notice("[gender == PLURAL ? "They are" : "It is"] a <b>[weightclass2text(w_class)]</b> item.")
 
 	if(resistance_flags & INDESTRUCTIBLE)
-		. += "[src] seems extremely robust! It'll probably withstand anything that could happen to it!"
+		. += span_notice("[src] looks incredibly tough. No way to get through this.")
 	else
 		if(resistance_flags & LAVA_PROOF)
-			. += "[src] is made of an extremely heat-resistant material, it'd probably be able to withstand lava!"
+			. += span_notice("[src] is made of <b>lava-resistant</b> materials.")
 		if(resistance_flags & (ACID_PROOF | UNACIDABLE))
-			. += "[src] looks pretty robust! It'd probably be able to withstand acid!"
+			. += span_notice("[src] is made of <b>acid-resistant</b> materials.")
 		if(resistance_flags & FREEZE_PROOF)
-			. += "[src] is made of cold-resistant materials."
+			. += span_notice("[src] is made of <b>cold-resistant</b> materials.")
 		if(resistance_flags & FIRE_PROOF)
-			. += "[src] is made of fire-retardant materials."
+			. += span_notice("[src] is made of <b>fire-resistant</b> materials.")
 
 	if(!user.research_scanner)
 		return
 
+	//what even is all this garbage
 	/// Research prospects, including boostable nodes and point values. Deliver to a console to know whether the boosts have already been used.
 	var/list/research_msg = list("<font color='purple'>Research prospects:</font> ")
 	///Separator between the items on the list
 	var/sep = ""
 	///Nodes that can be boosted
 	var/list/boostable_nodes = techweb_item_boost_check(src)
-	if (boostable_nodes)
+
+	if(boostable_nodes)
 		for(var/id in boostable_nodes)
 			var/datum/techweb_node/node = SSresearch.techweb_node_by_id(id)
 			if(!node)
@@ -401,16 +405,16 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			research_msg += node.display_name
 			sep = ", "
 	var/list/points = techweb_item_point_check(src)
-	if (length(points))
+	if(length(points))
 		sep = ", "
 		research_msg += techweb_point_display_generic(points)
 
-	if (!sep) // nothing was shown
+	if(!sep) // nothing was shown
 		research_msg += "None"
 
-	// Extractable materials. Only shows the names, not the amounts.
+	//Extractable materials. Only shows the names, not the amounts.
 	research_msg += ".<br><font color='purple'>Extractable materials:</font> "
-	if (length(custom_materials))
+	if(length(custom_materials))
 		sep = ""
 		for(var/mat in custom_materials)
 			research_msg += sep
@@ -429,7 +433,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	add_fingerprint(usr)
 	return ..()
 
-/obj/item/attack_hand(mob/user)
+/obj/item/attack_hand(mob/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
@@ -438,11 +442,15 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(anchored)
 		return
 
+	// Right-click is now the standard for opening storage items, and shouldn't try to pickup/unequip items without storage.
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		return
+
 	//check if the item is inside another item's storage
-	if(istype(loc, /obj/item/storage))
+	if(isitem(loc))
 		//if so, can we actually access it?
 		var/datum/component/storage/ourstorage = loc.GetComponent(/datum/component/storage)
-		if(!ourstorage.access_check())
+		if(ourstorage && !ourstorage.access_check())
 			SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_HIDE_FROM, user)//you're not supposed to be in here right now, punk!
 			return
 
@@ -458,9 +466,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 		if(can_handle_hot)
 			extinguish()
-			to_chat(user, "<span class='notice'>You put out the fire on [src].</span>")
+			to_chat(user, span_notice("You put out the fire on [src]."))
 		else
-			to_chat(user, "<span class='warning'>You burn your hand on [src]!</span>")
+			to_chat(user, span_warning("You burn your hand on [src]!"))
 			var/obj/item/bodypart/affecting = C.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
 			if(affecting && affecting.receive_damage(0, 5))		// 5 burn damage
 				C.update_damage_overlays()
@@ -470,7 +478,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		var/mob/living/carbon/C = user
 		if(istype(C))
 			if(!C.gloves || (!(C.gloves.resistance_flags & (UNACIDABLE|ACID_PROOF))))
-				to_chat(user, "<span class='warning'>The acid on [src] burns your hand!</span>")
+				to_chat(user, span_warning("The acid on [src] burns your hand!"))
 				var/obj/item/bodypart/affecting = C.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
 				if(affecting && affecting.receive_damage(0, 5))		// 5 burn damage
 					C.update_damage_overlays()
@@ -482,7 +490,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/grav = user.has_gravity()
 	if(grav > STANDARD_GRAVITY)
 		var/grav_power = min(3,grav - STANDARD_GRAVITY)
-		to_chat(user,"<span class='notice'>You start picking up [src]...</span>")
+		to_chat(user,span_notice("You start picking up [src]..."))
 		if(!do_after(user, 30*grav_power, src))
 			return
 
@@ -532,7 +540,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(!A.has_fine_manipulation)
 		if(src in A.contents) // To stop Aliens having items stuck in their pockets
 			A.dropItemToGround(src)
-		to_chat(user, "<span class='warning'>Your claws aren't capable of such fine manipulation!</span>")
+		to_chat(user, span_warning("Your claws aren't capable of such fine manipulation!"))
 		return
 	attack_paw(A)
 
@@ -554,7 +562,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	//Mostly shields
 	if((prob(final_block_chance) && COOLDOWN_FINISHED(src, block_cooldown)) || (prob(final_block_chance) && istype(src, /obj/item/shield)))
-		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
+		owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"))
 		playsound(src, 'sound/weapons/effects/deflect.ogg', 100)
 		if(!istype(src, /obj/item/shield))
 			COOLDOWN_START(src, block_cooldown, block_cooldown_time)
@@ -564,7 +572,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(!signal_result)
 		return FALSE
 	if(hit_reaction_chance >= 0)
-		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
+		owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"))
 	return signal_result
 
 /obj/item/proc/talk_into(mob/M, input, channel, spans, datum/language/language, list/message_mods)
@@ -588,6 +596,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/pickup(mob/user)
 	SHOULD_CALL_PARENT(1)
 	SEND_SIGNAL(src, COMSIG_ITEM_PICKUP, user)
+	SEND_SIGNAL(user, COMSIG_MOB_PICKUP_ITEM, src)
 	item_flags |= IN_INVENTORY
 
 /// called when "found" in pockets and storage items. Returns 1 if the search should end.
@@ -677,7 +686,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			return
 
 	if(usr.get_active_held_item() == null) // Let me know if this has any problems -Yota
-		usr.UnarmedAttack(src)
+		usr.UnarmedAttack(src, TRUE)
 
 /**
  *This proc is executed when someone clicks the on-screen UI button.
@@ -691,76 +700,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/IsReflect(def_zone)
 	return FALSE
 
-/obj/item/proc/eyestab(mob/living/carbon/M, mob/living/carbon/user)
-
-	var/is_human_victim
-	var/obj/item/bodypart/affecting = M.get_bodypart(BODY_ZONE_HEAD)
-	if(ishuman(M))
-		if(!affecting) //no head!
-			return
-		is_human_victim = TRUE
-
-	if(M.is_eyes_covered())
-		// you can't stab someone in the eyes wearing a mask!
-		to_chat(user, "<span class='warning'>You're going to need to remove [M.p_their()] eye protection first!</span>")
-		return
-
-	if(isalien(M))//Aliens don't have eyes./N     slimes also don't have eyes!
-		to_chat(user, "<span class='warning'>You cannot locate any eyes on this creature!</span>")
-		return
-
-	if(isbrain(M))
-		to_chat(user, "<span class='warning'>You cannot locate any organic eyes on this brain!</span>")
-		return
-
-	src.add_fingerprint(user)
-
-	playsound(loc, src.hitsound, 30, TRUE, -1)
-
-	user.do_attack_animation(M)
-
-	if(M != user)
-		M.visible_message("<span class='danger'>[user] stabs [M] in the eye with [src]!</span>", \
-							"<span class='userdanger'>[user] stabs you in the eye with [src]!</span>")
-	else
-		user.visible_message( \
-			"<span class='danger'>[user] stabs [user.p_them()]self in the eyes with [src]!</span>", \
-			"<span class='userdanger'>You stab yourself in the eyes with [src]!</span>" \
-		)
-	if(is_human_victim)
-		var/mob/living/carbon/human/U = M
-		U.apply_damage(7, BRUTE, affecting)
-
-	else
-		M.take_bodypart_damage(7)
-
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "eye_stab", /datum/mood_event/eye_stab)
-
-	log_combat(user, M, "attacked", "[src.name]", "(INTENT: [uppertext(user.a_intent)])")
-
-	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
-	if (!eyes)
-		return
-	M.adjust_blurriness(3)
-	eyes.applyOrganDamage(rand(2,4))
-	if(eyes.damage >= 10)
-		M.adjust_blurriness(15)
-		if(M.stat != DEAD)
-			to_chat(M, "<span class='danger'>Your eyes start to bleed profusely!</span>")
-		if(!(M.is_blind() || HAS_TRAIT(M, TRAIT_NEARSIGHT)))
-			to_chat(M, "<span class='danger'>You become nearsighted!</span>")
-		M.become_nearsighted(EYE_DAMAGE)
-		if(prob(50))
-			if(M.stat != DEAD)
-				if(M.drop_all_held_items())
-					to_chat(M, "<span class='danger'>You drop what you're holding and clutch at your eyes!</span>")
-			M.adjust_blurriness(10)
-			M.Unconscious(20)
-			M.Paralyze(40)
-		if (prob(eyes.damage - 10 + 1))
-			M.become_blind(EYE_DAMAGE)
-			to_chat(M, "<span class='danger'>You go blind!</span>")
-
 /obj/item/singularity_pull(S, current_size)
 	..()
 	if(current_size >= STAGE_FOUR)
@@ -773,7 +712,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		SEND_SIGNAL(src, COMSIG_MOVABLE_IMPACT, hit_atom, throwingdatum)
 		if(get_temperature() && isliving(hit_atom))
 			var/mob/living/L = hit_atom
-			L.IgniteMob()
+			L.ignite_mob()
 		var/itempush = 1
 		if(w_class < 4)
 			itempush = 0 //too light to push anything
@@ -860,11 +799,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/get_sharpness()
 	return sharpness
 
-/obj/item/proc/get_dismemberment_chance(obj/item/bodypart/affecting)
-	if(affecting.can_dismember(src))
-		if((sharpness || damtype == BURN || (damtype == BRUTE && (affecting.owner.dna && affecting.owner.dna.species && (TRAIT_EASYDISMEMBER in affecting.owner.dna.species.species_traits)))) && w_class >= WEIGHT_CLASS_NORMAL && force >= 10)
-			. = force * (affecting.get_damage() / affecting.max_damage)
-
 /obj/item/proc/get_dismember_sound()
 	if(damtype == BURN)
 		. = 'sound/weapons/sear.ogg'
@@ -882,10 +816,15 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			location = get_turf(M)
 	if(isturf(location))
 		location.hotspot_expose(flame_heat, 5)
+		if(SEND_SIGNAL(location, COMSIG_TURF_OPEN_FLAME, flame_heat) & BLOCK_TURF_IGNITION)
+			return
+		var/turf/open/open_location = loc // NOT the location variable used earlier else cigarettes in mouths start fires
+		if(isopenturf(open_location) && open_location.flammability >= 1 && prob(open_location.flammability))
+			open_location.ignite_turf(2) // if there's enough flammability for a fire to sustain itself..
 
 /obj/item/proc/ignition_effect(atom/A, mob/user)
 	if(get_temperature())
-		. = "<span class='notice'>[user] lights [A] with [src].</span>"
+		. = span_notice("[user] lights [A] with [src].")
 	else
 		. = ""
 
@@ -1048,7 +987,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	if(delay)
 		// Create a callback with checks that would be called every tick by do_after.
-		var/datum/callback/tool_check = CALLBACK(src, PROC_REF(tool_check_callback), user, amount, extra_checks)
+		var/datum/callback/tool_check = CALLBACK(src, PROC_REF(tool_check_callback), user, target, amount, extra_checks)
 
 		if(ismob(target))
 			if(!do_after(user, delay, target, extra_checks=tool_check))
@@ -1074,13 +1013,13 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	return TRUE
 
 /// Called before [obj/item/proc/use_tool] if there is a delay, or by [obj/item/proc/use_tool] if there isn't. Only ever used by welding tools and stacks, so it's not added on any other [obj/item/proc/use_tool] checks.
-/obj/item/proc/tool_start_check(mob/living/user, amount=0)
-	. = tool_use_check(user, amount)
+/obj/item/proc/tool_start_check(mob/living/user, atom/target, amount=0)
+	. = tool_use_check(user, target, amount)
 	if(.)
 		SEND_SIGNAL(src, COMSIG_TOOL_START_USE, user)
 
 /// A check called by [/obj/item/proc/tool_start_check] once, and by use_tool on every tick of delay.
-/obj/item/proc/tool_use_check(mob/living/user, amount)
+/obj/item/proc/tool_use_check(mob/living/user, atom/target, amount)
 	return !amount
 
 /// Generic use proc. Depending on the item, it uses up fuel, charges, sheets, etc. Returns TRUE on success, FALSE on failure.
@@ -1098,9 +1037,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		playsound(target, played_sound, volume, TRUE, mono_adj = TRUE)
 
 /// Used in a callback that is passed by use_tool into do_after call. Do not override, do not call manually.
-/obj/item/proc/tool_check_callback(mob/living/user, amount, datum/callback/extra_checks)
+/obj/item/proc/tool_check_callback(mob/living/user, atom/target, amount, datum/callback/extra_checks)
 	SHOULD_NOT_OVERRIDE(TRUE)
-	. = tool_use_check(user, amount) && (!extra_checks || extra_checks.Invoke())
+	. = tool_use_check(user, target, amount) && (!extra_checks || extra_checks.Invoke())
 	if(.)
 		SEND_SIGNAL(src, COMSIG_TOOL_IN_USE, user)
 
@@ -1128,7 +1067,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	// if w_volume is 0 you fucked up.
 	return w_volume || AUTO_SCALE_VOLUME(w_class)
 
-/obj/item/proc/embedded(mob/living/carbon/human/embedded_mob)
+/obj/item/proc/embedded(atom/embedded_target)
 	return
 
 /obj/item/proc/unembedded()
@@ -1148,11 +1087,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(embedding)
 		return !isnull(embedding["pain_mult"]) && !isnull(embedding["jostle_pain_mult"]) && embedding["pain_mult"] == 0 && embedding["jostle_pain_mult"] == 0
 
-///In case we want to do something special (like self delete) upon failing to embed in something, return true
+///In case we want to do something special (like self delete) upon failing to embed in something
 /obj/item/proc/failedEmbed()
 	if(item_flags & DROPDEL)
-		QDEL_NULL(src)
-		return TRUE
+		qdel(src)
 
 ///Called by the carbon throw_item() proc. Returns null if the item negates the throw, or a reference to the thing to suffer the throw else.
 /obj/item/proc/on_thrown(mob/living/carbon/user, atom/target)
@@ -1160,7 +1098,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return
 	user.dropItemToGround(src, silent = TRUE)
 	if(throwforce && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='notice'>You set [src] down gently on the ground.</span>")
+		to_chat(user, span_notice("You set [src] down gently on the ground."))
 		return
 	return src
 
@@ -1169,18 +1107,21 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  *
  * Really, this is used mostly with projectiles with shrapnel payloads, from [/datum/element/embed/proc/checkEmbedProjectile], and called on said shrapnel. Mostly acts as an intermediate between different embed elements.
  *
+ * Returns TRUE if it embedded successfully, nothing otherwise
+ *
  * Arguments:
- * * target- Either a body part, a carbon, or a closed turf. What are we hitting?
- * * forced- Do we want this to go through 100%?
+ * * target - Either a body part or a carbon. What are we hitting?
+ * * forced - Do we want this to go through 100%?
  */
-/obj/item/proc/tryEmbed(atom/target, forced=FALSE, silent=FALSE)
+/obj/item/proc/tryEmbed(atom/target, forced = FALSE)
 	if(!isbodypart(target) && !iscarbon(target))
 		return
-	if(!forced && !LAZYLEN(embedding))
-		return
 
-	if(SEND_SIGNAL(src, COMSIG_EMBED_TRY_FORCE, target, forced, silent))
-		return TRUE
+	if(!forced && !LAZYLEN(embedding))
+		return NONE
+
+	if(SEND_SIGNAL(src, COMSIG_EMBED_TRY_FORCE, target = target, forced = forced))
+		return COMPONENT_EMBED_SUCCESS
 	failedEmbed()
 
 ///For when you want to disable an item's embedding capabilities (like transforming weapons and such), this proc will detach any active embed elements from it.
@@ -1204,8 +1145,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		impact_pain_mult = (!isnull(embedding["impact_pain_mult"]) ? embedding["impact_pain_mult"] : EMBEDDED_IMPACT_PAIN_MULTIPLIER),\
 		jostle_chance = (!isnull(embedding["jostle_chance"]) ? embedding["jostle_chance"] : EMBEDDED_JOSTLE_CHANCE),\
 		jostle_pain_mult = (!isnull(embedding["jostle_pain_mult"]) ? embedding["jostle_pain_mult"] : EMBEDDED_JOSTLE_PAIN_MULTIPLIER),\
-		pain_stam_pct = (!isnull(embedding["pain_stam_pct"]) ? embedding["pain_stam_pct"] : EMBEDDED_PAIN_STAM_PCT),\
-		embed_chance_turf_mod = (!isnull(embedding["embed_chance_turf_mod"]) ? embedding["embed_chance_turf_mod"] : EMBED_CHANCE_TURF_MOD))
+		pain_stam_pct = (!isnull(embedding["pain_stam_pct"]) ? embedding["pain_stam_pct"] : EMBEDDED_PAIN_STAM_PCT))
 	return TRUE
 
 // Update icons if this is being carried by a mob
@@ -1310,15 +1250,19 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/on_accidental_consumption(mob/living/carbon/victim, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
 	if(get_sharpness() && force >= 5) //if we've got something sharp with a decent force (ie, not plastic)
 		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, force_scream))
-		victim.visible_message("<span class='warning'>[victim] looks like [victim.p_theyve()] just bit something they shouldn't have!</span>", \
-							"<span class='boldwarning'>OH GOD! Was that a crunch? That didn't feel good at all!!</span>")
+		victim.visible_message(
+			span_warning("[victim] looks like [victim.p_theyve()] just bit something they shouldn't have!"),
+			span_boldwarning("OH GOD! Was that a crunch? That didn't feel good at all!!"),
+		)
 
 		victim.apply_damage(max(15, force), BRUTE, BODY_ZONE_HEAD)
 		victim.losebreath += 2
+
 		if(tryEmbed(victim.get_bodypart(BODY_ZONE_CHEST), forced = TRUE)) //and if it embeds successfully in their chest, cause a lot of pain
-			victim.apply_damage(max(25, force*1.5), BRUTE, BODY_ZONE_CHEST)
+			victim.apply_damage(max(25, force * 1.5), BRUTE, BODY_ZONE_CHEST)
 			victim.losebreath += 6
 			discover_after = FALSE
+
 		if(QDELETED(src)) // in case trying to embed it caused its deletion (say, if it's DROPDEL)
 			return
 		source_item?.reagents?.add_reagent(/datum/reagent/blood, 2)
@@ -1355,8 +1299,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 		victim.adjust_disgust(33)
 		victim.visible_message(
-			"<span class='warning'>[victim] looks like [victim.p_theyve()] just bitten into something hard.</span>", \
-			"<span class='warning'>Eugh! Did I just bite into something?</span>")
+			span_warning("[victim] looks like [victim.p_theyve()] just bitten into something hard."), \
+			span_warning("Eugh! Did I just bite into something?"))
 
 	else if(w_class == WEIGHT_CLASS_TINY) //small items like soap or toys that don't have mat datums
 		/// victim's chest (for cavity implanting the item)
@@ -1364,16 +1308,16 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		if(victim_cavity.cavity_item)
 			victim.vomit(5, FALSE, FALSE, distance = 0)
 			forceMove(drop_location())
-			to_chat(victim, "<span class='warning'>You vomit up a [name]! [source_item? "Was that in \the [source_item]?" : ""]</span>")
+			to_chat(victim, span_warning("You vomit up a [name]! [source_item? "Was that in \the [source_item]?" : ""]"))
 		else
 			victim.transferItemToLoc(src, victim, TRUE)
 			victim.losebreath += 2
 			victim_cavity.cavity_item = src
-			to_chat(victim, "<span class='warning'>You swallow hard. [source_item? "Something small was in \the [source_item]..." : ""]</span>")
+			to_chat(victim, span_warning("You swallow hard. [source_item? "Something small was in \the [source_item]..." : ""]"))
 		discover_after = FALSE
 
 	else
-		to_chat(victim, "<span class='warning'>[source_item? "Something strange was in the \the [source_item]..." : "I just bit something strange..."] </span>")
+		to_chat(victim, span_warning("[source_item? "Something strange was in the \the [source_item]..." : "I just bit something strange..."] "))
 
 	return discover_after
 

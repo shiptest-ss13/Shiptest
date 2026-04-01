@@ -2,7 +2,7 @@
 	name = "shuttle component"
 	desc = "Something for shuttles."
 	density = TRUE
-	obj_integrity = 250
+	atom_integrity = 250
 	max_integrity = 250
 	icon = 'icons/obj/shuttle.dmi'
 	icon_state = "burst_plasma"

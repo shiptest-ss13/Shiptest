@@ -13,7 +13,7 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_VITAL_ORGAN_DECAY
 
-	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/iron = 5)
+	food_reagents = list(/datum/reagent/consumable/nutriment/organ_tissue = 5, /datum/reagent/iron = 5)
 
 	var/alcohol_tolerance = ALCOHOL_RATE//affects how much damage the liver takes from alcohol
 	var/toxTolerance = LIVER_DEFAULT_TOX_TOLERANCE//maximum amount of toxins the liver can just shrug off
@@ -31,10 +31,13 @@
 		if(!(organ_flags & ORGAN_FAILING) && !HAS_TRAIT(C, TRAIT_NOMETABOLISM))//can't process reagents with a failing liver
 
 			var/provide_pain_message = HAS_NO_TOXIN
+			var/obj/belly = C.getorganslot(ORGAN_SLOT_STOMACH)
 			if(filterToxins && !HAS_TRAIT(owner, TRAIT_TOXINLOVER))
 				//handle liver toxin filtration
 				for(var/datum/reagent/toxin/T in C.reagents.reagent_list)
 					var/thisamount = C.reagents.get_reagent_amount(T.type)
+					if(belly)
+						thisamount += belly.reagents.get_reagent_amount(T.type)
 					if (thisamount && thisamount <= toxTolerance)
 						C.reagents.remove_reagent(T.type, 1)
 					else
@@ -46,7 +49,7 @@
 			C.reagents.metabolize(C, can_overdose=TRUE)
 
 			if(provide_pain_message && damage > 10 && prob(damage/3))//the higher the damage the higher the probability
-				to_chat(C, "<span class='warning'>You feel a dull pain in your abdomen.</span>")
+				to_chat(C, span_warning("You feel a dull pain in your abdomen."))
 
 		else	//for when our liver's failing
 			C.liver_failure()

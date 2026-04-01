@@ -23,9 +23,9 @@
 	if(flavor_text && flavor_text != "")
 		var/msg = replacetext(flavor_text, "\n", " ")
 		if(length(msg) <= MAX_SHORTFLAVOR_LEN)
-			return "<span class='notice'>[msg]</span>"
+			return span_notice("[msg]")
 		else
-			return "<span class='notice'>[copytext(msg, 1, MAX_SHORTFLAVOR_LEN)]... <a href=\"byond://?src=[text_ref(src)];flavor_more=1\">More...</span></a>"
+			return "[span_notice("[copytext(msg, 1, MAX_SHORTFLAVOR_LEN)]... <a href=\"byond://?src=[text_ref(src)];flavor_more=1\">More...")]</a>"
 
 /mob/proc/get_top_level_mob()
 	if(istype(src.loc,/mob)&&src.loc!=src)
@@ -52,8 +52,8 @@ SUBTLER
 
 
 /datum/emote/living/subtler/proc/check_invalid(mob/user, input)
-	if(stop_bad_mime.Find(input, 1, 1))
-		to_chat(user, "<span class='danger'>Invalid emote.</span>")
+	if(stop_bypasser.Find(input, 1, 1))
+		to_chat(user, span_danger("Invalid emote."))
 		return TRUE
 	return FALSE
 
@@ -100,6 +100,6 @@ SUBTLER
 	set name = "Subtler"
 	set category = "IC"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 	usr.emote("subtler")

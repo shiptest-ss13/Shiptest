@@ -21,10 +21,10 @@
 /obj/item/mecha_ammo/attack_self(mob/user)
 	..()
 	if(rounds)
-		to_chat(user, "<span class='warning'>You cannot flatten the ammo box until it's empty!</span>")
+		to_chat(user, span_warning("You cannot flatten the ammo box until it's empty!"))
 		return
 
-	to_chat(user, "<span class='notice'>You fold [src] flat.</span>")
+	to_chat(user, span_notice("You fold [src] flat."))
 	var/I = new /obj/item/stack/sheet/metal(user.loc)
 	qdel(src)
 	user.put_in_hands(I)
@@ -54,6 +54,13 @@
 	icon_state = "lmg"
 	rounds = 200
 	ammo_type = "lmg"
+
+/obj/item/mecha_ammo/railgun_ammo
+	name = "Railgun rods"
+	desc = "A box of iron-tungsten rods, designed for the PR-05 exosuit weapon."
+	icon_state = "railgun"
+	rounds = 30
+	ammo_type = "railgun"
 
 /obj/item/mecha_ammo/lmg/tank
 	name = "HMG ammo"

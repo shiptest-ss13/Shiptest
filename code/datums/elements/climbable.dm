@@ -1,4 +1,5 @@
 /datum/element/climbable
+	element_flags = ELEMENT_DETACH
 	///Time it takes to climb onto the object
 	var/climb_time
 	///Stun duration for when you get onto the object
@@ -19,12 +20,12 @@
 	src.climb_stun = climb_stun
 
 	RegisterSignal(target, COMSIG_ATOM_ATTACK_HAND, PROC_REF(attack_hand))
-	RegisterSignal(target, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(target, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
 	RegisterSignal(target, COMSIG_MOUSEDROPPED_ONTO, PROC_REF(mousedrop_receive))
 	ADD_TRAIT(target, TRAIT_CLIMBABLE, type)
 
 /datum/element/climbable/Detach(datum/target)
-	UnregisterSignal(target, list(COMSIG_ATOM_ATTACK_HAND, COMSIG_PARENT_EXAMINE, COMSIG_MOUSEDROPPED_ONTO, COMSIG_ATOM_BUMPED))
+	UnregisterSignal(target, list(COMSIG_ATOM_ATTACK_HAND, COMSIG_ATOM_EXAMINE, COMSIG_MOUSEDROPPED_ONTO, COMSIG_ATOM_BUMPED))
 	REMOVE_TRAIT(target, TRAIT_CLIMBABLE, type)
 	return ..()
 
@@ -69,9 +70,11 @@
 
 	if(HAS_TRAIT(user, TRAIT_HANDS_BLOCKED)) //climbing takes twice as long without help from the hands.
 		adjusted_climb_time *= 2
+	//aliens are terrifyingly fast
 	if(isalien(user))
-		adjusted_climb_time *= 0.25 //aliens are terrifyingly fast
-	if(HAS_TRAIT(user, TRAIT_FREERUNNING)) //do you have any idea how fast I am???
+		adjusted_climb_time *= 0.25
+	//parkour....
+	if(HAS_TRAIT(user, TRAIT_FREERUNNING))
 		adjusted_climb_time *= 0.8
 		adjusted_climb_stun *= 0.8
 	LAZYADDASSOCLIST(current_climbers, climbed_thing, user)

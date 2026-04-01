@@ -68,7 +68,7 @@
 	src.animation_getter = animation_getter
 	src.animation_update_signals = animation_update_signals
 	if(animation_update_signals)
-		RegisterSignal(parent, animation_update_signals, PROC_REF(generate_animation))
+		RegisterSignals(parent, animation_update_signals, PROC_REF(generate_animation))
 
 	if(istype(parent,/obj/item/fish))
 		InitializeFromFish()
@@ -298,7 +298,7 @@
 	remove_from_aquarium()
 
 /datum/component/aquarium_content/proc/remove_from_aquarium()
-	UnregisterSignal(current_aquarium, list(COMSIG_AQUARIUM_SURFACE_CHANGED, COMSIG_AQUARIUM_FLUID_CHANGED, COMSIG_PARENT_ATTACKBY, COMSIG_ATOM_EXITED))
+	UnregisterSignal(current_aquarium, list(COMSIG_AQUARIUM_SURFACE_CHANGED, COMSIG_AQUARIUM_FLUID_CHANGED, COMSIG_ATOM_ATTACKBY, COMSIG_ATOM_EXITED))
 	remove_visual_from_aquarium()
 	current_aquarium = null
 

@@ -1,13 +1,23 @@
 /**
  * # Overmap ships
  *
- * Basically, any overmap object that is capable of moving by itself.
+ * Basically, any overmap object that is capable of moving by itself. //wouldnt it make more sense for this to be named /datum/overmap/movable
  *
  */
 /datum/overmap/ship
 	name = "overmap vessel"
 	char_rep = ">"
 	token_icon_state = "ship"
+
+	///If TRUE stationary_icon_state and moving_icon_state are used instead of an overlay being applied to stationary_icon_state
+	var/legacy_rendering_switch = FALSE
+
+	///the icon state used when we are stationary
+	//var/stationary_icon_state = "ship"
+	var/stationary_icon_state = "ship_generic"
+	///the icon state used when we are moving
+	var/moving_icon_state = "ship_moving"
+
 	///Timer ID of the looping movement timer
 	var/movement_callback_id
 	///Max possible speed (1 tile per tick / 600 tiles per minute)
@@ -27,10 +37,13 @@
 	///ONLY USED FOR NON-SIMULATED SHIPS. The amount per burn that this ship accelerates
 	var/acceleration_speed = 0.02
 
-/datum/overmap/ship/Initialize(position, ...)
+	var/registered_to_docked = FALSE
+
+/datum/overmap/ship/Initialize(position, system_spawned_in, ...)
 	. = ..()
 	if(docked_to)
 		RegisterSignal(docked_to, COMSIG_OVERMAP_MOVED, PROC_REF(on_docked_to_moved))
+		registered_to_docked = TRUE
 
 /datum/overmap/ship/Destroy()
 	if(movement_callback_id)
@@ -39,11 +52,13 @@
 
 /datum/overmap/ship/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	. = ..()
-	// override prevents runtime on controlled ship init due to docking after initializing at a position
-	RegisterSignal(dock_target, COMSIG_OVERMAP_MOVED, PROC_REF(on_docked_to_moved), override = TRUE)
+	if(!registered_to_docked)
+		RegisterSignal(dock_target, COMSIG_OVERMAP_MOVED, PROC_REF(on_docked_to_moved))
+		registered_to_docked = TRUE
 
 /datum/overmap/ship/complete_undock()
 	UnregisterSignal(docked_to, COMSIG_OVERMAP_MOVED)
+	registered_to_docked = FALSE
 	. = ..()
 
 /datum/overmap/ship/Undock(force = FALSE)
@@ -53,6 +68,8 @@
 		adjust_speed(old_dock.speed_x, old_dock.speed_y)
 
 /datum/overmap/ship/proc/on_docked_to_moved()
+	x = docked_to.x
+	y = docked_to.y
 	token.update_screen()
 
 /**
@@ -229,8 +246,56 @@
 		char_rep = "^"
 	else if(direction & SOUTH)
 		char_rep = "v"
-	if(direction)
-		token.icon_state = "ship_moving"
-		token.dir = direction
+	alter_token_appearance()
+
+/datum/overmap/ship/alter_token_appearance()
+	var/direction = get_heading()
+	var/speed = get_speed()
+	if(legacy_rendering_switch)
+		if(direction)
+			token_icon_state = moving_icon_state
+			token.dir = direction
+		else
+			token_icon_state = stationary_icon_state
 	else
-		token.icon_state = "ship"
+		token_icon_state = stationary_icon_state
+		if(direction)
+			token.dir = direction
+
+	var/cloaked = HAS_TRAIT(src, TRAIT_CLOAKED)
+	if(!cloaked)
+		..() // no need to update while invisible
+		token.color = current_overmap.primary_structure_color
+
+	current_overmap.post_edit_token_state(src)
+	if(!legacy_rendering_switch)
+		token.cut_overlays()
+		if(direction)
+			token.add_overlay("dir_moving")
+		else if(!cloaked)
+			token.add_overlay("dir_idle")
+		if(speed)
+			token.add_overlay("speed_[clamp(round(speed,1),0,10)]")
+
+/datum/overmap/ship/activate_cloak()
+	. = ..()
+	animate(token, 0.8 SECONDS, alpha = 0, color = (HAS_TRAIT(src, TRAIT_BLUESPACE_SHIFT) ? COLOR_BLUE : COLOR_RED))
+	addtimer(CALLBACK(src, PROC_REF(after_activate_cloak)), 0.8 SECONDS)
+
+/datum/overmap/ship/proc/after_activate_cloak()
+	if(!HAS_TRAIT(src, TRAIT_CLOAKED))
+		return
+	token.name = "???"
+	token.desc = "There's no identification of what this is. It's possible to get more information with your radar by getting closer."
+	token.icon_state = "unknown"
+
+/datum/overmap/ship/deactivate_cloak()
+	if(!token.alpha)
+		token.color = HAS_TRAIT(src, TRAIT_BLUESPACE_SHIFT) ? COLOR_BLUE : COLOR_RED
+	animate(token, 0.8 SECONDS, alpha = token::alpha, color = current_overmap.primary_structure_color)
+	return ..()
+
+// ensures the camera always moves when the ship moves
+/datum/overmap/ship/overmap_move(new_x, new_y)
+	. = ..()
+	token.update_screen()

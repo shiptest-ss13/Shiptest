@@ -28,7 +28,7 @@
 
 /obj/item/assembly/prox_sensor/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The proximity sensor is [timing ? "arming" : (scanning ? "armed" : "disarmed")].</span>"
+	. += span_notice("The proximity sensor is [timing ? "arming" : (scanning ? "armed" : "disarmed")].")
 
 /obj/item/assembly/prox_sensor/activate()
 	if(!..())
@@ -71,7 +71,7 @@
 	return secured
 
 /obj/item/assembly/prox_sensor/HasProximity(atom/movable/AM as mob|obj)
-	if(istype(AM, /obj/effect/beam) || istype(AM, /obj/projectile) || istype(AM, /obj/effect/projectile))
+	if(istype(AM, /obj/effect) || istype(AM, /obj/projectile))
 		return
 	sense()
 

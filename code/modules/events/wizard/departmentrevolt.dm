@@ -30,7 +30,7 @@
 			jobs_to_revolt = list("Quartermaster", "Cargo Technician", "Shaft Miner")
 			nation_name = pick("Cargo", "Guna", "Suppli", "Mule", "Crate", "Ore", "Mini", "Shaf")
 		if("whatevercolorrepresentstheservicepeople") //the few, the proud, the technically aligned
-			jobs_to_revolt = list("Bartender", "Cook", "Botanist", "Clown", "Mime", "Janitor", "Chaplain")
+			jobs_to_revolt = list("Bartender", "Cook", "Botanist", "Janitor", "Chaplain")
 			nation_name = pick("Honka", "Boozo", "Fatu", "Danka", "Mimi", "Libra", "Jani", "Religi")
 
 	nation_name += pick("stan", "topia", "land", "nia", "ca", "tova", "dor", "ador", "tia", "sia", "ano", "tica", "tide", "cis", "marea", "co", "taoide", "slavia", "stotzka")

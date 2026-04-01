@@ -60,8 +60,13 @@
 
 	if(loot?.len)
 		var/loot_spawned = 0
+		var/attempts = 0
 		var/pixel_divider = FLOOR(16 / spawn_loot_split_pixel_offsets, 1) // 16 pixels offsets is max that should be allowed in any direction
 		while((spawn_loot_count-loot_spawned) && loot.len)
+			attempts++
+			if(attempts > 1000)
+				message_debug("Spawner went over allowed attempts. Breaking while loop to save us all.")
+				CRASH("Spawner went over allowed attempts. Breaking while loop to save us all.")
 			var/lootspawn = pick_weight_recursive(loot)
 			if(!can_spawn(lootspawn))
 				if(remove_if_cant_spawn)
@@ -174,3 +179,18 @@
 	stat_table += spawned_table
 	for(var/item in stat_table)
 		stat_table[item] /= loot_count
+
+/obj/effect/spawner/random/garden
+	name = "garden or nothing spawner"
+	desc = "cloudy with a chance of gardens"
+	icon_state = "seed"
+
+/obj/effect/spawner/random/garden/arid
+	loot = list(
+		/obj/structure/flora/ash/garden/arid
+		)
+
+/obj/effect/spawner/random/garden/arid/fifty/Initialize(mapload)
+	if(prob(50))
+		return ..()
+	return INITIALIZE_HINT_QDEL

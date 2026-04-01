@@ -33,8 +33,8 @@
 
 /obj/machinery/stasis/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to [stasis_enabled ? "turn off" : "turn on"] the machine.</span>"
-	. += "<span class='notice'>\The [src] is [op_computer ? "linked" : "<b>NOT</b> linked"] to a nearby operating computer.</span>"
+	. += span_notice("Alt-click to [stasis_enabled ? "turn off" : "turn on"] the machine.")
+	. += span_notice("\The [src] is [op_computer ? "linked" : "<b>NOT</b> linked"] to a nearby operating computer.")
 
 /obj/machinery/stasis/proc/play_power_sound()
 	var/_running = stasis_running()
@@ -51,9 +51,9 @@
 		stasis_enabled = !stasis_enabled
 		stasis_can_toggle = world.time + STASIS_TOGGLE_COOLDOWN
 		playsound(src, 'sound/machines/click.ogg', 60, TRUE)
-		user.visible_message("<span class='notice'>\The [src] [stasis_enabled ? "powers on" : "shuts down"].</span>", \
-					"<span class='notice'>You [stasis_enabled ? "power on" : "shut down"] \the [src].</span>", \
-					"<span class='hear'>You hear a nearby machine [stasis_enabled ? "power on" : "shut down"].</span>")
+		user.visible_message(span_notice("\The [src] [stasis_enabled ? "powers on" : "shuts down"]."), \
+					span_notice("You [stasis_enabled ? "power on" : "shut down"] \the [src]."), \
+					span_hear("You hear a nearby machine [stasis_enabled ? "power on" : "shut down"]."))
 		play_power_sound()
 		update_appearance()
 
@@ -96,7 +96,7 @@
 		var/easing_direction = _running ? EASE_OUT : EASE_IN
 		animate(mattress_on, alpha = new_alpha, time = 50, easing = CUBIC_EASING|easing_direction)
 
-/obj/machinery/stasis/obj_break(damage_flag)
+/obj/machinery/stasis/atom_break(damage_flag)
 	. = ..()
 	if(.)
 		play_power_sound()
@@ -111,7 +111,7 @@
 	var/freq = rand(24750, 26550)
 	playsound(src, 'sound/effects/spray.ogg', 5, TRUE, 2, frequency = freq)
 	target.apply_status_effect(STATUS_EFFECT_STASIS, STASIS_MACHINE_EFFECT)
-	target.ExtinguishMob()
+	target.extinguish_mob()
 	set_active_power()
 
 /obj/machinery/stasis/proc/thaw_them(mob/living/target)

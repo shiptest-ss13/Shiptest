@@ -83,17 +83,6 @@ GLOBAL_LIST_EMPTY(antagonists)
 	hud.leave_hud(mob_override)
 	set_antag_hud(mob_override, null)
 
-// Handles adding and removing the clumsy mutation from clown antags. Gets called in apply/remove_innate_effects
-/datum/antagonist/proc/handle_clown_mutation(mob/living/mob_override, message, removing = TRUE)
-	var/mob/living/carbon/human/H = mob_override
-	if(H && istype(H) && owner.assigned_role == "Clown")
-		if(removing) // They're a clown becoming an antag, remove clumsy
-			H.dna.remove_mutation(CLOWNMUT)
-			if(!silent && message)
-				to_chat(H, "<span class='boldnotice'>[message]</span>")
-		else
-			H.dna.add_mutation(CLOWNMUT) // We're removing their antag status, add back clumsy
-
 //Assign default team and creates one for one of a kind team antagonists
 /datum/antagonist/proc/create_team(datum/team/team)
 	return
@@ -194,7 +183,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 
 //Displayed at the start of roundend_category section, default to roundend_category header
 /datum/antagonist/proc/roundend_report_header()
-	return 	"<span class='header'>The [roundend_category] were:</span><br>"
+	return 	"[span_header("The [roundend_category] were:")]<br>"
 
 //Displayed at the end of roundend_category section
 /datum/antagonist/proc/roundend_report_footer()

@@ -188,6 +188,7 @@
  */
 /datum/component/transforming/proc/set_inactive(obj/item/source)
 	REMOVE_TRAIT(source, TRAIT_TRANSFORM_ACTIVE, REF(src))
+	active = FALSE
 	if(sharpness_on)
 		source.sharpness = initial(source.sharpness)
 	if(force_on)

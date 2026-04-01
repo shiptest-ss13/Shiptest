@@ -9,7 +9,10 @@
 	stable_population = 3
 	average_size = 30
 	average_weight = 500
-	favorite_bait = list(/obj/item/reagent_containers/food/snacks/bait/worm)
+	favorite_bait = list(/obj/item/food/bait/worm)
+
+/obj/item/fish/goldfish/outpost
+	feeding_frequency = 8 HOURS
 
 /obj/item/fish/angelfish
 	name = "angelfish"
@@ -22,6 +25,9 @@
 	average_weight = 500
 	stable_population = 3
 
+/obj/item/fish/angelfish/outpost
+	feeding_frequency = 8 HOURS
+
 /obj/item/fish/guppy
 	name = "guppy"
 	desc = "Guppy is also known as rainbow fish because of the brightly colored body and fins."
@@ -33,6 +39,9 @@
 	average_size = 30
 	average_weight = 500
 	stable_population = 6
+
+/obj/item/fish/guppy/outpost
+	feeding_frequency = 8 HOURS
 
 /obj/item/fish/plasmatetra
 	name = "plasma tetra"
@@ -159,7 +168,7 @@
 	average_size = 30
 	average_weight = 500
 	stable_population = 3
-	disliked_bait = list(/obj/item/reagent_containers/food/snacks/bait/worm, /obj/item/reagent_containers/food/snacks/bait/doughball)
+	disliked_bait = list(/obj/item/food/bait/worm, /obj/item/food/bait/doughball)
 	fish_ai_type = FISH_AI_ZIPPY
 
 	fishing_difficulty_modifier = 10
@@ -199,7 +208,7 @@
 	icon_state = "dwarf_moonfish"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	stable_population = 2
-	fillet_type = /obj/item/reagent_containers/food/snacks/fishmeat/moonfish
+	fillet_type = /obj/item/food/fishmeat/moonfish
 	average_size = 100
 	average_weight = 2000
 
@@ -211,7 +220,7 @@
 	icon_state = "gunner_jellyfish"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	stable_population = 4
-	fillet_type = /obj/item/reagent_containers/food/snacks/fishmeat/gunner_jellyfish
+	fillet_type = /obj/item/food/fishmeat/gunner_jellyfish
 	fishing_traits = list(/datum/fishing_trait/wary)
 
 	fishing_difficulty_modifier = 5
@@ -233,7 +242,7 @@
 	icon_state = "armorfish"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	stable_population = 10
-	fillet_type = /obj/item/reagent_containers/food/snacks/fishmeat/armorfish
+	fillet_type = /obj/item/food/fishmeat/armorfish
 
 /obj/item/storage/box/fish_debug
 	name = "box full of fish"
@@ -241,17 +250,6 @@
 /obj/item/storage/box/fish_debug/PopulateContents()
 	for(var/fish_type in subtypesof(/obj/item/fish))
 		new fish_type(src)
-
-/obj/item/fish/donkfish
-	name = "donk co. company patent donkfish"
-	desc = "A lab-grown donkfish. Its invention was an accident for the most part, as it was intended to be consumed in donk pockets. Unfortunately, it tastes horrible."
-	icon_state = "donkfish"
-	random_case_rarity = FISH_RARITY_VERY_RARE
-	required_fluid_type = AQUARIUM_FLUID_FRESHWATER
-	stable_population = 4
-	fillet_type = /obj/item/reagent_containers/food/snacks/fishmeat/donkfish
-
-	fishing_difficulty_modifier = 10
 
 /obj/item/fish/emulsijack
 	name = "toxic emulsijack"
@@ -282,7 +280,7 @@
 	random_case_rarity = FISH_RARITY_RARE
 	required_fluid_type = AQUARIUM_FLUID_FRESHWATER
 	stable_population = 10 //set by New, but this is the default config value
-	fillet_type = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie //eww...
+	fillet_type = /obj/item/food/meat/slab
 
 	fish_ai_type = FISH_AI_ZIPPY
 	favorite_bait = list(

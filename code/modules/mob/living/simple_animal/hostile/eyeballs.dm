@@ -25,7 +25,7 @@
 	attack_verb_continuous = "blinks at"
 	attack_verb_simple = "blink at"
 	attack_sound = 'sound/weapons/pierce.ogg'
-	movement_type = FLYING
+	is_flying_animal = TRUE
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1500

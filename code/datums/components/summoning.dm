@@ -68,7 +68,7 @@
 		L.faction = faction
 	RegisterSignal(L, COMSIG_MOB_DEATH, PROC_REF(on_spawned_death)) // so we can remove them from the list, etc (for mobs with corpses)
 	playsound(spawn_location,spawn_sound, 50, TRUE)
-	spawn_location.visible_message("<span class='danger'>[L] [spawn_text].</span>")
+	spawn_location.visible_message(span_danger("[L] [spawn_text]."))
 
 /datum/component/summoning/proc/on_spawned_death(mob/killed, gibbed)
 	SIGNAL_HANDLER

@@ -39,9 +39,8 @@
 	boozepwr = 80
 	quality = DRINK_GOOD
 	overdose_threshold = 60
-	addiction_threshold = 30
 	taste_description = "oily syrup"
-	glass_icon_state = "vimukti_glass"
+	glass_icon_state = "thirteen_loko_glass"
 	glass_name = "glass of Vimukti"
 	glass_desc = "A spiritually-taxing drink from the Shoal. Numerous warnings about this drink tell you to not drink too much, lest you incur some sort of wrath... or an overdose of a psychoactive lichen."
 
@@ -49,13 +48,13 @@
 	M.drowsyness = max(0,M.drowsyness-7)
 	M.AdjustSleeping(-40)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
-	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
-		M.adjust_jitter(5, max = 100)
+	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE) && !isvox(M))
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	return ..()
 
 /datum/reagent/consumable/ethanol/vimukti/overdose_start(mob/living/M)
 	to_chat(M, span_userdanger("Your entire body violently jitters as you start to feel queasy. You really shouldn't have drank all of that [name]!"))
-	M.adjust_jitter(20, max = 500)
+	M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.Stun(15)
 
 /datum/reagent/consumable/ethanol/vimukti/overdose_process(mob/living/M)
@@ -64,7 +63,7 @@
 		if(I)
 			M.dropItemToGround(I)
 			to_chat(M, span_notice("Your hands flinch and you drop what you were holding!"))
-			M.adjust_jitter(10, max = 500)
+			M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 
 	if(prob(7))
 		to_chat(M, span_warning("[pick("You have a really bad headache.", "Your eyes hurt.", "You find it hard to stay still.", "You feel your heart practically beating out of your chest.")]"))
@@ -75,11 +74,11 @@
 			if(istype(eyes))
 				eyes.Remove(M)
 				eyes.forceMove(get_turf(M))
-				to_chat(M, "<span class='userdanger'>You double over in pain as you feel your eyeballs liquify in your head!</span>")
+				to_chat(M, span_userdanger("You double over in pain as you feel your eyeballs liquify in your head!"))
 				M.emote("scream")
 				M.adjustBruteLoss(15)
 		else
-			to_chat(M, "<span class='userdanger'>You scream in terror as you go blind!</span>")
+			to_chat(M, span_userdanger("You scream in terror as you go blind!"))
 			eyes.applyOrganDamage(eyes.maxHealth)
 			M.emote("scream")
 
@@ -89,7 +88,7 @@
 	if(prob(1) && iscarbon(M))
 		var/datum/disease/D = new /datum/disease/heart_failure
 		M.ForceContractDisease(D)
-		to_chat(M, "<span class='userdanger'>You're pretty sure you just felt your heart stop for a second there...</span>")
+		to_chat(M, span_userdanger("You're pretty sure you just felt your heart stop for a second there..."))
 		M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
 
 /datum/reagent/consumable/ethanol/bilk
@@ -282,12 +281,12 @@
 
 /datum/reagent/consumable/ethanol/brave_bull/on_mob_metabolize(mob/living/M)
 	tough_text = pick("brawny", "tenacious", "tough", "hardy", "sturdy") //Tuff stuff
-	to_chat(M, "<span class='notice'>You feel [tough_text]!</span>")
+	to_chat(M, span_notice("You feel [tough_text]!"))
 	M.maxHealth += 10 //Brave Bull makes you sturdier, and thus capable of withstanding a tiny bit more punishment.
 	M.health += 10
 
 /datum/reagent/consumable/ethanol/brave_bull/on_mob_end_metabolize(mob/living/M)
-	to_chat(M, "<span class='notice'>You no longer feel [tough_text].</span>")
+	to_chat(M, span_notice("You no longer feel [tough_text]."))
 	M.maxHealth -= 10
 	M.health = min(M.health - 10, M.maxHealth) //This can indeed crit you if you're alive solely based on alchol ingestion
 
@@ -304,7 +303,7 @@
 	var/obj/effect/light_holder
 
 /datum/reagent/consumable/ethanol/tequila_sunrise/on_mob_metabolize(mob/living/M)
-	to_chat(M, "<span class='notice'>You feel gentle warmth spread through your body!</span>")
+	to_chat(M, span_notice("You feel gentle warmth spread through your body!"))
 	light_holder = new(M)
 	light_holder.set_light(3, 0.7, "#FFCC00") //Tequila Sunrise makes you radiate dim light, like a sunrise!
 
@@ -316,7 +315,7 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/tequila_sunrise/on_mob_end_metabolize(mob/living/M)
-	to_chat(M, "<span class='notice'>The warmth in your body fades.</span>")
+	to_chat(M, span_notice("The warmth in your body fades."))
 	QDEL_NULL(light_holder)
 
 /datum/reagent/consumable/ethanol/toxins_special
@@ -352,13 +351,17 @@
 /datum/reagent/consumable/ethanol/beepsky_smash/on_mob_metabolize(mob/living/carbon/M)
 	if(HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
 		metabolization_rate = 0.8
+	if(!M.mind)
+		return ..()
 	if(!HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM))
 		B = new()
 		M.gain_trauma(B, TRAUMA_RESILIENCE_ABSOLUTE)
 	..()
 
 /datum/reagent/consumable/ethanol/beepsky_smash/on_mob_life(mob/living/carbon/M)
-	M.adjust_jitter(2, max = 100)
+	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	if(!M.mind)
+		return ..()
 	if(HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM))
 		M.adjustStaminaLoss(-10, 0)
 		if(prob(20))
@@ -405,7 +408,7 @@
 		return
 	if(!HAS_TRAIT(badlands_chugs, TRAIT_DWARF))
 		return
-	to_chat(badlands_chugs, "<span class='notice'>Now THAT is MANLY!</span>")
+	to_chat(badlands_chugs, span_notice("Now THAT is MANLY!"))
 	dorf_mode = TRUE
 	if(badlands_chugs.dna?.check_mutation(DORFISM))
 		boozepwr = 120 //lifeblood of dwarves (boozepower = nutrition)
@@ -775,7 +778,7 @@
 	color = "#2E6671" // rgb: 46, 102, 113
 	boozepwr = 90
 	quality = DRINK_GOOD
-	taste_description = "anti-Nanotrasen sentiments"
+	taste_description = "anti-Makosso-Warra sentiments"
 	glass_icon_state = "syndicatebomb"
 	glass_name = "Gorlex Surprise"
 	glass_desc = "Infamously named after the accusations of Syndicate-led bombings of space installations. It's a blast!"
@@ -831,12 +834,6 @@
 	glass_name = "Creamtruck"
 	glass_desc = "A distinctly non-kid friendly equivalent to the ice cream truck."
 
-/datum/reagent/consumable/ethanol/bananahonk/on_mob_life(mob/living/carbon/M)
-	if((ishuman(M) && M.job == "Clown") || ismonkey(M))
-		M.heal_bodypart_damage(1,1)
-		. = 1
-	return ..() || .
-
 /datum/reagent/consumable/ethanol/silencer
 	name = "Choker"
 	description = "It takes a moment of quiet to really appreciate some drinks - this one doesn't give you the illusion of choice."
@@ -848,13 +845,6 @@
 	glass_icon_state = "silencerglass"
 	glass_name = "Choker"
 	glass_desc = "It takes a moment of quiet to really appreciate some drinks - this one doesn't give you the illusion of choice."
-
-/datum/reagent/consumable/ethanol/silencer/on_mob_life(mob/living/carbon/M)
-	if(ishuman(M) && M.mind?.miming)
-		M.silent = max(M.silent, MIMEDRINK_SILENCE_DURATION)
-		M.heal_bodypart_damage(1,1)
-		. = 1
-	return ..() || .
 
 /datum/reagent/consumable/ethanol/drunkenblumpkin
 	name = "Drunken Blumpkin"
@@ -926,7 +916,7 @@
 	M.set_drugginess(50)
 	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
 		M.confused = max(M.confused+2,0)
-		M.Dizzy(10)
+		M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	if (!M.slurring)
 		M.slurring = 1
 	M.slurring += 3
@@ -952,7 +942,7 @@
 	glass_desc = "Like having your brain smashed out by a slice of lemon wrapped around a large gold brick."
 
 /datum/reagent/consumable/ethanol/gargle_blaster/on_mob_life(mob/living/carbon/M)
-	M.dizziness +=1.5
+	M.set_timed_status_effect(3 SECONDS, /datum/status_effect/dizziness, TRUE)
 	switch(current_cycle)
 		if(15 to 45)
 			if(!M.slurring)
@@ -978,19 +968,19 @@
 	metabolization_rate = 1 * REAGENTS_METABOLISM
 	glass_icon_state = "neurotoxinglass"
 	glass_name = "Neurotoxin"
-	glass_desc = "The story goes that this drink was made on a bet between Cybersun chemists, debating if a drink could be used to put down a suspected Nanotrasen spy. While morphine wasn't <i>supposed</i> to be used, it put them down all the same."
+	glass_desc = "The story goes that this drink was made on a bet between Cybersun chemists, debating if a drink could be used to put down a suspected Makosso-Warra spy. While morphine wasn't <i>supposed</i> to be used, it put them down all the same."
 
 /datum/reagent/consumable/ethanol/neurotoxin/proc/pickt()
 	return (pick(TRAIT_PARALYSIS_L_ARM,TRAIT_PARALYSIS_R_ARM,TRAIT_PARALYSIS_R_LEG,TRAIT_PARALYSIS_L_LEG))
 
 /datum/reagent/consumable/ethanol/neurotoxin/on_mob_life(mob/living/carbon/M)
 	M.set_drugginess(50)
-	M.dizziness +=2
+	M.set_timed_status_effect(2 SECONDS, /datum/status_effect/jitter, TRUE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REM, 150)
 	if(prob(20))
 		M.adjustStaminaLoss(10)
 		M.drop_all_held_items()
-		to_chat(M, "<span class='notice'>You can't feel your hands!</span>")
+		to_chat(M, span_notice("You can't feel your hands!"))
 	if(current_cycle > 5)
 		if(prob(20))
 			var/t = pickt()
@@ -1002,7 +992,7 @@
 				if(!M.undergoing_cardiac_arrest() && M.can_heartattack())
 					M.set_heartattack(TRUE)
 					if(M.stat == CONSCIOUS)
-						M.visible_message("<span class='userdanger'>[M] clutches at [M.p_their()] chest as if [M.p_their()] heart stopped!</span>")
+						M.visible_message(span_userdanger("[M] clutches at [M.p_their()] chest as if [M.p_their()] heart stopped!"))
 	. = 1
 	..()
 
@@ -1032,19 +1022,19 @@
 		M.slurring = 1
 	switch(current_cycle)
 		if(1 to 5)
-			M.Dizzy(10)
+			M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(30)
 		if(5 to 20)
-			M.adjust_jitter(20, max = 200)
-			M.Dizzy(20)
+			M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+			M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(45)
 		if (20 to 200)
-			M.adjust_jitter(40, max = 400)
-			M.Dizzy(40)
+			M.set_timed_status_effect(80 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+			M.set_timed_status_effect(80 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(60)
 		if(200 to INFINITY)
-			M.adjust_jitter(60, max = 600)
-			M.Dizzy(60)
+			M.set_timed_status_effect(120 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+			M.set_timed_status_effect(120 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(75)
 			if(prob(30))
 				M.adjustToxLoss(2, 0)
@@ -1074,15 +1064,7 @@
 	taste_description = "an invigorating bitter freshness which suffuses your being; you can take on anyone who messes with your vessel"
 	glass_icon_state = "quadruple_sec"
 	glass_name = "Quadruple Sec"
-	glass_desc = "A glass of Quadruple Sec. Popularized for being a mixed drink of choice across multiple independent security agencies, and notably among Nanotrasen's internal security culture. It's not recommended to drink while manning a vessel, though!"
-
-/datum/reagent/consumable/ethanol/quadruple_sec/on_mob_life(mob/living/carbon/M)
-	//Securidrink in line with the Screwdriver for engineers or Nothing for mimes
-	if(HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM))
-		M.heal_bodypart_damage(1, 1)
-		M.adjustBruteLoss(-2,0)
-		. = 1
-	return ..()
+	glass_desc = "A glass of Quadruple Sec. Popularized for being a mixed drink of choice across multiple independent security agencies, and notably among Vigilitas's security staff. It's not recommended to drink while manning a vessel, though!"
 
 /datum/reagent/consumable/ethanol/quintuple_sec
 	name = "Quintuple Sec"
@@ -1140,9 +1122,9 @@
 		L.adjustToxLoss(-1)
 		L.adjustOxyLoss(-1)
 		L.adjustStaminaLoss(-1)
-	L.visible_message("<span class='warning'>[L] shivers with renewed vigor!</span>", "<span class='notice'>One taste of [lowertext(name)] fills you with energy!</span>")
+	L.visible_message(span_warning("[L] shivers with renewed vigor!"), span_notice("One taste of [lowertext(name)] fills you with energy!"))
 	if(!L.stat && heal_points == 20) //brought us out of softcrit
-		L.visible_message("<span class='danger'>[L] lurches to [L.p_their()] feet!</span>", "<span class='boldnotice'>Up and at 'em, kid.</span>")
+		L.visible_message(span_danger("[L] lurches to [L.p_their()] feet!"), span_boldnotice("Up and at 'em, kid."))
 
 /datum/reagent/consumable/ethanol/bastion_bourbon/on_mob_life(mob/living/L)
 	if(L.health > 0)
@@ -1247,7 +1229,7 @@
 		for(var/obj/item/shield/theshield in thehuman.contents)
 			mighty_shield = theshield
 			mighty_shield.block_chance += 10
-			to_chat(thehuman, "<span class='notice'>[theshield] appears polished, although you don't recall polishing it.</span>")
+			to_chat(thehuman, span_notice("[theshield] appears polished, although you don't recall polishing it."))
 			return TRUE
 
 /datum/reagent/consumable/ethanol/alexander/on_mob_life(mob/living/L)
@@ -1258,7 +1240,7 @@
 /datum/reagent/consumable/ethanol/alexander/on_mob_end_metabolize(mob/living/L)
 	if(mighty_shield)
 		mighty_shield.block_chance -= 10
-		to_chat(L,"<span class='notice'>You notice [mighty_shield] looks worn again. Weird.</span>")
+		to_chat(L,span_notice("You notice [mighty_shield] looks worn again. Weird."))
 	..()
 
 /datum/reagent/consumable/ethanol/amaretto_alexander
@@ -1423,13 +1405,6 @@
 	glass_name = "glass of blank paper"
 	glass_desc = "A fizzy cocktail for those looking to start fresh."
 
-/datum/reagent/consumable/ethanol/blank_paper/on_mob_life(mob/living/carbon/M)
-	if(ishuman(M) && M.mind?.miming)
-		M.silent = max(M.silent, MIMEDRINK_SILENCE_DURATION)
-		M.heal_bodypart_damage(1,1)
-		. = 1
-	return ..()
-
 /datum/reagent/consumable/ethanol/wizz_fizz
 	name = "Wizz Fizz"
 	description = "A magical potion, fizzy and wild! However the taste, you will find, is quite mild."
@@ -1484,8 +1459,8 @@
 
 /datum/reagent/consumable/ethanol/turbo/on_mob_life(mob/living/carbon/M)
 	if(prob(4))
-		to_chat(M, "<span class='notice'>[pick("You feel disregard for the rule of law.", "You feel pumped!", "Your head is pounding.", "Your thoughts are racing...")]</span>")
-	M.adjustStaminaLoss(-M.drunkenness * 0.25)
+		to_chat(M, span_notice("[pick("You feel disregard for the rule of law.", "You feel pumped!", "Your head is pounding.", "Your thoughts are racing...")]"))
+	M.adjustStaminaLoss(-M.get_drunk_amount() * 0.25)
 	return ..()
 
 /datum/reagent/consumable/ethanol/old_timer
@@ -1544,7 +1519,7 @@
 	var/stored_teleports = 0
 
 /datum/reagent/consumable/ethanol/blazaam/on_mob_life(mob/living/carbon/M)
-	if(M.drunkenness > 40)
+	if(M.get_drunk_amount() > 40)
 		if(stored_teleports)
 			do_teleport(M, get_turf(M), rand(1,3), channel = TELEPORT_CHANNEL_WORMHOLE)
 			stored_teleports--
@@ -1643,12 +1618,12 @@
 	taste_description = "thick, nut-flavored milk with a boozy kick"
 	glass_icon_state = "muddersmilk"
 	glass_name = "Miner's Milk"
-	glass_desc = "All the protein, vitamins and carbs of two full ration packs, plus 15% alcohol. Created by Nanotrasen's Mining and Exploration League, and often still enjoyed in the New Gorlex Republic."
+	glass_desc = "All the protein, vitamins and carbs of two full ration packs, plus 15% alcohol. Created by N+S's mining and survey corps, and often still enjoyed in the New Gorlex Republic."
 
 /datum/reagent/consumable/ethanol/mudders_milk/on_mob_life(mob/living/carbon/M)
 	if(prob(1))
 		var/drink_message = pick("You feel rugged.", "You feel strong.", "You feel nourished.")
-		to_chat(M, "<span class='notice'>[drink_message]</span>")
+		to_chat(M, span_notice("[drink_message]"))
 	if(prob(15))
 		holder.add_reagent(/datum/reagent/consumable/nutriment, 1)
 	M.AdjustStun(-0.5)
@@ -1672,20 +1647,20 @@
 /datum/reagent/consumable/ethanol/spriters_bane/on_mob_life(mob/living/carbon/C)
 	switch(current_cycle)
 		if(5 to 40)
-			C.adjust_jitter(3, max = 200)
+			C.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 			if(prob(10) && !C.eye_blurry)
 				C.blur_eyes(6)
-				to_chat(C, "<span class='warning'>That outline is so distracting, it's hard to look at anything else!</span>")
+				to_chat(C, span_warning("That outline is so distracting, it's hard to look at anything else!"))
 		if(40 to 100)
-			C.Dizzy(10)
+			C.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			if(prob(15))
 				new /datum/hallucination/hudscrew(C)
 		if(100 to INFINITY)
 			if(prob(10) && !C.eye_blind)
 				C.blind_eyes(6)
-				to_chat(C, "<span class='userdanger'>Your vision fades as your eyes are outlined in black!</span>")
+				to_chat(C, span_userdanger("Your vision fades as your eyes are outlined in black!"))
 			else
-				C.Dizzy(20)
+				C.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/ethanol/spriters_bane/expose_atom(atom/A, volume)
@@ -1740,7 +1715,7 @@
 	var/obj/effect/light_holder
 
 /datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_metabolize(mob/living/M)
-	to_chat(M, "<span class='notice'>You feel endless night enveloping you!</span>")
+	to_chat(M, span_notice("You feel endless night enveloping you!"))
 	light_holder = new(M)
 	light_holder.set_light(3, 0.7, "#8000ff")
 
@@ -1752,7 +1727,7 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_end_metabolize(mob/living/M)
-	to_chat(M, "<span class='notice'>The darkness subsides.</span>")
+	to_chat(M, span_notice("The darkness subsides."))
 	QDEL_NULL(light_holder)
 
 /datum/reagent/consumable/ethanol/out_of_lime
@@ -1767,7 +1742,7 @@
 	glass_desc = "A spin on the classic. Artists and street fighters swear by this stuff."
 
 /datum/reagent/consumable/ethanol/out_of_lime/expose_mob(mob/living/carbon/human/consumer, method=INGEST, reac_volume)
-	if(method == INGEST || method == TOUCH || method == SMOKE)
+	if(method == INGEST || method == TOUCH || method == INHALE)
 		if(istype(consumer))
 			consumer.hair_color = pick("0ad","a0f","f73","d14","0b5","fc2","084","05e","d22","fa0")
 			consumer.facial_hair_color = pick("0ad","a0f","f73","d14","0b5","fc2","084","05e","d22","fa0")
@@ -1799,7 +1774,7 @@
 /datum/reagent/consumable/ethanol/bullethell/on_mob_life(mob/living/carbon/M) //rarely sets you on fire
 	if (prob(5))
 		M.adjust_fire_stacks(1)
-		M.IgniteMob()
+		M.ignite_mob()
 	..()
 
 /datum/reagent/consumable/ethanol/homesick
@@ -1815,26 +1790,28 @@
 
 /datum/reagent/consumable/ethanol/homesick/on_mob_metabolize(mob/living/M)
 	var/drink_message = pick("You think of what you've left behind...", "You think of the people who miss you...", "You think of where you're from...")
-	to_chat(M, "<span class='notice'>[drink_message]</span>")
+	to_chat(M, span_notice("[drink_message]"))
 
-/datum/reagent/consumable/ethanol/eudamonia
-	name = "Eudamonia"
+/datum/reagent/consumable/ethanol/eudaimonia
+	name = "Eudaimonia"
 	description = "A fleeting, virtous drink that inspires vigorous debate."
 	color = "#6884a1"
 	boozepwr = 40
 	quality = DRINK_VERYGOOD
 	overdose_threshold = 40
 	taste_description = "a flourishing alcoholic bloom"
-	glass_name = "Eudamonia"
+	glass_name = "Eudaimonia"
 	glass_desc = "A drink popular in academic circles, supposedly made with a distilled virtue. Most published recipes insist to use an antidepressant."
 
-/datum/reagent/consumable/ethanol/eudamonia/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/eudaimonia/on_mob_life(mob/living/carbon/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	if(!mood)
+		return ..()
 	if(mood.sanity <= SANITY_NEUTRAL)
 		mood.setSanity(min(mood.sanity+5, SANITY_GREAT))
 	..()
 
-/datum/reagent/consumable/ethanol/eudamonia/overdose_process(mob/living/M)
+/datum/reagent/consumable/ethanol/eudaimonia/overdose_process(mob/living/M)
 	//don't mix uppers and downers, kids.
 	if(prob(6) && iscarbon(M))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4*REM)

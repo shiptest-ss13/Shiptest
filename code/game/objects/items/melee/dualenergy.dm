@@ -14,6 +14,8 @@
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
+	wound_bonus = -10
+	bare_wound_bonus = 20
 	var/active_w_class = WEIGHT_CLASS_BULKY
 	var/two_hand_force = 34
 	var/sword_color = "green"
@@ -53,7 +55,7 @@
 /obj/item/melee/duelenergy/proc/on_wield(obj/item/source, mob/living/carbon/user)
 	SIGNAL_HANDLER
 
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	w_class = active_w_class
 	hitsound = 'sound/weapons/blade1.ogg'
 	START_PROCESSING(SSobj, src)
@@ -75,11 +77,11 @@
 	if(W.tool_behaviour == TOOL_MULTITOOL)
 		if(!hacked)
 			hacked = TRUE
-			to_chat(user, "<span class='warning'>[hack_flavor_text]</span>")
+			to_chat(user, span_warning("[hack_flavor_text]"))
 			sword_color = "rainbow"
 			update_appearance()
 		else
-			to_chat(user, "<span class='warning'>It's starting to look like a triple rainbow - no, nevermind.</span>")
+			to_chat(user, span_warning("It's starting to look like a triple rainbow - no, nevermind."))
 	else
 		return ..()
 
@@ -119,12 +121,12 @@
 		var/mob/living/carbon/C = user
 		if(C.wear_mask)
 			in_mouth = ", barely missing [user.p_their()] nose"
-	. = "<span class='warning'>[user] swings [user.p_their()] [name][in_mouth]. [user.p_they(TRUE)] light[user.p_s()] [user.p_their()] [A.name] in the process.</span>"
+	. = span_warning("[user] swings [user.p_their()] [name][in_mouth]. [user.p_they(TRUE)] light[user.p_s()] [user.p_their()] [A.name] in the process.")
 	playsound(loc, hitsound, get_clamped_volume(), TRUE, -1)
 	add_fingerprint(user)
 
 /obj/item/melee/duelenergy/proc/impale(mob/living/user)
-	to_chat(user, "<span class='warning'>You [impale_flavor_text] around a bit before losing your balance and impaling yourself on [src].</span>")
+	to_chat(user, span_warning("You [impale_flavor_text] around a bit before losing your balance and impaling yourself on [src]."))
 	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		user.take_bodypart_damage(20,25,check_armor = TRUE)
 	else

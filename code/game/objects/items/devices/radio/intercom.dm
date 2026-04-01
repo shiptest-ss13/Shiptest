@@ -9,6 +9,7 @@
 	canhear_range = 2
 	dog_fashion = null
 	unscrewed = FALSE
+	var/mode_token = MODE_TOKEN_INTERCOM
 	var/obj/item/wallframe/wallframe = /obj/item/wallframe/intercom
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
@@ -24,14 +25,15 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	if(!current_area)
 		return
 	RegisterSignal(current_area, COMSIG_AREA_POWER_CHANGE, PROC_REF(AreaPowerCheck))
+	ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
 
 /obj/item/radio/intercom/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Use [MODE_TOKEN_INTERCOM] when nearby to speak into it.</span>"
+	. += span_notice("Use [mode_token] when nearby to speak into it.")
 	if(!unscrewed)
-		. += "<span class='notice'>It's <b>screwed</b> and secured to the wall.</span>"
+		. += span_notice("It's <b>screwed</b> and secured to the wall.")
 	else
-		. += "<span class='notice'>It's <i>unscrewed</i> from the wall, and can be <b>detached</b>.</span>"
+		. += span_notice("It's <i>unscrewed</i> from the wall, and can be <b>detached</b>.")
 
 /obj/item/radio/intercom/wideband/examine_more(mob/user)
 	. = ..()
@@ -40,24 +42,24 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 /obj/item/radio/intercom/attackby(obj/item/I, mob/living/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(unscrewed)
-			user.visible_message("<span class='notice'>[user] starts tightening [src]'s screws...</span>", "<span class='notice'>You start screwing in [src]...</span>")
+			user.visible_message(span_notice("[user] starts tightening [src]'s screws..."), span_notice("You start screwing in [src]..."))
 			if(I.use_tool(src, user, 30, volume=50))
-				user.visible_message("<span class='notice'>[user] tightens [src]'s screws!</span>", "<span class='notice'>You tighten [src]'s screws.</span>")
+				user.visible_message(span_notice("[user] tightens [src]'s screws!"), span_notice("You tighten [src]'s screws."))
 				unscrewed = FALSE
 		else
-			user.visible_message("<span class='notice'>[user] starts loosening [src]'s screws...</span>", "<span class='notice'>You start unscrewing [src]...</span>")
+			user.visible_message(span_notice("[user] starts loosening [src]'s screws..."), span_notice("You start unscrewing [src]..."))
 			if(I.use_tool(src, user, 40, volume=50))
-				user.visible_message("<span class='notice'>[user] loosens [src]'s screws!</span>", "<span class='notice'>You unscrew [src], loosening it from the wall.</span>")
+				user.visible_message(span_notice("[user] loosens [src]'s screws!"), span_notice("You unscrew [src], loosening it from the wall."))
 				unscrewed = TRUE
 		return
 	else if(I.tool_behaviour == TOOL_WRENCH)
 		if(!unscrewed)
-			to_chat(user, "<span class='warning'>You need to unscrew [src] from the wall first!</span>")
+			to_chat(user, span_warning("You need to unscrew [src] from the wall first!"))
 			return
-		user.visible_message("<span class='notice'>[user] starts unsecuring [src]...</span>", "<span class='notice'>You start unsecuring [src]...</span>")
+		user.visible_message(span_notice("[user] starts unsecuring [src]..."), span_notice("You start unsecuring [src]..."))
 		I.play_tool_sound(src)
 		if(I.use_tool(src, user, 80))
-			user.visible_message("<span class='notice'>[user] unsecures [src]!</span>", "<span class='notice'>You detach [src] from the wall.</span>")
+			user.visible_message(span_notice("[user] unsecures [src]!"), span_notice("You detach [src] from the wall."))
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			new wallframe(get_turf(src))
 			qdel(src)
@@ -165,7 +167,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 //wideband radio
 /obj/item/radio/intercom/wideband
 	name = "wideband relay"
-	desc = "A low-gain reciever capable of sending and recieving wideband subspace messages."
+	desc = "A low-gain receiver capable of sending and receiving wideband subspace messages."
 	icon_state = "intercom-wideband"
 	canhear_range = 3
 	keyslot = new /obj/item/encryptionkey/wideband
@@ -174,6 +176,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	freqlock = TRUE
 	freerange = TRUE
 	log = TRUE
+	mode_token = MODE_TOKEN_WIDEBAND
 	wallframe = /obj/item/wallframe/intercom/wideband
 
 /obj/item/radio/intercom/wideband/Initialize(mapload, ndir, building)

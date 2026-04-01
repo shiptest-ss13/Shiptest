@@ -8,7 +8,7 @@
 	icon_gib = "syndicate_gib"
 	gender = FEMALE
 	speed = 0
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 4,
+	butcher_results = list(/obj/item/food/meat/slab/xeno = 4,
 							/obj/item/stack/sheet/animalhide/xeno = 1)
 	maxHealth = 125
 	health = 125
@@ -88,7 +88,7 @@
 	retreat_distance = 5
 	minimum_distance = 5
 	move_to_delay = 4
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 4,
+	butcher_results = list(/obj/item/food/meat/slab/xeno = 4,
 							/obj/item/stack/sheet/animalhide/xeno = 1)
 	projectiletype = /obj/projectile/neurotox
 	projectilesound = 'sound/weapons/pierce.ogg'
@@ -117,7 +117,7 @@
 		return
 	if(locate(/obj/structure/alien/weeds/node) in get_turf(src))
 		return
-	visible_message("<span class='alertalien'>[src] plants some alien weeds!</span>")
+	visible_message(span_alertalien("[src] plants some alien weeds!"))
 	new /obj/structure/alien/weeds/node(loc)
 
 /mob/living/simple_animal/hostile/alien/proc/LayEggs()
@@ -125,7 +125,7 @@
 		return
 	if(locate(/obj/structure/alien/egg) in get_turf(src))
 		return
-	visible_message("<span class='alertalien'>[src] lays an egg!</span>")
+	visible_message(span_alertalien("[src] lays an egg!"))
 	new /obj/structure/alien/egg(loc)
 
 /mob/living/simple_animal/hostile/alien/queen/large
@@ -139,7 +139,7 @@
 	move_to_delay = 4
 	maxHealth = 400
 	health = 400
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 10,
+	butcher_results = list(/obj/item/food/meat/slab/xeno = 10,
 							/obj/item/stack/sheet/animalhide/xeno = 2)
 	mob_size = MOB_SIZE_LARGE
 
@@ -179,7 +179,7 @@
 	if(ismovable(target))
 		target.wash(CLEAN_WASH)
 		if(istype(target, /obj/effect/decal/cleanable))
-			visible_message("<span class='notice'>[src] cleans up \the [target].</span>")
+			visible_message(span_notice("[src] cleans up \the [target]."))
 		else
-			visible_message("<span class='notice'>[src] polishes \the [target].</span>")
+			visible_message(span_notice("[src] polishes \the [target]."))
 		return TRUE

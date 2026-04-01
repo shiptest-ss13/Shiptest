@@ -19,8 +19,7 @@
 	melee_damage_upper = 30
 	pixel_x = -16
 	base_pixel_x = -16
-	pixel_y = -14
-	base_pixel_y = -14
+	pixel_z = -14
 	minimum_distance = 3
 	move_to_delay = 20
 	vision_range = 9
@@ -70,7 +69,7 @@
 	duration = 30
 	status_type = STATUS_EFFECT_MULTIPLE
 	alert_type = null
-	tick_interval = 1
+	tick_interval = 2
 	var/atom/movable/screen/seedling/seedling_screen_object
 	var/atom/target
 
@@ -161,9 +160,8 @@
 			final.Scale(1,32)
 			final.Translate(0,512)
 			K.transform = final
-			living_target.adjustFireLoss(30)
-			living_target.adjust_fire_stacks(0.2)//Just here for the showmanship
-			living_target.IgniteMob()
+			living_target.adjustFireLoss(15)
+
 			playsound(living_target,'sound/weapons/sear.ogg', 50, TRUE)
 			addtimer(CALLBACK(src, PROC_REF(AttackRecovery)), 5)
 			return
@@ -235,6 +233,9 @@
 	if(combatant_state == SEEDLING_STATE_WARMUP || combatant_state == SEEDLING_STATE_ACTIVE)
 		return
 	return ..()
+
+/mob/living/simple_animal/hostile/jungle/seedling/mining
+	faction = list("mining")
 
 #undef SEEDLING_STATE_NEUTRAL
 #undef SEEDLING_STATE_WARMUP

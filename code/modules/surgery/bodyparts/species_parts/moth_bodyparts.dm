@@ -3,6 +3,7 @@
 	limb_id = SPECIES_MOTH
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
+	draw_eyes = FALSE
 
 /obj/item/bodypart/chest/moth
 	static_icon = 'icons/mob/species/moth/bodyparts.dmi'

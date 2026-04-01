@@ -6,7 +6,7 @@
 	clothes_req = FALSE
 	invocation = "STI KALY"
 	invocation_type = INVOCATION_WHISPER
-	message = "<span class='notice'>Your eyes cry out in pain!</span>"
+	message = span_notice("Your eyes cry out in pain!")
 	cooldown_min = 50 //12 deciseconds reduction per rank
 	starting_spells = list("/obj/effect/proc_holder/spell/targeted/inflict_handler/blind", "/obj/effect/proc_holder/spell/targeted/genetic/blind")
 	ranged_mousepointer = 'icons/effects/mouse_pointers/blind_target.dmi'
@@ -30,6 +30,6 @@
 		return FALSE
 	if(!isliving(target))
 		if(!silent)
-			to_chat(user, "<span class='warning'>You can only blind living beings!</span>")
+			to_chat(user, span_warning("You can only blind living beings!"))
 		return FALSE
 	return TRUE

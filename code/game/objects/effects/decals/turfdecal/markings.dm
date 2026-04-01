@@ -126,6 +126,15 @@
 /obj/effect/turf_decal/siding/brown/end
 	icon_state = "siding_end"
 
+/obj/effect/turf_decal/siding/black
+	color = "#474747"
+
+/obj/effect/turf_decal/siding/black/corner
+	icon_state = "siding_corner"
+
+/obj/effect/turf_decal/siding/black/end
+	icon_state = "siding_end"
+
 /obj/effect/turf_decal/siding/wood
 	icon_state = "siding_wood_line"
 	color = "#55391A"
@@ -430,6 +439,10 @@
 
 /obj/effect/turf_decal/number/left_zero
 	icon_state = "0-"
+
+/obj/effect/turf_decal/dash
+	icon_state = "dash"
+
 
 
 /obj/effect/turf_decal/dept/hop

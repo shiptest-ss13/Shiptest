@@ -44,7 +44,7 @@
 	emagged = 2
 	remote_disabled = 1
 	locked = TRUE
-	faction = list("mining", "silicon" , "turret")
+	faction = list("mining", "silicon" , FACTION_TURRET)
 	extinguish_fires = FALSE
 	extinguish_people = TRUE
 
@@ -129,15 +129,15 @@
 	dat += hack(user)
 	dat += showpai(user)
 	dat += "<TT><B>Mobile Fire Extinguisher v1.0</B></TT><BR><BR>"
-	dat += "Status: <A href='?src=[REF(src)];power=1'>[on ? "On" : "Off"]</A><BR>"
+	dat += "Status: <A href='byond://?src=[REF(src)];power=1'>[on ? "On" : "Off"]</A><BR>"
 	dat += "Maintenance panel panel is [open ? "opened" : "closed"]<BR>"
 
 	dat += "Behaviour controls are [locked ? "locked" : "unlocked"]<BR>"
 	if(!locked || issilicon(user) || isAdminGhostAI(user))
-		dat += "Extinguish Fires: <A href='?src=[REF(src)];operation=extinguish_fires'>[extinguish_fires ? "Yes" : "No"]</A><BR>"
-		dat += "Extinguish People: <A href='?src=[REF(src)];operation=extinguish_people'>[extinguish_people ? "Yes" : "No"]</A><BR>"
-		dat += "Patrol Station: <A href='?src=[REF(src)];operation=patrol'>[auto_patrol ? "Yes" : "No"]</A><BR>"
-		dat += "Stationary Mode: <a href='?src=[REF(src)];operation=stationary_mode'>[stationary_mode ? "Yes" : "No"]</a><br>"
+		dat += "Extinguish Fires: <A href='byond://?src=[REF(src)];operation=extinguish_fires'>[extinguish_fires ? "Yes" : "No"]</A><BR>"
+		dat += "Extinguish People: <A href='byond://?src=[REF(src)];operation=extinguish_people'>[extinguish_people ? "Yes" : "No"]</A><BR>"
+		dat += "Patrol Station: <A href='byond://?src=[REF(src)];operation=patrol'>[auto_patrol ? "Yes" : "No"]</A><BR>"
+		dat += "Stationary Mode: <a href='byond://?src=[REF(src)];operation=stationary_mode'>[stationary_mode ? "Yes" : "No"]</a><br>"
 
 	return dat
 
@@ -145,8 +145,8 @@
 	..()
 	if(emagged == 2)
 		if(user)
-			to_chat(user, "<span class='danger'>[src] buzzes and beeps.</span>")
-		audible_message("<span class='danger'>[src] buzzes oddly!</span>")
+			to_chat(user, span_danger("[src] buzzes and beeps."))
+		audible_message(span_danger("[src] buzzes oddly!"))
 		playsound(src, "sparks", 75, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		if(user)
 			old_target_fire_ref = WEAKREF(user)
@@ -329,7 +329,7 @@
 
 /mob/living/simple_animal/bot/firebot/explode()
 	on = FALSE
-	visible_message("<span class='boldannounce'>[src] blows apart!</span>")
+	visible_message(span_boldannounce("[src] blows apart!"))
 
 	var/atom/Tsec = drop_location()
 
@@ -354,4 +354,3 @@
 #undef SPEECH_INTERVAL
 #undef DETECTED_VOICE_INTERVAL
 #undef FOAM_INTERVAL
-

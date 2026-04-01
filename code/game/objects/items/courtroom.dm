@@ -1,9 +1,9 @@
 // Contains:
-// Gavel Hammer
-// Gavel Block
+// Gavel
+// Sound Block
 
 /obj/item/gavelhammer
-	name = "gavel hammer"
+	name = "gavel"
 	desc = "Order, order! No bombs in my courthouse."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "gavelhammer"
@@ -14,8 +14,8 @@
 	resistance_flags = FLAMMABLE
 
 /obj/item/gavelblock
-	name = "gavel block"
-	desc = "Smack it with a gavel hammer when the assistants get rowdy."
+	name = "sound block"
+	desc = "Smack it with a gavel when the assistants get rowdy."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "gavelblock"
 	force = 2
@@ -26,7 +26,7 @@
 /obj/item/gavelblock/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/gavelhammer))
 		playsound(loc, 'sound/items/gavel.ogg', 100, TRUE)
-		user.visible_message("<span class='warning'>[user] strikes [src] with [I].</span>")
+		user.visible_message(span_warning("[user] strikes [src] with [I]."))
 		user.changeNext_move(CLICK_CD_MELEE)
 	else
 		return ..()

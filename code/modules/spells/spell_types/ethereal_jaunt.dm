@@ -27,7 +27,7 @@
 	var/turf/mobloc = get_turf(target)
 	var/obj/effect/dummy/phased_mob/spell_jaunt/holder = new /obj/effect/dummy/phased_mob/spell_jaunt(mobloc)
 	new jaunt_out_type(mobloc, target.dir)
-	target.ExtinguishMob()
+	target.extinguish_mob()
 	target.forceMove(holder)
 	target.reset_perspective(holder)
 	target.notransform=0 //mob is safely inside holder now, no need for protection.
@@ -89,10 +89,10 @@
 	movedelay = world.time + movespeed
 
 	if(newLoc.flags_1 & NOJAUNT_1)
-		to_chat(user, "<span class='warning'>Some strange aura is blocking the way.</span>")
+		to_chat(user, span_warning("Some strange aura is blocking the way."))
 		return
 	if (locate(/obj/effect/blessing, newLoc))
-		to_chat(user, "<span class='warning'>Holy energies block your path!</span>")
+		to_chat(user, span_warning("Holy energies block your path!"))
 		return
 
 	forceMove(newLoc)

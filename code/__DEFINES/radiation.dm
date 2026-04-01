@@ -24,7 +24,7 @@ Ask ninjanomnom if they're around
 
 #define RAD_MOB_SAFE 500 // How much stored radiation in a mob with no ill effects
 
-#define RAD_MOB_HAIRLOSS 800 // How much stored radiation to check for hair loss
+#define RAD_MOB_SICKNESS 800 // How much stored radiation to check for hair loss
 
 #define RAD_MOB_MUTATE 1250 // How much stored radiation to check for mutation
 

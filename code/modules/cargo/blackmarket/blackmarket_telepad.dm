@@ -8,7 +8,7 @@
 
 /obj/machinery/ltsrbt
 	name = "Long-To-Short-Range-Bluespace-Transciever"
-	desc = "The LTSRBT is a compact teleportation machine for recieving and sending items across extreme distances and through reasonable interference.\nUsing teleportation frequencies stolen from NT it is near undetectable.\nEssential for any illegal market operations or off-the-book frontier settlements.\n"
+	desc = "The LTSRBT is a compact teleportation machine for recieving and sending items across extreme distances and through reasonable interference.\nUsing teleportation frequencies stolen from Makosso-Warra it is near undetectable.\nEssential for any illegal market operations or off-the-book frontier settlements.\n"
 	icon_state = "exonet_node"
 	circuit = /obj/item/circuitboard/machine/ltsrbt
 	density = TRUE
@@ -61,7 +61,7 @@
 	if(istype(O, /obj/item/blackmarket_uplink))
 		var/obj/item/blackmarket_uplink/uplink = O
 		uplink.target = src
-		to_chat(user, "<span class='notice'>[src] linked to [O].</span>")
+		to_chat(user, span_notice("[src] linked to [O]."))
 		return TRUE
 
 	return ..()

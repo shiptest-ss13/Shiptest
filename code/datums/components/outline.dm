@@ -7,8 +7,8 @@
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
 	src.permanent = perm
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(OnExamine))
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(OnAttackBy))
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACKBY, PROC_REF(OnAttackBy))
 	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(OnClean))
 
 	var/atom/movable/A = parent
@@ -28,8 +28,8 @@
 	else
 		permanent = perm
 
-/datum/component/outline/proc/OnExamine(datum/source, mob/user, atom/thing)
-	to_chat(user, "<span class='warning'>That outline is hideous!</span>")
+/datum/component/outline/proc/on_examine(datum/source, mob/user, atom/thing)
+	to_chat(user, span_warning("That outline is hideous!"))
 
 /datum/component/outline/proc/OnAttackBy(datum/source, obj/item/I, mob/user, params)
 	if(!istype(I, /obj/item/soap))
@@ -37,7 +37,7 @@
 
 	var/obj/item/soap/S = I
 	var/clean_speedies = S.cleanspeed * min(user.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER)+0.1,1)
-	user.visible_message("<span class='notice'>[user] begins to scrub off the outlines surrounding [parent] with [S].</span>", "<span class='warning'>You begin to scrub out the outlines surrounding [parent] with [S]...</span>")
+	user.visible_message(span_notice("[user] begins to scrub off the outlines surrounding [parent] with [S]."), span_warning("You begin to scrub out the outlines surrounding [parent] with [S]..."))
 	if(do_after(user, clean_speedies, target = parent))
 		user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
 		S.decreaseUses(user)

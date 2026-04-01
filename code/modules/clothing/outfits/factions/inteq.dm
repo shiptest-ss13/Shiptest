@@ -1,8 +1,10 @@
 /datum/outfit/job/inteq
 	name = "IRMG - Base Outfit"
+	faction = FACTION_PLAYER_INTEQ
 	faction_icon = "bg_inteq"
 
 	uniform = /obj/item/clothing/under/syndicate/inteq
+	alt_uniform = /obj/item/clothing/under/syndicate/inteq/sneaksuit
 	box = /obj/item/storage/box/survival/inteq
 
 	backpack = /obj/item/storage/backpack
@@ -10,17 +12,11 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 
-/datum/outfit/job/inteq/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(visualsOnly)
-		return
-	H.faction |= list(FACTION_PLAYER_INTEQ)
-
 ///assistants
 
 /datum/outfit/job/inteq/assistant
-	name = "IRMG - Recruit"
-	id_assignment = "Recruit"
+	name = "IRMG - Auxiliary"
+	id_assignment = "Auxiliary"
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
@@ -40,11 +36,13 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	mask = /obj/item/clothing/mask/balaclava/inteq
 	suit = /obj/item/clothing/suit/armor/hos/inteq
+	uniform = /obj/item/clothing/under/syndicate/inteq/honorable
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	belt = /obj/item/storage/belt/security/webbing/inteq
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/inteq/alt/captain
 	shoes = /obj/item/clothing/shoes/combat
+	box = /obj/item/storage/box/survival/inteq/command
 
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
@@ -77,6 +75,10 @@
 	ears = /obj/item/radio/headset/inteq/alt/captain
 	belt = /obj/item/storage/belt/military/assault
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/m20_auto_elite/inteq
+	l_pocket = /obj/item/ammo_box/magazine/m20_auto_elite
+	r_pocket = /obj/item/ammo_box/magazine/m20_auto_elite
 
 ///Chief Engineer
 
@@ -117,7 +119,7 @@
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	ears = /obj/item/radio/headset/headset_medsec/alt
 
-	suit_store = /obj/item/flashlight/pen
+	suit_store = /obj/item/flashlight/pen/paramedic
 	backpack_contents = list(/obj/item/roller=1)
 
 /datum/outfit/job/inteq/paramedic/empty
@@ -137,7 +139,7 @@
 	job_icon = "securityofficer"
 
 	ears = /obj/item/radio/headset/alt
-	head = /obj/item/clothing/head/helmet/inteq
+	head = /obj/item/clothing/head/helmet/m10/inteq
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	belt = /obj/item/storage/belt/security/webbing/inteq
 	mask = /obj/item/clothing/mask/balaclava/inteq
@@ -157,6 +159,7 @@
 	suit = null
 	belt = null
 	mask = null
+	glasses = null
 	gloves = null
 
 /datum/outfit/job/inteq/security/beluga
@@ -190,6 +193,13 @@
 	belt = /obj/item/storage/belt/utility/full/engi
 	r_pocket = /obj/item/t_scanner
 
+/datum/outfit/job/inteq/engineer/empty
+	name = "IRMG - Artificer (Naked)"
+
+	head = null
+	belt = null
+	r_pocket = null
+
 //wardens
 
 /datum/outfit/job/inteq/warden
@@ -200,7 +210,7 @@
 
 	ears = /obj/item/radio/headset/inteq/alt
 	head = /obj/item/clothing/head/warden/inteq
-	uniform = /obj/item/clothing/under/syndicate/inteq
+	uniform = /obj/item/clothing/under/syndicate/inteq/honorable
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	mask = /obj/item/clothing/mask/balaclava/inteq
 	belt = /obj/item/storage/belt/military/assault
@@ -211,18 +221,46 @@
 	suit_store = null
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/classic_baton=1)
 
-/datum/outfit/job/inteq/warden/pilot
-	name = "IRMG - Shuttle Pilot"
-	job_icon = "securityofficer"
-	id_assignment = "Shuttle Pilot"
+/datum/outfit/job/inteq/warden/empty
+	name = "IRMG - Master At Arms (Naked)"
 
-	head = /obj/item/clothing/head/soft/inteq
-	suit = /obj/item/clothing/suit/armor/vest/alt
+	head = null
+	glasses = null
+	mask = null
 	belt = null
-	mask = /obj/item/clothing/mask/breath
-	gloves = /obj/item/clothing/gloves/fingerless
+	suit = null
+	gloves = null
+
+/datum/outfit/job/inteq/warden/classone
+	name = "IRMG - Enforcer Class One"
+	id_assignment = "Enforcer Class One"
+	jobtype = /datum/job/warden
+	job_icon = "warden"
+
+	ears = /obj/item/radio/headset/inteq/alt
+	head = /obj/item/clothing/head/soft/inteq
+	uniform = /obj/item/clothing/under/syndicate/inteq
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	mask = /obj/item/clothing/mask/balaclava/inteq
+	belt = /obj/item/storage/belt/security/webbing/inteq/alt
+	suit = /obj/item/clothing/suit/armor/vest/security/warden/inteq
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	suit_store = null
+
+	courierbag = /obj/item/storage/backpack/messenger/inteq
+
+/datum/outfit/job/inteq/warden/classone/empty
+	name = "IRMG - Enforcer Class One (Naked)"
+
+	head = null
+	glasses = null
+	mask = null
+	belt = null
+	suit = null
+	gloves = null
 
 // cmo
 
@@ -251,3 +289,34 @@
 	suit_store = null
 	dcoat = null
 	r_pocket = null
+
+// supply
+
+/datum/outfit/job/inteq/pilot
+	name = "IRMG - Shuttle Pilot"
+	jobtype = /datum/job/mining
+	job_icon = "securityofficer"
+	id_assignment = "Shuttle Pilot"
+
+	head = /obj/item/clothing/head/soft/inteq
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+	mask = /obj/item/clothing/mask/balaclava/inteq
+	belt = /obj/item/storage/belt/security/webbing/inteq/alt
+	suit = /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/inteq/alt
+	shoes = /obj/item/clothing/shoes/combat
+
+/datum/outfit/job/inteq/pilot/empty
+	name = "IRMG - Shuttle Pilot (Naked)"
+	jobtype = /datum/job/mining
+	job_icon = "securityofficer"
+	id_assignment = "Shuttle Pilot"
+
+	head = null
+	glasses = null
+	mask = null
+	belt = null
+	suit = null
+	gloves = null

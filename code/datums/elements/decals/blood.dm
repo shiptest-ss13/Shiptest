@@ -6,7 +6,7 @@
 
 	. = ..()
 	RegisterSignal(target, COMSIG_ATOM_GET_EXAMINE_NAME, PROC_REF(get_examine_name), TRUE)
-	RegisterSignal(target, list(COMSIG_ITEM_EQUIPPED, COMSIG_ITEM_DROPPED), PROC_REF(redraw), TRUE)
+	RegisterSignals(target, list(COMSIG_ITEM_EQUIPPED, COMSIG_ITEM_DROPPED), PROC_REF(redraw), TRUE)
 
 /datum/element/decal/blood/Detach(atom/source, force)
 	UnregisterSignal(source, COMSIG_ATOM_GET_EXAMINE_NAME)

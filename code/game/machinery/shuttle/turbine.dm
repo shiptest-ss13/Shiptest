@@ -93,7 +93,7 @@
 	SSair.start_processing_machine(src, mapload)
 	locate_machinery()
 	if(!turbine)
-		obj_break()
+		atom_break()
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/power/compressor/LateInitialize()
@@ -112,7 +112,7 @@
 		turbine.locate_machinery()
 	else
 		turbine = null
-		obj_break()
+		atom_break()
 
 /obj/machinery/power/compressor/RefreshParts()
 	var/E = 0
@@ -123,7 +123,7 @@
 /obj/machinery/power/compressor/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Efficiency at <b>[efficiency*100]%</b>.</span>"
+		. += span_notice("The status display reads: Efficiency at <b>[efficiency*100]%</b>.")
 
 /obj/machinery/power/compressor/attackby(obj/item/I, mob/user, params)
 	if(default_deconstruction_screwdriver(user, initial(icon_state), initial(icon_state), I))
@@ -131,10 +131,10 @@
 
 	if(default_change_direction_wrench(user, I))
 		if(turbine)
-			to_chat(user, "<span class='notice'>Turbine connected.</span>")
+			to_chat(user, span_notice("Turbine connected."))
 			set_machine_stat(machine_stat & ~BROKEN)
 		else
-			to_chat(user, "<span class='alert'>Turbine not connected.</span>")
+			to_chat(user, span_alert("Turbine not connected."))
 		return
 
 	default_deconstruction_crowbar(I)
@@ -199,7 +199,7 @@
 // These are crucial to working of a turbine - the stats modify the power output. TurbGenQ modifies how much raw energy can you get from
 // rpms, TurbGenG modifies the shape of the curve - the lower the value the less straight the curve is.
 
-#define TURBGENQ 100000
+#define TURBGENQ 200000
 #define TURBGENG 0.5
 #define POWER_TO_THRUST 0.001 // power production to thrust ratio
 
@@ -208,7 +208,7 @@
 	SSair.start_processing_machine(src, mapload)
 	locate_machinery()
 	if(!compressor)
-		obj_break()
+		atom_break()
 	connect_to_network()
 	return INITIALIZE_HINT_LATELOAD
 
@@ -226,7 +226,7 @@
 /obj/machinery/power/shuttle/engine/turbine/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Productivity at <b>[productivity*100]%</b>.</span>"
+		. += span_notice("The status display reads: Productivity at <b>[productivity*100]%</b>.")
 
 /obj/machinery/power/shuttle/engine/turbine/locate_machinery()
 	if(compressor)
@@ -237,7 +237,7 @@
 		compressor.locate_machinery()
 	else
 		compressor = null
-		obj_break()
+		atom_break()
 
 /obj/machinery/power/shuttle/engine/turbine/process(seconds_per_tick)
 	add_avail(lastgen) // add power in process() so it doesn't update power output separately from the rest of the powernet (bad)
@@ -310,10 +310,10 @@
 
 	if(default_change_direction_wrench(user, I))
 		if(compressor)
-			to_chat(user, "<span class='notice'>Compressor connected.</span>")
+			to_chat(user, span_notice("Compressor connected."))
 		else
-			to_chat(user, "<span class='alert'>Compressor not connected.</span>")
-			obj_break()
+			to_chat(user, span_alert("Compressor not connected."))
+			atom_break()
 		return
 
 	default_deconstruction_crowbar(I)
@@ -380,6 +380,11 @@
 	circuit = /obj/item/circuitboard/computer/turbine_computer
 	var/obj/machinery/power/compressor/compressor
 	var/id = 0
+
+/obj/machinery/computer/turbine_computer/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
 
 /obj/machinery/computer/turbine_computer/Initialize()
 	. = ..()

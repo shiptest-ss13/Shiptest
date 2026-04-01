@@ -1,9 +1,10 @@
 /obj/item/gun/ballistic/automatic/smg
+	bad_type = /obj/item/gun/ballistic/automatic/smg
 	show_magazine_on_sprite = TRUE
 
 	burst_size = 2
 	actions_types = list()
-	fire_delay = 0.13 SECONDS
+	fire_delay = 0.1 SECONDS
 
 	spread = 6
 	spread_unwielded = 10
@@ -27,57 +28,21 @@
 
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 16
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 
-/obj/item/gun/ballistic/automatic/smg/wt550
-	name = "\improper WT-550 Automatic Rifle"
-	desc = "An outdated PDW, used centuries ago by Nanotrasen security elements. Uses 4.6x30mm rounds."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
-	icon_state = "wt550"
-	item_state = "arg"
-	default_ammo_type = /obj/item/ammo_box/magazine/wt550m9
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/wt550m9,
-	)
-	actions_types = list()
-	show_magazine_on_sprite = TRUE
-	show_magazine_on_sprite_ammo = TRUE
-	empty_indicator = TRUE
-	manufacturer = MANUFACTURER_NANOTRASEN_OLD
-	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
-
-/obj/item/gun/ballistic/automatic/smg/wt550/no_mag
-	default_ammo_type = FALSE
-
-/obj/item/gun/ballistic/automatic/smg/vector
-	name = "\improper Vector carbine"
-	desc = "A police carbine based on a pre-Night of Fire SMG design. Most of the complex workings have been removed for reliability. Chambered in 9mm."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
-	icon_state = "vector"
-	item_state = "vector"
-	default_ammo_type = /obj/item/ammo_box/magazine/smgm9mm
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/smgm9mm,
-	) //you guys remember when the autorifle was chambered in 9mm
-	bolt_type = BOLT_TYPE_LOCKING
-	show_magazine_on_sprite = TRUE
-	weapon_weight = WEAPON_LIGHT
-	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine
 	name = "\improper SKM-24v"
 	desc = "The SKM-24v was a carbine modification of the SKM-24 during the Frontiersmen War. This, however, is just a shoddy imitation of that carbine, effectively an SKM-24 with a sawed down barrel and a folding wire stock. Can be fired with the stock folded, though accuracy suffers. Chambered in 4.6x30mm."
 
-	icon = 'icons/obj/guns/48x32guns.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "skm_carbine"
 	item_state = "skm_carbine"
-
+	icon = 'icons/obj/guns/manufacturer/hermits/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hermits/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hermits/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hermits/onmob.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/skm_smg.ogg'
 
 	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
@@ -101,6 +66,9 @@
 
 	wield_delay = 0.6 SECONDS
 	wield_slowdown = SMG_SLOWDOWN
+
+	wear_rate = 1.6
+
 	unique_attachments = list(
 		/obj/item/attachment/foldable_stock
 		)
@@ -129,7 +97,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
 	name = "\improper SKM-44v Mongrel"
-	desc = "An SKM-44, further modified into a sub-machine gun by Inteq artificers with a new magazine well, collapsing stock, and shortened barrel. Faced with a surplus of SKM-44s and a shortage of other firearms, IRMG has made the most of their available materiel with conversions such as this. Chambered in 10mm."
+	desc = "An SKM-44, further modified into a sub-machine gun by Inteq artificers with a new magazine well, collapsing stock, and shortened barrel. Faced with a surplus of SKM-44s and a shortage of other firearms, IRMG has made the most of their available materiel with conversions such as this. Chambered in 10x22mm."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
@@ -150,7 +118,7 @@
 	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 
-	spread = 7
+	spread = 8
 	spread_unwielded = 10
 
 	recoil = 0
@@ -163,16 +131,19 @@
 	)
 	default_attachments = list(/obj/item/attachment/foldable_stock/inteq)
 
+NO_MAG_GUN_HELPER(automatic/smg/skm_carbine/inteq)
+
+//TODO: REMOVE
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
-	name = "\improper Nanotrasen Saber SMG"
-	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
+	name = "\improper Makosso-Warra Saber SMG"
+	desc = "A prototype full-auto 9x18mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "saber"
 	item_state = "gun"
 
-	default_ammo_type = /obj/item/ammo_box/magazine/smgm9mm
+	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_expedition
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/smgm9mm,
+		/obj/item/ammo_box/magazine/m9mm_expedition,
 	)
 
 	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
@@ -196,4 +167,4 @@
 	default_attachments = list(/obj/item/attachment/foldable_stock)
 	bolt_type = BOLT_TYPE_LOCKING
 	show_magazine_on_sprite = TRUE
-	manufacturer = MANUFACTURER_NANOTRASEN_OLD
+	manufacturer = MANUFACTURER_WARRA_OLD

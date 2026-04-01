@@ -7,13 +7,16 @@
 	lefthand_file = GUN_LEFTHAND_ICON
 	righthand_file = GUN_RIGHTHAND_ICON
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	custom_materials = list(/datum/material/iron=2000)
 	w_class = WEIGHT_CLASS_NORMAL
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
 	force = 5
+
+	bad_type = /obj/item/gun
+
 	item_flags = NEEDS_PERMIT
 	attack_verb = list("struck", "hit", "bashed")
 	pickup_sound = 'sound/items/handling/gun_pickup.ogg'
@@ -42,6 +45,7 @@
 /*
  *  Firing
 */
+	var/actually_shoots = TRUE //is this gun a brick and doesnt fire bullet
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
@@ -345,6 +349,8 @@
 	build_firemodes()
 	if(sawn_off)
 		sawoff(forced = TRUE)
+	if(slot_flags & ITEM_SLOT_SUITSTORE)
+		ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, REF(src))
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
@@ -359,24 +365,23 @@
 	AddComponent(/datum/component/two_handed)
 
 /// triggered on wield of two handed item
-/obj/item/gun/proc/on_wield(obj/item/source, mob/user)
+/obj/item/gun/proc/on_wield(obj/item/source, mob/user, instant)
 	wielded = TRUE
-	INVOKE_ASYNC(src, PROC_REF(do_wield), user)
+	INVOKE_ASYNC(src, PROC_REF(do_wield), user, instant)
 
-/obj/item/gun/proc/do_wield(mob/user)
+/obj/item/gun/proc/do_wield(mob/user, instant)
 	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
 	wield_time = world.time + wield_delay
 	if(azoom)
 		azoom.Grant(user)
-	if(wield_time > 0)
+	if(wield_time > 0 && !instant)
 		if(do_after(
 			user,
 			wield_delay,
 			user,
-			FALSE,
+			IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE,
 			TRUE,
-			CALLBACK(src, PROC_REF(is_wielded)),
-			timed_action_flags = IGNORE_USER_LOC_CHANGE
+			CALLBACK(src, PROC_REF(is_wielded))
 			)
 			)
 			wielded_fully = TRUE
@@ -417,16 +422,14 @@
 /obj/item/gun/examine(mob/user)
 	. = ..()
 	if(manufacturer)
-		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
+		. += span_notice("It has <b>[manufacturer]</b> engraved on it.")
+	if(HAS_TRAIT(src,TRAIT_FORCE_SUIT_STORAGE))
+		. += span_notice("It has clips and hooks for easy carrying.")
 
 /obj/item/gun/examine_more(mob/user)
 	. = ..()
 	if(has_safety)
-		. += "The safety is [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle the safety."
-
-	if(gun_firemodes.len > 1)
-		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
-
+		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Right-Click to toggle the safety."
 
 /obj/item/gun/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
@@ -439,7 +442,7 @@
 		zoom(user, user.dir, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 
 /obj/item/gun/attack(mob/M as mob, mob/user)
-	if(user.a_intent == INTENT_HARM) //Flogging
+	if(user.a_intent == INTENT_HARM || !actually_shoots) //Flogging
 		return ..()
 	return
 
@@ -466,13 +469,26 @@
 	return
 
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
-	. = ..()
+	if(fire_gun(target, user, flag, params))
+		return TRUE
+	return ..()
+
+/obj/item/gun/proc/fire_gun(atom/target, mob/living/user, flag, params)
+	if(!actually_shoots)// this gun doesn't actually fire bullets. Dont shoot.
+		return
 	//No target? Why are we even firing anyways...
 	if(!target)
 		return
 	//If we are burst firing, don't fire, obviously
 	if(currently_firing_burst)
 		return
+
+	if(SEND_SIGNAL(user, COMSIG_MOB_TRYING_TO_FIRE_GUN, src, target, flag, params) & COMPONENT_CANCEL_GUN_FIRE)
+		return
+
+	if(SEND_SIGNAL(src, COMSIG_GUN_TRY_FIRE, user, target, flag, params) & COMPONENT_CANCEL_GUN_FIRE)
+		return
+
 	//This var happens when we are either clicking someone next to us or ourselves. Check if we don't want to fire...
 	if(flag)
 		if(target in user.contents) //can't shoot stuff inside us.
@@ -481,14 +497,19 @@
 			return
 		if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH) //so we can't shoot ourselves (unless mouth selected)
 			return
-/* TODO: gunpointing is very broken, port the old skyrat gunpointing? its much better, usablity wise and rp wise?
 		if(ismob(target) && user.a_intent == INTENT_GRAB)
 			if(user.GetComponent(/datum/component/gunpoint))
-				to_chat(user, "<span class='warning'>You are already holding someone up!</span>")
+				to_chat(user, span_warning("You are already holding someone up!"))
 				return
 			user.AddComponent(/datum/component/gunpoint, target, src)
 			return
-*/
+		if(iscarbon(target))
+			var/mob/living/carbon/C = target
+			for(var/i in C.all_wounds)
+				var/datum/wound/W = i
+				if(W.try_treating(src, user))
+					return // another coward cured!
+
 	// Good job, but we have exta checks to do...
 	return pre_fire(target, user, TRUE, flag, params, null)
 
@@ -518,17 +539,17 @@
 
 	//we then check our weapon weight vs if we are being wielded...
 	if(weapon_weight == WEAPON_VERY_HEAVY && (!wielded_fully))
-		to_chat(user, "<span class='warning'>You need a fully secure grip to fire [src]!</span>")
+		to_chat(user, span_warning("You need a fully secure grip to fire [src]!"))
 		return
 
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
-		to_chat(user, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
+		to_chat(user, span_warning("You need a more secure grip to fire [src]!"))
 		return
 	//If we have the pacifist trait and a chambered round, don't fire. Honestly, pacifism quirk is pretty stupid, and as such we check again in process_fire() anyways
 	if(chambered)
 		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 			if(chambered.harmful) // Is the bullet chambered harmful?
-				to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
+				to_chat(user, span_warning("[src] is lethally chambered! You don't want to risk harming anyone..."))
 				return
 
 	//Dual wielding handling. Not the biggest fan of this, but it's here. Dual berettas not included
@@ -541,7 +562,7 @@
 			else if(found_gun.can_trigger_gun(user))
 				bonus_spread += dual_wield_spread
 				loop_counter++
-				addtimer(CALLBACK(found_gun, TYPE_PROC_REF(/obj/item/gun, pre_fire), target, user, TRUE, params, null, bonus_spread), loop_counter)
+				addtimer(CALLBACK(found_gun, TYPE_PROC_REF(/obj/item/gun, pre_fire), target, user, TRUE, FALSE, params, null, bonus_spread, TRUE), loop_counter)
 
 	//get current firemode
 	var/current_firemode = gun_firemodes[firemode_index]
@@ -603,7 +624,7 @@
 	if(chambered)
 		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 			if(chambered.harmful) // Is the bullet chambered harmful?
-				to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
+				to_chat(user, span_warning("[src] is lethally chambered! You don't want to risk harming anyone..."))
 				currently_firing_burst = FALSE //no burst 4 u
 				return FALSE
 	else
@@ -666,10 +687,10 @@
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	if(!safety)
-		to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")
+		to_chat(user, span_danger("*[dry_fire_text]*"))
 		playsound(src, dry_fire_sound, 30, TRUE)
 		return
-	to_chat(user, "<span class='danger'>Safeties are active on the [src]! Turn them off to fire!</span>")
+	to_chat(user, span_danger("Safeties are active on the [src]! Turn them off to fire!"))
 
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
@@ -701,7 +722,7 @@
 						span_danger("You fire [src] point blank at [pbtarget]!"),
 						span_hear("You hear a gunshot!"), COMBAT_MESSAGE_RANGE, pbtarget
 				)
-				to_chat(pbtarget, "<span class='userdanger'>[user] fires [src] point blank at you!</span>")
+				to_chat(pbtarget, span_userdanger("[user] fires [src] point blank at you!"))
 				if(pb_knockback > 0 && ismob(pbtarget))
 					var/mob/PBT = pbtarget
 					var/atom/throw_target = get_edge_target_turf(PBT, user.dir)
@@ -734,28 +755,52 @@
 
 /obj/item/gun/CtrlClick(mob/user)
 	. = ..()
-	if(!has_safety)
-		return
-	// only checks for first level storage e.g pockets, hands, suit storage, belts, nothing in containers
-	if(!in_contents_of(user))
-		return
-
 	if(isliving(user) && in_range(src, user))
 		toggle_safety(user)
 
-/obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE)
+// This is overridden when interacting with attached underbarrel guns.
+/obj/item/gun/attack_hand_secondary(mob/user, list/modifiers)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+/obj/item/gun/attackby_secondary(obj/item/weapon, mob/user, params)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+/obj/item/gun/attack_self_secondary(mob/user, modifiers)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+/obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE, override_check = FALSE)
+	if(!has_safety)
+		return FALSE
+
+	// only checks for first level storage e.g pockets, hands, suit storage, belts, nothing in containers
+	if(!in_contents_of(user) && !override_check)
+		return FALSE
+
 	safety = !safety
 
 	if(!silent)
 		playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 		user.visible_message(
-			span_notice("[user] turns the [safety_wording] on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
-			span_notice("You turn the [safety_wording] on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+			span_notice("[user] turns the [safety_wording] on [src] [safety ? span_green("ON") : span_red("OFF")]."),
+			span_notice("You turn the [safety_wording] on [src] [safety ? span_green("ON") : span_red("OFF")]."),
 		)
 
 	update_appearance()
+	return TRUE
 
-/obj/item/gun/attack_hand(mob/user)
+/obj/item/gun/attack_hand(mob/user, list/modifiers)
 	. = ..()
 	update_appearance()
 
@@ -853,10 +898,11 @@
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
 	return
 
-/obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
+/obj/item/gun/proc/calculate_recoil(mob/living/user, recoil_bonus = 0)
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		recoil_bonus += gunslinger_recoil_bonus
-	return clamp(recoil_bonus, min_recoil , INFINITY)
+	recoil_bonus *= user.recoil_effect
+	return clamp(recoil_bonus, min_recoil, INFINITY)
 
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
 	var/final_spread = 0
@@ -866,10 +912,12 @@
 	final_spread += bonus_spread
 
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
-		randomized_bonus_spread += rand(0, gunslinger_spread_bonus)
+		randomized_bonus_spread += min(gunslinger_spread_bonus, rand(0, gunslinger_spread_bonus))
 
 	if(HAS_TRAIT(user, TRAIT_POOR_AIM))
 		randomized_bonus_spread += rand(0, 25)
+	if(!wielded_fully && (HAS_TRAIT(user, TRAIT_SCARRED_EYE)))
+		randomized_bonus_spread += rand(0, 5) // can't aim as well with no depth perception
 
 	//We will then calculate gun spread depending on if we are fully wielding (after do_after) the gun or not
 	randomized_gun_spread =	rand(0, wielded_fully ? spread : spread_unwielded)
@@ -1122,6 +1170,13 @@
 	else
 		..()
 
+//If a gun does not already have a secondary_action set, and has more than one firemode, the firemode can be toggled with the secondary action: default being shift+space
+/obj/item/gun/secondary_action(user)
+	if(gun_firemodes.len > 1)
+		fire_select(user)
+	else
+		..()
+
 /obj/item/gun/proc/fire_select(mob/living/carbon/human/user)
 
 	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
@@ -1136,15 +1191,11 @@
 	else
 		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
 //wawa
-	to_chat(user, "<span class='notice'>Switched to [gun_firenames[current_firemode]].</span>")
+	to_chat(user, span_notice("Switched to [gun_firenames[current_firemode]]."))
 	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 	update_appearance()
 	for(var/datum/action/current_action as anything in actions)
 		current_action.UpdateButtonIcon()
-
-/obj/item/gun/secondary_action(user)
-	if(gun_firemodes.len > 1)
-		fire_select(user)
 
 /datum/action/item_action/toggle_firemode/UpdateButtonIcon(status_only = FALSE, force = FALSE)
 	var/obj/item/gun/our_gun = target
@@ -1159,9 +1210,10 @@
 	return ..()
 
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
-	/obj/item/gun/energy/plasmacutter,
+	/obj/item/plasmacutter,
 	/obj/item/melee/energy,
 	/obj/item/gear_handle/anglegrinder,
+	/obj/item/hatchet,
 	)))
 
 ///Handles all the logic of sawing off guns,

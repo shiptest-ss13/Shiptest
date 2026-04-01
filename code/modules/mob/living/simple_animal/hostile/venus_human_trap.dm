@@ -44,7 +44,7 @@
  * Displays a message, spawns a human venus trap, then qdels itself.
  */
 /obj/structure/alien/resin/flower_bud_enemy/proc/bear_fruit()
-	visible_message("<span class='danger'>The plant has borne fruit!</span>")
+	visible_message(span_danger("The plant has borne fruit!"))
 	new /mob/living/simple_animal/hostile/venus_human_trap(get_turf(src))
 	qdel(src)
 
@@ -99,7 +99,7 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	unsuitable_atmos_damage = 0
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
-	faction = list("hostile","vines","plants")
+	faction = list(FACTION_HOSTILE,"vines","plants")
 	initial_language_holder = /datum/language_holder/venus
 	del_on_death = TRUE
 	/// A list of all the plant's vines
@@ -131,7 +131,7 @@
 				return
 
 	var/datum/beam/newVine = Beam(the_target, icon_state = "vine", maxdistance = vine_grab_distance, beam_type=/obj/effect/ebeam/vine, emissive = FALSE)
-	RegisterSignal(newVine, COMSIG_PARENT_QDELETING, PROC_REF(remove_vine), newVine)
+	RegisterSignal(newVine, COMSIG_QDELETING, PROC_REF(remove_vine), newVine)
 	vines += newVine
 	if(isliving(the_target))
 		var/mob/living/L = the_target
@@ -140,7 +140,7 @@
 
 /mob/living/simple_animal/hostile/venus_human_trap/Login()
 	. = ..()
-	to_chat(src, "<span class='boldwarning'>You a venus human trap!  Protect the kudzu at all costs, and feast on those who oppose you!</span>")
+	to_chat(src, span_boldwarning("You a venus human trap!  Protect the kudzu at all costs, and feast on those who oppose you!"))
 
 /mob/living/simple_animal/hostile/venus_human_trap/attack_ghost(mob/user)
 	. = ..()
@@ -169,7 +169,7 @@
 	if(plant_ask == "No" || QDELETED(src))
 		return
 	if(key)
-		to_chat(user, "<span class='warning'>Someone else already took this plant!</span>")
+		to_chat(user, span_warning("Someone else already took this plant!"))
 		return
 	key = user.key
 	log_game("[key_name(src)] took control of [name].")
@@ -201,5 +201,8 @@
 /mob/living/simple_animal/hostile/venus_human_trap/proc/remove_vine(datum/beam/vine)
 	SIGNAL_HANDLER
 
-	UnregisterSignal(vine, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(vine, COMSIG_QDELETING)
 	vines -= vine
+
+/mob/living/simple_animal/hostile/venus_human_trap/mining
+	faction = list("mining")

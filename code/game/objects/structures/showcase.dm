@@ -70,7 +70,7 @@
 
 /obj/structure/showcase/mecha/marauder
 	name = "combat exosuit exhibit"
-	desc = "A stand with an empty old Nanotrasen Corporation combat exosuit bolted to it. It is described as the premier unit used to defend corporate interests and employees."
+	desc = "A stand with an empty old Makosso-Warra Corporation combat exosuit bolted to it. It is described as the premier unit used to defend corporate interests and employees."
 	icon = 'icons/mecha/mecha.dmi'
 	icon_state = "marauder"
 
@@ -81,15 +81,15 @@
 	icon_state = "firefighter"
 
 /obj/structure/showcase/machinery/implanter
-	name = "\improper Nanotrasen automated mindshield implanter exhibit"
-	desc = "A flimsy model of a standard Nanotrasen automated mindshield implant machine. With secure positioning harnesses and a robotic surgical injector, brain damage and other serious medical anomalies are now up to 60% less likely!"
+	name = "\improper Makosso-Warra automated mindshield implanter exhibit"
+	desc = "A flimsy model of a standard Makosso-Warra automated mindshield implant machine. With secure positioning harnesses and a robotic surgical injector, brain damage and other serious medical anomalies are now up to 60% less likely!"
 	icon = 'icons/obj/machines/implantchair.dmi'
 	icon_state = "implantchair"
 
 /obj/structure/showcase/machinery/microwave
-	name = "\improper Nanotrasen-brand microwave"
-	desc = "The famous Nanotrasen-brand microwave, the multi-purpose cooking appliance every household needs! This one appears to be drawn onto a cardboard box."
-	icon = 'icons/obj/kitchen.dmi'
+	name = "\improper Makosso-Warra-brand microwave"
+	desc = "The famous Makosso-Warra-brand microwave, the multi-purpose cooking appliance every household needs! This one appears to be drawn onto a cardboard box."
+	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "mw"
 
 /obj/structure/showcase/machinery/cloning_pod
@@ -100,11 +100,11 @@
 
 /obj/structure/showcase/perfect_employee
 	name = "'Perfect Man' employee exhibit"
-	desc = "A stand with a model of the perfect Nanotrasen Employee bolted to it. Signs indicate it is robustly genetically engineered, as well as being ruthlessly loyal."
+	desc = "A stand with a model of the perfect Makosso-Warra Employee bolted to it. Signs indicate it is robustly genetically engineered, as well as being ruthlessly loyal."
 
 /obj/structure/showcase/machinery/tv
-	name = "\improper Nanotrasen corporate newsfeed"
-	desc = "A slightly battered looking TV. Various Nanotrasen infomercials play on a loop, accompanied by a jaunty tune."
+	name = "\improper Makosso-Warra corporate newsfeed"
+	desc = "A slightly battered looking TV. Various Makosso-Warra infomercials play on a loop, accompanied by a jaunty tune."
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "television"
 
@@ -123,17 +123,17 @@
 /obj/structure/showcase/attackby(obj/item/W, mob/user)
 	if(W.tool_behaviour == TOOL_SCREWDRIVER && !anchored)
 		if(deconstruction_state == SHOWCASE_SCREWDRIVERED)
-			to_chat(user, "<span class='notice'>You screw the screws back into the showcase.</span>")
+			to_chat(user, span_notice("You screw the screws back into the showcase."))
 			W.play_tool_sound(src, 100)
 			deconstruction_state = SHOWCASE_CONSTRUCTED
 		else if (deconstruction_state == SHOWCASE_CONSTRUCTED)
-			to_chat(user, "<span class='notice'>You unscrew the screws.</span>")
+			to_chat(user, span_notice("You unscrew the screws."))
 			W.play_tool_sound(src, 100)
 			deconstruction_state = SHOWCASE_SCREWDRIVERED
 
 	if(W.tool_behaviour == TOOL_CROWBAR && deconstruction_state == SHOWCASE_SCREWDRIVERED)
 		if(W.use_tool(src, user, 20, volume=100))
-			to_chat(user, "<span class='notice'>You start to crowbar the showcase apart...</span>")
+			to_chat(user, span_notice("You start to crowbar the showcase apart..."))
 			new /obj/item/stack/sheet/metal(drop_location(), 4)
 			qdel(src)
 

@@ -3,7 +3,17 @@
 	max_integrity = 40
 	anchored = TRUE
 
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = -100, "acid" = 0) // 2x damage from fire
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+
+	/// How much fuel this provides to fires on its turf
+	var/fuel_power = 4
+
+/obj/structure/flora/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	var/turf/open/plant_turf = get_turf(src)
+	if(isopenturf(plant_turf) && prob(plant_turf.flammability >= 1))
+		plant_turf.ignite_turf(fuel_power + plant_turf.flammability)
 
 /obj/structure/flora/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
@@ -23,7 +33,10 @@
 	pixel_x = -16
 	layer = FLY_LAYER
 	var/log_amount = 10
+	max_integrity = 200
 
+	fuel_power = 1 // trees are more resistant to fire and take much longer to burn
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 0)
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/flora/tree/ComponentInitialize()
@@ -34,9 +47,9 @@
 	if(log_amount && (!(flags_1 & NODECONSTRUCT_1)))
 		if(W.get_sharpness() && W.force > 0)
 			playsound(get_turf(src), 'sound/weapons/bladeslice.ogg', 100, FALSE, FALSE)
-			user.visible_message("<span class='notice'>[user] begins to cut down [src] with [W].</span>","<span class='notice'>You begin to cut down [src] with [W].</span>", "<span class='hear'>You hear the sound of sawing.</span>")
+			user.visible_message(span_notice("[user] begins to cut down [src] with [W]."),span_notice("You begin to cut down [src] with [W]."), span_hear("You hear the sound of sawing."))
 			if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
-				user.visible_message("<span class='notice'>[user] fells [src] with the [W].</span>","<span class='notice'>You fell [src] with the [W].</span>", "<span class='hear'>You hear the sound of a tree falling.</span>")
+				user.visible_message(span_notice("[user] fells [src] with the [W]."),span_notice("You fell [src] with the [W]."), span_hear("You hear the sound of a tree falling."))
 				playsound(get_turf(src), 'sound/effects/meteorimpact.ogg', 100 , FALSE, FALSE)
 				user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
 				for(var/i=1 to log_amount)
@@ -54,6 +67,8 @@
 	icon_state = "tree_stump"
 	density = FALSE
 	pixel_x = -16
+	fuel_power = 2 // it's dead
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
@@ -97,9 +112,9 @@
 		return
 
 	if(took_presents[user.ckey] && !unlimited)
-		to_chat(user, "<span class='warning'>There are no presents with your name on.</span>")
+		to_chat(user, span_warning("There are no presents with your name on."))
 		return
-	to_chat(user, "<span class='warning'>After a bit of rummaging, you locate a gift with your name on it!</span>")
+	to_chat(user, span_warning("After a bit of rummaging, you locate a gift with your name on it!"))
 
 	if(!unlimited)
 		took_presents[user.ckey] = TRUE
@@ -129,6 +144,8 @@
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	desc = "A dead tree. How it died, you know not."
 	icon_state = "tree_1"
+	fuel_power = 2 // it's dead
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 
 /obj/structure/flora/tree/dead/Initialize()
 	icon_state = "tree_[rand(1, 6)]"
@@ -428,8 +445,11 @@
 	icon = 'icons/obj/flora/rocks.dmi'
 	resistance_flags = FIRE_PROOF
 	density = TRUE
+	pass_flags_self = LETPASSTHROW
 	max_integrity = 100
 	var/obj/item/stack/mineResult = /obj/item/stack/ore/glass/basalt
+	passchance = 50
+	pass_through = TRUE
 
 	hitsound_type = PROJECTILE_HITSOUND_STONE
 
@@ -440,9 +460,9 @@
 /obj/structure/flora/rock/attackby(obj/item/W, mob/user, params)
 	if(mineResult && (!(flags_1 & NODECONSTRUCT_1)))
 		if(W.tool_behaviour == TOOL_MINING)
-			to_chat(user, "<span class='notice'>You start mining...</span>")
+			to_chat(user, span_notice("You start mining..."))
 			if(W.use_tool(src, user, 40, volume=50))
-				to_chat(user, "<span class='notice'>You finish mining the rock.</span>")
+				to_chat(user, span_notice("You finish mining the rock."))
 				new mineResult(get_turf(src), 20)
 				SSblackbox.record_feedback("tally", "pick_used_mining", 1, W.type)
 				qdel(src)
@@ -459,10 +479,12 @@
 		if(BURN)
 			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
+
 /obj/structure/flora/rock/pile
 	icon_state = "lavarocks1"
 	base_icon_state = "lavarocks"
 	desc = "A pile of rocks."
+	density = FALSE
 
 //Jungle grass
 
@@ -648,6 +670,7 @@
 	icon = 'icons/obj/flora/lavarocks.dmi'
 	icon_state = "lavarocks1"
 	base_icon_state = "lavarocks"
+	density = FALSE
 	gender = PLURAL
 
 /obj/structure/flora/rock/asteroid
@@ -767,6 +790,7 @@
 	icon_state = "redrocks1"
 	base_icon_state = "redrocks"
 	mineResult = /obj/item/stack/ore/glass/rockplanet
+	density = FALSE
 
 /obj/structure/flora/grass/rockplanet
 	name = "cottongrass"
@@ -792,7 +816,6 @@
 	icon_state = "churchtree"
 	desc = "A true earthen oak tree imported directly from the holy soil of earth. It's radiates a spiritual warmth that calms the soul."
 	pixel_x = -16
-	max_integrity = 200
 	bound_height = 64
 	var/karma = 0
 	var/mojorange = 4
@@ -819,7 +842,6 @@
 		/datum/reagent/toxin/acid/fluacid = -0.4,
 		/datum/reagent/toxin/plantbgone = -0.5,
 		/datum/reagent/napalm = -0.6,
-		/datum/reagent/hellwater = -1,
 		/datum/reagent/liquidgibs = -0.2,
 		/datum/reagent/consumable/ethanol/demonsblood = -0.8,
 		/datum/reagent/medicine/soulus = -0.2
@@ -847,21 +869,16 @@
 /obj/structure/flora/tree/chapel/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/reagent_containers))
 		var/obj/item/reagent_containers/container = I
-		if(istype(container, /obj/item/reagent_containers/syringe))
-			var/obj/item/reagent_containers/syringe/syr = container
-			if(syr.mode != 1)
-				to_chat(user, "<span class='warning'>You can't get any extract out of this plant.</span>")
-				return
 		if(!container.reagents.total_volume)
-			to_chat(user, "<span class='warning'>[container] is empty!</span>")
+			to_chat(user, span_warning("[container] is empty!"))
 			return 1
 		if(!container.is_drainable())
 			if(container.can_have_cap)
-				to_chat(user, "<span class='warning'>[container] has a cap on!</span>")
+				to_chat(user, span_warning("[container] has a cap on!"))
 			else
-				to_chat(user, "<span class='warning'>You can't use [container] on [src]!</span>")
+				to_chat(user, span_warning("You can't use [container] on [src]!"))
 			return 1
-		to_chat(user, "<span class='notice'>You feed [src] [container.amount_per_transfer_from_this]u from [container]...</span>")
+		to_chat(user, span_notice("You feed [src] [container.amount_per_transfer_from_this]u from [container]..."))
 		playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
 		var/datum/reagents/R = new /datum/reagents()
 		R.my_atom = src
@@ -870,10 +887,10 @@
 	else if(I.get_sharpness() && I.force > 0)
 		if(I.hitsound)
 			playsound(get_turf(src), I.hitsound, 100, FALSE, FALSE)
-		user.visible_message("<span class='notice'>[user] begins to cut down [src] with [I].</span>","<span class='notice'>You begin to cut down [src] with [I].</span>", "<span class='hear'>You hear the sound of sawing.</span>")
+		user.visible_message(span_notice("[user] begins to cut down [src] with [I]."),span_notice("You begin to cut down [src] with [I]."), span_hear("You hear the sound of sawing."))
 		if(do_after(user, 1000/I.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
 			//Regret.dm
-			to_chat(user, "<span class='danger'>As you pierce the bark, a supernatural shock jolts through your body...</span>")
+			to_chat(user, span_danger("As you pierce the bark, a supernatural shock jolts through your body..."))
 			user.log_message("attempted to cut down [src] and was smitten")
 			if(iscarbon(user))
 				var/mob/living/carbon/C = user
@@ -882,7 +899,7 @@
 			else if (isliving(user))
 				var/mob/living/L = user
 				L.Immobilize(100, TRUE)
-				L.adjust_jitter(50)
+				L.set_timed_status_effect(100 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 				L.adjustToxLoss(66)
 		return 1
 	else ..()
@@ -895,7 +912,7 @@
 	if(isliving(user))
 		var/mob/living/M = user
 		if(gainedkarma >= 0)
-			to_chat(M, "<span class='green'>[src] fills with new life as a wave of comfort washes over you.</span>")
+			to_chat(M, span_green("[src] fills with new life as a wave of comfort washes over you."))
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "treekarma", /datum/mood_event/good_tree, name)
 			if(karma >= 0)
 				M.adjustBruteLoss(-0.25*karma, 0)
@@ -903,10 +920,16 @@
 				M.adjustToxLoss(-0.25*karma, 0)
 				M.adjustCloneLoss(-0.25*karma, 0)
 		else
-			to_chat(M, "<span class='danger'>Colors fade from [src] as a wave of guilt crawls into your skin.</span>")
+			to_chat(M, span_danger("Colors fade from [src] as a wave of guilt crawls into your skin."))
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "treekarma", /datum/mood_event/bad_tree, name)
 			M.adjustToxLoss(abs(karma)*0.25, 0)
 	adjustKarma(gainedkarma)
+
+/obj/structure/flora/tree/chapel/attackby_secondary(obj/item/weapon, mob/user, list/modifiers, list/attack_modifiers)
+	if (istype(weapon, /obj/item/reagent_containers/syringe))
+		to_chat(user, span_warning("You can't get any extract out of this plant."))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return SECONDARY_ATTACK_CALL_NORMAL
 
 /obj/structure/flora/tree/chapel/proc/update_tree()
 	if(100 > karma > -100)
@@ -928,10 +951,10 @@
 	var/newkarma = karma + x
 	if(karma < 100 && newkarma >= 100)
 		need_update = 1
-		visible_message("<span class='green'>[src] shifts colors as a heavenly warmth washes over the room.</span>")
+		visible_message(span_green("[src] shifts colors as a heavenly warmth washes over the room."))
 	if(karma > -100 && newkarma <= -100)
 		need_update = 1
-		visible_message("<span class='danger'>As the life fades from [src] something evil seeps into the air.</span>")
+		visible_message(span_danger("As the life fades from [src] something evil seeps into the air."))
 	if(abs(karma) > 100 && newkarma < 100)
 		need_update = 1
 	if(need_update)
@@ -943,7 +966,7 @@
 		var/luck = rand(1, 100)
 		if(karma > 100)
 			if(luck > 90)
-				L.reagents.add_reagent(/datum/reagent/medicine/omnizine, 5)
+				L.reagents.add_reagent(/datum/reagent/medicine/panacea, 5)
 			else if (luck > 50)
 				SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "treekarma", /datum/mood_event/better_tree, name)
 			else if (luck > 25)
@@ -961,22 +984,22 @@
 				adjustKarma(10)
 
 /datum/mood_event/good_tree
-	description = "<span class='nicegreen'>I feel closer to my soul.</span>\n"
+	description = span_nicegreen("I feel closer to my soul.")
 	mood_change = 3
 	timeout = 5 MINUTES
 
 /datum/mood_event/bad_tree
-	description = "<span class='warning'>I should stop gardening.</span>\n"
+	description = span_warning("I should stop gardening.")
 	mood_change = -3
 	timeout = 5 MINUTES
 
 /datum/mood_event/better_tree
-	description = "<span class='nicegreen'>I feel blessed by the gods!</span>\n"
+	description = span_nicegreen("I feel blessed by the gods!")
 	mood_change = 6
 	timeout = 5 MINUTES
 
 /datum/mood_event/worse_tree
-	description = "<span class='warning'>It's like a root is digging into my heart.</span>\n"
+	description = span_warning("It's like a root is digging into my heart.")
 	mood_change = -6
 	timeout = 5 MINUTES
 
@@ -987,7 +1010,6 @@
 	icon_state = "churchtree"
 	desc = "A sturdy oak tree imported directly from Illestren the homeworld of the Saint-Roumain Militia. It contains a bacteria native to the planet. The soil was carfuly transfered from the same place it was planted. A apple tree branch has been grafted onto it. You could try watering it"
 	pixel_x = -16
-	max_integrity = 200
 	bound_height = 64
 	var/health = 0
 	var/lastcycle = 0
@@ -1016,11 +1038,16 @@
 		/datum/reagent/toxin/acid/fluacid = -0.4,
 		/datum/reagent/toxin/plantbgone = -0.5,
 		/datum/reagent/napalm = -0.6,
-		/datum/reagent/hellwater = -1,
 		/datum/reagent/liquidgibs = -0.2,
 		/datum/reagent/consumable/ethanol/demonsblood = -0.8,
 		/datum/reagent/medicine/soulus = -0.2
 	)
+
+/obj/structure/flora/tree/srm/pine
+	name = "Montagne's Conifer"
+	icon = 'icons/obj/flora/tall_trees.dmi'
+	icon_state = "pine_1"
+	desc = "A hardy, imported conifer tree acting as the centerpiece of the garden. A branch from an Illestren apple tree has been grafted onto it, producing fruits containing bactera native to the planet; often used in recipes withheld by the Saint-Roumain Militia. You could try watering it."
 
 /obj/structure/flora/tree/srm/Initialize()
 	START_PROCESSING(SSobj, src)
@@ -1039,11 +1066,11 @@
 			reagents.clear_reagents()
 		if(health > 25)
 			if(prob(50))
-				var/obj/item/reagent_containers/food/snacks/grown/apple/apple = new(get_step(get_turf(src), apple_direction))
+				var/obj/item/food/grown/apple/apple = new(get_step(get_turf(src), apple_direction))
 				apple.name = "illestren Apple"
 				apple.desc = "You can grind this for bacteria."
 				apple.reagents.add_reagent(/datum/reagent/srm_bacteria, 10)
-				visible_message("<span class='green'>An [apple] falls from the tree.</span>")
+				visible_message(span_green("An [apple] falls from the tree."))
 				health -= 25
 		//Clean up the air a bit
 		if(isopenturf(loc))
@@ -1091,3 +1118,42 @@
 
 /obj/effect/particle_emitter/Initialize(mapload, time)
 	. = ..()
+
+/obj/structure/flora/rock/crystal
+	name = "crystal growth"
+	desc = "A towering, opaque crystal. You could probably shave something off this."
+	icon_state = "crystal"
+	base_icon_state = "crystal"
+	icon = 'icons/effects/32x64.dmi'
+	resistance_flags = FIRE_PROOF
+	density = TRUE
+	max_integrity = 100
+	mineResult = /obj/effect/decal/cleanable/glass/strange
+
+	hitsound_type = PROJECTILE_HITSOUND_STONE
+
+	///shaving the rock with a knife gives you this item
+	var/obj/shaving_type = /obj/item/crystal_shard
+	///how much can we shave the rock?
+	var/max_shavings = 3
+	///shaving count on the rock
+	var/shaving_count = 0
+
+/obj/structure/flora/rock/crystal/Initialize()
+	. = ..()
+	max_shavings = rand(src::max_shavings-2, src::max_shavings+2)
+	icon_state = "[base_icon_state]"
+
+/obj/structure/flora/rock/crystal/attackby(obj/item/tool, mob/user, params)
+	if(tool.sharpness && tool.tool_behaviour != TOOL_MINING && user.a_intent != INTENT_HARM)
+		if(shaving_count >= max_shavings)
+			to_chat(user, span_warning("There are no good places to cut [src]."))
+			return
+		playsound(src, 'sound/effects/fuse.ogg')
+		to_chat(user, span_notice("You start shaving a crystal off [src]..."))
+		if(tool.use_tool(src, user, 6 SECONDS, volume=50))
+			new shaving_type(loc)
+			shaving_count++
+			to_chat(user, span_notice("You cut a [shaving_type.name] off of [src]."))
+		return
+	return ..()

@@ -23,12 +23,22 @@
 	/// Use to set a delay after activation to trigger the explosion.
 	var/blast_delay = 1 DECISECONDS
 
+	/// Should our start live?
+	var/spawn_armed = FALSE
+	/// Sets a delay for mines for mines that start live
+	var/spawn_arm_delay
+
 	var/manufacturer = MANUFACTURER_NONE
 
 /obj/item/mine/Initialize(mapload)
 	. = ..()
-	if(armed)
-		now_armed()
+	if(spawn_armed)
+		if(spawn_arm_delay)
+			armed = FALSE
+			update_appearance(UPDATE_ICON_STATE)
+			addtimer(CALLBACK(src, PROC_REF(now_armed),FALSE), spawn_arm_delay)
+		else
+			now_armed()
 
 /obj/item/mine/examine(mob/user)
 	. = ..()
@@ -47,7 +57,7 @@
 /// mines have a small chance to be triggered by damage, but they take longer to explode
 /obj/item/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
 	. = ..()
-	if(prob(35) & obj_integrity > 0)
+	if(prob(35) & atom_integrity > 0)
 		blast_delay = blast_delay * 2
 		trigger_mine()
 
@@ -94,12 +104,13 @@
 	return TRUE
 
 /// let them know the mine's done cooking
-/obj/item/mine/proc/now_armed()
+/obj/item/mine/proc/now_armed(silent = FALSE)
 	armed = TRUE
 	update_appearance(UPDATE_ICON_STATE)
 	light_power = 1
 	light_range = 1
-	playsound(src, 'sound/machines/nuke/angry_beep.ogg', 55, FALSE, 1)
+	if(!silent)
+		playsound(src, 'sound/machines/nuke/angry_beep.ogg', 55, FALSE, 1)
 	visible_message("<span class='danger'>\The [src] beeps softly, indicating it is now active.<span>", vision_distance = COMBAT_MESSAGE_RANGE)
 
 /// Can this mine trigger on the passed movable?
@@ -110,7 +121,7 @@
 
 /// When something sets off a mine
 /obj/item/mine/proc/trigger_mine(atom/movable/triggerer)
-	if(obj_integrity <= 0 || triggered)//too busy detonating to detonate again
+	if(atom_integrity <= 0 || triggered)//too busy detonating to detonate again
 		return
 	if(triggerer)
 		triggerer.visible_message(span_danger("[icon2html(src, viewers(src))] [triggerer] sets off \the [src]. It's gonna blow!"), span_danger("[icon2html(src, viewers(src))] \The [src] activates."))
@@ -272,11 +283,11 @@
 /obj/item/mine/pressure/attackby(obj/item/I, mob/user)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(sealed)
-			to_chat(user, "<span class='notice'>You can't see any way to access \the [src]'s wiring.</span>")
+			to_chat(user, span_notice("You can't see any way to access \the [src]'s wiring."))
 			return
 		open_panel = !open_panel
 		update_appearance(UPDATE_ICON_STATE)
-		to_chat(user, "<span class='notice'>You [open_panel ? "reveal" : "hide"] \the [src]'s wiring.</span>")
+		to_chat(user, span_notice("You [open_panel ? "reveal" : "hide"] \the [src]'s wiring."))
 		I.play_tool_sound(src, 50)
 		return
 	else if(is_wire_tool(I) && open_panel)
@@ -473,11 +484,11 @@
 /obj/item/mine/pressure/explosive/fire/mine_effect(mob/victim)
 	if(victim?.is_holding(src))//in case it's been picked up
 		for(var/turf/T in view(4,victim))
-			T.IgniteTurf(15)
+			T.ignite_turf(15)
 			new /obj/effect/hotspot(T)
 	else
 		for(var/turf/T in view(4,src))
-			T.IgniteTurf(15)
+			T.ignite_turf(15)
 			new /obj/effect/hotspot(T)
 	. = ..()
 
@@ -576,7 +587,7 @@
 
 	shrapnel_magnitude = 8
 	shrapnel_type = /obj/projectile/bullet/pellet/stingball
-	manufacturer = MANUFACTURER_NANOTRASEN_OLD
+	manufacturer = MANUFACTURER_WARRA_OLD
 
 
 /obj/item/mine/proximity/explosive/plasma
@@ -592,10 +603,10 @@
 /obj/item/mine/proximity/explosive/plasma/mine_effect(mob/victim)
 	if(victim.is_holding(src))//in case it's been picked up
 		for(var/turf/T in view(3,victim))
-			T.IgniteTurf(25, "green")
+			T.ignite_turf(25, "green")
 	else
 		for(var/turf/T in view(3,src))
-			T.IgniteTurf(25, "green")
+			T.ignite_turf(25, "green")
 	. = ..()
 
 //Manhacks... so pretty...
@@ -653,10 +664,10 @@
 
 /obj/item/mine/directional/claymore/attackby(obj/item/I, mob/user)
 	if (I.tool_behaviour == TOOL_SCREWDRIVER && armed)
-		to_chat(user, "<span class='notice'>You begin unscrewing \the [src]'s arming pin...</span>")
+		to_chat(user, span_notice("You begin unscrewing \the [src]'s arming pin..."))
 		I.play_tool_sound(src, 50)
 		if(do_after(user, 10 SECONDS, target = src))
-			to_chat(user, "<span class='notice'>You unscrew \the [src]'s arming pin, disarming it.</span>")
+			to_chat(user, span_notice("You unscrew \the [src]'s arming pin, disarming it."))
 			disarm()
 	else
 		. = ..()
@@ -763,17 +774,17 @@
 	victim.put_in_hands(chainsaw, forced = TRUE)
 	chainsaw.attack_self(victim)
 	victim.reagents.add_reagent(/datum/reagent/medicine/adminordrazine,25)
-	to_chat(victim, "<span class='warning'>KILL, KILL, KILL! YOU HAVE NO ALLIES ANYMORE, KILL THEM ALL!</span>")
+	to_chat(victim, span_warning("KILL, KILL, KILL! YOU HAVE NO ALLIES ANYMORE, KILL THEM ALL!"))
 
 	var/datum/client_colour/colour = victim.add_client_colour(/datum/client_colour/bloodlust)
 	QDEL_IN(colour, 11)
 	doomslayer = victim
-	RegisterSignal(src, COMSIG_PARENT_QDELETING, PROC_REF(end_blood_frenzy))
+	RegisterSignal(src, COMSIG_QDELETING, PROC_REF(end_blood_frenzy))
 	QDEL_IN(WEAKREF(src), duration)
 
 /obj/item/mine/pressure/pickup/bloodbath/proc/end_blood_frenzy()
 	if(doomslayer)
-		to_chat(doomslayer, "<span class='notice'>Your bloodlust seeps back into the bog of your subconscious and you regain self control.</span>")
+		to_chat(doomslayer, span_notice("Your bloodlust seeps back into the bog of your subconscious and you regain self control."))
 		doomslayer.log_message("exited a blood frenzy", LOG_ATTACK)
 	if(chainsaw)
 		qdel(chainsaw)
@@ -788,7 +799,7 @@
 /obj/item/mine/pressure/pickup/healing/mine_effect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
 		return
-	to_chat(victim, "<span class='notice'>You feel great!</span>")
+	to_chat(victim, span_notice("You feel great!"))
 	victim.revive(full_heal = TRUE, admin_revive = TRUE)
 
 /obj/item/mine/pressure/pickup/speed
@@ -799,13 +810,13 @@
 /obj/item/mine/pressure/pickup/speed/mine_effect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
 		return
-	to_chat(victim, "<span class='notice'>You feel fast!</span>")
+	to_chat(victim, span_notice("You feel fast!"))
 	victim.add_movespeed_modifier(/datum/movespeed_modifier/yellow_orb)
 	addtimer(CALLBACK(src, PROC_REF(finish_effect), victim), duration)
 
 /obj/item/mine/pressure/pickup/speed/proc/finish_effect(mob/living/carbon/victim)
 	victim.remove_movespeed_modifier(/datum/movespeed_modifier/yellow_orb)
-	to_chat(victim, "<span class='notice'>You slow down.</span>")
+	to_chat(victim, span_notice("You slow down."))
 
 
 
@@ -817,7 +828,7 @@
 #define LIVE_MINE_HELPER(mine_type)		\
 	/obj/item/mine/##mine_type/live {		\
 		anchored = TRUE;					\
-		armed = TRUE;						\
+		spawn_armed = TRUE;						\
 	}
 
 LIVE_MINE_HELPER(pressure/explosive)
@@ -852,22 +863,3 @@ LIVE_MINE_HELPER(pressure/sound)
 		/obj/item/mine/pressure/explosive/shrapnel/live = 3,
 		/obj/item/mine/pressure/explosive/rad/live = 3,
 		/obj/item/mine/pressure/explosive/fire/live = 3)
-
-/obj/effect/spawner/minefield
-	name = "minefield spawner"
-	var/minerange = 9
-	var/minetype = /obj/item/mine/pressure/explosive/rusty/live
-
-/obj/effect/spawner/minefield/Initialize(mapload)
-	. = ..()
-	for(var/turf/open/T in view(minerange,loc))
-		if(prob(5))
-			new minetype(T)
-
-/obj/effect/spawner/minefield/random
-	name = "random minefield spawner"
-	minetype = /obj/effect/spawner/random/mine
-
-/obj/effect/spawner/minefield/manhack
-	name = "manhack field spawner"
-	minetype = /obj/item/mine/proximity/spawner/manhack/live

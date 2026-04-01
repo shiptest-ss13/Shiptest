@@ -7,11 +7,17 @@
 	attack_verb = list("licked", "slobbered", "slapped", "frenched", "tongued")
 	var/list/languages_possible
 	var/say_mod = "says"
+	var/ask_mod = "asks"
+	var/exclaim_mod = "exclaims"
+	var/whisper_mod = "whispers"
+	var/sing_mod = "sings"
+	var/yell_mod = "yells"
 	var/taste_sensitivity = 15 // lower is more sensitive.
 	var/modifies_speech = FALSE
 	var/static/list/languages_possible_base = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
 		/datum/language/moffic,
@@ -19,6 +25,7 @@
 		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/aphasia,
+		/datum/language/league_kalixcian,
 	))
 
 /obj/item/organ/tongue/Initialize(mapload)
@@ -52,9 +59,10 @@
 	modifies_speech = TRUE
 
 /obj/item/organ/tongue/lizard/handle_speech(datum/source, list/speech_args)
-	// Sarathi tongues don't hiss when speaking Kalixcian.
+	// Sarathi tongues don't hiss when speaking Kalixcian. Or when signing.
 	// we should make non-sarathi hiss in Kalixcian
-	if(speech_args[SPEECH_LANGUAGE] == /datum/language/kalixcian_common)
+	var/datum/language/lang_type = speech_args[SPEECH_LANGUAGE]
+	if(initial(lang_type.flags) & NO_HISS)
 		return
 
 	var/static/regex/lizard_hiss = new("s+", "g")
@@ -89,12 +97,16 @@
 	var/list/phomeme_types = list("sans", "papyrus")
 	var/static/list/languages_possible_skeleton = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
-		/datum/language/codespeak,
-		/datum/language/monkey,
-		/datum/language/aphasia,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
+		/datum/language/teceti_unified,
+		/datum/language/solarian_international,
 		/datum/language/moffic,
-		/datum/language/ratvar
+		/datum/language/monkey,
+		/datum/language/ratvar,
+		/datum/language/codespeak,
+		/datum/language/aphasia,
+		/datum/language/league_kalixcian,
 	))
 
 /obj/item/organ/tongue/bone/Initialize()
@@ -125,6 +137,9 @@
 	organ_flags = NONE
 	icon_state = "tonguerobot"
 	say_mod = "states"
+	ask_mod = "queries"
+	exclaim_mod = "declares"
+	yell_mod = "alarms"
 	attack_verb = list("beeped", "booped")
 	modifies_speech = TRUE
 	taste_sensitivity = 25 // not as good as an organic tongue
@@ -137,7 +152,7 @@
 /obj/item/organ/tongue/robot/emp_act(severity)
 	owner.apply_effect(EFFECT_STUTTER, 120)
 	owner.force_scream()
-	to_chat(owner, "<span class='warning'>Alert: Vocal cords are malfunctioning.</span>")
+	to_chat(owner, span_warning("Alert: Vocal cords are malfunctioning."))
 
 /obj/item/organ/tongue/robot/handle_speech(datum/source, list/speech_args)
 	speech_args[SPEECH_SPANS] |= SPAN_ROBOT
@@ -152,7 +167,9 @@
 	taste_sensitivity = 101 // Not a tongue, they can't taste shit
 	var/static/list/languages_possible_ethereal = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
 		/datum/language/moffic,
@@ -174,8 +191,10 @@
 	say_mod = "flutters"
 	var/static/list/languages_possible_moth = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
 		/datum/language/teceti_unified,
+		/datum/language/league_kalixcian,
 		/datum/language/solarian_international,
 		/datum/language/moffic,
 		/datum/language/monkey,
@@ -193,7 +212,9 @@
 	say_mod = "chirps"
 	var/static/list/languages_possible_kepi = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
 		/datum/language/moffic,
@@ -214,7 +235,9 @@
 	say_mod = "shrieks"
 	var/static/list/languages_possible_vox = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
 		/datum/language/moffic,
@@ -236,13 +259,14 @@
 	say_mod = "chitters"
 	var/static/list/languages_possible_arachnid = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/codespeak,
 		/datum/language/monkey,
 		/datum/language/aphasia,
 		/datum/language/moffic,
-		/datum/language/rachnidian,
-		/datum/language/buzzwords
+		/datum/language/rachnidian
 	))
 
 /obj/item/organ/tongue/spider/Initialize(mapload)
@@ -277,7 +301,9 @@
 	say_mod = "blorbles"
 	var/static/list/languages_possible_slime = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
 		/datum/language/moffic,
@@ -368,26 +394,26 @@
 		return
 
 	if(T.mothership == mothership)
-		to_chat(H, "<span class='notice'>[src] is already attuned to the same channel as your own.</span>")
+		to_chat(H, span_notice("[src] is already attuned to the same channel as your own."))
 
-	H.visible_message("<span class='notice'>[H] holds [src] in their hands, and concentrates for a moment.</span>", "<span class='notice'>You attempt to modify the attunation of [src].</span>")
+	H.visible_message(span_notice("[H] holds [src] in their hands, and concentrates for a moment."), span_notice("You attempt to modify the attunation of [src]."))
 	if(do_after(H, delay=15, target=src))
-		to_chat(H, "<span class='notice'>You attune [src] to your own channel.</span>")
+		to_chat(H, span_notice("You attune [src] to your own channel."))
 		mothership = T.mothership
 
 /obj/item/organ/tongue/abductor/examine(mob/M)
 	. = ..()
 	if(HAS_TRAIT(M, TRAIT_ABDUCTOR_TRAINING) || HAS_TRAIT(M.mind, TRAIT_ABDUCTOR_TRAINING) || isobserver(M))
 		if(!mothership)
-			. += "<span class='notice'>It is not attuned to a specific mothership.</span>"
+			. += span_notice("It is not attuned to a specific mothership.")
 		else
-			. += "<span class='notice'>It is attuned to [mothership].</span>"
+			. += span_notice("It is attuned to [mothership].")
 
 /obj/item/organ/tongue/abductor/handle_speech(datum/source, list/speech_args)
 	//Hacks
 	var/message = speech_args[SPEECH_MESSAGE]
 	var/mob/living/carbon/human/user = source
-	var/rendered = "<span class='abductor'><b>[user.real_name]:</b> [message]</span>"
+	var/rendered = span_abductor("<b>[user.real_name]:</b> [message]")
 	user.log_talk(message, LOG_SAY, tag="abductor")
 	for(var/mob/living/carbon/human/H in GLOB.alive_mob_list)
 		var/obj/item/organ/tongue/abductor/T = H.getorganslot(ORGAN_SLOT_TONGUE)
@@ -411,7 +437,9 @@
 	modifies_speech = TRUE
 	var/static/list/languages_possible_fly = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
 		/datum/language/moffic,

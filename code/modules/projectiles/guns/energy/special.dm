@@ -1,14 +1,14 @@
 /obj/item/gun/energy/ionrifle
 	name = "ion rifle"
-	desc = "A man-portable anti-armor weapon designed to disable mechanical threats at range."
+	desc = "A man-portable anti-armor weapon designed to disable mechanical threats at range. The high energy load requires the gun to cooldown between each shot."
 	icon_state = "ionrifle"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	shaded_charge = FALSE
 	ammo_x_offset = 2
 	ammo_y_offset = 2
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
@@ -17,6 +17,23 @@
 
 /obj/item/gun/energy/ionrifle/empty_cell
 	spawn_no_ammo = TRUE
+
+/obj/item/gun/energy/ionrifle/update_overlays()
+	. = ..()
+	var/mutable_appearance/cooldown_overlay = mutable_appearance('icons/obj/guns/energy.dmi')
+	if(current_cooldown)
+		cooldown_overlay = "[icon_state]_cooldown"
+		.+= cooldown_overlay
+
+/obj/item/gun/energy/ionrifle/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
+	. = ..()
+	update_appearance()
+
+/obj/item/gun/energy/ionrifle/reset_current_cooldown()
+	. = ..()
+	update_appearance()
+	playsound(src, 'sound/machines/synth_yes.ogg', 100, TRUE, frequency = 6120)
+
 
 /obj/item/gun/energy/ionrifle/carbine
 	name = "ion carbine"
@@ -109,110 +126,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
 	manufacturer = MANUFACTURER_NONE
 
-
-/obj/item/gun/energy/plasmacutter
-	name = "plasma cutter"
-	desc = "An engineering tool capable of expelling concentrated plasma bursts. You could use it to cut limbs off xenos! Or, you know, cut through walls."
-	icon_state = "plasmacutter"
-	item_state = "plasmacutter"
-	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
-	flags_1 = CONDUCT_1
-	attack_verb = list("attacked", "slashed", "cut", "sliced")
-	force = 12
-	sharpness = IS_SHARP
-	can_charge = FALSE
-
-	heat = 3800
-	usesound = list('sound/items/welder.ogg', 'sound/items/welder2.ogg')
-	tool_behaviour = TOOL_DECONSTRUCT
-	wall_decon_damage = 200
-	toolspeed = 1 //plasmacutters can be used like angle grinders
-	internal_magazine = TRUE //so you don't cheese through the need for plasma - WS EDIT
-	var/charge_cut = 100 //amount of charge used up to start action (multiplied by amount) and per progress_flash_divisor ticks of cutting
-	var/adv = FALSE
-
-/obj/item/gun/energy/plasmacutter/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 25, 105, 0, 'sound/weapons/plasma_cutter.ogg')
-	AddElement(/datum/element/update_icon_blocker)
-	AddElement(/datum/element/tool_flash, 1)
-
-/obj/item/gun/energy/plasmacutter/examine(mob/user)
-	. = ..()
-	if(cell)
-		. += "<span class='notice'>[src] is [round(cell.percent())]% charged.</span>"
-
-/obj/item/gun/energy/plasmacutter/attackby(obj/item/I, mob/user)
-	var/charge_multiplier = 0 //2 = Refined stack, 1 = Ore
-	if(istype(I, /obj/item/stack/sheet/mineral/plasma))
-		charge_multiplier = 2
-	if(istype(I, /obj/item/stack/ore/plasma))
-		charge_multiplier = 1
-	if(charge_multiplier)
-		if(cell.charge == cell.maxcharge)
-			to_chat(user, "<span class='notice'>You try to insert [I] into [src], but it's fully charged.</span>") //my cell is round and full
-			return
-		I.use(1)
-		cell.give(500*charge_multiplier)
-		to_chat(user, "<span class='notice'>You insert [I] in [src], recharging it.</span>")
-	else
-		..()
-
-// Can we cut? Plasma cutter does not use charge continuously.
-// Amount cannot be defaulted to 1: most of the code specifies 0 in the call.
-/obj/item/gun/energy/plasmacutter/tool_use_check(mob/living/user, amount)
-	if(QDELETED(cell))
-		to_chat(user, "<span class='warning'>[src] does not have a cell, and cannot be used!</span>")
-		return FALSE
-	// Amount cannot be used if drain is made continuous, e.g. amount = 5, charge_cut = 25
-	// Then it'll drain 125 at first and 25 periodically, but fail if charge dips below 125 even though it still can finish action
-	// Alternately it'll need to drain amount*charge_cut every period, which is either obscene or makes it free for other uses
-	if(amount ? cell.charge < charge_cut * amount : cell.charge < charge_cut)
-		to_chat(user, "<span class='warning'>You need more charge to complete this task!</span>")
-		return FALSE
-
-	return TRUE
-
-/obj/item/gun/energy/plasmacutter/attack(mob/living/carbon/human/target, mob/user)
-	if(!istype(target))
-		return ..()
-	var/obj/item/bodypart/attackedLimb = target.get_bodypart(check_zone(user.zone_selected))
-	if(!attackedLimb || IS_ORGANIC_LIMB(attackedLimb) || (user.a_intent == INTENT_HARM))
-		return ..()
-	if(!tool_start_check(user, amount = 1))
-		return TRUE
-	user.visible_message("<span class='notice'>[user] starts to fix some of the dents on [target]'s [parse_zone(attackedLimb.body_zone)].</span>",
-			"<span class='notice'>You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)].</span>")
-	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
-		return TRUE
-	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0, integrity_loss = 5)
-	return TRUE
-
-/obj/item/gun/energy/plasmacutter/use(amount)
-	return (!QDELETED(cell) && cell.use(amount ? amount * charge_cut : charge_cut))
-
-/obj/item/gun/energy/plasmacutter/use_tool(atom/target, mob/living/user, delay, amount=1, volume=0, datum/callback/extra_checks)
-	if(amount)
-		if(adv)
-			target.add_overlay(GLOB.advanced_cutting_effect)
-		else
-			target.add_overlay(GLOB.cutting_effect)
-		. = ..()
-		if(adv)
-			target.cut_overlay(GLOB.advanced_cutting_effect)
-		else
-			target.cut_overlay(GLOB.cutting_effect)
-	else
-		. = ..(amount=1)
-
-/obj/item/gun/energy/plasmacutter/adv
-	name = "advanced plasma cutter"
-	icon_state = "adv_plasmacutter"
-	item_state = "adv_plasmacutter"
-	force = 15
-	wall_decon_damage = 300
-	ammo_type = list(/obj/item/ammo_casing/energy/plasma/adv)
-
 /obj/item/gun/energy/wormhole_projector
 	name = "bluespace wormhole projector"
 	desc = "A projector that emits high density quantum-coupled bluespace beams." //WS Edit - Any anomaly core for phazons
@@ -272,7 +185,7 @@
 
 /obj/item/gun/energy/wormhole_projector/proc/create_portal(obj/projectile/beam/wormhole/W, turf/target)
 	var/obj/effect/portal/P = new /obj/effect/portal(target, 300, null, FALSE, null, atmos_link)
-	RegisterSignal(P, COMSIG_PARENT_QDELETING, PROC_REF(on_portal_destroy))
+	RegisterSignal(P, COMSIG_QDELETING, PROC_REF(on_portal_destroy))
 	if(istype(W, /obj/projectile/beam/wormhole/orange))
 		qdel(p_orange)
 		p_orange = P
@@ -318,7 +231,7 @@
 
 /obj/item/gun/energy/printer/commando/examine()
 	. = ..()
-	. += "<span class='notice'> Can be reconfigured inhand to print different projectile designs.</span>"
+	. += span_notice(" Can be reconfigured inhand to print different projectile designs.")
 
 /obj/item/gun/energy/printer/commando/attack_self(mob/living/user as mob)
 	if(ammo_type.len > 1)
@@ -335,11 +248,11 @@
 	if (shot.select_name)
 		playsound(get_turf(user), 'sound/items/change_drill.ogg', 50, TRUE)
 		if(shot.select_name == "tactical")
-			to_chat(user, "<span class='notice'>You configure the [src] to fire CY-TACTICAL high-velocity impact rounds.</span>")
+			to_chat(user, span_notice("You configure the [src] to fire CY-TACTICAL high-velocity impact rounds."))
 		if(shot.select_name == "sweet")
-			to_chat(user, "<span class='notice'>You set your [src] to fire CY-SWEET distruptor rounds, which travel slowly and do little damage, but irradiate and ignite targets.</span>")
+			to_chat(user, span_notice("You set your [src] to fire CY-SWEET distruptor rounds, which travel slowly and do little damage, but irradiate and ignite targets."))
 		if(shot.select_name == "sour")
-			to_chat(user, "<span class='notice'>You rearm your [src] with CY-SOUR nonlethal rounds, which cause stamina damage and distrupt the focus of enemies.</span>")
+			to_chat(user, span_notice("You rearm your [src] with CY-SOUR nonlethal rounds, which cause stamina damage and distrupt the focus of enemies."))
 	chambered = null
 	recharge_newshot(TRUE)
 	update_appearance()
@@ -394,7 +307,7 @@
 
 /obj/item/gun/energy/gravity_gun/attackby(obj/item/C, mob/user)
 	if(istype(C, /obj/item/assembly/signaler/anomaly)) //WS Edit - Any anomaly core for phazons
-		to_chat(user, "<span class='notice'>You insert [C] into the gravitational manipulator and the weapon gently hums to life.</span>")
+		to_chat(user, span_notice("You insert [C] into the gravitational manipulator and the weapon gently hums to life."))
 		firing_core = TRUE
 		playsound(src.loc, 'sound/machines/click.ogg', 50, TRUE)
 		qdel(C)

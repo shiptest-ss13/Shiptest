@@ -9,6 +9,46 @@
  * Misc
  */
 
+// Generic listoflist safe add and removal macros:
+///If value is a list, wrap it in a list so it can be used with list add/remove operations
+#define LIST_VALUE_WRAP_LISTS(value) (islist(value) ? list(value) : value)
+///Add an untyped item to a list, taking care to handle list items by wrapping them in a list to remove the footgun
+#define UNTYPED_LIST_ADD(list, item) (list += LIST_VALUE_WRAP_LISTS(item))
+///Remove an untyped item to a list, taking care to handle list items by wrapping them in a list to remove the footgun
+#define UNTYPED_LIST_REMOVE(list, item) (list -= LIST_VALUE_WRAP_LISTS(item))
+
+/*
+ * ## Lazylists
+ *
+ * * What is a lazylist?
+ *
+ * True to its name a lazylist is a lazy instantiated list.
+ * It is a list that is only created when necessary (when it has elements) and is null when empty.
+ *
+ * * Why use a lazylist?
+ *
+ * Lazylists save memory - an empty list that is never used takes up more memory than just `null`.
+ *
+ * * When to use a lazylist?
+ *
+ * Lazylists are best used on hot types when making lists that are not always used.
+ *
+ * For example, if you were adding a list to all atoms that tracks the names of people who touched it,
+ * you would want to use a lazylist because most atoms will never be touched by anyone.
+ *
+ * * How do I use a lazylist?
+ *
+ * A lazylist is just a list you defined as `null` rather than `list()`.
+ * Then, you use the LAZY* macros to interact with it, which are essentially null-safe ways to interact with a list.
+ *
+ * Note that you probably should not be using these macros if your list is not a lazylist.
+ * This will obfuscate the code and make it a bit harder to read and debug.
+ *
+ * Generally speaking you shouldn't be checking if your lazylist is `null` yourself, the macros will do that for you.
+ * Remember that LAZYLEN (and by extension, length) will return 0 if the list is null.
+ */
+
+
 #define LAZYINITLIST(L) if (!L) L = list()
 #define UNSETEMPTY(L) if (L && !length(L)) L = null
 #define ASSOC_UNSETEMPTY(L, K) if (!length(L[K])) L -= K;
@@ -30,6 +70,7 @@
 #define LAZYACCESSASSOC(L, I, K) L ? L[I] ? L[I][K] ? L[I][K] : null : null : null
 #define LAZYNULL(L) L = null
 #define QDEL_LAZYLIST(L) for(var/I in L) qdel(I); L = null;
+#define QDEL_LAZYASSOCLIST(L) for(var/K in L) qdel(L[K]); L = null;
 /// ORs two lazylists together without inserting errant nulls, returning a new list and not modifying the existing lists.
 #define LAZY_LISTS_OR(left_list, right_list)\
 	(length(left_list)\
@@ -784,3 +825,49 @@
 			. += sanitize_simple("[item]", list("{"="", "}"="", "\""="", ";"="", ","=""))
 		first_entry = FALSE
 	. += ")"
+
+/// Turns an associative list into a flat list of keys
+/proc/assoc_to_keys(list/input)
+	var/list/keys = list()
+	for(var/key in input)
+		UNTYPED_LIST_ADD(keys, key)
+	return keys
+
+/// Turns an associative list into a flat list of keys, but for sprite accessories, respecting the locked variable
+/proc/assoc_to_keys_features(list/input)
+	var/list/keys = list()
+	for(var/key in input)
+		var/datum/sprite_accessory/value = input[key]
+		if(value?.locked)
+			continue
+		UNTYPED_LIST_ADD(keys, key)
+	return keys
+
+/// Compares 2 lists, returns TRUE if they are the same
+/proc/deep_compare_list(list/list_1, list/list_2)
+	if(list_1 == list_2)
+		return TRUE
+
+	if(!islist(list_1) || !islist(list_2))
+		return FALSE
+
+	if(list_1.len != list_2.len)
+		return FALSE
+
+	for(var/i in 1 to list_1.len)
+		var/key_1 = list_1[i]
+		var/key_2 = list_2[i]
+		if (islist(key_1) && islist(key_2))
+			if(!deep_compare_list(key_1, key_2))
+				return FALSE
+		else if(key_1 != key_2)
+			return FALSE
+		if(istext(key_1) || islist(key_1) || ispath(key_1) || isdatum(key_1) || key_1 == world)
+			var/value_1 = list_1[key_1]
+			var/value_2 = list_2[key_1]
+			if (islist(value_1) && islist(value_2))
+				if(!deep_compare_list(value_1, value_2))
+					return FALSE
+			else if(value_1 != value_2)
+				return FALSE
+	return TRUE

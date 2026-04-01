@@ -1,4 +1,3 @@
-//Mime
 /obj/item/clothing/head/beret
 	name = "beret"
 	desc = "A red beret."
@@ -146,7 +145,7 @@
 
 /obj/item/clothing/head/beret/service
 	name = "service beret"
-	desc =  "A standard Nanotrasen service beret. Held by those with the sanity to serve others in the far frontier."
+	desc =  "A standard Makosso-Warra service beret. Held by those with the sanity to serve others in the far frontier."
 	icon_state = "beret_serv"
 
 /obj/item/clothing/head/beret/qm
@@ -251,10 +250,7 @@
 	icon_state = "beret_cmo"
 	armor = list("bio" = 30, "acid" = 20)
 
-/obj/item/clothing/head/beret/cmo/cybersun
-	name = "medical director beret"
-	desc = "A burgundy-red beret with a silver cross. It smells very sterile."
-	icon_state = "meddirectorberet"
+
 
 //Command
 /obj/item/clothing/head/beret/captain
@@ -272,50 +268,12 @@
 	desc = "A modest blue command beret with a silver rank insignia. Smells of power and the sweat of assistants."
 	icon_state = "beret_com"
 
-// SolGov
-
-/obj/item/clothing/head/beret/solgov
-	name = "\improper SolGov beret"
-	desc = "A beret with SolGov's emblem emblazoned on it. Colored in SolGov blue."
-	icon_state = "beret_solgov"
-
-/obj/item/clothing/head/beret/solgov/plain
-	name = "\improper SolGov beret"
-	desc = "A plain blue beret. It looks like it's missing something."
-	icon_state = "beret_solgovplain"
-
-/obj/item/clothing/head/beret/solgov/terragov
-	name = "\improper TerraGov beret"
-	desc = "A beret with SolGov's emblem emblazoned on it. It's still colored in original TerraGov green."
-	icon_state = "beret_terragov"
-
-/obj/item/clothing/head/beret/solgov/terragov/plain
-	name = "\improper TerraGov beret"
-	desc = "A plain beret colored in original TerraGov green. It looks like it's missing something."
-	icon_state = "beret_terragovplain"
-
-// Inteq
-
-/obj/item/clothing/head/beret/sec/inteq
-	name = "inteq beret"
-	desc = "A comfortable looking brown beret with a badge of the golden shield of the IRMG. Denotes the wearer as part of the IRMG."
-	icon_state = "inteq_beret"
-
-/obj/item/clothing/head/beret/sec/hos/inteq
-	name = "inteq vanguard beret"
-	desc = "A comfortable looking brown beret with a badge of the golden shield of the IRMG. Denotes the wearer as a vanguard of the IRMG. The padding inside feels thicker."
-	icon_state = "inteq_beret"
-
-/obj/item/clothing/head/beret/sec/hos/inteq/honorable
-	name = "honorable vanguard beret"
-	desc = "A snow white beret with an air of distinction around it, emblazoned with the golden shield of the IRMG as the badge."
-	icon_state = "inteq_honorable_beret"
 
 // CentCom
 
 /obj/item/clothing/head/beret/centcom_formal
 	name = "\improper CentCom Formal Beret"
-	desc = "Sometimes, a compromise between fashion and defense needs to be made. Thanks to Nanotrasen's most recent nano-fabric durability enhancements, this time, it's not the case."
+	desc = "Sometimes, a compromise between fashion and defense needs to be made. Thanks to Makosso-Warra's most recent nano-fabric durability enhancements, this time, it's not the case."
 	icon = 'icons/obj/clothing/head/spacesuits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "beret_badge"

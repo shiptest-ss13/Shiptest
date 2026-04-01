@@ -29,7 +29,7 @@
 
 /turf/closed/indestructible/try_destroy(obj/item/W, mob/user, turf/T)
 	user.do_attack_animation(src)
-	to_chat(user, "<span class='warning'>[W] isn't strong enough to damage [src]!</span>")
+	to_chat(user, span_warning("[W] isn't strong enough to damage [src]!"))
 	playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
 	return TRUE
 
@@ -42,8 +42,8 @@
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
 		if(TOX)
 			playsound(src, 'sound/effects/spray2.ogg', 100, TRUE)
-	M.visible_message("<span class='danger'>[M.name] hits [src] and doesn't even leave a mark!</span>", \
-					"<span class='danger'>You hit [src] and fail to damage it.</span>", null, COMBAT_MESSAGE_RANGE)
+	M.visible_message(span_danger("[M.name] hits [src] and doesn't even leave a mark!"), \
+					span_danger("You hit [src] and fail to damage it."), null, COMBAT_MESSAGE_RANGE)
 
 /turf/closed/indestructible/attack_hulk(mob/living/carbon/user)
 	return FALSE

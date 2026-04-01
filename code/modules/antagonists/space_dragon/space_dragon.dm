@@ -3,7 +3,7 @@
 	roundend_category = "space dragons"
 	antagpanel_category = "Space Dragon"
 	job_rank = ROLE_SPACE_DRAGON
-	show_in_antagpanel = TRUE
+	show_in_antagpanel = FALSE
 	show_name_in_check_antagonists = TRUE
 	show_to_ghosts = TRUE
 	var/list/datum/mind/carp = list()
@@ -13,7 +13,7 @@
 					Space is an empty void, of which our kind is the apex predator, and there was little to rival our claim to this title.\n\
 					But now, we find intruders spread out amongst our claim, willing to fight our teeth with magics unimaginable, their dens like lights flicking in the depths of space.\n\
 					Today, we will snuff out one of those lights.</b>")
-	to_chat(owner, "<span class='boldwarning'>You have five minutes to find a safe location to place down the first rift.  If you take longer than five minutes to place a rift, you will be returned from whence you came.</span>")
+	to_chat(owner, span_boldwarning("You have five minutes to find a safe location to place down the first rift.  If you take longer than five minutes to place a rift, you will be returned from whence you came."))
 	owner.announce_objectives()
 	SEND_SOUND(owner.current, sound('sound/magic/demon_attack1.ogg'))
 
@@ -47,6 +47,6 @@
 		parts += "<span class='greentext big'>The [name] was successful!</span>"
 	else
 		parts += "<span class='redtext big'>The [name] has failed!</span>"
-	parts += "<span class='header'>The [name] was assisted by:</span>"
+	parts += span_header("The [name] was assisted by:")
 	parts += printplayerlist(carp)
 	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"

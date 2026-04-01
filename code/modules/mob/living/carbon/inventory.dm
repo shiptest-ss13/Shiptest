@@ -38,9 +38,9 @@
 
 	return ..()
 
-/mob/living/carbon/proc/equip_in_one_of_slots(obj/item/I, list/slots, qdel_on_fail = 1)
+/mob/living/carbon/proc/equip_in_one_of_slots(obj/item/I, list/slots, qdel_on_fail = TRUE, bypass_equip_delay_self = TRUE)
 	for(var/slot in slots)
-		if(equip_to_slot_if_possible(I, slots[slot], qdel_on_fail = 0, disable_warning = TRUE))
+		if(equip_to_slot_if_possible(I, slots[slot], qdel_on_fail = FALSE, disable_warning = TRUE, bypass_equip_delay_self = bypass_equip_delay_self))
 			return slot
 	if(qdel_on_fail)
 		qdel(I)
@@ -198,7 +198,7 @@
 
 	var/obj/item/offered_item = get_active_held_item()
 	if(!offered_item)
-		to_chat(src, "<span class='warning'>You're not holding anything to give!</span>")
+		to_chat(src, span_warning("You're not holding anything to give!"))
 		return
 
 	if(has_status_effect(STATUS_EFFECT_OFFERING))
@@ -231,7 +231,7 @@
 		to_chat(src, span_warning("[offerer] is no longer holding the item they were offering!"))
 		return
 	if(!get_empty_held_indexes())
-		to_chat(src, "<span class='warning'>You have no empty hands!</span>")
+		to_chat(src, span_warning("You have no empty hands!"))
 		return
 
 	if(I.on_offer_taken(offerer, src)) // see if the item has special behavior for being accepted

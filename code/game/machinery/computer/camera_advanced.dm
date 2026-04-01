@@ -103,7 +103,7 @@
 	if(!is_operational) //you cant use broken machine you chumbis
 		return
 	if(current_user)
-		to_chat(user, "<span class='warning'>The console is already in use!</span>")
+		to_chat(user, span_warning("The console is already in use!"))
 		return
 	var/mob/living/L = user
 

@@ -23,14 +23,14 @@
 		if(default_unfasten_wrench(user, W))
 			return
 		if(W.tool_behaviour == TOOL_WELDER)
-			if(!W.tool_start_check(user, amount=0))
+			if(!W.tool_start_check(user, src, amount=0))
 				return FALSE
 
-			user.visible_message("<span class='notice'>[user] is slicing apart the [name].</span>", \
-								"<span class='notice'>You are slicing apart the [name]...</span>")
+			user.visible_message(span_notice("[user] is slicing apart the [name]."), \
+								span_notice("You are slicing apart the [name]..."))
 			if(W.use_tool(src, user, 40, volume=50))
-				user.visible_message("<span class='notice'>[user] slices apart the [name].</span>", \
-									"<span class='notice'>You slice apart the [name]!</span>")
+				user.visible_message(span_notice("[user] slices apart the [name]."), \
+									span_notice("You slice apart the [name]!"))
 				deconstruct(TRUE)
 			return
 	return ..()

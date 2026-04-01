@@ -104,10 +104,10 @@
 	build_path = /obj/machinery/telecomms/processor
 	req_components = list(
 		/obj/item/stock_parts/manipulator = 3,
+		/obj/item/stack/cable_coil = 2,
 		/obj/item/stock_parts/subspace/filter = 1,
 		/obj/item/stock_parts/subspace/treatment = 2,
 		/obj/item/stock_parts/subspace/analyzer = 1,
-		/obj/item/stack/cable_coil = 2,
 		/obj/item/stock_parts/subspace/amplifier = 1)
 
 /obj/item/circuitboard/machine/telecomms/receiver
@@ -127,7 +127,9 @@
 	req_components = list(
 		/obj/item/stock_parts/manipulator = 2,
 		/obj/item/stack/cable_coil = 2,
-		/obj/item/stock_parts/subspace/filter = 2)
+		/obj/item/stock_parts/subspace/filter = 2,
+		/obj/item/stock_parts/subspace/transmitter = 4
+		)
 
 /obj/item/circuitboard/machine/telecomms/server
 	name = "Telecommunication Server (Machine Board)"
@@ -168,7 +170,7 @@
 		name = initial(new_type.name)
 		build_path = initial(new_type.build_path)
 		I.play_tool_sound(src)
-		to_chat(user, "<span class='notice'>You change the circuitboard setting to \"[new_setting]\".</span>")
+		to_chat(user, span_notice("You change the circuitboard setting to \"[new_setting]\"."))
 	else
 		return ..()
 
@@ -207,12 +209,12 @@
 /obj/item/circuitboard/machine/circulator/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
-		to_chat(user, "<span class='notice'>You change the circuitboard to layer [pipe_layer].</span>")
+		to_chat(user, span_notice("You change the circuitboard to layer [pipe_layer]."))
 		return
 
 /obj/item/circuitboard/machine/circulator/examine()
 	. = ..()
-	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
+	. += span_notice("It is set to layer [pipe_layer].")
 
 /obj/item/circuitboard/machine/emitter
 	name = "Emitter (Machine Board)"
@@ -336,6 +338,28 @@
 		/obj/item/stock_parts/capacitor = 1)
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high/empty)
 
+/obj/item/circuitboard/machine/cloak
+	name = "Ship Cloaking Device (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/cloak
+	req_components = list(
+		/obj/item/stock_parts/cell = 1,
+		/obj/item/stock_parts/capacitor = 1)
+	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high/empty)
+
+/obj/item/circuitboard/machine/advanced_cloak
+	name = "Advanced Ship Cloaking Device (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/cloak/advanced
+	req_components = list(
+		/obj/item/stock_parts/cell = 1,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stack/ore/bluespace_crystal = 1)
+	def_components = list(
+		/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high/empty,
+		/obj/item/stock_parts/capacitor = /obj/item/stock_parts/capacitor/adv,
+	)
+
 /obj/item/circuitboard/machine/techfab/department/engineering
 	name = "\improper Departmental Techfab (Machine Board) - Engineering"
 	build_path = /obj/machinery/rnd/production/techfab/department/engineering
@@ -378,19 +402,19 @@
 		name = initial(new_type.name)
 		build_path = initial(new_type.build_path)
 		I.play_tool_sound(src)
-		to_chat(user, "<span class='notice'>You change the circuitboard setting to \"[new_setting]\".</span>")
+		to_chat(user, span_notice("You change the circuitboard setting to \"[new_setting]\"."))
 		return
 
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
-		to_chat(user, "<span class='notice'>You change the circuitboard to layer [pipe_layer].</span>")
+		to_chat(user, span_notice("You change the circuitboard to layer [pipe_layer]."))
 		return
 
 	. = ..()
 
 /obj/item/circuitboard/machine/thermomachine/examine()
 	. = ..()
-	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
+	. += span_notice("It is set to layer [pipe_layer].")
 
 /obj/item/circuitboard/machine/thermomachine/heater
 	name = "Heater (Machine Board)"
@@ -512,7 +536,7 @@
 		else
 			build_path = /obj/machinery/holopad/secure
 			secure = TRUE
-		to_chat(user, "<span class='notice'>You [secure? "en" : "dis"]able the security on the [src]</span>")
+		to_chat(user, span_notice("You [secure? "en" : "dis"]able the security on the [src]"))
 	. = ..()
 
 /obj/item/circuitboard/machine/holopad/examine(mob/user)
@@ -587,13 +611,13 @@
 		var/position = fridges_name_paths.Find(build_path, fridges_name_paths)
 		position = (position == fridges_name_paths.len) ? 1 : (position + 1)
 		build_path = fridges_name_paths[position]
-		to_chat(user, "<span class='notice'>You set the board to [fridges_name_paths[build_path]].</span>")
+		to_chat(user, span_notice("You set the board to [fridges_name_paths[build_path]]."))
 	else
 		return ..()
 
 /obj/item/circuitboard/machine/smartfridge/examine(mob/user)
 	. = ..()
-	. += "<span class='info'>[src] is set to [fridges_name_paths[build_path]]. You can use a screwdriver to reconfigure it.</span>"
+	. += span_info("[src] is set to [fridges_name_paths[build_path]]. You can use a screwdriver to reconfigure it.")
 
 
 /obj/item/circuitboard/machine/space_heater
@@ -693,14 +717,14 @@
 	return ..()
 
 /obj/item/circuitboard/machine/vending/donksofttoyvendor
-	name = "Donksoft Toy Vendor (Machine Board)"
+	name = "Toy Gun Vendor (Machine Board)"
 	build_path = /obj/machinery/vending/donksofttoyvendor
 	req_components = list(
 		/obj/item/stack/sheet/glass = 1,
 		/obj/item/vending_refill/donksoft = 1)
 
 /obj/item/circuitboard/machine/vending/syndicatedonksofttoyvendor
-	name = "Syndicate Donksoft Toy Vendor (Machine Board)"
+	name = "Syndicate Toy Gun Vendor (Machine Board)"
 	build_path = /obj/machinery/vending/toyliberationstation
 	req_components = list(
 		/obj/item/stack/sheet/glass = 1,
@@ -800,7 +824,7 @@
 
 		build_path = new_path
 		name = "[new_name] 3000 (Machine Board)"
-		to_chat(user, "<span class='notice'>You change the circuit board setting to \"[new_name]\".</span>")
+		to_chat(user, span_notice("You change the circuit board setting to \"[new_name]\"."))
 	else
 		return ..()
 
@@ -1027,7 +1051,7 @@
 	. = ..()
 	var/new_cloud = input("Set the public nanite chamber's Cloud ID (1-100).", "Cloud ID", cloud_id) as num|null
 	if(!new_cloud || (loc != user))
-		to_chat(user, "<span class='warning'>You must hold the circuitboard to change its Cloud ID!</span>")
+		to_chat(user, span_warning("You must hold the circuitboard to change its Cloud ID!"))
 		return
 	cloud_id = clamp(round(new_cloud, 1), 1, 100)
 
@@ -1061,11 +1085,11 @@
 	var/new_id = input("Set the server ID", "ServerID ID", server_id) as text|null
 	new_id = replacetext(new_id, " ", "-")
 	if(!new_id || (loc != user))
-		to_chat(user, "<span class='warning'>You must hold the circuitboard to change its Server ID!</span>")
+		to_chat(user, span_warning("You must hold the circuitboard to change its Server ID!"))
 		return
 
 	if(new_id in all_ids)
-		to_chat(user, "<span class='warning'>Server ID already in use!</span>")
+		to_chat(user, span_warning("Server ID already in use!"))
 		return
 
 	if(server_id != initial(server_id))
@@ -1160,6 +1184,28 @@
 		/obj/item/stock_parts/cell/bluespace = 1,
 	)
 
+/obj/item/circuitboard/machine/coffeemaker
+	name = "Coffeemaker (Machine Board)"
+	icon_state = "service"
+	build_path = /obj/machinery/coffeemaker
+	req_components = list(
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/reagent_containers/glass/beaker = 2,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/micro_laser = 1,
+	)
+
+/obj/item/circuitboard/machine/coffeemaker/premium
+	name = "Premium Coffeemaker (Machine Board)"
+	icon_state = "service"
+	build_path = /obj/machinery/coffeemaker/premium
+	req_components = list(
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/reagent_containers/glass/beaker = 2,
+		/obj/item/stock_parts/capacitor/adv = 1,
+		/obj/item/stock_parts/micro_laser/high = 2,
+	)
+
 /obj/item/circuitboard/machine/chem_dispenser/drinks/beer
 	name = "Booze Dispenser (Machine Board)"
 	icon_state = "service"
@@ -1187,6 +1233,25 @@
 	req_components = list(/obj/item/stock_parts/micro_laser = 1)
 	needs_anchored = FALSE
 
+/obj/item/circuitboard/machine/griddle
+	name = "circuit board (Griddle)"
+	icon_state = "service"
+	build_path = /obj/machinery/griddle
+	req_components = list(
+		/obj/item/assembly/igniter = 1,
+		/obj/item/stack/cable_coil = 2,
+		/obj/item/stock_parts/micro_laser = 1,
+	)
+
+/obj/item/circuitboard/machine/oven
+	name = "circuit board (Oven)"
+	icon_state = "service"
+	build_path = /obj/machinery/oven
+	req_components = list(
+		/obj/item/assembly/igniter = 1,
+		/obj/item/stack/cable_coil = 2,
+		/obj/item/stock_parts/micro_laser = 1,
+	)
 
 /obj/item/circuitboard/machine/dish_drive
 	name = "Dish Drive (Machine Board)"
@@ -1202,18 +1267,18 @@
 
 /obj/item/circuitboard/machine/dish_drive/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Its suction function is [suction ? "enabled" : "disabled"]. Use it in-hand to switch.</span>"
-	. += "<span class='notice'>Its disposal auto-transmit function is [transmit ? "enabled" : "disabled"]. Alt-click it to switch.</span>"
+	. += span_notice("Its suction function is [suction ? "enabled" : "disabled"]. Use it in-hand to switch.")
+	. += span_notice("Its disposal auto-transmit function is [transmit ? "enabled" : "disabled"]. Alt-click it to switch.")
 
 /obj/item/circuitboard/machine/dish_drive/attack_self(mob/living/user)
 	suction = !suction
-	to_chat(user, "<span class='notice'>You [suction ? "enable" : "disable"] the board's suction function.</span>")
+	to_chat(user, span_notice("You [suction ? "enable" : "disable"] the board's suction function."))
 
 /obj/item/circuitboard/machine/dish_drive/AltClick(mob/living/user)
 	if(!user.Adjacent(src))
 		return
 	transmit = !transmit
-	to_chat(user, "<span class='notice'>You [transmit ? "enable" : "disable"] the board's automatic disposal transmission.</span>")
+	to_chat(user, span_notice("You [transmit ? "enable" : "disable"] the board's automatic disposal transmission."))
 
 /obj/item/circuitboard/machine/gibber
 	name = "Gibber (Machine Board)"
@@ -1405,6 +1470,14 @@
 	req_components = list(/obj/item/stock_parts/capacitor = 2,
 		/obj/item/stock_parts/micro_laser = 2)
 
+// Maploaded engines of this type function identically to standard ion engines, but they start with T3 parts
+/obj/item/circuitboard/machine/shuttle/engine/electric/premium
+	build_path = /obj/machinery/power/shuttle/engine/electric/premium
+	def_components = list(
+		/obj/item/stock_parts/capacitor = /obj/item/stock_parts/capacitor/super,
+		/obj/item/stock_parts/micro_laser = /obj/item/stock_parts/micro_laser/ultra
+		)
+
 /obj/item/circuitboard/machine/shuttle/engine/expulsion
 	name = "Expulsion Thruster (Machine Board)"
 	build_path = /obj/machinery/power/shuttle/engine/fueled/expulsion
@@ -1441,12 +1514,12 @@
 /obj/item/circuitboard/machine/shuttle/heater/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
-		to_chat(user, "<span class='notice'>You change the circuitboard to layer [pipe_layer].</span>")
+		to_chat(user, span_notice("You change the circuitboard to layer [pipe_layer]."))
 		return
 
 /obj/item/circuitboard/machine/shuttle/heater/examine()
 	. = ..()
-	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
+	. += span_notice("It is set to layer [pipe_layer].")
 
 /obj/item/circuitboard/machine/shuttle/fire_heater
 	name = "Combustion Engine Heater (Machine Board)"
@@ -1461,12 +1534,12 @@
 /obj/item/circuitboard/machine/shuttle/fire_heater/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
-		to_chat(user, "<span class='notice'>You change the circuitboard to layer [pipe_layer].</span>")
+		to_chat(user, span_notice("You change the circuitboard to layer [pipe_layer]."))
 		return
 
 /obj/item/circuitboard/machine/shuttle/fire_heater/examine()
 	. = ..()
-	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
+	. += span_notice("It is set to layer [pipe_layer].")
 
 /obj/item/circuitboard/machine/shuttle/smes
 	name = "Electric Engine Precharger (Machine Board)"
@@ -1500,6 +1573,28 @@
 	icon_state = "engineering"
 	build_path = /obj/machinery/suit_storage_unit
 	req_components = list(/obj/item/stock_parts/micro_laser = 4)
+
+//preset for the industrial suit storage, otherwise identical.
+/obj/item/circuitboard/machine/suit_storage_unit/industrial
+	build_path = /obj/machinery/suit_storage_unit/industrial
+
+/obj/item/circuitboard/machine/suit_storage_unit/examine(mob/user)
+	. = ..()
+	. += span_notice("You can change the resulting storage type by using a multitool.")
+	var/obj/machinery/suit_storage_unit/information_holder = build_path
+	. += span_notice("It is currently set to: [initial(information_holder.name)].")
+
+/obj/item/circuitboard/machine/suit_storage_unit/attackby(obj/item/W, mob/user, params)
+	if(W.tool_behaviour == TOOL_MULTITOOL)
+		var/list/possible_results = list(/obj/machinery/suit_storage_unit, /obj/machinery/suit_storage_unit/industrial)
+		var/list_length = length(possible_results)
+		var/list_position = possible_results.Find(build_path)
+		if(list_position) //FALSE position should never happen, but could with var editing.
+			//There is a modulus way to do this, but no real need to get fancy.
+			build_path = list_position == list_length ? possible_results[1] : possible_results[++list_position]
+			var/obj/machinery/suit_storage_unit/information_holder = build_path
+			to_chat(user, span_notice("You modify the resulting construction. It is now set to [initial(information_holder.name)]."))
+	return ..()
 
 /obj/item/circuitboard/machine/turret
 	name = "Turret"

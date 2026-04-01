@@ -30,7 +30,7 @@
 	if(can_interact(user))
 		target_temperature = max_temperature
 		investigate_log("was set to [target_temperature] K by [key_name(user)]", INVESTIGATE_ATMOS)
-		to_chat(user, "<span class='notice'>You set the target temperature on [src] to [target_temperature] K.</span>")
+		to_chat(user, span_notice("You set the target temperature on [src] to [target_temperature] K."))
 		update_appearance()
 	return ..()
 
@@ -113,7 +113,7 @@
 /obj/machinery/atmospherics/components/binary/temperature_gate/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational)
-		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
+		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!"))
 		return FALSE
 
 /obj/machinery/atmospherics/components/binary/temperature_gate/multitool_act(mob/living/user, obj/item/multitool/I)
@@ -121,7 +121,23 @@
 	if (istype(I))
 		inverted = !inverted
 		if(inverted)
-			to_chat(user, "<span class='notice'>You set the [src]'s sensors to release gases when the temperature is higher than the setted one.</span>")
+			to_chat(user, span_notice("You set the [src]'s sensors to release gases when the temperature is higher than the setted one."))
 		else
-			to_chat(user, "<span class='notice'>You set the [src]'s sensors to the default settings.</span>")
+			to_chat(user, span_notice("You set the [src]'s sensors to the default settings."))
 	return TRUE
+
+/obj/machinery/atmospherics/components/binary/temperature_gate/layer1
+	piping_layer = 1
+	icon_state= "tgate_map-1"
+
+/obj/machinery/atmospherics/components/binary/temperature_gate/layer2
+	piping_layer = 2
+	icon_state= "tgate_map-2"
+
+/obj/machinery/atmospherics/components/binary/temperature_gate/layer4
+	piping_layer = 4
+	icon_state= "tgate_map-4"
+
+/obj/machinery/atmospherics/components/binary/temperature_gate/layer5
+	piping_layer = 5
+	icon_state= "tgate_map-5"
