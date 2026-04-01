@@ -164,6 +164,8 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 /obj/effect/battle_royale
 	name = "generic battle royale spawner"
 
+	var/give_ammo_to_spawning_guns
+
 /obj/effect/battle_royale/Initialize(mapload)
 	. = ..()
 	var/turf/current_turf = get_turf(src)
@@ -185,13 +187,17 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 	var/datum/supply_pack/picked_cargo = pick(GLOB.royale_common_loot)
 	picked_cargo = new picked_cargo
 
-	return picked_cargo.generate(pod)
+	return picked_cargo.generate(pod, has_ammo = TRUE)
 
 /obj/effect/battle_royale/proc/extra_changes(obj/thing_to_check)
 	var/list/ignore_these = list(
 		/obj/item/gun/ballistic/automatic/marksman/taipan,
 		/obj/item/gun/ballistic/automatic/assault/hydra/lmg,
 		/obj/item/gun/ballistic/automatic/marksman/boomslang,
+		/obj/item/gun/ballistic/automatic/marksman,
+		/obj/item/gun/energy/kalix/pgf/heavy,
+		/obj/item/gun/energy/sharplite/al655,
+		/obj/item/gun/energy/sharplite/al607,
 		/obj/item/gun/ballistic/automatic/hmg,
 		/obj/item/gun/energy/laser/e50,
 		/obj/item/gun/energy/pulse
@@ -321,8 +327,11 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 /obj/effect/battle_royale/proc/fill_ammo(obj/thing_to_check)
 	for(var/obj/item/item_to_check in thing_to_check.contents)
 		var/obj/item/ammo_box/our_mag = item_to_check
+		var/obj/item/stock_parts/cell/our_cell = item_to_check
 		if(istype(our_mag))
 			our_mag.top_off(starting = TRUE)
+		if(istype(our_cell))
+			our_cell.charge = our_cell.maxcharge
 		our_mag.update_appearance()
 
 /obj/effect/battle_royale/common
@@ -474,11 +483,19 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		/datum/supply_pack/gun/conflagration,
 		/datum/supply_pack/gun/himehabu,
 		/datum/supply_pack/gun/detrevolver,
+		/datum/supply_pack/gun/m17,
+		/datum/supply_pack/gun/polymer,
 		/datum/supply_pack/gun/pepperbox,
 		/datum/supply_pack/gun/ion,
 		/datum/supply_pack/gun/e10,
 		/datum/supply_pack/gun/ssg669,
 		/datum/supply_pack/gun/e11,
+		/datum/supply_pack/gun/mini_energy,
+		/datum/supply_pack/gun/energy/disabler,
+		/datum/supply_pack/gun/energy/taser,
+		/datum/supply_pack/gun/e60,
+		/datum/supply_pack/gun/disposable_gun_disk,
+		/datum/supply_pack/gun/derringer,
 		/datum/supply_pack/gun/hellfire_shotgun,
 		/datum/supply_pack/gun/brimstone_shotgun,
 		/datum/supply_pack/gun/winchester,
@@ -512,6 +529,7 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 	if(!thing_to_check)
 		return
 	var/list/guns = list()
+	var/spawn_extra_mags = TRUE
 	for(var/obj/item/item_to_check in thing_to_check.contents)
 		if(istype(item_to_check, /obj/item/gun))
 			guns += item_to_check
@@ -519,6 +537,7 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 			var/obj/item/gun/found_gun = locate(/obj/item/gun) in item_to_check
 			if(!istype(found_gun))
 				continue
+			spawn_extra_mags = FALSE
 			fill_ammo(thing_to_check)
 			fill_ammo(item_to_check)
 			guns += found_gun
@@ -527,6 +546,8 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		if(!gun_to_check)
 			continue
 		gun_to_check.AddComponent(/datum/component/fortnite,force_rarity=FORTNITE_RARITY_LEGENDARY)
+		if(!spawn_extra_mags)
+			break
 		if(istype(gun_to_check,/obj/item/gun/ballistic))
 			var/obj/item/gun/ballistic/ballistic_to_check = gun_to_check
 			if(!ballistic_to_check.internal_magazine)

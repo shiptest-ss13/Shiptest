@@ -491,6 +491,10 @@
 
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/pgf/sniper)
 
+/obj/item/gun/energy/kalix/pgf/heavy/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_RARE_TO_LEGEND_ONLY)
+
 /obj/item/gun/energy/kalix/pgf/heavy/empty_cell
 	spawn_no_ammo = TRUE
 	allowed_ammo_types = list(
@@ -559,6 +563,10 @@
 			"y" = 15,
 		)
 	)
+
+/obj/item/gun/energy/kalix/pgf/heavy/sniper/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY)
 
 /obj/item/gun/energy/kalix/pgf/heavy/sniper/empty_cell
 	spawn_no_ammo = TRUE

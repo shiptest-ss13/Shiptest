@@ -29,7 +29,9 @@
 		/obj/item/stock_parts/cell/gun,
 	)
 
-/obj/item/storage/guncase/Initialize(mapload)
+/obj/item/storage/guncase/Initialize(mapload, with_ammo = FALSE)
+	if(with_ammo)
+		ammoless = FALSE
 	. = ..()
 	if(mapload && grab_loc)
 		var/items_eaten = 0

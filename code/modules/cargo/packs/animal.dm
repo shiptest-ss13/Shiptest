@@ -50,7 +50,7 @@
 					/obj/item/toy/cattoy)
 	crate_name = "cat crate"
 
-/datum/supply_pack/animal/cat/generate()
+/datum/supply_pack/animal/cat/generate(atom/A, datum/bank_account/paying_account, has_ammo = FALSE)
 	. = ..()
 	if(prob(50))
 		var/mob/living/simple_animal/pet/cat/C = locate() in .
@@ -73,7 +73,7 @@
 					/obj/item/clothing/neck/petcollar)
 	crate_name = "corgi crate"
 
-/datum/supply_pack/animal/corgi/generate()
+/datum/supply_pack/animal/corgi/generate(atom/A, datum/bank_account/paying_account, has_ammo = FALSE)
 	. = ..()
 	if(prob(50))
 		var/mob/living/simple_animal/pet/dog/corgi/D = locate() in .
@@ -115,7 +115,7 @@
 	contains = list(/mob/living/simple_animal/butterfly)
 	crate_name = "entomology samples crate"
 
-/datum/supply_pack/animal/butterfly/generate()
+/datum/supply_pack/animal/butterfly/generate(atom/A, datum/bank_account/paying_account, has_ammo = FALSE)
 	. = ..()
 	for(var/i in 1 to 3)
 		new /mob/living/simple_animal/butterfly(.)
@@ -138,7 +138,7 @@
 	contains = list(/mob/living/simple_animal/crab)
 	crate_name = "look sir free crabs"
 
-/datum/supply_pack/animal/crab/generate()
+/datum/supply_pack/animal/crab/generate(atom/A, datum/bank_account/paying_account, has_ammo = FALSE)
 	. = ..()
 	for(var/i in 1 to 49)
 		new /mob/living/simple_animal/crab(.)

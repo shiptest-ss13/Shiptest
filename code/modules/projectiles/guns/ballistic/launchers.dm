@@ -100,6 +100,10 @@ GLOBAL_LIST_INIT(rpg_scrawlings, list(
 	rpg_scribble = pick(GLOB.rpg_scrawlings)
 	desc += " [rpg_scribble] is scrawled on the tube"
 
+/obj/item/gun/ballistic/rocketlauncher/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY)
+
 /obj/item/gun/ballistic/rocketlauncher/attackby(obj/item/A, mob/user, params)
 	. = ..()
 	if(istype(A, /obj/item/pen))

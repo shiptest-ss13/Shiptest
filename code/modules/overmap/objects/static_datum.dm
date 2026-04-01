@@ -154,13 +154,17 @@
 	gravity = TRUE
 
 /datum/overmap/static_object/tadpole_city
-	name = "Tadpole City"
+	name = "Tilted Tadpoles"
+	desc = "<span class='userdanger'>Not only is this place super dangerous, by landing here you waiver the</span>"
 	token_icon_state = "station_planet"
 	map_to_load = /datum/map_template/outpost/tadpole_city
 	var/datum/map_template/outpost/z2_template = /datum/map_template/outpost/tadpole_city_z2
 	var/datum/map_template/outpost/z3_template = /datum/map_template/outpost/tadpole_city_z3
 	var/elevator_template = /datum/map_template/outpost/elevator_clip
 	weather_controller_type = /datum/weather_controller/toxic
+	preserve_level = TRUE
+	gravity = TRUE
+	border_size = 1
 
 	var/main_level_ztraits = list(
 		ZTRAIT_STATION = TRUE,
@@ -176,6 +180,7 @@
 	)
 
 /datum/overmap/static_object/tadpole_city/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
+	map_to_load = SSmapping.outpost_templates[map_to_load]
 	z2_template = SSmapping.outpost_templates[z2_template]
 	z3_template = SSmapping.outpost_templates[z3_template]
 	. = ..()
@@ -193,6 +198,7 @@
 	if(!map_to_load)
 		CRASH("[src] ([src.type]) tried to load without a template!")
 
+	mapzone = SSmapping.create_map_zone(name)
 	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
 		name,
 		main_level_ztraits,
@@ -244,6 +250,8 @@
 		new weather_controller_type(mapzone)
 
 	SEND_SIGNAL(src, COMSIG_OVERMAP_LOADED)
+
+	reserve_docks = list()
 
 	for(var/obj/docking_port/stationary/port as obj in SSshuttle.stationary)
 		if((port.virtual_z() == (vlevel.id || vlevel2.id || vlevel3.id)))
