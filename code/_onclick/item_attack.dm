@@ -33,9 +33,9 @@
 	var/attackby_result
 
 	if (is_right_clicking)
-		switch (target.attackby_secondary(src, user, params))
+		switch (target.attackby_secondary(src, user, params, modifier))
 			if (SECONDARY_ATTACK_CALL_NORMAL)
-				attackby_result = target.attackby(src, user, modifier)
+				attackby_result = target.attackby(src, user, params, modifier)
 			if (SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
 				return TRUE
 			if (SECONDARY_ATTACK_CONTINUE_CHAIN)
