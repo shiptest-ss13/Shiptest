@@ -40,6 +40,9 @@ GLOBAL_LIST_EMPTY(pill_graveyards)
 	if(!isitem(parent))
 		return COMPONENT_INCOMPATIBLE
 
+	//if(!GLOB.battle_royale_mode)
+	//	return INITIALIZE_HINT_QDEL
+
 	edit_prefix = _edit_prefix
 	adjust_bullet_stats = _adjust_bullet_stats
 	rarity_table = _rarity_table

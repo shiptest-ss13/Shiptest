@@ -188,8 +188,8 @@
 	contains = list(/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty)
 	cost = 750
 	faction = /datum/faction/syndicate/scarborough
-	faction_discount = 0
-	faction_locked = TRUE
+	faction_discount = 15
+//	faction_locked = TRUE
 
 /datum/supply_pack/magazine/boomslang_mag
 	name = "Boomslang-90 Magazine Crate"
@@ -264,8 +264,8 @@
 	contains = list(/obj/item/ammo_box/magazine/skm_762_40/extended/empty)
 	cost = 750
 	faction = /datum/faction/inteq
-	faction_discount = 0
-	faction_locked = TRUE
+	faction_discount = 15
+//	faction_locked = TRUE
 
 /datum/supply_pack/magazine/f4_mag
 	name = "F4 Magazine Crate"
@@ -394,8 +394,8 @@
 	contains = list(/obj/item/stock_parts/cell/gun/solgov)
 	cost = 500
 	faction = /datum/faction/solgov
-	faction_discount = 0
-	faction_locked = TRUE
+	faction_discount = 15
+//	faction_locked = TRUE
 
 /datum/supply_pack/magazine/warra_guncell
 	name = "Sharplite Power Cell"
@@ -419,8 +419,8 @@
 	contains = list(/obj/item/stock_parts/cell/gun/sharplite/plus)
 	cost = 1000
 	faction = /datum/faction/warra
-	faction_discount = 0
-	faction_locked = TRUE
+	faction_discount = 15
+//	faction_locked = TRUE
 
 /datum/supply_pack/magazine/upgradedguncellinteq
 	name = "Sharplite Plus Proprietary Weapon Cell"
@@ -428,8 +428,8 @@
 	contains = list(/obj/item/stock_parts/cell/gun/sharplite/plus)
 	cost = 1000
 	faction = /datum/faction/inteq
-	faction_discount = 0
-	faction_locked = TRUE
+	faction_discount = 15
+//	faction_locked = TRUE
 
 /* etherbor */
 
@@ -446,8 +446,8 @@
 	contains = list(/obj/item/stock_parts/cell/gun/pgf)
 	cost = 1000
 	faction = /datum/faction/pgf
-	faction_discount = 0
-	faction_locked = TRUE
+	faction_discount = 15
+//	faction_locked = TRUE
 
 /* Expand once the energy weapons have been actually expanded upon */
 
