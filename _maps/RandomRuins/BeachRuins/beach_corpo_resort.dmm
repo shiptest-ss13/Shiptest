@@ -4097,6 +4097,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/item/clothing/under/shorts/blue,
 /turf/open/floor/wood,
 /area/ruin/beach/corpo_resort/hotel/rooms/one)
 "qJ" = (
@@ -4629,6 +4630,7 @@
 /obj/item/clothing/shoes/laceup,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/under/warra/security/director,
+/obj/item/clothing/under/shorts/blue,
 /turf/open/floor/wood/ebony{
 	icon_state = "wood-broken5"
 	},
@@ -6900,6 +6902,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/obj/item/clothing/under/shorts/blue,
 /turf/open/floor/wood,
 /area/ruin/beach/corpo_resort/hotel/rooms/three)
 "Bm" = (
@@ -7373,8 +7376,19 @@
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "Ds" = (
-/obj/structure/flora/junglebush/large,
-/turf/open/floor/plating/asteroid/dirt/beach,
+/obj/structure/closet/wall/directional/west,
+/obj/item/towel,
+/obj/item/towel,
+/obj/item/towel,
+/obj/item/towel,
+/obj/item/towel,
+/obj/item/towel,
+/obj/item/towel,
+/obj/effect/turf_decal/siding/wood/end{
+	color = "#D2BC9D";
+	dir = 4
+	},
+/turf/open/floor/wood/birch/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Dt" = (
 /obj/structure/spacevine/weak,
@@ -7642,6 +7656,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/beach/corpo_resort/bar)
+"Eu" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ev" = (
 /obj/item/storage/toolbox/fishing,
 /obj/item/storage/box/fishing_hooks,
@@ -9293,6 +9314,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/item/clothing/under/shorts/blue,
 /turf/open/floor/wood,
 /area/ruin/beach/corpo_resort/hotel/rooms/two)
 "Lz" = (
@@ -9823,6 +9845,7 @@
 /obj/item/clothing/neck/cloak/warra,
 /obj/item/clothing/under/warra/captain,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/item/clothing/under/shorts/blue,
 /turf/open/floor/wood/ebony{
 	icon_state = "wood-broken7"
 	},
@@ -10230,6 +10253,11 @@
 	pixel_y = -1
 	},
 /obj/machinery/light/small/directional/east,
+/obj/item/clothing/under/shorts/blue,
+/obj/item/clothing/under/shorts/blue,
+/obj/item/clothing/under/shorts/blue,
+/obj/item/clothing/under/shorts/blue,
+/obj/structure/closet/crate/trashcart/laundry,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/corpo_resort/hotel)
 "Pz" = (
@@ -17656,9 +17684,9 @@ mP
 mP
 GC
 GC
-GC
-Ds
-GC
+vm
+vm
+vm
 GC
 GC
 IM
@@ -17733,9 +17761,9 @@ hv
 hv
 GC
 GC
-GC
-GC
-GC
+Eu
+Ds
+Eu
 Tq
 NZ
 GC
