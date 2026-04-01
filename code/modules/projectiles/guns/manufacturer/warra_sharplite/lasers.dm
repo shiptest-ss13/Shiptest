@@ -393,6 +393,10 @@
 		),
 	)
 
+/obj/item/gun/energy/sharplite/al655/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_RARE_TO_LEGEND_ONLY)
+
 /obj/item/gun/energy/sharplite/al655/inteq
 	name = "PP20 “Barghest” APR"
 	desc = "A Sharplite Assault Plasma Rifle refinished in Inteq Risk Management Group colors. A powerful weapon that can deliver rapid-fire, armor-penetrating electroplasma bolts."
@@ -451,6 +455,10 @@
 			"y" = 15,
 		),
 	)
+
+/obj/item/gun/energy/sharplite/al607/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_RARE_TO_LEGEND_ONLY)
 
 /obj/item/gun/energy/sharplite/x11
 	name = "X11 Advanced Stopping Pistol" //wayland is better

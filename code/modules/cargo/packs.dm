@@ -90,7 +90,7 @@
 	if(force_appear)
 		available = TRUE
 
-/datum/supply_pack/proc/generate(atom/A, datum/bank_account/paying_account)
+/datum/supply_pack/proc/generate(atom/A, datum/bank_account/paying_account, has_ammo = FALSE)
 	var/obj/structure/closet/crate/C
 	if(paying_account)
 		C = new /obj/structure/closet/crate/secure/owned(A, paying_account)
@@ -99,14 +99,17 @@
 		C = new crate_type(A)
 		C.name = crate_name
 
-	fill(C)
+	fill(C, has_ammo)
 	return C
 
-/datum/supply_pack/proc/fill(obj/structure/closet/crate/C)
+/datum/supply_pack/proc/fill(obj/structure/closet/crate/C, has_ammo = FALSE)
 	if (admin_spawned)
 		for(var/item in contains)
 			var/atom/A = new item(C)
 			A.flags_1 |= ADMIN_SPAWNED_1
 	else
 		for(var/item in contains)
-			new item(C)
+			if(istype(item, /obj/item/storage/guncase))
+				new item(C, TRUE)
+			else
+				new item(C)

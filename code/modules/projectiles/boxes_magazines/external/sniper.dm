@@ -9,6 +9,10 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
+/obj/item/ammo_box/magazine/sniper_rounds/empty
+	start_empty = TRUE
+
+
 /obj/item/ammo_box/magazine/sniper_rounds/soporific
 	name = "anti-material rifle magazine (.50 BMG soporific)"
 	desc = "A large, heavy 3-round box magazine designed for the sniper rifle. These soporific rounds are completely non-lethal, but render targets asleep for a little under a minute."

@@ -1114,6 +1114,57 @@
 	message_admins(span_big("Click here to jump to the overmap Jump point: " + ADMIN_JMP(point.token)))
 	BLACKBOX_LOG_ADMIN_VERB("Spawn Overmap Jump Point")
 
+/client/proc/enable_royale_mode()
+	set name = "Enable Battle Royale Mode"
+	set category = "Event"
+	if(!check_rights(R_ADMIN) || !check_rights(R_FUN))
+		return
+	if(tgui_alert(usr, "Are you SURE? Do not turn this on until the event.", "Enable Battle Royale Mode", list("Yes", "No"), 10 SECONDS) == "No")
+		return
+	message_admins("Battle royale mode has been turned ON. Expect loot crates on planets.")
+	GLOB.battle_royale_mode = TRUE
+	new /datum/overmap/fluff/pill_graveyard(system_spawned_in = SSovermap.tracked_star_systems[1])
+
+/client/proc/adjust_storm()
+	set name = "Adjust storm"
+	set category = "Event"
+	var/datum/overmap_star_system/selected_system //the star system we are
+
+	if(length(SSovermap.tracked_star_systems) > 1)
+		selected_system = tgui_input_list(usr, "Which star system do you want to make storm in?", "Spawn Planet/Ruin", SSovermap.tracked_star_systems)
+	else
+		selected_system = SSovermap.tracked_star_systems[1]
+	if(!selected_system)
+		return //if selected_system didnt get selected, we nope out, this is very bad
+
+	var/storm_size = input(usr, "Starting from overmap edges, how much should storm reach inwards?", "Spawn Storm", 1) as num
+	if(!storm_size)
+		return
+
+	//spawn storms:
+	//on the X axis,  where Y = 1 and Y = max size
+	var/position = list("x" = 1, "y" = 1)
+	for(var/i in 1 to storm_size)
+		position["y"] = i
+		for(var/j in 1 to selected_system.size)
+			position["y"] = i
+			position["x"] = j
+			selected_system.handle_storm(position)
+			//other side of the border
+			position["y"] = (selected_system.size - (i-1))
+			selected_system.handle_storm(position)
+		//ditto
+		position["x"] = i
+		for(var/j in 1 to selected_system.size)
+			position["x"] = i
+			position["y"] = j
+			selected_system.handle_storm(position)
+			//other side of the border
+			position["x"] = (selected_system.size - (i-1))
+			selected_system.handle_storm(position)
+	message_admins("Storm spread to size '[storm_size]', check again manually for any errors.")
+
+
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"
 	set category = "Event.Fun"

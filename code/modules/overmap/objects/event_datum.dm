@@ -564,6 +564,26 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/anomaly = 10
 ))
 
+/datum/overmap/event/storm
+	name = "THE STORM"
+	desc = "Chat, it's the storm. No chat, I shoudn't go in there."
+	chance_to_affect = 100
+	token_icon_state = "danger"
+
+/datum/overmap/event/storm/Initialize(position, ...)
+	. = ..()
+	token.icon_state = "danger"
+	token.color = "#FF0000"
+	token.update_appearance()
+
+/datum/overmap/event/storm/affect_ship(datum/overmap/ship/controlled/ship)
+	for(var/mob/living/affected_mob as anything in GLOB.player_list)
+		if(!isliving(affected_mob))
+			return
+		if(ship.shuttle_port.is_in_shuttle_bounds(affected_mob))
+			affected_mob.adjustToxLoss(1, 0)
+			to_chat(affected_mob, span_userdanger("The storm damages you!"))
+
 ///RADIATION STORM - explodes your organics
 /datum/overmap/event/rad
 	name = "radiation storm (moderate)"

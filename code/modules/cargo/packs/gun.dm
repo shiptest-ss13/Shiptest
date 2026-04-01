@@ -204,7 +204,7 @@
 	faction = /datum/faction/srm
 	faction_discount = 0
 	faction_locked = TRUE
-
+/*
 /datum/supply_pack/gun/cm357
 	name = "CM-357 Automag Pistol Crate"
 	desc = "Contains a magazine-fed .357 handgun, produced for the CLIP-BARD division and available for requisition in small numbers to the Minutemen."
@@ -213,6 +213,7 @@
 	faction = /datum/faction/clip
 	faction_discount = 0
 	faction_locked = TRUE
+*/
 
 /*
 		Energy
@@ -774,7 +775,7 @@
 	name = "SAW-80 Squad Automatic Weapon"
 	desc = "Contains one of the rarely-produced SAW-80 Squad Automatic Weapon platforms, exclusively for licensed buyers. Remember, short controlled bursts!"
 	cost = 7000
-	contains = list(/obj/item/storage/guncase/saw80)
+	contains = list(/obj/item/gun/ballistic/automatic/assault/hydra/lmg/no_mag,/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty,/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty)
 	crate_name = "LMG crate"
 	faction = /datum/faction/syndicate/scarborough
 	faction_discount = 0
@@ -848,19 +849,6 @@
 	faction = /datum/faction/srm
 	faction_discount = 0
 	faction_locked = TRUE
-
-//turn into l201
-/*
-/datum/supply_pack/gun/gauss
-	name = "Prototype Gauss Rifle"
-	desc = "Contains a high-powered prototype armor-piercing gauss rifle, operable with ferromagnetic pellets. For Makosso-Warra employee use only."
-	cost = 3500
-	contains = list(/obj/item/storage/guncase/gauss)
-	crate_name = "dmr crate"
-	faction = /datum/faction/warra
-	faction_discount = 0
-	faction_locked = TRUE
-*/
 
 /datum/supply_pack/gun/claris
 	name = "Claris Gauss Rifle"
@@ -937,3 +925,279 @@
 	faction = /datum/faction/solgov
 	faction_discount = 0
 	faction_locked = TRUE
+
+/datum/supply_pack/gun/syndi_derringer
+	name = ".357 Derringer"
+	desc = "A concealable hangun with a tasteful red and black paintjob, which makes it slightly more noticable. Chambered in .357, so you actually have a chance at killing something."
+	contains = list(/obj/item/gun/ballistic/derringer/traitor)
+
+	cost = 800
+
+
+/datum/supply_pack/gun/disposable_gun_disk
+	name = "Disposable Gun Design Disk"
+	desc = "An autolathe compatible fabrication disk for printing disposable guns chambered in .22 LR. Improper disposal or recycling of these guns is an enviromental felony misdemeanor in Solarian space. Luckily, we aren't in Solarian space, so litter all you want."
+	contains = list(/obj/item/disk/design_disk/disposable_gun)
+
+	cost = 2500
+
+/datum/supply_pack/gun/himehabu
+	name = "Himehabu Pistol"
+	desc = "Great things come in small packages. The Himehabu is perfect for all your espionage needs. Chambered in .22lr."
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag, /obj/item/ammo_box/magazine/m22lr_himehabu/empty, /obj/item/ammo_box/magazine/m22lr_himehabu/empty)
+	faction = /datum/faction/syndicate
+	cost = 600
+
+
+/datum/supply_pack/gun/e10
+	name = "E-10 Laser Pistol"
+	desc = "Sharplite letting you down? Try these classic Eoehoma Firearms E-10 Laser Pistols."
+	contains = list(/obj/item/gun/energy/laser/e10)
+	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
+
+
+	cost = 750
+
+
+/datum/supply_pack/gun/e11
+	name = "E-11 Energy Gun"
+	desc = "Look. I'll be straight with you. These guns are awful. But, they are cheap if you're that desperate."
+	contains = list(/obj/item/gun/energy/e_gun/e11)
+
+	cost = 200
+
+/datum/supply_pack/gun/e40
+	name = "E-40 Hybrid Assault Rifle"
+	desc = "A dual mode hybrid assault rifle made by the now defunct Eoehoma Firearms. Capable of firing both bullets AND lasers, for the discerning dealer in death. Chambered in Eoehoma .299 Caseless."
+	contains = list(/obj/item/gun/ballistic/automatic/assault/e40, /obj/item/ammo_box/magazine/e40/empty, /obj/item/ammo_box/magazine/e40/empty)
+	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
+
+	cost = 9001
+
+
+/datum/supply_pack/gun/e50
+	name = "E-50 Energy Emitter"
+	desc = "An Eoehoma Firearms E-50 Emitter cannon. For when you want a send a message. A really big message."
+	contains = list(/obj/item/gun/energy/laser/e50)
+	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
+
+	cost = 5000
+
+/datum/supply_pack/gun/e50_underbarrel
+	name = "Underbarrel Energy Cannon"
+	desc = "The normal E-50 too big to handle for you? This underbarrel conversion cuts it down to a managable size with only a <i>minor<i> chance of painfully burning your hands."
+	contains = list(/obj/item/attachment/gun/energy/e50)
+	faction = /datum/faction/frontiersmen
+
+	faction_discount = 0
+	faction_locked = TRUE
+	cost = 5000
+
+/datum/supply_pack/gun/e60
+	name = "E-60 Disabler"
+	desc = "Looking for a live capture? This Eoehoma Firearms E-60 disabler will get your man."
+	contains = list(/obj/item/gun/energy/disabler/e60)
+	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
+	cost = 750
+
+/datum/supply_pack/gun/saber_smg
+	name = "Saber 9mm SMG"
+	desc = "A prototype 9mm submachine gun. Most of these never got past the RND phase and into distribution. But we happen know a guy."
+	contains = list(/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber)
+	faction = /datum/faction/frontiersmen
+	cost = 3250
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/larker
+	name = "Model 13 \"Larker\""
+	desc = "Not offically approved or sold by Serene Sporting."
+	contains = list(/obj/item/storage/guncase/m13)
+	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
+
+	cost = 1000
+/*
+/datum/supply_pack/gun/mecha_weapon_bay
+	name = "Concealed Weapons Bay"
+	desc = "Ripley with a laser cannon? 200 Series with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
+	contains = list(/obj/item/mecha_parts/concealed_weapon_bay)
+
+	cost = 2000
+*/
+/datum/supply_pack/gun/mecha_syringe_gun
+	name = "Mounted Syringe Gun"
+	desc = "We ripped this off an old Cybersun exosuit. It's a real advanced piece of equipment. Exosuit not included."
+	contains = list(/obj/item/mecha_parts/mecha_equipment/medical/syringe_gun)
+
+	cost = 6000
+
+/datum/supply_pack/gun/mecha_hades
+	name = "Mounted FNX-99 Carbine"
+	desc = "This so called \"Phoenix\" carbine is sure to burn brightly above the competition! Exosuit not included."
+	contains = list(/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine)
+
+	cost = 3000
+
+
+/datum/supply_pack/gun/mauler
+	name = "Mauler Machine Pistol"
+	desc = "This gun's got teeth! Twelve 9mm teeth to be exact. Hardly a full smile, and you'll be losing the rest pretty quick with this thing's rate of fire."
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/mauler, /obj/item/ammo_box/magazine/m9mm_mauler/empty, /obj/item/ammo_box/magazine/m9mm_mauler/empty)
+	faction = /datum/faction/frontiersmen
+
+	cost = 1500
+	cost = 2000
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/spitter
+	name = "Spitter Submachine Gun"
+	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the otherhand? Let's just say the bereaved will be wanting a closed casket funeral. Chambered in 9mm."
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/spitter, /obj/item/ammo_box/magazine/spitter_9mm/empty, /obj/item/ammo_box/magazine/spitter_9mm/empty)
+	faction = /datum/faction/frontiersmen
+
+	cost = 2050
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/pounder
+	name = "Pounder Submachine Gun"
+	desc = "There's a certain quality to quantity. With a massive 50 round capacity, this .22lr submachine is capable of laying down an jawdropping amount of fire."
+	contains = list(/obj/item/gun/ballistic/automatic/smg/pounder, /obj/item/ammo_box/magazine/c22lr_pounder_pan/empty, /obj/item/ammo_box/magazine/c22lr_pounder_pan/empty)
+	faction = /datum/faction/frontiersmen
+	cost = 2000
+	faction_discount = 0
+	faction_locked = TRUE
+/datum/supply_pack/gun/polymer
+	name = "Polymer Survivor Rifle"
+	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in 7.62x40mm CLIP."
+	contains = list(/obj/item/gun/ballistic/rifle/polymer)
+
+	cost = 800
+
+/datum/supply_pack/gun/skm_carbine
+	name = "SKM-24v Carbine"
+	desc = "Technically this is just a sawn down SKM-24 assault rifle, but what's CLIP going to do? Sue us? Chambered in 4.6x30mm."
+	contains = list(/obj/item/gun/ballistic/automatic/smg/skm_carbine)
+
+	cost = 3000
+
+/datum/supply_pack/gun/oneshot
+	name = "Hammer Launcher"
+	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HE rocket. "
+	contains = list(/obj/item/gun/ballistic/rocketlauncher/oneshot)
+
+	cost = 4500
+
+/datum/supply_pack/gun/oneshot/hedp
+	name = "Hammer-DP Launcher"
+	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HEDP rocket. "
+	contains = list(/obj/item/gun/ballistic/rocketlauncher/oneshot/hedp)
+
+	cost = 6000
+
+/datum/supply_pack/gun/skm_lmg
+	name = "SKM-24u Light Machinegun"
+	desc = "Your regular rifles not have enough oomph for you? This SKM-24 was converted with help from a 'liberated' CM-40 parts shipment into a light machinegun, ready to blow away whatever you point it at. Increased firerate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
+	contains = list(/obj/item/gun/ballistic/automatic/hmg/skm_lmg)
+	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
+
+	cost = 6000
+
+/datum/supply_pack/gun/amr
+	name = "Taipan AMR Crate"
+	desc = "Contains a semi auto TaipanAMR. Chambered in .50 BMG."
+	cost = 10000
+	contains = list(/obj/item/gun/ballistic/automatic/marksman/taipan/no_mag, /obj/item/ammo_box/magazine/sniper_rounds)
+	crate_name = "rifle crate"
+	faction = /datum/faction/syndicate
+
+/datum/supply_pack/ammo/amr
+	name = ".50 BMG Taipan AMR Magazine Crate"
+	desc = "Contains a box magazine for the .50 BMG AMR, containing six rounds."
+	contains = list(/obj/item/ammo_box/magazine/sniper_rounds/empty)
+	cost = 3500
+
+/datum/supply_pack/gun/shredder
+	name = "Shredder LMG Crate"
+	desc = "Contains a frontiersmen made light machine gun chambered in 12g bizzarely enough."
+	cost = 7500
+	contains = list(/obj/item/gun/ballistic/automatic/hmg/shredder)
+	crate_name = "auto rifle crate"
+	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/ammo/shredder
+	name = "Shredder 12g Magazine Crate"
+	desc = "Contains a 12g magazine for the Shredder, containing 40 rounds."
+	contains = list(/obj/item/ammo_box/magazine/m12_shredder)
+	cost = 2000
+	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/ammo/shredder_slug
+	name = "Shredder slug Magazine Crate"
+	desc = "Contains a slug magazine for the Shredder, containing 40 rounds."
+	contains = list(/obj/item/ammo_box/magazine/m12_shredder/slug)
+	cost = 2000
+	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/swiss
+	name = "Swiss Cheese Crate"
+	desc = "Contains a high-powered, automatic rifle chambered in 5.56mm."
+	cost = 5000
+	contains = list(/obj/item/gun/ballistic/automatic/assault/swiss_cheese)
+	crate_name = "auto rifle crate"
+
+
+/datum/supply_pack/ammo/swiss_ammo
+	name = "Swiss Cheese 5.56mm Magazine Crate"
+	desc = "Contains a 5.56mm magazine for the Swiss Cheese rifle, containing thirty rounds."
+	contains = list(/obj/item/ammo_box/magazine/swiss)
+	cost = 1000
+
+
+/datum/supply_pack/gun/huntsman
+	name = "Huntsman Crate"
+	desc = "Contains a fucking elephant gun. Chambered in two bore"
+	cost = 7000
+	contains = list(/obj/item/gun/ballistic/shotgun/doublebarrel/twobore)
+	faction = /datum/faction/srm
+
+/datum/supply_pack/ammo/huntsman
+	name = "Two Bore Ammo Crate"
+	desc = "Contains an 8 pack of two bore shots. Don't miss!"
+	cost = 1000
+	contains = list(/obj/item/ammo_casing/shotgun/buckshot/twobore,
+					/obj/item/ammo_casing/shotgun/buckshot/twobore,
+					/obj/item/ammo_casing/shotgun/buckshot/twobore,
+					/obj/item/ammo_casing/shotgun/buckshot/twobore,
+					/obj/item/ammo_casing/shotgun/buckshot/twobore,
+					/obj/item/ammo_casing/shotgun/buckshot/twobore,
+					/obj/item/ammo_casing/shotgun/buckshot/twobore,
+					/obj/item/ammo_casing/shotgun/buckshot/twobore)
+	faction = /datum/faction/srm
+
+/datum/supply_pack/gun/laser/hb7
+	name = "Etherbor HBG-7 Crate"
+	desc = "Contains a high-powered, automatic laser rifle. Somehow you get this."
+	cost = 6000
+	contains = list(/obj/item/gun/energy/kalix/pgf/heavy, /obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/pgf/assault,)
+	crate_name = "laser crate"
+	faction = /datum/faction/pgf

@@ -51,6 +51,7 @@
 #define DYNAMIC_WORLD_PLASMA_GIANT "plasma giant"
 
 #define DYNAMIC_WORLD_TEST "test"
+#define DYNAMIC_WORLD_TRUE_RANDOM "random"
 
 //Possible ship states
 #define OVERMAP_SHIP_IDLE "idle"

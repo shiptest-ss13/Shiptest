@@ -636,6 +636,10 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 		)
 	)
 
+/obj/item/gun/ballistic/automatic/marksman/boomslang/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY)
+
 NO_MAG_GUN_HELPER(automatic/marksman/boomslang)
 
 /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
@@ -719,6 +723,10 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	slot_available = list()
 
 NO_MAG_GUN_HELPER(automatic/marksman/taipan)
+
+/obj/item/gun/ballistic/automatic/marksman/taipan/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY)
 
 
 //########### RIFLES ###########//
@@ -867,6 +875,11 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 		)
 	)
 
+NO_MAG_GUN_HELPER(automatic/assault/hydra/lmg)
+
+/obj/item/gun/ballistic/automatic/assault/hydra/lmg/ComponentInitialize()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY)
+
 /obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/extended
 
@@ -896,6 +909,10 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 		/obj/item/ammo_box/magazine/m556_42_hydra/extended,
 		/obj/item/ammo_box/magazine/m556_42_hydra/casket,
 	)
+
+/obj/item/gun/ballistic/automatic/assault/hydra/dmr/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_RARE_TO_LEGEND_ONLY)
 
 NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 

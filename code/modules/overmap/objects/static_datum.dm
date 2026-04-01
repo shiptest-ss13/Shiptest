@@ -152,3 +152,123 @@
 	token_icon_state = "bus"
 	preserve_level = TRUE
 	gravity = TRUE
+
+/datum/overmap/static_object/tadpole_city
+	name = "Tilted Tadpoles"
+	desc = "<span class='userdanger'>Not only is this place super dangerous, by landing here you waiver the</span>"
+	token_icon_state = "station_planet"
+	map_to_load = /datum/map_template/outpost/tadpole_city
+	var/datum/map_template/outpost/z2_template = /datum/map_template/outpost/tadpole_city_z2
+	var/datum/map_template/outpost/z3_template = /datum/map_template/outpost/tadpole_city_z3
+	var/elevator_template = /datum/map_template/outpost/elevator_clip
+	weather_controller_type = /datum/weather_controller/toxic
+	preserve_level = TRUE
+	gravity = TRUE
+	border_size = 1
+
+	var/main_level_ztraits = list(
+		ZTRAIT_STATION = TRUE,
+		ZTRAIT_SUN_TYPE = AZIMUTH,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/battlefield_wasteland
+	)
+	var/list/other_level_ztraits = list(
+		ZTRAIT_STATION = TRUE,
+		ZTRAIT_SUN_TYPE = AZIMUTH,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/openspace
+	)
+
+/datum/overmap/static_object/tadpole_city/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
+	map_to_load = SSmapping.outpost_templates[map_to_load]
+	z2_template = SSmapping.outpost_templates[z2_template]
+	z3_template = SSmapping.outpost_templates[z3_template]
+	. = ..()
+
+/datum/overmap/static_object/tadpole_city/load_level()
+	if(SSlag_switch.measures[DISABLE_PLANETGEN] && !(HAS_TRAIT(usr, TRAIT_BYPASS_MEASURES)))
+		return FALSE
+	if(mapzone)
+		return TRUE
+
+	loading = TRUE
+	log_shuttle("[src] [REF(src)] LEVEL_INIT")
+
+
+	if(!map_to_load)
+		CRASH("[src] ([src.type]) tried to load without a template!")
+
+	mapzone = SSmapping.create_map_zone(name)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
+		name,
+		main_level_ztraits,
+		mapzone,
+		QUADRANT_MAP_SIZE,
+		QUADRANT_MAP_SIZE,
+		ALLOCATION_QUADRANT,
+		QUADRANT_MAP_SIZE
+	)
+	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
+
+	map_to_load.load(vlevel.get_unreserved_bottom_left_turf())
+
+
+	//var/datum/virtual_level/vlevel1 = mapzone.virtual_levels[1]
+	var/datum/virtual_level/vlevel2 = SSmapping.create_virtual_level(
+		name + " - Skylines",
+		other_level_ztraits,
+		mapzone,
+		QUADRANT_MAP_SIZE,
+		QUADRANT_MAP_SIZE,
+		ALLOCATION_QUADRANT,
+		QUADRANT_MAP_SIZE
+	)
+	vlevel2.reserve_margin(QUADRANT_SIZE_BORDER)
+	//we link the 2 levels
+	vlevel.up_linkage = vlevel2
+	vlevel2.down_linkage = vlevel
+
+	z2_template.load(vlevel2.get_unreserved_bottom_left_turf())
+
+	var/datum/virtual_level/vlevel3 = SSmapping.create_virtual_level(
+		name + " - Skylines",
+		other_level_ztraits,
+		mapzone,
+		QUADRANT_MAP_SIZE,
+		QUADRANT_MAP_SIZE,
+		ALLOCATION_QUADRANT,
+		QUADRANT_MAP_SIZE
+	)
+	vlevel3.reserve_margin(QUADRANT_SIZE_BORDER)
+	//we link the 2 levels
+	vlevel2.up_linkage = vlevel3
+	vlevel3.down_linkage = vlevel2
+
+	z3_template.load(vlevel3.get_unreserved_bottom_left_turf())
+
+	if(weather_controller_type)
+		new weather_controller_type(mapzone)
+
+	SEND_SIGNAL(src, COMSIG_OVERMAP_LOADED)
+
+	reserve_docks = list()
+
+	for(var/obj/docking_port/stationary/port as obj in SSshuttle.stationary)
+		if((port.virtual_z() == (vlevel.id || vlevel2.id || vlevel3.id)))
+			reserve_docks += port
+
+	SEND_SIGNAL(src, COMSIG_OVERMAP_LOADED)
+	loading = FALSE
+	return TRUE
+
+/datum/map_template/outpost/tadpole_city
+	name = "tadpole_city"
+	outpost_name = "Tadpole City"
+
+/datum/map_template/outpost/tadpole_city_z2
+	name = "tadpole_city_z2"
+	outpost_name = "Tadpole City"
+
+/datum/map_template/outpost/tadpole_city_z3
+	name = "tadpole_city_z3"
+	outpost_name = "Tadpole City"

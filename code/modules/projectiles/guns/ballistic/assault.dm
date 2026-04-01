@@ -30,6 +30,10 @@
 	wear_major_threshold = 600
 	wear_maximum = 1200
 
+/obj/item/gun/ballistic/automatic/assault/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_RARE_TO_LEGEND_ONLY)
+
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
 	desc = "An obsolete model of assault rifle once used by CLIP. Legendary for its durability and low cost, surplus rifles are commonplace on the Frontier, and the design has been widely copied. Chambered in 7.62x40mm CLIP."
@@ -161,6 +165,8 @@
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	spread = 8
 	spread_unwielded = 15
+
+NO_MAG_GUN_HELPER(automatic/assault/swiss_cheese)
 
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese/process_other(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
 	to_chat(user, span_danger("You hear a strange sound from the DMA unit. It doesn't appear to be operational."))

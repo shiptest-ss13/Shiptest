@@ -191,8 +191,13 @@
 	set_planet_type(planet)
 
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
-	selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+	if(ruin_type == RUINTYPE_EVERYTHING)
+		selected_ruin = SSmapping.ruins_templates[pick(SSmapping.ruins_templates)]
+	else
+		selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+
 	var/datum/map_template/ruin/used_ruin = ispath(selected_ruin) ? (new selected_ruin()) : selected_ruin
+
 	if(istype(used_ruin))
 		for(var/mission_type in used_ruin.ruin_mission_types)
 			dynamic_missions += new mission_type(src, 1 + length(dynamic_missions))
@@ -303,6 +308,67 @@
 		if(port.roundstart_template)
 			port.name = "[name] auxillary docking location"
 			port.load_roundstart()
+
+	if(GLOB.battle_royale_mode && planet)
+		var/datum/map_template/ruin
+		var/common_lootcrates = rand(planet.royale_common_lower,planet.royale_common_upper)
+		var/rare_lootcrates = rand(planet.royale_rare_lower, planet.royale_rare_upper)
+		//common
+		if(!selfloop)//if we are not a space level do not spawn in common loot
+			var/list/possible_turfs = our_likely_vlevel.get_block()
+			var/current_crate_count = 0
+			for(var/cycle in 1 to length(possible_turfs))
+				var/turf/open/potential_open_turf = pick_n_take(possible_turfs)
+				if(!istype(potential_open_turf))
+					continue
+				if(ischasm(potential_open_turf))
+					continue
+				if(islava(potential_open_turf))
+					var/turf/open/lava/potential_lava_floor = potential_open_turf
+					if(!potential_lava_floor.is_safe())
+						continue
+				if(istype(potential_open_turf, /turf/open/water/acid))
+					var/turf/open/water/acid/potential_acid_floor = potential_open_turf
+					if(!potential_acid_floor.is_safe_to_cross())
+						continue
+				if(potential_open_turf.is_blocked_turf())
+					continue
+				new /obj/effect/battle_royale/common(potential_open_turf)
+				current_crate_count++
+				message_admins("Common crate spawned: [ADMIN_COORDJMP(potential_open_turf)]. [current_crate_count]/[common_lootcrates].")
+				if(current_crate_count >= common_lootcrates)
+					break
+
+		//rare
+		for(var/possible_ruin in ruin_turfs)
+			var/current_crate_count = 0
+			var/turf/lowerbound = ruin_turfs[possible_ruin]
+			ruin = spawned_ruins[possible_ruin]
+			var/list/possible_ruin_turfs = our_likely_vlevel.get_block_portion(lowerbound.x,lowerbound.y,(lowerbound.x + ruin.width),(lowerbound.y + ruin.height))
+			for(var/cycle in 1 to length(possible_ruin_turfs))
+				var/potential_turf = pick_n_take(possible_ruin_turfs)
+				if(!isopenturf(potential_turf))
+					continue
+				var/turf/open/potential_open_turf = potential_turf
+				if(ischasm(potential_open_turf))
+					continue
+				if(islava(potential_open_turf))
+					var/turf/open/lava/potential_lava_floor = potential_open_turf
+					if(!potential_lava_floor.is_safe())
+						continue
+				if(istype(potential_open_turf, /turf/open/water/acid))
+					var/turf/open/water/acid/potential_acid_floor = potential_open_turf
+					if(!potential_acid_floor.is_safe_to_cross())
+						continue
+				if(potential_open_turf.is_blocked_turf())
+					continue
+
+				//yippee, there's a viable turf for the package to land on
+				new /obj/effect/battle_royale/rarer(potential_open_turf)
+				current_crate_count++
+				message_admins("Rare crate spawned: [ADMIN_COORDJMP(potential_open_turf)]. [current_crate_count]/[rare_lootcrates].")
+				if(current_crate_count >= rare_lootcrates)
+					break
 
 	SEND_SIGNAL(src, COMSIG_OVERMAP_LOADED)
 	loading = FALSE
@@ -613,3 +679,14 @@
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_DARK_MODERATE_ORANGE
+
+/area/overmap_encounter/planetoid/random
+	name = "\improper hell"
+	sound_environment = SOUND_ENVIRONMENT_CITY
+	ambience_index = AMBIENCE_CREEPY
+	light_range = 2
+	light_power = 1
+
+/area/overmap_encounter/planetoid/random/New(...)
+	light_color = pick(list(COLOR_BEACHPLANET_LIGHT, COLOR_ICEPLANET_LIGHT, COLOR_LAVAPLANET_LIGHT, COLOR_JUNGLEPLANET_LIGHT, COLOR_ROCKPLANET_LIGHT, COLOR_SANDPLANET_LIGHT, COLOR_WASTEPLANET_LIGHT, COLOR_FOGGY_LIGHT, COLOR_DARK_MODERATE_ORANGE, "#09121a", "#67769e", "#ffd2bd", "#bf9b9b", "#be956b", COLOR_VERY_LIGHT_GRAY, "#000000", "#995632", "#bf8e60", "#330f4d", "#110412", "#132e3b", "#260b07", "#681f73", "#6e182b", "#611929", "#FFFFFF"))
+	return ..()

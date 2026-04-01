@@ -363,6 +363,7 @@
 
 	AddComponent(/datum/component/attachment_holder, slot_available, attachment_list, slot_offsets, default_attachments)
 	AddComponent(/datum/component/two_handed)
+	AddComponent(/datum/component/fortnite)
 
 /// triggered on wield of two handed item
 /obj/item/gun/proc/on_wield(obj/item/source, mob/user, instant)
@@ -896,6 +897,8 @@
 
 //Happens before the actual projectile creation
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
+	SIGNAL_HANDLER
+	SEND_SIGNAL(src,COMSIG_GUN_BEFORE_FIRING)
 	return
 
 /obj/item/gun/proc/calculate_recoil(mob/living/user, recoil_bonus = 0)
