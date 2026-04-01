@@ -135,7 +135,7 @@
 			to_chat(user, span_warning("You have to turn the [src] off first before switching modes!"))
 		else
 			scanmode = !scanmode
-			to_chat(user, span_notice("You switch the [src] to [scanmode ? "scan underground " : "scan the surface"]."))
+			to_chat(user, span_notice("You switch the [src] to [scanmode ? "scan underground" : "scan the surface"]."))
 
 /obj/item/pinpointer/mineral/attack_self(mob/living/user)
 	switch(scanmode)

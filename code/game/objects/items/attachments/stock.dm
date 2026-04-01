@@ -55,6 +55,10 @@
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	icon_state = "resolution_inteq_stock"
 
+/obj/item/attachment/foldable_stock/pgfpdw
+	icon = 'icons/obj/guns/manufacturer/etherbor/48x32.dmi'
+	icon_state = "pgfpdw_stock"
+
 /obj/item/attachment/foldable_stock/wasp
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	icon_state = "wasp_stock"
