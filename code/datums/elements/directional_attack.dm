@@ -27,7 +27,7 @@
 	if(weapon.swing_type)
 		INVOKE_ASYNC(weapon, TYPE_PROC_REF(/obj/item, swing_attack), source, target_mob)
 		source.changeNext_move(weapon.attack_cooldown)
-	if(target_mob || weapon.swing_type))
+	if(target_mob || weapon.swing_type)
 		return COMPONENT_CANCEL_ATTACK_CHAIN
 
 	return NONE
