@@ -17,7 +17,13 @@
 	var/aiming_time_left = 12
 	var/aiming_time_increase_user_movement = 3
 	var/aiming_time_increase_angle_multiplier = 0.3
+
 	var/last_process = 0
+	var/lastangle = 0
+	var/aiming_lastangle = 0
+	var/delay = 25
+	var/lastfire = 0
+	var/list/obj/effect/projectile/tracer/current_tracers
 
 	COOLDOWN_DECLARE(next_shot_cd)
 
@@ -29,6 +35,7 @@
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(wake_up))
 	RegisterSignal(parent, COMSIG_GUN_DISABLE_AIMEDFIRE, PROC_REF(disable_aimedfire))
 	RegisterSignal(parent, COMSIG_GUN_ENABLE_AIMEDFIRE, PROC_REF(enable_aimedfire))
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
 	if(_aiming_time)
 		aiming_time = _aiming_time
 	if(_aiming_threshold)
@@ -43,21 +50,42 @@
 
 /datum/component/aimed_fire/Destroy()
 	aimedfire_off()
+	//setuser(null)
 	return ..()
 
+//good
 /datum/component/aimed_fire/process(seconds_per_tick)
 	if(aimedfire_stat != AIMEDFIRE_STAT_FIRING)
 		STOP_PROCESSING(SSprojectiles, src)
 		return
-		last_process = world.time
-		return
+		// last_process = world.time
+		// return
 	check_user()
-	//handle_zooming()
 	aiming_time_left = max(0, aiming_time_left - (world.time - last_process))
-	aiming_beam(TRUE)
+	//aiming_beam(TRUE)
 	last_process = world.time
 
 	// process_shot()
+
+/datum/component/aimed_fire/check_user(automatic_cleanup = TRUE)
+	if(!istype(shooter) || !isturf(shooter.loc) || !(src in shooter.held_items) || shooter.incapacitated())	//Doesn't work if you're not holding it!
+		if(automatic_cleanup)
+			stop_aiming()
+			//set_user(null)
+		return FALSE
+	return TRUE
+
+/obj/item/gun/proc/start_aiming(target)
+	aiming_time_left = aiming_time
+	//aiming = TRUE
+	process_aim(target)
+	//aiming_beam(TRUE)
+
+/obj/item/gun/proc/stop_aiming(mob/user)
+	set waitfor = FALSE
+	aiming_time_left = aiming_time
+	//aiming = FALSE
+	//QDEL_LIST(current_tracers)
 
 /datum/component/aimed_fire/proc/wake_up(datum/source, mob/user, slot)
 	SIGNAL_HANDLER
@@ -190,13 +218,16 @@
 	if(!process_shot()) //First shot is processed instantly.
 		return //If it fails, such as when the gun is empty, then there's no need to schedule a second shot.
 
+	last_process = world.time
 	START_PROCESSING(SSprojectiles, src)
+	//declare last time here?
 	RegisterSignal(clicker, COMSIG_CLIENT_MOUSEDRAG, PROC_REF(on_mouse_drag))
 
 /datum/component/aimed_fire/proc/on_mouse_up(datum/source, atom/object, turf/location, control, params)
 	SIGNAL_HANDLER
 	UnregisterSignal(clicker, COMSIG_CLIENT_MOUSEUP)
 	mouse_status = AIMEDFIRE_MOUSEUP
+	process_aim()
 	if(aimedfire_stat == AIMEDFIRE_STAT_FIRING)
 		stop_aimedfiring()
 	return COMPONENT_CLIENT_MOUSEUP_INTERCEPT
@@ -233,10 +264,27 @@
 			CRASH("on_mouse_drag failed to get the turf under screen object [over_object.type]")
 		target = new_target
 		target_loc = new_target
+		process_aim(new_target)
 		return
 	target = over_object
 	target_loc = get_turf(over_object)
+	process_aim(target)
 	mouse_parameters = params
+
+/datum/component/aimed_fire/proc/process_aim(target)
+	if(istype(shooter) && shooter.client && shooter.client.mouseParams)
+		var/angle
+		if(target)
+			angle = get_angle(shooter,target)
+		else
+			angle = mouse_angle_from_client(shooter.client)
+		shooter.setDir(angle2dir_cardinal(angle))
+		var/difference = abs(closer_angle_difference(lastangle, angle))
+		delay_penalty(difference * aiming_time_increase_angle_multiplier)
+		lastangle = angle
+
+/datum/component/aimed_fire/proc/delay_penalty(amount)
+	aiming_time_left = clamp(aiming_time_left + amount, 0, aiming_time)
 
 /datum/component/aimed_fire/proc/process_shot()
 	if(aimedfire_stat != AIMEDFIRE_STAT_FIRING)
