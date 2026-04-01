@@ -139,6 +139,13 @@
 	contains = list(/obj/item/melee/knife/survival)
 	crate_name = "survival knife crate"
 
+/datum/supply_pack/sec_supply/brass_knuckles
+	name = "Brass Knuckles Crate"
+	desc = "Contains one pair of brass knuckles. Shiny, stylish, and swift. More than enough to make a pirate think twice about roughing up the average spacer-gangster."
+	cost = 160
+	contains = list(/obj/item/melee/brass_knuckles)
+	crate_name = "brass knuckles crate"
+
 /datum/supply_pack/sec_supply/machete
 	name = "Stamped Steel Machete Crate"
 	desc = "Contains one mass produced machete. A perfect choice for crews on a budget."
