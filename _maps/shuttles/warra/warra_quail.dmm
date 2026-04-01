@@ -1360,9 +1360,6 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/storage/equip)
 "vB" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/door/airlock/maintenance{
 	dir = 4;
 	name = "Engine Room";
@@ -1389,8 +1386,9 @@
 /area/ship/storage/equip)
 "vO" = (
 /obj/structure/table,
-/obj/item/trash/cheesie{
-	pixel_y = 14
+/obj/item/trash/mirastin{
+	pixel_x = -2;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -2605,9 +2603,6 @@
 "OE" = (
 /obj/structure/table,
 /obj/item/trash/waffles,
-/obj/item/trash/energybar{
-	pixel_y = -14
-	},
 /obj/machinery/jukebox/boombox{
 	pixel_y = 2
 	},
