@@ -70,7 +70,7 @@
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/p16 //repath to /obj/item/ammo_box/magazine/generic_556 sometime
-	name = "assault rifle magazine (5.56x42mm CLIP)"
+	name = "CM-82 magazine (5.56x42mm CLIP)"
 	desc = "A simple, 30-round magazine for 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
 	icon_state = "p16_mag-1"
 	base_icon_state = "p16_mag"
@@ -80,6 +80,32 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/p16/empty
+	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/p16/extended
+	name = "extended CM-82 magazine (5.56x42mm CLIP)"
+	desc = "An extended magazine, with 45 rounds for 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
+	icon_state = "p16_mag_extended-1"
+	base_icon_state = "p16_mag_extended"
+	ammo_type = /obj/item/ammo_casing/a556_42
+	caliber = "5.56x42mm"
+	max_ammo = 45
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/p16/extended/empty
+	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/p16/casket
+	name = "casket CM-82 magazine (5.56x42mm CLIP)"
+	desc = "A casket magazine, with 60 rounds for 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
+	icon_state = "p16_mag_casket-1"
+	base_icon_state = "p16_mag_casket"
+	ammo_type = /obj/item/ammo_casing/a556_42
+	caliber = "5.56x42mm"
+	max_ammo = 60
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/p16/casket/empty
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/swiss
