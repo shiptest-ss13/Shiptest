@@ -600,7 +600,7 @@
 	. = ..()
 	if(wielded)
 		user.Immobilize(1 SECONDS)
-		user.balloon_alert_to_viewers("stunned", "swing cooldown")
+		user.balloon_alert_to_viewers("stunned", "after-swing stun")
 		user.visible_message(span_danger("[user] is stunned after swinging the [src]!"), span_danger("[src] stuns you momentarily after swinging!"))
 
 /obj/item/melee/sword/volcano/pre_attack(atom/attacked_atom, mob/living/user, params)
