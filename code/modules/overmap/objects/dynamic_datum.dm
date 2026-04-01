@@ -674,3 +674,14 @@
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_DARK_MODERATE_ORANGE
+
+/area/overmap_encounter/planetoid/random
+	name = "\improper hell"
+	sound_environment = SOUND_ENVIRONMENT_CITY
+	ambientsounds = SPOOKY
+	light_range = 2
+	light_power = 1
+
+/area/overmap_encounter/planetoid/random/New(...)
+	light_color = pick(list(COLOR_BEACHPLANET_LIGHT, COLOR_ICEPLANET_LIGHT, COLOR_LAVAPLANET_LIGHT, COLOR_JUNGLEPLANET_LIGHT, COLOR_ROCKPLANET_LIGHT, COLOR_SANDPLANET_LIGHT, COLOR_WASTEPLANET_LIGHT, COLOR_FOGGY_LIGHT, COLOR_DARK_MODERATE_ORANGE, "#09121a", "#67769e", "#ffd2bd", "#bf9b9b", "#be956b", COLOR_VERY_LIGHT_GRAY, "#000000", "#995632", "#bf8e60", "#330f4d", "#110412", "#132e3b", "#260b07", "#681f73", "#6e182b", "#611929", "#FFFFFF"))
+	return ..()

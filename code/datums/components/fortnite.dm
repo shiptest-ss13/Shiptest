@@ -11,6 +11,7 @@
 #define RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY 4
 
 GLOBAL_VAR_INIT(battle_royale_mode, FALSE)
+GLOBAL_LIST_EMPTY(pill_graveyards)
 
 /**
  * Fortnite component

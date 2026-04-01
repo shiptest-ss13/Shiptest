@@ -137,6 +137,7 @@ GLOBAL_LIST_INIT(admin_verbs_spawn, list(
 	/datum/admins/proc/gift,
 	/client/proc/spawn_ruin,
 	/client/proc/enable_royale_mode,
+	/client/proc/adjust_storm,
 	/client/proc/spawn_outpost, /* Allows admins to spawn a new outpost. */
 	/client/proc/spawn_overmap,
 	/client/proc/spawn_overmap_json,

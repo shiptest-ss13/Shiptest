@@ -336,3 +336,16 @@
 	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
 	docking_message = "Extreme munition hazards and debris prevents docking. Aborting."
 	interference_power = 5
+
+/datum/overmap/fluff/pill_graveyard
+	name = "Pill graveyard"
+	desc = "You're loser! Teleports pills here when the storm passes over, so the manifest stays intact."
+	token_icon_state = "graveyard"
+
+/datum/overmap/fluff/pill_graveyard/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
+	. = ..()
+	GLOB.pill_graveyards += src
+
+/datum/overmap/fluff/pill_graveyard/Destroy(force)
+	. = ..()
+	GLOB.pill_graveyards -= src

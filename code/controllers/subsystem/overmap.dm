@@ -932,6 +932,33 @@ SUBSYSTEM_DEF(overmap)
 	point2.alter_token_appearance()
 	return point1
 
+//spawns storm in location
+/datum/overmap_star_system/proc/handle_storm(list/position)
+	if(!position)
+		return
+	//ignore if theres a storm there already
+	if(locate(/datum/overmap/event/storm) in overmap_container[position["x"]][position["y"]])
+		return
+	new /datum/overmap/event/storm(position, src)
+
+	var/datum/overmap/dynamic/found_planet = locate(/datum/overmap/dynamic) in overmap_container[position["x"]][position["y"]]
+	if(found_planet)
+		for(var/datum/overmap/ship/found_ship as anything in found_planet.contents)
+			//save ships for manifest tracking of teams
+			found_ship.Undock(TRUE)
+			var/datum/overmap/graveyard = pick(GLOB.pill_graveyards)
+			var/list/newpos = graveyard.get_overmap_step(rand(GLOB.alldirs))
+			found_ship.move_overmaps(src, newpos["x"], newpos["y"])
+		qdel(found_planet)
+
+	//send to graveyard for easier tracking of dead people
+	var/datum/overmap/ship/found_ship = locate(/datum/overmap/ship) in overmap_container[position["x"]][position["y"]]
+	if(!found_ship)
+		return
+	var/datum/overmap/graveyard = pick(GLOB.pill_graveyards)
+	var/list/newpos = graveyard.get_overmap_step(rand(GLOB.alldirs))
+	found_ship.move_overmaps(src, newpos["x"], newpos["y"])
+
 /**
  * Gets the edge of a star system
  * * dir - The direction we are getting the edge from.

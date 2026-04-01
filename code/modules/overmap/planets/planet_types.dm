@@ -465,3 +465,16 @@
 /datum/map_generator/single_turf/waterball
 	turf_type = /turf/open/water/stormy_planet_lit
 	area_type = /area/overmap_encounter/planetoid/waterball
+
+/datum/planet_type/random
+	name = "just fuck my shit up planetoid"
+	desc = "There's no identification of what this is."
+	planet = DYNAMIC_WORLD_TRUE_RANDOM
+	icon_state = "hazard"
+	color = "#b32048"
+	weight = 80
+
+	ruin_type = RUINTYPE_EVERYTHING
+	mapgen = /datum/map_generator/planet_generator/fuckmyshitup
+	default_baseturf = /turf/open/floor/plating/asteroid/dirt/jungle
+	weather_controller_type = /datum/weather_controller/random
