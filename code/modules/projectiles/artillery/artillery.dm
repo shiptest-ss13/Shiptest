@@ -29,7 +29,7 @@
 	icon_state = "howitzer_deployed"
 	//layers above
 	layer = ABOVE_MOB_LAYER
-	var/icon_undeployed = "howitzer_undeployed"
+	var/icon_undeployed = "howitzer"
 	var/icon_deployed = "howitzer_deployed"
 	var/fire_sound = 'sound/machines/artillery/howitzer_fire.ogg'
 	var/reload_sound = 'sound/machines/artillery/tat36_reload.ogg'
