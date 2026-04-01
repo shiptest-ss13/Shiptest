@@ -191,8 +191,13 @@
 	set_planet_type(planet)
 
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
-	selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+	if(ruin_type == RUINTYPE_EVERYTHING)
+		selected_ruin = SSmapping.ruins_templates[pick(SSmapping.ruins_templates)]
+	else
+		selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+
 	var/datum/map_template/ruin/used_ruin = ispath(selected_ruin) ? (new selected_ruin()) : selected_ruin
+
 	if(istype(used_ruin))
 		for(var/mission_type in used_ruin.ruin_mission_types)
 			dynamic_missions += new mission_type(src, 1 + length(dynamic_missions))
@@ -678,7 +683,7 @@
 /area/overmap_encounter/planetoid/random
 	name = "\improper hell"
 	sound_environment = SOUND_ENVIRONMENT_CITY
-	ambientsounds = SPOOKY
+	ambience_index = AMBIENCE_CREEPY
 	light_range = 2
 	light_power = 1
 

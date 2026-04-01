@@ -361,6 +361,13 @@
 		/obj/item/stack/ore/titanium,
 		)
 
+	royale_common_upper = 10
+	royale_common_lower = 2
+
+
+	royale_rare_upper = 5
+	royale_rare_lower = 5
+
 /datum/planet_type/battlefield
 	name = "battlefield planetoid"
 	desc = "The site of a major ICW battlefield. The remminants of a major city, colony, or nature reserve, reduced to a muddy hellscape by decades of fighing. Beware the toxic rain, wear a gas mask!"

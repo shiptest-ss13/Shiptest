@@ -93,6 +93,11 @@
 	for(var/datum/biome/our_biome as anything in all_biomes)
 		if(ispath(our_biome, /datum/biome/cave))
 			all_biomes -= our_biome
+//while this is very funny and in the spirit, this does make these random planets extremely dangerous, ideally, we would like people to visit them
+		if(ispath(our_biome, /datum/biome/gas_giant))
+			all_biomes -= our_biome
+		if(ispath(our_biome, /datum/biome/plasma_giant))
+			all_biomes -= our_biome
 
 //go through all tempertures
 	for(var/i in biome_table)
