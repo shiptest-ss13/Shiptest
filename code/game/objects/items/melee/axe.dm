@@ -10,6 +10,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	attack_cooldown = HEAVY_WEAPON_CD
+	swing_attack_cooldown = HEAVY_WEAPON_CD
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	hitsound = list('sound/weapons/melee/heavyaxe_hit1.ogg', 'sound/weapons/melee/heavyaxe_hit2.ogg')
 	pickup_sound = 'sound/weapons/melee/heavy_pickup.ogg'

@@ -148,6 +148,7 @@
 	resistance_flags = FIRE_PROOF
 
 	attack_cooldown = LIGHT_WEAPON_CD
+	swing_attack_cooldown = LIGHT_WEAPON_CD
 	force = 30
 	wound_bonus = 5
 	bare_wound_bonus = 10
@@ -513,6 +514,7 @@
 	armour_penetration = 80
 	w_class = WEIGHT_CLASS_HUGE
 	attack_cooldown = 0.8 SECONDS
+	swing_attack_cooldown = 0.8 SECONDS
 	var/attack_cooldown_wielded = 2.5 SECONDS
 
 

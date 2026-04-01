@@ -17,6 +17,8 @@
 	armour_penetration = 40
 	demolition_mod = 2
 	attack_cooldown = 12
+	swing_attack_cooldown = 12
+	swing_type = SWINGABLE_SWING
 	attack_verb = list("bashed", "smashed", "crushed", "smacked")
 	hitsound = list('sound/weapons/melee/heavyblunt_hit1.ogg', 'sound/weapons/melee/heavyblunt_hit2.ogg', 'sound/weapons/melee/heavyblunt_hit3.ogg')
 	pickup_sound = 'sound/weapons/melee/heavy_pickup.ogg'
