@@ -188,7 +188,7 @@
 	desc = "One set of well-rounded medium tactical body armor. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
 	cost = 4500
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/frontier,
-					/obj/item/clothing/head/helmet/heavy_frontier)
+					/obj/item/clothing/head/helmet/frontier)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	faction = /datum/faction/frontiersmen

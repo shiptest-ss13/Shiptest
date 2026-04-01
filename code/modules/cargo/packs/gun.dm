@@ -775,7 +775,7 @@
 	name = "SAW-80 Squad Automatic Weapon"
 	desc = "Contains one of the rarely-produced SAW-80 Squad Automatic Weapon platforms, exclusively for licensed buyers. Remember, short controlled bursts!"
 	cost = 7000
-	contains = list(/obj/item/storage/guncase/saw80)
+	contains = list(/obj/item/gun/ballistic/automatic/assault/hydra/lmg/no_mag,/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty,/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty)
 	crate_name = "LMG crate"
 	faction = /datum/faction/syndicate/scarborough
 	faction_discount = 0
@@ -849,19 +849,6 @@
 	faction = /datum/faction/srm
 	faction_discount = 0
 	faction_locked = TRUE
-
-//turn into l201
-/*
-/datum/supply_pack/gun/gauss
-	name = "Prototype Gauss Rifle"
-	desc = "Contains a high-powered prototype armor-piercing gauss rifle, operable with ferromagnetic pellets. For Makosso-Warra employee use only."
-	cost = 3500
-	contains = list(/obj/item/storage/guncase/gauss)
-	crate_name = "dmr crate"
-	faction = /datum/faction/warra
-	faction_discount = 0
-	faction_locked = TRUE
-*/
 
 /datum/supply_pack/gun/claris
 	name = "Claris Gauss Rifle"
@@ -938,13 +925,6 @@
 	faction = /datum/faction/solgov
 	faction_discount = 0
 	faction_locked = TRUE
-
-/datum/supply_pack/gun/derringer
-	name = "Derringer"
-	desc = "A concealable handgun small enough to hide nearly anywhere. Uses .38 revolver rounds."
-	contains = list(/obj/item/gun/ballistic/derringer)
-
-	cost = 300
 
 /datum/supply_pack/gun/syndi_derringer
 	name = ".357 Derringer"

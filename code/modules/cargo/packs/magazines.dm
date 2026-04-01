@@ -458,13 +458,6 @@
 	cost = 750
 
 
-/datum/supply_pack/magazine/saber_mag
-	name = "Saber 9mm SMG Magazines"
-	desc = "Magazines for use in the Saber 9mm SMG. No, they don't work as swords."
-	contains = list(/obj/item/ammo_box/magazine/smgm9mm)
-
-	cost = 500
-
 /datum/supply_pack/magazine/sgg_stripper
 	name = "8x58mm Stripper Clip"
 	desc = "A five round 8x58mm stripper clip for use with the SGG-669C. Also doubles as a paperweight, because of course it does. Fucking Solarians."

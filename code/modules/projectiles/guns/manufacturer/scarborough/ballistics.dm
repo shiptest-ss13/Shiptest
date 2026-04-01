@@ -875,6 +875,8 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 		)
 	)
 
+NO_MAG_GUN_HELPER(automatic/assault/hydra/lmg)
+
 /obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/extended
 
