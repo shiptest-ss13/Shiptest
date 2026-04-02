@@ -235,6 +235,24 @@
 			. = "d9ae96"
 		if("mediterranean")
 			. = "c79b8b"
+		if("sepia")
+			. = "895C51"
+		if("taupe")
+			. = "A5805D"
+		if("russet")
+			. = "874B3D"
+		if("beige")
+			. = "BD9D7D"
+		if("walnut")
+			. = "9F766D"
+		if("bronze")
+			. = "7F592B"
+		if("burnet")
+			. = "532B18"
+		if("amber")
+			. = "A37746"
+		if("hazel")
+			. = "A67138"
 		if("asian1")
 			. = "ffdeb3"
 		if("asian2")
