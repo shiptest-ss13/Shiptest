@@ -94,7 +94,7 @@
 /turf/open/floor/concrete,
 /area/outpost/exterior)
 "iC" = (
-/obj/effect/battle_royale/rarer,
+/obj/effect/invalid_obj,
 /turf/open/floor/concrete,
 /area/outpost/crew)
 "iD" = (
@@ -150,10 +150,6 @@
 /obj/machinery/light/floor,
 /turf/open/floor/concrete,
 /area/outpost/exterior)
-"nM" = (
-/obj/effect/battle_royale/common,
-/turf/open/floor/concrete,
-/area/outpost/crew)
 "oo" = (
 /obj/machinery/computer/crew{
 	dir = 8
@@ -247,7 +243,7 @@
 /obj/effect/landmark{
 	icon_state = "x4"
 	},
-/obj/effect/battle_royale/rarer,
+/obj/effect/invalid_obj,
 /turf/open/floor/concrete/tiles,
 /area/outpost/crew)
 "xu" = (
@@ -274,7 +270,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/crew)
 "Ay" = (
-/obj/effect/battle_royale/common,
+/obj/effect/invalid_obj,
 /turf/open/floor/concrete,
 /area/outpost/external)
 "Bl" = (
@@ -296,10 +292,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/outpost/crew)
-"CJ" = (
-/obj/effect/battle_royale/rarer,
-/turf/open/openspace,
-/area/outpost/external)
 "CR" = (
 /obj/structure/railing/thick{
 	dir = 1
@@ -307,7 +299,7 @@
 /turf/open/floor/concrete,
 /area/outpost/exterior)
 "CY" = (
-/obj/effect/battle_royale/common,
+/obj/effect/invalid_obj,
 /turf/open/openspace,
 /area/outpost/external)
 "Dz" = (
@@ -321,7 +313,7 @@
 /turf/open/floor/concrete,
 /area/outpost/exterior)
 "Ev" = (
-/obj/effect/battle_royale/common,
+/obj/effect/invalid_obj,
 /turf/open/floor/concrete/reinforced,
 /area/outpost/external)
 "EC" = (
@@ -331,7 +323,7 @@
 /turf/open/floor/concrete,
 /area/outpost/crew)
 "Fl" = (
-/obj/effect/battle_royale/common,
+/obj/effect/invalid_obj,
 /turf/open/floor/concrete,
 /area/outpost/exterior)
 "FE" = (
@@ -342,13 +334,9 @@
 /turf/open/floor/concrete,
 /area/outpost/external)
 "FV" = (
-/obj/effect/battle_royale/common,
+/obj/effect/invalid_obj,
 /turf/open/floor/concrete/tiles,
 /area/outpost/crew)
-"Gw" = (
-/obj/effect/battle_royale/rarer,
-/turf/open/floor/concrete,
-/area/outpost/exterior)
 "GP" = (
 /obj/machinery/telecomms/hub{
 	dir = 4
@@ -377,7 +365,7 @@
 /turf/open/floor/carpet/nanoweave/blue,
 /area/outpost/crew)
 "Kt" = (
-/obj/effect/battle_royale/common,
+/obj/effect/invalid_obj,
 /turf/open/floor/concrete/reinforced,
 /area/outpost/exterior)
 "MC" = (
@@ -424,10 +412,6 @@
 /obj/structure/lattice,
 /turf/open/openspace,
 /area/outpost/external)
-"QR" = (
-/obj/effect/battle_royale/rarer,
-/turf/open/floor/concrete/reinforced,
-/area/outpost/exterior)
 "Rd" = (
 /obj/structure/railing/thick{
 	dir = 8
@@ -488,10 +472,6 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/crew)
-"VZ" = (
-/obj/effect/battle_royale/rarer,
-/turf/open/floor/concrete,
-/area/outpost/external)
 "Wg" = (
 /turf/closed/indestructible/edge,
 /area/outpost/exterior)
@@ -503,7 +483,7 @@
 /area/outpost/crew)
 "Ya" = (
 /obj/machinery/light/directional/south,
-/obj/effect/battle_royale/rarer,
+/obj/effect/invalid_obj,
 /turf/open/floor/concrete/reinforced,
 /area/outpost/crew)
 "Yy" = (
@@ -512,7 +492,7 @@
 /area/outpost/crew)
 "YZ" = (
 /obj/machinery/light/directional/north,
-/obj/effect/battle_royale/rarer,
+/obj/effect/invalid_obj,
 /turf/open/floor/concrete/reinforced,
 /area/outpost/crew)
 
@@ -703,7 +683,7 @@ On
 HT
 FO
 FO
-VZ
+Ay
 FO
 FO
 FO
@@ -1080,7 +1060,7 @@ FO
 Ay
 FO
 FO
-VZ
+Ay
 FO
 HT
 HT
@@ -1192,7 +1172,7 @@ FO
 FO
 FO
 FO
-VZ
+Ay
 FO
 FO
 FO
@@ -1939,7 +1919,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 lP
 On
@@ -2006,7 +1986,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -2034,7 +2014,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -2043,7 +2023,7 @@ On
 HT
 FO
 FO
-VZ
+Ay
 FO
 FO
 FO
@@ -2052,7 +2032,7 @@ FO
 FO
 FO
 FO
-VZ
+Ay
 HT
 On
 On
@@ -2514,7 +2494,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -2542,7 +2522,7 @@ FO
 FO
 FO
 FO
-VZ
+Ay
 FO
 FO
 HT
@@ -2858,7 +2838,7 @@ NG
 On
 On
 Rz
-Gw
+Fl
 ks
 ks
 ks
@@ -3475,7 +3455,7 @@ On
 On
 On
 Rz
-Gw
+Fl
 ks
 ks
 Rz
@@ -3600,7 +3580,7 @@ On
 Rz
 Rz
 Rz
-QR
+Kt
 Rz
 On
 On
@@ -4135,7 +4115,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -4637,7 +4617,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -4712,7 +4692,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -4978,8 +4958,8 @@ On
 On
 On
 On
-CJ
-CJ
+CY
+CY
 On
 On
 On
@@ -5071,7 +5051,7 @@ NG
 NG
 On
 On
-CJ
+CY
 On
 On
 On
@@ -5214,7 +5194,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -5528,7 +5508,7 @@ FO
 FO
 FO
 FO
-VZ
+Ay
 FO
 HT
 On
@@ -5544,7 +5524,7 @@ On
 On
 Rz
 Rz
-Gw
+Fl
 ks
 ks
 ks
@@ -5648,7 +5628,7 @@ FO
 FO
 FO
 FO
-VZ
+Ay
 FO
 FO
 FO
@@ -5788,7 +5768,7 @@ On
 On
 On
 Rz
-Gw
+Fl
 ks
 ks
 ks
@@ -6013,7 +5993,7 @@ On
 On
 On
 HT
-VZ
+Ay
 FO
 FO
 FO
@@ -6334,7 +6314,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -6510,7 +6490,7 @@ On
 On
 HT
 FO
-VZ
+Ay
 FO
 FO
 Ay
@@ -6929,7 +6909,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -7434,7 +7414,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -7756,7 +7736,7 @@ On
 On
 On
 Rz
-Gw
+Fl
 ks
 ks
 ks
@@ -8004,7 +7984,7 @@ On
 On
 Rz
 Rz
-Gw
+Fl
 ks
 ks
 ks
@@ -8426,7 +8406,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 UJ
@@ -9042,7 +9022,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 am
 am
@@ -9527,7 +9507,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -9586,7 +9566,7 @@ ks
 ks
 ks
 ks
-Gw
+Fl
 ks
 ks
 Uf
@@ -9701,7 +9681,7 @@ On
 On
 On
 CR
-Gw
+Fl
 ks
 ks
 ks
@@ -9905,7 +9885,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -9914,7 +9894,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -9951,7 +9931,7 @@ ks
 ks
 am
 ks
-Gw
+Fl
 ks
 ks
 Fl
@@ -10184,7 +10164,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -10881,7 +10861,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -11522,7 +11502,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -11693,7 +11673,7 @@ On
 On
 ql
 ql
-nM
+iC
 ql
 ql
 ql
@@ -12062,7 +12042,7 @@ On
 ql
 ql
 ql
-nM
+iC
 ql
 ql
 ql
@@ -12925,8 +12905,8 @@ ql
 ql
 ql
 ql
-nM
-nM
+iC
+iC
 ql
 ql
 ql
@@ -13195,7 +13175,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
@@ -13276,7 +13256,7 @@ On
 On
 ql
 ql
-nM
+iC
 ql
 ql
 ql
@@ -13287,7 +13267,7 @@ ql
 ql
 ql
 ql
-nM
+iC
 ql
 ql
 ql
@@ -13363,7 +13343,7 @@ On
 On
 On
 On
-CJ
+CY
 On
 On
 On
