@@ -3516,12 +3516,12 @@
 /obj/structure/railing{
 	layer = 5
 	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -3864,9 +3864,6 @@
 /obj/structure/railing{
 	dir = 10;
 	layer = 5
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
 	},
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
@@ -5336,9 +5333,6 @@
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "EM" = (
-/obj/machinery/power/port_gen/pacman/super{
-	anchored = 1
-	},
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
@@ -5346,6 +5340,9 @@
 	dir = 5
 	},
 /obj/machinery/light/directional/north,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "EO" = (
@@ -7188,6 +7185,12 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Pc" = (
@@ -7798,14 +7801,14 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Sr" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)

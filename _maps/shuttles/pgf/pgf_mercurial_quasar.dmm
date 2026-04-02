@@ -1342,19 +1342,15 @@
 	layer = 2.7
 	},
 /obj/structure/rack,
-/obj/item/stack/sheet/mineral/plasma/twenty{
-	pixel_y = 1;
-	pixel_x = -6
-	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_y = -5;
-	pixel_x = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 1;
+	pixel_x = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -3692,9 +3688,6 @@
 	dir = 1;
 	layer = 2.7
 	},
-/obj/machinery/power/port_gen/pacman{
-	anchored = 1
-	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
@@ -3706,6 +3699,10 @@
 	pixel_x = -22;
 	pixel_y = -2
 	},
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
+	},
+/obj/item/stack/sheet/mineral/uranium/ten,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "UO" = (
