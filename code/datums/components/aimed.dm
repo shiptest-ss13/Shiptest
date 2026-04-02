@@ -190,10 +190,10 @@
 	target = _target
 	target_loc = get_turf(target)
 	mouse_parameters = params
-	INVOKE_ASYNC(src, PROC_REF(start_aimedfiring))
+	INVOKE_ASYNC(src, PROC_REF(start_aiming))
 
 //Dakka-dakka
-/datum/component/aimed_fire/proc/start_aimedfiring()
+/datum/component/aimed_fire/proc/start_aiming()
 	if(aimedfire_stat == AIMEDFIRE_STAT_FIRING)
 		return //Already pew-pewing.
 	aimedfire_stat = AIMEDFIRE_STAT_FIRING
@@ -286,6 +286,7 @@
 /datum/component/aimed_fire/proc/delay_penalty(amount)
 	aiming_time_left = clamp(aiming_time_left + amount, 0, aiming_time)
 
+//proccess the aim here
 /datum/component/aimed_fire/proc/process_shot()
 	if(aimedfire_stat != AIMEDFIRE_STAT_FIRING)
 		return FALSE
@@ -300,7 +301,7 @@
 		stop_aimedfiring() //Elvis has left the building.
 		return FALSE
 	shooter.face_atom(target)
-	COOLDOWN_START(src, next_shot_cd, aimedfire_shot_delay)
+	//COOLDOWN_START(src, next_shot_cd, aimedfire_shot_delay)
 	if(SEND_SIGNAL(parent, COMSIG_AIMEDFIRE_SHOT, target, shooter, mouse_parameters) & COMPONENT_AIMEDFIRE_SHOT_SUCCESS)
 		return TRUE
 	stop_aimedfiring()
