@@ -408,7 +408,7 @@
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot //buckshot fired in a two-round burst. This will two-tap unarmored players.
 	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'
-	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog
+	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
 	shoot_point_blank = TRUE
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/incendiary

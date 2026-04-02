@@ -1016,6 +1016,40 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 		)
 	)
 
+// Bockadam Burst Bulldog Variant
+
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
+	name = "SG-60db \"Bockadam\""
+	desc = "A bullpup combat shotgun from Marauder reserves that's been heavily modified by the Ramzi Clique, sporting a sawn-down barrel and a two-shot reciever. Reliability has been traded for deadly lethality in tight quarters."
+
+	icon_state = "bockadam"
+	item_state = "bockadam"
+
+	weapon_weight = WEAPON_MEDIUM
+	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m12g_bulldog,
+	)
+	show_magazine_on_sprite = TRUE
+	burst_size = 2
+	burst_delay = 0.25 SECONDS
+	fire_delay = 0.4 SECONDS
+	wear_rate = 1.5
+	spread = 5
+	gun_firemodes = list(FIREMODE_BURST)
+	default_firemode = FIREMODE_BURST
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 40,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 30,
+			"y" = 16,
+		)
+	)
+
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/drum
 	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog/drum
 
