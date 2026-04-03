@@ -45,17 +45,11 @@
 /obj/item/food/fishfingers{
 	pixel_y = 9
 	},
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/drinks/waterbottle{
 	pixel_y = -5
 	},
 /obj/item/reagent_containers/food/drinks/waterbottle{
 	pixel_y = -5
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_x = 8
 	},
 /obj/item/reagent_containers/food/drinks/waterbottle/large{
 	pixel_x = 8
@@ -75,12 +69,17 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "bq" = (
-/obj/structure/filingcabinet/chestdrawer/wheeled{
-	pixel_y = 0;
-	dir = 8
-	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/line{
 	dir = 1
+	},
+/obj/item/pen{
+	pixel_y = -6
+	},
+/obj/item/pen{
+	pixel_y = -2
+	},
+/obj/item/pen{
+	pixel_y = 3
 	},
 /obj/item/folder/yellow{
 	pixel_x = 12;
@@ -93,14 +92,9 @@
 	pixel_x = 12;
 	pixel_y = -4
 	},
-/obj/item/pen{
-	pixel_y = -6
-	},
-/obj/item/pen{
-	pixel_y = -2
-	},
-/obj/item/pen{
-	pixel_y = 3
+/obj/structure/filingcabinet/chestdrawer{
+	dir = 8;
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
@@ -114,11 +108,18 @@
 /obj/effect/turf_decal/steeldecal/steel_decals6{
 	dir = 10
 	},
-/obj/structure/curtain,
 /obj/structure/window{
 	pixel_y = 0
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/button/door{
+	pixel_x = -10;
+	pixel_y = 21;
+	id = "quailwashroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "bR" = (
@@ -171,12 +172,7 @@
 	pixel_y = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/button/door{
-	pixel_y = 21;
-	id = "ns_quail_windows";
-	name = "Window Shutters"
-	},
-/obj/machinery/light/directional/west,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "cn" = (
@@ -381,11 +377,11 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway)
 "gk" = (
-/obj/machinery/door/airlock/external/glass{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
@@ -411,6 +407,13 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = -7;
+	pixel_y = -15;
+	id = "ns_quail_privacy";
+	name = "Privacy Shutters"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -896,10 +899,6 @@
 	},
 /obj/item/storage/belt/fannypack,
 /obj/item/radio/headset/warra/alt/captain,
-/obj/item/stock_parts/cell/gun/sharplite/mini,
-/obj/item/stock_parts/cell/gun/sharplite/mini{
-	pixel_x = 6
-	},
 /obj/item/stamp/warra/ns/supply{
 	pixel_x = 6;
 	pixel_y = 12
@@ -908,8 +907,10 @@
 	pixel_y = 12;
 	pixel_x = -6
 	},
-/obj/item/gun/energy/sharplite/x26,
 /obj/machinery/airalarm/directional/north,
+/obj/item/storage/guncase/pistol/miniegun{
+	mag_count = 3
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "pb" = (
@@ -1012,7 +1013,7 @@
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
-	pixel_y = -12
+	pixel_y = -11
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1083,11 +1084,6 @@
 /turf/open/floor/plating,
 /area/ship/storage/equip)
 "rE" = (
-/obj/machinery/door/airlock/command{
-	dir = 4;
-	name = "Bridge";
-	req_one_access = list(19,41)
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -1102,6 +1098,15 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/machinery/door/airlock/command/glass{
+	dir = 4;
+	name = "Bridge";
+	req_one_access = list(19,41)
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "ns_quail_privacy"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -1134,7 +1139,7 @@
 	pixel_x = -6
 	},
 /obj/machinery/light/small/directional/west{
-	pixel_y = -14
+	pixel_y = -13
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
@@ -1166,11 +1171,11 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
+	id = "ns_quail_windows";
+	name = "External Window Shutters";
 	dir = 1;
-	pixel_x = -9;
 	pixel_y = -18;
-	id = "ns_quail_privacy";
-	name = "Privacy Shutters"
+	pixel_x = -9
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -1298,10 +1303,19 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
 "uv" = (
-/obj/machinery/advanced_airlock_controller/directional/east,
+/obj/machinery/advanced_airlock_controller/directional/east{
+	pixel_y = 2
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 1
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_y = -10;
+	pixel_x = 21;
+	id = "ns_quail_airlock";
+	name = "shutter control"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
@@ -1354,9 +1368,11 @@
 	dir = 1
 	},
 /obj/item/storage/box/ammo/a12g_buckshot,
-/obj/item/gun/ballistic/shotgun/automatic/negotiator/empty,
 /obj/item/attachment/rail_light,
 /obj/item/attachment/bayonet,
+/obj/item/storage/guncase/cycler{
+	mag_count = 0
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/storage/equip)
 "vB" = (
@@ -1564,6 +1580,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/item/stack/sheet/mineral/plasma/ten,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "yp" = (
@@ -1850,7 +1867,8 @@
 	dir = 4
 	},
 /obj/structure/chair/comfy/shuttle{
-	dir = 4
+	dir = 4;
+	pixel_x = -8
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech/grid,
@@ -1880,6 +1898,41 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/west,
+/obj/structure/closet/crate{
+	name = "ration crate"
+	},
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "DG" = (
@@ -1904,7 +1957,6 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 8
 	},
-/obj/structure/curtain,
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "EC" = (
@@ -2001,6 +2053,9 @@
 	launch_status = 0;
 	preferred_direction = 4;
 	port_direction = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "ns_quail_airlock"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
@@ -2314,7 +2369,8 @@
 /area/ship/storage/equip)
 "Ku" = (
 /obj/structure/chair/comfy/shuttle{
-	dir = 4
+	dir = 4;
+	pixel_x = -8
 	},
 /obj/effect/turf_decal/borderfloor{
 	layer = 2.030;
@@ -2442,6 +2498,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Me" = (
@@ -2710,7 +2767,10 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/closet/crate/bin,
+/obj/structure/closet/crate/bin{
+	pixel_x = 7;
+	pixel_y = 17
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway)
 "QY" = (
@@ -2813,6 +2873,22 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/structure/closet/crate/internals,
+/obj/item/clothing/suit/space/orange,
+/obj/item/clothing/suit/space/orange{
+	pixel_x = -3
+	},
+/obj/item/clothing/head/helmet/space/orange{
+	pixel_y = -1;
+	pixel_x = -7
+	},
+/obj/item/clothing/head/helmet/space/orange{
+	pixel_x = -7;
+	pixel_y = -1
+	},
+/obj/item/tank/internals/oxygen/red,
+/obj/item/tank/internals/oxygen/red,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Sv" = (
@@ -3029,7 +3105,8 @@
 /area/ship/engineering/atmospherics)
 "Wd" = (
 /obj/machinery/door/airlock{
-	name = "Bathroom"
+	name = "Bathroom";
+	id_tag = "quailwashroom"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
