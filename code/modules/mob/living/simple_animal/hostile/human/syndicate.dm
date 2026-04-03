@@ -642,7 +642,7 @@
 	icon_state = "syndicate_stormtrooper_shotgun"
 	icon_living = "syndicate_stormtrooper_shotgun"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
-	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog
+	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	rapid = 3
