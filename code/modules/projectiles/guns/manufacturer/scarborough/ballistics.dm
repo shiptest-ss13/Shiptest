@@ -1034,7 +1034,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	burst_size = 2
 	burst_delay = 0.25 SECONDS
 	fire_delay = 0.4 SECONDS
-	wear_rate = 1.5
+	wear_rate = 1.2
 	spread = 5
 	gun_firemodes = list(FIREMODE_BURST)
 	default_firemode = FIREMODE_BURST

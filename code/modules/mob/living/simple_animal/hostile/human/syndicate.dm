@@ -536,7 +536,7 @@
 	icon_living = "syndicate_space_shotgun"
 	name = "Ramzi Clique Commando"
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
-	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog
+	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
 	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	rapid = 2
 	rapid_fire_delay = 6
