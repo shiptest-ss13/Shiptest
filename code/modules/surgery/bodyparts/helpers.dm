@@ -225,15 +225,15 @@
 /proc/skintone2hex(skin_tone)
 	. = 0
 	switch(skin_tone)
-		if("caucasian1")
+		if("porcelain")
 			. = "ffe0d1"
-		if("caucasian2")
+		if("peach")
 			. = "fcccb3"
-		if("caucasian3")
+		if("coral")
 			. = "e8b59b"
-		if("latino")
+		if("bisque")
 			. = "d9ae96"
-		if("mediterranean")
+		if("rosewood")
 			. = "c79b8b"
 		if("sepia")
 			. = "895C51"
@@ -253,19 +253,19 @@
 			. = "A37746"
 		if("hazel")
 			. = "A67138"
-		if("asian1")
+		if("champagne")
 			. = "ffdeb3"
-		if("asian2")
+		if("olive")
 			. = "e3ba84"
-		if("arab")
+		if("tawny")
 			. = "c4915e"
-		if("indian")
+		if("ochre")
 			. = "b87840"
-		if("african1")
+		if("cedar")
 			. = "754523"
-		if("african2")
+		if("sable")
 			. = "471c18"
-		if("albino")
+		if("ivory")
 			. = "fff4e6"
 		if("orange")
 			. = "ffc905"

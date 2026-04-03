@@ -200,12 +200,12 @@
 	return pick(GLOB.skin_tones)
 
 GLOBAL_LIST_INIT(skin_tones, sortList(list(
-	"albino",
-	"caucasian1",
-	"caucasian2",
-	"caucasian3",
-	"latino",
-	"mediterranean",
+	"ivory",
+	"porcelain",
+	"peach",
+	"coral",
+	"bisque",
+	"rosewood",
 	"sepia",
 	"taupe",
 	"russet",
@@ -215,12 +215,12 @@ GLOBAL_LIST_INIT(skin_tones, sortList(list(
 	"burnet",
 	"amber",
 	"hazel",
-	"asian1",
-	"asian2",
-	"arab",
-	"indian",
-	"african1",
-	"african2"
+	"champagne",
+	"olive",
+	"tawny",
+	"ochre",
+	"cedar",
+	"sable"
 	)))
 
 /proc/pick_species_adjective(mob/living/carbon/human/H)
