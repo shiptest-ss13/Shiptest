@@ -120,6 +120,7 @@
 	specialfunctions = 4;
 	name = "Bathroom Lock"
 	},
+/obj/structure/curtain,
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "bR" = (
@@ -1104,7 +1105,7 @@
 	name = "Bridge";
 	req_one_access = list(19,41)
 	},
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4;
 	id = "ns_quail_privacy"
 	},
@@ -2403,7 +2404,7 @@
 "KA" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4;
 	id = "ns_quail_privacy"
 	},
