@@ -26,8 +26,7 @@
 /obj/item/bodycamera/Initialize()
 	. = ..()
 	// If a mapload_network is specified, this sets the network to the mapload default
-	if(link_to_shuttle_network())
-	else
+	if(!link_to_shuttle_network())
 		for(var/i in network)
 			network -= i
 			network += lowertext(i)
