@@ -12,7 +12,7 @@
 	tgui_id = "NtosSecurEye"
 	program_icon = "eye"
 
-	var/list/network = list("ss13")
+	var/list/network = list("ship")
 	var/temp_network = list("")
 	var/obj/machinery/camera/active_camera
 	/// The turf where the camera was last updated.
@@ -57,6 +57,12 @@
 	QDEL_LIST(cam_plane_masters)
 	qdel(cam_background)
 	return ..()
+
+/datum/computer_file/program/secureye/proc/link_to_shuttle_network()
+	var/area/ship/current_ship_area = get_area(src)
+	if(istype(current_ship_area) && current_ship_area.mobile_port)
+		var/obj/docking_port/mobile/port = current_ship_area.mobile_port
+		network[1] = "[REF(port)]ship"
 
 /datum/computer_file/program/secureye/ui_interact(mob/user, datum/tgui/ui)
 	// Update UI
@@ -117,6 +123,9 @@
 	if(action == "set_network")
 		network = temp_network
 		update_static_data_for_all_viewers()
+
+	if(action == "sync")
+		link_to_shuttle_network()
 
 	if(action == "set_temp_network")
 		temp_network = sanitize_filename(params["name"])

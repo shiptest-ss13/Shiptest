@@ -6,7 +6,8 @@
 	circuit = /obj/item/circuitboard/computer/security
 	light_color = COLOR_SOFT_RED
 
-	var/list/network = list("ss13")
+	var/network = list("ship")
+	var/mapload_network = "ship"
 	var/temp_network = list("")
 	var/obj/machinery/camera/active_camera
 	/// The turf where the camera was last updated.
@@ -33,6 +34,8 @@
 
 /obj/machinery/computer/security/Initialize()
 	. = ..()
+	// Sets the console on mapload to the default network. Allows for resyncing back to the default.
+	network[1] = mapload_network
 	// Map name has to start and end with an A-Z character,
 	// and definitely NOT with a square bracket or even a number.
 	// I wasted 6 hours on this. :agony:
@@ -69,11 +72,19 @@
 		network -= i
 		network += "[REF(port)][i]"
 
+/obj/machinery/computer/security/proc/link_to_shuttle_network()
+	network[1] = mapload_network
+	var/area/ship/current_ship_area = get_area(src)
+	if(istype(current_ship_area) && current_ship_area.mobile_port)
+		var/obj/docking_port/mobile/port = current_ship_area.mobile_port
+		var/net_tag = network[1]
+		network[1] = "[REF(port)][net_tag]"
+
 /obj/machinery/computer/security/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
 	var/obj/item/multitool/M = I
 	if(M.buffer != null)
-		network = M.buffer
+		network[1] = M.buffer
 		to_chat(user, span_notice("You input network '[M.buffer]' from the multitool's buffer into [src]."))
 	return
 
@@ -106,7 +117,7 @@
 
 /obj/machinery/computer/security/ui_data()
 	var/list/data = list()
-	data["network"] = network
+	data["network"] = network[1]
 	data["activeCamera"] = null
 	if(active_camera)
 		if(istype(active_camera, /obj/machinery/camera))
@@ -163,8 +174,11 @@
 		return
 
 	if(action == "set_network")
-		network = temp_network
+		network[1] = temp_network
 		update_static_data_for_all_viewers()
+
+	if(action == "sync")
+		link_to_shuttle_network()
 
 	if(action == "set_temp_network")
 		temp_network = sanitize_filename(params["name"])
