@@ -531,7 +531,7 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun
 	name = "Ramzi Clique Breacher"
-	desc = "A deserter from the Gorlex Marauders turned pirate. The unmistakeable bulk of a Bulldog shotgun graces the wrapped, patched hands of their aging hardsuit."
+	desc = "A deserter from the Gorlex Marauders turned pirate. The unmistakeable bulk of a Bockadam shotgun graces the wrapped, patched hands of their aging hardsuit."
 	icon_state = "syndicate_space_shotgun"
 	icon_living = "syndicate_space_shotgun"
 	name = "Ramzi Clique Commando"
