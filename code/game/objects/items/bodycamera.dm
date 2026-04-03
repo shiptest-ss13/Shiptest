@@ -25,14 +25,8 @@
 
 /obj/item/bodycamera/Initialize()
 	. = ..()
-
 	// If a mapload_network is specified, this sets the network to the mapload default
-	if(mapload_network != network[1])
-		network[1] = mapload_network
-
-	// If the first network in the list isn't "default", or if the sync_on_init variable is set to TRUE, it'll autolink to a ship's camera network
-	if(network[1] != "default")
-		link_to_shuttle_network()
+	if(link_to_shuttle_network())
 	else
 		for(var/i in network)
 			network -= i
@@ -64,9 +58,8 @@
 	var/area/ship/current_ship_area = get_area(src)
 	if(istype(current_ship_area) && current_ship_area.mobile_port)
 		var/obj/docking_port/mobile/port = current_ship_area.mobile_port
-		if(network[1] == "default")
-			network[1] = "[REF(port)][mapload_network]"
-			return TRUE
+		network[1] = "[REF(port)][mapload_network]"
+		return TRUE
 	else
 		return FALSE
 
