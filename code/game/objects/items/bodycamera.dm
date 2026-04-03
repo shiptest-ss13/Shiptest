@@ -97,11 +97,11 @@
 /obj/item/bodycamera/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
 	var/obj/item/multitool/M = I
-	var/list/choice_list = list("Modify the camera tag", "Change the camera network", "Sync the network to the ship", "Save the network to the multitool buffer", "Transfer the buffered network to the camera")
+	var/list/choice_list = list("Modify the camera nametag", "Change the camera network", "Sync the network to the ship", "Save the network to the multitool buffer", "Transfer the buffered network to the camera")
 	var/choice = tgui_input_list(user, "Select an option", "Advanced Camera Configuration", choice_list)
 
 	switch(choice)
-		if("Modify the camera tag")
+		if("Modify the camera nametag")
 			c_tag_addition = stripped_input(user, "Set a nametag for this camera. Ensure that it is no bigger than 32 characters long.", "Nametag Setup", max_length = 32)
 			set_name(c_tag_addition)
 			to_chat(user, span_notice("You set [src] nametag to '[c_tag]'."))
@@ -133,11 +133,11 @@
 	if(broadcast_camera)
 		return
 
-	var/list/choice_list = list("Modify the camera tag", "Sync the network to the ship", "Change the camera network directly")
+	var/list/choice_list = list("Modify the camera nametag", "Sync the network to the ship", "Change the camera network directly")
 	var/choice = tgui_input_list(user, "Select an option", "Camera Configuration", choice_list)
 
 	switch(choice)
-		if("Modify the camera tag")
+		if("Modify the camera nametag")
 			c_tag_addition = stripped_input(user, "Set a nametag for this camera. Ensure that it is no bigger than 32 characters long.", "Nametag Setup", max_length = 32)
 			set_name(c_tag_addition)
 			to_chat(user, span_notice("You set [src] nametag to '[c_tag]'."))
