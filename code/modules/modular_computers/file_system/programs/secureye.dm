@@ -126,6 +126,7 @@
 
 	if(action == "sync")
 		link_to_shuttle_network()
+		update_static_data_for_all_viewers()
 
 	if(action == "set_temp_network")
 		temp_network = sanitize_filename(params["name"])
