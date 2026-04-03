@@ -505,6 +505,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	bolt_type = BOLT_TYPE_CLIP
+	unique_mag_sprites_for_variants = TRUE
 	default_ammo_type = /obj/item/ammo_box/magazine/p16
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/p16,
