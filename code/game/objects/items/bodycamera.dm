@@ -12,7 +12,6 @@
 	var/c_tag_addition = ""
 	var/status = FALSE
 	var/start_active = FALSE //If it ignores the random chance to start broken on round start
-	var/sync_on_init = FALSE
 	var/area/myarea = null
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
@@ -32,7 +31,7 @@
 		network[1] = mapload_network
 
 	// If the first network in the list isn't "default", or if the sync_on_init variable is set to TRUE, it'll autolink to a ship's camera network
-	if((network[1] != "default") || sync_on_init)
+	if(network[1] != "default")
 		link_to_shuttle_network()
 	else
 		for(var/i in network)
