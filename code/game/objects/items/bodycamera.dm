@@ -37,13 +37,16 @@
 	GLOB.cameranet.addCamera(src)
 
 	if(!broadcast_camera)
-		// If the c_tag is changed in a map before initialization, the camera will gain that c_tag instead of a random string
 		if(c_tag == "")
 			c_tag = random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
 
-		// If the name of the camera is changed directly, it'll keep that name, instead
+		// If the c_tag is changed in a map before initialization, the camera will gain that c_tag instead of a random string
 		if(name == "body camera")
 			name = "body camera - (" + c_tag + ")"
+
+		// If the name of the camera is changed directly, it'll keep that name, instead, and it'll set the c_tag as the name. Be careful to avoid c_tag collisions!
+		else
+			c_tag = name
 
 	update_appearance()
 
