@@ -2256,7 +2256,9 @@
 /obj/machinery/turretid/ship{
 	pixel_y = 4;
 	id = "mercurial_quasar_grid";
-	pixel_x = 25
+	pixel_x = 25;
+	req_access = null;
+	req_one_access = list(20, 57, 58)
 	},
 /obj/machinery/light/small/directional/north,
 /obj/machinery/fax/pgf,

@@ -1182,7 +1182,9 @@
 /obj/structure/table/reinforced,
 /obj/machinery/turretid/ship{
 	id = "bolide_grid";
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = null;
+	req_one_access = list(20, 57, 58)
 	},
 /obj/machinery/button/door{
 	dir = 4;
@@ -6459,7 +6461,9 @@
 	},
 /obj/machinery/turretid/ship{
 	id = "bolide_grid";
-	pixel_x = -28
+	pixel_x = -28;
+	req_access = null;
+	req_one_access = list(20, 57, 58)
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)

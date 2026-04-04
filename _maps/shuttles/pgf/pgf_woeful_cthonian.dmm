@@ -1275,7 +1275,9 @@
 /area/ship/crew/ccommons)
 "lP" = (
 /obj/machinery/turretid/ship{
-	pixel_x = 26
+	pixel_x = 26;
+	req_access = null;
+	req_one_access = list(20, 57, 58)
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
