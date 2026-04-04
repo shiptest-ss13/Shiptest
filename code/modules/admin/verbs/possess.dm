@@ -1,4 +1,4 @@
-/proc/possess(obj/O in world)
+/proc/possess()
 	set name = "Possess Obj"
 	set category = "Object"
 
