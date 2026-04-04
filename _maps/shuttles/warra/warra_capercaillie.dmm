@@ -145,6 +145,9 @@
 	pixel_y = -8
 	},
 /obj/item/clothing/suit/hooded/wintercoat/security,
+/obj/item/clothing/gloves/color/black{
+	pixel_y = -10
+	},
 /obj/item/clothing/head/warra/cap/security{
 	pixel_x = -4;
 	pixel_y = 8
@@ -153,14 +156,14 @@
 	pixel_x = 4;
 	pixel_y = 8
 	},
+/obj/machinery/computer/helm/viewscreen/directional/north{
+	pixel_x = -9
+	},
 /obj/machinery/button/door{
 	pixel_y = 21;
 	pixel_x = 10;
 	id = "capercaillie_equipmentwindow";
 	name = "Armoury Shutter Control"
-	},
-/obj/machinery/computer/helm/viewscreen/directional/north{
-	pixel_x = -9
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -463,8 +466,11 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
-/obj/item/storage/fancy/donut_box,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/cutting_board{
+	pixel_y = 15
+	},
+/obj/item/storage/fancy/donut_box,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/canteen)
 "dx" = (
@@ -1101,6 +1107,10 @@
 	},
 /obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/capacitor/adv{
+	pixel_y = 14;
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "hi" = (
@@ -2707,6 +2717,9 @@
 /obj/machinery/atmospherics/components/binary/pump/layer5{
 	name = "Filter Waste to Exhaust"
 	},
+/obj/structure/cable/white{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "wV" = (
@@ -2796,6 +2809,9 @@
 	},
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	name = "Air to Supply"
+	},
+/obj/structure/cable/white{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -3394,6 +3410,12 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/white{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/white{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "ED" = (
@@ -3622,6 +3644,9 @@
 	},
 /obj/structure/cable/white{
 	icon_state = "2-4"
+	},
+/obj/structure/cable/white{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -4028,6 +4053,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/cable/white{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -4768,6 +4796,9 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/north,
+/obj/structure/cable/white{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "QK" = (
@@ -5200,6 +5231,10 @@
 /obj/item/clothing/suit/armor/warra/sec_director{
 	pixel_x = 4
 	},
+/obj/machinery/light/directional/east,
+/obj/item/clothing/gloves/color/black{
+	pixel_y = -10
+	},
 /obj/item/clothing/head/warra/cap/security{
 	pixel_x = -4;
 	pixel_y = 8
@@ -5210,7 +5245,6 @@
 	},
 /obj/item/radio/headset/warra/alt/captain,
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "TR" = (
@@ -5813,6 +5847,9 @@
 	pixel_y = -8
 	},
 /obj/item/clothing/suit/hooded/wintercoat/security,
+/obj/item/clothing/gloves/color/black{
+	pixel_y = -10
+	},
 /obj/item/clothing/head/warra/cap/security{
 	pixel_x = -4;
 	pixel_y = 8
