@@ -703,6 +703,9 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "dL" = (
@@ -742,6 +745,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "ee" = (
@@ -832,6 +838,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/etherbor/right{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -2019,6 +2028,9 @@
 	pixel_x = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "jQ" = (
@@ -2804,6 +2816,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "nX" = (
@@ -3184,6 +3199,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/etherbor/right,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "qx" = (
@@ -3320,6 +3341,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/etherbor/center,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "qL" = (
@@ -5769,6 +5793,12 @@
 /obj/effect/turf_decal/etherbor/center{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "Dq" = (
@@ -6276,6 +6306,9 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "Gp" = (
@@ -6320,6 +6353,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer2{
 	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
@@ -6368,6 +6404,10 @@
 	pixel_x = 2;
 	pixel_y = -3
 	},
+/obj/item/food/meat/slab/synthmeat,
+/obj/item/food/meat/slab/synthmeat,
+/obj/item/food/meat/slab/synthmeat,
+/obj/item/food/meat/slab/synthmeat,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/canteen/kitchen)
 "GB" = (
@@ -8107,6 +8147,9 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "No" = (
@@ -9035,6 +9078,9 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/etherbor/left,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "RE" = (
@@ -9829,6 +9875,9 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "Ut" = (
@@ -9949,6 +9998,9 @@
 "Vl" = (
 /obj/effect/turf_decal/etherbor/center{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -10394,6 +10446,9 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "Xf" = (
@@ -10642,6 +10697,51 @@
 /obj/structure/tank_dispenser,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/eva)
+"Yq" = (
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor/orange,
+/obj/structure/table/reinforced{
+	color = "#a8b2b6"
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_x = 1;
+	pixel_y = 1
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_x = 1;
+	pixel_y = 2
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 3;
+	pixel_x = 1
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 5;
+	pixel_x = 1
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 6;
+	pixel_x = 1
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 7;
+	pixel_x = 1
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 9;
+	pixel_x = 1
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 10;
+	pixel_x = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "c-sun_canteen_shut"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew/canteen/kitchen)
 "Yr" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
 /obj/effect/turf_decal/trimline/opaque/lightgrey/end{
@@ -11487,7 +11587,7 @@ za
 iX
 LV
 lv
-eK
+Yq
 BC
 iZ
 DX
