@@ -104,7 +104,7 @@
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/laser/sharplite/hos
-	e_cost = 500
+	e_cost = 1000
 
 /obj/item/ammo_casing/energy/laser/practice
 	projectile_type = /obj/projectile/beam/practice
