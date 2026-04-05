@@ -132,7 +132,7 @@
 	item_state = "hardsuit0-rouma"
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 100, "wound" = 20)
 	hardsuit_type = "rouma"
-	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/mining/roumain
 	name = "\improper roumain hunter's hardsuit"
@@ -144,7 +144,7 @@
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 100, "wound" = 20)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/roumain
 	slowdown = 0.5
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/solgov/roumain
 	name = "\improper roumain hardsuit helmet"
