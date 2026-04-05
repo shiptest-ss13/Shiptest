@@ -1136,7 +1136,8 @@
 /obj/machinery/door/airlock{
 	dir = 4;
 	name = "Head";
-	id_tag = "quasar_bathroom_bolt"
+	id_tag = "quasar_bathroom_bolt";
+	req_ship_access = 0
 	},
 /obj/structure/cable{
 	icon_state = "4-8"

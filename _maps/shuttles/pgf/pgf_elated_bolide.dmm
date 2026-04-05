@@ -5291,7 +5291,8 @@
 /obj/effect/turf_decal/industrial/outline/blue,
 /obj/machinery/door/airlock{
 	dir = 8;
-	name = "Head"
+	name = "Head";
+	req_ship_access = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet)
@@ -5956,7 +5957,7 @@
 	anchored = 1;
 	can_be_unanchored = 1;
 	icon_state = "armory";
-	name = "squad leader's locker";
+	name = "squad leader's equipment locker";
 	req_access_txt = "1"
 	},
 /obj/item/storage/backpack/satchel/sec/gezena{
@@ -7596,7 +7597,7 @@
 /obj/machinery/light/directional/north,
 /obj/structure/closet/secure_closet/wall/directional/south{
 	icon_door = "sec_wall";
-	name = "lieutenant's locker";
+	name = "squad leader's locker";
 	icon_state = "sec_wall";
 	req_access = list(3);
 	dir = 4;

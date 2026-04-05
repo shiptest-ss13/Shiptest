@@ -561,7 +561,8 @@
 /obj/machinery/door/airlock{
 	dir = 4;
 	name = "Stall 1";
-	id_tag = "c-sun_bathroom_bolt_1"
+	id_tag = "c-sun_bathroom_bolt_1";
+	req_ship_access = 0
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/toilet)
@@ -991,13 +992,6 @@
 /obj/effect/turf_decal/corner/opaque/navyblue/diagonal,
 /obj/effect/turf_decal/siding/black{
 	dir = 9
-	},
-/obj/machinery/button/door{
-	id = "c-sun_bridge_shut";
-	name = "Bridge Shutters";
-	dir = 4;
-	pixel_y = 0;
-	pixel_x = -20
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -2394,6 +2388,10 @@
 /obj/effect/turf_decal/trimline/opaque/lightgrey/end{
 	dir = 8
 	},
+/obj/structure/sign/poster/contraband/diet_guide{
+	pixel_y = 0;
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/canteen/kitchen)
 "lf" = (
@@ -2485,19 +2483,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "lM" = (
-/obj/structure/railing{
-	dir = 4
-	},
 /obj/structure/table/reinforced,
-/obj/item/desk_flag/gezena{
-	pixel_x = 9;
-	pixel_y = 15
-	},
-/obj/item/gps{
-	pixel_x = -15;
-	pixel_y = 12;
-	gpstag = "PGFN-Crying Sun"
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
@@ -2506,6 +2492,18 @@
 	network = list("ss13");
 	desc = "A telescreen that connects to the ship's security camera network.";
 	layer = 2.7
+	},
+/obj/structure/railing/corner,
+/obj/item/desk_flag/gezena{
+	pixel_x = -13;
+	pixel_y = 14
+	},
+/obj/item/radio/intercom/directional/east{
+	pixel_y = 6
+	},
+/obj/item/binoculars{
+	pixel_y = 4;
+	pixel_x = 1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -3031,6 +3029,20 @@
 "oE" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engines/port)
+"pd" = (
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/trimline/opaque/green/warning{
+	dir = 1
+	},
+/obj/machinery/turretid/ship{
+	pixel_y = 25;
+	id = "crying_sun_grid";
+	pixel_x = -4;
+	req_access = null;
+	req_one_access = list(20, 57, 58)
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "pt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -3966,7 +3978,8 @@
 	},
 /obj/machinery/door/airlock{
 	name = "Showers";
-	dir = 4
+	dir = 4;
+	req_ship_access = 0
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4246,7 +4259,8 @@
 /obj/machinery/door/airlock{
 	dir = 4;
 	name = "Stall 2";
-	id_tag = "c-sun_bathroom_bolt_2"
+	id_tag = "c-sun_bathroom_bolt_2";
+	req_ship_access = 0
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/toilet)
@@ -4786,9 +4800,23 @@
 /obj/machinery/turretid/ship{
 	pixel_y = 25;
 	id = "crying_sun_grid";
-	pixel_x = -4;
+	pixel_x = -18;
 	req_access = null;
 	req_one_access = list(20, 57, 58)
+	},
+/obj/machinery/button/door{
+	dir = 2;
+	id = "c-sun_entrance_blast";
+	name = "cargo bay controls";
+	pixel_x = -2;
+	pixel_y = 22
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 2;
+	id = "c-sun_entrance_holo";
+	name = "cargobay holofield switch";
+	pixel_x = 8;
+	pixel_y = 20
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -5095,9 +5123,19 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/item/binoculars{
+/obj/machinery/button/door{
+	pixel_x = -6;
+	pixel_y = -2;
+	name = "Docking Blast Doors";
+	id = "c-sun_docking_blast";
+	dir = 1
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 4;
 	pixel_y = 0;
-	pixel_x = -5
+	name = "Docking Holofield";
+	id = "c-sun_docking_holo";
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
@@ -5932,12 +5970,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
 "DU" = (
-/obj/structure/closet/secure_closet/medical3{
-	populate = 0;
-	anchored = 1;
-	name = "corpsman's locker";
-	req_access = list(1)
-	},
 /obj/item/storage/backpack/duffelbag/med{
 	pixel_y = 8
 	},
@@ -5967,10 +5999,6 @@
 	pixel_x = -8;
 	pixel_y = 7
 	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_y = 6;
-	pixel_x = 6
-	},
 /obj/item/clothing/head/gezena/medic{
 	pixel_y = 11;
 	pixel_x = 9;
@@ -5988,15 +6016,20 @@
 	pixel_x = 9;
 	pixel_y = -4
 	},
-/obj/item/storage/firstaid/regular{
-	pixel_y = -6
-	},
+/obj/item/storage/firstaid/medical,
 /obj/item/storage/pouch/ammo{
 	pixel_x = 0;
 	pixel_y = -10
 	},
 /obj/item/storage/belt/medical/gezena{
 	pixel_y = 1
+	},
+/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/structure/closet/secure_closet/armorycage{
+	anchored = 1;
+	req_access = null;
+	name = "marine corpsman's locker";
+	req_one_access = list(5, 3)
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -6578,18 +6611,25 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband/table{
-	dir = 4;
-	pixel_x = 4;
-	pixel_y = 13
-	},
-/obj/item/radio/intercom/table{
-	dir = 4;
-	pixel_x = 4
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
+	},
+/obj/structure/table/emptycomputer{
+	dir = 8;
+	layer = 3.1
+	},
+/obj/item/radio/intercom/wideband/table{
+	dir = 4;
+	pixel_x = 0;
+	pixel_y = 15
+	},
+/obj/machinery/button/door{
+	id = "c-sun_bridge_shut";
+	name = "Bridge Shutters";
+	dir = 8;
+	pixel_y = 1;
+	pixel_x = -6;
+	layer = 3.1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -6825,22 +6865,14 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/port)
 "Ir" = (
-/obj/machinery/computer/security,
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
-/obj/machinery/button/door{
-	pixel_x = -5;
-	pixel_y = 21;
-	name = "Docking Blast Doors";
-	id = "c-sun_docking_blast"
+/obj/machinery/computer/helm/viewscreen/directional/north{
+	layer = 3;
+	pixel_y = 18
 	},
-/obj/machinery/button/shieldwallgen{
-	pixel_x = 5;
-	pixel_y = 19;
-	name = "Docking Holofield";
-	id = "c-sun_docking_holo"
-	},
+/obj/machinery/modular_computer/console/preset/monitoring,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "Ix" = (
@@ -7367,7 +7399,7 @@
 	anchored = 1;
 	can_be_unanchored = 1;
 	icon_state = "armory";
-	name = "squad leader's locker";
+	name = "squad leader's equipment locker";
 	req_access_txt = "1"
 	},
 /obj/machinery/airalarm/directional/east,
@@ -7818,7 +7850,7 @@
 	pixel_y = 11;
 	name = "Jumbo";
 	dir = 2;
-	desc = "Despite drawing the genetic short straw, Jumbo is an inspiration to every enlisted Gezenan to share a hull with him. Just a few more years."
+	desc = "Despite drawing the genetic short straw, Jumbo is an inspiration to every enlisted Gezenan to share a hull with them. Just a few more years."
 	},
 /obj/structure/bed/dogbed{
 	pixel_y = 4;
@@ -7831,7 +7863,6 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/canteen)
 "LB" = (
-/obj/structure/chair/comfy/shuttle,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -7841,6 +7872,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/structure/chair/comfy/shuttle,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "LC" = (
@@ -9177,7 +9209,7 @@
 	},
 /obj/structure/closet/secure_closet/wall/directional/south{
 	icon_door = "sec_wall";
-	name = "lieutenant's locker";
+	name = "squad leader's locker";
 	icon_state = "sec_wall";
 	req_access = list(3)
 	},
@@ -9548,6 +9580,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Tw" = (
@@ -9732,6 +9765,10 @@
 	dir = 4;
 	pixel_x = -20;
 	pixel_y = 12
+	},
+/obj/item/binoculars{
+	pixel_y = 10;
+	pixel_x = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
@@ -10102,11 +10139,13 @@
 	layer = 2.7;
 	pixel_y = 16
 	},
-/obj/item/binoculars{
-	pixel_y = 9
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
+	},
+/obj/item/gps{
+	pixel_x = -9;
+	pixel_y = 4;
+	gpstag = "PGFN-Crying Sun"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -10829,7 +10868,8 @@
 	},
 /obj/machinery/door/airlock{
 	name = "Head";
-	dir = 4
+	dir = 4;
+	req_ship_access = 0
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -12562,8 +12602,8 @@ RS
 RS
 PP
 lM
-Hz
 Jv
+Hz
 xq
 iF
 jq
@@ -12632,7 +12672,7 @@ RS
 PP
 yj
 eS
-QU
+pd
 lS
 Bt
 ca

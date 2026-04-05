@@ -60,8 +60,8 @@
 
 
 /datum/outfit/job/gezena/ert/leader
-	name = "ERT - PGF Marine Sergeant"
-	id_assignment = "Marine Sergeant"
+	name = "ERT - PGF Marine Squad Leader"
+	id_assignment = "Squad Leader"
 	jobtype = /datum/job/ert/commander
 	job_icon = "headofsecurity"
 
