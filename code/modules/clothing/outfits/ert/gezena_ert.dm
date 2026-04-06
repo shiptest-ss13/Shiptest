@@ -40,8 +40,8 @@
 	neck = /obj/item/clothing/neck/cloak/gezena/engi
 
 /datum/outfit/job/gezena/ert/medic
-	name = "ERT - PGF Marine Medic"
-	id_assignment = "Marine Medic"
+	name = "ERT - PGF Marine Corpsman"
+	id_assignment = "Marine Corpsman"
 	jobtype = /datum/job/ert/med
 	job_icon = "paramedic"
 
@@ -60,8 +60,8 @@
 
 
 /datum/outfit/job/gezena/ert/leader
-	name = "ERT - PGF Marine Sergeant"
-	id_assignment = "Marine Sergeant"
+	name = "ERT - PGF Marine Squad Leader"
+	id_assignment = "Squad Leader"
 	jobtype = /datum/job/ert/commander
 	job_icon = "headofsecurity"
 
