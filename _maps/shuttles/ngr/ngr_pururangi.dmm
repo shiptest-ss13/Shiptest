@@ -610,10 +610,10 @@
 	dir = 5
 	},
 /obj/machinery/light/directional/north,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "el" = (
@@ -2638,26 +2638,6 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall/orange/directional/east{
-	name = "Wrecker's Locker";
-	req_access = list(48);
-	pixel_x = 0;
-	pixel_y = 28;
-	dir = 1
-	},
-/obj/item/clothing/shoes/workboots,
-/obj/item/clothing/under/syndicate/ngr/jumpsuit,
-/obj/item/clothing/accessory/armband/cargo,
-/obj/item/clothing/suit/hazardvest/ngr,
-/obj/item/clothing/head/hardhat/ngr,
-/obj/item/clothing/gloves/explorer,
-/obj/item/clothing/head/ngr/flap,
-/obj/item/clothing/head/ngr,
-/obj/item/clothing/neck/shemagh/ngr,
-/obj/item/clothing/mask/balaclava/ngr,
-/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
-/obj/item/storage/belt/mining/ngr,
-/obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "rN" = (
@@ -2869,11 +2849,11 @@
 /turf/open/floor/plating,
 /area/ship/crew/office)
 "tp" = (
-/obj/structure/ore_box,
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
 /obj/machinery/light/directional/south,
+/obj/machinery/autolathe,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "tv" = (
@@ -4078,6 +4058,26 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
 	},
+/obj/structure/closet/wall/orange/directional/east{
+	name = "Wrecker's Locker";
+	req_access = list(48);
+	pixel_x = 0;
+	pixel_y = 28;
+	dir = 1
+	},
+/obj/item/storage/belt/mining/ngr,
+/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
+/obj/item/clothing/mask/balaclava/ngr,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/clothing/head/ngr,
+/obj/item/clothing/head/ngr/flap,
+/obj/item/clothing/gloves/explorer,
+/obj/item/clothing/head/hardhat/ngr,
+/obj/item/clothing/accessory/armband/cargo,
+/obj/item/clothing/suit/hazardvest/ngr,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "CJ" = (
@@ -4143,7 +4143,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "DA" = (
-/obj/machinery/autolathe,
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "DE" = (
@@ -4893,6 +4892,17 @@
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
+"JR" = (
+/obj/structure/platform/military{
+	dir = 1;
+	layer = 2.08
+	},
+/obj/item/clothing/suit/space/syndicate/ngr,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate/ngr,
+/obj/machinery/suit_storage_unit/inherit,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "JS" = (
 /obj/structure/sign/flag/ngr{
 	pixel_y = 32
@@ -7755,7 +7765,7 @@ iW
 DA
 CJ
 ux
-fn
+JR
 mr
 SR
 Uu
