@@ -435,13 +435,13 @@
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "bE" = (
-/obj/effect/mapping_helpers/crate_shelve,
 /obj/item/storage/toolbox/ammo/c45,
 /obj/item/storage/toolbox/ammo/c57,
 /obj/item/storage/toolbox/ammo/c10mm,
 /obj/structure/closet/crate/secure/weapon,
 /obj/machinery/airalarm/directional/north,
 /obj/structure/catwalk/over,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "bF" = (
@@ -2507,7 +2507,11 @@
 	pixel_y = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/ebony,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#332521"
+	},
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/corpo_resort/ramzi_tent)
 "kn" = (
 /obj/structure/door_assembly/door_assembly_sec,
@@ -3005,15 +3009,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/spent/pistol_steel,
-/obj/item/gun/ballistic/shotgun/automatic/bulldog/no_mag{
-	pixel_x = 1;
-	pixel_y = 8;
-	gun_wear = 250
-	},
-/obj/item/ammo_box/magazine/m12g_bulldog/empty{
-	pixel_x = 13;
-	pixel_y = -6
-	},
 /obj/effect/mob_spawn/human/corpse/ramzi/trooper,
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/clothing/neck/dogtag/ramzi{
@@ -4577,10 +4572,6 @@
 /obj/machinery/light/dim/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/item/ammo_box/magazine/m12g_bulldog{
-	pixel_x = 9;
-	pixel_y = -12
-	},
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/effect/turf_decal/trimline/opaque/orange/line{
@@ -5266,7 +5257,11 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/ebony,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#332521"
+	},
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/corpo_resort/ramzi_tent)
 "va" = (
 /obj/structure/platform/corner{
@@ -5564,9 +5559,11 @@
 /obj/item/modular_computer/laptop/preset/civilian/rilena,
 /obj/item/spacecash/bundle/pocketchange,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/ebony{
-	icon_state = "wood-broken7"
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#332521"
 	},
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/corpo_resort/ramzi_tent)
 "wc" = (
 /obj/structure/crate_shelf,
@@ -6319,7 +6316,11 @@
 /obj/machinery/atmospherics/components/unary/passive_vent/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood/ebony,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#332521"
+	},
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/corpo_resort/ramzi_tent)
 "yV" = (
 /obj/effect/turf_decal/siding/wood{
@@ -7387,7 +7388,11 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/ebony,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#332521"
+	},
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/corpo_resort/ramzi_tent)
 "DD" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7439,7 +7444,11 @@
 /obj/item/clothing/under/syndicate/ramzi/overalls,
 /obj/item/clothing/under/syndicate/ramzi/overalls,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/ebony,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#332521"
+	},
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/corpo_resort/ramzi_tent)
 "DT" = (
 /obj/machinery/light/directional/north,
@@ -8368,9 +8377,11 @@
 	pixel_y = -32
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/ebony{
-	icon_state = "wood-broken7"
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#332521"
 	},
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/corpo_resort/ramzi_tent)
 "Ig" = (
 /obj/effect/turf_decal/warra/old/tile/bottom_right,
@@ -10209,9 +10220,9 @@
 /obj/item/reagent_containers/glass/chem_jug/hexacrete,
 /obj/item/reagent_containers/glass/chem_jug/hexacrete,
 /obj/item/reagent_containers/glass/chem_jug/hexacrete,
-/obj/effect/mapping_helpers/crate_shelve,
 /obj/structure/closet/crate/engineering,
 /obj/effect/turf_decal/siding/black,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "PM" = (
@@ -11150,6 +11161,7 @@
 /obj/effect/turf_decal/corner/opaque/warrablue/three_quarters{
 	dir = 1
 	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
 "TR" = (
@@ -11900,7 +11912,11 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/ebony,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10;
+	color = "#332521"
+	},
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/corpo_resort/ramzi_tent)
 "Wt" = (
 /obj/structure/platform,
@@ -12114,7 +12130,11 @@
 	pixel_x = 32
 	},
 /obj/machinery/atmospherics/components/unary/passive_vent/layer2,
-/turf/open/floor/wood/ebony,
+/obj/effect/turf_decal/siding/wood{
+	dir = 2;
+	color = "#332521"
+	},
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/corpo_resort/ramzi_tent)
 "Xm" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -12271,6 +12291,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/airlock/command,
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
 "Yb" = (
@@ -12723,6 +12744,7 @@
 /obj/effect/turf_decal/corner/opaque/warrablue/three_quarters{
 	dir = 4
 	},
+/obj/structure/chair/bench/blue/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
 "ZQ" = (
@@ -12767,7 +12789,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/mob/living/basic/hivebot/core,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/beach/corpo_resort/electrical)
 
