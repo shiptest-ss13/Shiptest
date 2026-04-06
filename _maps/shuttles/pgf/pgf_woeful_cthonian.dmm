@@ -12,7 +12,7 @@
 /obj/effect/turf_decal/trimline/opaque/green/filled/corner{
 	dir = 2
 	},
-/obj/machinery/holopad,
+/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "ay" = (
@@ -4443,8 +4443,7 @@
 	},
 /obj/machinery/door/airlock/command{
 	dir = 4;
-	name = "Bridge";
-	req_access_txt = "19"
+	name = "Bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4

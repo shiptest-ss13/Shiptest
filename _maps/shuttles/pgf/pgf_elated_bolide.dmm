@@ -3203,6 +3203,22 @@
 	pixel_x = 28;
 	pixel_y = 0
 	},
+/obj/item/clothing/glasses/welding{
+	pixel_x = -7;
+	pixel_y = 12
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_x = -7;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "te" = (
@@ -5392,6 +5408,14 @@
 "ES" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
+	},
+/obj/machinery/computer/security/telescreen{
+	pixel_y = 0;
+	network = list("ss13");
+	desc = "A telescreen that connects to the ship's security camera network.";
+	layer = 2.7;
+	dir = 2;
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)

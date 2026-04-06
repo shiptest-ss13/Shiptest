@@ -24,9 +24,9 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena
 
-/datum/outfit/job/gezena/assistant/bridge
-	name = "PGF - Bridge Crew"
-	id_assignment = "Helmsman"
+/datum/outfit/job/gezena/assistant/flight
+	name = "PGF - Flight Officer"
+	id_assignment = "Flight Officer"
 	jobtype = /datum/job/head_of_personnel
 	uniform = /obj/item/clothing/under/gezena/officer
 	neck = /obj/item/clothing/neck/cloak/gezena/command

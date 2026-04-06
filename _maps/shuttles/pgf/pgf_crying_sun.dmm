@@ -665,13 +665,13 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "dl" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner/opaque/navyblue/diagonal,
 /obj/effect/turf_decal/siding/black{
 	dir = 5;
 	layer = 2.139
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -1345,16 +1345,26 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "gw" = (
-/obj/structure/table/reinforced,
-/obj/machinery/recharger{
-	pixel_y = 8
-	},
-/obj/machinery/computer/helm/viewscreen/directional/north{
-	layer = 2.7;
-	pixel_y = 16
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
+	},
+/obj/structure/table/emptycomputer{
+	icon_state = "emptycomputer-middle"
+	},
+/obj/machinery/emergency_panel{
+	pixel_y = 5;
+	pixel_x = -6
+	},
+/obj/item/radio/intercom/wideband/directional/north{
+	pixel_x = 9;
+	pixel_y = 14
+	},
+/obj/item/radio/intercom/directional/north{
+	pixel_x = 9
+	},
+/obj/machinery/newscaster/directional/north{
+	pixel_x = -7;
+	pixel_y = 30
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -2491,19 +2501,17 @@
 	pixel_y = 26;
 	network = list("ss13");
 	desc = "A telescreen that connects to the ship's security camera network.";
-	layer = 2.7
+	layer = 2.7;
+	pixel_x = -4
 	},
 /obj/structure/railing/corner,
-/obj/item/desk_flag/gezena{
-	pixel_x = -13;
-	pixel_y = 14
-	},
-/obj/item/radio/intercom/directional/east{
-	pixel_y = 6
-	},
-/obj/item/binoculars{
-	pixel_y = 4;
-	pixel_x = 1
+/obj/machinery/button/door{
+	id = "c-sun_bridge_shut";
+	name = "Bridge Shutters";
+	dir = 8;
+	pixel_y = 3;
+	pixel_x = 20;
+	layer = 3.1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -4091,8 +4099,7 @@
 	},
 /obj/machinery/door/airlock/command{
 	dir = 4;
-	name = "Bridge";
-	req_one_access = list(20, 57, 58)
+	name = "Bridge"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4786,7 +4793,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 9
 	},
-/obj/machinery/holopad/emergency/command,
+/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "yj" = (
@@ -4795,7 +4802,7 @@
 	},
 /obj/machinery/computer/security{
 	dir = 2;
-	icon_state = "computer-right"
+	icon_state = "computer-middle"
 	},
 /obj/machinery/turretid/ship{
 	pixel_y = 25;
@@ -5286,7 +5293,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security/armory)
 "AX" = (
-/obj/machinery/holopad/emergency,
 /obj/effect/turf_decal/spline/fancy/opaque/green/corner,
 /obj/effect/turf_decal/spline/fancy/opaque/green/corner{
 	dir = 8
@@ -5295,6 +5301,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
 "AZ" = (
@@ -5726,26 +5733,12 @@
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/hallway/central)
 "CK" = (
-/obj/structure/table/emptycomputer{
-	icon_state = "emptycomputer-left"
-	},
-/obj/machinery/emergency_panel{
-	pixel_y = 5;
-	pixel_x = -6
-	},
-/obj/item/radio/intercom/wideband/directional/north{
-	pixel_x = 9;
-	pixel_y = 14
-	},
-/obj/machinery/newscaster/directional/north{
-	pixel_x = -7;
-	pixel_y = 30
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_x = 9
+/obj/machinery/computer/helm{
+	dir = 2;
+	icon_state = "computer-middle"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -6614,22 +6607,8 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/table/emptycomputer{
-	dir = 8;
-	layer = 3.1
-	},
-/obj/item/radio/intercom/wideband/table{
-	dir = 4;
-	pixel_x = 0;
-	pixel_y = 15
-	},
-/obj/machinery/button/door{
-	id = "c-sun_bridge_shut";
-	name = "Bridge Shutters";
-	dir = 8;
-	pixel_y = 1;
-	pixel_x = -6;
-	layer = 3.1
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -7093,8 +7072,16 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/machinery/computer/helm{
-	dir = 8
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband/table{
+	dir = 4;
+	pixel_x = 8;
+	pixel_y = 37
+	},
+/obj/item/radio/intercom/table{
+	dir = 4;
+	pixel_x = 8;
+	pixel_y = 24
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -7134,9 +7121,14 @@
 	layer = 2.7
 	},
 /obj/machinery/recharger{
-	pixel_y = 0
+	pixel_y = 0;
+	pixel_x = -6
 	},
 /obj/effect/turf_decal/techfloor,
+/obj/machinery/recharger{
+	pixel_y = 0;
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "JG" = (
@@ -9445,6 +9437,10 @@
 	pixel_y = -10
 	},
 /obj/machinery/light/directional/north,
+/obj/item/clothing/glasses/welding{
+	pixel_x = 2;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "SJ" = (
@@ -10143,9 +10139,17 @@
 	dir = 1
 	},
 /obj/item/gps{
-	pixel_x = -9;
-	pixel_y = 4;
+	pixel_x = 23;
+	pixel_y = 8;
 	gpstag = "PGFN-Crying Sun"
+	},
+/obj/item/desk_flag/gezena{
+	pixel_x = 15;
+	pixel_y = 14
+	},
+/obj/item/binoculars{
+	pixel_y = 4;
+	pixel_x = 1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
