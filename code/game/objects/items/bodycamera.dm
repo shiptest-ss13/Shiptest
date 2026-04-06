@@ -49,7 +49,7 @@
 		. += span_notice("The camera is set to a nametag of '<b>[c_tag]</b>'.")
 		. += span_notice("The camera is set to transmit on the '<b>[network[1]]</b>' network.")
 		if(!broadcast_camera)
-			. += span_notice("It looks like you can configure the camera settings by <b>using it in your hand</b>, or by using a multitool on it.")
+			. += span_notice("It looks like you can configure the camera settings by <b>using it in your hand</b> or by using a multitool on it.")
 		else
 			. += span_notice("It looks like you can configure the camera settings by <b>using a multitool on it.</b>")
 
@@ -206,14 +206,14 @@
 		addtimer(CALLBACK(src, PROC_REF(do_camera_update), oldLoc), BODYCAM_UPDATE_BUFFER)
 
 /obj/item/paper/guides/bodycam
-	name = "Portable Camera Unit Users Guide"
-	default_raw_text = "<font face='serif'><font size=2><div align='center'><u><font size=5>Portable Camera Unit User's Guide</u>\n<div align='left'><font size=3> The Mark I Portable Camera unit is a versatile solution ⠀   for all of your project management needs.\n\n<font size=4><dl><dt> Features</dt><font size=3><dd> - Real-time visual data feedback </dd><dd> - Configurable EEPROM memory settings</dd><dd> - Passive thermal regulator</dd><dd> - Long-range millimeter-wave band antenna</dd><dd> - High-capacity self-recharging battery</dd><dd> - Easy to reach power button</dd></dl>\n\n To activate the camera, simply press and hold the\n power button for one second. You should hear a chime\n and a green status light should become lit.\n\n To deactivate the camera, depress the power button\n again for one second.\n\n In order to modify the settings of your portable camera\n unit, a ISO-standard multitool will be required.\n \n Simply connect the tool to the camera's settings port,\n and you should be able to modify the internal address\n of the camera, or the network configuration.\n\n You will also be able to save the network configuration\n of the camera and copy it to other Mark I Portable\n Camera units.\n\n We hope that our tools will provide the edge you need\n in order to ensure your team stays on-task."
+	name = "Portable Camera Unit User's Guide"
+	default_raw_text = "<font face='serif'><font size=2><div align='center'><u><font size=5>Portable Camera Unit User's Guide</u>\n<div align='left'><font size=3> The Mark I Portable Camera unit is a versatile solution ⠀   for all of your project management needs.\n\n<font size=4><dl><dt> Features</dt><font size=3><dd> - Real-time visual data feedback </dd><dd> - Configurable EEPROM memory settings</dd><dd> - Passive thermal regulator</dd><dd> - Long-range millimeter-wave band antenna</dd><dd> - High-capacity self-recharging battery</dd><dd> - Easy-to-reach power button</dd></dl>\n\n To activate the camera, simply press and hold the\n power button for one second. You should hear a chime,\n and a green status light should become lit.\n\n To deactivate the camera, depress the power button\n again for one second.\n\n In order to modify the settings of your portable camera\n unit, a ISO-standard multitool will be required.\n \n Simply connect the tool to the camera's settings port,\n and you should be able to modify the internal address\n of the camera, or the network configuration.\n\n You will also be able to save the network configuration\n of the camera and copy it to other Mark I Portable\n Camera units.\n\n We hope that our tools will provide the edge you need\n in order to ensure your team stays on task."
 
 // Broadcast Camera - For Journalism
 
 /obj/item/radio/broadcast
 	name = "Broadcast Radio"
-	desc = "You're fairly sure this shouldn't be outside of the camera, and that you should tell someone you found this. Maybe an adminhelp is in order."
+	desc = "You're fairly sure this shouldn't be outside of the camera and that you should tell someone you found this. Maybe an adminhelp is in order."
 	frequency = 1499
 	log = TRUE
 
@@ -226,7 +226,7 @@
 
 /obj/item/bodycamera/broadcast_camera
 	name = "broadcast camera"
-	desc = "A camera used by media agencies in order to broadcast video and audio to recievers across a sector."
+	desc = "A camera used by media agencies in order to broadcast video and audio to receivers across a sector."
 	icon = 'icons/obj/item/broadcasting.dmi'
 	icon_state = "broadcast"
 	lefthand_file = 'icons/mob/inhands/misc/broadcast_lefthand.dmi'
@@ -307,7 +307,7 @@
 /obj/item/bodycamera/broadcast_camera/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
-	user.visible_message(span_notice("[user] lowers [src]."), span_notice("You lower [src], reducing it's view."))
+	user.visible_message(span_notice("[user] lowers [src]."), span_notice("You lower [src], reducing its view."))
 	item_state = "broadcast"
 	view_range = 7
 

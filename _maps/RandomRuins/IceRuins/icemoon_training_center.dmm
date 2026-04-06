@@ -214,10 +214,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
 	},
-/obj/item/valentine{
-	pixel_x = -2;
-	pixel_y = 10
-	},
 /obj/item/clothing/neck/tie/gay{
 	pixel_x = 8;
 	pixel_y = 15
@@ -3924,10 +3920,10 @@
 "tf" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/pilot,
-/obj/item/clothing/head/helmet/space/pilot/random,
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 8
 	},
+/obj/item/clothing/head/helmet/space/pilot,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/mech_garage)
 "ti" = (
