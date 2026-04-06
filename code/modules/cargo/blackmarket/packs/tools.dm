@@ -21,6 +21,16 @@
 	stock = 1
 	availability_prob = 25
 
+/datum/blackmarket_item/tool/mk3_hypo
+	name = "Mk3 Hypospray Kit"
+	desc = "Pretty sure the guy we got this from was about to do surgery. Well. Don't think they'll be doing anything now. Keh."
+	item = /obj/item/storage/box/hypospray/mkiii
+
+	cost_min = 3000
+	cost_max = 5000
+	stock = 2
+	availability_prob = 25
+
 /datum/blackmarket_item/tool/jaws
 	name = "Jaws of Life"
 	desc = "These prying jaws are useful for rescuing trapped victims. Or you know. Breaking into secure areas."

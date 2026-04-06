@@ -278,5 +278,5 @@
 		if(1 to 15)
 			return span_warning("[owner.p_they(TRUE)] looks a little soaked.")
 		if(15 to 20)
-			return span_boldwarning("[owner.p_they(TRUE)] is completely sopping!")
+			return span_boldwarning("[owner.p_they(TRUE)] [owner.p_are()] completely sopping!")
 	return null

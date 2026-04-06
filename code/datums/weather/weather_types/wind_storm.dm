@@ -12,7 +12,7 @@
 	weather_duration_upper = 1500
 
 	end_duration = 100
-	end_message =span_notice("The wind slowly passes by")
+	end_message = span_notice("The wind slowly passes by.")
 	end_overlay = ""
 
 	area_type = /area
