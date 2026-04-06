@@ -218,7 +218,7 @@
 	secure = 1;
 	locked = 1;
 	pixel_y = 0;
-	name = "helmsman's locker";
+	name = "flight officer's locker";
 	req_access = list(57);
 	pixel_x = 28
 	},
@@ -1738,6 +1738,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/green/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
