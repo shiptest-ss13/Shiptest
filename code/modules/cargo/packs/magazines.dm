@@ -402,7 +402,7 @@
 	desc = "Contains a proprietary weapon cell, compatible with most Sharplite energy weapons."
 	contains = list(/obj/item/stock_parts/cell/gun/sharplite)
 	faction = /datum/faction/warra
-	faction_discount = 25 //300 credits
+	faction_discount = 25 /*300 credits*/
 	cost = 400
 
 /datum/supply_pack/magazine/tinyguncell
@@ -410,7 +410,7 @@
 	desc = "Contains a proprietary weapon cell, compatible with the Ohm self-defence pistol."
 	contains = list(/obj/item/stock_parts/cell/gun/sharplite/mini)
 	faction = /datum/faction/warra
-	faction_discount = 20 //200 credits
+	faction_discount = 20 /*200 credits*/
 	cost = 250
 
 /datum/supply_pack/magazine/upgradedguncell
