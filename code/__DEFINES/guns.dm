@@ -140,6 +140,7 @@
 #define COMSIG_ATTACHMENT_CTRL_CLICK "attach-ctrl-click"
 #define COMSIG_ATTACHMENT_ALT_CLICK "attach-alt-click"
 #define COMSIG_ATTACHMENT_ATTACK_HAND "attach-attack-hand"
+#define COMSIG_ATTACHMENT_TOGGLE_SAFETY "attach-safety"
 
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
 #define COMSIG_ATTACHMENT_TOGGLE_AMMO "attach-ammo"

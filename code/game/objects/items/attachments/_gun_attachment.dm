@@ -72,7 +72,7 @@
 	attached_gun.unique_action(user)
 	return OVERRIDE_SECONDARY_ACTION
 
-/obj/item/attachment/gun/on_ctrl_click(obj/item/gun/gun, mob/user)
+/obj/item/attachment/gun/on_safety(obj/item/gun/gun, mob/user)
 	if(has_safety)
 		attached_gun.toggle_safety(user,TRUE, TRUE)
 
