@@ -69,13 +69,6 @@
 	check_prefix = FALSE
 	color = "#97150B"
 
-/datum/faction/syndicate/suns
-	name = FACTION_SUNS
-	short_name = "SUNS"
-	official_language = /datum/language/solarian_international
-	prefixes = PREFIX_SUNS
-	color = "#CD94D3"
-
 /datum/faction/syndicate/scarborough
 	name = "Scarborough Arms"
 	prefixes = PREFIX_NONE
@@ -85,8 +78,17 @@
 	name = FACTION_SOLCON
 	parent_faction = /datum/faction/solgov
 	official_language = /datum/language/solarian_international
+	allowed_factions = list(/datum/faction/suns)
 	prefixes = PREFIX_SOLCON
 	color = "#444e5f"
+
+/datum/faction/suns
+	name = FACTION_SUNS
+	short_name = "SUNS"
+	parent_faction = /datum/faction/suns
+	official_language = /datum/language/solarian_international
+	prefixes = PREFIX_SUNS
+	color = "#CD94D3"
 
 /datum/faction/srm
 	name = FACTION_SRM
@@ -110,19 +112,19 @@
 	prefixes = PREFIX_CLIP
 	color = "#3F90DF"
 
-/datum/faction/nt
-	name = FACTION_NT
-	short_name = "NT"
-	parent_faction = /datum/faction/nt
-	prefixes = PREFIX_NT
-	color = "#283674"
+/datum/faction/warra
+	name = FACTION_WARRA
+	short_name = "MAKOSSO-WARRA"
+	parent_faction = /datum/faction/warra
+	prefixes = PREFIX_WARRA
+	color = "#0094FF"
 
-/datum/faction/nt/ns_logi
+/datum/faction/warra/ns_logi
 	name = FACTION_NS_LOGI
 	prefixes = PREFIX_NS_LOGI
 	color = "#FF6600"
 
-/datum/faction/nt/vigilitas
+/datum/faction/warra/vigilitas
 	name = FACTION_VIGILITAS
 	prefixes = PREFIX_VIGILITAS
 	color = "#d40000"

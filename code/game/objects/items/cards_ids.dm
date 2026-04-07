@@ -127,18 +127,6 @@
 			if(uses_left == 0)
 				emag_on = FALSE
 
-/obj/item/card/emagfake
-	desc = "It's a card with a magnetic strip attached to some circuitry. Closer inspection shows that this card is a poorly made replica, with a \"DonkCo\" logo stamped on the back."
-	name = "cryptographic sequencer"
-	icon_state = "emag"
-	item_state = "card-id"
-	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
-
-/obj/item/card/emagfake/afterattack()
-	. = ..()
-	playsound(src, 'sound/items/bikehorn.ogg', 50, TRUE)
-
 /obj/item/card/id
 	name = "access card"
 	desc = "These cards provide access to different sections of a ship."
@@ -440,8 +428,8 @@ update_label()
 		..()
 
 /obj/item/card/id/centcom
-	name = "\improper Nanotrasen Central Command access card"
-	desc = "An access card sourced from Nanotrasen's Central Command."
+	name = "\improper Makosso-Warra Central Command access card"
+	desc = "An access card sourced from Makosso-Warra's Central Command."
 	icon_state = "centcom"
 	uses_overlays = FALSE
 	registered_age = null
@@ -501,7 +489,7 @@ update_label()
 
 /obj/item/card/id/ert/deathsquad
 	desc = "An access card colored in black and red."
-	icon_state = "deathsquad" //NO NO SIR DEATH SQUADS ARENT A PART OF NANOTRASEN AT ALL
+	icon_state = "deathsquad" //NO NO SIR DEATH SQUADS ARENT A PART OF MAKOSSO-WARRA AT ALL
 	uses_overlays = FALSE
 	job_icon = "deathsquad"
 

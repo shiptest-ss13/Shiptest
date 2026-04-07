@@ -67,7 +67,7 @@
 		apply_wibbly_filters(user)
 		if (do_after(user, 50, target=user, hidden = TRUE) && user.cell.use(activationCost))
 			playsound(src, 'sound/effects/bamf.ogg', 100, TRUE, -6)
-			to_chat(user, span_notice("You are now disguised as the Nanotrasen engineering borg \"[friendlyName]\"."))
+			to_chat(user, span_notice("You are now disguised as the Makosso-Warra engineering borg \"[friendlyName]\"."))
 			activate(user)
 		else
 			to_chat(user, span_warning("The chameleon field fizzles."))

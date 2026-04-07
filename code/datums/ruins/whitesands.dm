@@ -7,7 +7,7 @@
 /datum/map_template/ruin/whitesands/pubbyslopcrash
 	name = "Pubby Slop Crash"
 	id = "ws-pubbyslopcrash"
-	description = "A failed attempt of the Nanotrasen nutrional replacement program"
+	description = "A failed attempt of the Makosso-Warra nutrional replacement program"
 	suffix = "whitesands_surface_pubbyslopcrash.dmm"
 	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)
 

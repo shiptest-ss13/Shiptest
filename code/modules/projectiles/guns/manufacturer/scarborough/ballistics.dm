@@ -385,6 +385,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 		)
 	)
 
+	spread = -2
 	recoil = -2
 	recoil_unwielded = -2
 	spread_unwielded = 0
@@ -846,6 +847,10 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 	wield_delay = 0.9 SECONDS //ditto
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	refused_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight
+		)
 	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
