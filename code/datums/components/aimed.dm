@@ -35,7 +35,7 @@
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(wake_up))
 	RegisterSignal(parent, COMSIG_GUN_DISABLE_AIMEDFIRE, PROC_REF(disable_aimedfire))
 	RegisterSignal(parent, COMSIG_GUN_ENABLE_AIMEDFIRE, PROC_REF(enable_aimedfire))
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
+	//RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
 	if(_aiming_time)
 		aiming_time = _aiming_time
 	if(_aiming_threshold)
