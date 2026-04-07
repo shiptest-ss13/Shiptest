@@ -239,7 +239,7 @@
 	icon_state = "mouse_gray_dead"
 	bite_consumption = 3
 	eatverbs = list("devour")
-	tastes = list("Subtle game" = 4, "metallic tang" = 1)
+	tastes = list("subtle game" = 4, "metallic tang" = 1)
 	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/protein = 1, /datum/reagent/consumable/nutriment/organ_tissue = 1)
 	foodtypes = GORE | MEAT | RAW
 	grind_results = list(/datum/reagent/blood = 20, /datum/reagent/liquidgibs = 5)
