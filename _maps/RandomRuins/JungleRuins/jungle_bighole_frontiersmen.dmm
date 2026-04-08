@@ -805,6 +805,10 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered/bighole/shed)
+"eu" = (
+/obj/structure/fence/cut/large,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "ey" = (
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -1223,6 +1227,22 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "hP" = (
 /obj/structure/rack,
+/obj/item/ammo_box/magazine/cm357{
+	pixel_x = 7;
+	pixel_y = 1
+	},
+/obj/item/ammo_box/magazine/cm357{
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/ammo_box/magazine/skm_762_40/empty{
+	pixel_x = -10;
+	pixel_y = -2
+	},
+/obj/item/ammo_box/magazine/skm_762_40/empty{
+	pixel_x = -6;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/bighole/secoffice)
 "hS" = (
@@ -6667,6 +6687,7 @@
 "Rv" = (
 /obj/structure/guncloset,
 /obj/machinery/light/directional/north,
+/obj/item/gun/ballistic/automatic/pistol/cm357/no_mag,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/bighole/secoffice)
 "Rw" = (
@@ -9118,7 +9139,7 @@ fo
 fo
 fo
 rQ
-dH
+Yc
 ee
 ee
 VR
@@ -11989,13 +12010,13 @@ Qh
 yD
 yD
 yD
-IR
-IR
+rQ
+rQ
 yD
 yD
 yD
-IR
-IR
+yD
+yD
 yD
 yD
 yD
@@ -12023,7 +12044,7 @@ qM
 Uy
 qM
 Uy
-Uy
+eu
 qM
 qM
 Uy
