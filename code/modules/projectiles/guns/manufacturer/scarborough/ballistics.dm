@@ -385,6 +385,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 		)
 	)
 
+	spread = -2
 	recoil = -2
 	recoil_unwielded = -2
 	spread_unwielded = 0

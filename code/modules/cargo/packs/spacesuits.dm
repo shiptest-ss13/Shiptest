@@ -17,8 +17,7 @@
 	name = "Pilot Space Suit Crate"
 	desc = "One pilot space suit, for improved mobility in exosuits."
 	cost = 500
-	contains = list(/obj/item/clothing/suit/space/pilot,
-					/obj/item/clothing/head/helmet/space/pilot/random)
+	contains = list(/obj/item/clothing/suit/space/pilot)
 	crate_name = "pilot space suit crate"
 
 /datum/supply_pack/spacesuits/engi_spacesuit
@@ -381,6 +380,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/clip_industrial
+	name = "CLIP Industrial Hardsuit Crate"
+	desc = "An industrial-grade hardsuit rated for impacts, fires and radiation."
+	cost = 1500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/clip)
+	crate_name = "CLIP industrial hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/spacesuits/clip
 	name = "CLIP softsuit crate"
 	desc = "Contains one civilian-grade CLIP softsuit."
@@ -424,6 +434,17 @@
 	cost = 5000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi/hl)
 	crate_name = "white-red hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/syndicate/hardliners
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/white_red_hardsuit
+	name = "Asura Shock Hardsuit Crate"
+	desc = "A stripped-down version of an older hardsuit, the Asura has been modified to keep its quick movement and armor at the cost of its night-vision technology. Due to this, its role is often shifted from recon to blitz maneuvers."
+	cost = 4500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/stealth/hardliners)
+	crate_name = "Asura Shock Hardsuit Crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/syndicate/hardliners
 	faction_discount = 0

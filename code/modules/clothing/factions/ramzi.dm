@@ -170,6 +170,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
 	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80, "wound" = 30)
 	slowdown = 1.25
+	supports_variations = DIGITIGRADE_VARIATION
 
 /////////
 //Hats//

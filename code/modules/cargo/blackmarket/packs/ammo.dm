@@ -176,6 +176,17 @@
 	stock_max = 4
 	availability_prob = 40
 
+/datum/blackmarket_item/ammo/sharplite_plus_cell
+	name = "Sharplite Plus Cell"
+	desc = "A sharplite plus energy weapon cell. The plus in the name means bigger, if that wasn't obvious."
+	item = /obj/item/stock_parts/cell/gun/sharplite/plus
+
+	cost_min = 800
+	cost_max = 1200
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 40
+
 /datum/blackmarket_item/ammo/gauss_cell
 	name = "SolCon Weapon Cell"
 	desc = "A Solarian weapon cell, for powering their gauss weaponry."
@@ -213,8 +224,8 @@
 	desc = "These upgraded weapon powercells come with twice the capacity of the standard cells, and quality checked to make sure they won't explode!"
 	item = /obj/item/stock_parts/cell/gun/upgraded
 
-	cost_min = 1000
-	cost_max = 1750
+	cost_min = 800
+	cost_max = 1200
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 25
