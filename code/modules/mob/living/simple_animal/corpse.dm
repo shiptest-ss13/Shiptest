@@ -33,7 +33,7 @@
 /datum/outfit/ramzi/runt
 	name = "Ramzi Runt Corpse"
 	head = /obj/item/clothing/head/ramzi
-	neck = /obj/item/clothing/neck/shemagh/ramzi
+	neck = /obj/item/clothing/neck/dogtag/ramzi
 	ears = /obj/item/radio/headset //civilian
 
 /obj/effect/mob_spawn/human/corpse/ramzi/runt/flapcap
@@ -43,7 +43,7 @@
 /datum/outfit/ramzi/runt/flapcap
 	name = "Flap-Cap Ramzi Runt Corpse"
 	head = /obj/item/clothing/head/ramzi/flap
-	neck = /obj/item/clothing/neck/shemagh/ramzi
+	neck = /obj/item/clothing/neck/dogtag/ramzi
 	ears = /obj/item/radio/headset //civilian
 
 /obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour
@@ -95,7 +95,7 @@
 	belt = /obj/item/storage/belt/security/webbing/ramzi/alt
 	mask = /obj/item/clothing/mask/breath/facemask
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
-	neck = /obj/item/clothing/neck/shemagh/ramzi
+	neck = /obj/item/clothing/neck/dogtag/ramzi
 
 /obj/effect/mob_spawn/human/corpse/ramzi/trooper
 	name = "Ramzi Trooper"

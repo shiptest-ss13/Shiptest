@@ -252,6 +252,11 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"ba" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/salvageable/autolathe,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/beach/corpo_resort/electrical)
 "bb" = (
 /obj/structure/platform,
 /obj/structure/spacevine/weak,
@@ -2998,10 +3003,6 @@
 /obj/item/ammo_casing/spent/pistol_steel,
 /obj/effect/mob_spawn/human/corpse/ramzi/trooper,
 /obj/effect/decal/cleanable/blood/old,
-/obj/item/clothing/neck/dogtag/ramzi{
-	pixel_x = 5;
-	pixel_y = -6
-	},
 /obj/effect/turf_decal/trimline/opaque/orange/warning{
 	dir = 8
 	},
@@ -5753,11 +5754,6 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"wV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/salvageable/autolathe,
-/turf/open/floor/plasteel/patterned/grid,
-/area/ruin/beach/corpo_resort/electrical)
 "wX" = (
 /obj/machinery/light/small/directional/west,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -10926,14 +10922,14 @@
 	dir = 6
 	},
 /obj/structure/table/wood/reinforced,
-/obj/machinery/chem_dispenser/drinks/fullupgrade{
-	dir = 1;
-	pixel_x = -5;
-	pixel_y = 6
-	},
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/chem_dispenser/drinks{
+	dir = 1;
+	pixel_x = -4;
+	pixel_y = 6
+	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/corpo_resort/bar)
 "SV" = (
@@ -15538,7 +15534,7 @@ hC
 FV
 Ae
 do
-wV
+ba
 hC
 gO
 gO
