@@ -2987,11 +2987,6 @@
 	pixel_x = 6;
 	pixel_y = -9
 	},
-/obj/item/clothing/head/gezena/captain{
-	pixel_y = 13;
-	pixel_x = -8;
-	anchored = 1
-	},
 /obj/item/clothing/head/gezena/flap/captain{
 	pixel_y = 11;
 	pixel_x = 8
@@ -3041,12 +3036,17 @@
 /obj/structure/closet/secure_closet{
 	icon_state = "blueshield";
 	req_access = list(20);
-	name = "captain's locker"
+	name = "captain's locker";
+	anchored = 1
 	},
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/light/small/directional/south{
 	pixel_x = -13;
 	pixel_y = -28
+	},
+/obj/item/clothing/head/gezena/captain{
+	pixel_y = 10;
+	pixel_x = -5
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
