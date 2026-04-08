@@ -363,17 +363,6 @@
 					/obj/item/food/meat/slab/chicken,
 	)
 
-/datum/supply_pack/food/ingredients_basic/bear_meat
-	name = "Bear Meat Crate"
-	desc = "Five cuts of bear, tough and gamey. Treated by and sourced from local independent hunters."
-	cost = 150
-	contains = list(/obj/item/food/meat/slab/bear,
-					/obj/item/food/meat/slab/bear,
-					/obj/item/food/meat/slab/bear,
-					/obj/item/food/meat/slab/bear,
-					/obj/item/food/meat/slab/bear,
-	)
-
 /datum/supply_pack/food/ingredients_basic/rice
 	name = "Rice Crate"
 	desc = "A crate containing five packages of medium-grain rice, ready for cooking."
