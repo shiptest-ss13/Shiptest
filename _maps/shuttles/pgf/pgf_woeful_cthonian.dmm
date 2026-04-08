@@ -50,12 +50,12 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 8
-	},
 /obj/machinery/air_sensor/atmos/air_tank{
 	pixel_x = 11;
 	pixel_y = -9
+	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input{
+	dir = 8
 	},
 /turf/open/floor/engine/air,
 /area/ship/engineering)
@@ -289,9 +289,6 @@
 /obj/structure/window/reinforced/survival_pod/spawner{
 	dir = 8
 	},
-/obj/structure/chair{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
@@ -306,6 +303,10 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 8
+	},
+/obj/machinery/hydroponics/wooden{
+	density = 0;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)

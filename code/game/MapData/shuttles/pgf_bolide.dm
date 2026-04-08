@@ -9,9 +9,9 @@
 
 /obj/machinery/computer/atmos_control/ship/bolide
 	sensors = list(
-		"bolide_air" = "Airmix Chamber",
-		"bolide_fuel_1" = "Port Fuel Chamber",
-		"bolide_fuel_2" = "Starboard Fuel Chamber",
+		"bolide_air" = "Air Mix Chamber",
+		"bolide_fuel_1" = "Port Fuel Mix Chamber",
+		"bolide_fuel_2" = "Starboard Fuel Mix Chamber",
 	)
 
 //this should go somewhere else

@@ -986,6 +986,9 @@
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 5
 	},
+/obj/machinery/hydroponics/wooden{
+	density = 0
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "gA" = (
@@ -5272,9 +5275,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/toilet)
 "Et" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber{
-	dir = 1
-	},
 /obj/machinery/air_sensor/ship/bolide/fuel_2{
 	pixel_x = 16;
 	pixel_y = -10
@@ -5282,6 +5282,10 @@
 /obj/structure/sign/warning/fire{
 	pixel_x = 16;
 	pixel_y = -22
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/mix_output{
+	pixel_y = 0;
+	dir = 1
 	},
 /turf/open/floor/engine/hydrogen_fuel,
 /area/ship/engineering/engines/starboard)
@@ -5485,7 +5489,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
 "Fm" = (
-/obj/machinery/air_sensor/atmos/air_tank,
+/obj/machinery/air_sensor/ship/bolide/air,
 /turf/open/floor/engine/air,
 /area/ship/engineering)
 "Fr" = (
@@ -5877,9 +5881,8 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "HR" = (
-/obj/machinery/computer/atmos_control/tank/air_tank{
-	dir = 1;
-	pixel_y = 0
+/obj/machinery/computer/atmos_control/ship/bolide{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -6944,7 +6947,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
 "Ny" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber,
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/mix_output,
 /turf/open/floor/engine/hydrogen_fuel,
 /area/ship/engineering/engines/port)
 "NB" = (
