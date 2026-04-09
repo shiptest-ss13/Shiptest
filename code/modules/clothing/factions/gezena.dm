@@ -74,14 +74,14 @@
 	icon_state = "navycoat"
 	item_state = "bluecloth"
 	blood_overlay_type = "coat"
-	body_parts_covered = CHEST|GROIN
+	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 20, "energy" = 40, "bomb" = 20, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
+	armor = list("melee" = 35, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	allowed = null
 
 /obj/item/clothing/suit/armor/gezena/medic
@@ -102,12 +102,24 @@
 	icon_state = "captaincoat"
 	item_state = "bluecloth"
 
+/obj/item/clothing/suit/armor/gezena/navy
+	name = "\improper navy flak vest"
+	desc = "A Gezenan flak vest in a relaxing sky blue. Identification reflectors on the back sailors navigate and find one another during emergencies"
+	icon_state = "navyvest"
+	item_state = "navyvest"
+	body_parts_covered = CHEST|GROIN
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+
 /obj/item/clothing/suit/armor/gezena/marine
 	name = "\improper composite marine vest"
 	desc = "Heavy composite plating in a striking bright green, with sturdy shoulder pads for extra protection."
 	icon_state = "marinevest"
 	item_state = "marinevest"
-	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
+	body_parts_covered = CHEST|GROIN
+	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
@@ -268,9 +280,25 @@
 	icon_state = "captainflap"
 	item_state = "bluecloth"
 
+/obj/item/clothing/head/helmet/gezena/navy
+	name = "navy flak helmet"
+	desc = "A Gezenan flak helmet helmet employed by the PGFN. Equipped with an identification reflector and a wide brim for accomadating communications devices"
+	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
+	icon_state = "navyhelmet"
+	item_state = "navyhelm"
+	can_flashlight = TRUE
+	content_overlays = TRUE
+
 /obj/item/clothing/head/helmet/gezena
 	name = "composite combat helmet"
-	desc = "An armored composite military helmet employed by the PGF. Fitted to connect seamlessly with the L-98 respirator"
+	desc = "An armored composite military helmet employed by the PGFMC. Fitted to connect seamlessly with the L-98 respirator"
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
