@@ -104,9 +104,10 @@
 
 /obj/item/clothing/suit/armor/gezena/navy
 	name = "\improper navy flak vest"
-	desc = "A Gezenan flak vest in a relaxing sky blue. Identification reflectors on the back sailors navigate and find one another during emergencies"
+	desc = "A Gezenan flak vest in a relaxing sky blue. Identification reflectors on the back help sailors navigate and find one another during emergencies"
 	icon_state = "navyvest"
 	item_state = "navyvest"
+	blood_overlay_type = "armor"
 	body_parts_covered = CHEST|GROIN
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
@@ -118,6 +119,7 @@
 	desc = "Heavy composite plating in a striking bright green, with sturdy shoulder pads for extra protection."
 	icon_state = "marinevest"
 	item_state = "marinevest"
+	blood_overlay_type = "armor"
 	body_parts_covered = CHEST|GROIN
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
@@ -197,7 +199,7 @@
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/head/gezena/flap
-	name = "navy flap cap"
+	name = "\improper navy flap cap"
 	desc = "The standard cap of the PGF military, in Navy colors. Features a neck-covering flap for harsher environments."
 	icon_state = "navyflap"
 	item_state = "bluecloth"
@@ -236,7 +238,7 @@
 	item_state = "bluecloth"
 
 /obj/item/clothing/head/gezena/flap/engi
-	name = "\improper navy engineering flap cap"
+	name = "navy engineering flap cap"
 	desc = "The standard cap of the PGF military. Features a neck-covering flap for harsher environments. The coloring indicates the wearer as an engineering specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -445,9 +447,25 @@
 //Masks
 /obj/item/clothing/mask/breath/pgfmask
 	name = "gezenan composite respirator"
-	desc = "An armored composite L-98 mask designed to protect both face and snout, and allowing easy attachment of external air sources. It's surprisingly comfortable."
+	desc = "An armored composite L-98 repirator designed to protect both face and snout, all while allowing the easy attachment of external air sources. It's surprisingly comfortable."
 	icon_state = "pgfmask"
 	item_state = "pgfmask"
+	icon = 'icons/obj/clothing/faction/gezena/mask.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/mask.dmi'
+	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
+	flags_cover = MASKCOVERSMOUTH | PEPPERPROOF
+	visor_flags_cover = MASKCOVERSMOUTH | PEPPERPROOF
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | KEPORI_VARIATION | VOX_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+	gas_transfer_coefficient = 0.01
+	permeability_coefficient = 0.00
+
+/obj/item/clothing/mask/breath/pgfmask/navy
+	name = "gezenan navy respirator"
+	desc = "A rubberized hard plastic mask made to the specifications of the L-98 respirator, allowing the easy attachment of external air sources. It's surprisingly comfortable."
+	icon_state = "navymask"
+	item_state = "navymask"
 	icon = 'icons/obj/clothing/faction/gezena/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/mask.dmi'
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS

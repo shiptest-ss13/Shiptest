@@ -169,11 +169,14 @@
 	radio_type = /obj/item/radio/command
 
 /obj/item/storage/box/survival/pgf
-	mask_type = /obj/item/clothing/mask/breath/pgfmask
+	mask_type = /obj/item/clothing/mask/breath/pgfmask/navy
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
 
 /obj/item/storage/box/survival/pgf/command
 	radio_type = /obj/item/radio/command
+
+/obj/item/storage/box/survival/pgf/marine
+	mask_type = /obj/item/clothing/mask/breath/pgfmask
 
 /obj/item/storage/box/survival/inteq
 	mask_type = /obj/item/clothing/mask/balaclava/inteq
