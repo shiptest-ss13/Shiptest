@@ -139,6 +139,13 @@
 	contains = list(/obj/item/melee/knife/survival)
 	crate_name = "survival knife crate"
 
+/datum/supply_pack/sec_supply/brass_knuckles
+	name = "Brass Knuckles Crate"
+	desc = "Contains one pair of brass knuckles. Shiny, stylish, and swift. More than enough to make a pirate think twice about roughing up the average spacer-gangster."
+	cost = 160
+	contains = list(/obj/item/brass_knuckles)
+	crate_name = "brass knuckles crate"
+
 /datum/supply_pack/sec_supply/machete
 	name = "Stamped Steel Machete Crate"
 	desc = "Contains one mass produced machete. A perfect choice for crews on a budget."
@@ -320,6 +327,82 @@
 	contains = list(/obj/item/storage/belt/military/cybersun)
 	crate_name = "webbing crate"
 	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
+//hardliner
+
+/datum/supply_pack/tools/webbing/hardliner
+	name = "Hardliner Webbing Crate"
+	desc = "Contains a webbing, with a standard implement of six pockets."
+	cost = 300
+	contains = list(/obj/item/storage/belt/security/webbing/hardliners)
+	crate_name = "webbing crate"
+	faction = /datum/faction/syndicate/hardliners
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/tools/webbing/hardliner/alt
+	name = "Hardliner Drop Pouch Harness Crate"
+	desc = "Contains a drop pouch harness, with a standard implement of six pockets."
+	contains = list(/obj/item/storage/belt/security/webbing/hardliners/alt)
+	crate_name = "drop pouch crate"
+
+//inteq
+
+/datum/supply_pack/tools/webbing/inteq
+	name = "Inteq Webbing Crate"
+	desc = "Contains a webbing, with a standard implement of six pockets."
+	cost = 300
+	contains = list(/obj/item/storage/belt/security/webbing/inteq)
+	crate_name = "webbing crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/tools/webbing/inteq/alt
+	name = "Inteq Drop Pouch Harness Crate"
+	desc = "Contains a drop pouch harness, with a standard implement of six pockets."
+	contains = list(/obj/item/storage/belt/security/webbing/inteq/alt)
+	crate_name = "drop pouch crate"
+
+//ngr
+
+/datum/supply_pack/tools/webbing/ngr
+	name = "NGR Webbing Crate"
+	desc = "Contains a webbing, with a standard implement of six pockets."
+	cost = 300
+	contains = list(/obj/item/storage/belt/security/webbing/ngr)
+	crate_name = "webbing crate"
+	faction = /datum/faction/syndicate/ngr
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/tools/webbing/ngr/alt
+	name = "NGR Drop Pouch Harness Crate"
+	desc = "Contains a drop pouch harness, with a standard implement of six pockets."
+	contains = list(/obj/item/storage/belt/security/webbing/ngr/alt)
+	crate_name = "drop pouch crate"
+
+//clip
+
+/datum/supply_pack/tools/belt/clip
+	name = "CLIP Chest Rig Crate"
+	desc = "Contains a chest rig, with an implement of seven pockets."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military/clip)
+	crate_name = "chest rig crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/tools/belt/clip/alt
+	name = "CLIP Belt Rig Crate"
+	desc = "Contains a belt rig, with an implement of seven pockets."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military/clip/alt)
+	crate_name = "belt rig crate"
+	faction = /datum/faction/clip
 	faction_discount = 0
 	faction_locked = TRUE
 

@@ -55,6 +55,7 @@
 	faction = FACTION_NGR
 	id_assignment = "Crewman"
 
+	ears = /obj/item/radio/headset/syndicate/ngr
 	head = /obj/item/clothing/head/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr
 	shoes = /obj/item/clothing/shoes/combat
@@ -369,7 +370,7 @@
 	faction = FACTION_NGR
 
 	head = /obj/item/clothing/head/hardhat/ngr/foreman
-	ears = /obj/item/radio/headset/syndicate/alt/ngr
+	ears = /obj/item/radio/headset/syndicate/alt/captain/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/ngr
@@ -427,7 +428,7 @@
 	faction = FACTION_NGR
 	id_assignment = "Ensign"
 
-	ears = /obj/item/radio/headset/syndicate/ngr
+	ears = /obj/item/radio/headset/syndicate/alt/captain/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	head = /obj/item/clothing/head/ngr
 	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
@@ -485,6 +486,7 @@
 	faction = FACTION_NGR
 	id_assignment = "Lieutenant"
 
+	ears = /obj/item/radio/headset/syndicate/alt/captain/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	head = /obj/item/clothing/head/ngr/peaked
 	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
@@ -576,6 +578,7 @@
 	name = "Syndicate - Medical Doctor (New Gorlex Republic)"
 	faction = FACTION_NGR
 
+	ears = /obj/item/radio/headset/syndicate/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr
 	head = /obj/item/clothing/head/ngr/surgical
 	suit = /obj/item/clothing/suit/ngr/smock
@@ -623,7 +626,27 @@
 /datum/outfit/job/syndicate/paramedic/gorlex
 	name = "Syndicate - Paramedic (Gorlex)"
 
+/datum/outfit/job/syndicate/paramedic/ngr
+	name = "Syndicate - Paramedic (New Gorlex Republic)"
+	faction = FACTION_NGR
+	id_assignment = "Field Medic"
 
+	ears = /obj/item/radio/headset/syndicate/ngr
+	uniform = /obj/item/clothing/under/syndicate/ngr
+	suit = /obj/item/clothing/suit/ngr/smock
+	glasses = /obj/item/clothing/glasses/hud/health
+	r_pocket = /obj/item/melee/knife/survival
+	id = /obj/item/card/id/syndicate_command/crew_id
+	shoes = /obj/item/clothing/shoes/combat
+
+/datum/outfit/job/syndicate/paramedic/ngr/stripped
+	name = "Syndicate - Paramedic - Stripped (New Gorlex Republic)"
+
+	head = null
+	suit = null
+	glasses = null
+	r_pocket = null
+	suit_store = null
 
 //psychologist
 
@@ -753,6 +776,7 @@
 	id_assignment = "Operative"
 	job_icon = "securityofficer"
 
+	ears = /obj/item/radio/headset/syndicate/alt/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/combat
@@ -840,7 +864,7 @@
 	uniform = /obj/item/clothing/under/syndicate/ngr/jumpsuit
 	accessory = /obj/item/clothing/accessory/armband/cargo
 	shoes = /obj/item/clothing/shoes/workboots
-	ears = /obj/item/radio/headset/alt
+	ears = /obj/item/radio/headset/syndicate/alt/ngr
 
 /datum/outfit/job/syndicate/miner/ngr/stripped
 	name = "Syndicate - Wrecker - Stripped (New Gorlex Republic)"
@@ -921,6 +945,7 @@
 	faction = FACTION_NGR
 	id_assignment = "Mechanic"
 
+	ears = /obj/item/radio/headset/syndicate/ngr
 	head = /obj/item/clothing/head/hardhat/ngr
 	suit = /obj/item/clothing/suit/hazardvest/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr
