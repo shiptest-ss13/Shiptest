@@ -126,7 +126,7 @@
 /datum/supply_pack/tools/jetpack
 	name = "Jetpack Crate"
 	desc = "For when you need to go fast in space."
-	cost = 750
+	cost = 500
 	contains = list(/obj/item/tank/jetpack/carbondioxide)
 	crate_name = "jetpack crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
@@ -134,13 +134,13 @@
 /datum/supply_pack/tools/jetpack/harness
 	name = "Jetpack Harness Crate"
 	desc = "A compact jetpack harness for those who don't wish to be weighed down by larger traditional jetpacks."
-	cost = 1500
+	cost = 750
 	contains = list(/obj/item/tank/jetpack/oxygen/harness)
 
 /datum/supply_pack/tools/jetpack/suit
 	name = "Hardsuit Jetpack Upgrade Crate"
 	desc = "A standardized jetpack attachment designed for direct integration with hardsuits. For when every gram matters."
-	cost = 2000
+	cost = 1250
 	contains = list(/obj/item/tank/jetpack/suit)
 
 /datum/supply_pack/tools/anglegrinder

@@ -214,34 +214,6 @@
 		Miscellaneous machines
 */
 
-/datum/supply_pack/machinery/gravgen
-	name = "Ship-Portable Gravity Generator Crate"
-	desc = "For those tired of their tools floating away from them. Contains a single gravity generator."
-	cost = 2000
-	contains = list(/obj/machinery/power/ship_gravity/unanchored)
-	crate_name = "gravity generator crate"
-	crate_type = /obj/structure/closet/crate/engineering/electrical
-	no_bundle = TRUE
-
-/datum/supply_pack/machinery/breach_shield_gen
-	name = "Anti-breach Shield Projector Crate"
-	desc = "Hull breaches again? Say no more with the Makosso Technologies Anti-Breach Shield Projector! Uses forcefield technology to keep the air in, and the space out. Contains one shield projector."
-	cost = 1250
-	contains = list(/obj/machinery/shieldgen)
-	crate_name = "anti-breach shield projector crate"
-	crate_type = /obj/structure/closet/crate/secure/plasma
-	no_bundle = TRUE
-
-/datum/supply_pack/ship_hardware/wall_shield_gen
-	name = "Shield Generator Crate"
-	desc = "These two shield wall generators are guaranteed to keep any unwanted lifeforms on the outside, where they belong! Not rated for containing singularities or tesla balls."
-	cost = 1000
-	contains = list(/obj/machinery/power/shieldwallgen,
-					/obj/machinery/power/shieldwallgen)
-	crate_name = "shield generators crate"
-	crate_type = /obj/structure/closet/crate/secure/plasma
-	no_bundle = TRUE
-
 /datum/supply_pack/machinery/drill_crate
 	name = "Heavy duty laser mining drill"
 	desc = "An experimental laser-based mining drill that Makoso-Warra is kindly allowing YOU, the customer, to opt into testing of."

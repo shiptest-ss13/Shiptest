@@ -273,7 +273,7 @@
 
 /obj/item/reagent_containers/syringe/pancrazine
 	name = "syringe (pancrazine)"
-	desc = "Contains pancrazine, used to treat toxins and purge chemicals. The tag on the syringe states 'Heat before injection'."
+	desc = "Contains pancrazine, used to treat toxins."
 	list_reagents = list(/datum/reagent/medicine/pancrazine = 15)
 
 /obj/item/reagent_containers/syringe/charcoal

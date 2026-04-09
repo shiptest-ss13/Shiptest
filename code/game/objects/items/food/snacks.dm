@@ -213,3 +213,11 @@
 	)
 	tastes = list("crunchy berry" = 5)
 	foodtypes = FRUIT
+
+/obj/item/food/candyheart //refugee from the death of valentine's day
+	name = "candy heart"
+	icon = 'icons/obj/holiday_misc.dmi'
+	icon_state = "candyheart"
+	desc = "A heart-shaped candy."
+	food_reagents = list(/datum/reagent/consumable/sugar = 2)
+	junkiness = 5
