@@ -119,13 +119,14 @@
 		return
 	var/devastation_range = -1 //round(charge/11000)
 	var/heavy_impact_range = round(sqrt(charge)/60)
+	var/heavy_damage = min(100, round(charge)/2)
 	var/light_impact_range = round(sqrt(charge)/30)
+	var/heavy_damage = min(100, round(charge)/4)
 	var/flash_range = light_impact_range
 	if (light_impact_range==0)
 		rigged = FALSE
 		corrupt()
 		return
-	//explosion(T, 0, 1, 2, 2)
 	explosion(T, devastation_range, heavy_impact_range, light_impact_range, flash_range)
 	qdel(src)
 
