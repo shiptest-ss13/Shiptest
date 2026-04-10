@@ -1125,6 +1125,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 
 /obj/item/ammo_casing/caseless/rocket/a70mm/light
 	name = "\improper M-KO-9LE"
+	icon_state = "srm-8-light"
 	desc = "A 70mm Light Explosive rocket. For when you don't want to cause *too* much collateral damage."
 	projectile_type = /obj/projectile/bullet/a84mm/he/weak
 
