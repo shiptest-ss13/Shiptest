@@ -202,6 +202,9 @@
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/spawner/random/trash/food_packaging,
 /obj/item/ammo_casing/spent/slug/buck,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "aI" = (
@@ -243,17 +246,17 @@
 	icon_state = "lattice-21"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "aX" = (
 /obj/structure/platform/industrial/corner,
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "aZ" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-110"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "bd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -274,6 +277,7 @@
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
+/obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "bj" = (
@@ -339,11 +343,14 @@
 /obj/effect/turf_decal/stairs{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
 /obj/machinery/light/directional/south,
+/obj/effect/turf_decal/trimline/transparent/black/filled/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/bighole/ferry)
 "bE" = (
@@ -367,6 +374,7 @@
 	},
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/wood/jungleplanet,
 /area/ruin/powered/bighole/office)
 "bJ" = (
@@ -376,7 +384,6 @@
 /area/ruin/powered/bighole/shed)
 "bU" = (
 /obj/machinery/door/airlock/grunge{
-	req_access = list(3);
 	name = "Armory"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -493,7 +500,7 @@
 	icon_state = "lattice-13"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "cz" = (
 /obj/effect/turf_decal/industrial/caution{
 	dir = 1;
@@ -646,7 +653,8 @@
 /obj/structure/closet/crate/secure/plasma,
 /obj/item/stack/ore/diamond{
 	pixel_x = -1;
-	pixel_y = 3
+	pixel_y = 3;
+	amount = 25
 	},
 /obj/item/stack/ore/diamond{
 	pixel_x = 5;
@@ -654,7 +662,8 @@
 	},
 /obj/item/stack/ore/plasma{
 	pixel_x = -5;
-	pixel_y = -2
+	pixel_y = -2;
+	amount = 10
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/engine/hull/interior,
@@ -729,6 +738,18 @@
 	},
 /turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
 /area/ruin/jungle/bighole/vent)
+"dM" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/ore/salvage/scrapplasma/five{
+	pixel_x = -3;
+	pixel_y = -2
+	},
+/obj/item/stack/ore/salvage/scrapplasma/five{
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/bighole/electrical)
 "dO" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -1122,6 +1143,7 @@
 "gV" = (
 /obj/structure/railing,
 /obj/item/ammo_casing/spent/rifle_brass,
+/obj/effect/spawner/random/trash/cigbutt,
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered/bighole/office)
 "gW" = (
@@ -1170,6 +1192,8 @@
 	},
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "hr" = (
@@ -1193,7 +1217,7 @@
 	dir = 9
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "hx" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -1215,10 +1239,13 @@
 /obj/effect/turf_decal/stairs{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
+/obj/effect/turf_decal/trimline/transparent/black/filled/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/bighole/ferry)
 "hF" = (
@@ -1241,7 +1268,7 @@
 	icon_state = "lattice-10"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "hN" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -1405,7 +1432,7 @@
 	dir = 1
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "iK" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -1446,6 +1473,18 @@
 /area/ruin/powered/bighole/cargo)
 "iO" = (
 /obj/structure/rack,
+/obj/item/clothing/glasses/welding{
+	pixel_x = -4;
+	pixel_y = 4
+	},
+/obj/item/stock_parts/capacitor/adv{
+	pixel_x = 9;
+	pixel_y = 1
+	},
+/obj/item/stock_parts/capacitor/adv{
+	pixel_x = 8;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered/bighole/shed)
 "iV" = (
@@ -1454,7 +1493,7 @@
 	},
 /obj/effect/decal/fakelattice,
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "iX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
@@ -1503,7 +1542,7 @@
 	dir = 5
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "jv" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4{
 	init_processing = 1;
@@ -1577,6 +1616,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/bighole/dormitory)
 "jP" = (
@@ -1644,6 +1684,12 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 2
 	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "kt" = (
@@ -1664,6 +1710,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "ky" = (
@@ -1738,6 +1785,7 @@
 	pixel_y = -1
 	},
 /obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "kR" = (
@@ -1796,9 +1844,6 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "lc" = (
 /obj/machinery/ntnet_relay,
-/obj/machinery/door/window/brigdoor/southleft{
-	req_access_txt = "3"
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/powered/bighole/office)
 "le" = (
@@ -1810,6 +1855,8 @@
 	pixel_x = 0;
 	pixel_y = 3
 	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
@@ -1997,7 +2044,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
-	req_access = list(19);
 	name = "Office"
 	},
 /obj/structure/cable{
@@ -2249,6 +2295,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/slug/buck,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plastic,
 /area/ruin/powered/bighole/dormitory)
 "nG" = (
@@ -2330,6 +2379,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/bighole/ferry)
 "oi" = (
@@ -2592,6 +2642,7 @@
 /area/ruin/powered/bighole/office)
 "pB" = (
 /obj/structure/chair/office,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/wood/jungleplanet,
 /area/ruin/powered/bighole/office)
 "pE" = (
@@ -2664,7 +2715,7 @@
 	icon_state = "lattice-12"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "qb" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt,
@@ -2676,7 +2727,7 @@
 	},
 /obj/structure/railing,
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "qe" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 2
@@ -2694,7 +2745,7 @@
 	icon_state = "lattice-3"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "qg" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 4
@@ -2706,7 +2757,12 @@
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/decal/cleanable/blood/footprints,
 /obj/item/ammo_casing/spent/pistol_brass,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "qi" = (
@@ -2721,6 +2777,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/cargo)
+"ql" = (
+/obj/structure/chair/handrail{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/bighole/ferry)
 "qm" = (
 /obj/machinery/computer/telecomms/monitor{
 	dir = 1;
@@ -2770,6 +2836,14 @@
 	dir = 8
 	},
 /obj/structure/barricade/sandbags,
+/obj/item/ammo_box/magazine/illestren_a850r{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/item/ammo_box/magazine/illestren_a850r{
+	pixel_x = -4;
+	pixel_y = 5
+	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "qu" = (
@@ -2788,11 +2862,13 @@
 /obj/structure/closet/crate/secure/plasma,
 /obj/item/stack/ore/gold{
 	pixel_x = -3;
-	pixel_y = 0
+	pixel_y = 0;
+	amount = 25
 	},
 /obj/item/stack/ore/bluespace_crystal{
 	pixel_x = 5;
-	pixel_y = 0
+	pixel_y = 0;
+	amount = 15
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/engine/hull/interior,
@@ -2863,7 +2939,7 @@
 	},
 /obj/structure/railing,
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ro" = (
 /obj/structure/flora/tree/dead/tall,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
@@ -3064,10 +3140,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/powered/bighole/office)
-"sv" = (
-/obj/structure/grille,
-/turf/open/space/basic,
-/area/ruin/jungle/bighole/vent)
 "sw" = (
 /obj/effect/turf_decal/trimline/transparent/beige/corner,
 /obj/effect/mob_spawn/human/corpse/clip,
@@ -3120,7 +3192,14 @@
 	},
 /obj/effect/turf_decal/box,
 /obj/structure/rack,
-/obj/item/documents/frontier/logistics,
+/obj/item/documents/frontier/logistics{
+	pixel_x = 1;
+	pixel_y = 5
+	},
+/obj/item/storage/box/ammo/c9mm{
+	pixel_x = -5;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/bighole/ferry)
 "sQ" = (
@@ -3160,6 +3239,8 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plastic,
 /area/ruin/powered/bighole/dormitory)
 "th" = (
@@ -3205,7 +3286,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged,
 /turf/open/floor/plating,
 /area/ruin/powered/bighole/electrical)
 "tp" = (
@@ -3368,7 +3449,7 @@
 	dir = 8
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ut" = (
 /obj/structure/platform/industrial_alt{
 	dir = 5
@@ -3400,7 +3481,7 @@
 	icon_state = "lattice-39"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "uE" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
 /obj/structure/cable{
@@ -3652,6 +3733,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
+/obj/structure/table/reinforced,
+/obj/item/stack/tape/industrial{
+	pixel_x = -1;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/bighole/electrical)
 "we" = (
@@ -3835,7 +3921,7 @@
 	dir = 2
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "xa" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4{
 	dir = 4
@@ -3846,6 +3932,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/spent/slug/buck,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/bighole/dormitory)
 "xc" = (
@@ -4173,6 +4263,16 @@
 /obj/effect/decal/cleanable/blood/footprints,
 /obj/effect/decal/cleanable/blood/footprints,
 /obj/item/ammo_casing/spent/pistol_brass,
+/mob/living/simple_animal/hostile/human/frontier/ranged/pounder,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "yZ" = (
@@ -4203,6 +4303,15 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/ruin/powered/bighole/cargo)
+"zm" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/ore/salvage/scrapmetal,
+/obj/item/stack/ore/salvage/scrapmetal{
+	pixel_x = -9;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/bighole/electrical)
 "zs" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
@@ -4262,13 +4371,13 @@
 "zW" = (
 /obj/structure/platform/industrial,
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Aa" = (
 /obj/structure/platform/industrial{
 	dir = 1
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ac" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/effect/turf_decal/siding/white/corner{
@@ -4297,6 +4406,10 @@
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/decal/cleanable/blood/footprints,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "Ah" = (
@@ -4392,6 +4505,9 @@
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/slug/buck,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "AS" = (
@@ -4416,9 +4532,6 @@
 /turf/open/floor/carpet,
 /area/ruin/powered/bighole/canteen)
 "Be" = (
-/obj/machinery/door/window/brigdoor/southleft{
-	req_access_txt = "3"
-	},
 /obj/machinery/blackbox_recorder,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/powered/bighole/office)
@@ -4468,6 +4581,10 @@
 	},
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_box/magazine/f4_308/empty{
+	pixel_x = -5;
+	pixel_y = 3
+	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Bp" = (
@@ -4521,7 +4638,9 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "BF" = (
 /obj/structure/closet/crate/secure/plasma,
-/obj/item/stack/sheet/mineral/plasma/ten,
+/obj/item/stack/sheet/mineral/plasma/ten{
+	amount = 5
+	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "BN" = (
@@ -4570,11 +4689,12 @@
 	},
 /obj/effect/gibspawner/human/bodypartless,
 /obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/bighole/dormitory)
 "BY" = (
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ca" = (
 /turf/closed/wall/concrete,
 /area/ruin/powered/bighole/secoffice)
@@ -4582,10 +4702,13 @@
 /obj/effect/turf_decal/stairs{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/effect/turf_decal/trimline/transparent/black/filled/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/bighole/ferry)
 "Ch" = (
@@ -4604,6 +4727,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/box/ammo/a556_42,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/canteen)
 "Ck" = (
@@ -4711,7 +4835,7 @@
 /turf/open/floor/wood/jungleplanet,
 /area/ruin/powered/bighole/office)
 "CZ" = (
-/obj/structure/closet/secure_closet/security,
+/obj/structure/closet/secure_closet/clip/minutemen,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/secoffice)
 "Dh" = (
@@ -4740,7 +4864,6 @@
 /obj/structure/railing{
 	dir = 10
 	},
-/obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered/bighole/office)
 "Dn" = (
@@ -4759,6 +4882,7 @@
 	},
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/slug/buck,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "Dv" = (
@@ -4781,6 +4905,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/transparent/black/filled/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -4853,6 +4980,7 @@
 "DY" = (
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/trash/cigbutt,
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered/bighole/office)
 "Ea" = (
@@ -5024,6 +5152,10 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "EP" = (
@@ -5059,6 +5191,15 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 2
 	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "EY" = (
@@ -5075,7 +5216,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle,
+/mob/living/simple_animal/hostile/human/frontier/ranged,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Fg" = (
@@ -5179,7 +5320,8 @@
 /obj/structure/table/reinforced,
 /obj/item/documents/clip/research{
 	pixel_x = -1;
-	pixel_y = 4
+	pixel_y = 4;
+	color = "dcf7f7"
 	},
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/powered/bighole/lab)
@@ -5200,7 +5342,7 @@
 	icon_state = "lattice-137"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "FQ" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -5230,7 +5372,7 @@
 	dir = 4
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ga" = (
 /obj/effect/turf_decal/siding/black{
 	dir = 8
@@ -5385,8 +5527,9 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "GF" = (
-/obj/structure/window/plasma/reinforced/plastitanium/unanchored,
 /obj/effect/decal/cleanable/blood/splatter/over_window,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/powered/bighole/dormitory)
 "GI" = (
@@ -5411,6 +5554,9 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/south,
+/obj/effect/turf_decal/trimline/transparent/black/filled/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/jungle/bighole/ferry)
 "GU" = (
@@ -5421,6 +5567,7 @@
 	init_processing = 1;
 	dir = 8
 	},
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plastic,
 /area/ruin/powered/bighole/dormitory)
 "GW" = (
@@ -5465,6 +5612,8 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/bighole/dormitory)
 "Hm" = (
@@ -5510,7 +5659,9 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "HB" = (
-/obj/structure/closet/secure_closet/engineering_electrical,
+/obj/structure/closet/secure_closet/engineering_electrical{
+	req_access = null
+	},
 /obj/item/storage/belt/utility{
 	pixel_y = -7
 	},
@@ -5616,7 +5767,7 @@
 	icon_state = "lattice-12"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Im" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5630,6 +5781,11 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
@@ -5651,15 +5807,16 @@
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "IB" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
+/obj/structure/railing{
+	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/platform/industrial_alt/corner{
-	dir = 1
+/obj/structure/barricade/sandbags,
+/obj/item/ammo_box/magazine/f4_308{
+	pixel_x = 4;
+	pixel_y = -2
 	},
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered/bighole/dormitory)
 "IC" = (
 /obj/structure/noticeboard,
 /turf/closed/wall/concrete,
@@ -5784,6 +5941,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/random/trash/garbage,
 /obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "JL" = (
@@ -5835,7 +5994,7 @@
 	icon_state = "lattice-11"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Kn" = (
 /obj/structure/table/reinforced,
 /obj/item/drill_core_container{
@@ -5852,13 +6011,22 @@
 "Kr" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/directional/north,
+/obj/item/stack/ore/salvage/scrapmetal{
+	pixel_x = 4;
+	pixel_y = 13
+	},
+/obj/item/stack/ore/salvage/scrapmetal{
+	pixel_x = -10;
+	pixel_y = 9
+	},
+/obj/item/stack/ore/salvage/scrapsilver,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered/bighole/shed)
 "Kx" = (
 /obj/structure/cable{
 	icon_state = "1-6"
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/neutered,
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered/bighole/secoffice)
 "Kz" = (
@@ -5941,6 +6109,10 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "Li" = (
 /obj/structure/table/reinforced,
+/obj/machinery/cell_charger{
+	pixel_x = 0;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered/bighole/shed)
 "Lj" = (
@@ -5957,9 +6129,6 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "Lm" = (
 /obj/machinery/telecomms/relay/preset/minutemen,
-/obj/machinery/door/window/brigdoor/southleft{
-	req_access_txt = "3"
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/powered/bighole/office)
 "Lq" = (
@@ -5987,16 +6156,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/canteen)
 "LD" = (
-/obj/structure/window/plasma/reinforced/plastitanium/unanchored,
-/obj/structure/grille,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/powered/bighole/secoffice)
+/obj/structure/railing,
+/obj/structure/barricade/sandbags,
+/obj/effect/spawner/random/trash/cigbutt,
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered/bighole/office)
 "LJ" = (
 /obj/structure/platform/industrial{
 	dir = 8
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "LM" = (
 /obj/structure/chair/bench/blue/directional{
 	pixel_x = 0;
@@ -6077,6 +6247,8 @@
 	pixel_y = 3
 	},
 /obj/structure/curtain,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plastic,
 /area/ruin/powered/bighole/dormitory)
 "Mp" = (
@@ -6106,7 +6278,7 @@
 	dir = 4
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ME" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 2
@@ -6128,7 +6300,7 @@
 	dir = 1
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "MP" = (
 /obj/effect/turf_decal/corner/transparent/blue,
 /obj/item/ammo_casing/spent/pistol_brass,
@@ -6144,6 +6316,8 @@
 /obj/effect/spawner/bunk_bed,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/bighole/dormitory)
 "MX" = (
@@ -6192,6 +6366,9 @@
 	},
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plastic,
 /area/ruin/powered/bighole/dormitory)
 "Nq" = (
@@ -6414,6 +6591,7 @@
 	},
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/wood/jungleplanet,
 /area/ruin/powered/bighole/office)
 "OP" = (
@@ -6443,7 +6621,6 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered/bighole/office)
 "OW" = (
@@ -6459,7 +6636,7 @@
 	icon_state = "lattice-55"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Pa" = (
 /obj/structure/platform/industrial_alt/corner{
 	dir = 4
@@ -6677,6 +6854,19 @@
 "Qz" = (
 /obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/oil/slippery,
+/obj/structure/table/reinforced,
+/obj/item/stack/ore/salvage/scrapuranium{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/stack/ore/salvage/scrapuranium{
+	pixel_x = -10;
+	pixel_y = -3
+	},
+/obj/item/stack/ore/salvage/scrapuranium{
+	pixel_x = -10;
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/bighole/electrical)
 "QC" = (
@@ -6702,6 +6892,7 @@
 /obj/machinery/light/directional/south,
 /obj/effect/gibspawner/human/bodypartless,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/bighole/dormitory)
@@ -6777,7 +6968,7 @@
 	icon_state = "lattice-3"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Re" = (
 /obj/structure/platform/industrial_alt/corner{
 	dir = 8
@@ -6802,6 +6993,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
+	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/f4,
+/obj/structure/chair/bench/blue/directional/south{
+	pixel_x = 0;
+	pixel_y = 6
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered/bighole/office)
@@ -6869,7 +7065,7 @@
 	icon_state = "lattice-39"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Rx" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6895,6 +7091,15 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 2
 	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "RA" = (
@@ -6968,8 +7173,11 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/neutered,
 /obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/mob/living/simple_animal/hostile/human/frontier/ranged/pounder,
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "RZ" = (
@@ -6998,13 +7206,16 @@
 /obj/effect/turf_decal/stairs{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
+/obj/effect/turf_decal/trimline/transparent/black/filled/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/bighole/ferry)
 "Sf" = (
@@ -7026,7 +7237,7 @@
 	dir = 4
 	},
 /turf/closed/wall/r_wall,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Sm" = (
 /obj/structure/sign/clip,
 /turf/closed/wall/concrete,
@@ -7118,10 +7329,11 @@
 	dir = 1
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "SL" = (
 /obj/structure/dresser,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/bighole/dormitory)
 "SO" = (
@@ -7135,8 +7347,15 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "SQ" = (
-/turf/closed/wall/r_wall,
-/area/space)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/industrial_alt/corner{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "ST" = (
 /obj/structure/platform/industrial_alt{
 	dir = 2
@@ -7145,14 +7364,9 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "SU" = (
-/obj/structure/toilet/greyscale{
-	dir = 4;
-	pixel_x = -7;
-	pixel_y = 3
-	},
-/obj/structure/curtain,
+/obj/structure/dresser,
 /obj/item/ammo_casing/spent/pistol_brass,
-/turf/open/floor/plastic,
+/turf/open/floor/carpet/blue,
 /area/ruin/powered/bighole/dormitory)
 "SX" = (
 /obj/structure/cable{
@@ -7172,6 +7386,15 @@
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4{
 	init_processing = 1;
 	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/stock_parts/micro_laser/high{
+	pixel_x = 5;
+	pixel_y = 14
+	},
+/obj/item/stock_parts/matter_bin{
+	pixel_x = -5;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/bighole/electrical)
@@ -7247,6 +7470,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
+/obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/bighole/dormitory)
@@ -7444,7 +7668,7 @@
 	dir = 6
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Vb" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/corner{
 	dir = 4
@@ -7464,7 +7688,7 @@
 	icon_state = "lattice-38"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Vi" = (
 /obj/effect/turf_decal/road/line/edge{
 	dir = 1
@@ -7476,7 +7700,7 @@
 	dir = 10
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Vl" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
@@ -7505,7 +7729,7 @@
 	dir = 4
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "VC" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -7589,7 +7813,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "VV" = (
@@ -7679,12 +7902,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/bighole/ferry)
 "WB" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/f4,
-/obj/structure/chair/bench/blue/directional/south{
-	pixel_x = 0;
-	pixel_y = 6
-	},
 /obj/effect/spawner/random/trash/cigbutt,
+/obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered/bighole/office)
 "WC" = (
@@ -7733,7 +7952,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "WT" = (
 /obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium/unanchored,
+/obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
 /area/ruin/powered/bighole/canteen)
 "WW" = (
@@ -7825,7 +8044,7 @@
 	dir = 8
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "XH" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7853,6 +8072,8 @@
 /obj/machinery/light/directional/east,
 /obj/effect/gibspawner/human/bodypartless,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/bighole/dormitory)
@@ -8160,7 +8381,7 @@
 	icon_state = "lattice-3"
 	},
 /turf/open/chasm,
-/area/space)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ZF" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -8843,7 +9064,7 @@ SL
 xa
 xN
 vw
-Ye
+SU
 jw
 xN
 BB
@@ -8899,7 +9120,7 @@ Ii
 Ii
 qu
 xN
-jw
+im
 TJ
 NC
 MW
@@ -8960,7 +9181,7 @@ JR
 EY
 Sf
 Sf
-EY
+IB
 xN
 xN
 Oh
@@ -9033,7 +9254,7 @@ EK
 Ip
 aF
 xN
-SU
+Mk
 Mk
 xN
 dV
@@ -9317,7 +9538,7 @@ fo
 fo
 fo
 rQ
-Yc
+nR
 ee
 ee
 VR
@@ -9352,7 +9573,7 @@ zs
 zs
 zs
 zs
-IB
+SQ
 zA
 UR
 UR
@@ -9363,7 +9584,7 @@ YB
 Ca
 Ca
 Ca
-LD
+Ev
 Ca
 ut
 Re
@@ -10083,7 +10304,7 @@ pB
 gD
 xc
 Rm
-Xj
+LD
 we
 Lk
 hS
@@ -10558,9 +10779,9 @@ Gg
 Eo
 gI
 kz
-Qs
+dM
 Qz
-Qs
+zm
 pv
 pv
 dV
@@ -10668,7 +10889,7 @@ Sj
 Rw
 iV
 uB
-SQ
+Ch
 Aa
 BY
 aX
@@ -10685,7 +10906,7 @@ ku
 pv
 pv
 ln
-tk
+Lc
 Qs
 PA
 pv
@@ -10748,7 +10969,7 @@ ku
 pv
 HB
 Qs
-Lc
+tk
 Gl
 Cq
 pv
@@ -11814,7 +12035,7 @@ mJ
 Wx
 DT
 eQ
-eQ
+ql
 og
 ap
 bt
@@ -11925,7 +12146,7 @@ rQ
 TR
 mp
 uR
-sv
+mp
 TR
 gh
 ee
@@ -12114,7 +12335,7 @@ rQ
 TR
 mp
 mp
-sv
+mp
 mL
 eO
 ee
@@ -12188,8 +12409,8 @@ Qh
 yD
 yD
 yD
-rQ
-rQ
+yD
+yD
 yD
 yD
 yD
