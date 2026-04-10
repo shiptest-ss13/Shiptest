@@ -14,7 +14,7 @@
 	},
 /obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "ay" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -498,9 +498,9 @@
 /obj/machinery/newscaster/directional/west{
 	pixel_y = -4
 	},
-/obj/machinery/light/small/directional/south,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "ex" = (
 /obj/structure/table,
 /obj/item/reagent_containers/condiment/saltshaker{
@@ -654,7 +654,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/item/radio/intercom/directional/west,
 /obj/effect/turf_decal/corner_steel_grid/full,
 /obj/machinery/photocopier{
 	pixel_y = 0
@@ -663,7 +662,7 @@
 	pixel_y = -18
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "fJ" = (
 /obj/machinery/porta_turret/ship/pgf{
 	dir = 9
@@ -1065,7 +1064,7 @@
 /area/ship/crew/dorm)
 "jn" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "jo" = (
 /obj/effect/turf_decal/etherbor/left,
 /turf/open/floor/plasteel/mono/dark,
@@ -1290,7 +1289,7 @@
 	layer = 3
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "lS" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
@@ -1353,7 +1352,7 @@
 	layer = 3.03
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "ml" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -1482,7 +1481,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "nQ" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
@@ -1564,7 +1563,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "oE" = (
 /obj/structure/sign/number/random,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -1700,7 +1699,7 @@
 	layer = 3.1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "qn" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
@@ -1827,15 +1826,21 @@
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "sg" = (
-/obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
 /obj/machinery/modular_computer/console/preset/command{
 	icon_state = "computer-right"
 	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = -12;
+	pixel_y = 28
+	},
+/obj/item/radio/intercom/directional/north{
+	pixel_x = 3
+	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "sm" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/communications)
@@ -1894,17 +1899,15 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/light/small/directional/north,
 /obj/item/desk_flag/gezena{
-	pixel_x = -15;
+	pixel_x = -16;
 	pixel_y = 19
 	},
-/obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = 12;
-	pixel_y = 28
+/obj/machinery/light/directional/north{
+	pixel_y = 35
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "tt" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
@@ -1987,7 +1990,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "us" = (
 /obj/structure/chair/office{
 	dir = 8
@@ -2024,7 +2027,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "uK" = (
 /obj/structure/railing{
 	layer = 5
@@ -2635,7 +2638,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "zL" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -2975,7 +2978,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "DG" = (
 /obj/structure/closet/secure_closet/armory1{
 	name = "survey locker";
@@ -3338,7 +3341,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "HW" = (
 /obj/effect/turf_decal/techfloor/orange,
 /obj/effect/turf_decal/techfloor/orange{
@@ -3436,7 +3439,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "IJ" = (
 /obj/structure/window/reinforced/survival_pod/spawner{
 	dir = 8
@@ -3494,7 +3497,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "Js" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/newscaster/directional/east{
@@ -4172,7 +4175,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "Rm" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/door/window/survival_pod,
@@ -4190,7 +4193,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "RH" = (
 /obj/structure/railing{
 	dir = 8
@@ -4377,7 +4380,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "TW" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -4456,7 +4459,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "Ve" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -4561,7 +4564,7 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "Wv" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm)
@@ -4643,7 +4646,7 @@
 	},
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "Xv" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/corner{
 	dir = 2
@@ -4763,7 +4766,7 @@
 	name = "cargobay holofield switch"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "Yz" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -4807,7 +4810,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "YK" = (
 /obj/machinery/light/small/directional/west,
 /obj/machinery/button/door{
@@ -4833,7 +4836,7 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "YS" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/ccommons)
@@ -4999,7 +5002,7 @@
 	icon = 'icons/obj/stairs.dmi';
 	dir = 8
 	},
-/area/ship/bridge)
+/area/ship/bridge/cool)
 
 (1,1,1) = {"
 Ua
