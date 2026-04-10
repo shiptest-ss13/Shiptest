@@ -6,7 +6,7 @@ SUBSYSTEM_DEF(overmap)
 	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME
 
 	/// All the existing star systems, it's gonna be atleast 1 including the main system
-	var/list/tracked_star_systems = list()
+	var/list/datum/overmap_star_system/tracked_star_systems = list()
 
 	//outpost sectors
 	var/list/safe_sectors = list()
@@ -57,6 +57,8 @@ SUBSYSTEM_DEF(overmap)
 	dynamic_encounters = list()
 	events = list()
 
+#ifdef FULL_INIT
+
 	var/primary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone) - /datum/overmap_star_system/safezone/json_example)
 	var/secondary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone) - primary_outpost_sector - /datum/overmap_star_system/safezone/json_example)
 	var/list/wilderness_sector_types = typesof(/datum/overmap_star_system/wilderness)
@@ -72,6 +74,8 @@ SUBSYSTEM_DEF(overmap)
 		fdel(SAFEZONE_OVERRIDE_FILEPATH) // don't want it to affect 2 rounds in a row.
 	*/
 
+	//future project: make overmap "styles" a selection
+
 	//4 systems. Outpost-Wilderness-Outpost-Wilderness
 	tracked_star_systems[1] = spawn_new_star_system(primary_outpost_sector)
 	safe_sectors += tracked_star_systems[1]
@@ -83,6 +87,17 @@ SUBSYSTEM_DEF(overmap)
 	wild_sectors += tracked_star_systems[4]
 
 	looplink_4_systems()
+
+#else
+
+	tracked_star_systems[1] = spawn_new_star_system(/datum/overmap_star_system/safezone)
+	safe_sectors += tracked_star_systems[1]
+	tracked_star_systems[2] = spawn_new_star_system(/datum/overmap_star_system/wilderness)
+	wild_sectors += tracked_star_systems[2]
+
+	tracked_star_systems[1].create_jump_point_link(tracked_star_systems[2],4)
+
+#endif
 
 	SEND_GLOBAL_SIGNAL(COMSIG_OVERMAP_FINISHED_CREATION)
 
