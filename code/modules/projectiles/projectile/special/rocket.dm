@@ -43,7 +43,7 @@
 /obj/projectile/bullet/a84mm/he/weak
 	name ="\improper Light HE missile"
 	desc = "Boom."
-	icon_state = "missile"
+	icon_state = "missile-light"
 	dismemberment = 0
 	damage = 20
 	heavy_damage = 40

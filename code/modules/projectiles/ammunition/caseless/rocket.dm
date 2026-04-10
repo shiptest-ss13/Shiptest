@@ -15,5 +15,6 @@
 
 /obj/item/ammo_casing/caseless/rocket/light
 	name = "\improper  PM-9LE"
+	icon_state = "srm-8-light"
 	desc = "An 84mm Light Explosive rocket. For when you don't want to cause *too* much collateral damage."
 	projectile_type = /obj/projectile/bullet/a84mm/he/weak
