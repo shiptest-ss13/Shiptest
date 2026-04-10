@@ -3,12 +3,9 @@
 	icon = 'icons/mob/species/ipc/bodyparts.dmi'
 	icon_state = "synth_head"
 	limb_id = "synth"
-	var/custom_eye_sprite
-	/// if true, we set the eyes to #FFFFFF - useful for ipcs where the light color probably shouldnt be changable
-	var/force_white_eye_color = FALSE
 	dynamic_rename = FALSE
 	draw_eyes = FALSE
-	var/has_screen = FALSE
+	draw_sclera = FALSE
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
@@ -21,46 +18,6 @@
 	light_burn_msg = "burned"
 	medium_burn_msg = "scorched"
 	heavy_burn_msg = "seared"
-
-//awful workaround for the lack of differing eye sprite handling
-/obj/item/bodypart/head/ipc/attach_limb(mob/living/carbon/our_carbon, special, is_creating = FALSE)
-	var/mob/living/carbon/human/limb_owner
-	if(our_carbon)
-		limb_owner = our_carbon
-	else
-		limb_owner = owner
-
-	var/obj/item/organ/eyes/eyes_to_edit = limb_owner.getorganslot(ORGAN_SLOT_EYES)
-
-	if(!limb_owner || !eyes_to_edit)
-		return ..()
-	if(custom_eye_sprite)
-		eyes_to_edit.eye_icon_state = custom_eye_sprite
-
-	if(force_white_eye_color)
-		limb_owner.eye_color = COLOR_WHITE
-	var/datum/species/ipc/ipc_species_datum = limb_owner.dna.species
-	var/datum/species/species_datum = limb_owner.dna.species
-	if(!ipc_species_datum)
-		ipc_species_datum.update_screen_action()
-	else if(species_datum)
-		LAZYREMOVE(species_datum.species_traits, SCLERA)
-	return ..()
-
-//ditto
-/obj/item/bodypart/head/ipc/drop_limb(special)
-	var/mob/living/carbon/human/limb_owner = owner
-
-	var/obj/item/organ/eyes/eyes_to_edit = limb_owner.getorganslot(ORGAN_SLOT_EYES)
-
-	if(!limb_owner || !eyes_to_edit)
-		return ..()
-	if(custom_eye_sprite)
-		eyes_to_edit.eye_icon_state = eyes_to_edit::eye_icon_state
-
-	if(force_white_eye_color)
-		limb_owner.eye_color = eyes_to_edit.eye_color
-	return ..()
 
 /obj/item/bodypart/chest/ipc
 	static_icon = 'icons/mob/species/ipc/bodyparts.dmi'
@@ -159,7 +116,6 @@
 	name = "\improper Pawsitrons United N1 head"
 	icon_state = "pawsitrons_head"
 	limb_id = "pawsitrons"
-	has_screen = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 /obj/item/bodypart/chest/ipc/pawsitrons
@@ -360,7 +316,7 @@
 	limb_id = "saipc"
 	draw_eyes = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
-	custom_eye_sprite = "eyes_mono"
+	eye_state_override = "eyes_mono"
 
 /obj/item/bodypart/chest/ipc/saipc
 	name = "\improper Scarborgh Arms IPC-73 chest"
@@ -391,7 +347,6 @@
 	name = "\improper Scarborgh Arms IPC-73 Type-2 boxhead"
 	icon_state = "saipc_alt_head"
 	limb_id = "saipc_alt"
-	has_screen = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 // Scarborgh Arms IPC-80 MK.2
@@ -402,7 +357,7 @@
 	limb_id = "saipc2"
 	draw_eyes = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
-	custom_eye_sprite = "eyes_mono"
+	eye_state_override = "eyes_mono"
 
 /obj/item/bodypart/chest/ipc/saipc2
 	name = "\improper Scarborgh Arms IPC-80 MK.2 chest"
@@ -446,7 +401,7 @@
 	icon_state = "lanchesterheavy_head"
 	limb_id = "lanchesterheavy"
 	draw_eyes = TRUE
-	custom_eye_sprite = "eyes_circle"
+	eye_state_override = "eyes_circle"
 
 /obj/item/bodypart/chest/ipc/lanchesterheavy
 	name = "\improper Lanchester Mechanics 'HEAVY DUTY FRAME' chest"
@@ -479,7 +434,6 @@
 	name = "\improper Lanchester Mechanics 'HEAVY DUTY FRAME' head"
 	icon_state = "lanchesterheavy_alt_head"
 	limb_id = "lanchesterheavy_alt"
-	has_screen = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 // HARDLINE 'Longshore'
@@ -488,7 +442,6 @@
 	name = "\improper HARDLINE 'Longshore' head"
 	icon_state = "lanchesterworker_head"
 	limb_id = "lanchesterworker"
-	has_screen = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 /obj/item/bodypart/chest/ipc/lanchesterworker
@@ -524,7 +477,6 @@
 	name = "\improper Custom Unplated head"
 	icon_state = "lanchesterunplated_head"
 	limb_id = "lanchesterunplated"
-	has_screen = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 /obj/item/bodypart/chest/ipc/lanchesterunplated
@@ -562,7 +514,7 @@
 	limb_id = "pgfmk3_suhols"
 	draw_eyes = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
-	custom_eye_sprite = "eyes_elzu"
+	eye_state_override = "eyes_elzu"
 
 /obj/item/bodypart/chest/ipc/pgfmk3_suhols
 	name = "\improper PGF Mechanics MK.III Type 'Suhols-Ro' chest"
@@ -573,7 +525,6 @@
 	name = "\improper PGF Mechanics MK.III Type 'Suhols-Ro' aftermarket boxhead"
 	icon_state = "pgfmk3_suhols_alt_head"
 	limb_id = "pgfmk3_suhols_alt"
-	has_screen = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 // PGF Mechanics MK.III Type 'Wusha'
@@ -594,7 +545,6 @@
 	name = "\improper PGF Mechanics MK.III Type 'Wusha' aftermarket boxhead"
 	icon_state = "pgfmk3_wusha_alt_head"
 	limb_id = "pgfmk3_wusha_alt"
-	has_screen = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 // PGF Mechanics MK.III generic
@@ -628,7 +578,6 @@
 	uses_mutcolor = TRUE
 	should_draw_greyscale = TRUE
 	overlay_icon_state = TRUE
-	has_screen = FALSE
 	draw_eyes = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
 
@@ -689,7 +638,7 @@
 	icon_state = "bishop_head"
 	limb_id = "bishop"
 	draw_eyes = TRUE
-	custom_eye_sprite = "eyes_circle"
+	eye_state_override = "eyes_circle"
 
 /obj/item/bodypart/chest/ipc/bishop
 	name = "\improper Besoro Bishop chest"
@@ -720,7 +669,6 @@
 	name = "\improper Besoro Bishop Type-B head"
 	icon_state = "bishop_alt_head"
 	limb_id = "bishop_alt"
-	has_screen = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 // INTEQ SPRINTER
@@ -729,11 +677,10 @@
 	name = "\improper Inteq Mothership 'Sprinter' Type-1 head"
 	icon_state = "inteqsprinter_head"
 	limb_id = "inteqsprinter"
-	has_screen = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	custom_eye_sprite = "eyes_inteqsprinter"
+	eye_state_override = "eyes_inteqsprinter"
 	draw_eyes = TRUE
-	force_white_eye_color = TRUE
+	greyscale_eyes = FALSE
 
 /obj/item/bodypart/chest/ipc/sprinter
 	name = "\improper Inteq Mothership 'Sprinter' chest"
@@ -766,9 +713,9 @@
 	name = "\improper Inteq Mothership 'Sprinter' Type-2 head"
 	icon_state = "inteqsprinter2_head"
 	limb_id = "inteqsprinter2"
-	custom_eye_sprite = "eyes_inteqsprinter2"
+	eye_state_override = "eyes_inteqsprinter2"
 	draw_eyes = TRUE
-	force_white_eye_color = TRUE
+	greyscale_eyes = FALSE
 
 // MAXIM SEEKER
 
@@ -776,9 +723,10 @@
 	name = "\improper Maxim Dynamics 'Seeker' head"
 	icon_state = "seekeripc_head"
 	limb_id = "seekeripc"
-	custom_eye_sprite = "eyes_seekeripc"
+	eye_state_override = "eyes_seekeripc"
 	draw_eyes = TRUE
-	force_white_eye_color = TRUE
+	greyscale_eyes = FALSE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/chest/ipc/seeker
 	name = "\improper Maxim Dynamics 'Seeker' chest"
@@ -811,7 +759,6 @@
 	name = "\improper Absolution-Lux 'Solferino' head"
 	icon_state = "ablux_head"
 	limb_id = "ablux"
-	has_screen = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/chest/ipc/solferino
@@ -846,7 +793,6 @@
 	icon_state = "humanipc_head"
 	limb_id = "humanipc"
 	draw_eyes = TRUE
-	has_screen = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/chest/ipc/humaniform
@@ -881,8 +827,8 @@
 	icon_state = "cyber_head"
 	limb_id = "cyber"
 	draw_eyes = TRUE
-	custom_eye_sprite = "eyes_cybersun_ghost"
-	force_white_eye_color = TRUE
+	eye_state_override = "eyes_cybersun_ghost"
+	greyscale_eyes = FALSE
 
 /obj/item/bodypart/chest/ipc/ghost
 	name = "\improper Cybersun Biodynamics S Series 'Ghost' chest"
@@ -916,7 +862,6 @@
 	limb_id = "custom_3d_box"
 	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
-	has_screen = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 /obj/item/bodypart/head/ipc/custom_monoeye
@@ -927,7 +872,7 @@
 	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
-	custom_eye_sprite = "eyes_mono"
+	eye_state_override = "eyes_mono"
 
 /obj/item/bodypart/head/ipc/customatua_monoc
 	name = "\improper Custom 3D Printed Atua head"
@@ -937,7 +882,7 @@
 	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
-	custom_eye_sprite = "eyes_mono"
+	eye_state_override = "eyes_mono"
 
 /obj/item/bodypart/leg/left/ipc/customatua_monoc
 	name = "\improper Custom 3D Printed Atua left leg"
@@ -992,7 +937,7 @@
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
 	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
-	custom_eye_sprite = "eyes_elzu"
+	eye_state_override = "eyes_elzu"
 
 /obj/item/bodypart/chest/ipc/custompgf3_suhols
 	name = "\improper Custom 3D Printed MK.III Type 'Suhols-Ro' chest"
@@ -1109,7 +1054,7 @@
 	icon_state = "custombishop_head"
 	limb_id = "custombishop"
 	draw_eyes = TRUE
-	custom_eye_sprite = "eyes_circle"
+	eye_state_override = "eyes_circle"
 	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
 
@@ -1204,7 +1149,7 @@
 	icon_state = "customlanchesterheavy_head"
 	limb_id = "customlanchesterheavy"
 	draw_eyes = TRUE
-	custom_eye_sprite = "eyes_circle"
+	eye_state_override = "eyes_circle"
 	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
 
@@ -1251,7 +1196,6 @@
 	name = "\improper Custom 3D Printed Longshore head"
 	icon_state = "customlanchesterworker_head"
 	limb_id = "customlanchesterworker"
-	has_screen = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
@@ -1299,7 +1243,7 @@
 	name = "\improper Custom 3D Printed Seeeker head"
 	icon_state = "seekeripc_head"
 	limb_id = "seekeripc"
-	custom_eye_sprite = "eyes_seekeripc_greyscale"
+	eye_state_override = "eyes_seekeripc_greyscale"
 	draw_eyes = TRUE
 	should_draw_greyscale = TRUE
 
@@ -1341,7 +1285,6 @@
 	limb_id = "pgfipc-p"
 	uses_mutcolor = TRUE
 	should_draw_greyscale = TRUE
-	has_screen = FALSE
 	draw_eyes = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
 

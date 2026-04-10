@@ -466,6 +466,7 @@
 		"Black Flight Jacket" = "flightblack",
 	)
 	unique_reskin_changes_inhand = TRUE
+	togglename = "zipper"
 
 /obj/item/clothing/suit/toggle/flight/Initialize()
 	. = ..()

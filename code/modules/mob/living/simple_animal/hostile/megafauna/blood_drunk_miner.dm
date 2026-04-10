@@ -153,7 +153,7 @@ Difficulty: Medium
 	if(QDELETED(target) || transform_stop_attack)
 		return
 	face_atom(target)
-	if(isliving(target))
+	if(isliving(target) && can_gib)
 		var/mob/living/L = target
 		if(L.stat == DEAD)
 			visible_message(span_danger("[src] butchers [L]!"),
