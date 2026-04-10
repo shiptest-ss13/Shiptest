@@ -5145,7 +5145,7 @@
 /area/ship/hangar)
 "Gf" = (
 /obj/machinery/pipedispenser,
-/obj/structure/sign/poster/contraband/inteq_nt{
+/obj/structure/sign/poster/contraband/inteq_warra{
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -6438,6 +6438,10 @@
 	pixel_y = -5
 	},
 /obj/item/radio/headset/inteq/alt,
+/obj/item/clothing/suit/toggle/flight/inteq{
+	pixel_x = -10;
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/dormtwo)
 "MQ" = (
@@ -8686,23 +8690,19 @@
 	},
 /obj/item/bodycamera{
 	pixel_y = 6;
-	pixel_x = -9
+	pixel_x = -6
 	},
 /obj/item/bodycamera{
 	pixel_y = 2;
-	pixel_x = -9
+	pixel_x = -6
 	},
 /obj/item/bodycamera{
 	pixel_y = 6;
-	pixel_x = 1
+	pixel_x = 7
 	},
 /obj/item/bodycamera{
 	pixel_y = 2;
-	pixel_x = 1
-	},
-/obj/item/multitool{
-	pixel_x = 10;
-	pixel_y = 5
+	pixel_x = 7
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,

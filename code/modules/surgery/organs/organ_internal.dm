@@ -242,7 +242,7 @@
 
 /mob/living/carbon/human/regenerate_organs()
 	SEND_SIGNAL(src, COMSIG_CARBON_PRE_REGENERATE_ORGANS)
-	dna.species.regenerate_organs(src, robotic = fbp)
+	dna.species.regenerate_organs(src, robotic = HAS_TRAIT(src, TRAIT_USE_PROSTHETIC))
 	SEND_SIGNAL(src, COMSIG_CARBON_POST_REGENERATE_ORGANS)
 
 /** get_availability

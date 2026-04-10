@@ -60,6 +60,8 @@
 
 /obj/item/reagent_containers/glass/bottle/vial/tiny
 	name = "small hypovial"
+	icon_state = "hypovial-small"
+	volume = 30
 	//Shouldn't be possible to get this without adminbuse
 
 /obj/item/reagent_containers/glass/bottle/vial/small
@@ -121,10 +123,33 @@
 	unique_reskin = null
 
 
+/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded
+
+/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/silfrine
+	name = "small red hypovial (silfrine)"
+	icon_state = "hypovial-b-small"
+	comes_with = list(/datum/reagent/medicine/silfrine = 30)
+
+/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/ysiltane
+	name = "small orange hypovial (ysiltane)"
+	icon_state = "hypovial-k-small"
+	comes_with = list(/datum/reagent/medicine/ysiltane = 30)
+
+/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/gjalrazine
+	name = "small green hypovial (gjalrazine)"
+	icon_state = "hypovial-a-small"
+	comes_with = list(/datum/reagent/medicine/gjalrazine = 30)
+
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/indomide
 	name = "red hypovial (indomide)"
 	icon_state = "hypovial-b"
 	comes_with = list(/datum/reagent/medicine/indomide = 60)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/hadrakine
+	name = "red hypovial (hadrakine)"
+	desc = "Set hypospray to 'spray' before use!"
+	icon_state = "hypovial-b"
+	comes_with = list(/datum/reagent/medicine/hadrakine = 60)
 
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/pancrazine
 	name = "green hypovial (pancrazine)"
@@ -136,10 +161,20 @@
 	icon_state = "hypovial-k"
 	comes_with = list(/datum/reagent/medicine/alvitane = 60)
 
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/quardexane
+	name = "orange hypovial (quardexane)"
+	icon_state = "hypovial-k"
+	comes_with = list(/datum/reagent/medicine/quardexane = 60)
+
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/dexalin
 	name = "blue hypovial (dexalin)"
 	icon_state = "hypovial-d"
 	comes_with = list(/datum/reagent/medicine/dexalin = 60)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/salbutamol
+	name = "blue hypovial (salbutamol)"
+	icon_state = "hypovial-d"
+	comes_with = list(/datum/reagent/medicine/salbutamol = 60)
 
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/cureall
 	name = "hypovial (cureall)"
@@ -228,6 +263,11 @@
 	name = "large orange hypovial (synthflesh)"
 	icon_state = "hypoviallarge-k"
 	comes_with = list(/datum/reagent/medicine/synthflesh = 120)
+
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/morphine
+	name = "large hypovial (morphine)"
+	icon_state = "hypoviallarge-t"
+	comes_with = list(/datum/reagent/medicine/morphine = 120)
 
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/combat
 	name = "combat hypovial"

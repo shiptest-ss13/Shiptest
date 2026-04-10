@@ -23,6 +23,13 @@
 					/obj/item/clothing/glasses/meson/engine)
 	crate_name = "engineering gear crate"
 
+/datum/supply_pack/tools/command_radio
+	name = "Command Radio Crate"
+	desc = "Contains a specialty radio that can transmit radio signals at an enhanced volume."
+	contains = list(/obj/item/radio/command)
+	cost = 750
+	crate_name = "radio crate"
+
 /datum/supply_pack/tools/bodycamera
 	name = "Body Camera Crate"
 	desc = "Contains one portable camera, designed to help keep track of a working group at all times."
@@ -66,7 +73,7 @@
 		/obj/item/storage/bag/ore,
 		/obj/item/mining_scanner)
 	crate_name = "basic mining crate"
-	faction = /datum/faction/nt/ns_logi
+	faction = /datum/faction/warra/ns_logi
 
 /datum/supply_pack/tools/entrenching
 	name = "Entrenching Tool Crate"
@@ -114,12 +121,12 @@
 	cost = 750
 	contains = list(/obj/item/inducer)
 	crate_name = "inducer crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 
 /datum/supply_pack/tools/jetpack
 	name = "Jetpack Crate"
 	desc = "For when you need to go fast in space."
-	cost = 750
+	cost = 500
 	contains = list(/obj/item/tank/jetpack/carbondioxide)
 	crate_name = "jetpack crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
@@ -127,13 +134,13 @@
 /datum/supply_pack/tools/jetpack/harness
 	name = "Jetpack Harness Crate"
 	desc = "A compact jetpack harness for those who don't wish to be weighed down by larger traditional jetpacks."
-	cost = 1500
+	cost = 750
 	contains = list(/obj/item/tank/jetpack/oxygen/harness)
 
 /datum/supply_pack/tools/jetpack/suit
 	name = "Hardsuit Jetpack Upgrade Crate"
 	desc = "A standardized jetpack attachment designed for direct integration with hardsuits. For when every gram matters."
-	cost = 2000
+	cost = 1250
 	contains = list(/obj/item/tank/jetpack/suit)
 
 /datum/supply_pack/tools/anglegrinder

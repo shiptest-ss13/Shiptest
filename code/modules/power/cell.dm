@@ -200,7 +200,7 @@
 	charge = 0
 
 /obj/item/stock_parts/cell/crap
-	name = "\improper Nanotrasen brand rechargeable AA battery"
+	name = "\improper Makosso-Warra Electronics rechargeable AA battery"
 	desc = "You can't top the plasma top." //TOTALLY TRADEMARK INFRINGEMENT
 	maxcharge = 500
 	custom_materials = list(/datum/material/glass=40)
@@ -495,9 +495,9 @@
 
 /obj/item/stock_parts/cell/gun/sharplite
 	name = "Sharplite power cell"
-	desc = "A proprietary power cell primarily used by Sharplite weaponry. Nanotrasen's large market share has forced some weapon developers to include adapters for these cells"
+	desc = "A proprietary power cell primarily used by Sharplite weaponry. Makosso-Warra's large market share has forced some weapon developers to include adapters for these cells"
 	icon = 'icons/obj/power.dmi'
-	icon_state = "nt-cell"
+	icon_state = "warra-cell"
 
 /obj/item/stock_parts/cell/gun/sharplite/empty
 	start_empty = TRUE
@@ -505,7 +505,7 @@
 /obj/item/stock_parts/cell/gun/sharplite/plus
 	name = "Sharplite Plus power cell"
 	desc = "An high-capacity weapon cell used exclusively by Sharplite weaponry. They are a great improvement over the stock cell, and are frequently sought after by collectors, soldiers, and operators of heavy lasers alike."
-	icon_state = "nt_plus-cell"
+	icon_state = "warra_plus-cell"
 
 	maxcharge = 20000
 	custom_materials = list(/datum/material/glass=300)
@@ -517,7 +517,7 @@
 /obj/item/stock_parts/cell/gun/sharplite/mini
 	name = "Sharplite Compact power cell"
 	desc = "A compact weapon cell used exclusively by Sharplite weaponry. It holds less charge and is intended for usage in energy handguns."
-	icon_state = "nt_mini-cell"
+	icon_state = "warra_mini-cell"
 	maxcharge = 7000
 	custom_materials = list(/datum/material/glass=300)
 	chargerate = 1000

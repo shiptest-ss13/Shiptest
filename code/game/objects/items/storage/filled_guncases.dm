@@ -167,6 +167,10 @@
 	gun_type = /obj/item/gun/energy/kalix/nock
 	mag_type = /obj/item/stock_parts/cell/gun/kalix
 
+/obj/item/storage/guncase/energy/sgr9
+	gun_type = /obj/item/gun/energy/kalix/pgf/pdw
+	mag_type = /obj/item/stock_parts/cell/gun/pgf
+
 /obj/item/storage/guncase/energy/bg16
 	gun_type = /obj/item/gun/energy/kalix/pgf
 	mag_type = /obj/item/stock_parts/cell/gun/pgf
@@ -297,7 +301,7 @@
 	gun_type = /obj/item/gun/energy/sharplite/x01
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
-/* Old NT */
+/* Old MW */
 
 /obj/item/storage/guncase/wt550
 	gun_type = /obj/item/gun/ballistic/automatic/smg/resolution

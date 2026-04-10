@@ -255,6 +255,33 @@
 	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
 	resistance_flags = null
 
+/obj/item/clothing/head/helmet/space/hardsuit/mining/clip
+	name = "CLIP industrial hardsuit helmet"
+	desc = "A bulky, slit-helmet design made with impact protection in mind."
+	icon = 'icons/obj/clothing/faction/clip/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	icon_state = "hardsuit0-clipindus"
+	item_state = "hardsuit0-clipindus"
+	hardsuit_type = "clipindus"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 80, "fire" = 80, "acid" = 100, "wound" = 20)
+	supports_variations = SNOUTED_VARIATION
+
+/obj/item/clothing/suit/space/hardsuit/mining/clip
+	name = "CLIP industrial hardsuit"
+	desc = "A prolific hardsuit seen in every corner of the league, the CLIP industrial hardsuit is rated for factory, prospecting, and construction work. A frequent life saver in mining ventures and repair yards, the plating on this suit is durable, yet not over-encumbering."
+	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
+	icon_state = "hardsuit0-clipindus"
+	item_state = "hardsuit0-clipindus"
+	hardsuit_type = "clipindus"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/clip
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 80, "fire" = 80, "acid" = 100, "wound" = 20)
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	slowdown = 0.5
+
 /obj/item/clothing/suit/space/hardsuit/clip_patroller
 	name = "\improper CM-410 'Patroller' EVA Hardsuit"
 	desc = "An older-issue CLIP hardsuit, adapted from an even older design. Widely utilized in reconnaissance duty and skirmishing due to its lightweight construction."

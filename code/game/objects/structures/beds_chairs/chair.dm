@@ -354,7 +354,7 @@
 	name = "handrail"
 	icon = 'icons/obj/structures/handrail.dmi'
 	icon_state = "handrail"
-	desc = "A safety railing with buckles to secure yourself to when floor isn't stable enough."
+	desc = "A safety railing with buckles to secure yourself to when the floor isn't stable enough."
 	item_chair = null
 	buildstackamount = 4
 	buildstacktype = /obj/item/stack/rods

@@ -396,12 +396,19 @@
 	faction = /datum/faction/clip
 	prefix = "CLSV"
 
-/datum/map_template/shuttle/subshuttles/ancon
-	file_name = "nanotrasen_ancon"
-	name = "Nanotrasen Ancon-class Command Ship"
+/datum/map_template/shuttle/subshuttles/glaucus
+	file_name = "minutemen_mira"
+	name = "Mira-class Pursuit Shuttle"
 	token_icon_state = "ship_tiny_generic"
-	faction = /datum/faction/nt
-	prefix = "NTSV"
+	faction = /datum/faction/clip
+	prefix = "CMSV"
+
+/datum/map_template/shuttle/subshuttles/ancon
+	file_name = "warra_ancon"
+	name = "Makosso-Warra Ancon-class Command Ship"
+	token_icon_state = "ship_tiny_generic"
+	faction = /datum/faction/warra
+	prefix = "MWSV"
 	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
@@ -450,11 +457,11 @@
 	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/skink
-	file_name = "nanotrasen_skink"
+	file_name = "warra_skink"
 	name = "Skink-class Cargo Runner"
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 	token_icon_state = "ship_tiny_generic"
-	prefix = "NTSV"
+	prefix = "MWSV"
 
 /datum/map_template/shuttle/subshuttles/bambulance
 	file_name = "cybersun_bambulance"
