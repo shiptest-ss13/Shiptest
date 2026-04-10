@@ -120,10 +120,10 @@
 	var/devastation_range = -1 //round(charge/11000)
 	var/heavy_impact_range = round(sqrt(charge)/60)
 	var/heavy_damage = min(100, round(charge)/2)
-	var/heavy_item_damage = min(20, heavy_damage - 10)
+	var/heavy_item_damage = max(20, heavy_damage - 10)
 	var/light_impact_range = round(sqrt(charge)/30)
 	var/light_damage = min(100, round(charge)/4)
-	var/light_item_damage = min(10, light_damage - 20)
+	var/light_item_damage = max(10, light_damage - 20)
 	var/flash_range = light_impact_range
 	if (light_impact_range==0)
 		rigged = FALSE
