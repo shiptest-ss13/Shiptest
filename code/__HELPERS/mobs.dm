@@ -204,6 +204,7 @@ GLOBAL_LIST_INIT(skin_tones, sortList(list(
 	"porcelain",
 	"peach",
 	"coral",
+	"cotton",
 	"bisque",
 	"rosewood",
 	"sepia",

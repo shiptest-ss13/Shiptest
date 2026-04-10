@@ -246,6 +246,8 @@
 	switch(skin_tone)
 		if("porcelain")
 			. = "ffe0d1"
+		if("cotton")
+			. = "e0dbdc"
 		if("peach")
 			. = "fcccb3"
 		if("coral")
