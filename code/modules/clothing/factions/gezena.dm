@@ -463,7 +463,7 @@
 
 /obj/item/clothing/mask/breath/pgfmask/navy
 	name = "gezenan navy respirator"
-	desc = "A rubberized hard plastic mask made to the specifications of the L-98 respirator, allowing the easy attachment of external air sources. It's surprisingly comfortable."
+	desc = "A rubberized, hard plastic mask made to the specifications of the L-98 respirator, allowing the easy attachment of external air sources. It's surprisingly comfortable."
 	icon_state = "navymask"
 	item_state = "navymask"
 	icon = 'icons/obj/clothing/faction/gezena/mask.dmi'
