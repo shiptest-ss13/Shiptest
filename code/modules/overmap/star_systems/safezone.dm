@@ -1,15 +1,6 @@
 /datum/overmap_star_system/safezone
-	name = "Lymantria Teagarden Memorial sector"
+	name = "Default Sector"
 	has_outpost = TRUE
-
-	primary_color = "#ffffdf"
-	secondary_color = "#828282"
-
-	hazard_primary_color = "#a2b210"
-	hazard_secondary_color = "#5757c5"
-
-	primary_structure_color = "#fbaa51"
-	secondary_structure_color = "#fb1010"
 
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap"
