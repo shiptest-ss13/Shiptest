@@ -172,7 +172,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "aW" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
@@ -865,7 +865,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "ew" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5;
@@ -1278,7 +1278,7 @@
 	launch_status = 0
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "gd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2509,7 +2509,7 @@
 /area/ship/crew/dorm)
 "lb" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "ld" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
 /obj/structure/sink/kitchen{
@@ -2737,7 +2737,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "mv" = (
 /obj/effect/turf_decal/trimline/opaque/green/filled/line,
 /obj/effect/turf_decal/corner_steel_grid{
@@ -3604,7 +3604,7 @@
 	dir = 2
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "rw" = (
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/commad)
@@ -4275,7 +4275,7 @@
 	id = "c-sun_shuttle_blast"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "vq" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/double/brown,
@@ -4851,7 +4851,7 @@
 	id = "c-sun_inner_blast"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "yg" = (
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 10
@@ -5701,7 +5701,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "Ci" = (
 /obj/machinery/shower{
 	dir = 1
@@ -6065,6 +6065,10 @@
 	name = "marine corpsman's locker";
 	req_one_access = list(5, 3)
 	},
+/obj/item/healthanalyzer{
+	pixel_x = 1;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "DX" = (
@@ -6310,7 +6314,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "Fu" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -6360,7 +6364,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "FK" = (
 /obj/machinery/power/shuttle/engine/fire,
 /obj/structure/sign/warning{
@@ -6516,6 +6520,9 @@
 /obj/effect/turf_decal/siding/white/corner,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/canteen)
+"GD" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/office/cic)
 "GI" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -6910,7 +6917,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "IK" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 10
@@ -7178,7 +7185,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "JH" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -7361,7 +7368,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "Ki" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
@@ -7477,7 +7484,7 @@
 	id = "c-sun_shuttle_blast"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "Kl" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/warning/cee,
@@ -7946,7 +7953,7 @@
 	dir = 2
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "Mi" = (
 /obj/structure/chair/bench/blue/directional/west,
 /obj/effect/turf_decal/corner/opaque/navyblue/diagonal,
@@ -8236,7 +8243,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "Ny" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
@@ -8292,7 +8299,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "NJ" = (
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 8
@@ -8571,7 +8578,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "Pk" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -8589,7 +8596,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "Pm" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -9551,7 +9558,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "Tg" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/corner{
 	dir = 4
@@ -9571,7 +9578,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "Ti" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
@@ -10268,7 +10275,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "VV" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
@@ -10432,7 +10439,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "WB" = (
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 4
@@ -10706,7 +10713,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/office/cic)
+/area/ship/storage/eva)
 "XT" = (
 /obj/structure/platform/military,
 /obj/structure/catwalk,
@@ -12265,10 +12272,10 @@ mW
 qp
 vk
 iP
-lb
+GD
 KR
-lb
-lb
+GD
+GD
 rk
 ye
 lb
@@ -12302,7 +12309,7 @@ iP
 Ow
 FH
 TP
-lb
+GD
 Fm
 XO
 OY
@@ -12370,7 +12377,7 @@ pX
 Mr
 Ju
 CS
-lb
+GD
 JG
 II
 lb
@@ -12401,10 +12408,10 @@ HR
 wF
 nA
 pX
-lb
+GD
 Fu
 Fu
-lb
+GD
 Kk
 vl
 lb
