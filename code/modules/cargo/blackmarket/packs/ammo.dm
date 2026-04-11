@@ -379,3 +379,13 @@
 	cost_max = 500
 	stock_min = 4
 	stock_max = 8
+
+/datum/blackmarket_item/ammo/a12gdragonsbreath
+	name = "Dragonsbreath Shells"
+	desc = "32 shells to rain a firestorm upon your enemies. Just make sure to not to catch yourself on fire!"
+	item = /obj/item/storage/box/ammo/a12g_dragonsbreath
+	cost_min = 300
+	cost_max = 700
+	stock_min = 3
+	stock_max = 6
+	availability_prob = 80

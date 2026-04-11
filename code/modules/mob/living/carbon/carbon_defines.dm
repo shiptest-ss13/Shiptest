@@ -53,7 +53,7 @@
 	var/tinttotal = 0	/// Total level of visualy impairing items
 
 	var/list/icon_render_keys = list()
-	var/list/bodyparts = list(
+	var/list/obj/item/bodypart/bodyparts = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest,
 		BODY_ZONE_HEAD = /obj/item/bodypart/head,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm,
