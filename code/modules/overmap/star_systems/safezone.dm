@@ -79,9 +79,12 @@
 		"Incoming vessel follow flight plan as designated.",
 		"Good mark on bluespace wake. Welcome to High-Pier",
 		"Tide's out. Come on in.",
+		"All vessels refrain from docking at the Supergiant."
 	)
 
-
+	json = '_maps/sectors/chana_starsystem.json'
+	generator_type = OVERMAP_GENERATOR_JSON
+	has_outpost = FALSE
 
 /datum/overmap_star_system/safezone/trifuge
 	name = "Minya"
