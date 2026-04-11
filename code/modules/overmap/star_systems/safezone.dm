@@ -1,9 +1,19 @@
 /datum/overmap_star_system/safezone
 	name = "Default Sector"
 	has_outpost = TRUE
+	faction = /datum/faction/independent
 
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap"
+
+	primary_color = "#5e5e5e"
+	secondary_color = "#242424"
+
+	hazard_primary_color = "#b56060"
+	hazard_secondary_color = "#824242"
+
+	primary_structure_color = "#ffffff"
+	secondary_structure_color = "#ffffff"
 
 	max_overmap_dynamic_events = 0
 
@@ -19,8 +29,10 @@
 		/datum/overmap/event/meteor/dust = 50,
 	)
 
+	entry_quotes = list("This is a fallback quote")
+
 /datum/overmap_star_system/safezone/agni
-	name = "Gorlex Controlled - Value of Public Works"
+	name = "Value of Public Works"
 	starname = "Ecbatana"
 	startype = /datum/overmap/star/dwarf
 	default_outpost_type = /datum/overmap/outpost/ngr_rock
@@ -46,10 +58,11 @@
 
 
 /datum/overmap_star_system/safezone/arrowsong
-	name = "CLIP Controlled - High-Pier"
+	name = "High-Pier"
 	starname = "Chana"
 	startype = /datum/overmap/star/dwarf/orange
 	default_outpost_type = /datum/overmap/outpost/clip_ocean
+	faction = /datum/faction/clip
 
 	primary_color = "#6fa8de"
 	secondary_color = "#96b6d4"
@@ -71,10 +84,11 @@
 
 
 /datum/overmap_star_system/safezone/trifuge
-	name = "Independent - Minya"
+	name = "Minya"
 	starname = "Aubaine"
 	startype = /datum/overmap/star/medium
 	default_outpost_type = /datum/overmap/outpost/indie_space
+	faction = /datum/faction/independent
 
 	primary_color = "#5e5e5e"
 	secondary_color = "#242424"
@@ -100,10 +114,11 @@
 	has_outpost = FALSE
 
 /datum/overmap_star_system/safezone/yebiri
-	name = "Makosso-Warra Controlled - Persei-277"
+	name = "Persei-277"
 	starname = "Persei-277"
 	startype = /datum/overmap/star/medium
 	default_outpost_type = /datum/overmap/outpost/warra_ice
+	faction = /datum/faction/warra
 
 	primary_color = "#7e8cd9"
 	secondary_color = "#33324a"
@@ -127,7 +142,7 @@
 
 
 /datum/overmap_star_system/safezone/thousand_eyes
-	name = "Cybersun - Kapche-Legnica"
+	name = "Kapche-Legnica"
 	starname = "Kapche-Legnica"
 	startype = /datum/overmap/star/binary
 	default_outpost_type = /datum/overmap/outpost/cybersun_gas_giant
@@ -152,4 +167,8 @@
 	json = '_maps/sectors/kapche_starsystem.json'
 	generator_type = OVERMAP_GENERATOR_JSON
 	has_outpost = FALSE
+
+	fun_facts = list(
+		"Do not enter the nebula, follow the buoys."
+	)
 

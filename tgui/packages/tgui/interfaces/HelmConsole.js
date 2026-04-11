@@ -65,6 +65,7 @@ const SharedContent = (_props, context) => {
     jump_points,
     sector,
     jumpable,
+    facts,
   } = data;
   return (
     <>
@@ -163,6 +164,10 @@ const SharedContent = (_props, context) => {
           <LabeledList.Item labelWrap textAlign="center" label="Sector">{sector}</LabeledList.Item>
 
         </LabeledList>
+        {facts &&
+            facts.map((fact) => (
+              <Box key={fact} textAlign="center">{fact}</Box>
+            ))}
         <Box textAlign="center">{jumpable ? "Sector can be long-jumped to" : ""}</Box>
         <Divider />
         <Table>

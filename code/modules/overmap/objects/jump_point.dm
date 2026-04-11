@@ -25,7 +25,7 @@
 /datum/overmap/jump_point/Initialize(position, datum/overmap_star_system/system_spawned_in, datum/overmap_star_system/target_system, _other_point, ...)
 	. = ..()
 	target_overmap = target_system
-	name = "[target_overmap] [pick("Passage", "Corridor", "Tunnel", "Void", "Gallery", "Breezeway")]"
+	name = "[target_overmap] [pick("Passage", "Corridor", "Tunnel", "Gallery", "Breezeway")]"
 	system_spawned_in.jump_points += src
 	if(_other_point)
 		link_points(_other_point)

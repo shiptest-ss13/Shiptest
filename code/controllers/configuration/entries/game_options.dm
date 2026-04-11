@@ -373,7 +373,7 @@
 	min_val = 0
 
 /datum/config_entry/number/max_overmap_event_clusters
-	config_entry_value = 3
+	config_entry_value = 4
 
 /datum/config_entry/number/max_overmap_events
 	config_entry_value = 150

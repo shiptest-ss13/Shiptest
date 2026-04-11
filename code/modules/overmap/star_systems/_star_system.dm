@@ -114,6 +114,9 @@
 	//try to populate this list with at least 5 examples.
 	var/list/entry_quotes = list()
 
+	///any "advisories" about the system that should be displayed on a helm console.
+	var/list/fun_facts = list()
+
 	/// If generator_type is set to OVERMAP_GENERATOR_JSON, we load all overmap objects from this
 	var/json
 
@@ -236,7 +239,8 @@
  * VERY Simple random generation for overmap events, spawns the event in a random turf and sometimes spreads it out similar to ores
  */
 /datum/overmap_star_system/proc/spawn_events()
-	var/max_clusters = CONFIG_GET(number/max_overmap_event_clusters)
+	//var/max_clusters = CONFIG_GET(number/max_overmap_event_clusters)
+	var/max_clusters = 5
 	for(var/i in 1 to max_clusters)
 		spawn_event_cluster(pick(subtypesof(/datum/overmap/event)), get_unused_overmap_square())
 
@@ -245,7 +249,8 @@
 	for(var/i in 3 to length(radius_positions) / 2) // At least two away to prevent overlap
 		orbits += "[i]"
 
-	var/max_clusters = CONFIG_GET(number/max_overmap_event_clusters)
+	//var/max_clusters = CONFIG_GET(number/max_overmap_event_clusters)
+	var/max_clusters = 5
 	for(var/i in 1 to max_clusters)
 		if(CONFIG_GET(number/max_overmap_events) <= length(events))
 			return

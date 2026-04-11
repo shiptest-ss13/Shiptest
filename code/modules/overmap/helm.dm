@@ -131,7 +131,7 @@
 /obj/machinery/computer/helm/proc/jump_announcement(message, quote, title = "Attention:", mob/living/target)
 	if(!message)
 		return
-	target.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[jump_destination.name]</u></span><br>[station_time_timestamp("hh:mm")]<br><i>\"[quote]\"</i>")
+	target.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[jump_destination.name] [jump_destination.faction ? "([jump_destination.faction.name]-controlled)" : ""]</u></span><br>[station_time_timestamp("hh:mm")]<br><i>\"[quote]\"</i>")
 	to_chat(target, "[span_minorannounce("<font color = red>[title]</font color><BR>[message]")]<BR>")
 	SEND_SOUND(target, sound('sound/effects/overmap/jump.ogg', volume = 50))
 
@@ -256,6 +256,7 @@
 	.["outposts"] = list()
 	.["jump_points"] = list()
 	.["jumpable"] = current_overmap.can_jump_to
+	.["facts"] = current_overmap.fun_facts
 
 	var/obj/machinery/power/cloak/cloaking_system = current_ship.ship_modules[SHIPMODULE_CLOAKING]
 	if(cloaking_system)
