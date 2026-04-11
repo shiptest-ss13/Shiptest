@@ -121,7 +121,7 @@
 		"Wake detected. Welcome to Persei-277",
 		"This area of space is protected by Vigilitas Interstellar",
 		"Best value this side of Lanchester",
-		"Nanotrasen extends its greetings",
+		"Makosso-Warra extends its greetings",
 	)
 
 
