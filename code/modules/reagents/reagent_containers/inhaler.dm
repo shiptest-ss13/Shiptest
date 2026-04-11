@@ -252,7 +252,7 @@
 /// Called when a inhaler we are in is used on someone. Transfers reagents and plays the puff sound.
 /obj/item/reagent_containers/inhaler_canister/proc/puff(mob/living/user, mob/living/carbon/target)
 	playsound(src, puff_sound, puff_volume, TRUE, -6)
-	reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user, method = INHALE)
+	reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user, methods = INHALE)
 
 /// Returns a integer approximating how many puffs we can be used for.
 /obj/item/reagent_containers/inhaler_canister/proc/get_puffs_left()
@@ -296,3 +296,25 @@
 	name = "rescue inhaler"
 	icon_state = "inhaler_generic"
 	initial_casister_path = /obj/item/reagent_containers/inhaler_canister/salbutamol
+
+/obj/item/inhaler/sting
+	name = "sting inhaler"
+	icon_state = "inhaler_generic"
+	initial_casister_path = /obj/item/reagent_containers/inhaler_canister/sting
+
+/obj/item/reagent_containers/inhaler_canister/sting
+	name = "sting canister"
+	desc = "A small canister filled with aerosolized reagents for use in a inhaler. This one contains Sting, and the mark of a Syeben'Altch guild."
+	icon_state = "canister_generic"
+	list_reagents = list(/datum/reagent/drug/sting = 30)
+
+/obj/item/inhaler/cocktail
+	name = "shoalmix inhaler"
+	icon_state = "inhaler_syndicate"
+	initial_casister_path = /obj/item/reagent_containers/inhaler_canister/combat_drug
+
+/obj/item/reagent_containers/inhaler_canister/combat_drug
+	name = "shoalmix canister"
+	desc = "A small canister filled with aerosolized reagents for use in a inhaler. This one contains a blend of shoalmix and panacea. Hit it in a fight!"
+	icon_state = "canister_syndicate"
+	list_reagents = list(/datum/reagent/drug/combat_drug = 20, /datum/reagent/medicine/panacea = 10)

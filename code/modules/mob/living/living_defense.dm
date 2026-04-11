@@ -234,7 +234,7 @@
 				to_chat(user, span_danger("You're strangling [src]!"))
 				if(!buckled && !density)
 					Move(user.loc)
-		user.set_pull_offsets(src, grab_state)
+		user.set_pull_offsets(src, user.grab_state)
 		return 1
 
 
@@ -431,12 +431,14 @@
 //called when the mob receives a bright flash
 /mob/living/proc/flash_act(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0, type = /atom/movable/screen/fullscreen/flash)
 	if(HAS_TRAIT(src, TRAIT_NOFLASH))
-		return FALSE
-	if(get_eye_protection() < intensity && (override_blindness_check || !is_blind()))
-		overlay_fullscreen("flash", type)
-		addtimer(CALLBACK(src, PROC_REF(clear_fullscreen), "flash", 25), 25)
-		return TRUE
-	return FALSE
+		return NONE
+	if(get_eye_protection() >= intensity)
+		return NONE
+	if(is_blind() && !override_blindness_check)
+		return FLASH_DAMAGE
+	overlay_fullscreen("flash", type)
+	addtimer(CALLBACK(src, PROC_REF(clear_fullscreen), "flash", 25), 25)
+	return FLASH_EFFECT | FLASH_DAMAGE
 
 //called when the mob receives a loud bang
 /mob/living/proc/soundbang_act()

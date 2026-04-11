@@ -138,22 +138,18 @@
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
 
-/obj/item/clothing/suit/toggle/attack_hand_secondary(mob/user, list/modifiers)
-	suit_toggle(user)
-	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-
 /obj/item/clothing/suit/toggle/AltClick(mob/user)
 	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		return FALSE
-
-	. = SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
-	if(. & COMPONENT_CANCEL_CLICK_ALT)
-		return
 
 	if(unique_reskin && !current_skin)
 		reskin_obj(user)
 		return TRUE
 
+	if(SEND_SIGNAL(src, COMSIG_CLICK_ALT, user) & COMPONENT_CANCEL_CLICK_ALT)
+		return TRUE
+
+	suit_toggle(user)
 	return TRUE
 
 /obj/item/clothing/suit/toggle/ui_action_click()

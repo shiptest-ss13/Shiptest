@@ -26,18 +26,18 @@
 	muzzleflash_iconstate = "muzzle_flash_light"
 	light_range = 1
 
-	//refused_attachments = list(
-	//	/obj/item/attachment/gun,
-	//	)
+	refused_attachments = list(
+		/obj/item/attachment/gun,
+		)
 
 /obj/item/gun/ballistic/automatic/pistol/commissar
 	name = "\improper Commissar"
-	desc = "A Nanotrasen-issue handgun, modified with a voice box to further enhance its effectiveness in troop discipline."
+	desc = "A Makosso-Warra-issue handgun, modified with a voice box to further enhance its effectiveness in troop discipline."
 	icon_state = "challenger"
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
 
 	w_class = WEIGHT_CLASS_NORMAL
 	default_ammo_type = /obj/item/ammo_box/magazine/co9mm

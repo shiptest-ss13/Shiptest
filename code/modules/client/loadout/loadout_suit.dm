@@ -35,6 +35,10 @@
 	display_name = "leather duster"
 	path = /obj/item/clothing/suit/jacket/leather/duster
 
+/datum/gear/suit/jacket/leather/blackduster
+	display_name = "black leather duster"
+	path = /obj/item/clothing/suit/jacket/leather/duster/black
+
 /datum/gear/suit/jacket/military
 	display_name = "military jacket"
 	path = /obj/item/clothing/suit/jacket/miljacket
@@ -50,6 +54,10 @@
 /datum/gear/suit/jacket/navy
 	display_name = "suit jacket, navy"
 	path = /obj/item/clothing/suit/lawyer/navy
+
+/datum/gear/suit/toggle/flight
+	display_name = "flight jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/flight
 
 /datum/gear/suit/jacket/charcoal
 	display_name = "suit jacket, charcoal"
@@ -94,6 +102,10 @@
 /datum/gear/suit/limehazard
 	display_name = " lime hazard jacket"
 	path = /obj/item/clothing/suit/toggle/hazard/lime
+
+/datum/gear/suit/overcoat
+	display_name = "overcoat, colorable"
+	path = /obj/item/clothing/suit/toggle/overcoat
 
 /datum/gear/suit/jacket/windbreaker
 	display_name = "windbreaker, colorable"

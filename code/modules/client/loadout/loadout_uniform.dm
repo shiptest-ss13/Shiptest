@@ -311,3 +311,7 @@
 /datum/gear/uniform/shortskirt
 	display_name = "short skirt"
 	path = /obj/item/clothing/under/shorts/skirt
+
+/datum/gear/uniform/miniskirt
+	display_name = "mini skirt"
+	path = /obj/item/clothing/under/shorts/miniskirt

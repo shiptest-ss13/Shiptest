@@ -198,7 +198,7 @@
 		owner.adjust_fire_stacks(20)
 		owner.ignite_mob()
 		owner.adjustFireLoss(25)
-		organ_flags |= ORGAN_FAILING
+		ADD_TRAIT(src, TRAIT_ORGAN_FAILING, DAMAGE_TRAIT)
 
 
 /obj/item/organ/cyberimp/arm/gun/laser
@@ -301,3 +301,4 @@
 	desc = "An internal power cord hooked up to a battery. Useful if you run on volts."
 	items_to_create = list(/obj/item/apc_powercord)
 	zone = BODY_ZONE_L_ARM
+	slot = ORGAN_SLOT_LEFT_ARM_AUG

@@ -1,4 +1,4 @@
-#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope, /obj/item/attachment/ammo_counter)
+#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope, /obj/item/attachment/ammo_counter,/obj/item/attachment/gun)
 #define SERENE_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_RAIL = 1, ATTACHMENT_SLOT_SCOPE = 1)
 
 /* Micro Target */

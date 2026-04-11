@@ -172,20 +172,6 @@
  * Misc
  */
 
-/obj/item/clothing/suit/cybersun_suit
-	name = "cybersun suit"
-	desc = "A plain white suit commonly used by Cybersun's officers."
-	icon_state = "cybersun_suit"
-	item_state = "cybersun_suit"
-
-	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
-	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
-
-	equip_sound = 'sound/items/equip/cloth_equip.ogg'
-	equip_delay_self = EQUIP_DELAY_COAT
-	equip_delay_other = EQUIP_DELAY_COAT * 1.5
-	strip_delay = EQUIP_DELAY_COAT * 1.5
-
 /obj/item/clothing/suit/straight_jacket
 	name = "straight jacket"
 	desc = "A suit that completely restrains the wearer. Manufactured by Antyphun Corp." //Straight jacket is antifun
@@ -289,6 +275,13 @@
 	cold_protection = CHEST|GROIN|ARMS|LEGS
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/suit/jacket/leather/duster/black
+	name = "black leather duster"
+	desc = "A long, utilitarian leather coat. Ideal for protecting its wearer from rain, sun, and dust."
+	icon_state = "duster_black"
+	item_state = "duster_black"
+
+
 /obj/item/clothing/suit/jacket/leather/duster/command
 	name = "officer's duster"
 	desc = "A long, supple leather coat. Ideal for protecting its wearer from rain, sun, dust, and paperwork."
@@ -327,9 +320,9 @@
 	icon_state = "letterman_s"
 	item_state = "letterman_s"
 
-/obj/item/clothing/suit/jacket/letterman_nanotrasen
+/obj/item/clothing/suit/jacket/letterman_warra
 	name = "blue letterman jacket"
-	desc = "A blue letterman jacket with a proud Nanotrasen N on the back. The tag says that it was made in Space China."
+	desc = "A blue letterman jacket with a proud Makosso-Warra M on the back. It seems cheaply made."
 	icon_state = "letterman_n"
 	item_state = "letterman_n"
 
@@ -462,3 +455,46 @@
 	name = "floral shirt"
 	desc = "From grills to guns, this shirt's seen it all."
 	icon_state = "hawaiian_red"
+
+/obj/item/clothing/suit/toggle/flight
+	name = "Flight Jacket"
+	desc = "A large, comfy furred coat. Typically worn by showoff pilots."
+	icon_state = "flightbrown"
+	unique_reskin = list(
+		"Brown Flight Jacket" = "flightbrown",
+		"White Flight Jacket" = "flightwhite",
+		"Black Flight Jacket" = "flightblack",
+	)
+	unique_reskin_changes_inhand = TRUE
+	togglename = "zipper"
+
+/obj/item/clothing/suit/toggle/flight/Initialize()
+	. = ..()
+	base_icon_state = icon_state
+
+/obj/item/clothing/suit/toggle/flight/suit_toggle()
+	set src in usr
+
+	if(!can_use(usr))
+		return 0
+
+	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
+	if(src.suittoggled)
+		src.icon_state = "[base_icon_state]"
+		src.suittoggled = FALSE
+	else if(!src.suittoggled)
+		src.icon_state = "[base_icon_state]_t"
+		src.suittoggled = TRUE
+	usr.update_inv_wear_suit()
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.UpdateButtonIcon()
+
+/obj/item/clothing/suit/toggle/flight/white
+	name = "White Flight Jacket"
+	desc = "A large, comfy furred coat. Typically worn by showoff drivers."
+	icon_state = "flightwhite"
+
+/obj/item/clothing/suit/toggle/flight/black
+	name = "Black Flight Jacket"
+	icon_state = "flightblack"

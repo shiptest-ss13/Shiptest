@@ -104,7 +104,7 @@
 			living_target.log_message("injected themselves ([contained]) with [name]", LOG_ATTACK, color="orange")
 		else
 			log_combat(user, living_target, "injected", src, addition="which had [contained]")
-	reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user, method = INJECT)
+	reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user, methods = INJECT)
 	to_chat(user, span_notice("You inject [amount_per_transfer_from_this] units of the solution. The syringe now contains [reagents.total_volume] units."))
 
 /obj/item/reagent_containers/syringe/afterattack_secondary(atom/target, mob/user, proximity_flag, click_parameters)
@@ -273,7 +273,7 @@
 
 /obj/item/reagent_containers/syringe/pancrazine
 	name = "syringe (pancrazine)"
-	desc = "Contains pancrazine, used to treat toxins and purge chemicals. The tag on the syringe states 'Heat before injection'."
+	desc = "Contains pancrazine, used to treat toxins."
 	list_reagents = list(/datum/reagent/medicine/pancrazine = 15)
 
 /obj/item/reagent_containers/syringe/charcoal

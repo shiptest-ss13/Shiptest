@@ -55,6 +55,10 @@
 /obj/item/storage/guncase/absolution
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/absolution
 
+/obj/item/storage/guncase/pyre
+	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/pyre
+	mag_type = /obj/item/ammo_box/a4570/empty
+
 /obj/item/storage/guncase/firestorm
 	gun_type = /obj/item/gun/ballistic/automatic/smg/firestorm
 	mag_type = /obj/item/ammo_box/magazine/c44_firestorm_mag
@@ -162,6 +166,10 @@
 /obj/item/storage/guncase/energy/kalixnock
 	gun_type = /obj/item/gun/energy/kalix/nock
 	mag_type = /obj/item/stock_parts/cell/gun/kalix
+
+/obj/item/storage/guncase/energy/sgr9
+	gun_type = /obj/item/gun/energy/kalix/pgf/pdw
+	mag_type = /obj/item/stock_parts/cell/gun/pgf
 
 /obj/item/storage/guncase/energy/bg16
 	gun_type = /obj/item/gun/energy/kalix/pgf
@@ -293,7 +301,7 @@
 	gun_type = /obj/item/gun/energy/sharplite/x01
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
-/* Old NT */
+/* Old MW */
 
 /obj/item/storage/guncase/wt550
 	gun_type = /obj/item/gun/ballistic/automatic/smg/resolution
@@ -433,7 +441,7 @@
 	mag_type = /obj/item/ammo_box/magazine/c22lr_pounder_pan
 
 /* underbarrel guns */
-/*
+
 /obj/item/storage/guncase/underbarrel_shotgun
 	gun_type = /obj/item/attachment/gun/ballistic/shotgun
 
@@ -452,4 +460,4 @@
 
 /obj/item/storage/guncase/energy/underbarrel_e_gun
 	gun_type = /obj/item/attachment/gun/energy/e_gun
-*/
+

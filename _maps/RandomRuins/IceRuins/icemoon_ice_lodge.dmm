@@ -745,7 +745,7 @@
 /obj/machinery/door/airlock/wood{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/welded,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/cellar)
 "mc" = (
@@ -875,7 +875,6 @@
 /area/ruin/powered/icemoon/lodge/residential)
 "no" = (
 /obj/structure/table/wood,
-/obj/machinery/fax/ruin,
 /turf/open/floor/carpet/red_gold,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "nD" = (
@@ -2855,7 +2854,7 @@
 /obj/machinery/door/airlock/wood{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/welded,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/cellar)
 "RM" = (
@@ -2906,6 +2905,10 @@
 /obj/structure/destructible/tribal_torch/lit,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
+	},
+/obj/item/extinguisher/mini{
+	pixel_x = -10;
+	pixel_y = 13
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -3280,7 +3283,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/mine/proximity/explosive/live{
 	range_heavy = 1;
-	range_light = 5
+	range_light = 5;
+	spawn_arm_delay = 100
 	},
 /obj/effect/mob_spawn/human/corpse/srm/montagne,
 /turf/open/floor/wood/maple,

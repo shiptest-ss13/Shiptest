@@ -38,9 +38,13 @@
 	UnregisterSignal(src, COMSIG_ATOM_ENTERED)
 
 /turf/open/cybersun_outpost_exterior/proc/object_enter(datum/source, atom/movable/mover)
-	//fucking ew
-	//use the chasmstop trait the moment water immersion is out of hell
-	if(is_safe())
+	if(HAS_TRAIT(src, TRAIT_CHASM_STOPPED))
+		return FALSE
+	if(cleaning)
+		return FALSE
+	if(mover.movement_type & (FLYING | FLOATING))
+		return FALSE
+	if(iseffect(mover) || isprojectile(mover))
 		return FALSE
 	if(isliving(mover))
 		new /obj/effect/particle_effect/shield_blip(src)
@@ -49,23 +53,13 @@
 			idiot.visible_message(span_warning("[idiot] loses their footing as the shield focuses around their steps!"), span_warning("The shield under you shifts and buckles!"))
 			idiot.AdjustKnockdown(20)
 			new /obj/effect/particle_effect/sparks/quantum(src)
-	if(cleaning)
-		return FALSE
-	if(iseffect(mover) || isprojectile(mover))
-		return FALSE
-	if(mover.movement_type & (FLYING | FLOATING))
-		return FALSE
-
 	cleaning = TRUE
 	addtimer(CALLBACK(src, PROC_REF(clean_tile)), 30 SECONDS)
 	return TRUE
 
-/turf/open/cybersun_outpost_exterior/proc/is_safe()
-	var/list/safeties = typecacheof(list(/obj/structure/catwalk, /obj/structure/lattice))
-	var/list/found_safeties = typecache_filter_list(contents, safeties)
-	return LAZYLEN(found_safeties)
-
 /turf/open/cybersun_outpost_exterior/proc/clean_tile()
+	if(HAS_TRAIT(src, TRAIT_CHASM_STOPPED))
+		return FALSE
 	if(!length(contents))
 		return FALSE
 	new /obj/effect/particle_effect/sparks/quantum(src)

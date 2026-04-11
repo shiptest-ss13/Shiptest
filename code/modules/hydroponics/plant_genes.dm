@@ -700,7 +700,7 @@
 	var/obj/item/seeds/our_seed = our_plant.get_plant_seed()
 	if(living_target.reagents && living_target.can_inject())
 		var/injecting_amount = max(1, our_seed.potency * 0.2) // Minimum of 1, max of 20
-		our_plant.reagents.trans_to(living_target, injecting_amount, method = INJECT)
+		our_plant.reagents.trans_to(living_target, injecting_amount, methods = INJECT)
 		to_chat(target, span_danger("You are pricked by [our_plant]!"))
 		log_combat(our_plant, living_target, "pricked and attempted to inject reagents from [our_plant] to [living_target]. Last touched by: [our_plant.fingerprintslast].")
 		our_plant.investigate_log("pricked and injected [key_name(living_target)] and injected [injecting_amount] reagents at [AREACOORD(living_target)]. Last touched by: [our_plant.fingerprintslast].", INVESTIGATE_BOTANY)

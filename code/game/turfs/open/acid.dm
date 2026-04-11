@@ -65,30 +65,8 @@
 	underlay_appearance.icon_state = "basalt"
 	return TRUE
 
-/turf/open/water/acid/attackby(obj/item/_item, mob/user, params)
-	..()
-	if(istype(_item, /obj/item/stack/rods))
-		var/obj/item/stack/rods/R = _item
-		var/obj/structure/lattice/H = locate(/obj/structure/lattice, src)
-		if(H)
-			to_chat(user, span_warning("There is already a lattice here!"))
-			return
-		if(R.use(2))
-			to_chat(user, span_notice("You construct a catwalk."))
-			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
-			new /obj/structure/lattice/catwalk(locate(x, y, z))
-		else
-			to_chat(user, span_warning("You need one rod to build a lattice."))
-		return
-
 /turf/open/water/acid/proc/is_safe_to_cross()
-	//if anything matching this typecache is found in the lava, we don't burn things
-	var/static/list/acid_safeties_typecache = typecacheof(list(/obj/structure/catwalk, /obj/structure/stone_tile, /obj/structure/lattice/))
-	var/list/found_safeties = typecache_filter_list(contents, acid_safeties_typecache)
-	for(var/obj/structure/stone_tile/stone_tile in found_safeties)
-		if(stone_tile.fallen)
-			LAZYREMOVE(found_safeties, stone_tile)
-	return LAZYLEN(found_safeties)
+	return HAS_TRAIT(src, TRAIT_ACID_STOPPED)
 
 
 /turf/open/water/acid/proc/melt_stuff(thing_to_melt)

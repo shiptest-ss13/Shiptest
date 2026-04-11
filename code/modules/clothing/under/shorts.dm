@@ -77,3 +77,9 @@
 	desc = "a shorter black skirt."
 	icon_state = "shortskirt"
 	unique_reskin = null
+
+/obj/item/clothing/under/shorts/miniskirt
+	name = "mini skirt"
+	desc = "the shortest black skirt."
+	icon_state = "miniskirt"
+	unique_reskin = null

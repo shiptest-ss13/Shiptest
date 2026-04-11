@@ -7,11 +7,12 @@
 #define FACTION_SRM "Saint-Roumain Militia"
 #define FACTION_INTEQ "Inteq Risk Management Group"
 #define FACTION_CLIP "Confederated League of Independent Planets"
-#define FACTION_NT "Nanotrasen"
+#define FACTION_WARRA "Makosso-Warra Corporation"
 	#define FACTION_NS_LOGI "N+S Logistics"
 	#define FACTION_VIGILITAS "Vigilitas Interstellar"
 #define FACTION_FRONTIERSMEN "Frontiersmen Fleet"
 #define FACTION_PGF "Pan-Gezena Federation"
+#define FACTION_ZOHIL "Zohil Explorat"
 #define FACTION_INDEPENDENT "Independent"
 #define FACTION_RAMZI "Ramzi Clique"
 #define FACTION_UNKNOWN "Unknown"
@@ -25,11 +26,12 @@
 #define PREFIX_SRM list("SRSV")
 #define PREFIX_INTEQ list("IRMV")
 #define PREFIX_CLIP list("CMSV", "CMGSV", "CLSV")
-#define PREFIX_NT list("NTSV")
+#define PREFIX_WARRA list("MWSV")
 	#define PREFIX_NS_LOGI list("NSSV")
 	#define PREFIX_VIGILITAS list("VISV")
 #define PREFIX_FRONTIERSMEN list("FFV")
 #define PREFIX_PGF list("PGF", "PGFMC", "PGFN", "PGFS")
+#define PREFIX_ZOHIL list("ZESV")
 #define PREFIX_INDEPENDENT list("SV", "IMV", "ISV", "MSV")
 #define PREFIX_RAMZI list("RCSV")
 #define PREFIX_NONE list()

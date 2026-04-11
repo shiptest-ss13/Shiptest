@@ -61,16 +61,13 @@
 	else
 		mode() // Activate held item
 
-/mob/living/carbon/attackby(obj/item/I, mob/user, params)
-	if(!all_wounds || !(user.a_intent == INTENT_HELP || user == src))
-		return ..()
-
-	for(var/i in shuffle(all_wounds))
-		var/datum/wound/W = i
-		if(W.try_treating(I, user))
-			return 1
-
-	return ..()
+/mob/living/carbon/handle_tool_treatment(obj/item/tool, mob/living/user, list/modifiers)
+	. = ..()
+	if(. || !all_wounds || !(user.a_intent == INTENT_HELP || user == src))
+		return
+	for(var/datum/wound/iterated_wound as anything in shuffle(all_wounds))
+		if(iterated_wound.try_treating(tool, user))
+			return TRUE
 
 /mob/living/carbon/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
@@ -879,8 +876,6 @@
 /mob/living/carbon/fully_heal(admin_revive = FALSE)
 	if(reagents)
 		reagents.clear_reagents()
-		for(var/addi in reagents.addiction_list)
-			reagents.remove_addiction(addi)
 	for(var/O in internal_organs)
 		var/obj/item/organ/organ = O
 		organ.setOrganDamage(0)
@@ -898,8 +893,6 @@
 		for(var/obj/item/restraints/R in contents) //actually remove cuffs from inventory
 			qdel(R)
 		update_handcuffed()
-		if(reagents)
-			reagents.addiction_list = list()
 	cure_all_traumas(TRAUMA_RESILIENCE_MAGIC)
 	..()
 	// heal ears after healing traits, since ears check TRAIT_DEAF trait
@@ -1277,14 +1270,6 @@
 /mob/living/carbon/is_face_visible()
 	return !(wear_mask?.flags_inv & HIDEFACE) && !(head?.flags_inv & HIDEFACE)
 
-/**
- * get_biological_state is a helper used to see what kind of wounds we roll for. By default we just assume carbons (read:monkeys) are flesh and bone, but humans rely on their species datums
- *
- * go look at the species def for more info [/datum/species/proc/get_biological_state]
- */
-/mob/living/carbon/proc/get_biological_state() //todo: silicon wounds for ipcs
-	return BIO_FLESH_BONE
-
 /// Modifies the handcuffed value if a different value is passed, returning FALSE otherwise. The variable should only be changed through this proc.
 /mob/living/carbon/proc/set_handcuffed(new_value)
 	if(handcuffed == new_value)
@@ -1309,6 +1294,12 @@
 		set_lying_angle(pick(90, 270))
 	else
 		set_lying_angle(new_lying_angle)
+
+/mob/living/carbon/proc/get_eye_scars()
+	var/obj/item/organ/eyes/eyes = getorganslot(ORGAN_SLOT_EYES)
+	if(!isnull(eyes))
+		return eyes.scarring
+	return NONE
 
 /mob/living/carbon/get_fire_overlay(stacks, on_fire)
 	var/fire_icon = "[dna?.species.fire_overlay || "human"]_[stacks > MOB_BIG_FIRE_STACK_THRESHOLD ? "big_fire" : "small_fire"]"

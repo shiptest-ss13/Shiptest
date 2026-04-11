@@ -3,15 +3,26 @@
 */
 
 /datum/wound/slash
-	name = "Slashing Wound"
+	name = "Slashing (Cut) Wound"
+	sound_effect = 'sound/weapons/slice.ogg'
+
+/datum/wound_pregen_data/flesh_slash
+	abstract = TRUE
+
+	required_wounding_types = list(WOUND_SLASH)
+	required_limb_biostate = BIO_FLESH
+
+	wound_series = WOUND_SERIES_FLESH_SLASH_BLEED
+
+/datum/wound/slash/flesh
+	name = "Slashing (Cut) Flesh Wound"
 	sound_effect = 'sound/weapons/slice.ogg'
 	processes = TRUE
-	wound_type = WOUND_SLASH
 	treatable_by = list(/obj/item/stack/medical/suture)
 	treatable_by_grabbed = list(/obj/item/gun/energy/laser)
-	treatable_tool = TOOL_CAUTERY
+	treatable_tools = list(TOOL_CAUTERY)
 	base_treat_time = 3 SECONDS
-	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE)
+	wound_flags = ACCEPTS_GAUZE | CAN_BE_GRASPED
 
 	/// How much blood we start losing when this wound is first applied
 	var/initial_flow
@@ -24,26 +35,26 @@
 	/// The maximum flow we've had so far
 	var/highest_flow
 
-/datum/wound/slash/show_wound_topic(mob/user)
+/datum/wound/slash/flesh/show_wound_topic(mob/user)
 	return (user == victim && blood_flow)
 
-/datum/wound/slash/Topic(href, href_list)
+/datum/wound/slash/flesh/Topic(href, href_list)
 	. = ..()
 	if(href_list["wound_topic"])
 		if(!usr == victim)
 			return
 		victim.self_grasp_bleeding_limb(limb)
 
-/datum/wound/slash/wound_injury(datum/wound/slash/old_wound = null, attack_direction = null)
+/datum/wound/slash/flesh/wound_injury(datum/wound/slash/flesh/old_wound = null, attack_direction = null)
 	blood_flow = initial_flow
 
 	if(old_wound)
 		blood_flow = max(old_wound.blood_flow, initial_flow)
 
-	else if(attack_direction && victim.blood_volume > BLOOD_VOLUME_OKAY)
+	else if(limb.can_bleed() && attack_direction && victim.blood_volume > BLOOD_VOLUME_OKAY)
 		victim.spray_blood(attack_direction, severity)
 
-/datum/wound/slash/get_examine_description(mob/user)
+/datum/wound/slash/flesh/get_examine_description(mob/user)
 	if(!limb.current_gauze)
 		return ..()
 
@@ -62,11 +73,14 @@
 
 	return "<B>[msg.Join()]</B>"
 
-/datum/wound/slash/receive_damage(wounding_type, wounding_dmg, wound_bonus)
-	if(victim.stat != DEAD && wound_bonus != CANT_WOUND && wounding_type == WOUND_SLASH) // can't stab dead bodies to make it bleed faster this way
-		blood_flow += 0.05 * wounding_dmg
+/datum/wound/slash/flesh/receive_damage(list/wounding_types, total_wound_dmg, wound_bonus)
+	if(!victim) // if we are dismembered, we can still take damage, its fine to check here
+		return
 
-/datum/wound/slash/drag_bleed_amount()
+	if(victim.stat != DEAD && wound_bonus != CANT_WOUND && wounding_types[WOUND_SLASH] < WOUND_MINIMUM_DAMAGE) // can't stab dead bodies to make it bleed faster this way
+		blood_flow += 0.05 * wounding_types[WOUND_SLASH]
+
+/datum/wound/slash/flesh/drag_bleed_amount()
 	// say we have 3 severe cuts with 3 blood flow each, pretty reasonable
 	// compare with being at 100 brute damage before, where you bled (brute/100 * 2), = 2 blood per tile
 	// 3 * 3 * 0.1 = 0.9 blood total, less than before! the share here is .3 blood of course.
@@ -78,15 +92,21 @@
 
 	return bleed_amt
 
-/datum/wound/slash/get_bleed_rate_of_change()
+/datum/wound/slash/flesh/get_bleed_rate_of_change()
+	if(!limb.can_bleed())
+		return BLOOD_FLOW_STEADY
 	if(HAS_TRAIT(victim, TRAIT_BLOODY_MESS))
 		return BLOOD_FLOW_INCREASING
 	if(limb.current_gauze || clot_rate > 0)
 		return BLOOD_FLOW_DECREASING
 	if(clot_rate < 0)
 		return BLOOD_FLOW_INCREASING
+	return BLOOD_FLOW_STEADY
 
-/datum/wound/slash/handle_process()
+/datum/wound/slash/flesh/handle_process()
+	if(!victim || IS_IN_STASIS(victim))
+		return
+
 	if(victim.stat == DEAD)
 		blood_flow -= max(clot_rate, WOUND_SLASH_DEAD_CLOT_MIN)
 		if(blood_flow < minimum_flow)
@@ -114,12 +134,12 @@
 
 	if(blood_flow < minimum_flow)
 		if(demotes_to)
-			replace_wound(demotes_to)
+			replace_wound(new demotes_to)
 		else
 			to_chat(victim, span_green("The cut on your [limb.name] has stopped bleeding!"))
 			qdel(src)
 
-/datum/wound/slash/on_stasis()
+/datum/wound/slash/flesh/on_stasis()
 	if(blood_flow >= minimum_flow)
 		return
 	if(demotes_to)
@@ -129,29 +149,29 @@
 
 /* BEWARE, THE BELOW NONSENSE IS MADNESS. bones.dm looks more like what I have in mind and is sufficiently clean, don't pay attention to this messiness */
 // what do you mean dont pay attention. what??
-/datum/wound/slash/check_grab_treatments(obj/item/I, mob/user)
+/datum/wound/slash/flesh/check_grab_treatments(obj/item/I, mob/user)
 	if(istype(I, /obj/item/gun/energy/laser))
 		return TRUE
 	if(I.get_temperature()) // if we're using something hot but not a cautery, we need to be aggro grabbing them first, so we don't try treating someone we're eswording
 		return TRUE
 
-/datum/wound/slash/treat(obj/item/I, mob/user)
+/datum/wound/slash/flesh/treat(obj/item/I, mob/user)
 	if(istype(I, /obj/item/gun/energy/laser))
-		las_cauterize(I, user)
+		return las_cauterize(I, user)
 	else if(I.tool_behaviour == TOOL_CAUTERY || I.get_temperature())
-		tool_cauterize(I, user)
+		return tool_cauterize(I, user)
 	else if(istype(I, /obj/item/stack/medical/suture))
-		suture(I, user)
+		return suture(I, user)
 
-/datum/wound/slash/on_xadone(power) //this is for cryo, check and maybe remove later
+/datum/wound/slash/flesh/on_xadone(power) //this is for cryo, check and maybe remove later
 	. = ..()
 	blood_flow -= 0.03 * power // i think it's like a minimum of 3 power, so .09 blood_flow reduction per tick
 
-/datum/wound/slash/on_synthflesh(power)
+/datum/wound/slash/flesh/on_synthflesh(power)
 	. = ..()
 	blood_flow -= 0.075 * power // 20u * 0.075 = -1.5 blood flow
 
-/datum/wound/slash/on_silfrine(power)
+/datum/wound/slash/flesh/on_silfrine(power)
 	switch(power)
 		if(0 to 5)
 			EMPTY_BLOCK_GUARD
@@ -164,7 +184,7 @@
 	blood_flow -= 0.05 * power
 
 /// If someone's putting a laser gun up to our cut to cauterize it
-/datum/wound/slash/proc/las_cauterize(obj/item/gun/energy/laser/lasgun, mob/user)
+/datum/wound/slash/flesh/proc/las_cauterize(obj/item/gun/energy/laser/lasgun, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.25 : 1)
 	user.visible_message(
 		span_warning("[user] begins aiming [lasgun] directly at [victim]'s [limb.name]..."),
@@ -172,20 +192,21 @@
 	)
 
 	if(!do_after(user, base_treat_time  * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
-		return
+		return TRUE
 
 	var/damage = lasgun.chambered.BB.damage
 	lasgun.chambered.BB.wound_bonus -= 30
 	lasgun.chambered.BB.damage *= self_penalty_mult
 	if(!lasgun.process_fire(victim, victim, TRUE, null, limb.body_zone))
-		return
+		return TRUE
 
 	victim.force_scream()
 	blood_flow -= damage / (5 * self_penalty_mult) // 20 / 5 = 4 bloodflow removed, p good
 	victim.visible_message(span_warning("The cuts on [victim]'s [limb.name] scar over!"))
+	return TRUE
 
 /// If someone is using either a cautery tool or something with heat to cauterize this cut
-/datum/wound/slash/proc/tool_cauterize(obj/item/I, mob/user)
+/datum/wound/slash/flesh/proc/tool_cauterize(obj/item/I, mob/user)
 	var/improv_penalty_mult = (I.tool_behaviour == TOOL_CAUTERY ? 1 : 1.25) // 25% longer and less effective if you don't use a real cautery
 	var/self_penalty_mult = (user == victim ? 1.2 : 1)
 	user.visible_message(
@@ -193,7 +214,7 @@
 		span_warning("You begin cauterizing [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."),
 	)
 	if(!do_after(user, base_treat_time * self_penalty_mult * improv_penalty_mult, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
-		return
+		return TRUE
 
 	playsound(user, 'sound/surgery/cautery2.ogg', 20)
 	user.visible_message(
@@ -206,12 +227,13 @@
 	blood_flow -= blood_cauterized
 
 	if(blood_flow > minimum_flow)
-		try_treating(I, user)
+		return try_treating(I, user)
 	else if(demotes_to)
 		to_chat(user, span_green("You successfully lower the severity of [user == victim ? "your" : "[victim]'s"] cuts."))
+		return TRUE
 
 /// If someone is using a suture to close this cut
-/datum/wound/slash/proc/suture(obj/item/stack/medical/suture/I, mob/user)
+/datum/wound/slash/flesh/proc/suture(obj/item/stack/medical/suture/I, mob/user)
 	var/self_penalty_mult = (user == victim ? 1 : 1)
 	user.visible_message(
 		span_notice("[user] begins stitching [victim]'s [limb.name] with [I]..."),
@@ -219,7 +241,7 @@
 	)
 
 	if(!do_after(user, base_treat_time * self_penalty_mult, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
-		return
+		return TRUE
 	user.visible_message(
 		span_green("[user] stitches up some of the bleeding on [victim]."),
 		span_green("You stitch up some of the bleeding on [user == victim ? "yourself" : "[victim]"]."),
@@ -230,11 +252,13 @@
 	I.use(1)
 
 	if(blood_flow > minimum_flow)
-		try_treating(I, user)
+		return try_treating(I, user)
 	else if(demotes_to)
 		to_chat(user, span_green("You successfully lower the severity of [user == victim ? "your" : "[victim]'s"] cuts."))
+		return TRUE
+	return FALSE
 
-/datum/wound/slash/moderate
+/datum/wound/slash/flesh/moderate
 	name = "Rough Abrasion"
 	desc = "Patient's flesh has been badly scraped, generating moderate blood loss."
 	treat_text = "Application of clean bandages and sutures."
@@ -245,11 +269,16 @@
 	initial_flow = 1.5
 	minimum_flow = 0.1
 	clot_rate = 0.015
-	threshold_minimum = 30
 	threshold_penalty = 10
-	status_effect_type = /datum/status_effect/wound/slash/moderate
+	status_effect_type = /datum/status_effect/wound/slash/flesh/moderate
 
-/datum/wound/slash/severe
+/datum/wound_pregen_data/flesh_slash/abrasion
+	abstract = FALSE
+
+	wound_path_to_generate = /datum/wound/slash/flesh/moderate
+	threshold_minimum = 30
+
+/datum/wound/slash/flesh/severe
 	name = "Open Laceration"
 	desc = "Patient's flesh is ripped clean open, allowing significant blood loss."
 	treat_text = "Application of clean bandages and sutures or cauterization."
@@ -260,12 +289,17 @@
 	initial_flow = 2
 	minimum_flow = 1.5
 	clot_rate = 0.025
-	threshold_minimum = 50
 	threshold_penalty = 20
-	demotes_to = /datum/wound/slash/moderate
-	status_effect_type = /datum/status_effect/wound/slash/severe
+	demotes_to = /datum/wound/slash/flesh/moderate
+	status_effect_type = /datum/status_effect/wound/slash/flesh/severe
 
-/datum/wound/slash/critical
+/datum/wound_pregen_data/flesh_slash/laceration
+	abstract = FALSE
+
+	wound_path_to_generate = /datum/wound/slash/flesh/severe
+	threshold_minimum = 50
+
+/datum/wound/slash/flesh/critical
 	name = "Weeping Avulsion"
 	desc = "Patient's flesh is completely torn open, along with significant loss of tissue. Extreme blood loss will lead to quick death without intervention."
 	treat_text = "Bandage immediately and apply pressure, then apply sutures or cauterization."
@@ -276,8 +310,18 @@
 	initial_flow = 3
 	minimum_flow = 2
 	clot_rate = -0.005 // critical cuts actively get worse instead of better
-	threshold_minimum = 100
 	threshold_penalty = 50
-	demotes_to = /datum/wound/slash/severe
-	status_effect_type = /datum/status_effect/wound/slash/critical
-	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | MANGLES_FLESH)
+	demotes_to = /datum/wound/slash/flesh/severe
+	status_effect_type = /datum/status_effect/wound/slash/flesh/critical
+	wound_flags = ACCEPTS_GAUZE | MANGLES_EXTERIOR | CAN_BE_GRASPED
+
+/datum/wound_pregen_data/flesh_slash/avulsion
+	abstract = FALSE
+
+	wound_path_to_generate = /datum/wound/slash/flesh/critical
+	threshold_minimum = 100
+
+/datum/wound/slash/flesh/critical/receive_damage(list/wounding_types, total_wound_dmg, wound_bonus)
+	. = ..()
+	if(victim && wounding_types[WOUND_BLUNT])
+		playsound(victim, "sound/effects/wounds/crackandbleed.ogg", 100)

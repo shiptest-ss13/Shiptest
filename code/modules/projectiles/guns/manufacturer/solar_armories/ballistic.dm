@@ -1,4 +1,4 @@
-#define SOLAR_ATTACHMENTS list(/obj/item/attachment/laser_sight,/obj/item/attachment/rail_light,/obj/item/attachment/bayonet,/obj/item/attachment/energy_bayonet,/obj/item/attachment/scope)
+#define SOLAR_ATTACHMENTS list(/obj/item/attachment/laser_sight,/obj/item/attachment/rail_light,/obj/item/attachment/bayonet,/obj/item/attachment/energy_bayonet,/obj/item/attachment/scope,/obj/item/attachment/gun)
 #define SOLAR_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 ///SOLAR ARMORIES
@@ -50,15 +50,6 @@
 
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh/no_mag
 	default_ammo_type = FALSE
-
-/obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns
-	desc = "A standard-issue pistol exported from the Solarian Confederation. It fires slow flesh-rending ferromagnetic slugs at a high energy cost, however they are ineffective on any armor. It is painted in the colors of SUNS."
-	default_ammo_type = /obj/item/ammo_box/magazine/modelh
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/modelh,
-	)
-	icon_state = "model-h_suns"
-	item_state = "model-h_suns"
 
 //not gauss pistol
 /obj/item/gun/ballistic/automatic/pistol/solgov
@@ -129,12 +120,6 @@
 
 	doesnt_keep_bullet = TRUE
 
-
-/obj/item/gun/ballistic/automatic/powered/gauss/claris/suns
-	desc = "An antiquated Solarian rifle. Chambered in ferromagnetic pellets, just as the founding Solarians intended. Evidently, SUNS' founders echo the sentiment, as it appears to be painted in their colors."
-	icon_state = "claris_suns"
-	item_state = "claris_suns"
-
 /obj/item/gun/ballistic/automatic/powered/gauss/gar
 	name = "Solar 'GAR' Carbine"
 	desc = "A Solarian carbine, unusually modern for its producers. Launches ferromagnetic lances at alarming speeds."
@@ -175,11 +160,6 @@
 
 	wield_delay = 0.7 SECONDS
 	fire_select_icon_state_prefix = "lance_"
-
-/obj/item/gun/ballistic/automatic/powered/gauss/gar/suns
-	desc = "A Solarian carbine, unusually modern for its producers. It's just modern enough for SUNS, however, who have painted the weapon in their colors. Launches ferromagnetic lances at alarming speeds."
-	icon_state = "gar_suns"
-	item_state = "gar_suns"
 
 ///Sniper
 /obj/item/gun/ballistic/rifle/solgov

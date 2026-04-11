@@ -398,7 +398,7 @@
 	if(affected_turfs.len)
 		fraction /= affected_turfs.len
 	for(var/t in affected_turfs)
-		reagents.trans_to(t, ., volume_multiplier, transfered_by = user, method = TOUCH)
+		reagents.trans_to(t, ., volume_multiplier, transfered_by = user, methods = TOUCH)
 	check_empty(user)
 
 /obj/item/toy/crayon/attack(mob/M, mob/user)
@@ -417,7 +417,7 @@
 		var/eaten = use_charges(user, 5, FALSE)
 		if(check_empty(user)) //Prevents divsion by zero
 			return
-		reagents.trans_to(M, eaten, volume_multiplier, transfered_by = user, method = INGEST)
+		reagents.trans_to(M, eaten, volume_multiplier, transfered_by = user, methods = INGEST)
 		// check_empty() is called during afterattack
 	else
 		..()
@@ -667,7 +667,7 @@
 					target.set_opacity(initial(target.opacity))
 
 		. = use_charges(user, 2)
-		reagents.trans_to(target, ., volume_multiplier, transfered_by = user, method = VAPOR)
+		reagents.trans_to(target, ., volume_multiplier, transfered_by = user, methods = VAPOR)
 
 		if(pre_noise || post_noise)
 			playsound(user.loc, 'sound/effects/spray.ogg', 5, TRUE, 5)

@@ -303,12 +303,12 @@
 	pulling.Move(get_step(pulling.loc, move_dir), move_dir, glide_size)
 	return TRUE
 
-/mob/living/Move_Pulled(atom/A)
+/mob/living/Move_Pulled(atom/moving_atom)
 	. = ..()
-	if(!. || !isliving(A))
+	if(!. || !isliving(moving_atom))
 		return
-	var/mob/living/L = A
-	set_pull_offsets(L, grab_state)
+	var/mob/living/pulled_mob = moving_atom
+	set_pull_offsets(pulled_mob, grab_state, animate = FALSE)
 
 /atom/movable/proc/check_pulling()
 	if(pulling)
@@ -527,12 +527,12 @@
 		return FALSE
 
 //Called after a successful Move(). By this point, we've already moved
-/atom/movable/proc/Moved(atom/OldLoc, Dir, Forced = FALSE, list/old_locs)
+/atom/movable/proc/Moved(atom/old_loc, movement_dir, Forced = FALSE, list/old_locs)
 	SHOULD_CALL_PARENT(TRUE)
 
 	if (!inertia_moving)
 		inertia_next_move = world.time + inertia_move_delay
-		newtonian_move(Dir)
+		newtonian_move(movement_dir)
 
 	if (length(client_mobs_in_contents))
 		update_parallax_contents()
@@ -544,12 +544,17 @@
 		stack_trace("move_stacks is negative in Moved()!")
 		move_stacks = 0 //setting it to 0 so that we dont get every movable with negative move_stacks runtiming on every movement
 
-	var/previous_virtual_z = OldLoc?.virtual_z() || 0
+	var/previous_virtual_z = old_loc?.virtual_z() || 0
 	var/current_virtual_z = virtual_z()
 	if(current_virtual_z != previous_virtual_z)
 		on_virtual_z_change(current_virtual_z, previous_virtual_z)
 
-	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, OldLoc, Dir, Forced, old_locs)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, old_loc, movement_dir, Forced, old_locs)
+
+	if(old_loc)
+		SEND_SIGNAL(old_loc, COMSIG_ATOM_ABSTRACT_EXITED, src, movement_dir)
+	if(loc)
+		SEND_SIGNAL(loc, COMSIG_ATOM_ABSTRACT_ENTERED, src, old_loc, old_locs)
 
 	return TRUE
 

@@ -94,7 +94,8 @@
 /obj/item/radio/Destroy()
 	remove_radio_all(src) //Just to be sure
 	QDEL_NULL(wires)
-	QDEL_NULL(keyslot)
+	if(istype(keyslot))
+		QDEL_NULL(keyslot)
 	return ..()
 
 /obj/item/radio/Initialize()
@@ -103,6 +104,8 @@
 		wires.cut(WIRE_TX) // OH GOD WHY
 	secure_radio_connections = new
 	. = ..()
+	if(ispath(keyslot))
+		keyslot = new keyslot()
 	frequency = sanitize_frequency(frequency, freerange)
 	set_frequency(frequency)
 
@@ -132,6 +135,12 @@
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		listening = !listening
 		to_chat(user, span_notice("You toggle speaker [listening ? "on" : "off"]."))
+
+/obj/item/radio/attack_hand_secondary(mob/user, modifiers)
+	if((!headset && command) && user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
+		use_command = !use_command
+		to_chat(user, span_notice("You toggle high volume [use_command ? "on" : "off"]."))
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/radio/interact(mob/user)
 	if(unscrewed && !isAI(user))
@@ -436,7 +445,7 @@
 	. = ..()
 
 /obj/item/radio/borg/syndicate
-	keyslot = new /obj/item/encryptionkey/syndicate
+	keyslot = /obj/item/encryptionkey/syndicate
 
 /obj/item/radio/borg/syndicate/Initialize()
 	. = ..()
@@ -479,3 +488,9 @@
 	name = "old radio"
 	icon_state = "radio"
 	desc = "An old handheld radio. You could use it, if you really wanted to."
+
+/obj/item/radio/command
+	name = "command radio"
+	icon_state = "cmd_radio"
+	desc = "A handheld radio with a configurable volume knob. Useful for making your voice carry farther."
+	command = TRUE

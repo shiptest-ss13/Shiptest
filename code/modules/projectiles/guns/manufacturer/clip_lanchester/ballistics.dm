@@ -1,4 +1,4 @@
-#define CLIP_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/ammo_counter)
+#define CLIP_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/ammo_counter,/obj/item/attachment/gun)
 #define CLIP_ATTACHMENT_POINTS list(ATTACHMENT_SLOT_MUZZLE = 1,ATTACHMENT_SLOT_RAIL = 1,ATTACHMENT_SLOT_SCOPE=1)
 
 
@@ -505,6 +505,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	bolt_type = BOLT_TYPE_CLIP
+	unique_mag_sprites_for_variants = TRUE
 	default_ammo_type = /obj/item/ammo_box/magazine/p16
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/p16,
@@ -637,6 +638,7 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 	base_icon_state = "cm40_mag"
 	icon_state = "cm40_mag-1"
 	ammo_type = /obj/item/ammo_casing/a762_40
+	caliber = "7.62x40mm"
 	max_ammo = 80
 	w_class = WEIGHT_CLASS_NORMAL
 

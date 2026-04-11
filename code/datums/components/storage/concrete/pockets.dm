@@ -2,6 +2,7 @@
 	max_items = 2
 	max_w_class = WEIGHT_CLASS_SMALL
 	max_combined_w_class = 50
+	alt_click_open = FALSE // alt-click has special interactions on a lot of clothing items and shouldn't be canceled by opening storage instead
 	use_sound = null
 
 /datum/component/storage/concrete/pockets/handle_item_insertion(obj/item/I, prevent_warning, mob/user)
@@ -114,6 +115,7 @@
 		/obj/item/gun/energy/laser,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/sharplite/x26,
+		/obj/item/gun/energy/sharplite/x01,
 		/obj/item/gun/energy/kalix/pistol,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/ammo_box)) // this doesnt let you put hades into holsters trust me

@@ -64,7 +64,7 @@
 		if(M.reagents)
 			var/trans = 0
 			if(!infinite)
-				trans = reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, method = INJECT)
+				trans = reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, methods = INJECT)
 			else
 				reagents.expose(M, INJECT, fraction)
 				trans = reagents.copy_to(M, amount_per_transfer_from_this)
@@ -313,9 +313,19 @@
 	list_reagents = list(/datum/reagent/medicine/mannitol = 15)
 	volume = 15
 	amount_per_transfer_from_this = 15
-	icon_state = "morphen"
-	base_icon_state = "morphen"
-	item_state = "morphen"
+	icon_state = "brainpen"
+	base_icon_state = "brainpen"
+	item_state = "brainpen"
+
+/obj/item/reagent_containers/hypospray/medipen/neurine
+	name = "neurine injector"
+	desc = "An injector filled with neurine, a restorative compound that targets brain trauma."
+	list_reagents = list(/datum/reagent/medicine/neurine = 15)
+	volume = 15
+	amount_per_transfer_from_this = 15
+	icon_state = "brainpen"
+	base_icon_state = "brainpen"
+	item_state = "brainpen"
 
 /obj/item/reagent_containers/hypospray/medipen/badstop
 	name = "Stabilizer injector"
@@ -329,7 +339,7 @@
 
 /obj/item/reagent_containers/hypospray/medipen/badstop/update_icon_state()
 	. = ..()
-	if(reagents.total_volume > 30)
+	if(reagents.total_volume >= 30)
 		icon_state = base_icon_state
 		return
 	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? 1 : 0]"
@@ -399,7 +409,7 @@
 	name = "hypospray mk.II"
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "hypo2"
-	desc = "A medical product traditionally manufactured by Nanotrasen and Cybersun, this hypospray takes 30-unit vials as the drug supply for easy swapping."
+	desc = "A class of medical device traditionally manufactured by Matahari Pharmaceutical and Cybersun, this hypospray takes 30-unit vials as the drug supply for easy swapping."
 	w_class = WEIGHT_CLASS_TINY
 	var/list/allowed_containers = list(/obj/item/reagent_containers/glass/bottle/vial/tiny, /obj/item/reagent_containers/glass/bottle/vial/small)
 	var/mode = HYPO_INJECT
@@ -599,7 +609,7 @@
 
 				var/fraction = min(vial.amount_per_transfer_from_this/vial.reagents.total_volume, 1)
 				vial.reagents.expose(L, INJECT, fraction)
-				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, method = INJECT)
+				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, methods = INJECT)
 				if(vial.amount_per_transfer_from_this >= 15)
 					playsound(loc,'sound/items/hypospray_long.ogg',50, 1, -1)
 				if(vial.amount_per_transfer_from_this < 15)
@@ -630,7 +640,7 @@
 						L.log_message("<font color='orange'>applied [src] to  themselves ([contained]).</font>", INDIVIDUAL_ATTACK_LOG)
 				var/fraction = min(vial.amount_per_transfer_from_this/vial.reagents.total_volume, 1)
 				vial.reagents.expose(L, PATCH, fraction)
-				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, method = PATCH)
+				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, methods = PATCH)
 				if(vial.amount_per_transfer_from_this >= 15)
 					playsound(loc,'sound/items/hypospray_long.ogg',50, 1, -1)
 				if(vial.amount_per_transfer_from_this < 15)

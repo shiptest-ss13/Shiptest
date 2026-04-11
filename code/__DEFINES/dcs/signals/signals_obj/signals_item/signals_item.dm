@@ -43,6 +43,12 @@
 
 #define COMSIG_ITEM_UNIQUE_ACTION "item_unique_action" //from base of obj/item/unique_action(): (mob/living/user)
 
+///called in /obj/item/gun/try_fire_gun (user, src, target, flag, params)
+#define COMSIG_MOB_TRYING_TO_FIRE_GUN "mob_trying_to_fire_gun"
+///called in /obj/item/gun/fire_gun (user, target, flag, params)
+#define COMSIG_GUN_TRY_FIRE "gun_try_fire"
+	#define COMPONENT_CANCEL_GUN_FIRE (1<<0) /// Also returned to cancel COMSIG_MOB_TRYING_TO_FIRE_GUN
+
 ///from base of item/sharpener/attackby(): (amount, max)
 #define COMSIG_ITEM_SHARPEN_ACT "sharpen_act"
 	#define COMPONENT_BLOCK_SHARPEN_APPLIED 1

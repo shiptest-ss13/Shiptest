@@ -1,0 +1,52 @@
+{
+	"faction": "/datum/faction/syndicate/ngr",
+	"prefix": "NGRV",
+	"manufacturer": "Hardline Salvage and Mining",
+	"namelists": [
+		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"WEAPONS"
+	],
+	"map_name": "Haboob-class Patrol Craft",
+	"map_short_name": "Haboob-class",
+	"tranist_x_offset": -35,
+	"tranist_y_offset": -25,
+	"description": "With the formation of the NGR, there were many concerns and an immediate need for quick, responsive ships to establish protection over their claimed territory. With these concerns in mind, the early NGR commissioned Hardline to make the Haboob-class, a modular ship design with it's most notable feature being an oversized gun mount for a ship of it's class. Many of these vessels have been fitted for various usage, from stripped-down versions meant for boarding and planetary scouting, to pirate-busters meant to shoot down the ilk before they get a chance to dock.",
+	"tags": [
+		"RP Focus",
+		"Combat"
+	],
+	"map_path": "_maps/shuttles/ngr/ngr_haboob.dmm",
+	"map_id": "gorlex_haboob",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/ngr/stripped",
+			"officer": true,
+			"slots": 1
+		},
+		"Lieutenant": {
+			"outfit": "/datum/outfit/job/syndicate/hos/ngr/stripped",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/ngr/stripped",
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/syndicate/doctor/ngr/stripped",
+			"slots": 1
+		},
+		"Operative": {
+			"outfit": "/datum/outfit/job/syndicate/security/ngr",
+			"slots": 1
+		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/ngr",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

@@ -123,7 +123,7 @@ EMPTY_GUN_HELPER(revolver/shadow)
 
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper HP Detective Special"
-	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
+	desc = "A small law enforcement firearm. Originally commissioned by Vigilitas Interstellar for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot_light.ogg'
 	icon_state = "detective"
 	item_state = "hp_generic"
@@ -888,6 +888,15 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 		recoil = 0
 		recoil_unwielded = 3
 
+//pre sawn off flaming arrow
+/obj/item/gun/ballistic/shotgun/flamingarrow/presawn/Initialize(mapload, spawn_empty)
+	. = ..()
+	sawoff(TRUE)
+/obj/item/gun/ballistic/shotgun/flamingarrow/presawn
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/presawn
+
+EMPTY_GUN_HELPER(shotgun/flamingarrow/presawn)
+
 /obj/item/gun/ballistic/shotgun/flamingarrow/factory
 	desc = "A sturdy and lightweight lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. This example has been kept in excellent shape and may as well be fresh out of the workshop. Chambered in .38."
 	icon_state = "flamingarrow_factory"
@@ -899,6 +908,15 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	if(.)
 		item_state = "flamingarrow_factory_sawn"
 		mob_overlay_state = item_state
+
+//pre sawn off Factoryyy flaming arrow
+/obj/item/gun/ballistic/shotgun/flamingarrow/factory/presawn/Initialize(mapload, spawn_empty)
+	. = ..()
+	sawoff(TRUE)
+/obj/item/gun/ballistic/shotgun/flamingarrow/factory/presawn
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/presawn
+
+EMPTY_GUN_HELPER(shotgun/flamingarrow/factory/presawn)
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt
 	name = "HP Flaming Bolt"
@@ -973,6 +991,58 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 	if(.)
 		item_state = "absolution_factory_sawn"
 		mob_overlay_state = item_state
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/pyre
+	name = "HP Pyre"
+	base_icon_state = "pyre"
+	icon_state = "pyre"
+	item_state = "pyre"
+	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
+	desc = "A powerful lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 5 round ammunition capacity. Bulky and unwieldy but devastatingly powerful. Chambered in .45-70."
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/pyre
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/winchester/pyre,
+	)
+	fire_delay = 0.8 SECONDS
+	wield_slowdown = HEAVY_RIFLE_SLOWDOWN
+	wield_delay = 1 SECONDS
+	spread_unwielded = 15
+	spread = 0
+	recoil = 1.5
+	recoil_unwielded = 4
+	gunslinger_recoil_bonus = 0
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/bayonet
+		)
+	unique_attachments = list(/obj/item/attachment/scope)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 25,
+			"y" = 21,
+		)
+	)
+
+	can_be_sawn_off = FALSE
+
+EMPTY_GUN_HELPER(shotgun/flamingarrow/pyre)
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/pyre/factory
+	base_icon_state = "pyre_factory"
+	icon_state = "pyre_factory"
+	item_state = "pyre_factory"
+	desc = "A powerful lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 5 round ammunition capacity, in pristine wood furniture lined with brass. Bulky and unwieldy but devastatingly powerful. Chambered in .45-70."
 
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon

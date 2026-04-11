@@ -320,7 +320,7 @@
 		"cropped purple hoodie" = "crophoodpurple",
 		"cropped pink hoodie" = "crophoodpink",
 		"cropped brown hoodie" = "crophoodbrown",
-		"cropped light brown hoodie" = "crophoodlbrown"
+		"cropped light brown hoodie" = "crophoodlightbrown"
 	)
 
 /obj/item/clothing/suit/hooded/croppedhoodie/white

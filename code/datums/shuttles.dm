@@ -26,6 +26,8 @@
 	var/token_icon_state = "ship_generic"
 	/// The prefix of the ship's name.
 	var/prefix = "ISV"
+	/// The class of this ship.
+	var/ship_class = "Ship"
 	/// The name of the ship's manufacturer.
 	var/manufacturer = "Unknown"
 	/// The faction this ship belongs to.
@@ -378,7 +380,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "ISV"
 
-//your subshuttle here //why is my subshuttle here // its no longer there
+//your subshuttle here //why is my subshuttle here // its no longer there //oops i dropped my subshuttles everywhere
 
 /datum/map_template/shuttle/subshuttles/crux
 	file_name = "minutemen_crux"
@@ -394,12 +396,19 @@
 	faction = /datum/faction/clip
 	prefix = "CLSV"
 
-/datum/map_template/shuttle/subshuttles/ancon
-	file_name = "nanotrasen_ancon"
-	name = "Nanotrasen Ancon-class Command Ship"
+/datum/map_template/shuttle/subshuttles/glaucus
+	file_name = "minutemen_mira"
+	name = "Mira-class Pursuit Shuttle"
 	token_icon_state = "ship_tiny_generic"
-	faction = /datum/faction/nt
-	prefix = "NTSV"
+	faction = /datum/faction/clip
+	prefix = "CMSV"
+
+/datum/map_template/shuttle/subshuttles/ancon
+	file_name = "warra_ancon"
+	name = "Makosso-Warra Ancon-class Command Ship"
+	token_icon_state = "ship_tiny_generic"
+	faction = /datum/faction/warra
+	prefix = "MWSV"
 	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
@@ -448,11 +457,11 @@
 	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/skink
-	file_name = "nanotrasen_skink"
+	file_name = "warra_skink"
 	name = "Skink-class Cargo Runner"
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 	token_icon_state = "ship_tiny_generic"
-	prefix = "NTSV"
+	prefix = "MWSV"
 
 /datum/map_template/shuttle/subshuttles/bambulance
 	file_name = "cybersun_bambulance"
@@ -493,3 +502,9 @@
 	faction = /datum/faction/syndicate/ngr
 	token_icon_state = "ship_tiny_generic"
 	prefix = "NGRV"
+
+/datum/map_template/shuttle/subshuttles/june
+	file_name = "independent_june"
+	name = "June-class Dropship"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "SV"

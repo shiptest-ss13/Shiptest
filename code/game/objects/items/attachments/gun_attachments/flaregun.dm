@@ -1,10 +1,10 @@
-/*
 /obj/item/attachment/gun/flare
 	name = "underbarrel flaregun"
 	desc = "An underbarrel flaregun for lighting the path ahead."
 	icon_state = "riotlauncher"
 	weapon_type = null
 	var/obj/item/flashlight/flare/loaded_flare
+	has_safety = FALSE
 
 /obj/item/attachment/gun/flare/Destroy()
 	. = ..()
@@ -30,8 +30,9 @@
 			to_chat(user, span_warning("\The [name] already has a flare loaded!"))
 			return FALSE
 
-/obj/item/attachment/gun/flare/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
-	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL && !gun.safety)
+/obj/item/attachment/gun/flare/on_fire_gun(obj/item/gun/gun, mob/living/user, atom/target, flag, params)
+	var/list/modifiers = params2list(params)
+	if(!gun.safety && LAZYACCESS(modifiers, RIGHT_CLICK))
 		if(loaded_flare)
 			user.visible_message(span_warning("[user] fires a flare!"), span_warning("You fire the [name] at \the [target]!"))
 			var/obj/item/flashlight/flare/flare_to_fire = loaded_flare
@@ -43,7 +44,7 @@
 		else
 			to_chat(user,span_warning("\The [name] doesn't have a flare loaded!"))
 			playsound(src,'sound/weapons/gun/pistol/dry_fire.ogg')
-	return COMPONENT_NO_ATTACK
+		return COMPONENT_CANCEL_GUN_FIRE
 
 /obj/item/attachment/gun/flare/on_unique_action(obj/item/gun/gun, mob/user)
 	. = ..()
@@ -57,6 +58,5 @@
 /obj/item/attachment/gun/flare/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	. = ..()
 	examine_list += span_notice("-\The [name] [loaded_flare ? "has a flare loaded." : "is empty."]")
-	examine_list += span_notice("-You can unload \the [name] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
+	examine_list += span_notice("-You can unload \the [name] by pressing the <b>secondary action</b> key. By default, this is <b>shift + space</b>")
 	return examine_list
-*/

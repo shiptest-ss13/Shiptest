@@ -39,7 +39,16 @@ All ShuttleMove procs go here
 				if(isanimal(M) || isbasicmob(M))
 					qdel(M)
 				else
-					M.gib()
+					//you're going to get, unequivocally, fucked up
+					M.apply_damage(400, BRUTE, forced = TRUE, spread_damage = TRUE)
+					M.apply_damage(100, BRUTE, BODY_ZONE_CHEST, forced = TRUE)
+					M.apply_damage(100, BRUTE, BODY_ZONE_HEAD, forced = TRUE)
+					if(istype(M, /mob/living/carbon))
+						var/mob/living/carbon/mob = M
+						for(var/obj/item/bodypart/limb in mob.bodyparts)
+							limb.check_wounding(list(WOUND_BLUNT = 50), 50)
+					M.AddElement(/datum/element/squish, 20 SECONDS)
+					M.spawn_gibs()
 
 
 		else //non-living mobs shouldn't be affected by shuttles, which is why this is an else
@@ -392,13 +401,36 @@ All ShuttleMove procs go here
 		. |= MOVE_CONTENTS
 
 /obj/docking_port/mobile/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock, list/obj/docking_port/mobile/towed_shuttles)
-	if(!towed_shuttles[src] && !moving_dock.can_move_docking_ports)
+	//while im sure this thing has never ever been set to false, we check for it anyways
+	if(!moving_dock.can_move_docking_ports)
 		return FALSE
-	. = ..()
+	//are we not being towed by another ship or are we not the ship thats moving? if neither, ignore
+	if(!(towed_shuttles[src] || moving_dock == src))
+		return FALSE
+
+	return ..()
 
 /obj/docking_port/stationary/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock, list/obj/docking_port/mobile/towed_shuttles)
-	if(old_dock == src) //Never take our old port
+	//while im sure this thing has never ever been set to false, we check for it anyways
+	if(!moving_dock.can_move_docking_ports)
 		return FALSE
-	if((!(src in moving_dock.docking_points) || !towed_shuttles[docked]) && !moving_dock.can_move_docking_ports)
+		//Never take our old port
+	if(old_dock == src)
 		return FALSE
-	. = ..()
+	//Don't take the docking port from the ship we undocked from, either
+	if(old_dock && old_dock.owner_ship && old_dock.owner_ship.docked == src)
+		return FALSE
+	//are we a stationary docking port of the main docking port? if not, we get ignored
+	if(!(src in moving_dock.docking_points))
+		return FALSE
+	//check if we are a docking port of a towed shuttle, if we are, we get towed along when the mainship moves, if not, we get ignored
+	for(var/obj/docking_port/mobile/checked_port as anything in towed_shuttles)
+		var/port_in_towed_ports = FALSE
+		if(src in checked_port.docking_points)
+			port_in_towed_ports = TRUE
+			break
+		//towed_shuttles[docked]: are we towing a docked ship? If so, let us load. The point of this appears to be to let pre-spawned subshuttles work.
+		//Basically, if we are not in the towed ports OR towing a ship, dont move us.
+		if(!port_in_towed_ports && !towed_shuttles[docked])
+			return FALSE
+	return ..()

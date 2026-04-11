@@ -14,7 +14,7 @@
 
 /datum/supply_pack/sec_supply/seclite
 	name = "Seclite Crate"
-	desc = "Contains a single high power flashlight, complete with the hardware for attachment to standard helmet mounting brackets"
+	desc = "Contains a single high power flashlight, complete with the hardware for attachment to standard helmet mounting brackets."
 	contains = list(/obj/item/flashlight/seclite)
 	cost = 100
 	crate_name = "seclite crate"
@@ -118,18 +118,18 @@
 		Misc. weapons / protection
 */
 
-/datum/supply_pack/sec_supply/riotshields
-	name = "Ballistic Shield Crate"
-	desc = "Contains a ballistic shield, effective at holding back hostile fauna, xenofauna, or large crowds."
-	cost = 1000
-	contains = list(/obj/item/shield/riot)
+/datum/supply_pack/sec_supply/heavyshields
+	name = "Heavy Ballistic Shield Crate"
+	desc = "Contains a heavy ballistic shield, very effective at protecting the user from light arms fire. Can struggle against stronger firepower."
+	cost = 1200
+	contains = list(/obj/item/shield/heavy)
 	crate_name = "riot shield crate"
 
-/datum/supply_pack/sec_supply/teleriotshields
+/datum/supply_pack/sec_supply/telescopicshields
 	name = "Telescopic Riot Shield Crate"
-	desc = "Contains a telescopic riot shield, effective at holding back hostile fauna, xenofauna, or large crowds in tight spaces."
+	desc = "Contains a telescopic riot shield, effective at protecting the user in close quarters combat. Assuming a gun isn't involved of course."
 	cost = 750
-	contains = list(/obj/item/shield/riot/tele)
+	contains = list(/obj/item/shield/tele)
 	crate_name = "riot shield crate"
 
 /datum/supply_pack/sec_supply/survknives
@@ -138,6 +138,13 @@
 	cost = 120
 	contains = list(/obj/item/melee/knife/survival)
 	crate_name = "survival knife crate"
+
+/datum/supply_pack/sec_supply/brass_knuckles
+	name = "Brass Knuckles Crate"
+	desc = "Contains one pair of brass knuckles. Shiny, stylish, and swift. More than enough to make a pirate think twice about roughing up the average spacer-gangster."
+	cost = 160
+	contains = list(/obj/item/brass_knuckles)
+	crate_name = "brass knuckles crate"
 
 /datum/supply_pack/sec_supply/machete
 	name = "Stamped Steel Machete Crate"
@@ -162,7 +169,7 @@
 	cost = 750
 	contains = list(/obj/item/storage/belt/sabre/suns)
 	crate_name = "student's sabre crate"
-	faction = /datum/faction/syndicate/suns
+	faction = /datum/faction/suns
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -172,7 +179,7 @@
 	cost = 800
 	contains = list(/obj/item/storage/belt/sabre/suns/cmo)
 	crate_name = "student's sabre crate"
-	faction = /datum/faction/syndicate/suns
+	faction = /datum/faction/suns
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -182,7 +189,7 @@
 	cost = 600
 	contains = list(/obj/item/melee/sword/sabre/suns/telescopic)
 	crate_name = "telescopic sabre crate"
-	faction = /datum/faction/syndicate/suns
+	faction = /datum/faction/suns
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -311,3 +318,105 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+//cybersun
+
+/datum/supply_pack/tools/cybersun_webbing
+	name = "Cybersun Webbing"
+	desc = "Contains a lightweight multichromatic rigging kit for storage of materials on the fly."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military/cybersun)
+	crate_name = "webbing crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
+//hardliner
+
+/datum/supply_pack/tools/webbing/hardliner
+	name = "Hardliner Webbing Crate"
+	desc = "Contains a webbing, with a standard implement of six pockets."
+	cost = 300
+	contains = list(/obj/item/storage/belt/security/webbing/hardliners)
+	crate_name = "webbing crate"
+	faction = /datum/faction/syndicate/hardliners
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/tools/webbing/hardliner/alt
+	name = "Hardliner Drop Pouch Harness Crate"
+	desc = "Contains a drop pouch harness, with a standard implement of six pockets."
+	contains = list(/obj/item/storage/belt/security/webbing/hardliners/alt)
+	crate_name = "drop pouch crate"
+
+//inteq
+
+/datum/supply_pack/tools/webbing/inteq
+	name = "Inteq Webbing Crate"
+	desc = "Contains a webbing, with a standard implement of six pockets."
+	cost = 300
+	contains = list(/obj/item/storage/belt/security/webbing/inteq)
+	crate_name = "webbing crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/tools/webbing/inteq/alt
+	name = "Inteq Drop Pouch Harness Crate"
+	desc = "Contains a drop pouch harness, with a standard implement of six pockets."
+	contains = list(/obj/item/storage/belt/security/webbing/inteq/alt)
+	crate_name = "drop pouch crate"
+
+//ngr
+
+/datum/supply_pack/tools/webbing/ngr
+	name = "NGR Webbing Crate"
+	desc = "Contains a webbing, with a standard implement of six pockets."
+	cost = 300
+	contains = list(/obj/item/storage/belt/security/webbing/ngr)
+	crate_name = "webbing crate"
+	faction = /datum/faction/syndicate/ngr
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/tools/webbing/ngr/alt
+	name = "NGR Drop Pouch Harness Crate"
+	desc = "Contains a drop pouch harness, with a standard implement of six pockets."
+	contains = list(/obj/item/storage/belt/security/webbing/ngr/alt)
+	crate_name = "drop pouch crate"
+
+//clip
+
+/datum/supply_pack/tools/belt/clip
+	name = "CLIP Chest Rig Crate"
+	desc = "Contains a chest rig, with an implement of seven pockets."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military/clip)
+	crate_name = "chest rig crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/tools/belt/clip/alt
+	name = "CLIP Belt Rig Crate"
+	desc = "Contains a belt rig, with an implement of seven pockets."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military/clip/alt)
+	crate_name = "belt rig crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+//Makosso-Warra
+
+/datum/supply_pack/sec_supply/vigilitas_uniform
+	name = "Vigilitas Security Uniform"
+	desc = "Contains a replacement uniform for Vigilitas Interstellar security staff. Armor set sold separately."
+	cost = 150
+	contains = list(/obj/item/clothing/head/warra/cap/security,
+					/obj/item/clothing/mask/gas/vigilitas,
+					/obj/item/clothing/under/warra/security,
+					/obj/item/clothing/shoes/jackboots,
+					/obj/item/clothing/gloves/color/black)
+	faction = /datum/faction/warra
+	faction_discount = 0
+	faction_locked = TRUE

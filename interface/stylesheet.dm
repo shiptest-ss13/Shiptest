@@ -42,13 +42,16 @@ em						{font-style: normal;	font-weight: bold;}
 .binarysay a			{color: #00ff00;}
 .binarysay a:active, .binarysay a:visited {color: #88ff88;}
 .radio					{color: #008000;}
-.ntradio				{color: #4e3399;}
+.warraradio				{color: #4e3399;}
 .emrgradio				{color: #a30000;}
 .pirradio				{color: #948f02;}
 .clipradio				{color: #337296;}
 .irmgradio				{color: #885231;}
 .pgfradio				{color: #127a35;}
 .syndradio				{color: ##612425;}
+.cyradio				{color: #4C9C9C;}
+.ngrradio				{color: #c59973;}
+.sunsradio				{color: #8f67a1;}
 .centcomradio			{color: #686868;}
 .redteamradio			{color: #ff0000;}
 .blueteamradio			{color: #0000ff;}
