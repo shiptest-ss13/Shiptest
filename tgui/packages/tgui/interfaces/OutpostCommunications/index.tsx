@@ -130,14 +130,14 @@ const MissionsList = (props, context) => {
   const disabled = props.disabled as Boolean;
   const tooltip = props.tooltip as string;
   const missionsArray = props.missions as Array<Mission>;
-  const hasHighPriority = props.highPriorityAssigned as boolean;
+  const hasHighPriority = props.highPriorityAssigned as Boolean;
   const { act } = useBackend(context);
   //   const { numMissions, maxMissions } = data;
 
   const buttonJSX = (mission: Mission, tooltip: string, disabled: Boolean) => {
     return (
       <Button
-        disabled={disabled || (hasHighPriority && mission.highPriority)}
+        disabled={disabled}
         tooltip={tooltip}
         onClick={() =>
           act('mission-act', {
@@ -176,11 +176,11 @@ const MissionsList = (props, context) => {
       </Stack.Item>
 
       <Stack.Item>
-        {(showButton &&
+        {(((hasHighPriority && mission.highPriority) || showButton) &&
           buttonJSX(
             mission,
             tooltip,
-            hasHighPriority ? !mission.highPriority : disabled
+            disabled
           )) ||
           undefined}
       </Stack.Item>
