@@ -9159,38 +9159,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "RE" = (
-/obj/item/clothing/head/gezena/flap/marine{
-	pixel_y = 8;
-	pixel_x = -8
-	},
-/obj/item/clothing/head/gezena/marine{
-	pixel_y = 10;
-	pixel_x = 8
-	},
-/obj/item/clothing/suit/toggle/gezena/marine{
-	pixel_y = -2;
-	pixel_x = 8
-	},
-/obj/item/clothing/under/gezena/marine{
-	pixel_x = -9;
-	pixel_y = -1
-	},
-/obj/item/clothing/neck/cloak/gezena/command{
-	pixel_y = -9;
-	pixel_x = -7
-	},
-/obj/item/clothing/shoes/combat/gezena/marine{
-	pixel_y = -9;
-	pixel_x = 6
-	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_x = -1;
-	pixel_y = 0
-	},
-/obj/item/radio/headset/pgf/captain{
-	pixel_x = -12;
-	pixel_y = 1
-	},
 /obj/structure/table/wood,
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_y = 6
@@ -9203,6 +9171,50 @@
 	name = "squad leader's locker";
 	icon_state = "sec_wall";
 	req_access = list(3)
+	},
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
+	pixel_y = -12
+	},
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 2;
+	pixel_y = -15
+	},
+/obj/item/clothing/neck/cloak/gezena/command{
+	pixel_y = -9;
+	pixel_x = -7
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_y = -9;
+	pixel_x = 6
+	},
+/obj/item/clothing/suit/toggle/gezena/marine{
+	pixel_y = -2;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/gezena/marine{
+	pixel_x = -9;
+	pixel_y = -1
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_x = -1;
+	pixel_y = 0
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 8;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/gezena/marine{
+	pixel_y = 10;
+	pixel_x = 8
+	},
+/obj/item/radio/headset/pgf/captain{
+	pixel_x = -12;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/commad)
