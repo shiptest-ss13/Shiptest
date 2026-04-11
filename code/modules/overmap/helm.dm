@@ -203,6 +203,8 @@
 	if(!current_ship)
 		return
 
+	var/datum/overmap_star_system/current_overmap = current_ship.current_overmap
+
 	.["calibrating"] = calibrating
 	.["canRename"] = COOLDOWN_FINISHED(current_ship, rename_cooldown)
 	.["otherInfo"] = list()
@@ -216,7 +218,7 @@
 		var/available_dock = FALSE
 
 		//Even if its full or incompatible with us, it should still show up.
-		if(object in current_ship.current_overmap.overmap_container[current_ship.x][current_ship.y])
+		if(object in current_overmap.overmap_container[current_ship.x][current_ship.y])
 			available_dock = TRUE
 
 		//Detect any ships in this location we can dock to
@@ -242,7 +244,7 @@
 	.["docking"] = current_ship.docking
 	.["docked"] = current_ship.docked_to
 	.["heading"] = dir2text(current_ship.get_heading()) || "None"
-	.["sector"] = current_ship.current_overmap.name
+	.["sector"] = current_overmap.name
 	.["speed"] = current_ship.get_speed()
 	.["eta"] = current_ship.get_eta()
 	.["estThrust"] = current_ship.est_thrust
@@ -251,10 +253,31 @@
 	.["burnDirection"] = current_ship.burn_direction
 	.["burnPercentage"] = current_ship.burn_percentage
 	.["cloaked"] = HAS_TRAIT_FROM(current_ship, TRAIT_CLOAKED, SHIPMODULE_CLOAKING)
+	.["outposts"] = list()
+	.["jump_points"] = list()
+	.["jumpable"] = current_overmap.can_jump_to
 
 	var/obj/machinery/power/cloak/cloaking_system = current_ship.ship_modules[SHIPMODULE_CLOAKING]
 	if(cloaking_system)
 		.["cloakChargePercent"] = 100 * cloaking_system.current_charge / max(cloaking_system.max_charge, 1)
+
+	for(var/datum/overmap/jump_point/point as anything in current_overmap.jump_points)
+		var/list/point_data
+		point_data = list(
+			name = point.name,
+			x = point.x,
+			y = point.y,
+		)
+		.["jump_points"] += list(point_data)
+
+	for(var/datum/overmap/outpost/target_outpost as anything in current_overmap.outposts)
+		var/list/outpost_data
+		outpost_data = list(
+			name = target_outpost.name,
+			x = target_outpost.x,
+			y = target_outpost.y,
+		)
+		.["outposts"] += list(outpost_data)
 
 	for(var/datum/weakref/engine in current_ship.shuttle_port.engine_list)
 		var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()

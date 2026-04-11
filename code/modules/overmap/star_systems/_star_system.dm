@@ -17,12 +17,13 @@
 	///List of all simulated ships in the star system.
 	var/list/controlled_ships = list()
 	///List of spawned outposts in the star system
-	var/list/outposts = list()
+	var/list/datum/overmap/outpost/outposts = list()
 	///List of all dynamic overmap datums in the star system.
 	var/list/dynamic_encounters  = list()
 	///List of all events in the star system.
 	var/list/events = list()
-
+	///List of jump points currently in the system
+	var/list/datum/overmap/jump_point/jump_points = list()
 
 	///The virtual level that contains the overmap
 	var/datum/virtual_level/overmap_vlevel
