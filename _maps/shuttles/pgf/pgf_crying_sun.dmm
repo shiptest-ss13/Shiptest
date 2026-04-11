@@ -1207,50 +1207,10 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security)
 "fU" = (
-/obj/effect/turf_decal/techfloor/orange{
-	dir = 1
-	},
-/obj/effect/turf_decal/techfloor/orange,
-/obj/structure/table/reinforced{
-	color = "#a8b2b6"
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_x = 1;
-	pixel_y = 1
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_x = 1;
-	pixel_y = 2
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 3;
-	pixel_x = 1
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 5;
-	pixel_x = 1
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 6;
-	pixel_x = 1
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 7;
-	pixel_x = 1
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 9;
-	pixel_x = 1
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 10;
-	pixel_x = 1
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "c-sun_canteen_shut"
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/canteen/kitchen)
+/obj/structure/grille,
+/obj/machinery/processor,
+/turf/open/floor/plating,
+/area/ship/external/dark)
 "gc" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
@@ -4795,6 +4755,10 @@
 	pixel_x = 31;
 	pixel_y = -6
 	},
+/obj/machinery/microwave{
+	pixel_y = 7;
+	layer = 2.95
+	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/canteen/kitchen)
 "xW" = (
@@ -6402,6 +6366,12 @@
 /obj/structure/table/reinforced{
 	color = "#a8b2b6"
 	},
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/reagentgrinder{
+	pixel_y = 24;
+	pixel_x = 7;
+	layer = 3
+	},
 /obj/item/clothing/suit/apron/chef{
 	pixel_x = 3;
 	pixel_y = 5
@@ -6410,7 +6380,6 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
-/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/canteen/kitchen)
 "Go" = (
@@ -8638,12 +8607,7 @@
 /area/ship/crew/canteen)
 "Pv" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
-/obj/structure/table/reinforced{
-	color = "#a8b2b6"
-	},
-/obj/machinery/microwave{
-	pixel_y = 7
-	},
+/obj/machinery/processor,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/canteen/kitchen)
 "Pz" = (
@@ -9130,15 +9094,6 @@
 /obj/effect/turf_decal/corner/transparent/black/full,
 /obj/structure/table/reinforced{
 	color = "#a8b2b6"
-	},
-/obj/item/cutting_board{
-	pixel_x = 0;
-	pixel_y = 3;
-	anchored = 1
-	},
-/obj/item/melee/knife/kitchen{
-	pixel_x = -4;
-	pixel_y = 7
 	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/canteen/kitchen)
@@ -10628,10 +10583,33 @@
 /obj/structure/table/reinforced{
 	color = "#a8b2b6"
 	},
-/obj/machinery/light/directional/east,
-/obj/machinery/reagentgrinder{
-	pixel_y = 16;
-	pixel_x = 5
+/obj/item/cutting_board{
+	pixel_x = -2;
+	pixel_y = 3;
+	anchored = 1
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/structure/closet/secure_closet/wall/directional/east{
+	name = "Kitchen Cabinet"
+	},
+/obj/item/reagent_containers/condiment/bbqsauce{
+	pixel_x = 13;
+	pixel_y = 15
+	},
+/obj/item/reagent_containers/condiment/hotsauce{
+	pixel_x = 14;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 16;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = 11;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/canteen/kitchen)
@@ -10835,6 +10813,7 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/canteen/kitchen)
 "Yv" = (
@@ -11074,15 +11053,38 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "ZH" = (
-/obj/machinery/hydroponics/wooden{
-	density = 0
-	},
 /obj/effect/turf_decal/corner/opaque/navyblue/diagonal,
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
 /obj/effect/turf_decal/siding/white,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_x = 0;
+	pixel_y = -4
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = -2
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 0
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 2
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 4
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 6
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 8
+	},
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/canteen)
 "ZQ" = (
@@ -11677,7 +11679,7 @@ za
 iX
 LV
 lv
-fU
+eK
 BC
 iZ
 DX
@@ -11818,7 +11820,7 @@ sk
 zH
 AW
 AW
-aF
+fU
 aF
 RS
 RS
