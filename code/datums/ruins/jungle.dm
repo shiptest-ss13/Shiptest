@@ -52,7 +52,7 @@
 	placement_weight = 0
 	description = "A massive CLIP-LAND borehole in the jungle, researching & sampling the mineral wealth of the planet."
 	suffix = "jungle_bighole.dmm"
-	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE, RUIN_TAG_MAJOR_LOOT)
+	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_LIVEABLE, RUIN_TAG_MEDIUM_LOOT)
 
 /datum/map_template/ruin/jungle/bighole_frontiersmen
 	name = "Frontiersmen Occupied Big Hole"
