@@ -31,6 +31,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway)
 "aQ" = (
@@ -66,6 +67,10 @@
 /obj/item/food/bun{
 	pixel_y = 4
 	},
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/enzyme,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "bq" = (
@@ -167,10 +172,6 @@
 /obj/item/bodycamera{
 	pixel_y = 2;
 	pixel_x = 6
-	},
-/obj/item/multitool{
-	pixel_x = -3;
-	pixel_y = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/light/directional/north,
@@ -396,9 +397,10 @@
 	req_access_txt = "10"
 	},
 /obj/item/tank/internals/oxygen/yellow,
-/obj/item/clothing/suit/space/hardsuit/engine,
-/obj/item/clothing/mask/breath,
 /obj/machinery/light/directional/south,
+/obj/item/tank/jetpack/carbondioxide,
+/obj/item/clothing/suit/space/hardsuit/engine,
+/obj/item/clothing/mask/gas/atmos,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
 "gF" = (
@@ -600,7 +602,6 @@
 	pixel_x = -5;
 	pixel_y = 5
 	},
-/obj/item/clothing/glasses/meson,
 /obj/item/melee/knife/survival,
 /obj/item/radio/headset/alt,
 /obj/item/gps/mining{
@@ -616,6 +617,8 @@
 	pixel_y = 23
 	},
 /obj/item/storage/belt/mining/alt,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
 "ka" = (
@@ -832,17 +835,10 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/cryo)
 "oo" = (
-/obj/item/storage/bag/construction{
-	pixel_y = 4
-	},
 /obj/item/storage/bag/construction,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/electrical{
 	pixel_y = -6
-	},
-/obj/item/clothing/head/welding{
-	pixel_x = 8;
-	pixel_y = -9
 	},
 /obj/item/geiger_counter{
 	pixel_y = -8
@@ -912,6 +908,7 @@
 /obj/item/storage/guncase/pistol/miniegun{
 	mag_count = 3
 	},
+/obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "pb" = (
@@ -1102,8 +1099,7 @@
 	},
 /obj/machinery/door/airlock/command/glass{
 	dir = 4;
-	name = "Bridge";
-	req_one_access = list(19,41)
+	name = "Bridge"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4;
@@ -1152,14 +1148,6 @@
 	dir = 9
 	},
 /obj/structure/table,
-/obj/item/radio/intercom/wideband/directional/south{
-	pixel_x = 5;
-	pixel_y = -27
-	},
-/obj/item/folder/blue{
-	pixel_y = 3;
-	pixel_x = 7
-	},
 /obj/item/paper_bin{
 	pixel_x = -6;
 	pixel_y = 4
@@ -1177,6 +1165,14 @@
 	dir = 1;
 	pixel_y = -18;
 	pixel_x = -9
+	},
+/obj/item/radio/intercom/directional/south{
+	pixel_x = 5;
+	pixel_y = -30
+	},
+/obj/item/clipboard{
+	pixel_y = 4;
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -1361,18 +1357,21 @@
 	req_access_txt = "1";
 	name = "emergency armory locker"
 	},
-/obj/item/storage/box/ammo/a12g_buckshot{
-	pixel_y = -7
-	},
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/item/storage/box/ammo/a12g_buckshot,
-/obj/item/attachment/rail_light,
-/obj/item/attachment/bayonet,
-/obj/item/storage/guncase/cycler{
-	mag_count = 0
+/obj/item/storage/box/ammo/c9mm{
+	pixel_y = -7
+	},
+/obj/item/storage/box/ammo/c9mm{
+	pixel_y = -7
+	},
+/obj/item/storage/box/ammo/c9mm_rubber,
+/obj/item/storage/guncase/pistol/commander,
+/obj/item/storage/guncase/energy/etar{
+	mag_count = 3;
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/storage/equip)
@@ -1456,9 +1455,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
-	},
-/obj/machinery/light_switch{
-	pixel_y = 20
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
@@ -1781,7 +1777,28 @@
 	},
 /obj/item/kitchen/fork{
 	pixel_y = 7;
-	pixel_x = -6
+	pixel_x = 0
+	},
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker{
+	pixel_x = 8;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -10;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -10;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -12;
+	pixel_y = 14
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = -9;
+	pixel_y = 13
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -1820,6 +1837,22 @@
 	dir = 1;
 	pixel_x = -11;
 	pixel_y = -20
+	},
+/obj/item/extinguisher/mini{
+	pixel_y = 4;
+	pixel_x = 10
+	},
+/obj/item/extinguisher/mini{
+	pixel_y = 4;
+	pixel_x = 4
+	},
+/obj/item/extinguisher/mini{
+	pixel_y = 4;
+	pixel_x = -2
+	},
+/obj/item/extinguisher/mini{
+	pixel_y = 4;
+	pixel_x = -8
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -2068,13 +2101,13 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/item/radio/intercom/directional/south{
-	pixel_x = -8;
-	pixel_y = -30
-	},
 /obj/machinery/firealarm/directional/south{
 	pixel_x = 8;
 	pixel_y = -31
+	},
+/obj/item/radio/intercom/wideband/directional/south{
+	pixel_x = -8;
+	pixel_y = -27
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -2159,7 +2192,12 @@
 	pixel_y = 15
 	},
 /obj/item/cutting_board{
-	pixel_y = -5
+	pixel_y = -4;
+	pixel_x = 3
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_y = 29;
+	pixel_x = -3
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -2276,6 +2314,10 @@
 	dir = 8;
 	pixel_x = 25
 	},
+/obj/item/stack/tape/industrial/electrical{
+	pixel_x = -7;
+	pixel_y = -11
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
 "Jr" = (
@@ -2365,6 +2407,10 @@
 /obj/item/stack/sheet/glass/fifty{
 	pixel_y = 4;
 	pixel_x = -4
+	},
+/obj/item/storage/box/flares{
+	pixel_x = 7;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
@@ -2458,10 +2504,6 @@
 "LO" = (
 /obj/effect/turf_decal/warra/ns/center_left,
 /obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid{
-	pixel_x = 5;
-	pixel_y = 15
-	},
 /obj/item/storage/firstaid/brute{
 	pixel_x = 5;
 	pixel_y = 10
@@ -2500,6 +2542,10 @@
 	icon_state = "1-2"
 	},
 /obj/effect/mapping_helpers/crate_shelve,
+/obj/item/storage/firstaid/medical{
+	pixel_y = 6;
+	pixel_x = 5
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Me" = (
@@ -2514,6 +2560,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/drill,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Mt" = (
@@ -2587,6 +2634,11 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
+"Nq" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Nu" = (
 /obj/machinery/door/airlock/mining{
 	name = "Central Hall";
@@ -2704,6 +2756,11 @@
 	},
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/light_switch{
+	pixel_y = 12;
+	dir = 4;
+	pixel_x = -20
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "Qp" = (
@@ -2889,7 +2946,10 @@
 	},
 /obj/item/tank/internals/oxygen/red,
 /obj/item/tank/internals/oxygen/red,
-/obj/effect/mapping_helpers/crate_shelve,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Sv" = (
@@ -2967,9 +3027,10 @@
 	req_access_txt = "48"
 	},
 /obj/item/tank/internals/oxygen/yellow,
+/obj/machinery/light/directional/north,
+/obj/item/tank/jetpack/carbondioxide,
 /obj/item/clothing/suit/space/hardsuit/mining/heavy/ns,
 /obj/item/clothing/mask/gas/explorer,
-/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
 "TN" = (
@@ -3212,7 +3273,6 @@
 	pixel_x = -5;
 	pixel_y = 5
 	},
-/obj/item/clothing/glasses/meson/engine/tray,
 /obj/item/melee/knife/survival,
 /obj/item/radio/headset/alt,
 /obj/item/gps/engineering{
@@ -3234,6 +3294,9 @@
 	pixel_y = -5
 	},
 /obj/item/storage/belt/utility/full/engi,
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/storage/pouch/engi,
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
 "Yt" = (
@@ -3710,7 +3773,7 @@ NX
 EC
 tg
 mn
-Ti
+Nq
 wH
 YN
 cs
