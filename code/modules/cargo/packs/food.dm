@@ -415,12 +415,52 @@
 /datum/supply_pack/food/ingredients_basic/oats
 	name = "Oats Crate"
 	desc = "Crate containing five stalks of unprocessed oats."
-	cost = 75
+	cost = 50
 	contains = list(/obj/item/food/grown/oat,
 					/obj/item/food/grown/oat,
 					/obj/item/food/grown/oat,
 					/obj/item/food/grown/oat,
 					/obj/item/food/grown/oat,
+	)
+/datum/supply_pack/food/ingredients_basic/soybeans
+	name = "Soybeans Crate"
+	desc = "Crate containing five handfuls of soybeans."
+	cost = 75
+	contains = list(/obj/item/food/grown/soybeans,
+					/obj/item/food/grown/soybeans,
+					/obj/item/food/grown/soybeans,
+					/obj/item/food/grown/soybeans,
+					/obj/item/food/grown/soybeans,
+	)
+/datum/supply_pack/food/ingredients_basic/vanillapods
+	name = "Vanilla Pods Crate"
+	desc = "Crate containing five vanilla pods."
+	cost = 75
+	contains = list(/obj/item/food/grown/vanillapod,
+					/obj/item/food/grown/vanillapod,
+					/obj/item/food/grown/vanillapod,
+					/obj/item/food/grown/vanillapod,
+					/obj/item/food/grown/vanillapod,
+	)
+/datum/supply_pack/food/ingredients_basic/cocoapods
+	name = "Cocoa Pods Crate"
+	desc = "Crate containing five cocoa pods."
+	cost = 75
+	contains = list(/obj/item/food/grown/cocoapod,
+					/obj/item/food/grown/cocoapod,
+					/obj/item/food/grown/cocoapod,
+					/obj/item/food/grown/cocoapod,
+					/obj/item/food/grown/cocoapod,
+	)
+/datum/supply_pack/food/ingredients_basic/pineapple
+	name = "Pineapple Crate"
+	desc = "Crate containing five pineapples."
+	cost = 75
+	contains = list(/obj/item/food/grown/pineapple,
+					/obj/item/food/grown/pineapple,
+					/obj/item/food/grown/pineapple,
+					/obj/item/food/grown/pineapple,
+					/obj/item/food/grown/pineapple,
 	)
 /*
 		Cooking
