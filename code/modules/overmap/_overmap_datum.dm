@@ -382,8 +382,9 @@
 	var/input = stripped_input(user, "Please choose a message to hail the target with.", "Hailing Vessel")
 	if(!input)
 		return
-	priority_announce("[html_decode(input)]", "Outbound Hail to [interact_target]", 'sound/effects/hail.ogg', sender_override = name, zlevel = shuttle_port.virtual_z())
-	interact_target.relay_message(user,interact_target, input)
+	if(docked_to != interact_target.docked_to) // if we're docked on the same thing, dont repeat
+		priority_announce("[html_decode(input)]", "Outbound Hail to [interact_target]", 'sound/effects/hail.ogg', sender_override = name, zlevel = shuttle_port.virtual_z())
+	interact_target.relay_message(user,interact_target, input, src)
 	deadchat_broadcast(" hailed the <span class='name'>[interact_target.name]</span>: [input]", "<span class='name'>[user.real_name]</span>", user, message_type=DEADCHAT_ANNOUNCEMENT)
 	return
 
@@ -392,8 +393,10 @@
  *
  * * user - The user requesting the options.
  * * requesting_interactor - The overmap datum requesting the options.
+ * * message - the message to be sent to the requesting interactor
+ * * sender - the overmap datum that initiated the message
  */
-/datum/overmap/proc/relay_message(mob/living/user, datum/overmap/requesting_interactor, message)
+/datum/overmap/proc/relay_message(mob/living/user, datum/overmap/requesting_interactor, message, datum/overmap/sender)
 	return FALSE
 
 /**
@@ -401,9 +404,11 @@
  *
  * * user - The user requesting the options.
  * * requesting_interactor - The overmap datum requesting the options.
+ * * message - the message to be sent to the requesting interactor
+ * * sender - the overmap datum that initiated the message
  */
-/datum/overmap/ship/controlled/relay_message(mob/living/user, datum/overmap/requesting_interactor, message)
-	priority_announce("[html_decode(message)]", "Incoming Hail", 'sound/effects/hail.ogg', sender_override = requesting_interactor.name, zlevel = shuttle_port.virtual_z())
+/datum/overmap/ship/controlled/relay_message(mob/living/user, datum/overmap/requesting_interactor, message, datum/overmap/sender)
+	priority_announce("[html_decode(message)]", "Incoming Hail from [sender ? sender : "Unknown Source"]", 'sound/effects/hail.ogg', sender_override = requesting_interactor.name, zlevel = shuttle_port.virtual_z())
 	return
 
 /**

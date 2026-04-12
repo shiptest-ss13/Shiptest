@@ -226,11 +226,29 @@
 	cost = 350
 	contains = list(/obj/item/storage/box/ammo/a12g_rubbershot)
 
-/datum/supply_pack/ammo/techshells
-	name = "Unloaded Shotgun Technological Shells Crate"
-	desc = "Contains a box of 7 versatile tech shells, capable of producing a variety of deadly effects for any situation. Some assembly required."
-	cost = 210
-	contains = list(/obj/item/storage/box/techshot)
+/datum/supply_pack/ammo/scattershells
+	name = "Scatter Laser Shell Crate"
+	desc = "Contains a box of 32 shells modified to fire Sharplite lasers. Perfect for high-velocity crowd control."
+	cost = 380
+	contains = list(/obj/item/storage/box/ammo/a12g_scatter)
+
+/datum/supply_pack/ammo/pulseshells
+	name = "Pulse Slug Crate"
+	desc = "Contains a box of 32 shells modified to fire a strong pulse projectile. Decent damage and respectable at demolishing fortifications."
+	cost = 300
+	contains = list(/obj/item/storage/box/ammo/pulseslug)
+
+/datum/supply_pack/ammo/incenshells
+	name = "Incendiary Shell Crate"
+	desc = "Contains a box of 32 shells filled with an incendiary payload. Low damage but catches targets on fire."
+	cost = 400
+	contains = list(/obj/item/storage/box/ammo/a12g_incen)
+
+/datum/supply_pack/ammo/ion
+	name = "Ion Shell Crate"
+	desc = "Contains a box of 32 shells filled with an electromagnetic payload. No damage but EMPs the target."
+	cost = 800
+	contains = list(/obj/item/storage/box/ammo/a12g_ion)
 
 /* .45-70 */
 
