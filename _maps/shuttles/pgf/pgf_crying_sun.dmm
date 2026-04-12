@@ -1206,6 +1206,13 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security)
+"fU" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 5
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge/cool)
 "gc" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
@@ -3250,7 +3257,6 @@
 	dir = 6
 	},
 /obj/machinery/photocopier,
-/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge/cool)
 "qt" = (
@@ -4606,10 +4612,6 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "xm" = (
-/obj/machinery/light/floor{
-	pixel_x = 16;
-	pixel_y = 0
-	},
 /obj/effect/turf_decal/corner/opaque/navyblue/diagonal,
 /obj/effect/turf_decal/siding/black{
 	dir = 8
@@ -5406,6 +5408,14 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/item/hand_labeler{
+	pixel_x = 0;
+	pixel_y = 11
+	},
+/obj/item/clipboard{
+	pixel_x = 0;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge/cool)
 "Bt" = (
@@ -5695,7 +5705,6 @@
 	dir = 2;
 	icon_state = "computer-left"
 	},
-/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge/cool)
 "CA" = (
@@ -6491,7 +6500,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/machinery/light/small/directional/north,
 /obj/machinery/modular_computer/console/preset/monitoring{
 	icon_state = "computer-right"
 	},
@@ -7086,6 +7094,10 @@
 	pixel_x = 8;
 	pixel_y = 24
 	},
+/obj/item/binoculars{
+	pixel_y = 4;
+	pixel_x = 1
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge/cool)
 "Jw" = (
@@ -7123,14 +7135,9 @@
 /obj/machinery/computer/helm/viewscreen/directional/south{
 	layer = 2.7
 	},
-/obj/machinery/recharger{
-	pixel_y = 0;
-	pixel_x = -6
-	},
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/recharger{
-	pixel_y = 0;
-	pixel_x = 6
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge/cool)
@@ -7560,7 +7567,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/machinery/light/small/directional/south,
 /obj/machinery/computer/atmos_control/ship/c_sun{
 	dir = 1;
 	icon_state = "computer-right"
@@ -8435,7 +8441,7 @@
 	dir = 4
 	},
 /obj/machinery/door/window/brigdoor/westleft{
-	req_one_access = list(20, 57, 58);
+	req_one_access = list(20, 57, 58,10);
 	dir = 2
 	},
 /obj/effect/turf_decal/techfloor{
@@ -9762,15 +9768,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
-"TT" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/structure/grille,
-/obj/item/gun/ballistic/revolver/montagne,
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 2
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines/port)
 "TW" = (
 /obj/structure/railing/corner{
 	dir = 8;
@@ -10132,9 +10129,9 @@
 	pixel_x = 15;
 	pixel_y = 14
 	},
-/obj/item/binoculars{
-	pixel_y = 4;
-	pixel_x = 1
+/obj/item/clipboard{
+	pixel_x = -5;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge/cool)
@@ -11285,7 +11282,7 @@ RS
 On
 oE
 Gf
-TT
+Ix
 Gx
 qH
 ad
@@ -12681,7 +12678,7 @@ PP
 Cy
 tP
 XX
-xL
+fU
 TW
 KD
 db
@@ -12817,7 +12814,7 @@ PP
 GI
 gF
 QU
-xL
+fU
 hs
 qr
 PP

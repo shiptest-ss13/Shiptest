@@ -427,6 +427,10 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/recharger{
+	pixel_x = 16;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "yH" = (
@@ -566,6 +570,10 @@
 /obj/machinery/light_switch{
 	pixel_x = -16;
 	pixel_y = 22
+	},
+/obj/machinery/recharger{
+	pixel_x = -16;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
