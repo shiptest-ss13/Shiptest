@@ -11,6 +11,7 @@
 	}
 
 WARRA_OUTPOST_TURF_HELPER(plating/asteroid/snow)
+WARRA_OUTPOST_TURF_HELPER(plating/asteroid/snow/no_smooth)
 WARRA_OUTPOST_TURF_HELPER(plating/asteroid/icerock)
 WARRA_OUTPOST_TURF_HELPER(plating/ice)
 WARRA_OUTPOST_TURF_HELPER(plating)
@@ -31,3 +32,6 @@ WARRA_OUTPOST_TURF_HELPER(plasteel/tech)
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambience_index = AMBIENCE_TUNDRA
 	icon_state = "space_near"
+
+/turf/open/floor/plating/asteroid/snow/no_smooth
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_SNOWED, SMOOTH_GROUP_FLOOR_PLASTEEL)

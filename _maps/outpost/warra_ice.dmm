@@ -691,7 +691,7 @@
 /obj/structure/sign/warra/vigilitas{
 	pixel_x = -30
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/outpost/exterior/warra)
 "dE" = (
 /obj/effect/turf_decal/siding/white,
@@ -806,7 +806,7 @@
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/outpost/exterior/warra)
 "ei" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1078,6 +1078,12 @@
 "fA" = (
 /turf/closed/indestructible/titanium/nodiagnonal,
 /area/outpost/cargo/smeltery)
+"fB" = (
+/obj/structure/flora/grass/green{
+	layer = 3.1
+	},
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/outpost/exterior/warra)
 "fD" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1560,6 +1566,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/port)
+"ia" = (
+/obj/structure/flora/tree/dead,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/outpost/exterior/warra)
 "ic" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -2186,6 +2196,9 @@
 "li" = (
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/dorm)
+"ll" = (
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/outpost/exterior/warra/wilderness)
 "ln" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2885,7 +2898,7 @@
 	pixel_x = 0;
 	pixel_y = -30
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/outpost/exterior/warra)
 "oY" = (
 /obj/structure/closet/secure_closet/contraband,
@@ -3130,6 +3143,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/smeltery)
+"qD" = (
+/obj/structure/sign/warra{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/outpost/exterior/warra)
 "qF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/raisins,
@@ -3139,6 +3158,9 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/vacant_rooms/shop)
+"qO" = (
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/outpost/exterior/warra)
 "qQ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3617,7 +3639,7 @@
 /obj/effect/landmark/outpost/elevator_machine{
 	shaft = "1"
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/outpost/exterior/warra)
 "tC" = (
 /obj/effect/turf_decal/siding/white,
@@ -3735,7 +3757,7 @@
 	pixel_x = -28;
 	pixel_y = 2
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/outpost/exterior/warra)
 "uv" = (
 /obj/effect/turf_decal/borderfloor/full,
@@ -4766,7 +4788,7 @@
 /obj/machinery/camera/autoname{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/outpost/exterior/warra)
 "zn" = (
 /obj/structure/flora/tree/dead,
@@ -5113,6 +5135,10 @@
 /obj/structure/chair/bench/orange/directional/south,
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost,
 /area/outpost/exterior/warra)
+"AW" = (
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/outpost/exterior/warra)
 "Bc" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -5253,7 +5279,7 @@
 /area/outpost/cargo/smeltery)
 "BE" = (
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/outpost/exterior/warra)
 "BI" = (
 /obj/effect/turf_decal/borderfloor{
@@ -6026,7 +6052,7 @@
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/outpost/exterior/warra)
 "Fu" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/n2{
@@ -6545,7 +6571,7 @@
 /obj/structure/sign/warra{
 	pixel_y = 32
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/outpost/exterior/warra)
 "Ia" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6587,6 +6613,10 @@
 	icon_state = "platingdmg1"
 	},
 /area/outpost/maintenance/starboard)
+"Ie" = (
+/obj/structure/flora/rock/pile/icy,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/outpost/exterior/warra)
 "If" = (
 /obj/structure/flora/grass/both{
 	layer = 3.1
@@ -7502,6 +7532,10 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost,
 /area/outpost/operations)
+"MA" = (
+/obj/structure/flora/tree/pine,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/outpost/exterior/warra)
 "MB" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only,
@@ -7748,7 +7782,7 @@
 /obj/item/trash/sosjerky{
 	pixel_y = 12
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/outpost/exterior/warra)
 "Nx" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -9373,6 +9407,12 @@
 /obj/effect/turf_decal/trimline/opaque/vired/line,
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
+"WO" = (
+/obj/structure/flora/grass/both{
+	layer = 3.1
+	},
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/outpost/exterior/warra)
 "WT" = (
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
@@ -12516,11 +12556,11 @@ bQ
 Xi
 GH
 tc
+ll
 QL
 QL
-QL
-QL
-QL
+ll
+ll
 Nj
 Nj
 Nj
@@ -13252,7 +13292,7 @@ eo
 eo
 Ly
 Py
-rM
+WO
 UL
 uJ
 sD
@@ -13344,11 +13384,11 @@ kq
 If
 eo
 dR
-eo
+qO
 UL
 Xr
 tC
-eo
+qO
 rM
 zC
 iB
@@ -13528,11 +13568,11 @@ Er
 Er
 qW
 qW
-dR
+fB
 UL
 Xr
 tC
-rM
+WO
 ot
 vh
 KH
@@ -13620,7 +13660,7 @@ aF
 EP
 Nx
 qW
-GC
+qD
 UL
 uJ
 tC
@@ -13712,7 +13752,7 @@ qF
 vo
 YC
 qW
-kq
+MA
 UL
 uJ
 tC
@@ -14080,7 +14120,7 @@ hc
 IH
 zR
 qW
-eo
+qO
 UL
 Xr
 sD
@@ -14172,11 +14212,11 @@ qW
 TC
 qW
 qW
-rM
+WO
 UL
 Xr
 tC
-eo
+qO
 rM
 vh
 xY
@@ -14356,11 +14396,11 @@ oG
 Na
 qW
 rM
-eo
+qO
 UL
 Xr
 tC
-dR
+fB
 eo
 vh
 Hn
@@ -14452,7 +14492,7 @@ HZ
 ym
 uJ
 tC
-eo
+qO
 kD
 kD
 kD
@@ -14544,7 +14584,7 @@ PN
 OO
 Xr
 FP
-eo
+qO
 kD
 uU
 Da
@@ -14636,7 +14676,7 @@ Lq
 Lq
 mJ
 FP
-eo
+qO
 kD
 Ts
 js
@@ -14816,11 +14856,11 @@ aR
 dW
 qW
 qW
-GC
+qD
 ym
 Xr
 tC
-ot
+Ie
 kD
 kD
 pd
@@ -14912,7 +14952,7 @@ rM
 Cn
 Xr
 sD
-eo
+qO
 Du
 kD
 dy
@@ -15000,12 +15040,12 @@ VZ
 rm
 XB
 eo
-kq
+MA
 UL
 uJ
 Zq
 MH
-eo
+qO
 nN
 tk
 Kk
@@ -15092,7 +15132,7 @@ gD
 EJ
 XB
 eo
-rM
+WO
 UL
 uJ
 kn
@@ -15170,11 +15210,11 @@ Rj
 Rj
 Rj
 Rj
-zn
+ia
 Nz
 if
 sX
-eo
+qO
 eo
 kq
 qW
@@ -15184,7 +15224,7 @@ TS
 qW
 qW
 dR
-eo
+qO
 ym
 rh
 Ka
@@ -15266,7 +15306,7 @@ eo
 Sz
 if
 sD
-eo
+qO
 rM
 eo
 eo
@@ -15276,7 +15316,7 @@ eo
 EZ
 eo
 eo
-kq
+MA
 uO
 Ui
 PS
@@ -15354,31 +15394,31 @@ yh
 yh
 yh
 yh
-dR
+fB
 mC
 if
 sD
+qO
 eo
-eo
-eo
+qO
+WO
+fB
+qO
+MA
+qO
 rM
-dR
-eo
-kq
-eo
-rM
-ot
+Ie
 am
 jm
 uG
 mh
 at
 TI
-eo
+qO
 rM
-eo
-kq
-dR
+qO
+MA
+fB
 eo
 tB
 vs
@@ -15466,7 +15506,7 @@ Ma
 if
 ik
 KX
-zn
+ia
 dR
 eo
 vt
@@ -15558,7 +15598,7 @@ Lq
 mB
 Gt
 AB
-eo
+qO
 pH
 pH
 pH
@@ -15733,11 +15773,11 @@ QU
 bM
 PS
 kH
-eo
+qO
 Bq
-eo
-dR
-eo
+qO
+fB
+qO
 am
 ZQ
 eI
@@ -15829,8 +15869,8 @@ mk
 eo
 ot
 eo
-rM
-eo
+WO
+qO
 UL
 IW
 Nk
@@ -15922,11 +15962,11 @@ Dq
 zY
 mk
 eo
-dR
+fB
 UL
 IW
 tC
-eo
+qO
 pH
 pH
 pH
@@ -16014,11 +16054,11 @@ kK
 WD
 mk
 mk
-eo
+qO
 UL
 IW
 tC
-rM
+WO
 pH
 jB
 CC
@@ -16106,11 +16146,11 @@ xS
 it
 yo
 Dq
-eo
+qO
 UL
 IW
 tC
-eo
+qO
 pH
 SU
 ij
@@ -16198,11 +16238,11 @@ yp
 eH
 gc
 Dq
-dR
+fB
 UL
 IW
 sD
-ot
+Ie
 Ae
 eb
 eb
@@ -16290,11 +16330,11 @@ ZK
 Ev
 BB
 Dq
-eo
+qO
 UL
 mr
 sD
-eo
+qO
 Ae
 ls
 Nr
@@ -16474,11 +16514,11 @@ ET
 WT
 MP
 Dq
-rM
+WO
 ZG
 IW
 sD
-dR
+fB
 pH
 pH
 Fe
@@ -16566,11 +16606,11 @@ Fn
 yi
 aA
 Dq
-eo
+qO
 UL
 FU
 sD
-zn
+ia
 wE
 pH
 VM
@@ -16658,11 +16698,11 @@ Fn
 kS
 QY
 Dq
-dR
+fB
 UL
 IW
 sD
-rM
+WO
 wE
 pH
 ha
@@ -16754,7 +16794,7 @@ BE
 ym
 eD
 sD
-oD
+AW
 am
 pH
 pH
@@ -16842,11 +16882,11 @@ dN
 Hd
 Zp
 fA
-eo
+qO
 wd
 IW
 Ex
-eo
+qO
 rM
 oD
 WL
@@ -16934,7 +16974,7 @@ dK
 tU
 sZ
 fA
-rM
+WO
 qi
 IW
 wH
@@ -17030,9 +17070,9 @@ eo
 Lv
 IW
 Ex
-eo
-kq
-dR
+qO
+MA
+fB
 iZ
 iZ
 iZ
@@ -17117,8 +17157,8 @@ iy
 CU
 rb
 fA
-ot
-eo
+Ie
+qO
 qi
 IW
 fk
@@ -17209,7 +17249,7 @@ fA
 fA
 fA
 fA
-dR
+fB
 KL
 gV
 IW
@@ -17301,7 +17341,7 @@ Rj
 Rj
 Rj
 Rj
-eo
+qO
 vj
 lF
 eD
@@ -17485,7 +17525,7 @@ QL
 Rj
 Rj
 Rj
-eo
+qO
 Fq
 PW
 JY
@@ -17578,7 +17618,7 @@ QL
 Lh
 zG
 zG
-eo
+qO
 UI
 dT
 wH
