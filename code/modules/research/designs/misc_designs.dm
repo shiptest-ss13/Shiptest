@@ -264,8 +264,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/donksoft_refill
-	name = "Donksoft Toy Vendor Refill"
-	desc = "A refill canister for Donksoft Toy Vendors."
+	name = "Toy Gun Vendor Refill"
+	desc = "A refill canister for Toy Gun Vendors."
 	id = "donksoft_refill"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 25000, /datum/material/glass = 15000, /datum/material/plasma = 20000, /datum/material/gold = 10000, /datum/material/silver = 10000)
@@ -313,7 +313,7 @@
 
 /datum/design/plasticducky
 	name = "Rubber Ducky"
-	desc = "The classic Nanotrasen design for competitively priced bath based duck toys. No need for fancy Waffle co. rubber, buy Plastic Ducks today!"
+	desc = "The classic Makosso-Warra design for competitively priced bath based duck toys. No need for fancy Waffle co. rubber, buy Plastic Ducks today!"
 	id = "plasticducky"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/plastic = 1000)

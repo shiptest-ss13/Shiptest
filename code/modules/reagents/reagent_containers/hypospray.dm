@@ -339,7 +339,7 @@
 
 /obj/item/reagent_containers/hypospray/medipen/badstop/update_icon_state()
 	. = ..()
-	if(reagents.total_volume > 30)
+	if(reagents.total_volume >= 30)
 		icon_state = base_icon_state
 		return
 	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? 1 : 0]"
@@ -409,7 +409,7 @@
 	name = "hypospray mk.II"
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "hypo2"
-	desc = "A medical product traditionally manufactured by Nanotrasen and Cybersun, this hypospray takes 30-unit vials as the drug supply for easy swapping."
+	desc = "A class of medical device traditionally manufactured by Matahari Pharmaceutical and Cybersun, this hypospray takes 30-unit vials as the drug supply for easy swapping."
 	w_class = WEIGHT_CLASS_TINY
 	var/list/allowed_containers = list(/obj/item/reagent_containers/glass/bottle/vial/tiny, /obj/item/reagent_containers/glass/bottle/vial/small)
 	var/mode = HYPO_INJECT

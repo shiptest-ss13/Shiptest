@@ -1,0 +1,838 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/template_noop,
+/area/space)
+"c" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"d" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/corner,
+/obj/effect/turf_decal/trimline/transparent/blue/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 2
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"e" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "glaucus_starboard_holo"
+	},
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/door/poddoor/preopen{
+	id = "glaucus_starboard_blast"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	dir = 2;
+	name = "Waste to Dock";
+	layer = 2.43
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"f" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	pixel_y = -9;
+	pixel_x = -18;
+	id = "glaucus_starboard_holo";
+	name = "Shuttle Holofield"
+	},
+/obj/machinery/button/door{
+	id = "glaucus_starboard_blast";
+	name = "Checkpoint Shutters";
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"g" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 6
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"h" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "glaucus_starboard_holo"
+	},
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/door/poddoor/preopen{
+	id = "glaucus_starboard_blast"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	dir = 1;
+	name = "Distro to Shuttle";
+	layer = 2.43
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-1"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"i" = (
+/obj/machinery/airalarm/directional/south,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/effect/turf_decal/corner/transparent/lime/three_quarters,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"j" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "glaucus_engine_shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"k" = (
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 1;
+	icon_state = "computer-left"
+	},
+/obj/item/radio/intercom/wideband/directional/south{
+	pixel_y = -27;
+	pixel_x = -12
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -19;
+	pixel_x = 3;
+	id = "glaucus_bridge_shutters";
+	name = "Bridge Shutters"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"l" = (
+/obj/machinery/porta_turret/ship/clip{
+	dir = 6;
+	id = "glaucus_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"m" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/closet/emcloset/wall/directional/east,
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_y = -4;
+	pixel_x = 7
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_y = -4;
+	pixel_x = 7
+	},
+/obj/item/clothing/mask/gas/clip{
+	pixel_x = 7;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"n" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"o" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/light_switch{
+	pixel_x = 12;
+	pixel_y = 20
+	},
+/obj/effect/turf_decal/corner/transparent/lime/three_quarters{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"p" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"q" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	dir = 2;
+	id = "glaucus_bridge_shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"r" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "glaucus_bridge_shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"t" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/transparent/lime/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"u" = (
+/obj/machinery/light/small/directional/west,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/air,
+/obj/effect/turf_decal/box/white{
+	color = "#B7D993"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"v" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/item/radio/intercom/directional/east,
+/obj/effect/turf_decal/corner/transparent/lime/half{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-9"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-5"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"w" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "glaucus_engine_shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"x" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-10"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "glaucus_engine_shutters";
+	name = "Engine Shutters";
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/corner/transparent/lime/half{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"y" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 2
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-10"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"z" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "glaucus_port_holo"
+	},
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/door/poddoor/preopen{
+	id = "glaucus_port_blast"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	preferred_direction = 4;
+	port_direction = 8;
+	dir = 2;
+	name = "mira";
+	launch_status = 0
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"A" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = -1;
+	pixel_y = 5
+	},
+/obj/item/pen/fourcolor{
+	pixel_x = -2;
+	pixel_y = 7
+	},
+/obj/machinery/turretid/ship{
+	pixel_y = 26;
+	id = "glaucus_grid";
+	req_ship_access = 0;
+	req_access = null;
+	req_access_txt = "48"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"B" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/lime/half{
+	dir = 1
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -4;
+	pixel_y = 9
+	},
+/obj/structure/closet/secure_closet/wall/directional/east{
+	icon_state = "cargo_wall";
+	dir = 1;
+	pixel_y = 28;
+	pixel_x = 0;
+	name = "maintenance supply closet"
+	},
+/obj/item/storage/toolbox/electrical{
+	pixel_x = -4;
+	pixel_y = 3
+	},
+/obj/item/clothing/head/welding{
+	pixel_x = 10;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"C" = (
+/obj/machinery/holopad/emergency,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/trimline/transparent/blue/line,
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"D" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "glaucus_port_holo"
+	},
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/door/poddoor/preopen{
+	id = "glaucus_port_blast"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"E" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/stairs{
+	color = "#555555";
+	dir = 2
+	},
+/area/ship/bridge)
+"F" = (
+/obj/machinery/light/small/directional/west,
+/obj/machinery/telecomms/relay/preset/minutemen,
+/obj/effect/turf_decal/box/white{
+	color = "#B7D993"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"G" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/lime/half,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"H" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/computer/crew{
+	dir = 1;
+	icon_state = "computer-right"
+	},
+/obj/item/radio/intercom/directional/south{
+	pixel_x = 1
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"I" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "glaucus_bridge_shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"J" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shuttle/engine/electric/premium{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"L" = (
+/obj/structure/cable/cyan{
+	icon_state = "5-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	icon_state = "6-8"
+	},
+/obj/effect/turf_decal/trimline/transparent/green/filled/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/transparent/green/filled/warning{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-9"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-10"
+	},
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	name = "Engineering"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"M" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 2
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/trimline/transparent/blue/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/warning,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"N" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-9"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/trimline/transparent/blue/line,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"O" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 2
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 5
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"Q" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/stairs{
+	color = "#555555";
+	dir = 1
+	},
+/area/ship/bridge)
+"R" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/fax/clip,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"S" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/stairs{
+	color = "#555555";
+	dir = 2
+	},
+/area/ship/bridge)
+"T" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/stairs{
+	color = "#555555";
+	dir = 1
+	},
+/area/ship/bridge)
+"U" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/end{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/end{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"V" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 2
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/trimline/transparent/blue/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/warning,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"W" = (
+/obj/machinery/porta_turret/ship/clip{
+	dir = 5;
+	id = "glaucus_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"X" = (
+/obj/machinery/power/smes/engineering{
+	input_level = 5000;
+	output_level = 15000
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-5"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-6"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Y" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	pixel_y = 9;
+	pixel_x = -18;
+	id = "glaucus_port_holo";
+	name = "Shuttle Holofield"
+	},
+/obj/machinery/button/door{
+	id = "glaucus_port_blast";
+	name = "Checkpoint Shutters";
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Z" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/closet/firecloset/wall/directional/east,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+
+(1,1,1) = {"
+c
+J
+c
+a
+c
+J
+c
+"}
+(2,1,1) = {"
+c
+j
+c
+w
+c
+j
+c
+"}
+(3,1,1) = {"
+c
+B
+u
+X
+F
+G
+c
+"}
+(4,1,1) = {"
+c
+o
+x
+t
+v
+i
+c
+"}
+(5,1,1) = {"
+W
+c
+c
+L
+c
+c
+l
+"}
+(6,1,1) = {"
+a
+c
+y
+n
+N
+c
+a
+"}
+(7,1,1) = {"
+c
+c
+O
+d
+g
+c
+c
+"}
+(8,1,1) = {"
+z
+Y
+T
+V
+S
+f
+e
+"}
+(9,1,1) = {"
+D
+Z
+Q
+M
+E
+m
+h
+"}
+(10,1,1) = {"
+c
+c
+R
+C
+H
+c
+c
+"}
+(11,1,1) = {"
+a
+c
+A
+U
+k
+c
+a
+"}
+(12,1,1) = {"
+a
+r
+I
+p
+I
+q
+a
+"}
+(13,1,1) = {"
+a
+a
+q
+I
+q
+a
+a
+"}

@@ -5,7 +5,7 @@
 		/obj/structure/grille/broken = 5,
 		/obj/structure/grille = 5,
 		/obj/item/cigbutt = 1,
-		/obj/item/trash/cheesie = 1,
+		/obj/item/trash/gummycarps = 1,
 		/obj/item/trash/candy = 1,
 		/obj/item/trash/chips = 1,
 		/obj/item/food/deadmouse = 1,

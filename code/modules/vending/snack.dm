@@ -7,10 +7,10 @@
 	light_mask = "snack-light-mask"
 	products = list(
 		/obj/item/food/spacetwinkie = 6,
-		/obj/item/food/cheesiehonkers = 6,
+		/obj/item/food/gummycarps = 6,
 		/obj/item/food/candy = 6,
 		/obj/item/food/chips = 6,
-		/obj/item/food/sosjerky = 6,
+		/obj/item/food/channeler_meats = 6,
 		/obj/item/food/no_raisin = 6,
 		/obj/item/reagent_containers/food/drinks/dry_ramen = 3,
 		/obj/item/food/energybar = 6,

@@ -107,7 +107,7 @@
 	recoil = 1
 	recoil_unwielded = 4
 	wield_delay = 0.65 SECONDS
-	manufacturer = MANUFACTURER_NANOTRASEN
+	manufacturer = MANUFACTURER_NONE
 	semi_auto = TRUE
 
 	gunslinger_recoil_bonus = 1
@@ -155,6 +155,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	)
 	sawn_desc = "I'm just here for the gasoline."
 	unique_reskin = null
+	manufacturer = MANUFACTURER_NONE
 	var/slung = FALSE
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)

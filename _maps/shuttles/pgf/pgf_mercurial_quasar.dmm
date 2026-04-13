@@ -99,7 +99,8 @@
 	},
 /obj/item/storage/guncase/pistol/kalixpistol{
 	pixel_y = -12;
-	pixel_x = -1
+	pixel_x = -1;
+	mag_count = 3
 	},
 /obj/item/clothing/shoes/combat/gezena{
 	pixel_y = -3;
@@ -1028,14 +1029,6 @@
 	pixel_y = -7;
 	pixel_x = 8
 	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -8;
-	pixel_y = 7
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -8;
-	pixel_y = 7
-	},
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_y = 7;
 	pixel_x = 8
@@ -1047,6 +1040,14 @@
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_y = -7;
 	pixel_x = 8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 7;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 7;
+	pixel_x = -8
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -2690,28 +2691,9 @@
 	pixel_x = 0;
 	pixel_y = -28
 	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 10
 	},
-/obj/item/storage/backpack/duffelbag/sec{
-	pixel_y = -12;
-	pixel_x = 7
-	},
-/obj/item/storage/backpack/duffelbag/sec{
-	pixel_y = -12;
-	pixel_x = 7
-	},
-/obj/item/storage/backpack/satchel/sec{
-	pixel_x = -3;
-	pixel_y = -16
-	},
-/obj/item/storage/backpack/satchel/sec{
-	pixel_x = -3;
-	pixel_y = -16
-	},
 /obj/item/clothing/head/gezena/flap/marine{
 	pixel_y = 8;
 	pixel_x = -6
@@ -2760,17 +2742,32 @@
 	pixel_y = -1;
 	pixel_x = 6
 	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_y = -2;
-	pixel_x = 7
+/obj/structure/window/reinforced{
+	dir = 8
 	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_y = -2;
-	pixel_x = 7
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
+	pixel_y = -12
 	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_y = -2;
-	pixel_x = 7
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
+	pixel_y = -12
+	},
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
+	pixel_y = -12
+	},
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -13
 	},
 /obj/item/clothing/neck/cloak/gezena{
 	pixel_x = -2;
@@ -2783,6 +2780,34 @@
 /obj/item/clothing/neck/cloak/gezena{
 	pixel_x = -2;
 	pixel_y = 0
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -2;
+	pixel_x = 7
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -2;
+	pixel_x = 7
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -2;
+	pixel_x = 7
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 2;
+	pixel_y = -15
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 2;
+	pixel_y = -15
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 2;
+	pixel_y = -15
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_x = 1;
+	pixel_y = -10
 	},
 /obj/item/clothing/shoes/combat/gezena/marine{
 	pixel_y = -10;
@@ -3512,14 +3537,15 @@
 /obj/item/gun/energy/kalix/pgf{
 	pixel_y = 6
 	},
-/obj/item/gun/energy/kalix/pistol{
-	pixel_y = -8
-	},
 /obj/item/gun/energy/kalix/pgf/nock{
 	pixel_y = -1
 	},
 /obj/structure/sign/poster/pgf/marine{
 	pixel_y = 32
+	},
+/obj/item/gun/energy/kalix/pgf/pdw{
+	pixel_x = -5;
+	pixel_y = -9
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)

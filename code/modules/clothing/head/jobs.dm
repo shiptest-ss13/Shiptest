@@ -103,12 +103,6 @@
 	name = "syndicate cap"
 	desc = "A black cap fit for a high ranking syndicate officer."
 
-/obj/item/clothing/head/HoS/cybersun
-	name = "cybersun hat"
-	desc = "A crimson-red hat fit for a high ranking cybersun officer."
-	icon_state = "cybersunhat"
-	item_state = "cybersunhat"
-
 /obj/item/clothing/head/HoS/beret/syndicate
 	name = "syndicate beret"
 	desc = "A nondescript black beret. Stylish and robust."

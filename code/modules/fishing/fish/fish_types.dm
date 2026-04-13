@@ -251,17 +251,6 @@
 	for(var/fish_type in subtypesof(/obj/item/fish))
 		new fish_type(src)
 
-/obj/item/fish/donkfish
-	name = "donk co. company patent donkfish"
-	desc = "A lab-grown donkfish. Its invention was an accident for the most part, as it was intended to be consumed in donk pockets. Unfortunately, it tastes horrible."
-	icon_state = "donkfish"
-	random_case_rarity = FISH_RARITY_VERY_RARE
-	required_fluid_type = AQUARIUM_FLUID_FRESHWATER
-	stable_population = 4
-	fillet_type = /obj/item/food/fishmeat/donkfish
-
-	fishing_difficulty_modifier = 10
-
 /obj/item/fish/emulsijack
 	name = "toxic emulsijack"
 	desc = "Ah, the terrifying emulsijack. Created in a laboratory, this slimey, scaleless fish emits an invisible toxin that emulsifies other fish for it to feed on. Its only real use is for completely ruining a tank."
