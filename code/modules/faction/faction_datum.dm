@@ -117,7 +117,6 @@
 	short_name = "CLIP Minutemen"
 	prefixes = PREFIX_MINUTEMEN
 
-
 /datum/faction/warra
 	name = FACTION_WARRA
 	short_name = "MAKOSSO-WARRA"
