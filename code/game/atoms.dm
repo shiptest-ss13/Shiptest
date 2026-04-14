@@ -1439,8 +1439,6 @@
 			log_shuttle(log_text)
 		if(LOG_RADIO_EMOTE)
 			log_radio_emote(log_text)
-		if(LOG_MSAY)
-			log_mentor(log_text)
 		if(LOG_LOOC)
 			log_looc(log_text)
 		if(LOG_SUBTLER)

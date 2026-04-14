@@ -76,11 +76,6 @@
 	if (CONFIG_GET(flag/log_adminchat))
 		WRITE_LOG(GLOB.world_game_log, "ADMIN: DSAY: [text]")
 
-/proc/log_mentor(text)
-	GLOB.mentorlog.Add(text)
-	if (CONFIG_GET(flag/log_admin))
-		WRITE_FILE(GLOB.world_game_log, "MENTOR: [text]")
-
 /* All other items are public. */
 /proc/log_game(text)
 	if (CONFIG_GET(flag/log_game))

@@ -1207,7 +1207,7 @@
 	category = list("initial", "Machinery")
 
 /datum/design/illestren_a850rclip
-	name = "8x50 Stripper Clip"
+	name = "8x50mmR En Bloc Clip"
 	id = "IllestrenStripClip"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1000)
