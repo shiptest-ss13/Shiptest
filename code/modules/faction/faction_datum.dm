@@ -107,13 +107,15 @@
 /datum/faction/clip
 	name = FACTION_CLIP
 	short_name = "CLIP"
-	parent_faction = /datum/faction/clip
 	official_language = /datum/language/league_kalixcian
 	prefixes = PREFIX_CLIP
 	color = "#3F90DF"
 
 /datum/faction/clip/cmm
+	name = FACTION_CLIP
 	short_name = "CLIP Minutemen"
+	parent_faction = /datum/faction/clip
+	prefixes = PREFIX_CLIP
 	allowed_factions = list(/datum/faction/clip)
 
 /datum/faction/warra
