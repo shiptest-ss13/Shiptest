@@ -112,10 +112,10 @@
 	color = "#3F90DF"
 
 /datum/faction/clip/cmm
-	name = FACTION_CLIP
+	name = FACTION_MINUTEMEN
 	short_name = "CLIP Minutemen"
 	parent_faction = /datum/faction/clip
-	prefixes = PREFIX_CLIP
+	prefixes = PREFIX_MINUTEMEN
 	allowed_factions = list(/datum/faction/clip)
 
 /datum/faction/warra
