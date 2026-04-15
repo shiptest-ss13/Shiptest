@@ -155,20 +155,21 @@ const SharedContent = (_props, context) => {
           ))}
         </Table>
       </Section>
-      <Section
-        title={
-          "Sector Information"
-        }
-      >
+      <Section title={'Sector Information'}>
         <LabeledList>
-          <LabeledList.Item labelWrap textAlign="center" label="Sector">{sector}</LabeledList.Item>
-
+          <LabeledList.Item labelWrap textAlign="center" label="Sector">
+            {sector}
+          </LabeledList.Item>
         </LabeledList>
         {facts &&
-            facts.map((fact) => (
-              <Box key={fact} textAlign="center">{fact}</Box>
-            ))}
-        <Box textAlign="center">{jumpable ? "Sector can be long-jumped to" : ""}</Box>
+          facts.map((fact) => (
+            <Box key={fact} textAlign="center">
+              {fact}
+            </Box>
+          ))}
+        <Box textAlign="center">
+          {jumpable ? 'Sector can be long-jumped to' : ''}
+        </Box>
         <Divider />
         <Table>
           <Table.Row header>
@@ -178,8 +179,12 @@ const SharedContent = (_props, context) => {
           {outposts &&
             outposts.map((outpost) => (
               <Table.Row key={outpost.name} className="candystripe">
-                <Table.Cell maxWidth="140px" fluid>{outpost.name}</Table.Cell>
-                <Table.Cell fluid>X{outpost.x}/Y{outpost.y}</Table.Cell>
+                <Table.Cell maxWidth="140px" fluid>
+                  {outpost.name}
+                </Table.Cell>
+                <Table.Cell fluid>
+                  X{outpost.x}/Y{outpost.y}
+                </Table.Cell>
               </Table.Row>
             ))}
         </Table>
@@ -192,8 +197,12 @@ const SharedContent = (_props, context) => {
           {jump_points &&
             jump_points.map((point) => (
               <Table.Row key={point.name} className="candystripe">
-                <Table.Cell maxWidth="100px" fluid>{point.name}</Table.Cell>
-                <Table.Cell fluid>X{point.x}/Y{point.y}</Table.Cell>
+                <Table.Cell maxWidth="100px" fluid>
+                  {point.name}
+                </Table.Cell>
+                <Table.Cell fluid>
+                  X{point.x}/Y{point.y}
+                </Table.Cell>
               </Table.Row>
             ))}
         </Table>
