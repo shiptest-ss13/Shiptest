@@ -845,12 +845,12 @@
 	build_path = /obj/item/storage/box/ammo/c38_surplus
 	category = list("initial", "Security", "Ammo")
 
-/datum/design/22lr_surplus
-	name = "Ammo Box (.22lr surplus)"
-	id = "c38_surplus"
+/datum/design/c22lr_surplus
+	name = "Ammo Box (.22 LR surplus)"
+	id = "c22lr-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 16000)
-	build_path = /obj/item/storage/box/ammo/c22lr_surplus
+	build_path = /obj/item/storage/box/ammo/c22lr/surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/beanbag_slug
