@@ -177,11 +177,7 @@ const MissionsList = (props, context) => {
 
       <Stack.Item>
         {(((hasHighPriority && mission.highPriority) || showButton) &&
-          buttonJSX(
-            mission,
-            tooltip,
-            disabled
-          )) ||
+          buttonJSX(mission, tooltip, disabled)) ||
           undefined}
       </Stack.Item>
     </Stack>
