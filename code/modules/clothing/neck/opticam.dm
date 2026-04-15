@@ -1,9 +1,10 @@
 //to-do: weigh annoyance of refactoring toggleable neck-type to not be /poncho with time I have to work.
 /obj/item/clothing/neck/poncho/opticamo
-	name = "brown cloak"
-	desc = "It's a cape that can be worn around your neck."
+	name = "\improper optical camoflague cloak"
+	desc = "A soft, long woven cloak made from a silky material, highly calibrated sensors, and a localized computing mesh."
 	icon = 'icons/obj/clothing/cloaks.dmi'
-	icon_state = "qmcloak"
+	base_icon_state = "opticam"
+	icon_state = "opticam"
 	w_class = WEIGHT_CLASS_BULKY
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	flags_inv = HIDESUITSTORAGE
@@ -16,6 +17,8 @@
 	strip_delay = EQUIP_DELAY_COAT * 1.5
 	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
 
+	actions_types = list(/datum/action/item_action/toggle_hood)
+
 	var/charge_per_attack = 1000
 	var/cell_override = /obj/item/stock_parts/cell/high
 
@@ -23,6 +26,10 @@
 	. = ..()
 	AddComponent(/datum/component/cell, cell_override, _has_cell_overlays=FALSE)
 	update_appearance()
+
+/obj/item/clothing/neck/poncho/update_appearance(updates)
+	icon_state = "[base_icon_state]-[ready]"
+	. = ..()
 
 /obj/item/clothing/neck/opticamo/update_overlays()
 	. = ..()
