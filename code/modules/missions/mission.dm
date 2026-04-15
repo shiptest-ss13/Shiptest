@@ -44,6 +44,7 @@
 	/// The ship that accepted this mission. Passed in accept().
 	var/datum/overmap/ship/controlled/servant
 
+	//to-do post pr: refactor into bitfield & do planet bitfield defines so that get_valid_mission() can be optimized
 	/// A list of locations, the mission requires at least 1 to exist to be created.
 	var/list/required_locations = list()
 
