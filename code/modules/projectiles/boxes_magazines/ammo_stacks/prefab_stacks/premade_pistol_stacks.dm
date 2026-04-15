@@ -235,6 +235,7 @@
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/surplus
 	ammo_type = /obj/item/ammo_casing/c22lr/surplus
 	max_ammo = 25
+	custom_materials = list(/datum/material/iron = 4000)
 
 /obj/item/storage/box/ammo/c22lr/surplus
 	name = "box of surplus .22 LR ammo"
