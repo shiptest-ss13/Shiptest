@@ -124,7 +124,7 @@
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/chasm/jungle
 
-/turf/open/chasm/jungle/lit
+/turf/open/chasm/lit
 	light_range = 2
 	light_power = 0.8
 

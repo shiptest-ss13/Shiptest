@@ -535,9 +535,9 @@
 	projectilesound = 'sound/weapons/gun/rifle/f4.ogg'
 	r_hand = /obj/item/gun/ballistic/automatic/marksman/f4
 	weapon_drop_chance = 100
-	vision_range = 14
-	aggro_vision_range = 14
-	minimum_distance = 14
+	vision_range = 16
+	aggro_vision_range = 16
+	minimum_distance = 16
 	stop_automated_movement = 1
 	wander = 0
 	retreat_distance = 0

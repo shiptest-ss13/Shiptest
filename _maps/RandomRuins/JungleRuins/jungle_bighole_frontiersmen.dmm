@@ -245,17 +245,17 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-21"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "aX" = (
 /obj/structure/platform/industrial/corner,
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "aZ" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-110"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "bd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -499,7 +499,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-13"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "cz" = (
 /obj/effect/turf_decal/industrial/caution{
@@ -1216,7 +1216,7 @@
 /obj/structure/platform/industrial{
 	dir = 9
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "hx" = (
 /obj/machinery/conveyor{
@@ -1267,7 +1267,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-10"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "hN" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning,
@@ -1297,6 +1297,10 @@
 /obj/item/ammo_box/magazine/skm_762_40/empty{
 	pixel_x = -6;
 	pixel_y = 6
+	},
+/obj/item/storage/box/ammo/a308{
+	pixel_x = 0;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/bighole/secoffice)
@@ -1430,7 +1434,7 @@
 /obj/structure/platform/industrial_alt{
 	dir = 1
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "iK" = (
 /obj/machinery/conveyor{
@@ -1491,7 +1495,7 @@
 	dir = 4
 	},
 /obj/effect/decal/fakelattice,
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "iX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -1540,7 +1544,7 @@
 /obj/structure/platform/industrial{
 	dir = 5
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "jv" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4{
@@ -2084,7 +2088,6 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
 	},
-/obj/item/shard/plastitanium,
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "mu" = (
@@ -2713,7 +2716,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-12"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "qb" = (
 /obj/structure/railing,
@@ -2725,7 +2728,7 @@
 	dir = 8
 	},
 /obj/structure/railing,
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "qe" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -2743,7 +2746,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-3"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "qg" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
@@ -2937,7 +2940,7 @@
 	dir = 4
 	},
 /obj/structure/railing,
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ro" = (
 /obj/structure/flora/tree/dead/tall,
@@ -3447,7 +3450,7 @@
 /obj/structure/platform/industrial{
 	dir = 8
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ut" = (
 /obj/structure/platform/industrial_alt{
@@ -3479,7 +3482,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-39"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "uE" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
@@ -3912,7 +3915,7 @@
 /obj/structure/platform/industrial{
 	dir = 2
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "xa" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4{
@@ -4362,13 +4365,13 @@
 /area/ruin/powered/bighole/shed)
 "zW" = (
 /obj/structure/platform/industrial,
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Aa" = (
 /obj/structure/platform/industrial{
 	dir = 1
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ac" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
@@ -4685,7 +4688,7 @@
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/bighole/dormitory)
 "BY" = (
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ca" = (
 /turf/closed/wall/concrete,
@@ -4719,7 +4722,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/box/ammo/a556_42,
+/obj/item/storage/box/ammo/a556_42/ap,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/canteen)
 "Ck" = (
@@ -5332,7 +5335,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-137"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "FQ" = (
 /obj/structure/cable{
@@ -5362,7 +5365,7 @@
 /obj/structure/platform/industrial/corner{
 	dir = 4
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ga" = (
 /obj/effect/turf_decal/siding/black{
@@ -5753,7 +5756,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-12"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Im" = (
 /obj/structure/cable{
@@ -5980,7 +5983,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-11"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Kn" = (
 /obj/structure/table/reinforced,
@@ -6152,7 +6155,7 @@
 /obj/structure/platform/industrial{
 	dir = 8
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "LM" = (
 /obj/structure/chair/bench/blue/directional{
@@ -6264,7 +6267,7 @@
 /obj/structure/platform/industrial/corner{
 	dir = 4
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ME" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -6286,7 +6289,7 @@
 /obj/structure/platform/industrial/corner{
 	dir = 1
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "MP" = (
 /obj/effect/turf_decal/corner/transparent/blue,
@@ -6622,7 +6625,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-55"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Pa" = (
 /obj/structure/platform/industrial_alt/corner{
@@ -6954,7 +6957,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-3"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Re" = (
 /obj/structure/platform/industrial_alt/corner{
@@ -7051,7 +7054,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-39"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Rx" = (
 /obj/structure/cable{
@@ -7315,7 +7318,7 @@
 /obj/structure/platform/industrial/corner{
 	dir = 1
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "SL" = (
 /obj/structure/dresser,
@@ -7549,7 +7552,7 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/item/storage/firstaid/regular{
 	pixel_x = 3;
-	pixel_y = 0
+	pixel_y = 1
 	},
 /obj/item/reagent_containers/blood/random,
 /obj/item/reagent_containers/blood/random{
@@ -7558,6 +7561,10 @@
 	},
 /obj/item/reagent_containers/blood/random{
 	pixel_x = -4;
+	pixel_y = -3
+	},
+/obj/item/storage/firstaid/brute{
+	pixel_x = 3;
 	pixel_y = -3
 	},
 /turf/open/floor/concrete/tiles,
@@ -7654,7 +7661,7 @@
 /obj/structure/platform/industrial{
 	dir = 6
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Vb" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/corner{
@@ -7674,7 +7681,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-38"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Vi" = (
 /obj/effect/turf_decal/road/line/edge{
@@ -7686,7 +7693,7 @@
 /obj/structure/platform/industrial{
 	dir = 10
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Vl" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -7715,7 +7722,7 @@
 /obj/structure/platform/industrial{
 	dir = 4
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "VC" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
@@ -8030,7 +8037,7 @@
 /obj/structure/platform/industrial/corner{
 	dir = 8
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "XH" = (
 /obj/structure/cable{
@@ -8367,7 +8374,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-3"
 	},
-/turf/open/chasm/jungle/lit,
+/turf/open/chasm/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ZF" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
