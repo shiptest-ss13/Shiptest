@@ -380,6 +380,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/clip_industrial
+	name = "CLIP Industrial Hardsuit Crate"
+	desc = "An industrial-grade hardsuit rated for impacts, fires and radiation."
+	cost = 1500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/clip)
+	crate_name = "CLIP industrial hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/spacesuits/clip
 	name = "CLIP softsuit crate"
 	desc = "Contains one civilian-grade CLIP softsuit."
@@ -428,6 +439,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/hardstealth
+	name = "Asura Shock Hardsuit Crate"
+	desc = "A stripped-down version of an older hardsuit, the Asura has been modified to keep its quick movement and armor at the cost of its night-vision technology. Due to this, its role is often shifted from recon to blitz maneuvers."
+	cost = 4500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/stealth/hardliners)
+	crate_name = "Asura Shock Hardsuit Crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/syndicate/hardliners
+	faction_discount = 0
+	faction_locked = TRUE
+
 //ngr
 
 /datum/supply_pack/spacesuits/beige_red_hardsuit
@@ -448,6 +470,17 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/bomb/ngr)
 	crate_name = "EOD hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/science
+	faction = /datum/faction/syndicate/ngr
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/ngr_miner
+	name = "NGR Mining Hardsuit Crate"
+	desc = "A heavy-duty hardsuit built to protect wreckers from harsh frontier conditions."
+	cost = 2000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/heavy/ngr)
+	crate_name = "NGR mining hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
 	faction = /datum/faction/syndicate/ngr
 	faction_discount = 0
 	faction_locked = TRUE

@@ -127,6 +127,14 @@
 	minimize_when_attached = FALSE
 	attachment_slot = null
 
+/obj/item/clothing/accessory/barcoat
+	name = "bartender waistcoat"
+	desc = "For help with drink spillage."
+	icon_state = "barcoat"
+	item_state = "barcoat"
+	minimize_when_attached = TRUE
+	attachment_slot = null
+
 //////////
 //Medals//
 //////////

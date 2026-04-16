@@ -86,13 +86,16 @@
 	desc = "A bulky set of stamped plasteel armor plates, coated with the intimidating grey of the Frontiersmen. If you have the time to inspect this vest, either you are about to die, or you have killed the one who wore it originally."
 	icon_state = "marine_frontier"
 	item_state = "armor"
+	supports_variations = VOX_VARIATION
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
 
 /obj/item/clothing/suit/armor/frontier
 	name = "reinforced fur coat"
 	desc = "A stiff olive-green coat, meant for frigid conditions. Commonly worn by Frontiersmen command."
 	icon_state = "frontier_coat"
+	supports_variations = VOX_VARIATION
 	body_parts_covered = CHEST|GROIN
 	cold_protection = CHEST|GROIN|ARMS
 	heat_protection = CHEST|GROIN|ARMS
@@ -102,6 +105,7 @@
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
 
 /obj/item/clothing/suit/armor/frontier/fireproof
 	name = "frontiersmen fireproof coat"
@@ -165,6 +169,8 @@
 	icon_state = "frontier_beret"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/beret/sec/frontier/officer
 	name = "\improper Frontiersmen officer beret"
@@ -223,14 +229,16 @@
 /obj/item/clothing/head/helmet/frontier
 	name = "frontiersmen reinforced helmet"
 	desc = "A reinforced Frontiersmen X-11. The front plate has a small window to let the user see."
-	icon_state = "marine_frontier"
+	icon_state = "marine_frontier_helmet"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
 	armor = list("melee" = 35, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 20)
 	slowdown = 0.1
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	clothing_flags = STOPSPRESSUREDAMAGE | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	supports_variations = VOX_VARIATION
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	can_flashlight = TRUE
 
@@ -248,8 +256,9 @@
 	icon_state = "gasmask_frontier"
 	icon = 'icons/obj/clothing/faction/frontiersmen/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/mask.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
 	resistance_flags = FIRE_PROOF
-	supports_variations = SNOUTED_VARIATION
+	supports_variations = SNOUTED_VARIATION | VOX_VARIATION
 
 //////////
 //Neck//
