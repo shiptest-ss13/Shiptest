@@ -1074,6 +1074,21 @@
 	desc = "Serene, the fifth planet of the Druja system. Covered with a thick sheet of snow, the atmosphere has been described as \"Breathable, if it weren't so darn cold.\" This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as old Frontiersmen War sites and Xenofauna war sites."
 	icon_state = "poster-clip_serene"
 
+/obj/structure/sign/poster/clip/ryuunosuke
+	name = "Ryuunosuke"
+	desc = "Ryuunosuke, the jewel of the Maebta system and seat of power for the CLIP member state of the Noble Confederation of Ryuunosuke. It's known for being one of the few Frontier planets to have been actively terraformed while inhabited, and lists several tourist attractions, including seaside noble estates, picturesque beaches, and the sites of battle against the Solar Companies."
+	icon_state = "poster-clip_ryuunosuke"
+
+/obj/structure/sign/poster/clip/clover
+	name = "Clover"
+	desc = "The ever-fortuitous colony of Clover, once one of many Makosso-Warra corporate colonies- now turned into an industrious and affluent CLIP member state. A peculiar corporatocracy that values its employees; it is a chill, humid planet that headquarters Clover Corporation, which produces many League consumer goods. The poster offers attractions such as high-end seafood restaurants, stargazing under its iconic coniferous woodlands as well as employment opportunities under Clover Corp."
+	icon_state = "poster-clip_ryuunosuke"
+
+/obj/structure/sign/poster/clip/star_city
+	name = "Star City"
+	desc = "Star City, the desert flower of the great frontier. Many within the Confederated League seek to make great fortunes within its arid environment, or end up penniless, gambling it all away. This poster promotes the iconic metropolis' most ubiquitous tourist attraction: casinos of all income brackets, from the exorbitantly wealthy to the middle-class."
+	icon_state = "poster-clip_star"
+
 // Syndicate posters. Since syndicate are dived lorewise, this would only make sense on pre-split ships.
 /obj/structure/sign/poster/syndicate
 	poster_item_name = "suspicious looking poster"
