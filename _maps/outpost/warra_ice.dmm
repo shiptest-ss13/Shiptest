@@ -914,6 +914,8 @@
 "eK" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/number/left_zero,
+/obj/effect/turf_decal/number/right_one,
 /turf/open/floor/plasteel/patterned/cargo_one/warra_outpost,
 /area/outpost/exterior/warra)
 "eM" = (
@@ -980,8 +982,7 @@
 /area/outpost/maintenance/port)
 "fb" = (
 /obj/structure/railing/corner{
-	dir = 4;
-	layer = 4.1
+	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
@@ -1325,7 +1326,9 @@
 	id = "ice_stall1";
 	name = "Door Bolt";
 	pixel_x = -10;
-	pixel_y = 21
+	pixel_y = 21;
+	normaldoorcontrol = 1;
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/bathroom)
@@ -1772,8 +1775,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
 /obj/structure/railing/corner{
-	dir = 1;
-	layer = 4.1
+	dir = 1
 	},
 /obj/structure/noticeboard{
 	pixel_y = 28
@@ -2824,12 +2826,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/starboard)
-"oM" = (
-/obj/structure/platform/ship_four/corner{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
 "oO" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 4
@@ -2986,7 +2982,9 @@
 	id = "ice_stall2";
 	name = "Door Bolt";
 	pixel_x = -10;
-	pixel_y = 21
+	pixel_y = 21;
+	normaldoorcontrol = 1;
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/bathroom)
@@ -5177,6 +5175,9 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = -32
 	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "Bn" = (
@@ -5584,13 +5585,6 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/cryo)
-"Dd" = (
-/obj/structure/flora/rock/pile/icy,
-/obj/structure/platform/ship_four/corner{
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
 "Df" = (
 /obj/structure/rack,
 /obj/item/towel{
@@ -6814,6 +6808,9 @@
 /area/outpost/vacant_rooms/shop)
 "Jo" = (
 /obj/structure/falsewall/titanium,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "Jp" = (
@@ -6871,8 +6868,7 @@
 	dir = 1
 	},
 /obj/structure/railing/corner{
-	dir = 1;
-	layer = 4.1
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost,
 /area/outpost/exterior/warra)
@@ -6962,12 +6958,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut,
 /area/outpost/vacant_rooms)
-"JR" = (
-/obj/structure/platform/ship_four/corner{
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
 "JS" = (
 /obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/siding/white{
@@ -7328,10 +7318,6 @@
 "Ly" = (
 /turf/open/floor/plating/asteroid/icerock/warra_outpost,
 /area/outpost/exterior/warra)
-"Lz" = (
-/obj/structure/platform/ship_four/corner,
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
 "LA" = (
 /obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -7564,12 +7550,11 @@
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/dorm)
 "MD" = (
-/obj/structure/flora/rock/pile/icy,
-/obj/structure/platform/ship_four/corner{
-	dir = 8
+/obj/structure/fence/door{
+	dir = 4
 	},
 /turf/open/floor/plating/asteroid/snow/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
+/area/outpost/exterior/warra)
 "MF" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -8049,8 +8034,7 @@
 	dir = 10
 	},
 /obj/structure/railing/corner{
-	dir = 4;
-	layer = 4.1
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost,
 /area/outpost/exterior/warra)
@@ -8085,7 +8069,7 @@
 /obj/machinery/light/small/directional/south{
 	pixel_x = -6
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/outpost/exterior/warra)
 "PN" = (
 /obj/effect/turf_decal/siding/white{
@@ -8308,12 +8292,10 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bathroom)
 "Rm" = (
-/obj/structure/flora/tree/pine,
-/obj/structure/platform/ship_four/corner{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
+/obj/effect/turf_decal/number/left_zero,
+/obj/effect/turf_decal/number/right_two,
+/turf/open/floor/plasteel/patterned/cargo_one/warra_outpost,
+/area/outpost/exterior/warra)
 "Rn" = (
 /obj/structure/table,
 /obj/effect/turf_decal/siding/white,
@@ -8388,7 +8370,6 @@
 /turf/open/floor/carpet/blue,
 /area/outpost/vacant_rooms)
 "RI" = (
-/obj/structure/platform/ship_four,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/asteroid/snow/warra_outpost,
 /area/outpost/exterior/warra/wilderness)
@@ -8751,11 +8732,9 @@
 	},
 /area/outpost/maintenance/starboard)
 "Tm" = (
-/obj/structure/platform/ship_four/corner{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/outpost/exterior/warra)
 "Tq" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -9396,9 +9375,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/outpost/maintenance/starboard)
 "WM" = (
-/obj/structure/platform/ship_four{
-	dir = 1
-	},
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plating/asteroid/snow/warra_outpost,
 /area/outpost/exterior/warra/wilderness)
@@ -10089,8 +10065,7 @@
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/corner{
-	dir = 4;
-	layer = 4.1
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost,
 /area/outpost/exterior/warra)
@@ -12249,12 +12224,12 @@ Lh
 QL
 QL
 QL
-Lz
+QL
 sL
 sL
 sL
 GJ
-Tm
+QL
 QL
 QL
 QL
@@ -12433,12 +12408,12 @@ QL
 QL
 QL
 QL
-oM
+QL
 no
 no
 no
 no
-JR
+QL
 QL
 QL
 QL
@@ -12617,12 +12592,12 @@ QL
 QL
 QL
 QL
-Lz
+QL
 tf
 tf
 tf
 tf
-MD
+Ah
 QL
 QL
 Lh
@@ -12801,12 +12776,12 @@ QL
 QL
 QL
 QL
-oM
+QL
 vQ
 Kp
 Kp
 Kp
-JR
+QL
 QL
 QL
 QL
@@ -13743,7 +13718,7 @@ yr
 DZ
 GS
 Yq
-Yq
+MD
 qW
 jR
 Wm
@@ -16019,12 +15994,12 @@ QL
 QL
 QL
 QL
-Lz
+QL
 sL
 sL
 sL
 GJ
-Tm
+QL
 zq
 QL
 Lh
@@ -16203,12 +16178,12 @@ QL
 QL
 QL
 QL
-oM
+QL
 no
 no
 no
 no
-Dd
+Ah
 QL
 QL
 QL
@@ -16387,12 +16362,12 @@ QL
 QL
 QL
 QL
-Lz
+QL
 tf
 tf
 tf
 tf
-Tm
+QL
 QL
 cE
 QL
@@ -16571,12 +16546,12 @@ QL
 CP
 QL
 Lh
-Rm
+CP
 vQ
 Kp
 Kp
 vQ
-JR
+QL
 QL
 Lh
 QL
@@ -17348,7 +17323,7 @@ eD
 nH
 nH
 nH
-nH
+Rm
 kA
 Ar
 Ce
@@ -17618,7 +17593,7 @@ QL
 Lh
 zG
 zG
-qO
+Tm
 UI
 dT
 wH

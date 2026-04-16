@@ -94,6 +94,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost,
 /area/hangar)
+"az" = (
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/hangar)
 "aC" = (
 /obj/structure/flora/tree/pine,
 /turf/open/floor/plating/asteroid/snow/warra_outpost,
@@ -491,7 +494,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "oS" = (
 /obj/structure/window/reinforced/fulltile/shuttle/indestructible,
@@ -739,6 +742,10 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost,
 /area/hangar)
+"zJ" = (
+/obj/structure/flora/grass/both,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/hangar)
 "zM" = (
 /obj/machinery/telecomms/relay,
 /obj/effect/decal/cleanable/dirt,
@@ -778,6 +785,10 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"BV" = (
+/obj/structure/flora/grass/green,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/hangar)
 "CG" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 4
@@ -806,7 +817,7 @@
 	desc = "A direction sign, pointing out which way the Cargo Delivery Chute is."
 	},
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "Ec" = (
 /obj/effect/turf_decal/borderfloor,
@@ -1037,6 +1048,10 @@
 /obj/effect/turf_decal/industrial/caution,
 /turf/open/floor/plasteel/tech/warra_outpost,
 /area/hangar)
+"NI" = (
+/obj/structure/flora/tree/pine,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/hangar)
 "NY" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 6
@@ -1168,7 +1183,7 @@
 	dir = 9;
 	layer = 2.8
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "Rk" = (
 /obj/effect/turf_decal/borderfloor,
@@ -2084,6 +2099,28 @@ aT
 ac
 ac
 ac
+az
+zJ
+az
+az
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
 ac
 ab
 ac
@@ -2106,32 +2143,10 @@ ac
 ac
 ac
 ac
-ac
-ab
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+az
+az
+az
+az
 ac
 ab
 ac
@@ -2146,7 +2161,7 @@ aT
 ac
 ab
 ac
-ac
+az
 OU
 ti
 bz
@@ -2193,7 +2208,7 @@ EG
 mA
 Tq
 Rl
-ac
+az
 ac
 ac
 ac
@@ -2208,7 +2223,7 @@ aT
 ac
 ac
 ac
-ac
+az
 Ec
 am
 JI
@@ -2255,7 +2270,7 @@ sS
 kQ
 KA
 ax
-ac
+az
 ac
 aC
 ac
@@ -2270,7 +2285,7 @@ aT
 ac
 ac
 aC
-ac
+az
 Dd
 hI
 LV
@@ -2317,7 +2332,7 @@ hT
 Rx
 hI
 ax
-ac
+az
 ak
 ac
 ab
@@ -2332,7 +2347,7 @@ aT
 ac
 ac
 ac
-ac
+az
 Rk
 hI
 at
@@ -2379,7 +2394,7 @@ ah
 ag
 an
 bQ
-ac
+az
 ac
 ac
 ac
@@ -2394,7 +2409,7 @@ aT
 aT
 ac
 ak
-ac
+az
 Rk
 hI
 Zb
@@ -2441,7 +2456,7 @@ jY
 ag
 hI
 bQ
-ac
+az
 ac
 ab
 ac
@@ -2456,7 +2471,7 @@ aT
 aT
 ab
 ac
-ac
+az
 Rk
 hI
 au
@@ -2503,7 +2518,7 @@ ah
 ay
 aY
 bQ
-ac
+az
 aC
 ac
 ac
@@ -2518,7 +2533,7 @@ aT
 aT
 ac
 ac
-ac
+az
 Rk
 an
 au
@@ -2565,7 +2580,7 @@ ah
 ay
 hI
 ax
-ac
+az
 ac
 ac
 ac
@@ -2580,7 +2595,7 @@ aT
 aT
 aT
 ac
-ak
+BV
 Rk
 an
 au
@@ -2627,7 +2642,7 @@ ah
 ag
 JI
 bQ
-ac
+az
 ac
 ac
 aT
@@ -2642,7 +2657,7 @@ aT
 aT
 as
 aC
-ac
+az
 Rk
 an
 au
@@ -2689,7 +2704,7 @@ ah
 ag
 JI
 bQ
-ac
+az
 ab
 ac
 aT
@@ -2704,7 +2719,7 @@ aT
 aT
 aT
 ac
-ab
+zJ
 Rk
 an
 au
@@ -2751,7 +2766,7 @@ jY
 ag
 JI
 bQ
-ac
+az
 ac
 aT
 aT
@@ -2766,7 +2781,7 @@ aT
 aT
 aT
 ac
-ac
+az
 Rk
 an
 au
@@ -2813,7 +2828,7 @@ ah
 ag
 JI
 bQ
-ac
+az
 ac
 aT
 aT
@@ -2828,7 +2843,7 @@ aT
 aT
 aT
 aQ
-ac
+az
 Dd
 an
 au
@@ -2875,7 +2890,7 @@ ah
 ag
 JI
 bQ
-ac
+az
 aC
 aT
 aT
@@ -2890,7 +2905,7 @@ aT
 aT
 aT
 aT
-ac
+az
 Dd
 an
 au
@@ -2937,7 +2952,7 @@ ah
 ag
 JI
 bQ
-ac
+az
 ak
 as
 aT
@@ -2952,7 +2967,7 @@ aT
 aT
 aT
 aT
-ac
+az
 Dd
 JI
 au
@@ -2999,7 +3014,7 @@ ah
 ay
 JI
 bQ
-ab
+zJ
 ac
 aT
 aT
@@ -3014,7 +3029,7 @@ aT
 aT
 aT
 ab
-ac
+az
 Dd
 JI
 au
@@ -3061,7 +3076,7 @@ jY
 ag
 hI
 bQ
-ac
+az
 ac
 aT
 aT
@@ -3076,7 +3091,7 @@ aT
 aT
 aT
 ac
-ak
+BV
 Dd
 JI
 au
@@ -3123,7 +3138,7 @@ ah
 ag
 an
 ax
-ac
+az
 aC
 aT
 aT
@@ -3138,7 +3153,7 @@ aT
 aT
 aT
 ac
-aC
+NI
 Rk
 JI
 au
@@ -3185,7 +3200,7 @@ ah
 ag
 an
 ax
-ac
+az
 ac
 ac
 aT
@@ -3200,7 +3215,7 @@ aT
 aT
 aT
 ac
-ac
+az
 Rk
 JI
 au
@@ -3247,7 +3262,7 @@ ah
 ag
 an
 bQ
-ac
+az
 ab
 ac
 aT
@@ -3262,7 +3277,7 @@ aT
 aT
 aT
 ab
-ac
+az
 Rk
 JI
 at
@@ -3309,7 +3324,7 @@ ah
 ag
 an
 ax
-ac
+az
 ac
 ac
 as
@@ -3324,7 +3339,7 @@ aT
 aT
 aT
 ac
-ac
+az
 Rk
 an
 at
@@ -3371,7 +3386,7 @@ jY
 ag
 an
 ax
-ac
+az
 ac
 ak
 aQ
@@ -3386,7 +3401,7 @@ aT
 aT
 as
 ak
-ac
+az
 Rk
 an
 au
@@ -3433,7 +3448,7 @@ ah
 lC
 hI
 ax
-ac
+az
 ac
 aC
 ac
@@ -3510,7 +3525,7 @@ Yt
 aa
 ac
 aC
-ac
+az
 Rk
 an
 au
@@ -3557,7 +3572,7 @@ ah
 ag
 an
 ax
-ab
+zJ
 ac
 ac
 ac
@@ -3572,7 +3587,7 @@ Yt
 aa
 ac
 ac
-ac
+az
 Rk
 an
 au
@@ -3619,7 +3634,7 @@ ah
 ag
 JI
 ax
-aC
+NI
 ac
 ab
 aT
@@ -3634,7 +3649,7 @@ Yt
 HH
 ac
 ac
-aC
+NI
 Dd
 JI
 au
@@ -3681,7 +3696,7 @@ jY
 ag
 an
 ax
-ac
+az
 ac
 ac
 aT
@@ -3696,7 +3711,7 @@ Yt
 aa
 ab
 ac
-ac
+az
 Rk
 JI
 au
@@ -3743,7 +3758,7 @@ ah
 ag
 an
 bQ
-ac
+az
 ac
 aT
 aT
@@ -3758,7 +3773,7 @@ aa
 aa
 ac
 ak
-ac
+az
 Dd
 an
 au
@@ -3805,7 +3820,7 @@ ah
 ay
 an
 ax
-ab
+zJ
 ac
 as
 aT
@@ -3820,7 +3835,7 @@ aT
 aT
 ac
 aC
-ak
+BV
 Rk
 hI
 au
@@ -3867,7 +3882,7 @@ ah
 ag
 an
 ax
-ac
+az
 aC
 aT
 aT
@@ -3882,7 +3897,7 @@ aT
 aT
 ac
 ac
-ac
+az
 Rk
 aY
 au
@@ -3929,7 +3944,7 @@ ah
 ag
 hI
 ax
-ac
+az
 ac
 aT
 aT
@@ -3944,7 +3959,7 @@ aT
 aQ
 ac
 ab
-ac
+az
 Rk
 Sf
 au
@@ -3991,7 +4006,7 @@ jY
 ag
 hI
 ax
-ac
+az
 ab
 aT
 aT
@@ -4006,7 +4021,7 @@ aT
 ac
 ac
 ac
-ab
+zJ
 Rk
 hI
 at
@@ -4053,7 +4068,7 @@ ah
 ag
 hI
 ax
-ac
+az
 aT
 aT
 aT
@@ -4068,7 +4083,7 @@ aT
 ac
 aC
 ac
-ac
+az
 Rk
 hI
 at
@@ -4115,7 +4130,7 @@ ah
 ag
 hI
 bQ
-ak
+BV
 aT
 aT
 aT
@@ -4130,7 +4145,7 @@ as
 ac
 ac
 ac
-aC
+NI
 Dd
 an
 at
@@ -4177,7 +4192,7 @@ ah
 ag
 an
 lJ
-ac
+az
 aT
 aT
 aT
@@ -4192,7 +4207,7 @@ as
 ac
 ab
 ac
-ac
+az
 Rk
 an
 au
@@ -4239,7 +4254,7 @@ ah
 ag
 hI
 lJ
-ab
+zJ
 ac
 aT
 aT
@@ -4254,7 +4269,7 @@ as
 ac
 ac
 ac
-ac
+az
 Rk
 an
 au
@@ -4301,7 +4316,7 @@ jY
 ay
 JI
 ax
-aC
+NI
 ac
 as
 aT
@@ -4313,10 +4328,10 @@ aT
 aT
 aT
 aT
-ac
-ab
-ac
-ac
+az
+zJ
+az
+az
 wl
 JI
 au
@@ -4363,7 +4378,7 @@ ah
 ay
 an
 ax
-ac
+az
 ac
 as
 aT
@@ -4425,7 +4440,7 @@ ah
 ay
 an
 ax
-ac
+az
 ab
 aT
 aT
@@ -4487,7 +4502,7 @@ ah
 ag
 an
 ax
-ac
+az
 aC
 aT
 aT
@@ -4549,7 +4564,7 @@ ah
 ag
 hI
 ax
-ac
+az
 ac
 aT
 aT
@@ -4611,7 +4626,7 @@ jY
 ag
 hI
 ax
-ab
+zJ
 aQ
 aT
 aT
@@ -4673,7 +4688,7 @@ ah
 ag
 an
 ax
-ac
+az
 aT
 aT
 aT
@@ -4735,7 +4750,7 @@ ah
 ag
 JI
 ax
-ak
+BV
 aT
 aT
 aT
@@ -4749,8 +4764,8 @@ GU
 aa
 aa
 ut
-ak
-ac
+BV
+az
 Ux
 JI
 um
@@ -4797,7 +4812,7 @@ aX
 OJ
 JI
 ax
-ab
+zJ
 aT
 aT
 aT
@@ -4812,7 +4827,7 @@ Ym
 aa
 ab
 ac
-ac
+az
 Rk
 am
 JI
@@ -4859,7 +4874,7 @@ JI
 JI
 by
 bQ
-ac
+az
 ac
 aT
 aT
@@ -4874,7 +4889,7 @@ AG
 aa
 ac
 aC
-ac
+az
 hr
 Mz
 Mz
@@ -4921,7 +4936,7 @@ aw
 oC
 oC
 Ui
-ac
+az
 ab
 aT
 aT
@@ -4936,54 +4951,54 @@ fL
 aa
 ac
 ac
+az
+az
+az
+az
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+az
+az
+az
+az
+az
+az
 Do
-ak
+BV
 ac
 ac
-ac
-ac
-ac
-ac
-ak
-ac
-aC
-ab
+az
+az
+az
+az
+BV
+az
+NI
+zJ
 Rk
 an
 bQ
+az
+az
+az
+zJ
+az
+az
+az
+BV
 ac
 ac
-ac
-ab
-ac
-ac
+zJ
+az
+az
+az
+az
 ac
 ak
-ac
-ac
-ab
-ac
-ac
-ac
-ac
-ac
-ak
-ac
-ac
-ac
-aC
+az
+az
+az
+NI
 ac
 aT
 aT
@@ -5026,7 +5041,7 @@ Rk
 an
 Px
 FH
-ab
+zJ
 ac
 ac
 ac
@@ -5088,7 +5103,7 @@ Rk
 hI
 cy
 jF
-ac
+az
 ac
 aC
 ac
@@ -5150,7 +5165,7 @@ Tp
 an
 aH
 NY
-ac
+az
 ac
 ab
 ac

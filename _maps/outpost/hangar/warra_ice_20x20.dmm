@@ -272,6 +272,9 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"hS" = (
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/hangar)
 "ic" = (
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt{
@@ -417,7 +420,7 @@
 	desc = "A direction sign, pointing out which way the Cargo Delivery Chute is."
 	},
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "pM" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -506,7 +509,7 @@
 	dir = 9;
 	layer = 2.8
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "xe" = (
 /obj/machinery/conveyor/auto/outpost{
@@ -566,7 +569,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "Dh" = (
 /obj/effect/decal/fakelattice,
@@ -846,6 +849,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
+"Sv" = (
+/obj/structure/flora/grass/both,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/hangar)
+"SK" = (
+/obj/structure/flora/tree/pine,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/hangar)
 "SW" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 5
@@ -1068,6 +1079,10 @@
 /turf/open/floor/plasteel/patterned/brushed{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"ZO" = (
+/obj/structure/flora/grass/green,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 
 (1,1,1) = {"
@@ -1539,14 +1554,10 @@ ac
 rj
 rj
 rj
-rj
-rj
-rj
-MI
-rj
-rj
-rj
-rj
+hS
+hS
+hS
+Sv
 rj
 rj
 rj
@@ -1567,6 +1578,10 @@ rj
 rj
 rj
 rj
+hS
+hS
+hS
+hS
 rj
 MI
 rj
@@ -1581,7 +1596,7 @@ ac
 rj
 MI
 rj
-rj
+hS
 Aj
 bA
 yB
@@ -1608,7 +1623,7 @@ GK
 YN
 Xd
 FM
-rj
+hS
 rj
 rj
 rj
@@ -1623,7 +1638,7 @@ ac
 rj
 rj
 rj
-rj
+hS
 MR
 hv
 ap
@@ -1650,7 +1665,7 @@ gy
 cB
 oi
 nK
-rj
+hS
 rj
 GX
 rj
@@ -1665,7 +1680,7 @@ ac
 ac
 ac
 rj
-rj
+hS
 aC
 rQ
 av
@@ -1692,7 +1707,7 @@ aB
 nr
 rQ
 nK
-rj
+hS
 rj
 MN
 TA
@@ -1707,7 +1722,7 @@ ac
 ac
 aM
 MN
-rj
+hS
 aC
 rQ
 av
@@ -1734,7 +1749,7 @@ aJ
 nr
 ap
 nK
-rj
+hS
 rj
 GX
 rj
@@ -1749,7 +1764,7 @@ am
 am
 rj
 rj
-MI
+Sv
 Fi
 ap
 av
@@ -1776,7 +1791,7 @@ ad
 nr
 rQ
 nK
-rj
+hS
 rj
 rj
 rj
@@ -1833,7 +1848,7 @@ hg
 am
 rj
 rj
-rj
+hS
 Fi
 rQ
 av
@@ -1860,7 +1875,7 @@ aJ
 aO
 rQ
 nK
-rj
+hS
 rj
 MI
 ac
@@ -1875,7 +1890,7 @@ hg
 mR
 rj
 rj
-GX
+SK
 aC
 NO
 av
@@ -1902,7 +1917,7 @@ aJ
 nr
 rQ
 nK
-rj
+hS
 GX
 rj
 ac
@@ -1917,7 +1932,7 @@ hg
 am
 MI
 rj
-rj
+hS
 aC
 IG
 av
@@ -1944,7 +1959,7 @@ aJ
 nr
 NO
 nK
-rj
+hS
 rj
 ac
 ac
@@ -1959,7 +1974,7 @@ am
 am
 rj
 MN
-rj
+hS
 aC
 cI
 av
@@ -1986,7 +2001,7 @@ ad
 nr
 NO
 nK
-MI
+Sv
 rj
 aM
 ac
@@ -2001,7 +2016,7 @@ ac
 ac
 rj
 GX
-MN
+ZO
 aC
 NO
 aT
@@ -2028,7 +2043,7 @@ aJ
 nr
 NO
 nK
-rj
+hS
 GX
 ac
 ac
@@ -2043,7 +2058,7 @@ ac
 ac
 rj
 rj
-rj
+hS
 aC
 NO
 aT
@@ -2070,7 +2085,7 @@ aJ
 nr
 NO
 uC
-rj
+hS
 rj
 ac
 ac
@@ -2085,7 +2100,7 @@ ac
 TA
 rj
 MI
-rj
+hS
 Fi
 rQ
 aT
@@ -2112,7 +2127,7 @@ aJ
 nr
 rQ
 TF
-rj
+hS
 MI
 ac
 ac
@@ -2127,7 +2142,7 @@ ac
 rj
 rj
 rj
-MI
+Sv
 aC
 rQ
 av
@@ -2154,7 +2169,7 @@ aJ
 nr
 NO
 TF
-rj
+hS
 ac
 ac
 ac
@@ -2169,7 +2184,7 @@ ac
 rj
 rj
 rj
-rj
+hS
 aC
 rQ
 av
@@ -2196,7 +2211,7 @@ ad
 aO
 ap
 nK
-MN
+ZO
 ac
 ac
 ac
@@ -2208,10 +2223,10 @@ ac
 ac
 ac
 ac
-rj
-MI
-rj
-rj
+hS
+Sv
+hS
+hS
 mm
 ap
 av
@@ -2238,7 +2253,7 @@ aJ
 aO
 rQ
 nK
-rj
+hS
 ac
 ac
 ac
@@ -2280,7 +2295,7 @@ aJ
 aO
 rQ
 nK
-MI
+Sv
 rj
 ac
 ac
@@ -2322,7 +2337,7 @@ aJ
 nr
 rQ
 nK
-GX
+SK
 rj
 aM
 ac
@@ -2364,7 +2379,7 @@ aJ
 nr
 NO
 nK
-rj
+hS
 rj
 aM
 ac
@@ -2406,7 +2421,7 @@ ad
 nr
 NO
 nK
-rj
+hS
 MI
 ac
 ac
@@ -2448,7 +2463,7 @@ aJ
 nr
 rQ
 nK
-rj
+hS
 GX
 ac
 ac
@@ -2490,7 +2505,7 @@ aJ
 nr
 ap
 nK
-rj
+hS
 rj
 ac
 ac
@@ -2504,8 +2519,8 @@ rs
 am
 am
 OR
-MN
-rj
+ZO
+hS
 nx
 ap
 SW
@@ -2532,7 +2547,7 @@ Qb
 ES
 ap
 nK
-MI
+Sv
 TA
 ac
 ac
@@ -2547,7 +2562,7 @@ XJ
 am
 MI
 rj
-rj
+hS
 aC
 hv
 ap
@@ -2574,7 +2589,7 @@ ap
 ap
 FS
 uC
-rj
+hS
 ac
 ac
 ac
@@ -2589,7 +2604,7 @@ EC
 am
 rj
 GX
-rj
+hS
 Ww
 aZ
 aZ
@@ -2616,7 +2631,7 @@ Ul
 Ul
 Ul
 YU
-MN
+ZO
 ac
 ac
 ac
@@ -2631,34 +2646,34 @@ Rj
 am
 rj
 rj
+hS
+hS
+hS
+hS
+hS
 rj
-rj
-rj
-rj
-rj
-rj
-rj
-rj
+hS
+hS
 pC
-MN
-rj
-rj
-MI
+ZO
+hS
+hS
+Sv
 aC
 rQ
 uC
+hS
+hS
+hS
+Sv
+hS
+hS
 rj
-rj
-rj
-MI
-rj
-rj
-rj
-MN
-rj
-rj
-rj
-GX
+ZO
+hS
+hS
+hS
+SK
 rj
 ac
 ac
@@ -2685,12 +2700,12 @@ am
 rj
 rj
 GX
-rj
+hS
 aC
 rQ
 aP
 Te
-MI
+Sv
 rj
 rj
 rj
@@ -2727,12 +2742,12 @@ rj
 MI
 rj
 rj
-rj
+hS
 aC
 NO
 Ze
 TQ
-rj
+hS
 rj
 GX
 rj
@@ -2769,12 +2784,12 @@ Qu
 rj
 rj
 MN
-rj
+hS
 oE
 rQ
 Iz
 XC
-rj
+hS
 rj
 MI
 rj

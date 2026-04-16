@@ -340,7 +340,7 @@
 	dir = 9;
 	layer = 2.8
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "iB" = (
 /obj/effect/turf_decal/borderfloor/full,
@@ -361,6 +361,10 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost,
+/area/hangar)
+"kh" = (
+/obj/structure/flora/grass/green,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "kL" = (
 /obj/effect/turf_decal/borderfloor{
@@ -443,7 +447,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "ov" = (
 /obj/effect/turf_decal/borderfloor,
@@ -671,6 +675,9 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/hangar/warra_outpost,
 /area/hangar)
+"xH" = (
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/hangar)
 "xX" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -698,6 +705,10 @@
 "AT" = (
 /obj/effect/turf_decal/industrial/caution,
 /turf/open/floor/plasteel/tech/warra_outpost,
+/area/hangar)
+"Bd" = (
+/obj/structure/flora/grass/both,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "BV" = (
 /obj/machinery/light/dim/directional/north,
@@ -767,6 +778,10 @@
 /turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"Gu" = (
+/obj/structure/flora/tree/pine,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "Gz" = (
 /obj/structure/plasticflaps/outpost,
@@ -1042,7 +1057,7 @@
 	desc = "A direction sign, pointing out which way the Cargo Delivery Chute is."
 	},
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "Xz" = (
 /obj/effect/decal/fakelattice,
@@ -1574,14 +1589,10 @@ aY
 aO
 aO
 aO
-aO
-aO
-aO
-pv
-aO
-aO
-aO
-aO
+xH
+xH
+xH
+Bd
 aO
 aO
 aO
@@ -1602,6 +1613,10 @@ aO
 aO
 aO
 aO
+xH
+xH
+xH
+xH
 aO
 pv
 aO
@@ -1616,7 +1631,7 @@ aY
 aO
 pv
 aO
-aO
+xH
 dR
 qh
 aT
@@ -1643,7 +1658,7 @@ JT
 Jb
 Sh
 aF
-aO
+xH
 aO
 aO
 aO
@@ -1658,7 +1673,7 @@ aY
 aO
 aO
 aO
-aO
+xH
 lO
 aU
 am
@@ -1685,7 +1700,7 @@ iB
 xG
 eW
 lQ
-aO
+xH
 aO
 al
 aO
@@ -1700,7 +1715,7 @@ aY
 aO
 aO
 al
-aO
+xH
 Ww
 aR
 ap
@@ -1727,7 +1742,7 @@ hX
 kL
 aR
 lQ
-aO
+xH
 as
 aO
 pv
@@ -1742,7 +1757,7 @@ aY
 aO
 aO
 aO
-aO
+xH
 aL
 aR
 aM
@@ -1769,7 +1784,7 @@ ae
 rq
 rI
 OP
-aO
+xH
 aO
 aO
 aO
@@ -1784,7 +1799,7 @@ aY
 aY
 aO
 as
-aO
+xH
 aL
 aR
 dA
@@ -1811,7 +1826,7 @@ aD
 rq
 aR
 OP
-aO
+xH
 aO
 pv
 aO
@@ -1826,7 +1841,7 @@ aY
 aY
 pv
 aO
-aO
+xH
 aL
 aR
 DM
@@ -1853,7 +1868,7 @@ ae
 fQ
 WM
 OP
-aO
+xH
 al
 aO
 aO
@@ -1868,7 +1883,7 @@ aY
 aY
 aO
 aO
-aO
+xH
 aL
 rI
 DM
@@ -1895,7 +1910,7 @@ ae
 fQ
 aR
 lQ
-aO
+xH
 aO
 aO
 aO
@@ -1910,7 +1925,7 @@ aY
 aY
 aY
 aO
-as
+kh
 aL
 rI
 DM
@@ -1937,7 +1952,7 @@ ae
 rq
 am
 OP
-aO
+xH
 aO
 aO
 aY
@@ -1952,7 +1967,7 @@ aY
 aY
 aw
 al
-aO
+xH
 aL
 rI
 DM
@@ -1979,7 +1994,7 @@ ae
 rq
 am
 OP
-aO
+xH
 pv
 aO
 aY
@@ -1994,7 +2009,7 @@ aY
 aY
 aY
 aO
-pv
+Bd
 aL
 rI
 DM
@@ -2021,7 +2036,7 @@ aD
 rq
 am
 OP
-aO
+xH
 aO
 aY
 aY
@@ -2036,7 +2051,7 @@ aY
 aY
 aY
 aO
-aO
+xH
 aL
 rI
 DM
@@ -2063,7 +2078,7 @@ ae
 rq
 am
 OP
-aO
+xH
 aO
 aY
 aY
@@ -2078,7 +2093,7 @@ aY
 aY
 aY
 wR
-aO
+xH
 Ww
 rI
 DM
@@ -2105,7 +2120,7 @@ ae
 rq
 am
 OP
-aO
+xH
 al
 aY
 aY
@@ -2120,7 +2135,7 @@ aY
 aY
 aY
 aY
-aO
+xH
 Ww
 rI
 DM
@@ -2147,7 +2162,7 @@ ae
 rq
 am
 OP
-aO
+xH
 as
 aw
 aY
@@ -2162,7 +2177,7 @@ aY
 aY
 aY
 aY
-aO
+xH
 Ww
 am
 DM
@@ -2189,7 +2204,7 @@ ae
 fQ
 am
 OP
-pv
+Bd
 aO
 aY
 aY
@@ -2204,7 +2219,7 @@ aY
 aY
 aY
 pv
-aO
+xH
 Ww
 am
 DM
@@ -2231,7 +2246,7 @@ aD
 rq
 aR
 OP
-aO
+xH
 aO
 aY
 aY
@@ -2246,7 +2261,7 @@ aY
 aY
 aY
 aO
-as
+kh
 Ww
 am
 DM
@@ -2273,7 +2288,7 @@ ae
 rq
 rI
 lQ
-aO
+xH
 al
 aY
 aY
@@ -2288,7 +2303,7 @@ aY
 aY
 aY
 aO
-al
+Gu
 aL
 am
 DM
@@ -2315,7 +2330,7 @@ ae
 rq
 rI
 lQ
-aO
+xH
 aO
 aO
 aY
@@ -2330,7 +2345,7 @@ aY
 aY
 aY
 aO
-aO
+xH
 aL
 am
 DM
@@ -2357,7 +2372,7 @@ ae
 rq
 rI
 OP
-aO
+xH
 pv
 aO
 aY
@@ -2372,7 +2387,7 @@ aY
 aY
 aY
 pv
-aO
+xH
 aL
 am
 aM
@@ -2399,7 +2414,7 @@ ae
 rq
 rI
 lQ
-aO
+xH
 aO
 aO
 aw
@@ -2414,7 +2429,7 @@ aY
 aY
 aY
 aO
-aO
+xH
 aL
 rI
 aM
@@ -2441,7 +2456,7 @@ aD
 rq
 rI
 lQ
-aO
+xH
 aO
 as
 wR
@@ -2456,7 +2471,7 @@ aY
 aY
 aw
 as
-aO
+xH
 aL
 rI
 DM
@@ -2483,7 +2498,7 @@ ae
 qa
 aR
 lQ
-aO
+xH
 aO
 al
 aO
@@ -2525,7 +2540,7 @@ ae
 rq
 rI
 DM
-aO
+xH
 aO
 aO
 aO
@@ -2540,7 +2555,7 @@ MM
 ab
 aO
 al
-aO
+xH
 aL
 rI
 DM
@@ -2567,7 +2582,7 @@ ae
 rq
 rI
 lQ
-pv
+Bd
 aO
 aO
 aO
@@ -2582,7 +2597,7 @@ MM
 ab
 aO
 aO
-aO
+xH
 aL
 rI
 DM
@@ -2609,7 +2624,7 @@ ae
 rq
 am
 lQ
-al
+Gu
 aO
 pv
 aY
@@ -2624,7 +2639,7 @@ MM
 Uo
 aO
 aO
-al
+Gu
 Ww
 am
 DM
@@ -2651,7 +2666,7 @@ aD
 rq
 rI
 lQ
-aO
+xH
 aO
 aO
 aY
@@ -2666,7 +2681,7 @@ MM
 ab
 pv
 aO
-aO
+xH
 aL
 am
 DM
@@ -2693,7 +2708,7 @@ ae
 rq
 rI
 OP
-aO
+xH
 aO
 aY
 aY
@@ -2708,7 +2723,7 @@ ab
 ab
 aO
 as
-aO
+xH
 Ww
 rI
 DM
@@ -2735,7 +2750,7 @@ ae
 fQ
 rI
 lQ
-pv
+Bd
 aO
 aw
 aY
@@ -2750,7 +2765,7 @@ aY
 aY
 aO
 al
-as
+kh
 aL
 aR
 DM
@@ -2777,7 +2792,7 @@ ae
 rq
 rI
 lQ
-aO
+xH
 al
 aY
 aY
@@ -2792,7 +2807,7 @@ aY
 aY
 aO
 aO
-aO
+xH
 aL
 WM
 DM
@@ -2819,7 +2834,7 @@ ae
 rq
 aR
 lQ
-aO
+xH
 aO
 aY
 aY
@@ -2834,7 +2849,7 @@ aY
 wR
 aO
 pv
-aO
+xH
 aL
 wH
 DM
@@ -2861,7 +2876,7 @@ aD
 rq
 aR
 lQ
-aO
+xH
 pv
 aY
 aY
@@ -2876,7 +2891,7 @@ aY
 aO
 aO
 aO
-pv
+Bd
 aL
 aR
 aM
@@ -2903,7 +2918,7 @@ ae
 rq
 aR
 lQ
-aO
+xH
 aY
 aY
 aY
@@ -2918,7 +2933,7 @@ aY
 aO
 aO
 aO
-aO
+xH
 aL
 aR
 aM
@@ -2945,7 +2960,7 @@ ae
 rq
 aR
 OP
-as
+kh
 aY
 aY
 aY
@@ -2960,7 +2975,7 @@ aw
 aO
 aO
 aO
-al
+Gu
 Ww
 rI
 aM
@@ -2987,7 +3002,7 @@ ae
 rq
 rI
 Sn
-aO
+xH
 aY
 aY
 aY
@@ -3002,7 +3017,7 @@ aw
 aO
 pv
 aO
-aO
+xH
 aL
 rI
 DM
@@ -3029,7 +3044,7 @@ ae
 rq
 aR
 Sn
-pv
+Bd
 aO
 aY
 aY
@@ -3044,7 +3059,7 @@ aw
 aO
 aO
 aO
-aO
+xH
 aL
 rI
 DM
@@ -3071,7 +3086,7 @@ aD
 fQ
 am
 lQ
-al
+Gu
 aO
 aw
 aY
@@ -3083,10 +3098,10 @@ aY
 aY
 aY
 aY
-aO
-pv
-aO
-aO
+xH
+Bd
+xH
+xH
 xX
 am
 DM
@@ -3113,7 +3128,7 @@ ae
 fQ
 rI
 lQ
-aO
+xH
 aO
 aw
 aY
@@ -3155,7 +3170,7 @@ ae
 fQ
 rI
 lQ
-aO
+xH
 pv
 aY
 aY
@@ -3197,7 +3212,7 @@ ae
 rq
 rI
 lQ
-aO
+xH
 al
 aY
 aY
@@ -3239,7 +3254,7 @@ ae
 rq
 aR
 lQ
-aO
+xH
 aO
 aY
 aY
@@ -3281,7 +3296,7 @@ aD
 rq
 aR
 lQ
-pv
+Bd
 wR
 aY
 aY
@@ -3323,7 +3338,7 @@ ae
 rq
 rI
 lQ
-aO
+xH
 aY
 aY
 aY
@@ -3365,7 +3380,7 @@ ae
 rq
 am
 lQ
-as
+kh
 aY
 aY
 aY
@@ -3379,8 +3394,8 @@ uS
 ab
 ab
 Tm
-as
-aO
+kh
+xH
 cM
 am
 GS
@@ -3407,7 +3422,7 @@ af
 mj
 am
 lQ
-pv
+Bd
 aY
 aY
 aY
@@ -3422,7 +3437,7 @@ hb
 ab
 pv
 aO
-aO
+xH
 aL
 aU
 am
@@ -3449,7 +3464,7 @@ am
 am
 Iv
 OP
-aO
+xH
 aO
 aY
 aY
@@ -3464,7 +3479,7 @@ ep
 ab
 aO
 al
-aO
+xH
 qN
 jv
 jv
@@ -3491,7 +3506,7 @@ QX
 QX
 QX
 oA
-aO
+xH
 pv
 aY
 aY
@@ -3506,34 +3521,34 @@ uA
 ab
 aO
 aO
+xH
+xH
+xH
+xH
+xH
 aO
-aO
-aO
-aO
-aO
-aO
-aO
-aO
+xH
+xH
 WV
-as
-aO
-aO
-pv
+kh
+xH
+xH
+Bd
 aL
 rI
 OP
+xH
+xH
+xH
+Bd
+xH
+xH
 aO
-aO
-aO
-pv
-aO
-aO
-aO
-as
-aO
-aO
-aO
-al
+kh
+xH
+xH
+xH
+Gu
 aO
 aY
 aY
@@ -3560,12 +3575,12 @@ ab
 aO
 aO
 al
-aO
+xH
 aL
 rI
 oL
 Js
-pv
+Bd
 aO
 aO
 aO
@@ -3602,12 +3617,12 @@ aO
 pv
 aO
 aO
-aO
+xH
 aL
 aR
 Cg
 dF
-aO
+xH
 aO
 al
 aO
@@ -3644,12 +3659,12 @@ zT
 aO
 aO
 as
-aO
+xH
 wL
 rI
 Mf
 Zc
-aO
+xH
 aO
 pv
 aO

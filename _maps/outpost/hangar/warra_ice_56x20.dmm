@@ -160,7 +160,7 @@
 	desc = "A direction sign, pointing out which way the Cargo Delivery Chute is."
 	},
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "ez" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -176,7 +176,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "fC" = (
 /obj/effect/turf_decal/borderfloor{
@@ -515,6 +515,10 @@
 /obj/structure/sign/departments/cargo,
 /turf/closed/indestructible/titanium/nodiagnonal,
 /area/hangar)
+"xf" = (
+/obj/structure/flora/tree/pine,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/hangar)
 "xj" = (
 /obj/structure/plasticflaps/outpost,
 /obj/machinery/conveyor/auto/outpost{
@@ -706,6 +710,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost,
 /area/hangar)
+"Iy" = (
+/obj/structure/flora/grass/green,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/hangar)
 "Jh" = (
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt{
@@ -719,6 +727,9 @@
 "KH" = (
 /obj/structure/flora/grass/both,
 /turf/open/floor/plating/asteroid/snow/warra_outpost,
+/area/hangar)
+"LI" = (
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "Ms" = (
 /obj/effect/turf_decal/corner/opaque/neutral,
@@ -771,7 +782,7 @@
 	dir = 9;
 	layer = 2.8
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "Pu" = (
 /obj/effect/turf_decal/borderfloor{
@@ -794,6 +805,10 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost,
+/area/hangar)
+"QY" = (
+/obj/structure/flora/grass/both,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "Rl" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -1574,12 +1589,10 @@ al
 aG
 aG
 aG
-aG
-KH
-aG
-aG
-aG
-aG
+LI
+QY
+LI
+LI
 aG
 aG
 aG
@@ -1600,8 +1613,10 @@ aG
 aG
 aG
 aG
-aG
-aG
+LI
+LI
+LI
+LI
 aG
 KH
 aG
@@ -1616,7 +1631,7 @@ al
 aG
 KH
 aG
-aG
+LI
 cY
 ZK
 ad
@@ -1643,7 +1658,7 @@ YK
 sp
 xT
 BB
-aG
+LI
 aG
 aG
 aG
@@ -1658,7 +1673,7 @@ al
 aG
 aG
 aG
-KH
+QY
 iY
 aE
 as
@@ -1685,7 +1700,7 @@ mX
 YS
 Ag
 ay
-aG
+LI
 aG
 NE
 aG
@@ -1700,7 +1715,7 @@ al
 aG
 aG
 NE
-aG
+LI
 Dk
 Cs
 gQ
@@ -1727,7 +1742,7 @@ af
 VX
 Cs
 ay
-aG
+LI
 ap
 aG
 KH
@@ -1742,7 +1757,7 @@ al
 ap
 aG
 ap
-aG
+LI
 UJ
 Cs
 Rs
@@ -1769,7 +1784,7 @@ aN
 SC
 Rl
 zG
-ap
+Iy
 aG
 aG
 al
@@ -1784,7 +1799,7 @@ al
 aG
 aG
 aG
-NE
+xf
 UJ
 Cs
 aX
@@ -1811,7 +1826,7 @@ ax
 SC
 Cs
 zG
-aG
+LI
 NE
 aG
 al
@@ -1826,7 +1841,7 @@ al
 ae
 NE
 aG
-KH
+QY
 UJ
 Cs
 OZ
@@ -1853,7 +1868,7 @@ aN
 vM
 pb
 zG
-KH
+QY
 aG
 aG
 ae
@@ -1868,7 +1883,7 @@ al
 al
 KH
 aG
-aG
+LI
 UJ
 Rl
 OZ
@@ -1895,7 +1910,7 @@ aN
 vM
 Cs
 ay
-aG
+LI
 aG
 aG
 NE
@@ -1910,7 +1925,7 @@ al
 al
 aG
 aG
-aG
+LI
 UJ
 Rl
 OZ
@@ -1937,7 +1952,7 @@ aN
 SC
 as
 zG
-KH
+QY
 aG
 ap
 aG
@@ -1952,7 +1967,7 @@ al
 al
 aG
 aG
-aG
+LI
 UJ
 Rl
 OZ
@@ -1979,7 +1994,7 @@ aN
 SC
 as
 zG
-aG
+LI
 aG
 aG
 al
@@ -1994,7 +2009,7 @@ al
 al
 aG
 NE
-KH
+QY
 UJ
 Rl
 OZ
@@ -2021,7 +2036,7 @@ ax
 SC
 as
 zG
-aG
+LI
 aG
 aG
 al
@@ -2036,7 +2051,7 @@ ae
 aG
 KH
 aG
-aG
+LI
 UJ
 Rl
 OZ
@@ -2063,7 +2078,7 @@ aN
 SC
 as
 zG
-aG
+LI
 NE
 KH
 al
@@ -2078,7 +2093,7 @@ al
 ap
 aG
 KH
-aG
+LI
 Dk
 Rl
 OZ
@@ -2105,7 +2120,7 @@ aN
 SC
 as
 zG
-KH
+QY
 aG
 aG
 aG
@@ -2120,7 +2135,7 @@ al
 aG
 NE
 aG
-aG
+LI
 Dk
 Rl
 OZ
@@ -2147,7 +2162,7 @@ aN
 SC
 as
 zG
-aG
+LI
 aG
 NE
 aG
@@ -2162,7 +2177,7 @@ al
 Fs
 aG
 aG
-NE
+xf
 Dk
 as
 OZ
@@ -2189,7 +2204,7 @@ aN
 vM
 as
 zG
-ap
+Iy
 aG
 aG
 al
@@ -2204,7 +2219,7 @@ al
 aG
 ap
 KH
-aG
+LI
 Dk
 as
 OZ
@@ -2231,7 +2246,7 @@ ax
 SC
 Cs
 zG
-aG
+LI
 KH
 Fs
 ae
@@ -2246,7 +2261,7 @@ al
 aG
 aG
 aG
-KH
+QY
 Dk
 as
 OZ
@@ -2273,7 +2288,7 @@ aN
 SC
 Rl
 ay
-aG
+LI
 aG
 aG
 al
@@ -2288,7 +2303,7 @@ al
 aG
 aG
 ap
-aG
+LI
 UJ
 as
 OZ
@@ -2315,7 +2330,7 @@ aN
 SC
 Rl
 ay
-KH
+QY
 aG
 aG
 al
@@ -2330,7 +2345,7 @@ ae
 aG
 KH
 aG
-NE
+xf
 UJ
 as
 OZ
@@ -2357,7 +2372,7 @@ aN
 SC
 Rl
 zG
-aG
+LI
 aG
 KH
 aG
@@ -2372,7 +2387,7 @@ ae
 KH
 aG
 aG
-KH
+QY
 UJ
 as
 Rs
@@ -2399,7 +2414,7 @@ aN
 SC
 Rl
 ay
-aG
+LI
 aG
 NE
 aG
@@ -2414,7 +2429,7 @@ al
 aG
 aG
 NE
-aG
+LI
 UJ
 Cs
 Rs
@@ -2441,7 +2456,7 @@ ax
 SC
 Rl
 zG
-aG
+LI
 aG
 aG
 aG
@@ -2456,7 +2471,7 @@ al
 al
 aG
 ap
-aG
+LI
 UJ
 Cs
 aX
@@ -2483,7 +2498,7 @@ aN
 SC
 Cs
 zG
-ap
+Iy
 aG
 KH
 aG
@@ -2498,7 +2513,7 @@ al
 al
 KH
 aG
-ap
+Iy
 UJ
 Cs
 OZ
@@ -2525,7 +2540,7 @@ aN
 vM
 pb
 zG
-aG
+LI
 NE
 aG
 aG
@@ -2540,7 +2555,7 @@ al
 al
 aG
 aG
-aG
+LI
 UJ
 Rl
 OZ
@@ -2567,7 +2582,7 @@ aN
 vM
 Cs
 ay
-aG
+LI
 aG
 ap
 aG
@@ -2582,7 +2597,7 @@ al
 al
 al
 aG
-ap
+Iy
 UJ
 Rl
 OZ
@@ -2609,7 +2624,7 @@ aN
 SC
 as
 zG
-aG
+LI
 aG
 aG
 al
@@ -2624,7 +2639,7 @@ al
 al
 ae
 NE
-aG
+LI
 UJ
 Rl
 OZ
@@ -2651,7 +2666,7 @@ ax
 SC
 as
 zG
-aG
+LI
 KH
 aG
 al
@@ -2666,7 +2681,7 @@ al
 al
 al
 aG
-KH
+QY
 UJ
 Rl
 OZ
@@ -2693,7 +2708,7 @@ aN
 SC
 as
 zG
-aG
+LI
 aG
 al
 al
@@ -2708,7 +2723,7 @@ al
 al
 al
 ap
-aG
+LI
 UJ
 Rl
 OZ
@@ -2735,7 +2750,7 @@ aN
 SC
 as
 zG
-aG
+LI
 aG
 al
 al
@@ -2750,7 +2765,7 @@ al
 al
 al
 Fs
-aG
+LI
 Dk
 Rl
 OZ
@@ -2777,7 +2792,7 @@ aN
 SC
 as
 zG
-aG
+LI
 NE
 al
 al
@@ -2792,7 +2807,7 @@ al
 al
 al
 al
-aG
+LI
 Dk
 Rl
 OZ
@@ -2819,7 +2834,7 @@ aN
 SC
 as
 zG
-aG
+LI
 ap
 ae
 al
@@ -2834,7 +2849,7 @@ al
 al
 al
 al
-aG
+LI
 Dk
 as
 OZ
@@ -2861,7 +2876,7 @@ ax
 vM
 as
 zG
-KH
+QY
 aG
 al
 al
@@ -2876,7 +2891,7 @@ al
 al
 al
 KH
-aG
+LI
 Dk
 as
 OZ
@@ -2903,7 +2918,7 @@ aN
 SC
 Cs
 zG
-aG
+LI
 aG
 al
 al
@@ -2918,7 +2933,7 @@ al
 al
 al
 aG
-ap
+Iy
 Dk
 as
 OZ
@@ -2945,7 +2960,7 @@ aN
 SC
 Rl
 ay
-aG
+LI
 NE
 al
 al
@@ -2960,7 +2975,7 @@ al
 al
 al
 aG
-NE
+xf
 UJ
 as
 OZ
@@ -2987,7 +3002,7 @@ aN
 SC
 Rl
 ay
-aG
+LI
 aG
 aG
 al
@@ -3002,7 +3017,7 @@ al
 al
 al
 aG
-aG
+LI
 UJ
 as
 OZ
@@ -3029,7 +3044,7 @@ aN
 SC
 Rl
 zG
-aG
+LI
 KH
 aG
 al
@@ -3044,7 +3059,7 @@ al
 al
 al
 KH
-aG
+LI
 UJ
 as
 Rs
@@ -3071,7 +3086,7 @@ ax
 SC
 Rl
 ay
-aG
+LI
 aG
 aG
 ae
@@ -3086,7 +3101,7 @@ al
 al
 al
 aG
-aG
+LI
 UJ
 Rl
 Rs
@@ -3113,7 +3128,7 @@ aN
 SC
 Rl
 ay
-aG
+LI
 aG
 ap
 Fs
@@ -3128,7 +3143,7 @@ al
 al
 ae
 ap
-aG
+LI
 UJ
 Rl
 OZ
@@ -3155,7 +3170,7 @@ aN
 ZZ
 Cs
 ay
-aG
+LI
 aG
 NE
 aG
@@ -3212,7 +3227,7 @@ Hr
 ag
 aG
 NE
-aG
+LI
 UJ
 Rl
 OZ
@@ -3239,7 +3254,7 @@ aN
 SC
 Rl
 ay
-KH
+QY
 aG
 aG
 aG
@@ -3254,7 +3269,7 @@ Hr
 ag
 aG
 aG
-aG
+LI
 UJ
 Rl
 OZ
@@ -3281,7 +3296,7 @@ ax
 SC
 as
 ay
-NE
+xf
 aG
 KH
 al
@@ -3296,7 +3311,7 @@ Hr
 Bh
 aG
 aG
-NE
+xf
 Dk
 as
 OZ
@@ -3323,7 +3338,7 @@ aN
 SC
 Rl
 ay
-aG
+LI
 aG
 aG
 al
@@ -3338,7 +3353,7 @@ Hr
 ag
 KH
 aG
-aG
+LI
 UJ
 as
 OZ
@@ -3365,7 +3380,7 @@ aN
 SC
 Rl
 zG
-aG
+LI
 aG
 al
 al
@@ -3380,7 +3395,7 @@ ag
 ag
 aG
 ap
-aG
+LI
 Dk
 Rl
 OZ
@@ -3407,7 +3422,7 @@ aN
 vM
 Rl
 ay
-KH
+QY
 aG
 ae
 al
@@ -3422,7 +3437,7 @@ al
 al
 aG
 NE
-ap
+Iy
 UJ
 Cs
 OZ
@@ -3449,7 +3464,7 @@ aN
 SC
 Rl
 ay
-aG
+LI
 NE
 al
 al
@@ -3464,7 +3479,7 @@ al
 al
 aG
 aG
-aG
+LI
 UJ
 pb
 OZ
@@ -3491,7 +3506,7 @@ ax
 SC
 Cs
 ay
-aG
+LI
 aG
 al
 al
@@ -3506,7 +3521,7 @@ al
 Fs
 aG
 KH
-aG
+LI
 UJ
 YT
 OZ
@@ -3533,7 +3548,7 @@ aN
 SC
 Cs
 ay
-aG
+LI
 KH
 al
 al
@@ -3548,7 +3563,7 @@ al
 aG
 aG
 aG
-KH
+QY
 UJ
 Cs
 Rs
@@ -3575,7 +3590,7 @@ aN
 SC
 Cs
 ay
-aG
+LI
 al
 al
 al
@@ -3590,7 +3605,7 @@ al
 aG
 NE
 aG
-aG
+LI
 UJ
 Cs
 Rs
@@ -3617,7 +3632,7 @@ aN
 SC
 Cs
 zG
-ap
+Iy
 al
 al
 al
@@ -3632,7 +3647,7 @@ ae
 aG
 aG
 aG
-NE
+xf
 Dk
 Rl
 Rs
@@ -3659,7 +3674,7 @@ aN
 SC
 Rl
 OC
-aG
+LI
 al
 al
 al
@@ -3674,7 +3689,7 @@ ae
 aG
 KH
 aG
-aG
+LI
 UJ
 Rl
 OZ
@@ -3701,7 +3716,7 @@ ax
 SC
 Cs
 OC
-KH
+QY
 aG
 al
 al
@@ -3716,7 +3731,7 @@ ae
 aG
 aG
 aG
-aG
+LI
 UJ
 Rl
 OZ
@@ -3743,7 +3758,7 @@ aN
 vM
 as
 ay
-NE
+xf
 aG
 ae
 al
@@ -3755,10 +3770,10 @@ al
 al
 al
 al
-aG
-KH
-aG
-aG
+LI
+QY
+LI
+LI
 kt
 as
 OZ
@@ -3785,7 +3800,7 @@ aN
 vM
 Rl
 ay
-aG
+LI
 aG
 ae
 al
@@ -3827,7 +3842,7 @@ aN
 vM
 Rl
 ay
-aG
+LI
 KH
 al
 al
@@ -3869,7 +3884,7 @@ aN
 SC
 Rl
 ay
-aG
+LI
 NE
 al
 al
@@ -3911,7 +3926,7 @@ aN
 SC
 Cs
 ay
-aG
+LI
 aG
 al
 al
@@ -3953,7 +3968,7 @@ ax
 SC
 Cs
 ay
-KH
+QY
 Fs
 al
 al
@@ -3995,7 +4010,7 @@ aN
 SC
 Rl
 ay
-aG
+LI
 al
 al
 al
@@ -4037,7 +4052,7 @@ aN
 SC
 as
 ay
-ap
+Iy
 al
 al
 al
@@ -4051,8 +4066,8 @@ xj
 ag
 ag
 lT
-ap
-aG
+Iy
+LI
 Yd
 as
 HC
@@ -4079,7 +4094,7 @@ RC
 vl
 as
 ay
-KH
+QY
 al
 al
 al
@@ -4094,7 +4109,7 @@ Vo
 ag
 KH
 aG
-aG
+LI
 UJ
 aE
 as
@@ -4121,7 +4136,7 @@ as
 as
 pM
 zG
-aG
+LI
 aG
 al
 al
@@ -4136,7 +4151,7 @@ Dt
 ag
 aG
 NE
-aG
+LI
 GL
 xt
 xt
@@ -4163,7 +4178,7 @@ uy
 uy
 uy
 PW
-aG
+LI
 KH
 al
 al
@@ -4178,34 +4193,34 @@ EC
 ag
 aG
 aG
+LI
+LI
+LI
+LI
+LI
 aG
-aG
-aG
-aG
-aG
-aG
-aG
-aG
+LI
+LI
 eo
-ap
-aG
-aG
-KH
+Iy
+LI
+LI
+QY
 UJ
 Rl
 zG
+LI
+LI
+LI
+QY
+LI
+LI
 aG
-aG
-aG
-KH
-aG
-aG
-aG
-ap
-aG
-aG
-aG
-NE
+Iy
+LI
+LI
+LI
+xf
 aG
 al
 al
@@ -4232,12 +4247,12 @@ ag
 aG
 aG
 NE
-aG
+LI
 UJ
 Rl
 oy
 VH
-KH
+QY
 aG
 aG
 aG
@@ -4274,12 +4289,12 @@ aG
 KH
 aG
 aG
-aG
+LI
 UJ
 Cs
 fC
 Ms
-aG
+LI
 aG
 NE
 aG
@@ -4316,12 +4331,12 @@ aI
 aG
 aG
 ap
-aG
+LI
 oq
 Rl
 sE
 XO
-aG
+LI
 aG
 KH
 aG

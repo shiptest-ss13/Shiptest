@@ -547,6 +547,10 @@
 /obj/machinery/door/airlock/outpost,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
+"sF" = (
+/obj/structure/flora/grass/green,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/hangar)
 "sP" = (
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/greenglow{
@@ -570,7 +574,7 @@
 	desc = "A direction sign, pointing out which way the Cargo Delivery Chute is."
 	},
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "tj" = (
 /turf/open/floor/plasteel/tech/warra_outpost,
@@ -748,6 +752,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost,
 /area/hangar)
+"CH" = (
+/obj/structure/flora/tree/pine,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/hangar)
 "Dc" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -765,7 +773,7 @@
 	dir = 9;
 	layer = 2.8
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "Dv" = (
 /obj/effect/turf_decal/siding/white{
@@ -835,6 +843,9 @@
 "Fr" = (
 /obj/effect/turf_decal/arrows,
 /turf/open/floor/plasteel/tech/warra_outpost,
+/area/hangar)
+"FR" = (
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "FS" = (
 /obj/effect/decal/fakelattice,
@@ -980,6 +991,10 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/patterned,
 /area/hangar)
+"Ku" = (
+/obj/structure/flora/grass/both,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
+/area/hangar)
 "Kz" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -1093,7 +1108,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost,
 /area/hangar)
 "Pn" = (
 /obj/effect/decal/fakelattice,
@@ -2076,6 +2091,28 @@ aI
 aE
 aE
 aE
+FR
+Ku
+FR
+FR
+aE
+aE
+aE
+aE
+aE
+aE
+aE
+aE
+aE
+aE
+aE
+aE
+aE
+aE
+aE
+aE
+aE
+aE
 aE
 aZ
 aE
@@ -2098,32 +2135,10 @@ aE
 aE
 aE
 aE
-aE
-aZ
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
+FR
+FR
+FR
+FR
 aE
 aZ
 aE
@@ -2138,7 +2153,7 @@ aI
 aE
 aZ
 aE
-aE
+FR
 Jh
 uG
 Dc
@@ -2185,7 +2200,7 @@ aP
 Yb
 oc
 UZ
-aE
+FR
 aE
 aE
 aE
@@ -2200,7 +2215,7 @@ aI
 aE
 aE
 aE
-aZ
+Ku
 ZV
 Cb
 ad
@@ -2247,7 +2262,7 @@ aM
 Kd
 iY
 tR
-aE
+FR
 aE
 ao
 aE
@@ -2262,7 +2277,7 @@ aI
 aE
 aE
 ao
-aE
+FR
 aD
 fM
 Vu
@@ -2309,7 +2324,7 @@ Qx
 Rn
 fM
 tR
-aE
+FR
 ai
 aE
 aZ
@@ -2324,7 +2339,7 @@ aI
 ai
 aE
 ai
-aE
+FR
 aj
 fM
 kd
@@ -2371,7 +2386,7 @@ ck
 pD
 aw
 am
-ai
+sF
 aE
 aE
 aI
@@ -2386,7 +2401,7 @@ aI
 aE
 aE
 aE
-ao
+CH
 aj
 fM
 sw
@@ -2433,7 +2448,7 @@ aG
 pD
 fM
 am
-aE
+FR
 ao
 aE
 aI
@@ -2448,7 +2463,7 @@ aI
 au
 ao
 aE
-aZ
+Ku
 aj
 fM
 aK
@@ -2495,7 +2510,7 @@ ck
 aN
 Iz
 am
-aZ
+Ku
 aE
 aE
 au
@@ -2510,7 +2525,7 @@ aI
 aI
 aZ
 aE
-aE
+FR
 aj
 aw
 aK
@@ -2557,7 +2572,7 @@ ck
 aN
 fM
 tR
-aE
+FR
 aE
 aE
 ao
@@ -2572,7 +2587,7 @@ aI
 aI
 aE
 aE
-ao
+CH
 aj
 aw
 aK
@@ -2619,7 +2634,7 @@ ck
 pD
 ad
 am
-aZ
+Ku
 aE
 ai
 aE
@@ -2634,7 +2649,7 @@ aI
 aI
 aE
 aE
-aE
+FR
 aj
 aw
 aK
@@ -2681,7 +2696,7 @@ ck
 pD
 ad
 am
-aE
+FR
 aE
 ao
 aI
@@ -2696,7 +2711,7 @@ aI
 aI
 aE
 ao
-aZ
+Ku
 aj
 aw
 aK
@@ -2743,7 +2758,7 @@ aG
 pD
 ad
 am
-aE
+FR
 aE
 aE
 aI
@@ -2758,7 +2773,7 @@ au
 aE
 aZ
 aE
-aE
+FR
 aj
 aw
 aK
@@ -2805,7 +2820,7 @@ ck
 pD
 ad
 am
-aE
+FR
 ao
 aZ
 aI
@@ -2820,7 +2835,7 @@ aI
 ai
 aE
 aZ
-aE
+FR
 aD
 aw
 aK
@@ -2867,7 +2882,7 @@ ck
 pD
 ad
 am
-aZ
+Ku
 aE
 aE
 aE
@@ -2882,7 +2897,7 @@ aI
 aE
 ao
 aE
-aE
+FR
 aD
 aw
 aK
@@ -2929,7 +2944,7 @@ ck
 pD
 ad
 am
-aE
+FR
 aE
 ao
 aE
@@ -2944,7 +2959,7 @@ aI
 aT
 aE
 aE
-ao
+CH
 aD
 ad
 aK
@@ -2991,7 +3006,7 @@ ck
 aN
 ad
 am
-ai
+sF
 aE
 aE
 aI
@@ -3006,7 +3021,7 @@ aI
 aE
 ai
 aZ
-aE
+FR
 aD
 ad
 aK
@@ -3053,7 +3068,7 @@ aG
 pD
 fM
 am
-aE
+FR
 aZ
 aT
 au
@@ -3068,7 +3083,7 @@ aI
 aE
 aE
 ao
-aZ
+Ku
 aD
 ad
 aK
@@ -3115,7 +3130,7 @@ ck
 pD
 aw
 tR
-aE
+FR
 aE
 ao
 aI
@@ -3130,7 +3145,7 @@ aI
 ao
 aE
 ai
-aE
+FR
 aj
 ad
 aK
@@ -3177,7 +3192,7 @@ ck
 pD
 aw
 tR
-aZ
+Ku
 aE
 aE
 aI
@@ -3192,7 +3207,7 @@ au
 aE
 aZ
 aE
-ao
+CH
 aj
 ad
 aK
@@ -3239,7 +3254,7 @@ ck
 pD
 aw
 am
-aE
+FR
 aE
 aZ
 aE
@@ -3254,7 +3269,7 @@ au
 aZ
 aE
 aE
-aZ
+Ku
 aj
 ad
 kd
@@ -3301,7 +3316,7 @@ ck
 pD
 aw
 tR
-aE
+FR
 aE
 ao
 aE
@@ -3316,7 +3331,7 @@ aI
 aE
 aE
 ao
-aE
+FR
 aj
 fM
 kd
@@ -3363,7 +3378,7 @@ ck
 pD
 aw
 am
-aE
+FR
 aE
 aE
 aE
@@ -3378,7 +3393,7 @@ aI
 aI
 aE
 ai
-aE
+FR
 aj
 fM
 sw
@@ -3425,7 +3440,7 @@ aG
 pD
 fM
 am
-ai
+sF
 aE
 aZ
 aE
@@ -3440,7 +3455,7 @@ aI
 aI
 aZ
 aE
-ai
+sF
 aj
 fM
 aK
@@ -3487,7 +3502,7 @@ ck
 aN
 Iz
 am
-aE
+FR
 ao
 aE
 aE
@@ -3502,7 +3517,7 @@ aI
 aI
 aE
 aE
-aE
+FR
 aj
 aw
 aK
@@ -3549,7 +3564,7 @@ ck
 aN
 fM
 tR
-aE
+FR
 aE
 ai
 aE
@@ -3564,7 +3579,7 @@ aI
 aI
 aI
 aE
-ai
+sF
 aj
 aw
 aK
@@ -3611,7 +3626,7 @@ ck
 pD
 ad
 am
-aE
+FR
 aE
 aE
 aI
@@ -3626,7 +3641,7 @@ aI
 aI
 au
 ao
-aE
+FR
 aj
 aw
 aK
@@ -3673,7 +3688,7 @@ ck
 pD
 ad
 am
-aE
+FR
 aZ
 aE
 aI
@@ -3688,7 +3703,7 @@ aI
 aI
 aI
 aE
-aZ
+Ku
 aj
 aw
 aK
@@ -3735,7 +3750,7 @@ aG
 pD
 ad
 am
-aE
+FR
 aE
 aI
 aI
@@ -3750,7 +3765,7 @@ aI
 aI
 aI
 ai
-aE
+FR
 aj
 aw
 aK
@@ -3797,7 +3812,7 @@ ck
 pD
 ad
 am
-aE
+FR
 aE
 aI
 aI
@@ -3812,7 +3827,7 @@ aI
 aI
 aI
 aT
-aE
+FR
 aD
 aw
 aK
@@ -3859,7 +3874,7 @@ ck
 pD
 ad
 am
-aE
+FR
 ao
 aI
 aI
@@ -3874,7 +3889,7 @@ aI
 aI
 aI
 aI
-aE
+FR
 aD
 aw
 aK
@@ -3921,7 +3936,7 @@ ck
 pD
 ad
 am
-aE
+FR
 ai
 au
 aI
@@ -3936,7 +3951,7 @@ aI
 aI
 aI
 aI
-aE
+FR
 aD
 ad
 aK
@@ -3983,7 +3998,7 @@ ck
 aN
 ad
 am
-aZ
+Ku
 aE
 aI
 aI
@@ -3998,7 +4013,7 @@ aI
 aI
 aI
 aZ
-aE
+FR
 aD
 ad
 aK
@@ -4045,7 +4060,7 @@ aG
 pD
 fM
 am
-aE
+FR
 aE
 aI
 aI
@@ -4060,7 +4075,7 @@ aI
 aI
 aI
 aE
-ai
+sF
 aD
 ad
 aK
@@ -4107,7 +4122,7 @@ ck
 pD
 aw
 tR
-aE
+FR
 ao
 aI
 aI
@@ -4122,7 +4137,7 @@ aI
 aI
 aI
 aE
-ao
+CH
 aj
 ad
 aK
@@ -4169,7 +4184,7 @@ ck
 pD
 aw
 tR
-aE
+FR
 aE
 aE
 aI
@@ -4184,7 +4199,7 @@ aI
 aI
 aI
 aE
-aE
+FR
 aj
 ad
 aK
@@ -4231,7 +4246,7 @@ ck
 pD
 aw
 am
-aE
+FR
 aZ
 aE
 aI
@@ -4246,7 +4261,7 @@ aI
 aI
 aI
 aZ
-aE
+FR
 aj
 ad
 kd
@@ -4293,7 +4308,7 @@ ck
 pD
 aw
 tR
-aE
+FR
 aE
 aE
 au
@@ -4308,7 +4323,7 @@ aI
 aI
 aI
 aE
-aE
+FR
 aj
 aw
 kd
@@ -4355,7 +4370,7 @@ aG
 pD
 aw
 tR
-aE
+FR
 aE
 ai
 aT
@@ -4370,7 +4385,7 @@ aI
 aI
 au
 ai
-aE
+FR
 aj
 aw
 aK
@@ -4417,7 +4432,7 @@ ck
 Ck
 fM
 tR
-aE
+FR
 aE
 ao
 aE
@@ -4494,7 +4509,7 @@ tj
 aH
 aE
 ao
-aE
+FR
 aj
 aw
 aK
@@ -4541,7 +4556,7 @@ ck
 pD
 aw
 tR
-aZ
+Ku
 aE
 aE
 aE
@@ -4556,7 +4571,7 @@ tj
 aH
 aE
 aE
-aE
+FR
 aj
 aw
 aK
@@ -4603,7 +4618,7 @@ ck
 pD
 ad
 tR
-ao
+CH
 aE
 aZ
 aI
@@ -4618,7 +4633,7 @@ tj
 sB
 aE
 aE
-ao
+CH
 aD
 ad
 aK
@@ -4665,7 +4680,7 @@ aG
 pD
 aw
 tR
-aE
+FR
 aE
 aE
 aI
@@ -4680,7 +4695,7 @@ tj
 aH
 aZ
 aE
-aE
+FR
 aj
 ad
 aK
@@ -4727,7 +4742,7 @@ ck
 pD
 aw
 am
-aE
+FR
 aE
 aI
 aI
@@ -4742,7 +4757,7 @@ aH
 aH
 aE
 ai
-aE
+FR
 aD
 aw
 aK
@@ -4789,7 +4804,7 @@ ck
 aN
 aw
 tR
-aZ
+Ku
 aE
 au
 aI
@@ -4804,7 +4819,7 @@ aI
 aI
 aE
 ao
-ai
+sF
 aj
 fM
 aK
@@ -4851,7 +4866,7 @@ ck
 pD
 aw
 tR
-aE
+FR
 ao
 aI
 aI
@@ -4866,7 +4881,7 @@ aI
 aI
 aE
 aE
-aE
+FR
 aj
 Iz
 aK
@@ -4913,7 +4928,7 @@ ck
 pD
 fM
 tR
-aE
+FR
 aE
 aI
 aI
@@ -4928,7 +4943,7 @@ aI
 aT
 aE
 aZ
-aE
+FR
 aj
 Jx
 aK
@@ -4975,7 +4990,7 @@ aG
 pD
 fM
 tR
-aE
+FR
 aZ
 aI
 aI
@@ -4990,7 +5005,7 @@ aI
 aE
 aE
 aE
-aZ
+Ku
 aj
 fM
 kd
@@ -5037,7 +5052,7 @@ ck
 pD
 fM
 tR
-aE
+FR
 aI
 aI
 aI
@@ -5052,7 +5067,7 @@ aI
 aE
 ao
 aE
-aE
+FR
 aj
 fM
 kd
@@ -5099,7 +5114,7 @@ ck
 pD
 fM
 am
-ai
+sF
 aI
 aI
 aI
@@ -5114,7 +5129,7 @@ au
 aE
 aE
 aE
-ao
+CH
 aD
 aw
 kd
@@ -5161,7 +5176,7 @@ ck
 pD
 aw
 aO
-aE
+FR
 aI
 aI
 aI
@@ -5176,7 +5191,7 @@ au
 aE
 aZ
 aE
-aE
+FR
 aj
 aw
 aK
@@ -5223,7 +5238,7 @@ ck
 pD
 fM
 aO
-aZ
+Ku
 aE
 aI
 aI
@@ -5238,7 +5253,7 @@ au
 aE
 aE
 aE
-aE
+FR
 aj
 aw
 aK
@@ -5285,7 +5300,7 @@ aG
 aN
 ad
 tR
-ao
+CH
 aE
 au
 aI
@@ -5297,10 +5312,10 @@ aI
 aI
 aI
 aI
-aE
-aZ
-aE
-aE
+FR
+Ku
+FR
+FR
 Xd
 ad
 aK
@@ -5347,7 +5362,7 @@ ck
 aN
 aw
 tR
-aE
+FR
 aE
 au
 aI
@@ -5409,7 +5424,7 @@ ck
 aN
 aw
 tR
-aE
+FR
 aZ
 aI
 aI
@@ -5471,7 +5486,7 @@ ck
 pD
 aw
 tR
-aE
+FR
 ao
 aI
 aI
@@ -5533,7 +5548,7 @@ ck
 pD
 fM
 tR
-aE
+FR
 aE
 aI
 aI
@@ -5595,7 +5610,7 @@ aG
 pD
 fM
 tR
-aZ
+Ku
 aT
 aI
 aI
@@ -5657,7 +5672,7 @@ ck
 pD
 aw
 tR
-aE
+FR
 aI
 aI
 aI
@@ -5719,7 +5734,7 @@ ck
 pD
 ad
 tR
-ai
+sF
 aI
 aI
 aI
@@ -5733,8 +5748,8 @@ gI
 aH
 aH
 Kz
-ai
-aE
+sF
+FR
 Wj
 ad
 cX
@@ -5781,7 +5796,7 @@ ar
 qX
 ad
 tR
-aZ
+Ku
 aI
 aI
 aI
@@ -5796,7 +5811,7 @@ LJ
 aH
 aZ
 aE
-aE
+FR
 aj
 Cb
 ad
@@ -5843,7 +5858,7 @@ ad
 ad
 YA
 am
-aE
+FR
 aE
 aI
 aI
@@ -5858,7 +5873,7 @@ LF
 aH
 aE
 ao
-aE
+FR
 jS
 mj
 mj
@@ -5905,7 +5920,7 @@ Be
 fr
 fr
 Rz
-aE
+FR
 aZ
 aI
 aI
@@ -5920,54 +5935,54 @@ OD
 aH
 aE
 aE
+FR
+FR
+FR
+FR
 aE
 aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
-aE
+FR
+FR
+FR
+FR
+FR
+FR
 sS
-ai
+sF
 aE
 aE
-aE
-aE
-aE
-aE
-ai
-aE
-ao
-aZ
+FR
+FR
+FR
+FR
+sF
+FR
+CH
+Ku
 aj
 aw
 am
+FR
+FR
+FR
+Ku
+FR
+FR
+FR
+sF
 aE
 aE
-aE
-aZ
-aE
-aE
+Ku
+FR
+FR
+FR
+FR
 aE
 ai
-aE
-aE
-aZ
-aE
-aE
-aE
-aE
-aE
-ai
-aE
-aE
-aE
-ao
+FR
+FR
+FR
+CH
 aE
 aI
 aI
@@ -6010,7 +6025,7 @@ aj
 aw
 nC
 Ei
-aZ
+Ku
 aE
 aE
 aE
@@ -6072,7 +6087,7 @@ aj
 fM
 Jw
 JR
-aE
+FR
 aE
 ao
 aE
@@ -6134,7 +6149,7 @@ BN
 aw
 PJ
 mP
-aE
+FR
 aE
 aZ
 aE
