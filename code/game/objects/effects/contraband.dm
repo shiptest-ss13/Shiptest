@@ -1082,7 +1082,7 @@
 /obj/structure/sign/poster/clip/clover
 	name = "Clover"
 	desc = "The ever-fortuitous colony of Clover, once one of many Makosso-Warra corporate colonies- now turned into an industrious and affluent CLIP member state. A peculiar corporatocracy that values its employees; it is a chill, humid planet that headquarters Clover Corporation, which produces many League consumer goods. The poster offers attractions such as high-end seafood restaurants, stargazing under its iconic coniferous woodlands as well as employment opportunities under Clover Corp."
-	icon_state = "poster-clip_ryuunosuke"
+	icon_state = "poster-clip_clover"
 
 /obj/structure/sign/poster/clip/star_city
 	name = "Star City"
