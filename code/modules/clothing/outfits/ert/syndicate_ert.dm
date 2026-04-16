@@ -315,13 +315,13 @@
 /datum/outfit/job/syndicate/ert/ramzi/demolitionist
 	name = "ERT - Ramzi Clique Cell Demolitionist"
 
-	belt = /obj/item/storage/belt/security/webbing/ramzi/mako
-	suit_store = /obj/item/gun/ballistic/rocketlauncher/mako
+	belt = /obj/item/storage/belt/security/webbing/ramzi/mako_light
+	suit_store = /obj/item/gun/ballistic/rocketlauncher/mako/light
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ngr
 
 	r_pocket = /obj/item/gun/ballistic/automatic/pistol/himehabu
 
-	backpack_contents = list(/obj/item/ammo_box/magazine/m22lr_himehabu = 2, /obj/item/grenade/c4/x4 = 3, /obj/item/grenade/syndieminibomb = 3, /obj/item/ammo_casing/caseless/rocket/a70mm = 4)
+	backpack_contents = list(/obj/item/ammo_box/magazine/m22lr_himehabu = 2, /obj/item/grenade/c4/x4 = 3, /obj/item/grenade/syndieminibomb = 3, /obj/item/ammo_casing/caseless/rocket/a70mm/light = 4)
 
 /datum/outfit/job/syndicate/ert/ramzi/medic
 	name = "ERT - Ramzi Clique Cell Medic"
