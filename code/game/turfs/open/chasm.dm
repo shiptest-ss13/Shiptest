@@ -120,11 +120,11 @@
 	icon = 'icons/turf/floors/junglechasm.dmi'
 	icon_state = "junglechasm-255"
 	base_icon_state = "junglechasm"
-	initial_gas_mix = OPENTURF_LOW_PRESSURE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/chasm/jungle
 
-/turf/open/chasm/lit
+/turf/open/chasm/jungle/lit
 	light_range = 2
 	light_power = 0.8
 
