@@ -88,13 +88,17 @@
 
 	empty_space_mapgen = /datum/map_generator/planet_generator/asteroid
 
-	var/safe_speed = 3
+	///how fast can you safely travel in this hazard. Any faster will activate the hazard.
+	var/safe_speed = 5
+
+	///weighted table of meteors that this hazard can throw
 	var/list/meteor_types = list(
 		/obj/effect/meteor/dust=3,
 		/obj/effect/meteor/medium=8,
 		/obj/effect/meteor/big=1,
 		/obj/effect/meteor/irradiated=3
 	)
+	///The kinds of ores that meteors can have inside them.
 	var/primary_ores = list(\
 		/obj/item/stack/ore/plasma,
 		/obj/item/stack/ore/iron,
@@ -144,7 +148,7 @@
 		/obj/effect/meteor/medium=4,
 	)
 
-	safe_speed = 5
+	safe_speed = 7
 
 /datum/overmap/event/meteor/major
 	name = "asteroid field (major)"
@@ -160,6 +164,8 @@
 		/obj/effect/meteor/big=25,
 		/obj/effect/meteor/flaming=10,
 	)
+
+	safe_speed = 4
 
 ///Electromagnetic - explodes your IPCs
 /datum/overmap/event/emp
@@ -505,7 +511,7 @@
 	chance_to_affect = 90
 	spread_chance = 50
 	chain_rate = 4
-	safe_speed = 7
+	safe_speed = 10
 	interference_power = 0
 	meteor_types = list(
 		/obj/effect/meteor/dust=3,
@@ -608,6 +614,9 @@
 	spread_chance = 50
 	chain_rate = 4
 	interference_power = 25
+
+	safe_speed = 6
+
 	var/blocks_sight = TRUE
 
 	empty_space_mapgen = /datum/map_generator/planet_generator/asteroid
@@ -634,7 +643,7 @@
 		/obj/effect/meteor/medium=4,
 	)
 
-	safe_speed = 5
+	safe_speed = 8
 
 /datum/overmap/event/meteor/debris/major
 	name = "debris field (major)"
@@ -644,6 +653,8 @@
 	interference_power = 35
 
 	mountain_height_override = 0.5
+
+	safe_speed = 4
 
 	meteor_types = list(
 		/obj/effect/meteor/medium=50,
