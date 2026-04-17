@@ -5,8 +5,8 @@
 	required_reagents = list(/datum/reagent/copper = 1, /datum/reagent/acetone = 2,  /datum/reagent/phosphorus = 1)
 
 /datum/chemical_reaction/hadrakine
-	results = list(/datum/reagent/medicine/hadrakine = 4)
-	required_reagents = list(/datum/reagent/aluminium = 3, /datum/reagent/hydrogen = 1, /datum/reagent/oxygen = 1, /datum/reagent/toxin/acid = 1)
+	results = list(/datum/reagent/medicine/hadrakine = 5)
+	required_reagents = list(/datum/reagent/aluminium = 2, /datum/reagent/hydrogen = 1, /datum/reagent/oxygen = 1, /datum/reagent/toxin/acid = 1)
 	mix_message = "The solution yields an astringent powder."
 
 /datum/chemical_reaction/silfrine
@@ -15,6 +15,15 @@
 	required_catalysts = list(/datum/reagent/toxin/plasma = 2)
 	required_temp = 450
 	mix_message = "The solution rapidly bubbles, before yielding a dark blue compound"
+
+/datum/chemical_reaction/alt_silfrine
+	results = list(/datum/reagent/medicine/silfrine = 5)
+	required_reagents = list(/datum/reagent/wittel = 2, /datum/reagent/toxin/acid = 1)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 2)
+	required_temp = 250
+	is_cold_recipe = TRUE
+	mix_message = "The solution slowly takes on a blue coloration as the temperature lowers. There is a distinct acid smell."
+
 
 // burn chems
 

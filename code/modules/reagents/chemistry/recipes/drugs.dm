@@ -61,8 +61,20 @@
 	required_temp = 150
 	is_cold_recipe = TRUE
 
+/datum/chemical_reaction/alt_starlight
+	results = list(/datum/reagent/drug/stardrop/starlight = 2)
+	required_reagents = list(/datum/reagent/drug/stardrop = 1, /datum/reagent/wittel = 1)
+	mix_message = "Dark purple roots through the white liquid, forcing its coloration to spread!"
+	required_temp = 700
+
 /datum/chemical_reaction/cinesia
 	results = list(/datum/reagent/drug/cinesia = 6)
 	required_reagents = list(/datum/reagent/phenol = 1, /datum/reagent/medicine/ephedrine = 2)
 	mix_message = "The mixture rapidly takes on a brown coloration!"
 	required_temp = 347
+
+/datum/chemical_reaction/alt_cinesia
+	results = list(/datum/reagent/drug/cinesia = 3)
+	required_reagents = list(/datum/reagent/wittel = 1, /datum/reagent/medicine/hadrakine = 2)
+	mix_message = "The smell of solarian apples starts to drift off of the solution!"
+	required_temp = 621
