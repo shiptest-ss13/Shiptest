@@ -96,7 +96,7 @@
 
 /obj/item/reagent_containers/medigel/sterilizine
 	name = "sterilizer gel"
-	desc = "Gel bottle loaded with non-toxic sterilizer. Useful in preparation for surgery."
+	desc = "Gel bottle loaded with non-toxic sterilizer. Useful in preparation for surgery. A label reads: \"Apply directly to patient after initiating surgery.\""
 	icon_state = "medigel_blue"
 	current_skin = "Blue"
 	list_reagents = list(/datum/reagent/space_cleaner/sterilizine = 60)
