@@ -99,7 +99,8 @@
 	},
 /obj/structure/filingcabinet/chestdrawer{
 	dir = 8;
-	pixel_x = 5
+	pixel_x = 5;
+	density = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
@@ -308,6 +309,11 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway)
+"eW" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "fe" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -2634,11 +2640,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
-"Nq" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/turf/open/floor/plating,
-/area/ship/cargo)
 "Nu" = (
 /obj/machinery/door/airlock/mining{
 	name = "Central Hall";
@@ -3773,7 +3774,7 @@ NX
 EC
 tg
 mn
-Nq
+eW
 wH
 YN
 cs
