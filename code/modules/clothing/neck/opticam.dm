@@ -1,6 +1,6 @@
 //to-do: weigh annoyance of refactoring toggleable neck-type to not be /poncho with time I have to work.
 /obj/item/clothing/neck/opticamo
-	name = "\improper optical camoflague cloak"
+	name = "\improper optical camouflage cloak"
 	desc = "A soft, long woven cloak made from a silky material, highly calibrated sensors, and a localized computing mesh."
 	icon = 'icons/obj/clothing/neck/opticam.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/neck/opticam.dmi'
@@ -117,7 +117,7 @@
 		return
 
 	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
-		deactivate()
+		deactivate(user)
 		return
 
 /obj/item/clothing/neck/opticamo/update_appearance(updates)
