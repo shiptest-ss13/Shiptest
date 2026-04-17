@@ -564,15 +564,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 			standing += facial_overlay
 
-	if(H.head)
-		var/obj/item/I = H.head
-		if(I.flags_inv & HIDEHAIR)
-			hair_hidden = TRUE
+	if(H?.head?.flags_inv & HIDEHAIR)
+		hair_hidden = TRUE
 
-	if(H.wear_mask)
-		var/obj/item/I = H.wear_mask
-		if(I.flags_inv & HIDEHAIR)
-			hair_hidden = TRUE
+	if(H?.wear_mask?.flags_inv & HIDEHAIR)
+		hair_hidden = TRUE
+
+	if(H?.wear_neck?.flags_inv & HIDEHAIR)
+		hair_hidden = TRUE
 
 	if(!hair_hidden)
 		var/mutable_appearance/hair_overlay = mutable_appearance(layer = -HAIR_LAYER)
