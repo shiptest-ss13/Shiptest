@@ -3946,8 +3946,7 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/suit/space/syndicate/ngr,
-/obj/item/clothing/head/helmet/space/syndicate/ngr,
+/obj/item/clothing/suit/space/hardsuit/mining/heavy/ngr,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "Id" = (
@@ -4015,12 +4014,11 @@
 	name = "foreman's suit storage unit";
 	req_access = list(56)
 	},
-/obj/item/clothing/suit/space/syndicate/engie,
-/obj/item/clothing/head/helmet/space/syndicate/engie,
 /obj/item/clothing/shoes/magboots/syndie,
 /obj/structure/sign/poster/contraband/engis_unite{
 	pixel_y = -32
 	},
+/obj/item/clothing/suit/space/hardsuit/mining/heavy/ngr,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo/office)
 "Jh" = (
@@ -4562,10 +4560,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
-"Oe" = (
-/obj/machinery/telecomms/relay/preset/ngr,
-/turf/template_noop,
-/area/template_noop)
 "Oh" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -5380,8 +5374,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/suit/space/syndicate/ngr,
-/obj/item/clothing/head/helmet/space/syndicate/ngr,
+/obj/item/clothing/suit/space/hardsuit/mining/heavy/ngr,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "UA" = (
@@ -5784,7 +5777,7 @@
 /obj/structure/sign/poster/rilena/random{
 	pixel_x = -32
 	},
-/obj/item/trash/cheesie{
+/obj/item/trash/gummycarps{
 	pixel_x = 5;
 	pixel_y = 8
 	},
@@ -6039,7 +6032,7 @@
 (1,1,1) = {"
 ZQ
 ZQ
-Oe
+ZQ
 ZQ
 ZQ
 ZQ

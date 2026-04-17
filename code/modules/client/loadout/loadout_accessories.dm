@@ -186,6 +186,11 @@
 	path = /obj/item/clothing/accessory/waistcoat/white
 	slot = null
 
+/datum/gear/accessory/barcoat
+	display_name = "bartender waistcoat"
+	path = /obj/item/clothing/accessory/barcoat
+	slot = null
+
 /datum/gear/accessory/stethoscope
 	display_name = "stethoscope"
 	path = /obj/item/clothing/neck/stethoscope

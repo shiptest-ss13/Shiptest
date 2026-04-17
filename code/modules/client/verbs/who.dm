@@ -100,14 +100,6 @@
 				continue //Don't show afk admins to adminwho
 			if(!C.holder.fakekey)
 				msg += "<b>\t[C]</b> is a [C.holder.rank]\n"
-	if(length(GLOB.mentors) > 0)
-		msg += "<b>Mentors:</b> \n"
-		for(var/client/C in sortList(GLOB.clients))
-			if(C in GLOB.admins)
-				continue
-			var/mentor = GLOB.mentor_datums[C.ckey]
-			if(mentor)
-				msg += "<b>\t[C.key]</b> is a Mentor \n"
 		msg += span_info("Adminhelps are also sent to Discord. If no admins are available in game adminhelp anyways and an admin on Discord will see it and respond.")
 	to_chat(src, msg)
 

@@ -18,6 +18,7 @@
 	"map_path": "_maps/shuttles/hardliner/hardliners_leyak.dmm",
 	"map_id": "hardliners_leyak",
 	"limit": 1,
+	"tranist_y_offset": -11,
 	"starting_funds": 1500,
 	"job_slots": {
 		"Captain": {
@@ -35,7 +36,7 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Medical Doctor": {
+		"Field Medic": {
 			"outfit": "/datum/outfit/job/syndicate/doctor/gorlex",
 			"slots": 1
 		},
@@ -43,17 +44,13 @@
 			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex",
 			"slots": 1
 		},
-		"Wrecker": {
-			"outfit": "/datum/outfit/job/syndicate/miner/gorlex",
-			"slots":1
-		},
 		"Trooper": {
 			"outfit": "/datum/outfit/job/syndicate/security/gorlex",
 			"slots": 2
 		},
 		"Junior Agent": {
 			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
-			"slots": 2
+			"slots": 1
 		}
 	},
 	"enabled": true

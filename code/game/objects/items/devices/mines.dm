@@ -440,7 +440,11 @@
 	//customize explosive power
 	var/range_devastation = 0
 	var/range_heavy = 1
+	var/heavy_damage = EX_HEAVY_BASE_DAM
+	var/heavy_item_damage = EX_HEAVY_BASE_ITEM_DAM
 	var/range_light = 5
+	var/light_damage = EX_LIGHT_BASE_DAM
+	var/light_item_damage = EX_LIGHT_BASE_ITEM_DAM
 	var/range_flame = 1
 
 	//using this to indicate pb
@@ -456,7 +460,8 @@
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/mine/pressure/explosive/mine_effect(mob/victim)
-	explosion(loc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1)
+	explosion(loc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1, \
+	light_dam = light_damage, light_item_dam = light_item_damage, heavy_dam = heavy_damage, heavy_item_dam = heavy_item_damage)
 	if(shrapnel_magnitude > 0)
 		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
 
@@ -465,8 +470,11 @@
 	name = "\improper Rusted Landmine"
 	desc = "An anti-infantry explosive, designed to go off underfoot. This one has seen better days."
 	manufacturer = MANUFACTURER_NONE
-	range_heavy = 0
+	heavy_damage = 50
+	heavy_item_damage = 40
 	range_light = 3
+	light_damage = 30
+	light_item_damage = 25
 	shrapnel_type = /obj/projectile/bullet/shrapnel/rusty
 
 
@@ -475,7 +483,11 @@
 	desc = "An anti-infantry explosive produced during the corporate wars. Transforms into superheated slag and a ball of fire on detonation. "
 
 	range_flame = 6
+	heavy_damage = 40
+	heavy_item_damage = 40
 	range_light = 3
+	light_damage = 30
+	light_item_damage = 25
 	range_flash = 3
 
 	shrapnel_type = /obj/projectile/bullet/shrapnel/hot
@@ -498,7 +510,9 @@
 	desc = "An immense anti-vehicle explosive built during the corporate wars. Someone has recklessly switched out the detonator for one that activates for lighter targets."
 	w_class = WEIGHT_CLASS_BULKY
 	range_heavy = 6
+	heavy_damage = 100
 	range_light = 9
+	light_damage = 50
 	shrapnel_magnitude = 7
 	shrapnel_type = /obj/projectile/bullet/shrapnel/mega
 	blast_delay = 50//run.
@@ -510,6 +524,7 @@
 	desc = "An anti-infantry explosive built during the corporate wars. Metal banding inside creates additional deadly shrapnel on detonation. "
 
 	range_heavy = 1
+	heavy_damage = 60
 	range_light = 4
 
 	shrapnel_magnitude = 6
@@ -558,10 +573,13 @@
 	desc = "An anti-infantry explosive produced during the corporate wars. This one has been rearmed with a proximity movement detector."
 
 	var/range_devastation = 0
-	var/range_heavy = 2
-	var/range_light = 4
+	var/range_heavy = 1
+	var/heavy_damage = EX_HEAVY_BASE_DAM
+	var/heavy_item_damage = EX_HEAVY_BASE_ITEM_DAM
+	var/range_light = 5
+	var/light_damage = EX_LIGHT_BASE_DAM
+	var/light_item_damage = EX_LIGHT_BASE_ITEM_DAM
 	var/range_flame = 1
-
 	var/range_flash = 1
 
 	var/shrapnel_type = /obj/projectile/bullet/shrapnel
@@ -570,7 +588,8 @@
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/mine/proximity/explosive/mine_effect(mob/victim)
-	explosion(loc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1)
+	explosion(loc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1, \
+	light_dam = light_damage, light_item_dam = light_item_damage, heavy_dam = heavy_damage, heavy_item_dam = heavy_item_damage)
 	if(shrapnel_magnitude > 0)
 		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
 
@@ -582,6 +601,8 @@
 
 	range_heavy = 0
 	range_light = 1
+	light_damage = 15
+	light_item_damage = 10
 	range_flash = 3
 	range_flame = 0
 
@@ -645,7 +666,11 @@
 	//customize explosive power
 	var/range_devastation = -1
 	var/range_heavy = 0
+	var/heavy_damage = 40 // most of the damage is shrapnel
+	var/heavy_item_damage = 40
 	var/range_light = 1
+	var/light_damage = 20
+	var/light_item_damage = 20
 	var/range_flame = 0
 
 	//using this to indicate pb
@@ -677,7 +702,8 @@
 	//if you somehow explode it while on the same tile, you win bonus shrapnel
 	//also spews stuff everywhere if it's triggered while not set up
 	if(!target_turf || victim ? (victim.loc == src.loc) : victim == null)
-		explosion(src, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1)
+		explosion(loc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1, \
+		light_dam = light_damage, light_item_dam = light_item_damage, heavy_dam = heavy_damage, heavy_item_dam = heavy_item_damage)
 		var/casingammo = casingtype.projectile_type
 		var/shredammo = shredtype.projectile_type
 		if(casingtype)
@@ -686,7 +712,8 @@
 			AddComponent(/datum/component/pellet_cloud, projectile_type = shredammo, magnitude = 2)
 	else
 		var/blastloc = get_step_towards(src, target_turf)
-		explosion(blastloc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1)
+		explosion(blastloc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1, \
+		light_dam = light_damage, light_item_dam = light_item_damage, heavy_dam = heavy_damage, heavy_item_dam = heavy_item_damage)
 		if(shredtype)
 			var/obj/item/ammo_casing/shredcasing = new shredtype(src)
 			shredcasing.fire_casing(target_turf, null, null, null, 30, ran_zone(), 50, src)

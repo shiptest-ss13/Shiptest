@@ -182,7 +182,7 @@ Possible to do for anyone motivated enough:
 	if(in_range(user, src) || isobserver(user))
 		. += span_notice("The status display reads: Current projection range: <b>[holo_range]</b> units.")
 		if(caller_history)
-			. += span_notice("The caller history displays the last recieved call to be from: [caller_history].")
+			. += span_notice("The caller history indicates the last call received was from: [caller_history].")
 
 /obj/machinery/holopad/attackby(obj/item/P, mob/user, params)
 	if(default_deconstruction_screwdriver(user, "holopad_open", "holopad0", P))

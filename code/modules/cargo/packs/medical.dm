@@ -201,12 +201,16 @@
 /datum/supply_pack/medical/mkiii_hypo
 	name = "mk.III Hypospray kit"
 	desc = "Contains a Matahari Pharmaceutical mk.III Hypospray, for on the field medical care. Comes with an assortment of Ready-To-Go Vials"
-	cost = 2000
-	contains = list(/obj/item/storage/box/hypospray/mkiii)
+	cost = 2500
+	contains = list(/obj/item/storage/box/hypospray/mkiii/cargo)
 	crate_name = "mk.III hypospray crate"
 	faction = /datum/faction/warra
 	faction_locked = TRUE
 	faction_discount = 0
+
+/datum/supply_pack/medical/mkiii_hypo/cybersun
+	desc = "Contains a mk.III Cybersun Hypospray, for on the field medical care. Comes with an assortment of Ready-To-Go Vials"
+	faction = /datum/faction/syndicate/cybersun
 
 /datum/supply_pack/medical/vials
 	faction = /datum/faction/warra
@@ -229,6 +233,24 @@
 	)
 	crate_name = "indomide vial crate"
 
+/datum/supply_pack/medical/vials/hadr_vial
+	name = "Hadrakine Vial Crate"
+	desc = "Contains a spare hadrakine vial, for usage in a Hypospray."
+	cost = 600
+	contains = list(
+		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/hadrakine,
+	)
+	crate_name = "hadrakine vial crate"
+
+/datum/supply_pack/medical/vials/silf_vial
+	name = "Silfrine Vial Crate"
+	desc = "Contains a spare silfrine vial, for usage in a Hypospray."
+	cost = 800
+	contains = list(
+		/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/silfrine,
+	)
+	crate_name = "silfrine vial crate"
+
 /datum/supply_pack/medical/vials/alvi_vial
 	name = "Alvitane Vial Crate"
 	desc = "Contains a spare alvitane vial, for usage in a Hypospray."
@@ -238,14 +260,41 @@
 	)
 	crate_name = "alvitane vial crate"
 
-/datum/supply_pack/medical/vials/dylo_vial
+/datum/supply_pack/medical/vials/quar_vial
+	name = "Quardexane Vial Crate"
+	desc = "Contains a spare quardexane vial, for usage in a Hypospray."
+	cost = 600
+	contains = list(
+		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/quardexane,
+	)
+	crate_name = "quardexane vial crate"
+
+/datum/supply_pack/medical/vials/ysil_vial
+	name = "Ysiltane Vial Crate"
+	desc = "Contains a spare ysiltane vial, for usage in a Hypospray."
+	cost = 800
+	contains = list(
+		/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/ysiltane,
+	)
+	crate_name = "ysiltane vial crate"
+
+/datum/supply_pack/medical/vials/panc_vial
 	name = "Pancrazine Vial Crate"
-	desc = "Contains a spare dylovene vial, for usage in a Hypospray."
+	desc = "Contains a spare pancrazine vial, for usage in a Hypospray."
 	cost = 400
 	contains = list(
 		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/pancrazine,
 	)
 	crate_name = "pancrazine vial crate"
+
+/datum/supply_pack/medical/vials/gjal_vial
+	name = "Gjalrazine Vial Crate"
+	desc = "Contains a spare gjalrazine vial, for usage in a Hypospray."
+	cost = 800
+	contains = list(
+		/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/gjalrazine,
+	)
+	crate_name = "gjalrazine vial crate"
 
 /datum/supply_pack/medical/vials/dexa_vial
 	name = "Dexalin Vial Crate"

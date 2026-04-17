@@ -99,7 +99,8 @@
 	},
 /obj/item/storage/guncase/pistol/kalixpistol{
 	pixel_y = -12;
-	pixel_x = -1
+	pixel_x = -1;
+	mag_count = 3
 	},
 /obj/item/clothing/shoes/combat/gezena{
 	pixel_y = -3;
@@ -1028,14 +1029,6 @@
 	pixel_y = -7;
 	pixel_x = 8
 	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -8;
-	pixel_y = 7
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -8;
-	pixel_y = 7
-	},
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_y = 7;
 	pixel_x = 8
@@ -1047,6 +1040,14 @@
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_y = -7;
 	pixel_x = 8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 7;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 7;
+	pixel_x = -8
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -3536,14 +3537,15 @@
 /obj/item/gun/energy/kalix/pgf{
 	pixel_y = 6
 	},
-/obj/item/gun/energy/kalix/pistol{
-	pixel_y = -8
-	},
 /obj/item/gun/energy/kalix/pgf/nock{
 	pixel_y = -1
 	},
 /obj/structure/sign/poster/pgf/marine{
 	pixel_y = 32
+	},
+/obj/item/gun/energy/kalix/pgf/pdw{
+	pixel_x = -5;
+	pixel_y = -9
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
