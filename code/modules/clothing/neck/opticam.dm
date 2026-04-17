@@ -7,7 +7,7 @@
 	base_icon_state = "opticam"
 	icon_state = "opticam-0"
 	w_class = WEIGHT_CLASS_BULKY
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	flags_inv = HIDESUITSTORAGE
 
 	greyscale_colors = null
@@ -62,7 +62,7 @@
 	icon_state = "[base_icon_state]-[hoodup]"
 	to_chat(user, "You [hoodup ? "put up" : "tuck away"] [src]'s hood")
 	if(hoodup)
-		flags_inv = HIDESUITSTORAGE|HIDEHAIR|HIDEEARS
+		flags_inv = HIDESUITSTORAGE | HIDEHAIR | HIDEEARS
 	else
 		flags_inv = HIDESUITSTORAGE
 	update_appearance()
@@ -105,6 +105,7 @@
 		return
 
 	flags_inv = HIDEHAIR|HIDEEARS
+	user.update_inv_w_uniform()
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/active_user = user
