@@ -49,7 +49,7 @@
 
 /obj/item/clothing/neck/opticamo/ui_action_click(user, action)
 	if(istype(action, /datum/action/item_action/toggle_hood))
-		playsound(src, 'sound/items/equip/equipping_short_generic.ogg', 15 )
+		playsound(src, 'sound/items/equip/equipping_short_generic.ogg', 15)
 		if(do_after(user, 15, user, IGNORE_USER_LOC_CHANGE))
 			toggle_hood(user)
 	else if(istype(action, /datum/action/item_action/toggle_opticamo))
