@@ -38,7 +38,7 @@
 /datum/status_effect/concealed/cloaked/static_cloak
 	concealment_power = 90
 	alert_type = /atom/movable/screen/alert/status_effect/static_cloak
-	tick_interval = 1
+	tick_interval = 4
 	min_alpha = 25
 	var/mutable_appearance/static_overlay
 
@@ -49,7 +49,7 @@
 
 /datum/status_effect/concealed/cloaked/static_cloak/tick()
 	. = ..()
-	if(prob(10))
+	if(prob(5))
 		to_chat(owner, span_mind_control(pick(GLOB.tvstatic_sayings)))
 
 /datum/status_effect/concealed/cloaked/static_cloak/on_remove()
