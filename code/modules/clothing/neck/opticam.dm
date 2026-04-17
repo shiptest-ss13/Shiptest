@@ -87,7 +87,8 @@
 		return
 
 	//be quiet
-	flags_inv = HIDEGLOVES|HIDESUITSTORAGE|HIDEJUMPSUIT|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEHORNS
+	flags_inv = HIDEGLOVES|HIDESUITSTORAGE|HIDEJUMPSUIT|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEHORNS|HIDESHOES
+	user.update_inv_w_uniform()
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/active_user = user
