@@ -61,6 +61,11 @@
 /obj/item/organ/eyes,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered/bighole/shed)
+"am" = (
+/obj/structure/platform/ship_three,
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "ap" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 9
@@ -156,6 +161,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "aA" = (
@@ -553,6 +559,10 @@
 	dir = 2
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"cG" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
 "cK" = (
 /obj/structure/closet/crate/bin,
@@ -1177,6 +1187,13 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"gK" = (
+/obj/structure/platform/industrial_alt{
+	dir = 2
+	},
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "gM" = (
 /obj/effect/turf_decal/road/line{
 	dir = 1
@@ -1262,6 +1279,13 @@
 /obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"hu" = (
+/obj/structure/platform/industrial_alt{
+	dir = 6
+	},
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "hv" = (
 /obj/structure/platform/industrial{
 	dir = 9
@@ -1327,6 +1351,11 @@
 	},
 /obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"hO" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "hP" = (
 /obj/structure/rack,
@@ -2676,6 +2705,13 @@
 /obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"oP" = (
+/obj/structure/platform/industrial_alt{
+	dir = 8
+	},
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "oQ" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -2845,6 +2881,10 @@
 "pW" = (
 /obj/structure/flora/rock/jungle,
 /obj/item/stack/ore/slag,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
+"pX" = (
+/obj/structure/flora/junglebush,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
 "qb" = (
@@ -3090,6 +3130,13 @@
 /obj/effect/spawner/random/trash/mess,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/powered/bighole/medbay)
+"rt" = (
+/obj/structure/platform/industrial_alt{
+	dir = 8
+	},
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "ru" = (
 /obj/effect/turf_decal/siding/black{
 	dir = 4
@@ -3140,6 +3187,13 @@
 /obj/item/weldingtool/electric,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/secoffice)
+"rJ" = (
+/obj/structure/platform/industrial_alt{
+	dir = 4
+	},
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "rL" = (
 /obj/structure/cable{
 	icon_state = "0-1"
@@ -3164,6 +3218,13 @@
 	},
 /obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"rS" = (
+/obj/structure/platform/industrial_alt{
+	dir = 2
+	},
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "rU" = (
 /obj/effect/turf_decal/road/line{
@@ -3324,6 +3385,10 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
+"sO" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "sP" = (
 /obj/structure/railing{
@@ -4822,6 +4887,13 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Bw" = (
+/obj/structure/platform/industrial_alt/corner{
+	dir = 1
+	},
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "BB" = (
 /obj/structure/platform/industrial_alt{
 	dir = 1
@@ -4999,6 +5071,13 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
+"CB" = (
+/obj/structure/platform/industrial_alt{
+	dir = 6
+	},
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "CD" = (
 /obj/effect/decal/cleanable/blood/footprints,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
@@ -5575,6 +5654,7 @@
 	dir = 10
 	},
 /obj/structure/railing,
+/obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "FK" = (
@@ -6292,6 +6372,10 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"JV" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ka" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/sandbags,
@@ -6318,6 +6402,11 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/powered/bighole/lab)
+"Kq" = (
+/obj/structure/platform/industrial_alt,
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Kr" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/directional/north,
@@ -6575,6 +6664,13 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/bighole/ferry)
+"LV" = (
+/obj/structure/platform/industrial_alt{
+	dir = 2
+	},
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "LX" = (
 /obj/structure/fence{
 	dir = 1
@@ -6892,6 +6988,11 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"Or" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ot" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -7557,6 +7658,11 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
+"RC" = (
+/obj/structure/platform/industrial_alt,
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "RI" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
@@ -8138,6 +8244,13 @@
 /obj/structure/spacevine/weak,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
+"UG" = (
+/obj/structure/platform/industrial_alt{
+	dir = 6
+	},
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "UH" = (
 /mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
@@ -8241,6 +8354,10 @@
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Vj" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Vk" = (
 /obj/structure/platform/industrial{
 	dir = 10
@@ -8309,6 +8426,7 @@
 /obj/structure/fence/cut/medium{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
 "VL" = (
@@ -8446,6 +8564,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/bighole/ferry)
+"Wy" = (
+/obj/structure/platform/industrial_alt{
+	dir = 4
+	},
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "WB" = (
 /obj/effect/spawner/random/trash/cigbutt,
 /obj/structure/barricade/sandbags,
@@ -8456,6 +8581,10 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"WD" = (
+/obj/structure/flora/junglebush/large,
+/turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "WI" = (
 /obj/item/ammo_casing/spent/slug/buck,
@@ -9960,7 +10089,7 @@ rQ
 rQ
 rQ
 rQ
-wW
+TU
 wW
 Ik
 Bg
@@ -10032,7 +10161,7 @@ wW
 rQ
 rQ
 rQ
-wW
+Vh
 wW
 UE
 Bg
@@ -10059,8 +10188,8 @@ Gg
 rQ
 rQ
 rQ
-rQ
-rQ
+lv
+JV
 rQ
 rQ
 rQ
@@ -10111,7 +10240,7 @@ UE
 Ug
 UE
 Bg
-rQ
+MY
 rQ
 Ii
 Ii
@@ -10133,9 +10262,9 @@ Av
 RA
 rQ
 rQ
+MY
 rQ
-rQ
-rQ
+mz
 rQ
 rQ
 rQ
@@ -10181,10 +10310,10 @@ Vd
 eG
 eG
 eG
+rJ
 eG
-eG
-eG
-eG
+Wy
+Wy
 eG
 Ii
 Ii
@@ -10247,7 +10376,7 @@ Vh
 wW
 oS
 rQ
-rQ
+WD
 Vd
 eG
 qu
@@ -10321,7 +10450,7 @@ wW
 of
 rQ
 Vd
-qu
+UG
 hj
 hj
 JR
@@ -10357,12 +10486,12 @@ wq
 UR
 UR
 dV
-rQ
-rQ
+WD
+Rk
 rQ
 rQ
 wW
-wW
+of
 oK
 wW
 wW
@@ -10393,7 +10522,7 @@ UE
 wW
 rQ
 Vd
-qu
+hu
 JL
 JL
 Bd
@@ -10430,7 +10559,7 @@ fB
 Jf
 UR
 dV
-rQ
+mz
 rQ
 rQ
 rQ
@@ -10465,7 +10594,7 @@ Bg
 UE
 ee
 rQ
-gk
+rS
 JL
 JL
 BN
@@ -10508,7 +10637,7 @@ rQ
 RA
 rQ
 rQ
-wW
+OY
 oK
 wW
 wW
@@ -10578,7 +10707,7 @@ UR
 ut
 Re
 rQ
-rQ
+JV
 rQ
 rQ
 wW
@@ -10636,9 +10765,9 @@ WC
 WC
 WC
 WC
-ad
-ad
-ad
+rt
+oP
+oP
 Fq
 ef
 UR
@@ -10683,7 +10812,7 @@ ee
 ee
 VR
 rQ
-gk
+LV
 dn
 Yu
 VC
@@ -10972,7 +11101,7 @@ wW
 il
 oK
 wW
-rQ
+Rk
 rQ
 df
 Eu
@@ -11119,7 +11248,7 @@ Ik
 oK
 wW
 wW
-rQ
+mz
 rQ
 Ir
 zA
@@ -11267,7 +11396,7 @@ wW
 rQ
 Rq
 eG
-eG
+Al
 eG
 eG
 eG
@@ -11702,7 +11831,7 @@ UE
 UE
 oK
 Rq
-qu
+CB
 sQ
 lc
 ON
@@ -11847,7 +11976,7 @@ Kg
 oS
 oS
 oK
-gk
+gK
 sQ
 ia
 Py
@@ -11920,7 +12049,7 @@ wW
 TU
 Vh
 Uz
-gk
+rS
 sQ
 wF
 Zr
@@ -11993,7 +12122,7 @@ of
 Ik
 wW
 oK
-gk
+gK
 sQ
 Wo
 kI
@@ -12066,7 +12195,7 @@ MY
 rQ
 wW
 oK
-gk
+gK
 sQ
 Zj
 st
@@ -12139,7 +12268,7 @@ gp
 rQ
 TU
 oK
-gk
+gK
 Xk
 Xk
 SB
@@ -12212,7 +12341,7 @@ gp
 cy
 rQ
 Yc
-gk
+rS
 Xk
 Xk
 CN
@@ -12358,7 +12487,7 @@ gp
 gp
 rQ
 Yc
-gk
+gK
 IA
 wa
 Xz
@@ -12398,7 +12527,7 @@ lA
 CK
 Gg
 rQ
-ku
+Kq
 pv
 HB
 XF
@@ -12470,8 +12599,8 @@ jC
 Pr
 UN
 Gg
-rQ
-ku
+MY
+RC
 pv
 pv
 wb
@@ -12542,8 +12671,8 @@ lA
 UM
 fH
 Gg
-rQ
-rQ
+MY
+MY
 de
 zA
 pv
@@ -12651,8 +12780,8 @@ gp
 gp
 Yc
 rQ
-rQ
-de
+MY
+Bw
 BS
 BS
 BS
@@ -12661,7 +12790,7 @@ ad
 ad
 ad
 lt
-rQ
+WD
 rQ
 rQ
 rQ
@@ -12770,7 +12899,7 @@ Dn
 Dn
 rQ
 rQ
-rQ
+lv
 rQ
 Yc
 wW
@@ -12816,7 +12945,7 @@ rQ
 rQ
 rQ
 rQ
-rQ
+MY
 Gg
 Gg
 Gg
@@ -12826,11 +12955,11 @@ GP
 Gg
 Gg
 dF
-rQ
+MY
 rQ
 vb
 Gg
-rQ
+JV
 bj
 Dn
 BP
@@ -12842,8 +12971,8 @@ dE
 jh
 Dn
 rQ
-rQ
-rQ
+mz
+MY
 rQ
 Yc
 UE
@@ -12883,12 +13012,12 @@ Co
 lu
 lu
 rQ
-rQ
+lv
 rQ
 tJ
-rQ
-rQ
-wW
+MY
+MY
+of
 rN
 rN
 rN
@@ -12899,11 +13028,11 @@ hx
 rN
 rN
 rN
-rQ
+mz
 rQ
 vb
 Gg
-rQ
+MY
 Kf
 Dn
 Kr
@@ -12916,7 +13045,7 @@ Xb
 Dn
 rQ
 rQ
-rQ
+WD
 rQ
 oK
 UE
@@ -12957,11 +13086,11 @@ Dg
 lu
 lu
 lu
+Or
 IL
-IL
-wW
-wW
-wW
+hO
+TU
+Vh
 rN
 ZX
 HJ
@@ -12973,10 +13102,10 @@ iu
 Tx
 rN
 Sm
-rQ
+MY
 HG
 Gg
-rQ
+MY
 bj
 Dn
 Li
@@ -13017,7 +13146,7 @@ lu
 Yc
 lu
 Ae
-lu
+Vj
 Co
 Fu
 Fu
@@ -13031,7 +13160,7 @@ Co
 lu
 lu
 IL
-rQ
+MY
 rN
 rN
 rN
@@ -13378,10 +13507,10 @@ wW
 wW
 Vh
 aZ
-wW
+sO
 cU
 lu
-lu
+cG
 lu
 qf
 Fu
@@ -13451,7 +13580,7 @@ wW
 TU
 jk
 wW
-wW
+sO
 VI
 TZ
 ro
@@ -13629,7 +13758,7 @@ Gg
 rQ
 rQ
 wW
-wW
+of
 fn
 sV
 qU
@@ -13701,9 +13830,9 @@ TR
 gh
 ee
 rQ
+of
 wW
-wW
-fn
+am
 Ri
 Oi
 Ho
@@ -13775,7 +13904,7 @@ gh
 ee
 rQ
 wW
-wW
+oS
 ci
 sV
 wA
@@ -13847,7 +13976,7 @@ Zf
 OL
 Di
 wW
-wW
+oS
 wW
 ci
 Ri
@@ -13893,7 +14022,7 @@ UE
 St
 lu
 lu
-lu
+pX
 lu
 lu
 HX
@@ -13920,7 +14049,7 @@ mL
 XN
 ee
 rQ
-wW
+TU
 wW
 ci
 bE
@@ -13937,7 +14066,7 @@ YE
 YE
 ol
 BW
-wW
+TU
 UE
 Ug
 oK
@@ -13981,7 +14110,7 @@ lu
 HX
 lu
 lu
-lu
+pX
 rQ
 rQ
 rQ
@@ -14011,7 +14140,7 @@ yD
 JM
 Mg
 wW
-wW
+OY
 Ug
 oK
 UE
