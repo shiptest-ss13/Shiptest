@@ -89,8 +89,9 @@
 	item_state = "armoralt"
 	body_parts_covered = CHEST|GROIN
 	armor = list("melee" = 60, "bullet" = 45, "laser" = 20, "energy" = 50, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20)
-	supports_variations = null
+	supports_variations = KEPORI_VARIATION
 	slowdown = 0.4
+
 
 /obj/item/clothing/suit/armor/roumain/plate/montagne
 	name = "saint-roumain montagne battle coat"
@@ -230,6 +231,7 @@
 	icon_state = "rouma_heavy"
 	icon = 'icons/obj/clothing/faction/srm/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/head.dmi'
+	supports_variations = KEPORI_VARIATION
 ///////////////
 //Accessories//
 ///////////////
