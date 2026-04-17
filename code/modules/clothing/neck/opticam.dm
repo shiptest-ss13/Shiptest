@@ -147,7 +147,7 @@
 	name = "Toggle optical camoflague"
 	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_HANDS_BLOCKED
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
-	button_icon_state = "sniper_zoom"
+	button_icon_state = "power_yellow"
 
 /datum/action/item_action/toggle_opticamo/Trigger()
 	if(!istype(target, /obj/item/clothing/neck/opticamo) || !..())
