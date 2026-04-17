@@ -125,20 +125,19 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "aC" = (
-/obj/structure/platform/ship_three,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 9
-	},
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/obj/structure/fence/cut/large,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
 "aE" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/closet/crate/bin,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/sign/poster/clip/random{
+	pixel_x = -2;
+	pixel_y = 2
+	},
+/turf/closed/wall/concrete,
+/area/ruin/powered/bighole/dormitory)
 "aF" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -230,13 +229,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/cargo)
 "bA" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/table,
-/obj/structure/cable{
-	icon_state = "5-10"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/spacevine/weak,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "bD" = (
 /obj/structure/platform/industrial,
 /turf/open/chasm/jungle/lit,
@@ -267,6 +264,17 @@
 /obj/machinery/drill/mission,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered/bighole/shed)
+"bM" = (
+/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
+	init_processing = 1;
+	pixel_x = -1;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
 "bU" = (
 /obj/machinery/door/airlock/grunge{
 	req_access = list(3);
@@ -303,6 +311,15 @@
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall/concrete,
 /area/ruin/powered/bighole/shed)
+"cf" = (
+/obj/structure/fence{
+	dir = 1
+	},
+/obj/structure/fence{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "ci" = (
 /obj/structure/platform/ship_three,
 /turf/open/floor/plating/asteroid/dirt/jungle,
@@ -354,11 +371,10 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "cA" = (
-/obj/structure/chair{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white/jungleplanet,
-/area/ruin/powered/bighole/lab)
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "cB" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/corner{
 	dir = 4
@@ -375,10 +391,10 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "cK" = (
-/obj/effect/turf_decal/corner/transparent/blue/three_quarters,
-/obj/structure/closet/crate/bin,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/flora/grass/jungle,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "cN" = (
 /obj/structure/flora/stump,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -395,6 +411,13 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered/bighole/secoffice)
+"cP" = (
+/obj/structure/sign/poster/rilena/random{
+	pixel_x = -1;
+	pixel_y = -2
+	},
+/turf/closed/wall/concrete,
+/area/ruin/powered/bighole/dormitory)
 "cT" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/effect/turf_decal/siding/white{
@@ -404,10 +427,7 @@
 /area/ruin/powered/bighole/medbay)
 "cU" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 6
+	dir = 5
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -445,32 +465,20 @@
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "dj" = (
-/obj/structure/crate_shelf,
-/obj/structure/closet/crate/secure/plasma,
-/obj/item/stack/ore/diamond{
-	pixel_x = -1;
-	pixel_y = 3
-	},
-/obj/item/stack/ore/diamond{
-	pixel_x = 5;
-	pixel_y = 0
-	},
-/obj/item/stack/ore/plasma{
-	pixel_x = -5;
-	pixel_y = -2
-	},
-/obj/machinery/door/window/brigdoor/southleft{
-	req_access_txt = "3"
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ruin/powered/bighole/lab)
-"do" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 9
+	dir = 1
 	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
+"do" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8
+	dir = 2
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/canteen)
@@ -552,6 +560,9 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered/bighole/shed)
+"ex" = (
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/template_noop)
 "ey" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -600,7 +611,10 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "fo" = (
-/turf/template_noop,
+/obj/structure/fence/cut/medium{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "fq" = (
 /obj/effect/turf_decal/siding/black{
@@ -610,11 +624,17 @@
 /turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
 /area/ruin/powered/bighole/cargo)
 "fr" = (
-/obj/structure/chair/greyscale{
-	dir = 4
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_x = 8;
+	pixel_y = 7
 	},
-/turf/open/floor/carpet,
-/area/ruin/powered/bighole/canteen)
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_x = -9;
+	pixel_y = 5
+	},
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "fw" = (
 /obj/structure/table/reinforced,
 /obj/item/paper{
@@ -693,10 +713,15 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "gh" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/obj/structure/platform/industrial_alt{
 	dir = 8
 	},
-/obj/structure/spacevine/weak,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "gk" = (
@@ -708,11 +733,21 @@
 "gp" = (
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
+"gt" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/ruin/powered/bighole/cargo)
 "gy" = (
 /obj/structure/railing/thick{
 	dir = 6
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"gB" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "gD" = (
 /obj/machinery/modular_computer/console/preset/civilian{
@@ -741,6 +776,22 @@
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"gV" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line,
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/bighole/lab)
 "hj" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -791,15 +842,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/bighole/cargo)
 "hF" = (
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8
-	},
-/turf/open/floor/carpet,
-/area/ruin/powered/bighole/canteen)
+/obj/machinery/suit_storage_unit,
+/obj/item/clothing/suit/space/hardsuit/mining/clip,
+/obj/item/clothing/mask/gas/clip,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/powered/bighole/cargo)
 "hJ" = (
 /turf/open/floor/carpet/red,
 /area/ruin/powered/bighole/secoffice)
@@ -832,12 +879,9 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "hY" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
-/obj/structure/chair/greyscale,
-/turf/open/floor/carpet,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "ia" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/techfloor{
@@ -845,6 +889,11 @@
 	},
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/powered/bighole/office)
+"ib" = (
+/obj/structure/flora/junglebush/b,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "if" = (
 /obj/structure/sign/clip{
 	pixel_x = 0;
@@ -881,6 +930,18 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/powered/bighole/medbay)
+"iE" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
 "iF" = (
 /obj/structure/railing{
 	dir = 8
@@ -954,10 +1015,11 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "iZ" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/table,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/bighole/lab)
 "jb" = (
 /obj/structure/railing/thick/corner{
 	dir = 1
@@ -977,6 +1039,24 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/bighole/shed)
+"jm" = (
+/obj/structure/chair/sofa/blue/old/right/directional/east{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
+"jq" = (
+/obj/structure/sign/poster/clip/random,
+/turf/closed/wall/concrete,
+/area/ruin/powered/bighole/canteen)
 "jt" = (
 /obj/structure/platform/industrial{
 	dir = 5
@@ -1059,8 +1139,9 @@
 /turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
 /area/ruin/jungle/bighole/vent)
 "jR" = (
-/turf/open/floor/plasteel/white/jungleplanet,
-/area/ruin/powered/bighole/lab)
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "jV" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Canteen"
@@ -1182,28 +1263,12 @@
 /turf/open/floor/pod/dark,
 /area/ruin/powered/bighole/secoffice)
 "kX" = (
-/obj/structure/table,
-/obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
-	pixel_y = 8
+/obj/structure/chair/greyscale{
+	dir = 1;
+	pixel_x = 3;
+	pixel_y = 13
 	},
-/obj/structure/closet/secure_closet/freezer/kitchen/wall/directional/north,
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -1;
-	pixel_y = 3
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -3;
-	pixel_y = 11
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = 2;
-	pixel_y = 9
-	},
-/obj/effect/turf_decal/corner/transparent/blue{
-	dir = 5
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
 "kY" = (
 /obj/effect/turf_decal/road/line{
@@ -1288,6 +1353,13 @@
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"lK" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "lM" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/structure/closet/secure_closet/medical1,
@@ -1306,13 +1378,10 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "lQ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 5
+/obj/structure/fence/cut/medium{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 5
-	},
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "lX" = (
 /obj/structure/cable{
@@ -1325,6 +1394,10 @@
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi'
 	},
+/area/overmap_encounter/planetoid/jungle/explored)
+"lZ" = (
+/obj/structure/spacevine/weak,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "mc" = (
 /obj/effect/spawner/random/vending/cola,
@@ -1362,6 +1435,12 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered/bighole/secoffice)
+"mt" = (
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/corner/transparent/blue/diagonal,
+/obj/structure/table,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/powered/bighole/canteen)
 "mu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
@@ -1402,7 +1481,7 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "mF" = (
-/obj/structure/fence/cut/large,
+/obj/structure/flora/junglebush,
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "mL" = (
@@ -1453,6 +1532,16 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"nm" = (
+/obj/effect/turf_decal/industrial/warning{
+	layer = 2.456;
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/bighole/lab)
 "nn" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Mine Equipment"
@@ -1475,6 +1564,24 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"nu" = (
+/obj/structure/closet/crate/bin,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/turf_decal/corner/transparent/blue/diagonal,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/powered/bighole/canteen)
+"nD" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 2
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/platform/industrial_alt/corner{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "nE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -1506,21 +1613,14 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/bighole/dormitory)
 "nO" = (
-/obj/effect/turf_decal/trimline/transparent/beige/corner,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/powered/bighole/cargo)
-"nR" = (
-/obj/structure/fence/cut/medium{
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/dirt/jungle,
+/obj/structure/flora/ash/garden,
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
+"nR" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
 "oi" = (
 /obj/structure/cable{
 	icon_state = "6-9"
@@ -1596,10 +1696,12 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "oB" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/chair/greyscale,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/spacevine/weak,
+/obj/structure/fence/cut/large{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "oG" = (
 /obj/structure/cable{
 	icon_state = "2-5"
@@ -1645,11 +1747,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/bighole/secoffice)
 "oQ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/rock/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "oY" = (
 /obj/structure/spacevine/weak,
@@ -1663,12 +1763,10 @@
 /turf/open/chasm/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "pg" = (
-/obj/effect/turf_decal/corner/transparent/blue/three_quarters{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/junglebush/large,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "pi" = (
 /obj/effect/turf_decal/road/line{
 	dir = 4
@@ -1840,17 +1938,9 @@
 /turf/open/floor/wood/jungleplanet,
 /area/ruin/powered/bighole/office)
 "qo" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white/jungleplanet,
-/area/ruin/powered/bighole/lab)
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "qp" = (
 /obj/structure/railing/thick/corner{
 	dir = 1
@@ -1870,21 +1960,11 @@
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "qF" = (
-/obj/structure/crate_shelf,
-/obj/structure/closet/crate/secure/plasma,
-/obj/item/stack/ore/gold{
-	pixel_x = -3;
-	pixel_y = 0
+/obj/structure/fence{
+	dir = 1
 	},
-/obj/item/stack/ore/bluespace_crystal{
-	pixel_x = 5;
-	pixel_y = 0
-	},
-/obj/machinery/door/window/brigdoor/southleft{
-	req_access_txt = "3"
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ruin/powered/bighole/lab)
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "qM" = (
 /obj/structure/fence{
 	dir = 1
@@ -1942,19 +2022,16 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/powered/bighole/medbay)
 "ru" = (
-/obj/effect/turf_decal/siding/black{
-	dir = 4
+/obj/machinery/door/window/brigdoor/southleft{
+	req_access_txt = "3"
 	},
-/obj/effect/turf_decal/box,
-/obj/structure/ore_box,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 1
+/obj/structure/closet/crate/secure/plasma{
+	pixel_x = 0;
+	pixel_y = 3
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
-/area/ruin/powered/bighole/cargo)
+/obj/effect/turf_decal/industrial/hatch/blue,
+/turf/open/floor/engine/hull/interior,
+/area/ruin/powered/bighole/lab)
 "rv" = (
 /obj/structure/table/reinforced,
 /obj/structure/fluff/paper/stack{
@@ -2047,17 +2124,6 @@
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "sg" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
-/obj/structure/chair/stool/bar{
-	dir = 4;
-	pixel_y = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/canteen)
 "sq" = (
@@ -2075,9 +2141,16 @@
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/powered/bighole/office)
 "sv" = (
-/obj/structure/grille,
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
-/area/ruin/jungle/bighole/vent)
+/obj/machinery/microwave{
+	pixel_x = 3;
+	pixel_y = 11
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/structure/table,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
 "sy" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -2120,6 +2193,11 @@
 	},
 /turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
 /area/ruin/jungle/bighole/vent)
+"sY" = (
+/obj/structure/flora/junglebush,
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "tf" = (
 /obj/machinery/shower{
 	dir = 8
@@ -2130,21 +2208,21 @@
 /turf/open/floor/plastic,
 /area/ruin/powered/bighole/dormitory)
 "th" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
 /obj/structure/chair/greyscale{
 	dir = 1;
-	pixel_x = 0;
-	pixel_y = 7
+	pixel_x = -5;
+	pixel_y = 9
 	},
-/turf/open/floor/carpet,
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
 "ti" = (
 /obj/machinery/door/airlock/grunge{
@@ -2170,30 +2248,21 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ts" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 4
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/canteen)
 "tG" = (
-/obj/effect/turf_decal/corner/transparent/blue{
-	dir = 10
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
-	init_processing = 1;
-	pixel_x = -1;
-	pixel_y = 0
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
 "tK" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/cable{
-	icon_state = "5-10"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/flora/grass/jungle,
+/obj/structure/flora/junglebush/b,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "tS" = (
 /obj/structure/platform/ship_three{
 	dir = 4
@@ -2271,12 +2340,18 @@
 /turf/open/chasm/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "uE" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/cable{
-	icon_state = "0-10"
+/obj/machinery/door/airlock/grunge{
+	name = "Canteen"
 	},
-/obj/machinery/power/apc/auto_name/directional/east,
-/turf/open/floor/plasteel/dark,
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 2
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/bighole/canteen)
 "uR" = (
 /obj/structure/grille,
@@ -2320,6 +2395,13 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"vg" = (
+/obj/structure/chair/sofa/blue/old/left/directional/east{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
 "vh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
@@ -2371,11 +2453,7 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/interior,
 /area/ruin/powered/bighole/office)
 "vx" = (
-/obj/structure/closet/secure_closet/freezer/fridge,
-/obj/effect/turf_decal/corner/transparent/blue/three_quarters{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
 "vy" = (
 /obj/structure/filingcabinet/double{
@@ -2391,11 +2469,10 @@
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/powered/bighole/lab)
 "vI" = (
-/obj/structure/table,
-/obj/effect/turf_decal/corner/transparent/blue/three_quarters{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "5-10"
 	},
-/obj/machinery/light/directional/south,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/canteen)
 "vJ" = (
@@ -2405,13 +2482,9 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered/bighole/dormitory)
 "vN" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/cable{
-	icon_state = "5-10"
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "vQ" = (
 /obj/machinery/conveyor{
 	dir = 4
@@ -2443,21 +2516,13 @@
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/powered/bighole/lab)
 "wa" = (
-/obj/machinery/door/window/brigdoor/southleft{
-	req_access_txt = "3"
-	},
-/obj/structure/closet/crate/secure/plasma{
-	pixel_x = 0;
-	pixel_y = 3
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ruin/powered/bighole/lab)
+/obj/structure/sign/poster/official/no_erp,
+/turf/closed/wall/concrete,
+/area/ruin/powered/bighole/dormitory)
 "wb" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 6
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/powered/bighole/electrical)
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "we" = (
 /obj/structure/platform/industrial_alt{
 	dir = 1
@@ -2474,10 +2539,8 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/bighole/medbay)
 "wr" = (
-/obj/effect/turf_decal/corner/transparent/blue{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
 "wu" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
@@ -2486,6 +2549,12 @@
 	pixel_y = 1
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"wv" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/rock/jungle,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "wy" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -2504,6 +2573,14 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/bighole/lab)
+"wC" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/spacevine/weak,
+/obj/machinery/door/airlock/grunge{
+	name = "Airflow Bunker"
+	},
+/turf/open/floor/plasteel/dark/jungleplanet/interior,
+/area/ruin/jungle/bighole/vent)
 "wE" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -2545,13 +2622,8 @@
 /turf/closed/wall/concrete,
 /area/ruin/jungle/bighole/vent)
 "wO" = (
-/obj/structure/sink/kitchen{
-	dir = 8;
-	pixel_x = 0;
-	pixel_y = -1
-	},
-/obj/effect/turf_decal/corner/transparent/blue/three_quarters,
-/turf/open/floor/plasteel/dark,
+/obj/structure/table,
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
 "wQ" = (
 /obj/structure/platform/industrial_alt{
@@ -2575,11 +2647,22 @@
 	},
 /turf/open/chasm/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"wZ" = (
+/obj/structure/fence/cut/large,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "xc" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/powered/bighole/office)
+"xe" = (
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
 "xh" = (
 /obj/structure/cable{
 	icon_state = "0-10"
@@ -2604,6 +2687,16 @@
 	},
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
+"xq" = (
+/obj/structure/closet/crate/bin,
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/effect/spawner/random/trash/food_packaging,
+/obj/effect/spawner/random/trash/crushed_can,
+/obj/effect/spawner/random/trash/crushed_can,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/bighole/canteen)
 "xu" = (
 /obj/effect/turf_decal/siding/black{
 	dir = 8
@@ -2638,15 +2731,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/secoffice)
 "xL" = (
-/obj/structure/platform/ship_three,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
 "xN" = (
 /turf/closed/wall/concrete,
 /area/ruin/powered/bighole/dormitory)
@@ -2698,20 +2790,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/bighole/electrical)
 "yk" = (
-/obj/effect/turf_decal/trimline/transparent/beige/line{
-	dir = 4
+/obj/structure/sign/poster/rilena/random{
+	pixel_x = 4;
+	pixel_y = 0
 	},
-/obj/effect/turf_decal/trimline/transparent/beige/filled/corner{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/powered/bighole/cargo)
+/turf/closed/wall/concrete,
+/area/ruin/powered/bighole/dormitory)
 "yp" = (
 /obj/effect/turf_decal/siding/black{
 	dir = 5
@@ -2721,16 +2805,17 @@
 /turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
 /area/ruin/powered/bighole/cargo)
 "ys" = (
-/obj/machinery/suit_storage_unit/mining,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/powered/bighole/cargo)
-"yC" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
+"yB" = (
+/obj/structure/sign/poster/official/cleanliness,
+/turf/closed/wall/concrete,
 /area/ruin/powered/bighole/canteen)
+"yC" = (
+/obj/structure/flora/junglebush/large,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "yD" = (
 /obj/structure/platform/ship_three{
 	dir = 8
@@ -2780,6 +2865,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/bighole/cargo)
+"zc" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
 "zi" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -2885,14 +2974,11 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ak" = (
-/obj/structure/rack{
-	pixel_x = 0;
-	pixel_y = 6
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 2
 	},
-/obj/effect/turf_decal/corner/transparent/blue/three_quarters{
-	dir = 4
-	},
-/obj/machinery/light/directional/north,
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/canteen)
 "An" = (
@@ -2917,6 +3003,16 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"AA" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/table,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
 "AB" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -2958,13 +3054,32 @@
 	},
 /turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
 /area/ruin/jungle/bighole/vent)
-"Bd" = (
-/obj/structure/chair/sofa/blue/old/left/directional/east{
-	pixel_x = -6;
-	pixel_y = 4
+"AU" = (
+/obj/effect/turf_decal/siding/black{
+	dir = 4
 	},
-/turf/open/floor/carpet,
-/area/ruin/powered/bighole/canteen)
+/obj/effect/turf_decal/box,
+/obj/structure/ore_box,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
+/area/ruin/powered/bighole/cargo)
+"Bd" = (
+/obj/item/chair{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/bighole/lab)
 "Be" = (
 /obj/machinery/blackbox_recorder{
 	empty = 1
@@ -2975,27 +3090,23 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/powered/bighole/office)
 "Bf" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 1
+/obj/structure/fence{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
-/area/ruin/powered/bighole/cargo)
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Bg" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Bh" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
+/obj/structure/reagent_dispensers/water_cooler{
+	pixel_x = -9;
+	pixel_y = 12;
+	density = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
 "Bp" = (
 /obj/effect/turf_decal/trimline/transparent/yellow/filled/warning{
@@ -3025,6 +3136,32 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/bighole/cargo)
+"Bu" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/secure/plasma,
+/obj/item/stack/ore/diamond{
+	pixel_x = -1;
+	pixel_y = 3
+	},
+/obj/item/stack/ore/diamond{
+	pixel_x = 5;
+	pixel_y = 0
+	},
+/obj/item/stack/ore/plasma{
+	pixel_x = -5;
+	pixel_y = -2
+	},
+/obj/machinery/door/window/brigdoor/southleft{
+	req_access_txt = "3"
+	},
+/obj/effect/turf_decal/industrial/hatch/blue,
+/turf/open/floor/engine/hull/interior,
+/area/ruin/powered/bighole/lab)
+"Bv" = (
+/obj/structure/flora/grass/jungle,
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "BB" = (
 /obj/structure/platform/industrial_alt{
 	dir = 1
@@ -3092,19 +3229,21 @@
 /turf/closed/wall/r_wall,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ci" = (
-/obj/structure/table{
-	pixel_x = 2;
-	pixel_y = 0
+/obj/structure/cable{
+	icon_state = "5-10"
 	},
-/obj/machinery/reagentgrinder{
-	pixel_y = 15;
-	pixel_x = 4
+/obj/structure/chair/greyscale{
+	pixel_x = 1;
+	pixel_y = -2
 	},
-/obj/effect/turf_decal/corner/transparent/blue/three_quarters{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
+"Cn" = (
+/obj/structure/fence/cut/medium{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Cp" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3179,15 +3318,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/secoffice)
 "Dh" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Di" = (
 /obj/structure/flora/stump,
 /obj/structure/spacevine/weak,
@@ -3203,9 +3336,9 @@
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
 "Dv" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/canteen)
@@ -3284,19 +3417,11 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ec" = (
-/obj/structure/chair/sofa/blue/old/right/directional/east{
-	pixel_x = -6;
-	pixel_y = 5
+/obj/structure/flora/tree/jungle{
+	icon_state = "tree10"
 	},
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 6
-	},
-/turf/open/floor/carpet,
-/area/ruin/powered/bighole/canteen)
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ee" = (
 /obj/structure/platform/ship_three{
 	dir = 1
@@ -3424,17 +3549,23 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered/bighole/dormitory)
+"Fc" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Fg" = (
-/obj/structure/fence{
-	dir = 1
-	},
-/obj/structure/fence{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/dirt/jungle,
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Fj" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
+/obj/structure/chair/greyscale{
+	dir = 1;
+	pixel_x = -8;
+	pixel_y = 1
+	},
+/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/canteen)
 "Fn" = (
@@ -3509,17 +3640,9 @@
 /turf/open/chasm/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "FQ" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 10
-	},
-/turf/open/floor/plasteel/white/jungleplanet,
-/area/ruin/powered/bighole/lab)
+/obj/structure/flora/driftlog,
+/turf/open/water/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "FR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
@@ -3592,13 +3715,12 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "GC" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
-	dir = 4
+/obj/structure/spacevine/dense,
+/obj/machinery/atmospherics/components/unary/passive_vent/layer2{
+	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "GD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -3618,6 +3740,11 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"GN" = (
+/obj/machinery/computer/security/wooden_tv,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
 "GP" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -3637,15 +3764,17 @@
 /turf/open/floor/plastic,
 /area/ruin/powered/bighole/dormitory)
 "GW" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/chair/greyscale{
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
-	dir = 4
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/bighole/lab)
 "GX" = (
 /obj/effect/turf_decal/road/line/edge{
 	dir = 4
@@ -3664,6 +3793,10 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Hg" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/template_noop)
 "Hn" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3687,6 +3820,11 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"HA" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "HB" = (
 /obj/structure/closet/secure_closet/engineering_electrical,
@@ -3735,6 +3873,10 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/interior,
 /area/ruin/powered/bighole/office)
+"HQ" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/bighole/electrical)
 "HZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 2
@@ -3745,18 +3887,14 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ic" = (
-/obj/effect/turf_decal/siding/black{
-	dir = 6
+/obj/structure/sink/kitchen{
+	dir = 8;
+	pixel_x = 0;
+	pixel_y = -1
 	},
-/obj/effect/turf_decal/box,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
-/area/ruin/powered/bighole/cargo)
+/obj/effect/turf_decal/corner/transparent/blue/diagonal,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/powered/bighole/canteen)
 "Ii" = (
 /turf/open/floor/concrete/slab_1,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -3782,12 +3920,8 @@
 /turf/closed/wall/concrete,
 /area/ruin/powered/bighole/cargo)
 "IO" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 9
+/obj/structure/cable{
+	icon_state = "5-10"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/canteen)
@@ -3823,6 +3957,21 @@
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Jj" = (
+/obj/effect/turf_decal/industrial/warning{
+	layer = 2.456;
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/bighole/lab)
+"Jl" = (
+/obj/structure/spacevine/weak,
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Jo" = (
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -3835,6 +3984,23 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered/bighole/office)
+"Jq" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/secure/plasma,
+/obj/item/stack/ore/gold{
+	pixel_x = -3;
+	pixel_y = 0
+	},
+/obj/item/stack/ore/bluespace_crystal{
+	pixel_x = 5;
+	pixel_y = 0
+	},
+/obj/machinery/door/window/brigdoor/southleft{
+	req_access_txt = "3"
+	},
+/obj/effect/turf_decal/industrial/hatch/blue,
+/turf/open/floor/engine/hull/interior,
+/area/ruin/powered/bighole/lab)
 "Jt" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
@@ -3865,6 +4031,13 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/bighole/medbay)
+"JI" = (
+/obj/structure/chair/greyscale{
+	pixel_x = 3;
+	pixel_y = -2
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
 "JK" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -3893,6 +4066,11 @@
 "JR" = (
 /turf/closed/wall/concrete,
 /area/ruin/powered/bighole/canteen)
+"JU" = (
+/obj/machinery/light/directional/west,
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/bighole/electrical)
 "Kf" = (
 /obj/structure/disposalpipe/broken,
 /turf/open/floor/plating/asteroid/dirt/jungle,
@@ -3902,6 +4080,11 @@
 	icon_state = "lattice-11"
 	},
 /turf/open/chasm/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"Kj" = (
+/obj/structure/flora/junglebush,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Kn" = (
 /obj/structure/table/reinforced,
@@ -3978,24 +4161,13 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/powered/bighole/office)
 "Lq" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/chair/greyscale{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/transparent/blue/diagonal,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/powered/bighole/canteen)
 "Ly" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "LJ" = (
 /obj/structure/platform/industrial{
 	dir = 8
@@ -4012,19 +4184,22 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/secoffice)
 "LO" = (
-/obj/item/chair{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/structure/chair/greyscale{
+	dir = 4;
+	pixel_x = 10;
+	pixel_y = 2
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white/jungleplanet,
-/area/ruin/powered/bighole/lab)
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
 "LX" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+/obj/structure/platform/ship_three/corner,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
@@ -4084,8 +4259,14 @@
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "MP" = (
-/obj/effect/turf_decal/corner/transparent/blue,
-/turf/open/floor/plasteel/dark,
+/obj/structure/table,
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
 "Nb" = (
 /obj/effect/turf_decal/trimline/transparent/beige/line{
@@ -4098,6 +4279,23 @@
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
+"Nd" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/structure/table,
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
+"Nf" = (
+/obj/structure/flora/tree/jungle{
+	icon_state = "tree10"
+	},
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Nj" = (
 /obj/structure/platform/industrial_alt{
@@ -4133,8 +4331,11 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ns" = (
-/turf/open/floor/carpet,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/fence{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Nw" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4145,11 +4346,10 @@
 	},
 /area/ruin/powered/bighole/dormitory)
 "NC" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8
-	},
-/turf/closed/wall/concrete,
-/area/ruin/powered/bighole/dormitory)
+/obj/structure/fence,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "NG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
@@ -4162,6 +4362,11 @@
 "NI" = (
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered/bighole/shed)
+"NM" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "NN" = (
 /obj/structure/rack,
 /obj/item/pickaxe/drill{
@@ -4280,11 +4485,10 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "OL" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 9
+/obj/structure/platform/ship_three,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
 	},
-/obj/structure/spacevine/weak,
-/obj/structure/spacevine/dense,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ON" = (
@@ -4302,19 +4506,19 @@
 	},
 /turf/open/floor/wood/jungleplanet,
 /area/ruin/powered/bighole/office)
+"OO" = (
+/obj/structure/fence,
+/obj/structure/fence,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "OP" = (
-/obj/effect/turf_decal/siding/black{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
 	},
-/obj/effect/turf_decal/box,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
-/area/ruin/powered/bighole/cargo)
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
 "OS" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -4327,16 +4531,12 @@
 /turf/open/chasm/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Pa" = (
-/obj/structure/platform/industrial_alt/corner{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 6
-	},
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
+"Pf" = (
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Pg" = (
 /obj/structure/chair/sofa/brown/left{
@@ -4366,12 +4566,8 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Pp" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/canteen)
@@ -4466,6 +4662,13 @@
 "Qi" = (
 /turf/open/floor/wood/jungleplanet,
 /area/ruin/powered/bighole/office)
+"Qk" = (
+/obj/effect/turf_decal/trimline/transparent/beige/corner,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/bighole/cargo)
 "Qm" = (
 /obj/structure/cable{
 	icon_state = "4-10"
@@ -4488,9 +4691,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/bighole/electrical)
 "Qz" = (
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/tech,
-/area/ruin/powered/bighole/electrical)
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "QC" = (
 /obj/structure/filingcabinet/double{
 	dir = 1
@@ -4590,6 +4793,10 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered/bighole/office)
+"Rm" = (
+/obj/structure/chair/plastic,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Rn" = (
 /obj/structure/railing/modern{
 	dir = 8
@@ -4677,10 +4884,18 @@
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "RB" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
+/obj/structure/chair{
 	dir = 4
 	},
-/turf/open/floor/carpet,
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/bighole/lab)
+"RF" = (
+/obj/effect/turf_decal/corner/transparent/blue/diagonal,
+/obj/structure/table,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/powered/bighole/canteen)
 "RH" = (
 /turf/open/floor/concrete/tiles,
@@ -4695,11 +4910,25 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "RJ" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/effect/turf_decal/corner/transparent/blue/diagonal,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/powered/bighole/canteen)
+"RO" = (
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/corner{
 	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/corner{
+	dir = 8
 	},
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/powered/bighole/lab)
@@ -4764,6 +4993,16 @@
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"St" = (
+/obj/effect/turf_decal/siding/black{
+	dir = 6
+	},
+/obj/effect/turf_decal/box,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
+/area/ruin/powered/bighole/cargo)
 "Sv" = (
 /obj/effect/turf_decal/road/line{
 	dir = 2
@@ -4799,20 +5038,21 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "SF" = (
-/obj/structure/platform/ship_three/corner,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+/obj/effect/turf_decal/siding/black{
 	dir = 4
 	},
-/turf/open/floor/concrete/slab_1/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
+/obj/effect/turf_decal/box,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
+/area/ruin/powered/bighole/cargo)
 "SG" = (
-/obj/structure/fence,
-/obj/structure/fence,
-/turf/open/floor/plating/asteroid/dirt/jungle,
-/area/overmap_encounter/planetoid/jungle/explored)
+/turf/template_noop,
+/area/template_noop)
 "SH" = (
 /obj/structure/railing{
 	dir = 10
@@ -4825,6 +5065,28 @@
 	},
 /turf/open/chasm/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"SN" = (
+/obj/effect/turf_decal/trimline/transparent/beige/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/transparent/beige/filled/corner{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/bighole/cargo)
+"SV" = (
+/obj/effect/turf_decal/industrial/warning{
+	layer = 2.456;
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/bighole/lab)
 "SX" = (
 /obj/structure/cable{
 	icon_state = "5-10"
@@ -4839,12 +5101,41 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "SZ" = (
-/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
-	init_processing = 1;
-	dir = 8
+/obj/structure/spacevine/weak,
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
+"Ta" = (
+/obj/structure/table,
+/obj/item/storage/cans/sixbeer{
+	pixel_x = 0;
+	pixel_y = 8
 	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/powered/bighole/electrical)
+/obj/structure/closet/secure_closet/freezer/kitchen/wall/directional/north,
+/obj/effect/spawner/random/food_or_drink/ration{
+	pixel_x = -3;
+	pixel_y = 11
+	},
+/obj/effect/turf_decal/corner/transparent/blue/diagonal,
+/obj/item/kitchen/rollingpin{
+	pixel_y = 4;
+	pixel_x = -2
+	},
+/obj/item/reagent_containers/glass/bowl{
+	pixel_x = 6;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/glass/bowl{
+	pixel_x = 6;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/glass/bowl{
+	pixel_x = 6;
+	pixel_y = 9
+	},
+/obj/item/melee/knife/kitchen,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/powered/bighole/canteen)
 "Te" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
@@ -4854,18 +5145,26 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered/bighole/dormitory)
+"Th" = (
+/obj/structure/chair/greyscale{
+	pixel_x = 4;
+	pixel_y = -1
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
 "Tl" = (
-/obj/machinery/door/airlock/grunge{
-	name = "Canteen"
-	},
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 2
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/plasteel/tech/grid,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/structure/chair/stool{
+	dir = 4;
+	pixel_x = 6;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
 "Tx" = (
 /obj/effect/turf_decal/trimline/transparent/beige/line{
@@ -4873,6 +5172,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/bighole/cargo)
+"Ty" = (
+/obj/structure/platform/ship_three,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "TD" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
 	dir = 1;
@@ -4908,6 +5214,14 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/secoffice)
+"TO" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/obj/structure/spacevine/weak,
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "TQ" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/effect/turf_decal/siding/white{
@@ -4952,9 +5266,10 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ux" = (
-/obj/machinery/computer/security/wooden_tv,
-/turf/open/floor/carpet,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Uy" = (
 /obj/structure/fence{
 	dir = 1
@@ -4975,11 +5290,9 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "UL" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/table,
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "UM" = (
 /obj/effect/turf_decal/road/line{
 	dir = 4
@@ -5056,16 +5369,13 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered/bighole/shed)
 "Vs" = (
-/obj/structure/table,
-/obj/machinery/microwave{
-	pixel_x = 3;
-	pixel_y = 11
+/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
+	init_processing = 1;
+	dir = 8
 	},
-/obj/effect/turf_decal/corner/transparent/blue{
-	dir = 5
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/bighole/electrical)
 "Vx" = (
 /obj/structure/platform/industrial{
 	dir = 4
@@ -5073,11 +5383,11 @@
 /turf/open/chasm/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "VC" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/effect/spawner/random/vending/cola,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/bighole/canteen)
 "VE" = (
 /obj/structure/railing,
@@ -5103,6 +5413,19 @@
 	},
 /turf/open/floor/wood/jungleplanet,
 /area/ruin/powered/bighole/office)
+"VI" = (
+/obj/structure/rack{
+	pixel_x = 0;
+	pixel_y = 6
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/bighole/canteen)
+"VK" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/effect/turf_decal/trimline/opaque/blue/line,
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/bighole/lab)
 "VL" = (
 /obj/effect/turf_decal/road/line/edge{
 	dir = 8
@@ -5144,11 +5467,9 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "VV" = (
-/obj/effect/turf_decal/corner/transparent/blue{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "VY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 2
@@ -5213,6 +5534,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/bighole/secoffice)
+"Wx" = (
+/obj/structure/table{
+	pixel_x = 2;
+	pixel_y = 0
+	},
+/obj/machinery/reagentgrinder{
+	pixel_y = 19;
+	pixel_x = 7
+	},
+/obj/effect/turf_decal/corner/transparent/blue/diagonal,
+/obj/item/cutting_board,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/powered/bighole/canteen)
 "WC" = (
 /obj/structure/platform/industrial_alt{
 	dir = 8
@@ -5220,12 +5554,9 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "WJ" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/chair/greyscale{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "WK" = (
 /obj/effect/turf_decal/road/line{
 	dir = 8
@@ -5254,6 +5585,13 @@
 	},
 /turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
 /area/ruin/jungle/bighole/vent)
+"WY" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/bighole/electrical)
 "Xa" = (
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -5264,11 +5602,17 @@
 /turf/open/floor/plating,
 /area/ruin/powered/bighole/shed)
 "Xg" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/table,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/bighole/canteen)
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/bighole/lab)
 "Xj" = (
 /obj/structure/railing,
 /turf/open/floor/concrete/tiles,
@@ -5308,12 +5652,13 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Xz" = (
-/obj/effect/turf_decal/industrial/warning{
-	layer = 2.456;
-	dir = 1
-	},
-/turf/open/floor/plasteel/white/jungleplanet,
-/area/ruin/powered/bighole/lab)
+/obj/structure/flora/ash/garden,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
+"XA" = (
+/obj/structure/flora/driftwood,
+/turf/open/water/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "XV" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
@@ -5381,12 +5726,9 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Yu" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
-/obj/item/kirbyplants/random,
-/turf/open/floor/plasteel/dark,
+/obj/effect/spawner/random/vending/snack,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/bighole/canteen)
 "YA" = (
 /obj/effect/spawner/bunk_bed{
@@ -5415,6 +5757,13 @@
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"YJ" = (
+/obj/structure/chair/bench/blue/directional/south{
+	pixel_x = 0;
+	pixel_y = 6
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered/bighole/office)
 "YP" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4{
 	init_processing = 1;
@@ -5484,10 +5833,9 @@
 /turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
 /area/ruin/powered/bighole/cargo)
 "Zf" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/structure/spacevine/weak,
-/turf/closed/wall/concrete,
-/area/ruin/jungle/bighole/vent)
+/obj/structure/flora/rock/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Zi" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 10
@@ -5502,12 +5850,19 @@
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/powered/bighole/office)
 "Zo" = (
-/obj/structure/table,
-/obj/effect/turf_decal/corner/transparent/blue{
-	dir = 9
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/chair/greyscale{
+	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
+"Zu" = (
+/obj/structure/sign/poster/clip/bard{
+	pixel_x = -4;
+	pixel_y = -1
+	},
+/turf/closed/wall/concrete,
+/area/ruin/powered/bighole/lab)
 "Zv" = (
 /obj/effect/turf_decal/siding/black{
 	dir = 8
@@ -5521,6 +5876,14 @@
 	},
 /turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
 /area/ruin/powered/bighole/cargo)
+"ZA" = (
+/obj/structure/spacevine/weak,
+/obj/structure/spacevine/dense,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "ZE" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-3"
@@ -5528,18 +5891,10 @@
 /turf/open/chasm/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ZF" = (
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
 /obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 5
+	dir = 10
 	},
-/obj/structure/chair/stool/bar{
-	dir = 4;
-	pixel_y = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
 "ZI" = (
 /obj/effect/turf_decal/road/line/edge{
@@ -5553,13 +5908,24 @@
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"ZM" = (
-/obj/structure/table,
+"ZL" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 2
+	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/turf/open/floor/carpet,
+/obj/structure/chair/stool{
+	dir = 4;
+	pixel_x = 7;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
+"ZM" = (
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "ZO" = (
 /obj/structure/railing/thick{
 	dir = 4
@@ -5584,335 +5950,755 @@
 /area/ruin/powered/bighole/cargo)
 
 (1,1,1) = {"
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
 "}
 (2,1,1) = {"
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
 "}
 (3,1,1) = {"
-fo
-fo
-fo
-fo
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-fo
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
 "}
 (4,1,1) = {"
-fo
-fo
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-rQ
-rQ
-rQ
-fo
-fo
-rQ
-rQ
-wW
-wW
-wW
-wW
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
 "}
 (5,1,1) = {"
-fo
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-wW
-wW
-wW
-wW
-wW
-wW
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
 "}
 (6,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+gp
+gp
+gp
+gp
+gp
+gp
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+rQ
+rQ
+rQ
+mF
+rQ
+rQ
+wW
+Fg
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+wW
+wW
+Fc
+wW
+wW
+wW
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(7,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wW
+UE
+ib
+UE
+Kj
+bA
+Zf
+wW
+wW
+wW
+wW
+ys
+gp
+gp
+gp
+gp
+gp
+gp
+gp
+gp
+gp
+rQ
+Rm
 rQ
 rQ
 rQ
 rQ
 rQ
+rQ
+Dh
+wW
+yC
+wW
+qo
+wW
+ZM
+wW
+wW
+wW
+qo
+wW
+hY
+wW
+Fg
+ZM
+wW
+wW
+yC
+wW
+hY
+wW
+wW
+jR
+wW
+wW
+UE
+wW
+wW
+wW
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(8,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wW
+qo
+Bg
+sY
+UE
+tK
+cK
+yC
+wW
+wW
+wW
+qo
+ys
+gp
+gp
+gp
+gp
+gp
+gp
+gp
+gp
+Dh
+fr
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+Xz
+wW
+Ly
+wW
+wW
+wW
+vN
+qo
+wW
+wW
+vN
+ZM
+wW
+wW
+vN
+jR
+wW
+wW
+wW
+qo
+wW
+wW
+wW
+wW
+UE
+UE
+UE
+wW
+qo
+UE
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(9,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wb
+UE
+Bg
+Bg
+Ux
+qo
+cK
+Ux
+wW
+wW
+ZM
+vN
+rQ
+FQ
+gp
+gp
+gp
+gp
+gp
+gp
+gB
+rQ
+Rm
+rQ
+rQ
+rQ
+rQ
+ys
+vN
+wW
+wW
+wb
+ZM
+wW
+wW
+wW
+wW
+wW
+ZM
+wW
+ZM
+wW
+wW
+qo
+vN
+wW
+wW
+vN
+wW
+nO
+wW
+wW
+qo
+UE
+Bg
+Bg
+Bg
+Bg
+UE
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(10,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+UE
+yC
+UE
+UE
+UE
+oQ
+yC
+wW
+Fc
+wW
+vN
+Zf
+WJ
+rQ
+rQ
+gp
+gp
+gp
+gp
+gp
+WJ
+rQ
+rQ
+Ii
+Ii
+rQ
+rQ
+Dh
+ys
+rQ
+qo
+wW
+Bv
+wW
+wW
+wW
+wW
+qo
+wW
+jR
+wW
+wW
+wW
+ZM
+wW
+wb
+wW
+Ly
+HA
+wW
+wW
+wW
+UE
+UE
+Bg
+Bg
+Bg
+Bg
+UE
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(11,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+wb
+UE
+Zf
+UE
+UE
 Uz
-SG
-SG
-mY
-mY
-mY
-mY
-mY
-mY
+OO
+OO
+vR
+vR
+vR
+vR
+vR
+vR
 mY
 mY
 Gx
@@ -5922,29 +6708,29 @@ mY
 mY
 mY
 mY
-mY
-mY
-mF
-mY
-mY
-mY
-mY
+Uz
+Ii
+Ii
 Uz
 mY
 mY
 mY
 mY
-mY
-mY
-mY
-mY
-mY
-mY
-mY
-mY
-mY
-mY
-mY
+vR
+vR
+vR
+NC
+NC
+vR
+vR
+vR
+vR
+vR
+vR
+vR
+vR
+vR
+vR
 vR
 vR
 vR
@@ -5953,21 +6739,31 @@ Lj
 Lj
 vR
 mY
-mY
+vR
 Uz
-rQ
-rQ
-rQ
-fo
-fo
+wW
+Bg
+UE
+UE
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(7,1,1) = {"
-rQ
-rQ
-rQ
-rQ
-rQ
-Yc
+(12,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+Fg
+wW
+Ux
+cK
+UE
+oK
 rQ
 rQ
 wW
@@ -6017,20 +6813,30 @@ UE
 UE
 wW
 rQ
-Yc
-rQ
-rQ
-rQ
-rQ
-fo
+oK
+UE
+Jl
+UE
+UE
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(8,1,1) = {"
-rQ
-rQ
-rQ
-rQ
-rQ
-Yc
+(13,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+wW
+wW
+vN
+qo
+ZM
+oK
 rQ
 wW
 wW
@@ -6053,7 +6859,7 @@ ee
 rQ
 gk
 xN
-xN
+wa
 ey
 xN
 xN
@@ -6081,19 +6887,29 @@ UE
 wW
 wW
 Yc
-rQ
-rQ
-rQ
-rQ
-rQ
-"}
-(9,1,1) = {"
-fo
-rQ
-rQ
-rQ
+UE
+UE
 wW
-Yc
+wW
+qo
+SG
+SG
+SG
+SG
+SG
+"}
+(14,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+wW
+wW
+wW
+wW
+vN
+oK
 wW
 wW
 wW
@@ -6124,7 +6940,7 @@ ky
 xN
 xN
 xN
-xN
+yk
 xN
 we
 Gg
@@ -6144,19 +6960,29 @@ UE
 UE
 wW
 oK
-rQ
-rQ
-rQ
-rQ
-rQ
-"}
-(10,1,1) = {"
-fo
-fo
-rQ
-rQ
 wW
-Yc
+UE
+wW
+Xz
+jR
+SG
+SG
+SG
+SG
+SG
+"}
+(15,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+wW
+vN
+Fc
+wW
+wW
+oK
 wW
 wW
 wW
@@ -6207,19 +7033,29 @@ ng
 wW
 wW
 oK
-rQ
-rQ
-rQ
-rQ
-rQ
-"}
-(11,1,1) = {"
-fo
-fo
-rQ
-rQ
 wW
-Yc
+qo
+wW
+Zf
+wb
+SG
+SG
+SG
+SG
+SG
+"}
+(16,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+wW
+qo
+ZM
+wb
+yC
+oK
 wW
 wW
 wW
@@ -6244,10 +7080,10 @@ MN
 xN
 jw
 TJ
-NC
+aE
 jw
 TJ
-xN
+cP
 jK
 XV
 BX
@@ -6269,20 +7105,30 @@ UE
 UE
 wW
 wW
-Yc
-rQ
-rQ
-rQ
-rQ
-rQ
+oK
+wW
+wW
+wW
+yC
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(12,1,1) = {"
-fo
-fo
-fo
-rQ
-rQ
-Yc
+(17,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+wW
+ZM
+hY
+jR
+wW
+oK
 rQ
 wW
 wW
@@ -6332,20 +7178,30 @@ rQ
 wW
 wW
 rQ
-nR
-rQ
-rQ
-rQ
-rQ
-rQ
+lQ
+wW
+wW
+wW
+wW
+qo
+SG
+SG
+SG
+SG
+SG
 "}
-(13,1,1) = {"
-fo
-fo
-fo
-rQ
-rQ
-Yc
+(18,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+wW
+wW
+wW
+qo
+wW
+oK
 rQ
 wW
 An
@@ -6357,11 +7213,11 @@ qu
 hj
 hj
 JR
-oB
-iZ
-UL
-GW
-yC
+Yu
+VC
+ts
+Fj
+Pp
 nd
 hL
 hL
@@ -6395,19 +7251,29 @@ rQ
 rQ
 wW
 rQ
-Yc
-rQ
-rQ
-rQ
-rQ
-rQ
+oK
+wW
+wW
+wW
+wW
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(14,1,1) = {"
-fo
-fo
-fo
-rQ
-rQ
+(19,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+wW
+wW
+ZM
+vN
+wW
 Yc
 rQ
 UE
@@ -6418,14 +7284,14 @@ Vd
 qu
 hj
 hj
-Bd
-Ec
-Ly
-Ly
-Lq
-GC
-Dh
-Tl
+vg
+jm
+Ak
+Ak
+Ak
+Dv
+do
+uE
 FC
 Te
 VY
@@ -6458,20 +7324,30 @@ rQ
 rQ
 rQ
 rQ
-Yc
-rQ
-rQ
-rQ
-rQ
-rQ
+oK
+wW
+wW
+wW
+wW
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(15,1,1) = {"
-fo
-fo
-fo
-fo
-rQ
-Yc
+(20,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+yC
+wW
+jR
+ZM
+wW
+oK
 ee
 eO
 UE
@@ -6480,14 +7356,14 @@ rQ
 gk
 hj
 hj
-Ns
-Ns
-hF
-Fj
-Fj
-Fj
-Fj
-tK
+wr
+wr
+iE
+tG
+tG
+ZF
+sg
+IO
 WT
 hL
 oi
@@ -6521,20 +7397,30 @@ RA
 rQ
 rQ
 rQ
-Yc
-rQ
-rQ
-rQ
-rQ
-fo
+oK
+wW
+wW
+qo
+wb
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(16,1,1) = {"
-fo
-fo
-fo
-fo
-rQ
-Yc
+(21,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wW
+wW
+Fg
+Zf
+oK
 ee
 eO
 eO
@@ -6542,15 +7428,15 @@ rQ
 Vd
 qu
 hj
-Ux
-Ns
-fr
-hF
-Fj
-WJ
-WJ
-vN
-aE
+GN
+wr
+JI
+AA
+kX
+wr
+Zo
+vI
+xq
 JR
 DG
 jF
@@ -6584,20 +7470,30 @@ rQ
 rQ
 rQ
 rQ
-Yc
-rQ
-rQ
-rQ
-fo
-fo
+oK
+wW
+wW
+wb
+wW
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(17,1,1) = {"
-fo
-fo
-fo
-fo
-rQ
-Yc
+(22,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+qo
+NM
+jR
+wW
+oK
 ee
 eO
 ee
@@ -6605,13 +7501,13 @@ rQ
 gk
 JR
 JR
-RB
-hY
-ZM
-th
-Fj
-Xg
-bA
+Bh
+vx
+vx
+xL
+vx
+vx
+MP
 JR
 JR
 JR
@@ -6647,34 +7543,44 @@ eG
 eG
 Re
 rQ
-Yc
-rQ
-rQ
+oK
+Fg
 wW
-fo
-fo
+wW
+wW
+yC
+SG
+SG
+SG
+SG
+SG
 "}
-(18,1,1) = {"
-fo
-fo
-fo
-fo
-rQ
-dH
+(23,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wW
+wW
+vN
+wb
+lQ
 ee
 ee
 ee
 rQ
 gk
-JR
-Yu
-VC
-ts
-Fj
-Pp
-Fj
-bA
-JR
+jq
+zc
+vx
+Th
+wO
+th
+vx
+Ci
+wO
 JR
 zO
 ad
@@ -6710,36 +7616,46 @@ Ev
 Ca
 ut
 Re
-Yc
-rQ
+oK
+yC
 wW
+Ly
 wW
-wW
-fo
+Fg
+SG
+SG
+SG
+SG
+SG
 "}
-(19,1,1) = {"
-fo
-fo
-fo
-fo
-rQ
-Yc
+(24,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wW
+yC
+wW
+wW
+oK
 rQ
 rQ
 rQ
 rQ
 gk
 JR
-Ak
-pg
-Bh
-Dv
-do
-uE
+VI
+nR
+OP
+dj
+LO
+xe
 JR
 JR
-zO
-ra
+JR
+we
 Gg
 Gg
 RZ
@@ -6774,35 +7690,45 @@ Ca
 Ca
 dV
 Yc
-rQ
 wW
 wW
 wW
-fo
+wW
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(20,1,1) = {"
-fo
-fo
-fo
-fo
-rQ
-Yc
+(25,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wW
+wW
+wW
+ZM
+oK
 rQ
 rQ
 rQ
 rQ
 gk
 JR
-Vs
-tG
-ZF
-sg
-IO
-JR
+sv
+bM
+Tl
+ZL
+Nd
+wO
 JR
 zO
-Pa
-HZ
+gh
+nD
 Oe
 DE
 SD
@@ -6840,30 +7766,40 @@ Yc
 wW
 wW
 wW
-wW
-fo
+yC
+wb
+SG
+SG
+SG
+SG
+SG
 "}
-(21,1,1) = {"
-fo
-fo
-fo
-fo
-rQ
-Yc
+(26,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wW
+wW
+qo
+ZM
+oK
 rQ
 rQ
 rQ
 rQ
 gk
 JR
-kX
-wr
-Zo
-vI
+Ta
+Lq
+RF
+mt
 JR
 JR
-zO
-ra
+JR
+we
 rr
 OH
 Vi
@@ -6903,30 +7839,40 @@ Yc
 wW
 wW
 wW
-wW
-fo
+qo
+jR
+SG
+SG
+SG
+SG
+SG
 "}
-(22,1,1) = {"
-fo
-fo
-fo
-fo
-rQ
-Yc
+(27,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wW
+wW
+wW
+cA
+oK
 rQ
 rQ
 rQ
 df
 gk
 JR
-vx
-VV
-MP
-cK
+RJ
+Lq
+Lq
+nu
 JR
 zO
+WC
 ra
-Gg
 RZ
 Vi
 Xa
@@ -6966,25 +7912,35 @@ Yc
 wW
 wW
 wW
-wW
-fo
+hY
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(23,1,1) = {"
-fo
-fo
-fo
-fo
-rQ
-Yc
+(28,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wW
+wW
+wW
+wW
+oK
 rQ
 rQ
 rQ
 rQ
 gk
 JR
-JR
-Ci
-wO
+yB
+Wx
+Ic
 JR
 JR
 dV
@@ -7026,19 +7982,29 @@ sH
 Ev
 dV
 Yc
-gp
 wW
 wW
+Xz
 wW
-fo
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(24,1,1) = {"
-fo
-fo
-fo
-rQ
-rQ
-Yc
+(29,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wW
+qo
+Xz
+Zf
+oK
 rQ
 rQ
 rQ
@@ -7089,19 +8055,29 @@ xI
 Ca
 dV
 Yc
-gp
 wW
-wW
-fo
-fo
-"}
-(25,1,1) = {"
-fo
-fo
+wb
 wW
 rQ
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(30,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
 wW
-Yc
+wb
+wW
+wW
+oK
 rQ
 rQ
 rQ
@@ -7152,19 +8128,29 @@ Ca
 Ca
 dV
 Yc
-gp
-wW
-wW
-fo
-fo
+yC
+rQ
+rQ
+rQ
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(26,1,1) = {"
-fo
-fo
+(31,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wb
 wW
-wW
-wW
-Yc
+UE
+UE
+oK
 rQ
 rQ
 Rq
@@ -7215,19 +8201,29 @@ QC
 Ca
 dV
 Yc
+rQ
+WJ
 gp
 gp
-fo
-fo
-fo
+gp
+SG
+SG
+SG
+SG
+SG
 "}
-(27,1,1) = {"
+(32,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+ex
 wW
-wW
-wW
-wW
-wW
-Yc
+UE
+UE
+Nf
+lK
 rQ
 Rq
 qu
@@ -7278,19 +8274,29 @@ QC
 Ca
 dV
 Yc
+rQ
 gp
 gp
-fo
-fo
-fo
+gp
+FQ
+gp
+SG
+SG
+SG
+SG
 "}
-(28,1,1) = {"
-wW
-wW
-wW
-wW
-wW
-Yc
+(33,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+Hg
+UE
+Bg
+Bg
+Bg
+Bf
 rQ
 gk
 sQ
@@ -7343,17 +8349,27 @@ dV
 Uz
 xp
 gp
-fo
-fo
-fo
+gp
+gp
+gp
+gp
+SG
+SG
+SG
+SG
 "}
-(29,1,1) = {"
-wW
-wW
-wW
-wW
-wW
-Yc
+(34,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+ex
+UE
+Bg
+Bg
+Bg
+Bf
 rQ
 gk
 sQ
@@ -7406,17 +8422,27 @@ lt
 Gg
 gp
 gp
-fo
-fo
-fo
+gp
+gp
+gp
+gp
+gp
+gp
+SG
+SG
 "}
-(30,1,1) = {"
-fo
-fo
-wW
-wW
-wW
-Yc
+(35,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+qo
+UE
+UE
+Bg
+Bf
 rQ
 gk
 sQ
@@ -7425,7 +8451,7 @@ QY
 pB
 gD
 xc
-RH
+YJ
 Xj
 we
 gM
@@ -7470,16 +8496,26 @@ gp
 gp
 gp
 gp
-fo
-fo
+gp
+gp
+gp
+gp
+gp
+SG
+SG
 "}
-(31,1,1) = {"
-fo
-fo
-fo
-fo
+(36,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
 wW
-Yc
+UE
+UE
+UE
+lK
 rQ
 gk
 sQ
@@ -7531,18 +8567,28 @@ Mp
 WK
 gp
 gp
+gp
 Xa
 gp
-fo
-fo
+gp
+gp
+Mp
+gp
+SG
+SG
 "}
-(32,1,1) = {"
-fo
-fo
-fo
-fo
-rQ
-Yc
+(37,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+Zf
+wW
+UE
+UE
+oK
 Rq
 qu
 sQ
@@ -7596,16 +8642,26 @@ Xa
 Xa
 gp
 gp
-fo
-fo
+Xa
+gp
+gp
+Xa
+Xa
+SG
+SG
 "}
-(33,1,1) = {"
-fo
-fo
-fo
-rQ
-rQ
-Yc
+(38,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wW
+wW
+wW
+Ec
+oK
 gk
 sQ
 sQ
@@ -7659,16 +8715,26 @@ oA
 oA
 gp
 gp
-fo
-fo
+gp
+gp
+gp
+oA
+oA
+SG
+SG
 "}
-(34,1,1) = {"
-fo
-fo
-fo
-rQ
-rQ
-Yc
+(39,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wW
+qo
+ZM
+ZM
+oK
 gk
 sQ
 ia
@@ -7722,15 +8788,25 @@ Gg
 gp
 gp
 gp
-fo
-fo
+gp
+gp
+gp
+gp
+gp
+SG
+SG
 "}
-(35,1,1) = {"
-fo
-fo
-fo
+(40,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
 rQ
-rQ
+wW
+wb
+hY
 Uz
 gk
 sQ
@@ -7786,15 +8862,25 @@ gp
 gp
 gp
 gp
-fo
+gp
+gp
+gp
+gp
+SG
+SG
 "}
-(36,1,1) = {"
-fo
-fo
-fo
-rQ
-rQ
-Yc
+(41,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+Dh
+vN
+Zf
+wW
+oK
 gk
 sQ
 Wo
@@ -7849,15 +8935,25 @@ xp
 gp
 gp
 gp
-fo
+gp
+gp
+gp
+SG
+SG
+SG
 "}
-(37,1,1) = {"
-fo
-fo
-fo
+(42,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
 rQ
+ys
 rQ
-Yc
+wW
+oK
 gk
 sQ
 Zj
@@ -7901,9 +8997,9 @@ Gg
 Eo
 gI
 kz
-Qs
-Qz
-Qs
+HQ
+JU
+HQ
 pv
 pv
 dV
@@ -7912,15 +9008,25 @@ gp
 gp
 gp
 gp
-fo
+gp
+gp
+SG
+SG
+SG
+SG
 "}
-(38,1,1) = {"
-fo
-fo
-fo
+(43,1,1) = {"
+SG
+SG
+SG
+SG
+gp
+gp
+gp
+gp
 rQ
-rQ
-Yc
+wb
+oK
 gk
 Xk
 Xk
@@ -7972,23 +9078,33 @@ pv
 dV
 Yc
 rQ
+XA
 gp
 gp
-fo
-fo
+gp
+SG
+SG
+SG
+SG
+SG
 "}
-(39,1,1) = {"
-fo
-fo
-fo
-rQ
+(44,1,1) = {"
+SG
+SG
+SG
+SG
+gp
+gp
+gp
+gp
+Dh
 rQ
 Yc
 gk
 Xk
 Xk
 CN
-qo
+gV
 vZ
 Kn
 rv
@@ -8037,24 +9153,34 @@ Yc
 rQ
 rQ
 gp
-fo
-fo
+WJ
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(40,1,1) = {"
-fo
-fo
-fo
-fo
+(45,1,1) = {"
+SG
+SG
+SG
+gp
+gp
+gp
+gp
+gp
+FQ
 rQ
 Yc
 gk
 Xk
-qF
-Xz
-FQ
-RJ
-LO
-RJ
+Jq
+nm
+RO
+GW
+Bd
+Xg
 rL
 Xk
 dV
@@ -8097,27 +9223,37 @@ Cq
 pv
 dV
 Yc
+wW
 rQ
 rQ
 rQ
-fo
-fo
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(41,1,1) = {"
-fo
-fo
-fo
-fo
+(46,1,1) = {"
+SG
+SG
+SG
+gp
+gp
+gp
+gp
+gp
+gp
 rQ
 Yc
 gk
 Xk
-wa
-Xz
+ru
+SV
 xj
 ej
 ej
-ej
+VK
 eI
 ED
 dV
@@ -8160,27 +9296,37 @@ PA
 pv
 dV
 dH
+wW
+ZM
+UL
 rQ
-rQ
-rQ
-fo
-fo
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(42,1,1) = {"
-fo
-fo
-fo
-fo
-rQ
+(47,1,1) = {"
+SG
+SG
+gp
+gp
+gp
+gp
+gp
+gp
+gp
+gp
 Yc
 gk
 Xk
-dj
-Xz
-jR
-jR
-jR
-cA
+Bu
+Jj
+iZ
+iZ
+iZ
+RB
 Fn
 Xk
 dV
@@ -8216,30 +9362,40 @@ rQ
 ku
 pv
 pv
-wb
+WY
 aI
 Wa
 iM
 pv
 dV
 Yc
-rQ
-rQ
-rQ
-fo
-fo
+wW
+qo
+wW
+ZM
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(43,1,1) = {"
-fo
-fo
-fo
-fo
-rQ
+(48,1,1) = {"
+SG
+SG
+gp
+gp
+gp
+gp
+gp
+gp
+gp
+gp
 Yc
 gk
 Xk
 Xk
-Xk
+Zu
 jx
 vG
 NO
@@ -8279,25 +9435,35 @@ rQ
 de
 zA
 pv
-SZ
+Vs
 bn
 Qs
 pv
 pv
 dV
 Yc
-rQ
-rQ
-rQ
-fo
-fo
+wW
+Ly
+wW
+wW
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(44,1,1) = {"
-fo
-fo
-fo
-fo
-rQ
+(49,1,1) = {"
+SG
+SG
+gp
+gp
+gp
+gp
+gp
+gp
+gp
+gp
 Yc
 de
 ad
@@ -8349,18 +9515,28 @@ pv
 zO
 lt
 Yc
-rQ
-rQ
-rQ
-fo
-fo
+wW
+wW
+wW
+Zf
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(45,1,1) = {"
-fo
-fo
-fo
-rQ
-rQ
+(50,1,1) = {"
+SG
+SG
+gp
+gp
+gp
+gp
+gp
+gp
+gp
+gp
 Yc
 rQ
 rQ
@@ -8412,18 +9588,28 @@ ad
 lt
 rQ
 Yc
-rQ
-rQ
-fo
-fo
-fo
+wW
+wW
+vN
+ZM
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(46,1,1) = {"
-fo
-fo
-fo
-rQ
-rQ
+(51,1,1) = {"
+SG
+SG
+gp
+gp
+gp
+gp
+gp
+gp
+gp
+gp
 Yc
 rQ
 lu
@@ -8475,19 +9661,29 @@ rQ
 rQ
 rQ
 Yc
-rQ
-rQ
-fo
-fo
-fo
+wW
+wW
+qo
+vN
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(47,1,1) = {"
-fo
-fo
-rQ
-rQ
-rQ
-Yc
+(52,1,1) = {"
+SG
+SG
+SG
+gp
+gp
+gp
+gp
+XA
+lu
+lu
+Ns
 rQ
 rQ
 lu
@@ -8538,19 +9734,29 @@ rQ
 rQ
 rQ
 Yc
-rQ
-rQ
-fo
-fo
-fo
+UE
+UE
+Ux
+UE
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(48,1,1) = {"
-fo
-fo
-rQ
-rQ
-rQ
-Yc
+(53,1,1) = {"
+SG
+SG
+SG
+gp
+gp
+gp
+gp
+lu
+lu
+lu
+Ns
 rQ
 lu
 lu
@@ -8600,20 +9806,30 @@ rQ
 rQ
 rQ
 rQ
-Yc
-rQ
-rQ
-fo
-fo
-fo
+oK
+UE
+UE
+Bg
+UE
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(49,1,1) = {"
-fo
-fo
-rQ
-rQ
-rQ
-Yc
+(54,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+XA
+lu
+lu
+Pa
+lu
+Ns
 rQ
 lu
 lu
@@ -8663,19 +9879,29 @@ rQ
 rQ
 rQ
 rQ
-Yc
-rQ
-rQ
-fo
-fo
-fo
+oK
+SZ
+Bg
+Bg
+UE
+UE
+SG
+SG
+SG
+SG
+SG
 "}
-(50,1,1) = {"
-fo
-fo
-rQ
-rQ
-rQ
+(55,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+lu
+Qz
+Qz
+lu
 Yc
 lu
 lu
@@ -8726,20 +9952,30 @@ rQ
 Ez
 Ez
 Ez
-Yc
-rQ
-rQ
-fo
-fo
-fo
+oK
+UE
+Bg
+Bg
+UE
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(51,1,1) = {"
-fo
-fo
-rQ
-rQ
-rQ
-Yc
+(56,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+lu
+lu
+lu
+lu
+lu
+Ns
 rQ
 lu
 lu
@@ -8789,20 +10025,30 @@ Gg
 Gg
 vc
 Ez
-Yc
-rQ
-fo
-fo
-fo
-fo
+oK
+UE
+Bg
+Bg
+UE
+qo
+SG
+SG
+SG
+SG
+SG
 "}
-(52,1,1) = {"
-fo
-fo
+(57,1,1) = {"
+SG
+SG
+SG
+SG
+SG
 wW
-rQ
-rQ
-Yc
+wW
+wW
+lu
+lu
+Ns
 lu
 lu
 lu
@@ -8820,7 +10066,7 @@ lu
 lu
 lu
 rN
-ys
+hF
 kF
 vh
 nn
@@ -8828,13 +10074,13 @@ QW
 At
 mu
 Dy
-OP
-ru
-Ic
-nO
-yk
-Bf
-lQ
+SF
+AU
+St
+Qk
+SN
+gt
+cU
 Gg
 Gg
 Gg
@@ -8852,20 +10098,30 @@ Gg
 Gg
 pw
 Ez
-Yc
-rQ
-rQ
-fo
-fo
-fo
+oK
+UE
+Bg
+UE
+UE
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(53,1,1) = {"
-fo
-fo
+(58,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+jR
 wW
 wW
-rQ
-Yc
+Fg
+lu
+Ns
 lu
 lu
 lu
@@ -8883,7 +10139,7 @@ lu
 lu
 lu
 rN
-ys
+hF
 qi
 bz
 rN
@@ -8897,7 +10153,7 @@ Nb
 jI
 rN
 if
-SF
+LX
 tS
 tS
 tS
@@ -8916,19 +10172,29 @@ Ez
 Ez
 Ez
 oK
-rQ
-rQ
-rQ
-fo
-fo
+cK
+Ux
+UE
+UE
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(54,1,1) = {"
-fo
-fo
+(59,1,1) = {"
+SG
+SG
+SG
+SG
+SG
 wW
+Zf
+Xz
 wW
-rQ
-Yc
+lu
+Ns
 lu
 lu
 lu
@@ -8960,7 +10226,7 @@ rN
 rN
 rN
 rQ
-xL
+OL
 Vl
 Jh
 Jh
@@ -8979,19 +10245,29 @@ rQ
 rQ
 wW
 oK
-rQ
-rQ
-rQ
-fo
-fo
+pg
+cK
+UE
+UE
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(55,1,1) = {"
-fo
-fo
+(60,1,1) = {"
+SG
+SG
+SG
+SG
+SG
 wW
 wW
+hY
 wW
-Yc
+wW
+Ns
 lu
 lu
 lu
@@ -9023,7 +10299,7 @@ rQ
 rQ
 rQ
 rQ
-xL
+OL
 sV
 qU
 qU
@@ -9042,19 +10318,29 @@ rQ
 rQ
 ee
 oK
-ee
-rQ
-rQ
-fo
-fo
+UE
+Ux
+UE
+UE
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(56,1,1) = {"
-fo
-fo
+(61,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+wW
+wb
+jR
 wW
 wW
-wW
-nR
+Cn
 lu
 ro
 lu
@@ -9086,7 +10372,7 @@ rQ
 rQ
 rQ
 wW
-xL
+OL
 sV
 qU
 qU
@@ -9105,19 +10391,29 @@ rQ
 ee
 ee
 oK
-aA
-rQ
-rQ
-fo
-fo
+Ug
+qo
+wW
+UE
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(57,1,1) = {"
-fo
-fo
-fo
+(62,1,1) = {"
+SG
+SG
+SG
+SG
+SG
 wW
+jR
 wW
-Yc
+Zf
+wW
+Ns
 rQ
 lu
 lu
@@ -9144,12 +10440,12 @@ rQ
 Yh
 FT
 FT
-cU
-oQ
-oQ
-oQ
-oQ
-aC
+FT
+FT
+FT
+FT
+FT
+Ty
 sV
 qU
 qU
@@ -9168,19 +10464,29 @@ ee
 eO
 ee
 Yc
-ee
-rQ
-rQ
-fo
-fo
+UE
+wW
+qo
+wb
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(58,1,1) = {"
-fo
-fo
-fo
+(63,1,1) = {"
+SG
+SG
+SG
+SG
+SG
 wW
+Ly
 wW
-Yc
+yC
+wW
+oK
 rQ
 lu
 lu
@@ -9207,7 +10513,7 @@ rQ
 iX
 rQ
 rQ
-LX
+Gg
 rQ
 rQ
 wW
@@ -9231,19 +10537,29 @@ ee
 eO
 eO
 bZ
-ee
-ee
-rQ
-rQ
-fo
+UE
+UE
+wW
+wW
+wW
+SG
+SG
+SG
+SG
+SG
 "}
-(59,1,1) = {"
-fo
-fo
-fo
+(64,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+Fg
 wW
+Fc
 wW
-Yc
+SZ
+lK
 rQ
 rQ
 rQ
@@ -9268,9 +10584,9 @@ rQ
 TR
 mp
 uR
-sv
+mp
 TR
-gh
+lZ
 ee
 rQ
 wW
@@ -9293,20 +10609,30 @@ BW
 ee
 eO
 Nc
-bZ
-ee
-ee
-rQ
-rQ
-fo
+oB
+UE
+UE
+Ly
+wW
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(60,1,1) = {"
-fo
-fo
-rQ
+(65,1,1) = {"
+SG
+SG
+SG
+SG
+SG
 wW
+wb
 wW
-Yc
+UE
+UE
+lK
 rQ
 rQ
 lu
@@ -9333,7 +10659,7 @@ sW
 jQ
 AT
 wN
-gh
+lZ
 ee
 rQ
 wW
@@ -9356,20 +10682,30 @@ BW
 UE
 eO
 eO
-bZ
-aA
-ee
-rQ
-rQ
-fo
-"}
-(61,1,1) = {"
-fo
-fo
-rQ
-rQ
+TO
+Ug
+UE
 wW
-Yc
+wW
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(66,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+wW
+hY
+hY
+UE
+UE
+lK
 rQ
 rQ
 lu
@@ -9395,8 +10731,8 @@ TR
 AB
 dJ
 WW
-Zf
-OL
+wC
+ZA
 Di
 wW
 wW
@@ -9419,20 +10755,30 @@ BW
 ee
 ee
 eO
-bZ
-aA
-ee
-rQ
-rQ
-fo
-"}
-(62,1,1) = {"
-fo
-fo
-rQ
-rQ
+lK
+Ug
+UE
 wW
-Yc
+wW
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(67,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+wW
+yC
+wW
+UE
+UE
+lK
 rQ
 lu
 lu
@@ -9457,9 +10803,9 @@ rQ
 TR
 mp
 mp
-sv
+mp
 mL
-eO
+GC
 ee
 rQ
 wW
@@ -9482,19 +10828,29 @@ BW
 rQ
 ee
 aA
-Yc
-ee
-ee
-rQ
-fo
-fo
+oK
+UE
+UE
+wW
+qo
+SG
+SG
+SG
+SG
+SG
+SG
 "}
-(63,1,1) = {"
-fo
-rQ
-rQ
-rQ
-rQ
+(68,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+wW
+Zf
+wW
+wb
+UE
 Yc
 rQ
 rQ
@@ -9545,388 +10901,818 @@ Mg
 rQ
 rQ
 aA
-Yc
-ee
-rQ
-rQ
-fo
-fo
-"}
-(64,1,1) = {"
-fo
-rQ
-rQ
-rQ
-rQ
-Uz
-qM
-qM
-qM
-Uy
-qM
-Uy
-Uy
-qM
-qM
-Uy
-qM
-qM
-qM
-Uy
-Uy
-Uy
-Uy
-qM
-qM
-qM
-qM
-qM
-qM
-nG
-Uz
-nG
-nG
-qM
-qM
-qM
-qM
-qM
-qM
-qM
-Gx
-Fg
-qM
-qM
-qM
-qM
-qM
-qM
-mF
-qM
-qM
-qM
-mY
-mY
-mY
-Uz
-rQ
-rQ
-fo
-fo
-fo
-"}
-(65,1,1) = {"
-fo
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-"}
-(66,1,1) = {"
-fo
-fo
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-"}
-(67,1,1) = {"
-fo
-fo
-fo
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-rQ
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-fo
-"}
-(68,1,1) = {"
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-rQ
-rQ
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
+oK
+UE
+wW
+wW
+wW
+SG
+SG
+SG
+SG
+SG
+SG
 "}
 (69,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+wW
+Xz
+jR
+Zf
+UE
+Uz
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+aC
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+qM
+qM
+qM
+qM
+qM
+nG
+Uz
+nG
+nG
+qM
+qM
+qM
+qM
+qM
+qF
+qF
 fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
+cf
+qF
+qF
+qF
+qF
+qF
+qF
+wZ
+qF
+qF
+qF
+vR
+vR
+vR
+Uz
+wW
+qo
+wb
+wW
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(70,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+wW
+Fg
+wW
+lu
+lu
+lu
+lu
+Qz
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+VV
+lu
+lu
+lu
+lu
+lu
+gp
+gp
+FQ
+gp
+rQ
+UL
+wW
+wW
+wW
+wW
+vN
+ZM
+yC
+wW
+wW
+qo
+wW
+Zf
+wW
+wW
+wW
+qo
+cA
+vN
+hY
+wW
+wW
+wW
+qo
+ZM
+Zf
+wW
+wW
+wW
+yC
+wW
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(71,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+lu
+lu
+lu
+lu
+Qz
+Pa
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+gp
+gp
+gp
+gp
+gp
+gp
+XA
+UL
+wW
+wW
+wW
+wW
+qo
+ZM
+wW
+wW
+vN
+wW
+yC
+wW
+wW
+wW
+cA
+hY
+yC
+Zf
+vN
+UE
+wW
+cA
+yC
+wW
+wW
+wW
+wW
+wW
+Zf
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(72,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+lu
+lu
+lu
+lu
+lu
+Qz
+lu
+lu
+lu
+VV
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+Pf
+gp
+gp
+gp
+gp
+gp
+gp
+gp
+gp
+gp
+rQ
+qo
+wW
+Ly
+wW
+vN
+wW
+wW
+wW
+ZM
+wW
+wW
+jR
+Ec
+jR
+hY
+UE
+UE
+cK
+UE
+UE
+wW
+wW
+wW
+wW
+wW
+wW
+wW
+qo
+wW
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(73,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+lu
+gp
+gp
+gp
+gp
+gp
+gp
+gp
 rQ
 rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-rQ
-rQ
-rQ
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
-fo
+ZM
+ZM
+wW
+wW
+wW
+wW
+qo
+wW
+wW
+wW
+qo
+wW
+yC
+jR
+Fc
+wW
+wW
+UE
+qo
+cK
+wv
+wW
+wW
+ZM
+qo
+wW
+wW
+jR
+wW
+wW
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(74,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+lu
+lu
+lu
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+gp
+gp
+gp
+gp
+SG
+qo
+wW
+pg
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+ZM
+wW
+Fg
+wW
+ZM
+wW
+vN
+wW
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(75,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+gp
+gp
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(76,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(77,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(78,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+"}
+(79,1,1) = {"
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
+SG
 "}
