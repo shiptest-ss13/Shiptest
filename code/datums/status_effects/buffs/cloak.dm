@@ -13,6 +13,8 @@
 /datum/status_effect/concealed/cloaked/tick()
 	owner.alpha = max(50, owner.alpha - 25)
 	if(prob(20))
+		if(!owner.get_filter("cloak_distort"))
+			owner.add_filter("cloak_distort", 1, displacement_map_filter(icon=icon('icons/effects/effects.dmi', "static_base"), size = 0))
 		animate(owner.get_filter("cloak_distort"), 5, size = rand(-4,4))
 
 /datum/status_effect/concealed/cloaked/proc/on_move()

@@ -44,7 +44,8 @@
 
 /obj/item/clothing/neck/opticamo/dropped(mob/user)
 	. = ..()
-	user.update_inv_head()
+	if(hoodup)
+		toggle_hood(user)
 	deactivate(user)
 
 /obj/item/clothing/neck/opticamo/ui_action_click(user, action)
@@ -86,7 +87,7 @@
 		return
 
 	//be quiet
-	flags_inv = HIDEGLOVES|HIDESUITSTORAGE|HIDEJUMPSUIT|HIDESHOES|HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDENECK|HIDEHORNS|HIDESNOUT
+	flags_inv = HIDEGLOVES|HIDESUITSTORAGE|HIDEJUMPSUIT|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEHORNS
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/active_user = user
@@ -116,7 +117,7 @@
 /obj/item/clothing/neck/opticamo/process(seconds_per_tick)
 	if(world.time > next_cell_update)
 		next_cell_update = world.time + 100
-		update_appearance()
+		update_overlays()
 
 	if(!hoodup)
 		deactivate(wearer.resolve())
