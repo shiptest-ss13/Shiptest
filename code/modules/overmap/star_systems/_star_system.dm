@@ -802,6 +802,7 @@
 		//custom handling for star
 		if(istype(current_object, /datum/overmap/star))
 			var/datum/overmap/star/current_star = current_object
+			current_data["enable_event_spawning"] = current_star.enable_event_spawning
 			current_data["custom_color"] = current_star.custom_color
 
 		//custom handling for the jump point helper
@@ -930,6 +931,7 @@
 		//custom handling for star
 		if(istype(new_obj, /datum/overmap/star))
 			var/datum/overmap/star/current_star = new_obj
+			current_star.enable_event_spawning = current_data["enable_event_spawning"]
 			current_star.custom_color = current_data["custom_color"]
 
 		//custom handling for the jump point helper
