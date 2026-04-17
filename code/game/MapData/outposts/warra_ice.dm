@@ -3,9 +3,11 @@
 
 #define WARRA_OUTPOST_TURF_HELPER(turf_type)			\
 	/turf/open/floor/##turf_type/warra_outpost {		\
-		initial_gas_mix = YEBIRI_ATMOS;		\
+		initial_gas_mix = YEBIRI_ATMOS;					\
 		planetary_atmos = TRUE;							\
-		light_color = COLOR_WARRA_OUTPOST_LIGHTING;	\
+		light_color = COLOR_WARRA_OUTPOST_LIGHTING;		\
+	}													\
+	/turf/open/floor/##turf_type/warra_outpost/lit {	\
 		light_power = 1;								\
 		light_range = 2;								\
 	}
