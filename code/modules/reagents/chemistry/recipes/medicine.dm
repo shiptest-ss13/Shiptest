@@ -2,7 +2,7 @@
 
 /datum/chemical_reaction/indomide
 	results = list(/datum/reagent/medicine/indomide = 4)
-	required_reagents = list(/datum/reagent/copper = 1, /datum/reagent/acetone = 2,  /datum/reagent/phosphorus = 1)
+	required_reagents = list(/datum/reagent/copper = 1, /datum/reagent/fuel/oil = 2,  /datum/reagent/phosphorus = 1)
 
 /datum/chemical_reaction/hadrakine
 	results = list(/datum/reagent/medicine/hadrakine = 5)
@@ -17,7 +17,7 @@
 	mix_message = "The solution rapidly bubbles, before yielding a dark blue compound"
 
 /datum/chemical_reaction/alt_silfrine
-	results = list(/datum/reagent/medicine/silfrine = 5)
+	results = list(/datum/reagent/medicine/silfrine = 5, /datum/reagent/toxin/acid/fluacid = 5)
 	required_reagents = list(/datum/reagent/wittel = 2, /datum/reagent/toxin/acid = 1)
 	required_catalysts = list(/datum/reagent/toxin/plasma = 2)
 	required_temp = 250
