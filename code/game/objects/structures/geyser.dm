@@ -66,7 +66,7 @@
 		/datum/reagent/clf3 = 4,
 		/datum/reagent/uranium/radium = 4,
 		/datum/reagent/fuel/oil = 4,
-		/datum/reagent/wittel = 1
+		/datum/reagent/wittel = 4
 	)
 
 /obj/structure/geyser/random/Initialize()
