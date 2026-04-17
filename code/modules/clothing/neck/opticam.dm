@@ -29,6 +29,8 @@
 
 	var/processing = FALSE
 
+	var/next_cell_update = 0
+
 	var/datum/status_effect/cloak_type = STATUS_EFFECT_CLOAKED
 
 
@@ -112,12 +114,16 @@
 	processing = FALSE
 
 /obj/item/clothing/neck/opticamo/process(seconds_per_tick)
+	if(world.time > next_cell_update)
+		next_cell_update = world.time + 100
+		update_appearance()
+
 	if(!hoodup)
-		deactivate()
+		deactivate(wearer.resolve())
 		return
 
 	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
-		deactivate(user)
+		deactivate(wearer.resolve())
 		return
 
 /obj/item/clothing/neck/opticamo/update_appearance(updates)

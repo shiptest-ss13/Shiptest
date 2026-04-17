@@ -47,7 +47,7 @@
 
 /datum/status_effect/concealed/cloaked/static_cloak/on_remove()
 	. = ..()
-	addtimer(CALLBACK(owner, PROC_REF(cut_overlay), static_overlay), 20)
+	addtimer(CALLBACK(owner, TYPE_PROC_REF(/atom, cut_overlay), static_overlay), 20)
 
 /atom/movable/screen/alert/status_effect/static_cloak
 	name = "Static Cloak"
