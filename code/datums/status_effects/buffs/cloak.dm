@@ -1,8 +1,8 @@
 /datum/status_effect/concealed/cloaked
-	id = "cloaked"
 	concealment_power = 25
 	alert_type = /atom/movable/screen/alert/status_effect/cloaked
 	tick_interval = 3
+	var/min_alpha = 50
 
 /datum/status_effect/concealed/cloaked/on_apply()
 	. = ..()
@@ -11,7 +11,7 @@
 	animate(owner.get_filter("cloak_distort"), 20, size = 4)
 
 /datum/status_effect/concealed/cloaked/tick()
-	owner.alpha = max(50, owner.alpha - 25)
+	owner.alpha = max(min_alpha, owner.alpha - 25)
 	if(prob(20))
 		if(!owner.get_filter("cloak_distort"))
 			owner.add_filter("cloak_distort", 1, displacement_map_filter(icon=icon('icons/effects/effects.dmi', "static_base"), size = 0))
@@ -36,16 +36,21 @@
 	icon_state = "concealed"
 
 /datum/status_effect/concealed/cloaked/static_cloak
-	id = "static_cloaked"
 	concealment_power = 90
 	alert_type = /atom/movable/screen/alert/status_effect/static_cloak
-	tick_interval = 10
+	tick_interval = 1
+	min_alpha = 25
 	var/mutable_appearance/static_overlay
 
 /datum/status_effect/concealed/cloaked/static_cloak/on_apply()
 	static_overlay = mutable_appearance('icons/effects/effects.dmi', "static", layer = ABOVE_MOB_LAYER)
 	owner.add_overlay(static_overlay)
 	. = ..()
+
+/datum/status_effect/concealed/cloaked/static_cloak/tick()
+	. = ..()
+	if(prob(10))
+		to_chat(owner, span_mind_control(pick(GLOB.tvstatic_sayings)))
 
 /datum/status_effect/concealed/cloaked/static_cloak/on_remove()
 	. = ..()
