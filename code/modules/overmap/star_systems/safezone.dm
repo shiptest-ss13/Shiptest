@@ -36,6 +36,7 @@
 	starname = "Ecbatana"
 	startype = /datum/overmap/star/dwarf
 	default_outpost_type = /datum/overmap/outpost/ngr_rock
+	faction = /datum/faction/syndicate/ngr
 
 	primary_color = "#d9ad82"
 	secondary_color = "#c48c60"
