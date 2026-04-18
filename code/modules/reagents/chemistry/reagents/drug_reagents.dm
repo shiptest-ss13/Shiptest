@@ -119,7 +119,7 @@
 	M.AdjustUnconscious(-40)
 	M.AdjustParalyzed(-40)
 	M.AdjustImmobilized(-40)
-	M.adjustStaminaLoss(-2, 0)
+	M.adjustStaminaLoss(-8, 0)
 	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 	. = 1
