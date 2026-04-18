@@ -39,7 +39,7 @@
 /obj/item/clothing/neck/opticamo/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
-	AddComponent(/datum/component/cell, cell_override, _has_cell_overlays=FALSE)
+	AddComponent(/datum/component/cell, cell_override, _has_cell_overlays=FALSE, _cell_weight_class = WEIGHT_CLASS_SMALL)
 	update_appearance()
 
 /obj/item/clothing/neck/opticamo/dropped(mob/user)
