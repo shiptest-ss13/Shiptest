@@ -24,7 +24,7 @@ SUBSYSTEM_DEF(shuttle)
 	/// Current state of the jump
 	var/jump_mode = BS_JUMP_IDLE
 	/// Time taken for bluespace jump to begin after it is requested (in deciseconds)
-	var/jump_request_time = 6000
+	var/jump_request_time = 9000
 	/// Time taken for a bluespace jump to complete after it initiates (in deciseconds)
 	var/jump_completion_time = 1200
 
