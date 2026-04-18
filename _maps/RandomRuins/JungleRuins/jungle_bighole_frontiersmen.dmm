@@ -393,7 +393,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "bJ" = (
 /obj/effect/turf_decal/box/white,
-/obj/machinery/drill/mission,
+/obj/machinery/drill,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered/bighole/shed)
 "bU" = (
@@ -905,6 +905,9 @@
 /obj/effect/decal/cleanable/blood/splatter{
 	icon_state = "gib5";
 	dir = 2
+	},
+/obj/structure/filingcabinet/double{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/powered/bighole/lab)
@@ -5582,9 +5585,6 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Fn" = (
-/obj/structure/filingcabinet/double{
-	dir = 1
-	},
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/powered/bighole/lab)
 "Fq" = (
@@ -9017,8 +9017,8 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 6
 	},
-/obj/machinery/drill/mission,
 /obj/effect/turf_decal/box,
+/obj/machinery/drill/sampler_mission,
 /turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
 /area/ruin/powered/bighole/cargo)
 "Zf" = (
