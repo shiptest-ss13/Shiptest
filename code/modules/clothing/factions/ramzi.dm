@@ -299,6 +299,13 @@
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 
+/obj/item/storage/belt/security/webbing/ramzi/mako_light/PopulateContents()
+	. = ..()
+	new /obj/item/ammo_casing/caseless/rocket/a70mm/light(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm/light(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm/light(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm/light(src)
+
 /obj/item/storage/belt/security/webbing/ramzi/bulldog_mixed/PopulateContents()
 	. = ..()
 	new /obj/item/ammo_box/magazine/m12g_bulldog/drum/bioterror(src) // you only get ONE this one is nasty

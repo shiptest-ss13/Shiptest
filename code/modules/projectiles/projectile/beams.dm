@@ -107,14 +107,12 @@
 
 /obj/projectile/beam/laser/eoehoma/heavy
 	icon_state = "heavylaser"
-	damage = 60
-	knockdown = 50
-	armour_penetration = 20
+	damage = 40
 	speed = 1
 
 /obj/projectile/beam/laser/eoehoma/heavy/on_hit(atom/target, blocked = FALSE)
 	..()
-	explosion(get_turf(loc),0,0,0,flame_range = 3)
+	explosion(get_turf(loc),0,0,2,flame_range = 3, light_dam = 20, light_item_dam = 0)
 	return BULLET_ACT_HIT
 
 /obj/projectile/beam/laser/assault

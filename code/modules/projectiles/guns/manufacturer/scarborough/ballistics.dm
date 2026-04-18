@@ -1103,20 +1103,31 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	tac_reloads = FALSE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
-
 /obj/item/ammo_box/magazine/internal/mako
 	name = "mako internal magazine"
 	ammo_type = /obj/item/ammo_casing/caseless/rocket/a70mm
 	caliber = "70mm"
 	max_ammo = 4
 
+/obj/item/gun/ballistic/rocketlauncher/mako/light
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/mako/light
+
+/obj/item/ammo_box/magazine/internal/mako/light
+	ammo_type = /obj/item/ammo_casing/caseless/rocket/a70mm/light
+
 /obj/item/ammo_casing/caseless/rocket/a70mm
 	name = "\improper M-KO-9HE"
 	desc = "A 70mm High Explosive rocket. Fire at mech and pray."
 	icon_state = "srm-8"
 	caliber = "70mm"
-	projectile_type = /obj/projectile/bullet/a84mm_he
+	projectile_type = /obj/projectile/bullet/a84mm/he
 	auto_rotate = FALSE
+
+/obj/item/ammo_casing/caseless/rocket/a70mm/light
+	name = "\improper M-KO-9LE"
+	icon_state = "srm-8-light"
+	desc = "A 70mm Light Explosive rocket. For when you don't want to cause *too* much collateral damage."
+	projectile_type = /obj/projectile/bullet/a84mm/he/weak
 
 /obj/item/ammo_casing/caseless/rocket/a70mm/hedp
 	name = "\improper M-KO-9HEDP"
