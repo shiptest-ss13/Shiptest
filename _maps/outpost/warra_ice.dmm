@@ -416,9 +416,6 @@
 "bM" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/light/small/directional/east,
-/obj/structure/railing{
-	dir = 1
-	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "bQ" = (
@@ -541,9 +538,6 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/east,
-/obj/structure/railing{
-	layer = 4.1
-	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "cD" = (
@@ -1342,6 +1336,13 @@
 /obj/effect/turf_decal/trimline/opaque/warrablue/arrow_ccw,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/vacant_rooms/shop)
+"gM" = (
+/obj/structure/flora/grass/both{
+	layer = 3.1
+	},
+/obj/item/trash/energybar,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost/lit,
+/area/outpost/exterior/warra)
 "gR" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -1647,6 +1648,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
+"im" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
+/area/outpost/exterior/warra)
 "it" = (
 /obj/effect/turf_decal/trimline/opaque/nsorange/warning{
 	dir = 8
@@ -2114,15 +2125,13 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "kH" = (
-/obj/effect/turf_decal/siding/white,
+/obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/machinery/light/small/directional/east,
-/obj/structure/railing{
-	layer = 4.1
-	},
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/white,
+/obj/structure/railing,
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "kI" = (
@@ -2361,6 +2370,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/starboard)
+"lT" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 10
+	},
+/obj/structure/chair/bench/blue/directional/east,
+/turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
+/area/outpost/exterior/warra)
 "lY" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/siding/wood{
@@ -2940,6 +2959,17 @@
 /obj/machinery/photocopier,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/vacant_rooms/shop)
+"pq" = (
+/obj/structure/railing{
+	dir = 9;
+	layer = 2.7
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 9
+	},
+/obj/structure/chair/bench/orange/directional/east,
+/turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
+/area/outpost/exterior/warra)
 "pz" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -4540,6 +4570,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
+"yc" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 9
+	},
+/obj/effect/turf_decal/siding/white/corner,
+/obj/structure/railing/corner,
+/turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
+/area/outpost/exterior/warra)
 "ye" = (
 /obj/effect/turf_decal/siding/white/corner,
 /obj/effect/turf_decal/trimline/opaque/vired/corner,
@@ -5196,11 +5234,17 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/maintenance/starboard)
 "Bq" = (
-/obj/structure/flora/grass/both{
-	layer = 3.1
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
 	},
-/obj/item/trash/energybar,
-/turf/open/floor/plating/asteroid/snow/warra_outpost/lit,
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "Br" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -5976,7 +6020,8 @@
 /obj/machinery/camera/autoname{
 	dir = 5
 	},
-/turf/open/floor/plating/asteroid/snow/warra_outpost/lit,
+/obj/structure/flora/rock/pile/icy,
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "Fd" = (
 /obj/effect/turf_decal/siding/white{
@@ -7886,9 +7931,6 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
-/obj/structure/railing/corner{
-	dir = 1
-	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "Ow" = (
@@ -8030,13 +8072,11 @@
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
 "Pp" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 10
+/obj/structure/flora/grass/both{
+	layer = 3.1
 	},
-/obj/structure/railing/corner{
-	dir = 4
-	},
-/turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
+/obj/item/trash/energybar,
+/turf/open/floor/plating/asteroid/snow/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "Pr" = (
 /obj/structure/chair{
@@ -8116,6 +8156,15 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one/warra_outpost/lit,
 /area/outpost/exterior/warra)
+"PU" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
+/area/outpost/exterior/warra)
 "PW" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/structure/railing{
@@ -8167,10 +8216,14 @@
 /area/outpost/maintenance/port)
 "QA" = (
 /obj/effect/turf_decal/borderfloor{
-	dir = 9
+	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/corner{
-	layer = 4.1
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
@@ -12534,7 +12587,7 @@ tc
 ll
 QL
 QL
-ll
+QL
 ll
 Nj
 Nj
@@ -12626,7 +12679,7 @@ tc
 LO
 Yr
 Yr
-LO
+Yr
 co
 ow
 xh
@@ -15287,10 +15340,10 @@ eo
 eo
 eo
 rM
-eo
+qO
 EZ
-eo
-eo
+qO
+qO
 MA
 uO
 Ui
@@ -15380,9 +15433,9 @@ WO
 fB
 qO
 MA
-qO
-rM
-Ie
+pq
+UZ
+lT
 am
 jm
 uG
@@ -15472,9 +15525,9 @@ QS
 MT
 QS
 QS
-QS
-qv
-MT
+QA
+AK
+PU
 Oo
 vW
 Ma
@@ -15648,18 +15701,18 @@ yh
 aq
 dU
 uJ
-QA
+LZ
 qr
 qr
 qr
 qr
-Pp
+Ui
 PS
-Nk
-By
-JK
-By
-By
+yc
+Bq
+im
+Bq
+Bq
 of
 zF
 RW
@@ -15749,9 +15802,9 @@ bM
 PS
 kH
 qO
-Bq
+Pp
 qO
-fB
+WO
 qO
 am
 ZQ
@@ -15841,10 +15894,10 @@ mk
 ga
 mk
 mk
-eo
-ot
-eo
-WO
+qO
+Ie
+qO
+gM
 qO
 UL
 IW
