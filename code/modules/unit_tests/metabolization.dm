@@ -31,10 +31,10 @@
 
 	user.Life()
 
-	TEST_ASSERT(user.reagents.has_reagent(meth), "User does not have meth in their system after consuming it")
-	TEST_ASSERT(user.has_movespeed_modifier(/datum/movespeed_modifier/reagent/methamphetamine), "User consumed meth, but did not gain movespeed modifier")
+	TEST_ASSERT(user.reagents.has_reagent(meth), "User does not have rahkrahene in their system after consuming it")
+	TEST_ASSERT(user.has_movespeed_modifier(/datum/movespeed_modifier/reagent/rahkrahene), "User consumed meth, but did not gain movespeed modifier")
 
 	user.Life()
 
-	TEST_ASSERT(!user.reagents.has_reagent(meth), "User still has meth in their system when it should've finished metabolizing")
-	TEST_ASSERT(!user.has_movespeed_modifier(/datum/movespeed_modifier/reagent/methamphetamine), "User still has movespeed modifier despite not containing any more meth")
+	TEST_ASSERT(!user.reagents.has_reagent(meth), "User still has rahkrahene in their system when it should've finished metabolizing")
+	TEST_ASSERT(!user.has_movespeed_modifier(/datum/movespeed_modifier/reagent/rahkrahene), "User still has movespeed modifier despite not containing any more meth")
