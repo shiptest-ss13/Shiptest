@@ -19,8 +19,8 @@
 /datum/movespeed_modifier/reagent/changelinghaste
 	multiplicative_slowdown = -0.8
 
-/datum/movespeed_modifier/reagent/methamphetamine
-	multiplicative_slowdown = -0.65
+/datum/movespeed_modifier/reagent/rahkrahene
+	multiplicative_slowdown = -0.6
 
 /datum/movespeed_modifier/reagent/retukemi
 	multiplicative_slowdown = 0.3

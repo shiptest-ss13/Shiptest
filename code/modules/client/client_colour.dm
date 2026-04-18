@@ -229,6 +229,14 @@
 	fade_in = 5 SECONDS
 	easing = SINE_EASING
 
+/datum/client_colour/rahkrahene
+	colour = "#e5a5b5"
+	fade_in = 5 SECONDS
+	easing = SINE_EASING
+	fade_out = 5 SECONDS
+	priority = PRIORITY_HIGH
+
+
 #undef PRIORITY_ABSOLUTE
 #undef PRIORITY_HIGH
 #undef PRIORITY_NORMAL

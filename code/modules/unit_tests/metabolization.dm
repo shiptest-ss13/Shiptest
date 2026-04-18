@@ -23,7 +23,7 @@
 /datum/unit_test/on_mob_end_metabolize/Run()
 	var/mob/living/carbon/human/user = allocate(/mob/living/carbon/human)
 	var/obj/item/reagent_containers/pill/pill = allocate(/obj/item/reagent_containers/pill)
-	var/datum/reagent/drug/methamphetamine/meth = /datum/reagent/drug/methamphetamine
+	var/datum/reagent/drug/rahkrahene/meth = /datum/reagent/drug/rahkrahene
 
 	// Give them enough meth to be consumed in 2 metabolizations
 	pill.reagents.add_reagent(meth, initial(meth.metabolization_rate) * 1.9)

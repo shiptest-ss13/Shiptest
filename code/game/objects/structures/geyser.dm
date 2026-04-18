@@ -61,9 +61,9 @@
 	erupting_state = null
 	var/list/options = list(
 		/datum/reagent/medicine/panacea/effluvial = 6,
-		/datum/reagent/ammonia = 6,
+		/datum/reagent/ammonia = 4,
 		/datum/reagent/saltpetre = 6,
-		/datum/reagent/clf3 = 4,
+		/datum/reagent/rahene = 4,
 		/datum/reagent/uranium/radium = 4,
 		/datum/reagent/fuel/oil = 4,
 		/datum/reagent/wittel = 4

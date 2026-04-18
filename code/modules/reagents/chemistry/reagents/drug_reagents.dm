@@ -89,27 +89,31 @@
 	..()
 	. = 1
 
-/datum/reagent/drug/methamphetamine
-	name = "Methamphetamine"
-	description = "Reduces stun times by about 300%, speeds the user up, and allows the user to quickly recover stamina while dealing a small amount of Brain damage. If overdosed the subject will move randomly, drop items and suffer from Toxin and Brain damage. If addicted the subject will become dizzy, lose motor control and eventually suffer heavy toxin damage."
-	reagent_state = LIQUID
-	color = "#FAFAFA"
+/datum/reagent/drug/rahkrahene
+	name = "Rahkrahene"
+	description = "A shoal-native chemical originating from a strain of crimson fungus. Massively increases the speed at which bodies are able to move. "
+	reagent_state = GAS
+	color = "#931d1d"
 	overdose_threshold = 20
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 
-/datum/reagent/drug/methamphetamine/on_mob_metabolize(mob/living/L)
+/datum/reagent/drug/rahkrahene/on_mob_metabolize(mob/living/L)
 	..()
-	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/methamphetamine)
+	L?.add_client_colour(/datum/client_colour/rahkrahene)
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/rahkrahene)
 
-/datum/reagent/drug/methamphetamine/on_mob_end_metabolize(mob/living/L)
-	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/methamphetamine)
+/datum/reagent/drug/rahkrahene/on_mob_end_metabolize(mob/living/L)
+	L?.remove_client_colour(/datum/client_colour/rahkrahene)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/rahkrahene)
 	..()
 
-/datum/reagent/drug/methamphetamine/on_mob_life(mob/living/carbon/M)
-	var/high_message = pick("You feel hyper.", "You feel like you need to go faster.", "You feel like you can run the world.")
+/datum/reagent/drug/rahkrahene/on_mob_life(mob/living/carbon/M)
+	var/high_message = pick("YOU NEED TO MOVE.", "INERTIA IS FILLING YOUR HEART", "SEIZE THE MOMENT", "GO GO GO GO GO GO", "YOU NEED TO SPRINT.", "DO NOT STOP MOVING.")
 	if(prob(5))
-		to_chat(M, span_notice("[high_message]"))
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_medium, name)
+		to_chat(M, span_boldwarning("[high_message]"))
+	if(prob(25))
+		M.playsound_local(get_turf(L), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_heavy, name)
 	M.AdjustStun(-40)
 	M.AdjustKnockdown(-40)
 	M.AdjustUnconscious(-40)
@@ -117,11 +121,10 @@
 	M.AdjustImmobilized(-40)
 	M.adjustStaminaLoss(-2, 0)
 	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1,4))
 	..()
 	. = 1
 
-/datum/reagent/drug/methamphetamine/overdose_process(mob/living/M)
+/datum/reagent/drug/rahkrahene/overdose_process(mob/living/M)
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i in 1 to 4)
 			step(M, pick(GLOB.cardinals))

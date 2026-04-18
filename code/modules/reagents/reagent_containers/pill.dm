@@ -221,7 +221,7 @@
 /obj/item/reagent_containers/pill/zoom
 	name = "yellow pill"
 	desc = "A poorly made canary-yellow pill; it is slightly crumbly."
-	list_reagents = list(/datum/reagent/medicine/synaptizine = 10, /datum/reagent/drug/nicotine = 10, /datum/reagent/drug/methamphetamine = 1)
+	list_reagents = list(/datum/reagent/medicine/synaptizine = 10, /datum/reagent/drug/nicotine = 10, /datum/reagent/drug/rahkrahene = 1)
 	icon_state = "pill7"
 
 

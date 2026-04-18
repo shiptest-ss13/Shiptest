@@ -2105,6 +2105,13 @@
 	color = "#FFFFFF" // rgb: 255, 255, 255
 	taste_mult = 0 // oderless and tasteless
 
+/datum/reagent/rahene
+	name = "Rahene"
+	description = "A crimson-red vapor typically found on geologically active frontier worlds."
+	color = "#ca1111" // rgb: 255, 255, 255
+	taste_mult = 4
+	taste_description = "red"
+
 /datum/reagent/metalgen
 	name = "Metalgen"
 	data = list("material"=null)

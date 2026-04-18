@@ -8,10 +8,16 @@
 	mix_message = "The mixture violently reacts, leaving behind a few crystalline shards."
 	required_temp = 390
 
-/datum/chemical_reaction/methamphetamine
-	results = list(/datum/reagent/drug/methamphetamine = 4)
-	required_reagents = list(/datum/reagent/medicine/ephedrine = 1, /datum/reagent/iodine = 1, /datum/reagent/phosphorus = 1, /datum/reagent/hydrogen = 1)
+/datum/chemical_reaction/rahkrahene
+	results = list(/datum/reagent/drug/rahkrahene = 4)
+	required_reagents = list(/datum/reagent/rahene = 1, /datum/reagent/iodine = 1, /datum/reagent/phosphorus = 1)
 	required_temp = 374
+
+/datum/chemical_reaction/alt_rahkrahene
+	results = list(/datum/reagent/drug/rahkrahene = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/vimukti = 5, , /datum/reagent/iodine = 1, /datum/reagent/phosphorus = 1, /datum/reagent/acetone = 1)
+	required_catalysts = list(/datum/reagent/hydrogen = 20)
+	required_temp = 482
 
 /datum/chemical_reaction/mammoth
 	results = list(/datum/reagent/drug/mammoth = 7)
