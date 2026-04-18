@@ -112,7 +112,7 @@
 	if(prob(5))
 		to_chat(M, span_boldwarning("[high_message]"))
 	if(prob(25))
-		M.playsound_local(get_turf(L), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+		M.playsound_local(get_turf(M), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_heavy, name)
 	M.AdjustStun(-40)
 	M.AdjustKnockdown(-40)
