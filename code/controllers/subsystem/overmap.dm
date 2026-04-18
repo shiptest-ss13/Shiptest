@@ -346,15 +346,64 @@ SUBSYSTEM_DEF(overmap)
 				interference_power += nearby_obj.interference_power / 8
 		return max(interference_power,0)
 
+//spaghetti AGAIN
+
+/datum/controller/subsystem/overmap/proc/outpost_recall()
+	var/datum/eor_outpost_picker/picker = new /datum/eor_outpost_picker
+	picker.call_recall()
+
+#define OUTPOST_SWAP_TIME 30 SECONDS
+
+/datum/eor_outpost_picker
+	var/datum/overmap/outpost/outpost_of_the_day
+	var/triggering
+
 /**
  * Plays an announcement, closes an outpost, and makes the main outpost system jump-to-able
  */
 ///Selects an outpost and makes its sector jumpable.
-/datum/controller/subsystem/overmap/proc/outpost_recall()
-	var/datum/overmap/outpost/outpost_of_the_day = pick(outposts)
-	var/datum/overmap/outpost/loser_outpost = pick(outposts - outpost_of_the_day)
+
+/datum/eor_outpost_picker/proc/call_recall(datum/overmap/outpost/excluded_outpost)
+
+	if(length(SSovermap.outposts) == 1)
+		message_admins("Only one outpost.")
+		outpost_of_the_day = SSovermap.outposts[1]
+		outpost_of_the_day.current_overmap.can_jump_to = TRUE
+		return TRUE
+
+	else
+		outpost_of_the_day = pick(SSovermap.outposts - excluded_outpost)
+
+	if(!outpost_of_the_day)
+		message_admins("Outpost recall found no valid outposts!")
+		return FALSE
+
+	triggering = TRUE
+
+	message_admins("Bluespace lighthouse igniting at [outpost_of_the_day] in [DisplayTimeText(OUTPOST_SWAP_TIME)] (<a href='byond://?src=[REF(src)];different_outpost=1'>DIFFERENT_OUTPOST</a>)")
+
+	sleep(OUTPOST_SWAP_TIME)
+
+	var/datum/overmap/outpost/loser_outpost = pick(SSovermap.outposts - outpost_of_the_day)
+
+	if(!triggering)
+		return FALSE
+
 	priority_announce("[outpost_of_the_day] has activated a bluespace lighthouse, all vessels in the area are advised to jump directly to port.", "Bluespace Beacon", null, sender_override = "[outpost_of_the_day] Communications")
 	outpost_of_the_day.current_overmap.can_jump_to = TRUE
-	for (var/datum/overmap/ship/controlled/target_ship in controlled_ships)
+	for (var/datum/overmap/ship/controlled/target_ship in SSovermap.controlled_ships)
 		target_ship.blacklisted[loser_outpost] = "[loser_outpost] has closed for the incoming bluespace stormfront."
+
+/datum/eor_outpost_picker/Topic(href, href_list)
+	..()
+	if(href_list["different_outpost"])
+		if(!triggering)
+			to_chat(usr, span_admin("Too late to change outposts now!"))
+			return
+		triggering = FALSE
+		message_admins("[key_name_admin(usr)] chose to have a different outpost host end of round!")
+		log_admin_private("[key_name(usr)] rerolled end of round outpost.")
+		SSblackbox.record_feedback("tally", "overmap_eor_outpost_reroll", 1, type)
+		var/datum/eor_outpost_picker/picker = new /datum/eor_outpost_picker
+		picker.call_recall(outpost_of_the_day)
 
