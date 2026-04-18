@@ -58,7 +58,7 @@ The cells are removed from objects with the component through alt-click.
 
 	cell_can_be_removed = _cell_can_be_removed
 
-	max_cell_size = _cell_Weight_class
+	max_cell_size = _cell_weight_class
 
 	if(start_with_cell)
 		var/obj/item/stock_parts/cell/new_cell
