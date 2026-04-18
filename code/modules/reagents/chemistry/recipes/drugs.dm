@@ -15,7 +15,7 @@
 
 /datum/chemical_reaction/alt_rahkrahene
 	results = list(/datum/reagent/drug/rahkrahene = 5)
-	required_reagents = list(/datum/reagent/consumable/ethanol/vimukti = 5, , /datum/reagent/iodine = 1, /datum/reagent/phosphorus = 1, /datum/reagent/acetone = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/vimukti = 5, /datum/reagent/iodine = 1, /datum/reagent/phosphorus = 1, /datum/reagent/acetone = 1)
 	required_catalysts = list(/datum/reagent/hydrogen = 20)
 	required_temp = 482
 
