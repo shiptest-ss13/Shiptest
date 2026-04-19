@@ -177,7 +177,7 @@ The cells are removed from objects with the component through alt-click.
 		to_chat(user, span_danger("There is already a cell in [equipment]!"))
 		return
 
-	if(inserted_cell.w_class > max_cell_size)
+	if(inserting_item.w_class > max_cell_size)
 		to_chat(user, span_danger("[inserting_item] is too large to fit in [equipment]!"))
 
 	to_chat(user, span_notice("You connect [inserting_item] onto [equipment]."))
