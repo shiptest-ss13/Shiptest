@@ -2112,6 +2112,16 @@
 	taste_mult = 4
 	taste_description = "red"
 
+/datum/reagent/rahene/on_mob_metabolize(mob/living/L)
+	..()
+	L?.add_client_colour(/datum/client_colour/rahkrahene)
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/rahene)
+
+/datum/reagent/rahene/on_mob_end_metabolize(mob/living/L)
+	L?.remove_client_colour(/datum/client_colour/rahkrahene)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/rahene)
+	..()
+
 /datum/reagent/metalgen
 	name = "Metalgen"
 	data = list("material"=null)

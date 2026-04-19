@@ -22,6 +22,10 @@
 	multiplicative_slowdown = -0.65
 	conflicts_with = MOVE_CONFLICT_DRUG
 
+/datum/movespeed_modifier/reagent/rahene
+	multiplicative_slowdown = -0.1
+	conflicts_with = MOVE_CONFLICT_DRUG
+
 /datum/movespeed_modifier/reagent/retukemi
 	multiplicative_slowdown = 0.3
 
