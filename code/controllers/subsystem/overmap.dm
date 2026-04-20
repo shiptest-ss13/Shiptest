@@ -407,3 +407,4 @@ SUBSYSTEM_DEF(overmap)
 		var/datum/eor_outpost_picker/picker = new /datum/eor_outpost_picker
 		picker.call_recall(outpost_of_the_day)
 
+#undef OUTPOST_SWAP_TIME
