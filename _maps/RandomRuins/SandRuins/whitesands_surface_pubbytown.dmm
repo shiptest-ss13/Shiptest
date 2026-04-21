@@ -26,6 +26,13 @@
 /obj/structure/frame/machine,
 /turf/open/floor/plating,
 /area/space)
+"av" = (
+/obj/structure/fireplace{
+	pixel_x = -33;
+	pixel_y = 0
+	},
+/turf/open/floor/concrete/tiles/whitesands,
+/area/space)
 "aR" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -143,7 +150,6 @@
 	name = "engine fuel pump"
 	},
 /obj/machinery/light/small/directional/north,
-/obj/effect/spawner/random/maintenance/two,
 /obj/item/stack/sheet/mineral/wood/fifty,
 /obj/structure/closet/crate,
 /turf/open/floor/plasteel/tech,
@@ -155,12 +161,10 @@
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/space)
 "eq" = (
-/obj/structure/fireplace{
-	dir = 8;
-	pixel_x = -19;
-	pixel_y = -3
+/obj/effect/turf_decal/corner/opaque/red/border{
+	dir = 9
 	},
-/turf/open/floor/concrete/tiles/whitesands,
+/turf/open/floor/plasteel/white/whitesands,
 /area/space)
 "eD" = (
 /turf/open/floor/plasteel/white/whitesands,
@@ -367,11 +371,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow,
-/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "jF" = (
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/railing{
 	dir = 8
@@ -379,13 +381,6 @@
 /obj/structure/catwalk,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
-	},
-/obj/item/stock_parts/cell/hyper{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/item/stack/ore/salvage/scrapmetal/five{
-	pixel_x = -9
 	},
 /turf/open/floor/plating,
 /area/space)
@@ -412,7 +407,6 @@
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "kM" = (
@@ -564,9 +558,6 @@
 /area/space)
 "nP" = (
 /obj/structure/window/reinforced/fulltile,
-/obj/structure/barricade/wooden/crude{
-	layer = 3.22
-	},
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/space)
 "nQ" = (
@@ -632,8 +623,11 @@
 /turf/open/floor/plasteel/tech,
 /area/space)
 "pi" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor/passive,
-/turf/open/floor/plasteel/white/whitesands,
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 1
+	},
+/turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "pu" = (
 /obj/structure/cable{
@@ -727,6 +721,12 @@
 "so" = (
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"sq" = (
+/obj/effect/turf_decal/corner/opaque/red/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white/whitesands,
+/area/space)
 "ss" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-55"
@@ -806,11 +806,9 @@
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/space)
 "uh" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/structure/chair/wood{
 	dir = 1
 	},
-/obj/structure/table/wood,
 /turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "ul" = (
@@ -838,9 +836,15 @@
 "vw" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
 	dir = 4
 	},
-/turf/open/floor/wood/walnut/whitesands,
+/turf/open/floor/wood/walnut/whitesands{
+	icon_state = "wood-broken3"
+	},
 /area/space)
 "vL" = (
 /obj/structure/railing{
@@ -899,9 +903,6 @@
 	color = "#543C30";
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30"
-	},
 /turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "xc" = (
@@ -911,9 +912,6 @@
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/space)
 "xy" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken6"
 	},
@@ -932,7 +930,6 @@
 	dir = 1
 	},
 /obj/structure/catwalk,
-/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plating,
 /area/space)
 "xH" = (
@@ -1015,18 +1012,12 @@
 /turf/open/floor/carpet/red,
 /area/space)
 "zi" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/barricade/wooden/crude{
-	layer = 3.3;
-	opacity = 1
-	},
-/turf/open/floor/concrete/slab_1/whitesands,
+/mob/living/simple_animal/hostile/human/hermit/survivor/passive,
+/turf/open/floor/carpet/red,
 /area/space)
 "zP" = (
-/obj/effect/turf_decal/corner/opaque/red/border{
-	dir = 10
-	},
-/turf/open/floor/plasteel/white/whitesands,
+/obj/structure/table/wood,
+/turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "zX" = (
 /obj/structure/cable{
@@ -1178,6 +1169,13 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"CA" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 1
+	},
+/turf/open/floor/wood/walnut/whitesands,
+/area/space)
 "Dg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/emcloset/wall/directional/south,
@@ -1286,12 +1284,22 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "Fc" = (
 /obj/machinery/door/airlock/wood,
 /turf/open/floor/concrete/slab_1/whitesands,
+/area/space)
+"Fh" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 4
+	},
+/turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "Fn" = (
 /obj/structure/cable{
@@ -1443,7 +1451,6 @@
 /obj/structure/railing/corner,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/south,
-/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "IQ" = (
@@ -1489,8 +1496,10 @@
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/space)
 "JI" = (
-/obj/effect/turf_decal/corner/opaque/red/border,
-/turf/open/floor/plasteel/white/whitesands,
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "Kt" = (
 /obj/structure/platform/wood_two/corner{
@@ -1561,9 +1570,6 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 1
-	},
-/obj/structure/chair/wood{
-	dir = 4
 	},
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken4"
@@ -1640,10 +1646,6 @@
 	color = "#543C30";
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 4
-	},
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken2"
 	},
@@ -1654,7 +1656,6 @@
 	dir = 8;
 	name = "engine fuel pump"
 	},
-/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "Pr" = (
@@ -1858,7 +1859,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/light/directional/east,
-/obj/item/stack/ore/salvage/scrapmetal/five,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "Uq" = (
@@ -2526,7 +2526,7 @@ Ha
 pG
 pG
 pG
-QR
+KB
 gL
 gL
 LK
@@ -2572,10 +2572,10 @@ Ha
 Ha
 pG
 pG
-QR
-KB
+zi
 gL
-uh
+gL
+pi
 xy
 QR
 Ct
@@ -2618,11 +2618,11 @@ pG
 Ha
 pG
 QR
-QR
-sW
+Fh
+vw
 xa
 Oz
-vw
+Gl
 Fc
 Ct
 Ct
@@ -2664,11 +2664,11 @@ pG
 Ha
 pG
 QR
-gg
-VZ
-zP
 ho
-eq
+pi
+zP
+uh
+Gl
 QR
 Bw
 Ct
@@ -2710,7 +2710,7 @@ Ha
 Ha
 pG
 QR
-Mz
+av
 pi
 JI
 QR
@@ -2756,9 +2756,9 @@ Ha
 pG
 pG
 QR
-RT
-Pu
-JI
+sW
+CA
+xy
 QR
 Bw
 Bw
@@ -2803,8 +2803,8 @@ pG
 pG
 QR
 QR
-zi
-zi
+nP
+nP
 QR
 Bw
 Ct
@@ -2904,8 +2904,8 @@ Ct
 Bw
 QR
 QR
-zi
-zi
+nP
+nP
 QR
 pG
 pG
@@ -3083,7 +3083,7 @@ Ct
 Bw
 Bw
 Vt
-zi
+nP
 Gl
 Gl
 QR
@@ -3129,7 +3129,7 @@ Bw
 Bw
 Bw
 Vt
-zi
+nP
 Gl
 Gl
 Gl
@@ -3175,7 +3175,7 @@ Bw
 Bw
 gx
 jb
-zi
+nP
 Gl
 Gl
 Gl
@@ -3214,7 +3214,7 @@ LG
 LG
 AJ
 Bw
-Ls
+Ct
 Ct
 Bw
 Bw
@@ -3229,7 +3229,7 @@ Gl
 pG
 pG
 pG
-uB
+pG
 uB
 uB
 uB
@@ -4044,7 +4044,7 @@ QR
 QR
 QR
 pG
-Ew
+pG
 pG
 pG
 pG
@@ -4087,11 +4087,11 @@ Bw
 Qw
 Qw
 QR
-Ew
-Ew
-Ew
-Ew
-Ew
+Gl
+Gl
+Gl
+Gl
+Gl
 pG
 pG
 pG
@@ -4133,11 +4133,11 @@ Bw
 Bw
 QR
 QR
-Ew
-Ew
-Ew
-Ew
-Ew
+Gl
+Gl
+Gl
+Gl
+Gl
 pG
 pG
 pG
@@ -4178,16 +4178,16 @@ Ct
 Jz
 SO
 QR
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
+QR
+QR
+Zp
+QR
+Gl
+Gl
+Gl
 pG
-uB
-uB
+pG
+pG
 uB
 uB
 uB
@@ -4224,13 +4224,13 @@ Jz
 Bw
 Vt
 nP
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
+Gl
+Gl
+Gl
+QR
+QR
+Gl
+Gl
 pG
 pG
 uB
@@ -4270,16 +4270,16 @@ Ct
 Bw
 Vt
 nP
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
+Gl
+eq
+VZ
+gg
+QR
+Gl
+Gl
 pG
 pG
-uB
+pG
 uB
 uB
 uB
@@ -4316,15 +4316,15 @@ Jz
 Ct
 dm
 QR
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
+Gl
+sq
+eD
+Mz
+QR
+Gl
+Gl
 pG
 pG
-uB
 uB
 uB
 uB
@@ -4364,13 +4364,13 @@ Bw
 QR
 Zp
 QR
-Ew
-Ew
-Ew
-Ew
+Pu
+RT
+QR
+Gl
+Gl
 pG
 pG
-uB
 uB
 uB
 uB
@@ -4415,7 +4415,7 @@ QR
 pG
 pG
 pG
-uB
+pG
 uB
 uB
 uB
@@ -4461,7 +4461,7 @@ pG
 pG
 pG
 pG
-uB
+pG
 uB
 uB
 uB
@@ -4552,8 +4552,8 @@ Qw
 pG
 pG
 pG
-uB
-uB
+pG
+pG
 uB
 uB
 uB
