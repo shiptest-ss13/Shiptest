@@ -57,7 +57,7 @@ SUBSYSTEM_DEF(overmap)
 	dynamic_encounters = list()
 	events = list()
 
-	var/list/sector_types = pick(subtypesof(/datum/overmap_star_system/safezone))
+	var/list/sector_types = pick(subtypesof(/datum/overmap_star_system/safezone) - /datum/overmap_star_system/safezone/json_example)
 
 	if(fexists(SAFEZONE_OVERRIDE_FILEPATH))
 		var/file_text = trim_right(file2text(SAFEZONE_OVERRIDE_FILEPATH)) // trim_right because there's often a trailing newline
