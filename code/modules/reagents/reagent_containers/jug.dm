@@ -105,6 +105,11 @@
 	icon_state = "chem_jug_copper"
 	list_reagents = list(/datum/reagent/copper = 150)
 
+/obj/item/reagent_containers/glass/chem_jug/ethanol
+	name = "chemical jug (ethanol)"
+	icon_state = "chem_jug_copper"
+	list_reagents = list(/datum/reagent/consumable/ethanol = 150)
+
 /obj/item/reagent_containers/glass/chem_jug/fluorine
 	name = "chemical jug (fluorine)"
 	icon_state = "chem_jug_fluorine"

@@ -9,6 +9,7 @@
 	icon_state = "galcom"
 
 	mutual_understanding = list(
+		/datum/language/league_kalixcian = 25,
 		/datum/language/solarian_international = 20,
 		/datum/language/gezena_kalixcian = 20,
 		/datum/language/zohil_kalixcian = 15, // similar to gezenan

@@ -1,0 +1,2563 @@
+{
+	"system_info": {
+		"name": "Abandoned - New Dawn", 
+		"starname": "Kepler-453AB", 
+		"startype": "/datum/overmap/star/binary", 
+		"size": 30, 
+		"max_overmap_dynamic_events": 0, 
+		"faction": null, 
+		"dynamic_probabilities": {
+			"lava": 40, 
+			"ice": 40, 
+			"jungle": 40, 
+			"rockplanet": 40, 
+			"sand": 40, 
+			"beachplanet": 40, 
+			"reebe": 0, 
+			"asteroid": 0, 
+			"space": 40, 
+			"empty space": 0, 
+			"wasteplanet": 40, 
+			"gas giant": 0, 
+			"plasma giant": 0, 
+			"waterplanet": 0, 
+			"desertplanet": 0, 
+			"shroudedplanet": 0, 
+			"moon": 20, 
+			"battlefieldplanet": 0, 
+			"test": 0, 
+			"snowball": 1, 
+			"dustball": 1, 
+			"superflat": 1
+		}, 
+		"can_jump_to": 0, 
+		"override_object_colors": 1, 
+		"primary_color": "#D8D8D8", 
+		"secondary_color": "#3a3f85", 
+		"hazard_primary_color": "#ffff6e", 
+		"hazard_secondary_color": "#9D96AD", 
+		"primary_structure_color": "#FFFFFF", 
+		"secondary_structure_color": "#FFFFFF", 
+		"overmap_icon_state": "overmap_dark"
+	}, 
+	"objects": {
+		"/datum/overmap/star/binary_1": {
+			"type": "/datum/overmap/star/binary", 
+			"name": "Kepler-453AB", 
+			"custom_color": 0, 
+			"x": 16, 
+			"y": 16
+		}, 
+		"/datum/overmap/fluff/fakeplanet/moon_2": {
+			"type": "/datum/overmap/fluff/fakeplanet/moon", 
+			"name": "Icarus", 
+			"desc": "Formerly Kepler-453c, this planet is too close to the binary sun system to sustain any form of atmosphere, let alone habitation. Because of said proximity, it was nicknamed by the locals 'Icarus.'<span class='notice'> is likely nothing of interest here. Traveling here is a waste of time.</span>", 
+			"x": 18, 
+			"y": 17
+		}, 
+		"/datum/overmap/fluff/satellite/abandoned_3": {
+			"type": "/datum/overmap/fluff/satellite/abandoned", 
+			"x": 15, 
+			"y": 14
+		}, 
+		"/datum/overmap/fluff/fakeplanet/sand/sunset_4": {
+			"type": "/datum/overmap/fluff/fakeplanet/sand/sunset", 
+			"x": 16, 
+			"y": 11
+		}, 
+		"/datum/overmap/fluff/fakestation/packedstation_5": {
+			"type": "/datum/overmap/fluff/fakestation/packedstation", 
+			"x": 17, 
+			"y": 11
+		}, 
+		"/datum/overmap/fluff/satellite/abandoned_6": {
+			"type": "/datum/overmap/fluff/satellite/abandoned", 
+			"x": 13, 
+			"y": 5
+		}, 
+		"/datum/overmap/fluff/fakeplanet/rock_7": {
+			"type": "/datum/overmap/fluff/fakeplanet/rock", 
+			"name": "Loner", 
+			"desc": "A rocky world. Since it's so far out and there was no attempts to colonize it, the locals nicnamed this planet \"Loner\", from this previous name of Kepler-453d <span class='notice'>There is likely nothing of interest here. Traveling here is a waste of time.</span>", 
+			"x": 28, 
+			"y": 3
+		}, 
+		"/datum/overmap/event/meteor/debris/major_8": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 16, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris/major_9": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 17, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/dust_10": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 14, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/dust_11": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 15, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/dust_12": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 13, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/dust_13": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 13, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/dust_14": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 14, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/dust_15": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 14, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/dust_16": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 12, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/dust_17": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 13, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/dust_18": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 14, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/dust_19": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 13, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/meteor/dust_20": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 14, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/dust_21": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 15, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/dust_22": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 16, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/dust_23": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 17, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/dust_24": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 18, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/dust_25": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 19, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/dust_26": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 19, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/dust_27": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 19, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/meteor/dust_28": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 18, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/dust_29": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 19, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/dust_30": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 19, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/dust_31": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 17, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/dust_32": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 16, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/debris/major_33": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 15, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/major_34": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 15, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris/major_35": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 11, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/major_36": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 21, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/major_37": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 21, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris/major_38": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 13, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/major_39": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 14, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/major_40": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 15, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/major_41": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 10, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris/major_42": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 10, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris/major_43": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 12, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/debris/major_44": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 22, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris/major_45": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 20, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/debris/major_46": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 16, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris/major_47": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 9, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/debris/major_48": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 9, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/debris/major_49": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 9, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/debris/major_50": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 9, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/debris/major_51": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 9, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/debris/major_52": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 13, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris/major_53": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 14, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris/major_54": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 16, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris/major_55": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 17, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris/major_56": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 23, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/debris/major_57": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 19, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/major_58": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 20, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/major_59": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 19, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/major_60": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 21, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris/major_61": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 22, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/debris/major_62": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 22, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/meteor/debris/major_63": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 22, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris/major_64": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 10, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/meteor/debris/major_65": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 11, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/major_66": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 10, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/major_67": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 9, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris/major_68": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 10, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/debris/major_69": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 8, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/debris/major_70": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 12, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris/major_71": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 12, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris/major_72": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 24, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/debris/major_73": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 15, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/meteor/debris/major_74": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 13, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/meteor/debris/major_75": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 22, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris/major_76": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 10, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/meteor/debris/major_77": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 9, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/debris/major_78": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 12, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/meteor/debris/major_79": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 19, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/meteor/debris/major_80": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 21, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/meteor/debris/major_81": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 26, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris/major_82": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 8, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/meteor/debris/major_83": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 8, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/debris/major_84": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 7, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/major_85": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 8, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris/major_86": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 16, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris_87": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 18, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/debris_88": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 21, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/debris_89": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 11, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris_90": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 10, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/debris_91": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 11, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/debris_92": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 11, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris_93": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 6, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/debris_94": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 14, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris_95": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 13, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris_96": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 14, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris_97": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 15, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris_98": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 9, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris_99": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 19, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris_100": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 22, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris_101": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 23, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/debris_102": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 22, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/debris_103": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 25, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris_104": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 25, 
+			"y": 25
+		}, 
+		"/datum/overmap/event/meteor/debris_105": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 16, 
+			"y": 29
+		}, 
+		"/datum/overmap/event/meteor/debris_106": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 13, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/meteor/debris_107": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 19, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/debris_108": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 16, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/debris_109": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 20, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris_110": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 21, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris_111": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 21, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/debris_112": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 22, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/debris_113": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 11, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/debris_114": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 8, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/debris_115": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 14, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/debris_116": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 11, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/meteor/debris_117": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 7, 
+			"y": 27
+		}, 
+		"/datum/overmap/event/meteor/debris_118": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 5, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris_119": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 5, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/debris_120": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 14, 
+			"y": 6
+		}, 
+		"/datum/overmap/event/meteor/debris_121": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 29, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_122": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 8, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_123": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 6, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_124": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 10, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_125": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 12, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_126": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 10, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_127": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 6, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_128": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 7, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_129": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 11, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_130": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 11, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_131": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 10, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_132": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 11, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_133": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 15, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_134": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 15, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_135": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 11, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_136": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 9, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_137": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 8, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_138": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 18, 
+			"y": 25
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_139": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 19, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_140": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 13, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris_141": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 16, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris_142": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 20, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/debris_143": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 20, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/dust_144": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 20, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/dust_145": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 20, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/dust_146": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 19, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/dust_147": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 21, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/dust_148": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 21, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/dust_149": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 17, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/dust_150": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 18, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/dust_151": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 17, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_152": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 18, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_153": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 23, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_154": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 25, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_155": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 26, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_156": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 21, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_157": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 10, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_158": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 9, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_159": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 5, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_160": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 13, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_161": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 17, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_162": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 15, 
+			"y": 8
+		}, 
+		"/datum/overmap/fluff/commsat/abandoned_163": {
+			"type": "/datum/overmap/fluff/commsat/abandoned", 
+			"dir": 2, 
+			"x": 17, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/major_164": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 18, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_165": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 15, 
+			"y": 7
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_166": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 15, 
+			"y": 6
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_167": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 18, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_168": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 6, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_169": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 12, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_170": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 8, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_171": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 8, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_172": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 6, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_173": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 6, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris_174": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 26, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris_175": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 26, 
+			"y": 25
+		}, 
+		"/datum/overmap/event/meteor/debris_176": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 25, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/meteor/debris_177": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 22, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_178": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 22, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_179": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 25, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_180": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 22, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_181": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 25, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_182": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 24, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_183": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 26, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/debris_184": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 26, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/debris_185": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 26, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_186": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 28, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_187": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 27, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_188": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 17, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_189": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 21, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_190": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 13, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_191": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 12, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris_192": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 12, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/debris_193": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 11, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/meteor/debris_194": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 12, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/debris_195": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 12, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/debris_196": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 13, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris_197": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 23, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/meteor/debris_198": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 4, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris_199": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 20, 
+			"y": 6
+		}, 
+		"/datum/overmap/event/meteor/debris_200": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 24, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/meteor/debris_201": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 26, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris/major_202": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 10, 
+			"y": 4
+		}, 
+		"/datum/overmap/event/meteor/debris/major_203": {
+			"type": "/datum/overmap/event/meteor/debris/major", 
+			"x": 23, 
+			"y": 7
+		}, 
+		"/datum/overmap/event/meteor/minor_204": {
+			"type": "/datum/overmap/event/meteor/minor", 
+			"x": 19, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/minor_205": {
+			"type": "/datum/overmap/event/meteor/minor", 
+			"x": 13, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/minor_206": {
+			"type": "/datum/overmap/event/meteor/minor", 
+			"x": 18, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/meteor/minor_207": {
+			"type": "/datum/overmap/event/meteor/minor", 
+			"x": 18, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/meteor/minor_208": {
+			"type": "/datum/overmap/event/meteor/minor", 
+			"x": 18, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/minor_209": {
+			"type": "/datum/overmap/event/meteor/minor", 
+			"x": 21, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/minor_210": {
+			"type": "/datum/overmap/event/meteor/minor", 
+			"x": 20, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/minor_211": {
+			"type": "/datum/overmap/event/meteor/minor", 
+			"x": 14, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_212": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 15, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_213": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 10, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_214": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 11, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_215": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 8, 
+			"y": 27
+		}, 
+		"/datum/overmap/event/meteor/debris_216": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 6, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/meteor/debris_217": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 6, 
+			"y": 27
+		}, 
+		"/datum/overmap/event/meteor/debris_218": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 13, 
+			"y": 27
+		}, 
+		"/datum/overmap/event/meteor/debris_219": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 6, 
+			"y": 6
+		}, 
+		"/datum/overmap/event/meteor/debris_220": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 10, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_221": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 29, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_222": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 21, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_223": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 7, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_224": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 4, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_225": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 4, 
+			"y": 25
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_226": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 6, 
+			"y": 25
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_227": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 7, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_228": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 6, 
+			"y": 28
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_229": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 5, 
+			"y": 27
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_230": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 23, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_231": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 22, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_232": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 19, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_233": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 11, 
+			"y": 4
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_234": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 25, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_235": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 21, 
+			"y": 6
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_236": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 17, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_237": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 26, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_238": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 23, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_239": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 22, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_240": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 27, 
+			"y": 28
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_241": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 24, 
+			"y": 27
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_242": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 20, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/meteor/debris_243": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 19, 
+			"y": 25
+		}, 
+		"/datum/overmap/event/meteor/debris_244": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 22, 
+			"y": 25
+		}, 
+		"/datum/overmap/event/meteor/debris_245": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 18, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris_246": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 19, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris_247": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 17, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/meteor/debris_248": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 23, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/debris_249": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 24, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/debris_250": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 20, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/rad/major_251": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 18, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/rad/major_252": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 19, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/meteor/debris_253": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 18, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/meteor/debris_254": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 19, 
+			"y": 7
+		}, 
+		"/datum/overmap/event/meteor/debris_255": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 20, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris_256": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 20, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/rad/major_257": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 18, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/rad/major_258": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 12, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/rad/major_259": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 22, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/rad/major_260": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 7, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/rad/major_261": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 20, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/rad/major_262": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 20, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/emp_263": {
+			"type": "/datum/overmap/event/emp", 
+			"x": 17, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/rad_264": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 17, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/rad_265": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 14, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/rad_266": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 7, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_267": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 17, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_268": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 17, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/rad/major_269": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 23, 
+			"y": 12
+		}, 
+		"/datum/overmap/fluff/satellite/abandoned_270": {
+			"type": "/datum/overmap/fluff/satellite/abandoned", 
+			"dir": 2, 
+			"x": 29, 
+			"y": 3
+		}, 
+		"/datum/overmap/mapping_helper/wild_sector_jumppoint_helper_271": {
+			"type": "/datum/overmap/mapping_helper/wild_sector_jumppoint_helper", 
+			"dir": 6, 
+			"x": 28, 
+			"y": 7
+		}, 
+		"/datum/overmap/event/meteor/debris_272": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 28, 
+			"y": 4
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_273": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 27, 
+			"y": 4
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_274": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 26, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_275": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 29, 
+			"y": 6
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_276": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 16, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_277": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 15, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_278": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 11, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_279": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 9, 
+			"y": 4
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_280": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 7, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_281": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 6, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_282": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 4, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_283": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 3, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_284": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 3, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_285": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 3, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_286": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 12, 
+			"y": 27
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_287": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 14, 
+			"y": 27
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_288": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 13, 
+			"y": 28
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_289": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 17, 
+			"y": 29
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_290": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 18, 
+			"y": 29
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_291": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 18, 
+			"y": 28
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_292": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 26, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_293": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 29, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_294": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 29, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_295": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 29, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_296": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 28, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_297": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 27, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_298": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 29, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_299": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 23, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/rad_300": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 5, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/rad_301": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 4, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/rad_302": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 8, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/rad_303": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 6, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/rad_304": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 8, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/rad_305": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 17, 
+			"y": 28
+		}, 
+		"/datum/overmap/event/rad_306": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 24, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/rad/minor_307": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 9, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/rad/minor_308": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 16, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/rad/minor_309": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 16, 
+			"y": 7
+		}, 
+		"/datum/overmap/event/rad/minor_310": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 21, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/rad/minor_311": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 30, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/rad/minor_312": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 28, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/rad/minor_313": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 26, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/rad/minor_314": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 28, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/rad/minor_315": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 29, 
+			"y": 27
+		}, 
+		"/datum/overmap/event/rad/minor_316": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 23, 
+			"y": 29
+		}, 
+		"/datum/overmap/event/rad/minor_317": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 12, 
+			"y": 30
+		}, 
+		"/datum/overmap/event/rad/minor_318": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 4, 
+			"y": 28
+		}, 
+		"/datum/overmap/event/rad/minor_319": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 6, 
+			"y": 30
+		}, 
+		"/datum/overmap/event/rad/minor_320": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 3, 
+			"y": 28
+		}, 
+		"/datum/overmap/event/rad/minor_321": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 2, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/rad/minor_322": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 6, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/rad/major_323": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 7, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/rad/major_324": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 7, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/rad/major_325": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 7, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/rad/major_326": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 27, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/rad/major_327": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 25, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/rad_328": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 20, 
+			"y": 28
+		}, 
+		"/datum/overmap/event/rad_329": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 19, 
+			"y": 28
+		}, 
+		"/datum/overmap/event/rad_330": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 24, 
+			"y": 25
+		}, 
+		"/datum/overmap/event/rad_331": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 17, 
+			"y": 7
+		}, 
+		"/datum/overmap/event/rad_332": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 12, 
+			"y": 7
+		}, 
+		"/datum/overmap/event/rad_333": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 11, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/rad/minor_334": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 10, 
+			"y": 7
+		}, 
+		"/datum/overmap/event/rad/minor_335": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 5, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/rad/minor_336": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 6, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/rad/minor_337": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 7, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/rad_338": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 8, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/rad_339": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 7, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/rad_340": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 21, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_341": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 24, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_342": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 4, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_343": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 3, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_344": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 4, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_345": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 3, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/electric/minor_346": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 9, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/electric/minor_347": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 4, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/electric/minor_348": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 4, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/electric/minor_349": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 3, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/electric/minor_350": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 7, 
+			"y": 9
+		}, 
+		"/datum/overmap/fluff/dud_351": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 6, 
+			"x": 3, 
+			"y": 6
+		}, 
+		"/datum/overmap/fluff/dud_352": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 29, 
+			"y": 17
+		}, 
+		"/datum/overmap/fluff/dud_353": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 4, 
+			"x": 10, 
+			"y": 29
+		}, 
+		"/datum/overmap/fluff/dud_354": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 4, 
+			"x": 11, 
+			"y": 15
+		}, 
+		"/datum/overmap/fluff/dud_355": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 6, 
+			"x": 23, 
+			"y": 10
+		}, 
+		"/datum/overmap/fluff/dud_356": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 6, 
+			"x": 7, 
+			"y": 10
+		}, 
+		"/datum/overmap/fluff/dud_357": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 9, 
+			"x": 5, 
+			"y": 23
+		}, 
+		"/datum/overmap/fluff/dud_358": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 9, 
+			"x": 21, 
+			"y": 7
+		}, 
+		"/datum/overmap/fluff/dud_359": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 9, 
+			"x": 29, 
+			"y": 5
+		}, 
+		"/datum/overmap/fluff/dud_360": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 6, 
+			"x": 27, 
+			"y": 5
+		}, 
+		"/datum/overmap/fluff/commsat/abandoned_361": {
+			"type": "/datum/overmap/fluff/commsat/abandoned", 
+			"dir": 6, 
+			"x": 26, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/meteor/debris_362": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 27, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_363": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 26, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_364": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 28, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_365": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 27, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_366": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 28, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_367": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 30, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/electric/minor_368": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 9, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/electric/minor_369": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 15, 
+			"y": 25
+		}, 
+		"/datum/overmap/event/electric/minor_370": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 13, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/electric/minor_371": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 21, 
+			"y": 25
+		}, 
+		"/datum/overmap/fluff/dud_372": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 6, 
+			"x": 26, 
+			"y": 18
+		}, 
+		"/datum/overmap/fluff/dud_373": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 8, 
+			"x": 8, 
+			"y": 23
+		}, 
+		"/datum/overmap/fluff/dud_374": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 8, 
+			"x": 26, 
+			"y": 13
+		}, 
+		"/datum/overmap/fluff/dud_375": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 6, 
+			"x": 9, 
+			"y": 8
+		}, 
+		"/datum/overmap/fluff/dud_376": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 28, 
+			"y": 25
+		}, 
+		"/datum/overmap/fluff/dud_377": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 8, 
+			"y": 19
+		}, 
+		"/datum/overmap/fluff/dud_378": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 5, 
+			"x": 26, 
+			"y": 16
+		}, 
+		"/datum/overmap/fluff/dud_379": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 5, 
+			"x": 5, 
+			"y": 6
+		}, 
+		"/datum/overmap/fluff/dud_380": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 8, 
+			"x": 8, 
+			"y": 8
+		}, 
+		"/datum/overmap/fluff/dud_381": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 10, 
+			"x": 19, 
+			"y": 6
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_382": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 27, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_383": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 27, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_384": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 1, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_385": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 5, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_386": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 6, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/rad/minor_387": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 4, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/rad/minor_388": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 7, 
+			"y": 25
+		}, 
+		"/datum/overmap/event/rad/minor_389": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 14, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/rad/major_390": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 16, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_391": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 25, 
+			"y": 23
+		}, 
+		"/datum/overmap/fluff/dud_392": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 20, 
+			"y": 18
+		}, 
+		"/datum/overmap/fluff/dud_393": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 23, 
+			"y": 19
+		}, 
+		"/datum/overmap/fluff/dud_394": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 28, 
+			"y": 11
+		}, 
+		"/datum/overmap/fluff/dud_395": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 16, 
+			"y": 26
+		}, 
+		"/datum/overmap/fluff/dud_396": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 1, 
+			"x": 14, 
+			"y": 3
+		}, 
+		"/datum/overmap/fluff/dud_397": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 1, 
+			"x": 2, 
+			"y": 25
+		}, 
+		"/datum/overmap/fluff/dud_398": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 1, 
+			"x": 13, 
+			"y": 19
+		}, 
+		"/datum/overmap/fluff/dud_399": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 6, 
+			"x": 11, 
+			"y": 23
+		}, 
+		"/datum/overmap/fluff/dud_400": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 10, 
+			"x": 21, 
+			"y": 18
+		}, 
+		"/datum/overmap/fluff/dud_401": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 14, 
+			"y": 4
+		}, 
+		"/datum/overmap/fluff/dud_402": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 3, 
+			"y": 18
+		}, 
+		"/datum/overmap/fluff/dud_403": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 3, 
+			"y": 9
+		}, 
+		"/datum/overmap/fluff/dud_404": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 29, 
+			"y": 29
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_405": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 24, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_406": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 2, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_407": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 4, 
+			"y": 4
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_408": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 4, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_409": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 10, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/rad_410": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 10, 
+			"y": 22
+		}, 
+		"/datum/overmap/event/rad_411": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 12, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/meteor/debris_412": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 9, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_413": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 9, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_414": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 20, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_415": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 14, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_416": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 12, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_417": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 16, 
+			"y": 25
+		}, 
+		"/datum/overmap/event/meteor/debris_418": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 17, 
+			"y": 25
+		}, 
+		"/datum/overmap/event/meteor/debris_419": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 14, 
+			"y": 25
+		}, 
+		"/datum/overmap/event/meteor/debris_420": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 14, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/meteor/debris_421": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 20, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris_422": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 23, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/debris_423": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 17, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris_424": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 12, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/meteor/debris_425": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 9, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_426": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 8, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_427": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 10, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_428": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 12, 
+			"y": 25
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_429": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 23, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/rad_430": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 24, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/rad_431": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 24, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/rad/minor_432": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 23, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/rad/minor_433": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 24, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/rad/minor_434": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 26, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/rad/minor_435": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 26, 
+			"y": 17
+		}, 
+		"/datum/overmap/fluff/dud_436": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 4, 
+			"x": 23, 
+			"y": 26
+		}, 
+		"/datum/overmap/fluff/dud_437": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 10, 
+			"x": 6, 
+			"y": 16
+		}, 
+		"/datum/overmap/fluff/dud_438": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 10, 
+			"x": 9, 
+			"y": 25
+		}, 
+		"/datum/overmap/fluff/dud_439": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 14, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/minor_440": {
+			"type": "/datum/overmap/event/meteor/minor", 
+			"x": 16, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/meteor/dust_441": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 17, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/electric/minor_442": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 14, 
+			"y": 20
+		}, 
+		"/datum/overmap/fluff/commsat/abandoned_443": {
+			"type": "/datum/overmap/fluff/commsat/abandoned", 
+			"dir": 2, 
+			"x": 11, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris_444": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 10, 
+			"y": 19
+		}, 
+		"/datum/overmap/fluff/satellite/abandoned_445": {
+			"type": "/datum/overmap/fluff/satellite/abandoned", 
+			"dir": 2, 
+			"x": 3, 
+			"y": 25
+		}, 
+		"/datum/overmap/fluff/satellite/abandoned_446": {
+			"type": "/datum/overmap/fluff/satellite/abandoned", 
+			"dir": 2, 
+			"x": 17, 
+			"y": 27
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_447": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 21, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_448": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 18, 
+			"y": 26
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_449": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 27, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_450": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 12, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_451": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 11, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_452": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 13, 
+			"y": 7
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_453": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 6, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_454": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 5, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_455": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 6, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/meteor/debris_456": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 7, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_457": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 5, 
+			"y": 24
+		}, 
+		"/datum/overmap/fluff/dud_458": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 4, 
+			"y": 29
+		}, 
+		"/datum/overmap/fluff/dud_459": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 4, 
+			"x": 24, 
+			"y": 7
+		}, 
+		"/datum/overmap/fluff/dud_460": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 16, 
+			"y": 6
+		}, 
+		"/datum/overmap/fluff/dud_461": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 6, 
+			"x": 13, 
+			"y": 13
+		}, 
+		"/datum/overmap/fluff/dud_462": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 8, 
+			"x": 30, 
+			"y": 10
+		}, 
+		"/datum/overmap/fluff/dud_463": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 8, 
+			"x": 1, 
+			"y": 16
+		}, 
+		"/datum/overmap/fluff/dud_464": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 2, 
+			"x": 4, 
+			"y": 14
+		}, 
+		"/datum/overmap/fluff/dud_465": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 9, 
+			"x": 30, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/electric/minor_466": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 22, 
+			"y": 23
+		}, 
+		"/datum/overmap/event/electric/minor_467": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 20, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/electric/minor_468": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 19, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/electric/minor_469": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 12, 
+			"y": 15
+		}, 
+		"/datum/overmap/fluff/satellite/abandoned_470": {
+			"type": "/datum/overmap/fluff/satellite/abandoned", 
+			"dir": 9, 
+			"x": 12, 
+			"y": 9
+		}, 
+		"/datum/overmap/fluff/satellite/abandoned_471": {
+			"type": "/datum/overmap/fluff/satellite/abandoned", 
+			"dir": 9, 
+			"x": 24, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_472": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 12, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_473": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 3, 
+			"y": 24
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_474": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 30, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/rad_475": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 27, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/rad_476": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 28, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/rad/minor_477": {
+			"type": "/datum/overmap/event/rad/minor", 
+			"x": 28, 
+			"y": 15
+		}, 
+		"/datum/overmap/fluff/dud_478": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 8, 
+			"x": 16, 
+			"y": 20
+		}, 
+		"/datum/overmap/fluff/dud_479": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 1, 
+			"x": 22, 
+			"y": 24
+		}, 
+		"/datum/overmap/fluff/dud_480": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 1, 
+			"x": 20, 
+			"y": 27
+		}, 
+		"/datum/overmap/fluff/dud_481": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 4, 
+			"x": 21, 
+			"y": 2
+		}, 
+		"/datum/overmap/fluff/dud_482": {
+			"type": "/datum/overmap/fluff/dud", 
+			"dir": 4, 
+			"x": 20, 
+			"y": 25
+		}, 
+		"/datum/overmap/fluff/satellite/abandoned_483": {
+			"type": "/datum/overmap/fluff/satellite/abandoned", 
+			"dir": 4, 
+			"x": 5, 
+			"y": 17
+		}, 
+		"/datum/overmap/fluff/commsat/abandoned_484": {
+			"type": "/datum/overmap/fluff/commsat/abandoned", 
+			"dir": 4, 
+			"x": 29, 
+			"y": 16
+		}, 
+		"/datum/overmap/fluff/satellite/abandoned_485": {
+			"type": "/datum/overmap/fluff/satellite/abandoned", 
+			"dir": 4, 
+			"x": 21, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/meteor/dust_486": {
+			"type": "/datum/overmap/event/meteor/dust", 
+			"x": 19, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/rad/major_487": {
+			"type": "/datum/overmap/event/rad/major", 
+			"x": 18, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/rad_488": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 15, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/rad_489": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 14, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/rad_490": {
+			"type": "/datum/overmap/event/rad", 
+			"x": 23, 
+			"y": 9
+		}
+	}
+}

@@ -252,7 +252,7 @@
 	return
 
 // modified from /turf/open/floor/engine/ex_act()
-/turf/open/floor/concrete/reinforced/ex_act(severity,target)
+/turf/open/floor/concrete/reinforced/ex_act(severity,target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	var/shielded = is_shielded()
 	contents_explosion(severity, target)
 	SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target)
@@ -288,8 +288,8 @@
 	return ..()
 
 /turf/open/floor/concrete/pavement
-	name = "pavement"
-	desc = "The hot, coarse, and somewhat pavement. Vehicles driven on this are generally quiter than on traditional concrete, and is prefered for roadways."
+	name = "strip of pavement"
+	desc = "Hot, coarse pavement. Preferred for roadways, as vehicles are generally quieter driven on this than on traditional concrete."
 	icon_state = "pavement_1"
 	base_icon_state = "pavement"
 	broken_states = null

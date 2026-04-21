@@ -39,6 +39,7 @@
 	icon_state = "whistle"
 	item_state = "whistle"
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_NECK
+	w_class = WEIGHT_CLASS_TINY
 	custom_price = 150
 	var/blown_sound = 'sound/misc/whistle.ogg'
 	actions_types = list(/datum/action/item_action/halt)

@@ -18,6 +18,8 @@
 	var/icon_wielded = FALSE						/// The icon that will be used when wielded
 	var/obj/item/offhand/offhand_item = null		/// Reference to the offhand created for the item
 	var/sharpened_increase = 0						/// The amount of increase recived from sharpening the item
+	var/attack_cooldown_wielded = null				/// The attack speed of the item when wielded
+	var/attack_cooldown_unwielded = null 			/// The attack speed of the item when unwielded
 
 /**
  * Two Handed component
@@ -31,9 +33,11 @@
  * * force_wielded (optional) The force setting when the item is wielded, do not use with force_multiplier
  * * force_unwielded (optional) The force setting when the item is unwielded, do not use with force_multiplier
  * * icon_wielded (optional) The icon to be used when wielded
+ * * attack_cooldown_wielded (optional) The attack cooldown when the item is wielded
+ * * attack_cooldown_unwielded (optional) The attack cooldown when the item is unwielded
  */
 /datum/component/two_handed/Initialize(require_twohands=FALSE, wieldsound=FALSE, unwieldsound=FALSE, attacksound=FALSE, \
-										force_multiplier=0, force_wielded=null, force_unwielded=null, icon_wielded=FALSE)
+										force_multiplier=0, force_wielded=null, force_unwielded=null, icon_wielded=FALSE, attack_cooldown_wielded=null, attack_cooldown_unwielded=null)
 	if(!isitem(parent))
 		return COMPONENT_INCOMPATIBLE
 
@@ -45,10 +49,12 @@
 	src.force_wielded = force_wielded
 	src.force_unwielded = force_unwielded
 	src.icon_wielded = icon_wielded
+	src.attack_cooldown_wielded = attack_cooldown_wielded
+	src.attack_cooldown_unwielded = attack_cooldown_unwielded
 
 // Inherit the new values passed to the component
 /datum/component/two_handed/InheritComponent(datum/component/two_handed/new_comp, original, require_twohands, wieldsound, unwieldsound, \
-											force_multiplier, force_wielded, force_unwielded, icon_wielded)
+											force_multiplier, force_wielded, force_unwielded, icon_wielded, attack_cooldown_wielded, attack_cooldown_unwielded)
 	if(!original)
 		return
 	if(require_twohands)
@@ -67,6 +73,10 @@
 		src.force_unwielded = force_unwielded
 	if(icon_wielded)
 		src.icon_wielded = icon_wielded
+	if(attack_cooldown_wielded)
+		src.attack_cooldown_wielded = attack_cooldown_wielded
+	if(attack_cooldown_unwielded)
+		src.attack_cooldown_unwielded = attack_cooldown_unwielded
 
 // register signals withthe parent item
 /datum/component/two_handed/RegisterWithParent()
@@ -157,6 +167,8 @@
 		parent_item.force = force_wielded
 	if(sharpened_increase)
 		parent_item.force += sharpened_increase
+	if(attack_cooldown_wielded)
+		parent_item.attack_cooldown = attack_cooldown_wielded
 	parent_item.name = "[parent_item.name] (Wielded)"
 	parent_item.update_appearance()
 
@@ -202,6 +214,8 @@
 		parent_item.force /= force_multiplier
 	else if(!isnull(force_unwielded))
 		parent_item.force = force_unwielded
+	if(attack_cooldown_unwielded)
+		parent_item.attack_cooldown = attack_cooldown_unwielded
 
 	// update the items name to remove the wielded status
 	var/sf = findtext(parent_item.name, " (Wielded)", -10) // 10 == length(" (Wielded)")

@@ -1,7 +1,7 @@
 
 // This is literally the worst possible cheap tablet
 /obj/item/modular_computer/tablet/preset/cheap
-	desc = "A low-end tablet often seen among low-ranking Nanotrasen personnel."
+	desc = "A low-end tablet widely seen among spacer crews."
 
 /obj/item/modular_computer/tablet/preset/cheap/Initialize()
 	. = ..()

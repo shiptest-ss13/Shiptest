@@ -72,10 +72,10 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena
 
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	courierbag = /obj/item/storage/backpack/messenger/sec
+	backpack = /obj/item/storage/backpack/security/gezena
+	satchel = /obj/item/storage/backpack/satchel/sec/gezena
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/security/sapper
@@ -83,10 +83,6 @@
 	id_assignment = "Marine Pioneer"
 
 	neck = /obj/item/clothing/neck/cloak/gezena/engi
-	backpack = /obj/item/storage/backpack/industrial
-	satchel = /obj/item/storage/backpack/satchel/eng
-	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
-	courierbag = /obj/item/storage/backpack/messenger/engi
 
 /datum/outfit/job/gezena/cmo
 	name = "PGF - Medical Officer"
@@ -113,10 +109,10 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena/command
 
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	courierbag = /obj/item/storage/backpack/messenger/sec
+	backpack = /obj/item/storage/backpack/security/gezena
+	satchel = /obj/item/storage/backpack/satchel/sec/gezena
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/hop
@@ -141,6 +137,7 @@
 	uniform = /obj/item/clothing/under/gezena/captain
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/captain
+	box = /obj/item/storage/box/survival/pgf/command
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap
@@ -230,10 +227,10 @@
 	mask = /obj/item/clothing/mask/breath/pgfmask
 	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	courierbag = /obj/item/storage/backpack/messenger/sec
+	backpack = /obj/item/storage/backpack/security/gezena
+	satchel = /obj/item/storage/backpack/satchel/sec/gezena
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/security/sapper/geared
@@ -251,10 +248,10 @@
 	mask = /obj/item/clothing/mask/breath/pgfmask
 	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	courierbag = /obj/item/storage/backpack/messenger/sec
+	backpack = /obj/item/storage/backpack/security/gezena
+	satchel = /obj/item/storage/backpack/satchel/sec/gezena
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/hos/geared
@@ -273,10 +270,10 @@
 	mask = /obj/item/clothing/mask/breath/pgfmask
 	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	courierbag = /obj/item/storage/backpack/messenger/sec
+	backpack = /obj/item/storage/backpack/security/gezena
+	satchel = /obj/item/storage/backpack/satchel/sec/gezena
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/paramedic

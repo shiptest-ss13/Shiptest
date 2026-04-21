@@ -349,7 +349,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
 
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	default_ammo_type = /obj/item/ammo_box/magazine/m22lr_himehabu
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m22lr_himehabu,
@@ -385,6 +385,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 		)
 	)
 
+	spread = -2
 	recoil = -2
 	recoil_unwielded = -2
 	spread_unwielded = 0
@@ -611,8 +612,8 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	manufacturer = MANUFACTURER_SCARBOROUGH
 	spread = -5
 	spread_unwielded = 35
-	recoil = 2
-	recoil_unwielded = 10
+	recoil = 1
+	recoil_unwielded = 5
 	wield_slowdown = LIGHT_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
@@ -846,6 +847,10 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 	wield_delay = 0.9 SECONDS //ditto
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	refused_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight
+		)
 	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -1098,20 +1103,31 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	tac_reloads = FALSE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
-
 /obj/item/ammo_box/magazine/internal/mako
 	name = "mako internal magazine"
 	ammo_type = /obj/item/ammo_casing/caseless/rocket/a70mm
 	caliber = "70mm"
 	max_ammo = 4
 
+/obj/item/gun/ballistic/rocketlauncher/mako/light
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/mako/light
+
+/obj/item/ammo_box/magazine/internal/mako/light
+	ammo_type = /obj/item/ammo_casing/caseless/rocket/a70mm/light
+
 /obj/item/ammo_casing/caseless/rocket/a70mm
 	name = "\improper M-KO-9HE"
 	desc = "A 70mm High Explosive rocket. Fire at mech and pray."
 	icon_state = "srm-8"
 	caliber = "70mm"
-	projectile_type = /obj/projectile/bullet/a84mm_he
+	projectile_type = /obj/projectile/bullet/a84mm/he
 	auto_rotate = FALSE
+
+/obj/item/ammo_casing/caseless/rocket/a70mm/light
+	name = "\improper M-KO-9LE"
+	icon_state = "srm-8-light"
+	desc = "A 70mm Light Explosive rocket. For when you don't want to cause *too* much collateral damage."
+	projectile_type = /obj/projectile/bullet/a84mm/he/weak
 
 /obj/item/ammo_casing/caseless/rocket/a70mm/hedp
 	name = "\improper M-KO-9HEDP"

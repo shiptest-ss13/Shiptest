@@ -1933,10 +1933,12 @@
 /area/ship/hallway/aft)
 "vA" = (
 /obj/docking_port/stationary{
-	dwidth = 15;
-	height = 15;
-	width = 30;
-	dir = 2
+	dwidth = 20;
+	height = 31;
+	width = 41;
+	dir = 2;
+	disable_on_owner_ship_dock = 1;
+	dheight = 1
 	},
 /turf/template_noop,
 /area/template_noop)

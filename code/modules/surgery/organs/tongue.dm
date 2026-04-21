@@ -25,6 +25,7 @@
 		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/aphasia,
+		/datum/language/league_kalixcian,
 	))
 
 /obj/item/organ/tongue/Initialize(mapload)
@@ -98,11 +99,14 @@
 		/datum/language/galactic_common,
 		/datum/language/gezena_kalixcian,
 		/datum/language/zohil_kalixcian,
-		/datum/language/codespeak,
-		/datum/language/monkey,
-		/datum/language/aphasia,
+		/datum/language/teceti_unified,
+		/datum/language/solarian_international,
 		/datum/language/moffic,
-		/datum/language/ratvar
+		/datum/language/monkey,
+		/datum/language/ratvar,
+		/datum/language/codespeak,
+		/datum/language/aphasia,
+		/datum/language/league_kalixcian,
 	))
 
 /obj/item/organ/tongue/bone/Initialize()
@@ -165,6 +169,7 @@
 		/datum/language/galactic_common,
 		/datum/language/gezena_kalixcian,
 		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
 		/datum/language/moffic,
@@ -189,6 +194,7 @@
 		/datum/language/gezena_kalixcian,
 		/datum/language/zohil_kalixcian,
 		/datum/language/teceti_unified,
+		/datum/language/league_kalixcian,
 		/datum/language/solarian_international,
 		/datum/language/moffic,
 		/datum/language/monkey,
@@ -208,6 +214,7 @@
 		/datum/language/galactic_common,
 		/datum/language/gezena_kalixcian,
 		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
 		/datum/language/moffic,
@@ -230,6 +237,7 @@
 		/datum/language/galactic_common,
 		/datum/language/gezena_kalixcian,
 		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
 		/datum/language/moffic,
@@ -253,6 +261,7 @@
 		/datum/language/galactic_common,
 		/datum/language/gezena_kalixcian,
 		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/codespeak,
 		/datum/language/monkey,
 		/datum/language/aphasia,
@@ -294,6 +303,7 @@
 		/datum/language/galactic_common,
 		/datum/language/gezena_kalixcian,
 		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
 		/datum/language/moffic,
@@ -429,6 +439,7 @@
 		/datum/language/galactic_common,
 		/datum/language/gezena_kalixcian,
 		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
 		/datum/language/moffic,

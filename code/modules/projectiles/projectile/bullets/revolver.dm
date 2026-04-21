@@ -170,7 +170,7 @@
 
 /obj/projectile/bullet/a4570/explosive/on_hit(atom/target, blocked = FALSE)
 	..()
-	explosion(target, -1, 0, 1)
+	explosion(target, -1, 0, 1, light_dam = 20, light_item_dam = 20)
 	return BULLET_ACT_HIT
 
 // 44 Short (Roumain & Shadow)
