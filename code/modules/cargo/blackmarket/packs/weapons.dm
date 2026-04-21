@@ -448,7 +448,7 @@
 
 /datum/blackmarket_item/weapon/guncase/bockadam
 	name = "SG-60db Bockadam Combat Shotgun"
-	desc = "Some Ramzi tinkrers have been playing around with the idea of making a Bulldog fire in two-round bursts - twice the 12 gauge for the same amount of gun. It wears like hell, but no one wants to be on the recieving end."
+	desc = "Some Ramzi tinkerers have been playing around with the idea of making a Bulldog fire in two-round bursts - twice the 12 gauge for the same amount of gun. It wears like hell, but no one wants to be on the receiving end."
 	item = /obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
 
 	cost_min = 3500

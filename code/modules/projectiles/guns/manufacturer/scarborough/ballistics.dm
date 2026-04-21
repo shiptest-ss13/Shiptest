@@ -1020,7 +1020,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
 	name = "SG-60db \"Bockadam\""
-	desc = "A bullpup combat shotgun from Marauder reserves that's been heavily modified by the Ramzi Clique, sporting a sawn-down barrel and a two-shot reciever. Reliability has been traded for deadly lethality in tight quarters."
+	desc = "A bullpup combat shotgun from Marauder reserves that's been heavily modified by the Ramzi Clique, sporting a sawn-down barrel and a two-shot receiver. Reliability has been traded for deadly lethality in tight quarters."
 
 	icon_state = "bockadam"
 	item_state = "bockadam"
