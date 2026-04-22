@@ -1174,18 +1174,6 @@
 	pixel_x = 8;
 	pixel_y = -19
 	},
-/obj/item/clothing/head/helmet/gezena/navy{
-	pixel_x = -7;
-	pixel_y = 11
-	},
-/obj/item/clothing/head/helmet/gezena/navy{
-	pixel_x = 0;
-	pixel_y = 11;
-	},
-/obj/item/clothing/head/helmet/gezena/navy{
-	pixel_x = 7;
-	pixel_y = 11
-	},
 /obj/item/clothing/suit/armor/gezena/navy{
 	pixel_x = -8;
 	pixel_y = -2
@@ -1199,7 +1187,7 @@
 	pixel_y = -2
 	},
 /obj/item/storage/belt/sabre/pgf{
-	pixel_x = -8;
+	pixel_x = 10;
 	pixel_y = -7
 	},
 /obj/item/storage/belt/sabre/pgf{
@@ -1207,8 +1195,20 @@
 	pixel_y = -7
 	},
 /obj/item/storage/belt/sabre/pgf{
-	pixel_x = 10;
+	pixel_x = -8;
 	pixel_y = -7
+	},
+/obj/item/clothing/head/helmet/gezena/navy{
+	pixel_x = -7;
+	pixel_y = 11
+	},
+/obj/item/clothing/head/helmet/gezena/navy{
+	pixel_x = 0;
+	pixel_y = 11
+	},
+/obj/item/clothing/head/helmet/gezena/navy{
+	pixel_x = 7;
+	pixel_y = 11
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -3420,10 +3420,6 @@
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
 /obj/item/clothing/glasses/safety{
 	pixel_y = 7
 	},
@@ -3442,6 +3438,22 @@
 	},
 /obj/effect/turf_decal/siding/black/corner{
 	dir = 4
+	},
+/obj/item/clothing/mask/breath/pgfmask/navy{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/item/clothing/mask/breath/pgfmask/navy{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/item/clothing/mask/breath/pgfmask/navy{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/item/clothing/mask/breath/pgfmask/navy{
+	pixel_x = 0;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
