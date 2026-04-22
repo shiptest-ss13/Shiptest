@@ -47,7 +47,7 @@
 	/// Assoc list of atoms "bound" to this mission; each atom is associated with a 2-element list. The first
 	/// entry in that list is a bool that determines if the mission should fail when the atom qdeletes; the second
 	/// is a callback to be invoked upon the atom's qdeletion.
-	var/list/atom/movable/bound_atoms
+	var/list/list/atom/movable/bound_atoms
 	var/bound_left_location = FALSE
 
 	var/blackbox_prefix = ""
