@@ -56,6 +56,9 @@
 		"Careful on your approach, there's a storm coming in.",
 	)
 
+	json = '_maps/sectors/ecbatana_starsystem.json'
+	generator_type = OVERMAP_GENERATOR_JSON
+	has_outpost = FALSE
 
 
 /datum/overmap_star_system/safezone/arrowsong
