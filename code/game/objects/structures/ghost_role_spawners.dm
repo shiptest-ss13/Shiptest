@@ -47,7 +47,7 @@
 	mob_name = "an ash walker"
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "large_egg"
-	mob_species = /datum/species/lizard //WS Edit - Kobold
+	mob_species = /datum/species/lizard
 	outfit = /datum/outfit/ashwalker
 	roundstart = FALSE
 	death = FALSE
