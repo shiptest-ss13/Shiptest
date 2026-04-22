@@ -358,6 +358,10 @@ SUBSYSTEM_DEF(overmap)
 	var/datum/overmap/outpost/outpost_of_the_day
 	var/triggering
 
+/datum/eor_outpost_picker/New()
+	. = ..()
+	call_recall()
+
 /**
  * Plays an announcement, closes an outpost, and makes the main outpost system jump-to-able
  */
