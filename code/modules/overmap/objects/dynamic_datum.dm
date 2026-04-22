@@ -266,7 +266,7 @@
 		if(12)
 			. += "[capitalize(pick(GLOB.adjectives))] [pick_planet_name()]"
 
-/datum/overmap/dynamic/proc/pick_planet_name()
+/proc/pick_planet_name()
 	if(!length(GLOB.planet_names))
 		stack_trace("We ran out of planet names! Consider running shorter rounds or expanding the namelist.")
 		GLOB.planet_names = world.file2list("strings/planet_names.txt")

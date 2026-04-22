@@ -26,12 +26,18 @@
 		return FALSE
 	return ..()
 
-/*
+
 /datum/round_event_control/cataclysm_broadcast/end_of_day
 	name = "Cataclysm Planet End of Day Broadcast"
 	typepath = /datum/round_event/cataclysm_broadcast/end_of_day
-	earliest_start = 3 HOURS
-*/
+	earliest_start = 1 HOURS
+
+/datum/round_event_control/cataclysm_broadcast/end_of_day/can_spawn_event(players_amt, gamemode)
+	// Dont let the event trigger if the round hasnt ended or soon to end.
+	if((SSticker.current_state != GAME_STATE_FINISHED) && (SSshuttle.jump_mode == BS_JUMP_IDLE))
+		return FALSE
+	return ..()
+
 
 /datum/round_event/cataclysm_broadcast
 	end_when = 50
@@ -55,13 +61,14 @@
 		target_outpost.broadcast_message(target_turf, "[planet_to_name]...")
 		planets_to_name -= planet_to_name
 
-/*
+
 /datum/round_event/cataclysm_broadcast/end_of_day
 
 /datum/round_event/cataclysm_broadcast/end_of_day/start()
 	target_outpost.broadcast_message(target_turf, "As Cataclysm Day comes to a close, we take a moment to honor the living worlds, which host the hopes of life in our Galaxy. May life propser forever more on....")
 	return
-*/
+
+
 /obj/item/storage/box/papersack/srm_rations/PopulateContents()
 	new /obj/effect/spawner/random/food_or_drink/srm_rations(src)
 

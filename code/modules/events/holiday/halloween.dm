@@ -1,26 +1,5 @@
 //Lore Document for Mexapix: https://hackmd.io/D-9st3kxThm93WlUY7gKig
 
-/*
-/datum/round_event_control/spooky
-	name = "Mexapix"
-	holidayID = HALLOWEEN
-	typepath = /datum/round_event/spooky
-	weight = -1							//forces it to be called, regardless of weight
-	max_occurrences = 1
-	earliest_start = 0 MINUTES
-	category = EVENT_CATEGORY_HOLIDAY
-
-/datum/round_event/spooky/start()
-	..()
-	for(var/i in GLOB.human_list)
-		var/mob/living/carbon/human/human = i
-		var/obj/item/storage/backpack/backpack = locate() in human.contents
-		if(backpack)
-			new /obj/item/storage/box/papersack/mexapix_candy(backpack)
-
-/datum/round_event/spooky/announce(fake)
-	priority_announce("Happy Mexapix. Read up about it <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Here!</a>")
-*/
 
 /obj/item/food/cookie/sugar/spookyskull
 	name = "skull cookie"

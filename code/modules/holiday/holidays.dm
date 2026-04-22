@@ -396,7 +396,7 @@
 	drone_hat = /obj/item/clothing/head/that
 
 /datum/holiday/halloween
-	name = HALLOWEEN
+	name = MEXAPIX
 	begin_day = 28
 	begin_month = OCTOBER
 	end_day = 2

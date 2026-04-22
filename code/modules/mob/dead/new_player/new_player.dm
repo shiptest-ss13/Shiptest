@@ -357,8 +357,8 @@
 	if(!GLOB.holidays)
 		return
 
-	if(GLOB.holidays[HALLOWEEN])
-		var/datum/holiday/holiday_datum = GLOB.holidays[HALLOWEEN]
+	if(GLOB.holidays[MEXAPIX])
+		var/datum/holiday/holiday_datum = GLOB.holidays[MEXAPIX]
 		to_chat(humanc, span_big("Happy Halloween! You can choose which holiday your character celebrates."))
 		to_chat(humanc, span_notice("Read up about Mexapix <a href=\"[holiday_datum.read_up_link]\">Here!</a><br>Dia de Los Muretos does not have lore atm!"))
 
