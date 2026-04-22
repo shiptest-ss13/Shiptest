@@ -1,6 +1,5 @@
 /obj/item/ammo_box/magazine/ammo_stack/prefilled
 	var/load_override //if we want the stack to spawn with a certain amount of ammo for whatever reason
-	var/obj/item/ammo_casing/set_ammo
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/Initialize(mapload, amt, to_copy)
 	if(amt)

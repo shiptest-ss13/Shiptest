@@ -55,7 +55,7 @@
 	vis_contents += item_to_plate
 	item_to_plate.flags_1 |= IS_ONTOP_1
 	RegisterSignal(item_to_plate, COMSIG_MOVABLE_MOVED, PROC_REF(ItemMoved))
-	RegisterSignal(item_to_plate, COMSIG_PARENT_QDELETING, PROC_REF(ItemMoved))
+	RegisterSignal(item_to_plate, COMSIG_QDELETING, PROC_REF(ItemMoved))
 	///ovens update
 	update_appearance()
 
@@ -63,7 +63,7 @@
 /obj/item/plate/proc/ItemRemovedFromPlate(obj/item/removed_item)
 	removed_item.flags_1 &= ~IS_ONTOP_1
 	vis_contents -= removed_item
-	UnregisterSignal(removed_item, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING))
+	UnregisterSignal(removed_item, list(COMSIG_MOVABLE_MOVED, COMSIG_QDELETING))
 
 ///This proc is called by signals that remove the food from the plate.
 /obj/item/plate/proc/ItemMoved(obj/item/moved_item, atom/OldLoc, Dir, Forced)

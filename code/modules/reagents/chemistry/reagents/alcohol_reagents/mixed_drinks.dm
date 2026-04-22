@@ -39,9 +39,8 @@
 	boozepwr = 80
 	quality = DRINK_GOOD
 	overdose_threshold = 60
-	addiction_threshold = 30
 	taste_description = "oily syrup"
-	glass_icon_state = "vimukti_glass"
+	glass_icon_state = "thirteen_loko_glass"
 	glass_name = "glass of Vimukti"
 	glass_desc = "A spiritually-taxing drink from the Shoal. Numerous warnings about this drink tell you to not drink too much, lest you incur some sort of wrath... or an overdose of a psychoactive lichen."
 
@@ -352,6 +351,8 @@
 /datum/reagent/consumable/ethanol/beepsky_smash/on_mob_metabolize(mob/living/carbon/M)
 	if(HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
 		metabolization_rate = 0.8
+	if(!M.mind)
+		return ..()
 	if(!HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM))
 		B = new()
 		M.gain_trauma(B, TRAUMA_RESILIENCE_ABSOLUTE)
@@ -359,6 +360,8 @@
 
 /datum/reagent/consumable/ethanol/beepsky_smash/on_mob_life(mob/living/carbon/M)
 	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	if(!M.mind)
+		return ..()
 	if(HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM))
 		M.adjustStaminaLoss(-10, 0)
 		if(prob(20))
@@ -775,7 +778,7 @@
 	color = "#2E6671" // rgb: 46, 102, 113
 	boozepwr = 90
 	quality = DRINK_GOOD
-	taste_description = "anti-Nanotrasen sentiments"
+	taste_description = "anti-Makosso-Warra sentiments"
 	glass_icon_state = "syndicatebomb"
 	glass_name = "Gorlex Surprise"
 	glass_desc = "Infamously named after the accusations of Syndicate-led bombings of space installations. It's a blast!"
@@ -965,7 +968,7 @@
 	metabolization_rate = 1 * REAGENTS_METABOLISM
 	glass_icon_state = "neurotoxinglass"
 	glass_name = "Neurotoxin"
-	glass_desc = "The story goes that this drink was made on a bet between Cybersun chemists, debating if a drink could be used to put down a suspected Nanotrasen spy. While morphine wasn't <i>supposed</i> to be used, it put them down all the same."
+	glass_desc = "The story goes that this drink was made on a bet between Cybersun chemists, debating if a drink could be used to put down a suspected Makosso-Warra spy. While morphine wasn't <i>supposed</i> to be used, it put them down all the same."
 
 /datum/reagent/consumable/ethanol/neurotoxin/proc/pickt()
 	return (pick(TRAIT_PARALYSIS_L_ARM,TRAIT_PARALYSIS_R_ARM,TRAIT_PARALYSIS_R_LEG,TRAIT_PARALYSIS_L_LEG))
@@ -1061,7 +1064,7 @@
 	taste_description = "an invigorating bitter freshness which suffuses your being; you can take on anyone who messes with your vessel"
 	glass_icon_state = "quadruple_sec"
 	glass_name = "Quadruple Sec"
-	glass_desc = "A glass of Quadruple Sec. Popularized for being a mixed drink of choice across multiple independent security agencies, and notably among Nanotrasen's internal security culture. It's not recommended to drink while manning a vessel, though!"
+	glass_desc = "A glass of Quadruple Sec. Popularized for being a mixed drink of choice across multiple independent security agencies, and notably among Vigilitas's security staff. It's not recommended to drink while manning a vessel, though!"
 
 /datum/reagent/consumable/ethanol/quintuple_sec
 	name = "Quintuple Sec"
@@ -1615,7 +1618,7 @@
 	taste_description = "thick, nut-flavored milk with a boozy kick"
 	glass_icon_state = "muddersmilk"
 	glass_name = "Miner's Milk"
-	glass_desc = "All the protein, vitamins and carbs of two full ration packs, plus 15% alcohol. Created by Nanotrasen's Mining and Exploration League, and often still enjoyed in the New Gorlex Republic."
+	glass_desc = "All the protein, vitamins and carbs of two full ration packs, plus 15% alcohol. Created by N+S's mining and survey corps, and often still enjoyed in the New Gorlex Republic."
 
 /datum/reagent/consumable/ethanol/mudders_milk/on_mob_life(mob/living/carbon/M)
 	if(prob(1))
@@ -1739,7 +1742,7 @@
 	glass_desc = "A spin on the classic. Artists and street fighters swear by this stuff."
 
 /datum/reagent/consumable/ethanol/out_of_lime/expose_mob(mob/living/carbon/human/consumer, method=INGEST, reac_volume)
-	if(method == INGEST || method == TOUCH || method == SMOKE)
+	if(method == INGEST || method == TOUCH || method == INHALE)
 		if(istype(consumer))
 			consumer.hair_color = pick("0ad","a0f","f73","d14","0b5","fc2","084","05e","d22","fa0")
 			consumer.facial_hair_color = pick("0ad","a0f","f73","d14","0b5","fc2","084","05e","d22","fa0")
@@ -1771,7 +1774,7 @@
 /datum/reagent/consumable/ethanol/bullethell/on_mob_life(mob/living/carbon/M) //rarely sets you on fire
 	if (prob(5))
 		M.adjust_fire_stacks(1)
-		M.IgniteMob()
+		M.ignite_mob()
 	..()
 
 /datum/reagent/consumable/ethanol/homesick
@@ -1789,24 +1792,26 @@
 	var/drink_message = pick("You think of what you've left behind...", "You think of the people who miss you...", "You think of where you're from...")
 	to_chat(M, span_notice("[drink_message]"))
 
-/datum/reagent/consumable/ethanol/eudamonia
-	name = "Eudamonia"
+/datum/reagent/consumable/ethanol/eudaimonia
+	name = "Eudaimonia"
 	description = "A fleeting, virtous drink that inspires vigorous debate."
 	color = "#6884a1"
 	boozepwr = 40
 	quality = DRINK_VERYGOOD
 	overdose_threshold = 40
 	taste_description = "a flourishing alcoholic bloom"
-	glass_name = "Eudamonia"
+	glass_name = "Eudaimonia"
 	glass_desc = "A drink popular in academic circles, supposedly made with a distilled virtue. Most published recipes insist to use an antidepressant."
 
-/datum/reagent/consumable/ethanol/eudamonia/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/eudaimonia/on_mob_life(mob/living/carbon/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	if(!mood)
+		return ..()
 	if(mood.sanity <= SANITY_NEUTRAL)
 		mood.setSanity(min(mood.sanity+5, SANITY_GREAT))
 	..()
 
-/datum/reagent/consumable/ethanol/eudamonia/overdose_process(mob/living/M)
+/datum/reagent/consumable/ethanol/eudaimonia/overdose_process(mob/living/M)
 	//don't mix uppers and downers, kids.
 	if(prob(6) && iscarbon(M))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4*REM)

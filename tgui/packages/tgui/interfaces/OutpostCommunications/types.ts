@@ -21,9 +21,8 @@ export type Mission = {
   name: string;
   desc: string;
   progressStr: string;
+  progressPer: number;
   actStr: string;
   value: number;
   remaining: number;
-  duration: number;
-  timeStr: string;
 };

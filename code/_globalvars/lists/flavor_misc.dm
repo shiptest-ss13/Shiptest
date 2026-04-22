@@ -13,8 +13,8 @@ GLOBAL_LIST_EMPTY(underwear_list)		//stores /datum/sprite_accessory/underwear in
 GLOBAL_LIST_EMPTY(undershirt_list) 	//stores /datum/sprite_accessory/undershirt indexed by name
 	//Socks
 GLOBAL_LIST_EMPTY(socks_list)		//stores /datum/sprite_accessory/socks indexed by name
-	//Body Sizes
-GLOBAL_LIST_INIT(body_sizes, list("Normal" = BODY_SIZE_NORMAL, "Short" = BODY_SIZE_SHORT, "Tall" = BODY_SIZE_TALL))
+	//Height Filter names
+GLOBAL_LIST_INIT(height_filters, list("Shorter" = HUMAN_HEIGHT_SHORTEST, "Short" = HUMAN_HEIGHT_SHORT, "Normal" = HUMAN_HEIGHT_MEDIUM, "Tall" = HUMAN_HEIGHT_TALL, "Taller" = HUMAN_HEIGHT_TALLER))
 	//lizard Bits (all datum lists indexed by name)
 GLOBAL_LIST_EMPTY(body_markings_list)
 GLOBAL_LIST_EMPTY(tails_list_lizard)
@@ -39,6 +39,7 @@ GLOBAL_LIST_EMPTY(squid_face_list)
 GLOBAL_LIST_EMPTY(ipc_screens_list)
 GLOBAL_LIST_EMPTY(ipc_antennas_list)
 GLOBAL_LIST_EMPTY(ipc_tail_list)
+GLOBAL_LIST_EMPTY(alternative_body_list)
 GLOBAL_LIST_EMPTY(ipc_chassis_list)
 GLOBAL_LIST_INIT(ipc_brain_list, list("Posibrain", "Man-Machine Interface"))
 GLOBAL_LIST_EMPTY(spider_legs_list)
@@ -132,7 +133,7 @@ GLOBAL_LIST_INIT(ai_core_display_screens, sortList(list(
 	"Matrix",
 	"Monochrome",
 	"Murica",
-	"Nanotrasen",
+	"Makosso-Warra",
 	"Not Malf",
 	"President",
 	"Random",

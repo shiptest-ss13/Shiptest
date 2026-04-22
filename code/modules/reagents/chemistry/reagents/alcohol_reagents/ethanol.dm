@@ -73,7 +73,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(!isliving(M))
 		return
 
-	if(method in list(TOUCH, SMOKE, VAPOR, PATCH))
+	if(method in list(TOUCH, VAPOR, PATCH))
 		M.adjust_fire_stacks(reac_volume / 15)
 
 		if(iscarbon(M))

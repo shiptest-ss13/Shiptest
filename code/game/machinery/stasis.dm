@@ -111,7 +111,7 @@
 	var/freq = rand(24750, 26550)
 	playsound(src, 'sound/effects/spray.ogg', 5, TRUE, 2, frequency = freq)
 	target.apply_status_effect(STATUS_EFFECT_STASIS, STASIS_MACHINE_EFFECT)
-	target.ExtinguishMob()
+	target.extinguish_mob()
 	set_active_power()
 
 /obj/machinery/stasis/proc/thaw_them(mob/living/target)

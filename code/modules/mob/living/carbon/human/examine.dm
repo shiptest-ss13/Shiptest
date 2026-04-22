@@ -238,17 +238,6 @@
 			else
 				msg += "<b>[t_He] [t_has] severe cellular damage!</b>\n"
 
-
-	switch(fire_stacks)
-		if(1 to INFINITY)
-			msg += "[t_He] [t_is] covered in something flammable.\n"
-		if(0)
-			EMPTY_BLOCK_GUARD
-		if(-15 to -1)
-			msg += "[t_He] look[p_s()] a little soaked.\n"
-		if(-20 to -15)
-			msg += "[t_He] look[p_s()] completely sopping.\n"
-
 	if(pulledby && pulledby.grab_state)
 		msg += "[t_He] [t_is] restrained by [pulledby]'s grip.\n"
 
@@ -267,9 +256,9 @@
 		apparent_blood_volume -= 150 // enough to knock you down one tier
 	switch(apparent_blood_volume)
 		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
-			msg += "[t_He] [t_has] looks a little pale.\n"
+			msg += "[t_He] looks a little pale.\n"
 		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-			msg += "<b>[t_He] look[p_s()] like [t_he] is going to faint.</b>\n"
+			msg += "<b>[t_He] look[p_s()] like [t_he] [t_is] going to faint.</b>\n"
 		if(-INFINITY to BLOOD_VOLUME_BAD)
 			msg += span_deadsay("<b>[t_He] looks drained of blood...</b>\n")
 
@@ -434,7 +423,7 @@
 			. += flavor
 	. += "</span>"
 
-	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
+	SEND_SIGNAL(src, COMSIG_ATOM_EXAMINE, user, .)
 
 /**
  * Shows any and all examine text related to any status effects the user has.

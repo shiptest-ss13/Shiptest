@@ -15,25 +15,20 @@
 	var/datum/overmap/outpost/target_outpost
 
 /datum/round_event/high_priority_mission/announce()
-	priority_announce("We have issued a high-priority mission. Details have been sent to all consoles.", "[target_outpost] Mission Program", null, sender_override = "[target_outpost] Communications")
+	priority_announce("[target_outpost.main_template.outpost_administrator] has issued a series of high priority missions. Details are available at [target_outpost].", "[target_outpost] Mission Program", null, sender_override = "[target_outpost] Communications")
 
 /datum/round_event/high_priority_mission/setup()
 	target_outpost = pick(SSovermap.outposts)
-	var/list/pickable_missions = list()
-	for(var/datum/mission/ruin/active_mission in SSmissions.active_ruin_missions)
-		if(active_mission.dibs_string)
-			continue
-		pickable_missions.Add(active_mission)
-	for(var/datum/mission/ruin/inactive_mission in SSmissions.inactive_ruin_missions)
-		pickable_missions.Add(inactive_mission)
-	if(pickable_missions.len)
-		priority_mission = pick(pickable_missions)
-		if(priority_mission.active != TRUE)
-			priority_mission.start_mission()
-		message_admins("[priority_mission][ADMIN_VV(priority_mission)] has been selected for [src]")
+	for(var/i = 0, i<3, i++)
+		var/high_priority = SSmissions.get_weighted_mission_type()
+		var/datum/mission/M = new high_priority(target_outpost)
+
+		LAZYADD(target_outpost.missions, M)
+		M.value *= 2
+		M.name = "HIGH PRIORITY - [M.name]"
+		M.high_priority = TRUE
+		log_game("[priority_mission][ADMIN_VV(priority_mission)] was selected for [src]")
 
 /datum/round_event/high_priority_mission/start()
-	if(priority_mission)
-		notify_ghosts("[priority_mission] value has been doubled")
-		priority_mission.name = "HIGH PRIORITY - [priority_mission.name]"
-		priority_mission.value = priority_mission.value * 2
+	notify_ghosts("High priority missions are being announced by the [target_outpost]!")
+

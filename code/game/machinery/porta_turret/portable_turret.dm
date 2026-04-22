@@ -35,11 +35,11 @@
 	/// Stun mode projectile type
 	var/stun_projectile = /obj/projectile/beam/disabler
 	/// Sound of stun projectile
-	var/stun_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
+	var/stun_projectile_sound = 'sound/weapons/melee/plasmacutter/plasma_cutter.ogg'
 	/// Lethal mode projectile type
 	var/lethal_projectile = /obj/projectile/beam/laser
 	/// Sound of lethal projectile
-	var/lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
+	var/lethal_projectile_sound = 'sound/weapons/melee/plasmacutter/plasma_cutter.ogg'
 
 	/// Power needed per shot
 	var/reqpower = 500
@@ -631,14 +631,14 @@
 
 /obj/machinery/porta_turret/proc/set_target(atom/movable/target = null)
 	if(current_target)
-		UnregisterSignal(current_target, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(current_target, COMSIG_QDELETING)
 
 	retaliating = FALSE
 	current_target = target
 	target_beam.set_target(target)
 
 	if(current_target)
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(set_target))
+		RegisterSignal(target, COMSIG_QDELETING, PROC_REF(set_target))
 
 /obj/machinery/porta_turret/proc/set_state(on, new_lethal, new_flags)
 	if(!isnull(new_flags))

@@ -61,17 +61,4 @@
 	festive_tree = /obj/structure/festivus
 	christmas_tree = null
 
-/datum/round_event_control/santa
-	name = "Visit by Santa"
-	holidayID = CHRISTMAS
-	typepath = /datum/round_event/santa
-	weight = 20
-	max_occurrences = 1
-	earliest_start = 30 MINUTES
-	category = EVENT_CATEGORY_HOLIDAY
-
-/datum/round_event/santa
-	var/mob/living/carbon/human/santa //who is our santa?
-
-/datum/round_event/santa/announce(fake)
-	priority_announce("Santa is coming to town!", "Unknown Transmission")
+// santa has been shot down by the frontiersmen. sorry. ill remove the rest of the code later

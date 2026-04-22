@@ -4,9 +4,8 @@
 	id = SPECIES_VOX
 	default_color = "6060FF"
 	species_age_max = 280
-	species_traits = list(HAS_BONE, HAS_FLESH)
 	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
-	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", "body_size" = "Normal")
+	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None")
 	meat = /obj/item/food/meat/slab/chicken
 	disliked_food = GRAIN
 	liked_food = MEAT
@@ -19,7 +18,6 @@
 	species_eye_path = 'icons/mob/species/vox/vox_parts.dmi'
 	punchdamagelow = 6
 	punchdamagehigh = 12
-	mutanttongue = /obj/item/organ/tongue/vox
 	species_language_holder = /datum/language_holder/vox
 
 	bodytemp_heat_divisor = VOX_BODYTEMP_HEAT_DIVISOR
@@ -36,6 +34,19 @@
 
 	custom_overlay_icon = 'icons/mob/species/vox/vox_overlays.dmi'
 	damage_overlay_type = "vox"
+	fire_overlay = "generic"
+
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/vox,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+	)
 
 	species_limbs = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/vox,
@@ -44,15 +55,6 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/vox,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/vox,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/vox,
-	)
-
-	species_robotic_limbs = list(
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot/vox,
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot/vox,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus/vox,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/vox,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/vox,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/vox,
 	)
 
 	var/datum/action/innate/tail_hold/tail_action
@@ -161,7 +163,7 @@
 		held_item = null
 
 	handle_sprite_magic()
-	UnregisterSignal(owner, COMSIG_PARENT_EXAMINE)
+	UnregisterSignal(owner, COMSIG_ATOM_EXAMINE)
 	return ..()
 
 /datum/action/innate/tail_hold/Grant(mob/M)
@@ -175,7 +177,7 @@
 			held_item.forceMove(get_turf(owner))
 		held_item = null
 		handle_sprite_magic()
-		UnregisterSignal(owner, COMSIG_PARENT_EXAMINE)
+		UnregisterSignal(owner, COMSIG_ATOM_EXAMINE)
 
 	else
 		var/obj/item/I = H.get_active_held_item()
@@ -183,7 +185,7 @@
 			if(H.temporarilyRemoveItemFromInventory(I, FALSE, FALSE))
 				held_item = I
 				to_chat(H,span_notice("You move \the [I] into your tail's grip."))
-				RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
+				RegisterSignal(owner, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
 				handle_sprite_magic(force = TRUE)
 				return
 

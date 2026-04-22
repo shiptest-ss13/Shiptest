@@ -15,7 +15,7 @@
 /obj/machinery/paystand/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/card/bank))
 		if(W == my_card)
-			if(user.a_intent == INTENT_DISARM)
+			if(LAZYACCESS(params2list(params), RIGHT_CLICK))
 				var/rename_msg = stripped_input(user, "Rename the Paystand:", "Paystand Naming", name)
 				if(!rename_msg || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 					return

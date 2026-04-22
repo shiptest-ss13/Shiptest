@@ -189,10 +189,10 @@
 	strip_delay = 60
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 50)
 
-/obj/item/clothing/gloves/color/captain/nt
+/obj/item/clothing/gloves/color/captain/warra
 	desc = "Regal blue gloves with gold trim and a fire and acid-resistant coating. Swanky."
 	name = "captain's gloves"
-	icon_state = "captainnt"
+	icon_state = "captainwarra"
 
 /obj/item/clothing/gloves/color/latex
 	name = "latex gloves"
@@ -265,3 +265,28 @@
 	icon_state = "maid_arms"
 	item_state = "lgloves"
 	supports_variations = VOX_VARIATION
+
+//long gloves
+
+/obj/item/clothing/gloves/long
+	name = "long gloves"
+	desc = "Stylish, elbow-length gloves."
+	icon = 'icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/hands.dmi'
+	icon_state = "longgloveswhite"
+	item_state = "longgloveswhite"
+	unique_reskin = list(
+		"white long gloves" = "longgloveswhite",
+		"black long gloves" = "longglovesblack",
+	)
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/gloves/long/white
+	name = "white long gloves"
+	icon_state = "longgloveswhite"
+	current_skin = "white long gloves"
+
+/obj/item/clothing/gloves/long/black
+	name = "black long gloves"
+	icon_state = "longglovesblack"
+	current_skin = "black long gloves"

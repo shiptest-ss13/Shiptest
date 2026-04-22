@@ -768,6 +768,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	else
 		togglelock(user)
 
+/obj/machinery/power/apc/attack_hand_secondary(mob/user, list/modifiers)
+	togglelock(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
 /obj/machinery/power/apc/proc/togglelock(mob/living/user)
 	if(obj_flags & EMAGGED)
 		to_chat(user, span_warning("The interface is broken!"))

@@ -5,7 +5,7 @@
  */
 /datum/element/tool_flash
 	element_flags = ELEMENT_BESPOKE
-	id_arg_index = 2
+	argument_hash_start_idx = 2
 	/// Strength of the flash
 	var/flash_strength
 
@@ -34,4 +34,4 @@
 	SIGNAL_HANDLER
 
 	if(user && get_dist(get_turf(source), get_turf(user)) <= 1)
-		user.flash_act(min(flash_strength,1))
+		user.flash_act(max(flash_strength, 1))

@@ -2,13 +2,14 @@
 	max_items = 2
 	max_w_class = WEIGHT_CLASS_SMALL
 	max_combined_w_class = 50
+	alt_click_open = FALSE // alt-click has special interactions on a lot of clothing items and shouldn't be canceled by opening storage instead
 	use_sound = null
 
 /datum/component/storage/concrete/pockets/handle_item_insertion(obj/item/I, prevent_warning, mob/user)
 	. = ..()
 	if(. && silent && !prevent_warning)
 		if(quickdraw)
-			to_chat(user, span_notice("You discreetly slip [I] into [parent]. Alt-click [parent] to remove it."))
+			to_chat(user, span_notice("You discreetly slip [I] into [parent]. Right-click [parent] to remove it."))
 		else
 			to_chat(user, span_notice("You discreetly slip [I] into [parent]."))
 
@@ -28,6 +29,13 @@
 	attack_hand_interact = FALSE
 	quickdraw = FALSE
 	silent = FALSE
+
+/datum/component/storage/concrete/pockets/exo/Initialize()
+	. = ..()
+	var/static/list/exception_cache = typecacheof(list(
+		/obj/item/storage/pouch
+		))
+	exception_hold = exception_cache
 
 /datum/component/storage/concrete/pockets/exo/large
 	max_items = 3
@@ -94,6 +102,7 @@
 		/obj/item/clothing/glasses/sunglasses/pgf,
 		/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 		/obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
+		/obj/item/clothing/glasses/hud/security/sunglasses/ramzi,
 		/obj/item/ammo_casing,
 		/obj/item/ammo_box/magazine/illestren_a850r,
 		/obj/item/bodycamera,
@@ -113,6 +122,7 @@
 		/obj/item/gun/energy/laser,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/sharplite/x26,
+		/obj/item/gun/energy/sharplite/x01,
 		/obj/item/gun/energy/kalix/pistol,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/ammo_box)) // this doesnt let you put hades into holsters trust me

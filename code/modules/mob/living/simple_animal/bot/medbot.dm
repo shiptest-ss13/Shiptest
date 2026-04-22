@@ -490,12 +490,12 @@
 	if(C.getToxLoss() >= heal_threshold)
 		return TRUE
 
-/mob/living/simple_animal/bot/medbot/attack_hand(mob/living/carbon/human/H)
+/mob/living/simple_animal/bot/medbot/attack_hand(mob/living/carbon/human/H, list/modifiers)
 	if(DOING_INTERACTION_WITH_TARGET(H, src))
 		to_chat(H, span_warning("You're already interacting with [src]."))
 		return
 
-	if(H.a_intent == INTENT_DISARM && mode != BOT_TIPPED)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK) && mode != BOT_TIPPED)
 		H.visible_message(span_danger("[H] begins tipping over [src]."), span_warning("You begin tipping over [src]..."))
 
 		if(world.time > last_tipping_action_voice + 15 SECONDS)

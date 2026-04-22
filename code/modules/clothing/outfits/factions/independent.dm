@@ -82,6 +82,13 @@
 	belt = /obj/item/reagent_scanner
 	backpack_contents = list(/obj/item/book/manual/wiki/chemistry=1)
 
+/datum/outfit/job/independent/assistant/gown
+	name = "Independent - Assistant (Gown)"
+
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+
 // Captain
 
 /datum/outfit/job/independent/captain
@@ -201,12 +208,31 @@
 	id = /obj/item/card/id
 	gloves = /obj/item/clothing/gloves/color/white
 	uniform = /obj/item/clothing/under/rank/security/detective/grey
-	suit = /obj/item/clothing/suit/toggle/lawyer/charcoal
+	suit = /obj/item/clothing/suit/lawyer/charcoal
 	neck = /obj/item/clothing/neck/tie/black
 	dcoat = null
 	glasses = /obj/item/clothing/glasses/sunglasses
 	head = null
 	accessory = null
+
+/datum/outfit/job/independent/captain/gown
+	name = "Independent - Captain (Gown)"
+
+	gloves = null
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	suit = null
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	head = null
+	backpack_contents = null
+
+	accessory = null
+
+	backpack = /obj/item/storage/backpack/captain
+	satchel = /obj/item/storage/backpack/satchel/cap
+	duffelbag = /obj/item/storage/backpack/duffelbag/captain
+	courierbag = /obj/item/storage/backpack/messenger/com
 
 // Head of Personnel
 
@@ -264,6 +290,16 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate
 	suit = /obj/item/clothing/suit/pirate
+
+/datum/outfit/job/independent/hop/gown
+	name = "Independent - Head of Personnel (Gown)"
+
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+
+	backpack_contents = null
 
 // Head of Security
 
@@ -399,6 +435,21 @@
 
 	implants = list(/obj/item/implant/radio)
 
+/datum/outfit/job/independent/security/gown
+	name = "Independent - Security Officer (Gown)"
+	jobtype = /datum/job/officer
+	job_icon = "securityofficer"
+
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	gloves = null
+	head = null
+	suit = null
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	l_pocket = null
+	backpack_contents = null
+
 // Engineer
 
 /datum/outfit/job/independent/engineer
@@ -447,6 +498,19 @@
 	gloves = /obj/item/clothing/gloves/color/red/insulated
 
 	implants = list(/obj/item/implant/radio)
+
+/datum/outfit/job/independent/engineer/gown
+	name = "Independent - Engineer (Gown)"
+
+	gloves = null
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	alt_uniform = null
+	suit = null
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	head = null
+	backpack_contents = null
 
 // Warden
 
@@ -527,6 +591,15 @@
 
 	ears = /obj/item/radio/headset/pirate
 	uniform = /obj/item/clothing/under/costume/sailor
+
+/datum/outfit/job/independent/doctor/gown
+	name = "Independent - Medical Doctor (Gown)"
+
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	suit =  null
+	dcoat = null
 
 // Cargo Tech
 
@@ -693,6 +766,18 @@
 	backpack = /obj/item/storage/backpack/science
 	satchel = /obj/item/storage/backpack/satchel/tox
 	courierbag = /obj/item/storage/backpack/messenger/tox
+
+/datum/outfit/job/independent/miner/gown
+	name = "Independent - Miner (Gown)"
+
+	ears = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	gloves = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	suit = null
+	dcoat = null
+	l_pocket = null
+	backpack_contents = null
 
 // Hunter
 

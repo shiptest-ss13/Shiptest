@@ -16,6 +16,7 @@
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 	var/view_range = 5
 	var/busy = FALSE
+	var/broadcast_camera = FALSE
 	var/can_transmit_across_z_levels = FALSE
 	var/updating = FALSE //portable camera camerachunk update
 	var/mob/tracked_mob //last mob that picked up the bodycamera. needed for cameranet updates
@@ -30,7 +31,8 @@
 	tracker = new /datum/movement_detector(src, CALLBACK(src, PROC_REF(obj_move)))
 	GLOB.cameranet.cameras += src
 	GLOB.cameranet.addCamera(src)
-	c_tag = "Body Camera - " + random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
+	c_tag = random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
+	name = "body camera - (" + c_tag + ")"
 	update_appearance()
 
 /obj/item/bodycamera/Destroy()
@@ -46,7 +48,10 @@
 	if(in_range(src, user))
 		. += span_notice("The camera is set to a nametag of '<b>[c_tag]</b>'.")
 		. += span_notice("The camera is set to transmit on the '<b>[network[1]]</b>' network.")
-		. += span_notice("It looks like you can modify the camera settings by using a <b>multitool</b> on it.")
+		if(!broadcast_camera)
+			. += span_notice("It looks like you can configure the camera settings by <b>using it in your hand</b> or by using a multitool on it.")
+		else
+			. += span_notice("It looks like you can configure the camera settings by <b>using a multitool on it.</b>")
 
 /obj/item/bodycamera/AltClick(mob/user)
 	. = ..()
@@ -70,7 +75,7 @@
 	. = ..()
 	var/obj/item/multitool/M = I
 	var/list/choice_list = list("Modify the camera tag", "Change the camera network", "Save the network to the multitool buffer", "Transfer the buffered network to the camera")
-	var/choice = tgui_input_list(user, "Select an option", "Camera Configuration", choice_list)
+	var/choice = tgui_input_list(user, "Select an option", "Advanced Camera Configuration", choice_list)
 
 	switch(choice)
 		if("Modify the camera tag")
@@ -92,11 +97,46 @@
 
 	return TRUE
 
+/obj/item/bodycamera/attack_self(mob/user)
+	. = ..()
+
+	//skips broadcast cameras in this proc so that the rest of their functions work
+	if(broadcast_camera)
+		return
+
+	var/list/choice_list = list("Modify the camera tag", "Change the camera network")
+	var/choice = tgui_input_list(user, "Select an option", "Camera Configuration", choice_list)
+
+	switch(choice)
+		if("Modify the camera tag")
+			c_tag_addition = stripped_input(user, "Set a nametag for this camera. Ensure that it is no bigger than 32 characters long.", "Nametag Setup", max_length = 32)
+			set_name(c_tag_addition)
+			to_chat(user, span_notice("You set [src] nametag to '[c_tag]'."))
+
+		if("Change the camera network")
+			network[1] = stripped_input(user, "Tune [src] to a specific network. Enter the network name and ensure that it is no bigger than 32 characters long. Network names are case sensitive.", "Network Tuning", max_length = 32)
+			to_chat(user, span_notice("You set [src] to transmit across the '[network[1]]' network."))
+
+/obj/item/bodycamera/attackby(obj/item/bodycamera_B, mob/user, params)
+	if(istype(bodycamera_B, /obj/item/bodycamera))
+		var/obj/item/bodycamera/bodycamera2 = bodycamera_B
+		network = bodycamera2.network
+		to_chat(user, "You tap the cameras together, transferring the network of \the [bodycamera2.name] to \the [name]")
+		return TRUE
+	..()
+
 /obj/item/bodycamera/proc/set_name(camera_name)
 	if(camera_name == "")
-		c_tag = "Body Camera - " + random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
+		c_tag = random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
 	else
 		c_tag = camera_name
+
+	if(broadcast_camera)
+		name = camera_name
+	else
+		name = "body camera - (" + c_tag + ")"
+
+	update_appearance()
 	return
 
 
@@ -154,7 +194,7 @@
 		update_camera_location(cam_location)
 	return
 
-/obj/item/bodycamera/proc/do_camera_update(oldLoc)
+/obj/item/bodycamera/proc/do_camera_update(oldLoc) //I intend to have cameras have utility in emplacements, so this will need to be modified to only be true when the camera is inside of an AI-connected IPC shell.
 	if(oldLoc != get_turf(src)) //we want to make sure the camera source has actually moved before running expensive camera updates
 		GLOB.cameranet.updatePortableCamera(src)
 	updating = FALSE
@@ -166,14 +206,14 @@
 		addtimer(CALLBACK(src, PROC_REF(do_camera_update), oldLoc), BODYCAM_UPDATE_BUFFER)
 
 /obj/item/paper/guides/bodycam
-	name = "Portable Camera Unit Users Guide"
-	default_raw_text = "<font face='serif'><font size=2><div align='center'><u><font size=5>Portable Camera Unit User's Guide</u>\n<div align='left'><font size=3> The Mark I Portable Camera unit is a versatile solution ⠀   for all of your project management needs.\n\n<font size=4><dl><dt> Features</dt><font size=3><dd> - Real-time visual data feedback </dd><dd> - Configurable EEPROM memory settings</dd><dd> - Passive thermal regulator</dd><dd> - Long-range millimeter-wave band antenna</dd><dd> - High-capacity self-recharging battery</dd><dd> - Easy to reach power button</dd></dl>\n\n To activate the camera, simply press and hold the\n power button for one second. You should hear a chime\n and a green status light should become lit.\n\n To deactivate the camera, depress the power button\n again for one second.\n\n In order to modify the settings of your portable camera\n unit, a ISO-standard multitool will be required.\n \n Simply connect the tool to the camera's settings port,\n and you should be able to modify the internal address\n of the camera, or the network configuration.\n\n You will also be able to save the network configuration\n of the camera and copy it to other Mark I Portable\n Camera units.\n\n We hope that our tools will provide the edge you need\n in order to ensure your team stays on-task."
+	name = "Portable Camera Unit User's Guide"
+	default_raw_text = "<font face='serif'><font size=2><div align='center'><u><font size=5>Portable Camera Unit User's Guide</u>\n<div align='left'><font size=3> The Mark I Portable Camera unit is a versatile solution ⠀   for all of your project management needs.\n\n<font size=4><dl><dt> Features</dt><font size=3><dd> - Real-time visual data feedback </dd><dd> - Configurable EEPROM memory settings</dd><dd> - Passive thermal regulator</dd><dd> - Long-range millimeter-wave band antenna</dd><dd> - High-capacity self-recharging battery</dd><dd> - Easy-to-reach power button</dd></dl>\n\n To activate the camera, simply press and hold the\n power button for one second. You should hear a chime,\n and a green status light should become lit.\n\n To deactivate the camera, depress the power button\n again for one second.\n\n In order to modify the settings of your portable camera\n unit, a ISO-standard multitool will be required.\n \n Simply connect the tool to the camera's settings port,\n and you should be able to modify the internal address\n of the camera, or the network configuration.\n\n You will also be able to save the network configuration\n of the camera and copy it to other Mark I Portable\n Camera units.\n\n We hope that our tools will provide the edge you need\n in order to ensure your team stays on task."
 
 // Broadcast Camera - For Journalism
 
 /obj/item/radio/broadcast
 	name = "Broadcast Radio"
-	desc = "You're fairly sure this shouldn't be outside of the camera, and that you should tell someone you found this. Maybe an adminhelp is in order."
+	desc = "You're fairly sure this shouldn't be outside of the camera and that you should tell someone you found this. Maybe an adminhelp is in order."
 	frequency = 1499
 	log = TRUE
 
@@ -186,14 +226,15 @@
 
 /obj/item/bodycamera/broadcast_camera
 	name = "broadcast camera"
-	desc = "A camera used by media agencies in order to broadcast video and audio to recievers across a sector."
+	desc = "A camera used by media agencies in order to broadcast video and audio to receivers across a sector."
 	icon = 'icons/obj/item/broadcasting.dmi'
 	icon_state = "broadcast"
 	lefthand_file = 'icons/mob/inhands/misc/broadcast_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/broadcast_righthand.dmi'
-	w_class = WEIGHT_CLASS_BULKY
-	view_range = 5
+	w_class = WEIGHT_CLASS_NORMAL
+	view_range = 7
 	can_transmit_across_z_levels = TRUE
+	broadcast_camera = TRUE
 	network = list("IntraNet")
 	var/obj/item/radio/broadcast/radio
 	var/mob/listeningTo
@@ -204,12 +245,13 @@
 	. = ..()
 	radio = new /obj/item/radio/broadcast(src)
 	radio.sectorwide = TRUE
-	radio.canhear_range = 3
+	radio.canhear_range = 7
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	RegisterSignal(radio, COMSIG_RADIO_NEW_FREQUENCY, PROC_REF(adjust_name))
-	c_tag = "Broadcast Camera - Unlabeled"
-
+	c_tag = "Broadcast Camera - " + random_string(6, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
+	name = c_tag
+	update_appearance()
 
 /obj/item/bodycamera/broadcast_camera/Destroy()
 	listeningTo = null
@@ -239,7 +281,7 @@
 /obj/item/bodycamera/broadcast_camera/examine(mob/user)
 	. += ..()
 	if(in_range(src, user))
-		. += span_notice("You can access the Internal Radio by <b>interacting with harm intent</b>.")
+		. += span_notice("You can access the Internal Radio by <b>clicking on the corresponding UI button in the top left corner</b>.")
 		. += span_notice("You can also use <b>Unique Action (default space)</b> to toggle the microphone.")
 
 /obj/item/bodycamera/broadcast_camera/set_name(camera_name)
@@ -260,14 +302,14 @@
 
 	user.visible_message(span_notice("[user] raises the [src] over [user.p_their()] arms."), span_notice("You raise [src] over your arms, giving it a better view."))
 	item_state = "broadcast_wielded"
-	view_range = 7
+	view_range = 10
 
 /obj/item/bodycamera/broadcast_camera/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
-	user.visible_message(span_notice("[user] lowers [src]."), span_notice("You lower [src], reducing it's view."))
+	user.visible_message(span_notice("[user] lowers [src]."), span_notice("You lower [src], reducing its view."))
 	item_state = "broadcast"
-	view_range = 3
+	view_range = 7
 
 /obj/item/bodycamera/broadcast_camera/AltClick(mob/user)
 	. = ..()

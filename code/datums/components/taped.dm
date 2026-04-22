@@ -29,11 +29,11 @@
 	set_tape(added_integrity)
 
 /datum/component/taped/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(tape_rip))
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(examine_tape))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACKBY, PROC_REF(tape_rip))
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(examine_tape))
 
 /datum/component/taped/UnregisterFromParent()
-	UnregisterSignal(parent, list(COMSIG_PARENT_ATTACKBY, COMSIG_PARENT_EXAMINE))
+	UnregisterSignal(parent, list(COMSIG_ATOM_ATTACKBY, COMSIG_ATOM_EXAMINE))
 
 /datum/component/taped/proc/set_tape(patch_amount)
 	var/obj/I = parent

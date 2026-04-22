@@ -1,5 +1,5 @@
 /datum/unit_test/overmap_move/Run()
-	var/datum/overmap/ship/S = new(list("x" = 1, "y" = 1), SSovermap.default_system)
+	var/datum/overmap/ship/S = new(list("x" = 1, "y" = 1), SSovermap.safe_system)
 
 	S.change_heading(NORTHEAST)
 	S.process(1)
@@ -19,8 +19,8 @@
 	TEST_ASSERT(S.is_still(), "Ship did not stop after burning engines")
 
 /datum/unit_test/overmap_dock/Run()
-	var/datum/overmap/ship/controlled/docker = new(list("x" = 1, "y" = 1), SSovermap.default_system, SSmapping.ship_purchase_list[pick(SSmapping.ship_purchase_list)]) //TODO: debug ship instead of picking random ship
-	var/datum/overmap/dynamic/empty/dockee = new(list("x" = 1, "y" = 1), SSovermap.default_system)
+	var/datum/overmap/ship/controlled/docker = new(list("x" = 1, "y" = 1), SSovermap.safe_system, SSmapping.ship_purchase_list[pick(SSmapping.ship_purchase_list)]) //TODO: debug ship instead of picking random ship
+	var/datum/overmap/dynamic/empty/dockee = new(list("x" = 1, "y" = 1), SSovermap.safe_system)
 
 	docker.dock_time = 0
 

@@ -54,8 +54,8 @@
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
-		/obj/item/attachment/gun,
-		/obj/item/attachment/ammo_counter
+		/obj/item/attachment/ammo_counter,
+		/obj/item/attachment/gun
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -147,7 +147,7 @@
 			chambered = null
 		else if(empty_chamber)
 			chambered = null
-	if (chamber_next_round && (magazine?.max_ammo > 1) && !condition_check(from_firing, shooter))
+	if (chamber_next_round && (magazine?.max_ammo >= 1) && !condition_check(from_firing, shooter))
 		chamber_round()
 	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
 
@@ -337,7 +337,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/ballistic/attack_hand(mob/user)
 	// the main calls it's own eject mag before the underbarrel. fix this
-	if(user.is_holding(src) && loc == user && !(gun_firemodes[firemode_index] == FIREMODE_UNDERBARREL))
+	if(user.is_holding(src) && loc == user)
 		if(sealed_magazine)
 			to_chat(user, span_warning("The [magazine_wording] on [src] is sealed and cannot be accessed!"))
 			return

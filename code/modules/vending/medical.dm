@@ -31,7 +31,8 @@
 		/obj/item/clothing/glasses/hud/health = 1,
 		/obj/item/clothing/glasses/hud/health/prescription = 1,
 		/obj/item/shears = 1,
-		/obj/item/storage/box/hug/medical = 1)
+		/obj/item/storage/box/hug/medical = 1,
+		/obj/item/inhaler/salbutamol = 2)
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	refill_canister = /obj/item/vending_refill/medical

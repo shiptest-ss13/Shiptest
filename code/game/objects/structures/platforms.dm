@@ -99,6 +99,21 @@
 	density = FALSE
 	climbable = FALSE
 
+/obj/structure/platform/ship_three/indestructible
+	climbable = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/structure/platform/ship_three/indestructible/CanPass(atom/movable/mover, border_dir)
+	. = ..()
+	if(border_dir & dir)
+		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
+	return FALSE
+
+/obj/structure/platform/ship_three/corner/indestructible
+	density = FALSE
+	climbable = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
 /obj/structure/platform/ship_four
 	icon_state = "ship4_platform"
 
@@ -167,6 +182,12 @@
 	if(border_dir & dir)
 		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
 	return TRUE
+
+/obj/structure/platform/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if (!(to_dir & dir))
+		return TRUE
+	return ..()
+
 
 /obj/structure/platform/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER

@@ -289,6 +289,9 @@
 	token.add_overlay(star_1)
 	token.add_overlay(star_2)
 
+	token.name = name
+	token.desc = desc
+
 /*
 		Special stars
 */

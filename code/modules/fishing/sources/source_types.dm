@@ -36,7 +36,6 @@
 		/obj/item/fish/trout = 10,
 		/obj/item/fish/catfish = 10,
 		/obj/item/fish/bass = 10,
-		/obj/item/fish/donkfish = 5,
 		/obj/item/fish/emulsijack = 1
 	)
 	fishing_difficulty = FISHING_DEFAULT_DIFFICULTY + 5
@@ -58,13 +57,7 @@
 	fish_table = list(
 		FISHING_DUD = 5,
 		/obj/item/stack/ore/slag = 20,
-		/obj/structure/closet/crate/necropolis/tendril = 1,
-		/obj/effect/mob_spawn/human/corpse/charredskeleton = 1
-	)
-	fish_counts = list(
-		/obj/structure/closet/crate/necropolis/tendril = 1
-	)
-
+		/obj/effect/mob_spawn/human/corpse/charredskeleton = 1)
 	fishing_difficulty = FISHING_DEFAULT_DIFFICULTY + 10
 
 /datum/fish_source/lavaland/can_fish(obj/item/fishing_rod/rod, mob/fisherman)

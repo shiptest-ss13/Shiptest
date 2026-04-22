@@ -20,12 +20,12 @@
 	sharpness = SHARP_POINTY
 	wound_bonus = 15
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	item_flags = EYE_STAB
 	tool_behaviour = TOOL_KNIFE
 	demolition_mod = 0.75
 
 /obj/item/melee/knife/ComponentInitialize()
 	. = ..()
+	AddElement(/datum/element/eyestab)
 	set_butchering()
 
 ///Adds the butchering component, used to override stats for special cases
@@ -170,7 +170,7 @@
 	desc = "A sharp, concealable, spring-loaded knife."
 	flags_1 = CONDUCT_1
 	force = 3
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	sharpness = SHARP_NONE
 	throwforce = 5
 	throw_speed = 3
@@ -189,7 +189,7 @@
 		throw_speed_on = 4, \
 		sharpness_on = SHARP_EDGED, \
 		hitsound_on = 'sound/weapons/bladeslice.ogg', \
-		w_class_on = WEIGHT_CLASS_NORMAL, \
+		w_class_on = WEIGHT_CLASS_SMALL, \
 		attack_verb_on = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut"), \
 	)
 

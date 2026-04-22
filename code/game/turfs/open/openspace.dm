@@ -28,12 +28,17 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 
 /turf/open/openspace/Initialize(mapload, inherited_virtual_z) // handle plane and layer here so that they don't cover other obs/turfs in Dream Maker
 	. = ..()
+	//RegisterSignal(src, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON, PROC_REF(on_atom_created))
 	vis_contents += GLOB.openspace_backdrop_one_for_all //Special grey square for projecting backdrop darkness filter on it.
 	return INITIALIZE_HINT_LATELOAD
 
 /turf/open/openspace/LateInitialize()
 	. = ..()
 	AddElement(/datum/element/turf_z_transparency, FALSE)
+
+/turf/open/openspace/ChangeTurf(path, list/new_baseturfs, flags)
+	//UnregisterSignal(src, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON)
+	return ..()
 
 /turf/open/openspace/can_have_cabling()
 	if(locate(/obj/structure/catwalk, src))
@@ -79,6 +84,17 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 
 /turf/open/openspace/proc/CanBuildHere()
 	return can_build_on
+
+/**
+ * Drops movables spawned on this turf after they are successfully initialized.
+ * so that spawned movables that should fall to gravity, will fall.
+ */
+/*
+/turf/open/openspace/proc/on_atom_created(datum/source, atom/created_atom)
+	SIGNAL_HANDLER
+	if(ismovable(created_atom))
+		zfall_if_on_turf(created_atom)
+*/
 
 /turf/open/openspace/attackby(obj/item/C, mob/user, params)
 	..()

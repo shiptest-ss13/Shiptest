@@ -824,6 +824,16 @@
 		/obj/item/stack/ore/silver = 20, /obj/item/stack/ore/iron = 20, /obj/item/stack/ore/titanium = 4
 		)
 
+/turf/closed/mineral/random/jungle/polluted
+	name = "polluted rock"
+	desc = "Whatever once held sway, the poison is all that remains."
+	icon = 'icons/turf/walls/wasteplanet.dmi'
+	icon_state = "wasteplanet-0"
+	smooth_icon = 'icons/turf/walls/wasteplanet.dmi'
+	base_icon_state = "wasteplanet"
+	mineralChance = 0
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/wasteland
+
 /turf/closed/mineral/random/beach
 	name = "coastal marl"
 	desc = "Water eats away at the shoreline, forming rippling scars in softening stone."
@@ -939,6 +949,11 @@
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 2, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 5,
 		/obj/item/stack/ore/plasma = 1, /obj/item/stack/ore/iron = 40, /obj/item/stack/ore/titanium = 20,
 		/obj/item/stack/ore/bluespace_crystal = 5)
+
+/turf/closed/mineral/random/moon/safe
+
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	baseturfs = /turf/open/floor/plating/asteroid/moon/safe
 
 /turf/closed/mineral/random/moon/lit
 	turf_type = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit

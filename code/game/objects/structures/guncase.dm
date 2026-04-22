@@ -113,6 +113,10 @@
 		open = !open
 		update_appearance()
 
+/obj/structure/guncloset/attack_hand_secondary(mob/user, list/modifiers)
+	open = !open
+	update_appearance()
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/structure/guncloset/AltClick(mob/user)
 	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))

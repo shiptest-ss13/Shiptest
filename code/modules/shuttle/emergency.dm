@@ -4,12 +4,14 @@
 	name = "emergency space helmet"
 	icon_state = "syndicate-helm-orange"
 	item_state = "syndicate-helm-orange"
+	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/orange
 	name = "emergency space suit"
 	icon_state = "syndicate-orange"
 	item_state = "syndicate-orange"
 	slowdown = 3
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/pickaxe/emergency
 	name = "emergency disembarkation tool"

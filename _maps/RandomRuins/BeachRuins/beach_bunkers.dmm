@@ -712,7 +712,6 @@
 	pixel_x = -32
 	},
 /obj/item/radio/intercom/directional/south,
-/obj/effect/landmark/mission_poi/main,
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker/office)
 "jP" = (
@@ -1466,7 +1465,7 @@
 	dir = 1;
 	pixel_y = -21;
 	pixel_x = 10;
-	id = "bunk2";
+	id = "bunk_2";
 	name = "shutter control"
 	},
 /turf/open/floor/concrete/slab_1,
@@ -2008,11 +2007,6 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle{
 	aggro_vision_range = 14
 	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle;
-	mission_index = 2
-	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "zJ" = (
@@ -2473,7 +2467,7 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
 "Et" = (
-/mob/living/simple_animal/hostile/human/frontier,
+/mob/living/simple_animal/hostile/human/frontier/axe,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ew" = (
@@ -3050,7 +3044,7 @@
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor3"
 	},
-/mob/living/simple_animal/hostile/human/frontier,
+/mob/living/simple_animal/hostile/human/frontier/axe,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Nw" = (
@@ -3288,7 +3282,7 @@
 	dir = 4;
 	pixel_y = -10;
 	pixel_x = -23;
-	id = "bunk2";
+	id = "bunk_2";
 	name = "shutter control"
 	},
 /turf/open/floor/plating/asteroid/dirt/beach,
@@ -3921,7 +3915,7 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier,
+/mob/living/simple_animal/hostile/human/frontier/axe,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
 "XZ" = (

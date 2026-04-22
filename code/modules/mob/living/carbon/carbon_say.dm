@@ -14,6 +14,12 @@
 		return 0
 	return ..()
 
+/mob/living/carbon/get_message_mods(message, list/mods)
+	var/obj/item/organ/lungs/our_lungs = getorganslot(ORGAN_SLOT_LUNGS)
+	if(our_lungs?.received_pressure_mult < 0.5 && !mods[WHISPER_MODE] && !HAS_TRAIT(src, TRAIT_NOBREATH))
+		mods[WHISPER_MODE] = MODE_WHISPER
+	return ..(message, mods)
+
 /mob/living/carbon/can_sign(message)
 	if(usable_hands <= 0)
 		to_chat(src, span_warning((num_hands > 0) ? "You can't feel your hands!" : "You can't sign with no hands!"))

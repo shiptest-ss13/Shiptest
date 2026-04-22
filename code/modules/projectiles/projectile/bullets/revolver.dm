@@ -61,7 +61,7 @@
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(3)
-		M.IgniteMob()
+		M.ignite_mob()
 
 /obj/projectile/bullet/c38/iceblox //see /obj/projectile/temp for the original code
 	name = ".38 chilled bullet"
@@ -170,7 +170,7 @@
 
 /obj/projectile/bullet/a4570/explosive/on_hit(atom/target, blocked = FALSE)
 	..()
-	explosion(target, -1, 0, 1)
+	explosion(target, -1, 0, 1, light_dam = 20, light_item_dam = 20)
 	return BULLET_ACT_HIT
 
 // 44 Short (Roumain & Shadow)

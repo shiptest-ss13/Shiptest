@@ -157,6 +157,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffdbb4"
 	lighting_brightness_tube = 6
 
+/area/ship/bridge/cool
+	name = "Bridge"
+	icon_state = "bridge"
+	ambientsounds = list('sound/ambience/signal.ogg')
+	lighting_colour_tube = "#7794c9"
+	lighting_colour_bulb = "#7794c9"
+	lighting_brightness_tube = 6
+
 /// Crew Quarters ///
 /area/ship/crew
 	name = "Crew Quarters"
@@ -276,6 +284,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "vacant_office"
 	sound_environment = SOUND_AREA_WOODFLOOR
 
+/area/ship/crew/office/cic
+	name = "Control Center"
+	icon_state = "vacant_office"
+	ambientsounds = list('sound/ambience/signal.ogg')
+	lighting_colour_tube = "#7794c9"
+	lighting_colour_bulb = "#7794c9"
+	sound_environment = SOUND_AREA_WOODFLOOR
+
 /area/ship/crew/office/lobby
 	name = "Lobby"
 
@@ -385,6 +401,21 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Incinerator"
 	icon_state = "disposal"
 
+/area/ship/engineering/storage
+	name = "Engineering Storage Room"
+
+/area/ship/engineering/hallway
+	name = "Engineering Hallway"
+
+/area/ship/engineering/hallway/port
+	name = "Engineering Port Hallway"
+
+/area/ship/engineering/hallway/starboard
+	name = "Engineering Starboard Hallway"
+
+/area/ship/engineering/hallway/aft
+	name = "Engineering Aft Hallway"
+
 /// Security ///
 /area/ship/security
 	name = "Brig"
@@ -460,6 +491,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship/hallway/fore
 	name = "Fore Hallway"
+	icon_state = "hallF"
+
+/area/ship/hallway/fore/port
+	name = "Port Fore Hallway"
+	icon_state = "hallF"
+
+/area/ship/hallway/fore/starboard
+	name = "Starboard Fore Hallway"
 	icon_state = "hallF"
 
 /area/ship/hallway/starboard

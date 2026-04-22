@@ -21,7 +21,7 @@
 		var/list/available_surgeries = list()
 
 		for(var/datum/surgery/S in all_surgeries)
-			if(!S.possible_locs.Find(selected_zone))
+			if(LAZYLEN(S.possible_locs) && !S.possible_locs.Find(selected_zone))
 				continue
 			if(affecting)
 				if(!S.requires_bodypart)

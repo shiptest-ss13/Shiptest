@@ -59,6 +59,11 @@ GLOBAL_LIST_EMPTY(dummy_mob_list)
 			var/mob/living/carbon/human/human_target = target
 			human_target.copy_clothing_prefs(copycat)
 
+		for(var/datum/quirk/applied_quirk as anything in carbon_target.roundstart_quirks)
+			if(!(applied_quirk.quirk_flags & QUIRK_CHANGES_APPEARANCE))
+				continue
+			copycat.add_quirk(applied_quirk.type, target.client, FALSE)
+
 		copycat.updateappearance(icon_update=TRUE, mutcolor_update=TRUE, mutations_overlay_update=TRUE)
 	else
 		//even if target isn't a carbon, if they have a client we can make the
@@ -85,3 +90,20 @@ GLOBAL_LIST_EMPTY(dummy_mob_list)
 	if(istype(dummy))
 		GLOB.dummy_mob_list -= dummy
 		qdel(dummy)
+
+
+/*
+// To speed up the preference menu, we apply 1 filter to the entire mob
+/mob/living/carbon/human/dummy/regenerate_icons()
+	. = ..()
+	apply_height_filters(src, TRUE)
+
+/mob/living/carbon/human/dummy/apply_height_filters(image/appearance, only_apply_in_prefs = FALSE, parent_adjust_y=0)
+	if(only_apply_in_prefs)
+		return ..()
+
+// Not necessary with above
+/mob/living/carbon/human/dummy/apply_height_offsets(image/appearance, upper_torso)
+	return
+*/
+

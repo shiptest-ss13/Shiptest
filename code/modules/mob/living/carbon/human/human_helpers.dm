@@ -288,3 +288,34 @@
 		else
 			visible_gender = "Thing"
 	return visible_gender
+
+/**
+ * Setter for mob height
+ *
+ * Exists so that the update is done immediately
+ *
+ * Returns TRUE if changed, FALSE otherwise
+ */
+/mob/living/carbon/human/proc/set_mob_height(new_height)
+	if(mob_height == new_height)
+		return FALSE
+	if(new_height == HUMAN_HEIGHT_DWARF)
+		CRASH("Don't set height to dwarf height directly, use dwarf trait")
+
+	mob_height = new_height
+	src?.dna.current_height_filter = new_height
+	regenerate_icons()
+	return TRUE
+
+/**
+ * Getter for mob height
+ *
+ * Mainly so that dwarfism can adjust height without needing to override existing height
+ *
+ * Returns a mob height num
+ */
+/mob/living/carbon/human/proc/get_mob_height()
+	if(HAS_TRAIT(src, TRAIT_DWARF))
+		return HUMAN_HEIGHT_DWARF
+
+	return mob_height

@@ -1,6 +1,7 @@
 #define OVERMAP_GENERATOR_NONE "none"
 #define OVERMAP_GENERATOR_SOLAR "solar_system"
 #define OVERMAP_GENERATOR_RANDOM "random"
+#define OVERMAP_GENERATOR_JSON "json"
 
 // Star spectral types. A star's visible color is based on this.
 // Only loosely adherent to real spectral types, because real spectral types
@@ -81,7 +82,7 @@
 #define BURN_STOP -1
 
 // The filepath used to store the admin-controlled next round outpost map override.
-#define OUTPOST_OVERRIDE_FILEPATH "data/outpost_override.json"
+#define SAFEZONE_OVERRIDE_FILEPATH "data/safezone_override.json"
 
 // Converts ores to colors, meant for examining planets on the overmap
 #define ORES_TO_COLORS_LIST list(\
@@ -113,4 +114,16 @@
 #define SHIPMODULE_BSDRIVE "bluespace_drive"
 #define SHIPMODULE_HELMCONSOLE "helm_console"
 #define SHIPMODULE_TRANSPONDER "transponder"
+#define SHIPMODULE_CLOAKING "cloaking"
+
+//the color assignments used by overmaps TODO: make overmap objects use these instead of the old hardcoded assignments
+#define STARSYSTEM_COLOR_PRIMARY_COLOR "primary"
+#define STARSYSTEM_COLOR_SECONDARY_COLOR "secondary"
+
+#define STARSYSTEM_COLOR_HAZARD_PRIMARY_COLOR "hazard_primary"
+#define STARSYSTEM_COLOR_HAZARD_SECONDARY_COLOR "hazard_secondary"
+
+#define STARSYSTEM_COLOR_PRIMARY_STRUCTURE_COLOR "structure_primary"
+#define STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR "structure_secondary"
+
 

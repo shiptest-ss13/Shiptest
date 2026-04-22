@@ -338,6 +338,28 @@
 		/obj/item/stock_parts/capacitor = 1)
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high/empty)
 
+/obj/item/circuitboard/machine/cloak
+	name = "Ship Cloaking Device (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/cloak
+	req_components = list(
+		/obj/item/stock_parts/cell = 1,
+		/obj/item/stock_parts/capacitor = 1)
+	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high/empty)
+
+/obj/item/circuitboard/machine/advanced_cloak
+	name = "Advanced Ship Cloaking Device (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/cloak/advanced
+	req_components = list(
+		/obj/item/stock_parts/cell = 1,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stack/ore/bluespace_crystal = 1)
+	def_components = list(
+		/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high/empty,
+		/obj/item/stock_parts/capacitor = /obj/item/stock_parts/capacitor/adv,
+	)
+
 /obj/item/circuitboard/machine/techfab/department/engineering
 	name = "\improper Departmental Techfab (Machine Board) - Engineering"
 	build_path = /obj/machinery/rnd/production/techfab/department/engineering
@@ -695,14 +717,14 @@
 	return ..()
 
 /obj/item/circuitboard/machine/vending/donksofttoyvendor
-	name = "Donksoft Toy Vendor (Machine Board)"
+	name = "Toy Gun Vendor (Machine Board)"
 	build_path = /obj/machinery/vending/donksofttoyvendor
 	req_components = list(
 		/obj/item/stack/sheet/glass = 1,
 		/obj/item/vending_refill/donksoft = 1)
 
 /obj/item/circuitboard/machine/vending/syndicatedonksofttoyvendor
-	name = "Syndicate Donksoft Toy Vendor (Machine Board)"
+	name = "Syndicate Toy Gun Vendor (Machine Board)"
 	build_path = /obj/machinery/vending/toyliberationstation
 	req_components = list(
 		/obj/item/stack/sheet/glass = 1,
@@ -1216,7 +1238,6 @@
 	icon_state = "service"
 	build_path = /obj/machinery/griddle
 	req_components = list(
-		/obj/item/stack/sheet/mineral/titanium = 1,
 		/obj/item/assembly/igniter = 1,
 		/obj/item/stack/cable_coil = 2,
 		/obj/item/stock_parts/micro_laser = 1,
@@ -1227,7 +1248,6 @@
 	icon_state = "service"
 	build_path = /obj/machinery/oven
 	req_components = list(
-		/obj/item/stack/sheet/mineral/titanium = 1,
 		/obj/item/assembly/igniter = 1,
 		/obj/item/stack/cable_coil = 2,
 		/obj/item/stock_parts/micro_laser = 1,
@@ -1449,6 +1469,14 @@
 	build_path = /obj/machinery/power/shuttle/engine/electric/bad
 	req_components = list(/obj/item/stock_parts/capacitor = 2,
 		/obj/item/stock_parts/micro_laser = 2)
+
+// Maploaded engines of this type function identically to standard ion engines, but they start with T3 parts
+/obj/item/circuitboard/machine/shuttle/engine/electric/premium
+	build_path = /obj/machinery/power/shuttle/engine/electric/premium
+	def_components = list(
+		/obj/item/stock_parts/capacitor = /obj/item/stock_parts/capacitor/super,
+		/obj/item/stock_parts/micro_laser = /obj/item/stock_parts/micro_laser/ultra
+		)
 
 /obj/item/circuitboard/machine/shuttle/engine/expulsion
 	name = "Expulsion Thruster (Machine Board)"

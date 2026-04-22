@@ -71,13 +71,14 @@
 
 	head = /obj/item/clothing/head/helmet/ngr
 	mask = /obj/item/clothing/mask/balaclava/ngr
-	ears = /obj/item/radio/headset/headset_sec/alt
+	ears = /obj/item/radio/headset/syndicate/alt/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ngr
 	suit = /obj/item/clothing/suit/armor/ngr
 	belt = /obj/item/storage/belt/security/webbing/ngr/cobra
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cobra
 
+/*
 /datum/outfit/job/syndicate/ert/ngr/grenadier
 	name = "ERT - New Gorlex Republic Grenadier"
 
@@ -85,6 +86,7 @@
 	suit_store = /obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl
 
 	backpack_contents = list(/obj/item/grenade/c4 = 3)
+*/
 
 /datum/outfit/job/syndicate/ert/ngr/medic
 	name = "ERT - New Gorlex Republic Field Medic"
@@ -135,6 +137,7 @@
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	belt = /obj/item/storage/belt/security/webbing/ngr/cobra
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cobra
+	ears = /obj/item/radio/headset/syndicate/alt/captain/ngr
 
 	l_pocket = /obj/item/megaphone/sec
 
@@ -147,7 +150,7 @@
 	jobtype = /datum/job/ert/commander
 
 	head = /obj/item/clothing/head/ngr
-	ears = /obj/item/radio/headset/syndicate/captain
+	ears = /obj/item/radio/headset/syndicate/alt/captain/ngr
 	gloves = /obj/item/clothing/gloves/color/white
 	mask = null
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
@@ -175,11 +178,11 @@
 
 	head = null
 	mask = /obj/item/clothing/mask/breath
-	uniform = /obj/item/clothing/under/syndicate/cybersun
+	uniform = /obj/item/clothing/under/cybersun
 	belt = /obj/item/storage/belt/military/boomslang
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/cybersun
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/boomslang
-	ears = /obj/item/radio/headset/syndicate/alt
+	ears = /obj/item/radio/headset/syndicate/alt/cybersun
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/hardliners
 
 	implants = list(/obj/item/implant/adrenalin)
@@ -189,7 +192,7 @@
 	name = "ERT - Syndicate Cybersun Commando Leader"
 	jobtype = /datum/job/ert/commander
 
-	ears = /obj/item/radio/headset/syndicate/alt/captain
+	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
 	glasses = /obj/item/clothing/glasses/hud/security/night
 
 	backpack_contents = list(/obj/item/autosurgeon/syndicate/laser_arm=1, /obj/item/antag_spawner/nuke_ops/borg_tele/medical/unlocked=1, /obj/item/grenade/smokebomb)
@@ -198,8 +201,8 @@
 	name = "ERT - Syndicate Cybersun Representative"
 	jobtype = /datum/job/ert/commander
 
-	uniform = /obj/item/clothing/under/syndicate/cybersun/officer
-	head = /obj/item/clothing/head/HoS/cybersun
+	uniform = /obj/item/clothing/under/cybersun/officer
+	head = /obj/item/clothing/head/cybersun
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	suit = null
@@ -207,7 +210,7 @@
 	belt = /obj/item/clipboard
 	glasses = null
 	mask = null
-	ears = /obj/item/radio/headset/syndicate
+	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
 
 	r_pocket = /obj/item/pen/fourcolor
 	l_pocket = /obj/item/taperecorder
@@ -221,7 +224,7 @@
 	job_icon = "paramedic"
 	jobtype = /datum/job/ert/med
 
-	uniform = /obj/item/clothing/under/syndicate/medic
+	uniform = /obj/item/clothing/under/cybersun/medic
 	accessory = /obj/item/clothing/accessory/holster/marine
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed
 	suit_store = /obj/item/tank/internals/oxygen
@@ -244,7 +247,7 @@
 
 	head = /obj/item/clothing/head/beret/cmo
 	glasses = /obj/item/clothing/glasses/hud/security/night
-	ears = /obj/item/radio/headset/syndicate/captain
+	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
 	r_pocket = /obj/item/megaphone/command
 
 	backpack_contents = list(/obj/item/storage/firstaid/tactical=1, /obj/item/holosign_creator/medical=1, /obj/item/autosurgeon/cmo=1, /obj/item/radio=1, /obj/item/antag_spawner/nuke_ops/borg_tele/medical/unlocked=1)
@@ -263,6 +266,7 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	mask = /obj/item/clothing/mask/balaclava/combat
 	head = /obj/item/clothing/head/helmet/hardliners
+	ears = /obj/item/radio/headset/syndicate/alt/cybersun
 
 /datum/outfit/job/syndicate/ert/hardliner/engineer
 	name = "ERT - Syndicate Hardliner Mechanic"
@@ -288,6 +292,7 @@
 	uniform = /obj/item/clothing/under/syndicate/hardliners/officer
 	suit = /obj/item/clothing/suit/armor/hardliners/sergeant
 	head = /obj/item/clothing/head/hardliners/peaked
+	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
 
 // ramzi clique
 
@@ -298,32 +303,32 @@
 	mask = /obj/item/clothing/mask/gas/ramzi
 	uniform = /obj/item/clothing/under/syndicate/ramzi/overalls
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
-	suit_store = /obj/item/gun/ballistic/automatic/smg/cobra
-	belt = /obj/item/storage/belt/military/cobra
-	glasses = /obj/item/clothing/glasses/thermal
+	suit_store = /obj/item/gun/ballistic/automatic/assault/hydra
+	belt = /obj/item/storage/belt/security/webbing/ramzi/hydra
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
 	gloves = /obj/item/clothing/gloves/combat
 
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
-	backpack_contents = list(/obj/item/grenade/frag = 3, /obj/item/grenade/smokebomb = 3)
+	backpack_contents = list(/obj/item/grenade/frag = 1, /obj/item/grenade/smokebomb = 2)
 
 /datum/outfit/job/syndicate/ert/ramzi/demolitionist
 	name = "ERT - Ramzi Clique Cell Demolitionist"
 
-	belt = /obj/item/storage/belt/military/mako
-	suit_store = /obj/item/gun/ballistic/rocketlauncher/mako
-	glasses = /obj/item/clothing/glasses/meson/night
+	belt = /obj/item/storage/belt/security/webbing/ramzi/mako_light
+	suit_store = /obj/item/gun/ballistic/rocketlauncher/mako/light
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ngr
 
 	r_pocket = /obj/item/gun/ballistic/automatic/pistol/himehabu
 
-	backpack_contents = list(/obj/item/ammo_box/magazine/m22lr_himehabu = 2, /obj/item/grenade/c4/x4 = 3, /obj/item/grenade/syndieminibomb = 3, /obj/item/ammo_casing/caseless/rocket/a70mm = 4)
+	backpack_contents = list(/obj/item/ammo_box/magazine/m22lr_himehabu = 2, /obj/item/grenade/c4/x4 = 3, /obj/item/grenade/syndieminibomb = 3, /obj/item/ammo_casing/caseless/rocket/a70mm/light = 4)
 
 /datum/outfit/job/syndicate/ert/ramzi/medic
 	name = "ERT - Ramzi Clique Cell Medic"
 	jobtype = /datum/job/ert/med
 
 	belt = /obj/item/storage/belt/medical/webbing/combat
-	glasses = /obj/item/clothing/glasses/hud/health/night
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ngr
 
 	backpack_contents = list(/obj/item/ammo_box/magazine/m45_cobra = 3, /obj/item/defibrillator/compact/combat/loaded, /obj/item/reagent_containers/hypospray/combat)
 
@@ -331,10 +336,10 @@
 	name = "ERT - Ramzi Clique Cell Leader"
 	jobtype = /datum/job/ert/commander
 
-	uniform = /obj/item/clothing/under/syndicate/gorlex
+	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated // funny
 
-	belt = /obj/item/storage/belt/security/webbing/bulldog_mixed
+	belt = /obj/item/storage/belt/security/webbing/ramzi/bulldog_mixed
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/bulldog/drum
 
-	backpack_contents = list(/obj/item/grenade/smokebomb = 4, /obj/item/grenade/stingbang = 2, /obj/item/grenade/empgrenade = 2)
+	backpack_contents = list(/obj/item/grenade/smokebomb = 4, /obj/item/grenade/stingbang = 2, /obj/item/grenade/empgrenade = 1)

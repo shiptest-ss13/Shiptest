@@ -213,7 +213,7 @@
 				backpack_contents += pick_weight(list(
 					/obj/item/borg/upgrade/modkit/damage = 1,
 					/obj/item/borg/upgrade/modkit/trigger_guard = 1,
-					/obj/item/soap/nanotrasen = 1,
+					/obj/item/soap/warra = 1,
 					/obj/item/wormhole_jaunter = 1,
 					/obj/item/fulton_core = 1,
 					/obj/item/extraction_pack = 2,
@@ -230,12 +230,11 @@
 				)
 		if(prob(30))
 			backpack_contents += list(
-				/obj/item/reagent_containers/hypospray/medipen/survival = pick_weight(list(
-					1 = 3,
-					2 = 2,
-					3 = 1
-					)
-				)
+				/obj/item/reagent_containers/hypospray/medipen/survival = text2num(pick_weight(list(
+					"1" = 3,
+					"2" = 2,
+					"3" = 1,
+				)))
 			)
 	else if (prob(75))
 		backpack_contents = list()

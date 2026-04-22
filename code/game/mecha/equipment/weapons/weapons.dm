@@ -176,7 +176,7 @@
 	righthand_file = GUN_RIGHTHAND_ICON
 	energy_drain = 30
 	projectile = /obj/projectile/plasma/adv/mech
-	fire_sound = 'sound/weapons/plasma_cutter.ogg'
+	fire_sound = 'sound/weapons/melee/plasmacutter/plasma_cutter.ogg'
 	harmful = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/can_attach(obj/mecha/working/M)
@@ -364,7 +364,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/railgun
 	name = "\improper PR-05 Mounted Plasma Railgun"
-	desc = "A plasma railgun manufactured by NT and taking a different direction from their handheld counterpart. Namely utilizing the plasma NT had such large quantities of to help with heating and accelerating the projectile. Shoots super-heated high-density iron-tungsten rods at ludicrous speeds."
+	desc = "A plasma railgun manufactured by Makosso-Warra and taking a different direction from their handheld counterpart. Namely utilizing the plasma Makosso-Warra had such large quantities of to help with heating and accelerating the projectile. Shoots super-heated high-density iron-tungsten rods at ludicrous speeds."
 	icon_state = "mecha_railgun"
 	equip_cooldown = 34
 	projectile = /obj/projectile/bullet/p50/penetrator/sabot
@@ -386,7 +386,7 @@
 	name = "\improper SRM-8 missile rack"
 	desc = "A weapon for combat exosuits. Launches light explosive missiles."
 	icon_state = "mecha_missilerack"
-	projectile = /obj/projectile/bullet/a84mm_he
+	projectile = /obj/projectile/bullet/a84mm/he
 	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
 	projectiles = 8
 	projectiles_cache = 0

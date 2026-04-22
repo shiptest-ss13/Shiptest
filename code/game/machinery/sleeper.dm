@@ -101,7 +101,7 @@
 		return
 	playsound(src, 'sound/machines/synth_yes.ogg', 50, TRUE, frequency = rand(5120, 8800))
 	target.apply_status_effect(STATUS_EFFECT_STASIS, STASIS_MACHINE_EFFECT)
-	target.ExtinguishMob()
+	target.extinguish_mob()
 	set_active_power()
 
 /obj/machinery/sleeper/proc/thaw_them(mob/living/target)

@@ -2,7 +2,7 @@
 //------------------------------------SUPPLY POD-------------------------------------//
 /obj/structure/closet/supplypod
 	name = "supply pod" //Names and descriptions are normally created with the setStyle() proc during initialization, but we have these default values here as a failsafe
-	desc = "A Nanotrasen supply drop pod."
+	desc = "A Makosso-Warra supply drop pod."
 	icon = 'icons/obj/supplypods.dmi'
 	icon_state = "pod" //This is a common base sprite shared by a number of pods
 	pixel_x = SUPPLYPOD_X_OFFSET //2x2 sprite
@@ -173,11 +173,10 @@
 	if(decal)
 		. += decal
 
-/obj/structure/closet/supplypod/tool_interact(obj/item/W, mob/user)
+/obj/structure/closet/supplypod/tool_act(mob/living/user, obj/item/I, tool_type)
 	if(bluespace) //We dont want to worry about interacting with bluespace pods, as they are due to delete themselves soon anyways.
 		return FALSE
-	else
-		..()
+	return ..()
 
 /obj/structure/closet/supplypod/ex_act() //Explosions dont do SHIT TO US! This is because supplypods create explosions when they land.
 	return

@@ -116,3 +116,18 @@
 				return TRUE
 			return FALSE
 	. = ..()
+
+/mob/living/simple_animal/hostile/human/bullet_act(obj/projectile/projectile)
+	shake_animation(projectile.damage)
+	if(projectile.damage_type==BRUTE)
+		if(prob((projectile.damage + projectile.wound_bonus)-(armor.bullet - projectile.armour_penetration)))
+			spray_blood(projectile.dir, rand(1,3))
+	return ..()
+
+/mob/living/simple_animal/hostile/human/proc/spray_blood(splatter_direction, splatter_strength = 3)
+	if(!isturf(loc))
+		return
+	new /obj/effect/decal/cleanable/blood(loc)
+	var/obj/effect/decal/cleanable/blood/hitsplatter/our_splatter = new(loc)
+	var/turf/targ = get_ranged_target_turf(src, splatter_direction, splatter_strength)
+	INVOKE_ASYNC(our_splatter, TYPE_PROC_REF(/obj/effect/decal/cleanable/blood/hitsplatter, fly_towards), targ, splatter_strength)

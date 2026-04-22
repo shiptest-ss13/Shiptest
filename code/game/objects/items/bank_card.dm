@@ -147,7 +147,7 @@
 	. = ..()
 	if(registered_account)
 		. += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of <B>[registered_account.account_balance] cr</B>."
-		. += "The card indicates that the holder is <B>[registered_account.holder_age] years old</b>. [(registered_account.holder_age < AGE_MINOR) ? "There's a holographic stripe that reads <b>[span_danger("'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'")]</b> along the bottom of the card." : ""]"
+		. += "The card indicates that the holder is <B>[registered_account.holder_age] years old</b>. [(registered_account.holder_age < AGE_DRINKING) ? "There's a holographic stripe that reads <b>[span_danger("'DO NOT SERVE ALCOHOL OR TOBACCO'")]</b> along the bottom of the card." : ""]"
 		. += span_info("Alt-Click the ID to pull money from the linked account in the form of holochips.")
 		. += span_info("You can insert credits into the linked account by pressing holochips, cash, or coins against the ID.")
 		. += span_boldnotice("If you lose this ID card, you can reclaim your account by Alt-Clicking a blank ID card while holding it and entering your account ID number.")

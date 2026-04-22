@@ -79,6 +79,8 @@
 #define PLASMA_MINIMUM_BURN_TEMPERATURE (100+T0C)
 #define PLASMA_UPPER_TEMPERATURE (1370+T0C)
 #define PLASMA_OXYGEN_FULLBURN 10
+#define MONOXIDE_MIN_BURN_CONCENTRATION 0.12 // 12% fuel concentration required
+#define MONOXIDE_BURN_RATE 0.2
 
 //COLD FIRE (this is used only for the freon-o2 reaction, there is no fire still)
 #define COLD_FIRE_MAXIMUM_TEMPERATURE_TO_SPREAD 263 //fire will spread if the temperature is -10 °C
@@ -222,6 +224,7 @@
 #define ATMOS_TANK_FUEL "o2=33000;plasma=66000;TEMP=293.15"
 #define ATMOS_TANK_HYDROGEN_FUEL "o2=33000;h2=66000;TEMP=293.15"
 #define ATMOS_TANK_PLASMAHALF "plasma=6000;TEMP=293.15"
+#define COMBAT_CHLORINE "o2=22;n2=82;cl2=200;TEMP=293.15"
 
 //PLANETARY
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland
@@ -348,8 +351,12 @@
 #define GAS_METHANE "methane"
 #define GAS_AMMONIA "ammonia"
 
+/// Used to determine whether a canister should alert admins if opened
 #define GAS_FLAG_DANGEROUS (1<<0)
+/// Do not use this unless you absolutely have to
 #define GAS_FLAG_BREATH_PROC (1<<1)
+/// Can cause lung irritation
+#define GAS_FLAG_IRRITANT (1<<2)
 
 // odors
 #define GAS_ODOR_CHEMICAL list(\

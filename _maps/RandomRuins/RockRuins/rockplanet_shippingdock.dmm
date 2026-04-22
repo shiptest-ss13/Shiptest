@@ -2747,7 +2747,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Bx" = (
 /obj/structure/window/reinforced,
-/obj/effect/turf_decal/trimline/opaque/ntblue,
+/obj/effect/turf_decal/trimline/opaque/warrablue,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "By" = (
@@ -4250,7 +4250,7 @@
 "QC" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/under/suit/charcoal,
-/obj/item/clothing/suit/toggle/lawyer/charcoal,
+/obj/item/clothing/suit/lawyer/charcoal,
 /obj/item/clothing/glasses/sunglasses/big,
 /obj/item/clothing/shoes/laceup,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -4422,9 +4422,9 @@
 "SJ" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced,
-/obj/effect/spawner/random/food_or_drink/donkpockets,
-/obj/effect/spawner/random/food_or_drink/donkpockets,
-/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/shoalpockets,
+/obj/effect/spawner/random/food_or_drink/shoalpockets,
+/obj/effect/spawner/random/food_or_drink/shoalpockets,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "SM" = (
@@ -4789,10 +4789,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/pet/mothroach{
 	name = "Baffles"
-	},
-/obj/effect/landmark/mission_poi/main{
-	type_to_spawn = /mob/living/simple_animal/pet/mothroach;
-	already_spawned = 1
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/rockplanet/shippingdock)

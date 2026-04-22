@@ -66,23 +66,29 @@
 	var/cure = has_cure()
 
 	if(carrier && !cure)
-		return
+		return FALSE
 
 	stage = min(stage, max_stages)
 
 	if(!cure)
 		if(prob(stage_prob))
 			update_stage(min(stage + 1,max_stages))
-	else
-		if(prob(cure_chance))
-			update_stage(max(stage - 1, 1))
+		return TRUE
 
-	if(disease_flags & CURABLE)
-		if(cure && prob(cure_chance))
+	if((disease_flags & CURABLE) && prob(cure_chance))
+		if(!(disease_flags & INCREMENTAL_CURE))
 			cure()
+			return FALSE
+		else if(!update_stage(stage - 1))
+			return FALSE
+	return TRUE
 
 /datum/disease/proc/update_stage(new_stage)
 	stage = new_stage
+	if(stage <= 0)
+		cure()
+		return FALSE
+	return TRUE
 
 /datum/disease/proc/has_cure()
 	if(!(disease_flags & CURABLE))
@@ -90,7 +96,7 @@
 
 	. = cures.len
 	for(var/C_id in cures)
-		if(!affected_mob.has_reagent(C_id))
+		if(!affected_mob.reagents.has_reagent(C_id))
 			.--
 	if(!. || (needs_all_cures && . < cures.len))
 		return FALSE
@@ -103,8 +109,7 @@
 	if(!(spread_flags & DISEASE_SPREAD_AIRBORNE) && !force_spread)
 		return
 
-	if(affected_mob.has_reagent(/datum/reagent/medicine/spaceacillin) || (affected_mob.satiety > 0 && prob(affected_mob.satiety/10)))
-		return
+	if(affected_mob.reagents.has_reagent(/datum/reagent/medicine/spaceacillin) || (affected_mob.satiety > 0 && prob(affected_mob.satiety/10)))		return
 
 	var/spread_range = 2
 

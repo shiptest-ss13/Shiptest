@@ -383,14 +383,14 @@
 		return TRUE
 
 /////////////////////////////////// DISABILITIES ////////////////////////////////////
-/mob/living/proc/add_quirk(quirktype, spawn_effects) //separate proc due to the way these ones are handled
+/mob/living/proc/add_quirk(quirktype, client/override_client, spawn_effects) //separate proc due to the way these ones are handled
 	if(HAS_TRAIT(src, quirktype))
 		return
 	var/datum/quirk/T = quirktype
 	var/qname = initial(T.name)
 	if(!SSquirks || !SSquirks.quirks[qname])
 		return
-	new quirktype (src, spawn_effects)
+	new quirktype (src, override_client, spawn_effects)
 	return TRUE
 
 /mob/living/proc/remove_quirk(quirktype)
@@ -405,6 +405,9 @@
 		if(Q.type == quirktype)
 			return TRUE
 	return FALSE
+
+/mob/living/proc/cleanse_quirk_datums() //removes all trait datums
+	QDEL_LAZYLIST(roundstart_quirks)
 
 /////////////////////////////////// TRAIT PROCS ////////////////////////////////////
 
@@ -659,4 +662,31 @@
 	var/datum/status_effect/inebriated/inebriation = has_status_effect(/datum/status_effect/inebriated)
 	if(inebriation)
 		return inebriation?.drunk_value
+	return 0
+
+/mob/living/proc/adjust_lung_inflammation(amount)
+	if(!isnum(amount))
+		CRASH("adjust_lung_inflammation: called with an invalid amount. (Got: [amount])")
+
+	var/datum/status_effect/lung_inflammation/inflammation = has_status_effect(/datum/status_effect/lung_inflammation)
+	if(inflammation)
+		inflammation.adjust_inflammation(amount)
+	else if(amount > 0 && !HAS_TRAIT(src, TRAIT_ANTI_INFLAMMATORY))
+		apply_status_effect(/datum/status_effect/lung_inflammation, amount)
+
+/mob/living/proc/set_lung_inflammation(set_to)
+	if(!isnum(set_to) || set_to < 0)
+		CRASH("set_lung_inflammation: called with an invalid value. (Got: [set_to])")
+
+	var/datum/status_effect/lung_inflammation/inflammation = has_status_effect(/datum/status_effect/lung_inflammation)
+	if(inflammation)
+		inflammation.adjust_inflammation(set_to - inflammation.inflammation)
+	else if(set_to > 0)
+		apply_status_effect(/datum/status_effect/lung_inflammation, set_to)
+
+/// Returns the amount of lung inflammation the mob is experiencing
+/mob/living/proc/get_lung_inflammation()
+	var/datum/status_effect/lung_inflammation/inflammation = has_status_effect(/datum/status_effect/lung_inflammation)
+	if(inflammation)
+		return inflammation?.inflammation
 	return 0

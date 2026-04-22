@@ -9,6 +9,8 @@
 	generic_canpass = FALSE
 	plane = GAME_PLANE_FOV_HIDDEN
 	wound_bonus = CANT_WOUND // can't wound by default
+	///armour percentage that the projectile ignores
+	armour_penetration = 0
 	///The sound this plays on impact.
 	var/hitsound = 'sound/weapons/pierce.ogg'
 	var/hitsound_non_living = ""
@@ -101,7 +103,7 @@
 	var/ricochet_auto_aim_angle = 30
 	/// the angle of impact must be within this many degrees of the struck surface, set to 0 to allow any angle
 	var/ricochet_incidence_leeway = 40
-	/// accuracy modifier. Used as a multiplier
+	/// accuracy modifier. Used as a multiplier when calculating which body part is hit on a living target
 	var/accuracy_mod = 1
 
 	///If the object being hit can pass ths damage on to something else, it should not do it for this bullet
@@ -142,8 +144,6 @@
 	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE, STAMINA are the only things that should be in here
 	var/nodamage = FALSE //Determines if the projectile will skip any damage inflictions
 	var/flag = "bullet" //Defines what armor to use when it hits things.  Must be set to bullet, laser, energy,or bomb
-	///How much armor this projectile pierces.
-	var/armour_penetration = 0
 	var/projectile_type = /obj/projectile
 	var/range = 50 //This will de-increment every step. When 0, it will deletze the projectile.
 	var/decayedRange			//stores original range

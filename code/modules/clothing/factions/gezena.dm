@@ -8,6 +8,9 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "navywear"
 	item_state = "navyjump"
+	sensor_mode = SENSOR_COORDS
+	roll_sleeves = TRUE
+	roll_down = TRUE
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
@@ -230,7 +233,7 @@
 	item_state = "bluecloth"
 
 /obj/item/clothing/head/gezena/medic
-	name = "navy medical cap"
+	name = "medical cap"
 	desc = "The standard cap of the PGF military. The coloring indicates the wearer as a medical specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -338,6 +341,25 @@
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
+//Back
+/obj/item/storage/backpack/security/gezena
+	name = "PGFMC backpack"
+	desc = "An aqua-green backpack designed for use with PGFMC rigging, although it can still be worn on its own."
+	icon_state = "pgfpack"
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/storage/backpack/satchel/sec/gezena
+	name = "PGFMC satchel"
+	desc = "An aqua-green satchel designed for use with PGFMC rigging, although it can still be worn on its own."
+	icon_state = "satchel-pgf"
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/storage/backpack/messenger/sec/gezena
+	name = "PGFMC assault pack"
+	desc = "An aqua-green assault pack designed for use with PGFMC rigging, although it can still be worn on its own."
+	icon_state = "pgfassault"
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
 //Belt
 
 /obj/item/storage/belt/military/gezena
@@ -401,11 +423,13 @@
 	icon = 'icons/obj/clothing/faction/gezena/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/mask.dmi'
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
+	flags_cover = MASKCOVERSMOUTH | PEPPERPROOF
+	visor_flags_cover = MASKCOVERSMOUTH | PEPPERPROOF
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 	gas_transfer_coefficient = 0.01
-	permeability_coefficient = 0.01
+	permeability_coefficient = 0.00
 
 //Eyes
 /obj/item/clothing/glasses/sunglasses/pgf
@@ -416,6 +440,7 @@
 	icon_state = "pgfgoggles"
 	item_state = "pgfgoggles"
 	clothing_flags = SEALS_EYES | FLASH_PROTECTION_FLASH
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'

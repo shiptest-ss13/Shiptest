@@ -73,7 +73,9 @@
 
 //click cooldowns, in tenths of a second, used for various combat actions
 #define HEAVY_WEAPON_CD 10
+#define CLICK_CD_BLOCKED 10
 #define CLICK_CD_MELEE 8
+#define CLICK_CD_THROW 8
 #define LIGHT_WEAPON_CD 6
 #define CLICK_CD_RANGE 4
 #define CLICK_CD_RAPID 2
@@ -194,6 +196,11 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 #define EXPLODE_LIGHT 3
 #define EXPLODE_GIB_THRESHOLD 50 //ex_act() with EXPLODE_DEVASTATE severity will gib mobs with less than this much bomb armor
 
+#define EX_LIGHT_BASE_DAM 40
+#define EX_LIGHT_BASE_ITEM_DAM 45
+#define EX_HEAVY_BASE_DAM 80
+#define EX_HEAVY_BASE_ITEM_DAM 75
+
 #define EMP_HEAVY 1
 #define EMP_LIGHT 2
 
@@ -218,6 +225,11 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 
 //We will round to this value in damage calculations.
 #define DAMAGE_PRECISION 0.1
+
+/// Calls the effects of flashes. Screen overlays and such.
+#define FLASH_EFFECT (1<<0)
+/// Whether the flash should cause eye damage.
+#define FLASH_DAMAGE (1<<1)
 
 /// Alternate attack defines. Return these at the end of procs like afterattack_secondary.
 /// Calls the normal attack proc. For example, if returned in afterattack_secondary, will call afterattack.

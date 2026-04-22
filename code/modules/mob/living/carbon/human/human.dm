@@ -142,16 +142,14 @@
 	dat += "<tr><td>&nbsp;</td></tr>"
 
 	dat += "<tr><td><B>Exosuit:</B></td><td><A href='byond://?src=[REF(src)];item=[ITEM_SLOT_OCLOTHING]'>[(wear_suit && !(wear_suit.item_flags & ABSTRACT)) ? wear_suit : "<font color=grey>Empty</font>"]</A></td></tr>"
-	if(wear_suit)
-		if(ITEM_SLOT_SUITSTORE in obscured)
-			dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>Suit Storage:</B></font></td></tr>"
-		else
-			dat += "<tr><td>&nbsp;&#8627;<B>Suit Storage:</B></td><td><A href='byond://?src=[REF(src)];item=[ITEM_SLOT_SUITSTORE]'>[(s_store && !(s_store.item_flags & ABSTRACT)) ? s_store : "<font color=grey>Empty</font>"]</A>"
-			if(has_breathable_mask && istype(s_store, /obj/item/tank))
-				dat += "&nbsp;<A href='byond://?src=[REF(src)];internal=[ITEM_SLOT_SUITSTORE]'>[internal ? "Disable Internals" : "Set Internals"]</A>"
-			dat += "</td></tr>"
-	else
+
+	if(ITEM_SLOT_SUITSTORE in obscured)
 		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>Suit Storage:</B></font></td></tr>"
+	else
+		dat += "<tr><td>&nbsp;&#8627;<B>Suit Storage:</B></td><td><A href='byond://?src=[REF(src)];item=[ITEM_SLOT_SUITSTORE]'>[(s_store && !(s_store.item_flags & ABSTRACT)) ? s_store : "<font color=grey>Empty</font>"]</A>"
+		if(has_breathable_mask && istype(s_store, /obj/item/tank))
+			dat += "&nbsp;<A href='byond://?src=[REF(src)];internal=[ITEM_SLOT_SUITSTORE]'>[internal ? "Disable Internals" : "Set Internals"]</A>"
+		dat += "</td></tr>"
 
 	if(ITEM_SLOT_FEET in obscured)
 		dat += "<tr><td><font color=grey><B>Shoes:</B></font></td><td><font color=grey>Obscured</font></td></tr>"
@@ -502,7 +500,7 @@
 
 //ohh god this'll need to be reworked into a zone-by-zone selection, rather than just "are yuor jorts thick"
 
-/mob/living/carbon/human/proc/is_exposed(mob/user, error_msg, target_zone)
+/mob/living/carbon/human/is_exposed(mob/user, target_zone, error_msg)
 	. = TRUE // Default to returning true.
 	if(user && !target_zone)
 		target_zone = user.zone_selected
@@ -525,34 +523,27 @@
 		to_chat(user, span_alert("There is no exposed flesh or thin material [above_neck(target_zone) ? "on [p_their()] head" : "on [p_their()] body"]."))
 
 
-/mob/living/carbon/human/can_inject(mob/user, error_msg, target_zone, penetrate_thick = FALSE, ignore_species = FALSE)
+/mob/living/carbon/human/can_inject(mob/user, target_zone, injection_flags)
 	. = TRUE // Default to returning true.
-	if(user && !target_zone)
-		target_zone = user.zone_selected
-
 	// we may choose to ignore species trait pierce immunity in case we still want to check skellies for thick clothing without insta failing them (wounds)
-	if(ignore_species)
+	if(injection_flags & INJECT_CHECK_IGNORE_SPECIES)
 		if(HAS_TRAIT_NOT_FROM(src, TRAIT_PIERCEIMMUNE, SPECIES_TRAIT))
 			. = FALSE
 	else if(HAS_TRAIT(src, TRAIT_PIERCEIMMUNE))
 		. = FALSE
+	if(user && !target_zone)
+		target_zone = get_bodypart(check_zone(user.zone_selected)) //try to find a bodypart. if there isn't one, target_zone will be null, and check_zone in the next line will default to the chest.
+	var/obj/item/bodypart/the_part = isbodypart(target_zone) ? target_zone : get_bodypart(check_zone(target_zone)) //keep these synced
+	// Loop through the clothing covering this bodypart and see if there's any thiccmaterials
+	if(!(injection_flags & INJECT_CHECK_PENETRATE_THICK))
+		for(var/obj/item/clothing/iter_clothing in get_clothing_on_part(the_part))
+			if(iter_clothing.clothing_flags & THICKMATERIAL)
+				. = FALSE
+				break
 
-	// If targeting the head, see if the head item is thin enough.
-	// If targeting anything else, see if the wear suit is thin enough.
-	if (!penetrate_thick)
-		if(above_neck(target_zone))
-			if(head && istype(head, /obj/item/clothing))
-				var/obj/item/clothing/CH = head
-				if (CH.clothing_flags & THICKMATERIAL)
-					. = FALSE
-		else
-			if(wear_suit && istype(wear_suit, /obj/item/clothing))
-				var/obj/item/clothing/CS = wear_suit
-				if (CS.clothing_flags & THICKMATERIAL)
-					. = FALSE
-
-	if(!. && error_msg && user)
-		// Might need re-wording.
+/mob/living/carbon/human/try_inject(mob/user, target_zone, injection_flags)
+	. = ..()
+	if(!. && (injection_flags & INJECT_TRY_SHOW_ERROR_MESSAGE) && user)
 		to_chat(user, span_alert("There is no exposed flesh or thin material [above_neck(target_zone) ? "on [p_their()] head" : "on [p_their()] body"]."))
 
 /mob/living/carbon/human/assess_threat(judgement_criteria, lasercolor = "", datum/callback/weaponcheck=null)
@@ -901,8 +892,8 @@
 					if(!body_part)
 						continue
 					var/numbing_wound = FALSE
-					for(var/datum/wound/W in body_part.wounds)
-						if(W.wound_type == WOUND_BURN)
+					for(var/datum/wound/iterated_wound in body_part.wounds)
+						if(iterated_wound.wound_flags & NUMBS_BODYPART)
 							numbing_wound = TRUE
 
 					var/damage = body_part.burn_dam + body_part.brute_dam
@@ -956,6 +947,28 @@
 			Immobilize(30)
 		return 1
 	..()
+
+
+/mob/living/carbon/human/vv_edit_var(var_name, var_value)
+	if(var_name == NAMEOF(src, mob_height))
+		var/static/list/heights = list(
+			HUMAN_HEIGHT_SHORTEST,
+			HUMAN_HEIGHT_SHORT,
+			HUMAN_HEIGHT_MEDIUM,
+			HUMAN_HEIGHT_TALL,
+			HUMAN_HEIGHT_TALLER,
+			HUMAN_HEIGHT_TALLEST
+		)
+		if(!(var_value in heights))
+			return
+
+		. = set_mob_height(var_value)
+
+	if(!isnull(.))
+		datum_flags |= DF_VAR_EDITED
+		return
+
+	return ..()
 
 /mob/living/carbon/human/vv_get_dropdown()
 	. = ..()
@@ -1016,7 +1029,7 @@
 				if(has_quirk(T))
 					remove_quirk(T)
 				else
-					add_quirk(T,TRUE)
+					add_quirk(T, spawn_effects = TRUE)
 	if(href_list[VV_HK_MAKE_MONKEY])
 		if(!check_rights(R_SPAWN))
 			return
@@ -1239,6 +1252,8 @@
 		visible_message(span_notice("[target] starts to climb onto [src]..."))
 		if(do_after(target, 15, target = src))
 			if(can_piggyback(target))
+				if(target.buckled)
+					target.buckled.unbuckle_mob(target)
 				if(target.incapacitated(FALSE, TRUE) || incapacitated(FALSE, TRUE))
 					target.visible_message(span_warning("[target] can't hang onto [src]!"))
 					return

@@ -14,7 +14,7 @@
  *
  * This is infinity so you must explicitly set this
  */
-	var/id_arg_index = INFINITY
+	var/argument_hash_start_idx = INFINITY
 
 /// Activates the functionality defined by the element on the given target datum
 /datum/element/proc/Attach(datum/target)
@@ -23,7 +23,7 @@
 		return ELEMENT_INCOMPATIBLE
 	SEND_SIGNAL(target, COMSIG_ELEMENT_ATTACH, src)
 	if(element_flags & ELEMENT_DETACH)
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(Detach), override = TRUE)
+		RegisterSignal(target, COMSIG_QDELETING, PROC_REF(Detach), override = TRUE)
 
 		/*
 		The override = TRUE here is to suppress runtimes happening because of the blood decal element
@@ -43,7 +43,7 @@
 	SIGNAL_HANDLER
 
 	SEND_SIGNAL(source, COMSIG_ELEMENT_DETACH, src)
-	UnregisterSignal(source, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(source, COMSIG_QDELETING)
 
 /datum/element/Destroy(force)
 	if(!force)
@@ -67,7 +67,10 @@
  * You only need additional arguments beyond the type if you're using [ELEMENT_BESPOKE]
  */
 /datum/proc/_RemoveElement(list/arguments)
-	var/datum/element/ele = SSdcs.GetElement(arguments)
+	var/datum/element/ele = SSdcs.GetElement(arguments, FALSE)
+	if(!ele) // We couldn't fetch the element, likely because it didn't exist.
+		return
+
 	if(ele.element_flags & ELEMENT_COMPLEX_DETACH)
 		arguments[1] = src
 		ele.Detach(arglist(arguments))

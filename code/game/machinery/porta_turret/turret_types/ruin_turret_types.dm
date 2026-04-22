@@ -38,13 +38,6 @@
 	max_integrity = 140
 	integrity_failure = 0.6
 
-/obj/machinery/porta_turret/ruin/ramzi/light/bonnie
-	lethal = TRUE
-
-/obj/machinery/porta_turret/ruin/ramzi/light/bonnie/Initialize()
-	. = ..()
-	take_damage(rand(120, 130),BRUTE)
-
 /obj/machinery/porta_turret/ruin/ramzi/heavy
 	name = "Revolt Turret"
 	desc = "A durable turret manufactured by the Gorlex Marauders during the ICW. Some reported examples used anti-vehicle munitions. Most surviving examples are poorly maintained."
@@ -118,45 +111,45 @@
 	burst_size = 6
 	burst_delay = 2
 
-/* Nanotrasen Derelict Turrets */
+/* Makosso-Warra Derelict Turrets */
 
-/obj/machinery/porta_turret/ruin/nt
+/obj/machinery/porta_turret/ruin/warra
 	name = "Sharplite Defense Turret"
-	desc = "A cheap and effective turret designed by Sharplite and purchased and installed on most Nanotrasen Vessels."
-	faction = list(FACTION_PLAYER_NANOTRASEN, "turret")
+	desc = "A cheap and effective turret designed by Sharplite and purchased and installed on most Makosso-Warra Vessels."
+	faction = list(FACTION_PLAYER_WARRA, "turret")
 	max_integrity = 160
 	integrity_failure = 0.6
 	icon_state = "standard_lethal"
 	base_icon_state = "standard"
 	stun_projectile = /obj/projectile/beam/disabler/sharplite
 	lethal_projectile = /obj/projectile/beam/laser/sharplite
-	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	lethal_projectile_sound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	stun_projectile_sound = 'sound/weapons/taser2.ogg'
 	shot_delay = 10
 	scan_range = 10
 
-/obj/machinery/porta_turret/ruin/nt/light
+/obj/machinery/porta_turret/ruin/warra/light
 	name = "Sharplite LDS"
-	desc = "A cheap and effective 'defensive system' designed by Sharplite for installation on Nanotrasen vessels."
+	desc = "A cheap and effective 'defensive system' designed by Sharplite for installation on Makosso-Warra vessels."
 	stun_projectile = /obj/projectile/beam/disabler/weak/sharplite
 	lethal_projectile = /obj/projectile/beam/laser/light/sharplite
-	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	lethal_projectile_sound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	stun_projectile_sound = 'sound/weapons/taser2.ogg'
 
-/obj/machinery/porta_turret/ruin/nt/light/sniper
+/obj/machinery/porta_turret/ruin/warra/light/sniper
 	name = "Sharplite Long-Range LDS"
-	desc = "A long-ranged 'defensive system' designed by Sharplite for installation on Nanotrasen stations."
+	desc = "A long-ranged 'defensive system' designed by Sharplite for installation on Makosso-Warra stations."
 	stun_projectile = /obj/projectile/beam/disabler/weak/sharplite
 	lethal_projectile = /obj/projectile/beam/laser/light/sharplite
-	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	lethal_projectile_sound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	stun_projectile_sound = 'sound/weapons/taser2.ogg'
 	shot_delay = 15
 	burst_size = 2
 	burst_delay = 3
 
-/obj/machinery/porta_turret/ruin/nt/heavy
+/obj/machinery/porta_turret/ruin/warra/heavy
 	name = "Sharplite Defense Cannon"
-	desc = "A heavy laser mounting designed by Sharplite for usage on Nanotrasen vessels."
+	desc = "A heavy laser mounting designed by Sharplite for usage on Makosso-Warra vessels."
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser/sharplite
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 	max_integrity = 250

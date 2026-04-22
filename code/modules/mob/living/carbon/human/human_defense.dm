@@ -39,16 +39,11 @@
 	return protection
 
 ///Get all the clothing on a specific body part
-/mob/living/carbon/human/proc/clothingonpart(obj/item/bodypart/def_zone)
+/mob/living/carbon/human/proc/get_clothing_on_part(obj/item/bodypart/def_zone)
 	var/list/covering_part = list()
-	var/list/body_parts = list(head, wear_mask, wear_suit, w_uniform, back, gloves, shoes, belt, s_store, glasses, ears, wear_id, wear_neck) //Everything but pockets. Pockets are l_store and r_store. (if pockets were allowed, putting something armored, gloves or hats for example, would double up on the armor)
-	for(var/bp in body_parts)
-		if(!bp)
-			continue
-		if(bp && istype(bp , /obj/item/clothing))
-			var/obj/item/clothing/C = bp
-			if(C.body_parts_covered & def_zone.body_part)
-				covering_part += C
+	for(var/obj/item/clothing/equipped in get_equipped_items())
+		if(equipped.body_parts_covered & def_zone.body_part)
+			covering_part += equipped
 	return covering_part
 
 /mob/living/carbon/human/on_hit(obj/projectile/P)
@@ -273,7 +268,7 @@
 	if(M.limb_destroyer)
 		dismembering_strike(M, affecting.body_zone)
 
-	if(can_inject(M, 1, affecting))//Thick suits can stop monkey bites.
+	if(can_inject(M, affecting))//Thick suits can stop monkey bites.
 		if(..()) //successful monkey bite, this handles disease contraction.
 			var/damage = rand(M.melee_damage_lower, M.melee_damage_upper)
 			if(!damage)
@@ -455,7 +450,7 @@
 		..()
 
 
-/mob/living/carbon/human/ex_act(severity, target, origin)
+/mob/living/carbon/human/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	if(TRAIT_BOMBIMMUNE in dna.species.species_traits)
 		return
 	..()
@@ -474,48 +469,47 @@
 
 	switch (severity)
 		if (EXPLODE_DEVASTATE)
-			if(bomb_armor < EXPLODE_GIB_THRESHOLD) //gibs the mob if their bomb armor is lower than EXPLODE_GIB_THRESHOLD
+			if(bomb_armor < EXPLODE_GIB_THRESHOLD)
 				for(var/I in contents)
 					var/atom/A = I
+					var/list/to_explode = list(A,light_dam,light_item_dam,heavy_dam,heavy_item_dam)
 					if(!QDELETED(A))
 						switch(severity)
 							if(EXPLODE_DEVASTATE)
-								SSexplosions.highobj += A
+								SSexplosions.highobj += list(to_explode)
 							if(EXPLODE_HEAVY)
-								SSexplosions.medobj += A
+								SSexplosions.medobj += list(to_explode)
 							if(EXPLODE_LIGHT)
-								SSexplosions.lowobj += A
-				gib()
-				return
-			else
+								SSexplosions.lowobj += list(to_explode)
+
 				brute_loss = 500
 				var/atom/throw_target = get_edge_target_turf(src, get_dir(src, get_step_away(src, src)))
 				throw_at(throw_target, 200, 4)
 				damage_clothes(400 - bomb_armor, BRUTE, "bomb")
 
 		if (EXPLODE_HEAVY)
-			brute_loss = 35
-			burn_loss = 35
+			brute_loss = heavy_dam/2
+			burn_loss = heavy_dam/2
 			if(bomb_armor)
 				brute_loss = 20*(2 - round(bomb_armor*0.01, 0.05))
 				burn_loss = brute_loss				//damage gets reduced from 120 to up to 60 combined brute+burn
 			intensity = 2
-			ear_damage = 30
-			deafness_power = 120
-			damage_clothes(max(rand(90,150) - bomb_armor, 0), BRUTE, "bomb")
+			ear_damage = heavy_dam/3
+			deafness_power = heavy_dam * (3/2)
+			damage_clothes(max(heavy_item_dam - bomb_armor, 0), BRUTE, "bomb")
 			Unconscious(20)							//short amount of time for follow up attacks against elusive enemies like wizards
 			Knockdown(200 - (bomb_armor * 1.6)) 	//between ~4 and ~20 seconds of knockdown depending on bomb armor
 
 		if(EXPLODE_LIGHT)
-			brute_loss = 20
-			burn_loss = 20
+			brute_loss = light_dam/2
+			burn_loss = light_dam/2
 			if(bomb_armor)
 				brute_loss = 15*(2 - round(bomb_armor*0.01, 0.05))
 				burn_loss = bruteloss
-			damage_clothes(max(rand(10,90) - bomb_armor, 0), BRUTE, "bomb")
+			damage_clothes(max(light_item_dam - bomb_armor, 0), BRUTE, "bomb")
 			intensity = 1.5
-			ear_damage = 15
-			deafness_power = 60
+			ear_damage = light_dam/3
+			deafness_power = light_dam * (3/2)
 			Knockdown(160 - (bomb_armor * 1.6))		//100 bomb armor will prevent knockdown altogether
 
 	take_overall_damage(brute_loss,burn_loss)
@@ -1030,3 +1024,80 @@
 
 	for(var/obj/item/I in torn_items)
 		I.take_damage(damage_amount, damage_type, damage_flag, 0)
+
+/**
+ * Used by fire code to damage worn items.
+ *
+ * Arguments:
+ * - delta_time
+ * - stacks: Current amount of firestacks
+ *
+ */
+
+/mob/living/carbon/human/proc/burn_clothing(delta_time, stacks)
+	var/list/burning_items = list()
+	var/obscured = check_obscured_slots(TRUE)
+	//HEAD//
+
+	if(glasses && !(obscured & ITEM_SLOT_EYES))
+		burning_items += glasses
+	if(wear_mask && !(obscured & ITEM_SLOT_MASK))
+		burning_items += wear_mask
+	if(wear_neck && !(obscured & ITEM_SLOT_NECK))
+		burning_items += wear_neck
+	if(ears && !(obscured & ITEM_SLOT_EARS))
+		burning_items += ears
+	if(head)
+		burning_items += head
+
+	//CHEST//
+	if(w_uniform && !(obscured & ITEM_SLOT_ICLOTHING))
+		burning_items += w_uniform
+	if(wear_suit)
+		burning_items += wear_suit
+
+	//ARMS & HANDS//
+	var/obj/item/clothing/arm_clothes = null
+	if(gloves && !(obscured & ITEM_SLOT_GLOVES))
+		arm_clothes = gloves
+	else if(wear_suit && ((wear_suit.body_parts_covered & HANDS) || (wear_suit.body_parts_covered & ARMS)))
+		arm_clothes = wear_suit
+	else if(w_uniform && ((w_uniform.body_parts_covered & HANDS) || (w_uniform.body_parts_covered & ARMS)))
+		arm_clothes = w_uniform
+	if(arm_clothes)
+		burning_items |= arm_clothes
+
+	//LEGS & FEET//
+	var/obj/item/clothing/leg_clothes = null
+	if(shoes && !(obscured & ITEM_SLOT_FEET))
+		leg_clothes = shoes
+	else if(wear_suit && ((wear_suit.body_parts_covered & FEET) || (wear_suit.body_parts_covered & LEGS)))
+		leg_clothes = wear_suit
+	else if(w_uniform && ((w_uniform.body_parts_covered & FEET) || (w_uniform.body_parts_covered & LEGS)))
+		leg_clothes = w_uniform
+	if(leg_clothes)
+		burning_items |= leg_clothes
+
+	for(var/obj/item/burning in burning_items)
+		burning.fire_act((stacks * 25 * delta_time)) //damage taken is reduced to 2% of this value by fire_act()
+
+/mob/living/carbon/get_fire_overlay(stacks, on_fire)
+	var/fire_icon = "[dna?.species.fire_overlay || "human"]_[stacks > MOB_BIG_FIRE_STACK_THRESHOLD ? "big_fire" : "small_fire"]"
+
+	if(!GLOB.fire_appearances[fire_icon])
+		GLOB.fire_appearances[fire_icon] = mutable_appearance(
+			'icons/mob/onfire.dmi',
+			fire_icon,
+			-HIGHEST_LAYER,
+			appearance_flags = RESET_COLOR,
+		)
+
+	return GLOB.fire_appearances[fire_icon]
+
+/mob/living/carbon/human/on_fire_stack(delta_time, datum/status_effect/fire_handler/fire_stacks/fire_handler)
+	SEND_SIGNAL(src, COMSIG_HUMAN_BURNING)
+	burn_clothing(delta_time, fire_handler.stacks)
+	var/no_protection = FALSE
+	if(dna && dna.species)
+		no_protection = dna.species.handle_fire(src, no_protection)
+	fire_handler.harm_human(delta_time, no_protection)

@@ -425,7 +425,7 @@
 
 	switch(state)
 		if(RWINDOW_SECURE)
-			if((I.tool_behaviour == TOOL_WELDER) && user.a_intent == INTENT_HARM)
+			if((I.tool_behaviour == TOOL_WELDER) && LAZYACCESS(params2list(params), RIGHT_CLICK))
 				user.visible_message(span_notice("[user] holds \the [I] to the security screws on \the [src]..."),
 										span_notice("You begin heating the security screws on \the [src]..."))
 				if(I.use_tool(src, user, 150, volume = 100))
@@ -555,7 +555,7 @@
 /obj/structure/window/plasma/reinforced/attackby(obj/item/I, mob/living/user, params)
 	switch(state)
 		if(RWINDOW_SECURE)
-			if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HARM)
+			if(I.tool_behaviour == TOOL_WELDER && LAZYACCESS(params2list(params), RIGHT_CLICK))
 				user.visible_message(span_notice("[user] holds \the [I] to the security screws on \the [src]..."),
 										span_notice("You begin heating the security screws on \the [src]..."))
 				if(I.use_tool(src, user, 180, volume = 100))

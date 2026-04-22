@@ -24,9 +24,11 @@
 						"jean cargo pants" = "cargojeans",
 						"olive cargo pants" = "cargoolive",
 						"brown cargo pants" = "cargobrown",
+						"navy cargo pants" = "cargonavy",
 						)
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/pants/cargo/grey
 	name = "grey cargo pants"
@@ -45,6 +47,12 @@
 	desc = "A pocket for every need."
 	icon_state = "cargokhaki"
 	current_skin = "khaki cargo pants"
+
+/obj/item/clothing/under/pants/cargo/navy
+	name = "navy cargo pants"
+	desc = "A pocket for every need."
+	icon_state = "cargonavy"
+	current_skin = "navy cargo pants"
 
 /obj/item/clothing/under/pants/cargo/jeans
 	name = "jean cargo pants"
@@ -90,6 +98,36 @@
 	name = "track pants"
 	desc = "A pair of track pants, for the athletic."
 	icon_state = "trackpants"
+	unique_reskin = list("black track pants" = "trackpants",
+						"teal track pants" = "trackpantsteal",
+						"pink track pants" = "trackpantspink",
+						"blue track pants" = "trackpantsblue",
+						"red track pants" = "trackpantsred",
+						"purple track pants" = "trackpantspurple",
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/pants/track/teal
+	name = "teal track pants"
+	current_skin = "teal track pants"
+
+/obj/item/clothing/under/pants/track/pink
+	name = "pink track pants"
+	current_skin = "pink track pants"
+
+/obj/item/clothing/under/pants/track/blue
+	name = "blue track pants"
+	current_skin = "blue track pants"
+
+/obj/item/clothing/under/pants/track/red
+	name = "red track pants"
+	current_skin = "red track pants"
+
+/obj/item/clothing/under/pants/track/purple
+	name = "purple track pants"
+	current_skin = "purple track pants"
 
 /obj/item/clothing/under/pants/jeans
 	name = "jeans"

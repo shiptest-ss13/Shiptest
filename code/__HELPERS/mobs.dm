@@ -73,7 +73,7 @@
 	if(!GLOB.ipc_tail_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_antennas, GLOB.ipc_tail_list)
 	if(!GLOB.ipc_chassis_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_chassis, GLOB.ipc_chassis_list)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/body/ipc_chassis, GLOB.ipc_chassis_list)
 	if(!GLOB.spider_legs_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_legs, GLOB.spider_legs_list)
 	if(!GLOB.spider_spinneret_list.len)
@@ -94,7 +94,6 @@
 	//if you don't keep this alphabetised I'm going to personally steal your shins and sell them online
 	return list(
 		"body_markings" = pick(GLOB.body_markings_list),
-		"body_size" = pick(GLOB.body_sizes),
 		"ears" = "None",
 		"elzu_horns" = pick(GLOB.elzu_horns_list),
 		"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],
@@ -201,18 +200,28 @@
 	return pick(GLOB.skin_tones)
 
 GLOBAL_LIST_INIT(skin_tones, sortList(list(
-	"albino",
-	"caucasian1",
-	"caucasian2",
-	"caucasian3",
-	"latino",
-	"mediterranean",
-	"asian1",
-	"asian2",
-	"arab",
-	"indian",
-	"african1",
-	"african2"
+	"ivory",
+	"porcelain",
+	"peach",
+	"coral",
+	"cotton",
+	"bisque",
+	"rosewood",
+	"sepia",
+	"taupe",
+	"russet",
+	"beige",
+	"walnut",
+	"bronze",
+	"burnet",
+	"amber",
+	"hazel",
+	"champagne",
+	"olive",
+	"tawny",
+	"ochre",
+	"cedar",
+	"sable"
 	)))
 
 /proc/pick_species_adjective(mob/living/carbon/human/H)

@@ -14,10 +14,22 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena
 
-/datum/outfit/job/gezena/assistant/bridge
-	name = "PGF - Bridge Crew"
-	id_assignment = "Helmsman"
+/datum/outfit/job/gezena/assistant/trooper
+	name = "PGF - Navy Security Trooper"
+	id_assignment = "Navy Trooper"
+	jobtype = /datum/job/officer
+	job_icon = "securityofficer"
+
+	uniform = /obj/item/clothing/under/gezena
+	shoes = /obj/item/clothing/shoes/combat/gezena
+	neck = /obj/item/clothing/neck/cloak/gezena
+
+/datum/outfit/job/gezena/assistant/flight
+	name = "PGF - Flight Officer"
+	id_assignment = "Flight Officer"
 	jobtype = /datum/job/head_of_personnel
+	uniform = /obj/item/clothing/under/gezena/officer
+	neck = /obj/item/clothing/neck/cloak/gezena/command
 
 /datum/outfit/job/gezena/engineer
 	name = "PGF - Navy Engineer"
@@ -60,27 +72,36 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena
 
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	courierbag = /obj/item/storage/backpack/messenger/sec
+	backpack = /obj/item/storage/backpack/security/gezena
+	satchel = /obj/item/storage/backpack/satchel/sec/gezena
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/security/sapper
 	name = "PGF - Marine Pioneer"
 	id_assignment = "Marine Pioneer"
 
-	backpack = /obj/item/storage/backpack/industrial
-	satchel = /obj/item/storage/backpack/satchel/eng
-	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
-	courierbag = /obj/item/storage/backpack/messenger/engi
+	neck = /obj/item/clothing/neck/cloak/gezena/engi
+
+/datum/outfit/job/gezena/security/paramedic
+	name = "PGF - Marine Corpsman"
+	id_assignment = "Marine Corpsman"
+	jobtype = /datum/job/brig_phys
+	job_icon = "paramedic"
+
+	neck = /obj/item/clothing/neck/cloak/gezena/med
+	backpack = /obj/item/storage/backpack/medic
+	satchel = /obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	courierbag = /obj/item/storage/backpack/messenger/para
 
 /datum/outfit/job/gezena/cmo
 	name = "PGF - Medical Officer"
 	jobtype = /datum/job/cmo
 	job_icon = "chiefmedicalofficer"
 
-	uniform = /obj/item/clothing/under/gezena
+	uniform = /obj/item/clothing/under/gezena/officer
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 
@@ -91,8 +112,8 @@
 	box = /obj/item/storage/box/survival/medical
 
 /datum/outfit/job/gezena/hos
-	name = "PGF - Marine Sergeant"
-	id_assignment = "Sergeant"
+	name = "PGF - Marine Squad Leader"
+	id_assignment = "Squad Leader"
 	jobtype = /datum/job/hos
 	job_icon = "headofsecurity"
 
@@ -100,10 +121,10 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena/command
 
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	courierbag = /obj/item/storage/backpack/messenger/sec
+	backpack = /obj/item/storage/backpack/security/gezena
+	satchel = /obj/item/storage/backpack/satchel/sec/gezena
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/hop
@@ -111,7 +132,7 @@
 	jobtype = /datum/job/head_of_personnel
 	job_icon = "headofpersonnel"
 
-	uniform = /obj/item/clothing/under/gezena
+	uniform = /obj/item/clothing/under/gezena/officer
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/command
 
@@ -128,6 +149,7 @@
 	uniform = /obj/item/clothing/under/gezena/captain
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/captain
+	box = /obj/item/storage/box/survival/pgf/command
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap
@@ -147,6 +169,23 @@
 	gloves = /obj/item/clothing/gloves/gezena
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena
+
+/datum/outfit/job/gezena/assistant/trooper/geared
+	name = "PGF - Navy Security Trooper - Equipped"
+	id_assignment = "Navy Trooper"
+	jobtype = /datum/job/officer
+	job_icon = "securityofficer"
+
+	uniform = /obj/item/clothing/under/gezena
+	suit = /obj/item/clothing/suit/armor/vest/marine
+	head = /obj/item/clothing/head/helmet/bulletproof/x11
+	gloves = /obj/item/clothing/gloves/gezena
+	shoes = /obj/item/clothing/shoes/combat/gezena
+	neck = /obj/item/clothing/neck/cloak/gezena
+	belt = /obj/item/storage/belt/sabre/pgf
+	r_hand = /obj/item/gun/energy/kalix/nock
+	mask = /obj/item/clothing/mask/gas/sechailer
+	glasses = /obj/item/clothing/glasses/safety
 
 /datum/outfit/job/gezena/engineer/geared
 	name = "PGF - Navy Engineer - Equipped"
@@ -200,14 +239,35 @@
 	mask = /obj/item/clothing/mask/breath/pgfmask
 	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	courierbag = /obj/item/storage/backpack/messenger/sec
+	backpack = /obj/item/storage/backpack/security/gezena
+	satchel = /obj/item/storage/backpack/satchel/sec/gezena
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
+	box = /obj/item/storage/box/survival/pgf
+
+/datum/outfit/job/gezena/security/sapper/geared
+	name = "PGF - Marine Pioneer - Equipped"
+	id_assignment = "Marine Pioneer"
+
+	uniform = /obj/item/clothing/under/gezena/marine
+	suit = /obj/item/clothing/suit/armor/gezena/marine
+	head = /obj/item/clothing/head/helmet/gezena
+	belt = /obj/item/storage/belt/military/gezena
+	gloves = /obj/item/clothing/gloves/gezena/marine
+	shoes = /obj/item/clothing/shoes/combat/gezena/marine
+	neck = /obj/item/clothing/neck/cloak/gezena/engi
+	r_hand = /obj/item/gun/energy/kalix/pgf/nock
+	mask = /obj/item/clothing/mask/breath/pgfmask
+	glasses = /obj/item/clothing/glasses/sunglasses/pgf
+
+	backpack = /obj/item/storage/backpack/security/gezena
+	satchel = /obj/item/storage/backpack/satchel/sec/gezena
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/hos/geared
-	name = "PGF - Marine Sergeant - Equipped"
+	name = "PGF - Marine Squad Leader - Equipped"
 	jobtype = /datum/job/hos
 	job_icon = "headofsecurity"
 
@@ -222,15 +282,15 @@
 	mask = /obj/item/clothing/mask/breath/pgfmask
 	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	courierbag = /obj/item/storage/backpack/messenger/sec
+	backpack = /obj/item/storage/backpack/security/gezena
+	satchel = /obj/item/storage/backpack/satchel/sec/gezena
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 	box = /obj/item/storage/box/survival/pgf
 
-/datum/outfit/job/gezena/paramedic
-	name = "PGF - Marine Medic - Equipped"
-	jobtype = /datum/job/paramedic
+/datum/outfit/job/gezena/security/paramedic/geared
+	name = "PGF - Marine Corpsman - Equipped"
+	jobtype = /datum/job/brig_phys
 	job_icon = "paramedic"
 
 	uniform = /obj/item/clothing/under/gezena/marine
@@ -248,14 +308,14 @@
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	courierbag = /obj/item/storage/backpack/messenger/para
-	box = /obj/item/storage/box/survival/medical
+	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/hop/geared
 	name = "PGF - Naval Bridge Officer - Equipped"
 	jobtype = /datum/job/head_of_personnel
 	job_icon = "headofpersonnel"
 
-	uniform = /obj/item/clothing/under/gezena
+	uniform = /obj/item/clothing/under/gezena/officer
 	suit = /obj/item/clothing/suit/armor/gezena
 	head = /obj/item/clothing/head/gezena
 	gloves = /obj/item/clothing/gloves/gezena

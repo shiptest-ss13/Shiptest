@@ -154,7 +154,7 @@
 	return (damage < t_min ? 0 : damage)
 
 /turf/closed/proc/get_proj_damage(obj/projectile/P, t_min = min_dam)
-	var/dam = P.damage
+	var/dam = P.damage * P.demolition_mod
 	if(proj_bonus_damage_flags & P.wall_damage_flags)
 		dam = P.wall_damage_override
 	else
@@ -209,15 +209,15 @@
 
 	var/turf/T = user.loc	//get user's location for delay checks
 
-	attack_override(W,user,T)
+	attack_override(W, user, T, params2list(params))
 	return ..()
 
-/turf/closed/proc/attack_override(obj/item/W, mob/user, turf/loc)
+/turf/closed/proc/attack_override(obj/item/W, mob/user, turf/loc, list/modifiers)
 	if(!isclosedturf(src))
 		return
 	//the istype cascade has been spread among various procs for easy overriding or if we want to call something specific
 	if(try_decon(W, user, loc) || try_destroy(W, user, loc))
-		return
+		return TRUE
 
 // catch-all for using most items on the closed turf -- attempt to smash
 /turf/closed/proc/try_destroy(obj/item/used_item, mob/user, turf/T)

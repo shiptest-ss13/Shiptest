@@ -80,18 +80,7 @@
 		balloon_alert(user, "added [item] to output")
 		return TRUE
 	else if(item.tool_behaviour == TOOL_SCREWDRIVER)
-		if(user.a_intent == INTENT_HELP)
-			var/i=0
-			for(var/A in possible_volumes)
-				i++
-				if(A == current_volume)
-					if(i<possible_volumes.len)
-						current_volume = possible_volumes[i+1]
-					else
-						current_volume = possible_volumes[1]
-					balloon_alert(user, "making [current_volume]u pills")
-					return
-		if(user.a_intent == INTENT_DISARM)
+		if(LAZYACCESS(params2list(params), RIGHT_CLICK))
 			var/i=0
 			for(var/A in possible_styles)
 				i++
@@ -102,16 +91,24 @@
 						pill_style = possible_styles[1]
 					balloon_alert(user, "making [style_colors["[pill_style]"]] pills")
 					return
+		else
+			var/i=0
+			for(var/A in possible_volumes)
+				i++
+				if(A == current_volume)
+					if(i<possible_volumes.len)
+						current_volume = possible_volumes[i+1]
+					else
+						current_volume = possible_volumes[1]
+					balloon_alert(user, "making [current_volume]u pills")
+					return
 	return ..()
 
-/obj/machinery/chem_press/AltClick(mob/living/user)
-	if(!can_interact(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		return
+/obj/machinery/chem_press/attack_hand_secondary(mob/user, list/modifiers)
 	if(beaker || bottle) // If there's a container in the machine, eject it.
 		handle_container(user)
-		return
-	else
-		return ..() // Having ..() run only if all else fails prevents AltClick from showing the turf's contents when not wanted.
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return ..()
 
 /*
 This proc attempts to swap a container in the machine

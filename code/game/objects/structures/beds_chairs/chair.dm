@@ -329,11 +329,11 @@
 	item_chair = /obj/item/chair/plastic
 
 /obj/structure/chair/plastic/post_buckle_mob(mob/living/Mob)
-	Mob.pixel_y += 2
-	.=..()
+	Mob.add_offsets(type, z_add = 2)
+	. = ..()
 
 /obj/structure/chair/plastic/post_unbuckle_mob(mob/living/Mob)
-	Mob.pixel_y -= 2
+	Mob.remove_offsets(type)
 
 /obj/item/chair/plastic
 	name = "folding plastic chair"
@@ -354,7 +354,7 @@
 	name = "handrail"
 	icon = 'icons/obj/structures/handrail.dmi'
 	icon_state = "handrail"
-	desc = "A safety railing with buckles to secure yourself to when floor isn't stable enough."
+	desc = "A safety railing with buckles to secure yourself to when the floor isn't stable enough."
 	item_chair = null
 	buildstackamount = 4
 	buildstacktype = /obj/item/stack/rods

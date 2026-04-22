@@ -43,14 +43,14 @@
 
 	qdel(src)
 
-/datum/status_effect/jitter/tick()
+/datum/status_effect/jitter/tick(seconds_between_ticks)
 
 	var/time_left_in_seconds = (duration - world.time) / 10
 	owner.do_jitter_animation(time_left_in_seconds)
 
 	// Decrease the duration by our resting_modifier, effectively skipping resting_modifier ticks per tick
 	var/resting_modifier = owner.resting ? 5 : 1
-	duration -= ((resting_modifier - 1) * initial(tick_interval))
+	duration -= ((resting_modifier - 1) * seconds_between_ticks)
 
 /// Helper proc that causes the mob to do a jittering animation by jitter_amount.
 /// jitter_amount will only apply up to 300 (maximum jitter effect).

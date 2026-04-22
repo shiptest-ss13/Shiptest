@@ -445,8 +445,11 @@
 	icon = 'icons/obj/flora/rocks.dmi'
 	resistance_flags = FIRE_PROOF
 	density = TRUE
+	pass_flags_self = LETPASSTHROW
 	max_integrity = 100
 	var/obj/item/stack/mineResult = /obj/item/stack/ore/glass/basalt
+	passchance = 50
+	pass_through = TRUE
 
 	hitsound_type = PROJECTILE_HITSOUND_STONE
 
@@ -476,10 +479,12 @@
 		if(BURN)
 			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
+
 /obj/structure/flora/rock/pile
 	icon_state = "lavarocks1"
 	base_icon_state = "lavarocks"
 	desc = "A pile of rocks."
+	density = FALSE
 
 //Jungle grass
 
@@ -665,6 +670,7 @@
 	icon = 'icons/obj/flora/lavarocks.dmi'
 	icon_state = "lavarocks1"
 	base_icon_state = "lavarocks"
+	density = FALSE
 	gender = PLURAL
 
 /obj/structure/flora/rock/asteroid
@@ -784,6 +790,7 @@
 	icon_state = "redrocks1"
 	base_icon_state = "redrocks"
 	mineResult = /obj/item/stack/ore/glass/rockplanet
+	density = FALSE
 
 /obj/structure/flora/grass/rockplanet
 	name = "cottongrass"
@@ -862,11 +869,6 @@
 /obj/structure/flora/tree/chapel/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/reagent_containers))
 		var/obj/item/reagent_containers/container = I
-		if(istype(container, /obj/item/reagent_containers/syringe))
-			var/obj/item/reagent_containers/syringe/syr = container
-			if(syr.mode != 1)
-				to_chat(user, span_warning("You can't get any extract out of this plant."))
-				return
 		if(!container.reagents.total_volume)
 			to_chat(user, span_warning("[container] is empty!"))
 			return 1
@@ -922,6 +924,12 @@
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "treekarma", /datum/mood_event/bad_tree, name)
 			M.adjustToxLoss(abs(karma)*0.25, 0)
 	adjustKarma(gainedkarma)
+
+/obj/structure/flora/tree/chapel/attackby_secondary(obj/item/weapon, mob/user, list/modifiers, list/attack_modifiers)
+	if (istype(weapon, /obj/item/reagent_containers/syringe))
+		to_chat(user, span_warning("You can't get any extract out of this plant."))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return SECONDARY_ATTACK_CALL_NORMAL
 
 /obj/structure/flora/tree/chapel/proc/update_tree()
 	if(100 > karma > -100)
@@ -1035,6 +1043,12 @@
 		/datum/reagent/medicine/soulus = -0.2
 	)
 
+/obj/structure/flora/tree/srm/pine
+	name = "Montagne's Conifer"
+	icon = 'icons/obj/flora/tall_trees.dmi'
+	icon_state = "pine_1"
+	desc = "A hardy, imported conifer tree acting as the centerpiece of the garden. A branch from an Illestren apple tree has been grafted onto it, producing fruits containing bactera native to the planet; often used in recipes withheld by the Saint-Roumain Militia. You could try watering it."
+
 /obj/structure/flora/tree/srm/Initialize()
 	START_PROCESSING(SSobj, src)
 	create_reagents(300, OPENCONTAINER)
@@ -1098,17 +1112,40 @@
 	particle_to_spawn = /particles/smoke/steam/vent/high
 
 /obj/structure/flora/rock/crystal
+	name = "crystal growth"
+	desc = "A towering, opaque crystal. You could probably shave something off this."
 	icon_state = "crystal"
 	base_icon_state = "crystal"
-	desc = "A towering, obaque crystal. You could probably shave something off this."
 	icon = 'icons/effects/32x64.dmi'
 	resistance_flags = FIRE_PROOF
 	density = TRUE
 	max_integrity = 100
-	mineResult = /obj/item/crystal_shard
+	mineResult = /obj/effect/decal/cleanable/glass/strange
 
 	hitsound_type = PROJECTILE_HITSOUND_STONE
 
+	///shaving the rock with a knife gives you this item
+	var/obj/shaving_type = /obj/item/crystal_shard
+	///how much can we shave the rock?
+	var/max_shavings = 3
+	///shaving count on the rock
+	var/shaving_count = 0
+
 /obj/structure/flora/rock/crystal/Initialize()
 	. = ..()
+	max_shavings = rand(src::max_shavings-2, src::max_shavings+2)
 	icon_state = "[base_icon_state]"
+
+/obj/structure/flora/rock/crystal/attackby(obj/item/tool, mob/user, params)
+	if(tool.sharpness && tool.tool_behaviour != TOOL_MINING && user.a_intent != INTENT_HARM)
+		if(shaving_count >= max_shavings)
+			to_chat(user, span_warning("There are no good places to cut [src]."))
+			return
+		playsound(src, 'sound/effects/fuse.ogg')
+		to_chat(user, span_notice("You start shaving a crystal off [src]..."))
+		if(tool.use_tool(src, user, 6 SECONDS, volume=50))
+			new shaving_type(loc)
+			shaving_count++
+			to_chat(user, span_notice("You cut a [shaving_type.name] off of [src]."))
+		return
+	return ..()

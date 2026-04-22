@@ -29,9 +29,19 @@
 	display_name = "eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch
 
+/datum/gear/eyewear/eyepatch/spawn_item(location, mob/living/carbon/owner)
+	var/obj/item/clothing/glasses/eyepatch/patch = ..()
+	if(owner.get_eye_scars() & LEFT_EYE_SCAR)
+		patch.flip_eyepatch()
+	return patch
+
 /datum/gear/eyewear/cheapsuns
 	display_name = "cheap sunglasses"
 	path = /obj/item/clothing/glasses/cheapsuns
+
+/datum/gear/eyewear/bigsuns
+	display_name = "big sunglasses"
+	path = /obj/item/clothing/glasses/sunglasses/big
 
 /datum/gear/eyewear/blindfold
 	display_name = "blindfold"

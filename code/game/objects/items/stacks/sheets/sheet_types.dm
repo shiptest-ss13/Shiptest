@@ -132,7 +132,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("painting frame", /obj/item/wallframe/painting, 1, time = 10),\
 	new/datum/stack_recipe("easel", /obj/structure/easel, 4, time = 10),\
 	new/datum/stack_recipe("display case chassis", /obj/structure/displaycase_chassis, 5, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("wooden buckler", /obj/item/shield/riot/buckler, 20, time = 40), \
+	new/datum/stack_recipe("wooden buckler", /obj/item/shield/buckler, 20, time = 40), \
 	new/datum/stack_recipe("apiary", /obj/structure/beebox, 40, time = 50),\
 	new/datum/stack_recipe("tiki mask", /obj/item/clothing/mask/gas/tiki_mask, 2), \
 	new/datum/stack_recipe("honey frame", /obj/item/honey_frame, 5, time = 10),\
@@ -363,11 +363,11 @@ GLOBAL_LIST_INIT(cardboard_recipes, list (														\
 	new/datum/stack_recipe_list("fancy boxes", list(
 		new /datum/stack_recipe("donut box", /obj/item/storage/fancy/donut_box),				\
 		new /datum/stack_recipe("egg box", /obj/item/storage/fancy/egg_box),					\
-		new /datum/stack_recipe("donk-pockets box", /obj/item/storage/box/donkpockets),			\
-		new /datum/stack_recipe("donk-pockets spicy box", /obj/item/storage/box/donkpockets/donkpocketspicy),			\
-		new /datum/stack_recipe("donk-pockets teriyaki box", /obj/item/storage/box/donkpockets/donkpocketteriyaki),		\
-		new /datum/stack_recipe("donk-pockets pizza box", /obj/item/storage/box/donkpockets/donkpocketpizza),			\
-		new /datum/stack_recipe("donk-pockets berry box", /obj/item/storage/box/donkpockets/donkpocketberry),			\
+		new /datum/stack_recipe("shoalwiches box", /obj/item/storage/box/shoalpockets),			\
+		new /datum/stack_recipe("shoalwiches spicy box", /obj/item/storage/box/shoalpockets/shoalpocketspicy),			\
+		new /datum/stack_recipe("shoalwiches teriyaki box", /obj/item/storage/box/shoalpockets/shoalpocketteriyaki),		\
+		new /datum/stack_recipe("shoalwiches pizza box", /obj/item/storage/box/shoalpockets/shoalpocketpizza),			\
+		new /datum/stack_recipe("shoalwiches berry box", /obj/item/storage/box/shoalpockets/shoalpocketberry),			\
 		new /datum/stack_recipe("monkey cube box", /obj/item/storage/box/monkeycubes),
 		new /datum/stack_recipe("nugget box", /obj/item/storage/fancy/nugget_box),			\
 		null,																					\

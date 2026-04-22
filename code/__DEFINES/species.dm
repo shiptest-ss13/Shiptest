@@ -13,6 +13,8 @@
 
 /// The natural temperature for a body
 #define HUMAN_BODYTEMP_NORMAL 310.15
+/// The max temperature a body can get to
+#define HUMAN_BODYTEMP_MAX HUMAN_BODYTEMP_NORMAL*2.5
 /// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery. This is applied each tick, so long as the mob is alive.
 #define HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR 11
 /// Minimum amount of kelvin moved toward 310K per tick. So long as abs(310.15 - bodytemp) is more than 50.

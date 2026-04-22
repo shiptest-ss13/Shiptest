@@ -172,7 +172,7 @@
 
 /obj/item/tank/jetpack/suit
 	name = "hardsuit jetpack upgrade"
-	desc = "A modular, compact set of thrusters designed to integrate with a hardsuit. It is fueled by a tank inserted into the suit's storage compartment."
+	desc = "A modular, compact set of thrusters designed to integrate with a hardsuit. It draws propellant from an external air tank."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "jetpack_upgrade"
 	item_state = "jetpack-black"
@@ -200,8 +200,8 @@
 		return
 
 	var/mob/living/carbon/human/H = user
-	if(!istype(H.s_store, /obj/item/tank/internals))
-		to_chat(user, span_warning("You need a tank in your suit storage!"))
+	if((!istype(H.s_store, /obj/item/tank/internals)) && (!istype(H.back, /obj/item/tank/internals)) && (!istype(H.belt, /obj/item/tank/internals)) && (!istype(H.l_store, /obj/item/tank/internals)) && (!istype(H.r_store, /obj/item/tank/internals)))
+		to_chat(user, span_warning("You need to equip a tank!"))
 		return
 	..()
 
@@ -209,7 +209,22 @@
 	if(!istype(loc, /obj/item/clothing/suit/space/hardsuit) || !ishuman(loc.loc) || loc.loc != user)
 		return
 	var/mob/living/carbon/human/H = user
-	tank = H.s_store
+
+	//Cascades down a priority list, taking air from first the suit storage slot, then the back, the belt, the left pocket and the right pocket
+	if(istype(H.back, /obj/item/tank))
+		tank = H.back
+	else if(istype(H.s_store, /obj/item/tank))
+		tank = H.s_store
+	else if(istype(H.belt, /obj/item/tank))
+		tank = H.belt
+	else if(istype(H.l_store, /obj/item/tank))
+		tank = H.l_store
+	else if (istype(H.r_store, /obj/item/tank))
+		tank = H.r_store
+	else
+		tank = null
+		return
+
 	air_contents = tank.air_contents
 	START_PROCESSING(SSobj, src)
 	cur_user = user
@@ -226,8 +241,9 @@
 	if(!istype(loc, /obj/item/clothing/suit/space/hardsuit) || !ishuman(loc.loc))
 		turn_off(cur_user)
 		return
-	var/mob/living/carbon/human/H = loc.loc
-	if(!tank || tank != H.s_store)
+
+	if(!tank)
+		to_chat(usr, span_warning("\The [src] shuts down!"))
 		turn_off(cur_user)
 		return
 	..()

@@ -10,7 +10,7 @@
 	],
 	"map_short_name": "Corona-class",
 	"map_path": "_maps/shuttles/independent/independent_corona.dmm",
-	"token_icon_state": "ship_small_generic",
+	"token_icon_state": "ship_generic",
 	"description": "Designed by Cybersun Industries with production outsourced to ISF Spacecraft, the S-700i Corona-class Touring Vessel is Cybersun's premier solution to eco-friendly travel. Boasting a powerful clean energy solar array down it's sleek profile, the Corona is not just a mode of transportation; but a statement of opulence and eco-mindfulness in an ever-boorish Frontier.",
 	"tags": [
 		"Generalist",
@@ -22,17 +22,17 @@
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/independent/captain",
+			"outfit": "/datum/outfit/job/independent/captain/gown",
 			"officer": true,
 			"slots": 1
 		},
 		"Mechanic": {
-			"outfit": "/datum/outfit/job/independent/engineer",
+			"outfit": "/datum/outfit/job/independent/engineer/gown",
 			"slots": 1
 		},
-		"Deckhand": {
-			"outfit": "/datum/outfit/job/independent/assistant/fancy",
-			"slots": 2
+		"Passenger": {
+			"outfit": "/datum/outfit/job/independent/assistant/gown",
+			"slots": 3
 		}
 	},
 	"enabled": true

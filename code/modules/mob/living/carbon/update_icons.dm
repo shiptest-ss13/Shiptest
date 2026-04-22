@@ -1,29 +1,3 @@
-//IMPORTANT: Multiple animate() calls do not stack well, so try to do them all at once if you can.
-/mob/living/carbon/perform_update_transform()
-	var/matrix/ntransform = matrix(transform) //aka transform.Copy()
-	var/final_pixel_y = pixel_y
-	var/final_dir = dir
-	var/changed = 0
-	if(lying_angle != lying_prev && rotate_on_lying)
-		changed++
-		ntransform.TurnTo(lying_prev , lying_angle)
-		if(!lying_angle) //Lying to standing
-			final_pixel_y = get_standard_pixel_y_offset()
-		else //if(lying != 0)
-			if(lying_prev == 0) //Standing to lying
-				pixel_y = base_pixel_y + get_standard_pixel_y_offset()
-				final_pixel_y = base_pixel_y + get_standard_pixel_y_offset(lying_angle)
-				if(dir & (EAST|WEST)) //Facing east or west
-					final_dir = pick(NORTH, SOUTH) //So you fall on your side rather than your face or ass
-	if(resize != RESIZE_DEFAULT_SIZE)
-		changed++
-		ntransform.Scale(resize)
-		resize = RESIZE_DEFAULT_SIZE
-
-	if(changed)
-		SEND_SIGNAL(src, COMSIG_PAUSE_FLOATING_ANIM, 0.3 SECONDS)
-		animate(src, transform = ntransform, time = (lying_prev == 0 || lying_angle == 0) ? 2 : 0, pixel_y = final_pixel_y, dir = final_dir, easing = (EASE_IN|EASE_OUT))
-
 /mob/living/carbon
 	var/list/overlays_standing[TOTAL_LAYERS]
 
@@ -44,7 +18,7 @@
 	update_inv_hands()
 	update_inv_handcuffed()
 	update_inv_legcuffed()
-	update_fire()
+	update_appearance(UPDATE_OVERLAYS)
 	update_body_parts()
 
 
@@ -82,16 +56,6 @@
 
 	overlays_standing[HANDS_LAYER] = hands
 	apply_overlay(HANDS_LAYER)
-
-
-/mob/living/carbon/update_fire(fire_icon = "Generic_mob_burning")
-	remove_overlay(FIRE_LAYER)
-	if(on_fire || islava(loc))
-		var/mutable_appearance/new_fire_overlay = mutable_appearance('icons/mob/OnFire.dmi', fire_icon, -FIRE_LAYER)
-		new_fire_overlay.appearance_flags = RESET_COLOR
-		overlays_standing[FIRE_LAYER] = new_fire_overlay
-
-	apply_overlay(FIRE_LAYER)
 
 /mob/living/carbon/update_damage_overlays()
 
