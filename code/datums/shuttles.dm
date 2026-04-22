@@ -463,6 +463,15 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "MWSV"
 
+//technically
+/datum/map_template/shuttle/subshuttles/nimbus
+	file_name = "cybersun_nimbus"
+	name = "Nimbus-class Executive Courier"
+	faction = /datum/faction/syndicate/cybersun
+	prefix = "CSSV"
+	manufacturer = "ISF Spacecraft"
+	name_categories = list("NATURAL_AGGRESSIVE")
+
 /datum/map_template/shuttle/subshuttles/bambulance
 	file_name = "cybersun_bambulance"
 	name = "Gauze-class Ambulance Pod"

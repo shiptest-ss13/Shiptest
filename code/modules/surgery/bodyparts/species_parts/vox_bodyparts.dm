@@ -4,6 +4,7 @@
 	is_dimorphic = FALSE
 	bodytype = BODYTYPE_VOX | BODYTYPE_ORGANIC
 	should_draw_greyscale = FALSE
+	draw_sclera = FALSE
 	dmg_overlay_icon = 'icons/mob/species/vox/vox_overlays.dmi'
 
 /obj/item/bodypart/chest/vox

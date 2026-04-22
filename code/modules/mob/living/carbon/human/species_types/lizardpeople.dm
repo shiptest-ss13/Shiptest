@@ -4,11 +4,9 @@
 	id = SPECIES_SARATHI
 	default_color = "00FF00"
 	species_age_max = 175
-	species_traits = list(MUTCOLORS, LIPS, SCLERA, EMOTE_OVERLAY, MUTCOLORS_SECONDARY)
+	species_traits = list(MUTCOLORS, LIPS, EMOTE_OVERLAY, MUTCOLORS_SECONDARY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	mutant_bodyparts = list("tail_lizard", "face_markings", "frills", "horns", "spines", "body_markings")
-	mutanttongue = /obj/item/organ/tongue/lizard
-	mutant_organs = list(/obj/item/organ/tail/lizard)
 	coldmod = 1.5
 	heatmod = 0.67
 	default_features = list("mcolor" = "0F0", "tail_lizard" = "Smooth", "face_markings" = "None", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None")
@@ -23,9 +21,20 @@
 	deathsound = 'sound/voice/lizard/deathsound.ogg'
 	wings_icons = list("Dragon")
 	species_language_holder = /datum/language_holder/lizard
-	mutanteyes = /obj/item/organ/eyes/lizard
-	sclera_color = "#fffec4"
 	blush_color = COLOR_BLUSH_TEAL
+
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/lizard,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/lizard,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+		ORGAN_SLOT_TAIL = /obj/item/organ/tail/lizard,
+	)
 
 	species_limbs = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/lizard,
@@ -36,16 +45,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/lizard/digitigrade,
 	)
 
-	species_robotic_limbs = list(
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot/lizard,
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot/lizard,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus/lizard,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/lizard,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/lizard/digitigrade,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/lizard/digitigrade,
-	)
-
-	robotic_eyes = /obj/item/organ/eyes/robotic/lizard
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/sarathi
 
 	// Sarathi are coldblooded and can stand a greater temperature range than humans
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 30

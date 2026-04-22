@@ -412,43 +412,17 @@
 	A.reagents.add_reagent(/datum/reagent/carbon, volume) // Its pores would get clogged with gunk anyway.
 	..()
 
-//its seiver. i ran out of ideas + seiver was a good one
 /datum/reagent/medicine/pancrazine
 	name = "Pancrazine"
-	description = "A second generation Tecetian research chemical developed as the byproduct of the terraforming process. Injection of the substance while cold causes the body to regenerate radiation damage, while heating it causes rapid purging of toxic effects."
+	description = "A second generation Tecetian research chemical developed as the byproduct of the terraforming process. This medication heals blood toxicity, working faster the more active the patient's metabolism is. A common side effect reported is a feeling of drunkenness."
 	color = "#c3915d"
-	var/radbonustemp = (T0C - 100) //being below this number gives you 10% off rads.
-
-/datum/reagent/medicine/pancrazine/on_mob_metabolize(mob/living/carbon/human/M)
-	. = ..()
-	radbonustemp = rand(radbonustemp - 50, radbonustemp + 50) // Basically this means 50K and below will always give the percent heal, and upto 150K could. Calculated once.
 
 /datum/reagent/medicine/pancrazine/on_mob_life(mob/living/carbon/human/M)
-	var/chemtemp = min(holder.chem_temp, 1000)
-	chemtemp = chemtemp ? chemtemp : 273 //why do you have null sweaty
-	var/healypoints = 0 //5 healypoints = 1 heart damage; 5 rads = 1 tox damage healed for the purpose of healypoints
-
-	//you're hot
-	var/toxcalc = min(round((chemtemp-1000)/175+5,0.1),5) //max 2.5 tox healing a tick
-	if(toxcalc > 0)
-		M.adjustToxLoss(toxcalc*-0.5)
-		healypoints += toxcalc
-
-	//and you're cold
-	var/radcalc = round((T0C-chemtemp)/6,0.1) //max ~45 rad loss unless you've hit below 0K. if so, wow.
-	if(radcalc > 0)
-		//no cost percent healing if you are SUPER cold (on top of cost healing)
-		if(chemtemp < radbonustemp*0.1) //if you're super chilly, it takes off 25% of your current rads
-			M.radiation = round(M.radiation * 0.75)
-		else if(chemtemp < radbonustemp)//else if you're under the chill-zone, it takes off 10% of your current rads
-			M.radiation = round(M.radiation * 0.9)
-		M.radiation -= radcalc
-		healypoints += (radcalc/5)
-
-
-	//you're yes and... oh no!
-	healypoints = round(healypoints,0.1)
-	M.adjustOrganLoss(ORGAN_SLOT_HEART, healypoints/5)
+	var/bonus = 0 //in practice will always be at least one since it has itself
+	for(var/r in M.reagents.reagent_list)
+		bonus += 1
+	M.adjustToxLoss(-0.5 * (bonus + 1))
+	M.adjust_drunk_effect(sqrt(volume) * (pick(5,30) + 15 * bonus) * ALCOHOL_RATE * REM)
 	..()
 	return TRUE
 

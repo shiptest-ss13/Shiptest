@@ -26,9 +26,9 @@
 	neck = /obj/item/clothing/neck/cloak/gezena
 	box = /obj/item/storage/box/survival/pgf
 
-/datum/outfit/job/gezena/assistant/bridge
-	name = "PGF - Bridge Crew"
-	id_assignment = "Helmsman"
+/datum/outfit/job/gezena/assistant/flight
+	name = "PGF - Flight Officer"
+	id_assignment = "Flight Officer"
 	jobtype = /datum/job/head_of_personnel
 	uniform = /obj/item/clothing/under/gezena/officer
 	neck = /obj/item/clothing/neck/cloak/gezena/command
@@ -87,6 +87,18 @@
 
 	neck = /obj/item/clothing/neck/cloak/gezena/engi
 
+/datum/outfit/job/gezena/security/paramedic
+	name = "PGF - Marine Corpsman"
+	id_assignment = "Marine Corpsman"
+	jobtype = /datum/job/brig_phys
+	job_icon = "paramedic"
+
+	neck = /obj/item/clothing/neck/cloak/gezena/med
+	backpack = /obj/item/storage/backpack/medic
+	satchel = /obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	courierbag = /obj/item/storage/backpack/messenger/para
+
 /datum/outfit/job/gezena/cmo
 	name = "PGF - Medical Officer"
 	jobtype = /datum/job/cmo
@@ -103,8 +115,8 @@
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/hos
-	name = "PGF - Marine Sergeant"
-	id_assignment = "Sergeant"
+	name = "PGF - Marine Squad Leader"
+	id_assignment = "Squad Leader"
 	jobtype = /datum/job/hos
 	job_icon = "headofsecurity"
 
@@ -256,7 +268,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 
 /datum/outfit/job/gezena/hos/geared
-	name = "PGF - Marine Sergeant - Equipped"
+	name = "PGF - Marine Squad Leader - Equipped"
 	jobtype = /datum/job/hos
 	job_icon = "headofsecurity"
 
@@ -276,9 +288,9 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 
-/datum/outfit/job/gezena/paramedic
-	name = "PGF - Marine Medic - Equipped"
-	jobtype = /datum/job/paramedic
+/datum/outfit/job/gezena/security/paramedic/geared
+	name = "PGF - Marine Corpsman - Equipped"
+	jobtype = /datum/job/brig_phys
 	job_icon = "paramedic"
 
 	uniform = /obj/item/clothing/under/gezena/marine
