@@ -115,8 +115,8 @@
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/suit/armor/gezena/marine
-	name = "\improper composite marine vest"
-	desc = "Heavy composite plating in a striking bright green, with sturdy shoulder pads for extra protection."
+	name = "\improper composite combat vest"
+	desc = "An AR-98 series combat vest constructed of heavy composite plating in a striking bright green, with sturdy shoulder pads for extra protection."
 	icon_state = "marinevest"
 	item_state = "marinevest"
 	blood_overlay_type = "armor"
@@ -284,7 +284,7 @@
 
 /obj/item/clothing/head/helmet/gezena/navy
 	name = "navy flak helmet"
-	desc = "A Gezenan flak helmet helmet employed by the PGFN. Equipped with an identification reflector and a wide brim for accomadating communications devices"
+	desc = "A Gezenan flak helmet helmet employed by the PGFN. Equipped with an identification reflector and a wide brim for accommodating communications devices"
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -300,7 +300,7 @@
 
 /obj/item/clothing/head/helmet/gezena
 	name = "composite combat helmet"
-	desc = "An armored composite military helmet employed by the PGFMC. Fitted to connect seamlessly with the L-98 respirator"
+	desc = "An AR-98 series composite combat helmet employed by the PGFMC. Fitted to connect seamlessly with the L-98 respirator"
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
