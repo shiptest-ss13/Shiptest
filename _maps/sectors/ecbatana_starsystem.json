@@ -50,7 +50,6 @@
 		"/datum/overmap/star/dwarf_2": {
 			"type": "/datum/overmap/star/dwarf",
 			"name": "Ecbatana",
-			"custom_color": 1,
 			"enable_event_spawning": 0,
 			"x": 11,
 			"y": 11
@@ -83,6 +82,8 @@
 		},
 		"/datum/overmap/fluff/fakeplanet/battlefield_8": {
 			"type": "/datum/overmap/fluff/fakeplanet/battlefield",
+			"name":"Carcosa",
+			"desc":"A planet that has been the site of many battles during the ICW, leading to irrecoverable damage to it's ecology. Previously, it was a Makosso-Warra colony, and mining site. All that's left is rubble and scrap. The survivors of the conflicts here formed Agni Trading Post, and still run it.",
 			"dir": 2,
 			"x": 14,
 			"y": 8
@@ -95,6 +96,8 @@
 		},
 		"/datum/overmap/fluff/fakeplanet/moon_10": {
 			"type": "/datum/overmap/fluff/fakeplanet/moon",
+			"name":"King's Eye",
+			"desc":"A moon, tinted yellow from sulfur deposits across it's surface. Soldiers during the ICW, fighting on Carcosa, gave it it's name. It previously was host to a massive Coalition base somewhere on it. Local rumors say it's still active, Agni officials claim otherwise.",
 			"dir": 2,
 			"x": 13,
 			"y": 7
@@ -367,7 +370,8 @@
 		},
 		"/datum/overmap/fluff/satellite_64": {
 			"type": "/datum/overmap/fluff/satellite",
-			"dir": 2,
+			"name":"solar imaging satellite",
+			"desc":"A satellite that sends information on Ecbatana's surface to Agni. Best not to mess with it.",
 			"x": 9,
 			"y": 10
 		},
@@ -479,6 +483,9 @@
 		},
 		"/datum/overmap/fluff/fakeship_86": {
 			"type": "/datum/overmap/fluff/fakeship",
+			"name":"SSV Black Star",
+			"desc":"A wrecked Twinkleshine-Class Battle Cruiser, surrounded by debris and unfired munitions. Agni has deemed it to dangerous to salvage or dispose of, and predict it will crash into the asteroid belt eventually, naturally disarming. This doesn't stop a daring sightseer though, but you get the feeling you shouldn't try it.",
+			"token_icon_state": "ship_big_generic",
 			"dir": 2,
 			"x": 17,
 			"y": 17
