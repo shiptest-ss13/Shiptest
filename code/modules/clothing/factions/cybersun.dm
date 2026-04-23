@@ -2,7 +2,7 @@
 
 /obj/item/clothing/under/cybersun
 	name = "cybersun jumpsuit"
-	desc = "The standard jumpsuit used by the agents employed by Cybersun, in its distinctive half-black-half-white aesthetic."
+	desc = "The standard jumpsuit used by the agents employed by Cybersun, in its distinctive full-white aesthetic."
 	icon_state = "cybersun_agent"
 	roll_sleeves = FALSE
 	roll_down = TRUE
@@ -273,6 +273,9 @@
 		"Trauma Teal" = "trauma_teal_m10helm"
 	)
 
+/obj/item/clothing/head/helmet/m10/cybersun/trauma/teal
+	current_skin = "Trauma Teal"
+
 /obj/item/clothing/head/helmet/bulletproof/x11/cybersun
 	name = "\improper X11 \"Troubleshooter\""
 	desc = "A bulletproof combat helmet purchased and modified by Cybersun. Painted in a distinct maroon."
@@ -443,3 +446,8 @@
 		"Troubleshooter Alt" = "cybersun_webalt",
 		"Trauma Alt" = "cybersun_med_webalt"
 	)
+
+/obj/item/storage/belt/military/cybersun/sidewinder/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/m57_39_sidewinder(src)
+
