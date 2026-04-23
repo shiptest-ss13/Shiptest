@@ -398,12 +398,12 @@
 
 /datum/reagent/consumable/ethanol/trickwine/force_wine
 	name = "Forcewine"
-	description = "Creates a barrier on the skin that catches shrapnel and when reversed locks threats down with a barrier"
+	description = "Creates a barrier on the skin that catches shrapnel, and when reversed, locks threats down with a barrier."
 	color = "#709AAF"
 	boozepwr = 70
 	taste_description = "the strength of your convictions"
 	glass_name = "Forcewine"
-	glass_desc = "Creates a barrier on the skin that catches shrapnel and when reversed locks threats down with a barrier"
+	glass_desc = "Creates a barrier on the skin that catches shrapnel, and when reversed, locks threats down with a barrier."
 	breakaway_flask_icon_state = "baflaskforcewine"
 	buff_effect = /datum/status_effect/trickwine/buff/force
 	debuff_effect = /datum/status_effect/trickwine/debuff/force
