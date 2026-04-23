@@ -14,6 +14,7 @@
 
 /// Returns all bodyparts that exist on the mob.
 /mob/living/proc/get_all_bodyparts()
+	RETURN_TYPE(/list)
 	return
 
 // Try not to use this too much, it's more expensive than doing it directly when iterating

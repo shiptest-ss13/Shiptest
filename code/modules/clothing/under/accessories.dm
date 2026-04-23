@@ -475,6 +475,14 @@
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 
+
+/obj/item/clothing/accessory/holster/cybersun/Initialize()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/pistol/rattlesnake(src)
+	new /obj/item/ammo_box/magazine/m9mm_rattlesnake(src)
+	new /obj/item/ammo_box/magazine/m9mm_rattlesnake(src)
+
+
 //////////
 //RILENA//
 //////////

@@ -118,7 +118,7 @@
 //fucking gezena
 
 /datum/supply_pack/spacesuits/spacesuit/pgf
-	name = "Rakalla Navy Utility Suit Crate"
+	name = "Rakalla Navy Utility Space Suit Crate"
 	desc = "Contains one Rakalla Utility Suit. The aging but beloved workhorse of Navy space operations."
 	cost = 600
 	contains = list(/obj/item/clothing/suit/space/gezena,
@@ -129,7 +129,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/spacesuit/pgf/marine
-	name = "Lataka Composite Combat Suit Crate"
+	name = "Lataka Marine Combat Space Suit Crate"
 	desc = "Contains one Lataka Combat Suit. The backbone of any Marine Corps space assault."
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/space/gezena/marine,

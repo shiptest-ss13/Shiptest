@@ -57,12 +57,13 @@
 /obj/item/ammo_casing/energy/lasergun/sharplite/dmr
 	projectile_type = /obj/projectile/beam/laser/sharplite/dmr
 	e_cost = 1000 // 10 per regular cell  20 per upgraded cell
+	delay = 0.4 SECONDS
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/sharplite/sniper
 	projectile_type = /obj/projectile/beam/laser/sharplite/sniper
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
-	delay = 1.3 SECONDS
+	delay = 1 SECONDS
 	e_cost = 2000 // 5 per regular cell 10 per upgraded cell
 	select_name = "kill"
 
@@ -132,6 +133,7 @@
 
 /obj/item/ammo_casing/energy/laser/shotgun/sharplite
 	projectile_type = /obj/projectile/beam/weak/shotgun/sharplite
+	delay = 0.4 SECONDS
 
 /obj/item/ammo_casing/energy/laser/heavy
 	projectile_type = /obj/projectile/beam/laser/heavylaser

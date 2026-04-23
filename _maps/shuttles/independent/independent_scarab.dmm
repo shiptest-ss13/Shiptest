@@ -363,17 +363,29 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "eB" = (
-/obj/structure/dresser,
-/obj/machinery/light/small/directional/west,
-/obj/effect/spawner/random/entertainment/plushie/moth{
-	pixel_x = -5;
-	pixel_y = 11
+/obj/structure/dresser{
+	dir = 4;
+	pixel_x = -3;
+	pixel_y = 1
 	},
-/obj/item/reagent_containers/food/drinks/soda_cans/cola{
-	pixel_x = 9;
-	pixel_y = 9
+/obj/machinery/airalarm/directional/west,
+/obj/machinery/light/small/directional/north,
+/obj/machinery/button/door{
+	name = "window control";
+	id = "scarab_dorms";
+	pixel_y = 20;
+	pixel_x = 10
 	},
-/turf/open/floor/carpet,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9;
+	color = "#543C30"
+	},
+/obj/structure/bedsheetbin{
+	pixel_x = -4;
+	pixel_y = 8;
+	layer = 2.91
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "eE" = (
 /obj/structure/grille,
@@ -955,19 +967,12 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "lh" = (
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable/green{
-	icon_state = "0-8"
+/obj/effect/spawner/bunk_bed,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6;
+	color = "#543C30"
 	},
-/obj/item/kirbyplants/random{
-	pixel_x = 8
-	},
-/obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = 6
-	},
-/obj/machinery/newscaster/directional/south{
-	pixel_x = -6
-	},
+/obj/structure/curtain/bounty,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "lm" = (
@@ -1070,16 +1075,16 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "mC" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable/green{
-	icon_state = "2-4"
+	icon_state = "2-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/turf/open/floor/carpet,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "mG" = (
 /obj/structure/cable/green{
@@ -1123,12 +1128,17 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "nb" = (
-/obj/structure/cable/green{
-	icon_state = "4-8"
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 5;
+	pixel_y = -19
 	},
-/obj/machinery/airalarm/directional/south,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -5
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10;
+	color = "#543C30"
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -1437,6 +1447,7 @@
 	dir = 8
 	},
 /obj/structure/closet/emcloset/anchored,
+/obj/item/extinguisher,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "rC" = (
@@ -1532,9 +1543,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "sD" = (
-/obj/structure/bed,
-/obj/effect/spawner/random/bedsheet,
-/turf/open/floor/carpet,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "sF" = (
 /obj/structure/table,
@@ -1626,7 +1641,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "scarab_windows"
+	id = "scarab_dorms"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -2111,22 +2126,16 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "yU" = (
-/obj/structure/closet/wall/directional/west,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
+/obj/structure/closet{
+	name = "wardrobe";
+	icon_door = "black"
 	},
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_x = 10;
-	pixel_y = -19
-	},
-/obj/machinery/firealarm/directional/south,
 /obj/item/storage/backpack,
 /obj/item/storage/backpack/satchel,
-/obj/item/clothing/under/utility,
-/obj/item/clothing/under/utility,
-/obj/item/clothing/under/utility/skirt,
-/obj/item/clothing/under/utility/skirt,
+/obj/item/clothing/under/color/black,
+/obj/item/clothing/under/color/black,
+/obj/item/clothing/under/color/jumpskirt/black,
+/obj/item/clothing/under/color/jumpskirt/black,
 /obj/item/clothing/shoes/workboots{
 	pixel_y = -7
 	},
@@ -2142,7 +2151,15 @@
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/suit/hazardvest,
-/turf/open/floor/carpet,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10;
+	color = "#543C30"
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "yX" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -2385,13 +2402,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ds" = (
-/obj/structure/bed{
-	dir = 1
+/obj/effect/spawner/bunk_bed,
+/obj/machinery/light/small/directional/north,
+/obj/effect/spawner/random/entertainment/plushie/moth{
+	pixel_x = 4;
+	pixel_y = -3
 	},
-/obj/machinery/light/small/directional/east,
-/obj/effect/spawner/random/bedsheet{
-	dir = 4
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 5
 	},
+/obj/structure/curtain/bounty,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "Dt" = (
@@ -3058,7 +3079,6 @@
 	name = "Scarab Stern Dock"
 	},
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	dir = 4;
 	port_direction = 2;
 	preferred_direction = 4
@@ -4036,10 +4056,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "Xd" = (
-/obj/structure/table/wood,
-/obj/item/flashlight/lamp/green{
-	layer = 3.22;
-	pixel_y = 7
+/obj/effect/turf_decal/siding/wood{
+	dir = 9;
+	color = "#543C30"
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -4817,7 +4836,7 @@ wW
 wW
 wW
 wW
-tr
+Yu
 Ds
 lh
 Yu
