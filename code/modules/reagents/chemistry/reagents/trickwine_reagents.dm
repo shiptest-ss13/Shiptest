@@ -283,7 +283,7 @@
 	id = "shock_wine_buff"
 	message_apply_others =  "seems to be crackling with energy!"
 	message_apply_self = "You feel like a bolt of lightning!"
-	message_remove_others = "has lost their statis energy."
+	message_remove_others = "has lost their static energy."
 	message_remove_self = "Inertia leaves your body!"
 	alert_desc = "You feel faster than lightning and cracking with energy! You are immune to shock damage and move faster!"
 	trait = TRAIT_SHOCKIMMUNE
