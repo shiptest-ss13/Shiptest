@@ -478,9 +478,9 @@
 
 /obj/item/clothing/accessory/holster/cybersun/Initialize()
 	. = ..()
-	new /obj/item/gun/ballistic/automatic/pistol/ringneck(src)
-	new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
-	new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
+	new /obj/item/gun/ballistic/automatic/pistol/rattlesnake(src)
+	new /obj/item/ammo_box/magazine/m9mm_rattlesnake(src)
+	new /obj/item/ammo_box/magazine/m9mm_rattlesnake(src)
 
 
 //////////
