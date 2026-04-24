@@ -338,7 +338,7 @@
 			language_holder = new species_holder(src)
 
 /mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
-	robotic ||= fbp
+	robotic ||= HAS_TRAIT(src, TRAIT_USE_PROSTHETIC)
 	..()
 	if(icon_update)
 		update_hair()
@@ -659,7 +659,7 @@
 					else
 						gib()
 				else
-					set_species(/datum/species/dullahan)
+					set_species(/datum/species/human)
 			if(4)
 				visible_message(span_warning("[src]'s skin melts off!"), span_boldwarning("Your skin melts off!"))
 				spawn_gibs()

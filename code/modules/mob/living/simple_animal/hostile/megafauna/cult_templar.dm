@@ -117,7 +117,8 @@
 			span_userdanger("You butcher [L], restoring your health!"))
 //			if(!is_station_level(z) || client) //NPC monsters won't heal while on station
 			adjustHealth(-(L.maxHealth * 0.5))
-			L.gib()
+			if(can_gib)
+				L.gib()
 			if(ishuman(L)) // If target is a human - yell some funny shit.
 				telegraph()
 				say("Mah'weyh pleggh at e'ntrath!!")

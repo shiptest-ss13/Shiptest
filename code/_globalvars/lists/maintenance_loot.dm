@@ -19,7 +19,7 @@ GLOBAL_LIST_INIT(trash_loot, list(//junk: useless, very easy to get, or ghetto c
 		/obj/item/trash/can = 1,
 		/obj/item/trash/raisins = 1,
 		/obj/item/trash/candy = 1,
-		/obj/item/trash/cheesie = 1,
+		/obj/item/trash/gummycarps = 1,
 		/obj/item/trash/chips = 1,
 		/obj/item/trash/popcorn = 1,
 		/obj/item/trash/sosjerky = 1,
@@ -222,12 +222,12 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 
 	list(//food
 		/obj/item/food/canned/peaches/maint = 1,
-		/obj/item/storage/box/donkpockets = 1,
-		list(//Donk Varieties
-			/obj/item/storage/box/donkpockets/donkpocketspicy = 1,
-			/obj/item/storage/box/donkpockets/donkpocketteriyaki = 1,
-			/obj/item/storage/box/donkpockets/donkpocketpizza = 1,
-			/obj/item/storage/box/donkpockets/donkpocketberry = 1,
+		/obj/item/storage/box/shoalpockets = 1,
+		list(//Shoalpocket Varieties
+			/obj/item/storage/box/shoalpockets/shoalpocketspicy = 1,
+			/obj/item/storage/box/shoalpockets/shoalpocketteriyaki = 1,
+			/obj/item/storage/box/shoalpockets/shoalpocketpizza = 1,
+			/obj/item/storage/box/shoalpockets/shoalpocketberry = 1,
 			) = 1,
 		/obj/item/food/monkeycube = 1,
 		/obj/effect/spawner/random/food_or_drink/ration = 1,

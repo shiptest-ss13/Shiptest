@@ -170,6 +170,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
 	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80, "wound" = 30)
 	slowdown = 1.25
+	supports_variations = DIGITIGRADE_VARIATION
 
 /////////
 //Hats//
@@ -297,6 +298,13 @@
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
+
+/obj/item/storage/belt/security/webbing/ramzi/mako_light/PopulateContents()
+	. = ..()
+	new /obj/item/ammo_casing/caseless/rocket/a70mm/light(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm/light(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm/light(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm/light(src)
 
 /obj/item/storage/belt/security/webbing/ramzi/bulldog_mixed/PopulateContents()
 	. = ..()

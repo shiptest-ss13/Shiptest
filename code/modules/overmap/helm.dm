@@ -116,7 +116,7 @@
 
 /obj/machinery/computer/helm/proc/do_jump()
 	if(jump_destination)
-		priority_announce("Bluespace Jump Initiated. Welcome to [jump_destination.name]", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
+		priority_announce("Bluespace Jump Initiated. Welcome to [jump_destination.name].", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
 	else
 		priority_announce("Bluespace Jump Initiated.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
 	if(!jump_destination)
@@ -342,9 +342,6 @@
 			cloaking_system.set_cloak(!cloaking_system.cloak_active)
 			return TRUE
 		if("act_overmap")
-			if(SSshuttle.jump_mode > BS_JUMP_CALLED)
-				to_chat(usr, "<span class='warning'>Cannot interact due to bluespace jump preperations!</span>")
-				return
 			var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects(include_docked = TRUE, empty_if_src_docked = FALSE)
 			var/feedback_text = current_ship.show_interaction_menu(usr, to_act)
 			if(feedback_text)
@@ -358,9 +355,6 @@
 	if(!current_ship.docked_to && !current_ship.docking)
 		switch(action)
 			if("quick_dock")
-				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
-					to_chat(usr, span_warning("Cannot dock due to bluespace jump preperations!"))
-					return
 				var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects(include_docked = TRUE)
 				say(current_ship.Dock(to_act))
 				return

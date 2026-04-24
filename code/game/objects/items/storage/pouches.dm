@@ -91,6 +91,10 @@
 		/obj/item/stock_parts/cell/gun
 		))
 
+/obj/item/storage/pouch/ammo/sidewinder/PopulateContents()
+	var/static/items_inside = list(/obj/item/ammo_box/magazine/m57_39_sidewinder = 3)
+	generate_items_inside(items_inside,src)
+
 /obj/item/storage/pouch/engi
 	name = "technician pouch"
 	desc = "An orange pouch used to hold a small amount of tools or supplies, often used for emergency repair kits."

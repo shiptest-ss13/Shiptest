@@ -18,14 +18,24 @@
 	liked_food = MEAT | RAW | GORE // Regular spiders literally liquify the insides of their prey and drink em like a smoothie. I think this fits
 	disliked_food = FRUIT | GROSS
 	toxic_food = VEGETABLES | DAIRY | CLOTH
-	mutanteyes = /obj/item/organ/eyes/night_vision/spider
-	mutanttongue = /obj/item/organ/tongue/spider
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	species_language_holder = /datum/language_holder/spider
 	loreblurb = "Rachnids are aliens with coincidental physiological similarities to Sol's spiders. Despite visible adaptations that would make them excellent hunters, modern Rachnidian culture revolves around honing the skills and talents of oneself, treating them as forms of self-expression. Rachnids tend to focus on their work intensely, priding themselves on a job well done and languishing if they see themselves as underperforming in their field."
 	var/web_cooldown = 30
 	var/web_ready = TRUE
 	var/spinner_rate = 75
+
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/spider,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/spider,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+	)
 
 	// TODO - add more arms
 	species_limbs = list(

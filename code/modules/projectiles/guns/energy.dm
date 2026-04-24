@@ -134,7 +134,7 @@
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/energy/attack_hand(mob/user)
-	if(!internal_magazine && loc == user && user.is_holding(src) && cell && tac_reloads && !(gun_firemodes[firemode_index] == FIREMODE_UNDERBARREL))
+	if(!internal_magazine && loc == user && user.is_holding(src) && cell && tac_reloads)
 		eject_cell(user)
 		return
 	return ..()
@@ -218,6 +218,15 @@
 			latch_closed = TRUE
 			update_appearance()
 	return
+
+//If an energy gun has both a variable firerate and a variable ammotype, prioritize switching the firerate. Otherwise, swap the ammotype.
+/obj/item/gun/energy/secondary_action(user)
+	if(gun_firemodes.len > 1)
+		fire_select(user)
+	else if (ammo_type.len > 1)
+		select_fire(user)
+	else
+		..()
 
 /obj/item/gun/energy/can_shoot(visuals)
 	if(safety && !visuals)

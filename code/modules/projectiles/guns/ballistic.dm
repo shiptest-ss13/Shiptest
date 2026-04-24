@@ -337,7 +337,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/ballistic/attack_hand(mob/user)
 	// the main calls it's own eject mag before the underbarrel. fix this
-	if(user.is_holding(src) && loc == user && !(gun_firemodes[firemode_index] == FIREMODE_UNDERBARREL))
+	if(user.is_holding(src) && loc == user)
 		if(sealed_magazine)
 			to_chat(user, span_warning("The [magazine_wording] on [src] is sealed and cannot be accessed!"))
 			return

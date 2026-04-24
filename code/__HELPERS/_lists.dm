@@ -63,11 +63,11 @@
 #define LAZYLEN(L) length(L)
 #define LAZYCLEARLIST(L) if(L) L.Cut()
 #define SANITIZE_LIST(L) (islist(L) ? L : list())
-#define reverseList(L) reverseRange(L.Copy())
+#define reverseList(L) reverse_range(L.Copy())
 #define LAZYADDASSOC(L, K, V) if(!L) { L = list(); } L[K] += V;
 #define LAZYADDASSOCLIST(L, K, V) if(!L) { L = list(); } L[K] += list(V);
 #define LAZYREMOVEASSOC(L, K, V) if(L) { if(L[K]) { L[K] -= V; if(!length(L[K])) L -= K; } if(!length(L)) L = null; }
-#define LAZYACCESSASSOC(L, I, K) L ? L[I] ? L[I][K] ? L[I][K] : null : null : null
+#define LAZYACCESSASSOC(L, I, K) L?[I]?[K]
 #define LAZYNULL(L) L = null
 #define QDEL_LAZYLIST(L) for(var/I in L) qdel(I); L = null;
 #define QDEL_LAZYASSOCLIST(L) for(var/K in L) qdel(L[K]); L = null;
@@ -666,7 +666,7 @@
 			L.Swap(fromIndex++, toIndex++)
 
 //replaces reverseList ~Carnie
-/proc/reverseRange(list/L, start=1, end=0)
+/proc/reverse_range(list/L, start=1, end=0)
 	if(L.len)
 		start = start % L.len
 		end = end % (L.len+1)

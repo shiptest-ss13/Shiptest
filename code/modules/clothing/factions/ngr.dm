@@ -202,6 +202,31 @@
 	icon_state = "hardsuit0-ngreod"
 	hardsuit_type = "ngreod"
 
+/obj/item/clothing/suit/space/hardsuit/mining/heavy/ngr
+	name = "NGR mining hardsuit"
+	desc = "A heavy-duty NGR made suit, designed to protect wreckers from industrial and fauna hazards. Maneuverable enough to get out of harms way."
+	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
+	icon_state = "hardsuit-ngrminer"
+	item_state = "hardsuit-ngrminer"
+	slowdown = 0.7
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/ngr
+	hardsuit_type = "ngrminer"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/ngr
+	name = "NGR mining hardsuit helmet"
+	desc = "A heavy-duty helmet with spacious interior, good for absorbing impacts."
+	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+	icon_state = "hardsuit0-ngrminer"
+	item_state = "hardsuit0-nsmining"
+	hardsuit_type = "ngrminer"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
+
 /////////
 //Hats//
 ////////

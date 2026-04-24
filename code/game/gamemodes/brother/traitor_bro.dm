@@ -64,4 +64,4 @@
 	return ..()
 
 /datum/game_mode/traitor/bros/generate_report()
-	return "It's Syndicate recruiting season. Be alert for potential Syndicate infiltrators, but also watch out for disgruntled employees trying to defect. Unlike Nanotrasen, the Syndicate prides itself in teamwork and will only recruit pairs that share a brotherly trust."
+	return "It's Syndicate recruiting season. Be alert for potential Syndicate infiltrators, but also watch out for disgruntled employees trying to defect. Unlike Makosso-Warra, the Syndicate prides itself in teamwork and will only recruit pairs that share a brotherly trust."
