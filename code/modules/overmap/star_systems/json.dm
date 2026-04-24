@@ -2,7 +2,6 @@
 //while unable to add sectors to punchards yet, this could be a good sample punchcard map, not in the main overmap but in its own enviroment
 /datum/overmap_star_system/sunset_example
 	name = "Abandoned - New Dawn"
-	can_be_selected_randomly = FALSE
 	can_jump_to = FALSE
 	json = '_maps/sectors/sunset_starsystem.json'
 	generator_type = OVERMAP_GENERATOR_JSON
@@ -20,9 +19,6 @@
 
 	//json loading spawns the outpost during loading, no need to spawn it with this var
 	has_outpost = FALSE
-
-	//meant for example purposes, dont actually load this during a live round
-	can_be_selected_randomly = FALSE
 
 	//has jump point helpers in here
 	can_jump_to = FALSE

@@ -1,7 +1,6 @@
 /datum/overmap_star_system/admin_sandbox
 	name = "Admin Sandbox"
 	size = 20
-	can_be_selected_randomly = FALSE
 	can_jump_to = FALSE
 	generator_type = OVERMAP_GENERATOR_NONE
 

@@ -1,7 +1,6 @@
 //default shiptest overmap
 /datum/overmap_star_system/wilderness
 	has_outpost = FALSE
-	can_be_selected_randomly = FALSE
 	encounters_refresh = TRUE
 
 	entry_quotes = list(
@@ -53,6 +52,15 @@
 		"..just follow the buoys..",
 	)
 
+	fluff_amount = 3
+
+	fluff_probabilities = list(
+		/datum/overmap/fluff/satellite/abandoned = 10,
+		/datum/overmap/fluff/commsat/abandoned = 5,
+		/datum/overmap/fluff/fakeplanet/gas_giant = 1
+	)
+
+
 /datum/overmap_star_system/wilderness/singularity
 	startype = /datum/overmap/star/singularity
 	dynamic_probabilities = list(
@@ -81,6 +89,13 @@
 		"..time diliation is an awful thing..",
 		"..a dark splotch in the cosmos..",
 		"..an abyss where light dies..",
+	)
+
+	fluff_amount = 1
+
+	fluff_probabilities = list(
+		/datum/overmap/fluff/satellite/abandoned = 2,
+		/datum/overmap/fluff/commsat/abandoned = 10
 	)
 
 /datum/overmap_star_system/wilderness/temperate
@@ -118,6 +133,15 @@
 		"..breathable air, bad water..",
 	)
 
+	fluff_amount = 4
+
+	//to-do: get someone to sprite orbital terraforming equipment tokens.
+	fluff_probabilities = list(
+		/datum/overmap/fluff/satellite/abandoned = 10,
+		/datum/overmap/fluff/commsat/abandoned = 3,
+		/datum/overmap/fluff/spacecolony/abandoned = 1
+	)
+
 /datum/overmap_star_system/wilderness/warzone
 	startype = /datum/overmap/star/medium/orange
 	dynamic_probabilities = list(
@@ -152,6 +176,16 @@
 		"..the fire is spreading.."
 	)
 
+	fluff_amount = 9
+	//to-do: get someone to sprite orbital terraforming equipment tokens.
+	fluff_probabilities = list(
+		/datum/overmap/fluff/dud = 10,
+		/datum/overmap/fluff/satellite/abandoned = 20,
+		/datum/overmap/fluff/commsat/abandoned = 10,
+		/datum/overmap/fluff/fakeplanet/plasma_giant = 3,
+		/datum/overmap/fluff/spacecolony/abandoned = 3
+	)
+
 /datum/overmap_star_system/wilderness/anomaly
 	dynamic_probabilities = list(
 		DYNAMIC_WORLD_LAVA = 40,
@@ -182,6 +216,11 @@
 		"..I don't want to forget.."
 	)
 
+	fluff_amount = 1
+	fluff_probabilities = list(
+		/datum/overmap/fluff/commsat/abandoned = 1,
+	)
+
 /datum/overmap_star_system/wilderness/terraforming
 	dynamic_probabilities = list(
 		DYNAMIC_WORLD_LAVA = 30,
@@ -203,6 +242,14 @@
 		"..pick a flower, they won't last..",
 	)
 
+	fluff_amount = 4
+	fluff_probabilities = list(
+		/datum/overmap/fluff/satellite/abandoned = 10,
+		/datum/overmap/fluff/commsat/abandoned = 3,
+		/datum/overmap/fluff/spacecolony/abandoned = 1
+	)
+
+
 /datum/overmap_star_system/wilderness/lighthouse
 	startype = /datum/overmap/star/pulsar
 	starname = "Ahktichiki's Lighthouse"
@@ -221,6 +268,11 @@
 		"..it'll guide every spacer..",
 		"..watch the beams..",
 		"..you'll always guide us home..",
+	)
+
+	fluff_amount = 1
+	fluff_probabilities = list(
+		/datum/overmap/fluff/commsat/abandoned = 1,
 	)
 
 /datum/overmap_star_system/wilderness/supergiant
@@ -250,6 +302,10 @@
 		"..intensity beyond reason..",
 		"..always burning bright..",
 		"..flames that lash and sear..",
+	)
+
+	fluff_probabilities = list(
+		/datum/overmap/fluff/commsat/abandoned = 1,
 	)
 
 /datum/overmap_star_system/wilderness/frozen
@@ -283,11 +339,14 @@
 		"..peace only broken by tension..",
 	)
 
+	fluff_amount = 1
+	fluff_probabilities = list(
+		/datum/overmap/fluff/commsat/abandoned = 1,
+	)
+
 //for laughs
 /datum/overmap_star_system/oldcolors
 	override_object_colors = TRUE
-	can_be_selected_randomly = FALSE
 
 /datum/overmap_star_system/oldgen //wouldnt it be funny to have this generate sometimes just for shits and giggles
 	generator_type = OVERMAP_GENERATOR_RANDOM
-	can_be_selected_randomly = FALSE

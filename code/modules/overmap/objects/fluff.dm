@@ -110,6 +110,13 @@
 	flag_overlay = TRUE
 	interference_power = -50
 
+//to-do: restore commsat mission.
+//Implement by creating a few variants of relay satellite maps
+//have these spawn them when docked to
+//overmap datum holds a var saying if its active or not
+//outpost mission checks for var
+//players have to go inside station to turn power on / clear enemies. It's barotrauma.
+//on top of payout, system gets an interference level offset. Cleaner comms!
 /datum/overmap/fluff/commsat/abandoned
 	name = "abandoned communications relay satellite"
 	desc = "Damaged metallic spires still try to catch and hear what travels by them, even as their foundation crumbles around them. " + span_notice("You can get closer to reduce the interference aboard your vessel!")
@@ -239,7 +246,7 @@
 	default_color = COLOR_PURPLE
 	interference_power = 10
 
-/datum/overmap/fluff/fakeplanet/plasma_giant
+/datum/overmap/fluff/fakeplanet/aqua
 	name = "aqua planet"
 	desc = "A planet entirely covered in water with caves with oxygen pockets. " + span_notice("\nThere is likely nothing of interest here. Traveling here is a waste of time.")
 	token_icon_state = "water"

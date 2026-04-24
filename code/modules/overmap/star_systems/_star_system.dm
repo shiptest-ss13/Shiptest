@@ -22,6 +22,9 @@
 	var/list/dynamic_encounters  = list()
 	///List of all events in the star system.
 	var/list/events = list()
+	///List of fluff objects in the system
+	var/list/fluff = list()
+
 	///List of jump points currently in the system
 	var/list/datum/overmap/jump_point/jump_points = list()
 
@@ -76,6 +79,18 @@
 		/datum/overmap/event/anomaly = 10
 	)
 
+	//weighted list of kinds of fluff that can spawn.
+	var/list/fluff_probabilities = list(
+		/datum/overmap/fluff/satellite/abandoned = 0,
+		/datum/overmap/fluff/commsat/abandoned = 0,
+		/datum/overmap/fluff/spacecolony/abandoned = 0,
+		/datum/overmap/fluff/dud = 0,
+		/datum/overmap/fluff/fakeplanet/gas_giant = 0
+	)
+
+	//how much fluff can spawn in this system?
+	var/fluff_amount = 0
+
 	//fancy color shit! yayyyyy!
 
 	///main colors, used for dockable terrestrials, and background
@@ -100,8 +115,6 @@
 
 	//Can players bluespace jump to this sector? Recommended to be FALSE if this is a punchcard or for some event
 	var/can_jump_to = FALSE
-	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the pallete
-	var/can_be_selected_randomly = TRUE
 
 	//What system comes 'next' in the chain?
 	var/datum/overmap_star_system/next_overmap
@@ -225,8 +238,10 @@
 	switch(generator_type)
 		if(OVERMAP_GENERATOR_SOLAR)
 			spawn_events_in_orbits()
+			spawn_fluff_in_orbits()
 		if(OVERMAP_GENERATOR_RANDOM)
 			spawn_events()
+			spawn_fluff()
 		if(OVERMAP_GENERATOR_JSON)
 			import_from_json(json)
 
@@ -244,6 +259,14 @@
 	for(var/i in 1 to max_clusters)
 		spawn_event_cluster(pick(subtypesof(/datum/overmap/event)), get_unused_overmap_square())
 
+/datum/overmap_star_system/proc/spawn_fluff()
+	for(var/i in 1 to fluff_amount)
+		if(fluff_amount <= length(fluff))
+			return FALSE
+		var/fluff_type = pick_weight(fluff_probabilities)
+		new fluff_type(get_unused_overmap_square(), src)
+
+
 /datum/overmap_star_system/proc/spawn_events_in_orbits()
 	var/list/orbits = list()
 	for(var/i in 3 to length(radius_positions) / 2) // At least two away to prevent overlap
@@ -259,18 +282,41 @@
 		var/event_type = pick_weight(event_probabilities)
 		var/selected_orbit = pick(orbits)
 
-		var/list/T = get_unused_overmap_square_in_radius(selected_orbit)
-		if(!T)
+		var/list/overmap_tile = get_unused_overmap_square_in_radius(selected_orbit)
+		if(!overmap_tile)
 			orbits -= "[selected_orbit]" // This orbit is full, move onto the next
 			continue
 
-		var/datum/overmap/event/E = new event_type(T, src)
+		var/datum/overmap/event/main_event = new event_type(overmap_tile, src)
 		for(var/list/position as anything in radius_positions[selected_orbit])
 			if(locate(/datum/overmap) in overmap_container[position["x"]][position["y"]])
 				continue
-			if(!prob(E.spread_chance))
+			if(!prob(main_event.spread_chance))
 				continue
-			new event_type(position, src)
+			var/sub_event_type = pick_weight(main_event.spread_types)
+			new sub_event_type(position, src)
+
+/datum/overmap_star_system/proc/spawn_fluff_in_orbits()
+	//same as event spawning to make life easier
+	var/list/orbits = list()
+	for(var/i in 3 to length(radius_positions) / 2)
+		orbits += "[i]"
+
+	for(var/i in 1 to fluff_amount)
+		if(fluff_amount <= length(fluff))
+			return
+		if(!length(orbits))
+			break // Can't fit any more in
+		var/fluff_type = pick_weight(fluff_probabilities)
+		var/selected_orbit = pick(orbits)
+
+		var/list/overmap_tile = get_unused_overmap_square_in_radius(selected_orbit)
+		if(!overmap_tile)
+			orbits -= "[selected_orbit]" // This orbit is full, move onto the next
+			continue
+
+		new fluff_type(overmap_tile, src)
+
 
 /**
  * Creates an overmap object for each ruin level, making them accessible.
@@ -745,6 +791,8 @@
 	system_data["faction"] = faction
 	system_data["dynamic_probabilities"] = dynamic_probabilities
 	system_data["event_probabilities"] = event_probabilities
+	system_data["fluff_amount"] = fluff_amount
+	system_data["fluff_probabilities"] = fluff_probabilities
 	system_data["can_jump_to"] = can_jump_to
 
 	//overmap color stuff
@@ -884,6 +932,8 @@
 	faction = system_data["faction"]
 	dynamic_probabilities = system_data["dynamic_probabilities"]
 	event_probabilities = system_data["event_probabilities"]
+	fluff_amount = system_data["fluff_amount"]
+	fluff_probabilities = system_data["fluff_probabilities"]
 	can_jump_to = system_data["can_jump_to"]
 
 	//overmap color stuff
