@@ -759,8 +759,6 @@
 
 	system_data["overmap_icon_state"] = overmap_icon_state
 
-	system_data["entry_quotes"] = entry_quotes
-
 	for(var/datum/overmap/current_object as anything in overmap_objects)
 		var/count = (objects_data.len + 1)
 		//dont save limited lifetime events
@@ -899,8 +897,6 @@
 	secondary_structure_color = system_data["secondary_structure_color"]
 
 	overmap_icon_state = system_data["overmap_icon_state"]
-
-	entry_quotes = system_data["entry_quotes"]
 
 /datum/overmap_star_system/proc/import_from_json(json_file)
 
