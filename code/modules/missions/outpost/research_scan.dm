@@ -4,6 +4,8 @@
 
 	weight = 0
 
+	blackbox_prefix = "Scanning "
+
 	/// The type of scanner to be spawned when the mission is accepted.
 	var/obj/item/survey_handheld/scanner_type
 	/// Instance of the scanner, spawned after the mission is accepted.

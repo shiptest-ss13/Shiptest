@@ -11,6 +11,7 @@
 		DYNAMIC_WORLD_ICE,
 		DYNAMIC_WORLD_ROCKPLANET
 	)
+	blackbox_prefix = "T4 Drill "
 	var/obj/machinery/drill/sampler_mission/mission_drill
 
 /datum/mission/acquire/industrial_drill/New(...)

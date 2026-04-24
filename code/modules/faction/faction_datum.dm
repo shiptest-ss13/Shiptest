@@ -112,6 +112,11 @@
 	prefixes = PREFIX_CLIP
 	color = "#3F90DF"
 
+/datum/faction/clip/cmm
+	name = FACTION_MINUTEMEN
+	short_name = "CLIP Minutemen"
+	prefixes = PREFIX_MINUTEMEN
+
 /datum/faction/warra
 	name = FACTION_WARRA
 	short_name = "MAKOSSO-WARRA"

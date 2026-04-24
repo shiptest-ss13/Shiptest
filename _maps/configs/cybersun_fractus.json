@@ -1,0 +1,44 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "291-T Fractus-class Trabacalo",
+	"faction": "/datum/faction/syndicate/cybersun",
+	"prefix": "CSSV",
+	"manufacturer": "ISF Spacecraft",
+	"map_short_name": "Fractus-class",
+	"description": "Another one of Cybersun's homegrown designs, the Fractus-class is a fast transport typically operated by Virtual Solutions for their Troubleshooter division. While occasionally being contracted out to divisions of the company, VS Troubleshooters are the rank and file of Cybersun's efforts in the Frontier, and as such typically see frequent deployment. A Fractus typically only carries 2 Troubleshooters, with a team lead occasionally taking the spot of Captain. A Technician and Aide are typically brought aboard as support staff. It is not uncommon to see the Ship's Aide pressed into a medical position on extended deployments. The vessel itself is built with this in mind, with high manuever, somewhat comfortable cabins, and a large shared living area to keep the crew comfortable on long journies.",
+	"starting_funds": 3000,
+	"tags": [
+		"Combat",
+		"Engineering",
+		"Specialist"
+	],
+	"map_path": "_maps/shuttles/cybersun/cybersun_fractus.dmm",
+	"tranist_x_offset": -19,
+	"tranist_y_offset": -10,
+	"token_icon_state": "ship_small_generic",
+	"namelists": [
+		"SPACE",
+		"BEASTS",
+		"NATURAL_AGGRESSIVE"
+	],
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/cybersun/officer/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Troubleshooter": {
+			"outfit": "/datum/outfit/job/cybersun/troubleshooter",
+			"slots": 2
+		},
+		"Technician": {
+			"outfit": "/datum/outfit/job/cybersun/engineer",
+			"slots": 1
+		},
+		"Ship's Aide": {
+			"outfit": "/datum/outfit/job/cybersun/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

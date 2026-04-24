@@ -59,8 +59,6 @@ GLOBAL_PROTECT(protected_ranks)
 				flag = R_BUILD
 			if("ADMIN")
 				flag = R_ADMIN
-			if("MENTOR")
-				flag = R_MENTOR
 			if("BAN")
 				flag = R_BAN
 			if("FUN")

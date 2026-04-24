@@ -33,8 +33,8 @@
 
 /obj/item/food/homemade_jerky
 	name = "homemade beef jerky"
-	desc = "Homemade beef jerky made from the finest space cows."
-	trash_type = /obj/item/trash/sosjerky
+	desc = "Dried, homemade beef jerky."
+	icon_state = "homejerky"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment/protein = 6,
 		/datum/reagent/consumable/nutriment/vitamin = 1
@@ -42,7 +42,7 @@
 	junkiness = 0
 	tastes = list("dried meat" = 1)
 	w_class = WEIGHT_CLASS_SMALL
-	foodtypes = JUNKFOOD | MEAT | SUGAR
+	foodtypes = MEAT
 
 /obj/item/food/chips
 	name = "chips"

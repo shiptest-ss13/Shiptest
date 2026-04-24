@@ -72,12 +72,11 @@
 	if(!src.holder)
 		return
 
-	var/confirm = alert(src, "Are you sure you want to reload all admins and mentors?", "Confirm", "Yes", "No")
+	var/confirm = alert(src, "Are you sure you want to reload all admins?", "Confirm", "Yes", "No")
 	if(confirm !="Yes")
 		return
 
 	load_admins()
-	load_mentors()
 	BLACKBOX_LOG_ADMIN_VERB("Reload All Admins")
 	message_admins("[key_name_admin(usr)] manually reloaded admins")
 
