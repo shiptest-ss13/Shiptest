@@ -3,7 +3,7 @@
 		"name": "Value of Public Works",
 		"starname": "Ecbatana",
 		"startype": "/datum/overmap/star/dwarf",
-		"size": 20,
+		"size": 21,
 		"max_overmap_dynamic_events": 0,
 		"faction": null,
 		"dynamic_probabilities": {
@@ -44,74 +44,75 @@
 		"/datum/overmap/outpost/ngr_rock_1": {
 			"type": "/datum/overmap/outpost/ngr_rock",
 			"name": "Agni Trading Post",
-			"x": 7,
-			"y": 15
+			"x": 8,
+			"y": 16
 		},
 		"/datum/overmap/star/dwarf_2": {
 			"type": "/datum/overmap/star/dwarf",
 			"name": "Ecbatana",
+			"custom_color": null,
 			"enable_event_spawning": 0,
-			"x": 11,
-			"y": 11
+			"x": 12,
+			"y": 12
 		},
 		"/datum/overmap/fluff/dud_3": {
 			"type": "/datum/overmap/fluff/dud",
-			"dir": 2,
-			"x": 14,
-			"y": 9
+			"dir": 6,
+			"x": 15,
+			"y": 10
 		},
 		"/datum/overmap/event/meteor/debris_4": {
 			"type": "/datum/overmap/event/meteor/debris",
-			"x": 14,
-			"y": 7
+			"x": 15,
+			"y": 8
 		},
 		"/datum/overmap/event/meteor/debris/minor_5": {
 			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 15,
-			"y": 7
+			"x": 16,
+			"y": 8
 		},
 		"/datum/overmap/event/meteor/debris/minor_6": {
 			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 13,
-			"y": 8
+			"x": 14,
+			"y": 9
 		},
 		"/datum/overmap/event/meteor/debris/minor_7": {
 			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 15,
-			"y": 9
+			"x": 16,
+			"y": 10
 		},
 		"/datum/overmap/fluff/fakeplanet/battlefield_8": {
 			"type": "/datum/overmap/fluff/fakeplanet/battlefield",
-			"name":"Carcosa",
-			"desc":"A planet that has been the site of many battles during the ICW, leading to irrecoverable damage to it's ecology. Previously, it was a Makosso-Warra colony, and mining site. All that's left is rubble and scrap. The survivors of the conflicts here formed Agni Trading Post, and still run it.",
+			"name": "Carcosa",
+			"desc": "A planet that has been the site of many battles during the ICW, leading to irrecoverable damage to it's ecology. Previously, it was a Makosso-Warra colony, and mining site. All that's left is rubble and scrap. The survivors of the conflicts here formed Agni Trading Post, and still run it.",
 			"dir": 2,
-			"x": 14,
-			"y": 8
+			"x": 15,
+			"y": 9
 		},
 		"/datum/overmap/fluff/satellite/abandoned_9": {
 			"type": "/datum/overmap/fluff/satellite/abandoned",
 			"dir": 2,
-			"x": 15,
-			"y": 8
+			"x": 16,
+			"y": 9
 		},
 		"/datum/overmap/fluff/fakeplanet/moon_10": {
 			"type": "/datum/overmap/fluff/fakeplanet/moon",
-			"name":"King's Eye",
-			"desc":"A moon, tinted yellow from sulfur deposits across it's surface. Soldiers during the ICW, fighting on Carcosa, gave it it's name. It previously was host to a massive Coalition base somewhere on it. Local rumors say it's still active, Agni officials claim otherwise.",
+			"name": "King's Eye",
+			"desc": "A moon, tinted yellow from sulfur deposits across it's surface. Soldiers during the ICW, fighting on Carcosa, gave it it's name. It previously was host to a massive Coalition base somewhere on it. Local rumors say it's still active, Agni officials claim otherwise.",
 			"dir": 2,
-			"x": 13,
-			"y": 7
+			"x": 14,
+			"y": 8
 		},
 		"/datum/overmap/fluff/commsat_11": {
 			"type": "/datum/overmap/fluff/commsat",
 			"dir": 2,
-			"x": 8,
-			"y": 16
+			"x": 9,
+			"y": 17
 		},
 		"/datum/overmap/event/meteor/minor_12": {
 			"type": "/datum/overmap/event/meteor/minor",
-			"x": 8,
-			"y": 18
+			"x": 7,
+			"y": 19
 		},
 		"/datum/overmap/event/meteor/minor_13": {
 			"type": "/datum/overmap/event/meteor/minor",
@@ -126,536 +127,531 @@
 		"/datum/overmap/event/meteor/minor_15": {
 			"type": "/datum/overmap/event/meteor/minor",
 			"x": 3,
-			"y": 13
-		},
-		"/datum/overmap/event/meteor/minor_16": {
-			"type": "/datum/overmap/event/meteor/minor",
-			"x": 3,
 			"y": 10
 		},
-		"/datum/overmap/event/meteor/minor_17": {
+		"/datum/overmap/event/meteor/minor_16": {
 			"type": "/datum/overmap/event/meteor/minor",
 			"x": 4,
 			"y": 7
 		},
-		"/datum/overmap/event/meteor/minor_18": {
+		"/datum/overmap/event/meteor/minor_17": {
 			"type": "/datum/overmap/event/meteor/minor",
 			"x": 6,
 			"y": 5
 		},
-		"/datum/overmap/event/meteor/minor_19": {
+		"/datum/overmap/event/meteor/minor_18": {
 			"type": "/datum/overmap/event/meteor/minor",
 			"x": 12,
 			"y": 3
 		},
-		"/datum/overmap/event/meteor/minor_20": {
+		"/datum/overmap/event/meteor/minor_19": {
 			"type": "/datum/overmap/event/meteor/minor",
 			"x": 15,
 			"y": 4
 		},
-		"/datum/overmap/event/meteor/minor_21": {
+		"/datum/overmap/event/meteor/minor_20": {
 			"type": "/datum/overmap/event/meteor/minor",
 			"x": 18,
 			"y": 6
 		},
-		"/datum/overmap/event/meteor/minor_22": {
+		"/datum/overmap/event/meteor/minor_21": {
 			"type": "/datum/overmap/event/meteor/minor",
-			"x": 19,
+			"x": 20,
 			"y": 9
 		},
-		"/datum/overmap/event/meteor/minor_23": {
-			"type": "/datum/overmap/event/meteor/minor",
-			"x": 11,
-			"y": 19
-		},
-		"/datum/overmap/event/meteor/minor_24": {
+		"/datum/overmap/event/meteor/minor_22": {
 			"type": "/datum/overmap/event/meteor/minor",
 			"x": 13,
 			"y": 19
 		},
-		"/datum/overmap/event/meteor/minor_25": {
+		"/datum/overmap/event/meteor/minor_23": {
 			"type": "/datum/overmap/event/meteor/minor",
-			"x": 19,
+			"x": 20,
 			"y": 12
 		},
-		"/datum/overmap/event/meteor_26": {
+		"/datum/overmap/event/meteor_24": {
 			"type": "/datum/overmap/event/meteor",
 			"x": 5,
 			"y": 16
 		},
-		"/datum/overmap/event/meteor_27": {
-			"type": "/datum/overmap/event/meteor",
-			"x": 7,
-			"y": 18
-		},
-		"/datum/overmap/event/meteor_28": {
-			"type": "/datum/overmap/event/meteor",
-			"x": 10,
-			"y": 19
-		},
-		"/datum/overmap/event/meteor_29": {
-			"type": "/datum/overmap/event/meteor",
-			"x": 14,
-			"y": 18
-		},
-		"/datum/overmap/event/meteor_30": {
-			"type": "/datum/overmap/event/meteor",
-			"x": 15,
-			"y": 18
-		},
-		"/datum/overmap/event/meteor_31": {
+		"/datum/overmap/event/meteor_25": {
 			"type": "/datum/overmap/event/meteor",
 			"x": 18,
 			"y": 14
 		},
-		"/datum/overmap/event/meteor_32": {
+		"/datum/overmap/event/meteor_26": {
 			"type": "/datum/overmap/event/meteor",
-			"x": 19,
+			"x": 20,
 			"y": 13
 		},
-		"/datum/overmap/event/meteor_33": {
+		"/datum/overmap/event/meteor_27": {
 			"type": "/datum/overmap/event/meteor",
-			"x": 19,
+			"x": 20,
 			"y": 11
 		},
-		"/datum/overmap/event/meteor_34": {
-			"type": "/datum/overmap/event/meteor",
-			"x": 19,
-			"y": 10
-		},
-		"/datum/overmap/event/meteor_35": {
+		"/datum/overmap/event/meteor_28": {
 			"type": "/datum/overmap/event/meteor",
 			"x": 19,
 			"y": 8
 		},
-		"/datum/overmap/event/meteor_36": {
+		"/datum/overmap/event/meteor_29": {
 			"type": "/datum/overmap/event/meteor",
 			"x": 18,
 			"y": 7
 		},
-		"/datum/overmap/event/meteor_37": {
+		"/datum/overmap/event/meteor_30": {
 			"type": "/datum/overmap/event/meteor",
 			"x": 16,
 			"y": 4
 		},
-		"/datum/overmap/event/meteor_38": {
+		"/datum/overmap/event/meteor_31": {
 			"type": "/datum/overmap/event/meteor",
 			"x": 14,
 			"y": 3
 		},
-		"/datum/overmap/event/meteor_39": {
+		"/datum/overmap/event/meteor_32": {
 			"type": "/datum/overmap/event/meteor",
 			"x": 13,
 			"y": 3
 		},
-		"/datum/overmap/event/meteor_40": {
-			"type": "/datum/overmap/event/meteor",
-			"x": 11,
-			"y": 3
-		},
-		"/datum/overmap/event/meteor_41": {
+		"/datum/overmap/event/meteor_33": {
 			"type": "/datum/overmap/event/meteor",
 			"x": 5,
 			"y": 6
 		},
-		"/datum/overmap/event/meteor_42": {
-			"type": "/datum/overmap/event/meteor",
-			"x": 3,
-			"y": 8
-		},
-		"/datum/overmap/event/meteor_43": {
+		"/datum/overmap/event/meteor_34": {
 			"type": "/datum/overmap/event/meteor",
 			"x": 3,
 			"y": 9
 		},
-		"/datum/overmap/event/meteor_44": {
+		"/datum/overmap/event/meteor_35": {
 			"type": "/datum/overmap/event/meteor",
 			"x": 3,
 			"y": 12
 		},
-		"/datum/overmap/event/meteor/minor_45": {
+		"/datum/overmap/event/meteor/minor_36": {
 			"type": "/datum/overmap/event/meteor/minor",
 			"x": 8,
 			"y": 4
 		},
-		"/datum/overmap/event/meteor_46": {
+		"/datum/overmap/event/meteor_37": {
 			"type": "/datum/overmap/event/meteor",
 			"x": 10,
 			"y": 3
 		},
-		"/datum/overmap/event/meteor/minor_47": {
+		"/datum/overmap/event/meteor/minor_38": {
 			"type": "/datum/overmap/event/meteor/minor",
 			"x": 9,
 			"y": 3
 		},
-		"/datum/overmap/event/meteor/dust_48": {
+		"/datum/overmap/event/meteor/dust_39": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 4,
 			"y": 16
 		},
-		"/datum/overmap/event/meteor/dust_49": {
-			"type": "/datum/overmap/event/meteor/dust",
-			"x": 13,
-			"y": 18
-		},
-		"/datum/overmap/event/meteor/dust_50": {
-			"type": "/datum/overmap/event/meteor/dust",
-			"x": 16,
-			"y": 18
-		},
-		"/datum/overmap/event/meteor/dust_51": {
+		"/datum/overmap/event/meteor/dust_40": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 17,
 			"y": 15
 		},
-		"/datum/overmap/event/meteor/dust_52": {
+		"/datum/overmap/event/meteor/dust_41": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 19,
 			"y": 15
 		},
-		"/datum/overmap/event/meteor/dust_53": {
+		"/datum/overmap/event/meteor/dust_42": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 19,
 			"y": 14
 		},
-		"/datum/overmap/event/meteor/dust_54": {
+		"/datum/overmap/event/meteor/dust_43": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 18,
 			"y": 8
 		},
-		"/datum/overmap/event/meteor/dust_55": {
+		"/datum/overmap/event/meteor/dust_44": {
 			"type": "/datum/overmap/event/meteor/dust",
-			"x": 10,
-			"y": 9
+			"x": 12,
+			"y": 10
 		},
-		"/datum/overmap/event/meteor/dust_56": {
+		"/datum/overmap/event/meteor/dust_45": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 11,
-			"y": 9
+			"y": 10
 		},
-		"/datum/overmap/event/meteor/dust_57": {
+		"/datum/overmap/event/meteor/dust_46": {
 			"type": "/datum/overmap/event/meteor/dust",
-			"x": 9,
-			"y": 11
-		},
-		"/datum/overmap/event/meteor/dust_58": {
-			"type": "/datum/overmap/event/meteor/dust",
-			"x": 9,
+			"x": 10,
 			"y": 12
 		},
-		"/datum/overmap/event/meteor/dust_59": {
+		"/datum/overmap/event/meteor/dust_47": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 10,
 			"y": 13
 		},
-		"/datum/overmap/event/meteor/dust_60": {
+		"/datum/overmap/event/meteor/dust_48": {
 			"type": "/datum/overmap/event/meteor/dust",
-			"x": 13,
+			"x": 11,
+			"y": 14
+		},
+		"/datum/overmap/event/meteor/dust_49": {
+			"type": "/datum/overmap/event/meteor/dust",
+			"x": 14,
 			"y": 11
 		},
-		"/datum/overmap/event/meteor/dust_61": {
+		"/datum/overmap/event/meteor/dust_50": {
+			"type": "/datum/overmap/event/meteor/dust",
+			"x": 15,
+			"y": 12
+		},
+		"/datum/overmap/event/meteor/dust_51": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 14,
 			"y": 12
 		},
-		"/datum/overmap/event/meteor/dust_62": {
-			"type": "/datum/overmap/event/meteor/dust",
-			"x": 13,
-			"y": 12
-		},
-		"/datum/overmap/event/meteor/minor_63": {
+		"/datum/overmap/event/meteor/minor_52": {
 			"type": "/datum/overmap/event/meteor/minor",
-			"x": 11,
+			"x": 14,
 			"y": 13
 		},
-		"/datum/overmap/fluff/satellite_64": {
+		"/datum/overmap/fluff/satellite_53": {
 			"type": "/datum/overmap/fluff/satellite",
-			"name":"solar imaging satellite",
-			"desc":"A satellite that sends information on Ecbatana's surface to Agni. Best not to mess with it.",
-			"x": 9,
-			"y": 10
+			"name": "solar imaging satellite",
+			"desc": "A satellite that sends information on Ecbatana's surface to Agni. Best not to mess with it.",
+			"x": 10,
+			"y": 11
 		},
-		"/datum/overmap/fluff/spacecolony_65": {
+		"/datum/overmap/fluff/spacecolony_54": {
 			"type": "/datum/overmap/fluff/spacecolony",
 			"dir": 2,
-			"x": 6,
-			"y": 14
+			"x": 7,
+			"y": 15
 		},
-		"/datum/overmap/event/meteor/dust_66": {
-			"type": "/datum/overmap/event/meteor/dust",
-			"x": 15,
-			"y": 16
-		},
-		"/datum/overmap/event/meteor/dust_67": {
+		"/datum/overmap/event/meteor/dust_55": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 4,
 			"y": 11
 		},
-		"/datum/overmap/event/meteor/dust_68": {
+		"/datum/overmap/event/meteor/dust_56": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 3,
 			"y": 14
 		},
-		"/datum/overmap/event/meteor/dust_69": {
+		"/datum/overmap/event/meteor/dust_57": {
+			"type": "/datum/overmap/event/meteor/dust",
+			"x": 8,
+			"y": 3
+		},
+		"/datum/overmap/event/meteor/dust_58": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 6,
-			"y": 6
+			"y": 4
 		},
-		"/datum/overmap/event/meteor/dust_70": {
-			"type": "/datum/overmap/event/meteor/dust",
-			"x": 7,
-			"y": 5
-		},
-		"/datum/overmap/event/meteor/dust_71": {
-			"type": "/datum/overmap/event/meteor/dust",
-			"x": 4,
-			"y": 8
-		},
-		"/datum/overmap/event/meteor/dust_72": {
+		"/datum/overmap/event/meteor/dust_59": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 11,
 			"y": 4
 		},
-		"/datum/overmap/event/meteor/dust_73": {
+		"/datum/overmap/event/meteor/dust_60": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 12,
 			"y": 2
 		},
-		"/datum/overmap/event/meteor/dust_74": {
+		"/datum/overmap/event/meteor/dust_61": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 11,
 			"y": 2
 		},
-		"/datum/overmap/event/meteor/dust_75": {
+		"/datum/overmap/event/meteor/dust_62": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 15,
 			"y": 3
 		},
-		"/datum/overmap/event/meteor/dust_76": {
+		"/datum/overmap/event/meteor/dust_63": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 18,
 			"y": 5
 		},
-		"/datum/overmap/event/meteor/dust_77": {
+		"/datum/overmap/event/meteor/dust_64": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 18,
 			"y": 11
 		},
-		"/datum/overmap/event/meteor/dust_78": {
+		"/datum/overmap/event/meteor/dust_65": {
 			"type": "/datum/overmap/event/meteor/dust",
-			"x": 18,
+			"x": 19,
 			"y": 12
 		},
-		"/datum/overmap/event/meteor/dust_79": {
-			"type": "/datum/overmap/event/meteor/dust",
-			"x": 11,
-			"y": 17
-		},
-		"/datum/overmap/event/meteor/dust_80": {
+		"/datum/overmap/event/meteor/dust_66": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 9,
 			"y": 5
+		},
+		"/datum/overmap/event/meteor/debris/minor_67": {
+			"type": "/datum/overmap/event/meteor/debris/minor",
+			"x": 7,
+			"y": 5
+		},
+		"/datum/overmap/event/meteor/debris/minor_68": {
+			"type": "/datum/overmap/event/meteor/debris/minor",
+			"x": 18,
+			"y": 15
+		},
+		"/datum/overmap/event/meteor/debris_69": {
+			"type": "/datum/overmap/event/meteor/debris",
+			"x": 18,
+			"y": 16
+		},
+		"/datum/overmap/event/meteor/debris_70": {
+			"type": "/datum/overmap/event/meteor/debris",
+			"x": 5,
+			"y": 5
+		},
+		"/datum/overmap/fluff/fakeship_71": {
+			"type": "/datum/overmap/fluff/fakeship",
+			"name": "SSV Black Star",
+			"desc": "A wrecked Twinkleshine-Class Battle Cruiser, surrounded by debris and unfired munitions. Agni has deemed it too dangerous to salvage or dispose of, and predict it will crash into the asteroid belt eventually, naturally disarming. This doesn't stop a daring sightseer though, but you get the feeling you shouldn't try it.",
+			"token_icon_state": "ship_big_generic",
+			"dir": 2,
+			"x": 6,
+			"y": 6
+		},
+		"/datum/overmap/fluff/dud_72": {
+			"type": "/datum/overmap/fluff/dud",
+			"dir": 8,
+			"x": 7,
+			"y": 6
+		},
+		"/datum/overmap/fluff/dud_73": {
+			"type": "/datum/overmap/fluff/dud",
+			"dir": 10,
+			"x": 6,
+			"y": 7
+		},
+		"/datum/overmap/event/meteor/debris/minor_74": {
+			"type": "/datum/overmap/event/meteor/debris/minor",
+			"x": 9,
+			"y": 19
+		},
+		"/datum/overmap/event/meteor/debris/minor_75": {
+			"type": "/datum/overmap/event/meteor/debris/minor",
+			"x": 8,
+			"y": 6
+		},
+		"/datum/overmap/event/meteor/debris/minor_76": {
+			"type": "/datum/overmap/event/meteor/debris/minor",
+			"x": 7,
+			"y": 7
+		},
+		"/datum/overmap/event/meteor/debris/minor_77": {
+			"type": "/datum/overmap/event/meteor/debris/minor",
+			"x": 8,
+			"y": 12
+		},
+		"/datum/overmap/event/meteor/debris/minor_78": {
+			"type": "/datum/overmap/event/meteor/debris/minor",
+			"x": 14,
+			"y": 14
+		},
+		"/datum/overmap/event/meteor/debris/minor_79": {
+			"type": "/datum/overmap/event/meteor/debris/minor",
+			"x": 12,
+			"y": 14
+		},
+		"/datum/overmap/event/meteor/debris/minor_80": {
+			"type": "/datum/overmap/event/meteor/debris/minor",
+			"x": 15,
+			"y": 13
 		},
 		"/datum/overmap/event/meteor/debris/minor_81": {
 			"type": "/datum/overmap/event/meteor/debris/minor",
 			"x": 16,
-			"y": 17
+			"y": 12
 		},
 		"/datum/overmap/event/meteor/debris/minor_82": {
 			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 18,
-			"y": 18
-		},
-		"/datum/overmap/event/meteor/debris/minor_83": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 18,
-			"y": 15
-		},
-		"/datum/overmap/event/meteor/debris_84": {
-			"type": "/datum/overmap/event/meteor/debris",
-			"x": 18,
-			"y": 17
-		},
-		"/datum/overmap/event/meteor/debris_85": {
-			"type": "/datum/overmap/event/meteor/debris",
-			"x": 17,
-			"y": 16
-		},
-		"/datum/overmap/fluff/fakeship_86": {
-			"type": "/datum/overmap/fluff/fakeship",
-			"name":"SSV Black Star",
-			"desc":"A wrecked Twinkleshine-Class Battle Cruiser, surrounded by debris and unfired munitions. Agni has deemed it to dangerous to salvage or dispose of, and predict it will crash into the asteroid belt eventually, naturally disarming. This doesn't stop a daring sightseer though, but you get the feeling you shouldn't try it.",
-			"token_icon_state": "ship_big_generic",
-			"dir": 2,
-			"x": 17,
-			"y": 17
-		},
-		"/datum/overmap/fluff/dud_87": {
-			"type": "/datum/overmap/fluff/dud",
-			"dir": 2,
-			"x": 18,
-			"y": 16
-		},
-		"/datum/overmap/fluff/dud_88": {
-			"type": "/datum/overmap/fluff/dud",
-			"dir": 2,
-			"x": 17,
-			"y": 18
-		},
-		"/datum/overmap/event/meteor/debris/minor_89": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 9,
-			"y": 19
-		},
-		"/datum/overmap/event/meteor/debris/minor_90": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 7,
+			"x": 11,
 			"y": 8
 		},
-		"/datum/overmap/event/meteor/debris/minor_91": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 8,
-			"y": 7
+		"/datum/overmap/event/nebula_83": {
+			"type": "/datum/overmap/event/nebula",
+			"x": 12,
+			"y": 19
 		},
-		"/datum/overmap/event/meteor/debris/minor_92": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
+		"/datum/overmap/event/nebula_84": {
+			"type": "/datum/overmap/event/nebula",
+			"x": 14,
+			"y": 19
+		},
+		"/datum/overmap/event/nebula_85": {
+			"type": "/datum/overmap/event/nebula",
 			"x": 7,
-			"y": 12
-		},
-		"/datum/overmap/event/meteor/debris/minor_93": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 11,
-			"y": 15
-		},
-		"/datum/overmap/event/meteor/debris/minor_94": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 12,
-			"y": 15
-		},
-		"/datum/overmap/event/meteor/debris/minor_95": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 14,
-			"y": 13
-		},
-		"/datum/overmap/event/meteor/debris/minor_96": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 15,
-			"y": 12
-		},
-		"/datum/overmap/event/meteor/debris/minor_97": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 11,
-			"y": 7
-		},
-		"/datum/overmap/event/nebula_98": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 11,
 			"y": 18
 		},
-		"/datum/overmap/event/nebula_99": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 12,
-			"y": 19
-		},
-		"/datum/overmap/event/nebula_100": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 12,
-			"y": 18
-		},
-		"/datum/overmap/event/nebula_101": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 14,
-			"y": 19
-		},
-		"/datum/overmap/event/nebula_102": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 19
-		},
-		"/datum/overmap/event/meteor/dust_103": {
+		"/datum/overmap/event/meteor/dust_86": {
 			"type": "/datum/overmap/event/meteor/dust",
 			"x": 5,
 			"y": 17
 		},
-		"/datum/overmap/event/nebula_104": {
+		"/datum/overmap/event/nebula_87": {
 			"type": "/datum/overmap/event/nebula",
 			"x": 6,
 			"y": 18
 		},
-		"/datum/overmap/event/nebula_105": {
+		"/datum/overmap/event/nebula_88": {
 			"type": "/datum/overmap/event/nebula",
 			"x": 3,
 			"y": 11
 		},
-		"/datum/overmap/event/nebula_106": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 3,
-			"y": 15
-		},
-		"/datum/overmap/event/nebula_107": {
+		"/datum/overmap/event/nebula_89": {
 			"type": "/datum/overmap/event/nebula",
 			"x": 4,
 			"y": 10
 		},
-		"/datum/overmap/event/nebula_108": {
+		"/datum/overmap/event/nebula_90": {
 			"type": "/datum/overmap/event/nebula",
 			"x": 5,
 			"y": 7
 		},
-		"/datum/overmap/event/nebula_109": {
+		"/datum/overmap/event/nebula_91": {
 			"type": "/datum/overmap/event/nebula",
 			"x": 4,
 			"y": 6
 		},
-		"/datum/overmap/event/nebula_110": {
+		"/datum/overmap/event/nebula_92": {
 			"type": "/datum/overmap/event/nebula",
 			"x": 8,
 			"y": 5
 		},
-		"/datum/overmap/event/nebula_111": {
+		"/datum/overmap/event/nebula_93": {
 			"type": "/datum/overmap/event/nebula",
 			"x": 9,
 			"y": 4
 		},
-		"/datum/overmap/event/nebula_112": {
+		"/datum/overmap/event/nebula_94": {
 			"type": "/datum/overmap/event/nebula",
 			"x": 7,
 			"y": 4
 		},
-		"/datum/overmap/event/nebula_113": {
+		"/datum/overmap/event/nebula_95": {
 			"type": "/datum/overmap/event/nebula",
 			"x": 14,
 			"y": 4
 		},
-		"/datum/overmap/event/nebula_114": {
+		"/datum/overmap/event/nebula_96": {
 			"type": "/datum/overmap/event/nebula",
 			"x": 13,
 			"y": 4
 		},
-		"/datum/overmap/event/nebula_115": {
+		"/datum/overmap/event/nebula_97": {
 			"type": "/datum/overmap/event/nebula",
 			"x": 16,
 			"y": 5
 		},
-		"/datum/overmap/event/nebula_116": {
+		"/datum/overmap/event/nebula_98": {
 			"type": "/datum/overmap/event/nebula",
 			"x": 17,
 			"y": 5
 		},
-		"/datum/overmap/event/nebula_117": {
+		"/datum/overmap/event/nebula_99": {
 			"type": "/datum/overmap/event/nebula",
-			"x": 18,
+			"x": 19,
 			"y": 9
 		},
-		"/datum/overmap/event/nebula_118": {
+		"/datum/overmap/event/nebula_100": {
 			"type": "/datum/overmap/event/nebula",
 			"x": 19,
 			"y": 7
 		},
-		"/datum/overmap/event/nebula_119": {
+		"/datum/overmap/event/nebula_101": {
 			"type": "/datum/overmap/event/nebula",
-			"x": 18,
+			"x": 19,
 			"y": 13
+		},
+		"/datum/overmap/event/nebula_102": {
+			"type": "/datum/overmap/event/nebula",
+			"x": 20,
+			"y": 10
+		},
+		"/datum/overmap/event/nebula_103": {
+			"type": "/datum/overmap/event/nebula",
+			"x": 3,
+			"y": 13
+		},
+		"/datum/overmap/event/nebula_104": {
+			"type": "/datum/overmap/event/nebula",
+			"x": 4,
+			"y": 8
+		},
+		"/datum/overmap/event/nebula_105": {
+			"type": "/datum/overmap/event/nebula",
+			"x": 3,
+			"y": 8
+		},
+		"/datum/overmap/event/meteor/dust_106": {
+			"type": "/datum/overmap/event/meteor/dust",
+			"x": 8,
+			"y": 19
+		},
+		"/datum/overmap/event/nebula_107": {
+			"type": "/datum/overmap/event/nebula",
+			"x": 4,
+			"y": 14
+		},
+		"/datum/overmap/event/nebula_108": {
+			"type": "/datum/overmap/event/nebula",
+			"x": 11,
+			"y": 3
+		},
+		"/datum/overmap/event/meteor_109": {
+			"type": "/datum/overmap/event/meteor",
+			"x": 10,
+			"y": 20
+		},
+		"/datum/overmap/event/meteor/minor_110": {
+			"type": "/datum/overmap/event/meteor/minor",
+			"x": 12,
+			"y": 20
+		},
+		"/datum/overmap/event/nebula_111": {
+			"type": "/datum/overmap/event/nebula",
+			"x": 11,
+			"y": 20
+		},
+		"/datum/overmap/event/meteor/dust_112": {
+			"type": "/datum/overmap/event/meteor/dust",
+			"x": 11,
+			"y": 19
+		},
+		"/datum/overmap/event/nebula_113": {
+			"type": "/datum/overmap/event/nebula",
+			"x": 9,
+			"y": 20
+		},
+		"/datum/overmap/event/nebula_114": {
+			"type": "/datum/overmap/event/nebula",
+			"x": 10,
+			"y": 19
+		},
+		"/datum/overmap/event/meteor_115": {
+			"type": "/datum/overmap/event/meteor",
+			"x": 15,
+			"y": 19
+		},
+		"/datum/overmap/event/meteor/debris/minor_116": {
+			"type": "/datum/overmap/event/meteor/debris/minor",
+			"x": 17,
+			"y": 18
+		},
+		"/datum/overmap/event/meteor/minor_117": {
+			"type": "/datum/overmap/event/meteor/minor",
+			"x": 16,
+			"y": 18
+		},
+		"/datum/overmap/event/meteor/dust_118": {
+			"type": "/datum/overmap/event/meteor/dust",
+			"x": 16,
+			"y": 17
 		}
 	}
 }

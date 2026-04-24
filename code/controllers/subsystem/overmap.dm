@@ -358,9 +358,9 @@ SUBSYSTEM_DEF(overmap)
 	var/datum/overmap/outpost/outpost_of_the_day
 	var/triggering
 
-/datum/eor_outpost_picker/New()
+/datum/eor_outpost_picker/New(datum/overmap/outpost/_excluded_outpost)
 	. = ..()
-	call_recall()
+	call_recall(_excluded_outpost)
 
 /**
  * Plays an announcement, closes an outpost, and makes the main outpost system jump-to-able
@@ -408,7 +408,6 @@ SUBSYSTEM_DEF(overmap)
 		message_admins("[key_name_admin(usr)] chose to have a different outpost host end of round!")
 		log_admin_private("[key_name(usr)] rerolled end of round outpost.")
 		SSblackbox.record_feedback("tally", "overmap_eor_outpost_reroll", 1, type)
-		var/datum/eor_outpost_picker/picker = new /datum/eor_outpost_picker
-		picker.call_recall(outpost_of_the_day)
+		new /datum/eor_outpost_picker(outpost_of_the_day)
 
 #undef OUTPOST_SWAP_TIME
