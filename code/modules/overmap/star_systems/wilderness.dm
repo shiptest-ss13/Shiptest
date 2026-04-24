@@ -256,10 +256,11 @@
 	//You can always see the Lighthouse.
 	can_jump_to = TRUE
 	event_probabilities = list(
-		/datum/overmap/event/rad/minor = 40,
-		/datum/overmap/event/rad = 20,
+		/datum/overmap/event/emp = 10,
+		/datum/overmap/event/rad/minor = 20,
+		/datum/overmap/event/rad = 40,
 		/datum/overmap/event/rad/major = 5,
-		/datum/overmap/event/electric/minor = 45,
+		/datum/overmap/event/electric/minor = 20,
 		/datum/overmap/event/electric = 40,
 		/datum/overmap/event/electric/major = 35,
 	)
