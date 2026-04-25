@@ -317,6 +317,13 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_y = 6;
+	pixel_x = -21;
+	name = "port shutter";
+	id = "h4"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/jungle/bighole/ferry)
 "bv" = (
@@ -603,6 +610,11 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/button/door{
+	pixel_x = 0;
+	pixel_y = 23;
+	id = "h3"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/bighole/ferry)
@@ -1030,15 +1042,21 @@
 "fw" = (
 /obj/structure/table/reinforced,
 /obj/item/paper{
-	pixel_x = -5;
-	pixel_y = 3
-	},
-/obj/item/paper{
-	pixel_x = 6;
-	pixel_y = 7
+	pixel_x = -8;
+	pixel_y = 5
 	},
 /obj/effect/turf_decal/siding/wood,
-/obj/item/stamp/clip/land,
+/obj/item/stamp/clip/land{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = 6;
+	pixel_y = -1;
+	id = "win";
+	name = "Facility-Wide Security Shutters"
+	},
 /turf/open/floor/wood/jungleplanet,
 /area/ruin/powered/bighole/office)
 "fz" = (
@@ -1237,6 +1255,10 @@
 "hj" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "cant"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/powered/bighole/canteen)
 "hk" = (
@@ -1344,6 +1366,14 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"hM" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "win"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/powered/bighole/secoffice)
 "hN" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -1465,6 +1495,9 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/effect/decal/cleanable/blood/splatter/over_window,
+/obj/machinery/door/poddoor/shutters{
+	id = "win"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/powered/bighole/lab)
 "iu" = (
@@ -1764,6 +1797,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"kh" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/effect/decal/cleanable/blood/splatter/over_window,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "cant"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/powered/bighole/canteen)
 "km" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 2
@@ -1830,6 +1873,9 @@
 "kz" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "win"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/powered/bighole/electrical)
 "kB" = (
@@ -1993,6 +2039,13 @@
 /obj/item/food/ration/snack/patriotic_sugar_cookies{
 	pixel_x = 7;
 	pixel_y = -4
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 23;
+	pixel_y = 8;
+	id = "dorm";
+	name = "Windows"
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/bighole/dormitory)
@@ -2223,6 +2276,9 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/effect/decal/cleanable/blood/splatter/over_window,
 /obj/effect/decal/cleanable/blood/splatter/over_window,
+/obj/machinery/door/poddoor/shutters{
+	id = "cant"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/powered/bighole/canteen)
 "mt" = (
@@ -2257,14 +2313,6 @@
 /obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"mx" = (
-/obj/machinery/turretid/ship{
-	pixel_x = -6;
-	pixel_y = -1;
-	id = "militarizedferry"
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/jungle/bighole/ferry)
 "mz" = (
 /obj/structure/flora/junglebush,
 /turf/open/floor/plating/asteroid/dirt/jungle,
@@ -2404,6 +2452,9 @@
 "np" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "win"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/powered/bighole/dormitory)
 "nr" = (
@@ -2421,6 +2472,11 @@
 	layer = 2.89
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged,
+/obj/machinery/turretid/ship{
+	pixel_x = 25;
+	pixel_y = -1;
+	id = "militarizedferry"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/jungle/bighole/ferry)
 "nx" = (
@@ -4174,6 +4230,9 @@
 "xc" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "win"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/powered/bighole/office)
 "xh" = (
@@ -4187,6 +4246,12 @@
 	icon_state = "computer-left"
 	},
 /obj/effect/decal/cleanable/glass/plastitanium,
+/obj/machinery/button/door{
+	pixel_x = -8;
+	pixel_y = 23;
+	id = "sec";
+	name = "Windows"
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/powered/bighole/secoffice)
 "xi" = (
@@ -4194,6 +4259,10 @@
 /obj/structure/grille/broken,
 /obj/item/shard/plastitanium,
 /obj/effect/decal/cleanable/glass/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "sec"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/powered/bighole/secoffice)
 "xj" = (
@@ -5434,6 +5503,10 @@
 "ED" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "win"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/powered/bighole/lab)
 "EF" = (
@@ -6331,6 +6404,9 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/effect/decal/cleanable/blood/splatter/over_window,
+/obj/machinery/door/poddoor/shutters{
+	id = "cant"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/powered/bighole/canteen)
 "JM" = (
@@ -6789,14 +6865,6 @@
 /obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/bighole/dormitory)
-"MX" = (
-/obj/machinery/button/door{
-	pixel_x = 0;
-	pixel_y = -10;
-	id = "h3"
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/jungle/bighole/ferry)
 "MY" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/asteroid/dirt/jungle,
@@ -7104,6 +7172,10 @@
 "OS" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "win"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/powered/bighole/medbay)
 "OT" = (
@@ -7238,6 +7310,10 @@
 "Pz" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "win"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/powered/bighole/shed)
 "PA" = (
@@ -7319,16 +7395,6 @@
 "Qi" = (
 /turf/open/floor/wood/jungleplanet,
 /area/ruin/powered/bighole/office)
-"Qj" = (
-/obj/machinery/button/door{
-	dir = 4;
-	pixel_y = 6;
-	pixel_x = 13;
-	name = "port shutter";
-	id = "h4"
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/jungle/bighole/ferry)
 "Qm" = (
 /obj/structure/cable{
 	icon_state = "4-10"
@@ -7643,11 +7709,16 @@
 	pixel_x = 3;
 	pixel_y = 6
 	},
-/obj/effect/spawner/random/trash/garbage,
 /obj/structure/reagent_dispensers/water_cooler{
 	pixel_x = -9;
 	pixel_y = 12;
 	density = 0
+	},
+/obj/machinery/button/door{
+	pixel_x = 3;
+	pixel_y = 24;
+	id = "cant";
+	name = "Windows"
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
@@ -8187,6 +8258,10 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/effect/decal/cleanable/blood/splatter/over_window,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "sec"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/powered/bighole/secoffice)
 "Us" = (
@@ -8617,6 +8692,9 @@
 "WT" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "win"
+	},
 /turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
 /area/ruin/powered/bighole/canteen)
 "WU" = (
@@ -8644,6 +8722,15 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/bighole/shed)
+"Xc" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "dorm"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/powered/bighole/dormitory)
 "Xg" = (
 /turf/open/floor/plasteel/grimy,
 /area/ruin/powered/bighole/canteen)
@@ -10098,7 +10185,7 @@ wW
 rQ
 Vd
 hu
-JL
+kh
 JL
 Bd
 Ec
@@ -10252,11 +10339,11 @@ Qm
 xM
 xN
 xN
-np
-np
+Xc
+Xc
 xN
-np
-np
+Xc
+Xc
 mo
 xN
 xN
@@ -10548,7 +10635,7 @@ cX
 YG
 Kx
 xn
-Ev
+hM
 zi
 fd
 mD
@@ -13031,7 +13118,7 @@ hC
 GR
 iZ
 iZ
-Qj
+iZ
 iZ
 qS
 Ee
@@ -13161,7 +13248,7 @@ of
 fn
 sV
 qU
-MX
+iZ
 cS
 ZJ
 yA
@@ -13306,7 +13393,7 @@ Dx
 Ce
 bB
 iZ
-mx
+iZ
 iZ
 iZ
 qS
