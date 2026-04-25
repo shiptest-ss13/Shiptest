@@ -340,8 +340,9 @@
 	item_state = "tailbag_black"
 
 /obj/item/storage/backpack/satchel/tailbag/mob_can_equip(mob/living/target, mob/living/equipper, slot, disable_warning, bypass_equip_delay_self)
-	if(!HAS_TRAIT(target, TRAIT_TAILED))
-		to_chat(target, span_warning("You need 	a tail to wear this!"))
+	var/mob/living/L = target
+	if(!HAS_TRAIT(L, TRAIT_TAILED))
+		to_chat(L, span_warning("You need 	a tail to wear this!"))
 		return FALSE
 	return ..()
 

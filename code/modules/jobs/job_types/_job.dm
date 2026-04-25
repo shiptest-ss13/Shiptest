@@ -203,7 +203,6 @@
 	var/duffelbag = /obj/item/storage/backpack/duffelbag
 	var/courierbag = /obj/item/storage/backpack/messenger
 	var/tailbag = /obj/item/storage/backpack/satchel/tailbag
-	var/kitbag = /obj/item/storage/backpack/satchel/kitbag
 	var/backbag = /obj/item/storage/backpack/satchel/backbag
 
 
@@ -241,8 +240,6 @@
 			back = courierbag //Department messenger bag
 		if(TAILBAG)
 			back = /obj/item/storage/backpack/satchel/tailbag //Tailbag
-		if(KITBAG)
-			back = /obj/item/storage/backpack/satchel/kitbag //Kitbag
 		if(BACKBAG)
 			back = /obj/item/storage/backpack/satchel/backbag //Backbag
 		else
