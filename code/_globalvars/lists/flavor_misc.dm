@@ -166,8 +166,8 @@ GLOBAL_LIST_INIT(ai_core_display_screens, sortList(list(
 #define DDUFFELBAG "Department Duffel Bag"
 #define DCOURIERBAG "Department Messenger Bag"
 #define TAILBAG "Tailbag"
-#define BACKBAG "Low Kitbag"
-GLOBAL_LIST_INIT(backpacklist, list(DBACKPACK, DSATCHEL, DCOURIERBAG, DDUFFELBAG, GBACKPACK, GSATCHEL, GCOURIERBAG, GDUFFELBAG, LSATCHEL, TAILBAG, BACKBAG))
+#define KITBAG "Kitbag"
+GLOBAL_LIST_INIT(backpacklist, list(DBACKPACK, DSATCHEL, DCOURIERBAG, DDUFFELBAG, GBACKPACK, GSATCHEL, GCOURIERBAG, GDUFFELBAG, LSATCHEL, TAILBAG, KITBAG))
 
 	//Uniform
 #define PREF_SUIT "Standard Jumpsuit"

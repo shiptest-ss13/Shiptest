@@ -346,13 +346,13 @@
 		return FALSE
 	return ..()
 
-/obj/item/storage/backpack/satchel/backbag
-	name = "low kitbag"
+/obj/item/storage/backpack/satchel/kitbag
+	name = "kitbag"
 	desc = "A bag mounted on the lower back, for storing equipment. Incompatible with tails."
 	icon_state = "backbag_black"
 	item_state = "backbag_black"
 
-/obj/item/storage/backpack/satchel/backbag/mob_can_equip(mob/living/target, mob/living/equipper, slot, disable_warning, bypass_equip_delay_self)
+/obj/item/storage/backpack/satchel/kitbag/mob_can_equip(mob/living/target, mob/living/equipper, slot, disable_warning, bypass_equip_delay_self)
 	var/mob/living/H = target
 	if(HAS_TRAIT(H, TRAIT_TAILED))
 		to_chat(H, span_warning("You can't wear this with a tail!"))

@@ -203,7 +203,7 @@
 	var/duffelbag = /obj/item/storage/backpack/duffelbag
 	var/courierbag = /obj/item/storage/backpack/messenger
 	var/tailbag = /obj/item/storage/backpack/satchel/tailbag
-	var/backbag = /obj/item/storage/backpack/satchel/backbag
+	var/kitbag = /obj/item/storage/backpack/satchel/kitbag
 
 
 	///The icon this outfit's ID will have when shown on a sechud and ID cards. See [icons\mob\hud.dmi] for a list of icons. Leave null for default.
@@ -243,11 +243,11 @@
 				back = /obj/item/storage/backpack/satchel //fallback bag
 				return FALSE
 			back = /obj/item/storage/backpack/satchel/tailbag //Tailbag
-		if(BACKBAG)
+		if(KITBAG)
 			if(HAS_TRAIT(H, TRAIT_TAILED))
 				back = /obj/item/storage/backpack/satchel //fallback bag
 				return FALSE
-			back = /obj/item/storage/backpack/satchel/backbag //Backbag
+			back = /obj/item/storage/backpack/satchel/kitbag //kitbag
 		else
 			back = backpack //Department backpack
 
