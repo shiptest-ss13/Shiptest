@@ -335,21 +335,15 @@
 
 /obj/item/storage/backpack/satchel/tailbag
 	name = "tailbag"
-	desc = "A pair of bags with straps for wear around a Sarathi's large tail."
+	desc = "A pair of bags with straps for wear around a person's tail."
 	icon_state = "tailbag_black"
 	item_state = "tailbag_black"
 
 /obj/item/storage/backpack/satchel/tailbag/mob_can_equip(mob/living/target, mob/living/equipper, slot, disable_warning, bypass_equip_delay_self)
-	if(!locate(/obj/item/organ/tail) in mob.internal_organs)
-		to_chat(M, span_warning("You need a tail to wear this!"))
+	if(!HAS_TRAIT(target, TRAIT_TAILED))
+		to_chat(target, span_warning("You need 	a tail to wear this!"))
 		return FALSE
 	return ..()
-
-/obj/item/storage/backpack/satchel/kitbag
-	name = "kitbag"
-	desc = "A high mounted backpack for the carrying of equipment, mounted the way it is to prevent interference with movement of the tail and any attached equipment."
-	icon_state = "kitbag_black"
-	item_state = "kitbag_black"
 
 /obj/item/storage/backpack/satchel/backbag
 	name = "low kitbag"
