@@ -331,6 +331,25 @@
 	new /obj/item/stack/telecrystal/five(src)
 	new /obj/item/storage/toolbox/syndicate(src)
 
+// lizard bags from dopplerstation by paxilmaniac
+
+/obj/item/storage/backpack/satchel/tailbag
+	name = "tailbag"
+	desc = "A pair of bags with straps for wear around a Sarathi's large tail."
+	icon_state = "tailbag_black"
+	item_state = "tailbag_black"
+
+/obj/item/storage/backpack/satchel/kitbag
+	name = "kitbag"
+	desc = "A high mounted backpack for the carrying of equipment, mounted the way it is to prevent interference with movement of the tail and any attached equipment."
+	icon_state = "kitbag_black"
+	item_state = "kitbag_black"
+
+/obj/item/storage/backpack/satchel/backbag
+	name = "low kitbag"
+	desc = "A bag mounted on the lower back, for storing equipment."
+	icon_state = "backbag_black"
+	item_state = "backbag_black"
 
 /*
 * Messenger Bag Types from Baystation

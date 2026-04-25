@@ -202,6 +202,10 @@
 	var/satchel  = /obj/item/storage/backpack/satchel
 	var/duffelbag = /obj/item/storage/backpack/duffelbag
 	var/courierbag = /obj/item/storage/backpack/messenger
+	var/tailbag = /obj/item/storage/backpack/satchel/tailbag
+	var/kitbag = /obj/item/storage/backpack/satchel/kitbag
+	var/backbag = /obj/item/storage/backpack/satchel/backbag
+
 
 	///The icon this outfit's ID will have when shown on a sechud and ID cards. See [icons\mob\hud.dmi] for a list of icons. Leave null for default.
 	var/job_icon
@@ -235,6 +239,12 @@
 			back = duffelbag //Department duffel bag
 		if(DCOURIERBAG)
 			back = courierbag //Department messenger bag
+		if(TAILBAG)
+			back = /obj/item/storage/backpack/satchel/tailbag //Tailbag
+		if(KITBAG)
+			back = /obj/item/storage/backpack/satchel/kitbag //Kitbag
+		if(BACKBAG)
+			back = /obj/item/storage/backpack/satchel/backbag //Backbag
 		else
 			back = backpack //Department backpack
 
