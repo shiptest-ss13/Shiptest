@@ -173,6 +173,7 @@ GENE SCANNER
 
 	render_list += "[span_info("Analyzing results for [M]:")]\n<span class='info ml-1'>Overall status: [mob_status]</span>\n"
 
+
 	// Damage descriptions
 	if(brute_loss > 10)
 		render_list += "<span class='alert ml-1'>[brute_loss > 50 ? "Severe" : "Minor"] tissue damage detected.</span>\n"
@@ -365,6 +366,13 @@ GENE SCANNER
 			for(var/datum/wound/W as anything in wounded_part.wounds)
 				render_list += "<div class='ml-2'>Type: [W.name]\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.treat_text]</div>\n"
 			render_list += "</span>"
+
+	if(iscarbon(M))
+		var/mob/living/carbon/C = M
+		if(HAS_TRAIT(C,TRAIT_HUSK))
+			render_list += "<span class= 'alert ml-1'><b>Warning: Critically low body water volume dectected.</b> "
+			//render_list += "<span class='alert ml-2'>\n Subject has suffered catastrophic loss of body moisture due to intense exposure to heat. Resuscitation will be impossible until addressed."
+			render_list += "<span class='alert ml-2'>\n Recommended Treatment: Treatment of burns followed by bulk application of synthflesh to restore body moisture."
 
 	for(var/thing in M.diseases)
 		var/datum/disease/D = thing
