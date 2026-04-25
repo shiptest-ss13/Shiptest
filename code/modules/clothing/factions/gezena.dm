@@ -290,7 +290,7 @@
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
-	flags_inv = NULL
+	flags_inv = VV_NULL
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
