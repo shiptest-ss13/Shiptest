@@ -1109,7 +1109,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 
 /obj/item/gun/ballistic/shotgun/gaboon
 	name = "CSG-12 \"Gaboon\""
-	desc = "A compact pump-action shotgun designed by Scarborough Arms. While not often seen during the ICW and being a less popular sister to the Bulldog, the Gaboon finds itself favored by those running covert operations and clearing cramped maintenence tunnels. Chambered in 12g."
+	desc = "A compact pump-action shotgun designed by Scarborough Arms. One of their oldest designs still in circulation due to their appeal among those frequently operating in cramped spaces. Stripped down for maximum portability, the pump-action mechanism renders it wildly overshadowed by the Bulldog, its larger, modern sister. Chambered in 12g."
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
