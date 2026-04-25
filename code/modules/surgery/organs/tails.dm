@@ -6,8 +6,13 @@
 	icon_state = "severedtail"
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_TAIL
-	organ_traits = list(TRAIT_TAILED)
 	var/tail_type = "None"
+	var/tail_trait = TRAIT_TAILED
+
+/obj/item/organ/tail/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(tail_trait)
+		ADD_TRAIT(owner, tail_trait, ORGAN_TRAIT)
 
 /obj/item/organ/tail/Remove(mob/living/carbon/human/H,  special = 0)
 	..()

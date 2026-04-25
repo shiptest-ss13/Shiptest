@@ -9,7 +9,6 @@
 	var/slot
 	// DO NOT add slots with matching names to different zones - it will break internal_organs_slot list!
 	var/organ_flags = ORGAN_EDIBLE
-	var/list/organ_traits
 	/// Status Effects that are given to the holder of the organ.
 	var/maxHealth = STANDARD_ORGAN_THRESHOLD
 	var/damage = 0		//total damage this organ has sustained
@@ -266,16 +265,3 @@
 	SIGNAL_HANDLER
 	organ_flags &= ~ORGAN_FAILING
 
-/// Add a Trait to an organ that it will give its owner.
-/obj/item/organ/proc/add_organ_trait(trait)
-	LAZYOR(organ_traits, trait)
-	if(isnull(owner))
-		return
-	ADD_TRAIT(owner, trait, REF(src))
-
-/// Removes a Trait from an organ, and by extension, its owner.
-/obj/item/organ/proc/remove_organ_trait(trait)
-	LAZYREMOVE(organ_traits, trait)
-	if(isnull(owner))
-		return
-	REMOVE_TRAIT(owner, trait, REF(src))

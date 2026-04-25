@@ -348,9 +348,16 @@
 
 /obj/item/storage/backpack/satchel/backbag
 	name = "low kitbag"
-	desc = "A bag mounted on the lower back, for storing equipment."
+	desc = "A bag mounted on the lower back, for storing equipment. Incompatible with tails."
 	icon_state = "backbag_black"
 	item_state = "backbag_black"
+
+/obj/item/storage/backpack/satchel/backbag/mob_can_equip(mob/living/target, mob/living/equipper, slot, disable_warning, bypass_equip_delay_self)
+	var/mob/living/L = target
+	if(HAS_TRAIT(L, TRAIT_TAILED))
+		to_chat(L, span_warning("You can't wear this with a tail!"))
+		return FALSE
+	return ..()
 
 /*
 * Messenger Bag Types from Baystation
