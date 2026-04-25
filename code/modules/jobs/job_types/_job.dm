@@ -239,8 +239,14 @@
 		if(DCOURIERBAG)
 			back = courierbag //Department messenger bag
 		if(TAILBAG)
+			if(!HAS_TRAIT(H, TRAIT_TAILED))
+				back = /obj/item/storage/satchel
+				return FALSE
 			back = /obj/item/storage/backpack/satchel/tailbag //Tailbag
 		if(BACKBAG)
+			if(HAS_TRAIT(H, TRAIT_TAILED))
+				back = /obj/item/storage/satchel
+				return FALSE
 			back = /obj/item/storage/backpack/satchel/backbag //Backbag
 		else
 			back = backpack //Department backpack
