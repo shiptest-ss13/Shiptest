@@ -240,12 +240,12 @@
 			back = courierbag //Department messenger bag
 		if(TAILBAG)
 			if(!HAS_TRAIT(H, TRAIT_TAILED))
-				back = /obj/item/storage/backpack/satchel //fallback bag
+				back = /obj/item/storage/backpack/satchel/kitbag //fallback bag
 				return FALSE
 			back = /obj/item/storage/backpack/satchel/tailbag //Tailbag
 		if(KITBAG)
 			if(HAS_TRAIT(H, TRAIT_TAILED))
-				back = /obj/item/storage/backpack/satchel //fallback bag
+				back = /obj/item/storage/backpack/satchel/tailbag //fallback bag
 				return FALSE
 			back = /obj/item/storage/backpack/satchel/kitbag //kitbag
 		else
