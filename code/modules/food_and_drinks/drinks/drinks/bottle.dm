@@ -19,7 +19,7 @@
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	pickup_sound =  'sound/items/handling/bottle_pickup.ogg'
 	drop_sound = 'sound/items/handling/bottle_drop.ogg'
-	custom_materials = list(/datum/reagent/glass = 400)
+	custom_materials = list(/datum/material/glass = 400)
 	var/const/duration = 13 //Directly relates to the 'knockdown' duration. Lowered by armor (i.e. helmets)
 	isGlass = TRUE
 	foodtype = ALCOHOL
