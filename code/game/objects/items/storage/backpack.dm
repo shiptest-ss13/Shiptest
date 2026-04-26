@@ -335,7 +335,7 @@
 
 /obj/item/storage/backpack/satchel/tailbag
 	name = "tailbag"
-	desc = "A pair of bags with straps for wear around a person's tail."
+	desc = "A pair of bags with straps for wear around a person's tail. You need a tail to wear it."
 	icon_state = "tailbag_black"
 	item_state = "tailbag_black"
 
