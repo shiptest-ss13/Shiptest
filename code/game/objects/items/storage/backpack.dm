@@ -339,10 +339,9 @@
 	icon_state = "tailbag_black"
 	item_state = "tailbag_black"
 
-/obj/item/storage/backpack/satchel/tailbag/mob_can_equip(mob/living/target, mob/living/equipper, slot, disable_warning, bypass_equip_delay_self)
+/obj/item/storage/backpack/satchel/tailbag/mob_can_equip(mob/living/target, mob/living/equipper, slot, bypass_equip_delay_self)
 	var/mob/living/H = target
 	if(!HAS_TRAIT(H, TRAIT_TAILED))
-		to_chat(H, span_warning("You need a tail to wear this!"))
 		return FALSE
 	return ..()
 
@@ -352,10 +351,9 @@
 	icon_state = "backbag_black"
 	item_state = "backbag_black"
 
-/obj/item/storage/backpack/satchel/kitbag/mob_can_equip(mob/living/target, mob/living/equipper, slot, disable_warning, bypass_equip_delay_self)
+/obj/item/storage/backpack/satchel/kitbag/mob_can_equip(mob/living/target, mob/living/equipper, slot, bypass_equip_delay_self)
 	var/mob/living/H = target
 	if(HAS_TRAIT(H, TRAIT_TAILED))
-		to_chat(H, span_warning("You can't wear this with a tail!"))
 		return FALSE
 	return ..()
 
