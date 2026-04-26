@@ -12,7 +12,7 @@
 	custom_materials = list(/datum/material/plastic = 600)
 	var/sealed = FALSE
 
-nt_containers/chem_pack/AltClick(mob/living/user)
+/obj/item/reagent_containers/chem_pack/chem_pack/AltClick(mob/living/user)
 	if(user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY) && !sealed)
 		if(iscarbon(user) && (HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50)))
 			to_chat(user, span_warning("Uh... whoops! You accidentally spill the content of the bag onto yourself."))
