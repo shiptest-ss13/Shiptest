@@ -13,6 +13,7 @@
 	cap_on = TRUE
 	drop_sound = 'sound/items/handling/beaker_drop.ogg'
 	pickup_sound =  'sound/items/handling/beaker_pickup.ogg'
+	custom_materials = list(/datum/material/glass = 200)
 
 /obj/item/reagent_containers/glass/bottle/epinephrine
 	name = "epinephrine bottle"
