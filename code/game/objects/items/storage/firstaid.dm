@@ -20,6 +20,7 @@
 	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
 	throw_speed = 3
 	throw_range = 7
+	custom_materials = (/datum/material/plastic = 2000)
 	/// If the medkit starts empty or not
 	var/empty = FALSE
 	/// Defines damage type of the medkit. General ones stay null. Used for medibot healing bonuses
