@@ -7,7 +7,7 @@
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_TAIL
 	var/tail_type = "None"
-	var/tail_trait = TRAIT_TAILED
+	var/tail_trait = null
 
 /obj/item/organ/tail/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -53,6 +53,7 @@
 	color = "#116611"
 	tail_type = "Smooth"
 	var/spines = "None"
+	var/tail_trait = TRAIT_TAILED
 
 /obj/item/organ/tail/lizard/Initialize()
 	. = ..()
@@ -96,6 +97,7 @@
 	desc = "A detached Elzuose's tail. You probably shouldn't plant this."
 	color = "#d3e8e9"
 	tail_type = "Long"
+	var/tail_trait = TRAIT_TAILED
 
 /obj/item/organ/tail/elzu/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
 	..()
