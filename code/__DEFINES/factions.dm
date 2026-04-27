@@ -7,6 +7,7 @@
 #define FACTION_SRM "Saint-Roumain Militia"
 #define FACTION_INTEQ "Inteq Risk Management Group"
 #define FACTION_CLIP "Confederated League of Independent Planets"
+	#define FACTION_MINUTEMEN "CLIP Minutemen"
 #define FACTION_WARRA "Makosso-Warra Corporation"
 	#define FACTION_NS_LOGI "N+S Logistics"
 	#define FACTION_VIGILITAS "Vigilitas Interstellar"
@@ -25,7 +26,8 @@
 #define PREFIX_SOLCON list("SCSV")
 #define PREFIX_SRM list("SRSV")
 #define PREFIX_INTEQ list("IRMV")
-#define PREFIX_CLIP list("CMSV", "CMGSV", "CLSV")
+#define PREFIX_CLIP list("CLSV")
+	#define PREFIX_MINUTEMEN list("CMSV", "CMGSV")
 #define PREFIX_WARRA list("MWSV")
 	#define PREFIX_NS_LOGI list("NSSV")
 	#define PREFIX_VIGILITAS list("VISV")

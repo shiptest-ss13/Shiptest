@@ -157,6 +157,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffdbb4"
 	lighting_brightness_tube = 6
 
+/area/ship/bridge/cool
+	name = "Bridge"
+	icon_state = "bridge"
+	ambientsounds = list('sound/ambience/signal.ogg')
+	lighting_colour_tube = "#7794c9"
+	lighting_colour_bulb = "#7794c9"
+	lighting_brightness_tube = 6
+
 /// Crew Quarters ///
 /area/ship/crew
 	name = "Crew Quarters"
@@ -274,6 +282,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/office
 	name = "Office"
 	icon_state = "vacant_office"
+	sound_environment = SOUND_AREA_WOODFLOOR
+
+/area/ship/crew/office/cic
+	name = "Control Center"
+	icon_state = "vacant_office"
+	ambientsounds = list('sound/ambience/signal.ogg')
+	lighting_colour_tube = "#7794c9"
+	lighting_colour_bulb = "#7794c9"
 	sound_environment = SOUND_AREA_WOODFLOOR
 
 /area/ship/crew/office/lobby
