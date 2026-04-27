@@ -527,11 +527,21 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged/sniper/illestren
 	name = "Ramzi Clique Hunter"
 	desc = "A deserter from the Gorlex Marauders turned pirate. A dirty wood-furnished rifle is cradled in their tattered gloves - ironsights turned to the horizon."
-	vision_range = 10 //should still be better than standard but theyre using ironsights
-	aggro_vision_range = 10
+	vision_range = 9 //should still be better than standard but theyre using ironsights
+	aggro_vision_range = 9
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 	casingtype = /obj/item/ammo_casing/a8_50r
 	l_hand = /obj/item/gun/ballistic/rifle/illestren
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/officer/lieutenant/indie_boomslang
+	name = "Ramzi Clique Overseer"
+	desc = "An imposing deserter from the Gorlex Marauders turned pirate, clad in a dirty-green overcoat and staring down the scope of a bulky, beige-tinted rifle."
+	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
+	casingtype = /obj/item/ammo_casing/a65clip
+	projectilesound = 'sound/weapons/gun/sniper/cmf90.ogg'
+	minimum_distance = 7
+	vision_range = 11 //worse scope but more of a threat than the illestren
+	aggro_vision_range = 12
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/smg/indiegun
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan their surroundings with a dirty beige submachinegun - finger on the trigger."
@@ -545,6 +555,12 @@
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/engi
 	armor_base = /obj/item/clothing/suit/ramzi
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/gaboon
+	name = "Ramzi Clique Doorkicker"
+	desc = "A deserter from the Gorlex Marauders turned pirate. They rush at you to close any distance - wielding a thin, jet-black shotgun."
+	l_hand = /obj/item/gun/ballistic/shotgun/brimstone //PLACEHOLDER!!!!! REPLACE WHEN GABOON GETS MERGED!!!!!
+	rapid = 1 //not exactly a bockadam is it now
 
 /* Space Ranged */
 
