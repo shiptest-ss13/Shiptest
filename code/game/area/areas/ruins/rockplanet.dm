@@ -212,3 +212,68 @@
 /area/ruin/rockplanet/somme/seclock
 	name = "Bunker Secondary Airlock"
 	icon_state = "hallP"
+
+//NGR Mining Colony
+
+/area/ruin/rockplanet/ngrcolony
+	name = "New Gorlex Republic Mining Colony"
+
+/area/ruin/rockplanet/ngrcolony/mine
+	name = "New Gorlex Republic Mining Colony Tunnels"
+	icon_state = "danger"
+
+/area/ruin/rockplanet/ngrcolony/security
+	name = "NGR Mining Colony Security Building"
+	icon_state = "security"
+
+/area/ruin/rockplanet/ngrcolony/security/prison
+	name = "NGR Mining Colony Prison"
+	icon_state = "red"
+
+/area/ruin/rockplanet/ngrcolony/bunkhouse
+	name = "NGR Mining Colony Bunkhouse"
+	icon_state = "crew_quarters"
+
+/area/ruin/rockplanet/ngrcolony/canteen
+	name = "NGR Mining Colony Canteen"
+	icon_state = "bar"
+
+/area/ruin/rockplanet/ngrcolony/mine_supplies
+	name = "NGR Mining Colony Equipment Room"
+	icon_state = "armory"
+
+/area/ruin/rockplanet/ngrcolony/mine_gate
+	name = "NGR Mining Colony Tunnel Checkpoint"
+	icon_state = "red"
+
+/area/ruin/rockplanet/ngrcolony/main_gate
+	name = "NGR Mining Colony Main Checkpoint"
+
+/area/ruin/rockplanet/ngrcolony/hangar
+	name = "NGR Mining Colony Hangar"
+
+/area/ruin/rockplanet/ngrcolony/engineering
+	name = "NGR Mining Colony Utility Building"
+	icon_state = "engine"
+
+/area/ruin/rockplanet/ngrcolony/warehouse
+	name = "NGR Mining Colony Warehouse"
+	icon_state = "storage"
+
+/area/ruin/rockplanet/ngrcolony/control
+	name = "NGR Mining Colony Command Centre"
+	icon_state = "bridge"
+
+/area/ruin/rockplanet/ngrcolony/ramzi_camp
+	name = "Ramzi Clique Escapee Camp"
+
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/farm
+	name = "Ramzi Clique Camp Farm"
+
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms
+	name = "Ramzi Clique Camp Quarters"
+	icon_state = "crew_quarters"
+
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/utility
+	name = "Ramzi Clique Camp Utility Building"
+	icon_state = "engine"

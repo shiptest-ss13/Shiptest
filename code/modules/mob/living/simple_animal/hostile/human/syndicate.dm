@@ -521,6 +521,31 @@
 	retreat_distance = 0
 	environment_smash = 0
 
+
+/* Irregular Ranged (non-standard weapons for whatever reason) */
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/sniper/illestren
+	name = "Ramzi Clique Hunter"
+	desc = "A deserter from the Gorlex Marauders turned pirate. A dirty wood-furnished rifle is cradled in their tattered gloves - ironsights turned to the horizon."
+	vision_range = 10 //should still be better than standard but theyre using ironsights
+	aggro_vision_range = 10
+	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
+	casingtype = /obj/item/ammo_casing/a8_50r
+	l_hand = /obj/item/gun/ballistic/rifle/illestren
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg/indiegun
+	desc = "A deserter from the Gorlex Marauders turned pirate. They scan their surroundings with a dirty beige submachinegun - finger on the trigger."
+	l_hand = /obj/item/gun/ballistic/automatic/smg/cobra/indie
+	rapid = 4 //true to the gun
+	spread = 3
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/engineer
+	name = "Ramzi Clique Combat Engineer"
+	desc = "A deserter from the Gorlex Marauders turned pirate. They cradle a dirty-beige sidearm in tattered gloves, hoping it will save them."
+	l_hand = /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/engi
+	armor_base = /obj/item/clothing/suit/ramzi
+
 /* Space Ranged */
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space
