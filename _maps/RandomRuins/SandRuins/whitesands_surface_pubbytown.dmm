@@ -43,6 +43,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"aX" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/space)
 "ba" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/external{
@@ -62,6 +68,7 @@
 /area/space)
 "bW" = (
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/hermit/survivor/passive,
 /turf/open/floor/carpet/blue,
 /area/space)
 "bZ" = (
@@ -128,6 +135,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid,
 /area/space)
+"cZ" = (
+/obj/structure/table,
+/obj/item/stock_parts/cell/gun/sharplite/empty{
+	pixel_x = 6;
+	pixel_y = 3
+	},
+/obj/item/stock_parts/cell/gun/sharplite/empty{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/turf/open/floor/wood,
+/area/space)
 "di" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/plastic,
@@ -142,6 +161,14 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
+/area/space)
+"dF" = (
+/obj/structure/dresser{
+	dir = 4;
+	pixel_x = -6;
+	pixel_y = 0
+	},
+/turf/open/floor/carpet/red,
 /area/space)
 "dW" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -161,13 +188,33 @@
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/space)
 "eq" = (
-/obj/effect/turf_decal/corner/opaque/red/border{
-	dir = 9
+/obj/effect/turf_decal/corner/opaque/blue/three_quarters{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white/whitesands,
 /area/space)
+"ey" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bookcase,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "eD" = (
 /turf/open/floor/plasteel/white/whitesands,
+/area/space)
+"eR" = (
+/obj/effect/spawner/bunk_bed{
+	dir = 1;
+	pixel_x = -5;
+	pixel_y = 2
+	},
+/turf/open/floor/carpet/red,
+/area/space)
+"eV" = (
+/obj/structure/chair/wood{
+	pixel_x = -4;
+	pixel_y = -1
+	},
+/turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "ff" = (
 /obj/effect/turf_decal/stairs{
@@ -203,10 +250,22 @@
 /obj/item/stock_parts/cell/hyper,
 /turf/open/floor/plasteel/tech,
 /area/space)
+"fH" = (
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/turf/open/floor/plasteel/white/whitesands,
+/area/space)
 "fO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/chair/plastic,
 /turf/open/floor/plastic,
+/area/space)
+"fP" = (
+/obj/structure/chair/wood{
+	dir = 1;
+	pixel_x = 2;
+	pixel_y = 10
+	},
+/turf/open/floor/wood,
 /area/space)
 "fR" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -216,10 +275,8 @@
 /turf/open/floor/plasteel/tech,
 /area/space)
 "fX" = (
-/obj/structure/platform/wood_two{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/whitesands/lit,
+/obj/structure/chair/wood,
+/turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "ge" = (
 /obj/effect/decal/fakelattice{
@@ -231,11 +288,11 @@
 	},
 /area/space)
 "gg" = (
-/obj/effect/turf_decal/corner/opaque/red/border{
-	dir = 8
-	},
 /obj/structure/closet/crate/medical,
 /obj/item/storage/firstaid/fire,
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 9
+	},
 /turf/open/floor/plasteel/white/whitesands,
 /area/space)
 "gs" = (
@@ -299,6 +356,16 @@
 "ho" = (
 /turf/open/floor/concrete/tiles/whitesands,
 /area/space)
+"hv" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut/whitesands,
+/area/space)
 "hz" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -314,6 +381,14 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/grid,
+/area/space)
+"ia" = (
+/obj/structure/chair/wood{
+	dir = 1;
+	pixel_x = -2;
+	pixel_y = 13
+	},
+/turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "ih" = (
 /obj/effect/decal/fakelattice{
@@ -390,11 +465,21 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
+"jL" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/turf/open/floor/wood,
+/area/space)
 "kp" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-74"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
+/area/space)
+"kv" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/whitesands,
 /area/space)
 "kA" = (
 /obj/structure/girder,
@@ -410,7 +495,11 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "kM" = (
-/turf/open/floor/engine/hull,
+/obj/structure/sign/warra/old{
+	pixel_x = -1;
+	pixel_y = 1
+	},
+/turf/closed/wall/mineral/wood,
 /area/space)
 "kP" = (
 /obj/effect/decal/cleanable/dirt,
@@ -540,6 +629,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
+"nl" = (
+/obj/effect/spawner/bunk_bed{
+	pixel_x = 3;
+	pixel_y = 0
+	},
+/turf/open/floor/carpet/red,
+/area/space)
 "no" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/salvageable/computer{
@@ -662,6 +758,10 @@
 /obj/structure/crate_shelf/built,
 /turf/open/floor/engine,
 /area/space)
+"pU" = (
+/obj/structure/closet/secure_closet/cabinet,
+/turf/open/floor/wood/walnut/whitesands,
+/area/space)
 "qz" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4;
@@ -679,6 +779,12 @@
 	icon_state = "platingdmg1";
 	initial_gas_mix = "ws_atmos"
 	},
+/area/space)
+"qW" = (
+/obj/structure/platform/wood_two/corner{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/space)
 "qZ" = (
 /obj/structure/cable{
@@ -702,6 +808,25 @@
 /obj/structure/crate_shelf/built,
 /turf/open/floor/engine,
 /area/space)
+"rj" = (
+/obj/structure/sign/warra/old{
+	pixel_x = -4;
+	pixel_y = 0
+	},
+/turf/closed/wall/mineral/wood,
+/area/space)
+"rD" = (
+/obj/structure/dresser{
+	dir = 4;
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 1
+	},
+/turf/open/floor/wood/walnut/whitesands,
+/area/space)
 "rT" = (
 /obj/structure/frame/machine,
 /turf/open/floor/plating,
@@ -709,6 +834,19 @@
 "rW" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/closed/wall/mineral/titanium/nodiagonal,
+/area/space)
+"rX" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/space)
+"rY" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 2
+	},
+/turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "rZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -722,8 +860,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "sq" = (
-/obj/effect/turf_decal/corner/opaque/red/border{
-	dir = 1
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 5
 	},
 /turf/open/floor/plasteel/white/whitesands,
 /area/space)
@@ -805,9 +943,15 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/space)
+"tR" = (
+/mob/living/simple_animal/hostile/human/hermit/survivor,
+/turf/open/floor/wood,
+/area/space)
 "uh" = (
 /obj/structure/chair/wood{
-	dir = 1
+	dir = 1;
+	pixel_x = 1;
+	pixel_y = 10
 	},
 /turf/open/floor/wood/walnut/whitesands,
 /area/space)
@@ -827,11 +971,19 @@
 "uB" = (
 /turf/template_noop,
 /area/space)
+"uW" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/wood/walnut/whitesands,
+/area/space)
 "vc" = (
 /obj/structure/platform/wood_two/corner{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/space)
+"vv" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood,
 /area/space)
 "vw" = (
 /obj/effect/turf_decal/siding/wood{
@@ -845,6 +997,9 @@
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken3"
 	},
+/area/space)
+"vB" = (
+/turf/open/floor/plasteel/dark/whitesands,
 /area/space)
 "vL" = (
 /obj/structure/railing{
@@ -873,6 +1028,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"vZ" = (
+/obj/structure/platform/wood_two{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/space)
 "wa" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-2"
@@ -892,6 +1053,26 @@
 "wL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
+/obj/item/stack/cable_coil/cut/random{
+	pixel_x = 6;
+	pixel_y = -1
+	},
+/obj/item/stack/cable_coil/cut/random{
+	pixel_x = 3;
+	pixel_y = 4
+	},
+/obj/item/stock_parts/capacitor/adv{
+	pixel_x = 3;
+	pixel_y = 11
+	},
+/obj/item/stock_parts/cell/gun/sharplite/mini/empty{
+	pixel_x = -19;
+	pixel_y = 1
+	},
+/obj/item/stock_parts/cell/gun/sharplite/mini/empty{
+	pixel_x = -10;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "wV" = (
@@ -975,6 +1156,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/salvageable/safe_server,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"yq" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/wood,
 /area/space)
 "yt" = (
 /obj/structure/table/reinforced,
@@ -1089,6 +1277,18 @@
 "AO" = (
 /turf/open/floor/plating/asteroid/whitesands,
 /area/space)
+"AV" = (
+/obj/structure/table,
+/obj/machinery/recharger{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/machinery/recharger{
+	pixel_x = 6;
+	pixel_y = 1
+	},
+/turf/open/floor/wood,
+/area/space)
 "AZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1117,14 +1317,41 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"Bq" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/human/hermit/survivor/passive,
+/turf/open/floor/wood/walnut/whitesands,
+/area/space)
 "Bw" = (
 /turf/open/floor/plating/asteroid/whitesands/lit,
+/area/space)
+"By" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/barricade/wooden/crude{
+	layer = 3.3;
+	opacity = 1
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
 /area/space)
 "Bz" = (
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
+/area/space)
+"BB" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 4
+	},
+/turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "BD" = (
 /obj/structure/platform/wood_two{
@@ -1167,12 +1394,32 @@
 "Cw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
+/obj/item/gun/energy/sharplite/x11{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/screwdriver{
+	pixel_x = 7;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "CA" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30";
 	dir = 1
+	},
+/turf/open/floor/wood/walnut/whitesands,
+/area/space)
+"CK" = (
+/obj/structure/chair/wood{
+	dir = 4;
+	pixel_x = -8;
+	pixel_y = 3
+	},
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30"
 	},
 /turf/open/floor/wood/walnut/whitesands,
 /area/space)
@@ -1217,6 +1464,14 @@
 /area/space)
 "DQ" = (
 /turf/open/floor/plating,
+/area/space)
+"DS" = (
+/obj/structure/chair/wood{
+	dir = 1;
+	pixel_x = 4;
+	pixel_y = 10
+	},
+/turf/open/floor/wood,
 /area/space)
 "DY" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1271,7 +1526,11 @@
 /turf/open/floor/plasteel/tech,
 /area/space)
 "Ew" = (
-/turf/open/space/basic,
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 4
+	},
+/turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "EG" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
@@ -1299,6 +1558,7 @@
 	color = "#543C30";
 	dir = 4
 	},
+/obj/structure/closet/secure_closet/cabinet,
 /turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "Fn" = (
@@ -1321,9 +1581,41 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "Fq" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	locked = 1
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/showroomfloor,
+/area/space)
+"FA" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/human/hermit/survivor/passive,
+/turf/open/floor/wood/walnut/whitesands,
+/area/space)
+"FB" = (
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/turf/open/floor/plasteel/stairs/wood/maple,
+/area/space)
+"FF" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 9;
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/turf/open/floor/wood/walnut/whitesands,
+/area/space)
+"FM" = (
+/obj/structure/table/wood/reinforced,
+/turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "FP" = (
 /obj/structure/cable{
@@ -1347,6 +1639,10 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
+"Gf" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
+/turf/open/floor/wood,
+/area/space)
 "Gi" = (
 /obj/item/stack/ore/salvage/scrapmetal/five{
 	pixel_y = -12;
@@ -1361,6 +1657,7 @@
 /turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "Go" = (
+/mob/living/simple_animal/hostile/human/hermit/survivor/passive,
 /turf/open/floor/carpet/blue,
 /area/space)
 "Gp" = (
@@ -1386,9 +1683,26 @@
 	initial_gas_mix = "ws_atmos"
 	},
 /area/space)
+"GH" = (
+/obj/structure/dresser{
+	dir = 4;
+	pixel_x = 5;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 1
+	},
+/turf/open/floor/wood/walnut/whitesands,
+/area/space)
 "GK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
+/turf/open/floor/plastic,
+/area/space)
+"GS" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/hermit/survivor,
 /turf/open/floor/plastic,
 /area/space)
 "GW" = (
@@ -1411,6 +1725,9 @@
 	icon_state = "lattice-21"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
+/area/space)
+"Ht" = (
+/turf/open/floor/wood,
 /area/space)
 "HQ" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1452,6 +1769,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech,
+/area/space)
+"IP" = (
+/obj/structure/chair/wood{
+	dir = 4;
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/turf/open/floor/wood,
 /area/space)
 "IQ" = (
 /obj/structure/cable{
@@ -1497,9 +1822,25 @@
 /area/space)
 "JI" = (
 /obj/structure/chair/wood{
-	dir = 8
+	dir = 8;
+	pixel_x = -8;
+	pixel_y = 3
 	},
 /turf/open/floor/wood/walnut/whitesands,
+/area/space)
+"JY" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 4
+	},
+/turf/open/floor/wood/walnut/whitesands,
+/area/space)
+"Ke" = (
+/mob/living/simple_animal/hostile/human/hermit/survivor/passive,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
 /area/space)
 "Kt" = (
 /obj/structure/platform/wood_two/corner{
@@ -1514,6 +1855,13 @@
 "KB" = (
 /obj/effect/spawner/bunk_bed,
 /turf/open/floor/carpet/red,
+/area/space)
+"KG" = (
+/obj/structure/sign/warra/old{
+	pixel_x = 3;
+	pixel_y = 0
+	},
+/turf/closed/wall/mineral/wood,
 /area/space)
 "KI" = (
 /obj/machinery/light/directional/east,
@@ -1571,6 +1919,7 @@
 	color = "#543C30";
 	dir = 1
 	},
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken4"
 	},
@@ -1627,6 +1976,12 @@
 /obj/structure/table/optable,
 /turf/open/floor/plasteel/white/whitesands,
 /area/space)
+"Np" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/space)
 "NI" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1642,10 +1997,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/space)
 "Oz" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30";
-	dir = 1
-	},
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken2"
 	},
@@ -1702,7 +2053,8 @@
 /area/space)
 "PY" = (
 /obj/machinery/door/airlock/hatch{
-	welded = 1
+	welded = 1;
+	locked = 1
 	},
 /turf/open/floor/plating,
 /area/space)
@@ -1712,11 +2064,26 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/space)
+"Qa" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/space)
 "Qb" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/patterned/grid,
+/area/space)
+"Ql" = (
+/obj/structure/chair/wood{
+	dir = 8;
+	pixel_x = -6;
+	pixel_y = 2
+	},
+/turf/open/floor/wood,
 /area/space)
 "Qo" = (
 /obj/structure/cable{
@@ -1781,6 +2148,12 @@
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plating/rust,
 /area/space)
+"RB" = (
+/obj/structure/flippedtable{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut/whitesands,
+/area/space)
 "RC" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1789,6 +2162,12 @@
 	dir = 8
 	},
 /turf/open/floor/plating/rust,
+/area/space)
+"RK" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/wood,
 /area/space)
 "RL" = (
 /obj/structure/girder/displaced,
@@ -1801,6 +2180,10 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plasteel/white/whitesands,
+/area/space)
+"Sd" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
+/turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "Sy" = (
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -1866,6 +2249,18 @@
 /obj/item/stack/ore/salvage/scrapgold,
 /turf/open/floor/plasteel/tech,
 /area/space)
+"Ur" = (
+/obj/structure/chair/wood{
+	dir = 4;
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 4
+	},
+/turf/open/floor/wood/walnut/whitesands,
+/area/space)
 "Us" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/industrial/warning,
@@ -1880,6 +2275,10 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
+/area/space)
+"UC" = (
+/obj/structure/guncloset,
+/turf/open/floor/plasteel/dark/whitesands,
 /area/space)
 "Vj" = (
 /obj/machinery/firealarm/directional/west,
@@ -1900,6 +2299,21 @@
 /obj/structure/platform/wood_two,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/space)
+"Vw" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/space)
+"Vx" = (
+/obj/structure/chair/wood{
+	pixel_x = 2;
+	pixel_y = -1
+	},
+/turf/open/floor/wood,
+/area/space)
 "VG" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/human/hermit/ranged/shotgun,
@@ -1912,16 +2326,22 @@
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
 "VP" = (
-/obj/structure/platform/wood_two/corner{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/whitesands/lit,
+/mob/living/simple_animal/hostile/human/hermit/survivor,
+/turf/open/floor/carpet/red,
 /area/space)
 "VZ" = (
-/obj/effect/turf_decal/corner/opaque/red/border{
-	dir = 8
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 9
 	},
 /turf/open/floor/plasteel/white/whitesands,
+/area/space)
+"Wa" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/human/hermit/ranged/shotgun,
+/turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "Wg" = (
 /obj/structure/cable{
@@ -1954,17 +2374,24 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/space)
+"WL" = (
+/obj/structure/platform/wood_two/corner,
+/turf/open/floor/concrete/pavement/whitesands/lit,
+/area/space)
 "Xi" = (
 /obj/structure/table,
+/obj/structure/reagent_dispensers/servingdish,
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
 /area/space)
 "Xm" = (
-/obj/effect/decal/fakelattice{
-	icon_state = "lattice-141"
+/obj/structure/chair/wood{
+	dir = 1;
+	pixel_x = 2;
+	pixel_y = 12
 	},
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/wood/walnut/whitesands,
 /area/space)
 "Xn" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2000,6 +2427,10 @@
 	pixel_x = 6
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
+/area/space)
+"Yw" = (
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/turf/open/floor/wood,
 /area/space)
 "YC" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump{
@@ -2218,7 +2649,7 @@ pG
 pG
 Bw
 Bw
-Bw
+rj
 Bw
 uB
 "}
@@ -2475,7 +2906,7 @@ ch
 ch
 ln
 SU
-Xm
+Di
 Ha
 pG
 pG
@@ -2574,8 +3005,8 @@ pG
 pG
 zi
 gL
-gL
-pi
+FF
+CA
 xy
 QR
 Ct
@@ -2620,11 +3051,11 @@ pG
 QR
 Fh
 vw
-xa
+Wa
 Oz
 Gl
 Fc
-Ct
+FB
 Ct
 Jz
 Ct
@@ -2633,7 +3064,7 @@ Jz
 Ct
 Ct
 Bw
-Bw
+Jz
 Bw
 "}
 (13,1,1) = {"
@@ -2706,8 +3137,8 @@ ck
 jA
 oj
 up
-Ha
-Ha
+pG
+pG
 pG
 QR
 av
@@ -2752,7 +3183,7 @@ ch
 Zk
 gy
 ch
-Ha
+pG
 pG
 pG
 QR
@@ -2798,13 +3229,13 @@ xA
 qZ
 nQ
 ch
-kM
+pG
 pG
 pG
 QR
 QR
-nP
-nP
+By
+By
 QR
 Bw
 Ct
@@ -2890,7 +3321,7 @@ ch
 Zx
 Zx
 ch
-AJ
+ch
 Ha
 Ha
 Bw
@@ -2904,8 +3335,8 @@ Ct
 Bw
 QR
 QR
-nP
-nP
+By
+By
 QR
 pG
 pG
@@ -2949,9 +3380,9 @@ Ct
 Jz
 Ct
 QR
-Gl
-Gl
-Gl
+LW
+yq
+Ke
 QR
 pG
 pG
@@ -2995,9 +3426,9 @@ Bw
 Ct
 Bw
 QR
-Gl
-Gl
-Gl
+VP
+Qa
+gL
 pG
 pG
 pG
@@ -3036,14 +3467,14 @@ Ct
 Jz
 Ct
 Bw
-SO
+WL
 QR
 QR
 QR
 QR
-Gl
-Gl
-Gl
+aX
+Vw
+KB
 pG
 pG
 uB
@@ -3071,8 +3502,8 @@ KT
 cN
 ff
 DB
-rZ
 nG
+rZ
 Gp
 Jz
 Ha
@@ -3081,11 +3512,11 @@ AO
 Jz
 Ct
 Bw
-Bw
+Ct
 Vt
 nP
-Gl
-Gl
+Ht
+Ht
 QR
 Zp
 QR
@@ -3111,7 +3542,7 @@ pG
 pG
 pG
 ch
-KT
+ey
 Ho
 KT
 hW
@@ -3127,13 +3558,13 @@ Ha
 Ct
 Bw
 Bw
-Bw
+Jz
 Vt
 nP
-Gl
-Gl
-Gl
-Gl
+jL
+Ht
+Ht
+Ht
 QR
 pG
 pG
@@ -3176,10 +3607,10 @@ Bw
 gx
 jb
 nP
-Gl
-Gl
-Gl
-Gl
+Ht
+IP
+Ht
+Ht
 pG
 pG
 pG
@@ -3222,10 +3653,10 @@ Bw
 QR
 Zp
 QR
-Gl
-Gl
-Gl
-Gl
+Ht
+vv
+DS
+Ht
 pG
 pG
 pG
@@ -3266,12 +3697,12 @@ ek
 xc
 Bw
 QR
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
+Ht
+Ht
+Ht
+vv
+tR
+Ht
 pG
 pG
 uB
@@ -3312,11 +3743,11 @@ ss
 Mr
 Bw
 QR
-Gl
-Gl
-Gl
-Gl
-Gl
+Ht
+Yw
+Ht
+Ql
+Ht
 pG
 pG
 pG
@@ -3358,10 +3789,10 @@ ch
 ch
 Qw
 QR
-Gl
-Gl
-Gl
-Gl
+Ht
+Ht
+Ht
+Ht
 pG
 pG
 pG
@@ -3398,7 +3829,7 @@ Bw
 Ct
 Jz
 Ct
-nP
+By
 kU
 KB
 ch
@@ -3444,7 +3875,7 @@ Jz
 Ct
 Bw
 sV
-nP
+By
 mU
 yU
 ch
@@ -3536,7 +3967,7 @@ Jz
 ek
 LG
 fO
-AA
+GS
 Re
 Zu
 ch
@@ -3887,8 +4318,8 @@ pG
 pG
 pG
 pG
-Ew
-Ew
+pG
+pG
 pG
 pG
 pG
@@ -3931,12 +4362,12 @@ pG
 pG
 pG
 pG
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
+pG
+pG
+pG
+KB
+Np
+AV
 pG
 Ct
 Ct
@@ -3958,7 +4389,7 @@ Ha
 Ha
 Ha
 Ha
-Ha
+uB
 uB
 uB
 uB
@@ -3978,11 +4409,11 @@ pG
 pG
 pG
 pG
-Ew
-Ew
-Ew
-Ew
-Ew
+KB
+dF
+gL
+Np
+cZ
 QR
 QR
 QR
@@ -4024,13 +4455,13 @@ pG
 Qw
 Zr
 QR
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
+gL
+gL
+RK
+rX
+Ht
+kv
+UC
 QR
 Bw
 Ct
@@ -4069,17 +4500,17 @@ pG
 Qw
 Qw
 KS
-nP
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
+By
+aX
+aX
+rX
+Ht
+Gf
+kv
+vB
 Fc
 BH
-Bw
+Jz
 Bw
 Ct
 Ct
@@ -4087,11 +4518,11 @@ Bw
 Qw
 Qw
 QR
-Gl
-Gl
-Gl
-Gl
-Gl
+ho
+pi
+fX
+zP
+Xm
 pG
 pG
 pG
@@ -4115,29 +4546,29 @@ Qw
 Qw
 Qw
 KS
-nP
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
+By
+Vx
+vv
+fP
+Yw
+Ht
+kv
+vB
 QR
 Bw
 Bw
-Jz
+Bw
 Ct
 Bw
 Bw
 Bw
 QR
 QR
+av
+pi
 Gl
 Gl
-Gl
-Gl
-Gl
+uW
 pG
 pG
 pG
@@ -4164,8 +4595,8 @@ Kt
 QR
 QR
 QR
-Ew
-Ew
+Ht
+Ht
 QR
 QR
 QR
@@ -4182,9 +4613,9 @@ QR
 QR
 Zp
 QR
-Gl
-Gl
-Gl
+pU
+rY
+nl
 pG
 pG
 pG
@@ -4204,7 +4635,7 @@ uB
 uB
 Bw
 Bw
-Bw
+kM
 Bw
 Bw
 Bw
@@ -4224,13 +4655,13 @@ Jz
 Bw
 Vt
 nP
-Gl
-Gl
-Gl
+CK
+Ur
+JY
 QR
 QR
-Gl
-Gl
+rY
+zi
 pG
 pG
 uB
@@ -4270,13 +4701,13 @@ Ct
 Bw
 Vt
 nP
-Gl
+rY
 eq
 VZ
 gg
 QR
-Gl
-Gl
+hv
+BB
 pG
 pG
 pG
@@ -4316,13 +4747,13 @@ Jz
 Ct
 dm
 QR
-Gl
+rY
 sq
-eD
+fH
 Mz
 QR
-Gl
-Gl
+zi
+FA
 pG
 pG
 uB
@@ -4367,8 +4798,8 @@ QR
 Pu
 RT
 QR
-Gl
-Gl
+eR
+rD
 pG
 pG
 uB
@@ -4393,7 +4824,7 @@ Bw
 Bw
 Bw
 Bw
-Bw
+Ct
 Bw
 Bw
 Bw
@@ -4487,8 +4918,8 @@ bS
 ho
 SO
 QR
-Ew
-Ew
+LW
+zi
 QR
 QR
 QR
@@ -4532,14 +4963,14 @@ PA
 PA
 QR
 Vt
-nP
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
+By
+xa
+xa
+Gl
+QR
+Gl
+Gl
+Gl
 QR
 Bw
 Bw
@@ -4578,17 +5009,17 @@ Bw
 Bw
 Bw
 Vt
-nP
+By
+Bq
+JY
 Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
+Fc
+Gl
+RB
+Gl
 QR
 QR
-VP
+Bw
 Ct
 Bw
 Bw
@@ -4624,17 +5055,17 @@ Bw
 Bw
 Bw
 Vt
-nP
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-nP
-fX
+By
+KB
+gL
+GH
+QR
+Gl
+Sd
+Gl
+FM
+QR
+Bw
 Ct
 Ct
 Jz
@@ -4671,16 +5102,16 @@ Bw
 Bw
 Kt
 QR
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-nP
-fX
+QR
+QR
+QR
+QR
+Gl
+Gl
+Gl
+FM
+QR
+Bw
 Bw
 Ct
 Ct
@@ -4716,17 +5147,17 @@ uB
 Bw
 Bw
 Qw
+Qw
 QR
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-Ew
-nP
-fX
+pU
+eV
+zP
+ia
+Gl
+Gl
+FM
+QR
+Bw
 Ct
 Jz
 QR
@@ -4762,17 +5193,17 @@ uB
 Bw
 Bw
 Qw
+Qw
+QR
+QR
+Gl
+Gl
+Gl
+Gl
 QR
 QR
 QR
-Ew
-Ew
-Ew
-Ew
-QR
-QR
-QR
-ly
+Bw
 Ct
 Ct
 QR
@@ -4812,8 +5243,8 @@ Qw
 Qw
 QR
 QR
-QR
-QR
+By
+By
 QR
 QR
 Bw
@@ -4857,13 +5288,13 @@ Bw
 Bw
 Bw
 Qw
-Qw
-Qw
-Qw
-Qw
+Kt
+vZ
+vZ
+qW
 Bw
 Bw
-Bw
+KG
 Bw
 Ct
 Ct
