@@ -176,6 +176,13 @@
 
 /datum/supply_pack/tools/sledgehammer
 	name = "Sledgehammer Crate"
+	desc = "Contains a Sledgehammer, useful for demolishing any obstacles in your path."
+	cost = 1400
+	contains = list(/obj/item/melee/sledgehammer)
+	crate_name = "sledgehammer crate"
+
+/datum/supply_pack/tools/breachinghammer
+	name = "Breaching Sledgehammer Crate"
 	desc = "Contains a freshly fabricated Breaching Sledgehammer, capable of wrecking hull and flesh with ease."
 	cost = 1500
 	contains = list(/obj/item/melee/sledgehammer/gorlex)
