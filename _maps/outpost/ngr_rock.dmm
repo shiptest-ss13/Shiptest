@@ -411,12 +411,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power.";
-	name = "old power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduitmanifold4w"
-	},
 /turf/open/floor/plating,
 /area/outpost/external)
 "aY" = (
@@ -1025,13 +1019,6 @@
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
-	},
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power.";
-	name = "old power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduit";
-	dir = 4
 	},
 /turf/open/floor/plating/rust,
 /area/outpost/external)
@@ -4347,13 +4334,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power.";
-	name = "old power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduit";
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/outpost/external)
 "lu" = (
@@ -5820,12 +5800,6 @@
 	dir = 1
 	},
 /obj/structure/fluff/paper/stack,
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power.";
-	name = "old power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduitcorner"
-	},
 /turf/open/floor/plating/rust,
 /area/outpost/vacant_rooms/office)
 "oK" = (
@@ -6169,13 +6143,6 @@
 /obj/effect/turf_decal/techfloor{
 	layer = 2.04
 	},
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power.";
-	name = "old power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduitcorner";
-	dir = 1
-	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/rust,
 /area/outpost/external)
@@ -6294,13 +6261,6 @@
 /area/outpost/crew/garden)
 "qk" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power.";
-	name = "old power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduitcorner";
-	dir = 4
-	},
 /turf/open/floor/concrete/tiles,
 /area/outpost/maintenance/central)
 "ql" = (
@@ -7175,12 +7135,6 @@
 "su" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/techfloor,
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power.";
-	name = "old power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduitcorner"
-	},
 /turf/open/floor/plating,
 /area/outpost/external)
 "sv" = (
@@ -7902,13 +7856,6 @@
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/techfloor/hole,
 /obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 1
-	},
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power.";
-	name = "old power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduitcorner";
 	dir = 1
 	},
 /turf/open/floor/plating/rust,
@@ -9379,15 +9326,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms)
-"yg" = (
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power.";
-	name = "old power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduitmanifold"
-	},
-/turf/open/floor/plating/rust,
-/area/outpost/maintenance/central)
 "yj" = (
 /obj/effect/turf_decal/corner/opaque/beige/half{
 	dir = 8
@@ -9716,13 +9654,6 @@
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
-	},
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power.";
-	name = "old power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduitfrayed";
-	dir = 8
 	},
 /turf/open/floor/plating,
 /area/outpost/external)
@@ -10216,13 +10147,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "Ab" = (
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power.";
-	name = "old power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduitexposed";
-	dir = 8
-	},
 /turf/open/floor/plating/rust,
 /area/outpost/vacant_rooms/office)
 "Ad" = (
@@ -10459,13 +10383,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power, which appears to be frayed.";
-	name = "frayed power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduitfrayed";
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
 "AT" = (
@@ -10686,12 +10603,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power.";
-	name = "old power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduitcorner"
-	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/office)
 "By" = (
@@ -15508,13 +15419,6 @@
 /area/outpost/external)
 "Ol" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power.";
-	name = "old power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduit";
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
 "Op" = (
@@ -17037,13 +16941,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
-	},
-/obj/structure/fluff{
-	desc = "cheap industrial cable used to transfer large volumes of power.";
-	name = "old power conduit";
-	icon = 'icons/obj/hazard/conduit.dmi';
-	icon_state = "conduitexposed";
-	dir = 8
 	},
 /turf/open/floor/plating,
 /area/outpost/external)
@@ -22636,7 +22533,7 @@ Ao
 rH
 xO
 zU
-yg
+Iw
 qk
 YN
 Ve
