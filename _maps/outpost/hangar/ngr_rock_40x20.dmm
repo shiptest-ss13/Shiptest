@@ -35,10 +35,18 @@
 /turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "em" = (
-/obj/effect/landmark/outpost/elevator_machine,
-/obj/structure/lattice/catwalk,
+/obj/effect/turf_decal/techfloor{
+	dir = 1;
+	layer = 2.04
+	},
+/obj/effect/turf_decal/techfloor,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/grunge,
-/turf/open/floor/engine,
+/obj/effect/landmark/outpost/elevator_machine,
+/turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "hh" = (
 /obj/structure/chair/bench/red/directional/south,
@@ -150,11 +158,19 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit,
 /area/hangar)
 "sq" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plasteel/stairs/mid{
-	dir = 1;
-	color = "#2e2e2e"
+/obj/effect/turf_decal/techfloor{
+	dir = 8
 	},
+/obj/structure/rack,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "sz" = (
 /obj/machinery/disposal/deliveryChute{
@@ -235,10 +251,15 @@
 	},
 /area/hangar)
 "vO" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plasteel/elevatorshaft{
-	planetary_atmos = 1
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
 	},
+/obj/effect/turf_decal/trimline/opaque/bar/line,
+/obj/effect/landmark/outpost/hangar_numbers{
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "vZ" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -293,8 +314,8 @@
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "AZ" = (
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 4
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030
 	},
 /turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
@@ -307,13 +328,10 @@
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "Bq" = (
-/obj/effect/landmark/outpost/elevator_machine,
-/obj/machinery/elevator_call_button{
-	pixel_y = 25
-	},
 /obj/effect/turf_decal/techfloor{
-	dir = 4
+	dir = 1
 	},
+/obj/effect/turf_decal/borderfloorblack,
 /turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "BO" = (
@@ -338,7 +356,15 @@
 	},
 /area/hangar)
 "Gn" = (
+/obj/effect/landmark/outpost/elevator_machine,
+/obj/machinery/elevator_call_button{
+	pixel_y = 25
+	},
 /obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
 	dir = 8
 	},
 /turf/open/floor/hangar/plasteel/dark,
@@ -349,14 +375,14 @@
 	},
 /area/hangar)
 "Il" = (
-/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
-	dir = 1
+/obj/effect/turf_decal/techfloor{
+	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 10
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 8
 	},
-/obj/effect/landmark/outpost/shaft_number,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "IZ" = (
 /obj/structure/flora/rock/rockplanet,
@@ -395,12 +421,8 @@
 /turf/open/floor/plating/asteroid/snow/safe/lit,
 /area/hangar)
 "Ks" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 10
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/line,
-/obj/effect/landmark/outpost/hangar_numbers,
-/turf/open/floor/plasteel/tech,
+/obj/machinery/door/poddoor/ert,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/hangar)
 "KV" = (
 /turf/closed/indestructible/rock/rockplanet,
@@ -416,6 +438,13 @@
 "Lt" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/hangar,
+/area/hangar)
+"LO" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line,
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "Mf" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -433,9 +462,7 @@
 /turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "Op" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
+/obj/effect/turf_decal/borderfloorblack,
 /turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "ON" = (
@@ -459,10 +486,12 @@
 	},
 /area/hangar)
 "Ra" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/obj/effect/turf_decal/trimline/opaque/bar/line,
+/obj/effect/landmark/outpost/shaft_number,
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "Rr" = (
 /obj/effect/turf_decal/industrial/outline/red,
@@ -514,21 +543,21 @@
 /turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "Yv" = (
-/obj/effect/turf_decal/techfloor/corner{
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "YB" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/structure/rack,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
 /turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
 "YG" = (
@@ -2528,9 +2557,9 @@ vZ
 vZ
 tH
 vZ
-vZ
-vZ
 Mf
+vZ
+vZ
 vZ
 vZ
 vZ
@@ -2569,21 +2598,21 @@ KV
 KV
 KV
 KV
-KV
-KV
 JI
-wV
+KV
+xD
+xD
+xD
+xD
+Op
+Lt
+AZ
+xD
 xD
 Sk
 Sk
-kr
-xD
-xD
-KV
-KV
-KV
-KV
-tU
+Sk
+Sk
 wV
 Sk
 Sk
@@ -2598,31 +2627,31 @@ KV
 KV
 KV
 KV
-JI
 KV
 KV
-JI
 KV
 KV
-JI
 KV
 KV
-JI
 KV
 KV
-JI
-JI
-JI
-JI
-JI
-Bq
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+xD
+xD
+Sk
 Op
-Op
+Lt
 AZ
 xD
-KV
-KV
-KV
+xD
+xD
+xD
 KV
 tU
 tU
@@ -2639,31 +2668,31 @@ KV
 KV
 KV
 KV
-Jj
-HX
-HX
-sT
-HX
-HX
-sT
-HX
-HX
-sT
-HX
-HX
-Jj
-HX
-HX
-vq
-em
-vm
-wY
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+Gn
 Il
-Ra
-wV
+Il
+Il
+Il
+xD
+xD
 Sk
-KV
-KV
 KV
 KV
 tU
@@ -2680,30 +2709,30 @@ KV
 KV
 KV
 KV
-Jj
-vO
-vO
-sq
-vO
-vO
-sq
-vO
-vO
-sq
-vO
-vO
+Ks
+HX
+HX
+sT
+HX
+HX
+sT
+HX
+HX
+sT
 JI
 HX
 HX
 HX
-em
-oK
-iA
-Ks
-Ra
+HX
+vq
+JI
+vm
+wY
+wY
+wY
+Yv
+Bq
 Sk
-Dz
-KV
 KV
 KV
 KV
@@ -2731,20 +2760,20 @@ sT
 HX
 HX
 sT
+JI
 HX
 HX
-Jj
 HX
 HX
 HX
 em
-rv
-YG
-Cz
+oK
+Lt
+Lt
+Lt
 Ra
+Bq
 Sk
-KV
-KV
 KV
 KV
 KV
@@ -2762,30 +2791,30 @@ KV
 KV
 KV
 KV
+Jj
+HX
+HX
+sT
+HX
+HX
+sT
+HX
+HX
+sT
 JI
-KV
-KV
-JI
-KV
-KV
-JI
-KV
-KV
-JI
-KV
-KV
-JI
-JI
-JI
-JI
-JI
-YB
-YB
-Gn
-Yv
-xD
-KV
-KV
+HX
+HX
+HX
+HX
+HX
+em
+oK
+iA
+Lt
+iA
+LO
+Bq
+Dz
 KV
 KV
 KV
@@ -2800,6 +2829,129 @@ KV
 KV
 "}
 (56,1,1) = {"
+KV
+KV
+KV
+Jj
+HX
+HX
+sT
+HX
+HX
+sT
+HX
+HX
+sT
+JI
+HX
+HX
+HX
+HX
+HX
+em
+oK
+Lt
+Lt
+Lt
+vO
+Bq
+xD
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+"}
+(57,1,1) = {"
+KV
+KV
+KV
+Ks
+HX
+HX
+sT
+HX
+HX
+sT
+HX
+HX
+sT
+JI
+HX
+HX
+HX
+HX
+HX
+JI
+rv
+YG
+YG
+YG
+Cz
+Bq
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+"}
+(58,1,1) = {"
+KV
+KV
+KV
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+JI
+sq
+sq
+YB
+YB
+YB
+xD
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+"}
+(59,1,1) = {"
 KV
 KV
 KV
@@ -2840,130 +2992,89 @@ KV
 KV
 KV
 "}
-(57,1,1) = {"
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-"}
-(58,1,1) = {"
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-"}
-(59,1,1) = {"
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-KV
-"}
 (60,1,1) = {"
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+"}
+(61,1,1) = {"
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+KV
+"}
+(62,1,1) = {"
 KV
 KV
 KV

@@ -1,128 +1,95 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/obj/machinery/door/airlock/security/glass{
-	dir = 8
-	},
-/obj/structure/elevator_platform/tile/dark,
-/turf/open/space/basic,
+/obj/structure/elevator_platform/tile/brushed,
+/obj/machinery/light/floor,
+/turf/template_noop,
 /area/template_noop)
 "d" = (
 /obj/structure/elevator_platform,
-/turf/open/space/basic,
-/area/space)
+/obj/structure/fake_plastitanium_wall,
+/turf/template_noop,
+/area/template_noop)
 "e" = (
 /obj/structure/elevator_platform/tile/tech,
-/obj/structure/elevator_platform/tile/tech,
-/obj/structure/elevator_platform/tile/dark,
-/turf/open/space/basic,
-/area/space)
+/obj/machinery/status_display/elevator{
+	pixel_y = 28
+	},
+/turf/template_noop,
+/area/template_noop)
 "f" = (
-/obj/machinery/light/floor,
 /obj/structure/elevator_platform/tile/tech,
-/obj/structure/elevator_platform/tile/dark,
-/turf/open/space/basic,
+/obj/machinery/status_display/elevator{
+	pixel_y = 28
+	},
+/obj/structure/chair/bench/red/directional/east,
+/turf/template_noop,
 /area/template_noop)
 "g" = (
-/obj/machinery/door/airlock/security/glass{
-	dir = 8
-	},
-/obj/structure/elevator_platform/tile/dark,
-/turf/open/space/basic,
-/area/space)
-"j" = (
 /obj/structure/elevator_platform/tile/tech,
-/obj/structure/elevator_platform/tile/dark,
-/turf/open/space/basic,
-/area/template_noop)
-"n" = (
-/obj/structure/elevator_platform/tile/tech,
-/obj/structure/elevator_platform/tile/dark,
-/turf/open/space/basic,
-/area/space)
-"t" = (
-/obj/structure/elevator_platform,
-/turf/open/space/basic,
-/area/template_noop)
-"x" = (
-/obj/structure/elevator_platform/tile/tech,
-/turf/open/space/basic,
+/turf/template_noop,
 /area/template_noop)
 "A" = (
-/obj/structure/elevator_platform/tile/tech,
-/obj/structure/elevator_platform/tile/tech,
+/obj/structure/elevator_platform/tile/dark,
+/obj/structure/fake_plastitanium_wall,
+/turf/template_noop,
+/area/template_noop)
+"F" = (
+/obj/structure/elevator_platform/tile/dark,
+/obj/machinery/elevator_floor_button{
+	pixel_y = 22;
+	layer = 2.91
+	},
+/turf/template_noop,
+/area/template_noop)
+"L" = (
 /obj/structure/elevator_platform/tile/dark,
 /turf/template_noop,
 /area/template_noop)
-"D" = (
-/obj/structure/elevator_platform/tile/tech,
-/obj/structure/elevator_platform/tile/tech,
-/turf/open/space/basic,
-/area/space)
-"F" = (
-/obj/structure/elevator_platform/tile/tech,
-/obj/structure/elevator_platform/tile/tech,
-/obj/structure/elevator_platform/tile/dark,
-/turf/open/space/basic,
-/area/template_noop)
-"K" = (
-/obj/structure/elevator_platform/tile/tech,
-/obj/structure/elevator_platform/tile/tech,
-/turf/open/space/basic,
-/area/template_noop)
-"L" = (
-/obj/machinery/elevator_floor_button{
-	pixel_y = -8;
-	dir = 4;
-	pixel_x = -24
-	},
-/obj/structure/elevator_platform/tile/tech,
-/obj/structure/elevator_platform/tile/dark,
-/turf/open/space/basic,
-/area/space)
 "Q" = (
 /obj/structure/elevator_platform/tile/tech,
-/turf/open/space/basic,
-/area/space)
-"V" = (
-/obj/machinery/status_display/elevator{
-	pixel_x = -32
+/obj/structure/crate_shelf{
+	capacity = 2
 	},
-/obj/structure/elevator_platform,
-/turf/open/space/basic,
+/turf/template_noop,
+/area/template_noop)
+"V" = (
+/obj/structure/elevator_platform/tile/tech,
+/obj/structure/chair/bench/red/directional/east,
+/turf/template_noop,
 /area/template_noop)
 
 (1,1,1) = {"
 d
-d
+f
 a
 V
-t
+d
 "}
 (2,1,1) = {"
-Q
+g
 L
-j
-f
-x
+L
+L
+Q
 "}
 (3,1,1) = {"
-D
-e
+a
+L
 A
 F
-K
+a
 "}
 (4,1,1) = {"
-Q
-n
-n
-e
+g
+L
+L
+L
 Q
 "}
 (5,1,1) = {"
 d
-g
-g
+e
+a
 g
 d
 "}
