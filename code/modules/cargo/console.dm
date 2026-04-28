@@ -105,6 +105,7 @@
 	data["outpostMissions"] = list()
 
 	if(current_ship)
+		data["highPriorityAssigned"] = current_ship.check_for_high_priority_mission()
 		for(var/datum/mission/M as anything in current_ship.missions)
 			data["shipMissions"] += list(M.get_tgui_info())
 		if(istype(outpost_docked))
@@ -165,6 +166,8 @@
 				return
 			if(!mission.accepted)
 				if(LAZYLEN(ship.missions) >= ship.max_missions)
+					return
+				if(mission.high_priority && ship.check_for_high_priority_mission())
 					return
 				mission.accept(ship, loc, return_crate_spawner())
 				return TRUE

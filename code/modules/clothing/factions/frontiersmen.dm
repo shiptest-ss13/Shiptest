@@ -137,6 +137,7 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
 	hardsuit_type = "frontier"
+	supports_variations = null
 
 /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 	name = "\improper Frontiersmen hardsuit"

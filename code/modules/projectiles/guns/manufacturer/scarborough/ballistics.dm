@@ -612,8 +612,8 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	manufacturer = MANUFACTURER_SCARBOROUGH
 	spread = -5
 	spread_unwielded = 35
-	recoil = 1
-	recoil_unwielded = 5
+	recoil = 2
+	recoil_unwielded = 10
 	wield_slowdown = LIGHT_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
@@ -714,6 +714,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	recoil_unwielded = 50
 
 	wield_delay = 1.3 SECONDS
+	fire_delay = 1.5 SECONDS
 
 	valid_attachments = list()
 	slot_available = list()
@@ -1013,6 +1014,40 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 30,
 			"y" = 18,
+		)
+	)
+
+// Bockadam Burst Bulldog Variant
+
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
+	name = "SG-60db \"Bockadam\""
+	desc = "A bullpup combat shotgun from Marauder reserves that's been heavily modified by the Ramzi Clique, sporting a sawn-down barrel and a two-shot receiver. Reliability has been traded for deadly lethality in tight quarters."
+
+	icon_state = "bockadam"
+	item_state = "bockadam"
+
+	weapon_weight = WEAPON_MEDIUM
+	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m12g_bulldog,
+	)
+	show_magazine_on_sprite = TRUE
+	burst_size = 2
+	burst_delay = 0.25 SECONDS
+	fire_delay = 0.4 SECONDS
+	wear_rate = 1.2
+	spread = 5
+	gun_firemodes = list(FIREMODE_BURST)
+	default_firemode = FIREMODE_BURST
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 40,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 30,
+			"y" = 16,
 		)
 	)
 

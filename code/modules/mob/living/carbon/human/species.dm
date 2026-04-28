@@ -564,15 +564,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 			standing += facial_overlay
 
-	if(H.head)
-		var/obj/item/I = H.head
-		if(I.flags_inv & HIDEHAIR)
-			hair_hidden = TRUE
+	if(H?.head?.flags_inv & HIDEHAIR)
+		hair_hidden = TRUE
 
-	if(H.wear_mask)
-		var/obj/item/I = H.wear_mask
-		if(I.flags_inv & HIDEHAIR)
-			hair_hidden = TRUE
+	if(H?.wear_mask?.flags_inv & HIDEHAIR)
+		hair_hidden = TRUE
+
+	if(H?.wear_neck?.flags_inv & HIDEHAIR)
+		hair_hidden = TRUE
 
 	if(!hair_hidden)
 		var/mutable_appearance/hair_overlay = mutable_appearance(layer = -HAIR_LAYER)
@@ -787,22 +786,28 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
 
+	var/tail_visibility = (H?.wear_suit?.flags_inv & HIDEJUMPSUIT) || (H?.wear_neck?.flags_inv & HIDEJUMPSUIT)
+
+	var/head_visibility = ((H?.head?.flags_inv & HIDEHAIR) || (H?.wear_mask?.flags_inv & HIDEHAIR) || (H?.wear_neck?.flags_inv & HIDEHAIR))
+
+	var/horn_visiblity = ((H?.head?.flags_inv & HIDEHORNS) || (H?.wear_mask?.flags_inv & HIDEHORNS) || (H?.wear_neck?.flags_inv & HIDEHORNS))
+
 	if("tail_human" in mutant_bodyparts)
-		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
+		if(tail_visibility)
 			bodyparts_to_add -= "tail_human"
 
 	if("waggingtail_human" in mutant_bodyparts)
-		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
+		if(tail_visibility)
 			bodyparts_to_add -= "waggingtail_human"
 		else if ("tail_human" in mutant_bodyparts)
 			bodyparts_to_add -= "waggingtail_human"
 
 	if("spines" in mutant_bodyparts)
-		if(!H.dna.features["spines"] || H.dna.features["spines"] == "None" || H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
+		if(!H.dna.features["spines"] || H.dna.features["spines"] == "None" || tail_visibility)
 			bodyparts_to_add -= "spines"
 
 	if("waggingspines" in mutant_bodyparts)
-		if(!H.dna.features["spines"] || H.dna.features["spines"] == "None" || H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
+		if(!H.dna.features["spines"] || H.dna.features["spines"] == "None" || tail_visibility)
 			bodyparts_to_add -= "waggingspines"
 		else if ("tail" in mutant_bodyparts)
 			bodyparts_to_add -= "waggingspines"
@@ -812,15 +817,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			bodyparts_to_add -= "face_markings"
 
 	if("horns" in mutant_bodyparts)
-		if(!H.dna.features["horns"] || H.dna.features["horns"] == "None" || H.head && (H.head.flags_inv & HIDEHORNS) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHORNS)) || !HD)
+		if(!H.dna.features["horns"] || H.dna.features["horns"] == "None" || horn_visiblity || !HD)
 			bodyparts_to_add -= "horns"
 
 	if("frills" in mutant_bodyparts)
-		if(!H.dna.features["frills"] || H.dna.features["frills"] == "None" || (H.head?.flags_inv & HIDEEARS) || !HD)
+		if(!H.dna.features["frills"] || H.dna.features["frills"] == "None" || head_visibility || !HD)
 			bodyparts_to_add -= "frills"
 
 	if("ears" in mutant_bodyparts)
-		if(!H.dna.features["ears"] || H.dna.features["ears"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD)
+		if(!H.dna.features["ears"] || H.dna.features["ears"] == "None" || head_visibility || !HD)
 			bodyparts_to_add -= "ears"
 			bodyparts_to_add -= "ears"
 
@@ -829,27 +834,23 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			bodyparts_to_add -= "ipc_screen"
 
 	if("ipc_antenna" in mutant_bodyparts)
-		if(!H.dna.features["ipc_antenna"] || H.dna.features["ipc_antenna"] == "None" || H.head && (H.head.flags_inv & HIDEEARS) || !HD)
+		if(!H.dna.features["ipc_antenna"] || H.dna.features["ipc_antenna"] == "None" || head_visibility || !HD)
 			bodyparts_to_add -= "ipc_antenna"
 
 	if("spider_mandibles" in mutant_bodyparts)
 		if(!H.dna.features["spider_mandibles"] || H.dna.features["spider_mandibles"] == "None" || H.head && (H.head.flags_inv & HIDEFACE) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEFACE)) || !HD) //|| HD.status == BODYTYPE_ROBOTIC removed from here
 			bodyparts_to_add -= "spider_mandibles"
 
-	if("squid_face" in mutant_bodyparts)
-		if(!H.dna.features["squid_face"] || H.dna.features["squid_face"] == "None" || H.head && (H.head.flags_inv & HIDEFACE) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEFACE)) || !HD) // || HD.status == BODYTYPE_ROBOTIC
-			bodyparts_to_add -= "squid_face"
-
 	if("kepori_tail_feathers" in mutant_bodyparts)
 		if(!H.dna.features["kepori_tail_feathers"] || H.dna.features["kepori_tail_feathers"] == "None")
 			bodyparts_to_add -= "kepori_tail_feathers"
 
 	if("kepori_feathers" in mutant_bodyparts)
-		if(!H.dna.features["kepori_feathers"] || H.dna.features["kepori_feathers"] == "None" || (H.head && (H.head.flags_inv & HIDEHAIR)) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD) //HD.status == BODYTYPE_ROBOTIC) and here too
+		if(!H.dna.features["kepori_feathers"] || H.dna.features["kepori_feathers"] == "None" || head_visibility || !HD) //HD.status == BODYTYPE_ROBOTIC) and here too
 			bodyparts_to_add -= "kepori_feathers"
 
 	if("vox_head_quills" in mutant_bodyparts)
-		if(!H.dna.features["vox_head_quills"] || H.dna.features["vox_head_quills"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD)
+		if(!H.dna.features["vox_head_quills"] || H.dna.features["vox_head_quills"] == "None" || head_visibility || !HD)
 			bodyparts_to_add -= "vox_head_quills"
 
 	if("vox_neck_quills" in mutant_bodyparts)
@@ -926,8 +927,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.moth_fluff_list[H.dna.features["moth_fluff"]]
 				if("moth_markings")
 					S = GLOB.moth_markings_list[H.dna.features["moth_markings"]]
-				if("squid_face")
-					S = GLOB.squid_face_list[H.dna.features["squid_face"]]
 				if("ipc_screen")
 					S = GLOB.ipc_screens_list[H.dna.features["ipc_screen"]]
 				if("ipc_antenna")
@@ -1235,9 +1234,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(HAS_TRAIT(I, TRAIT_FORCE_SUIT_STORAGE_ALWAYS))
 				return TRUE
 			if(HAS_TRAIT(I, TRAIT_FORCE_SUIT_STORAGE))
-				if(!H.w_uniform)
+				if(!H.w_uniform && !H.wear_suit)
 					if(!disable_warning)
-						to_chat(H, span_warning("You need at least a uniform before you can attach this [I.name]!"))
+						to_chat(H, span_warning("You need a uniform or a suit before you can attach this [I.name]!"))
 					return FALSE
 				return TRUE
 			if(!H.wear_suit)
