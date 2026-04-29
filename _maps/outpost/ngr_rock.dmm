@@ -667,6 +667,12 @@
 /obj/structure/sign/poster/contraband/missing_gloves{
 	pixel_x = -32
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/outpost/crew)
 "bu" = (
@@ -1316,6 +1322,12 @@
 	name = "Crew Dormitories & Shipping";
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew)
 "cK" = (
@@ -1882,10 +1894,12 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew)
 "es" = (
@@ -4026,6 +4040,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bathroom)
+"ju" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/outpost/crew)
 "jv" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
@@ -6336,7 +6360,14 @@
 	name = "Shipping System"
 	},
 /obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
 /area/outpost/crew)
 "oj" = (
 /obj/structure/chair/stool/bar{
@@ -6515,6 +6546,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/techfloor,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/stairs/mid{
 	color = "#575757"
 	},
@@ -8681,6 +8718,12 @@
 "tI" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/directional/east,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/outpost/crew)
 "tJ" = (
@@ -9345,6 +9388,16 @@
 	color = "#999999"
 	},
 /area/outpost/maintenance/fore)
+"vx" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/outpost/crew)
 "vy" = (
 /obj/effect/turf_decal/corner/opaque/tan/mono,
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -9449,6 +9502,12 @@
 /area/outpost/operations)
 "vJ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/outpost/crew)
 "vL" = (
@@ -10596,6 +10655,12 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/fore)
 "yl" = (
@@ -10964,6 +11029,19 @@
 /obj/machinery/door/airlock/outpost{
 	req_access = list("101");
 	name = "Shipping System"
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/fore)
@@ -12692,6 +12770,12 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/sign/poster/contraband/gec{
 	pixel_y = 32
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/outpost/crew)
@@ -17616,6 +17700,12 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/stairs/mid{
 	color = "#575757"
 	},
@@ -18124,7 +18214,9 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms)
 "PP" = (
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/stairs/mid{
+	color = "#575757"
+	},
 /area/outpost/maintenance/fore)
 "PQ" = (
 /obj/structure/grille/broken,
@@ -18678,7 +18770,9 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/armory)
 "Rk" = (
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/stairs/mid{
+	color = "#575757"
+	},
 /area/outpost/crew)
 "Rl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -20503,6 +20597,19 @@
 /obj/machinery/door/airlock/outpost{
 	req_access = list("101");
 	name = "Crew Dormitories & Shipping"
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 8
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew)
@@ -30354,7 +30461,7 @@ VD
 br
 tI
 vJ
-vJ
+ju
 oi
 Rk
 ia
@@ -30471,7 +30578,7 @@ ia
 ia
 ia
 ia
-vJ
+vx
 ia
 ia
 ia
@@ -30705,7 +30812,7 @@ AB
 BV
 dz
 ia
-vJ
+vx
 ia
 dz
 gV
@@ -30939,7 +31046,7 @@ ia
 Ne
 DB
 YU
-By
+DB
 By
 gc
 ia
@@ -31056,7 +31163,7 @@ ia
 jc
 Sv
 sO
-sO
+Sv
 Ru
 GE
 rT
