@@ -1056,13 +1056,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/checkpoint)
-"cg" = (
-/obj/machinery/door/airlock/outpost{
-	req_access = list("101");
-	name = "Shipping System"
-	},
-/turf/open/floor/plating,
-/area/outpost/crew)
 "ch" = (
 /obj/structure/platform{
 	dir = 5
@@ -9259,9 +9252,6 @@
 /obj/machinery/outpost_selling_pad,
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
-"vC" = (
-/turf/open/floor/plating,
-/area/outpost/crew)
 "vD" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -15048,6 +15038,13 @@
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /turf/open/floor/plasteel,
 /area/outpost/crew/canteen)
+"IX" = (
+/obj/machinery/door/airlock/outpost{
+	req_access = list("101");
+	name = "Shipping System"
+	},
+/turf/open/floor/plating,
+/area/outpost/crew)
 "IZ" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/corner/opaque/beige/half{
@@ -16941,6 +16938,9 @@
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/crew/cryo)
+"NF" = (
+/turf/open/floor/plating,
+/area/outpost/crew)
 "NG" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "cargo_holo";
@@ -30030,8 +30030,8 @@ br
 tI
 vJ
 vJ
-cg
-vC
+IX
+NF
 ia
 Tk
 Tk
@@ -30370,10 +30370,10 @@ Ow
 wV
 nD
 IF
-lq
-lq
-lq
-lq
+IF
+IF
+IF
+IF
 Tk
 ia
 AB
