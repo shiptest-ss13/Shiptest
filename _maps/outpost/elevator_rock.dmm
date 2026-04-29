@@ -18,6 +18,11 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"x" = (
+/obj/structure/elevator_platform/tile/dark,
+/obj/structure/chair/bench/red/directional/north,
+/turf/template_noop,
+/area/template_noop)
 "A" = (
 /obj/structure/elevator_platform/tile/dark,
 /obj/structure/fake_plastitanium_wall,
@@ -30,10 +35,6 @@
 /area/template_noop)
 "F" = (
 /obj/structure/elevator_platform/tile/dark,
-/obj/machinery/elevator_floor_button{
-	pixel_y = 22;
-	layer = 2.91
-	},
 /obj/structure/chair/bench/red/directional/south,
 /turf/template_noop,
 /area/template_noop)
@@ -43,7 +44,15 @@
 /area/template_noop)
 "V" = (
 /obj/structure/elevator_platform/tile/dark,
-/obj/structure/chair/bench/red/directional/north,
+/obj/structure/crate_shelf{
+	capacity = 2
+	},
+/obj/machinery/elevator_floor_button{
+	layer = 2.91;
+	pixel_x = -20;
+	dir = 4;
+	pixel_y = 3
+	},
 /turf/template_noop,
 /area/template_noop)
 
@@ -63,7 +72,7 @@ L
 "}
 (3,1,1) = {"
 D
-V
+x
 A
 F
 D
@@ -71,7 +80,7 @@ D
 (4,1,1) = {"
 L
 L
-j
+V
 L
 L
 "}
