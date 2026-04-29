@@ -147,10 +147,6 @@
 /obj/structure/flora/grass/rockplanet/dead,
 /turf/open/floor/plating/asteroid/rockplanet/safe/lit,
 /area/hangar)
-"mt" = (
-/obj/structure/flora/rock/pile/rockplanet,
-/turf/open/floor/plating/asteroid/snow/safe/lit,
-/area/hangar)
 "nx" = (
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030
@@ -316,10 +312,6 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /turf/open/floor/hangar/plasteel/dark,
-/area/hangar)
-"CY" = (
-/obj/structure/flora/rock/rockplanet,
-/turf/open/floor/plating/asteroid/snow/safe/lit,
 /area/hangar)
 "De" = (
 /obj/structure/flora/rock/rockplanet,
@@ -496,9 +488,6 @@
 	},
 /turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
-"Sg" = (
-/turf/open/floor/plating/asteroid/snow/safe/lit,
-/area/hangar)
 "Sv" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
@@ -509,10 +498,6 @@
 	pixel_y = 0
 	},
 /turf/open/floor/plasteel/tech,
-/area/hangar)
-"SL" = (
-/obj/structure/flora/grass/rockplanet/dead,
-/turf/open/floor/plating/asteroid/snow/safe/lit,
 /area/hangar)
 "SV" = (
 /obj/structure/plasticflaps/outpost,
@@ -873,7 +858,7 @@ rH
 qm
 TB
 Pv
-Sg
+uO
 zl
 zl
 zl
@@ -948,7 +933,7 @@ zl
 zl
 zl
 zl
-mt
+Yu
 qm
 TB
 Pv
@@ -1117,7 +1102,7 @@ zr
 qm
 TB
 Pv
-Sg
+uO
 zl
 zl
 zl
@@ -1178,8 +1163,8 @@ IB
 qm
 TB
 Pv
-Sg
-Sg
+uO
+uO
 zl
 zl
 "}
@@ -1191,7 +1176,7 @@ zl
 zl
 zl
 zl
-Sg
+uO
 cX
 qm
 TB
@@ -1240,7 +1225,7 @@ tB
 TB
 Pv
 cX
-Sg
+uO
 zl
 zl
 "}
@@ -1252,7 +1237,7 @@ zl
 zl
 zl
 zl
-Sg
+uO
 cX
 qm
 TB
@@ -1301,7 +1286,7 @@ qm
 TB
 Pv
 cX
-Sg
+uO
 zl
 zl
 "}
@@ -1313,7 +1298,7 @@ zl
 zl
 zl
 zl
-Sg
+uO
 fl
 qm
 TB
@@ -1373,7 +1358,7 @@ zl
 zl
 zl
 zl
-Sg
+uO
 XF
 uO
 qm
@@ -1424,7 +1409,7 @@ TB
 Pv
 cX
 uO
-Sg
+uO
 zl
 "}
 (15,1,1) = {"
@@ -1434,7 +1419,7 @@ zl
 zl
 zl
 zl
-mt
+Yu
 cX
 uO
 qm
@@ -1485,7 +1470,7 @@ TB
 Pv
 cX
 fl
-Sg
+uO
 zl
 "}
 (16,1,1) = {"
@@ -1546,7 +1531,7 @@ TB
 Pv
 cX
 uO
-CY
+De
 zl
 "}
 (17,1,1) = {"
@@ -1668,7 +1653,7 @@ TB
 Pv
 uO
 XF
-Sg
+uO
 zl
 "}
 (19,1,1) = {"
@@ -1729,7 +1714,7 @@ TB
 Pv
 cX
 uO
-Sg
+uO
 zl
 "}
 (20,1,1) = {"
@@ -1850,7 +1835,7 @@ tB
 TB
 Pv
 uO
-Sg
+uO
 zl
 zl
 "}
@@ -1911,7 +1896,7 @@ qm
 TB
 Pv
 uO
-Sg
+uO
 zl
 zl
 "}
@@ -1972,7 +1957,7 @@ qm
 TB
 Pv
 cX
-mt
+Yu
 zl
 zl
 "}
@@ -2033,7 +2018,7 @@ qm
 TB
 Pv
 lh
-Sg
+uO
 zl
 zl
 "}
@@ -2216,7 +2201,7 @@ qm
 TB
 Pv
 cX
-CY
+De
 zl
 zl
 "}
@@ -2277,7 +2262,7 @@ qm
 TB
 Pv
 cX
-Sg
+uO
 zl
 zl
 "}
@@ -2338,7 +2323,7 @@ qm
 TB
 Pv
 cX
-Sg
+uO
 zl
 zl
 "}
@@ -2399,7 +2384,7 @@ qm
 TB
 Pv
 lh
-Sg
+uO
 zl
 zl
 "}
@@ -2461,7 +2446,7 @@ TB
 Pv
 cX
 lh
-mt
+Yu
 zl
 "}
 (32,1,1) = {"
@@ -2522,7 +2507,7 @@ TB
 Pv
 cX
 uO
-Sg
+uO
 zl
 "}
 (33,1,1) = {"
@@ -2583,7 +2568,7 @@ TB
 Pv
 uO
 cX
-Sg
+uO
 zl
 "}
 (34,1,1) = {"
@@ -2656,7 +2641,7 @@ zl
 zl
 zl
 zl
-mt
+Yu
 qm
 TB
 Pv
@@ -2717,7 +2702,7 @@ zl
 zl
 zl
 zl
-SL
+XF
 qm
 TB
 Pv
@@ -2778,7 +2763,7 @@ zl
 zl
 zl
 zl
-Sg
+uO
 qm
 TB
 Pv
@@ -2827,7 +2812,7 @@ TB
 Pv
 cX
 XF
-mt
+Yu
 zl
 "}
 (38,1,1) = {"
@@ -2887,7 +2872,7 @@ qm
 TB
 Pv
 uO
-Sg
+uO
 zl
 zl
 "}
@@ -3069,7 +3054,7 @@ IB
 tB
 TB
 Pv
-Sg
+uO
 zl
 zl
 zl
@@ -3130,7 +3115,7 @@ IB
 qm
 TB
 Pv
-Sg
+uO
 zl
 zl
 zl
@@ -3496,7 +3481,7 @@ TB
 TB
 TB
 Pv
-Sg
+uO
 zl
 zl
 zl
@@ -3612,14 +3597,14 @@ zl
 zl
 zl
 zl
-Sg
+uO
 XF
 cX
 cX
 cX
 uO
 Yu
-Sg
+uO
 zl
 zl
 "}
@@ -3673,12 +3658,12 @@ zl
 zl
 zl
 zl
-Sg
-Sg
+uO
+uO
 II
 De
 lh
-Sg
+uO
 zl
 zl
 zl
@@ -3735,10 +3720,10 @@ zl
 zl
 zl
 zl
-Sg
-Sg
-Sg
-Sg
+uO
+uO
+uO
+uO
 zl
 zl
 zl
@@ -3797,7 +3782,7 @@ zl
 zl
 zl
 zl
-Sg
+uO
 zl
 zl
 zl

@@ -524,9 +524,6 @@
 /obj/structure/bookcase/random,
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/library)
-"bc" = (
-/turf/open/floor/plating/asteroid/snow/safe/lit,
-/area/outpost/external)
 "bd" = (
 /obj/machinery/door/poddoor/ert{
 	dir = 4
@@ -10311,26 +10308,8 @@
 /turf/open/floor/pod/dark,
 /area/outpost/engineering)
 "xM" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 6
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/borderfloorblack{
-	layer = 2.030;
-	dir = 8
-	},
-/obj/structure/railing{
-	dir = 4;
-	layer = 4.1
-	},
-/obj/machinery/camera{
-	network = list("1000eye");
-	dir = 10
-	},
-/turf/open/floor/plasteel/tech,
-/area/outpost/hallway/central)
+/turf/open/floor/plating,
+/area/outpost/crew)
 "xN" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
@@ -18198,6 +18177,10 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/maintenance/central)
 "QL" = (
+/obj/machinery/door/airlock/outpost{
+	req_access = list("101");
+	name = "Shipping System"
+	},
 /turf/open/floor/plating,
 /area/outpost/crew)
 "QM" = (
@@ -20783,9 +20766,26 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/checkpoint)
 "WW" = (
-/obj/structure/flora/grass/rockplanet/dead,
-/turf/open/floor/plating/asteroid/snow/safe/lit,
-/area/outpost/external)
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 4;
+	layer = 4.1
+	},
+/obj/machinery/camera{
+	network = list("1000eye");
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/hallway/central)
 "WX" = (
 /obj/item/toy/plush/lizardplushie{
 	name = "dead lizard plushie";
@@ -21490,13 +21490,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
-"YE" = (
-/obj/machinery/door/airlock/outpost{
-	req_access = list("101");
-	name = "Shipping System"
-	},
-/turf/open/floor/plating,
-/area/outpost/crew)
 "YF" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -24113,8 +24106,8 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
+GH
+GH
 Tk
 Tk
 Tk
@@ -24220,19 +24213,19 @@ Tk
 Tk
 Tk
 Tk
-bc
-Tk
-Tk
-Tk
-qx
-qx
-qx
-Tk
-Tk
-bc
-bc
 Em
+Tk
+Tk
+Tk
+qx
+qx
+qx
+Tk
+Tk
+GH
 Em
+GH
+GH
 Tk
 Tk
 Tk
@@ -24335,10 +24328,10 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
-bc
-bc
+Em
+Em
+Em
+Em
 Tk
 Tk
 OD
@@ -24346,10 +24339,10 @@ OD
 OD
 Tk
 Tk
-bc
 Em
 Em
 Em
+GH
 Tk
 Tk
 Tk
@@ -24451,22 +24444,22 @@ Tk
 Tk
 Tk
 Em
-bc
-bc
-bc
-bc
-bc
-bc
+Em
+Em
+Em
+Em
+GH
+GH
 Tk
 Hv
 OD
 OD
 GB
-bc
 Em
 Em
 Em
 Em
+GH
 Tk
 Tk
 Tk
@@ -24571,10 +24564,10 @@ Em
 Em
 Em
 Em
-bc
-bc
-bc
-bc
+Em
+GH
+GH
+GH
 Hv
 OD
 OD
@@ -24690,7 +24683,7 @@ Em
 Em
 Em
 Em
-bc
+GH
 Hv
 GB
 OD
@@ -27863,7 +27856,7 @@ Vk
 Vk
 Vk
 Vk
-xM
+WW
 kb
 Hp
 Yq
@@ -30023,8 +30016,8 @@ br
 tI
 vJ
 vJ
-YE
 QL
+xM
 ia
 Tk
 Tk
@@ -30872,7 +30865,7 @@ Tk
 Tk
 Tk
 Tk
-bc
+Em
 Em
 Em
 Em
@@ -30989,7 +30982,7 @@ Tk
 Tk
 Tk
 Tk
-bc
+Em
 Em
 Em
 Em
@@ -31106,9 +31099,9 @@ Tk
 Tk
 Tk
 Tk
-bc
 Em
-bc
+Em
+Em
 Em
 Em
 UZ
@@ -31223,9 +31216,9 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
-bc
+Em
+GH
+Em
 Em
 Em
 rC
@@ -31340,9 +31333,9 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
-bc
+Em
+GH
+Em
 Em
 Em
 hN
@@ -31457,9 +31450,9 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
-bc
+Em
+GH
+Em
 Em
 Em
 Em
@@ -31574,10 +31567,10 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
-bc
 Em
+GH
+Em
+GH
 Em
 Em
 Em
@@ -31691,10 +31684,10 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
-bc
-bc
+Em
+GH
+GH
+GH
 Em
 Em
 Em
@@ -31808,10 +31801,10 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
-bc
-bc
+Em
+Em
+GH
+GH
 Em
 Em
 Em
@@ -31925,10 +31918,10 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
-bc
-bc
+Em
+Em
+GH
+Em
 Em
 Em
 Em
@@ -32042,10 +32035,10 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
-WW
-bc
+Em
+Em
+hO
+Em
 Em
 Em
 Em
@@ -32159,10 +32152,10 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
-bc
-bc
+Em
+Em
+GH
+Em
 Em
 Em
 Em
@@ -32276,10 +32269,10 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
-bc
-bc
+Em
+Em
+GH
+Em
 Em
 Em
 Em
@@ -32393,9 +32386,9 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
-bc
+Em
+Em
+Em
 Em
 Em
 AI
@@ -32510,9 +32503,9 @@ Tk
 Tk
 Tk
 GH
-bc
-bc
-bc
+Em
+Em
+Em
 Em
 Em
 Em
@@ -32627,9 +32620,9 @@ Tk
 Tk
 GH
 GH
-bc
-bc
-bc
+Em
+Em
+Em
 Em
 Em
 Em
@@ -32671,10 +32664,10 @@ GH
 Em
 Em
 Em
-bc
-bc
-WW
-bc
+GH
+GH
+hO
+GH
 Em
 Em
 Em
@@ -32745,8 +32738,8 @@ Tk
 Tk
 GH
 GH
-bc
-bc
+Em
+Em
 Em
 Em
 Em
@@ -32790,11 +32783,11 @@ Em
 Em
 Em
 Em
-bc
-bc
-bc
-bc
-bc
+GH
+GH
+GH
+GH
+GH
 Em
 Em
 Em
@@ -32862,8 +32855,8 @@ Tk
 Tk
 GH
 GH
-bc
-bc
+Em
+Em
 Em
 Em
 Em
@@ -32905,11 +32898,11 @@ GH
 Em
 Em
 Em
-bc
-bc
-bc
-bc
-bc
+GH
+GH
+GH
+GH
+GH
 Em
 Em
 RN
@@ -32979,7 +32972,7 @@ Tk
 Tk
 GH
 BL
-bc
+Em
 Em
 Em
 Em
@@ -33020,14 +33013,14 @@ Em
 Em
 GH
 Em
-bc
-bc
-bc
-bc
+GH
+GH
+GH
+GH
 Tk
 Tk
-bc
-bc
+Em
+Em
 Em
 Em
 Em
@@ -33139,7 +33132,7 @@ GH
 Em
 Em
 Em
-bc
+Em
 Tk
 Tk
 Tk
@@ -33254,16 +33247,16 @@ Em
 Em
 Em
 Em
-bc
-bc
-bc
-bc
+Em
+Em
+Em
+Em
 Tk
 Tk
 Tk
 Tk
 Tk
-bc
+GH
 Em
 Em
 Em
@@ -33370,21 +33363,21 @@ Em
 Em
 Em
 Em
-bc
-bc
-WW
-bc
+Em
+Em
+RN
+Em
 Tk
 Tk
 lq
 lq
 lq
 Tk
-bc
-bc
-bc
-bc
-bc
+GH
+GH
+GH
+GH
+GH
 Em
 Em
 Em
@@ -33490,7 +33483,7 @@ Em
 Em
 Em
 Em
-bc
+Em
 Tk
 lq
 nU
@@ -33499,8 +33492,8 @@ GH
 Tk
 Tk
 Tk
-bc
-bc
+GH
+GH
 Em
 Em
 Em
@@ -33617,9 +33610,9 @@ hO
 of
 Tk
 Tk
-bc
-Em
-Em
+GH
+GH
+GH
 Em
 Em
 Em
@@ -33818,7 +33811,7 @@ Em
 Em
 Em
 Em
-bc
+GH
 Em
 Hv
 OD
@@ -33935,8 +33928,8 @@ Em
 Em
 Em
 Em
-bc
-bc
+GH
+GH
 Pu
 OD
 OD
@@ -34052,7 +34045,7 @@ Em
 Em
 Em
 Em
-bc
+GH
 Hv
 Tk
 OD
@@ -34168,8 +34161,8 @@ GH
 Em
 Em
 Em
-bc
-bc
+GH
+GH
 Tk
 Tk
 Tk
@@ -34284,9 +34277,9 @@ Tk
 GH
 GH
 GH
-bc
-bc
-bc
+GH
+GH
+GH
 Tk
 Tk
 Tk
@@ -34401,18 +34394,18 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
+GH
+GH
 Tk
 Tk
 Tk
 Tk
 Tk
 Tk
-bc
-bc
-bc
-bc
+GH
+GH
+GH
+GH
 Em
 Em
 Em
@@ -34527,13 +34520,13 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
-bc
-bc
-bc
-bc
-bc
+GH
+GH
+GH
+GH
+GH
+Em
+Em
 Em
 Em
 Em
@@ -34647,9 +34640,9 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
-bc
+Em
+Em
+Em
 GH
 hO
 Em
@@ -34764,8 +34757,8 @@ Tk
 Tk
 Tk
 Tk
-bc
-bc
+Em
+Em
 GH
 GH
 GH
@@ -34890,8 +34883,8 @@ GH
 uG
 Em
 Em
-bc
-WW
+GH
+hO
 Tk
 Tk
 Tk
