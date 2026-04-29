@@ -195,3 +195,6 @@
 	/// Used by SSserver_maint to detect if a client is newly AFK.
 	var/last_seen_afk = 0
 
+	/// Upstream info from SS13Hub, if any
+	var/datum/ss13lib_auth_response/hub_info
+

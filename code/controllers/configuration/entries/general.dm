@@ -224,6 +224,9 @@
 
 /datum/config_entry/string/banappeals
 
+/datum/config_entry/string/weburl
+	config_entry_value = "https://shiptest.net"
+
 /datum/config_entry/string/wikiurl
 	config_entry_value = "https://shiptest.net/wiki/"
 

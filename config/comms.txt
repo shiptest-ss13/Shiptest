@@ -23,3 +23,30 @@
 ## Servers that do not match this network-name will have their messages discarded.
 ## Leaving this commented will allow all messages through, regardless of network.
 #CROSS_COMMS_NETWORK default_network
+
+## SS13Hub Details
+
+## Whether to allow clients to auth via SS13Hub.
+#SS13HUB_AUTH FALSE
+
+## ISO 639-1 code of the language this server should be advertised as using.
+#SERVER_LANGUAGE en
+## The geographic region where this server is hosted. See code/__DEFINES/ss13hub.dm
+## to see possible regions.
+#SERVER_REGION north_america_east
+
+## The domain to attest ownership of. Must have a _ss13hub TXT record with the matching ed25519 pubkey.
+#VERIFIED_DOMAIN shiptest.net
+
+## Base64-encoded ed25519 private key (32-byte seed). The corresponding public key
+## must appear in the _ss13hub DNS TXT record as: ss13hub-ed25519=<base64-pubkey>
+#VERIFIED_PRIVATE_KEY unset
+
+## Description shown on the SS13Hub listing. Max 1024 characters, no HTML.
+#SERVER_DESC
+
+## List of tags shown on the SS13Hub listing. Tags are from a predefined list
+## which is available at this link: <>
+#SERVER_TAGS RP
+#SERVER_TAGS Other
+

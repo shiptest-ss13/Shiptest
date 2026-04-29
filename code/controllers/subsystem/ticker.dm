@@ -49,6 +49,8 @@ SUBSYSTEM_DEF(ticker)
 
 	var/round_start_time = 0
 	var/round_start_timeofday = 0
+	var/round_start_unix = 0
+
 	var/list/round_start_events
 	var/list/round_end_events
 	var/mode_result = "undefined"
@@ -275,6 +277,7 @@ SUBSYSTEM_DEF(ticker)
 	log_world("Game start took [(REALTIMEOFDAY - init_start)/10]s")
 	round_start_time = world.time
 	round_start_timeofday = world.timeofday
+	round_start_unix = rustg_unix_timestamp()
 	SSdbcore.SetRoundStart()
 
 	to_chat(world, span_notice("<B>Welcome to [station_name()], enjoy your stay!</B>"))
@@ -545,6 +548,17 @@ SUBSYSTEM_DEF(ticker)
 	log_game(span_boldannounce("Rebooting World. [reason]"))
 
 	world.Reboot()
+
+/datum/controller/subsystem/ticker/proc/get_ss13hub_status()
+	switch(current_state)
+		if(GAME_STATE_STARTUP)
+			return "initializing"
+		if(GAME_STATE_PREGAME, GAME_STATE_SETTING_UP)
+			return "lobby"
+		if(GAME_STATE_PLAYING)
+			return "playing"
+		if(GAME_STATE_FINISHED)
+			return "finished"
 
 /datum/controller/subsystem/ticker/Shutdown()
 	gather_newscaster() //called here so we ensure the log is created even upon admin reboot

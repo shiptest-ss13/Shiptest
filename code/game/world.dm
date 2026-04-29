@@ -182,6 +182,7 @@ GLOBAL_VAR(restart_counter)
 
 /world/Topic(T, addr, master, key)
 	TGS_TOPIC	//redirect to server tools if necessary
+	SS13LIB_TOPIC	//and handle SS13hub requests too
 
 	var/static/list/topic_handlers = TopicHandlers()
 
@@ -246,6 +247,7 @@ GLOBAL_VAR(restart_counter)
 		to_chat(world, span_boldannounce("Rebooting world..."))
 		Master.Shutdown()	//run SS shutdowns
 
+	SS13LIB_REBOOT
 	TgsReboot()
 
 #ifdef UNIT_TESTS
