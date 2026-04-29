@@ -1,19 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/obj/machinery/light/floor,
-/obj/structure/elevator_platform/tile/tech,
-/turf/template_noop,
-/area/template_noop)
 "d" = (
-/obj/structure/elevator_platform/tile/tech,
-/obj/machinery/status_display/elevator{
-	pixel_y = 28
-	},
-/obj/structure/chair/bench/red/directional/east,
-/turf/template_noop,
-/area/template_noop)
-"e" = (
-/obj/structure/elevator_platform/tile/dark,
+/obj/structure/elevator_platform,
+/obj/structure/fake_plastitanium_wall,
 /turf/template_noop,
 /area/template_noop)
 "g" = (
@@ -23,18 +11,25 @@
 	},
 /turf/template_noop,
 /area/template_noop)
-"n" = (
-/obj/structure/elevator_platform/tile/tech,
+"j" = (
+/obj/structure/elevator_platform/tile/dark,
 /turf/template_noop,
 /area/template_noop)
-"t" = (
-/obj/structure/elevator_platform,
-/obj/structure/fake_plastitanium_wall,
+"x" = (
+/obj/structure/elevator_platform/tile/tech,
+/obj/structure/crate_shelf{
+	capacity = 2
+	},
 /turf/template_noop,
 /area/template_noop)
 "A" = (
 /obj/structure/elevator_platform/tile/dark,
 /obj/structure/fake_plastitanium_wall,
+/turf/template_noop,
+/area/template_noop)
+"D" = (
+/obj/machinery/light/floor,
+/obj/structure/elevator_platform/tile/tech,
 /turf/template_noop,
 /area/template_noop)
 "F" = (
@@ -45,11 +40,16 @@
 	},
 /turf/template_noop,
 /area/template_noop)
-"Q" = (
+"K" = (
 /obj/structure/elevator_platform/tile/tech,
-/obj/structure/crate_shelf{
-	capacity = 2
+/obj/machinery/status_display/elevator{
+	pixel_y = 28
 	},
+/obj/structure/chair/bench/red/directional/east,
+/turf/template_noop,
+/area/template_noop)
+"L" = (
+/obj/structure/elevator_platform/tile/tech,
 /turf/template_noop,
 /area/template_noop)
 "V" = (
@@ -59,37 +59,37 @@
 /area/template_noop)
 
 (1,1,1) = {"
-t
 d
-a
+K
+D
 V
-t
+d
 "}
 (2,1,1) = {"
-n
-n
-e
-n
-Q
+L
+L
+j
+L
+x
 "}
 (3,1,1) = {"
-a
-e
+D
+j
 A
 F
-a
+D
 "}
 (4,1,1) = {"
-n
-n
-e
-n
-Q
+L
+L
+j
+L
+x
 "}
 (5,1,1) = {"
-t
+d
 g
-a
-n
-t
+D
+L
+d
 "}
