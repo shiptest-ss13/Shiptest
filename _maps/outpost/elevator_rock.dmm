@@ -13,14 +13,13 @@
 /area/template_noop)
 "j" = (
 /obj/structure/elevator_platform/tile/dark,
-/obj/structure/crate_shelf{
-	capacity = 2
+/obj/machinery/elevator_floor_button{
+	layer = 2.91;
+	pixel_x = -20;
+	dir = 4;
+	pixel_y = 3
 	},
-/turf/template_noop,
-/area/template_noop)
-"x" = (
-/obj/structure/elevator_platform/tile/dark,
-/obj/structure/chair/bench/red/directional/north,
+/obj/structure/chair/bench/red/directional/east,
 /turf/template_noop,
 /area/template_noop)
 "A" = (
@@ -35,7 +34,9 @@
 /area/template_noop)
 "F" = (
 /obj/structure/elevator_platform/tile/dark,
-/obj/structure/chair/bench/red/directional/south,
+/obj/structure/crate_shelf{
+	capacity = 2
+	},
 /turf/template_noop,
 /area/template_noop)
 "L" = (
@@ -44,15 +45,7 @@
 /area/template_noop)
 "V" = (
 /obj/structure/elevator_platform/tile/dark,
-/obj/structure/crate_shelf{
-	capacity = 2
-	},
-/obj/machinery/elevator_floor_button{
-	layer = 2.91;
-	pixel_x = -20;
-	dir = 4;
-	pixel_y = 3
-	},
+/obj/structure/chair/bench/red/directional/west,
 /turf/template_noop,
 /area/template_noop)
 
@@ -66,13 +59,13 @@ d
 (2,1,1) = {"
 L
 L
-j
+V
 L
 L
 "}
 (3,1,1) = {"
 D
-x
+F
 A
 F
 D
@@ -80,7 +73,7 @@ D
 (4,1,1) = {"
 L
 L
-V
+j
 L
 L
 "}
