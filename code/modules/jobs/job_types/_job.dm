@@ -238,8 +238,6 @@
 			back = duffelbag //Department duffel bag
 		if(DCOURIERBAG)
 			back = courierbag //Department messenger bag
-		if(SBAG)
-			back = /obj/item/storage/backpack/messenger/sport //sports bag
 		if(TAILBAG)
 			if(!HAS_TRAIT(H, TRAIT_TAILED))
 				back = /obj/item/storage/backpack/satchel/kitbag //fallback bag
