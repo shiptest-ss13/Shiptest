@@ -5765,7 +5765,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe/lit,
-/area/outpost/hallway/central)
+/area/outpost/external)
 "nd" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -6449,7 +6449,7 @@
 	dir = 8
 	},
 /turf/open/water/beach,
-/area/outpost/hallway/central)
+/area/outpost/external)
 "oG" = (
 /obj/structure/bookcase/random,
 /obj/effect/turf_decal/siding/wood{
@@ -10311,10 +10311,25 @@
 /turf/open/floor/pod/dark,
 /area/outpost/engineering)
 "xM" = (
-/obj/structure/platform{
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/rockplanet/safe/lit,
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 4;
+	layer = 4.1
+	},
+/obj/machinery/camera{
+	network = list("1000eye");
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "xN" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -11060,16 +11075,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/aft)
-"zC" = (
-/obj/structure/platform{
-	dir = 4
-	},
-/obj/machinery/camera{
-	network = list("1000eye");
-	dir = 10
-	},
-/turf/open/floor/plating/asteroid/rockplanet/safe/lit,
-/area/outpost/hallway/central)
 "zD" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -13888,6 +13893,10 @@
 	dir = 1;
 	pixel_y = 22
 	},
+/obj/machinery/camera{
+	network = list("1000eye");
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "Go" = (
@@ -15038,13 +15047,6 @@
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /turf/open/floor/plasteel,
 /area/outpost/crew/canteen)
-"IX" = (
-/obj/machinery/door/airlock/outpost{
-	req_access = list("101");
-	name = "Shipping System"
-	},
-/turf/open/floor/plating,
-/area/outpost/crew)
 "IZ" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/corner/opaque/beige/half{
@@ -15862,7 +15864,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe/lit,
-/area/outpost/hallway/central)
+/area/outpost/external)
 "KP" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 10
@@ -16926,7 +16928,7 @@
 	dir = 4
 	},
 /turf/open/water/beach,
-/area/outpost/hallway/central)
+/area/outpost/external)
 "NE" = (
 /obj/machinery/camera{
 	dir = 4
@@ -16938,9 +16940,6 @@
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/crew/cryo)
-"NF" = (
-/turf/open/floor/plating,
-/area/outpost/crew)
 "NG" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "cargo_holo";
@@ -18199,15 +18198,8 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/maintenance/central)
 "QL" = (
-/obj/structure/platform{
-	dir = 4
-	},
-/obj/machinery/camera{
-	network = list("1000eye");
-	dir = 6
-	},
-/turf/open/floor/plating/asteroid/rockplanet/safe/lit,
-/area/outpost/hallway/central)
+/turf/open/floor/plating,
+/area/outpost/crew)
 "QM" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
@@ -21499,11 +21491,12 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
 "YE" = (
-/obj/structure/platform{
-	dir = 8
+/obj/machinery/door/airlock/outpost{
+	req_access = list("101");
+	name = "Shipping System"
 	},
-/turf/open/floor/plating/asteroid/rockplanet/safe/lit,
-/area/outpost/hallway/central)
+/turf/open/floor/plating,
+/area/outpost/crew)
 "YF" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -27271,21 +27264,21 @@ aw
 aw
 aw
 Ub
-QL
-xM
-xM
-xM
-xM
+Lk
+Lk
+Lk
+Lk
+Lk
 KO
 ND
 ND
 KO
-xM
-xM
-xM
-xM
-xM
-zC
+Lk
+Lk
+Lk
+Lk
+Lk
+Lk
 zu
 kb
 kb
@@ -27870,7 +27863,7 @@ Vk
 Vk
 Vk
 Vk
-Vk
+xM
 kb
 Hp
 Yq
@@ -27973,21 +27966,21 @@ aw
 aw
 aw
 Ub
-YE
-YE
-YE
-YE
-YE
+RM
+RM
+RM
+RM
+RM
 nc
 oF
 oF
 oF
 nc
-YE
-YE
-YE
-YE
-YE
+RM
+RM
+RM
+RM
+RM
 zu
 kb
 kb
@@ -30030,8 +30023,8 @@ br
 tI
 vJ
 vJ
-IX
-NF
+YE
+QL
 ia
 Tk
 Tk
