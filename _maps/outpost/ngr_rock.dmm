@@ -1056,6 +1056,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/checkpoint)
+"cg" = (
+/obj/machinery/door/airlock/outpost{
+	req_access = list("101");
+	name = "Shipping System"
+	},
+/turf/open/floor/plating,
+/area/outpost/crew)
 "ch" = (
 /obj/structure/platform{
 	dir = 5
@@ -9252,6 +9259,9 @@
 /obj/machinery/outpost_selling_pad,
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
+"vC" = (
+/turf/open/floor/plating,
+/area/outpost/crew)
 "vD" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -29904,8 +29914,8 @@ ia
 mE
 CL
 ia
-Tk
-Tk
+ia
+ia
 Tk
 Tk
 Tk
@@ -30020,9 +30030,9 @@ br
 tI
 vJ
 vJ
+cg
+vC
 ia
-Tk
-Tk
 Tk
 Tk
 Tk
