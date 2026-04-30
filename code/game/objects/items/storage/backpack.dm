@@ -405,6 +405,12 @@
 	icon_state = "courierbagsec"
 	item_state = "courierbagsec"
 
+/obj/item/storage/backpack/messenger/sport
+	name = "running bag"
+	desc = "A sturdy bag built for sprinting."
+	icon_state = "sportsbag"
+	item_state = "sportsbag"
+
 /*
 * Duffelbag Types
 */
