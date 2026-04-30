@@ -139,7 +139,7 @@
 /datum/reagent/consumable/ethanol/trickwine/expose_mob(mob/living/exposed_mob, method = TOUCH, reac_volume)
 	if(method == TOUCH)
 		if(debuff_effect)
-			exposed_mob.apply_status_effect(debuff_effect, src, (reac_volume / ETHANOL_METABOLISM) * 10)
+			exposed_mob.apply_status_effect(debuff_effect, src, set_duration = (reac_volume / ETHANOL_METABOLISM) * 10)
 	return ..()
 
 
