@@ -1460,7 +1460,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "dd" = (
 /obj/structure/flora/rock/rockplanet,
 /obj/structure/platform,
@@ -2187,7 +2187,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "eQ" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/techfloor{
@@ -2821,7 +2821,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "gv" = (
 /obj/effect/turf_decal/borderfloorblack/full,
 /obj/structure/table/reinforced,
@@ -5336,7 +5336,7 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "md" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -8131,7 +8131,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "st" = (
 /obj/effect/spawner/random/trash/botanical_waste,
 /obj/effect/turf_decal/borderfloorblack{
@@ -8552,10 +8552,13 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/hazard/spray/steam/transparent_safe,
 /turf/open/floor/plating,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "to" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/outpost/crew/cryo)
+"tp" = (
+/turf/closed/indestructible/rock/rockplanet,
+/area/outpost/maintenance/aft)
 "tq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -9045,7 +9048,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "ux" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Bathroom"
@@ -9144,7 +9147,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/rust,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "uP" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
@@ -10483,7 +10486,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "xL" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
@@ -11818,7 +11821,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "AR" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -12371,7 +12374,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "Cb" = (
 /obj/effect/turf_decal/corner/opaque/beige/half{
 	dir = 8
@@ -12404,7 +12407,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "Cf" = (
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
@@ -13229,7 +13232,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "Eg" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -14251,7 +14254,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "GA" = (
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030;
@@ -14971,7 +14974,7 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "Id" = (
 /obj/structure/chair/stool/bar{
 	dir = 4;
@@ -15138,6 +15141,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
+"IA" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/outpost/maintenance/aft)
 "IC" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
@@ -15573,7 +15579,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "JE" = (
 /obj/effect/turf_decal/corner/opaque/red/half{
 	dir = 1
@@ -16730,7 +16736,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/rust,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "Md" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -17366,7 +17372,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "NU" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -17572,7 +17578,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "Os" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
@@ -18428,7 +18434,7 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "Qu" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -21069,7 +21075,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "Wz" = (
 /obj/structure/falsewall/plastitanium,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -21674,7 +21680,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "XY" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
@@ -21971,7 +21977,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "YJ" = (
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030;
@@ -22204,7 +22210,7 @@
 /obj/effect/spawner/random/trash/food_packaging,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "Zj" = (
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -22609,7 +22615,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/outpost/maintenance/central)
+/area/outpost/maintenance/aft)
 "ZX" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
@@ -23751,7 +23757,7 @@ cN
 DL
 Xr
 vE
-xO
+IA
 Gq
 Mz
 sj
@@ -23868,7 +23874,7 @@ cN
 cN
 cN
 XE
-xO
+IA
 yv
 lC
 lC
@@ -24102,7 +24108,7 @@ KK
 bG
 cN
 Zi
-xO
+IA
 YG
 rl
 rl
@@ -25028,7 +25034,7 @@ Tk
 Tk
 Tk
 Tk
-xO
+IA
 Ef
 gu
 xJ
@@ -25145,16 +25151,16 @@ Em
 Tk
 Tk
 Tk
-Np
-Np
-xO
+tp
+tp
+IA
 uN
 Wy
 Or
 XX
 Mc
-xO
-xO
+IA
+IA
 kb
 lN
 Vz
@@ -25270,8 +25276,8 @@ OX
 OX
 OX
 OX
-xO
-Np
+IA
+tp
 kb
 Ro
 RK
@@ -25387,8 +25393,8 @@ os
 jM
 aO
 OX
-Np
-Np
+tp
+tp
 kb
 fe
 Vz
@@ -25504,8 +25510,8 @@ DU
 mb
 OE
 OX
-Np
-Np
+tp
+tp
 kb
 sb
 Vz
@@ -25621,8 +25627,8 @@ VO
 Oq
 aL
 OX
-Np
-Np
+tp
+tp
 kb
 fe
 Vz
@@ -25738,8 +25744,8 @@ Ir
 qP
 mb
 OX
-Np
-Np
+tp
+tp
 kb
 fe
 Vz
@@ -25855,8 +25861,8 @@ nl
 Ll
 se
 OX
-Np
-Np
+tp
+tp
 kb
 BB
 Vz
