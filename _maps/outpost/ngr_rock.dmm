@@ -8556,9 +8556,6 @@
 "to" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/outpost/crew/cryo)
-"tp" = (
-/turf/closed/indestructible/rock/rockplanet,
-/area/outpost/maintenance/aft)
 "tq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -11922,6 +11919,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/armory)
+"Be" = (
+/turf/closed/indestructible/rock/rockplanet,
+/area/outpost/maintenance/aft)
 "Bf" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4{
@@ -15141,9 +15141,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
-"IA" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/outpost/maintenance/aft)
 "IC" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
@@ -19625,6 +19622,9 @@
 "Te" = (
 /turf/open/floor/concrete/slab_2,
 /area/outpost/external)
+"Tg" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/outpost/maintenance/aft)
 "Ti" = (
 /obj/structure/extinguisher_cabinet/directional/east,
 /obj/effect/turf_decal/trimline/opaque/bar/filled/corner{
@@ -23757,7 +23757,7 @@ cN
 DL
 Xr
 vE
-IA
+Tg
 Gq
 Mz
 sj
@@ -23874,7 +23874,7 @@ cN
 cN
 cN
 XE
-IA
+Tg
 yv
 lC
 lC
@@ -24108,7 +24108,7 @@ KK
 bG
 cN
 Zi
-IA
+Tg
 YG
 rl
 rl
@@ -25034,7 +25034,7 @@ Tk
 Tk
 Tk
 Tk
-IA
+Tg
 Ef
 gu
 xJ
@@ -25151,16 +25151,16 @@ Em
 Tk
 Tk
 Tk
-tp
-tp
-IA
+Be
+Be
+Tg
 uN
 Wy
 Or
 XX
 Mc
-IA
-IA
+Tg
+Tg
 kb
 lN
 Vz
@@ -25276,8 +25276,8 @@ OX
 OX
 OX
 OX
-IA
-tp
+Tg
+Be
 kb
 Ro
 RK
@@ -25393,8 +25393,8 @@ os
 jM
 aO
 OX
-tp
-tp
+Be
+Be
 kb
 fe
 Vz
@@ -25510,8 +25510,8 @@ DU
 mb
 OE
 OX
-tp
-tp
+Be
+Be
 kb
 sb
 Vz
@@ -25627,8 +25627,8 @@ VO
 Oq
 aL
 OX
-tp
-tp
+Be
+Be
 kb
 fe
 Vz
@@ -25744,8 +25744,8 @@ Ir
 qP
 mb
 OX
-tp
-tp
+Be
+Be
 kb
 fe
 Vz
@@ -25861,8 +25861,8 @@ nl
 Ll
 se
 OX
-tp
-tp
+Be
+Be
 kb
 BB
 Vz
@@ -27860,7 +27860,7 @@ Vz
 fE
 OS
 Fo
-zl
+Fo
 sd
 zl
 Fo
