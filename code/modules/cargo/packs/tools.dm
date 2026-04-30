@@ -242,3 +242,10 @@
 	crate_name = "foam tank crate"
 	crate_type = /obj/structure/closet/crate/large
 	no_bundle = TRUE
+
+/datum/supply_pack/tools/headlight
+	name = "Headlamp Crate"
+	desc = "Contains a single headlamp, mounts on your head and provides a stable light source."
+	contains = list(/obj/item/clothing/ears/headlamp)
+	cost = 75
+	crate_name = "headlamp crate"
