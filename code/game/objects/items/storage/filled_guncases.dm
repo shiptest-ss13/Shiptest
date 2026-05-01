@@ -167,6 +167,10 @@
 	gun_type = /obj/item/gun/energy/kalix/nock
 	mag_type = /obj/item/stock_parts/cell/gun/kalix
 
+/obj/item/storage/guncase/energy/kalixhunt
+	gun_type = /obj/item/gun/energy/kalix/hunt
+	mag_type = /obj/item/stock_parts/cell/gun/kalix
+
 /obj/item/storage/guncase/energy/sgr9
 	gun_type = /obj/item/gun/energy/kalix/pgf/pdw
 	mag_type = /obj/item/stock_parts/cell/gun/pgf

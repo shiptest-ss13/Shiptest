@@ -1,6 +1,6 @@
 /obj/item/gun/energy/kalix
 	name = "\improper Etherbor BG-12"
-	desc = "The BG-12 is Etherbor Industries's current civilian beam gun model. The BG-12 energy beam gun is practically identical to the military model barring the removal of the full auto mode. Otherwise, it's no different from older hunting beams from Kalixcis's history."
+	desc = "The BG-12 is Etherbor Industries's current civilian beam gun model. The BG-12 energy beam gun is practically identical to the military model barring the removal of the full auto mode. Otherwise, it's no different from older beam guns from Kalixcis's history."
 	icon_state = "kalixgun"
 	item_state = "kalixgun"
 	icon = 'icons/obj/guns/manufacturer/etherbor/48x32.dmi'
@@ -561,6 +561,60 @@
 	)
 
 /obj/item/gun/energy/kalix/pgf/heavy/sniper/empty_cell
+	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
+	)
+
+/obj/item/ammo_casing/energy/kalix/hunt
+	projectile_type = /obj/projectile/beam/hitscan/kalix/hunt
+	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+	e_cost = 2000 //6 shots per cell
+	delay = 6
+
+/obj/projectile/beam/hitscan/kalix/hunt
+	tracer_type = /obj/effect/projectile/tracer/pulse
+	muzzle_type = /obj/effect/projectile/muzzle/pulse
+	impact_type = /obj/effect/projectile/impact/pulse
+
+	damage = 35
+	armour_penetration = 40
+	range = 20
+	damage_constant = 1
+
+/obj/item/gun/energy/kalix/hunt
+	name = "\improper Etherbor HBS-110"
+	desc = "Etherbor's most popular hunting beam to date, the HBS-110 boasts pinpoint accuracy at the cost of an objectively unwieldy length. The weapon's non-standard stock design has garnered a cult following for the platform, but has also generated some divisiveness in foreign markets."
+	icon_state = "kalixhunt"
+	item_state = "kalixhunt"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+
+	zoomable = TRUE
+	zoom_amt = 6
+
+	spread = -5
+	spread_unwielded = 40
+
+	wield_slowdown = LASER_SNIPER_SLOWDOWN
+	wield_delay = 1.3 SECONDS
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 36,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 26,
+			"y" = 15,
+		)
+	)
+
+	ammo_type = list(/obj/item/ammo_casing/energy/kalix/hunt)
+
+/obj/item/gun/energy/kalix/hunt/empty_cell
 	spawn_no_ammo = TRUE
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/kalix,
