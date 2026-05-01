@@ -607,7 +607,7 @@
 			"y" = 13,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 26,
+			"x" = 30,
 			"y" = 15,
 		)
 	)
