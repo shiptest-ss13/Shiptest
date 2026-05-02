@@ -136,6 +136,19 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/energy/e_gun/e11
 
+/mob/living/simple_animal/hostile/human/hermit/ranged/volt
+	name = "Hermit Trooper"
+	desc = "In spite of the harsh conditions, this hermit wields a shiny, well-maintained sharplite carbine. They keep a tight grip on it, as if it was a prized posession."
+	icon_state = "survivor_e11"
+	icon_living = "survivor_e11"
+	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
+	speed = 10
+	rapid_fire_delay = 1
+	casingtype = null
+	projectiletype = /obj/projectile/beam/laser/sharplite
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	r_hand = /obj/item/gun/energy/sharplite/x12
+
 /mob/living/simple_animal/hostile/human/hermit/ranged/tesla_rifle
 	name = "Hermit Guardsman"
 	desc = "Out in the wilderness of the frontier, desperation can easily become innovation. This hermit is wielding the product of such ventures. Electrical crackles and a rifle ready to roar."
