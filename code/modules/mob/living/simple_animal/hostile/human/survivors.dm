@@ -85,7 +85,7 @@
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/hunter
 	name = "Hermit Hunter"
-	desc ="A wild-eyed figure. Watch out- he has a shotgun, and he remembers just enough of his old life to use it!"
+	desc ="A wild-eyed figure. Watch out- he has a rifle, and he remembers just enough of his old life to use it!"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/ballistic/rifle/polymer
 
