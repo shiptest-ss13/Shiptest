@@ -249,9 +249,6 @@
 /area/ruin/rockplanet/ngrcolony/main_gate
 	name = "NGR Mining Colony Main Checkpoint"
 
-/area/ruin/rockplanet/ngrcolony/hangar
-	name = "NGR Mining Colony Hangar"
-
 /area/ruin/rockplanet/ngrcolony/engineering
 	name = "NGR Mining Colony Utility Building"
 	icon_state = "engine"
@@ -259,6 +256,9 @@
 /area/ruin/rockplanet/ngrcolony/warehouse
 	name = "NGR Mining Colony Warehouse"
 	icon_state = "storage"
+
+/area/ruin/rockplanet/ngrcolony/crawlergarage
+	name = "NGR Mining Colony Garage"
 
 /area/ruin/rockplanet/ngrcolony/control
 	name = "NGR Mining Colony Command Centre"
@@ -268,7 +268,7 @@
 	name = "Ramzi Clique Escapee Camp"
 
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/farm
-	name = "Ramzi Clique Camp Farm"
+	name = "Ramzi Clique Camp Farm Supply Shed"
 
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms
 	name = "Ramzi Clique Camp Quarters"

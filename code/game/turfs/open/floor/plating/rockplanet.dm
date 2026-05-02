@@ -300,3 +300,14 @@
 	light_color = COLOR_ROCKPLANET_LIGHT
 	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+//snow over concrete
+
+/turf/open/floor/plating/asteroid/snow/lit/rockplanet/overpavement
+	baseturfs = /turf/open/floor/concrete/pavement/rockplanet/lit
+
+/turf/open/floor/plating/asteroid/snow/lit/rockplanet/overslab4
+	baseturfs = /turf/open/floor/concrete/slab_4/rockplanet/lit
+
+/turf/open/floor/plating/asteroid/snow/lit/rockplanet/overplating
+	baseturfs = /turf/open/floor/plating/rockplanet
