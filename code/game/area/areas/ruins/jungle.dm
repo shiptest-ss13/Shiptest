@@ -232,3 +232,51 @@
 /area/ruin/powered/hunts/shuttle
 	name = "Shuttle"
 	icon_state = "shuttle"
+
+// Big Hole
+/area/ruin/powered/bighole/canteen
+	name = "Canteen"
+	icon_state = "cafeteria"
+
+/area/ruin/powered/bighole/dormitory
+	name = "Dormitory"
+	icon_state = "crew_quarters"
+
+/area/ruin/powered/bighole/medbay
+	name = "Medical Bay"
+	icon_state = "red"
+
+/area/ruin/powered/bighole/secoffice
+	name = "Security Office"
+	icon_state = "security"
+
+/area/ruin/jungle/bighole/clipmine
+	name = "Borehole Facility"
+	icon_state = "green"
+
+/area/ruin/powered/bighole/office
+	name = "Communications Office"
+	icon_state = "bridge"
+
+/area/ruin/powered/bighole/lab
+	name = "Geology Lab"
+	icon_state = "blue"
+
+/area/ruin/powered/bighole/cargo
+	name = "Cargo Warehouse"
+	icon_state = "storage"
+
+/area/ruin/powered/bighole/shed
+	name = "Maintinence Shed"
+	icon_state = "yellow"
+
+/area/ruin/powered/bighole/electrical
+	name = "Electrical"
+	icon_state = "yellow"
+
+/area/ruin/jungle/bighole/vent
+	name = "Air Exchanger"
+
+/area/ruin/jungle/bighole/ferry
+	name = "Militarized Ferry"
+	icon_state = "hangar"

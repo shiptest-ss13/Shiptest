@@ -283,7 +283,7 @@
 	id = "shock_wine_buff"
 	message_apply_others =  "seems to be crackling with energy!"
 	message_apply_self = "You feel like a bolt of lightning!"
-	message_remove_others = "has lost their statis energy."
+	message_remove_others = "has lost their static energy."
 	message_remove_self = "Inertia leaves your body!"
 	alert_desc = "You feel faster than lightning and cracking with energy! You are immune to shock damage and move faster!"
 	trait = TRAIT_SHOCKIMMUNE
@@ -398,12 +398,12 @@
 
 /datum/reagent/consumable/ethanol/trickwine/force_wine
 	name = "Forcewine"
-	description = "Creates a barrier on the skin that catches shrapnel and when reversed locks threats down with a barrier"
+	description = "Creates a barrier on the skin that catches shrapnel, and when reversed, locks threats down with a barrier."
 	color = "#709AAF"
 	boozepwr = 70
 	taste_description = "the strength of your convictions"
 	glass_name = "Forcewine"
-	glass_desc = "Creates a barrier on the skin that catches shrapnel and when reversed locks threats down with a barrier"
+	glass_desc = "Creates a barrier on the skin that catches shrapnel, and when reversed, locks threats down with a barrier."
 	breakaway_flask_icon_state = "baflaskforcewine"
 	buff_effect = /datum/status_effect/trickwine/buff/force
 	debuff_effect = /datum/status_effect/trickwine/debuff/force

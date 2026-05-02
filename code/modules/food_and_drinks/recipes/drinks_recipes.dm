@@ -453,8 +453,8 @@
 	mix_message = "You catch an aroma of hot tea and fruits as the mix blends into a blue-green color."
 
 /datum/chemical_reaction/squirt_cider
-	results = list(/datum/reagent/consumable/ethanol/squirt_cider = 1)
-	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/consumable/tomatojuice = 1, /datum/reagent/consumable/nutriment = 1)
+	results = list(/datum/reagent/consumable/ethanol/squirt_cider = 4)
+	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/consumable/tomatojuice = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/ethanol = 1)
 	mix_message = "The mix swirls and turns a bright red that reminds you of an apple's skin."
 
 /datum/chemical_reaction/fringe_weaver

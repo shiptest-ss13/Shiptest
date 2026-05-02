@@ -252,6 +252,27 @@
 	new /obj/item/reagent_containers/glass/bottle/formaldehyde(src)
 	update_appearance()
 
+/obj/item/storage/belt/medical/traumateam/PopulateContents()
+	new /obj/item/sensor_device(src)
+	new /obj/item/pinpointer/crew(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/hypospray/mkii/chimorph(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/critmix(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/stasis(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/panacea(src)
+	update_appearance()
+
+/obj/item/storage/belt/medical/webbing/traumateam/PopulateContents()
+	new /obj/item/sensor_device(src)
+	new /obj/item/pinpointer/crew(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/hypospray/mkii/chimorph(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/critmix(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/stasis(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/panacea(src)
+	update_appearance()
+
+
 /obj/item/storage/belt/medical/surgery/PopulateContents()
 	new /obj/item/scalpel(src)
 	new /obj/item/circular_saw(src)

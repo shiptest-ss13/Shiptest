@@ -118,6 +118,7 @@
 	icon_state = "utility"
 	item_state = "utility"
 	roll_down = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/utility/skirt
 	name = "utility jumpskirt"

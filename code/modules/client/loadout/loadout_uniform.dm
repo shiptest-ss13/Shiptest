@@ -309,9 +309,9 @@
 
 // skirts
 /datum/gear/uniform/shortskirt
-	display_name = "short skirt"
+	display_name = "short skirt (colorable)"
 	path = /obj/item/clothing/under/shorts/skirt
 
 /datum/gear/uniform/miniskirt
-	display_name = "mini skirt"
+	display_name = "mini skirt (colorable)"
 	path = /obj/item/clothing/under/shorts/miniskirt
