@@ -290,7 +290,7 @@
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/commander/Aggro()
 	..()
 	summon_backup(4)
-	say("SICK 'EM!!")
+	say("SIC 'EM!!")
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge
 	name = "Ramzi Clique Supercollider"
