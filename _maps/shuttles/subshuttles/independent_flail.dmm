@@ -207,6 +207,17 @@
 	pixel_x = 5;
 	pixel_y = 8
 	},
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/hostile/asteroid/wolf{
+	faction = list("Neutral");
+	name = "Hep";
+	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. This one looks completely shitfaced."
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	list_reagents = null;
+	pixel_x = 13;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "q" = (
@@ -358,7 +369,9 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "flail_port_engine_blast";
-	dir = 4
+	dir = 4;
+	pixel_x = 0;
+	pixel_y = 0
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -609,6 +622,15 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	list_reagents = null;
+	pixel_x = -10;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_x = 16;
+	pixel_y = 4
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
