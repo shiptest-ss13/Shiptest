@@ -1,7 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ah" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
 /turf/open/floor/plating/asteroid/purple,
 /area/overmap_encounter/planetoid/cave/explored)
 "am" = (
@@ -38,15 +37,13 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/dynamitehole/dogs)
 "aV" = (
-/obj/item/flashlight/lantern{
-	light_on = 1;
-	on = 1;
-	icon_state = "lantern-on";
-	pixel_x = 19;
-	pixel_y = 0
+/obj/effect/turf_decal/corner/opaque/grey/half,
+/obj/effect/turf_decal/corner/opaque/grey/half{
+	dir = 1
 	},
-/turf/open/floor/plating/asteroid/purple,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/dynamitehole/living_quarters)
 "bm" = (
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
@@ -80,6 +77,13 @@
 /obj/structure/fermenting_barrel/gunpowder,
 /turf/open/floor/concrete/slab_1/lava,
 /area/ruin/unpowered/dynamitehole)
+"cc" = (
+/obj/effect/turf_decal/industrial/warning/green{
+	dir = 8
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating/lava,
+/area/ruin/unpowered/dynamitehole/engineering)
 "ci" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/trimline/opaque/red/line{
@@ -367,13 +371,10 @@
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/ruin/unpowered/dynamitehole)
 "gJ" = (
-/obj/effect/turf_decal/corner/opaque/grey/half,
-/obj/effect/turf_decal/corner/opaque/grey/half{
-	dir = 1
-	},
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/dynamitehole/living_quarters)
+/obj/effect/turf_decal/industrial/warning/green,
+/obj/machinery/light/directional/west,
+/turf/open/floor/engine,
+/area/ruin/unpowered/dynamitehole/medbay)
 "gM" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -447,13 +448,6 @@
 /obj/effect/turf_decal/trimline/transparent/blue/line,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/living_quarters)
-"hs" = (
-/obj/item/stack/ore/salvage/scrapmetal{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/turf/open/floor/concrete/pavement/lava,
-/area/overmap_encounter/planetoid/cave/explored)
 "hw" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/tech,
@@ -498,16 +492,6 @@
 	dir = 6
 	},
 /turf/open/floor/concrete/pavement/lava,
-/area/overmap_encounter/planetoid/cave/explored)
-"hZ" = (
-/obj/item/flashlight/lantern{
-	light_on = 1;
-	on = 1;
-	icon_state = "lantern-on";
-	pixel_x = -19;
-	pixel_y = 1
-	},
-/turf/open/floor/plating/asteroid/purple,
 /area/overmap_encounter/planetoid/cave/explored)
 "id" = (
 /obj/item/flashlight/lantern{
@@ -579,7 +563,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/dogs)
 "iS" = (
-/obj/item/mine/proximity/explosive/plasma/live,
+/obj/item/mine/pressure/explosive/fire/live,
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "ja" = (
@@ -607,11 +591,20 @@
 "jB" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/dynamitehole/dorms/two)
+"jI" = (
+/obj/structure/closet/emcloset,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/dynamitehole/living_quarters)
 "jT" = (
 /obj/structure/chair/bench/blue/directional/east,
 /obj/effect/turf_decal/corner/transparent/blue/full,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/living_quarters)
+"jU" = (
+/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
+/turf/open/floor/plating/moss,
+/area/ruin/unpowered/dynamitehole)
 "kh" = (
 /turf/closed/mineral/random/volcanic,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -802,6 +795,11 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
+"nx" = (
+/obj/effect/turf_decal/siding/black,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/dynamitehole/medbay)
 "nY" = (
 /obj/structure/platform/industrial{
 	dir = 4
@@ -828,13 +826,10 @@
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "on" = (
-/obj/effect/turf_decal/corner/opaque/grey/half,
-/obj/effect/turf_decal/corner/opaque/grey/half{
-	dir = 1
-	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/dynamitehole/living_quarters)
+/obj/effect/turf_decal/industrial/warning/green,
+/obj/machinery/light/directional/east,
+/turf/open/floor/engine,
+/area/ruin/unpowered/dynamitehole/medbay)
 "oo" = (
 /mob/living/simple_animal/hostile/asteroid/wolf{
 	faction = list("Ramzi Clique");
@@ -885,7 +880,7 @@
 /area/ruin/unpowered/dynamitehole/medbay)
 "pC" = (
 /turf/closed/mineral/random/volcanic,
-/area/space)
+/area/template_noop)
 "pH" = (
 /obj/structure/closet/secure_closet/security{
 	populate = 0;
@@ -996,16 +991,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/security)
-"qS" = (
-/obj/item/flashlight/lantern{
-	light_on = 1;
-	on = 1;
-	icon_state = "lantern-on";
-	pixel_x = 10;
-	pixel_y = -4
-	},
-/turf/open/floor/concrete/pavement/lava,
-/area/overmap_encounter/planetoid/cave/explored)
 "qW" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 10
@@ -1031,6 +1016,10 @@
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/dynamitehole/engineering)
+"rr" = (
+/obj/structure/vein/lavaland/classthree,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "rH" = (
 /obj/structure/dresser{
 	dir = 4;
@@ -1110,13 +1099,6 @@
 /obj/effect/mob_spawn/human/corpse/pgf/skeleton_marine,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/dogs)
-"sD" = (
-/obj/effect/turf_decal/industrial/warning/green{
-	dir = 8
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/plating/lava,
-/area/ruin/unpowered/dynamitehole/engineering)
 "sE" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1142,6 +1124,10 @@
 /obj/item/reagent_containers/glass/bottle/nitroglycerin{
 	pixel_x = 13;
 	pixel_y = 6
+	},
+/obj/item/lighter{
+	pixel_x = 4;
+	pixel_y = -3
 	},
 /turf/open/floor/concrete/slab_1/lava,
 /area/ruin/unpowered/dynamitehole)
@@ -1209,7 +1195,7 @@
 /turf/closed/mineral/random/volcanic,
 /area/overmap_encounter/planetoid/cave/explored)
 "tY" = (
-/obj/item/mine/proximity/explosive/plasma/live,
+/obj/item/mine/pressure/explosive/fire/live,
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1289,6 +1275,13 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/dynamitehole/medbay)
+"uq" = (
+/obj/item/stack/ore/salvage/scrapmetal{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/turf/open/floor/concrete/pavement/lava,
+/area/overmap_encounter/planetoid/cave/explored)
 "us" = (
 /obj/machinery/modular_computer/console/preset/civilian{
 	dir = 8
@@ -1325,6 +1318,13 @@
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/unpowered/dynamitehole/dogs)
+"vF" = (
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/concrete/slab_4,
 /area/ruin/unpowered/dynamitehole/dogs)
 "vK" = (
 /obj/structure/guncloset,
@@ -1458,13 +1458,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/living_quarters)
-"xy" = (
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/concrete/slab_4,
-/area/ruin/unpowered/dynamitehole/dogs)
 "xz" = (
 /obj/machinery/autolathe,
 /obj/machinery/light/small/directional/east,
@@ -1573,13 +1566,6 @@
 /obj/structure/tank_dispenser,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/dynamitehole/living_quarters)
-"yQ" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/warning{
-	dir = 9
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/dark,
-/area/ruin/unpowered/dynamitehole/security)
 "yT" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/machinery/door/firedoor/border_only{
@@ -1751,11 +1737,6 @@
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/dynamitehole/engineering)
-"BK" = (
-/obj/effect/turf_decal/industrial/warning/green,
-/obj/machinery/light/directional/west,
-/turf/open/floor/engine,
-/area/ruin/unpowered/dynamitehole/medbay)
 "BO" = (
 /turf/template_noop,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -1870,6 +1851,14 @@
 	},
 /turf/open/floor/engine/air,
 /area/ruin/unpowered/dynamitehole/engineering)
+"DP" = (
+/obj/effect/turf_decal/corner/opaque/grey/half,
+/obj/effect/turf_decal/corner/opaque/grey/half{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/dynamitehole/living_quarters)
 "DR" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/trimline/opaque/red/line{
@@ -1887,12 +1876,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/security)
-"EJ" = (
-/obj/effect/landmark/subship{
-	subship_template = /datum/map_template/shuttle/subshuttles/flail
-	},
-/turf/open/floor/concrete/pavement/lava,
-/area/overmap_encounter/planetoid/cave/explored)
 "EP" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 5
@@ -1911,11 +1894,6 @@
 "Fg" = (
 /turf/closed/wall/concrete,
 /area/overmap_encounter/planetoid/cave/explored)
-"Fk" = (
-/obj/structure/closet/emcloset,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/dynamitehole/living_quarters)
 "Fm" = (
 /obj/structure/barricade/wooden/crude,
 /obj/structure/barricade/wooden,
@@ -1972,14 +1950,16 @@
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "Gj" = (
 /obj/item/grenade/firecracker/dynamite{
-	pixel_x = 8;
-	pixel_y = -7
-	},
-/obj/item/grenade/firecracker/dynamite{
 	pixel_x = 9;
 	pixel_y = 3
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
+"Gk" = (
+/obj/effect/landmark/subship{
+	subship_template = /datum/map_template/shuttle/subshuttles/flail
+	},
+/turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "Gy" = (
 /obj/structure/closet/cabinet,
@@ -2027,11 +2007,6 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/concrete/slab_1/lava,
 /area/ruin/unpowered/dynamitehole/dogs)
-"HE" = (
-/obj/effect/turf_decal/siding/black,
-/obj/machinery/light/directional/south,
-/turf/open/floor/plasteel/dark,
-/area/ruin/unpowered/dynamitehole/medbay)
 "HI" = (
 /mob/living/simple_animal/hostile/asteroid/wolf{
 	faction = list("Ramzi Clique");
@@ -2103,9 +2078,19 @@
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "II" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
-/obj/item/mine/proximity/explosive/plasma/live,
+/obj/item/mine/pressure/explosive/fire/live,
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
+"IP" = (
+/obj/item/flashlight/lantern{
+	light_on = 1;
+	on = 1;
+	icon_state = "lantern-on";
+	pixel_x = 0;
+	pixel_y = 20
+	},
+/turf/open/floor/plating/asteroid/purple,
+/area/overmap_encounter/planetoid/cave/explored)
 "IV" = (
 /obj/effect/turf_decal/trimline/opaque/bar/corner,
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
@@ -2209,10 +2194,12 @@
 /turf/open/floor/carpet/blue,
 /area/ruin/unpowered/dynamitehole/dorms/two)
 "Lv" = (
-/obj/effect/turf_decal/industrial/warning/green,
-/obj/machinery/light/directional/east,
-/turf/open/floor/engine,
-/area/ruin/unpowered/dynamitehole/medbay)
+/obj/effect/turf_decal/trimline/transparent/blue/filled/warning{
+	dir = 9
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/dynamitehole/security)
 "Lw" = (
 /obj/effect/turf_decal/corner/transparent/lime/half{
 	dir = 4
@@ -2283,14 +2270,6 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/ruin/unpowered/dynamitehole/dogs)
-"Mx" = (
-/obj/item/flashlight/lantern{
-	light_on = 1;
-	on = 1;
-	icon_state = "lantern-on"
-	},
-/turf/open/floor/concrete/pavement/lava,
-/area/overmap_encounter/planetoid/cave/explored)
 "Mz" = (
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
@@ -2298,16 +2277,6 @@
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/dynamitehole)
-"ME" = (
-/obj/item/flashlight/lantern{
-	light_on = 1;
-	on = 1;
-	icon_state = "lantern-on";
-	pixel_x = 0;
-	pixel_y = -15
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/cave/explored)
 "MN" = (
 /obj/structure/platform/industrial{
 	dir = 6
@@ -2361,9 +2330,13 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "NG" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
-/turf/open/floor/plating/moss,
-/area/ruin/unpowered/dynamitehole)
+/obj/effect/turf_decal/corner/opaque/grey/half,
+/obj/effect/turf_decal/corner/opaque/grey/half{
+	dir = 1
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/dynamitehole/living_quarters)
 "NI" = (
 /obj/structure/closet/crate/radiation{
 	name = "fuel crate"
@@ -2447,14 +2420,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/security)
-"Qb" = (
-/obj/effect/turf_decal/corner/opaque/grey/half,
-/obj/effect/turf_decal/corner/opaque/grey/half{
-	dir = 1
-	},
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/dynamitehole/living_quarters)
 "Qd" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/dynamitehole/gear)
@@ -2532,7 +2497,7 @@
 /obj/effect/turf_decal/industrial/warning/green{
 	dir = 8
 	},
-/obj/machinery/light/directional/south,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating/lava,
 /area/ruin/unpowered/dynamitehole/engineering)
 "Rz" = (
@@ -2650,7 +2615,7 @@
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "To" = (
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "Tp" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "hounddoor"
@@ -2738,10 +2703,7 @@
 /turf/open/floor/plasteel/dark/lava,
 /area/ruin/unpowered/dynamitehole/engineering)
 "Un" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper/sentry{
-	l_hand = /obj/item/gun/ballistic/automatic/marksman/f90;
-	weapon_drop_chance = 100
-	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper/sentry,
 /turf/open/floor/concrete/lava,
 /area/ruin/unpowered/dynamitehole)
 "Uq" = (
@@ -3848,7 +3810,7 @@ kh
 sR
 Gi
 hN
-on
+NG
 hN
 XY
 sR
@@ -3997,9 +3959,9 @@ sR
 kh
 sR
 Gi
-Qb
+DP
 hN
-Qb
+DP
 XY
 sR
 kh
@@ -4097,7 +4059,7 @@ sR
 ID
 ID
 sR
-gJ
+aV
 mI
 Ks
 sR
@@ -4339,7 +4301,7 @@ Ym
 kh
 kh
 Jv
-Fk
+jI
 LQ
 lR
 sR
@@ -4676,7 +4638,7 @@ jB
 jB
 jB
 jB
-yQ
+Lv
 pJ
 ky
 gd
@@ -4887,7 +4849,7 @@ ja
 kh
 ja
 ja
-NG
+jU
 ui
 Bt
 Vw
@@ -5385,7 +5347,7 @@ Ym
 ja
 Ba
 yn
-BK
+gJ
 rR
 GQ
 WM
@@ -5524,7 +5486,7 @@ kh
 kh
 kh
 TG
-xy
+vF
 dF
 dF
 YG
@@ -5538,7 +5500,7 @@ Ba
 Ba
 Ba
 RU
-HE
+nx
 Ba
 AW
 GF
@@ -5600,11 +5562,11 @@ Vw
 ja
 Vw
 WS
-sD
+Rr
 Jr
 yl
 kK
-Rr
+cc
 WS
 kh
 kh
@@ -5685,7 +5647,7 @@ kh
 CC
 Ba
 NC
-Lv
+on
 rR
 GQ
 WM
@@ -5931,7 +5893,7 @@ MR
 ma
 gO
 hX
-qS
+bB
 bB
 bB
 Mk
@@ -6397,7 +6359,7 @@ kh
 kh
 Lt
 UU
-hs
+uq
 bB
 bB
 kh
@@ -6505,7 +6467,7 @@ bB
 bB
 bB
 bB
-EJ
+Gk
 kh
 kh
 kh
@@ -6647,7 +6609,7 @@ CC
 Lt
 Lt
 MN
-Mx
+bB
 bB
 bB
 bB
@@ -6691,7 +6653,7 @@ kh
 kh
 kh
 Mk
-ME
+Lt
 Fg
 no
 tM
@@ -6733,7 +6695,7 @@ Mk
 Mk
 CC
 Fg
-TR
+Mk
 Mk
 CC
 kh
@@ -7195,7 +7157,7 @@ kh
 kh
 Lt
 Mk
-aV
+Mk
 Mk
 Mk
 Lt
@@ -7245,7 +7207,7 @@ kh
 Lt
 Mk
 Mk
-Fg
+kh
 kh
 kh
 WE
@@ -7348,9 +7310,9 @@ kh
 kh
 kh
 kh
-kh
-Mk
-ET
+Fg
+IP
+Lt
 Lt
 kh
 kh
@@ -7384,7 +7346,7 @@ Mk
 Lt
 Lt
 Mk
-hZ
+Mk
 Mk
 Lt
 Lt
@@ -7550,7 +7512,7 @@ kh
 kh
 kh
 kh
-Lt
+rr
 tM
 kh
 kh

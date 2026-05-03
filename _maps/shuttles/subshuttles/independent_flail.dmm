@@ -183,10 +183,6 @@
 	color = "#c1b6a5"
 	},
 /obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -5;
-	pixel_y = 1
-	},
-/obj/item/stock_parts/cell/gun/pgf{
 	pixel_x = -7;
 	pixel_y = 14
 	},
@@ -367,6 +363,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/bridge)
 "A" = (
@@ -409,7 +406,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "E" = (
-/obj/machinery/door/firedoor/heavy,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "flail_holo";
 	dir = 1
@@ -421,6 +417,12 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/firedoor/border_only/closed{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only/closed{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -535,6 +537,12 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/firedoor/border_only/closed{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only/closed{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
