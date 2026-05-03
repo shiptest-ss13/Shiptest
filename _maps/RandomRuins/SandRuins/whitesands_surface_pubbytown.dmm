@@ -215,10 +215,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/whitesands/pubbytown/guard)
-"de" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/volt,
-/turf/open/floor/concrete/pavement/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "dg" = (
 /obj/item/storage/box{
 	pixel_x = -5;
@@ -394,13 +390,6 @@
 	icon_state = "wood-broken"
 	},
 /area/ruin/whitesands/pubbytown/shop)
-"fb" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "ff" = (
 /obj/effect/turf_decal/stairs{
 	dir = 6
@@ -1103,13 +1092,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/whitesands/pubbytown/wreck)
-"np" = (
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "nq" = (
 /obj/machinery/griddle,
 /turf/open/floor/plastic,
@@ -2106,13 +2088,6 @@
 /obj/structure/table/wood,
 /turf/open/floor/wood/walnut/whitesands,
 /area/ruin/whitesands/pubbytown/clinic)
-"zS" = (
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "zX" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2927,6 +2902,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/pubbytown/wreck)
 "GE" = (
@@ -3094,7 +3070,7 @@
 	},
 /area/ruin/whitesands/pubbytown/shop)
 "Iy" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/volt,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
 /turf/open/floor/wood,
 /area/ruin/whitesands/pubbytown/guard)
 "IA" = (
@@ -3359,10 +3335,6 @@
 	},
 /turf/open/floor/plating/rockplanet,
 /area/ruin/whitesands/pubbytown)
-"Li" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/whitesands/pubbytown/canteen)
 "Lj" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -3726,10 +3698,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/whitesands/pubbytown/cargo)
-"Qt" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/mineral/random/whitesands,
-/area/ruin/whitesands/pubbytown/cargo)
 "Qu" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
@@ -3746,8 +3714,14 @@
 	color = "#543C30";
 	dir = 8
 	},
-/obj/structure/displaycase/trophy,
-/obj/item/mob_trophy/broodmother_tongue,
+/obj/item/mob_trophy/broodmother_tongue{
+	pixel_x = 0;
+	pixel_y = 10
+	},
+/obj/structure/rack{
+	pixel_x = 0;
+	pixel_y = 5
+	},
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken3"
 	},
@@ -5392,8 +5366,8 @@ aZ
 aZ
 aZ
 dQ
-Qt
-Lm
+pG
+pG
 vX
 hh
 Qo
@@ -5407,7 +5381,7 @@ Ha
 Zs
 Zs
 Bw
-zS
+hn
 Bw
 DS
 DS
@@ -5452,8 +5426,8 @@ Ha
 Zs
 Zs
 Zs
-de
-np
+Jz
+Ow
 Ct
 DS
 kO
@@ -5499,7 +5473,7 @@ Ha
 Zs
 Bw
 tk
-ZW
+Ct
 Jz
 Bw
 SO
@@ -5544,7 +5518,7 @@ MQ
 MQ
 WM
 AO
-fb
+WM
 Jc
 MQ
 Jc
@@ -6323,7 +6297,7 @@ Jz
 Bw
 kp
 ch
-Li
+ch
 Dn
 Xi
 aZ
