@@ -228,13 +228,13 @@
 	ambience_index = AMBIENCE_SPOOKY
 	allow_weather = TRUE
 
-/area/outpost/external/rock
+/area/outpost/exterior/rock
 	name = "Exterior"
 	icon_state = "space"
 	ambience_index = AMBIENCE_DESERT
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 
-/area/outpost/external/rock/noweather
+/area/outpost/exterior/rock/noweather
 	name = "Exterior"
 	icon_state = "blue"
 	ambience_index = AMBIENCE_DESERT
