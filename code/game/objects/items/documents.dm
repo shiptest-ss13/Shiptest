@@ -65,6 +65,9 @@
 /obj/item/documents/frontier/logistics
 	desc = "\"Top Secret\" Frotiersmen Fleet documents. Filled with intelligence on local Frontiersmen supply lines, supply depot, and logistical infrastructure."
 
+/obj/item/documents/clip/research
+	desc = "Documents belonging to CLIP-LAND. Filled with complicated charts and spreadsheets on agricultural productivity and mineral deposits."
+
 /obj/item/documents/photocopy
 	desc = "A copy of some top-secret documents. Nobody will notice they aren't the originals... right?"
 	var/forgedseal = 0

@@ -821,6 +821,14 @@
 	build_path = /obj/item/restraints/handcuffs
 	category = list("initial", "Security")
 
+/datum/design/doorseal
+	name = "Pneumatic Seal"
+	id = "doorseal"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 5000)
+	build_path = /obj/item/door_seal
+	category = list("initial", "Security")
+
 /datum/design/evidencebag
 	name = "Evidence Bag"
 	id = "evidencebag"
