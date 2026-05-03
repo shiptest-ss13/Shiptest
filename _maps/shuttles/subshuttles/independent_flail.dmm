@@ -204,12 +204,6 @@
 	pixel_y = 8
 	},
 /obj/structure/bed/dogbed,
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Neutral");
-	name = "Hep";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. This one looks completely shitfaced.";
-	wander = 0
-	},
 /obj/item/reagent_containers/food/drinks/beer{
 	list_reagents = null;
 	pixel_x = 13;
@@ -222,6 +216,11 @@
 /obj/item/food/homemade_jerky{
 	pixel_x = -13;
 	pixel_y = -9
+	},
+/mob/living/simple_animal/hostile/asteroid/wolf/hound{
+	desc = "A mutt breed hailing from Sol, solarian hounds are known for their territorial attitude, large size and loyal nature. This one looks completely shitfaced.";
+	name = "Hep";
+	wander = 0
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)

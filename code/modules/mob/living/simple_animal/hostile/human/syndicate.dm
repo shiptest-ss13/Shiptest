@@ -275,6 +275,22 @@
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/commander
+	name = "Ramzi Clique Assassin"
+	desc = "Wicked knifepoint tracks your every impulse. Clean, black-red armor plate glides across itself, bereft of all sound or resistance."
+	icon_state = "syndicate_stormtrooper_knife"
+	icon_living = "syndicate_stormtrooper_knife"
+	name = "Ramzi Clique Stormtrooper"
+	maxHealth = 250
+	health = 250
+	projectile_deflect_chance = 0
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
+
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/commander/Aggro()
+	..()
+	summon_backup(4)
+	say("SICK 'EM!!")
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge
 	name = "Ramzi Clique Supercollider"

@@ -85,6 +85,17 @@
 "bB" = (
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/cave/explored)
+"bF" = (
+/obj/effect/turf_decal/industrial/warning/green{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/clip/bard{
+	pixel_x = 28;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/dynamitehole/medbay)
 "bN" = (
 /obj/effect/turf_decal/industrial/warning/green{
 	dir = 1
@@ -148,6 +159,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/medbay)
+"cg" = (
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "ci" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/trimline/opaque/red/line{
@@ -257,13 +272,16 @@
 /obj/structure/barricade/wooden/crude{
 	opacity = 1
 	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "gibbl2"
+	},
 /turf/open/floor/plating/moss,
 /area/ruin/unpowered/dynamitehole)
 "dp" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "hounddoor"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "hounddoor2"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/dogs)
 "dx" = (
@@ -490,6 +508,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/security)
+"gi" = (
+/obj/item/flashlight/lantern{
+	light_on = 1;
+	on = 1;
+	icon_state = "lantern-on";
+	pixel_x = 16;
+	pixel_y = -4
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "gn" = (
 /obj/effect/turf_decal/minutemen/corner{
 	dir = 8
@@ -549,12 +577,7 @@
 	dir = 10;
 	layer = 2.040
 	},
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Ramzi Clique");
-	name = "Solarian Hound";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. They are most certainly not loyal to you.";
-	wander = 0
-	},
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/unpowered/dynamitehole/dogs)
 "ha" = (
@@ -651,6 +674,10 @@
 "hH" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/transparent/blue/full,
+/obj/item/food/soup/mushroom{
+	pixel_x = -2;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "hN" = (
@@ -725,6 +752,13 @@
 	},
 /turf/open/floor/plating/asteroid/purple,
 /area/overmap_encounter/planetoid/cave/explored)
+"if" = (
+/obj/effect/decal/cleanable/blood{
+	dir = 5;
+	icon_state = "trails_2"
+	},
+/turf/open/floor/plating/moss,
+/area/ruin/unpowered/dynamitehole)
 "ii" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/table_frame,
@@ -772,6 +806,10 @@
 /obj/item/clothing/suit/toggle/labcoat{
 	pixel_x = -6;
 	pixel_y = 6
+	},
+/obj/item/reagent_containers/syringe/stasis{
+	pixel_x = 4;
+	pixel_y = 5
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/dynamitehole/medbay)
@@ -831,6 +869,13 @@
 "jt" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/dynamitehole/security)
+"jx" = (
+/obj/effect/decal/cleanable/blood{
+	dir = 10;
+	icon_state = "trails_2"
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/ruin/unpowered/dynamitehole)
 "jB" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/dynamitehole/dorms/two)
@@ -845,6 +890,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/dynamitehole/security)
+"jN" = (
+/obj/effect/mob_spawn/human/corpse/clip/minuteman,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "gibbl2"
+	},
+/turf/open/floor/plating/asteroid/basalt/lava,
+/area/ruin/unpowered/dynamitehole)
 "jT" = (
 /obj/structure/chair/bench/blue/directional/east,
 /obj/effect/turf_decal/corner/transparent/blue/full,
@@ -963,6 +1015,10 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
+"lQ" = (
+/obj/machinery/drill,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "lR" = (
 /obj/effect/turf_decal/minutemen/corner{
 	dir = 4
@@ -985,11 +1041,19 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/dogs)
+"mb" = (
+/obj/machinery/power/floodlight,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "mk" = (
 /obj/structure/barricade/wooden/crude{
 	opacity = 1
 	},
 /obj/structure/barricade/wooden,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "gibbl2"
+	},
+/obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/ruin/unpowered/dynamitehole)
 "ml" = (
@@ -1062,12 +1126,74 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/dynamitehole/living_quarters)
+"mJ" = (
+/obj/structure/closet/crate/trashcart,
+/obj/item/clothing/under/clip{
+	pixel_x = -7;
+	pixel_y = -6
+	},
+/obj/item/clothing/under/clip{
+	pixel_x = -7;
+	pixel_y = 2
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 4;
+	pixel_y = 3
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 2;
+	pixel_y = -8
+	},
+/obj/item/storage/backpack/satchel/sec/clip{
+	pixel_x = -7;
+	pixel_y = 1
+	},
+/obj/item/storage/backpack/satchel/sec/clip{
+	pixel_x = 9;
+	pixel_y = 5
+	},
+/obj/item/storage/backpack/satchel/sec/clip{
+	pixel_x = 9;
+	pixel_y = -5
+	},
+/obj/item/storage/backpack/satchel/sec/clip{
+	pixel_x = -7;
+	pixel_y = 10
+	},
+/obj/item/clothing/shoes/jackboots{
+	pixel_x = -9;
+	pixel_y = -8
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = -7;
+	pixel_y = -5
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 9;
+	pixel_y = -5
+	},
+/obj/item/clothing/shoes/jackboots{
+	pixel_x = 0;
+	pixel_y = -8
+	},
+/obj/item/clothing/shoes/jackboots{
+	pixel_x = 8;
+	pixel_y = -8
+	},
+/obj/item/clothing/under/clip/minutemen{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/turf/open/floor/plating/asteroid/purple,
+/area/ruin/unpowered/dynamitehole)
 "mK" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Documentation"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/grid,
@@ -1102,6 +1228,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/button/door{
+	pixel_x = 1;
+	pixel_y = 23;
+	id = "hounddoor1"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/unpowered/dynamitehole/dogs)
 "nh" = (
@@ -1132,6 +1263,16 @@
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/cave/explored)
+"nM" = (
+/obj/structure/closet/crate/miningcar,
+/obj/item/stack/ore/silver,
+/obj/item/stack/ore/silver,
+/obj/item/stack/ore/silver,
+/obj/item/stack/ore/silver,
+/obj/item/stack/ore/silver,
+/obj/item/stack/ore/silver,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "nY" = (
 /obj/structure/platform/industrial{
 	dir = 4
@@ -1144,6 +1285,15 @@
 	icon_state = "floor4-old"
 	},
 /obj/effect/decal/cleanable/blood/drip,
+/obj/structure/fluff/paper/stack,
+/obj/structure/fluff/paper/stack{
+	pixel_x = 11;
+	pixel_y = -9
+	},
+/obj/structure/fluff/paper/stack{
+	pixel_x = -6;
+	pixel_y = -9
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/unpowered/dynamitehole/medbay)
 "og" = (
@@ -1173,13 +1323,25 @@
 /turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/dynamitehole)
 "oo" = (
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Ramzi Clique");
-	name = "Solarian Hound";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. They are most certainly not loyal to you."
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
-/turf/open/floor/plating/asteroid/basalt/lava,
-/area/ruin/unpowered/dynamitehole)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/airlock/hatch{
+	name = "Washroom"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/unpowered/dynamitehole/living_quarters)
+"or" = (
+/obj/structure/closet/crate/miningcar,
+/obj/item/stack/sheet/mineral/diamond/twenty{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "ox" = (
 /obj/structure/barricade/sandbags,
 /obj/machinery/light/small/directional/north,
@@ -1247,6 +1409,9 @@
 	pixel_y = 30
 	},
 /turf/open/floor/concrete/pavement/lava,
+/area/ruin/unpowered/dynamitehole)
+"pm" = (
+/turf/open/floor/plating/asteroid/purple,
 /area/ruin/unpowered/dynamitehole)
 "pC" = (
 /turf/closed/mineral/random/volcanic,
@@ -1480,6 +1645,9 @@
 "rR" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "dynaresearch"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/medbay)
 "rS" = (
@@ -1550,16 +1718,27 @@
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "so" = (
 /obj/effect/decal/cleanable/blood/gibs,
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Ramzi Clique");
-	name = "Solarian Hound";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. They are most certainly not loyal to you.";
-	wander = 0
-	},
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi,
 /obj/effect/mob_spawn/human/corpse/pgf/skeleton_marine,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/dogs)
+"sC" = (
+/obj/structure/rack,
+/obj/item/flashlight/lantern{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/flashlight/lantern{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/obj/item/flashlight/lantern{
+	pixel_x = 9;
+	pixel_y = 6
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "sD" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1664,12 +1843,7 @@
 /turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/dynamitehole)
 "tt" = (
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Ramzi Clique");
-	name = "Solarian Hound";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. They are most certainly not loyal to you.";
-	wander = 0
-	},
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi,
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/ruin/unpowered/dynamitehole)
 "tB" = (
@@ -1721,6 +1895,14 @@
 /obj/item/brass_knuckles{
 	pixel_x = 12;
 	pixel_y = -3
+	},
+/obj/structure/fluff/paper/stack{
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/obj/structure/fluff/paper/stack{
+	pixel_x = 0;
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/unpowered/dynamitehole/medbay)
@@ -1776,15 +1958,11 @@
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/ruin/unpowered/dynamitehole)
 "uk" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "hounddoor"
-	},
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper{
-	name = "Ramzi Clique Houndmaster";
-	wander = 0
-	},
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "hounddoor1"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/dogs)
 "ul" = (
@@ -1885,6 +2063,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/commander{
+	name = "Ramzi Clique Houndmaster"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/unpowered/dynamitehole/dogs)
@@ -2231,7 +2412,8 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/hatch{
-	dir = 4
+	dir = 4;
+	name = "Dissection"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2294,12 +2476,20 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/unpowered/dynamitehole/living_quarters)
-"zZ" = (
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Ramzi Clique");
-	name = "Solarian Hound";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. They are most certainly not loyal to you."
+"zP" = (
+/obj/structure/rack,
+/obj/item/storage/box/flares{
+	pixel_x = -6;
+	pixel_y = 0
 	},
+/obj/item/storage/box/flares{
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
+"zZ" = (
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi,
 /turf/open/floor/plating/asteroid/purple,
 /area/overmap_encounter/planetoid/cave/explored)
 "Ag" = (
@@ -2413,7 +2603,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Dorm"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
@@ -2544,6 +2736,18 @@
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/food/homemade_jerky{
+	pixel_x = 3;
+	pixel_y = 0
+	},
+/obj/item/food/homemade_jerky{
+	pixel_x = 3;
+	pixel_y = -5
+	},
+/obj/item/food/homemade_jerky{
+	pixel_x = 1;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "Df" = (
@@ -2551,11 +2755,7 @@
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/ruin/unpowered/dynamitehole)
 "Dj" = (
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Ramzi Clique");
-	name = "Solarian Hound";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. They are most certainly not loyal to you."
-	},
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi,
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/ruin/unpowered/dynamitehole)
 "Dn" = (
@@ -2578,12 +2778,16 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "Ds" = (
 /obj/structure/table/chem,
-/obj/item/reagent_containers/syringe/stasis{
-	pixel_x = 3;
-	pixel_y = 12
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/directional/east,
+/obj/item/clipboard{
+	pixel_x = 5;
+	pixel_y = 2
+	},
+/obj/item/surgicaldrill{
+	pixel_x = -7;
+	pixel_y = 15
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/dynamitehole/medbay)
 "Dt" = (
@@ -2646,6 +2850,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/medbay)
+"Ec" = (
+/obj/structure/flora/ash/fern,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/cave/explored)
 "Ef" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -2749,6 +2957,10 @@
 	},
 /turf/open/floor/concrete/slab_1/lava,
 /area/ruin/unpowered/dynamitehole)
+"Gc" = (
+/obj/structure/flora/ash/cacti,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "Gi" = (
 /obj/machinery/shower{
 	pixel_x = 0;
@@ -2777,34 +2989,51 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/dogs)
+"Gs" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "gibbl2"
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor7"
+	},
+/turf/open/floor/plating/asteroid/basalt/lava,
+/area/ruin/unpowered/dynamitehole)
 "Gy" = (
 /obj/structure/closet/cabinet,
-/obj/machinery/light/small/directional/east,
 /obj/machinery/airalarm/directional/south,
-/obj/item/storage/backpack/satchel/sec/clip{
-	pixel_x = 9;
-	pixel_y = -5
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = -8;
+	pixel_y = -10
 	},
-/obj/item/storage/backpack/satchel/sec/clip{
-	pixel_x = 9;
-	pixel_y = 5
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = -3;
+	pixel_y = -10
 	},
-/obj/item/clothing/under/clip{
-	pixel_x = -7;
-	pixel_y = 2
+/obj/item/clothing/shoes/combat{
+	pixel_x = 7;
+	pixel_y = -9
 	},
-/obj/item/clothing/under/clip{
-	pixel_x = -7;
-	pixel_y = -6
+/obj/item/clothing/shoes/combat{
+	pixel_x = 7;
+	pixel_y = -3
 	},
-/obj/item/clothing/shoes/workboots/mining{
-	pixel_x = 2;
-	pixel_y = -8
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = -8;
+	pixel_y = 6
 	},
-/obj/item/clothing/shoes/workboots/mining{
-	pixel_x = 4;
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = -9;
+	pixel_y = -2
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = 8;
 	pixel_y = 3
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet/blue,
 /area/ruin/unpowered/dynamitehole/dorms)
 "GF" = (
@@ -2885,11 +3114,7 @@
 /turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/dynamitehole)
 "HI" = (
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Ramzi Clique");
-	name = "Solarian Hound";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. They are most certainly not loyal to you."
-	},
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi,
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "HL" = (
@@ -2927,6 +3152,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/living_quarters)
+"Id" = (
+/obj/structure/flora/ash/fern,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "Ig" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 1
@@ -3011,6 +3240,18 @@
 "Jb" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
+/obj/item/plate{
+	pixel_x = 0;
+	pixel_y = 3
+	},
+/obj/item/plate{
+	pixel_x = 0;
+	pixel_y = 5
+	},
+/obj/item/plate{
+	pixel_x = 0;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "Jr" = (
@@ -3117,8 +3358,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "Kv" = (
-/turf/open/floor/plating/asteroid/purple,
-/area/ruin/unpowered/dynamitehole)
+/obj/structure/flora/ash/cacti,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
 "KF" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	dir = 9
@@ -3132,8 +3374,20 @@
 	pixel_x = 1;
 	pixel_y = -26
 	},
+/obj/item/plate{
+	pixel_x = 0;
+	pixel_y = 4
+	},
+/obj/item/food/hotdog{
+	pixel_x = -1;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/living_quarters)
+"La" = (
+/obj/structure/ore_box,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "Lt" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -3141,37 +3395,37 @@
 /obj/structure/closet/cabinet,
 /obj/machinery/light/small/directional/west,
 /obj/machinery/airalarm/directional/south,
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = -7;
-	pixel_y = -5
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = -8;
+	pixel_y = -10
 	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 0;
-	pixel_y = -5
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = -3;
+	pixel_y = -10
 	},
-/obj/item/clothing/under/clip/minutemen{
-	pixel_x = 9;
-	pixel_y = -5
+/obj/item/clothing/shoes/combat{
+	pixel_x = 7;
+	pixel_y = -9
 	},
-/obj/item/clothing/shoes/jackboots{
+/obj/item/clothing/shoes/combat{
+	pixel_x = 7;
+	pixel_y = -3
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/clothing/head/ramzi/flap{
 	pixel_x = -9;
-	pixel_y = -8
+	pixel_y = -2
 	},
-/obj/item/clothing/shoes/jackboots{
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/item/clothing/shoes/jackboots{
+/obj/item/clothing/neck/shemagh/ramzi{
 	pixel_x = 8;
-	pixel_y = -8
+	pixel_y = 12
 	},
-/obj/item/storage/backpack/satchel/sec/clip{
-	pixel_x = -7;
-	pixel_y = 10
-	},
-/obj/item/storage/backpack/satchel/sec/clip{
-	pixel_x = -7;
-	pixel_y = 1
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = 8;
+	pixel_y = 3
 	},
 /turf/open/floor/carpet/blue,
 /area/ruin/unpowered/dynamitehole/dorms/two)
@@ -3266,12 +3520,7 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor7"
 	},
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Ramzi Clique");
-	name = "Solarian Hound";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. They are most certainly not loyal to you.";
-	wander = 0
-	},
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/ruin/unpowered/dynamitehole/dogs)
@@ -3376,6 +3625,11 @@
 	layer = 2.040
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	pixel_x = 1;
+	pixel_y = 23;
+	id = "hounddoor2"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/unpowered/dynamitehole/dogs)
 "Nw" = (
@@ -3464,7 +3718,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Washroom"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/grid,
@@ -3607,12 +3863,7 @@
 	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/blood/gibs/down,
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Ramzi Clique");
-	name = "Solarian Hound";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. They are most certainly not loyal to you.";
-	wander = 0
-	},
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi,
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
@@ -3623,19 +3874,27 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/hatch,
+/obj/machinery/door/poddoor/shutters{
+	id = "dynaresearch"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/medbay)
+"QR" = (
+/obj/item/flashlight/lantern{
+	light_on = 1;
+	on = 1;
+	icon_state = "lantern-on";
+	pixel_x = -16;
+	pixel_y = 4
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "QX" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "gibbl4"
 	},
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Ramzi Clique");
-	name = "Solarian Hound";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. They are most certainly not loyal to you.";
-	wander = 0
-	},
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi,
 /obj/effect/mob_spawn/human/corpse/pgf/downed_pilot,
 /turf/open/floor/plating,
 /area/ruin/unpowered/dynamitehole/dogs)
@@ -3699,11 +3958,12 @@
 /obj/effect/turf_decal/industrial/warning/green/corner{
 	dir = 4
 	},
-/obj/structure/sign/poster/clip/bard{
-	pixel_x = 0;
-	pixel_y = 32
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	pixel_x = 1;
+	pixel_y = 23;
+	id = "dynaresearch"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/medbay)
 "Sa" = (
@@ -3798,6 +4058,12 @@
 /mob/living/simple_animal/hostile/human/ramzi/civilian/towel,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/unpowered/dynamitehole/living_quarters)
+"SY" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "gibbl2"
+	},
+/turf/open/floor/plating/asteroid/basalt/lava,
+/area/ruin/unpowered/dynamitehole)
 "Tc" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -3806,7 +4072,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/hatch{
-	dir = 4
+	dir = 4;
+	name = "Showers"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3833,7 +4100,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/hatch{
-	dir = 4
+	dir = 4;
+	name = "Excavation Gear"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3855,14 +4123,9 @@
 /area/template_noop)
 "Tp" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "hounddoor"
+	id = "hounddoor1"
 	},
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Ramzi Clique");
-	name = "Solarian Hound";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. They are most certainly not loyal to you.";
-	wander = 0
-	},
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/dogs)
@@ -3906,15 +4169,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "TR" = (
-/obj/item/flashlight/lantern{
-	light_on = 1;
-	on = 1;
-	icon_state = "lantern-on";
-	pixel_x = 0;
-	pixel_y = 18
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -21;
+	pixel_y = 3;
+	id = "houndpit"
 	},
-/turf/open/floor/plating/asteroid/purple,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/floor/concrete/slab_1/lava,
+/area/ruin/unpowered/dynamitehole/dogs)
 "TX" = (
 /obj/effect/turf_decal/spline/plain/opaque/blue{
 	dir = 4
@@ -3943,6 +4205,17 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/security)
+"Ud" = (
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
+"Ue" = (
+/obj/effect/decal/cleanable/blood{
+	dir = 10;
+	icon_state = "trails_2"
+	},
+/turf/open/floor/plating/asteroid/basalt/lava,
+/area/ruin/unpowered/dynamitehole)
 "Uf" = (
 /obj/structure/platform/industrial/corner{
 	dir = 4
@@ -4010,6 +4283,12 @@
 	pixel_y = 0
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
 /turf/open/floor/plating,
 /area/ruin/unpowered/dynamitehole/medbay)
 "UU" = (
@@ -4043,6 +4322,16 @@
 "Vw" = (
 /turf/open/floor/concrete/pavement/lava,
 /area/ruin/unpowered/dynamitehole)
+"Vx" = (
+/obj/item/flashlight/lantern{
+	light_on = 1;
+	on = 1;
+	icon_state = "lantern-on";
+	pixel_x = 20;
+	pixel_y = -2
+	},
+/turf/open/floor/plating/asteroid/purple,
+/area/overmap_encounter/planetoid/cave/explored)
 "VC" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/end{
 	dir = 8
@@ -4084,14 +4373,9 @@
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "VO" = (
 /obj/effect/decal/cleanable/blood,
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "hounddoor"
-	},
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Ramzi Clique");
-	name = "Solarian Hound";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. They are most certainly not loyal to you.";
-	wander = 0
+	id = "hounddoor2"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/dogs)
@@ -4110,7 +4394,6 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "We" = (
-/obj/structure/closet/secure_closet/armorycage,
 /obj/effect/turf_decal/spline/plain/opaque/blue{
 	dir = 1
 	},
@@ -4125,6 +4408,9 @@
 /obj/item/storage/box/ammo/a12g_buckshot{
 	pixel_x = 0;
 	pixel_y = 3
+	},
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/security)
@@ -4206,11 +4492,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/dogs)
 "WE" = (
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Ramzi Clique");
-	name = "Solarian Hound";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. They are most certainly not loyal to you."
-	},
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "WJ" = (
@@ -4246,6 +4528,19 @@
 "WS" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/dynamitehole/engineering)
+"Xj" = (
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/cave/explored)
+"Xn" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/transparent/blue/diagonal,
+/obj/item/food/cornedbeef{
+	pixel_x = -9;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/unpowered/dynamitehole/living_quarters)
 "Xt" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -4435,12 +4730,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 5
 	},
-/mob/living/simple_animal/hostile/asteroid/wolf{
-	faction = list("Ramzi Clique");
-	name = "Solarian Hound";
-	desc = "A mutt breed hailing from sol, solarian hounds are known for their territorial attitude, large size and loyal nature. They are most certainly not loyal to you.";
-	wander = 0
-	},
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi,
 /obj/item/food/homemade_jerky{
 	pixel_x = 16;
 	pixel_y = -4
@@ -4477,6 +4767,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/living_quarters)
+"Zq" = (
+/obj/structure/closet/crate/miningcar,
+/obj/item/stack/ore/silver,
+/obj/item/stack/ore/silver,
+/obj/item/stack/ore/silver,
+/obj/item/stack/ore/silver,
+/obj/item/stack/ore/silver,
+/turf/open/floor/plating/asteroid/purple,
+/area/overmap_encounter/planetoid/cave/explored)
 "Zs" = (
 /mob/living/simple_animal/hostile/human/ramzi/melee/sawbones,
 /obj/effect/turf_decal/corner/transparent/blue/mono,
@@ -4490,6 +4789,13 @@
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
+"ZI" = (
+/obj/effect/decal/cleanable/blood{
+	dir = 10;
+	icon_state = "trails_2"
+	},
+/turf/open/floor/plating/moss,
+/area/ruin/unpowered/dynamitehole)
 "ZT" = (
 /obj/machinery/shower{
 	pixel_x = 0;
@@ -5496,7 +5802,7 @@ YU
 Oo
 Rd
 tl
-Oo
+oo
 vD
 rS
 sR
@@ -5539,7 +5845,7 @@ kh
 sR
 Yw
 Lz
-Jb
+Xn
 ql
 NG
 mB
@@ -5632,9 +5938,9 @@ kh
 kh
 kh
 kh
-Kv
-Kv
-cn
+mJ
+pm
+jN
 kh
 sR
 sR
@@ -5682,9 +5988,9 @@ kh
 kh
 kh
 kh
-ja
+pm
 OZ
-Kv
+pm
 zd
 kh
 kh
@@ -5731,8 +6037,8 @@ jt
 jt
 jt
 jt
-ja
-ja
+SY
+pm
 ja
 ja
 XM
@@ -5782,7 +6088,7 @@ SH
 ut
 jt
 ev
-ja
+Gs
 ev
 kh
 kh
@@ -5932,10 +6238,10 @@ jt
 qH
 jt
 jt
-Ym
-Ym
-ja
-ja
+if
+ZI
+Ue
+Ue
 Bt
 Bt
 kh
@@ -5983,10 +6289,10 @@ Ce
 qW
 jt
 Ym
-oo
+tt
 ja
 ja
-Bt
+jx
 kh
 kh
 Dj
@@ -6356,7 +6662,7 @@ Vw
 Vw
 fM
 fM
-Bi
+Id
 oh
 Bi
 Bi
@@ -6404,7 +6710,7 @@ Bt
 Bt
 Bt
 zb
-Bi
+cg
 Bi
 Bi
 Bi
@@ -6504,7 +6810,7 @@ gr
 Bt
 Bt
 gR
-Bi
+cg
 oh
 Bi
 Bi
@@ -7037,7 +7343,7 @@ Ba
 NC
 vF
 rR
-qs
+bF
 WM
 Ba
 iF
@@ -7229,7 +7535,7 @@ TG
 vE
 DH
 ma
-gO
+TR
 hX
 bB
 Mk
@@ -7590,10 +7896,10 @@ Mk
 Mk
 Mk
 Mk
-kh
-CC
-kh
-kh
+Fg
+Fg
+Fg
+Fg
 kh
 kh
 kh
@@ -7639,11 +7945,11 @@ kh
 kh
 Mk
 Lt
-kh
-CC
-CC
-kh
-kh
+Fg
+Fg
+La
+La
+lQ
 kh
 kh
 kh
@@ -7688,14 +7994,14 @@ CC
 CC
 kh
 Mk
-Cv
-kh
-CC
-kh
-kh
-kh
-kh
 Lt
+QR
+Lt
+Mk
+Lt
+gi
+kh
+kh
 jn
 nY
 nY
@@ -7737,15 +8043,15 @@ CC
 CC
 kh
 Fg
-TR
 Mk
-kh
-CC
-CC
-kh
-kh
-kh
+Mk
+Vx
 Lt
+Lt
+Lt
+Lt
+kh
+kh
 UU
 Fk
 bB
@@ -7789,13 +8095,13 @@ kh
 kh
 Lt
 Mk
+Fg
+Fg
+sC
+zP
+mb
 kh
-CC
-CC
-CC
 kh
-kh
-Lt
 UU
 bB
 bB
@@ -7839,13 +8145,13 @@ kh
 Mk
 Lt
 Mk
+Mk
+Fg
+Fg
+Fg
+Fg
 kh
-CC
-CC
-CC
-CC
 kh
-Lt
 UU
 bB
 bB
@@ -7890,10 +8196,10 @@ Mk
 Lt
 Mk
 Mk
+Mk
 kh
-CC
-CC
-CC
+kh
+kh
 kh
 Lt
 UU
@@ -8140,7 +8446,7 @@ kh
 kh
 kh
 kh
-Lt
+nM
 Mk
 Lt
 Lt
@@ -8474,7 +8780,7 @@ kh
 kh
 kh
 kh
-Lt
+Gc
 yo
 kh
 kh
@@ -8574,7 +8880,7 @@ kh
 kh
 kh
 fS
-yo
+Ud
 Pf
 Lt
 kh
@@ -8622,10 +8928,10 @@ kh
 kh
 kh
 kh
-yo
+Kv
 Pf
 yo
-yo
+Kv
 kh
 kh
 kh
@@ -8699,7 +9005,7 @@ kh
 kh
 kh
 Fg
-Mk
+Zq
 Lt
 Lt
 kh
@@ -8721,7 +9027,7 @@ Tn
 kh
 kh
 kh
-ij
+Ec
 ij
 fS
 yo
@@ -8773,7 +9079,7 @@ kh
 ij
 ij
 ij
-yo
+Ud
 Pf
 kh
 kh
@@ -8791,7 +9097,7 @@ Lt
 Lt
 Fg
 kh
-Lt
+or
 Lt
 kh
 kh
@@ -8821,7 +9127,7 @@ kh
 ij
 ij
 ij
-ij
+Ec
 kh
 kh
 kh
@@ -8869,7 +9175,7 @@ ij
 ij
 ij
 ij
-ij
+Xj
 ij
 ij
 kh
