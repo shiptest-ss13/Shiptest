@@ -139,16 +139,16 @@
 /mob/living/simple_animal/hostile/asteroid/wolf/hound //should get a sprite someday probably
 	name = "Solarian Hound"
 	desc = "A mutt breed hailing from Sol, solarian hounds are known for their territorial attitude, large size and loyal nature."
-	faction = FACTION_NEUTRAL
+	faction = list(FACTION_NEUTRAL)
 	maxHealth = 75
 	health = 75
 
 /mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi
 	name = "Solarian Hound"
 	desc = "A mutt breed hailing from Sol, solarian hounds are known for their territorial attitude, large size and loyal nature. This one is most certainly not loyal to you."
-	faction = FACTION_RAMZI
+	faction = list(FACTION_RAMZI)
 
 /mob/living/simple_animal/hostile/asteroid/wolf/hound/frontie
 	name = "Solarian Hound"
 	desc = "A mutt breed hailing from Sol, solarian hounds are known for their territorial attitude, large size and loyal nature. This one is most certainly not loyal to you."
-	faction = FACTION_FRONTIERSMEN
+	faction = list(FACTION_FRONTIERSMEN)
