@@ -4,13 +4,11 @@
 	prefix = "_maps/RandomRuins/LavaRuins/"
 	ruin_type = RUINTYPE_LAVA
 
-/datum/map_template/ruin/lavaland/biodome/winter
+/datum/map_template/ruin/lavaland/dynamitehole
 	name = "Solarian Winter Biodome"
-	id = "biodome-winter"
-	description = "A Solarian frontier research facility created by the Pionierskompanien \
-	This one seems to simulate the wintery climate of the northern provinces, including a sauna!"
-	suffix = "lavaland_surface_biodome_winter.dmm"
-	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_SHELTER)
+	id = "dynamite_hole"
+	description = "A CLIP-LAND research facility overtaken by ramzi, and excavating out the remainder of a cave to establish a base."
+	suffix = "lavaland_surface_dynamite_hole.dmm"
 
 /datum/map_template/ruin/lavaland/buried_shrine
 	name = "Buried Shrine"
