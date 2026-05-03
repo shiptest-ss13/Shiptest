@@ -469,7 +469,8 @@
 	l_hand = /obj/item/gun/ballistic/automatic/marksman/f90;
 	weapon_drop_chance = 100;
 	rapid = 2;
-	name = "Ramzi Clique Foreman"
+	name = "Ramzi Clique Foreman";
+	rapid_fire_delay = 6
 	},
 /turf/open/floor/concrete/slab_1/lava,
 /area/ruin/unpowered/dynamitehole/dogs)
@@ -2132,7 +2133,7 @@
 	},
 /obj/machinery/atmospherics/components/trinary/mixer/airmix{
 	dir = 4;
-	piping_layer = 2
+	piping_layer = 4
 	},
 /turf/open/floor/plating/lava,
 /area/ruin/unpowered/dynamitehole/engineering)
