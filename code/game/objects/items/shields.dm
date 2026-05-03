@@ -256,7 +256,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 
 	// It's a heavy shield. So it'll obviously weigh more, but it can certainly take more of a beating; as well as dish out some
-	slowdown = 1.50zs
+	slowdown = 1.50
 	drag_slowdown = 1.50
 	throwforce = 10
 	throw_range = 2

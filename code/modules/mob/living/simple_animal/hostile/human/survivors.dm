@@ -137,7 +137,7 @@
 	r_hand = /obj/item/gun/energy/e_gun/e11
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/volt
-	name = "Hermit Trooper"
+	name = "Hermit Militaman"
 	desc = "In spite of the harsh conditions, this hermit wields a shiny, well-maintained sharplite carbine. They keep a tight grip on it, as if it was a prized posession."
 	icon_state = "survivor_e11"
 	icon_living = "survivor_e11"
@@ -148,6 +148,40 @@
 	projectiletype = /obj/projectile/beam/laser/sharplite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/energy/sharplite/x12
+	retreat_distance = 2
+	minimum_distance = 2
+
+/mob/living/simple_animal/hostile/human/hermit/ranged/rush
+	name = "Hermit Broker"
+	desc = "This hermit hefts a shiny, well-maintained sharplite submachinegun. The confidence in their motion both a warning and a boast, they know how to use it!"
+	icon_state = "survivor_e11"
+	icon_living = "survivor_e11"
+	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
+	speed = 10
+	rapid = 5
+	rapid_fire_delay = 1
+	casingtype = null
+	projectiletype = /obj/projectile/beam/weak/sharplite
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	r_hand = /obj/item/gun/energy/sharplite/l305
+
+/mob/living/simple_animal/hostile/human/hermit/ranged/sarissa
+	name = "Hermit Sharpshooter"
+	desc = "With discipline impressive for the normally disorganized hermits, this one hefts a shiny, chrome, sharplite sniper rifle. They've been training for this moment."
+	icon_state = "survivor_e11"
+	icon_living = "survivor_e11"
+	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
+	casingtype = null
+	projectiletype = /obj/projectile/beam/laser/sharplite/sniper
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	r_hand = /obj/item/gun/energy/sharplite/al607
+	vision_range = 14
+	aggro_vision_range = 14
+	minimum_distance = 14
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/tesla_rifle
 	name = "Hermit Guardsman"
@@ -377,3 +411,40 @@
 	name = "Whitesands Survivor Jermit"
 	suit = /obj/item/clothing/suit/hooded/survivor/jermit
 	head = /obj/item/clothing/head/hooded/survivor_hood/jermit
+
+/mob/living/simple_animal/hostile/human/hermit/ranged/bodyguard
+	name = "The Bouncer"
+	desc = "A giant of a man clad in a reinforced survival suit, he seems ready to blast any tresspasser to bits at a moment's notice."
+	icon_state = "survivor_e11"
+	icon_living = "survivor_e11"
+	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
+	speed = 10
+	rapid = 5
+	rapid_fire_delay = 4
+	retreat_distance = 4
+	minimum_distance = 7
+	casingtype = null
+	projectiletype = /obj/projectile/beam/laser/assault/sharplite
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/bodyguard
+	r_hand = /obj/item/gun/energy/sharplite/al655
+	weapon_drop_chance = 100
+
+/obj/effect/mob_spawn/human/corpse/damaged/bodyguard
+	name = "The Bouncer"
+	mob_gender = MALE
+	outfit = /datum/outfit/bodyguard
+
+/datum/outfit/bodyguard
+	name = "The Bouncer"
+
+	uniform = /obj/item/clothing/under/color/random
+	back = /obj/item/storage/backpack
+	shoes = /obj/item/clothing/shoes/combat
+	suit = /obj/item/clothing/suit/hooded/survivor
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+	gloves = /obj/item/clothing/gloves/color/black
+	head = /obj/item/clothing/head/helmet/m10/warra
+	belt = /obj/item/storage/belt/security/military/frontiersmen
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	mask = /obj/item/clothing/mask/gas/sechailer
+
