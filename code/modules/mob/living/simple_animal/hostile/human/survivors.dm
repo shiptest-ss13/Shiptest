@@ -143,6 +143,7 @@
 	icon_living = "survivor_e11"
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	speed = 10
+	rapid = 2
 	rapid_fire_delay = 1
 	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/sharplite
@@ -164,10 +165,11 @@
 	projectiletype = /obj/projectile/beam/weak/sharplite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/energy/sharplite/l305
+	weapon_drop_chance = 100
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/sarissa
 	name = "Hermit Sharpshooter"
-	desc = "With discipline impressive for the normally disorganized hermits, this one hefts a shiny, chrome, sharplite sniper rifle. They've been training for this moment."
+	desc = "With discipline impressive for the normally disorganized hermits, this one hefts a shiny, chrome, sharplite sniper rifle. They've been training for this moment!"
 	icon_state = "survivor_e11"
 	icon_living = "survivor_e11"
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
@@ -175,6 +177,7 @@
 	projectiletype = /obj/projectile/beam/laser/sharplite/sniper
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/energy/sharplite/al607
+	weapon_drop_chance = 100
 	vision_range = 14
 	aggro_vision_range = 14
 	minimum_distance = 14
@@ -427,7 +430,7 @@
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/bodyguard
 	r_hand = /obj/item/gun/energy/sharplite/al655
-	weapon_drop_chance = 100
+	armor_base = /obj/item/clothing/suit/space/hardsuit/security
 
 /obj/effect/mob_spawn/human/corpse/damaged/bodyguard
 	name = "The Bouncer"
@@ -448,3 +451,25 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	mask = /obj/item/clothing/mask/gas/sechailer
 
+/mob/living/simple_animal/hostile/human/hermit/survivor/engineer
+	name = "The Engineer"
+	desc = "A scrawny Makosso-Warra assistant-engineer. Unarmed and utterly defenseless on their own, they seem oddly out of place."
+	icon_state = "warra"
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/engineer
+
+/obj/effect/mob_spawn/human/corpse/damaged/engineer
+	name = "The Engineer"
+	outfit = /datum/outfit/engineer
+
+/datum/outfit/engineer
+	name = "The Engineer"
+
+	uniform = /obj/item/clothing/under/warra/engineering
+	back = /obj/item/storage/backpack/duffelbag/engineering
+	shoes = /obj/item/clothing/shoes/workboots
+	suit = /obj/item/clothing/suit/warra/vest
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+	gloves = /obj/item/clothing/gloves/color/yellow
+	head = /obj/item/clothing/head/hardhat/warra
+	belt = /obj/item/storage/belt/utility/full/engi
+	mask = /obj/item/clothing/mask/breath

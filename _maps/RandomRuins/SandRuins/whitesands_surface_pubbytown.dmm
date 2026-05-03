@@ -6,15 +6,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "an" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "as" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -25,14 +28,18 @@
 	},
 /obj/structure/frame/machine,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "av" = (
 /obj/structure/fireplace{
 	pixel_x = -33;
 	pixel_y = 0
 	},
 /turf/open/floor/concrete/tiles/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
+"aM" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/concrete/pavement/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "aR" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -41,57 +48,78 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "aX" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
+"aZ" = (
+/turf/closed/mineral/random/whitesands,
+/area/ruin/whitesands/pubbytown)
 "ba" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/external{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
+"bs" = (
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
+/obj/item/restraints/handcuffs/cable/zipties/used,
+/obj/effect/decal/cleanable/blood/gibs/down,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/pubbytown)
 "by" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-9"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"bG" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/whitesands/pubbytown/engine)
+"bN" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/whitesands/pubbytown/canteen)
 "bO" = (
 /obj/item/flashlight/lantern{
 	pixel_x = 0;
 	pixel_y = 10;
 	light_on = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/tiles/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "bR" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "bS" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/hunter/sentry,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/tiles/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "bW" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/human/hermit/survivor/passive,
 /turf/open/floor/carpet/blue,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "bZ" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "ch" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "ck" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -105,7 +133,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "cn" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -113,8 +141,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "co" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -124,7 +152,7 @@
 	},
 /obj/machinery/portable_atmospherics/canister/toxins,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "cp" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -133,14 +161,14 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "ct" = (
 /obj/item/stack/ore/salvage/scraptitanium{
 	pixel_y = 8;
 	pixel_x = 6
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "cw" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -149,7 +177,7 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/dark/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
 "cx" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -159,27 +187,56 @@
 	id = "whiteship_windows"
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "cN" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
+"cR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/overmap_encounter/planetoid/sand/explored)
 "cZ" = (
 /obj/structure/table,
 /obj/item/stock_parts/cell/gun/sharplite/empty{
-	pixel_x = -6;
-	pixel_y = 1
+	pixel_x = 3;
+	pixel_y = 14
 	},
+/obj/item/stock_parts/cell/gun/sharplite/empty{
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
+"de" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/volt,
+/turf/open/floor/concrete/pavement/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"dg" = (
+/obj/item/storage/box{
+	pixel_x = -5;
+	pixel_y = 10
+	},
+/obj/item/stock_parts/micro_laser/high,
+/obj/item/stock_parts/micro_laser/high,
+/obj/item/stock_parts/micro_laser/high,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "di" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/plastic,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plastic,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "dm" = (
 /obj/item/flashlight/lantern{
 	pixel_x = 4;
@@ -196,7 +253,11 @@
 	icon_state = "5-8"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"dD" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/tiles/whitesands,
+/area/ruin/whitesands/pubbytown)
 "dF" = (
 /obj/structure/dresser{
 	dir = 4;
@@ -204,7 +265,10 @@
 	pixel_y = 0
 	},
 /turf/open/floor/carpet/red,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
+"dQ" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/whitesands/pubbytown/cargo)
 "dU" = (
 /obj/structure/rack{
 	pixel_x = 0;
@@ -235,7 +299,7 @@
 	pixel_y = 14
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "dW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/binary/pump{
@@ -246,21 +310,33 @@
 /obj/item/stack/sheet/mineral/wood/fifty,
 /obj/structure/closet/crate,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "ej" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken2"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "ek" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-2"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"eo" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/barricade/wooden/crude{
+	layer = 3.3;
+	opacity = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/guard)
 "eq" = (
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 4
@@ -269,18 +345,30 @@
 	icon_state = "5-10"
 	},
 /turf/open/floor/plasteel/white/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "ey" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bookcase,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "eD" = (
 /obj/effect/turf_decal/corner{
 	dir = 6
 	},
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
+"eQ" = (
+/obj/structure/chair/wood{
+	dir = 4;
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/whitesands/pubbytown/study)
 "eR" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 1;
@@ -288,30 +376,57 @@
 	pixel_y = 2
 	},
 /turf/open/floor/carpet/red,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
+"eT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/pubbytown/cargo)
 "eV" = (
 /obj/structure/chair/wood{
 	pixel_x = -4;
 	pixel_y = -1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
+"fb" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "ff" = (
 /obj/effect/turf_decal/stairs{
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "fk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 8
 	},
+/obj/item/stack/ore/salvage/scrapsilver/five{
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/obj/item/stack/ore/salvage/scrapsilver/five{
+	pixel_x = -7;
+	pixel_y = -4
+	},
+/obj/item/stack/ore/salvage/scraptitanium/five{
+	pixel_x = 4;
+	pixel_y = 1
+	},
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "fp" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -320,11 +435,14 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "fr" = (
 /turf/closed/wall/mineral/titanium,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "fA" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -339,30 +457,41 @@
 /obj/effect/turf_decal/number/nine{
 	dir = 4
 	},
-/obj/item/stock_parts/cell/hyper,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "fH" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
 /turf/open/floor/plasteel/white/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
+"fI" = (
+/obj/machinery/light/directional/south,
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/whitesands/pubbytown)
 "fK" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/sarissa,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/stock_parts/cell/gun/sharplite/empty{
+	pixel_x = -8;
+	pixel_y = -4
+	},
 /turf/open/floor/concrete/tiles/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "fO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/chair/plastic,
 /turf/open/floor/plastic,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "fP" = (
 /obj/structure/chair/wood{
 	dir = 1;
 	pixel_x = 2;
 	pixel_y = 10
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
 "fR" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
@@ -370,11 +499,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/human/hermit/survivor,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "fX" = (
 /obj/structure/chair/wood,
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "ge" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-1"
@@ -383,7 +512,7 @@
 	icon_state = "panelscorched";
 	initial_gas_mix = "ws_atmos"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "gg" = (
 /obj/structure/closet/crate/medical,
 /obj/item/storage/firstaid/fire,
@@ -391,7 +520,22 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/white/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
+"gj" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/barricade/wooden/crude{
+	layer = 3.3;
+	opacity = 1
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/guard)
+"gr" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/study)
 "gs" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -405,17 +549,17 @@
 	},
 /obj/structure/salvageable/machine,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "gu" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "gx" = (
 /obj/structure/railing/thin,
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "gy" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -423,10 +567,13 @@
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "gF" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -434,8 +581,11 @@
 	pixel_x = 0;
 	pixel_y = 0
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "gG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -444,30 +594,35 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "gL" = (
 /turf/open/floor/carpet/red,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
 "hh" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
 	},
+/obj/machinery/firealarm/directional/west,
+/obj/item/stack/ore/salvage/scrapmetal/five{
+	pixel_x = 8;
+	pixel_y = 10
+	},
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "hn" = (
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "ho" = (
 /turf/open/floor/concrete/tiles/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "hv" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -477,13 +632,13 @@
 	dir = 8
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "hz" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
-/turf/closed/wall/mineral/wood,
-/area/space)
+/turf/open/floor/plastic,
+/area/ruin/whitesands/pubbytown/canteen)
 "hW" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -492,8 +647,9 @@
 /obj/structure/flippedtable{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "ia" = (
 /obj/structure/chair/wood{
 	dir = 1;
@@ -501,46 +657,74 @@
 	pixel_y = 13
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "ih" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-78"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"ij" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 10
+	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plating/whitesands,
+/area/ruin/whitesands/pubbytown)
+"ik" = (
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "io" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "iw" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
 	},
 /turf/open/floor/carpet/blue,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
+"iC" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "shop";
+	pixel_x = -5;
+	pixel_y = 0
+	},
+/turf/closed/wall/mineral/sandstone,
+/area/ruin/whitesands/pubbytown/shop)
+"iP" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/clinic)
+"iU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/hermit/survivor,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "iW" = (
 /obj/structure/closet/crate/grave{
 	pixel_x = 2;
-	pixel_y = -4
-	},
-/obj/item/clothing/head/warra/beret{
-	pixel_x = 1;
-	pixel_y = 8
+	pixel_y = -4;
+	opened = 0
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "jb" = (
 /obj/structure/platform/wood_two,
+/obj/machinery/atmospherics/components/unary/passive_vent,
 /obj/structure/cable{
-	icon_state = "4-9"
+	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/stairs/wood/maple{
-	dir = 8
-	},
-/area/space)
+/turf/open/floor/wood/maple/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "jt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -554,7 +738,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/pod,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "jA" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
@@ -565,7 +749,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "jF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/railing{
@@ -576,14 +760,17 @@
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/human/hermit/ranged/volt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
+	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "jG" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "jK" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -591,17 +778,30 @@
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
+/mob/living/simple_animal/hostile/human/hermit/survivor,
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "jL" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/e11,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "jW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/secure/weapon,
+/obj/item/stock_parts/cell/gun/sharplite/plus/empty{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/item/stock_parts/cell/gun/empty{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/item/stock_parts/cell/gun/empty{
+	pixel_x = 6;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "kp" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-74"
@@ -610,17 +810,18 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "kv" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
 "kA" = (
 /obj/structure/girder,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "kL" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -629,40 +830,71 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "kM" = (
 /obj/structure/sign/warra/old{
 	pixel_x = -1;
 	pixel_y = 1
 	},
 /turf/closed/wall/mineral/wood,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"kO" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "kP" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating{
 	icon_state = "panelscorched";
 	initial_gas_mix = "ws_atmos"
 	},
-/area/space)
-"kU" = (
-/obj/machinery/power/apc/auto_name/directional/west{
-	start_charge = 0
+/area/ruin/whitesands/pubbytown/cargo)
+"kQ" = (
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
+/obj/item/restraints/handcuffs/cable/zipties/used,
+/obj/effect/decal/cleanable/ash/large,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/pubbytown)
+"kR" = (
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor3"
 	},
+/turf/open/floor/engine,
+/area/ruin/whitesands/pubbytown/cargo)
+"kU" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor/passive,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
 /turf/open/floor/carpet/red,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "kV" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
+"lj" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/whitesands/pubbytown)
 "ln" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-46"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"lw" = (
+/obj/effect/spawner/bunk_bed{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/whitesands/pubbytown/study)
 "ly" = (
 /obj/structure/platform/wood_two/corner{
 	dir = 4
@@ -671,13 +903,14 @@
 	icon_state = "5-10"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "lA" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-2"
 	},
-/turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "lB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -685,23 +918,27 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "lD" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
+"lF" = (
+/obj/structure/window/reinforced/fulltile,
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/study)
 "lI" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "lK" = (
-/obj/machinery/power/apc/auto_name/directional/east{
-	start_charge = 0
-	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -709,7 +946,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "lR" = (
 /obj/structure/barricade/wooden/crude{
 	layer = 3.22
@@ -718,17 +955,28 @@
 	icon_state = "panelscorched";
 	initial_gas_mix = "ws_atmos"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
+"lU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/dim/directional/east,
+/turf/open/floor/carpet/red,
+/area/ruin/whitesands/pubbytown/shop)
+"lV" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/whitesands/pubbytown/study)
 "mp" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "mt" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -736,13 +984,20 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "my" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/turf/template_noop,
+/area/template_noop)
+"mF" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/window/reinforced{
+	dir = 8
 	},
-/turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/whitesands,
+/area/ruin/whitesands/pubbytown)
 "mH" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -751,20 +1006,46 @@
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 1
 	},
-/turf/open/floor/plating/rust,
-/area/space)
-"mO" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/rush,
-/turf/open/floor/concrete/tiles/whitesands,
-/area/space)
-"mU" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/whitesands/pubbytown/cargo)
+"mO" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/rush,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/tiles/whitesands,
+/area/ruin/whitesands/pubbytown/shop)
+"mQ" = (
+/obj/machinery/computer/helm{
+	dir = 8;
+	layer = 3.3
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/button/door{
+	pixel_x = 0;
+	pixel_y = 24;
+	id = "frontiepod3"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/whitesands/pubbytown)
+"mR" = (
+/mob/living/simple_animal/hostile/human/hermit/survivor/passive,
 /turf/open/floor/carpet/red,
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
+"mU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/whitesands/pubbytown/canteen)
 "mW" = (
-/obj/machinery/light/directional/west,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -788,35 +1069,71 @@
 	pixel_y = 7
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
+"mZ" = (
+/obj/structure/platform/wood_two,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/unary/passive_vent,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"nj" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/barricade/wooden/crude{
+	layer = 3.3;
+	opacity = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/canteen)
 "nl" = (
 /obj/effect/spawner/bunk_bed{
 	pixel_x = 3;
 	pixel_y = 0
 	},
 /turf/open/floor/carpet/red,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "no" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/salvageable/computer{
 	dir = 8
 	},
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "np" = (
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
+/obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "nq" = (
 /obj/machinery/griddle,
 /turf/open/floor/plastic,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
+"nw" = (
+/turf/closed/wall/mineral/sandstone,
+/area/ruin/whitesands/pubbytown/house)
+"ny" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/whitesands,
+/area/ruin/whitesands/pubbytown)
 "nz" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor/passive,
+/obj/item/clothing/head/warra/beret{
+	pixel_x = 1;
+	pixel_y = 41
+	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "nB" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/spacecash/bundle/c1{
@@ -836,23 +1153,31 @@
 	pixel_y = 0
 	},
 /turf/open/floor/concrete/tiles/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "nG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flippedtable,
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "nP" = (
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "nQ" = (
 /obj/structure/railing/corner{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
+"nV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/turf/open/floor/wood,
+/area/ruin/whitesands/pubbytown/study)
 "od" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -862,7 +1187,11 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
+"oe" = (
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "oj" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -871,32 +1200,41 @@
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor6"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "oo" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/highsecurity,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "oq" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
+"oE" = (
+/turf/open/floor/carpet/red,
+/area/ruin/whitesands/pubbytown/study)
 "oF" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
 /turf/open/floor/engine/hull,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "oI" = (
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "oN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
@@ -905,13 +1243,17 @@
 	pixel_y = 14
 	},
 /turf/open/floor/plastic,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "oO" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-2"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"oR" = (
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "oS" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -919,54 +1261,80 @@
 /turf/open/floor/plasteel/stairs/wood/maple{
 	dir = 4
 	},
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"oX" = (
+/obj/structure/girder,
+/turf/open/floor/plating/whitesands,
+/area/ruin/whitesands/pubbytown)
+"pa" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/whitesands/pubbytown/guard)
 "pe" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "pi" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 1
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "pu" = (
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flippedtable{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
+"pw" = (
+/obj/machinery/door/airlock/wood{
+	dir = 8;
+	welded = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/canteen)
 "pE" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8;
 	color = "#D2BC9D"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "pG" = (
 /turf/closed/mineral/random/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
+"pN" = (
+/obj/structure/flora/tree/tall/whitesands,
+/turf/open/floor/engine/hull/reinforced,
+/area/overmap_encounter/planetoid/sand/explored)
 "pR" = (
-/turf/open/floor/plating{
-	icon_state = "platingdmg1";
-	initial_gas_mix = "ws_atmos"
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
-/area/space)
+/turf/open/floor/plastic,
+/area/ruin/whitesands/pubbytown/canteen)
 "pT" = (
 /obj/structure/crate_shelf/built,
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "pU" = (
 /obj/structure/closet/secure_closet/cabinet,
 /obj/item/clothing/suit/hooded/survivor/green{
@@ -989,15 +1357,49 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
+"pZ" = (
+/turf/open/floor/concrete/tiles/whitesands,
+/area/ruin/whitesands/pubbytown/house)
+"qd" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/barricade/wooden/crude{
+	layer = 3.3;
+	opacity = 1
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/house)
+"qg" = (
+/turf/closed/wall/mineral/sandstone,
+/area/overmap_encounter/planetoid/sand/explored)
+"ql" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/whitesands/pubbytown/study)
+"qm" = (
+/turf/closed/wall,
+/area/ruin/whitesands/pubbytown)
+"qn" = (
+/obj/structure/girder,
+/turf/open/floor/plating/whitesands{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/whitesands/pubbytown)
 "qz" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4;
 	color = "#D2BC9D"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "qG" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1005,8 +1407,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/dark/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
 "qN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/secure_closet/freezer/fridge{
@@ -1017,13 +1420,13 @@
 	icon_state = "platingdmg1";
 	initial_gas_mix = "ws_atmos"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "qW" = (
 /obj/structure/platform/wood_two/corner{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "qZ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1036,8 +1439,11 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "re" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -1045,14 +1451,26 @@
 	},
 /obj/structure/crate_shelf/built,
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "rj" = (
 /obj/structure/sign/warra/old{
 	pixel_x = -4;
 	pixel_y = 0
 	},
 /turf/closed/wall/mineral/wood,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"rm" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/whitesands/pubbytown/guard)
+"rs" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/barricade/wooden/crude{
+	layer = 3.3;
+	opacity = 1
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/canteen)
 "ru" = (
 /obj/structure/rack{
 	pixel_x = 0;
@@ -1075,7 +1493,7 @@
 	pixel_y = 10
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "rD" = (
 /obj/structure/dresser{
 	dir = 4;
@@ -1087,58 +1505,81 @@
 	dir = 1
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
+"rG" = (
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer,
+/obj/item/restraints/handcuffs/cable/zipties/used,
+/obj/effect/decal/cleanable/ash/large{
+	pixel_x = -2;
+	pixel_y = 0
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/pubbytown)
 "rT" = (
 /obj/structure/frame/machine,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
+"rV" = (
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/ruin/whitesands/pubbytown)
 "rW" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "rX" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
 "rY" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 2
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "rZ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "sd" = (
 /obj/item/flashlight/lantern{
 	light_on = 1
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"sg" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/barricade/sandbags,
+/turf/open/floor/concrete/pavement/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "so" = (
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "sq" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 5
 	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/white/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "ss" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-55"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "sv" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken7"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "sA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/wooden/crude{
@@ -1148,18 +1589,15 @@
 	icon_state = "panelscorched";
 	initial_gas_mix = "ws_atmos"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "sC" = (
 /obj/structure/closet/crate/grave{
 	pixel_x = 0;
-	pixel_y = -5
-	},
-/obj/item/clothing/head/warra/officer{
-	pixel_x = -1;
-	pixel_y = 7
+	pixel_y = -5;
+	opened = 0
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "sD" = (
 /obj/effect/turf_decal/industrial/caution,
 /obj/effect/decal/cleanable/dirt,
@@ -1175,25 +1613,25 @@
 	},
 /obj/structure/salvageable/circuit_imprinter,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "sU" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
-	id = "s1"
+	id = "d1h"
 	},
-/obj/machinery/door/poddoor/shutters,
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor,
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "sV" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-6"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "sW" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -1202,20 +1640,28 @@
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken3"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
+"td" = (
+/turf/closed/mineral/random/whitesands,
+/area/ruin/whitesands/pubbytown/house)
 "tk" = (
 /obj/structure/cable{
 	icon_state = "5-10"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"tl" = (
+/obj/effect/spawner/bunk_bed,
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/carpet/red,
+/area/ruin/whitesands/pubbytown/canteen)
 "tv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "tB" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
@@ -1226,11 +1672,12 @@
 	pixel_y = 8
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "tR" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "uh" = (
 /obj/structure/chair/wood{
 	dir = 1;
@@ -1238,37 +1685,72 @@
 	pixel_y = 10
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
 "ul" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	pixel_x = -5;
+	pixel_y = 23;
+	id = "d1"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 5;
+	pixel_y = 21;
+	id = "d1h"
+	},
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "up" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
 	id = "whiteship_windows"
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "uB" = (
 /turf/template_noop,
 /area/space)
+"uK" = (
+/obj/item/clothing/head/warra/officer{
+	pixel_x = -1;
+	pixel_y = 39
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/ruin/whitesands/pubbytown)
 "uW" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
+"vb" = (
+/obj/machinery/atmospherics/components/unary/passive_vent,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "vc" = (
 /obj/structure/platform/wood_two/corner{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "vv" = (
 /obj/structure/table/wood,
+/obj/item/storage/box/ammo/a762_40{
+	pixel_x = 3;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/a762_40{
+	pixel_x = -9;
+	pixel_y = 11
+	},
+/obj/item/ammo_box/a762_stripper/empty{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
 "vw" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -1281,10 +1763,15 @@
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken3"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
 "vB" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
+"vH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "vL" = (
 /obj/structure/railing{
 	dir = 8
@@ -1295,26 +1782,19 @@
 	},
 /obj/structure/salvageable/protolathe,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "vO" = (
 /obj/effect/decal/cleanable/generic,
 /obj/structure/chair/office/light{
 	dir = 8
 	},
 /turf/open/floor/carpet/blue,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "vW" = (
-/obj/item/flashlight/lantern{
-	pixel_x = 9;
-	pixel_y = -2;
-	light_on = 1
-	},
-/obj/item/stock_parts/cell/gun/sharplite/empty{
-	pixel_x = 0;
-	pixel_y = -2
-	},
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/hermit/ranged/sarissa,
 /turf/open/floor/concrete/tiles/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "vX" = (
 /obj/machinery/light/directional/west,
 /obj/structure/table/reinforced,
@@ -1322,14 +1802,18 @@
 	pixel_x = -2;
 	pixel_y = 8
 	},
+/obj/item/stack/ore/salvage/scrapbluespace/five{
+	pixel_x = -4;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "vZ" = (
 /obj/structure/platform/wood_two{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "wa" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-2"
@@ -1338,16 +1822,16 @@
 	light_on = 1
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "wn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/blue,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "ww" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/blue,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "wL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
@@ -1372,34 +1856,43 @@
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "wV" = (
 /obj/structure/rack,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "xa" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 8
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "xc" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-5"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"xh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/red,
+/area/ruin/whitesands/pubbytown/house)
+"xv" = (
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/wood,
+/area/ruin/whitesands/pubbytown/study)
 "xy" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken6"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
 "xz" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/salvageable/machine,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "xA" = (
 /obj/effect/turf_decal/industrial/caution,
 /obj/structure/railing/corner{
@@ -1409,13 +1902,13 @@
 	dir = 1
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "xH" = (
 /obj/structure/table/reinforced,
-/obj/machinery/power/apc/auto_name/directional/north{
-	start_charge = 0
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1432,7 +1925,17 @@
 	pixel_y = 12
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
+"xQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/walnut/whitesands,
+/area/ruin/whitesands/pubbytown/house)
+"xS" = (
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/whitesands/pubbytown)
+"xX" = (
+/turf/closed/wall/mineral/sandstone,
+/area/ruin/whitesands/pubbytown/study)
 "xY" = (
 /obj/item/flashlight/lantern{
 	pixel_x = -12;
@@ -1442,7 +1945,12 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"yb" = (
+/mob/living/simple_animal/hostile/human/hermit/survivor/passive,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/red,
+/area/ruin/whitesands/pubbytown/shop)
 "yc" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30";
@@ -1451,16 +1959,28 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken6"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
+"yi" = (
+/obj/effect/spawner/bunk_bed{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/red,
+/area/ruin/whitesands/pubbytown/shop)
 "yj" = (
 /obj/machinery/light/built/directional/north,
 /obj/structure/table_frame,
 /obj/effect/turf_decal/corner,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
+"yk" = (
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/ruin/whitesands/pubbytown)
 "yl" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -1469,8 +1989,11 @@
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 8
+	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "ym" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
@@ -1478,14 +2001,15 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/salvageable/safe_server,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "yq" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood/corner,
+/mob/living/simple_animal/hostile/human/hermit/survivor/passive,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "yt" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -1500,27 +2024,45 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "yx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
+/obj/item/stock_parts/cell/gun/sharplite/empty{
+	pixel_x = -4;
+	pixel_y = 7
+	},
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "yK" = (
 /obj/item/stack/ore/salvage/scraptitanium{
 	pixel_x = 8
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"yO" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "yU" = (
 /obj/machinery/firealarm/directional/south,
 /obj/structure/dresser{
 	dir = 1
 	},
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
 /turf/open/floor/carpet/red,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
+"yX" = (
+/turf/open/floor/plating,
+/area/ruin/whitesands/pubbytown/wreck)
 "zf" = (
 /obj/structure/closet/secure_closet/cabinet,
 /obj/item/clothing/suit/hooded/survivor/yellow{
@@ -1531,41 +2073,46 @@
 	pixel_x = 2;
 	pixel_y = -2
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "zi" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor/passive,
 /turf/open/floor/carpet/red,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "zq" = (
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/whitesands/pubbytown/study)
 "zI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
+"zJ" = (
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/pubbytown)
 "zL" = (
 /obj/structure/sign/poster/radio/random{
 	pixel_x = 0;
 	pixel_y = -1
 	},
 /turf/closed/wall/mineral/sandstone,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "zP" = (
 /obj/structure/table/wood,
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "zS" = (
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
-/turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "zX" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1580,14 +2127,17 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "Ad" = (
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Ai" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1596,7 +2146,7 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "Ak" = (
 /obj/structure/closet/crate/bin,
 /obj/item/trash/pistachios{
@@ -1610,16 +2160,17 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
+"Ap" = (
+/obj/machinery/atmospherics/components/unary/passive_vent,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/pubbytown/wreck)
 "AA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plastic,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "AD" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/fancy/donut_box{
-	pixel_y = 2
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -1630,15 +2181,38 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/east,
+/obj/item/paper/crumpled/fluff/ruin{
+	pixel_x = -5;
+	pixel_y = 2;
+	name = "update";
+	default_raw_text = "Yet another frontiersman attack, we've been here for almost eight years now, and they still won't leave us alone. I'm just glad the guns seem to be holding up. Everyone's been more on edge, recently. There's been more and more traffic in the sector, I've told the town that if anyone lands, they should make get arms ready and board windows, but don't go picking a fight unless they get close. I hope level heads will see a well-armed town and stay away, but.. I just have to hope it's all enough."
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
+"AG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/pubbytown/cargo)
 "AH" = (
+/obj/machinery/button/door{
+	pixel_x = -5;
+	pixel_y = -23;
+	id = "d1";
+	dir = 1
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 6;
+	pixel_y = -21;
+	id = "d1h";
+	dir = 1
+	},
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "AJ" = (
 /obj/structure/sign/warra/old,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "AN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flippedtable,
@@ -1646,7 +2220,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "AO" = (
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -1657,8 +2231,13 @@
 /obj/structure/cable{
 	icon_state = "1-5"
 	},
-/turf/open/floor/plating/asteroid/whitesands,
-/area/space)
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"AU" = (
+/obj/machinery/light/dim/directional/east,
+/obj/structure/flippedtable,
+/turf/open/floor/wood,
+/area/ruin/whitesands/pubbytown/guard)
 "AV" = (
 /obj/structure/table,
 /obj/machinery/recharger{
@@ -1669,8 +2248,25 @@
 	pixel_x = 6;
 	pixel_y = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/neck/dogtag/frontier{
+	pixel_x = 22;
+	pixel_y = 10
+	},
+/obj/item/clothing/neck/dogtag/frontier{
+	pixel_x = 19;
+	pixel_y = 5
+	},
+/obj/item/clothing/neck/dogtag/frontier{
+	pixel_x = 23;
+	pixel_y = 0
+	},
+/obj/item/clothing/neck/dogtag/frontier{
+	pixel_x = 20;
+	pixel_y = -4
+	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
 "AZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1681,35 +2277,73 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
+"Ba" = (
+/obj/item/ammo_box/a762_stripper{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/tiles/whitesands,
+/area/ruin/whitesands/pubbytown)
+"Bb" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
+/turf/open/floor/wood/walnut/whitesands,
+/area/ruin/whitesands/pubbytown/house)
 "Bd" = (
 /obj/machinery/camera/autoname{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/structure/extinguisher_cabinet/directional/west,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/hostile/asteroid/goliath/pup{
+	faction = list("hermit","neutral");
+	name = "Lawrence";
+	desc = "An immature goliath. Goliaths at this stage of life lack fully-developed tendrils, and are reliant on their parents to unearth and supply food. This one seems like quite a pleasant pet."
+	},
 /turf/open/floor/carpet/blue,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "Bi" = (
 /obj/machinery/door/airlock/glass,
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
+"Bj" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/walnut/whitesands,
+/area/ruin/whitesands/pubbytown/shop)
 "Bq" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 4
 	},
 /mob/living/simple_animal/hostile/human/hermit/survivor/passive,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
+"Br" = (
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor6"
+	},
+/turf/open/floor/engine,
+/area/ruin/whitesands/pubbytown/cargo)
 "Bw" = (
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "By" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/barricade/wooden/crude{
@@ -1717,13 +2351,13 @@
 	opacity = 1
 	},
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "Bz" = (
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "BB" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -1734,13 +2368,13 @@
 	dir = 4
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "BD" = (
 /obj/structure/platform/wood_two{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "BH" = (
 /obj/structure/railing/thin{
 	dir = 4
@@ -1752,7 +2386,30 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/stairs/wood/maple,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"BM" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "frontiepod3"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/whitesands/pubbytown)
+"BN" = (
+/obj/structure/chair/wood,
+/obj/machinery/light/dim/directional/east,
+/turf/open/floor/wood,
+/area/ruin/whitesands/pubbytown/study)
+"BU" = (
+/obj/machinery/door/airlock/wood,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/house)
 "Cg" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
@@ -1768,7 +2425,7 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "Cm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/caution{
@@ -1778,14 +2435,18 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
+"Co" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/whitesands/pubbytown/study)
 "Cs" = (
 /obj/structure/table,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "Ct" = (
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Cw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
@@ -1798,14 +2459,14 @@
 	pixel_y = 0
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "CA" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30";
 	dir = 1
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
 "CK" = (
 /obj/structure/chair/wood{
 	dir = 4;
@@ -1816,46 +2477,81 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30"
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 8
+	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
+"CS" = (
+/obj/structure/closet/secure_closet/cabinet{
+	pixel_x = -2;
+	pixel_y = 1
+	},
+/obj/item/clothing/suit/hooded/survivor/yellow{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/clothing/suit/hooded/survivor/brown{
+	pixel_x = -8;
+	pixel_y = 0
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 2;
+	pixel_y = 8
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 2;
+	pixel_y = -1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/whitesands/pubbytown/guard)
+"Dc" = (
+/obj/item/ammo_casing/spent/slug/buck,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "frontiepod3"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/whitesands/pubbytown)
 "Dg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/emcloset/wall/directional/south,
 /obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "Di" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-141"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Dn" = (
 /obj/structure/chair/plastic,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1";
 	initial_gas_mix = "ws_atmos"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "Do" = (
 /obj/machinery/door/airlock/external{
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "Dt" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Dx" = (
 /obj/item/radio/intercom/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/dresser,
 /turf/open/floor/carpet/blue,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "DB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/caution{
@@ -1863,32 +2559,32 @@
 	},
 /mob/living/simple_animal/hostile/human/hermit/ranged/bodyguard,
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "DF" = (
 /obj/structure/railing/thin,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "DQ" = (
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "DS" = (
-/obj/structure/chair/wood{
-	dir = 1;
-	pixel_x = 4;
-	pixel_y = 10
-	},
-/turf/open/floor/wood,
-/area/space)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"DT" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "DY" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D";
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "Ea" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1901,7 +2597,7 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "Eb" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1910,14 +2606,22 @@
 /obj/machinery/portable_atmospherics/canister/toxins,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
+"Ed" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/barricade/wooden/crude{
+	layer = 3.3;
+	opacity = 1
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/study)
 "Ef" = (
 /obj/structure/platform/wood_two,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Eh" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1925,11 +2629,20 @@
 /turf/open/floor/plasteel/stairs/wood/maple{
 	dir = 8
 	},
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"Ei" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/pubbytown)
+"Ek" = (
+/obj/effect/spawner/bunk_bed,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/red,
+/area/ruin/whitesands/pubbytown/house)
 "Em" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "Et" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
@@ -1943,20 +2656,26 @@
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "Eu" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "Ew" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30";
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "EA" = (
 /obj/structure/bookcase/manuals/chemistry{
 	pixel_x = 0;
@@ -1965,11 +2684,17 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken2"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "EG" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /turf/open/floor/plastic,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
+"EH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/walnut/whitesands{
+	icon_state = "wood-broken6"
+	},
+/area/ruin/whitesands/pubbytown/shop)
 "ET" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1978,11 +2703,23 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
+"EY" = (
+/obj/machinery/door/airlock/wood{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/clinic)
 "Fc" = (
 /obj/machinery/door/airlock/wood,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "Fh" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -2010,7 +2747,24 @@
 	pixel_y = -1
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
+"Fj" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 2
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/wood/walnut/whitesands,
+/area/ruin/whitesands/pubbytown/clinic)
+"Fm" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
+/turf/open/floor/concrete/tiles/whitesands,
+/area/ruin/whitesands/pubbytown/shop)
 "Fn" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2019,7 +2773,7 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 8
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "Fo" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/structure/sign/poster/official/random{
@@ -2029,45 +2783,30 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "Fq" = (
 /obj/machinery/door/airlock/hatch{
 	locked = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "Fy" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/cabinet{
-	pixel_x = -2;
-	pixel_y = 1
-	},
-/obj/item/clothing/suit/hooded/survivor/yellow{
-	pixel_x = -8;
-	pixel_y = 6
-	},
-/obj/item/clothing/suit/hooded/survivor/brown{
-	pixel_x = -8;
-	pixel_y = 0
-	},
-/obj/item/clothing/shoes/workboots/mining{
-	pixel_x = 2;
-	pixel_y = 8
-	},
-/obj/item/clothing/shoes/workboots/mining{
-	pixel_x = 2;
-	pixel_y = -1
-	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
 "FA" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "FB" = (
 /obj/structure/railing/thin{
 	dir = 8
@@ -2079,7 +2818,7 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/stairs/wood/maple,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "FF" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -2088,7 +2827,7 @@
 	pixel_y = 0
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
 "FM" = (
 /obj/structure/safe/floor,
 /obj/item/spacecash/bundle/smallrand{
@@ -2116,7 +2855,7 @@
 	pixel_y = 3
 	},
 /turf/open/floor/concrete/tiles/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "FP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2125,11 +2864,11 @@
 	dir = 2
 	},
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "FQ" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "FY" = (
 /obj/item/flashlight/lantern{
 	pixel_x = -9;
@@ -2137,17 +2876,22 @@
 	light_on = 1
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Ga" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-29"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"Ge" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Gf" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
 "Gi" = (
 /obj/item/stack/ore/salvage/scrapmetal/five{
 	pixel_y = -12;
@@ -2157,22 +2901,22 @@
 	icon_state = "lattice-4"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Gl" = (
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "Go" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor/passive,
 /turf/open/floor/carpet/blue,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "Gp" = (
-/obj/machinery/door/poddoor/shutters,
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/poddoor,
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "GA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2180,8 +2924,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/wrapping,
 /obj/effect/decal/cleanable/plastic,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
+"GE" = (
+/obj/effect/spawner/bunk_bed,
+/turf/open/floor/carpet/red,
+/area/ruin/whitesands/pubbytown/study)
 "GF" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-11"
@@ -2190,9 +2941,8 @@
 	icon_state = "platingdmg1";
 	initial_gas_mix = "ws_atmos"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "GG" = (
-/obj/machinery/door/poddoor/shutters,
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2203,8 +2953,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/door/poddoor,
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "GH" = (
 /obj/structure/dresser{
 	dir = 4;
@@ -2215,49 +2966,85 @@
 	color = "#543C30";
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
+"GI" = (
+/obj/item/ammo_casing/spent/slug/buck,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "frontiepod3"
+	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/whitesands/pubbytown)
 "GK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /turf/open/floor/plastic,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "GS" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/human/hermit/survivor,
 /turf/open/floor/plastic,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "GW" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "Ha" = (
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Hb" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
+/obj/item/stack/ore/salvage/scrapuranium{
+	pixel_x = 7;
+	pixel_y = -1
+	},
+/obj/item/stack/ore/salvage/scrapuranium{
+	pixel_x = -6;
+	pixel_y = -5
+	},
+/obj/item/stack/ore/salvage/scrapuranium/five{
+	pixel_x = -6;
+	pixel_y = 6
+	},
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "Ho" = (
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "Hq" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-21"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Ht" = (
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
+"HJ" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/wood/walnut/whitesands,
+/area/ruin/whitesands/pubbytown/clinic)
 "HQ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
 	color = "#D2BC9D"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "If" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2265,34 +3052,57 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "Ig" = (
 /turf/open/floor/plastic,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
+"Ij" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Ik" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "In" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/warraspaceworks_small/left{
 	dir = 4
 	},
+/obj/structure/closet/crate/secure/plasma,
+/obj/item/stack/sheet/mineral/plasma/fifty,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "It" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30";
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken7"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
+"Iy" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/volt,
+/turf/open/floor/wood,
+/area/ruin/whitesands/pubbytown/guard)
+"IA" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/whitesands/pubbytown)
 "IC" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
@@ -2301,15 +3111,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "IP" = (
 /obj/structure/chair/wood{
 	dir = 4;
 	pixel_x = 6;
 	pixel_y = 2
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "IQ" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -2319,37 +3132,51 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "IR" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
-	id = "s1"
+	id = "d1h"
 	},
-/obj/machinery/door/poddoor/shutters,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/door/poddoor,
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "IU" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
+"IV" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 1
+	},
+/turf/open/floor/wood/walnut/whitesands,
+/area/ruin/whitesands/pubbytown/house)
 "Jb" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "Jc" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/concrete/pavement/whitesands/lit,
-/area/space)
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Ji" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -2363,24 +3190,29 @@
 	},
 /obj/structure/frame/machine,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
+"Jk" = (
+/obj/machinery/atmospherics/components/unary/passive_vent,
+/mob/living/simple_animal/hostile/human/hermit/survivor/engineer,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/pubbytown/cargo)
 "Jz" = (
 /turf/open/floor/concrete/pavement/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "JI" = (
 /obj/structure/chair/wood{
 	dir = 8;
 	pixel_x = -8;
 	pixel_y = 3
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
 "JP" = (
-/obj/structure/cable{
-	icon_state = "6-9"
-	},
+/obj/structure/railing/thin,
 /turf/open/floor/concrete/pavement/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "JY" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -2389,41 +3221,61 @@
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "Ke" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor/passive,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
+"Kf" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood/walnut/whitesands,
+/area/ruin/whitesands/pubbytown/house)
 "Kh" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken3"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
+"Kk" = (
+/obj/structure/chair/wood{
+	dir = 1;
+	pixel_x = 4;
+	pixel_y = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/whitesands/pubbytown/study)
 "Kt" = (
 /obj/structure/platform/wood_two/corner{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Ky" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "KB" = (
 /obj/effect/spawner/bunk_bed,
 /turf/open/floor/carpet/red,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "KG" = (
 /obj/structure/sign/warra/old{
 	pixel_x = 3;
 	pixel_y = 0
 	},
 /turf/closed/wall/mineral/wood,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "KI" = (
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -2432,13 +3284,14 @@
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/industrial/outline/red,
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "KK" = (
 /obj/structure/cable{
 	icon_state = "5-10"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "KO" = (
 /obj/structure/dresser{
 	dir = 4;
@@ -2446,19 +3299,70 @@
 	pixel_y = 0
 	},
 /turf/open/floor/carpet/red,
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
+"KQ" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/frame/machine,
+/obj/item/stock_parts/micro_laser/high,
+/obj/item/stock_parts/capacitor/adv{
+	pixel_x = -9;
+	pixel_y = -3
+	},
+/obj/item/stock_parts/capacitor/adv{
+	pixel_x = 8;
+	pixel_y = 0
+	},
+/obj/item/stock_parts/capacitor/adv{
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/turf/open/floor/plating/rockplanet,
+/area/ruin/whitesands/pubbytown)
 "KS" = (
 /obj/structure/platform/wood_two,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "KT" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stack/ore/salvage/scrapmetal/five{
+	pixel_x = -7;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
+"Lg" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/frame/machine,
+/obj/item/stock_parts/micro_laser/high{
+	pixel_x = 5;
+	pixel_y = 0
+	},
+/obj/item/stock_parts/micro_laser/high{
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/obj/item/stock_parts/capacitor/adv{
+	pixel_x = 3;
+	pixel_y = -5
+	},
+/obj/item/stock_parts/capacitor/adv{
+	pixel_x = 6;
+	pixel_y = 11
+	},
+/obj/item/stock_parts/capacitor/adv{
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/turf/open/floor/plating/rockplanet,
+/area/ruin/whitesands/pubbytown)
 "Li" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "Lj" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -2469,67 +3373,91 @@
 	},
 /obj/structure/frame/machine,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
+"Lk" = (
+/obj/effect/mob_spawn/human/corpse/frontier/ranged,
+/obj/item/restraints/handcuffs/cable/zipties/used,
+/obj/effect/decal/cleanable/ash/large{
+	pixel_x = -4;
+	pixel_y = 1
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/pubbytown)
 "Lm" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/mineral/random/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "Ls" = (
-/obj/item/stack/ore/salvage/scraptitanium,
-/turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/barricade/wooden/crude{
+	layer = 3.3;
+	opacity = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/shop)
+"Lv" = (
+/turf/closed/mineral/random/whitesands,
+/area/ruin/whitesands/pubbytown/guard)
+"Lz" = (
+/turf/closed/wall/mineral/sandstone,
+/area/ruin/whitesands/pubbytown/guard)
 "LD" = (
 /obj/structure/sign/poster/radio/random{
 	pixel_x = -4;
 	pixel_y = 1
 	},
 /turf/closed/wall/mineral/sandstone,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "LG" = (
 /turf/closed/wall/mineral/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "LK" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 1
 	},
 /mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken4"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
 "LM" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "LQ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plastic,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "LU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/chair/plastic{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
 	},
 /turf/open/floor/plastic,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "LW" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 1
 	},
 /turf/open/floor/carpet/red,
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
 "LX" = (
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Md" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -2540,13 +3468,13 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "Mi" = (
 /obj/structure/platform/wood_two{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Ml" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -2554,62 +3482,115 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "Mr" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-141"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Mz" = (
 /obj/structure/table/optable,
 /turf/open/floor/plasteel/white/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
+"MD" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/barricade/wooden/crude{
+	layer = 3.3;
+	opacity = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/house)
 "MK" = (
 /obj/structure/flippedtable,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
 "MQ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"MZ" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Np" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
+"Nu" = (
+/obj/structure/table/wood,
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/wood/walnut/whitesands,
+/area/ruin/whitesands/pubbytown/shop)
 "Nz" = (
 /obj/structure/platform/wood_two/corner,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "NI" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/office/light{
 	dir = 4
 	},
+/obj/item/stack/ore/salvage/scrapgold/five{
+	pixel_x = 10;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
+"NT" = (
+/obj/item/clothing/head/warra/beret/security{
+	pixel_x = -3;
+	pixel_y = 38
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/ruin/whitesands/pubbytown)
 "Og" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/space)
+/turf/open/floor/engine,
+/area/ruin/whitesands/pubbytown/canteen)
+"Ov" = (
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/whitesands/pubbytown/wreck)
+"Ow" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"Oy" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	layer = 3.3
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/whitesands/pubbytown)
 "Oz" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken2"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
 "ON" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/binary/pump{
@@ -2617,19 +3598,19 @@
 	name = "engine fuel pump"
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "OY" = (
-/obj/machinery/door/airlock/wood,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
 "Pr" = (
 /obj/structure/table/chem,
 /obj/structure/closet/wall/med/directional/east,
 /turf/open/floor/plasteel/white/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "Pu" = (
 /obj/structure/table,
 /obj/item/reagent_containers/glass/bottle/morphine{
@@ -2641,18 +3622,28 @@
 	pixel_y = 1
 	},
 /turf/open/floor/plasteel/white/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
+"Px" = (
+/obj/structure/platform/wood_two,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Py" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "PA" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "PI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flippedtable{
@@ -2662,46 +3653,61 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plastic,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "PK" = (
 /obj/item/stack/ore/salvage/scrapmetal/five{
 	pixel_y = -12;
 	pixel_x = 4
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "PN" = (
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "PY" = (
 /obj/machinery/door/airlock/hatch{
 	welded = 1;
 	locked = 1
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "PZ" = (
 /obj/structure/platform/wood_two/corner{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Qa" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "Qb" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
+"Qf" = (
+/obj/machinery/door/airlock/wood{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/maple/whitesands,
+/area/ruin/whitesands/pubbytown/study)
+"Qg" = (
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Ql" = (
 /obj/structure/chair/wood{
 	dir = 8;
@@ -2709,18 +3715,21 @@
 	pixel_y = 2
 	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "Qo" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "Qt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/mineral/random/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "Qu" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
@@ -2728,24 +3737,36 @@
 /obj/effect/turf_decal/industrial/outline/red,
 /mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
 /turf/open/floor/engine,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "Qw" = (
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"QB" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 8
+	},
+/obj/structure/displaycase/trophy,
+/obj/item/mob_trophy/broodmother_tongue,
+/turf/open/floor/wood/walnut/whitesands{
+	icon_state = "wood-broken3"
+	},
+/area/ruin/whitesands/pubbytown/house)
 "QD" = (
 /obj/structure/railing,
 /obj/structure/salvageable/computer{
 	dir = 8
 	},
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "QH" = (
 /obj/effect/spawner/random/vending/cola{
 	pixel_x = -5;
 	pixel_y = 10
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "QI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/office/light{
@@ -2753,31 +3774,33 @@
 	icon_state = "chair_toppled"
 	},
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "QN" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "QR" = (
 /turf/closed/wall/mineral/sandstone,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "QS" = (
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
 "Re" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "Rk" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-55"
@@ -2786,7 +3809,14 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"Rl" = (
+/obj/structure/fireplace{
+	pixel_x = -33;
+	pixel_y = 0
+	},
+/turf/open/floor/concrete/tiles/whitesands,
+/area/ruin/whitesands/pubbytown/house)
 "Rv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/corner{
@@ -2795,16 +3825,19 @@
 /obj/structure/railing/corner,
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "Rz" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken4"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "RB" = (
 /obj/structure/rack{
 	pixel_x = 0;
@@ -2822,12 +3855,12 @@
 	pixel_x = -10;
 	pixel_y = 4
 	},
-/obj/item/extinguisher/mini{
+/obj/item/reagent_containers/hypospray/medipen/combat_drug{
 	pixel_x = -4;
-	pixel_y = -2
+	pixel_y = -3
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "RC" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2835,19 +3868,21 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "RK" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/volt,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
 "RL" = (
 /obj/structure/girder/displaced,
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "RT" = (
 /obj/structure/table,
 /obj/item/storage/firstaid/regular{
@@ -2855,11 +3890,15 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plasteel/white/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "RX" = (
 /obj/structure/table/wood/reinforced,
+/obj/item/gun/energy/e_gun/e11/empty_cell{
+	pixel_x = 2;
+	pixel_y = 6
+	},
 /turf/open/floor/concrete/tiles/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "Sd" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30"
@@ -2867,29 +3906,41 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
+	},
 /turf/open/floor/wood/walnut/whitesands{
 	icon_state = "wood-broken4"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
 "Sg" = (
-/obj/item/flashlight/lantern{
-	pixel_x = 10;
-	pixel_y = 13;
-	light_on = 1
+/obj/item/ammo_box/a762_stripper{
+	pixel_x = -5;
+	pixel_y = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/tiles/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "Sy" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
 /obj/structure/salvageable/computer,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
+"Sz" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/whitesands,
+/area/ruin/whitesands/pubbytown)
 "SO" = (
 /obj/structure/platform/wood_two/corner,
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "SP" = (
 /obj/structure/table/wood,
 /obj/item/book/manual/wiki/piloting{
@@ -2897,7 +3948,7 @@
 	pixel_y = 4
 	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "SR" = (
 /obj/effect/turf_decal/stairs{
 	dir = 6
@@ -2907,13 +3958,26 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
+"SS" = (
+/obj/effect/spawner/bunk_bed,
+/turf/open/floor/carpet/red,
+/area/ruin/whitesands/pubbytown/guard)
 "SU" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-55"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"Tb" = (
+/obj/machinery/door/airlock/wood{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/whitesands,
+/area/ruin/whitesands/pubbytown/study)
 "Tg" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -2930,12 +3994,27 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "Tu" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
+"Ty" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 2
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/mob/living/simple_animal/hostile/human/hermit/survivor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/walnut/whitesands,
+/area/ruin/whitesands/pubbytown/shop)
 "TB" = (
 /obj/item/flashlight/lantern{
 	pixel_x = 12;
@@ -2944,16 +4023,15 @@
 	},
 /obj/structure/platform/wood_two/corner,
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "TF" = (
 /obj/machinery/light/directional/east,
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
-/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "TM" = (
 /obj/structure/closet/secure_closet/cabinet,
 /obj/item/clothing/suit/hooded/survivor/green{
@@ -2973,7 +4051,14 @@
 	pixel_y = -4
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
+"TU" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Uo" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2981,12 +4066,12 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "Uq" = (
 /obj/structure/salvageable/computer,
 /obj/item/stack/ore/salvage/scrapgold,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "Ur" = (
 /obj/structure/chair/wood{
 	dir = 4;
@@ -2997,19 +4082,20 @@
 	color = "#543C30";
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "Us" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "Ux" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Uy" = (
 /obj/item/flashlight/lantern{
 	pixel_x = -12;
@@ -3020,7 +4106,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Uz" = (
 /obj/structure/table/wood,
 /obj/item/radio/old{
@@ -3028,83 +4114,97 @@
 	pixel_y = 13
 	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "UC" = (
 /obj/structure/guncloset,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
+"Vd" = (
+/turf/closed/wall/mineral/sandstone,
+/area/ruin/whitesands/pubbytown/shop)
 "Vj" = (
-/obj/machinery/firealarm/directional/west,
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/corner_steel_grid/diagonal,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
 "Vk" = (
 /obj/item/flashlight/lantern{
 	pixel_x = 13;
 	pixel_y = 0;
 	light_on = 1
 	},
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Vr" = (
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "Vt" = (
 /obj/structure/platform/wood_two,
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Vw" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30";
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "Vx" = (
 /obj/structure/chair/wood{
 	pixel_x = 2;
 	pixel_y = -1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/guard)
+"VA" = (
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/whitesands/pubbytown)
 "VG" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/human/hermit/ranged/volt,
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
 	},
 /turf/open/floor/plastic,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "VK" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-4"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "VP" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/red,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "VZ" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 9
 	},
 /turf/open/floor/plasteel/white/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "Wa" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30";
 	dir = 1
 	},
 /mob/living/simple_animal/hostile/human/hermit/ranged/shotgun,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/house)
 "Wg" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3113,14 +4213,16 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plasteel/dark,
-/area/space)
-"Wn" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
 	},
-/turf/open/floor/concrete/pavement/whitesands/lit,
-/area/space)
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/pubbytown/wreck)
+"Wn" = (
+/obj/structure/platform/wood_two,
+/obj/machinery/atmospherics/components/unary/passive_vent,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Wo" = (
 /obj/structure/railing{
 	dir = 8
@@ -3129,49 +4231,54 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "WD" = (
 /obj/structure/closet/crate/grave{
 	pixel_x = -2;
-	pixel_y = -6
-	},
-/obj/item/clothing/head/warra/beret/security{
-	pixel_x = -3;
-	pixel_y = 6
+	pixel_y = -6;
+	opened = 0
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "WG" = (
 /obj/structure/bookcase/manuals{
 	pixel_x = 0;
 	pixel_y = 13
 	},
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "WL" = (
-/obj/structure/platform/wood_two/corner,
-/turf/open/floor/concrete/pavement/whitesands/lit,
-/area/space)
+/obj/structure/platform/wood_two{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "WM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "WW" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Xi" = (
 /obj/structure/table,
 /obj/structure/reagent_dispensers/servingdish,
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "Xm" = (
 /obj/structure/chair/wood{
 	dir = 1;
@@ -3179,7 +4286,7 @@
 	pixel_y = 12
 	},
 /turf/open/floor/wood/walnut/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
 "Xn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/bed/double{
@@ -3189,36 +4296,75 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/blue,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
+"Xp" = (
+/obj/structure/platform/wood_two,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/stairs/wood/maple{
+	dir = 8
+	},
+/area/overmap_encounter/planetoid/sand/explored)
+"Xt" = (
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"Xv" = (
+/turf/open/floor/wood/walnut/whitesands,
+/area/ruin/whitesands/pubbytown/clinic)
+"Xz" = (
+/obj/structure/flora/tree/tall/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "XA" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
+"XD" = (
+/turf/closed/wall/mineral/sandstone,
+/area/ruin/whitesands/pubbytown)
+"XF" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 9
+	},
+/obj/item/ammo_casing/spent/slug/buck,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor5"
+	},
+/turf/open/floor/plating/whitesands,
+/area/ruin/whitesands/pubbytown)
 "XK" = (
 /obj/structure/chair/plastic{
 	dir = 8
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "Yt" = (
 /obj/item/chair/plastic,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg1";
 	initial_gas_mix = "ws_atmos"
 	},
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "Yu" = (
 /obj/item/stack/ore/salvage/scrapmetal/five{
 	pixel_y = -9;
 	pixel_x = 6
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "Yw" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
 /turf/open/floor/wood,
-/area/space)
+/area/ruin/whitesands/pubbytown/study)
 "YC" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump{
 	dir = 8
@@ -3226,14 +4372,17 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
+"YI" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/whitesands/pubbytown/wreck)
 "YL" = (
-/obj/item/stack/ore/salvage/scraptitanium,
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
 "YQ" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-2"
@@ -3242,14 +4391,28 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"YS" = (
+/turf/closed/wall/mineral/wood,
+/area/ruin/whitesands/pubbytown/cargo)
+"YV" = (
+/turf/closed/wall/mineral/wood,
+/area/ruin/whitesands/pubbytown/wreck)
+"Zf" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 2
+	},
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/wood/walnut/whitesands,
+/area/ruin/whitesands/pubbytown/clinic)
 "Zg" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/decal/cleanable/vomit/old,
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "Zj" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/mechanical{
@@ -3267,7 +4430,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/whitesands/pubbytown/wreck)
 "Zk" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -3281,28 +4444,50 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 6
 	},
-/obj/machinery/power/smes,
+/obj/machinery/power/smes{
+	charge = 1.5e6
+	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/whitesands/pubbytown/engine)
 "Zm" = (
 /obj/item/flashlight/lantern{
 	pixel_x = -7;
 	pixel_y = 16;
 	light_on = 1
 	},
+/obj/item/ammo_box/a762_stripper{
+	pixel_x = 4;
+	pixel_y = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/tiles/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown)
 "Zp" = (
 /obj/machinery/door/airlock/wood{
-	dir = 8;
-	welded = 1
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/clinic)
+"Zq" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
+/turf/open/floor/wood/walnut/whitesands,
+/area/ruin/whitesands/pubbytown/clinic)
 "Zr" = (
 /obj/structure/platform/wood_two/corner,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"Zs" = (
+/turf/closed/mineral/random/whitesands,
+/area/overmap_encounter/planetoid/sand/explored)
 "Zu" = (
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
@@ -3312,7 +4497,7 @@
 	pixel_x = 6
 	},
 /turf/open/floor/plating/rust,
-/area/space)
+/area/ruin/whitesands/pubbytown/canteen)
 "Zx" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
@@ -3320,104 +4505,131 @@
 	id = "whiteship_windows"
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/whitesands/pubbytown/cargo)
+"ZE" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/closet/emcloset/wall/directional/south,
+/turf/open/floor/plating/whitesands,
+/area/ruin/whitesands/pubbytown)
+"ZF" = (
+/turf/closed/mineral/random/whitesands,
+/area/ruin/whitesands/pubbytown/wreck)
 "ZJ" = (
 /obj/machinery/door/airlock/wood{
-	dir = 8;
-	welded = 1
+	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/space)
+/area/ruin/whitesands/pubbytown/shop)
+"ZM" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plating/whitesands,
+/area/ruin/whitesands/pubbytown)
+"ZW" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "ZX" = (
 /obj/structure/cable{
 	icon_state = "5-10"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/space)
+/area/overmap_encounter/planetoid/sand/explored)
+"ZZ" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/volt,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 
 (1,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 Bw
 Bw
 Bw
 Bw
 Bw
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
 "}
 (2,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 Bw
 Bw
 Bw
@@ -3426,40 +4638,40 @@ Bw
 Bw
 Bw
 Bw
-uB
-uB
-uB
+my
+my
+my
 "}
 (3,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-uB
-uB
-uB
-uB
-pG
-pG
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+aZ
 Ct
 Bw
 Ct
@@ -3468,166 +4680,166 @@ Bw
 Bw
 Bw
 Bw
-pG
-pG
+aZ
+aZ
 Bw
 Bw
 rj
 Bw
-uB
+my
 "}
 (4,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-uB
-uB
-uB
-uB
-pG
-pG
-pG
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+aZ
+aZ
 Ct
 Ct
 Jz
 Bw
-QR
 PA
 PA
-QR
-pG
-pG
-pG
+PA
+XD
+aZ
+aZ
+aZ
 Bw
 Bw
 Bw
-uB
+my
 "}
 (5,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 Bw
-pG
-pG
-uB
 Bw
+my
 Bw
-uB
-Bw
-pG
-pG
-uB
-uB
-pG
-pG
-pG
+my
+my
+my
+my
+aZ
+aZ
+aZ
 Qw
 Bw
 Ct
-Ct
+Jz
 Bw
-QR
+PA
 Zm
 bS
-QR
-pG
-pG
-pG
-pG
+XD
+aZ
+aZ
+aZ
+aZ
 Bw
 Bw
 Bw
 "}
 (6,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-Bw
-pG
-pG
-Bw
-Bw
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 Bw
 Bw
 Bw
-pG
 Bw
 Bw
-pG
-pG
-pG
-pG
+my
+Bw
+Bw
+aZ
+aZ
+aZ
+aZ
 Qw
 Bw
 Jz
 Ct
-Ct
 Jz
+qg
 Ct
 Bw
 Bw
-pG
-pG
-pG
-pG
-pG
+aZ
+aZ
+aZ
+aZ
+aZ
 Bw
 Bw
 "}
 (7,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-uB
-uB
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 Bw
 Bw
 Bw
@@ -3639,9 +4851,9 @@ yK
 Bw
 Bw
 Bw
-pG
-pG
-pG
+aZ
+aZ
+aZ
 Qw
 Qw
 Qw
@@ -3653,26 +4865,26 @@ Ct
 Ct
 Bw
 Bw
-pG
-QR
-QR
+aZ
+XD
+XD
 Bw
 Bw
 Bw
 "}
 (8,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-uB
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 Bw
 ct
 Ha
@@ -3685,16 +4897,16 @@ Hq
 Yu
 VK
 Bw
-pG
-pG
-pG
-QR
-QR
-QR
-QR
+aZ
+aZ
+aZ
+nw
+nw
+nw
+nw
 Bw
 Ct
-Bw
+DS
 Bw
 Jz
 Bw
@@ -3704,45 +4916,45 @@ fK
 PA
 Bw
 Bw
-uB
+my
 "}
 (9,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 Ha
 Ha
 VK
 PK
 ih
-ch
+bG
 Do
-ch
-ch
+bG
+bG
 ln
 SU
 Di
 Ha
-pG
-pG
-QR
-QR
+aZ
+aZ
+nw
+nw
 KO
 LW
-QR
-QR
-QR
+nw
+nw
+nw
 Bw
-Ct
-Ct
+DS
+kO
 Bw
 Bw
 Ct
@@ -3750,163 +4962,163 @@ vW
 PA
 Bw
 Bw
-uB
+my
 "}
 (10,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 Ha
-ch
+bG
 DQ
 rT
-ch
+bG
 so
 so
 so
 kA
 DQ
 rT
-ch
+bG
 Ha
-pG
-pG
-pG
-KB
-gL
-gL
+aZ
+aZ
+td
+Ek
+xh
+xh
 LK
-Gl
-QR
+xQ
+nw
 Bw
-Jz
+Bw
+DS
+Bw
 Ct
-Bw
-Ct
-Bw
-QR
-QR
+qg
+PA
+PA
 Bw
 Bw
-uB
+my
 "}
 (11,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-ch
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+bG
 Ji
 Lj
-ch
+bG
 so
 YC
 Dg
-ch
+bG
 as
 Lj
-ch
+bG
 Ha
 Ha
-pG
-pG
-zi
-gL
+aZ
+td
+mR
+xh
 FF
 CA
 xy
-QR
+nw
+Ct
+Ct
+Jz
+Bw
+Ct
 Ct
 Ct
 Bw
-Jz
-Ct
-Ct
-Ct
-Jz
 Bw
 Bw
 Bw
 "}
 (12,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-ch
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+bG
 co
 ON
-ch
-ch
+bG
+bG
 ba
-ch
-ch
+bG
+bG
 dW
 ET
-ch
-pG
+bG
+aZ
 Ha
-pG
-QR
+aZ
+nw
 Fh
 vw
 Wa
 Oz
 kV
-OY
+BU
 FB
 Ct
 Jz
 Ct
-Bw
+DS
+DS
+Ct
 Jz
-Ct
-Ct
 Bw
 Jz
 Bw
 "}
 (13,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-ch
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+bG
 ab
 IC
-ch
+bG
 Sy
 AZ
 cp
@@ -3914,45 +5126,45 @@ In
 fR
 Py
 up
-pG
+aZ
 Ha
-pG
-QR
-ho
-pi
-zP
+aZ
+nw
+pZ
+IV
+Kf
 uh
 QS
-QR
-bR
+nw
+Dt
 Ct
 Bw
-Ct
-Bw
-Ct
-Ct
+DS
+DS
+kO
+DS
 Bw
 Ct
 Bw
 Bw
 "}
 (14,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-Ha
-pG
-ch
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+bG
 jG
 Et
-ch
+bG
 pe
 Tg
 fA
@@ -3960,88 +5172,88 @@ ck
 jA
 oj
 up
-pG
-pG
-pG
-QR
-av
-pi
+aZ
+aZ
+aZ
+nw
+Rl
+IV
 JI
-QR
-QR
-QR
-np
+nw
+nw
+nw
+Ow
 Jz
 Ct
-Jz
-Ct
-Ct
+DS
+kO
+kO
 Jz
 Ct
 Ct
 Bw
-uB
+my
 "}
 (15,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-ch
-ch
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+Ha
+aZ
+bG
+bG
 Cg
-ch
+bG
 gu
 oq
 Ml
-ch
+bG
 Zk
 gy
-ch
-pG
-pG
-pG
-QR
-sW
-CA
+bG
+aZ
+aZ
+aZ
+nw
+QB
+Bb
 xy
-QR
+nw
 Bw
 tk
 Bw
-Ct
-Ct
-Ct
-Ct
-Bw
+Jz
+Jz
+oe
 Ct
 Bw
+Ct
 Bw
 Bw
-uB
+Bw
+my
 "}
 (16,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-uB
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+Ha
 oF
-ch
+bG
 Ai
 Md
 sD
@@ -4051,43 +5263,43 @@ Wo
 xA
 qZ
 nQ
-ch
-pG
-pG
-pG
-QR
-QR
-By
-By
-QR
+bG
+aZ
+aZ
+aZ
+nw
+nw
+MD
+qd
+nw
 tk
 Ct
 Jz
-Ct
-Jz
+Bw
+Bw
 Bw
 Bw
 Bw
 Qw
 Qw
-pG
-uB
-uB
+Zs
+my
+my
 "}
 (17,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-pG
-uB
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
 fr
-ch
+bG
 Eb
 kL
 Uo
@@ -4097,54 +5309,54 @@ If
 lK
 gs
 Fo
-ch
+bG
 fr
-pG
-pG
+aZ
+aZ
 Bw
 Uy
-BD
+WL
 BD
 ly
 Ct
+Bw
 Jz
-Ct
 Bw
 Ct
 TB
 Mi
 Mi
 vc
-pG
-pG
-uB
-uB
+Zs
+Zs
+my
+my
 "}
 (18,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-pG
-uB
-ch
-ch
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+aZ
+dQ
+dQ
 Zx
 Zx
-ch
-ch
+dQ
+dQ
 gG
-ch
-ch
+dQ
+dQ
 Zx
 Zx
-ch
-ch
+dQ
+dQ
 Ha
 Ha
 Bw
@@ -4152,34 +5364,34 @@ Bw
 Jz
 tk
 Ct
+vH
+DS
+kO
 Bw
-Ct
-Ct
-Bw
-QR
-QR
-By
-By
-QR
-pG
-pG
-pG
-uB
+xX
+xX
+Ed
+Ed
+xX
+aZ
+aZ
+aZ
+my
 "}
 (19,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-uB
-uB
-pG
-ch
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+aZ
+aZ
+dQ
 Qt
 Lm
 vX
@@ -4192,90 +5404,90 @@ Hb
 rW
 kP
 Ha
-pG
-pG
+Zs
+Zs
 Bw
 zS
-Jz
 Bw
-Jz
+DS
+DS
+kO
+DS
 Ct
-Jz
-Ct
-QR
-LW
+xX
+lw
 yq
 Ke
-QR
-pG
-pG
-pG
-uB
+xX
+aZ
+aZ
+aZ
+my
 "}
 (20,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+aZ
+aZ
 pG
-pG
-pG
-ch
+dQ
 wL
 NI
 pu
 Us
 lI
 rZ
-AH
+kR
 IR
 Ha
-pG
-pG
-pG
-Bw
+Zs
+Zs
+Zs
+de
 np
 Ct
+DS
+kO
 Bw
 Ct
 Bw
-Ct
-Bw
-QR
+xX
 VP
 Qa
-gL
-pG
-pG
-pG
-uB
-uB
+oE
+aZ
+aZ
+aZ
+my
+my
 "}
 (21,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-pG
-pG
-ch
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+aZ
+aZ
+dQ
 pG
 Cw
-KT
+AG
 cN
 ff
 DB
@@ -4284,41 +5496,41 @@ rZ
 Gp
 Ha
 Ha
-pG
-Ha
-ZX
-Jz
-Ct
+Zs
 Bw
-WL
-QR
-QR
-QR
-QR
-aX
+tk
+ZW
+Jz
+Bw
+SO
+xX
+xX
+xX
+xX
+ql
 Vw
-KB
-pG
-pG
-uB
-uB
-uB
+GE
+aZ
+aZ
+my
+my
+my
 "}
 (22,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-pG
-pG
-ch
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+aZ
+aZ
+dQ
 Lm
 jW
 KT
@@ -4328,88 +5540,88 @@ Cm
 AN
 tv
 GG
+MQ
+MQ
+WM
+AO
+fb
 Jc
 MQ
 Jc
-AO
-Jc
-my
-zq
-Ct
-Vt
-nP
-Ht
+Px
+lF
+Co
 zf
-QR
-Zp
-QR
-pG
-pG
-pG
-uB
-uB
-uB
+xX
+Tb
+xX
+aZ
+aZ
+aZ
+my
+my
+my
 "}
 (23,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-pG
-pG
-ch
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+aZ
+aZ
+dQ
 ey
-Ho
-KT
+Jk
+eT
 hW
 Qb
 Qu
 rZ
-AH
+Br
 sU
 Ha
 Jz
 KK
+cR
+DS
 Ha
-Ct
-Bw
 Bw
 JP
-Vt
-nP
+Xp
+lF
 jL
 FA
-Ht
+xv
 Kh
-QR
-pG
-pG
-uB
-uB
-uB
-uB
+xX
+aZ
+aZ
+my
+my
+my
+my
 "}
 (24,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-pG
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+aZ
 QI
 fk
 TF
@@ -4419,89 +5631,89 @@ Qb
 KI
 rZ
 AH
-ch
+dQ
 ul
 YL
-Ct
-Jz
-Jz
+DS
+DS
+DS
 Bw
 Bw
 gx
 jb
-nP
-Ht
+gr
+lV
 IP
 Tu
-Ht
-pG
-pG
-pG
-uB
-uB
-uB
-uB
+nV
+aZ
+aZ
+aZ
+my
+my
+my
+my
 "}
 (25,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-ch
-ch
-ch
-ch
-ch
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+dQ
+dQ
+dQ
+dQ
+dQ
 zX
-ch
-ch
-LG
-LG
-LG
+dQ
+dQ
+YS
+YS
+YS
 AJ
 oI
+kO
+iU
+Bw
 Ct
-Ct
 Bw
-Bw
-Bw
-QR
-ZJ
+xX
+Qf
 zL
 Vr
 Uz
-DS
 Ht
-pG
-pG
-pG
-pG
-uB
-uB
-uB
+eQ
+aZ
+aZ
+aZ
+aZ
+my
+my
+my
 "}
 (26,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-pG
-pG
-pG
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+aZ
+aZ
+aZ
 yj
 eD
 jt
@@ -4509,284 +5721,284 @@ FP
 Wg
 Fq
 io
-DQ
-DQ
+Ov
+yX
 Ha
 tk
-Ct
+Bw
 Jz
-Ls
+Ct
 ek
 xc
 Bw
-QR
+xX
 PN
-Ht
+Co
 Ht
 SP
 tR
 lD
-pG
-pG
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+my
+my
+my
+my
+my
 "}
 (27,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-pG
-pG
-pG
-pG
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+aZ
+aZ
+aZ
+aZ
 wV
 Pr
 Bz
 FQ
 GA
-ch
+YI
 GF
 ge
 Ha
 hn
-Bw
+Ct
 Jz
 Ct
 wa
 ss
 Mr
 Bw
-QR
+xX
 WG
 Yw
 Ht
 Ql
-Ht
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
+Co
+aZ
+aZ
+aZ
+Bw
+my
+my
+my
+my
 "}
 (28,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-pG
-pG
-ch
-ch
-ch
-ch
-Ho
+my
+my
+my
+my
+my
+my
+my
+my
+my
+aZ
+aZ
+aZ
+YI
+YI
+YI
+YI
+Ap
 aR
-ch
-LG
+YI
+YV
 Ha
-pG
+Zs
 Dt
-Ct
-Ct
+DS
+DS
 LG
 ch
 ch
 ch
 Qw
-QR
+xX
 EA
-Ht
-Ht
-Ht
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
+BN
+zq
+Kk
+aZ
+aZ
+aZ
+Bw
+Bw
+Bw
+my
+my
+my
 "}
 (29,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-uB
-pG
-pG
-pG
+my
+my
+my
+my
+my
+my
+my
+aZ
+my
+aZ
+aZ
+aZ
 Dx
 Xn
 Bd
-ch
+YI
 Ak
 mp
-hz
+YV
 sd
 Ha
 Bw
-Dt
-Jz
-Ct
-By
+yO
+DS
+vb
+nj
 kU
-KB
+tl
 ch
 Qw
-QR
-QR
-QR
+xX
+xX
+xX
 LD
-pG
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+aZ
+Bw
+Bw
+my
+my
+my
 "}
 (30,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-pG
-pG
-pG
-pG
-pG
-pG
+my
+my
+my
+my
+my
+my
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
 Go
 wn
 iw
 Bi
 Ik
 QN
-ch
+YI
 Ha
 Bw
 Jz
-Dt
-Bw
+TU
+Ct
 sV
-By
+rs
 mU
 yU
 ch
 Qw
 Qw
 Qw
-pG
-pG
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+Bw
+Bw
+Bw
+my
+my
+my
 "}
 (31,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-pG
-pG
-pG
-pG
-pG
-pG
-ch
+my
+my
+my
+my
+my
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+YI
 vO
 bW
 ww
-ch
+YI
 ym
 an
-ch
-Bw
-Bw
+YI
+DT
 Ct
-Dt
+DS
+yO
 LG
 LG
 LG
-Zp
+pw
 LG
 ch
 Qw
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+Bw
+Bw
+Bw
+Bw
+my
+my
 "}
 (32,1,1) = {"
-pG
-pG
-uB
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-ch
+aZ
+aZ
+my
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+YI
 yt
 Zj
 AD
-ch
+YI
 xz
 RC
-ch
+YI
 Bw
+Ct
 Bw
-Jz
 YQ
 LG
 fO
@@ -4794,91 +6006,91 @@ GS
 Re
 Zu
 ch
-pG
-pG
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+Qw
+Qw
+Bw
+dg
+ZZ
+Bw
+Bw
+Bw
+my
 "}
 (33,1,1) = {"
 uB
-pG
-pG
-pG
-pG
-pG
+aZ
+aZ
+aZ
+aZ
+aZ
 Em
 GW
-pG
-pG
-pG
-ch
-ch
-ch
-ch
-ch
-ch
+aZ
+aZ
+aZ
+YI
+YI
+YI
+YI
+YI
+YI
 oo
-ch
+YI
 VK
 Ct
-Ct
-bR
+Jz
+Dt
 ch
 Ig
 AA
-Ig
+hz
 GK
 cx
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+Qw
+Qw
+Qw
+Qw
+qm
+xS
+xS
+qm
+Bw
+Bw
+my
 "}
 (34,1,1) = {"
 uB
-pG
-pG
-pG
-Ct
+aZ
+aZ
+aZ
+yk
 pE
 DY
 DY
-pG
-pG
-pG
-pG
-pG
-ch
+aZ
+aZ
+aZ
+aZ
+aZ
+YI
 xH
 mW
 Ea
 Fn
 lR
 Di
-Jz
-Ct
+vH
+DS
 cn
 Og
 LQ
@@ -4886,90 +6098,90 @@ PI
 VG
 LU
 cx
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+Qw
+Qw
+pN
+Qw
+Qw
+qm
+Lg
+KQ
+qm
+Bw
+Bw
+my
 "}
 (35,1,1) = {"
 uB
-pG
-pG
+aZ
+aZ
 sC
-Ct
-Qw
-Qw
-Ha
-Ct
-pG
-pG
-pG
-pG
-ch
+uK
+rV
+rV
+zJ
+yk
+aZ
+aZ
+aZ
+aZ
+YI
 Uq
 Zg
 Rv
 XA
 sA
 Ga
-Ct
-Ct
-Wn
+DS
+Bw
+bR
 ch
 oN
 AA
 di
 yx
 cx
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+Qw
+Qw
+Qw
+Bw
+qm
+mF
+mF
+oX
+Bw
+Bw
+my
 "}
 (36,1,1) = {"
-pG
-pG
-pG
+aZ
+aZ
+aZ
 iW
 nz
-Qw
-Qw
-Qw
-Ct
-Ct
-pG
-pG
-pG
-pG
-pG
+rV
+rV
+rV
+yk
+yk
+aZ
+aZ
+aZ
+ZF
+ZF
 no
 QD
 bZ
 lR
 by
-Ha
+Jz
 Ct
 bR
 ch
@@ -4978,352 +6190,352 @@ EG
 Yt
 XK
 ch
-pG
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+aZ
+Qw
+Qw
+qm
+qm
+ny
+ZE
+qm
+qm
+Bw
+my
 "}
 (37,1,1) = {"
-pG
-pG
-pG
+aZ
+aZ
+aZ
 WD
-Ct
-Ct
-Qw
-Qw
-Ct
-Ct
-Ha
-Ha
-pG
-pG
-pG
-pG
-pG
-pG
-ch
-Ha
-Ct
-Jz
+NT
+yk
+rV
+rV
+yk
+yk
+zJ
+zJ
+aZ
+aZ
+ZF
+ZF
+ZF
+ZF
+YI
+cR
+DS
+DS
 Dt
 ch
 qN
 LM
 pR
 ch
-fr
-pG
-pG
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+bN
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+Qw
+qm
+Oy
+Sz
+ZM
+IA
+qm
+Bw
+my
 "}
 (38,1,1) = {"
-pG
-pG
-pG
-pG
-pG
+aZ
+aZ
+aZ
+aZ
+aZ
 tB
 HQ
 qz
-Ct
-Ct
-Ha
-Ha
-Ha
-Ha
-pG
-pG
-pG
-pG
-pG
-Jz
-Ct
+yk
+yk
+zJ
+zJ
+zJ
+zJ
+aZ
+aZ
+aZ
+aZ
+aZ
+DS
+vH
 lA
 Rk
 PY
 IU
 lB
 Cs
-fr
-pG
-pG
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+bN
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+Bw
+Bw
+qm
+mQ
+VA
+VA
+fI
+qm
+Bw
+my
 "}
 (39,1,1) = {"
-uB
-pG
-pG
-pG
-pG
+my
+aZ
+aZ
+aZ
+aZ
 GW
 Ky
-pG
-pG
-pG
-pG
-Ha
-Ha
-Ha
-Ha
-pG
+aZ
+aZ
+aZ
+aZ
+zJ
+zJ
+zJ
+zJ
+aZ
 Bw
 Bw
 FY
-Ct
+kO
 Jz
-Ct
+Bw
 kp
 ch
 Li
 Dn
 Xi
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+aZ
+zJ
+zJ
+Bw
+Bw
+oX
+lj
+XF
+ij
+IA
+qm
+Bw
+my
 "}
 (40,1,1) = {"
-uB
-uB
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
+my
+my
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+Lv
+Lv
+Lv
+Lv
+Lv
 Bw
 Bw
 Ct
 Ct
 Bw
 Ct
-Ct
-Bw
+Jz
+Jz
 Bw
 bR
 Bw
 ch
 ch
 ch
-pG
-pG
-pG
-Ha
-Ha
-Ha
-Ha
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+bs
+zJ
+zJ
+zJ
+Bw
+Bw
+qn
+BM
+GI
+GI
+Dc
+qm
+Bw
+my
 "}
 (41,1,1) = {"
-uB
-uB
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-KB
+my
+my
+aZ
+aZ
+aZ
+aZ
+Lv
+Lv
+Lv
+SS
 Np
 AV
-pG
+Lv
 Ct
 Ct
+Bw
 Bw
 Jz
-Bw
-Bw
 Ct
-Jz
+DS
+DS
 Bw
-oI
+Ow
 Qw
 Qw
 Qw
 Qw
-pG
-pG
-Ha
-Ha
-Ha
-Ha
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+Lk
+zJ
+Ei
+Ei
+MZ
+MZ
+MZ
+Ge
+Xt
+Qg
+Qg
+Bw
+Bw
+Bw
+my
 "}
 (42,1,1) = {"
-uB
-uB
-pG
-pG
-pG
-pG
-pG
-KB
+my
+my
+aZ
+aZ
+aZ
+aZ
+Lv
+SS
 dF
 gL
 Np
 cZ
-QR
-QR
-QR
+Lz
+Lz
+Lz
 Bw
 Bw
-Jz
-Ct
 Bw
-Bw
+DS
+vH
+vH
 tk
 Qw
 Qw
 Qw
 Qw
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+kQ
+zJ
+zJ
+Bw
+ik
+Bw
+Bw
+Bw
+Qg
+DT
+Bw
+my
+my
+my
 "}
 (43,1,1) = {"
-uB
-pG
-pG
-pG
+my
+aZ
+aZ
+aZ
 Qw
 Zr
-QR
+Lz
 gL
 gL
 RK
 rX
-Ht
+rm
 kv
 UC
+Lz
+Ct
+Ct
+Ct
+DS
+vH
+Ij
+Xz
+Qw
 QR
+QR
+QR
+aZ
+aZ
+aZ
+aZ
+rG
+zJ
 Bw
-Ct
-Ct
-Jz
-Ct
-hn
-Qw
-Qw
-QR
-QR
-QR
-pG
-pG
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+Bw
+Bw
+Bw
+ik
+Bw
+Bw
+Bw
+Bw
+my
+my
+my
 "}
 (44,1,1) = {"
-uB
-pG
-pG
+my
+aZ
+aZ
 Qw
 Qw
 KS
-By
+gj
 Fy
 aX
 rX
@@ -5335,101 +6547,101 @@ OY
 BH
 Jc
 WM
-my
-my
+Jc
+Jc
 jK
 Qw
 Qw
 QR
 ho
-pi
+Zq
 fX
 zP
 Xm
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+Bw
+my
+Bw
+Bw
+my
+my
+my
+my
+my
+my
+my
 "}
 (45,1,1) = {"
-uB
-uB
+my
+my
 Qw
 Qw
 Qw
 KS
-By
+gj
 Vx
 vv
 fP
-Ht
-Ht
+Iy
+AU
 qG
 vB
-QR
-Bw
-Bw
-Bw
+Lz
 Ct
 Bw
+ZZ
+Jz
+Jz
 Bw
 Ad
 QR
 QR
 av
-pi
-Gl
-Gl
+HJ
+Xv
+Xv
 uW
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (46,1,1) = {"
-uB
-uB
+my
+my
 Bw
 Bw
 Bw
 Kt
-QR
-QR
-QR
-Ht
-Ht
-QR
-QR
-QR
-QR
+Lz
+Lz
+Lz
+CS
+pa
+Lz
+Lz
+Lz
+Lz
 Bw
+ZW
+aM
+sg
 Ct
-Jz
-Ct
-Ct
-Jz
+Bw
 Nz
 QR
 QR
@@ -5439,23 +6651,23 @@ QR
 TM
 rY
 nl
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (47,1,1) = {"
-uB
+my
 Bw
 Bw
 kM
@@ -5463,110 +6675,110 @@ Bw
 Bw
 Bw
 Bw
-QR
-nP
-nP
-QR
+Lz
+gj
+eo
+Lz
 Bw
 Bw
 Bw
 Bw
 Bw
 Ct
-Ct
-Jz
+vH
+DS
 Bw
-Ef
-nP
+mZ
+iP
 CK
 Ur
 JY
 QR
 QR
-rY
+Zf
 zi
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (48,1,1) = {"
-uB
+my
 Bw
 Bw
 Bw
 Ct
-Jz
+DS
 Ct
 Bw
 xY
 BD
-BD
+WL
 PZ
-Jz
-Ct
-Ct
+Bw
 Bw
 Ct
 Jz
+Ct
 Bw
+DS
 Ct
 Bw
 Ef
 nP
-rY
+Fj
 eq
 VZ
 gg
 QR
 hv
 BB
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (49,1,1) = {"
-uB
+my
 Bw
 Bw
 Ct
 Bw
 Ct
+DS
 Bw
 Ct
-Ct
-Jz
-Ct
-Jz
-Ct
-Bw
-Bw
-Jz
-Jz
 Bw
 Ct
 Jz
+Ct
+DS
+DS
+Bw
+Bw
+DS
+DS
+Ct
 Ct
 dm
 QR
@@ -5577,69 +6789,69 @@ Mz
 QR
 zi
 pi
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (50,1,1) = {"
-uB
+my
 Bw
 Bw
 Ct
-Bw
-Jz
-Ct
-Jz
-Bw
-Ct
-Ct
-Bw
 Ct
 Jz
+Ct
+DS
+Ct
+Ct
+DS
+vH
+DS
+Jz
 Bw
 Bw
 Ct
-Jz
+Bw
 Ct
 Bw
 ZX
 bR
 QR
-ZJ
+EY
 QR
 Pu
 RT
 QR
 eR
 rD
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (51,1,1) = {"
-uB
+my
 Bw
 Ct
 Jz
@@ -5647,17 +6859,17 @@ Bw
 Bw
 Bw
 Bw
-Ct
+Jz
+Jz
 Bw
 Bw
 Bw
-Bw
-Bw
+oR
 Bw
 Ux
 WM
 WM
-my
+Jc
 LX
 Jz
 WW
@@ -5666,173 +6878,173 @@ oS
 QR
 QR
 QR
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (52,1,1) = {"
-uB
+my
 Bw
 Bw
 Bw
 Ct
-QR
+XD
 bO
-ho
+dD
 Bw
-QR
-QR
-QR
-QR
+Vd
+Vd
+Vd
+Vd
 Bw
 Vk
 Eh
-Bw
-Bw
 Ct
 Bw
 Ct
+Jz
+Ct
 Bw
 Bw
-Bw
+Ct
 Qw
 Qw
-pG
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (53,1,1) = {"
-uB
-uB
-uB
+my
+my
+my
 Bw
 Bw
 PA
 bS
-ho
+Ba
 SO
-QR
-LW
-zi
-QR
-QR
-QR
+Vd
+yi
+yb
+Vd
+Vd
+Vd
 ZJ
-QR
-QR
+iC
+Vd
 Bw
 Ct
-Bw
 Ct
+DS
 Bw
 Bw
 Qw
 Qw
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (54,1,1) = {"
-uB
-uB
-uB
-uB
+my
+my
+my
+my
 Bw
 PA
 PA
-QR
+XD
 Vt
 By
 sW
 xa
 It
-QR
+Vd
 QH
 ej
 RB
-QR
+Vd
 Bw
 Bw
-Jz
-Jz
+Bw
+DS
 Ct
 Bw
 Qw
 Qw
-pG
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (55,1,1) = {"
-uB
-uB
-uB
-uB
+my
+my
+my
+my
 Bw
 Bw
 Bw
 Bw
-Vt
-By
+Wn
+Ls
 Bq
 Rz
 Ew
@@ -5840,39 +7052,39 @@ Fc
 sv
 Jb
 Eu
-QR
-QR
+Vd
+Vd
 Bw
 Ct
-Bw
-Bw
+Ct
+DS
 Bw
 Qw
-pG
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (56,1,1) = {"
-uB
-uB
-uB
-uB
+my
+my
+my
+my
 Bw
 Bw
 Bw
@@ -5880,196 +7092,196 @@ Bw
 Vt
 By
 KB
-gL
+lU
 GH
-QR
+Vd
 dU
 Sd
 gF
-ho
-QR
+Fm
+Vd
 Bw
 Ct
 Ct
-Jz
+DS
 Bw
 Bw
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (57,1,1) = {"
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
 Bw
 Bw
 Bw
 Kt
-QR
-QR
-QR
-QR
-QR
+Vd
+Vd
+Vd
+Vd
+Vd
 ru
 od
 RX
 mO
-QR
+Vd
 Bw
 Bw
 Ct
-Ct
+qg
 Bw
 Bw
-pG
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (58,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
+my
 Bw
 Bw
 Qw
 Qw
-QR
+Vd
 pU
 eV
-zP
+Nu
 ia
-od
+Ty
 nB
 FM
-QR
+Vd
 Bw
 Ct
 Jz
-QR
+PA
 Sg
 bS
-pG
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (59,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
+my
 Bw
 Bw
+Xz
 Qw
-Qw
-QR
-QR
-xy
+Vd
+Vd
+EH
 Gl
-Gl
+Bj
 yc
-QR
-QR
-QR
+Vd
+Vd
+Vd
 Bw
 Ct
 Ct
-QR
 PA
 PA
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+PA
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (60,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
+my
 Bw
 Bw
 Bw
 Qw
 Qw
-QR
-QR
+Vd
+Vd
 By
 By
-QR
-QR
+Vd
+Vd
 Bw
 Bw
 Bw
@@ -6078,33 +7290,33 @@ Bw
 Ct
 Bw
 Bw
-pG
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+aZ
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (61,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
+my
 Bw
 Bw
 Bw
@@ -6123,35 +7335,35 @@ Ct
 Ct
 Bw
 Bw
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
 (62,1,1) = {"
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
+my
+my
 Bw
 Bw
 Bw
@@ -6165,28 +7377,28 @@ Bw
 Bw
 Bw
 Bw
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
-uB
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
+my
 "}
