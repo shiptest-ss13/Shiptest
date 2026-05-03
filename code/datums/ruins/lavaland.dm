@@ -5,7 +5,7 @@
 	ruin_type = RUINTYPE_LAVA
 
 /datum/map_template/ruin/lavaland/dynamitehole
-	name = "Solarian Winter Biodome"
+	name = "Dynamite Hole"
 	id = "dynamite_hole"
 	description = "A CLIP-LAND research facility overtaken by ramzi, and excavating out the remainder of a cave to establish a base."
 	suffix = "lavaland_surface_dynamite_hole.dmm"
