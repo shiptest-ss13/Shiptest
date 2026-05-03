@@ -1594,7 +1594,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/dynamitehole/living_quarters)
@@ -1654,6 +1653,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "tq" = (
@@ -1824,6 +1824,7 @@
 	pixel_x = 2;
 	pixel_y = 15
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/security)
 "uy" = (
@@ -3115,6 +3116,9 @@
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/dynamitehole/living_quarters)
+"Kv" = (
+/turf/open/floor/plating/asteroid/purple,
+/area/ruin/unpowered/dynamitehole)
 "KF" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	dir = 9
@@ -3722,6 +3726,7 @@
 	pixel_x = 0;
 	pixel_y = 2
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/dynamitehole/security)
 "Sc" = (
@@ -4037,9 +4042,6 @@
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "Vw" = (
 /turf/open/floor/concrete/pavement/lava,
-/area/ruin/unpowered/dynamitehole)
-"Vx" = (
-/turf/open/floor/plating/asteroid/purple,
 /area/ruin/unpowered/dynamitehole)
 "VC" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/end{
@@ -5630,8 +5632,8 @@ kh
 kh
 kh
 kh
-Vx
-Vx
+Kv
+Kv
 cn
 kh
 sR
@@ -5682,7 +5684,7 @@ kh
 kh
 ja
 OZ
-Vx
+Kv
 zd
 kh
 kh
