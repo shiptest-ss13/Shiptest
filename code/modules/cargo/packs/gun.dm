@@ -305,7 +305,7 @@
 /datum/supply_pack/gun/laser/vga5
 	name = "Etherbor VG-A5 Beam Volleygun Crate"
 	desc = "Contains a single VG-A5 Beam Volleygun, a military-grade volleygun developed in the PGF and manufactured by Etherbor Industries for use within the PGF armed forces."
-	cost = 4000
+	cost = 3000
 	contains = list(/obj/item/storage/guncase/energy/vga5)
 	crate_name = "beam volleygun crate"
 	faction = /datum/faction/pgf
@@ -335,7 +335,7 @@
 /datum/supply_pack/gun/laser/bgc10
 	name = "Etherbor BGC-10 Beam Carbine Crate"
 	desc = "Contains a single BGC-10 Beam Carbine, an intermediate military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the PGF armed forces."
-	cost = 5000
+	cost = 4000
 	contains = list(/obj/item/storage/guncase/energy/bgc10)
 	crate_name = "beam carbine crate"
 	faction = /datum/faction/pgf
@@ -345,9 +345,19 @@
 /datum/supply_pack/gun/laser/hbg7
 	name = "Etherbor HBG-7 Beam Rifle Crate"
 	desc = "Contains a single HBG-7 Beam Rifle, a high power military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the PGF armed forces."
-	cost = 6000
+	cost = 5000
 	contains = list(/obj/item/storage/guncase/energy/hbg7)
 	crate_name = "beam rifle crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/laser/hbg7l
+	name = "Etherbor HBG-7L Beam DMR Crate"
+	desc = "Contains a single HBG-7l Beam DMR, a precision military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the PGF armed forces."
+	cost = 6000
+	contains = list(/obj/item/storage/guncase/energy/hbg7l)
+	crate_name = "beam DMR crate"
 	faction = /datum/faction/pgf
 	faction_discount = 0
 	faction_locked = TRUE

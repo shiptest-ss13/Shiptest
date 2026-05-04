@@ -37,7 +37,9 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		"Alcohol Tolerance" = list(SPECIES_IPC, SPECIES_PLASMAMAN),
 		"Light Drinker" = list(SPECIES_IPC, SPECIES_PLASMAMAN),
 		"Smoker" = list(SPECIES_IPC, SPECIES_PLASMAMAN),
-		"Asthma" = list(SPECIES_IPC, SPECIES_PLASMAMAN)
+		"Asthma" = list(SPECIES_IPC, SPECIES_PLASMAMAN),
+		"Robust Metabolism" = list(SPECIES_IPC, SPECIES_ELZUOSE),
+		"Fast Metabolism" = list(SPECIES_IPC, SPECIES_ELZUOSE)
 	)
 
 	for(var/client/client in GLOB.clients)

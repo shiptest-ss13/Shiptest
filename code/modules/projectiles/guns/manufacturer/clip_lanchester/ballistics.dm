@@ -441,8 +441,8 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	manufacturer = MANUFACTURER_MINUTEMAN
 	spread = -5
 	spread_unwielded = 35
-	recoil = 2
-	recoil_unwielded = 10
+	recoil = 1
+	recoil_unwielded = 5
 	wield_slowdown = LIGHT_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
@@ -462,12 +462,12 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 
 /obj/item/ammo_box/magazine/f90
 	name = "\improper CM-F90 Magazine (6.5x57mm CLIP)"
-	desc = "A large 5-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
+	desc = "A large 6-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
 	base_icon_state = "f90_mag"
 	icon_state = "f90_mag-1"
 	ammo_type = /obj/item/ammo_casing/a65clip
 	caliber = "6.5mm CLIP"
-	max_ammo = 5
+	max_ammo = 6
 
 /obj/item/ammo_box/magazine/f90/update_icon_state()
 	. = ..()

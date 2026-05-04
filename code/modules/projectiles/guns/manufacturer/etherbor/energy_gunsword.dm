@@ -540,8 +540,8 @@
 	item_state = "pgfheavy_sniper"
 
 	zoomable = TRUE
-	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
-	zoom_out_amt = 5
+	zoom_amt = 6
+	zoom_out_amt = 2
 
 	spread = -5
 	spread_unwielded = 40
