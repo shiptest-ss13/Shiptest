@@ -418,7 +418,7 @@
 
 /obj/item/gun/energy/kalix/pgf/medium
 	name = "\improper Etherbor BGC-10"
-	desc = "Etherbor's answer to the PGF armed forces's request for a carbine style weapon; the BGC-10 offers greater accuracy and power than the BG-16, while being less cumbersome than the DMR mode equipped HBG series rifles."
+	desc = "Etherbor's answer to the PGF armed forces' request for a carbine style weapon; the BGC-10 offers greater accuracy and power than the BG-16, while being less cumbersome than the DMR mode equipped HBG series rifles."
 	icon_state = "pgfmedium"
 	item_state = "pgfmedium"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
