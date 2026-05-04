@@ -264,7 +264,6 @@
 	desc = "Wicked knifepoint tracks your every impulse. Clean, black-red armor plate glides across itself, bereft of all sound or resistance."
 	icon_state = "syndicate_stormtrooper_knife"
 	icon_living = "syndicate_stormtrooper_knife"
-	name = "Ramzi Clique Stormtrooper"
 	maxHealth = 250
 	health = 250
 	projectile_deflect_chance = 0
@@ -276,7 +275,6 @@
 	desc = "Wicked knifepoint tracks your every impulse. Clean, black-red armor plate glides across itself, bereft of all sound or resistance."
 	icon_state = "syndicate_stormtrooper_knife"
 	icon_living = "syndicate_stormtrooper_knife"
-	name = "Ramzi Clique Stormtrooper"
 	maxHealth = 250
 	health = 250
 	projectile_deflect_chance = 0
