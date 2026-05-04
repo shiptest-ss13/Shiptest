@@ -264,6 +264,9 @@
 	name = "NGR Mining Colony Command Centre"
 	icon_state = "bridge"
 
+/area/ruin/rockplanet/ngrcolony/outdoors
+	outdoors = TRUE
+
 /area/ruin/rockplanet/ngrcolony/ramzi_camp
 	name = "Ramzi Clique Escapee Camp"
 
