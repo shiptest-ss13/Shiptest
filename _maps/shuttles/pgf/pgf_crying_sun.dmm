@@ -43,10 +43,11 @@
 	pixel_y = 32
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/binary/volume_pump/layer2{
+/obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
 	dir = 4;
-	name = "air canister pump";
-	layer = 2.43
+	piping_layer = 2;
+	on = 0;
+	layer = 2.435
 	},
 /turf/open/floor/plating,
 /area/ship/storage/equip)
@@ -787,12 +788,8 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden{
 	dir = 6
 	},
-/obj/machinery/atmospherics/components/binary/pump/layer5{
-	dir = 1;
-	name = "engine fuel pump";
-	layer = 2.43
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "ee" = (
@@ -2066,7 +2063,8 @@
 "jx" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/mix_output{
 	pixel_y = 0;
-	dir = 1
+	dir = 8;
+	on = 0
 	},
 /obj/machinery/air_sensor/atmos/mix_tank{
 	pixel_x = -10;
@@ -2187,10 +2185,10 @@
 /area/ship/medical)
 "jZ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/binary/valve{
-	dir = 4;
-	layer = 2.43;
-	name = "fuel valve"
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	layer = 2.435;
+	name = "engine fuel pump"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -2657,15 +2655,11 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/effect/turf_decal/atmos/air,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
@@ -2887,12 +2881,8 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
 "nV" = (
@@ -5616,9 +5606,6 @@
 	name = "mixing output"
 	},
 /obj/machinery/portable_atmospherics/canister,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5{
-	dir = 10
-	},
 /obj/effect/turf_decal/box/white,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -5917,10 +5904,10 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/atmospherics/components/binary/valve{
-	dir = 4;
-	layer = 2.453;
-	name = "fuel valve"
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	layer = 2.435;
+	name = "engine fuel pump"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -5930,10 +5917,10 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/atmospherics/components/binary/valve{
-	dir = 4;
-	layer = 2.453;
-	name = "fuel valve"
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	layer = 2.435;
+	name = "engine fuel pump"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -6365,6 +6352,9 @@
 /obj/effect/turf_decal/atmos/mix{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/general/hidden{
+	dir = 5
+	},
 /turf/open/floor/engine/hydrogen_fuel,
 /area/ship/engineering/engines/starboard)
 "Gf" = (
@@ -6402,10 +6392,14 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5{
-	dir = 5
+/obj/machinery/atmospherics/components/binary/valve{
+	dir = 2;
+	layer = 2.43;
+	name = "fuel valve";
+	piping_layer = 5
 	},
-/turf/open/floor/plasteel/tech,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Gp" = (
 /obj/machinery/power/port_gen/pacman/super{
@@ -7046,12 +7040,16 @@
 "Jq" = (
 /obj/structure/table,
 /obj/item/food/ration/snack/channeler_meat_candy{
-	pixel_x = 8;
-	pixel_y = -2
+	pixel_x = 2;
+	pixel_y = 6
 	},
 /obj/item/reagent_containers/food/drinks/waterbottle/empty{
 	pixel_y = 3;
-	pixel_x = -9
+	pixel_x = 8
+	},
+/obj/item/dice/d6/ebony{
+	pixel_x = -11;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -8801,12 +8799,32 @@
 "Qa" = (
 /obj/structure/table,
 /obj/item/toy/cards/deck{
-	pixel_x = 9;
-	pixel_y = 5
+	pixel_x = 15;
+	pixel_y = 12
 	},
 /obj/item/food/ration/bar/energy_bar{
-	pixel_x = -3;
+	pixel_x = -5;
 	pixel_y = 9
+	},
+/obj/item/dice/d6{
+	pixel_x = 7;
+	pixel_y = 0
+	},
+/obj/item/dice/d6{
+	pixel_x = 7;
+	pixel_y = 0
+	},
+/obj/item/dice/d6{
+	pixel_x = 7;
+	pixel_y = 0
+	},
+/obj/item/dice/d6{
+	pixel_x = 7;
+	pixel_y = 0
+	},
+/obj/item/dice/d6{
+	pixel_x = 7;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -9003,16 +9021,14 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
 "QU" = (
@@ -9949,6 +9965,12 @@
 	anchored = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
 "Uq" = (
@@ -10728,10 +10750,10 @@
 /area/ship/bridge/cool)
 "XY" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/binary/valve{
-	dir = 4;
-	layer = 2.43;
-	name = "fuel valve"
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	layer = 2.435;
+	name = "engine fuel pump"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -11036,12 +11058,12 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/effect/turf_decal/atmos/mix,
+/obj/effect/turf_decal/atmos/oxygen,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
+	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
+	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
@@ -11352,7 +11374,7 @@ nV
 ed
 Do
 Go
-dh
+aw
 FR
 nx
 gL
@@ -11386,7 +11408,7 @@ nw
 qy
 wr
 Cc
-aw
+dh
 jx
 nx
 xN
