@@ -165,10 +165,6 @@
 	attack_verb_simple = "smash"
 	attack_sound = 'sound/weapons/genhit1.ogg'
 
-	light_color = COLOR_SOFT_RED
-	var/obj/effect/light_emitter/red_energy_sword/sord
-	projectile_deflect_chance = 25
-
 /mob/living/simple_animal/hostile/human/ramzi/melee/sledge/AttackingTarget()
 	. = ..()
 	if(isliving(target))
