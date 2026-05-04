@@ -77,6 +77,16 @@
 	glasses = /obj/item/clothing/glasses/welding
 	belt = /obj/item/storage/belt/utility
 
+/obj/effect/mob_spawn/human/corpse/ramzi/engi/grinder
+	name = "Ramzi Grinder Guy"
+	outfit = /datum/outfit/ramzi/engi/grinder
+
+
+/datum/outfit/ramzi/engi/grinder
+	name = "Ramzi Technician Corpse"
+	suit = /obj/item/clothing/suit/armor/ramzi
+	back = /obj/item/gear_pack/anglegrinder
+
 /obj/effect/mob_spawn/human/corpse/ramzi/doctor
 	name = "Ramzi Field Medic"
 	outfit = /datum/outfit/ramzi/doctor

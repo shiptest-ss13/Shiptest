@@ -144,6 +144,18 @@
 	melee_damage_upper = 15
 	attack_sound = 'sound/weapons/circsawhit.ogg'
 
+/mob/living/simple_animal/hostile/human/ramzi/melee/angle_grinder //i'm evil like that
+	name = "Ramzi Clique Cutter"
+	desc = "A deserter from the Gorlex Marauders turned pirate. They wrestle a bulky angle grinder, training it in your direction."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/engi/grinder
+	l_hand = /obj/item/gear_handle/anglegrinder
+	weapon_drop_chance = 0 //the backpack drops with their corpse. this will always drop a grinder.
+	sharpness = SHARP_EDGED
+	attack_verb_continuous = "saws"
+	attack_verb_simple = "sawed"
+	melee_damage_lower = 35 //more straight damage than the hammer, but they dont hardstun you
+	melee_damage_upper = 35
+	attack_sound = 'sound/weapons/anglegrinder.ogg'
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/sledge
 	name = "Ramzi Clique Breaker"
