@@ -144,7 +144,7 @@
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	speed = 10
 	rapid = 2
-	rapid_fire_delay = 1
+	rapid_fire_delay = 5
 	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/sharplite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
@@ -160,7 +160,7 @@
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	speed = 10
 	rapid = 5
-	rapid_fire_delay = 1
+	rapid_fire_delay = 2
 	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/sharplite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
@@ -431,6 +431,12 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/bodyguard
 	r_hand = /obj/item/gun/energy/sharplite/al655
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security
+	speak_emote = list("exhales","rolls their shoulders")
+	emote_hear = list("grunts","cracks their knuckles")
+
+/mob/living/simple_animal/hostile/human/hermit/ranged/bodyguard/Aggro()
+	..()
+	say("GET BEHIND ME!!!")
 
 /obj/effect/mob_spawn/human/corpse/damaged/bodyguard
 	name = "The Bouncer"
@@ -456,6 +462,17 @@
 	desc = "A scrawny Makosso-Warra assistant-engineer. Unarmed and utterly defenseless on their own, they seem oddly out of place."
 	icon_state = "warra"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/engineer
+	r_hand = null
+	minimum_distance = 10
+	retreat_distance = 10
+	obj_damage = 0
+	environment_smash = ENVIRONMENT_SMASH_NONE
+	speak_emote = list("cowers","trembles")
+	emote_hear = list("hyperventilates")
+
+/mob/living/simple_animal/hostile/human/hermit/survivor/engineer/Aggro()
+	..()
+	say("DON'T HURT ME!!!")
 
 /obj/effect/mob_spawn/human/corpse/damaged/engineer
 	name = "The Engineer"

@@ -34,6 +34,18 @@
 	pixel_x = -33;
 	pixel_y = 0
 	},
+/obj/item/grown/log/tree{
+	pixel_x = 9;
+	pixel_y = 19
+	},
+/obj/item/grown/log/tree{
+	pixel_x = 3;
+	pixel_y = 19
+	},
+/obj/item/grown/log/tree{
+	pixel_x = 6;
+	pixel_y = 23
+	},
 /turf/open/floor/concrete/tiles/whitesands,
 /area/ruin/whitesands/pubbytown/clinic)
 "aM" = (
@@ -58,7 +70,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood{
+	icon_state = "wood-broken3"
+	},
 /area/ruin/whitesands/pubbytown/guard)
 "aZ" = (
 /turf/closed/mineral/random/whitesands,
@@ -71,9 +85,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/pubbytown/engine)
 "bs" = (
-/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 /obj/item/restraints/handcuffs/cable/zipties/used,
 /obj/effect/decal/cleanable/blood/gibs/down,
+/obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/pubbytown)
 "by" = (
@@ -179,13 +193,11 @@
 /turf/open/floor/plasteel/dark/whitesands,
 /area/ruin/whitesands/pubbytown/guard)
 "cx" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
 	id = "whiteship_windows"
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/whitesands/pubbytown/canteen)
 "cN" = (
@@ -259,6 +271,10 @@
 	dir = 4;
 	pixel_x = -6;
 	pixel_y = 0
+	},
+/obj/item/clothing/neck/fangnecklace{
+	pixel_x = -5;
+	pixel_y = 5
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/whitesands/pubbytown/guard)
@@ -362,6 +378,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/pubbytown/study)
@@ -479,7 +498,9 @@
 	pixel_y = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood,
+/turf/open/floor/wood{
+	icon_state = "wood-broken2"
+	},
 /area/ruin/whitesands/pubbytown/guard)
 "fR" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -618,9 +639,12 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
 	dir = 8
 	},
-/turf/open/floor/wood/walnut/whitesands,
+/turf/open/floor/wood/walnut/whitesands{
+	icon_state = "wood-broken3"
+	},
 /area/ruin/whitesands/pubbytown/clinic)
 "hz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -772,6 +796,7 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "jL" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood,
 /area/ruin/whitesands/pubbytown/study)
 "jW" = (
@@ -840,9 +865,9 @@
 	},
 /area/ruin/whitesands/pubbytown/cargo)
 "kQ" = (
-/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 /obj/item/restraints/handcuffs/cable/zipties/used,
 /obj/effect/decal/cleanable/ash/large,
+/obj/effect/mob_spawn/human/corpse,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/pubbytown)
 "kR" = (
@@ -911,6 +936,9 @@
 "lD" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
@@ -954,8 +982,18 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/whitesands/pubbytown/study)
+"me" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin/whitesands/pubbytown/guard)
 "mp" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1134,6 +1172,12 @@
 	pixel_x = 7;
 	pixel_y = 0
 	},
+/obj/item/paper/crumpled/fluff/ruin{
+	default_raw_text = "thanks for keeping an eye on the shop for me, kiddo. remember to put the money in the safe at the end of the night. code is 13-91. xoxo. dad";
+	pixel_x = -17;
+	pixel_y = 0;
+	name = "note"
+	},
 /turf/open/floor/concrete/tiles/whitesands,
 /area/ruin/whitesands/pubbytown/shop)
 "nG" = (
@@ -1158,6 +1202,9 @@
 "nV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/pubbytown/study)
 "od" = (
@@ -1253,7 +1300,9 @@
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood{
+	icon_state = "wood-broken3"
+	},
 /area/ruin/whitesands/pubbytown/guard)
 "pe" = (
 /obj/structure/table,
@@ -1267,7 +1316,9 @@
 	color = "#543C30";
 	dir = 1
 	},
-/turf/open/floor/wood/walnut/whitesands,
+/turf/open/floor/wood/walnut/whitesands{
+	icon_state = "wood-broken"
+	},
 /area/ruin/whitesands/pubbytown/clinic)
 "pu" = (
 /obj/structure/cable{
@@ -1303,9 +1354,20 @@
 /turf/closed/mineral/random/whitesands,
 /area/ruin/whitesands/pubbytown/cargo)
 "pN" = (
-/obj/structure/flora/tree/tall/whitesands,
-/turf/open/floor/engine/hull/reinforced,
-/area/overmap_encounter/planetoid/sand/explored)
+/obj/item/clothing/head/helmet/bulletproof/x11/frontier{
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/obj/item/clothing/head/beret/sec/frontier/officer{
+	pixel_x = 3;
+	pixel_y = -10
+	},
+/obj/item/clothing/suit/armor/vest/frontier{
+	pixel_x = -5;
+	pixel_y = -4
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/pubbytown)
 "pR" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
@@ -1354,8 +1416,24 @@
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/ruin/whitesands/pubbytown/house)
 "qg" = (
-/turf/closed/wall/mineral/sandstone,
-/area/overmap_encounter/planetoid/sand/explored)
+/obj/item/clothing/mask/gas/frontiersmen{
+	pixel_x = -9;
+	pixel_y = 1
+	},
+/obj/item/clothing/mask/gas/frontiersmen{
+	pixel_x = -7;
+	pixel_y = -8
+	},
+/obj/item/clothing/under/frontiersmen{
+	pixel_x = 2;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/frontiersmen{
+	pixel_x = 4;
+	pixel_y = -3
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/ruin/whitesands/pubbytown)
 "ql" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -1489,12 +1567,12 @@
 /turf/open/floor/wood/walnut/whitesands,
 /area/ruin/whitesands/pubbytown/clinic)
 "rG" = (
-/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer,
 /obj/item/restraints/handcuffs/cable/zipties/used,
 /obj/effect/decal/cleanable/ash/large{
 	pixel_x = -2;
 	pixel_y = 0
 	},
+/obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/pubbytown)
 "rT" = (
@@ -1605,7 +1683,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "d1"
+	},
 /turf/open/floor/engine,
 /area/ruin/whitesands/pubbytown/cargo)
 "sV" = (
@@ -1658,7 +1738,7 @@
 "tR" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood,
+/turf/open/floor/carpet/purple,
 /area/ruin/whitesands/pubbytown/study)
 "uh" = (
 /obj/structure/chair/wood{
@@ -1685,10 +1765,11 @@
 	},
 /area/ruin/whitesands/pubbytown/cargo)
 "up" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
 	id = "whiteship_windows"
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/whitesands/pubbytown/engine)
 "uB" = (
@@ -1702,7 +1783,9 @@
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/ruin/whitesands/pubbytown)
 "uW" = (
-/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30"
+	},
 /turf/open/floor/wood/walnut/whitesands,
 /area/ruin/whitesands/pubbytown/clinic)
 "vb" = (
@@ -1862,6 +1945,9 @@
 /area/ruin/whitesands/pubbytown/house)
 "xv" = (
 /obj/machinery/light/dim/directional/west,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/pubbytown/study)
 "xy" = (
@@ -2053,9 +2139,13 @@
 	},
 /obj/item/clothing/shoes/workboots/mining{
 	pixel_x = 2;
-	pixel_y = -2
+	pixel_y = -6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/reagent_containers/food/drinks/bottle/cognac{
+	pixel_x = 4;
+	pixel_y = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/pubbytown/study)
 "zi" = (
@@ -2065,6 +2155,9 @@
 "zq" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/pubbytown/study)
 "zI" = (
@@ -2086,6 +2179,18 @@
 /area/ruin/whitesands/pubbytown/study)
 "zP" = (
 /obj/structure/table/wood,
+/obj/item/clothing/mask/cigarette/rollie/cannabis{
+	pixel_x = -2;
+	pixel_y = 2
+	},
+/obj/item/clothing/mask/cigarette/rollie/cannabis{
+	pixel_x = 7;
+	pixel_y = 16
+	},
+/obj/item/clothing/head/beret/med{
+	pixel_x = 1;
+	pixel_y = 5
+	},
 /turf/open/floor/wood/walnut/whitesands,
 /area/ruin/whitesands/pubbytown/clinic)
 "zX" = (
@@ -2342,6 +2447,7 @@
 	color = "#543C30";
 	dir = 4
 	},
+/obj/item/pushbroom,
 /turf/open/floor/wood/walnut/whitesands,
 /area/ruin/whitesands/pubbytown/clinic)
 "BD" = (
@@ -2654,7 +2760,8 @@
 "EA" = (
 /obj/structure/bookcase/manuals/chemistry{
 	pixel_x = 0;
-	pixel_y = 13
+	pixel_y = 13;
+	density = 0
 	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken2"
@@ -2715,11 +2822,15 @@
 	},
 /obj/item/clothing/shoes/workboots/mining{
 	pixel_x = 4;
-	pixel_y = 7
+	pixel_y = 11
 	},
 /obj/item/clothing/shoes/workboots/mining{
 	pixel_x = 4;
-	pixel_y = -1
+	pixel_y = 5
+	},
+/obj/item/storage/box/ammo/a12g_slug{
+	pixel_x = 4;
+	pixel_y = -8
 	},
 /turf/open/floor/wood/walnut/whitesands,
 /area/ruin/whitesands/pubbytown/house)
@@ -2731,7 +2842,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/wood/walnut/whitesands,
+/turf/open/floor/wood/walnut/whitesands{
+	icon_state = "wood-broken4"
+	},
 /area/ruin/whitesands/pubbytown/clinic)
 "Fm" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2778,6 +2891,9 @@
 /area/ruin/whitesands/pubbytown/guard)
 "FA" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
@@ -2804,7 +2920,9 @@
 /turf/open/floor/wood/walnut/whitesands,
 /area/ruin/whitesands/pubbytown/house)
 "FM" = (
-/obj/structure/safe/floor,
+/obj/structure/safe/floor{
+	tumblers = list(13,91)
+	},
 /obj/item/spacecash/bundle/smallrand{
 	pixel_x = -4;
 	pixel_y = 1
@@ -2825,9 +2943,14 @@
 	pixel_x = 3;
 	pixel_y = 0
 	},
-/obj/item/stock_parts/cell/gun/sharplite/empty{
-	pixel_x = 6;
-	pixel_y = 3
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "safepath";
+	pixel_x = -5;
+	pixel_y = 0
+	},
+/obj/item/stock_parts/cell/gun/sharplite/plus/empty{
+	pixel_x = 1;
+	pixel_y = 1
 	},
 /turf/open/floor/concrete/tiles/whitesands,
 /area/ruin/whitesands/pubbytown/shop)
@@ -2844,6 +2967,10 @@
 /mob/living/simple_animal/hostile/human/hermit/survivor,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/pubbytown/wreck)
+"FT" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/purple,
+/area/ruin/whitesands/pubbytown/study)
 "FY" = (
 /obj/item/flashlight/lantern{
 	pixel_x = -9;
@@ -2889,7 +3016,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "d1"
+	},
 /turf/open/floor/engine,
 /area/ruin/whitesands/pubbytown/cargo)
 "GA" = (
@@ -2929,7 +3058,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "d1"
+	},
 /turf/open/floor/engine,
 /area/ruin/whitesands/pubbytown/cargo)
 "GH" = (
@@ -3002,6 +3133,7 @@
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/sand/explored)
 "Ht" = (
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/whitesands/pubbytown/study)
 "HJ" = (
@@ -3012,7 +3144,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/wood/walnut/whitesands,
+/turf/open/floor/wood/walnut/whitesands{
+	icon_state = "wood-broken2"
+	},
 /area/ruin/whitesands/pubbytown/clinic)
 "HQ" = (
 /obj/effect/turf_decal/siding/wood{
@@ -3091,13 +3225,13 @@
 "IP" = (
 /obj/structure/chair/wood{
 	dir = 4;
-	pixel_x = 6;
-	pixel_y = 2
+	pixel_x = 8;
+	pixel_y = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/purple,
 /area/ruin/whitesands/pubbytown/study)
 "IQ" = (
 /obj/structure/cable{
@@ -3123,7 +3257,9 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "d1"
+	},
 /turf/open/floor/engine,
 /area/ruin/whitesands/pubbytown/cargo)
 "IU" = (
@@ -3201,7 +3337,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
 	},
-/turf/open/floor/wood/walnut/whitesands,
+/turf/open/floor/wood/walnut/whitesands{
+	icon_state = "wood-broken3"
+	},
 /area/ruin/whitesands/pubbytown/clinic)
 "Ke" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor/passive,
@@ -3212,10 +3350,29 @@
 /area/ruin/whitesands/pubbytown/study)
 "Kf" = (
 /obj/structure/table/wood,
+/obj/item/storage/bag/tray{
+	pixel_x = 0;
+	pixel_y = 6
+	},
+/obj/item/food/meat/steak/goliath{
+	pixel_x = 4;
+	pixel_y = 2
+	},
+/obj/item/food/meat/steak/goliath{
+	pixel_x = -4;
+	pixel_y = 1
+	},
+/obj/item/food/meat/steak/goliath{
+	pixel_x = 0;
+	pixel_y = 5
+	},
 /turf/open/floor/wood/walnut/whitesands,
 /area/ruin/whitesands/pubbytown/house)
 "Kh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
 /turf/open/floor/wood{
@@ -3229,6 +3386,9 @@
 	pixel_y = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/pubbytown/study)
 "Kt" = (
@@ -3347,12 +3507,8 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/pubbytown/engine)
 "Lk" = (
-/obj/effect/mob_spawn/human/corpse/frontier/ranged,
 /obj/item/restraints/handcuffs/cable/zipties/used,
-/obj/effect/decal/cleanable/ash/large{
-	pixel_x = -4;
-	pixel_y = 1
-	},
+/obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/pubbytown)
 "Ls" = (
@@ -3474,7 +3630,9 @@
 /area/ruin/whitesands/pubbytown/house)
 "MK" = (
 /obj/structure/flippedtable,
-/turf/open/floor/wood,
+/turf/open/floor/wood{
+	icon_state = "wood-broken7"
+	},
 /area/ruin/whitesands/pubbytown/guard)
 "MQ" = (
 /obj/structure/cable{
@@ -3679,10 +3837,10 @@
 "Ql" = (
 /obj/structure/chair/wood{
 	dir = 8;
-	pixel_x = -6;
+	pixel_x = -10;
 	pixel_y = 2
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/purple,
 /area/ruin/whitesands/pubbytown/study)
 "Qo" = (
 /obj/structure/cable{
@@ -3785,6 +3943,18 @@
 	pixel_x = -33;
 	pixel_y = 0
 	},
+/obj/item/grown/log/tree{
+	pixel_x = 10;
+	pixel_y = 18
+	},
+/obj/item/grown/log/tree{
+	pixel_x = 4;
+	pixel_y = 18
+	},
+/obj/item/grown/log/tree{
+	pixel_x = 7;
+	pixel_y = 22
+	},
 /turf/open/floor/concrete/tiles/whitesands,
 /area/ruin/whitesands/pubbytown/house)
 "Rv" = (
@@ -3847,7 +4017,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
 /area/ruin/whitesands/pubbytown/guard)
 "RL" = (
 /obj/structure/girder/displaced,
@@ -3864,8 +4036,8 @@
 "RX" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/gun/energy/e_gun/e11/empty_cell{
-	pixel_x = 2;
-	pixel_y = 6
+	pixel_x = 1;
+	pixel_y = 12
 	},
 /turf/open/floor/concrete/tiles/whitesands,
 /area/ruin/whitesands/pubbytown/shop)
@@ -3914,10 +4086,14 @@
 "SP" = (
 /obj/structure/table/wood,
 /obj/item/book/manual/wiki/piloting{
-	pixel_x = 7;
+	pixel_x = 6;
 	pixel_y = 4
 	},
-/turf/open/floor/wood,
+/obj/item/book/manual/trickwines_4_brewers{
+	pixel_x = -12;
+	pixel_y = 1
+	},
+/turf/open/floor/carpet/purple,
 /area/ruin/whitesands/pubbytown/study)
 "SR" = (
 /obj/effect/turf_decal/stairs{
@@ -3965,13 +4141,16 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbytown/engine)
+"Ti" = (
+/turf/open/floor/wood/walnut/whitesands{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/whitesands/pubbytown/clinic)
 "Tu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
 	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken6"
-	},
+/turf/open/floor/carpet/purple,
 /area/ruin/whitesands/pubbytown/study)
 "Ty" = (
 /obj/effect/turf_decal/siding/wood{
@@ -4083,7 +4262,7 @@
 	pixel_x = -4;
 	pixel_y = 13
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/purple,
 /area/ruin/whitesands/pubbytown/study)
 "UC" = (
 /obj/structure/guncloset,
@@ -4109,6 +4288,7 @@
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Vr" = (
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
@@ -4133,7 +4313,9 @@
 	pixel_y = -1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood,
+/turf/open/floor/wood{
+	icon_state = "wood-broken7"
+	},
 /area/ruin/whitesands/pubbytown/guard)
 "VA" = (
 /obj/item/ammo_casing/spent/pistol_brass,
@@ -4206,6 +4388,14 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/pubbytown/engine)
+"Ww" = (
+/obj/structure/chair/wood{
+	dir = 1;
+	pixel_x = -1;
+	pixel_y = 16
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/whitesands/pubbytown/study)
 "WD" = (
 /obj/structure/closet/crate/grave{
 	pixel_x = -2;
@@ -4217,7 +4407,8 @@
 "WG" = (
 /obj/structure/bookcase/manuals{
 	pixel_x = 0;
-	pixel_y = 13
+	pixel_y = 13;
+	density = 0
 	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/pubbytown/study)
@@ -4255,7 +4446,9 @@
 	pixel_x = 2;
 	pixel_y = 12
 	},
-/turf/open/floor/wood/walnut/whitesands,
+/turf/open/floor/wood/walnut/whitesands{
+	icon_state = "wood-broken7"
+	},
 /area/ruin/whitesands/pubbytown/clinic)
 "Xn" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4414,9 +4607,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 6
 	},
-/obj/machinery/power/smes{
-	charge = 1.5e6
-	},
+/obj/machinery/power/smes/engineering,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbytown/engine)
 "Zm" = (
@@ -4469,11 +4660,12 @@
 /turf/open/floor/plating/rust,
 /area/ruin/whitesands/pubbytown/canteen)
 "Zx" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "whiteship_windows"
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/whitesands/pubbytown/cargo)
 "ZE" = (
@@ -4784,7 +4976,7 @@ Bw
 Jz
 Ct
 Jz
-qg
+XD
 Ct
 Bw
 Bw
@@ -4973,7 +5165,7 @@ Bw
 DS
 Bw
 Ct
-qg
+XD
 PA
 PA
 Bw
@@ -5660,7 +5852,7 @@ Qf
 zL
 Vr
 Uz
-Ht
+Ww
 eQ
 aZ
 aZ
@@ -5752,7 +5944,7 @@ WG
 Yw
 Ht
 Ql
-Co
+FT
 aZ
 aZ
 aZ
@@ -6073,7 +6265,7 @@ aZ
 aZ
 Qw
 Qw
-pN
+Xz
 Qw
 Qw
 qm
@@ -6346,7 +6538,7 @@ aZ
 aZ
 aZ
 bs
-zJ
+qg
 zJ
 zJ
 Bw
@@ -6417,7 +6609,7 @@ Lv
 SS
 dF
 gL
-Np
+me
 cZ
 Lz
 Lz
@@ -6484,7 +6676,7 @@ aZ
 aZ
 aZ
 rG
-zJ
+pN
 Bw
 Bw
 Bw
@@ -6572,7 +6764,7 @@ QR
 av
 HJ
 Xv
-Xv
+Ti
 uW
 aZ
 aZ
@@ -7119,7 +7311,7 @@ Vd
 Bw
 Bw
 Ct
-qg
+XD
 Bw
 Bw
 aZ
