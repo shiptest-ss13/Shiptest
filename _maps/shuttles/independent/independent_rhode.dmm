@@ -10,7 +10,6 @@
 /area/ship/engineering/engines)
 "aq" = (
 /obj/machinery/mech_bay_recharge_port,
-/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -135,6 +134,7 @@
 	dir = 4
 	},
 /obj/item/gun/ballistic/shotgun/flamingarrow/pyre/empty,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "cH" = (
@@ -557,7 +557,6 @@
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
-/obj/machinery/light/floor,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "nl" = (
@@ -1385,6 +1384,7 @@
 "CK" = (
 /obj/machinery/computer/mech_bay_power_console/retro,
 /obj/effect/turf_decal/box,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "CT" = (
@@ -1400,6 +1400,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"De" = (
+/obj/structure/falsewall,
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
 "Dn" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/cable{
@@ -1698,7 +1702,6 @@
 /obj/structure/cable{
 	icon_state = "6-10"
 	},
-/obj/machinery/light/floor,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -1927,7 +1930,6 @@
 /turf/open/floor/plating/rust,
 /area/ship/engineering/engines)
 "Ok" = (
-/obj/machinery/light/floor,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -2123,10 +2125,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ship/engineering/engines)
-"Tc" = (
-/obj/structure/falsewall,
-/turf/open/floor/plating,
-/area/ship/crew/dorm)
 "Ti" = (
 /obj/machinery/washing_machine{
 	pixel_x = 4;
@@ -2608,7 +2606,7 @@ UH
 DP
 eS
 Wg
-Tc
+De
 gr
 FO
 Ao
@@ -2661,7 +2659,7 @@ vq
 dg
 Ar
 tm
-Tc
+De
 Ar
 Ar
 MH
