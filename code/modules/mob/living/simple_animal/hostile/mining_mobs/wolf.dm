@@ -142,6 +142,10 @@
 	faction = list(FACTION_NEUTRAL)
 	maxHealth = 75
 	health = 75
+	icon = 'icons/mob/icemoon/icemoon_monsters_wide.dmi'
+	icon_state = "hound"
+	icon_living = "hound"
+	icon_dead = "hound_dead"
 
 /mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi
 	name = "Solarian Hound"
