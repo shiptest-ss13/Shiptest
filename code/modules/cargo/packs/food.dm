@@ -80,41 +80,6 @@
 	crate_name = "condiments crate"
 	crate_type = /obj/structure/closet/crate/freezer
 
-/datum/supply_pack/food/ingredients_randomized
-	name = "Exotic Meat Crate"
-	desc = "The best cuts in the whole sector. Probably."
-	cost = 500
-	contains = list(/obj/item/food/meat/slab/killertomato,
-					/obj/item/food/meat/slab/bear,
-					/obj/item/food/meat/slab/xeno,
-					/obj/item/food/meat/slab/spider,
-					/obj/item/food/meat/slab/penguin,
-					/obj/item/food/spiderleg,
-					/obj/item/food/fishmeat/carp,
-					/obj/item/food/meat/slab,
-	)
-	crate_name = "meat crate"
-	crate_type = /obj/structure/closet/crate/freezer
-	var/items = 7
-
-/datum/supply_pack/food/ingredients_randomized/fill(obj/structure/closet/crate/C)
-	for(var/i in 1 to items)
-		var/item = pick(contains)
-		new item(C)
-
-/datum/supply_pack/food/ingredients_randomized/meat
-	name = "Standard Meat Crate"
-	desc = "Less interesting, yet filling cuts of meat."
-	cost = 300
-	contains = list(/obj/item/food/meat/slab,
-					/obj/item/food/meat/slab/chicken,
-					/obj/item/food/meat/slab/synthmeat,
-					/obj/item/food/meat/rawbacon,
-					/obj/item/food/meatball
-	)
-	crate_name = "meat crate"
-	crate_type = /obj/structure/closet/crate/freezer
-
 /datum/supply_pack/food/ingredients_basic/corn
 	name = "Corn Crate"
 	desc = "Crate containing five ears of corn."
@@ -368,44 +333,135 @@
 					/obj/item/food/grown/grapes,
 	)
 
-/datum/supply_pack/food/ingredients_randomized/grains
-	name = "Grains Crate"
-	desc = "A crate full of various grains. How interesting."
-	cost = 100
-	contains = list(/obj/item/food/grown/wheat,
-					/obj/item/food/grown/wheat,
-					/obj/item/food/grown/wheat, //Weighted to be more common
-					/obj/item/food/grown/oat,
-					/obj/item/food/grown/rice,
-					/obj/item/food/grown/soybeans
-	)
-	crate_name = "food crate"
-	crate_type = /obj/structure/closet/crate/freezer
-	items = 10
-
-/datum/supply_pack/food/ingredients_randomized/bread
-	name = "Bread Crate"
-	desc = "A crate full of various breads. Bready to either be eaten or made into delicious meals."
-	cost = 300
-	contains = list(/obj/item/food/bread/plain,
-					/obj/item/food/breadslice/plain,
-					/obj/item/food/breadslice/plain,
-					/obj/item/food/breadslice/plain, //Weighted to be more common
-					/obj/item/food/bun,
-					/obj/item/food/tortilla,
-					/obj/item/food/pizzabread
-	)
-	crate_name = "food crate"
-	crate_type = /obj/structure/closet/crate/freezer
-
 /datum/supply_pack/food/sugar
 	name = "Sugar Crate"
-	desc = "A crate with a few bags of sugar. Good for cake shops and amateur chemists."
+	desc = "A crate containing one bag of refined white sugar, useful for practicing patissiers."
 	cost = 50
 	contains = list(/obj/item/reagent_containers/condiment/sugar)
 	crate_name = "sugar crate"
 	crate_type = /obj/structure/closet/crate
 
+/datum/supply_pack/food/ingredients_basic/meat
+	name = "Standard Meat Crate"
+	desc = "A crate containing five cuts of natural raw meat."
+	cost = 75
+	contains = list(/obj/item/food/meat/slab,
+					/obj/item/food/meat/slab,
+					/obj/item/food/meat/slab,
+					/obj/item/food/meat/slab,
+					/obj/item/food/meat/slab,
+	)
+
+/datum/supply_pack/food/ingredients_basic/chicken_meat
+	name = "Chicken Meat Crate"
+	desc = "A crate containing five assorted cuts of chicken."
+	cost = 75
+	contains = list(/obj/item/food/meat/slab/chicken,
+					/obj/item/food/meat/slab/chicken,
+					/obj/item/food/meat/slab/chicken,
+					/obj/item/food/meat/slab/chicken,
+					/obj/item/food/meat/slab/chicken,
+	)
+
+/datum/supply_pack/food/ingredients_basic/rice
+	name = "Rice Crate"
+	desc = "A crate containing five packages of medium-grain rice, ready for cooking."
+	cost = 75
+	contains = list(/obj/item/reagent_containers/condiment/rice,
+					/obj/item/reagent_containers/condiment/rice,
+					/obj/item/reagent_containers/condiment/rice,
+					/obj/item/reagent_containers/condiment/rice,
+					/obj/item/reagent_containers/condiment/rice,
+	)
+
+/datum/supply_pack/food/ingredients_basic/flour
+	name = "Flour Crate"
+	desc = "A crate containing five packages of wheat flour, for all your baking needs and more."
+	cost = 100
+	contains = list(/obj/item/reagent_containers/condiment/flour,
+					/obj/item/reagent_containers/condiment/flour,
+					/obj/item/reagent_containers/condiment/flour,
+					/obj/item/reagent_containers/condiment/flour,
+					/obj/item/reagent_containers/condiment/flour,
+	)
+
+/datum/supply_pack/food/ingredients_basic/milk
+	name = "Milk Crate"
+	desc = "A crate containing five cartons of pasteurized milk."
+	cost = 100
+	contains = list(/obj/item/reagent_containers/condiment/milk,
+					/obj/item/reagent_containers/condiment/milk,
+					/obj/item/reagent_containers/condiment/milk,
+					/obj/item/reagent_containers/condiment/milk,
+					/obj/item/reagent_containers/condiment/milk,
+	)
+
+/datum/supply_pack/food/ingredients_basic/soymilk
+	name = "Soy Milk Crate"
+	desc = "A crate containing five cartons of soy milk."
+	cost = 100
+	contains = list(/obj/item/reagent_containers/condiment/soymilk,
+					/obj/item/reagent_containers/condiment/soymilk,
+					/obj/item/reagent_containers/condiment/soymilk,
+					/obj/item/reagent_containers/condiment/soymilk,
+					/obj/item/reagent_containers/condiment/soymilk,
+	)
+/datum/supply_pack/food/ingredients_basic/eggs
+	name = "Eggs Crate"
+	desc = "One carton of unfertilized chicken eggs, packaged and sealed to prevent any damages during transportation."
+	cost = 50
+	contains = list(/obj/item/storage/fancy/egg_box)
+
+/datum/supply_pack/food/ingredients_basic/oats
+	name = "Oats Crate"
+	desc = "Crate containing five stalks of unprocessed oats."
+	cost = 50
+	contains = list(/obj/item/food/grown/oat,
+					/obj/item/food/grown/oat,
+					/obj/item/food/grown/oat,
+					/obj/item/food/grown/oat,
+					/obj/item/food/grown/oat,
+	)
+/datum/supply_pack/food/ingredients_basic/soybeans
+	name = "Soybeans Crate"
+	desc = "Crate containing five handfuls of soybeans."
+	cost = 75
+	contains = list(/obj/item/food/grown/soybeans,
+					/obj/item/food/grown/soybeans,
+					/obj/item/food/grown/soybeans,
+					/obj/item/food/grown/soybeans,
+					/obj/item/food/grown/soybeans,
+	)
+/datum/supply_pack/food/ingredients_basic/vanillapods
+	name = "Vanilla Pods Crate"
+	desc = "Crate containing five vanilla pods."
+	cost = 75
+	contains = list(/obj/item/food/grown/vanillapod,
+					/obj/item/food/grown/vanillapod,
+					/obj/item/food/grown/vanillapod,
+					/obj/item/food/grown/vanillapod,
+					/obj/item/food/grown/vanillapod,
+	)
+/datum/supply_pack/food/ingredients_basic/cocoapods
+	name = "Cocoa Pods Crate"
+	desc = "Crate containing five cocoa pods."
+	cost = 75
+	contains = list(/obj/item/food/grown/cocoapod,
+					/obj/item/food/grown/cocoapod,
+					/obj/item/food/grown/cocoapod,
+					/obj/item/food/grown/cocoapod,
+					/obj/item/food/grown/cocoapod,
+	)
+/datum/supply_pack/food/ingredients_basic/pineapple
+	name = "Pineapple Crate"
+	desc = "Crate containing five pineapples."
+	cost = 75
+	contains = list(/obj/item/food/grown/pineapple,
+					/obj/item/food/grown/pineapple,
+					/obj/item/food/grown/pineapple,
+					/obj/item/food/grown/pineapple,
+					/obj/item/food/grown/pineapple,
+	)
 /*
 		Cooking
 */
@@ -427,93 +483,6 @@
 	crate_name = "griddle circuit board crate"
 	crate_type = /obj/structure/closet/crate
 	no_bundle = TRUE
-
-/*
-		Botanical
-*/
-
-/datum/supply_pack/food/hydrotank
-	name = "Hydroponics Backpack Crate"
-	desc = "Bring on the flood with this high-capacity backpack crate. Contains 500 units of life-giving H2O."
-	cost = 750
-	contains = list(/obj/item/watertank)
-	crate_name = "hydroponics backpack crate"
-	crate_type = /obj/structure/closet/crate/hydroponics
-
-/datum/supply_pack/food/gardening
-	name = "Gardening Crate"
-	desc = "Supplies for growing a great garden! Contains two bottles of ammonia, two Plant-B-Gone spray bottles, a hatchet, cultivator, plant analyzer, as well as a pair of leather gloves and a botanist's apron."
-	cost = 500
-	contains = list(/obj/item/reagent_containers/spray/plantbgone,
-					/obj/item/reagent_containers/spray/plantbgone,
-					/obj/item/reagent_containers/glass/bottle/ammonia,
-					/obj/item/reagent_containers/glass/bottle/ammonia,
-					/obj/item/hatchet,
-					/obj/item/cultivator,
-					/obj/item/plant_analyzer,
-					/obj/item/clothing/gloves/botanic_leather,
-					/obj/item/clothing/suit/apron,
-					/obj/item/storage/box/disks_plantgene)
-	crate_name = "gardening crate"
-	crate_type = /obj/structure/closet/crate/hydroponics
-
-/datum/supply_pack/food/ethanol
-	name = "Ethanol Crate"
-	desc = "Contains one small bottle of ethanol for the aspiring botanist or amateur chemist."
-	cost = 100
-	contains = list(/obj/item/reagent_containers/glass/bottle/ethanol)
-	crate_name = "gardening crate"
-	crate_type = /obj/structure/closet/crate/hydroponics
-
-/datum/supply_pack/food/weedcontrol
-	name = "Weed Control Crate"
-	desc = "Contains a scythe, gasmask, and two anti-weed defoliant grenades, for when your garden grows out of control."
-	cost = 200
-	contains = list(/obj/item/scythe,
-					/obj/item/clothing/mask/gas,
-					/obj/item/grenade/chem_grenade/antiweed,
-					/obj/item/grenade/chem_grenade/antiweed)
-	crate_name = "weed control crate"
-	crate_type = /obj/structure/closet/crate/secure/hydroponics
-
-/datum/supply_pack/food/seeds
-	name = "Seeds Crate"
-	desc = "Big things have small beginnings. Contains fourteen different seeds."
-	cost = 150
-	contains = list(/obj/item/seeds/chili,
-					/obj/item/seeds/cotton,
-					/obj/item/seeds/berry,
-					/obj/item/seeds/corn,
-					/obj/item/seeds/eggplant,
-					/obj/item/seeds/tomato,
-					/obj/item/seeds/soya,
-					/obj/item/seeds/wheat,
-					/obj/item/seeds/wheat/rice,
-					/obj/item/seeds/carrot,
-					/obj/item/seeds/sunflower,
-					/obj/item/seeds/chanter,
-					/obj/item/seeds/potato,
-					/obj/item/seeds/sugarcane)
-	crate_name = "seeds crate"
-	crate_type = /obj/structure/closet/crate/hydroponics
-
-/datum/supply_pack/food/exoticseeds
-	name = "Exotic Seeds Crate"
-	desc = "Any entrepreneuring botanist's dream. Contains eleven different seeds, including two mystery seeds!"
-	cost = 1000
-	contains = list(/obj/item/seeds/nettle,
-					/obj/item/seeds/plump,
-					/obj/item/seeds/liberty,
-					/obj/item/seeds/amanita,
-					/obj/item/seeds/reishi,
-					/obj/item/seeds/bamboo,
-					/obj/item/seeds/eggplant/eggy,
-					/obj/item/seeds/rainbow_bunch,
-					/obj/item/seeds/rainbow_bunch,
-					/obj/item/seeds/random,
-					/obj/item/seeds/random)
-	crate_name = "exotic seeds crate"
-	crate_type = /obj/structure/closet/crate/hydroponics
 
 /*
 		Bees

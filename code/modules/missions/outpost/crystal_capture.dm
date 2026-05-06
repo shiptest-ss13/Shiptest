@@ -7,6 +7,7 @@
 	objective_type = /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal
 	num_wanted = 1
 	count_stacks = FALSE
+	blackbox_prefix = "Crystal Capture "
 
 /datum/mission/acquire/crystal_critter/New(...)
 	if(!name)

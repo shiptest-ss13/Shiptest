@@ -8,36 +8,16 @@
 	"description": "An extremely compact vessel designed by Cybersun and manufactured by ISF Spacecraft for the civilian market. The Nimbus makes use of high quality components and professional craftsmanship to deliver an incomparably smooth flying experience. That is at the least, what advertisements claim. Most pilots praise the speed and manueverability, but have found the vessel's internal workings to require extensive work to access and modify, making the Nimbus an easy choice for people who don't have to modify their own craft.",
 	"starting_funds": 5000,
 	"tags": [
-		"Combat",
-		"Engineering",
-		"Specialist"
+		"Generalist"
 	],
-	"map_path": "_maps/shuttles/cybersun/cybersun_nimbus.dmm",
+	"map_path": "_maps/shuttles/subshuttles/cybersun_nimbus.dmm",
 	"tranist_x_offset": -15,
 	"tranist_y_offset": -10,
 	"token_icon_state": "ship_small_generic",
 	"namelists": [
-		"SPACE",
-		"BEASTS"
+		"NATURAL_AGGRESSIVE"
 	],
 	"job_slots": {
-		"Captain": {
-			"outfit": "/datum/outfit/job/cybersun/officer/captain",
-			"officer": true,
-			"slots": 1
-		},
-		"Troubleshooter": {
-			"outfit": "/datum/outfit/job/cybersun/troubleshooter",
-			"slots": 2
-		},
-		"Technician": {
-			"outfit": "/datum/outfit/job/cybersun/engineer",
-			"slots": 1
-		},
-		"Ship's Aide": {
-			"outfit": "/datum/outfit/job/cybersun/assistant",
-			"slots": 1
-		}
 	},
-	"enabled": true
+	"enabled": false
 }

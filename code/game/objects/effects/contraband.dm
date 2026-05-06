@@ -1386,6 +1386,7 @@
 	icon_state = "rolled_poster"
 
 #undef PLACE_SPEED
+#undef POSTER_NORANDOM
 #undef POSTER_SUBTYPES
 #undef POSTER_LIST
 #undef POSTER_ADD_FROM_LIST

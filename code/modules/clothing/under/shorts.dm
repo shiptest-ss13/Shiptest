@@ -74,12 +74,78 @@
 
 /obj/item/clothing/under/shorts/skirt
 	name = "short skirt"
-	desc = "a shorter black skirt."
+	desc = "a shorter skirt."
 	icon_state = "shortskirt"
-	unique_reskin = null
+	unique_reskin = list("black short skirt" = "shortskirt",
+						"selago short skirt" = "shortskirtwhite",
+						"burgundy short skirt" = "shortskirtred",
+						"navy short skirt" = "shortskirtnavy",
+						"tan short skirt" = "shortskirttan",
+						"brown short skirt" = "shortskirtbrown",
+						"pink short skirt" = "shortskirtpink",
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/under/shorts/skirt/white
+	name = "selago short skirt"
+	icon_state = "shortskirtwhite"
+
+/obj/item/clothing/under/shorts/skirt/burgundy
+	name = "burgundy short skirt"
+	icon_state = "shortskirtred"
+
+/obj/item/clothing/under/shorts/skirt/navy
+	name = "navy short skirt"
+	icon_state = "shortskirtnavy"
+
+/obj/item/clothing/under/shorts/skirt/tan
+	name = "tan short skirt"
+	icon_state = "shortskirttan"
+
+/obj/item/clothing/under/shorts/skirt/brown
+	name = "brown short skirt"
+	icon_state = "shortskirtbrown"
+
+/obj/item/clothing/under/shorts/skirt/pink
+	name = "pink short skirt"
+	icon_state = "shortskirtpink"
 
 /obj/item/clothing/under/shorts/miniskirt
 	name = "mini skirt"
-	desc = "the shortest black skirt."
+	desc = "the shortest skirt."
 	icon_state = "miniskirt"
-	unique_reskin = null
+	unique_reskin = list("black miniskirt" = "miniskirt",
+						"selago miniskirt" = "miniskirtwhite",
+						"burgundy miniskirt" = "miniskirtred",
+						"navy miniskirt" = "miniskirtnavy",
+						"tan miniskirt" = "miniskirttan",
+						"brown miniskirt" = "miniskirtbrown",
+						"pink miniskirt" = "miniskirtpink",
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/under/shorts/miniskirt/white
+	name = "selago mini skirt"
+	icon_state = "miniskirtwhite"
+
+/obj/item/clothing/under/shorts/miniskirt/burgundy
+	name = "burgundy mini skirt"
+	icon_state = "miniskirtred"
+
+/obj/item/clothing/under/shorts/miniskirt/navy
+	name = "navy mini skirt"
+	icon_state = "miniskirtnavy"
+
+/obj/item/clothing/under/shorts/miniskirt/tan
+	name = "tan mini skirt"
+	icon_state = "miniskirttan"
+
+/obj/item/clothing/under/shorts/miniskirt/brown
+	name = "brown mini skirt"
+	icon_state = "miniskirtbrown"
+
+/obj/item/clothing/under/shorts/miniskirt/pink
+	name = "pink mini skirt"
+	icon_state = "miniskirtpink"

@@ -4,6 +4,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	draw_eyes = FALSE
+	draw_sclera = FALSE
 
 /obj/item/bodypart/chest/moth
 	static_icon = 'icons/mob/species/moth/bodyparts.dmi'
