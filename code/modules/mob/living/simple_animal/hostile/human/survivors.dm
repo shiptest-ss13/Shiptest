@@ -123,7 +123,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
 
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy
 	name = "Hermit Trooper"
 	desc = "Quality weapons are hard to get by in the sandworlds, which forces many survivors to improvise with that they have. This one is hoping that an E-11 of all things will save their life."
 	icon_state = "survivor_e11"
@@ -136,25 +136,24 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/energy/e_gun/e11
 
-/mob/living/simple_animal/hostile/human/hermit/ranged/volt
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy/volt
 	name = "Hermit Militaman"
-	desc = "In spite of the harsh conditions, this hermit wields a shiny, well-maintained sharplite carbine. They keep a tight grip on it, as if it was a prized posession."
+	desc = "In spite of the harsh conditions, this hermit wields a shiny, well-maintained Sharplite carbine. They keep a tight grip on it, as if it was a prized possession."
 	icon_state = "survivor_e11"
 	icon_living = "survivor_e11"
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	speed = 10
 	rapid = 2
 	rapid_fire_delay = 5
-	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/sharplite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/energy/sharplite/x12
 	retreat_distance = 2
 	minimum_distance = 2
 
-/mob/living/simple_animal/hostile/human/hermit/ranged/rush
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy/rush
 	name = "Hermit Broker"
-	desc = "This hermit hefts a shiny, well-maintained sharplite submachinegun. The confidence in their motion both a warning and a boast, they know how to use it!"
+	desc = "This hermit hefts a shiny, well-maintained Sharplite submachine gun. The confidence in their motion both a warning and a boast, they know how to use it!"
 	icon_state = "survivor_e11"
 	icon_living = "survivor_e11"
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
@@ -165,19 +164,16 @@
 	projectiletype = /obj/projectile/beam/weak/sharplite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/energy/sharplite/l305
-	weapon_drop_chance = 100
 
-/mob/living/simple_animal/hostile/human/hermit/ranged/sarissa
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy/sarissa
 	name = "Hermit Sharpshooter"
-	desc = "With discipline impressive for the normally disorganized hermits, this one hefts a shiny, chrome, sharplite sniper rifle. They've been training for this moment!"
+	desc = "With discipline impressive for the normally disorganized hermits, this one hefts a shiny, chrome, Sharplite rifle - almost as long as they are tall - and they've been training for this moment!"
 	icon_state = "survivor_e11"
 	icon_living = "survivor_e11"
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
-	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/sharplite/sniper
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/energy/sharplite/al607
-	weapon_drop_chance = 100
 	vision_range = 14
 	aggro_vision_range = 14
 	minimum_distance = 14
@@ -395,27 +391,7 @@
 		return
 	H.faction |= list(FACTION_ANTAG_HERMITS)
 
-/datum/outfit/hermit/brown
-	name = "Whitesands Survivor Brown"
-	suit = /obj/item/clothing/suit/hooded/survivor/brown
-	head = /obj/item/clothing/head/hooded/survivor_hood/brown
-
-/datum/outfit/hermit/yellow
-	name = "Whitesands Survivor Yellow"
-	suit = /obj/item/clothing/suit/hooded/survivor/yellow
-	head = /obj/item/clothing/head/hooded/survivor_hood/yellow
-
-/datum/outfit/hermit/green
-	name = "Whitesands Survivor Green"
-	suit = /obj/item/clothing/suit/hooded/survivor/green
-	head = /obj/item/clothing/head/hooded/survivor_hood/green
-
-/datum/outfit/hermit/jermit
-	name = "Whitesands Survivor Jermit"
-	suit = /obj/item/clothing/suit/hooded/survivor/jermit
-	head = /obj/item/clothing/head/hooded/survivor_hood/jermit
-
-/mob/living/simple_animal/hostile/human/hermit/ranged/bodyguard
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy/bodyguard
 	name = "The Bouncer"
 	desc = "A giant of a man clad in a reinforced survival suit, he seems ready to blast any tresspasser to bits at a moment's notice."
 	icon_state = "survivor_e11"
@@ -426,7 +402,6 @@
 	rapid_fire_delay = 4
 	retreat_distance = 4
 	minimum_distance = 7
-	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/bodyguard
 	r_hand = /obj/item/gun/energy/sharplite/al655
@@ -434,14 +409,9 @@
 	speak_emote = list("exhales","rolls their shoulders")
 	emote_hear = list("grunts","cracks their knuckles")
 
-/mob/living/simple_animal/hostile/human/hermit/ranged/bodyguard/Aggro()
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy/bodyguard/Aggro()
 	..()
 	say("GET BEHIND ME!!!")
-
-/obj/effect/mob_spawn/human/corpse/damaged/bodyguard
-	name = "The Bouncer"
-	mob_gender = MALE
-	outfit = /datum/outfit/bodyguard
 
 /datum/outfit/bodyguard
 	name = "The Bouncer"
@@ -490,3 +460,29 @@
 	head = /obj/item/clothing/head/hardhat/warra
 	belt = /obj/item/storage/belt/utility/full/engi
 	mask = /obj/item/clothing/mask/breath
+
+
+/datum/outfit/hermit/brown
+	name = "Whitesands Survivor Brown"
+	suit = /obj/item/clothing/suit/hooded/survivor/brown
+	head = /obj/item/clothing/head/hooded/survivor_hood/brown
+
+/datum/outfit/hermit/yellow
+	name = "Whitesands Survivor Yellow"
+	suit = /obj/item/clothing/suit/hooded/survivor/yellow
+	head = /obj/item/clothing/head/hooded/survivor_hood/yellow
+
+/datum/outfit/hermit/green
+	name = "Whitesands Survivor Green"
+	suit = /obj/item/clothing/suit/hooded/survivor/green
+	head = /obj/item/clothing/head/hooded/survivor_hood/green
+
+/datum/outfit/hermit/jermit
+	name = "Whitesands Survivor Jermit"
+	suit = /obj/item/clothing/suit/hooded/survivor/jermit
+	head = /obj/item/clothing/head/hooded/survivor_hood/jermit
+
+/obj/effect/mob_spawn/human/corpse/damaged/bodyguard
+	name = "The Bouncer"
+	mob_gender = MALE
+	outfit = /datum/outfit/bodyguard

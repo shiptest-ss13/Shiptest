@@ -118,7 +118,9 @@
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "bS" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/hunter/sentry,
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter/sentry{
+	faction = list("hermit","mining")
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/tiles/whitesands,
 /area/ruin/whitesands/pubbytown)
@@ -507,7 +509,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/hermit/survivor,
+/mob/living/simple_animal/hostile/human/hermit/survivor{
+	faction = list("hermit","mining")
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbytown/engine)
 "fX" = (
@@ -719,7 +723,9 @@
 /area/ruin/whitesands/pubbytown/clinic)
 "iU" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/hermit/survivor,
+/mob/living/simple_animal/hostile/human/hermit/survivor{
+	faction = list("hermit","mining")
+	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "iW" = (
@@ -772,9 +778,11 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/volt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
+	},
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy/volt{
+	faction = list("hermit","mining")
 	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/pubbytown/engine)
@@ -791,12 +799,14 @@
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
-/mob/living/simple_animal/hostile/human/hermit/survivor,
+/mob/living/simple_animal/hostile/human/hermit/survivor{
+	faction = list("hermit","mining")
+	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "jL" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
 /obj/effect/turf_decal/siding/wood/corner,
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy,
 /turf/open/floor/wood,
 /area/ruin/whitesands/pubbytown/study)
 "jW" = (
@@ -1042,8 +1052,10 @@
 /turf/open/floor/plating/rust,
 /area/ruin/whitesands/pubbytown/cargo)
 "mO" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/rush,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy/rush{
+	weapon_drop_chance = 100
+	},
 /turf/open/floor/concrete/tiles/whitesands,
 /area/ruin/whitesands/pubbytown/shop)
 "mQ" = (
@@ -1218,7 +1230,9 @@
 /turf/open/floor/wood/walnut/whitesands,
 /area/ruin/whitesands/pubbytown/shop)
 "oe" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler{
+	faction = list("hermit","mining")
+	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "oj" = (
@@ -1280,7 +1294,9 @@
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/sand/explored)
 "oR" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler{
+	faction = list("hermit","mining")
+	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "oS" = (
@@ -1631,7 +1647,6 @@
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "sv" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
@@ -1857,7 +1872,10 @@
 /area/ruin/whitesands/pubbytown/wreck)
 "vW" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/hermit/ranged/sarissa,
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy/sarissa{
+	weapon_drop_chance = 100;
+	faction = list("hermit","mining")
+	},
 /turf/open/floor/concrete/tiles/whitesands,
 /area/ruin/whitesands/pubbytown)
 "vX" = (
@@ -2554,13 +2572,13 @@
 	pixel_x = -8;
 	pixel_y = 3
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30"
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy,
 /turf/open/floor/wood/walnut/whitesands,
 /area/ruin/whitesands/pubbytown/clinic)
 "CS" = (
@@ -2638,7 +2656,7 @@
 /obj/effect/turf_decal/industrial/caution{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/bodyguard,
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy/bodyguard,
 /turf/open/floor/engine,
 /area/ruin/whitesands/pubbytown/cargo)
 "DF" = (
@@ -2656,7 +2674,9 @@
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "DT" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
+	faction = list("hermit","mining")
+	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "DY" = (
@@ -3204,7 +3224,7 @@
 	},
 /area/ruin/whitesands/pubbytown/shop)
 "Iy" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy/volt,
 /turf/open/floor/wood,
 /area/ruin/whitesands/pubbytown/guard)
 "IA" = (
@@ -3668,9 +3688,9 @@
 /obj/structure/chair/office/light{
 	dir = 4
 	},
-/obj/item/stack/ore/salvage/scrapgold/five{
-	pixel_x = 10;
-	pixel_y = 8
+/obj/item/stack/ore/salvage/scrapgold{
+	pixel_x = 9;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/pubbytown/cargo)
@@ -3832,6 +3852,12 @@
 /area/ruin/whitesands/pubbytown/study)
 "Qg" = (
 /obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"Qi" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy{
+	faction = list("hermit","mining")
+	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Ql" = (
@@ -4323,7 +4349,6 @@
 /area/ruin/whitesands/pubbytown)
 "VG" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/hermit/ranged/volt,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -4706,10 +4731,6 @@
 	icon_state = "5-10"
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"ZZ" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/volt,
-/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 
 (1,1,1) = {"
@@ -6178,7 +6199,7 @@ Qw
 Qw
 Bw
 dg
-ZZ
+Qi
 Bw
 Bw
 Bw
@@ -6754,7 +6775,7 @@ vB
 Lz
 Ct
 Bw
-ZZ
+Bw
 Jz
 Jz
 Bw
@@ -6986,7 +7007,7 @@ Bw
 Ct
 Bw
 Ct
-Bw
+Qi
 ZX
 bR
 QR
