@@ -931,10 +931,10 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "ky" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
 /obj/effect/turf_decal/trimline/transparent/blue/filled/warning{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/security)
 "kC" = (
@@ -1812,7 +1812,6 @@
 /turf/open/floor/concrete/slab_1/lava,
 /area/ruin/unpowered/dynamitehole)
 "tj" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
@@ -1830,6 +1829,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "tl" = (
