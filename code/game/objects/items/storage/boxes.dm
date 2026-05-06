@@ -907,7 +907,7 @@
 	illustration = null
 	resistance_flags = FLAMMABLE
 	foldable = null
-	custom_price = 0
+	custom_price = 1
 	/// A list of all available papersack reskins
 	var/list/papersack_designs = list()
 
