@@ -1,0 +1,41 @@
+/obj/machinery/vending/grocery
+	name = "\improper Groceries-to-Go"
+	icon_state = "grocery-vendor-warra"
+	desc = "The archetypal automated grocer, designed in a collaboration between Makosso-Warra and Groceries-to-Go, LLC."
+	product_ads = "Fresh Food!;Get it while it's Cold!;Perfectly Picked Produce!;Rations are so Last Year."
+	products = list(
+		/obj/item/storage/box/papersack = 10
+		/obj/item/food/grown/apple = 15
+		/obj/item/food/grown/banana = 15
+		/obj/item/food/grown/berries = 15
+		/obj/item/food/grown/cherries = 15
+		/obj/item/food/grown/eggplant = 10
+		/obj/item/food/grown/grapes = 15
+		/obj/item/food/grown/citrus/lemon = 15
+		/obj/item/food/grown/citrus/lime = 15
+		/obj/item/food/grown/citrus/orange = 15
+		/obj/item/food/grown/pinapple = 10
+		/obj/item/food/grown/dote_berries = 20
+		/obj/item/food/grown/dotu_fime = 15
+		/obj/item/food/grown/fara_li = 15
+		/obj/item/food/grown/refa_li = 15
+		/obj/item/food/grown/cabbage = 15
+		/obj/item/food/grown/carrot = 15
+		/obj/item/food/grown/mushroom/chanterelle = 10
+		/obj/item/food/grown/chili = 15
+		/obj/item/food/grown/corn = 15
+		/obj/item/food/grown/onion = 15
+		/obj/item/food/grown/peas = 15
+		/obj/item/food/grown/potato = 15
+		/obj/item/food/grown/sweet_potato = 15
+		/obj/item/food/grown/pumpkin = 10
+		/obj/item/food/grown/redbeet = 15
+		/obj/item/food/grown/siti = 15
+		/obj/item/food/grown/sososi = 15
+		/obj/item/food/grown/soybeans = 15
+		/obj/item/food/grown/tomato = 15
+		/obj/item/food/grown/watermelon = 10)
+
+	default_price = 10
+	extra_price = 15
+
