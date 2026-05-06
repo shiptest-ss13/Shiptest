@@ -54,19 +54,18 @@
 
 #define MANUFACTURER_NONE null
 #define MANUFACTURER_SHARPLITE "the Sharplite Defense logo"
-#define MANUFACTURER_SHARPLITE_NEW "the Nanotrasen-Sharplite logo"
+#define MANUFACTURER_SHARPLITE_NEW "the Makosso-Warra-Sharplite logo"
 #define MANUFACTURER_HUNTERSPRIDE "the Hunter's Pride Arms and Ammunition logo"
 #define MANUFACTURER_SOLARARMORIES "the Solarbundswaffenkammer emblem"
 #define MANUFACTURER_SCARBOROUGH "the Scarborough Arms logo"
 #define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
-#define MANUFACTURER_NANOTRASEN_OLD "an outdated Nanotrasen logo"
-#define MANUFACTURER_NANOTRASEN "the Nanotrasen logo"
-#define MANUFACTURER_VIGILITAS "the Nanotrasen Advantage logo"
+#define MANUFACTURER_WARRA_OLD "an outdated Makosso-Warra logo"
+#define MANUFACTURER_WARRA "the Makosso-Warra logo"
+#define MANUFACTURER_VIGILITAS "the Makosso-Warra Advantage logo"
 #define MANUFACTURER_BRAZIL "a green flag with a blue circle and a yellow diamond around it"
 #define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"
 #define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
 #define MANUFACTURER_MINUTEMAN_LASER "the Clover Photonics logo"
-#define MANUFACTURER_DONKCO "the Donk! Co. logo"
 #define MANUFACTURER_PGF "the Etherbor Industries emblem"
 #define MANUFACTURER_IMPORT "Lanchester Import Co."
 #define MANUFACTURER_SERENE "the Serene Outdoors logo"
@@ -141,6 +140,7 @@
 #define COMSIG_ATTACHMENT_CTRL_CLICK "attach-ctrl-click"
 #define COMSIG_ATTACHMENT_ALT_CLICK "attach-alt-click"
 #define COMSIG_ATTACHMENT_ATTACK_HAND "attach-attack-hand"
+#define COMSIG_ATTACHMENT_TOGGLE_SAFETY "attach-safety"
 
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
 #define COMSIG_ATTACHMENT_TOGGLE_AMMO "attach-ammo"
@@ -227,7 +227,6 @@
 #define FIREMODE_FULLAUTO "auto"
 #define FIREMODE_OTHER "other"
 #define FIREMODE_OTHER_TWO "other2"
-#define FIREMODE_UNDERBARREL "underbarrel"
 
 #define GUN_LEFTHAND_ICON 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 #define GUN_RIGHTHAND_ICON 'icons/mob/inhands/weapons/guns_righthand.dmi'

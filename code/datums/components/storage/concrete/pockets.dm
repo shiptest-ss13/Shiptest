@@ -30,6 +30,13 @@
 	quickdraw = FALSE
 	silent = FALSE
 
+/datum/component/storage/concrete/pockets/exo/Initialize()
+	. = ..()
+	var/static/list/exception_cache = typecacheof(list(
+		/obj/item/storage/pouch
+		))
+	exception_hold = exception_cache
+
 /datum/component/storage/concrete/pockets/exo/large
 	max_items = 3
 
@@ -115,6 +122,7 @@
 		/obj/item/gun/energy/laser,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/sharplite/x26,
+		/obj/item/gun/energy/sharplite/x01,
 		/obj/item/gun/energy/kalix/pistol,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/ammo_box)) // this doesnt let you put hades into holsters trust me

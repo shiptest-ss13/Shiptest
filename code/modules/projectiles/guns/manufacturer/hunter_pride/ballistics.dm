@@ -123,7 +123,7 @@ EMPTY_GUN_HELPER(revolver/shadow)
 
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper HP Detective Special"
-	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
+	desc = "A small law enforcement firearm. Originally commissioned by Vigilitas Interstellar for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot_light.ogg'
 	icon_state = "detective"
 	item_state = "hp_generic"
@@ -513,9 +513,9 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/roumain)
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
-	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/lethal
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/brimstone
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/internal/shot/lethal,
+		/obj/item/ammo_box/magazine/internal/shot/brimstone,
 	)
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	fire_delay = 0.05 SECONDS //slamfire

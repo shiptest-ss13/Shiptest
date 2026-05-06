@@ -700,7 +700,7 @@
 	category = list("initial", "T-Comm")
 
 /datum/design/bounced_radio
-	name = "Subspace Bounced Radio"
+	name = "Shortwave Radio"
 	id = "bounced_radio"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
@@ -821,6 +821,14 @@
 	build_path = /obj/item/restraints/handcuffs
 	category = list("initial", "Security")
 
+/datum/design/doorseal
+	name = "Pneumatic Seal"
+	id = "doorseal"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 5000)
+	build_path = /obj/item/door_seal
+	category = list("initial", "Security")
+
 /datum/design/evidencebag
 	name = "Evidence Bag"
 	id = "evidencebag"
@@ -843,6 +851,14 @@
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 16000)
 	build_path = /obj/item/storage/box/ammo/c38_surplus
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/c22lr_surplus
+	name = "Ammo Box (.22 LR surplus)"
+	id = "c22lr-surplus"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 16000)
+	build_path = /obj/item/storage/box/ammo/c22lr/surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/beanbag_slug
@@ -1207,7 +1223,7 @@
 	category = list("initial", "Machinery")
 
 /datum/design/illestren_a850rclip
-	name = "8x50 Stripper Clip"
+	name = "8x50mmR En Bloc Clip"
 	id = "IllestrenStripClip"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1000)

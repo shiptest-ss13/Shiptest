@@ -320,9 +320,9 @@
 	icon_state = "letterman_s"
 	item_state = "letterman_s"
 
-/obj/item/clothing/suit/jacket/letterman_nanotrasen
+/obj/item/clothing/suit/jacket/letterman_warra
 	name = "blue letterman jacket"
-	desc = "A blue letterman jacket with a proud Nanotrasen N on the back. The tag says that it was made in Space China."
+	desc = "A blue letterman jacket with a proud Makosso-Warra M on the back. It seems cheaply made."
 	icon_state = "letterman_n"
 	item_state = "letterman_n"
 
@@ -455,3 +455,46 @@
 	name = "floral shirt"
 	desc = "From grills to guns, this shirt's seen it all."
 	icon_state = "hawaiian_red"
+
+/obj/item/clothing/suit/toggle/flight
+	name = "Flight Jacket"
+	desc = "A large, comfy furred coat. Typically worn by showoff pilots."
+	icon_state = "flightbrown"
+	unique_reskin = list(
+		"Brown Flight Jacket" = "flightbrown",
+		"White Flight Jacket" = "flightwhite",
+		"Black Flight Jacket" = "flightblack",
+	)
+	unique_reskin_changes_inhand = TRUE
+	togglename = "zipper"
+
+/obj/item/clothing/suit/toggle/flight/Initialize()
+	. = ..()
+	base_icon_state = icon_state
+
+/obj/item/clothing/suit/toggle/flight/suit_toggle()
+	set src in usr
+
+	if(!can_use(usr))
+		return 0
+
+	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
+	if(src.suittoggled)
+		src.icon_state = "[base_icon_state]"
+		src.suittoggled = FALSE
+	else if(!src.suittoggled)
+		src.icon_state = "[base_icon_state]_t"
+		src.suittoggled = TRUE
+	usr.update_inv_wear_suit()
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.UpdateButtonIcon()
+
+/obj/item/clothing/suit/toggle/flight/white
+	name = "White Flight Jacket"
+	desc = "A large, comfy furred coat. Typically worn by showoff drivers."
+	icon_state = "flightwhite"
+
+/obj/item/clothing/suit/toggle/flight/black
+	name = "Black Flight Jacket"
+	icon_state = "flightblack"

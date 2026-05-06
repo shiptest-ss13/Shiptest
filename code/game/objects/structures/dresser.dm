@@ -1,7 +1,7 @@
 /obj/structure/dresser
 	name = "dresser"
 	desc = "A nicely-crafted wooden dresser. It's filled with lots of undies."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/structures/dresser.dmi'
 	icon_state = "dresser"
 	density = TRUE
 	anchored = TRUE
@@ -10,15 +10,17 @@
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/dresser/attackby(obj/item/I, mob/user, params)
-	var/list/modifiers = params2list(params)
-	if(user.transferItemToLoc(I, drop_location(), silent = FALSE))
-		//Center the icon where the user clicked.
-		if(!LAZYACCESS(modifiers, ICON_X) || !LAZYACCESS(modifiers, ICON_Y))
-			return
-		//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
-		I.pixel_x = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
-		I.pixel_y = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
-		return TRUE
+	//only table
+	if(density)
+		var/list/modifiers = params2list(params)
+		if(user.transferItemToLoc(I, drop_location(), silent = FALSE))
+			//Center the icon where the user clicked.
+			if(!LAZYACCESS(modifiers, ICON_X) || !LAZYACCESS(modifiers, ICON_Y))
+				return
+			//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
+			I.pixel_x = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
+			I.pixel_y = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
+			return TRUE
 	else
 		return ..()
 
@@ -28,6 +30,7 @@
 	if(I.use_tool(src, user, 20, volume=50))
 		to_chat(user, span_notice("You successfully [anchored ? "unwrench" : "wrench"] [src]."))
 		set_anchored(!anchored)
+		return COMPONENT_BLOCK_TOOL_ATTACK
 
 /obj/structure/dresser/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -36,6 +39,7 @@
 		if(I.use_tool(src, user, 30, volume=50))
 			to_chat(user, span_notice("You successfully deconstruct [src]."))
 			deconstruct()
+			return COMPONENT_BLOCK_TOOL_ATTACK
 
 /obj/structure/dresser/deconstruct_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -45,6 +49,7 @@
 	if(I.use_tool(src, user, 10, volume=50))
 		to_chat(user, span_notice("You successfully deconstruct [src]."))
 		deconstruct()
+		return COMPONENT_BLOCK_TOOL_ATTACK
 
 /obj/structure/dresser/deconstruct(disassembled = TRUE)
 	new /obj/item/stack/sheet/mineral/wood(drop_location(), 10)
@@ -65,6 +70,7 @@
 
 		var/choice = input(user, "Underwear, Undershirt, or Socks?", "Changing") as null|anything in list("Underwear", "Underwear Color", "Undershirt", "Undershirt Color", "Socks", "Socks Color")
 
+		//fun future project: make this a radial selection
 		if(!Adjacent(user))
 			return
 		switch(choice)
@@ -95,3 +101,15 @@
 
 		add_fingerprint(H)
 		H.update_body()
+
+/obj/structure/dresser/wall
+	name = "drawers"
+	desc = "A nicely-crafted wooden drawer. It's filled with lots of undies."
+	icon = 'icons/obj/structures/dresser.dmi'
+	icon_state = "walldresser"
+	density = FALSE
+	anchored = FALSE
+
+	obj_flags = CAN_BE_HIT
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/dresser/wall, 25)
