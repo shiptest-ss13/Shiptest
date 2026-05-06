@@ -7,29 +7,29 @@
 	name = "dynamite exterior"
 
 /area/ruin/unpowered/dynamitehole/security
-	name = "Dynamite Security"
+	name = "Security"
 	icon_state = "red"
 
 /area/ruin/unpowered/dynamitehole/living_quarters
-	name = "Dynamite Living Quarters"
+	name = "Living Quarters"
 	icon_state = "purple"
 
 /area/ruin/unpowered/dynamitehole/medbay
-	name = "Dynamite Research Lab"
+	name = "Research Lab"
 
 /area/ruin/unpowered/dynamitehole/engineering
-	name = "Dynamite Engineering"
+	name = "Engineering"
 	icon_state = "cargo_warehouse"
 
 /area/ruin/unpowered/dynamitehole/dorms
-	name = "Dynamite Dormitory"
+	name = "Dormitory"
 	icon_state = "yellow"
 
 /area/ruin/unpowered/dynamitehole/dorms/two
-	name = "Dynamite Dormitory Two"
+	name = "Dormitory Two"
 
 /area/ruin/unpowered/dynamitehole/gear
-	name = "Dynamite gear"
+	name = "Gear Room"
 	icon_state = "green"
 
 /area/ruin/unpowered/dynamitehole/dogs
