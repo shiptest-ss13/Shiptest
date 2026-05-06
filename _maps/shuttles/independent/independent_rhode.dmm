@@ -161,9 +161,21 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "cX" = (
-/obj/structure/ore_box,
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table,
+/obj/item/storage/bag/ore{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/item/pickaxe/drill{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/obj/item/stack/sheet/mineral/wood/twentyfive{
+	pixel_x = -9;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "dc" = (
@@ -184,6 +196,10 @@
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/shoes/workboots,
 /obj/item/storage/belt/utility/full/engi,
+/obj/item/clothing/gloves/color/yellow{
+	pixel_x = -7;
+	pixel_y = 0
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "dg" = (
@@ -382,10 +398,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
-"ip" = (
-/obj/structure/falsewall,
-/turf/open/floor/plating,
-/area/ship/crew/dorm)
 "jh" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -1325,6 +1337,10 @@
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/shoes/workboots,
 /obj/item/storage/belt/utility/full/engi,
+/obj/item/clothing/gloves/color/yellow{
+	pixel_x = -8;
+	pixel_y = -5
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "Cq" = (
@@ -1475,6 +1491,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/light/small/directional/north,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "EW" = (
@@ -1638,20 +1655,7 @@
 /turf/closed/wall/rust,
 /area/ship/cargo)
 "Il" = (
-/obj/structure/rack,
-/obj/item/storage/bag/ore{
-	pixel_x = 8;
-	pixel_y = -4
-	},
-/obj/item/pickaxe/drill{
-	pixel_x = 10;
-	pixel_y = 7
-	},
 /obj/effect/turf_decal/box,
-/obj/item/stack/sheet/mineral/wood/fifty{
-	pixel_x = -9;
-	pixel_y = 0
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Ir" = (
@@ -1923,7 +1927,6 @@
 /turf/open/floor/plating/rust,
 /area/ship/engineering/engines)
 "Ok" = (
-/obj/structure/reagent_dispensers/watertank,
 /obj/machinery/light/floor,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel/patterned,
@@ -1983,10 +1986,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Qq" = (
-/obj/structure/rack,
 /obj/item/gear_pack/anglegrinder{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 0;
+	pixel_y = 3
 	},
 /obj/effect/turf_decal/box,
 /obj/structure/cable{
@@ -1996,14 +1998,7 @@
 	pixel_x = 7;
 	pixel_y = 5
 	},
-/obj/item/clothing/gloves/color/yellow{
-	pixel_x = -7;
-	pixel_y = 0
-	},
-/obj/item/clothing/gloves/color/yellow{
-	pixel_x = -8;
-	pixel_y = -5
-	},
+/obj/structure/table,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Qw" = (
@@ -2128,6 +2123,10 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ship/engineering/engines)
+"Tc" = (
+/obj/structure/falsewall,
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
 "Ti" = (
 /obj/machinery/washing_machine{
 	pixel_x = 4;
@@ -2609,7 +2608,7 @@ UH
 DP
 eS
 Wg
-ip
+Tc
 gr
 FO
 Ao
@@ -2662,7 +2661,7 @@ vq
 dg
 Ar
 tm
-ip
+Tc
 Ar
 Ar
 MH
