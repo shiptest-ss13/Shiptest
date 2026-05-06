@@ -137,8 +137,8 @@
 		return INITIALIZE_HINT_QDEL
 
 /mob/living/simple_animal/hostile/asteroid/wolf/hound //should get a sprite someday probably
-	name = "Solarian Hound"
-	desc = "A mutt breed hailing from Sol, solarian hounds are known for their territorial attitude, large size and loyal nature."
+	name = "Reisehund"
+	desc = "A mutt breed hailing from Sol, Reisehunds are known for their territorial attitude, large size and loyal nature."
 	faction = list(FACTION_NEUTRAL)
 	maxHealth = 75
 	health = 75
@@ -148,11 +148,9 @@
 	icon_dead = "hound_dead"
 
 /mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi
-	name = "Solarian Hound"
-	desc = "A mutt breed hailing from Sol, solarian hounds are known for their territorial attitude, large size and loyal nature. This one is most certainly not loyal to you."
+	desc = "A mutt breed hailing from Sol, Reisehunds are known for their territorial attitude, large size and loyal nature. This one is most certainly not loyal to you."
 	faction = list(FACTION_RAMZI)
 
 /mob/living/simple_animal/hostile/asteroid/wolf/hound/frontie
-	name = "Solarian Hound"
-	desc = "A mutt breed hailing from Sol, solarian hounds are known for their territorial attitude, large size and loyal nature. This one is most certainly not loyal to you."
+	desc = "A mutt breed hailing from Sol, Reisehunds are known for their territorial attitude, large size and loyal nature. This one is most certainly not loyal to you."
 	faction = list(FACTION_FRONTIERSMEN)
