@@ -1325,7 +1325,10 @@
 "ee" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/random/maintenance/three,
+/obj/item/food/bread/plain{
+	pixel_x = 3;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms/shop)
 "ef" = (
@@ -5836,7 +5839,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
 "tL" = (
-/obj/machinery/vending/clothing,
+/obj/machinery/vending/grocery/clip,
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms/shop)
 "tM" = (
@@ -11701,11 +11704,17 @@
 /area/outpost/engineering)
 "LR" = (
 /obj/structure/rack,
-/obj/item/clothing/neck/poncho/darkblue{
-	pixel_x = 4
+/obj/item/storage/ration/miras{
+	pixel_x = 9;
+	pixel_y = 0
 	},
-/obj/item/clothing/neck/poncho/darkblue{
-	pixel_x = -2
+/obj/item/storage/ration/pork_spaghetti{
+	pixel_x = 1;
+	pixel_y = 5
+	},
+/obj/item/storage/ration/vegan_chili{
+	pixel_x = -9;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms/shop)
@@ -14774,12 +14783,12 @@
 /area/outpost/crew/bar)
 "VR" = (
 /obj/structure/rack,
-/obj/item/toy/seashell{
-	pixel_x = 9;
-	pixel_y = -5
+/obj/item/food/canned/peaches{
+	pixel_x = 8;
+	pixel_y = 11
 	},
-/obj/item/toy/seashell{
-	pixel_x = -3;
+/obj/item/food/canned/beans{
+	pixel_x = -6;
 	pixel_y = 7
 	},
 /turf/open/floor/plasteel/mono,

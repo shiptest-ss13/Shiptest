@@ -2957,7 +2957,6 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar/cybersun_outpost)
 "hc" = (
-/obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D";
 	dir = 1
@@ -2965,12 +2964,7 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D"
 	},
-/obj/item/cutting_board{
-	pixel_y = 4
-	},
-/obj/item/melee/knife/kitchen{
-	pixel_y = 5
-	},
+/obj/machinery/vending/grocery/cybersun,
 /turf/open/floor/suns/dark/plain,
 /area/outpost/crew/lounge)
 "hd" = (
@@ -18313,6 +18307,12 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D";
 	dir = 8
+	},
+/obj/item/cutting_board{
+	pixel_y = 4
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_y = 5
 	},
 /turf/open/floor/suns/dark/plain,
 /area/outpost/crew/lounge)

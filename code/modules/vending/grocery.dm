@@ -1,10 +1,11 @@
 /obj/machinery/vending/grocery
-	name = "\improper Groceries-to-Go"
-	icon_state = "grocery-vendor-warra"
-	desc = "The archetypal automated grocer, designed in a collaboration between Makosso-Warra and Groceries-to-Go, LLC."
+	name = "\improper Frontier-Fresh"
+	icon_state = "grocery-vendor-indie"
+	desc = "Originally a food delivery company, Frontier-Fresh has shifted to automated vendors after dramatic increases to driver casualty rates."
 	product_ads = "Fresh Food!;Get it while it's Cold!;Perfectly Picked Produce!;Rations are so Last Year."
 	products = list(
 		/obj/item/storage/box/papersack = 30,
+		/obj/item/reagent_containers/condiment/enzyme/small = 10,
 		/obj/item/food/meat/slab = 12,
 		/obj/item/food/meat/slab/chicken = 10,
 		/obj/item/food/meat/crab = 8,
@@ -59,24 +60,24 @@
 	extra_price = 15
 
 /obj/item/vending_refill/grocery
-	machine_name = "Groceries-to-Go"
+	machine_name = "Frontier-Fresh"
 
 /obj/machinery/vending/grocery/ngr
+	name = "\improper Agni Trading Post Co-Op"
 	icon_state = "grocery-vendor-ngr"
-	name = "\improper Agni Station Co-Op"
-	desc = "Offers the freshest produce in the sector, proudly owned and operated by Agni's workers - Choose Agni Station Co-Op."
+	desc = "Offers the freshest produce in the sector, proudly owned and operated by Agni's workers - Choose Agni Co-Op."
 
 /obj/machinery/vending/grocery/cybersun
+	name = "\improper Mr. Grocery"
 	icon_state = "grocery-vendor-cybersun"
-	name = "\improper Biodynamics Grab & Go"
 	desc = "Safe-to-eat, locally sourced and synthesized foodstock from Cybersun Biodynamic's Lab-Cultivated Meat & Aquaponics."
 
 /obj/machinery/vending/grocery/clip
+	name = "\improper Minuteman Convenience"
 	icon_state = "grocery-vendor-clip"
-	name = "\improper Minuteman Convinence"
 	desc = "A Clover-branded Automated Grocery Vendor. Has all you need to make a meal for the whole crew, in less than a minute."
 
-/obj/machinery/vending/grocery/indie
-	icon_state = "grocery-vendor-indie"
-	name = "\improper Frontier-Fresh"
-	desc = "Originally a food delivery company, Frontier-Fresh has shifted to automated vendors after dramatic increases to driver casualty rates."
+/obj/machinery/vending/grocery/warra
+	name = "\improper Groceries-to-Go"
+	icon_state = "grocery-vendor-warra"
+	desc = "An archetypal automated grocer, designed in a collaboration between Makosso-Warra and Groceries-to-Go, LLC."
