@@ -87,7 +87,7 @@
 "bs" = (
 /obj/item/restraints/handcuffs/cable/zipties/used,
 /obj/effect/decal/cleanable/blood/gibs/down,
-/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/mob_spawn/human/corpse/frontier/fake,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/pubbytown)
 "by" = (
@@ -877,7 +877,7 @@
 "kQ" = (
 /obj/item/restraints/handcuffs/cable/zipties/used,
 /obj/effect/decal/cleanable/ash/large,
-/obj/effect/mob_spawn/human/corpse,
+/obj/effect/mob_spawn/human/corpse/frontier/fake,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/pubbytown)
 "kR" = (
@@ -1371,16 +1371,12 @@
 /area/ruin/whitesands/pubbytown/cargo)
 "pN" = (
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier{
-	pixel_x = 6;
-	pixel_y = 0
-	},
-/obj/item/clothing/head/beret/sec/frontier/officer{
-	pixel_x = 3;
-	pixel_y = -10
+	pixel_x = 1;
+	pixel_y = 7
 	},
 /obj/item/clothing/suit/armor/vest/frontier{
-	pixel_x = -5;
-	pixel_y = -4
+	pixel_x = 8;
+	pixel_y = -5
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/pubbytown)
@@ -1432,21 +1428,13 @@
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/ruin/whitesands/pubbytown/house)
 "qg" = (
-/obj/item/clothing/mask/gas/frontiersmen{
-	pixel_x = -9;
-	pixel_y = 1
-	},
-/obj/item/clothing/mask/gas/frontiersmen{
+/obj/item/clothing/suit/armor/vest/frontier{
 	pixel_x = -7;
-	pixel_y = -8
+	pixel_y = -7
 	},
-/obj/item/clothing/under/frontiersmen{
-	pixel_x = 2;
-	pixel_y = 4
-	},
-/obj/item/clothing/under/frontiersmen{
-	pixel_x = 4;
-	pixel_y = -3
+/obj/item/clothing/head/helmet/bulletproof/x11/frontier{
+	pixel_x = 6;
+	pixel_y = 8
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/pubbytown)
@@ -1588,7 +1576,7 @@
 	pixel_x = -2;
 	pixel_y = 0
 	},
-/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/mob_spawn/human/corpse/frontier/fake,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/pubbytown)
 "rT" = (
@@ -3528,7 +3516,7 @@
 /area/ruin/whitesands/pubbytown/engine)
 "Lk" = (
 /obj/item/restraints/handcuffs/cable/zipties/used,
-/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/mob_spawn/human/corpse/frontier/fake,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/pubbytown)
 "Ls" = (
