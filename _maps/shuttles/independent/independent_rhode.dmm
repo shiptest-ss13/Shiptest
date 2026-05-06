@@ -382,6 +382,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
+"ip" = (
+/obj/structure/falsewall,
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
 "jh" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -448,9 +452,6 @@
 "ln" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/food/flour,
 /obj/effect/decal/cleanable/food/egg_smudge,
 /turf/open/floor/plasteel,
@@ -461,9 +462,6 @@
 	},
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "lu" = (
@@ -570,10 +568,6 @@
 /obj/item/clothing/mask/gas,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"nY" = (
-/obj/structure/falsewall,
-/turf/open/floor/plating,
-/area/ship/crew/dorm)
 "oc" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1470,9 +1464,6 @@
 /obj/effect/decal/cleanable/glass,
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/effect/turf_decal/borderfloor/corner{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -1814,9 +1805,6 @@
 "Mm" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
 /obj/machinery/light/small/directional/west,
 /obj/machinery/button/door{
 	pixel_x = -21;
@@ -2203,9 +2191,6 @@
 "TN" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/effect/turf_decal/borderfloor{
-	dir = 5
-	},
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -2624,7 +2609,7 @@ UH
 DP
 eS
 Wg
-nY
+ip
 gr
 FO
 Ao
@@ -2677,7 +2662,7 @@ vq
 dg
 Ar
 tm
-nY
+ip
 Ar
 Ar
 MH
