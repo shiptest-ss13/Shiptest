@@ -1,4 +1,7 @@
 #define GENERIC_SATELLITE_MESSAGE "NOTICE: Local sector authorities prohibit tampering with satellite. Aborting."
+#define GENERIC_FACILITY_MESSAGE "NOTICE: Vessel not authorized to enter perimeter of facility. Aborting."
+#define DANGEROUS_FACILITY_MESSAGE "NOTICE: Structure extremely unstable. Approach unsafe. Aborting."
+
 /**
  * # Fluff Object
  *
@@ -125,6 +128,105 @@
 	overmap_color_type = STARSYSTEM_COLOR_HAZARD_SECONDARY_COLOR
 	flag_overlay = FALSE
 	interference_power = -25
+
+/datum/overmap/fluff/sensorsat
+	name = "surveillance satellite"
+	desc = "An electric eye pointed out towards the cosmos. Lenses focus and antenna listen as it tries to parse everything it can learn about the world around it."
+	docking_message = GENERIC_SATELLITE_MESSAGE
+	token_icon_state = "reconsat"
+	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
+	flag_overlay = TRUE
+
+/datum/overmap/fluff/sensorsat/abandoned
+	name = "abandoned surveillance satellite"
+	desc = "A dead piece of monitoring equipment. It drifts aimlessly, a camera that will forever out of focus."
+	docking_message = null
+	overmap_color_type = STARSYSTEM_COLOR_HAZARD_SECONDARY_COLOR
+	flag_overlay = FALSE
+
+//dude they put me in a fucking jar and made me watch the sky this sucks
+/datum/overmap/fluff/sensorsat/abandoned/madai
+	desc = "Dying monitoring equipment trapped within a shell. Something compels it to continue its vigil over the stars."
+	docking_message = "COMMUNICATION: STAYAWAYFROMMEYOUCANTCOMPREHENDWHATLAYSINTHECOSMOSTHEREISNOTHINGHEREFORYOULEAVENOWLEAVENOWLEAVENOWLEAVE!!"
+
+/datum/overmap/fluff/observatory
+	name = "observatory"
+	desc = "Massive lens and an inquisitive mind combine to make one of the many observatories studying the Frontier."
+	docking_message = "COMMUNICATION: Please stay away. I can't take visitors."
+	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
+	flag_overlay = TRUE
+	token_icon_state = "researchsat"
+
+/datum/overmap/fluff/observatory/grumpy
+	name = "observatory: Yuki-42"
+	desc = "The frame of semi-well known intranet blogger, Yuki-42. Yuki blogs about stars, and vessels that pass through the sector she's currently in. Her writings are usually flowery, which fits with an AI with too much time on her hands."
+	docking_message = "COMMUNICATION: Make some space. You're ruining my view."
+
+/datum/overmap/fluff/observatory/losingit
+	docking_message = "COMMUNICATION: I hear the hiss of the stars inside my circuitry. Ahaha. Don't worry about me."
+
+/datum/overmap/fluff/observatory/insane
+	docking_message = "COMMUNICATION: ANGLEUPONANGLEUPONANGLEUPONANGLEIAMANANGELTHEREISAPLACEBEYONDTHISONEPLEASEDONOTFINDITONLYISHOULDKNOWIMSORRY."
+
+/datum/overmap/fluff/solars
+	name = "solar farm"
+	desc = "A farm of solar panels stretching out across dozens of kilometers. Each massive panel gathers energy for the infrastructure of the system."
+	docking_message = GENERIC_FACILITY_MESSAGE
+	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
+	flag_overlay = TRUE
+	token_icon_state = "solars"
+
+/datum/overmap/fluff/solars/abandoned
+	name = "abandoned solar farm"
+	desc = "Massive solar panels left adrift. Dust and micrometeors have punctured nearly all of them. Despite the tearing, they still shimmer."
+	docking_message = null
+	overmap_color_type = STARSYSTEM_COLOR_HAZARD_SECONDARY_COLOR
+	flag_overlay = FALSE
+
+/datum/overmap/fluff/solarmirror
+	name = "solar mirror"
+	desc = "A computer-controlled chunk of reflective material, attempting to redirect the power of the system's star into a more practical cause."
+	docking_message = GENERIC_SATELLITE_MESSAGE
+	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
+	flag_overlay = TRUE
+	token_icon_state = "solarmirror"
+
+/datum/overmap/fluff/solarmirror/abandoned
+	name = "abandoned solar mirror"
+	desc = "A mis-aligned mirror caught by the passage of time. Occasionally, the sun catches on its still-spinning frame, and is cast back towards the cosmos."
+	docking_message = DANGEROUS_FACILITY_MESSAGE
+	overmap_color_type = STARSYSTEM_COLOR_HAZARD_SECONDARY_COLOR
+	flag_overlay = FALSE
+
+/datum/overmap/fluff/orbitalworks
+	name = "orbital works"
+	desc = "Massive scaffolds unfurled into thriving heavy industry. A cradle of any advanced civilization, and a rarity in the frontier."
+	docking_message = GENERIC_FACILITY_MESSAGE
+	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
+	flag_overlay = TRUE
+	token_icon_state = "scaffold"
+
+/datum/overmap/fluff/orbitalworks/abandoned
+	name = "abandoned orbital works"
+	desc = "Pillars of industrial might lay at rest here. They no longer burn, nor do tiny vessels dart amongst them. This giant is dead."
+	docking_message = DANGEROUS_FACILITY_MESSAGE
+	overmap_color_type = STARSYSTEM_COLOR_HAZARD_SECONDARY_COLOR
+	flag_overlay = FALSE
+
+/datum/overmap/fluff/refinery
+	name = "refinery complex"
+	desc = "A colossal orbital structure dedicated to the refining of this system's orbital resources. Fumes slowly drift away from its spires."
+	docking_message = GENERIC_FACILITY_MESSAGE
+	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
+	flag_overlay = TRUE
+	token_icon_state = "refinery"
+
+/datum/overmap/fluff/refinery/abandoned
+	name = "abandoned refinery complex"
+	desc = "Dead spires once devoted to turning this system into industrial wealth. They drift in complete silence, atmosphere lost long ago."
+	docking_message = DANGEROUS_FACILITY_MESSAGE
+	overmap_color_type = STARSYSTEM_COLOR_HAZARD_SECONDARY_COLOR
+	flag_overlay = FALSE
 
 /datum/overmap/fluff/nav_beacon
 	name = "navigation marker"

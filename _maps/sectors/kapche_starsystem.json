@@ -1,1797 +1,1737 @@
 {
 	"system_info": {
-		"name": "Kapche-Legnica",
-		"starname": "Kapche-Legnica",
-		"startype": "/datum/overmap/star/binary",
-		"size": 20,
-		"max_overmap_dynamic_events": 0,
-		"faction": null,
+		"name": "Kapche-Legnica", 
+		"starname": "Kapche-Legnica", 
+		"startype": "/datum/overmap/star/binary", 
+		"size": 21, 
+		"max_overmap_dynamic_events": 0, 
+		"faction": null, 
 		"dynamic_probabilities": {
-			"lava": 40,
-			"ice": 40,
-			"sand": 40,
-			"jungle": 40,
-			"rock": 40,
-			"beach": 40,
-			"waste": 40,
-			"space": 40,
+			"lava": 40, 
+			"ice": 40, 
+			"sand": 40, 
+			"jungle": 40, 
+			"rock": 40, 
+			"beach": 40, 
+			"waste": 40, 
+			"space": 40, 
 			"moon": 20
-		},
+		}, 
 		"event_probabilities": {
-			"/datum/overmap/event/nebula": 60,
-			"/datum/overmap/event/electric/minor": 45,
-			"/datum/overmap/event/electric": 40,
-			"/datum/overmap/event/meteor/minor": 45,
-			"/datum/overmap/event/meteor": 40,
+			"/datum/overmap/event/nebula": 60, 
+			"/datum/overmap/event/electric/minor": 45, 
+			"/datum/overmap/event/electric": 40, 
+			"/datum/overmap/event/meteor/minor": 45, 
+			"/datum/overmap/event/meteor": 40, 
 			"/datum/overmap/event/meteor/dust": 50
-		},
-		"can_jump_to": 0,
-		"override_object_colors": 1,
-		"primary_color": "#00eaff",
-		"secondary_color": "#4d140f",
-		"hazard_primary_color": "#972241",
-		"hazard_secondary_color": "#71a1a9",
-		"primary_structure_color": "#ffffff",
-		"secondary_structure_color": "#ffffff",
+		}, 
+		"fluff_amount": null, 
+		"fluff_probabilities": null, 
+		"can_jump_to": 0, 
+		"override_object_colors": 1, 
+		"primary_color": "#00eaff", 
+		"secondary_color": "#4d140f", 
+		"hazard_primary_color": "#972241", 
+		"hazard_secondary_color": "#71a1a9", 
+		"primary_structure_color": "#ffffff", 
+		"secondary_structure_color": "#ffffff", 
 		"overmap_icon_state": "overmap"
-	},
+	}, 
 	"objects": {
 		"/datum/overmap/star/binary_1": {
-			"type": "/datum/overmap/star/binary",
-			"name": "Kapche-Legnica",
-			"custom_color": 0,
-			"enable_event_spawning": 0,
-			"x": 11,
+			"type": "/datum/overmap/star/binary", 
+			"name": "Kapche-Legnica", 
+			"enable_event_spawning": 0, 
+			"custom_color": 0, 
+			"x": 11, 
 			"y": 11
-		},
+		}, 
 		"/datum/overmap/outpost/cybersun_gas_giant_2": {
-			"type": "/datum/overmap/outpost/cybersun_gas_giant",
-			"name": "Thousand Eyed Perch",
-			"x": 11,
+			"type": "/datum/overmap/outpost/cybersun_gas_giant", 
+			"name": "Thousand Eyed Perch", 
+			"x": 11, 
 			"y": 15
-		},
+		}, 
 		"/datum/overmap/event/nebula_3": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 10,
-			"y": 14
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 9, 
+			"y": 13
+		}, 
 		"/datum/overmap/event/nebula_4": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 11,
-			"y": 14
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
+			"y": 12
+		}, 
 		"/datum/overmap/event/nebula_5": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 9,
-			"y": 13
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
+			"y": 11
+		}, 
 		"/datum/overmap/event/nebula_6": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 12
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
+			"y": 10
+		}, 
 		"/datum/overmap/event/nebula_7": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 11
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 9, 
+			"y": 9
+		}, 
 		"/datum/overmap/event/nebula_8": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 10
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 10, 
+			"y": 8
+		}, 
 		"/datum/overmap/event/nebula_9": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 9,
-			"y": 9
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 11, 
+			"y": 8
+		}, 
 		"/datum/overmap/event/nebula_10": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 10,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 12, 
 			"y": 8
-		},
+		}, 
 		"/datum/overmap/event/nebula_11": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 11,
-			"y": 8
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 13, 
+			"y": 9
+		}, 
 		"/datum/overmap/event/nebula_12": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 12,
-			"y": 8
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
+			"y": 10
+		}, 
 		"/datum/overmap/event/nebula_13": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 13,
-			"y": 9
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
+			"y": 11
+		}, 
 		"/datum/overmap/event/nebula_14": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 14,
-			"y": 10
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
+			"y": 12
+		}, 
 		"/datum/overmap/event/nebula_15": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 14,
-			"y": 11
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 13, 
+			"y": 13
+		}, 
 		"/datum/overmap/event/nebula_16": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 14,
-			"y": 12
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 12, 
+			"y": 14
+		}, 
 		"/datum/overmap/event/nebula_17": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 13,
-			"y": 13
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 10, 
+			"y": 16
+		}, 
 		"/datum/overmap/event/nebula_18": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 12,
-			"y": 14
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 11, 
+			"y": 16
+		}, 
 		"/datum/overmap/event/nebula_19": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 10,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 12, 
 			"y": 16
-		},
+		}, 
 		"/datum/overmap/event/nebula_20": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 11,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 13, 
 			"y": 16
-		},
+		}, 
 		"/datum/overmap/event/nebula_21": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 12,
-			"y": 16
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
+			"y": 15
+		}, 
 		"/datum/overmap/event/nebula_22": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 13,
-			"y": 16
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 15, 
+			"y": 14
+		}, 
 		"/datum/overmap/event/nebula_23": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 14,
-			"y": 15
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 16, 
+			"y": 13
+		}, 
 		"/datum/overmap/event/nebula_24": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 15,
-			"y": 14
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 16, 
+			"y": 12
+		}, 
 		"/datum/overmap/event/nebula_25": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
-			"y": 13
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 16, 
+			"y": 11
+		}, 
 		"/datum/overmap/event/nebula_26": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
-			"y": 10
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 16, 
+			"y": 9
+		}, 
 		"/datum/overmap/event/nebula_27": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
-			"y": 12
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 15, 
+			"y": 8
+		}, 
 		"/datum/overmap/event/nebula_28": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
-			"y": 11
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
+			"y": 7
+		}, 
 		"/datum/overmap/event/nebula_29": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
-			"y": 9
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 13, 
+			"y": 6
+		}, 
 		"/datum/overmap/event/nebula_30": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 15,
-			"y": 8
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 12, 
+			"y": 6
+		}, 
 		"/datum/overmap/event/nebula_31": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 14,
-			"y": 7
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 11, 
+			"y": 6
+		}, 
 		"/datum/overmap/event/nebula_32": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 13,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 10, 
 			"y": 6
-		},
+		}, 
 		"/datum/overmap/event/nebula_33": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 12,
-			"y": 6
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 9, 
+			"y": 16
+		}, 
 		"/datum/overmap/event/nebula_34": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 11,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 9, 
 			"y": 6
-		},
+		}, 
 		"/datum/overmap/event/nebula_35": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 10,
-			"y": 6
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
+			"y": 7
+		}, 
 		"/datum/overmap/event/nebula_36": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 9,
-			"y": 16
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
+			"y": 8
+		}, 
 		"/datum/overmap/event/nebula_37": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 9,
-			"y": 6
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 6, 
+			"y": 9
+		}, 
 		"/datum/overmap/event/nebula_38": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 7
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 6, 
+			"y": 10
+		}, 
 		"/datum/overmap/event/nebula_39": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
-			"y": 8
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 6, 
+			"y": 11
+		}, 
 		"/datum/overmap/event/nebula_40": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
-			"y": 9
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 6, 
+			"y": 12
+		}, 
 		"/datum/overmap/event/nebula_41": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
-			"y": 10
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 6, 
+			"y": 13
+		}, 
 		"/datum/overmap/event/nebula_42": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
-			"y": 11
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
+			"y": 14
+		}, 
 		"/datum/overmap/event/nebula_43": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
-			"y": 12
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 9, 
+			"y": 8
+		}, 
 		"/datum/overmap/event/nebula_44": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
-			"y": 13
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
+			"y": 8
+		}, 
 		"/datum/overmap/event/nebula_45": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
-			"y": 14
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
+			"y": 9
+		}, 
 		"/datum/overmap/event/nebula_46": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 15
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
+			"y": 9
+		}, 
 		"/datum/overmap/event/nebula_47": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 9,
-			"y": 8
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 9, 
+			"y": 7
+		}, 
 		"/datum/overmap/event/nebula_48": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 8
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 10, 
+			"y": 7
+		}, 
 		"/datum/overmap/event/nebula_49": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 9
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 11, 
+			"y": 7
+		}, 
 		"/datum/overmap/event/nebula_50": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
-			"y": 9
-		},
-		"/datum/overmap/event/nebula_51": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 9,
-			"y": 7
-		},
-		"/datum/overmap/event/nebula_52": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 10,
-			"y": 7
-		},
-		"/datum/overmap/event/nebula_53": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 11,
-			"y": 7
-		},
-		"/datum/overmap/event/nebula_54": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
 			"y": 10
-		},
+		}, 
+		"/datum/overmap/fluff/nav_beacon_51": {
+			"type": "/datum/overmap/fluff/nav_beacon", 
+			"dir": 2, 
+			"x": 4, 
+			"y": 4
+		}, 
+		"/datum/overmap/fluff/nav_beacon_52": {
+			"type": "/datum/overmap/fluff/nav_beacon", 
+			"dir": 2, 
+			"x": 4, 
+			"y": 10
+		}, 
+		"/datum/overmap/fluff/nav_beacon_53": {
+			"type": "/datum/overmap/fluff/nav_beacon", 
+			"dir": 2, 
+			"x": 6, 
+			"y": 15
+		}, 
+		"/datum/overmap/fluff/nav_beacon_54": {
+			"type": "/datum/overmap/fluff/nav_beacon", 
+			"dir": 2, 
+			"x": 14, 
+			"y": 15
+		}, 
 		"/datum/overmap/fluff/nav_beacon_55": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 4,
-			"y": 4
-		},
+			"type": "/datum/overmap/fluff/nav_beacon", 
+			"dir": 2, 
+			"x": 4, 
+			"y": 17
+		}, 
 		"/datum/overmap/fluff/nav_beacon_56": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 4,
-			"y": 10
-		},
-		"/datum/overmap/fluff/nav_beacon_57": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 8,
-			"y": 15
-		},
-		"/datum/overmap/fluff/nav_beacon_58": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 6,
-			"y": 15
-		},
-		"/datum/overmap/fluff/nav_beacon_59": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 14,
-			"y": 15
-		},
-		"/datum/overmap/fluff/nav_beacon_60": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 4,
-			"y": 17
-		},
-		"/datum/overmap/fluff/nav_beacon_61": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 4,
+			"type": "/datum/overmap/fluff/nav_beacon", 
+			"dir": 2, 
+			"x": 4, 
 			"y": 13
-		},
+		}, 
+		"/datum/overmap/event/nebula_57": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/nebula_58": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/nebula_59": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/nebula_60": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/nebula_61": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 6, 
+			"y": 17
+		}, 
 		"/datum/overmap/event/nebula_62": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 16
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 9, 
+			"y": 17
+		}, 
 		"/datum/overmap/event/nebula_63": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
-			"y": 16
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
+			"y": 17
+		}, 
 		"/datum/overmap/event/nebula_64": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
-			"y": 16
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
+			"y": 17
+		}, 
 		"/datum/overmap/event/nebula_65": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 9, 
 			"y": 18
-		},
+		}, 
 		"/datum/overmap/event/nebula_66": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
-			"y": 18
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 9, 
+			"y": 19
+		}, 
 		"/datum/overmap/event/nebula_67": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
-			"y": 17
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
+			"y": 19
+		}, 
 		"/datum/overmap/event/nebula_68": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 9,
-			"y": 17
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 10, 
+			"y": 18
+		}, 
 		"/datum/overmap/event/nebula_69": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 10, 
 			"y": 17
-		},
+		}, 
 		"/datum/overmap/event/nebula_70": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
-			"y": 17
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 5, 
+			"y": 11
+		}, 
 		"/datum/overmap/event/nebula_71": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 9,
-			"y": 18
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 5, 
+			"y": 10
+		}, 
 		"/datum/overmap/event/nebula_72": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 9,
-			"y": 19
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 5, 
+			"y": 9
+		}, 
 		"/datum/overmap/event/nebula_73": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 19
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 6, 
+			"y": 8
+		}, 
 		"/datum/overmap/event/nebula_74": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 10,
-			"y": 18
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
+			"y": 7
+		}, 
 		"/datum/overmap/event/nebula_75": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 10,
-			"y": 17
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 11, 
+			"y": 5
+		}, 
 		"/datum/overmap/event/nebula_76": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 5,
-			"y": 11
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 11, 
+			"y": 3
+		}, 
 		"/datum/overmap/event/nebula_77": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 5,
-			"y": 10
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 11, 
+			"y": 4
+		}, 
 		"/datum/overmap/event/nebula_78": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 5,
-			"y": 9
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 12, 
+			"y": 5
+		}, 
 		"/datum/overmap/event/nebula_79": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
-			"y": 8
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 12, 
+			"y": 4
+		}, 
 		"/datum/overmap/event/nebula_80": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
-			"y": 7
-		},
-		"/datum/overmap/event/nebula_81": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 11,
-			"y": 5
-		},
-		"/datum/overmap/event/nebula_82": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 9,
-			"y": 5
-		},
-		"/datum/overmap/event/nebula_83": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 11,
-			"y": 3
-		},
-		"/datum/overmap/event/nebula_84": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 11,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 10, 
 			"y": 4
-		},
-		"/datum/overmap/event/nebula_85": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 12,
-			"y": 5
-		},
+		}, 
+		"/datum/overmap/fluff/nav_beacon_81": {
+			"type": "/datum/overmap/fluff/nav_beacon", 
+			"dir": 2, 
+			"x": 16, 
+			"y": 15
+		}, 
+		"/datum/overmap/fluff/nav_beacon_82": {
+			"type": "/datum/overmap/fluff/nav_beacon", 
+			"dir": 2, 
+			"x": 17, 
+			"y": 13
+		}, 
+		"/datum/overmap/fluff/nav_beacon_83": {
+			"type": "/datum/overmap/fluff/nav_beacon", 
+			"dir": 2, 
+			"x": 17, 
+			"y": 9
+		}, 
+		"/datum/overmap/fluff/nav_beacon_84": {
+			"type": "/datum/overmap/fluff/nav_beacon", 
+			"dir": 2, 
+			"x": 17, 
+			"y": 6
+		}, 
+		"/datum/overmap/fluff/nav_beacon_85": {
+			"type": "/datum/overmap/fluff/nav_beacon", 
+			"dir": 2, 
+			"x": 17, 
+			"y": 4
+		}, 
 		"/datum/overmap/event/nebula_86": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 12,
-			"y": 4
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 11, 
+			"y": 17
+		}, 
 		"/datum/overmap/event/nebula_87": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 10,
-			"y": 4
-		},
-		"/datum/overmap/fluff/nav_beacon_88": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 16,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 12, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/nebula_88": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 11, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/nebula_89": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/nebula_90": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 2, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/nebula_91": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
 			"y": 15
-		},
-		"/datum/overmap/fluff/nav_beacon_89": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 17,
-			"y": 13
-		},
-		"/datum/overmap/fluff/nav_beacon_90": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 17,
-			"y": 9
-		},
-		"/datum/overmap/fluff/nav_beacon_91": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 17,
-			"y": 6
-		},
-		"/datum/overmap/fluff/nav_beacon_92": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 17,
-			"y": 4
-		},
+		}, 
+		"/datum/overmap/event/nebula_92": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 2, 
+			"y": 15
+		}, 
 		"/datum/overmap/event/nebula_93": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 11,
-			"y": 17
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 2, 
+			"y": 14
+		}, 
 		"/datum/overmap/event/nebula_94": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 12,
-			"y": 17
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 14
+		}, 
 		"/datum/overmap/event/nebula_95": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 13,
-			"y": 17
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 3, 
+			"y": 14
+		}, 
 		"/datum/overmap/event/nebula_96": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 11,
-			"y": 18
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 3, 
+			"y": 13
+		}, 
 		"/datum/overmap/event/nebula_97": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 16
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 2, 
+			"y": 13
+		}, 
 		"/datum/overmap/event/nebula_98": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 2,
-			"y": 16
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 13
+		}, 
 		"/datum/overmap/event/nebula_99": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 15
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 2, 
+			"y": 12
+		}, 
 		"/datum/overmap/event/nebula_100": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 2,
-			"y": 15
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 2, 
+			"y": 11
+		}, 
 		"/datum/overmap/event/nebula_101": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 2,
-			"y": 14
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 12
+		}, 
 		"/datum/overmap/event/nebula_102": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 14
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 11
+		}, 
 		"/datum/overmap/event/nebula_103": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 3,
-			"y": 14
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 10
+		}, 
 		"/datum/overmap/event/nebula_104": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 3,
-			"y": 13
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 9
+		}, 
 		"/datum/overmap/event/nebula_105": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 2,
-			"y": 13
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 2, 
+			"y": 8
+		}, 
 		"/datum/overmap/event/nebula_106": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 13
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 8
+		}, 
 		"/datum/overmap/event/nebula_107": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 2,
-			"y": 12
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 7
+		}, 
 		"/datum/overmap/event/nebula_108": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 2,
-			"y": 11
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 2, 
+			"y": 7
+		}, 
 		"/datum/overmap/event/nebula_109": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 12
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 6
+		}, 
 		"/datum/overmap/event/nebula_110": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 11
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 2, 
+			"y": 6
+		}, 
 		"/datum/overmap/event/nebula_111": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 10
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 2, 
+			"y": 5
+		}, 
 		"/datum/overmap/event/nebula_112": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 9
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 5
+		}, 
 		"/datum/overmap/event/nebula_113": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 2,
-			"y": 8
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 4
+		}, 
 		"/datum/overmap/event/nebula_114": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 8
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 2, 
+			"y": 4
+		}, 
 		"/datum/overmap/event/nebula_115": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 7
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 3, 
+			"y": 6
+		}, 
 		"/datum/overmap/event/nebula_116": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 2,
-			"y": 7
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 3, 
+			"y": 5
+		}, 
 		"/datum/overmap/event/nebula_117": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 6
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 3, 
+			"y": 7
+		}, 
 		"/datum/overmap/event/nebula_118": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 2,
-			"y": 6
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 5, 
+			"y": 2
+		}, 
 		"/datum/overmap/event/nebula_119": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 2,
-			"y": 5
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 6, 
+			"y": 3
+		}, 
 		"/datum/overmap/event/nebula_120": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 5
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 6, 
+			"y": 2
+		}, 
 		"/datum/overmap/event/nebula_121": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 4
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 5, 
+			"y": 3
+		}, 
 		"/datum/overmap/event/nebula_122": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 2,
-			"y": 4
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 5, 
+			"y": 1
+		}, 
 		"/datum/overmap/event/nebula_123": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 3,
-			"y": 6
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 4, 
+			"y": 1
+		}, 
 		"/datum/overmap/event/nebula_124": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 3,
-			"y": 5
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
+			"y": 1
+		}, 
 		"/datum/overmap/event/nebula_125": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 3,
-			"y": 7
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 6, 
+			"y": 1
+		}, 
 		"/datum/overmap/event/nebula_126": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 5,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
 			"y": 2
-		},
+		}, 
 		"/datum/overmap/event/nebula_127": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
 			"y": 3
-		},
+		}, 
 		"/datum/overmap/event/nebula_128": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
 			"y": 2
-		},
+		}, 
 		"/datum/overmap/event/nebula_129": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 5,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
 			"y": 3
-		},
+		}, 
 		"/datum/overmap/event/nebula_130": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 5,
-			"y": 1
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 9, 
+			"y": 4
+		}, 
 		"/datum/overmap/event/nebula_131": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 4,
-			"y": 1
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
+			"y": 4
+		}, 
 		"/datum/overmap/event/nebula_132": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
-			"y": 1
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
+			"y": 4
+		}, 
 		"/datum/overmap/event/nebula_133": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
-			"y": 1
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 6, 
+			"y": 4
+		}, 
 		"/datum/overmap/event/nebula_134": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
-			"y": 2
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 10, 
+			"y": 3
+		}, 
 		"/datum/overmap/event/nebula_135": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 9, 
 			"y": 3
-		},
+		}, 
 		"/datum/overmap/event/nebula_136": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 2
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 12, 
+			"y": 3
+		}, 
 		"/datum/overmap/event/nebula_137": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 3
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 13, 
+			"y": 4
+		}, 
 		"/datum/overmap/event/nebula_138": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 9,
-			"y": 4
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 13, 
+			"y": 5
+		}, 
 		"/datum/overmap/event/nebula_139": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
-			"y": 4
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 13, 
+			"y": 3
+		}, 
 		"/datum/overmap/event/nebula_140": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 5
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
+			"y": 3
+		}, 
 		"/datum/overmap/event/nebula_141": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
-			"y": 5
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
+			"y": 4
+		}, 
 		"/datum/overmap/event/nebula_142": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 4
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
+			"y": 5
+		}, 
 		"/datum/overmap/event/nebula_143": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 15, 
 			"y": 4
-		},
+		}, 
 		"/datum/overmap/event/nebula_144": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 10,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 15, 
 			"y": 3
-		},
+		}, 
 		"/datum/overmap/event/nebula_145": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 9,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 16, 
 			"y": 3
-		},
+		}, 
 		"/datum/overmap/event/nebula_146": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 12,
-			"y": 3
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 15, 
+			"y": 5
+		}, 
 		"/datum/overmap/event/nebula_147": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 13,
-			"y": 4
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
+			"y": 6
+		}, 
 		"/datum/overmap/event/nebula_148": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 13,
-			"y": 5
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 16, 
+			"y": 4
+		}, 
 		"/datum/overmap/event/nebula_149": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 13,
-			"y": 3
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 12, 
+			"y": 21
+		}, 
 		"/datum/overmap/event/nebula_150": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 14,
-			"y": 3
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 13, 
+			"y": 19
+		}, 
 		"/datum/overmap/event/nebula_151": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 14,
-			"y": 4
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 13, 
+			"y": 21
+		}, 
 		"/datum/overmap/event/nebula_152": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 14,
-			"y": 5
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 11, 
+			"y": 21
+		}, 
 		"/datum/overmap/event/nebula_153": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 15,
-			"y": 4
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 13, 
+			"y": 20
+		}, 
 		"/datum/overmap/event/nebula_154": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 15,
-			"y": 3
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
+			"y": 19
+		}, 
 		"/datum/overmap/event/nebula_155": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
-			"y": 3
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 15, 
+			"y": 20
+		}, 
 		"/datum/overmap/event/nebula_156": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 15,
-			"y": 5
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 16, 
+			"y": 20
+		}, 
 		"/datum/overmap/event/nebula_157": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 14,
-			"y": 6
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 15, 
+			"y": 19
+		}, 
 		"/datum/overmap/event/nebula_158": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
-			"y": 4
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 16, 
+			"y": 19
+		}, 
 		"/datum/overmap/event/nebula_159": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
-			"y": 5
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 17, 
+			"y": 19
+		}, 
 		"/datum/overmap/event/nebula_160": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 12,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 17, 
 			"y": 20
-		},
+		}, 
 		"/datum/overmap/event/nebula_161": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 13,
-			"y": 19
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 16, 
+			"y": 18
+		}, 
 		"/datum/overmap/event/nebula_162": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 13,
-			"y": 20
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 15, 
+			"y": 18
+		}, 
 		"/datum/overmap/event/nebula_163": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 11,
-			"y": 20
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 19, 
+			"y": 16
+		}, 
 		"/datum/overmap/event/nebula_164": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 14,
-			"y": 20
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 20, 
+			"y": 17
+		}, 
 		"/datum/overmap/event/nebula_165": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 14,
-			"y": 19
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 21, 
+			"y": 17
+		}, 
 		"/datum/overmap/event/nebula_166": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 15,
-			"y": 20
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 20, 
+			"y": 16
+		}, 
 		"/datum/overmap/event/nebula_167": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
-			"y": 20
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 18, 
+			"y": 16
+		}, 
 		"/datum/overmap/event/nebula_168": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 15,
-			"y": 19
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 19, 
+			"y": 15
+		}, 
 		"/datum/overmap/event/nebula_169": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
-			"y": 19
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 19, 
+			"y": 15
+		}, 
 		"/datum/overmap/event/nebula_170": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 17,
-			"y": 19
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 20, 
+			"y": 15
+		}, 
 		"/datum/overmap/event/nebula_171": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 17,
-			"y": 20
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 20, 
+			"y": 14
+		}, 
 		"/datum/overmap/event/nebula_172": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
-			"y": 18
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 19, 
+			"y": 12
+		}, 
 		"/datum/overmap/event/nebula_173": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 15,
-			"y": 18
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 20, 
+			"y": 13
+		}, 
 		"/datum/overmap/event/nebula_174": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
-			"y": 16
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 20, 
+			"y": 12
+		}, 
 		"/datum/overmap/event/nebula_175": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
-			"y": 17
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 19, 
+			"y": 11
+		}, 
 		"/datum/overmap/event/nebula_176": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 17
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 20, 
+			"y": 11
+		}, 
 		"/datum/overmap/event/nebula_177": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 16
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 19, 
+			"y": 10
+		}, 
 		"/datum/overmap/event/nebula_178": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 18,
-			"y": 16
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 19, 
+			"y": 8
+		}, 
 		"/datum/overmap/event/nebula_179": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
-			"y": 15
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 19, 
+			"y": 7
+		}, 
 		"/datum/overmap/event/nebula_180": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
-			"y": 15
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 20, 
+			"y": 7
+		}, 
 		"/datum/overmap/event/nebula_181": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 15
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 20, 
+			"y": 6
+		}, 
 		"/datum/overmap/event/nebula_182": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
-			"y": 14
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 19, 
+			"y": 6
+		}, 
 		"/datum/overmap/event/nebula_183": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 14
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 18, 
+			"y": 6
+		}, 
 		"/datum/overmap/event/nebula_184": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
-			"y": 12
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 19, 
+			"y": 5
+		}, 
 		"/datum/overmap/event/nebula_185": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 13
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 19, 
+			"y": 4
+		}, 
 		"/datum/overmap/event/nebula_186": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
-			"y": 13
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 20, 
+			"y": 5
+		}, 
 		"/datum/overmap/event/nebula_187": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 12
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 18, 
+			"y": 5
+		}, 
 		"/datum/overmap/event/nebula_188": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 18,
-			"y": 12
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 20, 
+			"y": 4
+		}, 
 		"/datum/overmap/event/nebula_189": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
-			"y": 11
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 20, 
+			"y": 3
+		}, 
 		"/datum/overmap/event/nebula_190": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 11
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 16, 
+			"y": 2
+		}, 
 		"/datum/overmap/event/nebula_191": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 10
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
+			"y": 2
+		}, 
 		"/datum/overmap/event/nebula_192": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
-			"y": 10
-		},
-		"/datum/overmap/event/nebula_193": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 8
-		},
-		"/datum/overmap/event/nebula_194": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 13, 
+			"y": 2
+		}, 
+		"/datum/overmap/event/electric_193": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 12, 
 			"y": 9
-		},
-		"/datum/overmap/event/nebula_195": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 9
-		},
-		"/datum/overmap/event/nebula_196": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
+		}, 
+		"/datum/overmap/event/electric_194": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 10, 
 			"y": 8
-		},
-		"/datum/overmap/event/nebula_197": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
+		}, 
+		"/datum/overmap/event/electric_195": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 11, 
 			"y": 7
-		},
-		"/datum/overmap/event/nebula_198": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 7
-		},
-		"/datum/overmap/event/nebula_199": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 6
-		},
-		"/datum/overmap/event/nebula_200": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
-			"y": 6
-		},
-		"/datum/overmap/event/nebula_201": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 18,
-			"y": 6
-		},
-		"/datum/overmap/event/nebula_202": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
-			"y": 5
-		},
-		"/datum/overmap/event/nebula_203": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
+		}, 
+		"/datum/overmap/event/electric_196": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 12, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/electric_197": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 13, 
+			"y": 9
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_198": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 15, 
 			"y": 4
-		},
-		"/datum/overmap/event/nebula_204": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_199": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 14, 
 			"y": 5
-		},
-		"/datum/overmap/event/nebula_205": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 18,
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_200": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 8, 
 			"y": 4
-		},
-		"/datum/overmap/event/nebula_206": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 18,
-			"y": 5
-		},
-		"/datum/overmap/event/nebula_207": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 4
-		},
-		"/datum/overmap/event/nebula_208": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_201": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 7, 
 			"y": 3
-		},
-		"/datum/overmap/event/nebula_209": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 15,
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_202": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 9, 
+			"y": 4
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_203": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 6, 
 			"y": 2
-		},
-		"/datum/overmap/event/nebula_210": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 15,
-			"y": 1
-		},
-		"/datum/overmap/event/nebula_211": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
-			"y": 1
-		},
-		"/datum/overmap/event/nebula_212": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_204": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 7, 
 			"y": 2
-		},
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_205": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 11, 
+			"y": 4
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_206": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 11, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_207": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 12, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_208": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 12, 
+			"y": 4
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_209": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 10, 
+			"y": 6
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_210": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 2, 
+			"y": 6
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_211": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 2, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_212": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 3, 
+			"y": 6
+		}, 
 		"/datum/overmap/event/nebula_213": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 14,
-			"y": 2
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 10, 
+			"y": 5
+		}, 
 		"/datum/overmap/event/nebula_214": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 13,
-			"y": 2
-		},
-		"/datum/overmap/event/electric_215": {
-			"type": "/datum/overmap/event/electric",
-			"x": 12,
-			"y": 9
-		},
-		"/datum/overmap/event/electric_216": {
-			"type": "/datum/overmap/event/electric",
-			"x": 11,
-			"y": 8
-		},
-		"/datum/overmap/event/electric_217": {
-			"type": "/datum/overmap/event/electric",
-			"x": 10,
-			"y": 8
-		},
-		"/datum/overmap/event/electric_218": {
-			"type": "/datum/overmap/event/electric",
-			"x": 11,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 4, 
+			"y": 6
+		}, 
+		"/datum/overmap/fluff/nav_beacon_215": {
+			"type": "/datum/overmap/fluff/nav_beacon", 
+			"dir": 2, 
+			"x": 4, 
+			"y": 6
+		}, 
+		"/datum/overmap/event/nebula_216": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 6, 
 			"y": 7
-		},
-		"/datum/overmap/event/electric_219": {
-			"type": "/datum/overmap/event/electric",
-			"x": 12,
-			"y": 8
-		},
-		"/datum/overmap/event/electric_220": {
-			"type": "/datum/overmap/event/electric",
-			"x": 11,
-			"y": 9
-		},
+		}, 
+		"/datum/overmap/event/nebula_217": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 6, 
+			"y": 6
+		}, 
+		"/datum/overmap/event/nebula_218": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
+			"y": 6
+		}, 
+		"/datum/overmap/event/nebula_219": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 6, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/nebula_220": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 5, 
+			"y": 6
+		}, 
 		"/datum/overmap/event/electric_221": {
-			"type": "/datum/overmap/event/electric",
-			"x": 13,
-			"y": 9
-		},
-		"/datum/overmap/event/meteor/debris/minor_222": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 15,
-			"y": 4
-		},
-		"/datum/overmap/event/meteor/debris/minor_223": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 14,
-			"y": 5
-		},
-		"/datum/overmap/event/meteor/debris/minor_224": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 8,
-			"y": 4
-		},
-		"/datum/overmap/event/meteor/debris/minor_225": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 7,
-			"y": 3
-		},
-		"/datum/overmap/event/meteor/debris/minor_226": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 9,
-			"y": 4
-		},
-		"/datum/overmap/event/meteor/debris/minor_227": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 6,
-			"y": 2
-		},
-		"/datum/overmap/event/meteor/debris/minor_228": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 7,
-			"y": 2
-		},
-		"/datum/overmap/event/meteor/debris/minor_229": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 11,
-			"y": 4
-		},
-		"/datum/overmap/event/meteor/debris/minor_230": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 11,
-			"y": 5
-		},
-		"/datum/overmap/event/meteor/debris/minor_231": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 12,
-			"y": 5
-		},
-		"/datum/overmap/event/meteor/debris/minor_232": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 12,
-			"y": 4
-		},
-		"/datum/overmap/event/meteor/debris/minor_233": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 10,
-			"y": 6
-		},
-		"/datum/overmap/event/meteor/debris/minor_234": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 2,
-			"y": 6
-		},
-		"/datum/overmap/event/meteor/debris/minor_235": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 2,
-			"y": 5
-		},
-		"/datum/overmap/event/meteor/debris/minor_236": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 3,
-			"y": 6
-		},
-		"/datum/overmap/event/nebula_237": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 10,
-			"y": 5
-		},
-		"/datum/overmap/event/nebula_238": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 4,
-			"y": 6
-		},
-		"/datum/overmap/fluff/nav_beacon_239": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 4,
-			"y": 6
-		},
-		"/datum/overmap/event/nebula_240": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
+			"type": "/datum/overmap/event/electric", 
+			"x": 6, 
 			"y": 7
-		},
-		"/datum/overmap/event/nebula_241": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
+		}, 
+		"/datum/overmap/event/electric_222": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 6, 
 			"y": 6
-		},
-		"/datum/overmap/event/nebula_242": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
+		}, 
+		"/datum/overmap/event/electric_223": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 7, 
+			"y": 7
+		}, 
+		"/datum/overmap/event/electric_224": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 5, 
+			"y": 7
+		}, 
+		"/datum/overmap/event/electric_225": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 6, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/electric_226": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 5, 
 			"y": 6
-		},
-		"/datum/overmap/event/nebula_243": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 6,
-			"y": 5
-		},
-		"/datum/overmap/event/nebula_244": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 5,
-			"y": 6
-		},
+		}, 
+		"/datum/overmap/event/nebula_227": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 5, 
+			"y": 7
+		}, 
+		"/datum/overmap/event/nebula_228": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 3, 
+			"y": 8
+		}, 
+		"/datum/overmap/event/nebula_229": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/nebula_230": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/nebula_231": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 8, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/nebula_232": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 9, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/nebula_233": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 9, 
+			"y": 15
+		}, 
+		"/datum/overmap/fluff/nav_beacon_234": {
+			"type": "/datum/overmap/fluff/nav_beacon", 
+			"dir": 2, 
+			"x": 9, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/nebula_235": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 18, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/nebula_236": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 17, 
+			"y": 17
+		}, 
+		"/datum/overmap/fluff/nav_beacon_237": {
+			"type": "/datum/overmap/fluff/nav_beacon", 
+			"dir": 2, 
+			"x": 17, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_238": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 1, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_239": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 2, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_240": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 1, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_241": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 1, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_242": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 8, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_243": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 7, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_244": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 6, 
+			"y": 10
+		}, 
 		"/datum/overmap/event/nebula_245": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 6
-		},
-		"/datum/overmap/event/electric_246": {
-			"type": "/datum/overmap/event/electric",
-			"x": 6,
-			"y": 7
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/nebula_246": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 7, 
+			"y": 12
+		}, 
 		"/datum/overmap/event/electric_247": {
-			"type": "/datum/overmap/event/electric",
-			"x": 6,
-			"y": 6
-		},
+			"type": "/datum/overmap/event/electric", 
+			"x": 8, 
+			"y": 19
+		}, 
 		"/datum/overmap/event/electric_248": {
-			"type": "/datum/overmap/event/electric",
-			"x": 7,
-			"y": 6
-		},
+			"type": "/datum/overmap/event/electric", 
+			"x": 7, 
+			"y": 18
+		}, 
 		"/datum/overmap/event/electric_249": {
-			"type": "/datum/overmap/event/electric",
-			"x": 7,
-			"y": 7
-		},
+			"type": "/datum/overmap/event/electric", 
+			"x": 8, 
+			"y": 18
+		}, 
 		"/datum/overmap/event/electric_250": {
-			"type": "/datum/overmap/event/electric",
-			"x": 5,
-			"y": 7
-		},
+			"type": "/datum/overmap/event/electric", 
+			"x": 7, 
+			"y": 17
+		}, 
 		"/datum/overmap/event/electric_251": {
-			"type": "/datum/overmap/event/electric",
-			"x": 6,
-			"y": 8
-		},
+			"type": "/datum/overmap/event/electric", 
+			"x": 6, 
+			"y": 17
+		}, 
 		"/datum/overmap/event/electric_252": {
-			"type": "/datum/overmap/event/electric",
-			"x": 5,
-			"y": 6
-		},
-		"/datum/overmap/event/nebula_253": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 5,
-			"y": 7
-		},
-		"/datum/overmap/event/nebula_254": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 3,
-			"y": 8
-		},
-		"/datum/overmap/event/nebula_255": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 14
-		},
+			"type": "/datum/overmap/event/electric", 
+			"x": 9, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/electric_253": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 15, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/electric_254": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 14, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/electric_255": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 14, 
+			"y": 20
+		}, 
 		"/datum/overmap/event/nebula_256": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
-			"y": 13
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 21, 
+			"y": 19
+		}, 
 		"/datum/overmap/event/nebula_257": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 8,
-			"y": 13
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 21, 
+			"y": 18
+		}, 
 		"/datum/overmap/event/nebula_258": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 9,
-			"y": 14
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 19
+		}, 
 		"/datum/overmap/event/nebula_259": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 9,
-			"y": 15
-		},
-		"/datum/overmap/fluff/nav_beacon_260": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 9,
-			"y": 15
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/nebula_260": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 2, 
+			"y": 21
+		}, 
 		"/datum/overmap/event/nebula_261": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
-			"y": 17
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 3, 
+			"y": 21
+		}, 
 		"/datum/overmap/event/nebula_262": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 17,
-			"y": 16
-		},
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
+			"y": 18
+		}, 
 		"/datum/overmap/event/nebula_263": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 17,
-			"y": 18
-		},
-		"/datum/overmap/event/nebula_264": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 18,
+			"type": "/datum/overmap/event/nebula", 
+			"x": 1, 
 			"y": 17
-		},
-		"/datum/overmap/event/nebula_265": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 17,
-			"y": 17
-		},
-		"/datum/overmap/fluff/nav_beacon_266": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 17,
-			"y": 18
-		},
-		"/datum/overmap/fluff/nav_beacon_267": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 16,
-			"y": 17
-		},
-		"/datum/overmap/fluff/nav_beacon_268": {
-			"type": "/datum/overmap/fluff/nav_beacon",
-			"dir": 2,
-			"x": 17,
-			"y": 17
-		},
-		"/datum/overmap/event/meteor/debris/minor_269": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 1,
-			"y": 13
-		},
-		"/datum/overmap/event/meteor/debris/minor_270": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 2,
-			"y": 13
-		},
-		"/datum/overmap/event/meteor/debris/minor_271": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 1,
-			"y": 14
-		},
-		"/datum/overmap/event/meteor/debris/minor_272": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 1,
-			"y": 15
-		},
-		"/datum/overmap/event/meteor/debris/major_273": {
-			"type": "/datum/overmap/event/meteor/debris/major",
-			"x": 7,
-			"y": 12
-		},
-		"/datum/overmap/event/meteor/debris/major_274": {
-			"type": "/datum/overmap/event/meteor/debris/major",
-			"x": 7,
-			"y": 11
-		},
-		"/datum/overmap/event/meteor/debris/minor_275": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 8,
-			"y": 13
-		},
-		"/datum/overmap/event/meteor/debris/minor_276": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 7,
+		}, 
+		"/datum/overmap/event/electric_264": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 2, 
 			"y": 10
-		},
-		"/datum/overmap/event/meteor/debris/minor_277": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 6,
-			"y": 10
-		},
-		"/datum/overmap/event/nebula_278": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
-			"y": 11
-		},
-		"/datum/overmap/event/nebula_279": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 7,
-			"y": 12
-		},
-		"/datum/overmap/event/electric_280": {
-			"type": "/datum/overmap/event/electric",
-			"x": 8,
-			"y": 19
-		},
-		"/datum/overmap/event/electric_281": {
-			"type": "/datum/overmap/event/electric",
-			"x": 7,
-			"y": 18
-		},
-		"/datum/overmap/event/electric_282": {
-			"type": "/datum/overmap/event/electric",
-			"x": 8,
-			"y": 18
-		},
-		"/datum/overmap/event/electric_283": {
-			"type": "/datum/overmap/event/electric",
-			"x": 7,
-			"y": 17
-		},
-		"/datum/overmap/event/electric_284": {
-			"type": "/datum/overmap/event/electric",
-			"x": 6,
-			"y": 17
-		},
-		"/datum/overmap/event/electric_285": {
-			"type": "/datum/overmap/event/electric",
-			"x": 7,
-			"y": 19
-		},
-		"/datum/overmap/event/electric_286": {
-			"type": "/datum/overmap/event/electric",
-			"x": 8,
-			"y": 20
-		},
-		"/datum/overmap/event/electric_287": {
-			"type": "/datum/overmap/event/electric",
-			"x": 9,
-			"y": 19
-		},
-		"/datum/overmap/event/electric_288": {
-			"type": "/datum/overmap/event/electric",
-			"x": 9,
-			"y": 20
-		},
-		"/datum/overmap/event/electric_289": {
-			"type": "/datum/overmap/event/electric",
-			"x": 15,
-			"y": 19
-		},
-		"/datum/overmap/event/electric_290": {
-			"type": "/datum/overmap/event/electric",
-			"x": 14,
-			"y": 20
-		},
-		"/datum/overmap/event/electric_291": {
-			"type": "/datum/overmap/event/electric",
-			"x": 14,
-			"y": 20
-		},
-		"/datum/overmap/event/nebula_292": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 19,
-			"y": 20
-		},
-		"/datum/overmap/event/nebula_293": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 20
-		},
-		"/datum/overmap/event/nebula_294": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 19
-		},
-		"/datum/overmap/event/nebula_295": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 18,
-			"y": 20
-		},
-		"/datum/overmap/event/nebula_296": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 20,
-			"y": 18
-		},
-		"/datum/overmap/event/nebula_297": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 19
-		},
-		"/datum/overmap/event/nebula_298": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 20
-		},
-		"/datum/overmap/event/nebula_299": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 2,
-			"y": 20
-		},
-		"/datum/overmap/event/nebula_300": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 3,
-			"y": 20
-		},
-		"/datum/overmap/event/nebula_301": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 18
-		},
-		"/datum/overmap/event/nebula_302": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 1,
-			"y": 17
-		},
-		"/datum/overmap/event/electric_303": {
-			"type": "/datum/overmap/event/electric",
-			"x": 2,
-			"y": 10
-		},
-		"/datum/overmap/event/electric_304": {
-			"type": "/datum/overmap/event/electric",
-			"x": 2,
+		}, 
+		"/datum/overmap/event/electric_265": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 2, 
 			"y": 9
-		},
-		"/datum/overmap/event/nebula_305": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 2,
+		}, 
+		"/datum/overmap/event/nebula_266": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 2, 
 			"y": 10
-		},
-		"/datum/overmap/event/nebula_306": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 2,
+		}, 
+		"/datum/overmap/event/nebula_267": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 2, 
 			"y": 9
-		},
-		"/datum/overmap/event/electric_307": {
-			"type": "/datum/overmap/event/electric",
-			"x": 2,
+		}, 
+		"/datum/overmap/event/electric_268": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 2, 
 			"y": 14
-		},
-		"/datum/overmap/event/electric_308": {
-			"type": "/datum/overmap/event/electric",
-			"x": 3,
+		}, 
+		"/datum/overmap/event/electric_269": {
+			"type": "/datum/overmap/event/electric", 
+			"x": 3, 
 			"y": 13
-		},
-		"/datum/overmap/event/nebula_309": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 15,
+		}, 
+		"/datum/overmap/event/nebula_270": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 15, 
 			"y": 7
-		},
-		"/datum/overmap/event/nebula_310": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 16,
+		}, 
+		"/datum/overmap/event/nebula_271": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 16, 
 			"y": 8
-		},
-		"/datum/overmap/event/nebula_311": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 15,
-			"y": 6
-		},
-		"/datum/overmap/event/nebula_312": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 14,
+		}, 
+		"/datum/overmap/event/nebula_272": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
 			"y": 8
-		},
-		"/datum/overmap/event/nebula_313": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 15,
+		}, 
+		"/datum/overmap/event/nebula_273": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 15, 
 			"y": 9
-		},
-		"/datum/overmap/event/meteor/debris/minor_314": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 6,
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_274": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 6, 
 			"y": 11
-		},
-		"/datum/overmap/event/meteor/debris/minor_315": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 8,
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_275": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 8, 
 			"y": 10
-		},
-		"/datum/overmap/event/meteor/debris/major_316": {
-			"type": "/datum/overmap/event/meteor/debris/major",
-			"x": 9,
-			"y": 18
-		},
-		"/datum/overmap/event/meteor/debris/major_317": {
-			"type": "/datum/overmap/event/meteor/debris/major",
-			"x": 8,
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_276": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 9, 
 			"y": 17
-		},
-		"/datum/overmap/event/meteor/debris/minor_318": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 9,
-			"y": 17
-		},
-		"/datum/overmap/event/meteor/debris/minor_319": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 10,
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_277": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 10, 
 			"y": 18
-		},
-		"/datum/overmap/fluff/commsat_320": {
-			"type": "/datum/overmap/fluff/commsat",
-			"dir": 2,
-			"x": 12,
+		}, 
+		"/datum/overmap/fluff/commsat_278": {
+			"type": "/datum/overmap/fluff/commsat", 
+			"dir": 2, 
+			"x": 12, 
 			"y": 15
-		},
-		"/datum/overmap/fluff/commsat_321": {
-			"type": "/datum/overmap/fluff/commsat",
-			"dir": 2,
-			"x": 10,
+		}, 
+		"/datum/overmap/fluff/commsat_279": {
+			"type": "/datum/overmap/fluff/commsat", 
+			"dir": 2, 
+			"x": 10, 
 			"y": 15
-		},
-		"/datum/overmap/fluff/commsat_322": {
-			"type": "/datum/overmap/fluff/commsat",
-			"dir": 2,
-			"x": 7,
-			"y": 15
-		},
-		"/datum/overmap/fluff/commsat_323": {
-			"type": "/datum/overmap/fluff/commsat",
-			"dir": 2,
-			"x": 16,
+		}, 
+		"/datum/overmap/fluff/commsat_280": {
+			"type": "/datum/overmap/fluff/commsat", 
+			"dir": 2, 
+			"x": 16, 
 			"y": 16
-		},
-		"/datum/overmap/fluff/commsat_324": {
-			"type": "/datum/overmap/fluff/commsat",
-			"dir": 2,
-			"x": 18,
+		}, 
+		"/datum/overmap/fluff/commsat_281": {
+			"type": "/datum/overmap/fluff/commsat", 
+			"dir": 2, 
+			"x": 18, 
 			"y": 10
-		},
-		"/datum/overmap/fluff/commsat_325": {
-			"type": "/datum/overmap/fluff/commsat",
-			"dir": 2,
-			"x": 16,
+		}, 
+		"/datum/overmap/fluff/commsat_282": {
+			"type": "/datum/overmap/fluff/commsat", 
+			"dir": 2, 
+			"x": 16, 
 			"y": 6
-		},
-		"/datum/overmap/fluff/commsat_326": {
-			"type": "/datum/overmap/fluff/commsat",
-			"dir": 2,
-			"x": 5,
+		}, 
+		"/datum/overmap/fluff/commsat_283": {
+			"type": "/datum/overmap/fluff/commsat", 
+			"dir": 2, 
+			"x": 5, 
 			"y": 5
-		},
-		"/datum/overmap/fluff/commsat_327": {
-			"type": "/datum/overmap/fluff/commsat",
-			"dir": 2,
-			"x": 3,
+		}, 
+		"/datum/overmap/fluff/commsat_284": {
+			"type": "/datum/overmap/fluff/commsat", 
+			"dir": 2, 
+			"x": 3, 
 			"y": 10
-		},
-		"/datum/overmap/fluff/commsat_328": {
-			"type": "/datum/overmap/fluff/commsat",
-			"dir": 2,
-			"x": 5,
+		}, 
+		"/datum/overmap/fluff/commsat_285": {
+			"type": "/datum/overmap/fluff/commsat", 
+			"dir": 2, 
+			"x": 5, 
 			"y": 19
-		},
-		"/datum/overmap/event/meteor/debris/minor_329": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 19,
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_286": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 19, 
 			"y": 16
-		},
-		"/datum/overmap/event/meteor/debris/minor_330": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 19,
-			"y": 15
-		},
-		"/datum/overmap/event/meteor/debris/minor_331": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 20,
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_287": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 20, 
 			"y": 16
-		},
-		"/datum/overmap/event/meteor/debris/minor_332": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 18,
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_288": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 18, 
 			"y": 16
-		},
-		"/datum/overmap/event/meteor/debris/minor_333": {
-			"type": "/datum/overmap/event/meteor/debris/minor",
-			"x": 20,
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_289": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 20, 
 			"y": 15
-		},
-		"/datum/overmap/event/nebula_334": {
-			"type": "/datum/overmap/event/nebula",
-			"x": 18,
+		}, 
+		"/datum/overmap/event/nebula_290": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 18, 
 			"y": 15
-		},
-		"/datum/overmap/fluff/satellite_335": {
-			"type": "/datum/overmap/fluff/satellite",
-			"dir": 2,
-			"x": 9,
+		}, 
+		"/datum/overmap/event/electric/minor_291": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 15, 
 			"y": 12
-		},
-		"/datum/overmap/fluff/satellite_336": {
-			"type": "/datum/overmap/fluff/satellite",
-			"dir": 2,
-			"x": 9,
-			"y": 10
-		},
-		"/datum/overmap/fluff/satellite_337": {
-			"type": "/datum/overmap/fluff/satellite",
-			"dir": 2,
-			"x": 13,
-			"y": 12
-		},
-		"/datum/overmap/fluff/satellite_338": {
-			"type": "/datum/overmap/fluff/satellite",
-			"dir": 2,
-			"x": 13,
-			"y": 10
-		},
-		"/datum/overmap/event/electric/minor_339": {
-			"type": "/datum/overmap/event/electric/minor",
-			"x": 15,
-			"y": 12
-		},
-		"/datum/overmap/event/electric/minor_340": {
-			"type": "/datum/overmap/event/electric/minor",
-			"x": 13,
-			"y": 10
-		},
-		"/datum/overmap/fluff/satellite_341": {
-			"type": "/datum/overmap/fluff/satellite",
-			"dir": 2,
-			"x": 2,
+		}, 
+		"/datum/overmap/fluff/sensorsat_292": {
+			"type": "/datum/overmap/fluff/sensorsat", 
+			"dir": 2, 
+			"x": 2, 
 			"y": 17
-		},
-		"/datum/overmap/fluff/satellite_342": {
-			"type": "/datum/overmap/fluff/satellite",
-			"dir": 2,
-			"x": 19,
+		}, 
+		"/datum/overmap/fluff/sensorsat_293": {
+			"type": "/datum/overmap/fluff/sensorsat", 
+			"dir": 2, 
+			"x": 1, 
 			"y": 3
-		},
-		"/datum/overmap/fluff/satellite_343": {
-			"type": "/datum/overmap/fluff/satellite",
-			"dir": 2,
-			"x": 9,
+		}, 
+		"/datum/overmap/fluff/sensorsat_294": {
+			"type": "/datum/overmap/fluff/sensorsat", 
+			"dir": 2, 
+			"x": 9, 
+			"y": 10
+		}, 
+		"/datum/overmap/fluff/sensorsat_295": {
+			"type": "/datum/overmap/fluff/sensorsat", 
+			"dir": 2, 
+			"x": 9, 
+			"y": 12
+		}, 
+		"/datum/overmap/fluff/sensorsat_296": {
+			"type": "/datum/overmap/fluff/sensorsat", 
+			"dir": 2, 
+			"x": 13, 
+			"y": 12
+		}, 
+		"/datum/overmap/fluff/sensorsat_297": {
+			"type": "/datum/overmap/fluff/sensorsat", 
+			"dir": 2, 
+			"x": 13, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_298": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 7, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/meteor/debris/minor_299": {
+			"type": "/datum/overmap/event/meteor/debris/minor", 
+			"x": 7, 
+			"y": 12
+		}, 
+		"/datum/overmap/fluff/sensorsat_300": {
+			"type": "/datum/overmap/fluff/sensorsat", 
+			"dir": 2, 
+			"x": 19, 
+			"y": 3
+		}, 
+		"/datum/overmap/fluff/sensorsat_301": {
+			"type": "/datum/overmap/fluff/sensorsat", 
+			"dir": 2, 
+			"x": 10, 
 			"y": 2
-		},
-		"/datum/overmap/fluff/satellite_344": {
-			"type": "/datum/overmap/fluff/satellite",
-			"dir": 2,
-			"x": 10,
+		}, 
+		"/datum/overmap/event/electric/minor_302": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 7, 
+			"y": 19
+		}, 
+		"/datum/overmap/fluff/sensorsat_303": {
+			"type": "/datum/overmap/fluff/sensorsat", 
+			"dir": 2, 
+			"x": 11, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/meteor/debris_304": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 8, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/meteor/debris_305": {
+			"type": "/datum/overmap/event/meteor/debris", 
+			"x": 9, 
+			"y": 18
+		}, 
+		"/datum/overmap/event/electric/minor_306": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 7, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/nebula_307": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 16, 
+			"y": 10
+		}, 
+		"/datum/overmap/fluff/sensorsat_308": {
+			"type": "/datum/overmap/fluff/sensorsat", 
+			"dir": 2, 
+			"x": 19, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/nebula_309": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
+			"y": 20
+		}, 
+		"/datum/overmap/event/nebula_310": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/nebula_311": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 17, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/nebula_312": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 15, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/nebula_313": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 16, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/nebula_314": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 18, 
+			"y": 21
+		}, 
+		"/datum/overmap/event/nebula_315": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 19, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/nebula_316": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 16, 
+			"y": 17
+		}, 
+		"/datum/overmap/event/electric/minor_317": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 17, 
+			"y": 19
+		}, 
+		"/datum/overmap/event/nebula_318": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 21, 
+			"y": 16
+		}, 
+		"/datum/overmap/event/nebula_319": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 21, 
+			"y": 15
+		}, 
+		"/datum/overmap/event/nebula_320": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 21, 
+			"y": 14
+		}, 
+		"/datum/overmap/event/nebula_321": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 21, 
+			"y": 13
+		}, 
+		"/datum/overmap/event/nebula_322": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 21, 
+			"y": 12
+		}, 
+		"/datum/overmap/event/nebula_323": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 21, 
+			"y": 11
+		}, 
+		"/datum/overmap/event/nebula_324": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 21, 
+			"y": 10
+		}, 
+		"/datum/overmap/event/nebula_325": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 21, 
+			"y": 6
+		}, 
+		"/datum/overmap/event/nebula_326": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 21, 
+			"y": 5
+		}, 
+		"/datum/overmap/event/nebula_327": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 21, 
+			"y": 3
+		}, 
+		"/datum/overmap/event/nebula_328": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 21, 
+			"y": 4
+		}, 
+		"/datum/overmap/event/nebula_329": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 15, 
+			"y": 2
+		}, 
+		"/datum/overmap/event/nebula_330": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 15, 
+			"y": 1
+		}, 
+		"/datum/overmap/event/nebula_331": {
+			"type": "/datum/overmap/event/nebula", 
+			"x": 14, 
+			"y": 1
+		}, 
+		"/datum/overmap/event/electric/minor_332": {
+			"type": "/datum/overmap/event/electric/minor", 
+			"x": 17, 
 			"y": 20
 		}
 	}

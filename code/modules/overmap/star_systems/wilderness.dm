@@ -57,6 +57,8 @@
 	fluff_probabilities = list(
 		/datum/overmap/fluff/satellite/abandoned = 10,
 		/datum/overmap/fluff/commsat/abandoned = 5,
+		/datum/overmap/fluff/sensorsat/abandoned = 4,
+		/datum/overmap/fluff/sensorsat/abandoned/madai = 1,
 		/datum/overmap/fluff/fakeplanet/gas_giant = 1
 	)
 
@@ -94,8 +96,8 @@
 	fluff_amount = 1
 
 	fluff_probabilities = list(
-		/datum/overmap/fluff/satellite/abandoned = 2,
-		/datum/overmap/fluff/commsat/abandoned = 10
+		/datum/overmap/fluff/observatory = 1,
+		/datum/overmap/fluff/commsat/abandoned = 1
 	)
 
 /datum/overmap_star_system/wilderness/temperate
@@ -133,13 +135,16 @@
 		"..breathable air, bad water..",
 	)
 
-	fluff_amount = 4
+	fluff_amount = 5
 
 	//to-do: get someone to sprite orbital terraforming equipment tokens.
 	fluff_probabilities = list(
 		/datum/overmap/fluff/satellite/abandoned = 10,
+		/datum/overmap/fluff/solarmirror/abandoned = 5,
 		/datum/overmap/fluff/commsat/abandoned = 3,
-		/datum/overmap/fluff/spacecolony/abandoned = 1
+		/datum/overmap/fluff/solars/abandoned = 2,
+		/datum/overmap/fluff/spacecolony/abandoned = 1,
+		/datum/overmap/fluff/refinery/abandoned = 1
 	)
 
 /datum/overmap_star_system/wilderness/warzone
@@ -179,10 +184,13 @@
 	fluff_amount = 9
 	//to-do: get someone to sprite orbital terraforming equipment tokens.
 	fluff_probabilities = list(
-		/datum/overmap/fluff/dud = 10,
-		/datum/overmap/fluff/satellite/abandoned = 20,
+		/datum/overmap/fluff/dud = 5,
+		/datum/overmap/fluff/satellite/abandoned = 10,
+		/datum/overmap/fluff/sensorsat/abandoned = 9,
+		/datum/overmap/fluff/sensorsat/abandoned/madai = 1,
 		/datum/overmap/fluff/commsat/abandoned = 10,
 		/datum/overmap/fluff/fakeplanet/plasma_giant = 3,
+		/datum/overmap/fluff/orbitalworks/abandoned = 3,
 		/datum/overmap/fluff/spacecolony/abandoned = 3
 	)
 
@@ -218,7 +226,9 @@
 
 	fluff_amount = 1
 	fluff_probabilities = list(
-		/datum/overmap/fluff/commsat/abandoned = 1,
+		/datum/overmap/fluff/observatory = 4,
+		/datum/overmap/fluff/observatory/losingit = 1,
+		/datum/overmap/fluff/observatory/insane = 1
 	)
 
 /datum/overmap_star_system/wilderness/terraforming
@@ -246,6 +256,8 @@
 	fluff_probabilities = list(
 		/datum/overmap/fluff/satellite/abandoned = 10,
 		/datum/overmap/fluff/commsat/abandoned = 3,
+		/datum/overmap/fluff/sensorsat/abandoned = 3,
+		/datum/overmap/fluff/solarmirror/abandoned = 3,
 		/datum/overmap/fluff/spacecolony/abandoned = 1
 	)
 
@@ -273,7 +285,8 @@
 
 	fluff_amount = 1
 	fluff_probabilities = list(
-		/datum/overmap/fluff/commsat/abandoned = 1,
+		/datum/overmap/fluff/observatory/grumpy = 1,
+		/datum/overmap/fluff/commsat/abandoned = 1
 	)
 
 /datum/overmap_star_system/wilderness/supergiant
@@ -305,8 +318,10 @@
 		"..flames that lash and sear..",
 	)
 
+	fluff_amount = 1
+
 	fluff_probabilities = list(
-		/datum/overmap/fluff/commsat/abandoned = 1,
+		/datum/overmap/fluff/observatory/grumpy = 1,
 	)
 
 /datum/overmap_star_system/wilderness/frozen
