@@ -152,7 +152,7 @@
 			mob.throwing.finalize(FALSE)
 
 	var/atom/movable/P = mob.pulling
-	if(P && !ismob(P) && P.density)
+	if(P && !ismob(P) && P.density && !mob.face_mouse)
 		mob.setDir(turn(mob.dir, 180))
 
 /**
