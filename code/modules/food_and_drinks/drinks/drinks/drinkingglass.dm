@@ -130,6 +130,10 @@
 	name = "Bridge Bunny"
 	list_reagents = list(/datum/reagent/consumable/ethanol/sidecar = 50)
 
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/gorlex_surprise
+	name = "Gorlex Surprise"
+	list_reagents = list(/datum/reagent/consumable/ethanol/syndicatebomb = 50)
+
 /obj/item/reagent_containers/food/drinks/drinkingglass/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/food/egg)) //breaking eggs
 		var/obj/item/food/egg/E = I

@@ -5,7 +5,7 @@
 	..()
 	take_damage(AM.throwforce, BRUTE, "melee", 1, get_dir(src, AM))
 
-/obj/ex_act(severity, target)
+/obj/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	if(resistance_flags & INDESTRUCTIBLE)
 		return
 	..() //contents explosion
@@ -14,13 +14,15 @@
 	if(target == src)
 		take_damage(INFINITY, BRUTE, BOMB, 0)
 		return
+	var/heavy_damage = heavy_item_dam ? heavy_item_dam : rand(100, 150)
+	var/light_damage = light_item_dam ? light_item_dam : rand(10, 90)
 	switch(severity)
 		if(EXPLODE_DEVASTATE)
 			take_damage(rand(1000, 2000), BRUTE, BOMB, 0)
 		if(EXPLODE_HEAVY)
-			take_damage(rand(100, 150), BRUTE, BOMB, 0)
+			take_damage(heavy_damage, BRUTE, BOMB, 0)
 		if(EXPLODE_LIGHT)
-			take_damage(rand(10, 90), BRUTE, BOMB, 0)
+			take_damage(light_damage, BRUTE, BOMB, 0)
 
 /obj/bullet_act(obj/projectile/hitting_projectile)
 	. = ..()

@@ -1307,22 +1307,6 @@
 	pixel_y = 4;
 	pixel_x = 2
 	},
-/obj/item/storage/firstaid/regular{
-	pixel_x = -9;
-	pixel_y = 15
-	},
-/obj/item/storage/firstaid/toxin{
-	pixel_y = 15;
-	pixel_x = 9
-	},
-/obj/item/storage/firstaid/fire{
-	pixel_x = -9;
-	pixel_y = 9
-	},
-/obj/item/storage/firstaid/advanced{
-	pixel_x = 9;
-	pixel_y = 9
-	},
 /obj/item/storage/box/bodybags{
 	pixel_x = -9;
 	pixel_y = 4
@@ -1354,6 +1338,14 @@
 /obj/item/reagent_containers/blood/synthetic,
 /obj/item/sensor_device,
 /obj/item/pinpointer/crew,
+/obj/item/storage/firstaid/medical{
+	pixel_x = -5;
+	pixel_y = 12
+	},
+/obj/item/storage/firstaid/brute{
+	pixel_x = 4;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "jI" = (

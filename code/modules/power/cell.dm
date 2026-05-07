@@ -119,14 +119,18 @@
 		return
 	var/devastation_range = -1 //round(charge/11000)
 	var/heavy_impact_range = round(sqrt(charge)/60)
+	var/heavy_damage = min(50, round(sqrt(charge)/2))
+	var/heavy_item_damage = max(20, heavy_damage - 10)
 	var/light_impact_range = round(sqrt(charge)/30)
+	var/light_damage = min(25, round(sqrt(charge)/4))
+	var/light_item_damage = max(10, light_damage - 20)
 	var/flash_range = light_impact_range
 	if (light_impact_range==0)
 		rigged = FALSE
 		corrupt()
 		return
-	//explosion(T, 0, 1, 2, 2)
-	explosion(T, devastation_range, heavy_impact_range, light_impact_range, flash_range)
+	explosion(T, devastation_range, heavy_impact_range, light_impact_range, flash_range,\
+	light_dam = light_damage, light_item_dam = light_item_damage, heavy_dam = heavy_damage, heavy_item_dam = heavy_item_damage)
 	qdel(src)
 
 /obj/item/stock_parts/cell/proc/corrupt()
@@ -227,16 +231,6 @@
 	. = ..()
 	charge = 0
 	update_appearance()
-
-/obj/item/stock_parts/cell/mini_egun
-	name = "miniature energy gun power cell"
-	maxcharge = 600
-	rating = 0 //gun batteries now incompatible with RPED WS edit
-
-/obj/item/stock_parts/cell/hos_gun
-	name = "X-01 multiphase energy gun power cell"
-	maxcharge = 1200
-	rating = 0 //gun batteries now incompatible with RPED WS edit
 
 /obj/item/stock_parts/cell/pulse //200 pulse shots
 	name = "pulse rifle power cell"
@@ -364,21 +358,6 @@
 
 /obj/item/stock_parts/cell/emproof/corrupt()
 	return
-
-/obj/item/stock_parts/cell/beam_rifle
-	name = "beam rifle capacitor"
-	desc = "A high powered capacitor that can provide huge amounts of energy in an instant."
-	maxcharge = 50000
-	chargerate = 5000	//Extremely energy intensive
-
-/obj/item/stock_parts/cell/beam_rifle/corrupt()
-	return
-
-/obj/item/stock_parts/cell/beam_rifle/emp_act(severity)
-	. = ..()
-	if(. & EMP_PROTECT_SELF)
-		return
-	charge = clamp((charge-(10000/severity)),0,maxcharge)
 
 /obj/item/stock_parts/cell/emergency_light
 	name = "miniature power cell"
@@ -517,6 +496,7 @@
 	maxcharge = 7000
 	custom_materials = list(/datum/material/glass=300)
 	chargerate = 1000
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/stock_parts/cell/gun/sharplite/mini/empty
 	start_empty = TRUE

@@ -55,6 +55,12 @@
 
 #define STATUS_EFFECT_DETERMINED /datum/status_effect/determined //currently in a combat high from being seriously wounded
 
+//currently using a cloaking device of some kind
+#define STATUS_EFFECT_CLOAKED /datum/status_effect/concealed/cloaked
+
+//Using a static-derieved cloak of some variety.
+#define STATUS_EFFECT_STATIC_CLOAK /datum/status_effect/concealed/cloaked/static_cloak
+
 /////////////
 // DEBUFFS //
 /////////////
