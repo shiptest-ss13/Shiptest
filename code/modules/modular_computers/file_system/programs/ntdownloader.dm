@@ -1,6 +1,6 @@
 /datum/computer_file/program/ntnetdownload
-	filename = "ntsoftwarehub"
-	filedesc = "NT Software Hub"
+	filename = "mwsoftwarehub"
+	filedesc = "MW Software Hub"
 	program_icon_state = "generic"
 	extended_desc = "This program allows downloads of software from official Makosso-Warra repositories"
 	unsendable = TRUE
