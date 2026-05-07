@@ -326,6 +326,6 @@
 
 /obj/item/reagent_containers/inhaler_canister/placebatol
 	name = "presciption canister"
-	desc = "A small canister filled with aerosolized reagents for use in an inhaler. A small stamp on the side reads: \"NO MEDICINAL EFFECT\"."
+	desc = "A small canister filled with aerosolized reagents for use in an inhaler. A small stamp on the side reads: \"TAKE ONLY AS DIRECTED\"."
 	icon_state = "canister_medical"
 	list_reagents = list(/datum/reagent/drug/placebatol = 30)
