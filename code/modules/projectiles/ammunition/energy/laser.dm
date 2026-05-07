@@ -202,6 +202,7 @@
 	if(environment_pressure >= 50)
 		if((decayedRange - range) >= 4)
 			damage *= damage_constant
+			armour_penetration *= ap_constant
 	. = ..()
 
 /obj/projectile/beam/hitscan/Range()
