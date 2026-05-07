@@ -151,10 +151,10 @@
 	var/obj/structure/cable/attached_wire = T.get_cable_node()
 	if((power_flags & POWER_ALLOW_WIRE) && attached_wire?.powernet)
 		attached_wire.powernet.add_machine(src)
-		. = TRUE
+		return TRUE
 	if((power_flags & POWER_ALLOW_AREA) && get_area(src))
 		disconnect_from_network()
-		. = TRUE
+		return TRUE
 
 // remove and disconnect the machine from its current powernet
 /obj/machinery/proc/disconnect_from_network()
@@ -166,8 +166,6 @@
 /obj/machinery/proc/general_powered(chan = -1, amount)
 	if(!loc)
 		return FALSE
-	if(!use_power)
-		return TRUE
 	if(power_flags & POWER_ALLOW_WIRE && powernet)
 		return amount ? powernet.avail >= amount : powernet.avail
 	if(power_flags & POWER_ALLOW_AREA)
@@ -177,7 +175,7 @@
 		if(chan == -1)
 			chan = power_channel
 		return A.powered(chan)	// return power status of the area
-	return FALSE
+	return (use_power == NO_POWER_USE)
 
 /obj/machinery/proc/general_temp_load(chan = -1, amount)
 	if(power_flags & POWER_ALLOW_WIRE && powernet)
