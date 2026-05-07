@@ -372,7 +372,7 @@ GENE SCANNER
 		if(HAS_TRAIT(C,TRAIT_HUSK))
 			render_list += "<span class= 'alert ml-1'><b>Warning: Critically low body water volume dectected.</b> "
 			//render_list += "<span class='alert ml-2'>\n Subject has suffered catastrophic loss of body moisture due to intense exposure to heat. Resuscitation will be impossible until addressed."
-			render_list += "<span class='alert ml-2'>\n Recommended Treatment: Treatment of burns followed by bulk application of synthflesh to restore body moisture."
+			render_list += "<span class='alert ml-2'>\n Recommended Treatment: Treatment of burns followed by application of anti-husking agent to restore body moisture."
 
 	for(var/thing in M.diseases)
 		var/datum/disease/D = thing
