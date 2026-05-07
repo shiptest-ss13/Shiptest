@@ -890,7 +890,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	return ..() + jointext(render_list, "")
 
 
-/// returns a list of the result of grinding the item, edits nothing unless simulated=TRUE
+/// returns a list (not null) of the result of grinding the item, edits nothing if simulated=TRUE
 /obj/item/proc/on_grind(simulated=FALSE)
 	return grind_results ? grind_results : list()
 

@@ -33,8 +33,8 @@
 
 /obj/item/stack/on_grind(simulated=FALSE)
 	. = list()
-	for(var/i in grind_results) //This should only call if it's ground, so no need to check if grind_results exists
-		.[i] = grind_results[i] * get_amount() //Gets the key at position i, then the reagent amount of that key, then multiplies it by stack size
+	for(var/reagent_type in grind_results)
+		.[reagent_type] = grind_results[reagent_type] * get_amount()
 
 /obj/item/stack/grind_requirements()
 	if(is_cyborg)

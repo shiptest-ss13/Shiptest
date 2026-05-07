@@ -225,8 +225,8 @@
 	. = list()
 	var/nutriment = reagents.get_reagent_amount(/datum/reagent/consumable/nutriment)
 	if(grind_results && grind_results.len)
-		for(var/i in grind_results)
-			.[grind_results[i]] = nutriment
+		for(var/reagent_type in grind_results)
+			.[grind_results[reagent_type]] = nutriment
 		if(!simulated)
 			reagents.del_reagent(/datum/reagent/consumable/nutriment)
 			reagents.del_reagent(/datum/reagent/consumable/nutriment/vitamin)

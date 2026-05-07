@@ -112,7 +112,7 @@ GENE SCANNER
 		if(SCANMODE_SURGICAL)
 			to_chat(user, span_notice("You switch the health analyzer to report surgical status."))
 
-/obj/item/healthanalyzer/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity)
+/obj/item/healthanalyzer/afterattack(atom/target as mob|obj|turf|area, mob/user, proximity)
 	. = ..()
 	if (!proximity)
 		return
@@ -134,16 +134,16 @@ GENE SCANNER
 		return
 
 
-	user.visible_message(span_notice("[user] analyzes [A] with [src]."), \
-											span_notice("You analyze [A]."))
+	user.visible_message(span_notice("[user] analyzes [target] with [src]."), \
+											span_notice("You analyze [target]."))
 
 	switch(scanmode)
 		if(SCANMODE_HEALTH)
-			healthscan(user, A, verbose, advanced)
+			healthscan(user, target, verbose, advanced)
 		if(SCANMODE_CHEMICAL)
-			chemscan(user, A)
+			chemscan(user, target)
 		if(SCANMODE_SURGICAL)
-			surgical_scan(user, A)
+			surgical_scan(user, target)
 
 	add_fingerprint(user)
 
@@ -444,10 +444,9 @@ GENE SCANNER
 /// Displays the result of a reagent scan of target to user, returns nothing
 /proc/chemscan(mob/living/user, atom/target)
 	var/scan_result = target.reagent_scan()
-	if (scan_result == "")
-		to_chat(span_warning("No significant chemical agents found in [target]."))
-		return
-	to_chat(user, boxed_message(scan_result), type = MESSAGE_TYPE_INFO)
+	if (scan_result != "")
+		to_chat(user, boxed_message(scan_result), type = MESSAGE_TYPE_INFO)
+	to_chat(user, span_warning("No significant chemical agents found in [target]."))
 
 /proc/surgical_scan(mob/living/user, mob/living/target)
 	if(!istype(target))
