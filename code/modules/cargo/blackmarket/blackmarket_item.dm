@@ -55,8 +55,8 @@
 	cost = rand(cost_min, cost_max)
 
 /datum/blackmarket_item/proc/randomize_stock()
-	if (src::stock)
-		stock = src::stock
+	if (initial(stock))
+		stock = initial(stock)
 	else
 		stock = rand(stock_min, stock_max)
 
