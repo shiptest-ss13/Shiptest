@@ -235,6 +235,8 @@
 			back = duffelbag //Department duffel bag
 		if(DCOURIERBAG)
 			back = courierbag //Department messenger bag
+		if(SBAG)
+			back = /obj/item/storage/backpack/messenger/sport //sports bag
 		else
 			back = backpack //Department backpack
 
