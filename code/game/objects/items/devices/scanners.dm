@@ -446,6 +446,7 @@ GENE SCANNER
 	var/scan_result = target.reagent_scan()
 	if (scan_result != "")
 		to_chat(user, boxed_message(scan_result), type = MESSAGE_TYPE_INFO)
+		return
 	to_chat(user, span_warning("No significant chemical agents found in [target]."))
 
 /proc/surgical_scan(mob/living/user, mob/living/target)
