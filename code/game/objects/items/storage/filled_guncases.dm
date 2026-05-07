@@ -337,6 +337,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cm5
 	mag_type = /obj/item/ammo_box/magazine/cm5_9mm
 
+/obj/item/storage/guncase/cm5c
+	gun_type = /obj/item/gun/ballistic/automatic/smg/cm5/compact
+	mag_type = /obj/item/ammo_box/magazine/cm5_9mm
+
 /obj/item/storage/guncase/cm82
 	gun_type = /obj/item/gun/ballistic/automatic/assault/cm82
 	mag_type = /obj/item/ammo_box/magazine/p16

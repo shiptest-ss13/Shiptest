@@ -27,26 +27,11 @@
 
 /obj/item/attachment/gun/apply_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
-	// if(FIREMODE_UNDERBARREL in gun.gun_firemodes)
-	// 	to_chat(user,span_warning("The [gun] already has an underbarrel gun and can't take the [src]!"))
-	// 	return FALSE
-	// else
-	// 	gun.gun_firemodes += FIREMODE_UNDERBARREL
 	gun.underbarrel_prefix = underbarrel_prefix
 	if(attached_gun)
 		attached_gun.safety = gun.safety
-	//gun.build_firemodes()
 	if(user)
 		gun.equipped(user)
-
-/obj/item/attachment/gun/remove_attachment(obj/item/gun/gun, mob/user)
-	. = ..()
-	// var/firemode_to_remove = gun.gun_firemodes.Find(FIREMODE_UNDERBARREL)
-	// if(firemode_to_remove)
-	// 	gun.gun_firemodes -= gun.gun_firemodes[firemode_to_remove]
-	gun.underbarrel_prefix = ""
-	// gun.build_firemodes()
-	// gun.equipped(user)
 
 /obj/item/attachment/gun/on_wield(obj/item/gun/gun, mob/user, list/params)
 	if(attached_gun)
@@ -87,16 +72,11 @@
 	attached_gun.unique_action(user)
 	return OVERRIDE_SECONDARY_ACTION
 
-/obj/item/attachment/gun/on_ctrl_click(obj/item/gun/gun, mob/user)
+/obj/item/attachment/gun/on_safety(obj/item/gun/gun, mob/user)
 	if(has_safety)
 		attached_gun.toggle_safety(user,TRUE, TRUE)
 
 /obj/item/attachment/gun/on_alt_click(obj/item/gun/gun, mob/user, list/examine_list)
 	return FALSE
-	// if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
-	// 	AltClick(user)
-	// 	return TRUE
-	// else
-	// 	return FALSE
 
 

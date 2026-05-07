@@ -428,6 +428,7 @@
 	damage = 25
 	damage_type = BRUTE
 	speed = 3
+	range = 14
 
 /obj/projectile/goliath/on_hit(atom/target, blocked)
 	. = ..()

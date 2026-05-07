@@ -16,7 +16,7 @@
 	],
 	"starting_funds": 3000,
 	"map_path": "_maps/shuttles/pgf/pgf_elated_bolide.dmm",
-	"token_icon_state": "ship_mid_generic",
+	"token_icon_state": "ship_big_generic",
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
@@ -24,8 +24,8 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Helmsman": {
-			"outfit": "/datum/outfit/job/gezena/assistant/bridge",
+		"Flight Officer": {
+			"outfit": "/datum/outfit/job/gezena/assistant/flight",
 			"officer": true,
 			"slots": 1
 		},
@@ -41,7 +41,7 @@
 			"outfit": "/datum/outfit/job/gezena/assistant",
 			"slots": 1
 		},
-		"Marine Lieutenant": {
+		"Marine Squad Leader": {
 			"outfit": "/datum/outfit/job/gezena/hos",
 			"officer":true,
 			"slots": 1

@@ -33,7 +33,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	)
 
 	species_blacklist = list(
-		"Blood Deficiency" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE),
+		"Blood Deficiency" = list(SPECIES_IPC, SPECIES_PLASMAMAN, SPECIES_VAMPIRE),
 		"Alcohol Tolerance" = list(SPECIES_IPC, SPECIES_PLASMAMAN),
 		"Light Drinker" = list(SPECIES_IPC, SPECIES_PLASMAMAN),
 		"Smoker" = list(SPECIES_IPC, SPECIES_PLASMAMAN),

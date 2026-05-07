@@ -1,3 +1,15 @@
+/obj/machinery/air_sensor/ship/c_sun/air
+	id_tag = "c_sun_air"
+
+/obj/machinery/air_sensor/ship/c_sun/fuel
+	id_tag = "c_sun_fuel"
+
+/obj/machinery/computer/atmos_control/ship/c_sun
+	sensors = list(
+		"c_sun_air" = "Air Mix Chamber",
+		"c_sun_fuel" = "Fuel Mix Chamber",
+	)
+
 /obj/item/book/manual/mount
 	name = "The UCWLWM"
 	desc = "It's looks old and worn out."
