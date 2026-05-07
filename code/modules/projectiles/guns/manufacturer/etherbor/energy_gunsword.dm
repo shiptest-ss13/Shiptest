@@ -581,9 +581,10 @@
 	impact_type = /obj/effect/projectile/impact/pulse
 
 	damage = 35
-	armour_penetration = 40
+	armour_penetration = 30
 	range = 20
 	damage_constant = 1
+	ap_constant = 0.9
 
 /obj/item/gun/energy/kalix/hunt
 	name = "\improper Etherbor HBS-110"
