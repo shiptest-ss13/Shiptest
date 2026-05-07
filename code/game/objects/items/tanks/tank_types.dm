@@ -151,7 +151,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	icon_state = "emergency"
 	force = 3 //really small cheapo one
-	volume = 1 // bare minimum
+	volume = 0.5 // old old thing
 
 // *
 // * GENERIC
