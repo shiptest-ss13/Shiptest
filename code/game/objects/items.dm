@@ -881,11 +881,15 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/list/composition = on_grind(simulated=TRUE)
 
 	var/render_list = list()
+	var/reagent_amount = 0
 	if (composition.len > 0)
-		render_list += span_notice("[composition.len] chemical agent[composition.len > 1 ? "s" : ""] found in [src]'s composition:<br>")
 		for (var/reagent_id in composition)
 			var/datum/reagent/reagent = GLOB.chemical_reagents_list[reagent_id]
-			render_list += span_notice("\t [composition[reagent_id]] units of [reagent.name].") + "<br>"
+			if (composition[reagent_id] > 0)
+				render_list += span_notice("\t [composition[reagent_id]] units of [reagent.name].") + "<br>"
+				reagent_amount += 1
+		if (reagent_amount > 0):
+			render_list = list(span_notice("[composition.len] chemical agent[composition.len > 1 ? "s" : ""] found in [src]'s composition:<br>")) + render_list
 
 	return ..() + jointext(render_list, "")
 
