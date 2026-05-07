@@ -401,7 +401,8 @@
 /obj/structure/sink/attackby_secondary(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/reagent_containers))
 		try_dump_container(user, O)
-	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return ..()
 
 /obj/structure/sink/deconstruct()
 	if(!(flags_1 & NODECONSTRUCT_1))
