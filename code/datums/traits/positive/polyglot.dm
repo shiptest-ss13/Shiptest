@@ -1,4 +1,4 @@
 /datum/quirk/polyglot
 	name = "Polyglot"
-	desc = "You're fluent in four languages! (+4 language points)"
+	desc = "You're fluent in four languages! (+5 language points)"
 	value = 2
