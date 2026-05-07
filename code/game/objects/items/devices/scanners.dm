@@ -918,11 +918,12 @@ GENE SCANNER
 		if(A.reagents.reagent_list.len > 0)
 			var/reagents_length = A.reagents.reagent_list.len
 			var/reagents_temp =	A.reagents.chem_temp
-			to_chat(user, span_notice("[reagents_length] chemical agent[reagents_length > 1 ? "s" : ""] found at [reagents_temp]°K."))
+			var/message = "[reagents_length] chemical agent[reagents_length > 1 ? "s" : ""] found at [reagents_temp]°K."
 			for (var/re in A.reagents.reagent_list)
 				var/datum/reagent/R = re
 				var/amount = R.volume
-				to_chat(user, span_notice("\t [amount] units of [re]."))
+				message += "\n\t [amount] units of [re]."
+			to_chat(user, span_notice(message))
 		else
 			to_chat(user, span_notice("No active chemical agents found in [A]."))
 	else
