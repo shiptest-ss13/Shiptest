@@ -134,8 +134,8 @@ GENE SCANNER
 		return
 
 
-	user.visible_message(span_notice("[user] analyzes [M] with [src]."), \
-											span_notice("You analyze [M]."))
+	user.visible_message(span_notice("[user] analyzes [A] with [src]."), \
+											span_notice("You analyze [A]."))
 
 	switch(scanmode)
 		if(SCANMODE_HEALTH)
@@ -154,7 +154,7 @@ GENE SCANNER
 		return
 
 	if(!istype(M))
-		user.show_message("<span class='alert ml-1'>Null vitals, the object is inanimate!</span>")
+		user.show_message(span_warning("Null vitals, the object is inanimate!"))
 		return
 
 	// the final list of strings to render
@@ -444,13 +444,14 @@ GENE SCANNER
 /// Displays the result of a reagent scan of target to user, returns nothing
 /proc/chemscan(mob/living/user, atom/target)
 	var/scan_result = target.reagent_scan()
-	if (!scan_result)
-		scan_result = "No significant chemical agents found in [target]."
+	if (scan_result == "")
+		to_chat(span_warning("No significant chemical agents found in [target]."))
+		return
 	to_chat(user, boxed_message(scan_result), type = MESSAGE_TYPE_INFO)
 
 /proc/surgical_scan(mob/living/user, mob/living/target)
 	if(!istype(target))
-		user.show_message("<span class='alert ml-1'>Null vitals, the object is inanimate!</span>")
+		user.show_message(span_warning("Null vitals, the object is inanimate!"))
 		return
 
 	if(target.surgeries.len)
