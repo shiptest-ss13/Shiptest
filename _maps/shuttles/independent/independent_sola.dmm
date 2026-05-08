@@ -1517,18 +1517,36 @@
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "uW" = (
-/obj/structure/platform/ship_two{
-	dir = 4
-	},
 /obj/structure/closet/secure_closet/engineering_personal{
 	populate = 0;
 	anchored = 1;
 	name = "mechanic's locker"
 	},
+/obj/item/storage/backpack/duffelbag/engineering,
+/obj/item/storage/backpack/industrial,
+/obj/item/storage/backpack/satchel/eng,
+/obj/item/storage/backpack/messenger/engi,
+/obj/item/clothing/under/overalls/black,
+/obj/item/clothing/suit/toggle/puffervest/black{
+	pixel_x = -4
+	},
+/obj/item/clothing/suit/hooded/wintercoat/engineering{
+	pixel_x = 4
+	},
+/obj/item/clothing/head/hardhat/white{
+	pixel_y = 5
+	},
+/obj/structure/platform/ship_two{
+	dir = 4
+	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech,
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_y = -11;
+	pixel_x = 5
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "uX" = (
 /turf/closed/wall/mineral/titanium,
@@ -3405,6 +3423,14 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/west,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/storage/toolbox/electrical{
+	pixel_x = 5;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "RT" = (
@@ -3653,6 +3679,10 @@
 	},
 /obj/machinery/firealarm/directional/south{
 	pixel_x = -6
+	},
+/obj/item/storage/belt/utility/full{
+	pixel_x = 2;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
