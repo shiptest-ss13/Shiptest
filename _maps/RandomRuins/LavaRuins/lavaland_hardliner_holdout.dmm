@@ -319,8 +319,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 2
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/lavaland/holdout/engineering)
@@ -882,6 +882,7 @@
 	},
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/lavaland/holdout/engineering)
 "ik" = (
@@ -968,8 +969,7 @@
 /area/ruin/lavaland/holdout/ramzihq)
 "iU" = (
 /obj/machinery/door/airlock/external{
-	dir = 4;
-	name = "Main Section"
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1519,6 +1519,7 @@
 	pixel_x = 7
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/lavaland/holdout/engineering)
 "om" = (
@@ -5620,10 +5621,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 2
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/lavaland/holdout/engineering)
 "Wl" = (
@@ -5956,9 +5957,7 @@
 	},
 /area/ruin/lavaland/holdout/office)
 "YM" = (
-/obj/machinery/door/airlock/external{
-	name = "Engineering"
-	},
+/obj/machinery/door/airlock/external,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
