@@ -41,11 +41,6 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "aA" = (
-/obj/structure/closet/wall/orange/directional/south{
-	name = "specialized engineering equipment"
-	},
-/obj/item/melee/sledgehammer/gorlex,
-/obj/item/pipe_dispenser,
 /obj/effect/turf_decal/techfloor{
 	dir = 2
 	},
@@ -304,6 +299,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"dT" = (
+/obj/structure/closet/secure_closet/wall/directional/east{
+	req_access_txt = "11";
+	icon_state = "cargo_wall";
+	name = "specalized engineering equipment"
+	},
+/obj/item/pipe_dispenser,
+/obj/item/melee/sledgehammer/gorlex,
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "ee" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8;
@@ -443,9 +448,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 10
-	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "fy" = (
@@ -1526,6 +1529,9 @@
 "qq" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "silverfish_head_exterior"
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "qs" = (
@@ -1878,9 +1884,6 @@
 /obj/structure/grille,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 5
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
@@ -5115,7 +5118,7 @@ pj
 Wf
 iF
 uA
-uA
+dT
 rA
 Pd
 sR
