@@ -139,7 +139,7 @@
 
 /datum/overmap/fluff/sensorsat/abandoned
 	name = "abandoned surveillance satellite"
-	desc = "A dead piece of monitoring equipment. It drifts aimlessly, a camera that will forever out of focus."
+	desc = "A dead piece of monitoring equipment. It drifts aimlessly, a camera that will forever be out of focus."
 	docking_message = null
 	overmap_color_type = STARSYSTEM_COLOR_HAZARD_SECONDARY_COLOR
 	flag_overlay = FALSE
