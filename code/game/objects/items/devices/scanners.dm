@@ -112,7 +112,7 @@ GENE SCANNER
 		if(SCANMODE_SURGICAL)
 			to_chat(user, span_notice("You switch the health analyzer to report surgical status."))
 
-/obj/item/healthanalyzer/afterattack(atom/target as mob|obj|turf|area, mob/user, proximity)
+/obj/item/healthanalyzer/afterattack(mob/living/target, mob/user, proximity)
 	. = ..()
 	if (!proximity)
 		return
@@ -134,8 +134,11 @@ GENE SCANNER
 		return
 
 
-	user.visible_message(span_notice("[user] analyzes [target] with [src]."), \
-											span_notice("You analyze [target]."))
+	user.visible_message(span_notice("[user] analyzes [target]'s vitals."), \
+											span_notice("You analyze [target]'s vitals."))
+	if(!istype(target))
+		user.show_message(span_warning("Null vitals, [target] is inanimate!"))
+		return
 
 	switch(scanmode)
 		if(SCANMODE_HEALTH)
@@ -154,7 +157,6 @@ GENE SCANNER
 		return
 
 	if(!istype(M))
-		user.show_message(span_warning("Null vitals, the object is inanimate!"))
 		return
 
 	// the final list of strings to render
@@ -451,7 +453,6 @@ GENE SCANNER
 
 /proc/surgical_scan(mob/living/user, mob/living/target)
 	if(!istype(target))
-		user.show_message(span_warning("Null vitals, the object is inanimate!"))
 		return
 
 	if(target.surgeries.len)
