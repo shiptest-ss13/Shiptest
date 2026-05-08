@@ -150,13 +150,16 @@
 	name = "red pajama pants"
 	desc = "A comfy pair of pajamas. Probably not the best for work attire."
 	icon_state = "pajamared"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/pants/pajamablue
 	name = "blue pajama pants"
 	desc = "A comfy pair of pajamas. Probably not the best for work attire."
 	icon_state = "pajamablue"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/pants/pajamagreen
 	name = "green pajama pants"
 	desc = "A comfy pair of pajamas. Probably not the best for work attire."
 	icon_state = "pajamagreen"
+	supports_variations = DIGITIGRADE_VARIATION
