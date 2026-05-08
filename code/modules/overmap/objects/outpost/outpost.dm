@@ -189,8 +189,8 @@
 		name,
 		main_level_ztraits,
 		mapzone,
-		QUADRANT_MAP_SIZE,
-		QUADRANT_MAP_SIZE,
+		main_template.width + (QUADRANT_SIZE_BORDER * 2),
+		main_template.height + (QUADRANT_SIZE_BORDER * 2),
 		ALLOCATION_QUADRANT,
 		QUADRANT_MAP_SIZE
 	)
