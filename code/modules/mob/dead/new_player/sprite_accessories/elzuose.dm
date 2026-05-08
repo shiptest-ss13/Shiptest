@@ -52,3 +52,11 @@
 /datum/sprite_accessory/elzu_horns/branch
 	name = "Branch"
 	icon_state = "branch"
+
+/datum/sprite_accessory/elzu_horns/twisted
+	name = "Twisted"
+	icon_state = "twisted"
+
+/datum/sprite_accessory/elzu_horns/curled
+	name = "Curled"
+	icon_state = "curled"

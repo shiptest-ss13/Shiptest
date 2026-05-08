@@ -63,18 +63,6 @@
 			popup.set_content(dat)
 			popup.open()
 
-		//WS Begin - Mentors
-		if("mentor_log")
-			var/dat = "<B>Mentor Log<HR></B>"
-			for(var/l in GLOB.mentorlog)
-				dat += "<li>[l]</li>"
-			if(!GLOB.mentorlog.len)
-				dat += "No mentors have done anything this round! Not like they do much either way."
-			var/datum/browser/popup = new(holder, "mentor_log", null, 300, 430)
-			popup.set_content(dat)
-			popup.open()
-		//WS end
-
 		if("show_admins")
 			var/dat = "<B>Current admins:</B><HR>"
 			if(GLOB.admin_datums)

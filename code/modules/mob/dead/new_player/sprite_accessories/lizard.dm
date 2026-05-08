@@ -114,7 +114,7 @@
 
 /datum/sprite_accessory/frills
 	icon = 'icons/mob/species/lizard/frills.dmi'
-	secondary_color = TRUE
+	secondary_color_overlay = TRUE
 
 /datum/sprite_accessory/frills/none
 	name = "None"

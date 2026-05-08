@@ -417,6 +417,22 @@
 	build_path = /obj/item/plate
 	category = list("initial","Dinnerware")
 
+/datum/design/smallplate
+	name = "Plate (Small)"
+	id = "smallplate"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 1000)
+	build_path = /obj/item/plate/small
+	category = list("initial", "Dinnerware")
+
+/datum/design/bigplate
+	name = "Plate (Buffet)"
+	id = "bigplate"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/plate/large
+	category = list("initial", "Dinnerware")
+
 /datum/design/cafeteria_tray
 	name = "Cafeteria Tray"
 	id = "foodtray"
@@ -700,7 +716,7 @@
 	category = list("initial", "T-Comm")
 
 /datum/design/bounced_radio
-	name = "Subspace Bounced Radio"
+	name = "Shortwave Radio"
 	id = "bounced_radio"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
@@ -740,7 +756,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/voice_analyser
-	name = "Voice Analyser"
+	name = "Voice Analyzer"
 	id = "voice_analyser"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 50)
@@ -821,6 +837,14 @@
 	build_path = /obj/item/restraints/handcuffs
 	category = list("initial", "Security")
 
+/datum/design/doorseal
+	name = "Pneumatic Seal"
+	id = "doorseal"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 5000)
+	build_path = /obj/item/door_seal
+	category = list("initial", "Security")
+
 /datum/design/evidencebag
 	name = "Evidence Bag"
 	id = "evidencebag"
@@ -843,6 +867,14 @@
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 16000)
 	build_path = /obj/item/storage/box/ammo/c38_surplus
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/c22lr_surplus
+	name = "Ammo Box (.22 LR surplus)"
+	id = "c22lr-surplus"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 16000)
+	build_path = /obj/item/storage/box/ammo/c22lr/surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/beanbag_slug
@@ -910,7 +942,7 @@
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/buckshot_surplus
-	name = "surplus buckshot"
+	name = "Surplus Buckshot"
 	id = "buckshot-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 5000)
@@ -1207,7 +1239,7 @@
 	category = list("initial", "Machinery")
 
 /datum/design/illestren_a850rclip
-	name = "8x50 Stripper Clip"
+	name = "8x50mmR En Bloc Clip"
 	id = "IllestrenStripClip"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1000)
@@ -1329,7 +1361,7 @@
 	category = list("initial", "Tools", "Misc")
 
 /datum/design/paper_biscuit_confidental
-	name = "Confidental Paper Biscuit"
+	name = "Confidential Paper Biscuit"
 	id = "confidental_biscuit"
 	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/plastic = 30)

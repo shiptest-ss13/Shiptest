@@ -343,13 +343,7 @@
 	cost_min = 2000
 	cost_max = 3500
 	stock = 2
-	availability_prob = 100
-
-/datum/blackmarket_item/weapon/guncase/model_h/spawn_item(loc)
-	var/model_h = pick(list(/obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns,
-				/obj/item/gun/ballistic/automatic/powered/gauss/modelh))
-	item = model_h
-	return ..()
+	availability_prob = 50
 
 /datum/blackmarket_item/weapon/guncase/sgg
 	name = "SSG-669C Rotary Sniper Rifle"
@@ -451,6 +445,17 @@
 	stock_min = 1
 	stock_max = 2
 	availability_prob = 30
+
+/datum/blackmarket_item/weapon/guncase/bockadam
+	name = "SG-60db Bockadam Combat Shotgun"
+	desc = "Some Ramzi tinkerers have been playing around with the idea of making a Bulldog fire in two-round bursts - twice the 12 gauge for the same amount of gun. It wears like hell, but no one wants to be on the receiving end."
+	item = /obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
+
+	cost_min = 3500
+	cost_max = 4500
+	stock_min = 1
+	stock_max = 2
+	availability_prob = 25
 
 /datum/blackmarket_item/weapon/guncase/f3
 	name = "F3 Marksman Rifle"

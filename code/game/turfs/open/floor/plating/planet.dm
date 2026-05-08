@@ -23,8 +23,6 @@
 	. = ..()
 	if(has_grass)
 		return
-	if(ismob(user, /datum/species/pod))
-		. += "<span class='notice'>While this plot of land is now farmable and fertile, theres nothing growing on it. Perhaps you could add <i>grass?</i></span>"
 
 /turf/open/floor/plating/asteroid/dirt/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -108,18 +106,8 @@
 	baseturfs = /turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin
 	var/current_water = 0 //yeah
 
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin/examine(mob/user)
-	. = ..()
-	if(ismob(user, /datum/species/pod))
-		. += "<span class='notice'>It could hold water, maybe 50 units per meter could do the trick. Currently, it has <i>[current_water]</i> units.</span>"
-
 /turf/open/floor/plating/asteroid/whitesands/dried
 	var/current_water = 0 //yeah
-
-/turf/open/floor/plating/asteroid/whitesands/dried/examine(mob/user)
-	. = ..()
-	if(ismob(user, /datum/species/pod))
-		. += "<span class='notice'>It could hold water, maybe 50 units per meter could do the trick. Currently, it has <i>[current_water]</i> units.</span>"
 
 /turf/open/floor/plating/asteroid/sand/terraform
 	light_color = LIGHT_COLOR_TUNGSTEN
@@ -148,18 +136,6 @@
 	if(istype(exposed_object, /obj/structure/flora/rock/lava) || istype(exposed_object, /obj/structure/flora/rock/pile/lava))
 		exposed_object.icon = 'icons/obj/flora/rocks.dmi'
 		exposed_object.visible_message("<span class='notice'>[src]cools down.</span>")
-
-/obj/structure/flora/rock/lava/examine(mob/user)
-	. = ..()
-	if(ismob(user, /datum/species/pod))
-		. += "<span class='notice'>If I pour some <i>water</i> onto it, maybe it can cool down?</span>"
-
-
-/obj/structure/flora/rock/pile/lava/examine(mob/user)
-	. = ..()
-	if(ismob(user, /datum/species/pod))
-		. += "<span class='notice'>If I pour some <i>water</i> onto it, maybe it can cool down?</span>"
-
 
 //Artifical sand turfs
 /turf/open/floor/plating/asteroid/sand/ship

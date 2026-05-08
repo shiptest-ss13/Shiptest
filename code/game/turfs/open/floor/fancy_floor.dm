@@ -21,6 +21,14 @@
 	color = WOOD_COLOR_GENERIC
 	flammability = 3
 
+/turf/open/floor/wood/beach
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/wood/beach/lit
+	light_range = 2
+	light_power = 0.80
+	light_color = COLOR_BEACHPLANET_LIGHT
+
 /turf/open/floor/wood/mahogany
 	color = WOOD_COLOR_RICH
 
@@ -47,6 +55,14 @@
 
 /turf/open/floor/wood/birch
 	color = WOOD_COLOR_PALE3
+
+/turf/open/floor/wood/birch/beach
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/wood/birch/beach/lit
+	light_range = 2
+	light_power = 0.80
+	light_color = COLOR_BEACHPLANET_LIGHT
 
 /turf/open/floor/wood/yew
 	color = WOOD_COLOR_YELLOW
@@ -334,15 +350,6 @@
 	floor_tile = /obj/item/stack/tile/carpet/stellar
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_STELLAR)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_STELLAR)
-
-/turf/open/floor/carpet/donk
-	name = "Donk Co. carpet"
-	icon = 'icons/turf/floors/carpet_donk.dmi'
-	icon_state = "donk_carpet-255"
-	base_icon_state = "donk_carpet"
-	floor_tile = /obj/item/stack/tile/carpet/donk
-	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_DONK)
-	canSmoothWith = list(SMOOTH_GROUP_CARPET_DONK)
 
 /turf/open/floor/carpet/nanoweave
 	name = "nanoweave carpet"

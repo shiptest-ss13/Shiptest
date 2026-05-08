@@ -19,8 +19,9 @@
 	max_ammo = 5
 	start_empty = TRUE
 
-/obj/item/ammo_box/magazine/internal/shot/lethal
+/obj/item/ammo_box/magazine/internal/shot/brimstone
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	max_ammo = 5
 
 /obj/item/ammo_box/magazine/internal/shot/dual
 	name = "double-barrel shotgun internal magazine"
@@ -51,6 +52,9 @@
 	ammo_type = /obj/item/ammo_casing/c38
 	caliber = ".38"
 	max_ammo = 12
+
+/obj/item/ammo_box/magazine/internal/shot/winchester/presawn
+	max_ammo = 7
 
 /obj/item/ammo_box/magazine/internal/shot/winchester/absolution
 	name = "absolution internal magazine"

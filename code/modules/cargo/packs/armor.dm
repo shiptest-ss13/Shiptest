@@ -91,7 +91,7 @@
 
 //gezena
 /datum/supply_pack/armor/pgf_marine_armor
-	name = "Gezenan Composite Armor Crate"
+	name = "Marine Composite Armor Crate"
 	desc = "One set of standard issue AR-98 body armor, highly protective and quite mobile. Comes with a matching L-98 respirator."
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/armor/gezena/marine,
@@ -104,9 +104,23 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/armor/pgf_navy_armor
+	name = "Navy Flak Armor Crate"
+	desc = "One set of standard issue PGFN flak armor. All a sailor needs when general quarters is called. Comes with a matching respirator."
+	cost = 500
+	contains = list(/obj/item/clothing/suit/armor/gezena/navy,
+					/obj/item/clothing/head/helmet/gezena/navy,
+					/obj/item/clothing/glasses/safety,
+					/obj/item/clothing/mask/breath/pgfmask/navy)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/armor/pgf_armor
 	name = "Navywear Coat Crate"
-	desc = "One replacement navywear coat. The pricing is unfortunately high to discourage distribution to marines, and encourage servicemen to keep track of their jacket."
+	desc = "One replacement navywear coat. A privelege to wear and expensive to produce."
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/armor/gezena)
 	crate_name = "armor crate"
@@ -198,8 +212,8 @@
 	name = "Cybersun Bulletproof Armor Crate"
 	desc = "Contains one full set of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
 	cost = 1750
-	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof,
-					/obj/item/clothing/head/helmet/bulletproof,
+	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof/cybersun,
+					/obj/item/clothing/head/helmet/bulletproof/x11/cybersun,
 					/obj/item/clothing/glasses/sunglasses/ballistic)
 	crate_name = "bulletproof armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
@@ -242,7 +256,7 @@
 	name = "Trauma Team Bulletproof Armor Crate"
 	desc = "Contains one full set of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
 	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof/cybersun/trauma,
-					/obj/item/clothing/head/helmet/bulletproof,
+					/obj/item/clothing/head/helmet/bulletproof/x11/cybersun/trauma,
 					/obj/item/clothing/glasses/sunglasses/ballistic)
 
 /datum/supply_pack/armor/marine_cybersun/trauma_team
@@ -256,3 +270,15 @@
 	desc = "A trauma team \"Point\" suit, made for first responders in hostile situations. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium/cybersun/trauma,
 					/obj/item/clothing/head/helmet/riot/cybersun/trauma)
+//Makosso-Warra
+/datum/supply_pack/armor/warra_armor
+	name = "Vigilitas Armor Crate"
+	desc = "One set of Vigilitas-branded armor. The set includes a helmet and a vest."
+	cost = 750 //The red stripe comes at no extra cost to you, director.
+	contains = list(/obj/item/clothing/head/helmet/m10/warra,
+					/obj/item/clothing/suit/armor/warra)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/warra
+	faction_discount = 0
+	faction_locked = TRUE

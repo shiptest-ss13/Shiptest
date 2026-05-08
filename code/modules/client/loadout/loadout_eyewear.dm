@@ -9,8 +9,16 @@
 	path = /obj/item/clothing/glasses/regular
 
 /datum/gear/eyewear/glasses/thin
-	display_name ="glasses, thin prescription"
+	display_name = "glasses, thin prescription"
 	path = /obj/item/clothing/glasses/regular/thin
+
+/datum/gear/eyewear/glasses/pincher
+	display_name = "glasses, armless prescription"
+	path = /obj/item/clothing/glasses/regular/pincher
+
+/datum/gear/eyewear/glasses/pincher/thin
+	display_name = "glasses, armless thin prescription"
+	path = /obj/item/clothing/glasses/regular/pincher/thin
 
 /datum/gear/eyewear/glasses/large
 	display_name = "glasses, large prescription"

@@ -189,10 +189,10 @@
 	strip_delay = 60
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 50)
 
-/obj/item/clothing/gloves/color/captain/nt
+/obj/item/clothing/gloves/color/captain/warra
 	desc = "Regal blue gloves with gold trim and a fire and acid-resistant coating. Swanky."
 	name = "captain's gloves"
-	icon_state = "captainnt"
+	icon_state = "captainwarra"
 
 /obj/item/clothing/gloves/color/latex
 	name = "latex gloves"

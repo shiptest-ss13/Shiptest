@@ -28,7 +28,7 @@
 		cat_tail.drop_limb(TRUE, FALSE)
 		regenerate_limb(BODY_ZONE_TAIL, robotic = fbp)
 	if(cat_ears)
-		var/obj/item/organ/new_ears = new dna.species.mutantears
+		var/obj/item/organ/new_ears = new dna.species.species_organs[ORGAN_SLOT_EARS]
 		new_ears.Insert(src, TRUE, FALSE)
 	if(!silent)
 		to_chat(src, span_boldnotice("You are no longer a cat."))

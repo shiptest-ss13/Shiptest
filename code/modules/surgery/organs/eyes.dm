@@ -24,7 +24,7 @@
 	var/tint = 0
 	var/eye_color = "" //set to a hex code to override a mob's eye color
 	var/eye_icon_state = "eyes"
-	var/sclera_color = "e8e8e8" //a hex color, in case some species, like sarathi have different sclera color
+	var/sclera_color = "ebeae8" //a hex color, in case some species, like sarathi have different sclera color
 	var/sclera_icon_state = "eyes_sclera" //sclera is the white part of the eye
 	var/old_eye_color = "fff"
 	var/flash_protect = FLASH_PROTECTION_NONE
@@ -233,6 +233,14 @@
 
 /obj/item/organ/eyes/robotic/kepori
 	eye_icon_state = "eyes_kepori_synth"
+
+/obj/item/organ/eyes/robotic/mono
+	name = "monoeye"
+	eye_icon_state = "eyes_mono"
+
+/obj/item/organ/eyes/robotic/circle
+	name = "circle monitor"
+	eye_icon_state = "eyes_circle"
 
 /obj/item/organ/eyes/robotic/emp_act(severity)
 	. = ..()

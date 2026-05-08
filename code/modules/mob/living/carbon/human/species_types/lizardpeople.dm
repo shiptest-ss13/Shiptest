@@ -6,10 +6,9 @@
 	id = SPECIES_SARATHI
 	default_color = "00FF00"
 	species_age_max = 175
-	species_traits = list(MUTCOLORS, LIPS, SCLERA, EMOTE_OVERLAY, MUTCOLORS_SECONDARY)
+	species_traits = list(MUTCOLORS, LIPS, EMOTE_OVERLAY, MUTCOLORS_SECONDARY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	mutant_bodyparts = list("face_markings", "frills", "horns", "spines", "body_markings")
-	mutanttongue = /obj/item/organ/tongue/lizard
 	coldmod = 1.5
 	heatmod = 0.67
 	default_features = list("mcolor" = "0F0", "face_markings" = "None", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None")
@@ -24,9 +23,19 @@
 	deathsound = 'sound/voice/lizard/deathsound.ogg'
 	wings_icons = list("Dragon")
 	species_language_holder = /datum/language_holder/lizard
-	mutanteyes = /obj/item/organ/eyes/lizard
-	sclera_color = "#fffec4"
 	blush_color = COLOR_BLUSH_TEAL
+
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/lizard,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/lizard,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+	)
 
 	species_limbs = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/lizard,
@@ -38,25 +47,7 @@
 		BODY_ZONE_TAIL = /obj/item/bodypart/tail/lizard,
 	)
 
-	species_robotic_limbs = list(
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot/lizard,
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot/lizard,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus/lizard,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/lizard,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/lizard/digitigrade,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/lizard/digitigrade,
-		BODY_ZONE_TAIL = /obj/item/bodypart/tail/lizard/synth,
-	)
-
-	species_optional_limbs = list(BODY_ZONE_TAIL = list(
-		/obj/item/bodypart/tail/lizard,
-		/obj/item/bodypart/tail/lizard/small,
-		/obj/item/bodypart/tail/lizard/large,
-		/obj/item/bodypart/tail/lizard/synth,
-		/obj/item/bodypart/tail/lizard/one_color,
-	))
-
-	robotic_eyes = /obj/item/organ/eyes/robotic/lizard
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/sarathi
 
 	// Sarathi are coldblooded and can stand a greater temperature range than humans
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 30
@@ -150,31 +141,5 @@
 	new_tail.species_secondary_color = lizard.dna.features["mcolor2"]
 	new_tail.attach_limb(lizard)
 	lizard.visible_message(span_notice("[lizard]'s tail starts to regrow!"), span_notice("Your tail starts to regrow!"))
-
-/*
-Lizard subspecies: ASHWALKERS
-*/
-/datum/species/lizard/ashwalker
-	name = "Ash Walker"
-	id = SPECIES_ASHWALKER
-	examine_limb_id = SPECIES_SARATHI
-	species_traits = list(MUTCOLORS,LIPS, NO_UNDERWEAR)
-	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
-	species_language_holder = /datum/language_holder/lizard/ash
-
-//WS Edit Start - Kobold
-//Ashwalker subspecies: KOBOLD
-/datum/species/lizard/ashwalker/kobold
-	name = "Kobold"
-	id = SPECIES_KOBOLD
-	examine_limb_id = SPECIES_SARATHI
-	species_traits = list(MUTCOLORS,LIPS, NO_UNDERWEAR)
-	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
-	species_language_holder = /datum/language_holder/lizard/ash
-
-/datum/species/lizard/ashwalker/kobold/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
-	. = ..() //call everything from species/on_species_gain()
-	C.dna.add_mutation(DWARFISM)
-//WS Edit End - Kobold
 
 #undef TAIL_REGROWTH_TIME

@@ -15,7 +15,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/ooccolor = "#c43b23"
 	var/asaycolor = "#ff4500"			//This won't change the color for current admins, only incoming ones.
 	/// If we spawn an ERT as an admin and choose to spawn as the briefing officer, we'll be given this outfit
-	var/brief_outfit = /datum/outfit/job/nanotrasen/captain
+	var/brief_outfit = /datum/outfit/job/warra/captain
 	var/enable_tips = TRUE
 	var/tip_delay = 500 //tip delay in milliseconds
 
@@ -105,7 +105,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"spider_legs" = "Plain",
 							"spider_spinneret" = "Plain",
 							"spider_mandibles" = "Plain",
-							"squid_face" = "Squidward",
 							"ipc_screen" = "Blue",
 							"ipc_antenna" = "None",
 							"ipc_chassis" = "Morpheus Cyberkinetics (Custom)",
@@ -177,7 +176,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/datum/language/native_language = /datum/language/galactic_common
 
 	/// Associated list with language levels of understanding and their point costs.
-	var/static/list/language_level_costs = list(LANGUAGE_UNKNOWN = 0, LANGUAGE_RECOGNIZED = 1, LANGUAGE_FAMILIAR = 2, LANGUAGE_FLUENT = 3)
+	var/static/list/list/language_level_data = list(
+		LANGUAGE_UNKNOWN = list(0, 0),
+		LANGUAGE_FAMILIAR = list(1, POINT_DISCOUNT_THRESHOLD_LOW),
+		LANGUAGE_CONVERSATIONAL = list(2, POINT_DISCOUNT_THRESHOLD_HIGH),
+		LANGUAGE_FLUENT = list(3, 100),
+	)
 
 	// 0 = character settings, 1 = game preferences
 	var/current_tab = 0
@@ -318,7 +322,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</center>"
 
 			dat += "<center><h2>Outfit Preview Settings</h2>"
-			dat += "<a href='byond://?_src_=prefs;preference=job'>Set Preview Job Gear</a><br></center>"
+			dat += "<center>Current outfit: [selected_outfit]</center>"
+			dat += "<a href='byond://?_src_=prefs;preference=joba'>Set Preview Job Gear</a><br>"
+			dat += "<a href='byond://?_src_=prefs;preference=jobb'>Set Preview Job Gear By Ship</a><br></center>"
+
 			if(CONFIG_GET(flag/roundstart_traits))
 				dat += "<center><h2>Quirk Setup</h2>"
 				dat += "<a href='byond://?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
@@ -663,19 +670,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
-			if("squid_face" in pref_species.default_features)
-				if(!mutant_category)
-					dat += APPEARANCE_CATEGORY_COLUMN
-
-				dat += "<h3>Face Type</h3>"
-
-				dat += "<a href='byond://?_src_=prefs;preference=squid_face;task=input'>[features["squid_face"]]</a><BR>"
-
-				mutant_category++
-				if(mutant_category >= MAX_MUTANT_ROWS)
-					dat += "</td>"
-					mutant_category = 0
-
 			if("ipc_screen" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -712,7 +706,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				dat += "<h3>Chassis Style</h3>"
 
-				dat += "<a href='byond://?_src_=prefs;preference=ipc_chassis;task=input'>[features["ipc_chassis"]]</a><BR>"
+				var/datum/sprite_accessory/body/ipc_chassis/chassis_style = GLOB.ipc_chassis_list[features["ipc_chassis"]]
+				if(!chassis_style)
+					chassis_style = pick(GLOB.ipc_chassis_list)
+					features["ipc_chassis"] = chassis_style.name
+				dat += "<a href='byond://?_src_=prefs;preference=ipc_chassis;task=input'>[chassis_style.name]</a>"
+				if(chassis_style.desc)
+					dat += "<a href='byond://?_src_=prefs;preference=body_desc;limb_style=[REF(chassis_style)]'>?</a>"
+				dat += "<br>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -907,9 +908,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				mutant_category = 0
 			dat += "</tr></table>"
 
-			var/metal_skin = fbp || pref_species.inherent_biotypes & MOB_ROBOTIC
+			var/metal_skin = fbp || (pref_species.inherent_biotypes & MOB_ROBOTIC)
 			dat += metal_skin ? "<h3>Chassis Customization</h3>" : "<h3>Body Part Customization</h3>"
-			dat += "<a href='byond://?_src_=prefs;preference=fbp'>Full Body Prosthesis: [fbp ? "Yes" : "No"]</a><br>"
+			if(!(pref_species.inherent_biotypes & MOB_ROBOTIC))
+				dat += "<a href='byond://?_src_=prefs;preference=fbp'>Full Body Prosthesis: [fbp ? "Yes" : "No"]</a><br>"
 
 			dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_PROSTHETIC]'>Random Prosthetic: [(randomise[RANDOM_PROSTHETIC]) ? "Yes" : "No"]</a><br>"
 
@@ -917,11 +919,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			for(var/index in custom_limbs)
 				if(!metal_skin && (index == BODY_ZONE_CHEST || index == BODY_ZONE_HEAD))
 					continue
-				if(!pref_species.species_limbs[index] && !pref_species.species_optional_limbs[index])
-					continue
-				var/obj/item/bodypart/limb = custom_limbs[index]
-				dat += "<tr><td><b>[parse_zone(index)]:</b></td>"
-				dat += "<td><a href='byond://?_src_=prefs;preference=limbs;customize_limb=[index]'>[istext(limb) ? limb : initial(limb.name)]</a></td></tr>"
+				var/zone_name = parse_zone(index)
+				dat += "<tr><td><b>[zone_name]:</b></td>"
+				var/limb_name = prosthetic_limbs[index]
+				dat += "<td><a href='byond://?_src_=prefs;preference=limbs;customize_limb=[index]'>[limb_name]</a>"
+				switch(limb_name)
+					if(PROSTHETIC_NORMAL, PROSTHETIC_AMPUTATED, PROSTHETIC_ROBOTIC)
+						dat += "</td></tr>"
+					else
+						var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[limb_name]
+						if(!limb_style?.desc)
+							continue
+						dat += "<a href='byond://?_src_=prefs;preference=body_desc;limb_style=[REF(limb_style)]'>?</a></td></tr>"
 			dat += "</table><br>"
 
 		if(2) //Loadout
@@ -1283,7 +1292,26 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.open(FALSE)
 	onclose(user, "capturekeypress", src)
 
-/datum/preferences/proc/SetChoices(mob/user)
+/datum/preferences/proc/set_preview_outfit(mob/user)
+	if(!SSmapping)
+		return
+
+	var/static/list/job_paths = subtypesof(/datum/outfit/job)
+	var/static/list/job_outfits = list()
+	if(!length(job_outfits))
+		for(var/path in job_paths)
+			var/datum/outfit/O = path
+			if(initial(O.can_be_admin_equipped))
+				job_outfits[initial(O.name)] = path
+
+	var/outfit_choice = tgui_input_list(user, "Please select which job to preview outfits for.", "Outfit selection", job_outfits)
+	if(!job_outfits[outfit_choice])
+		return
+	outfit_choice = job_outfits[outfit_choice]
+
+	selected_outfit = new outfit_choice
+
+/datum/preferences/proc/set_preview_outfit_by_ship(mob/user)
 	if(!SSmapping)
 		return
 
@@ -1300,6 +1328,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		return
 
 	selected_outfit = new preview_job.outfit
+
 
 /datum/preferences/proc/ShowSpeciesChoices(mob/user)
 	var/list/dat = list()
@@ -1509,15 +1538,39 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /datum/preferences/proc/get_language_point_balance()
 	var/points_balance = MAX_LANGUAGE_POINTS
+	var/list/checked_langs = list()
 	for(var/datum/language/lang_type as anything in learned_languages)
 		if(lang_type == native_language)
 			continue // this should happen but just in case
-		points_balance -= language_level_costs[learned_languages[lang_type]]
+		var/level = learned_languages[lang_type]
+		if(level == LANGUAGE_UNKNOWN)
+			continue
+		points_balance -= language_level_data[learned_languages[lang_type]][INDEX_POINT_COST]
+		var/discount = get_intelligibility_discount(lang_type, native_language)
+		if(discount < MAXIMUM_POINT_DISCOUNT)
+			for(var/datum/language/mutual_type as anything in checked_langs)
+				if(level != LANGUAGE_FLUENT && learned_languages[mutual_type] != LANGUAGE_FLUENT)
+					continue
+				discount = max(discount, get_intelligibility_discount(lang_type, mutual_type))
+				if(discount >= MAXIMUM_POINT_DISCOUNT)
+					break
+		points_balance += discount
+		checked_langs += lang_type
 	if("Trilingual" in all_quirks)
 		points_balance += 2
 	if("Monolingual" in all_quirks)
 		points_balance -= 2
 	return points_balance
+
+/datum/preferences/proc/get_intelligibility_discount(datum/language/first_type, datum/language/second_type)
+	var/datum/language/first_instance = GLOB.language_datum_instances[first_type]
+	var/datum/language/second_instance = GLOB.language_datum_instances[second_type]
+	var/intelligibility = max(first_instance.mutual_understanding?[second_type], second_instance.mutual_understanding?[first_type])
+	if(intelligibility >= POINT_DISCOUNT_THRESHOLD_HIGH)
+		return 2
+	if(intelligibility >= POINT_DISCOUNT_THRESHOLD_LOW)
+		return 1
+	return 0
 
 /datum/preferences/proc/init_custom_limbs()
 	for(var/zone in pref_species.species_limbs | pref_species.species_optional_limbs)
@@ -1588,8 +1641,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				expires = " The ban is for [DisplayTimeText(text2num(ban_details["duration"]) MINUTES)] and expires on [ban_details["expiration_time"]] (server time)."
 			to_chat(user, span_danger("You, or another user of this computer or connection ([ban_details["key"]]) is banned from playing [href_list["bancheck"]].<br>The ban reason is: [ban_details["reason"]]<br>This ban (BanID #[ban_details["id"]]) was applied by [ban_details["admin_key"]] on [ban_details["bantime"]] during round ID [ban_details["round_id"]].<br>[expires]"))
 			return
-	if(href_list["preference"] == "job")
-		SetChoices(user)
+	if(href_list["preference"] == "joba")
+		set_preview_outfit(user)
+		ShowChoices(user)
+		return TRUE
+
+	if(href_list["preference"] == "jobb")
+		set_preview_outfit_by_ship(user)
 		ShowChoices(user)
 		return TRUE
 
@@ -2145,10 +2203,29 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(selected_lang.type == native_language) // wuh oh
 						CRASH("[usr] attempted to change level of understanding for [selected_lang] despite it being their native language!")
 					if(selected_lang && (selected_lang.flags & ROUNDSTART_LANGUAGE)) // no using html exploits to learn codespeak
-						var/understanding = tgui_input_list(user, "Select level of understanding:", "Learn Language", language_level_costs)
+						var/discount = get_intelligibility_discount(selected_lang.type, native_language)
+						if(discount < MAXIMUM_POINT_DISCOUNT)
+							for(var/datum/language/lang_type as anything in learned_languages)
+								if(learned_languages[lang_type] != LANGUAGE_FLUENT)
+									continue
+								discount = max(discount, get_intelligibility_discount(selected_lang.type, lang_type))
+								if(discount >= MAXIMUM_POINT_DISCOUNT)
+									break
+						var/list/level_options = list()
+						for(var/option in language_level_data)
+							var/cost = language_level_data[option][INDEX_POINT_COST]
+							if(cost && cost <= discount)
+								continue
+							level_options["[option] ([cost ? (cost - discount) : 0])"] = option
+						var/understanding = level_options[tgui_input_list(
+							user,
+							"Select level of understanding for [selected_lang.name]. [discount ? "Discounted by [discount] points due to mutual intelligibility." : ""]",
+							"Learn Language",
+							level_options,
+						)]
 						if(!understanding)
 							return
-						if(!(understanding in language_level_costs))
+						if(!(understanding in language_level_data))
 							CRASH("[usr] attempted to set level of understanding for [selected_lang.type] to \"[understanding]\"")
 						var/old_value = learned_languages[selected_lang.type]
 						learned_languages[selected_lang.type] = understanding
@@ -2232,7 +2309,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/list/limb_options = list()
 						if(pref_species.species_limbs[limb])
 							limb_options["Normal"] = PROSTHETIC_NORMAL
-						if(pref_species.species_robotic_limbs[limb])
+						if(pref_species.prosthetic_style)
 							limb_options["Robotic"] = PROSTHETIC_ROBOTIC
 						if(limb != BODY_ZONE_CHEST && limb != BODY_ZONE_HEAD)
 							limb_options["None"] = PROSTHETIC_NONE // starting without a head or chest causes instant death, must be disallowed
@@ -2243,6 +2320,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/datum/sprite_accessory/body/limb_style
 						for(var/body in GLOB.alternative_body_list)
 							limb_style = GLOB.alternative_body_list[body]
+							if(limb_style.locked)
+								continue
 							part_candidate = limb_style.replacement_bodyparts[limb]
 							if(isnull(part_candidate))
 								continue
@@ -2250,10 +2329,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								continue
 							if(!(pref_species.bodytype & initial(part_candidate.bodytype))) // don't allow vox and kepori to select limbs that aren't compatible
 								continue
-							limb_options[initial(part_candidate.name)] = part_candidate
-						var/status = tgui_input_list(user, "You are modifying your [parse_zone(limb)], what should it be changed to?", "Bodypart Selection", limb_options)
-						if(status)
-							custom_limbs[limb] = limb_options[status]
+							limb_options.Add(body)
+
+						var/limb_selection = tgui_input_list(
+							user,
+							"You are modifying your [parse_zone(limb)], what should it be changed to?",
+							"Bodypart Selection",
+							limb_options,
+						)
+						if(limb_selection)
+							prosthetic_limbs[limb] = limb_selection
+
+				if("body_desc")
+					var/datum/sprite_accessory/body/limb_style = locate(href_list["limb_style"])
+					if(!limb_style?.desc)
+						return
+					tgui_alert(user, limb_style.desc, limb_style.name, list("Close"), 0)
+					return
 
 				if("hotkeys")
 					hotkeys = !hotkeys
@@ -2590,7 +2682,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.exowear = exowear
 
-	character.fbp = fbp
+	if(fbp && !(pref_species.inherent_biotypes & MOB_ROBOTIC))
+		ADD_TRAIT(character, TRAIT_USE_PROSTHETIC, ROUNDSTART_TRAIT)
+	else
+		REMOVE_TRAIT(character, TRAIT_USE_PROSTHETIC, ROUNDSTART_TRAIT)
 
 	character.flavor_text = features["flavor_text"] //Let's update their flavor_text at least initially
 
@@ -2612,36 +2707,33 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.features = features.Copy()
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE, robotic = fbp)
 
-	for(var/pros_limb in custom_limbs)
-		var/obj/item/bodypart/old_part = character.get_bodypart(pros_limb)
+	var/is_robotic = HAS_TRAIT(character, TRAIT_USE_PROSTHETIC)
+	for(var/zone in custom_limbs)
+		var/obj/item/bodypart/old_part = character.get_bodypart(zone)
 		if(old_part)
 			icon_updates = TRUE
-		if(!(pros_limb in (pref_species.species_limbs | pref_species.species_optional_limbs)))
-			if(old_part)
-				old_part.drop_limb(TRUE)
-				qdel(old_part)
-			continue
-		switch(custom_limbs[pros_limb])
+		switch(prosthetic_limbs[zone])
 			if(PROSTHETIC_NORMAL)
 				if(old_part)
 					old_part.drop_limb(TRUE)
 					qdel(old_part)
-				character.regenerate_limb(pros_limb, robotic = fbp)
-			if(PROSTHETIC_NONE)
+				character.regenerate_limb(zone, robotic = is_robotic)
+			if(PROSTHETIC_AMPUTATED)
 				if(old_part)
 					old_part.drop_limb(TRUE)
 					qdel(old_part)
-				if(pros_limb == BODY_ZONE_CHEST || pros_limb == BODY_ZONE_HEAD)
-					stack_trace("[parent] somehow had their [parse_zone(pros_limb)] set to [PROSTHETIC_NONE]!")
-					custom_limbs[pros_limb] = PROSTHETIC_NORMAL
-					character.regenerate_limb(pros_limb, robotic = fbp)
+				if(zone == BODY_ZONE_CHEST || zone == BODY_ZONE_HEAD)
+					stack_trace("[parent] somehow had their [parse_zone(zone)] set to [PROSTHETIC_AMPUTATED]!")
+					prosthetic_limbs[zone] = PROSTHETIC_NORMAL
+					character.regenerate_limb(zone, robotic = is_robotic)
 			if(PROSTHETIC_ROBOTIC)
 				if(old_part)
 					old_part.drop_limb(TRUE)
 					qdel(old_part)
-				character.regenerate_limb(pros_limb, robotic = TRUE)
+				character.regenerate_limb(zone, robotic = TRUE)
 			else
-				var/obj/item/bodypart/new_part = custom_limbs[pros_limb]
+				var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[prosthetic_limbs[zone]]
+				var/obj/item/bodypart/new_part = limb_style.replacement_bodyparts[zone]
 				if(!character_setup && !(new_part.bodytype & BODYTYPE_ROBOTIC)) // this preserves non-prosthetics through anything that regenerates the whole bodypart
 					character.dna.species.species_limbs[pros_limb] = new_part
 				new_part = new new_part()
@@ -2650,12 +2742,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					qdel(old_part)
 				if(!(new_part.bodytype & pref_species.bodytype))
 					stack_trace("[parent] had [new_part.name] selected as their [new_part.plaintext_zone], which isn't compatible with [pref_species.name]!")
-					custom_limbs[pros_limb] = PROSTHETIC_NORMAL
-					character.regenerate_limb(pros_limb, robotic = fbp)
+					custom_limbs[zone] = PROSTHETIC_NORMAL
+					character.regenerate_limb(zone, robotic = is_robotic)
 					continue
-				if(new_part.should_draw_greyscale) // species that don't use mutant colors normally should still be able to color prosthetics that do
+				// species that don't use mutant colors normally should still be able to color prosthetics that do
+				if(new_part.should_draw_greyscale)
 					new_part.draw_color = features["mcolor"]
-				if(new_part.overlay_icon_state)
+				if(new_part.overlay_use_primary_color || new_part.overlay2_use_primary_color)
+					new_part.species_color = features["mcolor"]
+				if(new_part.overlay_icon_state || new_part.overlay2_icon_state)
 					new_part.species_secondary_color = features["mcolor2"]
 				new_part.replace_limb(character, TRUE)
 				new_part.update_limb(is_creating = TRUE)
@@ -2684,17 +2779,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	for(var/datum/language/lang_type as anything in learned_languages)
 		if(lang_type == native_language)
 			continue
-		switch(learned_languages[lang_type])
-			if(LANGUAGE_FLUENT)
+		var/understanding = language_level_data[learned_languages[lang_type]][INDEX_UNDERSTANDING]
+		switch(understanding)
+			if(100 to INFINITY)
 				character.grant_language(lang_type)
-			if(LANGUAGE_FAMILIAR)
+			if(POINT_DISCOUNT_THRESHOLD_HIGH to 100)
 				character.grant_language(lang_type, SPOKEN_LANGUAGE)
 				character.remove_language(lang_type, UNDERSTOOD_LANGUAGE)
-				character.grant_partial_language(lang_type, 80)
-			if(LANGUAGE_RECOGNIZED)
+				character.grant_partial_language(lang_type, understanding)
+			if(POINT_DISCOUNT_THRESHOLD_LOW to POINT_DISCOUNT_THRESHOLD_HIGH)
 				character.remove_language(lang_type)
-				character.grant_partial_language(lang_type, 40)
-			if(LANGUAGE_UNKNOWN)
+				character.grant_partial_language(lang_type, understanding)
+			if(0 to POINT_DISCOUNT_THRESHOLD_LOW)
 				character.remove_language(lang_type)
 
 /datum/preferences/proc/get_default_name(name_id)

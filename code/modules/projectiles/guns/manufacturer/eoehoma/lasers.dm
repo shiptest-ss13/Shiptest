@@ -1,6 +1,6 @@
 /obj/item/gun/energy/laser/e10
 	name = "E-10 laser pistol"
-	desc = "A very old laser weapon. Despite the extreme age of some of these weapons, they are sometimes preferred to newer, mass-produced Nanotrasen laser weapons."
+	desc = "A very old laser weapon. Despite the extreme age of some of these weapons, they are sometimes preferred to newer, mass-produced Makosso-Warra laser weapons."
 	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
@@ -18,6 +18,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma, /obj/item/ammo_casing/energy/lasergun/eoehoma/heavy)
 	manufacturer = MANUFACTURER_EOEHOMA
 
+/obj/item/gun/energy/laser/e10/empty_cell
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/e_gun/e11
 	name = "E-11 hybrid energy rifle"
@@ -88,3 +90,6 @@
 
 	shaded_charge = TRUE
 	manufacturer = MANUFACTURER_EOEHOMA
+
+/obj/item/gun/energy/disabler/e60/empty_cell
+	spawn_no_ammo = TRUE
