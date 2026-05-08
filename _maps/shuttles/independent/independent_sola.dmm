@@ -464,7 +464,6 @@
 /area/ship/crew/canteen)
 "gg" = (
 /obj/structure/closet/cabinet,
-/obj/machinery/airalarm/directional/east,
 /obj/item/clothing/accessory/waistcoat,
 /obj/item/clothing/suit/armor/vest/duster,
 /obj/item/clothing/under/pants/camo,
@@ -489,6 +488,7 @@
 	pixel_x = 0;
 	pixel_y = -9
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
 "gn" = (
@@ -2760,6 +2760,14 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/east,
+/obj/structure/closet/crate{
+	name = "Dr. Flare's Magnificent Lighting Solution"
+	},
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "JF" = (
@@ -3102,6 +3110,7 @@
 	pixel_y = 3
 	},
 /obj/machinery/light/small/directional/west,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
 "OW" = (
@@ -3611,6 +3620,11 @@
 "Uc" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/item/stack/sheet/metal/ten{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/stack/sheet/glass/twenty,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "UH" = (
@@ -3650,7 +3664,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/obj/structure/cable/pink,
+/obj/structure/cable/pink{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "UR" = (
@@ -3840,6 +3856,10 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/light/small/directional/west,
+/obj/item/stack/sheet/mineral/plasma/ten{
+	pixel_x = -4;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "WH" = (
