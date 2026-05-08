@@ -34,6 +34,7 @@
 	var/metal_attached = METAL_ABSENT
 	var/missing_part //I hate this but it's better than most the ideas I've had
 	var/current_timerid
+	interaction_flags_machine = INTERACT_MACHINE_UNPOWERED | INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE
 
 /obj/machinery/drill/examine(mob/user)
 	. = ..()
