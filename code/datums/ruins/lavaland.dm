@@ -36,3 +36,8 @@
 	description = "An abandoned Cybersun listening post. Seems like the Ramzi Clique has an interest in the site."
 	suffix = "lavaland_abandonedlisteningpost.dmm"
 
+/datum/map_template/ruin/lavaland/hardliner_holdout
+	name = "Hardliner's Last Stand"
+	description = "Ramzi have laid siege to a Hardliner outpost with hefty automated defences."
+	id = "hardliner_holdout"
+	suffix = "lavaland_hardliner_holdout.dmm"

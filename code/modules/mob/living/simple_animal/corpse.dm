@@ -489,3 +489,29 @@
 	id_job = "Captain"
 	outfit = /datum/outfit/job/gezena/captain
 
+//Hardliner
+
+/obj/effect/mob_spawn/human/corpse/hardliner
+	name = "Hardliner Junior Agent"
+	id_job = "Junior Agent"
+	outfit = /datum/outfit/job/syndicate/assistant/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/mechanic
+	name = "Hardliner Mechanic"
+	id_job = "Mechanic"
+	outfit = /datum/outfit/job/syndicate/engineer/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/trooper
+	name = "Hardliner Trooper"
+	id_job = "Trooper"
+	outfit = /datum/outfit/job/syndicate/security/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/sergeant
+	name = "Hardliner Sergeant"
+	id_job = "Sergeant"
+	outfit = /datum/outfit/job/syndicate/hos/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/captain
+	name = "Hardliner Captain"
+	id_job = "Captain"
+	outfit = /datum/outfit/job/syndicate/captain/gorlex
