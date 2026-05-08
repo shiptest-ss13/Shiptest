@@ -1,5 +1,5 @@
 /datum/outfit/job/syndicate/hos/gorlex/holdout
-		name = "Holdout - Sergeant"
+	name = "Holdout - Sergeant"
 	suit = /obj/item/clothing/suit/space/hardsuit/stealth/hardliners
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/hardliners
 
