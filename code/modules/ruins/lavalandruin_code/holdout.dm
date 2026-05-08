@@ -70,14 +70,14 @@
 		/obj/item/food/dote = 0,
 	)
 
-/obj/item/paper/fluff.ruins/holdout/goodbye
+/obj/item/paper/fluff/ruins/holdout/goodbye
 	name = "water-damaged goodbye"
 	default_raw_text = "Mom,<br><br>It's your daughter, Marianne. I don't expect this to make it back to you. I'm at peace with how this is going to end, I think. The sound of the turrets firing is drilled into my mind as I look at the last of our food and potable water.<br><br>You were right. I'm stupid, and an idiot, and nothing. I wanted to do what you did, to fight against the people who hurt us. I thought you were giving up in the Republic, that I had to make up for the dream I thought you wanted. Now, with Clique trying to batter down our doors I don't know if I believe any more.<br><br>I love you."
 
-/obj/item/paper/fluff.ruins/holdout/hurrah
+/obj/item/paper/fluff/ruins/holdout/hurrah
 	name = "angrily scratched note"
 	default_raw_text = "They can have the satisfaction of starving us out, but I'll be damned if I let those fucking traitors have our supplies. One last explosive hurrah for me, then I take my own way out."
 
-/obj/item/paper/fluff.ruins/holdout/besieged
+/obj/item/paper/fluff/ruins/holdout/besieged
 	name = "ineptly written note"
 	default_raw_text = "Captain left me in charge of overseeing us starving out the Hardliners in the site. I think she's a coward and if I can take the base with only the dolts she left behind the Lieutenant will surely back me up in a coup."
