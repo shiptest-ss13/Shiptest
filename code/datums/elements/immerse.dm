@@ -131,8 +131,6 @@ GLOBAL_LIST_INIT(immerse_ignored_movable, typecacheof(list(
 	if(isliving(movable))
 		var/mob/living/living_mob = movable
 		living_mob.remove_movespeed_modifier(/datum/movespeed_modifier/wading)
-	if(buckled)
-		return
 	UnregisterSignal(movable, list(
 		COMSIG_MOVETYPE_FLAG_ENABLED,
 		COMSIG_MOVETYPE_FLAG_DISABLED,
