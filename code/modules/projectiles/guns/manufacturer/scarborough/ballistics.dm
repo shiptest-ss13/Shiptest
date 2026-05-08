@@ -349,7 +349,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
 
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	default_ammo_type = /obj/item/ammo_box/magazine/m22lr_himehabu
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m22lr_himehabu,

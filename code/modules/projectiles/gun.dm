@@ -916,6 +916,8 @@
 
 	if(HAS_TRAIT(user, TRAIT_POOR_AIM))
 		randomized_bonus_spread += rand(0, 25)
+	if(!wielded_fully && (HAS_TRAIT(user, TRAIT_SCARRED_EYE)))
+		randomized_bonus_spread += rand(0, 5) // can't aim as well with no depth perception
 
 	//We will then calculate gun spread depending on if we are fully wielding (after do_after) the gun or not
 	randomized_gun_spread =	rand(0, wielded_fully ? spread : spread_unwielded)

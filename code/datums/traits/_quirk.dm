@@ -4,21 +4,20 @@
 	var/name = "Test Quirk"
 	var/desc = "This is a test quirk."
 	var/value = 0
-	var/human_only = TRUE
 	var/gain_text
 	var/lose_text
 	var/medical_record_text //This text will appear on medical records for the trait. Not yet implemented
-	///should this quirk be seen on a scanner pass
-	var/detectable = TRUE
-	var/mood_quirk = FALSE //if true, this quirk affects mood and is unavailable if moodlets are disabled
+	/// Flags related to this quirk
+	var/quirk_flags = QUIRK_HUMAN_ONLY
 	var/list/mob_traits //if applicable, apply and remove these mob traits
 	var/mob/living/quirk_holder
 
-/datum/quirk/New(mob/living/quirk_mob, spawn_effects)
+/datum/quirk/New(mob/living/quirk_mob, client/client_source, spawn_effects)
 	..()
-	if(!quirk_mob || (human_only && !ishuman(quirk_mob)) || quirk_mob.has_quirk(type))
+	if(!quirk_mob || ((quirk_flags & QUIRK_HUMAN_ONLY) && !ishuman(quirk_mob)) || quirk_mob.has_quirk(type))
 		qdel(src)
 		return
+	client_source ||= quirk_mob.client
 	quirk_holder = quirk_mob
 	SSquirks.quirk_objects += src
 	if(gain_text)
@@ -26,12 +25,13 @@
 	quirk_holder.roundstart_quirks += src
 	for(var/T in mob_traits)
 		ADD_TRAIT(quirk_holder, T, ROUNDSTART_TRAIT)
-	START_PROCESSING(SSquirks, src)
-	add()
+	if(quirk_flags & QUIRK_PROCESSES)
+		START_PROCESSING(SSquirks, src)
+	add(client_source)
 	if(spawn_effects)
-		on_spawn()
+		on_spawn(client_source)
 	if(quirk_holder.client)
-		post_add()
+		post_add(client_source)
 	else
 		RegisterSignal(quirk_holder, COMSIG_MOB_LOGIN, PROC_REF(on_quirk_holder_first_login))
 
@@ -50,7 +50,8 @@
 		post_add()
 
 /datum/quirk/Destroy()
-	STOP_PROCESSING(SSquirks, src)
+	if(quirk_flags & QUIRK_PROCESSES)
+		STOP_PROCESSING(SSquirks, src)
 	remove()
 	if(quirk_holder)
 		if(lose_text)
@@ -71,11 +72,11 @@
 	quirk_holder = to_mob
 	on_transfer()
 
-/datum/quirk/proc/add() //special "on add" effects
-/datum/quirk/proc/on_spawn() //these should only trigger when the character is being created for the first time, i.e. roundstart/latejoin
+/datum/quirk/proc/add(client/client_source) //special "on add" effects
+/datum/quirk/proc/on_spawn(client/client_source) //these should only trigger when the character is being created for the first time, i.e. roundstart/latejoin
 /datum/quirk/proc/remove() //special "on remove" effects
 /datum/quirk/proc/on_process(seconds_per_tick) //process() has some special checks, so this is the actual process
-/datum/quirk/proc/post_add() //for text, disclaimers etc. given after you spawn in with the trait
+/datum/quirk/proc/post_add(client/client_source) //for text, disclaimers etc. given after you spawn in with the trait
 /datum/quirk/proc/on_transfer() //code called when the trait is transferred to a new mob
 
 /datum/quirk/process(seconds_per_tick)
@@ -91,14 +92,14 @@
 	var/list/dat = list()
 	if(!medical)
 		for(var/datum/quirk/our_quirk in roundstart_quirks)
-			if(our_quirk.detectable || see_all)
+			if(!(our_quirk.quirk_flags & QUIRK_HIDE_FROM_SCAN) || see_all)
 				dat += our_quirk.name
 		if(!dat.len)
 			return "None"
 		return dat.Join(", ")
 	else
 		for(var/datum/quirk/our_quirk in roundstart_quirks)
-			if(our_quirk.detectable || see_all)
+			if(!(our_quirk.quirk_flags & QUIRK_HIDE_FROM_SCAN) || see_all)
 				dat += our_quirk.medical_record_text
 		if(!dat.len)
 			return "None"

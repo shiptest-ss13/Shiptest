@@ -179,3 +179,80 @@
 	faction = /datum/faction/srm
 	faction_discount = 0
 	faction_locked = TRUE
+
+//Cybersun
+
+/datum/supply_pack/armor/basic_cybersun
+	name = "Cybersun Armor Crate"
+	desc = "One set of well-rounded body armor. The set includes a helmet and vest."
+	cost = 750
+	contains = list(/obj/item/clothing/suit/armor/vest/cybersun,
+					/obj/item/clothing/head/helmet/m10/cybersun)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+	faction_locked = TRUE
+	faction = /datum/faction/syndicate/cybersun
+
+/datum/supply_pack/armor/bulletproof_cybersun
+	name = "Cybersun Bulletproof Armor Crate"
+	desc = "Contains one full set of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
+	cost = 1750
+	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof,
+					/obj/item/clothing/head/helmet/bulletproof,
+					/obj/item/clothing/glasses/sunglasses/ballistic)
+	crate_name = "bulletproof armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+	faction_locked = TRUE
+	faction = /datum/faction/syndicate/cybersun
+
+/datum/supply_pack/armor/marine_cybersun
+	name = "Cybersun Troubleshooter Armor Crate"
+	desc = "One set of well-rounded Troubleshooter armor. While it does not protect the limbs, the vest is fairly durable. The set includes a helmet and vest."
+	cost = 1500
+	contains = list(/obj/item/clothing/suit/armor/vest/marine/cybersun,
+					/obj/item/clothing/head/helmet/bulletproof/x11/cybersun)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+	faction_locked = TRUE
+	faction = /datum/faction/syndicate/cybersun
+
+/datum/supply_pack/armor/medium_marine_cybersun
+	name = "Heavy Troubleshooter Armor Crate"
+	desc = "One set of Heavy Troubleshooter plate. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
+	cost = 3000
+	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium/cybersun,
+					/obj/item/clothing/head/helmet/riot/cybersun)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+	faction_locked = TRUE
+	faction = /datum/faction/syndicate/cybersun
+
+//cybersun trauma team
+/datum/supply_pack/armor/basic_cybersun/trauma_team
+	name = "Trauma Team Armor Crate"
+	desc = "One set of well-rounded body armor. The set includes a helmet and vest."
+	contains = list(/obj/item/clothing/suit/armor/vest/cybersun/trauma,
+					/obj/item/clothing/head/helmet/m10/cybersun/trauma)
+
+/datum/supply_pack/armor/bulletproof_cybersun/trauma_team
+	name = "Trauma Team Bulletproof Armor Crate"
+	desc = "Contains one full set of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
+	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof/cybersun/trauma,
+					/obj/item/clothing/head/helmet/bulletproof,
+					/obj/item/clothing/glasses/sunglasses/ballistic)
+
+/datum/supply_pack/armor/marine_cybersun/trauma_team
+	name = "Trauma Team Combat Armor Crate"
+	desc = "One set of well-rounded tactical armor. While it does not protect the limbs, the vest is fairly durable. The set includes a helmet and vest."
+	contains = list(/obj/item/clothing/suit/armor/vest/marine/cybersun/trauma,
+					/obj/item/clothing/head/helmet/bulletproof/x11/cybersun/trauma)
+
+/datum/supply_pack/armor/medium_marine_cybersun/trauma_team
+	name = "Trauma Team Point Armor Crate"
+	desc = "A trauma team \"Point\" suit, made for first responders in hostile situations. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
+	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium/cybersun/trauma,
+					/obj/item/clothing/head/helmet/riot/cybersun/trauma)

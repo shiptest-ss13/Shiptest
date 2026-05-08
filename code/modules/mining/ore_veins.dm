@@ -34,7 +34,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/drop_rate_amount_min = 15
 	var/drop_rate_amount_max = 20
 	///variables for the mob spawners we generate
+	///how many mobs can each spawner have active at once?
 	var/max_mobs = 3
+	///time between mob spawner mob spawns.
 	var/spawn_time = 10 SECONDS
 	var/mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
@@ -423,6 +425,22 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/gold = 10,
 		/obj/item/stack/ore/diamond = 10,
 		)
+
+/obj/structure/vein/jungle/classfour
+	vein_class = 4
+	mining_charges = 10
+	ore_list = list(
+		/obj/item/stack/ore/bluespace_crystal = 10,
+	)
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/wolf/random = 20,
+		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 1,
+		/mob/living/simple_animal/hostile/jungle/seedling = 5,
+		/mob/living/simple_animal/hostile/jungle/mega_arachnid = 20,
+		/mob/living/simple_animal/hostile/jungle/mook = 30,
+	)
+	max_mobs = 4
+	spawn_time = 10 SECONDS
 
 //Sand planets - more or less the same as lavaland but with the sand planet variants
 

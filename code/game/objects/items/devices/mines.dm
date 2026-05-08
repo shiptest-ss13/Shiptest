@@ -23,12 +23,22 @@
 	/// Use to set a delay after activation to trigger the explosion.
 	var/blast_delay = 1 DECISECONDS
 
+	/// Should our start live?
+	var/spawn_armed = FALSE
+	/// Sets a delay for mines for mines that start live
+	var/spawn_arm_delay
+
 	var/manufacturer = MANUFACTURER_NONE
 
 /obj/item/mine/Initialize(mapload)
 	. = ..()
-	if(armed)
-		now_armed()
+	if(spawn_armed)
+		if(spawn_arm_delay)
+			armed = FALSE
+			update_appearance(UPDATE_ICON_STATE)
+			addtimer(CALLBACK(src, PROC_REF(now_armed),FALSE), spawn_arm_delay)
+		else
+			now_armed()
 
 /obj/item/mine/examine(mob/user)
 	. = ..()
@@ -94,12 +104,13 @@
 	return TRUE
 
 /// let them know the mine's done cooking
-/obj/item/mine/proc/now_armed()
+/obj/item/mine/proc/now_armed(silent = FALSE)
 	armed = TRUE
 	update_appearance(UPDATE_ICON_STATE)
 	light_power = 1
 	light_range = 1
-	playsound(src, 'sound/machines/nuke/angry_beep.ogg', 55, FALSE, 1)
+	if(!silent)
+		playsound(src, 'sound/machines/nuke/angry_beep.ogg', 55, FALSE, 1)
 	visible_message("<span class='danger'>\The [src] beeps softly, indicating it is now active.<span>", vision_distance = COMBAT_MESSAGE_RANGE)
 
 /// Can this mine trigger on the passed movable?
@@ -817,7 +828,7 @@
 #define LIVE_MINE_HELPER(mine_type)		\
 	/obj/item/mine/##mine_type/live {		\
 		anchored = TRUE;					\
-		armed = TRUE;						\
+		spawn_armed = TRUE;						\
 	}
 
 LIVE_MINE_HELPER(pressure/explosive)

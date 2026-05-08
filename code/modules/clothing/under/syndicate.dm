@@ -99,45 +99,6 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	supports_variations = DIGITIGRADE_VARIATION
 
-/obj/item/clothing/under/syndicate/cybersun
-	name = "cybersun jumpsuit"
-	desc = "The standard jumpsuit used by the agents employed by Cybersun, in its distinctive half-black-half-white aesthetic."
-	icon_state = "cybersun_agent"
-	roll_sleeves = FALSE
-
-/obj/item/clothing/under/syndicate/cybersun/research
-	name = "Cybersun coveralls"
-	desc = "Nomex coveralls worn by workers and research personnel employed by Cybersun industries."
-	icon_state = "cybersun"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 100)
-	roll_sleeves = TRUE
-	supports_variations = DIGITIGRADE_VARIATION
-
-/obj/item/clothing/under/syndicate/cybersun/officer
-	name = "cybersun officer's suit"
-	desc = "A crimson-red suit used by the officers employed by Cybersun."
-	icon_state = "cybersun_officer"
-	roll_sleeves = TRUE
-	supports_variations = DIGITIGRADE_VARIATION
-
-/obj/item/clothing/under/syndicate/medic
-	name = "Cybersun medical jumpsuit"
-	desc = "Sterile coveralls worn by Cybersun Industries field medics for protection against biological hazards."
-	icon_state = "cybersun_med"
-	permeability_coefficient = 0.5
-	roll_down = TRUE
-	roll_sleeves = FALSE
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
-
-/obj/item/clothing/under/syndicate/medic/skirt
-	name = "Cybersun medical jumpskirt"
-	desc = "A sterile jumpskirt worn by Cybersun Industries field medics for protection against biological hazards."
-	icon_state = "cybersun_med_skirt"
-	body_parts_covered = CHEST|GROIN|ARMS
-	roll_down = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
-
 /obj/item/clothing/under/syndicate/donk
 	name = "Donk! Co. employee uniform"
 	desc = "The standard employee uniform of Donk Co. Smells like minimum wage."
