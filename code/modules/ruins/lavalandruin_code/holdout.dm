@@ -1,8 +1,10 @@
 /datum/outfit/job/syndicate/hos/gorlex/holdout
+		name = "Holdout - Sergeant"
 	suit = /obj/item/clothing/suit/space/hardsuit/stealth/hardliners
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/hardliners
 
 /datum/outfit/job/syndicate/security/gorlex/holdout1
+	name = "Holdout - Suicidal Trooper"
 	suit = /obj/item/clothing/suit/armor/hardliners
 	head = /obj/item/clothing/head/helmet/hardliners
 	belt = /obj/item/storage/belt/security/webbing/hardliners/alt
@@ -11,6 +13,7 @@
 	mask = /obj/item/clothing/mask/gas/syndicate
 
 /datum/outfit/job/syndicate/security/gorlex/holdout2
+	name = "Holdout - Doomer Trooper"
 	suit = /obj/item/clothing/suit/armor/hardliners
 	head = /obj/item/clothing/head/helmet/hardliners
 
