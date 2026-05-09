@@ -326,6 +326,22 @@
 	name = "dead crystal watcher"
 	mob_type = /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten
 
+/obj/effect/mob_spawn/animal_corpse/gruboid
+	name = "dead gruboid"
+	mob_type = /mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet
+
+/obj/effect/mob_spawn/animal_corpse/migo
+	name = "dead migo"
+	mob_type = /mob/living/simple_animal/hostile/netherworld/migo/asteroid
+
+/obj/effect/mob_spawn/animal_corpse/creature
+	name = "dead Foul Beast Thing"
+	mob_type = /mob/living/simple_animal/hostile/netherworld/asteroid
+
+/obj/effect/mob_spawn/animal_corpse/baby_gruboid
+	name = "dead baby gruboid"
+	mob_type = /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet
+
 /obj/effect/mob_spawn/animal_corpse/wolf
 	name = "dead wolf"
 	mob_type = /mob/living/simple_animal/hostile/asteroid/wolf
