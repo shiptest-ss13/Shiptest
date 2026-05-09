@@ -10,6 +10,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/lavaland/holdout/kitchen)
 "am" = (
@@ -24,7 +25,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/flippedtable,
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -60,6 +60,9 @@
 /area/ruin/lavaland/holdout/warehousea)
 "az" = (
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("turret")
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/lavaland/holdout/barracks)
 "aC" = (
@@ -458,6 +461,9 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("turret")
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/engineering)
 "eO" = (
@@ -745,11 +751,12 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/lavaland/holdout/mainhall)
 "gR" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/sandbags,
-/turf/open/floor/concrete/pavement/lava,
-/area/overmap_encounter/planetoid/lava/explored)
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/overmap_encounter/planetoid/cave/explored)
 "gU" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
@@ -923,6 +930,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/holdout/mess)
+"ix" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/holdout/warehousea)
 "iC" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1042,6 +1053,9 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("turret")
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/lavaland/holdout/mainhall)
 "jI" = (
@@ -1100,6 +1114,9 @@
 /obj/item/stock_parts/cell/super/empty,
 /obj/item/mecha_parts/mecha_equipment/drill/diamonddrill,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/syndiered/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehouseb)
 "km" = (
@@ -1174,19 +1191,19 @@
 	color = "#730622";
 	alpha = 255
 	},
-/obj/machinery/porta_turret/ship/hardliners/light{
-	faction = list("turret");
-	id = "baseturrets";
-	lethal = 1;
-	turret_flags = 62;
-	req_ship_access = 0
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/porta_turret/ship/hardliners/light{
+	faction = list("turret");
+	id = "baseturrets";
+	lethal = 1;
+	req_ship_access = 0;
+	turret_flags = 62
+	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/holdout/mess)
 "kz" = (
@@ -1247,6 +1264,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehouseb)
 "lA" = (
@@ -1482,6 +1502,9 @@
 /obj/item/stack/ore/salvage/scraptitanium,
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehouseb)
 "nE" = (
@@ -1561,6 +1584,9 @@
 	},
 /obj/item/stack/ore/salvage/scraptitanium,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehouseb)
 "oz" = (
@@ -1677,6 +1703,24 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/under/syndicate/hardliners{
+	pixel_x = 11
+	},
+/obj/item/clothing/suit/armor/hardliners/sergeant{
+	pixel_x = -5
+	},
+/obj/item/clothing/head/hardliners/peaked{
+	pixel_y = 9;
+	pixel_x = 2
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -7;
+	pixel_x = 9
+	},
+/obj/item/storage/belt/security/webbing/hardliners{
+	pixel_x = -6;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/lavaland/holdout/office)
 "oY" = (
@@ -1848,6 +1892,10 @@
 	},
 /obj/effect/turf_decal/siding/black,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/lavaland/holdout/mainhall)
 "pH" = (
@@ -1928,7 +1976,8 @@
 	id = "baseturrets";
 	lethal = 1;
 	req_ship_access = 0;
-	turret_flags = 62
+	turret_flags = 62;
+	scan_range = 10
 	},
 /obj/structure/cable{
 	icon_state = "0-1"
@@ -1945,9 +1994,6 @@
 "qw" = (
 /obj/item/trash/syndi_cakes{
 	pixel_x = 7
-	},
-/obj/structure/flippedtable{
-	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/holdout/mess)
@@ -1969,6 +2015,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehouseb)
 "qK" = (
@@ -2169,6 +2218,9 @@
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehouseb)
 "tv" = (
@@ -2324,6 +2376,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("turret")
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/tcomms)
 "vn" = (
@@ -2360,6 +2415,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/syndiered/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehouseb)
 "vA" = (
@@ -2369,6 +2427,9 @@
 	},
 /obj/item/stack/ore/salvage/scraptitanium,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehouseb)
 "vM" = (
@@ -2430,6 +2491,10 @@
 /obj/structure/toilet,
 /obj/effect/turf_decal/siding/black{
 	dir = 5
+	},
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("turret");
+	name = "Ms. Viscerator"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/mess)
@@ -2643,6 +2708,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehousea)
 "xz" = (
@@ -2668,23 +2734,6 @@
 /obj/structure/fence/door/opened,
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
-"xV" = (
-/obj/structure/catwalk/over/plated_catwalk/white,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/barricade/sandbags,
-/obj/structure/flippedtable{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/lavaland/holdout/mainhall)
 "yg" = (
 /obj/effect/turf_decal/industrial/fire{
 	dir = 4
@@ -2920,7 +2969,8 @@
 "zN" = (
 /obj/structure/closet/secure_closet/armorycage{
 	anchored = 1;
-	can_be_unanchored = 1
+	can_be_unanchored = 1;
+	req_access = null
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 1
@@ -3320,6 +3370,9 @@
 /obj/item/trash/energybar,
 /obj/item/trash/pistachios,
 /obj/item/trash/gummycarps,
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("turret")
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/lavaland/holdout/mainhall)
 "Dt" = (
@@ -3559,6 +3612,9 @@
 	pixel_x = 9
 	},
 /obj/item/shard,
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("turret")
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/armory)
 "Fy" = (
@@ -3638,6 +3694,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehouseb)
 "Ga" = (
@@ -4045,6 +4104,9 @@
 	},
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("turret")
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehousea)
 "IT" = (
@@ -4104,6 +4166,18 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/shoes/combat{
+	pixel_y = -7;
+	pixel_x = 9
+	},
+/obj/item/storage/belt/security/webbing/hardliners/alt{
+	pixel_x = -9;
+	pixel_y = -8
+	},
+/obj/item/storage/belt/security/webbing/hardliners{
+	pixel_x = 10;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/armory)
 "JB" = (
@@ -4295,6 +4369,7 @@
 	},
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/syndiered/corner,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehouseb)
 "Ld" = (
@@ -4315,6 +4390,9 @@
 	icon_state = "2-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 5
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehouseb)
 "Lj" = (
@@ -4517,17 +4595,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/engineering)
 "MN" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/border,
-/obj/effect/turf_decal/siding/black{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/sandbags,
-/obj/structure/flippedtable{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ruin/lavaland/holdout/mainhall)
+/turf/open/floor/plasteel/white,
+/area/overmap_encounter/planetoid/cave/explored)
 "MV" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner{
 	dir = 8
@@ -4636,16 +4706,20 @@
 /turf/open/floor/plating/asteroid/purple/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "NN" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/border,
-/obj/effect/turf_decal/siding/black{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/sandbags,
-/obj/structure/flippedtable{
+/obj/structure/catwalk/over/plated_catwalk/white,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/plasteel/mono/white,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
 /area/ruin/lavaland/holdout/mainhall)
 "NW" = (
 /obj/effect/turf_decal/industrial/fire{
@@ -4733,6 +4807,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("turret")
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/barracks)
 "Oo" = (
@@ -4872,14 +4949,6 @@
 /obj/effect/turf_decal/industrial/hatch{
 	color = "#730622";
 	alpha = 255
-	},
-/obj/machinery/porta_turret/ship/hardliners/heavy{
-	faction = list("turret");
-	id = "baseturrets";
-	lethal = 1;
-	req_ship_access = 0;
-	turret_flags = 62;
-	reaction_time = 15
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -5038,6 +5107,9 @@
 	icon_state = "0-1"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/syndiered/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehouseb)
 "Qr" = (
@@ -5123,6 +5195,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("turret")
+	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/holdout/mess)
 "QQ" = (
@@ -5170,23 +5245,6 @@
 /obj/item/ammo_casing/spent/rifle_steel,
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
-"Rg" = (
-/obj/structure/catwalk/over/plated_catwalk/white,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/barricade/sandbags,
-/obj/structure/flippedtable{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/lavaland/holdout/mainhall)
 "Rn" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/opaque/red/line,
@@ -5199,6 +5257,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("turret")
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehousea)
 "RA" = (
@@ -5466,18 +5527,16 @@
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "Uo" = (
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/effect/turf_decal/siding/black{
+	dir = 1
 	},
-/obj/structure/hazard_shutoff/electrical_shutoff{
-	dir = 1;
-	pixel_y = -12;
-	id = "siege_electrical"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/lavaland/holdout/warehouseb)
+/obj/machinery/power/apc/auto_name/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/holdout/barracks)
 "Ur" = (
 /obj/effect/turf_decal/siding/black{
 	dir = 1
@@ -5486,6 +5545,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/barracks)
 "Ut" = (
@@ -5580,7 +5640,9 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
 	dir = 8
 	},
-/obj/effect/mob_spawn/human/corpse/hardliner/mechanic,
+/obj/effect/mob_spawn/human/corpse/hardliner/mechanic{
+	mob_species = /datum/species/spider
+	},
 /obj/effect/mapping_helpers/chair/tim_buckley,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -5815,15 +5877,11 @@
 	icon_state = "emptycomputer-left";
 	dir = 1
 	},
-/obj/item/radio/intercom{
-	pixel_y = -12;
-	pixel_x = 4
-	},
 /obj/machinery/button/door{
 	dir = 1;
 	name = "Privacy Shutters";
 	id = "sergeantoffice";
-	pixel_x = -10
+	pixel_x = -12
 	},
 /obj/item/trash/can/food{
 	icon_state = "space-up";
@@ -5833,6 +5891,12 @@
 /obj/item/paper/fluff/ruins/holdout/hurrah{
 	pixel_x = -1;
 	pixel_y = 10
+	},
+/obj/structure/hazard_shutoff/electrical_shutoff{
+	dir = 1;
+	pixel_y = 11;
+	id = "siege_electrical";
+	pixel_x = 3
 	},
 /turf/open/floor/suns/hatch{
 	color = "#E6D2BA"
@@ -5884,6 +5948,7 @@
 	icon_state = "0-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plating,
 /area/ruin/lavaland/holdout/engineering)
 "Xs" = (
@@ -5907,7 +5972,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/flippedtable,
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/holdout/mess)
 "XI" = (
@@ -5987,10 +6051,12 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/lavaland/holdout/engineering)
 "Yu" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
-/obj/structure/barricade/sandbags,
-/turf/open/floor/concrete/pavement/lava,
-/area/overmap_encounter/planetoid/lava/explored)
+/obj/effect/turf_decal/corner/transparent/syndiered/diagonal,
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("turret")
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/lavaland/holdout/kitchen)
 "Yx" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/white,
@@ -6049,6 +6115,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("turret")
+	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/holdout/mess)
 "YR" = (
@@ -6090,6 +6159,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/holdout/warehousea)
 "Zc" = (
@@ -7019,7 +7089,7 @@ UY
 eS
 UY
 UY
-UY
+eS
 sK
 sK
 sK
@@ -7077,7 +7147,7 @@ eS
 Nu
 pl
 UY
-UY
+pl
 gK
 gK
 uw
@@ -7136,8 +7206,8 @@ UY
 AN
 UY
 UY
-gK
-UY
+ix
+MN
 gK
 gK
 YW
@@ -7194,7 +7264,7 @@ UY
 UY
 UY
 UY
-UY
+gR
 gK
 gK
 gK
@@ -7314,7 +7384,7 @@ UY
 Ek
 gu
 Ob
-gK
+Sv
 Sv
 yh
 Jf
@@ -7565,8 +7635,8 @@ He
 ZS
 ZS
 fH
-xV
-NN
+Tb
+kx
 ZE
 Dg
 Xl
@@ -7627,7 +7697,7 @@ Cm
 Pn
 kx
 ZE
-Yu
+Dg
 Nn
 Ut
 CR
@@ -7670,7 +7740,7 @@ ZY
 ID
 xq
 lR
-Uo
+FW
 Xk
 pe
 jN
@@ -7683,8 +7753,8 @@ tz
 KE
 ZS
 Me
-Rg
-MN
+cD
+kx
 ZE
 au
 WK
@@ -7745,7 +7815,7 @@ SL
 cD
 kx
 ZE
-gR
+au
 Nn
 Un
 qW
@@ -7860,7 +7930,7 @@ As
 GC
 ZS
 pF
-cD
+NN
 kx
 ZE
 au
@@ -8451,7 +8521,7 @@ Ay
 gZ
 bs
 cA
-Ur
+Uo
 wk
 Kf
 qW
@@ -8504,7 +8574,7 @@ wc
 Zc
 gZ
 kQ
-WM
+Yu
 WM
 Ov
 gZ

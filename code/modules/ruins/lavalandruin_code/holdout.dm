@@ -2,6 +2,7 @@
 	name = "Holdout - Sergeant"
 	suit = /obj/item/clothing/suit/space/hardsuit/stealth/hardliners
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/hardliners
+	belt = /obj/item/storage/belt/security/webbing/hardliners/alt
 
 /datum/outfit/job/syndicate/security/gorlex/holdout1
 	name = "Holdout - Suicidal Trooper"
@@ -21,12 +22,14 @@
 	name = "Holdout Sergeant"
 	id_job = "Site Sergeant"
 	outfit = /datum/outfit/job/syndicate/hos/gorlex/holdout
+	mob_species = /datum/species/human
 
 /obj/effect/mob_spawn/human/corpse/hardliner/trooper/holdout1
 	name = "Holdout Suicidal Trooper"
 	id_job = "Site Trooper"
 	outfit = /datum/outfit/job/syndicate/security/gorlex/holdout1
 	brute_damage = 252
+	mob_species = /datum/species/lizard
 
 /obj/effect/mob_spawn/human/corpse/hardliner/trooper/holdout2
 	name = "Holdout Doomer Trooper"
@@ -34,6 +37,7 @@
 	outfit = /datum/outfit/job/syndicate/security/gorlex/holdout2
 	mob_gender = FEMALE
 	mob_name = "Marianne Tchaikovski"
+	mob_species = /datum/species/human
 
 /obj/machinery/vending/cola/holdout
 	products = list(

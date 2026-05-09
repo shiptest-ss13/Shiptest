@@ -12,12 +12,6 @@
 	suffix = "lavaland_surface_biodome_winter.dmm"
 	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MINOR_LOOT, RUIN_TAG_SHELTER)
 
-/datum/map_template/ruin/lavaland/buried_shrine
-	name = "Buried Shrine"
-	id = "buried_shrine"
-	description = "An ancient temple belonging to some long-gone inhabitants, wrecked and buried by the volcanic activity of it's home planet."
-	suffix = "lavaland_surface_buried_shrine.dmm"
-
 /datum/map_template/ruin/lavaland/wrecked_factory
 	name = "Wrecked Factory"
 	id = "wreck_factory"
