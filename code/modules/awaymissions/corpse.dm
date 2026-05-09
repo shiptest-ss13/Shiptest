@@ -318,6 +318,14 @@
 	name = "dead goliath"
 	mob_type = /mob/living/simple_animal/hostile/asteroid/goliath/beast
 
+/obj/effect/mob_spawn/animal_corpse/goliath/crystal
+	name = "dead crystal goliath"
+	mob_type = /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal
+
+/obj/effect/mob_spawn/animal_corpse/crystal_watcher
+	name = "dead crystal watcher"
+	mob_type = /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten
+
 /obj/effect/mob_spawn/animal_corpse/wolf
 	name = "dead wolf"
 	mob_type = /mob/living/simple_animal/hostile/asteroid/wolf
@@ -327,7 +335,7 @@
 	mob_type = /mob/living/carbon/monkey
 
 /obj/effect/mob_spawn/animal_corpse/junglefowl //chicken
-	name = "dead monkey"
+	name = "dead junglefowl"
 	mob_type = /mob/living/simple_animal/hostile/retaliate/chicken
 
 // I'll work on making a list of corpses people request for maps, or that I think will be commonly used. Syndicate operatives for example.

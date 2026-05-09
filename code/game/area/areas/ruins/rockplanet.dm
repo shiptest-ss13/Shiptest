@@ -266,6 +266,7 @@
 
 /area/ruin/rockplanet/ngrcolony/outdoors
 	outdoors = TRUE
+	allow_weather = TRUE
 
 /area/ruin/rockplanet/ngrcolony/ramzi_camp
 	name = "Ramzi Clique Escapee Camp"
