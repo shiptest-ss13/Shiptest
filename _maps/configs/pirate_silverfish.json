@@ -1,0 +1,48 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/ramzi",
+	"prefix": "ISV",
+	"manufacturer": "Hardline Salvage and Mining",
+	"namelists": [
+		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"MERCANTILE",
+		"PIRATES"],
+	"map_name": "Silverfish-class Blockade Runner",
+	"map_short_name": "Silverfish-class",
+	"map_path": "_maps/shuttles/pirate/pirate_silverfish.dmm",
+	"description": "The Silverfish-class is a rare, semi-standardized Ramzi Clique modification of Hardline's Stag-class expedition leader. Typically, Clique engineers replace the combustion engines with a powerful turbine, replace the captain's quarters with an expanded armory, and most curiusly of all, install rare and expensive military-grade cloaking systems. Unlike similar illicit modifications, the Silverfish is very distinctive and cannot blend in with civilian traffic. Instead, the Silverfish relies on its cloaking device and blistering speed to force- or avoid- engagements.",
+	"tags": [
+		"Engineering",
+		"Generalist",
+		"Combat",
+		"Cargo"
+	],
+	"limit": 1,
+	"job_slots": {
+		"Cell Leader": {
+			"outfit": "/datum/outfit/job/ramzi/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Quartermaster": {
+			"outfit": "/datum/outfit/job/ramzi/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Sawbones": {
+			"outfit": "/datum/outfit/job/ramzi/medic",
+			"slots": 1
+		},
+		"Motorman": {
+			"outfit": "/datum/outfit/job/ramzi/engineer",
+			"slots": 1
+		},
+		"Sweeper": {
+			"outfit": "/datum/outfit/job/ramzi/operative",
+			"slots": 2
+		}
+	},
+	"enabled": false
+}
