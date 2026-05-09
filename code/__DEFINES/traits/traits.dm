@@ -323,6 +323,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
 /// You can't see color!
 #define TRAIT_COLORBLIND "colorblind"
+/// You've got a tail.
+#define TRAIT_TAILED "tailed"
 
 /* Traits for ventcrawling.
  * Both give access to ventcrawling, but *_NUDE requires the user to be
