@@ -316,6 +316,7 @@
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/cybersun_outpost_exterior
 	)
+	spawn_map_border = FALSE
 
 
 /datum/overmap/outpost/cybersun_gas_giant/alter_token_appearance()
