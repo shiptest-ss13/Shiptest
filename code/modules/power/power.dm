@@ -18,6 +18,12 @@
 	power_flags = POWER_ALLOW_WIRE
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE | INTERACT_MACHINE_UNPOWERED
 
+/obj/machinery/vv_edit_var(var_name, var_value)
+	. = ..() // Need to change the flag first before we can handle it proper
+	// If we VV power_flags, also call power_change() to update
+	if(var_name == NAMEOF(src, power_flags))
+		power_change()
+
 ///////////////////////////////
 // General procedures
 //////////////////////////////
@@ -470,8 +476,6 @@
 		if(C.d1 == 0)
 			return C
 	return null
-
-
 
 /area/proc/get_apc()
 	for(var/obj/machinery/power/apc/APC in GLOB.apcs_list)
