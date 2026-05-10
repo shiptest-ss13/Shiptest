@@ -402,12 +402,11 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/canteen)
 "aW" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
-	dir = 6
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
 	},
-/turf/open/floor/suns/hatch/maple,
-/area/outpost/vacant_rooms/office)
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/outpost/external)
 "aX" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 4
@@ -570,11 +569,9 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/library)
 "bv" = (
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/transparent/blue/filled/corner,
 /obj/structure/railing/thin/corner,
+/obj/effect/turf_decal/trimline/transparent/blue/filled/corner,
+/obj/structure/table/wood,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/external)
 "by" = (
@@ -1430,6 +1427,19 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/crew/canteen)
+"ds" = (
+/obj/structure/chair/bench/grey/directional/east{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	pixel_x = 0;
+	pixel_y = -21;
+	name = "privacy shutters";
+	id = "clipshop2";
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/outpost/vacant_rooms/office)
 "dt" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -1874,6 +1884,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
+"eT" = (
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_y = 34
+	},
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/suns/hatch/maple,
+/area/outpost/vacant_rooms/office)
 "eU" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/paper_bin{
@@ -2366,10 +2383,6 @@
 /turf/open/water/beach/deep/outpost,
 /area/outpost/external)
 "gw" = (
-/obj/effect/turf_decal/borderfloorblack/corner{
-	layer = 2.030;
-	dir = 4
-	},
 /obj/effect/turf_decal/minutemen/corner{
 	dir = 1
 	},
@@ -2586,15 +2599,13 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/office)
 "hb" = (
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/corner{
 	dir = 8
 	},
 /obj/structure/railing/thin/corner{
 	dir = 8
 	},
+/obj/structure/table/wood,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/external)
 "hc" = (
@@ -2976,9 +2987,6 @@
 "id" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 8
-	},
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 1
 	},
 /obj/structure/railing/thin{
 	dir = 8
@@ -4508,9 +4516,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/security/checkpoint)
 "lS" = (
-/obj/structure/chair/bench/grey/directional/east{
-	dir = 8
-	},
+/obj/structure/chair/sofa/blue/corpo/left,
 /turf/open/floor/suns/hatch/maple,
 /area/outpost/vacant_rooms/office)
 "lT" = (
@@ -5509,18 +5515,8 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
 "oz" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
-	dir = 4
-	},
-/obj/structure/railing/thin{
-	dir = 4
-	},
-/obj/structure/chair/handrail{
-	dir = 8
-	},
-/turf/open/floor/suns/hatch/maple,
-/area/outpost/vacant_rooms/office)
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/outpost/external)
 "oA" = (
 /obj/machinery/light/floor,
 /obj/structure/cable{
@@ -5900,9 +5896,11 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/engineering)
 "px" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
-	dir = 10
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
 	},
 /obj/structure/railing/thin{
 	dir = 8
@@ -5910,8 +5908,8 @@
 /obj/structure/chair/handrail{
 	dir = 4
 	},
-/turf/open/floor/suns/hatch/maple,
-/area/outpost/vacant_rooms/office)
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/outpost/external)
 "pA" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -7262,6 +7260,12 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/outpost/exterior/ocean)
+"sO" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 9
+	},
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/outpost/external)
 "sQ" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 6
@@ -8392,9 +8396,14 @@
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/cargo/smeltery)
 "we" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#D2BC9D"
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 8
 	},
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/suns/hatch/maple,
 /area/outpost/vacant_rooms/office)
 "wh" = (
@@ -8916,11 +8925,12 @@
 "xx" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D";
-	dir = 4
+	dir = 6
 	},
 /obj/structure/railing/thin{
 	dir = 4
 	},
+/obj/structure/rack,
 /turf/open/floor/suns/hatch/maple,
 /area/outpost/vacant_rooms/office)
 "xy" = (
@@ -8996,10 +9006,6 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/checkpoint)
 "xN" = (
-/obj/effect/turf_decal/borderfloorblack/corner{
-	layer = 2.030;
-	dir = 1
-	},
 /obj/effect/turf_decal/minutemen/corner{
 	dir = 4
 	},
@@ -11294,11 +11300,11 @@
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/operations)
 "DK" = (
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 5
-	},
 /obj/effect/turf_decal/minutemen/corner{
 	dir = 8
+	},
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 4
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/external)
@@ -11880,9 +11886,6 @@
 "EZ" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 4
-	},
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 1
 	},
 /obj/structure/railing/thin{
 	dir = 4
@@ -12712,7 +12715,7 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/airlock/public/glass{
+/obj/machinery/door/airlock/public{
 	name = "Pier"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -15369,7 +15372,6 @@
 "Nu" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /obj/structure/railing/thin,
-/obj/structure/table/wood,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/external)
 "Nw" = (
@@ -15831,9 +15833,11 @@
 /turf/open/floor/wood/ebony,
 /area/outpost/crew/sauna)
 "OI" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
-	dir = 6
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
 	},
 /obj/structure/railing/thin{
 	dir = 4
@@ -15841,8 +15845,8 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
-/turf/open/floor/suns/hatch/maple,
-/area/outpost/vacant_rooms/office)
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/outpost/external)
 "OL" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8;
@@ -17168,10 +17172,7 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "RJ" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
-	dir = 10
-	},
+/obj/structure/chair/sofa/blue/corpo/directional/south,
 /turf/open/floor/suns/hatch/maple,
 /area/outpost/vacant_rooms/office)
 "RK" = (
@@ -17628,7 +17629,6 @@
 /obj/structure/railing/thin{
 	dir = 10
 	},
-/obj/structure/chair/plastic,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/external)
 "SW" = (
@@ -17921,7 +17921,6 @@
 /obj/structure/railing/thin{
 	dir = 6
 	},
-/obj/structure/chair/plastic,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/external)
 "TH" = (
@@ -18477,11 +18476,10 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/checkpoint)
 "Vc" = (
-/obj/effect/turf_decal/borderfloorblack{
-	layer = 2.030;
-	dir = 9
-	},
 /obj/effect/turf_decal/minutemen/corner,
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 1
+	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/external)
 "Vd" = (
@@ -18750,7 +18748,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/bar)
 "VR" = (
-/obj/structure/chair/bench/grey/directional/east,
+/obj/structure/chair/sofa/blue/corpo/right/directional/south,
 /turf/open/floor/suns/hatch/maple,
 /area/outpost/vacant_rooms/office)
 "VT" = (
@@ -19502,12 +19500,11 @@
 /turf/open/water/beach/deep/outpost,
 /area/outpost/external)
 "XN" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#D2BC9D";
-	dir = 8
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 5
 	},
-/turf/open/floor/suns/hatch/maple,
-/area/outpost/vacant_rooms/office)
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/outpost/external)
 "XO" = (
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030;
@@ -19915,13 +19912,10 @@
 "YO" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D";
-	dir = 8
+	dir = 10
 	},
 /obj/structure/railing/thin{
 	dir = 8
-	},
-/obj/structure/chair/handrail{
-	dir = 4
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/outpost/vacant_rooms/office)
@@ -20020,7 +20014,7 @@
 /obj/structure/railing/thin{
 	dir = 4
 	},
-/obj/structure/rack,
+/obj/structure/table,
 /turf/open/floor/suns/hatch/maple,
 /area/outpost/vacant_rooms/office)
 "YX" = (
@@ -26206,9 +26200,9 @@ sm
 Je
 sm
 Je
+we
 Wr
 YO
-Wr
 px
 id
 SU
@@ -26330,10 +26324,10 @@ NM
 mc
 Je
 VR
-VR
-KD
+VZ
 YH
 up
+oz
 Nu
 WF
 rj
@@ -26452,9 +26446,9 @@ nd
 wF
 nS
 Je
+RJ
 VZ
-VZ
-we
+YH
 aW
 bv
 FN
@@ -26576,8 +26570,8 @@ CA
 Je
 Je
 lS
-lS
-YH
+VZ
+sO
 Vc
 xN
 nF
@@ -26698,9 +26692,9 @@ vv
 Ex
 fd
 Je
+eT
 KD
-KD
-YH
+XN
 DK
 gw
 Zl
@@ -26823,8 +26817,8 @@ Yy
 Je
 KD
 KD
-XN
-RJ
+YH
+aW
 hb
 ZL
 WF
@@ -26946,9 +26940,9 @@ wL
 GK
 KD
 KD
-KD
 YH
 up
+oz
 Nu
 WF
 rj
@@ -27068,7 +27062,7 @@ Px
 Wo
 Je
 YW
-oz
+YW
 xx
 OI
 EZ
@@ -27187,7 +27181,7 @@ qm
 Fc
 ME
 ee
-Px
+ds
 Je
 Je
 nF
