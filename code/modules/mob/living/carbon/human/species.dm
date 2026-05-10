@@ -799,12 +799,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!H.dna.features["spines"] || H.dna.features["spines"] == "None" || tail_visibility)
 			bodyparts_to_add -= "spines"
 
-	if("waggingspines" in mutant_bodyparts)
-		if(!H.dna.features["spines"] || H.dna.features["spines"] == "None" || tail_visibility)
-			bodyparts_to_add -= "waggingspines"
-		else if ("tail" in mutant_bodyparts)
-			bodyparts_to_add -= "waggingspines"
-
 	if("face_markings" in mutant_bodyparts) //Take a closer look at that snout! //technically
 		if((H.wear_mask?.flags_inv & HIDEFACE) || (H.head?.flags_inv & HIDEFACE) || !HD)
 			bodyparts_to_add -= "face_markings"

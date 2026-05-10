@@ -428,6 +428,42 @@
 	var/can_wag = TRUE
 	/// Should this be currently using the animated sprite?
 	var/wagging = FALSE
+	/// Allows equipping certain storage items
+	var/sturdy = TRUE
+
+/obj/item/bodypart/tail/set_owner(new_owner)
+	. = ..()
+	if(. == FALSE)
+		return
+	if(owner)
+		if(HAS_TRAIT(owner, TRAIT_PARALYSIS_TAIL))
+			ADD_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_TAIL)
+			RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_TAIL), PROC_REF(on_owner_paralysis_loss))
+		else
+			REMOVE_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_TAIL)
+			RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_TAIL), PROC_REF(on_owner_paralysis_gain))
+	if(.)
+		var/mob/living/carbon/old_owner = .
+		if(HAS_TRAIT(old_owner, TRAIT_PARALYSIS_TAIL))
+			UnregisterSignal(old_owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_TAIL))
+			if(!owner || !HAS_TRAIT(owner, TRAIT_PARALYSIS_TAIL))
+				REMOVE_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_TAIL)
+		else
+			UnregisterSignal(old_owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_TAIL))
+
+///Reacts to the owner gaining the TRAIT_PARALYSIS_TAIL trait.
+/obj/item/bodypart/tail/proc/on_owner_paralysis_gain(mob/living/carbon/source)
+	SIGNAL_HANDLER
+	ADD_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_TAIL)
+	UnregisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_TAIL))
+	RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_TAIL), PROC_REF(on_owner_paralysis_loss))
+
+///Reacts to the owner losing the TRAIT_PARALYSIS_TAIL trait.
+/obj/item/bodypart/tail/proc/on_owner_paralysis_loss(mob/living/carbon/source)
+	SIGNAL_HANDLER
+	REMOVE_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_TAIL)
+	UnregisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_TAIL))
+	RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_TAIL), PROC_REF(on_owner_paralysis_gain))
 
 /obj/item/bodypart/tail/set_disabled(new_disabled)
 	if(..())
@@ -437,12 +473,13 @@
 
 /obj/item/bodypart/tail/proc/set_wag(new_state = FALSE)
 	if(!can_wag)
-		return
+		return FALSE
 	if(new_state == wagging)
-		return
+		return FALSE
 	wagging = new_state
 	if(wagging)
 		limb_id = "[initial(limb_id)]_wagging"
 	else
 		limb_id = initial(limb_id)
 	owner?.update_body()
+	return TRUE

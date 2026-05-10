@@ -26,7 +26,7 @@
 	var/obj/item/organ/ears/cat/cat_ears = locate() in internal_organs
 	if(cat_tail)
 		cat_tail.drop_limb(TRUE, FALSE)
-		regenerate_limb(BODY_ZONE_TAIL, robotic = fbp)
+		regenerate_limb(BODY_ZONE_TAIL, robotic = HAS_TRAIT(src, TRAIT_USE_PROSTHETIC))
 	if(cat_ears)
 		var/obj/item/organ/new_ears = new dna.species.species_organs[ORGAN_SLOT_EARS]
 		new_ears.Insert(src, TRUE, FALSE)

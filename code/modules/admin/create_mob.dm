@@ -40,18 +40,6 @@
 	H.dna.features["vox_neck_quills"] = pick(GLOB.vox_neck_quills_list)
 	H.dna.features["elzu_horns"] = pick(GLOB.elzu_horns_list)
 
-	// Random bodyparts
-	for(var/zone in H.dna.species.species_optional_limbs)
-		if(prob(70) && !H.dna.species.species_limbs[zone])
-			continue
-		var/obj/item/bodypart/old_part = H.get_bodypart(zone)
-		var/obj/item/bodypart/new_part = pick(H.dna.species.species_optional_limbs[zone])
-		new_part = new new_part()
-		if(old_part)
-			old_part.drop_limb(TRUE)
-			qdel(old_part)
-		new_part.attach_limb(H)
-
 	H.hairstyle = random_hairstyle(H.gender)
 	H.facial_hairstyle = random_facial_hairstyle(H.gender)
 	H.hair_color = random_color_natural()

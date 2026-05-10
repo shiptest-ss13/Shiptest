@@ -61,6 +61,29 @@
 	body_damage_coeff = 0.6
 	body_weight = 8
 	can_thump = TRUE
+	/// Keeps track of which spines should be displayed.
+	var/spines
+
+/obj/item/bodypart/tail/lizard/set_owner(new_owner)
+	. = ..()
+	if(. == FALSE)
+		return
+	if(owner)
+		if(!spines)
+			spines = owner.dna.features["spines"] || "None"
+			owner.dna.species.mutant_bodyparts |= "spines"
+		else
+			owner.dna.features["spines"] = spines
+	else if(.)
+		var/mob/living/carbon/old_owner = .
+		old_owner.dna.species.mutant_bodyparts -= "spines"
+
+/obj/item/bodypart/tail/lizard/set_wag(new_state)
+	if(!..())
+		return FALSE
+	if(owner.dna?.species)
+		owner.dna.species.handle_mutant_bodyparts(owner)
+	return TRUE
 
 /obj/item/bodypart/tail/lizard/large
 	name = "large sarathi tail"
@@ -85,6 +108,7 @@
 	examine_id = "prosthetic " + SPECIES_SARATHI
 	limb_id = "synth_" + SPECIES_SARATHI
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = BIO_ROBOTIC
 
 /obj/item/bodypart/tail/lizard/one_color
 	name = "sarathi tail (one color)"

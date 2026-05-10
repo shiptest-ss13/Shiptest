@@ -50,8 +50,6 @@
 		eye_color = random_eye_color()
 	if(randomise[RANDOM_PROSTHETIC])
 		custom_limbs = random_prosthetic()
-	if(randomise[RANDOM_BODYPARTS])
-		custom_limbs = random_bodyparts()
 	if(!pref_species)
 		var/rando_race = pick(GLOB.roundstart_races)
 		pref_species = new rando_race()
@@ -64,13 +62,6 @@
 		real_name = pref_species.random_name(gender, TRUE)
 	if(randomise[RANDOM_AGE])
 		age = rand(pref_species.species_age_min, pref_species.species_age_max)
-
-/datum/preferences/proc/random_bodyparts()
-	for(var/zone in pref_species.species_optional_limbs)
-		if(prob(70) && !(zone in pref_species.species_limbs))
-			custom_limbs[zone] = PROSTHETIC_NONE
-			continue
-		custom_limbs[zone] = pick(pref_species.species_optional_limbs[zone])
 
 /datum/preferences/proc/update_preview_icon(show_gear = TRUE, show_loadout = FALSE)
 	// Set up the dummy for its photoshoot

@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 45
+#define SAVEFILE_VERSION_MAX 44 // set this back to 45 later
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -134,13 +134,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				if("Familiar (2)")
 					learned_languages[lang_type] = LANGUAGE_CONVERSATIONAL
 				if("Fluent (3)")
-					learned_languages[lang_type] = LANGUAGE_FLUENT	if(current_version < 44)
+					learned_languages[lang_type] = LANGUAGE_FLUENT
 	if(current_version < 45)
 		var/list/prosthetic_limbs = list()
 		READ_FILE(S["prosthetic_limbs"], prosthetic_limbs)
 		var/static/list/basic_options = list(PROSTHETIC_NORMAL, PROSTHETIC_NONE, PROSTHETIC_ROBOTIC)
 		for(var/zone in custom_limbs)
-			var/old_limb = prosthetic_limbs[zone]
+			var/old_limb = custom_limbs[zone]
 			if(!old_limb)
 				continue
 			if(old_limb == "amputated")
@@ -151,26 +151,26 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			custom_limbs[zone] = old_limb
 		var/static/list/legacy_features_to_bodypart = list(
 			"Smooth (Two color)" = PROSTHETIC_NORMAL,
-			"Smooth (One color)" = /obj/item/bodypart/tail/lizard/one_color,
-			"Small" = /obj/item/bodypart/tail/lizard/small,
-			"Large" = /obj/item/bodypart/tail/lizard/large,
+			"Smooth (One color)" = "One-Color Sarathi Tail",
+			"Small" = "Small Sarathi Tail",
+			"Large" = "Large Sarathi Tail",
 			"Prosthetic" = PROSTHETIC_ROBOTIC,
-			"Cat" = /obj/item/bodypart/tail/human/cat,
-			"Slimecat" = /obj/item/bodypart/tail/human/cat/slime,
-			"Dog" = /obj/item/bodypart/tail/human/dog,
-			"Fox" = /obj/item/bodypart/tail/human/fox,
-			"Fox 2" = /obj/item/bodypart/tail/human/fox/alt,
-			"Horse" = /obj/item/bodypart/tail/human/horse,
-			"Rabbit" = /obj/item/bodypart/tail/human/rabbit,
-			"Synthetic Sarathi" = /obj/item/bodypart/tail/ipc/pgf,
-			"Synthetic Sarathi Large" = /obj/item/bodypart/tail/ipc/pgf/large,
-			"Power Plug" = /obj/item/bodypart/tail/ipc/plug,
-			"Pawsitrons Cat" = /obj/item/bodypart/tail/ipc/cat,
-			"Pawsitrons Fox" = /obj/item/bodypart/tail/ipc/fox,
-			"Pawsitrons Fox 2" = /obj/item/bodypart/tail/ipc/fox/alt,
+			"Cat" = "Cat Tail",
+			"Slimecat" = "Cat Tail",
+			"Dog" = "Dog Tail",
+			"Fox" = "Fox Tail",
+			"Fox 2" = "Fox Tail (Alt)",
+			"Horse" = "Horse Tail",
+			"Rabbit" = "Rabbit Tail",
+			"Synthetic Sarathi" = "Synthetic Sarathi Tail",
+			"Synthetic Sarathi Large" = "Synthetic Large Sarathi Tail",
+			"Power Plug" = "Power Plug",
+			"Pawsitrons Cat" = "Synthetic Cat Tail",
+			"Pawsitrons Fox" = "Synthetic Fox Tail",
+			"Pawsitrons Fox 2" = "Synthetic Fox Tail (Alt)",
 			"Long" = PROSTHETIC_NORMAL,
-			"Bifurcated" = /obj/item/bodypart/tail/elzu/bifurcated,
-			"Stubby" = /obj/item/bodypart/tail/elzu/stubby,
+			"Bifurcated" = "Bifurcated Elzuose Tail",
+			"Stubby" = "Stubby Elzuose Tail",
 			"None" = PROSTHETIC_NONE,
 		) // hell
 		var/legacy_feature

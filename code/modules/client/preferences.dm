@@ -921,10 +921,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					continue
 				var/zone_name = parse_zone(index)
 				dat += "<tr><td><b>[zone_name]:</b></td>"
-				var/limb_name = prosthetic_limbs[index]
+				var/limb_name = custom_limbs[index]
 				dat += "<td><a href='byond://?_src_=prefs;preference=limbs;customize_limb=[index]'>[limb_name]</a>"
 				switch(limb_name)
-					if(PROSTHETIC_NORMAL, PROSTHETIC_AMPUTATED, PROSTHETIC_ROBOTIC)
+					if(PROSTHETIC_NORMAL, PROSTHETIC_NONE, PROSTHETIC_ROBOTIC)
 						dat += "</td></tr>"
 					else
 						var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[limb_name]
@@ -1573,49 +1573,39 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	return 0
 
 /datum/preferences/proc/init_custom_limbs()
-	for(var/zone in pref_species.species_limbs | pref_species.species_optional_limbs)
-		if(!(zone in pref_species.species_limbs))
+	custom_limbs = list()
+	for(var/zone in pref_species.species_limbs)
+		if(isnull(pref_species.species_limbs[zone]))
 			custom_limbs[zone] = PROSTHETIC_NONE
-			continue
-		if(zone in pref_species.species_optional_limbs)
-			custom_limbs[zone] = pick(pref_species.species_optional_limbs[zone])
 			continue
 		custom_limbs[zone] = PROSTHETIC_NORMAL
 
 /// Cleans up any cases of limbs being where they shouldn't when loading prefs or changing character species. Fairly expensive, so only use it when needed.
 /datum/preferences/proc/sanitize_custom_limbs(species_change = FALSE)
-	var/list/all_zones = custom_limbs | pref_species.species_limbs | pref_species.species_optional_limbs
+	var/list/all_zones = custom_limbs | pref_species.species_limbs
 	for(var/zone in all_zones)
-		var/custom_limb = custom_limbs[zone]
 		if(!(zone in pref_species.species_limbs))
-			if(!(pref_species.species_optional_limbs))
-				custom_limbs.Remove(zone)
-				continue
-			if(!(custom_limb in pref_species.species_optional_limbs[zone]))
-				custom_limbs[zone] = PROSTHETIC_NONE
-				continue
-		else if(species_change && custom_limb == PROSTHETIC_NONE)
-			custom_limbs[zone] = PROSTHETIC_NORMAL
+			custom_limbs -= zone
 			continue
-		if(!(zone in pref_species.species_robotic_limbs) && custom_limb == PROSTHETIC_ROBOTIC)
-			custom_limbs[zone] = PROSTHETIC_NORMAL
-			continue
-		if(!istext(custom_limb))
-			if(custom_limb in pref_species.species_optional_limbs[zone])
-				continue
-			var/obj/item/bodypart/part = custom_limb
-			if(initial(part.bodytype) & pref_species.bodytype)
-				continue
-			var/is_ipc_part = FALSE
-			var/datum/sprite_accessory/body/limb_style
-			for(var/alt_body in GLOB.alternative_body_list)
-				limb_style = GLOB.ipc_chassis_list[alt_body]
-				if(custom_limb == limb_style.replacement_bodyparts[zone])
-					is_ipc_part = TRUE
-					break
-			if(is_ipc_part)
-				continue
-			custom_limbs[zone] = PROSTHETIC_NORMAL
+		var/custom_limb = custom_limbs[zone] || PROSTHETIC_NORMAL
+		switch(custom_limb)
+			if(PROSTHETIC_NONE)
+				if(species_change && !isnull(pref_species.species_limbs[zone]))
+					custom_limbs[zone] = PROSTHETIC_NORMAL
+			if(PROSTHETIC_ROBOTIC)
+				if(!pref_species.prosthetic_style?.replacement_bodyparts?[zone])
+					custom_limbs[zone] = isnull(pref_species.species_limbs[zone]) ? PROSTHETIC_NONE : PROSTHETIC_NORMAL
+			if(PROSTHETIC_NORMAL)
+				if(isnull(pref_species.species_limbs[zone]))
+					custom_limbs[zone] = PROSTHETIC_NONE
+			else
+				var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[custom_limb]
+				if(
+					(limb_style.allowed_species && !(pref_species.type in limb_style.allowed_species)) \
+					|| !(limb_style.replacement_bodyparts[zone]) \
+					|| !(pref_species.bodytype & limb_style.bodytype) \
+				)
+					custom_limbs[zone] = isnull(pref_species.species_limbs[zone]) ? PROSTHETIC_NONE : PROSTHETIC_NORMAL
 
 /datum/preferences/Topic(href, href_list, hsrc)			//yeah, gotta do this I guess..
 	. = ..()
@@ -2309,19 +2299,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/list/limb_options = list()
 						if(pref_species.species_limbs[limb])
 							limb_options["Normal"] = PROSTHETIC_NORMAL
-						if(pref_species.prosthetic_style)
+						if(pref_species.prosthetic_style?.replacement_bodyparts?[limb])
 							limb_options["Robotic"] = PROSTHETIC_ROBOTIC
 						if(limb != BODY_ZONE_CHEST && limb != BODY_ZONE_HEAD)
 							limb_options["None"] = PROSTHETIC_NONE // starting without a head or chest causes instant death, must be disallowed
-						if(limb in pref_species.species_optional_limbs) // special bodypart options! mainly used for tails
-							for(var/obj/item/bodypart/limb_type as anything in pref_species.species_optional_limbs[limb])
-								limb_options[initial(limb_type.name)] = limb_type
 						var/obj/item/bodypart/part_candidate
 						var/datum/sprite_accessory/body/limb_style
 						for(var/body in GLOB.alternative_body_list)
 							limb_style = GLOB.alternative_body_list[body]
 							if(limb_style.locked)
 								continue
+							if(limb_style.type == pref_species.prosthetic_style)
+								continue // already accounted for
 							part_candidate = limb_style.replacement_bodyparts[limb]
 							if(isnull(part_candidate))
 								continue
@@ -2329,7 +2318,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								continue
 							if(!(pref_species.bodytype & initial(part_candidate.bodytype))) // don't allow vox and kepori to select limbs that aren't compatible
 								continue
-							limb_options.Add(body)
+							limb_options[body] = body
 
 						var/limb_selection = tgui_input_list(
 							user,
@@ -2338,7 +2327,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							limb_options,
 						)
 						if(limb_selection)
-							prosthetic_limbs[limb] = limb_selection
+							custom_limbs[limb] = limb_options[limb_selection]
 
 				if("body_desc")
 					var/datum/sprite_accessory/body/limb_style = locate(href_list["limb_style"])
@@ -2712,30 +2701,32 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		var/obj/item/bodypart/old_part = character.get_bodypart(zone)
 		if(old_part)
 			icon_updates = TRUE
-		switch(prosthetic_limbs[zone])
+		switch(custom_limbs[zone])
 			if(PROSTHETIC_NORMAL)
 				if(old_part)
 					old_part.drop_limb(TRUE)
 					qdel(old_part)
 				character.regenerate_limb(zone, robotic = is_robotic)
-			if(PROSTHETIC_AMPUTATED)
+			if(PROSTHETIC_NONE)
 				if(old_part)
 					old_part.drop_limb(TRUE)
 					qdel(old_part)
 				if(zone == BODY_ZONE_CHEST || zone == BODY_ZONE_HEAD)
-					stack_trace("[parent] somehow had their [parse_zone(zone)] set to [PROSTHETIC_AMPUTATED]!")
-					prosthetic_limbs[zone] = PROSTHETIC_NORMAL
+					stack_trace("[parent] somehow had their [parse_zone(zone)] set to [PROSTHETIC_NONE]!")
+					custom_limbs[zone] = PROSTHETIC_NORMAL
 					character.regenerate_limb(zone, robotic = is_robotic)
+				else if(isnull(character.dna.species.species_limbs[zone]))
+					character.dna.species.species_limbs -= zone // if there's no limb by default,
 			if(PROSTHETIC_ROBOTIC)
 				if(old_part)
 					old_part.drop_limb(TRUE)
 					qdel(old_part)
 				character.regenerate_limb(zone, robotic = TRUE)
 			else
-				var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[prosthetic_limbs[zone]]
+				var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[custom_limbs[zone]]
 				var/obj/item/bodypart/new_part = limb_style.replacement_bodyparts[zone]
 				if(!character_setup && !(new_part.bodytype & BODYTYPE_ROBOTIC)) // this preserves non-prosthetics through anything that regenerates the whole bodypart
-					character.dna.species.species_limbs[pros_limb] = new_part
+					character.dna.species.species_limbs[zone] = new_part
 				new_part = new new_part()
 				if(old_part)
 					old_part.drop_limb(TRUE)

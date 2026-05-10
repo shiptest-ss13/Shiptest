@@ -17,6 +17,47 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc,
 	)
 
+//Tails
+
+/datum/sprite_accessory/body/ipc_tail
+	allowed_species = list(/datum/species/ipc)
+
+/datum/sprite_accessory/body/ipc_tail/plug
+	name = "Power Plug"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/plug
+	)
+
+/datum/sprite_accessory/body/ipc_tail/fox
+	name = "Synthetic Fox Tail"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/fox
+	)
+
+/datum/sprite_accessory/body/ipc_tail/fox_alt
+	name = "Synthetic Fox Tail (Alt)"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/fox/alt
+	)
+
+/datum/sprite_accessory/body/ipc_tail/cat
+	name = "Synthetic Cat Tail"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/cat
+	)
+
+/datum/sprite_accessory/body/ipc_tail/sarathi
+	name = "Synthetic Sarathi Tail"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/pgf
+	)
+
+/datum/sprite_accessory/body/ipc_tail/sarathi_large
+	name = "Synthetic Large Sarathi Tail"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/pgf/large
+	)
+
 //Pawsitrons United N1
 
 /datum/sprite_accessory/body/ipc_chassis/pawsitrons
@@ -244,7 +285,6 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/pgf,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/pgf,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/pgf,
-		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/pgf,
 	)
 
 /datum/sprite_accessory/body/ipc_chassis/pgf_type_d
@@ -260,7 +300,6 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/pgf,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/pgf/type_d,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/pgf/type_d,
-		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/pgf,
 	)
 
 //Besoro Bishop

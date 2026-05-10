@@ -120,7 +120,6 @@
 #define RANDOM_SKIN_TONE "random_skin_tone"
 #define RANDOM_EYE_COLOR "random_eye_color"
 #define RANDOM_PROSTHETIC "random_prosthetic"
-#define RANDOM_BODYPARTS "random_bodyparts"
 #define RANDOM_HAIR_GRADIENT_STYLE "random_grad_style"
 #define RANDOM_HAIR_GRADIENT_COLOR "random_grad_color"
 

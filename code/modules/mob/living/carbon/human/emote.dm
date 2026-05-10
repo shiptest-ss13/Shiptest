@@ -104,7 +104,10 @@
 	vary = TRUE
 
 /datum/emote/living/carbon/human/tailthump/can_run_emote(mob/living/user, status_check, intentional)
-	if(!user.get_bodypart(BODY_ZONE_TAIL))
+	var/obj/item/bodypart/tail/user_tail = user.get_bodypart(BODY_ZONE_TAIL)
+	if(!user_tail?.can_thump)
+		return FALSE
+	if(user_tail.bodypart_disabled)
 		return FALSE
 	return ..()
 
@@ -177,6 +180,7 @@
 	if(!the_tail)
 		return
 	the_tail.set_wag(!the_tail.wagging)
+	user.update_body()
 
 /datum/emote/living/carbon/human/wag/can_run_emote(mob/living/user, status_check = TRUE , intentional)
 	if(!..())

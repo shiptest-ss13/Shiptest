@@ -44,6 +44,7 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc,
+		BODY_ZONE_TAIL = null,
 	)
 
 	// This will be set manually based on IPC chassis selection.

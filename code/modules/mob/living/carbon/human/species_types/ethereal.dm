@@ -56,12 +56,6 @@
 		BODY_ZONE_TAIL = /obj/item/bodypart/tail/elzu,
 	)
 
-	species_optional_limbs = list(BODY_ZONE_TAIL = list(
-		/obj/item/bodypart/tail/elzu,
-		/obj/item/bodypart/tail/elzu/bifurcated,
-		/obj/item/bodypart/tail/elzu/stubby,
-	))
-
 	var/current_color
 	var/EMPeffect = FALSE
 	var/static/unhealthy_color = rgb(237, 164, 149)

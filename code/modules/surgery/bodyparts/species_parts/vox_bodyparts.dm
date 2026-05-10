@@ -57,6 +57,7 @@
 	body_weight = 12
 	can_wag = FALSE
 	can_thump = TRUE
+	dismemberable = FALSE
 	dmg_overlay_icon = 'icons/mob/species/vox/vox_overlays.dmi'
 	bodypart_actions = list(/datum/action/innate/tail_hold)
 
