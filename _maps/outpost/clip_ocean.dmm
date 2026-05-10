@@ -3033,15 +3033,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/security/armory)
-"if" = (
-/obj/structure/catwalk/over{
-	color = "#999999"
-	},
-/obj/structure/platform/industrial_alt/indestructible{
-	dir = 4
-	},
-/turf/open/water/beach/deep/outpost,
-/area/outpost/exterior/ocean)
 "ig" = (
 /obj/structure/table/wood,
 /obj/item/modular_computer/laptop/preset/civilian/rilena{
@@ -4053,6 +4044,9 @@
 "kG" = (
 /obj/structure/catwalk/over{
 	color = "#999999"
+	},
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
 /area/outpost/exterior/ocean)
@@ -8617,10 +8611,6 @@
 /obj/item/weldingtool/mini{
 	pixel_x = 5;
 	pixel_y = 6
-	},
-/obj/structure/sign/poster/contraband/engis_unite{
-	pixel_x = 0;
-	pixel_y = -28
 	},
 /obj/machinery/light/directional/south,
 /obj/item/clothing/head/welding{
@@ -14167,6 +14157,10 @@
 	pixel_y = 6
 	},
 /obj/effect/turf_decal/corner/transparent/lime/half,
+/obj/structure/sign/poster/contraband/engis_unite{
+	pixel_x = 0;
+	pixel_y = -28
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "JY" = (
@@ -28438,7 +28432,7 @@ hr
 Ae
 pL
 Mx
-if
+kG
 Zz
 Zz
 Zz
@@ -28446,7 +28440,7 @@ Zz
 Zz
 Zz
 Zz
-if
+kG
 zm
 DI
 cu
@@ -36925,10 +36919,10 @@ OP
 fs
 fs
 YZ
-rj
+eo
 YZ
 YZ
-rj
+uv
 rj
 rj
 rj
@@ -37046,12 +37040,12 @@ jz
 vm
 Ed
 fs
-rj
-rj
-rj
+uv
+eo
+eo
 YZ
-rj
-rj
+eo
+uv
 rj
 rj
 rj
@@ -37169,11 +37163,11 @@ fp
 fp
 OA
 fs
-rj
-rj
-rj
+uv
+uv
+eo
 YZ
-rj
+eo
 rj
 rj
 rj
@@ -37293,10 +37287,10 @@ EU
 fs
 fs
 rj
-rj
-rj
+uv
+uv
 YZ
-rj
+eo
 rj
 rj
 rj
@@ -37417,9 +37411,9 @@ fs
 rj
 rj
 rj
-rj
-rj
-rj
+uv
+uv
+uv
 rj
 rj
 rj
