@@ -319,11 +319,10 @@ Class Procs:
 /obj/machinery/proc/on_set_is_operational(old_value)
 	return
 
-
 /obj/machinery/can_interact(mob/user)
 	if(machine_stat & BROKEN && !(interaction_flags_machine & INTERACT_MACHINE_BROKEN)) // Check if the machine is broken, and if we can still interact with it if so
 		return FALSE
-	if(machine_stat & NOPOWER && !(interaction_flags_machine & INTERACT_MACHINE_UNPOWERED)) // Chef if the machine is powered, and if we can still interact with it if not
+	if(machine_stat & NOPOWER && !(interaction_flags_machine & INTERACT_MACHINE_UNPOWERED)) // Check if the machine is powered, and if we can still interact with it if not
 		return FALSE
 
 	var/silicon = issilicon(user)
