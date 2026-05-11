@@ -53,11 +53,14 @@
 
 	if(!length(available_planets))
 		return INITIALIZE_HINT_QDEL
+
+	selected_planet = pick(available_planets)
+
 	return ..()
 
 /datum/mission/drill/generate_mission_details()
 	. = ..()
-	selected_planet = pick(available_planets)
+
 	num_wanted = rand(num_wanted-2,num_wanted+2)
 	value += num_wanted*100
 	name = "Class [class_wanted] [selected_planet.name] core sample mission"
