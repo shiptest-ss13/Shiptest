@@ -4304,7 +4304,10 @@
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 5
 	},
-/obj/structure/bed/bunk,
+/obj/structure/bed/bunk{
+	name = "nursing bed";
+	desc = "Looks sterile enough."
+	},
 /obj/effect/turf_decal/corner/opaque/lightgrey/half,
 /obj/effect/turf_decal/corner/transparent/bar/half,
 /obj/effect/turf_decal/trimline/transparent/white/filled/line{
