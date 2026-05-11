@@ -1689,8 +1689,15 @@
 /turf/open/floor/wood/walnut,
 /area/outpost/vacant_rooms)
 "ek" = (
-/turf/closed/indestructible/plastitanium/nodiagnonal,
-/area/outpost/external)
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/outpost{
+	name = "Enforcer Base"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/outpost/security/checkpoint)
 "el" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/suns/hatch/maple,
@@ -2534,6 +2541,10 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
 	},
+/obj/structure/sign/poster/clip/maxin{
+	pixel_x = 28;
+	pixel_y = 0
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/outpost/crew/library)
 "gP" = (
@@ -3253,15 +3264,15 @@
 /obj/effect/turf_decal/trimline/transparent/blue/filled/arrow_ccw{
 	dir = 4
 	},
-/obj/structure/sign/poster/clip/maxin{
-	pixel_x = 0;
-	pixel_y = 32
-	},
 /obj/structure/railing/thin{
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/warning{
 	dir = 8
+	},
+/obj/structure/sign/poster/clip/star_city{
+	pixel_x = 0;
+	pixel_y = 31
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/exterior/ocean)
@@ -4527,6 +4538,18 @@
 	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
+"lP" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/airlock/outpost{
+	name = "Enforcer Base"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/outpost/security/checkpoint)
 "lQ" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
@@ -20002,15 +20025,15 @@
 /obj/effect/turf_decal/trimline/transparent/blue/filled/arrow_ccw{
 	dir = 8
 	},
-/obj/structure/sign/poster/clip/maxin{
-	pixel_x = 0;
-	pixel_y = 32
-	},
 /obj/structure/railing/thin{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/warning{
 	dir = 4
+	},
+/obj/structure/sign/poster/clip/star_city{
+	pixel_x = 0;
+	pixel_y = 31
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/exterior/ocean)
@@ -29439,7 +29462,7 @@ Fh
 ko
 Fh
 Fh
-ek
+ko
 WF
 rj
 rj
@@ -29562,7 +29585,7 @@ uO
 ko
 AY
 uO
-ek
+ko
 Zl
 wJ
 wJ
@@ -31032,10 +31055,10 @@ fa
 fa
 fa
 fa
-Qc
+ek
 aX
 aX
-Qc
+ek
 DT
 oF
 Bw
@@ -31278,10 +31301,10 @@ hm
 nh
 NF
 NF
-Qc
+ek
 bM
 rO
-vP
+lP
 vw
 Wa
 pY
