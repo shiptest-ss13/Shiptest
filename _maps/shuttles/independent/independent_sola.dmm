@@ -985,18 +985,6 @@
 /area/ship/hallway/fore)
 "mr" = (
 /obj/effect/turf_decal/corner/opaque/black/half,
-/obj/machinery/button/door{
-	pixel_x = 6;
-	pixel_y = 20;
-	name = "Bridge Window Shutters";
-	id = "atoll_bridge_windows"
-	},
-/obj/machinery/button/door{
-	pixel_x = -6;
-	pixel_y = 20;
-	name = "Ship Window Shutters";
-	id = "atoll_windows"
-	},
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
 	name = "Helm"
@@ -2142,7 +2130,6 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 9
 	},
-/obj/machinery/light/directional/north,
 /obj/machinery/computer/helm{
 	dir = 8;
 	icon_state = "computer-left"
