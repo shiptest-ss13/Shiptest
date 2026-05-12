@@ -11,6 +11,7 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/lavaland/holdout/kitchen)
 "am" = (
@@ -493,6 +494,7 @@
 "fd" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/diagonal,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/lavaland/holdout/kitchen)
 "fe" = (
@@ -755,6 +757,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 4
 	},
+/obj/item/stack/ore/salvage/scraptitanium/five,
 /turf/open/floor/plasteel/white,
 /area/overmap_encounter/planetoid/cave/explored)
 "gU" = (
@@ -829,6 +832,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/armory)
 "hy" = (
@@ -913,6 +917,17 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/lavaland/holdout/ramzihq)
+"il" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/ore/salvage/scrapmetal/five,
+/turf/open/floor/plasteel/white,
+/area/overmap_encounter/planetoid/cave/explored)
 "io" = (
 /obj/item/trash/gummycarps{
 	pixel_x = 15;
@@ -1257,6 +1272,7 @@
 /obj/item/trash/syndi_cakes{
 	pixel_x = -8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/lavaland/holdout/kitchen)
 "lu" = (
@@ -1709,10 +1725,6 @@
 /obj/item/clothing/suit/armor/hardliners/sergeant{
 	pixel_x = -5
 	},
-/obj/item/clothing/head/hardliners/peaked{
-	pixel_y = 9;
-	pixel_x = 2
-	},
 /obj/item/clothing/shoes/combat{
 	pixel_y = -7;
 	pixel_x = 9
@@ -1720,6 +1732,10 @@
 /obj/item/storage/belt/security/webbing/hardliners{
 	pixel_x = -6;
 	pixel_y = -6
+	},
+/obj/item/clothing/head/hardhat/hardliners{
+	pixel_x = 1;
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/lavaland/holdout/office)
@@ -2055,6 +2071,14 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -7;
+	pixel_y = 10
+	},
+/obj/item/stock_parts/micro_laser{
+	pixel_x = 9;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/tcomms)
 "ro" = (
@@ -2092,6 +2116,7 @@
 "ry" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/diagonal,
 /obj/machinery/light/directional/east,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/lavaland/holdout/kitchen)
 "rN" = (
@@ -2378,6 +2403,10 @@
 	},
 /mob/living/simple_animal/hostile/viscerator{
 	faction = list("turret")
+	},
+/obj/item/stock_parts/subspace/ansible{
+	pixel_x = 4;
+	pixel_y = -9
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/tcomms)
@@ -3011,7 +3040,7 @@
 	name = "Headquarters"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/lavaland/holdout/ramzihq)
 "Aq" = (
 /obj/structure/vein/lavaland,
@@ -4406,6 +4435,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/lavaland/holdout/kitchen)
 "Lm" = (
@@ -4596,6 +4626,7 @@
 /area/ruin/lavaland/holdout/engineering)
 "MN" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stack/ore/salvage/scraptitanium/five,
 /turf/open/floor/plasteel/white,
 /area/overmap_encounter/planetoid/cave/explored)
 "MV" = (
@@ -5376,6 +5407,14 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/item/stock_parts/manipulator{
+	pixel_y = -2;
+	pixel_x = 7
+	},
+/obj/item/stock_parts/manipulator{
+	pixel_x = -6;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/tcomms)
 "SC" = (
@@ -5849,6 +5888,7 @@
 /area/ruin/lavaland/holdout/ramzihq)
 "WM" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/diagonal,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/lavaland/holdout/kitchen)
 "WP" = (
@@ -6055,6 +6095,7 @@
 /mob/living/simple_animal/hostile/viscerator{
 	faction = list("turret")
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/lavaland/holdout/kitchen)
 "Yx" = (
@@ -7147,7 +7188,7 @@ eS
 Nu
 pl
 UY
-pl
+il
 gK
 gK
 uw
