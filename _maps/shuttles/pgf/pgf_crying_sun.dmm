@@ -367,7 +367,7 @@
 /area/ship/hallway/central)
 "bB" = (
 /obj/structure/punching_bag{
-	desc = "A punching bag. The Nanotrasen symbol has been cheekily hand-painted on.";
+	desc = "A punching bag. The Makosso-Warra symbol has been cheekily hand-painted on.";
 	dir = 1
 	},
 /obj/machinery/light/directional/west,
@@ -463,6 +463,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
 "ca" = (
@@ -739,7 +740,7 @@
 /obj/machinery/computer/atmos_control/tank/air_tank{
 	name = "Air Mix Chamber Control"
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5{
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
 	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
@@ -788,8 +789,8 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden{
 	dir = 6
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "ee" = (
@@ -1972,7 +1973,8 @@
 	pixel_y = 11
 	},
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/mix_input{
-	dir = 1
+	dir = 1;
+	on = 0
 	},
 /turf/open/floor/engine/hydrogen_fuel,
 /area/ship/engineering/engines/starboard)
@@ -2145,7 +2147,7 @@
 	pixel_x = -2;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5{
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech,
@@ -2411,8 +2413,8 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "kG" = (
@@ -2630,7 +2632,7 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5{
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
 	dir = 6
 	},
 /turf/open/floor/plasteel/tech,
@@ -2899,7 +2901,7 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/orange/hidden/layer5{
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden/layer1{
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -3290,7 +3292,7 @@
 	dir = 6
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "qx" = (
@@ -3973,7 +3975,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "tP" = (
@@ -4146,7 +4148,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "vi" = (
@@ -5036,7 +5038,7 @@
 	name = "Port Engines";
 	req_one_access = list(1, 10)
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "zo" = (
@@ -5861,7 +5863,7 @@
 	dir = 1;
 	layer = 2.43
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -6190,7 +6192,7 @@
 "ER" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
 	dir = 8;
-	name = "air canister port"
+	name = "oxygen port"
 	},
 /obj/effect/turf_decal/box,
 /obj/machinery/airalarm/directional/north,
@@ -6392,11 +6394,9 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden{
 	dir = 5
 	},
-/obj/machinery/atmospherics/components/binary/valve{
-	dir = 2;
-	layer = 2.43;
-	name = "fuel valve";
-	piping_layer = 5
+/obj/machinery/atmospherics/components/binary/valve/digital{
+	piping_layer = 1;
+	name = "fuel line flow valve"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
@@ -6434,10 +6434,10 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5{
+/obj/effect/turf_decal/box/white,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
 	dir = 4
 	},
-/obj/effect/turf_decal/box/white,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "GA" = (
@@ -6583,7 +6583,7 @@
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "Hm" = (
@@ -7172,7 +7172,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/general/hidden,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "JJ" = (
@@ -7597,7 +7597,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "KM" = (
@@ -8031,7 +8031,8 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 4
+	dir = 4;
+	name = "scrubbers output"
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -8204,7 +8205,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "No" = (
@@ -9974,13 +9975,12 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
 "Uq" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/general/hidden,
 /obj/machinery/computer/atmos_control/tank/mix_tank{
 	dir = 1;
 	name = "Fuel Mix Chamber Control"
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5{
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
 	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
@@ -10106,7 +10106,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/general/hidden,
 /obj/structure/chair/plastic,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "Vq" = (
@@ -10566,7 +10566,7 @@
 	pixel_x = -3;
 	pixel_y = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer5{
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
 	dir = 6
 	},
 /turf/open/floor/plasteel/tech,
