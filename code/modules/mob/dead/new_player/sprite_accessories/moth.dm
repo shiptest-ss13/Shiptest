@@ -5,21 +5,21 @@
 	icon = 'icons/mob/species/moth/moth_wings.dmi'
 	color_src = null
 
-/datum/sprite_accessory/moth_wings/shaved
+/datum/sprite_accessory/moth_wings/none
 	name = "None"
 	icon_state = null
 
-/datum/sprite_accessory/moth_wings/plain //
+/datum/sprite_accessory/moth_wings/plain
 	name = "Plain"
 	icon_state = "plain"
 	color_src = WINGCOLORS
 
-/datum/sprite_accessory/moth_wings/luna //
+/datum/sprite_accessory/moth_wings/luna
 	name = "Luna"
 	icon_state = "luna"
 	color_src = WINGCOLORS
 
-/datum/sprite_accessory/moth_wings/atlas //
+/datum/sprite_accessory/moth_wings/atlas
 	name = "Atlas"
 	icon_state = "atlas"
 	color_src = WINGCOLORS
@@ -33,7 +33,7 @@
 	name = "Deathshead"
 	icon_state = "deathhead"
 
-/datum/sprite_accessory/moth_wings/ragged //
+/datum/sprite_accessory/moth_wings/ragged
 	name = "Ragged"
 	icon_state = "ragged"
 	color_src = WINGCOLORS
@@ -67,7 +67,7 @@
 	name = "None"
 	icon_state = "none"
 
-/datum/sprite_accessory/moth_markings/striations //
+/datum/sprite_accessory/moth_markings/striations
 	name = "Striations"
 	icon_state = "striations"
 	color_src = MARKINGCOLORS
@@ -77,17 +77,17 @@
 	icon = 'icons/mob/species/moth/moth_fluff.dmi'
 	color_src = null
 
-/datum/sprite_accessory/moth_fluff/plain //
+/datum/sprite_accessory/moth_fluff/plain
 	name = "Plain"
 	icon_state = "plain"
 	color_src = NECKFLUFFCOLORS
 
-/datum/sprite_accessory/moth_fluff/disheveled //
+/datum/sprite_accessory/moth_fluff/disheveled
 	name = "Disheveled"
 	icon_state = "disheveled"
 	color_src = NECKFLUFFCOLORS
 
-/datum/sprite_accessory/moth_fluff/neat //
+/datum/sprite_accessory/moth_fluff/neat
 	name = "Neat"
 	icon_state = "neat"
 	color_src = NECKFLUFFCOLORS
@@ -108,10 +108,9 @@
 	name = "Jungle"
 	icon_state = "jungle"
 
-/datum/sprite_accessory/moth_fluff/shaved //
+/datum/sprite_accessory/moth_fluff/shaved
 	name = "Shaved"
 	icon_state = "shaved"
-	color_src = NECKFLUFFCOLORS
 
 /datum/sprite_accessory/moth_fluff/brown
 	name = "Brown"
@@ -134,17 +133,17 @@
 	name = "Tucked Away"
 	icon_state = null
 
-/datum/sprite_accessory/moth_antennae/plain //
+/datum/sprite_accessory/moth_antennae/plain
 	name = "Plain"
 	icon_state = "plain"
 	color_src = ANTENNAECOLORS
 
-/datum/sprite_accessory/moth_antennae/bent //
+/datum/sprite_accessory/moth_antennae/bent
 	name = "Bent"
 	icon_state = "bent"
 	color_src = ANTENNAECOLORS
 
-/datum/sprite_accessory/moth_antennae/droopy //
+/datum/sprite_accessory/moth_antennae/droopy
 	name = "Droopy"
 	icon_state = "droopy"
 	color_src = ANTENNAECOLORS
