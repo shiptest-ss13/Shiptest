@@ -100,7 +100,7 @@
 				continue //Don't show afk admins to adminwho
 			if(!C.holder.fakekey)
 				msg += "<b>\t[C]</b> is a [C.holder.rank]\n"
-		msg += span_info("Adminhelps are also sent to Discord. If no admins are available in game adminhelp anyways and an admin on Discord will see it and respond.")
+	msg += span_info("Adminhelps are also sent to Discord. If no admins are available in game adminhelp anyways and an admin on Discord will see it and respond.")
 	to_chat(src, msg)
 
 #undef DEFAULT_WHO_CELLS_PER_ROW

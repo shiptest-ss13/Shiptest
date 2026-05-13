@@ -106,7 +106,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"spider_legs" = "Plain",
 							"spider_spinneret" = "Plain",
 							"spider_mandibles" = "Plain",
-							"squid_face" = "Squidward",
 							"ipc_screen" = "Blue",
 							"ipc_antenna" = "None",
 							"ipc_tail" = "None",
@@ -325,7 +324,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</center>"
 
 			dat += "<center><h2>Outfit Preview Settings</h2>"
-			dat += "<a href='byond://?_src_=prefs;preference=job'>Set Preview Job Gear</a><br></center>"
+			dat += "<center>Current outfit: [selected_outfit]</center>"
+			dat += "<a href='byond://?_src_=prefs;preference=joba'>Set Preview Job Gear</a><br>"
+			dat += "<a href='byond://?_src_=prefs;preference=jobb'>Set Preview Job Gear By Ship</a><br></center>"
+
 			if(CONFIG_GET(flag/roundstart_traits))
 				dat += "<center><h2>Quirk Setup</h2>"
 				dat += "<a href='byond://?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
@@ -677,19 +679,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Spinneret</h3>"
 
 				dat += "<a href='byond://?_src_=prefs;preference=spider_spinneret;task=input'>[features["spider_spinneret"]]</a><BR>"
-
-				mutant_category++
-				if(mutant_category >= MAX_MUTANT_ROWS)
-					dat += "</td>"
-					mutant_category = 0
-
-			if("squid_face" in pref_species.default_features)
-				if(!mutant_category)
-					dat += APPEARANCE_CATEGORY_COLUMN
-
-				dat += "<h3>Face Type</h3>"
-
-				dat += "<a href='byond://?_src_=prefs;preference=squid_face;task=input'>[features["squid_face"]]</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -1331,7 +1320,26 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.open(FALSE)
 	onclose(user, "capturekeypress", src)
 
-/datum/preferences/proc/SetChoices(mob/user)
+/datum/preferences/proc/set_preview_outfit(mob/user)
+	if(!SSmapping)
+		return
+
+	var/static/list/job_paths = subtypesof(/datum/outfit/job)
+	var/static/list/job_outfits = list()
+	if(!length(job_outfits))
+		for(var/path in job_paths)
+			var/datum/outfit/O = path
+			if(initial(O.can_be_admin_equipped))
+				job_outfits[initial(O.name)] = path
+
+	var/outfit_choice = tgui_input_list(user, "Please select which job to preview outfits for.", "Outfit selection", job_outfits)
+	if(!job_outfits[outfit_choice])
+		return
+	outfit_choice = job_outfits[outfit_choice]
+
+	selected_outfit = new outfit_choice
+
+/datum/preferences/proc/set_preview_outfit_by_ship(mob/user)
 	if(!SSmapping)
 		return
 
@@ -1348,6 +1356,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		return
 
 	selected_outfit = new preview_job.outfit
+
 
 /datum/preferences/proc/ShowSpeciesChoices(mob/user)
 	var/list/dat = list()
@@ -1615,8 +1624,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				expires = " The ban is for [DisplayTimeText(text2num(ban_details["duration"]) MINUTES)] and expires on [ban_details["expiration_time"]] (server time)."
 			to_chat(user, span_danger("You, or another user of this computer or connection ([ban_details["key"]]) is banned from playing [href_list["bancheck"]].<br>The ban reason is: [ban_details["reason"]]<br>This ban (BanID #[ban_details["id"]]) was applied by [ban_details["admin_key"]] on [ban_details["bantime"]] during round ID [ban_details["round_id"]].<br>[expires]"))
 			return
-	if(href_list["preference"] == "job")
-		SetChoices(user)
+	if(href_list["preference"] == "joba")
+		set_preview_outfit(user)
+		ShowChoices(user)
+		return TRUE
+
+	if(href_list["preference"] == "jobb")
+		set_preview_outfit_by_ship(user)
 		ShowChoices(user)
 		return TRUE
 

@@ -37,25 +37,6 @@ Build Your Own Suit
 		)
 	crate_name = "APLU construction kit"
 
-/datum/supply_pack/mech/odysseus_parts
-	name = "202r construction kit"
-	desc = "Cybersun Biodynamics' premier solution to on-the-go medical treatment. Some assembly required."
-	cost = 5000
-	contains = list(
-		/obj/item/mecha_parts/chassis/odysseus,
-		/obj/item/mecha_parts/part/odysseus_head,
-		/obj/item/mecha_parts/part/odysseus_torso,
-		/obj/item/mecha_parts/part/odysseus_left_arm,
-		/obj/item/mecha_parts/part/odysseus_right_arm,
-		/obj/item/mecha_parts/part/odysseus_left_leg,
-		/obj/item/mecha_parts/part/odysseus_right_leg,
-		/obj/item/circuitboard/mecha/odysseus/peripherals,
-		/obj/item/circuitboard/mecha/odysseus/main
-		)
-	crate_name = "202r Construction Kit"
-	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 40
-
 /*
 Mech Equipment
 */
@@ -145,21 +126,6 @@ Mech Equipment
 		/obj/item/mecha_parts/mecha_equipment/cable_layer
 	)
 
-/datum/supply_pack/mech/equipment/mech_sleeper
-	name = "Exosuit Mounted Sleeper Kit"
-	desc = "Contains a mounted sleeper device, used for retrieving and stabilizing patients."
-	cost = 1000
-	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/medical/sleeper
-	)
-
-/datum/supply_pack/mech/equipment/beam_gun
-	name = "Exosuit Beam Gun Kit"
-	desc = "Contains an advanced mounted medical beamgun, capable of alleviating wounds to targets."
-	cost = 7000
-	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam
-	)
 /datum/supply_pack/mech/equipment/rcs
 	name = "Exosuit RCS kit"
 	desc = "A gas fueled RCS pack, ideal for mechanized space operation."
