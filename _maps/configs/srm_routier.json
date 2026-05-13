@@ -1,0 +1,49 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Routier-class Privateer",
+	"faction": "/datum/faction/srm",
+	"prefix": "SRSV",
+	"manufacturer": "Ihejirika Civ. Manufacturing",
+	"namelists": [
+		"SAINT-ROUMAIN",
+		"BEASTS"
+	],
+	"map_short_name": "Routier-class",
+	"map_path": "_maps/shuttles/roumain/srm_routier.dmm",
+	"description": "A dedicated hunting vessel commissioned by the veteran Master Tetha-Eiko in 480 FSC for deeper frontier ventures following Makosso-Warra colonization, the Routier-class is made to support an aggressive lifestyle while still fulfilling the self-sufficient tenants of the Militia. A crew of 8 can comfortably live off a small interior garden and any hunts that the Montagne may deign to go on, while comfortable quarters allow the crew to slow down and relax when not on a planet. A sizeable armory allows the vessels Montagne to quarry nearly any frontier fauna. Despite that, the design has its detractors due to a reduced focus on this self-sufficiency. The reliablity of the armory and comfortable-enough aesthetics still draw a loyal cadre of experienced hunters to the vessel.",
+	"tags": [
+		"Combat",
+		"Mining"
+	],
+	"map_id": "srm_routier",
+	"limit": 1,
+	"job_slots": {
+		"Hunter Montagne": {
+			"outfit": "/datum/outfit/job/roumain/captain/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Hunter Colligne": {
+			"outfit": "/datum/outfit/job/roumain/hop/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Hunter": {
+			"outfit": "/datum/outfit/job/roumain/security/empty",
+			"slots": 2
+		},
+		"Hunter Doctor": {
+			"outfit": "/datum/outfit/job/roumain/doctor/empty",
+			"slots": 1
+		},
+		"Machinist": {
+			"outfit": "/datum/outfit/job/roumain/engineer/empty",
+			"slots": 1
+		},
+		"Shadow": {
+			"outfit": "/datum/outfit/job/roumain/assistant/empty",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
