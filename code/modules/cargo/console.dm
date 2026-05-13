@@ -61,8 +61,11 @@
 	. = ..()
 	current_ship = port.current_ship
 	reconnect(port)
+	RegisterSignals(current_ship, list(COMSIG_OVERMAP_DOCK, COMSIG_OVERMAP_UNDOCK), PROC_REF(reconnect))
 
 /obj/machinery/computer/cargo/proc/reconnect(obj/docking_port/mobile/port)
+	SIGNAL_HANDLER
+
 	if(current_ship)
 		current_faction = current_ship.source_template.faction
 		charge_account = current_ship.ship_account
