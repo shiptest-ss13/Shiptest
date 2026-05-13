@@ -156,7 +156,7 @@
 
 			var/list/unprocessed_packs = list()
 			for(var/list/pack_ref as anything in purchasing)
-				var/pack = locate(pack_ref) in current_outpost.market.supply_packs
+				var/pack = locate(pack_ref) in outpost_docked.market.supply_packs
 				var/amount = purchasing[pack_ref]
 				for(var/i = 0; i < amount; i++)
 					unprocessed_packs += pack
