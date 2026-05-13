@@ -17,8 +17,8 @@ export const OutpostCommunications = (props, context) => {
   const { act, data } = useBackend<Data>(context);
   const { outpostDocked, onShip, points } = data;
   const [tab, setTab] = useSharedState(context, 'outpostTab', '');
-  if (!outpostDocked && tab != 'shipMission') {
-      setTab('shipMissions')
+  if (!outpostDocked && tab !== 'shipMission') {
+    setTab('shipMissions');
   }
   return (
     <Window width={600} height={700} resizable>
