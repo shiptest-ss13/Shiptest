@@ -140,11 +140,10 @@
 		if("purchase")
 			var/list/purchasing = params["cart"]
 			var/total_cost = text2num(params["total"])
-			var/datum/overmap/outpost/current_outpost = current_ship.docked_to
-			if(!istype(current_ship.docked_to) || purchasing.len == 0)
+			if(!istype(outpost_docked) || purchasing.len == 0)
 				return
 
-			if(istype(outpost_docked) && outpost_docked.market.supply_blocked)
+			if(outpost_docked.market.supply_blocked)
 				say("Outpost cargo unavailable!")
 				return
 
@@ -162,7 +161,7 @@
 				for(var/i = 0; i < amount; i++)
 					unprocessed_packs += pack
 
-			current_outpost.market.make_order(usr, unprocessed_packs, return_crate_spawner())
+			outpost_docked.market.make_order(usr, unprocessed_packs, return_crate_spawner())
 
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
