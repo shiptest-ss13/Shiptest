@@ -1043,6 +1043,10 @@
 	name = "Captain Peck's Shipwreck";
 	desc = "A greeting to Captain Peck's wrecked vessel, with information explaining the Frontiersman menace, and the outposts first defense against them."
 	},
+/obj/structure/railing/thin{
+	color = "#999999";
+	layer = 2.1
+	},
 /turf/open/floor/hangar/clipoutpost{
 	color = "#999999";
 	light_power = 0.7
@@ -1435,6 +1439,23 @@
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/exterior/ocean)
+"dm" = (
+/obj/structure/railing/thin{
+	color = "#999999";
+	layer = 2.1
+	},
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 4
+	},
+/obj/structure/table{
+	color = "#999999";
+	layer = 2
+	},
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
+	},
+/area/outpost/external)
 "dn" = (
 /obj/structure/toilet{
 	dir = 1
@@ -3967,6 +3988,20 @@
 "ko" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/security/checkpoint)
+"kp" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 10
+	},
+/obj/structure/railing/thin{
+	color = "#999999";
+	layer = 2.1;
+	dir = 4
+	},
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
+	},
+/area/outpost/external)
 "kq" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -5260,6 +5295,19 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
+/area/outpost/external)
+"nu" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 1
+	},
+/obj/structure/railing/thin{
+	color = "#999999";
+	layer = 2.1
+	},
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
+	},
 /area/outpost/external)
 "nw" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
@@ -9754,6 +9802,19 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/cargo/office)
+"za" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 9
+	},
+/obj/structure/railing/thin/corner{
+	color = "#999999";
+	layer = 2.1
+	},
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
+	},
+/area/outpost/external)
 "zb" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 8
@@ -16707,6 +16768,10 @@
 	pixel_y = 8;
 	color = "#999999"
 	},
+/obj/structure/table{
+	color = "#999999";
+	layer = 2
+	},
 /turf/open/floor/hangar/clipoutpost{
 	color = "#999999";
 	light_power = 0.7
@@ -19185,6 +19250,20 @@
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/outpost/crew/bar)
+"VI" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 10
+	},
+/obj/structure/railing/thin/corner{
+	color = "#999999";
+	layer = 2.1;
+	dir = 4
+	},
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
+	},
+/area/outpost/external)
 "VJ" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 4
@@ -19814,6 +19893,11 @@
 	pixel_y = 2;
 	name = "Captain Peck's Shipwreck";
 	desc = "A greeting to Captain Peck's wrecked vessel, with information explaining the Frontiersman menace, and the outposts first defense against them."
+	},
+/obj/structure/railing/thin{
+	color = "#999999";
+	layer = 2.1;
+	dir = 1
 	},
 /turf/open/floor/hangar/clipoutpost{
 	color = "#999999";
@@ -20756,6 +20840,18 @@
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/crew/cryo)
+"ZD" = (
+/obj/structure/platform/industrial_alt/indestructible,
+/obj/structure/railing/thin{
+	color = "#999999";
+	layer = 2.1;
+	dir = 1
+	},
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
+	},
+/area/outpost/external)
 "ZE" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 5
@@ -25294,7 +25390,7 @@ vs
 DI
 yF
 vi
-WF
+UC
 Wq
 Wq
 Wq
@@ -28140,7 +28236,7 @@ jr
 Ae
 pL
 Fm
-oX
+dm
 IB
 wJ
 wJ
@@ -31815,20 +31911,20 @@ bY
 dk
 Gr
 Pa
-NU
+VI
 Eb
 UO
 ZJ
 Bz
 HU
-zh
-Ay
-Ay
-Ay
-Ay
-Ay
-Ay
-NU
+za
+Gr
+Gr
+Gr
+Gr
+Gr
+Gr
+kp
 AW
 AW
 jB
@@ -31938,13 +32034,13 @@ qw
 qw
 qw
 Hu
-CW
+ZD
 Eb
 UO
 kb
 Bz
 HU
-eH
+nu
 JC
 qw
 qw
@@ -32061,13 +32157,13 @@ rj
 rj
 rj
 qK
-CW
+ZD
 Eb
 UO
 kb
 Bz
 HU
-eH
+nu
 ES
 rj
 rj
@@ -32184,13 +32280,13 @@ rj
 rj
 rj
 qK
-CW
+ZD
 Eb
 UO
 kb
 Bz
 HU
-eH
+nu
 ES
 rj
 rj
@@ -32307,13 +32403,13 @@ rj
 rj
 rj
 qK
-CW
+ZD
 Eb
 UO
 kb
 Bz
 HU
-eH
+nu
 ES
 rj
 rj
@@ -32430,13 +32526,13 @@ rj
 rj
 rj
 qK
-CW
+ZD
 Eb
 UO
 kb
 Bz
 HU
-eH
+nu
 ES
 rj
 rj
@@ -32553,13 +32649,13 @@ rj
 rj
 rj
 qK
-CW
+ZD
 Eb
 UO
 ZJ
 Bz
 HU
-eH
+nu
 ES
 rj
 rj
