@@ -210,6 +210,14 @@
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	light_color = COLOR_ROCKPLANET_LIGHT
 
+/turf/open/floor/plasteel/tech/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/tech/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
 ///reinforced floors
 
 /turf/open/floor/engine/hull/rockplanet
