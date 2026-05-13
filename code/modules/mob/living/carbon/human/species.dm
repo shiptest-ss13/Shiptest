@@ -774,11 +774,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  */
 /datum/species/proc/handle_mutant_bodyparts(mob/living/carbon/human/H, forced_colour)
 	var/list/bodyparts_to_add = mutant_bodyparts.Copy()
-	var/list/relevent_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
+	var/list/relevent_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODYPARTS_HIGH_LAYER, BODY_FRONT_LAYER)
 	var/list/standing	= list()
 
 	H.remove_overlay(BODY_BEHIND_LAYER)
 	H.remove_overlay(BODY_ADJ_LAYER)
+	H.remove_overlay(BODYPARTS_HIGH_LAYER)
 	H.remove_overlay(BODY_FRONT_LAYER)
 
 	if(!mutant_bodyparts)
@@ -1060,6 +1061,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	H.apply_overlay(BODY_BEHIND_LAYER)
 	H.apply_overlay(BODY_ADJ_LAYER)
+	H.apply_overlay(BODYPARTS_HIGH_LAYER)
 	H.apply_overlay(BODY_FRONT_LAYER)
 
 //This exists so sprite accessories can still be per-layer without having to include that layer's
@@ -1070,6 +1072,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return "BEHIND"
 		if(BODY_ADJ_LAYER)
 			return "ADJ"
+		if(BODYPARTS_HIGH_LAYER)
+			return "ADJ-HIGH"
 		if(BODY_FRONT_LAYER)
 			return "FRONT"
 
