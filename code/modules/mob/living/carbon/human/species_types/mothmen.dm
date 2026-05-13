@@ -1,18 +1,18 @@
 /datum/species/moth
 	name = "\improper Moth"
 	id = SPECIES_MOTH
-	default_color = "00FF00"
-	species_traits = list(LIPS, HAIR, EMOTE_OVERLAY)
+	default_color = "#ECCF8C"
+	species_traits = list(LIPS, HAIR, EMOTE_OVERLAY, MUTCOLORS)
 	inherent_traits = list(TRAIT_ANTENNAE)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
-	mutant_bodyparts = list("moth_wings", "moth_fluff", "moth_markings")
-	default_features = list("moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None")
+	mutant_bodyparts = list("moth_wings", "moth_fluff", "moth_markings", "moth_antennae", "moth_head")
+	default_features = list("moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None", "moth_antennae" = "Plain", "moth_head" = "Flat")
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
-	liked_food = FRUIT | SUGAR | CLOTH
-	disliked_food = GROSS
-	toxic_food = MEAT | RAW | GORE
+	liked_food = FRUIT | SUGAR
+	disliked_food = GROSS | MEAT
+	toxic_food = RAW | GORE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	species_language_holder = /datum/language_holder/moth
 	loreblurb = "Bug-mammal hybrids resembling Sol's lepidopterans. They share the least DNA with baseline humans of any human-derived geneline, being significant portions insect and modified whole-cloth DNA. Their classification as another human geneline or as something else is highly debated. All evidence that would point to their origin– which is presumably a genelab somewhere– has seemingly disappeared into thin air. Mothpeople themselves have no centralized culture or homeworld, leading to a fractured existence amongst the stars."
@@ -46,6 +46,22 @@
 
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 5
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 5
+
+/datum/species/elzuose/on_species_gain(mob/living/carbon/_carbon, datum/species/old_species, pref_load)
+	. = ..()
+	if(!ishuman(_carbon))
+		return
+	var/mob/living/carbon/human/mothperson = _carbon
+	default_color = "#[mothperson.dna.features["moth_bodyfluff_color"]]"
+
+	_carbon.dna.features["mcolor"] = _carbon.dna.features["moth_bodyfluff_color"] //Ethcolor and Mut color are both dogshit and will be replaced
+	var/obj/item/bodypart/body_part
+	for(var/zone in _carbon.bodyparts)
+		body_part = _carbon.bodyparts[zone]
+		if(!body_part)
+			continue
+		if(body_part.limb_id == SPECIES_MOTH)
+			body_part.update_limb(is_creating = TRUE)
 
 /datum/species/moth/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
 	. = ..()

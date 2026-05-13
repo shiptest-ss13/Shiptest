@@ -927,6 +927,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.moth_fluff_list[H.dna.features["moth_fluff"]]
 				if("moth_markings")
 					S = GLOB.moth_markings_list[H.dna.features["moth_markings"]]
+				if("moth_antennae")
+					S = GLOB.moth_antennae_list[H.dna.features["moth_antennae"]]
+				if("moth_head")
+					S = GLOB.moth_head_list[H.dna.features["moth_head"]]
 				if("ipc_screen")
 					S = GLOB.ipc_screens_list[H.dna.features["ipc_screen"]]
 				if("ipc_antenna")
@@ -1001,6 +1005,16 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 							accessory_overlay.color = "#[H.dna.features["mcolor2"]]"
 						if(SKINCOLORS)
 							accessory_overlay.color = "#[(skintone2hex(H.skin_tone))]"
+						if(NECKFLUFFCOLORS)
+							accessory_overlay.color = "#[H.dna.features["moth_neckfluff_color"]]"
+						if(WINGCOLORS)
+							accessory_overlay.color = "#[H.dna.features["moth_wings_color"]]"
+						if(ANTENNAECOLORS)
+							accessory_overlay.color = "#[H.dna.features["moth_antennae_color"]]"
+						if(MARKINGCOLORS)
+							accessory_overlay.color = "#[H.dna.features["moth_markings_color"]]"
+						if(BODYFLUFFCOLORS)
+							accessory_overlay.color = "#[H.dna.features["moth_bodyfluff_color"]]"
 
 						if(HAIR)
 							if(hair_color == "mutcolor")
