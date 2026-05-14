@@ -1,63 +1,81 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"d" = (
+"a" = (
 /obj/structure/elevator_platform,
-/obj/structure/fake_plastitanium_wall,
-/turf/template_noop,
-/area/template_noop)
-"g" = (
+/obj/machinery/light/dim/directional/east,
 /obj/machinery/status_display/elevator{
 	pixel_y = 28
 	},
+/turf/template_noop,
+/area/template_noop)
+"d" = (
 /obj/structure/elevator_platform,
+/obj/machinery/light/dim/directional/west,
+/turf/template_noop,
+/area/template_noop)
+"g" = (
+/obj/structure/elevator_platform,
+/obj/item/radio/intercom/directional/west,
 /turf/template_noop,
 /area/template_noop)
 "j" = (
+/obj/structure/elevator_platform,
 /obj/machinery/elevator_floor_button{
 	layer = 2.91;
 	pixel_x = -20;
 	dir = 4;
 	pixel_y = 3
 	},
-/obj/structure/chair/bench/red/directional/east,
-/obj/structure/elevator_platform/tile/tech,
-/turf/open/space/basic,
+/turf/template_noop,
 /area/template_noop)
 "t" = (
 /obj/structure/elevator_platform,
 /turf/template_noop,
 /area/template_noop)
+"y" = (
+/obj/structure/elevator_platform,
+/obj/machinery/light/dim/directional/west,
+/obj/machinery/status_display/elevator{
+	pixel_y = 28
+	},
+/turf/template_noop,
+/area/template_noop)
 "A" = (
-/obj/structure/elevator_platform/tile/dark,
-/obj/structure/fake_plastitanium_wall,
+/obj/structure/elevator_platform/tile/tech,
+/obj/structure/table/reinforced,
 /turf/template_noop,
 /area/template_noop)
 "D" = (
-/obj/machinery/light/floor,
-/obj/structure/elevator_platform,
+/obj/structure/elevator_platform/tile/tech,
+/obj/structure/chair/bench/red/directional/south,
 /turf/template_noop,
 /area/template_noop)
 "F" = (
-/obj/structure/crate_shelf{
-	capacity = 2
-	},
 /obj/structure/elevator_platform/tile/tech,
-/turf/open/space/basic,
+/obj/structure/chair/bench/red/directional/north,
+/turf/template_noop,
+/area/template_noop)
+"I" = (
+/obj/structure/elevator_platform,
+/obj/machinery/light/dim/directional/east,
+/turf/template_noop,
 /area/template_noop)
 "L" = (
 /obj/structure/elevator_platform/tile/tech,
-/turf/open/space/basic,
+/turf/template_noop,
 /area/template_noop)
 "V" = (
-/obj/structure/chair/bench/red/directional/west,
 /obj/structure/elevator_platform/tile/tech,
-/turf/open/space/basic,
+/obj/structure/crate_shelf{
+	capacity = 2
+	},
+/turf/template_noop,
 /area/template_noop)
 
 (1,1,1) = {"
-d
+y
 g
-D
 t
+j
 d
 "}
 (2,1,1) = {"
@@ -68,23 +86,23 @@ L
 t
 "}
 (3,1,1) = {"
-D
+t
 F
 A
-F
 D
+t
 "}
 (4,1,1) = {"
 t
 L
-j
+V
 L
 t
 "}
 (5,1,1) = {"
-d
-g
-D
+a
 t
-d
+t
+t
+I
 "}
