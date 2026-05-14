@@ -410,7 +410,8 @@
 /obj/structure/fluff/vehicle/crane{
 	dir = 1;
 	pixel_x = 0;
-	pixel_y = 6
+	pixel_y = 6;
+	on = 0
 	},
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 10
@@ -3385,7 +3386,9 @@
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Bb" = (
-/obj/structure/fluff/vehicle/truck,
+/obj/structure/fluff/vehicle/truck{
+	on = 0
+	},
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "Bc" = (
