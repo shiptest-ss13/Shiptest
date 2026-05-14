@@ -87,7 +87,7 @@
 "bs" = (
 /obj/item/restraints/handcuffs/cable/zipties/used,
 /obj/effect/decal/cleanable/blood/gibs/down,
-/obj/effect/mob_spawn/human/corpse/frontier/fake,
+/obj/effect/mob_spawn/human/corpse/frontier/tagless,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/pubbytown)
 "by" = (
@@ -877,7 +877,7 @@
 "kQ" = (
 /obj/item/restraints/handcuffs/cable/zipties/used,
 /obj/effect/decal/cleanable/ash/large,
-/obj/effect/mob_spawn/human/corpse/frontier/fake,
+/obj/effect/mob_spawn/human/corpse/frontier/tagless,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/pubbytown)
 "kR" = (
@@ -1369,17 +1369,6 @@
 "pG" = (
 /turf/closed/mineral/random/whitesands,
 /area/ruin/whitesands/pubbytown/cargo)
-"pN" = (
-/obj/item/clothing/head/helmet/bulletproof/x11/frontier{
-	pixel_x = 1;
-	pixel_y = 7
-	},
-/obj/item/clothing/suit/armor/vest/frontier{
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/ruin/whitesands/pubbytown)
 "pR" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
@@ -1427,17 +1416,6 @@
 	},
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/ruin/whitesands/pubbytown/house)
-"qg" = (
-/obj/item/clothing/suit/armor/vest/frontier{
-	pixel_x = -7;
-	pixel_y = -7
-	},
-/obj/item/clothing/head/helmet/bulletproof/x11/frontier{
-	pixel_x = 6;
-	pixel_y = 8
-	},
-/turf/open/floor/plating/asteroid/whitesands/dried,
-/area/ruin/whitesands/pubbytown)
 "ql" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -1576,7 +1554,7 @@
 	pixel_x = -2;
 	pixel_y = 0
 	},
-/obj/effect/mob_spawn/human/corpse/frontier/fake,
+/obj/effect/mob_spawn/human/corpse/frontier/tagless,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/pubbytown)
 "rT" = (
@@ -2960,7 +2938,13 @@
 	pixel_x = 1;
 	pixel_y = 1
 	},
-/turf/open/floor/concrete/tiles/whitesands,
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 9;
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/turf/open/floor/wood/walnut/whitesands,
 /area/ruin/whitesands/pubbytown/shop)
 "FP" = (
 /obj/structure/cable{
@@ -3516,7 +3500,7 @@
 /area/ruin/whitesands/pubbytown/engine)
 "Lk" = (
 /obj/item/restraints/handcuffs/cable/zipties/used,
-/obj/effect/mob_spawn/human/corpse/frontier/fake,
+/obj/effect/mob_spawn/human/corpse/frontier/tagless,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/ruin/whitesands/pubbytown)
 "Ls" = (
@@ -4090,6 +4074,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/item/clothing/head/beret/sec/frontier{
+	pixel_x = -6;
+	pixel_y = 6
 	},
 /turf/open/floor/plating/whitesands,
 /area/ruin/whitesands/pubbytown)
@@ -6547,7 +6535,7 @@ aZ
 aZ
 aZ
 bs
-qg
+zJ
 zJ
 zJ
 Bw
@@ -6685,7 +6673,7 @@ aZ
 aZ
 aZ
 rG
-pN
+zJ
 Bw
 Bw
 Bw
