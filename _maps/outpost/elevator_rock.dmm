@@ -5,14 +5,13 @@
 /turf/template_noop,
 /area/template_noop)
 "g" = (
-/obj/structure/elevator_platform/tile/tech,
 /obj/machinery/status_display/elevator{
 	pixel_y = 28
 	},
+/obj/structure/elevator_platform,
 /turf/template_noop,
 /area/template_noop)
 "j" = (
-/obj/structure/elevator_platform/tile/dark,
 /obj/machinery/elevator_floor_button{
 	layer = 2.91;
 	pixel_x = -20;
@@ -20,6 +19,11 @@
 	pixel_y = 3
 	},
 /obj/structure/chair/bench/red/directional/east,
+/obj/structure/elevator_platform/tile/tech,
+/turf/open/space/basic,
+/area/template_noop)
+"t" = (
+/obj/structure/elevator_platform,
 /turf/template_noop,
 /area/template_noop)
 "A" = (
@@ -29,39 +33,39 @@
 /area/template_noop)
 "D" = (
 /obj/machinery/light/floor,
-/obj/structure/elevator_platform/tile/tech,
+/obj/structure/elevator_platform,
 /turf/template_noop,
 /area/template_noop)
 "F" = (
-/obj/structure/elevator_platform/tile/dark,
 /obj/structure/crate_shelf{
 	capacity = 2
 	},
-/turf/template_noop,
+/obj/structure/elevator_platform/tile/tech,
+/turf/open/space/basic,
 /area/template_noop)
 "L" = (
 /obj/structure/elevator_platform/tile/tech,
-/turf/template_noop,
+/turf/open/space/basic,
 /area/template_noop)
 "V" = (
-/obj/structure/elevator_platform/tile/dark,
 /obj/structure/chair/bench/red/directional/west,
-/turf/template_noop,
+/obj/structure/elevator_platform/tile/tech,
+/turf/open/space/basic,
 /area/template_noop)
 
 (1,1,1) = {"
 d
 g
 D
-L
+t
 d
 "}
 (2,1,1) = {"
-L
+t
 L
 V
 L
-L
+t
 "}
 (3,1,1) = {"
 D
@@ -71,16 +75,16 @@ F
 D
 "}
 (4,1,1) = {"
-L
+t
 L
 j
 L
-L
+t
 "}
 (5,1,1) = {"
 d
 g
 D
-L
+t
 d
 "}
