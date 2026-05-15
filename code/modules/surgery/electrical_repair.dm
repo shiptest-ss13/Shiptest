@@ -1,3 +1,4 @@
+#warn add ipc specific painshit
 /// Minimum temperature to melt the solder.
 #define SOLDER_MELTING_POINT 600
 

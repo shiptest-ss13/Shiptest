@@ -88,7 +88,7 @@
 	icon_state = "combat_hypo"
 	volume = 90
 	ignore_flags = 1 // So they can heal their comrades.
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 30, /datum/reagent/medicine/panacea = 30, /datum/reagent/medicine/dimorlin = 15, /datum/reagent/medicine/atropine = 15)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 30, /datum/reagent/medicine/panacea = 30, /datum/reagent/medicine/painkiller/dimorlin = 15, /datum/reagent/medicine/atropine = 15)
 
 //MediPens
 
@@ -151,13 +151,13 @@
 /obj/item/reagent_containers/hypospray/medipen/morphine
 	name = "morphine medipen"
 	desc = "A rapid way to get you out of a tight situation and fast! You'll feel rather drowsy, though."
-	list_reagents = list(/datum/reagent/medicine/morphine = 10)
+	list_reagents = list(/datum/reagent/medicine/painkiller/morphine = 10)
 	custom_price = 50
 
 /obj/item/reagent_containers/hypospray/medipen/tramal
 	name = "tramal medipen"
 	desc = "A quick way to relieve persistant pain."
-	list_reagents = list(/datum/reagent/medicine/tramal = 10)
+	list_reagents = list(/datum/reagent/medicine/painkiller/tramal = 10)
 	custom_price = 25
 
 /obj/item/reagent_containers/hypospray/medipen/silfrine
@@ -330,7 +330,7 @@
 /obj/item/reagent_containers/hypospray/medipen/badstop
 	name = "Stabilizer injector"
 	desc = "A 2-use injector filled with a mix of medical agents, designed to stabilize someone for immediate extraction."
-	list_reagents = list(/datum/reagent/medicine/chitosan = 5, /datum/reagent/medicine/morphine = 10, /datum/reagent/medicine/psicodine = 5, /datum/reagent/medicine/atropine = 10)
+	list_reagents = list(/datum/reagent/medicine/chitosan = 5, /datum/reagent/medicine/painkiller/morphine = 10, /datum/reagent/medicine/psicodine = 5, /datum/reagent/medicine/atropine = 10)
 	volume = 30
 	amount_per_transfer_from_this = 15
 	icon_state = "tbpen"
@@ -366,7 +366,7 @@
 /obj/item/reagent_containers/hypospray/medipen/mammoth
 	name = "mammoth injector"
 	desc = "An injector filled with an ICW-era mixture of aggression-enhancing stimulants."
-	list_reagents = list(/datum/reagent/drug/mammoth = 7, /datum/reagent/medicine/dimorlin = 6, /datum/reagent/medicine/carfencadrizine = 6)
+	list_reagents = list(/datum/reagent/drug/mammoth = 7, /datum/reagent/medicine/painkiller/dimorlin = 6, /datum/reagent/medicine/carfencadrizine = 6)
 	volume = 19
 	amount_per_transfer_from_this = 19
 	icon_state = "syndipen"
@@ -376,7 +376,7 @@
 /obj/item/reagent_containers/hypospray/medipen/netzach
 	name = "\improper Nesah injector"
 	desc = "A combat injector filled with a tightly curated mixture of regenerative compounds. \"The Fearlessness To Go Forward\" is etched in small text opposite the activator."
-	list_reagents = list(/datum/reagent/medicine/silfrine = 10, /datum/reagent/medicine/ysiltane = 10, /datum/reagent/drug/cinesia = 10, /datum/reagent/medicine/morphine = 10)
+	list_reagents = list(/datum/reagent/medicine/silfrine = 10, /datum/reagent/medicine/ysiltane = 10, /datum/reagent/drug/cinesia = 10, /datum/reagent/medicine/painkiller/morphine = 10)
 	volume = 40
 	amount_per_transfer_from_this = 40
 	icon_state = "penacid"
@@ -703,7 +703,7 @@
 	custom_price = 500
 	volume = 35
 	amount_per_transfer_from_this = 36
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 5.5, /datum/reagent/medicine/hunter_extract = 3, /datum/reagent/drug/methamphetamine = 2, /datum/reagent/medicine/morphine = 0.5, /datum/reagent/medicine/leporazine = 6, /datum/reagent/medicine/salglu_solution = 8, /datum/reagent/medicine/ysiltane = 5, /datum/reagent/medicine/silfrine = 5)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 5.5, /datum/reagent/medicine/hunter_extract = 3, /datum/reagent/drug/methamphetamine = 2, /datum/reagent/medicine/painkiller/morphine = 0.5, /datum/reagent/medicine/leporazine = 6, /datum/reagent/medicine/salglu_solution = 8, /datum/reagent/medicine/ysiltane = 5, /datum/reagent/medicine/silfrine = 5)
 
 #undef HYPO_SPRAY
 #undef HYPO_INJECT

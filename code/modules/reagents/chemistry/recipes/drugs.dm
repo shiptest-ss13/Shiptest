@@ -20,7 +20,7 @@
 
 /datum/chemical_reaction/aranesp
 	results = list(/datum/reagent/drug/aranesp = 3)
-	required_reagents = list(/datum/reagent/medicine/epinephrine = 1, /datum/reagent/medicine/atropine = 1, /datum/reagent/medicine/morphine = 1)
+	required_reagents = list(/datum/reagent/medicine/epinephrine = 1, /datum/reagent/medicine/atropine = 1, /datum/reagent/medicine/painkiller/morphine = 1)
 
 /datum/chemical_reaction/happiness
 	results = list(/datum/reagent/drug/happiness = 4)
@@ -38,13 +38,13 @@
 
 /datum/chemical_reaction/shoalmix
 	results = list(/datum/reagent/drug/combat_drug = 4)
-	required_reagents = list(/datum/reagent/consumable/ethanol/vimukti = 1, /datum/reagent/medicine/dimorlin = 2, /datum/reagent/phenol = 1, /datum/reagent/medicine/atropine = 2)
+	required_reagents = list(/datum/reagent/consumable/ethanol/vimukti = 1, /datum/reagent/medicine/painkiller/dimorlin = 2, /datum/reagent/phenol = 1, /datum/reagent/medicine/atropine = 2)
 	required_catalysts = list(/datum/reagent/stable_plasma = 5)
 	required_temp = 451
 
 /datum/chemical_reaction/alt_shoalmix
 	results = list(/datum/reagent/drug/combat_drug = 2)
-	required_reagents = list(/datum/reagent/consumable/vitfro = 4, /datum/reagent/medicine/dimorlin = 1, /datum/reagent/medicine/atropine = 1)
+	required_reagents = list(/datum/reagent/consumable/vitfro = 4, /datum/reagent/medicine/painkiller/dimorlin = 1, /datum/reagent/medicine/atropine = 1)
 	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
 	required_temp = 400
 

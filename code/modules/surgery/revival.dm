@@ -1,3 +1,5 @@
+#warn add pain feedback
+
 /datum/surgery/revival
 	name = "Revival"
 	desc = "An experimental surgical procedure which involves reconstruction and reactivation of the patient's brain even long after death. The body must still be able to sustain life."

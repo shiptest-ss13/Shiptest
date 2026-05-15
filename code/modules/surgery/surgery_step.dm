@@ -256,23 +256,35 @@
  * * pain_message - The message to be displayed
  * * mechanical_surgery - Boolean flag that represents if a surgery step is done on a mechanical limb (therefore does not force scream)
  */
-/datum/surgery_step/proc/display_pain(mob/living/target, pain_message, mechanical_surgery = FALSE)
-	// Determine how drunk our patient is
-	var/drunken_patient = target.get_drunk_amount()
-	// Create a probability to ignore the pain based on drunkenness level
-	var/drunken_ignorance_probability = clamp(drunken_patient, 0, 90)
+/datum/surgery_step/proc/give_surgery_pain(mob/living/carbon/target, pain_message, mechanical_surgery = FALSE, target_zone, target_zone = target_zone)
+	// Only feels pain if we feels pain
+	if(!target.pain_controller || target.pain_controller.pain_modifier <= PAIN_MOD_TO_IGNORE_SURGERY || pain_amount <= 0)
+		return FALSE
 
-	if(target.stat < UNCONSCIOUS)
-		if(HAS_TRAIT(target, TRAIT_ANALGESIA) || drunken_patient && prob(drunken_ignorance_probability))
-			if(!pain_message)
-				return
-			to_chat(target, span_notice("You feel a dull, numb sensation as your body is surgically operated on."))
-		else if(!mechanical_surgery)
-			if(!pain_message)
-				return
+	// No pain from mechanics but still show the message (usually)
+	if(mechanical_surgery)
+		if(prob(70))
 			to_chat(target, span_userdanger(pain_message))
-			if(prob(30) && !mechanical_surgery)
-				target.force_pain_noise(80)
+		return FALSE
+
+	target.cause_typed_pain(target_zone, pain_amount, pain_type)
+
+	if((target.IsSleeping() || target.IsUnconscious()) && HAS_TRAIT(target, TRAIT_ON_ANESTHETIC))
+		SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "surgery", /datum/mood_event/anesthetic)
+		return FALSE
+
+	else
+		if(ispath(surgery_moodlet, /datum/mood_event))
+			SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "surgery", surgery_moodlet)
+		if(pain_overlay_severity == 1 || pain_overlay_severity == 2)
+			target.flash_pain_overlay(pain_overlay_severity)
+
+	// No message if the pain emote fails
+	if(!target.pain_controller.do_pain_emote())
+		return FALSE
+
+	to_chat(target, span_userdanger(pain_message))
+	return TRUE
 
 /// Lacking anesthetic, a surgery has a chance to cause Complications, which is handled here
 /datum/surgery_step/proc/commit_malpractice(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)

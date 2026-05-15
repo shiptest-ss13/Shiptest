@@ -61,6 +61,7 @@
 		display_results(user, target, "<span class='notice'>You begin to excise infected flesh from [target]'s [parse_zone(user.zone_selected)]...</span>",
 			"<span class='notice'>[user] begins to excise infected flesh from [target]'s [parse_zone(user.zone_selected)] with [tool].</span>",
 			"<span class='notice'>[user] begins to excise infected flesh from [target]'s [parse_zone(user.zone_selected)].</span>")
+		give_surgery_pain(target, "The infection in your [parse_zone(user.zone_selected)] stings like hell! It feels like you're being stabbed!", target_zone = target_zone)
 	else
 		user.visible_message("<span class='notice'>[user] looks for [target]'s [parse_zone(user.zone_selected)].</span>", "<span class='notice'>You look for [target]'s [parse_zone(user.zone_selected)]...</span>")
 
@@ -113,6 +114,7 @@
 		display_results(user, target, "<span class='notice'>You begin to dress the burns on [target]'s [parse_zone(user.zone_selected)]...</span>",
 			"<span class='notice'>[user] begins to dress the burns on [target]'s [parse_zone(user.zone_selected)] with [tool].</span>",
 			"<span class='notice'>[user] begins to dress the burns on [target]'s [parse_zone(user.zone_selected)].</span>")
+		give_surgery_pain(target, "The burns on your [parse_zone(user.zone_selected)] sting like hell!", target_zone = target_zone)
 	else
 		user.visible_message("<span class='notice'>[user] looks for [target]'s [parse_zone(user.zone_selected)].</span>", "<span class='notice'>You look for [target]'s [parse_zone(user.zone_selected)]...</span>")
 

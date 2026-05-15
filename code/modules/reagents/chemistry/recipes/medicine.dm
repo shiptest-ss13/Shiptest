@@ -166,26 +166,26 @@
 ///pain chems
 
 /datum/chemical_reaction/tramal
-	results = list(/datum/reagent/medicine/tramal = 2) // these make me kinda wish i knew irl chem so i could have better recipes.
+	results = list(/datum/reagent/medicine/painkiller/tramal = 2) // these make me kinda wish i knew irl chem so i could have better recipes.
 	required_reagents = list(/datum/reagent/carbon = 1, /datum/reagent/oxygen = 1)
 	required_catalysts = list(/datum/reagent/ammonia = 2)
 	required_temp = 340
 
 /datum/chemical_reaction/morphine
-	results = list(/datum/reagent/medicine/morphine = 2)
+	results = list(/datum/reagent/medicine/painkiller/morphine = 2)
 	required_reagents = list(/datum/reagent/carbon = 2, /datum/reagent/hydrogen = 2, /datum/reagent/consumable/ethanol = 1, /datum/reagent/oxygen = 1)
 	required_temp = 480
 
 
 /datum/chemical_reaction/carfen
 	results = list(/datum/reagent/medicine/carfencadrizine = 4)
-	required_reagents = list(/datum/reagent/medicine/dimorlin = 1, /datum/reagent/medicine/synaptizine = 1, /datum/reagent/consumable/sugar = 2)
+	required_reagents = list(/datum/reagent/medicine/painkiller/dimorlin = 1, /datum/reagent/medicine/synaptizine = 1, /datum/reagent/consumable/sugar = 2)
 	required_catalysts = list(/datum/reagent/toxin/plasma = 2)
 	required_temp = 127
 	is_cold_recipe = TRUE
 
 /datum/chemical_reaction/dimorlin
-	results = list(/datum/reagent/medicine/dimorlin = 2, /datum/reagent/hydrogen = 2)
+	results = list(/datum/reagent/medicine/painkiller/dimorlin = 2, /datum/reagent/hydrogen = 2)
 	required_reagents = list(/datum/reagent/carbon = 3, /datum/reagent/diethylamine = 1, /datum/reagent/oxygen = 1, /datum/reagent/phenol = 1)
 	required_temp = 730
 	mix_message = "The mixture rapidly incorporates, leaving a layer of liquid hydrogen atop!"

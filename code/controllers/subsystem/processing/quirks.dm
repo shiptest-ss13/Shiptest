@@ -30,6 +30,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("Bad Touch", "Friendly"),
 		list("Self-Aware", "Congenital Analgesia"),
 		list("Trilingual", "Monolingual"),
+		list("Congential Analgesia", "Hypoalgesia", "Hyperalgesia"),
+		list("Allondynia", "Bad Touch")
 	)
 
 	species_blacklist = list(

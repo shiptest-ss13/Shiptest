@@ -184,7 +184,7 @@
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/morphine
 	name = "hypovial (morphine)"
 	icon_state = "hypovial-pink"
-	comes_with = list(/datum/reagent/medicine/morphine = 60)
+	comes_with = list(/datum/reagent/medicine/painkiller/morphine = 60)
 
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/atropine
 	name = "hypovial (atropine)"
@@ -224,7 +224,7 @@
 	icon_state = "hypovial-pink"
 	amount_per_transfer_from_this = 10
 	comes_with = list(
-		/datum/reagent/medicine/morphine = 40,
+		/datum/reagent/medicine/painkiller/morphine = 40,
 		/datum/reagent/medicine/chitosan = 20
 	)
 
@@ -233,7 +233,7 @@
 	icon_state = "hypovial-t"
 	amount_per_transfer_from_this = 10
 	comes_with = list(
-		/datum/reagent/medicine/dimorlin = 20,
+		/datum/reagent/medicine/painkiller/dimorlin = 20,
 		/datum/reagent/medicine/atropine = 20,
 		/datum/reagent/medicine/chitosan = 10,
 		/datum/reagent/medicine/salglu_solution = 10,
@@ -291,7 +291,7 @@
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/morphine
 	name = "large hypovial (morphine)"
 	icon_state = "hypoviallarge-t"
-	comes_with = list(/datum/reagent/medicine/morphine = 120)
+	comes_with = list(/datum/reagent/medicine/painkiller/morphine = 120)
 
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/hadramide
 	name = "large hypovial (hadra-mide)"

@@ -1,3 +1,6 @@
+#warn ipc pain
+//maybe something like a snow crash
+
 /*\ IPC revival surgery \*/
 
 /datum/surgery/revival/ipc

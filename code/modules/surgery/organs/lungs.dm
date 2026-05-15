@@ -101,23 +101,23 @@
 		damage_type = safe_damage_type
 	)
 
-/obj/item/organ/lungs/proc/check_breath	(datum/gas_mixture/breath, mob/living/carbon/human/H)
+/obj/item/organ/lungs/proc/check_breath	(datum/gas_mixture/breath, mob/living/carbon/human/breather)
 //TODO: add lung damage = less oxygen gains
 	var/breathModifier = (5-(5*(damage/maxHealth)/2)) //range 2.5 - 5
-	if(H.status_flags & GODMODE)
+	if(breather.status_flags & GODMODE)
 		return
 	if(HAS_TRAIT(H, TRAIT_NOBREATH))
 		return
 
 	if(!breath || (breath.total_moles() == 0))
-		if(H.reagents.has_reagent(crit_stabilizing_reagent, needs_metabolizing = TRUE))
+		if(breather.reagents.has_reagent(crit_stabilizing_reagent, needs_metabolizing = TRUE))
 			return
-		if(H.health >= H.crit_threshold)
-			H.adjustOxyLoss(HUMAN_MAX_OXYLOSS)
+		if(breather.health >= breather.crit_threshold)
+			breather.adjustOxyLoss(HUMAN_MAX_OXYLOSS)
 		else if(!HAS_TRAIT(H, TRAIT_NOCRITDAMAGE))
-			H.adjustOxyLoss(HUMAN_CRIT_MAX_OXYLOSS)
+			breather.adjustOxyLoss(HUMAN_CRIT_MAX_OXYLOSS)
 
-		H.failed_last_breath = TRUE
+		breather.failed_last_breath = TRUE
 		var/alert_category
 		var/alert_type
 		if(ispath(breathing_class))
@@ -131,7 +131,7 @@
 				alert_category = alert["alert_category"]
 				alert_type = alert["alert_type"]
 		if(alert_category)
-			H.throw_alert(alert_category, alert_type)
+			breather.throw_alert(alert_category, alert_type)
 		return FALSE
 
 	#define PP_MOLES(X) ((X / total_moles) * pressure * received_pressure_mult)
@@ -186,13 +186,13 @@
 			for(var/adjustment in mole_adjustments)
 				mole_adjustments[adjustment] *= multiplier
 			if(alert_category)
-				H.throw_alert(alert_category, alert_type)
+				breather.throw_alert(alert_category, alert_type)
 		else
-			H.failed_last_breath = FALSE
-			if(H.health >= H.crit_threshold)
-				H.adjustOxyLoss(-breathModifier * received_pressure_mult)
+			breather.failed_last_breath = FALSE
+			if(breather.health >= breather.crit_threshold)
+				breather.adjustOxyLoss(-breathModifier * received_pressure_mult)
 			if(alert_category)
-				H.clear_alert(alert_category)
+				breather.clear_alert(alert_category)
 	var/list/danger_reagents = GLOB.gas_data.breath_reagents_dangerous
 	for(var/entry in gas_max)
 		var/found_pp = 0
@@ -215,14 +215,14 @@
 			found_pp = PP(breath, entry)
 		if(found_pp > gas_max[entry])
 			if(istype(danger_reagent))
-				H.reagents.add_reagent(danger_reagent,1)
+				breather.reagents.add_reagent(danger_reagent,1)
 			var/list/damage_info = (entry in gas_damage) ? gas_damage[entry] : gas_damage["default"]
 			var/dam = found_pp / gas_max[entry] * 10
-			H.apply_damage_type(clamp(dam, damage_info["min"], damage_info["max"]), damage_info["damage_type"])
+			breather.apply_damage_type(clamp(dam, damage_info["min"], damage_info["max"]), damage_info["damage_type"])
 			if(alert_category && alert_type)
-				H.throw_alert(alert_category, alert_type)
+				breather.throw_alert(alert_category, alert_type)
 		else if(alert_category)
-			H.clear_alert(alert_category)
+			breather.clear_alert(alert_category)
 
 	var/inflammatory_kpa = 0
 	var/list/breath_reagents = GLOB.gas_data.breath_reagents
@@ -236,7 +236,7 @@
 			mole_adjustments[gas] = (gas in mole_adjustments) ? mole_adjustments[gas] - breath_moles : -breath_moles
 
 	if(inflammatory_kpa)
-		H.adjust_lung_inflammation(inflammatory_kpa * (HAS_TRAIT(H, TRAIT_ASTHMATIC) ? 10 : 2))
+		breather.adjust_lung_inflammation(inflammatory_kpa * (HAS_TRAIT(H, TRAIT_ASTHMATIC) ? 10 : 2))
 
 	if(can_smell)
 		handle_smell(breath, H)
@@ -253,48 +253,47 @@
 
 		var/SA_pp = PP(breath, GAS_NITROUS)
 		if(SA_pp > SA_para_min) // Enough to make us stunned for a bit
-			H.Unconscious(60) // 60 gives them one second to wake up and run away a bit!
-			if(SA_pp > SA_sleep_min) // Enough to make us sleep as well
-				H.Sleeping(200)
-				ADD_TRAIT(owner, TRAIT_ANALGESIA, GAS_NITROUS)
+			breather.Unconscious(60) // 60 gives them one second to wake up and run away a bit!
+			var/amount_of_sleep = min(breather.AmountSleeping() + 10 SECONDS, 20 SECONDS)
+			if(SA_pp > SA_sleep_min && breather.Sleeping(amount_of_sleep))
+				// If we got put to sleep we count as "on anesthetic"
+				breather.apply_status_effect(/datum/status_effect/grouped/anesthetic, /datum/gas/nitrous_oxide)
 		else if(SA_pp > 0.01)	// There is sleeping gas in their lungs, but only a little, so give them a bit of a warning
 			if(prob(20))
-				H.emote(pick("giggle", "laugh"))
+				breather.emote(pick("giggle", "laugh"))
 				SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "chemical_euphoria", /datum/mood_event/chemical_euphoria)
 		else
 			SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "chemical_euphoria")
-			REMOVE_TRAIT(owner, TRAIT_ANALGESIA, GAS_NITROUS)
-
-	on_anesthetic = check_anesthetic(SA_pp, SA_sleep_min)
+			breather.remove_status_effect(/datum/status_effect/grouped/anesthetic)
 
 	// BZ
 
 		var/bz_pp = PP(breath, GAS_BZ)
 		if(bz_pp > BZ_brain_damage_min)
-			H.hallucination += 10
-			H.reagents.add_reagent(/datum/reagent/bz_metabolites,5)
+			breather.hallucination += 10
+			breather.reagents.add_reagent(/datum/reagent/bz_metabolites,5)
 			if(prob(33))
-				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
+				breather.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
 
 		else if(bz_pp > BZ_trip_balls_min)
-			H.hallucination += 5
-			H.reagents.add_reagent(/datum/reagent/bz_metabolites,1)
+			breather.hallucination += 5
+			breather.reagents.add_reagent(/datum/reagent/bz_metabolites,1)
 
 	// Freon
 		var/freon_pp = PP(breath,GAS_FREON)
 		if (prob(freon_pp))
 			to_chat(H, span_alert("Your mouth feels like it's burning!"))
 		if (freon_pp >40)
-			H.emote("gasp")
-			H.adjustOxyLoss(15)
+			breather.emote("gasp")
+			breather.adjustOxyLoss(15)
 			if (prob(freon_pp/2))
 				to_chat(H, span_alert("Your throat closes up!"))
-				H.silent = max(H.silent, 3)
+				breather.silent = max(breather.silent, 3)
 		else
-			H.adjustOxyLoss(freon_pp/4)
+			breather.adjustOxyLoss(freon_pp/4)
 		gas_breathed = breath.get_moles(GAS_FREON)
 		if (gas_breathed > gas_stimulation_min)
-			H.reagents.add_reagent(/datum/reagent/freon,1)
+			breather.reagents.add_reagent(/datum/reagent/freon,1)
 
 		breath.adjust_moles(GAS_FREON, -gas_breathed)
 
@@ -303,16 +302,16 @@
 		if (prob(chlorine_pp))
 			to_chat(H, span_alert("Your lungs feel awful!"))
 		if (chlorine_pp >20)
-			H.emote("gasp")
-			H.adjustOxyLoss(5)
+			breather.emote("gasp")
+			breather.adjustOxyLoss(5)
 			if (prob(chlorine_pp/2))
 				to_chat(H, span_alert("Your throat closes up!"))
-				H.silent = max(H.silent, 3)
+				breather.silent = max(breather.silent, 3)
 		else
-			H.adjustOxyLoss(round(chlorine_pp/8))
+			breather.adjustOxyLoss(round(chlorine_pp/8))
 		gas_breathed = breath.get_moles(GAS_CHLORINE)
 		if (gas_breathed > gas_stimulation_min)
-			H.reagents.add_reagent(/datum/reagent/chlorine,1)
+			breather.reagents.add_reagent(/datum/reagent/chlorine,1)
 
 		breath.adjust_moles(GAS_CHLORINE, -gas_breathed)
 	// Hydrogen Chloride
@@ -320,15 +319,15 @@
 		if (prob(hydrogen_chloride_pp))
 			to_chat(H, span_alert("Your lungs feel terrible!"))
 		if (hydrogen_chloride_pp >20)
-			H.emote("gasp")
-			H.adjustOxyLoss(10)
+			breather.emote("gasp")
+			breather.adjustOxyLoss(10)
 			if (prob(hydrogen_chloride_pp/2))
 				to_chat(H, span_alert("Your throat closes up!"))
-				H.silent = max(H.silent, 3)
+				breather.silent = max(breather.silent, 3)
 		else
-			H.adjustOxyLoss(round(hydrogen_chloride_pp/4))
+			breather.adjustOxyLoss(round(hydrogen_chloride_pp/4))
 		if (gas_breathed > gas_stimulation_min)
-			H.reagents.add_reagent(/datum/reagent/hydrogen_chloride)
+			breather.reagents.add_reagent(/datum/reagent/hydrogen_chloride)
 
 		breath.adjust_moles(GAS_HYDROGEN_CHLORIDE, -gas_breathed)
 
@@ -337,8 +336,8 @@
 	/* commenting out while it's not a status effect
 		var/carbon_monoxide_pp = PP(breath,GAS_CO)
 		if (carbon_monoxide_pp > gas_stimulation_min)
-			H.reagents.add_reagent(/datum/reagent/carbon_monoxide, 2)
-			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.has_reagent(/datum/reagent/carbon_monoxide)
+			breather.reagents.add_reagent(/datum/reagent/carbon_monoxide, 2)
+			var/datum/reagent/carbon_monoxide/monoxide_reagent = breather.has_reagent(/datum/reagent/carbon_monoxide)
 			if(monoxide_reagent.volume > 10)
 				monoxide_reagent.metabolization_rate = (10 - carbon_monoxide_pp)
 			else
@@ -348,18 +347,18 @@
 					monoxide_reagent.accumulation = min(monoxide_reagent.accumulation,50)
 				if (20 to 100)
 					monoxide_reagent.accumulation = min(monoxide_reagent.accumulation, 150)
-					H.reagents.add_reagent(/datum/reagent/carbon_monoxide,2)
+					breather.reagents.add_reagent(/datum/reagent/carbon_monoxide,2)
 				if (100 to 200)
 					monoxide_reagent.accumulation = min(monoxide_reagent.accumulation, 250)
-					H.reagents.add_reagent(/datum/reagent/carbon_monoxide,4)
+					breather.reagents.add_reagent(/datum/reagent/carbon_monoxide,4)
 				if (200 to 400)
 					monoxide_reagent.accumulation = min(monoxide_reagent.accumulation, 250)
-					H.reagents.add_reagent(/datum/reagent/carbon_monoxide,8)
+					breather.reagents.add_reagent(/datum/reagent/carbon_monoxide,8)
 				if (400 to INFINITY)
 					monoxide_reagent.accumulation = max(monoxide_reagent.accumulation, 450)
-					H.reagents.add_reagent(/datum/reagent/carbon_monoxide,16)
+					breather.reagents.add_reagent(/datum/reagent/carbon_monoxide,16)
 		else
-			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.has_reagent(/datum/reagent/carbon_monoxide)
+			var/datum/reagent/carbon_monoxide/monoxide_reagent = breather.has_reagent(/datum/reagent/carbon_monoxide)
 			if(monoxide_reagent)
 				monoxide_reagent.accumulation = min(monoxide_reagent.accumulation, 150)
 				monoxide_reagent.metabolization_rate = 10 //purges 10 per tick
@@ -370,16 +369,16 @@
 		if (prob(sulfur_dioxide_pp) && !HAS_TRAIT(H, TRAIT_ANALGESIA))
 			to_chat(H, span_alert("It hurts to breath."))
 		if (sulfur_dioxide_pp >40)
-			H.emote("gasp")
-			H.adjustOxyLoss(5)
+			breather.emote("gasp")
+			breather.adjustOxyLoss(5)
 			if (prob(sulfur_dioxide_pp/2))
 				to_chat(H, span_alert("Your throat closes up!"))
-				H.silent = max(H.silent, 3)
+				breather.silent = max(breather.silent, 3)
 		else
-			H.adjustOxyLoss(round(sulfur_dioxide_pp/8))
+			breather.adjustOxyLoss(round(sulfur_dioxide_pp/8))
 		gas_breathed = breath.get_moles(GAS_SO2)
 		if (gas_breathed > gas_stimulation_min)
-			H.reagents.add_reagent(/datum/reagent/sulfur_dioxide,1)
+			breather.reagents.add_reagent(/datum/reagent/sulfur_dioxide,1)
 
 		breath.adjust_moles(GAS_SO2, -gas_breathed)
 
@@ -388,14 +387,14 @@
 		if (prob(ozone_pp))
 			to_chat(H, span_alert("Your heart feels funny."))
 		if (ozone_pp >40)
-			H.emote("gasp")
-			H.adjustOxyLoss(5)
+			breather.emote("gasp")
+			breather.adjustOxyLoss(5)
 			if (prob(ozone_pp/2))
 				to_chat(H, span_alert("Your throat closes up!"))
-				H.silent = max(H.silent, 3)
+				breather.silent = max(breather.silent, 3)
 		gas_breathed = breath.get_moles(GAS_O3)
 		if (gas_breathed > gas_stimulation_min)
-			H.reagents.add_reagent(/datum/reagent/ozone,1)
+			breather.reagents.add_reagent(/datum/reagent/ozone,1)
 
 		breath.adjust_moles(GAS_O3, -gas_breathed)
 
@@ -405,20 +404,20 @@
 			to_chat(H, span_alert("Your lungs feel terrible!"))
 
 		if (ammonia_pp > 10)
-			H.emote("gasp")
-			H.adjustOxyLoss(5)
-			H.adjustOxyLoss(round(ammonia_pp/8))
+			breather.emote("gasp")
+			breather.adjustOxyLoss(5)
+			breather.adjustOxyLoss(round(ammonia_pp/8))
 			if (prob(ammonia_pp/2))
 				to_chat(H, span_alert("Your throat burns!</span>"))
-				H.silent = max(H.silent, 2)
+				breather.silent = max(breather.silent, 2)
 		else
-			H.adjustOxyLoss(round(ammonia_pp/8))
+			breather.adjustOxyLoss(round(ammonia_pp/8))
 		gas_breathed = breath.get_moles(GAS_AMMONIA)
 		if (gas_breathed > gas_stimulation_min)
 			if(prob(25))//unlike the chlorine reagent ammonia doesnt do lung damage do we handle it here instead
-				H.adjustOrganLoss(ORGAN_SLOT_LUNGS,2*1.6)
+				breather.adjustOrganLoss(ORGAN_SLOT_LUNGS,2*1.6)
 			//ammonia is actually disposed of naturally by humans, but extremely poorly by non mammals, maybe we can make it toxic ONLY to certain species (plural) sometime?
-			H.reagents.add_reagent(/datum/reagent/ammonia,1)
+			breather.reagents.add_reagent(/datum/reagent/ammonia,1)
 
 		breath.adjust_moles(GAS_AMMONIA, -gas_breathed)
 
@@ -444,13 +443,13 @@
 			if(checked_gas.odor[4])
 				to_chat(H, checked_gas.odor[4])
 			if(checked_gas.odor_emotes && prob(20))
-				H.emote("cough")
+				breather.emote("cough")
 
 		else if(odor_pp > 2) //level 2
 			if(checked_gas.odor[3])
 				to_chat(H, checked_gas.odor[3])
 			if(checked_gas.odor_emotes && prob(5))
-				H.emote("cough")
+				breather.emote("cough")
 
 		else if(odor_pp > gas_stimulation_min) //level 1
 			if(checked_gas.odor[2])
@@ -466,15 +465,15 @@
 		return FALSE
 
 	if(prob(20))
-		H.emote("gasp")
+		breather.emote("gasp")
 	if(breath_pp > 0)
 		var/ratio = safe_breath_min/breath_pp
-		H.adjustOxyLoss(min(5*ratio, HUMAN_MAX_OXYLOSS)) // Don't fuck them up too fast (space only does HUMAN_MAX_OXYLOSS after all!
-		H.failed_last_breath = TRUE
+		breather.adjustOxyLoss(min(5*ratio, HUMAN_MAX_OXYLOSS)) // Don't fuck them up too fast (space only does HUMAN_MAX_OXYLOSS after all!
+		breather.failed_last_breath = TRUE
 		. = true_pp*ratio/6
 	else
-		H.adjustOxyLoss(HUMAN_MAX_OXYLOSS)
-		H.failed_last_breath = TRUE
+		breather.adjustOxyLoss(HUMAN_MAX_OXYLOSS)
+		breather.failed_last_breath = TRUE
 
 
 /obj/item/organ/lungs/proc/handle_breath_temperature(datum/gas_mixture/breath, mob/living/carbon/human/breather) // called by human/life, handles temperatures

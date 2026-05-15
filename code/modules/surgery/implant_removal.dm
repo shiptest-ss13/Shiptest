@@ -25,6 +25,7 @@
 		display_results(user, target, span_notice("You begin to extract [I] from [target]'s [target_zone]..."),
 			span_notice("[user] begins to extract [I] from [target]'s [target_zone]."),
 			span_notice("[user] begins to extract something from [target]'s [target_zone]."))
+		give_surgery_pain(target, "You feel a serious pain in your [target_zone]!", target_zone = target_zone)
 	else
 		display_results(user, target, span_notice("You look for an implant in [target]'s [target_zone]..."),
 			span_notice("[user] looks for an implant in [target]'s [target_zone]."),
@@ -35,6 +36,7 @@
 		display_results(user, target, span_notice("You successfully remove [I] from [target]'s [target_zone]."),
 			span_notice("[user] successfully removes [I] from [target]'s [target_zone]!"),
 			span_notice("[user] successfully removes something from [target]'s [target_zone]!"))
+		to_chat(target, span_userdanger("You can feel your [implant] pulled out of you!"))
 		I.removed(target)
 
 		var/obj/item/implantcase/case

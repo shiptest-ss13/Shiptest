@@ -4,7 +4,7 @@
 ** Miner's Salve - High intensity with some
 */
 
-/datum/reagent/medicine/tramal
+/datum/reagent/medicine/painkiller/tramal
 	name = "Tramal"
 	description = "A low intensity, high duration painkiller. Causes slight drowiness in extended use."
 	reagent_state = LIQUID
@@ -12,16 +12,16 @@
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	overdose_threshold = 35
 
-/datum/reagent/medicine/tramal/on_mob_metabolize(mob/living/L)
+/datum/reagent/medicine/painkiller/tramal/on_mob_metabolize(mob/living/L)
 	..()
 	ADD_TRAIT(L, TRAIT_PAIN_RESIST, type)
 
-/datum/reagent/medicine/tramal/on_mob_end_metabolize(mob/living/L)
+/datum/reagent/medicine/painkiller/tramal/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_PAIN_RESIST, type)
 	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	..()
 
-/datum/reagent/medicine/tramal/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/painkiller/tramal/on_mob_life(mob/living/carbon/M)
 	if(current_cycle >= 5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_light, name)
 	switch(current_cycle)
@@ -31,17 +31,17 @@
 			M.drowsyness += 1
 	..()
 
-/datum/reagent/medicine/tramal/overdose_start(mob/living/M)
+/datum/reagent/medicine/painkiller/tramal/overdose_start(mob/living/M)
 	. = ..()
 	ADD_TRAIT(M, TRAIT_PINPOINT_EYES, type)
 
-/datum/reagent/medicine/tramal/overdose_process(mob/living/M)
+/datum/reagent/medicine/painkiller/tramal/overdose_process(mob/living/M)
 	if(prob(33))
 		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
-/datum/reagent/medicine/morphine
+/datum/reagent/medicine/painkiller/morphine
 	name = "Morphine"
 	description = "A painkiller that allows the patient to move at full speed even in bulky objects. Causes drowsiness and eventually unconsciousness in high doses. Overdose will cause a variety of effects, ranging from minor to lethal."
 	reagent_state = LIQUID
@@ -49,7 +49,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 
-/datum/reagent/medicine/morphine/on_mob_metabolize(mob/living/L)
+/datum/reagent/medicine/painkiller/morphine/on_mob_metabolize(mob/living/L)
 	..()
 	ADD_TRAIT(L, TRAIT_PAIN_RESIST, type)
 	L.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
@@ -58,7 +58,7 @@
 		drugged.physiology.damage_resistance += 5
 		drugged.impact_effect /= 2
 
-/datum/reagent/medicine/morphine/on_mob_end_metabolize(mob/living/L)
+/datum/reagent/medicine/painkiller/morphine/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_PAIN_RESIST, type)
 	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
@@ -68,7 +68,7 @@
 		drugged.impact_effect *= 2
 	..()
 
-/datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/painkiller/morphine/on_mob_life(mob/living/carbon/M)
 	if(current_cycle >= 5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name)
 	switch(current_cycle)
@@ -81,18 +81,18 @@
 			. = 1
 	..()
 
-/datum/reagent/medicine/morphine/overdose_start(mob/living/M)
+/datum/reagent/medicine/painkiller/morphine/overdose_start(mob/living/M)
 	. = ..()
 	ADD_TRAIT(M, TRAIT_PINPOINT_EYES, type)
 
-/datum/reagent/medicine/morphine/overdose_process(mob/living/M)
+/datum/reagent/medicine/painkiller/morphine/overdose_process(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
-/datum/reagent/medicine/dimorlin
+/datum/reagent/medicine/painkiller/dimorlin
 	name = "Dimorlin"
 	description = "A powerful opiate-derivative analgesiac. Extremely habit forming"
 	reagent_state = LIQUID
@@ -100,7 +100,7 @@
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	overdose_threshold = 15
 
-/datum/reagent/medicine/dimorlin/on_mob_metabolize(mob/living/L)
+/datum/reagent/medicine/painkiller/dimorlin/on_mob_metabolize(mob/living/L)
 	..()
 	ADD_TRAIT(L, TRAIT_ANALGESIA, type)
 	if(iscarbon(L))
@@ -112,7 +112,7 @@
 		drugged.physiology.damage_resistance += 15
 		drugged.impact_effect /= 4
 
-/datum/reagent/medicine/dimorlin/on_mob_end_metabolize(mob/living/L)
+/datum/reagent/medicine/painkiller/dimorlin/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_ANALGESIA, type)
 	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	if(iscarbon(L))
@@ -125,17 +125,17 @@
 		drugged.impact_effect *= 4
 	..()
 
-/datum/reagent/medicine/dimorlin/on_mob_life(mob/living/carbon/C)
+/datum/reagent/medicine/painkiller/dimorlin/on_mob_life(mob/living/carbon/C)
 	C.set_screwyhud(SCREWYHUD_HEALTHY)
 	if(current_cycle >= 3)
 		SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
 	..()
 
-/datum/reagent/medicine/dimorlin/overdose_start(mob/living/M)
+/datum/reagent/medicine/painkiller/dimorlin/overdose_start(mob/living/M)
 	. = ..()
 	ADD_TRAIT(M, TRAIT_PINPOINT_EYES, type)
 
-/datum/reagent/medicine/dimorlin/overdose_process(mob/living/M)
+/datum/reagent/medicine/painkiller/dimorlin/overdose_process(mob/living/M)
 	if(prob(33))
 		M.losebreath++
 		M.adjustOxyLoss(4, 0)

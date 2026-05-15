@@ -21,11 +21,14 @@
 	display_results(user, target, span_notice("You start rerouting [target]'s nerves."),
 		span_notice("[user] starts rerouting [target]'s nerves."),
 		span_notice("[user] starts manipulating [target]'s nervous system."))
+	give_surgery_pain(target, "Your entire body goes numb!", target_zone = target_zone)
+	target.cause_typed_pain(BODY_ZONES_ALL, 15, BURN) // NON-MODULE CHANGE
 
 /datum/surgery_step/ground_nerves/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	display_results(user, target, span_notice("You successfully reroute [target]'s nervous system!"),
 		span_notice("[user] successfully reroutes [target]'s nervous system!"),
 		span_notice("[user] finishes manipulating [target]'s nervous system."))
+	give_surgery_pain(target, "You regain feeling in your body! You feel energzed!", target_zone = target_zone)
 	new /datum/bioware/grounded_nerves(target)
 	return ..()
 
