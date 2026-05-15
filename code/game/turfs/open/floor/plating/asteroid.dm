@@ -7,7 +7,6 @@
 	baseturfs = /turf/open/floor/plating/asteroid
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "asteroid"
-	postdig_icon_change = TRUE
 	footstep = FOOTSTEP_ASTEROID
 	barefootstep = FOOTSTEP_ASTEROID
 	clawfootstep = FOOTSTEP_ASTEROID
@@ -25,16 +24,20 @@
 	var/obj/item/stack/digResult = /obj/item/stack/ore/glass
 	/// Whether the turf has been dug or not
 	var/dug
-	///do we even use footsteps?
+
+	///does this turf get an overlay when stepped on?
 	var/has_footsteps = FALSE
-	/// footprint var
+	/// entry direction of a footprint overlay
 	var/entered_dirs
-	/// footprint var num 2
+	/// exit direction of a footprint overlay
 	var/exited_dirs
 	/// icon_name used for footsteps
 	var/footstep_icon_state
 	/// smoothed icon in case we use it
 	var/smooth_icon
+
+	/// Whether to change the turf's icon_state to "[base_icon_state]_dug" when its dugged up
+	var/postdig_icon_change = TRUE
 
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_OPEN_FLOOR)
 	canSmoothWith = list(SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_TURF_OPEN)
@@ -76,14 +79,13 @@
 		add_overlay("[base_icon_state]_dug")
 
 	if(no_dirt)
-		if(!postdig_icon)
-			icon_state = "[base_icon_state]_dug"
+		icon_state = "[base_icon_state]_dug"
 		dug = TRUE
 		return
 
 	new digResult(src, 5)
 	if(postdig_icon_change)
-		if(!postdig_icon || smoothing_flags)
+		if(smoothing_flags)
 			icon_state = "[base_icon_state]_dug"
 	if(has_footsteps)
 		cut_overlays()
