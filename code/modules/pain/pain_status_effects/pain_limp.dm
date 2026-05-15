@@ -3,7 +3,6 @@
 	id = "limp_pain"
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = /atom/movable/screen/alert/status_effect/limp/pain
-	examine_text = "They're limping with every move."
 
 /datum/status_effect/limp/pain/on_apply()
 	. = ..()
@@ -15,7 +14,9 @@
 		return FALSE
 
 	RegisterSignal(owner, list(COMSIG_CARBON_PAIN_GAINED, COMSIG_CARBON_PAIN_LOST), .proc/update_limp)
-	examine_text = span_warning("[owner.p_theyre(TRUE)] limping with every move.")
+
+/datum/status_effect/limp/pain/get_examine_text()
+	return span_warning("[owner.p_theyre(TRUE)] limping with every move.")
 
 /datum/status_effect/limp/pain/on_remove()
 	. = ..()

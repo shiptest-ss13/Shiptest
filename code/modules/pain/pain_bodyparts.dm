@@ -117,7 +117,7 @@
 			if(last_received_pain_type == BURN)
 				feedback_phrases += list("burns to the touch", "burns", "singes")
 		if(65 to INFINITY)
-			if(DT_PROB(12, delta_time))
+			if(SPT_PROB(12, delta_time))
 				owner.pain_emote("scream", 3 SECONDS)
 			owner.flash_pain_overlay(2, 2 SECONDS)
 			feedback_phrases += list("is numb from the pain")
@@ -212,7 +212,7 @@
 			feedback_phrases += list("hurts madly", "is in agony", "is anguishing", "burns to the touch", "feels terrible", "feels constricted")
 			side_feedback += list("You feel your ribs jostle in your [parse_zone(body_zone)]")
 
-	if(side_feedback.len && last_received_pain_type == BRUTE && DT_PROB(50, delta_time))
+	if(side_feedback.len && last_received_pain_type == BRUTE && SPT_PROB(50, delta_time))
 		to_chat(owner, span_danger("[pick(side_feedback)][healing_pain ? ", [pick(healing_phrases)]." : "!"]"))
 	else if(feedback_phrases.len)
 		to_chat(owner, span_danger("Your [parse_zone(body_zone)] [pick(feedback_phrases)][healing_pain ? ", [pick(healing_phrases)]." : "!"]"))
@@ -273,7 +273,7 @@
 			feedback_phrases += list("hurts madly", "is in agony", "is anguishing", "feels terrible", "is in agony", "feels tense")
 			side_feedback += list("You feel a splitting migrane", "Pressure floods your [parse_zone(body_zone)]", "Your head feels as if it's being squeezed", "Your eyes hurt to keep open")
 
-	if(side_feedback.len && last_received_pain_type == BRUTE && DT_PROB(50, delta_time))
+	if(side_feedback.len && last_received_pain_type == BRUTE && SPT_PROB(50, delta_time))
 		to_chat(owner, span_danger("[pick(side_feedback)][healing_pain ? ", [pick(healing_phrases)]." : "!"]"))
 	else if(feedback_phrases.len)
 		to_chat(owner, span_danger("Your [parse_zone(body_zone)] [pick(feedback_phrases)][healing_pain ? ", [pick(healing_phrases)]." : "!"]"))
@@ -293,7 +293,7 @@
 	if(!owner || !pain)
 		return FALSE
 
-	if(get_modified_pain() >= 40 && DT_PROB(5, delta_time))
+	if(get_modified_pain() >= 40 && SPT_PROB(5, delta_time))
 		if(owner.apply_status_effect(/datum/status_effect/limp/pain))
 			to_chat(owner, span_danger("Your [parse_zone(body_zone)] hurts to walk on!"))
 
@@ -312,7 +312,7 @@
 	if(!owner || !pain)
 		return FALSE
 
-	if(get_modified_pain() >= 40 && DT_PROB(5, delta_time))
+	if(get_modified_pain() >= 40 && SPT_PROB(5, delta_time))
 		if(owner.apply_status_effect(/datum/status_effect/limp/pain))
 			to_chat(owner, span_danger("Your [parse_zone(body_zone)] hurts to walk on!"))
 

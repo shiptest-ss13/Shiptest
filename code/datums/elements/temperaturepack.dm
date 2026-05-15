@@ -23,13 +23,13 @@
 	src.pain_modifier_on_limb = pain_modifier_on_limb
 	src.temperature_change = temperature_change
 
-	RegisterSignal(target, COMSIG_ITEM_ATTACK_SECONDARY, .proc/try_apply_to_limb)
+	RegisterSignal(target, COMSIG_ITEM_PRE_ATTACK_SECONDARY, .proc/try_apply_to_limb)
 	RegisterSignal(target, COMSIG_ATOM_EXAMINE, .proc/get_examine_text)
 
 /datum/element/temperature_pack/Detach(obj/target)
 	. = ..()
 	UnregisterSignal(target, list(
-		COMSIG_ITEM_ATTACK_SECONDARY,
+		COMSIG_ITEM_PRE_ATTACK_SECONDARY,
 		COMSIG_ATOM_EXAMINE,
 	))
 

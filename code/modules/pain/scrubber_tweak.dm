@@ -11,15 +11,8 @@
 
 	// Scrubbers should scrub nitrous from the rooms which we use anesthetic in most commonly
 	var/static/list/scrub_nitrous_by_default_areas = typecacheof(list(
-		/area/medical/cryo,
-		/area/medical/exam_room,
-		/area/medical/morgue,
-		/area/medical/patients_rooms,
-		/area/medical/surgery,
-		/area/medical/treatment_center,
-		/area/science/robotics,
-		// /area/security/medical, // Doesn't exist... yet
-		/area/security/execution,
+		/area/ship/medical,
+		/area/ship/medical/surgery,
 	))
 
 	var/area/scrubber_area = get_area(src)

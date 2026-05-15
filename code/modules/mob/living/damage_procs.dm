@@ -157,7 +157,7 @@
 	if(stamina)
 		apply_damage(stamina, STAMINA, null, blocked)
 	if(jitter && (status_flags & CANSTUN) && !HAS_TRAIT(src, TRAIT_STUNIMMUNE))
-		adjust_timed_status_effect(jitter, /datum/status_effect/jitter)
+		adjust_timed_status_effect(jitter, STATUS_EFFECT_JITTER)
 	return TRUE
 
 

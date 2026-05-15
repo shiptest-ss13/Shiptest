@@ -194,9 +194,9 @@
 /datum/status_effect/trickwine/debuff/ash/tick()
 	switch(pick("jitter", "dizzy", "drug"))
 		if("jitter")
-			owner.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+			owner.set_timed_status_effect(6 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 		if("dizzy")
-			owner.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+			owner.set_timed_status_effect(4 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 		if("drug")
 			owner.adjust_drugginess(3)
 

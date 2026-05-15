@@ -82,8 +82,8 @@
 	. = ..()
 	if(isliving(target))
 		var/mob/living/M = target
-		M.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter)
-		M.set_timed_status_effect(10 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS, STATUS_EFFECT_JITTER)
+		M.set_timed_status_effect(10 SECONDS, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 		M.adjust_drugginess(10)
 
 /obj/projectile/bullet/c38/shock

@@ -94,14 +94,14 @@
 
 /datum/surgery_step/coronary_bypass/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(ishuman(target))
-		var/mob/living/carbon/human/H = target
+		var/mob/living/carbon/human/target_human = target
 		display_results(user, target, span_warning("You screw up in attaching the graft, and it tears off, tearing part of the heart!"),
-			span_warning("[user] screws up, causing blood to spurt out of [H]'s chest profusely!"),
-			span_warning("[user] screws up, causing blood to spurt out of [H]'s chest profusely!"))
+			span_warning("[user] screws up, causing blood to spurt out of [target_human]'s chest profusely!"),
+			span_warning("[user] screws up, causing blood to spurt out of [target_human]'s chest profusely!"))
 		give_surgery_pain(target, "Your chest burns; you feel like you're going insane!", target_zone = target_zone)
 		// EXTRA pain for failing
 		target_human.cause_typed_pain(40, target_zone, pain_type)
-		H.adjustOrganLoss(ORGAN_SLOT_HEART, 30)
-		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
+		target_human.adjustOrganLoss(ORGAN_SLOT_HEART, 30)
+		var/obj/item/bodypart/BP = target_human.get_bodypart(check_zone(surgery.location))
 		BP.generic_bleedstacks += 30
 	return FALSE

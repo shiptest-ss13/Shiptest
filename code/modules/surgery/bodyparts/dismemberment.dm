@@ -24,7 +24,7 @@
 			if(!HAS_TRAIT(limb_owner, TRAIT_ANALGESIA)) //and do we actually feel pain?
 				INVOKE_ASYNC(limb_owner, TYPE_PROC_REF(/mob, emote), "scream")
 
-	playsound(get_turf(limb_owner), 'sound/effects/wounds/dismember.ogg', 80, TRUE)f
+	playsound(get_turf(limb_owner), 'sound/effects/wounds/dismember.ogg', 80, TRUE)
 	SEND_SIGNAL(limb_owner, COMSIG_ADD_MOOD_EVENT, "dismembered", /datum/mood_event/dismembered)
 
 	if(wounding_type)

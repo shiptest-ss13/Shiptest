@@ -41,8 +41,7 @@
 	throwforce = 0
 	throw_speed = 2
 	throw_range = 5
-	attack_verb_continuous = list("pads")
-	attack_verb_simple = list("pads")
+	attack_verb = list("pads")
 	/// Whether our pack has been used.
 	var/used = FALSE
 	/// Whether our pack is active.
@@ -163,7 +162,6 @@
 	name = "bottle of painkillers"
 	desc = "Contains multiple pills used to treat anywhere from mild to extreme pain. CAUTION: Do not take in conjunction with alcohol."
 	icon = 'jollystation_modules/icons/obj/chemical.dmi'
-	custom_premium_price = PAYCHECK_HARD * 1.5
 
 /obj/item/storage/pill_bottle/painkillers/ComponentInitialize()
 	. = ..()
@@ -252,7 +250,6 @@
 	throwforce = 0
 	throw_speed = 1
 	throw_range = 2
-	custom_price = PAYCHECK_MEDIUM
 
 /obj/item/shock_blanket/Initialize(mapload)
 	. = ..()
@@ -334,12 +331,12 @@
 	if(slot_flags & slot)
 		enable_protection(user)
 		RegisterSignal(user, list(COMSIG_LIVING_SET_BODY_POSITION, COMSIG_LIVING_SET_BUCKLED), .proc/check_protection)
-		RegisterSignal(user, list(COMSIG_PARENT_QDELETING, COMSIG_MOVABLE_PRE_MOVE), .proc/disable_protection)
+		RegisterSignal(user, list(COMSIG_QDELETING, COMSIG_MOVABLE_PRE_MOVE), .proc/disable_protection)
 
 /obj/item/shock_blanket/dropped(mob/user, silent)
 	. = ..()
 	disable_protection(user)
-	UnregisterSignal(user, list(COMSIG_LIVING_SET_BODY_POSITION, COMSIG_LIVING_SET_BUCKLED, COMSIG_PARENT_QDELETING, COMSIG_MOVABLE_PRE_MOVE))
+	UnregisterSignal(user, list(COMSIG_LIVING_SET_BODY_POSITION, COMSIG_LIVING_SET_BUCKLED, COMSIG_QDELETING, COMSIG_MOVABLE_PRE_MOVE))
 
 	if(locate(/obj/structure/bed) in loc)
 		icon_state = "[base_icon_state]_dropped"
@@ -431,6 +428,8 @@
 	STR.max_items = 12
 	STR.max_combined_w_class = 12
 
+
+/*
 /obj/item/storage/firstaid/emergency/PopulateContents()
 	if(empty)
 		return
@@ -445,25 +444,8 @@
 		/obj/item/shock_blanket/emergency = 1,
 	)
 	generate_items_inside(items_inside, src)
+*/
 
-
-// Pain implements added to various vendors.
-/obj/machinery/vending/drugs
-	added_premium = list(/obj/item/storage/pill_bottle/painkillers = 2)
-
-/obj/machinery/vending/medical
-	added_products = list(
-		/obj/item/shock_blanket = 3,
-		/obj/item/temperature_pack/cold = 2,
-		/obj/item/temperature_pack/heat = 2,
-		)
-
-/obj/machinery/vending/wallmed
-	added_products = list(
-		/obj/item/shock_blanket/emergency = 2,
-		/obj/item/temperature_pack/cold = 1,
-		/obj/item/temperature_pack/heat = 1,
-		)
 
 #undef FROZEN_ITEM_PAIN_RATE
 #undef FROZEN_ITEM_PAIN_MODIFIER

@@ -15,15 +15,15 @@
 	time = 6.4 SECONDS
 	success_sound = 'sound/surgery/hemostat1.ogg'
 	experience_given = MEDICAL_SKILL_MEDIUM
-	var/obj/item/implant/I = null
+	var/obj/item/implant/implant = null
 
 /datum/surgery_step/extract_implant/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	for(var/obj/item/O in target.implants)
-		I = O
+		implant = O
 		break
-	if(I)
-		display_results(user, target, span_notice("You begin to extract [I] from [target]'s [target_zone]..."),
-			span_notice("[user] begins to extract [I] from [target]'s [target_zone]."),
+	if(implant)
+		display_results(user, target, span_notice("You begin to extract [implant] from [target]'s [target_zone]..."),
+			span_notice("[user] begins to extract [implant] from [target]'s [target_zone]."),
 			span_notice("[user] begins to extract something from [target]'s [target_zone]."))
 		give_surgery_pain(target, "You feel a serious pain in your [target_zone]!", target_zone = target_zone)
 	else
@@ -32,12 +32,12 @@
 			span_notice("[user] looks for something in [target]'s [target_zone]."))
 
 /datum/surgery_step/extract_implant/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
-	if(I)
-		display_results(user, target, span_notice("You successfully remove [I] from [target]'s [target_zone]."),
-			span_notice("[user] successfully removes [I] from [target]'s [target_zone]!"),
+	if(implant)
+		display_results(user, target, span_notice("You successfully remove [implant] from [target]'s [target_zone]."),
+			span_notice("[user] successfully removes [implant] from [target]'s [target_zone]!"),
 			span_notice("[user] successfully removes something from [target]'s [target_zone]!"))
 		to_chat(target, span_userdanger("You can feel your [implant] pulled out of you!"))
-		I.removed(target)
+		implant.removed(target)
 
 		var/obj/item/implantcase/case
 		for(var/obj/item/implantcase/ic in user.held_items)
@@ -46,14 +46,14 @@
 		if(!case)
 			case = locate(/obj/item/implantcase) in get_turf(target)
 		if(case && !case.imp)
-			case.imp = I
-			I.forceMove(case)
+			case.imp = implant
+			implant.forceMove(case)
 			case.update_appearance()
-			display_results(user, target, span_notice("You place [I] into [case]."),
-				span_notice("[user] places [I] into [case]!"),
+			display_results(user, target, span_notice("You place [implant] into [case]."),
+				span_notice("[user] places [implant] into [case]!"),
 				span_notice("[user] places it into [case]!"))
 		else
-			qdel(I)
+			qdel(implant)
 
 	else
 		to_chat(user, span_warning("You can't find anything in [target]'s [target_zone]!"))

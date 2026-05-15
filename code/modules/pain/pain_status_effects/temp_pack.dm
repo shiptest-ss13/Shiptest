@@ -6,7 +6,6 @@
 	tick_interval = 5 SECONDS
 	processing_speed = STATUS_EFFECT_NORMAL_PROCESS
 	alert_type = null
-	examine_text = "They're holding a pack to a limb."
 	/// The item we're using to heal pain.
 	var/obj/item/pressed_item
 	/// The mob holding the [pressed_item] to [owner]. Can be [owner].
@@ -38,6 +37,9 @@
 	src.temperature_change = temperature_change
 	return ..()
 
+/datum/status_effect/temperature_pack/get_examine_text()
+	return "They are holding a pack to a limb."
+
 /datum/status_effect/temperature_pack/on_apply()
 	if(!ishuman(owner))
 		return FALSE
@@ -64,7 +66,7 @@
 
 	held_bodypart.bodypart_pain_modifier *= pain_modifier
 	pressed_item.AddComponent(/datum/component/make_item_slow)
-	RegisterSignal(pressed_item, list(COMSIG_PARENT_QDELETING, COMSIG_ITEM_DROPPED, COMSIG_TEMPERATURE_PACK_EXPIRED), .proc/stop_effects)
+	RegisterSignal(pressed_item, list(COMSIG_QDELETING, COMSIG_ITEM_DROPPED, COMSIG_TEMPERATURE_PACK_EXPIRED), .proc/stop_effects)
 	if(holder != owner)
 		RegisterSignal(holder, COMSIG_MOVABLE_MOVED, .proc/check_adjacency)
 	return TRUE
@@ -111,7 +113,7 @@
 	var/obj/item/bodypart/held_bodypart = human_owner.pain_controller?.body_zones[targeted_zone]
 	held_bodypart?.bodypart_pain_modifier /= pain_modifier
 	qdel(pressed_item.GetComponent(/datum/component/make_item_slow))
-	UnregisterSignal(pressed_item, list(COMSIG_PARENT_QDELETING, COMSIG_ITEM_DROPPED, COMSIG_TEMPERATURE_PACK_EXPIRED))
+	UnregisterSignal(pressed_item, list(COMSIG_QDELETING, COMSIG_ITEM_DROPPED, COMSIG_TEMPERATURE_PACK_EXPIRED))
 	UnregisterSignal(holder, COMSIG_MOVABLE_MOVED)
 
 	pressed_item = null

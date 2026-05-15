@@ -92,7 +92,7 @@
 /datum/surgery_step/seal_veins/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/datum/wound/pierce/bleed/pierce_wound = surgery.operated_wound
 	if(!pierce_wound)
-		to_chat(user, "<span class='warning'>[target] has no puncture there!"))
+		to_chat(user, "<span class='warning'>[target] has no puncture there!")
 		return ..()
 
 	display_results(user, target, span_notice("You successfully meld some of the split blood vessels in [target]'s [parse_zone(target_zone)] with [tool]."),
@@ -105,7 +105,7 @@
 		surgery.status = REALIGN_INNARDS
 		to_chat(user, span_notice("<i>There still seems to be misaligned blood vessels to finish...<i>"))
 	else
-		to_chat(user, "<span class='green'>You've repaired all the internal damage in [target]'s [parse_zone(target_zone)]!"))
+		to_chat(user, "<span class='green'>You've repaired all the internal damage in [target]'s [parse_zone(target_zone)]!")
 	return ..()
 
 #undef REALIGN_INNARDS

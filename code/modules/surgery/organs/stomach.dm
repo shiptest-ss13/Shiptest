@@ -118,7 +118,7 @@
 					H.confused += 2
 					if(!H.stat)
 						to_chat(H, span_warning("You feel queasy..."))
-				H.adjust_timed_status_effect(-6 SECONDS * REM, /datum/status_effect/jitter)
+				H.adjust_timed_status_effect(-6 SECONDS * REM, STATUS_EFFECT_JITTER)
 			if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
 				//throw alerts
 				H.throw_alert("disgust", /atom/movable/screen/alert/gross)
@@ -128,7 +128,7 @@
 					H.vomit(10, 0, 0, 0, 1, 0)
 					H.confused += 2.5
 					H.stuttering += 1
-					owner.set_timed_status_effect(10 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
+					owner.set_timed_status_effect(10 SECONDS, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 			if(DISGUST_LEVEL_VERYGROSS to DISGUST_LEVEL_DISGUSTED)
 				//do the thing
 				H.throw_alert("disgust", /atom/movable/screen/alert/verygross)

@@ -129,7 +129,7 @@
 
 /datum/status_effect/inebriated/drunk/on_tick_effects()
 	// Drunk people will always lose jitteriness
-	owner.adjust_timed_status_effect(-6 SECONDS, /datum/status_effect/jitter)
+	owner.adjust_timed_status_effect(-6 SECONDS, STATUS_EFFECT_JITTER)
 
 	// Over 31, we will constantly gain slurring up to 10 seconds of slurring.
 	if(drunk_value >= 31)
@@ -139,11 +139,11 @@
 	if(drunk_value >= 41)
 		if(prob(30))
 			owner.confused += 1
-		owner.set_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		owner.set_timed_status_effect(20 SECONDS, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 
 	// Over 51, we have a 3% chance to gain a lot of confusion and vomit, and we will always have 50 seconds of dizziness
 	if(drunk_value >= 51)
-		owner.set_timed_status_effect(50 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		owner.set_timed_status_effect(50 SECONDS, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 
 	//if our drunkenness is over 61 and we have alcohol tolerance, or over 51 and we *dont*, and also prob(3)
 	if(drunk_value >= (HAS_TRAIT(owner,TRAIT_ALCOHOL_TOLERANCE) ? 51 : 61) && prob(3))

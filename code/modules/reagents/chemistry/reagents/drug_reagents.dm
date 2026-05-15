@@ -47,7 +47,7 @@
 		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
 		to_chat(M, span_notice("[smoke_message]"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "smoked", /datum/mood_event/smoked, name)
-	M.remove_status_effect(/datum/status_effect/jitter)
+	M.remove_status_effect(STATUS_EFFECT_JITTER)
 	M.AdjustStun(-5)
 	M.AdjustKnockdown(-5)
 	M.AdjustUnconscious(-5)
@@ -116,7 +116,7 @@
 	M.AdjustParalyzed(-40)
 	M.AdjustImmobilized(-40)
 	M.adjustStaminaLoss(-2, 0)
-	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(4 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1,4))
 	..()
 	. = 1
@@ -221,7 +221,7 @@
 	..()
 
 /datum/reagent/drug/happiness/on_mob_life(mob/living/carbon/M)
-	M.adjust_timed_status_effect(-20 SECONDS, /datum/status_effect/jitter)
+	M.adjust_timed_status_effect(-20 SECONDS, STATUS_EFFECT_JITTER)
 	M.confused = 0
 	M.disgust = 0
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.2)
@@ -235,7 +235,7 @@
 			if(1)
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "happiness_drug", /datum/mood_event/happiness_drug_good_od)
 			if(2)
-				M.set_timed_status_effect(50 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
+				M.set_timed_status_effect(50 SECONDS, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 			if(3)
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "happiness_drug", /datum/mood_event/happiness_drug_bad_od)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.5)
@@ -259,7 +259,7 @@
 	..()
 
 /datum/reagent/drug/pumpup/on_mob_life(mob/living/carbon/M)
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 
 	if(prob(5))
 		to_chat(M, span_notice("[pick("Go! Go! GO!", "You feel ready...", "You feel invincible...")]"))
@@ -273,7 +273,7 @@
 	to_chat(M, span_userdanger("You can't stop shaking, your heart beats faster and faster..."))
 
 /datum/reagent/drug/pumpup/overdose_process(mob/living/M)
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	if(prob(5))
 		M.drop_all_held_items()
 	if(prob(20))
@@ -295,20 +295,16 @@
 /datum/reagent/drug/finobranc/on_mob_metabolize(mob/living/L)
 	..()
 	var/datum/component/mood/mood = L.GetComponent(/datum/component/mood)
+	L.add_actionspeed_modifier(/datum/actionspeed_modifier/drugs/finobranc)
 	if(mood)
 		mood.mood_modifier += 1
-	if(ishuman(L))
-		var/mob/living/carbon/human/drugged = L
-		drugged.physiology.do_after_speed -= 0.4
 
 /datum/reagent/drug/finobranc/on_mob_end_metabolize(mob/living/L)
 	..()
 	var/datum/component/mood/mood = L.GetComponent(/datum/component/mood)
+	L.remove_actionspeed_modifier(/datum/actionspeed_modifier/drugs/finobranc)
 	if(mood)
 		mood.mood_modifier -= 1
-	if(ishuman(L))
-		var/mob/living/carbon/human/drugged = L
-		drugged.physiology.do_after_speed += 0.4
 
 /datum/reagent/drug/finobranc/overdose_process(mob/living/M)
 	M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
@@ -316,7 +312,7 @@
 		var/mob/living/carbon/human/uh_oh = M
 		if(prob(5) && uh_oh.can_heartattack())
 			uh_oh.set_heartattack(TRUE)
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	if(prob(15))
 		M.drop_all_held_items()
 	..()
@@ -335,12 +331,12 @@
 	ADD_TRAIT(L, TRAIT_HARDLY_WOUNDED, /datum/reagent/drug/combat_drug)
 	L.playsound_local(get_turf(L), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/shoalmix)
+	L.add_actionspeed_modifier(/datum/actionspeed_modifier/drugs/shoalmix)
 	if(!isvox(L))
 		L.playsound_local(get_turf(L), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 		L.adjustOrganLoss(ORGAN_SLOT_HEART, 6)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
-		drugged.physiology.do_after_speed -= 0.4
 		drugged.physiology.damage_resistance += 10
 		drugged.physiology.hunger_mod += 1
 		drugged.recoil_effect *= 0.6
@@ -350,9 +346,9 @@
 	..()
 	REMOVE_TRAIT(L, TRAIT_HARDLY_WOUNDED, /datum/reagent/drug/combat_drug)
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/shoalmix)
+	L.remove_actionspeed_modifier(/datum/actionspeed_modifier/drugs/shoalmix)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
-		drugged.physiology.do_after_speed += 0.4
 		drugged.physiology.damage_resistance -= 10
 		drugged.physiology.hunger_mod -= 1
 		drugged.recoil_effect /= 0.6
@@ -360,7 +356,7 @@
 
 /datum/reagent/drug/combat_drug/on_mob_life(mob/living/carbon/M)
 	..()
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	M.adjustStaminaLoss(-18, 0)
 	if(prob(30) && !isvox(M))
 		M.playsound_local(get_turf(M), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
@@ -374,7 +370,7 @@
 		var/mob/living/carbon/human/uh_oh = M
 		if(uh_oh.can_heartattack())
 			uh_oh.set_heartattack(TRUE)
-	M.set_timed_status_effect(160 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(160 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	M.drop_all_held_items()
 	..()
 
@@ -527,16 +523,12 @@
 	..()
 	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_light, name)
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/cytodron)
-	if(ishuman(L))
-		var/mob/living/carbon/human/drugged = L
-		drugged.physiology.do_after_speed -= 0.1
+	L.add_actionspeed_modifier(/datum/actionspeed_modifier/drugs/cytodron)
 
 /datum/reagent/drug/cytodron/on_mob_end_metabolize(mob/living/L)
 	..()
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cytodron)
-	if(ishuman(L))
-		var/mob/living/carbon/human/drugged = L
-		drugged.physiology.do_after_speed += 0.1
+	L.remove_actionspeed_modifier(/datum/actionspeed_modifier/drugs/cytodron)
 
 /datum/reagent/drug/cytodron/overdose_start(mob/living/M)
 	. = ..()
@@ -548,7 +540,7 @@
 	if(prob(10))
 		M.drop_all_held_items()
 	if(prob(40))
-		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 
 /datum/reagent/drug/sting
 	name = "Sting"
@@ -564,17 +556,13 @@
 	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_medium, name)
 	ADD_TRAIT(L, TRAIT_SENSITIVE_TONGUE, type)
 	ADD_TRAIT(L, TRAIT_PINPOINT_EYES, type)
-	if(ishuman(L))
-		var/mob/living/carbon/human/drugged = L
-		drugged.physiology.do_after_speed -= 0.2
+	L.add_actionspeed_modifier(/datum/actionspeed_modifier/drugs/sting)
 
 /datum/reagent/drug/sting/on_mob_end_metabolize(mob/living/L)
 	..()
 	REMOVE_TRAIT(L, TRAIT_SENSITIVE_TONGUE, type)
 	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
-	if(ishuman(L))
-		var/mob/living/carbon/human/drugged = L
-		drugged.physiology.do_after_speed += 0.2
+	L.remove_actionspeed_modifier(/datum/actionspeed_modifier/drugs/sting)
 
 /datum/reagent/drug/cytodron/overdose_start(mob/living/M)
 	. = ..()

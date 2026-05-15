@@ -63,6 +63,9 @@
 	var/last_special = 0 ///Used by the resist verb, likely used to prevent players from bypassing next_move by logging in/out.
 	var/timeofdeath = 0
 
+	/// Lazylist of surgery speed modifiers - id to number - 2 = 2x faster, 0.5x = 0.5x slower
+	var/list/mob_surgery_speed_mod = 1
+
 	/**
 	* Allows mobs to move through dense areas without restriction. For instance, in space or out of holder objects.
 	*

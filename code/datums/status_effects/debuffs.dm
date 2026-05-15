@@ -219,9 +219,9 @@
 
 	if(ishuman(owner))
 		var/mob/living/carbon/human_owner = owner
-		if(human_owner.drunkenness)
+		if(human_owner.get_drunk_amount())
 			//reduce drunkenness by 0.3% per tick, 6% per 2 seconds
-			human_owner.drunkenness *= 0.997
+			human_owner.set_drunk_effect(human_owner.get_drunk_amount() * 0.997)
 
 	if(iscarbon(owner))
 		var/mob/living/carbon/carbon_owner = owner
@@ -543,7 +543,7 @@
 /datum/status_effect/trance/tick()
 	if(stun)
 		owner.Stun(6 SECONDS, TRUE)
-	owner.set_timed_status_effect(40 SECONDS, /datum/status_effect/dizziness)
+	owner.set_timed_status_effect(40 SECONDS, STATUS_EFFECT_DIZZY)
 
 /datum/status_effect/trance/on_apply()
 	if(!iscarbon(owner))
@@ -563,7 +563,7 @@
 /datum/status_effect/trance/on_remove()
 	UnregisterSignal(owner, COMSIG_MOVABLE_HEAR)
 	REMOVE_TRAIT(owner, TRAIT_MUTE, "trance")
-	owner.remove_status_effect(/datum/status_effect/dizziness)
+	owner.remove_status_effect(STATUS_EFFECT_DIZZY)
 	owner.remove_client_colour(/datum/client_colour/monochrome)
 	to_chat(owner, span_warning("You snap out of your trance!"))
 
@@ -655,7 +655,7 @@
 		var/obj/item/I = H.get_active_held_item()
 		if(I && H.dropItemToGround(I))
 			H.visible_message(span_notice("[H]'s hand convulses, and they drop their [I.name]!"),span_userdanger("Your hand convulses violently, and you drop what you were holding!"))
-			H.set_timed_status_effect(5 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+			H.set_timed_status_effect(5 SECONDS, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 
 /atom/movable/screen/alert/status_effect/convulsing
 	name = "Shaky Hands"

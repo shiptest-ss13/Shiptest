@@ -28,11 +28,11 @@
 	shot_glass_icon_state = "shotglasscream"
 
 /datum/reagent/consumable/ethanol/kahlua/on_mob_life(mob/living/carbon/M)
-	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
+	M.adjust_timed_status_effect(-10 SECONDS, STATUS_EFFECT_DIZZY)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40)
 	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
-		M.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(2 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	..()
 	. = 1
 

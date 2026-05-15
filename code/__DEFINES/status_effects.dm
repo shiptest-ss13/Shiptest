@@ -65,6 +65,10 @@
 // DEBUFFS //
 /////////////
 
+#define STATUS_EFFECT_JITTER /datum/status_effect/jitter //jittery fuck probably got zapped
+
+#define STATUS_EFFECT_DIZZY /datum/status_effect/dizziness
+
 #define STATUS_EFFECT_STUN /datum/status_effect/incapacitating/stun //the affected is unable to move or use items
 
 #define STATUS_EFFECT_KNOCKDOWN /datum/status_effect/incapacitating/knockdown //the affected is unable to stand up

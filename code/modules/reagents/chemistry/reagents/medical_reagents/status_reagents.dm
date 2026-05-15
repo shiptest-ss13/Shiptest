@@ -15,7 +15,7 @@
 	taste_description = "acid"
 
 /datum/reagent/medicine/mutadone/on_mob_life(mob/living/carbon/M)
-	M.adjust_timed_status_effect(-100 SECONDS * REM, /datum/status_effect/jitter)
+	M.adjust_timed_status_effect(-100 SECONDS * REM, STATUS_EFFECT_JITTER)
 	if(M.has_dna())
 		M.dna.remove_all_mutations(list(MUT_NORMAL, MUT_EXTRA), TRUE)
 	if(!QDELETED(M)) //We were a monkey, now a human
@@ -28,7 +28,7 @@
 	taste_description = "raw egg"
 
 /datum/reagent/medicine/antihol/on_mob_life(mob/living/carbon/M)
-	M.remove_status_effect(/datum/status_effect/dizziness)
+	M.remove_status_effect(STATUS_EFFECT_DIZZY)
 	M.drowsyness = 0
 	M.slurring = 0
 	M.confused = 0
@@ -50,7 +50,7 @@
 /datum/reagent/medicine/diphenhydramine/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
 		M.drowsyness += 1
-	M.adjust_timed_status_effect(-12 SECONDS, /datum/status_effect/jitter)
+	M.adjust_timed_status_effect(-12 SECONDS, STATUS_EFFECT_JITTER)
 	holder.remove_reagent(/datum/reagent/toxin/histamine,3)
 	..()
 
@@ -66,8 +66,8 @@
 	for(var/datum/reagent/drug/R in M.reagents.reagent_list)
 		M.reagents.remove_reagent(R.type,5)
 	M.drowsyness += 2
-	if(M.get_timed_status_effect_duration(/datum/status_effect/jitter) >= 6 SECONDS)
-		M.adjust_timed_status_effect(-6 SECONDS * REM, /datum/status_effect/jitter)
+	if(M.get_timed_status_effect_duration(STATUS_EFFECT_JITTER) >= 6 SECONDS)
+		M.adjust_timed_status_effect(-6 SECONDS * REM, STATUS_EFFECT_JITTER)
 	if (M.hallucination >= 5)
 		M.hallucination -= 5
 	if(prob(20))
@@ -99,7 +99,7 @@
 		overdose_threshold = overdose_threshold + rand(-10,10)/10 // for extra fun
 		M.AdjustAllImmobility(-5)
 		M.adjustStaminaLoss(-0.5*REM, 0)
-		M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, max_duration = 20 SECONDS)
+		M.adjust_timed_status_effect(2 SECONDS * REM, STATUS_EFFECT_JITTER, max_duration = 20 SECONDS)
 		metabolization_rate = 0.01 * REAGENTS_METABOLISM * rand(5,20) // randomizes metabolism between 0.02 and 0.08 per tick
 		. = TRUE
 	..()
@@ -112,17 +112,17 @@
 	overdose_progress++
 	switch(overdose_progress)
 		if(1 to 40)
-			M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, max_duration = 40 SECONDS)
+			M.adjust_timed_status_effect(2 SECONDS * REM, STATUS_EFFECT_JITTER, max_duration = 40 SECONDS)
 			M.stuttering = min(M.stuttering+1, 10)
-			M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+			M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 			if(prob(50))
 				M.losebreath++
 		if(41 to 80)
 			M.adjustOxyLoss(0.1*REM, 0)
 			M.adjustStaminaLoss(0.1*REM, 0)
-			M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, max_duration = 40 SECONDS)
+			M.adjust_timed_status_effect(2 SECONDS * REM, STATUS_EFFECT_JITTER, max_duration = 40 SECONDS)
 			M.stuttering = min(M.stuttering+1, 20)
-			M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+			M.set_timed_status_effect(20 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 			if(prob(50))
 				M.losebreath++
 			if(prob(20))
@@ -198,7 +198,7 @@
 
 /datum/reagent/medicine/lithium_carbonate/overdose_process(mob/living/M)
 	if(prob(5))
-		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
 	..()
 	. = 1
@@ -222,8 +222,8 @@
 	..()
 
 /datum/reagent/medicine/psicodine/on_mob_life(mob/living/carbon/M)
-	M.adjust_timed_status_effect(-6 SECONDS * REM, /datum/status_effect/jitter)
-	M.adjust_timed_status_effect(-12 SECONDS * REM, /datum/status_effect/dizziness)
+	M.adjust_timed_status_effect(-6 SECONDS * REM, STATUS_EFFECT_JITTER)
+	M.adjust_timed_status_effect(-12 SECONDS * REM, STATUS_EFFECT_DIZZY)
 	M.confused = max(0, M.confused-6)
 	M.disgust = max(0, M.disgust-6)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
@@ -263,7 +263,7 @@
 		var/obj/item/I = M.get_active_held_item()
 		if(I && M.dropItemToGround(I))
 			to_chat(M, span_notice("Your hands spaz out and you drop what you were holding!"))
-			M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+			M.set_timed_status_effect(20 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 
 	M.AdjustAllImmobility(-20)
 	M.adjustStaminaLoss(-1*REM, FALSE)

@@ -34,7 +34,7 @@
 
 
 	if(A.stage >= 3)
-		M.adjust_timed_status_effect(4 SECONDS, /datum/status_effect/dizziness)
+		M.adjust_timed_status_effect(4 SECONDS, STATUS_EFFECT_DIZZY)
 		M.drowsyness = max(0, M.drowsyness - 2)
 		M.slurring = max(0, M.slurring - 2)
 		M.confused = max(0, M.confused - 2)

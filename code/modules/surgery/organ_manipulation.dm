@@ -170,7 +170,7 @@
 				display_results(user, target, span_notice("You begin to extract [manipulated_organ] from [target]'s [parse_zone(target_zone)]..."),
 					span_notice("[user] begins to extract [manipulated_organ] from [target]'s [parse_zone(target_zone)]."),
 					span_notice("[user] begins to extract something from [target]'s [parse_zone(target_zone)]."))
-				give_surgery_pain(target, "You can feel your [target_organ] being removed from your [parse_zone(target_zone)]!", target_zone = target_zone)
+				give_surgery_pain(target, "You can feel your [manipulated_organ] being removed from your [parse_zone(target_zone)]!", target_zone = target_zone)
 			else
 				return -1
 
@@ -213,7 +213,7 @@
 			display_results(user, target, span_notice("You successfully extract [manipulated_organ] from [target]'s [parse_zone(target_zone)]."),
 				span_notice("[user] successfully extracts [manipulated_organ] from [target]'s [parse_zone(target_zone)]!"),
 				span_notice("[user] successfully extracts something from [target]'s [parse_zone(target_zone)]!"))
-			give_surgery_pain(target, "Your [parse_zone(target_zone)] throbs with pain, you can't feel your [target_organ] anymore!", target_zone = target_zone)
+			give_surgery_pain(target, "Your [parse_zone(target_zone)] throbs with pain, you can't feel your [manipulated_organ] anymore!", target_zone = target_zone)
 			log_combat(user, target, "surgically removed [manipulated_organ.name] from", addition="INTENT: [uppertext(user.a_intent)]")
 			manipulated_organ.Remove(target)
 			manipulated_organ.forceMove(get_turf(target))

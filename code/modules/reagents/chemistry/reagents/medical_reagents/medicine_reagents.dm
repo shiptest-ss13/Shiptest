@@ -283,7 +283,7 @@
 
 /datum/reagent/medicine/alvitane/overdose_process(mob/living/carbon/M)
 	M.adjustToxLoss(0.5*REM, 0)
-	M.set_timed_status_effect(5 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(5 SECONDS, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	..()
 
 
@@ -429,8 +429,8 @@
 /datum/reagent/medicine/pancrazine/overdose_process(mob/living/M)
 	. = ..()
 	if(prob(50))
-		M.set_timed_status_effect(5 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(5 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	if(prob(10))
 		M.adjust_disgust(33)
 
@@ -458,11 +458,11 @@
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 		M.adjustToxLoss(-reac_volume*4)
 		M.set_disgust(30)
-		M.set_timed_status_effect(5 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		M.set_timed_status_effect(5 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 
 /datum/reagent/medicine/gjalrazine/overdose_process(mob/living/M)
 	. = ..()
-	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+	M.set_timed_status_effect(30 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 	M.adjust_disgust(30)
 	M.adjustToxLoss(2*REM, 0)
 
@@ -552,7 +552,7 @@
 
 	var/mob/living/carbon/carbon_mob = affected_mob
 	if (SPT_PROB(25, seconds_per_tick))
-		carbon_mob.adjust_timed_status_effect(2 SECONDS, /datum/status_effect/jitter, 20 SECONDS)
+		carbon_mob.adjust_timed_status_effect(2 SECONDS, STATUS_EFFECT_JITTER, 20 SECONDS)
 	if (SPT_PROB(35, seconds_per_tick))
 		if (prob(60))
 			carbon_mob.losebreath += 1
@@ -882,14 +882,14 @@
 		. = 1
 	M.losebreath = 0
 	if(prob(20))
-		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/atropine/overdose_process(mob/living/M)
 	M.adjustToxLoss(0.5*REM, 0)
 	. = 1
-	M.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/dizziness, max_duration = 20 SECONDS)
+	M.set_timed_status_effect(2 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
+	M.adjust_timed_status_effect(2 SECONDS * REM, STATUS_EFFECT_DIZZY, max_duration = 20 SECONDS)
 	..()
 

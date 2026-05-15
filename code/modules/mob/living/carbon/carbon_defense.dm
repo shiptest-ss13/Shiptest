@@ -426,14 +426,14 @@
 	if(should_stun)
 		Paralyze(40)
 	//jitter and other fluff.
-	set_timed_status_effect(300 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+	set_timed_status_effect(300 SECONDS, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
 	stuttering += 2
 	addtimer(CALLBACK(src, PROC_REF(secondary_shock), should_stun), 20)
 	return shock_damage
 
 ///Called slightly after electrocute act to reduce jittering and apply a secondary stun.
 /mob/living/carbon/proc/secondary_shock(should_stun)
-	set_timed_status_effect(20 SECONDS, /datum/status_effect/jitter)
+	set_timed_status_effect(20 SECONDS, STATUS_EFFECT_JITTER)
 	if(should_stun)
 		Paralyze(60)
 

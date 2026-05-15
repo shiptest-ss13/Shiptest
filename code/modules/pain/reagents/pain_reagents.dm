@@ -1,29 +1,3 @@
-// Painkillers! They help with pain.
-/datum/reagent/medicine/painkiller
-	name = "prescription painkiller"
-
-/datum/reagent/medicine/painkiller/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	. = ..()
-
-	// Painkillers make you numb.
-	if(current_cycle >= 5)
-		switch(pain_modifier)
-			if(0 to 0.45)
-				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
-			if(0.45 to 0.55)
-				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name)
-			else
-				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_light, name)
-
-	// However, drinking with painkillers is toxic.
-	var/highest_boozepwr = 0
-	for(var/datum/reagent/consumable/ethanol/alcohol in M.reagents.reagent_list)
-		if(alcohol.boozepwr > highest_boozepwr)
-			highest_boozepwr = alcohol.boozepwr
-
-	if(highest_boozepwr > 0)
-		M.apply_damage(round(highest_boozepwr / 33, 0.5) * REM * delta_time, TOX)
-		. = TRUE
 
 // Morphine is the well known existing painkiller.
 // It's very strong but makes you sleepy. Also addictive.
@@ -36,20 +10,9 @@
 	color = "#A9FBFB"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM // 0.1 units per second
 	overdose_threshold = 30
-	ph = 8.96
-	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	addiction_types = list(/datum/addiction/opioids = 30) //5u = 100 progress, 25-30u = addiction
 	harmful = TRUE
 	// Morphine is THE painkiller
 	pain_modifier = 0.5
-
-/datum/reagent/medicine/painkiller/morphine/on_mob_metabolize(mob/living/L)
-	. = ..()
-	L.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
-
-/datum/reagent/medicine/painkiller/morphine/on_mob_end_metabolize(mob/living/L)
-	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
-	return ..()
 
 /datum/reagent/medicine/painkiller/morphine/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	// Morphine heals a very tiny bit
@@ -58,38 +21,20 @@
 	// Morphine heals pain, dur
 	M.cause_pain(BODY_ZONES_ALL, -0.3)
 	// Morphine causes a bit of disgust
-	if(M.disgust < DISGUST_LEVEL_VERYGROSS && DT_PROB(50 * max(1 - creation_purity, 0.5), delta_time))
+	if(M.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(50 * max(1 - creation_purity, 0.5), delta_time))
 		M.adjust_disgust(2 * REM * delta_time)
 
 	// The longer we're metabolzing it, the more we get sleepy
 	// for reference: (with 0.1 metabolism rate)
 	// ~2.5 units = 12 cycles = ~30 seconds
-	switch(current_cycle)
-		if(16) //~3u
-			to_chat(M, span_warning("You start to feel tired..."))
-			M.blur_eyes(1) // just a hint teehee
-			if(prob(50))
-				M.emote("yawn")
 
-		if(24 to 36) // 5u to 7.5u
-			if(M.drowsyness <= 3 && DT_PROB(33, delta_time))
-				M.adjust_drowsyness(1 * REM * delta_time)
-
-		if(36 to 48) // 7.5u to 10u
-			if(M.drowsyness <= 6 && DT_PROB(66, delta_time))
-				M.adjust_drowsyness(1 * REM * delta_time)
-
-		if(48 to INFINITY) //10u onward
-			if(M.drowsyness <= 9)
-				M.adjust_drowsyness(1 * REM * delta_time)
-			M.Sleeping(4 SECONDS * REM * delta_time)
 
 	..()
 	return TRUE
 
 /datum/reagent/medicine/painkiller/morphine/overdose_process(mob/living/M, delta_time, times_fired)
 	..()
-	if(DT_PROB(18, delta_time))
+	if(SPT_PROB(18, delta_time))
 		M.drop_all_held_items()
 		M.Dizzy(2)
 		M.Jitter(2)
@@ -117,7 +62,7 @@
 	M.cause_pain(BODY_ZONE_CHEST, -0.08 * REM * delta_time)
 	// Okay at fevers.
 	M.adjust_bodytemperature(-15 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time, M.get_body_temp_normal())
-	if(M.disgust < DISGUST_LEVEL_VERYGROSS && DT_PROB(66 * max(1 - creation_purity, 0.5), delta_time))
+	if(M.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(66 * max(1 - creation_purity, 0.5), delta_time))
 		M.adjust_disgust(1.5 * REM * delta_time)
 
 	..()
@@ -131,16 +76,16 @@
 	M.adjust_bodytemperature(30 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time)
 	// Causes sickness...
 	M.apply_damage(1 * REM * delta_time, TOX)
-	if(M.disgust < 100 && DT_PROB(100 * max(1 - creation_purity, 0.5), delta_time))
+	if(M.disgust < 100 && SPT_PROB(100 * max(1 - creation_purity, 0.5), delta_time))
 		M.adjust_disgust(3 * REM * delta_time)
 	// ...Hallucinations after a while...
-	if(current_cycle >= 15 && DT_PROB(75 * max(1 - creation_purity, 0.5), delta_time))
+	if(current_cycle >= 15 && SPT_PROB(75 * max(1 - creation_purity, 0.5), delta_time))
 		M.hallucination = clamp(M.hallucination + 3 * REM * delta_time, 0, 20)
 	// ...Dizziness after a longer while...
-	if(current_cycle >= 20 && DT_PROB(50 * max(1 - creation_purity, 0.5), delta_time))
+	if(current_cycle >= 20 && SPT_PROB(50 * max(1 - creation_purity, 0.5), delta_time))
 		M.dizziness = clamp(M.dizziness + (1 * REM * delta_time), 0, 5)
 	// ...And finally, confusion
-	if(current_cycle >= 25 && DT_PROB(30 * max(1 - creation_purity, 0.5), delta_time))
+	if(current_cycle >= 25 && SPT_PROB(30 * max(1 - creation_purity, 0.5), delta_time))
 		M.set_confusion(clamp(M.get_confusion() + 2, 1, 6))
 
 	..()
@@ -155,8 +100,6 @@
 	color = "#fcaeff"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 25
-	ph = 4.7
-	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	pain_modifier = 0.6
 
 /datum/reagent/medicine/painkiller/paracetamol/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
@@ -170,7 +113,7 @@
 	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time, M.get_body_temp_normal())
 	// Causes liver damage - higher dosages causes more liver damage.
 	M.adjustOrganLoss(ORGAN_SLOT_LIVER, volume / 30 * REM * delta_time)
-	if(M.disgust < DISGUST_LEVEL_VERYGROSS && DT_PROB(66 * max(1 - creation_purity, 0.5), delta_time))
+	if(M.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(66 * max(1 - creation_purity, 0.5), delta_time))
 		M.adjust_disgust(1.2 * REM * delta_time)
 
 	..()
@@ -182,7 +125,7 @@
 
 	// On overdose, cause sickness and liver damage.
 	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 2 * REM * delta_time)
-	if(M.disgust < 100 && DT_PROB(100 * max(1 - creation_purity, 0.5), delta_time))
+	if(M.disgust < 100 && SPT_PROB(100 * max(1 - creation_purity, 0.5), delta_time))
 		M.adjust_disgust(3 * REM * delta_time)
 
 	return ..()
@@ -196,8 +139,6 @@
 	color = "#e695ff"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 30
-	ph = 5.6
-	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	pain_modifier = 0.6
 
 /datum/reagent/medicine/painkiller/ibuprofen/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
@@ -213,10 +154,10 @@
 	// Really good at treating fevers.
 	M.adjust_bodytemperature(-25 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time, M.get_body_temp_normal())
 	// Causes more disgust the longer it's in someone...
-	if(M.disgust < DISGUST_LEVEL_VERYGROSS && DT_PROB(66 * max(1 - creation_purity, 0.5), delta_time))
+	if(M.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(66 * max(1 - creation_purity, 0.5), delta_time))
 		M.adjust_disgust(min(current_cycle * 0.02, 2.4) * REM * delta_time)
 	// ...and dizziness.
-	if(current_cycle >= 25 && DT_PROB(30 * max(1 - creation_purity, 0.5), delta_time))
+	if(current_cycle >= 25 && SPT_PROB(30 * max(1 - creation_purity, 0.5), delta_time))
 		M.dizziness = clamp(M.dizziness + (1 * REM * delta_time), 0, 5)
 
 	..()
@@ -230,13 +171,13 @@
 	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 1.5 * REM * delta_time)
 	M.cause_pain(BODY_ZONE_CHEST, 0.24 * REM * delta_time)
 	// Sickness...
-	if(M.disgust < 100 && DT_PROB(100 * max(1 - creation_purity, 0.5), delta_time))
+	if(M.disgust < 100 && SPT_PROB(100 * max(1 - creation_purity, 0.5), delta_time))
 		M.adjust_disgust(3 * REM * delta_time)
 	// ...Drowsyness...
-	if(DT_PROB(75 * max(1 - creation_purity, 0.5), delta_time))
+	if(SPT_PROB(75 * max(1 - creation_purity, 0.5), delta_time))
 		M.drowsyness += 1 * REM * delta_time
 	// ...And dizziness
-	if(DT_PROB(85 * max(1 - creation_purity, 0.5), delta_time))
+	if(SPT_PROB(85 * max(1 - creation_purity, 0.5), delta_time))
 		M.dizziness += 2 * REM * delta_time
 
 	return ..()
@@ -260,7 +201,7 @@
 		// but we have a comparatively much higher metabolism than them.
 		M.cause_pain(BODY_ZONES_ALL, -0.8 * REM * delta_time)
 	// Mildly toxic in higher dosages.
-	else if(DT_PROB(volume * 3, delta_time))
+	else if(SPT_PROB(volume * 3, delta_time))
 		M.apply_damage(3 * REM * delta_time, TOX)
 		. = TRUE
 
@@ -274,9 +215,6 @@
 	color = "#ffcb86"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
-	ph = 5.6
-	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	addiction_types = list(/datum/addiction/opioids = 45) //5u = 150 progress, 15-20u = addiction
 	harmful = TRUE
 	pain_modifier = 0.4
 
@@ -285,9 +223,9 @@
 	M.adjustFireLoss(-0.2 * REM * delta_time, FALSE)
 	M.cause_pain(BODY_ZONES_ALL, -0.6 * REM * delta_time)
 	M.set_drugginess(10 * REM * delta_time)
-	if(M.disgust < DISGUST_LEVEL_VERYGROSS && DT_PROB(40, delta_time))
+	if(M.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(40, delta_time))
 		M.adjust_disgust(2 * REM * delta_time)
-	if(DT_PROB(33, delta_time))
+	if(SPT_PROB(33, delta_time))
 		M.dizziness = clamp(M.dizziness + (1 * REM * delta_time), 0, 5)
 
 	..()
@@ -299,7 +237,7 @@
 		return
 
 	var/mob/living/carbon/human/human_mob = M
-	if(DT_PROB(12, delta_time))
+	if(SPT_PROB(12, delta_time))
 		var/can_heart_fail = (!human_mob.undergoing_cardiac_arrest() && human_mob.can_heartattack())
 		var/picked_option = rand(1, (can_heart_fail ? 6 : 3))
 		switch(picked_option)
@@ -336,35 +274,7 @@
 // Pethidine
 // - Space stuff (Suffix: -fen)
 
-// A subtype of painkillers that will heal pain better
-// depending on what type of pain the part's feeling
-/datum/reagent/medicine/painkiller/specialized
-	name = "specialized painkiller"
-	addiction_types = list(/datum/addiction/opioids = 15) //5u = 50 progress, 60u = addiction
 
-	/// How much pain we restore on life ticks, modified by modifiers (yeah?)
-	var/pain_heal_amount = 0.8
-	/// What type of pain are we looking for? If we aren't experiencing this type, it will be 10x less effective
-	var/pain_type_to_look_for
-	/// What type of wound are we looking for? If our bodypart has this wound, it will be 1.5x more effective
-	var/wound_type_to_look_for
-
-/datum/reagent/medicine/painkiller/specialized/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	. = ..()
-	if(!M.pain_controller)
-		return
-
-	for(var/obj/item/bodypart/part as anything in M.bodyparts)
-		if(part.status == BODYPART_ROBOTIC)
-			continue
-
-		var/final_pain_heal_amount = -1 * pain_heal_amount * REM * delta_time
-		if(pain_type_to_look_for && (part.last_received_pain_type != pain_type_to_look_for))
-			final_pain_heal_amount *= 0.1
-		if(wound_type_to_look_for && (locate(wound_type_to_look_for) in part.wounds))
-			final_pain_heal_amount *= 1.5
-
-		M.cause_pain(part.body_zone, final_pain_heal_amount)
 
 // Libital, but helps pain: ib-alti-fen
 // Heals lots of pain for bruise pain, otherwise lower
@@ -374,8 +284,6 @@
 	reagent_state = LIQUID
 	color = "#feffae"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	ph = 7.9
-	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	pain_modifier = 0.75
 	pain_type_to_look_for = BRUTE
 	wound_type_to_look_for = /datum/wound/blunt
@@ -395,8 +303,6 @@
 	reagent_state = LIQUID
 	color = "#c4aeff"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	ph = 3.6
-	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	pain_modifier = 0.75
 	pain_type_to_look_for = BURN
 	wound_type_to_look_for = /datum/wound/burn
