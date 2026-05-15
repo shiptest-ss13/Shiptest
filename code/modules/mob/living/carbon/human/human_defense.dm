@@ -716,7 +716,7 @@
 		if(affecting.name == BODY_ZONE_HEAD)
 			if(prob(min(acidpwr*acid_volume/10, 90))) //Applies disfigurement
 				affecting.receive_damage(acidity, 2*acidity)
-				force_scream()
+				pain_emote("scream", 5 SECONDS)
 				facial_hairstyle = "Shaved"
 				hairstyle = "Bald"
 				update_hair()

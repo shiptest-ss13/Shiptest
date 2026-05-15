@@ -123,10 +123,6 @@
 		if(EFFECT_STUTTER)
 			if((status_flags & CANSTUN) && !HAS_TRAIT(src, TRAIT_STUNIMMUNE)) // stun is usually associated with stutter
 				stuttering = max(stuttering,(effect * hit_percent))
-		if(EFFECT_EYE_BLUR)
-			blur_eyes(effect * hit_percent)
-		if(EFFECT_DROWSY)
-			drowsyness = max(drowsyness,(effect * hit_percent))
 
 	return 1
 

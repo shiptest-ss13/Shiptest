@@ -404,13 +404,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 	var/restingpwr = 1 + 4 * resting
 
-	if(drowsyness)
-		drowsyness = max(drowsyness - restingpwr, 0)
-		blur_eyes(2)
-		if(drowsyness > 20)
-			if(prob(round(drowsyness/10)))
-				AdjustSleeping(drowsyness)
-
 	if(stuttering)
 		stuttering = max(stuttering-1, 0)
 

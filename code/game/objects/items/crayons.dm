@@ -636,11 +636,11 @@
 		to_chat(target, span_userdanger("[user] sprays [src] into your face!"))
 
 		if(C.client)
-			C.blur_eyes(3)
+			C.set_eye_blur_if_lower(6 SECONDS)
 			C.blind_eyes(1)
 		if(C.get_eye_protection() <= 0) // no eye protection? ARGH IT BURNS. Warning: don't add a stun here. It's a roundstart item with some quirks.
 			C.apply_effects(eyeblur = 5)
-			C.set_timed_status_effect(20 SECONDS, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
+			C.set_jitter_if_lower(20 SECONDS)
 			flash_color(C, flash_color=paint_color, flash_time=40)
 		if(ishuman(C) && actually_paints)
 			var/mob/living/carbon/human/H = C

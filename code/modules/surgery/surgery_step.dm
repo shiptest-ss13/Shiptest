@@ -125,7 +125,7 @@
 				play_failure_sound(user, target, target_zone, tool, surgery)
 				advance = TRUE
 		if(target.stat < HARD_CRIT && !IS_IN_STASIS(target) && fuckup_damage) //not under the effects of anaesthetics or a strong painkiller (yes, being mangled to the point of unconsciousness counts as a "strong painkiller")
-			if(!(HAS_TRAIT(target, TRAIT_PAIN_RESIST) || HAS_TRAIT(target, TRAIT_ANALGESIA)))
+			if(!(HAS_TRAIT(target, TRAIT_ON_ANESTHETIC) || HAS_TRAIT(target, TRAIT_ANALGESIA)))
 				var/obj/item/bodypart/operated_bodypart = target.get_bodypart(target_zone) ? target.get_bodypart(target_zone) : target.get_bodypart(BODY_ZONE_CHEST)
 				if(operated_bodypart?.bodytype & BODYPART_ORGANIC) //robot limbs are built to be opened and stuff
 					commit_malpractice(user, target, target_zone, tool, surgery)
@@ -280,7 +280,7 @@
 			target.flash_pain_overlay(pain_overlay_severity)
 
 	// No message if the pain emote fails
-	if(!target.pain_controller.do_pain_emote())
+	if(!target.pain_controller.pain_emote())
 		return FALSE
 
 	to_chat(target, span_userdanger(pain_message))

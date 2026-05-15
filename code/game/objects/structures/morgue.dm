@@ -264,7 +264,7 @@ GLOBAL_LIST_EMPTY(crematoriums)
 
 		for(var/mob/living/M in conts)
 			if (M.stat != DEAD)
-				M.force_scream()
+				M.emote("scream")
 			if(user)
 				log_combat(user, M, "cremated")
 			else

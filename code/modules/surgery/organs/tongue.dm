@@ -151,7 +151,6 @@
 
 /obj/item/organ/tongue/robot/emp_act(severity)
 	owner.apply_effect(EFFECT_STUTTER, 120)
-	owner.force_scream()
 	to_chat(owner, span_warning("Alert: Vocal cords are malfunctioning."))
 
 /obj/item/organ/tongue/robot/handle_speech(datum/source, list/speech_args)

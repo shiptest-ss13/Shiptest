@@ -208,7 +208,7 @@
 	to_chat(target, span_danger("Your eyes burn horrifically!"))
 	target.become_nearsighted(EYE_DAMAGE)
 	target.blind_eyes(20)
-	target.blur_eyes(40)
+	target.set_eye_blur_if_lower(80 SECONDS)
 	return TRUE
 
 /datum/action/changeling/sting/LSD

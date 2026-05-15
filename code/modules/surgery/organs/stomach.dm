@@ -136,7 +136,7 @@
 				//you're not gonna believe it we do the other thing too
 
 				if(prob(pukeprob))
-					H.blur_eyes(3)
+					H.M.set_blurry_if_lower(6 SECONDS)
 					H.vomit(20, 0, 1, 1, 1, 0)
 					H.confused += 2.5
 					H.stuttering += 1

@@ -35,7 +35,7 @@
 
 	if(A.stage >= 3)
 		M.adjust_timed_status_effect(4 SECONDS, STATUS_EFFECT_DIZZY)
-		M.drowsyness = max(0, M.drowsyness - 2)
+		M.adjust_drowsiness(-4 SECONDS)
 		M.slurring = max(0, M.slurring - 2)
 		M.confused = max(0, M.confused - 2)
 		if(purge_alcohol)
@@ -45,7 +45,7 @@
 				H.adjust_drunk_effect(-5)
 
 	if(A.stage >= 4)
-		M.drowsyness = max(0, M.drowsyness - 2)
+		M.adjust_drowsiness(-4 SECONDS)
 		if(M.reagents.has_reagent(/datum/reagent/toxin/mindbreaker))
 			M.reagents.remove_reagent(/datum/reagent/toxin/mindbreaker, 5)
 		if(M.reagents.has_reagent(/datum/reagent/toxin/histamine))
@@ -92,12 +92,12 @@
 					to_chat(M, span_notice("Your vision slowly returns..."))
 					M.cure_blind(EYE_DAMAGE)
 					M.cure_nearsighted(EYE_DAMAGE)
-					M.blur_eyes(35)
+					M.set_eye_blur_if_lower(70 SECONDS)
 
 				else if(HAS_TRAIT_FROM(M, TRAIT_NEARSIGHT, EYE_DAMAGE))
 					to_chat(M, span_notice("You can finally focus your eyes on distant objects."))
 					M.cure_nearsighted(EYE_DAMAGE)
-					M.blur_eyes(10)
+					M.set_eye_blur_if_lower(20 SECONDS)
 
 				else if(M.eye_blind || M.eye_blurry)
 					M.set_blindness(0)

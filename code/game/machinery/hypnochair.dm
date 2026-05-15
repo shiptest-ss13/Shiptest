@@ -155,17 +155,17 @@
 			if(0 to 100)
 				victim.confused += 10
 				victim.set_timed_status_effect(200 SECONDS, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
-				victim.blur_eyes(5)
+				victim.set_eye_blur_if_lower(10 SECONDS)
 			if(101 to 200)
 				victim.confused += 15
 				victim.set_timed_status_effect(400 SECONDS, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
-				victim.blur_eyes(10)
+				victim.set_eye_blur_if_lower(20 SECONDS)
 				if(prob(25))
 					victim.apply_status_effect(/datum/status_effect/trance, rand(50,150), FALSE)
 			if(201 to INFINITY)
 				victim.confused += 20
 				victim.set_timed_status_effect(600 SECONDS, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
-				victim.blur_eyes(15)
+				victim.set_eye_blur_if_lower(30 SECONDS)
 				if(prob(65))
 					victim.apply_status_effect(/datum/status_effect/trance, rand(50,150), FALSE)
 	victim = null

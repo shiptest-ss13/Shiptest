@@ -158,9 +158,7 @@
 	if(prob(65))
 		living_mob.emote("cry")
 		to_chat(living_mob, "<span class='userdanger'>Your eyes tear up and burn severely!</span>")
-		living_mob.blur_eyes(10)
-
-
+		living_mob.set_eye_blur_if_lower(20 SECONDS)
 
 /datum/weather/rain/toxic/heavy
 	name = "heavy toxic rain"

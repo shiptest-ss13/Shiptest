@@ -156,7 +156,7 @@
 		M.visible_message(span_warning("The boiling oil sizzles as it covers [M]!"), \
 		span_userdanger("You're covered in boiling oil!"))
 		if(FryLoss)
-			M.force_scream()
+			M.emote("scream")
 		playsound(M, 'sound/machines/fryer/deep_fryer_emerge.ogg', 25, TRUE)
 		ADD_TRAIT(M, TRAIT_OIL_FRIED, "cooking_oil_react")
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, unfry_mob)), 3)
@@ -289,8 +289,8 @@
 		//actually handle the pepperspray effects
 		if (!(pepper_proof)) // you need both eye and mouth protection
 			if(prob(5))
-				victim.force_scream()
-			victim.blur_eyes(5) // 10 seconds
+				victim.pain_emote("scream", 5 SECONDS)
+			victim.set_eye_blur_if_lower(10 SECONDS)
 			victim.blind_eyes(3) // 6 seconds
 			victim.confused = max(M.confused, 5) // 10 seconds
 			victim.Knockdown(3 SECONDS)
@@ -302,7 +302,7 @@
 			if(prob(15))
 				to_chat(M, span_danger("[pick("Your head pounds.", "Your mouth feels like it's on fire.", "You feel dizzy.")]"))
 			if(prob(10))
-				victim.blur_eyes(1)
+				victim.set_eye_blur_if_lower(2 SECONDS)
 			if(prob(10))
 				victim.set_timed_status_effect(2 SECONDS, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
 			if(prob(5))
@@ -590,13 +590,13 @@
 			if(!M.eye_blurry)
 				to_chat(M, span_warning("Tears well up in your eyes!"))
 			M.blind_eyes(2)
-			M.blur_eyes(5)
+			M.set_blurry_if_lower(10 SECONDS)
 	..()
 
 /datum/reagent/consumable/tearjuice/on_mob_life(mob/living/carbon/M)
 	..()
 	if(M.eye_blurry)	//Don't worsen vision if it was otherwise fine
-		M.blur_eyes(4)
+		M.set_blurry_if_lower(8 SECONDS)
 		if(prob(10))
 			to_chat(M, span_warning("Your eyes sting!"))
 			M.blind_eyes(2)
@@ -631,7 +631,7 @@
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM, 150)
 		M.adjustToxLoss(3*REM,0)
 		M.adjustStaminaLoss(10*REM,0)
-		M.blur_eyes(5)
+		M.set_blurry_if_lower(10 SECONDS)
 		. = TRUE
 	..()
 

@@ -435,12 +435,12 @@
 /datum/reagent/drug/stardrop/on_mob_life(mob/living/carbon/M)
 	..()
 	if(prob(5))
-		M.blur_eyes(rand(5,12))
+		M.set_eye_blur_if_lower(rand(6, 24) SECONDS)
 
 /datum/reagent/drug/stardrop/overdose_process(mob/living/M)
 	M.adjustOrganLoss(ORGAN_SLOT_EYES, 1)
 	if(prob(40))
-		M.blur_eyes(rand(3,12))
+		M.set_eye_blur_if_lower(rand(12, 48) SECONDS)
 
 /datum/reagent/drug/stardrop/starlight
 	name = "Starlight"
@@ -571,6 +571,6 @@
 /datum/reagent/drug/sting/overdose_process(mob/living/M)
 	. = ..()
 	if(prob(30))
-		M.blur_eyes(rand(5,12))
+		M.set_eye_blur_if_lower(rand(10, 24) SECONDS)
 	if(prob(5))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1)

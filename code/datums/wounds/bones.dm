@@ -271,7 +271,7 @@
 			ignored_mobs = victim,
 		)
 		to_chat(victim, span_userdanger("[user] snaps your dislocated [limb.name] back into place!"))
-		victim.force_pain_noise(80)
+		victim.pain_emote("wince", 3 SECONDS)
 		limb.receive_damage(brute = 5, wound_bonus = CANT_WOUND)
 		qdel(src)
 	else
@@ -298,7 +298,6 @@
 			ignored_mobs = victim,
 		)
 		to_chat(victim, span_userdanger("[user] snaps your dislocated [limb.name] with a sickening crack!"))
-		victim.force_pain_noise(100)
 		limb.receive_damage(brute = 20, wound_bonus = 40)
 	else
 		user.visible_message(
@@ -444,7 +443,6 @@
 		return TRUE
 
 	I.use(1)
-	victim.force_pain_noise(60)
 	if(user != victim)
 		user.visible_message(
 			span_notice("[user] finishes applying [I] to [victim]'s [limb.name], giving off a wet fizzle."),

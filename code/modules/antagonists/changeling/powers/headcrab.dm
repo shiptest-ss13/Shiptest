@@ -23,7 +23,7 @@
 		var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 		to_chat(H, span_userdanger("You are blinded by a shower of blood!"))
 		H.Stun(20)
-		H.blur_eyes(20)
+		H.set_eye_blur_if_lower(40 SECONDS)
 		eyes?.applyOrganDamage(5)
 		H.confused += 3
 	for(var/mob/living/silicon/S in range(2,user))

@@ -2,10 +2,9 @@
 /datum/status_effect/grouped/anesthetic
 	id = "anesthetics"
 	alert_type = /atom/movable/screen/alert/status_effect/anesthetics
-	examine_text = "They're out cold."
 
 /datum/status_effect/grouped/anesthetic/on_creation(mob/living/new_owner, source)
-	if(!istype(get_area(new_owner), /area/medical))
+	if(!istype(get_area(new_owner), /area/ship/medical))
 		// if we're NOT in medical, give no alert. N2O floods or whatever.
 		alert_type = null
 
@@ -13,8 +12,10 @@
 
 /datum/status_effect/grouped/anesthetic/on_apply()
 	. = ..()
-	examine_text = span_notice("[owner.p_theyre(TRUE)] out cold.")
 	ADD_TRAIT(owner, TRAIT_ON_ANESTHETIC, id)
+
+/datum/status_effect/grouped/anesthetic/get_examine_text()
+	return span_notice("They're out cold")
 
 /datum/status_effect/grouped/anesthetic/on_remove()
 	. = ..()

@@ -181,8 +181,6 @@
 		span_green("You cauterize some of the bleeding on [victim]."),
 	)
 	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
-	if(prob(15))
-		victim.force_pain_noise(50)
 	var/blood_cauterized = (0.6 / (self_penalty_mult * improv_penalty_mult))
 	blood_flow -= blood_cauterized
 

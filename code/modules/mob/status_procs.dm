@@ -55,15 +55,6 @@
 		remove_client_colour(/datum/client_colour/monochrome/blind)
 		update_body()
 
-
-/**
- * Make the mobs vision blurry
- */
-/mob/proc/blur_eyes(amount)
-	if(amount>0)
-		eye_blurry = max(amount, eye_blurry)
-	update_eye_blur()
-
 /**
  * Adjust the current blurriness of the mobs vision by amount
  */

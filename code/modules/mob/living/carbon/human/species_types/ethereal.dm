@@ -164,7 +164,7 @@
 		_human.apply_damage(8,BRUTE,BODY_ZONE_CHEST)
 		_human.apply_damage(8,BRUTE,BODY_ZONE_L_LEG)
 		_human.apply_damage(8,BRUTE,BODY_ZONE_R_LEG)
-		_human.force_scream()
+		_human.pain_emote("scream", 5 SECONDS)
 		_human.remove_status_effect(/datum/status_effect/rooted)
 		return
 

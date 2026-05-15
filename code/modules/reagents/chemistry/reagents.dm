@@ -113,7 +113,7 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	return
 
 /// Called from [/datum/reagents/proc/metabolize]
-/datum/reagent/proc/on_mob_life(mob/living/carbon/M, delta_time = SSMOBS_DT) //holy shit that's a hack. To-Do: port some life improvements and make this not ass
+/datum/reagent/proc/on_mob_life(mob/living/carbon/M, delta_time = SSMOBS_DT) //holy shit fix this. To-Do: port some life improvements and make this not ass
 	current_cycle++
 	holder.remove_reagent(type, metabolization_rate * M.metabolism_efficiency) //By default it slowly disappears.
 	return

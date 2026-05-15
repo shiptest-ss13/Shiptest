@@ -561,7 +561,7 @@
 			ADD_TRAIT(C, TRAIT_HOLY, SPECIES_TRAIT)
 		playsound(C.loc, 'sound/items/poster_ripped.ogg', 50, TRUE, -1)
 		C.adjustBruteLoss(20)
-		C.force_scream()
+		C.pain_emote("scream", 5 SECONDS)
 	..()
 
 //nerfed necrostone

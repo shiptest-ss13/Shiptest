@@ -36,7 +36,7 @@
 				new_eyes.Insert(affected_mob, drop_if_replaced = TRUE)
 				affected_mob.visible_message(span_warning("[affected_mob]'s eyes fall out, with snail eyes taking its place!"), \
 				span_userdanger("You scream in pain as your eyes are pushed out by your new snail eyes!"))
-				affected_mob.force_scream()
+				affected_mob.pain_emote("scream", 5 SECONDS)
 				return
 			var/obj/item/organ/tongue/tongue = locate(/obj/item/organ/tongue/snail) in affected_mob.internal_organs
 			if(!tongue && prob(5))

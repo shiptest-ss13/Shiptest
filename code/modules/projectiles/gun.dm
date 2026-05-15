@@ -1067,7 +1067,7 @@
 			if(at_risk.process_fire(src,src,FALSE, null, bodyzone) == TRUE)
 				log_combat(src,src,"misfired",at_risk,"caused by [cause]")
 				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s [get_bodypart(bodyzone)]!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your [get_bodypart(bodyzone)]!"))
-				human_holder.force_scream()
+				human_holder.pain_emote("scream", 5 SECONDS)
 
 //I need to refactor this into an attachment
 /datum/action/toggle_scope_zoom

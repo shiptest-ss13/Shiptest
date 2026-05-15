@@ -93,7 +93,7 @@
 							NB.static_icon = 'icons/mob/species/plasmaman/bodyparts.dmi'
 							NB.no_update = TRUE
 							NB.change_bodypart_status()
-							PP.force_scream()
+							PP.pain_emote("scream", 5 SECONDS)
 							if(!HAS_TRAIT(PP, TRAIT_ANALGESIA))
 								PP.visible_message(
 									span_warning("[L] screams in pain as [L.p_their()] [NB] melts down to the bone!"),

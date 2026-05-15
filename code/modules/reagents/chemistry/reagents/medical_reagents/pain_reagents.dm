@@ -43,7 +43,7 @@
 		return
 
 	for(var/obj/item/bodypart/part as anything in M.bodyparts)
-		if(part.status == BODYPART_ROBOTIC)
+		if(part.bodytype & BODYPART_ROBOTIC)
 			continue
 
 		var/final_pain_heal_amount = -1 * pain_heal_amount * REM * delta_time
@@ -54,10 +54,102 @@
 
 		M.cause_pain(part.body_zone, final_pain_heal_amount)
 
-/* Tramal - low power and lasts over a long period of time. Space Ibuprofen
+// Sydrin. The more intense over the counter painkiller. Mostly targets the chest and limbs.
+// Use healing chest and limb pain primarily.
+/datum/reagent/medicine/painkiller/sydrin
+	name = "Sydrin"
+	description = "A medication that combats pain and fever. Can cause mild nausea. Overdosing is toxic, and causes high body temperature, sickness, hallucinations, dizziness, and confusion."
+	reagent_state = LIQUID
+	color = "#321652"
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	overdose_threshold = 25
+	pain_modifier = 0.8
+
+/datum/reagent/medicine/painkiller/aspirin/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	// Not good at headaches, but very good at treating everything else.
+	M.adjustBruteLoss(-0.1 * REM * delta_time, FALSE)
+	M.adjustFireLoss(-0.05 * REM * delta_time, FALSE)
+	// Numbers seem low, but our metabolism is very slow
+	M.cause_pain(BODY_ZONE_HEAD, -0.02 * REM * delta_time)
+	M.cause_pain(BODY_ZONES_LIMBS, -0.04 * REM * delta_time)
+	M.cause_pain(BODY_ZONE_CHEST, -0.08 * REM * delta_time)
+	// Okay at fevers.
+	M.adjust_bodytemperature(-15 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time, M.get_body_temp_normal())
+	if(M.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(66 * max(1 - creation_purity, 0.5), delta_time))
+		M.adjust_disgust(1.5 * REM * delta_time)
+
+	..()
+	return TRUE
+
+/datum/reagent/medicine/painkiller/aspirin/overdose_process(mob/living/carbon/M, delta_time, times_fired)
+	if(!istype(M))
+		return
+
+	// On overdose, heat up the body...
+	M.adjust_bodytemperature(30 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time)
+	// Causes sickness...
+	M.apply_damage(1 * REM * delta_time, TOX)
+	if(M.disgust < 100 && SPT_PROB(75, delta_time))
+		M.adjust_disgust(3 * REM * delta_time)
+	// ...Hallucinations after a while...
+	if(current_cycle >= 15 && SPT_PROB(50, delta_time))
+		M.hallucination = clamp(M.hallucination + 3 * REM * delta_time, 0, 20)
+	// ...Dizziness after a longer while...
+	if(current_cycle >= 20 && SPT_PROB(25, delta_time))
+		M.dizziness = clamp(M.dizziness + (1 * REM * delta_time), 0, 5)
+	// ...And finally, confusion
+	if(current_cycle >= 25 && SPT_PROB(15, delta_time))
+		M.set_confusion(clamp(M.get_confusion() + 2, 1, 6))
+
+	..()
+	return TRUE
+
+// Paracetamol. Okay at headaches, okay at everything else, bad at fevers, less disgust.
+// Use for general healing every type of pain.
+/datum/reagent/medicine/painkiller/paracetamol
+	name = "Paracetamol"
+	description = "A painkiller that combats mind to moderate pain, headaches, and low fever. Causes mild nausea. Overdosing causes liver damage, sickness, and can be lethal."
+	reagent_state = LIQUID
+	color = "#fcaeff"
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	overdose_threshold = 25
+	pain_modifier = 0.6
+
+/datum/reagent/medicine/painkiller/paracetamol/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	// Good general painkiller.
+	// Numbers seem lowish, but our metabolism is very slow
+	M.adjustBruteLoss(-0.05 * REM * delta_time, FALSE)
+	M.adjustFireLoss(-0.05 * REM * delta_time, FALSE)
+	M.adjustToxLoss(-0.05 * REM * delta_time, FALSE)
+	M.cause_pain(BODY_ZONES_ALL, -0.05 * REM * delta_time)
+	// Not very good at treating fevers.
+	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time, M.get_body_temp_normal())
+	// Causes liver damage - higher dosages causes more liver damage.
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, volume / 30 * REM * delta_time)
+	if(M.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(66 * max(1 - creation_purity, 0.5), delta_time))
+		M.adjust_disgust(1.2 * REM * delta_time)
+
+	..()
+	return TRUE
+
+/datum/reagent/medicine/painkiller/paracetamol/overdose_process(mob/living/carbon/M, delta_time, times_fired)
+	if(!istype(M))
+		return
+
+	// On overdose, cause sickness and liver damage.
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 2 * REM * delta_time)
+	if(M.disgust < 100 && SPT_PROB(100 * max(1 - creation_purity, 0.5), delta_time))
+		M.adjust_disgust(3 * REM * delta_time)
+
+	return ..()
+
+
+
+/* The opioids:
+** Tramal - low power and lasts over a long period of time. Space Ibuprofen
 ** Morphine - Medium intensity and less duration. Makes you sleepy.
 ** Dimorlin - high intensity low duration. Analgesia
-** Miner's Salve - High intensity with some
+** Miner's Salve - High damn intensity
 */
 
 /datum/reagent/medicine/painkiller/tramal
@@ -67,21 +159,19 @@
 	color = "#34eeee"
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	overdose_threshold = 35
+	pain_modifier = 0.7
 
 /datum/reagent/medicine/painkiller/tramal/on_mob_metabolize(mob/living/L)
 	..()
-	ADD_TRAIT(L, TRAIT_PAIN_RESIST, type)
 
 /datum/reagent/medicine/painkiller/tramal/on_mob_end_metabolize(mob/living/L)
-	REMOVE_TRAIT(L, TRAIT_PAIN_RESIST, type)
 	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	..()
 
 /datum/reagent/medicine/painkiller/tramal/on_mob_life(mob/living/carbon/M)
-	if(current_cycle >= 5)
-		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_light, name)
+	M.cause_pain(BODY_ZONES_ALL, -0.1)
 	switch(current_cycle)
-		if(60)
+		if(45)
 			to_chat(M, span_warning("You feel drowsy..."))
 		if(61 to INFINITY)
 			M.drowsyness += 1
@@ -140,7 +230,7 @@
 	switch(current_cycle)
 		if(24) //5~ u
 			to_chat(M, span_warning("You start to feel tired..."))
-			M.blur_eyes(1) // just a hint teehee
+			M.M.set_blurry_if_lower(2 SECONDS) //clue them in
 			if(prob(50))
 				M.emote("yawn")
 
@@ -176,8 +266,6 @@
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	overdose_threshold = 15
 	pain_modifier = 0.2
-
-
 
 /datum/reagent/medicine/painkiller/dimorlin/on_mob_metabolize(mob/living/L)
 	..()
@@ -220,14 +308,39 @@
 	. = ..()
 	ADD_TRAIT(M, TRAIT_PINPOINT_EYES, type)
 
-/datum/reagent/medicine/painkiller/dimorlin/overdose_process(mob/living/M)
-	if(prob(33))
-		M.losebreath++
-		M.adjustOxyLoss(4, 0)
-	if(prob(20))
-		M.AdjustUnconscious(20)
-	if(prob(5))
-		M.adjustOrganLoss(ORGAN_SLOT_EYES, 5)
+/datum/reagent/medicine/painkiller/dimorlin/overdose_process(mob/living/M, delta_time)
+	. = ..()
+	if(!ishuman(M))
+		return
+
+	var/mob/living/carbon/human/human_mob = M
+	if(SPT_PROB(12, delta_time))
+		var/can_heart_fail = (!human_mob.undergoing_cardiac_arrest() && human_mob.can_heartattack())
+		var/picked_option = rand(1, (can_heart_fail ? 6 : 3))
+		switch(picked_option)
+			if(1)
+				to_chat(human_mob, span_danger("Your legs don't want to move."))
+				human_mob.Paralyze(6 SECONDS * REM * delta_time)
+			if(2)
+				to_chat(human_mob, span_danger("Your breathing starts to shallow."))
+				human_mob.losebreath = clamp(human_mob.losebreath + 3 * REM * delta_time, 0, 12)
+				human_mob.apply_damage((10), OXY)
+			if(3)
+				human_mob.drop_all_held_items()
+			if(4)
+				to_chat(human_mob, span_danger("You feel your heart skip a beat."))
+				human_mob.Jitter(3 * REM * delta_time)
+			if(5)
+				to_chat(human_mob, span_danger("You feel the world spin."))
+				human_mob.Dizzy(3 * REM * delta_time)
+			if(6)
+				to_chat(human_mob, span_userdanger("You feel your heart seize and stop completely!"))
+				if(human_mob.stat == CONSCIOUS)
+					human_mob.visible_message(span_userdanger("[human_mob] clutches at [human_mob.p_their()] chest as if [human_mob.p_their()] heart stopped!"), ignored_mobs = human_mob)
+				human_mob.emote("scream")
+				human_mob.set_heartattack(TRUE)
+				metabolization_rate *= 4
+		return TRUE
 	..()
 
 /datum/reagent/medicine/mine_salve
@@ -236,6 +349,7 @@
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
+	pain_modifier = 0.66
 
 /datum/reagent/medicine/mine_salve/on_mob_life(mob/living/carbon/C)
 	C.set_screwyhud(SCREWYHUD_HEALTHY)

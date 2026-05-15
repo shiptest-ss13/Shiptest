@@ -1644,23 +1644,23 @@
 	glass_name = "Spriter's Bane"
 	glass_desc = "Tastes better than it looks."
 
-/datum/reagent/consumable/ethanol/spriters_bane/on_mob_life(mob/living/carbon/C)
+/datum/reagent/consumable/ethanol/spriters_bane/on_mob_life(mob/living/carbon/soul_poster)
 	switch(current_cycle)
 		if(5 to 40)
-			C.set_timed_status_effect(6 SECONDS * REM, STATUS_EFFECT_JITTER, only_if_higher = TRUE)
+			soul_poster.set_jitter_if_lower(6 SECONDS)
 			if(prob(10) && !C.eye_blurry)
-				C.blur_eyes(6)
-				to_chat(C, span_warning("That outline is so distracting, it's hard to look at anything else!"))
+				soul_poster.set_eye_blur_if_lower(12 SECONDS)
+				to_chat(soul_poster, span_warning("That outline is so distracting, it's hard to look at anything else!"))
 		if(40 to 100)
-			C.set_timed_status_effect(20 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
+			soul_poster.set_dizzy_if_lower(20 SECONDS)
 			if(prob(15))
-				new /datum/hallucination/hudscrew(C)
+				new /datum/hallucination/hudscrew(soul_poster)
 		if(100 to INFINITY)
-			if(prob(10) && !C.eye_blind)
-				C.blind_eyes(6)
-				to_chat(C, span_userdanger("Your vision fades as your eyes are outlined in black!"))
+			if(prob(10) && !soul_poster.eye_blind)
+				soul_poster.blind_eyes(6)
+				to_chat(soul_poster, span_userdanger("Your vision fades as your eyes are outlined in black!"))
 			else
-				C.set_timed_status_effect(40 SECONDS * REM, STATUS_EFFECT_DIZZY, only_if_higher = TRUE)
+				soul_poster.set_dizzy_if_lower(40 SECONDS)
 	..()
 
 /datum/reagent/consumable/ethanol/spriters_bane/expose_atom(atom/A, volume)
