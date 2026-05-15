@@ -59,11 +59,11 @@
 	icon_state = "docs_blue"
 
 /obj/item/documents/frontier
-	desc = "\"Top Secret\" Frotiersmen Fleet documents. Filled with operational intelligence for the local area."
+	desc = "\"Top Secret\" Frontiersmen Fleet documents. Filled with operational intelligence for the local area."
 	icon_state = "docs_olive"
 
 /obj/item/documents/frontier/logistics
-	desc = "\"Top Secret\" Frotiersmen Fleet documents. Filled with intelligence on local Frontiersmen supply lines, supply depot, and logistical infrastructure."
+	desc = "\"Top Secret\" Frontiersmen Fleet documents. Filled with intelligence on local Frontiersmen supply lines, supply depot, and logistical infrastructure."
 
 /obj/item/documents/clip/research
 	desc = "Documents belonging to CLIP-LAND. Filled with complicated charts and spreadsheets on agricultural productivity and mineral deposits."

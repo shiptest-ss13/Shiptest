@@ -314,6 +314,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 /obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
 	default_ammo_type = /obj/item/ammo_box/magazine/c44_firestorm_mag/pan
 
+
+NO_MAG_GUN_HELPER(automatic/smg/firestorm)
+
 ///Shotguns
 
 /////////////////////////////
