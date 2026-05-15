@@ -966,7 +966,8 @@
 "pS" = (
 /obj/structure/noticeboard/directional/north{
 	name = "trophy board";
-	desc = "A board for hanging trophies upon."
+	desc = "A board for hanging trophies upon.";
+	pixel_y = 8
 	},
 /obj/item/clothing/mask/rat/bear{
 	pixel_y = -2;
@@ -979,7 +980,6 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/a8_50r{
-	pixel_x = 0;
 	pixel_y = -6;
 	auto_scatter = 0;
 	auto_rotate = 0
@@ -1003,7 +1003,6 @@
 	auto_scatter = 0
 	},
 /obj/item/ammo_casing/a8_50r{
-	pixel_x = 0;
 	pixel_y = 8;
 	auto_rotate = 0;
 	auto_scatter = 0
@@ -3282,8 +3281,6 @@
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/mine/proximity/explosive/live{
-	range_heavy = 1;
-	range_light = 5;
 	spawn_arm_delay = 100
 	},
 /obj/effect/mob_spawn/human/corpse/srm/montagne,

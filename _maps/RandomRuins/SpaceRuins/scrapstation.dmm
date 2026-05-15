@@ -5376,7 +5376,8 @@
 "DX" = (
 /obj/structure/noticeboard/directional/north{
 	desc = "A board for mounting trophies or momentos on.";
-	name = "wall board"
+	name = "wall board";
+	pixel_y = 36
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 1
@@ -9537,10 +9538,11 @@
 "Ze" = (
 /obj/structure/noticeboard/directional/north{
 	desc = "A board for mounting trophies or momentos on.";
-	name = "wall board"
+	name = "wall board";
+	pixel_y = 36
 	},
 /obj/item/pickaxe/drill/jackhammer/old{
-	pixel_y = 31;
+	pixel_y = 26;
 	name = "old jackhammer";
 	desc = "The old fashioned solution to a stubborn wall- used heavily all over known space until the onset of sonic deconstruction technology and Rapid Construction Devices. <i>Don't forget. -485 FS.</i> is carved into the side."
 	},
