@@ -672,21 +672,17 @@
 
 //Synthflesh injection. Its a healing over time like indomide that ramps up, the down side is it gves a massive incoming damage multiplier which also ramps up.
 /datum/reagent/medicine/synthflesh/on_mob_add(mob/living/carbon/M)
-	to_chat(M, span_warning("Your flesh starts to feel like a liquid as your wounds begin to close."))
+	M.apply_status_effect(/datum/status_effect/synthflesh)
 
-/datum/reagent/medicine/synthflesh/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/synthflesh/on_mob_life(mob/living/carbon/human/M)
 	var/mob/living/carbon/human/subject = M
-	(M.adjustBruteLoss(-0.1 * current_cycle))
-	(M.adjustFireLoss(-0.1 * current_cycle))
-	subject.physiology?.burn_mod += 0.03
-	subject.physiology?.brute_mod += 0.03
 	switch(src.current_cycle)
 		if(-INFINITY to 50)
 			if(prob(1))
 				to_chat(M, span_danger("You feel your flesh move on its own."))
 		if(50 to 100)
 			if(prob(5))
-				M.vomit(0,TRUE,FALSE,1,FALSE, FALSE, FALSE, )
+				M.vomit(0,TRUE,FALSE,1,FALSE, FALSE, FALSE,)
 				SEND_SIGNAL(subject, COMSIG_ADD_MOOD_EVENT, "Synthflesh Blood", /datum/mood_event/synthfleshminor) //Excess synthflesh is exhaled as blood, no mechanical effect but its fun(?)
 				subject.visible_message("<span class='warning'>[subject] coughs up some blood!")
 		if(100 to INFINITY) //This is the part where we "Overdose" not really dangerous but it rapidly clears synthflesh, because we're already at a 4x incoming damage mult and 10 damage healed a tick.
@@ -695,19 +691,10 @@
 				to_chat(M, span_userdanger("You throw up a mass of what looks like minced meat and blood!"))
 				SEND_SIGNAL(subject, COMSIG_ADD_MOOD_EVENT, "Synthflesh OD", /datum/mood_event/synthfleshOD)
 				M.spawn_gibs()
-				M.vomit(0,TRUE,FALSE,1,FALSE, FALSE, FALSE, )
-				M.AdjustKnockdown(15)
+				M.vomit(0,TRUE,FALSE,1,FALSE, FALSE, FALSE,)
+				M.AdjustParalyzed(15)
 				M.reagents.remove_reagent(/datum/reagent/medicine/synthflesh, 20)
 	return ..()
-
-/datum/reagent/medicine/synthflesh/on_mob_end_metabolize(mob/living/carbon/M) //Return our damage multiplier to usual.
-	var/mob/living/carbon/human/subject = M
-	subject.physiology?.burn_mod -= (0.03 * current_cycle)
-	subject.physiology?.brute_mod -= (0.03 * current_cycle)
-	to_chat(, span_notice("Your body feels solid again."))
-	. = ..()
-
-
 
 /datum/reagent/medicine/cryoxadone
 	name = "Cryoxadone"
