@@ -2989,10 +2989,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/noticeboard{
-	pixel_y = -26;
-	dir = 1
-	},
+/obj/structure/noticeboard/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
 "CO" = (
@@ -4512,10 +4509,7 @@
 	color = "#543C30"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/noticeboard{
-	pixel_y = -26;
-	dir = 1
-	},
+/obj/structure/noticeboard/directional/south,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken5"
 	},

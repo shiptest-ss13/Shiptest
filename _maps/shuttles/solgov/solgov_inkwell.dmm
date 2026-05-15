@@ -4314,9 +4314,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "Br" = (
-/obj/structure/noticeboard{
-	pixel_y = 32
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 5
 	},
@@ -4918,10 +4916,7 @@
 /area/ship/crew/canteen/kitchen)
 "ET" = (
 /obj/structure/bookcase/random,
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/noticeboard/directional/west,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/library)
 "Fa" = (
@@ -7878,9 +7873,7 @@
 /area/ship/cargo)
 "ZY" = (
 /obj/machinery/vending/coffee,
-/obj/structure/noticeboard{
-	pixel_y = 32
-	},
+/obj/structure/noticeboard/directional/north,
 /turf/open/floor/wood/birch,
 /area/ship/crew/office)
 
