@@ -2206,6 +2206,13 @@
 	/// Whether we've had at least WOUND_DETERMINATION_SEVERE (2.5u) of determination at any given time. No damage slowdown immunity or indication we're having a second wind if it's just a single moderate wound
 	var/significant = FALSE
 
+/datum/reagent/determination/on_mob_metabolize(mob/living/L)
+	. = ..()
+	ADD_TRAIT(L, TRAIT_HARDLY_WOUNDED, /datum/reagent/determination)
+	ADD_TRAIT(L, TRAIT_PINPOINT_EYES, type)
+	ADD_TRAIT(L, TRAIT_NOSOFTCRIT, type)
+	ADD_TRAIT(L, TRAIT_NOHARDCRIT, type)
+
 /datum/reagent/determination/on_mob_life(mob/living/carbon/M)
 	if(!significant && volume >= WOUND_DETERMINATION_SEVERE)
 		significant = TRUE
@@ -2222,6 +2229,11 @@
 	..()
 
 /datum/reagent/determination/on_mob_end_metabolize(mob/living/carbon/M)
+	REMOVE_TRAIT(L, TRAIT_HARDLY_WOUNDED, /datum/reagent/medicine/carfencadrizine)
+	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
+	REMOVE_TRAIT(L, TRAIT_NOSOFTCRIT, type)
+	REMOVE_TRAIT(L, TRAIT_NOHARDCRIT, type)
+
 	if(significant)
 		var/stam_crash = 0
 		for(var/thing in M.all_wounds)
