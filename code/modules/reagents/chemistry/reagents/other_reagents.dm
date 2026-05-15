@@ -2226,10 +2226,7 @@
 	..()
 
 /datum/reagent/determination/on_mob_end_metabolize(mob/living/carbon/M)
-	REMOVE_TRAIT(L, TRAIT_HARDLY_WOUNDED, /datum/reagent/medicine/carfencadrizine)
-	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	REMOVE_TRAIT(L, TRAIT_NOSOFTCRIT, type)
-	REMOVE_TRAIT(L, TRAIT_NOHARDCRIT, type)
 
 	if(significant)
 		var/stam_crash = 0
