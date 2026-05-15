@@ -2226,7 +2226,7 @@
 	..()
 
 /datum/reagent/determination/on_mob_end_metabolize(mob/living/carbon/M)
-	REMOVE_TRAIT(L, TRAIT_NOSOFTCRIT, type)
+	REMOVE_TRAIT(M, TRAIT_NOSOFTCRIT, type)
 
 	if(significant)
 		var/stam_crash = 0
