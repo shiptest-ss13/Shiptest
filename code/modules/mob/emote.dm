@@ -45,7 +45,7 @@
 			emote("gasp")
 		if(25 to 50)
 			emote("groan")
-		if(50 to INFINITE)
+		if(50 to INFINITY)
 			emote("scream")
 
 /mob/proc/force_manual_scream()
