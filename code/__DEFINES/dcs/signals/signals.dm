@@ -464,6 +464,10 @@
 #define COMSIG_MOB_EYECONTACT "mob_eyecontact"
 	/// return this if you want to block printing this message to this person, if you want to print your own (does not affect the other person's message)
 	#define COMSIG_BLOCK_EYECONTACT (1<<0)
+
+///from /proc/healthscan(): (user, render_list)
+#define COMSIG_MOB_HEALTHSCANNED "healthscanned" // NON-MODULE - signal sent after a health scan
+
 ///from base of /mob/update_sight(): ()
 #define COMSIG_MOB_UPDATE_SIGHT "mob_update_sight"
 ////from /mob/living/say(): ()

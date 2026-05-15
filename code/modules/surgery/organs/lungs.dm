@@ -265,6 +265,7 @@
 			SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "chemical_euphoria")
 			REMOVE_TRAIT(owner, TRAIT_ANALGESIA, GAS_NITROUS)
 
+	on_anesthetic = check_anesthetic(SA_pp, SA_sleep_min)
 
 	// BZ
 

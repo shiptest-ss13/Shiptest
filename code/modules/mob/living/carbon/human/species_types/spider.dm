@@ -21,6 +21,7 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	species_language_holder = /datum/language_holder/spider
 	loreblurb = "Rachnids are aliens with coincidental physiological similarities to Sol's spiders. Despite visible adaptations that would make them excellent hunters, modern Rachnidian culture revolves around honing the skills and talents of oneself, treating them as forms of self-expression. Rachnids tend to focus on their work intensely, priding themselves on a job well done and languishing if they see themselves as underperforming in their field."
+	species_pain_mod = 0.9
 	var/web_cooldown = 30
 	var/web_ready = TRUE
 	var/spinner_rate = 75

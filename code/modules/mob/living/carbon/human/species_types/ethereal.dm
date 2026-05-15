@@ -34,6 +34,8 @@
 	default_features = list("elzu_horns" = "None", "tail_elzu" = "None")
 	species_eye_path = 'icons/mob/ethereal_parts.dmi'
 
+	species_pain_mod = 0.9
+
 	species_organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,

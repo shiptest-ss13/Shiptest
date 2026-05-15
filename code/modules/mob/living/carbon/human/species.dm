@@ -225,6 +225,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left,
 	)
 
+	/// Pain modifier that this species recieves.
+	var/species_pain_mod = null
+
 	/// Default prosthetic replacements.
 	var/datum/sprite_accessory/body/prosthetic_style = /datum/sprite_accessory/body/prosthetic
 

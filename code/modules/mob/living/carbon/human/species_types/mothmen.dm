@@ -20,6 +20,8 @@
 	has_innate_wings = TRUE
 	deathsound = 'sound/voice/moth/moth_a.ogg'
 
+	species_pain_mod = 1.1
+
 	species_organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
