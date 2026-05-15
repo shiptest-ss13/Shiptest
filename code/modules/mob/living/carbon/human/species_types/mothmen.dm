@@ -47,22 +47,6 @@
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 5
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 5
 
-/datum/species/elzuose/on_species_gain(mob/living/carbon/_carbon, datum/species/old_species, pref_load)
-	. = ..()
-	if(!ishuman(_carbon))
-		return
-	var/mob/living/carbon/human/mothperson = _carbon
-	default_color = "#[mothperson.dna.features["moth_bodyfluff_color"]]"
-
-	_carbon.dna.features["mcolor"] = _carbon.dna.features["moth_bodyfluff_color"] //Ethcolor and Mut color are both dogshit and will be replaced
-	var/obj/item/bodypart/body_part
-	for(var/zone in _carbon.bodyparts)
-		body_part = _carbon.bodyparts[zone]
-		if(!body_part)
-			continue
-		if(body_part.limb_id == SPECIES_MOTH)
-			body_part.update_limb(is_creating = TRUE)
-
 /datum/species/moth/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
 	. = ..()
 	if(ishuman(C))
