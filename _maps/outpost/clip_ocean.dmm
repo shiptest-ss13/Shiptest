@@ -1460,8 +1460,11 @@
 /obj/structure/toilet{
 	dir = 1
 	},
-/obj/structure/catwalk/over,
-/turf/open/water/beach/deep/outpost,
+/obj/effect/turf_decal/corner/opaque/grey/half,
+/obj/effect/turf_decal/corner/opaque/grey/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/bar)
 "do" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
@@ -8774,7 +8777,8 @@
 /obj/structure/chair/office/purple{
 	dir = 4
 	},
-/turf/open/floor/carpet/blue,
+/obj/effect/turf_decal/corner/transparent/blue/diagonal,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/vacant_rooms/shop)
 "wo" = (
 /obj/structure/railing/thin{
@@ -9408,8 +9412,8 @@
 /turf/open/floor/carpet/blue,
 /area/outpost/vacant_rooms)
 "xW" = (
-/obj/machinery/oven,
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/vacant_rooms/shop)
 "xZ" = (
@@ -9728,8 +9732,11 @@
 	normaldoorcontrol = 1;
 	specialfunctions = 4
 	},
-/obj/structure/catwalk/over,
-/turf/open/water/beach/deep/outpost,
+/obj/effect/turf_decal/corner/opaque/grey/half,
+/obj/effect/turf_decal/corner/opaque/grey/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/bar)
 "yQ" = (
 /obj/structure/window/reinforced/fulltile/indestructible,
@@ -12984,8 +12991,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/crew/canteen)
 "Gn" = (
-/obj/machinery/griddle,
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
+/obj/structure/rack,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/vacant_rooms/shop)
 "Go" = (
@@ -14280,8 +14287,11 @@
 	normaldoorcontrol = 1;
 	specialfunctions = 4
 	},
-/obj/structure/catwalk/over,
-/turf/open/water/beach/deep/outpost,
+/obj/effect/turf_decal/corner/opaque/grey/half,
+/obj/effect/turf_decal/corner/opaque/grey/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/bar)
 "Js" = (
 /obj/structure/bed/double/maint{
@@ -19560,6 +19570,7 @@
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/operations)
 "Wv" = (
+/obj/machinery/vending/grocery/clip,
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms/shop)
 "Ww" = (
@@ -28485,7 +28496,7 @@ PX
 kM
 mz
 Ld
-mz
+ga
 KG
 Gn
 Wc
