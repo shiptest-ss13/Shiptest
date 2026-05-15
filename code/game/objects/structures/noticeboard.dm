@@ -16,9 +16,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/noticeboard, 32)
 		return
 
 	for(var/obj/item/I in loc)
-		if(notices > 7)
+		if(contents.len > 7)
 			break
-		if(istype(O, /obj/item/paper) || istype(O, /obj/item/photo))
+		if(istype(I, /obj/item/paper) || istype(I, /obj/item/photo))
 			I.forceMove(src)
 	update_overlays()
 
@@ -28,7 +28,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/noticeboard, 32)
 		if(!allowed(user))
 			to_chat(user, span_warning("You are not authorized to add notices!"))
 			return
-		if(notices < 7)
+		if(contents.len < 7)
 			if(!user.transferItemToLoc(O, src))
 				return
 			update_overlays()
@@ -92,11 +92,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/noticeboard, 32)
 /obj/structure/noticeboard/update_overlays()
 	. = ..()
 	var/count = max(7, contents.len)
-	if(!notices)
+	if(!count)
 		return
 
 	var/mutable_appearance/notice_overlay
-	if(!icon_exists(icon, "over_[icon_count]"))
+	if(!icon_exists(icon, "over_[count]"))
 		return
-	notice_overlay = mutable_appearance(icon, "over_[icon_count]")
+	notice_overlay = mutable_appearance(icon, "over_[count]")
 	add_overlay(notice_overlay)
