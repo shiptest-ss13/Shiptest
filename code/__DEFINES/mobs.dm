@@ -244,9 +244,9 @@
 
 //Disgust levels for humans
 #define DISGUST_LEVEL_MAXEDOUT 200
-#define DISGUST_LEVEL_DISGUSTED 100
-#define DISGUST_LEVEL_VERYGROSS 50
-#define DISGUST_LEVEL_GROSS 25
+#define DISGUST_LEVEL_DISGUSTED 150
+#define DISGUST_LEVEL_VERYGROSS 100
+#define DISGUST_LEVEL_GROSS 50
 
 //Used as an upper limit for species that continuously gain nutriment
 #define NUTRITION_LEVEL_ALMOST_FULL 535
