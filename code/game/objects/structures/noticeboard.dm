@@ -91,7 +91,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/noticeboard, 32)
 
 /obj/structure/noticeboard/update_overlays()
 	. = ..()
-	var/count = max(7, contents.len)
+	var/count = min(7, contents.len)
 	if(!count)
 		return
 
