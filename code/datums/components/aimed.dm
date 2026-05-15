@@ -70,20 +70,20 @@
 /datum/component/aimed_fire/check_user(automatic_cleanup = TRUE)
 	if(!istype(shooter) || !isturf(shooter.loc) || !(src in shooter.held_items) || shooter.incapacitated())	//Doesn't work if you're not holding it!
 		if(automatic_cleanup)
-			stop_aiming()
+			//stop_aiming()
 			//set_user(null)
 		return FALSE
 	return TRUE
 
-/obj/item/gun/proc/start_aiming(target)
-	aiming_time_left = aiming_time
+// /obj/item/gun/proc/start_aiming(target)
+// 	aiming_time_left = aiming_time
 	//aiming = TRUE
-	process_aim(target)
+	// process_aim(target)
 	//aiming_beam(TRUE)
 
-/obj/item/gun/proc/stop_aiming(mob/user)
-	set waitfor = FALSE
-	aiming_time_left = aiming_time
+// /obj/item/gun/proc/stop_aiming(mob/user)
+// 	set waitfor = FALSE
+// 	aiming_time_left = aiming_time
 	//aiming = FALSE
 	//QDEL_LIST(current_tracers)
 
