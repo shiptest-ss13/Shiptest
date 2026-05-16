@@ -156,7 +156,6 @@
 
 	var/mob/living/carbon/human/human_owner = owner
 	var/obj/item/bodypart/held_bodypart = human_owner.pain_controller.body_zones[targeted_zone]
-	examine_text = span_danger("[holder == owner ? "[owner.p_theyre(TRUE)]" : "[holder] is"] pressing a warm [pressed_item.name] against [owner.p_their()] [held_bodypart.name].")
 	to_chat(human_owner, span_green("You gasp as [owner == holder ? "you press" : "[holder] presses"] [pressed_item] against your [held_bodypart.name], but eventually the warmth starts to dull the pain."))
 	human_owner.pain_emote("gasp", 3 SECONDS)
 

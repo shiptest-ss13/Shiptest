@@ -575,7 +575,8 @@
 	if(prob(5))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1)
 
-#warn fluff + recipe
+#warn fluff + recipe + effects (analgesia, way harder to kill)
+#warn 2 injectors, golem (focused on this), assault pack (golem + shoalmix)
 /datum/reagent/drug/golem
 	name = "Golem"
 	description = ""

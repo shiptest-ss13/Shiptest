@@ -29,7 +29,7 @@
 		M.set_eye_blur_if_lower(20 SECONDS)
 	else if(M.eye_blind || M.eye_blurry)
 		M.set_blindness(0)
-		M.remove_status_effect(/datum/status_effect/eye_blurry)
+		M.remove_status_effect(/datum/status_effect/eye_blur)
 	..()
 
 /datum/reagent/medicine/inacusiate

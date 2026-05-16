@@ -34,7 +34,7 @@
 	name = "temperature pack"
 	desc = "A temperature pack, to soothe pain."
 	w_class = WEIGHT_CLASS_SMALL
-	icon = 'icons/obj/pain_items.dmi'
+	icon = 'icons/obj/medical/pain_items.dmi'
 	lefthand_file = 'icons/mob/inhands/pain_items_lhand.dmi'
 	righthand_file = 'icons/mob/inhands/pain_items_rhand.dmi'
 	icon_state = "cold_pack"

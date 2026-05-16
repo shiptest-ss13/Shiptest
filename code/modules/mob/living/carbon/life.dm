@@ -402,8 +402,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /mob/living/carbon/handle_status_effects()
 	..()
 
-	var/restingpwr = 1 + 4 * resting
-
 	if(stuttering)
 		stuttering = max(stuttering-1, 0)
 

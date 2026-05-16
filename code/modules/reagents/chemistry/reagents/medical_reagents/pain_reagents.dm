@@ -75,7 +75,7 @@
 	M.cause_pain(BODY_ZONE_CHEST, -0.08 * REM * delta_time)
 	// Okay at fevers.
 	M.adjust_bodytemperature(-15 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time, M.get_body_temp_normal())
-	if(M.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(66 * max(1 - creation_purity, 0.5), delta_time))
+	if(M.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(33, delta_time))
 		M.adjust_disgust(1.5 * REM * delta_time)
 
 	..()
@@ -429,7 +429,7 @@
 /datum/reagent/medicine/painkiller/specialized/ibaltifen/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	// a bit of libital influence
 	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 0.5 * REM * delta_time)
-	M.adjustBruteLoss(-0.5 * REM * normalise_creation_purity() * delta_time)
+	M.adjustBruteLoss(-0.33 * REM * delta_time)
 	..()
 	return TRUE
 

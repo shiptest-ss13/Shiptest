@@ -21,7 +21,6 @@
 	M.adjustToxLoss(-5, 0, TRUE)
 	M.hallucination = 0
 	REMOVE_TRAITS_NOT_IN(M, list(SPECIES_TRAIT, ROUNDSTART_TRAIT, ORGAN_TRAIT))
-	M.set_blurriness(0)
 	M.set_blindness(0)
 	M.SetKnockdown(0)
 	M.SetStun(0)
@@ -35,6 +34,7 @@
 	M.slurring = 0
 	M.confused = 0
 	M.set_sleeping(0)
+	M.remove_status_effect(/datum/status_effect/eye_blur)
 	M.remove_status_effect(STATUS_EFFECT_JITTER)
 	M.remove_status_effect(STATUS_EFFECT_DIZZY)
 	if(M.blood_volume < BLOOD_VOLUME_NORMAL)

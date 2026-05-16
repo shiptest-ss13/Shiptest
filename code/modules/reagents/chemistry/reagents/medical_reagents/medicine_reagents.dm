@@ -250,7 +250,7 @@
 
 /datum/reagent/medicine/alvitane/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	M.adjustFireLoss(-reac_volume/2)
-	M.force_pain_noise(reac_volume/2)
+	M.pain_emote("wince", 5 SECONDS)
 	M.adjustStaminaLoss(reac_volume/2)
 	if(iscarbon(M) && M.stat != DEAD)
 		var/mob/living/carbon/burn_ward_attendee = M
