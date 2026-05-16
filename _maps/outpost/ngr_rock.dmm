@@ -1914,6 +1914,9 @@
 	pixel_y = 6;
 	pixel_x = 6
 	},
+/obj/structure/sign/poster/radio/arf{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/bar)
 "ej" = (
@@ -4142,11 +4145,13 @@
 /turf/open/water/tar,
 /area/outpost/vacant_rooms/office)
 "jk" = (
-/obj/effect/turf_decal/corner/opaque/tan/mono,
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 5
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
+	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
+/obj/effect/turf_decal/corner/opaque/beige{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
@@ -4411,7 +4416,7 @@
 	color = "#412e25";
 	dir = 8
 	},
-/obj/structure/sign/poster/radio/soft{
+/obj/structure/sign/poster/radio/arf{
 	pixel_x = -32
 	},
 /turf/open/floor/wood/walnut,
@@ -9955,10 +9960,6 @@
 /turf/open/floor/plating,
 /area/outpost/crew)
 "vy" = (
-/obj/effect/turf_decal/corner/opaque/tan/mono,
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 9
-	},
 /obj/item/reagent_containers/condiment/hotsauce{
 	pixel_y = 15;
 	pixel_x = -9
@@ -9980,7 +9981,11 @@
 	pixel_y = 9;
 	pixel_x = 5
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/beige,
+/obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
@@ -14923,10 +14928,6 @@
 	pixel_y = 1;
 	pixel_x = -5
 	},
-/obj/item/binoculars{
-	pixel_x = 1;
-	pixel_y = 4
-	},
 /turf/open/floor/concrete/pavement/ngr_outpost_outside,
 /area/outpost/exterior/rock)
 "Gk" = (
@@ -16450,6 +16451,10 @@
 /obj/structure/railing,
 /obj/effect/turf_decal/trimline/opaque/bar/filled/warning,
 /obj/structure/table,
+/obj/item/binoculars{
+	pixel_x = 7;
+	pixel_y = 4
+	},
 /turf/open/floor/concrete/pavement/ngr_outpost_outside,
 /area/outpost/exterior/rock)
 "JD" = (
@@ -17461,14 +17466,16 @@
 /area/outpost/hallway/fore)
 "LF" = (
 /obj/structure/table/wood,
-/obj/effect/turf_decal/corner/opaque/tan/mono,
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 10
-	},
 /obj/item/storage/bottles/moonshine{
 	pixel_y = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/beige{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
@@ -23092,12 +23099,12 @@
 /turf/open/floor/plasteel/tech/ngr_outpost,
 /area/outpost/hallway/central)
 "Yv" = (
-/obj/effect/turf_decal/corner/opaque/tan/mono,
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 6
-	},
 /obj/machinery/light/directional/south,
-/obj/effect/turf_decal/trimline/opaque/bar/line{
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters,
+/obj/effect/turf_decal/corner/opaque/beige{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
