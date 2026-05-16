@@ -3506,6 +3506,8 @@
 /obj/effect/turf_decal/corner/opaque/bar,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/armory)
+"hH" = (
+)
 "hJ" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
@@ -8210,27 +8212,17 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe/lit/ngr_outpost_outside,
 /area/outpost/exterior/rock)
 "rF" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/corner/opaque/beige/half,
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
-/obj/machinery/vending/grocery/ngr,
-/turf/open/floor/plasteel,
-/area/outpost/crew/canteen)
-"GG" = (
-/obj/effect/spawner/random/maintenance/two,
-/obj/structure/rack,
-/turf/open/floor/plating/rust,
-/area/outpost/maintenance/central)
+/turf/open/floor/plasteel/tech,
+/area/outpost/security/checkpoint)
 "rI" = (
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 4
@@ -15128,11 +15120,11 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew)
 "GF" = (
+/obj/machinery/vending/grocery/ngr,
 /obj/effect/turf_decal/corner/opaque/beige/half{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/beige/half,
-/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
@@ -25363,7 +25355,7 @@ rl
 Dl
 xO
 RQ
-rH
+hH
 xO
 Np
 Np
@@ -26419,7 +26411,7 @@ qe
 xO
 ey
 Ao
-rH
+hH
 xO
 zU
 Iw
@@ -34751,7 +34743,7 @@ fr
 nu
 Ng
 Ci
-rG
+hH
 JA
 ui
 VE
