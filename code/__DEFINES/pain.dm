@@ -65,3 +65,5 @@
 #define TRAIT_ON_ANESTHETIC "on_anesthetic"
 /// If the mob enters shock, they will have +1 cure condition (helps cure it faster)
 #define TRAIT_ABATES_SHOCK "shock_abated"
+
+#define STATUS_EFFECT_SHARP_PAIN /datum/status_effect/sharp_pain

@@ -47,11 +47,12 @@
 	color = "#64FFE6"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/diphenhydramine/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/diphenhydramine/on_mob_life(mob/living/carbon/M, delta_time)
 	if(prob(10))
 		M.drowsyness += 1
 	M.adjust_timed_status_effect(-12 SECONDS, STATUS_EFFECT_JITTER)
 	holder.remove_reagent(/datum/reagent/toxin/histamine,3)
+	M.adjust_disgust(-3 * REM * delta_time)
 	..()
 
 

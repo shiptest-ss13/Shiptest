@@ -103,7 +103,7 @@
 		if(H.is_eyes_covered())
 			return
 		visible_message(span_danger("\The [src] hits [H] in the eye[eyes ? "" : " socket"]!"))
-		H.adjust_blurriness(6)
+		H.adjust_eye_blur(6 SECONDS)
 		eyes?.applyOrganDamage(rand(6,8))
 		H.pain_emote("scream", 5 SECONDS)
 		if(!HAS_TRAIT(H, TRAIT_ANALGESIA))

@@ -484,7 +484,7 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		L.adjustFireLoss(impact_direct_damage)
-		L.pain_emote("scream", 5 SECONDS)
+		L.manual_emote("scream")
 
 /obj/projectile/beam/beam_rifle/proc/handle_hit(atom/target, piercing_hit = FALSE)
 	set waitfor = FALSE

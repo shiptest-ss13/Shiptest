@@ -12,6 +12,14 @@
 	var/boozepwr = 65 //Higher numbers equal higher hardness, higher hardness equals more intense alcohol poisoning
 	accelerant_quality = 5
 
+//Alcohol reduces pain based on boozepwr
+/datum/reagent/consumable/ethanol/New()
+	if(boozepwr && isnull(pain_modifier))
+		var/new_pain_modifier = 12 / (boozepwr * 0.2)
+		if(new_pain_modifier < 1)
+			pain_modifier = new_pain_modifier
+	return ..()
+
 /datum/reagent/consumable/ethanol/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
 	if(chems.has_reagent(src, 1))

@@ -590,13 +590,13 @@
 			if(!M.eye_blurry)
 				to_chat(M, span_warning("Tears well up in your eyes!"))
 			M.blind_eyes(2)
-			M.set_blurry_if_lower(10 SECONDS)
+			M.set_eye_blur_if_lower(10 SECONDS)
 	..()
 
 /datum/reagent/consumable/tearjuice/on_mob_life(mob/living/carbon/M)
 	..()
 	if(M.eye_blurry)	//Don't worsen vision if it was otherwise fine
-		M.set_blurry_if_lower(8 SECONDS)
+		M.set_eye_blur_if_lower(8 SECONDS)
 		if(prob(10))
 			to_chat(M, span_warning("Your eyes sting!"))
 			M.blind_eyes(2)
@@ -631,7 +631,7 @@
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM, 150)
 		M.adjustToxLoss(3*REM,0)
 		M.adjustStaminaLoss(10*REM,0)
-		M.set_blurry_if_lower(10 SECONDS)
+		M.set_eye_blur_if_lower(10 SECONDS)
 		. = TRUE
 	..()
 

@@ -49,7 +49,7 @@
 		target.Stun(amt_stun)
 
 		target.blind_eyes(amt_eye_blind)
-		target.set_blurry_if_lower(amt_eye_blurry)
+		target.set_eye_blur_if_lower(amt_eye_blurry)
 		//summoning
 		if(summon_type)
 			new summon_type(target.loc, target)

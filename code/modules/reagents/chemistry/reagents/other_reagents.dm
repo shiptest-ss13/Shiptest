@@ -1075,6 +1075,26 @@
 	color = "#808080"
 	taste_description = "sweetness"
 
+/datum/reagent/nitrous_oxide/on_mob_metabolize(mob/living/carbon/user)
+	. = ..()
+	RegisterSignal(user, SIGNAL_ADDTRAIT(TRAIT_KNOCKEDOUT), .proc/apply_anesthetic)
+	RegisterSignal(user, SIGNAL_REMOVETRAIT(TRAIT_KNOCKEDOUT), .proc/remove_anesthetic)
+	if(HAS_TRAIT(user, TRAIT_KNOCKEDOUT))
+		apply_anesthetic(user)
+
+/datum/reagent/nitrous_oxide/on_mob_end_metabolize(mob/living/carbon/user)
+	. = ..()
+	UnregisterSignal(user, list(SIGNAL_ADDTRAIT(TRAIT_KNOCKEDOUT), SIGNAL_REMOVETRAIT(TRAIT_KNOCKEDOUT)))
+	remove_anesthetic(user)
+
+/datum/reagent/nitrous_oxide/proc/apply_anesthetic(mob/living/carbon/source)
+	SIGNAL_HANDLER
+	source.apply_status_effect(/datum/status_effect/grouped/anesthetic, type)
+
+/datum/reagent/nitrous_oxide/proc/remove_anesthetic(mob/living/carbon/source)
+	SIGNAL_HANDLER
+	source.remove_status_effect(/datum/status_effect/grouped/anesthetic, type)
+
 /datum/reagent/nitrous_oxide/expose_obj(obj/O, reac_volume)
 	if((!O) || (!reac_volume))
 		return 0
@@ -2203,6 +2223,7 @@
 	taste_description = "pure determination"
 	overdose_threshold = 45
 	process_flags = ALL
+	pain_modifier = 0.8
 	/// Whether we've had at least WOUND_DETERMINATION_SEVERE (2.5u) of determination at any given time. No damage slowdown immunity or indication we're having a second wind if it's just a single moderate wound
 	var/significant = FALSE
 

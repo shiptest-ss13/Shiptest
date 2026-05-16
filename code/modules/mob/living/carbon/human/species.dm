@@ -1690,7 +1690,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 							H.visible_message(span_danger("[H] is knocked senseless!"), \
 											span_userdanger("You're knocked senseless!"))
 							H.confused = max(H.confused, 20)
-							H.adjust_blurriness(10)
+							H.set_eye_blur_if_lower(20 SECONDS)
 						if(prob(10))
 							H.gain_trauma(/datum/brain_trauma/mild/concussion)
 					else
@@ -1898,7 +1898,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(prob(15) && feels_pain)
 			to_chat(H, span_danger("Your eyes burn!"))
 			H.emote("cry")
-		H.set_blurriness(rand(5,15))
+		H.set_eye_blur_if_lower(10 SECONDS)
 	if(irritant && prob(5) && feels_pain)
 		to_chat(H, span_danger("Your [mechanical ? "outer shell smolders" : "skin itches"]."))
 

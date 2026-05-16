@@ -34,9 +34,9 @@
 	name = "temperature pack"
 	desc = "A temperature pack, to soothe pain."
 	w_class = WEIGHT_CLASS_SMALL
-	icon = 'jollystation_modules/icons/obj/pain_items.dmi'
-	lefthand_file = 'jollystation_modules/icons/mob/inhands/pain_items_lhand.dmi'
-	righthand_file = 'jollystation_modules/icons/mob/inhands/pain_items_rhand.dmi'
+	icon = 'icons/obj/pain_items.dmi'
+	lefthand_file = 'icons/mob/inhands/pain_items_lhand.dmi'
+	righthand_file = 'icons/mob/inhands/pain_items_rhand.dmi'
 	icon_state = "cold_pack"
 	throwforce = 0
 	throw_speed = 2
@@ -155,13 +155,13 @@
 	name = "oxycodone pill"
 	desc = "Used to treat severe to extreme pain. Rapid acting, may cause delirium. Very addictive."
 	icon_state = "pill12"
-	list_reagents = list(/datum/reagent/medicine/oxycodone = 5) // Lasts ~1 minute, heals ~20 pain per bodypart (~200 pain)
+	list_reagents = list(/datum/reagent/medicine/painkiller/dimorlin = 5) // Lasts ~1 minute, heals ~20 pain per bodypart (~200 pain)
 	rename_with_volume = TRUE
 
 /obj/item/storage/pill_bottle/painkillers
 	name = "bottle of painkillers"
 	desc = "Contains multiple pills used to treat anywhere from mild to extreme pain. CAUTION: Do not take in conjunction with alcohol."
-	icon = 'jollystation_modules/icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical.dmi'
 
 /obj/item/storage/pill_bottle/painkillers/ComponentInitialize()
 	. = ..()
@@ -185,18 +185,18 @@
 /obj/item/reagent_containers/hypospray/medipen/survival/painkiller
 	name = "survival painkiller medipen"
 	desc = "A medipen that contains a dosage of heavy duty painkillers. WARNING: Side effects or addiction may occur with rapid consecutive usage. Do not use in combination with alcohol."
-	icon = 'jollystation_modules/icons/obj/syringe.dmi'
+	icon = 'icons/obj/syringe.dmi'
 	icon_state = "painkiller_stimpen"
 	base_icon_state = "painkiller_stimpen"
 	volume = 15
 	amount_per_transfer_from_this = 15
-	list_reagents = list(/datum/reagent/medicine/oxycodone = 7.5, /datum/reagent/medicine/painkiller/morphine = 5, /datum/reagent/medicine/modafinil = 2.5)
+	list_reagents = list(/datum/reagent/medicine/painkiller/dimorlin = 7.5, /datum/reagent/medicine/painkiller/morphine = 5, /datum/reagent/medicine/modafinil = 2.5)
 
 /// Medkit pen.
 /obj/item/reagent_containers/hypospray/medipen/painkiller
 	name = "emergency painkiller medipen"
 	desc = "A medipen that contains a dosages of moderate painkilling chemicals. Can cause drowsiness. WARNING: Do not use in combination with alcohol."
-	icon = 'jollystation_modules/icons/obj/syringe.dmi'
+	icon = 'icons/obj/syringe.dmi'
 	icon_state = "painkiller"
 	base_icon_state = "painkiller"
 	volume = 15
@@ -206,7 +206,7 @@
 /obj/item/reagent_containers/hypospray/medipen/brute_painkiller
 	name = "ibaltifen painkiller medipen"
 	desc = "An autoinjector containing ibaltifen, used to treat pain caused by bruises and broken limbs. WARNING: Do not use in combination with alcohol."
-	icon = 'maplestation_modules/icons/obj/syringe.dmi'
+	icon = 'icons/obj/syringe.dmi'
 	icon_state = "burn_painkiller_pen"
 	base_icon_state = "burn_painkiller_pen"
 	inhand_icon_state = "salacid"
@@ -215,7 +215,7 @@
 /obj/item/reagent_containers/hypospray/medipen/burn_painkiller
 	name = "anurifen painkiller medipen"
 	desc = "An autoinjector containing anurifen, used to treat pain caused by bruises and broken limbs. WARNING: Do not use in combination with alcohol."
-	icon = 'maplestation_modules/icons/obj/syringe.dmi'
+	icon = 'icons/obj/syringe.dmi'
 	icon_state = "brute_painkiller_pen"
 	base_icon_state = "brute_painkiller_pen"
 	inhand_icon_state = "oxapen"
@@ -228,12 +228,11 @@
 /obj/item/shock_blanket
 	name = "shock blanket"
 	desc = "A metallic looking plastic blanket specifically designed to well insulate anyone seeking comfort underneath."
-	icon = 'jollystation_modules/icons/obj/pain_items.dmi'
-	worn_icon = 'jollystation_modules/icons/mob/pain_items.dmi'
-	lefthand_file = 'jollystation_modules/icons/mob/inhands/pain_items_lhand.dmi'
-	righthand_file = 'jollystation_modules/icons/mob/inhands/pain_items_rhand.dmi'
+	icon = 'icons/obj/medical/pain_objects.dmi'
+	worn_icon = 'icons/mob/pain_items.dmi'
+	lefthand_file = 'icons/mob/inhands/pain_items_lhand.dmi'
+	righthand_file = 'icons/mob/inhands/pain_items_rhand.dmi'
 	icon_state = "shockblanket"
-	worn_icon_state = "shockblanket"
 	drop_sound = 'sound/items/handling/cloth_drop.ogg'
 	pickup_sound =  'sound/items/handling/cloth_pickup.ogg'
 	w_class = WEIGHT_CLASS_SMALL

@@ -72,6 +72,10 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/process_flags = ORGANIC
 	///How good of an accelerant is this reagent
 	var/accelerant_quality = 0
+	/// Modifier applied by this reagent to the mob's pain.
+	/// This is both a multiplicative modifier to their overall received pain,
+	/// and an additive modifier to their per tick pain decay rate.
+	var/pain_modifier = null
 
 	///The section of the autowiki chem table this reagent will be under
 	var/category = "Misc"
@@ -132,11 +136,19 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	return
 
 /// Called when this reagent first starts being metabolized by a liver
-/datum/reagent/proc/on_mob_metabolize(mob/living/L)
+/datum/reagent/proc/on_mob_metabolize(mob/living/carbon/user)
+	if(!isnull(pain_modifier) && istype(user))
+		if(user.set_pain_mod("[PAIN_MOD_CHEMS]-[name]", pain_modifier) && user.pain_controller.pain_modifier <= 0.5)
+			// If the painkiller's strong enough give them an alert
+			user.throw_alert("numbed", /atom/movable/screen/alert/numbed)
 	return
 
 /// Called when this reagent stops being metabolized by a liver
-/datum/reagent/proc/on_mob_end_metabolize(mob/living/L)
+/datum/reagent/proc/on_mob_end_metabolize(mob/living/carbon/user)
+	if(!isnull(pain_modifier) && istype(user))
+		user.unset_pain_mod("[PAIN_MOD_CHEMS]-[name]")
+		if(user.pain_controller.pain_modifier > 0.5)
+			user.clear_alert("numbed")
 	return
 
 /// Called by [/datum/reagents/proc/conditional_update_move]

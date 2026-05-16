@@ -574,3 +574,14 @@
 		M.set_eye_blur_if_lower(rand(10, 24) SECONDS)
 	if(prob(5))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1)
+
+#warn fluff + recipe
+/datum/reagent/drug/golem
+	name = "Golem"
+	description = ""
+	reagent_state = SOLID
+	color = "#bd6c0f"
+	overdose_threshold = 16
+	metabolization_rate = 0.2
+	taste_description = "wet clay"
+	pain_modifier = 0

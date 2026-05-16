@@ -1648,7 +1648,7 @@
 	switch(current_cycle)
 		if(5 to 40)
 			soul_poster.set_jitter_if_lower(6 SECONDS)
-			if(prob(10) && !C.eye_blurry)
+			if(prob(10) && !soul_poster.has_status_effect(/datum/status_effect/eye_blur))
 				soul_poster.set_eye_blur_if_lower(12 SECONDS)
 				to_chat(soul_poster, span_warning("That outline is so distracting, it's hard to look at anything else!"))
 		if(40 to 100)

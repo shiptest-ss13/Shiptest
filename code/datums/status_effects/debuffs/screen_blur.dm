@@ -28,8 +28,16 @@
 	if(!owner.hud_used)
 		return
 
+	var/atom/movable/screen/plane_master/floor/OT = locate(/atom/movable/screen/plane_master/floor) in owner.client.screen
+	var/atom/movable/screen/plane_master/game_world/GW = locate(/atom/movable/screen/plane_master/game_world) in owner.client.screen
+	GW.remove_filter("eye_blur", 1)
+	OT.remove_filter("eye_blur", 1)
+
+	/*to do - port what makes this work
 	var/atom/movable/plane_master_controller/game_plane_master_controller = owner.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
 	game_plane_master_controller.remove_filter("eye_blur")
+	*/
+
 
 /datum/status_effect/eye_blur/tick(delta_time, times_fired)
 	// Blur lessens the closer we are to expiring, so we update per tick.
@@ -46,7 +54,13 @@
 	var/time_left_in_seconds = (duration - world.time) / (1 SECONDS)
 	var/amount_of_blur = clamp(time_left_in_seconds * BLUR_DURATION_TO_INTENSITY, 0.6, 3)
 
+	var/atom/movable/screen/plane_master/floor/OT = locate(/atom/movable/screen/plane_master/floor) in owner.client.screen
+	var/atom/movable/screen/plane_master/game_world/GW = locate(/atom/movable/screen/plane_master/game_world) in owner.client.screen
+	GW.add_filter("eye_blur", 1, gauss_blur_filter(amount_of_blur))
+	OT.add_filter("eye_blur", 1, gauss_blur_filter(amount_of_blur))
+
+/*
 	var/atom/movable/plane_master_controller/game_plane_master_controller = owner.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
 	game_plane_master_controller.add_filter("eye_blur", 1, gauss_blur_filter(amount_of_blur))
-
+*/
 #undef BLUR_DURATION_TO_INTENSITY

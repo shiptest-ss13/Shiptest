@@ -104,6 +104,8 @@
 	..()
 	return TRUE
 
+
+#warn shipfluff
 // Paracetamol. Okay at headaches, okay at everything else, bad at fevers, less disgust.
 // Use for general healing every type of pain.
 /datum/reagent/medicine/painkiller/paracetamol
@@ -143,7 +145,30 @@
 
 	return ..()
 
+#warn shipfluff
+// Combination drug of other painkillers. It's a real thing. Less side effects, heals pain generally, mildly toxic in high doses.
+// Upgrade to paracetamol and aspirin if you go through the effort to get coffee.
+/datum/reagent/medicine/painkiller/aspirin_para_coffee
+	name = "aspirin/paracetamol/caffeine"
+	description = "A combination drug that effectively treats moderate pain with low side effects when used in low dosage. Toxic in higher dosages."
+	reagent_state = LIQUID
+	color = "#e695ff"
+	metabolization_rate = REAGENTS_METABOLISM
+	pain_modifier = 0.75
+	harmful = TRUE
 
+/datum/reagent/medicine/painkiller/aspirin_para_coffee/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	// Heals all pain a bit if in low dosage.
+	if(volume <= 10)
+		// Number looks high, compared to other painkillers,
+		// but we have a comparatively much higher metabolism than them.
+		M.cause_pain(BODY_ZONES_ALL, -0.8 * REM * delta_time)
+	// Mildly toxic in higher dosages.
+	else if(SPT_PROB(volume * 3, delta_time))
+		M.apply_damage(3 * REM * delta_time, TOX)
+		. = TRUE
+
+	..()
 
 /* The opioids:
 ** Tramal - low power and lasts over a long period of time. Space Ibuprofen
@@ -230,7 +255,7 @@
 	switch(current_cycle)
 		if(24) //5~ u
 			to_chat(M, span_warning("You start to feel tired..."))
-			M.M.set_blurry_if_lower(2 SECONDS) //clue them in
+			M.M.set_eye_blur_if_lower(2 SECONDS) //clue them in
 			if(prob(50))
 				M.emote("yawn")
 
@@ -300,7 +325,7 @@
 	if(C.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(40, delta_time))
 		C.adjust_disgust(2 * REM * delta_time)
 	if(SPT_PROB(33, delta_time))
-		C.dizziness = clamp(M.dizziness + (1 * REM * delta_time), 0, 5)
+		C.dizziness = clamp(C.dizziness + (1 * REM * delta_time), 0, 5)
 
 	..()
 
@@ -329,10 +354,10 @@
 				human_mob.drop_all_held_items()
 			if(4)
 				to_chat(human_mob, span_danger("You feel your heart skip a beat."))
-				human_mob.Jitter(3 * REM * delta_time)
+				human_mob.set_jitter_if_lower(6 SECONDS)
 			if(5)
 				to_chat(human_mob, span_danger("You feel the world spin."))
-				human_mob.Dizzy(3 * REM * delta_time)
+				human_mob.set_dizzy_if_lower(6 SECONDS)
 			if(6)
 				to_chat(human_mob, span_userdanger("You feel your heart seize and stop completely!"))
 				if(human_mob.stat == CONSCIOUS)
@@ -388,13 +413,53 @@
 		N.set_screwyhud(SCREWYHUD_NONE)
 	..()
 
+#warn reflavor both of these.
+// Libital, but helps pain: ib-alti-fen
+// Heals lots of pain for bruise pain, otherwise lower
+/datum/reagent/medicine/painkiller/specialized/ibaltifen
+	name = "Ibaltifen"
+	description = "A painkiller designed to combat pain caused by broken limbs and bruises."
+	reagent_state = LIQUID
+	color = "#feffae"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	pain_modifier = 0.75
+	pain_type_to_look_for = BRUTE
+	wound_type_to_look_for = /datum/wound/blunt
 
+/datum/reagent/medicine/painkiller/specialized/ibaltifen/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	// a bit of libital influence
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 0.5 * REM * delta_time)
+	M.adjustBruteLoss(-0.5 * REM * normalise_creation_purity() * delta_time)
+	..()
+	return TRUE
+
+// Aiuri, but helps pain: an-uri-fen
+// Heals lots of pain for burn pain, otherwise lower
+/datum/reagent/medicine/painkiller/specialized/anurifen
+	name = "Anurifen"
+	description = "A painkiller designed to combat pain caused by burns."
+	reagent_state = LIQUID
+	color = "#c4aeff"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	pain_modifier = 0.75
+	pain_type_to_look_for = BURN
+	wound_type_to_look_for = /datum/wound/burn
+
+/datum/reagent/medicine/painkiller/specialized/anurifen/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	// a bit of aiuri influence
+	M.adjustOrganLoss(ORGAN_SLOT_EYES, 0.4 * REM * delta_time)
+	M.adjustFireLoss(-0.25 * REM * delta_time)
+	..()
+	return TRUE
+
+#warn maybe write a better overdose for da carf
 /datum/reagent/medicine/carfencadrizine
 	name = "Carfencadrizine"
 	description = "A highly potent synthetic painkiller held in a suspension of stimulating agents. Allows people to keep moving long beyond when they should stop."
 	color = "#859480"
 	overdose_threshold = 8
 	metabolization_rate = 0.1
+	pain_modifier = 0.1
 
 /datum/reagent/medicine/carfencadrizine/on_mob_metabolize(mob/living/L)
 	. = ..()

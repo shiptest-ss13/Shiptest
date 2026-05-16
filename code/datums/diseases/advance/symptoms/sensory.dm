@@ -101,7 +101,7 @@
 
 				else if(M.eye_blind || M.eye_blurry)
 					M.set_blindness(0)
-					M.set_blurriness(0)
+					M.remove_status_effect(/datum/status_effect/eye_blur)
 				else if(eyes.damage > 0)
 					eyes.applyOrganDamage(-1)
 		else

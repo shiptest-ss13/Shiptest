@@ -21,15 +21,15 @@
 			to_chat(M, span_warning("Your vision slowly returns..."))
 			M.cure_blind(EYE_DAMAGE)
 			M.cure_nearsighted(EYE_DAMAGE)
-			M.set_blurry_if_lower(70 SECONDS)
+			M.set_eye_blur_if_lower(70 SECONDS)
 
 	else if(HAS_TRAIT_FROM(M, TRAIT_NEARSIGHT, EYE_DAMAGE))
 		to_chat(M, span_warning("The blackness in your peripheral vision fades."))
 		M.cure_nearsighted(EYE_DAMAGE)
-		M.set_blurry_if_lower(20 SECONDS)
+		M.set_eye_blur_if_lower(20 SECONDS)
 	else if(M.eye_blind || M.eye_blurry)
 		M.set_blindness(0)
-		M.set_blurriness(0)
+		M.remove_status_effect(/datum/status_effect/eye_blurry)
 	..()
 
 /datum/reagent/medicine/inacusiate

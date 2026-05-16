@@ -131,7 +131,6 @@
 
 	var/mob/living/carbon/human/human_owner = owner
 	var/obj/item/bodypart/held_bodypart = human_owner.pain_controller.body_zones[targeted_zone]
-	examine_text = span_danger("[holder == owner ? "[owner.p_theyre(TRUE)]" : "[holder] is"] pressing a cold [pressed_item.name] against [owner.p_their()] [parse_zone(held_bodypart.body_zone)].")
 	to_chat(human_owner, span_green("You wince as [owner == holder ? "you press" : "[holder] presses"] [pressed_item] against your [parse_zone(held_bodypart.body_zone)], but eventually the chill starts to dull the pain."))
 	human_owner.pain_emote("wince", 3 SECONDS)
 
@@ -141,6 +140,9 @@
 		return
 
 	return ..()
+
+/datum/status_effect/temperature_pack/cold/get_examine_text()
+	return span_danger("[holder == owner ? "[owner.p_theyre(TRUE)]" : "[holder] is"] pressing a cold [pressed_item.name] against [owner.p_their()] [targeted_zone].")
 
 /// And warm stuff needs to stay warm.
 /datum/status_effect/temperature_pack/heat
@@ -164,3 +166,6 @@
 		return
 
 	return ..()
+
+/datum/status_effect/temperature_pack/heat/get_examine_text()
+	return span_danger("[holder == owner ? "[owner.p_theyre(TRUE)]" : "[holder] is"] pressing a warm [pressed_item.name] against [owner.p_their()] [targeted_zone].")

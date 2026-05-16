@@ -201,8 +201,9 @@
 /datum/reagent/medicine/silfrine/overdose_start(mob/living/M)
 	. = ..()
 	M.add_movespeed_modifier(/datum/movespeed_modifier/reagent/silfrine_od)
-	M.force_pain_noise(200)
-
+	if(iscarbon(M))
+		var/mob/living/carbon/idiot = M
+		idiot.sharp_pain(BODY_ZONES_ALL, 100, BRUTE, 60 SECONDS)
 
 /datum/reagent/medicine/silfrine/overdose_process(mob/living/M)
 	if(prob(10))
@@ -210,7 +211,7 @@
 			to_chat(M, span_danger("You feel your flesh twisting as it tries to grow around non-existent wounds!"))
 		else
 			to_chat(M, span_danger("You feel points of pressure all across your body starting to throb uncomfortably."))
-		M.force_pain_noise(40)
+		M.sharp_pain(pick(BODY_ZONES_ALL), 40, BRUTE)
 		M.adjustStaminaLoss(40*REM, 0)
 		M.adjustBruteLoss(5*REM, 0)
 	if(prob(25))
@@ -675,8 +676,21 @@
 	color = "#0000C8"
 	taste_description = "sludge"
 
-/datum/reagent/medicine/cryoxadone/on_mob_life(mob/living/carbon/M)
+// Cryoxadone slowly heals pain, like wounds.
+// It also helps against shock, sort of.
+/datum/reagent/medicine/cryoxadone/on_mob_metabolize(mob/living/carbon/user)
+	ADD_TRAIT(user, TRAIT_ABATES_SHOCK, type) // To negate the fact that being cold is bad for shock
+
+/datum/reagent/medicine/cryoxadone/on_mob_end_metabolize(mob/living/carbon/user)
+	. = ..()
+	user.unset_pain_mod(type)
+	REMOVE_TRAIT(user, TRAIT_ABATES_SHOCK, type)
+
+/datum/reagent/medicine/cryoxadone/on_mob_life(mob/living/carbon/M, delta_time)
 	var/power = -0.00003 * (M.bodytemperature ** 2) + 3
+
+	M.set_pain_mod(type, 0.5) // Heal pain faster
+	M.cause_pain(BODY_ZONES_ALL, -0.25 * power * REM * delta_time)
 	if(M.bodytemperature < T0C)
 		M.adjustOxyLoss(-3 * power, 0)
 		M.adjustBruteLoss(-power, 0)
@@ -764,12 +778,14 @@
 	..()
 	. = 1
 
+#warn fluff this shit up better use the purple hive eyes screen overlay
 /datum/reagent/medicine/stimulants
 	name = "Indoril Stimulant"
 	description = "Increases stun resistance and movement speed in addition to restoring minor damage and weakness. Overdose causes weakness and toxin damage."
 	color = "#78008C"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 60
+	pain_modifier = 0.5
 
 /datum/reagent/medicine/stimulants/on_mob_metabolize(mob/living/L)
 	..()
@@ -832,13 +848,16 @@
 	color = "#D2FFFA"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 30
+	pain_modifier = 0.9
 
 /datum/reagent/medicine/epinephrine/on_mob_metabolize(mob/living/carbon/M)
 	..()
 	ADD_TRAIT(M, TRAIT_NOCRITDAMAGE, type)
+	ADD_TRAIT(M, TRAIT_ABATES_SHOCK, type)
 
 /datum/reagent/medicine/epinephrine/on_mob_end_metabolize(mob/living/carbon/M)
 	REMOVE_TRAIT(M, TRAIT_NOCRITDAMAGE, type)
+	REMOVE_TRAIT(M, TRAIT_ABATES_SHOCK, type)
 	..()
 
 /datum/reagent/medicine/epinephrine/on_mob_life(mob/living/carbon/M)
@@ -872,6 +891,19 @@
 	color = "#1D3535" //slightly more blue, like epinephrine
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 35
+	pain_modifier = 0.8
+
+// Atropine fills a simliar niche to epinephrine
+/datum/reagent/medicine/atropine
+	pain_modifier = 0.8
+
+/datum/reagent/medicine/atropine/on_mob_metabolize(mob/living/carbon/M)
+	..()
+	ADD_TRAIT(M, TRAIT_ABATES_SHOCK, type)
+
+/datum/reagent/medicine/atropine/on_mob_end_metabolize(mob/living/carbon/M)
+	REMOVE_TRAIT(M, TRAIT_ABATES_SHOCK, type)
+	..()
 
 /datum/reagent/medicine/atropine/on_mob_life(mob/living/carbon/M)
 	if(M.health <= M.crit_threshold)

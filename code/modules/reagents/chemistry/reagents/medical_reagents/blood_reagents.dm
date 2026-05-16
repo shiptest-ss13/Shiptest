@@ -98,6 +98,15 @@
 	var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10	//So that normal blood regeneration can continue with salglu active
 	var/extra_regen = 0.25 // in addition to acting as temporary blood, also add this much to their actual blood per tick
 
+// Saline glucose helps shock
+/datum/reagent/medicine/salglu_solution/on_mob_metabolize(mob/living/carbon/M)
+	. = ..()
+	ADD_TRAIT(M, TRAIT_ABATES_SHOCK, type)
+
+/datum/reagent/medicine/salglu_solution/on_mob_end_metabolize(mob/living/carbon/M)
+	REMOVE_TRAIT(M, TRAIT_ABATES_SHOCK, type)
+	return ..()
+
 /datum/reagent/medicine/salglu_solution/on_mob_life(mob/living/carbon/M)
 	if(last_added)
 		M.blood_volume -= last_added

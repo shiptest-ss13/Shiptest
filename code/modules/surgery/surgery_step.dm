@@ -280,7 +280,7 @@
 			target.flash_pain_overlay(pain_overlay_severity)
 
 	// No message if the pain emote fails
-	if(!target.pain_controller.pain_emote())
+	if(!target.pain_controller.do_pain_emote())
 		return FALSE
 
 	to_chat(target, span_userdanger(pain_message))

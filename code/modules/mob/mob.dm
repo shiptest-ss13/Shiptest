@@ -1498,9 +1498,6 @@
 		if(NAMEOF(src, eye_blind))
 			set_blindness(var_value)
 			. =  TRUE
-		if(NAMEOF(src, eye_blurry))
-			set_blurriness(var_value)
-			. =  TRUE
 
 	if(!isnull(.))
 		datum_flags |= DF_VAR_EDITED
