@@ -8219,20 +8219,17 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/tech,
-/area/outpost/security/checkpoint)
-"rG" = (
-/obj/effect/turf_decal/corner/opaque/red/mono,
-/obj/effect/landmark/ert_outpost_spawn,
-/obj/structure/chair,
-/turf/open/floor/plasteel/dark,
-/area/outpost/security/armory)
-"rH" = (
-/obj/effect/turf_decal/borderfloorblack{
+/obj/effect/turf_decal/corner/opaque/beige/half,
+/obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/obj/machinery/vending/grocery/ngr,
+/turf/open/floor/plasteel,
+/area/outpost/crew/canteen)
+"GG" = (
+/obj/effect/spawner/random/maintenance/two,
+/obj/structure/rack,
+/turf/open/floor/plating/rust,
 /area/outpost/maintenance/central)
 "rI" = (
 /obj/effect/turf_decal/borderfloorblack/corner{

@@ -417,6 +417,22 @@
 	build_path = /obj/item/plate
 	category = list("initial","Dinnerware")
 
+/datum/design/smallplate
+	name = "Plate (Small)"
+	id = "smallplate"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 1000)
+	build_path = /obj/item/plate/small
+	category = list("initial", "Dinnerware")
+
+/datum/design/bigplate
+	name = "Plate (Buffet)"
+	id = "bigplate"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/plate/large
+	category = list("initial", "Dinnerware")
+
 /datum/design/cafeteria_tray
 	name = "Cafeteria Tray"
 	id = "foodtray"
