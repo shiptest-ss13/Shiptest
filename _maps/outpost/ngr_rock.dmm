@@ -3510,7 +3510,12 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/armory)
 "hH" = (
-)
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/outpost/maintenance/central)
 "hJ" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
