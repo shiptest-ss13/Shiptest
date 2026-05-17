@@ -406,8 +406,8 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/bodyguard
 	r_hand = /obj/item/gun/energy/sharplite/al655
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security
-	speak_emote = list("exhales","rolls their shoulders")
-	emote_hear = list("grunts","cracks their knuckles")
+	speak_emote = list("exhales.","rolls their shoulders.")
+	emote_hear = list("grunts.","cracks their knuckles.")
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/energy/bodyguard/Aggro()
 	..()
@@ -437,8 +437,8 @@
 	retreat_distance = 10
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
-	speak_emote = list("cowers","trembles")
-	emote_hear = list("hyperventilates")
+	speak_emote = list("cowers.","trembles.")
+	emote_hear = list("hyperventilates.")
 
 /mob/living/simple_animal/hostile/human/hermit/survivor/engineer/Aggro()
 	..()
