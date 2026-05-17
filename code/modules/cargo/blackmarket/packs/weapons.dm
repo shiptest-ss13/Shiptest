@@ -458,7 +458,7 @@
 	availability_prob = 25
 
 /datum/blackmarket_item/weapon/guncase/gaboon
-	name = "CSG-12 Gaboon Compact Combat Shotgun"
+	name = "CSG-12 Gaboon Compact Shotgun"
 	desc = "These old ass Scarborough designs are easy to find layin' around, especially these cute little relics. Unlike their newer toys it's pump-action so make sure you get your hand exercises in, yeah?"
 	item = /obj/item/gun/ballistic/shotgun/gaboon
 
