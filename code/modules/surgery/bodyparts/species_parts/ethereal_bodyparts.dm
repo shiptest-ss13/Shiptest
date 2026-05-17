@@ -46,14 +46,17 @@
 	limb_id = SPECIES_ELZUOSE
 	uses_mutcolor = TRUE
 	body_weight = 8
+	can_thump = TRUE
 
 /obj/item/bodypart/tail/elzu/bifurcated
 	name = "bifurcated elzuose tail"
 	icon_state = "bifurcated_elzuose_tail"
 	limb_id = "bifurcated_" + SPECIES_ELZUOSE
+	can_thump = FALSE
 
 /obj/item/bodypart/tail/elzu/stubby
 	name = "stubby elzuose tail"
 	icon_state = "stubby_elzuose_tail"
 	limb_id = "stubby_" + SPECIES_ELZUOSE
 	body_weight = 4
+	can_thump = FALSE

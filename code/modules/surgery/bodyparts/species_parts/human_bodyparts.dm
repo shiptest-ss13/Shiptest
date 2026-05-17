@@ -1,6 +1,7 @@
 /obj/item/bodypart/tail/human
 	icon = 'icons/mob/species/human/bodyparts.dmi'
 	sturdy = FALSE
+	bodytype = parent_type::bodytype | BODYTYPE_HAIR
 
 /obj/item/bodypart/tail/human/Initialize(mapload)
 	. = ..()

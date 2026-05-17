@@ -1572,32 +1572,22 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		return 1
 	return 0
 
-/datum/preferences/proc/init_custom_limbs()
-	custom_limbs = list()
-	for(var/zone in pref_species.species_limbs)
-		if(isnull(pref_species.species_limbs[zone]))
-			custom_limbs[zone] = PROSTHETIC_NONE
-			continue
-		custom_limbs[zone] = PROSTHETIC_NORMAL
-
 /// Cleans up any cases of limbs being where they shouldn't when loading prefs or changing character species. Fairly expensive, so only use it when needed.
-/datum/preferences/proc/sanitize_custom_limbs(species_change = FALSE)
-	var/list/all_zones = custom_limbs | pref_species.species_limbs
-	for(var/zone in all_zones)
-		if(!(zone in pref_species.species_limbs))
-			custom_limbs -= zone
-			continue
-		var/custom_limb = custom_limbs[zone] || PROSTHETIC_NORMAL
+/datum/preferences/proc/sanitize_custom_limbs(list/limbs_list, species_change = FALSE)
+	var/list/new_limbs = list()
+	limbs_list ||= list()
+	for(var/zone in pref_species.species_limbs)
+		var/custom_limb = custom_limbs?[zone] || PROSTHETIC_NORMAL
 		switch(custom_limb)
 			if(PROSTHETIC_NONE)
 				if(species_change && !isnull(pref_species.species_limbs[zone]))
-					custom_limbs[zone] = PROSTHETIC_NORMAL
+					limbs_list[zone] = PROSTHETIC_NORMAL
 			if(PROSTHETIC_ROBOTIC)
 				if(!pref_species.prosthetic_style?.replacement_bodyparts?[zone])
-					custom_limbs[zone] = isnull(pref_species.species_limbs[zone]) ? PROSTHETIC_NONE : PROSTHETIC_NORMAL
+					limbs_list[zone] = isnull(pref_species.species_limbs[zone]) ? PROSTHETIC_NONE : PROSTHETIC_NORMAL
 			if(PROSTHETIC_NORMAL)
 				if(isnull(pref_species.species_limbs[zone]))
-					custom_limbs[zone] = PROSTHETIC_NONE
+					limbs_list[zone] = PROSTHETIC_NONE
 			else
 				var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[custom_limb]
 				if(
@@ -1605,7 +1595,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					|| !(limb_style.replacement_bodyparts[zone]) \
 					|| !(pref_species.bodytype & limb_style.bodytype) \
 				)
-					custom_limbs[zone] = isnull(pref_species.species_limbs[zone]) ? PROSTHETIC_NONE : PROSTHETIC_NORMAL
+					limbs_list[zone] = isnull(pref_species.species_limbs[zone]) ? PROSTHETIC_NONE : PROSTHETIC_NORMAL
+	return limbs_list
 
 /datum/preferences/Topic(href, href_list, hsrc)			//yeah, gotta do this I guess..
 	. = ..()
@@ -1655,7 +1646,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/sid = href_list["newspecies"]
 				var/newtype = GLOB.species_list[sid]
 				pref_species = new newtype()
-				sanitize_custom_limbs(TRUE)
+				custom_limbs = sanitize_custom_limbs(custom_limbs, TRUE)
 				//Now that we changed our species, we must verify that the mutant colour is still allowed.
 				var/temp_hsv = RGBtoHSV(features["mcolor"])
 				if(text2num(features["mcolor"], 16) == 0  || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#191919")[3]))
@@ -2737,12 +2728,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					character.regenerate_limb(zone, robotic = is_robotic)
 					continue
 				// species that don't use mutant colors normally should still be able to color prosthetics that do
-				if(new_part.should_draw_greyscale)
-					new_part.draw_color = features["mcolor"]
-				if(new_part.overlay_use_primary_color || new_part.overlay2_use_primary_color)
-					new_part.species_color = features["mcolor"]
-				if(new_part.overlay_icon_state || new_part.overlay2_icon_state)
-					new_part.species_secondary_color = features["mcolor2"]
+				if(new_part.bodytype & BODYTYPE_HAIR)
+					new_part.draw_color = hair_color
+				else
+					if(new_part.should_draw_greyscale)
+						new_part.draw_color = features["mcolor"]
+					if(new_part.overlay_use_primary_color || new_part.overlay2_use_primary_color)
+						new_part.species_color = features["mcolor"]
+					if(new_part.overlay_icon_state || new_part.overlay2_icon_state)
+						new_part.species_secondary_color = features["mcolor2"]
 				new_part.replace_limb(character, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 

@@ -69,6 +69,7 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/kepori,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/kepori,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/kepori,
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/kepori,
 	)
 
 	prosthetic_style = /datum/sprite_accessory/body/prosthetic/kepori

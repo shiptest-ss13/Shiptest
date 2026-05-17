@@ -139,6 +139,7 @@
 #define BODYTYPE_DIGITIGRADE (1<<6) //Lizard legs
 #define BODYTYPE_KEPORI (1<<7) //Just Kepori
 #define BODYTYPE_VOX (1<<8) //Big Vox
+#define BODYTYPE_HAIR (1<<9) //Uses hair color
 
 // Health/damage defines
 #define MAX_LIVING_HEALTH 100

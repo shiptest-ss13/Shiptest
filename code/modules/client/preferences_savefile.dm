@@ -107,7 +107,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		READ_FILE(S["species"], species_id)
 		if(species_id == "felinid")
 			pref_species = new /datum/species/human
-			custom_limbs[BODY_ZONE_TAIL] = /obj/item/bodypart/tail/human/cat
+			custom_limbs[BODY_ZONE_TAIL] = "Cat Tail"
 			features["ears"] = "Cat"
 	if(current_version < 42)
 		var/body_size
@@ -511,10 +511,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["randomise"],  randomise)
 	READ_FILE(S["height_filter"], height_filter)
 	READ_FILE(S["custom_limbs"], custom_limbs)
-	if(!custom_limbs)
-		init_custom_limbs()
-	else
-		sanitize_custom_limbs(FALSE)
 	READ_FILE(S["learned_languages"], learned_languages)
 	READ_FILE(S["native_language"], native_language)
 	native_language ||= /datum/language/galactic_common
@@ -598,6 +594,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	gender = sanitize_gender(gender)
 	pronouns = sanitize_pronouns(pronouns)
 	learned_languages = sanitize_learned_languages(learned_languages)
+	custom_limbs = sanitize_custom_limbs(custom_limbs, FALSE)
 	if(!real_name)
 		real_name = random_unique_name(gender)
 

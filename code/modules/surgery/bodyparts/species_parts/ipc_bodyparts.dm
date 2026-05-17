@@ -129,6 +129,7 @@
 	icon_state = "fox_tail"
 	limb_id = "fox"
 	examine_id = "synthetic fox"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_HAIR
 	can_wag = FALSE
 
 /obj/item/bodypart/tail/ipc/fox/alt
@@ -143,6 +144,7 @@
 	icon_state = "cat_tail"
 	limb_id = "cat"
 	examine_id = "synthetic cat"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_HAIR
 	can_wag = FALSE
 
 // PAWSITRONS UNITED
