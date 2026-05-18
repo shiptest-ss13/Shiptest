@@ -182,14 +182,14 @@
 
 /obj/machinery/portable_atmospherics/canister/chlorine
 	name = "chlorine canister"
-	desc = "chlorine"
+	desc = "Chlorine gas. Highly toxic."
 	icon_state = "greenys"
 	gas_type = GAS_CHLORINE
 	filled = 1
 
 /obj/machinery/portable_atmospherics/canister/hydrogen_chloride
 	name = "hydrogen chloride canister"
-	desc = "awful"
+	desc = "Hydrogen chloride gas. Don't breathe this."
 	icon_state = "greenyshaz"
 	gas_type = GAS_HYDROGEN_CHLORIDE
 	filled = 1
