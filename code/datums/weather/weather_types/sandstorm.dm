@@ -30,7 +30,7 @@
 
 	opacity_in_main_stage = TRUE
 
-/datum/weather/sandstorm/weather_act(mob/living/living_mob)
+/datum/weather/sandstorm/weather_act(mob/living/living_mob, seconds_per_tick)
 	if(iscarbon(living_mob))
 		var/mob/living/carbon/carbon = living_mob
 		if(HAS_TRAIT(carbon, TRAIT_NOBREATH))
@@ -38,7 +38,7 @@
 		if(carbon.is_mouth_covered())
 			return
 		carbon.adjustOxyLoss(1.5)
-		if(prob(10))
+		if(SPT_PROB(10, seconds_per_tick))
 			carbon.emote("cough")
 
 /datum/weather/sandstorm/desert
@@ -58,7 +58,7 @@
 	end_message = span_notice("The shrieking wind whips away the last of the sand and falls to its usual murmur. It should be safe to go outside now.")
 	end_overlay = "dust_low"
 
-/datum/weather/sandstorm/rockplanet/weather_act(mob/living/living_mob)
+/datum/weather/sandstorm/rockplanet/weather_act(mob/living/living_mob, seconds_per_tick)
 	if(iscarbon(living_mob))
 		var/mob/living/carbon/carbon = living_mob
 		carbon.adjustBruteLoss(6)
@@ -68,7 +68,7 @@
 		if(carbon.is_mouth_covered())
 			return
 		carbon.adjustOxyLoss(3.5)
-		if(prob(10))
+		if(SPT_PROB(10, seconds_per_tick))
 			carbon.emote("cough")
 
 /datum/weather/sandstorm/rockplanet/harmless

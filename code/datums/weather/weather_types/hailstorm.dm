@@ -28,7 +28,7 @@
 	sound_weak_outside = /datum/looping_sound/weather/wind/indoors
 	sound_weak_inside = /datum/looping_sound/weather/wind
 
-/datum/weather/hailstorm/weather_act(mob/living/living_mob)
+/datum/weather/hailstorm/weather_act(mob/living/living_mob, seconds_per_tick)
 	/// Think of some good solution of how weather should affect monsters and how they should be resistant to things like this
 	if(isanimal(living_mob))
 		return

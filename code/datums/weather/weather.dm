@@ -125,7 +125,7 @@
 	for(var/i in GLOB.mob_living_list)
 		var/mob/living/L = i
 		if(can_weather_act(L))
-			weather_act(L)
+			weather_act(L, seconds_per_tick)
 
 /**
  * Telegraphs the beginning of the weather on the impacted z levels
@@ -285,7 +285,7 @@
  * Affects the mob with whatever the weather does
  *
  */
-/datum/weather/proc/weather_act(mob/living/L)
+/datum/weather/proc/weather_act(mob/living/L, seconds_per_tick)
 	return
 
 /**

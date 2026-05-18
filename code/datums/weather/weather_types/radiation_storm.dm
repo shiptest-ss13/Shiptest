@@ -23,8 +23,8 @@
 	immunity_type = "rad"
 	multiply_blend_on_main_stage = TRUE
 
-/datum/weather/rad_storm/weather_act(mob/living/L)
-	if(prob(40))
+/datum/weather/rad_storm/weather_act(mob/living/L, seconds_per_tick)
+	if(SPT_PROB(40, seconds_per_tick))
 		L.rad_act(20)
 
 /datum/weather/rad_storm/end()
