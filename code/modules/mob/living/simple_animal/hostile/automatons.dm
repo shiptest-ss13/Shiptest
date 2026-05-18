@@ -119,6 +119,7 @@ mob/living/simple_animal/hostile/automated/bipedal/makosso
 	minimum_distance = 4
 	rapid = 2
 	rapid_fire_delay = 3
+	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
