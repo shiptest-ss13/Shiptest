@@ -613,7 +613,7 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/cm5
+/datum/supply_pack/gun/cm5c
 	name = "CM-5c Compact SMG Crate"
 	desc = "Contains a CM-5c compact automatic SMG, produced proudly within Lanchester City. Confederated Minutemen issue only."
 	cost = 2000
