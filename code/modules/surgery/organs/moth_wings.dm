@@ -28,3 +28,10 @@
 		H.dna.species.mutant_bodyparts -= "moth_wings"
 		wing_type = H.dna.features["moth_wings"]
 		H.update_body()
+
+/obj/item/organ/moth_wings/cybernetic
+	name = "cybernetic moth wings"
+
+/obj/item/organ/moth_wings/cybernetic/examine(mob/user)
+	. = ..()
+	. += "Their fluff is made of syntetic materials."

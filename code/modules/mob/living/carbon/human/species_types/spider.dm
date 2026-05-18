@@ -4,6 +4,13 @@
 	see_in_dark = 4
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 
+/obj/item/organ/eyes/night_vision/spider/robotic
+	name = "robotic spider eyes"
+	icon_state = "robotic_eyes"
+	eye_icon_state = "eyes_synth"
+	status = ORGAN_ROBOTIC
+	organ_flags = ORGAN_SYNTHETIC
+
 /datum/species/spider
 	name = "Rachnid"
 	id = SPECIES_RACHNID
@@ -46,6 +53,7 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/rachnid,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/rachnid,
 	)
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/spider
 
 /datum/species/spider/random_name(gender,unique,lastname)
 	if(unique)
