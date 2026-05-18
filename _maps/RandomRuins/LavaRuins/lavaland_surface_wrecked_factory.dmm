@@ -3195,10 +3195,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/lavaland/factory/warehouse)
 "Gw" = (
-/mob/living/simple_animal/bot/secbot/ed209/rockplanet{
-	faction = list("Deathsquad");
-	name = "\improper  ED-209 Robot"
-	},
+/mob/living/simple_animal/hostile/automated/bipedal/makosso,
 /turf/open/floor/circuit/red,
 /area/ruin/lavaland/factory/manager_office)
 "Gy" = (
@@ -4298,8 +4295,6 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "RU" = (
 /obj/effect/decal/cleanable/robot_debris/old,
-/obj/item/assembly/prox_sensor,
-/obj/item/bot_assembly/ed209,
 /turf/open/floor/circuit/red,
 /area/ruin/lavaland/factory/manager_office)
 "RZ" = (
