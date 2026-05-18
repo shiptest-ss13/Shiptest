@@ -1,25 +1,40 @@
 //Lavaland Ruins
 
-// Winter Biodome
+// Dynamite hole
 
-/area/ruin/unpowered/winter_biodome
+/area/ruin/unpowered/dynamitehole
 	icon_state = "bluenew"
-	name = "Biodome Main Area"
+	name = "dynamite exterior"
 
-/area/ruin/unpowered/winter_biodome/entrance
-	name = "Biodome Entrance"
+/area/ruin/unpowered/dynamitehole/security
+	name = "Security"
+	icon_state = "red"
 
-/area/ruin/unpowered/winter_biodome/living_quarters
-	name = "Biodome Living Quarters"
+/area/ruin/unpowered/dynamitehole/living_quarters
+	name = "Living Quarters"
+	icon_state = "purple"
 
-/area/ruin/unpowered/winter_biodome/cabin
-	name = "Biodome Cabin"
+/area/ruin/unpowered/dynamitehole/medbay
+	name = "Research Lab"
 
-/area/ruin/unpowered/winter_biodome/engineering
-	name = "Biodome Engineering"
+/area/ruin/unpowered/dynamitehole/engineering
+	name = "Engineering"
+	icon_state = "cargo_warehouse"
 
-/area/ruin/unpowered/winter_biodome/sauna
-	name = "Biodome Sauna"
+/area/ruin/unpowered/dynamitehole/dorms
+	name = "Dormitory"
+	icon_state = "yellow"
+
+/area/ruin/unpowered/dynamitehole/dorms/two
+	name = "Dormitory Two"
+
+/area/ruin/unpowered/dynamitehole/gear
+	name = "Gear Room"
+	icon_state = "green"
+
+/area/ruin/unpowered/dynamitehole/dogs
+	name = "Dynamite Pit"
+	icon_state = "red"
 
 //Hierophant Arena
 
