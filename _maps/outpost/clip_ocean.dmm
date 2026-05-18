@@ -4788,7 +4788,10 @@
 /obj/structure/railing/thin{
 	dir = 8
 	},
-/obj/structure/closet/crate/bin,
+/obj/structure/closet/crate/bin{
+	pixel_x = -3;
+	pixel_y = 10
+	},
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/suns/hatch/maple,
 /area/outpost/vacant_rooms/office)
@@ -7793,6 +7796,18 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/security/checkpoint)
+"tD" = (
+/obj/structure/table/wood,
+/obj/item/candle{
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/obj/item/candle{
+	pixel_x = -4;
+	pixel_y = 0
+	},
+/turf/open/floor/wood/walnut,
+/area/outpost/crew/lounge)
 "tE" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
@@ -19392,7 +19407,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/cargo/smeltery)
 "VZ" = (
-/obj/structure/table,
+/obj/structure/table/glass,
 /turf/open/floor/suns/hatch/maple,
 /area/outpost/vacant_rooms/office)
 "Wa" = (
@@ -28047,7 +28062,7 @@ aF
 kY
 tF
 tF
-Zj
+tD
 mj
 XO
 mj
