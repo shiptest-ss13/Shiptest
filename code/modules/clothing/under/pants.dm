@@ -163,3 +163,38 @@
 	desc = "A comfy pair of pajamas. Probably not the best for work attire."
 	icon_state = "pajamagreen"
 	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/pants/sweat
+	name = "sweat pants"
+	desc = "A pair of sweat pants, for the athletic."
+	icon_state = "sweatpants"
+	unique_reskin = list("black sweat pants" = "sweatpants",
+						"teal sweat pants" = "sweatpantsteal",
+						"pink sweat pants" = "sweatpantspink",
+						"blue sweat pants" = "sweatpantsblue",
+						"red sweat pants" = "sweatpantsred",
+						"purple sweat pants" = "sweatpantspurple",
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/pants/sweat/teal
+	name = "teal sweat pants"
+	current_skin = "teal sweat pants"
+
+/obj/item/clothing/under/pants/sweat/pink
+	name = "pink sweat pants"
+	current_skin = "pink sweat pants"
+
+/obj/item/clothing/under/pants/sweat/blue
+	name = "blue sweat pants"
+	current_skin = "blue sweat pants"
+
+/obj/item/clothing/under/pants/sweat/red
+	name = "red sweat pants"
+	current_skin = "red sweat pants"
+
+/obj/item/clothing/under/pants/sweat/purple
+	name = "purple sweat pants"
+	current_skin = "purple sweat pants"
