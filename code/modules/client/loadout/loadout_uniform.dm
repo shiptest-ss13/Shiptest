@@ -107,7 +107,7 @@
 	path = /obj/item/clothing/under/pants/camo
 
 /datum/gear/uniform/pants/sweat
-	display_name = "sweat pants"
+	display_name = "sweatpants"
 	path = /obj/item/clothing/under/pants/sweat
 
 //JUMPSUIT "SUITS"
