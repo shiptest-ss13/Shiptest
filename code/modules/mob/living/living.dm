@@ -350,6 +350,8 @@
 			update_pull_movespeed()
 
 		set_pull_offsets(M, state)
+	else if(AM.density)
+		face_mouse = FALSE
 
 //mob verbs are a lot faster than object verbs
 //for more info on why this is not atom/pull, see examinate() in mob.dm
@@ -368,6 +370,8 @@
 	..()
 	update_pull_movespeed()
 	update_pull_hud_icon()
+	if(a_intent == INTENT_HARM)
+		face_mouse = TRUE
 
 /mob/living/verb/stop_pulling1()
 	set name = "Stop Pulling"

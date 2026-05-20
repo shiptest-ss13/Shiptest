@@ -335,7 +335,7 @@
 
 		a_intent = possible_a_intents[current_intent]
 
-	if (a_intent == INTENT_HARM)
+	if (a_intent == INTENT_HARM && !(pulling && pulling.density))
 		face_mouse = TRUE
 	else
 		face_mouse = FALSE
