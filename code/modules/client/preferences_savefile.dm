@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 44 // set this back to 45 later
+#define SAVEFILE_VERSION_MAX 45
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -138,17 +138,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(current_version < 45)
 		var/list/prosthetic_limbs = list()
 		READ_FILE(S["prosthetic_limbs"], prosthetic_limbs)
-		var/static/list/basic_options = list(PROSTHETIC_NORMAL, PROSTHETIC_NONE, PROSTHETIC_ROBOTIC)
-		for(var/zone in custom_limbs)
-			var/old_limb = custom_limbs[zone]
-			if(!old_limb)
-				continue
-			if(old_limb == "amputated")
-				old_limb = PROSTHETIC_NONE
-			if(istext(old_limb) && !(old_limb in basic_options))
-				var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[old_limb]
-				old_limb = limb_style.replacement_bodyparts[zone]
-			custom_limbs[zone] = old_limb
+		for(var/zone in prosthetic_limbs)
+			if(prosthetic_limbs[zone] == "amputated")
+				prosthetic_limbs[zone] = PROSTHETIC_NONE
+		custom_limbs = sanitize_custom_limbs(prosthetic_limbs)
 		var/static/list/legacy_features_to_bodypart = list(
 			"Smooth (Two color)" = PROSTHETIC_NORMAL,
 			"Smooth (One color)" = "One-Color Sarathi Tail",

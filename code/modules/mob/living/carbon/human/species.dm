@@ -357,7 +357,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		all_zones |= old_species.species_limbs
 	for(var/zone in all_zones)
 		old_part = C.bodyparts[zone]
-		if(!old_part && (zone in old_species?.species_limbs)) // if the old species has a bodypart by default but it's missing, don't replace it
+		if(!old_part && old_species && !isnull(old_species?.species_limbs)) // if the old species has a bodypart by default but it's missing, don't replace it
 			continue
 		var/obj/item/bodypart/new_part = new_species.new_body_part(C, zone, robotic, FALSE)
 		if(new_part)

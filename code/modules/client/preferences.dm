@@ -909,7 +909,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</tr></table>"
 
 			var/metal_skin = fbp || (pref_species.inherent_biotypes & MOB_ROBOTIC)
-			dat += metal_skin ? "<h3>Chassis Customization</h3>" : "<h3>Body Part Customization</h3>"
+			dat += metal_skin ? "<h3>Chassis Customization</h3>" : "<h3>Body Parts</h3>"
 			if(!(pref_species.inherent_biotypes & MOB_ROBOTIC))
 				dat += "<a href='byond://?_src_=prefs;preference=fbp'>Full Body Prosthesis: [fbp ? "Yes" : "No"]</a><br>"
 
@@ -1577,17 +1577,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/new_limbs = list()
 	limbs_list ||= list()
 	for(var/zone in pref_species.species_limbs)
-		var/custom_limb = custom_limbs?[zone] || PROSTHETIC_NORMAL
+		var/custom_limb = limbs_list?[zone] || PROSTHETIC_NORMAL
+		new_limbs[zone] = custom_limb
 		switch(custom_limb)
 			if(PROSTHETIC_NONE)
 				if(species_change && !isnull(pref_species.species_limbs[zone]))
-					limbs_list[zone] = PROSTHETIC_NORMAL
+					new_limbs[zone] = PROSTHETIC_NORMAL
 			if(PROSTHETIC_ROBOTIC)
 				if(!pref_species.prosthetic_style?.replacement_bodyparts?[zone])
-					limbs_list[zone] = isnull(pref_species.species_limbs[zone]) ? PROSTHETIC_NONE : PROSTHETIC_NORMAL
+					new_limbs[zone] = isnull(pref_species.species_limbs[zone]) ? PROSTHETIC_NONE : PROSTHETIC_NORMAL
 			if(PROSTHETIC_NORMAL)
 				if(isnull(pref_species.species_limbs[zone]))
-					limbs_list[zone] = PROSTHETIC_NONE
+					new_limbs[zone] = PROSTHETIC_NONE
 			else
 				var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[custom_limb]
 				if(
@@ -1595,8 +1596,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					|| !(limb_style.replacement_bodyparts[zone]) \
 					|| !(pref_species.bodytype & limb_style.bodytype) \
 				)
-					limbs_list[zone] = isnull(pref_species.species_limbs[zone]) ? PROSTHETIC_NONE : PROSTHETIC_NORMAL
-	return limbs_list
+					new_limbs[zone] = isnull(pref_species.species_limbs[zone]) ? PROSTHETIC_NONE : PROSTHETIC_NORMAL
+	return new_limbs
 
 /datum/preferences/Topic(href, href_list, hsrc)			//yeah, gotta do this I guess..
 	. = ..()
@@ -2300,7 +2301,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							limb_style = GLOB.alternative_body_list[body]
 							if(limb_style.locked)
 								continue
-							if(limb_style.type == pref_species.prosthetic_style)
+							if(limb_style == pref_species.prosthetic_style)
 								continue // already accounted for
 							part_candidate = limb_style.replacement_bodyparts[limb]
 							if(isnull(part_candidate))
