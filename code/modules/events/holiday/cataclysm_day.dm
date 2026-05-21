@@ -41,32 +41,31 @@
 
 /datum/round_event/cataclysm_broadcast
 	end_when = 50
-	var/datum/overmap/outpost/target_outpost
-	var/turf/target_turf
 	var/list/planets_to_name = list("Minya", "Terra", "Teceti", "Sitami's Folly", "Mikiliwolo", "Gorlex VII", "Re'tex'himl", "Iakono-XZT2", "Curie H2H-B")
 
-/datum/round_event/cataclysm_broadcast/setup()
-	target_outpost = pick(SSovermap.outposts)
-	target_turf = target_outpost.get_jump_to_turf()
-
 /datum/round_event/cataclysm_broadcast/start()
-	target_outpost.broadcast_message(target_turf, "Today we remember the worlds of Cataclysm, where the flame of life faltered. Take a moment of silence. Remember...")
-	return
+	for(var/datum/overmap/outpost/target_outpost in SSovermap.outposts)
+		var/target_turf = target_outpost.get_jump_to_turf()
+		target_outpost.broadcast_message(target_turf, "Today we remember the worlds of Cataclysm, where the flame of life faltered. Take a moment of silence. Remember...")
 
 /datum/round_event/cataclysm_broadcast/tick()
 	if(!length(planets_to_name))
 		return
-	if(activeFor % 4 == 0)
-		var/planet_to_name = pick(planets_to_name)
-		target_outpost.broadcast_message(target_turf, "[planet_to_name]...")
-		planets_to_name -= planet_to_name
+	for(var/datum/overmap/outpost/target_outpost in SSovermap.outposts)
+		var/list/temp_planet_names = planets_to_name.Copy()
+		var/target_turf = target_outpost.get_jump_to_turf()
+		if(activeFor % 4 == 0)
+			var/planet_to_name = pick(temp_planet_names)
+			target_outpost.broadcast_message(target_turf, "[planet_to_name]...")
+			temp_planet_names -= planet_to_name
 
 
 /datum/round_event/cataclysm_broadcast/end_of_day
 
 /datum/round_event/cataclysm_broadcast/end_of_day/start()
-	target_outpost.broadcast_message(target_turf, "As Cataclysm Day comes to a close, we take a moment to honor the living worlds, which host the hopes of life in our Galaxy. May life propser forever more on....")
-	return
+	for(var/datum/overmap/outpost/target_outpost in SSovermap.outposts)
+		var/target_turf = target_outpost.get_jump_to_turf()
+		target_outpost.broadcast_message(target_turf, "As Cataclysm Day comes to a close, we take a moment to honor the living worlds, which host the hopes of life in our Galaxy. May life propser forever more on....")
 
 
 /obj/item/storage/box/papersack/srm_rations/PopulateContents()
