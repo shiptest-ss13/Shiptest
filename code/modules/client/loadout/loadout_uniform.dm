@@ -32,6 +32,10 @@
 	display_name = "jumpskirt, recolorable"
 	path = /obj/item/clothing/under/color/jumpskirt
 
+/datum/gear/uniform/fatigues
+	display_name = "fatigues, recolorable"
+	path = /obj/item/clothing/under/rank/security/officer/camo
+
 //Shorts
 
 /datum/gear/uniform/athshorts
