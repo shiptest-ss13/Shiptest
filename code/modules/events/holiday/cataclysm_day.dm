@@ -43,7 +43,7 @@
 	end_when = 50
 	var/datum/overmap/outpost/target_outpost
 	var/turf/target_turf
-	var/list/planets_to_name = list("Terra", "Teceti", "Sitami's Folly", "Mikiliwolo", "Gorlex VII", "Re'tex'himl", "Iakono-XZT2", "Curie H2H-B")
+	var/list/planets_to_name = list("Minya", "Terra", "Teceti", "Sitami's Folly", "Mikiliwolo", "Gorlex VII", "Re'tex'himl", "Iakono-XZT2", "Curie H2H-B")
 
 /datum/round_event/cataclysm_broadcast/setup()
 	target_outpost = pick(SSovermap.outposts)
@@ -88,7 +88,7 @@
 /obj/item/terrarium/attackby(obj/item/O, mob/user, params)
 	. = ..()
 	if(istype(O, /obj/item/food/grown))
-		to_chat(user, span_notice("You begin sealing the flora inside the jar to create a lovely terrarium. I encourage you to rename it with a pen <3."))
+		to_chat(user, span_notice("You begin sealing the flora inside the jar to create a lovely terrarium. Give your new little world a label or name with a pen."))
 		if(do_after(user, 15 SECONDS, O))
 			name = "filled terrarium"
 			icon_state = "jar_plants"
