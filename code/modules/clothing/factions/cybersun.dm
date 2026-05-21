@@ -2,7 +2,7 @@
 
 /obj/item/clothing/under/cybersun
 	name = "cybersun jumpsuit"
-	desc = "The standard jumpsuit used by the agents employed by Cybersun, in its distinctive half-black-half-white aesthetic."
+	desc = "The standard jumpsuit used by the agents employed by Cybersun, in its distinctive full-white aesthetic."
 	icon_state = "cybersun_agent"
 	roll_sleeves = FALSE
 	roll_down = TRUE
@@ -273,6 +273,9 @@
 		"Trauma Teal" = "trauma_teal_m10helm"
 	)
 
+/obj/item/clothing/head/helmet/m10/cybersun/trauma/teal
+	current_skin = "Trauma Teal"
+
 /obj/item/clothing/head/helmet/bulletproof/x11/cybersun
 	name = "\improper X11 \"Troubleshooter\""
 	desc = "A bulletproof combat helmet purchased and modified by Cybersun. Painted in a distinct maroon."
@@ -313,7 +316,7 @@
 	)
 //Cybersun Collapsar hardsuit
 /obj/item/clothing/suit/space/hardsuit/collapsar
-	name = "Cybersun \"Collapsar\" assault hardsuit"
+	name = "\improper Collapsar assault hardsuit"
 	desc = "Thick plates of flexible plastitanium-kevlar weave with a titanium laminate applied to seal the top make this armor maneuverable and durable. Typically only issued when a fight is expected."
 	icon_state = "hardsuit-collapsar"
 	hardsuit_type = "collapsar"
@@ -325,7 +328,7 @@
 	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/collapsar
-	name = "Cybersun \"Collapsar\" assault hardsuit helmet"
+	name = "\improper Collapsar assault hardsuit helmet"
 	desc = "Impact resistant plasmaglass is inset with plastitanium to make a durable helmet with clean unassisted field-of-view."
 	icon_state = "hardsuit0-collapsar"
 	hardsuit_type = "collapsar"
@@ -334,7 +337,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
 
 /obj/item/clothing/suit/space/hardsuit/collapsar/paramed
-	name = "Cybersun \"Collapsar\" retrieval hardsuit"
+	name = "\improper Collapsar retrieval hardsuit"
 	desc = "A Collapsar assault hardsuit coated in teal-tinted titanium coverings. Emblematic of the Trauma Team. "
 	icon_state = "hardsuit-collapsmed"
 	hardsuit_type = "collapsmed"
@@ -343,7 +346,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/suits.dmi'
 
 /obj/item/clothing/head/helmet/space/hardsuit/collapsar/paramed
-	name = "Cybersun \"Collapsar\" retrieval hardsuit helmet"
+	name = "\improper Collapsar retrieval hardsuit helmet"
 	icon_state = "hardsuit0-collapsmed"
 	hardsuit_type = "collapsmed"
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
@@ -443,3 +446,19 @@
 		"Troubleshooter Alt" = "cybersun_webalt",
 		"Trauma Alt" = "cybersun_med_webalt"
 	)
+
+/obj/item/storage/belt/military/cybersun/sidewinder/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)
+
+/obj/item/storage/belt/military/cybersun/hydra/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
+
+/obj/item/storage/belt/military/cybersun/boomslang/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/boomslang(src)
+
+/obj/item/storage/belt/military/cybersun/bulldog/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m12g_bulldog(src)

@@ -14,6 +14,7 @@
 	suit_store = /obj/item/gun/energy/kalix/pgf/medium
 	mask = /obj/item/clothing/mask/breath/pgfmask
 	glasses = /obj/item/clothing/glasses/sunglasses/pgf
+	box = /obj/item/storage/box/survival/pgf/marine
 
 	l_pocket = /obj/item/melee/knife/combat
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
@@ -82,16 +83,16 @@
 	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/gezena
-	suit = /obj/item/clothing/suit/armor/vest/marine
-	head = /obj/item/clothing/head/helmet/bulletproof/x11
+	suit = /obj/item/clothing/suit/armor/gezena/navy
+	head = /obj/item/clothing/head/helmet/gezena/navy
 	gloves = /obj/item/clothing/gloves/gezena
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena
 	belt = /obj/item/storage/belt/sabre/pgf
 	suit_store = /obj/item/gun/energy/kalix/nock
-	mask = /obj/item/clothing/mask/gas/sechailer
+	mask = /obj/item/clothing/mask/breath/pgfmask/navy
 	glasses = /obj/item/clothing/glasses/safety
-	box = /obj/item/storage/box/survival
+	box = /obj/item/storage/box/survival/pgf
 
 	l_pocket = /obj/item/stock_parts/cell/gun/kalix
 	r_pocket = /obj/item/reagent_containers/spray/pepper
@@ -115,6 +116,7 @@
 	suit = /obj/item/clothing/suit/armor/gezena
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	suit_store = /obj/item/gun/energy/kalix/pistol
+	box = /obj/item/storage/box/survival/pgf
 	belt = null
 	mask = null
 	glasses = null

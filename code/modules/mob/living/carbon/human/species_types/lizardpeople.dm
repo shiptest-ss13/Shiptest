@@ -113,29 +113,3 @@
 		randname += " [lastname]"
 
 	return randname
-
-/*
-Lizard subspecies: ASHWALKERS
-*/
-/datum/species/lizard/ashwalker
-	name = "Ash Walker"
-	id = SPECIES_ASHWALKER
-	examine_limb_id = SPECIES_SARATHI
-	species_traits = list(MUTCOLORS,LIPS, NO_UNDERWEAR)
-	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
-	species_language_holder = /datum/language_holder/lizard/ash
-
-//WS Edit Start - Kobold
-//Ashwalker subspecies: KOBOLD
-/datum/species/lizard/ashwalker/kobold
-	name = "Kobold"
-	id = SPECIES_KOBOLD
-	examine_limb_id = SPECIES_SARATHI
-	species_traits = list(MUTCOLORS,LIPS, NO_UNDERWEAR)
-	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
-	species_language_holder = /datum/language_holder/lizard/ash
-
-/datum/species/lizard/ashwalker/kobold/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
-	. = ..() //call everything from species/on_species_gain()
-	C.dna.add_mutation(DWARFISM)
-//WS Edit End - Kobold

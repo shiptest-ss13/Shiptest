@@ -1066,7 +1066,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge/cool)
 "jo" = (
-/obj/effect/turf_decal/etherbor/left,
+/obj/effect/turf_decal/axilai/left,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "jp" = (
@@ -1174,33 +1174,41 @@
 	pixel_x = 8;
 	pixel_y = -19
 	},
-/obj/item/clothing/head/helmet/bulletproof/x11{
-	pixel_y = 7;
-	pixel_x = -9;
-	unique_reskin = list("None" = "x11helm", "Snow" = "x11helm_snow")
-	},
-/obj/item/clothing/suit/armor/vest/marine{
+/obj/item/clothing/suit/armor/gezena/navy{
 	pixel_x = -8;
-	pixel_y = -5;
-	unique_reskin = list("None" = "marine_light", "Snow" = "marine_light_snow")
+	pixel_y = -2
+	},
+/obj/item/clothing/suit/armor/gezena/navy{
+	pixel_x = 0;
+	pixel_y = -2
+	},
+/obj/item/clothing/suit/armor/gezena/navy{
+	pixel_x = 9;
+	pixel_y = -2
 	},
 /obj/item/storage/belt/sabre/pgf{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/obj/item/storage/belt/sabre/pgf{
+	pixel_x = 1;
+	pixel_y = -7
+	},
+/obj/item/storage/belt/sabre/pgf{
+	pixel_x = -8;
+	pixel_y = -7
+	},
+/obj/item/clothing/head/helmet/gezena/navy{
 	pixel_x = -7;
-	pixel_y = -7
+	pixel_y = 11
 	},
-/obj/item/clothing/suit/armor/vest/marine{
-	pixel_x = 6;
-	pixel_y = -5;
-	unique_reskin = list("None" = "marine_light", "Snow" = "marine_light_snow")
+/obj/item/clothing/head/helmet/gezena/navy{
+	pixel_x = 0;
+	pixel_y = 11
 	},
-/obj/item/clothing/head/helmet/bulletproof/x11{
-	pixel_y = 7;
-	pixel_x = 6;
-	unique_reskin = list("None" = "x11helm", "Snow" = "x11helm_snow")
-	},
-/obj/item/storage/belt/sabre/pgf{
+/obj/item/clothing/head/helmet/gezena/navy{
 	pixel_x = 7;
-	pixel_y = -7
+	pixel_y = 11
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -2596,7 +2604,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "yY" = (
-/obj/effect/turf_decal/etherbor/center,
+/obj/effect/turf_decal/axilai/center,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "zz" = (
@@ -3209,7 +3217,7 @@
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical/surgery)
 "GC" = (
-/obj/effect/turf_decal/etherbor/right,
+/obj/effect/turf_decal/axilai/right,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "GE" = (
@@ -3412,10 +3420,6 @@
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
 /obj/item/clothing/glasses/safety{
 	pixel_y = 7
 	},
@@ -3434,6 +3438,22 @@
 	},
 /obj/effect/turf_decal/siding/black/corner{
 	dir = 4
+	},
+/obj/item/clothing/mask/breath/pgfmask/navy{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/item/clothing/mask/breath/pgfmask/navy{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/item/clothing/mask/breath/pgfmask/navy{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/item/clothing/mask/breath/pgfmask/navy{
+	pixel_x = 0;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)

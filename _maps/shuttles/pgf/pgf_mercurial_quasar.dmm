@@ -110,7 +110,7 @@
 	icon_state = "4-8"
 	},
 /obj/item/radio/intercom/directional/south,
-/obj/effect/turf_decal/etherbor/right,
+/obj/effect/turf_decal/axilai/offset/lower_right,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "bC" = (
@@ -294,7 +294,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/etherbor/left,
+/obj/effect/turf_decal/axilai/offset/lower_left,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "dn" = (
@@ -1164,7 +1164,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/etherbor/center,
+/obj/effect/turf_decal/axilai/offset/lower_center,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "ok" = (
@@ -1340,6 +1340,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/axilai/offset/upper_right,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "rr" = (
@@ -1611,6 +1612,7 @@
 /obj/structure/sign/poster/pgf/random{
 	pixel_y = 32
 	},
+/obj/effect/turf_decal/axilai/offset/upper_left,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "tV" = (
@@ -2290,19 +2292,29 @@
 	pixel_y = -11;
 	pixel_x = 20
 	},
-/obj/item/clothing/head/helmet/m10{
-	unique_reskin = list("None" = "m10helm", "Snow" = "m10helm_snow");
-	pixel_y = 0;
-	pixel_x = -7
+/obj/item/clothing/suit/armor/gezena/navy{
+	pixel_x = 1;
+	pixel_y = 4
 	},
-/obj/item/clothing/head/helmet/m10{
-	unique_reskin = list("None" = "m10helm", "Snow" = "m10helm_snow");
+/obj/item/clothing/suit/armor/gezena/navy{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/armor/gezena/navy{
+	pixel_x = -6;
+	pixel_y = -4
+	},
+/obj/item/clothing/head/helmet/gezena/navy{
+	pixel_x = 7;
+	pixel_y = 0
+	},
+/obj/item/clothing/head/helmet/gezena/navy{
+	pixel_x = -7;
+	pixel_y = 0
+	},
+/obj/item/clothing/head/helmet/gezena/navy{
+	pixel_x = 0;
 	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/m10{
-	unique_reskin = list("None" = "m10helm", "Snow" = "m10helm_snow");
-	pixel_y = 0;
-	pixel_x = 7
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
@@ -3110,6 +3122,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/axilai/offset/upper_center,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Md" = (
@@ -3337,9 +3350,6 @@
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
 /obj/item/clothing/glasses/safety{
 	pixel_y = 7
 	},
@@ -3350,6 +3360,18 @@
 	pixel_y = 7
 	},
 /obj/effect/mapping_helpers/crate_shelve,
+/obj/item/clothing/mask/breath/pgfmask/navy{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/item/clothing/mask/breath/pgfmask/navy{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/item/clothing/mask/breath/pgfmask/navy{
+	pixel_x = 0;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Pt" = (

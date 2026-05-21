@@ -314,6 +314,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 /obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
 	default_ammo_type = /obj/item/ammo_box/magazine/c44_firestorm_mag/pan
 
+
+NO_MAG_GUN_HELPER(automatic/smg/firestorm)
+
 ///Shotguns
 
 /////////////////////////////
@@ -513,9 +516,9 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/roumain)
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
-	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/lethal
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/brimstone
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/internal/shot/lethal,
+		/obj/item/ammo_box/magazine/internal/shot/brimstone,
 	)
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	fire_delay = 0.05 SECONDS //slamfire
