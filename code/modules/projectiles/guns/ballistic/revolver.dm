@@ -226,6 +226,8 @@
 			doafter_time = 0 SECONDS
 		if(!do_after(user, doafter_time, user))
 			break
+		if(casing_to_insert.loc != attacking_box) // make sure bullet has not left stack
+			break
 		if(!insert_casing(user, casing_to_insert, !gate_loaded && is_stack, FALSE))
 			if(gate_loaded)
 				doafter_time = 0 SECONDS
