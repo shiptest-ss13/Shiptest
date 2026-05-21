@@ -213,14 +213,14 @@
 
 /obj/item/storage/box/ingredients/one_large_brextak/PopulateContents()
 	for(var/i in 1 to 20)
-		var/randomFood = pick(
+		var/random_food = pick(
 			/obj/item/food/grown/chili,
 			/obj/item/food/grown/tomato,
 			/obj/item/food/grown/carrot)
-		new randomFood(src)
+		new random_food(src)
 	for(var/i in 1 to 20)
-		var/randomFood = pick(
+		var/random_food = pick(
 			/obj/item/food/meat/slab/goliath,
 			/obj/item/food/meat/slab/bear)
-		new randomFood(src)
+		new random_food(src)
 	new /obj/item/reagent_containers/food/drinks/bottle/wine(src)
