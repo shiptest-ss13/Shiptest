@@ -573,7 +573,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		features["ethcolor"] = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)]
 
 	if(!features["moth_bodyfluff_color"] || text2num(features["moth_bodyfluff_color"], 16) == 0)
-		features["moth_bodyfluff_color"] = "#E6C684"
+		features["moth_bodyfluff_color"] = random_color()
 
 	if(!features["moth_wings_color"] || text2num(features["moth_wings_color"], 16) == 0)
 		features["moth_wings_color"] = "#E6C684"
@@ -582,7 +582,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		features["moth_neckfluff_color"] = "#E6C684"
 
 	if(!features["moth_markings_color"] || text2num(features["moth_markings_color"], 16) == 0)
-		features["moth_markings_color"] = "#E6C684"
+		features["moth_markings_color"] = random_color()
 
 	if(!features["moth_antennae_color"] || text2num(features["moth_antennae_color"], 16) == 0)
 		features["moth_antennae_color"] = "#E6C684"
