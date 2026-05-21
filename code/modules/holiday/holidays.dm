@@ -244,8 +244,8 @@
 /datum/holiday/cataclysm_day
 	name = CATACLYSM_DAY
 	//Gives us a range of 2~ uptimes
-	begin_day = 24
-	end_day = 28
+	begin_day = 23
+	end_day = 29
 	begin_month = MAY
 	read_up_link = "https://shiptest.net/wiki/Cataclysm_Day"
 
