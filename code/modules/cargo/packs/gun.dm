@@ -294,6 +294,14 @@
 	crate_name = "beam volleygun crate"
 	faction = /datum/faction/pgf
 
+/datum/supply_pack/gun/laser/kalix/hunt
+	name = "Etherbor HBS-110 Beam Rifle Crate"
+	desc = "Contains a single HBS-110 Beam Rifle, a civilian-grade hunting rifle developed in the PGF, manufactured by Etherbor Industries."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/energy/kalixhunt)
+	crate_name = "beam rifle crate"
+	faction = /datum/faction/pgf
+
 /datum/supply_pack/gun/laser/vga5
 	name = "Etherbor VG-A5 Beam Volleygun Crate"
 	desc = "Contains a single VG-A5 Beam Volleygun, a military-grade volleygun developed in the PGF and manufactured by Etherbor Industries for use within the PGF armed forces."
