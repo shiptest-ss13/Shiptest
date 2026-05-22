@@ -263,9 +263,9 @@
 
 		for(var/datum/reagent/reagent as anything in reagents_to_remove)
 			var/transfer_amount = reagent.volume * part
+			reagent.on_transfer(target_atom, methods, transfer_amount * multiplier)
 			remove_reagent(reagent.type, transfer_amount)
-			var/list/reagent_qualities = list(REAGENT_TRANSFER_AMOUNT = transfer_amount)
-			transfer_log[reagent.type] = reagent_qualities
+			transfer_log[reagent.type] = transfer_amount
 
 	else
 		var/to_transfer = amount
@@ -289,8 +289,7 @@
 					R.expose_single(reagent, target_atom, methods, transfer_amount, show_message)
 				reagent.on_transfer(target_atom, methods, transfer_amount * multiplier)
 			remove_reagent(reagent.type, transfer_amount)
-			var/list/reagent_qualities = list(REAGENT_TRANSFER_AMOUNT = transfer_amount)
-			transfer_log[reagent.type] = reagent_qualities
+			transfer_log[reagent.type] = transfer_amount
 	if(transfered_by && target_atom)
 		target_atom.add_hiddenprint(transfered_by) //log prints so admins can figure out who touched it last.
 		log_combat(transfered_by, target_atom, "transferred reagents ([log_list(transfer_log)]) from [my_atom] to")
