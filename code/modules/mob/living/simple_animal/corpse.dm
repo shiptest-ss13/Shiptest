@@ -83,7 +83,7 @@
 
 
 /datum/outfit/ramzi/engi/grinder
-	name = "Ramzi Technician Corpse"
+	name = "Ramzi Angle Grinder Technician"
 	suit = /obj/item/clothing/suit/armor/ramzi
 	back = /obj/item/gear_pack/anglegrinder
 

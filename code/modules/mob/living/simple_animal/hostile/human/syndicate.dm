@@ -148,7 +148,7 @@
 	name = "Ramzi Clique Cutter"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They wrestle a bulky angle grinder, training it in your direction."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/engi/grinder
-	l_hand = /obj/item/gear_handle/anglegrinder
+	l_hand = /obj/item/fake_anglegrinder //mandatory jank do NOT let it drop
 	weapon_drop_chance = 0 //the backpack drops with their corpse. this will always drop a grinder.
 	sharpness = SHARP_EDGED
 	attack_verb_continuous = "saws"
@@ -156,6 +156,15 @@
 	melee_damage_lower = 35 //more straight damage than the hammer, but they dont hardstun you
 	melee_damage_upper = 35
 	attack_sound = 'sound/weapons/anglegrinder.ogg'
+
+/obj/item/fake_anglegrinder
+	name = "angle grinder"
+	desc = "Adminhelp if you see this, please. This is a jank solution to some technical chicanery involving angle grinder simeplemobs."
+	icon = 'icons/obj/item/gear_packs.dmi'
+	icon_state = "anglegrinder-wield"
+	item_state = "anglegrinder-wield"
+	lefthand_file = 'icons/mob/inhands/equipment/gear_handle_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/gear_handle_righthand.dmi'
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/sledge
 	name = "Ramzi Clique Breaker"
