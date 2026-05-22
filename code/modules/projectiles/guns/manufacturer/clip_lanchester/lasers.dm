@@ -6,8 +6,8 @@
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
 
-	icon_state = "cm1"
-	item_state = "cm1"
+	icon_state = "cm6"
+	item_state = "cm6"
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -18,7 +18,7 @@
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 26,
-			"y" = 13,
+			"y" = 12,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 20,
@@ -48,6 +48,8 @@
 		/obj/item/stock_parts/cell/gun/empty,
 		/obj/item/stock_parts/cell/gun/upgraded/empty,
 	)
+	icon_state = "cm1"
+	item_state = "cm1"
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(

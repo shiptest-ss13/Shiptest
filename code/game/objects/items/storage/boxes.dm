@@ -309,10 +309,11 @@
 
 /obj/item/storage/box/hypospray/mkiii/PopulateContents()
 	new /obj/item/hypospray/mkii/mkiii(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/cureall(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/salglu(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/morphine(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/hadramide(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/quadratane(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/pancrazine(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/salbutamol(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/morphine(src)
 
 /obj/item/storage/box/medigels
 	name = "box of medical gels"
@@ -906,6 +907,7 @@
 	illustration = null
 	resistance_flags = FLAMMABLE
 	foldable = null
+	custom_price = 1
 	/// A list of all available papersack reskins
 	var/list/papersack_designs = list()
 
