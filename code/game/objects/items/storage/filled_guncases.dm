@@ -129,6 +129,9 @@
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/bulldog
 	mag_type = /obj/item/ammo_box/magazine/m12g_bulldog
 
+/obj/item/storage/guncase/gaboon
+	gun_type = /obj/item/gun/ballistic/shotgun/gaboon
+
 /obj/item/storage/guncase/sidewinder
 	gun_type = /obj/item/gun/ballistic/automatic/smg/sidewinder
 	mag_type = /obj/item/ammo_box/magazine/m57_39_sidewinder
