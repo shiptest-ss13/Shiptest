@@ -205,19 +205,6 @@
 			armour_penetration *= ap_constant
 	. = ..()
 
-/obj/projectile/beam/hitscan/Range()
-	if(hitscan != TRUE)
-		return ..()
-	var/turf/location = get_turf(src)
-	if(!location)
-		return ..()
-	var/datum/gas_mixture/environment = location.return_air()
-	var/environment_pressure = environment.return_pressure()
-	if(environment_pressure >= 50)
-		if((decayedRange - range) >= 4)
-			armour_penetration *= ap_constant
-	. = ..()
-
 /obj/item/ammo_casing/energy/lasergun/hitscan
 	projectile_type = /obj/projectile/beam/hitscan/laser
 	select_name = "kill"
