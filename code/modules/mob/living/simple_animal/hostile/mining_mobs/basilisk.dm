@@ -61,6 +61,7 @@
 	damage = 40
 	damage_type = BRUTE
 	nodamage = FALSE
+	flag = "energy"
 	temperature = 0
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/GiveTarget(new_target)

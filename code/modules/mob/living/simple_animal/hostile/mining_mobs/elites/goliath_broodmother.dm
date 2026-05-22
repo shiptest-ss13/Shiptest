@@ -217,8 +217,10 @@
 		if((!QDELETED(spawner) && spawner.faction_check_mob(L)) || L.stat == DEAD)
 			continue
 		visible_message(span_danger("[src] grabs hold of [L]!"))
-		L.Stun(10)
-		L.adjustBruteLoss(rand(30,35))
+		//I don't think there's any situation where only one leg will be armored and I don't care to make it figure out which leg was dierolled so we just assume the right leg has the same armor as the left and go off that
+		var/obj/item/bodypart/affecting = L.get_bodypart(BODY_ZONE_L_LEG)
+		var/armor_block = L.run_armor_check(affecting, "melee")
+		L.apply_damage(rand(10,20), BRUTE, pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG), armor_block, TRUE, wound_bonus = CANT_WOUND)
 		latched = TRUE
 	if(!latched)
 		retract()
