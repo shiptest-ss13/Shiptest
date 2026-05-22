@@ -1,4 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/farm)
 "ag" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-9"
@@ -182,7 +186,7 @@
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "bB" = (
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp)
 "bC" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-10"
@@ -597,7 +601,7 @@
 /area/ruin/rockplanet/ngrcolony/mine)
 "fS" = (
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/farm)
 "fX" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -713,14 +717,11 @@
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "gx" = (
 /obj/effect/mob_spawn/human/corpse/ngr/miner/space,
-/obj/item/gun/ballistic/shotgun/brimstone/empty{
-	name = "'''Gaboon'''";
-	desc = "A simple and sturdy pump-action PLACEHOLDER sporting a 5-round capacity, manufactured by Hunter's Pride. Found widely throughout the Frontier WHERE A GABOON SHOULD BE! Chambered in 12g."
-	},
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/structure/cable/yellow{
 	icon_state = "2-5"
 	},
+/obj/item/gun/ballistic/shotgun/gaboon/empty,
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
 "gE" = (
@@ -829,6 +830,10 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/utility)
+"hg" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/ramzi_camp)
 "hk" = (
 /turf/open/floor/plasteel/tech/rockplanet,
 /area/ruin/rockplanet/ngrcolony/engineering)
@@ -1015,7 +1020,7 @@
 "iL" = (
 /obj/structure/catwalk/over,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/farm)
 "iN" = (
 /obj/effect/turf_decal/trimline/opaque/red/corner{
 	dir = 8
@@ -1243,7 +1248,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/farm)
 "kF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1568,6 +1573,11 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/utility)
+"mS" = (
+/obj/item/ammo_casing/spent/magnum_brass,
+/obj/structure/flora/ash/cacti,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "mU" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
 /turf/open/floor/plasteel/dark,
@@ -1775,6 +1785,9 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"ou" = (
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/farm)
 "oC" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -2341,7 +2354,7 @@
 	icon_state = "6-8"
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/farm)
 "sB" = (
 /obj/structure/platform/corner{
 	dir = 8
@@ -2411,7 +2424,7 @@
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "ts" = (
 /turf/open/floor/plating/asteroid/rockplanet/wet,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp)
 "tv" = (
 /obj/machinery/camera/autoname{
 	network = list("ngr_colony");
@@ -2426,6 +2439,13 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/concrete/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
+"tE" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/farm)
 "tF" = (
 /obj/effect/turf_decal/stairs{
 	dir = 9
@@ -2848,7 +2868,7 @@
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "wU" = (
 /turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/farm)
 "wV" = (
 /obj/machinery/camera/autoname{
 	network = list("ngr_colony");
@@ -2952,7 +2972,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp)
 "xw" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -3015,7 +3035,7 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/farm)
 "xM" = (
 /obj/structure/chair/bench/beige/directional/north,
 /obj/machinery/holosign/trifuge{
@@ -4294,7 +4314,7 @@
 	layer = 3.1
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/farm)
 "Iv" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/spawner/bunk_bed{
@@ -4365,7 +4385,7 @@
 	},
 /obj/item/ammo_casing/spent/big_brass,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp)
 "IN" = (
 /obj/item/stack/cable_coil/cut/yellow,
 /turf/closed/mineral/random/rockplanet,
@@ -5295,6 +5315,9 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
+"Qa" = (
+/turf/closed/wall/concrete,
+/area/overmap_encounter/planetoid/cave/explored)
 "Qe" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -5545,7 +5568,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp)
 "ST" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -5935,7 +5958,7 @@
 "Wc" = (
 /obj/item/ammo_casing/spent/big_brass,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp)
 "Wj" = (
 /obj/structure/barricade/concrete{
 	dir = 1
@@ -6123,7 +6146,7 @@
 	wander = 0
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp)
 "Yg" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 1;
@@ -6174,8 +6197,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp)
 "YK" = (
 /obj/machinery/light/street{
 	pixel_x = 0;
@@ -6326,7 +6350,7 @@
 	icon_state = "4-9"
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/farm)
 "ZS" = (
 /obj/machinery/light/street{
 	dir = 4;
@@ -7765,7 +7789,7 @@ GD
 VJ
 JI
 nA
-MB
+mS
 Fz
 oW
 pe
@@ -7841,7 +7865,7 @@ MB
 oW
 lB
 pe
-SU
+Es
 OH
 gF
 rh
@@ -10333,7 +10357,7 @@ Mg
 Mg
 sk
 sk
-bB
+ou
 wU
 sk
 VJ
@@ -10405,7 +10429,7 @@ Xd
 Mg
 Mg
 sk
-bB
+ou
 fS
 sk
 sk
@@ -10476,10 +10500,10 @@ id
 jM
 zF
 Xd
-bB
-bB
-bB
-sk
+ou
+ou
+ab
+Qa
 sk
 sk
 Pk
@@ -10550,7 +10574,7 @@ Zi
 Fm
 Iu
 xL
-bB
+ou
 sk
 sk
 sk
@@ -10620,9 +10644,9 @@ id
 jM
 zF
 JR
-bB
+ou
 kE
-bB
+ou
 sk
 sk
 sk
@@ -10692,7 +10716,7 @@ Nj
 gT
 Mg
 Mg
-bB
+ou
 sw
 sk
 sk
@@ -10764,7 +10788,7 @@ Mg
 Mg
 Mg
 sk
-bB
+ou
 iL
 ZN
 sk
@@ -10837,9 +10861,9 @@ sk
 sk
 sk
 sk
-bB
-SS
-sk
+ou
+tE
+Qa
 ts
 VJ
 VJ
@@ -10911,7 +10935,7 @@ sk
 bB
 bB
 IM
-bB
+hg
 ts
 Ba
 yo
@@ -11197,7 +11221,7 @@ sk
 sk
 sk
 sk
-sk
+Qa
 YG
 bB
 sk
