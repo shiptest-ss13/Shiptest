@@ -112,7 +112,11 @@ GENE SCANNER
 		if(SCANMODE_SURGICAL)
 			to_chat(user, span_notice("You switch the health analyzer to report surgical status."))
 
-/obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
+/obj/item/healthanalyzer/afterattack(mob/living/target, mob/user, proximity)
+	. = ..()
+	if (!proximity)
+		return
+
 	flick("[icon_state]-anim", src) //makes it so that it plays the scan animation upon scanning, including clumsy scanning
 	playsound(src, 'sound/effects/fastbeep.ogg', 10)
 
@@ -129,22 +133,30 @@ GENE SCANNER
 					\n[span_info("Body temperature: ???")]")
 		return
 
-	user.visible_message(span_notice("[user] analyzes [M]'s vitals."), \
-						span_notice("You analyze [M]'s vitals."))
+
+	user.visible_message(span_notice("[user] analyzes [target]'s vitals."), \
+											span_notice("You analyze [target]'s vitals."))
+	if(!istype(target))
+		user.show_message(span_warning("Null vitals, [target] is inanimate!"))
+		return
 
 	switch(scanmode)
 		if(SCANMODE_HEALTH)
-			healthscan(user, M, verbose, advanced)
+			healthscan(user, target, verbose, advanced)
 		if(SCANMODE_CHEMICAL)
-			chemscan(user, M)
+			chemscan(user, target)
 		if(SCANMODE_SURGICAL)
-			surgical_scan(user, M)
+			surgical_scan(user, target)
 
 	add_fingerprint(user)
+
 
 // Used by the PDA medical scanner too
 /proc/healthscan(mob/user, mob/living/M, verbose = TRUE, advanced = FALSE, see_all_quirks = FALSE)
 	if(isliving(user) && (user.incapacitated()))
+		return
+
+	if(!istype(M))
 		return
 
 	// the final list of strings to render
@@ -438,50 +450,18 @@ GENE SCANNER
 	// we handled the last <br> so we don't need handholding
 	to_chat(user, boxed_message(jointext(render_list, "")), trailing_newline = FALSE, type = MESSAGE_TYPE_INFO)
 
-/proc/chemscan(mob/living/user, mob/living/target)
-	if(user.incapacitated())
+/// Displays the result of a reagent scan of target to user, returns nothing
+/proc/chemscan(mob/living/user, atom/target)
+	var/scan_result = target.reagent_scan()
+	if (scan_result != "")
+		to_chat(user, boxed_message(scan_result), type = MESSAGE_TYPE_INFO)
 		return
-
-	if(istype(target) && target.reagents)
-		var/list/render_list = list() //The master list of readouts, including reagents in the blood/stomach, quirks, etc.
-		var/list/render_block = list() //A second block of readout strings. If this ends up empty after checking stomach/blood contents, we give the "empty" header.
-
-		// Blood reagents
-		if(target.reagents.reagent_list.len)
-			for(var/r in target.reagents.reagent_list)
-				var/datum/reagent/reagent = r
-				render_block += "<span class='notice ml-2'>[round(reagent.volume, 0.001)] units of [reagent.name][reagent.overdosed ? "</span> - [span_bolddanger("OVERDOSING")]" : ".</span>"]<br>"
-
-		if(!length(render_block)) //If no VISIBLY DISPLAYED reagents are present, we report as if there is nothing.
-			render_list += "<span class='notice ml-1'>Subject contains no reagents in their blood.</span><br>"
-		else
-			render_list += "<span class='notice ml-1'>Subject contains the following reagents in their blood:</span><br>"
-			render_list += render_block //Otherwise, we add the header, reagent readouts, and clear the readout block for use on the stomach.
-			render_block.Cut()
-
-		// Stomach reagents
-		var/obj/item/organ/stomach/belly = target.getorganslot(ORGAN_SLOT_STOMACH)
-		if(belly)
-			if(belly.reagents.reagent_list.len)
-				for(var/bile in belly.reagents.reagent_list)
-					var/datum/reagent/bit = bile
-					if(!belly.food_reagents[bit.type])
-						render_list += "<span class='notice ml-2'>[round(bit.volume, 0.001)] units of [bit.name][bit.overdosed ? "</span> - <span class='boldannounce'>OVERDOSING</span>" : ".</span>"]\n"
-					else
-						var/bit_vol = bit.volume - belly.food_reagents[bit.type]
-						if(bit_vol > 0)
-							render_list += "<span class='notice ml-2'>[round(bit_vol, 0.001)] units of [bit.name][bit.overdosed ? "</span> - <span class='boldannounce'>OVERDOSING</span>" : ".</span>"]\n"
-
-			if(!length(render_block))
-				render_list += "<span class='notice ml-1'>Subject contains no reagents in their stomach.</span><br>"
-			else
-				render_list += "<span class='notice ml-1'>Subject contains the following reagents in their stomach:</span><br>"
-				render_list += render_block
-
-		// we handled the last <br> so we don't need handholding
-		to_chat(user, boxed_message(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
+	to_chat(user, span_warning("No significant chemical agents found in [target]."))
 
 /proc/surgical_scan(mob/living/user, mob/living/target)
+	if(!istype(target))
+		return
+
 	if(target.surgeries.len)
 		var/list/render_list = "<span class='boldannounce ml-1'>The patient is undergoing the following surgeries:</span><br>"
 		for(var/datum/surgery/procedure in target.surgeries)
@@ -921,20 +901,8 @@ GENE SCANNER
 		return
 	flick("[icon_state]-anim", src)
 	playsound(src, 'sound/effects/fastbeep.ogg', 10)
-	if(!isnull(A.reagents))
-		if(A.reagents.reagent_list.len > 0)
-			var/reagents_length = A.reagents.reagent_list.len
-			var/reagents_temp =	A.reagents.chem_temp
-			var/message = "[reagents_length] chemical agent[reagents_length > 1 ? "s" : ""] found at [reagents_temp]°K."
-			for (var/re in A.reagents.reagent_list)
-				var/datum/reagent/R = re
-				var/amount = R.volume
-				message += "\n\t [amount] units of [re]."
-			to_chat(user, span_notice(message))
-		else
-			to_chat(user, span_notice("No active chemical agents found in [A]."))
-	else
-		to_chat(user, span_notice("No significant chemical agents found in [A]."))
+	chemscan(user, A)
+
 
 #undef SCANMODE_HEALTH
 #undef SCANMODE_CHEMICAL
