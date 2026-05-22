@@ -451,6 +451,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/gaboon
+	name = "Gaboon Compact Shotgun Crate"
+	desc = "A pump action shotgun chambered in 12ga produced by Scarborough Arms."
+	contains = list(/obj/item/storage/guncase/gaboon)
+	cost = 2000
+	crate_name = "shotgun crate"
+	faction = /datum/faction/syndicate/scarborough
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/mastiff
 	name = "Mastiff Shotgun Crate"
 	desc = "An automatic shotgun modified for exclusive use by the IRMG and chambered in 12ga. Comes with 8-round box magazines."
