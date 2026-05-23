@@ -1,5 +1,3 @@
-#warn add pain feedback
-
 /datum/surgery/revival
 	name = "Revival"
 	desc = "An experimental surgical procedure which involves reconstruction and reactivation of the patient's brain even long after death. The body must still be able to sustain life."
@@ -76,6 +74,7 @@
 	display_results(user, target, span_notice("You successfully shock [target]'s brain with [tool]..."),
 		span_notice("[user] send a powerful shock to [target]'s brain with [tool]..."),
 		span_notice("[user] send a powerful shock to [target]'s brain with [tool]..."))
+	give_surgery_pain(target, "Your [target_zone] sears with pain as you jolt awake!", target_zone=target_zone)
 	target.adjustOxyLoss(-50, 0)
 	target.updatehealth()
 	if(target.revive(full_heal = FALSE, admin_revive = FALSE))

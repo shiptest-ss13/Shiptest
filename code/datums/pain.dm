@@ -682,7 +682,9 @@
 		parent.adjust_timed_status_effect(7 SECONDS, STATUS_EFFECT_JITTER)
 
 	else if(SPT_PROB(1, delta_time))
-		parent.set_confusion(min(parent.get_confusion() + 4, 12))
+		//to-do after merge: port confusion as a status
+		//parent.set_confusion(min(parent.get_confusion() + 4, 12))
+		parent.confused = min(parent.confused+4, 12)
 
 	else if(SPT_PROB(4, delta_time))
 		do_pain_emote("cry", 6 SECONDS)

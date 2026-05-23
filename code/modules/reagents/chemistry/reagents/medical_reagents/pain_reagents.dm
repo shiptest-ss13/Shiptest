@@ -255,21 +255,21 @@
 	switch(current_cycle)
 		if(24) //5~ u
 			to_chat(M, span_warning("You start to feel tired..."))
-			M.M.set_eye_blur_if_lower(2 SECONDS) //clue them in
+			M.set_eye_blur_if_lower(2 SECONDS) //clue them in
 			if(prob(50))
 				M.emote("yawn")
 
 		if(30 to 45) // 5u to 7.5u
 			if(M.drowsyness <= 3 && SPT_PROB(33, delta_time))
-				M.adjust_drowsyness(1 * REM * delta_time)
+				M.adjust_drowsiness(1 * REM * delta_time)
 
 		if(46 to 60) // 7.5u to 10u
 			if(M.drowsyness <= 6 && SPT_PROB(66, delta_time))
-				M.adjust_drowsyness(1 * REM * delta_time)
+				M.adjust_drowsiness(1 * REM * delta_time)
 
 		if(60 to INFINITY) //10u onward
 			if(M.drowsyness <= 9)
-				M.adjust_drowsyness(1 * REM * delta_time)
+				M.adjust_drowsiness(1 * REM * delta_time)
 			M.Sleeping(4 SECONDS * REM * delta_time)
 
 /datum/reagent/medicine/painkiller/morphine/overdose_start(mob/living/M)
@@ -325,7 +325,7 @@
 	if(C.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(40, delta_time))
 		C.adjust_disgust(2 * REM * delta_time)
 	if(SPT_PROB(33, delta_time))
-		C.dizziness = clamp(C.dizziness + (1 * REM * delta_time), 0, 5)
+		C.adjust_dizzy_up_to(1 * REM * delta_time, 5 SECONDS)
 
 	..()
 

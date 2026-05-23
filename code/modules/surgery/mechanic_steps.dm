@@ -1,3 +1,5 @@
+#warn add give_surgery_pain to all shiptest mechanic steps
+
 //open shell
 /datum/surgery_step/mechanic_open
 	name = "unscrew shell"
