@@ -110,7 +110,7 @@
 
 /datum/reagent/drug/rahkrahene/overdose_start(mob/living/M)
 	. = ..()
-	L.add_client_colour(/datum/client_colour/rahkrahene_overdose)
+	M.add_client_colour(/datum/client_colour/rahkrahene_overdose)
 
 /datum/reagent/drug/rahkrahene/on_mob_life(mob/living/carbon/M)
 	if(prob(5))

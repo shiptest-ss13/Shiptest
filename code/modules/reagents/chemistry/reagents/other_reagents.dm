@@ -2119,13 +2119,13 @@
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/rahene)
 
 /datum/reagent/rahene/on_mob_end_metabolize(mob/living/L)
-	L?.remove_client_colour(/datum/client_colour/rahkrahene)
-	L?.remove_client_colour(/datum/client_colour/rahkrahene_overdose)
+	L.remove_client_colour(/datum/client_colour/rahkrahene)
+	L.remove_client_colour(/datum/client_colour/rahkrahene_overdose)
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/rahene)
 	..()
 
 /datum/reagent/rahene/overdose_start(mob/living/M)
-	L?.add_client_colour(/datum/client_colour/rahkrahene_overdose)
+	M.add_client_colour(/datum/client_colour/rahkrahene_overdose)
 	. = ..()
 
 /datum/reagent/drug/rahene/overdose_process(mob/living/M)
