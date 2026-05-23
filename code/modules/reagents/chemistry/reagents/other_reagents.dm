@@ -2111,6 +2111,7 @@
 	color = "#ca1111" // rgb: 255, 255, 255
 	taste_mult = 4
 	taste_description = "red"
+	overdose_threshold = 30
 
 /datum/reagent/rahene/on_mob_metabolize(mob/living/L)
 	..()
@@ -2119,8 +2120,25 @@
 
 /datum/reagent/rahene/on_mob_end_metabolize(mob/living/L)
 	L?.remove_client_colour(/datum/client_colour/rahkrahene)
+	L?.remove_client_colour(/datum/client_colour/rahkrahene_overdose)
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/rahene)
 	..()
+
+/datum/reagent/rahene/overdose_start(mob/living/M)
+	L?.add_client_colour(/datum/client_colour/rahkrahene_overdose)
+	. = ..()
+
+/datum/reagent/drug/rahene/overdose_process(mob/living/M)
+	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc) && prob(33))
+		step(M, pick(GLOB.cardinals))
+	if(prob(5))
+		M.visible_message(span_danger("[M]'s hands flip out and flail everywhere!"))
+		M.drop_all_held_items()
+	..()
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, pick(0.5, 0.6, 0.7, 0.8, 0.9, 1))
+	. = 1
+
+
 
 /datum/reagent/metalgen
 	name = "Metalgen"

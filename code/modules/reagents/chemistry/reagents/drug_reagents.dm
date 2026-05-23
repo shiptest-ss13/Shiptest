@@ -99,17 +99,22 @@
 
 /datum/reagent/drug/rahkrahene/on_mob_metabolize(mob/living/L)
 	..()
-	L?.add_client_colour(/datum/client_colour/rahkrahene)
+	L.add_client_colour(/datum/client_colour/rahkrahene)
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/rahkrahene)
 
 /datum/reagent/drug/rahkrahene/on_mob_end_metabolize(mob/living/L)
-	L?.remove_client_colour(/datum/client_colour/rahkrahene)
+	L.remove_client_colour(/datum/client_colour/rahkrahene)
+	L.remove_client_colour(/datum/client_colour/rahkrahene_overdose)
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/rahkrahene)
 	..()
 
+/datum/reagent/drug/rahkrahene/overdose_start(mob/living/M)
+	. = ..()
+	L.add_client_colour(/datum/client_colour/rahkrahene_overdose)
+
 /datum/reagent/drug/rahkrahene/on_mob_life(mob/living/carbon/M)
-	var/high_message = pick("YOU NEED TO MOVE.", "INERTIA IS FILLING YOUR HEART", "SEIZE THE MOMENT", "GO GO GO GO GO GO", "YOU NEED TO SPRINT.", "DO NOT STOP MOVING.")
 	if(prob(5))
+		var/high_message = pick("YOU NEED TO MOVE.", "INERTIA IS FILLING YOUR HEART", "SEIZE THE MOMENT", "GO GO GO GO GO GO", "YOU NEED TO SPRINT.", "DO NOT STOP MOVING.", "THERE IS NOTHING BUT FORWARDS")
 		to_chat(M, span_boldwarning("[high_message]"))
 	if(prob(25))
 		M.playsound_local(get_turf(M), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
@@ -133,7 +138,7 @@
 		M.drop_all_held_items()
 	..()
 	M.adjustToxLoss(1, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, pick(0.5, 0.6, 0.7, 0.8, 0.9, 1))
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, pick(0.5, 0.6, 0.7, 0.8, 0.9, 1))
 	. = 1
 
 /datum/reagent/drug/mammoth
