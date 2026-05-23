@@ -322,7 +322,7 @@
 /obj/item/inhaler/rahkrahene
 	name = "rahkrahene inhaler"
 	icon_state = "inhaler_generic"
-	initial_casister_path = /obj/item/reagent_containers/inhaler_canister/rahkrahene
+	initial_canister_path = /obj/item/reagent_containers/inhaler_canister/rahkrahene
 
 /obj/item/reagent_containers/inhaler_canister/rahkrahene
 	name = "rahkrahene canister"
