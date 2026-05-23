@@ -61,7 +61,8 @@ SUBSYSTEM_DEF(overmap)
 
 	var/primary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone) - /datum/overmap_star_system/safezone/json_example)
 	var/secondary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone) - primary_outpost_sector - /datum/overmap_star_system/safezone/json_example)
-	var/list/wilderness_sector_types = typesof(/datum/overmap_star_system/wilderness)
+	var/primary_wilderness_sector = pick(typesof(/datum/overmap_star_system/wilderness))
+	var/secondary_wilderness_sector = pick(typesof(/datum/overmap_star_system/wilderness) - primary_wilderness_sector)
 
 	/* needs refactor for multi outpost
 	if(fexists(SAFEZONE_OVERRIDE_FILEPATH))
@@ -79,11 +80,11 @@ SUBSYSTEM_DEF(overmap)
 	//4 systems. Outpost-Wilderness-Outpost-Wilderness
 	tracked_star_systems[1] = spawn_new_star_system(primary_outpost_sector)
 	safe_sectors += tracked_star_systems[1]
-	tracked_star_systems[2] = spawn_new_star_system(pick(wilderness_sector_types))
+	tracked_star_systems[2] = spawn_new_star_system(primary_wilderness_sector)
 	wild_sectors += tracked_star_systems[2]
 	tracked_star_systems[3] = spawn_new_star_system(secondary_outpost_sector)
 	safe_sectors += tracked_star_systems[3]
-	tracked_star_systems[4] = spawn_new_star_system(pick(wilderness_sector_types))
+	tracked_star_systems[4] = spawn_new_star_system(secondary_wilderness_sector)
 	wild_sectors += tracked_star_systems[4]
 
 	looplink_4_systems()
