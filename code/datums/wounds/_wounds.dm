@@ -523,11 +523,11 @@
 	var/desc
 
 	if((wound_flags & ACCEPTS_SPLINT) && limb.current_splint)
-		desc = "[victim.p_their()] [limb.name] is [get_sling_condition()] fastened with a [limb.current_splint.name]"
+		desc = "[victim.p_their(TRUE)] [limb.name] is [get_sling_condition()] fastened with a [limb.current_splint.name]"
 	else if ((wound_flags & ACCEPTS_GAUZE) && limb.current_gauze)
-		desc = "[victim.p_their()] [limb.name] is [get_gauze_condition()] fastened in a sling of [limb.current_gauze.name]"
+		desc = "[victim.p_their(TRUE)] [limb.name] is [get_gauze_condition()] fastened in a sling of [limb.current_gauze.name]"
 	else
-		desc = "[victim.p_their()] [limb.name] [examine_desc]"
+		desc = "[victim.p_their(TRUE)] [limb.name] [examine_desc]"
 
 	desc = modify_desc_before_span(desc, user)
 

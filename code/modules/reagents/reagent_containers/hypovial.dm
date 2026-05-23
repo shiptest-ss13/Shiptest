@@ -219,6 +219,35 @@
 	amount_per_transfer_from_this = 5
 	comes_with = list(/datum/reagent/medicine/stasis = 60)
 
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/chimorph
+	name = "hypovial (ChiMorph)"
+	icon_state = "hypovial-pink"
+	amount_per_transfer_from_this = 10
+	comes_with = list(
+		/datum/reagent/medicine/morphine = 40,
+		/datum/reagent/medicine/chitosan = 20
+	)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/critmix
+	name = "hypovial (DiTroSan)"
+	icon_state = "hypovial-t"
+	amount_per_transfer_from_this = 10
+	comes_with = list(
+		/datum/reagent/medicine/dimorlin = 20,
+		/datum/reagent/medicine/atropine = 20,
+		/datum/reagent/medicine/chitosan = 10,
+		/datum/reagent/medicine/salglu_solution = 10,
+	)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/panacea
+	name = "hypovial (Panacea)"
+	icon_state = "hypovial-p"
+	amount_per_transfer_from_this = 10
+	comes_with = list(
+		/datum/reagent/medicine/panacea = 60
+	)
+
+
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/CMO
 	name = "deluxe hypovial"
 	icon_state = "hypoviallarge-cmos"
@@ -259,15 +288,30 @@
 	icon_state = "hypoviallarge-a"
 	comes_with = list(/datum/reagent/medicine/salglu_solution = 120)
 
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/morphine
+	name = "large hypovial (morphine)"
+	icon_state = "hypoviallarge-t"
+	comes_with = list(/datum/reagent/medicine/morphine = 120)
+
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/hadramide
+	name = "large hypovial (hadra-mide)"
+	icon_state = "hypoviallarge-b"
+	comes_with = list(/datum/reagent/medicine/indomide = 40, /datum/reagent/medicine/cureall = 40, /datum/reagent/medicine/hadrakine = 40)
+
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/quadratane
+	name = "large green hypovial (quadra-tane)"
+	icon_state = "hypoviallarge-k"
+	comes_with = list(/datum/reagent/medicine/quardexane = 40, /datum/reagent/medicine/alvitane = 40, /datum/reagent/medicine/cureall = 40)
+
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/synthflesh
 	name = "large orange hypovial (synthflesh)"
 	icon_state = "hypoviallarge-k"
 	comes_with = list(/datum/reagent/medicine/synthflesh = 120)
 
-/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/morphine
-	name = "large hypovial (morphine)"
-	icon_state = "hypoviallarge-t"
-	comes_with = list(/datum/reagent/medicine/morphine = 120)
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/pancrazine
+	name = "large hypovial (pancrazine)"
+	icon_state = "hypoviallarge-a"
+	comes_with = list(/datum/reagent/medicine/pancrazine = 120)
 
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/combat
 	name = "combat hypovial"

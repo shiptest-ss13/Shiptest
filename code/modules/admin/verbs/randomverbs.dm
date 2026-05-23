@@ -1206,11 +1206,11 @@
 				if(!squish_part)
 					continue
 				var/severity = pick(list(
-					"[WOUND_SEVERITY_MODERATE]",
-					"[WOUND_SEVERITY_SEVERE]",
-					"[WOUND_SEVERITY_SEVERE]",
-					"[WOUND_SEVERITY_CRITICAL]",
-					"[WOUND_SEVERITY_CRITICAL]",
+					WOUND_SEVERITY_MODERATE,
+					WOUND_SEVERITY_SEVERE,
+					WOUND_SEVERITY_SEVERE,
+					WOUND_SEVERITY_CRITICAL,
+					WOUND_SEVERITY_CRITICAL,
 				))
 				C.cause_wound_of_type_and_severity(WOUND_BLUNT, squish_part, severity)
 

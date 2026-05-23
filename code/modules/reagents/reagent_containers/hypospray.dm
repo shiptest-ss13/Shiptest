@@ -88,7 +88,7 @@
 	icon_state = "combat_hypo"
 	volume = 90
 	ignore_flags = 1 // So they can heal their comrades.
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 30, /datum/reagent/medicine/panacea = 30, /datum/reagent/medicine/leporazine = 15, /datum/reagent/medicine/atropine = 15)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 30, /datum/reagent/medicine/panacea = 30, /datum/reagent/medicine/dimorlin = 15, /datum/reagent/medicine/atropine = 15)
 
 //MediPens
 
@@ -437,6 +437,14 @@
 
 /obj/item/hypospray/mkii/cureall
 	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/cureall
+
+//morphine administered
+/obj/item/hypospray/mkii/morphine
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/morphine
+
+/obj/item/hypospray/mkii/chimorph
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/chimorph
+
 
 /obj/item/hypospray/mkii/mkiii
 	name = "hypospray mk.III"

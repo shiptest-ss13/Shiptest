@@ -115,6 +115,19 @@
 
 	chameleon_extras = /obj/item/stamp/warra/vigilitas/captain
 
+/datum/outfit/job/warra/captain/vi/empty
+	name = "Makosso-Warra - Captain (Vigilitas Interstellar) (Naked)"
+
+	head = null
+	suit = null
+	ears = null
+	alt_suit = null
+	glasses = null
+	gloves = null
+	neck = null
+	belt = null
+	backpack_contents = null
+
 /datum/outfit/job/warra/captain/centcom
 	name = "Makosso-Warra - Captain (Central Command)"
 
@@ -220,6 +233,21 @@
 	box = /obj/item/storage/box/survival/vi
 
 	chameleon_extras = /obj/item/stamp/warra/vigilitas/security
+
+/datum/outfit/job/warra/hos/vi/empty
+	name = "Makosso-Warra - Vigilitas Sergeant (Naked)"
+
+	head = null
+	suit = null
+	ears = null
+	alt_suit = null
+	glasses = null
+	gloves = null
+	neck = null
+	r_pocket = null
+	l_pocket = null
+	belt = null
+	backpack_contents = null
 
 // Security Officer
 /datum/outfit/job/warra/security
@@ -761,83 +789,6 @@
 	head = /obj/item/clothing/head/beret/sec/officer
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
-
-// LP - for Ranger ship //
-
-/datum/outfit/job/warra/captain/lp
-	name = "Makosso-Warra - Loss Prevention Lieutenant"
-	id_assignment = "Lieutenant"
-
-	implants = list(/obj/item/implant/mindshield)
-	ears = /obj/item/radio/headset/warra/alt/captain
-	id = /obj/item/card/id/lplieu
-	belt = /obj/item/pda/captain
-	gloves = /obj/item/clothing/gloves/color/black
-	uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/lp
-	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/skirt/lp
-	dcoat = /obj/item/clothing/suit/armor/warra/sec_director
-	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/beret/command
-
-	satchel = /obj/item/storage/backpack/satchel/cap
-	duffelbag = /obj/item/storage/backpack/duffelbag/captain
-	courierbag = /obj/item/storage/backpack/messenger/com
-
-/datum/outfit/job/warra/security/lp
-	name = "Makosso-Warra - LP Security Specialist"
-	id_assignment = "Security Specialist"
-
-	implants = list(/obj/item/implant/mindshield)
-	ears = /obj/item/radio/headset/warra/alt/captain
-	id = /obj/item/card/id/lpsec
-	belt = /obj/item/pda/security
-	gloves = /obj/item/clothing/gloves/color/black
-	uniform = /obj/item/clothing/under/rank/security/head_of_security/warra/lp
-	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/warra/skirt/lp
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
-	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/beret/sec
-
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	courierbag = /obj/item/storage/backpack/messenger/sec
-
-/datum/outfit/job/warra/engineer/lp
-	name = "Makosso-Warra - LP Engineering Specialist"
-
-	implants = list(/obj/item/implant/mindshield)
-	ears = /obj/item/radio/headset/warra/alt/captain
-	id = /obj/item/card/id/lpengie
-	gloves = /obj/item/clothing/gloves/color/yellow
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/warra/lp
-	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/warra/skirt/lp
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
-	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/beret/eng
-
-	satchel = /obj/item/storage/backpack/satchel/eng
-	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
-	courierbag = /obj/item/storage/backpack/messenger/engi
-
-/datum/outfit/job/warra/doctor/lp
-	name = "Makosso-Warra - LP Medical Specialist"
-	id_assignment = "Medical Specialist"
-
-	implants = list(/obj/item/implant/mindshield)
-	ears = /obj/item/radio/headset/warra/alt/captain
-	id = /obj/item/card/id/lpmed
-	belt = /obj/item/pda/medical
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
-	uniform = /obj/item/clothing/under/rank/medical/paramedic/lp
-	alt_uniform = /obj/item/clothing/under/rank/medical/paramedic/skirt/lp
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
-	shoes = /obj/item/clothing/shoes/sneakers/white
-	head = /obj/item/clothing/head/beret/med
-
-	satchel = /obj/item/storage/backpack/satchel/med
-	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	courierbag = /obj/item/storage/backpack/messenger/med
-	box = /obj/item/storage/box/survival/medical
 
 // ERT //
 
