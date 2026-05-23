@@ -1824,9 +1824,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/machinery/vending/clothing,
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
@@ -5043,10 +5041,7 @@
 /turf/open/floor/plasteel,
 /area/outpost/vacant_rooms)
 "zY" = (
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = 5
-	},
+/obj/structure/noticeboard/directional/west,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/outpost/cargo/smeltery)
 "Aa" = (
