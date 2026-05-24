@@ -37,6 +37,7 @@
 	var/datum/overmap_star_system/jump_destination
 	/// If we are jumping, what cords are we jumping to?
 	var/list/jump_coords
+	var/turn_off = FALSE
 
 /obj/machinery/computer/helm/retro
 	icon = 'icons/obj/machines/retro_computer.dmi'
@@ -92,6 +93,8 @@
 	if(!calibrating)
 		return
 	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
+	if(turn_off)
+		jump_state = JUMP_STATE_OFF
 	calibrating = FALSE
 	jump_coords = null
 	deltimer(jump_timer)
