@@ -525,7 +525,9 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "fM" = (
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 25
+	},
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 5
 	},

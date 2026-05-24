@@ -968,8 +968,9 @@
 /turf/open/floor/carpet/executive,
 /area/ship/crew/law_office)
 "eZ" = (
-/obj/structure/noticeboard/directional/north{
-	name = "Supply Requests Board"
+/obj/structure/noticeboard{
+	name = "Supply Requests Board";
+	pixel_y = 25
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/eastright,

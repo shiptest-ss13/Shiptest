@@ -1598,7 +1598,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/structure/noticeboard/directional/east,
+/obj/structure/noticeboard{
+	dir = 8;
+	pixel_x = 25
+	},
 /turf/open/floor/plasteel/grimy,
 /area/outpost/crew/bar)
 "gI" = (
@@ -4902,8 +4905,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/caution,
-/obj/structure/noticeboard/directional/east{
-	name = "refinery notice board"
+/obj/structure/noticeboard{
+	name = "refinery notice board";
+	dir = 8;
+	pixel_x = 26
 	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 6
@@ -6100,7 +6105,10 @@
 "xJ" = (
 /obj/effect/turf_decal/corner/opaque/neutral/half,
 /obj/structure/table,
-/obj/structure/noticeboard/directional/south,
+/obj/structure/noticeboard{
+	pixel_y = -24;
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
 "xK" = (
@@ -8031,7 +8039,9 @@
 	dir = 1
 	},
 /obj/structure/table,
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 25
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
 "EX" = (

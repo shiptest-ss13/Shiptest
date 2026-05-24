@@ -36,10 +36,7 @@
 		/obj/item/storage/pill_bottle/licarb = 4,
 		/obj/item/storage/pill_bottle/charcoal/less = 2,
 		/obj/item/reagent_containers/syringe/stasis = 4,
-		/obj/item/reagent_containers/syringe/antiviral = 4,
-		/obj/item/storage/pill_bottle/placebatol = 10,
-		/obj/item/reagent_containers/hypospray/medipen/placebatol = 10,
-		/obj/item/inhaler/placebatol = 10
+		/obj/item/reagent_containers/syringe/antiviral = 4
 	)
 	premium = list(
 		/obj/item/reagent_containers/medigel/hadrakine = 3,

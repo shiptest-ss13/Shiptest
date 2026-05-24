@@ -653,7 +653,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security)
 "fa" = (
-/obj/structure/noticeboard/directional/east,
+/obj/structure/noticeboard{
+	dir = 8;
+	pixel_x = 26
+	},
 /obj/item/paper/fluff/ruins/wasteplanet/reminder,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/security)

@@ -4817,8 +4817,11 @@
 /area/ruin/lavaland/factory/lobby)
 "XM" = (
 /obj/machinery/newscaster/directional/west,
+/obj/structure/noticeboard/staff{
+	dir = 1;
+	pixel_y = -26
+	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/noticeboard/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "XR" = (

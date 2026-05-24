@@ -25,18 +25,11 @@
 	neck = null
 	mask = /obj/item/clothing/mask/gas/frontiersmen
 
-/datum/outfit/frontier/internals/tagless
-	name = "Tagless Frontiersman Corpse Internals"
-	neck = null
-
 /obj/effect/mob_spawn/human/corpse/frontier/ranged
 	outfit = /datum/outfit/frontier
 
 /obj/effect/mob_spawn/human/corpse/frontier/fake
 	outfit = /datum/outfit/frontier/internals/fake
-
-/obj/effect/mob_spawn/human/corpse/frontier/tagless
-	outfit = /datum/outfit/frontier/internals/tagless
 
 /obj/effect/mob_spawn/human/corpse/frontier/space
 	outfit = /datum/outfit/frontier/trooper/space

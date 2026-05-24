@@ -4041,7 +4041,10 @@
 /area/ship/cargo)
 "TU" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/structure/noticeboard/directional/west,
+/obj/structure/noticeboard{
+	dir = 4;
+	pixel_x = -32
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)

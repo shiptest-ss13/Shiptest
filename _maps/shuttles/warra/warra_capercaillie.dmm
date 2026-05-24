@@ -2195,7 +2195,9 @@
 /obj/effect/turf_decal/corner/opaque/vired{
 	dir = 9
 	},
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -4029,7 +4031,10 @@
 /obj/structure/sign/warra/vigilitas{
 	pixel_y = 32
 	},
-/obj/structure/noticeboard/directional/west,
+/obj/structure/noticeboard{
+	dir = 4;
+	pixel_x = -25
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
@@ -4769,7 +4774,9 @@
 	pixel_y = 4;
 	pixel_x = 2
 	},
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /obj/item/reagent_containers/glass/rag{
 	pixel_y = 3;
 	pixel_x = 7
@@ -5457,7 +5464,9 @@
 	pixel_y = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "VS" = (
@@ -5843,7 +5852,9 @@
 	pixel_y = 8
 	},
 /obj/item/radio/headset/warra/alt,
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Yo" = (

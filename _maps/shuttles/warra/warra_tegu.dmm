@@ -1584,7 +1584,10 @@
 	dir = 4
 	},
 /obj/item/toy/plush/moth/atlas,
-/obj/structure/noticeboard/directional/west,
+/obj/structure/noticeboard{
+	dir = 4;
+	pixel_x = -25
+	},
 /turf/open/floor/wood,
 /area/ship/cargo/office)
 "mG" = (
@@ -3727,7 +3730,9 @@
 	},
 /obj/effect/turf_decal/borderfloor,
 /obj/structure/chair/handrail,
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/hallway/central)
 "FY" = (
