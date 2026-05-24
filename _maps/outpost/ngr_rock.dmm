@@ -3965,6 +3965,14 @@
 	},
 /turf/open/floor/pod/dark,
 /area/outpost/security/checkpoint)
+"iN" = (
+/obj/effect/turf_decal/corner/opaque/tan/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor,
+/obj/structure/noticeboard/directional/south,
+/turf/open/floor/plasteel/tech,
+/area/outpost/security/armory)
 "iO" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -9287,6 +9295,7 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/noticeboard/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/checkpoint)
 "tR" = (
@@ -13840,6 +13849,7 @@
 	pixel_y = 6;
 	pixel_x = 6
 	},
+/obj/structure/noticeboard/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/checkpoint)
 "DQ" = (
@@ -14177,6 +14187,7 @@
 	},
 /obj/machinery/photocopier,
 /obj/effect/turf_decal/trimline/opaque/bar/line,
+/obj/structure/noticeboard/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
 "EB" = (
@@ -14403,6 +14414,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 6
 	},
+/obj/structure/noticeboard/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "Fe" = (
@@ -23388,10 +23400,8 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/structure/noticeboard{
-	pixel_y = 27
-	},
 /obj/machinery/jukebox/boombox,
+/obj/structure/noticeboard/directional/north,
 /turf/open/floor/pod/dark,
 /area/outpost/engineering)
 "Zd" = (
@@ -34640,7 +34650,7 @@ pL
 JE
 RE
 et
-LI
+iN
 gQ
 Tk
 Tk
