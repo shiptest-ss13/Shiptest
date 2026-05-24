@@ -434,7 +434,9 @@
 /obj/effect/turf_decal/trimline/opaque/solgovblue/filled/line{
 	dir = 1
 	},
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 32
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3405,7 +3407,10 @@
 	desc = "For cleaning up messes when you wake up.";
 	name = "solarian anti-vomit rag"
 	},
-/obj/structure/noticeboard/directional/east,
+/obj/structure/noticeboard{
+	dir = 8;
+	pixel_x = 32
+	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},

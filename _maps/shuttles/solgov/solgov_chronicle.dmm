@@ -2810,7 +2810,10 @@
 	pixel_y = 9
 	},
 /obj/structure/table/wood/fancy/blue,
-/obj/structure/noticeboard/directional/west,
+/obj/structure/noticeboard{
+	dir = 4;
+	pixel_x = -25
+	},
 /obj/item/binoculars{
 	pixel_x = 4;
 	pixel_y = 6
@@ -5688,7 +5691,10 @@
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 10
 	},
-/obj/structure/noticeboard/directional/west,
+/obj/structure/noticeboard{
+	dir = 4;
+	pixel_x = -25
+	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/cryo)

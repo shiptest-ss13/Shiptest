@@ -10253,7 +10253,10 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/noticeboard/directional/east,
+/obj/structure/noticeboard{
+	dir = 8;
+	pixel_x = 31
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/library)
 "Hn" = (

@@ -2832,7 +2832,9 @@
 /area/ship/crew/canteen)
 "oq" = (
 /obj/structure/chair/handrail,
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
@@ -4901,7 +4903,9 @@
 	name = "Monitor Deco";
 	desc = "A little pill shaped guy, they diligently monitor the camera network for suspicious activity."
 	},
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /obj/item/paper/guides/bodycam{
 	pixel_x = 8;
 	pixel_y = 15
@@ -9979,7 +9983,10 @@
 	name = "Oxygen to Air Mix, Burn Mix"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/noticeboard/directional/east,
+/obj/structure/noticeboard{
+	dir = 8;
+	pixel_x = 25
+	},
 /obj/item/paper/guides/jobs/engi/combustion_thruster{
 	pixel_x = 10
 	},

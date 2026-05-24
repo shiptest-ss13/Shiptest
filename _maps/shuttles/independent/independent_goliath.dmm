@@ -1560,8 +1560,10 @@
 /area/ship/engineering/electrical)
 "kl" = (
 /obj/structure/table,
-/obj/structure/noticeboard/directional/south{
-	name = "Supply Requests Board"
+/obj/structure/noticeboard{
+	name = "Supply Requests Board";
+	pixel_y = -25;
+	dir = 1
 	},
 /obj/item/stack/tape{
 	pixel_y = 9
@@ -5842,7 +5844,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/noticeboard/directional/west,
+/obj/structure/noticeboard{
+	dir = 4;
+	pixel_x = -25
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)

@@ -2279,7 +2279,9 @@
 /area/ship/hallway/fore)
 "RU" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 26
+	},
 /obj/structure/chair/handrail,
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)

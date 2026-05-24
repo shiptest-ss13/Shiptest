@@ -140,7 +140,8 @@
 
 ///Grinds the passed target item, and transfers any contained chems to the mortar as well
 /obj/structure/large_mortar/proc/grind_target_item(obj/item/to_be_ground, mob/living/carbon/human/user)
-	reagents.add_reagent_list(to_be_ground.on_grind())
+	to_be_ground.on_grind()
+	reagents.add_reagent_list(to_be_ground.grind_results)
 
 	if(to_be_ground.reagents) //If grinded item has reagents within, transfer them to the mortar
 		to_be_ground.reagents.trans_to(src, to_be_ground.reagents.total_volume, transfered_by = user)

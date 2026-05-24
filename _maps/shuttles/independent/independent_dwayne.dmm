@@ -2102,7 +2102,10 @@
 /obj/machinery/recharger{
 	pixel_x = 6
 	},
-/obj/structure/noticeboard/directional/south,
+/obj/structure/noticeboard{
+	dir = 1;
+	pixel_y = -25
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "tI" = (
@@ -5532,7 +5535,10 @@
 /area/ship/hallway/central)
 "Yq" = (
 /obj/structure/table,
-/obj/structure/noticeboard/directional/west,
+/obj/structure/noticeboard{
+	dir = 4;
+	pixel_x = -25
+	},
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},

@@ -925,7 +925,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 8
 	},
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 25
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "if" = (
@@ -1376,7 +1378,10 @@
 "my" = (
 /obj/effect/turf_decal/techfloor,
 /obj/structure/table/reinforced,
-/obj/structure/noticeboard/directional/east,
+/obj/structure/noticeboard{
+	dir = 8;
+	pixel_x = 25
+	},
 /obj/item/radio{
 	pixel_x = -9;
 	pixel_y = 7
@@ -3610,7 +3615,10 @@
 "JT" = (
 /obj/machinery/washing_machine,
 /obj/machinery/light/small/directional/east,
-/obj/structure/noticeboard/directional/south,
+/obj/structure/noticeboard{
+	pixel_y = -25;
+	dir = 1
+	},
 /obj/item/paper/fluff/ship/pgf/triage,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)

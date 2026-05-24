@@ -248,7 +248,10 @@
 /area/ship/engineering)
 "bI" = (
 /obj/structure/table/chem,
-/obj/structure/noticeboard/directional/west,
+/obj/structure/noticeboard{
+	dir = 4;
+	pixel_x = -25
+	},
 /obj/item/paper_bin{
 	pixel_x = -5;
 	pixel_y = 4
@@ -5201,7 +5204,9 @@
 	dir = 5
 	},
 /obj/structure/table/chem,
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /obj/item/stack/medical/bone_gel/four{
 	pixel_x = -9;
 	pixel_y = 15
@@ -6491,7 +6496,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "UY" = (
-/obj/structure/noticeboard/directional/south,
+/obj/structure/noticeboard{
+	dir = 1;
+	pixel_y = -25
+	},
 /obj/effect/turf_decal/industrial/hatch/blue,
 /obj/machinery/computer/atmos_control/external{
 	dir = 1;

@@ -694,7 +694,9 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 31
+	},
 /obj/structure/cable/pink{
 	icon_state = "4-10"
 	},

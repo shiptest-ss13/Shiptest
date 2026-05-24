@@ -457,17 +457,6 @@
 	stock_max = 2
 	availability_prob = 25
 
-/datum/blackmarket_item/weapon/guncase/gaboon
-	name = "CSG-12 Gaboon Compact Shotgun"
-	desc = "These old ass Scarborough designs are easy to find layin' around, especially these cute little relics. Unlike their newer toys it's pump-action so make sure you get your hand exercises in, yeah?"
-	item = /obj/item/gun/ballistic/shotgun/gaboon
-
-	cost_min = 2500
-	cost_max = 3200
-	stock_min = 1
-	stock_max = 2
-	availability_prob = 25
-
 /datum/blackmarket_item/weapon/guncase/f3
 	name = "F3 Marksman Rifle"
 	desc = "Let's bring it back old school. These vintage marksman rifles were the predecessor to the F4, but that doesn't make them any less deadly. After all, 3 is closer to number 1! Chambered in .308."

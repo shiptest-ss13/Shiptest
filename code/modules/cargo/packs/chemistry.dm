@@ -56,14 +56,6 @@
 	contains = list(/obj/machinery/chem_press)
 	crate_name = "pill press crate"
 
-/datum/supply_pack/chemistry/reagent_scanner
-	name = "Reagent Scanner Crate"
-	desc = "Contains one reagent scanner. Great to know the chemical composition of something"
-	cost = 125
-	contains = list(/obj/item/reagent_scanner)
-	crate_name = "reagent scanner crate"
-
-
 /* Machinery */
 
 /datum/supply_pack/chemistry/chem_heater

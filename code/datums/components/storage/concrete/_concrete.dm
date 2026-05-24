@@ -177,9 +177,6 @@
 		return FALSE
 	I.on_enter_storage(master)
 	I.item_flags |= IN_STORAGE
-	// makes the item centered, still won't make ores look good
-	I.pixel_x = I.base_pixel_x
-	I.pixel_y = I.base_pixel_y
 	refresh_mob_views()
 	I.mouse_opacity = MOUSE_OPACITY_OPAQUE //So you can click on the area around the item to equip it, instead of having to pixel hunt
 	if(M)

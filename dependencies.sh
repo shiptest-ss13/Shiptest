@@ -21,7 +21,7 @@ export NODE_VERSION_PRECISE=16.13.0
 export SPACEMAN_DMM_VERSION=suite-1.8
 
 # Python version for mapmerge and other tools
-export PYTHON_VERSION=3.10.0
+export PYTHON_VERSION=3.9.0
 
 #auxmos repository
 export AUXMOS_REPO=https://github.com/shiptest-ss13/auxmos

@@ -785,7 +785,9 @@
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm/captain)
 "jS" = (
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 26
+	},
 /obj/item/paper/guides/bodycam{
 	pixel_x = 1;
 	pixel_y = 23
@@ -4062,7 +4064,11 @@
 "RT" = (
 /obj/structure/railing/thin,
 /obj/structure/table/wood/reinforced,
-/obj/structure/noticeboard/directional/east,
+/obj/structure/noticeboard{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 6
+	},
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},

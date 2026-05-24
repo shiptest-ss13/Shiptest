@@ -4917,7 +4917,10 @@
 "Kf" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_x = 2;
+	pixel_y = 26
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Ki" = (

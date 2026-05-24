@@ -582,7 +582,7 @@
 
 /obj/item/storage/pill_bottle/placebatol
 	name = "bottle of prescription pills"
-	desc = "A bottle of prescription medication. There is a small label reading: \"TAKE ONLY AS DIRECTED\"."
+	desc = "Contains pills as prescribed. A tag reads: \"NO MEDICINAL EFFECT\"."
 
 /obj/item/storage/pill_bottle/placebatol/PopulateContents()
 	for(var/i in 1 to 7)

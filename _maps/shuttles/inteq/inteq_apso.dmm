@@ -625,7 +625,9 @@
 /obj/item/clothing/head/helmet/space/inteq,
 /obj/item/clothing/mask/gas/inteq,
 /obj/machinery/airalarm/directional/east,
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "kj" = (

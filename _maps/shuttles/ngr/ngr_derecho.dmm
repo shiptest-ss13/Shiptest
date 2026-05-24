@@ -723,8 +723,10 @@
 	dir = 8
 	},
 /obj/structure/closet/crate/bin,
-/obj/structure/noticeboard/directional/east{
-	name = "menu board"
+/obj/structure/noticeboard{
+	dir = 8;
+	name = "menu board";
+	pixel_x = 28
 	},
 /obj/machinery/button/door{
 	id = "derecho_mess_shut";
@@ -1533,7 +1535,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
@@ -5316,7 +5320,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/noticeboard/directional/south,
+/obj/structure/noticeboard{
+	dir = 1;
+	pixel_y = -28
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "Un" = (

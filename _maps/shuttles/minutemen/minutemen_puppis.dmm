@@ -288,7 +288,10 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5{
 	dir = 8
 	},
-/obj/structure/noticeboard/directional/south,
+/obj/structure/noticeboard{
+	dir = 1;
+	pixel_y = -25
+	},
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -2578,7 +2581,9 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 4
 	},
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)

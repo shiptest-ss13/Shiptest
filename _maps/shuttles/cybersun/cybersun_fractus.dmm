@@ -2035,8 +2035,10 @@
 	dir = 4
 	},
 /obj/structure/table/glass,
-/obj/structure/noticeboard/directional/west{
-	name = "cryogenics notice board"
+/obj/structure/noticeboard{
+	name = "cryogenics notice board";
+	dir = 4;
+	pixel_x = -25
 	},
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -4021,7 +4023,8 @@
 	icon_state = "plant-16";
 	pixel_y = 11
 	},
-/obj/structure/noticeboard/directional/north{
+/obj/structure/noticeboard{
+	pixel_y = 27;
 	name = "dormitory noticeboard"
 	},
 /turf/open/floor/plasteel/mono/dark,

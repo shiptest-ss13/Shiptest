@@ -13,7 +13,11 @@
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
-/obj/structure/noticeboard/directional/east,
+/obj/structure/noticeboard{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = -9
+	},
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_y = 34
 	},
@@ -1625,7 +1629,9 @@
 /turf/open/floor/wood/maple,
 /area/ship/crew/dorm/captain)
 "kO" = (
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /obj/machinery/holopad,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -4199,7 +4205,10 @@
 	pixel_x = -7;
 	pixel_y = 1
 	},
-/obj/structure/noticeboard/directional/west,
+/obj/structure/noticeboard{
+	dir = 4;
+	pixel_x = -25
+	},
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_y = -20;
@@ -4342,7 +4351,10 @@
 /area/ship/hallway/port)
 "EQ" = (
 /obj/structure/table,
-/obj/structure/noticeboard/directional/east,
+/obj/structure/noticeboard{
+	dir = 8;
+	pixel_x = 25
+	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/line{
 	dir = 5
 	},
@@ -4521,7 +4533,9 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "FT" = (
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/dirt,
@@ -5498,7 +5512,9 @@
 "Mz" = (
 /obj/structure/chair/sofa/brown/corpo/left/directional/south,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/aft)
 "MA" = (
@@ -7228,7 +7244,10 @@
 	pixel_y = 36;
 	pixel_x = -8
 	},
-/obj/structure/noticeboard/directional/east,
+/obj/structure/noticeboard{
+	dir = 8;
+	pixel_x = 25
+	},
 /obj/item/paper/guides/drill{
 	pixel_y = 8;
 	pixel_x = 8

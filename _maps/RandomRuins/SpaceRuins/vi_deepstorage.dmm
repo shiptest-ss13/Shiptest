@@ -4664,7 +4664,10 @@
 	pixel_x = -11;
 	pixel_y = 22
 	},
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_x = 8;
+	pixel_y = 24
+	},
 /obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders{
 	pixel_x = 9;
 	pixel_y = 21
@@ -4724,7 +4727,10 @@
 /area/ruin/space/has_grav/deepstorage/lobby)
 "En" = (
 /obj/structure/chair/office/dark,
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_x = 0;
+	pixel_y = 26
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/deepstorage/engineering)
 "Eq" = (
@@ -5582,7 +5588,10 @@
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 1
 	},
-/obj/structure/noticeboard/directional/north,
+/obj/structure/noticeboard{
+	pixel_x = 0;
+	pixel_y = 26
+	},
 /obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders{
 	pixel_x = 3;
 	pixel_y = 25
@@ -7246,7 +7255,11 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 10
 	},
-/obj/structure/noticeboard/directional/south,
+/obj/structure/noticeboard{
+	pixel_x = 0;
+	pixel_y = -24;
+	dir = 1
+	},
 /obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders{
 	pixel_x = 0;
 	pixel_y = -18
