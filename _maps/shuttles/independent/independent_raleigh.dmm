@@ -1093,9 +1093,8 @@
 	dir = 1
 	},
 /obj/structure/chair/comfy/red/old/directional/east,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 8
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/security)
@@ -2370,9 +2369,8 @@
 	dir = 6
 	},
 /obj/item/radio/intercom/directional/north,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 8
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/security)
@@ -3919,9 +3917,8 @@
 	pixel_x = 4;
 	pixel_y = 10
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 8
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/security)
@@ -4535,10 +4532,7 @@
 	dir = 1
 	},
 /obj/machinery/computer/cryopod/directional/south,
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/structure/noticeboard/directional/east,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/cryo)
 "TD" = (
@@ -5295,9 +5289,8 @@
 	dir = 5
 	},
 /obj/structure/table/reinforced,
-/obj/structure/noticeboard{
-	name = "kitchen notice board";
-	pixel_y = 25
+/obj/structure/noticeboard/directional/north{
+	name = "kitchen notice board"
 	},
 /obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 8;

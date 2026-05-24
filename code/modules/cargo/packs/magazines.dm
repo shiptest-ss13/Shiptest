@@ -245,7 +245,7 @@
 	cost = 300
 	faction = /datum/faction/clip
 
-/datum/supply_pack/magazine/cm82_mag
+/datum/supply_pack/magazine/cm82_extended_mag
 	name = "Extended CM-82 Magazine Crate"
 	desc = "Contains a 5.56mm magazine for the CM-82 rifle, with a capacity of fourty-five rounds."
 	contains = list(/obj/item/ammo_box/magazine/p16/extended/empty)

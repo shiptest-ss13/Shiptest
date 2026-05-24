@@ -294,10 +294,18 @@
 	crate_name = "beam volleygun crate"
 	faction = /datum/faction/pgf
 
+/datum/supply_pack/gun/laser/kalix/hunt
+	name = "Etherbor HBS-110 Beam Rifle Crate"
+	desc = "Contains a single HBS-110 Beam Rifle, a civilian-grade hunting rifle developed in the PGF, manufactured by Etherbor Industries."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/energy/kalixhunt)
+	crate_name = "beam rifle crate"
+	faction = /datum/faction/pgf
+
 /datum/supply_pack/gun/laser/vga5
 	name = "Etherbor VG-A5 Beam Volleygun Crate"
 	desc = "Contains a single VG-A5 Beam Volleygun, a military-grade volleygun developed in the PGF and manufactured by Etherbor Industries for use within the PGF armed forces."
-	cost = 4000
+	cost = 3000
 	contains = list(/obj/item/storage/guncase/energy/vga5)
 	crate_name = "beam volleygun crate"
 	faction = /datum/faction/pgf
@@ -327,7 +335,7 @@
 /datum/supply_pack/gun/laser/bgc10
 	name = "Etherbor BGC-10 Beam Carbine Crate"
 	desc = "Contains a single BGC-10 Beam Carbine, an intermediate military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the PGF armed forces."
-	cost = 5000
+	cost = 4000
 	contains = list(/obj/item/storage/guncase/energy/bgc10)
 	crate_name = "beam carbine crate"
 	faction = /datum/faction/pgf
@@ -337,9 +345,19 @@
 /datum/supply_pack/gun/laser/hbg7
 	name = "Etherbor HBG-7 Beam Rifle Crate"
 	desc = "Contains a single HBG-7 Beam Rifle, a high power military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the PGF armed forces."
-	cost = 6000
+	cost = 5000
 	contains = list(/obj/item/storage/guncase/energy/hbg7)
 	crate_name = "beam rifle crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/laser/hbg7l
+	name = "Etherbor HBG-7L Beam DMR Crate"
+	desc = "Contains a single HBG-7l Beam DMR, a precision military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the PGF armed forces."
+	cost = 6000
+	contains = list(/obj/item/storage/guncase/energy/hbg7l)
+	crate_name = "beam DMR crate"
 	faction = /datum/faction/pgf
 	faction_discount = 0
 	faction_locked = TRUE
@@ -436,6 +454,16 @@
 	desc = "An automatic shotgun chambered in 12ga produced by Scarborough Arms for exclusive use by licensed buyers. Comes with 8-round box magazines."
 	contains = list(/obj/item/storage/guncase/bulldog)
 	cost = 4000
+	crate_name = "shotgun crate"
+	faction = /datum/faction/syndicate/scarborough
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/gaboon
+	name = "Gaboon Compact Shotgun Crate"
+	desc = "A pump action shotgun chambered in 12ga produced by Scarborough Arms."
+	contains = list(/obj/item/storage/guncase/gaboon)
+	cost = 2000
 	crate_name = "shotgun crate"
 	faction = /datum/faction/syndicate/scarborough
 	faction_discount = 0
@@ -603,7 +631,7 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/cm5
+/datum/supply_pack/gun/cm5c
 	name = "CM-5c Compact SMG Crate"
 	desc = "Contains a CM-5c compact automatic SMG, produced proudly within Lanchester City. Confederated Minutemen issue only."
 	cost = 2000

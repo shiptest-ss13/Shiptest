@@ -8081,10 +8081,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/beige/half,
-/obj/effect/spawner/random/vending/cola,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
+/obj/machinery/vending/grocery/ngr,
 /turf/open/floor/plasteel,
 /area/outpost/crew/canteen)
 "GG" = (
@@ -12739,9 +12739,7 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/structure/noticeboard{
-	pixel_y = 27
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/item/paper_bin{
 	pixel_y = 4
 	},

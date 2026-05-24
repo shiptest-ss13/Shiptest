@@ -585,6 +585,49 @@
 /mob/living/is_injectable(mob/user, allowmobs = TRUE)
 	return (allowmobs && reagents && can_inject(user))
 
+/mob/living/reagent_scan()
+	if(!reagents)
+		return ""
+
+	var/list/render_list = list() //The master list of readouts, including reagents in the blood/stomach, quirks, etc.
+	var/list/render_block = list() //A second block of readout strings. If this ends up empty after checking stomach/blood contents, we give the "empty" header.
+
+	// Blood reagents
+	if(reagents.reagent_list.len)
+		for(var/r in reagents.reagent_list)
+			var/datum/reagent/reagent = r
+			render_block += "<span class='notice ml-2'>[round(reagent.volume, 0.001)] units of [reagent.name][reagent.overdosed ? "</span> - [span_bolddanger("OVERDOSING")]" : ".</span>"]<br>"
+
+	if(!length(render_block)) //If no VISIBLY DISPLAYED reagents are present, we report as if there is nothing.
+		render_list += "<span class='notice ml-1'>Subject contains no reagents in their blood.</span><br>"
+	else
+		render_list += "<span class='notice ml-1'>Subject contains the following reagents in their blood:</span><br>"
+		render_list += render_block //Otherwise, we add the header, reagent readouts, and clear the readout block for use on the stomach.
+		render_block.Cut()
+
+	// Stomach reagents
+	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
+	if(belly)
+		if(belly.reagents.reagent_list.len)
+			for(var/bile in belly.reagents.reagent_list)
+				var/datum/reagent/bit = bile
+				if(!belly.food_reagents[bit.type])
+					render_block += "<span class='notice ml-2'>[round(bit.volume, 0.001)] units of [bit.name][bit.overdosed ? "</span> - <span class='boldannounce'>OVERDOSING</span>" : ".</span>"]\n"
+				else
+					var/bit_vol = bit.volume - belly.food_reagents[bit.type]
+					if(bit_vol > 0)
+						render_block += "<span class='notice ml-2'>[round(bit_vol, 0.001)] units of [bit.name][bit.overdosed ? "</span> - <span class='boldannounce'>OVERDOSING</span>" : ".</span>"]\n"
+
+		if(!length(render_block))
+			render_list += "<span class='notice ml-1'>Subject contains no reagents in their stomach.</span><br>"
+		else
+			render_list += "<span class='notice ml-1'>Subject contains the following reagents in their stomach:</span><br>"
+			render_list += render_block
+			render_block.Cut()
+
+	return jointext(render_list, "")
+
+
 ///Sets the current mob's health value. Do not call directly if you don't know what you are doing, use the damage procs, instead.
 /mob/living/proc/set_health(new_value)
 	. = health
