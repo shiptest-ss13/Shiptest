@@ -1694,10 +1694,7 @@
 	pixel_x = 7;
 	pixel_y = 3
 	},
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/ccommons)
 "oo" = (
@@ -4510,9 +4507,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/blue{
 	dir = 1
 	},
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
@@ -6038,10 +6033,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/structure/noticeboard/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office/lobby)
 "SU" = (

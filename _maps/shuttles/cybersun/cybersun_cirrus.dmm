@@ -2972,9 +2972,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/warning{
 	dir = 4
 	},
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25;
+/obj/structure/noticeboard/directional/south{
 	name = "cargo manifest board"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -4606,9 +4604,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -26;
+/obj/structure/noticeboard/directional/west{
 	name = "crew notice board"
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
