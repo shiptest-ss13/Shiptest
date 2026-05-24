@@ -552,7 +552,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br></td>"
 
-			if("moth_head" in pref_species.default_features)
+			if(("moth_head" in pref_species.default_features) && (!fbp))
 
 				dat += "<h3>Moth Head Type</h3>"
 
@@ -2450,7 +2450,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						pronouns = friendlyPronouns[pickedPronouns]
 				if("fbp")
 					fbp = !fbp
-
+					if(("moth_head" in pref_species.default_features) && (fbp))
+						features["moth_head"] = "Flat"
 				if("limbs")
 					if(href_list["customize_limb"])
 						var/limb = href_list["customize_limb"]

@@ -183,7 +183,7 @@
 
 /datum/sprite_accessory/moth_head/flat
 	name = "Flat"
-	icon_state = "flat"
+	icon_state = null //the default moth head type is flat, so this allows the overlay to be removed in the case of full body prosthetics (fbp)
 
 /datum/sprite_accessory/moth_head/probiscis
 	name = "Probiscis"
