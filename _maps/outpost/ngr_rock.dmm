@@ -8,7 +8,7 @@
 /obj/machinery/door/poddoor/shutters/indestructible{
 	dir = 8
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/crew/ngr_eng_quarters)
 "ac" = (
 /obj/effect/turf_decal/corner/opaque/beige{
@@ -1272,7 +1272,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4{
 	dir = 5
 	},
-/turf/closed/mineral/random/rockplanet,
+/turf/closed/mineral/random/rockplanet/nochance,
 /area/outpost/exterior/rock/noweather)
 "cB" = (
 /obj/effect/turf_decal/borderfloorblack/corner{
@@ -1631,7 +1631,7 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe/lit/ngr_outpost_outside,
 /area/outpost/exterior/rock)
 "dC" = (
-/turf/closed/mineral/random/rockplanet,
+/turf/closed/mineral/random/rockplanet/nochance,
 /area/outpost/vacant_rooms/office)
 "dD" = (
 /obj/effect/turf_decal/siding/wood{
@@ -4810,7 +4810,7 @@
 /area/outpost/vacant_rooms/shop)
 "kx" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4,
-/turf/closed/mineral/random/rockplanet,
+/turf/closed/mineral/random/rockplanet/nochance,
 /area/outpost/exterior/rock/noweather)
 "ky" = (
 /obj/effect/turf_decal/techfloor{
@@ -4830,7 +4830,7 @@
 	dir = 8;
 	layer = 2.040
 	},
-/turf/closed/mineral/random/rockplanet,
+/turf/closed/mineral/random/rockplanet/nochance,
 /area/outpost/exterior/rock/noweather)
 "kA" = (
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters{
@@ -4852,7 +4852,7 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
 /area/outpost/maintenance/central)
 "kE" = (
-/turf/closed/mineral/random/rockplanet,
+/turf/closed/mineral/random/rockplanet/nochance,
 /area/outpost/maintenance/aft)
 "kF" = (
 /obj/machinery/suit_storage_unit/inherit,
@@ -6111,7 +6111,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4{
 	dir = 4
 	},
-/turf/closed/mineral/random/rockplanet,
+/turf/closed/mineral/random/rockplanet/nochance,
 /area/outpost/exterior/rock/noweather)
 "mX" = (
 /obj/machinery/door/airlock/external/glass{
@@ -6595,6 +6595,9 @@
 /obj/machinery/camera,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
+"nX" = (
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/outpost/cargo)
 "nY" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
@@ -7025,6 +7028,13 @@
 	},
 /turf/open/floor/pod/dark,
 /area/outpost/crew/ngr_eng_quarters)
+"oQ" = (
+/obj/machinery/door/poddoor/ert{
+	dir = 1;
+	id = "rock_ERT"
+	},
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/outpost/maintenance/fore)
 "oR" = (
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/library)
@@ -8662,6 +8672,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
+"sz" = (
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/outpost/maintenance/fore)
 "sA" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/outpost/crew/bar)
@@ -9012,7 +9025,7 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "tm" = (
-/turf/closed/mineral/random/rockplanet,
+/turf/closed/mineral/random/rockplanet/nochance,
 /area/outpost/security/checkpoint)
 "tn" = (
 /obj/structure/cable/yellow{
@@ -9495,7 +9508,7 @@
 /turf/open/floor/wood/walnut,
 /area/outpost/security/checkpoint)
 "ul" = (
-/turf/closed/mineral/random/rockplanet,
+/turf/closed/mineral/random/rockplanet/nochance,
 /area/outpost/maintenance/fore)
 "um" = (
 /obj/machinery/door/airlock/maintenance/external/glass{
@@ -10465,6 +10478,9 @@
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/hallway/aft)
+"ww" = (
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/outpost/maintenance/central)
 "wx" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
@@ -12730,6 +12746,9 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/cargo)
+"Bt" = (
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/outpost/crew/ngr_eng_quarters)
 "Bv" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
@@ -13442,6 +13461,9 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
+/area/outpost/maintenance/fore)
+"CX" = (
+/turf/closed/indestructible/rock/rockplanet,
 /area/outpost/maintenance/fore)
 "CY" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -14331,7 +14353,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4{
 	dir = 10
 	},
-/turf/closed/mineral/random/rockplanet,
+/turf/closed/mineral/random/rockplanet/nochance,
 /area/outpost/exterior/rock/noweather)
 "ER" = (
 /obj/structure/flora/grass/rockplanet/dead,
@@ -15202,7 +15224,7 @@
 /turf/open/floor/pod/dark,
 /area/outpost/security/checkpoint)
 "GO" = (
-/turf/closed/mineral/random/rockplanet,
+/turf/closed/mineral/random/rockplanet/nochance,
 /area/outpost/hallway/fore)
 "GP" = (
 /obj/structure/flora/grass/rockplanet/dead,
@@ -18141,7 +18163,7 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
 /area/outpost/maintenance/fore)
 "Np" = (
-/turf/closed/mineral/random/rockplanet,
+/turf/closed/mineral/random/rockplanet/nochance,
 /area/outpost/maintenance/central)
 "Nq" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -18836,6 +18858,9 @@
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/outpost/medical)
+"OO" = (
+/turf/closed/indestructible/rock/rockplanet,
+/area/outpost/maintenance/central)
 "OP" = (
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
@@ -20765,7 +20790,7 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/security/armory)
 "Tk" = (
-/turf/closed/mineral/random/rockplanet,
+/turf/closed/mineral/random/rockplanet/nochance,
 /area/outpost/exterior/rock/noweather)
 "Tl" = (
 /obj/effect/turf_decal/borderfloorwhite{
@@ -21456,7 +21481,7 @@
 /obj/machinery/door/poddoor/ert{
 	dir = 4
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/maintenance/central)
 "UP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -23298,6 +23323,9 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
+"YQ" = (
+/turf/closed/indestructible/rock/rockplanet,
+/area/outpost/exterior/rock/noweather)
 "YR" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/structure/cable/yellow{
@@ -23591,7 +23619,7 @@
 /area/outpost/security/checkpoint)
 "Zu" = (
 /obj/machinery/door/poddoor/shutters/indestructible,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/cargo)
 "Zv" = (
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters{
@@ -23903,124 +23931,124 @@
 /area/outpost/cargo)
 
 (1,1,1) = {"
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
 sR
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-SY
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+Bt
 ab
-SY
+Bt
 UO
 UO
 UO
 UO
 UO
-xO
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
-Np
+ww
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
+OO
 "}
 (2,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -24134,10 +24162,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (3,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -24251,10 +24279,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (4,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -24368,10 +24396,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (5,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -24485,10 +24513,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (6,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -24602,10 +24630,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (7,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -24719,10 +24747,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (8,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -24836,10 +24864,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (9,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -24953,10 +24981,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (10,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -25070,10 +25098,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (11,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -25187,10 +25215,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (12,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -25304,10 +25332,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (13,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -25421,10 +25449,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (14,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -25538,10 +25566,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (15,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -25655,10 +25683,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (16,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -25772,10 +25800,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (17,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -25889,10 +25917,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (18,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -26006,10 +26034,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (19,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -26123,10 +26151,10 @@ dC
 dC
 dC
 dC
-Np
+OO
 "}
 (20,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -26240,10 +26268,10 @@ iB
 Pn
 AZ
 dC
-Np
+OO
 "}
 (21,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -26357,10 +26385,10 @@ WX
 ua
 AZ
 AZ
-Np
+OO
 "}
 (22,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -26474,10 +26502,10 @@ WX
 ls
 ph
 AZ
-Np
+OO
 "}
 (23,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -26591,10 +26619,10 @@ WX
 NX
 Ur
 su
-Np
+OO
 "}
 (24,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -26708,10 +26736,10 @@ CH
 tH
 wB
 AZ
-Np
+OO
 "}
 (25,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -26825,10 +26853,10 @@ jj
 Ns
 AZ
 AZ
-Np
+OO
 "}
 (26,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -26942,10 +26970,10 @@ lo
 Hh
 dC
 dC
-Np
+OO
 "}
 (27,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -27059,10 +27087,10 @@ dC
 dC
 dC
 dC
-Np
+OO
 "}
 (28,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -27176,10 +27204,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (29,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -27293,10 +27321,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (30,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -27410,10 +27438,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (31,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -27527,10 +27555,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (32,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -27644,10 +27672,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (33,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -27761,10 +27789,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (34,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -27878,10 +27906,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (35,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -27995,10 +28023,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (36,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -28112,10 +28140,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (37,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -28229,10 +28257,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (38,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -28346,10 +28374,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (39,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -28463,10 +28491,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (40,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -28580,10 +28608,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (41,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -28697,10 +28725,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (42,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -28814,10 +28842,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (43,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -28931,10 +28959,10 @@ Np
 Np
 Np
 Np
-Np
+OO
 "}
 (44,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -29048,10 +29076,10 @@ DQ
 DQ
 DQ
 DQ
-DQ
+sz
 "}
 (45,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -29165,10 +29193,10 @@ MK
 lz
 Rs
 Rs
-vs
+oQ
 "}
 (46,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -29282,10 +29310,10 @@ Rs
 JL
 MK
 MK
-vs
+oQ
 "}
 (47,1,1) = {"
-aw
+nX
 aw
 aw
 aw
@@ -29399,7 +29427,7 @@ jC
 Yc
 MK
 MK
-vs
+oQ
 "}
 (48,1,1) = {"
 Zu
@@ -29516,7 +29544,7 @@ MK
 lz
 Rs
 jC
-vs
+oQ
 "}
 (49,1,1) = {"
 Zu
@@ -29633,7 +29661,7 @@ MK
 lz
 jC
 jC
-vs
+oQ
 "}
 (50,1,1) = {"
 Zu
@@ -29750,10 +29778,10 @@ DQ
 DQ
 DQ
 DQ
-DQ
+sz
 "}
 (51,1,1) = {"
-aw
+nX
 aw
 aw
 aw
@@ -29867,10 +29895,10 @@ ul
 ul
 ul
 ul
-ul
+CX
 "}
 (52,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -29984,10 +30012,10 @@ ul
 ul
 ul
 ul
-ul
+CX
 "}
 (53,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -30101,10 +30129,10 @@ ul
 ul
 ul
 ul
-ul
+CX
 "}
 (54,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -30218,10 +30246,10 @@ ul
 ul
 ul
 ul
-ul
+CX
 "}
 (55,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -30335,10 +30363,10 @@ ul
 ul
 ul
 ul
-ul
+CX
 "}
 (56,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -30452,10 +30480,10 @@ ul
 ul
 ul
 ul
-ul
+CX
 "}
 (57,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -30569,10 +30597,10 @@ ul
 ul
 ul
 ul
-ul
+CX
 "}
 (58,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -30686,10 +30714,10 @@ ul
 ul
 ul
 ul
-ul
+CX
 "}
 (59,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -30803,10 +30831,10 @@ ul
 ul
 ul
 ul
-ul
+CX
 "}
 (60,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -30920,10 +30948,10 @@ ul
 ul
 ul
 ul
-ul
+CX
 "}
 (61,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -31037,10 +31065,10 @@ ul
 ul
 ul
 ul
-ul
+CX
 "}
 (62,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -31154,10 +31182,10 @@ ul
 ul
 ul
 ul
-ul
+CX
 "}
 (63,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -31271,10 +31299,10 @@ ul
 ul
 ul
 ul
-ul
+CX
 "}
 (64,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -31388,10 +31416,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (65,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -31505,10 +31533,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (66,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -31622,10 +31650,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (67,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -31739,10 +31767,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (68,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -31856,10 +31884,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (69,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -31973,10 +32001,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (70,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -32090,10 +32118,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (71,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -32207,10 +32235,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (72,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -32324,10 +32352,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (73,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -32441,10 +32469,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (74,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -32558,10 +32586,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (75,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -32675,10 +32703,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (76,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -32792,10 +32820,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (77,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -32909,10 +32937,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (78,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -33026,10 +33054,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (79,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -33143,10 +33171,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (80,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -33260,10 +33288,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (81,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -33377,10 +33405,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (82,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -33494,10 +33522,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (83,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -33611,10 +33639,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (84,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -33728,10 +33756,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (85,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -33845,10 +33873,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (86,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -33962,10 +33990,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (87,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -34079,10 +34107,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (88,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -34196,10 +34224,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (89,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -34313,10 +34341,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (90,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -34430,10 +34458,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (91,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -34547,10 +34575,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (92,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -34664,10 +34692,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (93,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -34781,10 +34809,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (94,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -34898,10 +34926,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (95,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -35015,10 +35043,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (96,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -35132,10 +35160,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (97,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -35249,10 +35277,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (98,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -35366,10 +35394,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (99,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -35483,10 +35511,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (100,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -35600,10 +35628,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (101,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -35717,10 +35745,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (102,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -35834,10 +35862,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (103,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -35951,10 +35979,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (104,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -36068,10 +36096,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (105,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -36185,10 +36213,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (106,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -36302,10 +36330,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (107,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -36419,10 +36447,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (108,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -36536,10 +36564,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (109,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -36653,10 +36681,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (110,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -36770,10 +36798,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (111,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -36887,10 +36915,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (112,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -37004,10 +37032,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (113,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -37121,10 +37149,10 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (114,1,1) = {"
-Tk
+YQ
 Tk
 Tk
 Tk
@@ -37238,122 +37266,122 @@ Tk
 Tk
 Tk
 Tk
-Tk
+YQ
 "}
 (115,1,1) = {"
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
-Tk
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
+YQ
 "}
