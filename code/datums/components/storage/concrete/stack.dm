@@ -53,16 +53,3 @@
 		var/obj/item/stack/temp = new S.type(real_location, overrun)
 		handle_item_insertion(temp)
 	return ..(S, new_location)
-
-/datum/component/storage/concrete/stack/_process_numerical_display()
-	var/atom/real_location = real_location()
-	. = list()
-	for(var/i in real_location)
-		var/obj/item/stack/I = i
-		if(!istype(I) || QDELETED(I))				//We're specialized stack storage, just ignore non stacks.
-			continue
-		if(!.[I.merge_type])
-			.[I.merge_type] = new /datum/numbered_display(I, I.amount)
-		else
-			var/datum/numbered_display/ND = .[I.merge_type]
-			ND.number += I.amount

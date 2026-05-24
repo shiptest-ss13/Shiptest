@@ -43,11 +43,10 @@
 	pixel_y = 32
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
+/obj/machinery/atmospherics/components/trinary/filter/atmos/n2{
 	dir = 4;
 	piping_layer = 2;
-	on = 0;
-	layer = 2.435
+	name = "oxygen pump"
 	},
 /turf/open/floor/plating,
 /area/ship/storage/equip)
@@ -4187,10 +4186,7 @@
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 8
 	},
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/item/paper/fluff/ship/sun/nail,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/eva)
@@ -8586,10 +8582,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 4
 	},
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/structure/noticeboard/directional/west,
 /obj/item/radio{
 	pixel_x = -2;
 	pixel_y = 11
@@ -10182,9 +10175,7 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "VQ" = (
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/item/paper/fluff/ship/pgf/triage,
 /obj/item/paper/fluff/ship/pgf/lifesaving,
 /obj/effect/turf_decal/borderfloor{

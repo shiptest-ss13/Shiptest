@@ -1231,9 +1231,7 @@
 	dir = 8
 	},
 /obj/structure/chair/handrail,
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
@@ -2671,9 +2669,7 @@
 /area/ship/security)
 "ry" = (
 /obj/structure/chair,
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
@@ -2864,10 +2860,7 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/structure/noticeboard/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "sU" = (
@@ -3759,10 +3752,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/item/paper/guides/jobs/engi/combustion_thruster{
 	pixel_y = -8;
 	pixel_x = 8
@@ -5554,10 +5544,7 @@
 	pixel_y = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/item/spacecash/bundle/c1000{
 	pixel_x = 10;
 	pixel_y = 8
@@ -6222,11 +6209,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/table,
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = -15
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/item/paper/fluff{
 	default_raw_text = "Artificer's Note: If the powergrid seems drawn suspiciously thin, check the SMES input settings. One is dedicated to the Thunder shuttle, which should be kept on a low input.";
 	name = "paper note";

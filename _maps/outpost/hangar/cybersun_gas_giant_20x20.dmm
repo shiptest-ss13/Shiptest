@@ -759,10 +759,8 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 1
 	},
-/obj/structure/noticeboard{
-	pixel_y = -25;
-	name = "local notice board";
-	dir = 1
+/obj/structure/noticeboard/directional/south{
+	name = "local notice board"
 	},
 /obj/structure/table,
 /turf/open/floor/plasteel/mono/cybersun_outpost,
