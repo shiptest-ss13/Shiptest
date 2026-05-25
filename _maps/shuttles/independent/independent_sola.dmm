@@ -2968,19 +2968,19 @@
 	pixel_y = -4
 	},
 /obj/machinery/light/small/directional/west,
-/obj/item/ammo_box/magazine/m15{
-	pixel_x = -6;
-	pixel_y = -4
-	},
-/obj/item/ammo_box/magazine/m15{
-	pixel_x = -5;
-	pixel_y = -4
-	},
-/obj/item/ammo_box/magazine/m15{
-	pixel_x = -4;
-	pixel_y = -3
-	},
 /obj/machinery/airalarm/directional/north,
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -6;
+	pixel_y = -7
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -7;
+	pixel_y = -5
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -7;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "LS" = (
@@ -3175,7 +3175,6 @@
 /obj/effect/turf_decal/corner/opaque/bar/half{
 	dir = 1
 	},
-/obj/item/gun/ballistic/automatic/m15/no_mag,
 /obj/item/gun/ballistic/shotgun/brimstone,
 /obj/item/gun/ballistic/automatic/m12_sporter/empty,
 /obj/structure/cable/yellow{
@@ -3185,6 +3184,7 @@
 	pixel_x = 11;
 	pixel_y = 21
 	},
+/obj/item/gun/energy/kalix/hunt/empty_cell,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "Ph" = (
