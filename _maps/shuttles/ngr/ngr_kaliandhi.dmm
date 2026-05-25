@@ -787,9 +787,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -5182,10 +5180,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "BB" = (
