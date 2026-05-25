@@ -6,7 +6,7 @@
 	core = /obj/item/assembly/signaler/anomaly/sparkler
 	effectrange = 4
 	pulse_delay = 1 SECONDS
-	secondary_pulse_delay = 12 SECONDS
+	secondary_pulse_delay = 5 SECONDS
 
 /obj/effect/anomaly/sparkler/anomalyEffect()
 	..()
