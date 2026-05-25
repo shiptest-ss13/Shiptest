@@ -122,6 +122,11 @@
 /datum/gear/suit/jacket/puffervest
 	display_name = "puffervest, colorable"
 	path = /obj/item/clothing/suit/toggle/puffervest
+
+/datum/gear/suit/jacket/track
+	display_name = "track jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/track
+
 //Suspenders
 /datum/gear/suit/suspenders
 	subtype_path = /datum/gear/suit/suspenders
