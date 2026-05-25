@@ -192,7 +192,7 @@
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault/sharplite/resistor)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault/sharplite)
 
 	zoom_amt = RIFLE_ZOOM
 	wield_slowdown = SMG_SLOWDOWN

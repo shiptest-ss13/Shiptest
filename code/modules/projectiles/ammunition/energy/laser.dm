@@ -38,9 +38,6 @@
 	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
 	delay = 2
 
-/obj/item/ammo_casing/energy/laser/assault/sharplite/resistor
-	e_cost = 800  // 24 shots upgraded cell, 12 shots normal
-
 /obj/item/ammo_casing/energy/laser/eoehoma/e50
 	projectile_type = /obj/projectile/beam/emitter/hitscan
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
