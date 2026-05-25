@@ -508,3 +508,14 @@
 	faction = /datum/faction/srm
 	faction_discount = 0
 	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/roumain_hardsuitelite
+	name = "Raskas Combat Hardsuit"
+	desc = "A heavily clad hardsuit manufactured by Hunter's Pride, used when quarries of ballistic natures are to be expected. The heavy, bulky plates inhibit movement at the cost of second-to-none protection."
+	cost = 5000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security/roumain/elite)
+	crate_name = "Raskas combat hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
