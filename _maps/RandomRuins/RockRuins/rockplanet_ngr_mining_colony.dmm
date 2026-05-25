@@ -3,6 +3,12 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/farm)
+"af" = (
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/crawlergarage)
 "ag" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-9"
@@ -161,13 +167,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
-"bn" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/turf/open/floor/plasteel/tech/rockplanet,
-/area/ruin/rockplanet/ngrcolony/engineering)
 "bp" = (
 /obj/effect/turf_decal/road/stripes,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -244,6 +243,21 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/engineering)
+"bI" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/filingcabinet{
+	density = 0;
+	pixel_x = 10;
+	pixel_y = 0;
+	dir = 8
+	},
+/obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/commanders_log_one,
+/obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/commanders_log_two,
+/obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/commanders_log_three,
+/turf/open/floor/carpet/red_gold,
+/area/ruin/rockplanet/ngrcolony/control)
 "bM" = (
 /obj/structure/fence{
 	dir = 4
@@ -275,12 +289,6 @@
 /obj/effect/turf_decal/trimline/opaque/bar/corner,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
-"bW" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/pod,
-/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "cb" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/ngrcolony/crawlergarage)
@@ -585,6 +593,15 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
+"eJ" = (
+/obj/effect/turf_decal/box/white,
+/obj/structure/frame/machine{
+	state = 2;
+	anchored = 1;
+	icon_state = "box_1"
+	},
+/turf/open/floor/plasteel/tech/rockplanet,
+/area/ruin/rockplanet/ngrcolony/engineering)
 "eK" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -627,12 +644,6 @@
 "eT" = (
 /turf/open/floor/wood/ebony,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
-"eV" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "eY" = (
 /obj/structure/dresser/wall/directional/east,
 /turf/open/floor/plasteel/mono/dark,
@@ -698,6 +709,14 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/security)
+"fx" = (
+/obj/structure/sign/number/one{
+	dir = 4;
+	pixel_x = -27;
+	pixel_y = 0
+	},
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "fy" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1165,10 +1184,6 @@
 "in" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
-"io" = (
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/tech/rockplanet,
-/area/ruin/rockplanet/ngrcolony/engineering)
 "ir" = (
 /obj/effect/turf_decal/stairs{
 	dir = 5
@@ -1370,6 +1385,12 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/warehouse)
+"jX" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/crawlergarage)
 "jY" = (
 /obj/effect/mob_spawn/animal_corpse/migo,
 /obj/structure/cable/yellow{
@@ -1463,21 +1484,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
-"kz" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/structure/filingcabinet{
-	density = 0;
-	pixel_x = 10;
-	pixel_y = 0;
-	dir = 8
-	},
-/obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/commanders_log_one,
-/obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/commanders_log_two,
-/obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/commanders_log_three,
-/turf/open/floor/carpet/red_gold,
-/area/ruin/rockplanet/ngrcolony/control)
 "kD" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
@@ -1835,6 +1841,13 @@
 	},
 /turf/open/floor/concrete/reinforced/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/engineering)
+"mD" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/plasteel/tech/rockplanet,
+/area/ruin/rockplanet/ngrcolony/engineering)
 "mH" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1866,15 +1879,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
-"mN" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-9"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/turf/open/floor/pod,
-/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "mP" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
@@ -2327,15 +2331,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
-"pl" = (
-/obj/effect/turf_decal/box/white,
-/obj/structure/frame/machine{
-	state = 2;
-	anchored = 1;
-	icon_state = "box_1"
-	},
-/turf/open/floor/plasteel/tech/rockplanet,
-/area/ruin/rockplanet/ngrcolony/engineering)
 "po" = (
 /obj/machinery/door/airlock/external{
 	dir = 4
@@ -2454,6 +2449,15 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/security)
+"qd" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-9"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/pod,
+/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "qg" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
@@ -2702,16 +2706,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
-"rD" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/effect/turf_decal/corner/opaque/beige/diagonal{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/ngrcolony/canteen)
 "rK" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
@@ -3145,6 +3139,12 @@
 "uG" = (
 /turf/open/floor/concrete/slab_4,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
+"uI" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "uO" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
@@ -3370,12 +3370,6 @@
 /obj/item/clothing/under/color/lightbrown/prisoner,
 /turf/open/floor/plasteel/rockplanet,
 /area/ruin/rockplanet/ngrcolony/security/prison)
-"wf" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-6"
-	},
-/turf/open/floor/pod,
-/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "wi" = (
 /turf/closed/mineral/random/rockplanet,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/utility)
@@ -3543,13 +3537,6 @@
 	icon_state = "5-9"
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/ruin/rockplanet/ngrcolony/mine)
-"xd" = (
-/obj/item/paper/crumpled/bloody/fluff/ruins/ngr_rock_colony/mine_report{
-	pixel_x = -7;
-	pixel_y = -5
-	},
-/turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
 "xg" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -3912,6 +3899,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"zn" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/structure/cable/yellow{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/ngrcolony/canteen)
 "zp" = (
 /obj/machinery/door/airlock/external{
 	dir = 8
@@ -4292,6 +4286,16 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/main_gate)
+"BL" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/effect/turf_decal/corner/opaque/beige/diagonal{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/ngrcolony/canteen)
 "BN" = (
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
@@ -4556,6 +4560,19 @@
 	},
 /turf/open/floor/concrete/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
+"Dv" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/effect/turf_decal/corner/opaque/beige/diagonal{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/ngrcolony/canteen)
 "DC" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/turf_decal/corner/opaque/beige/diagonal{
@@ -4668,16 +4685,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
-"El" = (
-/obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 8
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/ngrcolony/canteen)
 "Em" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
@@ -4895,6 +4902,11 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
+"FE" = (
+/obj/effect/turf_decal/box/white,
+/obj/structure/closet/toolcloset,
+/turf/open/floor/plasteel/tech/rockplanet,
+/area/ruin/rockplanet/ngrcolony/engineering)
 "FK" = (
 /obj/structure/platform{
 	dir = 8
@@ -5094,13 +5106,6 @@
 	},
 /turf/open/floor/plasteel/tech/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine_gate)
-"GY" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/ngrcolony/canteen)
 "Hc" = (
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
@@ -5469,12 +5474,31 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
+"Ji" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/opaque/beige/half{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/ngrcolony/canteen)
 "Jk" = (
 /obj/machinery/camera/autoname{
 	network = list("ngr_colony")
 	},
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"Jm" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/structure/cable/yellow{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/ngrcolony/canteen)
 "Jq" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
@@ -5519,6 +5543,12 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
+"Jz" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/crawlergarage)
 "JA" = (
 /obj/structure/flora/tree/cactus,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
@@ -5681,6 +5711,14 @@
 /obj/structure/platform/ship_two,
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/ngrcolony/crawlergarage)
+"Kl" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/east,
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/ngrcolony/canteen)
 "Km" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -5712,6 +5750,9 @@
 	icon_state = "wood-broken3"
 	},
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
+"Kw" = (
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/crawlergarage)
 "Ky" = (
 /obj/item/stack/cable_coil/cut/yellow,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
@@ -5767,11 +5808,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/warehouse)
-"KT" = (
-/obj/effect/turf_decal/box/white,
-/obj/structure/closet/toolcloset,
-/turf/open/floor/plasteel/tech/rockplanet,
-/area/ruin/rockplanet/ngrcolony/engineering)
 "KW" = (
 /obj/effect/mob_spawn/animal_corpse/migo,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
@@ -5882,13 +5918,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
-"Lp" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/cable/yellow{
-	icon_state = "5-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/ngrcolony/canteen)
 "Lt" = (
 /obj/machinery/camera/autoname{
 	network = list("ngr_colony");
@@ -5902,6 +5931,13 @@
 	icon_state = "5-8"
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
+"Lw" = (
+/obj/item/paper/crumpled/bloody/fluff/ruins/ngr_rock_colony/mine_report{
+	pixel_x = -7;
+	pixel_y = -5
+	},
+/turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
 "Lx" = (
 /obj/effect/turf_decal/borderfloorblack/corner2{
@@ -6103,6 +6139,10 @@
 	},
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"MU" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/tech/rockplanet,
+/area/ruin/rockplanet/ngrcolony/engineering)
 "MW" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/ngrcolony/engineering)
@@ -6133,14 +6173,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/canteen)
-"Nd" = (
-/obj/structure/sign/number/one{
-	dir = 4;
-	pixel_x = -27;
-	pixel_y = 0
-	},
-/turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/ruin/rockplanet/ngrcolony/mine)
 "Nj" = (
 /obj/machinery/atmospherics/components/unary/tank/carbon_dioxide{
 	dir = 8;
@@ -6424,6 +6456,12 @@
 /obj/item/ammo_casing/spent/rifle_steel,
 /turf/open/floor/concrete/pavement/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine_gate)
+"OU" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/mine_gate)
 "OV" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -6487,6 +6525,13 @@
 /obj/machinery/hydroponics/soil,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Pn" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/ngrcolony/canteen)
 "Pp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
@@ -6577,13 +6622,6 @@
 	pixel_y = -19
 	},
 /area/ruin/rockplanet/ngrcolony/mine)
-"PV" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/cable/yellow{
-	icon_state = "4-10"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/ngrcolony/canteen)
 "PX" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
@@ -6710,15 +6748,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
-"QG" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable/yellow,
-/turf/open/floor/plating,
-/area/ruin/rockplanet/ngrcolony/main_gate)
 "QH" = (
 /obj/item/stack/ore/slag{
 	pixel_x = -17;
@@ -6738,6 +6767,12 @@
 "QK" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/ngrcolony/security)
+"QL" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/pod,
+/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "QN" = (
 /obj/structure/filingcabinet{
 	density = 0;
@@ -7062,18 +7097,6 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/utility)
-"TB" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 6
-	},
-/obj/effect/turf_decal/corner/opaque/beige/half{
-	dir = 8
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/ngrcolony/canteen)
 "TG" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -7356,6 +7379,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/control)
+"Vs" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/mine_gate)
 "Vu" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
@@ -7426,6 +7456,16 @@
 	},
 /turf/open/floor/concrete/pavement/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine_gate)
+"VL" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/effect/turf_decal/corner/opaque/beige/diagonal{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/ngrcolony/canteen)
 "VM" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
@@ -7449,19 +7489,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
-"VT" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/effect/turf_decal/corner/opaque/beige/diagonal{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/ngrcolony/canteen)
 "VU" = (
 /obj/structure/cable/yellow{
 	icon_state = "6-9"
@@ -7496,12 +7523,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
-"Wm" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
 "Wn" = (
 /obj/effect/turf_decal/corner/opaque/tan,
 /obj/effect/turf_decal/corner/opaque/beige/three_quarters{
@@ -7525,13 +7546,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
-"Wu" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/auto_name/directional/west,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
 "Wv" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
@@ -7564,16 +7578,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
-"WG" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/effect/turf_decal/corner/opaque/beige/diagonal{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "6-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/ngrcolony/canteen)
 "WL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
@@ -7581,6 +7585,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"WM" = (
+/obj/effect/turf_decal/stairs{
+	dir = 8;
+	color = "#575757"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/crawlergarage)
 "WQ" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table/reinforced,
@@ -7614,6 +7625,16 @@
 /obj/effect/mob_spawn/animal_corpse/gruboid,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Xc" = (
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/ngrcolony/canteen)
 "Xd" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/concrete/slab_4/rockplanet,
@@ -7633,6 +7654,15 @@
 	},
 /turf/open/floor/plating/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
+"Xf" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable/yellow,
+/turf/open/floor/plating,
+/area/ruin/rockplanet/ngrcolony/main_gate)
 "Xo" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
 	dir = 4
@@ -7716,14 +7746,6 @@
 	},
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
-"XH" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/east,
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/ngrcolony/canteen)
 "XI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/fence/door/opened{
@@ -7760,6 +7782,12 @@
 	},
 /turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
 /area/ruin/rockplanet/ngrcolony/canteen)
+"XQ" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/crawlergarage)
 "XT" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -7916,6 +7944,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/canteen)
+"Zc" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-6"
+	},
+/turf/open/floor/pod,
+/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "Zf" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -8150,7 +8184,6 @@ cJ
 cJ
 cJ
 cJ
-cJ
 VJ
 VJ
 VJ
@@ -8182,7 +8215,6 @@ cJ
 cJ
 "}
 (2,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -8287,7 +8319,6 @@ cJ
 cJ
 cJ
 cJ
-cJ
 VJ
 VJ
 VJ
@@ -8326,7 +8357,6 @@ cJ
 cJ
 "}
 (4,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -8428,7 +8458,6 @@ cJ
 cJ
 cJ
 cJ
-cJ
 VJ
 VJ
 VJ
@@ -8470,7 +8499,6 @@ cJ
 cJ
 "}
 (6,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -8568,7 +8596,6 @@ cJ
 cJ
 cJ
 cJ
-cJ
 VJ
 VJ
 VJ
@@ -8614,7 +8641,6 @@ cJ
 cJ
 "}
 (8,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -8706,7 +8732,6 @@ cJ
 cJ
 cJ
 cJ
-cJ
 VJ
 VJ
 VJ
@@ -8758,7 +8783,6 @@ cJ
 cJ
 "}
 (10,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -8842,7 +8866,6 @@ cJ
 cJ
 cJ
 cJ
-cJ
 VJ
 VJ
 VJ
@@ -8902,7 +8925,6 @@ cJ
 cJ
 "}
 (12,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -8979,7 +9001,6 @@ cJ
 cJ
 cJ
 cJ
-cJ
 CD
 CD
 CD
@@ -9046,7 +9067,6 @@ cJ
 cJ
 "}
 (14,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -9122,7 +9142,6 @@ cJ
 cJ
 cJ
 cJ
-cJ
 CD
 CD
 CD
@@ -9190,7 +9209,6 @@ cJ
 cJ
 "}
 (16,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -9265,7 +9283,6 @@ cJ
 cJ
 cJ
 cJ
-cJ
 CD
 CD
 NG
@@ -9334,7 +9351,6 @@ cJ
 cJ
 "}
 (18,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -9408,7 +9424,6 @@ cJ
 (19,1,1) = {"
 cJ
 cJ
-cJ
 CD
 CD
 CD
@@ -9478,7 +9493,6 @@ cJ
 cJ
 "}
 (20,1,1) = {"
-cJ
 cJ
 cJ
 CD
@@ -9552,7 +9566,6 @@ cJ
 (21,1,1) = {"
 cJ
 cJ
-cJ
 CD
 CD
 CD
@@ -9622,7 +9635,6 @@ cJ
 cJ
 "}
 (22,1,1) = {"
-cJ
 cJ
 cJ
 CD
@@ -9696,7 +9708,6 @@ cJ
 (23,1,1) = {"
 cJ
 cJ
-cJ
 CD
 CD
 CD
@@ -9728,7 +9739,7 @@ GD
 GD
 GD
 GD
-wf
+Zc
 MZ
 GD
 DE
@@ -9768,7 +9779,6 @@ cJ
 (24,1,1) = {"
 cJ
 cJ
-cJ
 CD
 CD
 NG
@@ -9780,7 +9790,7 @@ CD
 CD
 CD
 gn
-Nd
+fx
 gx
 AT
 nH
@@ -9794,14 +9804,14 @@ dq
 sq
 sq
 sq
-Wu
-Wm
+Vs
+OU
 va
-eV
-eV
+uI
+uI
 va
-bW
-mN
+QL
+qd
 GD
 gF
 JI
@@ -9838,7 +9848,6 @@ VJ
 cJ
 "}
 (25,1,1) = {"
-cJ
 cJ
 CD
 CD
@@ -9911,7 +9920,6 @@ cJ
 "}
 (26,1,1) = {"
 cJ
-cJ
 CD
 CD
 CD
@@ -9926,7 +9934,7 @@ Zv
 YJ
 Zv
 Zv
-xd
+Lw
 Od
 un
 VU
@@ -9982,7 +9990,6 @@ VJ
 cJ
 "}
 (27,1,1) = {"
-cJ
 cJ
 CD
 CD
@@ -10055,7 +10062,6 @@ cJ
 "}
 (28,1,1) = {"
 cJ
-cJ
 CD
 CD
 NG
@@ -10127,7 +10133,6 @@ VJ
 "}
 (29,1,1) = {"
 cJ
-cJ
 CD
 CD
 NG
@@ -10186,7 +10191,7 @@ UP
 lw
 MW
 MW
-bn
+mD
 Hm
 Vd
 MW
@@ -10198,7 +10203,6 @@ VJ
 VJ
 "}
 (30,1,1) = {"
-cJ
 cJ
 CD
 CD
@@ -10258,7 +10262,7 @@ Xo
 ij
 PD
 MW
-KT
+FE
 hk
 XT
 MW
@@ -10270,7 +10274,6 @@ VJ
 VJ
 "}
 (31,1,1) = {"
-cJ
 cJ
 CD
 CD
@@ -10330,8 +10333,8 @@ pT
 Yg
 Fr
 MW
-pl
-io
+eJ
+MU
 Qe
 MW
 qG
@@ -10342,7 +10345,6 @@ VJ
 VJ
 "}
 (32,1,1) = {"
-cJ
 cJ
 CD
 CD
@@ -10415,7 +10417,6 @@ VJ
 "}
 (33,1,1) = {"
 cJ
-cJ
 CD
 CD
 NG
@@ -10487,7 +10488,6 @@ VJ
 "}
 (34,1,1) = {"
 cJ
-cJ
 CD
 CD
 NG
@@ -10524,7 +10524,7 @@ kT
 pR
 pR
 Kj
-AJ
+jX
 cb
 TS
 lG
@@ -10558,7 +10558,6 @@ EL
 EL
 "}
 (35,1,1) = {"
-cJ
 cJ
 CD
 CD
@@ -10596,7 +10595,7 @@ qg
 vT
 zy
 bh
-AJ
+XQ
 cb
 bk
 lG
@@ -10630,7 +10629,6 @@ EL
 EL
 "}
 (36,1,1) = {"
-cJ
 cJ
 CD
 CD
@@ -10668,7 +10666,7 @@ PM
 sU
 vT
 bj
-AJ
+XQ
 cb
 bk
 mL
@@ -10702,7 +10700,6 @@ EL
 EL
 "}
 (37,1,1) = {"
-cJ
 cJ
 CD
 CD
@@ -10740,7 +10737,7 @@ IT
 bi
 uX
 nC
-AJ
+XQ
 cb
 UZ
 lG
@@ -10776,7 +10773,6 @@ VJ
 (38,1,1) = {"
 cJ
 cJ
-cJ
 CD
 CD
 NG
@@ -10808,11 +10804,11 @@ ON
 GP
 ej
 cb
-AJ
-AJ
-AJ
-AJ
-AJ
+Jz
+WM
+Jz
+Jz
+af
 cb
 uy
 lG
@@ -10848,7 +10844,6 @@ VJ
 (39,1,1) = {"
 cJ
 cJ
-cJ
 CD
 CD
 NG
@@ -10880,11 +10875,11 @@ VH
 kj
 Bz
 cb
-AJ
-AJ
-AJ
-AJ
-AJ
+Kw
+Kw
+Kw
+Kw
+Kw
 cb
 bk
 lG
@@ -10920,7 +10915,6 @@ cJ
 (40,1,1) = {"
 cJ
 cJ
-cJ
 CD
 NG
 NG
@@ -10952,9 +10946,9 @@ MX
 KO
 Rc
 cb
-AJ
-AJ
-AJ
+Kw
+Kw
+Kw
 cb
 cb
 cb
@@ -10992,7 +10986,6 @@ cJ
 (41,1,1) = {"
 cJ
 cJ
-cJ
 CD
 NG
 NG
@@ -11026,7 +11019,7 @@ in
 in
 in
 AJ
-AJ
+Kw
 Ov
 xg
 BW
@@ -11044,7 +11037,7 @@ lP
 Yk
 UF
 Uy
-El
+Xc
 YZ
 Vk
 Zg
@@ -11062,7 +11055,6 @@ VJ
 cJ
 "}
 (42,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -11098,7 +11090,7 @@ xr
 IP
 in
 AJ
-AJ
+Kw
 cb
 xQ
 cb
@@ -11116,13 +11108,13 @@ lP
 Qj
 aw
 aw
-TB
+Ji
 id
 Vk
 Zg
 Em
 zO
-QG
+Xf
 Qn
 Zg
 Vk
@@ -11134,7 +11126,6 @@ VJ
 cJ
 "}
 (43,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -11188,7 +11179,7 @@ lP
 Nc
 Nc
 Nc
-WG
+VL
 Nc
 Vk
 Zg
@@ -11206,7 +11197,6 @@ VJ
 cJ
 "}
 (44,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -11281,7 +11271,6 @@ cJ
 cJ
 cJ
 cJ
-cJ
 NG
 NG
 NG
@@ -11333,7 +11322,7 @@ Nc
 Nc
 Nc
 Nc
-rD
+BL
 Vk
 Vk
 Vk
@@ -11350,7 +11339,6 @@ cJ
 cJ
 "}
 (46,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -11405,7 +11393,7 @@ Nc
 tY
 cT
 cT
-VT
+Dv
 lP
 WT
 ps
@@ -11422,7 +11410,6 @@ cJ
 cJ
 "}
 (47,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -11477,7 +11464,7 @@ Nc
 kd
 WQ
 WQ
-GY
+Pn
 lP
 Ce
 Oo
@@ -11494,7 +11481,6 @@ cJ
 cJ
 "}
 (48,1,1) = {"
-cJ
 cJ
 cJ
 sk
@@ -11549,7 +11535,7 @@ Nc
 kd
 WQ
 yv
-Lp
+Jm
 lP
 Ce
 Oo
@@ -11566,7 +11552,6 @@ cJ
 cJ
 "}
 (49,1,1) = {"
-cJ
 cJ
 sk
 sk
@@ -11620,7 +11605,7 @@ lP
 Nc
 kd
 WQ
-PV
+zn
 yv
 BO
 Ce
@@ -11638,7 +11623,6 @@ cJ
 cJ
 "}
 (50,1,1) = {"
-cJ
 cJ
 sk
 sk
@@ -11692,7 +11676,7 @@ lP
 lP
 lP
 WQ
-XH
+Kl
 yv
 lP
 Rx
@@ -11710,7 +11694,6 @@ cJ
 cJ
 "}
 (51,1,1) = {"
-cJ
 cJ
 sk
 sk
@@ -11783,7 +11766,6 @@ cJ
 "}
 (52,1,1) = {"
 cJ
-cJ
 sk
 sk
 sk
@@ -11854,7 +11836,6 @@ cJ
 cJ
 "}
 (53,1,1) = {"
-cJ
 cJ
 sk
 sk
@@ -11928,7 +11909,6 @@ cJ
 (54,1,1) = {"
 cJ
 cJ
-cJ
 sk
 sk
 sk
@@ -11998,7 +11978,6 @@ cJ
 cJ
 "}
 (55,1,1) = {"
-cJ
 cJ
 cJ
 sk
@@ -12072,7 +12051,6 @@ cJ
 (56,1,1) = {"
 cJ
 cJ
-cJ
 sk
 sk
 sk
@@ -12142,7 +12120,6 @@ cJ
 cJ
 "}
 (57,1,1) = {"
-cJ
 cJ
 sk
 sk
@@ -12215,7 +12192,6 @@ cJ
 "}
 (58,1,1) = {"
 cJ
-cJ
 sk
 sk
 sk
@@ -12286,7 +12262,6 @@ cJ
 cJ
 "}
 (59,1,1) = {"
-cJ
 cJ
 sk
 sk
@@ -12359,7 +12334,6 @@ cJ
 "}
 (60,1,1) = {"
 cJ
-cJ
 sk
 sk
 sk
@@ -12430,7 +12404,6 @@ cJ
 cJ
 "}
 (61,1,1) = {"
-cJ
 sk
 sk
 sk
@@ -12502,7 +12475,6 @@ cJ
 cJ
 "}
 (62,1,1) = {"
-cJ
 sk
 sk
 sk
@@ -12556,7 +12528,7 @@ oW
 oW
 vX
 yB
-kz
+bI
 vX
 xI
 vX
@@ -12574,7 +12546,6 @@ VJ
 cJ
 "}
 (63,1,1) = {"
-cJ
 sk
 sk
 sk
@@ -12647,7 +12618,6 @@ cJ
 "}
 (64,1,1) = {"
 cJ
-cJ
 sk
 sk
 sk
@@ -12719,7 +12689,6 @@ cJ
 "}
 (65,1,1) = {"
 cJ
-cJ
 sk
 sk
 sk
@@ -12790,7 +12759,6 @@ VJ
 cJ
 "}
 (66,1,1) = {"
-cJ
 sk
 sk
 sk
@@ -12862,7 +12830,6 @@ VJ
 cJ
 "}
 (67,1,1) = {"
-cJ
 sk
 sk
 sk
@@ -12934,7 +12901,6 @@ VJ
 cJ
 "}
 (68,1,1) = {"
-cJ
 sk
 sk
 sk
@@ -13007,7 +12973,6 @@ cJ
 "}
 (69,1,1) = {"
 cJ
-cJ
 sk
 sk
 sk
@@ -13078,7 +13043,6 @@ cJ
 cJ
 "}
 (70,1,1) = {"
-cJ
 cJ
 sk
 sk
@@ -13152,7 +13116,6 @@ cJ
 (71,1,1) = {"
 cJ
 cJ
-cJ
 VJ
 VJ
 VJ
@@ -13222,7 +13185,6 @@ cJ
 cJ
 "}
 (72,1,1) = {"
-cJ
 cJ
 VJ
 VJ
@@ -13295,7 +13257,6 @@ cJ
 "}
 (73,1,1) = {"
 cJ
-cJ
 VJ
 VJ
 VJ
@@ -13366,7 +13327,6 @@ cJ
 cJ
 "}
 (74,1,1) = {"
-cJ
 cJ
 VJ
 VJ
@@ -13439,7 +13399,6 @@ cJ
 "}
 (75,1,1) = {"
 cJ
-cJ
 VJ
 VJ
 sk
@@ -13510,7 +13469,6 @@ cJ
 cJ
 "}
 (76,1,1) = {"
-cJ
 VJ
 VJ
 VJ
@@ -13582,7 +13540,6 @@ cJ
 cJ
 "}
 (77,1,1) = {"
-cJ
 VJ
 VJ
 VJ
@@ -13654,7 +13611,6 @@ cJ
 cJ
 "}
 (78,1,1) = {"
-cJ
 VJ
 VJ
 VJ
@@ -13727,7 +13683,6 @@ cJ
 "}
 (79,1,1) = {"
 cJ
-cJ
 VJ
 VJ
 VJ
@@ -13798,7 +13753,6 @@ cJ
 cJ
 "}
 (80,1,1) = {"
-cJ
 cJ
 VJ
 VJ
@@ -13871,7 +13825,6 @@ cJ
 "}
 (81,1,1) = {"
 cJ
-cJ
 sk
 VJ
 VJ
@@ -13943,7 +13896,6 @@ cJ
 "}
 (82,1,1) = {"
 cJ
-cJ
 sk
 sk
 VJ
@@ -14014,7 +13966,6 @@ cJ
 cJ
 "}
 (83,1,1) = {"
-cJ
 sk
 sk
 sk
@@ -14086,7 +14037,6 @@ cJ
 cJ
 "}
 (84,1,1) = {"
-cJ
 sk
 sk
 sk
@@ -14159,7 +14109,6 @@ cJ
 "}
 (85,1,1) = {"
 cJ
-cJ
 sk
 sk
 sk
@@ -14230,7 +14179,6 @@ cJ
 cJ
 "}
 (86,1,1) = {"
-cJ
 sk
 sk
 sk
@@ -14302,7 +14250,6 @@ cJ
 cJ
 "}
 (87,1,1) = {"
-cJ
 sk
 sk
 sk
@@ -14374,7 +14321,6 @@ cJ
 cJ
 "}
 (88,1,1) = {"
-cJ
 sk
 sk
 sk
@@ -14446,7 +14392,6 @@ cJ
 cJ
 "}
 (89,1,1) = {"
-cJ
 sk
 sk
 sk
@@ -14519,7 +14464,6 @@ cJ
 "}
 (90,1,1) = {"
 cJ
-cJ
 sk
 sk
 sk
@@ -14590,7 +14534,6 @@ cJ
 cJ
 "}
 (91,1,1) = {"
-cJ
 cJ
 sk
 sk
@@ -14664,7 +14607,6 @@ cJ
 (92,1,1) = {"
 cJ
 cJ
-cJ
 sk
 sk
 sk
@@ -14734,7 +14676,6 @@ cJ
 cJ
 "}
 (93,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -14811,7 +14752,6 @@ cJ
 cJ
 cJ
 cJ
-cJ
 sk
 sk
 sk
@@ -14878,7 +14818,6 @@ cJ
 cJ
 "}
 (95,1,1) = {"
-cJ
 cJ
 cJ
 cJ
@@ -14961,7 +14900,6 @@ cJ
 cJ
 cJ
 cJ
-cJ
 sk
 sk
 sk
@@ -14980,654 +14918,6 @@ sk
 sk
 sk
 sk
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-"}
-(97,1,1) = {"
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-"}
-(98,1,1) = {"
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-"}
-(99,1,1) = {"
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-"}
-(100,1,1) = {"
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-"}
-(101,1,1) = {"
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-"}
-(102,1,1) = {"
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-"}
-(103,1,1) = {"
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-"}
-(104,1,1) = {"
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-"}
-(105,1,1) = {"
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
-cJ
 cJ
 cJ
 cJ
