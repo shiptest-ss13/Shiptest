@@ -2122,10 +2122,10 @@
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "sq" = (
-/obj/structure/noticeboard{
+/obj/structure/noticeboard/directional/north{
 	name = "trophy board";
 	desc = "A board for hanging trophies upon.";
-	pixel_y = 29
+	pixel_y = 36
 	},
 /obj/item/mob_trophy/legion_skull{
 	pixel_y = 27
@@ -3156,10 +3156,7 @@
 /area/ruin/powered/hunts/canteen)
 "AG" = (
 /obj/structure/table/wood/reinforced,
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -27
-	},
+/obj/structure/noticeboard/directional/west,
 /turf/open/floor/carpet/green/jungleplanet,
 /area/ruin/powered/hunts/hotel)
 "AK" = (
@@ -4467,10 +4464,10 @@
 	pixel_y = 5;
 	pixel_x = -5
 	},
-/obj/structure/noticeboard{
+/obj/structure/noticeboard/directional/north{
 	name = "trophy board";
 	desc = "A board for hanging trophies upon.";
-	pixel_y = 29
+	pixel_y = 36
 	},
 /obj/item/clothing/mask/rat/fox{
 	pixel_y = 29;
@@ -4554,10 +4551,10 @@
 /turf/open/floor/carpet/jungleplanet,
 /area/ruin/powered/hunts/canteen)
 "LL" = (
-/obj/structure/noticeboard{
+/obj/structure/noticeboard/directional/north{
 	name = "trophy board";
 	desc = "A board for hanging trophies upon.";
-	pixel_y = 29
+	pixel_y = 36
 	},
 /obj/item/clothing/mask/rat/bear{
 	pixel_y = 26;
@@ -4981,10 +4978,10 @@
 /area/ruin/powered/hunts/hotel)
 "PP" = (
 /obj/machinery/vending/snack,
-/obj/structure/noticeboard{
+/obj/structure/noticeboard/directional/north{
 	name = "trophy board";
 	desc = "A board for hanging trophies upon.";
-	pixel_y = 29
+	pixel_y = 36
 	},
 /obj/item/stack/sheet/animalhide/xeno{
 	pixel_y = 28;
