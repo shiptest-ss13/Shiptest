@@ -534,6 +534,7 @@
 	suit = /obj/item/clothing/suit/hazardvest/ngr
 	head = /obj/item/clothing/head/hardhat/ngr
 	mask = /obj/item/clothing/mask/gas/syndicate
+	belt = /obj/item/storage/belt/mining/ngr
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	r_pocket = /obj/item/storage/bag/ore
 

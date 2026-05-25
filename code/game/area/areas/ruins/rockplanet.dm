@@ -264,6 +264,9 @@
 	name = "NGR Mining Colony Command Centre"
 	icon_state = "bridge"
 
+/area/ruin/rockplanet/ngrcolony/refinery
+	name = "NGR Mining Colony Refinery"
+
 /area/ruin/rockplanet/ngrcolony/outdoors
 	outdoors = TRUE
 	allow_weather = TRUE

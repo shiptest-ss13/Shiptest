@@ -30,3 +30,30 @@
 	r_pocket = /obj/item/flashlight
 	back = /obj/item/storage/backpack/satchel
 	belt = /obj/item/storage/belt/security/webbing/ramzi/alt
+
+//papers please
+
+
+/obj/item/paper/crumpled/bloody/fluff/ruins/ngr_rock_colony/mine_report
+	desc = "A thin layer of dried blood is caked over part of the note."
+	default_raw_text = "Bit worried about hole two. One's pretty fine, just a class two, but it's pretty deep and the well-established turret cover we have means there's low risk of ours getting hurt. But two's got these weird, <i>real unsettling</i> cyan crystals growing out of it."
+
+/obj/item/paper/crumpled/bloody/fluff/ruins/ngr_rock_colony/cavein
+	name = "IMPORTANT"
+	default_raw_text = "IF THE HOLE 2 DRILLING GOES TITS UP, I'VE RIGGED A BUNCH OF C4 TO THE CAVE ROOF TO CAUSE A CAVE-IN. TAKE CARE."
+
+/obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/commanders_log_one
+	name = "commander's log, day 72"
+	default_raw_text = "<b>Day 72</b><br><br>A Frontiersman moonshiner was stopped east of the colony by our security team while trying to sell one of the miners cheap 'shine. I've had the responsible miner disciplined (and borrowed some of the 'shine for myself) and the Frontie's in detainment for the time being. Waiting on a response from Command for transferring them."
+
+/obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/commanders_log_two
+	name = "commander's log, day 78"
+	default_raw_text = "<b>Day 78</b><br><br>Score. A 9-man fireteam of the Ramz traitors attacked the colony earlier today. Good news is, we managed to track their dropship down before they finished getting out. Our troops killed one of them and captured the rest alive. Bad news is the colony's brig is now massively overcrowded, so we've had to order for a few mattresses so they've got places to sleep. Command says it'll be a 'month or two' before they get a transport in, apparently due to a recent wave of Frontiersmen cells in Republic space surrendering and needing to be hauled back. Should at least keep 'em comfortable."
+
+/obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/commanders_log_three
+	name = "commander's log, day 108"
+	default_raw_text = "<b>Day 108</b><br><br>The mining crews started work on Vein 2 today. Apparently, it goes really deep and has a lot of good-quality materials, but one of them raised concerns about some cyan crystals inside the vein. <s>I have high confidence it'll be fine</s>Looked at suit sensors and all of the mining crew are dead. I'm having the mines locked down for the next few days until reinforcements arrive."
+
+/obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/commanders_log_four
+	name = "commander's log, day 109"
+	default_raw_text = "<b>Day 109</b><br><br>Guards have given me word that there's a large horde of fauna about ten minutes out. Apparently the drilling incident yesterday spooked a whole damn nest of gruboids and mi-gos and all the other nasty things these worlds have to offer, and a bunch of them have begun making the trip here. Would've been nice to hear earlier. I'm passing an evacuation order and we're evacuating until Command can reclaim the colony."
