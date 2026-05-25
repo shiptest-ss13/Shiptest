@@ -209,7 +209,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "bV" = (
-/obj/machinery/door/poddoor/shutters/preopen,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -221,6 +220,9 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "stagbridge"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
@@ -425,6 +427,10 @@
 	},
 /obj/structure/window/plasma/reinforced{
 	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "stagstar"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/engines/starboard)
@@ -871,7 +877,9 @@
 	pixel_x = 0;
 	pixel_y = -22;
 	id = "stagbridge";
-	name = "bridge access"
+	name = "bridge access";
+	req_access_txt = "19";
+	req_ship_access = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -933,6 +941,11 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "1-8"
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -20;
+	pixel_x = 10
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -1186,10 +1199,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
-"mW" = (
-/turf/open/space/basic,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/electrical)
 "na" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -1801,6 +1810,12 @@
 	pixel_y = -20;
 	pixel_x = 10
 	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = -1;
+	pixel_y = -21;
+	id = "stagport"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "sJ" = (
@@ -1849,15 +1864,6 @@
 	},
 /obj/item/stock_parts/cell/gun/sharplite/mini,
 /obj/item/stock_parts/cell/gun/sharplite/mini,
-/obj/item/stock_parts/cell/gun{
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/obj/item/stock_parts/cell/gun/sharplite/mini,
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -7;
-	pixel_y = -6
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "sY" = (
@@ -1943,7 +1949,9 @@
 	pixel_x = -9;
 	pixel_y = -22;
 	id = "stagbridge";
-	name = "bridge access"
+	name = "bridge access";
+	req_access_txt = "19";
+	req_ship_access = 1
 	},
 /obj/machinery/button/door{
 	dir = 1;
@@ -1976,7 +1984,8 @@
 	pixel_x = 0;
 	pixel_y = -22;
 	id = "stagmech";
-	name = "exo bay lock"
+	name = "exo bay lock";
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -2115,6 +2124,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "vb" = (
@@ -2720,6 +2730,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer5{
 	dir = 5
 	},
+/obj/machinery/advanced_airlock_controller/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "CM" = (
@@ -2839,7 +2850,8 @@
 	pixel_x = -21;
 	pixel_y = 3;
 	id = "stagsuits";
-	name = "suit storage lock"
+	name = "suit storage lock";
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -3108,11 +3120,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_y = -20;
-	pixel_x = 10
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "Gf" = (
@@ -3210,6 +3217,14 @@
 	pixel_x = -8;
 	pixel_y = -4
 	},
+/obj/item/clothing/head/hardhat/weldhat/white{
+	pixel_x = 0;
+	pixel_y = 15
+	},
+/obj/item/clothing/suit/hazardvest{
+	pixel_x = 11;
+	pixel_y = -6
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/captain)
 "HA" = (
@@ -3275,7 +3290,6 @@
 	pixel_x = 2;
 	id = "stagarmory";
 	name = "Firearm Stowage";
-	normaldoorcontrol = 1;
 	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -3679,21 +3693,21 @@
 	pixel_x = 2;
 	pixel_y = 3
 	},
-/obj/item/clothing/head/caphat{
-	pixel_x = 5;
-	pixel_y = 16
-	},
 /obj/item/clothing/gloves/color/yellow{
 	pixel_x = -8;
 	pixel_y = -4
 	},
-/obj/item/stock_parts/cell/gun/sharplite/plus{
-	pixel_x = 4;
-	pixel_y = 5
-	},
 /obj/item/stock_parts/cell/gun/sharplite{
 	pixel_x = -4;
 	pixel_y = -1
+	},
+/obj/item/clothing/head/hardhat/weldhat/white{
+	pixel_x = -3;
+	pixel_y = 10
+	},
+/obj/item/clothing/suit/hazardvest{
+	pixel_x = 2;
+	pixel_y = -6
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/captain)
@@ -3870,6 +3884,10 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "stagport"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/engines/port)
 "NN" = (
@@ -3903,15 +3921,12 @@
 /obj/structure/dresser{
 	dir = 4
 	},
-/obj/item/gun/energy/sharplite/x01{
-	pixel_x = -5;
-	pixel_y = 5
-	},
 /obj/item/storage/secure/safe{
 	dir = 8;
 	pixel_x = -32;
 	pixel_y = 2
 	},
+/obj/item/gun/energy/sharplite/x01/empty_cell,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
 "Od" = (
@@ -4135,13 +4150,15 @@
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "Qp" = (
-/obj/machinery/door/poddoor/shutters/preopen,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Bridge"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "stagbridge"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
@@ -4185,7 +4202,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/crate_shelve,
 /obj/item/grenade/chem_grenade/metalfoam{
 	pixel_x = 5;
 	pixel_y = 0
@@ -4248,6 +4264,7 @@
 	dir = 8
 	},
 /obj/structure/noticeboard/directional/north,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "QV" = (
@@ -4355,6 +4372,11 @@
 /obj/machinery/light_switch{
 	pixel_x = 10;
 	pixel_y = 21
+	},
+/obj/machinery/button/door{
+	pixel_x = -2;
+	pixel_y = 22;
+	id = "stagstar"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -4830,13 +4852,15 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "Ya" = (
-/obj/machinery/door/poddoor/shutters/preopen,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "stagbridge"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Yc" = (
@@ -5373,7 +5397,7 @@ Sg
 (13,1,1) = {"
 Sg
 ci
-mW
+YK
 ns
 uF
 Id
