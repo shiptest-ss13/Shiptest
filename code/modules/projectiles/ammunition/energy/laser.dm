@@ -8,7 +8,7 @@
 	e_cost = 555
 
 /obj/item/ammo_casing/energy/laser/sharplite/efficent
-	e_cost = 700  //9 per NT mini cell
+	e_cost = 700  //9 per MW mini cell
 
 /obj/item/ammo_casing/energy/laser/underbarrel
 	projectile_type = /obj/projectile/beam/laser
@@ -57,12 +57,13 @@
 /obj/item/ammo_casing/energy/lasergun/sharplite/dmr
 	projectile_type = /obj/projectile/beam/laser/sharplite/dmr
 	e_cost = 1000 // 10 per regular cell  20 per upgraded cell
+	delay = 0.4 SECONDS
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/sharplite/sniper
 	projectile_type = /obj/projectile/beam/laser/sharplite/sniper
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
-	delay = 1.3 SECONDS
+	delay = 1 SECONDS
 	e_cost = 2000 // 5 per regular cell 10 per upgraded cell
 	select_name = "kill"
 
@@ -96,7 +97,7 @@
 	e_cost = 500 //20 shots with a normal power cell, 40 with an upgraded
 	select_name = "kill"
 	delay = 0.13 SECONDS
-	fire_sound = 'sound/weapons/gun/laser/nt-fire_light.ogg'
+	fire_sound = 'sound/weapons/gun/laser/sharplite-fire_light.ogg'
 
 /obj/item/ammo_casing/energy/lasergun/old
 	projectile_type = /obj/projectile/beam/laser
@@ -104,7 +105,7 @@
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/laser/sharplite/hos
-	e_cost = 500
+	e_cost = 1000
 
 /obj/item/ammo_casing/energy/laser/practice
 	projectile_type = /obj/projectile/beam/practice
@@ -132,6 +133,7 @@
 
 /obj/item/ammo_casing/energy/laser/shotgun/sharplite
 	projectile_type = /obj/projectile/beam/weak/shotgun/sharplite
+	delay = 0.4 SECONDS
 
 /obj/item/ammo_casing/energy/laser/heavy
 	projectile_type = /obj/projectile/beam/laser/heavylaser
@@ -186,6 +188,7 @@
 	impact_light_color_override = COLOR_SOFT_RED
 	range = 15
 	var/damage_constant = 0.8
+	var/ap_constant = 1
 	hitscan = TRUE
 
 /obj/projectile/beam/hitscan/Range()
@@ -199,6 +202,7 @@
 	if(environment_pressure >= 50)
 		if((decayedRange - range) >= 4)
 			damage *= damage_constant
+			armour_penetration *= ap_constant
 	. = ..()
 
 /obj/item/ammo_casing/energy/lasergun/hitscan
@@ -211,7 +215,7 @@
 
 /obj/item/ammo_casing/energy/disabler/hitscan
 	projectile_type = /obj/projectile/beam/hitscan/disabler
-	e_cost = 666
+	e_cost = 500
 
 /obj/projectile/beam/hitscan/disabler
 	name = "disabler beam"
@@ -244,7 +248,7 @@
 
 /obj/item/ammo_casing/energy/disabler/hitscan/heavy
 	projectile_type = /obj/projectile/beam/hitscan/disabler/heavy
-	e_cost = 1000
+	e_cost = 666
 
 /obj/projectile/beam/hitscan/disabler/heavy
 	range = 15

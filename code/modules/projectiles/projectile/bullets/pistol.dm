@@ -9,6 +9,10 @@
 	speed = BULLET_SPEED_HANDGUN
 	bullet_identifier = "tiny bullet"
 
+/obj/projectile/bullet/c22lr/surplus
+	name = ".22LR surplus bullet"
+	speed_mod = BULLET_SPEED_SURPLUS_MOD
+
 /obj/projectile/bullet/c22lr/hp
 	name = ".22LR HP bullet"
 	damage = 24

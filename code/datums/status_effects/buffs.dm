@@ -88,7 +88,7 @@
 /datum/status_effect/blooddrunk
 	id = "blooddrunk"
 	duration = 10
-	tick_interval = 0
+	tick_interval = -1
 	alert_type = /atom/movable/screen/alert/status_effect/blooddrunk
 	var/last_health = 0
 	var/last_bruteloss = 0
@@ -387,7 +387,7 @@
 	id = "concealed"
 	var/concealment_power = 75
 	alert_type = /atom/movable/screen/alert/status_effect/concealed
-	tick_interval = 1
+	tick_interval = 2
 
 /atom/movable/screen/alert/status_effect/concealed
 	name = "Concealed"

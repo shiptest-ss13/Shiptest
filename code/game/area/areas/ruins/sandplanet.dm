@@ -138,3 +138,45 @@
 /area/ruin/whitesands/settlement/shuttle_three
 	name = "Frontiersmen Shuttle"
 	icon_state = "red"
+
+//pubby town!
+
+/area/ruin/whitesands/pubbytown
+	name = "Planetoid Cavern"
+	icon_state = "green"
+
+/area/ruin/whitesands/pubbytown/shop
+	name = "General Store"
+	icon_state = "storage"
+
+/area/ruin/whitesands/pubbytown/clinic
+	name = "Clinic"
+	icon_state = "surgery"
+
+/area/ruin/whitesands/pubbytown/study
+	name = "Public Library"
+	icon_state = "crew_quarters"
+
+/area/ruin/whitesands/pubbytown/guard
+	name = "Guardhouse"
+	icon_state = "security"
+
+/area/ruin/whitesands/pubbytown/canteen
+	name = "Mess Hall"
+	icon_state = "kitchen"
+
+/area/ruin/whitesands/pubbytown/house
+	name = "Sand House"
+	icon_state = "crew_quarters"
+
+/area/ruin/whitesands/pubbytown/wreck
+	name = "Pubby-class Hallway"
+	icon_state = "bluenew"
+
+/area/ruin/whitesands/pubbytown/engine
+	name = "Pubby-class Engine Room"
+	icon_state = "green"
+
+/area/ruin/whitesands/pubbytown/cargo
+	name = "Pubby-class Cargo Bay"
+	icon_state = "auxstorage"

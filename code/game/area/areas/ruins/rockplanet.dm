@@ -142,6 +142,22 @@
 	name = "Crashed Moonshiner"
 	icon_state = "green"
 
+/area/ruin/rockplanet/rust_base/drop1
+	name = "Dropship"
+	icon_state = "green"
+
+/area/ruin/rockplanet/rust_base/drop2
+	name = "Dropship"
+	icon_state = "green"
+
+/area/ruin/rockplanet/rust_base/drop3
+	name = "Dropship"
+	icon_state = "green"
+
+/area/ruin/rockplanet/rust_base/drop4
+	name = "Dropship"
+	icon_state = "green"
+
 //River Valley Stash
 
 /area/ruin/rockplanet/river_valley_stash/shuttle

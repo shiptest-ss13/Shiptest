@@ -274,6 +274,18 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 
+/datum/outfit/job/independent/hop/hunter/gown
+	name = "Independent - Head of Personnel (Hunter, gown)"
+
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	gloves = null
+	head = null
+	suit = null
+	alt_suit = null
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+
 /datum/outfit/job/independent/hop/western
 	name = "Independent - Head of Personnel (Western)"
 
@@ -290,6 +302,16 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate
 	suit = /obj/item/clothing/suit/pirate
+
+/datum/outfit/job/independent/hop/gown
+	name = "Independent - Head of Personnel (Gown)"
+
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+
+	backpack_contents = null
 
 // Head of Security
 
@@ -424,6 +446,21 @@
 	backpack_contents = list(/obj/item/melee/baton/loaded=1)
 
 	implants = list(/obj/item/implant/radio)
+
+/datum/outfit/job/independent/security/gown
+	name = "Independent - Security Officer (Gown)"
+	jobtype = /datum/job/officer
+	job_icon = "securityofficer"
+
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	gloves = null
+	head = null
+	suit = null
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	l_pocket = null
+	backpack_contents = null
 
 // Engineer
 
@@ -566,6 +603,15 @@
 
 	ears = /obj/item/radio/headset/pirate
 	uniform = /obj/item/clothing/under/costume/sailor
+
+/datum/outfit/job/independent/doctor/gown
+	name = "Independent - Medical Doctor (Gown)"
+
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	suit =  null
+	dcoat = null
 
 // Cargo Tech
 
@@ -733,6 +779,18 @@
 	satchel = /obj/item/storage/backpack/satchel/tox
 	courierbag = /obj/item/storage/backpack/messenger/tox
 
+/datum/outfit/job/independent/miner/gown
+	name = "Independent - Miner (Gown)"
+
+	ears = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	gloves = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	suit = null
+	dcoat = null
+	l_pocket = null
+	backpack_contents = null
+
 // Hunter
 
 /datum/outfit/job/independent/hunter
@@ -750,6 +808,17 @@
 
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
+
+/datum/outfit/job/independent/hunter/gown
+	name = "Independent - Hunter (gown)"
+	jobtype = /datum/job/mining
+	job_icon = "securityofficer"
+
+	ears = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	gloves = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	l_pocket = null
 
 // Cook
 

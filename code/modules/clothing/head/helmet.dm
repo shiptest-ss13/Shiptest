@@ -463,16 +463,8 @@
 	content_overlays = TRUE
 	can_flashlight = TRUE
 
-/obj/item/clothing/head/helmet/medical
-	name = "\improper trauma team helmet"
-	desc = "A robust combat helmet commonly employed by cybersun medical trauma teams, with its distinctive turquoise."
-	icon_state = "traumahelm"
-	item_state = "traumahelm"
-	can_flashlight = TRUE
-	supports_variations = VOX_VARIATION
-
 /obj/item/clothing/head/helmet/m10
-	name = "\improper M-10 pattern Helmet"
+	name = "\improper M-10 Pattern Helmet"
 	desc = "A classic looking helmet, derived from numerous convergently-similar designs from all across inhabited space. A faded tag reads: 'The difference between an open-casket and closed-casket funeral. Wear on head for best results.'"
 	icon_state = "m10helm"
 	can_flashlight = TRUE

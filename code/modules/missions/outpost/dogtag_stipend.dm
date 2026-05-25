@@ -10,6 +10,7 @@
 	///How many of this item does the mission want?
 	num_wanted = 10
 	weight = 0
+	blackbox_prefix = "Dogtag Turn-in "
 	var/pirate_type = ""
 
 /datum/mission/acquire/dogtags/New(...)
@@ -19,6 +20,10 @@
 		desc = "The [pirate_type] are ramping up activity near [source_outpost]. We are offering a [value]cr bounty to kill at least [num_wanted] of them, in addition to the usual pirate bounty. \
 		Retrieve their dogtags, put them in the provided case, and return it to us to complete the bounty."
 	value += (num_wanted*200)
+
+/datum/mission/acquire/dogtags/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
+	. = ..()
+	container.name = "dogtag case ([num_wanted] [pirate_type] dogtags)"
 
 /datum/mission/acquire/dogtags/ramzi
 	name = "Ramzi Clique Bounty"

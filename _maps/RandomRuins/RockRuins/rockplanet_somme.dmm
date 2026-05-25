@@ -906,10 +906,7 @@
 /area/ruin/rockplanet/somme/trench)
 "dZ" = (
 /obj/structure/railing,
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/item/paper/fluff/ruins{
 	pixel_y = 8;
 	pixel_x = -10;
@@ -1924,10 +1921,7 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "iL" = (
-/obj/structure/noticeboard{
-	pixel_x = -1;
-	pixel_y = 25
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/item/paper/fluff/ruins{
 	pixel_x = 2;
 	pixel_y = 8;
@@ -5676,9 +5670,7 @@
 "BV" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25;
+/obj/structure/noticeboard/directional/east{
 	name = "shipping board"
 	},
 /obj/structure/cable{
@@ -5840,7 +5832,7 @@
 /area/ruin/rockplanet/somme/trench)
 "CO" = (
 /obj/structure/table,
-/obj/item/trash/cheesie,
+/obj/item/trash/gummycarps,
 /turf/open/floor/hangar/plasteel/dark,
 /area/ruin/rockplanet/somme/hallway)
 "CR" = (

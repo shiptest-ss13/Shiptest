@@ -61,6 +61,9 @@
 
 /// Setter proc for [inflammation]. Adjusts the amount by lung health, adjusts pressure mult, gives feedback messages if silent is FALSE.
 /datum/status_effect/lung_inflammation/proc/adjust_inflammation(amount, silent = FALSE)
+	if(amount > 0 && HAS_TRAIT(owner, TRAIT_ANTI_INFLAMMATORY))
+		return
+
 	var/old_inflammation = inflammation
 
 	var/obj/item/organ/lungs/holder_lungs = owner.getorganslot(ORGAN_SLOT_LUNGS)

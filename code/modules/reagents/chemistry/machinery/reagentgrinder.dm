@@ -237,18 +237,13 @@
 	holdingitems -= O
 	qdel(O)
 
-/obj/machinery/reagentgrinder/proc/shake_for(duration)
-	var/offset = prob(50) ? -2 : 2
-	var/old_pixel_x = pixel_x
-	animate(src, pixel_x = pixel_x + offset, time = 0.2, loop = -1) //start shaking
-	addtimer(CALLBACK(src, PROC_REF(stop_shaking), old_pixel_x), duration)
-
 /obj/machinery/reagentgrinder/proc/stop_shaking(old_px)
 	animate(src)
 	pixel_x = old_px
 
 /obj/machinery/reagentgrinder/proc/operate_for(time, silent = FALSE, juicing = FALSE)
-	shake_for(time / speed)
+	var/duration = time / speed
+	Shake(pixelshiftx = 1, pixelshifty = 0, duration = duration)
 	operating = TRUE
 	if(!silent)
 		if(!juicing)
@@ -294,10 +289,7 @@
 			grind_item(i, user)
 
 /obj/machinery/reagentgrinder/proc/grind_item(obj/item/I, mob/user) //Grind results can be found in respective object definitions
-	if(I.on_grind(src) == -1) //Call on_grind() to change amount as needed, and stop grinding the item if it returns -1
-		to_chat(usr, span_danger("[src] shorts out as it tries to grind up [I], and transfers it back to storage."))
-		return
-	beaker.reagents.add_reagent_list(I.grind_results)
+	beaker.reagents.add_reagent_list(I.on_grind())
 	if(I.reagents)
 		I.reagents.trans_to(beaker, I.reagents.total_volume, transfered_by = user)
 	remove_object(I)

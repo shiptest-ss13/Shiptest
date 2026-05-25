@@ -58,11 +58,6 @@
 	desc = "The closet of mining equipment."
 	icon_state = "mining"
 
-/area/ship/external/dark
-	name = "Dark External"
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-	icon_state = "space_near"
-
 /area/ship/roumain
 	name = "Hunter's Glade"
 	icon_state = "Sleep"
@@ -114,7 +109,7 @@
 			emulate such glory.<br>
 			Many of the SRM are contracted mercenaries, mostly hired aboard independent
 			vessels. The religious habits amongst members of the organization make them
-			less popular hires for many corporate or government factions. However Nanotrasen
+			less popular hires for many corporate or government factions. However Makosso-Warra
 			doesn't disallow veneration of the Ashen Huntsman on their vessels, making
 			them one of the more common factions for SRM members to serve.<br>
 			The SRM itself is structured around individual companies of hunters. Each SRM

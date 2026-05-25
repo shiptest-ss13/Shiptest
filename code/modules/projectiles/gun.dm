@@ -350,7 +350,7 @@
 	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
 	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO)
 	/// A acoc list that determines the names of firemodes. Use if you wanna be weird and set the name of say, FIREMODE_OTHER to "Underbarrel grenade launcher" for example.
-	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire", FIREMODE_UNDERBARREL = "underbarrel weapon")
+	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire")
 	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
 	var/fire_select_icon_state_prefix = ""
 	///If true, we put "safety_" before fire_select_icon_state_prefix's prefix. ex. "safety_laser_single"
@@ -472,12 +472,7 @@
 /obj/item/gun/examine_more(mob/user)
 	. = ..()
 	if(has_safety)
-		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Right-Click to toggle the safety."
-
-/obj/item/gun/attackby(obj/item/I, mob/living/user, params)
-	. = ..()
-	if(gun_firemodes[firemode_index] == FIREMODE_UNDERBARREL)
-		return TRUE
+		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Ctrl-Click to toggle the safety."
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
@@ -806,20 +801,27 @@
 	if(isliving(user) && in_range(src, user))
 		toggle_safety(user)
 
-// /obj/item/gun/attack_hand_secondary(mob/user, list/modifiers)
-// 	if(toggle_safety(user))
-// 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-// 	return ..()
+// This is overridden when interacting with attached underbarrel guns.
+/obj/item/gun/attack_hand_secondary(mob/user, list/modifiers)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
-// /obj/item/gun/attackby_secondary(obj/item/weapon, mob/user, params)
-// 	if(toggle_safety(user))
-// 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-// 	return ..()
+/obj/item/gun/attackby_secondary(obj/item/weapon, mob/user, params)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
-// /obj/item/gun/attack_self_secondary(mob/user, modifiers)
-// 	if(toggle_safety(user))
-// 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-// 	return ..()
+/obj/item/gun/attack_self_secondary(mob/user, modifiers)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE, override_check = FALSE)
 	if(!has_safety)
@@ -837,7 +839,7 @@
 			span_notice("[user] turns the [safety_wording] on [src] [safety ? span_green("ON") : span_red("OFF")]."),
 			span_notice("You turn the [safety_wording] on [src] [safety ? span_green("ON") : span_red("OFF")]."),
 		)
-
+	SEND_SIGNAL(src, COMSIG_GUN_TOGGLE_SAFETY, user)
 	update_appearance()
 	return TRUE
 
@@ -959,6 +961,8 @@
 
 	if(HAS_TRAIT(user, TRAIT_POOR_AIM))
 		randomized_bonus_spread += rand(0, 25)
+	if(!wielded_fully && (HAS_TRAIT(user, TRAIT_SCARRED_EYE)))
+		randomized_bonus_spread += rand(0, 5) // can't aim as well with no depth perception
 
 	//We will then calculate gun spread depending on if we are fully wielding (after do_after) the gun or not
 	randomized_gun_spread =	rand(0, wielded_fully ? spread : spread_unwielded)
@@ -1211,6 +1215,13 @@
 	else
 		..()
 
+//If a gun does not already have a secondary_action set, and has more than one firemode, the firemode can be toggled with the secondary action: default being shift+space
+/obj/item/gun/secondary_action(user)
+	if(gun_firemodes.len > 1)
+		fire_select(user)
+	else
+		..()
+
 /obj/item/gun/proc/fire_select(mob/living/carbon/human/user)
 
 	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
@@ -1237,16 +1248,14 @@
 	var/current_firemode = our_gun.gun_firemodes[our_gun.firemode_index]
 	//tldr; if we have adjust_fire_select_icon_state_on_safety as true, we append "safety_" to the prefix, otherwise nothing.
 	var/safety_prefix = "[our_gun.adjust_fire_select_icon_state_on_safety ? "[our_gun.safety ? "safety_" : ""]" : ""]"
-	if(current_firemode == FIREMODE_UNDERBARREL)
-		button_icon_state = "[safety_prefix][our_gun.underbarrel_prefix][current_firemode]"
-	else
-		button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
+	button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
 	return ..()
 
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
-	/obj/item/gun/energy/plasmacutter,
+	/obj/item/plasmacutter,
 	/obj/item/melee/energy,
 	/obj/item/gear_handle/anglegrinder,
+	/obj/item/hatchet,
 	)))
 
 ///Handles all the logic of sawing off guns,

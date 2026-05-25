@@ -57,7 +57,7 @@
 
 	/// Our faction of the outpost
 	var/datum/faction/faction
-	/// simple var that toggles the flag on/off, neant for eventing purposes
+	/// simple var that toggles the flag on/off, intended to show that this place is "inhabited". Turn off during events when something happens that causes the place to no longer be inhabited.
 	var/flag_overlay = TRUE
 	var/outpost_name
 

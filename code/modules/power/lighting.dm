@@ -66,6 +66,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct, 32)
 	. = ..()
 	if(building)
 		setDir(ndir)
+	ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
 
 /obj/structure/light_construct/Destroy()
 	QDEL_NULL(cell)
@@ -252,6 +253,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 
 	var/constant_flickering = FALSE // Are we always flickering?
 	var/flicker_timer = null
+
+	///wallmount trait
+	var/is_wallmounted = TRUE
+
+/obj/machinery/light/Initialize(mapload)
+	. = ..()
+	if(is_wallmounted)
+		ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light, 32)
 
@@ -973,6 +982,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 	light_type = /obj/item/light/bulb
 	fitting = "bulb"
 	no_emergency = TRUE
+	is_wallmounted = FALSE
 
 #undef LIGHT_DRAIN_TIME  //WS Edit -- Ethereal Charge Scaling
 #undef LIGHT_POWER_GAIN  //WS Edit -- Ethereal Charge Scaling

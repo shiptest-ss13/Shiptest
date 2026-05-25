@@ -351,39 +351,6 @@
 
 		set_pull_offsets(M, state)
 
-/mob/living/proc/set_pull_offsets(mob/living/M, grab_state = GRAB_PASSIVE)
-	if(M.buckled)
-		return //don't make them change direction or offset them if they're buckled into something.
-	var/offset = 0
-	switch(grab_state)
-		if(GRAB_PASSIVE)
-			offset = GRAB_PIXEL_SHIFT_PASSIVE
-		if(GRAB_AGGRESSIVE)
-			offset = GRAB_PIXEL_SHIFT_AGGRESSIVE
-		if(GRAB_NECK)
-			offset = GRAB_PIXEL_SHIFT_NECK
-		if(GRAB_KILL)
-			offset = GRAB_PIXEL_SHIFT_NECK
-	M.setDir(get_dir(M, src))
-	switch(M.dir)
-		if(NORTH)
-			animate(M, pixel_x = M.base_pixel_x, pixel_y = M.base_pixel_y + offset, 3)
-		if(SOUTH)
-			animate(M, pixel_x = M.base_pixel_x, pixel_y = M.base_pixel_y - offset, 3)
-		if(EAST)
-			if(M.lying_angle == 270) //update the dragged dude's direction if we've turned
-				M.set_lying_angle(90)
-			animate(M, pixel_x = M.base_pixel_x + offset, pixel_y = M.base_pixel_y, 3)
-		if(WEST)
-			if(M.lying_angle == 90)
-				M.set_lying_angle(270)
-			animate(M, pixel_x = M.base_pixel_x - offset, pixel_y = M.base_pixel_y, 3)
-
-/mob/living/proc/reset_pull_offsets(mob/living/M, override)
-	if(!override && M.buckled)
-		return
-	animate(M, pixel_x = M.base_pixel_x, pixel_y = M.base_pixel_y, 1)
-
 //mob verbs are a lot faster than object verbs
 //for more info on why this is not atom/pull, see examinate() in mob.dm
 /mob/living/verb/pulled(atom/movable/AM as mob|obj in oview(1))
@@ -544,11 +511,14 @@
 
 /// Proc to append behavior related to lying down.
 /mob/living/proc/on_lying_down(new_lying_angle)
-	layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
+	if(layer == initial(layer)) //to avoid things like hiding larvas.
+		layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
 	ADD_TRAIT(src, TRAIT_PULL_BLOCKED, LYING_DOWN_TRAIT)
 	density = FALSE // We lose density and stop bumping passable dense things.
 	if(HAS_TRAIT(src, TRAIT_FLOORED) && !(dir & (NORTH|SOUTH)))
 		setDir(pick(NORTH, SOUTH)) // We are and look helpless.
+	if(rotate_on_lying)
+		add_offsets(LYING_DOWN_TRAIT, y_add = PIXEL_Y_OFFSET_LYING)
 
 
 /// Proc to append behavior related to lying down.
@@ -557,7 +527,7 @@
 		layer = initial(layer)
 	density = initial(density) // We were prone before, so we become dense and things can bump into us again.
 	REMOVE_TRAIT(src, TRAIT_PULL_BLOCKED, LYING_DOWN_TRAIT)
-
+	remove_offsets(LYING_DOWN_TRAIT)
 
 
 //Recursive function to find everything a mob is holding. Really shitty proc tbh.
@@ -591,6 +561,9 @@
 /mob/living/proc/can_inject(mob/user, target_zone, injection_flags)
 	return TRUE
 
+/mob/living/proc/is_exposed(mob/user, target_zone, error_msg)
+	return TRUE
+
 /**
  * Like can_inject, but it can perform side effects.
  *
@@ -611,6 +584,49 @@
 
 /mob/living/is_injectable(mob/user, allowmobs = TRUE)
 	return (allowmobs && reagents && can_inject(user))
+
+/mob/living/reagent_scan()
+	if(!reagents)
+		return ""
+
+	var/list/render_list = list() //The master list of readouts, including reagents in the blood/stomach, quirks, etc.
+	var/list/render_block = list() //A second block of readout strings. If this ends up empty after checking stomach/blood contents, we give the "empty" header.
+
+	// Blood reagents
+	if(reagents.reagent_list.len)
+		for(var/r in reagents.reagent_list)
+			var/datum/reagent/reagent = r
+			render_block += "<span class='notice ml-2'>[round(reagent.volume, 0.001)] units of [reagent.name][reagent.overdosed ? "</span> - [span_bolddanger("OVERDOSING")]" : ".</span>"]<br>"
+
+	if(!length(render_block)) //If no VISIBLY DISPLAYED reagents are present, we report as if there is nothing.
+		render_list += "<span class='notice ml-1'>Subject contains no reagents in their blood.</span><br>"
+	else
+		render_list += "<span class='notice ml-1'>Subject contains the following reagents in their blood:</span><br>"
+		render_list += render_block //Otherwise, we add the header, reagent readouts, and clear the readout block for use on the stomach.
+		render_block.Cut()
+
+	// Stomach reagents
+	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
+	if(belly)
+		if(belly.reagents.reagent_list.len)
+			for(var/bile in belly.reagents.reagent_list)
+				var/datum/reagent/bit = bile
+				if(!belly.food_reagents[bit.type])
+					render_block += "<span class='notice ml-2'>[round(bit.volume, 0.001)] units of [bit.name][bit.overdosed ? "</span> - <span class='boldannounce'>OVERDOSING</span>" : ".</span>"]\n"
+				else
+					var/bit_vol = bit.volume - belly.food_reagents[bit.type]
+					if(bit_vol > 0)
+						render_block += "<span class='notice ml-2'>[round(bit_vol, 0.001)] units of [bit.name][bit.overdosed ? "</span> - <span class='boldannounce'>OVERDOSING</span>" : ".</span>"]\n"
+
+		if(!length(render_block))
+			render_list += "<span class='notice ml-1'>Subject contains no reagents in their stomach.</span><br>"
+		else
+			render_list += "<span class='notice ml-1'>Subject contains the following reagents in their stomach:</span><br>"
+			render_list += render_block
+			render_block.Cut()
+
+	return jointext(render_list, "")
+
 
 ///Sets the current mob's health value. Do not call directly if you don't know what you are doing, use the damage procs, instead.
 /mob/living/proc/set_health(new_value)
@@ -1354,7 +1370,7 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 * * fire_handler: Current fire status effect that called the proc
 */
 
-/mob/living/proc/on_fire_stack(delta_time, times_fired, datum/status_effect/fire_handler/fire_stacks/fire_handler)
+/mob/living/proc/on_fire_stack(delta_time, datum/status_effect/fire_handler/fire_stacks/fire_handler)
 	return
 
 //Mobs on Fire end
@@ -1506,8 +1522,8 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 			set_blurriness(var_value)
 		if(NAMEOF(src, maxHealth))
 			updatehealth()
-		if(NAMEOF(src, resize))
-			update_transform()
+		if(NAMEOF(src, current_size))
+			update_transform(current_size)
 		if(NAMEOF(src, lighting_alpha))
 			sync_lighting_plane_alpha()
 

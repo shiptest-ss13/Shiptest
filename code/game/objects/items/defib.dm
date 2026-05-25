@@ -272,12 +272,12 @@
 		toggle_paddles()
 		return
 
-/obj/item/defibrillator/compact/combat/loaded/nanotrasen
-	name = "elite Nanotrasen defibrillator"
+/obj/item/defibrillator/compact/combat/loaded/warra
+	name = "elite Makosso-Warra defibrillator"
 	desc = "A belt-equipped state-of-the-art defibrillator. Can revive through spacesuits, has an experimental self-recharging battery, and can be utilized in combat via applying the paddles in a disarming or agressive manner."
-	icon_state = "defibnt" //needs defib inhand sprites
-	item_state = "defibnt"
-	paddle_type = /obj/item/shockpaddles/syndicate/nanotrasen
+	icon_state = "defibwarra" //needs defib inhand sprites
+	item_state = "defibwarra"
+	paddle_type = /obj/item/shockpaddles/syndicate/warra
 
 //paddles
 
@@ -308,7 +308,6 @@
 	AddElement(/datum/element/update_icon_updates_onmob)
 	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=12)
 
-
 /obj/item/shockpaddles/Destroy()
 	defib = null
 	return ..()
@@ -322,7 +321,6 @@
 /obj/item/shockpaddles/Moved()
 	. = ..()
 	check_range()
-
 
 /obj/item/shockpaddles/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
@@ -391,6 +389,9 @@
 
 /obj/item/shockpaddles/attack(mob/M, mob/user)
 	if(busy)
+		return
+	if(!M.mind) //Stops from reviving DNR player corpses. Maybe expand this to still defib, but have a body thump and fail message then for drama or whatever
+		to_chat(user, span_warning("It's too late for [M.p_them()]. Revival is impossible."))
 		return
 	if(req_defib && !defib.powered)
 		user.visible_message(span_notice("[defib] beeps: Unit is unpowered."))
@@ -643,12 +644,12 @@
 	item_state = "syndiepaddles0"
 	base_icon_state = "syndiepaddles"
 
-/obj/item/shockpaddles/syndicate/nanotrasen
-	name = "elite nanotrasen defibrillator paddles"
+/obj/item/shockpaddles/syndicate/warra
+	name = "elite Makosso-Warra defibrillator paddles"
 	desc = "A pair of paddles used to revive deceased ERT members. They possess both the ability to penetrate armor and to deliver powerful or disabling shocks offensively."
-	icon_state = "ntpaddles0"
-	item_state = "ntpaddles0"
-	base_icon_state = "ntpaddles"
+	icon_state = "warrapaddles0"
+	item_state = "warrapaddles0"
+	base_icon_state = "warrapaddles"
 
 /obj/item/shockpaddles/syndicate/cyborg
 	req_defib = FALSE

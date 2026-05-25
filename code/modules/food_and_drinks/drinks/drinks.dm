@@ -242,7 +242,7 @@
 
 /obj/item/reagent_containers/food/drinks/ice/prison
 	name = "dirty ice cup"
-	desc = "Either Nanotrasen's water supply is contaminated, or this machine actually vends lemon, chocolate, and cherry snow cones."
+	desc = "Either Makosso-Warra's water supply is contaminated, or this machine actually vends lemon, chocolate, and cherry snow cones."
 	list_reagents  = list(/datum/reagent/consumable/ice = 25, /datum/reagent/liquidgibs = 5)
 
 /obj/item/reagent_containers/food/drinks/mug/ // parent type is literally just so empty mug sprites are a thing
@@ -369,18 +369,19 @@
 	desc +=  span_notice("The writing reads '[random_reagent.name]'.")
 	update_appearance()
 
-/obj/item/reagent_containers/food/drinks/beer
-	name = "Bizircan Brewery GDM" //ditto the plan for bottled water, need to find a way to make multiple variants
+/obj/item/reagent_containers/food/drinks/mead
+	name = "Bizircan Brewery Dark Mead" //ditto the plan for bottled water, need to find a way to make multiple variants
 	desc = "A popular Gezenan drink made of fermented honey and spices, known as Gezenan Dark Mead, or GDM for short."
 	icon_state = "beer"
-	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
+	list_reagents = list(/datum/reagent/consumable/ethanol/mead = 30)
 	foodtype = SUGAR | ALCOHOL
 	custom_price = 10
 
-/obj/item/reagent_containers/food/drinks/beer/light
+/obj/item/reagent_containers/food/drinks/beer
 	name = "Carp Lite"
 	desc = "Brewed with \"Pure Ice Asteroid Spring Water\"."
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/light = 30)
+	icon_state = "beer"
 
 /obj/item/reagent_containers/food/drinks/ale
 	name = "RHIMBASA TAP"

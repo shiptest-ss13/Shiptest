@@ -67,16 +67,13 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/blank = 4)
 	generate_items_inside(items_inside,src)
 
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/incendiary
-	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
-
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/improvised
 	ammo_type = /obj/item/ammo_casing/shotgun/improvised
 
 /obj/item/storage/box/ammo/pulseslug
 	name = "box of 12ga pulse slugs"
 	desc = "A box of 12-gauge pulse shells, designed for increased accuracy and destruction."
-	icon_state = "12gbox-rubbershot"
+	icon_state = "12gbox-pulse"
 
 /obj/item/storage/box/ammo/pulseslug/PopulateContents()
 	var/static/items_inside = list(
@@ -85,6 +82,58 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/pulseslug
 	ammo_type = /obj/item/ammo_casing/shotgun/pulseslug
+
+/obj/item/storage/box/ammo/a12g_scatter
+	name = "box of scatter laser shells"
+	desc = "A box of 12-gauge scatter laser shells, designed for delivering laser projectiles at a high velocity."
+	icon_state = "12gbox-scatter"
+
+/obj/item/storage/box/ammo/a12g_scatter/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/scatter = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/scatter
+	ammo_type = /obj/item/ammo_casing/shotgun/laserscatter
+
+/obj/item/storage/box/ammo/a12g_ion
+	name = "box of ion shells"
+	desc = "A box of 12-gauge ion shells, designed for delivering an electromagnetic payload."
+	icon_state = "12gbox-ion"
+
+/obj/item/storage/box/ammo/a12g_ion/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/ion = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/ion
+	ammo_type = /obj/item/ammo_casing/shotgun/ion
+
+/obj/item/storage/box/ammo/a12g_incen
+	name = "box of incendiary shells"
+	desc = "A box of 12-gauge incendiary shells, designed for catching targets on fire at the expense of damage."
+	icon_state = "12gbox-incen"
+
+/obj/item/storage/box/ammo/a12g_incen/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/incendiary = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/incendiary
+	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
+
+/obj/item/storage/box/ammo/a12g_dragonsbreath
+	name = "box of dragonsbreath shells"
+	desc = "A box of 12-gauge incendiary shells, designed for shooting streams of incendiary pellets. Very hazardous."
+	icon_state = "12gbox-dragon"
+
+/obj/item/storage/box/ammo/a12g_dragonsbreath/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/dragonsbreath = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/dragonsbreath
+	ammo_type = /obj/item/ammo_casing/shotgun/dragonsbreath
 
 /obj/item/storage/box/ammo/a12g_dart
 	name = "box of 12ga dart"

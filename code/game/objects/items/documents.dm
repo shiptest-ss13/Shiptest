@@ -12,8 +12,8 @@
 	pressure_resistance = 2
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
-/obj/item/documents/nanotrasen
-	desc = "\"Top Secret\" Nanotrasen documents, filled with complex diagrams and lists of names, dates and coordinates."
+/obj/item/documents/warra
+	desc = "\"Top Secret\" Makosso-Warra documents, filled with complex diagrams and lists of names, dates and coordinates."
 	icon_state = "docs_verified"
 
 /obj/item/documents/solgov
@@ -59,11 +59,14 @@
 	icon_state = "docs_blue"
 
 /obj/item/documents/frontier
-	desc = "\"Top Secret\" Frotiersmen Fleet documents. Filled with operational intelligence for the local area."
+	desc = "\"Top Secret\" Frontiersmen Fleet documents. Filled with operational intelligence for the local area."
 	icon_state = "docs_olive"
 
 /obj/item/documents/frontier/logistics
-	desc = "\"Top Secret\" Frotiersmen Fleet documents. Filled with intelligence on local Frontiersmen supply lines, supply depot, and logistical infrastructure."
+	desc = "\"Top Secret\" Frontiersmen Fleet documents. Filled with intelligence on local Frontiersmen supply lines, supply depot, and logistical infrastructure."
+
+/obj/item/documents/clip/research
+	desc = "Documents belonging to CLIP-LAND. Filled with complicated charts and spreadsheets on agricultural productivity and mineral deposits."
 
 /obj/item/documents/photocopy
 	desc = "A copy of some top-secret documents. Nobody will notice they aren't the originals... right?"

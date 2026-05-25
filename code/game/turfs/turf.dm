@@ -372,15 +372,15 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		return (mover.movement_type & PHASING) || (mover.pass_flags & pass_flags_self) // If they can phase through us, let them in. If not, don't.
 	return TRUE
 
-/turf/open/Entered(atom/movable/AM)
-	. =..()
+/turf/open/Entered(atom/movable/arrived)
+	. = ..()
 	//melting
-	if(isobj(AM) && air?.return_temperature() > T0C)
-		var/obj/O = AM
+	if(isobj(arrived) && air?.return_temperature() > T0C)
+		var/obj/O = arrived
 		if(O.obj_flags & FROZEN)
 			O.make_unfrozen()
-	if(!AM.zfalling)
-		zFall(AM)
+	if(!arrived.zfalling)
+		zFall(arrived)
 
 // Initializes the baseturfs list, given an optional "fake_baseturf_type".
 // If "fake_baseturf_type" is a list, then this turf's baseturfs are set to that list.
@@ -516,7 +516,8 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 
 /turf/proc/is_shielded()
 
-/turf/contents_explosion(severity, target)
+//most explosions actually passed here
+/turf/contents_explosion(severity, target, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 
 	for(var/atom/A as anything in contents)
 		if(!QDELETED(A))
@@ -524,13 +525,14 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 				var/atom/movable/AM = A
 				if(!AM.ex_check(explosion_id))
 					continue
+			var/list/to_explode = list(A, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 			switch(severity)
 				if(EXPLODE_DEVASTATE)
-					SSexplosions.highobj += A
+					SSexplosions.highobj += list(to_explode)
 				if(EXPLODE_HEAVY)
-					SSexplosions.medobj += A
+					SSexplosions.medobj += list(to_explode)
 				if(EXPLODE_LIGHT)
-					SSexplosions.lowobj += A
+					SSexplosions.lowobj += list(to_explode)
 
 /turf/narsie_act(force, ignore_mobs, probability = 20)
 	. = (force || prob(probability))

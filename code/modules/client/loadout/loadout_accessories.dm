@@ -38,6 +38,10 @@
 	display_name = "poncho, recolorable"
 	path = /obj/item/clothing/neck/poncho
 
+/datum/gear/accessory/mantle
+	display_name = "mantle, recolorable"
+	path = /obj/item/clothing/neck/mantle
+
 //neckwraps
 
 /datum/gear/accessory/neckwraps
@@ -80,6 +84,10 @@
 	display_name = "gloves, black"
 	description = "Standard hand coverings for everyday use."
 	path = /obj/item/clothing/gloves/color/black
+
+/datum/gear/accessory/gloves/long
+	display_name = "long gloves, colorable"
+	path = /obj/item/clothing/gloves/long
 
 /datum/gear/accessory/gloves/armwarmers
 	display_name = "arm warmers"
@@ -176,6 +184,11 @@
 /datum/gear/accessory/waistcoatwhite
 	display_name = "white waistcoat"
 	path = /obj/item/clothing/accessory/waistcoat/white
+	slot = null
+
+/datum/gear/accessory/barcoat
+	display_name = "bartender waistcoat"
+	path = /obj/item/clothing/accessory/barcoat
 	slot = null
 
 /datum/gear/accessory/stethoscope

@@ -563,8 +563,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "dW" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
@@ -888,9 +887,7 @@
 /area/ship/cargo)
 "gQ" = (
 /obj/effect/spawner/bunk_bed,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/structure/sign/poster/clip/enlist{
 	pixel_x = 30;
 	pixel_y = 0
@@ -1070,9 +1067,7 @@
 /area/ship/engineering/engine)
 "ii" = (
 /obj/structure/table/wood,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormtwo)
@@ -1154,8 +1149,7 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/security/armory)
 "iF" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/corner/walnut{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1747,8 +1741,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "mq" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/machinery/light/directional/west,
@@ -2150,8 +2143,7 @@
 	pixel_y = 0
 	},
 /obj/machinery/light/directional/north,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
 /turf/open/floor/wood/walnut,
@@ -2257,8 +2249,7 @@
 /area/ship/medical)
 "qz" = (
 /obj/structure/closet/crate/bin,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 8
 	},
 /obj/item/trash/boritos{
@@ -2407,8 +2398,7 @@
 /obj/effect/spawner/bunk_bed{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -2771,8 +2761,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "uz" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 8
 	},
 /turf/open/floor/wood/walnut,
@@ -2975,6 +2964,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/closet/crate/secure/plasma{
+	name = "uranium crate (DANGER)"
+	},
+/obj/item/stack/sheet/mineral/uranium/ten,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "wb" = (
@@ -3345,9 +3339,7 @@
 /area/ship/bridge)
 "yG" = (
 /obj/structure/table/wood,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormfour)
@@ -3403,8 +3395,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "zq" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
 /turf/open/floor/wood/walnut,
@@ -3523,8 +3514,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "At" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
 /obj/machinery/holopad/secure,
@@ -4221,8 +4211,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engine)
 "Fg" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -4523,8 +4512,7 @@
 /area/ship/hallway/central)
 "HA" = (
 /obj/structure/dresser,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -4754,8 +4742,7 @@
 /area/ship/cargo)
 "Jm" = (
 /obj/effect/spawner/bunk_bed,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -5131,6 +5118,9 @@
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "My" = (
@@ -5309,8 +5299,7 @@
 /area/ship/storage/equip)
 "NY" = (
 /obj/structure/dresser,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -5556,9 +5545,7 @@
 /obj/effect/spawner/bunk_bed{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/structure/sign/poster/contraband/backdoor_xeno_babes_6{
 	pixel_x = -28;
 	pixel_y = 0
@@ -5710,8 +5697,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "RO" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -6625,6 +6611,9 @@
 "ZA" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/power/port_gen/pacman/super,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "ZG" = (

@@ -212,7 +212,7 @@
 	desc = "A basic device designed to mimic the functions of a human stomach"
 	organ_flags = ORGAN_SYNTHETIC
 	maxHealth = STANDARD_ORGAN_THRESHOLD * 0.5
-	metabolism_efficiency = 0.7 // not as good at digestion
+	metabolism_efficiency = 0.07 // not as good at digestion
 	var/emp_vulnerability = 80 //Chance of permanent effects if emp-ed.
 
 /obj/item/organ/stomach/cybernetic/tier2

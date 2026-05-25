@@ -2,6 +2,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c10mm
 	ammo_type = /obj/item/ammo_casing/c10mm
+	max_ammo = 15
 
 /obj/item/storage/box/ammo/c10mm
 	name = "box of 10x22mm ammo"
@@ -231,6 +232,21 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr = 4)
 	generate_items_inside(items_inside,src)
 
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/surplus
+	ammo_type = /obj/item/ammo_casing/c22lr/surplus
+	max_ammo = 25
+	custom_materials = list(/datum/material/iron = 4000)
+
+/obj/item/storage/box/ammo/c22lr/surplus
+	name = "box of surplus .22 LR ammo"
+	desc = "A box of low-quality .22 LR ammo."
+	icon_state = "22lrbox-surplus"
+
+/obj/item/storage/box/ammo/c22lr/surplus/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/surplus = 4)
+	generate_items_inside(items_inside,src)
+
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr/ap
 	ammo_type = /obj/item/ammo_casing/c22lr/ap
 	max_ammo = 25
@@ -441,6 +457,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a44roum
 	ammo_type = /obj/item/ammo_casing/a44roum
+	max_ammo = 12
 
 /obj/item/storage/box/ammo/a44roum
 	name = "box of .44 roumain ammo"

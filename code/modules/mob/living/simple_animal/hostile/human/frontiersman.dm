@@ -15,6 +15,19 @@
 	r_hand = /obj/item/melee/knife/survival
 	dodging = TRUE
 
+/mob/living/simple_animal/hostile/human/frontier/civilian
+	name = "Frontiersman Doorguard"
+	desc = "A new recruit to the brutal Frontiersman terrorist fleet. This one is too new or stupid to even be assigned a knife."
+	minimum_distance = 10
+	retreat_distance = 10
+	obj_damage = 0
+	r_hand = null
+	environment_smash = ENVIRONMENT_SMASH_NONE
+
+/mob/living/simple_animal/hostile/human/frontier/civilian/Aggro()
+	..()
+	say("GUARDS!!")
+
 /mob/living/simple_animal/hostile/human/frontier/internals
 	icon_state = "frontiersmanmelee_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
@@ -513,6 +526,23 @@
 	r_hand = /obj/item/gun/ballistic/shotgun/cm15
 	weapon_drop_chance = 100
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/f4
+	name = "Frontiersman Shot-Caller"
+	desc = "This Frontiersman moves with what could almost pass for discipline among the infamously ragtag terrorists. Their eyes pan across the horizon, chrome marksman rifle leant on one shoulder."
+	rapid = 3
+	rapid_fire_delay = 8
+	casingtype = /obj/item/ammo_casing/a762_40
+	projectilesound = 'sound/weapons/gun/rifle/f4.ogg'
+	r_hand = /obj/item/gun/ballistic/automatic/marksman/f4
+	weapon_drop_chance = 100
+	vision_range = 16
+	aggro_vision_range = 16
+	minimum_distance = 16
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle
 	name = "Frontiersman Commander"
 	desc = "This Frontiersman sways through the world with a deliberate cadence. Their eyes stay up as they search for a target, rubbing at the bolt of their rifle."
@@ -523,7 +553,7 @@
 	rapid_fire_delay = 10
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle/neutered
-	weapon_drop_chance = 100
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals
 	icon_state = "frontiersmanofficer_mask"

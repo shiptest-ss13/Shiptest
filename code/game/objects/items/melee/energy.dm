@@ -14,6 +14,8 @@
 	var/sword_color
 	/// The heat given off when active.
 	var/active_heat = 3500
+	/// Damage type used while active.
+	var/active_damtype = BURN
 
 	/// Force while active.
 	var/active_force = 30
@@ -56,11 +58,13 @@
 
 	if(active)
 		heat = active_heat
+		damtype = active_damtype
 		START_PROCESSING(SSobj, src)
 		if(sword_color)
 			icon_state = "[base_icon_state][sword_color]"
 	else
 		heat = initial(heat)
+		damtype = initial(damtype)
 		STOP_PROCESSING(SSobj, src)
 
 	tool_behaviour = (active ? TOOL_SAW : NONE) //Lets energy weapons cut trees. Also lets them do bonecutting surgery, which is kinda metal!
@@ -121,7 +125,7 @@
 
 /obj/item/melee/energy/sword
 	name = "energy sword"
-	desc = "For when a katana isn't enough. While Nanotrasen and the Syndicate both produce the so-called e-swords, they are visually and functionaly identical."
+	desc = "For when a katana isn't enough. While Makosso-Warra and the Syndicate both produce the so-called e-swords, they are visually and functionaly identical."
 	icon_state = "sword"
 	base_icon_state = "sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -319,6 +323,7 @@
 
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
 
 	throwforce = 5
 	active_throwforce = 20
@@ -329,6 +334,7 @@
 	armour_penetration = -20
 
 	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
 
 	active_hitsound = 'sound/weapons/blade1.ogg'
 
@@ -386,11 +392,11 @@
 	if(active)
 		icon_state = "[base_icon_state]-on"
 		item_state = "[base_icon_state]-on"
-		damtype = FIRE
 		armour_penetration = 60
+		slot_flags = null
 	else
 		icon_state = base_icon_state
 		item_state = base_icon_state
-		damtype = BRUTE
 		armour_penetration = -20
+		slot_flags = ITEM_SLOT_BELT
 	. = ..()

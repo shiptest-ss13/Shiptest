@@ -745,7 +745,7 @@
 /obj/machinery/door/airlock/wood{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/welded,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/cellar)
 "mc" = (
@@ -875,7 +875,6 @@
 /area/ruin/powered/icemoon/lodge/residential)
 "no" = (
 /obj/structure/table/wood,
-/obj/machinery/fax/ruin,
 /turf/open/floor/carpet/red_gold,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "nD" = (
@@ -965,9 +964,10 @@
 /turf/open/floor/wood/ebony/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "pS" = (
-/obj/structure/noticeboard{
+/obj/structure/noticeboard/directional/north{
 	name = "trophy board";
-	desc = "A board for hanging trophies upon."
+	desc = "A board for hanging trophies upon.";
+	pixel_y = 8
 	},
 /obj/item/clothing/mask/rat/bear{
 	pixel_y = -2;
@@ -980,7 +980,6 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/a8_50r{
-	pixel_x = 0;
 	pixel_y = -6;
 	auto_scatter = 0;
 	auto_rotate = 0
@@ -1004,7 +1003,6 @@
 	auto_scatter = 0
 	},
 /obj/item/ammo_casing/a8_50r{
-	pixel_x = 0;
 	pixel_y = 8;
 	auto_rotate = 0;
 	auto_scatter = 0
@@ -2855,7 +2853,7 @@
 /obj/machinery/door/airlock/wood{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/welded,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/cellar)
 "RM" = (
@@ -2906,6 +2904,10 @@
 /obj/structure/destructible/tribal_torch/lit,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
+	},
+/obj/item/extinguisher/mini{
+	pixel_x = -10;
+	pixel_y = 13
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -3279,8 +3281,7 @@
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/mine/proximity/explosive/live{
-	range_heavy = 1;
-	range_light = 5
+	spawn_arm_delay = 100
 	},
 /obj/effect/mob_spawn/human/corpse/srm/montagne,
 /turf/open/floor/wood/maple,

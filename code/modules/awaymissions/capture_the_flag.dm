@@ -16,7 +16,7 @@
 	item_state = "banner"
 	lefthand_file = 'icons/mob/inhands/equipment/banners_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/banners_righthand.dmi'
-	desc = "A banner with Nanotrasen's logo on it."
+	desc = "A banner with Makosso-Warra's logo on it."
 	slowdown = 2
 	throw_speed = 0
 	throw_range = 1
@@ -132,7 +132,7 @@
 	name = "banner landmark"
 	icon = 'icons/obj/banner.dmi'
 	icon_state = "banner"
-	desc = "This is where a banner with Nanotrasen's logo on it would go."
+	desc = "This is where a banner with Makosso-Warra's logo on it would go."
 	layer = LOW_ITEM_LAYER
 	var/obj/item/ctf/flag
 
@@ -468,11 +468,11 @@
 /obj/item/gun/ballistic/automatic/assault/cm82/ctf
 	desc = "CLIP's standard assault rifle, a relatively new service weapon. This rifle will disintegrate if dropped."
 
-/obj/item/gun/ballistic/automatic/assault/cm82/dropped()
+/obj/item/gun/ballistic/automatic/assault/cm82/ctf/dropped()
 	. = ..()
 	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 30)
 
-/obj/item/gun/ballistic/automatic/assault/cm82/proc/floor_vanish()
+/obj/item/gun/ballistic/automatic/assault/cm82/ctf/proc/floor_vanish()
 	if(isturf(loc))
 		qdel(src)
 

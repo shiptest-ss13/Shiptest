@@ -32,8 +32,14 @@
 		return
 	move_delay = TRUE
 	var/oldloc = loc
+	set_glide_size(DELAY_TO_GLIDE_SIZE(CONFIG_GET(number/movedelay/walk_delay) * move_speed_multiplier))
 	step(src, direction)
 	if(oldloc != loc)
+		animate(src, pixel_z = 4, time = 0)
+		var/prev_trans = matrix(transform)
+		animate(pixel_z = 0, transform = turn(transform, pick(-6, 0, 6)), time=2)
+		animate(pixel_z = 0, transform = prev_trans, time = 0)
+		playsound(loc, 'sound/machines/snake_move.ogg', 25, FALSE)
 		addtimer(CALLBACK(src, PROC_REF(ResetMoveDelay)), CONFIG_GET(number/movedelay/walk_delay) * move_speed_multiplier)
 	else
 		move_delay = FALSE

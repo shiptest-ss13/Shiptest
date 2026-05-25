@@ -23,6 +23,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -48,6 +49,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -73,6 +75,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -98,6 +101,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -122,6 +126,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = BIO_ROBOTIC
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -224,6 +229,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = BIO_ROBOTIC
 
 	brute_reduction = 5
 	burn_reduction = 4
