@@ -211,6 +211,9 @@
 		/obj/item/stock_parts/cell/gun/solgov,
 	)
 
+	gun_firemodes = list(FIREMODE_AIMED)
+	default_firemode = FIREMODE_AIMED
+
 	icon_state = "railgun"
 	item_state = "railgun"
 
@@ -230,7 +233,7 @@
 	show_magazine_on_sprite = FALSE
 	empty_indicator = FALSE
 
-	canMouseDown = TRUE
+	canMouseDown = FALSE
 
 /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon/loaded
 	doesnt_keep_bullet = FALSE

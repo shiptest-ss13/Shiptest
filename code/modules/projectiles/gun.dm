@@ -348,9 +348,9 @@
 	///Firemode index, due to code shit this is the currently selected firemode
 	var/firemode_index
 	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
-	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO)
+	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO, FIREMODE_AIMED)
 	/// A acoc list that determines the names of firemodes. Use if you wanna be weird and set the name of say, FIREMODE_OTHER to "Underbarrel grenade launcher" for example.
-	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire")
+	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire", FIREMODE_AIMED = "aimed")
 	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
 	var/fire_select_icon_state_prefix = ""
 	///If true, we put "safety_" before fire_select_icon_state_prefix's prefix. ex. "safety_laser_single"
@@ -1190,6 +1190,10 @@
 		if(!GetComponent(/datum/component/automatic_fire))
 			AddComponent(/datum/component/automatic_fire, fire_delay)
 		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
+	if(FIREMODE_AIMED in gun_firemodes)
+		if(!GetComponent(/datum/component/aimed_fire))
+			AddComponent(/datum/component/aimed_fire, aiming_time, aiming_time_fire_threshold, aiming_time_increase_user_movement, aiming_time_increase_angle_multiplier)
+		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AIMEDFIRE)
 	for(var/datum/action/item_action/toggle_firemode/old_firemode in actions)
 		old_firemode.Destroy()
 	var/datum/action/item_action/our_action
@@ -1202,6 +1206,8 @@
 			firemode_index = i
 			if(gun_firemodes[i] == FIREMODE_FULLAUTO)
 				SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AUTOFIRE)
+			if(gun_firemodes[i] == FIREMODE_AIMED)
+				SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AIMEDFIRE)
 			if(our_action)
 				our_action.UpdateButtonIcon()
 			return
@@ -1235,6 +1241,11 @@
 		SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AUTOFIRE)
 	else
 		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
+
+	if(current_firemode == FIREMODE_AIMED)
+		SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AIMEDFIRE)
+	else
+		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AIMEDFIRE)
 //wawa
 	to_chat(user, span_notice("Switched to [gun_firenames[current_firemode]]."))
 	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)

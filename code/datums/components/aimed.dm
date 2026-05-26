@@ -67,9 +67,9 @@
 
 	// process_shot()
 
-/datum/component/aimed_fire/check_user(automatic_cleanup = TRUE)
+/datum/component/aimed_fire/proc/check_user(automatic_cleanup = TRUE)
 	if(!istype(shooter) || !isturf(shooter.loc) || !(src in shooter.held_items) || shooter.incapacitated())	//Doesn't work if you're not holding it!
-		if(automatic_cleanup)
+		//if(automatic_cleanup)
 			//stop_aiming()
 			//set_user(null)
 		return FALSE
@@ -195,7 +195,7 @@
 //Dakka-dakka
 /datum/component/aimed_fire/proc/start_aiming()
 	if(aimedfire_stat == AIMEDFIRE_STAT_FIRING)
-		return //Already pew-pewing.
+		return //Already aiming.
 	aimedfire_stat = AIMEDFIRE_STAT_FIRING
 
 	clicker.mouse_override_icon = 'icons/effects/mouse_pointers/weapon_pointer.dmi'
@@ -215,8 +215,8 @@
 	if(aimedfire_stat != AIMEDFIRE_STAT_FIRING)
 		return //Things may have changed while on_aimedfire_start() was being processed, due to do_after's sleep.
 
-	if(!process_shot()) //First shot is processed instantly.
-		return //If it fails, such as when the gun is empty, then there's no need to schedule a second shot.
+	// if(!process_shot()) //First shot is processed instantly.
+	// 	return //If it fails, such as when the gun is empty, then there's no need to schedule a second shot.
 
 	last_process = world.time
 	START_PROCESSING(SSprojectiles, src)
@@ -228,6 +228,8 @@
 	UnregisterSignal(clicker, COMSIG_CLIENT_MOUSEUP)
 	mouse_status = AIMEDFIRE_MOUSEUP
 	process_aim()
+	if(aiming_time_left <= aiming_time_fire_threshold)
+		process_shot()
 	if(aimedfire_stat == AIMEDFIRE_STAT_FIRING)
 		stop_aimedfiring()
 	return COMPONENT_CLIENT_MOUSEUP_INTERCEPT
@@ -301,11 +303,36 @@
 		stop_aimedfiring() //Elvis has left the building.
 		return FALSE
 	shooter.face_atom(target)
-	//COOLDOWN_START(src, next_shot_cd, aimedfire_shot_delay)
 	if(SEND_SIGNAL(parent, COMSIG_AIMEDFIRE_SHOT, target, shooter, mouse_parameters) & COMPONENT_AIMEDFIRE_SHOT_SUCCESS)
 		return TRUE
+	// process_aim(target)
+	// return TRUE
 	stop_aimedfiring()
 	return FALSE
+
+// /obj/item/gun/proc/aiming_beam(force_update = FALSE, new_angle)
+// 	var/diff = abs(aiming_lastangle - lastangle)
+// 	if(!check_user())
+// 		return
+// 	if(diff < AIMING_BEAM_ANGLE_CHANGE_THRESHOLD && !force_update)
+// 		return
+// 	aiming_lastangle = lastangle
+// 	var/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/P = new
+// 	P.gun = src
+// 	if(aiming_time)
+// 		var/percent = ((100/aiming_time)*aiming_time_left)
+// 		P.color = rgb(255 * percent,255 * ((100 - percent) / 100),0)
+// 	else
+// 		P.color = rgb(0, 255, 0)
+// 	var/turf/curloc = get_turf(src)
+// 	var/turf/targloc = get_turf(current_user.client.mouseObject)
+// 	if(!istype(targloc))
+// 		if(!istype(curloc))
+// 			return
+// 		targloc = get_turf_in_angle(lastangle, curloc, 10)
+// 	var/mouse_modifiers = params2list(current_user.client.mouseParams)
+// 	P.preparePixelProjectile(targloc, current_user, mouse_modifiers, 0)
+// 	P.fire(lastangle)
 
 // Gun procs.
 
