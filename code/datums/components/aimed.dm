@@ -170,7 +170,6 @@
 	mouse_parameters = params
 	INVOKE_ASYNC(src, PROC_REF(start_aiming))
 
-//Dakka-dakka
 /datum/component/aimed_fire/proc/start_aiming()
 	if(aimedfire_stat == AIMEDFIRE_STAT_AIMING)
 		return //Already aiming.
@@ -212,9 +211,7 @@
 	mouse_status = AIMEDFIRE_MOUSEUP
 	process_aim()
 	if(aiming_time_left <= aiming_time_fire_threshold && !shot_canceled)
-		to_chat(shooter,"aiming time left = [aiming_time_left] / threshold = [aiming_time_fire_threshold]")
 		process_shot()
-	to_chat(shooter,"second check, aiming time left = [aiming_time_left] / threshold = [aiming_time_fire_threshold]")
 	if(aimedfire_stat == AIMEDFIRE_STAT_AIMING)
 		stop_aiming()
 	return COMPONENT_CLIENT_MOUSEUP_INTERCEPT
@@ -292,8 +289,6 @@
 	shooter.face_atom(target)
 	if(SEND_SIGNAL(parent, COMSIG_AIMEDFIRE_SHOT, target, shooter, mouse_parameters) & COMPONENT_AIMEDFIRE_SHOT_SUCCESS)
 		return TRUE
-	// process_aim(target)
-	// return TRUE
 	stop_aiming()
 	return FALSE
 
@@ -324,16 +319,23 @@
 	tracer_type = /obj/effect/projectile/tracer/tracer/aiming
 	name = "aiming beam"
 	icon = ""
+
 	hitsound = null
 	hitsound_non_living = null
+	hitsound_glass = null
+	hitsound_stone = null
+	hitsound_metal = null
+	hitsound_wood = null
+	hitsound_snow = null
+	near_miss_sound = null
+	ricochet_sound = null
+
 	nodamage = TRUE
 	damage = 0
 	hitscan_light_range = 0
 	hitscan_light_intensity = 0
 	hitscan_light_color_override = "#99ff99"
 	reflectable = REFLECT_FAKEPROJECTILE
-	near_miss_sound = null
-	ricochet_sound = null
 	range = 50
 
 	muzzle_type = null
