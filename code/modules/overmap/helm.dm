@@ -92,6 +92,7 @@
 	if(!calibrating)
 		return
 	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
+	jump_state = JUMP_STATE_OFF
 	calibrating = FALSE
 	jump_coords = null
 	deltimer(jump_timer)

@@ -4532,10 +4532,7 @@
 	dir = 1
 	},
 /obj/machinery/computer/cryopod/directional/south,
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/structure/noticeboard/directional/east,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/cryo)
 "TD" = (
@@ -5292,9 +5289,8 @@
 	dir = 5
 	},
 /obj/structure/table/reinforced,
-/obj/structure/noticeboard{
-	name = "kitchen notice board";
-	pixel_y = 25
+/obj/structure/noticeboard/directional/north{
+	name = "kitchen notice board"
 	},
 /obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 8;
