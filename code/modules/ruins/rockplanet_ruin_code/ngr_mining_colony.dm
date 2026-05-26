@@ -56,4 +56,15 @@
 
 /obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/commanders_log_four
 	name = "commander's log, day 109"
-	default_raw_text = "<b>Day 109</b><br><br>Guards have given me word that there's a large horde of fauna about ten minutes out. Apparently the drilling incident yesterday spooked a whole damn nest of gruboids and mi-gos and all the other nasty things these worlds have to offer, and a bunch of them have begun making the trip here. Would've been nice to hear earlier. I'm passing an evacuation order and we're evacuating until Command can reclaim the colony."
+	default_raw_text = "<b>Day 109</b><br><br>Guards have given me word that there's a large horde of fauna not long out. Apparently the drilling incident yesterday spooked a whole damn nest of gruboids and mi-gos and all the other nasty things these worlds have to offer, and a bunch of them have begun making the trip here. Would've been nice to hear earlier. I'm passing an evacuation order and we're evacuating until Command can reclaim the colony."
+
+/obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/prisoner_notice
+	name = "notice to prisoners"
+	default_raw_text = "I'm gonna be honest, this colony was never built to accomodate this many of you. We're doing our best to keep you lot comfortable until Command stops dragging their feet. If you need any extra bedding or supplies or whatnot, notify the Sarge, and they'll see what the technicians can spare. Keep playing nice, please."
+
+/obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/prisoner_procedure
+	name = "reminder to guards"
+	default_raw_text = "Only give them extras approved by the Sergeant, and don't give 'em anything more. Alcohol is also prohibited, and if any of them distill with what's in the garden you oughta raise issue. Especially because one of them's a Frontie 'shiner. Also, if we ever have to evacuate, herd 'em onto the shuttle if you can."
+
+/obj/item/paper/crumpled/muddy/fluff/ngr_colony_ramzi_camp_moonshine_note
+	default_raw_text = "i managed to recover most of your moonshining equipment from the warehouse, apparently they dumped it there after they cut up your ship and never got around to using it. you owe me a few jugs of the good stuff for this."
