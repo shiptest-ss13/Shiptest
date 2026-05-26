@@ -64,7 +64,7 @@
 
 // Ferromagnetic rod (Gauss cannon)
 
-/obj/projectile/bullet/gauss/rail
+/obj/projectile/bullet/gauss/rod
 	name = "ferrogmagnetic rod"
 	icon_state = "sabot"
 	damage = 60
@@ -73,7 +73,7 @@
 	demolition_mod = 4
 	wall_damage_override = 250
 
-/obj/projectile/bullet/p50/rail/on_hit(atom/target, blocked)
+/obj/projectile/bullet/gauss/rod/on_hit(atom/target, blocked)
 	. = ..()
 	if(ismovable(target) && isliving(target))
 		var/atom/movable/M = target

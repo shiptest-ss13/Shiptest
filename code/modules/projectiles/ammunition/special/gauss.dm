@@ -59,11 +59,11 @@
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/gauss
 	energy_cost = 1400
 
-/obj/item/ammo_casing/caseless/gauss/rail
+/obj/item/ammo_casing/caseless/gauss/rod
 	name = "ferromagnetic rod"
 	desc = "A heavy and incredibly dense alloy rod."
 	caliber = "rod"
 	icon_state = "gauss-rod"
-	projectile_type = /obj/projectile/bullet/gauss/rail
+	projectile_type = /obj/projectile/bullet/gauss/rod
 	auto_rotate = TRUE
 	energy_cost = 4000
