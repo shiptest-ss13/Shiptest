@@ -61,3 +61,21 @@
 	muzzle_type = /obj/effect/projectile/muzzle/gauss
 	tracer_type = /obj/effect/projectile/tracer/gauss
 	impact_type = /obj/effect/projectile/impact/gauss
+
+// Ferromagnetic rod (Gauss cannon)
+
+/obj/projectile/bullet/gauss/rail
+	name = "ferrogmagnetic rod"
+	icon_state = "sabot"
+	damage = 60
+	armour_penetration = 50
+	knockdown = 30
+	demolition_mod = 4
+	wall_damage_override = 250
+
+/obj/projectile/bullet/p50/rail/on_hit(atom/target, blocked)
+	. = ..()
+	if(ismovable(target) && isliving(target))
+		var/atom/movable/M = target
+		var/atom/throw_target = get_edge_target_turf(M, dir)
+		M.throw_at(throw_target, 4, 2)
