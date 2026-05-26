@@ -975,3 +975,13 @@
 	faction = /datum/faction/solgov
 	faction_discount = 0
 	faction_locked = TRUE
+
+/datum/supply_pack/gun/railgun
+	name = "Atelier Gauss Cannon"
+	desc = "A high powered Solarian gauss sniper. Not for export."
+	cost = 6000
+	contains = list(/obj/item/storage/guncase/railgun)
+	crate_name = "gauss crate"
+	faction = /datum/faction/solgov
+	faction_discount = 0
+	faction_locked = TRUE
