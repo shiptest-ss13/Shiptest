@@ -1,5 +1,3 @@
-#define AIMING_BEAM_ANGLE_CHANGE_THRESHOLD 0.1
-
 /obj/item/gun
 	name = "gun"
 	desc = "It's a gun. It's pretty terrible, though."

@@ -34,7 +34,6 @@
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(wake_up))
 	RegisterSignal(parent, COMSIG_GUN_DISABLE_AIMEDFIRE, PROC_REF(disable_aimedfire))
 	RegisterSignal(parent, COMSIG_GUN_ENABLE_AIMEDFIRE, PROC_REF(enable_aimedfire))
-	//RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
 	if(_aiming_time)
 		aiming_time = _aiming_time
 	if(_aiming_threshold)
@@ -52,6 +51,12 @@
 	//setuser(null)
 	return ..()
 
+/datum/component/aimed_fire/proc/on_mob_move()
+	if(aimedfire_stat == AIMEDFIRE_STAT_FIRING)
+		delay_penalty(aiming_time_increase_user_movement)
+		process_aim()
+		aiming_beam(TRUE)
+
 //good
 /datum/component/aimed_fire/process(seconds_per_tick)
 	if(aimedfire_stat != AIMEDFIRE_STAT_FIRING)
@@ -64,8 +69,6 @@
 	aiming_beam(TRUE)
 	last_process = world.time
 
-	// process_shot()
-
 /datum/component/aimed_fire/proc/check_user(automatic_cleanup = TRUE)
 	if(!istype(shooter) || !isturf(shooter.loc) || !(src in shooter.held_items) || shooter.incapacitated())	//Doesn't work if you're not holding it!
 		//if(automatic_cleanup)
@@ -73,18 +76,6 @@
 			//set_user(null)
 		return FALSE
 	return TRUE
-
-// /obj/item/gun/proc/start_aiming(target)
-// 	aiming_time_left = aiming_time
-	//aiming = TRUE
-	// process_aim(target)
-	//aiming_beam(TRUE)
-
-// /obj/item/gun/proc/stop_aiming(mob/user)
-// 	set waitfor = FALSE
-// 	aiming_time_left = aiming_time
-	//aiming = FALSE
-	//QDEL_LIST(current_tracers)
 
 /datum/component/aimed_fire/proc/wake_up(datum/source, mob/user, slot)
 	SIGNAL_HANDLER
@@ -205,6 +196,8 @@
 		mouse_status = AIMEDFIRE_MOUSEDOWN
 
 	RegisterSignal(shooter, COMSIG_MOB_SWAP_HANDS, PROC_REF(stop_aimedfiring))
+	RegisterSignal(shooter, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
+	RegisterSignal(parent, COMSIG_CLICK_UNIQUE_ACTION, PROC_REF(cancel_shot))
 
 	if(isgun(parent))
 		var/obj/item/gun/shoota = parent
@@ -214,22 +207,23 @@
 	if(aimedfire_stat != AIMEDFIRE_STAT_FIRING)
 		return //Things may have changed while on_aimedfire_start() was being processed, due to do_after's sleep.
 
-	// if(!process_shot()) //First shot is processed instantly.
-	// 	return //If it fails, such as when the gun is empty, then there's no need to schedule a second shot.
 	aiming_time_left = aiming_time
 	last_process = world.time
-	//var/angle = get_angle(shooter,target)
+	var/angle = get_angle(shooter,target)
 	START_PROCESSING(SSprojectiles, src)
-	aiming_beam(TRUE)
-	//declare last time here?
+	aiming_beam(TRUE, angle)
 	RegisterSignal(clicker, COMSIG_CLIENT_MOUSEDRAG, PROC_REF(on_mouse_drag))
 
-/datum/component/aimed_fire/proc/on_mouse_up(datum/source, atom/object, turf/location, control, params)
+/datum/component/aimed_fire/proc/cancel_shot()
+	stop_aimedfiring()
+	return OVERRIDE_UNIQUE_ACTION
+
+/datum/component/aimed_fire/proc/on_mouse_up(datum/source, atom/object, turf/location, control, params, shot_canceled = FALSE)
 	SIGNAL_HANDLER
 	UnregisterSignal(clicker, COMSIG_CLIENT_MOUSEUP)
 	mouse_status = AIMEDFIRE_MOUSEUP
 	process_aim()
-	if(aiming_time_left <= aiming_time_fire_threshold)
+	if(aiming_time_left <= aiming_time_fire_threshold && !shot_canceled)
 		to_chat(shooter,"aiming time left = [aiming_time_left] / threshold = [aiming_time_fire_threshold]")
 		process_shot()
 	to_chat(shooter,"second check, aiming time left = [aiming_time_left] / threshold = [aiming_time_fire_threshold]")
@@ -249,6 +243,8 @@
 		UnregisterSignal(clicker, COMSIG_CLIENT_MOUSEDRAG)
 	if(!QDELETED(shooter))
 		UnregisterSignal(shooter, COMSIG_MOB_SWAP_HANDS)
+		UnregisterSignal(shooter, COMSIG_MOVABLE_MOVED)
+		UnregisterSignal(parent, COMSIG_CLICK_UNIQUE_ACTION)
 	QDEL_LIST(current_tracers)
 	aiming_time_left = aiming_time
 	target = null
@@ -325,7 +321,8 @@
 	var/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/P = new
 	P.gun = parent
 	if(aiming_time)
-		var/percent = ((100/aiming_time)*min((aiming_time_left-aiming_time_fire_threshold),1))
+		// see if I can get the color nicer
+		var/percent = ((100/aiming_time)*max((aiming_time_left-aiming_time_fire_threshold),0))
 		P.color = rgb(255 * percent,255 * ((100 - percent) / 100),0)
 	else
 		P.color = rgb(0, 255, 0)
