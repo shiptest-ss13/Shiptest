@@ -48,42 +48,30 @@
 
 /datum/component/aimed_fire/Destroy()
 	aimedfire_off()
-	//setuser(null)
 	return ..()
 
 /datum/component/aimed_fire/proc/on_mob_move()
-	if(aimedfire_stat == AIMEDFIRE_STAT_FIRING)
+	if(aimedfire_stat == AIMEDFIRE_STAT_AIMING)
 		delay_penalty(aiming_time_increase_user_movement)
 		process_aim()
 		aiming_beam(TRUE)
 
 //good
 /datum/component/aimed_fire/process(seconds_per_tick)
-	if(aimedfire_stat != AIMEDFIRE_STAT_FIRING)
+	if(aimedfire_stat != AIMEDFIRE_STAT_AIMING)
 		STOP_PROCESSING(SSprojectiles, src)
 		return
-		// last_process = world.time
-		// return
-	check_user()
 	aiming_time_left = max(0, aiming_time_left - (world.time - last_process))
 	aiming_beam(TRUE)
 	last_process = world.time
-
-/datum/component/aimed_fire/proc/check_user(automatic_cleanup = TRUE)
-	if(!istype(shooter) || !isturf(shooter.loc) || !(src in shooter.held_items) || shooter.incapacitated())	//Doesn't work if you're not holding it!
-		//if(automatic_cleanup)
-			//stop_aiming()
-			//set_user(null)
-		return FALSE
-	return TRUE
 
 /datum/component/aimed_fire/proc/wake_up(datum/source, mob/user, slot)
 	SIGNAL_HANDLER
 
 	if(aimedfire_stat == AIMEDFIRE_STAT_ALERT)
 		return //We've updated the firemode. No need for more.
-	if(aimedfire_stat == AIMEDFIRE_STAT_FIRING)
-		stop_aimedfiring() //Let's stop shooting to avoid issues.
+	if(aimedfire_stat == AIMEDFIRE_STAT_AIMING)
+		stop_aiming() //Let's stop shooting to avoid issues.
 		return
 	if(iscarbon(user))
 		var/mob/living/carbon/sniper = user
@@ -112,8 +100,8 @@
 	SIGNAL_HANDLER
 	if(aimedfire_stat == AIMEDFIRE_STAT_IDLE)
 		return
-	if(aimedfire_stat == AIMEDFIRE_STAT_FIRING)
-		stop_aimedfiring()
+	if(aimedfire_stat == AIMEDFIRE_STAT_AIMING)
+		stop_aiming()
 
 	aimedfire_stat = AIMEDFIRE_STAT_IDLE
 
@@ -174,8 +162,8 @@
 
 	if(aimedfire_stat == (AIMEDFIRE_STAT_IDLE))
 		CRASH("on_mouse_down() called with [aimedfire_stat] aimedfire_stat")
-	if(aimedfire_stat == AIMEDFIRE_STAT_FIRING)
-		stop_aimedfiring() //This can happen if we click and hold and then alt+tab, printscreen or other such action. MouseUp won't be called then and it will keep aimedfiring.
+	if(aimedfire_stat == AIMEDFIRE_STAT_AIMING)
+		stop_aiming() //This can happen if we click and hold and then alt+tab, printscreen or other such action. MouseUp won't be called then and it will keep aimedfiring.
 
 	target = _target
 	target_loc = get_turf(target)
@@ -184,9 +172,9 @@
 
 //Dakka-dakka
 /datum/component/aimed_fire/proc/start_aiming()
-	if(aimedfire_stat == AIMEDFIRE_STAT_FIRING)
+	if(aimedfire_stat == AIMEDFIRE_STAT_AIMING)
 		return //Already aiming.
-	aimedfire_stat = AIMEDFIRE_STAT_FIRING
+	aimedfire_stat = AIMEDFIRE_STAT_AIMING
 
 	clicker.mouse_override_icon = 'icons/effects/mouse_pointers/weapon_pointer.dmi'
 	clicker.mouse_pointer_icon = clicker.mouse_override_icon
@@ -195,16 +183,16 @@
 		RegisterSignal(clicker, COMSIG_CLIENT_MOUSEUP, PROC_REF(on_mouse_up))
 		mouse_status = AIMEDFIRE_MOUSEDOWN
 
-	RegisterSignal(shooter, COMSIG_MOB_SWAP_HANDS, PROC_REF(stop_aimedfiring))
+	RegisterSignal(shooter, COMSIG_MOB_SWAP_HANDS, PROC_REF(stop_aiming))
 	RegisterSignal(shooter, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
 	RegisterSignal(parent, COMSIG_CLICK_UNIQUE_ACTION, PROC_REF(cancel_shot))
 
 	if(isgun(parent))
 		var/obj/item/gun/shoota = parent
 		if(!shoota.on_aimedfire_start(shooter=shooter)) //This is needed because the minigun has a do_after before firing and signals are async.
-			stop_aimedfiring()
+			stop_aiming()
 			return
-	if(aimedfire_stat != AIMEDFIRE_STAT_FIRING)
+	if(aimedfire_stat != AIMEDFIRE_STAT_AIMING)
 		return //Things may have changed while on_aimedfire_start() was being processed, due to do_after's sleep.
 
 	aiming_time_left = aiming_time
@@ -215,7 +203,7 @@
 	RegisterSignal(clicker, COMSIG_CLIENT_MOUSEDRAG, PROC_REF(on_mouse_drag))
 
 /datum/component/aimed_fire/proc/cancel_shot()
-	stop_aimedfiring()
+	stop_aiming()
 	return OVERRIDE_UNIQUE_ACTION
 
 /datum/component/aimed_fire/proc/on_mouse_up(datum/source, atom/object, turf/location, control, params, shot_canceled = FALSE)
@@ -227,13 +215,13 @@
 		to_chat(shooter,"aiming time left = [aiming_time_left] / threshold = [aiming_time_fire_threshold]")
 		process_shot()
 	to_chat(shooter,"second check, aiming time left = [aiming_time_left] / threshold = [aiming_time_fire_threshold]")
-	if(aimedfire_stat == AIMEDFIRE_STAT_FIRING)
-		stop_aimedfiring()
+	if(aimedfire_stat == AIMEDFIRE_STAT_AIMING)
+		stop_aiming()
 	return COMPONENT_CLIENT_MOUSEUP_INTERCEPT
 
-/datum/component/aimed_fire/proc/stop_aimedfiring(datum/source, atom/object, turf/location, control, params)
+/datum/component/aimed_fire/proc/stop_aiming(datum/source, atom/object, turf/location, control, params)
 	SIGNAL_HANDLER
-	if(aimedfire_stat != AIMEDFIRE_STAT_FIRING)
+	if(aimedfire_stat != AIMEDFIRE_STAT_AIMING)
 		return
 	STOP_PROCESSING(SSprojectiles, src)
 	aimedfire_stat = AIMEDFIRE_STAT_ALERT
@@ -260,7 +248,7 @@
 		mouse_parameters = params
 		if(!new_target)
 			if(QDELETED(target)) //No new target acquired, and old one was deleted, get us out of here.
-				stop_aimedfiring()
+				stop_aiming()
 				CRASH("on_mouse_drag failed to get the turf under screen object [over_object.type]. Old target was incidentally QDELETED.")
 			target = get_turf(target) //If previous target wasn't a turf, let's turn it into one to avoid locking onto a potentially moving target.
 			target_loc = target
@@ -291,7 +279,7 @@
 
 //proccess the aim here
 /datum/component/aimed_fire/proc/process_shot()
-	if(aimedfire_stat != AIMEDFIRE_STAT_FIRING)
+	if(aimedfire_stat != AIMEDFIRE_STAT_AIMING)
 		return FALSE
 	if(QDELETED(target) || get_turf(target) != target_loc) //Target moved or got destroyed since we last aimed.
 		target = target_loc //So we keep firing on the emptied tile until we move our mouse and find a new target.
@@ -299,29 +287,25 @@
 		target = get_step(shooter, shooter.dir) //Shoot in the direction faced if the mouse is on the same tile as we are.
 		target_loc = target
 	else if(!in_view_range(shooter, target))
-		stop_aimedfiring() //Elvis has left the building.
+		stop_aiming() //Elvis has left the building.
 		return FALSE
 	shooter.face_atom(target)
 	if(SEND_SIGNAL(parent, COMSIG_AIMEDFIRE_SHOT, target, shooter, mouse_parameters) & COMPONENT_AIMEDFIRE_SHOT_SUCCESS)
 		return TRUE
 	// process_aim(target)
 	// return TRUE
-	stop_aimedfiring()
+	stop_aiming()
 	return FALSE
 
 /datum/component/aimed_fire/proc/aiming_beam(force_update = FALSE, new_angle)
 	if(new_angle)
 		lastangle = new_angle
 	var/diff = abs(aiming_lastangle - lastangle)
-	// if(!check_user())
-	// 	return
 	if(diff < AIMING_BEAM_ANGLE_CHANGE_THRESHOLD && !force_update)
 		return
 	aiming_lastangle = lastangle
-	var/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/P = new
-	P.gun = parent
+	var/obj/projectile/beam/hitscan/aiming/P = new
 	if(aiming_time)
-		// see if I can get the color nicer
 		var/percent = ((100/aiming_time)*max((aiming_time_left-aiming_time_fire_threshold),0))
 		P.color = rgb(255 * percent,255 * ((100 - percent) / 100),0)
 	else
@@ -335,6 +319,32 @@
 	var/mouse_modifiers = params2list(shooter.client.mouseParams)
 	P.preparePixelProjectile(targloc, shooter, mouse_modifiers, 0)
 	P.fire(lastangle)
+
+/obj/projectile/beam/hitscan/aiming
+	tracer_type = /obj/effect/projectile/tracer/tracer/aiming
+	name = "aiming beam"
+	icon = ""
+	hitsound = null
+	hitsound_non_living = null
+	nodamage = TRUE
+	damage = 0
+	hitscan_light_range = 0
+	hitscan_light_intensity = 0
+	hitscan_light_color_override = "#99ff99"
+	reflectable = REFLECT_FAKEPROJECTILE
+	near_miss_sound = null
+	ricochet_sound = null
+	range = 50
+
+	muzzle_type = null
+	impact_type = null
+
+/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/prehit_pierce(atom/target)
+	return PROJECTILE_DELETE_WITHOUT_HITTING
+
+/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/on_hit()
+	qdel(src)
+	return BULLET_ACT_BLOCK
 
 // Gun procs.
 

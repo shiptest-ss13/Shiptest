@@ -234,7 +234,5 @@
 	show_magazine_on_sprite = FALSE
 	empty_indicator = FALSE
 
-	canMouseDown = FALSE
-
 /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon/loaded
 	doesnt_keep_bullet = FALSE

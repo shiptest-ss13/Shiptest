@@ -52,7 +52,7 @@
 /// Gun is active and in the user hands. Wait until user does a valid click.
 #define AIMEDFIRE_STAT_ALERT (1<<1)
 /// Gun is shooting.
-#define AIMEDFIRE_STAT_FIRING (1<<2)
+#define AIMEDFIRE_STAT_AIMING (1<<2)
 
 #define COMSIG_AIMEDFIRE_ONMOUSEDOWN "aimedfire_onmousedown"
 	#define COMPONENT_AIMEDFIRE_ONMOUSEDOWN_BYPASS (1<<0)
