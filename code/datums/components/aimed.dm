@@ -1,6 +1,8 @@
 #define AIMEDFIRE_MOUSEUP 0
 #define AIMEDFIRE_MOUSEDOWN 1
 
+#define AIMING_BEAM_ANGLE_CHANGE_THRESHOLD 0.1
+
 /datum/component/aimed_fire
 	var/client/clicker
 	var/mob/living/shooter
@@ -62,7 +64,7 @@
 		// return
 	check_user()
 	aiming_time_left = max(0, aiming_time_left - (world.time - last_process))
-	//aiming_beam(TRUE)
+	aiming_beam(TRUE)
 	last_process = world.time
 
 	// process_shot()
@@ -220,6 +222,7 @@
 
 	last_process = world.time
 	START_PROCESSING(SSprojectiles, src)
+	aiming_beam(TRUE)
 	//declare last time here?
 	RegisterSignal(clicker, COMSIG_CLIENT_MOUSEDRAG, PROC_REF(on_mouse_drag))
 
@@ -246,6 +249,7 @@
 		UnregisterSignal(clicker, COMSIG_CLIENT_MOUSEDRAG)
 	if(!QDELETED(shooter))
 		UnregisterSignal(shooter, COMSIG_MOB_SWAP_HANDS)
+	QDEL_LIST(current_tracers)
 	target = null
 	target_loc = null
 	mouse_parameters = null
@@ -310,29 +314,29 @@
 	stop_aimedfiring()
 	return FALSE
 
-// /obj/item/gun/proc/aiming_beam(force_update = FALSE, new_angle)
-// 	var/diff = abs(aiming_lastangle - lastangle)
-// 	if(!check_user())
-// 		return
-// 	if(diff < AIMING_BEAM_ANGLE_CHANGE_THRESHOLD && !force_update)
-// 		return
-// 	aiming_lastangle = lastangle
-// 	var/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/P = new
-// 	P.gun = src
-// 	if(aiming_time)
-// 		var/percent = ((100/aiming_time)*aiming_time_left)
-// 		P.color = rgb(255 * percent,255 * ((100 - percent) / 100),0)
-// 	else
-// 		P.color = rgb(0, 255, 0)
-// 	var/turf/curloc = get_turf(src)
-// 	var/turf/targloc = get_turf(current_user.client.mouseObject)
-// 	if(!istype(targloc))
-// 		if(!istype(curloc))
-// 			return
-// 		targloc = get_turf_in_angle(lastangle, curloc, 10)
-// 	var/mouse_modifiers = params2list(current_user.client.mouseParams)
-// 	P.preparePixelProjectile(targloc, current_user, mouse_modifiers, 0)
-// 	P.fire(lastangle)
+/datum/component/aimed_fire/proc/aiming_beam(force_update = FALSE, new_angle)
+	var/diff = abs(aiming_lastangle - lastangle)
+	// if(!check_user())
+	// 	return
+	if(diff < AIMING_BEAM_ANGLE_CHANGE_THRESHOLD && !force_update)
+		return
+	aiming_lastangle = lastangle
+	var/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/P = new
+	P.gun = parent
+	if(aiming_time)
+		var/percent = ((100/aiming_time)*aiming_time_left)
+		P.color = rgb(255 * percent,255 * ((100 - percent) / 100),0)
+	else
+		P.color = rgb(0, 255, 0)
+	var/turf/curloc = get_turf(parent)
+	var/turf/targloc = get_turf(shooter.client.mouseObject)
+	if(!istype(targloc))
+		if(!istype(curloc))
+			return
+		targloc = get_turf_in_angle(lastangle, curloc, 10)
+	var/mouse_modifiers = params2list(shooter.client.mouseParams)
+	P.preparePixelProjectile(targloc, shooter, mouse_modifiers, 0)
+	P.fire(lastangle)
 
 // Gun procs.
 
