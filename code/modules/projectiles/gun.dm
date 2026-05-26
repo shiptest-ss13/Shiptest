@@ -338,7 +338,7 @@
 	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
 	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO, FIREMODE_AIMED)
 	/// A acoc list that determines the names of firemodes. Use if you wanna be weird and set the name of say, FIREMODE_OTHER to "Underbarrel grenade launcher" for example.
-	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire", FIREMODE_AIMED = "aimed")
+	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire", FIREMODE_AIMED = "charged")
 	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
 	var/fire_select_icon_state_prefix = ""
 	///If true, we put "safety_" before fire_select_icon_state_prefix's prefix. ex. "safety_laser_single"
@@ -434,6 +434,8 @@
 		. += span_notice("It has <b>[manufacturer]</b> engraved on it.")
 	if(HAS_TRAIT(src,TRAIT_FORCE_SUIT_STORAGE))
 		. += span_notice("It has clips and hooks for easy carrying.")
+	if(gun_firemodes[firemode_index] == FIREMODE_AIMED)
+		. += span_notice("You can cancel a charged shot by pressing the <b>unique action</b> key. By default, this is <b>space</b>.")
 
 /obj/item/gun/examine_more(mob/user)
 	. = ..()
@@ -467,7 +469,6 @@
 	if(!(. & EMP_PROTECT_CONTENTS))
 		for(var/obj/O in contents)
 			O.emp_act(severity)
-
 
 /obj/item/gun/proc/recharge_newshot()
 	return
