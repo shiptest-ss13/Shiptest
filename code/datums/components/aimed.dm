@@ -10,7 +10,6 @@
 	var/turf/target_loc //For dealing with locking on targets due to BYOND engine limitations (the mouse input only happening when mouse moves).
 	var/aimedfire_stat = AIMEDFIRE_STAT_IDLE
 	var/mouse_parameters
-	var/aimedfire_shot_delay = 0.1 SECONDS //Time between individual shots.
 	var/mouse_status = AIMEDFIRE_MOUSEUP //This seems hacky but there can be two MouseDown() without a MouseUp() in between if the user holds click and uses alt+tab, printscreen or similar.
 	var/enabled = TRUE
 
@@ -26,8 +25,6 @@
 	var/delay = 25
 	var/lastfire = 0
 	var/list/obj/effect/projectile/tracer/current_tracers
-
-	COOLDOWN_DECLARE(next_shot_cd)
 
 /datum/component/aimed_fire/Initialize(_aiming_time, _aiming_threshold, _movement_delay, _angle_delay)
 	. = ..()
@@ -219,8 +216,9 @@
 
 	// if(!process_shot()) //First shot is processed instantly.
 	// 	return //If it fails, such as when the gun is empty, then there's no need to schedule a second shot.
-
+	aiming_time_left = aiming_time
 	last_process = world.time
+	//var/angle = get_angle(shooter,target)
 	START_PROCESSING(SSprojectiles, src)
 	aiming_beam(TRUE)
 	//declare last time here?
@@ -232,7 +230,9 @@
 	mouse_status = AIMEDFIRE_MOUSEUP
 	process_aim()
 	if(aiming_time_left <= aiming_time_fire_threshold)
+		to_chat(shooter,"aiming time left = [aiming_time_left] / threshold = [aiming_time_fire_threshold]")
 		process_shot()
+	to_chat(shooter,"second check, aiming time left = [aiming_time_left] / threshold = [aiming_time_fire_threshold]")
 	if(aimedfire_stat == AIMEDFIRE_STAT_FIRING)
 		stop_aimedfiring()
 	return COMPONENT_CLIENT_MOUSEUP_INTERCEPT
@@ -250,6 +250,7 @@
 	if(!QDELETED(shooter))
 		UnregisterSignal(shooter, COMSIG_MOB_SWAP_HANDS)
 	QDEL_LIST(current_tracers)
+	aiming_time_left = aiming_time
 	target = null
 	target_loc = null
 	mouse_parameters = null
@@ -296,8 +297,6 @@
 /datum/component/aimed_fire/proc/process_shot()
 	if(aimedfire_stat != AIMEDFIRE_STAT_FIRING)
 		return FALSE
-	if(!COOLDOWN_FINISHED(src, next_shot_cd))
-		return TRUE
 	if(QDELETED(target) || get_turf(target) != target_loc) //Target moved or got destroyed since we last aimed.
 		target = target_loc //So we keep firing on the emptied tile until we move our mouse and find a new target.
 	if(get_dist(shooter, target) <= 0)
@@ -315,6 +314,8 @@
 	return FALSE
 
 /datum/component/aimed_fire/proc/aiming_beam(force_update = FALSE, new_angle)
+	if(new_angle)
+		lastangle = new_angle
 	var/diff = abs(aiming_lastangle - lastangle)
 	// if(!check_user())
 	// 	return
@@ -324,7 +325,7 @@
 	var/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/P = new
 	P.gun = parent
 	if(aiming_time)
-		var/percent = ((100/aiming_time)*aiming_time_left)
+		var/percent = ((100/aiming_time)*min((aiming_time_left-aiming_time_fire_threshold),1))
 		P.color = rgb(255 * percent,255 * ((100 - percent) / 100),0)
 	else
 		P.color = rgb(0, 255, 0)

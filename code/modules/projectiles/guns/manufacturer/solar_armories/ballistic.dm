@@ -225,6 +225,7 @@
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 	doesnt_keep_bullet = TRUE
+	aiming_time = 20
 
 	fire_sound = 'sound/weapons/blastcannon.ogg'
 
