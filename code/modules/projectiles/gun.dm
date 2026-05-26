@@ -149,23 +149,13 @@
 	var/wield_time = 0
 
 //Beam aim (does this need to charge up it's shots before firing)
-	canMouseDown = FALSE
 	var/aiming = FALSE
 	var/aiming_time = 12
 	var/aiming_time_fire_threshold = 5
 	var/aiming_time_left = 12
 	var/aiming_time_increase_user_movement = 3
-//	var/scoped_slow = 1
 	var/aiming_time_increase_angle_multiplier = 0.3
-	var/last_process = 0
-
-	var/lastangle = 0
-	var/aiming_lastangle = 0
-	var/delay = 25
-	var/lastfire = 0
-	var/mob/current_user = null
 	var/list/obj/effect/projectile/tracer/current_tracers
-	var/mob/listeningTo
 
 // BALLISTIC
 	///Whether the gun has to be racked each shot or not.
@@ -370,9 +360,6 @@
 		sawoff(forced = TRUE)
 	if(slot_flags & ITEM_SLOT_SUITSTORE)
 		ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, REF(src))
-	if(canMouseDown)
-		current_tracers = list()
-		START_PROCESSING(SSfastprocess, src)
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
@@ -385,20 +372,6 @@
 
 	AddComponent(/datum/component/attachment_holder, slot_available, attachment_list, slot_offsets, default_attachments)
 	AddComponent(/datum/component/two_handed)
-
-/obj/item/gun/proc/set_user(mob/user)
-	if(user == current_user || !canMouseDown)
-		return
-	stop_aiming(current_user)
-	if(listeningTo)
-		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
-		listeningTo = null
-	if(istype(current_user))
-		current_user = null
-	if(istype(user))
-		current_user = user
-		RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
-		listeningTo = user
 
 /// triggered on wield of two handed item
 /obj/item/gun/proc/on_wield(obj/item/source, mob/user, instant)
@@ -447,11 +420,6 @@
 		QDEL_NULL(muzzle_flash)
 	if(magazine)
 		QDEL_NULL(magazine)
-	if(canMouseDown)
-		STOP_PROCESSING(SSfastprocess, src)
-		set_user(null)
-		QDEL_LIST(current_tracers)
-		listeningTo = null
 	return ..()
 
 /obj/item/gun/handle_atom_del(atom/A)
@@ -474,7 +442,6 @@
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
-	set_user(user)
 	if(zoomed && user.get_active_held_item() != src)
 		zoom(user, user.dir, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 
@@ -519,9 +486,6 @@
 	//If we are burst firing, don't fire, obviously
 	if(currently_firing_burst)
 		return
-	if(canMouseDown)
-		if(!aiming_checks(target,user,flag,params))
-			return
 
 	if(SEND_SIGNAL(user, COMSIG_MOB_TRYING_TO_FIRE_GUN, src, target, flag, params) & COMPONENT_CANCEL_GUN_FIRE)
 		return
@@ -720,7 +684,6 @@
 		user.update_inv_hands()
 
 	SSblackbox.record_feedback("tally", "gun_fired", 1, type)
-	stop_aiming()
 	return TRUE
 
 /obj/item/gun/proc/reset_current_cooldown()
@@ -848,12 +811,10 @@
 /obj/item/gun/pickup(mob/user)
 	. = ..()
 	update_appearance()
-	set_user(user)
 
 /obj/item/gun/dropped(mob/user)
 	. = ..()
 	update_appearance()
-	set_user()
 	if(zoomed)
 		zoom(user, user.dir)
 
@@ -1306,137 +1267,3 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	return
 
 /// AIMING BEAM BEHAVIOR
-
-/obj/item/gun/proc/aiming_beam(force_update = FALSE, new_angle)
-	var/diff = abs(aiming_lastangle - lastangle)
-	if(!check_user())
-		return
-	if(diff < AIMING_BEAM_ANGLE_CHANGE_THRESHOLD && !force_update)
-		return
-	aiming_lastangle = lastangle
-	var/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/P = new
-	P.gun = src
-	if(aiming_time)
-		var/percent = ((100/aiming_time)*aiming_time_left)
-		P.color = rgb(255 * percent,255 * ((100 - percent) / 100),0)
-	else
-		P.color = rgb(0, 255, 0)
-	var/turf/curloc = get_turf(src)
-	var/turf/targloc = get_turf(current_user.client.mouseObject)
-	if(!istype(targloc))
-		if(!istype(curloc))
-			return
-		targloc = get_turf_in_angle(lastangle, curloc, 10)
-	var/mouse_modifiers = params2list(current_user.client.mouseParams)
-	P.preparePixelProjectile(targloc, current_user, mouse_modifiers, 0)
-	P.fire(lastangle)
-
-/obj/item/gun/process(seconds_per_tick)
-	if(canMouseDown)
-		if(!aiming)
-			last_process = world.time
-			return
-		check_user()
-		//handle_zooming()
-		aiming_time_left = max(0, aiming_time_left - (world.time - last_process))
-		aiming_beam(TRUE)
-		last_process = world.time
-
-/obj/item/gun/proc/check_user(automatic_cleanup = TRUE)
-	if(!istype(current_user) || !isturf(current_user.loc) || !(src in current_user.held_items) || current_user.incapacitated())	//Doesn't work if you're not holding it!
-		if(automatic_cleanup)
-			stop_aiming()
-			set_user(null)
-		return FALSE
-	return TRUE
-
-/obj/item/gun/proc/process_aim(target)
-	if(istype(current_user) && current_user.client && current_user.client.mouseParams)
-		var/angle
-		if(target)
-			angle = get_angle(current_user,target)
-		else
-			angle = mouse_angle_from_client(current_user.client)
-		current_user.setDir(angle2dir_cardinal(angle))
-		var/difference = abs(closer_angle_difference(lastangle, angle))
-		delay_penalty(difference * aiming_time_increase_angle_multiplier)
-		lastangle = angle
-		//to_chat(current_user,lastangle)
-
-/obj/item/gun/proc/on_mob_move()
-	check_user()
-	if(aiming)
-		delay_penalty(aiming_time_increase_user_movement)
-		process_aim()
-		aiming_beam(TRUE)
-
-/obj/item/gun/proc/start_aiming(target)
-	aiming_time_left = aiming_time
-	aiming = TRUE
-	process_aim(target)
-	aiming_beam(TRUE)
-	//zooming_angle = lastangle
-	//()
-
-/obj/item/gun/proc/stop_aiming(mob/user)
-	set waitfor = FALSE
-	aiming_time_left = aiming_time
-	aiming = FALSE
-	QDEL_LIST(current_tracers)
-	//stop_zooming(user)
-
-/obj/item/gun/onMouseDown(object, location, params, mob/mob)
-	if(!canMouseDown)
-		return
-	if(istype(mob))
-		set_user(mob)
-	if(istype(object, /atom/movable/screen) && !istype(object, /atom/movable/screen/click_catcher))
-		return
-	if((object in mob.contents) || (object == mob))
-		return
-	start_aiming(object)
-	return ..()
-
-/obj/item/gun/onMouseDrag(src_object, over_object, src_location, over_location, params, mob)
-	if(aiming)
-		process_aim()
-		aiming_beam()
-		// if(zoom_lock == ZOOM_LOCK_AUTOZOOM_FREEMOVE)
-		// 	zooming_angle = lastangle
-		// 	set_autozoom_pixel_offsets_immediate(zooming_angle)
-	return ..()
-
-/obj/item/gun/onMouseUp(object, location, params, mob/M)
-	if(istype(object, /atom/movable/screen) && !istype(object, /atom/movable/screen/click_catcher))
-		return
-	process_aim()
-	if(aiming_time_left <= aiming_time_fire_threshold && check_user())
-	//	sync_ammo()
-		afterattack(M.client.mouseObject, M, FALSE, M.client.mouseParams)
-		//pre_fire(M.client.mouseObject,M)
-	to_chat(M,"aiming time left:[aiming_time_left], aiming time threshold [aiming_time_fire_threshold]")
-	stop_aiming()
-	QDEL_LIST(current_tracers)
-	return ..()
-
-/obj/item/gun/proc/aiming_checks(atom/target, mob/living/user, flag, params)
-	// if(flag) //It's adjacent, is the user, or is on the user's person
-	// 	if(target in user.contents) //can't shoot stuff inside us.
-	// 		return
-	// 	if(!ismob(target) || user.a_intent == INTENT_HARM) //melee attack
-	// 		return
-	// 	if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH) //so we can't shoot ourselves (unless mouth selected)
-	// 		return
-	// if((aiming_time > aiming_time_fire_threshold))
-	// 	return FALSE
-	if(aiming_time_left <= aiming_time_fire_threshold && check_user())
-		return FALSE
-	to_chat(user,"for aiming checks, aiming time left:[aiming_time_left], aiming time threshold [aiming_time_fire_threshold]")
-	if(lastfire > world.time + delay)
-		return FALSE
-	lastfire = world.time
-	stop_aiming()
-	return TRUE
-
-/obj/item/gun/proc/delay_penalty(amount)
-	aiming_time_left = clamp(aiming_time_left + amount, 0, aiming_time)

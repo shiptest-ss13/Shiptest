@@ -33,7 +33,8 @@
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/large,
 	)
-	canMouseDown = TRUE
+	gun_firemodes = list(FIREMODE_AIMED)
+	default_firemode = FIREMODE_AIMED
 	// var/aiming = FALSE
 	// var/aiming_time = 12
 	// var/aiming_time_fire_threshold = 5
@@ -62,21 +63,7 @@
 	var/projectile_damage = 30
 	var/projectile_stun = 0
 	var/projectile_setting_pierce = TRUE
-	// var/delay = 25
-	// var/lastfire = 0
-
-	//ZOOMING
-	var/zoom_current_view_increase = 0
-	///The radius you want to zoom by
-	var/zoom_target_view_increase = 9.5
-	var/zooming = FALSE
-	var/zoom_lock = ZOOM_LOCK_OFF
-	var/zooming_angle
-	var/current_zoom_x = 0
-	var/current_zoom_y = 0
-
-	var/datum/action/item_action/zoom_lock_action/zoom_lock_action
-	// var/mob/listeningTo
+	var/delay = 25
 
 /obj/item/gun/energy/beam_rifle/debug
 	delay = 0
@@ -87,94 +74,13 @@
 	aiming_time = 0
 	recoil = 0
 
-// /obj/item/gun/energy/beam_rifle/equipped(mob/user)
-// 	set_user(user)
-// 	return ..()
-
-// /obj/item/gun/energy/beam_rifle/pickup(mob/user)
-// 	set_user(user)
-// 	return ..()
-
-// /obj/item/gun/energy/beam_rifle/dropped(mob/user)
-// 	set_user()
-// 	return ..()
-
-/obj/item/gun/energy/beam_rifle/ui_action_click(mob/user, actiontype)
-	if(istype(actiontype, zoom_lock_action))
-		zoom_lock++
-		if(zoom_lock > 3)
-			zoom_lock = 0
-		switch(zoom_lock)
-			if(ZOOM_LOCK_AUTOZOOM_FREEMOVE)
-				to_chat(user, span_boldnotice("You switch [src]'s zooming processor to free directional."))
-			if(ZOOM_LOCK_AUTOZOOM_ANGLELOCK)
-				to_chat(user, span_boldnotice("You switch [src]'s zooming processor to locked directional."))
-			if(ZOOM_LOCK_CENTER_VIEW)
-				to_chat(user, span_boldnotice("You switch [src]'s zooming processor to center mode."))
-			if(ZOOM_LOCK_OFF)
-				to_chat(user, span_boldnotice("You disable [src]'s zooming system."))
-		reset_zooming()
-	else
-		..()
-
-/obj/item/gun/energy/beam_rifle/proc/set_autozoom_pixel_offsets_immediate(current_angle)
-	if(zoom_lock == ZOOM_LOCK_CENTER_VIEW || zoom_lock == ZOOM_LOCK_OFF)
-		return
-	current_zoom_x = sin(current_angle) + sin(current_angle) * AUTOZOOM_PIXEL_STEP_FACTOR * zoom_current_view_increase
-	current_zoom_y = cos(current_angle) + cos(current_angle) * AUTOZOOM_PIXEL_STEP_FACTOR * zoom_current_view_increase
-
-/obj/item/gun/energy/beam_rifle/proc/handle_zooming()
-	if(!zooming || !check_user())
-		return
-	current_user.client.view_size.setTo(zoom_target_view_increase)
-	zoom_current_view_increase = zoom_target_view_increase
-	set_autozoom_pixel_offsets_immediate(zooming_angle)
-
-/obj/item/gun/energy/beam_rifle/proc/start_zooming()
-	if(zoom_lock == ZOOM_LOCK_OFF)
-		return
-	zooming = TRUE
-
-/obj/item/gun/energy/beam_rifle/proc/stop_zooming(mob/user)
-	if(zooming)
-		zooming = FALSE
-		reset_zooming(user)
-
-/obj/item/gun/energy/beam_rifle/proc/reset_zooming(mob/user)
-	if(!user)
-		user = current_user
-	if(!user || !user.client)
-		return FALSE
-	user.client.view_size.zoomIn()
-	zoom_current_view_increase = 0
-	zooming_angle = 0
-	current_zoom_x = 0
-	current_zoom_y = 0
-
 /obj/item/gun/energy/beam_rifle/unique_action(mob/living/user)
 	projectile_setting_pierce = !projectile_setting_pierce
 	to_chat(user, span_boldnotice("You set \the [src] to [projectile_setting_pierce? "pierce":"impact"] mode."))
-	aiming_beam()
-
-/obj/item/gun/energy/beam_rifle/proc/update_slowdown()
-	// if(aiming)
-	// 	slowdown = scoped_slow
-	// else
-	// 	slowdown = initial(slowdown)
 
 /obj/item/gun/energy/beam_rifle/Initialize()
 	. = ..()
 	fire_delay = delay
-	// current_tracers = list()
-	// START_PROCESSING(SSfastprocess, src)
-	zoom_lock_action = new(src)
-
-// /obj/item/gun/energy/beam_rifle/Destroy()
-// 	STOP_PROCESSING(SSfastprocess, src)
-// 	set_user(null)
-// 	QDEL_LIST(current_tracers)
-// 	listeningTo = null
-// 	return ..()
 
 /obj/item/gun/energy/beam_rifle/emp_act(severity)
 	. = ..()
@@ -183,147 +89,9 @@
 	chambered = null
 	recharge_newshot()
 
-// /obj/item/gun/energy/beam_rifle/proc/aiming_beam(force_update = FALSE)
-// 	var/diff = abs(aiming_lastangle - lastangle)
-// 	if(!check_user())
-// 		return
-// 	if(diff < AIMING_BEAM_ANGLE_CHANGE_THRESHOLD && !force_update)
-// 		return
-// 	aiming_lastangle = lastangle
-// 	var/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/P = new
-// 	P.gun = src
-// 	P.wall_pierce_amount = wall_pierce_amount <<< may need to set this
-// 	P.structure_pierce_amount = structure_piercing
-// 	P.do_pierce = projectile_setting_pierce
-// 	if(aiming_time)
-// 		var/percent = ((100/aiming_time)*aiming_time_left)
-// 		P.color = rgb(255 * percent,255 * ((100 - percent) / 100),0)
-// 	else
-// 		P.color = rgb(0, 255, 0)
-// 	var/turf/curloc = get_turf(src)
-// 	var/turf/targloc = get_turf(current_user.client.mouseObject)
-// 	if(!istype(targloc))
-// 		if(!istype(curloc))
-// 			return
-// 		targloc = get_turf_in_angle(lastangle, curloc, 10)
-// 	var/mouse_modifiers = params2list(current_user.client.mouseParams)
-// 	P.preparePixelProjectile(targloc, current_user, mouse_modifiers, 0)
-// 	P.fire(lastangle)
-
-// /obj/item/gun/energy/beam_rifle/process(seconds_per_tick)
-// 	if(!aiming)
-// 		last_process = world.time
-// 		return
-// 	check_user()
-// 	handle_zooming()
-// 	aiming_time_left = max(0, aiming_time_left - (world.time - last_process))
-// 	aiming_beam(TRUE)
-// 	last_process = world.time
-
-// /obj/item/gun/energy/beam_rifle/proc/check_user(automatic_cleanup = TRUE)
-// 	if(!istype(current_user) || !isturf(current_user.loc) || !(src in current_user.held_items) || current_user.incapacitated())	//Doesn't work if you're not holding it!
-// 		if(automatic_cleanup)
-// 			stop_aiming()
-// 			set_user(null)
-// 		return FALSE
-// 	return TRUE
-
-// /obj/item/gun/energy/beam_rifle/proc/process_aim()
-// 	if(istype(current_user) && current_user.client && current_user.client.mouseParams)
-// 		var/angle = mouse_angle_from_client(current_user.client)
-// 		current_user.setDir(angle2dir_cardinal(angle))
-// 		var/difference = abs(closer_angle_difference(lastangle, angle))
-// 		delay_penalty(difference * aiming_time_increase_angle_multiplier)
-// 		lastangle = angle
-
-// /obj/item/gun/energy/beam_rifle/proc/on_mob_move()
-// 	check_user()
-// 	if(aiming)
-// 		delay_penalty(aiming_time_increase_user_movement)
-// 		process_aim()
-// 		aiming_beam(TRUE)
-
-// /obj/item/gun/energy/beam_rifle/proc/start_aiming()
-// 	aiming_time_left = aiming_time
-// 	aiming = TRUE
-// 	process_aim()
-// 	aiming_beam(TRUE)
-// 	zooming_angle = lastangle
-// 	start_zooming()
-
-// /obj/item/gun/energy/beam_rifle/proc/stop_aiming(mob/user)
-// 	set waitfor = FALSE
-// 	aiming_time_left = aiming_time
-// 	aiming = FALSE
-// 	QDEL_LIST(current_tracers)
-// 	stop_zooming(user)
-
-// /obj/item/gun/energy/beam_rifle/proc/set_user(mob/user)
-// 	if(user == current_user)
-// 		return
-// 	stop_aiming(current_user)
-// 	if(listeningTo)
-// 		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
-// 		listeningTo = null
-// 	if(istype(current_user))
-// 		current_user = null
-// 	if(istype(user))
-// 		current_user = user
-// 		RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
-// 		listeningTo = user
-
-// /obj/item/gun/energy/beam_rifle/onMouseDrag(src_object, over_object, src_location, over_location, params, mob)
-// 	if(aiming)
-// 		process_aim()
-// 		aiming_beam()
-// 		if(zoom_lock == ZOOM_LOCK_AUTOZOOM_FREEMOVE)
-// 			zooming_angle = lastangle
-// 			set_autozoom_pixel_offsets_immediate(zooming_angle)
-// 	return ..()
-
-// /obj/item/gun/energy/beam_rifle/onMouseDown(object, location, params, mob/mob)
-// 	if(istype(mob))
-// 		set_user(mob)
-// 	if(istype(object, /atom/movable/screen) && !istype(object, /atom/movable/screen/click_catcher))
-// 		return
-// 	if((object in mob.contents) || (object == mob))
-// 		return
-// 	start_aiming()
-// 	return ..()
-
-// /obj/item/gun/energy/beam_rifle/onMouseUp(object, location, params, mob/M)
-// 	if(istype(object, /atom/movable/screen) && !istype(object, /atom/movable/screen/click_catcher))
-// 		return
-// 	process_aim()
-// 	if(aiming_time_left <= aiming_time_fire_threshold && check_user())
-// 		sync_ammo()
-// 		afterattack(M.client.mouseObject, M, FALSE, M.client.mouseParams, passthrough = TRUE)
-// 	stop_aiming()
-// 	QDEL_LIST(current_tracers)
-// 	return ..()
-
-/obj/item/gun/energy/beam_rifle/afterattack(atom/target, mob/living/user, flag, params, passthrough = FALSE)
-	if(flag) //It's adjacent, is the user, or is on the user's person
-		if(target in user.contents) //can't shoot stuff inside us.
-			return
-		if(!ismob(target) || user.a_intent == INTENT_HARM) //melee attack
-			return
-		if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH) //so we can't shoot ourselves (unless mouth selected)
-			return
-	if(!passthrough && (aiming_time > aiming_time_fire_threshold))
-		return
-	if(lastfire > world.time + delay)
-		return
-	lastfire = world.time
-	. = ..()
-	stop_aiming()
-
 /obj/item/gun/energy/beam_rifle/proc/sync_ammo()
 	for(var/obj/item/ammo_casing/energy/beam_rifle/AC in contents)
 		AC.sync_stats()
-
-// /obj/item/gun/energy/beam_rifle/proc/delay_penalty(amount)
-// 	aiming_time_left = clamp(aiming_time_left + amount, 0, aiming_time)
 
 /obj/item/ammo_casing/energy/beam_rifle
 	name = "particle acceleration lens"
@@ -386,25 +154,25 @@
 	HS_BB.do_pierce = do_pierce
 	HS_BB.gun = host
 
-/obj/item/ammo_casing/energy/beam_rifle/throw_proj(atom/target, turf/targloc, mob/living/user, params, spread)
-	var/turf/curloc = get_turf(user)
-	if(!istype(curloc) || !BB)
-		return FALSE
-	var/obj/item/gun/energy/beam_rifle/gun = loc
-	if(!targloc && gun)
-		targloc = get_turf_in_angle(gun.lastangle, curloc, 10)
-	else if(!targloc)
-		return FALSE
-	var/firing_dir
-	if(BB.firer)
-		firing_dir = BB.firer.dir
-	if(!BB.suppressed && firing_effect_type)
-		new firing_effect_type(get_turf(src), firing_dir)
-	var/modifiers = params2list(params)
-	BB.preparePixelProjectile(target, user, modifiers, spread)
-	BB.fire(gun? gun.lastangle : null, null)
-	BB = null
-	return TRUE
+// /obj/item/ammo_casing/energy/beam_rifle/throw_proj(atom/target, turf/targloc, mob/living/user, params, spread)
+// 	var/turf/curloc = get_turf(user)
+// 	if(!istype(curloc) || !BB)
+// 		return FALSE
+// 	var/obj/item/gun/energy/beam_rifle/gun = loc
+// 	if(!targloc && gun)
+// 		targloc = get_turf_in_angle(gun.lastangle, curloc, 10)
+// 	else if(!targloc)
+// 		return FALSE
+// 	var/firing_dir
+// 	if(BB.firer)
+// 		firing_dir = BB.firer.dir
+// 	if(!BB.suppressed && firing_effect_type)
+// 		new firing_effect_type(get_turf(src), firing_dir)
+// 	var/modifiers = params2list(params)
+// 	BB.preparePixelProjectile(target, user, modifiers, spread)
+// 	BB.fire(gun? gun.lastangle : null, null)
+// 	BB = null
+// 	return TRUE
 
 /obj/item/ammo_casing/energy/beam_rifle/hitscan
 	projectile_type = /obj/projectile/beam/beam_rifle/hitscan
@@ -508,12 +276,13 @@
 
 /obj/projectile/beam/beam_rifle/hitscan/generate_hitscan_tracers(cleanup = TRUE, duration = 5, impacting = TRUE, highlander)
 	set waitfor = FALSE
+	var/datum/component/aimed_fire/aiming = GetComponent(/datum/component/aimed_fire)
 	if(isnull(highlander))
 		highlander = constant_tracer
 	if(highlander && istype(gun))
-		QDEL_LIST(gun.current_tracers)
+		QDEL_LIST(aiming.current_tracers)
 		for(var/datum/point/p in beam_segments)
-			gun.current_tracers += generate_tracer_between_points(p, beam_segments[p], tracer_type, color, 0, hitscan_light_range, hitscan_light_color_override, hitscan_light_intensity)
+			aiming.current_tracers += generate_tracer_between_points(p, beam_segments[p], tracer_type, color, 0, hitscan_light_range, hitscan_light_color_override, hitscan_light_intensity)
 	else
 		for(var/datum/point/p in beam_segments)
 			generate_tracer_between_points(p, beam_segments[p], tracer_type, color, duration, hitscan_light_range, hitscan_light_color_override, hitscan_light_intensity)
