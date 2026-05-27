@@ -66,4 +66,4 @@
 	icon_state = "gauss-rod"
 	projectile_type = /obj/projectile/bullet/gauss/rod
 	auto_rotate = TRUE
-	energy_cost = 3000
+	energy_cost = 1500
