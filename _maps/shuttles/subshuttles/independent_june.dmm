@@ -167,9 +167,6 @@
 /obj/machinery/power/smes/shuttle/micro/precharged{
 	dir = 8
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -178,6 +175,10 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "midwich_blast4";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -291,15 +292,15 @@
 /area/ship/bridge)
 "sB" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater,
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4;
-	id = s
-	},
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "midwich_blast4";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
