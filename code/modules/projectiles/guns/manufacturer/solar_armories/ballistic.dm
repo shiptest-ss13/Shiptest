@@ -195,8 +195,8 @@
 	wield_delay = 1.3 SECONDS
 
 /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
-	name = "Atelier Gauss Cannon"
-	desc = "When you need to pulverize a gnome."
+	name = "Model 'Atelier' Railgun"
+	desc = "A high powered Solarian railgun. The heavy-duty electromagnets may require time to calibrate before each shot, but the power behind each ferromagnetic rod is well worth the wait."
 	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
@@ -218,7 +218,7 @@
 	item_state = "railgun"
 
 	manufacturer = MANUFACTURER_SOLARARMORIES
-	spread = -5
+	spread = 0
 	spread_unwielded = 20
 	recoil = 1
 	recoil_unwielded = 8
@@ -226,6 +226,10 @@
 	wield_delay = 1.3 SECONDS
 	doesnt_keep_bullet = TRUE
 	aiming_time = 20
+
+	zoomable = TRUE
+	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_out_amt = 5
 
 	fire_sound = 'sound/weapons/blastcannon.ogg'
 

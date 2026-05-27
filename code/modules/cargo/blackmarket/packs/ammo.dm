@@ -389,3 +389,13 @@
 	stock_min = 3
 	stock_max = 6
 	availability_prob = 80
+
+/datum/blackmarket_item/ammo/rods
+	name = "Ferromagnetic rods"
+	desc = "20 ferromagetic rods to rail your enemies."
+	item = /obj/item/storage/box/ammo/ferrorods
+	cost_min = 500
+	cost_max = 900
+	stock_min = 3
+	stock_max = 6
+	availability_prob = 0

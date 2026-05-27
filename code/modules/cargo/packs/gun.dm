@@ -977,7 +977,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/railgun
-	name = "Atelier Gauss Cannon"
+	name = "Model 'Atelier' Railgun"
 	desc = "A high powered Solarian gauss sniper. Not for export."
 	cost = 6000
 	contains = list(/obj/item/storage/guncase/railgun)
