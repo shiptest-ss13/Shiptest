@@ -2378,13 +2378,6 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
-"wM" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/structure/closet/emcloset/wall/directional/north,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "wR" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/dim/directional/west,
@@ -3434,6 +3427,13 @@
 /obj/structure/crate_shelf,
 /turf/open/floor/plating,
 /area/ship/crew)
+"HC" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "HH" = (
 /obj/structure/cable/green{
 	icon_state = "2-9"
@@ -3909,10 +3909,6 @@
 	pixel_x = -8;
 	pixel_y = -4
 	},
-/obj/item/stock_parts/cell/gun/sharplite{
-	pixel_x = -4;
-	pixel_y = -1
-	},
 /obj/item/clothing/head/hardhat/weldhat/white{
 	pixel_x = -3;
 	pixel_y = 10
@@ -3920,6 +3916,14 @@
 /obj/item/clothing/suit/hazardvest{
 	pixel_x = 2;
 	pixel_y = -6
+	},
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 9;
+	pixel_y = 11
+	},
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 8;
+	pixel_y = 7
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/captain)
@@ -4153,7 +4157,10 @@
 	pixel_x = -32;
 	pixel_y = 2
 	},
-/obj/item/gun/energy/sharplite/x01/empty_cell,
+/obj/item/gun/energy/laser/e10/empty_cell{
+	pixel_x = 2;
+	pixel_y = 7
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
 "Od" = (
@@ -4493,6 +4500,7 @@
 	dir = 8
 	},
 /obj/effect/mapping_helpers/crate_shelve,
+/obj/item/plasmacutter,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "QV" = (
@@ -4663,6 +4671,18 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"SU" = (
+/obj/machinery/suit_storage_unit/inherit/industrial/locked{
+	name = "security detail's suit storage unit";
+	req_access_txt = "1"
+	},
+/obj/item/tank/internals/oxygen/red,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/head/helmet/space/syndicate/generic,
+/obj/item/clothing/suit/space/syndicate/generic,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "SW" = (
 /obj/machinery/autolathe,
 /obj/effect/turf_decal/siding/thinplating{
@@ -4872,18 +4892,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
-"Vv" = (
-/obj/machinery/suit_storage_unit/inherit/industrial/locked{
-	name = "security detail's suit storage unit";
-	req_access_txt = "1"
-	},
-/obj/item/tank/internals/oxygen/red,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/head/helmet/space/syndicate/generic,
-/obj/item/clothing/suit/space/syndicate/generic,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo)
 "VA" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -6088,7 +6096,7 @@ cs
 wL
 SY
 Ed
-Vv
+SU
 cM
 Ed
 ZK
@@ -6114,7 +6122,7 @@ Yp
 oq
 SW
 Ed
-wM
+HC
 gP
 Ed
 pJ
