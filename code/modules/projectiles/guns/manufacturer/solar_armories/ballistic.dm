@@ -48,8 +48,6 @@
 		/obj/item/attachment/rail_light,
 	)
 
-	//canMouseDown = TRUE
-
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh/no_mag
 	default_ammo_type = FALSE
 
