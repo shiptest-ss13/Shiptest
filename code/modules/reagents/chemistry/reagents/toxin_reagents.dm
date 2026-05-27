@@ -133,6 +133,9 @@
 		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
 	M.adjustPlasma(20)
 	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
+	if(ishuman(M))
+		var/mob/living/carbon/human/target_human = M
+		target_human.adjust_coretemperature(-7 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	return ..()
 
 /datum/reagent/toxin/lexorin

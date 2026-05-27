@@ -231,6 +231,12 @@
 		M.adjust_bodytemperature(-4 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(apply_change=FALSE))
 	else if(M.bodytemperature < (M.get_body_temp_normal(apply_change=FALSE) + 1))
 		M.adjust_bodytemperature(4 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(apply_change=FALSE))
+	if(ishuman(M))
+		var/mob/living/carbon/human/target_human = M
+		if(target_human.coretemperature > target_human.get_body_temp_normal(apply_change=FALSE))
+			target_human.adjust_coretemperature(-40 * TEMPERATURE_DAMAGE_COEFFICIENT, target_human.get_body_temp_normal(apply_change=FALSE))
+		else if(target_human.coretemperature < (target_human.get_body_temp_normal(apply_change=FALSE) + 1))
+			target_human.adjust_coretemperature(40 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, target_human.get_body_temp_normal(apply_change=FALSE))
 	..()
 
 /datum/reagent/medicine/alvitane

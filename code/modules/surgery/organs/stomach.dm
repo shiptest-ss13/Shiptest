@@ -39,9 +39,9 @@
 	. = ..()
 	//Manage species digestion
 	if(istype(owner, /mob/living/carbon/human))
-		var/mob/living/carbon/human/humi = owner
+		var/mob/living/carbon/human/target_human = owner
 		if(!(organ_flags & ORGAN_FAILING))
-			humi.dna.species.handle_digestion(humi)
+			target_human.dna.species.handle_digestion(target_human)
 
 	var/mob/living/carbon/body = owner
 

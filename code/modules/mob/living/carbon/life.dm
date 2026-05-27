@@ -564,7 +564,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		amount = (amount > 0) ? min(amount / dna.species.bodytemp_heat_divisor, dna.species.bodytemp_heating_rate_max) : max(amount / dna.species.bodytemp_cold_divisor, dna.species.bodytemp_cooling_rate_max)
 
 	if(bodytemperature >= min_temp && bodytemperature <= max_temp)
-		bodytemperature = clamp(bodytemperature + amount,min_temp,max_temp)
+		bodytemperature = clamp(bodytemperature + amount, min_temp, max_temp)
 		return amount
 
 ///////////
