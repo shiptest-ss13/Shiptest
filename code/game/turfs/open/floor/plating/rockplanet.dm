@@ -117,6 +117,24 @@
 ///Planetary types should still be explicitly defined for description fluff
 #define ROCK_TURF_HELPER(turf_type)								\
 	/turf/open/floor/##turf_type/rockplanet {						\
+		baseturfs = /turf/open/floor/plating/rockplanet;	\
+		initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS;				\
+		planetary_atmos = TRUE;										\
+		light_color = COLOR_ROCKPLANET_LIGHT;						\
+	}																\
+	/turf/open/floor/##turf_type/rockplanet/lit {					\
+		light_power = 0.6;											\
+		light_range = 2;											\
+		baseturfs = /turf/open/floor/plating/rockplanet/lit;	\
+	}																\
+	/turf/open/floor/##turf_type/rockplanet/interior {			\
+		baseturfs = /turf/open/floor/plating/rockplanet/interior;	\
+		planetary_atmos = FALSE;									\
+	}
+
+//crackhead subtype to make platings behave
+#define ROCK_PLATING_TURF_HELPER(turf_type)								\
+	/turf/open/floor/##turf_type/rockplanet {						\
 		baseturfs = /turf/open/floor/plating/asteroid/rockplanet;	\
 		initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS;				\
 		planetary_atmos = TRUE;										\
@@ -125,6 +143,7 @@
 	/turf/open/floor/##turf_type/rockplanet/lit {					\
 		light_power = 0.6;											\
 		light_range = 2;											\
+		baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit;	\
 	}																\
 	/turf/open/floor/##turf_type/rockplanet/interior {			\
 		planetary_atmos = FALSE;									\
@@ -149,8 +168,8 @@
 
 ///plating
 
-ROCK_TURF_HELPER(plating)
-ROCK_TURF_HELPER(plating/rust)
+ROCK_PLATING_TURF_HELPER(plating)
+ROCK_PLATING_TURF_HELPER(plating/rust)
 
 
 ///floor tiles
