@@ -151,6 +151,7 @@
 	fluff_probabilities = list(
 		/datum/overmap/fluff/memorial_beacon/nori
 	)
+	unique_system = TRUE
 
 /datum/overmap_star_system/wilderness/temperate
 	startype = /datum/overmap/star/medium
