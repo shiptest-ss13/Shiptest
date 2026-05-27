@@ -978,7 +978,7 @@
 
 /datum/supply_pack/gun/railgun
 	name = "Model 'Atelier' Railgun"
-	desc = "A high powered Solarian gauss sniper. Not for export."
+	desc = "A high powered Solarian gauss sniper with high penetration power. Chambered in ferromagnetic rods Not for export."
 	cost = 6500
 	contains = list(/obj/item/storage/guncase/railgun)
 	crate_name = "gauss crate"
