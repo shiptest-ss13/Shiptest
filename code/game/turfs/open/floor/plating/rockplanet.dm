@@ -114,7 +114,21 @@
 	light_range = 2
 	light_power = 0.6
 
-//start crackhead subtyping (open reward of 1 erika token to anyone who untangles this somewhat)
+///Planetary types should still be explicitly defined for description fluff
+#define ROCK_TURF_HELPER(turf_type)								\
+	/turf/open/floor/##turf_type/rockplanet {						\
+		baseturfs = /turf/open/floor/plating/asteroid/rockplanet;	\
+		initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS;				\
+		planetary_atmos = TRUE;										\
+		light_color = COLOR_ROCKPLANET_LIGHT;						\
+	}																\
+	/turf/open/floor/##turf_type/rockplanet/lit {					\
+		light_power = 0.6;											\
+		light_range = 2;											\
+	}																\
+	/turf/open/floor/##turf_type/rockplanet/interior {			\
+		planetary_atmos = FALSE;									\
+	}
 
 /turf/open/floor/plating/asteroid/dirt/grass/rockplanet
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
@@ -135,182 +149,41 @@
 
 ///plating
 
-/turf/open/floor/plating/rockplanet
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-	light_color = COLOR_ROCKPLANET_LIGHT
-	name = "exterior plating"
-
-/turf/open/floor/plating/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-
-/turf/open/floor/plating/rust/rockplanet
-	name = "exterior plating"
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/plating/rust/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
+ROCK_TURF_HELPER(plating)
+ROCK_TURF_HELPER(plating/rust)
 
 
 ///floor tiles
 
-/turf/open/floor/plasteel/stairs/rockplanet
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-	name = "exterior stairs"
-
-/turf/open/floor/plasteel/stairs/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/plasteel/rockplanet
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-	name = "exterior floor"
-
-/turf/open/floor/plasteel/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/plasteel/patterned/rockplanet
-	name = "exterior floor"
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/plasteel/patterned/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/plasteel/patterned/brushed/rockplanet
-	name = "exterior floor"
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/plasteel/patterned/brushed/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/plasteel/patterned/ridged/rockplanet
-	name = "exterior floor"
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/plasteel/patterned/ridged/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/wood/rockplanet
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/pod/rockplanet
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/plasteel/tech/rockplanet
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/plasteel/tech/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
+ROCK_TURF_HELPER(plasteel/stairs)
+ROCK_TURF_HELPER(plasteel)
+ROCK_TURF_HELPER(plasteel/dark)
+ROCK_TURF_HELPER(plasteel/patterned)
+ROCK_TURF_HELPER(plasteel/patterned/brushed)
+ROCK_TURF_HELPER(plasteel/patterned/ridged)
+ROCK_TURF_HELPER(wood)
+ROCK_TURF_HELPER(plasteel/tech)
+ROCK_TURF_HELPER(plasteel/mono)
+ROCK_TURF_HELPER(plasteel/mono/dark)
 
 ///reinforced floors
 
-/turf/open/floor/engine/hull/rockplanet
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/engine/hull/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/engine/hull/reinforced/rockplanet
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/engine/hull/reinforced/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
+ROCK_TURF_HELPER(engine)
+ROCK_TURF_HELPER(engine/hull)
+ROCK_TURF_HELPER(engine/hull/reinforced)
 
 /// concrete
-
-/turf/open/floor/concrete/rockplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/concrete/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/concrete/slab_1/rockplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/concrete/slab_1/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/concrete/slab_2/rockplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/concrete/slab_2/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/concrete/slab_3/rockplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/concrete/slab_3/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/concrete/slab_4/rockplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/concrete/slab_4/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/concrete/pavement/rockplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/concrete/pavement/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
-
-/turf/open/floor/concrete/reinforced/rockplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/concrete/reinforced/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
-
+ROCK_TURF_HELPER(concrete)
+ROCK_TURF_HELPER(concrete/slab_1)
+ROCK_TURF_HELPER(concrete/slab_2)
+ROCK_TURF_HELPER(concrete/slab_3)
+ROCK_TURF_HELPER(concrete/slab_4)
+ROCK_TURF_HELPER(concrete/tiles)
+ROCK_TURF_HELPER(concrete/reinforced)
+ROCK_TURF_HELPER(concrete/pavement)
 ///titanium
 
-/turf/open/floor/mineral/titanium/tiled/rockplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/mineral/titanium/tiled/rockplanet/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_ROCKPLANET_LIGHT
+ROCK_TURF_HELPER(mineral/titanium/tiled)
 
 ///snow
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet
