@@ -1084,7 +1084,13 @@
 /obj/effect/turf_decal/borderfloorblack/corner2{
 	dir = 1
 	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "ngr_colony_crawlergarage"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "ngr_colony_crawlergarage"
+	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/ngrcolony/crawlergarage)
 "gF" = (
@@ -1266,11 +1272,8 @@
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "hC" = (
-/obj/structure/noticeboard{
-	pixel_x = 0;
-	pixel_y = 27
-	},
 /obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/prisoner_notice,
+/obj/structure/noticeboard/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "hE" = (
@@ -2328,7 +2331,9 @@
 /obj/machinery/button/shieldwallgen{
 	pixel_x = 10;
 	pixel_y = 4;
-	layer = 3
+	layer = 3;
+	id = "ngr_mining_colony_checkpoint_out_holo";
+	name = "Outer Holofield"
 	},
 /obj/machinery/button/door{
 	pixel_x = -10;
@@ -2338,7 +2343,9 @@
 	},
 /obj/machinery/button/door{
 	pixel_x = 2;
-	pixel_y = 5
+	pixel_y = 5;
+	name = "Outer Door";
+	id = "ngr_mining_colony_checkpoint_out"
 	},
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
@@ -3329,6 +3336,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"sZ" = (
+/obj/machinery/camera/autoname{
+	network = list("ngr_colony")
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/crawlergarage)
 "ta" = (
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -4026,6 +4039,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/machinery/camera/autoname{
+	network = list("ngr_colony");
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/crawlergarage)
 "xh" = (
@@ -4672,6 +4689,19 @@
 /obj/effect/turf_decal/borderfloorblack,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
+"AA" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 8
+	},
+/obj/machinery/camera/autoname{
+	network = list("ngr_colony");
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/bunkhouse)
 "AB" = (
 /obj/effect/turf_decal/road/stop,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4714,6 +4744,7 @@
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
 "AJ" = (
 /obj/effect/turf_decal/box/white,
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/ngrcolony/crawlergarage)
 "AP" = (
@@ -5113,7 +5144,12 @@
 	dir = 2
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 1
+	dir = 1;
+	id = "ngr_colony_crawlergarage"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "ngr_colony_crawlergarage"
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/ngrcolony/crawlergarage)
@@ -5265,6 +5301,13 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
+"DX" = (
+/obj/machinery/camera/autoname{
+	network = list("ngr_colony","ngr_colony_mines");
+	dir = 2
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "Ea" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -6959,6 +7002,10 @@
 	dir = 8;
 	pixel_x = -9
 	},
+/obj/machinery/camera/autoname{
+	network = list("ngr_colony");
+	dir = 10
+	},
 /turf/open/floor/wood,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "ML" = (
@@ -7168,6 +7215,10 @@
 	dir = 4
 	},
 /obj/structure/bookcase/random,
+/obj/machinery/camera/autoname{
+	network = list("ngr_colony","ngr_colony_mines");
+	dir = 2
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "NZ" = (
@@ -7724,6 +7775,25 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"QW" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "ngr_colony_crawlergarage";
+	pixel_x = -20;
+	pixel_y = 8;
+	name = "Door Controls"
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "ngr_colony_crawlergarage_holo";
+	dir = 4;
+	pixel_x = -18;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/crawlergarage)
 "QY" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 10
@@ -11679,7 +11749,7 @@ kT
 pR
 pR
 Kj
-XQ
+QW
 cb
 bk
 lG
@@ -12030,7 +12100,7 @@ VH
 kj
 Bz
 cb
-Kw
+sZ
 Kw
 Kw
 Kw
@@ -12602,7 +12672,7 @@ tL
 OV
 KN
 KN
-KN
+AA
 KN
 KN
 aS
@@ -13731,7 +13801,7 @@ So
 So
 So
 So
-ap
+DX
 oT
 ap
 ap
