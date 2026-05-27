@@ -12,6 +12,9 @@
 		"..burn bright, burn fast..",
 	)
 
+	///Bool for if the system is unique, and should only be spawned once during overmap gen
+	var/unique_system = FALSE
+
 /datum/overmap_star_system/wilderness/create_map()
 	//max_overmap_dynamic_events = CONFIG_GET(number/max_overmap_dynamic_events)
 	max_overmap_dynamic_events = 7
@@ -32,6 +35,30 @@
 	entry_quotes = list(
 	)
 */
+
+/datum/overmap_star_system/wilderness/regular_nebula
+	event_probabilities = list(
+		/datum/overmap/event/nebula = 60,
+		/datum/overmap/event/meteor/dust = 30,
+		/datum/overmap/event/emp = 20
+	)
+	entry_quotes = list(
+		"..Somewhere in the heavens..",
+		"..Check scanners and burn..",
+		"..find some coffee..",
+		"..least its not acid..",
+		"..check the comms..",
+		"..did you see that?"
+	)
+
+	fluff_amount = 3
+
+	fluff_probabilities = list(
+		/datum/overmap/fluff/observatory = 10,
+		/datum/overmap/fluff/commsat/abandoned = 5,
+		/datum/overmap/fluff/sensorsat/abandoned = 4,
+		/datum/overmap/fluff/fakeplanet/gas_giant = 1
+	)
 
 /datum/overmap_star_system/wilderness/electric_nebula
 	event_probabilities = list(
@@ -61,7 +88,6 @@
 		/datum/overmap/fluff/sensorsat/abandoned/madai = 1,
 		/datum/overmap/fluff/fakeplanet/gas_giant = 1
 	)
-
 
 /datum/overmap_star_system/wilderness/singularity
 	startype = /datum/overmap/star/singularity
@@ -98,6 +124,32 @@
 	fluff_probabilities = list(
 		/datum/overmap/fluff/observatory = 1,
 		/datum/overmap/fluff/commsat/abandoned = 1
+	)
+
+/datum/overmap_star_system/wilderness/singularity/nonoriri
+	startype = /datum/overmap/star/singularity
+	starname = "Nonoriri"
+	event_probabilities = list(
+		/datum/overmap/event/nebula = 60,
+		/datum/overmap/event/meteor/minor = 45,
+		/datum/overmap/event/meteor/debris = 40,
+		/datum/overmap/event/meteor/debris/minor = 35,
+		/datum/overmap/event/meteor/dust = 50,
+		/datum/overmap/event/anomaly = 10
+	)
+	entry_quotes = list(
+		"..hard work and guts..",
+		"..birth of a new world..",
+		"..power in your heart..",
+		"..nothing lasts forever..",
+		"..aim for the top..",
+		"..remember us.."
+	)
+
+	fluff_amount = 1
+
+	fluff_probabilities = list(
+		/datum/overmap/fluff/memorial_beacon/nori
 	)
 
 /datum/overmap_star_system/wilderness/temperate
@@ -147,6 +199,32 @@
 		/datum/overmap/fluff/refinery/abandoned = 1
 	)
 
+/datum/overmap_star_system/wilderness/temperate/solar_farm
+	event_probabilities = list(
+		/datum/overmap/event/meteor/minor = 45,
+		/datum/overmap/event/meteor = 40,
+		/datum/overmap/event/meteor/carp/minor = 45,
+		/datum/overmap/event/meteor/dust = 50,
+		/datum/overmap/event/meteor/debris = 35,
+
+	)
+	entry_quotes = list(
+		"..solar pumped..",
+		"..panels upon panels ..",
+		"..power for all..",
+		"..imagine the future..",
+	)
+
+	fluff_amount = 12
+
+	//to-do: get someone to sprite orbital terraforming equipment tokens.
+	fluff_probabilities = list(
+		/datum/overmap/fluff/solars/abandoned = 10,
+		/datum/overmap/fluff/satellite/abandoned = 5,
+		/datum/overmap/fluff/solarmirror/abandoned = 5,
+		/datum/overmap/fluff/spacecolony/abandoned = 1,
+	)
+
 /datum/overmap_star_system/wilderness/warzone
 	startype = /datum/overmap/star/medium/orange
 	dynamic_probabilities = list(
@@ -194,6 +272,40 @@
 		/datum/overmap/fluff/spacecolony/abandoned = 3
 	)
 
+/datum/overmap_star_system/wilderness/warzone/wenli
+	startype = /datum/overmap/star/medium/blue
+	starname = "Wen Li"
+
+	event_probabilities = list(
+		/datum/overmap/event/nebula = 60,
+		/datum/overmap/event/meteor/debris/minor = 45,
+		/datum/overmap/event/meteor/debris = 40,
+		/datum/overmap/event/meteor/debris/major = 35,
+		/datum/overmap/event/meteor/dust = 10,
+		/datum/overmap/event/meteor = 30,
+		/datum/overmap/event/meteor/minor = 40,
+		/datum/overmap/event/meteor/major = 10
+	)
+	entry_quotes = list(
+		"..break my commandments..",
+		"..foppery and whim..",
+		"..your vision narrows..",
+		"..the magic lamp..",
+		"..deny the value of fire..",
+		"..no such thing as predetermined.."
+	)
+
+	fluff_amount = 9
+	fluff_probabilities = list(
+		/datum/overmap/fluff/dud = 5,
+		/datum/overmap/fluff/satellite/abandoned = 10,
+		/datum/overmap/fluff/sensorsat/abandoned = 9,
+		/datum/overmap/fluff/commsat/abandoned = 10,
+		/datum/overmap/fluff/orbitalworks/abandoned = 3,
+		/datum/overmap/fluff/spacecolony/abandoned = 3
+	)
+	unique_system = TRUE
+
 /datum/overmap_star_system/wilderness/anomaly
 	dynamic_probabilities = list(
 		DYNAMIC_WORLD_LAVA = 40,
@@ -217,10 +329,9 @@
 	entry_quotes = list(
 		"..something from outside..",
 		"..the stars love you..",
-		"..somewhere in the heavens..",
 		"..don't leave us here..",
 		"..millions of hands all reaching out..",
-		"..whatever you do, don't look..",
+		"..don't look..",
 		"..I don't want to forget.."
 	)
 
@@ -249,7 +360,7 @@
 		"..one day flowers will bloom..",
 		"..natural wonders paved over with science..",
 		"..Teceti's ultimate folly..",
-		"..pick a flower, they won't last..",
+		"..pick a flower..",
 	)
 
 	fluff_amount = 4
@@ -288,6 +399,7 @@
 		/datum/overmap/fluff/observatory/grumpy = 1,
 		/datum/overmap/fluff/commsat/abandoned = 1
 	)
+	unique_system = TRUE
 
 /datum/overmap_star_system/wilderness/supergiant
 	startype = /datum/overmap/star/giant

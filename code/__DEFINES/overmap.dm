@@ -82,6 +82,8 @@
 
 // The filepath used to store the admin-controlled next round outpost map override.
 #define SAFEZONE_OVERRIDE_FILEPATH "data/safezone_override.json"
+//filepath used to store the admin-controlled wilderness overrides
+#define WILDERNESS_OVERRIDE_FILEPATH "data/wildzone_override.json"
 
 // Converts ores to colors, meant for examining planets on the overmap
 #define ORES_TO_COLORS_LIST list(\

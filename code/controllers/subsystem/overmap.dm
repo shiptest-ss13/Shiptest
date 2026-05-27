@@ -59,30 +59,55 @@ SUBSYSTEM_DEF(overmap)
 
 #ifdef FULL_INIT
 
-	var/primary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone) - /datum/overmap_star_system/safezone/json_example)
-	var/secondary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone) - primary_outpost_sector - /datum/overmap_star_system/safezone/json_example)
-	var/primary_wilderness_sector = pick(typesof(/datum/overmap_star_system/wilderness))
-	var/secondary_wilderness_sector = pick(typesof(/datum/overmap_star_system/wilderness) - primary_wilderness_sector)
+	var/list/outpost_sectors = list()
 
-	/* needs refactor for multi outpost
+	var/list/datum/overmap_star_system/wilderness/wilderness_sectors = list()
+
+	outpost_sectors[0] = pick(subtypesof(/datum/overmap_star_system/safezone) - /datum/overmap_star_system/safezone/json_example)
+	outpost_sectors[1] = pick(subtypesof(/datum/overmap_star_system/safezone) - primary_outpost_sector - /datum/overmap_star_system/safezone/json_example)
+
+	wilderness_sectors[0] = pick(typesof(/datum/overmap_star_system/wilderness))
+	if(wilderness_sectors[0].unique_system)
+		wilderness_sectors[1] = pick(typesof(/datum/overmap_star_system/wilderness) - wilderness_sectors[0])
+	else
+		wilderness_sectors[1] = pick(typesof(/datum/overmap_star_system/wilderness))
+
+
 	if(fexists(SAFEZONE_OVERRIDE_FILEPATH))
-		var/file_text = trim_right(file2text(SAFEZONE_OVERRIDE_FILEPATH)) // trim_right because there's often a trailing newline
-		var/datum/overmap_star_system/safezone/potential_type = text2path(file_text)
-		if(!potential_type || !ispath(potential_type, /datum/overmap_star_system/safezone))
-			stack_trace("SSovermap found an safezone override file at [SAFEZONE_OVERRIDE_FILEPATH], but was unable to find the system type [potential_type]!")
-		else
-			outpost_sector_types = potential_type
+		log_shuttle("Outpost override exists, loading preselected sectors")
+		var/list/selected_outposts = splittext(trim_right(file2text(SAFEZONE_OVERRIDE_FILEPATH)),":") // trim_right because there's often a trailing newline
+		var/datum/overmap_star_system/safezone/potential_type
+		for(var/i = 0, i < length(selected_outposts),, i++)
+			potential_type = text2path(selected_outposts[i])
+			if(!potential_type || !ispath(potential_type, /datum/overmap_star_system/safezone))
+				stack_trace("SSovermap found an safezone override file at [SAFEZONE_OVERRIDE_FILEPATH], but was unable to find the system type [potential_type]!")
+			else
+				outpost_sectors[i] = potential_type
+
 		fdel(SAFEZONE_OVERRIDE_FILEPATH) // don't want it to affect 2 rounds in a row.
-	*/
+
+	if(fexists(WILDERNESS_OVERRIDE_FILEPATH))
+		log_shuttle("Wilderness override exists, loading preselected sectors")
+		var/list/selected_wilds = splittext(trim_right(file2text(WILDERNESS_OVERRIDE_FILEPATH)),":") // trim_right because there's often a trailing newline
+		var/datum/overmap_star_system/safezone/potential_type
+		for(var/i = 0, i < length(selected_wilds),, i++)
+			potential_type = text2path(selected_wilds[i])
+			if(!potential_type || !ispath(potential_type, /datum/overmap_star_system/wilderness))
+				stack_trace("SSovermap found an wilderness override file at [WILDERNESS_OVERRIDE_FILEPATH], but was unable to find the system type [potential_type]!")
+			else
+				wilderness_sectors[i] = potential_type
+
+		fdel(WILDERNESS_OVERRIDE_FILEPATH) // don't want it to affect 2 rounds in a row.
+
 
 	//future project: make overmap "styles" a selection
 
 	//4 systems. Outpost-Wilderness-Outpost-Wilderness
-	tracked_star_systems[1] = spawn_new_star_system(primary_outpost_sector)
+	tracked_star_systems[1] = spawn_new_star_system(outpost_sectors[0])
 	safe_sectors += tracked_star_systems[1]
 	tracked_star_systems[2] = spawn_new_star_system(primary_wilderness_sector)
 	wild_sectors += tracked_star_systems[2]
-	tracked_star_systems[3] = spawn_new_star_system(secondary_outpost_sector)
+	tracked_star_systems[3] = spawn_new_star_system(outpost_sectors[1])
 	safe_sectors += tracked_star_systems[3]
 	tracked_star_systems[4] = spawn_new_star_system(secondary_wilderness_sector)
 	wild_sectors += tracked_star_systems[4]

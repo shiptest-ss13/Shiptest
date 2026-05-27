@@ -238,6 +238,25 @@
 	interference_power = 0
 	layer = 3.01
 
+/datum/overmap/fluff/memorial_beacon
+	name = "memorial beacon"
+	desc = "A beacon illuminating the heavens. Reminisce on the world we lost with it."
+	docking_message = "COMMUNICATION: This site is a grave. Look, but do not desecrate."
+	token_icon_state = "marker"
+	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
+	flag_overlay = FALSE
+	interference_power = 0
+	layer = 3.01
+
+/datum/overmap/fluff/memorial_beacon/nori
+	name = "Nonoriri Memorial beacon"
+	desc = "A beacon commemmorating the battle of the formerly unnamed wandering black hole \"Nonoriri\" in 496 FSC, which saw a Gorlex fleet element engage a PGF group near the singularity. Most deaths in the battle were simply from falling into the event horizon during manuevers. "
+	token_icon_state = "marker"
+	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
+	flag_overlay = FALSE
+	interference_power = 0
+	layer = 3.01
+
 /datum/overmap/fluff/spacecolony
 	name = "o'neill cylinder"
 	desc = "A habitation station for an colony comprised of a cluster of cylinders. Despite the low cost of modern gravity generators, these are still used as very cheap prefabricated stations, or sold off to a new owner once the previous owner has outgrown them." + span_warning("It would be an exceedingly bad idea to drop this on a planetoid.")
@@ -258,6 +277,7 @@
 	interference_power = 10
 //d
 /datum/overmap/fluff/dud
+	//you got the
 	name = "dud missile"
 	desc = "Inactive munitions from the wars of modernity. It stays still no matter how provoked it gets. That doesn't mean it's safe."
 	docking_message = "NOTICE: Local sector authorities prohibit tampering with dud. Aborting."
