@@ -979,7 +979,7 @@
 /datum/supply_pack/gun/railgun
 	name = "Model 'Atelier' Railgun"
 	desc = "A high powered Solarian gauss sniper. Not for export."
-	cost = 6000
+	cost = 6500
 	contains = list(/obj/item/storage/guncase/railgun)
 	crate_name = "gauss crate"
 	faction = /datum/faction/solgov
