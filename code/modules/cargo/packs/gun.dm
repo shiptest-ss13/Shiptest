@@ -758,7 +758,7 @@
 
 /datum/supply_pack/gun/barghest
 	name = "PP20 'Barghest' Plasma Assault Rifle Crate"
-	desc = "Contains a high-energy, automatic laser rifle. Refitted for IRMG use."
+	desc = "Contains a high-energy, automatic plasma rifle. Refitted for IRMG use."
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/barghest)
 	crate_name = "laser crate"
