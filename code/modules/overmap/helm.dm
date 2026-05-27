@@ -92,6 +92,7 @@
 	if(!calibrating)
 		return
 	say("Exiting jump sequence.")
+	jump_state = JUMP_STATE_OFF
 	calibrating = FALSE
 	jump_coords = null
 	deltimer(jump_timer)

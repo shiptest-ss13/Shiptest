@@ -480,6 +480,7 @@
 	file_name = "cybersun_bambulance"
 	name = "Gauze-class Ambulance Pod"
 	faction = /datum/faction/syndicate/cybersun
+	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 
 /datum/map_template/shuttle/subshuttles/thunder

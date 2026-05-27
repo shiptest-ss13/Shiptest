@@ -473,6 +473,20 @@
 /obj/structure/flora/tree/dead,
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
+"ef" = (
+/obj/structure/noticeboard/directional/north,
+/obj/structure/rack,
+/obj/item/clothing/head/hardhat/white{
+	pixel_y = 8;
+	pixel_x = -6
+	},
+/obj/item/clothing/head/hardhat/dblue{
+	pixel_y = -2;
+	pixel_x = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/icemoon,
+/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
 "eh" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -1120,22 +1134,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/ice/explored)
-"ix" = (
-/obj/structure/noticeboard{
-	pixel_y = 30
-	},
-/obj/structure/rack,
-/obj/item/clothing/head/hardhat/white{
-	pixel_y = 8;
-	pixel_x = -6
-	},
-/obj/item/clothing/head/hardhat/dblue{
-	pixel_y = -2;
-	pixel_x = 3
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/icemoon,
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
 "iD" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -2363,6 +2361,16 @@
 	icon_state = "monotile_light"
 	},
 /area/ruin/unpowered/icemoon/downed_transport/crew_accomodations)
+"sc" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy,
+/turf/open/floor/carpet/red,
+/area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
 "sd" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -6032,16 +6040,6 @@
 	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
-"Ve" = (
-/obj/structure/cable{
-	icon_state = "4-9"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
-/turf/open/floor/carpet/red,
-/area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
 "Vh" = (
 /obj/structure/catwalk/over,
 /obj/effect/decal/cleanable/glass/strange,
@@ -7816,7 +7814,7 @@ RR
 BI
 Ml
 uc
-Ve
+sc
 QY
 XS
 yu
@@ -13206,7 +13204,7 @@ bJ
 bJ
 bJ
 Mw
-ix
+ef
 fS
 EK
 Mw
