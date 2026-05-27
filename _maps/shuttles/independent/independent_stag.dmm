@@ -184,9 +184,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "bx" = (
-/obj/structure/chair/sofa/red/old/right{
-	dir = 4
-	},
+/obj/structure/chair/sofa/red/old/right/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "bG" = (
@@ -311,6 +309,7 @@
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/head/helmet/space/syndicate/generic,
 /obj/item/clothing/suit/space/syndicate/generic,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "cT" = (
@@ -2379,6 +2378,13 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"wM" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "wR" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/dim/directional/west,
@@ -3740,13 +3746,11 @@
 /turf/open/floor/plating,
 /area/ship/crew)
 "Lc" = (
-/obj/structure/chair/sofa/red/old/left{
-	dir = 8
-	},
 /obj/structure/sign/poster/clip/clover{
 	pixel_x = 0;
 	pixel_y = -30
 	},
+/obj/structure/chair/sofa/red/old/left/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Ll" = (
@@ -4868,6 +4872,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
+"Vv" = (
+/obj/machinery/suit_storage_unit/inherit/industrial/locked{
+	name = "security detail's suit storage unit";
+	req_access_txt = "1"
+	},
+/obj/item/tank/internals/oxygen/red,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/head/helmet/space/syndicate/generic,
+/obj/item/clothing/suit/space/syndicate/generic,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "VA" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -6072,7 +6088,7 @@ cs
 wL
 SY
 Ed
-cM
+Vv
 cM
 Ed
 ZK
@@ -6098,7 +6114,7 @@ Yp
 oq
 SW
 Ed
-gP
+wM
 gP
 Ed
 pJ
