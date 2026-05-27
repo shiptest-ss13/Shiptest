@@ -748,7 +748,7 @@
 
 /datum/supply_pack/gun/hades
 	name = "AL655 Plasma Assault Rifle crate"
-	desc = "Contains a high-energy, automatic laser rifle. For Makosso-Warra employee use only."
+	desc = "Contains a high-energy, automatic plasma rifle. For Makosso-Warra employee use only."
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/hades)
 	crate_name = "laser crate"
