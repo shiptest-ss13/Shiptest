@@ -288,6 +288,8 @@
 			if ((chambered && !chambered.BB) || (chambered && always_chambers))
 				chambered.on_eject(shooter = user)
 				chambered = null
+			if(doesnt_keep_bullet && (magazine.stored_ammo.len + (chambered ? 1 : 0)) >= magazine.max_ammo)
+				return
 			var/num_loaded = magazine.attackby(A, user, params)
 			if (num_loaded)
 				to_chat(user, span_notice("You load [num_loaded] [cartridge_wording]\s into \the [src]."))
