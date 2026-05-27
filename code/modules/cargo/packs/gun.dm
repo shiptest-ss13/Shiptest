@@ -220,7 +220,7 @@
 
 /datum/supply_pack/gun/l201
 	name = "L201 'Surge' Plasma DMR Crate"
-	desc = "Contains a high-powered marksman laser. For Makosso-Warra employee use only."
+	desc = "Contains a high-powered marksman plasma rifle. For Makosso-Warra employee use only."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/energy/l201)
 	crate_name = "dmr crate"
