@@ -411,11 +411,13 @@
 /obj/item/bodypart/tail
 	name = "tail"
 	desc = "A severed tail. What did you cut this off of?"
+	icon = 'icons/mob/species/lizard/bodyparts.dmi'
 	mask_icon = 'icons/mob/tail_masks.dmi'
 	plaintext_zone = "tail"
 	bodypart_layer = BODY_FRONT_LAYER
 	body_zone = BODY_ZONE_TAIL
 	body_part = TAIL
+	limb_id = SPECIES_SARATHI
 	dismemberable = TRUE
 	can_be_disabled = TRUE
 	body_damage_coeff = 0.5

@@ -1,5 +1,6 @@
 /obj/item/bodypart/tail/human
 	icon = 'icons/mob/species/human/bodyparts.dmi'
+	limb_id = "cat" // placeholder
 	sturdy = FALSE
 	uses_mutcolor = FALSE
 	bodytype = parent_type::bodytype | BODYTYPE_HAIR
