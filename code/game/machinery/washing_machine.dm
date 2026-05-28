@@ -42,7 +42,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	DYE_REGISTRY_GLOVES = list(
 		DYE_RED = /obj/item/clothing/gloves/color/red,
 		DYE_ORANGE = /obj/item/clothing/gloves/color/orange,
-		DYE_YELLOW = /obj/item/clothing/gloves/color/yellow,
+		DYE_YELLOW = /obj/item/clothing/gloves/color/ryellow,
 		DYE_GREEN = /obj/item/clothing/gloves/color/green,
 		DYE_BLUE = /obj/item/clothing/gloves/color/blue,
 		DYE_PURPLE = /obj/item/clothing/gloves/color/purple,
