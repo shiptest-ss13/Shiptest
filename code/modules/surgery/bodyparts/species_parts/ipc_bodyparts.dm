@@ -107,6 +107,7 @@
 /obj/item/bodypart/tail/ipc
 	static_icon = 'icons/mob/species/ipc/bodyparts.dmi'
 	icon = 'icons/mob/species/ipc/bodyparts.dmi'
+	icon_state = "plug_tail"
 	name = "robot tail"
 	desc = "Do robots even need these?"
 	sturdy = FALSE

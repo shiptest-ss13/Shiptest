@@ -464,9 +464,11 @@
 
 /obj/item/bodypart/tail/kepori/robot
 	name = "prosthetic kepori tail"
+	limb_id = "robotic"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
 	biological_state = BIO_METAL
+	flags_1 = CONDUCT_1
 
 //Surplus Kepori Robotic
 /obj/item/bodypart/l_arm/robot/surplus/kepori
@@ -525,9 +527,11 @@
 
 /obj/item/bodypart/tail/vox/robot
 	name = "prosthetic vox tail"
+	limb_id = "robotic"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
 	biological_state = BIO_ROBOTIC
+	flags_1 = CONDUCT_1
 
 // Surplus Vox Robotic
 /obj/item/bodypart/l_arm/robot/surplus/vox
