@@ -30,8 +30,8 @@
 
 	hair_color = "fixedmutcolor"
 	hair_alpha = 140
-	mutant_bodyparts = list("elzu_horns", "tail_elzu")
-	default_features = list("elzu_horns" = "None", "tail_elzu" = "None")
+	mutant_bodyparts = list("elzu_horns")
+	default_features = list("elzu_horns" = "None")
 	species_eye_path = 'icons/mob/ethereal_parts.dmi'
 
 	species_organs = list(
@@ -208,8 +208,7 @@
 		body_part = _human.bodyparts[zone]
 		if(!body_part)
 			continue
-		body_part.species_color = fixed_mut_color
-		body_part.update_limb()
+		body_part.copy_from_human(_human)
 
 	_human.update_body()
 	_human.update_hair()

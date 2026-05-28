@@ -80,7 +80,7 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_neck_quills, GLOB.vox_neck_quills_list)
 	if(!GLOB.elzu_horns_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/elzu_horns, GLOB.elzu_horns_list)
-	//For now we will always return none for tail_human and ears.
+	//For now we will always return none for ears.
 	//if you don't keep this alphabetised I'm going to personally steal your shins and sell them online
 	return list(
 		"body_markings" = pick(GLOB.body_markings_list),

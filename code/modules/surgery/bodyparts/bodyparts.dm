@@ -32,6 +32,10 @@
 	var/is_dimorphic = FALSE
 	///Greyscale draw color
 	var/draw_color
+	///Extra draw color for the overlay
+	var/draw_color_overlay
+	///Third draw color for the secondary overlay
+	var/draw_color_overlay_secondary
 	/// The layer this bodypart should draw on
 	var/bodypart_layer = BODYPARTS_LAYER
 	///Used in place of the actual limb ID on examine and renaming.
@@ -42,13 +46,12 @@
 	/// Do we use primary mutcolor instead of secondary for overlay?
 	var/overlay_use_primary_color = FALSE
 
-	/// The color of the limb's overlay
-	var/species_secondary_color
-
 	/// Another overlay for limbs, colored with secondary mutcolor
 	var/overlay2_icon_state
 	/// Do we use primary mutcolor instead of secondary for overlay number 2?
 	var/overlay2_use_primary_color = FALSE
+
+	var/draw_color_use_secondary = FALSE
 
 	var/body_zone //BODY_ZONE_CHEST, BODY_ZONE_L_ARM, etc , used for def_zone
 	/// The body zone of this part in english ("chest", "left arm", etc) without the species attached to it
@@ -94,8 +97,6 @@
 	var/skin_tone = ""
 	///Limbs need this information as a back-up incase they are generated outside of a carbon (limbgrower)
 	var/should_draw_greyscale = TRUE
-	var/species_color = ""
-	var/mutation_color = ""
 	/// The colour of damage done to this bodypart
 	var/damage_color = ""
 	/// Should we even use a color?
@@ -174,7 +175,7 @@
 	/// If false, no wound that can be applied to us can mangle our interior. Used for determining if we should use [hp_percent_to_dismemberable] instead of normal dismemberment.
 	var/any_existing_wound_can_mangle_our_interior
 
-/obj/item/bodypart/Initialize()
+/obj/item/bodypart/Initialize(mapload, mob/living/carbon/human/attached_human)
 	if(bodypart_actions)
 		var/list/action_types = bodypart_actions.Copy()
 		QDEL_NULL(bodypart_actions) // not sure i have to do this but might as well
@@ -966,18 +967,6 @@
 		//dmg_overlay_type = initial(dmg_overlay_type)
 		is_husked = FALSE
 
-	if(!dropping_limb && C.dna?.check_mutation(HULK)) //Please remove hulk from the game. I beg you.
-		mutation_color = "00aa00"
-	else
-		mutation_color = null
-
-	if(mutation_color) //I hate mutations
-		draw_color = mutation_color
-	else if(should_draw_greyscale)
-		draw_color = (species_color) || (skin_tone && skintone2hex(skin_tone))
-	else
-		draw_color = null
-
 	if(C?.dna?.blood_type?.color)
 		damage_color = C.dna.blood_type.color
 	else
@@ -990,39 +979,8 @@
 		return
 
 	if(!animal_origin && ishuman(C))
-		var/mob/living/carbon/human/H = C
-
-		var/datum/species/S = H.dna.species
-		species_flags_list = H.dna.species.species_traits //Literally only exists for a single use of NOBLOOD, but, no reason to remove it i guess...?
-		limb_gender = (H.gender == MALE) ? "m" : "f"
-
-		if(S.use_skintones)
-			skin_tone = H.skin_tone
-		else
-			skin_tone = ""
-
-		use_damage_color = S.use_damage_color
-		if(((MUTCOLORS in S.species_traits) || (DYNCOLORS in S.species_traits)) && uses_mutcolor) //Ethereal code. Motherfuckers.
-			if(S.fixed_mut_color)
-				species_color = S.fixed_mut_color
-			else
-				species_color = H.dna.features["mcolor"]
-		else
-			species_color = null
-
-		if(overlay_use_primary_color || overlay2_use_primary_color)
-			species_color = H.dna.features["mcolor"]
-
-		if(overlay_icon_state || overlay2_icon_state)
-			species_secondary_color = H.dna.features["mcolor2"]
-
+		copy_from_human(C)
 		UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
-
-		draw_color = mutation_color
-		if(should_draw_greyscale) //Should the limb be colored?
-			draw_color ||= (species_color) || (skin_tone && skintone2hex(skin_tone))
-
-		dmg_overlay_type = S.damage_overlay_type
 
 	else if(animal_origin == MONKEY_BODYPART) //currently monkeys are the only non human mob to have damage overlays.
 		dmg_overlay_type = animal_origin
@@ -1032,6 +990,40 @@
 
 	if(dropping_limb)
 		no_update = TRUE //when attached, the limb won't be affected by the appearance changes of its mob owner.
+
+/// Updates the colors of this limb based on the provided mob.
+/obj/item/bodypart/proc/copy_from_human(mob/living/carbon/human/source)
+	var/datum/species/spec = source.dna.species
+	dmg_overlay_type = spec.damage_overlay_type
+
+	if(overlay_icon_state) // throwing rye into a volcano for this
+		if(overlay_use_primary_color)
+			draw_color_overlay = source.dna.features["mcolor"]
+		else
+			draw_color_overlay = source.dna.features["mcolor2"]
+	if(overlay2_icon_state)
+		if(overlay2_use_primary_color)
+			draw_color_overlay_secondary = source.dna.features["mcolor"]
+		else
+			draw_color_overlay_secondary = source.dna.features["mcolor2"]
+
+	if(!should_draw_greyscale)
+		draw_color = null
+		return
+	if(bodytype & BODYTYPE_HAIR)
+		draw_color = source.hair_color
+		return
+	if(spec.fixed_mut_color)
+		draw_color = spec.fixed_mut_color
+		return
+	if(!(uses_mutcolor && (MUTCOLORS in spec.species_traits)))
+		draw_color = skintone2hex(source.skin_tone)
+		return
+
+	if(draw_color_use_secondary)
+		draw_color = source.dna.features["mcolor2"]
+	else
+		draw_color = source.dna.features["mcolor"]
 
 //to update the bodypart's icon when not attached to a mob
 /obj/item/bodypart/proc/update_icon_dropped()
@@ -1112,24 +1104,13 @@
 			. += aux
 			if(overlay_icon_state)
 				var/image/overlay = image(limb.icon, "[limb_id]_[aux_zone]_overlay", -aux_layer, image_dir)
-				if(overlay_use_primary_color)
-					overlay.color = "#[species_color]"
-				else
-					overlay.color = "#[species_secondary_color]"
+				overlay.color = "#[draw_color_overlay]"
 				. += overlay
 
 			if(overlay2_icon_state)
 				var/image/overlay = image(limb.icon, "[limb_id]_[aux_zone]_overlay2", -aux_layer, image_dir)
-				if(overlay2_use_primary_color)
-					overlay.color = "#[species_color]"
-				else
-					overlay.color = "#[species_secondary_color]"
+				overlay.color = "#[draw_color_overlay_secondary]"
 				. += overlay
-
-
-		draw_color = mutation_color
-		if(should_draw_greyscale) //Should the limb be colored outside of a forced color?
-			draw_color ||= (species_color) || (skin_tone && skintone2hex(skin_tone))
 
 		if(draw_color)
 			limb.color = "#[draw_color]"
@@ -1138,17 +1119,11 @@
 
 		if(overlay_icon_state)
 			var/image/overlay = image(limb.icon, "[limb.icon_state]_overlay", -bodypart_layer, image_dir)
-			if(overlay_use_primary_color)
-				overlay.color = "#[species_color]"
-			else
-				overlay.color = "#[species_secondary_color]"
+			overlay.color = "#[draw_color_overlay]"
 			. += overlay
 		if(overlay2_icon_state)
 			var/image/overlay = image(limb.icon, "[limb.icon_state]_overlay2", -bodypart_layer, image_dir)
-			if(overlay2_use_primary_color)
-				overlay.color = "#[species_color]"
-			else
-				overlay.color = "#[species_secondary_color]"
+			overlay.color = "#[draw_color_overlay_secondary]"
 			. += overlay
 
 	//Ok so certain bodyparts are a bit goofy in regards to layering, and we will need two images instead of one to fix that

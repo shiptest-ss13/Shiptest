@@ -422,7 +422,7 @@
 	max_damage = 20
 	max_stamina_damage = 20
 	body_weight = 4 // hard to hit, but very weak
-	/// Allows use of the *thump emote
+	/// Sound played when using the *thump emote
 	var/can_thump = FALSE
 	/// Whether the tail has an animated sprite
 	var/can_wag = TRUE

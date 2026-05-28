@@ -156,8 +156,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			"Horse" = "Horse Tail",
 			"Rabbit" = "Rabbit Tail",
 			"Synthetic Sarathi" = "Synthetic Sarathi Tail",
+			"Synthetic Sarathi (Secondary Color)" = "Synthetic Sarathi Tail (Secondary Color)",
 			"Synthetic Sarathi Large" = "Synthetic Large Sarathi Tail",
+			"Synthetic Sarathi Large (Secondary Color)" = "Synthetic Large Sarathi Tail (Secondary Color)",
 			"Power Plug" = "Power Plug",
+			"Power Plug (Secondary Color)" = "Power Plug (Secondary Color)",
 			"Pawsitrons Cat" = "Synthetic Cat Tail",
 			"Pawsitrons Fox" = "Synthetic Fox Tail",
 			"Pawsitrons Fox 2" = "Synthetic Fox Tail (Alt)",
@@ -535,7 +538,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
 	READ_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
 	READ_FILE(S["feature_elzu_horns"], features["elzu_horns"])
-	READ_FILE(S["feature_tail_elzu"], features["tail_elzu"])
 
 	READ_FILE(S["equipped_gear"], equipped_gear)
 	if(config) //This should *probably* always be there, but just in case.
@@ -731,7 +733,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_vox_head_quills"]		, features["vox_head_quills"])
 	WRITE_FILE(S["feature_vox_neck_quills"]		, features["vox_neck_quills"])
 	WRITE_FILE(S["feature_elzu_horns"]			, features["elzu_horns"])
-	WRITE_FILE(S["feature_tail_elzu"]			, features["tail_elzu"])
 	WRITE_FILE(S["fbp"]							, fbp)
 
 	//Flavor text

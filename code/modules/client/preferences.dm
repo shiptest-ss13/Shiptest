@@ -91,7 +91,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"grad_style" = "None",
 							"grad_color" = "FFF",
 							"ethcolor" = "9c3030",
-							"tail_human" = "None",
 							"face_markings" = "None",
 							"horns" = "None",
 							"ears" = "None",
@@ -813,19 +812,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
-			if("tail_human" in pref_species.default_features)
-				if(!mutant_category)
-					dat += APPEARANCE_CATEGORY_COLUMN
-
-				dat += "<h3>Tail</h3>"
-
-				dat += "<a href='byond://?_src_=prefs;preference=tail_human;task=input'>[features["tail_human"]]</a><BR>"
-
-				mutant_category++
-				if(mutant_category >= MAX_MUTANT_ROWS)
-					dat += "</td>"
-					mutant_category = 0
-
 			if("ears" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -846,19 +832,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Horns</h3>"
 
 				dat += "<a href='byond://?_src_=prefs;preference=elzu_horns;task=input'>[features["elzu_horns"]]</a><BR>"
-
-				mutant_category++
-				if(mutant_category >= MAX_MUTANT_ROWS)
-					dat += "</td>"
-					mutant_category = 0
-
-			if("tail_elzu" in pref_species.default_features)
-				if(!mutant_category)
-					dat += APPEARANCE_CATEGORY_COLUMN
-
-				dat += "<h3>Tail</h3>"
-
-				dat += "<a href='byond://?_src_=prefs;preference=tail_elzu;task=input'>[features["tail_elzu"]]</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -2688,6 +2661,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.features = features.Copy()
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE, robotic = fbp)
 
+	character.hair_color = hair_color // evil hack
+
 	var/is_robotic = HAS_TRAIT(character, TRAIT_USE_PROSTHETIC)
 	for(var/zone in custom_limbs)
 		var/obj/item/bodypart/old_part = character.get_bodypart(zone)
@@ -2728,16 +2703,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					custom_limbs[zone] = PROSTHETIC_NORMAL
 					character.regenerate_limb(zone, robotic = is_robotic)
 					continue
-				// species that don't use mutant colors normally should still be able to color prosthetics that do
-				if(new_part.bodytype & BODYTYPE_HAIR)
-					new_part.draw_color = hair_color
-				else
-					if(new_part.should_draw_greyscale)
-						new_part.draw_color = features["mcolor"]
-					if(new_part.overlay_use_primary_color || new_part.overlay2_use_primary_color)
-						new_part.species_color = features["mcolor"]
-					if(new_part.overlay_icon_state || new_part.overlay2_icon_state)
-						new_part.species_secondary_color = features["mcolor2"]
+				new_part.copy_from_human(character)
 				new_part.replace_limb(character, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 

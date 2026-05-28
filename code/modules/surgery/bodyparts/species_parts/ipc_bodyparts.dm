@@ -123,12 +123,17 @@
 	overlay_icon_state = TRUE
 	can_wag = FALSE
 
+/obj/item/bodypart/tail/ipc/plug/secondary_color
+	overlay_use_primary_color = TRUE
+	draw_color_use_secondary = TRUE
+
 /obj/item/bodypart/tail/ipc/fox
 	name = "synthetic fox tail"
 	desc = "At least, you hope it's synthetic."
 	icon_state = "fox_tail"
 	limb_id = "fox"
 	examine_id = "synthetic fox"
+	uses_mutcolor = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_HAIR
 	can_wag = FALSE
 
@@ -144,6 +149,7 @@
 	icon_state = "cat_tail"
 	limb_id = "cat"
 	examine_id = "synthetic cat"
+	uses_mutcolor = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_HAIR
 	can_wag = FALSE
 
@@ -755,6 +761,10 @@
 	can_thump = TRUE
 	sturdy = TRUE
 
+/obj/item/bodypart/tail/ipc/pgf/secondary_color
+	overlay_use_primary_color = TRUE
+	draw_color_use_secondary = TRUE
+
 /obj/item/bodypart/tail/ipc/pgf/large
 	name = "\improper PGF Mechanics MK.V large robotic tail"
 	examine_id = "\improper PGF Mechanics MK.V robotic"
@@ -765,6 +775,10 @@
 	body_damage_coeff = 0.75
 	body_weight = 16
 	can_wag = TRUE // only one with a sprite for it
+
+/obj/item/bodypart/tail/ipc/pgf/large/secondary_color
+	overlay_use_primary_color = TRUE
+	draw_color_use_secondary = TRUE
 
 // PGF Mechanics MK.V TYPE-D
 

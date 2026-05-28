@@ -1,4 +1,4 @@
-#define TAIL_REGROWTH_TIME (45 MINUTES)
+#define TAIL_REGROWTH_TIME (60 MINUTES)
 
 /datum/species/lizard
 	// Reptilian humanoids with scaled skin and tails.
@@ -137,9 +137,8 @@
 	if(lizard.get_bodypart(BODY_ZONE_TAIL))
 		return
 	var/obj/item/bodypart/tail/lizard/small/new_tail = new()
-	new_tail.species_color = lizard.dna.features["mcolor"]
-	new_tail.species_secondary_color = lizard.dna.features["mcolor2"]
 	new_tail.attach_limb(lizard)
+	new_tail.update_limb(is_creating = TRUE)
 	lizard.visible_message(span_notice("[lizard]'s tail starts to regrow!"), span_notice("Your tail starts to regrow!"))
 
 #undef TAIL_REGROWTH_TIME

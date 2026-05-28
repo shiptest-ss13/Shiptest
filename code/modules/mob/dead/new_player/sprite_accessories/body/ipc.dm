@@ -28,6 +28,12 @@
 		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/plug
 	)
 
+/datum/sprite_accessory/body/ipc_tail/plug/secondary_color // need to find a better way to do this
+	name = "Power Plug (Secondary Color)"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/plug/secondary_color
+	)
+
 /datum/sprite_accessory/body/ipc_tail/fox
 	name = "Synthetic Fox Tail"
 	replacement_bodyparts = list(
@@ -56,6 +62,18 @@
 	name = "Synthetic Large Sarathi Tail"
 	replacement_bodyparts = list(
 		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/pgf/large
+	)
+
+/datum/sprite_accessory/body/ipc_tail/sarathi_secondary
+	name = "Synthetic Sarathi Tail (Secondary Color)"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/pgf/secondary_color
+	)
+
+/datum/sprite_accessory/body/ipc_tail/sarathi_large_secondary
+	name = "Synthetic Large Sarathi Tail (Secondary Color)"
+	replacement_bodyparts = list(
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/pgf/large/secondary_color
 	)
 
 //Pawsitrons United N1
