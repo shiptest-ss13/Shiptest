@@ -155,6 +155,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	)
 	sawn_desc = "I'm just here for the gasoline."
 	unique_reskin = null
+	manufacturer = MANUFACTURER_NONE
 	var/slung = FALSE
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)

@@ -446,6 +446,28 @@
 	stock_max = 2
 	availability_prob = 30
 
+/datum/blackmarket_item/weapon/guncase/bockadam
+	name = "SG-60db Bockadam Combat Shotgun"
+	desc = "Some Ramzi tinkerers have been playing around with the idea of making a Bulldog fire in two-round bursts - twice the 12 gauge for the same amount of gun. It wears like hell, but no one wants to be on the receiving end."
+	item = /obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
+
+	cost_min = 3500
+	cost_max = 4500
+	stock_min = 1
+	stock_max = 2
+	availability_prob = 25
+
+/datum/blackmarket_item/weapon/guncase/gaboon
+	name = "CSG-12 Gaboon Compact Shotgun"
+	desc = "These old ass Scarborough designs are easy to find layin' around, especially these cute little relics. Unlike their newer toys it's pump-action so make sure you get your hand exercises in, yeah?"
+	item = /obj/item/gun/ballistic/shotgun/gaboon
+
+	cost_min = 2500
+	cost_max = 3200
+	stock_min = 1
+	stock_max = 2
+	availability_prob = 25
+
 /datum/blackmarket_item/weapon/guncase/f3
 	name = "F3 Marksman Rifle"
 	desc = "Let's bring it back old school. These vintage marksman rifles were the predecessor to the F4, but that doesn't make them any less deadly. After all, 3 is closer to number 1! Chambered in .308."

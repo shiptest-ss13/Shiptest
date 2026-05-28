@@ -252,7 +252,7 @@
 	return
 
 // modified from /turf/open/floor/engine/ex_act()
-/turf/open/floor/concrete/reinforced/ex_act(severity,target)
+/turf/open/floor/concrete/reinforced/ex_act(severity,target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	var/shielded = is_shielded()
 	contents_explosion(severity, target)
 	SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target)

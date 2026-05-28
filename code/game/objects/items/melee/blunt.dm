@@ -1,5 +1,6 @@
 /obj/item/melee/sledgehammer
 	name = "sledgehammer"
+	desc = "A heavy-duty hammer designed to demolish walls, break rock, and smash open doors."
 	icon_state = "sledgehammer"
 	base_icon_state = "sledgehammer"
 	icon = 'icons/obj/weapon/blunt.dmi'

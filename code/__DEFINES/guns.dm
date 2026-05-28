@@ -140,6 +140,7 @@
 #define COMSIG_ATTACHMENT_CTRL_CLICK "attach-ctrl-click"
 #define COMSIG_ATTACHMENT_ALT_CLICK "attach-alt-click"
 #define COMSIG_ATTACHMENT_ATTACK_HAND "attach-attack-hand"
+#define COMSIG_ATTACHMENT_TOGGLE_SAFETY "attach-safety"
 
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
 #define COMSIG_ATTACHMENT_TOGGLE_AMMO "attach-ammo"
@@ -226,7 +227,6 @@
 #define FIREMODE_FULLAUTO "auto"
 #define FIREMODE_OTHER "other"
 #define FIREMODE_OTHER_TWO "other2"
-#define FIREMODE_UNDERBARREL "underbarrel"
 
 #define GUN_LEFTHAND_ICON 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 #define GUN_RIGHTHAND_ICON 'icons/mob/inhands/weapons/guns_righthand.dmi'

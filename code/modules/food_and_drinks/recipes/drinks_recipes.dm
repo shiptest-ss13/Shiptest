@@ -57,11 +57,11 @@
 
 /datum/chemical_reaction/gin_tonic
 	results = list(/datum/reagent/consumable/ethanol/gintonic = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol/gin = 2, /datum/reagent/consumable/tonic = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/gin = 1, /datum/reagent/consumable/tonic = 2)
 
 /datum/chemical_reaction/rum_coke
 	results = list(/datum/reagent/consumable/ethanol/rum_coke = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol/rum = 2, /datum/reagent/consumable/space_cola = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/rum = 1, /datum/reagent/consumable/space_cola = 2)
 
 /datum/chemical_reaction/cuba_libre
 	results = list(/datum/reagent/consumable/ethanol/cuba_libre = 4)
@@ -81,11 +81,11 @@
 
 /datum/chemical_reaction/whiskey_cola
 	results = list(/datum/reagent/consumable/ethanol/whiskey_cola = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 2, /datum/reagent/consumable/space_cola = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 1, /datum/reagent/consumable/space_cola = 2)
 
 /datum/chemical_reaction/screwdriver
 	results = list(/datum/reagent/consumable/ethanol/screwdrivercocktail = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol/vodka = 2, /datum/reagent/consumable/orangejuice = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/vodka = 1, /datum/reagent/consumable/orangejuice = 2)
 
 /datum/chemical_reaction/bloody_mary
 	results = list(/datum/reagent/consumable/ethanol/bloody_mary = 4)
@@ -162,7 +162,7 @@
 
 /datum/chemical_reaction/whiskeysoda
 	results = list(/datum/reagent/consumable/ethanol/whiskeysoda = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 2, /datum/reagent/consumable/sodawater = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 1, /datum/reagent/consumable/sodawater = 2)
 
 /datum/chemical_reaction/black_russian
 	results = list(/datum/reagent/consumable/ethanol/black_russian = 5)
@@ -178,7 +178,7 @@
 
 /datum/chemical_reaction/vodka_tonic
 	results = list(/datum/reagent/consumable/ethanol/vodkatonic = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol/vodka = 2, /datum/reagent/consumable/tonic = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/vodka = 1, /datum/reagent/consumable/tonic = 2)
 
 /datum/chemical_reaction/gin_fizz
 	results = list(/datum/reagent/consumable/ethanol/ginfizz = 4)
@@ -453,8 +453,8 @@
 	mix_message = "You catch an aroma of hot tea and fruits as the mix blends into a blue-green color."
 
 /datum/chemical_reaction/squirt_cider
-	results = list(/datum/reagent/consumable/ethanol/squirt_cider = 1)
-	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/consumable/tomatojuice = 1, /datum/reagent/consumable/nutriment = 1)
+	results = list(/datum/reagent/consumable/ethanol/squirt_cider = 4)
+	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/consumable/tomatojuice = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/ethanol = 1)
 	mix_message = "The mix swirls and turns a bright red that reminds you of an apple's skin."
 
 /datum/chemical_reaction/fringe_weaver

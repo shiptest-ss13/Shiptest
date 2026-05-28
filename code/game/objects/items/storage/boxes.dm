@@ -169,11 +169,14 @@
 	radio_type = /obj/item/radio/command
 
 /obj/item/storage/box/survival/pgf
-	mask_type = /obj/item/clothing/mask/breath/pgfmask
+	mask_type = /obj/item/clothing/mask/breath/pgfmask/navy
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
 
 /obj/item/storage/box/survival/pgf/command
 	radio_type = /obj/item/radio/command
+
+/obj/item/storage/box/survival/pgf/marine
+	mask_type = /obj/item/clothing/mask/breath/pgfmask
 
 /obj/item/storage/box/survival/inteq
 	mask_type = /obj/item/clothing/mask/balaclava/inteq
@@ -300,6 +303,17 @@
 	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/gjalrazine(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/ysiltane(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/salbutamol(src)
+
+/obj/item/storage/box/hypospray/mkiii/cargo
+	name = "hypospray mk. III kit"
+
+/obj/item/storage/box/hypospray/mkiii/PopulateContents()
+	new /obj/item/hypospray/mkii/mkiii(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/hadramide(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/quadratane(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/pancrazine(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/salbutamol(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/morphine(src)
 
 /obj/item/storage/box/medigels
 	name = "box of medical gels"
@@ -893,6 +907,7 @@
 	illustration = null
 	resistance_flags = FLAMMABLE
 	foldable = null
+	custom_price = 1
 	/// A list of all available papersack reskins
 	var/list/papersack_designs = list()
 
