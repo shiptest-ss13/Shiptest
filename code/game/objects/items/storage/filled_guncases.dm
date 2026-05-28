@@ -129,6 +129,9 @@
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/bulldog
 	mag_type = /obj/item/ammo_box/magazine/m12g_bulldog
 
+/obj/item/storage/guncase/gaboon
+	gun_type = /obj/item/gun/ballistic/shotgun/gaboon
+
 /obj/item/storage/guncase/sidewinder
 	gun_type = /obj/item/gun/ballistic/automatic/smg/sidewinder
 	mag_type = /obj/item/ammo_box/magazine/m57_39_sidewinder
@@ -165,6 +168,10 @@
 
 /obj/item/storage/guncase/energy/kalixnock
 	gun_type = /obj/item/gun/energy/kalix/nock
+	mag_type = /obj/item/stock_parts/cell/gun/kalix
+
+/obj/item/storage/guncase/energy/kalixhunt
+	gun_type = /obj/item/gun/energy/kalix/hunt
 	mag_type = /obj/item/stock_parts/cell/gun/kalix
 
 /obj/item/storage/guncase/energy/sgr9
@@ -335,6 +342,10 @@
 
 /obj/item/storage/guncase/cm5
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cm5
+	mag_type = /obj/item/ammo_box/magazine/cm5_9mm
+
+/obj/item/storage/guncase/cm5c
+	gun_type = /obj/item/gun/ballistic/automatic/smg/cm5/compact
 	mag_type = /obj/item/ammo_box/magazine/cm5_9mm
 
 /obj/item/storage/guncase/cm82

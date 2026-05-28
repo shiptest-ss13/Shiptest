@@ -32,6 +32,10 @@
 	display_name = "jumpskirt, recolorable"
 	path = /obj/item/clothing/under/color/jumpskirt
 
+/datum/gear/uniform/fatigues
+	display_name = "fatigues, recolorable"
+	path = /obj/item/clothing/under/rank/security/officer/camo
+
 //Shorts
 
 /datum/gear/uniform/athshorts
@@ -101,6 +105,10 @@
 /datum/gear/uniform/pants/camo
 	display_name = "camo pants"
 	path = /obj/item/clothing/under/pants/camo
+
+/datum/gear/uniform/pants/sweat
+	display_name = "sweatpants"
+	path = /obj/item/clothing/under/pants/sweat
 
 //JUMPSUIT "SUITS"
 
@@ -309,9 +317,9 @@
 
 // skirts
 /datum/gear/uniform/shortskirt
-	display_name = "short skirt"
+	display_name = "short skirt (colorable)"
 	path = /obj/item/clothing/under/shorts/skirt
 
 /datum/gear/uniform/miniskirt
-	display_name = "mini skirt"
+	display_name = "mini skirt (colorable)"
 	path = /obj/item/clothing/under/shorts/miniskirt

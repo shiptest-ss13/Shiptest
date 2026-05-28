@@ -83,17 +83,6 @@
 	if(eaten && prob(10))
 		say("Nom")
 
-/mob/living/simple_animal/hostile/retaliate/goat/AttackingTarget()
-	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		if(istype(H.dna.species, /datum/species/pod))
-			var/obj/item/bodypart/NB = H.get_random_bodypart()
-			H.visible_message(
-				span_warning("[src] takes a big chomp out of [H]!"), \
-				span_userdanger("[src] takes a big chomp out of your [NB]!"))
-			NB.dismember()
-
 /mob/living/simple_animal/chick
 	name = "\improper chick"
 	desc = "Adorable! They make such a racket though."

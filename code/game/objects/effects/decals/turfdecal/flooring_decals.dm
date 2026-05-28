@@ -128,8 +128,9 @@ TURF_DECAL_COLOR_HELPER(opaque/white, COLOR_WHITE, 255)
 TURF_DECAL_COLOR_HELPER(opaque/grey, COLOR_FLOORTILE_GRAY, 255)
 TURF_DECAL_COLOR_HELPER(opaque/lightgrey, "#a8b2b6", 255)
 TURF_DECAL_COLOR_HELPER(opaque/bottlegreen, "#57967f", 255)
-TURF_DECAL_COLOR_HELPER(opaque/warrablue, "#2270d0", 255)
-TURF_DECAL_COLOR_HELPER(opaque/warrabluelight, "#39a0eb", 255)
+TURF_DECAL_COLOR_HELPER(opaque/navyblue, "#334059", 255)
+TURF_DECAL_COLOR_HELPER(opaque/warrablue, "#32426b", 255)
+TURF_DECAL_COLOR_HELPER(opaque/warrabluelight, "#2270d0", 255)
 TURF_DECAL_COLOR_HELPER(opaque/nsorange, "#f97016", 255)
 TURF_DECAL_COLOR_HELPER(opaque/vired, "#c92020", 255)
 TURF_DECAL_COLOR_HELPER(opaque/solgovblue, "#2d2a4e", 255)
@@ -159,8 +160,9 @@ TURF_DECAL_COLOR_HELPER(transparent/white, COLOR_WHITE, 140)
 TURF_DECAL_COLOR_HELPER(transparent/grey, COLOR_FLOORTILE_GRAY, 140)
 TURF_DECAL_COLOR_HELPER(transparent/lightgrey, "#a8b2b6", 140)
 TURF_DECAL_COLOR_HELPER(transparent/bottlegreen, "#57967f", 140)
-TURF_DECAL_COLOR_HELPER(transparent/warrablue, "#2270d0", 140)
-TURF_DECAL_COLOR_HELPER(transparent/warrabluelight, "#39a0eb", 140)
+TURF_DECAL_COLOR_HELPER(transparent/navyblue, "#334059", 140)
+TURF_DECAL_COLOR_HELPER(transparent/warrablue, "#32426b", 140)
+TURF_DECAL_COLOR_HELPER(transparent/warrabluelight, "#2270d0", 140)
 TURF_DECAL_COLOR_HELPER(transparent/nsorange, "#f97016", 140)
 TURF_DECAL_COLOR_HELPER(transparent/vired, "#c92020", 140)
 TURF_DECAL_COLOR_HELPER(transparent/solgovblue, "#2d2a4e", 140)
@@ -1666,6 +1668,34 @@ TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 
 /obj/effect/turf_decal/etherbor/right
 	icon_state = "etherbor_right"
+
+//Axilai Orbital Works
+/obj/effect/turf_decal/axilai/left
+	icon_state = "axilai_left"
+
+/obj/effect/turf_decal/axilai/center
+	icon_state = "axilai_center"
+
+/obj/effect/turf_decal/axilai/right
+	icon_state = "axilai_right"
+
+/obj/effect/turf_decal/axilai/offset/upper_left
+	icon_state = "axilai_upper_left"
+
+/obj/effect/turf_decal/axilai/offset/lower_left
+	icon_state = "axilai_lower_left"
+
+/obj/effect/turf_decal/axilai/offset/upper_center
+	icon_state = "axilai_upper_center"
+
+/obj/effect/turf_decal/axilai/offset/lower_center
+	icon_state = "axilai_lower_center"
+
+/obj/effect/turf_decal/axilai/offset/upper_right
+	icon_state = "axilai_upper_right"
+
+/obj/effect/turf_decal/axilai/offset/lower_right
+	icon_state = "axilai_lower_right"
 
 //Hardline Salvage and Mining
 

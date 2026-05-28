@@ -8,7 +8,7 @@
 	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 10)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 	resistance_flags = FIRE_PROOF
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/light/engineer
 	name = "engineering space helmet"
@@ -24,7 +24,7 @@
 	light_power = 1
 	light_on = FALSE
 	on = FALSE
-	supports_variations = SNOUTED_VARIATION
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION
 
 //Pilot Softsuit
 /obj/item/clothing/suit/space/pilot
