@@ -1,5 +1,3 @@
-#define TAIL_REGROWTH_TIME (60 MINUTES)
-
 /datum/species/lizard
 	// Reptilian humanoids with scaled skin and tails.
 	name = "\improper Sarathi"
@@ -59,9 +57,6 @@
 	ass_image = 'icons/ass/asslizard.png'
 	var/datum/action/innate/liz_lighter/internal_lighter
 
-	/// The timer for regrowing a new tail
-	var/tail_regrowth_timer
-
 /datum/species/lizard/on_species_loss(mob/living/carbon/C)
 	if(internal_lighter)
 		internal_lighter.Remove(C)
@@ -72,8 +67,6 @@
 	if(ishuman(C))
 		internal_lighter = new
 		internal_lighter.Grant(C)
-	RegisterSignal(C, COMSIG_CARBON_ATTACH_LIMB, PROC_REF(on_limb_add))
-	RegisterSignal(C, COMSIG_CARBON_REMOVE_LIMB, PROC_REF(on_limb_lost))
 
 /datum/species/lizard/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(chem.type == /datum/reagent/fuel)
@@ -120,25 +113,3 @@
 		randname += " [lastname]"
 
 	return randname
-
-/datum/species/lizard/proc/on_limb_add(mob/living/carbon/source, obj/item/bodypart/new_limb)
-	SIGNAL_HANDLER
-
-	if(tail_regrowth_timer && new_limb.body_zone == BODY_ZONE_TAIL)
-		deltimer(tail_regrowth_timer)
-
-/datum/species/lizard/proc/on_limb_lost(mob/living/carbon/source, obj/item/bodypart/lost_limb, dismembered)
-	SIGNAL_HANDLER
-
-	if(lost_limb.body_zone == BODY_ZONE_TAIL)
-		tail_regrowth_timer = addtimer(CALLBACK(src, PROC_REF(regrow_tail), source), TAIL_REGROWTH_TIME, TIMER_UNIQUE | TIMER_OVERRIDE | TIMER_STOPPABLE | TIMER_DELETE_ME)
-
-/datum/species/lizard/proc/regrow_tail(mob/living/carbon/lizard)
-	if(lizard.get_bodypart(BODY_ZONE_TAIL))
-		return
-	var/obj/item/bodypart/tail/lizard/small/new_tail = new()
-	new_tail.attach_limb(lizard)
-	new_tail.update_limb(is_creating = TRUE)
-	lizard.visible_message(span_notice("[lizard]'s tail starts to regrow!"), span_notice("Your tail starts to regrow!"))
-
-#undef TAIL_REGROWTH_TIME
