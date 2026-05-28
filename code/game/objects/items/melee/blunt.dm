@@ -99,5 +99,5 @@
 	AddComponent(/datum/component/two_handed, attack_cooldown_wielded = 4, attack_cooldown_unwielded = LIGHT_WEAPON_CD, icon_wielded="[base_icon_state]_w")
 
 /obj/item/brass_knuckles/update_icon_state()
-	icon_state = base_icon_state
+	icon_state = "[base_icon_state]"
 	return ..()
