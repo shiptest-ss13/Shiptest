@@ -1,5 +1,7 @@
 /obj/item/clothing/gloves/color
+	name = "recolorable gloves"
 	desc = "A pair of gloves, they don't look special in any way."
+	icon_state = "black"
 	dying_key = DYE_REGISTRY_GLOVES
 	supports_variations = VOX_VARIATION
 	unique_reskin = list("black gloves" = "black",
