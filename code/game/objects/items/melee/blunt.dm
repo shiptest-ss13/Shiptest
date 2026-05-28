@@ -70,7 +70,6 @@
 		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille))
 			var/obj/structure/W = A
 			W.atom_destruction("axe")
-
 /obj/item/melee/brass_knuckles
 	name = "brass knuckles"
 	icon_state = "brass_knuckles"
