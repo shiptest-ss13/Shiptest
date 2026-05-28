@@ -143,7 +143,7 @@
 	name = "Brass Knuckles Crate"
 	desc = "Contains one pair of brass knuckles. Shiny, stylish, and swift. More than enough to make a pirate think twice about roughing up the average spacer-gangster."
 	cost = 160
-	contains = list(/obj/item/brass_knuckles)
+	contains = list(/obj/item/melee/brass_knuckles)
 	crate_name = "brass knuckles crate"
 
 /datum/supply_pack/sec_supply/machete

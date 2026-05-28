@@ -71,14 +71,14 @@
 			var/obj/structure/W = A
 			W.atom_destruction("axe")
 
-/obj/item/brass_knuckles
+/obj/item/melee/brass_knuckles
 	name = "brass knuckles"
 	icon_state = "brass_knuckles"
 	base_icon_state = "brass_knuckles"
 	icon = 'icons/obj/weapon/blunt.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/blunt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/blunt_righthand.dmi'
-	desc = "A pair of brass knuckles, fit for the common thug or stylish gangster. Can be carried in one hand but are most effective when wielded as a pair."
+	desc = "A pair of brass knuckles, fit for the common thug or stylish gangster. Can be carried in one hand, but are most effective when wielded as a pair."
 	force = 15
 	wound_bonus = 10
 	throwforce = 5
@@ -94,10 +94,10 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
 	resistance_flags = FIRE_PROOF
 
-/obj/item/brass_knuckles/ComponentInitialize()
+/obj/item/melee/brass_knuckles/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, attack_cooldown_wielded = 4, attack_cooldown_unwielded = LIGHT_WEAPON_CD, icon_wielded="[base_icon_state]_w")
 
-/obj/item/brass_knuckles/update_icon_state()
+/obj/item/melee/brass_knuckles/update_icon_state()
 	icon_state = "[base_icon_state]"
 	return ..()
