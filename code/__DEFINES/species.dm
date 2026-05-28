@@ -32,7 +32,7 @@
 /// 340k is about 66c, and rather high for a human.
 #define HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT (HUMAN_BODYTEMP_NORMAL + 30)
 /// The body temperature limit the human body can take before it will take wound damage.
-#define HUMAN_BODYTEMP_HEAT_WOUND_LIMIT	(HUMAN_BODYTEMP_NORMAL + 90) // 400.5 k
+#define HUMAN_BODYTEMP_HEAT_WOUND_LIMIT (HUMAN_BODYTEMP_NORMAL + 90) // 400.5 k
 /// The body temperature limit the human body can take before it starts taking damage from cold.
 /// This also affects how fast the body normalises it's temperature when cold.
 /// 270k is about -3c, that is below freezing and would hurt over time.

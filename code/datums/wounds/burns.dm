@@ -85,7 +85,7 @@
 	// sanitization is checked after the clearing check but before the actual ill-effects, because we freeze the effects of infection while we have sanitization
 	if(sanitization > 0)
 		infestation = max(0, infestation - (WOUND_BURN_SANITIZATION_RATE * seconds_per_tick))
-		sanitization = max(0, sanitization - (WOUND_BURN_SANITIZATION_RATE * bandage_factor * seconds_per_tick	))
+		sanitization = max(0, sanitization - (WOUND_BURN_SANITIZATION_RATE * bandage_factor * seconds_per_tick))
 		return
 
 	infestation += infestation_rate * seconds_per_tick
