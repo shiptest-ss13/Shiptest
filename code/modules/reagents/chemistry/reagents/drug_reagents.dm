@@ -27,7 +27,7 @@
 	to_chat(M, span_userdanger("You start tripping hard!"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/overdose, name)
 
-/datum/reagent/drug/space_drugs/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired, seconds_per_tick, times_fired)
+/datum/reagent/drug/space_drugs/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
 	if(overdoser.hallucination < volume && SPT_PROB(10, seconds_per_tick))
 		overdoser.hallucination += 5
 	..()
