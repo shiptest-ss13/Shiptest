@@ -15,7 +15,7 @@
 	color = "#60A584" // rgb: 96, 165, 132
 	overdose_threshold = 30
 
-/datum/reagent/drug/space_drugs/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired, seconds_per_tick, times_fired)
+/datum/reagent/drug/space_drugs/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	metabolizer.set_drugginess(15)
 	if(isturf(metabolizer.loc) && !isspaceturf(metabolizer.loc))
 		if(!HAS_TRAIT(metabolizer, TRAIT_IMMOBILIZED))
