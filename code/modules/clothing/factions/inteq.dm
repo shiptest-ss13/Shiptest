@@ -468,7 +468,7 @@
 
 // Gloves
 
-/obj/item/clothing/gloves/color/latex/nitrile/inteq
+/obj/item/clothing/gloves/nitrile/inteq
 	name = "green nitrile gloves"
 	desc = "Thick sterile gloves that reach up to the wrists, colored in a pine green shade. The material makes it easier to pick up patients."
 	icon = 'icons/obj/clothing/faction/inteq/gloves.dmi'

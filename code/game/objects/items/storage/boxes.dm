@@ -205,13 +205,13 @@
 	illustration = "latex"
 
 /obj/item/storage/box/gloves/PopulateContents()
-	var/obj/item/clothing/gloves/color/latex/picked_gloves
+	var/obj/item/clothing/gloves/nitrile/picked_gloves
 
 	picked_gloves = pick(
-		/obj/item/clothing/gloves/color/latex,
-		/obj/item/clothing/gloves/color/latex/nitrile,
-		/obj/item/clothing/gloves/color/latex/pink,
-		/obj/item/clothing/gloves/color/latex/green,
+		/obj/item/clothing/gloves/nitrile,
+		/obj/item/clothing/gloves/nitrile/blue,
+		/obj/item/clothing/gloves/nitrile/pink,
+		/obj/item/clothing/gloves/nitrile/green,
 		)
 
 	for(var/i in 1 to 7)

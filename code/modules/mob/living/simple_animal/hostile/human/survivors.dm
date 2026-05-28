@@ -456,7 +456,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	suit = /obj/item/clothing/suit/warra/vest
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 	head = /obj/item/clothing/head/hardhat/warra
 	belt = /obj/item/storage/belt/utility/full/engi
 	mask = /obj/item/clothing/mask/breath
