@@ -1,0 +1,44 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Enkidu-Class Patrol-Cutter",
+	"faction": "/datum/faction/solgov",
+	"prefix": "SCSV",
+	"namelists": [
+		"SOLGOV",
+		"SPACE",
+		"BRITISH_NAVY",
+		"NATURAL"
+	],
+	"map_short_name": "Enkidu-class",
+	"description": "WIP.",
+	"tags": ["RP Focus", "Combat"],
+	"map_path": "_maps/shuttles/solgov/solgov_enkidu.dmm",
+	"token_icon_state": "ship_small_generic",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/solgov/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Overseer": {
+			"outfit": "/datum/outfit/job/solgov/overseer",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/solgov/doctor",
+			"slots": 1
+		},
+		"Sonnensöldner": {
+			"outfit": "/datum/outfit/job/solgov/sonnensoldner",
+			"slots": 2
+		},
+		"Scribe": {
+			"outfit": "/datum/outfit/job/solgov/assistant",
+			"slots" : 1
+		}
+
+	},
+	"enabled": true
+}
