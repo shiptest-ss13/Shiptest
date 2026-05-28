@@ -10,7 +10,7 @@
 	gain_text = span_notice("You feel a higher power inside your mind...")
 	lose_text = span_warning("The divine presence leaves your head, no longer interested.")
 
-/datum/brain_trauma/special/godwoken/on_life()
+/datum/brain_trauma/special/godwoken/on_life(seconds_per_tick, times_fired)
 	..()
 	if(prob(4))
 		if(prob(33) && (owner.IsStun() || owner.IsParalyzed() || owner.IsUnconscious()))
@@ -53,42 +53,48 @@
 	scan_desc = "bluespace attunement"
 	gain_text = span_notice("You feel the bluespace pulsing around you...")
 	lose_text = span_warning("The faint pulsing of bluespace fades into silence.")
-	var/next_portal = 0
 
-/datum/brain_trauma/special/bluespace_prophet/on_life()
-	if(world.time > next_portal)
-		next_portal = world.time + 100
-		var/list/turf/possible_turfs = list()
-		for(var/turf/T in range(owner, 8))
-			if(!T.density)
-				var/clear = TRUE
-				for(var/obj/O in T)
-					if(O.density)
-						clear = FALSE
-						break
-				if(clear)
-					possible_turfs += T
+	/// Cooldown so we can't teleport literally everywhere on a whim
+	COOLDOWN_DECLARE(portal_cooldown)
 
-		if(!LAZYLEN(possible_turfs))
-			return
+/datum/brain_trauma/special/bluespace_prophet/on_life(seconds_per_tick, times_fired)
+	if(!COOLDOWN_FINISHED(src, portal_cooldown))
+		return
 
-		var/turf/first_turf = pick(possible_turfs)
-		if(!first_turf)
-			return
+	COOLDOWN_START(src, portal_cooldown, 10 SECONDS)
+	var/list/turf/possible_turfs = list()
+	for(var/turf/T in range(owner, 8))
+		if(T.density)
+			continue
 
-		possible_turfs -= (possible_turfs & range(first_turf, 3))
+		var/clear = TRUE
+		for(var/obj/O in T)
+			if(O.density)
+				clear = FALSE
+				break
+		if(clear)
+			possible_turfs += T
 
-		var/turf/second_turf = pick(possible_turfs)
-		if(!second_turf)
-			return
+	if(!LAZYLEN(possible_turfs))
+		return
 
-		var/obj/effect/hallucination/simple/bluespace_stream/first = new(first_turf, owner)
-		var/obj/effect/hallucination/simple/bluespace_stream/second = new(second_turf, owner)
+	var/turf/first_turf = pick(possible_turfs)
+	if(!first_turf)
+		return
 
-		first.linked_to = second
-		second.linked_to = first
-		first.seer = owner
-		second.seer = owner
+	possible_turfs -= (possible_turfs & range(first_turf, 3))
+
+	var/turf/second_turf = pick(possible_turfs)
+	if(!second_turf)
+		return
+
+	var/obj/effect/hallucination/simple/bluespace_stream/first = new(first_turf, owner)
+	var/obj/effect/hallucination/simple/bluespace_stream/second = new(second_turf, owner)
+
+	first.linked_to = second
+	second.linked_to = first
+	first.seer = owner
+	second.seer = owner
 
 /obj/effect/hallucination/simple/bluespace_stream
 	name = "bluespace stream"
@@ -129,17 +135,19 @@
 	var/atom/linked_target = null
 	var/linked = FALSE
 	var/returning = FALSE
-	var/snapback_time = 0
+	/// Cooldown for snapbacks
+	COOLDOWN_DECLARE(snapback_cooldown)
 
-/datum/brain_trauma/special/quantum_alignment/on_life()
+/datum/brain_trauma/special/quantum_alignment/on_life(seconds_per_tick, times_fired)
 	if(linked)
 		if(QDELETED(linked_target))
 			linked_target = null
 			linked = FALSE
-		else if(!returning && world.time > snapback_time)
+			return
+		if(!returning && COOLDOWN_FINISHED(src, snapback_cooldown))
 			start_snapback()
 		return
-	if(prob(4))
+	if(SPT_PROB(2, seconds_per_tick))
 		try_entangle()
 
 /datum/brain_trauma/special/quantum_alignment/proc/try_entangle()
@@ -176,7 +184,7 @@
 	to_chat(owner, span_notice("You start feeling a strong sense of connection to [target]."))
 	linked_target = target
 	linked = TRUE
-	snapback_time = world.time + rand(450, 6000)
+	COOLDOWN_START(src, snapback_cooldown, rand(45 SECONDS, 10 MINUTES))
 
 /datum/brain_trauma/special/quantum_alignment/proc/start_snapback()
 	if(QDELETED(linked_target))
@@ -251,7 +259,7 @@
 	lose_text = span_notice("You feel alive again.")
 	var/active = FALSE
 
-/datum/brain_trauma/special/death_whispers/on_life()
+/datum/brain_trauma/special/death_whispers/on_life(seconds_per_tick, times_fired)
 	..()
 	if(!active && prob(2))
 		whispering()
@@ -277,11 +285,12 @@
 	gain_text = span_notice("You feel less real.")
 	lose_text = span_warning("You feel more substantial again.")
 	var/obj/effect/abstract/sync_holder/veil/veil
-	var/next_crisis = 0
+	/// A cooldown to prevent constantly erratic dolphining through the fabric of reality
+	COOLDOWN_DECLARE(crisis_cooldown)
 
-/datum/brain_trauma/special/existential_crisis/on_life()
+/datum/brain_trauma/special/existential_crisis/on_life(seconds_per_tick, times_fired)
 	..()
-	if(!veil && world.time > next_crisis && prob(3))
+	if(!veil && COOLDOWN_FINISHED(src, crisis_cooldown) && SPT_PROB(1.5, seconds_per_tick))
 		if(isturf(owner.loc))
 			fade_out()
 
@@ -293,7 +302,7 @@
 /datum/brain_trauma/special/existential_crisis/proc/fade_out()
 	if(veil)
 		return
-	var/duration = rand(50, 450)
+	var/duration = rand(5 SECONDS, 45 SECONDS)
 	veil = new(owner.drop_location())
 	to_chat(owner, "<span class='warning'>[pick("You stop thinking for a moment. Therefore you are not.",\
 												"To be or not to be...",\
@@ -307,13 +316,13 @@
 	for(var/thing in owner)
 		var/atom/movable/AM = thing
 		SEND_SIGNAL(AM, COMSIG_MOVABLE_SECLUDED_LOCATION)
-	next_crisis = world.time + 600
+	COOLDOWN_START(src, crisis_cooldown, 1 MINUTES)
 	addtimer(CALLBACK(src, PROC_REF(fade_in)), duration)
 
 /datum/brain_trauma/special/existential_crisis/proc/fade_in()
 	QDEL_NULL(veil)
 	to_chat(owner, span_notice("You fade back into reality."))
-	next_crisis = world.time + 600
+	COOLDOWN_START(src, crisis_cooldown, 1 MINUTES)
 
 //base sync holder is in desynchronizer.dm
 /obj/effect/abstract/sync_holder/veil
@@ -342,7 +351,7 @@
 	QDEL_NULL(beepsky)
 	..()
 
-/datum/brain_trauma/special/beepsky/on_life()
+/datum/brain_trauma/special/beepsky/on_life(seconds_per_tick, times_fired)
 	if(QDELETED(beepsky) || !beepsky.loc || beepsky.z != owner.z)
 		QDEL_NULL(beepsky)
 		if(prob(30))

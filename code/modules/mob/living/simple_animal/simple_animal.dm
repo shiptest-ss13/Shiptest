@@ -63,7 +63,7 @@
 	///Leaving something at 0 means it's off - has no maximum.
 	var/list/atmos_requirements = NORMAL_ATMOS_REQS
 	///This damage is taken when atmos doesn't fit all the requirements above.
-	var/unsuitable_atmos_damage = 2
+	var/unsuitable_atmos_damage = 1
 
 	//Defaults to zero so Ian can still be cuddly. Moved up the tree to living! This allows us to bypass some hardcoded stuff.
 	melee_damage_lower = 0
@@ -241,7 +241,7 @@
 			set_stat(CONSCIOUS)
 	med_hud_set_status()
 
-/mob/living/simple_animal/handle_status_effects()
+/mob/living/simple_animal/handle_status_effects(seconds_per_tick, times_fired)
 	..()
 	if(stuttering)
 		stuttering = 0
@@ -338,7 +338,7 @@
 	if((areatemp < minbodytemp) || (areatemp > maxbodytemp))
 		. = FALSE
 
-/mob/living/simple_animal/handle_environment(datum/gas_mixture/environment)
+/mob/living/simple_animal/handle_environment(datum/gas_mixture/environment, seconds_per_tick, times_fired)
 	var/atom/A = loc
 	if(isturf(A))
 		var/areatemp = get_temperature(environment)
@@ -347,18 +347,19 @@
 			diff = diff / 5
 			adjust_bodytemperature(diff)
 
-	if(!environment_air_is_safe())
-		adjustHealth(unsuitable_atmos_damage)
+	if(!environment_air_is_safe() && unsuitable_atmos_damage)
+		adjustHealth(unsuitable_atmos_damage * seconds_per_tick)
 		if(unsuitable_atmos_damage > 0)
 			throw_alert(ALERT_NOT_ENOUGH_OXYGEN, /atom/movable/screen/alert/not_enough_oxy)
 	else
 		clear_alert(ALERT_NOT_ENOUGH_OXYGEN)
 
-	handle_temperature_damage()
+	handle_temperature_damage(seconds_per_tick, times_fired)
 
-/mob/living/simple_animal/proc/handle_temperature_damage()
-	if(bodytemperature < minbodytemp)
-		adjustHealth(unsuitable_atmos_damage)
+/mob/living/simple_animal/proc/handle_temperature_damage(seconds_per_tick, times_fired)
+	. = FALSE
+	if((bodytemperature < minbodytemp) && unsuitable_atmos_damage)
+		adjustHealth(unsuitable_atmos_damage * seconds_per_tick)
 		switch(unsuitable_atmos_damage)
 			if(1 to 5)
 				throw_alert("temp", /atom/movable/screen/alert/cold, 1)
@@ -367,7 +368,7 @@
 			if(10 to INFINITY)
 				throw_alert("temp", /atom/movable/screen/alert/cold, 3)
 	else if(bodytemperature > maxbodytemp)
-		adjustHealth(unsuitable_atmos_damage)
+		adjustHealth(unsuitable_atmos_damage * seconds_per_tick)
 		switch(unsuitable_atmos_damage)
 			if(1 to 5)
 				throw_alert("temp", /atom/movable/screen/alert/hot, 1)

@@ -100,7 +100,7 @@
 		return FALSE
 
 /// Lizards are cold blooded and do not stabilize body temperature naturally
-/datum/species/lizard/body_temperature_core(mob/living/carbon/human/human)
+/datum/species/lizard/body_temperature_core(mob/living/carbon/human/human, seconds_per_tick, times_fired)
 	return
 
 /datum/species/lizard/random_name(gender,unique,lastname)

@@ -55,12 +55,14 @@
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
 	)
 
-	var/heal_rate = 1
-	var/regen_cooldown = 0
+	/// The rate the zombies regenerate at
+	var/heal_rate = 0.5
+	/// The cooldown before the zombie can start regenerating
+	COOLDOWN_DECLARE(regen_cooldown)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
 
 /// Zombies do not stabilize body temperature they are the walking dead and are cold blooded
-/datum/species/zombie/body_temperature_core(mob/living/carbon/human/target_human)
+/datum/species/zombie/body_temperature_core(mob/living/carbon/human/target_human, seconds_per_tick, times_fired)
 	return
 
 /datum/species/zombie/infectious/check_roundstart_eligible()
@@ -72,21 +74,25 @@
 /datum/species/zombie/infectious/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, attack_direction = attack_direction)
 	. = ..()
 	if(.)
-		regen_cooldown = world.time + REGENERATION_DELAY
+		COOLDOWN_START(src, regen_cooldown, REGENERATION_DELAY)
 
-/datum/species/zombie/infectious/spec_life(mob/living/carbon/C)
+/datum/species/zombie/infectious/spec_life(mob/living/carbon/C, seconds_per_tick, times_fired)
 	. = ..()
 	C.a_intent = INTENT_HARM // THE SUFFERING MUST FLOW
 
 	//Zombies never actually die, they just fall down until they regenerate enough to rise back up.
 	//They must be restrained, beheaded or gibbed to stop being a threat.
-	if(regen_cooldown < world.time)
+	if(COOLDOWN_FINISHED(src, regen_cooldown))
 		var/heal_amt = heal_rate
 		if(HAS_TRAIT(C, TRAIT_CRITICAL_CONDITION))
 			heal_amt *= 2
-		C.heal_overall_damage(heal_amt,heal_amt)
-		C.adjustToxLoss(-heal_amt)
-	if(!HAS_TRAIT(C, TRAIT_CRITICAL_CONDITION) && prob(4))
+		C.heal_overall_damage(heal_amt * seconds_per_tick, heal_amt * seconds_per_tick)
+		C.adjustToxLoss(-heal_amt * seconds_per_tick)
+		for(var/i in C.all_wounds)
+			var/datum/wound/iter_wound = i
+			if(SPT_PROB(2-(iter_wound.severity/2), seconds_per_tick))
+				iter_wound.remove_wound()
+	if(!HAS_TRAIT(C, TRAIT_CRITICAL_CONDITION) && SPT_PROB(2, seconds_per_tick))
 		playsound(C, pick(spooks), 50, TRUE, 10)
 
 //Congrats you somehow died so hard you stopped being a zombie

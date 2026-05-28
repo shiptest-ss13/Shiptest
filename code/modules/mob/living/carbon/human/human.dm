@@ -1388,9 +1388,6 @@
 /mob/living/carbon/human/species/skeleton
 	race = /datum/species/skeleton
 
-/mob/living/carbon/human/species/snail
-	race = /datum/species/snail
-
 /mob/living/carbon/human/species/vox
 	race = /datum/species/vox
 

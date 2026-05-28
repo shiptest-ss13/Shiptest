@@ -1,4 +1,4 @@
-/mob/living/carbon/Life()
+/mob/living/carbon/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	set invisibility = 0
 
 	if(notransform)
@@ -12,10 +12,12 @@
 	if(QDELETED(src))
 		return ..()
 
-	if(!IS_IN_STASIS(src))
+	if(IS_IN_STASIS(src))
+		. = ..()
 
+	else
 		//Reagent processing needs to come before breathing, to prevent edge cases.
-		handle_organs()
+		handle_organs(seconds_per_tick, times_fired)
 
 		. = ..()
 
@@ -23,7 +25,7 @@
 			return
 
 		if(.) //not dead
-			handle_blood()
+			handle_blood(seconds_per_tick, times_fired)
 
 		if(isLivingSSD() && !ignore_SSD) // If you're disconnected, you're going to sleep
 			if(trunc((world.time - lastclienttime) / (3 MINUTES)) > 0) // After a three minute grace period, your character will fall asleep
@@ -33,17 +35,16 @@
 					cut_overlay(GLOB.ssd_indicator_overlay) // Prevents chronically SSD players from breaking immersion
 
 		if(stat != DEAD)
-			var/bprv = handle_bodyparts()
+			var/bprv = handle_bodyparts(seconds_per_tick, times_fired)
 			if(bprv & BODYPART_LIFE_UPDATE_HEALTH)
 				update_stamina() //needs to go before updatehealth to remove stamcrit
 				updatehealth()
 
 		if(stat != DEAD)
-			handle_brain_damage()
+			handle_brain_damage(seconds_per_tick, times_fired)
 
+		//someone please refactor this into a status effect so i can kill myself
 		mothdust = max(0, mothdust - 1); //WS edit - moth dust when hugging
-	else
-		. = ..()
 
 	if(stat == DEAD)
 		stop_sound_channel(CHANNEL_HEARTBEAT)
@@ -73,7 +74,7 @@
 			next_breath--
 
 	if((times_fired % next_breath) == 0 || failed_last_breath)
-		breathe() //Breathe per 4 ticks if healthy, down to 2 if our lungs or heart are damaged, unless suffocating
+		breathe(seconds_per_tick, times_fired) //Breathe per 4 ticks if healthy, down to 2 if our lungs or heart are damaged, unless suffocating
 		if(failed_last_breath)
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "suffocation", /datum/mood_event/suffocation)
 		else
@@ -84,7 +85,7 @@
 			location_as_object.handle_internal_lifeform(src,0)
 
 //Second link in a breath chain, calls check_breath()
-/mob/living/carbon/proc/breathe()
+/mob/living/carbon/proc/breathe(seconds_per_tick, times_fired)
 	var/obj/item/organ/lungs = getorganslot(ORGAN_SLOT_LUNGS)
 	if(reagents.has_reagent(/datum/reagent/toxin/lexorin, needs_metabolizing = TRUE))
 		return
@@ -292,10 +293,10 @@
 			if(!.)
 				return FALSE //to differentiate between no internals and active, but empty internals
 
-/mob/living/carbon/proc/handle_blood()
+/mob/living/carbon/proc/handle_blood(seconds_per_tick, times_fired)
 	return
 
-/mob/living/carbon/proc/handle_bodyparts()
+/mob/living/carbon/proc/handle_bodyparts(seconds_per_tick, times_fired)
 	if(stam_regen_start_time <= world.time)
 		if(HAS_TRAIT_FROM(src, TRAIT_INCAPACITATED, STAMINA))
 			. |= BODYPART_LIFE_UPDATE_HEALTH //make sure we remove the stamcrit
@@ -304,14 +305,14 @@
 		limb = bodyparts[zone]
 		if(!limb)
 			continue
-		. |= limb.on_life()
+		. |= limb.on_life(seconds_per_tick, times_fired)
 
-/mob/living/carbon/proc/handle_organs()
+/mob/living/carbon/proc/handle_organs(seconds_per_tick, times_fired)
 	if(stat != DEAD)
 		for(var/organ_slot in GLOB.organ_process_order)
 			var/obj/item/organ/organ = getorganslot(organ_slot)
 			if(organ?.owner) // This exist mostly because reagent metabolization can cause organ reshuffling
-				organ.on_life()
+				organ.on_life(seconds_per_tick, times_fired)
 	else
 		if(reagents.has_reagent(/datum/reagent/toxin/formaldehyde, 1)) // No organ decay if the body contains formaldehyde.
 			return
@@ -319,7 +320,7 @@
 			var/obj/item/organ/O = V
 			O.on_death() //Needed so organs decay while inside the body.
 
-/mob/living/carbon/handle_diseases(seconds_per_tick = SSMOBS_DT, times_fired)
+/mob/living/carbon/handle_diseases(seconds_per_tick, times_fired)
 	for(var/thing in diseases)
 		var/datum/disease/D = thing
 		if(prob(D.infectivity))
@@ -328,14 +329,14 @@
 		if(stat != DEAD || D.process_dead)
 			D.stage_act(seconds_per_tick, times_fired)
 
-/mob/living/carbon/handle_wounds()
+/mob/living/carbon/handle_wounds(seconds_per_tick, times_fired)
 	for(var/thing in all_wounds)
 		var/datum/wound/W = thing
 		if(W.processes) // meh
-			W.handle_process()
+			W.handle_process(seconds_per_tick, times_fired)
 
 //todo generalize this and move hud out
-/mob/living/carbon/proc/handle_changeling()
+/mob/living/carbon/proc/handle_changeling(seconds_per_tick, times_fired)
 	if(mind && hud_used && hud_used.lingchemdisplay)
 		var/datum/antagonist/changeling/changeling = mind.has_antag_datum(/datum/antagonist/changeling)
 		if(changeling)
@@ -346,7 +347,7 @@
 			hud_used.lingchemdisplay.invisibility = INVISIBILITY_ABSTRACT
 
 
-/mob/living/carbon/handle_mutations_and_radiation()
+/mob/living/carbon/handle_mutations_and_radiation(seconds_per_tick, times_fired)
 	if(dna && dna.temporary_mutations.len)
 		for(var/mut in dna.temporary_mutations)
 			if(dna.temporary_mutations[mut] < world.time)
@@ -374,7 +375,7 @@
 			if(HM && HM.timed)
 				dna.remove_mutation(HM.type)
 
-	radiation -= min(radiation, RAD_LOSS_PER_TICK)
+	radiation -= min(radiation, RAD_LOSS_PER_SECOND * seconds_per_tick)
 	if(radiation > RAD_MOB_SAFE)
 		adjustToxLoss(log(radiation-RAD_MOB_SAFE)*RAD_TOX_COEFFICIENT)
 
@@ -399,45 +400,45 @@ All effects don't start immediately, but rather get worse over time; the rate is
 */
 
 //this updates all special effects: stun, sleeping, knockdown, druggy, stuttering, etc..
-/mob/living/carbon/handle_status_effects()
+/mob/living/carbon/handle_status_effects(seconds_per_tick, times_fired)
 	..()
 
-	var/restingpwr = 1 + 4 * resting
+	var/restingpwr = 0.5 + 2 * resting
 
 	if(drowsyness)
 		drowsyness = max(drowsyness - restingpwr, 0)
 		blur_eyes(2)
 		if(drowsyness > 20)
-			if(prob(round(drowsyness/10)))
+			if(SPT_PROB(round(drowsyness/20), seconds_per_tick))
 				AdjustSleeping(drowsyness)
 
 	if(stuttering)
-		stuttering = max(stuttering-1, 0)
+		stuttering = max(stuttering-(0.5 * seconds_per_tick), 0)
 
 	if(slurring)
-		slurring = max(slurring-1,0)
+		slurring = max(slurring-(0.5 * seconds_per_tick),0)
 
 	if(cultslurring)
-		cultslurring = max(cultslurring-1, 0)
+		cultslurring = max(cultslurring-(0.5 * seconds_per_tick), 0)
 
 	if(clockcultslurring) //Shiptest edit
-		clockcultslurring = max(clockcultslurring-1, 0)
+		clockcultslurring = max(clockcultslurring-(0.5 * seconds_per_tick), 0)
 
 	if(silent)
-		silent = max(silent-1, 0)
+		silent = max(silent-(0.5 * seconds_per_tick), 0)
 
 	if(druggy)
-		adjust_drugginess(-1)
+		adjust_drugginess((0.5 * seconds_per_tick))
 
 	if(hallucination)
-		handle_hallucinations()
+		handle_hallucinations(seconds_per_tick, times_fired)
 
 /// Base carbon environment handler, adds natural stabilization
-/mob/living/carbon/handle_environment(datum/gas_mixture/environment)
+/mob/living/carbon/handle_environment(datum/gas_mixture/environment, seconds_per_tick, times_fired)
 	var/areatemp = get_temperature(environment)
 
 	if(stat != DEAD) // If you are dead your body does not stabilize naturally
-		natural_bodytemperature_stabilization(environment)
+		natural_bodytemperature_stabilization(environment, seconds_per_tick, times_fired)
 
 	if(!on_fire || areatemp > bodytemperature) // If we are not on fire or the area is hotter
 		adjust_bodytemperature((areatemp - bodytemperature), use_insulation=TRUE, use_steps=TRUE)
@@ -445,10 +446,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /**
  * Used to stabilize the body temperature back to normal on living mobs
  *
- * vars:
- * * environment The environment gas mix
+ * Arguments:
+ * - [environemnt][/datum/gas_mixture]: The environment gas mix
+ * - seconds_per_tick: The amount of time that has elapsed since the last tick
+ * - times_fired: The number of times SSmobs has ticked
  */
-/mob/living/carbon/proc/natural_bodytemperature_stabilization(datum/gas_mixture/environment)
+/mob/living/carbon/proc/natural_bodytemperature_stabilization(datum/gas_mixture/environment, seconds_per_tick, times_fired)
 	if(!dna)
 		return
 
@@ -456,7 +459,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	var/body_temperature_difference = get_body_temp_normal() - bodytemperature
 	var/natural_change = 0
 
-	// We are very cold, increate body temperature
+	// We are very cold, increase body temperature
 	if(bodytemperature <= dna.species.bodytemp_cold_damage_limit)
 		natural_change = max((body_temperature_difference * metabolism_efficiency / dna.species.bodytemp_autorecovery_divisor), \
 			dna.species.bodytemp_autorecovery_min)
@@ -598,31 +601,31 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /////////
 
 ///Decides if the liver is failing or not.
-/mob/living/carbon/proc/handle_liver()
+/mob/living/carbon/proc/handle_liver(seconds_per_tick, times_fired)
 	if(!dna)
 		return
 	var/obj/item/organ/liver/liver = getorganslot(ORGAN_SLOT_LIVER)
 	if(!liver)
-		liver_failure()
+		liver_failure(seconds_per_tick, times_fired)
 
-/mob/living/carbon/proc/undergoing_liver_failure()
+/mob/living/carbon/proc/undergoing_liver_failure(seconds_per_tick, times_fired)
 	var/obj/item/organ/liver/liver = getorganslot(ORGAN_SLOT_LIVER)
 	if(liver && (liver.organ_flags & ORGAN_FAILING))
 		return TRUE
 
-/mob/living/carbon/proc/liver_failure()
+/mob/living/carbon/proc/liver_failure(seconds_per_tick, times_fired)
 	reagents.end_metabolization(src, keep_liverless = TRUE) //Stops trait-based effects on reagents, to prevent permanent buffs
-	reagents.metabolize(src, can_overdose=FALSE, liverless = TRUE)
+	reagents.metabolize(src, seconds_per_tick, times_fired, can_overdose=FALSE, liverless = TRUE)
 	if(HAS_TRAIT(src, TRAIT_STABLELIVER) || HAS_TRAIT(src, TRAIT_NOMETABOLISM))
 		return
-	adjustToxLoss(4, TRUE,  TRUE)
-	if(prob(30))
+	adjustToxLoss(2 * seconds_per_tick, TRUE,  TRUE)
+	if(SPT_PROB(15, seconds_per_tick))
 		to_chat(src, span_warning("You feel a stabbing pain in your abdomen!"))
 
 /////////////
 //CREMATION//
 /////////////
-/mob/living/carbon/proc/check_cremation()
+/mob/living/carbon/proc/check_cremation(seconds_per_tick, times_fired)
 	//Only cremate while actively on fire
 	if(!on_fire)
 		return
@@ -641,7 +644,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		if(limb)
 			still_has_limbs = TRUE
 			if(limb.get_damage() >= limb.max_damage)
-				limb.cremation_progress += rand(2,5)
+				limb.cremation_progress += rand(1 * seconds_per_tick, 2.5 * seconds_per_tick)
 				if(limb.cremation_progress >= 100)
 					if(IS_ORGANIC_LIMB(limb))  //Non-organic limbs don't burn
 						limb.drop_limb()
@@ -657,7 +660,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	var/obj/item/bodypart/head = get_bodypart(BODY_ZONE_HEAD)
 	if(head)
 		if(head.get_damage() >= head.max_damage)
-			head.cremation_progress += rand(2,5)
+			head.cremation_progress += rand(1 * seconds_per_tick, 2.5 * seconds_per_tick)
 			if(head.cremation_progress >= 100)
 				if(!IS_ORGANIC_LIMB(head)) //Non-organic limbs don't burn
 					head.drop_limb()
@@ -669,7 +672,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		return
 
 	//Nothing left: dust the body, drop the items (if they're flammable they'll burn on their own)
-	chest.cremation_progress += rand(2,5)
+	chest.cremation_progress += rand(1 * seconds_per_tick, 2.5 * seconds_per_tick)
 	if(chest.cremation_progress >= 100)
 		visible_message(span_warning("[src]'s body crumbles into a pile of ash!"))
 		dust(TRUE, TRUE)
@@ -678,10 +681,10 @@ All effects don't start immediately, but rather get worse over time; the rate is
 //BRAIN DAMAGE//
 ////////////////
 
-/mob/living/carbon/proc/handle_brain_damage()
+/mob/living/carbon/proc/handle_brain_damage(seconds_per_tick, times_fired)
 	for(var/T in get_traumas())
 		var/datum/brain_trauma/BT = T
-		BT.on_life()
+		BT.on_life(seconds_per_tick, times_fired)
 
 /////////////////////////////////////
 //MONKEYS WITH TOO MUCH CHOLOESTROL//
