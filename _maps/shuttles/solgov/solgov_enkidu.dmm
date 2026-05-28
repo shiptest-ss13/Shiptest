@@ -2092,10 +2092,9 @@
 "sh" = (
 /obj/machinery/door/airlock/solgov{
 	dir = 1;
-	id_tag = "sg_par_bolt";
+	id_tag = "sg_enkidu_bolt_crew2";
 	name = "Overseer's Quarters";
-	req_access_txt = "19";
-	id = "sg_enkidu_bolt_crew2"
+	req_access_txt = "19"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2119,10 +2118,9 @@
 "su" = (
 /obj/machinery/door/airlock/solgov{
 	dir = 4;
-	id_tag = "sgi_captainbolt";
+	id_tag = "sg_enkidu_bolt_crew3";
 	name = "Captain's Quarters";
-	req_one_access = list(20);
-	id = "sg_enkidu_bolt_crew3"
+	req_one_access = list(20)
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
