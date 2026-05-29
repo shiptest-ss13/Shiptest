@@ -2433,6 +2433,7 @@
 	dir = 6
 	},
 /obj/structure/table,
+/obj/structure/bedsheetbin/empty,
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
 "nN" = (
@@ -5594,7 +5595,6 @@
 /obj/item/clothing/under/shorts/miniskirt,
 /obj/item/clothing/under/overalls/black,
 /obj/item/clothing/under/overalls/brown,
-/obj/item/clothing/suit/apron/chef,
 /obj/item/clothing/neck/poncho,
 /obj/item/clothing/neck/mantle,
 /obj/structure/disposalpipe/segment{
@@ -5612,6 +5612,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/item/clothing/suit/apron/chef,
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
 "EX" = (
@@ -6201,6 +6202,10 @@
 "JA" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/structure/table,
+/obj/item/soap,
+/obj/item/soap/deluxe{
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
 "JJ" = (
