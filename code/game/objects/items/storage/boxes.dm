@@ -658,8 +658,10 @@
 /obj/item/storage/box/shoalpockets
 	name = "box of shoalwiches"
 	desc = "An ultra-processed form of food originating from upper layers of the Shoal - now commercialized. Contrary to popular belief, it contains no real grain. Heated in the microwave."
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "shoalpocketbox"
-	illustration=null
+	illustration = null
+	possible_illustrations = null
 	var/shoalpockettype = /obj/item/food/shoalpocket
 
 /obj/item/storage/box/shoalpockets/PopulateContents()
@@ -689,6 +691,7 @@
 /obj/item/storage/box/monkeycubes
 	name = "monkey cube box"
 	desc = "Drymate brand monkey cubes. Just add water!"
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "monkeycubebox"
 	illustration = null
 	possible_illustrations = null
@@ -857,12 +860,8 @@
 
 /obj/item/storage/box/lights
 	name = "box of replacement bulbs"
-	icon = 'icons/obj/storage.dmi'
 	illustration = "bulb"
 	desc = "This box is shaped on the inside so that only light tubes and bulbs fit."
-	item_state = "syringe_kit"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	foldable = /obj/item/stack/sheet/cardboard //BubbleWrap
 
 /obj/item/storage/box/lights/ComponentInitialize()//holy oversized box. this one can stay the way it is, for now

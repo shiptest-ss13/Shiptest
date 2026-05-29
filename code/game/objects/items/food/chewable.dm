@@ -68,6 +68,7 @@
 /obj/item/storage/box/bubblegum
 	name = "bubblegum packet"
 	desc = "The packaging is entirely in japanese, apparently. You can't make out a single word of it."
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "bubblegum_generic"
 	w_class = WEIGHT_CLASS_TINY
 	illustration = null
