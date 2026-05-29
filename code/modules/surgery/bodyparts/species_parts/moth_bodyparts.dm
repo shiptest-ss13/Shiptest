@@ -39,4 +39,19 @@
 	icon_state = "moth_r_leg"
 	limb_id = SPECIES_MOTH
 	should_draw_greyscale = TRUE
-	plantigrade_forced = TRUE
+
+// Digitigrade
+
+/obj/item/bodypart/leg/left/moth/digitigrade
+	icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon_state = "moth_l_leg_digitigrade"
+	limb_id = SPECIES_MOTH
+	should_draw_greyscale = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/moth/digitigrade
+	icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon_state = "moth_r_leg_digitigrade"
+	limb_id = SPECIES_MOTH
+	should_draw_greyscale = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
