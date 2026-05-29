@@ -161,6 +161,9 @@
 	pixel_x = 3
 	},
 /obj/machinery/light/directional/north,
+/obj/structure/chair/handrail{
+	name = "overhead handrail"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "ow" = (
@@ -555,7 +558,7 @@
 /obj/machinery/power/shuttle/engine/fire{
 	dir = 8
 	},
-/turf/open/space/basic,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "Wf" = (
 /obj/machinery/power/terminal{
