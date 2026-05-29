@@ -4034,9 +4034,7 @@
 /obj/item/reagent_containers/food/drinks/mug{
 	pixel_x = 5
 	},
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/effect/turf_decal/corner/opaque/black/half{
 	dir = 1
 	},
@@ -6688,9 +6686,7 @@
 /area/ship/security/armory)
 "ZF" = (
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
