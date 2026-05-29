@@ -154,7 +154,7 @@
 	var/aiming_time_fire_threshold = 5
 	var/aiming_time_left = 12
 	var/aiming_time_increase_user_movement = 3
-	var/aiming_time_increase_angle_multiplier = 0.3
+	var/aiming_time_increase_angle_multiplier = 0.1
 	var/list/obj/effect/projectile/tracer/current_tracers
 
 // BALLISTIC
