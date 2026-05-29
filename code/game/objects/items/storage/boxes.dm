@@ -76,6 +76,24 @@
 		return 0
 	return ..()
 
+//Generic ones for crafting
+
+/obj/item/storage/box/blue
+	icon_state = "bluebox"
+	item_state = "bluebox"
+
+/obj/item/storage/box/pink
+	icon_state = "pinkbox"
+	item_state = "pinkbox"
+
+/obj/item/storage/box/grey
+	icon_state = "secbox"
+	item_state = "secbox"
+
+/obj/item/storage/box/red
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
+
 //Disk boxes
 
 /obj/item/storage/box/disks
