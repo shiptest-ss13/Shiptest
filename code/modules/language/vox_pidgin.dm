@@ -4,7 +4,7 @@
 	speech_verb = "squawks"
 	ask_verb = "creels"
 	key = "v"
-	flags = LANGUAGE_HIDE_ICON_IF_UNDERSTOOD | ROUNDSTART_LANGUAGE
+	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | ROUNDSTART_LANGUAGE
 	space_chance = 0
 	sentence_chance = 0
 	between_word_sentence_chance = 20
