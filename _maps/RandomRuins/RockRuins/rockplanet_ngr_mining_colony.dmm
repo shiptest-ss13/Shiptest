@@ -631,6 +631,13 @@
 "ej" = (
 /turf/open/floor/plasteel/tech/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/refinery)
+"el" = (
+/obj/machinery/camera/autoname{
+	network = list("ngr_colony","ngr_colony_mines");
+	dir = 2
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "en" = (
 /obj/structure/closet/secure_closet/armorycage{
 	req_access = null
@@ -916,6 +923,19 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
+"fW" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 8
+	},
+/obj/machinery/camera/autoname{
+	network = list("ngr_colony");
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/bunkhouse)
 "fX" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -1157,6 +1177,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
+"gR" = (
+/obj/machinery/camera/autoname{
+	network = list("ngr_colony")
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/crawlergarage)
 "gS" = (
 /turf/closed/mineral/random/rockplanet,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
@@ -3336,12 +3362,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
-"sZ" = (
-/obj/machinery/camera/autoname{
-	network = list("ngr_colony")
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/rockplanet/ngrcolony/crawlergarage)
 "ta" = (
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -4689,19 +4709,6 @@
 /obj/effect/turf_decal/borderfloorblack,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
-"AA" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 9
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 8
-	},
-/obj/machinery/camera/autoname{
-	network = list("ngr_colony");
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/rockplanet/ngrcolony/bunkhouse)
 "AB" = (
 /obj/effect/turf_decal/road/stop,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5301,13 +5308,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
-"DX" = (
-/obj/machinery/camera/autoname{
-	network = list("ngr_colony","ngr_colony_mines");
-	dir = 2
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/rockplanet/ngrcolony/security/prison)
 "Ea" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -7775,25 +7775,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
-"QW" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "ngr_colony_crawlergarage";
-	pixel_x = -20;
-	pixel_y = 8;
-	name = "Door Controls"
-	},
-/obj/machinery/button/shieldwallgen{
-	id = "ngr_colony_crawlergarage_holo";
-	dir = 4;
-	pixel_x = -18;
-	pixel_y = 0
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/rockplanet/ngrcolony/crawlergarage)
 "QY" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 10
@@ -9367,6 +9348,25 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged/smg/sidewinder,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/control)
+"ZZ" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "ngr_colony_crawlergarage";
+	pixel_x = -20;
+	pixel_y = 8;
+	name = "Door Controls"
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "ngr_colony_crawlergarage_holo";
+	dir = 4;
+	pixel_x = -18;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/crawlergarage)
 
 (1,1,1) = {"
 cJ
@@ -10832,8 +10832,8 @@ MB
 mL
 mL
 pe
-SU
-OH
+DE
+bM
 gF
 rh
 rh
@@ -10903,8 +10903,8 @@ EU
 mL
 mL
 Wj
-SU
-OH
+DE
+bM
 gF
 rh
 fF
@@ -10975,7 +10975,7 @@ mL
 mL
 Gc
 SU
-OH
+bM
 oW
 rh
 CH
@@ -11749,7 +11749,7 @@ kT
 pR
 pR
 Kj
-QW
+ZZ
 cb
 bk
 lG
@@ -12100,7 +12100,7 @@ VH
 kj
 Bz
 cb
-sZ
+gR
 Kw
 Kw
 Kw
@@ -12394,7 +12394,7 @@ in
 in
 in
 mL
-SU
+oZ
 SU
 mL
 CH
@@ -12672,7 +12672,7 @@ tL
 OV
 KN
 KN
-AA
+fW
 KN
 KN
 aS
@@ -13247,7 +13247,7 @@ Ww
 gF
 gT
 oZ
-SU
+Fe
 mL
 DE
 Fe
@@ -13801,7 +13801,7 @@ So
 So
 So
 So
-DX
+el
 oT
 ap
 ap
