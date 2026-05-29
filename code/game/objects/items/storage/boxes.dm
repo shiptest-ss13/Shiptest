@@ -35,6 +35,60 @@
 	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
 	var/foldable = /obj/item/stack/sheet/cardboard
 	var/illustration = null
+	var/list/possible_illustrations = list(
+									"Erase Label",
+									"blanklabel",
+									"writing",
+									"writing_warning",
+									"heart",
+									"fruit",
+									"foamnade",
+									"bulb",
+									"tube",
+									"mixedlights",
+									"id",
+									"pda",
+									"glass",
+									"armband",
+									"condiment",
+									"papercup",
+									"chemnade",
+									"empnade",
+									"patch",
+									"circuit",
+									"science",
+									"sandbag",
+									"firecracker",
+									"grenade",
+									"disks",
+									"sparkler",
+									"pen",
+									"spray",
+									"flash",
+									"helmet",
+									"beaker",
+									"beaker_alt",
+									"bodybags",
+									"pillbottle",
+									"blubeaker",
+									"dna",
+									"syringe",
+									"gloves",
+									"masks",
+									"implant",
+									"glasses",
+									"emergency",
+									"handcuff",
+									"internals_old",
+									"internals",
+									"internalsplus",
+									"flashbang",
+									"t1",
+									"t2",
+									"t3",
+									"t4",
+									"mousetrap",
+									)
 
 /obj/item/storage/box/Initialize(mapload)
 	. = ..()
@@ -49,6 +103,11 @@
 	STR.use_sound = 'sound/items/storage/briefcase.ogg'
 //	if(world_file) //DO NOT UNCOMMENT UNTIL THERES MORE WORLD ICONS
 //		AddElement(/datum/element/world_icon, null, world_file, icon) //DO NOT UNCOMMENT UNTIL THERES MORE WORLD ICONS
+
+/obj/item/storage/box/examine_more(mob/user)
+	. = ..()
+	if(possible_illustrations)
+		. += "[span_notice("You can change the label of [src] by using a [span_bold("pen")] on it with [span_bold("right-click")].")]"
 
 /obj/item/storage/box/update_overlays()
 	. = ..()
@@ -74,6 +133,18 @@
 /obj/item/storage/box/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/packageWrap))
 		return 0
+	return ..()
+
+/obj/item/storage/box/attackby_secondary(obj/item/object, mob/user, params)
+	if(istype(object, /obj/item/pen) && possible_illustrations)
+		var/chosen_illustration = tgui_input_list(user, "Which label do you want to draw on the box?", "Labeling Box", possible_illustrations)
+		if(!chosen_illustration || !Adjacent(user))
+			return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+		illustration = chosen_illustration
+		if(chosen_illustration == "Erase Label")
+			illustration = null
+		update_icon()
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 	return ..()
 
 //Generic ones for crafting
@@ -321,6 +392,7 @@
 	icon_state = "medbriefcase"
 	item_state = "bluebox"
 	illustration = null
+	possible_illustrations = null
 
 /obj/item/storage/box/hypospray/PopulateContents()
 	new /obj/item/hypospray/mkii(src)
@@ -619,6 +691,7 @@
 	desc = "Drymate brand monkey cubes. Just add water!"
 	icon_state = "monkeycubebox"
 	illustration = null
+	possible_illustrations = null
 	var/cube_type = /obj/item/food/monkeycube
 
 /obj/item/storage/box/monkeycubes/PopulateContents()
@@ -895,6 +968,7 @@
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "rubbershot_box"
 	illustration = null
+	possible_illustrations = null
 
 /obj/item/storage/box/rubbershot/PopulateContents()
 	for(var/i in 1 to 7)
@@ -907,6 +981,7 @@
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "lethalshot_box"
 	illustration = null
+	possible_illustrations = null
 
 /obj/item/storage/box/lethalshot/PopulateContents()
 	for(var/i in 1 to 7)
@@ -919,6 +994,7 @@
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "techshot_box"
 	illustration = null
+	possible_illustrations = null
 
 /obj/item/storage/box/techshot/PopulateContents()
 	for(var/i in 1 to 7)
@@ -931,6 +1007,7 @@
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "beanbag_box"
 	illustration = null
+	possible_illustrations = null
 
 /obj/item/storage/box/beanbag/PopulateContents()
 	for(var/i in 1 to 6)
@@ -942,7 +1019,10 @@
 	desc = "a box full of slug shots, designed for riot shotguns"
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "slugshot_box"
+
 	illustration = null
+	possible_illustrations = null
+
 
 /obj/item/storage/box/slugshot/PopulateContents()
 	for(var/i in 1 to 7)
@@ -965,6 +1045,7 @@
 	icon_state = "paperbag_None"
 	item_state = "paperbag_None"
 	illustration = null
+	possible_illustrations = null
 	resistance_flags = FLAMMABLE
 	foldable = null
 	custom_price = 1

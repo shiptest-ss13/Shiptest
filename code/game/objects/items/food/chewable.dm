@@ -71,6 +71,7 @@
 	icon_state = "bubblegum_generic"
 	w_class = WEIGHT_CLASS_TINY
 	illustration = null
+	possible_illustrations = null
 	foldable = null
 
 /obj/item/storage/box/bubblegum/ComponentInitialize()
