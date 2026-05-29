@@ -523,7 +523,7 @@
 /obj/item/storage/box/drinkingglasses
 	name = "box of drinking glasses"
 	desc = "It has a picture of drinking glasses on it."
-	illustration = "circuitglass"
+	illustration = "glass"
 
 /obj/item/storage/box/drinkingglasses/PopulateContents()
 	for(var/i in 1 to 6)
@@ -532,7 +532,7 @@
 /obj/item/storage/box/shotglasses
 	name = "box of shot glasses"
 	desc = "It has a picture of shot glasses on it."
-	illustration = "circuitglass"
+	illustration = "glass"
 
 /obj/item/storage/box/shotglasses/PopulateContents()
 	for(var/i in 1 to 6)
@@ -541,7 +541,7 @@
 /obj/item/storage/box/modglasses
 	name = "box of malleable glasses"
 	desc = "It has a picture of malleable glasses on it."
-	illustration = "circuitglass"
+	illustration = "glass"
 
 /obj/item/storage/box/modglasses/PopulateContents()
 	for(var/i in 1 to 6)
