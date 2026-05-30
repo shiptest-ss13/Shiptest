@@ -17,6 +17,8 @@
 
 	max_overmap_dynamic_events = 0
 
+	default_outpost_type = /datum/overmap/outpost/indie_space
+
 	size = 20
 
 	//this matters less for static outposts but it is a nice fallback.
