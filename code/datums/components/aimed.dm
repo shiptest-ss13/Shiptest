@@ -93,6 +93,7 @@
 		RegisterSignal(shooter, COMSIG_MOB_LOGOUT, PROC_REF(aimedfire_off))
 		UnregisterSignal(shooter, COMSIG_MOB_LOGIN)
 	RegisterSignals(parent, list(COMSIG_QDELETING, COMSIG_ITEM_DROPPED), PROC_REF(aimedfire_off))
+	RegisterSignal(parent, COMSIG_GUN_TRY_FIRE, PROC_REF(intercept_fire))
 	parent.RegisterSignal(src, COMSIG_AIMEDFIRE_ONMOUSEDOWN, TYPE_PROC_REF(/obj/item/gun, aimedfire_bypass_check))
 	parent.RegisterSignal(parent, COMSIG_AIMEDFIRE_SHOT, TYPE_PROC_REF(/obj/item/gun, do_aimedfire))
 
@@ -112,7 +113,7 @@
 	if(!QDELETED(shooter))
 		RegisterSignal(shooter, COMSIG_MOB_LOGIN, PROC_REF(on_client_login))
 		UnregisterSignal(shooter, COMSIG_MOB_LOGOUT)
-	UnregisterSignal(parent, list(COMSIG_QDELETING, COMSIG_ITEM_DROPPED))
+	UnregisterSignal(parent, list(COMSIG_QDELETING, COMSIG_ITEM_DROPPED,COMSIG_GUN_TRY_FIRE))
 	shooter = null
 	parent.UnregisterSignal(parent, COMSIG_AIMEDFIRE_SHOT)
 	parent.UnregisterSignal(src, COMSIG_AIMEDFIRE_ONMOUSEDOWN)
@@ -123,6 +124,11 @@
 		return
 	if(source.is_holding(parent))
 		aimedfire_on(source.client)
+
+/datum/component/aimed_fire/proc/intercept_fire(obj/item/gun/gun, mob/living/user, atom/target, flag, params)
+	var/list/modifiers = params2list(params)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		return COMPONENT_CANCEL_GUN_FIRE
 
 /datum/component/aimed_fire/proc/on_mouse_down(client/source, atom/_target, turf/location, control, params)
 	SIGNAL_HANDLER
@@ -266,7 +272,8 @@
 			angle = get_angle(shooter,target)
 		else
 			angle = mouse_angle_from_client(shooter.client)
-		shooter.setDir(angle2dir_cardinal(angle))
+		if(!HAS_TRAIT(shooter,TRAIT_AIMING))
+			shooter.setDir(angle2dir_cardinal(angle))
 		var/difference = abs(closer_angle_difference(lastangle, angle))
 		delay_penalty(difference * aiming_time_increase_angle_multiplier)
 		lastangle = angle
