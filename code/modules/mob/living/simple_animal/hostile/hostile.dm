@@ -145,7 +145,7 @@
 
 /mob/living/simple_animal/hostile/bullet_act(obj/projectile/P)
 	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client)
-		if(P.firer && get_dist(src, P.firer) <= aggro_vision_range)
+		if(P.firer && (get_dist(src, P.firer) <= aggro_vision_range) && P.suppressed != SUPPRESSED_EXTREME)
 			FindTarget(list(P.firer), 1)
 		Goto(P.starting, move_to_delay, 3)
 	return ..()

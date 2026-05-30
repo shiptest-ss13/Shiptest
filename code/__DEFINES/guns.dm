@@ -62,6 +62,7 @@
 #define SUPPRESSED_NONE 0
 #define SUPPRESSED_QUIET 1 ///standard suppressed
 #define SUPPRESSED_VERY 2 /// no message
+#define SUPPRESSED_EXTREME 3 /// doesnt trigger aggro
 
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
 
