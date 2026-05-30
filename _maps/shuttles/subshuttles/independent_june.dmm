@@ -1,13 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ad" = (
-/obj/docking_port/mobile{
-	dir = 4;
-	name = "June-class Dropship";
-	preferred_direction = 4;
-	port_direction = 2
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "aV" = (
 /obj/machinery/power/smes/engineering,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -56,6 +47,12 @@
 	},
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	name = "June-class Dropship";
+	preferred_direction = 4;
+	port_direction = 2
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -320,6 +317,15 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"tq" = (
+/obj/docking_port/mobile{
+	dir = 4;
+	name = "June-class Dropship";
+	preferred_direction = 4;
+	port_direction = 2
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "tC" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -404,6 +410,21 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"yI" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/docking_port/mobile{
+	dir = 8;
+	name = "June-class Dropship";
+	preferred_direction = 8
+	},
+/turf/open/floor/plating/airless,
 /area/ship/bridge)
 "yQ" = (
 /obj/effect/turf_decal/techfloor{
@@ -567,39 +588,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"OW" = (
-/obj/machinery/power/terminal{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/docking_port/mobile{
-	dir = 8;
-	name = "June-class Dropship";
-	preferred_direction = 8
-	},
-/turf/open/floor/plating/airless,
-/area/ship/bridge)
-"QP" = (
-/obj/machinery/power/shuttle/engine/fire{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
-"So" = (
+"Oz" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 10
 	},
-/obj/docking_port/mobile{
-	dir = 8;
-	name = "June-class Dropship";
-	preferred_direction = 8;
-	port_direction = 2
+/turf/open/floor/plating,
+/area/ship/bridge)
+"QP" = (
+/obj/machinery/power/shuttle/engine/fire{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -702,7 +702,7 @@ Gn
 mI
 wW
 mI
-So
+Oz
 qj
 fH
 Gn
@@ -780,7 +780,7 @@ wA
 (10,1,1) = {"
 Dz
 xb
-OW
+yI
 Gu
 JZ
 Wf
@@ -788,7 +788,7 @@ sl
 aV
 "}
 (11,1,1) = {"
-ad
+tq
 Dz
 ow
 Dz
