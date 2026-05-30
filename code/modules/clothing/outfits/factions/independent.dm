@@ -274,6 +274,18 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 
+/datum/outfit/job/independent/hop/hunter/gown
+	name = "Independent - Head of Personnel (Hunter, gown)"
+
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	gloves = null
+	head = null
+	suit = null
+	alt_suit = null
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+
 /datum/outfit/job/independent/hop/western
 	name = "Independent - Head of Personnel (Western)"
 
@@ -796,6 +808,17 @@
 
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
+
+/datum/outfit/job/independent/hunter/gown
+	name = "Independent - Hunter (gown)"
+	jobtype = /datum/job/mining
+	job_icon = "securityofficer"
+
+	ears = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	gloves = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	l_pocket = null
 
 // Cook
 
