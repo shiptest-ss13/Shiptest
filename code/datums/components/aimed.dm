@@ -340,6 +340,7 @@
 
 	muzzle_type = null
 	impact_type = null
+	suppressed = SUPPRESSED_VERY
 
 /obj/projectile/beam/beam_rifle/hitscan/aiming_beam/prehit_pierce(atom/target)
 	return PROJECTILE_DELETE_WITHOUT_HITTING
