@@ -275,7 +275,7 @@
 	icon_state = "2-4"
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
+	dir = 5
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -637,13 +637,11 @@
 	name = "maintenance access shutter control";
 	pixel_y = 23
 	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/industrial/outline/red,
+/turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 
 (1,1,1) = {"
