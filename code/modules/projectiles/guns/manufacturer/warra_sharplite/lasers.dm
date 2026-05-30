@@ -198,6 +198,7 @@
 	wield_slowdown = SMG_SLOWDOWN
 	aimed_wield_slowdown = LONG_RIFLE_AIM_SLOWDOWN
 	wield_delay = 0.4 SECONDS
+	fire_delay = 0.5 SECONDS
 
 	spread = 2
 	spread_unwielded = 10
