@@ -1,4 +1,13 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ad" = (
+/obj/docking_port/mobile{
+	dir = 4;
+	name = "June-class Dropship";
+	preferred_direction = 4;
+	port_direction = 2
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "aV" = (
 /obj/machinery/power/smes/engineering,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -10,8 +19,11 @@
 /area/ship/bridge)
 "cy" = (
 /obj/effect/turf_decal/techfloor,
-/obj/effect/turf_decal/steeldecal/steel_decals_central4{
-	dir = 1
+/obj/machinery/light/small/directional/south{
+	pixel_x = 9
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 5
 	},
 /obj/effect/turf_decal/techfloor/hole,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -20,10 +32,10 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 8
 	},
-/obj/machinery/light/small/directional/south{
-	pixel_x = 9
+/obj/effect/turf_decal/steeldecal/steel_decals_central4{
+	dir = 1
 	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "fH" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -31,6 +43,9 @@
 "gw" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 10
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central4,
 /obj/effect/turf_decal/techfloor/hole/right{
@@ -42,12 +57,7 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
-/obj/docking_port/mobile{
-	dir = 8;
-	name = "June-class Dropship";
-	preferred_direction = 8
-	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "gF" = (
 /obj/effect/turf_decal/industrial/traffic/fulltile,
@@ -213,7 +223,10 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech/grid,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 5
+	},
+/turf/open/floor/plating,
 /area/ship/bridge)
 "rd" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -554,9 +567,39 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"OW" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/docking_port/mobile{
+	dir = 8;
+	name = "June-class Dropship";
+	preferred_direction = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ship/bridge)
 "QP" = (
 /obj/machinery/power/shuttle/engine/fire{
 	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"So" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 10
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	name = "June-class Dropship";
+	preferred_direction = 8;
+	port_direction = 2
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -659,7 +702,7 @@ Gn
 mI
 wW
 mI
-iy
+So
 qj
 fH
 Gn
@@ -737,7 +780,7 @@ wA
 (10,1,1) = {"
 Dz
 xb
-Wf
+OW
 Gu
 JZ
 Wf
@@ -745,7 +788,7 @@ sl
 aV
 "}
 (11,1,1) = {"
-Dz
+ad
 Dz
 ow
 Dz
