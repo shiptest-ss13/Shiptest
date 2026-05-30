@@ -216,8 +216,9 @@
 	item_state = "railgun"
 
 	manufacturer = MANUFACTURER_SOLARARMORIES
-	spread = 0
-	spread_unwielded = 20
+	spread = -5
+	spread_unwielded = 10
+	weapon_weight = WEAPON_HEAVY
 	recoil = 1
 	recoil_unwielded = 8
 	wield_slowdown = SNIPER_SLOWDOWN
