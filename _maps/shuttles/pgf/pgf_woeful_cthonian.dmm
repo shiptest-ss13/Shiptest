@@ -3042,6 +3042,18 @@
 /obj/item/gps{
 	gpstag = "ALPHA-1"
 	},
+/obj/item/storage/pouch/ammo{
+	pixel_x = 0;
+	pixel_y = -12
+	},
+/obj/item/storage/pouch/ammo{
+	pixel_x = 0;
+	pixel_y = -12
+	},
+/obj/item/storage/pouch/ammo{
+	pixel_x = 0;
+	pixel_y = -12
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "DJ" = (
@@ -3269,39 +3281,6 @@
 /obj/effect/turf_decal/siding/black,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"Hu" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/structure/closet/cabinet,
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/structure/window/reinforced/survival_pod/spawner,
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/turf_decal/trimline/transparent/beige/filled/corner{
-	dir = 4
-	},
-/obj/structure/window/reinforced/survival_pod/spawner{
-	dir = 8
-	},
-/obj/item/storage/box/gloves/formal,
-/obj/item/clothing/shoes/combat/gezena,
-/obj/item/clothing/shoes/combat/gezena,
-/obj/item/clothing/suit/toggle/gezena,
-/obj/item/clothing/suit/toggle/gezena,
-/obj/item/clothing/under/gezena,
-/obj/item/clothing/under/gezena,
-/obj/item/clothing/neck/cloak/gezena,
-/obj/item/clothing/neck/cloak/gezena,
-/obj/item/clothing/gloves/gezena,
-/obj/item/clothing/gloves/gezena,
-/obj/item/clothing/head/gezena/flap,
-/obj/item/clothing/head/gezena/flap,
-/obj/item/clothing/head/gezena,
-/obj/item/clothing/head/gezena,
-/obj/item/radio/headset/pgf,
-/obj/item/radio/headset/pgf,
-/turf/open/floor/plasteel/sepia,
-/area/ship/crew/dorm)
 "HA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4625,6 +4604,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner{
 	dir = 8
 	},
+/obj/item/storage/box/gloves/formal,
 /obj/item/clothing/shoes/combat/gezena,
 /obj/item/clothing/shoes/combat/gezena,
 /obj/item/clothing/suit/toggle/gezena,
@@ -5392,7 +5372,7 @@ Ua
 (21,1,1) = {"
 Wv
 wE
-Hu
+WO
 jh
 yz
 ml
