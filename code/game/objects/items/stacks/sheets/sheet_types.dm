@@ -389,7 +389,7 @@ GLOBAL_LIST_INIT(cardboard_recipes, list (														\
 		new /datum/stack_recipe("pillbottle box", /obj/item/storage/box/pillbottles),			\
 		new /datum/stack_recipe("beaker box", /obj/item/storage/box/beakers),					\
 		new /datum/stack_recipe("syringe box", /obj/item/storage/box/syringes),					\
-		new /datum/stack_recipe("latex gloves box", /obj/item/storage/box/gloves),				\
+		new /datum/stack_recipe("disposable gloves box", /obj/item/storage/box/gloves),				\
 		new /datum/stack_recipe("sterile masks box", /obj/item/storage/box/masks),				\
 		new /datum/stack_recipe("body bag box", /obj/item/storage/box/bodybags),					\
 		new /datum/stack_recipe("perscription glasses box", /obj/item/storage/box/rxglasses),	\

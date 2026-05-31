@@ -112,7 +112,7 @@
 	name = "Insulated Gloves Crate"
 	desc = "The backbone of modern society. Contains a pair of insulated gloves."
 	cost = 750
-	contains = list(/obj/item/clothing/gloves/color/yellow)
+	contains = list(/obj/item/clothing/gloves/insulated)
 	crate_name = "insulated gloves crate"
 
 /datum/supply_pack/tools/inducer

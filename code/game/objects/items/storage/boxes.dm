@@ -305,13 +305,22 @@
 	radio_type = /obj/item/radio/command
 
 /obj/item/storage/box/gloves
-	name = "box of latex gloves"
-	desc = "Contains sterile latex gloves."
+	name = "box of disposable gloves"
+	desc = "Contains sterile disposable gloves."
 	illustration = "gloves"
 
 /obj/item/storage/box/gloves/PopulateContents()
+	var/obj/item/clothing/gloves/nitrile/picked_gloves
+
+	picked_gloves = pick(
+		/obj/item/clothing/gloves/nitrile,
+		/obj/item/clothing/gloves/nitrile/blue,
+		/obj/item/clothing/gloves/nitrile/pink,
+		/obj/item/clothing/gloves/nitrile/green,
+		)
+
 	for(var/i in 1 to 7)
-		new /obj/item/clothing/gloves/color/latex(src)
+		new picked_gloves(src)
 
 /obj/item/storage/box/masks
 	name = "box of sterile masks"

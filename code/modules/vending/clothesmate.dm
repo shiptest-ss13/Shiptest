@@ -39,6 +39,7 @@
 		/obj/item/clothing/neck/scarf/yellow = 3,
 		/obj/item/clothing/neck/scarf/orange = 3,
 		/obj/item/clothing/neck/scarf/teal = 3,
+		/obj/item/clothing/gloves/color = 3,
 		/obj/item/clothing/neck/scarf = 3,
 		/obj/item/clothing/neck/shemagh = 3,
 		/obj/item/clothing/neck/scarf/black = 3,
