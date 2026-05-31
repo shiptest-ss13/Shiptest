@@ -26,7 +26,7 @@
 	icon_state = "syndicate-helm-generic"
 	item_state = "syndicate-helm-generic"
 	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15) // you dont get buffed
-	supports_variations = SNOUTED_VARIATION
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/suit/space/syndicate/generic
 	name = "armored olive space suit"
@@ -38,6 +38,7 @@
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
 	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15) // you dont get buffed
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/suit/space/syndicate/generic/grey
 	name = "armored grey space suit"

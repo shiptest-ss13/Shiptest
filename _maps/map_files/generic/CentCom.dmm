@@ -2058,10 +2058,7 @@
 "awV" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
@@ -5103,10 +5100,7 @@
 /area/wizard_station)
 "aUk" = (
 /obj/machinery/light/directional/south,
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -5921,9 +5915,7 @@
 /obj/structure/table/reinforced,
 /obj/item/gun/ballistic/automatic/smg/resolution,
 /obj/item/flashlight/seclite,
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
@@ -6961,10 +6953,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/centcom)
 "cVC" = (
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 32
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
@@ -7355,10 +7344,7 @@
 /area/syndicate_mothership/control)
 "dOE" = (
 /obj/structure/bookcase/random,
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -7692,9 +7678,7 @@
 /area/centcom/holding)
 "eqM" = (
 /obj/effect/turf_decal/solgov/wood/bottom_left,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /turf/open/floor/wood/walnut,
 /area/centcom)
 "ers" = (
@@ -7978,10 +7962,7 @@
 /turf/open/floor/plating/rust,
 /area/centcom)
 "eSx" = (
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 32
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
@@ -9440,9 +9421,7 @@
 /area/centcom/supply)
 "hON" = (
 /obj/item/paper/fluff/stations/centcom/disk_memo,
-/obj/structure/noticeboard{
-	pixel_x = -32
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
@@ -9845,9 +9824,8 @@
 /turf/open/floor/plasteel,
 /area/centcom/supplypod)
 "iwJ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 9
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/wood/walnut,
@@ -10195,9 +10173,8 @@
 /turf/open/floor/plasteel/grimy,
 /area/centcom/control)
 "jja" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 9
 	},
 /obj/effect/turf_decal/solgov/wood/center_left,
 /turf/open/floor/wood/walnut,
@@ -10622,10 +10599,7 @@
 	icon_state = "plant-22"
 	},
 /obj/machinery/light/directional/south,
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -10788,10 +10762,7 @@
 /turf/open/floor/plasteel/white,
 /area/centcom/control)
 "kjG" = (
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 32
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -12327,9 +12298,8 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
 "naB" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 5
 	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/wood/walnut,
@@ -12412,9 +12382,8 @@
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
 "njp" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 8
 	},
 /turf/open/floor/wood/walnut,
 /area/centcom)
@@ -12800,9 +12769,8 @@
 /turf/open/floor/plasteel/tech,
 /area/centcom)
 "oaQ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/centcom)
@@ -13505,9 +13473,8 @@
 	},
 /area/centcom)
 "psm" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 10
 	},
 /obj/structure/sign/solgov_seal{
 	pixel_y = -28
@@ -13612,8 +13579,7 @@
 /area/centcom)
 "pwr" = (
 /obj/effect/turf_decal/solgov/wood/top_right,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
@@ -13897,9 +13863,7 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "pLM" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/effect/turf_decal/solgov/wood/bottom_right,
 /turf/open/floor/wood/walnut,
 /area/centcom)
@@ -14123,8 +14087,7 @@
 /obj/effect/turf_decal/solgov/wood/bottom_left{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
@@ -14396,9 +14359,7 @@
 /obj/item/taperecorder,
 /obj/item/storage/box/handcuffs,
 /obj/item/flashlight/seclite,
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -14496,10 +14457,7 @@
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
 "rde" = (
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 32
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 1
 	},
@@ -14797,10 +14755,7 @@
 	},
 /obj/item/storage/secure/briefcase,
 /obj/structure/table/wood,
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 32
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -16122,13 +16077,9 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "unc" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/effect/turf_decal/solgov/wood/bottom_center,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /turf/open/floor/wood/walnut,
 /area/centcom)
 "unP" = (
@@ -16837,13 +16788,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ctf)
 "vIg" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 9
 	},
 /obj/effect/turf_decal/solgov/wood/top,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
