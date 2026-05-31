@@ -224,7 +224,8 @@
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 	doesnt_keep_bullet = TRUE
-	aiming_time = 20
+	aiming_time = 25
+	aiming_time_fire_threshold = 10
 
 	zoomable = TRUE
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
