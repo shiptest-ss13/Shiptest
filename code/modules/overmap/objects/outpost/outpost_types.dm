@@ -43,6 +43,7 @@
 	name = "indie_space"
 	outpost_name = "Installation Trifuge"
 	outpost_administrator = "Caldwell"
+	border_size = 1
 
 /datum/map_template/outpost/hangar/indie_space_20x20
 	name = "hangar/indie_space_20x20"
@@ -263,6 +264,7 @@
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
 	)
+	border_size = 1
 
 /datum/overmap/outpost/clip_ocean
 	token_icon_state = "station_planet"
@@ -316,7 +318,7 @@
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/cybersun_outpost_exterior
 	)
-	spawn_map_border = FALSE
+	border_size = 1
 
 
 /datum/overmap/outpost/cybersun_gas_giant/alter_token_appearance()

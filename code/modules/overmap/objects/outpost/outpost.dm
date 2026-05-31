@@ -43,8 +43,8 @@
 	/// The mapzone used by the outpost level and hangars. Using a single mapzone means networked radio messages.
 	var/datum/map_zone/mapzone
 	var/list/datum/hangar_shaft/shaft_datums = list()
-	/// Does this outpost spawn a map border, set to FALSE if your map is above 121 tiles wide/high, otherwise it may fail to load on a local build.
-	var/spawn_map_border = TRUE
+	///The border size to use. It's recommended to set this to 0 if your map is above 121 tiles wide/high, otherwise it may fail to load on a local build.
+	var/border_size = QUADRANT_SIZE_BORDER
 	///The weather the virtual z will have. If null, the outpost will have no weather.
 	var/datum/weather_controller/weather_controller_type
 
@@ -189,27 +189,16 @@
 
 	var/datum/virtual_level/vlevel
 
-	if(spawn_map_border)
-		vlevel = SSmapping.create_virtual_level(
-			name,
-			main_level_ztraits,
-			mapzone,
-			main_template.width + (QUADRANT_SIZE_BORDER * 2),
-			main_template.height + (QUADRANT_SIZE_BORDER * 2),
-			ALLOCATION_QUADRANT,
-			QUADRANT_MAP_SIZE
-		)
-		vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
-	else
-		vlevel = SSmapping.create_virtual_level(
-			name,
-			main_level_ztraits,
-			mapzone,
-			main_template.width,
-			main_template.height,
-			ALLOCATION_QUADRANT,
-			QUADRANT_MAP_SIZE
-		)
+	vlevel = SSmapping.create_virtual_level(
+		name,
+		main_level_ztraits,
+		mapzone,
+		main_template.width,
+		main_template.height,
+		ALLOCATION_QUADRANT,
+		QUADRANT_MAP_SIZE
+	)
+	vlevel.reserve_margin(border_size)
 
 	main_template.load(vlevel.get_unreserved_bottom_left_turf())
 
