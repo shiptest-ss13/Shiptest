@@ -200,7 +200,9 @@
 	)
 	vlevel.reserve_margin(border_size)
 
-	main_template.load(vlevel.get_unreserved_bottom_left_turf())
+	var/turf/spawn_turf = locate(vlevel.low_x,vlevel.low_y,vlevel.z_value)
+
+	main_template.load(spawn_turf)
 
 	if(weather_controller_type)
 		new weather_controller_type(mapzone)

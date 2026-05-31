@@ -43,7 +43,6 @@
 	name = "indie_space"
 	outpost_name = "Installation Trifuge"
 	outpost_administrator = "Caldwell"
-	border_size = 1
 
 /datum/map_template/outpost/hangar/indie_space_20x20
 	name = "hangar/indie_space_20x20"
@@ -210,6 +209,7 @@
 	elevator_template = /datum/map_template/outpost/elevator_indie
 	faction = FACTION_INDEPENDENT
 	// Uses "default" hangars (indie_space).
+	border_size = 1
 
 /datum/overmap/outpost/warra_ice
 	token_icon_state = "station_asteroid"
@@ -291,6 +291,7 @@
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost
 	)
+	border_size = 2
 
 /datum/overmap/outpost/cybersun_gas_giant
 	token_icon_state = "station_floating_gas_giant"
