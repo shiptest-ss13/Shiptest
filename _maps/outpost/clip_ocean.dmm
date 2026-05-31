@@ -82,6 +82,22 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/carpet/blue,
 /area/outpost/operations)
+"ai" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/holosign/atua{
+	pixel_x = 0;
+	pixel_y = 29
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/medical)
 "aj" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/dark,
@@ -2161,6 +2177,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/railing/thin{
+	dir = 1;
+	layer = 2.7
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/court)
 "fy" = (
@@ -2202,6 +2222,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/structure/railing/thin/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/court)
@@ -2725,6 +2748,11 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/exterior/ocean)
 "he" = (
@@ -4534,6 +4562,15 @@
 "lB" = (
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/cargo/smeltery)
+"lC" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/railing/thin/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/crew/court)
 "lD" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 1
@@ -5070,9 +5107,13 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/warning,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "mP" = (
@@ -5694,6 +5735,20 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/exterior/ocean)
+"ox" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/outpost/exterior/ocean)
 "oy" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 10
@@ -5942,7 +5997,7 @@
 	name = "The Ember Bridge";
 	desc = "A plaque describing the below-average living standards of the average Frontiersmen."
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/court)
 "pe" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -6685,6 +6740,17 @@
 /obj/structure/platform/industrial_alt/corner/indestructible,
 /turf/open/water/beach/deep/outpost,
 /area/outpost/external)
+"qD" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 8
+	},
+/obj/structure/railing/thin/corner,
+/obj/effect/turf_decal/trimline/opaque/blue/warning{
+	dir = 4
+	},
+/obj/structure/noticeboard/directional/east,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/outpost/exterior/ocean)
 "qE" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 9
@@ -6830,6 +6896,7 @@
 	dir = 1
 	},
 /obj/machinery/camera/autoname,
+/obj/structure/noticeboard/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
 "qZ" = (
@@ -6904,6 +6971,24 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/crew/canteen)
+"ri" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/outpost/exterior/ocean)
 "rj" = (
 /turf/open/water/beach/deep/outpost,
 /area/outpost/external)
@@ -6914,6 +6999,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
+	},
+/obj/machinery/holosign/lanchestermechanics{
+	pixel_x = -28;
+	pixel_y = 1
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/outpost/crew/court)
@@ -7107,6 +7196,18 @@
 "rL" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/medical)
+"rM" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/outpost/exterior/ocean)
 "rN" = (
 /obj/structure/chair/pew,
 /obj/machinery/light/dim/directional/north,
@@ -7198,6 +7299,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/railing/thin,
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/court)
 "rX" = (
@@ -7298,8 +7400,28 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/outpost/engineering)
+"sp" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 8
+	},
+/obj/structure/railing/thin/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/warning{
+	dir = 4
+	},
+/obj/machinery/holosign/random{
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/outpost/exterior/ocean)
 "sr" = (
 /obj/structure/rack,
+/obj/machinery/holosign/random{
+	pixel_x = 28;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/cargo/office)
 "ss" = (
@@ -7777,6 +7899,21 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/security/checkpoint)
+"tz" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/outpost{
+	name = "Departures"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech/grid,
+/area/outpost/security)
 "tB" = (
 /obj/structure/urinal{
 	pixel_y = 0;
@@ -8783,6 +8920,9 @@
 "wq" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/energybar,
+/obj/structure/railing/thin{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/court)
 "wr" = (
@@ -9131,6 +9271,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/sauna)
+"xg" = (
+/obj/effect/turf_decal/trimline/opaque/blue/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/outpost/exterior/ocean)
 "xh" = (
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 9
@@ -9224,6 +9376,10 @@
 	pixel_y = 4;
 	pixel_x = -12;
 	dir = 1
+	},
+/obj/machinery/holosign/clover{
+	pixel_x = 0;
+	pixel_y = 31
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar)
@@ -9653,6 +9809,16 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/lounge)
+"yH" = (
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/obj/machinery/holosign/random{
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/exterior/ocean)
 "yI" = (
 /obj/machinery/door/poddoor/ert{
 	dir = 4;
@@ -9692,6 +9858,16 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/exterior/ocean)
+"yN" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 6
+	},
+/obj/machinery/holosign/miskilamo{
+	pixel_x = 27;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/crew/court)
 "yO" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/warning{
 	dir = 4
@@ -10091,7 +10267,7 @@
 	name = "The Ember Bridge";
 	desc = "A plaque describing the below-average living standards of the average Frontiersmen."
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/court)
 "zK" = (
 /obj/effect/turf_decal/spline/fancy/opaque/green/corner{
@@ -10485,6 +10661,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/security)
 "AC" = (
@@ -10919,6 +11098,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/structure/railing/thin/corner,
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/court)
 "BI" = (
@@ -11159,6 +11339,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/dorm)
+"Cn" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/outpost/exterior/ocean)
 "Co" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/engineering)
@@ -11491,6 +11685,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
@@ -11937,6 +12134,19 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
+"Ee" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/railing/thin/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/crew/court)
 "Ef" = (
 /obj/structure/railing/thin{
 	dir = 4
@@ -14296,6 +14506,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/railing/thin{
+	dir = 1;
+	layer = 2.7
+	},
 /turf/open/floor/plasteel/stairs/left{
 	dir = 8
 	},
@@ -14537,7 +14751,7 @@
 /area/outpost/maintenance/central)
 "Ka" = (
 /obj/structure/fluff/hedge,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech/grid,
 /area/outpost/crew/court)
 "Kb" = (
 /obj/effect/turf_decal/trimline/transparent/green/filled/warning{
@@ -14618,10 +14832,13 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "Kl" = (
@@ -14734,6 +14951,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/exterior/ocean)
@@ -15141,6 +15361,15 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
+/area/outpost/exterior/ocean)
+"Lw" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
 /area/outpost/exterior/ocean)
 "Lx" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
@@ -15890,6 +16119,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/railing/thin,
 /turf/open/floor/plasteel/stairs/right{
 	dir = 8
 	},
@@ -16101,6 +16331,15 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/crew/canteen)
+"NW" = (
+/obj/effect/turf_decal/industrial/warning/green{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/exterior/ocean)
 "NX" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/trimline/transparent/blue/warning,
@@ -16572,7 +16811,9 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/structure/fluff/hedge,
+/obj/structure/railing/thin{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/court)
 "Pk" = (
@@ -16789,6 +17030,10 @@
 /area/outpost/crew/court)
 "PL" = (
 /obj/structure/ore_box,
+/obj/machinery/holosign/lanchester{
+	pixel_x = -30;
+	pixel_y = 0
+	},
 /turf/open/floor/pod/dark,
 /area/outpost/cargo/smeltery)
 "PM" = (
@@ -17812,6 +18057,7 @@
 /obj/machinery/camera/autoname{
 	dir = 2
 	},
+/obj/structure/noticeboard/directional/north,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/exterior/ocean)
 "RU" = (
@@ -18557,6 +18803,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/exterior/ocean)
 "TO" = (
@@ -19116,6 +19365,10 @@
 	name = "Decommissioned electric chair";
 	dir = 8;
 	desc = "A primitive execution device. You notice some snipped wires beneath the chair."
+	},
+/obj/machinery/holosign/lanchester{
+	pixel_x = 0;
+	pixel_y = 31
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/court)
@@ -19839,6 +20092,10 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "Xg" = (
@@ -20141,6 +20398,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/railing/thin{
+	dir = 1;
+	layer = 2.7
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/court)
 "XQ" = (
@@ -20318,6 +20579,9 @@
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
 "Yl" = (
@@ -20386,6 +20650,10 @@
 	id = "clipice"
 	},
 /obj/effect/turf_decal/industrial/warning/green/fulltile,
+/obj/machinery/holosign/lanchestermechanics{
+	pixel_x = 30;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/cargo/smeltery)
 "Yu" = (
@@ -20787,6 +21055,10 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
+	},
+/obj/machinery/holosign/random{
+	pixel_x = 28;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
@@ -26124,7 +26396,7 @@ Pp
 CH
 Lg
 cK
-Lf
+yH
 wz
 Lf
 bq
@@ -26491,7 +26763,7 @@ LD
 Ts
 Rh
 rL
-Qf
+ai
 gR
 wu
 rL
@@ -27717,13 +27989,13 @@ Ae
 gS
 HQ
 HQ
-BP
+sp
 fF
 Pp
 aC
 Lg
 ue
-wr
+qD
 HQ
 HQ
 GB
@@ -30828,7 +31100,7 @@ Tn
 Vh
 HR
 HR
-HR
+NW
 HR
 HR
 ZX
@@ -30951,7 +31223,7 @@ nI
 nI
 nI
 nI
-nI
+Lw
 nI
 nI
 nI
@@ -31074,7 +31346,7 @@ ag
 ag
 ag
 ag
-ag
+xg
 ag
 ag
 ag
@@ -33621,9 +33893,9 @@ Tq
 Tq
 LT
 fX
-rW
+Ee
 wq
-fx
+lC
 cf
 BS
 Tq
@@ -33747,7 +34019,7 @@ Lm
 ZS
 sk
 yS
-BS
+yN
 Tq
 Tq
 oO
@@ -33781,7 +34053,7 @@ ck
 ck
 ck
 ck
-ck
+rM
 ck
 ck
 ck
@@ -33896,15 +34168,15 @@ Xf
 Xf
 Xf
 mO
-FT
+tz
 hd
-ky
-ky
-JB
-JB
-JB
-JB
-JB
+Cn
+Cn
+ox
+ox
+ox
+ox
+ri
 JB
 JB
 JB
