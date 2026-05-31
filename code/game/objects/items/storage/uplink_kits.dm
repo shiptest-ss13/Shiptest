@@ -194,14 +194,16 @@
 /obj/item/storage/box/syndicate/contract_kit
 	name = "Contract Kit"
 	desc = "Supplied to Syndicate contractors."
-	icon_state = "syndiebox"
-	illustration = "writing_syndie"
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
+	illustration = "writing_warning"
 
 /obj/item/storage/box/syndicate/contractor_loadout
 	name = "Standard Loadout"
 	desc = "Supplied to Syndicate contractors, providing their specialised space suit and chameleon uniform."
-	icon_state = "syndiebox"
-	illustration = "writing_syndie"
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
+	illustration = "writing_warning"
 
 /obj/item/paper/contractor_guide
 	name = "Contractor Guide"
@@ -259,8 +261,9 @@
 /obj/item/storage/box/syndie_kit
 	name = "box"
 	desc = "A sleek, sturdy box."
-	icon_state = "syndiebox"
-	illustration = "writing_syndie"
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
+	illustration = "writing_warning"
 
 /obj/item/storage/box/syndie_kit/origami_bundle
 	name = "origami kit"

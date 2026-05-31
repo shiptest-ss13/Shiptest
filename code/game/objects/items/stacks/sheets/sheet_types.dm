@@ -352,6 +352,10 @@ GLOBAL_LIST_INIT(durathread_recipes, list ( \
  */
 GLOBAL_LIST_INIT(cardboard_recipes, list (														\
 	new/datum/stack_recipe("box", /obj/item/storage/box),										\
+	new/datum/stack_recipe("blue box", /obj/item/storage/box/blue),								\
+	new/datum/stack_recipe("pink box", /obj/item/storage/box/pink),								\
+	new/datum/stack_recipe("grey box", /obj/item/storage/box/grey),								\
+	new/datum/stack_recipe("red box", /obj/item/storage/box/red),								\
 	new/datum/stack_recipe("large box", /obj/structure/closet/cardboard, 4, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("cardboard cutout", /obj/item/cardboard_cutout, 5),					\
 	null,																						\
