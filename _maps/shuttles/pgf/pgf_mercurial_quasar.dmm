@@ -508,18 +508,6 @@
 	pixel_y = 10;
 	pixel_x = 3
 	},
-/obj/item/clothing/under/gezena{
-	pixel_y = 3;
-	pixel_x = -9
-	},
-/obj/item/clothing/under/gezena{
-	pixel_y = 3;
-	pixel_x = -9
-	},
-/obj/item/clothing/under/gezena{
-	pixel_y = 3;
-	pixel_x = -9
-	},
 /obj/item/clothing/head/gezena/flap{
 	pixel_y = 11;
 	pixel_x = -10
@@ -579,6 +567,22 @@
 	},
 /obj/effect/turf_decal/trimline/transparent/beige/filled/corner{
 	dir = 4
+	},
+/obj/item/storage/box/gloves/formal{
+	pixel_x = -12;
+	pixel_y = 0
+	},
+/obj/item/clothing/under/gezena{
+	pixel_y = 3;
+	pixel_x = -9
+	},
+/obj/item/clothing/under/gezena{
+	pixel_y = 3;
+	pixel_x = -9
+	},
+/obj/item/clothing/under/gezena{
+	pixel_y = 3;
+	pixel_x = -9
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
@@ -2668,15 +2672,18 @@
 	},
 /obj/item/bodycamera{
 	pixel_x = 0;
-	pixel_y = 0
+	pixel_y = 0;
+	c_tag = "FOXTROT-2"
 	},
 /obj/item/bodycamera{
 	pixel_y = 0;
-	pixel_x = 7
+	pixel_x = 7;
+	c_tag = "FOXTROT-3"
 	},
 /obj/item/bodycamera{
 	pixel_x = 3;
-	pixel_y = -2
+	pixel_y = -2;
+	c_tag = "FOXTROT-1-LEAD"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge/cool)

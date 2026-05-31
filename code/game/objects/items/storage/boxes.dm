@@ -208,6 +208,15 @@
 	for(var/i in 1 to 7)
 		new /obj/item/clothing/gloves/color/latex(src)
 
+/obj/item/storage/box/gloves/formal
+	name = "box of formal gloves"
+	desc = "Contains formal white gloves."
+	illustration = "latex"
+
+/obj/item/storage/box/gloves/formal/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/clothing/gloves/color/white(src)
+
 /obj/item/storage/box/masks
 	name = "box of sterile masks"
 	desc = "This box contains sterile medical masks."

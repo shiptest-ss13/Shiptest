@@ -438,30 +438,6 @@
 	pixel_y = -1;
 	pixel_x = 2
 	},
-/obj/item/clothing/head/gezena/flap/marine{
-	pixel_y = 11;
-	pixel_x = -8
-	},
-/obj/item/clothing/head/gezena/flap/marine{
-	pixel_y = 11;
-	pixel_x = -8
-	},
-/obj/item/clothing/head/gezena/flap/marine{
-	pixel_y = 11;
-	pixel_x = -8
-	},
-/obj/item/clothing/head/gezena/flap/marine{
-	pixel_y = 11;
-	pixel_x = -8
-	},
-/obj/item/clothing/head/gezena/flap/marine{
-	pixel_y = 11;
-	pixel_x = -8
-	},
-/obj/item/clothing/head/gezena/flap/marine{
-	pixel_y = 11;
-	pixel_x = -8
-	},
 /obj/item/clothing/head/gezena/marine{
 	pixel_y = 12;
 	pixel_x = 8
@@ -509,6 +485,34 @@
 /obj/item/clothing/gloves/gezena/marine{
 	pixel_y = -9;
 	pixel_x = 1
+	},
+/obj/item/storage/box/gloves/formal{
+	pixel_x = -12;
+	pixel_y = 1
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 11;
+	pixel_x = -8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -4662,15 +4666,6 @@
 	pixel_x = 8;
 	pixel_y = 13
 	},
-/obj/item/clothing/under/gezena{
-	pixel_x = -9
-	},
-/obj/item/clothing/under/gezena{
-	pixel_x = -9
-	},
-/obj/item/clothing/under/gezena{
-	pixel_x = -9
-	},
 /obj/item/clothing/suit/toggle/gezena{
 	pixel_y = -1;
 	pixel_x = 8
@@ -4723,6 +4718,19 @@
 /obj/item/clothing/shoes/combat/gezena,
 /obj/item/clothing/shoes/combat/gezena,
 /obj/item/clothing/shoes/combat/gezena,
+/obj/item/storage/box/gloves/formal{
+	pixel_x = -12;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/gezena{
+	pixel_x = -9
+	},
+/obj/item/clothing/under/gezena{
+	pixel_x = -9
+	},
+/obj/item/clothing/under/gezena{
+	pixel_x = -9
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
 "Ba" = (
@@ -7394,14 +7402,17 @@
 	},
 /obj/item/bodycamera{
 	pixel_y = 8;
-	pixel_x = -9
+	pixel_x = -9;
+	c_tag = "ROMEO-1-LEAD"
 	},
 /obj/item/bodycamera{
-	pixel_y = 10
+	pixel_y = 10;
+	c_tag = "ROMEO-2"
 	},
 /obj/item/bodycamera{
 	pixel_y = 8;
-	pixel_x = 9
+	pixel_x = 9;
+	c_tag = "ROMEO-3"
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
