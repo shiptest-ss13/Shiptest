@@ -2530,6 +2530,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/vehicle_battery,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -3879,10 +3880,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/outpost/crew/canteen)
-"iB" = (
-/obj/item/stack/ore/salvage/scrapmetal,
-/turf/open/water/tar,
-/area/outpost/vacant_rooms/office)
 "iD" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/dirt,
@@ -3890,11 +3887,7 @@
 	dir = 4
 	},
 /obj/effect/decal/fakelattice,
-/obj/structure/fluff{
-	name = "Geothermal Power Tap";
-	desc = "A complex machine that drills into the soil below it to gather thermal power.";
-	icon = 'icons/obj/power.dmi';
-	icon_state = "rtg";
+/obj/structure/fluff/geothermal{
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/elevatorshaft,
@@ -4156,10 +4149,6 @@
 	},
 /turf/open/floor/plasteel/tech/ngr_outpost,
 /area/outpost/hallway/central)
-"jj" = (
-/obj/item/stack/ore/salvage/scrapuranium,
-/turf/open/water/tar,
-/area/outpost/vacant_rooms/office)
 "jk" = (
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters{
 	dir = 8
@@ -5263,10 +5252,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
-"ls" = (
-/obj/item/stack/ore/salvage/scraptitanium,
-/turf/open/water/tar,
-/area/outpost/vacant_rooms/office)
 "lt" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -7165,6 +7150,7 @@
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating,
 /area/outpost/vacant_rooms/office)
 "pj" = (
@@ -9213,6 +9199,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/rust,
 /area/outpost/vacant_rooms/office)
 "tI" = (
@@ -9421,12 +9408,7 @@
 /area/outpost/hallway/central)
 "ua" = (
 /obj/effect/decal/fakelattice,
-/obj/structure/fluff{
-	name = "vehicle battery";
-	desc = "An old, battery-acid crusted vehicle cell, completely useless, and probably a hazard to even breath next to.";
-	icon = 'icons/obj/power.dmi';
-	icon_state = "bg-cell"
-	},
+/obj/structure/fluff/vehicle_battery,
 /turf/open/floor/plating/rust,
 /area/outpost/vacant_rooms/office)
 "ub" = (
@@ -11654,11 +11636,6 @@
 	dir = 8
 	},
 /area/outpost/hallway/aft)
-"yX" = (
-/obj/effect/decal/fakelattice,
-/obj/item/stack/ore/salvage/scrapuranium,
-/turf/open/water/tar,
-/area/outpost/vacant_rooms/office)
 "yY" = (
 /obj/effect/turf_decal/corner/opaque/beige/diagonal{
 	dir = 4
@@ -13347,10 +13324,6 @@
 /obj/effect/decal/fakelattice,
 /obj/structure/hazard/spray/steam/transparent_safe,
 /turf/open/floor/plasteel/elevatorshaft,
-/area/outpost/vacant_rooms/office)
-"CH" = (
-/obj/effect/decal/fakelattice,
-/turf/open/water/tar,
 /area/outpost/vacant_rooms/office)
 "CJ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -18201,15 +18174,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
-"Ns" = (
-/obj/structure/fluff{
-	name = "vehicle battery";
-	desc = "An old, battery-acid crusted vehicle cell, completely useless, and probably a hazard to even breath next to.";
-	icon = 'icons/obj/power.dmi';
-	icon_state = "bg-cell"
-	},
-/turf/open/water/tar,
-/area/outpost/vacant_rooms/office)
 "Nu" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -26279,7 +26243,7 @@ Np
 dC
 bd
 aW
-iB
+WX
 Pn
 AZ
 dC
@@ -26394,7 +26358,7 @@ iD
 CG
 AZ
 dC
-yX
+WX
 WX
 WX
 ua
@@ -26514,7 +26478,7 @@ AZ
 pR
 WX
 WX
-ls
+WX
 ph
 AZ
 OO
@@ -26629,7 +26593,7 @@ uj
 MP
 tO
 fx
-Ns
+WX
 WX
 NX
 Ur
@@ -26745,9 +26709,9 @@ Ab
 RA
 AZ
 AZ
-CH
-iB
-CH
+WX
+WX
+WX
 tH
 wB
 AZ
@@ -26864,8 +26828,8 @@ dC
 bd
 qU
 WT
-jj
-Ns
+WX
+WX
 AZ
 AZ
 OO
