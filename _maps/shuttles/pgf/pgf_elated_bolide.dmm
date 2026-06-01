@@ -2280,23 +2280,11 @@
 	pixel_y = 8
 	},
 /obj/item/trench_tool/gezena{
-	pixel_y = 12;
-	pixel_x = -6
-	},
-/obj/item/trench_tool/gezena{
-	pixel_y = 8;
-	pixel_x = -3
-	},
-/obj/item/trench_tool/gezena{
 	pixel_y = 16;
 	pixel_x = -9
 	},
 /obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 4
-	},
-/obj/item/trench_tool/gezena{
-	pixel_y = 4;
-	pixel_x = 0
 	},
 /obj/item/attachment/bayonet{
 	pixel_x = -1;
@@ -2313,6 +2301,18 @@
 /obj/item/attachment/bayonet{
 	pixel_x = 2;
 	pixel_y = -7
+	},
+/obj/item/trench_tool/gezena{
+	pixel_y = 12;
+	pixel_x = -6
+	},
+/obj/item/trench_tool/gezena{
+	pixel_y = 8;
+	pixel_x = -3
+	},
+/obj/item/trench_tool/gezena{
+	pixel_y = 4;
+	pixel_x = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -4031,64 +4031,20 @@
 /obj/structure/sign/poster/contraband/eoehoma{
 	pixel_x = -32
 	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = 0
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = 0
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = 4
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = 4
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = 8
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = 8
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = 6;
-	pixel_y = -3
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = 6;
-	pixel_y = -3
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = 6;
-	pixel_y = 1
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = 6;
-	pixel_y = 1
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = 6;
-	pixel_y = 5
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = 6;
-	pixel_y = 5
-	},
 /obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 4
+	},
+/obj/item/storage/toolbox/ammo/ewc_6m{
+	pixel_x = -3;
+	pixel_y = 17
+	},
+/obj/item/storage/toolbox/ammo/ewc_6m{
+	pixel_x = 3;
+	pixel_y = 9
+	},
+/obj/item/storage/toolbox/ammo/ewc_6m/half{
+	pixel_x = -4;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -6028,10 +5984,6 @@
 /obj/item/storage/backpack/duffelbag{
 	pixel_y = -6
 	},
-/obj/item/storage/guncase/energy/sgr9{
-	pixel_y = -13;
-	mag_count = 3
-	},
 /obj/item/megaphone/sec{
 	pixel_x = 9;
 	pixel_y = 1
@@ -6048,10 +6000,6 @@
 	pixel_x = -6;
 	pixel_y = -6
 	},
-/obj/item/clothing/accessory/holster{
-	pixel_y = -6;
-	pixel_x = -7
-	},
 /obj/item/clothing/head/helmet/gezena{
 	pixel_y = 11;
 	pixel_x = -4
@@ -6064,6 +6012,18 @@
 	pixel_y = 4;
 	pixel_x = 8
 	},
+/obj/effect/turf_decal/corner/opaque/purple/border{
+	dir = 1
+	},
+/obj/machinery/light/directional/south,
+/obj/item/storage/guncase/pistol/kalixpistol{
+	pixel_y = -13;
+	mag_count = 3
+	},
+/obj/item/clothing/accessory/holster{
+	pixel_y = -6;
+	pixel_x = -7
+	},
 /obj/item/clothing/gloves/gezena/marine{
 	pixel_x = 6;
 	pixel_y = -6
@@ -6072,10 +6032,6 @@
 	pixel_x = -1;
 	pixel_y = -10
 	},
-/obj/effect/turf_decal/corner/opaque/purple/border{
-	dir = 1
-	},
-/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "IM" = (
@@ -6399,13 +6355,12 @@
 	pixel_y = 11
 	},
 /obj/item/gun/energy/kalix/pgf/nock{
-	pixel_y = 5
+	pixel_y = 4;
+	pixel_x = 0
 	},
 /obj/item/gun/energy/kalix/pgf/nock{
-	pixel_y = -1
-	},
-/obj/item/gun/energy/kalix/pistol{
-	pixel_y = -9
+	pixel_y = -3;
+	pixel_x = 0
 	},
 /obj/effect/turf_decal/corner/opaque/purple/border,
 /turf/open/floor/plasteel/tech,
@@ -7403,16 +7358,17 @@
 	},
 /obj/item/bodycamera{
 	pixel_y = 8;
-	pixel_x = -9;
+	pixel_x = -8;
 	c_tag = "ROMEO-1-LEAD"
 	},
 /obj/item/bodycamera{
-	pixel_y = 10;
-	c_tag = "ROMEO-2"
+	pixel_y = 8;
+	c_tag = "ROMEO-2";
+	pixel_x = 2
 	},
 /obj/item/bodycamera{
 	pixel_y = 8;
-	pixel_x = 9;
+	pixel_x = 12;
 	c_tag = "ROMEO-3"
 	},
 /turf/open/floor/vault,
@@ -9210,14 +9166,18 @@
 	pixel_y = 11
 	},
 /obj/item/gun/energy/kalix/pgf{
-	pixel_y = 4;
+	pixel_y = 5;
 	pixel_x = 1
 	},
 /obj/item/gun/energy/kalix/pgf{
-	pixel_y = -3;
+	pixel_y = -1;
 	pixel_x = 1
 	},
 /obj/effect/turf_decal/corner/opaque/purple/border,
+/obj/item/gun/energy/kalix/pgf/pdw{
+	pixel_x = -5;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Zu" = (
