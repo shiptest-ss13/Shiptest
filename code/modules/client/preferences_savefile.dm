@@ -524,7 +524,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_human_ears"], features["ears"])
 
 	READ_FILE(S["fbp"], fbp)
-	READ_FILE(S["digitigrade"], digitigrade)
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
@@ -613,7 +612,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	jumpsuit_style		= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	exowear				= sanitize_inlist(exowear, GLOB.exowearlist, initial(exowear))
 	fbp					= sanitize_integer(fbp, FALSE, TRUE, FALSE)
-	digitigrade			= sanitize_integer(digitigrade, FALSE, TRUE, FALSE)
 	height_filter		= sanitize_inlist(height_filter, GLOB.height_filters, "Normal")
 	features["grad_style"]				= sanitize_inlist(features["grad_style"], GLOB.hair_gradients_list)
 	features["grad_color"]				= sanitize_hexcolor(features["grad_color"])
@@ -741,7 +739,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_elzu_horns"]			, features["elzu_horns"])
 	WRITE_FILE(S["feature_tail_elzu"]			, features["tail_elzu"])
 	WRITE_FILE(S["fbp"]							, fbp)
-	WRITE_FILE(S["digitigrade"]					, digitigrade)
 
 	//Flavor text
 	WRITE_FILE(S["feature_flavor_text"]			, features["flavor_text"])

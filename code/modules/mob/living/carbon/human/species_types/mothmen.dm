@@ -43,6 +43,7 @@
 	)
 
 	prosthetic_style = /datum/sprite_accessory/body/prosthetic/human
+	digitigrade_style = /datum/sprite_accessory/body/digitigrade/moth
 
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 5
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 5

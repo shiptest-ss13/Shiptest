@@ -167,7 +167,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							BODY_ZONE_R_LEG = PROSTHETIC_NORMAL,
 						)
 	var/fbp = FALSE
-	var/digitigrade = FALSE
 	var/scarred_eye_side = SCAR_RIGHT
 	var/list/alt_titles_preferences = list()
 	var/list/custom_names = list()
@@ -508,10 +507,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Body Fluff Color</h3>"
 
 				dat += "<span style='border: 1px solid #161616; background-color: #[features["moth_bodyfluff_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=moth_fluff_color;task=input'>Change</a><BR>"
-
-				dat += "<h3>Leg Style</h3>"
-
-				dat += "<a href='byond://?_src_=prefs;preference=digitigrade'>Leg Style: [digitigrade ? "Digitigrade" : "Plantigrade"]</a><br>"
 
 			var/obj/item/bodypart/head/spec_head = pref_species.species_limbs[BODY_ZONE_HEAD]
 			if(initial(spec_head.draw_eyes) && initial(spec_head.greyscale_eyes))
@@ -2457,12 +2452,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					fbp = !fbp
 					if(("moth_head" in pref_species.default_features) && (fbp))
 						features["moth_head"] = "Flat"
-				if("digitigrade")
-					digitigrade = !digitigrade
 				if("limbs")
 					if(href_list["customize_limb"])
 						var/limb = href_list["customize_limb"]
 						var/list/limb_options = list(PROSTHETIC_NORMAL)
+						if(pref_species.digitigrade_style && ((limb == BODY_ZONE_L_LEG) || (limb == BODY_ZONE_R_LEG)))
+							limb_options.Add(PROSTHETIC_NORMAL_DIGI)
 						if(pref_species.prosthetic_style)
 							limb_options.Add(PROSTHETIC_ROBOTIC)
 						if(limb != BODY_ZONE_CHEST && limb != BODY_ZONE_HEAD)
@@ -2870,6 +2865,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					old_part.drop_limb(TRUE)
 					qdel(old_part)
 				character.regenerate_limb(zone, robotic = is_robotic)
+			if(PROSTHETIC_NORMAL_DIGI)
+				var/obj/item/bodypart/leg/new_leg
+				if(istype(pref_species, /datum/species/moth)) //a generic way to search for digitigrade leg styles did not want to work for me no matter how much I tried coaxing the code -- will stick with a species switch instead for now
+					if(zone == BODY_ZONE_L_LEG)
+						new_leg = new /obj/item/bodypart/leg/left/moth/digitigrade
+						prosthetic_limbs[BODY_ZONE_L_LEG] = PROSTHETIC_NORMAL_DIGI
+					else if (zone == BODY_ZONE_R_LEG)
+						new_leg = new /obj/item/bodypart/leg/right/moth/digitigrade
+						prosthetic_limbs[BODY_ZONE_R_LEG] = PROSTHETIC_NORMAL_DIGI
+				if(old_part)
+					old_part.drop_limb(TRUE)
+					qdel(old_part)
+				new_leg.replace_limb(character, TRUE)
+				new_leg.update_limb(is_creating = TRUE)
 			if(PROSTHETIC_AMPUTATED)
 				if(old_part)
 					old_part.drop_limb(TRUE)
@@ -2904,15 +2913,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_part.species_secondary_color = features["mcolor2"]
 				new_part.replace_limb(character, TRUE)
 				new_part.update_limb(is_creating = TRUE)
-
-	if(digitigrade && istype(pref_species, /datum/species/moth))
-		var/obj/item/bodypart/digi_r_moth = new /obj/item/bodypart/leg/right/moth/digitigrade
-		digi_r_moth.replace_limb(character, TRUE, TRUE)
-
-		var/obj/item/bodypart/digi_l_moth = new /obj/item/bodypart/leg/left/moth/digitigrade
-		digi_l_moth.replace_limb(character, TRUE, TRUE)
-
-		//character.update_body_parts(TRUE)
 
 	//Because of how set_species replaces all bodyparts with new ones, hair needs to be set AFTER species.
 	character.dna.real_name = character.real_name

@@ -228,6 +228,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	/// Default prosthetic replacements.
 	var/datum/sprite_accessory/body/prosthetic_style = /datum/sprite_accessory/body/prosthetic
 
+	/// Digitigrade sprite accessory
+	var/datum/sprite_accessory/body/digitigrade_style
+
 	///For custom overrides for species ass images
 	var/icon/ass_image
 
