@@ -2530,7 +2530,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fluff/vehicle_battery,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -6203,6 +6202,10 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/outpost/cargo)
+"ni" = (
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/water/tar,
+/area/outpost/vacant_rooms/office)
 "nk" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -7150,7 +7153,6 @@
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating,
 /area/outpost/vacant_rooms/office)
 "pj" = (
@@ -9199,7 +9201,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/rust,
 /area/outpost/vacant_rooms/office)
 "tI" = (
@@ -11759,6 +11760,10 @@
 	},
 /turf/open/floor/plasteel/tech/ngr_outpost,
 /area/outpost/hallway/aft)
+"zm" = (
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/open/water/tar,
+/area/outpost/vacant_rooms/office)
 "zn" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#412e25";
@@ -17608,6 +17613,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/ngr_outpost,
 /area/outpost/hallway/central)
+"LR" = (
+/obj/structure/fluff/vehicle_battery,
+/turf/open/water/tar,
+/area/outpost/vacant_rooms/office)
 "LS" = (
 /obj/machinery/door/poddoor/shutters/indestructible,
 /obj/effect/turf_decal/techfloor{
@@ -17809,6 +17818,10 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/ngr_outpost,
 /area/outpost/hallway/aft)
+"Ms" = (
+/obj/item/stack/ore/salvage/scrapuranium,
+/turf/open/water/tar,
+/area/outpost/vacant_rooms/office)
 "Mt" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -26243,7 +26256,7 @@ Np
 dC
 bd
 aW
-WX
+ni
 Pn
 AZ
 dC
@@ -26358,7 +26371,7 @@ iD
 CG
 AZ
 dC
-WX
+Ms
 WX
 WX
 ua
@@ -26478,7 +26491,7 @@ AZ
 pR
 WX
 WX
-WX
+zm
 ph
 AZ
 OO
@@ -26593,7 +26606,7 @@ uj
 MP
 tO
 fx
-WX
+LR
 WX
 NX
 Ur
@@ -26710,7 +26723,7 @@ RA
 AZ
 AZ
 WX
-WX
+ni
 WX
 tH
 wB
@@ -26828,8 +26841,8 @@ dC
 bd
 qU
 WT
-WX
-WX
+Ms
+LR
 AZ
 AZ
 OO
