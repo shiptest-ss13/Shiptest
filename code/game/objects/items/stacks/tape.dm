@@ -278,7 +278,7 @@
 
 /obj/item/stack/tape/industrial/electrical/wrap_item(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/clothing/gloves/color))
-		var/obj/item/clothing/gloves/color/yellow/sprayon/tape/O = new /obj/item/clothing/gloves/color/yellow/sprayon/tape
+		var/obj/item/clothing/gloves/insulated/sprayon/tape/O = new /obj/item/clothing/gloves/insulated/sprayon/tape
 		to_chat(user, span_notice("You turn [I] into [O] with [src]."))
 		QDEL_NULL(I)
 		user.put_in_hands(O)
