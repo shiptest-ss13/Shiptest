@@ -242,7 +242,7 @@
 	name = "ammo can (EWC-6m)"
 	icon_state = "ammobox_cell"
 	current_skin = "Cell"
-	for (var/i in 1 to 7)
+	for (var/i in 1 to 6)
 		new /obj/item/stock_parts/cell/gun/pgf(src)
 
 /obj/item/storage/toolbox/ammo/ewc_6m/half/PopulateContents()
