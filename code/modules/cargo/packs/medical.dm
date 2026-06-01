@@ -56,6 +56,12 @@
 	faction = /datum/faction/srm
 	faction_discount = 10
 
+/datum/supply_pack/medical/advancedfirstaid
+	name = "Advanced First Aid Kit Single-Pack"
+	desc = "Contains one advanced first aid kit, with treatment options for advanced and severe injuries."
+	cost = 600
+	contains = list(/obj/item/storage/firstaid/advanced)
+
 /datum/supply_pack/medical/salbutamol_canister
 	name = "Salbutamol Inhaler Canister Single-Pack"
 	desc = "Contains one inhaler canister filled with aerosolized salbutamol, a potent bronchodilator."
