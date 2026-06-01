@@ -145,7 +145,6 @@ SUBSYSTEM_DEF(ticker)
 				timeLeft = (CONFIG_GET(number/lobby_countdown) * 10)		WS Edit - Countdown after init */
 			for(var/client/C in GLOB.clients)
 				window_flash(C, ignorepref = TRUE) //let them know lobby has opened up.
-			to_chat(world, span_boldnotice("Welcome to [station_name()]!"))
 			send2chat("New round starting!", CONFIG_GET(string/chat_announce_new_game))
 			SSredbot.send_discord_message("ooc", "**A new round is beginning.**")
 			current_state = GAME_STATE_PREGAME
@@ -256,8 +255,6 @@ SUBSYSTEM_DEF(ticker)
 			modes += M.name
 		modes = sortList(modes)
 		to_chat(world, "<b>The gamemode is: secret!\nPossibilities:</B> [english_list(modes)]")
-	else
-		mode.announce()
 
 	if(!CONFIG_GET(flag/ooc_during_round))
 		toggle_ooc(FALSE) // Turn it off
@@ -277,7 +274,7 @@ SUBSYSTEM_DEF(ticker)
 	round_start_timeofday = world.timeofday
 	SSdbcore.SetRoundStart()
 
-	to_chat(world, span_notice("<B>Welcome to [station_name()], enjoy your stay!</B>"))
+	to_chat(world, span_notice("<B><font size=4>Welcome to Shiptest Pre-Alpha, enjoy your stay!</font></B>"))
 	SSredbot.send_discord_message("ooc", "**A new round has begun.**")
 	SEND_SOUND(world, sound('sound/roundstart/addiguana.ogg'))
 
