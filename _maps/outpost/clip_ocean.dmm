@@ -6646,6 +6646,17 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/security)
+"qs" = (
+/obj/effect/turf_decal/trimline/opaque/blue/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
+/obj/item/trash/energybar{
+	pixel_x = -5;
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/crew/court)
 "qt" = (
 /obj/machinery/light/dim/directional/east,
 /obj/effect/decal/cleanable/dirt,
@@ -36479,7 +36490,7 @@ EM
 Tq
 Tq
 Tq
-vj
+qs
 Ui
 eP
 Gf
