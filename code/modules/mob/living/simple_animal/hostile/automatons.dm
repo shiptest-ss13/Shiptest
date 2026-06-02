@@ -80,7 +80,7 @@
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
 
-mob/living/simple_animal/hostile/automated/bipedal
+/mob/living/simple_animal/hostile/automated/bipedal
 	name = "Bipedal Assault Platform"
 	desc = "A lumbering automaton garbed in Coalition colors, with an integrated shotgun attached in place of a left arm. Driven by basic threat detection software the barrel of its shotgun steadies itself in your direction."
 	icon_state = "coalition_bipedal"
@@ -112,7 +112,7 @@ mob/living/simple_animal/hostile/automated/bipedal
 			var/atom/throw_target = get_edge_target_turf(bonk, src.dir)
 			bonk.throw_at(throw_target, rand(1,3), 2, src, gentle = TRUE)
 
-mob/living/simple_animal/hostile/automated/bipedal/makosso
+/mob/living/simple_animal/hostile/automated/bipedal/makosso
 	desc = "A lumbering automaton garbed in Tri-Corp titanium, with an integrated plasma rifle attached in place of a left arm. The simple algorithms driving its servos level the plasma rifle in your direction."
 	icon_state = "makosso_bipedal"
 	retreat_distance = 2
