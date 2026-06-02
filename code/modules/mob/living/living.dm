@@ -350,8 +350,11 @@
 			update_pull_movespeed()
 
 		set_pull_offsets(M, state)
-	else if(AM.density)
-		face_mouse = FALSE
+	else
+		// We already know it's an object since it's not a mob so no need to typecheck
+		var/obj/O = AM
+		if (O.density || O.drag_slowdown)
+			face_mouse = FALSE
 
 //mob verbs are a lot faster than object verbs
 //for more info on why this is not atom/pull, see examinate() in mob.dm
