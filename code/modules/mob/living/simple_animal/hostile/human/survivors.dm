@@ -85,7 +85,7 @@
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/hunter
 	name = "Hermit Hunter"
-	desc ="A wild-eyed figure. Watch out- he has a shotgun, and he remembers just enough of his old life to use it!"
+	desc ="A wild-eyed figure. Watch out- he has a rifle, and he remembers just enough of his old life to use it!"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/ballistic/rifle/polymer
 
@@ -456,7 +456,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	suit = /obj/item/clothing/suit/warra/vest
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 	head = /obj/item/clothing/head/hardhat/warra
 	belt = /obj/item/storage/belt/utility/full/engi
 	mask = /obj/item/clothing/mask/breath
