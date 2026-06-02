@@ -149,6 +149,10 @@
 	. = ..()
 	languages_possible = languages_possible_robot
 
+/obj/item/organ/tongue/robot/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
+	. = ..()
+	ADD_TRAIT(owner, TRAIT_ELECTRONIC_VOICEBOX, ROUNDSTART_TRAIT)
+
 /obj/item/organ/tongue/robot/emp_act(severity)
 	owner.apply_effect(EFFECT_STUTTER, 120)
 	owner.force_scream()

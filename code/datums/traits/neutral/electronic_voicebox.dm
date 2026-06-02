@@ -1,7 +1,6 @@
 /datum/quirk/electronic_voicebox
 	name = "Electronic Voicebox"
 	desc = "Instead of a set of flesh-and-blood vocal cords, you have a digital voicebox inside of you."
-	mob_traits = list(TRAIT_ELECTRONIC_VOICEBOX)
 	value = 0
 	gain_text = span_noticerobot("Your voice sounds a bit different...")
 	lose_text = span_notice("Your voice goes back to normal.")
