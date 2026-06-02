@@ -283,6 +283,7 @@
 /obj/item/inhaler/salbutamol
 	name = "salbutamol inhaler"
 	icon_state = "inhaler_medical"
+	custom_price = 150
 	initial_canister_path = /obj/item/reagent_containers/inhaler_canister/salbutamol
 
 /obj/item/reagent_containers/inhaler_canister/salbutamol
@@ -290,6 +291,7 @@
 	desc = "A small canister filled with aerosolized reagents for use in an inhaler. This one contains salbutamol, a potent bronchodilator that can stop \
 	asthma attacks in their tracks."
 	icon_state = "canister_medical"
+	custom_price = 100
 	list_reagents = list(/datum/reagent/medicine/salbutamol = 30)
 
 /obj/item/inhaler/salbutamol/rescue

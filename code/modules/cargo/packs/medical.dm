@@ -59,7 +59,7 @@
 /datum/supply_pack/medical/salbutamol_canister
 	name = "Salbutamol Inhaler Canister Single-Pack"
 	desc = "Contains one inhaler canister filled with aerosolized salbutamol, a potent bronchodilator."
-	cost = 200
+	cost = 100
 	contains = list(/obj/item/reagent_containers/inhaler_canister/salbutamol)
 
 /*
