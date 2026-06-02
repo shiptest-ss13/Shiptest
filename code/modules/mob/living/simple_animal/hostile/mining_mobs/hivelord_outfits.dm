@@ -254,7 +254,7 @@
 	if(prob(75))
 		suit = pick(/obj/item/clothing/suit/toggle/hazard, /obj/item/clothing/suit/hazardvest, /obj/item/clothing/suit/hooded/wintercoat/engineering)
 	if(prob(75))
-		gloves = pick(/obj/item/clothing/gloves/color/yellow, /obj/item/clothing/gloves/color/fyellow, /obj/item/clothing/gloves/color/fyellow/old)
+		gloves = pick(/obj/item/clothing/gloves/insulated, /obj/item/clothing/gloves/color/fyellow, /obj/item/clothing/gloves/color/fyellow/old)
 	if(prob(75))
 		belt = pick(/obj/item/storage/belt/utility/full, /obj/item/storage/belt/utility)
 	if(prob(50))
@@ -300,7 +300,7 @@
 	if(prob(75))
 		belt = pick_weight(list(/obj/item/storage/belt/medical = 5, /obj/item/defibrillator/compact/loaded = 1))
 	if(prob(75))
-		gloves = pick(/obj/item/clothing/gloves/color/white, /obj/item/clothing/gloves/color/latex/nitrile)
+		gloves = pick(/obj/item/clothing/gloves/color/white, /obj/item/clothing/gloves/nitrile/blue)
 	if(prob(75))
 		mask = /obj/item/clothing/mask/surgical
 	if(prob(75))
