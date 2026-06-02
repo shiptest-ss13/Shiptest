@@ -403,6 +403,12 @@
 	name = "kitchen sink"
 	icon_state = "sink_alt"
 
+/obj/structure/sink/counter
+	icon_state = "sink_counter"
+
+/obj/structure/sink/kitchen/counter
+	icon_state = "sink_alt_counter"
+
 /obj/structure/sink/chem
 	name = "chemistry lab sink"
 	desc = "A sink integrated into the table for easy access in case of emergency."
