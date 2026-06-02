@@ -233,6 +233,25 @@
 	icon_state = "med_jacket"
 	item_state = "bluecloth"
 
+/obj/item/clothing/suit/toggle/chorejacket/warra
+	name = "supply chore jacket"
+	desc = "A loose fitting jacket designed for N+S Logistics' labourers, featuring deep pockets and large buttons to enable easy access in work conditions."
+	icon = 'icons/obj/clothing/suits/toggle.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/warra/kepori.dmi'
+	icon_state = "chorejacketns"
+	item_state = "chorejacketns"
+	unique_reskin = null
+
+
+/obj/item/clothing/under/warra/supply/qm
+	name = "supply director slacks"
+	desc = "Crisp slacks and a pressed brown shirt that any supply director could be proud of. N+S Logistics' compass rose logo is embossed on every button."
+	icon_state = "supply_director"
+	item_state = "browncloth"
+
+
+
 /obj/item/clothing/suit/armor/warra
 	name = "armor vest"
 	desc = "A sturdy vest designed to protect Vigilitas Interstellar officers from a variety of basic threats. Sports a stylish red stripe down the front."

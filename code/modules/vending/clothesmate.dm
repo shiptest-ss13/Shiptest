@@ -81,6 +81,7 @@
 		/obj/item/clothing/under/dress/skirt/pinafore/plaid/brown = 2,
 		/obj/item/clothing/under/suit/white/skirt = 2,
 		/obj/item/clothing/suit/jacket = 2,
+		/obj/item/clothing/suit/toggle/chorejacket = 3,
 		/obj/item/clothing/suit/toggle/overcoat = 3,
 		/obj/item/clothing/suit/toggle/windbreaker = 3,
 		/obj/item/clothing/suit/toggle/pufferjacket = 3,
