@@ -2252,10 +2252,7 @@
 	dir = 9
 	},
 /obj/machinery/airalarm/directional/east,
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "Ip" = (
@@ -2286,10 +2283,7 @@
 	pixel_y = -3
 	},
 /obj/machinery/light/directional/east,
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
@@ -2316,10 +2310,7 @@
 	dir = 8
 	},
 /obj/machinery/cell_charger,
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/item/stack/tape/industrial/electrical{
 	pixel_x = -7;
 	pixel_y = -11
@@ -3263,7 +3254,7 @@
 /obj/item/clothing/under/warra/engineering{
 	pixel_x = -5
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = 5
 	},
 /obj/item/clothing/head/hardhat/warra/blue{

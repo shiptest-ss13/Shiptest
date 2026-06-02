@@ -468,9 +468,9 @@
 
 // Gloves
 
-/obj/item/clothing/gloves/color/latex/nitrile/inteq
+/obj/item/clothing/gloves/nitrile/inteq
 	name = "green nitrile gloves"
-	desc = "Thick sterile gloves that reach up to the wrists, colored in a pine green shade. Transfers combat medic knowledge into the user via nanochips."
+	desc = "Thick sterile gloves that reach up to the wrists, colored in a pine green shade. The material makes it easier to pick up patients."
 	icon = 'icons/obj/clothing/faction/inteq/gloves.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/gloves.dmi'
 	icon_state = "nitrile_inteq"

@@ -968,9 +968,8 @@
 /turf/open/floor/carpet/executive,
 /area/ship/crew/law_office)
 "eZ" = (
-/obj/structure/noticeboard{
-	name = "Supply Requests Board";
-	pixel_y = 25
+/obj/structure/noticeboard/directional/north{
+	name = "Supply Requests Board"
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/eastright,
@@ -2391,7 +2390,7 @@
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_y = -25
 	},
-/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
 /obj/item/clothing/suit/warra/medical_smock,
 /obj/item/clothing/head/warra/surgical,
 /obj/machinery/firealarm/directional/east,
@@ -6619,7 +6618,7 @@
 /obj/item/clothing/suit/warra/vest,
 /obj/item/storage/backpack/industrial,
 /obj/item/clothing/head/hardhat/warra,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/clothing/glasses/meson/engine,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering)

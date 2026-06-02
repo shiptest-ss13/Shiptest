@@ -2810,10 +2810,7 @@
 	pixel_y = 9
 	},
 /obj/structure/table/wood/fancy/blue,
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/structure/noticeboard/directional/west,
 /obj/item/binoculars{
 	pixel_x = 4;
 	pixel_y = 6
@@ -3705,7 +3702,7 @@
 /obj/structure/closet/wall/white/directional/east{
 	name = "medical doctor's locker"
 	},
-/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
 /obj/item/storage/firstaid/regular{
 	pixel_x = 6;
 	pixel_y = -6
@@ -5691,10 +5688,7 @@
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 10
 	},
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/structure/noticeboard/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/cryo)
@@ -6612,7 +6606,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer5,
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/structure/closet/wall/orange/directional/east,
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_y = -7
 	},
 /obj/item/clothing/glasses/meson/prescription,

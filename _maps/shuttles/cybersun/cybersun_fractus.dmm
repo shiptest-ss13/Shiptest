@@ -2035,10 +2035,8 @@
 	dir = 4
 	},
 /obj/structure/table/glass,
-/obj/structure/noticeboard{
-	name = "cryogenics notice board";
-	dir = 4;
-	pixel_x = -25
+/obj/structure/noticeboard/directional/west{
+	name = "cryogenics notice board"
 	},
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -2480,7 +2478,7 @@
 /obj/structure/closet/secure_closet/engineering_welding{
 	populate = 0
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_y = 4
 	},
 /obj/item/weldingtool/electric{
@@ -4023,8 +4021,7 @@
 	icon_state = "plant-16";
 	pixel_y = 11
 	},
-/obj/structure/noticeboard{
-	pixel_y = 27;
+/obj/structure/noticeboard/directional/north{
 	name = "dormitory noticeboard"
 	},
 /turf/open/floor/plasteel/mono/dark,

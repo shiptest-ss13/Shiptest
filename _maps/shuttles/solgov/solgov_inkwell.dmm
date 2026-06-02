@@ -166,7 +166,7 @@
 /obj/item/pen/solgov,
 /obj/item/clothing/suit/hazardvest/solgov,
 /obj/item/clothing/shoes/workboots,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/industrial/outline/orange,
 /obj/item/clothing/glasses/meson/prescription,
@@ -4296,9 +4296,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "Br" = (
-/obj/structure/noticeboard{
-	pixel_y = 32
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 5
 	},
@@ -4899,10 +4897,7 @@
 /area/ship/crew/canteen/kitchen)
 "ET" = (
 /obj/structure/bookcase/random,
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/noticeboard/directional/west,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/library)
 "Fa" = (
@@ -6699,7 +6694,7 @@
 /obj/item/pen/solgov,
 /obj/item/clothing/suit/hazardvest/solgov,
 /obj/item/clothing/shoes/workboots,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/industrial/outline/orange,
 /obj/item/clothing/glasses/meson/prescription,
@@ -7849,9 +7844,7 @@
 /area/ship/cargo)
 "ZY" = (
 /obj/machinery/vending/coffee,
-/obj/structure/noticeboard{
-	pixel_y = 32
-	},
+/obj/structure/noticeboard/directional/north,
 /turf/open/floor/wood/birch,
 /area/ship/crew/office)
 

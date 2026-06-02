@@ -369,7 +369,7 @@
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/restraints/handcuffs(src)
-	new /obj/item/clothing/gloves/color/latex/nitrile(src)
+	new /obj/item/clothing/gloves/nitrile/blue(src)
 	new /obj/item/clothing/suit/toggle/labcoat/brig_phys(src)
 	new /obj/item/clothing/suit/armor/vest/security/brig_phys(src)
 	new /obj/item/clothing/head/beret/sec/brig_phys(src)

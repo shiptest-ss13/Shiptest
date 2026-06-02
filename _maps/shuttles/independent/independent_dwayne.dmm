@@ -1224,7 +1224,7 @@
 	pixel_y = -1
 	},
 /obj/item/clothing/suit/toggle/hazard,
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = -1;
 	pixel_y = -13
 	},
@@ -1884,7 +1884,7 @@
 /area/ship/engineering/atmospherics)
 "rE" = (
 /obj/structure/closet/crate/medical,
-/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
 /obj/item/roller,
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
@@ -2102,10 +2102,7 @@
 /obj/machinery/recharger{
 	pixel_x = 6
 	},
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "tI" = (
@@ -5535,10 +5532,7 @@
 /area/ship/hallway/central)
 "Yq" = (
 /obj/structure/table,
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/structure/noticeboard/directional/west,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},

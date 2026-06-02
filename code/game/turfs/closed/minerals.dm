@@ -743,6 +743,11 @@
 		/obj/item/stack/ore/iron = 80,
 		/obj/item/stack/ore/bluespace_crystal = 1)
 
+/turf/closed/mineral/random/rockplanet/nochance
+	name = "hematite"
+	desc = "Iron grit rusts softly, bringing forth a crimson hue."
+	mineralChance = 0
+
 /turf/closed/mineral/gibtonite/rockplanet
 	name = "hematite"
 	desc = "Iron grit rusts softly, bringing forth a crimson hue."
