@@ -21,6 +21,7 @@
 		/obj/item/stack/medical/ointment = 8,
 		/obj/item/stack/medical/bone_gel = 8,
 		/obj/item/stack/sticky_tape/surgical = 8,
+		/obj/item/inhaler/medical = 5,
 		/obj/item/reagent_containers/hypospray/medipen/atropine = 4,
 		/obj/item/reagent_containers/hypospray/medipen/oculine = 6,
 		/obj/item/reagent_containers/hypospray/medipen/inacusiate = 6,
@@ -39,8 +40,7 @@
 		/obj/item/reagent_containers/syringe/antiviral = 4,
 		/obj/item/storage/pill_bottle/placebatol = 10,
 		/obj/item/reagent_containers/hypospray/medipen/placebatol = 10,
-		/obj/item/inhaler/placebatol = 10,
-		/obj/item/inhaler/medical = 5,
+		/obj/item/reagent_containers/inhaler_canister/placebatol = 10,
 		/obj/item/reagent_containers/inhaler_canister/salbutamol = 10,
 	)
 	premium = list(
@@ -48,7 +48,7 @@
 		/obj/item/reagent_containers/medigel/quardexane = 3,
 		/obj/item/storage/pill_bottle/stardrop = 5,
 		/obj/item/storage/pill_bottle/rcyte = 5,
-		/obj/item/inhaler/sting = 5,
+		/obj/item/reagent_containers/inhaler_canister/sting = 5,
 	)
 
 /obj/item/vending_refill/wallmed
