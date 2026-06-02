@@ -283,7 +283,6 @@
 /obj/item/inhaler/salbutamol
 	name = "salbutamol inhaler"
 	icon_state = "inhaler_medical"
-	custom_price = 150
 	initial_canister_path = /obj/item/reagent_containers/inhaler_canister/salbutamol
 
 /obj/item/reagent_containers/inhaler_canister/salbutamol

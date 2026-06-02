@@ -40,8 +40,8 @@
 		/obj/item/storage/pill_bottle/placebatol = 10,
 		/obj/item/reagent_containers/hypospray/medipen/placebatol = 10,
 		/obj/item/inhaler/placebatol = 10,
-		/obj/item/inhaler/salbutamol = 5,
-		/obj/item/reagent_containers/inhaler_canister/salbutamol = 5,
+		/obj/item/inhaler/medical = 5,
+		/obj/item/reagent_containers/inhaler_canister/salbutamol = 10,
 	)
 	premium = list(
 		/obj/item/reagent_containers/medigel/hadrakine = 3,
