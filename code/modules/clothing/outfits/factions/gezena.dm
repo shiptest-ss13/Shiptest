@@ -217,7 +217,7 @@
 	uniform = /obj/item/clothing/under/gezena
 	suit = /obj/item/clothing/suit/armor/gezena/medic
 	head = /obj/item/clothing/head/gezena/medic
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	gloves = /obj/item/clothing/gloves/nitrile/blue
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 
