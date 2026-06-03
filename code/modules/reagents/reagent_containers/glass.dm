@@ -134,6 +134,8 @@
 	world_file = 'icons/obj/chemical/beakers_world.dmi'
 	icon_state = "beaker"
 	item_state = "beaker"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	custom_materials = list(/datum/material/glass=500)
 	fill_icon_thresholds = list(1, 40, 60, 80, 100)
 	can_have_cap = TRUE
