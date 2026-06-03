@@ -95,7 +95,7 @@
 	name = "Ramzi Sawbones Corpse"
 	uniform = /obj/item/clothing/under/syndicate/ramzi
 	suit = /obj/item/clothing/suit/ramzi/smock
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil //EVIL
+	gloves = /obj/item/clothing/gloves/nitrile/evil //EVIL
 	head = /obj/item/clothing/head/ramzi/surgical
 
 /datum/outfit/ramzi/bulletproof
@@ -266,7 +266,7 @@
 	uniform = /obj/item/clothing/under/cybersun/doctor
 	suit = /obj/item/clothing/suit/cybersun
 	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	gloves = /obj/item/clothing/gloves/nitrile/evil
 	ears = /obj/item/radio/headset/syndicate/cybersun
 	belt = /obj/item/gun/ballistic/automatic/pistol/challenger
 	head = /obj/item/clothing/head/soft/cybersun/medical
@@ -284,7 +284,7 @@
 	uniform = /obj/item/clothing/under/cybersun/medic
 	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	gloves = /obj/item/clothing/gloves/nitrile/evil
 	ears = /obj/item/radio/headset/syndicate/cybersun
 	belt = /obj/item/storage/belt/medical/paramedic
 	head = /obj/item/clothing/head/soft/cybersun/medical
@@ -425,7 +425,7 @@
 	uniform = /obj/item/clothing/under/rank/medical/doctor/green
 	suit = /obj/item/clothing/suit/apron/surgical
 	shoes = /obj/item/clothing/shoes/sneakers/white
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	gloves = /obj/item/clothing/gloves/nitrile/blue
 	ears = /obj/item/radio/headset
 	back = /obj/item/storage/backpack/satchel/med
 	id = /obj/item/card/id
@@ -498,6 +498,34 @@
 	name = "PGF Captain"
 	id_job = "Captain"
 	outfit = /datum/outfit/job/gezena/captain
+
+
+//Hardliner
+
+/obj/effect/mob_spawn/human/corpse/hardliner
+	name = "Hardliner Junior Agent"
+	id_job = "Junior Agent"
+	outfit = /datum/outfit/job/syndicate/assistant/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/mechanic
+	name = "Hardliner Mechanic"
+	id_job = "Mechanic"
+	outfit = /datum/outfit/job/syndicate/engineer/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/trooper
+	name = "Hardliner Trooper"
+	id_job = "Trooper"
+	outfit = /datum/outfit/job/syndicate/security/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/sergeant
+	name = "Hardliner Sergeant"
+	id_job = "Sergeant"
+	outfit = /datum/outfit/job/syndicate/hos/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/captain
+	name = "Hardliner Captain"
+	id_job = "Captain"
+	outfit = /datum/outfit/job/syndicate/captain/gorlex
 
 /* NEW GORLEX REPUBLIC */
 
@@ -594,3 +622,4 @@
 	belt = /obj/item/storage/belt/utility/full
 	gloves = /obj/item/clothing/gloves/color/yellow
 	r_pocket = /obj/item/flashlight //backup
+
