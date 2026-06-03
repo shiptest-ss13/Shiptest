@@ -77,6 +77,16 @@
 	glasses = /obj/item/clothing/glasses/welding
 	belt = /obj/item/storage/belt/utility
 
+/obj/effect/mob_spawn/human/corpse/ramzi/engi/grinder
+	name = "Ramzi Grinder Guy"
+	outfit = /datum/outfit/ramzi/engi/grinder
+
+
+/datum/outfit/ramzi/engi/grinder
+	name = "Ramzi Angle Grinder Technician"
+	suit = /obj/item/clothing/suit/armor/ramzi
+	back = /obj/item/gear_pack/anglegrinder
+
 /obj/effect/mob_spawn/human/corpse/ramzi/doctor
 	name = "Ramzi Field Medic"
 	outfit = /datum/outfit/ramzi/doctor
@@ -489,6 +499,7 @@
 	id_job = "Captain"
 	outfit = /datum/outfit/job/gezena/captain
 
+
 //Hardliner
 
 /obj/effect/mob_spawn/human/corpse/hardliner
@@ -515,3 +526,100 @@
 	name = "Hardliner Captain"
 	id_job = "Captain"
 	outfit = /datum/outfit/job/syndicate/captain/gorlex
+
+/* NEW GORLEX REPUBLIC */
+
+
+/obj/effect/mob_spawn/human/corpse/ngr
+	name = "New Gorlex Corpse"
+	id_job = "Civilian"
+	outfit = /datum/outfit/ngr_corpse
+	id_access_list = null
+
+/datum/outfit/ngr_corpse
+	name = "NGR Generic Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ngr
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/color/black
+	mask = /obj/item/clothing/mask/breath/ngr
+	ears = /obj/item/radio/headset/alt
+	head = /obj/item/clothing/head/ngr
+	back = /obj/item/storage/backpack
+	id = /obj/item/card/id/syndicate_command
+	l_pocket = /obj/item/tank/internals/emergency_oxygen
+	box = /obj/item/storage/box/survival
+
+
+/obj/effect/mob_spawn/human/corpse/ngr/miner
+	name = "New Gorlex Miner Corpse"
+	id_job = "Excavator"
+	outfit = /datum/outfit/ngr_corpse/miner
+
+/datum/outfit/ngr_corpse/miner
+	name = "NGR Miner Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ngr/jumpsuit
+	shoes = /obj/item/clothing/shoes/workboots
+	suit = /obj/item/clothing/suit/hazardvest/ngr
+	head = /obj/item/clothing/head/hardhat/ngr
+	mask = /obj/item/clothing/mask/gas/syndicate
+	belt = /obj/item/storage/belt/mining/ngr
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/double
+	r_pocket = /obj/item/storage/bag/ore
+
+/obj/effect/mob_spawn/human/corpse/ngr/miner/space
+	name = "New Gorlex EVA Miner Corpse"
+	outfit = /datum/outfit/ngr_corpse/miner/space
+
+/datum/outfit/ngr_corpse/miner/space
+	name = "NGR EVA Miner Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ngr/jumpsuit
+	suit = /obj/item/clothing/suit/space/hardsuit/mining/heavy/ngr
+	suit_store = /obj/item/tank/internals/oxygen/yellow
+	head = /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/ngr
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi //only need a regular tank because they have the big back one as their main source of internals
+
+/obj/effect/mob_spawn/human/corpse/ngr/trooper
+	name = "New Gorlex Trooper Corpse"
+	id_job = "Operative"
+	outfit = /datum/outfit/ngr_corpse/trooper
+
+/datum/outfit/ngr_corpse/trooper
+	name = "NGR Trooper Corpse"
+	suit = /obj/item/clothing/suit/armor/ngr
+	head = /obj/item/clothing/head/helmet/ngr
+	mask = /obj/item/clothing/mask/gas/syndicate
+	gloves = /obj/item/clothing/gloves/combat
+	belt = /obj/item/storage/belt/security/webbing/ngr
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ngr
+	r_pocket = /obj/item/flashlight/seclite
+
+/obj/effect/mob_spawn/human/corpse/ngr/trooper/squad_lead
+	name = "New Gorlex Squad Leader Corpse"
+	id_job = "Operative Leader"
+	outfit = /datum/outfit/ngr_corpse/trooper/squad_lead
+
+/datum/outfit/ngr_corpse/trooper/squad_lead
+	name = "NGR Squad Leader Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
+	head = /obj/item/clothing/head/ngr/peaked
+	neck = /obj/item/clothing/neck/shemagh/ngr
+	mask = /obj/item/clothing/mask/balaclava/ngr
+	belt = /obj/item/storage/belt/security/webbing/ngr/alt
+	r_pocket = /obj/item/clothing/mask/whistle/trench //CHARGE
+
+/obj/effect/mob_spawn/human/corpse/ngr/mechanic
+	name = "New Gorlex Mechanic Corpse"
+	id_job = "Mechanic"
+	outfit = /datum/outfit/ngr_corpse/mechanic
+
+/datum/outfit/ngr_corpse/mechanic
+	name = "NGR Mechanic Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ngr/jumpsuit
+	suit = /obj/item/clothing/suit/hazardvest/ngr
+	head = /obj/item/clothing/head/hardhat/ngr
+	neck = /obj/item/clothing/neck/shemagh/ngr
+	mask = /obj/item/clothing/mask/gas/syndicate
+	belt = /obj/item/storage/belt/utility/full
+	gloves = /obj/item/clothing/gloves/color/yellow
+	r_pocket = /obj/item/flashlight //backup
+
