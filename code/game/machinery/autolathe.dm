@@ -272,9 +272,8 @@
 	if(O.tool_behaviour == TOOL_SCREWDRIVER)
 		var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 		materials.OnAttackBy(materials, O, user)
-	else
-		attackby(O, user, params)
-	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return SECONDARY_ATTACK_CALL_NORMAL
 
 /obj/machinery/autolathe/attackby(obj/item/O, mob/living/user, params)
 	if (busy)
