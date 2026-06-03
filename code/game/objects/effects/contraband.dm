@@ -1160,6 +1160,39 @@
 	desc = "A RILENA: LMR poster split in two to represent the series' disregard for conventional timeline aspects."
 	icon_state = "poster-rilena_timeline"
 
+//Etherbor Corporate Posters.
+/obj/structure/sign/poster/etherbor
+	poster_item_name = "etherbor poster"
+	poster_item_desc = "A poster that is produced by Etherbor Industries. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_icon_state = "rolled_legit"
+
+/obj/structure/sign/poster/etherbor/random
+	name = "random official poster"
+	random_basetype = /obj/structure/sign/poster/etherbor
+	icon_state = "poster-etherbor_random"
+	never_random = TRUE
+	random_type = POSTER_SUBTYPES
+
+/obj/structure/sign/poster/etherbor/civilian
+	name = "Etherbor Industries Beam Weapons"
+	desc = "A poster depicting a selection Etherbor Industries' line of civilian beam weapons."
+	icon_state = "poster-etherbor_civ"
+
+/obj/structure/sign/poster/etherbor/military
+	name = "Etherbor Industries Beam Weapons"
+	desc = "A poster depicting a selection Etherbor Industries' line of military beam weapons."
+	icon_state = "poster-etherbor_mil"
+
+/obj/structure/sign/poster/etherbor/corporate
+	name = "Etherbor Industries"
+	desc = "A poster depicting the logo of Etherbor Industries. \"Fleixble, Reliable, Etherbor\""
+	icon_state = "poster-etherbor_logo"
+
+/obj/structure/sign/poster/etherbor/gay
+	name = "Etherbor Industries"
+	desc = "A poster depicting the logo of Etherbor Industries on a striking rainbow backdrop. \"Fleixble, Reliable, Etherbor\""
+	icon_state = "poster-etherbor_rainbow"
+
 //PGF recruitment diversity posters.
 /obj/structure/sign/poster/pgf
 	poster_item_name = "pgf poster"
