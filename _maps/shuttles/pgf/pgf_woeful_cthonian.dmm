@@ -286,14 +286,8 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/window/reinforced/survival_pod/spawner{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
-	dir = 8
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 8
@@ -301,12 +295,12 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
-	dir = 8
-	},
 /obj/machinery/hydroponics/wooden{
 	density = 0;
 	pixel_y = 8
+	},
+/obj/structure/window/reinforced/survival_pod/spawner{
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
@@ -1086,13 +1080,18 @@
 /area/ship/crew/ccommons)
 "jO" = (
 /obj/structure/guncloset,
-/obj/item/gun/energy/kalix/pistol{
-	pixel_y = 8
+/obj/item/gun/energy/kalix/pgf/pdw{
+	pixel_x = -6;
+	pixel_y = 4
 	},
-/obj/item/gun/energy/kalix{
-	pixel_y = -8
+/obj/item/gun/energy/kalix/pgf/pdw{
+	pixel_x = -6;
+	pixel_y = -2
 	},
-/obj/item/gun/energy/kalix/nock,
+/obj/item/gun/energy/kalix/pgf/nock{
+	pixel_x = 0;
+	pixel_y = -9
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "jQ" = (
@@ -2378,30 +2377,6 @@
 	pixel_y = 7;
 	pixel_x = 10
 	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -9;
-	pixel_y = 9
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -9;
-	pixel_y = -1
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -9;
-	pixel_y = 4
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -9;
-	pixel_y = -1
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -9;
-	pixel_y = 9
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -9;
-	pixel_y = 4
-	},
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "security cabinet";
@@ -2438,6 +2413,22 @@
 /obj/item/attachment/rail_light{
 	pixel_x = 11;
 	pixel_y = -1
+	},
+/obj/item/storage/toolbox/ammo/ewc_6m{
+	pixel_x = -10;
+	pixel_y = 16
+	},
+/obj/item/storage/pouch/ammo{
+	pixel_x = -10;
+	pixel_y = 1
+	},
+/obj/item/storage/pouch/ammo{
+	pixel_x = -10;
+	pixel_y = -2
+	},
+/obj/item/storage/pouch/ammo{
+	pixel_x = -10;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
@@ -3270,38 +3261,6 @@
 /obj/effect/turf_decal/siding/black,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"Hu" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/structure/closet/cabinet,
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/item/clothing/suit/toggle/gezena,
-/obj/item/clothing/suit/toggle/gezena,
-/obj/item/clothing/neck/cloak/gezena,
-/obj/item/clothing/neck/cloak/gezena,
-/obj/item/clothing/under/gezena,
-/obj/item/clothing/under/gezena,
-/obj/item/clothing/gloves/gezena,
-/obj/item/clothing/gloves/gezena,
-/obj/item/clothing/head/gezena,
-/obj/item/clothing/head/gezena,
-/obj/item/clothing/shoes/combat/gezena,
-/obj/item/clothing/shoes/combat/gezena,
-/obj/structure/window/reinforced/survival_pod/spawner,
-/obj/structure/window/reinforced/survival_pod/spawner{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/item/radio/headset/pgf,
-/obj/item/radio/headset/pgf,
-/obj/item/clothing/head/gezena/flap,
-/obj/item/clothing/head/gezena/flap,
-/obj/effect/turf_decal/trimline/transparent/beige/filled/corner{
-	dir = 4
-	},
-/turf/open/floor/plasteel/sepia,
-/area/ship/crew/dorm)
 "HA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4617,30 +4576,31 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/item/clothing/suit/toggle/gezena,
-/obj/item/clothing/suit/toggle/gezena,
-/obj/item/clothing/neck/cloak/gezena,
-/obj/item/clothing/neck/cloak/gezena,
-/obj/item/clothing/under/gezena,
-/obj/item/clothing/under/gezena,
-/obj/item/clothing/gloves/gezena,
-/obj/item/clothing/gloves/gezena,
-/obj/item/clothing/head/gezena/flap,
-/obj/item/clothing/head/gezena/flap,
-/obj/item/clothing/shoes/combat/gezena,
-/obj/item/clothing/shoes/combat/gezena,
 /obj/structure/window/reinforced/survival_pod/spawner,
-/obj/structure/window/reinforced/survival_pod/spawner{
-	dir = 8
-	},
 /obj/machinery/door/firedoor/border_only,
-/obj/item/radio/headset/pgf,
-/obj/item/radio/headset/pgf,
-/obj/item/clothing/head/gezena,
-/obj/item/clothing/head/gezena,
 /obj/effect/turf_decal/trimline/transparent/beige/filled/corner{
 	dir = 4
 	},
+/obj/structure/window/reinforced/survival_pod/spawner{
+	dir = 8
+	},
+/obj/item/storage/box/gloves/formal,
+/obj/item/clothing/shoes/combat/gezena,
+/obj/item/clothing/shoes/combat/gezena,
+/obj/item/clothing/suit/toggle/gezena,
+/obj/item/clothing/suit/toggle/gezena,
+/obj/item/clothing/under/gezena,
+/obj/item/clothing/under/gezena,
+/obj/item/clothing/neck/cloak/gezena,
+/obj/item/clothing/neck/cloak/gezena,
+/obj/item/clothing/gloves/gezena,
+/obj/item/clothing/gloves/gezena,
+/obj/item/clothing/head/gezena/flap,
+/obj/item/clothing/head/gezena/flap,
+/obj/item/clothing/head/gezena,
+/obj/item/clothing/head/gezena,
+/obj/item/radio/headset/pgf,
+/obj/item/radio/headset/pgf,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "Xd" = (
@@ -4820,11 +4780,13 @@
 	},
 /obj/item/bodycamera{
 	pixel_y = 0;
-	pixel_x = -12
+	pixel_x = -12;
+	c_tag = "ALPHA-1"
 	},
 /obj/item/bodycamera{
 	pixel_y = 0;
-	pixel_x = -5
+	pixel_x = -5;
+	c_tag = "ALPHA-2"
 	},
 /obj/item/binoculars{
 	pixel_x = 4;
@@ -4832,6 +4794,11 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/item/bodycamera{
+	pixel_y = 0;
+	pixel_x = 2;
+	c_tag = "ALPHA-3"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge/cool)
@@ -4876,12 +4843,6 @@
 	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
-	dir = 8
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
-	dir = 8
 	},
 /obj/item/desk_flag/gezena{
 	pixel_y = 9;
@@ -5391,7 +5352,7 @@ Ua
 (21,1,1) = {"
 Wv
 wE
-Hu
+WO
 jh
 yz
 ml
