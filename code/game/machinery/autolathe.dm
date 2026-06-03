@@ -269,7 +269,7 @@
 	materials.retrieve_all()
 
 /obj/machinery/autolathe/attackby_secondary(obj/item/O, mob/living/user, params)
-	if(istype(O, /obj/item/screwdriver))
+	if(O.tool_behaviour == TOOL_SCREWDRIVER)
 		var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 		materials.OnAttackBy(materials, O, user)
 	else
