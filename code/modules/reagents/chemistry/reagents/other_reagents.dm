@@ -2128,7 +2128,7 @@
 	M.add_client_colour(/datum/client_colour/rahkrahene_overdose)
 	. = ..()
 
-/datum/reagent/drug/rahene/overdose_process(mob/living/M)
+/datum/reagent/rahene/overdose_process(mob/living/M)
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc) && prob(33))
 		step(M, pick(GLOB.cardinals))
 	if(prob(5))
