@@ -267,14 +267,25 @@
 
 /obj/item/reagent_containers/update_overlays()
 	. = ..()
+	//no other way to check if it's a world icon
+	var/is_world = FALSE
+	if(world_file && icon == world_file)
+		is_world = TRUE
+	if(cap_overlay)
+		cap_overlay.icon = icon
+
 	if(cap_on)
 		. += cap_overlay
 	if(!fill_icon_thresholds)
 		return
-	if(!reagents.total_volume)
+	if(!reagents || !reagents.total_volume)
 		return
 
+
 	var/fill_name = fill_icon_state? fill_icon_state : icon_state
+	if(is_world)
+		fill_name += "_world"
+
 	var/mutable_appearance/filling = mutable_appearance(fill_icon, "[fill_name][fill_icon_thresholds[1]]")
 
 	var/percent = round((reagents.total_volume / volume) * 100)
