@@ -303,9 +303,9 @@
 ////////////
 
 /obj/item/clothing/accessory/armband
-	name = "red armband"
-	desc = "A fancy red armband!"
-	icon_state = "redband"
+	name = "yellow armband"
+	desc = "A fancy yellow armband!"
+	icon_state = "yellowband"
 	attachment_slot = null
 
 /obj/item/clothing/accessory/armband/deputy

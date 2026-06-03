@@ -1,6 +1,6 @@
 /obj/machinery/vending/syndichem
 	name = "\improper SyndiChem"
-	desc = "A vending machine full of grenades and grenade accessories. Sponsored by DonkCo(tm)."
+	desc = "A vending machine full of grenades and grenade accessories. What looks like Cybersun's logo has been scratched off of it."
 	req_access = list(ACCESS_SYNDICATE)
 	products = list(
 		/obj/item/stack/cable_coil/random = 5,
