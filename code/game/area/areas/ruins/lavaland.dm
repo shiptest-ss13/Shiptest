@@ -104,3 +104,52 @@
 /area/ruin/unpowered/listening_post/engineering
 	name = "Listening Post Engineering"
 	icon_state = "dk_yellow"
+
+// Hardliner Holdout
+/area/ruin/lavaland/holdout/office
+	name = "Sergeant's Office"
+	icon_state = "bridge"
+
+/area/ruin/lavaland/holdout/armory
+	name = "Site Armory"
+	icon_state = "armory"
+
+/area/ruin/lavaland/holdout/warehousea
+	name = "Alpha Warehouse"
+	icon_state = "cargo_warehouse"
+
+/area/ruin/lavaland/holdout/warehouseb
+	name = "Bravo Warehouse"
+	icon_state = "auxstorage"
+
+/area/ruin/lavaland/holdout/mainhall
+	name = "Site Hallway"
+	icon_state = "entry"
+
+/area/ruin/lavaland/holdout/engineering
+	name = "Site Engineering"
+	icon_state = "engine"
+
+/area/ruin/lavaland/holdout/kitchen
+	name = "Site Kitchen"
+	icon_state = "kitchen"
+
+/area/ruin/lavaland/holdout/mess
+	name = "Site Mess Hall"
+	icon_state = "cafeteria"
+
+/area/ruin/lavaland/holdout/barracks
+	name = "Site Barracks"
+	icon_state = "crew_quarters"
+
+/area/ruin/lavaland/holdout/tcomms
+	name = "Site Telecommunications"
+	icon_state = "tcomsatcham"
+
+/area/ruin/lavaland/holdout/ramziflea
+	name = "Flea-class"
+	icon_state = "syndie-ship"
+
+/area/ruin/lavaland/holdout/ramzihq
+	name = "Ramzi Headquarters"
+	icon_state = "syndie-control"

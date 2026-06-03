@@ -544,21 +544,6 @@
 	alternate_worn_layer = BODY_LAYER
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
 
-//gloves
-
-/obj/item/clothing/gloves/color/latex/nitrile/clip
-	name = "\improper long white nitrile gloves"
-	desc = "Thick sterile gloves that reach up to the elbows. Transfers combat medic knowledge into the user via nanochips."
-
-	icon = 'icons/obj/clothing/faction/clip/hands.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/clip/hands.dmi'
-	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
-
-	icon_state = "nitrile_clip"
-	item_state = "nitrile_clip"
-
-	supports_variations = VOX_VARIATION
-
 //boots
 
 //belt

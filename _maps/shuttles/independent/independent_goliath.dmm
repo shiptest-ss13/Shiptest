@@ -88,7 +88,7 @@
 	pixel_y = -4
 	},
 /obj/item/clothing/head/beret/med,
-/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
 /obj/item/storage/pill_bottle/charcoal{
 	pixel_x = -9;
 	pixel_y = -9
@@ -1560,10 +1560,8 @@
 /area/ship/engineering/electrical)
 "kl" = (
 /obj/structure/table,
-/obj/structure/noticeboard{
-	name = "Supply Requests Board";
-	pixel_y = -25;
-	dir = 1
+/obj/structure/noticeboard/directional/south{
+	name = "Supply Requests Board"
 	},
 /obj/item/stack/tape{
 	pixel_y = 9
@@ -5844,10 +5842,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/structure/noticeboard/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
@@ -8149,8 +8144,8 @@
 /obj/item/weldingtool/largetank{
 	pixel_y = 3
 	},
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated,
+/obj/item/clothing/gloves/insulated{
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech,

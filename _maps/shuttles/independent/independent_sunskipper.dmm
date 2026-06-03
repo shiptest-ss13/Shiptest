@@ -525,9 +525,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "fM" = (
-/obj/structure/noticeboard{
-	pixel_y = 25
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 5
 	},
@@ -945,7 +943,7 @@
 /obj/item/clothing/under/overalls/olive,
 /obj/item/clothing/head/hardhat/dblue,
 /obj/item/clothing/head/hardhat/orange,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "lU" = (
@@ -1016,7 +1014,7 @@
 /obj/item/clothing/accessory/waistcoat,
 /obj/item/clothing/head/chefhat,
 /obj/item/clothing/head/that,
-/obj/item/clothing/gloves/color/evening,
+/obj/item/clothing/gloves/long/white,
 /obj/item/clothing/gloves/color/white,
 /obj/item/clothing/suit/hooded/wintercoat,
 /obj/item/clothing/suit/hooded/wintercoat,
@@ -3412,7 +3410,7 @@
 	pixel_x = -6;
 	pixel_y = -4
 	},
-/obj/item/clothing/gloves/color/latex{
+/obj/item/clothing/gloves/nitrile{
 	pixel_y = -8;
 	pixel_x = 6
 	},
