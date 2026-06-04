@@ -2074,10 +2074,6 @@
 	icon_state = "0-4"
 	},
 /obj/structure/table,
-/obj/item/clothing/gloves/color/latex/nitrile{
-	pixel_x = -1;
-	pixel_y = 8
-	},
 /obj/item/storage/case/surgery{
 	pixel_x = -3;
 	pixel_y = 3
@@ -4169,6 +4165,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
+"KX" = (
+/obj/structure/sign/solgov_seal{
+	pixel_x = -1;
+	pixel_y = -1
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/medical)
 "Lc" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -5016,50 +5019,55 @@
 	pixel_x = 5
 	},
 /obj/item/clothing/under/solgov/formal{
-	pixel_x = 12;
-	pixel_y = 8
+	pixel_x = 3;
+	pixel_y = 0
 	},
 /obj/item/clipboard{
-	pixel_x = 7;
-	pixel_y = 5
+	pixel_x = 2;
+	pixel_y = -4
 	},
 /obj/item/clothing/accessory/armband/engine{
-	pixel_x = 6;
-	pixel_y = 1
+	pixel_x = 1;
+	pixel_y = 0
 	},
 /obj/item/clothing/under/solgov{
 	pixel_x = 3;
 	pixel_y = 8
 	},
 /obj/item/folder/solgov{
-	pixel_x = 7;
-	pixel_y = 6
+	pixel_x = 2;
+	pixel_y = 4
 	},
-/obj/item/storage/backpack/satchel/eng,
+/obj/item/storage/backpack/satchel/eng{
+	pixel_x = 2;
+	pixel_y = 0
+	},
 /obj/item/clothing/head/hardhat/solgov{
 	pixel_y = 13
 	},
 /obj/item/clothing/head/welding{
-	pixel_x = -9;
-	pixel_y = 10
+	pixel_x = -2;
+	pixel_y = 3
 	},
 /obj/item/clothing/gloves/color/yellow{
-	pixel_y = -7
+	pixel_y = -5;
+	pixel_x = 1
 	},
 /obj/item/storage/toolbox/mechanical{
-	pixel_x = 7;
-	pixel_y = -8
+	pixel_x = 2;
+	pixel_y = -6
 	},
 /obj/item/clothing/shoes/workboots{
-	pixel_y = -7;
-	pixel_x = -6
+	pixel_y = 3;
+	pixel_x = 2
 	},
 /obj/item/clothing/suit/hazardvest/solgov{
-	pixel_x = -9
+	pixel_x = 3;
+	pixel_y = 4
 	},
 /obj/item/clothing/glasses/welding{
-	pixel_x = -7;
-	pixel_y = 3
+	pixel_x = 1;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -5300,8 +5308,8 @@
 	dir = 4
 	},
 /obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -25
+	dir = 8;
+	pixel_x = -32
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -5978,7 +5986,7 @@ Uv
 "}
 (15,1,1) = {"
 Gk
-PT
+KX
 PT
 YL
 qH
@@ -6174,7 +6182,7 @@ vf
 "}
 (22,1,1) = {"
 Gk
-jX
+kp
 jX
 Ps
 Hd
