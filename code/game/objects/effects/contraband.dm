@@ -1175,17 +1175,17 @@
 
 /obj/structure/sign/poster/etherbor/civilian
 	name = "Etherbor Industries Beam Weapons"
-	desc = "A poster depicting a selection Etherbor Industries' line of civilian beam weapons."
+	desc = "A poster depicting a selection Etherbor Industries' line of civilian beam weapons. \"Flexible, Reliable, Etherbor\""
 	icon_state = "poster-etherbor_civ"
 
 /obj/structure/sign/poster/etherbor/military
 	name = "Etherbor Industries Beam Weapons"
-	desc = "A poster depicting a selection Etherbor Industries' line of military beam weapons."
+	desc = "A poster depicting a selection Etherbor Industries' line of military beam weapons. \"Flexible, Reliable, Etherbor\""
 	icon_state = "poster-etherbor_mil"
 
 /obj/structure/sign/poster/etherbor/corporate
 	name = "Etherbor Industries"
-	desc = "A poster depicting the logo of Etherbor Industries. \"Fleixble, Reliable, Etherbor\""
+	desc = "A poster depicting the logo of Etherbor Industries. \"Flexible, Reliable, Etherbor\""
 	icon_state = "poster-etherbor_logo"
 
 /obj/structure/sign/poster/etherbor/gay
