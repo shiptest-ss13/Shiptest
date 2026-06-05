@@ -910,7 +910,7 @@
 /turf/open/space,
 /area/centcom/ferry)
 "apC" = (
-/turf/open/floor/wood/birch,
+/turf/open/floor/wood,
 /area/ctf)
 "apF" = (
 /obj/machinery/door/airlock/centcom{
@@ -1922,6 +1922,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/evac)
+"ayT" = (
+/obj/structure/platform/wood{
+	dir = 5
+	},
+/turf/open/water/stormy_planet_lit,
+/area/ctf)
 "ayV" = (
 /obj/structure/closet{
 	anchored = 1;
@@ -7247,6 +7253,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"dPT" = (
+/obj/structure/platform/wood{
+	dir = 6
+	},
+/turf/open/water/stormy_planet_lit,
+/area/ctf)
 "dQR" = (
 /obj/structure/plasticflaps/opaque,
 /obj/effect/decal/cleanable/dirt,
@@ -7429,13 +7441,6 @@
 /obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/dark,
 /area/centcom)
-"eet" = (
-/obj/structure/fluff/vehicle/crawler{
-	dir = 8;
-	on = 0
-	},
-/turf/open/floor/concrete/pavement,
-/area/ctf)
 "eez" = (
 /obj/effect/turf_decal/road{
 	dir = 6;
@@ -13928,6 +13933,10 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/wood/walnut,
 /area/centcom)
+"nbC" = (
+/obj/structure/platform/wood,
+/turf/open/water/stormy_planet_lit,
+/area/ctf)
 "ncR" = (
 /obj/machinery/door/poddoor{
 	id = "XCCQMLoaddoor2";
@@ -15477,6 +15486,12 @@
 	dir = 1
 	},
 /area/centcom)
+"pqP" = (
+/obj/structure/platform/wood/corner{
+	dir = 4
+	},
+/turf/open/water/stormy_planet_lit,
+/area/ctf)
 "psh" = (
 /obj/effect/turf_decal/box/corners,
 /turf/open/floor/concrete/pavement,
@@ -18464,6 +18479,12 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ctf)
+"tut" = (
+/obj/structure/platform/wood/corner{
+	dir = 8
+	},
+/turf/open/water/stormy_planet_lit,
+/area/ctf)
 "tuw" = (
 /obj/effect/turf_decal/industrial/loading{
 	dir = 8
@@ -18715,6 +18736,12 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel,
 /area/centcom/control)
+"tJA" = (
+/obj/structure/platform/wood{
+	dir = 1
+	},
+/turf/open/water/stormy_planet_lit,
+/area/ctf)
 "tMs" = (
 /obj/structure/railing/thick{
 	dir = 8
@@ -20952,6 +20979,12 @@
 "xHH" = (
 /obj/structure/fluff/steam_vent/low,
 /turf/open/floor/concrete/pavement,
+/area/ctf)
+"xIF" = (
+/obj/structure/platform/wood{
+	dir = 4
+	},
+/turf/open/water/stormy_planet_lit,
 /area/ctf)
 "xIO" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -53744,7 +53777,7 @@ vqN
 tkj
 tBt
 uoR
-oox
+bHs
 vdv
 oDF
 fnL
@@ -54000,9 +54033,9 @@ vqN
 vqN
 tkj
 tBt
-oox
-dmT
-oox
+uoR
+bHs
+kev
 oDF
 fnL
 hfS
@@ -54258,7 +54291,7 @@ vqN
 tkj
 tBt
 uoR
-oox
+bHs
 uoR
 oDF
 fnL
@@ -54788,8 +54821,8 @@ kgx
 pij
 cwy
 kAc
-eet
 cwy
+oox
 cwy
 kbz
 oMM
@@ -55045,9 +55078,9 @@ kgx
 pij
 cwy
 kAc
-cwy
-cwy
-cwy
+oox
+dmT
+oox
 kbz
 oMM
 kgx
@@ -55303,7 +55336,7 @@ uVS
 cwy
 kAc
 cwy
-cwy
+oox
 cwy
 lSt
 uVS
@@ -58876,21 +58909,21 @@ vqN
 vqN
 vqN
 vqN
-vqN
+nbC
 apC
 apC
 apC
+tJA
 vqN
 vqN
 vqN
 vqN
 vqN
 vqN
-vqN
-vqN
+nbC
 apC
 apC
-vqN
+tJA
 uDn
 cwy
 cwy
@@ -59133,21 +59166,21 @@ vqN
 vqN
 vqN
 vqN
-vqN
+nbC
 apC
 apC
 apC
+tJA
 vqN
 vqN
 vqN
 vqN
 vqN
 vqN
-vqN
-vqN
+nbC
 apC
 apC
-vqN
+tJA
 uDn
 qUv
 jYv
@@ -59390,21 +59423,21 @@ vqN
 vqN
 vqN
 vqN
-vqN
+nbC
 apC
 apC
 apC
+tJA
 vqN
 vqN
 vqN
 vqN
 vqN
 vqN
-vqN
-vqN
+nbC
 apC
 apC
-vqN
+tJA
 uDn
 cwy
 jYv
@@ -59661,7 +59694,7 @@ pLy
 haA
 haA
 dUJ
-vqN
+pqP
 uDn
 cwy
 jYv
@@ -61452,11 +61485,11 @@ vqN
 vqN
 vqN
 vqN
-vqN
+nbC
 apC
 apC
 apC
-vqN
+tJA
 vqN
 vqN
 vqN
@@ -61709,11 +61742,11 @@ vqN
 vqN
 vqN
 vqN
-vqN
+nbC
 apC
 apC
 apC
-vqN
+tJA
 vqN
 vqN
 vqN
@@ -61966,11 +61999,11 @@ vqN
 vqN
 vqN
 vqN
-vqN
+nbC
 apC
 apC
 apC
-vqN
+tJA
 vqN
 vqN
 vqN
@@ -63497,19 +63530,19 @@ jYv
 vqN
 vqN
 vqN
-vqN
+nbC
 apC
 apC
+tJA
 vqN
 vqN
-vqN
-vqN
+nbC
 apC
-vqN
-vqN
-vqN
+ayT
+xIF
+dPT
 apC
-vqN
+tJA
 vqN
 vqN
 vqN
@@ -63754,19 +63787,19 @@ jYv
 vqN
 vqN
 vqN
+nbC
+apC
+apC
+tJA
 vqN
-apC
-apC
 vqN
-vqN
-vqN
-vqN
+nbC
 apC
 apC
 apC
 apC
 apC
-vqN
+tJA
 vqN
 vqN
 vqN
@@ -64011,19 +64044,19 @@ oLc
 vqN
 vqN
 vqN
+nbC
+apC
+apC
+tJA
 vqN
-apC
-apC
 vqN
-vqN
-vqN
-vqN
+nbC
 apC
 apC
 apC
 apC
 apC
-vqN
+tJA
 vqN
 vqN
 kyQ
@@ -65814,8 +65847,8 @@ haA
 haA
 haA
 haA
-apC
-apC
+vqN
+vqN
 dUJ
 haA
 haA
@@ -66067,10 +66100,10 @@ oLc
 vqN
 vqN
 vqN
-vqN
+nbC
 apC
 apC
-vqN
+tJA
 vqN
 vqN
 vqN
@@ -66324,10 +66357,10 @@ jYv
 vqN
 vqN
 vqN
-vqN
+nbC
 apC
 apC
-vqN
+tJA
 vqN
 vqN
 vqN
@@ -66581,10 +66614,10 @@ jYv
 vqN
 vqN
 vqN
-vqN
+nbC
 apC
 apC
-vqN
+tJA
 vqN
 vqN
 vqN
@@ -68122,23 +68155,23 @@ cwy
 jYv
 vqN
 vqN
-vqN
-apC
-vqN
-vqN
-vqN
-vqN
-vqN
+nbC
 apC
 apC
 apC
-apC
-apC
-apC
-apC
+tJA
 vqN
 vqN
+vqN
+vqN
+vqN
+vqN
+nbC
 apC
+apC
+tJA
+vqN
+vqN
 vqN
 vqN
 vqN
@@ -68379,23 +68412,23 @@ cwy
 jYv
 vqN
 vqN
-vqN
-apC
-vqN
-vqN
-vqN
-vqN
-vqN
+nbC
 apC
 apC
 apC
-apC
-apC
-apC
-apC
+tJA
 vqN
 vqN
+vqN
+vqN
+vqN
+vqN
+nbC
 apC
+apC
+tJA
+vqN
+vqN
 vqN
 vqN
 vqN
@@ -68636,23 +68669,23 @@ cwy
 oLc
 vqN
 vqN
+nbC
+apC
+apC
+apC
+tJA
 vqN
+vqN
+vqN
+vqN
+vqN
+vqN
+nbC
 apC
 apC
-apC
-apC
-apC
-apC
-apC
-apC
-apC
-apC
-apC
-apC
-apC
-apC
-apC
-apC
+tJA
+vqN
+vqN
 vqN
 vqN
 vqN
@@ -68898,8 +68931,8 @@ hhT
 isQ
 gHy
 haA
-apC
-apC
+vqN
+vqN
 dUJ
 pLy
 pLy
@@ -68907,9 +68940,9 @@ pLy
 haA
 haA
 dUJ
-apC
-apC
-apC
+pqP
+vqN
+vqN
 vqN
 vqN
 vqN
@@ -69165,8 +69198,8 @@ qWd
 kgP
 haA
 haA
-apC
-apC
+vqN
+vqN
 vqN
 vqN
 vqN
@@ -69422,8 +69455,8 @@ lju
 ePd
 bkH
 rcG
-apC
-apC
+vqN
+vqN
 vqN
 vqN
 vqN
@@ -69679,8 +69712,8 @@ gta
 nRS
 lNO
 hRn
-apC
-apC
+vqN
+vqN
 vqN
 vqN
 vqN
@@ -70440,7 +70473,7 @@ haA
 haA
 haA
 haA
-vqN
+tut
 vqN
 dUJ
 haA
@@ -70694,13 +70727,13 @@ vqN
 vqN
 vqN
 vqN
-vqN
-vqN
-vqN
-vqN
-vqN
+nbC
 apC
 apC
+tJA
+vqN
+vqN
+vqN
 vqN
 vqN
 vqN
@@ -70951,13 +70984,13 @@ vqN
 vqN
 vqN
 vqN
-vqN
-vqN
-vqN
-vqN
-vqN
+nbC
 apC
 apC
+tJA
+vqN
+vqN
+vqN
 vqN
 vqN
 vqN
@@ -71208,13 +71241,13 @@ vqN
 vqN
 vqN
 vqN
-vqN
-vqN
-vqN
-vqN
-vqN
+nbC
 apC
 apC
+tJA
+vqN
+vqN
+vqN
 vqN
 vqN
 vqN
