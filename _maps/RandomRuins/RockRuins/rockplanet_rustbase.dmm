@@ -373,7 +373,6 @@
 /obj/item/clothing/suit/armor/ramzi/captain,
 /obj/item/clothing/under/syndicate/ramzi/officer,
 /obj/item/clothing/head/ramzi/beret,
-/obj/item/storage/guncase/pistol/a357,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/rust_base/dorms)
 "cq" = (
@@ -4069,8 +4068,7 @@
 	dir = 4
 	},
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun{
-	name = "'Armored' O. Ray";
-	weapon_drop_chance = 100
+	name = "'Armored' O. Ray"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/rust_base/armory)
@@ -6266,6 +6264,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/item/gun/ballistic/shotgun/gaboon/empty,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/rust_base/armory)
 "RV" = (

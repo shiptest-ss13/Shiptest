@@ -441,6 +441,8 @@
 		return TRUE
 
 /mob/living/proc/become_husk(source)
+	if(HAS_TRAIT(src, TRAIT_USE_PROSTHETIC))
+		return
 	if(!HAS_TRAIT(src, TRAIT_HUSK))
 		ADD_TRAIT(src, TRAIT_HUSK, source)
 		ADD_TRAIT(src, TRAIT_DISFIGURED, "husk")

@@ -43,7 +43,7 @@
 			new /obj/item/ammo_box/a357(src)
 			new /obj/item/card/emag(src)
 			new /obj/item/grenade/c4(src)
-			new /obj/item/clothing/gloves/color/latex/nitrile(src)
+			new /obj/item/clothing/gloves/nitrile/blue(src)
 			new /obj/item/clothing/under/suit/black_really(src)
 
 		if("screwed")
@@ -97,7 +97,7 @@
 			new /obj/item/gun/ballistic/automatic/marksman/taipan(src) // 12 tc
 			new /obj/item/ammo_box/magazine/sniper_rounds/penetrator(src)
 			new /obj/item/clothing/glasses/thermal/syndi(src)
-			new /obj/item/clothing/gloves/color/latex/nitrile(src)
+			new /obj/item/clothing/gloves/nitrile/blue(src)
 			new /obj/item/clothing/under/suit/black_really(src)
 
 		if("metaops")
@@ -194,14 +194,16 @@
 /obj/item/storage/box/syndicate/contract_kit
 	name = "Contract Kit"
 	desc = "Supplied to Syndicate contractors."
-	icon_state = "syndiebox"
-	illustration = "writing_syndie"
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
+	illustration = "writing_warning"
 
 /obj/item/storage/box/syndicate/contractor_loadout
 	name = "Standard Loadout"
 	desc = "Supplied to Syndicate contractors, providing their specialised space suit and chameleon uniform."
-	icon_state = "syndiebox"
-	illustration = "writing_syndie"
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
+	illustration = "writing_warning"
 
 /obj/item/paper/contractor_guide
 	name = "Contractor Guide"
@@ -259,8 +261,9 @@
 /obj/item/storage/box/syndie_kit
 	name = "box"
 	desc = "A sleek, sturdy box."
-	icon_state = "syndiebox"
-	illustration = "writing_syndie"
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
+	illustration = "writing_warning"
 
 /obj/item/storage/box/syndie_kit/origami_bundle
 	name = "origami kit"

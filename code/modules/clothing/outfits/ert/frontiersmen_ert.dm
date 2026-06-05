@@ -91,7 +91,7 @@
 	switch(extra_class)
 		if("Doctor")
 			backpack_contents += list(/obj/item/storage/firstaid/medical = 1)
-			gloves = /obj/item/clothing/gloves/color/latex
+			gloves = /obj/item/clothing/gloves/nitrile
 			suit = /obj/item/clothing/suit/frontiersmen
 			head = /obj/item/clothing/head/frontier
 			if(prob(50))
@@ -226,7 +226,7 @@
 	head = /obj/item/clothing/head/frontier
 	back = /obj/item/storage/backpack/medic
 	mask = /obj/item/clothing/mask/surgical
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	gloves = /obj/item/clothing/gloves/nitrile/blue
 	belt = /obj/item/storage/belt/medical/webbing/frontiersmen/surgery
 	suit = /obj/item/clothing/suit/frontiersmen
 	suit_store = null
