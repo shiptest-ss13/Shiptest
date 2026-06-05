@@ -21,6 +21,14 @@
 	color = WOOD_COLOR_GENERIC
 	flammability = 3
 
+/turf/open/floor/wood/break_tile()
+	broken = TRUE
+	update_appearance()
+
+/turf/open/floor/wood/burn_tile()
+	burnt = TRUE
+	update_appearance()
+
 /turf/open/floor/wood/beach
 	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 
