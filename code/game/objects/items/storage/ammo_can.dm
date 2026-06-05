@@ -223,3 +223,31 @@
 	current_skin = "8x58mm"
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/a858(src)
+
+/obj/item/storage/toolbox/ammo/ewc_5/PopulateContents()
+	name = "ammo can (EWC-5)"
+	icon_state = "ammobox_cell"
+	current_skin = "Cell"
+	for (var/i in 1 to 7)
+		new /obj/item/stock_parts/cell/gun/kalix(src)
+
+/obj/item/storage/toolbox/ammo/ewc_5/half/PopulateContents()
+	name = "ammo can (EWC-5)"
+	icon_state = "ammobox_cell"
+	current_skin = "Cell"
+	for (var/i in 1 to 4)
+		new /obj/item/stock_parts/cell/gun/kalix(src)
+
+/obj/item/storage/toolbox/ammo/ewc_6m/PopulateContents()
+	name = "ammo can (EWC-6m)"
+	icon_state = "ammobox_cell"
+	current_skin = "Cell"
+	for (var/i in 1 to 6)
+		new /obj/item/stock_parts/cell/gun/pgf(src)
+
+/obj/item/storage/toolbox/ammo/ewc_6m/half/PopulateContents()
+	name = "ammo can (EWC-6m)"
+	icon_state = "ammobox_cell"
+	current_skin = "Cell"
+	for (var/i in 1 to 4)
+		new /obj/item/stock_parts/cell/gun/pgf(src)
