@@ -6123,6 +6123,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom)
+"cjH" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/trap/ctf/blue,
+/turf/open/floor/concrete/slab_3,
+/area/ctf)
 "ckq" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -12632,11 +12642,8 @@
 /turf/open/floor/plasteel/white,
 /area/centcom/control)
 "lqu" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4
-	},
 /obj/structure/trap/ctf/red,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/plasteel/tech,
 /area/ctf)
 "lqO" = (
 /obj/structure/closet/secure_closet/security,
@@ -17877,6 +17884,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/control)
+"sGs" = (
+/obj/effect/turf_decal/industrial/traffic/fulltile,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ctf)
 "sHg" = (
 /obj/structure/table/wood,
 /obj/item/dice/d20{
@@ -18618,15 +18632,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
-"tAM" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_3,
-/area/ctf)
 "tBa" = (
 /obj/structure/table/wood,
 /obj/item/book/manual/srmlore{
@@ -19118,6 +19123,10 @@
 /obj/structure/shipping_container/white,
 /turf/open/floor/concrete/pavement,
 /area/ctf)
+"uvT" = (
+/obj/structure/trap/ctf/blue,
+/turf/open/floor/concrete,
+/area/ctf)
 "uwR" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/bag/tray{
@@ -19387,18 +19396,19 @@
 /obj/structure/chair/office/dark,
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom)
+"uOk" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/trap/ctf/red,
+/turf/open/floor/plasteel/tech,
+/area/ctf)
 "uQs" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
 /turf/open/floor/concrete,
-/area/ctf)
-"uQz" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/thinplating/dark,
-/turf/open/floor/concrete/slab_3,
 /area/ctf)
 "uRk" = (
 /obj/machinery/door/firedoor,
@@ -21048,11 +21058,12 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ctf)
 "xMr" = (
-/obj/machinery/door/airlock/hatch{
+/obj/effect/turf_decal/industrial/traffic{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/thinplating/dark,
 /obj/structure/trap/ctf/blue,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/concrete/slab_3,
 /area/ctf)
 "xMY" = (
 /obj/structure/chair/office,
@@ -53536,8 +53547,8 @@ vDm
 uVS
 kxV
 nrA
-tAM
-uQz
+snD
+fKi
 pgX
 kxV
 ydf
@@ -53793,12 +53804,12 @@ kgx
 uVS
 uVS
 uVS
+cjH
 xMr
-xMr
 uVS
 uVS
 uVS
-nKC
+sGs
 uVS
 uVS
 cwy
@@ -54055,7 +54066,7 @@ jHu
 mWb
 rAR
 uVS
-kgx
+uvT
 baf
 jCV
 cwy
@@ -77950,7 +77961,7 @@ kgx
 uVS
 uVS
 uVS
-bZY
+uOk
 uVS
 uVS
 uVS
