@@ -308,3 +308,7 @@
 		var/datum/reagent/R = reagent
 		list_reagents[R.type] = R.volume
 	return ..() + "list_reagents"
+
+/obj/item/reagent_containers/Destroy()
+	. = ..()
+	QDEL_NULL(mutable_appearance)
