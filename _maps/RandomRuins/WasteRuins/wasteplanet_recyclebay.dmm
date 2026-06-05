@@ -1493,7 +1493,10 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "kD" = (
 /obj/structure/table,
-/obj/item/storage/firstaid/tactical,
+/obj/item/storage/firstaid/advanced{
+	pixel_x = 3;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/wasteplanet/recycle_bay/eva)
 "kG" = (
@@ -4011,9 +4014,9 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/plasmacutter,
 /obj/item/plasmacutter,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
+/obj/item/clothing/gloves/insulated,
+/obj/item/clothing/gloves/insulated,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/eva)
 "BE" = (
@@ -5779,7 +5782,6 @@
 /obj/structure/closet/wall/med/directional/south,
 /obj/item/reagent_containers/syringe/contraband/morphine,
 /obj/item/reagent_containers/syringe/contraband/morphine,
-/obj/item/storage/firstaid/tactical,
 /obj/item/storage/firstaid/regular,
 /obj/item/clothing/neck/stethoscope,
 /turf/open/floor/plasteel/mono/white,

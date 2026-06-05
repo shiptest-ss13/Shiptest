@@ -28,7 +28,7 @@
 	///Do we 'selfloop' like the overmap? Probably should only enable this on space levels
 	var/selfloop = FALSE
 	///How much of a radio message we mess up on nearby or on landed/orbitting ships
-	var/interference_power = 0
+	var/interference_power = -15
 
 	///what kind of veins spawn on this planet? Mostly a holder for drill missions.
 	var/vein_type = null
@@ -45,7 +45,6 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
-	interference_power = 0
 
 	vein_type = /obj/structure/vein/lavaland
 
@@ -222,7 +221,6 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE
-	interference_power = 0
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/plasma,
@@ -315,6 +313,7 @@
 	planet = DYNAMIC_WORLD_MOON
 	icon_state = "moon"
 	color = "#d1c3c3"
+	interference_power = -5
 
 	mapgen = /datum/map_generator/planet_generator/moon
 	ruin_type = RUINTYPE_MOON

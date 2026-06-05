@@ -85,6 +85,9 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
+/obj/item/gun/energy/sharplite/x01/empty_cell
+	spawn_no_ammo = TRUE
+
 /obj/item/gun/energy/sharplite/x01/brazil
 	name = "modified antique laser gun"
 	desc = "It's somehow modified to have more firemodes."
