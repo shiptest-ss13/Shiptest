@@ -5549,16 +5549,27 @@
 /obj/structure/guncloset{
 	req_access = list(58)
 	},
-/obj/item/gun/ballistic/automatic/pistol/ringneck/indie,
-/obj/item/gun/ballistic/automatic/pistol/ringneck/indie,
-/obj/item/gun/energy/laser/e10,
-/obj/item/gun/ballistic/automatic/marksman/f4/indie,
-/obj/item/gun/ballistic/shotgun/flamingarrow/absolution,
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
 /obj/structure/sign/poster/contraband/m90{
 	pixel_y = 32
+	},
+/obj/item/gun/ballistic/automatic/pistol/ringneck/indie,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/indie{
+	pixel_y = -7
+	},
+/obj/item/gun/energy/laser/e10{
+	pixel_y = 2
+	},
+/obj/item/gun/ballistic/revolver/shadow{
+	pixel_y = -6
+	},
+/obj/item/gun/ballistic/automatic/marksman/f4/indie{
+	pixel_y = 4
+	},
+/obj/item/gun/ballistic/automatic/smg/cobra/indie{
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
@@ -8139,23 +8150,39 @@
 	req_access = null;
 	req_one_access = list(1,41)
 	},
-/obj/item/storage/box/ammo/a357,
-/obj/item/storage/box/ammo/a357,
-/obj/item/storage/box/ammo/a308,
-/obj/item/storage/box/ammo/a308,
-/obj/item/storage/toolbox/ammo/c10mm,
-/obj/item/ammo_box/magazine/f4_308,
-/obj/item/ammo_box/magazine/f4_308,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/light/directional/north,
+/obj/item/storage/toolbox/ammo/c45,
+/obj/item/storage/toolbox/ammo/c10mm{
+	pixel_y = -7
+	},
+/obj/item/storage/box/ammo/a308{
+	pixel_y = 4
+	},
+/obj/item/storage/box/ammo/a308{
+	pixel_y = -5
+	},
+/obj/item/storage/box/ammo/a357{
+	pixel_y = -8
+	},
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra{
+	pixel_y = -6
+	},
+/obj/item/ammo_box/magazine/f4_308{
+	pixel_x = 5
+	},
+/obj/item/ammo_box/magazine/f4_308{
+	pixel_x = -5
+	},
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/stock_parts/cell/gun/upgraded,
 /obj/item/stock_parts/cell/gun,
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "VE" = (
