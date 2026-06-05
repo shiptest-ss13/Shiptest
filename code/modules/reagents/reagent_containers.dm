@@ -311,4 +311,4 @@
 
 /obj/item/reagent_containers/Destroy()
 	. = ..()
-	QDEL_NULL(mutable_appearance)
+	QDEL_NULL(cap_overlay)
