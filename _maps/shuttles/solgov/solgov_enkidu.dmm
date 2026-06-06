@@ -84,19 +84,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
-"bB" = (
-/obj/structure/closet/crate/wooden,
-/obj/item/folder/solgov,
-/obj/item/folder/solgov,
-/obj/item/folder/solgov,
-/obj/item/storage/fancy/candle_box,
-/obj/item/storage/fancy/candle_box,
-/obj/item/storage/fancy/candle_box,
-/obj/item/paper_bin/bundlenatural,
-/obj/item/paper_bin/bundlenatural,
-/obj/item/paper_bin/bundlenatural,
-/turf/open/floor/plasteel/patterned,
-/area/ship/cargo)
 "bF" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/cryo)
@@ -276,7 +263,7 @@
 "dH" = (
 /obj/item/radio/intercom/directional/south,
 /turf/template_noop,
-/area/template_noop)
+/area/ship/external/dark)
 "dI" = (
 /obj/machinery/door/poddoor{
 	dir = 4;
@@ -478,7 +465,7 @@
 	pixel_y = 0
 	},
 /turf/template_noop,
-/area/template_noop)
+/area/ship/external/dark)
 "fI" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 5
@@ -676,9 +663,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -815,6 +800,14 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
+"il" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 2;
+	layer = 2.038
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plasteel/patterned,
+/area/ship/storage/eva)
 "io" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 10
@@ -894,6 +887,9 @@
 /obj/item/storage/toolbox/mechanical{
 	pixel_x = 0;
 	pixel_y = 4
+	},
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 30
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -1062,10 +1058,20 @@
 	pixel_x = 7;
 	pixel_y = 5
 	},
-/obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/structure/closet/secure_closet/wall/directional/west{
+	icon_state = "sec_wall";
+	name = "magazine locker";
+	pixel_x = 0;
+	pixel_y = -28;
+	dir = 2
+	},
+/obj/item/ammo_box/magazine/pistol556mm,
+/obj/item/ammo_box/magazine/pistol556mm,
+/obj/item/ammo_box/magazine/gar,
+/obj/item/ammo_box/magazine/gar,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "kN" = (
@@ -1389,6 +1395,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/storage/eva)
 "nw" = (
@@ -1406,6 +1415,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage/eva)
 "nK" = (
@@ -1483,6 +1495,10 @@
 /area/ship/maintenance/port)
 "oA" = (
 /obj/effect/turf_decal/techfloor,
+/obj/item/gun/ballistic/automatic/pistol/solgov{
+	pixel_x = -1;
+	pixel_y = 29
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "oB" = (
@@ -1858,8 +1874,7 @@
 "qZ" = (
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
-	name = "Engineering";
-	req_one_access_txt = list(11,48)
+	name = "Engineering"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -1904,6 +1919,19 @@
 /obj/structure/falsewall/titanium,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
+"rr" = (
+/obj/structure/closet/crate/wooden,
+/obj/item/folder/solgov,
+/obj/item/folder/solgov,
+/obj/item/folder/solgov,
+/obj/item/storage/fancy/candle_box,
+/obj/item/storage/fancy/candle_box,
+/obj/item/storage/fancy/candle_box,
+/obj/item/paper_bin/bundlenatural,
+/obj/item/paper_bin/bundlenatural,
+/obj/item/paper_bin/bundlenatural,
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "rw" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -1933,6 +1961,14 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
+"rJ" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 2;
+	layer = 2.038
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/plasteel/patterned,
+/area/ship/storage/eva)
 "rR" = (
 /obj/machinery/space_heater,
 /obj/effect/turf_decal/industrial/outline/yellow{
@@ -2090,6 +2126,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/storage/eva)
 "sJ" = (
@@ -2888,6 +2927,9 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "AD" = (
@@ -3009,6 +3051,20 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
+"Cx" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/solgovgold{
+	dir = 10
+	},
+/obj/effect/turf_decal/corner/opaque/solgovblue/border,
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crew/dorm/dormthree)
 "CD" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
@@ -3340,6 +3396,9 @@
 /obj/item/wrench{
 	pixel_x = -10;
 	pixel_y = 4
+	},
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 30
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/eva)
@@ -3935,8 +3994,7 @@
 "JC" = (
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
-	name = "Engine Room";
-	req_one_access_txt = list(11,48)
+	name = "Engine Room"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3994,8 +4052,7 @@
 "JQ" = (
 /obj/machinery/door/airlock/medical{
 	id_tag = "sg_par_surgery_one";
-	name = "Medbay";
-	req_one_access = list(5,69)
+	name = "Medbay"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -4066,18 +4123,6 @@
 /area/ship/bridge)
 "Ko" = (
 /obj/structure/rack,
-/obj/item/storage/box/ammo/ferroslug{
-	pixel_y = 7;
-	pixel_x = 0
-	},
-/obj/item/storage/box/ammo/ferroslug{
-	pixel_y = 7;
-	pixel_x = 0
-	},
-/obj/item/storage/box/ammo/ferroslug{
-	pixel_y = 7;
-	pixel_x = 0
-	},
 /obj/item/storage/box/ammo/ferropellet{
 	pixel_x = -6;
 	pixel_y = -5;
@@ -4111,6 +4156,18 @@
 /obj/machinery/firealarm/directional/north,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
+	},
+/obj/item/storage/box/ammo/ferrolance{
+	pixel_x = 0;
+	pixel_y = 3
+	},
+/obj/item/storage/box/ammo/ferrolance{
+	pixel_x = 0;
+	pixel_y = 3
+	},
+/obj/item/storage/box/ammo/ferrolance{
+	pixel_x = 0;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
@@ -4240,23 +4297,15 @@
 /area/ship/crew/dorm/dormthree)
 "Lt" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/powered/gauss/modelh{
-	pixel_x = 7;
-	pixel_y = -9
-	},
 /obj/item/gun/ballistic/automatic/powered/gauss/claris{
 	pixel_x = -12;
-	pixel_y = 9
-	},
-/obj/item/gun/ballistic/automatic/powered/gauss/claris{
-	pixel_x = -12;
-	pixel_y = 3
-	},
-/obj/item/gun/ballistic/automatic/pistol/solgov{
-	pixel_x = -4;
-	pixel_y = -8
+	pixel_y = -7
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/item/gun/ballistic/automatic/powered/gauss/gar{
+	pixel_x = -5;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "LW" = (
@@ -4376,13 +4425,6 @@
 "ML" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/dormtwo)
-"Nb" = (
-/obj/structure/sign/solgov_seal{
-	pixel_x = -1;
-	pixel_y = -1
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/medical)
 "Nc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -4670,6 +4712,9 @@
 /obj/item/storage/cans/sixbeer,
 /obj/effect/turf_decal/trimline/opaque/solgovblue/filled/line{
 	dir = 9
+	},
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 30
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -4994,6 +5039,24 @@
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage/eva)
+"SF" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/solgovgold{
+	dir = 10
+	},
+/obj/effect/turf_decal/corner/opaque/solgovblue/border,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/storage/eva)
 "SL" = (
 /obj/machinery/porta_turret/ship/solcon/lance{
 	id = "enkidu_grid"
@@ -5262,6 +5325,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 30
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Un" = (
@@ -5426,6 +5492,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "VA" = (
@@ -5494,6 +5561,13 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/storage/eva)
+"Yq" = (
+/obj/structure/sign/solgov_seal{
+	pixel_x = -1;
+	pixel_y = -1
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/medical)
 "Yu" = (
 /obj/machinery/autolathe,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -5884,7 +5958,7 @@ hl
 iy
 FA
 vK
-bB
+rr
 Ld
 iH
 ge
@@ -6037,7 +6111,7 @@ Uv
 "}
 (15,1,1) = {"
 Gk
-Nb
+Yq
 PT
 YL
 qH
@@ -6209,7 +6283,7 @@ jX
 jX
 Fk
 Bz
-sh
+rJ
 gU
 sE
 nB
@@ -6293,8 +6367,8 @@ Gk
 jX
 LW
 Hd
-sh
-zi
+il
+SF
 ut
 jX
 ok
@@ -6307,7 +6381,7 @@ Td
 Gk
 RQ
 jr
-bW
+Cx
 uK
 jr
 wB
