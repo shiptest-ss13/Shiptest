@@ -401,7 +401,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	ammo_type = /obj/item/ammo_casing/c22lr
 	caliber = "22lr"
 	max_ammo = 10
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
 /obj/item/ammo_box/magazine/m22lr_himehabu/empty
@@ -612,8 +612,8 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	manufacturer = MANUFACTURER_SCARBOROUGH
 	spread = -5
 	spread_unwielded = 35
-	recoil = 1
-	recoil_unwielded = 5
+	recoil = 2
+	recoil_unwielded = 10
 	wield_slowdown = LIGHT_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
@@ -1106,6 +1106,68 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 /obj/item/ammo_box/magazine/m12g_bulldog/drum/meteor
 	name = "shotgun drum magazine (12g meteor slugs)"
 	ammo_type = /obj/item/ammo_casing/shotgun/meteorslug
+
+/obj/item/gun/ballistic/shotgun/gaboon
+	name = "CSG-12 \"Gaboon\""
+	desc = "A compact pump-action shotgun designed by Scarborough Arms. One of their oldest designs still in circulation due to their appeal among those frequently operating in cramped spaces. Stripped down for maximum portability, the pump-action mechanism renders it wildly overshadowed by the Bulldog, its larger, modern sister. Chambered in 12g."
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+	icon_state = "gaboon"
+	item_state = "gaboon"
+
+	fire_sound = 'sound/weapons/gun/shotgun/brimstone.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/rack.ogg'
+
+	manufacturer = MANUFACTURER_SCARBOROUGH
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = list(
+	/obj/item/attachment/foldable_stock/gaboon
+	)
+
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/gaboon
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/gaboon,
+	)
+
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_NORMAL
+
+	fire_delay = 0.1 SECONDS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_STOCK = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 34,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 26,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 8,
+			"y" = 18,
+		)
+	)
+
+
+
+	default_attachments = list(/obj/item/attachment/foldable_stock/gaboon)
+	wield_slowdown = SMG_SLOWDOWN
+	spread = 8
+	spread_unwielded = 12
+
+	recoil = 3
+	recoil_unwielded = 6
+
+	wield_delay = 0.4 SECONDS
+
+EMPTY_GUN_HELPER(shotgun/gaboon)
 
 /obj/item/gun/ballistic/rocketlauncher/mako
 	name = "RR-86 \"Mako\""

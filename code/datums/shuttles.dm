@@ -476,6 +476,7 @@
 	file_name = "cybersun_bambulance"
 	name = "Gauze-class Ambulance Pod"
 	faction = /datum/faction/syndicate/cybersun
+	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 
 /datum/map_template/shuttle/subshuttles/thunder
@@ -517,3 +518,9 @@
 	name = "June-class Dropship"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/flail
+	file_name = "independent_flail"
+	name = "Flail-class Modified Boarder"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "ISV"

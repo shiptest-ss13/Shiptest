@@ -238,8 +238,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "dg" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
 /obj/structure/chair/bench/beige/directional/west{
@@ -555,8 +554,7 @@
 /area/ship/medical)
 "ff" = (
 /obj/structure/table/wood,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
 /obj/item/candle{
@@ -566,12 +564,10 @@
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
 "fi" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/corner/walnut{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/corner/walnut{
 	dir = 8
 	},
 /obj/structure/cable{
@@ -765,7 +761,7 @@
 /obj/item/clothing/suit/hooded/wintercoat/medical{
 	pixel_x = 8
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/clip,
+/obj/item/clothing/gloves/nitrile,
 /obj/item/storage/belt/medical,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
@@ -1063,8 +1059,7 @@
 /area/ship/crew)
 "iN" = (
 /obj/structure/chair/sofa/blue/right/directional/east,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/machinery/newscaster/directional/south,
@@ -1150,8 +1145,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/toilet)
 "jf" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 9
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -1322,8 +1316,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
 "kF" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 6
 	},
 /obj/machinery/washing_machine,
@@ -1416,8 +1409,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/engine)
 "mJ" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/structure/aquarium/prefilled,
@@ -1695,18 +1687,14 @@
 /area/ship/engineering/engine)
 "om" = (
 /obj/structure/table/wood,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/item/book/fish_catalog{
 	pixel_x = 7;
 	pixel_y = 3
 	},
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/ccommons)
 "oo" = (
@@ -2064,15 +2052,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "rm" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
 "rx" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 5
 	},
 /obj/item/kirbyplants{
@@ -2239,7 +2225,7 @@
 	},
 /obj/item/clothing/suit/hooded/wintercoat/engineering,
 /obj/item/clothing/gloves/long/black,
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_y = -4
 	},
 /obj/item/clothing/head/soft/utility_navy{
@@ -2533,8 +2519,7 @@
 	pixel_y = -32
 	},
 /obj/item/radio/intercom/directional/south,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/item/food/cheesynachos{
@@ -2786,8 +2771,7 @@
 /area/ship/bridge)
 "uY" = (
 /obj/structure/table/glass,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 8
 	},
 /obj/machinery/light/directional/east,
@@ -2963,8 +2947,7 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "wo" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/captains{
@@ -3772,7 +3755,7 @@
 	dir = 10
 	},
 /obj/item/clothing/suit/toggle/labcoat,
-/obj/item/clothing/gloves/color/latex/nitrile/clip{
+/obj/item/clothing/gloves/nitrile{
 	pixel_y = -5
 	},
 /obj/item/clothing/mask/gas,
@@ -3869,8 +3852,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "AX" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
 /obj/structure/dresser,
@@ -4040,8 +4022,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "CB" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -4220,8 +4201,7 @@
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/external/dark)
 "Ej" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/structure/chair/bench/beige/directional/east{
@@ -4527,9 +4507,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/blue{
 	dir = 1
 	},
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
@@ -5200,8 +5178,7 @@
 /area/ship/crew/office/lobby)
 "Nb" = (
 /obj/structure/chair/bench/beige/directional/north,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -5404,8 +5381,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "OI" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -5581,8 +5557,7 @@
 /area/ship/storage/equip)
 "Po" = (
 /obj/structure/chair/bench/beige/directional/west,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 8
 	},
 /obj/structure/sign/poster/pgf/corpsman{
@@ -5613,8 +5588,7 @@
 /area/ship/crew/ccommons)
 "Qh" = (
 /obj/structure/chair/bench/beige/directional/south,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 5
 	},
 /turf/open/floor/wood/birch,
@@ -5955,8 +5929,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engine)
 "SE" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 9
 	},
 /obj/structure/closet/wall/directional/west{
@@ -6060,10 +6033,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/structure/noticeboard/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office/lobby)
 "SU" = (
@@ -6123,9 +6093,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "TY" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/corner/walnut,
 /obj/item/kirbyplants{
 	icon_state = "plant-05";
 	pixel_x = -10
@@ -6223,8 +6191,7 @@
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/medical/surgery)
 "Vq" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /turf/open/floor/plasteel/sepia,
@@ -6269,8 +6236,7 @@
 /area/ship/crew/toilet)
 "VK" = (
 /obj/structure/chair/bench/beige/directional/west,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 8
 	},
 /obj/structure/sign/poster/official/moth/epi{
@@ -6490,8 +6456,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/external/dark)
 "WQ" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -6536,8 +6501,7 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Xf" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
 /obj/structure/bed/double{
@@ -6774,8 +6738,7 @@
 /area/ship/crew/office/lobby)
 "YJ" = (
 /obj/structure/chair/sofa/blue/corner/directional/east,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 8
 	},
 /obj/machinery/light_switch{

@@ -98,7 +98,7 @@
 	mask = /obj/item/clothing/mask/breath/ngr
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	glasses = /obj/item/clothing/glasses/hud/health
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	gloves = /obj/item/clothing/gloves/nitrile/evil
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/asp
 
 	l_pocket = /obj/item/radio

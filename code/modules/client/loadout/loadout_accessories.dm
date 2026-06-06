@@ -85,6 +85,10 @@
 	description = "Standard hand coverings for everyday use."
 	path = /obj/item/clothing/gloves/color/black
 
+/datum/gear/accessory/gloves/color
+	display_name = "gloves, recolorable"
+	path = /obj/item/clothing/gloves/color
+
 /datum/gear/accessory/gloves/long
 	display_name = "long gloves, colorable"
 	path = /obj/item/clothing/gloves/long
@@ -111,11 +115,6 @@
 	display_name = "gloves, fingerless"
 	description = "Radical hand coverings for everyday use."
 	path = /obj/item/clothing/gloves/fingerless
-
-/datum/gear/accessory/gloves/evening
-	display_name = "gloves, evening"
-	description = "Excessively fancy elbow-length gloves."
-	path = /obj/item/clothing/gloves/color/evening
 
 //Bone
 
