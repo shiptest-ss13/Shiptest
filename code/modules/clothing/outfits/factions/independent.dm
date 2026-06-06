@@ -734,6 +734,18 @@
 	gloves = /obj/item/clothing/gloves/fingerless
 	head = /obj/item/clothing/head/cowboy/sec
 
+/datum/outfit/job/independent/quartermaster/gown
+	name = "Independent - Quartermaster (Gown)"
+
+	ears = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	gloves = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	suit = null
+	dcoat = null
+	l_pocket = null
+	backpack_contents = null
+
 /datum/outfit/job/independent/miner
 	name = "Independent - Miner"
 	jobtype = /datum/job/mining
