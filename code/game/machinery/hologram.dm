@@ -87,10 +87,6 @@ Possible to do for anyone motivated enough:
 	/// The last holopad that called this one.
 	var/caller_history
 
-/obj/machinery/holopad/Initialize()
-	. = ..()
-	become_hearing_sensitive(ROUNDSTART_TRAIT)
-
 /obj/machinery/holopad/secure
 	name = "secure holopad"
 	desc = "It's a floor-mounted device for projecting holographic images. This one will refuse to auto-connect incoming calls."
@@ -138,8 +134,14 @@ Possible to do for anyone motivated enough:
 
 /obj/machinery/holopad/Initialize()
 	. = ..()
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 	if(on_network)
 		holopads += src
+
+/obj/machinery/holopad/examine(mob/user)
+	. = ..()
+	if(panel_open)
+		. += span_notice("You could use a multitool to alter the circuitry inside..")
 
 /obj/machinery/holopad/Destroy()
 	if(outgoing_call)
@@ -782,7 +784,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 /obj/effect/overlay/holo_pad_hologram/Process_Spacemove(movement_dir = 0)
 	return TRUE
 
-/obj/effect/overlay/holo_pad_hologram/examine(mob/user)
+/obj/effect/overlay/holo_pad_hologram/examine(mob/user)z
 	if(Impersonation && !HC.calling_holopad.secret_user)
 		return Impersonation.examine(user)
 	return ..()
