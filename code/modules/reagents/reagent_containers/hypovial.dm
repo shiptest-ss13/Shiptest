@@ -38,24 +38,26 @@
 
 /obj/item/reagent_containers/glass/bottle/vial/update_appearance()
 	cut_overlays()
-	if(reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "hypovial10")
+	if(!reagents || !reagents.total_volume)
+		return ..()
 
-		var/percent = round((reagents.total_volume / volume) * 100)
-		switch(percent)
-			if(0 to 9)
-				filling.icon_state = "hypovial10"
-			if(10 to 29)
-				filling.icon_state = "hypovial25"
-			if(30 to 49)
-				filling.icon_state = "hypovial50"
-			if(50 to 85)
-				filling.icon_state = "hypovial75"
-			if(86 to INFINITY)
-				filling.icon_state = "hypovial100"
+	var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "hypovial10")
 
-		filling.color = mix_color_from_reagents(reagents.reagent_list)
-		add_overlay(filling)
+	var/percent = round((reagents.total_volume / volume) * 100)
+	switch(percent)
+		if(0 to 9)
+			filling.icon_state = "hypovial10"
+		if(10 to 29)
+			filling.icon_state = "hypovial25"
+		if(30 to 49)
+			filling.icon_state = "hypovial50"
+		if(50 to 85)
+			filling.icon_state = "hypovial75"
+		if(86 to INFINITY)
+			filling.icon_state = "hypovial100"
+
+	filling.color = mix_color_from_reagents(reagents.reagent_list)
+	add_overlay(filling)
 	return ..()
 
 /obj/item/reagent_containers/glass/bottle/vial/tiny
@@ -93,6 +95,7 @@
 	)
 	unique_reskin_changes_name = TRUE
 
+//TODO: When you resprite this, make this code... less copy and pasted
 /obj/item/reagent_containers/glass/bottle/vial/large/update_appearance()
 	cut_overlays()
 	if(!reagents || !reagents.total_volume)
