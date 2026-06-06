@@ -7,6 +7,9 @@
 /obj/effect/turf_decal/trimline/opaque/solgovblue/warning{
 	dir = 8
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "an" = (
@@ -682,7 +685,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/firealarm/directional/north,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "gZ" = (
@@ -1290,6 +1293,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "mu" = (
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "mE" = (
@@ -3532,7 +3536,9 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/machinery/firealarm/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Gh" = (
@@ -4505,6 +4511,7 @@
 /obj/effect/turf_decal/trimline/opaque/solgovblue/warning{
 	dir = 8
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Pa" = (
@@ -5615,6 +5622,7 @@
 	pixel_y = -2;
 	pixel_x = -2
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Yy" = (
