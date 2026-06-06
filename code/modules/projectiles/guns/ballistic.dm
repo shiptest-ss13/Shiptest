@@ -336,6 +336,14 @@
 	. = ..() //The gun actually firing
 	postfire_empty_checks(.)
 
+// ejects the provided casing from the gun into the world
+/obj/item/gun/ballistic/proc/eject_casing(mob/user, obj/item/ammo_casing/casing)
+	casing.forceMove(drop_location())
+	var/angle_of_movement = (rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
+	casing.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing.bounce_sfx_override)
+	SSblackbox.record_feedback("tally", "station_mess_created", 1, casing.name)
+	return
+
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/ballistic/attack_hand(mob/user)
 	if(user.is_holding(src) && loc == user)
@@ -350,15 +358,8 @@
 			else
 				chambered = null
 			for(var/obj/item/ammo_casing/CB in get_ammo_list(count_chambered, TRUE))
-				if(QDELETED(CB))
-					continue
-				CB.forceMove(drop_location())
-
-				var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
-				CB.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = CB.bounce_sfx_override)
-
+				eject_casing(user, CB)
 				num_unloaded++
-				SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
 			if (num_unloaded)
 				to_chat(user, span_notice("You unload [num_unloaded] [cartridge_wording]\s from [src]."))
 				playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
