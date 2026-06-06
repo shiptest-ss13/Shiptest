@@ -5800,6 +5800,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
+"bMZ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/railing/thick/corner{
+	dir = 1
+	},
+/turf/open/floor/concrete,
+/area/ctf)
 "bNJ" = (
 /obj/effect/turf_decal/corner/opaque/red,
 /obj/effect/turf_decal/corner/opaque/red{
@@ -6736,6 +6745,12 @@
 "cVZ" = (
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/concrete,
+/area/ctf)
+"cWJ" = (
+/obj/structure/railing/thick/corner{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement,
 /area/ctf)
 "cWZ" = (
 /obj/machinery/light/directional/south,
@@ -10757,6 +10772,15 @@
 /obj/machinery/portable_atmospherics/canister/toxins,
 /turf/open/floor/plasteel/tech/grid,
 /area/ctf)
+"iFJ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/railing/thick{
+	dir = 1
+	},
+/turf/open/floor/concrete,
+/area/ctf)
 "iHS" = (
 /obj/structure/chair{
 	dir = 1
@@ -11989,6 +12013,16 @@
 /area/centcom)
 "koy" = (
 /obj/structure/shipping_container/lime,
+/turf/open/floor/concrete,
+/area/ctf)
+"kpr" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/deployable_turret/spotlight,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/concrete,
 /area/ctf)
 "kpC" = (
@@ -13998,6 +14032,10 @@
 	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ctf)
+"mZC" = (
+/obj/effect/turf_decal/road/stripes,
+/turf/open/floor/concrete/slab_3,
+/area/ctf)
 "naB" = (
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 5
@@ -14533,7 +14571,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/concrete,
+/turf/open/floor/concrete/slab_3,
 /area/ctf)
 "nVK" = (
 /obj/effect/turf_decal/road/stripes,
@@ -14823,10 +14861,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
-"oon" = (
-/obj/effect/turf_decal/road/stripes,
-/turf/open/floor/concrete,
-/area/ctf)
 "oox" = (
 /obj/effect/turf_decal/industrial/outline/blue,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -19883,6 +19917,10 @@
 	},
 /turf/open/floor/engine,
 /area/ctf)
+"vuo" = (
+/obj/structure/railing/thick/corner,
+/turf/open/floor/concrete/pavement,
+/area/ctf)
 "vuT" = (
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -20478,6 +20516,15 @@
 	planetary_atmos = 0
 	},
 /area/errorroom)
+"wsg" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/railing/thick/corner{
+	dir = 4
+	},
+/turf/open/floor/concrete,
+/area/ctf)
 "wsi" = (
 /obj/structure/chair/stool{
 	dir = 4
@@ -20788,6 +20835,11 @@
 /obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"wWg" = (
+/obj/structure/railing/thick,
+/obj/item/paper,
+/turf/open/floor/concrete,
+/area/ctf)
 "wWu" = (
 /obj/effect/turf_decal/road/line,
 /obj/structure/closet/crate/wooden,
@@ -54170,7 +54222,7 @@ kgx
 kgx
 kgx
 tGe
-kgx
+buZ
 kgx
 kgx
 kgx
@@ -54427,7 +54479,7 @@ kgx
 kgx
 kgx
 cVe
-kgx
+buZ
 kgx
 kgx
 kgx
@@ -54704,7 +54756,7 @@ cwy
 cwy
 kbm
 kgx
-mnP
+wsg
 lhk
 gJq
 aaa
@@ -54959,9 +55011,9 @@ kAc
 cwy
 bgJ
 mIg
-kbm
-kgx
-mnP
+cWJ
+mZm
+iFJ
 lhk
 gJq
 aaa
@@ -55216,9 +55268,9 @@ kAc
 cwy
 bgJ
 mIg
-kbm
-kgx
-mnP
+vuo
+rrk
+iFJ
 lhk
 gJq
 aaa
@@ -55474,8 +55526,8 @@ cwy
 bgJ
 mIg
 kbm
-kgx
-mnP
+buZ
+bMZ
 lhk
 gJq
 aaa
@@ -55731,8 +55783,8 @@ cwy
 cwy
 cwy
 kbm
-kgx
-mnP
+buZ
+wsg
 lhk
 gJq
 aaa
@@ -55987,9 +56039,9 @@ kAc
 cwy
 cwy
 cwy
-kbm
-kgx
-mnP
+cWJ
+iqB
+iFJ
 lhk
 gJq
 aaa
@@ -56244,9 +56296,9 @@ kAc
 cwy
 bgJ
 mIg
-kbm
-kgx
-mnP
+vuo
+ugz
+iFJ
 lhk
 gJq
 aaa
@@ -56503,7 +56555,7 @@ bgJ
 mIg
 kbm
 kgx
-mnP
+bMZ
 lhk
 gJq
 aaa
@@ -59073,7 +59125,7 @@ bgJ
 mIg
 kbm
 kgx
-tmc
+mnP
 lhk
 gJq
 aaa
@@ -59330,7 +59382,7 @@ bgJ
 mIg
 kbm
 kgx
-mnP
+kpr
 lhk
 gJq
 aaa
@@ -59579,8 +59631,8 @@ mIg
 cwy
 kbz
 kgx
-jIZ
-jIZ
+kgx
+kgx
 vVT
 cwy
 vtF
@@ -60352,7 +60404,7 @@ kbz
 kgx
 kgx
 kgx
-tGe
+wWg
 cwy
 bgJ
 mIg
@@ -60858,12 +60910,12 @@ jIZ
 fCQ
 jIZ
 jIZ
-jIZ
-jIZ
-jIZ
-jIZ
-jIZ
-jIZ
+kgx
+kgx
+kgx
+kgx
+kgx
+kgx
 kgx
 tVw
 tGe
@@ -60872,7 +60924,7 @@ bgJ
 mIg
 kbm
 kgx
-mnP
+kpr
 lhk
 gJq
 aaa
@@ -61127,9 +61179,9 @@ tGe
 cwy
 oeK
 cwy
-kbm
+vSi
 kgx
-tmc
+wsg
 lhk
 gJq
 aaa
@@ -61384,9 +61436,9 @@ tGe
 cwy
 rOG
 cwy
-vSi
-kgx
-mnP
+cWJ
+mZm
+iFJ
 lhk
 gJq
 aaa
@@ -61641,9 +61693,9 @@ tGe
 cwy
 bgJ
 mIg
-kbm
-kgx
-mnP
+vuo
+rrk
+iFJ
 lhk
 gJq
 aaa
@@ -61899,8 +61951,8 @@ cwy
 bgJ
 mIg
 kbm
-kgx
-mnP
+buZ
+bMZ
 lhk
 gJq
 aaa
@@ -62151,13 +62203,13 @@ qBM
 vaE
 kgx
 kgx
-tGe
+wWg
 cwy
 bgJ
 mIg
 kbm
-kgx
-mnP
+buZ
+wsg
 lhk
 gJq
 aaa
@@ -62408,13 +62460,13 @@ iJP
 kep
 kgx
 kgx
-tGe
+mZC
 cwy
 cwy
 jhu
-kbm
-kgx
-mnP
+cWJ
+iqB
+iFJ
 lhk
 gJq
 aaa
@@ -62665,13 +62717,13 @@ qBM
 vaE
 kgx
 kgx
-tGe
+mZC
 cwy
 cwy
 cwy
-kbm
-kgx
-mnP
+vuo
+ugz
+iFJ
 lhk
 gJq
 aaa
@@ -62928,7 +62980,7 @@ mEG
 mIg
 kbm
 kgx
-mnP
+bMZ
 kgx
 gJq
 aaa
@@ -64727,7 +64779,7 @@ pdc
 mIg
 kbm
 kgx
-mnP
+wsg
 kgx
 gJq
 aaa
@@ -64982,9 +65034,9 @@ buZ
 cwy
 cwy
 cwy
-kbm
-kgx
-mnP
+cWJ
+mZm
+iFJ
 lhk
 gJq
 aaa
@@ -65239,9 +65291,9 @@ buZ
 cwy
 cwy
 cwy
-vSi
-kgx
-mnP
+vuo
+rrk
+iFJ
 lhk
 gJq
 aaa
@@ -65497,8 +65549,8 @@ cwy
 bgJ
 mIg
 kbm
-kgx
-mnP
+buZ
+bMZ
 lhk
 gJq
 aaa
@@ -65754,8 +65806,8 @@ cwy
 bgJ
 mIg
 kbm
-kgx
-mnP
+buZ
+wsg
 lhk
 gJq
 aaa
@@ -66010,9 +66062,9 @@ tGe
 gJk
 bgJ
 mIg
-kbm
-kgx
-mnP
+cWJ
+iqB
+iFJ
 lhk
 gJq
 aaa
@@ -66267,9 +66319,9 @@ tGe
 cwy
 cwy
 cwy
-kbm
-kgx
-mnP
+vuo
+ugz
+iFJ
 lhk
 gJq
 aaa
@@ -66526,7 +66578,7 @@ cwy
 cwy
 kbm
 kgx
-mnP
+bMZ
 lhk
 gJq
 aaa
@@ -68319,7 +68371,7 @@ vNq
 agX
 exh
 evl
-tGe
+wWg
 cwy
 bgJ
 mIg
@@ -68576,7 +68628,7 @@ vNq
 agX
 exh
 kgx
-tGe
+mZC
 cwy
 bgJ
 mIg
@@ -68833,7 +68885,7 @@ vNq
 gmb
 uVS
 mjL
-tGe
+mZC
 cwy
 cwy
 nQy
@@ -70106,9 +70158,9 @@ uDn
 cwy
 jYv
 iEs
-jAF
-jAF
-jAF
+qmF
+qmF
+qmF
 iEs
 cwy
 cwy
@@ -70124,7 +70176,7 @@ cwy
 cwy
 kbm
 kgx
-mnP
+wsg
 lhk
 gJq
 aaa
@@ -70379,9 +70431,9 @@ cwy
 cwy
 cwy
 cwy
-kbm
-kgx
-mnP
+cWJ
+mZm
+iFJ
 hSq
 gJq
 aaa
@@ -70636,9 +70688,9 @@ cwy
 cwy
 bgJ
 mIg
-kbm
-kgx
-mnP
+vuo
+rrk
+iFJ
 lhk
 gJq
 aaa
@@ -70894,8 +70946,8 @@ cwy
 bgJ
 mIg
 kbm
-kgx
-mnP
+buZ
+bMZ
 lhk
 gJq
 aaa
@@ -71151,8 +71203,8 @@ cwy
 bgJ
 mIg
 kbm
-kgx
-mnP
+buZ
+wsg
 lhk
 gJq
 aaa
@@ -71407,9 +71459,9 @@ tGe
 cwy
 cwy
 cwy
-kbm
-kgx
-mnP
+cWJ
+iqB
+iFJ
 lhk
 gJq
 aaa
@@ -71664,9 +71716,9 @@ tGe
 cwy
 jPH
 mjc
-kbm
-kgx
-tmc
+vuo
+ugz
+iFJ
 lhk
 gJq
 aaa
@@ -71917,13 +71969,13 @@ kgx
 kgx
 kgx
 kgx
-tGe
+wWg
 cwy
 bgJ
 mIg
 kbm
 kgx
-mnP
+bMZ
 lhk
 gJq
 aaa
@@ -72174,7 +72226,7 @@ kgx
 kgx
 kgx
 twx
-tGe
+mZC
 cwy
 bgJ
 mIg
@@ -72431,7 +72483,7 @@ kgx
 kgx
 kgx
 kgx
-tGe
+mZC
 cwy
 bgJ
 jai
@@ -73190,7 +73242,7 @@ eIY
 kgx
 kgx
 tGe
-kgx
+buZ
 pFW
 kgx
 nVi
@@ -73447,7 +73499,7 @@ kgx
 kgx
 kgx
 tGe
-kgx
+buZ
 kgx
 kgx
 kgx
@@ -74742,9 +74794,9 @@ lff
 aok
 lff
 hwY
-kgx
-kgx
-oon
+buZ
+buZ
+mZC
 cwy
 bgJ
 mIg
@@ -74999,8 +75051,8 @@ eNf
 eNf
 eNf
 trz
-fsu
-fsu
+dFE
+dFE
 nVF
 kIE
 eCS
@@ -75256,9 +75308,9 @@ qMQ
 mSc
 orD
 hwY
-kgx
-kgx
-oon
+buZ
+buZ
+mZC
 cwy
 cwy
 cwy
