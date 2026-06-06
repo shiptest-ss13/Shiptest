@@ -783,8 +783,13 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	return TRUE
 
 /obj/effect/overlay/holo_pad_hologram/examine(mob/user)
-	if(Impersonation)
+	if(Impersonation && !HC.calling_holopad.secret_user)
 		return Impersonation.examine(user)
+	return ..()
+
+/obj/effect/overlay/holo_pad_hologram/examine_more(mob/user)
+	if(Impersonation && !HC.calling_holopad.secret_user)
+		return Impersonation.examine_more(user)
 	return ..()
 
 /obj/effect/overlay/holoray
