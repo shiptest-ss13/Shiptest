@@ -1679,16 +1679,16 @@
 /area/ship/crew/dorm/captain)
 "jQ" = (
 /obj/effect/turf_decal/industrial/traffic/fulltile,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 1;
-	id = "goliathholohangar2"
-	},
 /obj/machinery/door/poddoor{
 	dir = 8;
 	id = "goliathblasthangar2"
 	},
 /obj/structure/cable{
 	icon_state = "0-10"
+	},
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart{
+	dir = 1;
+	id = "goliathholohangar2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hangar)
@@ -4079,15 +4079,16 @@
 /area/ship/hangar)
 "wM" = (
 /obj/effect/turf_decal/industrial/traffic/fulltile,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "goliathholohangar2"
-	},
 /obj/machinery/door/poddoor{
 	dir = 8;
 	id = "goliathblasthangar2"
 	},
 /obj/structure/cable{
 	icon_state = "0-9"
+	},
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart{
+	dir = 2;
+	id = "goliathholohangar2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hangar)
