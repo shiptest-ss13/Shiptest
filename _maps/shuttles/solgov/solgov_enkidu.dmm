@@ -84,6 +84,19 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
+"bB" = (
+/obj/structure/closet/crate/wooden,
+/obj/item/folder/solgov,
+/obj/item/folder/solgov,
+/obj/item/folder/solgov,
+/obj/item/storage/fancy/candle_box,
+/obj/item/storage/fancy/candle_box,
+/obj/item/storage/fancy/candle_box,
+/obj/item/paper_bin/bundlenatural,
+/obj/item/paper_bin/bundlenatural,
+/obj/item/paper_bin/bundlenatural,
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "bF" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/cryo)
@@ -953,19 +966,6 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
-"jB" = (
-/obj/structure/closet/crate/wooden,
-/obj/item/folder/solgov,
-/obj/item/folder/solgov,
-/obj/item/folder/solgov,
-/obj/item/storage/fancy/candle_box,
-/obj/item/storage/fancy/candle_box,
-/obj/item/storage/fancy/candle_box,
-/obj/item/paper_bin/bundlenatural,
-/obj/item/paper_bin/bundlenatural,
-/obj/item/paper_bin/bundlenatural,
-/turf/open/floor/plasteel/patterned,
-/area/ship/cargo)
 "jC" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/neck/stripedsolgovscarf,
@@ -1040,7 +1040,13 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/storage/eva)
 "ks" = (
-/obj/docking_port/stationary,
+/obj/docking_port/stationary{
+	dheight = 1;
+	dwidth = 20;
+	height = 30;
+	width = 40;
+	name = "Enkidu Dock"
+	},
 /turf/template_noop,
 /area/template_noop)
 "kv" = (
@@ -1152,10 +1158,6 @@
 "lC" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 10
-	},
-/obj/machinery/power/smes/engineering,
-/obj/structure/cable{
-	icon_state = "0-1"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/port)
@@ -1331,15 +1333,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/light/small/directional/east,
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 20;
-	pixel_y = -10
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/machinery/advanced_airlock_controller/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/eva)
 "nd" = (
@@ -1370,9 +1367,6 @@
 	},
 /obj/structure/closet/crate/radiation{
 	name = "fuel crate"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1481,13 +1475,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/port)
 "oA" = (
@@ -1756,6 +1747,12 @@
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 8
+	},
+/obj/machinery/light/small/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -19;
+	pixel_y = -12
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/eva)
@@ -2095,13 +2092,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/white,
 /area/ship/storage/eva)
-"sF" = (
-/obj/structure/sign/solgov_seal{
-	pixel_x = -1;
-	pixel_y = -1
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/medical)
 "sJ" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30"
@@ -2287,11 +2277,11 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/maintenance/starboard)
 "uH" = (
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/docking_port/mobile{
 	dir = 2;
 	port_direction = 8;
-	preferred_direction = 4
+	preferred_direction = 4;
+	launch_status = 0
 	},
 /obj/machinery/door/airlock/external,
 /obj/effect/turf_decal/industrial/warning{
@@ -3208,8 +3198,7 @@
 	pixel_x = 20;
 	pixel_y = -12
 	},
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/yellow{
+/obj/structure/cable{
 	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -3492,7 +3481,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/machinery/advanced_airlock_controller/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/eva)
 "Gk" = (
@@ -4388,6 +4376,13 @@
 "ML" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/dormtwo)
+"Nb" = (
+/obj/structure/sign/solgov_seal{
+	pixel_x = -1;
+	pixel_y = -1
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/medical)
 "Nc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -5889,7 +5884,7 @@ hl
 iy
 FA
 vK
-jB
+bB
 Ld
 iH
 ge
@@ -6042,7 +6037,7 @@ Uv
 "}
 (15,1,1) = {"
 Gk
-sF
+Nb
 PT
 YL
 qH
@@ -6069,7 +6064,7 @@ bF
 bF
 "}
 (16,1,1) = {"
-dH
+Gk
 PT
 PT
 PT
@@ -6153,8 +6148,8 @@ jr
 jr
 "}
 (19,1,1) = {"
-Gk
-kp
+dH
+jX
 jX
 jX
 jX
@@ -6182,7 +6177,7 @@ vf
 "}
 (20,1,1) = {"
 Gk
-jX
+kp
 jX
 em
 tO
