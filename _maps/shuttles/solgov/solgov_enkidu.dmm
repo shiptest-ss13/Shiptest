@@ -1023,12 +1023,61 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/storage/eva)
 "kf" = (
-/obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/techfloor{
 	dir = 10;
 	layer = 2.038
 	},
 /obj/machinery/light/dim/directional/west,
+/obj/structure/closet/secure_closet/wall/directional/west{
+	icon_state = "sec_wall";
+	name = "equipment locker";
+	pixel_x = -28;
+	pixel_y = 0
+	},
+/obj/item/radio{
+	icon_state = "sec_radio"
+	},
+/obj/item/radio{
+	icon_state = "sec_radio"
+	},
+/obj/item/radio{
+	icon_state = "sec_radio"
+	},
+/obj/item/storage/box/flares{
+	pixel_x = 1;
+	pixel_y = 11
+	},
+/obj/item/gps{
+	pixel_y = 0
+	},
+/obj/item/storage/box/flares{
+	pixel_x = 8;
+	pixel_y = 11
+	},
+/obj/item/storage/box/flares{
+	pixel_x = -7;
+	pixel_y = 11
+	},
+/obj/item/binoculars,
+/obj/item/gps{
+	pixel_x = -9;
+	pixel_y = 0
+	},
+/obj/item/gps{
+	pixel_y = 0;
+	pixel_x = 9
+	},
+/obj/item/storage/pouch/medical{
+	pixel_y = -10
+	},
+/obj/item/storage/pouch/medical{
+	pixel_y = -10;
+	pixel_x = -7
+	},
+/obj/item/storage/pouch/medical{
+	pixel_y = -10;
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "kp" = (
@@ -1064,17 +1113,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/wall/directional/west{
-	icon_state = "sec_wall";
-	name = "magazine locker";
-	pixel_x = 0;
-	pixel_y = -28;
-	dir = 2
-	},
-/obj/item/ammo_box/magazine/pistol556mm,
-/obj/item/ammo_box/magazine/pistol556mm,
-/obj/item/ammo_box/magazine/gar,
-/obj/item/ammo_box/magazine/gar,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "kN" = (
@@ -4175,6 +4213,10 @@
 	pixel_x = 0;
 	pixel_y = 3
 	},
+/obj/item/ammo_box/magazine/gar,
+/obj/item/ammo_box/magazine/gar,
+/obj/item/ammo_box/magazine/pistol556mm,
+/obj/item/ammo_box/magazine/pistol556mm,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "Kq" = (
@@ -5482,56 +5524,6 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/structure/closet/secure_closet/wall/directional/west{
-	icon_state = "sec_wall";
-	name = "equipment locker";
-	pixel_x = -28;
-	pixel_y = 0
-	},
-/obj/item/storage/pouch/medical{
-	pixel_y = -10;
-	pixel_x = -7
-	},
-/obj/item/storage/pouch/medical{
-	pixel_y = -10;
-	pixel_x = 7
-	},
-/obj/item/storage/pouch/medical{
-	pixel_y = -10
-	},
-/obj/item/storage/box/flares{
-	pixel_x = -7;
-	pixel_y = 11
-	},
-/obj/item/storage/box/flares{
-	pixel_x = 8;
-	pixel_y = 11
-	},
-/obj/item/storage/box/flares{
-	pixel_x = 1;
-	pixel_y = 11
-	},
-/obj/item/gps{
-	pixel_x = -9;
-	pixel_y = 0
-	},
-/obj/item/gps{
-	pixel_y = 0
-	},
-/obj/item/gps{
-	pixel_y = 0;
-	pixel_x = 9
-	},
-/obj/item/binoculars,
-/obj/item/radio{
-	icon_state = "sec_radio"
-	},
-/obj/item/radio{
-	icon_state = "sec_radio"
-	},
-/obj/item/radio{
-	icon_state = "sec_radio"
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
@@ -5602,6 +5594,7 @@
 /obj/effect/turf_decal/corner/opaque/solgovblue/bordercorner{
 	dir = 1
 	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/white,
 /area/ship/storage/eva)
 "Yq" = (
