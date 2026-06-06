@@ -175,7 +175,8 @@
 /area/ship/bridge)
 "ow" = (
 /obj/machinery/power/smes/shuttle/micro/precharged{
-	dir = 8
+	dir = 8;
+	density = 1
 	},
 /obj/structure/cable{
 	icon_state = "0-4"

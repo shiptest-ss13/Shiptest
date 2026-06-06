@@ -728,6 +728,7 @@
 	},
 /obj/item/storage/pouch/squad,
 /obj/machinery/airalarm/directional/west,
+/obj/item/radio/headset/headset_com/alt,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
 "en" = (
@@ -2994,6 +2995,8 @@
 	},
 /obj/item/melee/knife/survival,
 /obj/item/melee/knife/survival,
+/obj/item/radio/headset/alt,
+/obj/item/radio/headset/alt,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "qX" = (
@@ -5871,6 +5874,7 @@
 /obj/item/storage/pouch/squad,
 /obj/item/radio/command,
 /obj/machinery/airalarm/directional/west,
+/obj/item/radio/headset/headset_com/alt,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
 "FZ" = (
@@ -6241,6 +6245,14 @@
 /obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30"
+	},
+/obj/item/paper_bin{
+	pixel_x = -4;
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_x = -5;
+	pixel_y = 6
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/office)
@@ -6659,6 +6671,35 @@
 	dir = 1
 	},
 /obj/machinery/computer/cryopod/directional/south,
+/obj/structure/rack,
+/obj/item/radio/headset{
+	pixel_y = 4;
+	pixel_x = -7
+	},
+/obj/item/radio/headset{
+	pixel_y = 4;
+	pixel_x = -1
+	},
+/obj/item/radio/headset{
+	pixel_y = 4;
+	pixel_x = 5
+	},
+/obj/item/radio/headset{
+	pixel_y = 4;
+	pixel_x = 11
+	},
+/obj/item/radio/headset{
+	pixel_y = -3;
+	pixel_x = -4
+	},
+/obj/item/radio/headset{
+	pixel_y = -3;
+	pixel_x = 2
+	},
+/obj/item/radio/headset{
+	pixel_y = -3;
+	pixel_x = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "Mx" = (
@@ -7892,6 +7933,7 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30"
 	},
+/obj/item/radio/headset/headset_com/alt,
 /turf/open/floor/carpet/green,
 /area/ship/crew/office)
 "Uc" = (
