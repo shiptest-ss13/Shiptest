@@ -4,4 +4,8 @@
  * @license MIT
  */
 
+/**
+ * @param {object} state
+ * @returns {any}
+ */
 export const selectPing = (state) => state.ping;
