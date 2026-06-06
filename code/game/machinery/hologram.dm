@@ -226,7 +226,7 @@ Possible to do for anyone motivated enough:
 		if(do_after(user, 10 SECONDS, src, extra_checks = CALLBACK(src, PROC_REF(holopad_hack), user,  panel_open, anchored)))
 			var/list/choices = list(
 				"Location Tag" = image(icon = 'icons/effects/radial_holopad.dmi', icon_state = "location[secret_pad]"),
-				"Answering Mechanism" = image(icon= 'icons/effects/radial_holopad.dmi', icon_state = "secure[force_answer_call]"),
+				"Answering Mechanism" = image(icon= 'icons/effects/radial_holopad.dmi', icon_state = "force[force_answer_call]"),
 				"Scanner" = image(icon = 'icons/effects/radial_holopad.dmi', icon_state = "secret[secret_user]"),
 				"CommNet Connection" = image(icon = 'icons/effects/radial_holopad.dmi', icon_state = "secure[secure]"),
 			)
