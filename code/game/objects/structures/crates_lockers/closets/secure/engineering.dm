@@ -13,7 +13,7 @@
 	new /obj/item/clothing/under/rank/engineering/chief_engineer/skirt(src)
 	new /obj/item/clothing/head/hardhat/white(src)
 	new /obj/item/clothing/head/hardhat/weldhat/white(src)
-	new /obj/item/clothing/gloves/color/yellow(src)
+	new /obj/item/clothing/gloves/insulated(src)
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 	new /obj/item/tank/jetpack/suit(src)
 	new /obj/item/cartridge/ce(src)
@@ -38,7 +38,7 @@
 	..()
 	var/static/items_inside = list(
 		/obj/item/stack/tape/industrial/electrical = 1, // Better tape
-		/obj/item/clothing/gloves/color/yellow = 2,
+		/obj/item/clothing/gloves/insulated = 2,
 		/obj/item/storage/toolbox/electrical = 3,
 		/obj/item/electronics/apc = 3,
 		/obj/item/multitool = 3,
