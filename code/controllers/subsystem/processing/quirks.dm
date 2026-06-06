@@ -29,7 +29,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("Alcohol Tolerance","Light Drinker"),
 		list("Bad Touch", "Friendly"),
 		list("Self-Aware", "Congenital Analgesia"),
-		list("Trilingual", "Monolingual"),
+		list("Trilingual", "Monolingual", "Polyglot"),
 	)
 
 	species_blacklist = list(
