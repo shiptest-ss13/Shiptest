@@ -79,11 +79,13 @@ Possible to do for anyone motivated enough:
 	/// If we are currently calling another holopad
 	var/calling = FALSE
 	///If this pad has been overriden to hide the call location
-	var/secret_pad = FALSE
+	var/hidden_pad = FALSE
 	///If this pad has been overriden to hide the user
 	var/secret_user = FALSE
-	///the name we use when our location is overriden (usually by secret_pad)
+	///the name we use when our location is overriden (usually by hidden_pad)
 	var/name_override
+	///does this pad get broadcast globally at all?
+	var/secret_pad = FALSE
 	/// The last holopad that called this one.
 	var/caller_history
 
@@ -225,20 +227,20 @@ Possible to do for anyone motivated enough:
 		playsound(src, 'sound/items/equip/toolbelt_equip.ogg', 25)
 		if(do_after(user, 10 SECONDS, src, extra_checks = CALLBACK(src, PROC_REF(holopad_hack), user,  panel_open, anchored)))
 			var/list/choices = list(
-				"Location Tag" = image(icon = 'icons/effects/radial_holopad.dmi', icon_state = "location[secret_pad]"),
+				"Location Tag" = image(icon = 'icons/effects/radial_holopad.dmi', icon_state = "location[hidden_pad]"),
 				"Answering Mechanism" = image(icon= 'icons/effects/radial_holopad.dmi', icon_state = "force[force_answer_call]"),
 				"Scanner" = image(icon = 'icons/effects/radial_holopad.dmi', icon_state = "secret[secret_user]"),
-				"CommNet Connection" = image(icon = 'icons/effects/radial_holopad.dmi', icon_state = "secure[secure]"),
+				"CommNet Publicity" = image(icon = 'icons/effects/radial_holopad.dmi', icon_state = "secure[secret_pad]"),
 			)
 			var/hack_choice = show_radial_menu(user, src, choices)
 			switch(hack_choice)
 				if("Location Tag")
-					to_chat(user, span_warning("You [secret_pad ? "reset" : "short"] the location circuit in [src]!"))
-					if(secret_pad)
+					to_chat(user, span_warning("You [hidden_pad ? "reset" : "short"] the location circuit in [src]!"))
+					if(hidden_pad)
 						name_override = 0
 					else
 						name_override = random_string(7, list("#","@","!","G","N","O","M","E","*","0","S","T","V","&","^","*","=","+","-","!"))
-					secret_pad = !secret_pad
+					hidden_pad = !hidden_pad
 
 				if("Answering Mechanism")
 					to_chat(user, span_warning("You [force_answer_call ? "disable" : "enable"] the auto-answerer circuit in [src]!"))
@@ -246,9 +248,9 @@ Possible to do for anyone motivated enough:
 				if("Scanner")
 					to_chat(user, span_warning("You [secret_user ? "reset" : "blur"] the [src]'s camera!"))
 					secret_user = !secret_user
-				if("CommNet Connection")
-					to_chat(user, span_warning("You [secret_user ? "disable" : "enable"] [src]'s publicity!"))
-					secure = !secure
+				if("CommNet Publicity")
+					to_chat(user, span_warning("You [secret_pad ? "disable" : "enable"] [src]'s publicity!"))
+					secret_pad = !secret_pad
 		return TRUE
 
 
@@ -258,6 +260,7 @@ Possible to do for anyone motivated enough:
 	if(SPT_PROB(5, 1))
 		//wear your gloves kids
 		electrocute_mob(user, get_area(src), src, dist_check = TRUE)
+		do_sparks(3, 0, src)
 	return TRUE
 
 /obj/machinery/holopad/ui_status(mob/user)
@@ -322,7 +325,7 @@ Possible to do for anyone motivated enough:
 				for(var/obj/machinery/holopad/pad as anything in holopads)
 					if(pad == src)
 						continue
-					if (pad.is_operational && !pad.secure)
+					if (pad.is_operational && !pad.secret_pad)
 						if(pad.name_override)
 							LAZYADD(callnames[ref(pad.name_override)], pad)
 						else
