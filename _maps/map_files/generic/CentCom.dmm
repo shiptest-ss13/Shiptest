@@ -268,6 +268,14 @@
 /obj/structure/sign/warning/vacuum/external,
 /turf/open/floor/plating,
 /area/centcom/supply)
+"ajw" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/ctf)
 "ajA" = (
 /obj/structure/fans/tiny/invisible,
 /turf/open/floor/holofloor/hyperspace,
@@ -5803,8 +5811,9 @@
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
 "bPj" = (
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
 /area/ctf)
 "bPH" = (
 /obj/structure/table/reinforced,
@@ -6448,6 +6457,12 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom)
+"cCW" = (
+/obj/structure/grille/broken,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/ctf)
 "cDe" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -6557,7 +6572,9 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "cGC" = (
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "checkpointwest"
+	},
 /turf/open/floor/concrete,
 /area/ctf)
 "cGO" = (
@@ -7496,6 +7513,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/supply)
+"ehq" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/ctf)
 "ehK" = (
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
@@ -8752,7 +8774,7 @@
 /area/centcom/control)
 "fYc" = (
 /obj/structure/crate_shelf,
-/obj/effect/spawner/random/structure/crate_abandoned,
+/obj/structure/closet/crate/secure/exo,
 /obj/item/storage/firstaid/fire,
 /turf/open/floor/plasteel/tech/grid,
 /area/ctf)
@@ -9240,6 +9262,12 @@
 /obj/effect/turf_decal/corner/transparent/neutral,
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
+"gJa" = (
+/obj/structure/grille/broken,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/ctf)
 "gJk" = (
 /obj/structure/fluff/vehicle/crane{
 	dir = 8
@@ -10471,6 +10499,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/supply)
+"iuO" = (
+/obj/machinery/button/door{
+	id = "checkpointwest";
+	pixel_y = -12;
+	pixel_x = 0
+	},
+/turf/closed/wall/concrete/reinforced,
+/area/ctf)
 "ive" = (
 /obj/machinery/hydroponics/constructable,
 /obj/effect/turf_decal/corner/opaque/green{
@@ -10695,6 +10731,12 @@
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow,
 /turf/open/floor/plating,
+/area/ctf)
+"iEs" = (
+/obj/machinery/door/poddoor{
+	id = "checkpointeast"
+	},
+/turf/open/floor/concrete,
 /area/ctf)
 "iFq" = (
 /obj/structure/bookcase/random,
@@ -11154,6 +11196,15 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ctf)
+"jsB" = (
+/obj/effect/turf_decal/road/stripes,
+/obj/machinery/button/door{
+	id = "checkpointeast";
+	pixel_y = -20;
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement,
+/area/ctf)
 "jsM" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -11215,6 +11266,12 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/centcom)
+"jAF" = (
+/obj/structure/platform/wood{
+	dir = 4
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ctf)
 "jBS" = (
 /obj/structure/railing/thick{
 	dir = 5
@@ -11724,6 +11781,12 @@
 /obj/structure/closet/crate/large,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ctf)
+"kfU" = (
+/obj/structure/platform/wood{
+	dir = 8
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ctf)
 "kgx" = (
 /turf/open/floor/concrete,
 /area/ctf)
@@ -12039,7 +12102,7 @@
 /area/centcom/supply)
 "kxV" = (
 /obj/structure/crate_shelf,
-/obj/effect/spawner/random/structure/crate_abandoned,
+/obj/structure/closet/crate/secure/exo,
 /turf/open/floor/plasteel/tech/grid,
 /area/ctf)
 "kyQ" = (
@@ -12332,7 +12395,9 @@
 	pixel_x = 5;
 	pixel_y = -5
 	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
 /area/ctf)
 "laJ" = (
 /obj/machinery/door/airlock/hatch{
@@ -14125,7 +14190,7 @@
 /turf/open/floor/concrete/pavement,
 /area/ctf)
 "nrA" = (
-/obj/effect/spawner/random/structure/crate_abandoned,
+/obj/structure/closet/crate/secure/exo,
 /turf/open/floor/plasteel/tech/grid,
 /area/ctf)
 "ntk" = (
@@ -14458,6 +14523,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/control)
+"nVi" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/ctf)
 "nVF" = (
 /obj/effect/turf_decal/road/stripes,
 /obj/structure/cable{
@@ -15066,6 +15136,11 @@
 	planetary_atmos = 0
 	},
 /area/errorroom)
+"oKV" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/ctf)
 "oKZ" = (
 /obj/structure/table,
 /obj/item/desk_flag/trans{
@@ -15341,7 +15416,7 @@
 /turf/open/floor/plasteel,
 /area/centcom/control)
 "pgX" = (
-/obj/effect/spawner/random/structure/crate_abandoned,
+/obj/structure/closet/crate/secure/exo,
 /obj/item/storage/firstaid/fire,
 /turf/open/floor/plasteel/tech/grid,
 /area/ctf)
@@ -15477,6 +15552,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/syndicate_mothership/control)
+"pnv" = (
+/obj/effect/turf_decal/road/stripes,
+/obj/machinery/button/door{
+	id = "checkpointwest";
+	pixel_y = -20;
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement,
+/area/ctf)
 "poh" = (
 /obj/item/shard/plasma,
 /turf/open/floor/engine,
@@ -16159,6 +16243,12 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/concrete/pavement,
 /area/ctf)
+"pZE" = (
+/obj/structure/grille/broken,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/ctf)
 "qaa" = (
 /obj/structure/sink{
 	dir = 8;
@@ -16365,6 +16455,18 @@
 "quw" = (
 /obj/machinery/light/directional/south,
 /obj/structure/table/reinforced,
+/obj/machinery/button/door{
+	id = "checkpointeast";
+	pixel_y = 0;
+	dir = 1;
+	pixel_x = 6
+	},
+/obj/machinery/button/door{
+	id = "checkpointwest";
+	pixel_y = 0;
+	pixel_x = -7;
+	dir = 1
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ctf)
 "quH" = (
@@ -16453,6 +16555,10 @@
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/concrete/pavement,
+/area/ctf)
+"qFi" = (
+/obj/structure/grille/broken,
+/turf/closed/wall/concrete/reinforced,
 /area/ctf)
 "qFm" = (
 /obj/machinery/computer/crew{
@@ -17864,7 +17970,9 @@
 	pixel_x = -2;
 	pixel_y = 4
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
 /area/ctf)
 "sFF" = (
 /obj/item/storage/box/handcuffs,
@@ -19527,7 +19635,7 @@
 /turf/open/floor/concrete/pavement,
 /area/ctf)
 "vbA" = (
-/obj/effect/spawner/random/structure/crate_abandoned,
+/obj/structure/closet/crate/secure/exo,
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel/tech/grid,
 /area/ctf)
@@ -20548,6 +20656,14 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
+"wLG" = (
+/obj/machinery/button/door{
+	id = "checkpointeast";
+	pixel_y = -12;
+	pixel_x = 0
+	},
+/turf/closed/wall/concrete/reinforced,
+/area/ctf)
 "wLS" = (
 /obj/structure/fermenting_barrel{
 	anchored = 1;
@@ -59194,12 +59310,12 @@ apC
 tJA
 uDn
 qUv
-jYv
+pnv
 uVS
 uVS
 uVS
 uVS
-uVS
+iuO
 cHv
 cwy
 cwy
@@ -59453,9 +59569,9 @@ uDn
 cwy
 jYv
 cGC
-qmF
-qmF
-qmF
+jAF
+jAF
+jAF
 cGC
 cwy
 bgJ
@@ -59710,9 +59826,9 @@ uDn
 cwy
 jYv
 cGC
-qmF
-qmF
-qmF
+apC
+apC
+apC
 cGC
 cwy
 bgJ
@@ -59967,9 +60083,9 @@ uDn
 cwy
 jYv
 cGC
-qmF
-qmF
-qmF
+apC
+apC
+apC
 cGC
 cwy
 bgJ
@@ -60224,9 +60340,9 @@ uDn
 qUv
 jYv
 cGC
-qmF
-qmF
-qmF
+kfU
+kfU
+kfU
 cGC
 cwy
 cwy
@@ -69731,12 +69847,12 @@ vqN
 vqN
 uDn
 qUv
-jYv
+jsB
 uVS
 uVS
 uVS
 uVS
-uVS
+wLG
 pYk
 iiN
 iiN
@@ -69989,11 +70105,11 @@ vqN
 uDn
 cwy
 jYv
-cGC
-qmF
-qmF
-qmF
-cGC
+iEs
+jAF
+jAF
+jAF
+iEs
 cwy
 cwy
 cwy
@@ -70246,11 +70362,11 @@ vqN
 uDn
 cwy
 jYv
-cGC
-qmF
-qmF
-qmF
-cGC
+iEs
+apC
+apC
+apC
+iEs
 qsp
 qsp
 qsp
@@ -70503,11 +70619,11 @@ vqN
 uDn
 cwy
 jYv
-cGC
-qmF
-qmF
-qmF
-cGC
+iEs
+apC
+apC
+apC
+iEs
 gPR
 wZC
 wZC
@@ -70760,11 +70876,11 @@ vqN
 uDn
 qUv
 jYv
-cGC
-qmF
-qmF
-qmF
-cGC
+iEs
+kfU
+kfU
+kfU
+iEs
 sLd
 cwy
 cwy
@@ -73077,8 +73193,8 @@ tGe
 kgx
 pFW
 kgx
-kgx
-cgy
+nVi
+ajw
 dFE
 mBb
 wri
@@ -73335,8 +73451,8 @@ kgx
 kgx
 kgx
 kgx
-eZU
-buZ
+nVi
+nVi
 buZ
 mkF
 rsg
@@ -73590,10 +73706,10 @@ kgx
 tGe
 iqB
 vUl
-kgx
-kgx
-uVS
-buZ
+nVi
+nVi
+nVi
+nVi
 rvp
 eGi
 uVS
@@ -73847,11 +73963,11 @@ kgx
 tGe
 ugz
 dMR
-kgx
-kgx
-kgx
-kgx
-kgx
+nVi
+nVi
+nVi
+nVi
+nVi
 kgx
 kgx
 kgx
@@ -74104,10 +74220,10 @@ kgx
 kgx
 kuB
 uVS
-uVS
-uVS
-uVS
-uVS
+qFi
+gJa
+cCW
+pZE
 uVS
 uVS
 uVS
@@ -74361,7 +74477,7 @@ koy
 kgx
 hZB
 uVS
-quH
+oKV
 bPj
 quH
 pBM
@@ -74872,9 +74988,9 @@ hfS
 cnb
 sOr
 kgx
+nVi
 kgx
-kgx
-uVS
+pZE
 wlK
 hED
 lff
@@ -75130,8 +75246,8 @@ kgx
 kgx
 kgx
 kgx
-kgx
-uVS
+nVi
+cCW
 lao
 opt
 fwh
@@ -75387,10 +75503,10 @@ kgx
 kgx
 kgx
 kgx
-kuB
-uVS
-quH
-lff
+ehq
+bPj
+bPj
+bPj
 cfV
 dEu
 xbs
@@ -75644,8 +75760,8 @@ kgx
 kgx
 kUM
 kgx
-kgx
-uVS
+nVi
+pZE
 rkM
 sFs
 lff
