@@ -50,7 +50,7 @@
 /datum/holocall/New(mob/living/requester, obj/machinery/holopad/calling_pad, list/callees, elevated_access = FALSE)
 	call_start_time = world.time
 	user = requester
-	caller_location = get_area_name(requester)
+	caller_location = calling_pad.get_pad_name()
 	calling_pad.outgoing_call = src
 	calling_holopad = calling_pad
 	dialed_holopads = list()
@@ -161,7 +161,7 @@
 		return
 
 	calling_holopad.calling = FALSE
-	hologram = H.activate_holo(user)
+	hologram = H.activate_holo(user, calling_holopad.secret_user)
 	hologram.HC = src
 
 	//eyeobj code is horrid, this is the best copypasta I could make
