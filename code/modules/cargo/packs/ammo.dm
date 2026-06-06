@@ -477,4 +477,4 @@
 	name = "Ferromagnetic Rod Box Crate"
 	desc = "Contains a 20-round box for high-powered gauss guns such as the Model 'Atelier' Railgun."
 	contains = list(/obj/item/storage/box/ammo/ferrorods)
-	cost = 750
+	cost = 500
