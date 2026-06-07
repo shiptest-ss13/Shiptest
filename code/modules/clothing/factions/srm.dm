@@ -207,10 +207,10 @@
 	desc = "A large sallet style helmet manufactured by Hunter's Pride. The light alloys used in it's construction allow for both safe and comfortable use in vacuum. Topped off with an immaculate crest of ornamental feathers, this helmet is a testament to Roumainist craftsmanship."
 	icon = 'icons/obj/clothing/faction/srm/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/head.dmi'
-	icon_state = "hardsuit0-rouma-combat"
-	item_state = "hardsuit0-rouma-combat"
+	icon_state = "hardsuit0-roumainelite"
+	item_state = "hardsuit0-roumainelite"
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 30, "energy" =40, "bomb" = 75, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 100, "wound" = 50)
-	hardsuit_type = "roumaelite"
+	hardsuit_type = "roumainelite"
 	supports_variations = KEPORI_VARIATION
 /////////
 //Hats//
