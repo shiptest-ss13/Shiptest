@@ -3,6 +3,8 @@
 	name = "broken hypovial"
 	desc = "A hypovial compatible with most hyposprays."
 	icon = 'icons/obj/chemical/hypovial.dmi'
+	//almost missed this, TODO: basic check for all items with 'world_file' var that their icon state is valid?
+	world_file = null
 	icon_state = "hypovial"
 	spillable = FALSE
 	var/comes_with = list() //Easy way of doing this.
