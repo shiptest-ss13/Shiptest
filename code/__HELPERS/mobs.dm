@@ -40,10 +40,6 @@
 	return pick(GLOB.backpacklist)
 
 /proc/random_features()
-	if(!GLOB.tails_list_human.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/human, GLOB.tails_list_human)
-	if(!GLOB.tails_list_lizard.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/lizard, GLOB.tails_list_lizard)
 	if(!GLOB.face_markings_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/face_markings, GLOB.face_markings_list)
 	if(!GLOB.horns_list.len)
@@ -68,8 +64,6 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_screens, GLOB.ipc_screens_list)
 	if(!GLOB.ipc_antennas_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_antennas, GLOB.ipc_antennas_list)
-	if(!GLOB.ipc_tail_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_antennas, GLOB.ipc_tail_list)
 	if(!GLOB.ipc_chassis_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/body/ipc_chassis, GLOB.ipc_chassis_list)
 	if(!GLOB.spider_legs_list.len)
@@ -86,9 +80,7 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_neck_quills, GLOB.vox_neck_quills_list)
 	if(!GLOB.elzu_horns_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/elzu_horns, GLOB.elzu_horns_list)
-	if(!GLOB.tails_list_elzu.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/elzu, GLOB.tails_list_elzu)
-	//For now we will always return none for tail_human and ears.
+	//For now we will always return none for ears.
 	//if you don't keep this alphabetised I'm going to personally steal your shins and sell them online
 	return list(
 		"body_markings" = pick(GLOB.body_markings_list),
@@ -115,9 +107,6 @@
 		"spider_legs" = pick(GLOB.spider_legs_list),
 		"spider_spinneret" = pick(GLOB.spider_spinneret_list),
 		"spines" = pick(GLOB.spines_list),
-		"tail_human" = "None",
-		"tail_lizard" = pick(GLOB.tails_list_lizard),
-		"tail_elzu" = pick(GLOB.tails_list_elzu),
 		"vox_head_quills" = pick(GLOB.vox_head_quills_list),
 		"vox_neck_quills" = pick(GLOB.vox_neck_quills_list),
 		"wings" = "None",

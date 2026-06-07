@@ -17,11 +17,6 @@
 	H.underwear = random_underwear(H.gender)
 	H.underwear_color = random_color()
 	H.skin_tone = random_skin_tone()
-	H.hairstyle = random_hairstyle(H.gender)
-	H.facial_hairstyle = random_facial_hairstyle(H.gender)
-	H.hair_color = random_color_natural()
-	H.facial_hair_color = H.hair_color
-	H.eye_color = random_eye_color()
 	H.dna.blood_type = random_blood_type()
 	H.generic_adjective = pick_species_adjective(H)
 
@@ -29,7 +24,6 @@
 	H.dna.features["mcolor"] = random_short_color()
 	H.dna.features["mcolor2"] = random_short_color()
 	H.dna.features["ethcolor"] = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)]
-	H.dna.features["tail_lizard"] = pick(GLOB.tails_list_lizard)
 	H.dna.features["face_markings"] = pick(GLOB.face_markings_list)
 	H.dna.features["horns"] = pick(GLOB.horns_list)
 	H.dna.features["frills"] = pick(GLOB.frills_list)
@@ -45,7 +39,12 @@
 	H.dna.features["vox_head_quills"] = pick(GLOB.vox_head_quills_list)
 	H.dna.features["vox_neck_quills"] = pick(GLOB.vox_neck_quills_list)
 	H.dna.features["elzu_horns"] = pick(GLOB.elzu_horns_list)
-	H.dna.features["tail_elzu"] = pick(GLOB.tails_list_elzu)
+
+	H.hairstyle = random_hairstyle(H.gender)
+	H.facial_hairstyle = random_facial_hairstyle(H.gender)
+	H.hair_color = random_color_natural()
+	H.facial_hair_color = H.hair_color
+	H.eye_color = random_eye_color()
 
 	H.update_body()
 	H.update_hair()

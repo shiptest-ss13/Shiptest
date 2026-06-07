@@ -340,8 +340,8 @@
 	item_state = "tailbag_black"
 
 /obj/item/storage/backpack/satchel/tailbag/mob_can_equip(mob/living/target, mob/living/equipper, slot, bypass_equip_delay_self)
-	var/mob/living/H = target
-	if(!HAS_TRAIT(H, TRAIT_TAILED))
+	var/obj/item/bodypart/tail/mob_tail = target.get_bodypart(BODY_ZONE_TAIL)
+	if(!mob_tail?.sturdy)
 		return FALSE
 	return ..()
 
@@ -352,8 +352,8 @@
 	item_state = "backbag_black"
 
 /obj/item/storage/backpack/satchel/kitbag/mob_can_equip(mob/living/target, mob/living/equipper, slot, bypass_equip_delay_self)
-	var/mob/living/H = target
-	if(HAS_TRAIT(H, TRAIT_TAILED))
+	var/obj/item/bodypart/tail/mob_tail = target.get_bodypart(BODY_ZONE_TAIL)
+	if(mob_tail?.sturdy)
 		return FALSE
 	return ..()
 

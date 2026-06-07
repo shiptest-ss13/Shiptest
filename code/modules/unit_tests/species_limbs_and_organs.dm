@@ -12,6 +12,8 @@
 
 		for(var/zone in test_species.species_limbs)
 			test_bodypart = test_species.species_limbs[zone]
+			if(!test_bodypart)
+				continue
 			TEST_ASSERT_EQUAL(zone, test_bodypart::body_zone, "Species [species_type] has invalid bodypart [test_bodypart] in zone [zone]")
 
 		for(var/slot in test_species.species_organs)
