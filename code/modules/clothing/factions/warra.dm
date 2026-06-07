@@ -353,6 +353,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/warra/head.dmi'
 	icon_state = "riot_warra"
 	base_icon_state = "riot_warra"
+	unique_reskin = null
 
 /obj/item/clothing/head/warra/cap/supply
 	name = "brown softcap"
