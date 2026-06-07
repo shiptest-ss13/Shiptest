@@ -290,6 +290,7 @@
 	desc = "A small canister filled with aerosolized reagents for use in an inhaler. This one contains salbutamol, a potent bronchodilator that can stop \
 	asthma attacks in their tracks."
 	icon_state = "canister_medical"
+	custom_price = 100
 	list_reagents = list(/datum/reagent/medicine/salbutamol = 30)
 
 /obj/item/inhaler/salbutamol/rescue

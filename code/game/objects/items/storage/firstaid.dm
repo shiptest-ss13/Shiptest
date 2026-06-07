@@ -254,8 +254,8 @@
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/medigel/hadrakine = 1,
 		/obj/item/storage/pill_bottle/indomide = 1,
-		/obj/item/stack/medical/bone_gel = 1,
-		/obj/item/stack/sticky_tape/surgical = 1,
+		/obj/item/stack/medical/bone_gel/four = 1,
+		/obj/item/stack/sticky_tape/surgical/four = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/splint = 1,
 		/obj/item/reagent_containers/hypospray/medipen/silfrine = 1,
