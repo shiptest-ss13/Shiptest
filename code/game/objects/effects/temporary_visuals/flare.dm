@@ -51,19 +51,20 @@
 
 	if(dazzler.has_status_effect(/datum/status_effect/dazzled))
 		dazzler.apply_status_effect(/datum/status_effect/dazzled, "flare")
+		return
 
 	else if(dazzler.flash_act())
 		var/diff = power * CONFUSION_STACK_MAX_MULTIPLIER - dazzler.confused
 		dazzler.confused += min(power, diff)
-		visible_message("<span class='danger'>The bright flare dazzles [dazzler]!</span>")
-		to_chat(dazzler, "<span class='userdanger'>The bright flare dazzles you!</span>")
+		visible_message(span_danger("The bright flare dazzles [dazzler]!</span>"))
+		to_chat(dazzler, span_userdanger("The bright flare dazzles you!"))
 		dazzler.apply_status_effect(/datum/status_effect/dazzled, "flare")
 
 	else if(dazzler)
 		if(human_human_dazzler.real_name in already_messaged)
 			return //avoid message spam
-		visible_message("<span class='warning'>The bright flare attempts to dazzle [dazzler], but [dazzler.p_they()] seems unaffected!</span>")
-		to_chat(dazzler, "<span class='userdanger'>The bright flare attempts to dazzle you, but your protection prevents it!</span>")
+		visible_message(span_warning("The bright flare attempts to dazzle [dazzler], but [dazzler.p_they()] seems unaffected!</span>"))
+		to_chat(dazzler, span_userdanger("The bright flare attempts to dazzle you, but your protection prevents it!</span>"))
 		if(human_human_dazzler)
 			already_messaged += human_human_dazzler.real_name
 

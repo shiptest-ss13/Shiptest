@@ -387,3 +387,6 @@
 		/obj/item/mortal_shell/rocket/he,
 		/obj/item/mortal_shell/rocket/incendiary,
 	)
+
+#undef get_dist_euclide_square
+#undef get_dist_euclide
