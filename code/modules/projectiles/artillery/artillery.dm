@@ -23,7 +23,7 @@
 
 
 /obj/machinery/artillery
-	name = "\improper howitzer"
+	name = "howitzer"
 	desc = "A manual, crew-operated and towable howitzer, will rain down shells on any of your foes."
 	icon = 'icons/obj/machines/howitzer.dmi'
 	icon_state = "howitzer_deployed"
@@ -203,8 +203,8 @@
 			to_chat(user, span_danger("This shell doesn't fit!"))
 			return
 
-		user.visible_message(span_notice("[user] starts loading \a [mortar_shell.name] into [src]."),
-		span_notice("You start loading \a [mortar_shell.name] into [src]."))
+		user.visible_message(span_notice("[user] starts loading [mortar_shell] into [src]."),
+		span_notice("You start loading [mortar_shell] into [src]."))
 		playsound(loc, reload_sound, 50, 1)
 		if(!do_after(user, reload_time, src, NONE))
 			return
@@ -280,8 +280,7 @@
 
 	var/fall_time = ((shell_range * (shell.speed/20)) SECONDS) - 1.5 SECONDS
 	//prevent runtime
-	if(fall_time < 1.5 SECONDS)
-		fall_time = 1.5 SECONDS
+	fall_time = max(fall_time, 1.5 SECONDS)
 	addtimer(CALLBACK(src, PROC_REF(falling), target, shell), fall_time)
 	addtimer(VARSET_CALLBACK(src, firing, FALSE), cool_off_time)
 
@@ -292,7 +291,7 @@
 	playsound(T, fall_sound, 75, 1)
 
 /obj/machinery/artillery/mortar
-	name = "\improper mortar"
+	name = "mortar"
 	desc = "A manual, crew-operated mortar system intended to rain down shells on anything it's aimed at. Less accurate than a proper artillery cannon, but still useful neverless. Needs to be set down first to fire."
 	icon = 'icons/obj/machines/mortar.dmi'
 	icon_state = "mortar_deployed"

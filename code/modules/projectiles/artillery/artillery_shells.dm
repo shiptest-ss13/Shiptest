@@ -1,5 +1,5 @@
 /obj/item/mortal_shell
-	name = "\improper 80mm mortar shell"
+	name = "80mm mortar shell"
 	desc = "An unlabeled 80mm mortar shell, probably a casing."
 	icon = 'icons/obj/machines/mortar.dmi'
 	icon_state = "mortar_ammo_he"
