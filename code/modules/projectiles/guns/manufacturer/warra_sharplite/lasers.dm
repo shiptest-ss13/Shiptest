@@ -189,19 +189,19 @@
 
 /obj/item/gun/energy/sharplite/l201/l204
 	name = "SL L204 “Resistor” Plasma Rifle"
-	desc = "A rifle-sized, semi-automatic electroplasma gun known for its low price and surprisingly low energy usage."
+	desc = "A rifle-sized, semi-automatic electroplasma gun. It's high powered capacitor gives the Resistor a significant punch compared to it's peers, but consumes much more power."
 	icon_state = "l204"
 	item_state = "l204"
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
-	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/sharplite)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault/sharplite)
 
-	zoomable = FALSE
-	zoom_amt = PISTOL_ZOOM
+	zoom_amt = RIFLE_ZOOM
 	wield_slowdown = SMG_SLOWDOWN
 	aimed_wield_slowdown = LONG_RIFLE_AIM_SLOWDOWN
 	wield_delay = 0.4 SECONDS
+	fire_delay = 0.5 SECONDS
 
 	spread = 2
 	spread_unwielded = 10
