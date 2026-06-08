@@ -644,7 +644,7 @@
 	shoes = /obj/item/clothing/shoes/sneakers/blue
 	suit =  /obj/item/clothing/suit/toggle/labcoat/warra/paramedic
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical/paramedic
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	gloves = /obj/item/clothing/gloves/nitrile/blue
 	id = /obj/item/card/id
 
 	backpack_contents = list(/obj/item/roller=1)

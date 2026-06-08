@@ -236,7 +236,7 @@
 /area/ship/bridge)
 "cO" = (
 /obj/structure/closet/crate/medical,
-/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
 /obj/item/storage/firstaid/regular,
 /obj/item/roller,
 /obj/item/storage/pill_bottle/charcoal/less,
@@ -376,9 +376,8 @@
 	pixel_y = 20;
 	pixel_x = 10
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 9;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 9
 	},
 /obj/structure/bedsheetbin{
 	pixel_x = -4;
@@ -968,9 +967,8 @@
 /area/ship/hallway/starboard)
 "lh" = (
 /obj/effect/spawner/bunk_bed,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 6
 	},
 /obj/structure/curtain/bounty,
 /turf/open/floor/carpet,
@@ -1080,9 +1078,7 @@
 /obj/structure/cable/green{
 	icon_state = "2-8"
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
@@ -1136,9 +1132,8 @@
 /obj/machinery/firealarm/directional/south{
 	pixel_x = -5
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 10;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 10
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -1544,8 +1539,7 @@
 /area/ship/engineering/atmospherics)
 "sD" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/structure/chair/handrail,
@@ -1932,8 +1926,8 @@
 /obj/item/stack/tape/industrial/electrical{
 	pixel_y = -4
 	},
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
+/obj/item/clothing/gloves/insulated,
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/clothing/glasses/welding,
@@ -2155,9 +2149,8 @@
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 10;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 10
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
@@ -2408,8 +2401,7 @@
 	pixel_x = 4;
 	pixel_y = -3
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 5
 	},
 /obj/structure/curtain/bounty,
@@ -4056,9 +4048,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "Xd" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 9
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)

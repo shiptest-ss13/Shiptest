@@ -21,7 +21,7 @@
 
 	uniform = /obj/item/clothing/under/suit/waiter
 	alt_uniform = /obj/item/clothing/under/suit/waiter/syndicate
-	gloves = /obj/item/clothing/gloves/color/evening
+	gloves = /obj/item/clothing/gloves/long/white
 	ears = /obj/item/radio/headset/headset_srv
 	shoes = /obj/item/clothing/shoes/laceup
 	l_pocket = /obj/item/lighter
@@ -274,6 +274,18 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 
+/datum/outfit/job/independent/hop/hunter/gown
+	name = "Independent - Head of Personnel (Hunter, gown)"
+
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	gloves = null
+	head = null
+	suit = null
+	alt_suit = null
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+
 /datum/outfit/job/independent/hop/western
 	name = "Independent - Head of Personnel (Western)"
 
@@ -495,7 +507,7 @@
 	head = /obj/item/clothing/head/soft/black
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/melee/knife/survival
-	gloves = /obj/item/clothing/gloves/color/red/insulated
+	gloves = /obj/item/clothing/gloves/insulated
 
 	implants = list(/obj/item/implant/radio)
 
@@ -681,7 +693,7 @@
 	shoes = /obj/item/clothing/shoes/sneakers/blue
 	suit =  /obj/item/clothing/suit/toggle/labcoat/paramedic
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical/paramedic
-	gloves = /obj/item/clothing/gloves/color/latex
+	gloves = /obj/item/clothing/gloves/nitrile
 
 	backpack_contents = list(/obj/item/roller=1)
 
@@ -721,6 +733,18 @@
 	suit = /obj/item/clothing/suit/jacket/leather/duster
 	gloves = /obj/item/clothing/gloves/fingerless
 	head = /obj/item/clothing/head/cowboy/sec
+
+/datum/outfit/job/independent/quartermaster/gown
+	name = "Independent - Quartermaster (Gown)"
+
+	ears = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	gloves = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	suit = null
+	dcoat = null
+	l_pocket = null
+	backpack_contents = null
 
 /datum/outfit/job/independent/miner
 	name = "Independent - Miner"
@@ -797,6 +821,17 @@
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
+/datum/outfit/job/independent/hunter/gown
+	name = "Independent - Hunter (gown)"
+	jobtype = /datum/job/mining
+	job_icon = "securityofficer"
+
+	ears = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	gloves = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	l_pocket = null
+
 // Cook
 
 /datum/outfit/job/independent/cook
@@ -855,7 +890,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	l_pocket = /obj/item/reagent_containers/food/drinks/shaker
 	belt = /obj/item/storage/belt
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	gloves = /obj/item/clothing/gloves/nitrile/blue
 	uniform = /obj/item/clothing/under/suit/black
 	accessory = null
 

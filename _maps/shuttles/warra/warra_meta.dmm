@@ -1505,9 +1505,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "gt" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5;
-	color = "#E3994E"
+/obj/effect/turf_decal/siding/wood/yew{
+	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/yew,
@@ -1838,9 +1837,8 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#E3994E"
+/obj/effect/turf_decal/siding/wood/yew{
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/yew,
@@ -2011,9 +2009,8 @@
 /area/ship/storage)
 "lT" = (
 /obj/structure/fluff/hedge/opaque,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/cargo/office)
@@ -2132,9 +2129,8 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#E3994E"
+/obj/effect/turf_decal/siding/wood/yew{
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/wood/yew,
@@ -2256,18 +2252,16 @@
 "oF" = (
 /obj/structure/chair/sofa/blue/corpo/right,
 /obj/machinery/airalarm/directional/north,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/wood/ebony,
 /area/ship/cargo/office)
 "oH" = (
 /obj/structure/table,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#E3994E"
+/obj/effect/turf_decal/siding/wood/yew{
+	dir = 1
 	},
 /obj/item/reagent_containers/food/drinks/soda_cans/sol_dry{
 	pixel_y = 10
@@ -2649,7 +2643,7 @@
 	dir = 1
 	},
 /obj/structure/closet/crate/engineering/electrical,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/stack/cable_coil/red,
 /obj/item/stock_parts/cell/high/empty,
 /obj/item/stock_parts/cell,
@@ -2765,9 +2759,8 @@
 /obj/item/clothing/shoes/workboots/mining{
 	pixel_y = -9
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
 	},
 /obj/item/fish_feed,
 /obj/item/modular_computer/tablet/preset/advanced{
@@ -4026,9 +4019,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Jc" = (
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 1;
-	color = "#E3994E"
+/obj/effect/turf_decal/siding/wood/end/yew{
+	dir = 1
 	},
 /obj/item/kirbyplants{
 	icon_state = "plant-22";
@@ -4206,9 +4198,8 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "LF" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/cargo/office)
@@ -4271,9 +4262,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/office/lobby)
 "Me" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E3994E"
-	},
+/obj/effect/turf_decal/siding/wood/yew,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -4589,9 +4578,8 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/office/lobby)
 "PL" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#E3994E"
+/obj/effect/turf_decal/siding/wood/yew{
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/yew,
@@ -4642,9 +4630,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "QW" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E3994E"
-	},
+/obj/effect/turf_decal/siding/wood/yew,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -4829,9 +4815,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)
 "Sq" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10;
-	color = "#E3994E"
+/obj/effect/turf_decal/siding/wood/yew{
+	dir = 10
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5180,9 +5165,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "Vq" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E3994E"
-	},
+/obj/effect/turf_decal/siding/wood/yew,
 /obj/effect/turf_decal/siding/green/corner,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
@@ -5356,9 +5339,8 @@
 "Xp" = (
 /obj/structure/chair/sofa/blue/corpo/left,
 /obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
 	},
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/wood/ebony,
@@ -5382,9 +5364,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Xt" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6;
-	color = "#E3994E"
+/obj/effect/turf_decal/siding/wood/yew{
+	dir = 6
 	},
 /obj/machinery/computer/helm/viewscreen/directional/south,
 /obj/effect/turf_decal/siding/green/corner{
@@ -5462,9 +5443,8 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/item/storage/box/matches{
@@ -5491,7 +5471,7 @@
 /obj/item/clothing/under/warra/engineering,
 /obj/item/clothing/under/warra/engineering,
 /obj/item/storage/toolbox/mechanical,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "YW" = (
@@ -5567,13 +5547,11 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Zy" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#E3994E"
+/obj/effect/turf_decal/siding/wood/yew{
+	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4;
-	color = "#E3994E"
+/obj/effect/turf_decal/siding/wood/corner/yew{
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/yew,

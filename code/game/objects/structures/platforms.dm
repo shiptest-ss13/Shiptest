@@ -34,6 +34,11 @@
 	density = FALSE
 	climbable = FALSE
 
+/obj/structure/platform/indestructible
+	icon_state = "platform"
+	climbable = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
 /obj/structure/platform/industrial
 	icon_state = "industrial_platform"
 

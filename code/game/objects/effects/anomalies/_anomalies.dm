@@ -21,6 +21,7 @@
 	COOLDOWN_DECLARE(pulse_cooldown)
 	COOLDOWN_DECLARE(pulse_secondary_cooldown)
 	var/pulse_delay = 15 SECONDS
+	var/secondary_pulse_delay = 15 SECONDS
 
 	var/countdown_colour
 	var/obj/effect/countdown/anomaly/countdown
