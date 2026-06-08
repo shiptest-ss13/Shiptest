@@ -119,31 +119,16 @@
 	if(!our_vlevel)
 		return
 
-	var/datum/overmap/our_overmap_object = get_overmap_location()
 	var/real_x = our_vlevel.low_x + target_x - 1
 	var/real_y = our_vlevel.low_y + target_y - 1
 
 	var/turf/target_turf = locate(real_x, real_y, z)
 	var/list/our_coords = our_vlevel.get_relative_coords(target_turf)
 
-	//Check if we're not in space or 0g, basically
-	if(istype(our_overmap_object, /datum/overmap/dynamic) || istype(our_overmap_object, /datum/overmap/ship))
-		var/datum/overmap/dynamic/our_dynamic_object
-		var/do_not_fire = FALSE
-		//get thing this is docked to
-		if(istype(our_overmap_object, /datum/overmap/ship))
-			our_dynamic_object = our_overmap_object.docked_to
-			if(!(istype(our_overmap_object.docked_to, /datum/overmap/static_object) || istype(our_overmap_object.docked_to, /datum/overmap/outpost)))
-				do_not_fire = TRUE
-		else
-			our_dynamic_object = our_overmap_object
-		if(our_dynamic_object)
-			if(is_type_in_list(our_overmap_object, list(/datum/planet_type/asteroid, /datum/planet_type/spaceruin, /datum/overmap/dynamic/empty)))
-				do_not_fire = TRUE
-		if(do_not_fire)
-			user.balloon_alert(user, "not in 0g!")
-			to_chat(user, span_danger("How are you going to fire this in 0g..?"))
-			return
+	if(!check_if_in_space())
+		user.balloon_alert(user, "not in 0g!")
+		to_chat(user, span_danger("How are you going to fire this in 0g..?"))
+		return
 
 	if(!target_turf)
 		user.balloon_alert(user, "invalid location.")
@@ -229,6 +214,24 @@
 	SHOULD_NOT_SLEEP(TRUE)
 	return
 
+/obj/machinery/artillery/proc/check_if_in_space()
+	var/datum/overmap/our_overmap_object = get_overmap_location()
+
+	//Check if we're not in space or 0g, basically
+	if(istype(our_overmap_object, /datum/overmap/dynamic) || istype(our_overmap_object, /datum/overmap/ship))
+		var/datum/overmap/dynamic/our_dynamic_object
+		//get thing this is docked to
+		if(istype(our_overmap_object, /datum/overmap/ship))
+			our_dynamic_object = our_overmap_object.docked_to
+			if(!(istype(our_overmap_object.docked_to, /datum/overmap/static_object) || istype(our_overmap_object.docked_to, /datum/overmap/outpost)))
+				return TRUE
+		else
+			our_dynamic_object = our_overmap_object
+		if(our_dynamic_object)
+			if(is_type_in_list(our_overmap_object, list(/datum/planet_type/asteroid, /datum/planet_type/spaceruin, /datum/overmap/dynamic/empty)))
+				return TRUE
+	return FALSE
+
 //Calcuate the final location before firing.
 /obj/machinery/artillery/proc/pre_fire(obj/item/mortal_shell/mortar_shell, mob/user, params)
 	var/datum/virtual_level/our_vlevel = get_virtual_level()
@@ -237,6 +240,11 @@
 	var/real_y = our_vlevel.low_y + target_y - 1
 
 	var/turf/target_turf = locate(real_x, real_y, z)
+
+	if(!check_if_in_space())
+		user.balloon_alert(user, "not in 0g!")
+		to_chat(user, span_danger("How are you going to fire this in 0g..?"))
+		return
 
 	if(!target_turf || !check_valid_turf(target_turf))
 		user.balloon_alert(user, "invalid location.")
