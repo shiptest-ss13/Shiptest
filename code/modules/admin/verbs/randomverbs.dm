@@ -372,14 +372,11 @@
 		return
 
 	var/distress_message = input(src, "Input any information you'd like attached with the distress signal.", "Distress Signal Message")
-	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
-	switch(confirm)
-		if("Yes")
-			if(distress_message)
-				create_distress_beacon(overmap_location, distress_message)
-			else
-				create_distress_beacon(overmap_location)
-		if("No")
+	if(tgui_alert(src,"Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?","Distress Signal",list("Yes","No")) == "Yes")
+		if(distress_message)
+			create_distress_beacon(overmap_location, distress_message)
+		else
+			create_distress_beacon(overmap_location)
 			return
 
 /client/proc/cmd_admin_distress_signal_here()
@@ -402,15 +399,11 @@
 		return
 
 	var/distress_message = input(src, "Input any information you'd like attached with the distress signal.", "Distress Signal Message")
-	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
-	switch(confirm)
-		if("Yes")
-			if(distress_message)
-				create_distress_beacon(overmap_location, distress_message)
-			else
-				create_distress_beacon(overmap_location)
-		if("No")
-			return
+	if(tgui_alert(src,"Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?","Distress Signal",list("Yes","No"),0) == "Yes")
+		if(distress_message)
+			create_distress_beacon(overmap_location, distress_message)
+		else
+			create_distress_beacon(overmap_location)
 
 /client/proc/cmd_admin_delete(atom/A as obj|mob|turf in world)
 	set category = "Debug"
