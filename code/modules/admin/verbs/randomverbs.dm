@@ -370,11 +370,11 @@
 
 	if(!istype(overmap_location)) // Sanity check
 		return
-	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
 
+	var/distress_message = input(src, "Input any information you'd like attached with the distress signal.", "Distress Signal Message")
+	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
 	switch(confirm)
 		if("Yes")
-			var/distress_message = input(src, "Input any information you'd like attached with the distress signal.", "Distress Signal Message")
 			if(distress_message)
 				create_distress_beacon(overmap_location, distress_message)
 			else
@@ -401,11 +401,10 @@
 	if(!overmap_location && !istype(overmap_location))
 		return
 
+	var/distress_message = input(src, "Input any information you'd like attached with the distress signal.", "Distress Signal Message")
 	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
-
 	switch(confirm)
 		if("Yes")
-			var/distress_message = input(src, "Input any information you'd like attached with the distress signal.", "Distress Signal Message")
 			if(distress_message)
 				create_distress_beacon(overmap_location, distress_message)
 			else
