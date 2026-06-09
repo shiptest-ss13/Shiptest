@@ -2,7 +2,8 @@
 	name = "gas flow meter"
 	desc = "It measures something."
 	icon = 'icons/obj/atmospherics/pipes/meter.dmi'
-	icon_state = "meterX"
+	icon_state = "pressure-0"
+	base_icon_state = "pressure"
 	layer = GAS_PUMP_LAYER
 	power_channel = AREA_USAGE_ENVIRON
 	use_power = IDLE_POWER_USE
@@ -60,21 +61,33 @@
 
 /obj/machinery/meter/process_atmos(seconds_per_tick)
 	if(!(target?.flags_1 & INITIALIZED_1))
-		icon_state = "meterX"
+		icon_state = "[base_icon_state]-0"
 		return 0
 
 	if(machine_stat & (BROKEN|NOPOWER))
-		icon_state = "meter0"
+		icon_state = "[base_icon_state]-broken"
 		return 0
 
 	use_power(5)
 
 	var/datum/gas_mixture/environment = target.return_air()
 	if(!environment)
-		icon_state = "meterX"
+		icon_state = "[base_icon_state]-0"
 		return 0
 
 	var/env_pressure = environment.return_pressure()
+
+	var/icon_val = round((env_pressure/30), 1)
+
+	if(env_pressure >= ONE_ATMOSPHERE * 30)
+		icon_state = "[base_icon_state]-34"
+	else if(icon_val >= 33)
+		icon_state = "[base_icon_state]-33"
+	else
+		icon_state = "[base_icon_state]-[icon_val]"
+
+
+/*
 	if(env_pressure <= 0.15*ONE_ATMOSPHERE)
 		icon_state = "meter0"
 	else if(env_pressure <= 1.8*ONE_ATMOSPHERE)
@@ -88,6 +101,7 @@
 		icon_state = "meter3_[val]"
 	else
 		icon_state = "meter4"
+*/
 
 	if(frequency)
 		var/datum/radio_frequency/radio_connection = SSradio.return_frequency(frequency)
@@ -107,7 +121,7 @@
 	if (target)
 		var/datum/gas_mixture/environment = target.return_air()
 		if(environment)
-			. = "The pressure gauge reads [round(environment.return_pressure(), 0.01)] kPa; [round(environment.return_temperature(),0.01)] K ([round(environment.return_temperature()-T0C,0.01)]&deg;C)."
+			. = "The pressure gauge reads [round(environment.return_pressure(), 0.01)] kPa."
 		else
 			. = "The sensor error light is blinking."
 	else
@@ -150,3 +164,100 @@
 
 /obj/machinery/meter/turf/reattach_to_layer()
 	target = loc
+
+/obj/machinery/meter/temperature
+	name = "temperature gauge"
+	desc = "It measures the current temperture in a pipe network."
+	icon = 'icons/obj/atmospherics/pipes/meter.dmi'
+	icon_state = "temperature-0"
+	base_icon_state = "temperature"
+
+	var/particle_to_spawn = /particles/smoke/steam/vent
+	var/obj/effect/particle_holder/part_hold
+
+
+/obj/machinery/meter/temperature/layer2
+	target_layer = 2
+
+/obj/machinery/meter/temperature/layer4
+	target_layer = 4
+/obj/machinery/meter/temperature/Initialize(mapload, new_piping_layer)
+	. = ..()
+	part_hold = new(get_turf(src))
+	part_hold.layer = EDGED_TURF_LAYER
+	part_hold.particles = new particle_to_spawn()
+	underlays.Cut()
+	part_hold.particles.spawning = 0
+
+/obj/machinery/meter/temperature/process_atmos(seconds_per_tick)
+	if(!(target?.flags_1 & INITIALIZED_1))
+		icon_state = "[base_icon_state]-0"
+		return 0
+
+	if(machine_stat & (BROKEN|NOPOWER))
+		icon_state = "[base_icon_state]-broken"
+		return 0
+
+	use_power(5)
+
+	var/datum/gas_mixture/environment = target.return_air()
+	if(!environment)
+		icon_state = "[base_icon_state]-0"
+		return 0
+
+	var/env_temp = environment.return_temperature()
+
+	var/icon_val = round((env_temp/20), 1)
+
+	if(env_temp >= 723.15)
+		icon_state = "[base_icon_state]-34"
+	else if(icon_val >= 33)
+		icon_state = "[base_icon_state]-33"
+	else
+		icon_state = "[base_icon_state]-[icon_val]"
+
+	if(env_temp >= 973.15)
+		part_hold.particles.spawning = 3
+	else if(env_temp >= 873.15)
+		part_hold.particles.spawning = 2
+	else if(env_temp >= 773.15)
+		part_hold.particles.spawning = 1
+	else
+		part_hold.particles.spawning = 0
+
+	if(env_temp >= 973.15)
+		cut_overlays()
+		add_overlay("meter-extreme_temp")
+	else
+		cut_overlays()
+
+
+	if(frequency)
+		var/datum/radio_frequency/radio_connection = SSradio.return_frequency(frequency)
+
+		if(!radio_connection)
+			return
+
+		var/datum/signal/signal = new(list(
+			"id_tag" = id_tag,
+			"device" = "AM",
+			"temperature" = round(env_temp),
+			"sigtype" = "status"
+		))
+		radio_connection.post_signal(src, signal)
+
+/obj/machinery/meter/temperature/update_overlays()
+	. = ..()
+
+
+/obj/machinery/meter/temperature/status()
+	if (target)
+		var/datum/gas_mixture/environment = target.return_air()
+		if(environment)
+			. = "The temperature gauge reads [round(environment.return_temperature(),0.01)] K ([round(environment.return_temperature()-T0C,0.01)]&deg;C)."
+			if(environment.return_temperature() >= 973.15)
+				. = "\nThe temperature gauge appears to be melting. Not your problem."
+		else
+			. = "The sensor error light is blinking."
+	else
+		. = "The connect error light is blinking."

@@ -65,7 +65,7 @@
 /obj/machinery/portable_atmospherics/canister/nitrogen
 	name = "n2 canister"
 	desc = "Nitrogen gas. Reportedly useful for something."
-	icon_state = "red"
+	icon_state = "nitrogen"
 	gas_type = GAS_N2
 
 /obj/machinery/portable_atmospherics/canister/oxygen
@@ -95,7 +95,7 @@
 /obj/machinery/portable_atmospherics/canister/toxins
 	name = "plasma canister"
 	desc = "Plasma gas. The reason YOU are here. Highly toxic."
-	icon_state = "orange"
+	icon_state = "plasma"
 	gas_type = GAS_PLASMA
 
 /obj/machinery/portable_atmospherics/canister/bz
@@ -107,7 +107,7 @@
 /obj/machinery/portable_atmospherics/canister/nitrous_oxide
 	name = "n2o canister"
 	desc = "Nitrous oxide gas. Known to cause drowsiness."
-	icon_state = "redws"
+	icon_state = "n2o"
 	gas_type = GAS_NITROUS
 
 /obj/machinery/portable_atmospherics/canister/air
@@ -144,7 +144,7 @@
 /obj/machinery/portable_atmospherics/canister/hydrogen
 	name = "hydrogen canister"
 	desc = "Hydrogen. Used in thruster fuel."
-	icon_state = "orangews"
+	icon_state = "hydrogen"
 	gas_type = GAS_HYDROGEN
 
 /obj/machinery/portable_atmospherics/canister/methane
@@ -168,12 +168,12 @@
 /obj/machinery/portable_atmospherics/canister/fuel
 	name = "fuel canister"
 	desc = "A highly volatile mix of hydrogen and oxygen."
-	icon_state = "orangewshaz"
+	icon_state = "rocketfuel"
 
 /obj/machinery/portable_atmospherics/canister/fuel_test
 	name = "test canister"
 	desc = "Hydrogen. Used in thruster fuel."
-	icon_state = "orangewshaz"
+	icon_state = "rocketfuel"
 
 /obj/machinery/portable_atmospherics/canister/fuel_test/create_gas()
 	air_contents.set_moles(GAS_O2, 500)
