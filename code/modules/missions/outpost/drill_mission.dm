@@ -228,3 +228,8 @@
 		say("Required samples gathered. Additional samples valued at [200*mission_class]cr per. Now shutting down!")
 		if(active)
 			stop_mining()
+
+	if(num_current > (num_wanted + 3))
+		say("Core sample collector full. Unable to continue drilling.")
+		if(active)
+			stop_mining()
