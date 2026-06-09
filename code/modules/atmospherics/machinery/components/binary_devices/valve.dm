@@ -17,18 +17,30 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 	var/frequency = 0
 	var/id = null
 
+	var/has_interact_delay = TRUE
+
+
 	var/valve_type = "m" //lets us have a nice, clean, OOP update_icon_nopipes()
+	/// prefix for overlay, avoids shit ton of sprite reuse
+	var/valve_overlay_prefix = "red"
 
 	construction_type = /obj/item/pipe/binary
 	pipe_state = "mvalve"
 
 	var/switching = FALSE
+	var/togglesound = 'sound/effects/bin_open.ogg'
+	var/sound_vol = 100
 
 /obj/machinery/atmospherics/components/binary/valve/update_icon_nopipes(animation = FALSE)
 	normalize_cardinal_directions()
-	if(animation)
-		flick("[valve_type]valve_[on][!on]-[set_overlay_offset(piping_layer)]", src)
+	cut_overlays()
+	//why isnt the offset set manually like other atmos shit? oldcode everyone...
 	icon_state = "[valve_type]valve_[on ? "on" : "off"]-[set_overlay_offset(piping_layer)]"
+	if(!valve_overlay_prefix)
+		return
+	add_overlay("[valve_overlay_prefix]-[set_overlay_offset(piping_layer)]")
+	if(animation)
+		flick_overlay_view("[valve_overlay_prefix]-[set_overlay_offset(piping_layer)]-turning")
 
 /obj/machinery/atmospherics/components/binary/valve/proc/toggle()
 	if(on)
@@ -42,19 +54,29 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 		var/datum/pipeline/parent1 = parents[1]
 		parent1.reconcile_air()
 		investigate_log("was opened by [usr ? key_name(usr) : "a remote signal"]", INVESTIGATE_ATMOS)
+	playsound(loc, togglesound, sound_vol, TRUE)
 
 /obj/machinery/atmospherics/components/binary/valve/interact(mob/user)
 	add_fingerprint(usr)
 	if(switching)
 		return
-	update_icon_nopipes(TRUE)
-	switching = TRUE
-	addtimer(CALLBACK(src, PROC_REF(finish_interact)), 10)
+	if(has_interact_delay)
+		visible_message(span_notice("[user] starts to turn \the [src]..."), span_notice("You start to turn \the [src]..."), span_notice("You hear creaking metal."))
 
-/obj/machinery/atmospherics/components/binary/valve/proc/finish_interact()
+		switching = TRUE
+		if(!do_after(user, 5 SECONDS, src))
+			switching = FALSE
+			return
+	if(in_range(src, user))
+		if(has_interact_delay)
+			visible_message(span_notice("[user] finishes turning \the [src]."), span_notice("You finish turning \the [src]."), span_notice("You hear hissing."))
+		else
+			visible_message(span_notice("[user] toggles \the [src] with a button press."), span_notice("You toggle \the [src]."), span_notice("You hear a click followed by a beep."))
+	else
+		visible_message(span_notice("[src] silently beeps."), blind_message=span_notice("You hear a silent beep."))
+	update_icon_nopipes(TRUE)
 	toggle()
 	switching = FALSE
-
 
 /obj/machinery/atmospherics/components/binary/valve/digital // can be controlled by AI
 	icon_state = "dvalve_map-3"
@@ -64,7 +86,14 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 	valve_type = "d"
 	pipe_state = "dvalve"
 
+	valve_overlay_prefix = FALSE
+
+	has_interact_delay = FALSE
+
 	interaction_flags_machine = INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OFFLINE | INTERACT_MACHINE_OPEN | INTERACT_MACHINE_OPEN_SILICON
+
+	togglesound = 'sound/machines/triple_beep.ogg'
+	sound_vol = 40
 
 /obj/machinery/atmospherics/components/binary/valve/digital/update_icon_nopipes(animation)
 	if(!is_operational)
@@ -76,6 +105,13 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 /obj/machinery/atmospherics/components/binary/valve/digital/toggle()
 	use_power(ACTIVE_DRAW_MINIMAL)
 	. = ..()
+
+/obj/machinery/atmospherics/components/binary/valve/digital/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	if(prob(50) && is_operational)
+		toggle()
 
 /obj/machinery/atmospherics/components/binary/valve/layer1
 	piping_layer = 1

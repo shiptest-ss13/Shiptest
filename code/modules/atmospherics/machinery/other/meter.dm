@@ -1,6 +1,6 @@
 /obj/machinery/meter
-	name = "gas flow meter"
-	desc = "It measures something."
+	name = "pressure gauge"
+	desc = "An analog device that measures air pressure ."
 	icon = 'icons/obj/atmospherics/pipes/meter.dmi'
 	icon_state = "pressure-0"
 	base_icon_state = "pressure"
@@ -161,13 +161,14 @@
 // TURF METER - REPORTS A TILE'S AIR CONTENTS
 //	why are you yelling?
 /obj/machinery/meter/turf
+	desc = "An analog device that measures air pressure; this one is modified to read the air."
 
 /obj/machinery/meter/turf/reattach_to_layer()
 	target = loc
 
 /obj/machinery/meter/temperature
 	name = "temperature gauge"
-	desc = "It measures the current temperture in a pipe network."
+	desc = "An analog device that measures air temperature in a pipe network."
 	icon = 'icons/obj/atmospherics/pipes/meter.dmi'
 	icon_state = "temperature-0"
 	base_icon_state = "temperature"
@@ -256,8 +257,19 @@
 		if(environment)
 			. = "The temperature gauge reads [round(environment.return_temperature(),0.01)] K ([round(environment.return_temperature()-T0C,0.01)]&deg;C)."
 			if(environment.return_temperature() >= 973.15)
-				. = "\nThe temperature gauge appears to be melting. Not your problem."
+				. = "\nThe temperature gauge appears to be melting. Not your problem, the warped remains reads [round(environment.return_temperature(),0.01)] K ([round(environment.return_temperature()-T0C,0.01)]&deg;C)."
 		else
 			. = "The sensor error light is blinking."
 	else
 		. = "The connect error light is blinking."
+
+/obj/machinery/meter/temperature/Destroy()
+	. = ..()
+	if(part_hold)
+		QDEL_NULL(part_hold)
+
+/obj/machinery/meter/temperature/turf
+	desc = "An analog device that measures air temperature; this one is modified to read the air."
+
+/obj/machinery/meter/temperature/turf/reattach_to_layer()
+	target = loc
