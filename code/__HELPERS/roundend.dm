@@ -372,7 +372,7 @@
 	var/mob/M = C.mob
 	if(M.mind && !isnewplayer(M))
 		var/datum/overmap/ship/controlled/original_ship = M.mind.original_ship?.resolve()
-		var/location = original_ship ? "[original_ship]" : "[SSovermap.get_main_outpost()]"
+		var/location = original_ship ? "[original_ship]" : "in the Frontier"
 		if(M.stat != DEAD && !isbrain(M))
 			parts += "<div class='panel greenborder'>"
 			var/job_title
