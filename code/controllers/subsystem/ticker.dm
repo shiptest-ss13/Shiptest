@@ -274,7 +274,7 @@ SUBSYSTEM_DEF(ticker)
 	round_start_timeofday = world.timeofday
 	SSdbcore.SetRoundStart()
 
-	to_chat(world, span_notice("<B><font size=4>Welcome to Shiptest Pre-Alpha, enjoy your stay!</font></B>"))
+	to_chat(world, span_notice("<B><font size=4>Welcome to [station_name()], enjoy your stay!</font></B>"))
 	SSredbot.send_discord_message("ooc", "**A new round has begun.**")
 	SEND_SOUND(world, sound('sound/roundstart/addiguana.ogg'))
 
@@ -282,9 +282,9 @@ SUBSYSTEM_DEF(ticker)
 	Master.SetRunLevel(RUNLEVEL_GAME)
 
 	if(GLOB.holidays)
-		to_chat(world, span_notice("and..."))
 		for(var/holidayname in GLOB.holidays)
 			var/datum/holiday/holiday = GLOB.holidays[holidayname]
+			to_chat(world, span_notice("and..."))
 			to_chat(world, "<h4>[holiday.greet()]</h4>")
 
 	PostSetup()

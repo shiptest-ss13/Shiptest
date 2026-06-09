@@ -82,7 +82,6 @@ GLOBAL_VAR(command_name)
 		var/datum/holiday/holiday = GLOB.holidays[holiday_name]
 		if(istype(holiday, /datum/holiday/friday_thirteenth))
 			random = 13
-		name = holiday.getStationPrefix()
 		//get normal name
 	if(!name)
 		name = pick(GLOB.station_names)
@@ -99,14 +98,10 @@ GLOBAL_VAR(command_name)
 			new_station_name += "[rand(1, 99)]"
 		if(2)
 			new_station_name += pick(GLOB.greek_letters)
-		if(3)
-			new_station_name += "\Roman[rand(1,99)]"
 		if(4)
 			new_station_name += pick(GLOB.phonetic_alphabet)
 		if(5)
 			new_station_name += pick(GLOB.numbers_as_words)
-		if(13)
-			new_station_name += pick("13","XIII","Thirteen")
 	return new_station_name
 
 /proc/syndicate_name()
