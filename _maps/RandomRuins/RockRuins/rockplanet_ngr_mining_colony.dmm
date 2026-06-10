@@ -2035,6 +2035,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/tan,
 /obj/effect/turf_decal/trimline/opaque/bar/corner,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "lG" = (
@@ -2078,6 +2079,19 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/security)
+"mb" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/bunkhouse)
 "md" = (
 /obj/effect/turf_decal/corner/opaque/tan/full,
 /obj/effect/turf_decal/trimline/opaque/bar/line{
@@ -3272,6 +3286,7 @@
 	dir = 1
 	},
 /obj/structure/closet/wall/directional/west,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "sv" = (
@@ -6271,6 +6286,7 @@
 "IY" = (
 /obj/effect/turf_decal/techfloor,
 /obj/structure/closet/wall/directional/west,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "Ja" = (
@@ -6471,6 +6487,7 @@
 	},
 /obj/item/clothing/under/syndicate/ngr,
 /obj/item/clothing/accessory/bonearmlet,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "Ka" = (
@@ -6831,6 +6848,7 @@
 	dir = 1
 	},
 /obj/structure/closet/wall/directional/east,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "LE" = (
@@ -6906,6 +6924,7 @@
 "LV" = (
 /obj/effect/turf_decal/techfloor,
 /obj/structure/closet/wall/directional/east,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "LX" = (
@@ -12743,7 +12762,7 @@ nZ
 dR
 gQ
 gQ
-gQ
+mb
 gQ
 gQ
 bD
