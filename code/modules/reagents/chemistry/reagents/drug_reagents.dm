@@ -85,13 +85,13 @@
 	. = ..()
 	M.add_client_colour(/datum/client_colour/rahkrahene_overdose)
 
-/datum/reagent/drug/rahkrahene/on_mob_life(mob/living/carbon/metabolizer)
+/datum/reagent/drug/rahkrahene/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(SPT_PROB(2.5, seconds_per_tick))
 		var/high_message = pick("YOU NEED TO MOVE.", "INERTIA IS FILLING YOUR HEART", "SEIZE THE MOMENT", "GO GO GO GO GO GO", "YOU NEED TO SPRINT.", "DO NOT STOP MOVING.", "THERE IS NOTHING BUT FORWARDS")
 		to_chat(metabolizer, span_boldwarning("[high_message]"))
 	if(SPT_PROB(15, seconds_per_tick))
 		metabolizer.playsound_local(get_turf(metabolizer), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_heavy, name)
+	SEND_SIGNAL(metabolizer, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_heavy, name)
 	metabolizer.AdjustStun(-40)
 	metabolizer.AdjustKnockdown(-40)
 	metabolizer.AdjustUnconscious(-40)
@@ -102,8 +102,8 @@
 	..()
 	. = 1
 
-/datum/reagent/drug/rahkrahene/overdose_process(mob/living/M)
-	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
+/datum/reagent/drug/rahkrahene/overdose_process(mob/living/overdoser, seconds_per_tick)
+	if(!HAS_TRAIT(overdoser, TRAIT_IMMOBILIZED) && !ismovable(overdoser.loc))
 		for(var/i in 1 to 4)
 			step(overdoser, pick(GLOB.cardinals))
 	if(SPT_PROB(17, seconds_per_tick))
