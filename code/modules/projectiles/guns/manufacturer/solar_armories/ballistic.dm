@@ -237,3 +237,5 @@
 	internal_magazine = TRUE
 	show_magazine_on_sprite = FALSE
 	empty_indicator = FALSE
+
+	refused_attachments = list(/obj/item/attachment/silencer)

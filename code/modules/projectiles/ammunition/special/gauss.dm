@@ -67,3 +67,4 @@
 	projectile_type = /obj/projectile/bullet/gauss/rod
 	auto_rotate = TRUE
 	energy_cost = 1500
+	stack_size = 5
