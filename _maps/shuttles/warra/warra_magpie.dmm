@@ -248,10 +248,7 @@
 /area/ship/engineering)
 "bI" = (
 /obj/structure/table/chem,
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/structure/noticeboard/directional/west,
 /obj/item/paper_bin{
 	pixel_x = -5;
 	pixel_y = 4
@@ -976,6 +973,7 @@
 	pixel_y = -10
 	},
 /obj/item/clothing/suit/warra/vest,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
 /obj/item/clothing/head/hardhat/warra{
 	pixel_x = -4;
 	pixel_y = 8
@@ -985,6 +983,7 @@
 	pixel_y = 8
 	},
 /obj/item/clothing/glasses/meson,
+/obj/item/pda/shaftminer,
 /obj/machinery/button/door{
 	id = "magpie_miner_window";
 	name = "Window Control";
@@ -997,7 +996,6 @@
 /obj/structure/extinguisher_cabinet/directional/east{
 	pixel_y = -6
 	},
-/obj/item/pda/shaftminer,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/starboard)
 "gz" = (
@@ -2086,7 +2084,7 @@
 	pixel_x = 4;
 	pixel_y = -13
 	},
-/obj/item/clothing/gloves/color/evening{
+/obj/item/clothing/gloves/long/white{
 	pixel_x = -5;
 	pixel_y = -10
 	},
@@ -3282,7 +3280,7 @@
 	pixel_x = 5;
 	pixel_y = -13
 	},
-/obj/item/clothing/gloves/color/latex/nitrile{
+/obj/item/clothing/gloves/nitrile/blue{
 	pixel_x = -5;
 	pixel_y = -10
 	},
@@ -4064,7 +4062,7 @@
 /obj/item/storage/belt/utility/full/engi{
 	pixel_y = -4
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_y = -10
 	},
 /turf/open/floor/plasteel/tech,
@@ -5204,9 +5202,7 @@
 	dir = 5
 	},
 /obj/structure/table/chem,
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/item/stack/medical/bone_gel/four{
 	pixel_x = -9;
 	pixel_y = 15
@@ -6496,10 +6492,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "UY" = (
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/effect/turf_decal/industrial/hatch/blue,
 /obj/machinery/computer/atmos_control/external{
 	dir = 1;

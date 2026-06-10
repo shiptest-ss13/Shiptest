@@ -1,11 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aF" = (
-/obj/structure/flora/rock/pile/rockplanet,
-/turf/open/floor/plating/asteroid/snow/safe/lit,
-/area/hangar)
 "aQ" = (
 /obj/effect/turf_decal/industrial/loading/stripes/red,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "bJ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -13,10 +9,14 @@
 /turf/open/floor/hangar,
 /area/hangar)
 "eR" = (
-/obj/effect/landmark/outpost/elevator_machine,
-/obj/structure/lattice/catwalk,
+/obj/effect/turf_decal/techfloor{
+	dir = 1;
+	layer = 2.04
+	},
+/obj/effect/turf_decal/techfloor,
 /obj/machinery/door/airlock/grunge,
-/turf/open/floor/engine,
+/obj/effect/landmark/outpost/elevator_machine,
+/turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "eV" = (
 /obj/effect/landmark/outpost/elevator,
@@ -28,7 +28,7 @@
 /obj/machinery/conveyor/auto/outpost{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "fm" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -43,23 +43,7 @@
 	pixel_y = -5;
 	desc = "A direction sign, pointing out which way the Cargo Delivery Chute is."
 	},
-/turf/open/floor/hangar/plasteel/dark,
-/area/hangar)
-"fs" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 6
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
-/area/hangar)
-"fB" = (
-/obj/effect/turf_decal/corner/opaque/tan/three_quarters,
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 6
-	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "fH" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -69,7 +53,7 @@
 	dir = 1
 	},
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "fI" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -78,7 +62,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/corner{
 	dir = 8
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "gc" = (
 /obj/effect/turf_decal/techfloor{
@@ -90,15 +74,18 @@
 /obj/item/clothing/suit/hooded/wintercoat,
 /obj/item/clothing/suit/hooded/wintercoat,
 /obj/item/clothing/suit/hooded/wintercoat,
-/turf/open/floor/hangar/plasteel/dark,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "gS" = (
 /obj/structure/flora/grass/rockplanet/dead,
-/turf/open/floor/plating/asteroid/rockplanet/safe/lit,
+/turf/open/floor/plating/asteroid/rockplanet/safe/lit/ngr_outpost_outside,
 /area/hangar)
 "hz" = (
 /obj/structure/flora/rock/rockplanet,
-/turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit/ngr_outpost_outside,
 /area/hangar)
 "hT" = (
 /obj/structure/marker_beacon{
@@ -109,15 +96,6 @@
 "if" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/hangar)
-"kN" = (
-/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 5
-	},
-/turf/open/floor/hangar/plasteel/dark,
-/area/hangar)
 "li" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 4
@@ -125,44 +103,33 @@
 /obj/effect/turf_decal/trimline/opaque/bar/corner{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "lk" = (
 /obj/structure/chair/bench/red/directional/south,
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = 32
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "lx" = (
 /obj/effect/turf_decal/arrows{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "mg" = (
 /obj/machinery/conveyor/auto/outpost,
 /obj/structure/plasticflaps/outpost,
-/turf/open/floor/plasteel/tech,
-/area/hangar)
-"mR" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 9
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "nO" = (
 /obj/structure/flora/tree/cactus,
-/turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit/ngr_outpost_outside,
 /area/hangar)
 "pK" = (
 /obj/effect/turf_decal/industrial/outline/red,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "pT" = (
 /turf/open/floor/plasteel/elevatorshaft{
@@ -173,9 +140,16 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
+/area/hangar)
+"qD" = (
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
+	dir = 8
 	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "rl" = (
 /obj/structure/disposalpipe/segment{
@@ -183,23 +157,15 @@
 	},
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/hangar)
-"sc" = (
-/turf/open/floor/plating/asteroid/snow/safe/lit,
-/area/hangar)
 "sF" = (
 /obj/machinery/door/poddoor/ert,
 /turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
 /area/hangar)
-"sM" = (
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
 "tc" = (
 /obj/structure/flora/tree/cactus,
-/turf/open/floor/plating/asteroid/rockplanet/safe/lit,
+/turf/open/floor/plating/asteroid/rockplanet/safe/lit/ngr_outpost_outside,
 /area/hangar)
 "te" = (
 /obj/effect/landmark/outpost/hangar_dock,
@@ -207,28 +173,27 @@
 /area/hangar)
 "ts" = (
 /obj/structure/flora/rock/pile/rockplanet,
-/turf/open/floor/plating/asteroid/rockplanet/safe/lit,
+/turf/open/floor/plating/asteroid/rockplanet/safe/lit/ngr_outpost_outside,
 /area/hangar)
 "tv" = (
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "uc" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 10
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/line,
-/obj/effect/landmark/outpost/hangar_numbers,
-/turf/open/floor/plasteel/tech,
+/obj/machinery/door/poddoor/ert,
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/hangar)
 "uD" = (
-/obj/effect/turf_decal/techfloor/corner{
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "vE" = (
 /obj/structure/chair/bench/red/directional/south,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "vR" = (
 /obj/machinery/light/floor/hangar,
@@ -238,7 +203,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "vY" = (
 /obj/machinery/disposal/deliveryChute{
@@ -247,25 +212,21 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "wx" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/turf/open/floor/hangar/plasteel/dark,
+/obj/effect/turf_decal/borderfloorblack,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "wz" = (
 /obj/structure/flora/rock/rockplanet,
-/turf/open/floor/plating/asteroid/rockplanet/safe/lit,
+/turf/open/floor/plating/asteroid/rockplanet/safe/lit/ngr_outpost_outside,
 /area/hangar)
 "wC" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "ye" = (
 /turf/open/floor/hangar,
@@ -275,7 +236,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 6
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "zD" = (
 /turf/closed/indestructible/rock/rockplanet,
@@ -287,7 +248,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 8
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "Bw" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -296,17 +257,19 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "BZ" = (
-/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
-	dir = 8
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 5
+/obj/effect/turf_decal/trimline/opaque/bar/line,
+/obj/effect/landmark/outpost/hangar_numbers{
+	pixel_x = 0;
+	pixel_y = 0
 	},
-/turf/open/floor/plasteel/tech,
-/area)
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
+/area/hangar)
 "Co" = (
 /turf/open/floor/plasteel/stairs/mid{
 	dir = 1;
@@ -314,20 +277,28 @@
 	},
 /area/hangar)
 "DR" = (
-/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
-	dir = 1
+/obj/effect/turf_decal/techfloor{
+	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 10
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 8
 	},
-/obj/effect/landmark/outpost/shaft_number,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "Eo" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
+/obj/effect/landmark/outpost/elevator_machine,
+/obj/machinery/elevator_call_button{
+	pixel_y = 25
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "EG" = (
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters{
@@ -336,23 +307,23 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 9
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "GN" = (
 /obj/machinery/conveyor/auto/outpost,
 /obj/effect/landmark/outpost/hangar_crate_spawner,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "HD" = (
 /obj/structure/flora/grass/rockplanet/dead,
-/turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit/ngr_outpost_outside,
 /area/hangar)
 "JE" = (
 /obj/structure/plasticflaps/outpost,
 /obj/machinery/conveyor/auto/outpost{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "JQ" = (
 /obj/machinery/light/floor/hangar,
@@ -360,16 +331,19 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "KC" = (
-/turf/open/floor/plating/asteroid/rockplanet/safe/lit,
+/turf/open/floor/plating/asteroid/rockplanet/safe/lit/ngr_outpost_outside,
 /area/hangar)
 "Mv" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plasteel/elevatorshaft{
-	planetary_atmos = 1
+/obj/effect/turf_decal/techfloor{
+	dir = 8
 	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "MA" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -378,7 +352,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "MT" = (
 /obj/structure/disposalpipe/trunk{
@@ -390,16 +364,14 @@
 /obj/structure/disposaloutlet{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech,
-/area/hangar)
-"MZ" = (
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "Ne" = (
 /obj/effect/turf_decal/techfloor{
-	dir = 8
+	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/obj/effect/turf_decal/borderfloorblack,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "NW" = (
 /obj/machinery/light/dim/directional/north,
@@ -407,14 +379,7 @@
 	dir = 8
 	},
 /obj/structure/railing/thin/corner,
-/turf/open/floor/plasteel/tech,
-/area/hangar)
-"Ox" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plasteel/stairs/mid{
-	dir = 1;
-	color = "#2e2e2e"
-	},
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "OV" = (
 /obj/structure/plasticflaps/outpost,
@@ -422,19 +387,10 @@
 	dir = 5;
 	verted = -1
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "Pk" = (
-/turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit,
-/area/hangar)
-"Pu" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit/ngr_outpost_outside,
 /area/hangar)
 "Qf" = (
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters{
@@ -443,7 +399,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_ccw{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "QD" = (
 /obj/structure/sign/departments/cargo,
@@ -454,13 +410,13 @@
 	dir = 6;
 	verted = -1
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "Rf" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "Si" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -469,41 +425,33 @@
 /obj/effect/turf_decal/trimline/opaque/bar/corner{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "SB" = (
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 4
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "Tv" = (
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"Uu" = (
-/obj/structure/flora/grass/rockplanet/dead,
-/turf/open/floor/plating/asteroid/snow/safe/lit,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "VK" = (
-/obj/effect/landmark/outpost/elevator_machine,
-/obj/machinery/elevator_call_button{
-	pixel_y = 25
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
 	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/turf/open/floor/hangar/plasteel/dark,
+/obj/effect/turf_decal/trimline/opaque/bar/line,
+/obj/effect/landmark/outpost/shaft_number,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "VL" = (
 /obj/effect/turf_decal/industrial/hatch/red,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "WX" = (
 /obj/structure/flora/rock/pile/rockplanet,
-/turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit/ngr_outpost_outside,
 /area/hangar)
 "Yf" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -514,18 +462,14 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line,
-/turf/open/floor/hangar/plasteel/dark,
-/area/hangar)
-"Yx" = (
-/obj/structure/flora/rock/rockplanet,
-/turf/open/floor/plating/asteroid/snow/safe/lit,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "Zf" = (
 /obj/machinery/conveyor/auto/outpost{
 	dir = 8
 	},
 /obj/structure/railing/thin,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "Zr" = (
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters{
@@ -534,14 +478,14 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_cw{
 	layer = 2.032
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 "Zw" = (
 /obj/machinery/conveyor/auto/outpost{
 	dir = 10
 	},
 /obj/structure/railing/thin,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/ngr_outpost_outside,
 /area/hangar)
 
 (1,1,1) = {"
@@ -801,50 +745,50 @@ zD
 MA
 Yf
 Yk
-sM
-sM
+tv
+tv
 lx
-sM
+tv
 Tv
-sM
-sM
+tv
+tv
 lx
-sM
-sM
-sM
-sM
+tv
+tv
+tv
+tv
 lx
-sM
+tv
 Tv
-sM
-sM
+tv
+tv
 lx
-sM
-sM
-sM
-sM
+tv
+tv
+tv
+tv
 lx
-sM
+tv
 Tv
-sM
-sM
+tv
+tv
 lx
-sM
-sM
-sM
-sM
+tv
+tv
+tv
+tv
 lx
-sM
+tv
 Tv
-sM
-sM
+tv
+tv
 lx
-sM
-sM
+tv
+tv
 MA
 Yf
 Yk
-sc
+Pk
 zD
 zD
 zD
@@ -919,7 +863,7 @@ zD
 zD
 zD
 zD
-aF
+WX
 MA
 Yf
 Yk
@@ -1088,7 +1032,7 @@ hT
 MA
 Yf
 Yk
-sc
+Pk
 zD
 zD
 zD
@@ -1149,8 +1093,8 @@ ye
 MA
 Yf
 Yk
-sc
-sc
+Pk
+Pk
 zD
 zD
 "}
@@ -1162,7 +1106,7 @@ zD
 zD
 zD
 zD
-sc
+Pk
 KC
 MA
 Yf
@@ -1211,7 +1155,7 @@ fH
 Yf
 Yk
 KC
-sc
+Pk
 zD
 zD
 "}
@@ -1223,7 +1167,7 @@ zD
 zD
 zD
 zD
-sc
+Pk
 KC
 MA
 Yf
@@ -1272,7 +1216,7 @@ MA
 Yf
 Yk
 KC
-sc
+Pk
 zD
 zD
 "}
@@ -1284,7 +1228,7 @@ zD
 zD
 zD
 zD
-sc
+Pk
 tc
 MA
 Yf
@@ -1344,7 +1288,7 @@ zD
 zD
 zD
 zD
-sc
+Pk
 HD
 Pk
 MA
@@ -1395,7 +1339,7 @@ Yf
 Yk
 KC
 Pk
-sc
+Pk
 zD
 "}
 (15,1,1) = {"
@@ -1405,7 +1349,7 @@ zD
 zD
 zD
 zD
-aF
+WX
 KC
 Pk
 MA
@@ -1456,7 +1400,7 @@ Yf
 Yk
 KC
 tc
-sc
+Pk
 zD
 "}
 (16,1,1) = {"
@@ -1517,7 +1461,7 @@ Yf
 Yk
 KC
 Pk
-Yx
+hz
 zD
 "}
 (17,1,1) = {"
@@ -1639,7 +1583,7 @@ Yf
 Yk
 Pk
 HD
-sc
+Pk
 zD
 "}
 (19,1,1) = {"
@@ -1700,7 +1644,7 @@ Yf
 Yk
 KC
 Pk
-sc
+Pk
 zD
 "}
 (20,1,1) = {"
@@ -1821,7 +1765,7 @@ MA
 Yf
 Yk
 Pk
-sc
+Pk
 zD
 zD
 "}
@@ -1882,7 +1826,7 @@ MA
 Yf
 Yk
 Pk
-sc
+Pk
 zD
 zD
 "}
@@ -1943,7 +1887,7 @@ MA
 Yf
 Yk
 KC
-aF
+WX
 zD
 zD
 "}
@@ -2004,7 +1948,7 @@ MA
 Yf
 Yk
 gS
-sc
+Pk
 zD
 zD
 "}
@@ -2187,7 +2131,7 @@ fH
 Yf
 Yk
 KC
-Yx
+hz
 zD
 zD
 "}
@@ -2687,7 +2631,7 @@ zD
 zD
 zD
 zD
-sc
+Pk
 KC
 MA
 Yf
@@ -2748,7 +2692,7 @@ zD
 zD
 zD
 zD
-Uu
+HD
 KC
 MA
 Yf
@@ -2809,7 +2753,7 @@ zD
 zD
 zD
 zD
-sc
+Pk
 tc
 MA
 Yf
@@ -2871,7 +2815,7 @@ zD
 zD
 zD
 zD
-sc
+Pk
 MA
 Yf
 Yk
@@ -3224,7 +3168,7 @@ MA
 Yf
 Yk
 KC
-sc
+Pk
 zD
 zD
 "}
@@ -3285,7 +3229,7 @@ MA
 Yf
 Yk
 KC
-sc
+Pk
 zD
 zD
 "}
@@ -3346,7 +3290,7 @@ MA
 Yf
 Yk
 gS
-sc
+Pk
 zD
 zD
 "}
@@ -3408,7 +3352,7 @@ Yf
 Yk
 KC
 gS
-aF
+WX
 zD
 "}
 (48,1,1) = {"
@@ -3469,7 +3413,7 @@ Yf
 Yk
 KC
 Pk
-sc
+Pk
 zD
 "}
 (49,1,1) = {"
@@ -3530,7 +3474,7 @@ Yf
 Yk
 Pk
 KC
-sc
+Pk
 zD
 "}
 (50,1,1) = {"
@@ -3603,7 +3547,7 @@ zD
 zD
 zD
 zD
-aF
+WX
 MA
 Yf
 JQ
@@ -3664,7 +3608,7 @@ zD
 zD
 zD
 zD
-Uu
+HD
 MA
 Yf
 Yk
@@ -3725,7 +3669,7 @@ zD
 zD
 zD
 zD
-sc
+Pk
 MA
 Yf
 Yk
@@ -3774,7 +3718,7 @@ Yf
 Yk
 KC
 HD
-aF
+WX
 zD
 "}
 (54,1,1) = {"
@@ -3834,7 +3778,7 @@ MA
 Yf
 Yk
 Pk
-sc
+Pk
 zD
 zD
 "}
@@ -3970,7 +3914,7 @@ zD
 zD
 if
 fa
-MZ
+tv
 Yf
 Yk
 ye
@@ -4016,7 +3960,7 @@ ye
 fH
 Yf
 Yk
-sc
+Pk
 zD
 zD
 zD
@@ -4031,7 +3975,7 @@ zD
 zD
 if
 NW
-MZ
+tv
 Yf
 Yk
 ye
@@ -4077,7 +4021,7 @@ ye
 MA
 Yf
 Yk
-sc
+Pk
 zD
 zD
 zD
@@ -4214,7 +4158,7 @@ if
 JE
 if
 QD
-MZ
+tv
 Yf
 Yk
 ye
@@ -4443,7 +4387,7 @@ Yf
 Yf
 Yf
 Yk
-sc
+Pk
 zD
 zD
 zD
@@ -4458,15 +4402,15 @@ if
 if
 if
 if
-kN
+qD
 Bw
 Bw
 Bw
 vR
 Bw
-Bw
-Bw
 fm
+Bw
+Bw
 Bw
 Bw
 Bw
@@ -4525,28 +4469,28 @@ zD
 zD
 zD
 zD
-zD
-zD
 if
-HD
+zD
 Pk
+Pk
+Pk
+Pk
+wx
+Yf
+SB
+Pk
+Pk
+KC
+KC
 KC
 KC
 gS
+KC
+KC
+KC
 Pk
+WX
 Pk
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-gS
-KC
-KC
-KC
 zD
 zD
 zD
@@ -4559,14 +4503,14 @@ zD
 zD
 zD
 zD
-sc
+Pk
 HD
 KC
 KC
 KC
 Pk
 WX
-sc
+Pk
 zD
 zD
 "}
@@ -4574,41 +4518,41 @@ zD
 zD
 zD
 zD
-if
 zD
 zD
-if
 zD
 zD
-if
 zD
 zD
-if
 zD
 zD
-if
-if
-if
-if
-if
-VK
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+Pk
+Pk
+KC
 wx
-wx
+Yf
 SB
 Pk
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
+Pk
+Pk
+Pk
 zD
 Pk
-tc
-HD
+Pk
+KC
+Pk
+gS
+Pk
+zD
+zD
+zD
 zD
 zD
 zD
@@ -4620,12 +4564,12 @@ zD
 zD
 zD
 zD
-sc
-sc
+Pk
+Pk
 nO
 hz
 gS
-sc
+Pk
 zD
 zD
 zD
@@ -4635,32 +4579,46 @@ zD
 zD
 zD
 zD
-sF
-pT
-pT
-Co
-pT
-pT
-Co
-pT
-pT
-Co
-pT
-pT
-sF
-pT
-pT
-eV
-eR
-EG
-mR
-DR
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
 Eo
+DR
+DR
+DR
+DR
+Pk
+Pk
+KC
+zD
+zD
+Pk
+Pk
+Pk
+Pk
+zD
+zD
+zD
+zD
+zD
+zD
+KC
+KC
 HD
-KC
-zD
-zD
-zD
 zD
 zD
 zD
@@ -4671,21 +4629,7 @@ zD
 Pk
 Pk
 Pk
-zD
-KC
-KC
-HD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-sc
-sc
-sc
-sc
+Pk
 zD
 zD
 zD
@@ -4696,29 +4640,30 @@ zD
 zD
 zD
 zD
-sF
-Mv
-Mv
-Ox
-Mv
-Mv
-Ox
-Mv
-Mv
-Ox
-Mv
-Mv
+uc
+pT
+pT
+Co
+pT
+pT
+Co
+pT
+pT
+Co
 if
 pT
 pT
 pT
-eR
-Pu
-bJ
-uc
-Eo
+pT
+eV
+if
+EG
+AZ
+AZ
+AZ
+uD
+Ne
 KC
-tc
 zD
 zD
 zD
@@ -4730,8 +4675,7 @@ zD
 zD
 zD
 zD
-Pk
-gS
+zD
 Pk
 KC
 Pk
@@ -4744,7 +4688,7 @@ zD
 zD
 zD
 zD
-sc
+Pk
 zD
 zD
 zD
@@ -4767,20 +4711,20 @@ Co
 pT
 pT
 Co
+if
 pT
 pT
-sF
 pT
 pT
 pT
 eR
-BZ
-fs
-fB
-Eo
+MA
+Yf
+Yf
+Yf
+VK
+Ne
 KC
-zD
-zD
 zD
 zD
 zD
@@ -4818,30 +4762,30 @@ zD
 zD
 zD
 zD
+sF
+pT
+pT
+Co
+pT
+pT
+Co
+pT
+pT
+Co
 if
-zD
-zD
-if
-zD
-zD
-if
-zD
-zD
-if
-zD
-zD
-if
-if
-if
-if
-if
-gc
-gc
+pT
+pT
+pT
+pT
+pT
+eR
+MA
+bJ
+Yf
+bJ
+Yk
 Ne
-uD
-Pk
-zD
-zD
+tc
 zD
 zD
 zD
@@ -4876,6 +4820,189 @@ zD
 zD
 "}
 (72,1,1) = {"
+zD
+zD
+zD
+sF
+pT
+pT
+Co
+pT
+pT
+Co
+pT
+pT
+Co
+if
+pT
+pT
+pT
+pT
+pT
+eR
+MA
+Yf
+Yf
+Yf
+BZ
+Ne
+Pk
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+"}
+(73,1,1) = {"
+zD
+zD
+zD
+uc
+pT
+pT
+Co
+pT
+pT
+Co
+pT
+pT
+Co
+if
+pT
+pT
+pT
+pT
+pT
+if
+qD
+Bw
+Bw
+Bw
+zC
+Ne
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+"}
+(74,1,1) = {"
+zD
+zD
+zD
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+if
+gc
+gc
+Mv
+Mv
+Mv
+Pk
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+"}
+(75,1,1) = {"
 zD
 zD
 zD
@@ -4936,190 +5063,129 @@ zD
 zD
 zD
 "}
-(73,1,1) = {"
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-"}
-(74,1,1) = {"
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-"}
-(75,1,1) = {"
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-zD
-"}
 (76,1,1) = {"
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+"}
+(77,1,1) = {"
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+"}
+(78,1,1) = {"
 zD
 zD
 zD

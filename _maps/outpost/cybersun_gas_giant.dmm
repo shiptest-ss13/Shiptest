@@ -6586,9 +6586,8 @@
 /area/outpost/crew/promenade)
 "pD" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/noticeboard{
-	name = "refinery notice board";
-	pixel_y = 25
+/obj/structure/noticeboard/directional/north{
+	name = "refinery notice board"
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/smeltery)
@@ -11759,10 +11758,8 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 4
 	},
-/obj/structure/noticeboard{
-	name = "cryogenics notice board";
-	dir = 4;
-	pixel_x = -25
+/obj/structure/noticeboard/directional/west{
+	name = "cryogenics notice board"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/cryo)
@@ -12142,10 +12139,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/cargo/smeltery)
 "Dz" = (
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/item/radio/intercom/directional/north,
 /obj/effect/turf_decal/corner/transparent/cybersunteal/three_quarters{
 	dir = 8
@@ -16618,7 +16612,7 @@
 	pixel_y = -8
 	},
 /obj/item/clothing/suit/lawyer/navy,
-/obj/item/clothing/under/pants/tan{
+/obj/item/clothing/under/pants/khaki{
 	pixel_y = -8;
 	pixel_x = -1
 	},
@@ -17181,8 +17175,7 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/bar/cybersun_outpost)
 "Pq" = (
-/obj/structure/noticeboard{
-	pixel_y = 25;
+/obj/structure/noticeboard/directional/north{
 	name = "local notice board"
 	},
 /turf/open/floor/suns/hatch/bamboo,

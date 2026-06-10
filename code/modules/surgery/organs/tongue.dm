@@ -262,6 +262,8 @@
 		/datum/language/gezena_kalixcian,
 		/datum/language/zohil_kalixcian,
 		/datum/language/league_kalixcian,
+		/datum/language/teceti_unified,
+		/datum/language/solarian_international,
 		/datum/language/codespeak,
 		/datum/language/monkey,
 		/datum/language/aphasia,

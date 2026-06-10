@@ -2580,9 +2580,7 @@
 /area/ruin/icemoon/command_post/mission_control)
 "xd" = (
 /obj/structure/dresser,
-/obj/structure/noticeboard{
-	pixel_x = 0;
-	pixel_y = 28;
+/obj/structure/noticeboard/directional/north{
 	name = "gun rack";
 	desc = "A board for holding a gun."
 	},
@@ -3237,10 +3235,7 @@
 "Ek" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/double/black,
-/obj/structure/noticeboard{
-	pixel_x = 0;
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/item/clothing/neck/cloak/warra{
 	pixel_x = 0;
 	pixel_y = 28

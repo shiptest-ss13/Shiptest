@@ -434,9 +434,7 @@
 /obj/effect/turf_decal/trimline/opaque/solgovblue/filled/line{
 	dir = 1
 	},
-/obj/structure/noticeboard{
-	pixel_y = 32
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1808,7 +1806,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/clothing/head/hardhat/solgov,
 /obj/item/clothing/under/solgov/formal,
 /obj/item/clothing/accessory/armband/engine,
@@ -3407,10 +3405,7 @@
 	desc = "For cleaning up messes when you wake up.";
 	name = "solarian anti-vomit rag"
 	},
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 32
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
@@ -4059,13 +4054,13 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/storage/eva)
 "Ny" = (
-/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
 /obj/structure/table/glass,
 /obj/item/storage/box/rxglasses,
 /obj/machinery/door/window/southleft{
 	dir = 8
 	},
-/obj/item/clothing/gloves/color/latex/nitrile{
+/obj/item/clothing/gloves/nitrile/blue{
 	pixel_x = 4;
 	pixel_y = 5
 	},

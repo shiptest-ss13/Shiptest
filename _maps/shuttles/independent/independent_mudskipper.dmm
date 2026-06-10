@@ -40,7 +40,7 @@
 	pixel_x = 10;
 	pixel_y = -6
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = 7;
 	pixel_y = -2
 	},
@@ -801,9 +801,9 @@
 	dir = 10
 	},
 /obj/structure/guncloset,
-/obj/item/gun/energy/sharplite/l201/l204,
 /obj/item/gun/energy/laser/e10,
 /obj/item/gun/energy/laser/e10,
+/obj/item/gun/energy/sharplite/x12,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance)
 "pY" = (
@@ -1826,10 +1826,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/structure/noticeboard{
-	pixel_x = 0;
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Lw" = (
@@ -1937,11 +1934,11 @@
 /obj/effect/turf_decal/box{
 	layer = 2.04
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = 7;
 	pixel_y = 4
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = 6;
 	pixel_y = 8
 	},

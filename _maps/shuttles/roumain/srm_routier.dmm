@@ -2847,7 +2847,7 @@
 /obj/item/storage/backpack/messenger/engi,
 /obj/item/storage/backpack/satchel/eng,
 /obj/item/storage/backpack/industrial,
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = 4;
 	pixel_y = -10
 	},
@@ -4715,11 +4715,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 9
 	},
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 0
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 9
