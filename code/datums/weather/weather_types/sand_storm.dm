@@ -38,7 +38,7 @@
 		L = L.loc //Check parent items immunities (recurses up to the turf)
 	return FALSE //RIP you
 
-/datum/weather/ash_storm/sand_storm/weather_act(mob/living/L)
+/datum/weather/ash_storm/sand_storm/weather_act(mob/living/L, seconds_per_tick)
 	if(is_ash_immune(L))
 		return
 	L.adjustBruteLoss(3)

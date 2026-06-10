@@ -29,10 +29,10 @@
 
 	fire_suppression = 6
 
-/datum/weather/acid_rain/weather_act(mob/living/L)
+/datum/weather/acid_rain/weather_act(mob/living/L, seconds_per_tick)
 	/// Think of some good solution of how weather should affect monsters and how they should be resistant to things like this
 	if(isanimal(L))
 		return
 	var/resist = L.getarmor(null, "acid")
-	if(prob(max(0,100-resist)))
+	if(SPT_PROB(max(0,100-resist), seconds_per_tick))
 		L.acid_act(20,1)

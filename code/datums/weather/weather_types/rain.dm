@@ -23,12 +23,12 @@
 
 	fire_suppression = 6
 
-/datum/weather/rain/weather_act(mob/living/living_mob)
+/datum/weather/rain/weather_act(mob/living/living_mob, seconds_per_tick)
 	if(!iscarbon(living_mob))
 		return
 	var/mob/living/carbon/carbon = living_mob
 	carbon.adjust_wet_stacks(fire_suppression/2)
-	if(prob(25))
+	if(SPT_PROB(25, seconds_per_tick))
 		carbon.wash(clean_types = CLEAN_TYPE_BLOOD)
 
 /datum/weather/rain/heavy

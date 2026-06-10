@@ -28,6 +28,6 @@
 	sound_weak_outside = /datum/looping_sound/weak_outside_ashstorm
 	sound_weak_inside = /datum/looping_sound/weak_inside_ashstorm
 
-/datum/weather/snow_storm/weather_act(mob/living/living_mob)
+/datum/weather/snow_storm/weather_act(mob/living/living_mob, seconds_per_tick)
 	living_mob.adjust_bodytemperature(-rand(2,4))
 

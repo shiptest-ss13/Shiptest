@@ -42,5 +42,5 @@
 	aesthetic = FALSE
 	thunder_chance = 2
 
-/datum/weather/snowfall/heavy/weather_act(mob/living/living_mob)
+/datum/weather/snowfall/heavy/weather_act(mob/living/living_mob, seconds_per_tick)
 	living_mob.adjust_bodytemperature(-rand(2,4), 243)

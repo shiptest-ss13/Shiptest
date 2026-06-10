@@ -10,11 +10,22 @@ SUBSYSTEM_DEF(weather)
 	wait = 10
 	runlevels = RUNLEVEL_GAME
 	var/list/weather_controllers = list()
+	var/list/current_run = list()
 
-/datum/controller/subsystem/weather/fire()
+/datum/controller/subsystem/weather/fire(resumed = FALSE)
+	if (!resumed)
+		src.current_run = weather_controllers.Copy()
+
+	//cache for sanic speed (lists are references anyways)
+	var/list/current_run = src.current_run
+
 	// process active weather controllers
-	for(var/datum/weather_controller/iterated_controller as anything in weather_controllers)
+	while(current_run.len)
+		var/datum/weather_controller/iterated_controller = current_run[current_run.len]
 		iterated_controller.process(wait * 0.1)
+
+		if (MC_TICK_CHECK)
+			return
 
 /datum/controller/subsystem/weather/proc/get_all_current_weather()
 	var/list/returned_weathers = list()

@@ -22,7 +22,7 @@
 	end_message = span_notice("The ash stops falling.")
 	immunity_type = "rad"
 
-/datum/weather/nuclear_fallout/weather_act(mob/living/akimov)
+/datum/weather/nuclear_fallout/weather_act(mob/living/akimov, seconds_per_tick)
 	akimov.rad_act(100)
 	to_chat(akimov, span_notice("You taste metal."))
 

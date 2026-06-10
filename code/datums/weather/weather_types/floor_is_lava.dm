@@ -23,7 +23,7 @@
 	multiply_blend_on_main_stage = TRUE
 
 
-/datum/weather/floor_is_lava/weather_act(mob/living/L)
+/datum/weather/floor_is_lava/weather_act(mob/living/L, seconds_per_tick)
 	if(issilicon(L))
 		return
 	if(istype(L.buckled, /obj/structure/bed))
