@@ -147,6 +147,12 @@
 	var/mine_heavy = 1
 	var/mine_light = 3
 	var/mine_flame = 0 //this is funny but sort of evil
+	var/examine_text = null
+
+/mob/living/simple_animal/hostile/automated/walkmine/examine(mob/user)
+	. = ..()
+	if(examine_text)
+		. += examine_text
 
 /mob/living/simple_animal/hostile/automated/walkmine/OpenFire(atom/victim)
 	if(get_dist(src,victim) > explode_distance)
@@ -172,3 +178,17 @@
 
 /mob/living/simple_animal/hostile/automated/walkmine/Aggro()
 	mob_light(2, 0.25, light_color)
+
+/mob/living/simple_animal/hostile/automated/walkmine/makosso
+	faction = list("Deathsquad")
+	examine_text = span_notice("It has a <span class='boldnotice'>Makosso-Warra</span> logo printed on its outer plating.")
+
+/mob/living/simple_animal/hostile/automated/walkmine/cybersun
+	faction = list("hostile")
+	examine_text = span_notice(" It has a <span class='boldnotice'>Cybersun Virtual Solutions</span> logo printed on its outer plating.")
+
+/mob/living/simple_animal/hostile/automated/walkmine/frontiersman
+	faction = list("Frontiersmen")
+
+/mob/living/simple_animal/hostile/automated/walkmine/ramzi
+	faction = list("Ramzi Clique")
