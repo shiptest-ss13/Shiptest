@@ -280,3 +280,36 @@
 /area/ruin/jungle/bighole/ferry
 	name = "Militarized Ferry"
 	icon_state = "hangar"
+
+//N&S Depot
+/area/ruin/jungle/depot/warehouse_1
+	name = "Warehouse 1"
+	icon_state = "auxstorage"
+
+/area/ruin/jungle/depot/warehouse_2
+	name = "Warehouse 2"
+	icon_state = "storage"
+
+/area/ruin/jungle/depot/warehouse_3
+	name = "Warehouse 3"
+	icon_state = "primarystorage"
+
+/area/ruin/jungle/depot/supply_office
+	name = "Supply Office"
+	icon_state = "quartoffice"
+
+/area/ruin/jungle/depot/residential
+	name = "Residential"
+	icon_state = "crew_quarters"
+
+/area/ruin/jungle/depot/canteen
+	name = "Canteen"
+	icon_state = "prison_mess"
+
+/area/ruin/jungle/depot/offices
+	name = "Offices"
+	icon_state = "bluenew"
+
+/area/ruin/jungle/depot/electrical
+	name = "Electrical"
+	icon_state = "maint_electrical"

@@ -6,6 +6,7 @@
 	dealt_damage = 0
 	light_color = "#D74722"
 	can_be_disabled = TRUE
+	disable_text = "unscrewing the panel and cutting the wires"
 	var/intruder_message = "INTRUDER DETECTED!"
 	var/hatch_open = FALSE
 
@@ -15,8 +16,8 @@
 	playsound(src, 'sound/machines/click.ogg', 60, TRUE)
 	playsound(src, 'sound/effects/alert.ogg', 50, TRUE)
 	say(intruder_message)
-	for(var/obj/structure/hazard/floor/burglar_alarm in alarmed) //this doesn't work but i'm leaving it so i can point and ask a smarter person why it doesn't work
-		disable()
+	for(var/obj/structure/hazard/floor/burglar_alarm/alarms in alarmed)
+		alarms.disable()
 
 /obj/structure/hazard/floor/burglar_alarm/update_appearance()
 	. = ..()
