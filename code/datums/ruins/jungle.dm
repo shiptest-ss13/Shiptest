@@ -18,13 +18,6 @@
 	suffix = "jungle_interceptor.dmm"
 	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 
-/datum/map_template/ruin/jungle/paradise
-	name = "Hidden paradise"
-	id = "paradise"
-	description = "a crashed shuttle, and a hidden beautiful lake."
-	suffix = "jungle_paradise.dmm"
-	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE, RUIN_TAG_HAZARDOUS)
-
 /datum/map_template/ruin/jungle/airbase
 	name = "Abandoned Airbase"
 	id = "airbase"

@@ -50,38 +50,6 @@
 	icon_state = "red"
 	always_unpowered = TRUE
 
-//holy shit, how does this work.
-
-//Jungle Paradise
-
-/area/ruin/jungle/paradise/comms
-	name = "Communications center"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/dorms
-	name = "sleeping hut"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/power
-	name = "electricity hut"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/construction
-	name = "construction site"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/med
-	name = "surgical medical pod"
-	icon_state = "blue"
-
-/area/ruin/jungle/paradise/misc
-	name = "Paradise"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/cargo
-	name = "cargo dump"
-	icon_state = "dk_yellow"
-
 // Abandoned Airbase
 
 /area/ruin/jungle/airbase
