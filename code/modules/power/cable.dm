@@ -349,8 +349,8 @@ GLOBAL_LIST_INIT(cable_colors, list(
 
 			to_connect += N.terminal //we'll connect the machines after all cables are merged
 
-		else if(istype(AM, /obj/machinery/power)) //other power machines
-			var/obj/machinery/power/M = AM
+		else if(istype(AM, /obj/machinery)) //other power machines
+			var/obj/machinery/M = AM
 
 			if(M.powernet == powernet)
 				continue
@@ -358,7 +358,7 @@ GLOBAL_LIST_INIT(cable_colors, list(
 			to_connect += M //we'll connect the machines after all cables are merged
 
 	//now that cables are done, let's connect found machines
-	for(var/obj/machinery/power/PM in to_connect)
+	for(var/obj/machinery/PM in to_connect)
 		if(!PM.connect_to_network())
 			PM.disconnect_from_network() //if we somehow can't connect the machine to the new powernet, remove it from the old nonetheless
 
@@ -446,7 +446,7 @@ GLOBAL_LIST_INIT(cable_colors, list(
 	if(P_list.len == 0)//if nothing in both list, then the cable was a lone cable, just delete it and its powernet
 		powernet.remove_cable(src)
 
-		for(var/obj/machinery/power/P in T1)//check if it was powering a machine
+		for(var/obj/machinery/P in T1)//check if it was powering a machine
 			if(!P.connect_to_network()) //can't find a node cable on a the turf to connect to
 				P.disconnect_from_network() //remove from current network (and delete powernet)
 		return
@@ -461,7 +461,7 @@ GLOBAL_LIST_INIT(cable_colors, list(
 
 	// Disconnect machines connected to nodes
 	if(d1 == 0) // if we cut a node (O-X) cable
-		for(var/obj/machinery/power/P in T1)
+		for(var/obj/machinery/P in T1)
 			if(!P.connect_to_network()) //can't find a node cable on a the turf to connect to
 				P.disconnect_from_network() //remove from current network
 

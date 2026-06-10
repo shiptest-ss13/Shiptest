@@ -138,6 +138,9 @@ Class Procs:
 	var/atmos_processing = FALSE
 	var/interacts_with_air = FALSE
 
+	var/power_flags = POWER_ALLOW_AREA
+	var/datum/powernet/powernet = null
+
 /obj/machinery/Initialize(mapload, apply_default_parts = TRUE)
 	if(!armor)
 		armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 70)
@@ -185,6 +188,7 @@ Class Procs:
 /obj/machinery/proc/exit_area(datum/source, area/A)
 	SIGNAL_HANDLER
 	set_no_power(A)
+	disconnect_from_network()
 
 /obj/machinery/Destroy()
 	GLOB.machines.Remove(src)
@@ -194,6 +198,7 @@ Class Procs:
 	QDEL_NULL(circuit)
 	QDEL_LIST(component_parts)
 	set_no_power()
+	disconnect_from_network()
 	return ..()
 
 /obj/machinery/proc/locate_machinery()
@@ -314,9 +319,10 @@ Class Procs:
 /obj/machinery/proc/on_set_is_operational(old_value)
 	return
 
-
 /obj/machinery/can_interact(mob/user)
-	if((machine_stat & (NOPOWER|BROKEN)) && !(interaction_flags_machine & INTERACT_MACHINE_OFFLINE)) // Check if the machine is broken, and if we can still interact with it if so
+	if(machine_stat & BROKEN && !(interaction_flags_machine & INTERACT_MACHINE_BROKEN)) // Check if the machine is broken, and if we can still interact with it if so
+		return FALSE
+	if(machine_stat & NOPOWER && !(interaction_flags_machine & INTERACT_MACHINE_UNPOWERED)) // Check if the machine is powered, and if we can still interact with it if not
 		return FALSE
 
 	var/silicon = issilicon(user)
