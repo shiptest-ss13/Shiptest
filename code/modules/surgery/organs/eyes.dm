@@ -516,3 +516,8 @@
 	flash_protect = FLASH_PROTECTION_SENSITIVE	//Obligatory flash sensitivity for balance
 	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT - 5	//This acts as *slightly* more powerful nightvision compared to the nightvision trait, if someone chooses NV as a trait it will be overwritten by this (highest wins).
 	//This reason these eyes do not inherit from /night_vision/ is because the fullbright the night_vision subtype provides is too overpowered for a roundstart selectable race.
+
+/obj/item/organ/eyes/compound/robotic
+	name = "robotic compound eyes"
+	status = ORGAN_ROBOTIC
+	organ_flags = ORGAN_SYNTHETIC
