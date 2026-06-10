@@ -5,7 +5,7 @@
 	var/obj/item/reagent_containers/food/snacks/hotdog/fooditem = allocate(/obj/item/reagent_containers/food/snacks/hotdog)
 	var/obj/item/organ/stomach/belly = human.getorganslot(ORGAN_SLOT_STOMACH)
 	var/obj/item/reagent_containers/pill/pill = allocate(/obj/item/reagent_containers/pill)
-	var/datum/reagent/drug/methamphetamine/meth = /datum/reagent/drug/methamphetamine
+	var/datum/reagent/drug/rahkrahene/meth = /datum/reagent/drug/rahkrahene
 
 	TEST_ASSERT_EQUAL(human.has_reagent(/datum/reagent/consumable/ketchup), FALSE, "Human somehow has ketchup before eating")
 

@@ -259,8 +259,8 @@
 /obj/item/reagent_containers/syringe/contraband/space_drugs
 	list_reagents = list(/datum/reagent/drug/space_drugs = 15)
 
-/obj/item/reagent_containers/syringe/contraband/methamphetamine
-	list_reagents = list(/datum/reagent/drug/methamphetamine = 15)
+/obj/item/reagent_containers/syringe/contraband/rahkrahene
+	list_reagents = list(/datum/reagent/drug/rahkrahene = 15)
 
 /obj/item/reagent_containers/syringe/contraband/mammoth
 	list_reagents = list(/datum/reagent/drug/mammoth = 15)

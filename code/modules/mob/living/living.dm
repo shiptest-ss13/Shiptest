@@ -350,6 +350,11 @@
 			update_pull_movespeed()
 
 		set_pull_offsets(M, state)
+	else
+		// We already know it's an object since it's not a mob so no need to typecheck
+		var/obj/O = AM
+		if (O.density || O.drag_slowdown)
+			face_mouse = FALSE
 
 //mob verbs are a lot faster than object verbs
 //for more info on why this is not atom/pull, see examinate() in mob.dm
@@ -368,6 +373,8 @@
 	..()
 	update_pull_movespeed()
 	update_pull_hud_icon()
+	if(a_intent == INTENT_HARM)
+		face_mouse = TRUE
 
 /mob/living/verb/stop_pulling1()
 	set name = "Stop Pulling"

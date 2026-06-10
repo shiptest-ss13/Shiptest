@@ -885,6 +885,9 @@
 /obj/item/clothing/gloves/color/black{
 	pixel_y = 5
 	},
+/obj/item/clothing/suit/toggle/chorejacket/warra{
+	pixel_x = -5
+	},
 /obj/item/clothing/suit/warra/vest{
 	pixel_x = 5
 	},
@@ -910,11 +913,11 @@
 	pixel_y = 12;
 	pixel_x = -6
 	},
-/obj/machinery/airalarm/directional/north,
 /obj/item/storage/guncase/pistol/miniegun{
 	mag_count = 3
 	},
 /obj/item/clothing/glasses/meson,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "pb" = (
@@ -1660,6 +1663,10 @@
 	pixel_x = 8;
 	pixel_y = -13
 	},
+/obj/item/clothing/suit/toggle/chorejacket/warra,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},

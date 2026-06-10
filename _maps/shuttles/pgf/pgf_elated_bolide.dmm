@@ -4028,9 +4028,6 @@
 "yq" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/neutral/full,
-/obj/structure/sign/poster/contraband/eoehoma{
-	pixel_x = -32
-	},
 /obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 4
 	},
@@ -4045,6 +4042,10 @@
 /obj/item/storage/toolbox/ammo/ewc_6m/half{
 	pixel_x = -3;
 	pixel_y = -1
+	},
+/obj/structure/sign/poster/etherbor/random{
+	pixel_y = 0;
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
