@@ -612,7 +612,7 @@
 	dna.remove_all_mutations()
 	dna.stability = 100
 	if(prob(max(70-instability,0)))
-		switch(rand(0,8)) //not complete and utter death
+		switch(rand(0,6)) //not complete and utter death
 			if(0)
 				monkeyize()
 			if(1)
@@ -638,9 +638,7 @@
 					O.Remove(src)
 					visible_message(span_danger("[src] vomits up their [O.name]!"), span_danger("You vomit up your [O.name]")) //no "vomit up your the heart"
 					O.forceMove(drop_location())
-			if(7 to 9)
-				ForceContractDisease(new/datum/disease/gastrolosis())
-				to_chat(src, span_notice("Oh, I actually feel quite alright!"))
+
 	else
 		switch(rand(0,5))
 			if(0)

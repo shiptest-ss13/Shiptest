@@ -731,7 +731,7 @@
 	name = "Panacea"
 	description = "One of the developments of the frontier, Panacea is a term for a variety of mildly-anomalous substances usually found within Frontier space. Despite disparate origins, they all share a similar effect of slowly healing the body. Overdosing on them causes this effect to reverse."
 	reagent_state = LIQUID
-	color = "#DCDCDC"
+	color = "#98048e"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	var/healing = 1
@@ -755,7 +755,7 @@
 /datum/reagent/medicine/panacea/effluvial
 	name = "Effluvial Panacea"
 	description = "A waste product of industrial processes to synthesize Panacea, or more often, an impure form, Effluvial Panacea has the same effects as true panacea, simply reduced in effectiveness."
-	color = "#d8c7b7"
+	color = "#c936bf"
 	healing = 0.2
 
 /datum/reagent/medicine/panacea/effluvial/on_mob_life(mob/living/carbon/M)
