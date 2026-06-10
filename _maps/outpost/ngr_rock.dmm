@@ -3879,10 +3879,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/outpost/crew/canteen)
-"iB" = (
-/obj/item/stack/ore/salvage/scrapmetal,
-/turf/open/water/tar,
-/area/outpost/vacant_rooms/office)
 "iD" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/dirt,
@@ -3890,11 +3886,7 @@
 	dir = 4
 	},
 /obj/effect/decal/fakelattice,
-/obj/structure/fluff{
-	name = "Geothermal Power Tap";
-	desc = "A complex machine that drills into the soil below it to gather thermal power.";
-	icon = 'icons/obj/power.dmi';
-	icon_state = "rtg";
+/obj/structure/fluff/geothermal{
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/elevatorshaft,
@@ -4156,10 +4148,6 @@
 	},
 /turf/open/floor/plasteel/tech/ngr_outpost,
 /area/outpost/hallway/central)
-"jj" = (
-/obj/item/stack/ore/salvage/scrapuranium,
-/turf/open/water/tar,
-/area/outpost/vacant_rooms/office)
 "jk" = (
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters{
 	dir = 8
@@ -5263,10 +5251,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
-"ls" = (
-/obj/item/stack/ore/salvage/scraptitanium,
-/turf/open/water/tar,
-/area/outpost/vacant_rooms/office)
 "lt" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -6218,6 +6202,10 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/outpost/cargo)
+"ni" = (
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/water/tar,
+/area/outpost/vacant_rooms/office)
 "nk" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -9421,12 +9409,7 @@
 /area/outpost/hallway/central)
 "ua" = (
 /obj/effect/decal/fakelattice,
-/obj/structure/fluff{
-	name = "vehicle battery";
-	desc = "An old, battery-acid crusted vehicle cell, completely useless, and probably a hazard to even breath next to.";
-	icon = 'icons/obj/power.dmi';
-	icon_state = "bg-cell"
-	},
+/obj/structure/fluff/vehicle_battery,
 /turf/open/floor/plating/rust,
 /area/outpost/vacant_rooms/office)
 "ub" = (
@@ -11654,11 +11637,6 @@
 	dir = 8
 	},
 /area/outpost/hallway/aft)
-"yX" = (
-/obj/effect/decal/fakelattice,
-/obj/item/stack/ore/salvage/scrapuranium,
-/turf/open/water/tar,
-/area/outpost/vacant_rooms/office)
 "yY" = (
 /obj/effect/turf_decal/corner/opaque/beige/diagonal{
 	dir = 4
@@ -11782,6 +11760,10 @@
 	},
 /turf/open/floor/plasteel/tech/ngr_outpost,
 /area/outpost/hallway/aft)
+"zm" = (
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/open/water/tar,
+/area/outpost/vacant_rooms/office)
 "zn" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#412e25";
@@ -13347,10 +13329,6 @@
 /obj/effect/decal/fakelattice,
 /obj/structure/hazard/spray/steam/transparent_safe,
 /turf/open/floor/plasteel/elevatorshaft,
-/area/outpost/vacant_rooms/office)
-"CH" = (
-/obj/effect/decal/fakelattice,
-/turf/open/water/tar,
 /area/outpost/vacant_rooms/office)
 "CJ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -17635,6 +17613,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/ngr_outpost,
 /area/outpost/hallway/central)
+"LR" = (
+/obj/structure/fluff/vehicle_battery,
+/turf/open/water/tar,
+/area/outpost/vacant_rooms/office)
 "LS" = (
 /obj/machinery/door/poddoor/shutters/indestructible,
 /obj/effect/turf_decal/techfloor{
@@ -17836,6 +17818,10 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/ngr_outpost,
 /area/outpost/hallway/aft)
+"Ms" = (
+/obj/item/stack/ore/salvage/scrapuranium,
+/turf/open/water/tar,
+/area/outpost/vacant_rooms/office)
 "Mt" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -18201,15 +18187,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
-"Ns" = (
-/obj/structure/fluff{
-	name = "vehicle battery";
-	desc = "An old, battery-acid crusted vehicle cell, completely useless, and probably a hazard to even breath next to.";
-	icon = 'icons/obj/power.dmi';
-	icon_state = "bg-cell"
-	},
-/turf/open/water/tar,
-/area/outpost/vacant_rooms/office)
 "Nu" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -26279,7 +26256,7 @@ Np
 dC
 bd
 aW
-iB
+ni
 Pn
 AZ
 dC
@@ -26394,7 +26371,7 @@ iD
 CG
 AZ
 dC
-yX
+Ms
 WX
 WX
 ua
@@ -26514,7 +26491,7 @@ AZ
 pR
 WX
 WX
-ls
+zm
 ph
 AZ
 OO
@@ -26629,7 +26606,7 @@ uj
 MP
 tO
 fx
-Ns
+LR
 WX
 NX
 Ur
@@ -26745,9 +26722,9 @@ Ab
 RA
 AZ
 AZ
-CH
-iB
-CH
+WX
+ni
+WX
 tH
 wB
 AZ
@@ -26864,8 +26841,8 @@ dC
 bd
 qU
 WT
-jj
-Ns
+Ms
+LR
 AZ
 AZ
 OO

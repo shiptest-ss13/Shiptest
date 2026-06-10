@@ -28,3 +28,69 @@
   - rscadd: Hardliner Holdout
   - rscdel: Buried Shrine
   - bugfix: Donk! Co. mention in syndicate_base.dm
+2026-06-03:
+  Gristlebee:
+  - rscadd: Vox pidgin symbol shows for people for understand the language.
+2026-06-04:
+  Bumtickley00:
+  - bugfix: You are no longer permanently slowed when landing on water.
+  Lemoninthedark + MrMelbert (Original code), Bumtickley00 (Porting):
+  - bugfix: Monkeys no longer appear mangled on examine when they aren't.
+  - bugfix: Monkeys will no longer become permanently stuck juggling items.
+  zimon9:
+  - rscadd: Added ability for rachnids to speak in solarian and tecetian
+  - bugfix: fixes interaction of papers on clipboards
+2026-06-05:
+  goober3:
+  - bugfix: Agni's car battery room has been cleaned up to rectify mysterious check
+      failures.
+  zimon9:
+  - balance: changed quantities of bone gel and surgical tape in bruise kits to be
+      equal and reduced number of surgical tape packs that needed to be bought at
+      once
+2026-06-06:
+  BaseballDuster:
+  - bugfix: fixed the Raskas helmet light states.
+  firebudgy:
+  - balance: Planetary interference reduced.
+  miniusAreas:
+  - rscadd: Remaps the Goliath to be significantly more robust.
+  thearbiber:
+  - balance: ruin loot audit
+  - rscadd: stag-class salvage rig
+  zimon9:
+  - balance: makes it possible to walk on ice without slipping
+2026-06-07:
+  AnomalousPotato:
+  - rscadd: Added polyglot quirk for maximum yapping.
+  Bumtickley00:
+  - rscadd: You can now load regular revolvers with an ammo stack, not just a single
+      shell.
+  - bugfix: Reloading gate-loaded revolvers with an ammo stack now spins the cylinder
+      until all the empty slots are full instead of only trying a couple times.
+  - bugfix: Moving while unloading a gate-loaded revolver will no longer instantly
+      dump the rounds on the floor.
+  - bugfix: Loading a speedloader and a revolver at the same time will no longer quantum-entangle
+      bullets between them.
+  - code_imp: Removed some copypaste in the revolver code.
+  firebudgy:
+  - balance: Advanced first aid kit in cargo.
+  zimon9:
+  - bugfix: fixed equipment selection dummy hair (and prefs) randomization
+  - rscadd: added salbutamol refills to the outpost med
+  - balance: reduced price of salbutamol refill kits
+2026-06-08:
+  DIB-DOG:
+  - rscadd: Added new Etherbor posters
+  Ical92:
+  - rscadd: table-variant sinks
+  thearbiber:
+  - rscadd: shawls
+  - rscadd: long hair and beehive resprite
+2026-06-09:
+  firebudgy:
+  - rscdel: Slavery reference in the description of cotton seeds.
+2026-06-10:
+  thearbiber:
+  - rscadd: brown pants+jorts
+  - rscdel: tan pants (theyre not real anyhow)

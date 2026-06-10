@@ -266,6 +266,10 @@
 	name = "Kusanagi Hair (Ponytail)"
 	icon_state = "hair_kusanagipony"
 
+/datum/sprite_accessory/hair/long
+	name = "Long Hair"
+	icon_state = "hair_long"
+
 /datum/sprite_accessory/hair/longhalf
 	name = "Long Half"
 	icon_state = "hair_longhalf"
