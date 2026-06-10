@@ -61,7 +61,7 @@
 	filling_color = "#ffff80"
 	food_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/lemonjuice = 5)
 
-/obj/item/food/ration/pack/lemonade_beverage_suger_free
+/obj/item/food/ration/pack/lemonade_beverage_sugar_free
 	name = "lemonade sugar-free beverage base pack"
 	filling_color = "#ffff00"
 	food_reagents = list(/datum/reagent/consumable/lemonjuice = 10)

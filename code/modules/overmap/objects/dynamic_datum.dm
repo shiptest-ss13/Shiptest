@@ -248,7 +248,8 @@
 ///??? I dont think i ever finished this, and if i do, move to planet_types.dm
 /datum/overmap/dynamic/proc/choose_random_asteroid()
 
-/datum/overmap/dynamic/proc/gen_planet_name()
+//Moved this down so I can make up planets
+/proc/gen_planet_name()
 	. = ""
 	switch(rand(1,12))
 		if(1 to 3)
@@ -265,7 +266,7 @@
 		if(12)
 			. += "[capitalize(pick(GLOB.adjectives))] [pick_planet_name()]"
 
-/datum/overmap/dynamic/proc/pick_planet_name()
+/proc/pick_planet_name()
 	if(!length(GLOB.planet_names))
 		stack_trace("We ran out of planet names! Consider running shorter rounds or expanding the namelist.")
 		GLOB.planet_names = world.file2list("strings/planet_names.txt")

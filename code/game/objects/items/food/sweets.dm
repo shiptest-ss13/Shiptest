@@ -1,7 +1,7 @@
 //Miscellaneous Sweets
 /obj/item/food/candy_corn
 	name = "candy corn"
-	desc = "A singular candy corn, originating as a Solarian tradition. Interestingly, they are traditionally stored in the interior of a fedora or trilby."
+	desc = "It's a handful of candy corn. Originating from Solarian culture but also popular for the Kalixcian. Its used in Mexapix for its resemblance to teeth."
 	icon_state = "candy_corn"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
