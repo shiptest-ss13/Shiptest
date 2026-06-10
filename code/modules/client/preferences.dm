@@ -2456,8 +2456,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(href_list["customize_limb"])
 						var/limb = href_list["customize_limb"]
 						var/list/limb_options = list(PROSTHETIC_NORMAL)
-						if(pref_species.digitigrade_style && ((limb == BODY_ZONE_L_LEG) || (limb == BODY_ZONE_R_LEG)))
-							limb_options.Add(PROSTHETIC_NORMAL_DIGI)
 						if(pref_species.prosthetic_style)
 							limb_options.Add(PROSTHETIC_ROBOTIC)
 						if(limb != BODY_ZONE_CHEST && limb != BODY_ZONE_HEAD)
@@ -2865,20 +2863,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					old_part.drop_limb(TRUE)
 					qdel(old_part)
 				character.regenerate_limb(zone, robotic = is_robotic)
-			if(PROSTHETIC_NORMAL_DIGI)
-				var/obj/item/bodypart/leg/new_leg
-				if(istype(pref_species, /datum/species/moth)) //a generic way to search for digitigrade leg styles did not want to work for me no matter how much I tried coaxing the code -- will stick with a species switch instead for now
-					if(zone == BODY_ZONE_L_LEG)
-						new_leg = new /obj/item/bodypart/leg/left/moth/digitigrade
-						prosthetic_limbs[BODY_ZONE_L_LEG] = PROSTHETIC_NORMAL_DIGI
-					else if (zone == BODY_ZONE_R_LEG)
-						new_leg = new /obj/item/bodypart/leg/right/moth/digitigrade
-						prosthetic_limbs[BODY_ZONE_R_LEG] = PROSTHETIC_NORMAL_DIGI
-				if(old_part)
-					old_part.drop_limb(TRUE)
-					qdel(old_part)
-				new_leg.replace_limb(character, TRUE)
-				new_leg.update_limb(is_creating = TRUE)
 			if(PROSTHETIC_AMPUTATED)
 				if(old_part)
 					old_part.drop_limb(TRUE)

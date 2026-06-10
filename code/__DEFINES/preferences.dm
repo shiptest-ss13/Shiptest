@@ -125,7 +125,6 @@
 
 //Limbs stuff
 #define PROSTHETIC_NORMAL "normal"
-#define PROSTHETIC_NORMAL_DIGI "digitigrade"
 #define PROSTHETIC_AMPUTATED "amputated"
 #define PROSTHETIC_ROBOTIC "prosthetic"
 
