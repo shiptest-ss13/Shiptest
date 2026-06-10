@@ -233,22 +233,7 @@
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/machinery/capture_the_flag/attack_ghost(mob/user)
 	if(ctf_enabled == FALSE)
-		if(user.client && user.client.holder)
-			var/response = alert("Enable CTF?", "CTF", "Yes", "No")
-			if(response == "Yes")
-				toggle_all_ctf(user)
-			return
-
-
-		people_who_want_to_play |= user.ckey
-		var/num = people_who_want_to_play.len
-		var/remaining = CTF_REQUIRED_PLAYERS - num
-		if(remaining <= 0)
-			people_who_want_to_play.Cut()
-			toggle_all_ctf()
-		else
-			to_chat(user, span_notice("CTF has been requested. [num]/[CTF_REQUIRED_PLAYERS] have readied up."))
-
+		to_chat(user, span_notice("CTF is not enabled. Go play the game!"))
 		return
 
 	if(!SSticker.HasRoundStarted())
