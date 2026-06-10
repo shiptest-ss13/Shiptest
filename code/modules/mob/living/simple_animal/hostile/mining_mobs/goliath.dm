@@ -339,13 +339,22 @@
 		timerid = addtimer(CALLBACK(src, PROC_REF(retract)), 10, TIMER_STOPPABLE)
 
 /obj/effect/temp_visual/goliath_tentacle/proc/on_hit(mob/living/target)
-	var/obj/item/bodypart/affecting = target.get_bodypart(BODY_ZONE_L_LEG)
-	var/armor_block = target.run_armor_check(affecting, "melee")
-	target.apply_damage(rand(15,25), BRUTE, pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG), armor_block, TRUE, wound_bonus = CANT_WOUND) //already dangerous, don't break legs too
+	var/obj/item/bodypart/affecting
+	if(ishuman(target))
+		if(prob(50))
+			affecting = target.get_bodypart(BODY_ZONE_R_LEG)
+		else
+			affecting = target.get_bodypart(BODY_ZONE_L_LEG)
+		//if(affecting != "l_leg" && affecting != "r_leg")
+			//affecting = "chest"
+		var/armor_block
+		armor_block = target.run_armor_check(affecting, MELEE)
+		target.apply_damage(rand(20,25), BRUTE, affecting, armor_block, FALSE, wound_bonus = CANT_WOUND)
+	else
+		target.apply_damage(rand(20,25), BRUTE, wound_bonus = CANT_WOUND)
 	if(iscarbon(target))
 		var/obj/item/restraints/legcuffs/beartrap/goliath/B = new /obj/item/restraints/legcuffs/beartrap/goliath(get_turf(target))
 		B.on_entered(src, target)
-
 /obj/effect/temp_visual/goliath_tentacle/proc/retract()
 	icon_state = "marker"
 	flick(retract,src)
