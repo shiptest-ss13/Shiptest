@@ -723,10 +723,8 @@
 		if(M in CTF.spawned_mobs)
 			var/outfit = CTF.ctf_gear
 			var/datum/outfit/O = new outfit
-			for(var/obj/item/gun/G in M)
-				qdel(G)
-			O.equip(M)
-			to_chat(M, span_notice("Ammunition reloaded!"))
+			M.equip_to_slot_or_del(new O.belt(M),ITEM_SLOT_BELT, TRUE)
+			to_chat(M, span_notice("Belt ammunition reloaded!"))
 			playsound(get_turf(M), 'sound/weapons/gun/shotgun/rack.ogg', 50, TRUE, -1)
 			qdel(src)
 			break
