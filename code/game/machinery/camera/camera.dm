@@ -18,7 +18,8 @@
 	max_integrity = 100
 	integrity_failure = 0.5
 	var/default_camera_icon = "camera" //the camera's base icon used by update_appearance - icon_state is primarily used for mapping display purposes.
-	var/list/network = list("ss13")
+	var/list/network = list("ship")
+	var/mapload_network = "ship"
 	var/c_tag = null
 	var/status = TRUE
 	var/start_active = FALSE //If it ignores the random chance to start broken on round start
@@ -61,6 +62,7 @@
 
 /obj/machinery/camera/Initialize(mapload, obj/structure/camera_assembly/CA)
 	. = ..()
+	network[1] = mapload_network
 	for(var/i in network)
 		network -= i
 		network += lowertext(i)
