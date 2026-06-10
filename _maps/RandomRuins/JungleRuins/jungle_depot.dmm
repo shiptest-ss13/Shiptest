@@ -37,6 +37,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
+"ak" = (
+/obj/effect/turf_decal/box,
+/obj/structure/closet/crate/trashcart,
+/obj/effect/spawner/random/maintenance/three,
+/turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "al" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -388,19 +394,10 @@
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)
 "cK" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/wooden,
-/obj/effect/mapping_helpers/crate_shelve,
-/obj/item/bait_can/worm/premium,
-/obj/item/storage/toolbox/fishing,
-/obj/item/book/fish_catalog,
-/obj/item/reagent_containers/food/drinks/beer,
-/obj/item/reagent_containers/food/drinks/beer,
-/turf/open/floor/plasteel/patterned/jungleplanet/interior,
-/area/ruin/jungle/depot/warehouse_3)
+/obj/effect/turf_decal/box,
+/obj/structure/reagent_dispensers/foamtank,
+/turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "cN" = (
 /obj/effect/turf_decal/industrial/hatch/orange,
 /obj/machinery/button/door{
@@ -456,17 +453,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
-"du" = (
-/obj/effect/turf_decal/siding/white,
-/obj/effect/turf_decal/siding/white{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fluff/paper/stack{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark/jungleplanet/interior,
-/area/ruin/jungle/depot/offices)
 "dv" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/tech/jungleplanet/interior,
@@ -671,6 +657,12 @@
 	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"fo" = (
+/obj/structure/closet/crate,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/maintenance,
+/turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
+/area/ruin/jungle/depot/warehouse_3)
 "fp" = (
 /obj/structure/table/wood,
 /obj/item/food/ration/snack/dry_roasted_peanuts{
@@ -777,6 +769,7 @@
 	pixel_x = -3;
 	pixel_y = -5
 	},
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_3)
 "gi" = (
@@ -836,6 +829,17 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating/rust/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
+"gu" = (
+/obj/effect/turf_decal/siding/white,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/jungleplanet/interior,
+/area/ruin/jungle/depot/offices)
 "gw" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine/weak,
@@ -1188,10 +1192,6 @@
 /obj/structure/platform,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
-"jB" = (
-/obj/effect/turf_decal/box,
-/turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "jG" = (
 /obj/structure/table/glass,
 /obj/item/folder/blue{
@@ -1211,6 +1211,11 @@
 "jH" = (
 /obj/effect/turf_decal/warra/ns/top_left,
 /turf/open/floor/concrete/tiles/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"jI" = (
+/obj/effect/turf_decal/box,
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "jL" = (
 /obj/effect/turf_decal/borderfloor{
@@ -1974,11 +1979,6 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
-"pE" = (
-/obj/effect/turf_decal/box,
-/obj/structure/reagent_dispensers/watertank,
-/turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "pG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2282,16 +2282,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/depot/supply_office)
-"sI" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "depot-mech1"
-	},
-/turf/open/floor/engine/hull/reinforced/jungleplanet/interior,
-/area/ruin/jungle/depot/electrical)
 "sK" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -2393,12 +2383,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
-"tJ" = (
-/obj/structure/spacevine/weak,
-/obj/effect/turf_decal/box,
-/obj/structure/reagent_dispensers/watertank,
-/turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "tL" = (
 /obj/effect/turf_decal/borderfloor/corner,
 /obj/effect/decal/cleanable/dirt,
@@ -2712,6 +2696,10 @@
 	},
 /turf/open/floor/engine/hull/reinforced/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
+"wm" = (
+/obj/effect/turf_decal/box,
+/turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "wq" = (
 /obj/effect/turf_decal/rechargefloor,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -2827,6 +2815,11 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"xg" = (
+/obj/effect/turf_decal/box,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "xm" = (
 /obj/structure/table/reinforced,
@@ -3232,9 +3225,12 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ad" = (
-/obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/random/maintenance,
+/obj/structure/closet/crate/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/geiger_counter,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/commemorative,
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_3)
 "Af" = (
@@ -4518,11 +4514,15 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "JL" = (
-/obj/effect/turf_decal/box,
-/obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/random/maintenance/three,
-/turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "depot-mech1"
+	},
+/turf/open/floor/engine/hull/reinforced/jungleplanet/interior,
+/area/ruin/jungle/depot/electrical)
 "JM" = (
 /obj/structure/platform{
 	dir = 1
@@ -4904,12 +4904,18 @@
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "MH" = (
+/obj/effect/turf_decal/box/corners,
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/structure/crate_shelf,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/radiation,
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/head/radiation,
-/obj/item/geiger_counter,
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/commemorative,
+/obj/structure/closet/crate/engineering,
+/obj/item/storage/box/flares,
+/obj/item/binoculars,
+/obj/item/bodycamera,
+/obj/item/bodycamera,
+/obj/item/bodycamera,
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_3)
 "MJ" = (
@@ -5323,10 +5329,19 @@
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
 "Qi" = (
-/obj/effect/turf_decal/box,
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/wooden,
+/obj/effect/mapping_helpers/crate_shelve,
+/obj/item/bait_can/worm/premium,
+/obj/item/storage/toolbox/fishing,
+/obj/item/book/fish_catalog,
+/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/beer,
+/turf/open/floor/plasteel/patterned/jungleplanet/interior,
+/area/ruin/jungle/depot/warehouse_3)
 "Qj" = (
 /obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt,
@@ -5741,21 +5756,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_3)
-"SY" = (
-/obj/effect/turf_decal/box/corners,
-/obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
-/obj/structure/crate_shelf,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/engineering,
-/obj/item/storage/box/flares,
-/obj/item/binoculars,
-/obj/item/bodycamera,
-/obj/item/bodycamera,
-/obj/item/bodycamera,
-/turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
-/area/ruin/jungle/depot/warehouse_3)
 "Tc" = (
 /obj/effect/turf_decal/warra/ns/bottom,
 /obj/effect/decal/cleanable/dirt,
@@ -5848,6 +5848,12 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_3)
+"TX" = (
+/obj/structure/spacevine/weak,
+/obj/effect/turf_decal/box,
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "TZ" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6496,11 +6502,6 @@
 "YD" = (
 /obj/structure/spacevine/weak,
 /turf/open/floor/plasteel/stairs/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
-"YF" = (
-/obj/effect/turf_decal/box,
-/obj/structure/reagent_dispensers/foamtank,
-/turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "YG" = (
 /obj/effect/turf_decal/siding/white{
@@ -7332,9 +7333,9 @@ mY
 fJ
 fN
 fN
-YF
-jB
-pE
+cK
+wm
+jI
 oH
 Cd
 tL
@@ -7440,9 +7441,9 @@ mY
 rY
 fN
 fN
-JL
+ak
 cQ
-jB
+wm
 oH
 Cd
 VC
@@ -7959,7 +7960,7 @@ Xy
 HG
 aj
 vA
-sI
+JL
 wu
 qw
 WJ
@@ -8013,7 +8014,7 @@ Xy
 nD
 TZ
 TZ
-sI
+JL
 wu
 IW
 Me
@@ -8067,7 +8068,7 @@ Xy
 pf
 ee
 XK
-sI
+JL
 wu
 Iu
 Bx
@@ -8176,7 +8177,7 @@ Dk
 Dk
 Is
 rY
-Qi
+xg
 pX
 Ys
 UQ
@@ -8230,7 +8231,7 @@ Dk
 Dk
 jm
 Is
-tJ
+TX
 oi
 Ys
 vK
@@ -8667,8 +8668,8 @@ Li
 FC
 zd
 Tt
-cK
-Ad
+Qi
+fo
 UK
 lM
 Kg
@@ -8720,7 +8721,7 @@ OG
 Zy
 Wq
 bs
-SY
+MH
 eV
 RQ
 Bi
@@ -8995,7 +8996,7 @@ fj
 bF
 QK
 VZ
-MH
+Ad
 Ya
 cN
 nh
@@ -9926,7 +9927,7 @@ lI
 ao
 Qr
 wB
-du
+gu
 aG
 Bm
 Qr
