@@ -644,22 +644,23 @@
 
 /datum/reagent/medicine/synthflesh
 	name = "Synthflesh"
-	description = "Has a 100% chance of instantly healing brute and burn damage. One unit of the chemical will heal one point of damage. Touch application only."
+	description = "A multipurpose synthetic flesh agent, applied topically it causes flesh to rapidly regrow. Injected it causes the subject to rapidly heal, though this does weaken connective tissue for a time."
 	reagent_state = LIQUID
 	color = "#FFEBEB"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/synthflesh/expose_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1)
+/datum/reagent/medicine/synthflesh/expose_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1) //Touch application converts brute and burn to oxy at a 1u for 2 damage rate
 	if(iscarbon(M))
 		var/mob/living/carbon/carbies = M
 		if (carbies.stat == DEAD)
 			show_message = 0
 		if(method in list(PATCH, TOUCH, VAPOR))
-			var/harmies = min(carbies.getBruteLoss(),carbies.adjustBruteLoss(-1.25 * reac_volume)*-1)
-			var/burnies = min(carbies.getFireLoss(),carbies.adjustFireLoss(-1.25 * reac_volume)*-1)
+			var/harmies = min(carbies.getBruteLoss(),carbies.adjustBruteLoss(-2 * reac_volume)*-1)
+			var/burnies = min(carbies.getFireLoss(),carbies.adjustFireLoss(-2 * reac_volume)*-1)
 			for(var/i in carbies.all_wounds)
 				var/datum/wound/iter_wound = i
 				iter_wound.on_synthflesh(reac_volume)
-			carbies.adjustToxLoss((harmies+burnies)*0.66)
+			carbies.adjustOxyLoss((harmies+burnies)*1)
 			if(show_message)
 				to_chat(carbies, span_danger("You feel your burns and bruises healing! It stings like hell!"))
 			SEND_SIGNAL(carbies, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
@@ -668,6 +669,32 @@
 				carbies.visible_message("<span class='nicegreen'>A rubbery liquid coats [carbies]'s burns. [carbies] looks a lot healthier!") //we're avoiding using the phrases "burnt flesh" and "burnt skin" here because carbies could be a skeleton or something
 	..()
 	return TRUE
+
+//Synthflesh injection. Its a healing over time like indomide that ramps up, the down side is it gves a massive incoming damage multiplier which also ramps up.
+/datum/reagent/medicine/synthflesh/on_mob_add(mob/living/carbon/M)
+	M.apply_status_effect(/datum/status_effect/synthflesh)
+
+/datum/reagent/medicine/synthflesh/on_mob_life(mob/living/carbon/human/M)
+	var/mob/living/carbon/human/subject = M
+	switch(src.current_cycle)
+		if(-INFINITY to 50)
+			if(prob(1))
+				to_chat(M, span_danger("You feel your flesh move on its own."))
+		if(50 to 100)
+			if(prob(5))
+				M.vomit(0,TRUE,FALSE,1,FALSE, FALSE, FALSE,)
+				SEND_SIGNAL(subject, COMSIG_ADD_MOOD_EVENT, "Synthflesh Blood", /datum/mood_event/synthfleshminor) //Excess synthflesh is exhaled as blood, no mechanical effect but its fun(?)
+				subject.visible_message("<span class='warning'>[subject] coughs up some blood!")
+		if(100 to INFINITY) //This is the part where we "Overdose" not really dangerous but it rapidly clears synthflesh, because we're already at a 4x incoming damage mult and 10 damage healed a tick.
+			if(prob(5))
+				subject.visible_message("<span class='boldwarning'>[subject] suddenly coughs up chunks of flesh!")
+				to_chat(M, span_userdanger("You throw up a mass of what looks like minced meat and blood!"))
+				SEND_SIGNAL(subject, COMSIG_ADD_MOOD_EVENT, "Synthflesh OD", /datum/mood_event/synthfleshOD)
+				M.spawn_gibs()
+				M.vomit(0,TRUE,FALSE,1,FALSE, FALSE, FALSE,)
+				M.AdjustParalyzed(15)
+				M.reagents.remove_reagent(/datum/reagent/medicine/synthflesh, 20)
+	return ..()
 
 /datum/reagent/medicine/cryoxadone
 	name = "Cryoxadone"
