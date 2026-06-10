@@ -10,7 +10,7 @@
 	var/intruder_message = "INTRUDER DETECTED!"
 	var/hatch_open = FALSE
 
-/obj/structure/hazard/floor/burglar_alarm/contact(src)
+/obj/structure/hazard/floor/burglar_alarm/contact()
 	var/area/alarmed = get_area(src)
 	alarmed.burglaralert(src)
 	playsound(src, 'sound/machines/click.ogg', 60, TRUE)
