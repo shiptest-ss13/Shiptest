@@ -70,19 +70,11 @@ GLOBAL_VAR(command_name)
 	var/name = ""
 	var/new_station_name = ""
 
-	//Rare: Pre-Prefix
+	// Prefix
 	if (prob(10))
 		name = pick(GLOB.station_prefixes)
 		new_station_name = name + " "
 		name = ""
-
-	// Prefix
-	var/holiday_name = pick(GLOB.holidays)
-	if(holiday_name)
-		var/datum/holiday/holiday = GLOB.holidays[holiday_name]
-		if(istype(holiday, /datum/holiday/friday_thirteenth))
-			random = 13
-		//get normal name
 	if(!name)
 		name = pick(GLOB.station_names)
 	if(name)
