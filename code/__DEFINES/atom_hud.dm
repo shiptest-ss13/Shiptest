@@ -54,7 +54,7 @@
 //data HUD (medhud, sechud) defines
 //Don't forget to update human/New() if you change these!
 #define DATA_HUD_SECURITY_BASIC "sec_basic"
-#define DATA_HUD_SECURITY_ADVANCED "sec_adv"
+#define DATA_HUD_SECURITY_ADVANCED 2 //I know this looks bad but I could not find another solution no matter how deeply I dug
 #define DATA_HUD_MEDICAL_BASIC "med_basic"
 #define DATA_HUD_MEDICAL_ADVANCED "med_adv"
 #define DATA_HUD_DIAGNOSTIC_BASIC "diag_basic"
