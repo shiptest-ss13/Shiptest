@@ -28,7 +28,7 @@
 		else
 			icon_state = "b-alarm-o"
 	else
-		light_range = 1
+		light_range = 2
 		if(!hatch_open)
 			icon_state = "b-alarm-armed"
 		else
