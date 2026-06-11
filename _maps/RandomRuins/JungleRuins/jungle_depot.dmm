@@ -54,6 +54,9 @@
 	pixel_y = -22
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "aq" = (
@@ -144,6 +147,9 @@
 /obj/effect/turf_decal/borderfloor/full,
 /obj/machinery/light/dim/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/ruin/jungle/depot/warehouse_3)
 "bc" = (
@@ -180,6 +186,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/depot/supply_office)
 "bs" = (
@@ -227,6 +234,9 @@
 /obj/effect/turf_decal/siding/white/corner,
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
 "bF" = (
@@ -294,6 +304,9 @@
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/engine/hull/reinforced/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)
 "bX" = (
@@ -344,7 +357,9 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "cm" = (
-/obj/machinery/conveyor,
+/obj/machinery/conveyor{
+	id = "pad_conveyor2R"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "cn" = (
@@ -352,6 +367,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -410,9 +428,16 @@
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_3)
 "cP" = (
-/obj/structure/spacevine/dense,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
-/area/overmap_encounter/planetoid/jungle/explored)
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/turf_decal/corner/opaque/nsorange/half{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
+/area/ruin/jungle/depot/warehouse_3)
 "cQ" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/box,
@@ -435,6 +460,20 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
+"dc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/turf/open/floor/concrete/jungleplanet/interior,
+/area/ruin/jungle/depot/electrical)
+"dd" = (
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "pad_conveyor1R"
+	},
+/turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "dk" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -491,6 +530,15 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"dA" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plasteel/stairs/jungleplanet/lit{
+	dir = 1
+	},
+/area/overmap_encounter/planetoid/jungle/explored)
 "dD" = (
 /obj/effect/turf_decal/siding/white,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -519,6 +567,18 @@
 	dir = 4
 	},
 /area/ruin/jungle/depot/warehouse_1)
+"dX" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 10
+	},
+/obj/machinery/conveyor_switch/oneway{
+	id = "pad_conveyor1L";
+	name = "Pad Conveyor";
+	pixel_y = -3;
+	pixel_x = -8
+	},
+/turf/open/floor/plasteel/patterned/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "dY" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
@@ -631,6 +691,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "eY" = (
@@ -644,6 +707,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "fj" = (
@@ -683,6 +747,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "fy" = (
 /obj/machinery/door/airlock/command,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "fA" = (
@@ -690,6 +755,12 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor_switch/oneway{
+	id = "pad_conveyor2R";
+	name = "Pad Conveyor";
+	pixel_y = -3;
+	pixel_x = 8
+	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "fC" = (
@@ -701,6 +772,9 @@
 	dir = 4
 	},
 /obj/structure/spacevine/weak,
+/mob/living/simple_animal/hostile/abandoned_minebot{
+	faction = list("Deathsquad")
+	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "fJ" = (
@@ -728,6 +802,9 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "fO" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "fU" = (
@@ -771,6 +848,22 @@
 	},
 /obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
+/area/ruin/jungle/depot/warehouse_3)
+"gg" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "depot-ramp-R"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/turf/open/floor/engine/hull/reinforced/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_3)
 "gi" = (
 /obj/structure/closet/secure_closet/armory1{
@@ -827,8 +920,19 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "gq" = (
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plating/rust/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
+"gr" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/spacevine/weak,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/turf/open/floor/plating/rust/jungleplanet/interior,
+/area/ruin/jungle/depot/warehouse_3)
 "gu" = (
 /obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/siding/white{
@@ -842,7 +946,6 @@
 /area/ruin/jungle/depot/offices)
 "gw" = (
 /obj/structure/flora/grass/jungle,
-/obj/structure/spacevine/weak,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
 "gx" = (
@@ -910,6 +1013,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "hi" = (
@@ -1000,6 +1104,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
 "hU" = (
@@ -1009,6 +1116,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
+/obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/depot/supply_office)
 "hX" = (
@@ -1049,6 +1157,7 @@
 "il" = (
 /obj/effect/turf_decal/borderfloor/full,
 /mob/living/simple_animal/hostile/automated/walkmine/makosso,
+/obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)
 "in" = (
@@ -1079,6 +1188,9 @@
 	name = "Mech Storage Control";
 	pixel_y = 23
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
 /turf/open/floor/concrete/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
 "iw" = (
@@ -1097,9 +1209,15 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "iD" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)
 "iE" = (
@@ -1151,6 +1269,9 @@
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)
 "jf" = (
@@ -1158,7 +1279,6 @@
 	dir = 8
 	},
 /obj/structure/spacevine/weak,
-/mob/living/simple_animal/hostile/automated/quadrotor/makosso,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1226,8 +1346,27 @@
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"jO" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "depot-ramp-L"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced/jungleplanet/interior,
+/area/ruin/jungle/depot/warehouse_2)
 "jP" = (
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 8
@@ -1338,6 +1477,9 @@
 	},
 /obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
 "kt" = (
@@ -1352,6 +1494,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "kx" = (
@@ -1449,6 +1592,9 @@
 "kT" = (
 /obj/effect/turf_decal/borderfloor/full,
 /mob/living/simple_animal/hostile/automated/walkmine/makosso,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
 "kX" = (
@@ -1547,18 +1693,14 @@
 /area/ruin/jungle/depot/offices)
 "lM" = (
 /obj/effect/turf_decal/borderfloor,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_3)
 "lQ" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/automated/quadrotor/makosso,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/patterned/jungleplanet/lit,
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
 "lR" = (
 /obj/effect/turf_decal/box/corners{
@@ -1592,6 +1734,12 @@
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
+"md" = (
+/obj/machinery/conveyor{
+	id = "pad_conveyor1L"
+	},
+/turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "mk" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -1600,6 +1748,10 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"mo" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plasteel/stairs/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "mr" = (
 /obj/effect/turf_decal/borderfloor/full,
@@ -1611,6 +1763,9 @@
 /obj/item/storage/box/stockparts/t2,
 /obj/item/storage/box/stockparts/t2,
 /obj/item/storage/box/stockparts/t3,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
 "ms" = (
@@ -1622,6 +1777,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "5-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -1636,6 +1794,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "mG" = (
@@ -1643,6 +1802,9 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
@@ -1872,6 +2034,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "oH" = (
@@ -1905,6 +2070,12 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor_switch/oneway{
+	id = "pad_conveyor2L";
+	name = "Pad Conveyor";
+	pixel_y = -3;
+	pixel_x = -8
+	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "oV" = (
@@ -1938,6 +2109,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
+"ph" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/jungleplanet/interior,
+/area/ruin/jungle/depot/offices)
 "pj" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/mechanical{
@@ -2056,8 +2234,8 @@
 	icon_state = "cargo_wall"
 	},
 /obj/item/stack/tape/industrial,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma{
-	pixel_y = 4
+/obj/item/mecha_parts/mecha_equipment/salvage_saw{
+	pixel_y = 3
 	},
 /obj/item/weldingtool/largetank/empty{
 	pixel_y = -4;
@@ -2091,9 +2269,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"qG" = (
+/obj/effect/turf_decal/siding/white,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/jungleplanet/interior,
+/area/ruin/jungle/depot/offices)
 "qH" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 6
+	},
+/obj/machinery/conveyor_switch/oneway{
+	pixel_x = 8;
+	id = "pad_conveyor1R";
+	name = "Pad Conveyor";
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -2146,7 +2338,6 @@
 /area/ruin/jungle/depot/canteen)
 "rb" = (
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/spacevine/weak,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
 "rl" = (
@@ -2246,6 +2437,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -2356,6 +2550,9 @@
 	list_reagents = null;
 	pixel_x = 5
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
+	},
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
 "tv" = (
@@ -2366,6 +2563,9 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "tw" = (
 /obj/effect/turf_decal/borderfloor/full,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_3)
 "tG" = (
@@ -2449,8 +2649,18 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
+"uo" = (
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "pad_conveyor1R"
+	},
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "uw" = (
 /obj/structure/spacevine/weak,
 /obj/structure/sign/warra/ns{
@@ -2473,6 +2683,14 @@
 /obj/structure/spacevine/weak,
 /turf/open/floor/concrete/tiles/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"uJ" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/spacevine/weak,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating/jungleplanet/interior,
+/area/ruin/jungle/depot/warehouse_3)
 "uM" = (
 /obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/siding/white{
@@ -2589,6 +2807,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
 "vA" = (
@@ -2676,6 +2897,7 @@
 /area/ruin/jungle/depot/offices)
 "wf" = (
 /obj/effect/turf_decal/industrial/caution,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)
 "wg" = (
@@ -2754,6 +2976,13 @@
 /obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
+"wI" = (
+/obj/effect/turf_decal/borderfloor/full,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
+/area/ruin/jungle/depot/warehouse_1)
 "wJ" = (
 /obj/structure/platform{
 	dir = 1
@@ -2800,6 +3029,9 @@
 	dir = 1
 	},
 /obj/structure/spacevine/weak,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
 "xc" = (
@@ -2819,6 +3051,9 @@
 "xg" = (
 /obj/effect/turf_decal/box,
 /obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "xm" = (
@@ -2839,6 +3074,15 @@
 /obj/effect/turf_decal/borderfloor,
 /obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"xp" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "xr" = (
@@ -2887,6 +3131,19 @@
 /obj/item/soap,
 /turf/open/floor/plasteel/freezer/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
+"xF" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "depot-mech2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/engine/hull/reinforced/jungleplanet/interior,
+/area/ruin/jungle/depot/electrical)
 "xG" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -2924,6 +3181,9 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
 "xP" = (
@@ -2953,6 +3213,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/floor/plasteel/tech/techmaint/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
 "xZ" = (
@@ -2960,6 +3221,9 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "depot-robo";
 	close_exception = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
@@ -3030,6 +3294,9 @@
 	pixel_y = -3
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "yJ" = (
@@ -3137,6 +3404,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
 "zw" = (
@@ -3181,12 +3449,14 @@
 	},
 /area/ruin/jungle/depot/warehouse_3)
 "zK" = (
-/obj/structure/closet/wall/white/directional/south,
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/regular{
 	pixel_y = 3
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/wall/white/med{
+	pixel_y = -28
+	},
 /turf/open/floor/plasteel/freezer/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
 "zO" = (
@@ -3198,6 +3468,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "zP" = (
@@ -3240,6 +3511,9 @@
 	icon_state = "4-9"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
 "Ai" = (
@@ -3294,10 +3568,19 @@
 /obj/effect/turf_decal/corner/opaque/nsorange/half,
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
+"Aw" = (
+/obj/effect/turf_decal/siding/white,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
+/turf/open/floor/plasteel/dark/jungleplanet/interior,
+/area/ruin/jungle/depot/offices)
 "Ax" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
@@ -3394,6 +3677,10 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
+"Bd" = (
+/obj/structure/spacevine/dense,
+/turf/open/water/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Bf" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -3450,6 +3737,9 @@
 	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "Br" = (
@@ -3525,6 +3815,14 @@
 "Ci" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/depot/residential)
+"Cn" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
+/area/ruin/jungle/depot/canteen)
 "Cp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/warra/ns{
@@ -3594,12 +3892,16 @@
 /obj/effect/turf_decal/corner/opaque/nsorange/half{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_3)
 "Dg" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Dk" = (
@@ -3710,13 +4012,17 @@
 /area/ruin/jungle/depot/canteen)
 "DY" = (
 /obj/machinery/conveyor{
-	dir = 1
+	dir = 1;
+	id = "pad_conveyor2L"
 	},
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "DZ" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/ruin/jungle/depot/warehouse_3)
 "Eb" = (
@@ -3760,6 +4066,10 @@
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
+"Er" = (
+/obj/structure/flora/rock/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ex" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine/weak,
@@ -3814,6 +4124,9 @@
 	},
 /obj/machinery/holopad/secure,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "Fb" = (
@@ -3824,11 +4137,20 @@
 	icon_state = "wood-broken2"
 	},
 /area/ruin/jungle/depot/offices)
+"Fe" = (
+/obj/effect/turf_decal/siding/white,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/jungleplanet/interior,
+/area/ruin/jungle/depot/offices)
 "Fi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
+/obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Fk" = (
@@ -3866,6 +4188,9 @@
 "Fy" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/spacevine/weak,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
 /turf/open/floor/plating/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
 "Fz" = (
@@ -3943,6 +4268,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/glass,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
 "Gm" = (
@@ -4017,6 +4345,9 @@
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/engine/hull/reinforced/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)
 "Gz" = (
@@ -4029,6 +4360,7 @@
 "GB" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/decal/cleanable/oil/streak,
+/obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
 "GE" = (
@@ -4112,6 +4444,9 @@
 "Hm" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
 	},
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
@@ -4229,6 +4564,9 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "Ii" = (
@@ -4267,6 +4605,9 @@
 	dir = 9
 	},
 /obj/machinery/camera/autoname,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
+	},
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
 "Ir" = (
@@ -4298,7 +4639,9 @@
 /area/ruin/jungle/depot/warehouse_3)
 "Iu" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/automated/quadrotor/makosso,
+/mob/living/simple_animal/hostile/abandoned_minebot{
+	faction = list("Deathsquad")
+	},
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ix" = (
@@ -4309,6 +4652,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)
 "IC" = (
@@ -4318,7 +4664,9 @@
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "IE" = (
-/obj/machinery/conveyor,
+/obj/machinery/conveyor{
+	id = "pad_conveyor2R"
+	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "IG" = (
@@ -4389,6 +4737,13 @@
 	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"IU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "IV" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -4400,6 +4755,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "IW" = (
@@ -4475,6 +4831,9 @@
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
 "JB" = (
@@ -4488,6 +4847,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
@@ -4551,6 +4913,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "JT" = (
@@ -4585,6 +4950,7 @@
 	id = "depot_alarms"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/depot/supply_office)
 "Ka" = (
@@ -4610,6 +4976,7 @@
 /area/ruin/jungle/depot/canteen)
 "Kg" = (
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_3)
 "Kk" = (
@@ -4701,6 +5068,16 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Le" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/jungleplanet/interior,
+/area/ruin/jungle/depot/offices)
 "Lh" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/structure/spacevine/weak,
@@ -4788,6 +5165,9 @@
 /area/ruin/jungle/depot/warehouse_3)
 "LR" = (
 /obj/effect/turf_decal/siding/white,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "LX" = (
@@ -4926,6 +5306,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/plating/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
 "MK" = (
@@ -4989,6 +5372,9 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "MY" = (
 /obj/effect/turf_decal/siding/white/corner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
@@ -5091,6 +5477,9 @@
 /obj/machinery/door/airlock{
 	close_exception = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "Oo" = (
@@ -5173,19 +5562,30 @@
 	name = "Mech Storage Control";
 	pixel_y = 23
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
 /turf/open/floor/concrete/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
 "OO" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/nsorange/half,
 /obj/structure/spacevine/weak,
-/turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
+/obj/effect/turf_decal/corner_steel_grid,
+/turf/open/floor/plating/jungleplanet/interior{
+	icon_state = "foam_plating"
+	},
 /area/ruin/jungle/depot/warehouse_2)
 "OP" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
+"OQ" = (
+/obj/machinery/conveyor{
+	id = "pad_conveyor1L"
+	},
+/turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "OU" = (
 /obj/effect/turf_decal/borderfloor,
@@ -5204,6 +5604,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/white{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
@@ -5260,6 +5663,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Py" = (
@@ -5273,6 +5679,7 @@
 	icon_state = "1-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "PE" = (
@@ -5297,6 +5704,11 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)
+"PU" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "PW" = (
 /obj/effect/turf_decal/warra/ns/bottom_right,
 /turf/open/floor/concrete/tiles/jungleplanet/lit,
@@ -5317,6 +5729,7 @@
 	dir = 1;
 	id = "depot_office_lockdown"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "Qh" = (
@@ -5345,10 +5758,16 @@
 "Qj" = (
 /obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
 /turf/open/floor/concrete/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
 "Ql" = (
 /obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
@@ -5377,6 +5796,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -5452,6 +5874,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
 "QQ" = (
@@ -5484,6 +5907,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
@@ -5504,6 +5930,7 @@
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
 "Ru" = (
@@ -5542,6 +5969,11 @@
 	},
 /turf/open/floor/engine/hull/reinforced/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
+"RD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/turf/open/floor/concrete/jungleplanet/interior,
+/area/ruin/jungle/depot/electrical)
 "RF" = (
 /obj/machinery/space_heater,
 /obj/machinery/firealarm/directional/east,
@@ -5628,6 +6060,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
 "Sd" = (
@@ -5728,6 +6163,7 @@
 	icon_state = "1-6"
 	},
 /obj/item/caution,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
 "ST" = (
@@ -5789,7 +6225,8 @@
 /area/ruin/jungle/depot/warehouse_3)
 "Tu" = (
 /obj/machinery/conveyor{
-	dir = 1
+	dir = 1;
+	id = "pad_conveyor2L"
 	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -5852,11 +6289,15 @@
 /obj/structure/spacevine/weak,
 /obj/effect/turf_decal/box,
 /obj/structure/reagent_dispensers/watertank,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "TZ" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
 "Ue" = (
@@ -5894,6 +6335,13 @@
 /obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)
+"Ur" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/turf/open/floor/concrete/jungleplanet/interior,
+/area/ruin/jungle/depot/electrical)
 "Uy" = (
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 1
@@ -5930,6 +6378,7 @@
 	id = "depot_alarms"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "UH" = (
@@ -5940,6 +6389,14 @@
 	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"UI" = (
+/obj/effect/turf_decal/borderfloor/full,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
+/area/ruin/jungle/depot/electrical)
 "UK" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -5950,6 +6407,7 @@
 /area/ruin/jungle/depot/warehouse_3)
 "UL" = (
 /obj/machinery/door/airlock/public,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/supply_office)
 "UM" = (
@@ -5959,6 +6417,11 @@
 "UQ" = (
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"UW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent,
+/turf/open/floor/plasteel/patterned/jungleplanet/interior,
+/area/ruin/jungle/depot/offices)
 "UZ" = (
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -6084,8 +6547,22 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
+"VX" = (
+/obj/effect/turf_decal/borderfloor/full,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
+/area/ruin/jungle/depot/warehouse_2)
 "VZ" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -6135,6 +6612,9 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
+	},
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
 "Wk" = (
@@ -6147,6 +6627,9 @@
 	},
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/newscaster/directional/north,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
 "Wm" = (
@@ -6164,6 +6647,9 @@
 /obj/item/coffee_cartridge/fancy/blend,
 /obj/item/coffee_cartridge/fancy,
 /obj/item/coffee_cartridge/fancy,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
+	},
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)
 "Wq" = (
@@ -6191,14 +6677,8 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/rust/jungleplanet/interior,
+/turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
 "WO" = (
 /obj/machinery/porta_turret/ruin/warra/light{
@@ -6237,6 +6717,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
+"WU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "WW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -6245,6 +6732,19 @@
 	},
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
+"Xd" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "depot-mech1"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/engine/hull/reinforced/jungleplanet/interior,
+/area/ruin/jungle/depot/electrical)
 "Xg" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -6270,6 +6770,9 @@
 	pixel_y = 28
 	},
 /obj/effect/turf_decal/box,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/tiled/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
 "Xq" = (
@@ -6312,6 +6815,13 @@
 	},
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
+"XG" = (
+/obj/machinery/light/street,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "XI" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/structure/hazard/floor/burglar_alarm{
@@ -6354,6 +6864,9 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4;
 	id = "depot-ramp-R"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
 	},
 /turf/open/floor/engine/hull/reinforced/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_3)
@@ -6524,6 +7037,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
 "YM" = (
@@ -6531,24 +7047,24 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
 "YR" = (
 /obj/machinery/door/airlock,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "YS" = (
 /obj/effect/turf_decal/borderfloor,
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 4
-	},
 /obj/structure/spacevine/weak,
-/turf/open/floor/plating/jungleplanet/interior{
-	icon_state = "foam_plating"
+/obj/effect/turf_decal/corner/opaque/nsorange/half{
+	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
 "YV" = (
 /obj/structure/fence{
@@ -6570,7 +7086,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/automated/quadrotor/makosso,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
+	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Zd" = (
@@ -6612,6 +7130,9 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "ZJ" = (
 /obj/machinery/door/airlock{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
@@ -7218,7 +7739,7 @@ mY
 mY
 mY
 Wm
-ZQ
+wI
 ZQ
 hL
 mY
@@ -7590,7 +8111,7 @@ UQ
 tW
 qw
 qw
-Iu
+vK
 vK
 iq
 mk
@@ -7868,8 +8389,8 @@ uV
 zP
 aV
 zq
-cm
-IE
+md
+OQ
 Fq
 UQ
 ez
@@ -7922,7 +8443,7 @@ gm
 HM
 kH
 QR
-Py
+dX
 wJ
 Fq
 vK
@@ -7969,7 +8490,7 @@ Vp
 Qh
 aK
 GE
-GE
+VX
 vz
 Im
 Mq
@@ -8013,9 +8534,9 @@ Dk
 Xy
 nD
 TZ
-TZ
-JL
-wu
+UI
+Xd
+dc
 IW
 Me
 zF
@@ -8069,7 +8590,7 @@ pf
 ee
 XK
 JL
-wu
+Ur
 Iu
 Bx
 pG
@@ -8084,8 +8605,8 @@ fK
 Os
 IS
 Eb
-DY
-Tu
+dd
+uo
 Fq
 vK
 ez
@@ -8232,14 +8753,14 @@ Dk
 jm
 Is
 TX
-oi
+XG
 Ys
 vK
 UQ
 Vp
 Vp
 Rz
-Rz
+jO
 Vp
 Vp
 Vp
@@ -8293,7 +8814,7 @@ UQ
 ax
 Zh
 UZ
-Gq
+WU
 SH
 ax
 ax
@@ -8392,8 +8913,8 @@ Xy
 RM
 GB
 kT
-pO
-wu
+xF
+RD
 Pn
 bd
 tV
@@ -8447,14 +8968,14 @@ do
 Sj
 tG
 pO
-wu
+Ur
 fx
 vK
 UQ
 UQ
 fJ
 LX
-Gq
+IU
 UZ
 mK
 wt
@@ -8509,7 +9030,7 @@ Wq
 Wq
 Wq
 XT
-XT
+gg
 Wq
 Wq
 Wq
@@ -8617,7 +9138,7 @@ gc
 ob
 SW
 UK
-HW
+cP
 GT
 LO
 vW
@@ -8674,7 +9195,7 @@ UK
 lM
 Kg
 Kg
-JJ
+gr
 hl
 IS
 zq
@@ -8728,7 +9249,7 @@ Bi
 tw
 JJ
 hR
-hR
+uJ
 hl
 IS
 jP
@@ -9018,7 +9539,7 @@ JM
 dY
 tl
 tt
-IR
+Cn
 JA
 JT
 Ke
@@ -9108,7 +9629,7 @@ Ba
 Db
 ax
 Sd
-lQ
+aV
 xo
 Hi
 tW
@@ -9160,8 +9681,8 @@ hU
 bi
 JZ
 UL
-Hq
-az
+mo
+xp
 Uy
 xo
 Nv
@@ -9380,8 +9901,8 @@ Vi
 iq
 Ou
 mE
-pG
-pG
+dA
+dA
 Qe
 IV
 PB
@@ -9425,7 +9946,7 @@ Is
 jm
 jm
 fN
-fN
+jm
 fN
 rn
 rn
@@ -9477,10 +9998,10 @@ Pk
 Pk
 Pk
 jm
-jm
-jm
-ix
 fN
+fN
+PU
+jm
 mJ
 ZV
 ZV
@@ -9492,7 +10013,7 @@ Fz
 dv
 Qr
 Ie
-ku
+Le
 xr
 Qr
 kK
@@ -9532,8 +10053,8 @@ Pk
 Pk
 Pk
 ct
-Az
-Az
+Vy
+Vy
 dT
 mJ
 WO
@@ -9542,12 +10063,12 @@ rn
 DR
 Qr
 xM
-fO
-fO
+UW
+ph
 Od
 JQ
 ku
-dD
+Fe
 xZ
 Ql
 LR
@@ -9586,8 +10107,8 @@ Pk
 Pk
 Pk
 dT
-rY
-Az
+Ex
+Bd
 fN
 mJ
 mJ
@@ -9639,10 +10160,10 @@ Pk
 Pk
 Pk
 Pk
-dT
-dT
-Az
-Az
+rn
+dE
+Vy
+Vy
 fN
 dT
 yy
@@ -9693,10 +10214,10 @@ Pk
 Pk
 Pk
 Pk
-dT
+rn
 dk
 dT
-Az
+Vy
 fN
 dT
 dT
@@ -9806,7 +10327,7 @@ dT
 dT
 dT
 Az
-LM
+bN
 DV
 al
 Ue
@@ -9816,7 +10337,7 @@ gK
 Bn
 Qr
 YG
-dD
+qG
 PE
 AX
 Ih
@@ -9870,7 +10391,7 @@ hg
 QU
 YR
 fa
-dD
+Aw
 fy
 UE
 EY
@@ -9912,10 +10433,10 @@ Dk
 Dk
 Dk
 Dk
-tW
-Vy
-Vy
-LM
+lQ
+Az
+Az
+bN
 ms
 Gw
 DS
@@ -9966,11 +10487,11 @@ Dk
 Dk
 Dk
 Dk
-Me
-Me
-Vy
-WJ
-Me
+tW
+tW
+Az
+Er
+tW
 tj
 DS
 iX
@@ -10021,10 +10542,10 @@ Dk
 Dk
 Dk
 bN
-Me
-Vy
-Vy
-Me
+Pp
+Az
+Az
+Pp
 oH
 Qr
 aq
@@ -10076,9 +10597,9 @@ Dk
 Dk
 Dk
 bN
-LM
-Vy
-Vy
+bN
+Az
+Az
 YW
 ca
 wt
@@ -10190,8 +10711,8 @@ HV
 tW
 tW
 Az
-Vy
-Vy
+Az
+Az
 Az
 Az
 ct
@@ -10243,11 +10764,11 @@ Dk
 fN
 fN
 OP
-LM
-LM
-cP
-Me
-Me
+bN
+bN
+bN
+tW
+Pp
 tW
 EV
 Dk
@@ -10298,10 +10819,10 @@ Dk
 Dk
 fN
 fN
-jm
-jm
-Is
-jm
+fN
+fN
+fN
+fN
 Dk
 Dk
 Dk

@@ -146,7 +146,7 @@
 	var/mine_devastation = 0 //capable of gibbing. do not use this!!!
 	var/mine_heavy = 1
 	var/mine_light = 3
-	var/mine_flame = 0 //this is funny but sort of evil
+	var/mine_flame = 1 //this is funny but sort of evil
 	var/examine_text = null
 
 /mob/living/simple_animal/hostile/automated/walkmine/examine(mob/user)
