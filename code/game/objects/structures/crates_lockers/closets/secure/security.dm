@@ -31,7 +31,7 @@
 	new /obj/item/radio/headset/heads/captain(src)
 	new /obj/item/clothing/gloves/color/captain(src)
 	new /obj/item/storage/belt/sabre(src)
-	new /obj/item/gun/energy/sharplite/x12(src)
+	new /obj/item/gun/energy/sharplite/volt(src)
 	new /obj/item/door_remote/captain(src)
 	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/storage/photo_album/Captain(src)
@@ -57,7 +57,7 @@
 	new /obj/item/clothing/suit/armor/vest/hop(src) //WS edit - Command Resprite 3
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
-	new /obj/item/gun/energy/sharplite/x26(src) //WS Edit - Gives HoP a mini egun
+	new /obj/item/gun/energy/sharplite/ohm(src) //WS Edit - Gives HoP a mini egun
 	new /obj/item/clothing/neck/petcollar(src)
 	new /obj/item/pet_carrier(src)
 	new /obj/item/door_remote/civilian(src)
@@ -97,7 +97,7 @@
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/shield/tele(src)
 	new /obj/item/storage/belt/security/full(src)
-	new /obj/item/gun/energy/sharplite/x01(src)
+	new /obj/item/gun/energy/sharplite/yari(src)
 	new /obj/item/gun/ballistic/automatic/pistol/commissar(src) //WS edit - free lethals
 	new /obj/item/pinpointer/nuke(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
@@ -307,7 +307,7 @@
 	..()
 	new /obj/item/gun/energy/ionrifle(src)
 	for(var/i in 1 to 3)
-		new /obj/item/gun/energy/sharplite/x12(src)
+		new /obj/item/gun/energy/sharplite/volt(src)
 	for(var/i in 1 to 3)
 		new /obj/item/gun/energy/laser(src)
 
