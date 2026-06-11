@@ -144,7 +144,7 @@
 /obj/item/clothing/head/hooded/parka/serene
 	name = "hood"
 	desc = "A hood for your parka."
-	icon = 'icons/obj/clothing/suits/color.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/suits/color.dmi'
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
 	icon_state = "parkaclip"
 	item_state = "parkaclip"
