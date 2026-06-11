@@ -132,8 +132,8 @@
 
 
 /obj/item/clothing/suit/hooded/parka/serene
-	name = "serene sporting parka"
-	desc = "A parka produced by serene sporting, in colonial league colors. Made from the thick fur of native serene fauna."
+	name = "Serene Sporting parka"
+	desc = "A parka produced by Serene Sporting, in Colonial League colors. Made from the thick fur of native Serene fauna."
 	icon_state = "parkaclip"
 	item_state = "parkaclip"
 	icon = 'icons/obj/clothing/suits/color.dmi'
