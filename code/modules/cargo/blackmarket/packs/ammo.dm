@@ -63,9 +63,9 @@
 	desc = "A 30 round magazine for the E-40 Hybrid Rifle."
 	item = /obj/item/ammo_box/magazine/e40
 
-	cost_min = 400
-	cost_max = 800
-	stock = 6
+	cost_min = 200
+	cost_max = 400
+	stock = 4
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/cm23_mag
