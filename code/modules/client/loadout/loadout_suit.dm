@@ -11,6 +11,14 @@
 	display_name = "winter coat"
 	path = /obj/item/clothing/suit/hooded/wintercoat
 
+/datum/gear/suit/parkaclip
+	display_name = "parka, serene sporting"
+	path = /obj/item/clothing/suit/hooded/parka/serene
+
+/datum/gear/suit/parka
+	display_name = "parka, colorable"
+	path = /obj/item/clothing/suit/hooded/parka
+
 //JACKETS
 /datum/gear/suit/jacket
 	subtype_path = /datum/gear/suit/jacket
