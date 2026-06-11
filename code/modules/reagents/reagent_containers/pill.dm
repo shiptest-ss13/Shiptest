@@ -2,6 +2,7 @@
 	name = "pill"
 	desc = "A tablet or capsule."
 	icon = 'icons/obj/chemical/medicine.dmi'
+	//world_file = 'icons/obj/chemical/medicine_world.dmi'
 	icon_state = "pill"
 	item_state = "pill"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
@@ -221,9 +222,8 @@
 /obj/item/reagent_containers/pill/zoom
 	name = "yellow pill"
 	desc = "A poorly made canary-yellow pill; it is slightly crumbly."
-	list_reagents = list(/datum/reagent/medicine/synaptizine = 10, /datum/reagent/drug/nicotine = 10, /datum/reagent/drug/methamphetamine = 1)
+	list_reagents = list(/datum/reagent/medicine/synaptizine = 10, /datum/reagent/drug/nicotine = 10, /datum/reagent/drug/rahkrahene = 1)
 	icon_state = "pill_zoom"
-
 
 /obj/item/reagent_containers/pill/happy
 	name = "happy pill"

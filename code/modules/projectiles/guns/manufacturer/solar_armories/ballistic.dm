@@ -119,6 +119,7 @@
 	light_range = 0
 
 	doesnt_keep_bullet = TRUE
+	casing_ejector = TRUE
 
 /obj/item/gun/ballistic/automatic/powered/gauss/gar
 	name = "Solar 'GAR' Carbine"
@@ -191,3 +192,50 @@
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
+/obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+	name = "Model 'Atelier' Railgun"
+	desc = "A high powered Solarian railgun. The heavy-duty electromagnets may require time to calibrate before each shot, but the power behind each ferromagnetic rod is well worth the wait."
+	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
+
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/rail
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/rail,
+	)
+	default_cell_type = /obj/item/stock_parts/cell/gun/solgov
+	allowed_cell_types = list(
+		/obj/item/stock_parts/cell/gun/solgov,
+	)
+
+	gun_firemodes = list(FIREMODE_AIMED)
+	default_firemode = FIREMODE_AIMED
+
+	icon_state = "railgun"
+	item_state = "railgun"
+
+	manufacturer = MANUFACTURER_SOLARARMORIES
+	spread = -5
+	spread_unwielded = 10
+	weapon_weight = WEAPON_HEAVY
+	recoil = 1
+	recoil_unwielded = 8
+	wield_slowdown = SNIPER_SLOWDOWN
+	wield_delay = 1.3 SECONDS
+	doesnt_keep_bullet = TRUE
+	aiming_time = 25
+	aiming_time_fire_threshold = 10
+
+	zoomable = TRUE
+	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_out_amt = 5
+
+	fire_sound = 'sound/weapons/blastcannon.ogg'
+
+	bolt_type = BOLT_TYPE_NO_BOLT
+	internal_magazine = TRUE
+	show_magazine_on_sprite = FALSE
+	empty_indicator = FALSE
+
+	refused_attachments = list(/obj/item/attachment/silencer)

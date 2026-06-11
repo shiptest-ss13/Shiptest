@@ -57,7 +57,7 @@
 		/obj/item/clothing/under/pants/white = 2,
 		/obj/item/clothing/under/pants/red = 2,
 		/obj/item/clothing/under/pants/black = 2,
-		/obj/item/clothing/under/pants/tan = 2,
+		/obj/item/clothing/under/pants/brown = 2,
 		/obj/item/clothing/under/pants/track = 2,
 		/obj/item/clothing/under/shorts/black = 2,
 		/obj/item/clothing/under/shorts/grey = 2,
