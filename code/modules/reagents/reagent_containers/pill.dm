@@ -2,6 +2,7 @@
 	name = "pill"
 	desc = "A tablet or capsule."
 	icon = 'icons/obj/chemical/medicine.dmi'
+	//world_file = 'icons/obj/chemical/medicine_world.dmi'
 	icon_state = "pill"
 	item_state = "pill"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
