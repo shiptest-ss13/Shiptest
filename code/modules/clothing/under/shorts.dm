@@ -58,6 +58,13 @@
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
 	unique_reskin = null
 
+/obj/item/clothing/under/shorts/brownjorts
+	name = "brown jorts"
+	desc = "Jean shorts cut from denim."
+	icon_state = "brownjorts"
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+	unique_reskin = null
+
 /obj/item/clothing/under/shorts/dolphin
 	name = "dolphin shorts"
 	desc = "Short shorts made for blistering hot days and athletic use."
