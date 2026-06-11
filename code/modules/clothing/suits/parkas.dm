@@ -136,15 +136,15 @@
 	desc = "A parka produced by serene sporting, in colonial league colors. Made from the thick fur of native serene fauna."
 	icon_state = "parkaclip"
 	item_state = "parkaclip"
-	icon = 'icons/obj/clothing/suits/hooded.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/suits/hooded.dmi'
+	icon = 'icons/obj/clothing/suits/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/color.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/parka/serene
 	unique_reskin = null
 
 /obj/item/clothing/head/hooded/parka/serene
 	name = "hood"
 	desc = "A hood for your parka."
-	icon = 'icons/obj/clothing/head/winterhood.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/head/winterhood.dmi'
+	icon = 'icons/obj/clothing/suits/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/color.dmi'
 	icon_state = "parkaclip"
 	item_state = "parkaclip"
