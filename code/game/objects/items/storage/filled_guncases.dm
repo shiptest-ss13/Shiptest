@@ -251,6 +251,9 @@
 	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/gar
 	mag_type = /obj/item/ammo_box/magazine/gar
 
+/obj/item/storage/guncase/railgun
+	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+
 /* VI */
 
 /obj/item/storage/guncase/pistol/commander

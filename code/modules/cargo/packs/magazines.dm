@@ -380,6 +380,14 @@
 	contains = list(/obj/item/ammo_box/magazine/m12g_slammer)
 	cost = 300
 
+/* E-40 */
+
+/datum/supply_pack/magazine/e40
+	name = "E-40 Caseless Magazine Crate"
+	desc = "Contains a 30-round magazine for the E-40 Hybrid Rifle in .299 Eohoma Caseless."
+	contains = list(/obj/item/ammo_box/magazine/e40/empty)
+	cost = 400
+
 /* energy weapons */
 
 /datum/supply_pack/magazine/guncell
