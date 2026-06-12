@@ -34,7 +34,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 17)
 
 /obj/machinery/computer/cryopod/retro
 	desc = "An interface between crew and the cryogenic storage oversight systems. Currently strugggling to catch up with the modern cryogenic storage system."
-	icon = 'icons/obj/machines/wallconsole.dmi'
+	icon = 'icons/obj/machines/television.dmi'
 	icon_state = "crt_beige_wall"
 	icon_screen = "crt_wall_cryo"
 

@@ -420,18 +420,17 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen, 17)
 
 /obj/machinery/computer/security/telescreen/entertainment/wall
 	desc = "A tube television tuned to some over-the-air channel. Often there isn't much, but this can pickup broadcast cameras across the sector. It looks secure, yet you worry it could fall and make a hole."
-	icon = 'icons/obj/status_display.dmi'
 	icon_state = "crt_grey_wall"
 	density = FALSE
 	icon_state_off = "crt_wall_nobroadcast"
 	icon_state_on = "crt_wall_live"
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/wall, 22)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/entertainment/wall, 22)
 
 /obj/machinery/computer/security/telescreen/entertainment/wall/beige
 	icon_state = "crt_beige_wall"
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/wall/beige, 22)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/entertainment/wall/beige, 22)
 
 /obj/machinery/computer/security/telescreen/rd
 	name = "\improper Research Director's telescreen"
