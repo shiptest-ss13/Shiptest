@@ -18,7 +18,7 @@
 		dir_amount = 4\
 	)
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 23)
 
 /obj/structure/extinguisher_cabinet/Initialize(mapload, ndir, building)
 	. = ..()

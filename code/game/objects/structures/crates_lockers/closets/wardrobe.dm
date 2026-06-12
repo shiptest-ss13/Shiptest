@@ -222,6 +222,8 @@
 	density = TRUE
 	can_be_unanchored = FALSE
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wardrobe/clip/wall, 27)
+
 /obj/structure/closet/wardrobe/clip/formal
 	name = "formal CLIP spare uniforms locker"
 	desc = "This locker stores spare formal CLIP uniforms."
@@ -244,6 +246,8 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wardrobe/clip/formal/wall, 27)
 
 /obj/structure/closet/wardrobe/clip/minutemen
 	name = "C-MM spare uniforms locker"
@@ -272,3 +276,5 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wardrobe/clip/minutemen/wall, 27)

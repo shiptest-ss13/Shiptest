@@ -359,11 +359,13 @@
 
 /obj/machinery/computer/security/telescreen
 	name = "\improper Telescreen"
-	desc = "Used for watching an empty arena."
-	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "telescreen"
+	desc = "A telescreen that connects to the ship's security camera network."
+	icon = 'icons/obj/machines/wallconsole.dmi'
+	icon_state = "wallmonitor"
+	icon_screen = "wallmonitor_cameras"
+	icon_keyboard = null
 	layer = SIGN_LAYER
-	network = list("thunder")
+	network = list("ss13")
 	density = FALSE
 	circuit = null
 	light_power = 0
@@ -375,21 +377,31 @@
 		icon_state += "b"
 	return ..()
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen, 17)
+
 /obj/machinery/computer/security/telescreen/entertainment
-	name = "entertainment monitor"
-	desc = "A screen displaying various entertainment channels. I hope they have that new Gezenan sitcom on this."
-	icon = 'icons/obj/status_display.dmi'
-	icon_state = "entertainment_blank"
+	name = "entertainment tube television"
+	desc = "A tube television tuned to some over-the-air channel. Often there isn't much, but this can pickup broadcast cameras across the sector. Just be careful not to drop it."
+	icon = 'icons/obj/machines/television.dmi'
+	icon_state = "crt_grey"
+	icon_screen = "crt_nobroadcast"
 	network = list("IntraNet")
-	density = FALSE
+	density = TRUE
 	circuit = null
 	interaction_flags_atom = NONE  // interact() is called by BigClick()
-	var/icon_state_off = "entertainment_blank"
-	var/icon_state_on = "entertainment"
+	var/icon_state_off = "crt_nobroadcast"
+	var/icon_state_on = "crt_live"
+
+/obj/machinery/computer/security/telescreen/entertainment/beige
+	icon_state = "crt_beige"
 
 /obj/machinery/computer/security/telescreen/entertainment/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_CLICK, PROC_REF(BigClick))
+
+/obj/machinery/computer/security/telescreen/entertainment/examine(mob/user)
+	. = ..()
+	ui_interact(usr)
 
 // Bypass clickchain to allow humans to use the telescreen from a distance
 /obj/machinery/computer/security/telescreen/entertainment/proc/BigClick()
@@ -400,9 +412,26 @@
 /obj/machinery/computer/security/telescreen/entertainment/proc/notify(on, string="IntraNet is proud to present the latest in unique content!")
 	if(on && icon_state == icon_state_off)
 		say(string)
-		icon_state = icon_state_on
+		icon_screen = icon_state_on
+		update_appearance()
 	else
-		icon_state = icon_state_off
+		icon_screen = icon_state_off
+		update_appearance()
+
+/obj/machinery/computer/security/telescreen/entertainment/wall
+	desc = "A tube television tuned to some over-the-air channel. Often there isn't much, but this can pickup broadcast cameras across the sector. It looks secure, yet you worry it could fall and make a hole."
+	icon = 'icons/obj/status_display.dmi'
+	icon_state = "crt_grey_wall"
+	density = FALSE
+	icon_state_off = "crt_wall_nobroadcast"
+	icon_state_on = "crt_wall_live"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/wall, 22)
+
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige
+	icon_state = "crt_beige_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/wall/beige, 22)
 
 /obj/machinery/computer/security/telescreen/rd
 	name = "\improper Research Director's telescreen"

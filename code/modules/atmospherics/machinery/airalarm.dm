@@ -239,7 +239,7 @@
 /obj/machinery/airalarm/away //general away mission access
 	req_access = list(ACCESS_AWAY_GENERAL)
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 28)
 
 //all air alarms in area are connected via magic
 /area
