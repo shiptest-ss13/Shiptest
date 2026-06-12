@@ -123,3 +123,72 @@
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
+
+/mob/living/simple_animal/hostile/automated/walkmine
+	name = "G-80W Walkmine"
+	desc = "An unconventional modification of the traditional G-80P Bouncer. Famously dubbed, 'a proactive solution to unsavory intruders', use of the Walkmine was banned in most jurisdictions following the Inter-Corporate War."
+	icon = 'icons/obj/landmine.dmi'
+	icon_state = "mine_walker"
+	light_color = "#D74722"
+	del_on_death = FALSE
+	ranged_cooldown_time = 0
+	vision_range = 12
+	rapid_fire_delay = 0 SECONDS
+	wander = 0
+	health = 45
+	maxHealth = 45
+	move_to_delay = 2
+//Distance at which walkmine will be allowed to explode
+	var/explode_distance = 2
+//Delay after explosion is triggered
+	var/blast_delay = 15 DECISECONDS
+//Explosion ranges
+	var/mine_devastation = 0 //capable of gibbing. do not use this!!!
+	var/mine_heavy = 1
+	var/mine_light = 3
+	var/mine_flame = 1 //this is funny but sort of evil
+	var/examine_text = null
+
+/mob/living/simple_animal/hostile/automated/walkmine/examine(mob/user)
+	. = ..()
+	if(examine_text)
+		. += examine_text
+
+/mob/living/simple_animal/hostile/automated/walkmine/OpenFire(atom/victim)
+	if(get_dist(src,victim) > explode_distance)
+		return
+	if(blast_delay >= 5 DECISECONDS)
+		playsound(src, 'sound/items/mine_activate.ogg', 70, FALSE)
+	else
+		playsound(src, 'sound/items/mine_activate_short.ogg', 80, FALSE)
+	Stun(-1) //forever stun brownie
+	LoseTarget()
+	icon_state = "mine_walker_explode"
+	mob_light(3, 1, light_color)
+	if(!blast_delay)
+		death()
+	else
+		addtimer(CALLBACK(src, PROC_REF(death)), blast_delay)
+
+/mob/living/simple_animal/hostile/automated/walkmine/death()
+	. = ..()
+	visible_message(span_warning("[src] explodes!"))
+	explosion(get_turf(loc),mine_devastation,mine_heavy,mine_light,flame_range = mine_flame, adminlog = FALSE)
+	qdel(src)
+
+/mob/living/simple_animal/hostile/automated/walkmine/Aggro()
+	mob_light(2, 0.25, light_color)
+
+/mob/living/simple_animal/hostile/automated/walkmine/makosso
+	faction = list("Deathsquad")
+	examine_text = span_notice("It has a <span class='boldnotice'>Makosso-Warra</span> logo printed on its outer plating.")
+
+/mob/living/simple_animal/hostile/automated/walkmine/cybersun
+	faction = list("hostile")
+	examine_text = span_notice(" It has a <span class='boldnotice'>Cybersun Virtual Solutions</span> logo printed on its outer plating.")
+
+/mob/living/simple_animal/hostile/automated/walkmine/frontiersman
+	faction = list("Frontiersmen")
+
+/mob/living/simple_animal/hostile/automated/walkmine/ramzi
+	faction = list("Ramzi Clique")
