@@ -202,7 +202,7 @@
 	taste_description = "milk"
 	glass_icon_state = "glass_white"
 	glass_name = "glass of milk"
-	glass_desc = "A glass of heavy milk. You wonder what animal this could have come frometabolizer."
+	glass_desc = "A glass of heavy milk. You wonder what animal this could have come from."
 
 /datum/reagent/consumable/tiris_milk/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(metabolizer.getBruteLoss() && SPT_PROB(10, seconds_per_tick))
