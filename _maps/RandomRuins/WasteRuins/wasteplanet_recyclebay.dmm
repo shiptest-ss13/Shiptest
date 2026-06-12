@@ -652,11 +652,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security)
-"fa" = (
-/obj/structure/noticeboard/directional/east,
-/obj/item/paper/fluff/ruins/wasteplanet/reminder,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/wasteplanet/recycle_bay/security)
 "fb" = (
 /obj/machinery/computer/atmos_alert{
 	dir = 8;
@@ -3410,14 +3405,6 @@
 "wF" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/wasteplanet/recycle_bay/security)
-"wH" = (
-/obj/structure/table/glass,
-/obj/item/reagent_containers/syringe/contraband/methamphetamine{
-	pixel_y = 5;
-	pixel_x = -3
-	},
-/turf/open/floor/carpet/green,
-/area/ruin/wasteplanet/recycle_bay/officers)
 "wI" = (
 /obj/structure/rack,
 /obj/item/clothing/ears/earmuffs{
@@ -4009,16 +3996,6 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security_dorms)
-"Bw" = (
-/obj/structure/closet/toolcloset/empty,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/plasmacutter,
-/obj/item/plasmacutter,
-/obj/item/clothing/gloves/insulated,
-/obj/item/clothing/gloves/insulated,
-/obj/item/clothing/gloves/insulated,
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/wasteplanet/recycle_bay/eva)
 "BE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -4302,6 +4279,14 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"Db" = (
+/obj/structure/table/glass,
+/obj/item/inhaler/rahkrahene{
+	pixel_y = 5;
+	pixel_x = -3
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/wasteplanet/recycle_bay/officers)
 "Dd" = (
 /obj/item/target,
 /turf/open/floor/plating,
@@ -4963,6 +4948,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"Ha" = (
+/obj/structure/noticeboard/directional/east,
+/obj/item/paper/fluff/ruins/wasteplanet/reminder,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/wasteplanet/recycle_bay/security)
 "He" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plating,
@@ -6140,6 +6130,16 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
+"PM" = (
+/obj/structure/closet/toolcloset/empty,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/plasmacutter,
+/obj/item/plasmacutter,
+/obj/item/clothing/gloves/insulated,
+/obj/item/clothing/gloves/insulated,
+/obj/item/clothing/gloves/insulated,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/wasteplanet/recycle_bay/eva)
 "PN" = (
 /obj/effect/turf_decal/siding/red{
 	dir = 4;
@@ -9142,7 +9142,7 @@ hx
 jZ
 YC
 IX
-fa
+Ha
 Mf
 TG
 bu
@@ -10057,7 +10057,7 @@ DE
 DE
 Ft
 kJ
-wH
+Db
 kk
 KJ
 gk
@@ -10548,7 +10548,7 @@ Wi
 Wi
 Wi
 vy
-Bw
+PM
 MH
 lX
 xD

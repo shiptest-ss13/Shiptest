@@ -976,17 +976,6 @@
 	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
 		L.ForceContractDisease(new /datum/disease/tuberculosis(), FALSE, TRUE)
 
-/datum/reagent/snail
-	name = "Agent-S"
-	description = "Virological agent that infects the subject with Gastrolosis."
-	color = "#003300" // rgb(0, 51, 0)
-	taste_description = "goo"
-	can_synth = FALSE //special orange man request
-
-/datum/reagent/snail/expose_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
-	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
-		L.ForceContractDisease(new /datum/disease/gastrolosis(), FALSE, TRUE)
-
 /datum/reagent/fluorosurfactant//foam precursor
 	name = "Fluorosurfactant"
 	description = "A perfluoronated sulfonic acid that forms a foam when mixed with water."
@@ -2115,6 +2104,41 @@
 	description = "An extremely rare metallic-white substance only found on demon-class planets."
 	color = "#FFFFFF" // rgb: 255, 255, 255
 	taste_mult = 0 // oderless and tasteless
+
+/datum/reagent/rahene
+	name = "Rahene"
+	description = "A crimson-red vapor typically found on geologically active frontier worlds."
+	color = "#ca1111" // rgb: 255, 255, 255
+	taste_mult = 4
+	taste_description = "red"
+	overdose_threshold = 30
+
+/datum/reagent/rahene/on_mob_metabolize(mob/living/L)
+	..()
+	L?.add_client_colour(/datum/client_colour/rahkrahene)
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/rahene)
+
+/datum/reagent/rahene/on_mob_end_metabolize(mob/living/L)
+	L.remove_client_colour(/datum/client_colour/rahkrahene)
+	L.remove_client_colour(/datum/client_colour/rahkrahene_overdose)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/rahene)
+	..()
+
+/datum/reagent/rahene/overdose_start(mob/living/M)
+	M.add_client_colour(/datum/client_colour/rahkrahene_overdose)
+	. = ..()
+
+/datum/reagent/rahene/overdose_process(mob/living/M)
+	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc) && prob(33))
+		step(M, pick(GLOB.cardinals))
+	if(prob(5))
+		M.visible_message(span_danger("[M]'s hands flip out and flail everywhere!"))
+		M.drop_all_held_items()
+	..()
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, pick(0.5, 0.6, 0.7, 0.8, 0.9, 1))
+	. = 1
+
+
 
 /datum/reagent/metalgen
 	name = "Metalgen"
