@@ -48,7 +48,7 @@
 	bodytemp_cold_damage_limit = (HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 50) // about -50c
 	ass_image = 'icons/ass/assplasma.png'
 
-/datum/species/plasmaman/spec_life(mob/living/carbon/human/H)
+/datum/species/plasmaman/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	var/datum/gas_mixture/environment = H.loc.return_air()
 	var/atmos_sealed = FALSE
 	if(HAS_TRAIT(H, TRAIT_NOFIRE))
@@ -202,13 +202,13 @@
 
 	return randname
 
-/datum/species/plasmaman/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+/datum/species/plasmaman/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	. = ..()
 	if(istype(chem, /datum/reagent/toxin/plasma))
 		H.reagents.remove_reagent(chem.type, chem.metabolization_rate)
 		for(var/i in H.all_wounds)
 			var/datum/wound/iter_wound = i
-			iter_wound.on_xadone(4) // plasmamen use plasma to reform their bones or whatever
+			iter_wound.on_xadone(4  * REAGENTS_EFFECT_MULTIPLIER * seconds_per_tick) // plasmamen use plasma to reform their bones or whatever
 		return TRUE
 
 	return ..()

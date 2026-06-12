@@ -25,13 +25,13 @@
 
 	/// Whether we are burrowed or not
 	var/burrowed = FALSE
-	/// How much health we regen per Life() when burrowed
-	var/heal_amount = 10
+	/// How much health we regen per second when burrowed
+	var/heal_amount = 5
 
-/mob/living/simple_animal/hostile/asteroid/antlion/Life()
+/mob/living/simple_animal/hostile/asteroid/antlion/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	if(burrowed)
-		health = min(maxHealth, health+heal_amount)
+		health = min(maxHealth, health+(heal_amount*seconds_per_tick))
 
 /mob/living/simple_animal/hostile/asteroid/antlion/OpenFire()
 	if(!burrowed && prob(70))
