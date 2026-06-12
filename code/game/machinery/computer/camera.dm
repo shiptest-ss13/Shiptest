@@ -410,7 +410,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen, 17)
 	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom, interact), usr)
 
 /obj/machinery/computer/security/telescreen/entertainment/proc/notify(on, string="IntraNet is proud to present the latest in unique content!")
-	if(on && icon_state == icon_state_off)
+	if(on && icon_screen == icon_state_off)
 		say(string)
 		icon_screen = icon_state_on
 		update_appearance()
