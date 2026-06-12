@@ -60,3 +60,61 @@
   - rscadd: stag-class salvage rig
   zimon9:
   - balance: makes it possible to walk on ice without slipping
+2026-06-07:
+  AnomalousPotato:
+  - rscadd: Added polyglot quirk for maximum yapping.
+  Bumtickley00:
+  - rscadd: You can now load regular revolvers with an ammo stack, not just a single
+      shell.
+  - bugfix: Reloading gate-loaded revolvers with an ammo stack now spins the cylinder
+      until all the empty slots are full instead of only trying a couple times.
+  - bugfix: Moving while unloading a gate-loaded revolver will no longer instantly
+      dump the rounds on the floor.
+  - bugfix: Loading a speedloader and a revolver at the same time will no longer quantum-entangle
+      bullets between them.
+  - code_imp: Removed some copypaste in the revolver code.
+  firebudgy:
+  - balance: Advanced first aid kit in cargo.
+  zimon9:
+  - bugfix: fixed equipment selection dummy hair (and prefs) randomization
+  - rscadd: added salbutamol refills to the outpost med
+  - balance: reduced price of salbutamol refill kits
+2026-06-08:
+  DIB-DOG:
+  - rscadd: Added new Etherbor posters
+  Ical92:
+  - rscadd: table-variant sinks
+  thearbiber:
+  - rscadd: shawls
+  - rscadd: long hair and beehive resprite
+2026-06-09:
+  firebudgy:
+  - rscdel: Slavery reference in the description of cotton seeds.
+2026-06-10:
+  thearbiber:
+  - rscadd: brown pants+jorts
+  - rscdel: tan pants (theyre not real anyhow)
+2026-06-11:
+  Erikafox:
+  - rscadd: Geysers now make smoke so you can differentiate them from ore veins easier
+  - rscadd: added alt silfrine, cinesia, and starlight recipes.
+  - rscdel: stupid snail disease
+  - balance: made hadrakine more rewarding to make.
+  - balance: made indomide easier to make
+  - rscadd: replaces meth with rahkrahene
+  TheArbiter:
+  - rscadd: Solarian Atelier Railgun
+  - rscadd: aimed_fire component
+  rye-rice:
+  - rscadd: Respirtes bunch of chemistry related things!
+  - rscadd: Beakers and syringes have world sprites!
+  - rscadd: Defibs have world spriites and defib mounts have better sprites!
+  thearbiber:
+  - rscadd: cm357 resprite
+  west3436:
+  - rscadd: Crateshelves may now tip over on you if you're not careful!
+  zimon9:
+  - code_imp: removed player agency to start CTF on their own
+  - balance: ctf ammo pickups regenerate your belt now, not your entire outfit
+  - balance: scales additional lode redemption based on drill class, up to a maximum
+      of 4 additional lodes
