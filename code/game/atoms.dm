@@ -371,8 +371,8 @@
 	//SHOULD_BE_PURE(TRUE)
 
 	//put some kinda signal here
-	//if(SEND_SIGNAL())
-
+	if(SEND_SIGNAL(src, COMSIG_ATOM_TRY_ALLOW_THROUGH, mover, border_dir))
+		return TRUE
 	if(mover.pass_flags & pass_flags_self)
 		return TRUE
 	if(mover.throwing && (pass_flags_self & LETPASSTHROW))
