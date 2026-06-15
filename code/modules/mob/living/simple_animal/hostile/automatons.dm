@@ -80,6 +80,67 @@
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
 
+/mob/living/simple_animal/hostile/automated/rover
+	name = "Vigilitas \"Scent Hound\" Rover"
+	desc = "A scouting drone manufactured by Sharplite during the Inter-Corporate War. Commonly fielded in small forward groups ahead of Vigilitas teams, or placed in security checkpoints."
+	health = 100
+	maxHealth = 100
+	armor = list("melee" = 20, "bullet" = 30, "laser" = 30, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+	icon_state = "warratread"
+	projectilesound = 'sound/weapons/gun/smg/resolution.ogg'
+	casingtype = /obj/item/ammo_casing/c46x30mm
+	faction = list(ROLE_DEATHSQUAD)
+	rapid = 3
+	rapid_fire_delay = 3
+	retreat_distance = 2
+	minimum_distance = 3
+
+/mob/living/simple_animal/hostile/automated/rover/coalition
+	name = "\"Teemeres\" Rover"
+	desc = "A boxy drone manufactured by Cybersun during the Inter-Corporate War. Stylized to be as basic and armored as possible to mesh with marauder forces, the Teemeres garnered a positive reputation for being a reliable diversion against enemy forces."
+	icon_state = "coalitiontread"
+	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
+	casingtype = /obj/item/ammo_casing/c57x39mmmm
+	faction = list(FACTION_HOSTILE)
+	retreat_distance = 3
+	minimum_distance = 3
+
+/mob/living/simple_animal/hostile/automated/rover/coalition/dmr
+	name = "\"Temere-Lito\" Rover"
+	desc = "A boxy drone manufactured by Cybersun during the Inter-Corporate War. Stylized to be as basic and armored as possible to mesh with marauder forces, the Temere-Lito garnered a poor reputation for its tendency to misfire into advancing marauders."
+	icon_state = "coalitiontread_range"
+	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
+	casingtype = /obj/item/ammo_casing/a556_42
+	faction = list(FACTION_HOSTILE)
+	rapid = 2
+	rapid_fire_delay = 3
+	minimum_distance = 7
+	vision_range = 12
+	aggro_vision_range = 14
+
+/mob/living/simple_animal/hostile/automated/rover/ngr
+	name = "\"Teemeres\" Rover"
+	desc = "A boxy drone manufactured by the New Gorlex Republic. Effectively the same as the original Teemeres rover, with modern NGR IFF. The modern Teemeres has found itself a new role as a checkpoint security drone for NGR facilities."
+	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
+	icon_state = "ngrtread"
+	casingtype = /obj/item/ammo_casing/c57x39mmmm
+	faction = list(FACTION_NGR)
+	retreat_distance = 3
+	minimum_distance = 3
+
+/mob/living/simple_animal/hostile/automated/rover/ngr/dmr
+	name = "\"Temere-Lito\" Rover"
+	desc = "A boxy drone manufactured by the New Gorlex Republic. Effectively the same eas the original Temere-Lito, albeit with improved IFF systems to help prevent friendly fire incidents. The modern Temere-Lito has found itself a new role as a scouting drone, occasionally fielded on planetary survey missions."
+	icon_state = "ngrtread_range"
+	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
+	casingtype = /obj/item/ammo_casing/a556_42
+	faction = list(FACTION_HOSTILE)
+	rapid = 2
+	rapid_fire_delay = 3
+	minimum_distance = 7
+	vision_range = 12
+	aggro_vision_range = 14
+
 /mob/living/simple_animal/hostile/automated/bipedal
 	name = "Bipedal Assault Platform"
 	desc = "A lumbering automaton garbed in Coalition colors, with an integrated shotgun attached in place of a left arm. Driven by basic threat detection software the barrel of its shotgun steadies itself in your direction."
