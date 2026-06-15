@@ -100,7 +100,7 @@
 	desc = "A boxy drone manufactured by Cybersun during the Inter-Corporate War. Stylized to be as basic and armored as possible to mesh with marauder forces, the Teemeres garnered a positive reputation for being a reliable diversion against enemy forces."
 	icon_state = "coalitiontread"
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
-	casingtype = /obj/item/ammo_casing/c57x39mmmm
+	casingtype = /obj/item/ammo_casing/c57x39mm
 	faction = list(FACTION_HOSTILE)
 	retreat_distance = 3
 	minimum_distance = 3
@@ -123,7 +123,7 @@
 	desc = "A boxy drone manufactured by the New Gorlex Republic. Effectively the same as the original Teemeres rover, with modern NGR IFF. The modern Teemeres has found itself a new role as a checkpoint security drone for NGR facilities."
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	icon_state = "ngrtread"
-	casingtype = /obj/item/ammo_casing/c57x39mmmm
+	casingtype = /obj/item/ammo_casing/c57x39mm
 	faction = list(FACTION_NGR)
 	retreat_distance = 3
 	minimum_distance = 3
