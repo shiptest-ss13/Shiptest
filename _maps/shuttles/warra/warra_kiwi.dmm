@@ -5347,15 +5347,13 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
 "Bl" = (
-/obj/machinery/atmospherics/components/binary/pump/layer4{
+/obj/structure/cable/white{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/white{
-	dir = 4
-	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Bs" = (
@@ -5988,15 +5986,15 @@
 /area/ship/hallway/starboard)
 "EX" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/poddoor/shutters{
+	id = "ns_airlocklockdown"
+	},
 /obj/docking_port/mobile{
 	port_direction = 4;
 	preferred_direction = 4;
 	dir = 1;
 	launch_status = 0
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "ns_airlocklockdown"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
@@ -6702,13 +6700,15 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Ji" = (
-/obj/structure/cable/white{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/terminal{
+/obj/machinery/atmospherics/components/binary/pump/layer4{
 	dir = 8
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Jp" = (
@@ -8110,7 +8110,7 @@
 /area/ship/crew/dorm/captain)
 "Rj" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external/glass,
 /obj/machinery/door/poddoor/shutters{
 	id = "ns_airlocklockdown"
 	},
@@ -9795,7 +9795,7 @@ Pb
 tb
 uP
 tb
-Ji
+Bl
 tb
 Jb
 "}
@@ -9997,8 +9997,8 @@ rE
 tb
 tb
 pd
-Bl
-Bl
+Ji
+Ji
 hf
 tb
 Jb
