@@ -1201,7 +1201,8 @@
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/telecomms/receiver/preset_right{
 	network = "irmg_commnet";
-	freq_listening = list(1347, 1459, 1353)
+	freq_listening = list(1347, 1459, 1353);
+	autolinkers = list("receiverB","hub")
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -1845,7 +1846,8 @@
 "Cg" = (
 /obj/machinery/telecomms/server/presets/inteq{
 	network = "irmg_commnet";
-	freq_listening = list(1347, 1353)
+	freq_listening = list(1347, 1353);
+	autolinkers = list("inteq","broadcasterA","hub") )
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -2183,7 +2185,8 @@
 "Hm" = (
 /obj/machinery/telecomms/bus/preset_four{
 	network = "irmg_commnet";
-	freq_listening = list(1347, 1459, 1353)
+	freq_listening = list(1347, 1459, 1353);
+	autolinkers = list("hub","processor4","bus")
 	},
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/camera/autoname{
@@ -2309,7 +2312,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/turretid/ship{
 	pixel_y = -22;
-	pixel_x = 11
+	pixel_x = 11;
+	id = "aspo_grid"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -2345,7 +2349,8 @@
 /area/ship/engineering/communications)
 "IX" = (
 /obj/machinery/telecomms/processor/preset_four{
-	network = "irmg_commnet"
+	network = "irmg_commnet";
+	autolinkers = list("processor4","bus")
 	},
 /obj/effect/turf_decal/techfloor,
 /obj/structure/extinguisher_cabinet/directional/north{
@@ -3513,6 +3518,115 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
+	},
+/obj/structure/closet/crate/engineering{
+	name = "relay parts crate"
+	},
+/obj/item/circuitboard/machine/telecomms/relay{
+	pixel_y = -6
+	},
+/obj/item/circuitboard/machine/telecomms/relay{
+	pixel_y = -4
+	},
+/obj/item/circuitboard/machine/telecomms/relay{
+	pixel_y = -2
+	},
+/obj/item/circuitboard/machine/telecomms/relay,
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/item/stock_parts/subspace/filter{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/stock_parts/subspace/transmitter{
+	pixel_x = 8;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications/room)
