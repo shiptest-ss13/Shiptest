@@ -60,6 +60,9 @@
 
 	muzzleflash_iconstate = "muzzle_flash_sharplite"
 
+/obj/item/gun/energy/sharplite/x26/empty_cell
+	spawn_no_ammo = TRUE
+
 /obj/item/gun/energy/sharplite/x01
 	name = "SL X01 “Yari” Heavy Variable Pistol"
 	desc = "A bulky pistol that can fire devastating electroplasma bolts and disabler shots. An early Sharplite product notable for unusually strong power output."
@@ -316,6 +319,9 @@
 			"y" = 10,
 		),
 	)
+
+/obj/item/gun/energy/sharplite/x46/empty_cell
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/sharplite/x46/zeta
 	name = "\improper SL X-45"
