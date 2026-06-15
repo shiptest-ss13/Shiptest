@@ -4139,7 +4139,7 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "uP" = (
-/obj/structure/cable{
+/obj/structure/cable/white{
 	icon_state = "0-4"
 	},
 /obj/machinery/power/terminal{
@@ -5347,13 +5347,15 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
 "Bl" = (
-/obj/structure/cable/white{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/terminal{
+/obj/machinery/atmospherics/components/binary/pump/layer4{
 	dir = 8
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Bs" = (
@@ -6699,18 +6701,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
-"Ji" = (
-/obj/machinery/atmospherics/components/binary/pump/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/white{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines/starboard)
 "Jp" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /obj/effect/turf_decal/steeldecal/steel_decals6{
@@ -9795,7 +9785,7 @@ Pb
 tb
 uP
 tb
-Bl
+uP
 tb
 Jb
 "}
@@ -9997,8 +9987,8 @@ rE
 tb
 tb
 pd
-Ji
-Ji
+Bl
+Bl
 hf
 tb
 Jb
