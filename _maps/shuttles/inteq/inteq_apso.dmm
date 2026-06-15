@@ -625,7 +625,9 @@
 /obj/item/clothing/head/helmet/space/inteq,
 /obj/item/clothing/mask/gas/inteq,
 /obj/machinery/airalarm/directional/east,
-/obj/structure/noticeboard/directional/north,
+/obj/machinery/holosign/irmg{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "kj" = (
@@ -2514,15 +2516,18 @@
 /obj/item/pen/fountain{
 	pixel_x = -8
 	},
-/obj/machinery/firealarm/directional/south{
-	pixel_x = -6
-	},
-/obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = 6
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/hand_labeler,
 /obj/item/hand_labeler_refill,
+/obj/structure/noticeboard/directional/south{
+	pixel_x = -10
+	},
+/obj/machinery/firealarm/directional/east{
+	pixel_y = 6
+	},
+/obj/structure/extinguisher_cabinet/directional/east{
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/communications)
 "Ka" = (
