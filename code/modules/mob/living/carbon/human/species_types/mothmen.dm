@@ -42,7 +42,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/moth,
 	)
 
-	prosthetic_style = /datum/sprite_accessory/body/prosthetic/human
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/moth
 
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 5
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 5

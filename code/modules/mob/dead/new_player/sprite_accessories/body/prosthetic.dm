@@ -28,7 +28,29 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/human,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/human,
 	)
-	allowed_species = list(/datum/species/human, /datum/species/moth)
+	allowed_species = list(/datum/species/human)
+
+/datum/sprite_accessory/body/prosthetic/moth
+	name = "Prosthetic Moth"
+	replacement_bodyparts = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot/human,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot/human,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus/human,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/human,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/human,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/human,
+	)
+	replacement_organs = list(
+		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs/cybernetic,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/compound/robotic,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/cybernetic,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/robot,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/cybernetic,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/cybernetic,
+		ORGAN_SLOT_WINGS = /obj/item/organ/moth_wings/cybernetic,
+	)
+	allowed_species = list(/datum/species/moth)
 
 /datum/sprite_accessory/body/prosthetic/sarathi
 	name = "Prosthetic Sarathi"
@@ -85,3 +107,24 @@
 	)
 	allowed_species = list(/datum/species/vox)
 	bodytype = BODYTYPE_VOX
+
+/datum/sprite_accessory/body/prosthetic/spider
+	name = "Prosthetic Rachnid"
+	replacement_bodyparts = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot/human,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot/human,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus/human,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/human,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/human,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/human,
+	)
+	replacement_organs = list(
+		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs/cybernetic,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/spider/robotic,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/cybernetic,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/robot,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/cybernetic,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/cybernetic,
+	)
+	allowed_species = list(/datum/species/spider)
