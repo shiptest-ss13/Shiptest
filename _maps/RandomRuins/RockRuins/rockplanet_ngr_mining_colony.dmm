@@ -133,6 +133,11 @@
 	},
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"ba" = (
+/obj/effect/turf_decal/corner/opaque/tan/mono,
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/ngrcolony/security)
 "bd" = (
 /obj/structure/platform/ship_two{
 	dir = 8
@@ -1505,6 +1510,17 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"jh" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/gun_maint_kit,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/security)
 "jk" = (
 /obj/structure/salvageable/turret,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2127,6 +2143,20 @@
 	},
 /turf/open/floor/concrete/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
+"mj" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1;
+	layer = 2.04
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/rockplanet/ngrcolony/security)
+"mk" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/rockplanet/ngrcolony/security)
 "ml" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /obj/item/organ/legion_skull{
@@ -2543,6 +2573,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"of" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/black{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/ngrcolony/security)
 "oh" = (
 /obj/machinery/door/airlock/external{
 	dir = 8
@@ -2742,6 +2781,21 @@
 	},
 /turf/open/floor/plastic,
 /area/ruin/rockplanet/ngrcolony/canteen)
+"pu" = (
+/obj/effect/turf_decal/trimline/opaque/red/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 5
+	},
+/obj/structure/table,
+/obj/item/paper/crumpled/muddy{
+	pixel_x = -6;
+	pixel_y = 6;
+	default_raw_text = "todo: get NGR markings off the last vest"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
 "pv" = (
 /obj/machinery/button/door{
 	dir = 1;
@@ -3305,9 +3359,9 @@
 	dir = 8
 	},
 /obj/structure/barricade/concrete{
-	dir = 8
+	dir = 4
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "sJ" = (
 /obj/structure/platform/corner{
@@ -3610,6 +3664,15 @@
 /obj/item/ammo_box/a357/empty,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"uB" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/black{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/ngrcolony/security)
 "uC" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -4029,7 +4092,8 @@
 	anchored = 1;
 	can_be_unanchored = 1;
 	name = "ammunition locker";
-	req_access = null
+	req_access = null;
+	opened = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/security)
@@ -4751,6 +4815,13 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/ngrcolony/security/prison)
+"AE" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/black,
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/ngrcolony/security)
 "AF" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-10"
@@ -4769,6 +4840,15 @@
 /obj/structure/crate_shelf,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/ngrcolony/crawlergarage)
+"AL" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/black{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/ngrcolony/security)
 "AP" = (
 /obj/machinery/button/door{
 	dir = 1;
@@ -5323,6 +5403,15 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
+"DZ" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/effect/turf_decal/siding/black{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/ngrcolony/security)
 "Ea" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -5862,6 +5951,19 @@
 /obj/effect/turf_decal/box/white,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/utility)
+"GS" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/black{
+	dir = 1
+	},
+/obj/structure/chair/office/dark,
+/obj/structure/sign/flag/ngr{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/ngrcolony/security)
 "GU" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -7270,6 +7372,21 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
+/obj/structure/table,
+/obj/item/clothing/suit/armor/ngr{
+	pixel_x = 9;
+	pixel_y = 6
+	},
+/obj/item/scalpel{
+	name = "leather knife";
+	desc = "A sharpened leather knife, used for leatherwork.";
+	pixel_x = -10;
+	pixel_y = 7
+	},
+/obj/item/clothing/head/helmet/ngr{
+	pixel_x = 7;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
 "Om" = (
@@ -7854,6 +7971,11 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/utility)
+"Rs" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/opaque/tan/mono,
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/ngrcolony/security)
 "Rx" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -9183,7 +9305,7 @@
 	},
 /area/ruin/rockplanet/ngrcolony/canteen)
 "Zj" = (
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/security)
 "Zl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -13406,7 +13528,7 @@ GY
 oc
 nO
 QK
-qt
+jh
 qt
 QK
 mL
@@ -13689,10 +13811,10 @@ So
 Zj
 Zj
 Zj
-Zj
-Zj
-Zj
-Zj
+QK
+GS
+Rs
+AE
 QK
 wR
 tj
@@ -13760,10 +13882,10 @@ So
 Zj
 Zj
 Zj
-Zj
-Zj
-Zj
-Zj
+fw
+AL
+Rs
+AE
 An
 Hk
 KF
@@ -13831,10 +13953,10 @@ So
 Zj
 Zj
 Zj
-Zj
-Zj
-Zj
-Zj
+QK
+AL
+ba
+AE
 QK
 QK
 QK
@@ -13902,10 +14024,10 @@ Zx
 Zj
 Zj
 Zj
-Zj
-Zj
-Zj
-Zj
+QK
+of
+DZ
+uB
 QK
 SU
 SU
@@ -13975,8 +14097,8 @@ QK
 xm
 QK
 QK
-Zj
-Zj
+mk
+mk
 QK
 SU
 SU
@@ -14044,7 +14166,7 @@ So
 sb
 Bo
 yw
-Zj
+mj
 QK
 QK
 QK
@@ -14115,7 +14237,7 @@ So
 yw
 yw
 yw
-yw
+mj
 QK
 sX
 SU
@@ -14186,7 +14308,7 @@ So
 Nt
 gN
 yw
-Zj
+mj
 QK
 SU
 VJ
@@ -15375,7 +15497,7 @@ am
 Kz
 KX
 uG
-iN
+pu
 Kz
 Kz
 Kz
