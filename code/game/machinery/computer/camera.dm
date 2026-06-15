@@ -421,6 +421,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen, 17)
 /obj/machinery/computer/security/telescreen/entertainment/wall
 	desc = "A tube television tuned to some over-the-air channel. Often there isn't much, but this can pickup broadcast cameras across the sector. It looks secure, yet you worry it could fall and make a hole."
 	icon_state = "crt_grey_wall"
+	icon_screen = "crt_wall_nobroadcast"
 	density = FALSE
 	icon_state_off = "crt_wall_nobroadcast"
 	icon_state_on = "crt_wall_live"

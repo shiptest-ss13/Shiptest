@@ -1,0 +1,11 @@
+/obj/machinery/camera {dir=@UNSET} : /obj/machinery/camera/directional/north {@OLD}
+/obj/machinery/camera {dir=1} : /obj/machinery/camera/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/camera {dir=2} : /obj/machinery/camera/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/camera {dir=4} : /obj/machinery/camera/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/camera {dir=8} : /obj/machinery/camera/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/item/radio/intercom/wideband {dir=@UNSET} : /obj/item/radio/intercom/wideband/directional/north {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/item/radio/intercom/wideband {dir=1} : /obj/item/radio/intercom/wideband/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/item/radio/intercom/wideband {dir=2} : /obj/item/radio/intercom/wideband/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/item/radio/intercom/wideband {dir=4} : /obj/item/radio/intercom/wideband/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/item/radio/intercom/wideband {dir=8} : /obj/item/radio/intercom/wideband/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}

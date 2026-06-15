@@ -193,7 +193,7 @@
 /obj/machinery/power/apc/auto_name
 	auto_name = TRUE
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 24)
 
 /obj/machinery/power/apc/get_cell()
 	return cell
