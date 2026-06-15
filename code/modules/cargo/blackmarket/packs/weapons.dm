@@ -525,6 +525,19 @@
 	availability_prob = 15
 	spawn_weighting = FALSE
 
+/datum/blackmarket_item/weapon/guncase/rail_cannon
+	name = "Model 'Atelier' Railgun"
+	desc = "If you ask me, warfare boils down to basically throwing rocks as fast and hard as possible. This thing might not be fast, but it's certainly hard as hell. Chambered in ferromagnetic rods to put a baseball sized hole in your unlucky victim."
+	item = /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+	mag_type = /obj/item/ammo_box/magazine/ammo_stack/prefilled/ferrorods
+	pair_item = list(/datum/blackmarket_item/ammo/rods)
+
+	cost_min = 6500
+	cost_max = 8000
+	stock = 1
+	availability_prob = 15
+	spawn_weighting = FALSE
+
 /// mecha equipment
 
 /datum/blackmarket_item/weapon/mecha_syringe_gun

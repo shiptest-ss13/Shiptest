@@ -131,8 +131,11 @@
 	name = "beaker"
 	desc = "A beaker. It can hold up to 50 units."
 	icon = 'icons/obj/chemical/beakers.dmi'
+	world_file = 'icons/obj/chemical/beakers_world.dmi'
 	icon_state = "beaker"
 	item_state = "beaker"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	custom_materials = list(/datum/material/glass=500)
 	fill_icon_thresholds = list(1, 40, 60, 80, 100)
 	can_have_cap = TRUE
@@ -180,6 +183,8 @@
 	name = "cryostasis beaker"
 	desc = "A cryostasis beaker that allows for chemical storage without \
 		reactions. Can hold up to 50 units."
+	// No clue if this is obtainable, but it's so rare i havent really seen one in forever
+	world_file = null
 	icon_state = "beakernoreact"
 	custom_materials = list(/datum/material/iron=3000)
 	reagent_flags = NO_REACT
@@ -312,6 +317,7 @@
 /obj/item/reagent_containers/glass/filter
 	name = "seperatory funnel"
 	desc = "A crude tool created by welding several beakers together. It would probably be useful for seperating reagents."
+	world_file = 'icons/obj/chemical/beakers_world.dmi'
 	icon_state = "beakerfilter"
 	item_state = "beaker"
 	volume = 100
