@@ -108,7 +108,9 @@
 "aL" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/effect/mob_spawn/human/corpse/indie/engineer{
-	outfit = /datum/outfit/job/independent/engineer/salvage
+	outfit = /datum/outfit/job/independent/engineer/salvage;
+	burn_damage = 101;
+	oxy_damage = 98
 	},
 /obj/item/cigbutt{
 	pixel_y = 12;
@@ -5703,7 +5705,9 @@
 /area/ruin/jungle/depot/warehouse_3)
 "PT" = (
 /obj/effect/turf_decal/rechargefloor,
-/obj/mecha/working/ripley/cargo,
+/obj/mecha/working/ripley/cargo{
+	name = "\improper APLU \"Lenelasa\""
+	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)

@@ -151,7 +151,7 @@
 
 /obj/projectile/bullet/shrapnel/walkmine
 	name = "flying walkmine shard"
-	damage = 6 //may need tuning. this should maim, not kill!
+	damage = 5 //may need tuning. this should maim, not kill!
 	range = 5
 	armour_penetration = -10
 	wound_bonus = 10
