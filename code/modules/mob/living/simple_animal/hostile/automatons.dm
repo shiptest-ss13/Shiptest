@@ -143,10 +143,14 @@
 //Delay after explosion is triggered
 	var/blast_delay = 15 DECISECONDS
 //Explosion ranges
-	var/mine_devastation = 0 //capable of gibbing. do not use this!!!
+	var/mine_devastation = 0
 	var/mine_heavy = 1
 	var/mine_light = 3
 	var/mine_flame = 1 //this is funny but sort of evil
+//Shrapnel
+	var/shrapnel_magnitude = 1 //Amount of shrapnel. 0 = None.
+	var/shrapnel_type = /obj/projectile/bullet/shrapnel/walkmine //potential for evil
+//Used for manufacturer text.
 	var/examine_text = null
 
 /mob/living/simple_animal/hostile/automated/walkmine/examine(mob/user)
@@ -174,6 +178,9 @@
 	. = ..()
 	visible_message(span_warning("[src] explodes!"))
 	explosion(get_turf(loc),mine_devastation,mine_heavy,mine_light,flame_range = mine_flame, adminlog = FALSE)
+	if(shrapnel_magnitude > 0)
+		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
+	SEND_SIGNAL(src, COMSIG_MOB_PELLETS)
 	qdel(src)
 
 /mob/living/simple_animal/hostile/automated/walkmine/Aggro()

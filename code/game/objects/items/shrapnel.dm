@@ -149,6 +149,14 @@
 		var/mob/living/carbon/M = target
 		M.apply_effect(250,EFFECT_IRRADIATE,0)
 
+/obj/projectile/bullet/shrapnel/walkmine
+	name = "flying walkmine shard"
+	damage = 6 //may need tuning. this should maim, not kill!
+	range = 5
+	armour_penetration = -10
+	wound_bonus = 10
+
+
 /obj/projectile/bullet/pellet/stingball
 	name = "ballistic gel clump"
 	damage = 5

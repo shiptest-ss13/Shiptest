@@ -773,7 +773,8 @@
 	},
 /obj/structure/spacevine/weak,
 /mob/living/simple_animal/hostile/abandoned_minebot{
-	faction = list("Deathsquad")
+	faction = list("Deathsquad");
+	wander = 0
 	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -867,7 +868,8 @@
 /area/ruin/jungle/depot/warehouse_3)
 "gi" = (
 /obj/structure/closet/secure_closet/armory1{
-	populate = 0
+	populate = 0;
+	req_access = null
 	},
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/item/clothing/suit/armor/warra,
@@ -1540,7 +1542,8 @@
 /obj/machinery/turretid/ship{
 	lethal = 1;
 	id = "baseturrets";
-	pixel_y = 22
+	pixel_y = 22;
+	locked = 0
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/camera/autoname{
@@ -1731,7 +1734,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/machinery/light/dim/directional/east,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "md" = (
@@ -1897,7 +1900,6 @@
 	req_access_txt = "2"
 	},
 /obj/effect/turf_decal/industrial/hatch/red,
-/obj/machinery/light/dim/directional/south,
 /obj/item/gun/energy/sharplite/l305,
 /obj/item/gun/energy/sharplite/x26,
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
@@ -4640,7 +4642,8 @@
 "Iu" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/abandoned_minebot{
-	faction = list("Deathsquad")
+	faction = list("Deathsquad");
+	wander = 0
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -6657,7 +6660,8 @@
 /area/ruin/jungle/depot/warehouse_3)
 "Wu" = (
 /obj/structure/closet/secure_closet/security{
-	populate = 0
+	populate = 0;
+	req_access = null
 	},
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/item/storage/belt/security,
@@ -7022,7 +7026,8 @@
 	},
 /obj/structure/hazard_shutoff/electrical_shutoff{
 	pixel_y = 9;
-	id = "depot_alarms"
+	id = "depot_alarms";
+	name = "Burglar Alarm Control"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
