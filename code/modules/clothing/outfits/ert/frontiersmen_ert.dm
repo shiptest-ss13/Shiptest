@@ -132,7 +132,7 @@
 			/obj/item/gun/ballistic/revolver/firebrand,
 			/obj/item/gun/ballistic/revolver/shadow,
 			/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn,
-			/obj/item/gun/energy/sharplite/x26))
+			/obj/item/gun/energy/sharplite/ohm))
 			if(prob(80))
 				l_hand = pick(list(
 				/obj/item/gun/ballistic/automatic/pistol/disposable,
@@ -140,7 +140,7 @@
 				/obj/item/gun/ballistic/revolver/firebrand,
 				/obj/item/gun/ballistic/revolver/shadow,
 				/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn,
-				/obj/item/gun/energy/sharplite/x26))
+				/obj/item/gun/energy/sharplite/ohm))
 		if("Melee")
 			r_hand = pick_weight(list(
 			/obj/item/melee/knife/survival = 15,
