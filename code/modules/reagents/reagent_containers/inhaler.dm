@@ -290,6 +290,7 @@
 	desc = "A small canister filled with aerosolized reagents for use in an inhaler. This one contains salbutamol, a potent bronchodilator that can stop \
 	asthma attacks in their tracks."
 	icon_state = "canister_medical"
+	custom_price = 100
 	list_reagents = list(/datum/reagent/medicine/salbutamol = 30)
 
 /obj/item/inhaler/salbutamol/rescue
@@ -318,6 +319,17 @@
 	desc = "A small canister filled with aerosolized reagents for use in an inhaler. This one contains a blend of shoalmix and panacea. Hit it in a fight!"
 	icon_state = "canister_syndicate"
 	list_reagents = list(/datum/reagent/drug/combat_drug = 20, /datum/reagent/medicine/panacea = 10)
+
+/obj/item/inhaler/rahkrahene
+	name = "rahkrahene inhaler"
+	icon_state = "inhaler_generic"
+	initial_canister_path = /obj/item/reagent_containers/inhaler_canister/rahkrahene
+
+/obj/item/reagent_containers/inhaler_canister/rahkrahene
+	name = "rahkrahene canister"
+	desc = "A small canister filled with aerosolized reagents for use in a inhaler. This one contains rahkrahene, a speed-enhancing vapor."
+	icon_state = "canister_generic"
+	list_reagents = list(/datum/reagent/drug/rahkrahene = 30)
 
 /obj/item/inhaler/placebatol
 	name = "prescription inhaler"

@@ -230,8 +230,8 @@
 
 /datum/supply_pack/gun/l204
 	name = "L204 'Resistor' Plasma Rifle Crate"
-	desc = "Contains a lethal, high-energy laser gun."
-	cost = 1000
+	desc = "Contains a lethal, high-energy electroplasma gun with a higher power consumption. Rated for moderatedly armored opponents."
+	cost = 2500
 	contains = list(/obj/item/storage/guncase/energy/laser)
 	crate_name = "laser crate"
 	faction = /datum/faction/warra
@@ -972,6 +972,16 @@
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/ssg669)
 	crate_name = "sniper rifle crate"
+	faction = /datum/faction/solgov
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/railgun
+	name = "Model 'Atelier' Railgun"
+	desc = "A high powered Solarian gauss sniper with high penetration power. Chambered in ferromagnetic rods Not for export."
+	cost = 6500
+	contains = list(/obj/item/storage/guncase/railgun)
+	crate_name = "gauss crate"
 	faction = /datum/faction/solgov
 	faction_discount = 0
 	faction_locked = TRUE

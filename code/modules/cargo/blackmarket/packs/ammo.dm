@@ -63,9 +63,9 @@
 	desc = "A 30 round magazine for the E-40 Hybrid Rifle."
 	item = /obj/item/ammo_box/magazine/e40
 
-	cost_min = 400
-	cost_max = 800
-	stock = 6
+	cost_min = 200
+	cost_max = 400
+	stock = 4
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/cm23_mag
@@ -389,3 +389,13 @@
 	stock_min = 3
 	stock_max = 6
 	availability_prob = 80
+
+/datum/blackmarket_item/ammo/rods
+	name = "Ferromagnetic rods"
+	desc = "20 ferromagetic rods to rail your enemies."
+	item = /obj/item/storage/box/ammo/ferrorods
+	cost_min = 500
+	cost_max = 900
+	stock_min = 3
+	stock_max = 6
+	availability_prob = 0

@@ -103,6 +103,14 @@
 	display_name = " lime hazard jacket"
 	path = /obj/item/clothing/suit/toggle/hazard/lime
 
+/datum/gear/suit/chorejacketteceti
+	display_name = "chore jacket, riso-teceian"
+	path = /obj/item/clothing/suit/toggle/chorejacket/teceti
+
+/datum/gear/suit/chorejacket
+	display_name = "chore jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/chorejacket
+
 /datum/gear/suit/overcoat
 	display_name = "overcoat, colorable"
 	path = /obj/item/clothing/suit/toggle/overcoat

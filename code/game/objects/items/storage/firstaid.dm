@@ -12,7 +12,7 @@
 /obj/item/storage/firstaid
 	name = "first-aid kit"
 	desc = "An emergency medical aid kit."
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/medkit.dmi'
 	icon_state = "firstaid"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
@@ -126,7 +126,6 @@
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/ancient
-	icon = 'icons/obj/storage.dmi'
 	icon_state = "firstaid_old"
 	desc = "A basic first aid kit. It looks a little old..."
 
@@ -254,8 +253,8 @@
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/medigel/hadrakine = 1,
 		/obj/item/storage/pill_bottle/indomide = 1,
-		/obj/item/stack/medical/bone_gel = 1,
-		/obj/item/stack/sticky_tape/surgical = 1,
+		/obj/item/stack/medical/bone_gel/four = 1,
+		/obj/item/stack/sticky_tape/surgical/four = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/splint = 1,
 		/obj/item/reagent_containers/hypospray/medipen/silfrine = 1,

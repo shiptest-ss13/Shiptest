@@ -258,7 +258,6 @@
 	desc = "A robust combat helmet commonly employed by Cybersun. Painted in a distinct maroon."
 	icon_state = "cybersun_m10helm"
 	item_state = "traumahelm"
-	can_flashlight = TRUE
 	unique_reskin = null
 
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
