@@ -16,7 +16,7 @@
 GLOBAL_LIST_EMPTY(bodycontainers) //Let them act as spawnpoints for revenants and other ghosties.
 
 /obj/structure/bodycontainer
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/structures/bodycontainer.dmi
 	icon_state = "morgue1"
 	density = TRUE
 	anchored = TRUE

@@ -3,7 +3,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
 	icon_state = "generic_wall"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall, 27)
@@ -56,7 +56,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/med, 27)
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
 	icon_state = "red_wall"
 	icon_door = "fire_wall"
 
@@ -67,7 +67,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/firecloset/wall, 27)
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
 	icon_state = "blue_wall"
 	icon_door = "emergency_wall"
 
@@ -79,7 +79,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/emcloset/wall, 27)
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
 	icon_state = "freezer_wall"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/secure_closet/wall, 27)
@@ -89,7 +89,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/secure_closet/wall, 27)
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
 	icon_state = "freezer_wall"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/secure_closet/freezer/wall, 27)
@@ -99,7 +99,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/secure_closet/freezer/wall, 27
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
 	icon_state = "freezer_wall"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/secure_closet/freezer/kitchen/wall, 27)
@@ -109,7 +109,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/secure_closet/freezer/kitchen/
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
 	icon_state = "red_wall"
 	icon_door = "sec_wall"
 

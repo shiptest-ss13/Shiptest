@@ -844,11 +844,8 @@
 "dJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
-/obj/machinery/computer/electrolyzer_console{
-	pixel_y = -5;
-	density = 0;
-	dir = 8;
-	pixel_x = -2
+/obj/machinery/computer/electrolyzer_console/directional/east{
+	density = 0
 	},
 /obj/structure/railing/thin{
 	dir = 4
@@ -2778,8 +2775,7 @@
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/central)
 "kT" = (
-/obj/machinery/mineral/processing_unit_console{
-	pixel_y = 20;
+/obj/machinery/computer/processing_unit_console/directional/north{
 	machinedir = 2;
 	output_dir = 4
 	},

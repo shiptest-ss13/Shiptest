@@ -32,3 +32,15 @@
 /obj/machinery/computer/security/telescreen {dir=8} : /obj/machinery/computer/security/telescreen/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
 
 /obj/structure/closet/secure_closet	{icon_state="brig_phys"} : /obj/structure/closet/secure_closet {@OLD;icon_state=@SKIP;}
+
+/obj/machinery/mineral/processing_unit_console {dir=@UNSET} : /obj/machinery/computer/processing_unit_console/directional/north {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/mineral/processing_unit_console {dir=1} : /obj/machinery/computer/processing_unit_console/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/mineral/processing_unit_console {dir=2} : /obj/machinery/computer/processing_unit_console/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/mineral/processing_unit_console {dir=4} : /obj/machinery/computer/processing_unit_console/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/mineral/processing_unit_console {dir=8} : /obj/machinery/computer/processing_unit_console/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+
+/obj/machinery/computer/electrolyzer_console {dir=@UNSET} : /obj/machinery/computer/electrolyzer_console/directional/north {@OLD;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/computer/electrolyzer_console {dir=1} : /obj/machinery/computer/electrolyzer_console/directional/south {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/computer/electrolyzer_console {dir=2} : /obj/machinery/computer/electrolyzer_console/directional/north {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/computer/electrolyzer_console {dir=4} : /obj/machinery/computer/electrolyzer_console/directional/west {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}
+/obj/machinery/computer/electrolyzer_console {dir=8} : /obj/machinery/computer/electrolyzer_console/directional/east {@OLD;dir=@SKIP;pixel_x=@SKIP;pixel_y=@SKIP}

@@ -5,7 +5,7 @@
 /obj/machinery/elevator_call_button
 	name = "elevator call button"
 	desc = "A simple set of buttons for calling an elevator."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/wallmounts/buttons.dmi''
 	icon_state = "elevator"
 	// don't break this either. it's kinda necessary
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
@@ -76,7 +76,7 @@
 /obj/machinery/elevator_floor_button
 	name = "elevator floor panel"
 	desc = "A set of buttons for controlling an elevator."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/wallmounts/buttons.dmi''
 	icon_state = "doorctrl"
 	// yeah you still can't fucking break these.
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)

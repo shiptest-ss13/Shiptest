@@ -41,7 +41,7 @@
 /obj/item/wallframe/airalarm
 	name = "air alarm frame"
 	desc = "Used for building air alarms."
-	icon = 'icons/obj/monitors.dmi'
+	icon = 'icons/obj/wallmounts/airalarm.dmi'
 	icon_state = "alarm_bitem"
 	result_path = /obj/machinery/airalarm
 	pixel_shift = 28
@@ -62,7 +62,7 @@
 /obj/machinery/airalarm
 	name = "air alarm"
 	desc = "A machine that monitors atmosphere levels. Goes off if the area is dangerous."
-	icon = 'icons/obj/monitors.dmi'
+	icon = 'icons/obj/wallmounts/airalarm.dmi'
 	icon_state = "alarm"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_MINIMAL
@@ -719,10 +719,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 28)
 
 		. += mutable_appearance(icon, emissive_state)
 		. += mutable_appearance(icon, "light_emissive", layer, EMISSIVE_PLANE)
-
-	if(perc_danger_level) //When there's any danger level, light up the "AIR" sign too
-		. += mutable_appearance(icon, "alarm_sign")
-		. += mutable_appearance(icon, "alarm_sign", layer, EMISSIVE_PLANE)
 
 /obj/machinery/airalarm/process(seconds_per_tick)
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)

@@ -1689,10 +1689,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/mineral/processing_unit_console{
-	pixel_y = 20;
-	machinedir = 1;
-	pixel_x = 32
+/obj/machinery/computer/processing_unit_console/directional/north{
+	machinedir = 1
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
@@ -6540,9 +6538,8 @@
 /turf/open/floor/concrete/slab_1,
 /area/outpost/hallway/aft)
 "nT" = (
-/obj/machinery/computer/electrolyzer_console{
-	density = 0;
-	pixel_y = 25
+/obj/machinery/computer/electrolyzer_console/directional/north{
+	density = 0
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4

@@ -7317,9 +7317,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/medical)
 "rp" = (
-/obj/machinery/computer/electrolyzer_console{
-	dir = 8;
-	pixel_x = 24;
+/obj/machinery/computer/electrolyzer_console/directional/east{
 	density = 0
 	},
 /obj/effect/turf_decal/industrial/stand_clear,
@@ -10609,9 +10607,7 @@
 	id = "outpost2";
 	dir = 8
 	},
-/obj/machinery/mineral/processing_unit_console{
-	pixel_y = 28;
-	pixel_x = 28;
+/obj/machinery/computer/processing_unit_console/directional/north{
 	output_dir = 8;
 	dist = 7
 	},
@@ -13447,9 +13443,7 @@
 	id = "outpost1";
 	dir = 8
 	},
-/obj/machinery/mineral/processing_unit_console{
-	pixel_y = -32;
-	pixel_x = 28;
+/obj/machinery/computer/processing_unit_console/directional/north{
 	output_dir = 8;
 	dist = 7
 	},
@@ -13954,9 +13948,8 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/checkpoint)
 "HS" = (
-/obj/machinery/mineral/processing_unit_console{
+/obj/machinery/computer/processing_unit_console/directional/north{
 	name = "micro-furnace controller";
-	pixel_x = 29;
 	machinedir = 9
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,

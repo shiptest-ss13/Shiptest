@@ -1690,11 +1690,9 @@
 /obj/effect/turf_decal/corner/opaque/nsorange/border{
 	dir = 1
 	},
-/obj/machinery/mineral/processing_unit_console{
-	dir = 8;
+/obj/machinery/computer/processing_unit_console/directional/east{
 	machinedir = 1;
-	output_dir = 4;
-	pixel_x = 24
+	output_dir = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
@@ -5626,10 +5624,8 @@
 /area/outpost/exterior/warra)
 "CU" = (
 /obj/effect/turf_decal/corner/opaque/nsorange/border,
-/obj/machinery/computer/electrolyzer_console{
-	density = 0;
-	dir = 8;
-	pixel_x = 24
+/obj/machinery/computer/electrolyzer_console/directional/east{
+	density = 0
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)

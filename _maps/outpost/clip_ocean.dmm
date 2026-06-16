@@ -4823,10 +4823,7 @@
 /turf/open/water/beach/deep/outpost,
 /area/outpost/external)
 "pI" = (
-/obj/machinery/mineral/processing_unit_console{
-	pixel_x = 1;
-	pixel_y = -21;
-	dir = 1;
+/obj/machinery/computer/processing_unit_console/directional/south{
 	output_dir = 8;
 	input_dir = 2;
 	machinedir = 8
@@ -14251,10 +14248,8 @@
 /area/outpost/hallway/starboard)
 "Ud" = (
 /obj/effect/turf_decal/box,
-/obj/machinery/computer/electrolyzer_console{
-	pixel_y = -20;
-	density = 0;
-	dir = 1
+/obj/machinery/computer/electrolyzer_console/directional/south{
+	density = 0
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)

@@ -214,7 +214,7 @@
 	return
 
 /obj/structure/closet/wardrobe/clip/wall
-	icon = 'icons/obj/wallcloset.dmi'
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
 	icon_state = "generic_wall"
 	icon_door = null
 	wall_mounted = TRUE
@@ -239,7 +239,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wardrobe/clip/wall, 27)
 	return
 
 /obj/structure/closet/wardrobe/clip/formal/wall
-	icon = 'icons/obj/wallcloset.dmi'
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
 	icon_state = "generic_wall"
 	icon_door = null
 	wall_mounted = TRUE
@@ -269,7 +269,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wardrobe/clip/formal/wall, 27)
 	return
 
 /obj/structure/closet/wardrobe/clip/minutemen/wall
-	icon = 'icons/obj/wallcloset.dmi'
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
 	icon_state = "generic_wall"
 	icon_door = null
 	wall_mounted = TRUE
