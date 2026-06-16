@@ -173,6 +173,8 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("corpo olive sofa (internal corner)", /obj/structure/chair/sofa/olive/corpo/internal_corner, 1, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
 	null, \
+	new/datum/stack_recipe("ore box", /obj/structure/ore_box, 4, time = 5 SECONDS, one_per_turf = TRUE, on_floor = TRUE),\
+	null, \
 	new/datum/stack_recipe("rack parts", /obj/item/rack_parts), \
 	new/datum/stack_recipe("crate shelf parts", /obj/item/rack_parts/shelf), \
 	new/datum/stack_recipe_list("closets", list(

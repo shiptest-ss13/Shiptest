@@ -42,7 +42,7 @@
 
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
-	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/captain)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/volt, /obj/item/stamp/captain)
 
 
 /datum/outfit/job/warra/captain/ns
@@ -163,7 +163,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/com
 
 	chameleon_extras = list(
-						/obj/item/gun/energy/sharplite/x12,
+						/obj/item/gun/energy/sharplite/volt,
 						/obj/item/stamp/warra/officer,
 						)
 
@@ -207,7 +207,7 @@
 
 	implants = list(/obj/item/implant/mindshield)
 
-	chameleon_extras = list(/obj/item/gun/energy/sharplite/x01, /obj/item/stamp/hos)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/yari, /obj/item/stamp/hos)
 
 /datum/outfit/job/warra/hos/vi
 	name = "Makosso-Warra - Vigilitas Sergeant"
