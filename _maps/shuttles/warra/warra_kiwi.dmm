@@ -1646,11 +1646,8 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/mineral/processing_unit_console{
-	dir = 4;
-	pixel_x = -20;
+/obj/machinery/computer/processing_unit_console/directional/west{
 	machinedir = 9;
-	pixel_y = 4;
 	dist = 2
 	},
 /obj/machinery/button/door{
@@ -4096,11 +4093,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/mineral/processing_unit_console{
-	dir = 4;
-	pixel_x = -20;
+/obj/machinery/computer/processing_unit_console/directional/west{
 	machinedir = 10;
-	pixel_y = -4;
 	dist = 2
 	},
 /obj/machinery/button/door{

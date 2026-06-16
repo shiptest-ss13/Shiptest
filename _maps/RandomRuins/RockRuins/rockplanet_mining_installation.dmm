@@ -2046,9 +2046,8 @@
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "ln" = (
-/obj/machinery/mineral/processing_unit_console{
-	machinedir = 2;
-	pixel_y = 24
+/obj/machinery/computer/processing_unit_console/directional/north{
+	machinedir = 2
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/railing,

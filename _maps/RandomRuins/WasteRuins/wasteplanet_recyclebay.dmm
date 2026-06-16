@@ -4567,10 +4567,7 @@
 /turf/closed/wall,
 /area/ruin/wasteplanet/recycle_bay/salvage_bay)
 "EO" = (
-/obj/machinery/mineral/processing_unit_console{
-	dir = 4;
-	pixel_x = -28;
-	pixel_y = 1;
+/obj/machinery/computer/processing_unit_console/directional/west{
 	input_dir = 2;
 	machinedir = 1
 	},
