@@ -134,7 +134,7 @@
 	icon_state = "ngrtread_range"
 	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
 	casingtype = /obj/item/ammo_casing/a556_42
-	faction = list(FACTION_HOSTILE)
+	faction = list(FACTION_NGR)
 	rapid = 2
 	rapid_fire_delay = 3
 	minimum_distance = 7
