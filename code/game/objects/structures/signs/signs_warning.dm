@@ -217,13 +217,6 @@
 	icon_state = "mw_heat"
 	is_editable = TRUE
 
-/obj/structure/sign/warning/gasmask/warra
-	name = "\improper CONTAMINATED AIR sign (Makosso-Warra)"
-	sign_change_name = "Warning - Contaminated Air"
-	desc = "A sign that warns of dangerous particulates or gasses in the air, instructing you to wear a filtration device."
-	icon_state = "mw_gasmask"
-	is_editable = TRUE
-
 /obj/structure/sign/departments/botany/warra
 	name = "\improper Botany sign"
 	sign_change_name = "Department - Botany (Makosso-Warra)"
@@ -263,7 +256,7 @@
 	name = "\improper Science sign"
 	sign_change_name = "Department - Science (Makosso-Warra)"
 	desc = "A sign labelling an area where research and science is performed."
-	icon_state = "mw_science1"
+	icon_state = "mw_science"
 	is_editable = TRUE
 
 
@@ -271,7 +264,7 @@
 	name = "\improper Port sign"
 	sign_change_name = "Location - Port (Makosso-Warra)"
 	desc = "A sign labelling an area where the docking area is."
-	icon_state = "mw_evac"
+	icon_state = "mw_port"
 	is_editable = TRUE
 
 /obj/structure/sign/departments/restroom/warra

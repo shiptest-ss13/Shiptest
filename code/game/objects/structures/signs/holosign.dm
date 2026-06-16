@@ -179,7 +179,7 @@
 
 /obj/machinery/holosign/clover
 	name = "holosign - Clover Corporation"
-	desc_add = "Clover Corporation - Lucky products for lucky people. Postrionics? Computers? Washing machines? Moible phones? Lucky you, we got them too!"
+	desc_add = "Clover Corporation - Lucky products for lucky people. Postrionics? Computers? Washing machines? Mobile phones? Lucky you, we got them too!"
 	icon_state = "clover"
 	light_color = LIGHT_COLOR_ELECTRIC_CYAN
 
@@ -245,8 +245,8 @@
 
 /obj/machinery/holosign/vitcom
 	name = "holosign - VitCom Consumer Electronics"
-	desc_add = "VitCom - Keeping the galaxy connected, our new flip-phone and PDA help you stay in touch with the galaxy!"
-	icon_state = "ihejirika"
+	desc_add = "VitCom - Keeping the galaxy connected, our new flip-phone and tablet help you stay in touch with the galaxy!"
+	icon_state = "vitcom"
 	light_color = LIGHT_COLOR_DARK_BLUE
 
 /obj/machinery/holosign/random
@@ -330,7 +330,7 @@
 /obj/machinery/holosign/tiny/cs_med
 	name = "holosign - Medical"
 	desc_add = "Engineering this way."
-	icon_state = "holodir_sec"
+	icon_state = "holodir_med"
 	light_color = LIGHT_COLOR_FLARE
 
 /obj/machinery/holosign/tiny/cs_supply

@@ -332,3 +332,24 @@
 	icon = "empty"
 	desc = "This sign doesn't seem to be on."
 	rename_area = FALSE
+
+/datum/barsign/hiddensigns/hereyes
+	name = "Her Eyes"
+	icon = 'icons/obj/structures/barsigns64x64.dmi'
+	icon = "hereyes"
+	desc = "The premiere club of The Perch. All morals and any hint of corprate decency stays out at the front door."
+	rename_area = FALSE
+
+// Specifically for the perch
+/obj/structure/sign/barsign/hereyes
+	name = "Her Eyes"
+	desc = "The premiere club of The Perch. All morals and any hint of corprate decency stays out at the front door."
+	icon = 'icons/obj/structures/barsigns64x64.dmi'
+	icon_state = "hereyes"
+	chosen_sign = /datum/barsign/hiddensigns/hereyes
+
+
+/obj/structure/sign/barsign/hereyes/Initialize()
+	. = ..()
+	set_sign(new /datum/barsign/hiddensigns/hereyes)
+// Specifically for the perch
