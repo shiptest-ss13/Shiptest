@@ -81,7 +81,7 @@
 	faction = list(ROLE_DEATHSQUAD)
 
 /mob/living/simple_animal/hostile/automated/rover
-	name = "Vigilitas \"Scent Hound\" Rover"
+	name = "Vigilitas \"Scenthound\" defense rover"
 	desc = "A scouting drone manufactured by Sharplite during the Inter-Corporate War. Commonly fielded in small forward groups ahead of Vigilitas teams, or placed in security checkpoints."
 	health = 100
 	maxHealth = 100
@@ -96,7 +96,7 @@
 	minimum_distance = 3
 
 /mob/living/simple_animal/hostile/automated/rover/coalition
-	name = "\"Teemeres\" Rover"
+	name = "\"Teemeres\" combat rover"
 	desc = "A boxy drone manufactured by Cybersun during the Inter-Corporate War. Stylized to be as basic and armored as possible to mesh with marauder forces, the Teemeres garnered a positive reputation for being a reliable diversion against enemy forces."
 	icon_state = "coalitiontread"
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
@@ -106,7 +106,7 @@
 	minimum_distance = 3
 
 /mob/living/simple_animal/hostile/automated/rover/coalition/dmr
-	name = "\"Temere-Lito\" Rover"
+	name = "\"Temere-Lito\" combat rover"
 	desc = "A boxy drone manufactured by Cybersun during the Inter-Corporate War. Stylized to be as basic and armored as possible to mesh with marauder forces, the Temere-Lito garnered a poor reputation for its tendency to misfire into advancing marauders."
 	icon_state = "coalitiontread_range"
 	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
@@ -119,7 +119,7 @@
 	aggro_vision_range = 14
 
 /mob/living/simple_animal/hostile/automated/rover/ngr
-	name = "\"Teemeres\" Rover"
+	name = "\"Teemeres\" defense rover"
 	desc = "A boxy drone manufactured by the New Gorlex Republic. Effectively the same as the original Teemeres rover, with modern NGR IFF. The modern Teemeres has found itself a new role as a checkpoint security drone for NGR facilities."
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	icon_state = "ngrtread"
@@ -129,7 +129,7 @@
 	minimum_distance = 3
 
 /mob/living/simple_animal/hostile/automated/rover/ngr/dmr
-	name = "\"Temere-Lito\" Rover"
+	name = "\"Temere-Lito\" defense rover"
 	desc = "A boxy drone manufactured by the New Gorlex Republic. Effectively the same eas the original Temere-Lito, albeit with improved IFF systems to help prevent friendly fire incidents. The modern Temere-Lito has found itself a new role as a scouting drone, occasionally fielded on planetary survey missions."
 	icon_state = "ngrtread_range"
 	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
