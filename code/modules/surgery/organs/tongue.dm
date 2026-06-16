@@ -34,7 +34,7 @@
 
 /obj/item/organ/tongue/proc/handle_speech(datum/source, list/speech_args)
 
-/obj/item/organ/tongue/Insert(mob/living/carbon/M, special = 0)
+/obj/item/organ/tongue/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
 	..()
 	if (modifies_speech)
 		RegisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
@@ -148,6 +148,10 @@
 /obj/item/organ/tongue/robot/Initialize(mapload)
 	. = ..()
 	languages_possible = languages_possible_robot
+
+/obj/item/organ/tongue/robot/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
+	. = ..()
+	ADD_TRAIT(owner, TRAIT_ELECTRONIC_VOICEBOX, ORGAN_TRAIT)
 
 /obj/item/organ/tongue/robot/emp_act(severity)
 	owner.apply_effect(EFFECT_STUTTER, 120)
