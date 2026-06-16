@@ -41,7 +41,6 @@
 /obj/item/wallframe/airalarm
 	name = "air alarm frame"
 	desc = "Used for building air alarms."
-	icon = 'icons/obj/wallmounts/airalarm.dmi'
 	icon_state = "alarm_bitem"
 	result_path = /obj/machinery/airalarm
 	pixel_shift = 28

@@ -8,7 +8,6 @@
 /obj/item/wallframe/firealarm
 	name = "fire alarm frame"
 	desc = "Used for building fire alarms."
-	icon = 'icons/obj/wallmounts/firealarm.dmi'
 	icon_state = "fire_bitem"
 	result_path = /obj/machinery/firealarm
 	pixel_shift = 32
@@ -290,6 +289,7 @@
 	if(buildstage == 0) //can't break the electronics if there isn't any inside.
 		return
 	. = ..()
+	update_fire_light()
 	if(.)
 		LAZYREMOVE(myarea.firealarms, src)
 
@@ -304,6 +304,10 @@
 	qdel(src)
 
 /obj/machinery/firealarm/proc/update_fire_light(fire)
+	if (machine_stat & (NOPOWER|BROKEN))
+		set_light(l_power = 0) //fixes bug where broken fire alarms never turned off their lights
+		return
+
 	if(fire == !!light_power)
 		return // do nothing if we're already active
 	if(fire)
