@@ -28,7 +28,7 @@
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/gun/energy/sharplite/x26
+/obj/item/gun/energy/sharplite/ohm
 	name = "SL X26 “Ohm” Variable Energy Pistol"
 	desc = "A compact energy pistol that can fire lethal electroplasma bolts or stamina-draining disabler bolts."
 
@@ -60,10 +60,10 @@
 
 	muzzleflash_iconstate = "muzzle_flash_sharplite"
 
-/obj/item/gun/energy/sharplite/x26/empty_cell
+/obj/item/gun/energy/sharplite/ohm/empty_cell
 	spawn_no_ammo = TRUE
 
-/obj/item/gun/energy/sharplite/x01
+/obj/item/gun/energy/sharplite/yari
 	name = "SL X01 “Yari” Heavy Variable Pistol"
 	desc = "A bulky pistol that can fire devastating electroplasma bolts and disabler shots. An early Sharplite product notable for unusually strong power output."
 
@@ -88,24 +88,24 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
-/obj/item/gun/energy/sharplite/x01/empty_cell
+/obj/item/gun/energy/sharplite/yari/empty_cell
 	spawn_no_ammo = TRUE
 
-/obj/item/gun/energy/sharplite/x01/brazil
+/obj/item/gun/energy/sharplite/yari/brazil
 	name = "modified antique laser gun"
 	desc = "It's somehow modified to have more firemodes."
 	icon_state = "capgun_brazil_hos"
 	item_state = "hoslaserkill0"
 	manufacturer = MANUFACTURER_SHARPLITE
 
-/obj/item/gun/energy/sharplite/x01/brazil/true
+/obj/item/gun/energy/sharplite/yari/brazil/true
 	desc = "This genuine antique laser gun, modified with an experimental suite of alternative firing modes based on the X-01 MultiPhase Energy Gun, is now truly one of the finest weapons in the frontier."
 	icon_state = "capgun_hos"
 	item_state = "hoslaserkill0"
 	selfcharge = 1
 	manufacturer = MANUFACTURER_SHARPLITE
 
-/obj/item/gun/energy/sharplite/l305
+/obj/item/gun/energy/sharplite/rush
 	name = "\improper L305 “Rush” Tactical Plasma Gun"
 	desc = "A radical development on the X26 frame, fitted with a rapid-cycle plasma chamber and designed to produce sustained bursts of low-power electroplasma bolts."
 
@@ -152,7 +152,7 @@
 		),
 	)
 
-/obj/item/gun/energy/sharplite/l201
+/obj/item/gun/energy/sharplite/surge
 	name = "SL L201 “Surge” Marksman Plasma Rifle"
 	desc = "A long rifle-sized electroplasma gun. Specialized for long-range shooting, with an extended focusing assembly that produces much higher projectile velocities and more powerful bolts at the cost of power usage."
 
@@ -190,7 +190,7 @@
 		),
 	)
 
-/obj/item/gun/energy/sharplite/l201/l204
+/obj/item/gun/energy/sharplite/surge/resistor
 	name = "SL L204 “Resistor” Plasma Rifle"
 	desc = "A rifle-sized, semi-automatic electroplasma gun. It's high powered capacitor gives the Resistor a significant punch compared to it's peers, but consumes much more power."
 	icon_state = "l204"
@@ -220,13 +220,13 @@
 		),
 	)
 
-/obj/item/gun/energy/sharplite/l201/l204/empty_cell
+/obj/item/gun/energy/sharplite/surge/resistor/empty_cell
 	spawn_no_ammo = TRUE
 
-/obj/item/gun/energy/sharplite/x26/empty_cell
+/obj/item/gun/energy/sharplite/ohm/empty_cell
 	spawn_no_ammo = TRUE
 
-/obj/item/gun/energy/sharplite/x12
+/obj/item/gun/energy/sharplite/volt
 	name = "SL X12 “Volt” Variable Energy Carbine"
 	desc = "A short, somewhat hefty carbine that can fire electroplasma or disabler bolts. Popular with security details with low-threat assignments."
 
@@ -260,10 +260,10 @@
 		),
 	)
 
-/obj/item/gun/energy/sharplite/x12/empty_cell
+/obj/item/gun/energy/sharplite/volt/empty_cell
 	spawn_no_ammo = TRUE
 
-/obj/item/gun/energy/sharplite/x12/inteq
+/obj/item/gun/energy/sharplite/volt/inteq
 	name = "PP10 “Cadejo” Energy Carbine"
 	desc = "A Sharplite X12 VEC refinished in Inteq Risk Management Group colors. Like the base model, it fires lethal electroplasma or nonlethal disabler bolts. The modifications appear to be largely cosmetic."
 
@@ -275,10 +275,10 @@
 	icon_state = "x12_inteq"
 	item_state = "x12_inteq"
 
-/obj/item/gun/energy/sharplite/x12/inteq/empty_cell
+/obj/item/gun/energy/sharplite/volt/inteq/empty_cell
 	spawn_no_ammo = TRUE
 
-/obj/item/gun/energy/sharplite/x46
+/obj/item/gun/energy/sharplite/amperage
 	name = "\improper SL X46 “Amperage” Variable Energy Blaster"
 	desc = "A heavy, bulky weapon designed to fire multiple electroplasma or disabler bolts, not unlike a ballistic shotgun. Electroplasma speed tends to lessen the spread and increase effective range over conventional ballistic shotguns."
 
@@ -320,10 +320,10 @@
 		),
 	)
 
-/obj/item/gun/energy/sharplite/x46/empty_cell
+/obj/item/gun/energy/sharplite/amperage/empty_cell
 	spawn_no_ammo = TRUE
 
-/obj/item/gun/energy/sharplite/x46/zeta
+/obj/item/gun/energy/sharplite/amperage/zeta
 	name = "\improper SL X-45"
 	desc = "A very old looking X-46, it has no stock or much decoration, and it is from before... Hey! What's this screen next to the mode select button?"
 
@@ -336,13 +336,13 @@
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
 
-/obj/item/gun/energy/sharplite/x46/zeta/Initialize()
+/obj/item/gun/energy/sharplite/amperage/zeta/Initialize()
 	. = ..()
 	if(NTOS_type)
 		integratedNTOS = new NTOS_type(src)
 		integratedNTOS.physical = src
 
-/obj/item/gun/energy/sharplite/x46/zeta/attack_self(mob/user)
+/obj/item/gun/energy/sharplite/amperage/zeta/attack_self(mob/user)
 	. = ..()
 	if(!integratedNTOS)
 		return
@@ -359,7 +359,7 @@
 		),
 	)
 
-/obj/item/gun/energy/sharplite/al655
+/obj/item/gun/energy/sharplite/hades
 	name = "SL AL655 “Hades” Assault Plasma Rifle"
 	desc = "A powerful electroplasma gun with a rapid repeater assembly and many capacitors. The APR rapidly fires heavy electroplasma bolts."
 	icon_state = "al655"
@@ -403,7 +403,7 @@
 		),
 	)
 
-/obj/item/gun/energy/sharplite/al655/inteq
+/obj/item/gun/energy/sharplite/hades/inteq
 	name = "PP20 “Barghest” APR"
 	desc = "A Sharplite Assault Plasma Rifle refinished in Inteq Risk Management Group colors. A powerful weapon that can deliver rapid-fire, armor-penetrating electroplasma bolts."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
@@ -415,7 +415,7 @@
 	item_state = "al655_inteq"
 
 
-/obj/item/gun/energy/sharplite/al607
+/obj/item/gun/energy/sharplite/sarissa
 	name = "SL AL607 “Sarissa” Plasma Accelerator"
 	desc = "A heavy electroplasma rifle with an extensive accelerator assembly, with an overall length almost comparable to the average Kepori height. Produces singular electroplasma bolts of impressive power and velocity that strike with enough force and precision to overwhelm most infantry defenses."
 	icon_state = "al607"
@@ -463,7 +463,7 @@
 		),
 	)
 
-/obj/item/gun/energy/sharplite/x11
+/obj/item/gun/energy/sharplite/revolver
 	name = "X11 Advanced Stopping Pistol" //wayland is better
 	desc = "An advanced energy revolver with the capacity to shoot both disabler and lethal lasers, as well as futuristic safari nets."
 	icon_state = "x11"
