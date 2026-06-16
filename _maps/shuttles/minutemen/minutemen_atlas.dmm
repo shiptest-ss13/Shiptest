@@ -538,8 +538,7 @@
 /area/ship/bridge)
 "en" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("atlas")
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -686,7 +685,7 @@
 	pixel_x = 7;
 	pixel_y = 10
 	},
-/obj/machinery/camera/autoname{
+/obj/machinery/camera/autoname/directional/north{
 	network = list("atlas")
 	},
 /obj/structure/closet/secure_closet/wall/directional/west{
@@ -781,8 +780,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "fX" = (
-/obj/machinery/camera/autoname{
-	dir = 8;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("atlas")
 	},
 /obj/effect/turf_decal/corner/opaque/black/half{
@@ -944,8 +942,7 @@
 	icon_state = "lattice-21"
 	},
 /obj/structure/lattice/catwalk,
-/obj/machinery/camera/autoname{
-	dir = 8;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("atlas")
 	},
 /turf/open/floor/plating,
@@ -1174,8 +1171,7 @@
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/hallway/central)
 "iD" = (
-/obj/machinery/camera/autoname{
-	dir = 6;
+/obj/machinery/camera/autoname/directional/north{
 	network = list("atlas")
 	},
 /turf/open/floor/engine/hull/reinforced,
@@ -1665,8 +1661,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
-	dir = 1;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("atlas")
 	},
 /obj/machinery/airalarm/directional/west,
@@ -2086,7 +2081,7 @@
 /obj/effect/turf_decal/corner/opaque/mauve/border{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
+/obj/machinery/camera/autoname/directional/north{
 	network = list("atlas")
 	},
 /turf/open/floor/plasteel/dark,
@@ -2401,8 +2396,7 @@
 /area/ship/bridge)
 "rb" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
-	dir = 1;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("atlas")
 	},
 /obj/structure/chair/office{
@@ -2679,8 +2673,7 @@
 	icon_state = "lattice-6"
 	},
 /obj/structure/lattice/catwalk,
-/obj/machinery/camera/autoname{
-	dir = 9;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("atlas")
 	},
 /turf/open/floor/plating,
@@ -6122,8 +6115,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "UV" = (
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("atlas")
 	},
 /turf/open/floor/engine/hull/reinforced,
@@ -6212,8 +6204,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Wq" = (
-/obj/machinery/camera/autoname{
-	dir = 8;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("atlas")
 	},
 /obj/effect/turf_decal/box/white/corners{
@@ -6432,8 +6423,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
-	dir = 6;
+/obj/machinery/camera/autoname/directional/north{
 	network = list("atlas")
 	},
 /obj/machinery/airalarm/directional/west,
@@ -6727,8 +6717,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
 "ZZ" = (
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("atlas")
 	},
 /obj/structure/sign/warning/nosmoking{

@@ -446,7 +446,7 @@
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/warning/dust/corner,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/patterned/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "cM" = (
@@ -1121,7 +1121,7 @@
 /obj/effect/turf_decal/trimline/transparent/green/filled/warning{
 	dir = 1
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew)
 "hm" = (
@@ -1216,7 +1216,7 @@
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/item/reagent_containers/glass/concrete_bag{
 	pixel_x = 9;
 	pixel_y = -8
@@ -1580,9 +1580,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/carpet/red/jungleplanet,
 /area/ruin/jungle/cavecrew/dormitories)
 "kH" = (
@@ -1810,9 +1808,7 @@
 "mz" = (
 /obj/effect/turf_decal/corner_steel_grid/diagonal,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/structure/table,
 /obj/item/assembly/igniter{
 	pixel_x = 3;
@@ -2756,9 +2752,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/engineering)
 "uq" = (
@@ -2837,9 +2831,7 @@
 	id = "cavecheckpointsouth"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/effect/turf_decal/trimline/opaque/tan/filled/warning,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/reinforced/jungleplanet,
@@ -3343,9 +3335,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew/bridge)
 "zL" = (
@@ -5120,9 +5110,7 @@
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/corner/opaque/yellow/half,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/hallway)
 "MZ" = (
@@ -6608,9 +6596,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/engineering)
 "Yn" = (

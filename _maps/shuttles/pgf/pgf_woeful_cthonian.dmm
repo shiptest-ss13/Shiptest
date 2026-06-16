@@ -923,10 +923,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "if" = (
-/obj/machinery/camera/autoname{
-	dir = 9;
-	pixel_y = 0
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/item/radio/intercom/directional/east{
 	pixel_y = 2
 	},
@@ -4023,9 +4020,7 @@
 	id = "cth_in";
 	name = "shutter control"
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Ow" = (

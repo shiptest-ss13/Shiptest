@@ -766,9 +766,7 @@
 	id = "goliathblaststarboard";
 	name = "Thruster Blastdoors"
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "ez" = (
@@ -4933,9 +4931,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/structure/sign/warning/electricshock{
 	pixel_y = 32
 	},
@@ -4962,9 +4958,7 @@
 	pixel_y = 4;
 	pixel_x = -2
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_x = -7;
@@ -6257,9 +6251,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway)
 "JW" = (
@@ -6605,9 +6597,7 @@
 	pixel_y = 32;
 	pixel_x = -8
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Mc" = (
@@ -8572,7 +8562,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/light_switch{
 	pixel_x = 11;
 	pixel_y = 22

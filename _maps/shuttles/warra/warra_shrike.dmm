@@ -101,8 +101,7 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/machinery/camera/autoname{
-	dir = 4;
+/obj/machinery/camera/autoname/directional/west{
 	network = list("shrikenetwork")
 	},
 /obj/machinery/light_switch{
@@ -267,8 +266,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 1;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("shrikenetwork")
 	},
 /obj/structure/sign/warning/nosmoking{
@@ -305,8 +303,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 8;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("shrikenetwork")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -616,8 +613,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "hC" = (
-/obj/machinery/camera/autoname{
-	dir = 8;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("shrikenetwork")
 	},
 /obj/effect/turf_decal/corner/transparent/lightgrey/diagonal,
@@ -1049,8 +1045,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/engines/starboard)
 "mP" = (
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("shrikenetwork")
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -1199,8 +1194,7 @@
 	dir = 5
 	},
 /obj/machinery/photocopier,
-/obj/machinery/camera/autoname{
-	dir = 6;
+/obj/machinery/camera/autoname/directional/north{
 	network = list("shrikenetwork")
 	},
 /turf/open/floor/plasteel/mono,
@@ -1445,8 +1439,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "rA" = (
-/obj/machinery/camera/autoname{
-	dir = 6;
+/obj/machinery/camera/autoname/directional/north{
 	network = list("shrikenetwork")
 	},
 /obj/effect/turf_decal/borderfloorblack{
@@ -1479,8 +1472,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 9;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("shrikenetwork")
 	},
 /obj/item/ammo_box/magazine/co9mm{
@@ -1705,8 +1697,7 @@
 /obj/machinery/recharger{
 	pixel_x = -5
 	},
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("shrikenetwork")
 	},
 /turf/open/floor/carpet/red,
@@ -2303,8 +2294,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/camera/autoname{
-	dir = 8;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("shrikenetwork")
 	},
 /turf/open/floor/plasteel,
@@ -2809,8 +2799,7 @@
 /obj/effect/turf_decal/trimline/transparent/white/warning{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 9;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("shrikenetwork")
 	},
 /obj/structure/chair/handrail{
@@ -3012,8 +3001,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 8;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("shrikenetwork")
 	},
 /turf/open/floor/plasteel/tech,
@@ -3807,8 +3795,7 @@
 "RD" = (
 /obj/machinery/light/dim/directional/east,
 /obj/machinery/computer/helm/viewscreen/directional/north,
-/obj/machinery/camera/autoname{
-	dir = 8;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("shrikenetwork")
 	},
 /obj/effect/turf_decal/siding/white,
@@ -4136,8 +4123,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("shrikenetwork")
 	},
 /obj/machinery/light_switch{
@@ -4199,8 +4185,7 @@
 /obj/effect/turf_decal/trimline/transparent/vired/line{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("shrikenetwork")
 	},
 /obj/machinery/light/dim/directional/south,

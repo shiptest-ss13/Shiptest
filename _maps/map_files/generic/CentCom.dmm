@@ -1363,11 +1363,10 @@
 /area/centcom/ferry)
 "ary" = (
 /obj/machinery/computer/card/centcom,
-/obj/machinery/computer/security/telescreen{
+/obj/machinery/computer/security/telescreen/directional/north{
 	desc = "Used for watching the RD's goons and the AI's satellite from the safety of his office.";
 	name = "Research Monitor";
-	network = list("rd","minisat");
-	pixel_y = 28
+	network = list("rd","minisat")
 	},
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
@@ -7064,7 +7063,7 @@
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
 "djc" = (
-/obj/machinery/camera{
+/obj/machinery/camera/directional/north{
 	c_tag = "Green Team";
 	network = list("thunder");
 	pixel_x = 12;
@@ -9455,7 +9454,7 @@
 /turf/open/floor/circuit/red,
 /area/ctf)
 "hVO" = (
-/obj/machinery/computer/security/telescreen,
+/obj/machinery/computer/security/telescreen/directional/north,
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -12042,7 +12041,7 @@
 /turf/open/floor/plasteel,
 /area/centcom/supply)
 "mCQ" = (
-/obj/machinery/computer/security/telescreen,
+/obj/machinery/computer/security/telescreen/directional/north,
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -14252,7 +14251,7 @@
 /turf/open/floor/plating,
 /area/syndicate_mothership/control)
 "qKD" = (
-/obj/machinery/computer/security/telescreen,
+/obj/machinery/computer/security/telescreen/directional/north,
 /obj/structure/table/reinforced,
 /obj/machinery/light/directional/north,
 /obj/machinery/status_display/ai{
@@ -14938,7 +14937,7 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "rMT" = (
-/obj/machinery/camera{
+/obj/machinery/camera/directional/north{
 	c_tag = "Red Team";
 	network = list("thunder");
 	pixel_x = 11;

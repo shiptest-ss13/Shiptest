@@ -1226,9 +1226,7 @@
 /obj/structure/sign/warra{
 	pixel_y = 32
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "in" = (
@@ -1326,9 +1324,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/effect/turf_decal/corner/opaque/warrablue/three_quarters{
 	dir = 8
 	},
@@ -1802,9 +1798,7 @@
 /obj/structure/cable/white{
 	icon_state = "6-10"
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = 32
 	},
@@ -1946,9 +1940,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
 "nP" = (
@@ -2500,9 +2492,7 @@
 	pixel_x = -20;
 	pixel_y = -11
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/lightgrey,
@@ -2539,9 +2529,7 @@
 /obj/structure/sign/poster/contraband/xenofauna_parasite{
 	pixel_y = -32
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo/starboard)
@@ -2663,9 +2651,7 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
@@ -3417,9 +3403,7 @@
 /obj/effect/turf_decal/corner/opaque/warrablue/three_quarters{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "zH" = (
@@ -3452,7 +3436,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
@@ -3509,7 +3493,7 @@
 	pixel_y = 21
 	},
 /obj/machinery/airalarm/directional/west,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/item/clothing/head/warra/beret/security{
 	pixel_x = 4;
 	pixel_y = 8
@@ -5083,9 +5067,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/stairs/right{
 	dir = 1
 	},
@@ -5442,9 +5424,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "Nm" = (
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/structure/marker_beacon{
 	picked_color = "Teal"
 	},
@@ -5716,9 +5696,7 @@
 /area/ship/engineering)
 "OR" = (
 /obj/effect/turf_decal/industrial/hatch/blue,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/monitor{
 	dir = 1;
@@ -5788,11 +5766,9 @@
 	pixel_x = -6;
 	pixel_y = 4
 	},
-/obj/machinery/computer/security/telescreen{
+/obj/machinery/computer/security/telescreen/directional/south{
 	desc = "A telescreen that connects to the ship's security camera network.";
-	dir = 1;
-	network = list("ss13");
-	pixel_y = -26
+	network = list("ss13")
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -6228,9 +6204,7 @@
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/tank_dispenser,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/external/dark)
 "Td" = (

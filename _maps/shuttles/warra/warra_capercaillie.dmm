@@ -227,9 +227,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/black,
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/structure/cable/white,
 /obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -493,9 +491,7 @@
 "dF" = (
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line,
 /obj/effect/turf_decal/trimline/opaque/white/line,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/structure/closet/wall/directional/south{
 	name = "cleaning utensil closet"
 	},
@@ -686,7 +682,7 @@
 /obj/structure/cable/white{
 	icon_state = "0-2"
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -901,9 +897,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -1365,9 +1359,7 @@
 	pixel_y = 4
 	},
 /obj/item/radio/intercom/directional/east,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/effect/turf_decal/industrial/fire/fulltile,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -2399,7 +2391,7 @@
 "ux" = (
 /obj/machinery/atmospherics/components/unary/tank/nitrogen,
 /obj/effect/turf_decal/industrial/outline/red,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -2539,9 +2531,7 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/south,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/medical)
 "wl" = (
@@ -4002,7 +3992,7 @@
 /obj/item/gun/energy/sharplite/x26/empty_cell{
 	pixel_y = -5
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/light_switch{
 	pixel_x = 12;
 	pixel_y = 22
@@ -4331,11 +4321,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/hatch/blue,
-/obj/machinery/computer/security/telescreen{
+/obj/machinery/computer/security/telescreen/directional/south{
 	desc = "A telescreen that connects to the ship's security camera network.";
-	dir = 1;
-	network = list("ss13");
-	pixel_y = -26
+	network = list("ss13")
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -4908,9 +4896,7 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable/white{
 	icon_state = "0-8"

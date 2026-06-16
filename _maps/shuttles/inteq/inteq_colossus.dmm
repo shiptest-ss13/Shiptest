@@ -359,9 +359,7 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/south,
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/port)
 "cT" = (
@@ -1504,9 +1502,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "kR" = (
@@ -1912,9 +1908,7 @@
 	pixel_x = 20;
 	pixel_y = 12
 	},
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plating,
 /area/ship/hangar)
 "mL" = (
@@ -2817,9 +2811,7 @@
 /area/ship/engineering/engines/starboard)
 "sC" = (
 /obj/machinery/light/directional/north,
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
 /obj/item/chair/plastic{
@@ -3249,9 +3241,7 @@
 	dir = 9
 	},
 /obj/machinery/light/directional/south,
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -3415,9 +3405,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "vB" = (
@@ -4016,19 +4004,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"zi" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/yellow/line{
-	dir = 8
-	},
-/obj/machinery/light/directional/west,
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/hallway/central)
 "zl" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4148,9 +4123,7 @@
 	pixel_x = -7
 	},
 /obj/item/ammo_casing/spent/pistol_brass,
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/traffic/corner,
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -4193,7 +4166,7 @@
 /area/ship/bridge)
 "zX" = (
 /obj/machinery/light/small/directional/north,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
 	},
@@ -4332,9 +4305,7 @@
 /area/ship/external/dark)
 "AQ" = (
 /obj/machinery/light/directional/south,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/secure/gear{
 	name = "training equipment crate"
@@ -4486,9 +4457,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/binary/valve/layer4,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "BJ" = (
@@ -4843,9 +4812,7 @@
 	pixel_x = -20;
 	pixel_y = 12
 	},
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
@@ -5040,9 +5007,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/firealarm/directional/south{
 	pixel_x = -2
 	},
@@ -5123,7 +5088,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -5664,9 +5629,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "IC" = (
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/plasma,
 /obj/structure/cable/yellow{
@@ -6142,9 +6105,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/external/dark)
@@ -7158,7 +7119,7 @@
 /obj/item/tank/internals/oxygen/yellow,
 /obj/item/clothing/suit/space/hardsuit/security/inteq,
 /obj/item/clothing/mask/gas/inteq,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/light_switch{
@@ -8070,9 +8031,7 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "VO" = (
@@ -8099,9 +8058,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines/port)
 "VS" = (
@@ -8705,9 +8662,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/power/apc/auto_name/directional/west,
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -9527,7 +9482,7 @@ GU
 Sx
 jD
 Ko
-zi
+VJ
 ML
 AT
 mU

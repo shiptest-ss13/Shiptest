@@ -452,9 +452,7 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_cw,
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "ds" = (
@@ -462,9 +460,7 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "dv" = (
@@ -953,7 +949,7 @@
 /obj/item/clothing/suit/space/syndicate/surplus,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/head/helmet/space/syndicate/surplus,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/pod/dark,
 /area/ship/maintenance/starboard)
 "gi" = (
@@ -1244,9 +1240,7 @@
 /obj/effect/turf_decal/techfloor{
 	layer = 2.04
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
 	},
@@ -1292,9 +1286,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/crew/cryo)
 "iA" = (
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/light/floor{
 	icon_state = "floor-on"
 	},
@@ -1442,9 +1434,7 @@
 /area/ship/hallway/fore)
 "ke" = (
 /obj/effect/turf_decal/borderfloorblack,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "kh" = (
@@ -1797,7 +1787,7 @@
 	},
 /obj/effect/turf_decal/industrial/hatch/orange,
 /obj/machinery/portable_atmospherics/canister/hydrogen,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "lA" = (
@@ -1972,9 +1962,7 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "mA" = (
@@ -1992,9 +1980,7 @@
 "mE" = (
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/techfloor,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/item/stack/sheet/metal/twenty{
 	pixel_y = 2;
 	pixel_x = -2
@@ -2032,9 +2018,7 @@
 "mY" = (
 /obj/effect/turf_decal/techfloor,
 /obj/item/radio/intercom/directional/north,
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/machinery/telecomms/processor/preset_one{
 	network = "ngr_commnet";
 	autolinkers = list("processor4","bus")
@@ -2964,9 +2948,7 @@
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
 "ue" = (
@@ -3550,9 +3532,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "ym" = (
@@ -3736,9 +3716,7 @@
 	layer = 2.04
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/structure/closet/secure_closet/wall/directional/west{
 	req_access_txt = "3";
 	icon_state = "sec_wall";
@@ -4094,9 +4072,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/machinery/light/directional/west,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -4150,9 +4126,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "DG" = (
@@ -4268,9 +4242,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "EG" = (
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "EI" = (
@@ -4501,9 +4473,7 @@
 /obj/structure/chair/handrail{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
@@ -4950,9 +4920,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
 	},
@@ -5390,9 +5358,7 @@
 /obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/item/stack/sheet/mineral/uranium/ten,
 /obj/effect/mapping_helpers/crate_shelve,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "PW" = (
@@ -5533,9 +5499,7 @@
 /obj/machinery/cryopod{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/computer/cryopod/directional/west,
 /turf/open/floor/pod/dark,
 /area/ship/crew/cryo)
@@ -6528,7 +6492,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/item/reagent_containers/food/drinks/bottle/wine{
 	pixel_y = 17;
 	pixel_x = 9

@@ -808,7 +808,7 @@
 /obj/effect/turf_decal/trimline/opaque/vired/corner{
 	dir = 4
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -3807,9 +3807,7 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/arrow_ccw{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/structure/chair/handrail{
 	dir = 8
 	},
@@ -4677,7 +4675,7 @@
 /obj/machinery/atmospherics/pipe/simple/brown/visible/layer1{
 	dir = 8
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
 "zr" = (
@@ -4709,9 +4707,7 @@
 "zv" = (
 /obj/effect/turf_decal/trimline/opaque/blue/line,
 /obj/structure/closet/emcloset/wall/directional/south,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "zx" = (
@@ -4965,7 +4961,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/carpet/cyan,
 /area/ship/medical)
@@ -5283,9 +5279,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "CN" = (
@@ -5796,9 +5790,7 @@
 "FN" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "FO" = (
@@ -6956,9 +6948,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "Lz" = (
@@ -7080,7 +7070,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "Mu" = (
@@ -7229,7 +7219,7 @@
 "Nk" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/light/directional/north,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "Nl" = (
@@ -7302,9 +7292,7 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/north,
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/effect/decal/cleanable/plasma,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering)
@@ -7724,9 +7712,7 @@
 	dir = 1;
 	id = "harrier_packagesort"
 	},
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Pw" = (
@@ -8598,7 +8584,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "Ub" = (
@@ -9070,9 +9056,7 @@
 	pixel_x = -5;
 	pixel_y = -20
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/item/stamp/warra{
 	pixel_x = 8;
 	pixel_y = 10
@@ -9115,7 +9099,7 @@
 /obj/effect/turf_decal/trimline/opaque/warrablue/filled/line{
 	dir = 1
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Wj" = (
@@ -9521,9 +9505,7 @@
 /obj/effect/turf_decal/trimline/opaque/warrablue/filled/line{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "Yy" = (
@@ -9694,9 +9676,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "Zi" = (
@@ -9761,9 +9741,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/structure/chair/handrail{
 	dir = 8
 	},

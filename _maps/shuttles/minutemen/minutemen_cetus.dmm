@@ -462,9 +462,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-137"
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/structure/sign/clip{
 	pixel_y = 32
 	},
@@ -545,9 +543,7 @@
 	pixel_x = 12;
 	pixel_y = 20
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
@@ -841,9 +837,7 @@
 /obj/machinery/computer/security{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "eP" = (
@@ -954,9 +948,7 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "fx" = (
@@ -2077,10 +2069,7 @@
 	dir = 5;
 	id = "typhon_grid"
 	},
-/obj/machinery/camera/autoname{
-	dir = 5;
-	pixel_x = 1
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/structure/sign/clip{
 	pixel_y = -30
 	},
@@ -2174,9 +2163,7 @@
 	id = "typhon_cargo_holo";
 	name = "Cargo Holofield"
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/structure/chair/handrail{
 	dir = 1
 	},
@@ -2772,9 +2759,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "pW" = (
@@ -3040,10 +3025,7 @@
 	dir = 10;
 	id = "typhon_grid"
 	},
-/obj/machinery/camera/autoname{
-	dir = 8;
-	pixel_x = 1
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/structure/sign/clip{
 	pixel_y = 32
 	},
@@ -3900,9 +3882,7 @@
 "vE" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/transparent/blue/line,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "vF" = (
@@ -3940,9 +3920,7 @@
 	dir = 6;
 	id = "typhon_grid"
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/structure/sign/clip{
 	pixel_y = 32
 	},
@@ -4349,9 +4327,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "yG" = (
@@ -4765,9 +4741,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -6072,9 +6046,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-8"
 	},
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_y = -24
 	},
@@ -6419,9 +6391,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "JC" = (
@@ -6993,9 +6963,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/machinery/light_switch{
 	pixel_x = -20;
 	pixel_y = -12;
@@ -7211,9 +7179,7 @@
 	id = "typhon_port_windows";
 	name = "Window Shutters"
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 2
 	},
@@ -7445,9 +7411,7 @@
 	dir = 2
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/firealarm/directional/south{
 	pixel_x = 6
 	},
@@ -7863,9 +7827,7 @@
 	pixel_y = 0;
 	pixel_x = 32
 	},
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_y = 24
 	},
@@ -8418,13 +8380,10 @@
 	id = "typhon_port_windows";
 	name = "Inner Port Windows"
 	},
-/obj/machinery/computer/security/telescreen{
-	pixel_y = 2;
+/obj/machinery/computer/security/telescreen/directional/east{
 	network = list("ss13");
 	desc = "A telescreen that connects to the ship's security camera network.";
-	layer = 2.7;
-	dir = 8;
-	pixel_x = 26
+	layer = 2.7
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -8985,10 +8944,7 @@
 	dir = 5;
 	id = "typhon_grid"
 	},
-/obj/machinery/camera/autoname{
-	dir = 5;
-	pixel_x = 1
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/structure/sign/clip{
 	pixel_y = -30
 	},
@@ -9147,10 +9103,7 @@
 	dir = 9;
 	id = "typhon_grid"
 	},
-/obj/machinery/camera/autoname{
-	dir = 9;
-	pixel_x = 1
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/structure/sign/clip{
 	pixel_y = -30
 	},
@@ -9286,9 +9239,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/structure/extinguisher_cabinet/directional/north{
 	pixel_x = 6
 	},
@@ -9331,9 +9282,7 @@
 	id = "typhon_starboard_windows";
 	name = "Window Shutters"
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "YV" = (
@@ -9456,9 +9405,7 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/airalarm/directional/south,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office/lobby)
 "Zr" = (

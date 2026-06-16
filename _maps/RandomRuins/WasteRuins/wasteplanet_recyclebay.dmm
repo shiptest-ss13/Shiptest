@@ -617,9 +617,7 @@
 /area/ruin/wasteplanet/recycle_bay/security)
 "eP" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/vault)
@@ -2036,9 +2034,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/recycle_bay/vault)
 "nW" = (
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},

@@ -7,9 +7,7 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/external/dark)
 "ad" = (
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/structure/chair/handrail{
 	dir = 4
 	},
@@ -68,9 +66,7 @@
 /area/ship/engineering/engines/port)
 "an" = (
 /obj/effect/turf_decal/corner/opaque/red/mono,
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/effect/turf_decal/corner/opaque/tan/half{
 	dir = 1
 	},
@@ -188,9 +184,7 @@
 	dir = 8;
 	color = "#eeac2e"
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "aQ" = (
@@ -527,9 +521,7 @@
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_y = -20
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -740,9 +732,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "dL" = (
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "dQ" = (
@@ -2140,9 +2130,7 @@
 /area/ship/crew/office)
 "kR" = (
 /obj/effect/turf_decal/corner/opaque/red/mono,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/item/radio/intercom/directional/south,
 /obj/structure/table/reinforced,
 /obj/item/paper_bin{
@@ -2567,9 +2555,7 @@
 /obj/effect/turf_decal/corner/opaque/red/half{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -3307,9 +3293,7 @@
 	dir = 1
 	},
 /obj/machinery/light/dim/directional/north,
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
@@ -3661,11 +3645,7 @@
 	pixel_y = 9
 	},
 /obj/machinery/cell_charger,
-/obj/machinery/camera/autoname{
-	dir = 6;
-	pixel_x = -27;
-	pixel_y = 2
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/structure/extinguisher_cabinet/directional/north{
 	pixel_x = 20;
 	pixel_y = 30
@@ -3773,11 +3753,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/atmospherics)
 "tK" = (
-/obj/machinery/camera/autoname{
-	dir = 10;
-	pixel_x = 1;
-	pixel_y = 32
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/port)
 "tN" = (
@@ -3804,9 +3780,7 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
 	},
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/structure/chair{
 	dir = 8
 	},
@@ -4214,9 +4188,7 @@
 /area/ship/crew/office)
 "wk" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/structure/table/reinforced,
 /obj/structure/sink/chem{
 	pixel_x = -1;
@@ -4985,9 +4957,7 @@
 	pixel_x = 19;
 	pixel_y = -7
 	},
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "Bb" = (
@@ -5531,9 +5501,7 @@
 	pixel_y = 10
 	},
 /obj/item/storage/backpack/duffelbag/syndie/c4,
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -5602,9 +5570,7 @@
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/south,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -5940,7 +5906,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/suit_storage_unit/inherit,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar)
@@ -6021,9 +5987,7 @@
 	dir = 4
 	},
 /obj/machinery/light/dim/directional/west,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/effect/spawner/bunk_bed,
 /obj/structure/curtain/bounty,
 /turf/open/floor/carpet/red,
@@ -7044,7 +7008,7 @@
 /obj/structure/sign/warning/docking{
 	pixel_y = -8
 	},
-/obj/machinery/camera/autoname{
+/obj/machinery/camera/autoname/directional/north{
 	pixel_x = -1;
 	pixel_y = -32
 	},
@@ -7063,9 +7027,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
 "Lv" = (
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/template_noop,
 /area/template_noop)
 "Ly" = (
@@ -7526,9 +7488,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -7664,7 +7624,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Oz" = (
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "OC" = (
@@ -7756,9 +7716,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/firealarm/directional/south{
 	pixel_x = 10
 	},
@@ -8560,9 +8518,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
 	},
@@ -8610,9 +8566,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "SG" = (
@@ -8687,9 +8641,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Tu" = (
@@ -8763,9 +8715,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_ccw{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -8903,9 +8853,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
@@ -8991,9 +8939,7 @@
 	},
 /obj/effect/turf_decal/radiation/white,
 /obj/structure/railing,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "Vu" = (

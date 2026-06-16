@@ -3984,8 +3984,7 @@
 /obj/structure/platform/corner{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("resort_power_station")
 	},
 /turf/open/water/beach/underground,
@@ -4084,8 +4083,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("resort_power_station")
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -10895,7 +10893,7 @@
 /area/ruin/beach/corpo_resort/bar)
 "TP" = (
 /obj/structure/hazard/spray/steam/safe,
-/obj/machinery/camera/autoname{
+/obj/machinery/camera/autoname/directional/north{
 	network = list("resort_power_station")
 	},
 /obj/item/ammo_casing/spent/rifle_steel,

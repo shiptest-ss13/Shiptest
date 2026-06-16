@@ -2692,9 +2692,7 @@
 "tC" = (
 /obj/item/radio/intercom/directional/east,
 /obj/machinery/airalarm/directional/south,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/machinery/telecomms/bus{
 	autolinkers = list("processor7","SolCon");
 	id = "bus mainframe";
@@ -5739,9 +5737,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/outline/orange,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)

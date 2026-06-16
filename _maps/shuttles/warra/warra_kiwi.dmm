@@ -10,9 +10,7 @@
 	pixel_x = 7
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/structure/noticeboard/directional/east,
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_y = 34
@@ -479,9 +477,7 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/light/directional/west,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "dy" = (
@@ -2483,9 +2479,7 @@
 	pixel_x = 20;
 	pixel_y = -12
 	},
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/aft)
@@ -2520,9 +2514,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/light/directional/west,
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
@@ -3086,9 +3078,7 @@
 	pixel_y = -4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/computer/helm/viewscreen/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
@@ -3099,10 +3089,7 @@
 "vX" = (
 /obj/structure/catwalk/over,
 /obj/machinery/air_sensor/external,
-/obj/machinery/camera/autoname{
-	dir = 4;
-	pixel_y = 10
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "wg" = (
@@ -3556,9 +3543,7 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
@@ -4000,9 +3985,7 @@
 /obj/structure/chair/handrail{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -4545,9 +4528,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/science/workshop)
 "Gi" = (
@@ -4864,9 +4845,7 @@
 /obj/structure/sign/poster/official/moth/hardhats{
 	pixel_y = 32
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
 "Is" = (
@@ -5099,9 +5078,7 @@
 	dir = 1
 	},
 /obj/item/radio/intercom/directional/south,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "JE" = (
@@ -5405,9 +5382,7 @@
 	pixel_y = -12
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "LS" = (
@@ -5792,9 +5767,7 @@
 "Ny" = (
 /obj/effect/turf_decal/industrial/warning/dust/corner,
 /obj/machinery/light/directional/south,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
@@ -6309,9 +6282,7 @@
 	dir = 8
 	},
 /obj/structure/tank_dispenser/oxygen,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/starboard)
 "RG" = (
@@ -6628,9 +6599,7 @@
 	pixel_y = -2
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/computer/cryopod/directional/south{
 	pixel_x = -15
 	},
@@ -6743,9 +6712,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/cargo/starboard)
 "TS" = (
@@ -7139,9 +7106,7 @@
 	name = "Bridge Privacy Shutter"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Vk" = (
@@ -7512,9 +7477,7 @@
 	pixel_x = -28;
 	pixel_y = 5
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -7620,9 +7583,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/directional/south,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)
 "Yw" = (
