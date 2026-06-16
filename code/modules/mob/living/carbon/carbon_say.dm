@@ -16,8 +16,6 @@
 
 /mob/living/carbon/get_message_mods(message, list/mods)
 	var/obj/item/organ/lungs/our_lungs = getorganslot(ORGAN_SLOT_LUNGS)
-	if(!our_lungs)
-		return ..(message, mods)
 	if(our_lungs?.received_pressure_mult < 0.5 && !mods[WHISPER_MODE] && !HAS_TRAIT(src, TRAIT_NOBREATH))
 		mods[WHISPER_MODE] = MODE_WHISPER
 	return ..(message, mods)
