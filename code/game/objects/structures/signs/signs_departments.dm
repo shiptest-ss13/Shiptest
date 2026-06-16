@@ -28,7 +28,7 @@
 	name = "\improper Chemistry sign"
 	sign_change_name = "Department - Medbay: Chemistry"
 	desc = "A sign labelling an area containing chemical equipment."
-	icon_state = "chemistry1"
+	icon_state = "chemistry"
 	is_editable = TRUE
 
 /obj/structure/sign/departments/chemistry/pharmacy
@@ -60,14 +60,14 @@
 	name = "\improper Science sign"
 	sign_change_name = "Department - Science"
 	desc = "A sign labelling an area where research and science is performed."
-	icon_state = "science1"
+	icon_state = "science"
 	is_editable = TRUE
 
 /obj/structure/sign/departments/science/alt
 	name = "\improper Science sign"
 	sign_change_name = "Department - Science Alt"
 	desc = "A sign labelling an area where research and science is performed."
-	icon_state = "science2"
+	icon_state = "science"
 	is_editable = TRUE
 
 /obj/structure/sign/departments/xenobio
@@ -90,7 +90,7 @@
 	name = "\improper Botany sign"
 	sign_change_name = "Department - Botany"
 	desc = "A sign labelling an area as a place where plants are grown."
-	icon_state = "hydro1"
+	icon_state = "hydro"
 	is_editable = TRUE
 
 /obj/structure/sign/departments/custodian
@@ -149,9 +149,9 @@
 	is_editable = TRUE
 
 /obj/structure/sign/departments/evac
-	name = "\improper Evacuation sign"
-	sign_change_name = "Location - Evacuation"
-	desc = "A sign labelling an area where evacuation procedures take place."
+	name = "\improper Port sign"
+	sign_change_name = "Location - Port"
+	desc = "A sign labelling an area where the docking area is."
 	icon_state = "evac"
 	is_editable = TRUE
 

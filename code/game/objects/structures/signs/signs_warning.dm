@@ -200,3 +200,118 @@
 	desc = "A warning sign which reads 'ESCAPE PODS'."
 	icon_state = "pods"
 	is_editable = TRUE
+
+//mw varaints, nod to old
+
+/obj/structure/sign/warning/coldtemp/warra
+	name = "\improper FREEZING AIR sign"
+	sign_change_name = "Warning - Temp: Cold"
+	desc = "A sign that warns of extremely cold air in the vicinity."
+	icon_state = "mw_cold"
+	is_editable = TRUE
+
+/obj/structure/sign/warning/hottemp/warra
+	name = "\improper SUPERHEATED AIR sign"
+	sign_change_name = "Warning - Temp: Hot (Makosso-Warra)"
+	desc = "A sign that warns of extremely hot air in the vicinity."
+	icon_state = "mw_heat"
+	is_editable = TRUE
+
+/obj/structure/sign/warning/gasmask/warra
+	name = "\improper CONTAMINATED AIR sign (Makosso-Warra)"
+	sign_change_name = "Warning - Contaminated Air"
+	desc = "A sign that warns of dangerous particulates or gasses in the air, instructing you to wear a filtration device."
+	icon_state = "mw_gasmask"
+	is_editable = TRUE
+
+/obj/structure/sign/departments/botany/warra
+	name = "\improper Botany sign"
+	sign_change_name = "Department - Botany (Makosso-Warra)"
+	desc = "A sign labelling an area as a place where plants are grown."
+	icon_state = "mw_hydro1"
+	is_editable = TRUE
+
+/obj/structure/sign/departments/custodian/warra
+	name = "\improper Janitor sign"
+	sign_change_name = "Department - Janitor (Makosso-Warra)"
+	desc = "A sign labelling an area where the janitor works."
+	icon_state = "mw_custodian"
+	is_editable = TRUE
+
+/obj/structure/sign/departments/cargo/warra
+	name = "\improper Cargo sign"
+	sign_change_name = "Department - Cargo (Makosso-Warra)"
+	desc = "A sign labelling an area where cargo ships dock."
+	icon_state = "mw_cargo"
+	is_editable = TRUE
+
+/obj/structure/sign/departments/cargo/warra/refinery
+	name = "\improper Refinery sign"
+	sign_change_name = "Department - Refinery (Makosso-Warra)"
+	desc = "A sign labelling an area where you can possibly refine ore."
+	icon_state = "mw_refinery"
+	is_editable = TRUE
+
+/obj/structure/sign/departments/xenobio/warra
+	name = "\improper Xenobiolgoy sign"
+	sign_change_name = "Department - Science: Xenobiology (Makosso-Warra)"
+	desc = "A sign labelling an area as a place where xenobiological entities are researched."
+	icon_state = "mw_xenobio"
+	is_editable = TRUE
+
+/obj/structure/sign/departments/science/warra
+	name = "\improper Science sign"
+	sign_change_name = "Department - Science (Makosso-Warra)"
+	desc = "A sign labelling an area where research and science is performed."
+	icon_state = "mw_science1"
+	is_editable = TRUE
+
+
+/obj/structure/sign/departments/evac/warra
+	name = "\improper Port sign"
+	sign_change_name = "Location - Port (Makosso-Warra)"
+	desc = "A sign labelling an area where the docking area is."
+	icon_state = "mw_evac"
+	is_editable = TRUE
+
+/obj/structure/sign/departments/restroom/warra
+	name = "\improper Restroom sign"
+	sign_change_name = "Location - Restroom (Makosso-Warra)"
+	desc = "A sign labelling a restroom."
+	icon_state = "mw_restroom"
+	is_editable = TRUE
+
+/obj/structure/sign/departments/medbay/warra
+	name = "\improper Medbay sign"
+	sign_change_name = "Department - Medbay (Makosso-Warra)"
+	desc = "The Intergalactic symbol of Medical institutions. You'll probably get help here."
+	icon_state = "mw_med"
+	is_editable = TRUE
+
+/obj/structure/sign/departments/security/warra
+	name = "\improper Security sign"
+	sign_change_name = "Department - Security (Makosso-Warra)"
+	desc = "A sign labelling an area where the law is law."
+	icon_state = "mw_security"
+	is_editable = TRUE
+
+/obj/structure/sign/departments/deck_0_warra
+	name = "\improper Deck 0"
+	sign_change_name = "Deck 0 (Makosso-Warra)"
+	desc = "A sign labelling an that you are at deck 0."
+	icon_state = "mw_deck0"
+	is_editable = TRUE
+
+/obj/structure/sign/departments/deck_1_warra
+	name = "\improper Deck 1"
+	sign_change_name = "Deck 1 (Makosso-Warra)"
+	desc = "A sign labelling an that you are at deck 1."
+	icon_state = "mw_deck1"
+	is_editable = TRUE
+
+/obj/structure/sign/departments/deck_2_warra
+	name = "\improper Deck 2"
+	sign_change_name = "Deck 2 (Makosso-Warra)"
+	desc = "A sign labelling an that you are at deck 2."
+	icon_state = "mw_deck2"
+	is_editable = TRUE
