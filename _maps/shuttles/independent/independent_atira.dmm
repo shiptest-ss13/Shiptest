@@ -129,7 +129,6 @@
 	pixel_y = 6;
 	pixel_x = 6
 	},
-/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office/lobby)
 "bY" = (
@@ -456,7 +455,7 @@
 	pixel_x = -20
 	},
 /turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "ee" = (
 /obj/machinery/stasis,
 /obj/effect/turf_decal/trimline/opaque/blue/end{
@@ -506,7 +505,7 @@
 /area/ship/crew/office/lobby)
 "er" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "eu" = (
 /obj/machinery/power/compressor{
 	dir = 4
@@ -708,7 +707,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "gx" = (
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/cargo)
@@ -952,6 +951,9 @@
 /obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = 5;
 	pixel_y = 10
+	},
+/obj/structure/sign/poster/etherbor/civilian{
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
@@ -1235,6 +1237,9 @@
 /obj/item/clothing/head/soft{
 	pixel_y = 4
 	},
+/obj/structure/sign/poster/etherbor/gay{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew)
 "ke" = (
@@ -1257,7 +1262,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "kr" = (
 /obj/structure/railing,
 /obj/structure/railing/corner{
@@ -1581,12 +1586,12 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "nx" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/on{
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer4{
@@ -1617,7 +1622,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "nR" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1672,7 +1677,21 @@
 	pixel_y = 15;
 	pixel_x = 8
 	},
-/obj/item/reagent_containers/dropper,
+/obj/item/reagent_containers/dropper{
+	pixel_y = 4;
+	pixel_x = -2
+	},
+/obj/item/stock_parts/scanning_module{
+	pixel_y = -4;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/micro_laser,
+/obj/item/stock_parts/manipulator{
+	pixel_y = -6
+	},
+/obj/item/stock_parts/capacitor{
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
 "oa" = (
@@ -2119,7 +2138,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "rQ" = (
 /obj/effect/turf_decal/spline/fancy/opaque/blue{
 	dir = 1
@@ -2239,6 +2258,9 @@
 /obj/item/storage/belt/utility/full/engi,
 /obj/item/clothing/glasses/welding,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/etherbor/corporate{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/engineering/engine)
 "so" = (
@@ -2768,17 +2790,17 @@
 	name = "Bridge"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "uY" = (
 /obj/structure/table/glass,
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 8
 	},
-/obj/machinery/light/directional/east,
 /obj/item/paper/pamphlet{
 	pixel_y = 3;
 	pixel_x = 6
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/office/lobby)
 "vd" = (
@@ -3040,8 +3062,36 @@
 	pixel_x = 11;
 	pixel_y = -8
 	},
+/obj/item/reagent_containers/glass/bottle{
+	list_reagents = list(/datum/reagent/medicine/rezadone=30);
+	name = "rezadone bottle";
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/glass/bottle{
+	list_reagents = list(/datum/reagent/medicine/rezadone=30);
+	name = "rezadone bottle";
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/glass/bottle/atropine{
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/glass/bottle/gjalrazine{
+	pixel_y = 6;
+	pixel_x = 8
+	},
+/obj/item/storage/pill_bottle/mannitol{
+	pixel_x = -8
+	},
+/obj/item/storage/pill_bottle/penacid,
+/obj/item/storage/pill_bottle/charcoal{
+	pixel_x = 8
+	},
+/obj/item/defibrillator/loaded{
+	pixel_y = -4
+	},
 /obj/item/clothing/neck/stethoscope,
-/obj/item/defibrillator/loaded,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "wt" = (
@@ -3346,7 +3396,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "xQ" = (
 /obj/structure/chair/bench/beige/directional/west{
 	pixel_x = 4
@@ -3533,26 +3583,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/chem,
-/obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/rezadone=30);
-	name = "rezadone bottle";
-	pixel_x = -8;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/glass/bottle/atropine{
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/glass/bottle/gjalrazine{
-	pixel_y = 6;
-	pixel_x = 8
-	},
-/obj/item/storage/pill_bottle/mannitol{
-	pixel_x = -8
-	},
-/obj/item/storage/pill_bottle/penacid,
-/obj/item/storage/pill_bottle/charcoal{
-	pixel_x = 8
-	},
 /obj/item/reagent_containers/hypospray/medipen/inacusiate{
 	pixel_y = -8;
 	pixel_x = -10
@@ -3811,7 +3841,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "AM" = (
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
 	dir = 1;
@@ -4052,7 +4082,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "CN" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -4499,7 +4529,7 @@
 	pixel_x = -7
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "HD" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/external/dark)
@@ -4525,7 +4555,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "HN" = (
 /obj/effect/turf_decal/spline/fancy/opaque/blue/corner{
 	dir = 1
@@ -4623,6 +4653,7 @@
 	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
 "HW" = (
@@ -4847,7 +4878,7 @@
 	id = "a_bridge_window"
 	},
 /turf/open/floor/plating,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "KG" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 10
@@ -4866,7 +4897,7 @@
 	id = "a_bridgehall_window"
 	},
 /turf/open/floor/plating,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "KT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -4953,7 +4984,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "LG" = (
 /obj/structure/chair/sofa/blue/directional/south,
 /obj/effect/decal/cleanable/dirt,
@@ -5316,7 +5347,7 @@
 /area/ship/medical)
 "NJ" = (
 /turf/closed/wall/mineral/titanium/exterior,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "NK" = (
 /obj/structure/mirror{
 	pixel_y = 2;
@@ -5563,7 +5594,10 @@
 /obj/structure/sign/poster/pgf/corpsman{
 	pixel_x = 32
 	},
-/obj/machinery/newscaster/directional/north,
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_y = 34
+	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/office/lobby)
 "PH" = (
@@ -5632,7 +5666,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "QA" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5;
@@ -5675,7 +5709,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "QO" = (
 /obj/machinery/computer/turbine_computer{
 	dir = 4;
@@ -5835,7 +5869,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "Sa" = (
 /obj/machinery/shower{
 	pixel_y = 18;
@@ -5890,7 +5924,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "Sn" = (
 /obj/machinery/hydroponics/wooden,
 /obj/effect/turf_decal/borderfloor/corner{
@@ -5925,7 +5959,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/on/layer4,
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4,
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engine)
 "SE" = (
@@ -6025,7 +6059,6 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage/equip)
 "SP" = (
-/obj/machinery/computer/helm/viewscreen/directional/north,
 /obj/structure/chair/handrail{
 	dir = 4
 	},
@@ -6034,6 +6067,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/noticeboard/directional/west,
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office/lobby)
 "SU" = (
@@ -6148,7 +6182,7 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "UX" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
@@ -6294,12 +6328,7 @@
 	pixel_x = 10
 	},
 /obj/effect/turf_decal/corner/opaque/blue/bordercorner,
-/obj/structure/extinguisher_cabinet/directional/west{
-	pixel_y = 6
-	},
-/obj/machinery/firealarm/directional/west{
-	pixel_y = -6
-	},
+/obj/structure/noticeboard/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
 "Wo" = (
@@ -6368,7 +6397,7 @@
 /obj/item/megaphone/command,
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
+/area/ship/bridge/cool)
 "WC" = (
 /obj/effect/turf_decal/spline/fancy/opaque/blue/corner{
 	dir = 8
