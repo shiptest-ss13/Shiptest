@@ -78,6 +78,7 @@
 	/// Direction for which console looks for stacking machine to connect to
 	var/machinedir = EAST
 	///Useless, kept to avoid maploading errors
+	var/input_dir = NORTH
 	var/output_dir = SOUTH
 	var/dist = 1
 

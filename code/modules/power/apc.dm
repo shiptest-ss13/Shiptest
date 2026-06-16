@@ -344,16 +344,15 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 24)
 	if(!updates)
 		return
 
-	if(!cell) //it always peeved me that abandoned ships always had the apc lights on. this should fix it
-		icon_update_needed = FALSE
-		set_light(0)
 
-	else if(cell.charge <= 0)
-		icon_update_needed = FALSE
-		set_light(0)
-	//this may need to be moved up!!
+
 	. = ..()
 	// And now, separately for cleanness, the lighting changing
+	//if we have no charge, turn off the lights
+	if(!cell || cell.charge <= 0)
+		set_light(0)
+		return
+
 	if(!update_state)
 		switch(charging)
 			if(APC_NOT_CHARGING)
@@ -395,6 +394,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 24)
 /obj/machinery/power/apc/update_overlays()
 	. = ..()
 	if((machine_stat & (BROKEN|MAINT)) || update_state)
+		return
+	//If we dont have charge or a cell, all lights are off.
+	if(!cell || cell.charge <= 0)
 		return
 
 	SSvis_overlays.add_vis_overlay(src, icon, "apcox-[locked]", layer, plane, dir)
@@ -444,7 +446,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 24)
 
 	// Handle overlay status:
 	var/new_update_overlay = NONE
-	if(operating)
+	if(operating && cell && cell.charge > 0)
 		new_update_overlay |= UPOVERLAY_OPERATING
 
 	if(!update_state)
