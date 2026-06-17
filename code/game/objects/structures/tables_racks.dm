@@ -267,7 +267,7 @@
 			flipped.name = "flipped [src.name]"
 			flipped.desc = "[src.desc] It is flipped!"
 			flipped.icon_state = src.base_icon_state
-			var/new_dir = get_dir(user, flipped)
+			var/new_dir = get_cardinal_dir(user,flipped)
 			flipped.dir = new_dir
 			if(new_dir == NORTH)
 				flipped.layer = BELOW_MOB_LAYER

@@ -12,6 +12,7 @@
 	var/table_type = /obj/structure/table
 	climbable = TRUE
 	climb_time = 1.5 SECONDS
+	var/proj_pass_rate = 50
 
 /obj/structure/flippedtable/Initialize()
 	. = ..()
@@ -32,24 +33,30 @@
 		return WEST
 	return dir
 
-/obj/structure/flippedtable/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/flippedtable/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	var/table_dir = check_dir()
+	// var/table_dir = check_dir()
 	var/attempted_dir = get_dir(loc, mover)
 	if(table_type == /obj/structure/table/glass) //Glass table, lasers can pass
 		if(istype(mover) && (mover.pass_flags & PASSGLASS))
 			return TRUE
 	if(istype(mover, /obj/projectile))
-		var/obj/projectile/proj_obj = mover
+		var/obj/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer)) //adjacent, let the bullet pass
+			return TRUE
 		//Lets through bullets shot from behind the cover of the table
-		if(proj_obj.trajectory && angle2dir_cardinal(proj_obj.trajectory.angle) == dir)
+		// if(proj_obj.trajectory && angle2dir_cardinal(proj_obj.trajectory.angle) == dir)
+		// 	return TRUE
+		if(dir != border_dir) //Make sure looking at appropriate border
+			return TRUE
+		if(prob(proj_pass_rate))
 			return TRUE
 		return FALSE
-	return attempted_dir != table_dir
+	return attempted_dir != dir
 
 /obj/structure/flippedtable/proc/on_exit(datum/source, atom/movable/exiter, direction)
 	SIGNAL_HANDLER
-	var/table_dir = check_dir()
+	//var/table_dir = check_dir()
 	if(exiter == src)
 		return // Let's not block ourselves.
 
@@ -60,7 +67,7 @@
 		return
 	if(istype(exiter, /obj/item))
 		return
-	if(direction == table_dir)
+	if(direction == dir)
 		exiter.Bump(src)
 		return COMPONENT_ATOM_BLOCK_EXIT
 	return
