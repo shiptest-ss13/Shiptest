@@ -132,7 +132,7 @@
 
 /mob/living/simple_animal/hostile/automated/rover/ngr/dmr
 	name = "\"Temere-Lito\" defense rover"
-	desc = "A boxy drone manufactured by the New Gorlex Republic. Effectively the same eas the original Temere-Lito, albeit with improved IFF systems to help prevent friendly fire incidents. The modern Temere-Lito has found itself a new role as a scouting drone, occasionally fielded on planetary survey missions."
+	desc = "A boxy drone manufactured by the New Gorlex Republic. Effectively the same as the original Temere-Lito, albeit with improved IFF systems to help prevent friendly fire incidents. The modern Temere-Lito has found itself a new role as a scouting drone, occasionally fielded on planetary survey missions."
 	icon_state = "ngrtread_range"
 	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
 	casingtype = /obj/item/ammo_casing/a556_42
