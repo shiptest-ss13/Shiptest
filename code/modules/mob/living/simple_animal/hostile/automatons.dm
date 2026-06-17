@@ -158,7 +158,7 @@
 	attack_verb_continuous = "bonks"
 	attack_verb_simple = "bonk"
 	armour_penetration = 0
-	 melee_damage_lower = 10
+	melee_damage_lower = 10
 	melee_damage_upper = 10
 
 	move_to_delay = 5
