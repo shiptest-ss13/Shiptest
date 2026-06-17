@@ -392,7 +392,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/autoname{
-	dir = 6
+	dir = 6;
+	network = list("ns-depot")
 	},
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)
@@ -976,7 +977,9 @@
 	pixel_y = 22;
 	pixel_x = 6
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname{
+	network = list("ns-depot")
+	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_2)
 "gK" = (
@@ -1329,7 +1332,9 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname{
+	network = list("ns-depot")
+	},
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
 /area/ruin/jungle/depot/supply_office)
 "jH" = (
@@ -1549,7 +1554,8 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/camera/autoname{
-	dir = 4
+	dir = 4;
+	network = list("ns-depot")
 	},
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
@@ -2051,10 +2057,11 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/obj/structure/salvageable/computer{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/security/retro{
+	dir = 1;
+	network = list("ns-depot")
+	},
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/depot/supply_office)
 "oN" = (
@@ -2131,7 +2138,8 @@
 	pixel_y = -4
 	},
 /obj/machinery/camera/autoname{
-	dir = 1
+	dir = 1;
+	network = list("ns-depot")
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
@@ -2204,6 +2212,20 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
+"pW" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/camera/autoname{
+	network = list("ns-depot")
+	},
+/turf/open/floor/plasteel/patterned/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "pX" = (
 /turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
@@ -2845,6 +2867,16 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
+"vS" = (
+/obj/structure/platform{
+	dir = 5
+	},
+/obj/machinery/camera/autoname{
+	dir = 1;
+	network = list("ns-depot")
+	},
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "vW" = (
 /obj/effect/turf_decal/trimline/opaque/nsorange/line{
 	dir = 6
@@ -3265,7 +3297,9 @@
 "yn" = (
 /obj/effect/turf_decal/trimline/opaque/nsorange/warning,
 /obj/structure/spacevine/weak,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname{
+	network = list("ns-depot")
+	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_3)
 "yo" = (
@@ -3565,6 +3599,16 @@
 	},
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
+"An" = (
+/obj/structure/platform{
+	dir = 8
+	},
+/obj/machinery/camera/autoname{
+	dir = 6;
+	network = list("ns-depot")
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "As" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -3632,6 +3676,10 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/vomit/old,
+/obj/machinery/camera/autoname{
+	dir = 1;
+	network = list("ns-depot")
+	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "AP" = (
@@ -4608,7 +4656,9 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 9
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname{
+	network = list("ns-depot")
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
@@ -5832,7 +5882,9 @@
 	dir = 1
 	},
 /obj/structure/chair/bench/orange/directional/south,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname{
+	network = list("ns-depot")
+	},
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "Qy" = (
@@ -8234,7 +8286,7 @@ Vp
 Vp
 Vp
 Vp
-Hp
+pW
 vt
 wJ
 nC
@@ -8410,7 +8462,7 @@ np
 dN
 Ob
 SB
-SH
+vS
 Ci
 Xi
 xN
@@ -9798,7 +9850,7 @@ kt
 ZK
 Fk
 Db
-wt
+An
 EC
 QQ
 jf
