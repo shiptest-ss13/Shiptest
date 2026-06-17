@@ -290,7 +290,7 @@
 	name = "shelter sign"
 	desc = "A high visibility sign designating a safe shelter."
 	icon = 'icons/obj/structures/signs/sign.dmi'
-	icon_state = "secureareaold"
+	icon_state = "securearea"
 
 //Fluff
 /obj/structure/tubes

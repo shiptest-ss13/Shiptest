@@ -521,6 +521,7 @@
 
 /obj/machinery/computer/helm/viewscreen/computer
 	name = "viewscreen console"
+	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "oldcomp"
 	icon_screen = "oldcomp_retro_rnd"
 	density = TRUE

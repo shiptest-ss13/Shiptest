@@ -66,7 +66,7 @@
 /obj/item/stock_parts/cell/update_overlays()
 	. = ..()
 	if(grown_battery)
-		. += mutable_appearance('icons/obj/power.dmi', "grown_wires")
+		. += mutable_appearance('icons/obj/item/cells.dmi', "grown_wires")
 	if(blinky_light)
 		if(charge < 0.01)
 			return

@@ -309,7 +309,7 @@ GLOBAL_LIST_EMPTY(crematoriums)
  * For overriding only
  */
 /obj/structure/tray
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/structures/bodycontainer.dmi'
 	density = TRUE
 	var/obj/structure/bodycontainer/connected = null
 	anchored = TRUE

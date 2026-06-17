@@ -164,13 +164,6 @@
 
 //mw varaints, nod to old
 
-/obj/structure/sign/departments/botany/warra
-	name = "\improper Botany sign"
-	sign_change_name = "Department - Botany (Makosso-Warra)"
-	desc = "A sign labelling an area as a place where plants are grown."
-	icon_state = "mw_hydro"
-	is_editable = TRUE
-
 /obj/structure/sign/departments/custodian/warra
 	name = "\improper Janitor sign"
 	sign_change_name = "Department - Janitor (Makosso-Warra)"

@@ -202,11 +202,3 @@
 	desc = "A sign that warns of extremely cold air in the vicinity."
 	icon_state = "mw_cold"
 	is_editable = TRUE
-
-/obj/structure/sign/warning/hottemp/warra
-	name = "\improper SUPERHEATED AIR sign"
-	sign_change_name = "Warning - Temp: Hot (Makosso-Warra)"
-	desc = "A sign that warns of extremely hot air in the vicinity."
-	icon_state = "mw_heat"
-	is_editable = TRUE
-
