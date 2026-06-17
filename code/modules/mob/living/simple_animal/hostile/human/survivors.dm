@@ -147,7 +147,7 @@
 	rapid_fire_delay = 5
 	projectiletype = /obj/projectile/beam/laser/sharplite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
-	r_hand = /obj/item/gun/energy/sharplite/x12
+	r_hand = /obj/item/gun/energy/sharplite/volt
 	retreat_distance = 2
 	minimum_distance = 2
 
@@ -163,7 +163,7 @@
 	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/sharplite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
-	r_hand = /obj/item/gun/energy/sharplite/l305
+	r_hand = /obj/item/gun/energy/sharplite/rush
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/energy/sarissa
 	name = "Hermit Sharpshooter"
@@ -173,7 +173,7 @@
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	projectiletype = /obj/projectile/beam/laser/sharplite/sniper
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
-	r_hand = /obj/item/gun/energy/sharplite/al607
+	r_hand = /obj/item/gun/energy/sharplite/sarissa
 	vision_range = 14
 	aggro_vision_range = 14
 	minimum_distance = 14
@@ -404,7 +404,7 @@
 	minimum_distance = 7
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/bodyguard
-	r_hand = /obj/item/gun/energy/sharplite/al655
+	r_hand = /obj/item/gun/energy/sharplite/hades
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security
 	speak_emote = list("exhales.","rolls their shoulders.")
 	emote_hear = list("grunts.","cracks their knuckles.")
