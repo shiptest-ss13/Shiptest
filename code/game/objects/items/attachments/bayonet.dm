@@ -5,8 +5,8 @@
 	item_state = "bayonet"
 	lefthand_file = 'icons/mob/inhands/weapons/knifes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/knifes_righthand.dmi'
-	force = 15
-	throwforce = 10
+	force = 18
+	throwforce = 18
 	pickup_sound =  'sound/items/handling/knife1_pickup.ogg'
 	drop_sound = 'sound/items/handling/knife3_drop.ogg'
 	hitsound = 'sound/weapons/bladeslice.ogg'

@@ -37,8 +37,8 @@
 	set_light_on(toggled)
 	update_icon()
 	sharpness = toggled ? SHARP_POINTY : SHARP_NONE
-	force = toggled ? 19 : 3
-	throwforce = toggled ? 14 : 2
+	force = toggled ? 20 : 3
+	throwforce = toggled ? 15 : 2
 
 /obj/item/attachment/energy_bayonet/attack_self(mob/user)
 	toggle_attachment()
