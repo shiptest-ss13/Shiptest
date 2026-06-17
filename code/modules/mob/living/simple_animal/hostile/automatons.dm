@@ -80,6 +80,8 @@
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
 
+//rovers
+
 /mob/living/simple_animal/hostile/automated/rover
 	name = "Vigilitas \"Scenthound\" defense rover"
 	desc = "A scouting drone manufactured by Sharplite during the Inter-Corporate War. Commonly fielded in small forward groups ahead of Vigilitas teams, or placed in security checkpoints."
@@ -140,6 +142,54 @@
 	minimum_distance = 7
 	vision_range = 12
 	aggro_vision_range = 14
+
+//agrav
+
+/mob/living/simple_animal/hostile/automated/agrav
+	name = "'Verefasa' Combat Munition"
+	desc = "An advanced form of loitering munition designed by Cybersun as the ICW came to a close, the Verefasa contains a barely-sentient combat AI for autonomous operations, a gravitic induction drive, and a microfusion heart. Often deployed en-masse to make reclaiming an area a pain, spacers tell horror stories of encountering hives of Verefasa active on salvage claims in deep space. This one doesn't seem fully equipped."
+	icon_state = "independent_agrav"
+	var/glow_color = COLOR_BLUE_LIGHT
+
+	health = 150
+	maxHealth = 150
+	armor = list("melee" = 10, "bullet" = 35, "laser" = 35, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+
+	attack_verb_continuous = "bonks"
+	attack_verb_simple = "bonk"
+	armour_penetration = 0
+	 melee_damage_lower = 10
+	melee_damage_upper = 10
+
+	move_to_delay = 5
+	is_flying_animal = TRUE
+	ranged = FALSE
+	faction = list(FACTION_NEUTRAL)
+
+/mob/living/simple_animal/hostile/automated/agrav/Initialize(mob/living/source)
+	. = ..()
+	src.mob_light(2, 0.4, glow_color)
+
+/mob/living/simple_animal/hostile/automated/agrav/cybersun
+	name = "'Verefasa' Combat Munition"
+	desc = "An advanced form of loitering munition designed by Cybersun as the ICW came to a close; the Verefasa contains a barely-sentient combat AI for autonomous operations, a gravitic induction drive, and a microfusion heart. Often deployed en-masse to make reclaiming an area a pain, spacers tell horror stories of encountering hives of Verefasa active on salvage claims in deep space."
+	icon_state = "cybersun_agrav"
+	glow_color = LIGHT_COLOR_FLARE
+
+	attack_verb_continuous = "slashes"
+	attack_verb_simple = "slash"
+	attack_sound = 'sound/weapons/blade1.ogg'
+	armour_penetration = 60
+	melee_damage_lower = 35
+	melee_damage_upper = 35
+	melee_damage_type = BURN
+	rapid_melee = 2
+
+	on_aggro_say = list("Unregistered entity detected. Removing.", "You're not supposed to be here.", "Code 5-11-7. This area is under claim. Please leave immediately.")
+	aggro_say_chance = 70
+	faction = list(FACTION_HOSTILE)
+
+//bipedal
 
 /mob/living/simple_animal/hostile/automated/bipedal
 	name = "Bipedal Assault Platform"
