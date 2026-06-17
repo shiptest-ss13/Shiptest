@@ -42,6 +42,9 @@
 	var/list/attack_action_types = list()
 	var/small_sprite_type
 	var/can_gib = FALSE
+	projectiletype = /obj/projectile/colossus
+	casingtype = null
+
 
 /mob/living/simple_animal/hostile/megafauna/Initialize(mapload)
 	. = ..()
@@ -223,3 +226,20 @@
 	. = ..()
 	if(. > 0 && stat == CONSCIOUS)
 		Retaliate()
+
+/mob/living/simple_animal/hostile/megafauna/proc/shoot_projectile(turf/marker, set_angle)
+	if(!isnum(set_angle) && (!marker || marker == loc))
+		return
+	var/turf/startloc = get_turf(src)
+	if(projectiletype)
+		var/obj/projectile/P = new projectiletype(startloc)
+		P.preparePixelProjectile(marker, startloc)
+		P.firer = src
+		if(target)
+			P.original = target
+		P.fire(set_angle)
+	if(casingtype)
+		var/obj/item/ammo_casing/casing = new casingtype(startloc)
+		playsound(src, projectilesound, 100, TRUE)
+		casing.fire_casing(marker, src, null, null, null, ran_zone(), rand(-spread, spread),  src)
+		casing.on_eject(src)
