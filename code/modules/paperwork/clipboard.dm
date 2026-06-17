@@ -109,6 +109,9 @@
 	ui_interact(user)
 	return
 
+/obj/item/clipboard/examine_more(mob/user)
+	ui_interact(user)
+
 /obj/item/clipboard/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
