@@ -146,8 +146,8 @@
 //agrav
 
 /mob/living/simple_animal/hostile/automated/agrav
-	name = "'Verefasa' Combat Munition"
-	desc = "An advanced form of loitering munition designed by Cybersun as the ICW came to a close, the Verefasa contains a barely-sentient combat AI for autonomous operations, a gravitic induction drive, and a microfusion heart. Often deployed en-masse to make reclaiming an area a pain, spacers tell horror stories of encountering hives of Verefasa active on salvage claims in deep space. This one doesn't seem fully equipped."
+	name = "'Verefasa' Gravity Drone"
+	desc = "An advanced form of loitering munition designed by Cybersun as the ICW came to a close. A major portion of the bots have been repurposed as simple worker drones for Cybersun and its associates after the ICW, this just so happens to be one for your sake."
 	icon_state = "independent_agrav"
 	var/glow_color = COLOR_BLUE_LIGHT
 
