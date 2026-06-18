@@ -23,8 +23,8 @@
 	melee_damage_lower = 50
 	melee_damage_upper = 50
 
-	speed = 5
-	move_to_delay = 3.5
+	speed = 1
+	move_to_delay = 3
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 	retreat_distance = 0
@@ -37,22 +37,15 @@
 	casingtype = /obj/item/ammo_casing/energy/laser/assault/sharplite/megabot
 	spread = 5
 	rapid_fire_delay = 4
+	var/gun_wind_up = 12
 
 	pixel_x = -16
 	base_pixel_x = -16
-	//loot = list(/obj/item/mob_trophy/megabot_reactor)
 	blood_volume = 0 //robor
 	var/charging = FALSE
 	var/revving_charge = FALSE
-	var/approach = APPROACH_RANGED
-	var/change_approach_chance = 100
 	gps_name = "Glitchy Signal"
-	achievement_type = /datum/award/achievement/boss/bubblegum_kill
-	crusher_achievement_type = /datum/award/achievement/boss/bubblegum_crusher
-	score_achievement_type = /datum/award/score/bubblegum_score
 
-	//deathmessage = "self destructs, leaving behind a power core."
-	deathsound = 'sound/magic/enter_blood.ogg'
 	attack_action_types = list(
 		/datum/action/innate/megafauna_attack/burst_shot,
 		/datum/action/innate/megafauna_attack/spread_shot,
@@ -100,8 +93,8 @@
 	chosen_attack_num = 4
 
 /mob/living/simple_animal/hostile/megafauna/megabot/OpenFire()
-	anger_modifier = clamp(((maxHealth - health)/50),0,40)
-	ranged_cooldown = world.time + max(40, (60 - anger_modifier)) //attacks faster as it loses health
+	anger_modifier = clamp(((maxHealth - health)/50),0,30)
+	ranged_cooldown = world.time + (60 - anger_modifier)
 
 	if(client)
 		switch(chosen_attack)
@@ -114,16 +107,8 @@
 			if(4)
 				plant_mine()
 		return
-	// else
-	// 	if(prob(change_approach_chance))
-	// 		approach = pick(APPROACH_AGGRESSIVE,APPROACH_RANGED)
-	// 		update_stategy()
-	// 		change_approach_chance = 0
-	// 	else
-	// 		change_approach_chance += 5
 
-
-	if(prob(20+anger_modifier)) //Major attack
+	if(prob(20 + anger_modifier))
 		if(prob(50))
 			plant_mine()
 		shoot_n_charge()
@@ -141,7 +126,7 @@
 	if(health < maxHealth/3)
 		num_shots = 5
 	wind_up_visual(TRUE)
-	SLEEP_CHECK_DEATH(12)
+	SLEEP_CHECK_DEATH(gun_wind_up)
 	var/datum/callback/fire = CALLBACK(src, PROC_REF(shoot_projectile), get_turf(target))
 	for(var/i in 1 to num_shots)
 		addtimer(fire, (i - 1)*rapid_fire_delay)
@@ -149,22 +134,24 @@
 /mob/living/simple_animal/hostile/megafauna/megabot/proc/spread_shot()
 	casingtype = /obj/item/ammo_casing/energy/laser/assault/sharplite/megabot/burst
 	wind_up_visual(TRUE)
-	SLEEP_CHECK_DEATH(12)
+	SLEEP_CHECK_DEATH(gun_wind_up)
 	shoot_projectile(get_turf(target))
 
 /mob/living/simple_animal/hostile/megafauna/megabot/proc/shoot_n_charge()
+	say("RAAAAGH, DEWEY.... DIVE!!!!")
 	charge()
 	if(health < maxHealth/3)
 		if(prob(50))
 			charge(delay = 6)
 		else
-			burst_shot()
+			spread_shot()
 
 /mob/living/simple_animal/hostile/megafauna/megabot/proc/wind_up_visual(ranged = TRUE, silent = FALSE)
 	if(!silent)
 		playsound(src, 'sound/machines/synth_yes.ogg', 200, TRUE, 3, frequency = 6120)
-		visible_message(span_danger("The [src] [ranged ? "charges up it's laser!" : "prepares to charge!"]"))
+		visible_message(span_danger("\The [src] [ranged ? "charges up it's laser!" : "prepares to charge!"]"))
 	if(ranged)
+		say("GO, GO GADGET, MARCUS MACHINE GUN!!")
 		new /obj/effect/temp_visual/megabot/laser(loc,src)
 	else
 		new /obj/effect/temp_visual/megabot/charge(loc,src)
@@ -198,16 +185,9 @@
 	charging = FALSE
 
 /mob/living/simple_animal/hostile/megafauna/megabot/proc/plant_mine()
+	visible_message("\The [src] plants a mine!")
+	say("TAKE THIS, MY MARCUS MINE!!")
 	new /obj/item/mine/proximity/explosive/sting/live(loc)
-
-/mob/living/simple_animal/hostile/megafauna/megabot/proc/update_stategy()
-	switch(approach)
-		if(APPROACH_AGGRESSIVE)
-			retreat_distance = 0
-			minimum_distance = 0
-		if(APPROACH_RANGED)
-			retreat_distance = 5
-			minimum_distance = 5
 
 /mob/living/simple_animal/hostile/megafauna/megabot/AttackingTarget()
 	if(!charging)
@@ -237,6 +217,8 @@
 /mob/living/simple_animal/hostile/megafauna/megabot/Bump(atom/A)
 	var/atom/throw_target = get_edge_target_turf(A, dir)
 	if(charging)
+		if(QDELETED(A))
+			return
 		if(iswallturf(A))
 			var/turf/closed/wall/crushed = A
 			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
@@ -244,11 +226,10 @@
 			crushed.dismantle_wall(TRUE)
 		if(isobj(A))
 			var/obj/object = A
-			object.attack_animal(src)
-			if(!(object.resistance_flags & INDESTRUCTIBLE) && !QDELETED(object))
-				object.throw_at(throw_target, 4, 3)
 			visible_message(span_danger("[src] crashes into [A]!"))
 			playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
+			if(!(object.resistance_flags & INDESTRUCTIBLE))
+				object.throw_at(throw_target, 4, 3)
 		if(isliving(A))
 			var/mob/living/pancake = A
 			visible_message(span_danger("[src] slams into \the [pancake], sending [pancake.p_them()] flying!"))
@@ -261,7 +242,7 @@
 
 /mob/living/simple_animal/hostile/megafauna/megabot/death(gibbed, list/force_grant)
 	. = ..()
-	visible_message(span_danger("The [src]'s reactor begins to overload! It's gonna blow!"))
+	visible_message(span_danger("\The [src]'s reactor begins to overload! It's gonna blow!"))
 	playsound(src,'sound/machines/alarm.ogg',200,FALSE,2)
 	Shake(5,5, 13 SECONDS)
 	addtimer(CALLBACK(src, PROC_REF(self_destruct)), 13 SECONDS)
@@ -269,8 +250,24 @@
 /mob/living/simple_animal/hostile/megafauna/megabot/proc/self_destruct()
 	explosion(src,0,1,5,5, flame_range = 5, light_dam = 20, light_item_dam = 0, heavy_dam = 40, heavy_item_dam = 0)
 	new /obj/item/mob_trophy/megabot_reactor(loc)
+	visible_message("\The [src] self destructs, leaving behind a power core.")
 	qdel_self()
 
+/mob/living/simple_animal/hostile/megafauna/megabot/Life()
+	. = ..()
+	if(health < maxHealth/3)
+		if(!particles)
+			particles = new /particles/smoke/steam/vent
+	else if(particles)
+		particles = null
+
+/mob/living/simple_animal/hostile/megafauna/megabot/AttackingTarget()
+	. = ..()
+	if(isliving(target))
+		var/mob/living/bonk = target
+		if(!bonk.anchored)
+			var/atom/throw_target = get_edge_target_turf(bonk, src.dir)
+			bonk.throw_at(throw_target, rand(3,4), 2, src, gentle = TRUE)
 
 /obj/effect/temp_visual/megabot
 	icon = 'icons/mob/lavaland/64x64megafauna.dmi'
