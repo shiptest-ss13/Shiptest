@@ -110,6 +110,7 @@
 	return
 
 /obj/item/clipboard/examine_more(mob/user)
+	. = ..()
 	ui_interact(user)
 
 /obj/item/clipboard/ui_interact(mob/user, datum/tgui/ui)
