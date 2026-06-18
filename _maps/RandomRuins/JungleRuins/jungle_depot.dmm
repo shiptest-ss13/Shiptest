@@ -565,7 +565,9 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "dV" = (
-/obj/machinery/door/window/brigdoor/eastleft,
+/obj/machinery/door/window/brigdoor/eastleft{
+	name = "Office"
+	},
 /turf/open/floor/plasteel/stairs/jungleplanet/interior{
 	dir = 4
 	},
@@ -749,7 +751,9 @@
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "fy" = (
-/obj/machinery/door/airlock/command,
+/obj/machinery/door/airlock/command{
+	name = "Operations Office"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
@@ -794,7 +798,8 @@
 /area/ruin/jungle/depot/warehouse_2)
 "fM" = (
 /obj/machinery/door/airlock/mining{
-	dir = 4
+	dir = 4;
+	name = "Supply Office"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1251,6 +1256,13 @@
 /obj/item/storage/box/emptysandbags,
 /turf/open/floor/mineral/titanium/tiled/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"iN" = (
+/obj/machinery/door/airlock/public{
+	dir = 8;
+	name = "Bathroom"
+	},
+/turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
+/area/ruin/jungle/depot/residential)
 "iO" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -2182,7 +2194,9 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "pI" = (
-/obj/machinery/door/airlock/mining,
+/obj/machinery/door/airlock/mining{
+	name = "Warehouse 2"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -3253,7 +3267,9 @@
 /turf/open/floor/plasteel/tech/techmaint/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
 "xZ" = (
-/obj/machinery/door/airlock/security,
+/obj/machinery/door/airlock/security{
+	name = "Armory"
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "depot-robo";
 	close_exception = 1
@@ -3372,7 +3388,8 @@
 /area/ruin/jungle/depot/canteen)
 "yO" = (
 /obj/machinery/door/airlock/public{
-	dir = 8
+	dir = 8;
+	name = "Showers"
 	},
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
@@ -3416,7 +3433,9 @@
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
 "zk" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	name = "Canteen"
+	},
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
 "zq" = (
@@ -3623,12 +3642,14 @@
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "Ax" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
+	},
+/obj/machinery/door/airlock/public/glass{
+	name = "Canteen"
 	},
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
@@ -4266,7 +4287,9 @@
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "FC" = (
-/obj/machinery/door/airlock/mining,
+/obj/machinery/door/airlock/mining{
+	name = "Warehouse 3"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -5530,7 +5553,8 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "Od" = (
 /obj/machinery/door/airlock{
-	close_exception = 1
+	close_exception = 1;
+	name = "Bathroom"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
@@ -5778,7 +5802,9 @@
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Qe" = (
-/obj/machinery/door/airlock/public,
+/obj/machinery/door/airlock/public{
+	name = "Operations Complex"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -5929,7 +5955,9 @@
 /turf/open/floor/concrete/slab_4/jungleplanet/interior,
 /area/ruin/jungle/depot/electrical)
 "QP" = (
-/obj/machinery/door/airlock/public,
+/obj/machinery/door/airlock/public{
+	name = "Residential Area"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -5993,7 +6021,9 @@
 /turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/depot/residential)
 "Ru" = (
-/obj/machinery/door/airlock/public,
+/obj/machinery/door/airlock/public{
+	name = "Warehouse 1"
+	},
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)
 "Rw" = (
@@ -6465,7 +6495,9 @@
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_3)
 "UL" = (
-/obj/machinery/door/airlock/public,
+/obj/machinery/door/airlock/public{
+	name = "Supply Office"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/supply_office)
@@ -7094,7 +7126,9 @@
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "YL" = (
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	name = "Electrical"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -7112,7 +7146,9 @@
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
 "YR" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	name = "Director's Quarters"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/patterned/ridged/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
@@ -7191,7 +7227,8 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "ZJ" = (
 /obj/machinery/door/airlock{
-	dir = 8
+	dir = 8;
+	name = "Bathroom"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
@@ -8250,7 +8287,7 @@ wJ
 fN
 Ci
 Ci
-yO
+iN
 Ci
 Ci
 Az
