@@ -968,9 +968,8 @@
 /turf/open/floor/carpet/executive,
 /area/ship/crew/law_office)
 "eZ" = (
-/obj/structure/noticeboard{
-	name = "Supply Requests Board";
-	pixel_y = 25
+/obj/structure/noticeboard/directional/north{
+	name = "Supply Requests Board"
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/eastright,
@@ -2391,7 +2390,7 @@
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_y = -25
 	},
-/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
 /obj/item/clothing/suit/warra/medical_smock,
 /obj/item/clothing/head/warra/surgical,
 /obj/machinery/firealarm/directional/east,
@@ -2512,10 +2511,10 @@
 /area/ship/cargo)
 "nx" = (
 /obj/effect/turf_decal/warra/modern_big/top_right,
-/obj/effect/turf_decal/trimline/opaque/warrablue/line{
+/obj/effect/turf_decal/siding/thinplating{
 	dir = 5
 	},
-/obj/effect/turf_decal/siding/thinplating{
+/obj/effect/turf_decal/trimline/opaque/warrabluelight/line{
 	dir = 5
 	},
 /turf/open/floor/plasteel,
@@ -2625,7 +2624,7 @@
 /obj/item/storage/box/ids,
 /obj/machinery/light/small/directional/south,
 /obj/item/storage/box/PDAs,
-/obj/item/gun/energy/sharplite/x12,
+/obj/item/gun/energy/sharplite/volt,
 /obj/item/stock_parts/cell/gun/sharplite,
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm)
@@ -2926,10 +2925,10 @@
 /area/ship/storage/eva)
 "qO" = (
 /obj/effect/turf_decal/warra/modern_big/bottom_right,
-/obj/effect/turf_decal/trimline/opaque/warrablue/line{
+/obj/effect/turf_decal/siding/thinplating{
 	dir = 6
 	},
-/obj/effect/turf_decal/siding/thinplating{
+/obj/effect/turf_decal/trimline/opaque/warrabluelight/line{
 	dir = 6
 	},
 /turf/open/floor/plasteel,
@@ -3836,10 +3835,10 @@
 /area/ship/storage/eva)
 "vm" = (
 /obj/effect/turf_decal/warra/modern_big/bottom_left,
-/obj/effect/turf_decal/trimline/opaque/warrablue/line{
+/obj/effect/turf_decal/siding/thinplating{
 	dir = 10
 	},
-/obj/effect/turf_decal/siding/thinplating{
+/obj/effect/turf_decal/trimline/opaque/warrabluelight/line{
 	dir = 10
 	},
 /turf/open/floor/plasteel,
@@ -4086,10 +4085,10 @@
 "wr" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/warra/modern_big/top_left,
-/obj/effect/turf_decal/trimline/opaque/warrablue/line{
+/obj/effect/turf_decal/siding/thinplating{
 	dir = 9
 	},
-/obj/effect/turf_decal/siding/thinplating{
+/obj/effect/turf_decal/trimline/opaque/warrabluelight/line{
 	dir = 9
 	},
 /turf/open/floor/plasteel,
@@ -5836,8 +5835,8 @@
 /area/ship/hallway/starboard)
 "FR" = (
 /obj/effect/turf_decal/warra/modern_big/bottom_center,
-/obj/effect/turf_decal/trimline/opaque/warrablue/line,
 /obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/trimline/opaque/warrabluelight/line,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "FS" = (
@@ -5947,6 +5946,7 @@
 	},
 /obj/item/stack/tape,
 /obj/item/stamp/warra/ns/supply,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Gy" = (
@@ -6206,10 +6206,10 @@
 /area/ship/storage/eva)
 "Ia" = (
 /obj/effect/turf_decal/warra/modern_big/top_center,
-/obj/effect/turf_decal/trimline/opaque/warrablue/line{
+/obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/thinplating{
+/obj/effect/turf_decal/trimline/opaque/warrabluelight/line{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -6257,6 +6257,7 @@
 /obj/machinery/firealarm/directional/south,
 /obj/item/clothing/under/warra/supply/miner,
 /obj/item/clothing/glasses/meson,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Im" = (
@@ -6619,7 +6620,7 @@
 /obj/item/clothing/suit/warra/vest,
 /obj/item/storage/backpack/industrial,
 /obj/item/clothing/head/hardhat/warra,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/clothing/glasses/meson/engine,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering)
@@ -7163,10 +7164,10 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/warra/modern_big/center_left,
-/obj/effect/turf_decal/trimline/opaque/warrablue/line{
+/obj/effect/turf_decal/siding/thinplating{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/thinplating{
+/obj/effect/turf_decal/trimline/opaque/warrabluelight/line{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -7832,10 +7833,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/warra/modern_big/center_right,
-/obj/effect/turf_decal/trimline/opaque/warrablue/line{
+/obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/thinplating{
+/obj/effect/turf_decal/trimline/opaque/warrabluelight/line{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -8753,8 +8754,8 @@
 /obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
 	dir = 8
 	},
-/obj/item/gun/energy/sharplite/l305,
-/obj/item/gun/energy/sharplite/x26,
+/obj/item/gun/energy/sharplite/rush,
+/obj/item/gun/energy/sharplite/ohm,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Uw" = (
@@ -9733,6 +9734,7 @@
 /obj/item/clothing/gloves/fingerless,
 /obj/item/storage/backpack/messenger,
 /obj/machinery/firealarm/directional/south,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Zm" = (

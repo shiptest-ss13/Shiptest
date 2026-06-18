@@ -1,17 +1,39 @@
 /obj/item/clothing/gloves/color
+	name = "recolorable gloves"
+	desc = "A pair of gloves, they don't look special in any way."
+	icon_state = "black"
 	dying_key = DYE_REGISTRY_GLOVES
 	supports_variations = VOX_VARIATION
+	unique_reskin = list("black gloves" = "black",
+						"grey gloves" = "grey",
+						"blue gloves" = "blue",
+						"green gloves" = "green",
+						"orange gloves" = "orange",
+						"pink gloves" = "pink",
+						"red gloves" = "red",
+						"white gloves" = "white",
+						"yellow gloves" = "yellow",
+						"dark blue gloves" = "darkblue",
+						"teal gloves" = "teal",
+						"light purple gloves" = "lightpurple",
+						"dark green gloves" = "darkgreen",
+						"light brown gloves" = "lightbrown",
+						"brown gloves" = "brown",
+						"maroon gloves" = "maroon"
+						)
+	unique_reskin_changes_name = TRUE
 
-/obj/item/clothing/gloves/color/yellow
+/obj/item/clothing/gloves/insulated
 	desc = "These gloves provide protection against electric shock."
 	name = "insulated gloves"
-	icon_state = "yellow"
+	icon_state = "insulated"
 	item_state = "ygloves"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	resistance_flags = NONE
 	custom_price = 1200
 	custom_premium_price = 1200
+	supports_variations = VOX_VARIATION
 
 /obj/item/toy/sprayoncan
 	name = "spray-on insulation applicator"
@@ -23,7 +45,7 @@
 	if(iscarbon(target) && proximity)
 		var/mob/living/carbon/C = target
 		var/mob/living/carbon/U = user
-		var/success = C.equip_to_slot_if_possible(new /obj/item/clothing/gloves/color/yellow/sprayon, ITEM_SLOT_GLOVES, TRUE, TRUE)
+		var/success = C.equip_to_slot_if_possible(new /obj/item/clothing/gloves/insulated/sprayon, ITEM_SLOT_GLOVES, TRUE, TRUE)
 		if(success)
 			if(C == user)
 				C.visible_message(span_notice("[U] sprays their hands with glittery rubber!"))
@@ -34,7 +56,7 @@
 
 		qdel(src)
 
-/obj/item/clothing/gloves/color/yellow/sprayon
+/obj/item/clothing/gloves/insulated/sprayon
 	desc = "How're you gonna get 'em off, nerd?"
 	name = "spray-on insulated gloves"
 	icon_state = "sprayon"
@@ -42,39 +64,39 @@
 	resistance_flags = ACID_PROOF
 	var/shocks_remaining = 10
 
-/obj/item/clothing/gloves/color/yellow/sprayon/Initialize()
+/obj/item/clothing/gloves/insulated/sprayon/Initialize()
 	.=..()
 	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
-/obj/item/clothing/gloves/color/yellow/sprayon/equipped(mob/user, slot)
+/obj/item/clothing/gloves/insulated/sprayon/equipped(mob/user, slot)
 	. = ..()
 	RegisterSignal(user, COMSIG_LIVING_SHOCK_PREVENTED, PROC_REF(Shocked))
 
-/obj/item/clothing/gloves/color/yellow/sprayon/proc/Shocked()
+/obj/item/clothing/gloves/insulated/sprayon/proc/Shocked()
 	shocks_remaining--
 	if(shocks_remaining < 0)
 		qdel(src) //if we run out of uses, the gloves crumble away into nothing, just like my dreams after working with .dm
 
-/obj/item/clothing/gloves/color/yellow/sprayon/dropped()
+/obj/item/clothing/gloves/insulated/sprayon/dropped()
 	.=..()
 	qdel(src) //loose nodrop items bad
 
-/obj/item/clothing/gloves/color/yellow/sprayon/tape
+/obj/item/clothing/gloves/insulated/sprayon/tape
 	name = "taped-on insulated gloves"
 	desc = "This is a totally safe idea."
 	icon_state = "yellowtape"
 	mob_overlay_state = "sprayon"
 	shocks_remaining = 3
 
-/obj/item/clothing/gloves/color/yellow/sprayon/tape/Initialize()
+/obj/item/clothing/gloves/insulated/sprayon/tape/Initialize()
 	.=..()
 	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
-/obj/item/clothing/gloves/color/yellow/sprayon/tape/equipped(mob/user, slot)
+/obj/item/clothing/gloves/insulated/sprayon/tape/equipped(mob/user, slot)
 	. = ..()
 	RegisterSignal(user, COMSIG_LIVING_SHOCK_PREVENTED, PROC_REF(Shocked))
 
-/obj/item/clothing/gloves/color/yellow/sprayon/tape/Shocked(mob/user)
+/obj/item/clothing/gloves/insulated/sprayon/tape/Shocked(mob/user)
 	if(prob(50)) //Fear the unpredictable
 		shocks_remaining--
 	if(shocks_remaining <= 0)
@@ -86,11 +108,12 @@
 /obj/item/clothing/gloves/color/fyellow
 	desc = "These gloves are cheap knockoffs of the coveted ones - no way this can end badly."
 	name = "budget insulated gloves"
-	icon_state = "yellow"
+	icon_state = "insulated"
 	item_state = "ygloves"
 	siemens_coefficient = 1	//Set to a default of 1, gets overridden in Initialize()
 	permeability_coefficient = 0.05
 	resistance_flags = NONE
+	unique_reskin = null
 
 /obj/item/clothing/gloves/color/fyellow/Initialize()
 	. = ..()
@@ -114,6 +137,7 @@
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	resistance_flags = NONE
 	var/can_be_cut = TRUE
+	unique_reskin = null
 
 /obj/item/clothing/gloves/color/black/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WIRECUTTER)
@@ -126,54 +150,58 @@
 
 /obj/item/clothing/gloves/color/orange
 	name = "orange gloves"
-	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "orange"
 
 /obj/item/clothing/gloves/color/red
 	name = "red gloves"
-	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "red"
 
-/obj/item/clothing/gloves/color/red/insulated
-	name = "insulated gloves"
-	desc = "These gloves provide protection against electric shock."
-	siemens_coefficient = 0
-	permeability_coefficient = 0.05
-	resistance_flags = NONE
+/obj/item/clothing/gloves/color/maroon
+	name = "maroon gloves"
+	icon_state = "maroon"
 
-/obj/item/clothing/gloves/color/rainbow
-	name = "rainbow gloves"
-	desc = "A pair of gloves, they don't look special in any way."
-	icon_state = "rainbow"
+/obj/item/clothing/gloves/color/yellow
+	name = "yellow gloves"
+	icon_state = "yellow"
+
+/obj/item/clothing/gloves/color/teal
+	name = "teal gloves"
+	icon_state = "teal"
 
 /obj/item/clothing/gloves/color/blue
 	name = "blue gloves"
-	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "blue"
 
-/obj/item/clothing/gloves/color/purple
+/obj/item/clothing/gloves/color/darkblue
+	name = "dark blue gloves"
+	icon_state = "darkblue"
+
+/obj/item/clothing/gloves/color/lightpurple
 	name = "purple gloves"
-	desc = "A pair of gloves, they don't look special in any way."
-	icon_state = "purple"
+	icon_state = "lightpurple"
+
+/obj/item/clothing/gloves/color/pink
+	name = "pink gloves"
+	icon_state = "pink"
 
 /obj/item/clothing/gloves/color/green
 	name = "green gloves"
-	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "green"
+
+/obj/item/clothing/gloves/color/darkgreen
+	name = "dark green gloves"
+	icon_state = "darkgreen"
 
 /obj/item/clothing/gloves/color/grey
 	name = "grey gloves"
-	desc = "A pair of gloves, they don't look special in any way."
-	icon_state = "gray"
+	icon_state = "grey"
 
 /obj/item/clothing/gloves/color/light_brown
 	name = "light brown gloves"
-	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "lightbrown"
 
 /obj/item/clothing/gloves/color/brown
 	name = "brown gloves"
-	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "brown"
 
 /obj/item/clothing/gloves/color/captain
@@ -188,54 +216,61 @@
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	strip_delay = 60
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 50)
+	unique_reskin = null
 
 /obj/item/clothing/gloves/color/captain/warra
 	desc = "Regal blue gloves with gold trim and a fire and acid-resistant coating. Swanky."
 	name = "captain's gloves"
 	icon_state = "captainwarra"
 
-/obj/item/clothing/gloves/color/latex
-	name = "latex gloves"
-	desc = "Cheap sterile gloves made from latex. Transfers minor paramedic knowledge to the user via budget nanochips."
-	icon_state = "latex"
-	item_state = "lgloves"
+/obj/item/clothing/gloves/nitrile
+	name = "nitrile gloves"
+	desc = "Thick sterile gloves that reach up to the elbows. The material makes it easier to pick up patients."
+	icon_state = "nitrile_white"
 	siemens_coefficient = 0.3
 	permeability_coefficient = 0.01
-	transfer_prints = TRUE
+	transfer_prints = FALSE
 	resistance_flags = NONE
-	var/carrytrait = TRAIT_QUICK_CARRY
+	var/carrytrait = TRAIT_QUICKER_CARRY
+	//supports_variations = KEPORI_VARIATION
+	supports_variations = VOX_VARIATION
+	unique_reskin = null
 
-/obj/item/clothing/gloves/color/latex/equipped(mob/user, slot)
+/obj/item/clothing/gloves/nitrile/equipped(mob/user, slot)
 	..()
 	if(slot == ITEM_SLOT_GLOVES)
 		ADD_TRAIT(user, carrytrait, CLOTHING_TRAIT)
 
-/obj/item/clothing/gloves/color/latex/dropped(mob/user)
+/obj/item/clothing/gloves/nitrile/dropped(mob/user)
 	..()
 	REMOVE_TRAIT(user, carrytrait, CLOTHING_TRAIT)
 
-/obj/item/clothing/gloves/color/latex/nitrile
-	name = "nitrile gloves"
-	desc = "Pricy sterile gloves that are thicker than latex. Transfers intimate paramedic knowledge into the user via nanochips."
-	icon_state = "nitrile"
-	transfer_prints = FALSE
-	carrytrait = TRAIT_QUICKER_CARRY
-	//supports_variations = KEPORI_VARIATION
+/obj/item/clothing/gloves/nitrile/blue
+	///come to think about it, a lot of gloves that don't need to be pathed under color could be moved to something else
+	icon_state = "nitrile_blue"
 
-/obj/item/clothing/gloves/color/latex/nitrile/evil
+
+/obj/item/clothing/gloves/nitrile/pink
+	icon_state = "nitrile_pink"
+
+
+/obj/item/clothing/gloves/nitrile/green
+	icon_state = "nitrile_green"
+
+/obj/item/clothing/gloves/nitrile/evil
 	name = "red nitrile gloves"
-	desc = "Thick sterile gloves that reach up to the elbows, in exactly the same color as fresh blood. Transfers combat medic knowledge into the user via nanochips."
+	desc = "Thick sterile gloves that reach up to the elbows, in exactly the same color as fresh blood. The material makes it easier to pick up patients."
 	icon_state = "nitrile_evil"
 
-/obj/item/clothing/gloves/color/latex/nitrile/infiltrator
+/obj/item/clothing/gloves/nitrile/infiltrator
 	name = "infiltrator gloves"
-	desc = "Specialized combat gloves for carrying people around. Transfers tactical kidnapping knowledge into the user via nanochips."
+	desc = "Specialized combat gloves for carrying people around. The material makes it easier to pick up people."
 	icon_state = "infiltrator"
 	siemens_coefficient = 0.5
 	permeability_coefficient = 0.3
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
-/obj/item/clothing/gloves/color/latex/engineering
+/obj/item/clothing/gloves/nitrile/engineering
 	name = "tinker's gloves"
 	desc = "Overdesigned engineering gloves that have automated construction subrutines dialed in, allowing for faster construction while worn."
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
@@ -247,17 +282,7 @@
 
 /obj/item/clothing/gloves/color/white
 	name = "white gloves"
-	desc = "These look pretty fancy."
 	icon_state = "white"
-	item_state = "lgloves"
-	custom_price = 200
-
-/obj/item/clothing/gloves/color/evening
-	name = "evening gloves"
-	desc = "White satin gloves that rise up to the elbows. Excessively fancy."
-	icon_state = "evening_gloves"
-	item_state = "lgloves"
-	custom_price = 200
 
 /obj/item/clothing/gloves/maid
 	name = "maid arm covers"

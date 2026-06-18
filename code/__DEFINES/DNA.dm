@@ -106,24 +106,23 @@
 #define HAIR 2
 #define FACEHAIR 3
 #define EYECOLOR 4
-#define SCLERA 5
-#define EMOTE_OVERLAY 6
-#define LIPS 7
-#define NOBLOOD 8
-#define NOTRANSSTING 9
+#define EMOTE_OVERLAY 5
+#define LIPS 6
+#define NOBLOOD 7
+#define NOTRANSSTING 8
 /// Used if we want the mutant colour to be only used by mutant bodyparts. Don't combine this with MUTCOLORS, or it will be useless.
-#define MUTCOLORS_PARTSONLY 10
-#define NOZOMBIE 11
-#define NO_UNDERWEAR 12
-#define NOLIVER 13
-#define NOSTOMACH 14
-#define NO_DNA_COPY 15
-#define DRINKSBLOOD 16
-#define NOFLASH 17
-#define DYNCOLORS 18 //! Use this if you want to change the race's color without the player being able to pick their own color. AKA special color shifting TRANSLATION: AWFUL.
-#define AGENDER 19
-#define NOEYESPRITES 20 //! Do not draw eyes or eyeless overlay
-#define NOREAGENTS 21 //! DO NOT PROCESS REAGENTS
+#define MUTCOLORS_PARTSONLY 9
+#define NOZOMBIE 10
+#define NO_UNDERWEAR 11
+#define NOLIVER 12
+#define NOSTOMACH 13
+#define NO_DNA_COPY 14
+#define DRINKSBLOOD 15
+#define NOFLASH 16
+#define DYNCOLORS 17 //! Use this if you want to change the race's color without the player being able to pick their own color. AKA special color shifting TRANSLATION: AWFUL.
+#define AGENDER 18
+#define NOEYESPRITES 19 //! Do not draw eyes or eyeless overlay
+#define NOREAGENTS 20 //! DO NOT PROCESS REAGENTS
 #define REVIVESBYHEALING 21 // Will revive on heal when healing and total HP > 0.
 #define NOHUSK 22 // Can't be husked.
 #define NOMOUTH 23

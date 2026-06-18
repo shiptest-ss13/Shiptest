@@ -116,7 +116,7 @@
 	min_val = 0
 
 /datum/config_entry/number/vote_period  // length of voting period (deciseconds, default 1 minute)
-	config_entry_value = 600
+	config_entry_value = 3 MINUTES
 	integer = FALSE
 	min_val = 0
 
@@ -189,12 +189,6 @@
 	protection = CONFIG_ENTRY_LOCKED
 
 /datum/config_entry/flag/load_legacy_ranks_only	//Loads admin ranks only from legacy admin_ranks.txt, while enabled ranks are mirrored to the database
-	protection = CONFIG_ENTRY_LOCKED
-
-/datum/config_entry/flag/mentors_mobname_only // Only display mob name to mentors in mentorhelps
-	protection = CONFIG_ENTRY_LOCKED
-
-/datum/config_entry/flag/mentor_legacy_system // Whether to use the legacy mentor system (flat file) instead of SQL
 	protection = CONFIG_ENTRY_LOCKED
 
 /datum/config_entry/string/hostedby

@@ -446,6 +446,28 @@
 	stock_max = 2
 	availability_prob = 30
 
+/datum/blackmarket_item/weapon/guncase/bockadam
+	name = "SG-60db Bockadam Combat Shotgun"
+	desc = "Some Ramzi tinkerers have been playing around with the idea of making a Bulldog fire in two-round bursts - twice the 12 gauge for the same amount of gun. It wears like hell, but no one wants to be on the receiving end."
+	item = /obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
+
+	cost_min = 3500
+	cost_max = 4500
+	stock_min = 1
+	stock_max = 2
+	availability_prob = 25
+
+/datum/blackmarket_item/weapon/guncase/gaboon
+	name = "CSG-12 Gaboon Compact Shotgun"
+	desc = "These old ass Scarborough designs are easy to find layin' around, especially these cute little relics. Unlike their newer toys it's pump-action so make sure you get your hand exercises in, yeah?"
+	item = /obj/item/gun/ballistic/shotgun/gaboon
+
+	cost_min = 2500
+	cost_max = 3200
+	stock_min = 1
+	stock_max = 2
+	availability_prob = 25
+
 /datum/blackmarket_item/weapon/guncase/f3
 	name = "F3 Marksman Rifle"
 	desc = "Let's bring it back old school. These vintage marksman rifles were the predecessor to the F4, but that doesn't make them any less deadly. After all, 3 is closer to number 1! Chambered in .308."
@@ -500,6 +522,19 @@
 	cost_min = 5000
 	cost_max = 7000
 	stock_max = 2
+	availability_prob = 15
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/guncase/rail_cannon
+	name = "Model 'Atelier' Railgun"
+	desc = "If you ask me, warfare boils down to basically throwing rocks as fast and hard as possible. This thing might not be fast, but it's certainly hard as hell. Chambered in ferromagnetic rods to put a baseball sized hole in your unlucky victim."
+	item = /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+	mag_type = /obj/item/ammo_box/magazine/ammo_stack/prefilled/ferrorods
+	pair_item = list(/datum/blackmarket_item/ammo/rods)
+
+	cost_min = 6500
+	cost_max = 8000
+	stock = 1
 	availability_prob = 15
 	spawn_weighting = FALSE
 

@@ -42,6 +42,10 @@
 	display_name = "mantle, recolorable"
 	path = /obj/item/clothing/neck/mantle
 
+/datum/gear/accessory/shawl
+	display_name = "shawl, recolorable"
+	path = /obj/item/clothing/neck/shawl
+
 //neckwraps
 
 /datum/gear/accessory/neckwraps
@@ -85,6 +89,10 @@
 	description = "Standard hand coverings for everyday use."
 	path = /obj/item/clothing/gloves/color/black
 
+/datum/gear/accessory/gloves/color
+	display_name = "gloves, recolorable"
+	path = /obj/item/clothing/gloves/color
+
 /datum/gear/accessory/gloves/long
 	display_name = "long gloves, colorable"
 	path = /obj/item/clothing/gloves/long
@@ -111,11 +119,6 @@
 	display_name = "gloves, fingerless"
 	description = "Radical hand coverings for everyday use."
 	path = /obj/item/clothing/gloves/fingerless
-
-/datum/gear/accessory/gloves/evening
-	display_name = "gloves, evening"
-	description = "Excessively fancy elbow-length gloves."
-	path = /obj/item/clothing/gloves/color/evening
 
 //Bone
 
@@ -184,6 +187,11 @@
 /datum/gear/accessory/waistcoatwhite
 	display_name = "white waistcoat"
 	path = /obj/item/clothing/accessory/waistcoat/white
+	slot = null
+
+/datum/gear/accessory/barcoat
+	display_name = "bartender waistcoat"
+	path = /obj/item/clothing/accessory/barcoat
 	slot = null
 
 /datum/gear/accessory/stethoscope

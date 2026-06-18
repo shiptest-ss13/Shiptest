@@ -3,7 +3,11 @@
 /obj/item/reagent_containers/glass/bottle
 	name = "bottle"
 	desc = "A small bottle."
+	icon = 'icons/obj/chemical/beakers.dmi'
+	world_file = 'icons/obj/chemical/beakers_world.dmi'
 	icon_state = "bottle"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	item_state = "atoxinbottle"
 	possible_transfer_amounts = list(5,10,15,25,30)
 	volume = 30

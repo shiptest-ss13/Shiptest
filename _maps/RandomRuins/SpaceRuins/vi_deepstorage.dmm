@@ -984,8 +984,8 @@
 /obj/effect/turf_decal/trimline/opaque/vired/warning{
 	dir = 5
 	},
-/obj/item/gun/energy/sharplite/l201/l204,
-/obj/item/gun/energy/sharplite/l201,
+/obj/item/gun/energy/sharplite/surge,
+/obj/item/gun/energy/sharplite/volt,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/deepstorage/security)
 "gI" = (
@@ -2854,7 +2854,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/hallway/upper)
 "rW" = (
-/obj/item/gun/energy/sharplite/x01{
+/obj/item/gun/energy/sharplite/yari{
 	spawn_no_ammo = 1;
 	pixel_x = 17;
 	pixel_y = 2
@@ -4626,15 +4626,15 @@
 	},
 /obj/effect/turf_decal/siding/yellow,
 /obj/structure/rack,
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = 0;
 	pixel_y = 9
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = 0;
 	pixel_y = 4
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = 0;
 	pixel_y = -1
 	},
@@ -4664,10 +4664,7 @@
 	pixel_x = -11;
 	pixel_y = 22
 	},
-/obj/structure/noticeboard{
-	pixel_x = 8;
-	pixel_y = 24
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders{
 	pixel_x = 9;
 	pixel_y = 21
@@ -4727,10 +4724,7 @@
 /area/ruin/space/has_grav/deepstorage/lobby)
 "En" = (
 /obj/structure/chair/office/dark,
-/obj/structure/noticeboard{
-	pixel_x = 0;
-	pixel_y = 26
-	},
+/obj/structure/noticeboard/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/deepstorage/engineering)
 "Eq" = (
@@ -5588,10 +5582,7 @@
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 1
 	},
-/obj/structure/noticeboard{
-	pixel_x = 0;
-	pixel_y = 26
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders{
 	pixel_x = 3;
 	pixel_y = 25
@@ -7255,11 +7246,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 10
 	},
-/obj/structure/noticeboard{
-	pixel_x = 0;
-	pixel_y = -24;
-	dir = 1
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders{
 	pixel_x = 0;
 	pixel_y = -18

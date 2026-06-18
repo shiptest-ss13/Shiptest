@@ -24,3 +24,12 @@
 /turf/open/floor/engine/hull/reinforced/interior
 	name = "interior reinforced hull plating"
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+
+/turf/open/floor/engine/hull/reinforced/beach
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/engine/hull/reinforced/beach/lit
+	light_range = 2
+	light_power = 0.80
+	light_color = COLOR_BEACHPLANET_LIGHT
+

@@ -17,7 +17,7 @@
 		report = new
 
 	// We go backwards, so it'll be innermost objects sold first
-	for(var/i in reverseRange(contents))
+	for(var/i in reverse_range(contents))
 		var/atom/movable/thing = i
 		var/sold = FALSE
 		if(QDELETED(thing))
@@ -95,8 +95,13 @@
 		// definite integral from (old amount sold) to (new amount sold) of the cost function.
 		// this applies even when the amount being sold is one unit, decreasing it slightly,
 		// so that selling even half a unit twice is no more effective than selling the whole unit, ignoring rounding.
-		return max(sell_floor, round(
-			(true_cost/log(1 - elasticity_coeff)) * ((1 - elasticity_coeff)**(amount) - 1),
+
+		// We get the point at which the elasticity function reachs the sell floor
+		var/eq_point = INFINITY
+		if (sell_floor > 0)
+			eq_point = log(sell_floor/cost)/log(1-elasticity_coeff)
+		return max(sell_floor*amount, round(
+			(true_cost/log(1 - elasticity_coeff)) * ((1 - elasticity_coeff)**min(amount, eq_point) - 1) + sell_floor*max(0, amount-eq_point),
 			1
 		))
 	else
@@ -138,6 +143,8 @@
 	if(!dry_run)
 		if(apply_elastic)
 			true_cost *= (1 - elasticity_coeff)**amount
+			if(true_cost < sell_floor)
+				true_cost = sell_floor
 		SSblackbox.record_feedback("nested tally", "export_sold_cost", 1, list("[O.type]", "[the_cost]"))
 		SSblackbox.record_feedback("tally", "export_sold_cost_total", the_cost, O.type)
 	if(true_cost != cost)

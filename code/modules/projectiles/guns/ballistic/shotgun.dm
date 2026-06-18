@@ -137,64 +137,96 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
 	name = "improvised shotgun"
 	desc = "A length of pipe and miscellaneous bits of scrap fashioned into a rudimentary single-shot shotgun."
-	icon = 'icons/obj/guns/projectile.dmi'
+	icon = 'icons/obj/guns/manufacturer/hermits/48x32.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
-	mob_overlay_icon = null
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hermits/onmob.dmi'
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	base_icon_state = "ishotgun"
 	icon_state = "ishotgun"
 	item_state = "ishotgun"
 	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	force = 10
-	slot_flags = null
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/improvised,
 	)
 	sawn_desc = "I'm just here for the gasoline."
 	unique_reskin = null
-	var/slung = FALSE
+	manufacturer = MANUFACTURER_NONE
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/attackby(obj/item/A, mob/user, params)
-	..()
-	if(istype(A, /obj/item/stack/cable_coil) && !sawn_off)
-		var/obj/item/stack/cable_coil/C = A
-		if(C.use(10))
-			slot_flags = ITEM_SLOT_BACK
-			to_chat(user, span_notice("You tie the lengths of cable to the shotgun, making a sling."))
-			slung = TRUE
-			update_appearance()
-		else
-			to_chat(user, span_warning("You need at least ten lengths of cable if you want to make a sling!"))
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 35,
+			"y" = 16,
+		),
+	)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/update_icon_state()
 	. = ..()
-	if(slung)
-		item_state = "ishotgunsling"
-	if(sawn_off)
-		item_state = "ishotgun_sawn"
-
-/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/update_overlays()
-	. = ..()
-	if(slung)
-		. += "ishotgunsling"
-	if(sawn_off)
-		. += "ishotgun_sawn"
+	if(current_skin)
+		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""][bolt_locked ? "_open" : ""]"
+	else
+		icon_state = "[base_icon_state || initial(icon_state)][sawn_off ? "_sawn" : ""][bolt_locked ? "_open" : ""]"
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawoff(forced = FALSE)
 	. = ..()
-	if(. && slung) //sawing off the gun removes the sling
-		new /obj/item/stack/cable_coil(get_turf(src), 10)
-		slung = 0
-		update_appearance()
+	if(.)
+		weapon_weight = WEAPON_MEDIUM
+		w_class = WEIGHT_CLASS_SMALL
+		slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
+		wield_slowdown = wield_slowdown-0.1
+		wield_delay = 0.3 SECONDS //OP? maybe
+
+		lefthand_file = 'icons/obj/guns/manufacturer/hermits/lefthand.dmi'
+		righthand_file = 'icons/obj/guns/manufacturer/hermits/righthand.dmi'
+		inhand_x_dimension = 32
+		inhand_y_dimension = 32
+
+		spread = 8
+		spread_unwielded = 15
+		recoil = 3 //or not
+		recoil_unwielded = 5
+		icon_state = "ishotgun_sawn"
+		item_state = "ishotgun_sawn"
+		mob_overlay_state = item_state
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn
+	icon = 'icons/obj/guns/manufacturer/hermits/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hermits/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hermits/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hermits/onmob.dmi'
+	inhand_x_dimension = 32
+	inhand_y_dimension = 32
+	icon_state = "ishotgun_sawn"
+	item_state = "ishotgun_sawn"
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	sawn_off = TRUE
+	wield_slowdown = 0.15
+	wield_delay = 0.3 SECONDS //OP? maybe
+
+	spread = 8
+	spread_unwielded = 15
+	recoil = 3 //or not
+	recoil_unwielded = 5
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 22,
+			"y" = 16,
+		),
+	)
 
 //god fucking bless brazil
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil

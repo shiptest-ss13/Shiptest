@@ -103,6 +103,14 @@
 	display_name = " lime hazard jacket"
 	path = /obj/item/clothing/suit/toggle/hazard/lime
 
+/datum/gear/suit/chorejacketteceti
+	display_name = "chore jacket, riso-teceian"
+	path = /obj/item/clothing/suit/toggle/chorejacket/teceti
+
+/datum/gear/suit/chorejacket
+	display_name = "chore jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/chorejacket
+
 /datum/gear/suit/overcoat
 	display_name = "overcoat, colorable"
 	path = /obj/item/clothing/suit/toggle/overcoat
@@ -122,6 +130,11 @@
 /datum/gear/suit/jacket/puffervest
 	display_name = "puffervest, colorable"
 	path = /obj/item/clothing/suit/toggle/puffervest
+
+/datum/gear/suit/jacket/track
+	display_name = "track jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/track
+
 //Suspenders
 /datum/gear/suit/suspenders
 	subtype_path = /datum/gear/suit/suspenders

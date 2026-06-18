@@ -13,11 +13,7 @@
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = -9
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_y = 34
 	},
@@ -628,11 +624,11 @@
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/gun/energy/sharplite/x26,
-/obj/item/gun/energy/sharplite/l201/l204,
-/obj/item/gun/energy/sharplite/l201/l204,
-/obj/item/gun/energy/sharplite/l201/l204,
-/obj/item/gun/energy/sharplite/x46,
+/obj/item/gun/energy/sharplite/ohm,
+/obj/item/gun/energy/sharplite/amperage,
+/obj/item/gun/energy/sharplite/volt,
+/obj/item/gun/energy/sharplite/volt,
+/obj/item/gun/energy/sharplite/volt,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "eu" = (
@@ -762,9 +758,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines/starboard)
 "fy" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D"
-	},
+/obj/effect/turf_decal/siding/wood/maple,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -1631,9 +1625,7 @@
 /turf/open/floor/wood/maple,
 /area/ship/crew/dorm/captain)
 "kO" = (
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/machinery/holopad,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3646,7 +3638,7 @@
 /obj/item/storage/toolbox/electrical{
 	pixel_y = -6
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = -4
 	},
 /obj/item/t_scanner{
@@ -4207,10 +4199,7 @@
 	pixel_x = -7;
 	pixel_y = 1
 	},
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/structure/noticeboard/directional/west,
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_y = -20;
@@ -4353,10 +4342,7 @@
 /area/ship/hallway/port)
 "EQ" = (
 /obj/structure/table,
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/line{
 	dir = 5
 	},
@@ -4535,9 +4521,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "FT" = (
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/dirt,
@@ -5097,6 +5081,10 @@
 	pixel_x = 8;
 	pixel_y = -13
 	},
+/obj/item/clothing/suit/toggle/chorejacket/warra,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -5330,9 +5318,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Lt" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D"
-	},
+/obj/effect/turf_decal/siding/wood/maple,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -5516,9 +5502,7 @@
 "Mz" = (
 /obj/structure/chair/sofa/brown/corpo/left/directional/south,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/aft)
 "MA" = (
@@ -5654,6 +5638,10 @@
 	pixel_x = 8;
 	pixel_y = -13
 	},
+/obj/item/clothing/suit/toggle/chorejacket/warra,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/crew/dorm/dormtwo)
 "ME" = (
@@ -5783,8 +5771,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "Nr" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/maple{
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -6463,8 +6450,8 @@
 	pixel_x = 5;
 	pixel_y = -7
 	},
-/obj/item/clothing/gloves/color/latex,
-/obj/item/clothing/gloves/color/latex/nitrile{
+/obj/item/clothing/gloves/nitrile,
+/obj/item/clothing/gloves/nitrile/blue{
 	pixel_y = -5
 	},
 /obj/item/clothing/suit/toggle/labcoat/warra/paramedic{
@@ -7182,6 +7169,9 @@
 /obj/item/clothing/gloves/color/black{
 	pixel_y = 5
 	},
+/obj/item/clothing/suit/toggle/chorejacket/warra{
+	pixel_x = -5
+	},
 /obj/item/clothing/suit/warra/vest{
 	pixel_x = 5
 	},
@@ -7249,10 +7239,7 @@
 	pixel_y = 36;
 	pixel_x = -8
 	},
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/item/paper/guides/drill{
 	pixel_y = 8;
 	pixel_x = 8

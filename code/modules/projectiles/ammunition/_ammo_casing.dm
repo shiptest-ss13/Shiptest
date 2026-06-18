@@ -191,6 +191,8 @@
 
 /obj/item/ammo_casing/proc/on_eject(atom/shooter)
 	forceMove(drop_location()) //Eject casing onto ground.
+	if(QDELETED(src))
+		return
 	pixel_x = rand(-4, 4)
 	pixel_y = rand(-4, 4)
 	pixel_z = 8 //bounce time

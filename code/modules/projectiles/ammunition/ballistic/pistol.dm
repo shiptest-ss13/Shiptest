@@ -111,6 +111,13 @@
 	caliber = "22lr"
 	stack_size = 25
 
+/obj/item/ammo_casing/c22lr/surplus
+	name = ".22 LR surplus bullet casing"
+	desc = "A .22 LR surplus bullet casing."
+	projectile_type = /obj/projectile/bullet/c22lr/surplus
+	bullet_skin = "surplus"
+	wear_modifier = 2
+
 /obj/item/ammo_casing/c22lr/hp
 	name = ".22 LR HP bullet casing"
 	desc = "A .22 LR bullet HP casing."

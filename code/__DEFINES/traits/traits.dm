@@ -279,6 +279,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NAIVE "naive"
 #define TRAIT_PRIMITIVE "primitive"
 #define TRAIT_GUNSLINGER "gunslinger"
+#define TRAIT_ELECTRONIC_VOICEBOX "electronic_voicebox"
 #define TRAIT_SPECIAL_TRAUMA_BOOST "special_trauma_boost" ///Increases chance of getting special traumas, makes them harder to cure
 #define TRAIT_BLOODCRAWL_EAT "bloodcrawl_eat"
 #define TRAIT_SPACEWALK "spacewalk"
@@ -323,6 +324,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
 /// You can't see color!
 #define TRAIT_COLORBLIND "colorblind"
+/// You've got a tail.
+#define TRAIT_TAILED "tailed"
 
 /* Traits for ventcrawling.
  * Both give access to ventcrawling, but *_NUDE requires the user to be
@@ -396,12 +399,13 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 ///Trait for allowing an item that isn't food into the customizable reagent holder
 #define TRAIT_ODD_CUSTOMIZABLE_FOOD_INGREDIENT "odd_customizable_food_ingredient"
 
+///Replaces all of a mob's limbs and organs with cybernetics at roundstart.
+#define TRAIT_USE_PROSTHETIC "use_prosthetic"
+///This human's a mutant!
+#define TRAIT_GENEMODDED "genemodded"
+
 ///Trait granted by lipstick
 #define LIPSTICK_TRAIT "lipstick_trait"
-
-//Bone breaking traits. Don't actually do anything(?)
-#define TRAIT_NOBREAK "no_break"
-#define TRAIT_ALLBREAK "all_break"
 
 //common trait sources
 #define TRAIT_GENERIC "generic"
