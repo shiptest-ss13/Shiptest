@@ -12,6 +12,8 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_POINTY
+	attack_cooldown = LIGHT_WEAPON_CD
+	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	slot = ATTACHMENT_SLOT_MUZZLE
 
 	pixel_shift_x = 1

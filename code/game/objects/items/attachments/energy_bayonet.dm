@@ -9,6 +9,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_NONE
+	attack_cooldown = LIGHT_WEAPON_CD
 	slot = ATTACHMENT_SLOT_MUZZLE
 	attach_features_flags = ATTACH_TOGGLE | ATTACH_REMOVABLE_HAND
 
@@ -39,6 +40,7 @@
 	sharpness = toggled ? SHARP_POINTY : SHARP_NONE
 	force = toggled ? 20 : 3
 	throwforce = toggled ? 15 : 2
+	embedding = toggled ? list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10 "ignore_throwspeed_threshold" = TRUE) : null
 
 /obj/item/attachment/energy_bayonet/attack_self(mob/user)
 	toggle_attachment()
