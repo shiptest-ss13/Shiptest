@@ -10,6 +10,7 @@
 	permeability_coefficient = 0.01
 	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	resistance_flags = NONE
+	supports_variations = KEPORI_VARIATION | SNOUTED_VARIATION | VOX_VARIATION
 
 	equip_sound = 'sound/items/equip/armor_equip.ogg'
 	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
@@ -32,7 +33,7 @@
 
 /obj/item/clothing/mask/gas/atmos/captain
 	name = "captain's gas mask"
-	desc = "Nanotrasen cut corners and repainted a spare atmospheric gas mask, but don't tell anyone."
+	desc = "Makosso-Warra cut corners and repainted a spare atmospheric gas mask, but don't tell anyone."
 	icon_state = "gas_cap"
 	item_state = "gas_cap"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -86,6 +87,7 @@
 	desc = "A close-fitting tactical mask that can be connected to an air supply."
 	icon_state = "syndicate"
 	strip_delay = 60
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/mask/gas/syndicate/voicechanger
 	desc = "A close-fitting tactical mask that can be connected to an air supply. This one has an integrated voice changer."

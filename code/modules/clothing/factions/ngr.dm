@@ -61,6 +61,12 @@
 	icon_state = "ngr_foreman"
 	item_state = "blackcloth"
 
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+
 /obj/item/clothing/suit/ngr/smock
 	name = "blood red smock"
 	desc = "A blood-red surgical smock typically worn by field medics of the New Gorlex Republic. It hides red blood really well!"
@@ -151,6 +157,28 @@
 	greyscale_colors = list("#33353a", "#d9ad82", "#8c1a34")
 	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/ngr
+	name = "elite beige-red hardsuit helmet"
+	desc = "A customized version of the infamous elite blood-red, fitting the high standards of the 2nd Battlegroup, boasting its widely known improved armor and fireproofing. It is in EVA mode. Property of Gorlex 2nd Battlegroup."
+	alt_desc = "A customized version of the infamous elite blood-red, fitting the high standards of the 2nd Battlegroup, boasting its widely known improved armor and fireproofing. It is in combat mode. Property of Gorlex 2nd Battlegroup."
+	icon_state = "hardsuit0-ngrelite"
+	hardsuit_type = "ngrelite"
+	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+
+/obj/item/clothing/suit/space/hardsuit/syndi/elite/ngr
+	name = "elite beige-red hardsuit"
+	desc = "A customized version of the infamous elite blood-red, fitting the high standards of the 2nd Battlegroup, boasting its widely known improved armor and fireproofing. It is in travel mode."
+	alt_desc = "A customized version of the infamous elite blood-red, fitting the high standards of the 2nd Battlegroup, boasting its widely known improved armor and fireproofing. It is in combat mode."
+	icon_state = "hardsuit0-ngrelite"
+	item_state = "hardsuit0-ngrelite"
+	hardsuit_type = "ngrelite"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/ngr
+	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
+	jetpack = null
+	supports_variations = DIGITIGRADE_VARIATION
+
 /obj/item/clothing/head/helmet/space/plasmaman/ngr
 	name = "NGR phorid envirosuit helmet"
 	desc = "An envirohelmet designed for phorids of the New Gorlex Republic, with intimidating blood-red stripes."
@@ -173,6 +201,31 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
 	icon_state = "hardsuit0-ngreod"
 	hardsuit_type = "ngreod"
+
+/obj/item/clothing/suit/space/hardsuit/mining/heavy/ngr
+	name = "NGR mining hardsuit"
+	desc = "A heavy-duty NGR made suit, designed to protect wreckers from industrial and fauna hazards. Maneuverable enough to get out of harms way."
+	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
+	icon_state = "hardsuit-ngrminer"
+	item_state = "hardsuit-ngrminer"
+	slowdown = 0.7
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/ngr
+	hardsuit_type = "ngrminer"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/ngr
+	name = "NGR mining hardsuit helmet"
+	desc = "A heavy-duty helmet with spacious interior, good for absorbing impacts."
+	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+	icon_state = "hardsuit0-ngrminer"
+	item_state = "hardsuit0-nsmining"
+	hardsuit_type = "ngrminer"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
 
 /////////
 //Hats//
@@ -244,6 +297,7 @@
 	icon = 'icons/obj/clothing/faction/ngr/eyes.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/eyes.dmi'
 	glass_colour_type = /datum/client_colour/glass_colour/green
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 //////////
 //Masks//
@@ -302,6 +356,15 @@
 		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
 	new /obj/item/ammo_casing/a40mm(src)
 	new /obj/item/ammo_casing/a40mm(src)
+
+/obj/item/storage/belt/security/webbing/ngr/alt
+	name = "NGR drop pouch harness"
+	desc = "A harness with a bunch of pouches attached to them for operators of the New Gorlex Republic, can hold security gear."
+	icon_state = "ngr_droppouch"
+	item_state = "ngr_droppouch"
+	icon = 'icons/obj/clothing/faction/ngr/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'
+	supports_variations = null
 
 /obj/item/storage/belt/mining/ngr
 	name = "NGR industrial webbing"

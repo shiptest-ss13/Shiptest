@@ -26,8 +26,8 @@
 	// these are registered so we can cancel the application fill-out if the ship
 	// gets deleted before the application is finalized, or the character spawns in.
 	// your currently-open tgui windows don't get removed if you spawn into a body
-	RegisterSignal(app_mob, COMSIG_PARENT_QDELETING, PROC_REF(applicant_deleting))
-	RegisterSignal(parent_ship, COMSIG_PARENT_QDELETING, PROC_REF(important_deleting_during_apply))
+	RegisterSignal(app_mob, COMSIG_QDELETING, PROC_REF(applicant_deleting))
+	RegisterSignal(parent_ship, COMSIG_QDELETING, PROC_REF(important_deleting_during_apply))
 
 /datum/ship_application/Destroy()
 	SStgui.close_uis(src)
@@ -53,7 +53,7 @@
 	// we are now ready to finalize
 	// unregister the ship qdel signal -- we add ourselves to the ship's applications, and it qdels us
 	// when it deletes, so we don't need to worry about that anymore. we keep the applicant deletion signal
-	UnregisterSignal(parent_ship, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(parent_ship, COMSIG_QDELETING)
 	LAZYSET(parent_ship.applications, ckey(app_key), src)
 
 	if(parent_ship.owner_mob != null)
@@ -70,15 +70,15 @@
 	SIGNAL_HANDLER
 	if(status == SHIP_APPLICATION_UNFINISHED)
 		return important_deleting_during_apply()
-	UnregisterSignal(app_mob, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(app_mob, COMSIG_QDELETING)
 	app_mob = null
 
 // we should get deleted soon, which clears up the references, since this can only fire if
 // the applicant is in the midst of writing their application
 /datum/ship_application/proc/important_deleting_during_apply()
 	SIGNAL_HANDLER
-	UnregisterSignal(parent_ship, COMSIG_PARENT_QDELETING)
-	UnregisterSignal(app_mob, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(parent_ship, COMSIG_QDELETING)
+	UnregisterSignal(app_mob, COMSIG_QDELETING)
 	status = SHIP_APPLICATION_CANCELLED
 
 /datum/ship_application/ui_interact(mob/user, datum/tgui/ui)

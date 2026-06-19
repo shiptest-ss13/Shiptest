@@ -15,6 +15,11 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 
+/datum/outfit/job/frontiersmen/post_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	if(visualsOnly)
+		return
+	H.faction |= list(FACTION_ANTAG_FRONTIERSMEN)
 // Assistant
 
 /datum/outfit/job/frontiersmen/assistant
@@ -86,7 +91,7 @@
 	uniform = /obj/item/clothing/under/frontiersmen/officer
 	head = /obj/item/clothing/head/hardhat/frontier
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 	belt = /obj/item/storage/belt/utility/full
 
 // Engineer

@@ -21,12 +21,12 @@
 	var/drooling = 0 //For Neruotoxic spit overlays
 	deathsound = 'sound/voice/hiss6.ogg'
 	bodyparts = list(
-		/obj/item/bodypart/chest/alien,
-		/obj/item/bodypart/head/alien,
-		/obj/item/bodypart/l_arm/alien,
-		/obj/item/bodypart/r_arm/alien,
-		/obj/item/bodypart/leg/right/alien,
-		/obj/item/bodypart/leg/left/alien,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/alien,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/alien,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/alien,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/alien,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/alien,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/alien,
 		)
 
 /mob/living/carbon/alien/humanoid/Initialize()

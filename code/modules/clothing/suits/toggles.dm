@@ -73,8 +73,6 @@
 		icon_state = "[base_icon_state]_t"
 	else
 		icon_state = base_icon_state
-	if(isobj(hood))
-		hood.icon_state = base_icon_state
 	. = ..()
 
 /obj/item/clothing/suit/hooded/dropped()
@@ -136,14 +134,22 @@
 	equip_delay_other = EQUIP_DELAY_COAT * 1.5
 	strip_delay = EQUIP_DELAY_COAT * 1.5
 
-/obj/item/clothing/suit/toggle/AltClick(mob/user)
+/obj/item/clothing/suit/toggle/ComponentInitialize()
 	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
+
+/obj/item/clothing/suit/toggle/AltClick(mob/user)
 	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		return FALSE
+
 	if(unique_reskin && !current_skin)
 		reskin_obj(user)
-	else
-		suit_toggle(user)
+		return TRUE
+
+	if(SEND_SIGNAL(src, COMSIG_CLICK_ALT, user) & COMPONENT_CANCEL_CLICK_ALT)
+		return TRUE
+
+	suit_toggle(user)
 	return TRUE
 
 /obj/item/clothing/suit/toggle/ui_action_click()
@@ -162,6 +168,7 @@
 	else if(!src.suittoggled)
 		src.icon_state = "[initial(icon_state)]_t"
 		src.suittoggled = TRUE
+	update_appearance()
 	usr.update_inv_wear_suit()
 	for(var/X in actions)
 		var/datum/action/A = X

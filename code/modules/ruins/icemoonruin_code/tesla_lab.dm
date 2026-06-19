@@ -83,32 +83,14 @@
 
 /obj/effect/temp_visual/phase_in
 	name = "anomalous field"
-	icon_state = "phasein"
+	icon = 'icons/effects/anomalies.dmi'
+	icon_state = "static"
 	layer = 4
 	duration = 5
 
 /obj/effect/temp_visual/phase_out
 	name = "anomalous field"
-	icon_state = "phaseout"
+	icon = 'icons/effects/anomalies.dmi'
+	icon_state = "static"
 	layer = 4
 	duration = 5
-
-/obj/effect/mob_spawn/human/corpse/clip
-	name = "CLIP corpse spawner"
-
-/obj/effect/mob_spawn/human/corpse/clip/researcher
-	name = "CLIP Researcher Spawner"
-	outfit = /datum/outfit/job/clip/scientist
-
-/obj/effect/mob_spawn/human/corpse/clip/vc
-	name = "CLIP VC Spawner"
-	outfit = /datum/outfit/job/clip/minutemen/vehicle_pilot
-
-/obj/effect/mob_spawn/human/corpse/clip/minuteman
-	name = "CLIP Minuteman Spawner"
-	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed
-
-/obj/effect/mob_spawn/human/corpse/clip/minuteman/forcefem
-	name = "CLIP Minuteman Spawner"
-	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed
-	mob_gender = FEMALE

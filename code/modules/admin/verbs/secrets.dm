@@ -63,18 +63,6 @@
 			popup.set_content(dat)
 			popup.open()
 
-		//WS Begin - Mentors
-		if("mentor_log")
-			var/dat = "<B>Mentor Log<HR></B>"
-			for(var/l in GLOB.mentorlog)
-				dat += "<li>[l]</li>"
-			if(!GLOB.mentorlog.len)
-				dat += "No mentors have done anything this round! Not like they do much either way."
-			var/datum/browser/popup = new(holder, "mentor_log", null, 300, 430)
-			popup.set_content(dat)
-			popup.open()
-		//WS end
-
 		if("show_admins")
 			var/dat = "<B>Current admins:</B><HR>"
 			if(GLOB.admin_datums)
@@ -227,11 +215,6 @@
 			log_admin("[key_name(holder)] made all SMESs powered", 1)
 			message_admins(span_adminnotice("[key_name_admin(holder)] made all SMESs powered"))
 			power_restore_quick()
-		if("anon_name")
-			if(!is_funmin)
-				return
-			holder.anon_names()
-			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Anonymous Names"))
 		if("guns")
 			if(!is_funmin)
 				return

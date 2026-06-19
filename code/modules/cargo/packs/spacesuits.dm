@@ -17,8 +17,7 @@
 	name = "Pilot Space Suit Crate"
 	desc = "One pilot space suit, for improved mobility in exosuits."
 	cost = 500
-	contains = list(/obj/item/clothing/suit/space/pilot,
-					/obj/item/clothing/head/helmet/space/pilot/random)
+	contains = list(/obj/item/clothing/suit/space/pilot)
 	crate_name = "pilot space suit crate"
 
 /datum/supply_pack/spacesuits/engi_spacesuit
@@ -30,6 +29,14 @@
 	crate_name = "engineering space suit crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 
+/datum/supply_pack/spacesuits/armored_spacesuit
+	name = "Armored Space Suit Crate"
+	desc = "Contains one lightly armored softsuit, able to protect against the smaller day-to-day hazards."
+	cost = 1000
+	contains = list(/obj/item/clothing/suit/space/syndicate/generic,
+					/obj/item/clothing/head/helmet/space/syndicate/generic)
+	crate_name = "armored softsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
 //syndicate
 
 /datum/supply_pack/spacesuits/armored_spacesuit
@@ -84,6 +91,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/spacesuit/inteq/pilot
+	name = "Inteq Pilot Space Suit Crate"
+	desc = "Contains one lightweight suit designed for exosuit and shuttle pilots of the IRMG. While highly mobile, it offers poor protection against prolonged exposure to extreme temperatures of either end."
+	cost = 500
+	contains = list(/obj/item/clothing/suit/space/inteq/pilot,
+					/obj/item/clothing/head/helmet/space/inteq/pilot)
+	crate_name = "space suit crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
 //solgov
 
 /datum/supply_pack/spacesuits/spacesuit/solgov
@@ -100,12 +118,23 @@
 //fucking gezena
 
 /datum/supply_pack/spacesuits/spacesuit/pgf
-	name = "Rakalla Crate"
-	desc = "Contains one Rakalla Suit. It provides robust-enough protection from the elements while being quite flexible."
+	name = "Rakalla Navy Utility Space Suit Crate"
+	desc = "Contains one Rakalla Utility Suit. The aging but beloved workhorse of Navy space operations."
 	cost = 600
 	contains = list(/obj/item/clothing/suit/space/gezena,
 					/obj/item/clothing/head/helmet/space/gezena)
 	crate_name = "rakalla suit crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/spacesuit/pgf/marine
+	name = "Lataka Marine Combat Space Suit Crate"
+	desc = "Contains one Lataka Combat Suit. The backbone of any Marine Corps space assault."
+	cost = 1000
+	contains = list(/obj/item/clothing/suit/space/gezena/marine,
+					/obj/item/clothing/head/helmet/space/gezena/marine)
+	crate_name = "lataka suit crate"
 	faction = /datum/faction/pgf
 	faction_discount = 0
 	faction_locked = TRUE
@@ -139,7 +168,7 @@
 	crate_name = "EOD hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 
-//nt hardsuit breaker
+//makosso-warra hardsuit breaker
 
 /datum/supply_pack/spacesuits/med_hardsuit
 	name = "Medical Hardsuit Crate"
@@ -148,16 +177,16 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/medical)
 	crate_name = "medical hardsuit crate"
 	crate_type = /obj/structure/closet/crate/medical
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 
 /datum/supply_pack/spacesuits/engineering_hardsuit
 	name = "Engineering Hardsuit Crate"
-	desc = "One engineering hardsuit, resistant to fire, radiation, and other engineering hazards. Nanotrasen reminds you that Resistant does not mean Immune."
+	desc = "One engineering hardsuit, resistant to fire, radiation, and other engineering hazards. Makosso-Warra reminds you that Resistant does not mean Immune."
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine)
 	crate_name = "engineering hardsuit crate"
 	crate_type = /obj/structure/closet/crate/medical
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 
 /datum/supply_pack/spacesuits/mining_hardsuit_heavy
 	name = "Heavy Mining Hardsuit Crate"
@@ -167,7 +196,7 @@
 					/obj/item/clothing/shoes/bhop)
 	crate_name = "heavy mining hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 
 /datum/supply_pack/spacesuits/NS_hardsuit
 	name = "N+S Hardsuit Crate"
@@ -176,17 +205,17 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/heavy/ns)
 	crate_name = "N+S hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/atmos_hardsuit
 	name = "Atmospherics Hardsuit Crate"
-	desc = "The iconic hardsuit of Nanotrasen's Atmosphere Corps, this hardsuit is known across space as a symbol of defiance in the face of sudden decompression. Smells faintly of plasma."
+	desc = "The iconic hardsuit of Makosso-Warra's Atmosphere Corps, this hardsuit is known across space as a symbol of defiance in the face of sudden decompression. Smells faintly of plasma."
 	cost = 2500
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine/atmos)
 	crate_name = "atmospherics hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -197,18 +226,18 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine/elite)
 	crate_name = "advanced hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 	faction_discount = 0
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/heavy_sec_hardsuit
 	name = "Heavy Security Hardsuit Crate"
-	desc = "Nanotrasen's premier solution to security hazards in low pressure environments, a well armored, highly mobile combat suit. The wearer is advised to have their zero-g training completed before utilizing the jetpack module."
+	desc = "Makosso-Warra's premier solution to security hazards in low pressure environments, a well armored, highly mobile combat suit. The wearer is advised to have their zero-g training completed before utilizing the jetpack module."
 	cost = 5000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/security/hos)
 	crate_name = "advanced hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -220,6 +249,38 @@
 	cost = 3000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi/cybersun)
 	crate_name = "neutron star hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/collapsar_hardsuit
+	name = "Collapsar Assault Hardsuit Crate"
+	desc = "Cybersuns all-rounder combat hardsuit, the collapsar proves efficient in every field. "
+	cost = 5000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/collapsar)
+	crate_name = "Collapsar hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/retrieval_hardsuit
+	name = "Collapsar Retrieval Hardsuit Crate"
+	desc = "Cybersuns all-rounder combat hardsuit, this collapsar variant is in the colors of the trauma team."
+	cost = 5000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/collapsar/paramed)
+	crate_name = "Collapsar hardsuit crate"
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/magnetar_hardsuit
+	name = "Magnetar recon hardsuit Crate"
+	desc = "Cybersuns specialized stealth hardsuit, offering supreme mobility and ease of use. Makes up for its lackluster armor with speed and integrated night vision."
+	cost = 4500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/stealth/cybersun)
+	crate_name = "Magnetar recon hardsuit crate"
+
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/syndicate/cybersun
 	faction_discount = 0
@@ -246,6 +307,18 @@
 	crate_name = "pointman hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/ranger_hardsuit
+	name = "Ranger Hardsuit Crate"
+	desc = "A recent addition to the field market due to limited numbers, the ranger hardsuit specializes in lightweight action and recon. The helm is fitted with integrated night vision."
+	cost = 4500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/stealth/inteq)
+	crate_name = "ranger hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/inteq
+	faction_discount = 0
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/inteq_hardsuit
@@ -307,6 +380,41 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/clip_industrial
+	name = "CLIP Industrial Hardsuit Crate"
+	desc = "An industrial-grade hardsuit rated for impacts, fires and radiation."
+	cost = 1500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/clip)
+	crate_name = "CLIP industrial hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/clip
+	name = "CLIP softsuit crate"
+	desc = "Contains one civilian-grade CLIP softsuit."
+	cost = 500
+	contains = list(/obj/item/clothing/suit/space/clip,
+					/obj/item/clothing/head/helmet/space/clip)
+	crate_name = "CLIP softsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/clip_armored
+	name = "CLIP armored softsuit crate"
+	desc = "Contains one civilian-grade CLIP armored softsuit."
+	cost = 1000
+	contains = list(/obj/item/clothing/suit/space/clip/armored,
+					/obj/item/clothing/head/helmet/space/clip/armored)
+	crate_name = "CLIP armored softsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/spacesuits/eod_clip
 	name = "CMM EOD Hardsuit Crate"
 	desc = "Contains one EOD hardsuit, to provide safety with explosives."
@@ -326,6 +434,17 @@
 	cost = 5000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi/hl)
 	crate_name = "white-red hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/syndicate/hardliners
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/hardstealth
+	name = "Asura Shock Hardsuit Crate"
+	desc = "A stripped-down version of an older hardsuit, the Asura has been modified to keep its quick movement and armor at the cost of its night-vision technology. Due to this, its role is often shifted from recon to blitz maneuvers."
+	cost = 4500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/stealth/hardliners)
+	crate_name = "Asura Shock Hardsuit Crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/syndicate/hardliners
 	faction_discount = 0
@@ -355,7 +474,29 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/ngr_miner
+	name = "NGR Mining Hardsuit Crate"
+	desc = "A heavy-duty hardsuit built to protect wreckers from harsh frontier conditions."
+	cost = 2000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/heavy/ngr)
+	crate_name = "NGR mining hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = /datum/faction/syndicate/ngr
+	faction_discount = 0
+	faction_locked = TRUE
+
 //srm
+
+/datum/supply_pack/spacesuits/roumain_miningsuit
+	name = "Roumain Hunter's Hardsuit Crate"
+	desc = "A hardsuit manufactured by Hunter's Pride, widely used by a variety of hunters in the Saint-Roumain Militia."
+	cost = 2500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/solgov/roumain)
+	crate_name = "roumain hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/roumain_hardsuit
 	name = "Roumain Hardsuit Crate"
@@ -363,6 +504,17 @@
 	cost = 5000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/solgov/roumain)
 	crate_name = "roumain hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/roumain_hardsuitelite
+	name = "Raskas Combat Hardsuit"
+	desc = "A heavily clad hardsuit manufactured by Hunter's Pride, used when quarries of ballistic natures are to be expected. The heavy, bulky plates inhibit movement at the cost of second-to-none protection."
+	cost = 5000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security/roumain/elite)
+	crate_name = "Raskas combat hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/srm
 	faction_discount = 0

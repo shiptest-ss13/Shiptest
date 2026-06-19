@@ -136,7 +136,7 @@
 	new /obj/item/crowbar/old(src)
 	new /obj/item/wirecutters/old(src)
 	new /obj/item/multitool/old(src)
-	new /obj/item/clothing/gloves/color/yellow(src)
+	new /obj/item/clothing/gloves/insulated(src)
 
 /obj/item/storage/toolbox/electrical
 	name = "electrical toolbox"
@@ -153,7 +153,7 @@
 	new /obj/item/stack/cable_coil(src,MAXCOIL,pickedcolor)
 	new /obj/item/stack/cable_coil(src,MAXCOIL,pickedcolor)
 	if(prob(5))
-		new /obj/item/clothing/gloves/color/yellow(src)
+		new /obj/item/clothing/gloves/insulated(src)
 	else
 		new /obj/item/stack/cable_coil(src,MAXCOIL,pickedcolor)
 
@@ -175,7 +175,7 @@
 	new /obj/item/crowbar/syndie(src)
 	new /obj/item/wirecutters/syndie(src)
 	new /obj/item/multitool/syndie(src)
-	new /obj/item/clothing/gloves/color/yellow(src)
+	new /obj/item/clothing/gloves/insulated(src)
 
 /obj/item/storage/toolbox/syndicate/empty
 
@@ -242,7 +242,7 @@
 		/obj/item/clothing/head/helmet/infiltrator,
 		/obj/item/clothing/suit/armor/vest/infiltrator,
 		/obj/item/clothing/under/syndicate/bloodred,
-		/obj/item/clothing/gloves/color/latex/nitrile/infiltrator,
+		/obj/item/clothing/gloves/nitrile/infiltrator,
 		/obj/item/clothing/mask/infiltrator,
 		/obj/item/gun/ballistic/automatic/pistol/ringneck,
 		/obj/item/gun/ballistic/revolver,
@@ -253,7 +253,7 @@
 	new /obj/item/clothing/head/helmet/infiltrator(src)
 	new /obj/item/clothing/suit/armor/vest/infiltrator(src)
 	new /obj/item/clothing/under/syndicate/bloodred(src)
-	new /obj/item/clothing/gloves/color/latex/nitrile/infiltrator(src)
+	new /obj/item/clothing/gloves/nitrile/infiltrator(src)
 	new /obj/item/clothing/mask/infiltrator(src)
 
 /obj/item/storage/toolbox/bounty

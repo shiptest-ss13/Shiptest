@@ -1,7 +1,7 @@
 /datum/outfit/job/clip/minutemen/bard
 	name = "ERT - CLIP-BARD Field Agent"
 	id_assignment = "Biohazard Assessment Field Agent"
-	jobtype = /datum/job/virologist
+	jobtype = /datum/job/ert/sec
 	job_icon = "virologist" // can someone resprite the biosuits already // fuck it i'm porting one
 
 	wallet = null
@@ -12,7 +12,7 @@
 	suit_store = /obj/item/tank/internals/oxygen
 	head = /obj/item/clothing/head/bio_hood/bard
 	mask = /obj/item/clothing/mask/surgical
-	gloves = /obj/item/clothing/gloves/color/latex
+	gloves = /obj/item/clothing/gloves/nitrile
 	shoes = /obj/item/clothing/shoes/sneakers/white
 
 	backpack = /obj/item/storage/backpack/satchel/sec/clip
@@ -63,6 +63,7 @@
 /datum/outfit/job/clip/minutemen/bard/emergency/medic
 	name = "ERT - CLIP-BARD Medical Specialist"
 	id_assignment = "Biohazard Assessment Medical Specialist"
+	jobtype = /datum/job/ert/med
 
 	head = /obj/item/clothing/head/bio_hood/bard/armored
 	glasses = /obj/item/clothing/glasses/hud/health
@@ -70,7 +71,7 @@
 	suit = /obj/item/clothing/suit/bio_suit/bard/medium
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cm5
 	belt = /obj/item/storage/belt/medical/webbing/clip/prefilled
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
+	gloves = /obj/item/clothing/gloves/nitrile
 	r_pocket = /obj/item/reagent_scanner
 	l_pocket = /obj/item/reagent_containers/hypospray/combat
 
@@ -111,6 +112,7 @@
 	name = "ERT - CLIP-BARD Team Leader"
 	id_assignment = "Biohazard Assessment Team Leader"
 	job_icon = "clip_navy4"
+	jobtype = /datum/job/ert/commander
 
 	head = /obj/item/clothing/head/bio_hood/bard/armored
 	ears = /obj/item/radio/headset/clip/alt
@@ -133,9 +135,10 @@
 
 /datum/outfit/job/clip/minutemen/military_police
 	name = "ERT - C-MM Military Police"
-	jobtype = /datum/job/officer
+	jobtype = /datum/job/ert
 	id_assignment = "Military Police"
 	job_icon = "clip_cmm3"
+	jobtype = /datum/job/ert/sec
 
 	ears = /obj/item/radio/headset/clip/alt
 	neck = /obj/item/clothing/mask/whistle
@@ -166,15 +169,16 @@
 	backpack_contents = null
 	box = null
 
-	backpack = /obj/item/shield/riot
-	duffelbag = /obj/item/shield/riot
-	courierbag = /obj/item/shield/riot
-	satchel = /obj/item/shield/riot
+	backpack = /obj/item/shield/heavy
+	duffelbag = /obj/item/shield/heavy
+	courierbag = /obj/item/shield/heavy
+	satchel = /obj/item/shield/heavy
 
 /datum/outfit/job/clip/minutemen/military_police/leader
 	name = "ERT - C-MM Chief Military Police"
 	id_assignment = "Chief Military Police"
 	job_icon = "clip_cmm4"
+	jobtype = /datum/job/ert/commander
 
 	head = /obj/item/clothing/head/clip/slouch/officer
 	uniform = /obj/item/clothing/under/clip/officer
@@ -198,17 +202,21 @@
 	backpack_contents = null
 	box = null
 
-	backpack = /obj/item/shield/riot/flash
-	duffelbag = /obj/item/shield/riot/flash
-	courierbag = /obj/item/shield/riot/flash
-	satchel = /obj/item/shield/riot/flash
+	backpack = /obj/item/shield/heavy
+	duffelbag = /obj/item/shield/heavy
+	courierbag = /obj/item/shield/heavy
+	satchel = /obj/item/shield/heavy
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/hardsuit
-	name = "CLIP Minutemen - Minuteman (Spotter Hardsuit)"
+	name = "ERT - CLIP Minutemen - Minuteman (Spotter Hardsuit)"
+	jobtype = /datum/job/ert/sec
+
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/clip_spotter
 
 /datum/outfit/job/clip/minutemen/grunt/lead/armed/hardsuit
-	name = "CLIP Minutemen - Field Sergeant (Spotter Hardsuit)"
+	name = "ERT = CLIP Minutemen - Field Sergeant (Spotter Hardsuit)"
+	jobtype = /datum/job/ert/commander
+
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/clip_spotter

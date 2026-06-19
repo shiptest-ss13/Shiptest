@@ -19,8 +19,24 @@
 	mask = /obj/item/clothing/mask/gas/sechailer
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
+/datum/outfit/frontier/internals/fake
+	name = "Fake Frontiersman Corpse Internals"
+	head = /obj/item/clothing/head/clip/boonie
+	neck = null
+	mask = /obj/item/clothing/mask/gas/frontiersmen
+
+/datum/outfit/frontier/internals/tagless
+	name = "Tagless Frontiersman Corpse Internals"
+	neck = null
+
 /obj/effect/mob_spawn/human/corpse/frontier/ranged
 	outfit = /datum/outfit/frontier
+
+/obj/effect/mob_spawn/human/corpse/frontier/fake
+	outfit = /datum/outfit/frontier/internals/fake
+
+/obj/effect/mob_spawn/human/corpse/frontier/tagless
+	outfit = /datum/outfit/frontier/internals/tagless
 
 /obj/effect/mob_spawn/human/corpse/frontier/space
 	outfit = /datum/outfit/frontier/trooper/space
@@ -81,6 +97,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset
 	head = /obj/item/clothing/head/frontier/peaked
+	neck = /obj/item/clothing/neck/dogtag/gold
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals
 	name = "Frontiersman Officer Corpse Internals"
@@ -96,7 +113,7 @@
 
 /datum/outfit/frontier/trooper/heavy
 	name = "Frontiersman Heavy Corpse"
-	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/internals

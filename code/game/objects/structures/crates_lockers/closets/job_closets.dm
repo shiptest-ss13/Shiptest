@@ -86,7 +86,7 @@
 	new /obj/item/clothing/under/rank/civilian/lawyer/purpsuit(src)
 	new /obj/item/clothing/suit/toggle/lawyer/purple(src)
 	new /obj/item/clothing/under/suit/black(src)
-	new /obj/item/clothing/suit/toggle/lawyer/black(src)
+	new /obj/item/clothing/suit/lawyer/charcoal(src)
 	new /obj/item/clothing/shoes/laceup(src)
 	new /obj/item/clothing/shoes/laceup(src)
 	new /obj/item/clothing/accessory/lawyers_badge(src)
@@ -94,7 +94,7 @@
 
 /obj/structure/closet/wardrobe/chaplain_black
 	name = "chapel wardrobe"
-	desc = "It's a storage unit for Nanotrasen-approved religious attire."
+	desc = "It's a storage unit for religious attire."
 	icon_door = "black"
 
 /obj/structure/closet/wardrobe/chaplain_black/PopulateContents()

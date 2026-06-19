@@ -104,9 +104,10 @@
 	var/wetness = 30 //Reduced when exposed to high temperautres
 	var/drying_threshold_temperature = 500 //Kelvin to start drying
 
-/obj/item/stack/sheet/leather/wetleather/Initialize(mapload, new_amount, merge)
+/obj/item/stack/sheet/wethide/Initialize(mapload, new_amount, merge)
 	. = ..()
 	AddElement(/datum/element/dryable, /obj/item/stack/sheet/leather)
+	AddComponent(/datum/component/bakeable, /obj/item/stack/sheet/leather, rand(15 SECONDS, 20 SECONDS), TRUE, TRUE)
 
 /*
  * Leather SHeet
@@ -134,6 +135,14 @@ GLOBAL_LIST_INIT(leather_recipes, list ( \
 /obj/item/stack/sheet/leather/get_main_recipes()
 	. = ..()
 	. += GLOB.leather_recipes
+
+/obj/item/stack/sheet/leather/synthetic
+	name = "synthetic leather"
+	desc = "Fabricator extruded fibers woven into something approximating leather. It has an odd sheen."
+	singular_name = "synthetic leather piece"
+	icon_state = "sheet-leather"
+	item_state = "sheet-leather"
+
 /*
  * Sinew
  */

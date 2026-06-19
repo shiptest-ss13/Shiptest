@@ -7,14 +7,6 @@
 	results = list(/datum/reagent/lube = 4)
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/silicon = 1, /datum/reagent/oxygen = 1)
 
-/datum/chemical_reaction/spraytan
-	results = list(/datum/reagent/spraytan = 2)
-	required_reagents = list(/datum/reagent/consumable/orangejuice = 1, /datum/reagent/fuel/oil = 1)
-
-/datum/chemical_reaction/spraytan2
-	results = list(/datum/reagent/spraytan = 2)
-	required_reagents = list(/datum/reagent/consumable/orangejuice = 1, /datum/reagent/consumable/cornoil = 1)
-
 /datum/chemical_reaction/impedrezene
 	results = list(/datum/reagent/impedrezene = 2)
 	required_reagents = list(/datum/reagent/mercury = 1, /datum/reagent/oxygen = 1, /datum/reagent/consumable/sugar = 1)
@@ -348,6 +340,10 @@
 	results = list(/datum/reagent/space_cleaner = 2)
 	required_reagents = list(/datum/reagent/ammonia = 1, /datum/reagent/water = 1)
 
+/datum/chemical_reaction/system_cleaner
+	results = list(/datum/reagent/space_cleaner/system_cleaner = 4)
+	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/chlorine = 1, /datum/reagent/phenol = 2, /datum/reagent/potassium = 1)
+
 /datum/chemical_reaction/plantbgone
 	results = list(/datum/reagent/toxin/plantbgone = 5)
 	required_reagents = list(/datum/reagent/toxin = 1, /datum/reagent/water = 4)
@@ -398,7 +394,7 @@
 
 /datum/chemical_reaction/carpet/purple
 	results = list(/datum/reagent/carpet/purple = 2)
-	required_reagents = list(/datum/reagent/carpet = 1, /datum/reagent/medicine/regen_jelly = 1)
+	required_reagents = list(/datum/reagent/carpet = 1, /datum/reagent/colorful_reagent/powder/purple = 1)
 	//slimes only party
 
 /datum/chemical_reaction/carpet/red
@@ -468,7 +464,7 @@
 
 //butterflium
 /datum/chemical_reaction/butterflium
-	required_reagents = list(/datum/reagent/colorful_reagent = 1, /datum/reagent/medicine/omnizine = 1, /datum/reagent/medicine/strange_reagent = 1, /datum/reagent/consumable/nutriment = 1)
+	required_reagents = list(/datum/reagent/colorful_reagent = 1, /datum/reagent/medicine/panacea = 1, /datum/reagent/medicine/strange_reagent = 1, /datum/reagent/consumable/nutriment = 1)
 
 /datum/chemical_reaction/butterflium/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)

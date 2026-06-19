@@ -7,6 +7,12 @@
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_TAIL
 	var/tail_type = "None"
+	var/tail_trait = null
+
+/obj/item/organ/tail/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(tail_trait)
+		ADD_TRAIT(owner, tail_trait, ORGAN_TRAIT)
 
 /obj/item/organ/tail/Remove(mob/living/carbon/human/H,  special = 0)
 	..()
@@ -47,6 +53,7 @@
 	color = "#116611"
 	tail_type = "Smooth"
 	var/spines = "None"
+	tail_trait = TRAIT_TAILED
 
 /obj/item/organ/tail/lizard/Initialize()
 	. = ..()
@@ -90,6 +97,7 @@
 	desc = "A detached Elzuose's tail. You probably shouldn't plant this."
 	color = "#d3e8e9"
 	tail_type = "Long"
+	tail_trait = TRAIT_TAILED
 
 /obj/item/organ/tail/elzu/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -188,6 +196,27 @@
 			H.update_body()
 
 /obj/item/organ/tail/dog/Remove(mob/living/carbon/human/H,  special = 0)
+	..()
+	if(istype(H))
+		H.dna.features["tail_human"] = "None"
+		H.dna.species.mutant_bodyparts -= "tail_human"
+		color = H.hair_color
+		H.update_body()
+
+/obj/item/organ/tail/horse
+	name = "horse tail"
+	desc = "A severed horse tail, not of the flora variety."
+	tail_type = "Horse"
+
+/obj/item/organ/tail/horse/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(istype(H))
+		if(!("tail_human" in H.dna.species.mutant_bodyparts))
+			H.dna.species.mutant_bodyparts |= "tail_human"
+			H.dna.features["tail_human"] = tail_type
+			H.update_body()
+
+/obj/item/organ/tail/horse/Remove(mob/living/carbon/human/H,  special = 0)
 	..()
 	if(istype(H))
 		H.dna.features["tail_human"] = "None"

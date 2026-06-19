@@ -21,8 +21,10 @@
 
 	if(user.a_intent == INTENT_HARM)
 		var/R
-		M.visible_message(span_danger("[user] splashes the contents of [src] onto [M]!"), \
-						span_userdanger("[user] splashes the contents of [src] onto you!"))
+		M.visible_message(
+			span_danger("[user] splashes the contents of [src] onto [M]!"),
+			span_userdanger("[user] splashes the contents of [src] onto you!"),
+		)
 		if(reagents)
 			for(var/datum/reagent/A in reagents.reagent_list)
 				R += "[A] ([num2text(A.volume)]),"
@@ -31,24 +33,33 @@
 			log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]")
 			message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] at [ADMIN_VERBOSEJMP(target)].")
 			playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
+
 		reagents.expose(M, TOUCH)
 		log_combat(user, M, "splashed", R)
 		reagents.clear_reagents()
 	else
 		if(!canconsume(M, user))
 			return
+
 		if(M != user)
-			M.visible_message(span_danger("[user] attempts to feed [M] something from [src]."), \
-						span_userdanger("[user] attempts to feed you something from [src]."))
+			M.visible_message(
+				span_danger("[user] attempts to feed [M] something from [src]."),
+				span_userdanger("[user] attempts to feed you something from [src]."),
+			)
 			if(!do_after(user, target = M))
 				return
+
 			if(!reagents || !reagents.total_volume)
 				return // The drink might be empty after the delay, such as by spam-feeding
-			M.visible_message(span_danger("[user] feeds [M] something from [src]."), \
-						span_userdanger("[user] feeds you something from [src]."))
+
+			M.visible_message(
+				span_danger("[user] feeds [M] something from [src]."),
+				span_userdanger("[user] feeds you something from [src]."),
+			)
 			log_combat(user, M, "fed", reagents.log_list())
 		else
 			to_chat(user, span_notice("You swallow a gulp of [src]."))
+
 		addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, 5, TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
 		playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
 
@@ -90,8 +101,10 @@
 			if(INTENT_DISARM)
 				attempt_pour(target, user)
 			if(INTENT_HARM)
-				user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
-									span_notice("You splash the contents of [src] onto [target]."))
+				user.visible_message(
+					span_danger("[user] splashes the contents of [src] onto [target]!"),
+					span_notice("You splash the contents of [src] onto [target]."),
+				)
 				reagents.expose(target, TOUCH)
 				reagents.clear_reagents()
 				playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
@@ -114,13 +127,15 @@
 			return
 	..()
 
-
 /obj/item/reagent_containers/glass/beaker
 	name = "beaker"
 	desc = "A beaker. It can hold up to 50 units."
 	icon = 'icons/obj/chemical/beakers.dmi'
+	world_file = 'icons/obj/chemical/beakers_world.dmi'
 	icon_state = "beaker"
 	item_state = "beaker"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	custom_materials = list(/datum/material/glass=500)
 	fill_icon_thresholds = list(1, 40, 60, 80, 100)
 	can_have_cap = TRUE
@@ -168,6 +183,8 @@
 	name = "cryostasis beaker"
 	desc = "A cryostasis beaker that allows for chemical storage without \
 		reactions. Can hold up to 50 units."
+	// No clue if this is obtainable, but it's so rare i havent really seen one in forever
+	world_file = null
 	icon_state = "beakernoreact"
 	custom_materials = list(/datum/material/iron=3000)
 	reagent_flags = NO_REACT
@@ -197,13 +214,13 @@
 /obj/item/reagent_containers/glass/beaker/slime
 	list_reagents = list(/datum/reagent/toxin/slimejelly = 50)
 
-/obj/item/reagent_containers/glass/beaker/large/styptic
-	name = "styptic reserve tank"
-	list_reagents = list(/datum/reagent/medicine/styptic_powder = 50)
+/obj/item/reagent_containers/glass/beaker/large/hadrakine
+	name = "hadrakine reserve tank"
+	list_reagents = list(/datum/reagent/medicine/hadrakine = 50)
 
-/obj/item/reagent_containers/glass/beaker/large/silver_sulfadiazine
-	name = "silver sulfadiazine reserve tank"
-	list_reagents = list(/datum/reagent/medicine/silver_sulfadiazine = 50)
+/obj/item/reagent_containers/glass/beaker/large/quardexane
+	name = "quardexane reserve tank"
+	list_reagents = list(/datum/reagent/medicine/quardexane = 50)
 
 /obj/item/reagent_containers/glass/beaker/large/charcoal
 	name = "charcoal reserve tank"
@@ -300,6 +317,7 @@
 /obj/item/reagent_containers/glass/filter
 	name = "seperatory funnel"
 	desc = "A crude tool created by welding several beakers together. It would probably be useful for seperating reagents."
+	world_file = 'icons/obj/chemical/beakers_world.dmi'
 	icon_state = "beakerfilter"
 	item_state = "beaker"
 	volume = 100

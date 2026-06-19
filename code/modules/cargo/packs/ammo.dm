@@ -226,11 +226,29 @@
 	cost = 350
 	contains = list(/obj/item/storage/box/ammo/a12g_rubbershot)
 
-/datum/supply_pack/ammo/techshells
-	name = "Unloaded Shotgun Technological Shells Crate"
-	desc = "Contains a box of 7 versatile tech shells, capable of producing a variety of deadly effects for any situation. Some assembly required."
-	cost = 210
-	contains = list(/obj/item/storage/box/techshot)
+/datum/supply_pack/ammo/scattershells
+	name = "Scatter Laser Shell Crate"
+	desc = "Contains a box of 32 shells modified to fire Sharplite lasers. Perfect for high-velocity crowd control."
+	cost = 380
+	contains = list(/obj/item/storage/box/ammo/a12g_scatter)
+
+/datum/supply_pack/ammo/pulseshells
+	name = "Pulse Slug Crate"
+	desc = "Contains a box of 32 shells modified to fire a strong pulse projectile. Decent damage and respectable at demolishing fortifications."
+	cost = 300
+	contains = list(/obj/item/storage/box/ammo/pulseslug)
+
+/datum/supply_pack/ammo/incenshells
+	name = "Incendiary Shell Crate"
+	desc = "Contains a box of 32 shells filled with an incendiary payload. Low damage but catches targets on fire."
+	cost = 400
+	contains = list(/obj/item/storage/box/ammo/a12g_incen)
+
+/datum/supply_pack/ammo/ion
+	name = "Ion Shell Crate"
+	desc = "Contains a box of 32 shells filled with an electromagnetic payload. No damage but EMPs the target."
+	cost = 800
+	contains = list(/obj/item/storage/box/ammo/a12g_ion)
 
 /* .45-70 */
 
@@ -240,11 +258,17 @@
 	contains = list(/obj/item/storage/box/ammo/a4570)
 	cost = 190 //5.6 ammo efficiency at 45 damage
 
-/datum/supply_pack/ammo/a4570_box/match
+/datum/supply_pack/ammo/a4570_match
 	name = ".45-70 Match Crate"
 	desc = "Contains a 24-round box containing devastatingly powerful .45-70 caliber ammunition, that travels faster, pierces armour better, and ricochets off targets."
 	contains = list(/obj/item/storage/box/ammo/a4570_match)
 	cost = 235
+
+/datum/supply_pack/ammo/a4570_hp
+	name = ".45-70 Hollow Point Ammo Box Crate"
+	desc = "Contains a 24-round box containing devastatingly powerful .45-70 hollow point caliber ammunition."
+	contains = list(/obj/item/storage/box/ammo/a4570_hp)
+	cost = 260
 
 /* 7.62 */
 
@@ -411,15 +435,15 @@
 
 /datum/supply_pack/ammo/ferropelletboxcrate
 	name = "Ferromagnetic Pellet Box Crate"
-	desc = "Contains a 48-round ferromagnetic pellet ammo box for gauss guns such as the Claris."
+	desc = "Contains a 88-round ferromagnetic pellet ammo box for gauss guns such as the Claris."
 	contains = list(/obj/item/storage/box/ammo/ferropellet)
-	cost = 210 //5.7 ammo efficiency at 25 damage
+	cost = 250 //5.7 ammo efficiency at 25 damage
 
 /datum/supply_pack/ammo/hcpellets
 	name = "High Conductivity Pellet Box Crate"
 	desc = "Contains a 48-round high conductivity pellet ammo box for gauss guns such as the Claris."
 	contains = list(/obj/item/storage/box/ammo/ferropellet/hc)
-	cost = 260
+	cost = 310
 
 /* ferroslugs */
 
@@ -439,12 +463,18 @@
 
 /datum/supply_pack/ammo/ferrolanceboxcrate
 	name = "Ferromagnetic Lance Box Crate"
-	desc = "Contains a 48-round box for high-powered gauss guns such as the GAR assault rifle."
+	desc = "Contains a 60-round box for high-powered gauss guns such as the GAR assault rifle."
 	contains = list(/obj/item/storage/box/ammo/ferrolance)
-	cost = 285 //5 ammo efficiency at 30 damage
+	cost = 300 //5 ammo efficiency at 30 damage - I don't know how this formula works so I just eyeballed it to be on par with 556CLIP
 
-/datum/supply_pack/ammo/ferrolanceboxcrate
+/datum/supply_pack/ammo/ferrolanceboxcrate_hc
 	name = "High Conductivity Lance Box Crate"
-	desc = "Contains a 48-round box for high-powered gauss guns such as the GAR assault rifle."
+	desc = "Contains a 60-round box for high-powered gauss guns such as the GAR assault rifle."
 	contains = list(/obj/item/storage/box/ammo/ferrolance/hc)
-	cost = 360
+	cost = 380
+
+/datum/supply_pack/ammo/ferrorodboxcrate
+	name = "Ferromagnetic Rod Box Crate"
+	desc = "Contains a 20-round box for high-powered gauss guns such as the Model 'Atelier' Railgun."
+	contains = list(/obj/item/storage/box/ammo/ferrorods)
+	cost = 500

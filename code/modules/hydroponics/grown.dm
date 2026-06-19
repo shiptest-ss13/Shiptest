@@ -51,8 +51,6 @@
 	pixel_x = base_pixel_x + rand(-5, 5)
 	pixel_y = base_pixel_y + rand(-5, 5)
 
-	make_dryable()
-
 	for(var/datum/plant_gene/trait/trait in seed.genes)
 		trait.on_new(src, loc)
 
@@ -223,14 +221,15 @@
 		return
 	return TRUE
 
-/obj/item/food/grown/on_grind()
-	. = ..()
+/obj/item/food/grown/on_grind(simulated=FALSE)
+	. = list()
 	var/nutriment = reagents.get_reagent_amount(/datum/reagent/consumable/nutriment)
-	if(grind_results&&grind_results.len)
-		for(var/i in 1 to grind_results.len)
-			grind_results[grind_results[i]] = nutriment
-		reagents.del_reagent(/datum/reagent/consumable/nutriment)
-		reagents.del_reagent(/datum/reagent/consumable/nutriment/vitamin)
+	if(grind_results && grind_results.len)
+		for(var/reagent_type in grind_results)
+			.[grind_results[reagent_type]] = nutriment
+		if(!simulated)
+			reagents.del_reagent(/datum/reagent/consumable/nutriment)
+			reagents.del_reagent(/datum/reagent/consumable/nutriment/vitamin)
 
 /obj/item/food/grown/on_juice()
 	var/nutriment = reagents.get_reagent_amount(/datum/reagent/consumable/nutriment)

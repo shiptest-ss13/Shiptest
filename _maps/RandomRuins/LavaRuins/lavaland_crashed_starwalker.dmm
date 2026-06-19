@@ -175,7 +175,7 @@
 	pixel_y = -5
 	},
 /obj/item/trash/popcorn,
-/obj/item/trash/cheesie,
+/obj/item/trash/gummycarps,
 /obj/item/trash/chips,
 /obj/item/trash/pistachios{
 	pixel_x = 6
@@ -694,9 +694,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/noticeboard{
-	pixel_y = 31
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/structure/cable/pink{
 	icon_state = "4-10"
 	},
@@ -2424,7 +2422,7 @@
 	icon_state = "gib2-old"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/item/clothing/gloves/nitrile/evil,
 /obj/item/reagent_containers/syringe/contraband{
 	pixel_y = 5;
 	pixel_x = -4
@@ -2534,7 +2532,6 @@
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/mission_poi/main/blackbox,
 /obj/machinery/blackbox_recorder,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/ruin/unpowered/crashed_starwalker)
@@ -3024,13 +3021,6 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/unpowered/crashed_starwalker)
-"Xh" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "pcarrier_bridge"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/crashed_starwalker)
 "Xj" = (
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland,
@@ -4754,7 +4744,7 @@ TI
 TI
 TI
 TI
-Xh
+EV
 tV
 oG
 WM

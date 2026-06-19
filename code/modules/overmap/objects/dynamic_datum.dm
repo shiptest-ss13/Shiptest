@@ -101,13 +101,21 @@
 		return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 	else
 		var/dock_to_use = override_dock
+		//if true, we say that we do in fact have free docks, just you cant fit in any of them for whatever reason. hopefully this is less vauge than "X Cannot be docked to."
+		var/alt_message = FALSE
 		if(!override_dock)
 			for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
+				//meant for quick dock, as such we check if we can actually dock here before checking all other docking ports.
+				//This means you can name a docking port with a leading ! like '!Ship Starboard Stern Docking Port' to have priority over other docking ports
 				if(!dock.docked)
+					alt_message = TRUE
+				if(!dock.docked && dock_requester.shuttle_port.check_dock(dock, TRUE, FALSE))
 					dock_to_use = dock
 					break
 
 		if(!dock_to_use)
+			if(alt_message)
+				return new /datum/docking_ticket(_docking_error = "[src] has free docks, however vessel is unable to fit in any. Attempt manual docking for more information. Aborting docking.")
 			return new /datum/docking_ticket(_docking_error = "[src] does not have any free docks. Aborting docking.")
 		return new /datum/docking_ticket(dock_to_use, src, dock_requester)
 
@@ -156,10 +164,6 @@
 
 	if(length(mapzone?.get_mind_mobs()) || SSlag_switch.measures[DISABLE_PLANETDEL])
 		return FALSE //Dont fuck over stranded people
-
-	for(var/datum/mission/ruin/dynamic_mission in dynamic_missions)
-		if(dynamic_mission.active && !dynamic_mission.bound_left_location)
-			return FALSE //Dont fuck over people trying to complete a mission.
 
 	return TRUE
 
@@ -247,17 +251,27 @@
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
 	switch(rand(1,12))
-		if(1 to 4)
+		if(1 to 3)
 			for(var/i in 1 to rand(2,3))
 				. += capitalize(pick(GLOB.alphabet))
 			. += "-"
 			. += "[pick(rand(1,999))]"
-		if(4 to 9)
-			. += "[pick(GLOB.planet_names)] \Roman[rand(1,9)]"
-		if(10, 11)
-			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
+		if(3 to 5)
+			. += "[pick_planet_name()]"
+		if(5 to 7)
+			. += "[pick_planet_name()] \Roman[rand(1,9)]"
+		if(8 to 11)
+			. += "[pick(GLOB.planet_prefixes)] [pick_planet_name()]"
 		if(12)
-			. += "[capitalize(pick(GLOB.adjectives))] [pick(GLOB.planet_names)]"
+			. += "[capitalize(pick(GLOB.adjectives))] [pick_planet_name()]"
+
+/datum/overmap/dynamic/proc/pick_planet_name()
+	if(!length(GLOB.planet_names))
+		stack_trace("We ran out of planet names! Consider running shorter rounds or expanding the namelist.")
+		GLOB.planet_names = world.file2list("strings/planet_names.txt")
+	var/planet_name = pick(GLOB.planet_names)
+	GLOB.planet_names -= planet_name
+	return planet_name
 
 /**
  * Load a level for a ship that's visiting the level.
@@ -280,7 +294,6 @@
 	reserve_docks = dynamic_encounter_values[2]
 	ruin_turfs = dynamic_encounter_values[3]
 	spawned_ruins = dynamic_encounter_values[4]
-	spawned_mission_pois = dynamic_encounter_values[5]
 
 	var/datum/virtual_level/our_likely_vlevel = mapzone.virtual_levels[1]
 	if(istype(our_likely_vlevel) && selfloop)
@@ -305,22 +318,6 @@
 	for(var/ruin in ruin_turfs)
 		var/turf/ruin_turf = ruin_turfs[ruin]
 		message_admins(span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
-
-/datum/overmap/dynamic/ui_data(mob/user)
-	. = ..()
-	.["active_ruin_missions"] = list()
-	.["inactive_ruin_missions"] = list()
-	for(var/datum/mission/ruin/mission as anything in dynamic_missions)
-		if(mission.active)
-			.["active_ruin_missions"] += list(list(
-				"ref" = REF(mission),
-				"name" = mission.name,
-			))
-		else
-			.["inactive_ruin_missions"] += list(list(
-				"ref" = REF(mission),
-				"name" = mission.name,
-			))
 
 /datum/overmap/dynamic/empty
 	name = "Empty Space"
@@ -594,6 +591,9 @@
 	light_range = 2
 	light_power = 1
 	light_color = "#FFFFFF" // should look liminal, due to moons lighting
+
+/area/overmap_encounter/planetoid/moon/explored
+	area_flags = VALID_TERRITORY
 
 /area/overmap_encounter/planetoid/asteroid
 	name = "\improper Asteroid Field"

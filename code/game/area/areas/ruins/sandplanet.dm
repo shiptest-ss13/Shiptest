@@ -75,3 +75,108 @@
 
 /area/ruin/whitesands/nomad_stop/food
 	name = "Living Compound"
+
+//Settlement Raid
+
+/area/ruin/whitesands/settlement
+	name = "Planetoid Cavern"
+	icon_state = "green"
+
+/area/ruin/whitesands/settlement/greenhouse
+	name = "Greenhouse"
+	icon_state = "hydro"
+
+/area/ruin/whitesands/settlement/pen
+	name = "Goliath Pen"
+	icon_state = "hydro"
+	always_unpowered = FALSE
+
+/area/ruin/whitesands/settlement/granary
+	name = "Granary"
+	icon_state = "kitchen"
+
+/area/ruin/whitesands/settlement/butcher
+	name = "Butcher Shop"
+	icon_state = "kitchen"
+
+/area/ruin/whitesands/settlement/doctor
+	name = "Doctor Home"
+	icon_state = "surgery"
+
+/area/ruin/whitesands/settlement/roboticist
+	name = "Sand House"
+	icon_state = "robotics"
+
+/area/ruin/whitesands/settlement/residence
+	name = "Sand House"
+	icon_state = "crew_quarters"
+
+/area/ruin/whitesands/settlement/blackmarket
+	name = "Sand House"
+	icon_state = "crew_quarters"
+
+/area/ruin/whitesands/settlement/rancher
+	name = "Rancher House"
+	icon_state = "mining"
+
+/area/ruin/whitesands/settlement/guardshouse
+	name = "Guard Barracks"
+	icon_state = "security"
+
+/area/ruin/whitesands/settlement/fortress
+	name = "Mayor's Fortress"
+	icon_state = "armory"
+
+/area/ruin/whitesands/settlement/shuttle_one
+	name = "Frontiersmen Shuttle"
+	icon_state = "red"
+
+/area/ruin/whitesands/settlement/shuttle_two
+	name = "Frontiersmen Shuttle"
+	icon_state = "red"
+
+/area/ruin/whitesands/settlement/shuttle_three
+	name = "Frontiersmen Shuttle"
+	icon_state = "red"
+
+//pubby town!
+
+/area/ruin/whitesands/pubbytown
+	name = "Planetoid Cavern"
+	icon_state = "green"
+
+/area/ruin/whitesands/pubbytown/shop
+	name = "General Store"
+	icon_state = "storage"
+
+/area/ruin/whitesands/pubbytown/clinic
+	name = "Clinic"
+	icon_state = "surgery"
+
+/area/ruin/whitesands/pubbytown/study
+	name = "Public Library"
+	icon_state = "crew_quarters"
+
+/area/ruin/whitesands/pubbytown/guard
+	name = "Guardhouse"
+	icon_state = "security"
+
+/area/ruin/whitesands/pubbytown/canteen
+	name = "Mess Hall"
+	icon_state = "kitchen"
+
+/area/ruin/whitesands/pubbytown/house
+	name = "Sand House"
+	icon_state = "crew_quarters"
+
+/area/ruin/whitesands/pubbytown/wreck
+	name = "Pubby-class Hallway"
+	icon_state = "bluenew"
+
+/area/ruin/whitesands/pubbytown/engine
+	name = "Pubby-class Engine Room"
+	icon_state = "green"
+
+/area/ruin/whitesands/pubbytown/cargo
+	name = "Pubby-class Cargo Bay"
+	icon_state = "auxstorage"

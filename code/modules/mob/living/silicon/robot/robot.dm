@@ -258,8 +258,6 @@
 	var/changed_name = ""
 	if(custom_name)
 		changed_name = custom_name
-	if(SSticker.anonymousnames) //only robotic renames will allow for anything other than the anonymous one
-		changed_name = anonymous_ai_name(is_ai = FALSE)
 	if(!changed_name && C && C.prefs.custom_names["cyborg"] != DEFAULT_CYBORG_NAME)
 		apply_pref_name("cyborg", C)
 		return //built in camera handled in proc
@@ -468,7 +466,7 @@
 		var/mutable_appearance/head_overlay = hat.build_worn_icon(default_layer = 20, default_icon_file = 'icons/mob/clothing/head.dmi')
 		head_overlay.pixel_y += hat_offset
 		add_overlay(head_overlay)
-	update_fire()
+	update_appearance(UPDATE_OVERLAYS)
 
 /mob/living/silicon/robot/proc/self_destruct()
 	if(emagged)
@@ -748,7 +746,7 @@
 						<b>You are armed with robust engineering tools to aid you in your mission: help the operatives secure the nuclear authentication disk. \
 						Your destination tagger will allow you to stealthily traverse the disposal network across the station \
 						Your welder will allow you to repair the operatives' exosuits, but also yourself and your fellow cyborgs \
-						Your cyborg chameleon projector allows you to assume the appearance and registered name of a Nanotrasen engineering borg, and undertake covert actions on the station \
+						Your cyborg chameleon projector allows you to assume the appearance and registered name of a Makosso-Warra engineering borg, and undertake covert actions on the station \
 						Be aware that almost any physical contact or incidental damage will break your camouflage \
 						<i>Help the operatives secure the disk at all costs!</i></b>"
 	set_module = /obj/item/robot_module/saboteur
@@ -880,9 +878,8 @@
 		hud_used.update_robot_modules_display()
 
 	if (hasExpanded)
-		resize = 0.5
 		hasExpanded = FALSE
-		update_transform()
+		update_transform(0.5)
 	logevent("Chassis configuration has been reset.")
 	module.transform_to(/obj/item/robot_module)
 
@@ -1154,3 +1151,18 @@
 	var/datum/computer_file/program/robotact/program = modularInterface.get_robotact()
 	if(program)
 		program.force_full_update()
+
+
+/mob/living/silicon/robot/get_fire_overlay(stacks, on_fire)
+	var/fire_icon = "generic_fire"
+
+	if(!GLOB.fire_appearances[fire_icon])
+		var/mutable_appearance/new_fire_overlay = mutable_appearance(
+			'icons/mob/onfire.dmi',
+			fire_icon,
+			-HIGHEST_LAYER,
+			appearance_flags = RESET_COLOR,
+		)
+		GLOB.fire_appearances[fire_icon] = new_fire_overlay
+
+	return GLOB.fire_appearances[fire_icon]

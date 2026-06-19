@@ -172,7 +172,7 @@
 	take_bodypart_damage(acidpwr * min(0.6, acid_volume*0.1))
 
 
-/mob/living/carbon/monkey/ex_act(severity, target, origin)
+/mob/living/carbon/monkey/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM, origin)
 	if(origin && istype(origin, /datum/spacevine_mutation) && isvineimmune(src))
 		return
 	..()
@@ -184,15 +184,15 @@
 			return
 
 		if (EXPLODE_HEAVY)
-			take_overall_damage(60, 60)
-			damage_clothes(200, BRUTE, "bomb")
+			take_overall_damage(heavy_dam/2, heavy_dam/2)
+			damage_clothes(heavy_item_dam, BRUTE, "bomb")
 			adjustEarDamage(30, 120)
 			if(prob(70))
 				Unconscious(200)
 
 		if(EXPLODE_LIGHT)
-			take_overall_damage(30, 0)
-			damage_clothes(50, BRUTE, "bomb")
+			take_overall_damage(light_dam/2, light_dam/2)
+			damage_clothes(light_item_dam, BRUTE, "bomb")
 			adjustEarDamage(15,60)
 			if (prob(50))
 				Unconscious(160)
@@ -201,10 +201,14 @@
 	//attempt to dismember bodyparts
 	if(severity <= 2)
 		var/max_limb_loss = round(4/severity) //so you don't lose four limbs at severity 3.
-		for(var/obj/item/bodypart/BP as anything in bodyparts)
-			if(prob(50/severity) && BP.body_zone != BODY_ZONE_CHEST)
-				BP.brute_dam = BP.max_damage
-				BP.dismember()
+		var/obj/item/bodypart/body_part
+		for(var/zone in bodyparts)
+			body_part = bodyparts[zone]
+			if(!body_part)
+				continue
+			if(prob(50/severity) && zone != BODY_ZONE_CHEST)
+				body_part.brute_dam = body_part.max_damage
+				body_part.dismember()
 				max_limb_loss--
 				if(!max_limb_loss)
 					break

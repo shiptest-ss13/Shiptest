@@ -128,7 +128,7 @@
 	pixel_x = -5
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
-/obj/item/trash/cheesie{
+/obj/item/trash/gummycarps{
 	pixel_x = -5;
 	pixel_y = -10
 	},
@@ -1549,6 +1549,18 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
+"je" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/lime{
+	dir = 1
+	},
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/pgf_wreck)
 "jl" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
@@ -1911,9 +1923,6 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 1
-	},
-/obj/structure/sign/poster/contraband/pgf{
-	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
@@ -3375,11 +3384,6 @@
 	retreat_distance = null;
 	name = "Foreman Bonsha"
 	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun;
-	mission_index = 2
-	},
 /turf/open/floor/carpet/red_gold,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "tl" = (
@@ -3738,10 +3742,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station)
 "uV" = (
-/obj/effect/spawner/random/food_or_drink/donkpockets,
-/obj/effect/spawner/random/food_or_drink/donkpockets,
-/obj/effect/spawner/random/food_or_drink/donkpockets,
-/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/shoalpockets,
+/obj/effect/spawner/random/food_or_drink/shoalpockets,
+/obj/effect/spawner/random/food_or_drink/shoalpockets,
+/obj/effect/spawner/random/food_or_drink/shoalpockets,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
@@ -5370,10 +5374,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "DX" = (
-/obj/structure/noticeboard{
-	pixel_y = 33;
+/obj/structure/noticeboard/directional/north{
 	desc = "A board for mounting trophies or momentos on.";
-	name = "wall board"
+	name = "wall board";
+	pixel_y = 36
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 1
@@ -5910,7 +5914,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner,
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/ramzi/melee/machete,
+/mob/living/simple_animal/hostile/human/ramzi/melee/sawbones,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/powered/ramzi_station/med)
 "Hl" = (
@@ -6370,6 +6374,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/space/pgf_wreck)
 "Ka" = (
@@ -6625,10 +6632,6 @@
 /obj/structure/closet/body_bag,
 /obj/effect/mob_spawn/human/corpse/pgf/captain,
 /obj/item/storage/belt/sabre/pgf,
-/obj/effect/landmark/mission_poi/main{
-	already_spawned = 1;
-	spawn_in_containter = 1
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
 "Ll" = (
@@ -6697,8 +6700,8 @@
 	},
 /obj/item/clothing/suit/armor/ramzi,
 /obj/item/clothing/suit/armor/ramzi,
-/obj/item/clothing/head/helmet/ramzi,
-/obj/item/clothing/head/helmet/ramzi,
+/obj/item/clothing/head/helmet/m10/ramzi,
+/obj/item/clothing/head/helmet/m10/ramzi,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "LC" = (
@@ -7276,7 +7279,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/item/storage/toolbox/ammo/c75,
+/obj/item/storage/toolbox/ammo/c65,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Oz" = (
@@ -7444,14 +7447,14 @@
 	},
 /obj/item/storage/belt/military/assault,
 /obj/item/storage/belt/military/assault,
-/obj/item/clothing/glasses/sunglasses/ballistic,
-/obj/item/clothing/glasses/sunglasses/ballistic,
 /obj/item/attachment/bayonet,
 /obj/item/attachment/bayonet,
 /obj/item/attachment/rail_light,
 /obj/item/attachment/rail_light,
 /obj/item/storage/belt/security/webbing/ramzi/alt,
 /obj/item/storage/belt/security/webbing/ramzi,
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi,
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "Po" = (
@@ -9533,13 +9536,13 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Ze" = (
-/obj/structure/noticeboard{
-	pixel_y = 33;
+/obj/structure/noticeboard/directional/north{
 	desc = "A board for mounting trophies or momentos on.";
-	name = "wall board"
+	name = "wall board";
+	pixel_y = 36
 	},
 /obj/item/pickaxe/drill/jackhammer/old{
-	pixel_y = 31;
+	pixel_y = 26;
 	name = "old jackhammer";
 	desc = "The old fashioned solution to a stubborn wall- used heavily all over known space until the onset of sonic deconstruction technology and Rapid Construction Devices. <i>Don't forget. -485 FS.</i> is carved into the side."
 	},
@@ -11723,7 +11726,7 @@ av
 GI
 fG
 sM
-Sr
+je
 gr
 sM
 Hi

@@ -17,12 +17,12 @@
 #define OPENCONTAINER (REFILLABLE | DRAINABLE | TRANSPARENT)
 
 
-#define TOUCH 1	// splashing
-#define INGEST 2	// ingestion
-#define VAPOR 3	// foam, spray, blob attack
-#define PATCH 4	// patches
-#define INJECT 5	// injection
-#define SMOKE 6 //smoking
+#define TOUCH (1<<0) // splashing
+#define INGEST (1<<1) // ingestion
+#define VAPOR (1<<2) // foam, spray, blob attack
+#define PATCH (1<<3) // patches
+#define INJECT (1<<4) // injection
+#define INHALE (1<<5) // smoking, inhalers
 
 //defines passed through to the on_reagent_change proc
 #define DEL_REAGENT 1	// reagent deleted (fully cleared)
@@ -34,7 +34,7 @@
 #define THRESHOLD_UNHUSK 50 //Health treshold for instabitaluri and rezadone to unhusk someone
 
 //used by chem masters and pill presses
-#define PILL_STYLE_COUNT 22 //Update this if you add more pill icons or you die
+#define PILL_STYLE_COUNT 37 //Update this if you add more pill icons or you die
 #define RANDOM_PILL_STYLE 22 //Dont change this one though
 
 //used for the autowiki, these reagents you should be able to aquire easily

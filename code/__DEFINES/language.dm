@@ -2,8 +2,12 @@
 #define TONGUELESS_SPEECH (1<<1)
 #define LANGUAGE_HIDE_ICON_IF_UNDERSTOOD (1<<2)
 #define LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD (1<<3)
+/// This language can be selected in preferences.
+#define ROUNDSTART_LANGUAGE (1<<4)
 /// This language is signed, not spoken.
-#define SIGNED_LANGUAGE (1<<4)
+#define SIGNED_LANGUAGE (1<<5)
+/// Sarathi do not "sss" when speaking this language
+#define NO_HISS (1<<6)
 
 // LANGUAGE SOURCE DEFINES
 /// For use in full removal only.

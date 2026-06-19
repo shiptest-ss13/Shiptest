@@ -15,7 +15,7 @@
 	var/default_mutation_genes[DNA_MUTATION_BLOCKS] //List of the default genes from this mutation to allow DNA Scanner highlighting
 	var/stability = 100
 	var/scrambled = FALSE //Did we take something like mutagen? In that case we cant get our genes scanned to instantly cheese all the powers.
-	var/current_body_size = BODY_SIZE_NORMAL //This is a size multiplier, it starts at "1".
+	var/current_height_filter = HUMAN_HEIGHT_MEDIUM
 
 
 	var/delete_species = TRUE //Set to FALSE when a body is scanned by a cloner to fix #38875. WS Edit - Cloning
@@ -66,7 +66,9 @@
 	new_dna.features = features.Copy()
 	new_dna.species = new species.type
 	new_dna.real_name = real_name
-	new_dna.update_body_size() //Must come after features.Copy()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/human_holder = holder
+		human_holder.set_mob_height(current_height_filter)
 	new_dna.mutations = mutations.Copy()
 
 //See mutation.dm for what 'class' does. 'time' is time till it removes itself in decimals. 0 for no timer
@@ -292,22 +294,6 @@
 	return
 
 /////////////////////////// DNA MOB-PROCS //////////////////////
-/datum/dna/proc/update_body_size()
-	if(!holder)
-		return
-	var/desired_size = GLOB.body_sizes[features["body_size"]]
-
-	if(desired_size == current_body_size)
-		return
-
-	if(!features["body_size"])
-		return
-
-	var/change_multiplier = desired_size / current_body_size
-	var/translate = ((change_multiplier-1) * 32) * 0.5
-	holder.transform = holder.transform.Scale(change_multiplier)
-	holder.transform = holder.transform.Translate(0, translate)
-	current_body_size = desired_size
 
 /mob/proc/set_species(datum/species/mrace, icon_update = 1)
 	return
@@ -352,7 +338,7 @@
 			language_holder = new species_holder(src)
 
 /mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
-	robotic ||= fbp
+	robotic ||= HAS_TRAIT(src, TRAIT_USE_PROSTHETIC)
 	..()
 	if(icon_update)
 		update_hair()
@@ -626,7 +612,7 @@
 	dna.remove_all_mutations()
 	dna.stability = 100
 	if(prob(max(70-instability,0)))
-		switch(rand(0,10)) //not complete and utter death
+		switch(rand(0,6)) //not complete and utter death
 			if(0)
 				monkeyize()
 			if(1)
@@ -641,14 +627,8 @@
 				to_chat(src, span_notice("Oh, I actually feel quite alright!")) //you thought
 				physiology.damage_resistance = -20000
 			if(5)
-				to_chat(src, span_notice("Oh, I actually feel quite alright!"))
-				reagents.add_reagent(/datum/reagent/aslimetoxin, 10)
-			if(6)
 				apply_status_effect(STATUS_EFFECT_GO_AWAY)
-			if(7)
-				to_chat(src, span_notice("Oh, I actually feel quite alright!"))
-				ForceContractDisease(new/datum/disease/decloning()) //slow acting, non-viral clone damage based GBS
-			if(8)
+			if(6)
 				var/list/elligible_organs = list()
 				for(var/obj/item/organ/O in internal_organs) //make sure we dont get an implant or cavity item
 					elligible_organs += O
@@ -658,9 +638,7 @@
 					O.Remove(src)
 					visible_message(span_danger("[src] vomits up their [O.name]!"), span_danger("You vomit up your [O.name]")) //no "vomit up your the heart"
 					O.forceMove(drop_location())
-			if(9 to 10)
-				ForceContractDisease(new/datum/disease/gastrolosis())
-				to_chat(src, span_notice("Oh, I actually feel quite alright!"))
+
 	else
 		switch(rand(0,5))
 			if(0)
@@ -679,7 +657,7 @@
 					else
 						gib()
 				else
-					set_species(/datum/species/dullahan)
+					set_species(/datum/species/human)
 			if(4)
 				visible_message(span_warning("[src]'s skin melts off!"), span_boldwarning("Your skin melts off!"))
 				spawn_gibs()

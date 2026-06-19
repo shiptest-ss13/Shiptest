@@ -54,6 +54,10 @@
 		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 
+	if(!GLOB.deadchat_allowed && !client.holder)
+		to_chat(usr, span_danger("Deadchat is currently muted."))
+		return
+
 	var/jb = is_banned_from(ckey, "Deadchat")
 	if(QDELETED(src))
 		return
@@ -161,9 +165,9 @@
 		else if(key == ";" && !mods[MODE_HEADSET])
 			mods[MODE_HEADSET] = TRUE
 		else if((key in GLOB.department_radio_prefixes) && length(message) > length(key) + 1 && !mods[RADIO_EXTENSION])
-			mods[RADIO_KEY] = lowertext(message[1 + length(key)])
+			mods[RADIO_KEY] = trimtext(lowertext(message[1 + length(key)] + message[2 + length(key)])) // Allows for two character radio keys
 			mods[RADIO_EXTENSION] = GLOB.department_radio_keys[mods[RADIO_KEY]]
-			chop_to = length(key) + 2
+			chop_to = length(mods[RADIO_KEY]) + 2
 		else if(key == "," && !mods[LANGUAGE_EXTENSION])
 			for(var/ld in GLOB.all_languages)
 				var/datum/language/LD = ld

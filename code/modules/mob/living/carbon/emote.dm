@@ -117,6 +117,24 @@
 	mob_type_allowed_typecache = list(/mob/living/carbon/human)
 	hands_use_check = TRUE
 
+/datum/emote/living/carbon/thumbup
+	key = "thumbup"
+	key_third_person = "raises a thumbs up"
+	message = "raises a thumbs up."
+	hands_use_check = TRUE
+
+/datum/emote/living/carbon/thumbdown
+	key = "thumbdown"
+	key_third_person = "shows a thumbs down"
+	message = "shows a thumbs down."
+	hands_use_check = TRUE
+
+/datum/emote/living/carbon/beckon
+	key = "beckon"
+	key_third_person = "motions to follow them"
+	message = "motions to follow them."
+	hands_use_check = TRUE
+
 /datum/emote/living/carbon/tail
 	key = "tail"
 	message = "waves their tail."
@@ -126,6 +144,30 @@
 	key = "wink"
 	key_third_person = "winks"
 	message = "winks."
+
+/datum/emote/living/carbon/sweat
+	key = "sweat"
+	key_third_person = "sweatdrops"
+	message = "sweats."
+	emote_type = EMOTE_ANIMATED | EMOTE_VISIBLE
+	sound_volume = 25
+	vary = TRUE
+	overlay_icon_state = "sweatdrop"
+	overlay_x_offset = 10
+	overlay_y_offset = 10
+	emote_length = 3 SECONDS
+	sound = 'sound/emotes/sweatdrop.ogg'
+
+/datum/emote/living/carbon/annoyed
+	key = "annoyed"
+	emote_type = EMOTE_ANIMATED | EMOTE_VISIBLE
+	sound_volume = 25
+	vary = TRUE
+	overlay_icon_state = "annoyed"
+	overlay_x_offset = 10
+	overlay_y_offset = 10
+	emote_length = 6 SECONDS
+	sound = 'sound/emotes/annoyed.ogg'
 
 /datum/emote/living/carbon/circle
 	key = "circle"
@@ -523,13 +565,13 @@
 	var/mob/living/owner = loc
 	if(!istype(owner))
 		return
-	RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(ownerExamined))
+	RegisterSignal(owner, COMSIG_ATOM_EXAMINE, PROC_REF(ownerExamined))
 
 /obj/item/circlegame/Destroy()
 	var/mob/owner = loc
 	if(!istype(owner))
 		return ..()
-	UnregisterSignal(owner, COMSIG_PARENT_EXAMINE)
+	UnregisterSignal(owner, COMSIG_ATOM_EXAMINE)
 	. = ..()
 
 /// Stage 1: The mistake is made

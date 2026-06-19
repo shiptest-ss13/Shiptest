@@ -24,7 +24,8 @@ GLOBAL_LIST_INIT(creamable, typecacheof(list(
 
 	if(ishuman(parent))
 		var/mob/living/carbon/human/H = parent
-		if(/obj/item/bodypart/head/lizard in H.bodyparts)
+		var/obj/item/bodypart/head/victim_head = H.bodyparts[BODY_ZONE_HEAD]
+		if(victim_head?.bodytype & BODYTYPE_SNOUT)
 			creamface.icon_state = "creampie_lizard"
 		else
 			creamface.icon_state = "creampie_human"

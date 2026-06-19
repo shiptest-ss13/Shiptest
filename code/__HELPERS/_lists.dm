@@ -63,13 +63,14 @@
 #define LAZYLEN(L) length(L)
 #define LAZYCLEARLIST(L) if(L) L.Cut()
 #define SANITIZE_LIST(L) (islist(L) ? L : list())
-#define reverseList(L) reverseRange(L.Copy())
+#define reverseList(L) reverse_range(L.Copy())
 #define LAZYADDASSOC(L, K, V) if(!L) { L = list(); } L[K] += V;
 #define LAZYADDASSOCLIST(L, K, V) if(!L) { L = list(); } L[K] += list(V);
 #define LAZYREMOVEASSOC(L, K, V) if(L) { if(L[K]) { L[K] -= V; if(!length(L[K])) L -= K; } if(!length(L)) L = null; }
-#define LAZYACCESSASSOC(L, I, K) L ? L[I] ? L[I][K] ? L[I][K] : null : null : null
+#define LAZYACCESSASSOC(L, I, K) L?[I]?[K]
 #define LAZYNULL(L) L = null
 #define QDEL_LAZYLIST(L) for(var/I in L) qdel(I); L = null;
+#define QDEL_LAZYASSOCLIST(L) for(var/K in L) qdel(L[K]); L = null;
 /// ORs two lazylists together without inserting errant nulls, returning a new list and not modifying the existing lists.
 #define LAZY_LISTS_OR(left_list, right_list)\
 	(length(left_list)\
@@ -86,6 +87,16 @@
 	LAZYINITLIST(lazy_list); \
 	LAZYINITLIST(lazy_list[key]); \
 	lazy_list[key] |= value;
+
+/// Calls Insert on the lazy list if it exists, otherwise initializes it with the value
+#define LAZYINSERT(lazylist, index, value) \
+	if (!lazylist) { \
+		lazylist = list(value); \
+	} else if (index == 0 && index > length(lazylist)) { \
+		lazylist += value; \
+	} else { \
+		lazylist.Insert(index, value); \
+	}
 
 /// Passed into BINARY_INSERT to compare keys
 #define COMPARE_KEY __BIN_LIST[__BIN_MID]
@@ -665,7 +676,7 @@
 			L.Swap(fromIndex++, toIndex++)
 
 //replaces reverseList ~Carnie
-/proc/reverseRange(list/L, start=1, end=0)
+/proc/reverse_range(list/L, start=1, end=0)
 	if(L.len)
 		start = start % L.len
 		end = end % (L.len+1)
@@ -841,3 +852,32 @@
 			continue
 		UNTYPED_LIST_ADD(keys, key)
 	return keys
+
+/// Compares 2 lists, returns TRUE if they are the same
+/proc/deep_compare_list(list/list_1, list/list_2)
+	if(list_1 == list_2)
+		return TRUE
+
+	if(!islist(list_1) || !islist(list_2))
+		return FALSE
+
+	if(list_1.len != list_2.len)
+		return FALSE
+
+	for(var/i in 1 to list_1.len)
+		var/key_1 = list_1[i]
+		var/key_2 = list_2[i]
+		if (islist(key_1) && islist(key_2))
+			if(!deep_compare_list(key_1, key_2))
+				return FALSE
+		else if(key_1 != key_2)
+			return FALSE
+		if(istext(key_1) || islist(key_1) || ispath(key_1) || isdatum(key_1) || key_1 == world)
+			var/value_1 = list_1[key_1]
+			var/value_2 = list_2[key_1]
+			if (islist(value_1) && islist(value_2))
+				if(!deep_compare_list(value_1, value_2))
+					return FALSE
+			else if(value_1 != value_2)
+				return FALSE
+	return TRUE

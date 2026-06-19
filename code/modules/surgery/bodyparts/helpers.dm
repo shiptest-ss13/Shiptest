@@ -1,13 +1,60 @@
 /mob/living/proc/get_bodypart(zone)
+	RETURN_TYPE(/obj/item/bodypart)
 	return
 
-/mob/living/carbon/get_bodypart(zone)
+/// Returns a bodypart occupying a specific zone. If using a precise zone and no such part is present, it falls back to a non-precise zone.
+/mob/living/carbon/get_bodypart(zone, simplify = FALSE)
+	RETURN_TYPE(/obj/item/bodypart)
 	if(!zone)
 		zone = BODY_ZONE_CHEST
-	for(var/obj/item/bodypart/L as anything in bodyparts)
-		if(L.body_zone == zone)
-			return L
+	var/returned_part = bodyparts[zone]
+	if(!returned_part)
+		returned_part = bodyparts[check_zone(zone)]
+	return returned_part
 
+/// Returns all bodyparts that exist on the mob.
+/mob/living/proc/get_all_bodyparts()
+	RETURN_TYPE(/list)
+	return
+
+// Try not to use this too much, it's more expensive than doing it directly when iterating
+/mob/living/carbon/get_all_bodyparts()
+	var/list/all_parts = list()
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
+		all_parts += limb
+	return all_parts
+
+/// Returns a random available bodypart.
+/mob/living/proc/get_random_bodypart()
+	return
+
+/mob/living/carbon/get_random_bodypart()
+	var/list/all_parts = list()
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
+		all_parts += limb
+	return pick(all_parts)
+
+/// Returns the number of bodyparts.
+/mob/living/proc/get_bodypart_count()
+	return
+
+/mob/living/carbon/get_bodypart_count()
+	var/list/all_parts = list()
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
+		all_parts += limb
+	return all_parts.len
 
 /mob/living/carbon/has_hand_for_held_index(i)
 	if(!i)
@@ -66,36 +113,20 @@
 	return list()
 
 /mob/living/carbon/get_missing_limbs()
-	var/list/full = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
-	for(var/zone in full)
-		if(get_bodypart(zone))
-			full -= zone
-	return full
-
-/mob/living/carbon/alien/larva/get_missing_limbs()
-	var/list/full = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST)
-	for(var/zone in full)
-		if(get_bodypart(zone))
-			full -= zone
-	return full
+	var/list/missing_limbs = list()
+	for(var/zone in bodyparts)
+		if(!bodyparts[zone])
+			missing_limbs += zone
+	return missing_limbs
 
 /mob/living/proc/get_disabled_limbs()
 	return list()
 
 /mob/living/carbon/get_disabled_limbs()
-	var/list/full = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
 	var/list/disabled = list()
-	for(var/zone in full)
-		var/obj/item/bodypart/affecting = get_bodypart(zone)
-		if(affecting?.bodypart_disabled)
-			disabled += zone
-	return disabled
-
-/mob/living/carbon/alien/larva/get_disabled_limbs()
-	var/list/full = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST)
-	var/list/disabled = list()
-	for(var/zone in full)
-		var/obj/item/bodypart/affecting = get_bodypart(zone)
+	var/obj/item/bodypart/affecting
+	for(var/zone in bodyparts)
+		affecting = bodyparts[zone]
 		if(affecting?.bodypart_disabled)
 			disabled += zone
 	return disabled
@@ -106,13 +137,21 @@
 
 ///Remove all embedded objects from all limbs on the carbon mob
 /mob/living/carbon/proc/remove_all_embedded_objects()
-	for(var/obj/item/bodypart/L as anything in bodyparts)
-		for(var/obj/item/I in L.embedded_objects)
+	var/obj/item/bodypart/body_part
+	for(var/zone in bodyparts)
+		body_part = bodyparts[zone]
+		if(!body_part)
+			continue
+		for(var/obj/item/I in body_part.embedded_objects)
 			remove_embedded_object(I)
 
 /mob/living/carbon/proc/has_embedded_objects(include_harmless=FALSE)
-	for(var/obj/item/bodypart/L as anything in bodyparts)
-		for(var/obj/item/I in L.embedded_objects)
+	var/obj/item/bodypart/body_part
+	for(var/zone in bodyparts)
+		body_part = bodyparts[zone]
+		if(!body_part)
+			continue
+		for(var/obj/item/I in body_part.embedded_objects)
 			if(!include_harmless && I.isEmbedHarmless())
 				continue
 			return TRUE
@@ -122,29 +161,30 @@
 // FUCK YOU AUGMENT CODE - With love, Kapu
 //Hi Kapu
 // this code was perfectly fine kapu
+// No it's wasnt, but now it is. -sarah
 /mob/living/carbon/proc/new_body_part(zone, robotic, fixed_icon, datum/species/species)
 	species ||= dna.species
-	var/obj/item/bodypart/L
-	switch(zone)
-		if(BODY_ZONE_L_ARM)
-			L = robotic ? new species.species_robotic_l_arm() : new species.species_l_arm()
-		if(BODY_ZONE_R_ARM)
-			L = robotic ? new species.species_robotic_r_arm() : new species.species_r_arm()
-		if(BODY_ZONE_HEAD)
-			L = robotic ? new species.species_robotic_head() : new species.species_head()
-		if(BODY_ZONE_L_LEG)
-			if(species.is_digitigrade(src))
-				L = robotic ? new species.species_robotic_digi_l_leg() : new species.species_digi_l_leg()
-			else
-				L = robotic ? new species.species_robotic_l_leg() : new species.species_l_leg()
-		if(BODY_ZONE_R_LEG)
-			if(species.is_digitigrade(src))
-				L = robotic ? new species.species_robotic_digi_r_leg() : new species.species_digi_r_leg()
-			else
-				L = robotic ? new species.species_robotic_r_leg() : new species.species_r_leg()
-		if(BODY_ZONE_CHEST)
-			L = robotic ? new species.species_robotic_chest() : new species.species_chest()
-	. = L
+	robotic ||= HAS_TRAIT(src, TRAIT_USE_PROSTHETIC)
+	var/bodypart_type
+	if(robotic && species.prosthetic_style)
+		bodypart_type = species.prosthetic_style.replacement_bodyparts[zone]
+	else
+		bodypart_type = species.species_limbs[zone]
+	if(!bodypart_type)
+		return null
+	return new bodypart_type()
+
+/mob/living/carbon/proc/new_organ(slot, robotic = FALSE, datum/species/species)
+	species ||= dna.species
+	robotic ||= HAS_TRAIT(src, TRAIT_USE_PROSTHETIC)
+	var/organ_type
+	if(robotic && species.prosthetic_style && (slot in species.prosthetic_style.replacement_organs))
+		organ_type = species.prosthetic_style.replacement_organs[slot]
+	else
+		organ_type = species.species_organs[slot]
+	if(!organ_type)
+		return null
+	return new organ_type()
 
 /mob/living/carbon/monkey/new_body_part(zone, robotic, fixed_icon, datum/species/species)
 	var/obj/item/bodypart/L
@@ -205,29 +245,49 @@
 /proc/skintone2hex(skin_tone)
 	. = 0
 	switch(skin_tone)
-		if("caucasian1")
+		if("porcelain")
 			. = "ffe0d1"
-		if("caucasian2")
+		if("cotton")
+			. = "e0dbdc"
+		if("peach")
 			. = "fcccb3"
-		if("caucasian3")
+		if("coral")
 			. = "e8b59b"
-		if("latino")
+		if("bisque")
 			. = "d9ae96"
-		if("mediterranean")
+		if("rosewood")
 			. = "c79b8b"
-		if("asian1")
+		if("sepia")
+			. = "895C51"
+		if("taupe")
+			. = "A5805D"
+		if("russet")
+			. = "874B3D"
+		if("beige")
+			. = "BD9D7D"
+		if("walnut")
+			. = "9F766D"
+		if("bronze")
+			. = "7F592B"
+		if("burnet")
+			. = "532B18"
+		if("amber")
+			. = "A37746"
+		if("hazel")
+			. = "A67138"
+		if("champagne")
 			. = "ffdeb3"
-		if("asian2")
+		if("olive")
 			. = "e3ba84"
-		if("arab")
+		if("tawny")
 			. = "c4915e"
-		if("indian")
+		if("ochre")
 			. = "b87840"
-		if("african1")
+		if("cedar")
 			. = "754523"
-		if("african2")
+		if("sable")
 			. = "471c18"
-		if("albino")
+		if("ivory")
 			. = "fff4e6"
 		if("orange")
 			. = "ffc905"

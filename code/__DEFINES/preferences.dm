@@ -66,13 +66,6 @@
 #define PARALLAX_DELAY_MED 1
 #define PARALLAX_DELAY_LOW 2
 
-#define SEC_DEPT_NONE "None"
-#define SEC_DEPT_RANDOM "Random"
-#define SEC_DEPT_ENGINEERING "Engineering"
-#define SEC_DEPT_MEDICAL "Medical"
-#define SEC_DEPT_SCIENCE "Science"
-#define SEC_DEPT_SUPPLY "Supply"
-
 // Playtime tracking system, see jobs_exp.dm
 // Due to changes to job experience requirements, many of these are effectively unused.
 #define EXP_TYPE_LIVING "Living"
@@ -130,10 +123,36 @@
 #define RANDOM_HAIR_GRADIENT_STYLE "random_grad_style"
 #define RANDOM_HAIR_GRADIENT_COLOR "random_grad_color"
 
-//prosthetics stuff
+//Limbs stuff
 #define PROSTHETIC_NORMAL "normal"
 #define PROSTHETIC_AMPUTATED "amputated"
 #define PROSTHETIC_ROBOTIC "prosthetic"
+
+/// You cannot speak or understand this language whatsoever.
+#define LANGUAGE_UNKNOWN "Unknown"
+/// You cannot speak this language, but can recognize some of the words.
+#define LANGUAGE_FAMILIAR "Familiar"
+/// You are proficient enough with this language to get by but fail to pick up on nuances.
+#define LANGUAGE_CONVERSATIONAL "Conversational"
+/// You are fluent in this language, and can both understand and speak it perfectly.
+#define LANGUAGE_FLUENT "Fluent"
+/// Maximum number of additional languages that can be selected.
+#define MAX_LANGUAGE_POINTS 4
+
+#define POINT_DISCOUNT_THRESHOLD_LOW 50
+#define POINT_DISCOUNT_THRESHOLD_HIGH 90
+#define MAXIMUM_POINT_DISCOUNT 2
+
+/// Index of the points cost of a level of understanding
+#define INDEX_POINT_COST 1
+/// Index of the intelligibility of a level of understanding
+#define INDEX_UNDERSTANDING 2
+
+//Eye scarring
+#define SCAR_RIGHT "Right"
+#define SCAR_LEFT "Left"
+#define SCAR_DOUBLE "Double"
+#define SCAR_RANDOM "Random"
 
 #define NOT_SYNTHETIC FALSE
 #define IS_SYNTHETIC TRUE

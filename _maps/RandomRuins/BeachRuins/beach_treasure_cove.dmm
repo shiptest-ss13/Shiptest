@@ -319,9 +319,9 @@
 	pixel_x = 9;
 	pixel_y = -1
 	},
-/obj/item/gun/ballistic/automatic/assault/cm82{
-	pixel_y = 7;
-	pixel_x = -9
+/obj/item/gun/ballistic/automatic/smg/cm5{
+	pixel_x = -5;
+	pixel_y = 5
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/beach/treasure_cove)
@@ -473,7 +473,7 @@
 	dir = 4;
 	color = "#808080"
 	},
-/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser/e10,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/treasure_cove)
 "sl" = (
@@ -977,12 +977,12 @@
 	pixel_x = -6;
 	pixel_y = 10
 	},
-/obj/item/melee/energy/sword/saber/pirate/red{
-	pixel_y = 8;
-	pixel_x = 10
-	},
 /obj/item/radio/old{
 	pixel_x = -3
+	},
+/obj/item/melee/boarding_axe{
+	pixel_x = 9;
+	pixel_y = 12
 	},
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/ruin/beach/treasure_cove)
@@ -1170,11 +1170,6 @@
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured,
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured;
-	mission_index = 1
-	},
 /turf/open/floor/carpet/red,
 /area/ruin/beach/treasure_cove)
 "SX" = (
@@ -1374,13 +1369,13 @@
 "ZO" = (
 /obj/structure/closet/body_bag,
 /obj/effect/mob_spawn/human/corpse/damaged,
-/obj/item/ammo_box/magazine/p16{
-	pixel_x = -7;
-	pixel_y = 2
-	},
 /obj/item/clothing/under/clip/officer,
 /obj/item/clothing/head/helmet/bulletproof/x11/clip,
 /obj/effect/decal/cleanable/blood/old,
+/obj/item/ammo_box/magazine/cm5_9mm{
+	pixel_x = -8;
+	pixel_y = -1
+	},
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 

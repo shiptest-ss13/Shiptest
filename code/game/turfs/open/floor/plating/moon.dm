@@ -43,6 +43,11 @@
 		icon = smooth_icon
 		icon_plating = null
 
+/turf/open/floor/plating/asteroid/moon/safe
+	planetary_atmos = FALSE
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+
+
 /turf/open/floor/plating/asteroid/moon/lit
 	light_range = 2
 	light_power = 1

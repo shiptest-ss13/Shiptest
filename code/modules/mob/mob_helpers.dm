@@ -335,6 +335,16 @@
 
 		a_intent = possible_a_intents[current_intent]
 
+
+	if (a_intent == INTENT_HARM)
+		var/obj/O = pulling
+		if (istype(O) && (O.density || O.drag_slowdown))
+			face_mouse = FALSE
+		else
+			face_mouse = TRUE
+	else
+		face_mouse = FALSE
+
 	if(hud_used && hud_used.action_intent)
 		hud_used.action_intent.icon_state = "[a_intent]"
 
@@ -446,26 +456,6 @@
 				alert_overlay.plane = FLOAT_PLANE
 				A.add_overlay(alert_overlay)
 
-/**
- * Heal a robotic body part on a mob
- */
-/proc/item_heal_robotic(mob/living/carbon/human/H, mob/user, brute_heal, burn_heal)
-	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
-	if(affecting && (!IS_ORGANIC_LIMB(affecting)))
-		var/dam //changes repair text based on how much brute/burn was supplied
-		if(brute_heal > burn_heal)
-			dam = 1
-		else
-			dam = 0
-		if((brute_heal > 0 && affecting.brute_dam > 0) || (burn_heal > 0 && affecting.burn_dam > 0))
-			if(affecting.heal_damage(brute_heal, burn_heal, 0, BODYTYPE_ROBOTIC))
-				H.update_damage_overlays()
-			user.visible_message("[user] has fixed some of the [dam ? "dents on" : "burnt wires in"] [H]'s [parse_zone(affecting.body_zone)].", \
-			span_notice("You fix some of the [dam ? "dents on" : "burnt wires in"] [H == user ? "your" : "[H]'s"] [parse_zone(affecting.body_zone)]."))
-			return 1 //successful heal
-		else
-			to_chat(user, span_warning("[affecting] is already in good condition!"))
-
 ///Is the passed in mob a ghost with admin powers, doesn't check for AI interact like isAdminGhost() used to
 /proc/isAdminObserver(mob/user)
 	if(!user)		//Are they a mob? Auto interface updates call this with a null src
@@ -518,15 +508,6 @@
 		to_chat(M, "There were no ghosts willing to take control.")
 		message_admins("No ghosts were willing to take control of [ADMIN_LOOKUPFLW(M)])")
 		return FALSE
-
-///Is the mob a flying mob
-/mob/proc/is_flying()
-	return (movement_type & FLYING)
-
-///Is the mob a floating mob
-/mob/proc/is_floating()
-	return (movement_type & FLOATING)
-
 
 ///Clicks a random nearby mob with the source from this mob
 /mob/proc/click_random_mob()

@@ -350,7 +350,7 @@
 		// you can always lower the bolts; doors are locked on floor creation to ensure no entry into shaft
 		fl_door.lock()
 		// don't want door refs hanging around
-		RegisterSignal(fl_door, COMSIG_PARENT_QDELETING, PROC_REF(door_qdelete))
+		RegisterSignal(fl_door, COMSIG_QDELETING, PROC_REF(door_qdelete))
 
 // Deletion via means other than /datum/elevator_master/remove_floor() are likely to cause nasty elevator desyncs.
 /datum/floor/Destroy()

@@ -76,9 +76,9 @@
 		if(cap_lost)
 			. += span_notice("The cap seems to be missing.")
 		else if(cap_on)
-			. += span_notice("The cap is firmly on to prevent spilling. Alt-click to remove the cap.")
+			. += span_notice("The cap is firmly on to prevent spilling. <b>Right-Click</b> to remove the cap.")
 		else
-			. += span_notice("The cap has been taken off. Alt-click to put a cap on.")
+			. += span_notice("The cap has been taken off. <b>Right-Click</b> to put a cap on.")
 
 /obj/item/reagent_containers/is_injectable(mob/user, allowmobs = TRUE)
 	if(can_have_cap && cap_on)
@@ -127,17 +127,22 @@
 	// reagents may have been emptied
 	if(!is_drainable() || !reagents.total_volume)
 		return
+
 	playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
 	target.visible_message(span_notice("[user] pours [src] onto [target]."))
 	log_combat(user, target, "poured [english_list(reagents.reagent_list)]", "in [AREACOORD(target)]")
 	log_game("[key_name(user)] poured [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
+
 	var/frac = min(amount_per_transfer_from_this/reagents.total_volume, 1)
 	// don't use trans_to, because we're not ADDING it to the object, we're just... pouring it.
 	reagents.expose(target, TOUCH, frac)
 	for(var/datum/reagent/reag as anything in reagents.reagent_list)
 		reagents.remove_reagent(reag.type, reag.volume * frac)
 
-/obj/item/reagent_containers/AltClick(mob/user)
+/obj/item/reagent_containers/attack_hand_secondary(mob/user)
+	attack_self_secondary(user)
+
+/obj/item/reagent_containers/attack_self_secondary(mob/user)
 	if(!can_interact(user))
 		return
 	. = ..()
@@ -262,14 +267,25 @@
 
 /obj/item/reagent_containers/update_overlays()
 	. = ..()
+	//no other way to check if it's a world icon
+	var/is_world = FALSE
+	if(world_file && icon == world_file)
+		is_world = TRUE
+	if(cap_overlay)
+		cap_overlay.icon = icon
+
 	if(cap_on)
 		. += cap_overlay
 	if(!fill_icon_thresholds)
 		return
-	if(!reagents.total_volume)
+	if(!reagents || !reagents.total_volume)
 		return
 
+
 	var/fill_name = fill_icon_state? fill_icon_state : icon_state
+	if(is_world)
+		fill_name += "_world"
+
 	var/mutable_appearance/filling = mutable_appearance(fill_icon, "[fill_name][fill_icon_thresholds[1]]")
 
 	var/percent = round((reagents.total_volume / volume) * 100)
@@ -292,3 +308,8 @@
 		var/datum/reagent/R = reagent
 		list_reagents[R.type] = R.volume
 	return ..() + "list_reagents"
+
+/obj/item/reagent_containers/Destroy()
+	. = ..()
+	QDEL_NULL(cap_overlay)
+	QDEL_NULL(reagents)

@@ -4,7 +4,7 @@
 	speech_verb = "chirps"
 	ask_verb = "chirps"
 	key = "f"
-	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
+	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | ROUNDSTART_LANGUAGE
 	space_chance = 40
 	sentence_chance = 0
 	between_word_sentence_chance = 20

@@ -38,9 +38,9 @@
 
 	return ..()
 
-/mob/living/carbon/proc/equip_in_one_of_slots(obj/item/I, list/slots, qdel_on_fail = 1)
+/mob/living/carbon/proc/equip_in_one_of_slots(obj/item/I, list/slots, qdel_on_fail = TRUE, bypass_equip_delay_self = TRUE)
 	for(var/slot in slots)
-		if(equip_to_slot_if_possible(I, slots[slot], qdel_on_fail = 0, disable_warning = TRUE))
+		if(equip_to_slot_if_possible(I, slots[slot], qdel_on_fail = FALSE, disable_warning = TRUE, bypass_equip_delay_self = bypass_equip_delay_self))
 			return slot
 	if(qdel_on_fail)
 		qdel(I)
@@ -241,6 +241,6 @@
 		visible_message(span_notice("[offerer] tries to hand over [I] but it's stuck to them...."))
 		return
 
-	visible_message(span_notice("[src] takes [I] from [offerer]"), \
-					span_notice("You take [I] from [offerer]"))
+	visible_message(span_notice("[src] takes [I] from [offerer]."), \
+					span_notice("You take [I] from [offerer]."))
 	put_in_hands(I)

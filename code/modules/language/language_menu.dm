@@ -23,6 +23,7 @@
 	var/list/data = list()
 
 	var/atom/movable/speaker = language_holder.owner
+	var/list/partial_languages = speaker?.get_partially_understood_languages()
 	data["languages"] = list()
 	for(var/datum/language/language as anything in GLOB.all_languages)
 		var/list/lang_data = list()
@@ -37,6 +38,7 @@
 			lang_data["can_speak"] = !!speaker.has_language(language, SPOKEN_LANGUAGE)
 			lang_data["could_speak"] = !!(language_holder.omnitongue || speaker.could_speak_language(language))
 			lang_data["can_understand"] = !!speaker.has_language(language, UNDERSTOOD_LANGUAGE)
+			lang_data["partial_understanding"] = partial_languages?[language] || 0
 
 		UNTYPED_LIST_ADD(data["languages"], lang_data)
 
@@ -80,6 +82,14 @@
 					if("Both")
 						adding_flags |= ALL
 
+				if(adding_flags & UNDERSTOOD_LANGUAGE)
+					var/partial_understanding = tgui_input_number(user, "Set level of understanding:", "[language_datum]", 100, 1, 100)
+					if(isnull(partial_understanding))
+						return
+					if(partial_understanding < 100)
+						adding_flags &= ~UNDERSTOOD_LANGUAGE
+						language_holder.grant_partial_language(language_datum, partial_understanding)
+
 				if(LAZYACCESS(language_holder.blocked_languages, language_datum))
 					choice = tgui_alert(user, "Do you want to lift the blockage that's also preventing the language to be spoken or understood?", "[language_datum]", list("Yes", "No"))
 					if(choice == "Yes")
@@ -105,6 +115,8 @@
 						removing_flags |= ALL
 
 				language_holder.remove_language(language_datum, removing_flags)
+				if(removing_flags & UNDERSTOOD_LANGUAGE)
+					language_holder.remove_partial_language(language_datum)
 				if(is_admin)
 					message_admins("[key_name_admin(user)] removed the [language_name] language to [key_name_admin(speaker)].")
 					log_admin("[key_name(user)] removed the language [language_name] to [key_name(speaker)].")

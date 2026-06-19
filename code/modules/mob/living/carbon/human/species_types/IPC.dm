@@ -1,24 +1,13 @@
 /datum/species/ipc // im fucking lazy mk2 and cant get sprites to normally work
 	name = "\improper Positronic" //inherited from the real species, for health scanners and things
 	id = SPECIES_IPC
-	sexes = FALSE
 	species_age_min = 0
 	species_age_max = 300
-	species_traits = list(HAIR,NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH) //all of these + whatever we inherit from the real species
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
-	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
-	mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
-	mutanteyes = /obj/item/organ/eyes/robotic
-	mutanttongue = /obj/item/organ/tongue/robot
-	mutantheart = /obj/item/organ/heart/cybernetic/ipc
-	mutantliver = /obj/item/organ/liver/cybernetic/upgraded/ipc
-	mutantstomach = /obj/item/organ/stomach/cell
-	mutantears = /obj/item/organ/ears/robot
-	mutantlungs = null //no more collecting change for you
-	mutantappendix = null
-	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
+	species_traits = list(HAIR,NOTRANSSTING,NO_DNA_COPY,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH) //all of these + whatever we inherit from the real species
+	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_USE_PROSTHETIC,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT,)
+	inherent_biotypes = MOB_ROBOTIC | MOB_HUMANOID
 	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis", "ipc_tail", "ipc_brain")
-	default_features = list("mcolor" = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics (Custom)", "ipc_tail" = "None", "ipc_brain" = "Posibrain", "body_size" = "Normal")
+	default_features = list("mcolor" = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics (Custom)", "ipc_tail" = "None", "ipc_brain" = "Posibrain")
 	meat = /obj/item/stack/sheet/plasteel{amount = 5}
 	skinned_type = /obj/item/stack/sheet/metal{amount = 10}
 	exotic_bloodtype = "Coolant"
@@ -37,17 +26,33 @@
 	Just as easy to repair as they are to destroy, they might just get their last laugh in as you're choking on neurotoxins. Beep Boop."
 	ass_image = 'icons/ass/assmachine.png'
 
-	species_chest = /obj/item/bodypart/chest/ipc
-	species_head = /obj/item/bodypart/head/ipc
-	species_l_arm = /obj/item/bodypart/l_arm/ipc
-	species_r_arm = /obj/item/bodypart/r_arm/ipc
-	species_l_leg = /obj/item/bodypart/leg/left/ipc
-	species_r_leg = /obj/item/bodypart/leg/right/ipc
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain/mmi_holder/posibrain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic/ipc,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/robotic,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/robot,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/robot,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/cybernetic/upgraded/ipc,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/cell,
+		ORGAN_SLOT_LEFT_ARM_AUG = /obj/item/organ/cyberimp/arm/power_cord,
+	)
+
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc,
+	)
+
+	// This will be set manually based on IPC chassis selection.
+	prosthetic_style = null
 
 	/// The last screen used when the IPC died.
 	var/saved_screen
 	var/datum/action/innate/change_screen/change_screen
-	var/has_screen = TRUE //do we have a screen. Used to determine if we mess with the screen or not
+	var/datum/action/innate/change_eye_color/change_eye_color
 
 /datum/species/ipc/random_name(unique)
 	var/ipc_name = "[pick(GLOB.posibrain_names)]-[rand(100, 999)]"
@@ -62,27 +67,38 @@
 		"[GLASSES_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = 0), "[EAST]" = list("x" = 2, "y" = 0), "[SOUTH]" = list("x" = 0, "y" = 0), "[WEST]" = list("x" = -2, "y" = 0)),
 	)
 
-/datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load) // Let's make that IPC actually robotic.
+/datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load, robotic = TRUE) // Let's make that IPC actually robotic.
+	var/datum/sprite_accessory/body/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
+	if(chassis_of_choice)
+		prosthetic_style = chassis_of_choice
+	else // in case of fuckery
+		stack_trace("Invalid IPC chassis: [C.dna.features["ipc_chassis"]]")
 	if(C.dna?.features["ipc_brain"] == "Man-Machine Interface")
-		mutantbrain = /obj/item/organ/brain/mmi_holder
-	. = ..()
-	if(ishuman(C))
-		var/mob/living/carbon/human/H = C
-		if(!change_screen)
-			var/datum/species/ipc/species_datum = H.dna.species
-			if(species_datum?.has_screen)
-				change_screen = new
-				change_screen.Grant(H)
-		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
+		species_organs[ORGAN_SLOT_BRAIN] = /obj/item/organ/brain/mmi_holder
+	. = ..(C, old_species, pref_load, robotic = TRUE)
+	update_screen_action(C)
+
+/datum/species/ipc/proc/update_screen_action(mob/living/carbon/robot)
+	if(ishuman(robot))
+		var/obj/item/bodypart/head/robot_head = robot.get_bodypart(BODY_ZONE_HEAD)
+		if(robot_head.bodytype & BODYTYPE_BOXHEAD)
+			change_screen = new
+			change_screen.Grant(robot)
+		else if(robot_head.draw_eyes && robot_head.greyscale_eyes)
+			change_eye_color = new
+			change_eye_color.Grant(robot)
+		robot.RegisterSignal(robot, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)
 	. = ..()
 	if(change_screen)
 		change_screen.Remove(C)
+	if(change_eye_color)
+		change_eye_color.Remove(C)
 	C.UnregisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT)
 
 /datum/species/ipc/spec_death(gibbed, mob/living/carbon/C)
-	if(!has_screen)
+	if(!(C.get_bodypart(BODY_ZONE_HEAD)?.bodytype & BODYTYPE_BOXHEAD))
 		return
 	saved_screen = C.dna.features["ipc_screen"]
 	C.dna.features["ipc_screen"] = "BSOD"
@@ -92,7 +108,7 @@
 /datum/species/ipc/proc/post_death(mob/living/carbon/C)
 	if(C.stat < DEAD)
 		return
-	if(!has_screen)
+	if(!(C.get_bodypart(BODY_ZONE_HEAD)?.bodytype & BODYTYPE_BOXHEAD))
 		return
 	C.dna.features["ipc_screen"] = null // Turns off their monitor on death.
 	C.update_body()
@@ -114,11 +130,33 @@
 		return
 	var/mob/living/carbon/human/H = owner
 	var/datum/species/ipc/species_datum = H.dna.species
+	var/obj/item/bodypart/head/ipc/our_head = H.bodyparts[BODY_ZONE_HEAD]
 	if(!species_datum)
 		return
-	if(!species_datum.has_screen)
+	if(!our_head.greyscale_eyes)
+		return
+	if(!(H.get_bodypart(BODY_ZONE_HEAD)?.bodytype & BODYTYPE_BOXHEAD) && !our_head.draw_eyes)
 		return
 	H.dna.features["ipc_screen"] = screen_choice
+	H.eye_color = sanitize_hexcolor(color_choice)
+	H.update_body()
+
+/datum/action/innate/change_eye_color
+	name = "Change Eye Color"
+	check_flags = AB_CHECK_CONSCIOUS
+	icon_icon = 'icons/obj/surgery.dmi'
+	button_icon_state = "robotic_eyes"
+
+/datum/action/innate/change_eye_color/Activate()
+	var/color_choice = input(usr, "Which color do you want your eyes to be?", "Color Change") as null | color
+	if(!color_choice)
+		return
+	if(!ishuman(owner))
+		return
+	var/mob/living/carbon/human/H = owner
+	var/datum/species/ipc/species_datum = H.dna.species
+	if(!species_datum)
+		return
 	H.eye_color = sanitize_hexcolor(color_choice)
 	H.update_body()
 
@@ -216,14 +254,14 @@
 /datum/species/ipc/spec_life(mob/living/carbon/human/H)
 	. = ..()
 	if(H.health <= HEALTH_THRESHOLD_CRIT && H.stat != DEAD) // So they die eventually instead of being stuck in crit limbo.
-		H.adjustFireLoss(6) // After BODYTYPE_ROBOTIC resistance this is ~2/second
+		H.adjustFireLoss(2, ignore_reduction = INFINITY)
 		if(prob(5))
 			to_chat(H, span_warning("Alert: Internal temperature regulation systems offline; thermal damage sustained. Shutdown imminent."))
 			H.visible_message("[H]'s cooling system fans stutter and stall. There is a faint, yet rapid beeping coming from inside their chassis.")
 
 
 /datum/species/ipc/spec_revival(mob/living/carbon/human/H)
-	if(has_screen)
+	if(H.get_bodypart(BODY_ZONE_HEAD)?.bodytype & BODYTYPE_BOXHEAD)
 		H.dna.features["ipc_screen"] = "BSOD"
 		H.update_body()
 	H.say("Reactivating [pick("core systems", "central subroutines", "key functions")]...")
@@ -232,57 +270,10 @@
 /datum/species/ipc/proc/post_revival(mob/living/carbon/human/H)
 	if(H.stat == DEAD)
 		return
-	if(!has_screen)
+	if(!(H.get_bodypart(BODY_ZONE_HEAD)?.bodytype & BODYTYPE_BOXHEAD))
 		return
 	H.dna.features["ipc_screen"] = saved_screen
 	H.update_body()
-
-/datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
-	..()
-
-	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
-
-	if(chassis_of_choice.use_eyes)
-		LAZYREMOVE(species_traits, NOEYESPRITES)
-		LAZYADD(species_traits, EYECOLOR)
-		C.update_body()
-
-	if(!chassis_of_choice.has_screen)
-		has_screen = FALSE
-		C.dna.features["ipc_screen"] = null
-		C.update_body()
-
-	if(chassis_of_choice.is_digi)
-		digitigrade_customization = DIGITIGRADE_FORCED
-		bodytype = BODYTYPE_DIGITIGRADE
-
-	for(var/obj/item/bodypart/BP as anything in C.bodyparts) //Override bodypart data as necessary
-		if(BP.limb_id=="synth")
-			BP.uses_mutcolor = chassis_of_choice.color_src ? TRUE : FALSE
-
-			if(chassis_of_choice.icon)
-				BP.static_icon = chassis_of_choice.icon
-				BP.icon = chassis_of_choice.icon
-
-			if(chassis_of_choice.has_overlay)
-				BP.overlay_icon_state = TRUE
-
-			if(chassis_of_choice.is_digi)
-				if(istype(BP,/obj/item/bodypart/leg))
-					BP.bodytype |= BODYTYPE_DIGITIGRADE //i hate this so much
-
-			if(chassis_of_choice.has_snout)
-				if(istype(BP,/obj/item/bodypart/head))
-					BP.bodytype |= BODYTYPE_SNOUT //hate. hate. (tik tok tts)
-
-			if(BP.uses_mutcolor)
-				BP.should_draw_greyscale = TRUE
-				BP.species_color = C.dna?.features["mcolor"]
-				BP.species_secondary_color = C.dna?.features["mcolor2"]
-
-			BP.limb_id = chassis_of_choice.limbs_id
-			BP.name = "\improper[chassis_of_choice.name] [parse_zone(BP.body_zone)]"
-			BP.update_limb()
 
 /mob/living/carbon/proc/charge(datum/source, amount, repairs)
 	if(nutrition < NUTRITION_LEVEL_WELL_FED)

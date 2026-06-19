@@ -120,7 +120,6 @@
 /obj/item/clothing/suit/armor/riot/clip
 	name = "black riot suit"
 	desc = "A charcoal-painted suit of bulky, heavy armor designed for close-quarters fighting and riot control. The armor of choice for CLIP-BARD members, but used universally by CLIP. Helps the wearer resist shoving in close quarters."
-
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
 	icon_state = "riot_clip"
@@ -169,6 +168,11 @@
 	item_state = "armor_correspondant"
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
+/obj/item/clothing/suit/armor/vest/clip_correspondent/Initialize()
+	. = ..()
+	if(allowed)
+		allowed += list(/obj/item/bodycamera/broadcast_camera) // i mean. come on
+
 // biosuits
 
 /obj/item/clothing/suit/bio_suit/bard
@@ -213,6 +217,71 @@
 	slowdown = 0.8
 
 //spacesuits
+/obj/item/clothing/suit/space/clip
+	name = "CLIP space suit"
+	icon_state = "space-clip"
+	item_state = "space-clip"
+	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
+	desc = "A popular suit manufactured by the colonial league, rated for hazardous, low-pressure environments and high temperature alike. Often worn by various workers and civilians hired by the league."
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 10)
+	resistance_flags = FIRE_PROOF
+	siemens_coefficient = 0
+
+/obj/item/clothing/head/helmet/space/clip
+	name = "CLIP space helmet"
+	icon_state = "space-clip"
+	item_state = "space-clip"
+	icon = 'icons/obj/clothing/faction/clip/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	desc = "A space helmet manufactured by the colonial league, rated for hazardous, low pressure environments and minor impacts. Often worn by various workers and civilians hired by the league."
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 10)
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/suit/space/clip/armored
+	name = "CLIP armored space suit"
+	icon_state = "space-clip-armor"
+	item_state = "space-clip-armor"
+	desc = "An armored variant of the leagues civilian spacesuit, swapping fabrics and adding more plating. Often issued out to miners in hazardous locations, police forces, or reservists."
+	w_class = WEIGHT_CLASS_BULKY
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
+	resistance_flags = null
+
+/obj/item/clothing/head/helmet/space/clip/armored
+	name = "CLIP armored space helmet"
+	icon_state = "space-clip-armor"
+	item_state = "space-clip-armor"
+	desc = "An armored variant of the leagues civilian space helmet, swapping plating types. Often issued out to miners in hazardous locations, police forces, or reservists."
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
+	resistance_flags = null
+
+/obj/item/clothing/head/helmet/space/hardsuit/mining/clip
+	name = "CLIP industrial hardsuit helmet"
+	desc = "A bulky, slit-helmet design made with impact protection in mind."
+	icon = 'icons/obj/clothing/faction/clip/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	icon_state = "hardsuit0-clipindus"
+	item_state = "hardsuit0-clipindus"
+	hardsuit_type = "clipindus"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 80, "fire" = 80, "acid" = 100, "wound" = 20)
+	supports_variations = SNOUTED_VARIATION
+
+/obj/item/clothing/suit/space/hardsuit/mining/clip
+	name = "CLIP industrial hardsuit"
+	desc = "A prolific hardsuit seen in every corner of the league, the CLIP industrial hardsuit is rated for factory, prospecting, and construction work. A frequent life saver in mining ventures and repair yards, the plating on this suit is durable, yet not over-encumbering."
+	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
+	icon_state = "hardsuit0-clipindus"
+	item_state = "hardsuit0-clipindus"
+	hardsuit_type = "clipindus"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/clip
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 80, "fire" = 80, "acid" = 100, "wound" = 20)
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	slowdown = 0.5
+
 /obj/item/clothing/suit/space/hardsuit/clip_patroller
 	name = "\improper CM-410 'Patroller' EVA Hardsuit"
 	desc = "An older-issue CLIP hardsuit, adapted from an even older design. Widely utilized in reconnaissance duty and skirmishing due to its lightweight construction."
@@ -345,66 +414,83 @@
 
 /obj/item/clothing/head/helmet/bulletproof/x11/clip
 	name = "\improper Minutemen CM-11 Helmet"
-	desc = "A large, bulky bulletproof helmet, in the distinctive blue coloring of the Confederated League. Features a little attachment rail on the side where you can mount a flashlight."
+	desc = "A large, bulky bulletproof helmet in the distinctive blue coloring of the Minutemen. Features a little attachment rail on the side where you can mount a flashlight."
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/clip/clip_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/clip/clip_righthand.dmi'
 
 	icon_state = "clip_x11"
 	item_state = "clip_x11"
-	unique_reskin = list("Standard Issue" = "clip_x11",
-						"Blank" = "clip_x11_a",
-						"White Stripe" = "clip_x11_b"
-						)
+	unique_reskin = list(
+		"Standard Issue" = "clip_x11",
+		"Blank" = "clip_x11_blank",
+		"White Stripe" = "clip_x11_stripe"
+		)
 	can_flashlight = TRUE
 
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
-/obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
-	name = "\improper Minutemen CM-12 Helmet"
-	desc = "A special, lightweight and padded helmet issued to Vehicle Crewmen of the Confederated League Minutemen. Features noise-reducing technology and a microphone that automatically connects with worn headsets. Hopefully protects you from bumpy rides."
+/obj/item/clothing/head/helmet/m10/clip
+	name = "\improper Minutemen CM-10 Helmet"
+	desc = "A cheap, but comfortable and light helmet painted in Minutemen colors, often seen in the hands of the reserves or Minutemen in the backline. Features a little attachment rail on the side where you can mount a flashlight."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
-
-	icon_state = "clip_m10_vc"
-	unique_reskin = list("Standard Issue" = "clip_m10_vc",
-						"Arctic" = "clip_m10_vc_a",
-						)
+	icon_state = "clip_m10"
 	can_flashlight = TRUE
+	unique_reskin = list(
+		"Standard Issue" = "clip_m10",
+		"Blank" = "clip_m10_blank",
+		"Triple Column" = "clip_m10_triple"
+		)
 
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/head/helmet/bulletproof/m10/clip_vc/ComponentInitialize()
+/obj/item/clothing/head/helmet/m10/clip_vc
+	name = "\improper Minutemen CM-12 Helmet"
+	desc = "A special, lightweight and padded helmet issued to Vehicle Crewmen of the Minutemen. Features noise-reducing technology and a microphone that automatically connects with worn headsets. Hopefully protects you from bumpy rides."
+	icon = 'icons/obj/clothing/faction/clip/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+
+	icon_state = "clip_m10_vc"
+	unique_reskin = list(
+		"Standard Issue" = "clip_m10_vc",
+		"Arctic" = "clip_m10_vc_arctic",
+		"Spearhead" = "clip_m10_vc_spearhead"
+		)
+	can_flashlight = TRUE
+
+/obj/item/clothing/head/helmet/m10/clip_vc/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_HEAD))
 
-/obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
+/obj/item/clothing/head/helmet/m10/clip_correspondent
 	name = "CLIP war correspondent M10 Helmet"
 	desc = "A lightweight bulletproof helmet given to war correspondents of CLIP. Features a little attachment rail on the side where you can mount a flashlight. Keep your head down!"
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
-	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip_m10_correspondant"
 	item_state = "clip_m10_correspondant"
 	can_flashlight = TRUE
 
-	supports_variations = VOX_VARIATION
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/riot/clip
 	name = "\improper Minutemen CM-13 Riot Helmet"
-	desc = "A sturdy blue helmet, made with close range fighting in mind. The foldable protective visor makes it CLIP-BARD's preferred helmet against hostile xenofauna."
-
+	desc = "A sturdy blue helmet, made with crowd control in mind. The foldable protective visor makes it CLIP-BARD's preferred helmet against hostile xenofauna."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 	icon_state = "riot_clip"
-
-	supports_variations = SNOUTED_VARIATION
+	base_icon_state = "riot_clip"
+	supports_variations = SNOUTED_VARIATION | VOX_VARIATION
+	unique_reskin = null
 
 // CLIP-GOLD
 
@@ -458,21 +544,6 @@
 	item_state = "combat_balaclava"
 	alternate_worn_layer = BODY_LAYER
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
-
-//gloves
-
-/obj/item/clothing/gloves/color/latex/nitrile/clip
-	name = "\improper long white nitrile gloves"
-	desc = "Thick sterile gloves that reach up to the elbows. Transfers combat medic knowledge into the user via nanochips."
-
-	icon = 'icons/obj/clothing/faction/clip/hands.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/clip/hands.dmi'
-	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
-
-	icon_state = "nitrile_clip"
-	item_state = "nitrile_clip"
-
-	supports_variations = VOX_VARIATION
 
 //boots
 
@@ -566,10 +637,10 @@
 	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/medical/webbing/clip/prefilled/PopulateContents()
-	new /obj/item/reagent_containers/medigel/styptic(src)
-	new /obj/item/reagent_containers/medigel/styptic(src)
-	new /obj/item/reagent_containers/medigel/silver_sulf(src)
-	new /obj/item/reagent_containers/medigel/silver_sulf(src)
+	new /obj/item/reagent_containers/medigel/hadrakine(src)
+	new /obj/item/reagent_containers/medigel/hadrakine(src)
+	new /obj/item/reagent_containers/medigel/quardexane(src)
+	new /obj/item/reagent_containers/medigel/quardexane(src)
 	new /obj/item/reagent_containers/medigel/synthflesh(src)
 	new /obj/item/reagent_containers/medigel/synthflesh(src)
 	new /obj/item/stack/medical/splint(src)

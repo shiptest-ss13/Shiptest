@@ -54,7 +54,7 @@
 	strengthdiv = 2
 
 /datum/chemical_reaction/reagent_explosion/rdx
-	results = list(/datum/reagent/rdx= 2)
+	results = list(/datum/reagent/rdx = 2)
 	required_reagents = list(/datum/reagent/phenol = 2, /datum/reagent/toxin/acid/nitracid = 1, /datum/reagent/acetone_oxide = 1)
 	required_temp = 404
 	strengthdiv = 6 //rdx deserves better than being just about equal to nitrous
@@ -133,11 +133,11 @@
 
 
 /datum/chemical_reaction/reagent_explosion/penthrite_explosion_epinephrine
-	required_reagents = list(/datum/reagent/medicine/c2/penthrite = 1, /datum/reagent/medicine/epinephrine = 1)
+	required_reagents = list(/datum/reagent/medicine/penthrite = 1, /datum/reagent/medicine/epinephrine = 1)
 	strengthdiv = 5
 
 /datum/chemical_reaction/reagent_explosion/penthrite_explosion_atropine
-	required_reagents = list(/datum/reagent/medicine/c2/penthrite = 1, /datum/reagent/medicine/atropine = 1)
+	required_reagents = list(/datum/reagent/medicine/penthrite = 1, /datum/reagent/medicine/atropine = 1)
 	strengthdiv = 5
 	modifier = 5
 
@@ -229,23 +229,19 @@
 		new /obj/effect/hotspot(turf)
 	holder.chem_temp = 1000 // hot as shit
 
-/datum/chemical_reaction/reagent_explosion/methsplosion
-	required_temp = 380 //slightly above the meth mix time.
-	required_reagents = list(/datum/reagent/drug/methamphetamine = 1)
+/datum/chemical_reaction/reagent_explosion/rahkrahene
+	required_temp = 497 //slightly above the meth mix time.
+	required_reagents = list(/datum/reagent/drug/rahkrahene = 1)
 	strengthdiv = 6
 	modifier = 1
 	mob_react = FALSE
 
-/datum/chemical_reaction/reagent_explosion/methsplosion/on_reaction(datum/reagents/holder, created_volume)
+/datum/chemical_reaction/reagent_explosion/rahkrahene/on_reaction(datum/reagents/holder, created_volume)
 	var/turf/T = get_turf(holder.my_atom)
 	for(var/turf/turf in range(1,T))
 		new /obj/effect/hotspot(turf)
 	holder.chem_temp = 1000 // hot as shit
 	..()
-
-/datum/chemical_reaction/reagent_explosion/methsplosion/methboom2
-	required_reagents = list(/datum/reagent/diethylamine = 1, /datum/reagent/iodine = 1, /datum/reagent/phosphorus = 1, /datum/reagent/hydrogen = 1) //diethylamine is often left over from mixing the ephedrine.
-	required_temp = 300 //room temperature, chilling it even a little will prevent the explosion
 
 /datum/chemical_reaction/sorium
 	results = list(/datum/reagent/sorium = 4)
@@ -303,7 +299,7 @@
 		var/atom/A = holder.my_atom
 		A.flash_lighting_fx(_range = (range + 2))
 	for(var/mob/living/C in get_hearers_in_view(range, location))
-		if(C.flash_act(affect_silicon = TRUE))
+		if(C.flash_act(affect_silicon = TRUE) & FLASH_EFFECT)
 			if(get_dist(C, location) < 4)
 				C.Paralyze(60)
 			else
@@ -322,7 +318,7 @@
 		var/atom/A = holder.my_atom
 		A.flash_lighting_fx(_range = (range + 2))
 	for(var/mob/living/C in get_hearers_in_view(range, location))
-		if(C.flash_act(affect_silicon = TRUE))
+		if(C.flash_act(affect_silicon = TRUE) & FLASH_EFFECT)
 			if(get_dist(C, location) < 4)
 				C.Paralyze(60)
 			else
@@ -511,4 +507,4 @@
 	results = list(/datum/reagent/firefighting_foam = 3)
 	required_reagents = list(/datum/reagent/stabilizing_agent = 1,/datum/reagent/fluorosurfactant = 1,/datum/reagent/carbon = 1)
 	required_temp = 200
-	is_cold_recipe = 1
+	is_cold_recipe = TRUE

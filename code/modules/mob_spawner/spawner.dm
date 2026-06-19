@@ -12,7 +12,7 @@
 	var/spawn_time = 30 SECONDS
 	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	var/spawn_text = "emerges from"
-	var/faction = list("hostile")
+	var/faction = list(FACTION_HOSTILE)
 	var/spawn_sound = list('sound/effects/break_stone.ogg')
 	var/spawner_type = /datum/component/spawner
 	var/spawn_distance_min = 1
@@ -48,6 +48,7 @@
 	icon = 'icons/mob/nest.dmi'
 	icon_state = "hole"
 	max_integrity = 100
+	mouse_opacity = 0
 	var/particle_to_spawn = /particles/smoke/drill_vent
 	var/obj/effect/particle_holder/part_hold
 	var/obj/structure/vein/our_vein

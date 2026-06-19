@@ -4,7 +4,7 @@
 /obj/item/seeds/dotu_fime
 	name = "pack of dotu-fime seeds"
 	desc = "These seeds grow into dotu-fime trees. Remember to keep them watered!"
-	icon_state = ""
+	icon_state = "seed-dotu"
 	species = "dotu"
 	plantname = "dotu-fime tree"
 	product = /obj/item/food/grown/dotu_fime

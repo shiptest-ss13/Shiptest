@@ -13,6 +13,10 @@
 		if(SSparallax.random_layer)
 			current_client.parallax_layers_cached += new SSparallax.random_layer
 		current_client.parallax_layers_cached += new /atom/movable/screen/parallax_layer/layer_3(null, current_client.view)
+		current_client.parallax_layers_cached += new /atom/movable/screen/parallax_layer/gas_giant/horizon(null, current_client.view)
+		current_client.parallax_layers_cached += new /atom/movable/screen/parallax_layer/gas_giant/clouds1(null, current_client.view)
+		current_client.parallax_layers_cached += new /atom/movable/screen/parallax_layer/gas_giant/clouds2(null, current_client.view)
+		current_client.parallax_layers_cached += new /atom/movable/screen/parallax_layer/gas_giant/clouds3(null, current_client.view)
 
 	current_client.parallax_layers = current_client.parallax_layers_cached.Copy()
 
@@ -58,17 +62,17 @@
 		switch(current_client.prefs.parallax)
 			if (PARALLAX_INSANE)
 				current_client.parallax_throttle = PARALLAX_DELAY_DEFAULT
-				current_client.parallax_layers_max = 5
+				current_client.parallax_layers_max = 10
 				return TRUE
 
 			if (PARALLAX_MED)
 				current_client.parallax_throttle = PARALLAX_DELAY_MED
-				current_client.parallax_layers_max = 3
+				current_client.parallax_layers_max = 8
 				return TRUE
 
 			if (PARALLAX_LOW)
 				current_client.parallax_throttle = PARALLAX_DELAY_LOW
-				current_client.parallax_layers_max = 1
+				current_client.parallax_layers_max = 7
 				return TRUE
 
 			if (PARALLAX_DISABLE)
@@ -76,7 +80,7 @@
 
 	//This is high parallax.
 	current_client.parallax_throttle = PARALLAX_DELAY_DEFAULT
-	current_client.parallax_layers_max = 4
+	current_client.parallax_layers_max = 10
 	return TRUE
 
 /datum/hud/proc/update_parallax_pref(mob/viewmob)
@@ -173,7 +177,7 @@
 	set_parallax_movedir(areaobj.parallax_movedir, FALSE)
 
 	var/force
-	if(!current_client.previous_turf || (current_client.previous_turf.z != posobj.z))
+	if(!current_client.previous_turf || (current_client.previous_turf.virtual_z != posobj.virtual_z))
 		current_client.previous_turf = posobj
 		force = TRUE
 
@@ -311,3 +315,39 @@
 
 /atom/movable/screen/parallax_layer/planet/update_o()
 	icon_state = "planet"
+
+//Gas Giant parallaxes
+
+/atom/movable/screen/parallax_layer/gas_giant
+	icon_state = null
+	blend_mode = BLEND_OVERLAY
+	absolute = TRUE
+	speed = 0.6
+	layer = 5
+
+/atom/movable/screen/parallax_layer/gas_giant/horizon
+	icon_state = "layeniahorizon"
+	speed = 0.3
+	absolute = FALSE
+
+/atom/movable/screen/parallax_layer/gas_giant/clouds1
+	icon_state = "layenia1"
+	speed = 0.6
+	layer = 6
+
+/atom/movable/screen/parallax_layer/gas_giant/clouds2
+	icon_state = "layenia2"
+	speed = 1
+	layer = 7
+
+/atom/movable/screen/parallax_layer/gas_giant/clouds3
+	icon_state = "layenia3"
+	speed = 1.4
+	layer = 8
+
+/atom/movable/screen/parallax_layer/gas_giant/update_status(mob/M)
+	var/client/C = M.client
+	var/turf/posobj = get_turf(C.eye)
+	if(!posobj)
+		return
+	invisibility = posobj.virtual_level_has_any_trait(list(ZTRAIT_GAS_GIANT)) ? 0 : INVISIBILITY_ABSTRACT

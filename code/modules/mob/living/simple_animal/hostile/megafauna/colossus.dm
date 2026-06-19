@@ -61,6 +61,10 @@ Difficulty: Very Hard
 		/datum/action/innate/megafauna_attack/alternating_cardinals)
 	small_sprite_type = /datum/action/small_sprite/megafauna/colossus
 
+/mob/living/simple_animal/hostile/megafauna/colossus/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NO_FLOATING_ANIM, ROUNDSTART_TRAIT) //we don't want this guy to float, messes up his animations.
+
 /datum/action/innate/megafauna_attack/spiral_attack
 	name = "Spiral Shots"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
@@ -565,27 +569,6 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 				P.xo = 0
 		P.fire()
 
-/obj/machinery/anomalous_crystal/dark_reprise //Revives anyone nearby, but turns them into shadowpeople and renders them uncloneable, so the crystal is your only hope of getting up again if you go down.
-	observer_desc = "When activated, this crystal revives anyone nearby, but turns them into Shadowpeople and makes them unclonable, making the crystal their only hope of getting up again."
-	activation_method = ACTIVATE_TOUCH
-	activation_sound = 'sound/hallucinations/growl1.ogg'
-
-/obj/machinery/anomalous_crystal/dark_reprise/ActivationReaction(mob/user, method)
-	if(..())
-		for(var/i in range(1, src))
-			if(isturf(i))
-				new /obj/effect/temp_visual/cult/sparks(i)
-				continue
-			if(ishuman(i))
-				var/mob/living/carbon/human/H = i
-				if(H.stat == DEAD)
-					H.set_species(/datum/species/shadow, 1)
-					H.regenerate_limbs()
-					H.regenerate_organs()
-					H.revive(full_heal = TRUE, admin_revive = FALSE)
-					ADD_TRAIT(H, TRAIT_BADDNA, MAGIC_TRAIT) //Free revives, but significantly limits your options for reviving except via the crystal
-					H.grab_ghost(force = TRUE)
-
 /obj/machinery/anomalous_crystal/helpers //Lets ghost spawn as helpful creatures that can only heal people slightly. Incredibly fragile and they can't converse with humans
 	observer_desc = "This crystal allows ghosts to turn into a fragile creature that can heal people."
 	activation_method = ACTIVATE_TOUCH
@@ -641,7 +624,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	friendly_verb_continuous = "taps"
 	friendly_verb_simple = "tap"
 	density = FALSE
-	movement_type = FLYING
+	is_flying_animal = TRUE
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	ventcrawler = VENTCRAWLER_ALWAYS
 	mob_size = MOB_SIZE_TINY

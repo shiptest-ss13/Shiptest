@@ -83,17 +83,6 @@
 	if(eaten && prob(10))
 		say("Nom")
 
-/mob/living/simple_animal/hostile/retaliate/goat/AttackingTarget()
-	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		if(istype(H.dna.species, /datum/species/pod))
-			var/obj/item/bodypart/NB = pick(H.bodyparts)
-			H.visible_message(
-				span_warning("[src] takes a big chomp out of [H]!"), \
-				span_userdanger("[src] takes a big chomp out of your [NB]!"))
-			NB.dismember()
-
 /mob/living/simple_animal/chick
 	name = "\improper chick"
 	desc = "Adorable! They make such a racket though."
@@ -371,7 +360,7 @@
 	speak = list()
 	speak_emote = list("sniffles","twitches")
 	emote_hear = list("hops.")
-	emote_see = list("hops around","bounces up and down")
+	emote_see = list("hops around.","bounces up and down.")
 	butcher_results = list(/obj/item/food/meat/slab = 1)
 	food_type = /obj/item/food/grown/carrot
 	minbodytemp = 0

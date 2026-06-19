@@ -12,6 +12,22 @@
 	undyeable = TRUE
 	clothamnt = 1
 
+/obj/item/clothing/gloves/armwarmer
+	name = "arm warmers"
+	desc = "Fingerless arm warmers that reach past your elbows."
+	icon_state = "armwarmer"
+	transfer_prints = TRUE
+	strip_delay = 40
+	equip_delay_other = 20
+	cold_protection = HANDS|ARMS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	custom_price = 75
+	undyeable = TRUE
+
+/obj/item/clothing/gloves/armwarmer/striped
+	name = "striped arm warmers"
+	icon_state = "stripedwarmer"
+
 /obj/item/clothing/gloves/botanic_leather
 	name = "botanist's leather gloves"
 	desc = "These leather gloves protect against thorns, barbs, prickles, spikes and other harmful objects of floral origin.  They're also quite warm."
@@ -82,6 +98,7 @@
 	resistance_flags = NONE
 	permeability_coefficient = 0.05
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 0, "fire" = 95, "acid" = 95)
+	unique_reskin = null
 
 /obj/item/clothing/gloves/color/plasmaman/black
 	name = "black envirogloves"

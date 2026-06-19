@@ -134,7 +134,7 @@
 				if(istype(beaker, /obj/item/reagent_containers/blood))
 					// speed up transfer on blood packs
 					transfer_amount *= 2
-				beaker.reagents.trans_to(attached, transfer_amount * seconds_per_tick * 0.5, method = INJECT, show_message = FALSE) //make reagents reacts, but don't spam messages
+				beaker.reagents.trans_to(attached, transfer_amount * seconds_per_tick * 0.5, methods = INJECT, show_message = FALSE) //make reagents reacts, but don't spam messages
 				update_appearance()
 
 		// Take blood
@@ -170,8 +170,9 @@
 	else
 		toggle_mode()
 
-/obj/machinery/iv_drip/AltClick(mob/living/user)
-	if(!user.canUseTopic(src, be_close=TRUE))
+/obj/machinery/iv_drip/attack_hand_secondary(mob/living/user)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
 		return
 	if(dripfeed)
 		dripfeed = FALSE
@@ -179,6 +180,7 @@
 	else
 		dripfeed = TRUE
 		to_chat(usr, span_notice("You tighten the valve to slowly drip-feed the contents of [src]."))
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/machinery/iv_drip/verb/eject_beaker()
 	set category = "Object"

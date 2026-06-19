@@ -59,7 +59,7 @@
 
 /datum/supply_pack/civilian/book_crate
 	name = "Book Crate"
-	desc = "Surplus from the Nanotrasen Archives, these six books are sure to be good reads."
+	desc = "Surplus from the archives, these six books are sure to be good reads."
 	cost = 500
 	contains = list(/obj/item/book/manual/random,
 					/obj/item/book/manual/random,
@@ -115,7 +115,7 @@
 
 /datum/supply_pack/civilian/forensics
 	name = "Forensics Crate"
-	desc = "Stay hot on the criminal's heels with Nanotrasen's Detective Essentials(tm). Contains a forensics scanner, six evidence bags, camera, tape recorder, white crayon, and of course, a fedora."
+	desc = "Stay hot on the criminal's heels with Makosso-Warra's Detective Essentials(tm). Contains a forensics scanner, six evidence bags, camera, tape recorder, white crayon, and of course, a fedora."
 	cost = 500
 	contains = list(/obj/item/detective_scanner,
 					/obj/item/storage/box/evidence,
@@ -127,7 +127,7 @@
 
 /datum/supply_pack/civilian/party
 	name = "Party Equipment"
-	desc = "Celebrate both life and death on the frontier with Nanotrasen's Party Essentials(tm)! Contains seven colored glowsticks, six beers, six sodas, two ales, and a bottle of patron, goldschlager, and shaker!"
+	desc = "Celebrate both life and death on the frontier with Makosso-Warra's Party Essentials(tm)! Contains seven colored glowsticks, six beers, six sodas, two ales, and a bottle of patron, goldschlager, and shaker!"
 	cost = 500
 	contains = list(/obj/item/storage/box/drinkingglasses,
 					/obj/item/reagent_containers/food/drinks/shaker,
@@ -149,7 +149,7 @@
 /datum/supply_pack/civilian/coffee_starter
 	name = "Personal Coffee Starter Kit"
 	desc = "If you're looking to get some coffee supply for your caffeine-starved bridge crew, this is the place to start. Contains three mugs, a coffee pot, and two coffee cartridges. Coffee machine not included."
-	cost = 500
+	cost = 100
 	contains = list(/obj/item/reagent_containers/food/drinks/mug,
 					/obj/item/reagent_containers/food/drinks/mug,
 					/obj/item/reagent_containers/food/drinks/mug,
@@ -161,7 +161,7 @@
 /datum/supply_pack/civilian/coffee_cartridge
 	name = "Solar's Best Coffee Cartridge Resupply"
 	desc = "Contains five coffee cartridges for your coffee machine, imported from Sol."
-	cost = 750
+	cost = 200
 	contains = list(/obj/item/coffee_cartridge,
 					/obj/item/coffee_cartridge,
 					/obj/item/coffee_cartridge,
@@ -172,7 +172,7 @@
 /datum/supply_pack/civilian/coffee_cartridge_fancy
 	name = "Premium Coffee Cartridge Resupply"
 	desc = "Contains an assortment of five high-quality coffee cartridges."
-	cost = 1250
+	cost = 300
 	contains = list(/obj/item/coffee_cartridge/fancy,
 					/obj/item/coffee_cartridge/fancy,
 					/obj/item/coffee_cartridge/fancy,
@@ -183,7 +183,7 @@
 /datum/supply_pack/civilian/coffeekit
 	name = "Coffee Shop Starter Crate"
 	desc = "All the basic equipment needed for enterprising coffee-selling spacefarers. Coffeemaker not included."
-	cost = 1250
+	cost = 200
 	contains = list(/obj/item/storage/box/coffeepack/robusta,
 					/obj/item/storage/box/coffeepack/arabica,
 					/obj/item/reagent_containers/glass/coffeepot,
@@ -198,7 +198,7 @@
 /datum/supply_pack/civilian/coffeemaker
 	name = "Coffeemaker Crate"
 	desc = "Contains one pre-assembled Attention model coffeemaker."
-	cost = 1000
+	cost = 750
 	contains = list(/obj/machinery/coffeemaker)
 	crate_name = "coffeemaker crate"
 	crate_type = /obj/structure/closet/crate/large
@@ -206,7 +206,7 @@
 /datum/supply_pack/civilian/coffeemaker_premium
 	name = "Premium Coffeemaker Crate"
 	desc = "Contains one pre-assembled professional-grade Sirere model coffeemaker."
-	cost = 1500
+	cost = 1000
 	contains = list(/obj/machinery/coffeemaker/premium)
 	crate_name = "premium coffeemaker crate"
 	crate_type = /obj/structure/closet/crate/large
@@ -214,7 +214,7 @@
 /datum/supply_pack/organic/syrup
 	name = "Coffee Syrups Box"
 	desc = "A packaged box of various syrups, perfect to make your delicious coffee even more diabetic."
-	cost = 1250
+	cost = 100
 	contains = list(/obj/item/reagent_containers/glass/bottle/syrup_bottle/caramel,
 					/obj/item/reagent_containers/glass/bottle/syrup_bottle/liqueur,
 					/obj/item/reagent_containers/glass/bottle/syrup_bottle/honey,
@@ -247,7 +247,7 @@
 
 /datum/supply_pack/civilian/potted_plants
 	name = "Potted Plants Crate"
-	desc = "Spruce up the ship with these lovely plants! Contains a random assortment of five potted plants from Nanotrasen's potted plant research division. Warranty void if thrown."
+	desc = "Spruce up the ship with these lovely plants! Contains a random assortment of five potted plants from Makosso-Warra's potted plant research division. Warranty void if thrown."
 	cost = 350
 	contains = list(/obj/item/kirbyplants/random,
 					/obj/item/kirbyplants/random,

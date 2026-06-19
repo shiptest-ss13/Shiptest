@@ -87,6 +87,57 @@
 	singular_name = "diagonal wooden floor tile"
 	icon_state = "tile_suns_lightdiag"
 	turf_type = /turf/open/floor/suns/diagonal
+	tile_reskin_types = list(
+		/obj/item/stack/tile/suns/diagonal/mahogany,
+		/obj/item/stack/tile/suns/diagonal/maple,
+		/obj/item/stack/tile/suns/diagonal/ebony,
+		/obj/item/stack/tile/suns/diagonal/walnut,
+		/obj/item/stack/tile/suns/diagonal/bamboo,
+		/obj/item/stack/tile/suns/diagonal/birch,
+		/obj/item/stack/tile/suns/diagonal/yew,
+		)
+
+/obj/item/stack/tile/suns/diagonal/mahogany
+	name = "diagonal mahogany tile"
+	color = WOOD_COLOR_RICH
+	turf_type = /turf/open/floor/suns/diagonal/mahogany
+	merge_type = /obj/item/stack/tile/suns/diagonal/mahogany
+
+/obj/item/stack/tile/suns/diagonal/maple
+	name = "diagonal maple tile"
+	color = WOOD_COLOR_PALE
+	turf_type = /turf/open/floor/suns/diagonal/maple
+	merge_type = /obj/item/stack/tile/suns/diagonal/maple
+
+/obj/item/stack/tile/suns/diagonal/ebony
+	name = "diagonal ebony tile"
+	color = WOOD_COLOR_BLACK
+	turf_type = /turf/open/floor/suns/diagonal/ebony
+	merge_type = /obj/item/stack/tile/suns/diagonal/ebony
+
+/obj/item/stack/tile/suns/diagonal/walnut
+	name = "diagonal walnut tile"
+	color = WOOD_COLOR_CHOCOLATE
+	turf_type = /turf/open/floor/suns/diagonal/walnut
+	merge_type = /obj/item/stack/tile/suns/diagonal/walnut
+
+/obj/item/stack/tile/suns/diagonal/bamboo
+	name = "diagonal bamboo tile"
+	color = WOOD_COLOR_PALE2
+	turf_type = /turf/open/floor/suns/diagonal/bamboo
+	merge_type = /obj/item/stack/tile/suns/diagonal/bamboo
+
+/obj/item/stack/tile/suns/diagonal/birch
+	name = "diagonal birch tile"
+	color = WOOD_COLOR_PALE3
+	turf_type = /turf/open/floor/suns/diagonal/birch
+	merge_type = /obj/item/stack/tile/suns/diagonal/birch
+
+/obj/item/stack/tile/suns/diagonal/yew
+	name = "diagonal yew tile"
+	color = WOOD_COLOR_YELLOW
+	turf_type = /turf/open/floor/suns/diagonal/yew
+	merge_type = /obj/item/stack/tile/suns/diagonal/yew
 
 /obj/item/stack/tile/suns/grid
 	name = "dark grid tile"

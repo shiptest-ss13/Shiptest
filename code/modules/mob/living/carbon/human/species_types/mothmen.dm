@@ -2,20 +2,17 @@
 	name = "\improper Moth"
 	id = SPECIES_MOTH
 	default_color = "00FF00"
-	species_traits = list(LIPS, NOEYESPRITES, TRAIT_ANTENNAE, HAIR, EMOTE_OVERLAY, HAS_FLESH, HAS_BONE)
+	species_traits = list(LIPS, HAIR, EMOTE_OVERLAY)
+	inherent_traits = list(TRAIT_ANTENNAE)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	mutant_bodyparts = list("moth_wings", "moth_fluff", "moth_markings")
-	default_features = list("moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None", "body_size" = "Normal")
-	mutant_organs = list(/obj/item/organ/moth_wings)
+	default_features = list("moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None")
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
-	meat = /obj/item/food/meat/slab/human/mutant/moth
-	liked_food = FRUIT | SUGAR | CLOTH
+	liked_food = FRUIT | SUGAR
 	disliked_food = GROSS
-	toxic_food = MEAT | RAW | GORE
-	mutanteyes = /obj/item/organ/eyes/compound
-	mutanttongue = /obj/item/organ/tongue/moth
+	toxic_food =  MEAT| RAW | GORE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	species_language_holder = /datum/language_holder/moth
 	loreblurb = "Bug-mammal hybrids resembling Sol's lepidopterans. They share the least DNA with baseline humans of any human-derived geneline, being significant portions insect and modified whole-cloth DNA. Their classification as another human geneline or as something else is highly debated. All evidence that would point to their origin– which is presumably a genelab somewhere– has seemingly disappeared into thin air. Mothpeople themselves have no centralized culture or homeworld, leading to a fractured existence amongst the stars."
@@ -23,12 +20,29 @@
 	has_innate_wings = TRUE
 	deathsound = 'sound/voice/moth/moth_a.ogg'
 
-	species_chest = /obj/item/bodypart/chest/moth
-	species_head = /obj/item/bodypart/head/moth
-	species_l_arm = /obj/item/bodypart/l_arm/moth
-	species_r_arm = /obj/item/bodypart/r_arm/moth
-	species_l_leg = /obj/item/bodypart/leg/left/moth
-	species_r_leg = /obj/item/bodypart/leg/right/moth
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/compound,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/moth,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+		ORGAN_SLOT_WINGS = /obj/item/organ/moth_wings,
+	)
+
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/moth,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/moth,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/moth,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/moth,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/moth,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/moth,
+	)
+
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/human
 
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 5
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 5

@@ -9,7 +9,31 @@
 	item_state = "rouma_work"
 	icon = 'icons/obj/clothing/faction/srm/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/uniforms.dmi'
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+	roll_sleeves = TRUE
+
+/obj/item/clothing/under/suit/roumain/alt
+	name = "saint-roumain's worksuit"
+	desc = "A simple pair of leather overalls designed for the hardworking hunters of the Saint-Roumain Militia."
+	icon_state = "rouma_alt"
+	item_state = "rouma_alt"
+	icon = 'icons/obj/clothing/faction/srm/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/uniforms.dmi'
+	supports_variations = null
+	roll_sleeves = null
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/suit/roumain/montagne
+	name = "montagne's worksuit"
+	desc = "A fancy, hard wearing suit designed for the Montagnes of the Saint-Roumain Militia."
+	icon_state = "rouma_mon"
+	item_state = "rouma_mon"
+	icon = 'icons/obj/clothing/faction/srm/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/uniforms.dmi'
+	supports_variations = null
+	roll_sleeves = TRUE
+	roll_down = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
 
 //////////////////
 //Armored suits//
@@ -58,6 +82,22 @@
 	icon_state = "armor_rouma_flamebearer"
 	supports_variations = KEPORI_VARIATION
 
+/obj/item/clothing/suit/armor/roumain/plate
+	name = "saint-roumain heavy duster"
+	desc = "A finely smithed chestplate, placed over a thick coat. provides above-average protection of the chest for any hunters who don it. While protective, due to its composition, it is quite cumbersome."
+	icon_state = "armor_rouma_plate"
+	item_state = "armoralt"
+	body_parts_covered = CHEST|GROIN
+	armor = list("melee" = 60, "bullet" = 45, "laser" = 20, "energy" = 50, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20)
+	supports_variations = KEPORI_VARIATION
+
+
+/obj/item/clothing/suit/armor/roumain/plate/montagne
+	name = "saint-roumain montagne battle coat"
+	desc = "A finely smithed chestplate, placed over an ornate coat. This kind of battle coat is usually worn by more unorthodox montagnes, or by ones facing stronger foes."
+	icon_state = "armor_rouma_monplate"
+
+
 /obj/item/clothing/suit/armor/roumain/colligne
 	name = "saint-roumain colligne coat"
 	desc = "A well-maintained hard leather coat typically worn to denote the rank of Colligne, a trainee Hunter Montagne. It is treated with bullet-resistant materials, and lined with the dark fur of Illestrian dire wolves."
@@ -79,9 +119,54 @@
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	supports_variations = KEPORI_VARIATION
 
+/obj/item/clothing/suit/armor/roumain/plate/medium
+	name = "Three Quarter Plate Harness"
+	desc= "An exquisitely designed chestplate alongside a large, protective shoulder plate, and tassets to protect the user's legs. One shoulder is left open to let the Roumainist level their weapon and aim true. Provides above-average protection to the chest and extremities at the cost of mobility."
+	icon_state = "armor_rouma_plate_medium"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	heat_protection = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 60, "bullet" = 45, "laser" = 20, "energy" = 50, "bomb" = 50, "bio" = 0, "fire" = 50, "acid" = 50, "wound" = 30)
+	slowdown = 0.4
+	supports_variations = KEPORI_VARIATION
+
+/obj/item/clothing/suit/armor/roumain/plate/heavy
+	name = "Heavy Three Quarter Plate Harness"
+	desc= "A masterworked breastplate alongside heavy tassets and spaulders provide the user with more than ample protection against gunfire and beast alike. Its angled design allows for higher overall protection. Though bulky, it allows for unparalleled protection reserved only for highly precarious hunts."
+	icon_state = "armor_rouma_plate_heavy"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	heat_protection = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 70, "bullet" = 55, "laser" = 25, "energy" = 55, "bomb" = 60, "bio" = 0, "fire" = 60, "acid" = 60, "wound" = 40)
+	slowdown = 0.8
+	supports_variations = KEPORI_VARIATION
+
 ///////////////
 //Spacesuits//
 //////////////
+
+/obj/item/clothing/head/helmet/space/hardsuit/mining/roumain
+	name = "\improper roumain hunter's hardsuit helmet"
+	desc = "An armored helmet resembling a traditional sallet, manufactured by Hunter's Pride. Despite resembling pre-industrial solarian armor, it is suprisingly vacuum-rated."
+	icon = 'icons/obj/clothing/faction/srm/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/head.dmi'
+	icon_state = "hardsuit0-rouma"
+	item_state = "hardsuit0-rouma"
+	armor = list("melee" = 50, "bullet" = 30, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 100, "wound" = 20)
+	hardsuit_type = "rouma"
+	supports_variations = KEPORI_VARIATION
+
+/obj/item/clothing/suit/space/hardsuit/mining/roumain
+	name = "\improper roumain hunter's hardsuit"
+	desc = "A hand-crafted suit of armor from Hunter's Pride, with noticeably heavy plate. Such steel seems rated well against blunt and sharp attacks, and is thick enough to block some small arms fire. Despite appearing ancient, it is spaceworthy."
+	icon = 'icons/obj/clothing/faction/srm/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/suits.dmi'
+	icon_state = "hardsuit-rouma"
+	item_state = "hardsuit-rouma"
+	armor = list("melee" = 50, "bullet" = 30, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 100, "wound" = 20)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/roumain
+	slowdown = 0.5
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/solgov/roumain
 	name = "\improper roumain hardsuit helmet"
@@ -103,8 +188,30 @@
 	item_state = "hardsuit-roumain"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov/roumain
 	slowdown = 0.5
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+
+/obj/item/clothing/suit/space/hardsuit/security/roumain/elite
+	name = "Raskas Combat Hardsuit"
+	desc = "A meticilously, and carefully smithed armor from Hunter's Pride that bears a heavy, single unified angled plate to protect the main body with noticable heavier armor on the extremities. While well-rated against beasts, bullets, and the vaccum of space, this hardsuit is specifically designed for combat against foes armed with rifles instead of claws."
+	icon = 'icons/obj/clothing/faction/srm/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/suits.dmi'
+	icon_state = "hardsuit-rouma-combat"
+	item_state = "hardsuit-rouma-combat"
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 75, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 100, "wound" = 50)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/roumain/elite
+	slowdown = 1.25
 	supports_variations = KEPORI_VARIATION
 
+/obj/item/clothing/head/helmet/space/hardsuit/security/roumain/elite
+	name = "Raska combat hardsuit helmet"
+	desc = "A large sallet style helmet manufactured by Hunter's Pride. The light alloys used in it's construction allow for both safe and comfortable use in vacuum. Topped off with an immaculate crest of ornamental feathers, this helmet is a testament to Roumainist craftsmanship."
+	icon = 'icons/obj/clothing/faction/srm/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/head.dmi'
+	icon_state = "hardsuit0-roumainelite"
+	item_state = "hardsuit0-roumainelite"
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 30, "energy" =40, "bomb" = 75, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 100, "wound" = 50)
+	hardsuit_type = "roumainelite"
+	supports_variations = KEPORI_VARIATION
 /////////
 //Hats//
 ////////
@@ -152,6 +259,22 @@
 	icon_state = "rouma_montagne_hat"
 	supports_variations = KEPORI_VARIATION
 
+/obj/item/clothing/head/helmet/roumain
+	name = "hunter's kettle"
+	desc = "A kettle sallet manufactured by the SRM, usually only worn when head protection is absolutely necessary."
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 35, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20)
+	icon_state = "rouma_helm"
+	icon = 'icons/obj/clothing/faction/srm/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/head.dmi'
+
+/obj/item/clothing/head/helmet/roumain/plate
+	name = "hunter's heavy kettle"
+	desc = "A kettle face-mask combo manufactured by the SRM, boasting above-average protection. Typically reserved for quarries capable of more than biting."
+	armor = list("melee" = 60, "bullet" = 45, "laser" = 20, "energy" = 50, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20)
+	icon_state = "rouma_heavy"
+	icon = 'icons/obj/clothing/faction/srm/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/head.dmi'
+	supports_variations = KEPORI_VARIATION
 ///////////////
 //Accessories//
 ///////////////
@@ -163,3 +286,14 @@
 	icon = 'icons/obj/clothing/faction/srm/accessory.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/accessory.dmi'
 	minimize_when_attached = TRUE
+
+/////////
+//mask//
+////////
+
+/obj/item/clothing/mask/gas/roumain
+	name = "leather gas mask"
+	desc = "A gas mask utilized by the saint-roumain milita, with an odd bug-like appearance. The filters are unconventional to most modern ones, using special herbs and material to filter out gas."
+	icon = 'icons/obj/clothing/faction/srm/mask.dmi'
+	icon_state = "rouma_gas"
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/mask.dmi'

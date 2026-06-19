@@ -80,6 +80,7 @@
 	slot_flags = ITEM_SLOT_EARS | ITEM_SLOT_HEAD
 	force = 0
 	w_class = WEIGHT_CLASS_SMALL
+	alternate_worn_layer = UNDER_HEAD_LAYER
 	custom_price = 125
 	instrument_range = 1
 
@@ -104,7 +105,7 @@
 	update_appearance()
 
 /obj/item/instrument/piano_synth/headphones/spacepods
-	name = "\improper Nanotrasen space pods"
+	name = "\improper M-W Electronics space pods"
 	desc = "Flex your money, AND ignore what everyone else says, all at once!"
 	icon_state = "spacepods"
 	item_state = "spacepods"

@@ -17,6 +17,7 @@
 	icon_state = "hl_jumpsuit"
 	item_state = "hl_jumpsuit"
 
+
 /obj/item/clothing/under/syndicate/hardliners/officer
 	name = "hardliners officer uniform"
 	desc = "A button-up uniform with cargo pants, certainly more tactical than most officer uniforms."
@@ -43,6 +44,13 @@
 	icon_state = "hl_apron"
 	item_state = "whitecloth"
 	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
+
+	equip_sound = 'sound/items/equip/cloth_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
 
 /obj/item/clothing/suit/hazardvest/hardliners
 	name = "blood-red hazard vest"
@@ -111,6 +119,13 @@
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	togglename = "buttons"
 
+	equipping_sound = EQUIP_SOUND_MED_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_MED_GENERIC
+	equip_delay_self = EQUIP_DELAY_SUIT
+	equip_delay_other = EQUIP_DELAY_SUIT * 1.5
+	strip_delay = EQUIP_DELAY_SUIT * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
+
 /obj/item/clothing/suit/toggle/armor/vest/hardliners/Initialize()
 	. = ..()
 	allowed = GLOB.security_vest_allowed
@@ -118,6 +133,28 @@
 ///////////////
 //Spacesuits//
 //////////////
+/obj/item/clothing/head/helmet/space/hardsuit/stealth/hardliners
+	name = "Asura shocktrooper hardsuit helmet"
+	desc = "Parting plates reveal a visor in permanent frown. The night vision sensors this once had appear to be nonfunctional."
+	icon_state = "hardsuit0-hardstealth"
+	item_state = "hardsuit0-hardstealth"
+	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
+	hardsuit_type = "hardstealth"
+	flash_protect = null
+	lighting_alpha = null
+
+/obj/item/clothing/suit/space/hardsuit/stealth/hardliners
+	name = "Asura shocktrooper hardsuit"
+	desc = "A modified ICW-era hardsuit in use by the Gorlex Hardliners. This model prioritizes quick movement over heavy armor, utilizing light fibers and steel."
+	icon_state = "hardsuit-hardstealth"
+	item_state = "hardsuit-hardstealth"
+	hardsuit_type = "hardstealth"
+	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/stealth/hardliners
+	jetpack = null
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
 	name = "white-red hardsuit helmet"
@@ -128,6 +165,7 @@
 	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
 	hardsuit_type = "hl"
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/syndi/hl
 	name = "white-red hardsuit"
@@ -140,7 +178,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
 	jetpack = null
-	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/hl
 	name = "elite white-red hardsuit helmet"
@@ -182,7 +220,7 @@
 	icon_state = "hl_surgery"
 	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
-
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/hardhat/hardliners
 	name = "white-red hard hat"
@@ -193,7 +231,7 @@
 
 /obj/item/clothing/head/hardliners/peaked
 	name = "Hardliner peaked cap"
-	desc = "A stylish peaked cap utilized by high-ranking officers of the Hardliner movement. Most who wear it are likely to have been a veteran of the ICW, still vying for revenge against Nanotrasen..."
+	desc = "A stylish peaked cap utilized by high-ranking officers of the Hardliner movement. Most who wear it are likely to have been a veteran of the ICW, still vying for revenge against Makosso-Warra..."
 	icon_state = "hl_officer"
 	item_state = "hl_officer"
 
@@ -228,6 +266,7 @@
 	icon = 'icons/obj/clothing/faction/hardliners/eyes.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/eyes.dmi'
 	glass_colour_type = /datum/client_colour/glass_colour/red
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 //////////
 //Belts//
@@ -240,10 +279,19 @@
 	item_state = "hl_webbing"
 	icon = 'icons/obj/clothing/faction/hardliners/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/belt.dmi'
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/storage/belt/security/webbing/hardliners/sidewinder/PopulateContents()
 	. = ..()
 	new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)
 	new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)
 	new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)
+
+/obj/item/storage/belt/security/webbing/hardliners/alt
+	name = "hardliners drop pouch harness"
+	desc = "A harness with a bunch of pouches attached to them for operators of the Hardliner movement, can hold security gear."
+	icon_state = "hl_droppouch"
+	item_state = "hl_droppouch"
+	icon = 'icons/obj/clothing/faction/hardliners/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/belt.dmi'
+	supports_variations = null

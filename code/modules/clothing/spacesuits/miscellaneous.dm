@@ -47,7 +47,7 @@ Contains:
 	//NEW SWAT suit
 /obj/item/clothing/suit/space/swat
 	name = "MK.I SWAT Suit"
-	desc = "A tactical space suit first developed in a joint effort by the defunct IS-ERI and Nanotrasen in 20XX for military space operations. A tried and true workhorse, it is very difficult to move in but offers robust protection against all threats!"
+	desc = "A tactical space suit first developed in a joint effort by the defunct IS-ERI and Makosso-Warra in 20XX for military space operations. A tried and true workhorse, it is very difficult to move in but offers robust protection against all threats!"
 	icon_state = "heavy"
 	item_state = "swat_suit"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/knife/combat)
@@ -447,6 +447,7 @@ Contains:
 	item_state = "syndicate-helm-orange"
 	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 0, "acid" = 0)
 	strip_delay = 65
+	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/fragile
 	name = "emergency space suit"
@@ -457,6 +458,7 @@ Contains:
 	slowdown = 2
 	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 0, "acid" = 0)
 	strip_delay = 65
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/space/fragile/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(!torn && prob(50))

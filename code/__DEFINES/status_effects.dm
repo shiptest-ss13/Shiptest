@@ -55,6 +55,12 @@
 
 #define STATUS_EFFECT_DETERMINED /datum/status_effect/determined //currently in a combat high from being seriously wounded
 
+//currently using a cloaking device of some kind
+#define STATUS_EFFECT_CLOAKED /datum/status_effect/concealed/cloaked
+
+//Using a static-derieved cloak of some variety.
+#define STATUS_EFFECT_STATIC_CLOAK /datum/status_effect/concealed/cloaked/static_cloak
+
 /////////////
 // DEBUFFS //
 /////////////
@@ -166,3 +172,8 @@
 // Stasis helpers
 
 #define IS_IN_STASIS(mob) (mob.has_status_effect(STATUS_EFFECT_STASIS))
+
+// Maxamounts of fire stacks a mob can get
+#define MAX_FIRE_STACKS 20
+/// If a mob has a higher threshold than this, the icon shown will be increased to the big fire icon.
+#define MOB_BIG_FIRE_STACK_THRESHOLD 10

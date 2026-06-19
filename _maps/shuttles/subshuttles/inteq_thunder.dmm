@@ -393,10 +393,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable,
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/structure/extinguisher_cabinet/directional/east{
 	pixel_y = 10
 	},
@@ -421,7 +418,6 @@
 /obj/item/modular_computer/laptop/preset/civilian{
 	pixel_y = -5
 	},
-/obj/item/gps,
 /obj/item/oxygen_candle{
 	pixel_x = -10;
 	pixel_y = 5
@@ -429,6 +425,8 @@
 /obj/item/oxygen_candle{
 	pixel_x = -10
 	},
+/obj/item/gps,
+/obj/item/gps,
 /obj/item/tank/internals/emergency_oxygen/engi{
 	pixel_x = 8;
 	pixel_y = -2

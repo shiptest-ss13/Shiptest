@@ -278,7 +278,6 @@
 	pixel_x = 0;
 	pixel_y = -10
 	},
-/obj/item/radio/headset/syndicate/alt/captain,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -295,6 +294,7 @@
 /obj/item/clothing/head/ramzi/peaked,
 /obj/item/clothing/suit/armor/ramzi/officer,
 /obj/item/clothing/suit/armor/ramzi/captain,
+/obj/item/radio/headset/pirate/alt/captain,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "dR" = (
@@ -634,10 +634,7 @@
 	pixel_x = 4;
 	pixel_y = -9
 	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = -5;
-	pixel_y = 5
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -733,8 +730,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
@@ -789,6 +785,51 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
+"kG" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1;
+	color = "#912a2a"
+	},
+/obj/structure/closet/wall/red/directional/north{
+	name = "Armor"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/item/clothing/suit/armor/ramzi{
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/obj/item/clothing/suit/armor/ramzi{
+	pixel_x = -3;
+	pixel_y = -5
+	},
+/obj/item/clothing/suit/armor/ramzi/bulletproof{
+	pixel_x = 4;
+	pixel_y = -6
+	},
+/obj/item/clothing/suit/armor/ramzi/bulletproof{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/obj/item/clothing/head/helmet/m10/ramzi{
+	pixel_x = -12;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/helmet/m10/ramzi{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/helmet/bulletproof/x11/ramzi{
+	pixel_x = 4;
+	pixel_y = 6
+	},
+/obj/item/clothing/head/helmet/bulletproof/x11/ramzi{
+	pixel_x = 11;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/security/armory)
 "kK" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -804,8 +845,7 @@
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
@@ -1156,16 +1196,32 @@
 	pixel_x = 9;
 	pixel_y = 12
 	},
-/obj/item/radio/headset/syndicate/alt,
-/obj/item/radio/headset/syndicate/alt,
-/obj/item/radio/headset/syndicate/alt,
-/obj/item/radio/headset/syndicate/alt,
+/obj/item/radio/headset/pirate/alt,
+/obj/item/radio/headset/pirate/alt,
+/obj/item/radio/headset/pirate/alt,
+/obj/item/radio/headset/pirate/alt,
 /obj/item/storage/belt/security/webbing/ramzi/alt,
 /obj/item/storage/belt/security/webbing/ramzi/alt,
 /obj/item/storage/belt/security/webbing/ramzi/alt,
 /obj/item/storage/belt/security/webbing/ramzi,
 /obj/item/storage/belt/security/webbing/ramzi,
 /obj/item/storage/belt/security/webbing/ramzi,
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi{
+	pixel_x = -3;
+	pixel_y = 12
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi{
+	pixel_x = -3;
+	pixel_y = 9
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi{
+	pixel_x = -3;
+	pixel_y = 6
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi{
+	pixel_x = -3;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "qd" = (
@@ -1204,8 +1260,8 @@
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/food/bread/meat,
-/obj/effect/spawner/random/food_or_drink/donkpockets,
-/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/shoalpockets,
+/obj/effect/spawner/random/food_or_drink/shoalpockets,
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
@@ -1979,9 +2035,9 @@
 /obj/item/gear_pack/anglegrinder,
 /obj/item/melee/sledgehammer/gorlex,
 /obj/item/storage/toolbox/syndicate,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/storage/belt/utility,
-/obj/item/radio/headset/syndicate/alt,
+/obj/item/radio/headset/pirate/alt,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2215,12 +2271,12 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/hallway/central)
 "Dc" = (
-/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl,
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/no_mag,
 /obj/item/gun/ballistic/automatic/smg/sidewinder,
 /obj/item/gun/ballistic/automatic/smg/cobra,
 /obj/machinery/light/directional/south,
 /obj/structure/closet/secure_closet/armorycage,
+/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "De" = (
@@ -2343,51 +2399,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
-"EE" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1;
-	color = "#912a2a"
-	},
-/obj/structure/closet/wall/red/directional/north{
-	name = "Armor"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
-/obj/item/clothing/suit/armor/ramzi{
-	pixel_x = -11;
-	pixel_y = -5
-	},
-/obj/item/clothing/suit/armor/ramzi{
-	pixel_x = -3;
-	pixel_y = -5
-	},
-/obj/item/clothing/suit/armor/ramzi/bulletproof{
-	pixel_x = 4;
-	pixel_y = -6
-	},
-/obj/item/clothing/suit/armor/ramzi/bulletproof{
-	pixel_x = 10;
-	pixel_y = -7
-	},
-/obj/item/clothing/head/helmet/ramzi{
-	pixel_x = -12;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/ramzi{
-	pixel_x = -4;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/ramzi/bulletproof{
-	pixel_x = 4;
-	pixel_y = 6
-	},
-/obj/item/clothing/head/helmet/ramzi/bulletproof{
-	pixel_x = 11;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/security/armory)
 "EK" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1;
@@ -2423,8 +2434,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/extinguisher_cabinet/directional/west,
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
@@ -2549,15 +2559,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
-"Hw" = (
-/obj/effect/turf_decal/trimline/opaque/syndiered/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/syndiered/border,
-/obj/structure/table/reinforced,
-/obj/machinery/fax,
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
 "HI" = (
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2702,8 +2703,7 @@
 "IS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut{
@@ -2871,10 +2871,7 @@
 /area/ship/security/prison)
 "KB" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 11;
-	pixel_y = 9
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/cell_charger{
@@ -3684,6 +3681,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
+"SR" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
+/obj/structure/table/reinforced,
+/obj/machinery/fax/ramzi,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "Tn" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering/engines/port)
@@ -3910,8 +3916,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut{
@@ -4044,7 +4049,7 @@
 	desc = "A basic white surgical apron. It seems it could stain very easily...";
 	name = "surgical smock"
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/item/clothing/gloves/nitrile/evil,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},
@@ -4719,7 +4724,7 @@ AX
 qH
 aT
 zJ
-Hw
+SR
 ML
 af
 Ys
@@ -4916,7 +4921,7 @@ yf
 yf
 DS
 tM
-EE
+kG
 hq
 tM
 tM

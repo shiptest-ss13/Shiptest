@@ -43,7 +43,7 @@
 	if (prob(10))
 		belt = pick_weight(list(
 			/obj/item/gun/ballistic/automatic/pistol/candor = 2,
-			/obj/item/gun/ballistic/automatic/pistol/commander = 1,
+			/obj/item/gun/ballistic/automatic/pistol/challenger = 1,
 			/obj/item/gun/ballistic/automatic/pistol/ringneck = 1,
 			/obj/item/gun/ballistic/revolver/viper = 1,
 			/obj/item/gun/ballistic/revolver/firebrand = 1,
@@ -213,7 +213,7 @@
 				backpack_contents += pick_weight(list(
 					/obj/item/borg/upgrade/modkit/damage = 1,
 					/obj/item/borg/upgrade/modkit/trigger_guard = 1,
-					/obj/item/soap/nanotrasen = 1,
+					/obj/item/soap/warra = 1,
 					/obj/item/wormhole_jaunter = 1,
 					/obj/item/fulton_core = 1,
 					/obj/item/extraction_pack = 2,
@@ -230,12 +230,11 @@
 				)
 		if(prob(30))
 			backpack_contents += list(
-				/obj/item/reagent_containers/hypospray/medipen/survival = pick_weight(list(
-					1 = 3,
-					2 = 2,
-					3 = 1
-					)
-				)
+				/obj/item/reagent_containers/hypospray/medipen/survival = text2num(pick_weight(list(
+					"1" = 3,
+					"2" = 2,
+					"3" = 1,
+				)))
 			)
 	else if (prob(75))
 		backpack_contents = list()
@@ -255,7 +254,7 @@
 	if(prob(75))
 		suit = pick(/obj/item/clothing/suit/toggle/hazard, /obj/item/clothing/suit/hazardvest, /obj/item/clothing/suit/hooded/wintercoat/engineering)
 	if(prob(75))
-		gloves = pick(/obj/item/clothing/gloves/color/yellow, /obj/item/clothing/gloves/color/fyellow, /obj/item/clothing/gloves/color/fyellow/old)
+		gloves = pick(/obj/item/clothing/gloves/insulated, /obj/item/clothing/gloves/color/fyellow, /obj/item/clothing/gloves/color/fyellow/old)
 	if(prob(75))
 		belt = pick(/obj/item/storage/belt/utility/full, /obj/item/storage/belt/utility)
 	if(prob(50))
@@ -301,7 +300,7 @@
 	if(prob(75))
 		belt = pick_weight(list(/obj/item/storage/belt/medical = 5, /obj/item/defibrillator/compact/loaded = 1))
 	if(prob(75))
-		gloves = pick(/obj/item/clothing/gloves/color/white, /obj/item/clothing/gloves/color/latex/nitrile)
+		gloves = pick(/obj/item/clothing/gloves/color/white, /obj/item/clothing/gloves/nitrile/blue)
 	if(prob(75))
 		mask = /obj/item/clothing/mask/surgical
 	if(prob(75))
@@ -315,15 +314,15 @@
 	for(var/i = 1 to 3)
 		if(prob(75))
 			backpack_contents += pick_weight(list(
-				/obj/item/reagent_containers/pill/patch/styptic = 5,
-				/obj/item/reagent_containers/pill/patch/silver_sulf = 5,
+				/obj/item/reagent_containers/pill/patch/indomide = 5,
+				/obj/item/reagent_containers/pill/patch/alvitane = 5,
 				/obj/item/storage/firstaid/medical = 3,
 				/obj/item/reagent_containers/syringe = 3,
 				/obj/item/reagent_containers/glass/beaker = 2,
 				/obj/item/reagent_containers/dropper = 2,
 				/obj/item/reagent_containers/pill/charcoal = 2,
-				/obj/item/reagent_containers/medigel/styptic = 2,
-				/obj/item/reagent_containers/medigel/silver_sulf = 2,
+				/obj/item/reagent_containers/medigel/quardexane = 2,
+				/obj/item/reagent_containers/medigel/hadrakine = 2,
 				/obj/item/reagent_containers/medigel/sterilizine = 1,
 				/obj/item/flashlight/pen = 1,
 				/obj/item/hypospray/mkii = 1,
@@ -436,7 +435,7 @@
 	if(prob(75))
 		shoes = /obj/item/clothing/shoes/jackboots
 	if(prob(75))
-		head = pick(/obj/item/clothing/head/helmet/sec, /obj/item/clothing/head/helmet/blueshirt, /obj/item/clothing/head/helmet/bulletproof)
+		head = pick(/obj/item/clothing/head/helmet/m10, /obj/item/clothing/head/helmet/blueshirt, /obj/item/clothing/head/helmet/bulletproof)
 	if(prob(75))
 		mask = /obj/item/clothing/mask/gas
 	if(prob(75))
@@ -446,7 +445,7 @@
 	if(prob(75))
 		r_pocket = pick(/obj/item/flashlight/seclite, /obj/item/assembly/flash/handheld, /obj/item/restraints/handcuffs)
 	if(prob(50))
-		suit_store = pick(/obj/item/gun/energy/e_gun, /obj/item/gun/energy/e_gun/smg)
+		suit_store = pick(/obj/item/gun/energy/sharplite/volt, /obj/item/gun/energy/sharplite/rush)
 	for(var/i = 1 to 3)
 		if(prob(75))
 			backpack_contents += pick_weight(list(

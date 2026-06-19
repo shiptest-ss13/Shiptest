@@ -16,9 +16,11 @@
 
 /obj/item/grenade/syndieminibomb/concussion
 	name = "HE Grenade"
-	desc = "A compact shrapnel grenade meant to devastate nearby organisms and cause some damage in the process. Pull pin and throw opposite direction."
+	desc = "A compact high explosive grenade meant to devastate nearby organisms and cause some damage in the process. Pull pin and throw opposite direction."
 	icon_state = "concussion"
+	ex_dev = 0
 	ex_heavy = 2
+	heavy_damage = 50
 	ex_light = 3
 	ex_flame = 3
 
@@ -29,8 +31,12 @@
 	shrapnel_type = /obj/projectile/bullet/shrapnel
 	shrapnel_radius = 4
 	ex_heavy = 1
+	heavy_damage = 35
+	heavy_item_damage = 35
 	ex_light = 3
-	ex_flame = 4
+	light_damage = 20
+	light_item_damage = 15
+	ex_flame = 1
 
 /obj/item/grenade/frag/mega
 	name = "FRAG grenade"

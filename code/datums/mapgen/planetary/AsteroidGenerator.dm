@@ -127,7 +127,7 @@
 		/obj/structure/geyser/random = 1,
 		/obj/structure/vein/asteroid = 5,
 		/obj/structure/vein/asteroid/classtwo = 10,
-		/obj/structure/vein/asteroid/classtwo/rare = 5,
+		/obj/structure/vein/asteroid/classtwo/rare = 3,
 		/obj/structure/vein/asteroid/classthree = 5,
 		/obj/structure/vein/asteroid/classthree/rare = 1,
 	)

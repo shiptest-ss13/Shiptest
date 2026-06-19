@@ -9,8 +9,8 @@
 	flags_1 = NODECONSTRUCT_1
 	use_power = NO_POWER_USE
 	var/static/list/shortcuts = list(
-		"meth" = /datum/reagent/drug/methamphetamine,
-		"tricord" = /datum/reagent/medicine/tricordrazine
+		"meth" = /datum/reagent/drug/rahkrahene,
+		"cureall" = /datum/reagent/medicine/cureall
 	)
 
 /obj/machinery/chem_dispenser/chem_synthesizer/ui_interact(mob/user, datum/tgui/ui)

@@ -169,10 +169,8 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/garage)
 "aO" = (
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
-/obj/mecha/combat/gygax/dark/ramzi{
-	name = "\improper 515 EX 'Hammer Down'"
-	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/obj/structure/mecha_wreckage/gygax/dark,
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/ruin/icemoon/training_facility/course)
 "aP" = (
@@ -215,10 +213,6 @@
 /obj/structure/chair/bench/orange/directional/west,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
-	},
-/obj/item/valentine{
-	pixel_x = -2;
-	pixel_y = 10
 	},
 /obj/item/clothing/neck/tie/gay{
 	pixel_x = 8;
@@ -265,6 +259,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/item/storage/box/ammo/a12g_buckshot,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/armory)
 "bj" = (
@@ -2152,6 +2147,7 @@
 	pixel_x = 0;
 	pixel_y = -5
 	},
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/office_2)
 "kA" = (
@@ -2428,7 +2424,7 @@
 	},
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/remains/human,
-/obj/item/clothing/head/nanotrasen/cap/security{
+/obj/item/clothing/head/warra/cap/security{
 	pixel_y = 9
 	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
@@ -2835,9 +2831,6 @@
 /area/ruin/icemoon/training_facility/range)
 "oc" = (
 /obj/structure/sign/poster/official/safety_eye_protection,
-/obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_y = -31
-	},
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/range)
 "od" = (
@@ -3876,7 +3869,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/central_hall)
 "sI" = (
-/obj/structure/noticeboard,
+/obj/structure/noticeboard/directional/north,
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/locker_room)
 "sJ" = (
@@ -3928,10 +3921,10 @@
 "tf" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/pilot,
-/obj/item/clothing/head/helmet/space/pilot/random,
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 8
 	},
+/obj/item/clothing/head/helmet/space/pilot,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/mech_garage)
 "ti" = (
@@ -4347,7 +4340,7 @@
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/classroom)
 "vC" = (
-/obj/machinery/computer/apc_control{
+/obj/machinery/computer/monitor{
 	dir = 1
 	},
 /obj/effect/spawner/random/trash/crushed_can{
@@ -5276,13 +5269,11 @@
 /obj/structure/closet/secure_closet/armorycage{
 	req_access = list(0)
 	},
-/obj/item/ammo_box/magazine/m556_42_hydra/empty,
-/obj/item/ammo_box/magazine/m556_42_hydra/empty,
-/obj/item/gun/ballistic/automatic/assault/hydra/no_mag,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
 /obj/machinery/light/directional/east,
+/obj/item/gun/ballistic/shotgun/gaboon/empty,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/armory)
 "zR" = (
@@ -5320,7 +5311,7 @@
 /area/ruin/icemoon/training_facility/garage)
 "Ac" = (
 /obj/structure/statue/snow/snowman,
-/obj/item/clothing/head/nanotrasen/beret/security{
+/obj/item/clothing/head/warra/beret/security{
 	pixel_y = 11
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
@@ -5374,11 +5365,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/classroom)
-"Ay" = (
-/obj/structure/table/greyscale,
-/obj/item/attachment/gun/flamethrower,
-/turf/open/floor/plating/asteroid/icerock/cracked,
-/area/ruin/icemoon/training_facility)
 "AA" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -5768,7 +5754,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood,
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -5778,7 +5764,7 @@
 /obj/structure/chair/greyscale{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/classroom)
@@ -5798,7 +5784,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/range)
 "Cp" = (
-/obj/structure/noticeboard,
+/obj/structure/noticeboard/directional/north,
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/office_1)
 "Cs" = (
@@ -6376,6 +6362,10 @@
 "Ff" = (
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/dorms)
+"Fi" = (
+/mob/living/simple_animal/hostile/human/ramzi/melee/sawbones,
+/turf/open/floor/plating/rust,
+/area/ruin/icemoon/training_facility/medbay)
 "Fj" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -6438,7 +6428,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
@@ -6587,15 +6577,15 @@
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/office_2)
 "Gv" = (
-/obj/structure/noticeboard{
-	pixel_x = -32
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/structure/table/reinforced,
-/obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_y = -12
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 9
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi,
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi{
+	pixel_x = 0;
+	pixel_y = -14
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/range)
@@ -7676,9 +7666,6 @@
 /area/ruin/icemoon/training_facility/dorms)
 "Lz" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/ramzi/melee/machete{
-	name = "Ramzi Clique Sawbones"
-	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/icemoon/training_facility/medbay)
 "LA" = (
@@ -8521,6 +8508,11 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/classroom)
+"PO" = (
+/obj/structure/table/greyscale,
+/obj/item/attachment/gun/flamethrower,
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/training_facility)
 "PP" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -9249,10 +9241,6 @@
 	pixel_x = 0;
 	pixel_y = 12
 	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 3;
-	pixel_y = 10
-	},
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/office_2)
 "SW" = (
@@ -9455,12 +9443,13 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/cafeteria)
 "Ud" = (
-/obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_y = 8
-	},
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi{
+	pixel_x = 0;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/range)
@@ -9742,7 +9731,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/icemoon/training_facility/cafeteria)
 "Vo" = (
-/obj/structure/noticeboard,
+/obj/structure/noticeboard/directional/north,
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/lobby)
 "Vp" = (
@@ -13950,7 +13939,7 @@ qr
 tx
 Cd
 wr
-ZU
+Fi
 ZU
 rW
 qP
@@ -14829,7 +14818,7 @@ kk
 wN
 Bv
 kk
-Ay
+PO
 xj
 xj
 tB

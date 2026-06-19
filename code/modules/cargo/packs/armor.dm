@@ -12,7 +12,7 @@
 	desc = "One set of well-rounded body armor. The set includes a helmet and vest."
 	cost = 750
 	contains = list(/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/head/helmet/sec)
+					/obj/item/clothing/head/helmet/m10)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
@@ -37,8 +37,8 @@
 
 /datum/supply_pack/armor/laser_armor
 	name = "Reflector Vest Crate"
-	desc = "Contains one vest made of highly reflective material. The armor piece diffuses a laser's energy by over half, as well as offering a good chance to reflect the laser entirely."
-	cost = 1500
+	desc = "Contains one vest made of highly reflective material. The armor piece diffuses a laser's energy by over half, but with limited protection against melee and ballistic weaponry."
+	cost = 1250
 	contains = list(/obj/item/clothing/suit/armor/laserproof)
 	crate_name = "reflector vest crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
@@ -57,7 +57,7 @@
 	desc = "One set of well-rounded medium tactical body armor. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
 	cost = 3000
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium,
-					/obj/item/clothing/head/helmet/bulletproof/x11)
+					/obj/item/clothing/head/helmet/riot)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
@@ -91,11 +91,27 @@
 
 //gezena
 /datum/supply_pack/armor/pgf_marine_armor
-	name = "Raksha-plate Crate"
-	desc = "One set of standard issue Raksha-plate armor, highly protective and very mobile. The helmet is adjustable for horns."
+	name = "Marine Composite Armor Crate"
+	desc = "One set of standard issue AR-98 body armor, highly protective and quite mobile. Comes with a matching L-98 respirator."
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/armor/gezena/marine,
-					/obj/item/clothing/head/helmet/gezena)
+					/obj/item/clothing/head/helmet/gezena,
+					/obj/item/clothing/glasses/sunglasses/pgf,
+					/obj/item/clothing/mask/breath/pgfmask)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/armor/pgf_navy_armor
+	name = "Navy Flak Armor Crate"
+	desc = "One set of standard issue PGFN flak armor. All a sailor needs when general quarters is called. Comes with a matching respirator."
+	cost = 500
+	contains = list(/obj/item/clothing/suit/armor/gezena/navy,
+					/obj/item/clothing/head/helmet/gezena/navy,
+					/obj/item/clothing/glasses/safety,
+					/obj/item/clothing/mask/breath/pgfmask/navy)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/pgf
@@ -104,7 +120,7 @@
 
 /datum/supply_pack/armor/pgf_armor
 	name = "Navywear Coat Crate"
-	desc = "One replacement navywear coat. The pricing is unfortunately high to discourage distribution to marines, and encourage servicemen to keep track of their jacket."
+	desc = "One replacement navywear coat. A privelege to wear and expensive to produce."
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/armor/gezena)
 	crate_name = "armor crate"
@@ -117,7 +133,7 @@
 
 /datum/supply_pack/armor/hardliner_armor
 	name = "Hardliner Armor Crate"
-	desc = "One set of well-rounded hardliner body armor. Well. Rounded aside from the painfully obvious white. Subsidized by Cybersun Biodynamics."
+	desc = "One set of well-rounded Hardliner body armor. Well. Rounded aside from the painfully obvious white. Subsidized by Cybersun Industries."
 	cost = 500
 	contains = list(/obj/item/clothing/suit/armor/hardliners,
 					/obj/item/clothing/head/helmet/hardliners)
@@ -130,7 +146,7 @@
 /datum/supply_pack/armor/hardliner_mecha_armor
 	name = "Hardliner Pilot Armor Crate"
 	desc = "One set of armor manufactured for Hardliner exosuit pilots. The jacket is often sought out by those outside of it as a keepsake."
-	cost = 1500
+	cost = 500
 	contains = list(/obj/item/clothing/suit/armor/hardliners/jacket,
 					/obj/item/clothing/head/helmet/hardliners/swat)
 	crate_name = "armor crate"
@@ -156,11 +172,125 @@
 
 /datum/supply_pack/armor/srm_duster
 	name = "SRM Duster Crate"
-	desc = "One hand-stitched duster for a proud Roumainian to wear into the Hunt."
+	desc = "One hand-stitched duster and helmet for a proud Roumainian to wear into the Hunt."
 	cost = 500
-	contains = list(/obj/item/clothing/suit/armor/roumain)
+	contains = list(/obj/item/clothing/suit/armor/roumain,
+					/obj/item/clothing/head/helmet/roumain)
 	crate_name = "duster crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/armor/srm_trench
+	name = "SRM Heavy Duster Crate"
+	desc = "One hand-stitched duster with a heavy plate and helmet for a proud Roumainian to charge into the fray."
+	cost = 1500
+	contains = list(/obj/item/clothing/suit/armor/roumain/plate,
+					/obj/item/clothing/head/helmet/roumain/plate)
+	crate_name = "heavy duster crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/armor/srm_sentry
+	name = "SRM Three Quarter Plate Crate"
+	desc = "One three-quarter plate harness and helmet for the brave Roumainian to provide a staunch defense."
+	cost = 3000
+	contains = list(/obj/item/clothing/suit/armor/roumain/plate/medium,
+					/obj/item/clothing/head/helmet/roumain/plate)
+	crate_name = "three quarter plate harness crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
+
+//Cybersun
+
+/datum/supply_pack/armor/basic_cybersun
+	name = "Cybersun Armor Crate"
+	desc = "One set of well-rounded body armor. The set includes a helmet and vest."
+	cost = 750
+	contains = list(/obj/item/clothing/suit/armor/vest/cybersun,
+					/obj/item/clothing/head/helmet/m10/cybersun)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+	faction_locked = TRUE
+	faction = /datum/faction/syndicate/cybersun
+
+/datum/supply_pack/armor/bulletproof_cybersun
+	name = "Cybersun Bulletproof Armor Crate"
+	desc = "Contains one full set of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
+	cost = 1750
+	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof/cybersun,
+					/obj/item/clothing/head/helmet/bulletproof/x11/cybersun,
+					/obj/item/clothing/glasses/sunglasses/ballistic)
+	crate_name = "bulletproof armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+	faction_locked = TRUE
+	faction = /datum/faction/syndicate/cybersun
+
+/datum/supply_pack/armor/marine_cybersun
+	name = "Cybersun Troubleshooter Armor Crate"
+	desc = "One set of well-rounded Troubleshooter armor. While it does not protect the limbs, the vest is fairly durable. The set includes a helmet and vest."
+	cost = 1500
+	contains = list(/obj/item/clothing/suit/armor/vest/marine/cybersun,
+					/obj/item/clothing/head/helmet/bulletproof/x11/cybersun)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+	faction_locked = TRUE
+	faction = /datum/faction/syndicate/cybersun
+
+/datum/supply_pack/armor/medium_marine_cybersun
+	name = "Heavy Troubleshooter Armor Crate"
+	desc = "One set of Heavy Troubleshooter plate. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
+	cost = 3000
+	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium/cybersun,
+					/obj/item/clothing/head/helmet/riot/cybersun)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+	faction_locked = TRUE
+	faction = /datum/faction/syndicate/cybersun
+
+//cybersun trauma team
+/datum/supply_pack/armor/basic_cybersun/trauma_team
+	name = "Trauma Team Armor Crate"
+	desc = "One set of well-rounded body armor. The set includes a helmet and vest."
+	contains = list(/obj/item/clothing/suit/armor/vest/cybersun/trauma,
+					/obj/item/clothing/head/helmet/m10/cybersun/trauma)
+
+/datum/supply_pack/armor/bulletproof_cybersun/trauma_team
+	name = "Trauma Team Bulletproof Armor Crate"
+	desc = "Contains one full set of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
+	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof/cybersun/trauma,
+					/obj/item/clothing/head/helmet/bulletproof/x11/cybersun/trauma,
+					/obj/item/clothing/glasses/sunglasses/ballistic)
+
+/datum/supply_pack/armor/marine_cybersun/trauma_team
+	name = "Trauma Team Combat Armor Crate"
+	desc = "One set of well-rounded tactical armor. While it does not protect the limbs, the vest is fairly durable. The set includes a helmet and vest."
+	contains = list(/obj/item/clothing/suit/armor/vest/marine/cybersun/trauma,
+					/obj/item/clothing/head/helmet/bulletproof/x11/cybersun/trauma)
+
+/datum/supply_pack/armor/medium_marine_cybersun/trauma_team
+	name = "Trauma Team Point Armor Crate"
+	desc = "A trauma team \"Point\" suit, made for first responders in hostile situations. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
+	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium/cybersun/trauma,
+					/obj/item/clothing/head/helmet/riot/cybersun/trauma)
+//Makosso-Warra
+/datum/supply_pack/armor/warra_armor
+	name = "Vigilitas Armor Crate"
+	desc = "One set of Vigilitas-branded armor. The set includes a helmet and a vest."
+	cost = 750 //The red stripe comes at no extra cost to you, director.
+	contains = list(/obj/item/clothing/head/helmet/m10/warra,
+					/obj/item/clothing/suit/armor/warra)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/warra
 	faction_discount = 0
 	faction_locked = TRUE

@@ -5,7 +5,7 @@
 	name = "Shotgun Dart"
 	desc = "These handy darts can be filled up with any chemical and be shot with a shotgun! \
 	Prank your friends by shooting them with laughter! \
-	Not recommended for comercial use."
+	Not recommended for commercial use."
 	item = /obj/item/ammo_casing/shotgun/dart
 
 	cost_min = 10
@@ -63,9 +63,9 @@
 	desc = "A 30 round magazine for the E-40 Hybrid Rifle."
 	item = /obj/item/ammo_box/magazine/e40
 
-	cost_min = 400
-	cost_max = 800
-	stock = 6
+	cost_min = 200
+	cost_max = 400
+	stock = 4
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/cm23_mag
@@ -98,17 +98,6 @@
 	cost_min = 200
 	cost_max = 500
 	stock_min = 2
-	stock_max = 6
-	availability_prob = 0
-
-/datum/blackmarket_item/ammo/saber_mag
-	name = "Saber 9x18mm SMG Magazines"
-	desc = "Magazines for use in the Saber 9x18mm SMG. No, they don't work as swords."
-	item = /obj/item/ammo_box/magazine/smgm9mm
-
-	cost_min = 150
-	cost_max = 450
-	stock_min = 4
 	stock_max = 6
 	availability_prob = 0
 
@@ -176,6 +165,28 @@
 	stock = 2
 	availability_prob = 20
 
+/datum/blackmarket_item/ammo/military_etherbor_cell
+	name = "military-grade Etherbor cell"
+	desc = "A military-grade Etherbor weapon cell. A surefire upgrade to the ones on the civilian market. Lime flavor!"
+	item = /obj/item/stock_parts/cell/gun/pgf
+
+	cost_min = 800
+	cost_max = 1200
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 40
+
+/datum/blackmarket_item/ammo/sharplite_plus_cell
+	name = "Sharplite Plus Cell"
+	desc = "A sharplite plus energy weapon cell. The plus in the name means bigger, if that wasn't obvious."
+	item = /obj/item/stock_parts/cell/gun/sharplite/plus
+
+	cost_min = 800
+	cost_max = 1200
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 40
+
 /datum/blackmarket_item/ammo/gauss_cell
 	name = "SolCon Weapon Cell"
 	desc = "A Solarian weapon cell, for powering their gauss weaponry."
@@ -188,7 +199,7 @@
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/damaged_cell
-	name = "Discount Advanced Weapon Power Cells"
+	name = "Discount Advanced Eoehoma Power Cells"
 	desc = "These cells got a little banged up during a raid by GOLD authorities, but they still should be safe to use. They probably won't explode. In theory."
 	item = /obj/item/stock_parts/cell/gun/upgraded
 
@@ -209,12 +220,12 @@
 	return damaged_cell
 
 /datum/blackmarket_item/ammo/advanced_weapon_cell
-	name = "Upgraded Weapon Power Cells"
+	name = "Upgraded Eoehoma Power Cells"
 	desc = "These upgraded weapon powercells come with twice the capacity of the standard cells, and quality checked to make sure they won't explode!"
 	item = /obj/item/stock_parts/cell/gun/upgraded
 
-	cost_min = 1000
-	cost_max = 1750
+	cost_min = 800
+	cost_max = 1200
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 25
@@ -271,6 +282,16 @@
 	cost_min = 150
 	cost_max = 350
 	stock = 2
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/cottonmouth
+	name = "Cottonmouth Magazine"
+	desc = "A 14 round magazine for the modified Cottonmouth machine pistol."
+	item = /obj/item/ammo_box/magazine/m10mm_cottonmouth
+
+	cost_min = 100
+	cost_max = 300
+	stock = 4
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/f4_magazine
@@ -358,3 +379,23 @@
 	cost_max = 500
 	stock_min = 4
 	stock_max = 8
+
+/datum/blackmarket_item/ammo/a12gdragonsbreath
+	name = "Dragonsbreath Shells"
+	desc = "32 shells to rain a firestorm upon your enemies. Just make sure to not to catch yourself on fire!"
+	item = /obj/item/storage/box/ammo/a12g_dragonsbreath
+	cost_min = 300
+	cost_max = 700
+	stock_min = 3
+	stock_max = 6
+	availability_prob = 80
+
+/datum/blackmarket_item/ammo/rods
+	name = "Ferromagnetic rods"
+	desc = "20 ferromagetic rods to rail your enemies."
+	item = /obj/item/storage/box/ammo/ferrorods
+	cost_min = 500
+	cost_max = 900
+	stock_min = 3
+	stock_max = 6
+	availability_prob = 0

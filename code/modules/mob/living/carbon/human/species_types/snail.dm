@@ -2,7 +2,7 @@
 	name = "\improper Snailperson"
 	id = SPECIES_SNAIL
 	default_color = "336600" //vomit green
-	species_traits = list(MUTCOLORS, NO_UNDERWEAR, HAS_FLESH, HAS_BONE)
+	species_traits = list(MUTCOLORS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_ALWAYS_CLEAN, TRAIT_NOSLIPALL)
 	attack_verb = "slap"
 	coldmod = 0.5 //snails only come out when its cold and wet
@@ -11,18 +11,29 @@
 	punchdamagehigh = 0.5 //snails are soft and squishy
 	siemens_coeff = 2 //snails are mostly water
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP
-	sexes = FALSE //snails are hermaphrodites
 
-	mutanteyes = /obj/item/organ/eyes/snail
-	mutanttongue = /obj/item/organ/tongue/snail
 	exotic_blood = /datum/reagent/lube
 
-	species_chest = /obj/item/bodypart/chest/snail
-	species_head = /obj/item/bodypart/head/snail
-	species_l_arm = /obj/item/bodypart/l_arm/snail
-	species_r_arm = /obj/item/bodypart/r_arm/snail
-	species_l_leg = /obj/item/bodypart/leg/left/snail
-	species_r_leg = /obj/item/bodypart/leg/right/snail
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/snail,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/snail,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+	)
+
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/snail,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/snail,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/snail,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/snail,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/snail,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/snail,
+	)
 
 /datum/species/snail/New()
 	. = ..()

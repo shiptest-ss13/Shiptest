@@ -23,10 +23,10 @@ Borg Hypospray
 	var/charge_cost = 50
 	var/charge_timer = 0
 	var/recharge_time = 10 //Time it takes for shots to recharge (in seconds)
-	var/bypass_protection = 0 //If the hypospray can go through armor or thick material
+	var/inject_flags = INJECT_CHECK_PENETRATE_THICK //If the hypospray can go through armor or thick material
 
 	var/list/datum/reagents/reagent_list = list()
-	var/list/reagent_ids = list(/datum/reagent/medicine/dexalin, /datum/reagent/medicine/kelotane, /datum/reagent/medicine/bicaridine, /datum/reagent/medicine/antitoxin, /datum/reagent/medicine/epinephrine, /datum/reagent/medicine/spaceacillin, /datum/reagent/medicine/salglu_solution, /datum/reagent/medicine/morphine)
+	var/list/reagent_ids = list(/datum/reagent/medicine/dexalin, /datum/reagent/medicine/alvitane, /datum/reagent/medicine/indomide, /datum/reagent/medicine/pancrazine, /datum/reagent/medicine/epinephrine, /datum/reagent/medicine/spaceacillin, /datum/reagent/medicine/salglu_solution, /datum/reagent/medicine/morphine)
 	var/accepts_reagent_upgrades = TRUE //If upgrades can increase number of reagents dispensed.
 	var/list/modes = list() //Basically the inverse of reagent_ids. Instead of having numbers as "keys" and strings as values it has strings as keys and numbers as values.
 								//Used as list for input() in shakers.
@@ -102,11 +102,11 @@ Borg Hypospray
 		return
 	if(!istype(M))
 		return
-	if(R.total_volume && M.can_inject(user, 1, user.zone_selected,bypass_protection))
+	if(R.total_volume && M.can_inject(user, user.zone_selected, inject_flags))
 		to_chat(M, span_warning("You feel a tiny prick!"))
 		to_chat(user, span_notice("You inject [M] with the injector."))
 		if(M.reagents)
-			var/trans = R.trans_to(M, amount_per_transfer_from_this, transfered_by = user, method = INJECT)
+			var/trans = R.trans_to(M, amount_per_transfer_from_this, transfered_by = user, methods = INJECT)
 			to_chat(user, span_notice("[trans] unit\s injected. [R.total_volume] unit\s remaining."))
 
 	var/list/injected = list()
@@ -154,8 +154,8 @@ Borg Hypospray
 	icon_state = "borghypo_s"
 	charge_cost = 20
 	recharge_time = 2
-	reagent_ids = list(/datum/reagent/medicine/syndicate_nanites, /datum/reagent/medicine/potass_iodide, /datum/reagent/medicine/morphine)
-	bypass_protection = 1
+	reagent_ids = list(/datum/reagent/medicine/panacea, /datum/reagent/medicine/potass_iodide, /datum/reagent/medicine/morphine)
+	inject_flags = INJECT_CHECK_PENETRATE_THICK
 	accepts_reagent_upgrades = FALSE
 
 /*
@@ -249,7 +249,7 @@ Borg Shaker
 /obj/item/reagent_containers/borghypo/peace/hacked
 	desc = "Everything's peaceful in death!"
 	icon_state = "borghypo_s"
-	reagent_ids = list(/datum/reagent/peaceborg/confuse,/datum/reagent/peaceborg/tire,/datum/reagent/pax/peaceborg,/datum/reagent/toxin/staminatoxin,/datum/reagent/toxin/sulfonal,/datum/reagent/toxin/sodium_thiopental,/datum/reagent/toxin/cyanide,/datum/reagent/toxin/fentanyl)
+	reagent_ids = list(/datum/reagent/peaceborg/confuse,/datum/reagent/peaceborg/tire,/datum/reagent/pax/peaceborg,/datum/reagent/toxin/staminatoxin,/datum/reagent/toxin/sulfonal,/datum/reagent/toxin/sodium_thiopental,/datum/reagent/toxin/cyanide)
 	accepts_reagent_upgrades = FALSE
 
 /obj/item/reagent_containers/borghypo/epi

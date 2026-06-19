@@ -21,8 +21,8 @@
 	default_num_hands = 0
 
 	bodyparts = list(
-		/obj/item/bodypart/chest/larva,
-		/obj/item/bodypart/head/larva,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/larva,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/larva,
 		)
 
 	var/amount_grown = 0

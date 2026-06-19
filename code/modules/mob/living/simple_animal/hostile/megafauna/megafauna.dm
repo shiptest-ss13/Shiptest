@@ -11,7 +11,7 @@
 	light_range = 3
 	faction = list("mining", "boss")
 	weather_immunities = list("lava","ash")
-	movement_type = FLYING
+	is_flying_animal = TRUE
 	robust_searching = TRUE
 	ranged_ignores_vision = TRUE
 	stat_attack = DEAD
@@ -41,6 +41,7 @@
 	var/chosen_attack = 1 // chosen attack num
 	var/list/attack_action_types = list()
 	var/small_sprite_type
+	var/can_gib = FALSE
 
 /mob/living/simple_animal/hostile/megafauna/Initialize(mapload)
 	. = ..()
@@ -110,7 +111,7 @@
 		if(L.stat != DEAD)
 			if(!client && ranged && ranged_cooldown <= world.time)
 				OpenFire()
-		else
+		else if(can_gib)
 			devour(L)
 
 /mob/living/simple_animal/hostile/megafauna/proc/devour(mob/living/L)

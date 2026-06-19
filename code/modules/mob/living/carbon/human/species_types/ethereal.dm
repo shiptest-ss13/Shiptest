@@ -10,18 +10,14 @@
 	attack_verb = "burn"
 	attack_sound = 'sound/weapons/etherealhit.ogg'
 	miss_sound = 'sound/weapons/etherealmiss.ogg'
-	meat = /obj/item/food/meat/slab/human/mutant/ethereal
-	mutantstomach = /obj/item/organ/stomach/ethereal
-	mutanttongue = /obj/item/organ/tongue/ethereal
 	siemens_coeff = 0.5 //They thrive on energy
 	attack_type = BURN //burn bish
 	exotic_bloodtype = "E"
 	species_age_max = 300
-	species_traits = list(DYNCOLORS, EYECOLOR, HAIR, FACEHAIR, HAS_FLESH, HAS_BONE)
+	species_traits = list(DYNCOLORS, HAIR, FACEHAIR)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	species_language_holder = /datum/language_holder/ethereal
 	inherent_traits = list(TRAIT_NOHUNGER)
-	sexes = FALSE //no fetish content allowed
 	toxic_food = NONE
 	// Body temperature for ethereals is much higher then humans as they like hotter environments
 	bodytemp_normal = (HUMAN_BODYTEMP_NORMAL + 50)
@@ -35,16 +31,32 @@
 	hair_color = "fixedmutcolor"
 	hair_alpha = 140
 	mutant_bodyparts = list("elzu_horns", "tail_elzu")
-	default_features = list("elzu_horns" = "None", "tail_elzu" = "None", "body_size" = "Normal")
+	default_features = list("elzu_horns" = "None", "tail_elzu" = "None")
 	species_eye_path = 'icons/mob/ethereal_parts.dmi'
-	mutant_organs = list(/obj/item/organ/tail/elzu)
 
-	species_chest = /obj/item/bodypart/chest/ethereal
-	species_head = /obj/item/bodypart/head/ethereal
-	species_l_arm = /obj/item/bodypart/l_arm/ethereal
-	species_r_arm = /obj/item/bodypart/r_arm/ethereal
-	species_l_leg = /obj/item/bodypart/leg/left/ethereal
-	species_r_leg = /obj/item/bodypart/leg/right/ethereal
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/ethereal,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/ethereal,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+		ORGAN_SLOT_TAIL = /obj/item/organ/tail/elzu,
+	)
+
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ethereal,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ethereal,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ethereal,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ethereal,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ethereal,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ethereal,
+	)
+
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/elzuouse
 
 	var/current_color
 	var/EMPeffect = FALSE
@@ -75,9 +87,13 @@
 
 	//The following code is literally only to make admin-spawned ethereals not be black.
 	_carbon.dna.features["mcolor"] = _carbon.dna.features["ethcolor"] //Ethcolor and Mut color are both dogshit and will be replaced
-	for(var/obj/item/bodypart/BP as anything in _carbon.bodyparts)
-		if(BP.limb_id == SPECIES_ELZUOSE)
-			BP.update_limb(is_creating = TRUE)
+	var/obj/item/bodypart/body_part
+	for(var/zone in _carbon.bodyparts)
+		body_part = _carbon.bodyparts[zone]
+		if(!body_part)
+			continue
+		if(body_part.limb_id == SPECIES_ELZUOSE)
+			body_part.update_limb(is_creating = TRUE)
 
 /datum/species/elzuose/on_species_loss(mob/living/carbon/human/_carbon, datum/species/new_species, pref_load)
 	UnregisterSignal(_carbon, COMSIG_ATOM_EMP_ACT)
@@ -189,10 +205,13 @@
 	else
 		ethereal_light.set_light_on(FALSE)
 		fixed_mut_color = rgb(128,128,128)
-
-	for(var/obj/item/bodypart/parts_to_update as anything in _human.bodyparts)
-		parts_to_update.species_color = fixed_mut_color
-		parts_to_update.update_limb()
+	var/obj/item/bodypart/body_part
+	for(var/zone in _human.bodyparts)
+		body_part = _human.bodyparts[zone]
+		if(!body_part)
+			continue
+		body_part.species_color = fixed_mut_color
+		body_part.update_limb()
 
 	_human.update_body()
 	_human.update_hair()
@@ -246,7 +265,6 @@
 	to_chat(_human, span_notice("You feel more energized as your shine comes back."))
 
 /datum/species/elzuose/proc/handle_charge(mob/living/carbon/human/_human)
-	brutemod = 1.25
 	switch(get_charge(_human))
 		if(ELZUOSE_CHARGE_NONE to ELZUOSE_CHARGE_LOWPOWER)
 			if(get_charge(_human) == ELZUOSE_CHARGE_NONE)

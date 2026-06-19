@@ -2,6 +2,7 @@
 	name = "outpost"
 	char_rep = "T"
 	token_icon_state = "outpost_small"
+	interference_power = -50
 
 	interaction_options = list(INTERACTION_OVERMAP_DOCK, INTERACTION_OVERMAP_QUICKDOCK)
 
@@ -56,7 +57,7 @@
 
 	/// Our faction of the outpost
 	var/datum/faction/faction
-	/// simple var that toggles the flag on/off, neant for eventing purposes
+	/// simple var that toggles the flag on/off, intended to show that this place is "inhabited". Turn off during events when something happens that causes the place to no longer be inhabited.
 	var/flag_overlay = TRUE
 	var/outpost_name
 
@@ -87,7 +88,9 @@
 		market.name = "[name] market"
 
 	fill_missions()
-	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+	addtimer(CALLBACK(src, PROC_REF(cycle_missions)), 1 HOURS, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 30 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+
 
 /datum/overmap/outpost/Destroy(...)
 	SSpoints_of_interest.remove_point_of_interest(token)
@@ -161,11 +164,19 @@
 	return person_name
 
 /datum/overmap/outpost/proc/fill_missions()
-	max_missions = min(10 + (SSovermap.controlled_ships.len * 2), 25)
+	max_missions = min(20 + (SSovermap.controlled_ships.len * 2), 40)
 	while(LAZYLEN(missions) < max_missions)
 		var/mission_type = SSmissions.get_weighted_mission_type()
-		var/datum/mission/outpost/M = new mission_type(src)
+		var/datum/mission/M = new mission_type(src)
 		LAZYADD(missions, M)
+
+/datum/overmap/outpost/proc/cycle_missions()
+	for(var/datum/mission/target_mission as anything in missions)
+		//don't blow up active missions or high priority ones
+		if(!target_mission.accepted && !target_mission.high_priority)
+			LAZYREMOVE(missions, target_mission)
+			qdel(target_mission)
+	fill_missions()
 
 /datum/overmap/outpost/proc/load_main_level()
 	if(!main_template)
@@ -230,7 +241,7 @@
 
 		// load the template
 		elevator_template.load(anchor_landmark.loc)
-		plat = locate() in anchor_landmark.loc
+		plat = locate(/obj/structure/elevator_platform) in anchor_landmark.loc
 		// create the shaft datum
 		shaft_datums += new /datum/hangar_shaft(shaft_name, plat.master_datum)
 		// give the elevator a first floor

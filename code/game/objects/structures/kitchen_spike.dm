@@ -3,7 +3,7 @@
 
 /obj/structure/kitchenspike_frame
 	name = "meatspike frame"
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "spikeframe"
 	desc = "The frame of a meat spike."
 	density = TRUE
@@ -38,7 +38,7 @@
 
 /obj/structure/kitchenspike
 	name = "meat spike"
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "spike"
 	desc = "A spike for collecting meat from animals."
 	density = TRUE
@@ -82,7 +82,7 @@
 			var/matrix/m180 = matrix(L.transform)
 			m180.Turn(180)
 			animate(L, transform = m180, time = 3)
-			L.pixel_y = L.get_standard_pixel_y_offset(TRUE)
+			L.add_offsets(type, y_add = -6, animate = FALSE)
 	else if (has_buckled_mobs())
 		for(var/mob/living/L in buckled_mobs)
 			user_unbuckle_mob(L, user)
@@ -124,7 +124,7 @@
 	var/matrix/m180 = matrix(M.transform)
 	m180.Turn(180)
 	animate(M, transform = m180, time = 3)
-	M.pixel_y = M.base_pixel_y + M.get_standard_pixel_y_offset(TRUE)
+	M.remove_offsets(type, animate = FALSE)
 	M.adjustBruteLoss(30)
 	src.visible_message(text("[span_danger("[M] falls free of [src]!")]"))
 	unbuckle_mob(M,force=1)

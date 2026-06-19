@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile
-	faction = list("hostile")
+	faction = list(FACTION_HOSTILE)
 	stop_automated_movement_when_pulled = 0
 	obj_damage = 40
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES //Bitflags. Set to ENVIRONMENT_SMASH_STRUCTURES to break closets,tables,racks, etc; ENVIRONMENT_SMASH_WALLS for walls; ENVIRONMENT_SMASH_RWALLS for rwalls
@@ -144,8 +144,8 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/bullet_act(obj/projectile/P)
-	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client)
-		if(P.firer && get_dist(src, P.firer) <= aggro_vision_range)
+	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client && P.suppressed != SUPPRESSED_EXTREME)
+		if(P.firer && (get_dist(src, P.firer) <= aggro_vision_range))
 			FindTarget(list(P.firer), 1)
 		Goto(P.starting, move_to_delay, 3)
 	return ..()
@@ -450,6 +450,7 @@
 		var/obj/item/ammo_casing/casing = new casingtype(startloc)
 		playsound(src, projectilesound, 100, TRUE)
 		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), rand(-spread, spread),  src)
+		casing.on_eject(src)
 	else if(projectiletype)
 		var/obj/projectile/P = new projectiletype(startloc)
 		playsound(src, projectilesound, 100, TRUE)
@@ -542,7 +543,7 @@
 			A.attack_animal(src)
 		return 1
 
-/mob/living/simple_animal/hostile/RangedAttack(atom/A, params) //Player firing
+/mob/living/simple_animal/hostile/RangedAttack(atom/A, modifiers) //Player firing
 	if(ranged && ranged_cooldown <= world.time)
 		GiveTarget(A)
 		OpenFire(A)
@@ -705,10 +706,10 @@
 
 /mob/living/simple_animal/hostile/proc/add_target(new_target)
 	if(target)
-		UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(target, COMSIG_QDELETING)
 	target = new_target
 	if(target)
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(handle_target_del), TRUE)
+		RegisterSignal(target, COMSIG_QDELETING, PROC_REF(handle_target_del), TRUE)
 
 /mob/living/simple_animal/hostile/proc/set_camp_faction(tag)
 	src.faction = list()

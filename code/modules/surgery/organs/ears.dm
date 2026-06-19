@@ -32,8 +32,6 @@
 		return
 	..()
 	var/mob/living/carbon/C = owner
-	if((damage < maxHealth) && (organ_flags & ORGAN_FAILING))	//ear damage can be repaired from the failing condition
-		organ_flags &= ~ORGAN_FAILING
 	// genetic deafness prevents the body from using the ears, even if healthy
 	if(HAS_TRAIT(C, TRAIT_DEAF))
 		deaf = max(deaf, 1)
@@ -48,8 +46,7 @@
 
 /obj/item/organ/ears/proc/restoreEars()
 	deaf = 0
-	damage = 0
-	organ_flags &= ~ORGAN_FAILING
+	setOrganDamage(0)
 
 	var/mob/living/carbon/C = owner
 
@@ -57,7 +54,7 @@
 		deaf = 1
 
 /obj/item/organ/ears/proc/adjustEarDamage(ddmg, ddeaf)
-	damage = max(damage + (ddmg*damage_multiplier), 0)
+	applyOrganDamage(ddmg * damage_multiplier)
 	deaf = max(deaf + (ddeaf*damage_multiplier), 0)
 
 /obj/item/organ/ears/proc/minimumDeafTicks(value)
@@ -231,6 +228,25 @@
 		ear_owner.update_body()
 
 /obj/item/organ/ears/dog/Remove(mob/living/carbon/human/ear_owner,  special = 0)
+	..()
+	if(istype(ear_owner))
+		color = ear_owner.hair_color
+		ear_owner.dna.features["ears"] = "None"
+		ear_owner.dna.species.mutant_bodyparts -= "ears"
+		ear_owner.update_body()
+
+/obj/item/organ/ears/horse
+	name = "horse ears"
+
+/obj/item/organ/ears/horse/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(istype(ear_owner))
+		color = ear_owner.hair_color
+		ear_owner.dna.species.mutant_bodyparts |= "ears"
+		ear_owner.dna.features["ears"] = "Horse"
+		ear_owner.update_body()
+
+/obj/item/organ/ears/horse/Remove(mob/living/carbon/human/ear_owner,  special = 0)
 	..()
 	if(istype(ear_owner))
 		color = ear_owner.hair_color

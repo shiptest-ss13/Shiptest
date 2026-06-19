@@ -375,6 +375,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		to_chat(src, span_warning("To leave your body again use the Ghost verb."))
 	mind.current.key = key
 	mind.current.client.init_verbs()
+	mind.current.ignore_SSD = FALSE
 	return TRUE
 
 /mob/dead/observer/verb/stay_dead()
@@ -772,7 +773,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/dead/observer/verb/toggle_chem_scan()
 	set name = "Toggle Chem Scan"
-	set desc = "Toggles whether you scan living beings for chemicals and addictions on click"
+	set desc = "Toggles whether you scan living beings for chemicals on click"
 	set category = "Ghost"
 
 	if(chem_scan) //remove old huds

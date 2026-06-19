@@ -1,4 +1,4 @@
-/obj/item/clothing/accessory //Ties moved to neck slot items, but as there are still things like medals and armbands, this accessory system is being kept as-is
+/obj/item/clothing/accessory
 	name = "Accessory"
 	desc = "Something has gone wrong!"
 	icon = 'icons/obj/clothing/accessories.dmi'
@@ -73,10 +73,10 @@
 
 /obj/item/clothing/accessory/proc/set_detached_pockets(new_pocket)
 	if(detached_pockets)
-		UnregisterSignal(detached_pockets, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(detached_pockets, COMSIG_QDELETING)
 	detached_pockets = new_pocket
 	if(detached_pockets)
-		RegisterSignal(detached_pockets, COMSIG_PARENT_QDELETING, PROC_REF(handle_pockets_del))
+		RegisterSignal(detached_pockets, COMSIG_QDELETING, PROC_REF(handle_pockets_del))
 
 /obj/item/clothing/accessory/proc/handle_pockets_del(datum/source)
 	SIGNAL_HANDLER
@@ -109,12 +109,30 @@
 	minimize_when_attached = FALSE
 	attachment_slot = null
 
+/obj/item/clothing/accessory/waistcoat/brown
+	name = "brown waistcoat"
+	icon_state = "waistcoat_brown"
+	item_state = "det_suit"
+
+/obj/item/clothing/accessory/waistcoat/white
+	name = "white waistcoat"
+	icon_state = "waistcoat_white"
+	item_state = "det_suit"
+
 /obj/item/clothing/accessory/maidapron
 	name = "maid apron"
 	desc = "The best part of a maid costume."
 	icon_state = "maidapron"
 	item_state = "maidapron"
 	minimize_when_attached = FALSE
+	attachment_slot = null
+
+/obj/item/clothing/accessory/barcoat
+	name = "bartender waistcoat"
+	desc = "For help with drink spillage."
+	icon_state = "barcoat"
+	item_state = "barcoat"
+	minimize_when_attached = TRUE
 	attachment_slot = null
 
 //////////
@@ -128,6 +146,7 @@
 	custom_materials = list(/datum/material/iron=1000)
 	resistance_flags = FIRE_PROOF
 	attachment_slot = null
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	var/medaltype = "medal" //Sprite used for medalbox
 	var/commended = FALSE
 
@@ -151,7 +170,7 @@
 					span_notice("You try to pin [src] on [M]'s chest."))
 			var/input
 			if(!commended && user != M)
-				input = stripped_input(user,"Please input a reason for this commendation, it will be recorded by Nanotrasen.", ,"", 140)
+				input = stripped_input(user,"Please input a reason for this commendation. It will be recorded by Makosso-Warra.", ,"", 140)
 			if(do_after(user, delay, target = M))
 				if(U.attach_accessory(src, user, 0)) //Attach it, do not notify the user of the attachment
 					if(user == M)
@@ -208,7 +227,7 @@
 
 /obj/item/clothing/accessory/medal/silver/excellence
 	name = "\proper the head of personnel award for outstanding achievement in the field of excellence"
-	desc = "Nanotrasen's dictionary defines excellence as \"the quality or condition of being excellent\". This is awarded to those rare crewmembers who fit that definition."
+	desc = "Makosso-Warra's dictionary defines excellence as \"the quality or condition of being excellent\". This is awarded to those rare crewmembers who fit that definition."
 
 /obj/item/clothing/accessory/medal/silver/bureaucracy
 	name = "\improper Excellence in Bureaucracy Medal"
@@ -284,9 +303,9 @@
 ////////////
 
 /obj/item/clothing/accessory/armband
-	name = "red armband"
-	desc = "A fancy red armband!"
-	icon_state = "redband"
+	name = "yellow armband"
+	desc = "A fancy yellow armband!"
+	icon_state = "yellowband"
 	attachment_slot = null
 
 /obj/item/clothing/accessory/armband/deputy
@@ -455,6 +474,14 @@
 	new /obj/item/gun/ballistic/automatic/pistol/candor(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
+
+
+/obj/item/clothing/accessory/holster/cybersun/Initialize()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/pistol/rattlesnake(src)
+	new /obj/item/ammo_box/magazine/m9mm_rattlesnake(src)
+	new /obj/item/ammo_box/magazine/m9mm_rattlesnake(src)
+
 
 //////////
 //RILENA//

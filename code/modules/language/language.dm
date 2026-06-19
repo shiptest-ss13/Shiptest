@@ -2,6 +2,12 @@
 #define SCRAMBLE_CACHE_LEN 50
 /// Last 20 spoken sentences will be cached before we start cycling them out (re-randomizing them)
 #define SENTENCE_CACHE_LEN 20
+/// Number of hex characters the MD5 will use to scramble text (16**SCRAMBLE_HASH_SIZE must not exceed 2**32)
+#define SCRAMBLE_HASH_SIZE 4
+/// Probability check using MD5 hash
+#define HASH_PROB(probability, raw_hash, hash_offset) (probability >= 100 ? TRUE : (probability / 100 >= hex2num(copytext(raw_hash, hash_offset, hash_offset + SCRAMBLE_HASH_SIZE)) / ((16**SCRAMBLE_HASH_SIZE) - 1)))
+/// Pick from a list using MD5 hash (will cause problems if SCRAMBLE_HASH_SIZE is too low)
+#define HASH_PICK(list, raw_hash, hash_offset) (list?.len ? list[1 + hex2num(copytext(raw_hash, hash_offset, hash_offset + SCRAMBLE_HASH_SIZE)) % list.len] : null)
 
 /// Datum based languages. Easily editable and modular.
 /datum/language
@@ -18,6 +24,8 @@
 	var/list/syllables
 	/// List of characters that will randomly be inserted between syllables.
 	var/list/special_characters
+	/// Likelihood of inserting special characters between syllables.
+	var/special_character_chance = 0
 
 	// These modify how syllables are combined.
 	/// Likelihood of making a new sentence after each syllable.
@@ -126,7 +134,8 @@
 
 /// Checks whether we should display the language icon to the passed hearer.
 /datum/language/proc/display_icon(atom/movable/hearer)
-	var/understands = hearer.has_language(src.type)
+	var/list/partial_understanding = hearer.get_partially_understood_languages()
+	var/understands = hearer.has_language(type) || (partial_understanding?[type] >= 50)
 	if((flags & LANGUAGE_HIDE_ICON_IF_UNDERSTOOD) && understands)
 		return FALSE
 	if((flags & LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD) && !understands)
@@ -274,16 +283,16 @@
 	for(var/word in splittext(input, " "))
 		var/translate_prob = mutual_languages?[type] || 0
 		var/base_word = strip_outer_punctuation(word)
+		var/raw_hash = md5("[lowertext(base_word)]/[GLOB.round_id]")
 		if(translate_prob > 0)
-			// the probability of managing to understand a word is based on how common it is (+10%, -15%)
-			// 1000 words in the list, so words outside the list are just treated as "the 1250th most common word"
-			var/commonness = GLOB.most_common_words[lowertext(base_word)] || 1250
-			translate_prob += (10 * (1 - (min(commonness, 1250) / 500)))
-			if(prob(translate_prob))
+			// the probability of managing to understand a word is based on how common it is (+10%, -5%)
+			// 1000 words in the list, so words outside the list are just treated as "the 1500th most common word"
+			var/commonness = GLOB.most_common_words[lowertext(base_word)] || 1500
+			translate_prob += (10 * (1 - (min(commonness, 1500) / 1000)))
+			if(HASH_PROB(translate_prob, raw_hash, 1))
 				scrambled_words += word
 				translated_index += FALSE
 				continue
-
 		var/scrambled_word = scramble_word(base_word)
 		scrambled_words += scrambled_word
 		translated_index += (scrambled_word != base_word)
@@ -296,11 +305,12 @@
 		if(!translated_index[i])
 			sentence += " [word]"
 			continue
+		var/raw_hash = md5("[lowertext(word)]/[lowertext(scrambled_words[i - 1])]/[GLOB.round_id]")
 		// if the last word was scrambled, always include a space
-		if(translated_index[i - 1] || prob(between_word_space_chance))
+		if(translated_index[i - 1] || HASH_PROB(between_word_space_chance, raw_hash, 1))
 			sentence += " "
 		// lastly try inserting a new sentence
-		else if(prob(between_word_sentence_chance))
+		else if(HASH_PROB(between_word_sentence_chance, raw_hash, 1 + SCRAMBLE_HASH_SIZE))
 			sentence += ". "
 			word = capitalize(word)
 
@@ -333,30 +343,29 @@
 		var/add_period = FALSE
 		word = ""
 		while(length_char(word) < input_size)
+			// uses the MD5 hash to make sure each word is always scrambled to the same thing within a given round
+			var/raw_hash = md5("[lowertext(input)]/[lowertext(word)]/[GLOB.round_id]")
 			// add in the last syllable's period or space first
 			if(add_period)
 				word += ". "
 			else if(add_space)
 				word += " "
 			// insert special chars if we're not at the start of the word
-			else if(word && prob(1) && length(special_characters))
-				word += pick(special_characters)
+			else if(word && HASH_PROB(special_character_chance, raw_hash, 1) && length(special_characters))
+				word += HASH_PICK(special_characters, raw_hash, 1 + SCRAMBLE_HASH_SIZE)
 			// generate the next syllable (capitalize if we just added a period)
-			var/next = pick_weight_recursive(syllables)
+			var/next = HASH_PICK(syllables, raw_hash, 1 + SCRAMBLE_HASH_SIZE * 2)
 			word += add_period ? capitalize(next) : next
 			// determine if the next syllable gets a period or space
-			add_period = prob(sentence_chance)
-			add_space = prob(space_chance)
+			add_period = HASH_PROB(sentence_chance, raw_hash, 1 + SCRAMBLE_HASH_SIZE * 3)
+			add_space = HASH_PROB(space_chance, raw_hash, 1 + SCRAMBLE_HASH_SIZE * 4)
 
 	write_word_cache(input, word)
 
 	// If they're shouting, we're shouting
 	return (is_uppercase(input) && length_char(input) >= 2) ? uppertext(word) : word
 
-/**
- * Called from mob/living/say()
- */
-/datum/language/proc/on_say(atom/movable/speaker, message, bubble_type, list/spans = list(), datum/language/language = null)
-	return
-
+#undef HASH_PICK
+#undef HASH_PROB
+#undef SCRAMBLE_HASH_SIZE
 #undef SCRAMBLE_CACHE_LEN

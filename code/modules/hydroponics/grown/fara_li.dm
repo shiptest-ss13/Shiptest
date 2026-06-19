@@ -1,7 +1,7 @@
 /obj/item/seeds/fara_li
 	name = "pack of fara-li seeds"
 	desc = "These seeds grow into fara-li bushes. Remember to keep them watered!"
-	icon_state = ""
+	icon_state = "seed-fara"
 	species = "fara"
 	plantname = "fara-li bush"
 	product = /obj/item/food/grown/fara_li

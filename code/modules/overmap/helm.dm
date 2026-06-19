@@ -4,7 +4,7 @@
 #define JUMP_STATE_FIRING 3
 #define JUMP_STATE_FINALIZED 4
 #define JUMP_CHARGE_DELAY (7 SECONDS)
-#define JUMP_CHARGEUP_TIME (1 MINUTES)
+#define JUMP_CHARGEUP_TIME (20 SECONDS)
 
 /obj/machinery/computer/helm
 	name = "helm control console"
@@ -48,12 +48,8 @@
 	icon_state = "computer-solgov"
 	deconpath = /obj/structure/frame/computer/solgov
 
-/datum/config_entry/number/bluespace_jump_wait
-	default = 5 MINUTES
-
 /obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
-	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
 	ntnet_relay = new(src)
 
 /obj/machinery/computer/helm/examine(mob/user)
@@ -70,18 +66,14 @@
 	if(current_ship.docked_to || current_ship.docking)
 		say("Bluespace Jump Calibration detected interference in the local area.")
 		return
-	if(world.time < jump_allowed)
-		var/jump_wait = DisplayTimeText(jump_allowed - world.time)
-		say("Bluespace Jump Calibration is currently recharging. ETA: [jump_wait].")
-		return
 	message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGEUP_TIME, TIMER_STOPPABLE)
 	if(new_system)
-		priority_announce("Bluespace jump calibration to destination [new_system.name] initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+		priority_announce("Bluespace jump calibration to destination [new_system.name] initialized. Calibration completion in [JUMP_CHARGEUP_TIME/10] seconds.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
 		jump_destination = new_system
 		jump_coords = newpos
 	else
-		priority_announce("Bluespace jump calibration initialized. Exitting Frontier. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+		priority_announce("Bluespace jump calibration initialized. Exitting Frontier. Calibration completion in [JUMP_CHARGEUP_TIME/10] seconds.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
 
 	calibrating = TRUE
 	return TRUE
@@ -100,6 +92,7 @@
 	if(!calibrating)
 		return
 	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
+	jump_state = JUMP_STATE_OFF
 	calibrating = FALSE
 	jump_coords = null
 	deltimer(jump_timer)
@@ -124,7 +117,7 @@
 
 /obj/machinery/computer/helm/proc/do_jump()
 	if(jump_destination)
-		priority_announce("Bluespace Jump Initiated. Welcome to [jump_destination.name]", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
+		priority_announce("Bluespace Jump Initiated. Welcome to [jump_destination.name].", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
 	else
 		priority_announce("Bluespace Jump Initiated.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
 	if(!jump_destination)
@@ -146,6 +139,11 @@
 		current_ship.helms -= src
 	current_ship = port.current_ship
 	current_ship.helms |= src
+	if(port.registered_faction)
+		var/datum/language/official_language = port.registered_faction.official_language
+		var/datum/language_holder/lang_holder = get_language_holder()
+		grant_language(official_language)
+		lang_holder.selected_language = official_language
 
 /**
  * This proc manually rechecks that the helm computer is connected to a proper ship
@@ -189,6 +187,8 @@
 			user.client.register_map_obj(current_ship.token.cam_screen)
 			user.client.register_map_obj(current_ship.token.cam_plane_master)
 			user.client.register_map_obj(current_ship.token.cam_background)
+			if(current_ship.cloaked_image)
+				user.client.images += current_ship.cloaked_image
 			current_ship.token.update_screen()
 
 		// Open UI
@@ -228,6 +228,8 @@
 		var/list/other_data = list(
 			name = object.name,
 			candock = available_dock,
+			object_class = object.ship_class,
+			hidden = HAS_TRAIT(object, TRAIT_CLOAKED),
 			ref = REF(object)
 		)
 		.["otherInfo"] += list(other_data)
@@ -245,6 +247,12 @@
 	.["aiControls"] = allow_ai_control
 	.["burnDirection"] = current_ship.burn_direction
 	.["burnPercentage"] = current_ship.burn_percentage
+	.["cloaked"] = HAS_TRAIT_FROM(current_ship, TRAIT_CLOAKED, SHIPMODULE_CLOAKING)
+
+	var/obj/machinery/power/cloak/cloaking_system = current_ship.ship_modules[SHIPMODULE_CLOAKING]
+	if(cloaking_system)
+		.["cloakChargePercent"] = 100 * cloaking_system.current_charge / max(cloaking_system.max_charge, 1)
+
 	for(var/datum/weakref/engine in current_ship.shuttle_port.engine_list)
 		var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()
 		if(!real_engine)
@@ -280,6 +288,7 @@
 		mass = current_ship.shuttle_port.turf_count,
 		sensor_range = 4
 	)
+	.["hasCloaking"] = !isnull(current_ship.ship_modules[SHIPMODULE_CLOAKING])
 	.["canFly"] = TRUE
 	.["aiUser"] = issilicon(user)
 
@@ -327,10 +336,13 @@
 			allow_ai_control = !allow_ai_control
 			say(allow_ai_control ? "AI Control has been enabled." : "AI Control is now disabled.")
 			return
-		if("act_overmap")
-			if(SSshuttle.jump_mode > BS_JUMP_CALLED)
-				to_chat(usr, "<span class='warning'>Cannot interact due to bluespace jump preperations!</span>")
+		if("toggle_cloak")
+			var/obj/machinery/power/cloak/cloaking_system = current_ship.ship_modules[SHIPMODULE_CLOAKING]
+			if(!cloaking_system)
 				return
+			cloaking_system.set_cloak(!cloaking_system.cloak_active)
+			return TRUE
+		if("act_overmap")
 			var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects(include_docked = TRUE, empty_if_src_docked = FALSE)
 			var/feedback_text = current_ship.show_interaction_menu(usr, to_act)
 			if(feedback_text)
@@ -344,9 +356,6 @@
 	if(!current_ship.docked_to && !current_ship.docking)
 		switch(action)
 			if("quick_dock")
-				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
-					to_chat(usr, span_warning("Cannot dock due to bluespace jump preperations!"))
-					return
 				var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects(include_docked = TRUE)
 				say(current_ship.Dock(to_act))
 				return
@@ -430,6 +439,8 @@
 		if(current_ship.burn_direction > BURN_NONE && !length(concurrent_users) && !viewer && is_living) // If accelerating with nobody else to stop it
 			say("Pilot absence detected, engaging acceleration safeties.")
 			current_ship.change_heading(BURN_NONE)
+		if(current_ship.cloaked_image)
+			user.client.images -= current_ship.cloaked_image
 
 	// Turn off the console
 	if(!length(concurrent_users) && is_living)
@@ -453,9 +464,20 @@
 	playsound(src, 'sound/effects/fuse.ogg')
 	current_ship.helm_locked = FALSE
 
-/obj/machinery/computer/helm/multitool_act(mob/living/user, obj/item/I)
+/obj/machinery/computer/helm/multitool_act(mob/living/user, obj/item/multitool/tool)
 	if(!Adjacent(user))
 		return
+
+	if(istype(tool, /obj/item/multitool) && isweakref(tool.buffer))
+		var/datum/weakref/buffer_ref = tool.buffer
+		var/obj/machinery/power/cloak/linked_cloak = buffer_ref.resolve()
+		if(istype(linked_cloak, /obj/machinery/power/cloak))
+			var/obj/machinery/power/cloak/current_cloak = current_ship.ship_modules[SHIPMODULE_CLOAKING]
+			if(current_cloak)
+				current_cloak.unlink_from_ship()
+			linked_cloak.link_to_ship(current_ship)
+			balloon_alert(user, "[linked_cloak.name] linked!")
+			return COMPONENT_BLOCK_TOOL_ATTACK
 
 	to_chat(user, span_warning("You begin to manually override the local database..."))
 	if(!do_after(user, 2 SECONDS, list(src)))

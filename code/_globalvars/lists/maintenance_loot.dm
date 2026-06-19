@@ -19,11 +19,10 @@ GLOBAL_LIST_INIT(trash_loot, list(//junk: useless, very easy to get, or ghetto c
 		/obj/item/trash/can = 1,
 		/obj/item/trash/raisins = 1,
 		/obj/item/trash/candy = 1,
-		/obj/item/trash/cheesie = 1,
+		/obj/item/trash/gummycarps = 1,
 		/obj/item/trash/chips = 1,
 		/obj/item/trash/popcorn = 1,
 		/obj/item/trash/sosjerky = 1,
-		/obj/item/trash/plate = 1,
 		/obj/item/trash/pistachios = 1,
 
 		/obj/item/poster/random_contraband = 1,
@@ -165,7 +164,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 		/obj/item/restraints/legcuffs/bola = 1,
 		/obj/item/restraints/handcuffs/cable = 1,
 		/obj/item/melee/spear = 1,
-		/obj/item/shield/riot/buckler = 1,
+		/obj/item/shield/buckler = 1,
 		/obj/item/grenade/iedcasing/spawned = 1,
 		/obj/item/melee/baton/cattleprod = 1,
 		/obj/item/throwing_star = 1,
@@ -223,12 +222,12 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 
 	list(//food
 		/obj/item/food/canned/peaches/maint = 1,
-		/obj/item/storage/box/donkpockets = 1,
-		list(//Donk Varieties
-			/obj/item/storage/box/donkpockets/donkpocketspicy = 1,
-			/obj/item/storage/box/donkpockets/donkpocketteriyaki = 1,
-			/obj/item/storage/box/donkpockets/donkpocketpizza = 1,
-			/obj/item/storage/box/donkpockets/donkpocketberry = 1,
+		/obj/item/storage/box/shoalpockets = 1,
+		list(//Shoalpocket Varieties
+			/obj/item/storage/box/shoalpockets/shoalpocketspicy = 1,
+			/obj/item/storage/box/shoalpockets/shoalpocketteriyaki = 1,
+			/obj/item/storage/box/shoalpockets/shoalpocketpizza = 1,
+			/obj/item/storage/box/shoalpockets/shoalpocketberry = 1,
 			) = 1,
 		/obj/item/food/monkeycube = 1,
 		/obj/effect/spawner/random/food_or_drink/ration = 1,
@@ -236,13 +235,12 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 ))
 
 GLOBAL_LIST_INIT(oddity_loot, list(//oddity: strange or crazy items
-		/obj/item/clothing/gloves/color/yellow = 1,
+		/obj/item/clothing/gloves/insulated = 1,
 		/obj/item/toy/sprayoncan = 1,
 		/obj/item/clothing/head/helmet/justice/escape = 1,
 		/obj/item/clothing/suit/space/hardsuit/carp/old = 1,
 		/obj/item/clothing/suit/armor/reactive/repulse = 1,
 		/obj/item/melee/axe/fire = 1,
-		/obj/item/gun/ballistic/rocketlauncher/oneshot = 1,
 		/mob/living/simple_animal/crab = 1,
 		/obj/item/melee/baton/boomerang = 1,
 		/obj/item/circular_saw/best = 1,

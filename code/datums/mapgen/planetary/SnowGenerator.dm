@@ -108,6 +108,7 @@
 		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 5,
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
+		/obj/effect/spawner/random/snow_monkey_pack = 5,
 	)
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(

@@ -7,16 +7,16 @@
 	"namelists": [
 		"PGF"
 	],
-	"map_short_name": "Elated Bolide-class",
+	"map_short_name": "E. Bolide-class",
 	"description": "A somewhat stout design manufactured by the Etherbor PGFN Lihmona Navy Shipyard for service as an orbital assault ship, the Elated Bolide class has served with distinction in many minor conflicts and been sent on deployment to even more locales. Despite not carrying ship-to-ship weaponry (with the traditional mounting spot being taken up by a high-gain antenna), the Elated Bolide's Pioneers are well armed and well trained for orbital insertion, construction, and demolition.",
 	"tags": [
 		"Combat",
 		"Engineering",
 		"RP Focus"
 	],
-	"starting_funds": 1000,
+	"starting_funds": 3000,
 	"map_path": "_maps/shuttles/pgf/pgf_elated_bolide.dmm",
-	"token_icon_state": "ship_mid_generic",
+	"token_icon_state": "ship_big_generic",
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
@@ -24,13 +24,9 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Marine Lieutenant": {
-			"outfit": "/datum/outfit/job/gezena/hos",
-			"officer":true,
-			"slots": 1
-		},
-		"Helmsman": {
-			"outfit": "/datum/outfit/job/gezena/assistant/bridge",
+		"Flight Officer": {
+			"outfit": "/datum/outfit/job/gezena/assistant/flight",
+			"officer": true,
 			"slots": 1
 		},
 		"Navy Engineer": {
@@ -41,17 +37,22 @@
 			"outfit": "/datum/outfit/job/gezena/doctor",
 			"slots": 1
 		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/gezena/assistant",
+			"slots": 1
+		},
+		"Marine Squad Leader": {
+			"outfit": "/datum/outfit/job/gezena/hos",
+			"officer":true,
+			"slots": 1
+		},
 		"Marine": {
 			"outfit": "/datum/outfit/job/gezena/security",
 			"slots": 2
 		},
-		"Assault Pioneer":{
+		"Marine Pioneer":{
 			"outfit": "/datum/outfit/job/gezena/security/sapper",
 			"slots":4
-		},
-		"Crewman": {
-			"outfit": "/datum/outfit/job/gezena/assistant",
-			"slots": 1
 		}
 	},
 	"enabled":true

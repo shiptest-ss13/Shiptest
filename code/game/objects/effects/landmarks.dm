@@ -463,6 +463,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 			dock_x = template.height - template.port_y_offset
 			dock_y = template.port_x_offset - 1
 	var/obj/docking_port/stationary/dock = new(locate(x + offset_x + dock_x, y + offset_y + dock_y, z), dock_holder)
+	if(name != "subship dock") //if you bothered to name it
+		dock.name = name
 	dock.roundstart_template = subship_template
 	dock.outpost_special_dock_perms = outpost_docker
 	dock.load_template_on_initialize = load_on_init

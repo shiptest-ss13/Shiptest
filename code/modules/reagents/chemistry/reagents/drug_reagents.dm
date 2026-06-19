@@ -11,7 +11,7 @@
 
 /datum/reagent/drug/space_drugs
 	name = "Dropsight"
-	description = "An illegal chemical compound used as drug."
+	description = "An illegal hallucinogenic chemical compound used as drug."
 	color = "#60A584" // rgb: 96, 165, 132
 	overdose_threshold = 30
 
@@ -37,7 +37,6 @@
 	description = "Slightly reduces stun times. If overdosed it will deal toxin and oxygen damage."
 	reagent_state = LIQUID
 	color = "#60A584" // rgb: 96, 165, 132
-	addiction_threshold = 10
 	taste_description = "smoke"
 	trippy = FALSE
 	overdose_threshold = 30
@@ -69,7 +68,6 @@
 	reagent_state = LIQUID
 	color = "#FA00C8"
 	overdose_threshold = 20
-	addiction_threshold = 10
 
 /datum/reagent/drug/crank/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
@@ -91,61 +89,47 @@
 	..()
 	. = 1
 
-/datum/reagent/drug/crank/addiction_act_stage1(mob/living/M)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5*REM)
-	..()
-
-/datum/reagent/drug/crank/addiction_act_stage2(mob/living/M)
-	M.adjustToxLoss(5*REM, 0)
-	..()
-	. = 1
-
-/datum/reagent/drug/crank/addiction_act_stage3(mob/living/M)
-	M.adjustBruteLoss(5*REM, 0)
-	..()
-	. = 1
-
-/datum/reagent/drug/crank/addiction_act_stage4(mob/living/M)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3*REM)
-	M.adjustToxLoss(5*REM, 0)
-	M.adjustBruteLoss(5*REM, 0)
-	..()
-	. = 1
-
-/datum/reagent/drug/methamphetamine
-	name = "Methamphetamine"
-	description = "Reduces stun times by about 300%, speeds the user up, and allows the user to quickly recover stamina while dealing a small amount of Brain damage. If overdosed the subject will move randomly, drop items and suffer from Toxin and Brain damage. If addicted the subject will become dizzy, lose motor control and eventually suffer heavy toxin damage."
-	reagent_state = LIQUID
-	color = "#FAFAFA"
+/datum/reagent/drug/rahkrahene
+	name = "Rahkrahene"
+	description = "A shoal-native chemical originating from a strain of crimson fungus. Massively increases the speed at which bodies are able to move. "
+	reagent_state = GAS
+	color = "#931d1d"
 	overdose_threshold = 20
-	addiction_threshold = 10
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 
-/datum/reagent/drug/methamphetamine/on_mob_metabolize(mob/living/L)
+/datum/reagent/drug/rahkrahene/on_mob_metabolize(mob/living/L)
 	..()
-	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/methamphetamine)
+	L.add_client_colour(/datum/client_colour/rahkrahene)
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/rahkrahene)
 
-/datum/reagent/drug/methamphetamine/on_mob_end_metabolize(mob/living/L)
-	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/methamphetamine)
+/datum/reagent/drug/rahkrahene/on_mob_end_metabolize(mob/living/L)
+	L.remove_client_colour(/datum/client_colour/rahkrahene)
+	L.remove_client_colour(/datum/client_colour/rahkrahene_overdose)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/rahkrahene)
 	..()
 
-/datum/reagent/drug/methamphetamine/on_mob_life(mob/living/carbon/M)
-	var/high_message = pick("You feel hyper.", "You feel like you need to go faster.", "You feel like you can run the world.")
+/datum/reagent/drug/rahkrahene/overdose_start(mob/living/M)
+	. = ..()
+	M.add_client_colour(/datum/client_colour/rahkrahene_overdose)
+
+/datum/reagent/drug/rahkrahene/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
-		to_chat(M, span_notice("[high_message]"))
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_medium, name)
+		var/high_message = pick("YOU NEED TO MOVE.", "INERTIA IS FILLING YOUR HEART", "SEIZE THE MOMENT", "GO GO GO GO GO GO", "YOU NEED TO SPRINT.", "DO NOT STOP MOVING.", "THERE IS NOTHING BUT FORWARDS")
+		to_chat(M, span_boldwarning("[high_message]"))
+	if(prob(25))
+		M.playsound_local(get_turf(M), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_heavy, name)
 	M.AdjustStun(-40)
 	M.AdjustKnockdown(-40)
 	M.AdjustUnconscious(-40)
 	M.AdjustParalyzed(-40)
 	M.AdjustImmobilized(-40)
-	M.adjustStaminaLoss(-2, 0)
+	M.adjustStaminaLoss(-8, 0)
 	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1,4))
 	..()
 	. = 1
 
-/datum/reagent/drug/methamphetamine/overdose_process(mob/living/M)
+/datum/reagent/drug/rahkrahene/overdose_process(mob/living/M)
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
 		for(var/i in 1 to 4)
 			step(M, pick(GLOB.cardinals))
@@ -154,34 +138,7 @@
 		M.drop_all_held_items()
 	..()
 	M.adjustToxLoss(1, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, pick(0.5, 0.6, 0.7, 0.8, 0.9, 1))
-	. = 1
-
-/datum/reagent/drug/methamphetamine/addiction_act_stage1(mob/living/M)
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/drug/methamphetamine/addiction_act_stage2(mob/living/M)
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/drug/methamphetamine/addiction_act_stage3(mob/living/M)
-	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
-		for(var/i = 0, i < 4, i++)
-			step(M, pick(GLOB.cardinals))
-	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/drug/methamphetamine/addiction_act_stage4(mob/living/carbon/human/M)
-	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
-		for(var/i = 0, i < 8, i++)
-			step(M, pick(GLOB.cardinals))
-	M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.set_timed_status_effect(40 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	M.adjustToxLoss(5, 0)
-	..()
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, pick(0.5, 0.6, 0.7, 0.8, 0.9, 1))
 	. = 1
 
 /datum/reagent/drug/mammoth
@@ -190,7 +147,6 @@
 	reagent_state = LIQUID
 	color = "#FAFAFA"
 	overdose_threshold = 20
-	addiction_threshold = 10
 	taste_description = "chemical salts"
 	var/datum/brain_trauma/special/psychotic_brawling/mammoth/rage
 
@@ -200,6 +156,7 @@
 	ADD_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	L.AddComponent(/datum/component/tackler, stamina_cost= 25, base_knockdown= 2 SECONDS, range=6, speed=1, skill_mod=2)
+	L.impact_effect /= 10
 	if(iscarbon(L))
 		var/mob/living/carbon/C = L
 		rage = new()
@@ -209,6 +166,7 @@
 	REMOVE_TRAIT(L, TRAIT_VERY_HARDLY_WOUNDED, /datum/reagent/drug/mammoth)
 	REMOVE_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
+	L.impact_effect *= 10
 	if(L.GetComponent(/datum/component/tackler))
 		qdel(L.GetComponent(/datum/component/tackler))
 	if(rage)
@@ -221,8 +179,6 @@
 		to_chat(M, span_boldwarning("[high_message]"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "salted", /datum/mood_event/stimulant_heavy, name)
 	M.adjustStaminaLoss(-10, 0)
-	if(prob(40))
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	M.hallucination += 5
 	..()
 	. = 1
@@ -236,47 +192,6 @@
 		M.drop_all_held_items()
 	..()
 
-/datum/reagent/drug/mammoth/addiction_act_stage1(mob/living/M)
-	M.hallucination += 10
-	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
-		for(var/i = 0, i < 8, i++)
-			step(M, pick(GLOB.cardinals))
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	..()
-
-/datum/reagent/drug/mammoth/addiction_act_stage2(mob/living/M)
-	M.hallucination += 20
-	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
-		for(var/i = 0, i < 8, i++)
-			step(M, pick(GLOB.cardinals))
-	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	..()
-
-/datum/reagent/drug/mammoth/addiction_act_stage3(mob/living/M)
-	M.hallucination += 30
-	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
-		for(var/i = 0, i < 12, i++)
-			step(M, pick(GLOB.cardinals))
-	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	..()
-
-/datum/reagent/drug/mammoth/addiction_act_stage4(mob/living/carbon/human/M)
-	M.hallucination += 30
-	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
-		for(var/i = 0, i < 16, i++)
-			step(M, pick(GLOB.cardinals))
-	M.set_timed_status_effect(120 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.set_timed_status_effect(100 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	M.adjustToxLoss(5, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	..()
-	. = 1
-
 /datum/reagent/drug/aranesp
 	name = "Aranesp"
 	description = "Amps you up, gets you going, and rapidly restores stamina damage. Side effects include breathlessness and toxicity."
@@ -289,7 +204,7 @@
 		to_chat(M, span_notice("[high_message]"))
 	M.adjustStaminaLoss(-18, 0)
 	M.adjustToxLoss(0.5, 0)
-	if(prob(50))
+	if(prob(35))
 		M.losebreath++
 		M.adjustOxyLoss(1, 0)
 	..()
@@ -300,7 +215,6 @@
 	description = "Fills you with ecstasic numbness and causes minor brain damage. Highly addictive. If overdosed causes sudden mood swings."
 	reagent_state = LIQUID
 	color = "#EE35FF"
-	addiction_threshold = 10
 	overdose_threshold = 20
 	taste_description = "paint thinner"
 
@@ -333,31 +247,6 @@
 			if(3)
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "happiness_drug", /datum/mood_event/happiness_drug_bad_od)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.5)
-	..()
-	. = 1
-
-/datum/reagent/drug/happiness/addiction_act_stage1(mob/living/M)// all work and no play makes jack a dull boy
-	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(min(mood.sanity, SANITY_DISTURBED))
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/drug/happiness/addiction_act_stage2(mob/living/M)
-	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(min(mood.sanity, SANITY_UNSTABLE))
-	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/drug/happiness/addiction_act_stage3(mob/living/M)
-	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(min(mood.sanity, SANITY_CRAZY))
-	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/drug/happiness/addiction_act_stage4(mob/living/carbon/human/M)
-	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(SANITY_INSANE)
-	M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 	. = 1
 
@@ -408,7 +297,7 @@
 	reagent_state = SOLID
 	color = "#FAFAFA"
 	overdose_threshold = 20
-	addiction_threshold = 11
+	metabolization_rate = 0.2
 	taste_description = "a burst of energy"
 
 /datum/reagent/drug/finobranc/on_mob_metabolize(mob/living/L)
@@ -440,34 +329,12 @@
 		M.drop_all_held_items()
 	..()
 
-/datum/reagent/drug/finobranc/addiction_act_stage1(mob/living/M)
-	M.set_timed_status_effect(15 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/drug/finobranc/addiction_act_stage2(mob/living/M)
-	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/drug/finobranc/addiction_act_stage3(mob/living/M)
-	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	..()
-
-/datum/reagent/drug/finobranc/addiction_act_stage4(mob/living/carbon/human/M)
-	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
-		for(var/i = 0, i < 8, i++)
-			step(M, pick(GLOB.cardinals))
-	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	..()
-
 /datum/reagent/drug/combat_drug
 	name = "Shoalmix"
 	description = "An extremely potent mix of stimulants, painkillers, and performance enhancers that originated within the Shoal."
 	reagent_state = SOLID
 	color = "#FAFAFA"
 	overdose_threshold = 12
-	addiction_threshold = 7
 	taste_description = "a metallic bitter permeating your flesh."
 
 /datum/reagent/drug/combat_drug/on_mob_metabolize(mob/living/L)
@@ -484,6 +351,8 @@
 		drugged.physiology.do_after_speed -= 0.4
 		drugged.physiology.damage_resistance += 10
 		drugged.physiology.hunger_mod += 1
+		drugged.recoil_effect *= 0.6
+		drugged.impact_effect /= 2
 
 /datum/reagent/drug/combat_drug/on_mob_end_metabolize(mob/living/L)
 	..()
@@ -494,6 +363,8 @@
 		drugged.physiology.do_after_speed += 0.4
 		drugged.physiology.damage_resistance -= 10
 		drugged.physiology.hunger_mod -= 1
+		drugged.recoil_effect /= 0.6
+		drugged.impact_effect *= 2
 
 /datum/reagent/drug/combat_drug/on_mob_life(mob/living/carbon/M)
 	..()
@@ -514,37 +385,6 @@
 	M.set_timed_status_effect(160 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.drop_all_held_items()
 	..()
-
-/datum/reagent/drug/combat_drug/addiction_act_stage1(mob/living/M)
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(min(mood.sanity, SANITY_DISTURBED))
-	..()
-
-/datum/reagent/drug/combat_drug/addiction_act_stage2(mob/living/M)
-	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(min(mood.sanity, SANITY_UNSTABLE))
-	..()
-
-/datum/reagent/drug/combat_drug/addiction_act_stage3(mob/living/M)
-	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(min(mood.sanity, SANITY_CRAZY))
-	..()
-
-/datum/reagent/drug/combat_drug/addiction_act_stage4(mob/living/carbon/human/M)
-	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc))
-		for(var/i = 0, i < 8, i++)
-			step(M, pick(GLOB.cardinals))
-	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.apply_status_effect(STATUS_EFFECT_CONVULSING)
-	M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(min(mood.sanity, SANITY_INSANE))
-	..()
-
 
 //comes from Uke-misikeci Rasi leaves
 /datum/reagent/drug/retukemi
@@ -584,7 +424,6 @@
 	reagent_state = LIQUID
 	color = "#df71c7" //yeah its kinda pinkruple
 	overdose_threshold = 30
-	addiction_threshold = 21
 	metabolization_rate = 0.1
 	taste_description = "a distant earthiness"
 	var/vision_trait = TRAIT_CHEMICAL_NIGHTVISION
@@ -615,43 +454,12 @@
 	if(prob(40))
 		M.blur_eyes(rand(3,12))
 
-/datum/reagent/drug/stardrop/addiction_act_stage1(mob/living/M)
-	if(prob(10))
-		M.blur_eyes(rand(5,12))
-	..()
-
-/datum/reagent/drug/stardrop/addiction_act_stage2(mob/living/M)
-	if(prob(10))
-		M.blur_eyes(rand(5,12))
-	if(prob(4))
-		M.confused += 10
-	..()
-
-/datum/reagent/drug/stardrop/addiction_act_stage3(mob/living/M)
-	if(prob(20))
-		M.blur_eyes(rand(5,12))
-	if(prob(4))
-		M.confused += 10
-	if(prob(1))
-		M.adjustOrganLoss(ORGAN_SLOT_EYES, 5)
-	..()
-
-/datum/reagent/drug/stardrop/addiction_act_stage4(mob/living/carbon/human/M)
-	if(prob(40))
-		M.blur_eyes(rand(5,12))
-	if(prob(8))
-		M.confused += 10
-	if(prob(5))
-		M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
-	..()
-
 /datum/reagent/drug/stardrop/starlight
 	name = "Starlight"
 	description = "A vision-enhancing chemical derived from stardrop. The original formula was a N+S recipe leaked by a GEC worker."
 	reagent_state = LIQUID
 	color = "#bc329e"
 	overdose_threshold = 17
-	addiction_threshold = 11
 	metabolization_rate = 0.15
 	vision_trait = TRAIT_GOOD_CHEMICAL_NIGHTVISION
 	taste_description = "sulpheric sweetness"
@@ -668,3 +476,121 @@
 	if(prob(3))
 		to_chat(M, span_notice("[pick("You feel better.", "You feel normal.", "You feel stable.")]")) //normal pills
 	..()
+
+/datum/reagent/drug/cinesia
+	name = "Cinesia"
+	description = "A stimulant cocktail devised for usage in long-haul environments. Temporarily rebinds muscles, and forces contractions to allow the user to force motion from an otherwise disabled limb."
+	reagent_state = LIQUID
+	color = "#5a360e"
+	overdose_threshold = 16
+	metabolization_rate = 0.2
+	taste_description = "an apple coated in glue"
+
+/datum/reagent/drug/cinesia/on_mob_metabolize(mob/living/L)
+	..()
+	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_medium, name)
+	ADD_TRAIT(L, TRAIT_NOLIMBDISABLE, /datum/reagent/drug/cinesia)
+	L.playsound_local(get_turf(L), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/cinesia)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.hunger_mod += 1
+
+/datum/reagent/drug/cinesia/on_mob_end_metabolize(mob/living/L)
+	..()
+	REMOVE_TRAIT(L, TRAIT_NOLIMBDISABLE, /datum/reagent/drug/cinesia)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cinesia)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.hunger_mod -= 1
+
+/datum/reagent/drug/cinesia/on_mob_life(mob/living/carbon/M)
+	..()
+	M.adjustStaminaLoss(-10, 0)
+	M.adjustBruteLoss(-1, 0)
+	if(prob(10))
+		M.playsound_local(get_turf(M), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+
+/datum/reagent/drug/cinesia/overdose_process(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
+	if(prob(20))
+		var/obj/item/bodypart/muscle_seizure = M.get_bodypart(pick(BODY_ZONE_L_ARM,BODY_ZONE_L_LEG, BODY_ZONE_R_ARM, BODY_ZONE_R_LEG))
+		if(muscle_seizure)
+			var/datum/wound/muscle/moderate/my_arm_explode = new
+			my_arm_explode.apply_wound(muscle_seizure)
+	if(prob(10))
+		M.drop_all_held_items()
+	..()
+
+/datum/reagent/drug/cytodron
+	name = "Reflex-Cytodron"
+	description = "A popular trade in the Confederated League - although barely legal, Reflex-Cytodron is a chemical that aids in reception of neural impulses at extremities of the body, allowing someone to faster and more precise."
+	reagent_state = SOLID
+	color = "#5a360e"
+	overdose_threshold = 20
+	metabolization_rate = 0.1
+	taste_description = "pharmacokinetics"
+
+/datum/reagent/drug/cytodron/on_mob_metabolize(mob/living/L)
+	..()
+	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_light, name)
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/cytodron)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed -= 0.1
+
+/datum/reagent/drug/cytodron/on_mob_end_metabolize(mob/living/L)
+	..()
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cytodron)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed += 0.1
+
+/datum/reagent/drug/cytodron/overdose_start(mob/living/M)
+	. = ..()
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_bad, name)
+	M.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cytodron)
+
+/datum/reagent/drug/cytodron/overdose_process(mob/living/M)
+	. = ..()
+	if(prob(10))
+		M.drop_all_held_items()
+	if(prob(40))
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+
+/datum/reagent/drug/sting
+	name = "Sting"
+	description = "A Sybelnatch-originating 'attention-aide' devised for usage in educational and research setting. Focuses the mind on the task at hand."
+	reagent_state = GAS
+	color = "#5a360e"
+	overdose_threshold = 16
+	metabolization_rate = 0.2
+	taste_description = "a jolt of pain"
+
+/datum/reagent/drug/sting/on_mob_metabolize(mob/living/L)
+	..()
+	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_medium, name)
+	ADD_TRAIT(L, TRAIT_SENSITIVE_TONGUE, type)
+	ADD_TRAIT(L, TRAIT_PINPOINT_EYES, type)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed -= 0.2
+
+/datum/reagent/drug/sting/on_mob_end_metabolize(mob/living/L)
+	..()
+	REMOVE_TRAIT(L, TRAIT_SENSITIVE_TONGUE, type)
+	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed += 0.2
+
+/datum/reagent/drug/cytodron/overdose_start(mob/living/M)
+	. = ..()
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/headache, name)
+
+/datum/reagent/drug/sting/overdose_process(mob/living/M)
+	. = ..()
+	if(prob(30))
+		M.blur_eyes(rand(5,12))
+	if(prob(5))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1)

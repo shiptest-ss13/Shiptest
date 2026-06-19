@@ -1,5 +1,5 @@
-#define SIGNAL_ADDTRAIT(trait_ref) "addtrait [trait_ref]"
-#define SIGNAL_REMOVETRAIT(trait_ref) "removetrait [trait_ref]"
+#define SIGNAL_ADDTRAIT(trait_ref) ("addtrait " + trait_ref)
+#define SIGNAL_REMOVETRAIT(trait_ref) ("removetrait " + trait_ref)
 
 // trait accessor defines
 #define ADD_TRAIT(target, trait, source) \
@@ -9,14 +9,14 @@
 			target.status_traits = list(); \
 			_L = target.status_traits; \
 			_L[trait] = list(source); \
-			SEND_SIGNAL(target, SIGNAL_ADDTRAIT(trait)); \
+			SEND_SIGNAL(target, SIGNAL_ADDTRAIT(trait), trait); \
 		} else { \
 			_L = target.status_traits; \
 			if (_L[trait]) { \
 				_L[trait] |= list(source); \
 			} else { \
 				_L[trait] = list(source); \
-				SEND_SIGNAL(target, SIGNAL_ADDTRAIT(trait)); \
+				SEND_SIGNAL(target, SIGNAL_ADDTRAIT(trait), trait); \
 			} \
 		} \
 	} while (0)
@@ -27,17 +27,17 @@
 		if (sources && !islist(sources)) { \
 			_S = list(sources); \
 		} else { \
-			_S = sources \
+			_S = sources\
 		}; \
-		if (_L && _L[trait]) { \
+		if (_L?[trait]) { \
 			for (var/_T in _L[trait]) { \
 				if ((!_S && (_T != ROUNDSTART_TRAIT)) || (_T in _S)) { \
 					_L[trait] -= _T \
 				} \
-			}; \
+			};\
 			if (!length(_L[trait])) { \
 				_L -= trait; \
-				SEND_SIGNAL(target, SIGNAL_REMOVETRAIT(trait)); \
+				SEND_SIGNAL(target, SIGNAL_REMOVETRAIT(trait), trait); \
 			}; \
 			if (!length(_L)) { \
 				target.status_traits = null \
@@ -141,6 +141,12 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_CRITICAL_CONDITION "critical-condition"
 /// Doesn't miss attacks
 #define TRAIT_PERFECT_ATTACKER "perfect_attacker"
+/// Is in stasis
+#define TRAIT_STASIS "stasis"
+/// This mob is asthmatic, and has much more severe reactions to any irritants present in the air
+#define TRAIT_ASTHMATIC "asthmatic"
+/// Prevents lung inflammation from increasing.
+#define TRAIT_ANTI_INFLAMMATORY "anti-inflammatory"
 #define TRAIT_BLIND "blind"
 #define TRAIT_DEAF "deaf"
 #define TRAIT_MUTE "mute"
@@ -185,7 +191,24 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SNOWSTORM_IMMUNE "snow_immunity"
 #define TRAIT_ASHSTORM_IMMUNE "ash_immunity"
 #define TRAIT_SANDSTORM_IMMUNE "sand_immunity"
+
+///Lava will be safe to cross while it has this trait.
+#define TRAIT_LAVA_STOPPED "lava_stopped"
+///Chasms will be safe to cross while they've this trait.
+#define TRAIT_CHASM_STOPPED "chasm_stopped"
+///The effects of the immerse element will be halted while this trait is present.
+#define TRAIT_IMMERSE_STOPPED "immerse_stopped"
+///The effects of acid turfs will be stopped while the trait is present
+#define TRAIT_ACID_STOPPED "immerse_stopped"
+///Turf slowdown will be ignored when this trait is added to a turf.
+#define TRAIT_TURF_IGNORE_SLOWDOWN "turf_ignore_slowdown"
+///Mobs won't slip on a wet turf while it has this trait
+#define TRAIT_TURF_IGNORE_SLIPPERY "turf_ignore_slippery"
+
+/// Mobs that have this trait cannot be extinguished
+#define TRAIT_NO_EXTINGUISH "no_extinguish"
 #define TRAIT_NOFIRE "nonflammable"
+#define TRAIT_NOFIRE_SPREAD "nofirespread"
 /// Prevents plasmamen from self-igniting if only their helmet is missing
 #define TRAIT_NOSELFIGNITION_HEAD_ONLY "no_selfignition_head_only"
 #define TRAIT_NOGUNS "no_guns"
@@ -193,6 +216,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NOMETABOLISM "no_metabolism"
 #define TRAIT_NOCLONELOSS "no_cloneloss"
 #define TRAIT_TOXIMMUNE "toxin_immune"
+#define TRAIT_NOBLOOD "noblood"
 #define TRAIT_EASYDISMEMBER "easy_dismember"
 #define TRAIT_LIMBATTACHMENT "limb_attach"
 #define TRAIT_NOLIMBDISABLE "no_limb_disable"
@@ -212,6 +236,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_DISSECTED "dissected"
 #define TRAIT_SIXTHSENSE "sixth_sense" //I can hear dead people
 #define TRAIT_FEARLESS "fearless"
+#define TRAIT_SENSITIVE_TONGUE "sensitive tongue" //tells you exactly what you're tasting
 #define TRAIT_PARALYSIS_L_ARM "para-l-arm" //These are used for brain-based paralysis, where replacing the limb won't fix it
 #define TRAIT_PARALYSIS_R_ARM "para-r-arm"
 #define TRAIT_PARALYSIS_L_LEG "para-l-leg"
@@ -254,6 +279,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NAIVE "naive"
 #define TRAIT_PRIMITIVE "primitive"
 #define TRAIT_GUNSLINGER "gunslinger"
+#define TRAIT_ELECTRONIC_VOICEBOX "electronic_voicebox"
 #define TRAIT_SPECIAL_TRAUMA_BOOST "special_trauma_boost" ///Increases chance of getting special traumas, makes them harder to cure
 #define TRAIT_BLOODCRAWL_EAT "bloodcrawl_eat"
 #define TRAIT_SPACEWALK "spacewalk"
@@ -298,6 +324,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
 /// You can't see color!
 #define TRAIT_COLORBLIND "colorblind"
+/// You've got a tail.
+#define TRAIT_TAILED "tailed"
 
 /* Traits for ventcrawling.
  * Both give access to ventcrawling, but *_NUDE requires the user to be
@@ -354,6 +382,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_BADTOUCH "bad_touch"
 #define TRAIT_ANXIOUS "anxious"
 #define TRAIT_ANALGESIA "congenital_analgesia"
+/// Mob has a scar on one of their eyes.
+#define TRAIT_SCARRED_EYE "scarred_eye"
 #define TRAIT_CLOUDED "clouded_eyes"
 #define TRAIT_PINPOINT_EYES "pinpoint_eyes"
 #define TRAIT_CHEMICAL_NIGHTVISION "chemical_nightvision"
@@ -363,19 +393,21 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_DRYABLE "trait_dryable"
 ///Trait for dried items
 #define TRAIT_DRIED "trait_dried"
-/// Trait for customizable reagent holder
-//#define TRAIT_CUSTOMIZABLE_REAGENT_HOLDER "customizable_reagent_holder"
-/// Trait for allowing an item that isn't food into the customizable reagent holder
-//#define TRAIT_ODD_CUSTOMIZABLE_FOOD_INGREDIENT "odd_customizable_food_ingredient"
 
-/// Trait granted by lipstick
+///Trait for customizable reagent holder
+#define TRAIT_CUSTOMIZABLE_REAGENT_HOLDER "customizable_reagent_holder"
+///Trait for allowing an item that isn't food into the customizable reagent holder
+#define TRAIT_ODD_CUSTOMIZABLE_FOOD_INGREDIENT "odd_customizable_food_ingredient"
+
+///Replaces all of a mob's limbs and organs with cybernetics at roundstart.
+#define TRAIT_USE_PROSTHETIC "use_prosthetic"
+///This human's a mutant!
+#define TRAIT_GENEMODDED "genemodded"
+
+///Trait granted by lipstick
 #define LIPSTICK_TRAIT "lipstick_trait"
 
-// Bone breaking traits. Don't actually do anything(?)
-#define TRAIT_NOBREAK "no_break"
-#define TRAIT_ALLBREAK "all_break"
-
-// common trait sources
+//common trait sources
 #define TRAIT_GENERIC "generic"
 #define GENERIC_ITEM_TRAIT "generic_item"
 #define UNCONSCIOUS_TRAIT "unconscious"
@@ -411,6 +443,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define MAPPING_HELPER_TRAIT "mapping-helper" //obtained from mapping helper
 /// Trait associated to wearing a suit
 #define SUIT_TRAIT "suit"
+/// Trait associated with being EMPed
+#define EMP_TRAIT "emp"
+/// Trait associated with damage, whatever that means in the datum's context
+#define DAMAGE_TRAIT "damage"
 /// Trait associated to lying down (having a [lying_angle] of a different value than zero).
 #define LYING_DOWN_TRAIT "lying-down"
 /// Trait associated to lacking electrical power.
@@ -450,6 +486,11 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define ANTI_DROP_IMPLANT_TRAIT "anti-drop-implant"
 #define SLEEPING_CARP_TRAIT "sleeping_carp"
 #define MADE_UNCLONEABLE "made-uncloneable"
+#define VENTCRAWLING_TRAIT "ventcrawling"
+#define SPECIES_FLIGHT_TRAIT "species-flight"
+#define FROSTMINER_ENRAGE_TRAIT "frostminer-enrage"
+#define NO_GRAVITY_TRAIT "no-gravity"
+#define LEAPER_BUBBLE_TRAIT "leaper-bubble"
 #define TIMESTOP_TRAIT "timestop"
 #define STICKY_NODROP "sticky-nodrop" //sticky nodrop sounds like a bad soundcloud rapper's name
 #define PULLED_WHILE_SOFTCRIT_TRAIT "pulled-while-softcrit"
@@ -458,6 +499,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define LACKING_MANIPULATION_APPENDAGES_TRAIT "lacking-manipulation-appengades" //trait associated to not having fine manipulation appendages such as hands
 #define HANDCUFFED_TRAIT "handcuffed"
 #define ORBITED_TRAIT "orbited"
+/// Trait applied to organs when they are unable to function.
+#define TRAIT_ORGAN_FAILING "organ_failing"
 /// Trait granted by [/obj/item/warpwhistle]
 #define WARPWHISTLE_TRAIT "warpwhistle"
 ///Turf trait for when a turf is transparent
@@ -473,6 +516,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 /// Trait granted by [/obj/item/clothing/head/helmet/space/hardsuit/berserker]
 #define BERSERK_TRAIT "berserk_trait"
+/// The person with this trait always appears as 'unknown'.
+#define TRAIT_UNKNOWN "unknown"
 /// Currently fishing
 #define TRAIT_GONE_FISHING "fishing"
 /// Fish in this won't die
@@ -482,25 +527,12 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Self-explainatory.
 #define BEAUTY_ELEMENT_TRAIT "beauty_element"
 #define MOOD_COMPONENT_TRAIT "mood_component"
+#define EYE_SCARRING_TRAIT "eye_scarring_trait"
 
 #define TRAIT_CANT_RIDE "cant_ride"
 #define TRAIT_BLOODY_MESS "bloody_mess" //from heparin, makes open bleeding wounds rapidly spill more blood
 #define TRAIT_COAGULATING "coagulating" //from coagulant reagents, this doesn't affect the bleeding itself but does affect the bleed warning messages
 #define TRAIT_NOBLEED "nobleed" //This carbon doesn't bleed
-
-// mobility flag traits
-// IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)
-// BUT FOR NOW, THESE ARE HOOKED TO DO update_mobility() VIA COMSIG IN living_mobility.dm
-// SO IF YOU ADD MORE, BESURE TO UPDATE IT THERE.
-
-/// Disallow movement
-#define TRAIT_MOBILITY_NOMOVE "mobility_nomove"
-/// Disallow pickup
-#define TRAIT_MOBILITY_NOPICKUP "mobility_nopickup"
-/// Disallow item use
-#define TRAIT_MOBILITY_NOUSE "mobility_nouse"
-///Disallow resting/unresting
-#define TRAIT_MOBILITY_NOREST "mobility_norest"
 
 #define TRAIT_FORCED_STANDING "forcedstanding"
 
@@ -513,12 +545,21 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Disables the floating animation. See above.
 #define TRAIT_NO_FLOATING_ANIM "no-floating-animation"
 
+// Traits for ships and other overmap objects
+///This ship is cloaked or hidden and cannot be detected on long-range scanners
+#define TRAIT_CLOAKED "cloaked"
+///Currently only adds a blue-shifting during the cloak animation, will add functionality later when I add anti-ship weapons
+#define TRAIT_BLUESPACE_SHIFT "bluespace_shift"
+
 /// Trait granted by [mob/living/silicon/ai]
 /// Applied when the ai anchors itself
 #define AI_ANCHOR_TRAIT "ai_anchor"
 
 /// Climbable trait, given and taken by the climbable element when added or removed. Exists to be easily checked via HAS_TRAIT().
 #define TRAIT_CLIMBABLE "trait_climbable"
+
+/// If this movable is currently treading in a turf with the immerse element.
+#define TRAIT_IMMERSED "immersed"
 
 /// Trait applied by element
 #define ELEMENT_TRAIT(source) "element_trait_[source]"

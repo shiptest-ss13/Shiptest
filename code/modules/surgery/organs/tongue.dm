@@ -16,14 +16,16 @@
 	var/modifies_speech = FALSE
 	var/static/list/languages_possible_base = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
-		/datum/language/moffic,
+		/datum/language/vox_pidgin,
 		/datum/language/monkey,
 		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/aphasia,
+		/datum/language/league_kalixcian,
 	))
 
 /obj/item/organ/tongue/Initialize(mapload)
@@ -32,7 +34,7 @@
 
 /obj/item/organ/tongue/proc/handle_speech(datum/source, list/speech_args)
 
-/obj/item/organ/tongue/Insert(mob/living/carbon/M, special = 0)
+/obj/item/organ/tongue/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
 	..()
 	if (modifies_speech)
 		RegisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
@@ -59,8 +61,8 @@
 /obj/item/organ/tongue/lizard/handle_speech(datum/source, list/speech_args)
 	// Sarathi tongues don't hiss when speaking Kalixcian. Or when signing.
 	// we should make non-sarathi hiss in Kalixcian
-	var/datum/language/language_used = speech_args[SPEECH_LANGUAGE]
-	if((language_used == /datum/language/kalixcian_common) || (initial(language_used?.flags) & SIGNED_LANGUAGE))
+	var/datum/language/lang_type = speech_args[SPEECH_LANGUAGE]
+	if(initial(lang_type.flags) & NO_HISS)
 		return
 
 	var/static/regex/lizard_hiss = new("s+", "g")
@@ -95,12 +97,16 @@
 	var/list/phomeme_types = list("sans", "papyrus")
 	var/static/list/languages_possible_skeleton = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
-		/datum/language/codespeak,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
+		/datum/language/teceti_unified,
+		/datum/language/solarian_international,
+		/datum/language/vox_pidgin,
 		/datum/language/monkey,
+		/datum/language/ratvar,
+		/datum/language/codespeak,
 		/datum/language/aphasia,
-		/datum/language/moffic,
-		/datum/language/ratvar
+		/datum/language/league_kalixcian,
 	))
 
 /obj/item/organ/tongue/bone/Initialize()
@@ -143,6 +149,10 @@
 	. = ..()
 	languages_possible = languages_possible_robot
 
+/obj/item/organ/tongue/robot/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
+	. = ..()
+	ADD_TRAIT(owner, TRAIT_ELECTRONIC_VOICEBOX, ORGAN_TRAIT)
+
 /obj/item/organ/tongue/robot/emp_act(severity)
 	owner.apply_effect(EFFECT_STUTTER, 120)
 	owner.force_scream()
@@ -161,10 +171,12 @@
 	taste_sensitivity = 101 // Not a tongue, they can't taste shit
 	var/static/list/languages_possible_ethereal = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
-		/datum/language/moffic,
+		/datum/language/vox_pidgin,
 		/datum/language/monkey,
 		/datum/language/ratvar,
 		/datum/language/codespeak,
@@ -183,10 +195,12 @@
 	say_mod = "flutters"
 	var/static/list/languages_possible_moth = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
 		/datum/language/teceti_unified,
+		/datum/language/league_kalixcian,
 		/datum/language/solarian_international,
-		/datum/language/moffic,
+		/datum/language/vox_pidgin,
 		/datum/language/monkey,
 		/datum/language/ratvar,
 		/datum/language/codespeak,
@@ -202,10 +216,12 @@
 	say_mod = "chirps"
 	var/static/list/languages_possible_kepi = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
-		/datum/language/moffic,
+		/datum/language/vox_pidgin,
 		/datum/language/monkey,
 		/datum/language/ratvar,
 		/datum/language/codespeak,
@@ -223,10 +239,12 @@
 	say_mod = "shrieks"
 	var/static/list/languages_possible_vox = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
-		/datum/language/moffic,
+		/datum/language/vox_pidgin,
 		/datum/language/monkey,
 		/datum/language/ratvar,
 		/datum/language/codespeak,
@@ -245,13 +263,16 @@
 	say_mod = "chitters"
 	var/static/list/languages_possible_arachnid = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
+		/datum/language/teceti_unified,
+		/datum/language/solarian_international,
 		/datum/language/codespeak,
 		/datum/language/monkey,
 		/datum/language/aphasia,
-		/datum/language/moffic,
-		/datum/language/rachnidian,
-		/datum/language/buzzwords
+		/datum/language/vox_pidgin,
+		/datum/language/rachnidian
 	))
 
 /obj/item/organ/tongue/spider/Initialize(mapload)
@@ -286,10 +307,12 @@
 	say_mod = "blorbles"
 	var/static/list/languages_possible_slime = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
-		/datum/language/moffic,
+		/datum/language/vox_pidgin,
 		/datum/language/monkey,
 		/datum/language/ratvar,
 		/datum/language/codespeak,
@@ -420,10 +443,12 @@
 	modifies_speech = TRUE
 	var/static/list/languages_possible_fly = typecacheof(list(
 		/datum/language/galactic_common,
-		/datum/language/kalixcian_common,
+		/datum/language/gezena_kalixcian,
+		/datum/language/zohil_kalixcian,
+		/datum/language/league_kalixcian,
 		/datum/language/teceti_unified,
 		/datum/language/solarian_international,
-		/datum/language/moffic,
+		/datum/language/vox_pidgin,
 		/datum/language/monkey,
 		/datum/language/ratvar,
 		/datum/language/codespeak,

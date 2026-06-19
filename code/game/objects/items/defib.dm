@@ -5,6 +5,7 @@
 	name = "defibrillator"
 	desc = "A device that delivers powerful shocks to detachable paddles that resuscitate incapacitated patients."
 	icon = 'icons/obj/defib.dmi'
+	world_file = 'icons/obj/world/defib_world.dmi'
 	icon_state = "defibunit"
 	item_state = "defibunit"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
@@ -235,11 +236,13 @@
 	paddles.update_appearance()
 	update_power()
 
+//when you touch up defib code, maybe just remove?
 /obj/item/defibrillator/compact
 	name = "compact defibrillator"
 	desc = "A belt-equipped defibrillator that can be rapidly deployed."
 	icon_state = "defibcompact"
 	item_state = "defibcompact"
+	world_file = null
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
 
@@ -257,6 +260,7 @@
 	desc = "A belt-equipped blood-red defibrillator. Can revive through spacesuits, has an experimental self-recharging battery, and can be utilized in combat via applying the paddles in a disarming or agressive manner."
 	icon_state = "defibcombat" //needs defib inhand sprites
 	item_state = "defibcombat"
+	world_file = null
 	combat = TRUE
 	safety = FALSE
 	cooldown_duration = 2.5 SECONDS
@@ -272,12 +276,12 @@
 		toggle_paddles()
 		return
 
-/obj/item/defibrillator/compact/combat/loaded/nanotrasen
-	name = "elite Nanotrasen defibrillator"
+/obj/item/defibrillator/compact/combat/loaded/warra
+	name = "elite Makosso-Warra defibrillator"
 	desc = "A belt-equipped state-of-the-art defibrillator. Can revive through spacesuits, has an experimental self-recharging battery, and can be utilized in combat via applying the paddles in a disarming or agressive manner."
-	icon_state = "defibnt" //needs defib inhand sprites
-	item_state = "defibnt"
-	paddle_type = /obj/item/shockpaddles/syndicate/nanotrasen
+	icon_state = "defibwarra" //needs defib inhand sprites
+	item_state = "defibwarra"
+	paddle_type = /obj/item/shockpaddles/syndicate/warra
 
 //paddles
 
@@ -308,7 +312,6 @@
 	AddElement(/datum/element/update_icon_updates_onmob)
 	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=12)
 
-
 /obj/item/shockpaddles/Destroy()
 	defib = null
 	return ..()
@@ -322,7 +325,6 @@
 /obj/item/shockpaddles/Moved()
 	. = ..()
 	check_range()
-
 
 /obj/item/shockpaddles/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
@@ -391,6 +393,9 @@
 
 /obj/item/shockpaddles/attack(mob/M, mob/user)
 	if(busy)
+		return
+	if(!M.mind) //Stops from reviving DNR player corpses. Maybe expand this to still defib, but have a body thump and fail message then for drama or whatever
+		to_chat(user, span_warning("It's too late for [M.p_them()]. Revival is impossible."))
 		return
 	if(req_defib && !defib.powered)
 		user.visible_message(span_notice("[defib] beeps: Unit is unpowered."))
@@ -552,10 +557,7 @@
 				shock_touching(30, H)
 				var/failed
 
-
-				if (H.hellbound)
-					failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's soul appears to be on another plane of existence. Further attempts futile.")
-				else if (!heart)
+				if (!heart)
 					failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's heart is missing.")
 				else if (heart.organ_flags & ORGAN_FAILING)
 					failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's heart too damaged, replace or repair and try again.")
@@ -646,12 +648,12 @@
 	item_state = "syndiepaddles0"
 	base_icon_state = "syndiepaddles"
 
-/obj/item/shockpaddles/syndicate/nanotrasen
-	name = "elite nanotrasen defibrillator paddles"
+/obj/item/shockpaddles/syndicate/warra
+	name = "elite Makosso-Warra defibrillator paddles"
 	desc = "A pair of paddles used to revive deceased ERT members. They possess both the ability to penetrate armor and to deliver powerful or disabling shocks offensively."
-	icon_state = "ntpaddles0"
-	item_state = "ntpaddles0"
-	base_icon_state = "ntpaddles"
+	icon_state = "warrapaddles0"
+	item_state = "warrapaddles0"
+	base_icon_state = "warrapaddles"
 
 /obj/item/shockpaddles/syndicate/cyborg
 	req_defib = FALSE

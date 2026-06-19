@@ -21,7 +21,7 @@
 	name = "Soylent green"
 	reqs = list(
 		/obj/item/food/pastrybase = 2,
-		/obj/item/food/meat/slab/human = 2
+		/obj/item/food/meat/slab = 2
 	)
 	result = /obj/item/food/soylentgreen
 	subcategory = CAT_PASTRY
@@ -35,55 +35,19 @@
 	result = /obj/item/food/rofflewaffles
 	subcategory = CAT_PASTRY
 
-/datum/crafting_recipe/food/pancakes
-	name = "Pancake"
-	reqs = list(
-		/obj/item/food/pastrybase = 1
-	)
-	result = /obj/item/food/pancakes
-	subcategory = CAT_PASTRY
+//shoalpockets
 
-/datum/crafting_recipe/food/bbpancakes
-	name = "Blueberry pancake"
-	reqs = list(
-		/obj/item/food/pastrybase = 1,
-		/obj/item/food/grown/berries = 1
-	)
-	result = /obj/item/food/pancakes/blueberry
-	subcategory = CAT_PASTRY
-
-/datum/crafting_recipe/food/ccpancakes
-	name = "Chocolate chip pancake"
-	reqs = list(
-		/obj/item/food/pastrybase = 1,
-		/obj/item/food/chocolatebar = 1
-	)
-	result = /obj/item/food/pancakes/chocolatechip
-	subcategory = CAT_PASTRY
-
-//Donkpockets
-
-/datum/crafting_recipe/food/donkpocket
+/datum/crafting_recipe/food/shoalpocket
 	time = 15
-	name = "Donk-pocket"
+	name = "Shoalwich"
 	reqs = list(
 		/obj/item/food/pastrybase = 1,
 		/obj/item/food/meatball = 1
 	)
-	result = /obj/item/food/donkpocket
+	result = /obj/item/food/shoalpocket
 	subcategory = CAT_PASTRY
 
-/datum/crafting_recipe/food/dankpocket
-	time = 15
-	name = "Dank-pocket"
-	reqs = list(
-		/obj/item/food/pastrybase = 1,
-		/obj/item/food/grown/cannabis = 1
-	)
-	result = /obj/item/food/dankpocket
-	subcategory = CAT_PASTRY
-
-/datum/crafting_recipe/food/donkpocket/spicy
+/datum/crafting_recipe/food/shoalpocket/spicy
 	time = 15
 	name = "Spicy-pocket"
 	reqs = list(
@@ -91,10 +55,10 @@
 		/obj/item/food/meatball = 1,
 		/obj/item/food/grown/chili
 	)
-	result = /obj/item/food/donkpocket/spicy
+	result = /obj/item/food/shoalpocket/spicy
 	subcategory = CAT_PASTRY
 
-/datum/crafting_recipe/food/donkpocket/teriyaki
+/datum/crafting_recipe/food/shoalpocket/teriyaki
 	time = 15
 	name = "Teriyaki-pocket"
 	reqs = list(
@@ -102,10 +66,10 @@
 		/obj/item/food/meatball = 1,
 		/datum/reagent/consumable/soysauce = 3
 	)
-	result = /obj/item/food/donkpocket/teriyaki
+	result = /obj/item/food/shoalpocket/teriyaki
 	subcategory = CAT_PASTRY
 
-/datum/crafting_recipe/food/donkpocket/pizza
+/datum/crafting_recipe/food/shoalpocket/pizza
 	time = 15
 	name = "Pizza-pocket"
 	reqs = list(
@@ -113,17 +77,17 @@
 		/obj/item/food/meatball = 1,
 		/obj/item/food/grown/tomato = 1
 	)
-	result = /obj/item/food/donkpocket/pizza
+	result = /obj/item/food/shoalpocket/pizza
 	subcategory = CAT_PASTRY
 
-/datum/crafting_recipe/food/donkpocket/berry
+/datum/crafting_recipe/food/shoalpocket/berry
 	time = 15
 	name = "Berry-pocket"
 	reqs = list(
 		/obj/item/food/pastrybase = 1,
 		/obj/item/food/grown/berries = 1
 	)
-	result = /obj/item/food/donkpocket/berry
+	result = /obj/item/food/shoalpocket/berry
 	subcategory = CAT_PASTRY
 
 //Muffins
@@ -164,9 +128,10 @@
 /datum/crafting_recipe/food/khachapuri
 	name = "Khachapuri"
 	reqs = list(
-		/datum/reagent/consumable/eggyolk = 5,
+		/datum/reagent/consumable/eggyolk = 2,
+		/datum/reagent/consumable/eggwhite = 4,
 		/obj/item/food/cheese/wedge = 1,
-		/obj/item/food/bread/plain = 1
+		/obj/item/food/bread/plain = 1,
 	)
 	result = /obj/item/food/khachapuri
 	subcategory = CAT_PASTRY

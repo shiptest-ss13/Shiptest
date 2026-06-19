@@ -23,14 +23,14 @@
 	if(!istype(H))
 		return
 
-	if(H.fire_stacks)
+	if(H.fire_stacks > 0)
 		if(extinguishes_left)
 			if(next_extinguish > world.time)
 				return
 			next_extinguish = world.time + extinguish_cooldown
 			extinguishes_left--
 			H.visible_message(span_warning("[H]'s suit automatically extinguishes [H.p_them()]!"),span_warning("Your suit automatically extinguishes you."))
-			H.ExtinguishMob()
+			H.extinguish_mob()
 			new /obj/effect/particle_effect/water(get_turf(H))
 
 

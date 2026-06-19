@@ -15,7 +15,7 @@
 	icon_grow = "poppy-grow"
 	icon_dead = "poppy-dead"
 	mutatelist = list(/obj/item/seeds/poppy/geranium, /obj/item/seeds/poppy/lily)
-	reagents_add = list(/datum/reagent/medicine/bicaridine = 0.2, /datum/reagent/consumable/nutriment = 0.05)
+	reagents_add = list(/datum/reagent/medicine/indomide = 0.2, /datum/reagent/consumable/nutriment = 0.05)
 
 /obj/item/food/grown/poppy
 	seed = /obj/item/seeds/poppy
@@ -47,7 +47,7 @@
 	//Spacemans's Trumpet
 /obj/item/seeds/poppy/lily/trumpet
 	name = "pack of spaceman's trumpet seeds"
-	desc = "A plant sculped by extensive genetic engineering. The spaceman's trumpet is said to bear no resemblance to its wild ancestors. Inside NT AgriSci circles it is better known as NTPW-0372."
+	desc = "A plant sculped by extensive genetic engineering. The spaceman's trumpet is said to bear no resemblance to its wild ancestors. Inside Makosso-Warra AgriSci circles it is better known as NTPW-0372."
 	icon_state = "seed-trumpet"
 	species = "spacemanstrumpet"
 	plantname = "Spaceman's Trumpet Plant"

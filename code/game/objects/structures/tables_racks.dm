@@ -42,6 +42,11 @@
 	/// Whether or not this table can actually be flipped. TODO: Make setting flipped_table_type to null do this instead and remove this var
 	var/can_flip = TRUE
 
+/obj/structure/table/Initialize()
+	. = ..()
+	var/static/list/give_turf_traits = list(TRAIT_TURF_IGNORE_SLOWDOWN, TRAIT_TURF_IGNORE_SLIPPERY, TRAIT_IMMERSE_STOPPED)
+	AddElement(/datum/element/give_turf_traits, give_turf_traits)
+
 /obj/structure/table/examine(mob/user)
 	. = ..()
 	. += deconstruction_hints(user)
@@ -171,7 +176,7 @@
 
 /obj/structure/table/attackby(obj/item/I, mob/user, params)
 	var/list/modifiers = params2list(params)
-	if(!(flags_1 & NODECONSTRUCT_1) && user.a_intent != INTENT_HELP)
+	if(!(flags_1 & NODECONSTRUCT_1) && LAZYACCESS(modifiers, RIGHT_CLICK))
 		if((I.tool_behaviour == TOOL_SCREWDRIVER) && deconstruction_ready)
 			to_chat(user, span_notice("You start disassembling [src]..."))
 			if(I.use_tool(src, user, 20, volume=50))
@@ -257,7 +262,7 @@
 		return
 	if(can_flip)
 		user.visible_message(span_danger("[user] starts flipping [src]!"), span_notice("You start flipping over the [src]!"))
-		if(do_after(user, max_integrity/4))
+		if(do_after(user, max_integrity/12))
 			var/obj/structure/flippedtable/flipped = new flipped_table_type(src.loc)
 			flipped.name = "flipped [src.name]"
 			flipped.desc = "[src.desc] It is flipped!"
@@ -310,7 +315,7 @@
 ///Table on wheels
 /obj/structure/table/rolling
 	name = "Rolling table"
-	desc = "A NT brand \"Rolly poly\" rolling table. It can and will move."
+	desc = "A Makosso-Warra brand \"Rolly poly\" rolling table. It can and will move."
 	anchored = FALSE
 	smoothing_flags = NONE
 	smoothing_groups = null
@@ -469,73 +474,74 @@
 /obj/structure/table/wood/fancy
 	name = "fancy table"
 	desc = "A standard metal table frame covered with an amazingly fancy, patterned cloth."
-	icon = 'icons/obj/structures.dmi'
-	icon_state = "fancy_table"
+	icon = 'icons/obj/smooth_structures/fancy_table.dmi'
+	icon_state = "fancy_table-0"
 	base_icon_state = "fancy_table"
 	frame = /obj/structure/table_frame
 	framestack = /obj/item/stack/rods
 	buildstack = /obj/item/stack/tile/carpet
 	smoothing_groups = list(SMOOTH_GROUP_FANCY_WOOD_TABLES) //Don't smooth with SMOOTH_GROUP_TABLES or SMOOTH_GROUP_WOOD_TABLES
 	canSmoothWith = list(SMOOTH_GROUP_FANCY_WOOD_TABLES)
-	var/smooth_icon = 'icons/obj/smooth_structures/fancy_table.dmi' // see Initialize()
-
-/obj/structure/table/wood/fancy/Initialize()
-	. = ..()
-	// Needs to be set dynamically because table smooth sprites are 32x34,
-	// which the editor treats as a two-tile-tall object. The sprites are that
-	// size so that the north/south corners look nice - examine the detail on
-	// the sprites in the editor to see why.
-	icon = smooth_icon
 
 /obj/structure/table/wood/fancy/black
+	icon_state = "fancy_table_black-0"
 	base_icon_state = "fancy_table_black"
 	buildstack = /obj/item/stack/tile/carpet/black
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_black.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_black.dmi'
 
 /obj/structure/table/wood/fancy/blue
+	icon_state = "fancy_table_blue-0"
 	base_icon_state = "fancy_table_blue"
 	buildstack = /obj/item/stack/tile/carpet/blue
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_blue.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_blue.dmi'
 
 /obj/structure/table/wood/fancy/cyan
+	icon_state = "fancy_table_cyan-0"
 	base_icon_state = "fancy_table_cyan"
 	buildstack = /obj/item/stack/tile/carpet/cyan
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_cyan.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_cyan.dmi'
 
 /obj/structure/table/wood/fancy/green
+	icon_state = "fancy_table_green-0"
 	base_icon_state = "fancy_table_green"
 	buildstack = /obj/item/stack/tile/carpet/green
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_green.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_green.dmi'
 
 /obj/structure/table/wood/fancy/orange
+	icon_state = "fancy_table_orange-0"
 	base_icon_state = "fancy_table_orange"
 	buildstack = /obj/item/stack/tile/carpet/orange
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_orange.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_orange.dmi'
 
 /obj/structure/table/wood/fancy/purple
+	icon_state = "fancy_table_purple-0"
 	base_icon_state = "fancy_table_purple"
 	buildstack = /obj/item/stack/tile/carpet/purple
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_purple.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_purple.dmi'
 
 /obj/structure/table/wood/fancy/red
+	icon_state = "fancy_table_red-0"
 	base_icon_state = "fancy_table_red"
 	buildstack = /obj/item/stack/tile/carpet/red
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_red.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_red.dmi'
 
 /obj/structure/table/wood/fancy/royalblack
+	icon_state = "fancy_table_royalblack-0"
 	base_icon_state = "fancy_table_royalblack"
 	buildstack = /obj/item/stack/tile/carpet/royalblack
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_royalblack.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_royalblack.dmi'
 
 /obj/structure/table/wood/fancy/royalblue
+	icon_state = "fancy_table_royalblue-0"
 	base_icon_state = "fancy_table_royalblue"
 	buildstack = /obj/item/stack/tile/carpet/royalblue
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_royalblue.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_royalblue.dmi'
 
-/obj/structure/table/wood/fancy/red_gold
+/obj/structure/table/wood/fancy/red_gold //same sprites as red since we have two red carpets but not two red tables
+	icon_state = "fancy_table_red-0"
 	base_icon_state = "fancy_table_red"
 	buildstack = /obj/item/stack/tile/carpet/red_gold
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_red.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_red.dmi'
 
 /*
  * Reinforced tables
@@ -559,23 +565,24 @@
 	else
 		return span_notice("The top cover is firmly <b>welded</b> on.")
 
-/obj/structure/table/reinforced/attackby(obj/item/W, mob/user, params)
-	if(W.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HELP)
-		if(!W.tool_start_check(user, src, amount=0))
-			return
-
+/obj/structure/table/reinforced/welder_act(mob/living/user, obj/item/tool, list/modifiers)
+	. = ..()
+	if(. & COMPONENT_BLOCK_TOOL_ATTACK)
+		return
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		if(!tool.tool_start_check(user, src, amount = 0))
+			return COMPONENT_BLOCK_TOOL_ATTACK
 		if(deconstruction_ready)
 			to_chat(user, span_notice("You start strengthening the reinforced table..."))
-			if (W.use_tool(src, user, 50, volume=50))
+			if(tool.use_tool(src, user, 5 SECONDS, volume = 50))
 				to_chat(user, span_notice("You strengthen the table."))
 				deconstruction_ready = 0
 		else
 			to_chat(user, span_notice("You start weakening the reinforced table..."))
-			if (W.use_tool(src, user, 50, volume=50))
+			if(tool.use_tool(src, user, 5 SECONDS, volume = 50))
 				to_chat(user, span_notice("You weaken the table."))
 				deconstruction_ready = 1
-	else
-		. = ..()
+		return COMPONENT_BLOCK_TOOL_ATTACK
 
 /obj/structure/table/bronze
 	name = "bronze table"
@@ -641,10 +648,10 @@
 
 /obj/structure/table/optable/proc/set_patient(new_patient)
 	if(patient)
-		UnregisterSignal(patient, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(patient, COMSIG_QDELETING)
 	patient = new_patient
 	if(patient)
-		RegisterSignal(patient, COMSIG_PARENT_QDELETING, PROC_REF(patient_deleted))
+		RegisterSignal(patient, COMSIG_QDELETING, PROC_REF(patient_deleted))
 
 /obj/structure/table/optable/proc/patient_deleted(datum/source)
 	SIGNAL_HANDLER
@@ -693,15 +700,18 @@
 	if(O.loc != src.loc)
 		step(O, get_dir(O, src))
 
-/obj/structure/rack/attackby(obj/item/W, mob/user, params)
-	var/list/modifiers = params2list(params)
-	if (W.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1) && user.a_intent != INTENT_HELP)
-		W.play_tool_sound(src)
-		deconstruct(TRUE)
+/obj/structure/rack/wrench_act(mob/living/user, obj/item/tool, list/modifiers)
+	. = ..()
+	if(. & COMPONENT_BLOCK_TOOL_ATTACK)
 		return
-	if(user.a_intent == INTENT_HARM)
-		return ..()
-	if(user.transferItemToLoc(W, drop_location(), silent = FALSE))
+	if(!(flags_1 & NODECONSTRUCT_1) && LAZYACCESS(modifiers, RIGHT_CLICK))
+		tool.play_tool_sound(src)
+		deconstruct(TRUE)
+		return COMPONENT_BLOCK_TOOL_ATTACK
+
+/obj/structure/rack/attackby(obj/item/W, mob/user, params)
+	if(user.a_intent != INTENT_HARM && user.transferItemToLoc(W, drop_location(), silent = FALSE))
+		var/list/modifiers = params2list(params)
 		//Center the icon where the user clicked.
 		if(!LAZYACCESS(modifiers, ICON_X) || !LAZYACCESS(modifiers, ICON_Y))
 			return
@@ -709,6 +719,7 @@
 		W.pixel_x = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
 		W.pixel_y = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
 		return TRUE
+	return ..()
 
 /obj/structure/rack/attack_paw(mob/living/user)
 	attack_hand(user)

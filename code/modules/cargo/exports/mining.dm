@@ -3,6 +3,7 @@
 /datum/export/gems
 	desc = "Rare gems and crystals draw many eyes, and just as many buyers."
 	elasticity_coeff = 0.3
+	valid_event_target = FALSE
 
 /datum/export/gems/rupee
 	unit_name = "Ruperium"

@@ -24,9 +24,11 @@
 						"jean cargo pants" = "cargojeans",
 						"olive cargo pants" = "cargoolive",
 						"brown cargo pants" = "cargobrown",
+						"navy cargo pants" = "cargonavy",
 						)
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/pants/cargo/grey
 	name = "grey cargo pants"
@@ -45,6 +47,12 @@
 	desc = "A pocket for every need."
 	icon_state = "cargokhaki"
 	current_skin = "khaki cargo pants"
+
+/obj/item/clothing/under/pants/cargo/navy
+	name = "navy cargo pants"
+	desc = "A pocket for every need."
+	icon_state = "cargonavy"
+	current_skin = "navy cargo pants"
 
 /obj/item/clothing/under/pants/cargo/jeans
 	name = "jean cargo pants"
@@ -80,16 +88,46 @@
 	icon_state = "blackpants"
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
-/obj/item/clothing/under/pants/tan
-	name = "tan pants"
-	desc = "Some tan pants. You look like a white collar worker with these on."
-	icon_state = "khaki"
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
+/obj/item/clothing/under/pants/brown
+	name = "brown jeans"
+	desc = "Some brown jeans. You look like a white collar worker with these on."
+	icon_state = "brownjeans"
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/pants/track
 	name = "track pants"
 	desc = "A pair of track pants, for the athletic."
 	icon_state = "trackpants"
+	unique_reskin = list("black track pants" = "trackpants",
+						"teal track pants" = "trackpantsteal",
+						"pink track pants" = "trackpantspink",
+						"blue track pants" = "trackpantsblue",
+						"red track pants" = "trackpantsred",
+						"purple track pants" = "trackpantspurple",
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/pants/track/teal
+	name = "teal track pants"
+	current_skin = "teal track pants"
+
+/obj/item/clothing/under/pants/track/pink
+	name = "pink track pants"
+	current_skin = "pink track pants"
+
+/obj/item/clothing/under/pants/track/blue
+	name = "blue track pants"
+	current_skin = "blue track pants"
+
+/obj/item/clothing/under/pants/track/red
+	name = "red track pants"
+	current_skin = "red track pants"
+
+/obj/item/clothing/under/pants/track/purple
+	name = "purple track pants"
+	current_skin = "purple track pants"
 
 /obj/item/clothing/under/pants/jeans
 	name = "jeans"
@@ -107,3 +145,56 @@
 	name = "camo pants"
 	desc = "A pair of woodland camouflage pants. Probably not the best choice for deep space."
 	icon_state = "camopants"
+
+/obj/item/clothing/under/pants/pajamared
+	name = "red pajama pants"
+	desc = "A comfy pair of pajamas. Probably not the best for work attire."
+	icon_state = "pajamared"
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/pants/pajamablue
+	name = "blue pajama pants"
+	desc = "A comfy pair of pajamas. Probably not the best for work attire."
+	icon_state = "pajamablue"
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/pants/pajamagreen
+	name = "green pajama pants"
+	desc = "A comfy pair of pajamas. Probably not the best for work attire."
+	icon_state = "pajamagreen"
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/pants/sweat
+	name = "sweatpants"
+	desc = "A pair of sweatpants, for the athletic."
+	icon_state = "sweatpants"
+	unique_reskin = list("black sweatpants" = "sweatpants",
+						"teal sweatpants" = "sweatpantsteal",
+						"pink sweatpants" = "sweatpantspink",
+						"blue sweatpants" = "sweatpantsblue",
+						"red sweatpants" = "sweatpantsred",
+						"purple sweatpants" = "sweatpantspurple",
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/pants/sweat/teal
+	name = "teal sweatpants"
+	current_skin = "teal sweatpants"
+
+/obj/item/clothing/under/pants/sweat/pink
+	name = "pink sweatpants"
+	current_skin = "pink sweatpants"
+
+/obj/item/clothing/under/pants/sweat/blue
+	name = "blue sweatpants"
+	current_skin = "blue sweatpants"
+
+/obj/item/clothing/under/pants/sweat/red
+	name = "red sweatpants"
+	current_skin = "red sweatpants"
+
+/obj/item/clothing/under/pants/sweat/purple
+	name = "purple sweatpants"
+	current_skin = "purple sweatpants"

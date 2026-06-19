@@ -1,4 +1,4 @@
-#define CLIP_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
+#define CLIP_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/ammo_counter,/obj/item/attachment/gun)
 #define CLIP_ATTACHMENT_POINTS list(ATTACHMENT_SLOT_MUZZLE = 1,ATTACHMENT_SLOT_RAIL = 1,ATTACHMENT_SLOT_SCOPE=1)
 
 
@@ -441,9 +441,9 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	manufacturer = MANUFACTURER_MINUTEMAN
 	spread = -5
 	spread_unwielded = 35
-	recoil = 2
-	recoil_unwielded = 10
-	wield_slowdown = SNIPER_SLOWDOWN
+	recoil = 1
+	recoil_unwielded = 5
+	wield_slowdown = LIGHT_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
 	slot_available = list(
@@ -462,12 +462,12 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 
 /obj/item/ammo_box/magazine/f90
 	name = "\improper CM-F90 Magazine (6.5x57mm CLIP)"
-	desc = "A large 5-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
+	desc = "A large 6-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
 	base_icon_state = "f90_mag"
 	icon_state = "f90_mag-1"
 	ammo_type = /obj/item/ammo_casing/a65clip
 	caliber = "6.5mm CLIP"
-	max_ammo = 5
+	max_ammo = 6
 
 /obj/item/ammo_box/magazine/f90/update_icon_state()
 	. = ..()
@@ -505,6 +505,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	bolt_type = BOLT_TYPE_CLIP
+	unique_mag_sprites_for_variants = TRUE
 	default_ammo_type = /obj/item/ammo_box/magazine/p16
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/p16,
@@ -555,6 +556,8 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
+
+NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 
 /obj/item/gun/ballistic/automatic/hmg/cm40
 	name = "\improper CM-40"
@@ -635,6 +638,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	base_icon_state = "cm40_mag"
 	icon_state = "cm40_mag-1"
 	ammo_type = /obj/item/ammo_casing/a762_40
+	caliber = "7.62x40mm"
 	max_ammo = 80
 	w_class = WEIGHT_CLASS_NORMAL
 
@@ -797,6 +801,9 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 			"y" = 25,
 		)
 	)
+
+/obj/item/gun/ballistic/shotgun/cm15/no_mag
+	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/shotgun/cm15/incendiary
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g/incendiary

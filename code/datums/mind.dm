@@ -111,10 +111,10 @@
 	if(new_current && QDELETED(new_current))
 		CRASH("Tried to set a mind's current var to a qdeleted mob, what the fuck")
 	if(current)
-		UnregisterSignal(src, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(src, COMSIG_QDELETING)
 	current = new_current
 	if(current)
-		RegisterSignal(src, COMSIG_PARENT_QDELETING, PROC_REF(clear_current))
+		RegisterSignal(src, COMSIG_QDELETING, PROC_REF(clear_current))
 
 /datum/mind/proc/clear_current(datum/source)
 	SIGNAL_HANDLER
@@ -380,22 +380,11 @@
 
 	var/obj/item/uplink_loc
 
-	if(traitor_mob.client && traitor_mob.client.prefs)
-		switch(traitor_mob.client.prefs.uplink_spawn_loc)
-			if(UPLINK_PDA)
-				uplink_loc = PDA
-				if(!uplink_loc)
-					uplink_loc = R
-				if(!uplink_loc)
-					uplink_loc = P
-			if(UPLINK_RADIO)
-				uplink_loc = R
-				if(!uplink_loc)
-					uplink_loc = PDA
-				if(!uplink_loc)
-					uplink_loc = P
-			if(UPLINK_PEN)
-				uplink_loc = P
+	uplink_loc = PDA
+	if(!uplink_loc)
+		uplink_loc = R
+	if(!uplink_loc)
+		uplink_loc = P
 
 	if(!uplink_loc) // We've looked everywhere, let's just give you a pen
 		if(istype(traitor_mob.back,/obj/item/storage)) //ok buddy you better have a backpack!

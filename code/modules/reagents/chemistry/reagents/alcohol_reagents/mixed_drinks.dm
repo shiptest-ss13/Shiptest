@@ -39,9 +39,8 @@
 	boozepwr = 80
 	quality = DRINK_GOOD
 	overdose_threshold = 60
-	addiction_threshold = 30
 	taste_description = "oily syrup"
-	glass_icon_state = "vimukti_glass"
+	glass_icon_state = "thirteen_loko_glass"
 	glass_name = "glass of Vimukti"
 	glass_desc = "A spiritually-taxing drink from the Shoal. Numerous warnings about this drink tell you to not drink too much, lest you incur some sort of wrath... or an overdose of a psychoactive lichen."
 
@@ -170,14 +169,14 @@
 	glass_name = "Rum and Coke"
 	glass_desc = "The classic for mixing drinks on the fly."
 
-/datum/reagent/consumable/ethanol/cuba_libre
+/datum/reagent/consumable/ethanol/frontier_libre
 	name = "Frontier Libre"
 	description = "For a freer Frontier, everywhere!"
 	color = "#692e01"
 	boozepwr = 50
 	quality = DRINK_GOOD
 	taste_description = "a refreshing marriage of citrus and rum"
-	glass_icon_state = "cubalibreglass"
+	glass_icon_state = "frontier_libre"
 	glass_name = "Frontier Libre"
 	glass_desc = "A mix of rum, cola, and lime. A favorite of among independent spacers and the Frontiersmen alike, who named it in the spirit of securing a free Frontier."
 
@@ -352,6 +351,8 @@
 /datum/reagent/consumable/ethanol/beepsky_smash/on_mob_metabolize(mob/living/carbon/M)
 	if(HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
 		metabolization_rate = 0.8
+	if(!M.mind)
+		return ..()
 	if(!HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM))
 		B = new()
 		M.gain_trauma(B, TRAUMA_RESILIENCE_ABSOLUTE)
@@ -359,6 +360,8 @@
 
 /datum/reagent/consumable/ethanol/beepsky_smash/on_mob_life(mob/living/carbon/M)
 	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	if(!M.mind)
+		return ..()
 	if(HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM))
 		M.adjustStaminaLoss(-10, 0)
 		if(prob(20))
@@ -418,16 +421,16 @@
 		consumer.adjustFireLoss(-0.5*REM)
 	return ..()
 
-/datum/reagent/consumable/ethanol/longislandicedtea
-	name = "Long Island Iced Tea"
-	description = "The entire liquor cabinet brought together with enough sugar to hide it."
+/datum/reagent/consumable/ethanol/golden_pearl_iced_tea
+	name = "Golden Pearl Iced Tea"
+	description = "An excessive, cloyingly sweet cocktail originating from the beachside estates of Ryuunosukan nobles. Does not contain tea."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 35
 	quality = DRINK_VERYGOOD
 	taste_description = "a mixture of cola and alcohol"
-	glass_icon_state = "longislandicedteaglass"
-	glass_name = "Long Island Iced Tea"
-	glass_desc = "The entire liquor cabinet brought together with enough sugar to hide it."
+	glass_icon_state = "golden_pearl_iced_tea"
+	glass_name = "Golden Pearl Iced Tea"
+	glass_desc = "An excessive, cloyingly sweet cocktail originating from the beachside estates of Ryuunosukan nobles. Does not contain tea."
 
 
 /datum/reagent/consumable/ethanol/moonshine
@@ -440,29 +443,26 @@
 	glass_name = "Moonshine"
 	glass_desc = "You've really hit rock bottom now... your liver packed its bags and left last night."
 
-/datum/reagent/consumable/ethanol/b52
+/datum/reagent/consumable/ethanol/amg
 	name = "AM-G"
 	description = "Coffee liquor, Zohil Cream, and cognac."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 85
 	quality = DRINK_GOOD
 	taste_description = "angry and intense"
-	glass_icon_state = "b52glass"
+	glass_icon_state = "amg"
 	glass_name = "AM-G"
 	glass_desc = "Coffee liquor, Zohil Cream, and cognac. Enough to make you hide before the blast."
 	shot_glass_icon_state = "b52glass"
 
-/datum/reagent/consumable/ethanol/b52/on_mob_metabolize(mob/living/M)
-	playsound(M, 'sound/effects/explosion_distant.ogg', 100, FALSE)
-
-/datum/reagent/consumable/ethanol/irishcoffee
+/datum/reagent/consumable/ethanol/gezenan_coffee
 	name = "Gezenan Coffee"
 	description = "Coffee, and alcohol. Traditionally enjoyed in the morning on lazy days."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 35
 	quality = DRINK_NICE
 	taste_description = "giving up on the day"
-	glass_icon_state = "irishcoffeeglass"
+	glass_icon_state = "gezenan_coffee"
 	glass_name = "Gezenan Coffee"
 	glass_desc = "Coffee and alcohol. Traditionally enjoyed in the morning on lazy days."
 
@@ -758,14 +758,14 @@
 			changeling.chem_charges = clamp(changeling.chem_charges, 0, changeling.chem_storage)
 	return ..()
 
-/datum/reagent/consumable/ethanol/irishcarbomb
+/datum/reagent/consumable/ethanol/lightspeed
 	name = "Lightspeed"
 	description = "A shot of Zohil cream in a pinch of ale, meant to be downed in one chug - hits you as fast as the name."
 	color = "#2E6671" // rgb: 46, 102, 113
 	boozepwr = 25
 	quality = DRINK_GOOD
 	taste_description = "the rush of hyperspace"
-	glass_icon_state = "irishcarbomb"
+	glass_icon_state = "lightspeed"
 	glass_name = "Lightspeed"
 	glass_desc = "A shot of Zohil cream in a pinch of ale, meant to be downed in one chug - hits you as fast as the name."
 
@@ -775,7 +775,7 @@
 	color = "#2E6671" // rgb: 46, 102, 113
 	boozepwr = 90
 	quality = DRINK_GOOD
-	taste_description = "anti-Nanotrasen sentiments"
+	taste_description = "anti-Makosso-Warra sentiments"
 	glass_icon_state = "syndicatebomb"
 	glass_name = "Gorlex Surprise"
 	glass_desc = "Infamously named after the accusations of Syndicate-led bombings of space installations. It's a blast!"
@@ -965,7 +965,7 @@
 	metabolization_rate = 1 * REAGENTS_METABOLISM
 	glass_icon_state = "neurotoxinglass"
 	glass_name = "Neurotoxin"
-	glass_desc = "The story goes that this drink was made on a bet between Cybersun chemists, debating if a drink could be used to put down a suspected Nanotrasen spy. While morphine wasn't <i>supposed</i> to be used, it put them down all the same."
+	glass_desc = "The story goes that this drink was made on a bet between Cybersun chemists, debating if a drink could be used to put down a suspected Makosso-Warra spy. While morphine wasn't <i>supposed</i> to be used, it put them down all the same."
 
 /datum/reagent/consumable/ethanol/neurotoxin/proc/pickt()
 	return (pick(TRAIT_PARALYSIS_L_ARM,TRAIT_PARALYSIS_R_ARM,TRAIT_PARALYSIS_R_LEG,TRAIT_PARALYSIS_L_LEG))
@@ -1061,7 +1061,7 @@
 	taste_description = "an invigorating bitter freshness which suffuses your being; you can take on anyone who messes with your vessel"
 	glass_icon_state = "quadruple_sec"
 	glass_name = "Quadruple Sec"
-	glass_desc = "A glass of Quadruple Sec. Popularized for being a mixed drink of choice across multiple independent security agencies, and notably among Nanotrasen's internal security culture. It's not recommended to drink while manning a vessel, though!"
+	glass_desc = "A glass of Quadruple Sec. Popularized for being a mixed drink of choice across multiple independent security agencies, and notably among Vigilitas's security staff. It's not recommended to drink while manning a vessel, though!"
 
 /datum/reagent/consumable/ethanol/quintuple_sec
 	name = "Quintuple Sec"
@@ -1251,14 +1251,14 @@
 	glass_name = "Happy Huntsman"
 	glass_desc = "A gentle, creamy drink, enjoyed on rare occasions by the Saint Roumain's followers."
 
-/datum/reagent/consumable/ethanol/sidecar
+/datum/reagent/consumable/ethanol/bridge_bunny
 	name = "Bridge Bunny"
 	description = "You're happy to not pilot the ship after having one of these."
 	color = "#FFC55B"
 	boozepwr = 45
 	quality = DRINK_GOOD
 	taste_description = "delicious freedom"
-	glass_icon_state = "sidecar"
+	glass_icon_state = "bridge_bunny"
 	glass_name = "Bridge Bunny"
 	glass_desc = "You're happy to not pilot the ship after having one of these."
 
@@ -1615,7 +1615,7 @@
 	taste_description = "thick, nut-flavored milk with a boozy kick"
 	glass_icon_state = "muddersmilk"
 	glass_name = "Miner's Milk"
-	glass_desc = "All the protein, vitamins and carbs of two full ration packs, plus 15% alcohol. Created by Nanotrasen's Mining and Exploration League, and often still enjoyed in the New Gorlex Republic."
+	glass_desc = "All the protein, vitamins and carbs of two full ration packs, plus 15% alcohol. Created by N+S's mining and survey corps, and often still enjoyed in the New Gorlex Republic."
 
 /datum/reagent/consumable/ethanol/mudders_milk/on_mob_life(mob/living/carbon/M)
 	if(prob(1))
@@ -1739,7 +1739,7 @@
 	glass_desc = "A spin on the classic. Artists and street fighters swear by this stuff."
 
 /datum/reagent/consumable/ethanol/out_of_lime/expose_mob(mob/living/carbon/human/consumer, method=INGEST, reac_volume)
-	if(method == INGEST || method == TOUCH || method == SMOKE)
+	if(method == INGEST || method == TOUCH || method == INHALE)
 		if(istype(consumer))
 			consumer.hair_color = pick("0ad","a0f","f73","d14","0b5","fc2","084","05e","d22","fa0")
 			consumer.facial_hair_color = pick("0ad","a0f","f73","d14","0b5","fc2","084","05e","d22","fa0")
@@ -1771,7 +1771,7 @@
 /datum/reagent/consumable/ethanol/bullethell/on_mob_life(mob/living/carbon/M) //rarely sets you on fire
 	if (prob(5))
 		M.adjust_fire_stacks(1)
-		M.IgniteMob()
+		M.ignite_mob()
 	..()
 
 /datum/reagent/consumable/ethanol/homesick
@@ -1789,24 +1789,26 @@
 	var/drink_message = pick("You think of what you've left behind...", "You think of the people who miss you...", "You think of where you're from...")
 	to_chat(M, span_notice("[drink_message]"))
 
-/datum/reagent/consumable/ethanol/eudamonia
-	name = "Eudamonia"
+/datum/reagent/consumable/ethanol/eudaimonia
+	name = "Eudaimonia"
 	description = "A fleeting, virtous drink that inspires vigorous debate."
 	color = "#6884a1"
 	boozepwr = 40
 	quality = DRINK_VERYGOOD
 	overdose_threshold = 40
 	taste_description = "a flourishing alcoholic bloom"
-	glass_name = "Eudamonia"
+	glass_name = "Eudaimonia"
 	glass_desc = "A drink popular in academic circles, supposedly made with a distilled virtue. Most published recipes insist to use an antidepressant."
 
-/datum/reagent/consumable/ethanol/eudamonia/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/eudaimonia/on_mob_life(mob/living/carbon/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	if(!mood)
+		return ..()
 	if(mood.sanity <= SANITY_NEUTRAL)
 		mood.setSanity(min(mood.sanity+5, SANITY_GREAT))
 	..()
 
-/datum/reagent/consumable/ethanol/eudamonia/overdose_process(mob/living/M)
+/datum/reagent/consumable/ethanol/eudaimonia/overdose_process(mob/living/M)
 	//don't mix uppers and downers, kids.
 	if(prob(6) && iscarbon(M))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4*REM)

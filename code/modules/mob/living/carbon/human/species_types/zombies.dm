@@ -4,12 +4,9 @@
 	// 1spooky
 	name = "\improper High-Functioning Zombie"
 	id = SPECIES_ZOMBIE
-	sexes = 0
-	meat = /obj/item/food/meat/slab/human/mutant/zombie
 	species_traits = list(NOBLOOD,NOZOMBIE,NOTRANSSTING)
 	inherent_traits = list(TRAIT_NOMETABOLISM,TRAIT_TOXIMMUNE,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NOBREATH,TRAIT_NODEATH,TRAIT_FAKEDEATH,TRAIT_NOCLONELOSS)
 	inherent_biotypes = MOB_UNDEAD|MOB_HUMANOID
-	mutanttongue = /obj/item/organ/tongue/zombie
 	var/static/list/spooks = list('sound/hallucinations/growl1.ogg','sound/hallucinations/growl2.ogg','sound/hallucinations/growl3.ogg','sound/hallucinations/veryfar_noise.ogg','sound/hallucinations/wail.ogg')
 	disliked_food = NONE
 	liked_food = GROSS | MEAT | RAW
@@ -17,12 +14,26 @@
 	bodytemp_normal = T0C // They have no natural body heat, the environment regulates body temp
 	bodytemp_heat_damage_limit = FIRE_MINIMUM_TEMPERATURE_TO_EXIST // Take damage at fire temp
 
-	species_chest = /obj/item/bodypart/chest/zombie
-	species_head = /obj/item/bodypart/head/zombie
-	species_l_arm = /obj/item/bodypart/l_arm/zombie
-	species_r_arm = /obj/item/bodypart/r_arm/zombie
-	species_l_leg = /obj/item/bodypart/leg/left/zombie
-	species_r_leg = /obj/item/bodypart/leg/right/zombie
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/zombie,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+	)
+
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/zombie,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/zombie,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/zombie,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/zombie,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/zombie,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/zombie,
+	)
 
 /datum/species/zombie/infectious
 	name = "\improper Infectious Zombie"
@@ -31,7 +42,19 @@
 	mutanthands = /obj/item/zombie_hand
 	armor = 20 // 120 damage to KO a zombie, which kills it
 	speedmod = 1.6
-	mutanteyes = /obj/item/organ/eyes/night_vision/zombie
+
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/zombie,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+	)
+
 	var/heal_rate = 1
 	var/regen_cooldown = 0
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN

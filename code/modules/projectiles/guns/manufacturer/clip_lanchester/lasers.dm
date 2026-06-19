@@ -6,8 +6,8 @@
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
 
-	icon_state = "cm1"
-	item_state = "cm1"
+	icon_state = "cm6"
+	item_state = "cm6"
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -15,10 +15,23 @@
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 12,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 15,
+		)
+	)
+
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix, /obj/item/ammo_casing/energy/disabler/hitscan)
 
@@ -34,6 +47,19 @@
 		/obj/item/stock_parts/cell/gun/upgraded,
 		/obj/item/stock_parts/cell/gun/empty,
 		/obj/item/stock_parts/cell/gun/upgraded/empty,
+	)
+	icon_state = "cm1"
+	item_state = "cm1"
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 24,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 15,
+		)
 	)
 
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix)

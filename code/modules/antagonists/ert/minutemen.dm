@@ -34,17 +34,17 @@
 
 /datum/antagonist/ert/minutemen/corpsman
 	name = "C-MM Field Corpsman"
-	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed/med/armed
+	outfit = /datum/outfit/job/clip/minutemen/grunt/medic/dressed/cm5
 	role = "Corpsman"
 
 /datum/antagonist/ert/minutemen/engi
 	name = "C-MM Field Engineer"
-	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed/engi/armed
+	outfit = /datum/outfit/job/clip/minutemen/grunt/engineer/dressed/armed
 	role = "Engineer"
 
 /datum/antagonist/ert/minutemen/gunner
 	name = "C-MM Machinegunner"
-	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed/gunner_armed
+	outfit = /datum/outfit/job/clip/minutemen/grunt/gunner/dressed/armed
 	role = "Field Gunner"
 
 // BARD
@@ -102,7 +102,7 @@
 	to_chat(owner, "You are part of The Galactic Optimum Labor Division, a division of the CLIP Government. Your task: [ert_team.mission.explanation_text]")
 
 /datum/antagonist/ert/minutemen/correspondent
-	name = "C-MM War Correspondent"
+	name = "C-MM Military Correspondent"
 	outfit = /datum/outfit/job/clip/correspondent
 	role = "Correspondant"
 

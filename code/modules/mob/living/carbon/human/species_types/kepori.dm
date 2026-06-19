@@ -2,8 +2,8 @@
 	name = "\improper Kepori"
 	id = SPECIES_KEPORI
 	default_color = "6060FF"
-	species_traits = list(SCLERA, MUTCOLORS, EYECOLOR, MUTCOLORS_SECONDARY, HAS_FLESH, HAS_BONE)
-	inherent_traits = list(TRAIT_SCOOPABLE)
+	species_traits = list(MUTCOLORS, MUTCOLORS_SECONDARY)
+	inherent_traits = list(TRAIT_SCOOPABLE, TRAIT_TAILED)
 	mutant_bodyparts = list("kepori_body_feathers", "kepori_head_feathers", "kepori_tail_feathers", "kepori_feathers")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "None", "kepori_head_feathers" = "None",  "kepori_body_feathers" = "None", "kepori_tail_feathers" = "None")
 	meat = /obj/item/food/meat/slab/chicken
@@ -30,8 +30,8 @@
 
 	bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR - 4
 
+	fire_overlay = "generic"
 
-	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori
 	var/datum/action/innate/keptackle/keptackle
 	/// # Inherit tackling variables #
@@ -50,21 +50,28 @@
 
 	bodytype = BODYTYPE_KEPORI
 
-	species_chest = /obj/item/bodypart/chest/kepori
-	species_head = /obj/item/bodypart/head/kepori
-	species_l_arm = /obj/item/bodypart/l_arm/kepori
-	species_r_arm = /obj/item/bodypart/r_arm/kepori
-	species_l_leg = /obj/item/bodypart/leg/left/kepori
-	species_r_leg = /obj/item/bodypart/leg/right/kepori
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/kepori,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+	)
 
-	species_robotic_chest = /obj/item/bodypart/chest/robot/kepori
-	species_robotic_head = /obj/item/bodypart/head/robot/kepori
-	species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus/kepori
-	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/kepori
-	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/kepori
-	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/kepori
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/kepori,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/kepori,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/kepori,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/kepori,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/kepori,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/kepori,
+	)
 
-	robotic_eyes = /obj/item/organ/eyes/robotic/kepori
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/kepori
 
 	//I'm not emotionally prepared to spend ten more hours splicing overlays together
 	damage_overlay_type = ""

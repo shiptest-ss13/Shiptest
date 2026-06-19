@@ -5,16 +5,12 @@
 	elasticity_coeff = 0.1
 	export_types = list(/obj/item/mine/pressure/explosive)
 
-/datum/export/anomaly
-	unit_name = "stabilized anomaly core"
-	cost = 3000
+/datum/export/claymore
+	unit_name = "defused claymores"
+	desc = "The Confederated League maintains an active bounty program for the disposal of UXO. Make the frontier a safer place today!"
+	cost = 1250
 	elasticity_coeff = 0.1
-	export_types = list(/obj/item/assembly/signaler/anomaly)
-
-/datum/export/anomaly/New(...)
-	. = ..()
-	desc = "[SSmissions.get_researcher_name()] has requested that we [pick(list("procure", "grab", "acquire", "find", "locate"))] \
-	anomaly cores for [pick(list("research", "analysis", "technical development", "closer inspection", "some reason"))]."
+	export_types = list(/obj/item/mine/directional/claymore)
 
 // Circuit boards, spare parts, etc.
 

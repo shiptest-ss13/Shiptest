@@ -6,4 +6,4 @@
 	icon = 'icons/obj/item/coffee.dmi'
 	icon_state = "coffeepot"
 	fill_icon_state = "coffeepot"
-	fill_icon_thresholds = list(0, 1, 30, 60, 100)
+	fill_icon_thresholds = list(1, 40, 80, 120)

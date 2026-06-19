@@ -26,7 +26,7 @@
 	var/distance = max(0,get_dist(get_turf(src),T))
 
 //Flash
-	if(M.flash_act(affect_silicon = 1))
+	if(M.flash_act(affect_silicon = 1) & FLASH_EFFECT)
 		M.Paralyze(max(20/max(1,distance), 5))
 		M.Knockdown(max(200/max(1,distance), 60))
 
@@ -83,7 +83,7 @@
 	M.show_message(span_warning("POP"), MSG_AUDIBLE)
 	var/distance = max(0,get_dist(get_turf(src),T))
 //Flash
-	if(M.flash_act(affect_silicon = 1))
+	if(M.flash_act(affect_silicon = 1) & FLASH_EFFECT)
 		M.Paralyze(max(10/max(1,distance), 5))
 		M.Knockdown(max(100/max(1,distance), 60))
 

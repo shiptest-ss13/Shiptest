@@ -7,11 +7,6 @@
  *
  **/
 
-//Init the debugger datum first so we can debug Master
-//You might wonder why not just create the debugger datum global in its own file, since its loaded way earlier than this DM file
-//Well for whatever reason then the Master gets created first and then the debugger when doing that
-//So thats why this code lives here now, until someone finds out how Byond inits globals
-GLOBAL_REAL(Debugger, /datum/debugger) = new
 //This is the ABSOLUTE ONLY THING that should init globally like this
 //2019 update: the failsafe,config and Global controllers also do it
 GLOBAL_REAL(Master, /datum/controller/master) = new
@@ -126,7 +121,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 /datum/controller/master/Shutdown()
 	processing = FALSE
 	sortTim(subsystems, /proc/cmp_subsystem_init)
-	reverseRange(subsystems)
+	reverse_range(subsystems)
 	for(var/datum/controller/subsystem/ss in subsystems)
 		log_world("Shutting down [ss.name] subsystem...")
 		ss.Shutdown()

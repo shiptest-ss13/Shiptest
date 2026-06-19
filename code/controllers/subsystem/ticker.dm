@@ -27,11 +27,6 @@ SUBSYSTEM_DEF(ticker)
 	var/admin_delay_notice = ""				//a message to display to anyone who tries to restart the world after a delay
 	var/ready_for_reboot = FALSE			//all roundend preparation done with, all that's left is reboot
 
-	///If not set to ANON_DISABLED then people spawn with a themed anon name (see anonymousnames.dm)
-	var/anonymousnames = ANON_DISABLED
-	///Boolean to see if the game needs to set up a triumvirate ai (see tripAI.dm)
-	var/triai = FALSE
-
 	var/tipped = 0							//Did we broadcast the tip of the day yet?
 	var/selected_tip						// What will be the tip of the day?
 
@@ -405,8 +400,6 @@ SUBSYSTEM_DEF(ticker)
 
 	delay_end = SSticker.delay_end
 
-	anonymousnames = SSticker.anonymousnames
-	triai = SSticker.triai
 	tipped = SSticker.tipped
 	selected_tip = SSticker.selected_tip
 
@@ -433,7 +426,7 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/send_news_report()
 	var/news_message
-	var/news_source = "Nanotrasen News Network"
+	var/news_source = "Makosso-Warra News Network"
 	switch(news_report)
 		if(NUKE_SYNDICATE_BASE)
 			news_message = "In a daring raid, the heroic crew of [station_name()] detonated a nuclear device in the heart of a terrorist base."

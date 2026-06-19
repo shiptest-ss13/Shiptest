@@ -76,6 +76,7 @@
 	vision_flags = SEE_TURFS
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	glass_colour_type = /datum/client_colour/glass_colour/lightgreen
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 
 /obj/item/clothing/glasses/meson/night
@@ -100,6 +101,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 100)
 	custom_price = 250
 	supports_variations = VOX_VARIATION
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 /obj/item/clothing/glasses/science/item_action_slot_check(slot)
 	if(slot == ITEM_SLOT_EYES)
@@ -110,6 +112,7 @@
 	desc = "A pair of prescription glasses fitted with an analyzer for scanning items and reagents. "
 	icon_state = "prescriptionpurple"
 	vision_correction = 1
+	flags_cover = GLASSESCOVERSEYES
 
 /obj/item/clothing/glasses/science/prescription/fake
 	name = "science glasses"
@@ -124,8 +127,12 @@
 	darkness_view = 8
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
-	glass_colour_type = /datum/client_colour/glass_colour/green
 	supports_variations = VOX_VARIATION
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
+	unique_reskin = list(
+		"mono-eye" = "night",
+		"bino-eye" = "nightalt",
+	)
 
 /obj/item/clothing/glasses/eyepatch
 	name = "eyepatch"
@@ -136,11 +143,42 @@
 
 /obj/item/clothing/glasses/eyepatch/AltClick(mob/user)
 	. = ..()
+	flip_eyepatch(user)
+
+/obj/item/clothing/glasses/eyepatch/proc/flip_eyepatch(mob/user)
 	flipped = !flipped
-	to_chat(user, span_notice("You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye."))
+	if(user)
+		to_chat(user, span_notice("You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye."))
 	icon_state = "eyepatch-[flipped]"
 	item_state = "eyepatch-[flipped]"
 	update_appearance()
+	if (!ismob(loc))
+		return
+	var/mob/wearer = loc
+	wearer.update_inv_glasses()
+	if (!ishuman(user))
+		return
+	var/mob/living/carbon/human/human_wearer = user
+	if (human_wearer.get_eye_scars() & (flipped ? RIGHT_EYE_SCAR : LEFT_EYE_SCAR))
+		tint = INFINITY
+	else
+		tint = initial(tint)
+	human_wearer.update_tint()
+
+/obj/item/clothing/glasses/eyepatch/equipped(mob/living/user, slot)
+	if (!ishuman(user))
+		return ..()
+	var/mob/living/carbon/human/human_user = user
+	// lol lmao
+	if (human_user.get_eye_scars() & (flipped ? RIGHT_EYE_SCAR : LEFT_EYE_SCAR))
+		tint = INFINITY
+	else
+		tint = initial(tint)
+	return ..()
+
+/obj/item/clothing/glasses/eyepatch/dropped(mob/living/user)
+	. = ..()
+	tint = initial(tint)
 
 /obj/item/clothing/glasses/eyepatch/examine(mob/user)
 	. = ..()
@@ -163,6 +201,7 @@
 	item_state = "glasses"
 	vision_flags = SEE_OBJS
 	glass_colour_type = /datum/client_colour/glass_colour/lightblue
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 /obj/item/clothing/glasses/material/mining
 	name = "optical material scanner"
@@ -199,6 +238,17 @@
 	name = "thin glasses"
 	desc = "More expensive, more fragile and much less practical, but oh so fashionable."
 	icon_state = "thin_glasses"
+
+/obj/item/clothing/glasses/regular/pincher
+	name = "pincher glasses"
+	desc = "Armless glasses that clip onto the face of the wearer. Perfect for old timey professors and those without ears."
+	icon_state = "glasses_pincher"
+	item_state = "glasses_pincher"
+
+/obj/item/clothing/glasses/regular/pincher/thin
+	name = "thin pincher glasses"
+	desc = "Armless glasses that clip onto the face of the wearer. These ones are thinner and much more stylish."
+	icon_state = "glasses_pincher_thin"
 
 //Here lies green glasses, so ugly they died. RIP
 
@@ -244,6 +294,7 @@
 	item_state = "ballistic_goggles"
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	glass_colour_type = /datum/client_colour/glass_colour/lightblue
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 /obj/item/clothing/glasses/welding
 	name = "welding goggles"
@@ -344,6 +395,7 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 	glass_colour_type = /datum/client_colour/glass_colour/red
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 /obj/item/clothing/glasses/thermal/emp_act(severity)
 	. = ..()
@@ -382,6 +434,7 @@
 	icon_state = "eyepatch-0"
 	item_state = "eyepatch-0"
 	var/flipped = FALSE
+	flags_cover = GLASSESCOVERSEYES
 
 /obj/item/clothing/glasses/thermal/eyepatch/AltClick(mob/user)
 	. = ..()
@@ -408,6 +461,18 @@
 	icon_state = "heat"
 	item_state = "heat"
 	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
+
+/obj/item/clothing/glasses/safety
+	name = "safety goggles"
+	desc = "A pair of goggles meant to protect your eyes from debris and irritants."
+	icon_state = "safety_skier"
+	item_state = "safety_skier"
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
+	supports_variations = VOX_VARIATION
+	unique_reskin = list(
+		"biker" = "safety_biker",
+		"skier" = "safety_skier",
+	)
 
 /obj/item/clothing/glasses/orange
 	name = "orange glasses"

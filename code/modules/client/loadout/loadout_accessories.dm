@@ -38,6 +38,20 @@
 	display_name = "poncho, recolorable"
 	path = /obj/item/clothing/neck/poncho
 
+/datum/gear/accessory/mantle
+	display_name = "mantle, recolorable"
+	path = /obj/item/clothing/neck/mantle
+
+/datum/gear/accessory/shawl
+	display_name = "shawl, recolorable"
+	path = /obj/item/clothing/neck/shawl
+
+//neckwraps
+
+/datum/gear/accessory/neckwraps
+	display_name = "neckwraps, recolorable"
+	path = /obj/item/clothing/neck/neckwraps
+
 //(The actually good scarves)
 
 /datum/gear/accessory/scarf/striped
@@ -75,6 +89,22 @@
 	description = "Standard hand coverings for everyday use."
 	path = /obj/item/clothing/gloves/color/black
 
+/datum/gear/accessory/gloves/color
+	display_name = "gloves, recolorable"
+	path = /obj/item/clothing/gloves/color
+
+/datum/gear/accessory/gloves/long
+	display_name = "long gloves, colorable"
+	path = /obj/item/clothing/gloves/long
+
+/datum/gear/accessory/gloves/armwarmers
+	display_name = "arm warmers"
+	path = /obj/item/clothing/gloves/armwarmer
+
+/datum/gear/accessory/gloves/stripedwarmers
+	display_name = "striped arm warmers"
+	path = /obj/item/clothing/gloves/armwarmer/striped
+
 /datum/gear/accessory/gloves/white
 	display_name = "gloves, white"
 	description = "Standard hand coverings for everyday use."
@@ -89,11 +119,6 @@
 	display_name = "gloves, fingerless"
 	description = "Radical hand coverings for everyday use."
 	path = /obj/item/clothing/gloves/fingerless
-
-/datum/gear/accessory/gloves/evening
-	display_name = "gloves, evening"
-	description = "Excessively fancy elbow-length gloves."
-	path = /obj/item/clothing/gloves/color/evening
 
 //Bone
 
@@ -143,11 +168,30 @@
 	display_name = "face mask"
 	path = /obj/item/clothing/mask/breath/facemask
 
+/datum/gear/accessory/mask/halfmask
+	display_name = "half mask"
+	path = /obj/item/clothing/mask/gas/sechailer
+
 //Misc
 
 /datum/gear/accessory/waistcoat
 	display_name = "waistcoat"
 	path = /obj/item/clothing/accessory/waistcoat
+	slot = null
+
+/datum/gear/accessory/waistcoatbrown
+	display_name = "brown waistcoat"
+	path = /obj/item/clothing/accessory/waistcoat/brown
+	slot = null
+
+/datum/gear/accessory/waistcoatwhite
+	display_name = "white waistcoat"
+	path = /obj/item/clothing/accessory/waistcoat/white
+	slot = null
+
+/datum/gear/accessory/barcoat
+	display_name = "bartender waistcoat"
+	path = /obj/item/clothing/accessory/barcoat
 	slot = null
 
 /datum/gear/accessory/stethoscope
@@ -163,3 +207,20 @@
 /datum/gear/accessory/pocketprotector
 	display_name = "pocket protector"
 	path = /obj/item/clothing/accessory/pocketprotector
+
+/datum/gear/accessory/dogtag
+	display_name = "dogtag"
+	path = /obj/item/clothing/neck/dogtag/loadout
+	slot = ITEM_SLOT_NECK
+
+/datum/gear/accessory/dogtag/spawn_item(location, mob/living/carbon/owner)
+	var/datum/gear_data/gd
+
+	gd = new(path, location)
+
+	var/obj/item/clothing/neck/dogtag/loadout/tag_spawn = new gd.path(gd.location)
+	tag_spawn.tag_fluff.Add(owner.real_name)
+	tag_spawn.tag_fluff.Add(owner.dna.blood_type.name)
+	tag_spawn.tag_fluff.Add(owner.gender)
+
+	return tag_spawn

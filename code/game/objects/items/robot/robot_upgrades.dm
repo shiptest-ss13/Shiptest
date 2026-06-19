@@ -402,7 +402,7 @@
 	desc = "An upgrade to the Medical module's hypospray, allowing it \
 		to treat a wider range of conditions and problems."
 	additional_reagents = list(/datum/reagent/medicine/mannitol, /datum/reagent/medicine/oculine, /datum/reagent/medicine/inacusiate,
-		/datum/reagent/medicine/mutadone, /datum/reagent/medicine/haloperidol, /datum/reagent/medicine/oxandrolone, /datum/reagent/medicine/sal_acid, /datum/reagent/medicine/rezadone,
+		/datum/reagent/medicine/mutadone, /datum/reagent/medicine/haloperidol, /datum/reagent/medicine/ysiltane, /datum/reagent/medicine/silfrine, /datum/reagent/medicine/rezadone,
 		/datum/reagent/medicine/pen_acid)
 
 /obj/item/borg/upgrade/piercing_hypospray
@@ -416,7 +416,7 @@
 	if(.)
 		var/found_hypo = FALSE
 		for(var/obj/item/reagent_containers/borghypo/H in R.module.modules)
-			H.bypass_protection = TRUE
+			H.inject_flags = INJECT_CHECK_PENETRATE_THICK
 			found_hypo = TRUE
 
 		if(!found_hypo)
@@ -426,7 +426,7 @@
 	. = ..()
 	if (.)
 		for(var/obj/item/reagent_containers/borghypo/H in R.module.modules)
-			H.bypass_protection = initial(H.bypass_protection)
+			H.inject_flags = initial(H.inject_flags)
 
 /obj/item/borg/upgrade/defib
 	name = "medical cyborg defibrillator"
@@ -543,17 +543,15 @@
 			R.SetLockdown(0)
 		R.set_anchored(FALSE)
 		R.notransform = FALSE
-		R.resize = 2
 		R.hasExpanded = TRUE
-		R.update_transform()
+		R.update_transform(2)
 
 /obj/item/borg/upgrade/expand/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
 	if (.)
 		if (R.hasExpanded)
 			R.hasExpanded = FALSE
-			R.resize = 0.5
-			R.update_transform()
+			R.update_transform(0.5)
 
 /obj/item/borg/upgrade/rped
 	name = "engineering cyborg RPED"
