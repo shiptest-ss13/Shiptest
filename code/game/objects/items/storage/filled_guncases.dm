@@ -270,45 +270,45 @@
 /* Sharplite */
 
 /obj/item/storage/guncase/pistol/miniegun
-	gun_type = /obj/item/gun/energy/sharplite/x26
+	gun_type = /obj/item/gun/energy/sharplite/ohm
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/mini
 
 /obj/item/storage/guncase/energy
 	mag_type = /obj/item/stock_parts/cell/gun
 
 /obj/item/storage/guncase/energy/laser
-	gun_type = /obj/item/gun/energy/sharplite/l201/l204
+	gun_type = /obj/item/gun/energy/sharplite/surge/resistor
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/l201
-	gun_type = /obj/item/gun/energy/sharplite/l201
+	gun_type = /obj/item/gun/energy/sharplite/surge
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/egun
-	gun_type = /obj/item/gun/energy/sharplite/x12
+	gun_type = /obj/item/gun/energy/sharplite/volt
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/ultima
-	gun_type = /obj/item/gun/energy/sharplite/x46
+	gun_type = /obj/item/gun/energy/sharplite/amperage
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/etar
-	gun_type = /obj/item/gun/energy/sharplite/l305
+	gun_type = /obj/item/gun/energy/sharplite/rush
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/al607
-	gun_type = /obj/item/gun/energy/sharplite/al607
+	gun_type = /obj/item/gun/energy/sharplite/sarissa
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 /obj/item/storage/guncase/energy/iongun
 	gun_type = /obj/item/gun/energy/ionrifle
 
 /obj/item/storage/guncase/hades
-	gun_type = /obj/item/gun/energy/sharplite/al655
+	gun_type = /obj/item/gun/energy/sharplite/hades
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 /obj/item/storage/guncase/x01
-	gun_type = /obj/item/gun/energy/sharplite/x01
+	gun_type = /obj/item/gun/energy/sharplite/yari
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 /* Old MW */
@@ -414,11 +414,11 @@
 	mag_type = /obj/item/ammo_box/magazine/f90
 
 /obj/item/storage/guncase/cadejo
-	gun_type = /obj/item/gun/energy/sharplite/x12/inteq
+	gun_type = /obj/item/gun/energy/sharplite/volt/inteq
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/barghest
-	gun_type = /obj/item/gun/energy/sharplite/al655/inteq
+	gun_type = /obj/item/gun/energy/sharplite/hades/inteq
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 /obj/item/storage/guncase/bdm50

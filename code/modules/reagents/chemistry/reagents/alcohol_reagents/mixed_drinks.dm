@@ -169,14 +169,14 @@
 	glass_name = "Rum and Coke"
 	glass_desc = "The classic for mixing drinks on the fly."
 
-/datum/reagent/consumable/ethanol/cuba_libre
+/datum/reagent/consumable/ethanol/frontier_libre
 	name = "Frontier Libre"
 	description = "For a freer Frontier, everywhere!"
 	color = "#692e01"
 	boozepwr = 50
 	quality = DRINK_GOOD
 	taste_description = "a refreshing marriage of citrus and rum"
-	glass_icon_state = "cubalibreglass"
+	glass_icon_state = "frontier_libre"
 	glass_name = "Frontier Libre"
 	glass_desc = "A mix of rum, cola, and lime. A favorite of among independent spacers and the Frontiersmen alike, who named it in the spirit of securing a free Frontier."
 
@@ -421,16 +421,16 @@
 		consumer.adjustFireLoss(-0.5*REM)
 	return ..()
 
-/datum/reagent/consumable/ethanol/longislandicedtea
-	name = "Long Island Iced Tea"
-	description = "The entire liquor cabinet brought together with enough sugar to hide it."
+/datum/reagent/consumable/ethanol/golden_pearl_iced_tea
+	name = "Golden Pearl Iced Tea"
+	description = "An excessive, cloyingly sweet cocktail originating from the beachside estates of Ryuunosukan nobles. Does not contain tea."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 35
 	quality = DRINK_VERYGOOD
 	taste_description = "a mixture of cola and alcohol"
-	glass_icon_state = "longislandicedteaglass"
-	glass_name = "Long Island Iced Tea"
-	glass_desc = "The entire liquor cabinet brought together with enough sugar to hide it."
+	glass_icon_state = "golden_pearl_iced_tea"
+	glass_name = "Golden Pearl Iced Tea"
+	glass_desc = "An excessive, cloyingly sweet cocktail originating from the beachside estates of Ryuunosukan nobles. Does not contain tea."
 
 
 /datum/reagent/consumable/ethanol/moonshine
@@ -443,29 +443,26 @@
 	glass_name = "Moonshine"
 	glass_desc = "You've really hit rock bottom now... your liver packed its bags and left last night."
 
-/datum/reagent/consumable/ethanol/b52
+/datum/reagent/consumable/ethanol/amg
 	name = "AM-G"
 	description = "Coffee liquor, Zohil Cream, and cognac."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 85
 	quality = DRINK_GOOD
 	taste_description = "angry and intense"
-	glass_icon_state = "b52glass"
+	glass_icon_state = "amg"
 	glass_name = "AM-G"
 	glass_desc = "Coffee liquor, Zohil Cream, and cognac. Enough to make you hide before the blast."
 	shot_glass_icon_state = "b52glass"
 
-/datum/reagent/consumable/ethanol/b52/on_mob_metabolize(mob/living/M)
-	playsound(M, 'sound/effects/explosion_distant.ogg', 100, FALSE)
-
-/datum/reagent/consumable/ethanol/irishcoffee
+/datum/reagent/consumable/ethanol/gezenan_coffee
 	name = "Gezenan Coffee"
 	description = "Coffee, and alcohol. Traditionally enjoyed in the morning on lazy days."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 35
 	quality = DRINK_NICE
 	taste_description = "giving up on the day"
-	glass_icon_state = "irishcoffeeglass"
+	glass_icon_state = "gezenan_coffee"
 	glass_name = "Gezenan Coffee"
 	glass_desc = "Coffee and alcohol. Traditionally enjoyed in the morning on lazy days."
 
@@ -761,14 +758,14 @@
 			changeling.chem_charges = clamp(changeling.chem_charges, 0, changeling.chem_storage)
 	return ..()
 
-/datum/reagent/consumable/ethanol/irishcarbomb
+/datum/reagent/consumable/ethanol/lightspeed
 	name = "Lightspeed"
 	description = "A shot of Zohil cream in a pinch of ale, meant to be downed in one chug - hits you as fast as the name."
 	color = "#2E6671" // rgb: 46, 102, 113
 	boozepwr = 25
 	quality = DRINK_GOOD
 	taste_description = "the rush of hyperspace"
-	glass_icon_state = "irishcarbomb"
+	glass_icon_state = "lightspeed"
 	glass_name = "Lightspeed"
 	glass_desc = "A shot of Zohil cream in a pinch of ale, meant to be downed in one chug - hits you as fast as the name."
 
@@ -1254,14 +1251,14 @@
 	glass_name = "Happy Huntsman"
 	glass_desc = "A gentle, creamy drink, enjoyed on rare occasions by the Saint Roumain's followers."
 
-/datum/reagent/consumable/ethanol/sidecar
+/datum/reagent/consumable/ethanol/bridge_bunny
 	name = "Bridge Bunny"
 	description = "You're happy to not pilot the ship after having one of these."
 	color = "#FFC55B"
 	boozepwr = 45
 	quality = DRINK_GOOD
 	taste_description = "delicious freedom"
-	glass_icon_state = "sidecar"
+	glass_icon_state = "bridge_bunny"
 	glass_name = "Bridge Bunny"
 	glass_desc = "You're happy to not pilot the ship after having one of these."
 
