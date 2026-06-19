@@ -1,11 +1,12 @@
-#define APPROACH_AGGRESSIVE "aggress"
-#define APPROACH_RANGED "ranged"
-
 /mob/living/simple_animal/hostile/megafauna/megabot
-	name = "Marcus Dewey"
-	desc = "Smile! You're about to be Intraleak Content."
+	name = "\"Tortoise\" Heavy Defender"
+	desc = "The largest drone fielded by Vigilitas Interstellar, the Tortoise was manufactured in response to Makosso-Warra executives feeling at risk during the ICW. \
+	Settling for nothing other than the most intimidating presence, the Tortoise was blueprinted and manufactured to dissuade any attempts of attack against them. \
+	The Tortoise quickly garnered itself fearsome reputation for its formidable armament, size, and lethality against Coalition forces. Often now resigned to warehouses, \
+	a small amount still see fielding in areas needing the tightest security, with some reports of rogue models roaming old ICW salvage."
 	health = 1500
 	maxHealth = 1500
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	attack_verb_continuous = "batters"
 	attack_verb_simple = "batter"
 	attack_sound = 'sound/effects/meteorimpact.ogg'
@@ -14,11 +15,12 @@
 	icon_dead = "megabot"
 	mob_biotypes = MOB_ROBOTIC|MOB_SPECIAL
 
-	health_doll_icon = "bubblegum"
+	health_doll_icon = "megasprite"
 	friendly_verb_continuous = "scans"
 	friendly_verb_simple = "scan"
+	speech_span = SPAN_ROBOT
 	icon = 'icons/mob/lavaland/64x64megafauna.dmi'
-	speak_emote = list("buzzes")
+	speak_emote = list("states")
 	armour_penetration = 40
 	melee_damage_lower = 50
 	melee_damage_upper = 50
@@ -51,7 +53,7 @@
 		/datum/action/innate/megafauna_attack/spread_shot,
 		/datum/action/innate/megafauna_attack/shoot_n_charge,
 		/datum/action/innate/megafauna_attack/mine)
-	small_sprite_type = /datum/action/small_sprite/megafauna/bubblegum
+	small_sprite_type = /datum/action/small_sprite/megafauna/megabot
 
 /obj/item/ammo_casing/energy/laser/assault/sharplite/megabot
 	projectile_type = /obj/projectile/beam/laser/assault/sharplite/megabot
@@ -81,14 +83,14 @@
 /datum/action/innate/megafauna_attack/shoot_n_charge
 	name = "Charge"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
-	button_icon_state = "laser_burst"
-	chosen_message = span_colossus("You are now charging")
+	button_icon_state = "legsweep"
+	chosen_message = span_colossus("You are now charging.")
 	chosen_attack_num = 3
 
 /datum/action/innate/megafauna_attack/mine
 	name = "Plant Mine"
-	icon_icon = 'icons/mob/actions/actions_items.dmi'
-	button_icon_state = "laser_burst"
+	icon_icon = 'icons/obj/landmine.dmi'
+	button_icon_state = "mine_armed"
 	chosen_message = span_colossus("You are now planting a mine.")
 	chosen_attack_num = 4
 
@@ -138,7 +140,6 @@
 	shoot_projectile(get_turf(target))
 
 /mob/living/simple_animal/hostile/megafauna/megabot/proc/shoot_n_charge()
-	say("RAAAAGH, DEWEY.... DIVE!!!!")
 	charge()
 	if(health < maxHealth/3)
 		if(prob(50))
@@ -151,7 +152,6 @@
 		playsound(src, 'sound/machines/synth_yes.ogg', 200, TRUE, 3, frequency = 6120)
 		visible_message(span_danger("\The [src] [ranged ? "charges up it's laser!" : "prepares to charge!"]"))
 	if(ranged)
-		say("GO, GO GADGET, MARCUS MACHINE GUN!!")
 		new /obj/effect/temp_visual/megabot/laser(loc,src)
 	else
 		new /obj/effect/temp_visual/megabot/charge(loc,src)
@@ -186,7 +186,6 @@
 
 /mob/living/simple_animal/hostile/megafauna/megabot/proc/plant_mine()
 	visible_message("\The [src] plants a mine!")
-	say("TAKE THIS, MY MARCUS MINE!!")
 	new /obj/item/mine/proximity/explosive/sting/live(loc)
 
 /mob/living/simple_animal/hostile/megafauna/megabot/AttackingTarget()
@@ -288,6 +287,3 @@
 
 /obj/effect/temp_visual/megabot/charge
 	icon_state = "charge_indicator"
-
-#undef APPROACH_AGGRESSIVE
-#undef APPROACH_RANGED

@@ -132,7 +132,7 @@
 
 //megabot
 /obj/item/mob_trophy/megabot_reactor
-	name = "damaged_reactor"
+	name = "damaged reactor"
 	desc = "A damaged reactor cell. It probably isn't radioactive."
 	icon_state = "reactor"
 	gender = PLURAL
