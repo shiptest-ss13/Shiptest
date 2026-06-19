@@ -2905,6 +2905,10 @@
 	pixel_x = 11;
 	pixel_y = -20
 	},
+/obj/item/trash/can{
+	pixel_x = 12;
+	pixel_y = 8
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/external/dark)
 "vK" = (
@@ -3607,7 +3611,6 @@
 	pixel_x = 10;
 	pixel_y = -8
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/item/inhaler{
 	pixel_y = -4;
 	pixel_x = -10
@@ -3648,6 +3651,7 @@
 	pixel_y = -10;
 	pixel_x = 11
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "zA" = (
