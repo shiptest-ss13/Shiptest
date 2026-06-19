@@ -77,7 +77,7 @@
 /datum/action/innate/megafauna_attack/spread_shot
 	name = "Spread Shot"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
-	button_icon_state = "laser_burst"
+	button_icon_state = "laser_auto"
 	chosen_message = span_colossus("You are now firing shotgun blasts.")
 	chosen_attack_num = 2
 
