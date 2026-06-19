@@ -345,8 +345,8 @@
 			affecting = target.get_bodypart(BODY_ZONE_R_LEG)
 		else
 			affecting = target.get_bodypart(BODY_ZONE_L_LEG)
-		//if(affecting != "l_leg" && affecting != "r_leg")
-			//affecting = "chest"
+		if(!affecting) //(!target.get_bodypart(BODY_ZONE_R_LEG) && !target.get_bodypart(BODY_ZONE_L_LEG))
+			affecting = target.get_bodypart(BODY_ZONE_CHEST)
 		var/armor_block
 		armor_block = target.run_armor_check(affecting, MELEE)
 		target.apply_damage(rand(20,25), BRUTE, affecting, armor_block, FALSE, wound_bonus = CANT_WOUND)

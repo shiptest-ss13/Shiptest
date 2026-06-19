@@ -224,8 +224,8 @@
 				affecting = target.get_bodypart(BODY_ZONE_R_LEG)
 			else
 				affecting = target.get_bodypart(BODY_ZONE_L_LEG)
-			//if(affecting != "l_leg" && affecting != "r_leg")
-				//affecting = "chest"
+			if(!affecting)
+				affecting = target.get_bodypart(BODY_ZONE_CHEST)
 			var/armor_block
 			armor_block = target.run_armor_check(affecting, MELEE)
 			target.Knockdown(1 DECISECONDS)
