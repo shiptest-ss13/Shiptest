@@ -719,7 +719,7 @@
 	small_icon_state = "mega_legion"
 
 /datum/action/small_sprite/megafauna/megabot
-	icon = 'icons/mob/aibots.dmi'
+	small_icon = 'icons/mob/aibots.dmi'
 	small_icon_state = "makosso_bipedal"
 
 /datum/action/small_sprite/megafauna/spacedragon

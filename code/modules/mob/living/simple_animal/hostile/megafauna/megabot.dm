@@ -40,6 +40,7 @@
 	spread = 5
 	rapid_fire_delay = 4
 	var/gun_wind_up = 12
+	stat_attack = HARD_CRIT
 
 	pixel_x = -16
 	base_pixel_x = -16
