@@ -337,7 +337,7 @@
 	name = "Her Eyes"
 	icon = 'icons/obj/structures/barsigns64x64.dmi'
 	icon = "hereyes"
-	desc = "The premiere club of The Perch. All morals and any hint of corprate decency stays out at the front door."
+	desc = "The premier nightclub of the Thousand Eyes Perch. Home to many luxuries including a hot tub, well-stocked bar, and private booths to gamble your savings away."
 	rename_area = FALSE
 
 // Specifically for the perch
