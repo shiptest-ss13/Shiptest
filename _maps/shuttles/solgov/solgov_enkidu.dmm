@@ -174,7 +174,6 @@
 /obj/item/clothing/suit/armor/solgov_trenchcoat,
 /obj/item/stamp/solgov,
 /obj/item/clothing/under/solgov/dress,
-/obj/item/storage/belt/sabre/solgov,
 /obj/item/door_remote/captain,
 /obj/item/storage/backpack/captain,
 /obj/item/clothing/gloves/combat,
@@ -187,6 +186,11 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 5
+	},
+/obj/item/storage/pouch/squad,
+/obj/item/storage/belt/sabre{
+	name = "Pilaqu's sheath";
+	desc = "An ornate sheath designed to hold an officer's blade. 'Pilaqu' is known for being the weapon Enkidu wielded in ancient myth, though a great, bleeding axe did not fit the image of an officer."
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/captain)
@@ -1027,7 +1031,6 @@
 	dir = 10;
 	layer = 2.038
 	},
-/obj/machinery/light/dim/directional/west,
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "equipment locker";
@@ -1067,17 +1070,8 @@
 	pixel_y = 0;
 	pixel_x = 9
 	},
-/obj/item/storage/pouch/medical{
-	pixel_y = -10
-	},
-/obj/item/storage/pouch/medical{
-	pixel_y = -10;
-	pixel_x = -7
-	},
-/obj/item/storage/pouch/medical{
-	pixel_y = -10;
-	pixel_x = 7
-	},
+/obj/item/storage/pouch/ammo,
+/obj/item/storage/pouch/grenade,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "kp" = (
@@ -1112,6 +1106,10 @@
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
+	},
+/obj/item/screwdriver{
+	pixel_x = -5;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
@@ -2992,6 +2990,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "AF" = (
@@ -4208,6 +4207,9 @@
 /obj/item/ammo_box/magazine/gar,
 /obj/item/ammo_box/magazine/pistol556mm,
 /obj/item/ammo_box/magazine/pistol556mm,
+/obj/item/stock_parts/cell/gun/solgov,
+/obj/item/stock_parts/cell/gun/solgov,
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "Kq" = (
