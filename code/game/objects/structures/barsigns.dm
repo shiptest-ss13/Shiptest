@@ -343,7 +343,7 @@
 // Specifically for the perch
 /obj/structure/sign/barsign/hereyes
 	name = "Her Eyes"
-	desc = "The premiere club of The Perch. All morals and any hint of corprate decency stays out at the front door."
+	desc = "The premier nightclub of the Thousand Eyes Perch. Home to many luxuries including a hot tub, well-stocked bar, and private booths to gamble your savings away."
 	icon = 'icons/obj/structures/barsigns64x64.dmi'
 	icon_state = "hereyes"
 	chosen_sign = /datum/barsign/hiddensigns/hereyes
