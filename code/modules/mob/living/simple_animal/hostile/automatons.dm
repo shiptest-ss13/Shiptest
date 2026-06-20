@@ -21,6 +21,7 @@
 	del_on_death = TRUE
 	faction = list(FACTION_HOSTILE)
 	loot = list(/obj/effect/decal/cleanable/robot_debris)
+	speech_span = SPAN_ROBOT
 
 /mob/living/simple_animal/hostile/automated/quadrotor
 	name = "Quadrotor drone"
