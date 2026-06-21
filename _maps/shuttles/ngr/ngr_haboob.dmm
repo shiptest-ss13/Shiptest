@@ -51,12 +51,10 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = -3;
-	pixel_y = 32
+	pixel_x = -3
 	},
 /obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = 9;
-	pixel_y = 28
+	pixel_x = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -139,7 +137,6 @@
 /obj/item/clothing/mask/gas/syndicate,
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/corner/opaque/red/border{
-	dir = 2;
 	layer = 2.040
 	},
 /obj/machinery/light_switch{
@@ -238,10 +235,13 @@
 	},
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/corner/opaque/red/border{
-	dir = 2;
 	layer = 2.040
 	},
 /obj/item/radio/intercom/wideband/directional/south,
+/obj/machinery/emergency_panel{
+	pixel_y = 8;
+	pixel_x = -8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "dM" = (
@@ -314,8 +314,6 @@
 /obj/machinery/computer/atmos_control/external{
 	dir = 8;
 	icon_state = "computer-left";
-	pixel_x = 0;
-	pixel_y = 0;
 	sensors = list("haboob_external" = "External Atmospherics Monitoring")
 	},
 /obj/machinery/light/small/directional/north,
@@ -368,7 +366,6 @@
 /obj/structure/table/reinforced,
 /obj/machinery/light/small/directional/south,
 /obj/machinery/cell_charger{
-	pixel_x = 0;
 	pixel_y = 1
 	},
 /turf/open/floor/plasteel/tech,
@@ -487,7 +484,6 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/machinery/microwave{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel,
@@ -626,11 +622,9 @@
 	dir = 5
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
-	pixel_x = -28;
 	pixel_y = 9
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = -3
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -695,8 +689,7 @@
 "iX" = (
 /obj/structure/table,
 /obj/structure/sign/poster/contraband/bulldog{
-	pixel_x = 31;
-	pixel_y = 0
+	pixel_x = 31
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew)
@@ -970,8 +963,7 @@
 	pixel_y = 2
 	},
 /obj/item/storage/box/flashbangs{
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /obj/item/melee/knife/survival{
 	pixel_x = -11;
@@ -1170,13 +1162,11 @@
 	pixel_y = -6
 	},
 /obj/item/radio{
-	pixel_x = -6;
-	pixel_y = 0
+	pixel_x = -6
 	},
 /obj/item/radio,
 /obj/item/radio{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/structure/closet/wall/directional/north,
 /obj/machinery/light_switch{
@@ -1202,7 +1192,6 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband/table{
 	dir = 4;
-	pixel_x = 0;
 	pixel_y = 2
 	},
 /obj/effect/turf_decal/techfloor{
@@ -1359,11 +1348,9 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/east{
-	pixel_x = 31;
 	pixel_y = 5
 	},
 /obj/item/radio/intercom/directional/east{
-	pixel_x = 31;
 	pixel_y = -13
 	},
 /turf/open/floor/plasteel/dark,
@@ -1411,7 +1398,6 @@
 	layer = 2.040
 	},
 /obj/structure/filingcabinet/double/grey{
-	pixel_x = 0;
 	pixel_y = 18;
 	density = 0
 	},
@@ -1570,7 +1556,6 @@
 	},
 /obj/structure/table/reinforced,
 /obj/structure/sign/flag/ngr{
-	pixel_x = 0;
 	pixel_y = 31
 	},
 /obj/machinery/recharger{
@@ -1658,12 +1643,10 @@
 "vT" = (
 /obj/structure/dresser{
 	dir = 4;
-	pixel_x = -3;
-	pixel_y = 0
+	pixel_x = -3
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis{
-	pixel_x = 0;
 	pixel_y = 9
 	},
 /turf/open/floor/carpet/red_gold,
@@ -1983,8 +1966,7 @@
 	pixel_y = 1
 	},
 /obj/item/stack/sheet/glass/twenty{
-	pixel_x = -6;
-	pixel_y = 0
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -2061,12 +2043,10 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = -4;
-	pixel_y = 32
+	pixel_x = -4
 	},
 /obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = 9;
-	pixel_y = 28
+	pixel_x = 9
 	},
 /obj/machinery/recharger,
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis{
@@ -2124,12 +2104,10 @@
 	pixel_y = -3
 	},
 /obj/item/tank/internals/plasmaman/belt/full{
-	pixel_x = 0;
 	pixel_y = -3
 	},
 /obj/item/tank/internals/emergency_oxygen/engi{
-	pixel_x = -8;
-	pixel_y = 0
+	pixel_x = -8
 	},
 /obj/item/tank/internals/emergency_oxygen/engi{
 	pixel_x = -6;
@@ -2174,8 +2152,7 @@
 	},
 /obj/item/kirbyplants{
 	icon_state = "plant-02";
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew)
@@ -2371,8 +2348,7 @@
 	dir = 8
 	},
 /obj/structure/sign/poster/radio/arf{
-	pixel_x = 32;
-	pixel_y = 0
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
@@ -2572,12 +2548,10 @@
 	name = "medical supplies"
 	},
 /obj/item/storage/firstaid/regular{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/item/storage/firstaid/brute{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /obj/item/storage/firstaid/medical{
 	pixel_x = 1;
@@ -2670,7 +2644,6 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/east{
-	pixel_x = 31;
 	pixel_y = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -2704,17 +2677,14 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = 6
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
-	pixel_x = -28;
 	pixel_y = -6
 	},
 /obj/structure/dresser{
 	dir = 4;
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew)
@@ -3168,12 +3138,10 @@
 	},
 /obj/machinery/light/small/directional/west,
 /obj/machinery/firealarm/directional/north{
-	pixel_x = -3;
-	pixel_y = 32
+	pixel_x = -3
 	},
 /obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = 9;
-	pixel_y = 28
+	pixel_x = 9
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
@@ -3278,7 +3246,6 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/item/cutting_board{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/item/melee/knife/kitchen{
@@ -3311,8 +3278,7 @@
 	pixel_y = 3
 	},
 /obj/machinery/light/small/directional/north{
-	pixel_x = 13;
-	pixel_y = 28
+	pixel_x = 13
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)

@@ -117,7 +117,6 @@
 /obj/item/food/grown/sososi,
 /obj/item/food/grown/sososi,
 /obj/item/food/grown/dote_berries{
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /obj/item/food/grown/dote_berries{
@@ -5330,6 +5329,10 @@
 	},
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
 	dir = 4
+	},
+/obj/machinery/emergency_panel{
+	pixel_y = 8;
+	pixel_x = 8
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)

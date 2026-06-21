@@ -52,11 +52,9 @@
 /obj/structure/rack,
 /obj/machinery/light/small/directional/north,
 /obj/item/pickaxe/drill/jackhammer{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/item/pickaxe/drill/jackhammer{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /turf/open/floor/plasteel/tech,
@@ -173,6 +171,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/emergency_panel{
+	pixel_y = 8;
+	pixel_x = 8
+	},
 /turf/open/floor/suns/hatch/ebony,
 /area/ship/bridge)
 "df" = (
@@ -256,7 +258,6 @@
 /area/ship/crew/canteen)
 "ei" = (
 /obj/structure/sign/flag/suns{
-	pixel_x = 0;
 	pixel_y = 28
 	},
 /obj/effect/turf_decal/suns/line/marble,
@@ -304,7 +305,6 @@
 "ft" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/machinery/firealarm/directional/east,
@@ -331,7 +331,6 @@
 /area/ship/engineering/engines/port)
 "gn" = (
 /obj/machinery/shower{
-	pixel_x = 0;
 	pixel_y = 21
 	},
 /obj/structure/curtain,
@@ -377,9 +376,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
@@ -561,8 +558,7 @@
 	pixel_y = 22
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = -2;
-	pixel_y = 32
+	pixel_x = -2
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1186,7 +1182,6 @@
 "td" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-17";
-	pixel_x = 0;
 	pixel_y = -3
 	},
 /obj/item/toy/cards/deck/syndicate{
@@ -1323,7 +1318,6 @@
 	dir = 5
 	},
 /obj/item/radio/intercom/directional/east{
-	pixel_x = 31;
 	pixel_y = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1760,8 +1754,7 @@
 	pixel_y = 3
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -30;
-	pixel_y = 0
+	pixel_x = -30
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -1808,21 +1801,15 @@
 	pixel_y = 8
 	},
 /obj/item/radio{
-	pixel_x = 9;
-	pixel_y = 0
+	pixel_x = 9
 	},
 /obj/item/radio{
-	pixel_x = -10;
-	pixel_y = 0
+	pixel_x = -10
 	},
 /obj/item/radio{
-	pixel_x = 0;
 	pixel_y = 9
 	},
-/obj/item/radio{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/item/radio,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -1831,13 +1818,11 @@
 "Cu" = (
 /obj/structure/rack,
 /obj/item/towel{
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/item/towel,
 /obj/item/towel{
-	pixel_x = 9;
-	pixel_y = 0
+	pixel_x = 9
 	},
 /obj/effect/turf_decal/siding/wood/birch,
 /obj/machinery/light/directional/north,
@@ -1905,7 +1890,6 @@
 	},
 /obj/structure/table/wood/reinforced,
 /obj/item/bodycamera/broadcast_camera{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/item/desk_flag/suns{
@@ -1944,11 +1928,9 @@
 "Fa" = (
 /obj/structure/table/reinforced,
 /obj/item/cutting_board{
-	pixel_x = 0;
 	pixel_y = 2
 	},
 /obj/item/melee/knife/kitchen{
-	pixel_x = 0;
 	pixel_y = 2
 	},
 /obj/item/kitchen/rollingpin{
@@ -2030,7 +2012,6 @@
 	pixel_y = -6
 	},
 /obj/item/food/jellysandwich/cherry{
-	pixel_x = 0;
 	pixel_y = 8;
 	layer = 2.9
 	},
@@ -2330,11 +2311,9 @@
 /area/ship/engineering/engines/starboard)
 "LM" = (
 /obj/structure/sink{
-	pixel_x = 0;
 	pixel_y = 17
 	},
 /obj/structure/mirror{
-	pixel_x = 0;
 	pixel_y = 35
 	},
 /turf/open/floor/suns/plain,
@@ -2342,7 +2321,6 @@
 "LN" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/item/pen/solgov{
@@ -2480,7 +2458,6 @@
 	},
 /obj/machinery/button/door{
 	pixel_x = -21;
-	pixel_y = 0;
 	name = "Engine Lock";
 	dir = 4;
 	id = "mercuryportengine"
@@ -2607,7 +2584,6 @@
 /obj/structure/filingcabinet/double/grey{
 	dir = 8;
 	pixel_x = 10;
-	pixel_y = 0;
 	density = 0
 	},
 /obj/item/folder,
@@ -2654,7 +2630,6 @@
 "Pc" = (
 /obj/structure/table/wood,
 /obj/item/food/grilled_cheese_sandwich{
-	pixel_x = 0;
 	pixel_y = 17
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -3157,7 +3132,6 @@
 /obj/structure/dresser,
 /obj/effect/turf_decal/siding/wood/birch,
 /obj/item/flashlight/lamp/green{
-	pixel_x = 0;
 	pixel_y = 11
 	},
 /turf/open/floor/suns/hatch{
@@ -3231,7 +3205,6 @@
 	dir = 6
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = 4
 	},
 /turf/open/floor/suns/grid,

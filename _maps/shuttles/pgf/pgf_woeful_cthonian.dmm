@@ -9,9 +9,7 @@
 /obj/effect/turf_decal/trimline/opaque/green/filled/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner,
 /obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge/cool)
@@ -41,7 +39,6 @@
 	pixel_y = -2
 	},
 /obj/item/clothing/mask/whistle/trench{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/sepia,
@@ -84,9 +81,7 @@
 	pixel_x = -9;
 	pixel_y = -6
 	},
-/obj/effect/turf_decal/borderfloor/cee{
-	dir = 2
-	},
+/obj/effect/turf_decal/borderfloor/cee,
 /obj/item/clothing/neck/cloak/gezena/med{
 	pixel_y = 2;
 	pixel_x = 2
@@ -96,7 +91,6 @@
 	pixel_y = -4
 	},
 /obj/item/flashlight/pen{
-	pixel_y = 0;
 	pixel_x = 11
 	},
 /obj/item/clothing/neck/stethoscope{
@@ -562,7 +556,6 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/grunge{
 	name = "Communications Equipment";
-	dir = 2;
 	req_one_access = list(20, 57, 58, 10);
 	fast_close = 1
 	},
@@ -603,9 +596,7 @@
 /area/ship/cargo)
 "fn" = (
 /obj/machinery/power/smes/engineering,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/sign/warning/electricshock{
 	pixel_x = 22;
@@ -649,9 +640,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/corner_steel_grid/full,
-/obj/machinery/photocopier{
-	pixel_y = 0
-	},
+/obj/machinery/photocopier,
 /obj/item/radio/intercom/directional/west{
 	pixel_y = -18
 	},
@@ -924,8 +913,7 @@
 /area/ship/hallway/central)
 "if" = (
 /obj/machinery/camera/autoname{
-	dir = 9;
-	pixel_y = 0
+	dir = 9
 	},
 /obj/item/radio/intercom/directional/east{
 	pixel_y = 2
@@ -1089,7 +1077,6 @@
 	pixel_y = -2
 	},
 /obj/item/gun/energy/kalix/pgf/nock{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /turf/open/floor/vault,
@@ -1176,7 +1163,6 @@
 	pixel_y = -2
 	},
 /obj/item/clothing/suit/armor/gezena/navy{
-	pixel_x = 0;
 	pixel_y = -2
 	},
 /obj/item/clothing/suit/armor/gezena/navy{
@@ -1200,7 +1186,6 @@
 	pixel_y = 11
 	},
 /obj/item/clothing/head/helmet/gezena/navy{
-	pixel_x = 0;
 	pixel_y = 11
 	},
 /obj/item/clothing/head/helmet/gezena/navy{
@@ -1230,9 +1215,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "lm" = (
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /obj/machinery/autolathe,
 /obj/item/stack/sheet/glass/five{
 	pixel_x = -4;
@@ -1245,20 +1228,15 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "lG" = (
-/obj/effect/turf_decal/techfloor/orange{
-	dir = 2
-	},
+/obj/effect/turf_decal/techfloor/orange,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 2
-	},
+/obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/machinery/door/airlock/medical{
-	dir = 2;
 	name = "Medical Office";
 	id_tag = "cth_door"
 	},
@@ -1290,7 +1268,6 @@
 	},
 /obj/machinery/computer/helm{
 	dir = 8;
-	pixel_y = 0;
 	layer = 3
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -1348,7 +1325,6 @@
 	},
 /obj/machinery/computer/cargo{
 	dir = 8;
-	pixel_y = 0;
 	layer = 3.04
 	},
 /obj/item/radio/intercom/table{
@@ -1429,7 +1405,6 @@
 	dir = 1
 	},
 /obj/structure/closet/wall/directional/south{
-	icon_door = null;
 	name = "radio locker"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -1733,20 +1708,15 @@
 "qx" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/firedoor/border_only{
-	dir = 2
-	},
+/obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/effect/turf_decal/techfloor/orange{
-	dir = 2
-	},
+/obj/effect/turf_decal/techfloor/orange,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
 /obj/machinery/door/airlock/medical{
-	dir = 2;
 	name = "Operating Room"
 	},
 /turf/open/floor/mineral/titanium/tiled,
@@ -1835,8 +1805,7 @@
 	icon_state = "computer-right"
 	},
 /obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = -12;
-	pixel_y = 28
+	pixel_x = -12
 	},
 /obj/item/radio/intercom/directional/north{
 	pixel_x = 3
@@ -2137,7 +2106,6 @@
 /area/ship/crew/ccommons)
 "vt" = (
 /obj/machinery/atmospherics/components/binary/pump{
-	dir = 2;
 	layer = 2.43;
 	name = "air injection pump"
 	},
@@ -2206,8 +2174,7 @@
 	pixel_x = -11
 	},
 /obj/item/radio/headset/pgf/alt/captain{
-	pixel_x = 10;
-	pixel_y = 0
+	pixel_x = 10
 	},
 /obj/item/clothing/suit/armor/gezena/captain{
 	pixel_y = 6;
@@ -2290,9 +2257,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/effect/turf_decal/trimline/opaque/blue/end{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/opaque/blue/end,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical/surgery)
 "wC" = (
@@ -2694,15 +2659,12 @@
 	pixel_x = -9;
 	pixel_y = -6
 	},
-/obj/effect/turf_decal/borderfloor/cee{
-	dir = 2
-	},
+/obj/effect/turf_decal/borderfloor/cee,
 /obj/item/clothing/neck/cloak/gezena/med{
 	pixel_y = 2;
 	pixel_x = 2
 	},
 /obj/item/flashlight/pen{
-	pixel_y = 0;
 	pixel_x = 11
 	},
 /obj/structure/closet/secure_closet/wall/directional/east{
@@ -2756,8 +2718,7 @@
 	},
 /obj/item/clothing/suit/armor/gezena/medic,
 /obj/item/radio/headset/pgf/alt/captain{
-	pixel_x = 10;
-	pixel_y = 0
+	pixel_x = 10
 	},
 /obj/item/radio/headset/pgf/captain{
 	pixel_x = -10;
@@ -3156,7 +3117,6 @@
 /area/ship/external/dark)
 "Fr" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
-	dir = 2;
 	name = "air injection port"
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -3346,9 +3306,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -3394,19 +3352,15 @@
 	dir = 4
 	},
 /obj/item/clothing/mask/breath/pgfmask/navy{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/item/clothing/mask/breath/pgfmask/navy{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/item/clothing/mask/breath/pgfmask/navy{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/item/clothing/mask/breath/pgfmask/navy{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -3447,9 +3401,7 @@
 	pixel_x = 20;
 	pixel_y = 12
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
 	dir = 1
 	},
@@ -3735,9 +3687,7 @@
 	id = "PGF Communications Hub";
 	network = "pgf_commnet"
 	},
-/obj/effect/turf_decal/techfloor{
-	dir = 2
-	},
+/obj/effect/turf_decal/techfloor,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
@@ -4138,9 +4088,7 @@
 	freq_listening = list(1353,1349,1459);
 	autolinkers = list("pgf","broadcasterB")
 	},
-/obj/effect/turf_decal/techfloor{
-	dir = 2
-	},
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
 "QP" = (
@@ -4174,6 +4122,10 @@
 	},
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 1
+	},
+/obj/machinery/emergency_panel{
+	pixel_x = 8;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge/cool)
@@ -4244,9 +4196,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/effect/turf_decal/trimline/opaque/blue/filled/warning{
 	dir = 4
 	},
@@ -4262,9 +4212,7 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "Tb" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/item/radio/intercom/directional/east{
 	pixel_y = 6
 	},
@@ -4496,9 +4444,7 @@
 /area/ship/crew/ccommons)
 "VM" = (
 /obj/structure/table/reinforced,
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /obj/machinery/cell_charger{
 	pixel_y = -1;
 	pixel_x = -3
@@ -4516,7 +4462,6 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	dir = 2;
 	id = "cth_dc"
 	},
 /turf/open/floor/engine/hull/interior,
@@ -4564,9 +4509,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "WN" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 2
-	},
+/obj/effect/turf_decal/techfloor,
 /obj/machinery/telecomms/relay/preset/pgf,
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
@@ -4632,9 +4575,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge/cool)
 "Xv" = (
-/obj/effect/turf_decal/trimline/opaque/neutral/filled/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/opaque/neutral/filled/corner,
 /obj/effect/turf_decal/trimline/opaque/blue/corner,
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
@@ -4669,22 +4610,17 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "XO" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 2
-	},
+/obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/effect/turf_decal/techfloor/orange{
-	dir = 2
-	},
+/obj/effect/turf_decal/techfloor/orange,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/command{
-	dir = 2;
 	name = "Captain's Quarters";
 	id_tag = "cth_cappie";
 	req_access_txt = "20"
@@ -4702,8 +4638,7 @@
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/computer/atmos_control/tank/air_tank{
-	dir = 1;
-	pixel_y = 0
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -4732,18 +4667,15 @@
 	dir = 1
 	},
 /obj/machinery/computer/security{
-	dir = 2;
 	icon_state = "computer-left"
 	},
 /obj/machinery/button/door{
-	dir = 2;
 	pixel_x = -5;
 	pixel_y = 20;
 	id = "cth_bay";
 	name = "cargo bay controls"
 	},
 /obj/machinery/button/shieldwallgen{
-	dir = 2;
 	pixel_y = 19;
 	pixel_x = 5;
 	id = "wcth_bay";
@@ -4755,9 +4687,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/structure/railing{
-	dir = 2
-	},
+/obj/structure/railing,
 /obj/structure/table/reinforced,
 /obj/structure/closet/wall/blue/directional/south{
 	name = "supply cabinet";
@@ -4770,7 +4700,6 @@
 	pixel_y = 2
 	},
 /obj/item/megaphone/command{
-	pixel_y = 0;
 	pixel_x = 5
 	},
 /obj/item/gps{
@@ -4779,12 +4708,10 @@
 	gpstag = "PGFN-Woeful Cthonian"
 	},
 /obj/item/bodycamera{
-	pixel_y = 0;
 	pixel_x = -12;
 	c_tag = "ALPHA-1"
 	},
 /obj/item/bodycamera{
-	pixel_y = 0;
 	pixel_x = -5;
 	c_tag = "ALPHA-2"
 	},
@@ -4796,7 +4723,6 @@
 	icon_state = "1-2"
 	},
 /obj/item/bodycamera{
-	pixel_y = 0;
 	pixel_x = 2;
 	c_tag = "ALPHA-3"
 	},
