@@ -671,7 +671,7 @@
 	return TRUE
 
 //Synthflesh injection. Its a healing over time like indomide that ramps up, the down side is it gves a massive incoming damage multiplier which also ramps up.
-/datum/reagent/medicine/synthflesh/on_mob_add(mob/living/carbon/M)
+/datum/reagent/medicine/synthflesh/on_mob_metabolize(mob/living/carbon/M)
 	M.apply_status_effect(/datum/status_effect/synthflesh)
 
 /datum/reagent/medicine/synthflesh/on_mob_life(mob/living/carbon/human/M)

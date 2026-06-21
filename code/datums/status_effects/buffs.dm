@@ -426,14 +426,17 @@
 /datum/status_effect/synthflesh/tick(mob/living/carbon/human/M)
 	. = ..()
 	var/mob/living/carbon/human/subject = owner
+	//Heal whoever has the status effect based on how many stacks we have, gaining and losing stacks is handled below.
 	owner.adjustBruteLoss(-0.1 * Rampup)
 	owner.adjustFireLoss(-0.1 * Rampup)
 	//Handles the ramping up and ramping down. We gain a multiplicitave 3% damage vulnerability each tick its going up, and lose the same each tick its going down.
+	//We check if there is synthflesh in the body and if the person using this is alive, if either of these are untrue we tick down. We check for living because if someone died with synthflesh in their system they'd gain an ungodly ammount of stacks which would suck.
 	if((owner.reagents.has_reagent(/datum/reagent/medicine/synthflesh)) && (owner.stat != DEAD))
 		subject.physiology.burn_mod *= 1.03
 		subject.physiology.brute_mod *= 1.03
 		stack(1)
 	else
+	//Rampdown, does the opposite of rampup, lowers the damage multiplier and stack count.
 		stack(-1)
 		subject.physiology.burn_mod /= 1.03
 		subject.physiology.brute_mod /= 1.03
