@@ -26,6 +26,8 @@
 	dna.features["spines"] = GLOB.spines_list[hex2num(copytext(seed, 6, 7)) % length(GLOB.spines_list) + 1]
 	dna.features["body_markings"] = GLOB.body_markings_list[hex2num(copytext(seed, 7, 8)) % length(GLOB.body_markings_list) + 1]
 	dna.features["moth_wings"] = GLOB.moth_wings_list[hex2num(copytext(seed, 8, 9)) % length(GLOB.moth_wings_list) + 1]
+	dna.features["moth_antennae"] = GLOB.moth_antennae_list[hex2num(copytext(seed, 8, 9)) % length(GLOB.moth_antennae_list) + 1]
+	dna.features["moth_head"] = GLOB.moth_head_list[hex2num(copytext(seed, 8, 9)) % length(GLOB.moth_head_list) + 1]
 	dna.features["moth_fluff"] = GLOB.moth_fluff_list[hex2num(copytext(seed, 9, 10)) % length(GLOB.moth_fluff_list) + 1]
 	dna.features["spider_legs"] = GLOB.spider_legs_list[hex2num(copytext(seed, 10, 11)) % length(GLOB.spider_legs_list) + 1]
 	dna.features["spider_spinneret"] = GLOB.spider_spinneret_list[hex2num(copytext(seed, 11, 12)) % length(GLOB.spider_spinneret_list) + 1]
