@@ -740,9 +740,6 @@
 /area/ship/security/armory)
 "kf" = (
 /obj/structure/table,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 32
-	},
 /obj/item/newspaper{
 	pixel_x = -2;
 	pixel_y = 7
@@ -752,6 +749,7 @@
 	pixel_y = -1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/port)
 "kn" = (

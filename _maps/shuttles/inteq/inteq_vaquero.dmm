@@ -745,6 +745,7 @@
 	pixel_x = 20;
 	pixel_y = 12
 	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "gO" = (
@@ -1494,7 +1495,6 @@
 /obj/effect/decal/cleanable/food/egg_smudge,
 /obj/item/trash/dote,
 /obj/item/trash/can,
-/obj/machinery/camera/autoname/directional/south,
 /obj/item/cigbutt,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -1818,6 +1818,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "pi" = (
@@ -3803,10 +3804,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Fm" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34
-	},
-/obj/item/radio/intercom/directional/north,
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
@@ -3823,6 +3820,7 @@
 	pixel_x = -2
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Fu" = (

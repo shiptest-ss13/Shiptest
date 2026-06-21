@@ -527,14 +527,11 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = -32;
-	pixel_x = 15
-	},
-/obj/item/radio/intercom/directional/south{
-	pixel_x = 15
-	},
 /obj/structure/table/wood,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/south{
+	pixel_x = 16;
+	pixel_y = -22
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "en" = (
@@ -758,6 +755,10 @@
 /obj/item/reagent_containers/food/drinks/mug{
 	pixel_x = -8;
 	pixel_y = 8
+	},
+/obj/item/radio/intercom/directional/south{
+	pixel_x = 6;
+	pixel_y = -31
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -5464,9 +5465,6 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/external/dark)
 "HB" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34
-	},
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
@@ -5477,6 +5475,10 @@
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/north,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north{
+	pixel_x = 0;
+	pixel_y = 38
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "HJ" = (

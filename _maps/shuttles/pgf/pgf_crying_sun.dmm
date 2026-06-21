@@ -948,9 +948,6 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/captain)
 "fs" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34
-	},
 /obj/item/radio/intercom/directional/north,
 /obj/structure/table/wood,
 /obj/machinery/coffeemaker{
@@ -977,6 +974,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north{
+	pixel_x = 0;
+	pixel_y = 40
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)

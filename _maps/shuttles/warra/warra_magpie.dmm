@@ -4420,10 +4420,11 @@
 /obj/item/trash/raisins{
 	pixel_y = 5
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = -32
-	},
 /obj/item/radio/intercom/directional/south,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south{
+	pixel_x = 0;
+	pixel_y = -38
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
 "FW" = (
@@ -4834,10 +4835,11 @@
 	pixel_x = 6;
 	pixel_y = -10
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34
-	},
 /obj/item/radio/intercom/directional/north,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north{
+	pixel_x = 0;
+	pixel_y = 38
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/office)
 "IL" = (

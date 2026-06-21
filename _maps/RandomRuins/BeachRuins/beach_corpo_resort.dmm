@@ -2238,9 +2238,6 @@
 	dir = 1
 	},
 /obj/machinery/door/window/northleft,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -32
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
 	pixel_x = -21;
@@ -2249,6 +2246,7 @@
 	id = "corporate_resort_bar_main_window";
 	dir = 4
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/west,
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/corpo_resort/bar)
 "jz" = (

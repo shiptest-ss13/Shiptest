@@ -818,10 +818,6 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34
-	},
-/obj/item/radio/intercom/directional/north,
 /obj/item/ration_heater{
 	pixel_x = 7;
 	pixel_y = 4
@@ -835,6 +831,11 @@
 	pixel_y = -12
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom/directional/north,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north{
+	pixel_x = 0;
+	pixel_y = 38
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "nm" = (

@@ -1300,14 +1300,11 @@
 /area/ship/bridge)
 "js" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 28;
-	network = list("IntraNet, clip")
-	},
 /obj/machinery/light/directional/west,
 /obj/machinery/computer/transponder{
 	icon_state = "transponder-middle"
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "jw" = (
@@ -3692,12 +3689,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -28
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 4
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/west,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "AH" = (
@@ -4834,9 +4829,7 @@
 	pixel_x = -10
 	},
 /obj/effect/turf_decal/corner/opaque/white/mono,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -28
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "JK" = (

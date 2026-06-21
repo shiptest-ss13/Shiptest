@@ -2036,9 +2036,6 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "rQ" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -31
-	},
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 10
 	},
@@ -2063,6 +2060,7 @@
 	pixel_x = -2;
 	pixel_y = 7
 	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "rS" = (
@@ -5394,6 +5392,14 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/hotel)
+"SK" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/west,
+/turf/open/floor/wood/mahogany,
+/area/ruin/powered/hunts/hotel)
 "SN" = (
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/buckshot,
 /obj/item/stack/sheet/cardboard{
@@ -5692,9 +5698,6 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Vy" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -31
-	},
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 9
 	},
@@ -5716,6 +5719,7 @@
 	pixel_x = -9
 	},
 /obj/item/clothing/suit/toggle/windbreaker,
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "VB" = (
@@ -5949,6 +5953,13 @@
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ruin/powered/hunts/shuttle)
+"Xo" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 8
+	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/west,
+/turf/open/floor/wood/mahogany,
+/area/ruin/powered/hunts/hotel)
 "Xp" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /obj/structure/cable{
@@ -6972,7 +6983,7 @@ HI
 TN
 Ey
 Vy
-Tk
+SK
 bb
 Ey
 mr
@@ -6988,7 +6999,7 @@ Cy
 Nz
 Ey
 ZZ
-LI
+Xo
 rQ
 Ey
 rO
