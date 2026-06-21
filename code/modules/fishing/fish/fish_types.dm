@@ -4,6 +4,7 @@
 	name = "goldfish"
 	desc = "Despite common belief, goldfish do not have three-second memories. They can actually remember things that happened up to three months ago."
 	icon_state = "goldfish"
+	dedicated_in_aquarium_icon_state = "goldfish_small"
 	sprite_width = 8
 	sprite_height = 8
 	stable_population = 3
@@ -18,7 +19,7 @@
 	name = "angelfish"
 	desc = "Young Angelfish often live in groups, while adults prefer solitary life. They become territorial and aggressive toward other fish when they reach adulthood."
 	icon_state = "angelfish"
-	dedicated_in_aquarium_icon_state = "bigfish"
+	dedicated_in_aquarium_icon_state = "angelfish_small"
 	sprite_height = 7
 	source_height = 7
 	average_size = 30
@@ -32,7 +33,7 @@
 	name = "guppy"
 	desc = "Guppy is also known as rainbow fish because of the brightly colored body and fins."
 	icon_state = "guppy"
-	dedicated_in_aquarium_icon_state = "fish_greyscale"
+	dedicated_in_aquarium_icon_state = "guppy_small"
 	aquarium_vc_color = "#91AE64"
 	sprite_width = 8
 	sprite_height = 5
@@ -47,7 +48,7 @@
 	name = "plasma tetra"
 	desc = "Due to their small size, tetras are prey to many predators in their watery world, including eels, crustaceans, and invertebrates."
 	icon_state = "plastetra"
-	dedicated_in_aquarium_icon_state = "fish_greyscale"
+	dedicated_in_aquarium_icon_state = "plastetra_small"
 	aquarium_vc_color = "#D30EB0"
 	average_size = 30
 	average_weight = 500
@@ -57,7 +58,7 @@
 	name = "cory catfish"
 	desc = "A catfish has about 100,000 taste buds, and their bodies are covered with them to help detect chemicals present in the water and also to respond to touch."
 	icon_state = "catfish"
-	dedicated_in_aquarium_icon_state = "fish_greyscale"
+	dedicated_in_aquarium_icon_state = "catfish_small"
 	aquarium_vc_color = "#907420"
 	average_size = 100
 	average_weight = 2000
@@ -75,7 +76,7 @@
 	name = "largemouth bass"
 	desc = "A large, carnivorous freshwater fish known for thriving in most environments and being popular amongst sport fishers."
 	icon_state = "bass"
-	dedicated_in_aquarium_icon_state = "fish_greyscale"
+	dedicated_in_aquarium_icon_state = "bass_small"
 	aquarium_vc_color = "#3e8012"
 	average_size = 40
 	average_weight = 5000
@@ -88,7 +89,7 @@
 	name = "steelhead trout"
 	desc = "A species of coastal trout closely related to salmon and with a deep history of being used as a source of food."
 	icon_state = "trout"
-	dedicated_in_aquarium_icon_state = "fish_greyscale"
+	dedicated_in_aquarium_icon_state = "trout_small"
 	aquarium_vc_color = "#9e9e87"
 	required_fluid_type = AQUARIUM_FLUID_ANADROMOUS
 	average_size = 60
@@ -99,7 +100,7 @@
 	name = "pink salmon"
 	desc = "The most famous of all anadromous fish! Known for migrating up rivers once they reach adulthood to lay their eggs then return to the sea."
 	icon_state = "salmon"
-	dedicated_in_aquarium_icon_state = "fish_greyscale"
+	dedicated_in_aquarium_icon_state = "salmon_small"
 	aquarium_vc_color = "#76c747"
 	required_fluid_type = AQUARIUM_FLUID_ANADROMOUS
 	average_size = 60
@@ -111,7 +112,7 @@
 	name = "perch"
 	desc = "A relatively small, yet common, species of predatory fish."
 	icon_state = "perch"
-	dedicated_in_aquarium_icon_state = "fish_greyscale"
+	dedicated_in_aquarium_icon_state = "perch_small"
 	aquarium_vc_color = "#0a4603"
 	average_size = 20
 	average_weight = 900
@@ -138,7 +139,7 @@
 	name = "cardinalfish"
 	desc = "Cardinalfish are often found near sea urchins, where the fish hide when threatened."
 	icon_state = "cardinalfish"
-	dedicated_in_aquarium_icon_state = "fish_greyscale"
+	dedicated_in_aquarium_icon_state = "cardinalfish_small"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	average_size = 30
 	average_weight = 500
@@ -149,7 +150,7 @@
 	name = "green chromis"
 	desc = "The Chromis can vary in color from blue to green depending on the lighting and distance from the lights."
 	icon_state = "greenchromis"
-	dedicated_in_aquarium_icon_state = "fish_greyscale"
+	dedicated_in_aquarium_icon_state = "greenchromis_small"
 	aquarium_vc_color = "#00ff00"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	average_size = 30
@@ -162,6 +163,7 @@
 	name = "firefish goby"
 	desc = "To communicate in the wild, the firefish uses its dorsal fin to alert others of potential danger."
 	icon_state = "firefish"
+	dedicated_in_aquarium_icon_state = "firefish_small"
 	sprite_width = 6
 	sprite_height = 5
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
@@ -177,6 +179,7 @@
 	name = "pufferfish"
 	desc = "One Pufferfish contains enough toxins in its liver to kill 30 people."
 	icon_state = "pufferfish"
+	dedicated_in_aquarium_icon_state = "pufferfish_small"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	sprite_width = 8
 	sprite_height = 8
@@ -188,6 +191,7 @@
 	name = "lanternfish"
 	desc = "Typically found in areas below 6600 feet below the surface of the ocean, they live in complete darkness."
 	icon_state = "lanternfish"
+	dedicated_in_aquarium_icon_state = "lanternfish_small"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	random_case_rarity = FISH_RARITY_VERY_RARE
 	source_width = 28
@@ -206,6 +210,7 @@
 	name = "dwarf moonfish"
 	desc = "Ordinarily in the wild, the Zagoskian moonfish is around the size of a tuna, however through selective breeding a smaller breed suitable for being kept as an aquarium pet has been created."
 	icon_state = "dwarf_moonfish"
+	dedicated_in_aquarium_icon_state = "dwarf_moonfish_small"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	stable_population = 2
 	fillet_type = /obj/item/food/fishmeat/moonfish
@@ -218,6 +223,7 @@
 	name = "gunner jellyfish"
 	desc = "So called due to their resemblance to an artillery shell, the gunner jellyfish is native to Kalixcis, where it is enjoyed as a delicacy. Produces a mild hallucinogen that is destroyed by cooking."
 	icon_state = "gunner_jellyfish"
+	dedicated_in_aquarium_icon_state = "gunner_jellyfish_small"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	stable_population = 4
 	fillet_type = /obj/item/food/fishmeat/gunner_jellyfish
@@ -229,6 +235,7 @@
 	name = "needlefish"
 	desc = "A tiny, transparent fish which resides in large schools in the oceans of Kalixcis. A common food for other, larger fish."
 	icon_state = "needlefish"
+	dedicated_in_aquarium_icon_state = "needlefish_small"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	stable_population = 12
 	fillet_type = null
@@ -240,6 +247,7 @@
 	name = "armorfish"
 	desc = "A small shellfish native to Kalixcis's oceans, known for its exceptionally hard shell. Consumed similarly to prawns."
 	icon_state = "armorfish"
+	dedicated_in_aquarium_icon_state = "armorfish_small"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	stable_population = 10
 	fillet_type = /obj/item/food/fishmeat/armorfish
@@ -255,6 +263,7 @@
 	name = "toxic emulsijack"
 	desc = "Ah, the terrifying emulsijack. Created in a laboratory, this slimey, scaleless fish emits an invisible toxin that emulsifies other fish for it to feed on. Its only real use is for completely ruining a tank."
 	icon_state = "emulsijack"
+	dedicated_in_aquarium_icon_state = "emulsijack_small"
 	random_case_rarity = FISH_RARITY_GOOD_LUCK_FINDING_THIS
 	required_fluid_type = AQUARIUM_FLUID_ANADROMOUS
 	stable_population = 3
@@ -277,6 +286,7 @@
 	name = "ratfish"
 	desc = "A rat exposed to the murky waters of maintenance too long. Any higher power, if it revealed itself, would state that the ratfish's continued existence is extremely unwelcome."
 	icon_state = "ratfish"
+	dedicated_in_aquarium_icon_state = "ratfish_small"
 	random_case_rarity = FISH_RARITY_RARE
 	required_fluid_type = AQUARIUM_FLUID_FRESHWATER
 	stable_population = 10 //set by New, but this is the default config value
