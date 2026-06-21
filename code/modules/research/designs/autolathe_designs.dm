@@ -910,7 +910,7 @@
 	category = list("initial", "Security")
 
 /datum/design/c10mm_surplus
-	name = "Ammo Box (10x22mm surplus)"
+	name = "Ammo Box (10mm surplus)"
 	id = "c10mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 16000)
@@ -926,7 +926,7 @@
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/c9mm_surplus
-	name = "Ammo Box (9x18mm surplus)"
+	name = "Ammo Box (9mm surplus)"
 	id = "c9mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 16000)
@@ -1223,7 +1223,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/zip_ammo_9mm
-	name = "Budget Pistol 9x18mm Magazine"
+	name = "Budget Pistol 9mm Magazine"
 	id = "ZipAmmo9mm"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 20000)
