@@ -121,8 +121,8 @@
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/laser,
 		/obj/item/gun/energy/disabler,
-		/obj/item/gun/energy/sharplite/x26,
-		/obj/item/gun/energy/sharplite/x01,
+		/obj/item/gun/energy/sharplite/ohm,
+		/obj/item/gun/energy/sharplite/yari,
 		/obj/item/gun/energy/kalix/pistol,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/ammo_box)) // this doesnt let you put hades into holsters trust me
@@ -151,7 +151,7 @@
 	can_hold = typecacheof(list(
 		/obj/item/gun/ballistic/automatic,
 		/obj/item/gun/ballistic/revolver,
-		/obj/item/gun/energy/sharplite/x26,
+		/obj/item/gun/energy/sharplite/ohm,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/pulse/carbine,
 		/obj/item/gun/energy/dueling,
