@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/automatic/pistol/challenger
 	name = "Advantage PS9 Challenger"
-	desc = "A lightweight semi-automatic 9mm pistol constructed largely of polymers. Low price point, forgiving recoil, and generous magazine capacity for its class. Chambered in 9x18mm."
+	desc = "A lightweight semi-automatic 9mm pistol constructed largely of polymers. Low price point, forgiving recoil, and generous magazine capacity for its class. Chambered in 9mm."
 	icon_state = "challenger"
 	item_state = "warra_generic"
 	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
@@ -43,7 +43,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger)
 
 /obj/item/gun/ballistic/automatic/pistol/champion
 	name = "Advantage PHB Champion"
-	desc = "A large, burst-fire machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Chambered in 9x18mm."
+	desc = "A large, burst-fire machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Chambered in 9mm."
 	icon_state = "champion"
 	item_state = "champion"
 	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
@@ -181,28 +181,28 @@ NO_MAG_GUN_HELPER(automatic/pistol/podium/inteq)
 
 
 /obj/item/ammo_box/magazine/co9mm
-	name = "challenger pistol magazine (9x18mm)"
+	name = "challenger pistol magazine (9mm)"
 	desc = "A 12-round double-stack magazine for challenger pistols. This is also compatable with the Champion machine pistol. These rounds do okay damage, but struggle against armor."
 	icon_state = "commander_mag-12"
 	base_icon_state = "commander_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9x18mm"
+	caliber = "9mm"
 	max_ammo = 12
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
 /obj/item/ammo_box/magazine/co9mm/hp
-	name = "pistol magazine (9x18mm HP)"
-	desc= "A 12-round double-stack magazine for standard-issue 9x18mm pistols. These hollow point rounds do significant damage against soft targets, but are nearly ineffective against armored ones."
+	name = "pistol magazine (9mm HP)"
+	desc= "A 12-round double-stack magazine for standard-issue 9mm pistols. These hollow point rounds do significant damage against soft targets, but are nearly ineffective against armored ones."
 	ammo_type = /obj/item/ammo_casing/c9mm/hp
 
 /obj/item/ammo_box/magazine/co9mm/ap
-	name = "pistol magazine (9x18mm AP)"
-	desc= "A 12-round double-stack magazine for standard-issue 9x18mm pistols. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
+	name = "pistol magazine (9mm AP)"
+	desc= "A 12-round double-stack magazine for standard-issue 9mm pistols. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
 
 /obj/item/ammo_box/magazine/co9mm/rubber
-	name = "pistol magazine (9x18mm rubber)"
-	desc = "A 12-round double-stack magazine for standard-issue 9x18mm pistols. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
+	name = "pistol magazine (9mm rubber)"
+	desc = "A 12-round double-stack magazine for standard-issue 9mm pistols. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
 /obj/item/ammo_box/magazine/co9mm/update_icon_state()
@@ -216,7 +216,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/podium/inteq)
 
 /obj/item/gun/ballistic/automatic/pistol/challenger/inteq
 	name = "PS-03 Commissioner"
-	desc = "A modified version of the PS9 Challenger, issued as standard to Inteq Risk Management Group personnel. Features the same excellent handling and high magazine capacity as the original. Chambered in 9x18mm."
+	desc = "A modified version of the PS9 Challenger, issued as standard to Inteq Risk Management Group personnel. Features the same excellent handling and high magazine capacity as the original. Chambered in 9mm."
 
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
@@ -294,12 +294,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 NO_MAG_GUN_HELPER(automatic/smg/expedition)
 
 /obj/item/ammo_box/magazine/m9mm_expedition
-	name = "expedition submachinegun magazine (9x18mm)"
+	name = "expedition submachinegun magazine (9mm)"
 	desc = "A 30-round magazine for the Expedition submachine gun. These rounds do okay damage, but struggle against armor."
 	icon_state = "expedition_mag-30"
 	base_icon_state = "expedition_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9x18mm"
+	caliber = "9mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
@@ -311,12 +311,12 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m9mm_expedition/ap
-	name = "expedition submachinegun magazine (9x18mm AP)"
+	name = "expedition submachinegun magazine (9mm AP)"
 	desc = "A 30-round magazine for the Expedition submachine gun. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
 
 /obj/item/ammo_box/magazine/m9mm_expedition/rubber
-	name = "expedition submachinegun magazine (9x18mm rubber)"
+	name = "expedition submachinegun magazine (9mm rubber)"
 	desc = "A 30-round magazine for the Expedition submachine gun. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
