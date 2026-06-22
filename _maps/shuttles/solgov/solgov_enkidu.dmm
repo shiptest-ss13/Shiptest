@@ -693,9 +693,6 @@
 /obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"gY" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/security/armory)
 "gZ" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -1490,13 +1487,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
-"nN" = (
-/obj/structure/sign/solgov_seal{
-	pixel_x = -1;
-	pixel_y = -1
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/security/armory)
 "nT" = (
 /obj/effect/turf_decal/solgov/all/center_right,
 /obj/effect/turf_decal/siding/wood{
@@ -1874,10 +1864,7 @@
 	pixel_y = 1;
 	pixel_x = 1
 	},
-/obj/item/pinpointer/crew/prox{
-	pixel_y = 1;
-	pixel_x = 0
-	},
+/obj/item/pinpointer/crew,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "qK" = (
@@ -2513,9 +2500,6 @@
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "vK" = (
-/obj/machinery/porta_turret/ship/solcon/lance{
-	id = "enkidu_grid"
-	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/security/armory)
 "vN" = (
@@ -4532,6 +4516,12 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
+"NV" = (
+/obj/machinery/porta_turret/ship/solcon/lance{
+	id = "enkidu_grid"
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/security/armory)
 "Od" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -5593,6 +5583,13 @@
 /obj/effect/turf_decal/industrial/outline/red,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
+"XT" = (
+/obj/structure/sign/solgov_seal{
+	pixel_x = -1;
+	pixel_y = -1
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/security/armory)
 "Yb" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -6495,14 +6492,14 @@ Gk
 (27,1,1) = {"
 Gk
 Gk
-gY
+vK
 ML
 AD
 kf
 Eu
 kN
 ML
-gY
+vK
 Gk
 Gk
 Gk
@@ -6580,7 +6577,7 @@ Gk
 Gk
 Gk
 Gk
-gY
+vK
 ML
 ML
 cy
@@ -6609,7 +6606,7 @@ Gk
 Gk
 Gk
 Gk
-vK
+NV
 ML
 ZQ
 ZQ
@@ -6638,11 +6635,11 @@ Gk
 Gk
 Gk
 Gk
-gY
-ML
-ML
-nN
 vK
+ML
+ML
+XT
+NV
 Gk
 Gk
 Gk
