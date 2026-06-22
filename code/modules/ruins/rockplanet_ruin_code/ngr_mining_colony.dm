@@ -48,7 +48,7 @@
 
 /obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/commanders_log_two
 	name = "commander's log, day 78"
-	default_raw_text = "<b>Day 78</b><br><br>Score. A 9-man fireteam of the Ramz traitors attacked the colony earlier today. Good news is, we managed to track their dropship down before they finished getting out. Our troops killed one of them and captured the rest alive. Bad news is the colony's brig is now massively overcrowded, so we've had to order for a few mattresses so they've got places to sleep. Command says it'll be a 'month or two' before they get a transport in, apparently due to a recent wave of Frontiersmen cells in Republic space surrendering and needing to be hauled back. Should at least keep 'em comfortable."
+	default_raw_text = "<b>Day 78</b><br><br>Score. A 9-man fireteam of the Ramzi traitors attacked the colony earlier today. Good news is, we managed to track their dropship down before they finished getting out. Our troops killed one of them and captured the rest alive. Bad news is the colony's brig is now massively overcrowded, so we've had to order for a few mattresses so they've got places to sleep. Command says it'll be a 'month or two' before they get a transport in, apparently due to a recent wave of Frontiersmen cells in Republic space surrendering and needing to be hauled back. Should at least keep 'em comfortable."
 
 /obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/commanders_log_three
 	name = "commander's log, day 108"

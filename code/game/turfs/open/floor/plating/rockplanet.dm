@@ -176,6 +176,7 @@ ROCK_PLATING_TURF_HELPER(plating/rust)
 
 ROCK_TURF_HELPER(plasteel/stairs)
 ROCK_TURF_HELPER(plasteel)
+ROCK_TURF_HELPER(pod)
 ROCK_TURF_HELPER(plasteel/dark)
 ROCK_TURF_HELPER(plasteel/patterned)
 ROCK_TURF_HELPER(plasteel/patterned/brushed)
