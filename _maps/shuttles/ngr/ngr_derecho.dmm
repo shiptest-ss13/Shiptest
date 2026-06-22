@@ -393,15 +393,15 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "dX" = (
-/obj/machinery/mineral/processing_unit{
-	output_dir = 4;
-	input_dir = 8
-	},
 /obj/machinery/conveyor{
 	dir = 9;
 	id = "derecho_conveyor"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/mineral/unloading_machine{
+	input_dir = 2;
+	output_dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/science/workshop)
 "ea" = (
@@ -5338,12 +5338,12 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew)
 "Wo" = (
-/obj/machinery/mineral/unloading_machine,
 /obj/machinery/conveyor{
 	dir = 10;
 	id = "derecho_conveyor"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/mineral/processing_unit,
 /turf/open/floor/plating,
 /area/ship/science/workshop)
 "Wp" = (
