@@ -1559,7 +1559,14 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/dogbed,
-/mob/living/simple_animal/hostile/asteroid/goliath/pup,
+/mob/living/simple_animal/hostile/asteroid/goliath/pup{
+	faction = list("neutral","New Gorlex Republic");
+	a_intent = "help";
+	name = "David";
+	desc = "An immature goliath. Someone has managed to, somehow, slip a collar around its neck, with jangling dogtags, too.";
+	pixel_x = 0;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew)
 "nz" = (
@@ -3533,14 +3540,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines)
-"Gx" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/structure/grille,
-/obj/machinery/door/poddoor/shutters{
-	id = s
-	},
-/turf/open/floor/plating,
-/area/ship/cargo)
 "GC" = (
 /obj/structure/table/reinforced,
 /obj/machinery/reagentgrinder{
@@ -6798,7 +6797,7 @@ qQ
 gW
 OC
 Jj
-Gx
+TG
 Tq
 "}
 (34,1,1) = {"
