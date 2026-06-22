@@ -72,7 +72,6 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	back = /obj/item/storage/backpack
 	box = /obj/item/storage/box/survival
-	backpack_contents = list(/obj/item/crowbar/power)
 
 /datum/outfit/job/solgov/representative
 	name = "SolGov - Solarian Representative"
