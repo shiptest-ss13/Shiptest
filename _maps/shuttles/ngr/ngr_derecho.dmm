@@ -37,6 +37,10 @@
 /obj/item/pen,
 /obj/item/pen,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/directional/north{
+	pixel_x = 1;
+	pixel_y = 41
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "aA" = (
@@ -395,7 +399,7 @@
 	},
 /obj/machinery/conveyor{
 	dir = 9;
-	id = "ns_port_conveyor"
+	id = "derecho_conveyor"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -955,7 +959,9 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew)
 "jA" = (
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "derecho_furnace_shutter"
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
@@ -1107,7 +1113,6 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_cw,
-/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "kH" = (
@@ -1132,6 +1137,12 @@
 /obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
+"kO" = (
+/obj/effect/spawner/bunk_bed,
+/obj/structure/curtain/bounty,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/carpet/red,
+/area/ship/crew)
 "kU" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/yellow,
@@ -1466,7 +1477,9 @@
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "nb" = (
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	name = "Furnace Maintinence Hatch"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/workshop)
 "ng" = (
@@ -1735,6 +1748,7 @@
 	dir = 8
 	},
 /obj/item/clothing/mask/gas/syndicate,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "pC" = (
@@ -1933,6 +1947,7 @@
 /area/ship/cargo)
 "qR" = (
 /obj/structure/table/wood,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/commad)
 "qS" = (
@@ -1943,15 +1958,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
-"qZ" = (
-/obj/structure/closet/secure_closet/medical3{
-	req_access = null
-	},
-/obj/structure/closet/secure_closet/medical3{
-	req_access = null
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew)
 "rq" = (
 /obj/structure/sign/warning/vacuum{
 	pixel_x = 0;
@@ -2116,15 +2122,8 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/floor/hangar,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
-"ta" = (
-/obj/effect/spawner/bunk_bed,
-/obj/structure/curtain/bounty,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/carpet/red,
-/area/ship/crew)
 "tg" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -2148,11 +2147,12 @@
 /obj/item/storage/firstaid/regular,
 /obj/item/storage/pouch/medical,
 /obj/machinery/light/small/directional/north,
-/obj/structure/sink/counter{
-	dir = 4
-	},
 /obj/item/reagent_containers/glass/filter,
 /obj/item/storage/box/syringes,
+/obj/structure/sink/counter{
+	pixel_x = 0;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "tJ" = (
@@ -2270,6 +2270,13 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/south,
+/obj/machinery/button/door{
+	name = "Medical Shutter";
+	id = "derecho_medbay";
+	pixel_x = 10;
+	pixel_y = -22;
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "vV" = (
@@ -2529,7 +2536,6 @@
 /area/ship/engineering/electrical)
 "zn" = (
 /obj/structure/chair/handrail,
-/obj/machinery/light/floor/hangar,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod,
 /area/ship/cargo)
@@ -2966,7 +2972,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
 	},
-/obj/machinery/light/directional/north,
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "CH" = (
@@ -3242,9 +3248,6 @@
 /obj/item/storage/pouch/engi,
 /obj/item/clothing/gloves/insulated,
 /obj/item/radio/headset/alt,
-/obj/structure/closet/secure_closet/medical3{
-	req_access = null
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "EM" = (
@@ -3637,6 +3640,7 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_ccw,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "HP" = (
@@ -3949,12 +3953,12 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/light/small/directional/east,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 21;
 	pixel_y = -10
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm/commad)
 "KD" = (
@@ -4027,7 +4031,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/directional/west,
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "LD" = (
@@ -4169,7 +4173,8 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/secure_closet/medical3{
-	req_access = null
+	req_access = null;
+	populate = 0
 	},
 /obj/item/clothing/head/ngr/surgical,
 /obj/item/clothing/suit/ngr/smock,
@@ -4342,7 +4347,7 @@
 "Of" = (
 /obj/machinery/conveyor{
 	dir = 5;
-	id = "derecho_belt"
+	id = "derecho_conveyor"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -4484,13 +4489,18 @@
 	},
 /obj/structure/sign/flag/ngr{
 	dir = 8;
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = 0
 	},
 /obj/item/binoculars{
 	pixel_x = -3;
 	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/directional/east{
+	pixel_x = 37;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "OV" = (
@@ -4792,7 +4802,7 @@
 "RY" = (
 /obj/machinery/conveyor{
 	dir = 6;
-	id = "ns_port_conveyor"
+	id = "derecho_conveyor"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -4850,6 +4860,10 @@
 "SP" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "derecho_medbay"
+	},
 /turf/open/floor/plating,
 /area/ship/medical)
 "SY" = (
@@ -5074,6 +5088,17 @@
 /obj/effect/turf_decal/corner/opaque/tan/half,
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /obj/machinery/light/small/directional/north,
+/obj/machinery/button/door{
+	pixel_x = -9;
+	pixel_y = 24;
+	id = "derecho_furnace_shutter";
+	name = "Furnace Shutter"
+	},
+/obj/machinery/conveyor_switch/oneway{
+	pixel_x = -9;
+	pixel_y = 13;
+	id = "derecho_conveyor"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
 "Ui" = (
@@ -5316,7 +5341,7 @@
 /obj/machinery/mineral/unloading_machine,
 /obj/machinery/conveyor{
 	dir = 10;
-	id = "ns_port_conveyor"
+	id = "derecho_conveyor"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -5352,6 +5377,10 @@
 	icon_state = "0-1"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/dim/directional/south{
+	pixel_x = 0;
+	pixel_y = -37
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/workshop)
 "WB" = (
@@ -5621,7 +5650,6 @@
 	pixel_y = 2;
 	pixel_x = -3
 	},
-/obj/machinery/light/dim/directional/south,
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
@@ -5736,7 +5764,6 @@
 	icon_state = "5-10"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/floor/hangar,
 /turf/open/floor/pod,
 /area/ship/science/workshop)
 "ZW" = (
@@ -6033,7 +6060,7 @@ Im
 Ty
 Wb
 Zg
-ta
+kO
 be
 QD
 xQ
@@ -6110,7 +6137,7 @@ lY
 sv
 cJ
 ED
-qZ
+Zg
 TC
 NY
 nJ
