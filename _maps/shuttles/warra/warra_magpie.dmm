@@ -168,8 +168,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/commad)
 "bm" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -249,10 +248,7 @@
 /area/ship/engineering)
 "bI" = (
 /obj/structure/table/chem,
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/structure/noticeboard/directional/west,
 /obj/item/paper_bin{
 	pixel_x = -5;
 	pixel_y = 4
@@ -487,8 +483,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
 "dW" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/effect/turf_decal/borderfloor,
@@ -978,6 +973,7 @@
 	pixel_y = -10
 	},
 /obj/item/clothing/suit/warra/vest,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
 /obj/item/clothing/head/hardhat/warra{
 	pixel_x = -4;
 	pixel_y = 8
@@ -987,6 +983,7 @@
 	pixel_y = 8
 	},
 /obj/item/clothing/glasses/meson,
+/obj/item/pda/shaftminer,
 /obj/machinery/button/door{
 	id = "magpie_miner_window";
 	name = "Window Control";
@@ -999,7 +996,6 @@
 /obj/structure/extinguisher_cabinet/directional/east{
 	pixel_y = -6
 	},
-/obj/item/pda/shaftminer,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/starboard)
 "gz" = (
@@ -1092,8 +1088,7 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/north,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 9
 	},
 /turf/open/floor/wood/walnut,
@@ -1255,8 +1250,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo/starboard)
 "iq" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
 /obj/effect/turf_decal/borderfloor{
@@ -1362,8 +1356,7 @@
 	name = "Window Control";
 	pixel_x = -21
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 8
 	},
 /turf/open/floor/wood/walnut,
@@ -1491,9 +1484,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet)
 "jB" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/structure/cable/white{
 	icon_state = "0-8"
 	},
@@ -1969,13 +1960,10 @@
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "nZ" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/corner/walnut{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/corner/walnut,
 /obj/structure/cable/white{
 	icon_state = "2-4"
 	},
@@ -2096,7 +2084,7 @@
 	pixel_x = 4;
 	pixel_y = -13
 	},
-/obj/item/clothing/gloves/color/evening{
+/obj/item/clothing/gloves/long/white{
 	pixel_x = -5;
 	pixel_y = -10
 	},
@@ -2119,8 +2107,7 @@
 /obj/item/clothing/neck/cloak/warra,
 /obj/item/radio/headset/warra,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/item/melee/classic_baton/telescopic,
@@ -2824,8 +2811,7 @@
 /obj/item/pen/fountain/captain,
 /obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 6
 	},
 /obj/item/stamp/warra/captain{
@@ -2942,8 +2928,7 @@
 /area/ship/crew/toilet)
 "uV" = (
 /obj/machinery/photocopier,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 6
 	},
 /obj/machinery/firealarm/directional/east{
@@ -3171,9 +3156,7 @@
 /area/ship/crew/toilet)
 "xg" = (
 /obj/structure/table,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/item/paper_bin{
 	pixel_x = 6;
 	pixel_y = 4
@@ -3297,7 +3280,7 @@
 	pixel_x = 5;
 	pixel_y = -13
 	},
-/obj/item/clothing/gloves/color/latex/nitrile{
+/obj/item/clothing/gloves/nitrile/blue{
 	pixel_x = -5;
 	pixel_y = -10
 	},
@@ -3358,8 +3341,7 @@
 /area/ship/engineering)
 "yV" = (
 /obj/effect/turf_decal/borderfloorblack,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -3476,8 +3458,7 @@
 /area/ship/hallway/starboard)
 "zM" = (
 /obj/item/kirbyplants/fullysynthetic,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 10
 	},
 /obj/structure/cable/white,
@@ -3837,8 +3818,7 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/machinery/newscaster/directional/north,
@@ -4082,7 +4062,7 @@
 /obj/item/storage/belt/utility/full/engi{
 	pixel_y = -4
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_y = -10
 	},
 /turf/open/floor/plasteel/tech,
@@ -4136,8 +4116,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
 "Eo" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
 /obj/structure/fluff/paper/stack{
@@ -4521,9 +4500,7 @@
 	pixel_x = -1;
 	pixel_y = 2
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/suns/hatch/walnut,
 /area/ship/crew/office)
@@ -4705,8 +4682,7 @@
 /obj/item/pda/captain{
 	pixel_x = 8
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
@@ -5211,7 +5187,7 @@
 	pixel_x = -5;
 	pixel_y = 5
 	},
-/obj/item/gun/energy/sharplite/x12/empty_cell{
+/obj/item/gun/energy/sharplite/volt/empty_cell{
 	pixel_x = -4
 	},
 /obj/item/gun/ballistic/automatic/pistol/challenger/no_mag{
@@ -5226,9 +5202,7 @@
 	dir = 5
 	},
 /obj/structure/table/chem,
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/item/stack/medical/bone_gel/four{
 	pixel_x = -9;
 	pixel_y = 15
@@ -5448,8 +5422,7 @@
 /obj/effect/spawner/bunk_bed{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 9
 	},
 /obj/structure/sign/poster/retro/warra_logo_70s{
@@ -5611,12 +5584,10 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo/starboard)
 "NP" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/corner/walnut{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/corner/walnut{
 	dir = 8
 	},
 /obj/structure/cable/white{
@@ -5833,8 +5804,7 @@
 	pixel_y = -6
 	},
 /obj/machinery/fax/warra,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 5
 	},
 /turf/open/floor/wood/walnut,
@@ -5844,8 +5814,7 @@
 	density = 0;
 	pixel_x = 10
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 5
 	},
 /turf/open/floor/suns/hatch/walnut,
@@ -6367,8 +6336,7 @@
 /area/ship/hallway/port)
 "TY" = (
 /obj/effect/spawner/bunk_bed,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 5
 	},
 /obj/structure/sign/poster/contraband/lusty_xenomorph{
@@ -6524,10 +6492,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "UY" = (
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/effect/turf_decal/industrial/hatch/blue,
 /obj/machinery/computer/atmos_control/external{
 	dir = 1;
@@ -6538,8 +6503,7 @@
 /area/ship/engineering)
 "Vi" = (
 /obj/structure/table/wood,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/item/paper_bin{
@@ -6614,8 +6578,7 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/machinery/newscaster/directional/north,
@@ -6812,8 +6775,7 @@
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = 6
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 10
 	},
 /obj/item/radio/intercom/directional/west,

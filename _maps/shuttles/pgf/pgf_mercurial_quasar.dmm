@@ -110,7 +110,7 @@
 	icon_state = "4-8"
 	},
 /obj/item/radio/intercom/directional/south,
-/obj/effect/turf_decal/etherbor/right,
+/obj/effect/turf_decal/axilai/offset/lower_right,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "bC" = (
@@ -294,7 +294,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/etherbor/left,
+/obj/effect/turf_decal/axilai/offset/lower_left,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "dn" = (
@@ -508,18 +508,6 @@
 	pixel_y = 10;
 	pixel_x = 3
 	},
-/obj/item/clothing/under/gezena{
-	pixel_y = 3;
-	pixel_x = -9
-	},
-/obj/item/clothing/under/gezena{
-	pixel_y = 3;
-	pixel_x = -9
-	},
-/obj/item/clothing/under/gezena{
-	pixel_y = 3;
-	pixel_x = -9
-	},
 /obj/item/clothing/head/gezena/flap{
 	pixel_y = 11;
 	pixel_x = -10
@@ -579,6 +567,22 @@
 	},
 /obj/effect/turf_decal/trimline/transparent/beige/filled/corner{
 	dir = 4
+	},
+/obj/item/storage/box/gloves/formal{
+	pixel_x = -12;
+	pixel_y = 0
+	},
+/obj/item/clothing/under/gezena{
+	pixel_y = 3;
+	pixel_x = -9
+	},
+/obj/item/clothing/under/gezena{
+	pixel_y = 3;
+	pixel_x = -9
+	},
+/obj/item/clothing/under/gezena{
+	pixel_y = 3;
+	pixel_x = -9
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
@@ -667,10 +671,7 @@
 /obj/structure/extinguisher_cabinet/directional/east{
 	pixel_y = -7
 	},
-/obj/structure/noticeboard{
-	pixel_y = -25;
-	dir = 1
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/item/paper/fluff/ship/pgf/lifesaving,
 /obj/item/paper/fluff/ship/pgf/triage,
 /turf/open/floor/plasteel/mono/dark,
@@ -964,40 +965,16 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/neutral/full,
 /obj/machinery/light/small/directional/west,
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = -7;
-	pixel_x = -8
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = 7;
-	pixel_x = 8
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = -7;
-	pixel_x = 8
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = 7;
-	pixel_x = 8
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = -7;
-	pixel_x = -8
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = -7;
-	pixel_x = 8
-	},
 /obj/effect/turf_decal/corner/opaque/purple/bordercee{
 	dir = 4
 	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = 7;
-	pixel_x = -8
+/obj/item/storage/toolbox/ammo/ewc_6m/half{
+	pixel_x = -3;
+	pixel_y = 9
 	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = 7;
-	pixel_x = -8
+/obj/item/storage/toolbox/ammo/ewc_6m/half{
+	pixel_x = 3;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -1164,7 +1141,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/etherbor/center,
+/obj/effect/turf_decal/axilai/offset/lower_center,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "ok" = (
@@ -1340,6 +1317,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/axilai/offset/upper_right,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "rr" = (
@@ -1611,6 +1589,7 @@
 /obj/structure/sign/poster/pgf/random{
 	pixel_y = 32
 	},
+/obj/effect/turf_decal/axilai/offset/upper_left,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "tV" = (
@@ -2604,7 +2583,7 @@
 /obj/item/clothing/neck/stethoscope{
 	pixel_y = -7
 	},
-/obj/item/clothing/gloves/color/latex/nitrile{
+/obj/item/clothing/gloves/nitrile/blue{
 	pixel_x = 4;
 	pixel_y = 5
 	},
@@ -2669,15 +2648,18 @@
 	},
 /obj/item/bodycamera{
 	pixel_x = 0;
-	pixel_y = 0
+	pixel_y = 0;
+	c_tag = "FOXTROT-2"
 	},
 /obj/item/bodycamera{
 	pixel_y = 0;
-	pixel_x = 7
+	pixel_x = 7;
+	c_tag = "FOXTROT-3"
 	},
 /obj/item/bodycamera{
 	pixel_x = 3;
-	pixel_y = -2
+	pixel_y = -2;
+	c_tag = "FOXTROT-1-LEAD"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge/cool)
@@ -3120,6 +3102,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/axilai/offset/upper_center,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Md" = (
@@ -3791,10 +3774,7 @@
 "VZ" = (
 /obj/effect/turf_decal/techfloor,
 /obj/structure/table/reinforced,
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},

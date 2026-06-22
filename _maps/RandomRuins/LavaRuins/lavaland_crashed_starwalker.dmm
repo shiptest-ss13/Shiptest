@@ -694,9 +694,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/noticeboard{
-	pixel_y = 31
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/structure/cable/pink{
 	icon_state = "4-10"
 	},
@@ -2424,7 +2422,7 @@
 	icon_state = "gib2-old"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/item/clothing/gloves/nitrile/evil,
 /obj/item/reagent_containers/syringe/contraband{
 	pixel_y = 5;
 	pixel_x = -4

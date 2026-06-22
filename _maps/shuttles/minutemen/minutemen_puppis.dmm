@@ -288,10 +288,7 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5{
 	dir = 8
 	},
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -1798,9 +1795,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "sS" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
@@ -2103,9 +2098,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "wI" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2256,8 +2249,7 @@
 /obj/structure/closet/crate/bin{
 	pixel_y = 5
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 6
 	},
 /obj/structure/cable{
@@ -2586,9 +2578,7 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 4
 	},
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -3564,7 +3554,7 @@
 /obj/item/clothing/under/clip/medic,
 /obj/item/pinpointer/crew,
 /obj/item/sensor_device,
-/obj/item/clothing/gloves/color/latex/nitrile/clip{
+/obj/item/clothing/gloves/nitrile{
 	pixel_x = -11;
 	pixel_y = 5
 	},
@@ -4029,9 +4019,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "PG" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -4404,9 +4392,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/ccommons)
 "Tg" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
@@ -4437,9 +4423,7 @@
 	pixel_x = 8;
 	pixel_y = 8
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/item/clothing/under/clip/minutemen{
 	pixel_x = 7;
 	pixel_y = -5
@@ -4715,9 +4699,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "VN" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},

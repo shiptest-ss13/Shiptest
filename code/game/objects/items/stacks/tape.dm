@@ -75,8 +75,12 @@
 	singular_name = "surgical tape"
 	desc = "Made for patching broken bones back together alongside bone gel."
 	prefix = "surgical"
+	amount = 1
 	conferred_embed = list("embed_chance" = 30, "pain_mult" = 0, "jostle_pain_mult" = 0, "ignore_throwspeed_threshold" = TRUE)
-	custom_price = 500
+	custom_price = 100
+
+/obj/item/stack/sticky_tape/surgical/four
+	amount = 4
 
 /obj/item/stack/tape
 	name = "packaging tape"
@@ -278,7 +282,7 @@
 
 /obj/item/stack/tape/industrial/electrical/wrap_item(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/clothing/gloves/color))
-		var/obj/item/clothing/gloves/color/yellow/sprayon/tape/O = new /obj/item/clothing/gloves/color/yellow/sprayon/tape
+		var/obj/item/clothing/gloves/insulated/sprayon/tape/O = new /obj/item/clothing/gloves/insulated/sprayon/tape
 		to_chat(user, span_notice("You turn [I] into [O] with [src]."))
 		QDEL_NULL(I)
 		user.put_in_hands(O)

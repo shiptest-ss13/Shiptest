@@ -512,7 +512,7 @@
 	pixel_x = 10;
 	pixel_y = -8
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = 8
 	},
 /obj/effect/turf_decal/siding/white{
@@ -2249,7 +2249,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
-/obj/item/gun/energy/sharplite/l305,
+/obj/item/gun/energy/sharplite/rush,
 /obj/item/gun/ballistic/automatic/pistol/challenger,
 /obj/item/gun/ballistic/automatic/pistol/champion/no_mag,
 /obj/item/gun/ballistic/shotgun/automatic/negotiator/empty,
@@ -4041,10 +4041,7 @@
 /area/ship/cargo)
 "TU" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/noticeboard/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)

@@ -463,7 +463,7 @@
 					/obj/item/clothing/head/fedora = 2,
 					/obj/item/clothing/accessory/armband/deputy = 4,
 					/obj/item/clothing/gloves/color/black = 2,
-					/obj/item/clothing/gloves/color/latex = 2,
+					/obj/item/clothing/gloves/nitrile = 2,
 					/obj/item/reagent_containers/food/drinks/flask/det = 2,
 					/obj/item/storage/fancy/cigarettes = 5)
 	premium = list(/obj/item/clothing/head/flatcap = 1)
@@ -527,7 +527,7 @@
 		/obj/item/clothing/mask/gas/clip = 3,
 		/obj/item/storage/belt/military/clip = 3,
 		/obj/item/storage/belt/medical/webbing/clip = 3,
-		/obj/item/clothing/gloves/color/latex/nitrile/clip = 3,
+		/obj/item/clothing/gloves/nitrile = 3,
 
 		/obj/item/clothing/suit/toggle/lawyer/clip = 3,
 		/obj/item/clothing/suit/armor/vest/capcarapace/clip = 3,
