@@ -142,6 +142,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/item/soap/syndie,
+/obj/effect/turf_decal/corner/transparent/black/full{
+	color = "#747577"
+	},
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
 "bW" = (
@@ -260,11 +263,6 @@
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 10;
 	layer = 2.040
-	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -23;
-	pixel_y = 3
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1261,18 +1259,15 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "ln" = (
-/obj/machinery/washing_machine{
-	pixel_x = 8;
-	pixel_y = 2;
-	density = 0;
-	should_we_be_dense = 0
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
-/obj/machinery/airalarm/directional/west,
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plastic,
+/obj/structure/toilet,
+/obj/structure/curtain,
+/obj/effect/turf_decal/corner/transparent/black/full{
+	color = "#747577"
+	},
+/turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "lt" = (
 /obj/machinery/power/terminal,
@@ -1950,6 +1945,9 @@
 /area/ship/crew)
 "qE" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/transparent/black/full{
+	color = "#747577"
+	},
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
 "qF" = (
@@ -2264,6 +2262,11 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2613,6 +2616,16 @@
 "zn" = (
 /obj/structure/chair/handrail,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	pixel_x = -6;
+	pixel_y = 23;
+	id = "derecho_cargo_door"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 5;
+	pixel_y = 21;
+	id = "derecho_cargo_holo"
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "zr" = (
@@ -2943,6 +2956,9 @@
 	pixel_y = 5
 	},
 /obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/corner/transparent/black/full{
+	color = "#747577"
+	},
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
 "BZ" = (
@@ -2985,6 +3001,7 @@
 	pixel_x = -1;
 	pixel_y = 1
 	},
+/obj/machinery/computer/helm/viewscreen/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
 "Cl" = (
@@ -3422,6 +3439,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/black/full{
+	color = "#747577"
 	},
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
@@ -4338,6 +4358,9 @@
 	pixel_y = 7
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/transparent/black/full{
+	color = "#747577"
+	},
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
 "MN" = (
@@ -4370,20 +4393,11 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/button/shieldwallgen{
-	pixel_x = 5;
-	pixel_y = 21;
-	id = "derecho_cargo_holo"
-	},
-/obj/machinery/button/door{
-	pixel_x = -6;
-	pixel_y = 23;
-	id = "derecho_cargo_door"
-	},
 /obj/item/geiger_counter{
 	pixel_x = 4;
 	pixel_y = 1
 	},
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Nk" = (
@@ -4966,6 +4980,20 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"SL" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "SP" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -5644,16 +5672,15 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "XR" = (
-/obj/structure/curtain,
-/obj/structure/toilet{
-	dir = 8;
-	pixel_x = 5;
-	pixel_y = 5
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/obj/item/radio/intercom/directional/south,
+/obj/machinery/firealarm/directional/south,
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/washing_machine,
+/obj/effect/turf_decal/corner/transparent/black/full{
+	color = "#747577"
+	},
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
 "Yc" = (
@@ -5669,6 +5696,23 @@
 	icon_state = "5-10"
 	},
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ship/science/workshop)
+"Yd" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/black/full,
 /turf/open/floor/plasteel,
 /area/ship/science/workshop)
 "Yi" = (
@@ -5765,6 +5809,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/corner/transparent/black/full{
+	color = "#747577"
 	},
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
@@ -6638,7 +6685,7 @@ yi
 ky
 Eu
 Yc
-Np
+Yd
 vY
 yi
 ua
@@ -6785,7 +6832,7 @@ xM
 xM
 uE
 Th
-HQ
+SL
 qQ
 gW
 OC
