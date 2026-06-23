@@ -16,6 +16,9 @@
 	var/id_tag
 	var/target_layer = PIPING_LAYER_DEFAULT
 
+	var/particle_to_spawn = /particles/smoke/steam/vent
+	var/obj/effect/particle_holder/part_hold
+
 /obj/machinery/meter/atmos
 	frequency = FREQ_ATMOS_STORAGE
 
@@ -44,6 +47,11 @@
 	SSair.start_processing_machine(src, mapload)
 	if(!target)
 		reattach_to_layer()
+	part_hold = new(src)
+	part_hold.layer = EDGED_TURF_LAYER
+	part_hold.particles = new particle_to_spawn()
+	underlays.Cut()
+	part_hold.particles.spawning = 0
 	return ..()
 
 /obj/machinery/meter/proc/reattach_to_layer()
@@ -76,6 +84,7 @@
 		return 0
 
 	var/env_pressure = environment.return_pressure()
+	var/env_temp = environment.return_temperature()
 
 	var/icon_val = round((env_pressure/30), 1)
 
@@ -85,6 +94,21 @@
 		icon_state = "[base_icon_state]-33"
 	else
 		icon_state = "[base_icon_state]-[icon_val]"
+
+	if(env_temp >= 973.15)
+		part_hold.particles.spawning = 3
+	else if(env_temp >= 873.15)
+		part_hold.particles.spawning = 2
+	else if(env_temp >= 773.15)
+		part_hold.particles.spawning = 1
+	else
+		part_hold.particles.spawning = 0
+
+	if(env_temp >= 973.15)
+		cut_overlays()
+		add_overlay("meter-extreme_temp")
+	else
+		cut_overlays()
 
 
 /*
@@ -122,6 +146,8 @@
 		var/datum/gas_mixture/environment = target.return_air()
 		if(environment)
 			. = "The pressure gauge reads [round(environment.return_pressure(), 0.01)] kPa."
+			if(environment.return_temperature() >= 973.15)
+				. = "\nThe pressure gauge appears to be melting. We weren't even testing for that. The warped remains reads [round(environment.return_pressure(), 0.01)] kPa."
 		else
 			. = "The sensor error light is blinking."
 	else
@@ -173,18 +199,15 @@
 	icon_state = "temperature-0"
 	base_icon_state = "temperature"
 
-	var/particle_to_spawn = /particles/smoke/steam/vent
-	var/obj/effect/particle_holder/part_hold
-
-
 /obj/machinery/meter/temperature/layer2
 	target_layer = 2
 
 /obj/machinery/meter/temperature/layer4
 	target_layer = 4
+
 /obj/machinery/meter/temperature/Initialize(mapload, new_piping_layer)
 	. = ..()
-	part_hold = new(get_turf(src))
+	part_hold = new(src)
 	part_hold.layer = EDGED_TURF_LAYER
 	part_hold.particles = new particle_to_spawn()
 	underlays.Cut()

@@ -1,12 +1,12 @@
 GLOBAL_LIST_INIT(cable_colors, list(
-	"yellow" = "#ffff00",
+	"yellow" = "#fff957",
 	"green" = "#00aa00",
-	"blue" = "#1919c8",
-	"pink" = "#ff3cc8",
+	"blue" = "#4252ff",
+	"pink" = "#ff78eb",
 	"orange" = "#ff8000",
-	"cyan" = "#00ffff",
-	"white" = "#ffffff",
-	"red" = "#ff0000"
+	"cyan" = "#60d5fc",
+	"white" = "#efefef",
+	"red" = "#ff3030"
 	))
 
 ///////////////////////////////

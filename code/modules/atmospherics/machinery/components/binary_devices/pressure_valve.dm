@@ -1,6 +1,7 @@
+//this shit iset even in the rped...
 /obj/machinery/atmospherics/components/binary/pressure_valve
 	icon_state = "pvalve_map-3"
-	name = "passive gate"
+	name = "pressure valve"
 	desc = "A one-way air valve that does not require power. Passes gas when the output pressure is lower than the target pressure."
 
 	can_unwrench = TRUE
