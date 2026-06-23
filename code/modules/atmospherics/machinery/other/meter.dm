@@ -18,6 +18,7 @@
 
 	var/particle_to_spawn = /particles/smoke/steam/vent
 	var/obj/effect/particle_holder/part_hold
+	var/obj/decon_path = /obj/item/pipe_meter
 
 /obj/machinery/meter/atmos
 	frequency = FREQ_ATMOS_STORAGE
@@ -170,7 +171,7 @@
 
 /obj/machinery/meter/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/pipe_meter(loc)
+		new decon_path(loc)
 	qdel(src)
 
 /obj/machinery/meter/interact(mob/user)
@@ -198,6 +199,7 @@
 	icon = 'icons/obj/atmospherics/pipes/meter.dmi'
 	icon_state = "temperature-0"
 	base_icon_state = "temperature"
+	decon_path = /obj/item/pipe_meter/temperature
 
 /obj/machinery/meter/temperature/layer2
 	target_layer = 2

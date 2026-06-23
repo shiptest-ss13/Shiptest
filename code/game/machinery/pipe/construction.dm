@@ -175,13 +175,14 @@ Buildable meters
 	T.flipped = flipped
 
 /obj/item/pipe_meter
-	name = "meter"
-	desc = "A meter that can be laid on pipes."
+	name = "pressure meter"
+	desc = "A pressure meter that can be laid on pipes."
 	icon = 'icons/obj/atmospherics/pipes/pipe_item.dmi'
-	icon_state = "meter"
+	icon_state = "meter_pressure"
 	item_state = "buildpipe"
 	w_class = WEIGHT_CLASS_BULKY
 	var/piping_layer = PIPING_LAYER_DEFAULT
+	var/obj/buildpath = /obj/machinery/meter
 
 /obj/item/pipe_meter/wrench_act(mob/living/user, obj/item/wrench/W)
 	. = ..()
@@ -193,7 +194,7 @@ Buildable meters
 	if(!pipe)
 		to_chat(user, span_warning("You need to fasten it to a pipe!"))
 		return TRUE
-	new /obj/machinery/meter(loc, piping_layer)
+	new buildpath(loc, piping_layer)
 	W.play_tool_sound(src)
 	to_chat(user, span_notice("You fasten the meter to the pipe."))
 	qdel(src)
@@ -220,3 +221,10 @@ Buildable meters
 /obj/item/pipe_meter/proc/setAttachLayer(new_layer = PIPING_LAYER_DEFAULT)
 	piping_layer = new_layer
 	PIPING_LAYER_DOUBLE_SHIFT(src, piping_layer)
+
+/obj/item/pipe_meter/temperature
+	name = "temperature meter"
+	desc = "A temperature meter that can be laid on pipes."
+	icon_state = "meter_temp"
+	item_state = "buildpipe"
+	buildpath = /obj/machinery/meter/temperature
