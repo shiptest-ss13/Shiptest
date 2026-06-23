@@ -34,7 +34,6 @@
 	desc = "Guppy is also known as rainbow fish because of the brightly colored body and fins."
 	icon_state = "guppy"
 	dedicated_in_aquarium_icon_state = "guppy_small"
-	aquarium_vc_color = "#91AE64"
 	sprite_width = 8
 	sprite_height = 5
 	average_size = 30
@@ -49,7 +48,6 @@
 	desc = "Due to their small size, tetras are prey to many predators in their watery world, including eels, crustaceans, and invertebrates."
 	icon_state = "plastetra"
 	dedicated_in_aquarium_icon_state = "plastetra_small"
-	aquarium_vc_color = "#D30EB0"
 	average_size = 30
 	average_weight = 500
 	stable_population = 3
@@ -59,7 +57,6 @@
 	desc = "A catfish has about 100,000 taste buds, and their bodies are covered with them to help detect chemicals present in the water and also to respond to touch."
 	icon_state = "catfish"
 	dedicated_in_aquarium_icon_state = "catfish_small"
-	aquarium_vc_color = "#907420"
 	average_size = 100
 	average_weight = 2000
 	stable_population = 3
@@ -77,7 +74,6 @@
 	desc = "A large, carnivorous freshwater fish known for thriving in most environments and being popular amongst sport fishers."
 	icon_state = "bass"
 	dedicated_in_aquarium_icon_state = "bass_small"
-	aquarium_vc_color = "#3e8012"
 	average_size = 40
 	average_weight = 5000
 	stable_population = 3
@@ -90,7 +86,6 @@
 	desc = "A species of coastal trout closely related to salmon and with a deep history of being used as a source of food."
 	icon_state = "trout"
 	dedicated_in_aquarium_icon_state = "trout_small"
-	aquarium_vc_color = "#9e9e87"
 	required_fluid_type = AQUARIUM_FLUID_ANADROMOUS
 	average_size = 60
 	average_weight = 12000
@@ -101,7 +96,6 @@
 	desc = "The most famous of all anadromous fish! Known for migrating up rivers once they reach adulthood to lay their eggs then return to the sea."
 	icon_state = "salmon"
 	dedicated_in_aquarium_icon_state = "salmon_small"
-	aquarium_vc_color = "#76c747"
 	required_fluid_type = AQUARIUM_FLUID_ANADROMOUS
 	average_size = 60
 	average_weight = 3700
@@ -113,7 +107,6 @@
 	desc = "A relatively small, yet common, species of predatory fish."
 	icon_state = "perch"
 	dedicated_in_aquarium_icon_state = "perch_small"
-	aquarium_vc_color = "#0a4603"
 	average_size = 20
 	average_weight = 900
 	stable_population = 6
@@ -151,7 +144,6 @@
 	desc = "The Chromis can vary in color from blue to green depending on the lighting and distance from the lights."
 	icon_state = "greenchromis"
 	dedicated_in_aquarium_icon_state = "greenchromis_small"
-	aquarium_vc_color = "#00ff00"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	average_size = 30
 	average_weight = 500
