@@ -1,0 +1,166 @@
+2026-06-01:
+  rye-rice:
+  - rscadd: Nearly every box has been resprited!
+  - rscadd: You are now able to label boxes with a pen on right-click
+  - rscadd: Using cardboard, you can now make different colors of boxes
+  - rscadd: All the generic gloves have gotten a resprite
+  - rscadd: There's now a gloves color for every jumpsuit color
+  - rscadd: Nitrile gloves  have 4 colors now
+  - rscadd: Recolorable gloves are now available in loadout
+  - rscdel: Latex gloves are now Nitrile gloves
+  - rscdel: rainbow and red insulated were removed, if you even noticed
+  - rscdel: Washing a yellow crayon with any pair of gloves no longer produces fake
+      insulated gloves
+  - rscdel: evening gloves -> white long gloves
+  - balance: Nitrile gloves fireman carry 1 second slower and no longer allow you
+      to parkour tables as easily
+  - rscadd: Resprites all pills, and adds some more!
+  - rscadd: Resprites pill bottles, you can now alt-click to choose a few variants!
+2026-06-02:
+  DIB-DOG:
+  - rscadd: Added formal glove boxes
+  - balance: Swapped the Cthonian Armory from mid tier civilian weapons to low tier
+      military weapons, sidegrade
+  - bugfix: fixed Crying Sun Oxygen pump, again
+  - bugfix: put PGF cells into ammo cans instead of being loose and reorganized gun
+      cases
+  Luftkommando:
+  - rscadd: Hardliner Holdout
+  - rscdel: Buried Shrine
+  - bugfix: Donk! Co. mention in syndicate_base.dm
+2026-06-03:
+  Gristlebee:
+  - rscadd: Vox pidgin symbol shows for people for understand the language.
+2026-06-04:
+  Bumtickley00:
+  - bugfix: You are no longer permanently slowed when landing on water.
+  Lemoninthedark + MrMelbert (Original code), Bumtickley00 (Porting):
+  - bugfix: Monkeys no longer appear mangled on examine when they aren't.
+  - bugfix: Monkeys will no longer become permanently stuck juggling items.
+  zimon9:
+  - rscadd: Added ability for rachnids to speak in solarian and tecetian
+  - bugfix: fixes interaction of papers on clipboards
+2026-06-05:
+  goober3:
+  - bugfix: Agni's car battery room has been cleaned up to rectify mysterious check
+      failures.
+  zimon9:
+  - balance: changed quantities of bone gel and surgical tape in bruise kits to be
+      equal and reduced number of surgical tape packs that needed to be bought at
+      once
+2026-06-06:
+  BaseballDuster:
+  - bugfix: fixed the Raskas helmet light states.
+  firebudgy:
+  - balance: Planetary interference reduced.
+  miniusAreas:
+  - rscadd: Remaps the Goliath to be significantly more robust.
+  thearbiber:
+  - balance: ruin loot audit
+  - rscadd: stag-class salvage rig
+  zimon9:
+  - balance: makes it possible to walk on ice without slipping
+2026-06-07:
+  AnomalousPotato:
+  - rscadd: Added polyglot quirk for maximum yapping.
+  Bumtickley00:
+  - rscadd: You can now load regular revolvers with an ammo stack, not just a single
+      shell.
+  - bugfix: Reloading gate-loaded revolvers with an ammo stack now spins the cylinder
+      until all the empty slots are full instead of only trying a couple times.
+  - bugfix: Moving while unloading a gate-loaded revolver will no longer instantly
+      dump the rounds on the floor.
+  - bugfix: Loading a speedloader and a revolver at the same time will no longer quantum-entangle
+      bullets between them.
+  - code_imp: Removed some copypaste in the revolver code.
+  firebudgy:
+  - balance: Advanced first aid kit in cargo.
+  zimon9:
+  - bugfix: fixed equipment selection dummy hair (and prefs) randomization
+  - rscadd: added salbutamol refills to the outpost med
+  - balance: reduced price of salbutamol refill kits
+2026-06-08:
+  DIB-DOG:
+  - rscadd: Added new Etherbor posters
+  Ical92:
+  - rscadd: table-variant sinks
+  thearbiber:
+  - rscadd: shawls
+  - rscadd: long hair and beehive resprite
+2026-06-09:
+  firebudgy:
+  - rscdel: Slavery reference in the description of cotton seeds.
+2026-06-10:
+  thearbiber:
+  - rscadd: brown pants+jorts
+  - rscdel: tan pants (theyre not real anyhow)
+2026-06-11:
+  Erikafox:
+  - rscadd: Geysers now make smoke so you can differentiate them from ore veins easier
+  - rscadd: added alt silfrine, cinesia, and starlight recipes.
+  - rscdel: stupid snail disease
+  - balance: made hadrakine more rewarding to make.
+  - balance: made indomide easier to make
+  - rscadd: replaces meth with rahkrahene
+  TheArbiter:
+  - rscadd: Solarian Atelier Railgun
+  - rscadd: aimed_fire component
+  rye-rice:
+  - rscadd: Respirtes bunch of chemistry related things!
+  - rscadd: Beakers and syringes have world sprites!
+  - rscadd: Defibs have world spriites and defib mounts have better sprites!
+  thearbiber:
+  - rscadd: cm357 resprite
+  west3436:
+  - rscadd: Crateshelves may now tip over on you if you're not careful!
+  zimon9:
+  - code_imp: removed player agency to start CTF on their own
+  - balance: ctf ammo pickups regenerate your belt now, not your entire outfit
+  - balance: scales additional lode redemption based on drill class, up to a maximum
+      of 4 additional lodes
+2026-06-16:
+  moffball19:
+  - rscadd: The IRMG's artificer division has updated the targeting tech in the Apso-class
+      turrets.
+2026-06-17:
+  Ical92:
+  - bugfix: fixed corkboard perspective
+  PhoenixTheRedandEvil:
+  - bugfix: war correspondant helmet no longer has a ghostifying color select menu.
+  'rye-rice, Imaginos16 ':
+  - rscadd: Artilery weapons, intended for event use.
+  - rscadd: Binoculars have been resprited!
+  thearbiber:
+  - rscadd: New drink sprites for Long Island Iced Tea, Lightspeed, Bridge Bunny,
+      Screwdriver, Gin and Tonic, AM-G, Bloody Mary, Frontier Libre, Gezenan Coffee
+  - rscadd: Long Island Iced Tea renamed to Golden Pearl Iced Tea
+  - rscadd: New drink, Brazilian Lemonade. Made with two parts water, one parts lime
+      juice, one parts ice, one parts cream
+  - rscadd: Repathed edited drinks from their old paths to their drinkening names
+  - rscdel: Removed explosion sound from AM-G
+  zimon9:
+  - rscadd: Added the electronic voicebox quirk
+  - rscadd: Added ability to reclaim material on screwdrivers via autolathe
+2026-06-19:
+  Erikafox:
+  - bugfix: end of round music now plays at normal volumes
+  zimon9:
+  - rscadd: Added double-examine interaction with clipboards
+2026-06-20:
+  moffball19:
+  - rscadd: N+S Logistics has updated the last of their Kiwi-class vessels with a
+      new layout.
+  moffball19, thearbiber:
+  - rscadd: parkas
+2026-06-21:
+  '@thearbiber ':
+  - rscdel: deleted old sprites
+  - refactor: refactored mothpeople prefs and implements new mothpeople spritework
+2026-06-22:
+  firebudgy:
+  - rscdel: Revert 10x22 and 9x18 to their old names.
+  goober3:
+  - bugfix: NGR mining hardsuit helmets should be visible again on snouted individuals.
+2026-06-23:
+  Luftkommando:
+  - bugfix: Reskin issues with the CM-24 and Light Tactical Vest.

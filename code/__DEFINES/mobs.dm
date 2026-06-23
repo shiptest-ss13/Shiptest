@@ -492,6 +492,7 @@ GLOBAL_LIST_INIT(human_heights_to_offsets, list(
 #define SPLINT_LAYER 17
 #define SUIT_LAYER 16
 #define BELT_LAYER 15
+#define BODY_ADJ_HIGH_LAYER 14.5
 #define FACEWRAP_LAYER 14
 #define GLASSES_LAYER 13
 #define SUIT_STORE_LAYER 12
