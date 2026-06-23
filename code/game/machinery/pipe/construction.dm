@@ -175,8 +175,8 @@ Buildable meters
 	T.flipped = flipped
 
 /obj/item/pipe_meter
-	name = "pressure meter"
-	desc = "A pressure meter that can be laid on pipes."
+	name = "pressure gauge"
+	desc = "A pressure gauge that can be laid on pipes."
 	icon = 'icons/obj/atmospherics/pipes/pipe_item.dmi'
 	icon_state = "meter_pressure"
 	item_state = "buildpipe"
@@ -223,8 +223,8 @@ Buildable meters
 	PIPING_LAYER_DOUBLE_SHIFT(src, piping_layer)
 
 /obj/item/pipe_meter/temperature
-	name = "temperature meter"
-	desc = "A temperature meter that can be laid on pipes."
+	name = "temperature gauge"
+	desc = "A temperature gauge that can be laid on pipes."
 	icon_state = "meter_temp"
 	item_state = "buildpipe"
 	buildpath = /obj/machinery/meter/temperature
