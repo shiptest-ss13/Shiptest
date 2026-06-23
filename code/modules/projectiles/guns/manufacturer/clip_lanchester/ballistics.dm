@@ -549,6 +549,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
+	unique_reskin = null
 
 	icon_state = "cm24"
 	item_state = "cm24"
