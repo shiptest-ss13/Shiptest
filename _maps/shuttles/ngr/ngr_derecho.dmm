@@ -795,6 +795,13 @@
 	color = "#eeac2e"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	pixel_x = -22;
+	pixel_y = 6;
+	id = "derecho_furnace_shutter";
+	name = "Furnace Shutter";
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
 "gW" = (
@@ -2716,7 +2723,6 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/corner/transparent/black/full,
-/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/science/workshop)
 "zV" = (
@@ -3252,6 +3258,8 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/item/stack/cable_coil/random,
+/obj/item/radio/intercom/directional/north,
 /obj/item/reagent_containers/food/drinks/soda_cans/pacfuel{
 	pixel_x = 4;
 	pixel_y = 14
@@ -3260,7 +3268,6 @@
 	pixel_x = 9;
 	pixel_y = 6
 	},
-/obj/item/stack/cable_coil/random,
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
 "Ei" = (
@@ -5228,12 +5235,9 @@
 "Uh" = (
 /obj/effect/turf_decal/corner/opaque/tan/half,
 /obj/effect/turf_decal/trimline/opaque/bar/line,
-/obj/machinery/light/small/directional/north,
-/obj/machinery/button/door{
-	pixel_x = -9;
-	pixel_y = 24;
-	id = "derecho_furnace_shutter";
-	name = "Furnace Shutter"
+/obj/machinery/mineral/processing_unit_console{
+	pixel_x = -1;
+	pixel_y = 26
 	},
 /obj/machinery/conveyor_switch/oneway{
 	pixel_x = -9;
