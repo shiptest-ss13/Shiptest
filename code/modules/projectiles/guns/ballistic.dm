@@ -16,7 +16,7 @@
 ///Subtype for any kind of ballistic gun
 ///This has a shitload of vars on it, and I'm sorry for that, but it does make making new subtypes really easy
 /obj/item/gun/ballistic
-	desc = "Now comes in flavors like GUN. Uses 10x22mm ammo, for some reason."
+	desc = "Now comes in flavors like GUN. Uses 10mm ammo, for some reason."
 	name = "projectile gun"
 
 	bad_type = /obj/item/gun/ballistic
@@ -288,6 +288,8 @@
 			if ((chambered && !chambered.BB) || (chambered && always_chambers))
 				chambered.on_eject(shooter = user)
 				chambered = null
+			if(doesnt_keep_bullet && (magazine.stored_ammo.len + (chambered ? 1 : 0)) >= magazine.max_ammo)
+				return
 			var/num_loaded = magazine.attackby(A, user, params)
 			if (num_loaded)
 				to_chat(user, span_notice("You load [num_loaded] [cartridge_wording]\s into \the [src]."))
@@ -344,15 +346,18 @@
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/ballistic/attack_hand(mob/user)
-	// the main calls it's own eject mag before the underbarrel. fix this
 	if(user.is_holding(src) && loc == user)
 		if(sealed_magazine)
 			to_chat(user, span_warning("The [magazine_wording] on [src] is sealed and cannot be accessed!"))
 			return
 		if(bolt_type == BOLT_TYPE_NO_BOLT && (chambered || internal_magazine))
-			chambered = null
 			var/num_unloaded = 0
-			for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
+			var/count_chambered = FALSE
+			if(doesnt_keep_bullet)
+				count_chambered = TRUE
+			else
+				chambered = null
+			for(var/obj/item/ammo_casing/CB in get_ammo_list(count_chambered, TRUE))
 				eject_casing(user, CB)
 				num_unloaded++
 			if (num_unloaded)

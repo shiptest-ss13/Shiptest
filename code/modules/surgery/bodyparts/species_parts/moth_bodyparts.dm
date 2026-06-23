@@ -1,32 +1,57 @@
 /obj/item/bodypart/head/moth
-	static_icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon_state = "moth_head"
 	limb_id = SPECIES_MOTH
 	is_dimorphic = FALSE
-	should_draw_greyscale = FALSE
+	should_draw_greyscale = TRUE
 	draw_eyes = FALSE
 	draw_sclera = FALSE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_SNOUT_SMALL
 
 /obj/item/bodypart/chest/moth
-	static_icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon_state = "moth_chest_f"
 	limb_id = SPECIES_MOTH
 	is_dimorphic = TRUE
-	should_draw_greyscale = FALSE
+	should_draw_greyscale = TRUE
 
 /obj/item/bodypart/l_arm/moth
-	static_icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon_state = "moth_l_arm"
 	limb_id = SPECIES_MOTH
-	should_draw_greyscale = FALSE
+	should_draw_greyscale = TRUE
 
 /obj/item/bodypart/r_arm/moth
-	static_icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon_state = "moth_r_arm"
 	limb_id = SPECIES_MOTH
-	should_draw_greyscale = FALSE
+	should_draw_greyscale = TRUE
+
 /obj/item/bodypart/leg/left/moth
-	static_icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon_state = "moth_l_leg"
 	limb_id = SPECIES_MOTH
-	should_draw_greyscale = FALSE
+	should_draw_greyscale = TRUE
+	plantigrade_forced = TRUE
 
 /obj/item/bodypart/leg/right/moth
-	static_icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon_state = "moth_r_leg"
 	limb_id = SPECIES_MOTH
-	should_draw_greyscale = FALSE
+	should_draw_greyscale = TRUE
+
+// Digitigrade
+
+/obj/item/bodypart/leg/left/moth/digitigrade
+	icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon_state = "moth_l_leg_digitigrade"
+	limb_id = SPECIES_MOTH
+	should_draw_greyscale = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/moth/digitigrade
+	icon = 'icons/mob/species/moth/bodyparts.dmi'
+	icon_state = "moth_r_leg_digitigrade"
+	limb_id = SPECIES_MOTH
+	should_draw_greyscale = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
