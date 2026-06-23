@@ -266,3 +266,35 @@
 			- 1 Handheld health analyzer<br><br>
 			Additional space in both detailed medical kits may be utilized however the bearer sees fit. Medical equipment may be added to or swapped out of the described kits and is an encouraged practice, treating the equipment listed above as a baseline.
 			"}
+
+/obj/item/paper/fluff/ship/pgf/general_quarters
+	name = "General Quarters"
+	default_raw_text = {"<html>
+			<font face="serif" size="2">
+			<hr>
+			<table align=/"center/" width="100%">
+			<tr>
+			<td>Department of<br>Navy Issuances</td>
+			<td style="padding-top:%">
+			<b>Action Stations Protocol<br> Shipside Personnel Notice </b>
+			</td>
+			<td>03 - 14 - 507</td>
+			</tr>
+			</table>
+			<hr>
+			<b>CALL TO GENERAL QUARTERS:</b><br> General Quarters, or action stations, is the announcement made aboard any Federation warship to signal that all hands (everyone available) aboard a ship must go to their action stations (the positions they are to assume when the vessel is in combat) as quickly as possible.<br><br>
+			The generic, unspecialized announcement for General Quarters is as follows:<br><br>
+			<b>"This is not a drill. This is not a drill. General Quarters. General Quarters. All hands to action stations."</b><br>
+			<I>This announcement may be appended with information concerning the reason for or nature of the call to General Quarters at the discretion of command staff.</I><br><br>
+			After this announcement is made, all hands are to react according to their responsibility as detailed below, deviating only as ordered or as the survival of their vessel depends on it.
+			<hr>
+			<b>BRIDGE STAFF:</b> Upon receiving the call to General Quarters, Bridge staff are to prepare for possible hazards, monitor all active and potential threats to the vessel, and coordinate an efficient ship-wide response. This entails donning or otherwise maintaining an EVA capable suit, relaying intelligence to relevant crew members, addressing and evading further threats, and potentially orchestrating responses personally based on situational need. <br><br>
+			<b>CREWMEN:</b> Upon receiving the call to General Quarters, Crewmen are to prepare for fire control. This entails procuring firefighting equipment, equipping sealed internals and donning firesuits or EVA suits as the situation deems necessary. Crewmen are to report to the central accessways of the vessel and respond to fires and minor damages while otherwise awaiting tasking. <br><br>
+			<b>ENGINEERS:</b> Upon receiving the call to General Quarters, Engineers are to prepare to conduct emergency repairs to the vessel’s key machinery and superstructure. This entails procuring repair material, equipping tools, and donning an EVA capable suit. Special priority should be allotted to the maintenance of the vessel’s power, propulsion, and control systems. Life support should be prioritized for the central accessways and infirmary with all other sections being regarded as secondary priority during General Quarters.<br><br>
+			<b>MEDICAL STAFF:</b> Upon receiving the call to General Quarters, Medical staff are to prepare the infirmary for a possible mass casualty event. This entails procuring emergency medical supplies, preparing to conduct triage, and donning or otherwise maintaining an EVA capable suit. Medical staff are to treat casualties as they occur, potentially retrieving casualties and evacuating them to the infirmary based on situational need.<br><br>
+			<b>MARINES:</b> Upon receiving the call to General Quarters, Marines are to prepare to ensure the security of the vessel, possibly launching an attack or repelling boarders. This entails procuring arms, ammunition, and first aid supplies, establishing teams, and donning EVA capable combat suits. Marines are to prioritize the security of the Bridge, CIC, and Engineering sections of the vessel, with all other sections being regarded as secondary priority during General Quarters.
+			<hr>
+			<b>STAND DOWN FROM GENERAL QUARTERS:</b><br> Once active or probable threat has been cleared from the vessel, the order to Stand Down may be announced, at which point all hands may relax from their action stations and return to Standards (standard conditions).<br><br>
+			The Stand Down announcement from General Quarters is as follows:<br><br>
+			<b>"Stand Down. Stand Down. All hands return to Standards."</b>
+			"}

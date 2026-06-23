@@ -1926,6 +1926,14 @@
 	dir = 8
 	},
 /obj/structure/rack,
+/obj/item/clipboard{
+	pixel_x = -1;
+	pixel_y = 1
+	},
+/obj/item/pen/fourcolor{
+	pixel_x = -2;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "lu" = (
@@ -4544,7 +4552,7 @@
 	pixel_y = -4;
 	pixel_x = 8
 	},
-/obj/item/pinpointer/crew/prox{
+/obj/item/pinpointer/crew{
 	pixel_y = -6;
 	pixel_x = -8
 	},
@@ -4688,6 +4696,7 @@
 /obj/item/clothing/under/gezena{
 	pixel_x = -9
 	},
+/obj/item/paper/fluff/ship/pgf/general_quarters,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
 "Ba" = (
@@ -8144,6 +8153,7 @@
 /obj/structure/noticeboard/directional/north,
 /obj/item/paper/fluff/ship/pgf/lifesaving,
 /obj/item/paper/fluff/ship/pgf/triage,
+/obj/item/paper/fluff/ship/pgf/general_quarters,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Ud" = (
@@ -8151,13 +8161,21 @@
 	dir = 8
 	},
 /obj/structure/table,
-/obj/item/clipboard{
-	pixel_x = -1;
-	pixel_y = 1
+/obj/machinery/coffeemaker{
+	pixel_y = 10;
+	pixel_x = 1
 	},
-/obj/item/pen/fourcolor{
-	pixel_x = -2;
-	pixel_y = 2
+/obj/item/coffee_cartridge/fancy/blue{
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/obj/item/coffee_cartridge/fancy/blend{
+	pixel_x = 2;
+	pixel_y = -1
+	},
+/obj/item/coffee_cartridge/fancy/roast{
+	pixel_x = 7;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)

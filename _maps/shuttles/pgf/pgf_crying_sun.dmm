@@ -973,15 +973,15 @@
 	pixel_x = 1
 	},
 /obj/item/coffee_cartridge/fancy/blue{
-	pixel_x = -3;
-	pixel_y = -2
+	pixel_x = -4;
+	pixel_y = -1
 	},
 /obj/item/coffee_cartridge/fancy/blend{
-	pixel_y = -2;
+	pixel_y = -1;
 	pixel_x = 2
 	},
 /obj/item/coffee_cartridge/fancy/roast{
-	pixel_y = -2;
+	pixel_y = -1;
 	pixel_x = 7
 	},
 /obj/effect/turf_decal/trimline/opaque/green/filled/corner{
@@ -5658,6 +5658,7 @@
 	pixel_x = 7;
 	pixel_y = 9
 	},
+/obj/machinery/newscaster/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
 "Cy" = (
@@ -5991,8 +5992,8 @@
 	pixel_x = 8
 	},
 /obj/item/pinpointer/crew{
-	pixel_x = -8;
-	pixel_y = -6
+	pixel_y = -5;
+	pixel_x = -8
 	},
 /obj/item/sensor_device{
 	pixel_x = 9;
@@ -6842,7 +6843,8 @@
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 8
 	},
-/obj/machinery/newscaster/directional/west,
+/obj/structure/noticeboard/directional/west,
+/obj/item/paper/fluff/ship/pgf/general_quarters,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/port)
 "Ie" = (
@@ -7427,11 +7429,8 @@
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 2
 	},
-/obj/machinery/firealarm/directional/north{
-	pixel_x = -6
-	},
-/obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = 6
+/obj/structure/sign/departments/medbay/alt{
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -8217,6 +8216,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/machinery/firealarm/directional/north{
+	pixel_x = -6
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
@@ -10173,6 +10178,7 @@
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 2
 	},
+/obj/item/paper/fluff/ship/pgf/general_quarters,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "VT" = (
@@ -10278,8 +10284,12 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
-	pixel_x = 10;
-	pixel_y = 1
+	pixel_x = 9;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = 9;
+	pixel_y = 0
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
