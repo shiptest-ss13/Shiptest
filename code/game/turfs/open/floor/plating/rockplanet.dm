@@ -183,6 +183,7 @@ ROCK_TURF_HELPER(plasteel/patterned/brushed)
 ROCK_TURF_HELPER(plasteel/patterned/ridged)
 ROCK_TURF_HELPER(wood)
 ROCK_TURF_HELPER(plasteel/tech)
+ROCK_TURF_HELPER(plasteel/tech/grid)
 ROCK_TURF_HELPER(plasteel/mono)
 ROCK_TURF_HELPER(plasteel/mono/dark)
 
