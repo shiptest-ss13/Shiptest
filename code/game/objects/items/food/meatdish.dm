@@ -44,7 +44,7 @@
 		/datum/reagent/consumable/nutriment/protein = 6,
 		/datum/reagent/consumable/nutriment/vitamin = 3,
 	)
-	trastes = list("flaky, tender fish" = 1)
+	tastes = list("flaky, tender fish" = 1)
 	foodtypes = MEAT
 	eatverbs = list("bite", "chew", "gnaw", "swallow", "chomp")
 	w_class = WEIGHT_CLASS_SMALL
