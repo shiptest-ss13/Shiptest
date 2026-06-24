@@ -49,17 +49,6 @@
 	eatverbs = list("bite", "chew", "gnaw", "swallow", "chomp")
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/food/meat/steak
-	name = "steak"
-	desc = "A piece of hot spicy meat."
-	icon_state = "meatsteak"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment/protein = 8,
-		/datum/reagent/consumable/nutriment/vitamin = 1,
-	)
-	foodtypes = MEAT
-	tastes = list("meat" = 1)
-
 /obj/item/food/fishmeat/moonfish
 	name = "moonfish fillet"
 	desc = "A fillet of moonfish."
