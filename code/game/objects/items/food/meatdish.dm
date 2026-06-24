@@ -626,7 +626,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/sashimi
-	name = " sashimi"
+	name = "sashimi"
 	desc = "Carefully prepared, thinly cut sashimi with soy sauce for dipping."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "sashimi"
