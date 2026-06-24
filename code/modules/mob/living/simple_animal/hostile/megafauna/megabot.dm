@@ -126,7 +126,7 @@
 /mob/living/simple_animal/hostile/megafauna/megabot/proc/burst_shot()
 	casingtype = /obj/item/ammo_casing/energy/laser/assault/sharplite/megabot
 	var/num_shots = 3
-	if(health < maxHealth/3)
+	if(health < maxHealth/2)
 		num_shots = 5
 	wind_up_visual(TRUE)
 	SLEEP_CHECK_DEATH(gun_wind_up)
@@ -142,11 +142,9 @@
 
 /mob/living/simple_animal/hostile/megafauna/megabot/proc/shoot_n_charge()
 	charge()
-	if(health < maxHealth/3)
-		if(prob(50))
-			charge(delay = 6)
-		else
-			spread_shot()
+	charge(delay = 6)
+	if(health < maxHealth/2)
+		spread_shot()
 
 /mob/living/simple_animal/hostile/megafauna/megabot/proc/wind_up_visual(ranged = TRUE, silent = FALSE)
 	if(!silent)
@@ -248,14 +246,14 @@
 	addtimer(CALLBACK(src, PROC_REF(self_destruct)), 13 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/megabot/proc/self_destruct()
-	explosion(src,0,1,5,5, flame_range = 5, light_dam = 20, light_item_dam = 0, heavy_dam = 40, heavy_item_dam = 0)
+	explosion(src,0,3,5,5, flame_range = 5, light_dam = 20, light_item_dam = 0, heavy_dam = 40, heavy_item_dam = 0)
 	new /obj/item/mob_trophy/megabot_reactor(loc)
 	visible_message("\The [src] self destructs, leaving behind a power core.")
 	qdel_self()
 
 /mob/living/simple_animal/hostile/megafauna/megabot/Life()
 	. = ..()
-	if(health < maxHealth/3)
+	if(health < maxHealth/2)
 		if(!particles)
 			particles = new /particles/smoke/steam/vent
 	else if(particles)
