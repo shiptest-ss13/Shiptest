@@ -409,7 +409,7 @@
 	input_dir = 2;
 	output_dir = 1
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/science/workshop)
 "ea" = (
 /obj/effect/turf_decal/corner/opaque/beige/half{
@@ -494,6 +494,17 @@
 /obj/effect/turf_decal/corner/opaque/tan/half,
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/mineral/processing_unit_console{
+	pixel_x = 28;
+	pixel_y = 28;
+	dir = 2;
+	machinedir = 1;
+	dist = 2
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1;
+	color = "#eeac2e"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
 "ez" = (
@@ -802,6 +813,10 @@
 	name = "Furnace Shutter";
 	dir = 4
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1;
+	color = "#eeac2e"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
 "gW" = (
@@ -950,6 +965,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ship/science/workshop)
+"iW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/effect/turf_decal/industrial/loading,
+/obj/machinery/door/poddoor/shutters{
+	id = "derecho_furnace_shutter"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/science/workshop)
 "js" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
@@ -990,7 +1017,14 @@
 	id = "derecho_furnace_shutter"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech,
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/effect/turf_decal/arrows{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/science/workshop)
 "jD" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -2023,6 +2057,10 @@
 	pixel_y = 11
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/south,
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/workshop)
 "rK" = (
@@ -4484,7 +4522,7 @@
 	id = "derecho_conveyor"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/science/workshop)
 "Oh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -4935,7 +4973,7 @@
 	id = "derecho_conveyor"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/science/workshop)
 "Si" = (
 /obj/effect/turf_decal/techfloor{
@@ -5235,14 +5273,14 @@
 "Uh" = (
 /obj/effect/turf_decal/corner/opaque/tan/half,
 /obj/effect/turf_decal/trimline/opaque/bar/line,
-/obj/machinery/mineral/processing_unit_console{
-	pixel_x = -1;
-	pixel_y = 26
-	},
 /obj/machinery/conveyor_switch/oneway{
 	pixel_x = -9;
 	pixel_y = 13;
 	id = "derecho_conveyor"
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1;
+	color = "#eeac2e"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
@@ -5488,7 +5526,11 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/mineral/processing_unit,
-/turf/open/floor/plating,
+/obj/structure/railing/thin{
+	dir = 8;
+	color = "#999999"
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/science/workshop)
 "Wp" = (
 /obj/structure/table,
@@ -6579,7 +6621,7 @@ Tq
 yi
 RY
 Wo
-jA
+iW
 ex
 WB
 Wx
