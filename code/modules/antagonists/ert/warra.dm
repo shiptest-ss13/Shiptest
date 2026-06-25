@@ -61,7 +61,7 @@
 
 /datum/antagonist/ert/warra/emergency/ns
 	name = "N+S Disaster Recovery Team Lead"
-	outfit = /datum/outfit/job/warra/ert/ns/leader
+	outfit = /datum/outfit/job/warra/ert/ns
 	role = "Team Leader"
 
 /datum/antagonist/ert/warra/emergency/ns/engineer

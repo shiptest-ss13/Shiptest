@@ -167,7 +167,7 @@
 
 // N+S Disaster Recovery Team
 
-/datum/outfit/job/warra/ert/ns/leader
+/datum/outfit/job/warra/ert/ns
 	name = "ERT - N+S Disaster Recovery Team Leader"
 	jobtype = /datum/job/ert/commander
 	job_icon = "chiefengineer"
@@ -216,8 +216,8 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/ns
 	suit = /obj/item/clothing/suit/space/hardsuit/mining/heavy/ns
-	suit_store = /obj/item/plasmacutter
 	l_hand = /obj/item/extinguisher/advanced
+	r_hand = /obj/item/plasmacutter
 	l_pocket = /obj/item/sensor_device
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	backpack_contents = list(/obj/item/storage/firstaid/medical, /obj/item/storage/firstaid/radiation, /obj/item/tank/internals/emergency_oxygen/double, /obj/item/clothing/mask/gas)
