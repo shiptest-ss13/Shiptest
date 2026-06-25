@@ -19,7 +19,7 @@
 	role = "Corporal"
 
 /datum/antagonist/ert/warra/emergency
-	name = "Vigilitas Response Officer"
+	name = "Vigilitas Emergency Response Officer"
 	outfit = /datum/outfit/job/warra/ert/emergency
 	role = "Response Officer"
 
@@ -27,7 +27,7 @@
 
 /datum/antagonist/ert/warra/emergency/vigilitas/leader
 	name = "Vigilitas Crisis Response Unit Lieutenant"
-	outfit = /datum/outfit/job/warra/ert/emergency/leader
+	outfit = /datum/outfit/job/warra/ert/emergency
 	role = "Lieutenant"
 
 /datum/antagonist/ert/warra/emergency/vigilitas/rifle

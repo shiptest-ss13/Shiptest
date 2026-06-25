@@ -62,7 +62,7 @@
 
 // VI Crisis Response Units
 
-/datum/outfit/job/warra/ert/emergency/leader
+/datum/outfit/job/warra/ert/emergency
 	name = "ERT - Vigilitas CRU Lieutenant"
 	jobtype = /datum/job/ert/commander
 	job_icon = "lieutenant"
@@ -179,6 +179,7 @@
 	head = /obj/item/clothing/head/helmet/space/hardsuit/engine/elite
 	suit = /obj/item/clothing/suit/space/hardsuit/engine/elite
 	suit_store = /obj/item/gun/energy/sharplite/revolver
+	l_hand = /obj/item/plasmacutter
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	backpack_contents = list(/obj/item/tank/internals/emergency_oxygen/double, /obj/item/clothing/mask/gas)
@@ -215,8 +216,8 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/ns
 	suit = /obj/item/clothing/suit/space/hardsuit/mining/heavy/ns
-	suit_store = /obj/item/sensor_device
+	suit_store = /obj/item/plasmacutter
 	l_hand = /obj/item/extinguisher/advanced
-	l_pocket = /obj/item/flashlight/seclite
+	l_pocket = /obj/item/sensor_device
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	backpack_contents = list(/obj/item/storage/firstaid/medical, /obj/item/storage/firstaid/radiation, /obj/item/tank/internals/emergency_oxygen/double, /obj/item/clothing/mask/gas)
