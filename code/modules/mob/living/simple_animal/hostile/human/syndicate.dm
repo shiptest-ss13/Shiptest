@@ -844,12 +844,12 @@
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/engi
 	armor_base = /obj/item/clothing/suit/ramzi //nope
-	var/helpcall = "GUARDS!!!"
+	var/helpcall = list("GUARDS!!!","INTRUDER!!","HELP!!")
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian/Aggro()
 	..()
 	summon_backup(15)
-	say(helpcall)
+	say(pick(helpcall))
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian/space
 	name = "Ramzi Clique Technician"
@@ -866,13 +866,13 @@
 	desc = "A deserter from the Gorlex Marauders turned pirate. This one is not only unarmed, but also just got out the shower."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/towel
 	armor_base = null
-	helpcall = "HELP!!!"
+	helpcall = list("HELP!!!","SOMEBODY, HELP!!!","INTRUDER!! HELP!!!","I JUST WANT TO REST!!","LEAVE ME ALONE!!","GUARDS!!!")
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian/runt
 	name = "Ramzi Clique Runt"
 	desc = "A deserter from the Gorlex Marauders turned pirate. This one is not only unarmed, but a coward as well."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour
-	helpcall = "I DON'T WANT TO DIE!! HELP!!!"
+	helpcall = list("I DON'T WANT TO DIE!! HELP!!!","HELP ME!!!","GUARDS!!!","HELP!!!","GET ME OUT OF HERE!!")
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian/runt/flapcap
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour/flapcap
