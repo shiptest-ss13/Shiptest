@@ -13,27 +13,63 @@
 	outfit = /datum/outfit/job/warra/ert/inspector
 	role = "Liaison"
 
-// /datum/antagonist/ert/warra/emergency
-// 	name = "Vigilitas Response Officer"
-// 	outfit = /datum/outfit/job/warra/ert/emergency
-// 	role = "Response Officer"
-
 /datum/antagonist/ert/warra/leader
 	name = "Vigilitas Security Corporal"
 	outfit = /datum/outfit/job/warra/ert/leader
 	role = "Corporal"
 
-// /datum/antagonist/ert/warra/leader/emergency
-// 	name = "Vigilitas Response Lieutenant"
-// 	outfit = /datum/outfit/job/warra/ert/leader/emergency
-// 	role = "Lieutenant"
+/datum/antagonist/ert/warra/emergency
+	name = "Vigilitas Response Officer"
+	outfit = /datum/outfit/job/warra/ert/emergency
+	role = "Response Officer"
 
-// /datum/antagonist/ert/warra/medic/emergency
-// 	name = "Vigilitas Medical Response Officer"
-// 	outfit = /datum/outfit/job/warra/ert/medic/emergency
-// 	role = "Medic"
+// Vigilitas Crisis Response Unit
 
-// /datum/antagonist/ert/warra/emergency/engineer
-// 	name = "Vigilitas Engineering Response Officer"
-// 	outfit = /datum/outfit/job/warra/ert/emergency/engineer
-// 	role = "Engineer"
+/datum/antagonist/ert/warra/emergency/vigilitas/leader
+	name = "Vigilitas Crisis Response Unit Lieutenant"
+	outfit = /datum/outfit/job/warra/ert/emergency/leader
+	role = "Lieutenant"
+
+/datum/antagonist/ert/warra/emergency/vigilitas/rifle
+	name = "Vigilitas CRU Rifleman"
+	outfit = /datum/outfit/job/warra/ert/emergency/rifle
+	role = "Rifleman"
+
+/datum/antagonist/ert/warra/emergency/vigilitas/sniper
+	name = "Vigilitas CRU Marksman"
+	outfit = /datum/outfit/job/warra/ert/emergency/sniper
+	role = "Marksman"
+
+/datum/antagonist/ert/warra/emergency/vigilitas/lifesaver
+	name = "Vigilitas CRU Combat Lifesaver"
+	outfit = /datum/outfit/job/warra/ert/emergency/lifesaver
+	role = "Combat Lifesaver"
+
+// Makosso-Warra Emergency Medical Response
+
+/datum/antagonist/ert/warra/emergency/medical
+	name = "Makosso-Warra Medical Response Staff"
+	outfit = /datum/outfit/job/warra/ert/emergency/medical
+	role = "Medical Doctor"
+
+/datum/antagonist/ert/warra/emergency/medical/leader
+	name = "Makosso-Warra Medical Response Leader"
+	outfit = /datum/outfit/job/warra/ert/emergency/medical/leader
+	role = "Medical Team Lead"
+
+// N+S Disaster Recovery Team
+
+/datum/antagonist/ert/warra/emergency/ns
+	name = "N+S Disaster Recovery Team Lead"
+	outfit = /datum/outfit/job/warra/ert/ns/leader
+	role = "Team Leader"
+
+/datum/antagonist/ert/warra/emergency/ns/engineer
+	name = "N+S DRT Technical Rescue Specialist"
+	outfit = /datum/outfit/job/warra/ert/ns/engineer
+	role = "Engineer"
+
+/datum/antagonist/ert/warra/emergency/ns/hazmat
+	name = "N+S DRT Hazardous Materials Specialist"
+	outfit = /datum/outfit/job/warra/ert/ns/hazmat
+	role = "Medic"

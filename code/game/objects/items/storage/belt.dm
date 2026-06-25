@@ -543,6 +543,16 @@
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 
+/obj/item/storage/belt/military/warra/resolution/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/wt550m9(src)
+
+/obj/item/storage/belt/military/warra/sharplite/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/cell/gun/sharplite/plus(src)
+
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
 
