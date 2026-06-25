@@ -346,7 +346,7 @@
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "bE" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "bG" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -1335,7 +1335,7 @@
 	network = list("ngr_colony");
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "gi" = (
 /obj/item/stack/rods{
@@ -1975,7 +1975,7 @@
 /obj/structure/platform/corner{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "iW" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -2374,7 +2374,7 @@
 /obj/structure/platform/corner{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "kZ" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -3236,6 +3236,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
+"oi" = (
+/obj/structure/platform,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "oj" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
@@ -4124,6 +4128,10 @@
 	},
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"sE" = (
+/obj/structure/flora/ash/cacti,
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "sJ" = (
 /obj/structure/platform/corner{
 	dir = 8
@@ -4645,6 +4653,10 @@
 /obj/machinery/door/airlock,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
+"vg" = (
+/obj/structure/flora/grass/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "vj" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -6084,11 +6096,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "BD" = (
-/obj/structure/platform{
-	dir = 8
-	},
+/obj/effect/spawner/random/garden/arid/fifty,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/ruin/rockplanet/ngrcolony/outdoors)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "BH" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -6134,6 +6144,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/canteen)
+"BP" = (
+/obj/effect/spawner/random/garden/arid/fifty,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "BQ" = (
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/structure/cable/yellow{
@@ -8520,6 +8534,12 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged/smg/indiegun,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
+"Mp" = (
+/obj/structure/platform{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "Mq" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
@@ -9343,6 +9363,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/main_gate)
+"PA" = (
+/obj/structure/barricade/wooden/snowed,
+/turf/open/floor/plating/asteroid/snow/lit/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "PD" = (
 /obj/structure/window/plasma/reinforced/spawner/north,
 /obj/machinery/door/firedoor/border_only{
@@ -10149,6 +10173,10 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/utility)
+"TF" = (
+/obj/structure/barricade/wooden/crude/snow,
+/turf/open/floor/plating/asteroid/snow/lit/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "TG" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -10642,6 +10670,10 @@
 	},
 /turf/open/floor/plating/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/refinery)
+"VI" = (
+/obj/structure/flora/grass/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/wet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "VJ" = (
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -11157,6 +11189,10 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/engineering)
+"Yi" = (
+/obj/structure/flora/grass/rockplanet/dead,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Yk" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
@@ -11834,7 +11870,7 @@ VJ
 VJ
 VJ
 VJ
-VJ
+BD
 VJ
 VJ
 VJ
@@ -12162,7 +12198,7 @@ VJ
 VJ
 VJ
 VJ
-VJ
+BD
 VJ
 VJ
 VJ
@@ -12367,11 +12403,11 @@ VJ
 VJ
 VJ
 VJ
+BD
 VJ
 VJ
 VJ
-VJ
-VJ
+Cx
 VJ
 VJ
 VJ
@@ -12441,9 +12477,9 @@ VJ
 VJ
 VJ
 VJ
-VJ
-VJ
-VJ
+Cx
+Cx
+Cx
 VJ
 VJ
 VJ
@@ -12513,9 +12549,9 @@ CD
 VJ
 VJ
 VJ
-VJ
-VJ
-VJ
+Cx
+Cx
+Cx
 VJ
 VJ
 VJ
@@ -12585,6 +12621,8 @@ CD
 VJ
 VJ
 VJ
+Cx
+Cx
 VJ
 VJ
 VJ
@@ -12593,9 +12631,7 @@ VJ
 VJ
 VJ
 VJ
-VJ
-VJ
-VJ
+BD
 aq
 In
 In
@@ -12727,9 +12763,9 @@ NG
 CD
 VJ
 VJ
-EL
-EL
-EL
+VJ
+VJ
+VJ
 EL
 GD
 iA
@@ -12798,8 +12834,8 @@ NG
 NG
 NG
 EL
-EL
-EL
+VJ
+VJ
 EL
 EL
 GD
@@ -12870,7 +12906,7 @@ NG
 NG
 EL
 EL
-EL
+VJ
 EL
 GD
 GD
@@ -12941,7 +12977,7 @@ CD
 NG
 NG
 EL
-EL
+VJ
 EL
 GD
 yj
@@ -13191,7 +13227,7 @@ mL
 sN
 bM
 DE
-VJ
+BD
 VJ
 VJ
 cJ
@@ -13403,8 +13439,8 @@ bG
 ry
 Qk
 my
-SU
-VJ
+pe
+Cx
 VJ
 VJ
 VJ
@@ -13475,8 +13511,8 @@ MW
 MW
 MW
 bE
-VJ
-VJ
+Cx
+Cx
 VJ
 VJ
 cJ
@@ -13546,8 +13582,8 @@ ME
 FX
 gr
 bE
-VJ
-VJ
+Cx
+Cx
 VJ
 VJ
 VJ
@@ -13618,9 +13654,9 @@ Vd
 MW
 Mt
 uR
-VJ
-VJ
-VJ
+Cx
+Cx
+BD
 VJ
 "}
 (30,1,1) = {"
@@ -13689,7 +13725,7 @@ XT
 MW
 Mv
 EE
-VJ
+Cx
 VJ
 VJ
 VJ
@@ -14612,7 +14648,7 @@ Zg
 Vk
 VJ
 VJ
-VJ
+BD
 VJ
 VJ
 cJ
@@ -14712,7 +14748,7 @@ NG
 SU
 SU
 SU
-SU
+BP
 in
 uW
 ta
@@ -15349,7 +15385,7 @@ VJ
 xj
 VJ
 VJ
-VJ
+vg
 VJ
 VJ
 VJ
@@ -15556,7 +15592,7 @@ sk
 sk
 sk
 sk
-VJ
+vg
 VJ
 VJ
 PH
@@ -15630,7 +15666,7 @@ zI
 ou
 VJ
 VJ
-PH
+VI
 VJ
 VJ
 VJ
@@ -15674,7 +15710,7 @@ Ym
 eH
 vX
 VJ
-VJ
+BD
 VJ
 VJ
 VJ
@@ -15884,7 +15920,7 @@ oO
 at
 vX
 VJ
-VJ
+BD
 VJ
 VJ
 VJ
@@ -16084,14 +16120,14 @@ of
 DZ
 uB
 QK
-SU
-SU
+pe
+pe
 gh
 Sm
-as
-SU
-VJ
-VJ
+Mp
+pe
+Cx
+Cx
 VJ
 VJ
 VJ
@@ -16155,13 +16191,13 @@ QK
 mk
 mk
 QK
-SU
-SU
-aq
+pe
+pe
+oi
 EH
-as
-SU
-VJ
+Mp
+pe
+Cx
 VJ
 VJ
 VJ
@@ -16227,12 +16263,12 @@ QK
 QK
 QK
 SU
-SU
+pe
 kX
-BD
+jb
 iV
-SU
-VJ
+pe
+BD
 VJ
 VJ
 VJ
@@ -16299,10 +16335,10 @@ SU
 SU
 SU
 SU
+pe
+pe
+pe
 SU
-SU
-SU
-SU
 VJ
 VJ
 VJ
@@ -16312,7 +16348,7 @@ VJ
 VJ
 VJ
 VJ
-VJ
+BD
 VJ
 VJ
 VJ
@@ -16421,7 +16457,7 @@ VJ
 VJ
 VJ
 VJ
-VJ
+BD
 SU
 So
 So
@@ -16731,7 +16767,7 @@ VJ
 VJ
 VJ
 VJ
-VJ
+BD
 VJ
 VJ
 VJ
@@ -16864,12 +16900,12 @@ VJ
 VJ
 VJ
 VJ
+Cx
+Cx
+Cx
 VJ
 VJ
-VJ
-VJ
-VJ
-VJ
+BD
 VJ
 VJ
 VJ
@@ -16933,11 +16969,11 @@ sk
 sk
 sk
 sk
-VJ
-VJ
-VJ
-VJ
-VJ
+Cx
+Cx
+Cx
+Cx
+Cx
 VJ
 VJ
 VJ
@@ -17005,11 +17041,11 @@ sk
 sk
 sk
 sk
-VJ
-VJ
-VJ
-VJ
-VJ
+Cx
+Yi
+Cx
+Cx
+Cx
 VJ
 VJ
 VJ
@@ -17077,11 +17113,11 @@ sk
 sk
 sk
 sk
-VJ
-VJ
-VJ
-VJ
-VJ
+Cx
+Cx
+Cx
+Cx
+Cx
 VJ
 VJ
 VJ
@@ -17148,11 +17184,11 @@ sk
 sk
 sk
 sk
-VJ
-VJ
-VJ
-VJ
-VJ
+Cx
+Cx
+Yi
+Cx
+Cx
 VJ
 VJ
 VJ
@@ -17221,9 +17257,9 @@ sk
 sk
 sk
 VJ
-VJ
-VJ
-VJ
+Cx
+Cx
+Cx
 VJ
 VJ
 VJ
@@ -17963,9 +17999,9 @@ sk
 sk
 tZ
 tZ
-tZ
-tZ
-tZ
+EL
+EL
+PA
 tZ
 tZ
 VJ
@@ -18034,10 +18070,10 @@ sk
 sk
 sk
 sk
-tZ
-VJ
-VJ
-VJ
+sE
+EL
+TF
+EL
 VJ
 VJ
 VJ
