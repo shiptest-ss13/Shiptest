@@ -3054,36 +3054,35 @@
 	pixel_x = -7;
 	pixel_y = -4
 	},
-/obj/item/reagent_containers/glass/bottle/formaldehyde{
-	pixel_x = 7;
-	pixel_y = -3
-	},
-/obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_x = 3;
-	pixel_y = -8
-	},
-/obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_x = 11;
-	pixel_y = -8
-	},
-/obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/rezadone=30);
-	name = "rezadone bottle";
-	pixel_x = -8;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/rezadone=30);
-	name = "rezadone bottle";
-	pixel_x = -8;
-	pixel_y = 6
-	},
 /obj/item/reagent_containers/glass/bottle/atropine{
 	pixel_y = 6
 	},
 /obj/item/reagent_containers/glass/bottle/gjalrazine{
 	pixel_y = 6;
 	pixel_x = 8
+	},
+/obj/item/reagent_containers/glass/bottle/rezadone{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/glass/bottle/rezadone{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = 8;
+	pixel_y = -8
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = 8;
+	pixel_y = -8
+	},
+/obj/item/reagent_containers/glass/bottle/dimorlin{
+	pixel_y = -8
+	},
+/obj/item/reagent_containers/glass/bottle/formaldehyde{
+	pixel_x = -8;
+	pixel_y = -8
 	},
 /obj/item/storage/pill_bottle/mannitol{
 	pixel_x = -8
@@ -3092,6 +3091,11 @@
 /obj/item/storage/pill_bottle/charcoal{
 	pixel_x = 8
 	},
+/obj/item/storage/pill_bottle/tramal{
+	pixel_y = -5;
+	pixel_x = -4
+	},
+/obj/item/inhaler/salbutamol,
 /obj/item/defibrillator/loaded{
 	pixel_y = -4
 	},
@@ -3258,8 +3262,13 @@
 /obj/item/bodycamera{
 	pixel_x = 4
 	},
-/obj/item/extinguisher/mini{
-	pixel_x = -12
+/obj/item/bodycamera{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/bodycamera{
+	pixel_x = 4;
+	pixel_y = -4
 	},
 /obj/item/extinguisher/mini{
 	pixel_x = -12
@@ -3270,11 +3279,8 @@
 /obj/item/extinguisher/mini{
 	pixel_x = -12
 	},
-/obj/item/stack/marker_beacon/thirty{
-	pixel_x = 10
-	},
-/obj/item/defibrillator/compact/loaded{
-	pixel_y = -5
+/obj/item/extinguisher/mini{
+	pixel_x = -12
 	},
 /obj/item/flashlight,
 /obj/item/flashlight,
@@ -4931,6 +4937,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stack/marker_beacon/thirty{
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "Ll" = (
