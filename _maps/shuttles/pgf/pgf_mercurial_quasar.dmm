@@ -714,6 +714,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/structure/sign/poster/etherbor/random{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "hc" = (
@@ -1079,7 +1082,6 @@
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 1
 	},
-/obj/machinery/light/directional/east,
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -1512,9 +1514,6 @@
 /obj/item/storage/box/zipties{
 	pixel_y = 1
 	},
-/obj/item/attachment/rail_light{
-	pixel_y = -12
-	},
 /obj/item/grenade/smokebomb{
 	pixel_x = 10;
 	pixel_y = 0
@@ -1531,18 +1530,6 @@
 	icon_state = "sec_wall";
 	name = "equipment locker"
 	},
-/obj/item/attachment/rail_light{
-	pixel_y = -12;
-	pixel_x = -3
-	},
-/obj/item/attachment/rail_light{
-	pixel_y = -8;
-	pixel_x = -3
-	},
-/obj/item/attachment/rail_light{
-	pixel_y = -10;
-	pixel_x = -6
-	},
 /obj/item/assembly/flash{
 	pixel_x = -13;
 	pixel_y = 10
@@ -1556,6 +1543,10 @@
 	pixel_y = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white,
+/obj/item/storage/backpack/duffelbag/syndie/c4{
+	pixel_y = -7;
+	pixel_x = -6
+	},
 /obj/item/attachment/bayonet{
 	pixel_x = -9;
 	pixel_y = 1
@@ -1567,6 +1558,21 @@
 /obj/item/attachment/bayonet{
 	pixel_x = -7;
 	pixel_y = -2
+	},
+/obj/item/attachment/rail_light{
+	pixel_y = -12
+	},
+/obj/item/attachment/rail_light{
+	pixel_y = -8;
+	pixel_x = -3
+	},
+/obj/item/attachment/rail_light{
+	pixel_y = -12;
+	pixel_x = -3
+	},
+/obj/item/attachment/rail_light{
+	pixel_y = -10;
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -1780,10 +1786,10 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge/cool)
 "vR" = (
-/obj/machinery/vending/coffee{
+/obj/effect/turf_decal/corner/opaque/lime/diagonal,
+/obj/effect/spawner/random/vending/cola{
 	pixel_y = 12
 	},
-/obj/effect/turf_decal/corner/opaque/lime/diagonal,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "wa" = (
@@ -1796,7 +1802,7 @@
 /obj/machinery/button/door{
 	dir = 8;
 	pixel_x = 22;
-	pixel_y = 4;
+	pixel_y = 0;
 	name = "engineering shutter control";
 	id = "quasar_engineering_shutters"
 	},
@@ -2128,12 +2134,12 @@
 /obj/machinery/light_switch{
 	dir = 2;
 	pixel_y = 22;
-	pixel_x = -12
+	pixel_x = 12
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Cb" = (
@@ -2418,12 +2424,12 @@
 	dir = 4;
 	pixel_x = 3
 	},
-/obj/item/radio/intercom/directional/south,
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "FI" = (
@@ -2575,12 +2581,12 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "HK" = (
-/obj/machinery/light/directional/south,
 /obj/structure/table/reinforced,
 /obj/item/stack/tape/industrial/electrical{
-	pixel_x = 9;
-	pixel_y = -3
+	pixel_x = -9;
+	pixel_y = 1
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "HU" = (
@@ -3309,10 +3315,6 @@
 	dir = 2;
 	name = "air injection port"
 	},
-/obj/machinery/firealarm/directional/north{
-	pixel_y = 32;
-	pixel_x = 2
-	},
 /obj/machinery/portable_atmospherics/pump,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -3331,7 +3333,11 @@
 	},
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
 	pixel_x = 5;
-	pixel_y = 7
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = 5;
+	pixel_y = 4
 	},
 /obj/item/reagent_containers/glass/bottle/morphine{
 	pixel_x = 5;
@@ -3417,7 +3423,8 @@
 /obj/item/radio/intercom/directional/east,
 /obj/machinery/coffeemaker{
 	pixel_y = 20;
-	pixel_x = 0
+	pixel_x = 0;
+	layer = 3
 	},
 /obj/item/storage/fancy/coffee_cart_rack{
 	pixel_x = 11;
@@ -3466,6 +3473,7 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "Qi" = (
@@ -3972,7 +3980,28 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/west,
+/obj/structure/closet/wall/directional/north{
+	name = "toiletries";
+	dir = 8;
+	pixel_y = -10;
+	pixel_x = -28
+	},
+/obj/item/towel{
+	pixel_x = -7;
+	pixel_y = -3
+	},
+/obj/item/towel{
+	pixel_x = -7;
+	pixel_y = -8
+	},
+/obj/item/soap/deluxe{
+	pixel_x = -6;
+	pixel_y = -9
+	},
+/obj/item/razor{
+	pixel_x = -10;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "WW" = (
@@ -4026,7 +4055,6 @@
 	},
 /area/ship/bridge/cool)
 "Yq" = (
-/obj/machinery/light/directional/north,
 /obj/machinery/hydroponics/wooden{
 	density = 0;
 	pixel_y = 8
@@ -4099,7 +4127,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "ZC" = (
-/obj/machinery/airalarm/directional/south,
 /obj/machinery/cell_charger{
 	pixel_y = 1
 	},
@@ -4107,6 +4134,7 @@
 	pixel_y = 1
 	},
 /obj/structure/table/reinforced,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "ZQ" = (
@@ -4281,7 +4309,7 @@ ZV
 NW
 HE
 aP
-HK
+Lr
 fY
 sB
 sB
@@ -4315,7 +4343,7 @@ ZV
 ZV
 ZV
 Ax
-Lr
+HK
 fY
 sB
 sB

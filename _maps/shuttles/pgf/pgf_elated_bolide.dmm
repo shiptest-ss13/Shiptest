@@ -2407,7 +2407,6 @@
 /area/ship/external/dark)
 "oc" = (
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/vending/coffee,
 /obj/effect/turf_decal/box/corners,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
@@ -2418,6 +2417,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 1
 	},
+/obj/effect/spawner/random/vending/cola,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "og" = (
@@ -5388,6 +5388,7 @@
 	icon_state = "1-4"
 	},
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "ER" = (
@@ -8057,6 +8058,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/item/toy/cards/deck/kotahi{
+	pixel_x = 5;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "TG" = (
@@ -8442,7 +8447,7 @@
 	pixel_y = -10
 	},
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/machinery/airalarm/directional/north,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "Vq" = (
