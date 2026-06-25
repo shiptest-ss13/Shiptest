@@ -91,6 +91,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"grad_style" = "None",
 							"grad_color" = "FFF",
 							"ethcolor" = "9c3030",
+							"moth_bodyfluff_color" = "ECCF8C",
 							"tail_lizard" = "Smooth",
 							"tail_human" = "None",
 							"face_markings" = "None",
@@ -100,9 +101,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"frills" = "None",
 							"spines" = "None",
 							"body_markings" = "None",
+							"moth_head" = "Flat",
 							"moth_wings" = "Plain",
+							"moth_wings_color" = "ECCF8C",
 							"moth_fluff" = "Plain",
+							"moth_neckfluff_color" = "ECCF8C",
 							"moth_markings" = "None",
+							"moth_markings_color" = "ECCF8C",
+							"moth_antennae" = "Plain",
+							"moth_antennae_color" = "ECCF8C",
 							"spider_legs" = "Plain",
 							"spider_spinneret" = "Plain",
 							"spider_mandibles" = "Plain",
@@ -495,6 +502,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				dat += "<span style='border: 1px solid #161616; background-color: #[features["ethcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=color_ethereal;task=input'>Change</a><BR>"
 
+			if(istype(pref_species, /datum/species/moth))
+
+				dat += "<h3>Body Fluff Color</h3>"
+
+				dat += "<span style='border: 1px solid #161616; background-color: #[features["moth_bodyfluff_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=moth_fluff_color;task=input'>Change</a><BR>"
+
 			var/obj/item/bodypart/head/spec_head = pref_species.species_limbs[BODY_ZONE_HEAD]
 			if(initial(spec_head.draw_eyes) && initial(spec_head.greyscale_eyes))
 
@@ -538,6 +551,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<br><span style='border: 1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=facial;task=input'>Change</a>"
 				dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br></td>"
+
+			if(("moth_head" in pref_species.default_features) && (!fbp))
+
+				dat += "<h3>Moth Head Type</h3>"
+
+				dat += "<a href='byond://?_src_=prefs;preference=moth_head;task=input'>[features["moth_head"]]</a>"
+				dat += "<a href='byond://?_src_=prefs;preference=previous_mothhead_style;task=input'>&lt;</a> <a href='byond://?_src_=prefs;preference=next_mothhead_style;task=input'>&gt;</a><BR>"
 
 			//Mutant stuff
 			var/mutant_category = 0
@@ -626,9 +646,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>Moth wings</h3>"
+				dat += "<h3>Moth Wings</h3>"
 
-				dat += "<a href='byond://?_src_=prefs;preference=moth_wings;task=input'>[features["moth_wings"]]</a><BR>"
+				dat += "<a href='byond://?_src_=prefs;preference=moth_wings;task=input'>[features["moth_wings"]]</a>"
+				dat += "<a href='byond://?_src_=prefs;preference=previous_mothwing_style;task=input'>&lt;</a> <a href='byond://?_src_=prefs;preference=next_mothwing_style;task=input'>&gt;</a><BR>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features["moth_wings_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=moth_wings_color;task=input'>Change</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -639,9 +661,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>Moth fluff</h3>"
+				dat += "<h3>Moth Fluff</h3>"
 
-				dat += "<a href='byond://?_src_=prefs;preference=moth_fluff;task=input'>[features["moth_fluff"]]</a><BR>"
+				dat += "<a href='byond://?_src_=prefs;preference=moth_fluff;task=input'>[features["moth_fluff"]]</a>"
+				dat += "<a href='byond://?_src_=prefs;preference=previous_mothfluff_style;task=input'>&lt;</a> <a href='byond://?_src_=prefs;preference=next_mothfluff_style;task=input'>&gt;</a><BR>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features["moth_neckfluff_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=moth_neckfluff_color;task=input'>Change</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -652,14 +676,32 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>Moth markings</h3>"
+				dat += "<h3>Moth Markings</h3>"
 
-				dat += "<a href='byond://?_src_=prefs;preference=moth_markings;task=input'>[features["moth_markings"]]</a><BR>"
+				dat += "<a href='byond://?_src_=prefs;preference=moth_markings;task=input'>[features["moth_markings"]]</a>"
+				dat += "<a href='byond://?_src_=prefs;preference=previous_mothmarkings_style;task=input'>&lt;</a> <a href='byond://?_src_=prefs;preference=next_mothmarkings_style;task=input'>&gt;</a><BR>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features["moth_markings_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=moth_markings_color;task=input'>Change</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+
+			if("moth_antennae" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Moth Antennae</h3>"
+
+				dat += "<a href='byond://?_src_=prefs;preference=moth_antennae;task=input'>[features["moth_antennae"]]</a>"
+				dat += "<a href='byond://?_src_=prefs;preference=previous_mothantennae_style;task=input'>&lt;</a> <a href='byond://?_src_=prefs;preference=next_mothantennae_style;task=input'>&gt;</a><BR>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features["moth_antennae_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=moth_antennae_color;task=input'>Change</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
 
 			if("spider_legs" in pref_species.default_features)
 				if(!mutant_category)
@@ -1976,6 +2018,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						else
 							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
+				if("moth_fluff_color")
+					var/new_moth_bodyfluff_color = input(user, "Choose your character's body fluff color:", "Character Preference","#" + features["moth_bodyfluff_color"]) as color|null
+					if(new_moth_bodyfluff_color)
+						var/temp_hsv = RGBtoHSV(new_moth_bodyfluff_color)
+						if(new_moth_bodyfluff_color == "#000000")
+							features["moth_bodyfluff_color"] = pref_species.default_color
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3])
+							features["moth_bodyfluff_color"] = sanitize_hexcolor(new_moth_bodyfluff_color)
+						else
+							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
+
 				if("color_ethereal")
 					var/new_etherealcolor = input(user, "Choose your elzuose color:", "Character Preference","#"+features["ethcolor"]) as color|null
 					if(new_etherealcolor)
@@ -2040,11 +2093,40 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_body_markings)
 						features["body_markings"] = new_body_markings
 
+				if("moth_head")
+					var/new_moth_head
+					new_moth_head = input(user, "Choose your character's head type:", "Character Preference") as null|anything in GLOB.moth_head_list
+					if(new_moth_head)
+						features["moth_head"] = new_moth_head
+
+				if("next_mothhead_style")
+					features["moth_head"] = next_list_item(features["moth_head"], GLOB.moth_head_list)
+
+				if("previous_mothhead_style")
+					features["moth_head"] = previous_list_item(features["moth_head"], GLOB.moth_head_list)
+
 				if("moth_wings")
 					var/new_moth_wings
 					new_moth_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.moth_wings_list
 					if(new_moth_wings)
 						features["moth_wings"] = new_moth_wings
+
+				if("next_mothwing_style")
+					features["moth_wings"] = next_list_item(features["moth_wings"], GLOB.moth_wings_list)
+
+				if("previous_mothwing_style")
+					features["moth_wings"] = previous_list_item(features["moth_wings"], GLOB.moth_wings_list)
+
+				if("moth_wings_color")
+					var/new_moth_wings_color = input(user, "Choose your character's wing color:", "Character Preference","#" + features["moth_wings_color"]) as color|null
+					if(new_moth_wings_color)
+						var/temp_hsv = RGBtoHSV(new_moth_wings_color)
+						if(new_moth_wings_color == "#000000")
+							features["moth_wings_color"] = pref_species.default_color
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3])
+							features["moth_wings_color"] = sanitize_hexcolor(new_moth_wings_color)
+						else
+							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
 				if("moth_fluff")
 					var/new_moth_fluff
@@ -2052,11 +2134,68 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_moth_fluff)
 						features["moth_fluff"] = new_moth_fluff
 
+				if("next_mothfluff_style")
+					features["moth_fluff"] = next_list_item(features["moth_fluff"], GLOB.moth_fluff_list)
+
+				if("previous_mothfluff_style")
+					features["moth_fluff"] = previous_list_item(features["moth_fluff"], GLOB.moth_fluff_list)
+
+				if("moth_neckfluff_color")
+					var/new_moth_neckfluff_color = input(user, "Choose your character's neck fluff color:", "Character Preference","#" + features["moth_neckfluff_color"]) as color|null
+					if(new_moth_neckfluff_color)
+						var/temp_hsv = RGBtoHSV(new_moth_neckfluff_color)
+						if(new_moth_neckfluff_color == "#000000")
+							features["moth_neckfluff_color"] = pref_species.default_color
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3])
+							features["moth_neckfluff_color"] = sanitize_hexcolor(new_moth_neckfluff_color)
+						else
+							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
+
 				if("moth_markings")
 					var/new_moth_markings
 					new_moth_markings = input(user, "Choose your character's markings:", "Character Preference") as null|anything in GLOB.moth_markings_list
 					if(new_moth_markings)
 						features["moth_markings"] = new_moth_markings
+
+				if("next_mothmarkings_style")
+					features["moth_markings"] = next_list_item(features["moth_markings"], GLOB.moth_markings_list)
+
+				if("previous_mothmarkings_style")
+					features["moth_markings"] = previous_list_item(features["moth_markings"], GLOB.moth_markings_list)
+
+				if("moth_markings_color")
+					var/new_moth_markings_color = input(user, "Choose your character's markings color:", "Character Preference","#" + features["moth_markings_color"]) as color|null
+					if(new_moth_markings_color)
+						var/temp_hsv = RGBtoHSV(new_moth_markings_color)
+						if(new_moth_markings_color == "#000000")
+							features["moth_markings_color"] = pref_species.default_color
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3])
+							features["moth_markings_color"] = sanitize_hexcolor(new_moth_markings_color)
+						else
+							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
+
+				if("moth_antennae")
+					var/new_moth_antennae
+					new_moth_antennae = input(user, "Choose your character's antennae style:", "Character Preference") as null|anything in GLOB.moth_antennae_list
+					if(new_moth_antennae)
+						features["moth_antennae"] = new_moth_antennae
+
+				if("next_mothantennae_style")
+					features["moth_antennae"] = next_list_item(features["moth_antennae"], GLOB.moth_antennae_list)
+
+				if("previous_mothantennae_style")
+					features["moth_antennae"] = previous_list_item(features["moth_antennae"], GLOB.moth_antennae_list)
+
+				if("moth_antennae_color")
+					var/new_moth_antennae_color = input(user, "Choose your character's antennae color:", "Character Preference","#" + features["moth_antennae_color"]) as color|null
+					if(new_moth_antennae_color)
+						var/temp_hsv = RGBtoHSV(new_moth_antennae_color)
+						if(new_moth_antennae_color == "#000000")
+							features["moth_antennae_color"] = pref_species.default_color
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3])
+							features["moth_antennae_color"] = sanitize_hexcolor(new_moth_antennae_color)
+						else
+							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
 				if("spider_legs")
 					var/new_spider_legs
@@ -2313,7 +2452,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						pronouns = friendlyPronouns[pickedPronouns]
 				if("fbp")
 					fbp = !fbp
-
+					if(("moth_head" in pref_species.default_features) && (fbp))
+						features["moth_head"] = "Flat"
 				if("limbs")
 					if(href_list["customize_limb"])
 						var/limb = href_list["customize_limb"]
