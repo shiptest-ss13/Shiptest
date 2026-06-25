@@ -378,6 +378,9 @@
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
+"cP" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/engineering/communications)
 "cT" = (
 /obj/effect/turf_decal/spline/fancy/opaque/green/corner{
 	dir = 8
@@ -6776,6 +6779,9 @@
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
+"Mk" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/hallway/fore)
 "Mv" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -8185,9 +8191,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "Ug" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/bridge/cool)
 "Uj" = (
 /obj/machinery/cryopod{
 	dir = 1
@@ -10465,7 +10470,7 @@ oY
 oY
 oY
 oY
-js
+cP
 js
 FR
 FR
@@ -10497,7 +10502,7 @@ oY
 oY
 oY
 oY
-FR
+Mk
 FR
 ps
 AC
@@ -10591,7 +10596,7 @@ oY
 oY
 oY
 oY
-FR
+Mk
 FR
 Wk
 lm
@@ -10622,7 +10627,7 @@ oY
 oY
 oY
 oY
-Ug
+oY
 FR
 FN
 lm
@@ -10696,7 +10701,7 @@ VF
 EE
 WS
 Lh
-VF
+Ug
 oY
 oY
 oY
