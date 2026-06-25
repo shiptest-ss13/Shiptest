@@ -2559,6 +2559,7 @@
 	dir = 1
 	},
 /obj/item/radio/intercom/directional/south,
+/obj/machinery/light/floor,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "to" = (
@@ -3286,6 +3287,9 @@
 /obj/item/flashlight,
 /obj/item/flashlight,
 /obj/item/flashlight,
+/obj/item/stack/marker_beacon/thirty{
+	pixel_x = 10
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage/equip)
@@ -4938,9 +4942,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/stack/marker_beacon/thirty{
-	pixel_x = 10
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "Ll" = (
@@ -5820,6 +5821,7 @@
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
+/obj/machinery/light/floor,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "RY" = (
