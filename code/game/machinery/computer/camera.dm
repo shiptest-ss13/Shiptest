@@ -426,12 +426,12 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen, 17)
 	icon_state_off = "crt_wall_nobroadcast"
 	icon_state_on = "crt_wall_live"
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/entertainment/wall, 22)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/entertainment/wall, 24)
 
 /obj/machinery/computer/security/telescreen/entertainment/wall/beige
 	icon_state = "crt_beige_wall"
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/entertainment/wall/beige, 22)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/entertainment/wall/beige, 24)
 
 /obj/machinery/computer/security/telescreen/rd
 	name = "\improper Research Director's telescreen"
