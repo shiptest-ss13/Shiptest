@@ -623,7 +623,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/med
 	box = /obj/item/storage/box/survival/medical
 
-/datum/outfit/job/warra/warra/cmo/empty
+/datum/outfit/job/warra/cmo/empty
 	name = "Makosso-Warra - Medical Director (Naked)"
 
 	belt = null
