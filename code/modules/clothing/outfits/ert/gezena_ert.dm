@@ -69,6 +69,7 @@
 
 	suit_store = /obj/item/gun/ballistic/rocketlauncher/oneshot/hedp
 	back = /obj/item/gun/ballistic/rocketlauncher/oneshot
+	box = null
 
 	r_hand = /obj/item/gun/energy/kalix/pgf/heavy/rail_light
 	l_hand = /obj/item/radio
@@ -77,6 +78,8 @@
 	satchel = /obj/item/gun/ballistic/rocketlauncher/oneshot
 	duffelbag = /obj/item/gun/ballistic/rocketlauncher/oneshot
 	courierbag = /obj/item/gun/ballistic/rocketlauncher/oneshot
+
+	backpack_contents = null
 
 /datum/outfit/job/gezena/ert/anti_tank/eva
 	name = "ERT - PGF Marine Anti Tank (EVA)"
