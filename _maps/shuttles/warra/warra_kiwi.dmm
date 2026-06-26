@@ -150,19 +150,21 @@
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)
 "aO" = (
 /obj/effect/turf_decal/siding/white,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = -25;
-	pixel_x = 15
-	},
 /obj/item/radio/intercom/directional/south{
-	pixel_x = -9
+	pixel_x = -6;
+	pixel_y = -31
 	},
 /obj/effect/turf_decal/siding/white{
 	dir = 1
+	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south{
+	pixel_x = 16;
+	pixel_y = -22
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/aft)
@@ -2333,6 +2335,7 @@
 	dir = 1;
 	pixel_y = -25
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "ln" = (
@@ -4690,14 +4693,15 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/noticeboard/directional/east,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34
-	},
 /obj/item/radio/intercom/directional/north,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/hatch/blue,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north{
+	pixel_x = 0;
+	pixel_y = 38
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "ym" = (
@@ -5605,6 +5609,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "CR" = (
@@ -6712,7 +6717,6 @@
 	dir = 1
 	},
 /obj/machinery/camera/autoname/directional/south,
-/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "JE" = (
@@ -6958,6 +6962,7 @@
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/cargo/starboard)
 "Lr" = (
@@ -7721,7 +7726,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/directional/south,
-/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)
 "Pz" = (
@@ -8300,7 +8304,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/cargo/starboard)
 "Ta" = (
@@ -9480,7 +9483,6 @@
 /obj/structure/chair/handrail{
 	dir = 4
 	},
-/obj/machinery/camera/autoname/directional/west,
 /obj/structure/cable/white{
 	icon_state = "1-2"
 	},

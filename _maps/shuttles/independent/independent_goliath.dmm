@@ -3603,9 +3603,6 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 9
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 32
-	},
 /obj/machinery/newscaster/directional/west{
 	pixel_y = 1
 	},
@@ -3616,6 +3613,7 @@
 	name = "Exterior Window Lockdown";
 	pixel_y = 12
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north,
 /turf/open/floor/carpet/green,
 /area/ship/maintenance/port)
 "uj" = (
@@ -3743,8 +3741,9 @@
 /obj/item/radio/intercom/directional/north{
 	pixel_y = 31
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north{
+	pixel_x = 0;
+	pixel_y = 38
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/canteen)
@@ -7090,6 +7089,10 @@
 /obj/item/food/canned/peaches{
 	pixel_y = 7
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/east{
+	pixel_x = 22;
+	pixel_y = 4
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm)
 "Pb" = (
@@ -7415,10 +7418,6 @@
 	dir = 6
 	},
 /obj/structure/table/wood,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34;
-	pixel_x = 32
-	},
 /obj/item/radio/intercom/directional/east{
 	pixel_y = 0
 	},

@@ -616,9 +616,6 @@
 "gz" = (
 /obj/effect/turf_decal/siding/wood/corner/maple,
 /obj/structure/table/glass,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 36
-	},
 /obj/item/radio/intercom/directional/north{
 	pixel_x = -5
 	},
@@ -633,6 +630,10 @@
 /obj/item/pen/fountain/captain{
 	pixel_x = -6;
 	pixel_y = 4
+	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north{
+	pixel_x = -1;
+	pixel_y = 37
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
@@ -3378,7 +3379,9 @@
 /obj/effect/turf_decal/trimline/opaque/white/corner,
 /obj/machinery/computer/security/telescreen/directional/north{
 	network = list("ss13");
-	desc = "A telescreen that connects to the ship's security camera network."
+	desc = "A telescreen that connects to the ship's security camera network.";
+	pixel_x = 0;
+	pixel_y = 26
 	},
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
