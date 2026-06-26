@@ -16,7 +16,7 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	ears = /obj/item/radio/headset/pgf/alt
 	neck = /obj/item/clothing/neck/cloak/gezena
-	suit_store = /obj/item/gun/energy/kalix/pgf/medium/rail_light
+	suit_store = /obj/item/gun/energy/kalix/pgf/medium
 	mask = /obj/item/clothing/mask/breath/pgfmask
 	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 	box = /obj/item/storage/box/survival/pgf/marine
@@ -29,7 +29,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 
-	backpack_contents = list(/obj/item/grenade/smokebomb = 2, /obj/item/grenade/frag = 2)
+	backpack_contents = list(/obj/item/grenade/smokebomb = 2, /obj/item/grenade/frag = 2, /obj/item/attachment/rail_light)
 
 /datum/outfit/job/gezena/ert/eva
 	name = "ERT - PGF Marine Rifleman (EVA)"
@@ -41,7 +41,7 @@
 /datum/outfit/job/gezena/ert/gunner
 	name = "ERT - PGF Marine Heavy Rifleman"
 
-	suit_store = /obj/item/gun/energy/kalix/pgf/heavy/rail_light
+	suit_store = /obj/item/gun/energy/kalix/pgf/heavy
 
 /datum/outfit/job/gezena/ert/gunner/eva
 	name = "ERT - PGF Marine Heavy Rifleman (EVA)"
@@ -53,9 +53,9 @@
 /datum/outfit/job/gezena/ert/marksman
 	name = "ERT - PGF Marine Marksman"
 
-	suit_store = /obj/item/gun/energy/kalix/pgf/heavy/sniper/rail_light
+	suit_store = /obj/item/gun/energy/kalix/pgf/heavy/sniper
 
-	backpack_contents = list(/obj/item/grenade/smokebomb = 2, /obj/item/grenade/frag = 2, /obj/item/binoculars)
+	backpack_contents = list(/obj/item/grenade/smokebomb = 2, /obj/item/grenade/frag = 2, /obj/item/binoculars, /obj/item/attachment/rail_light)
 
 /datum/outfit/job/gezena/ert/marksman/eva
 	name = "ERT - PGF Marine Marksman (EVA)"
@@ -71,8 +71,8 @@
 	back = /obj/item/gun/ballistic/rocketlauncher/oneshot
 	box = null
 
-	r_hand = /obj/item/gun/energy/kalix/pgf/heavy/rail_light
-	l_hand = /obj/item/radio
+	r_hand = /obj/item/gun/energy/kalix/pgf/heavy
+	l_hand = /obj/item/attachment/rail_light
 
 	backpack = /obj/item/gun/ballistic/rocketlauncher/oneshot
 	satchel = /obj/item/gun/ballistic/rocketlauncher/oneshot
@@ -92,13 +92,13 @@
 	name = "ERT - PGF Marine Pioneer"
 	id_assignment = "Marine Pioneer"
 
-	suit_store = /obj/item/gun/energy/kalix/pgf/nock/rail_light
+	suit_store = /obj/item/gun/energy/kalix/pgf/nock
 	belt = /obj/item/storage/belt/military/gezena/engineer
 	neck = /obj/item/clothing/neck/cloak/gezena/engi
 
 	l_pocket = /obj/item/storage/pouch/engi
 
-	backpack_contents = list(/obj/item/grenade/smokebomb = 2, /obj/item/grenade/frag = 2, /obj/item/attachment/bayonet, /obj/item/trench_tool/gezena, /obj/item/storage/toolbox/explosives, /obj/item/clothing/glasses/welding)
+	backpack_contents = list(/obj/item/grenade/smokebomb = 2, /obj/item/grenade/frag = 2, /obj/item/attachment/bayonet, /obj/item/trench_tool/gezena, /obj/item/storage/toolbox/explosives, /obj/item/clothing/glasses/welding, /obj/item/attachment/rail_light)
 
 /datum/outfit/job/gezena/ert/engineer/eva
 	name = "ERT - PGF Marine Pioneer (EVA)"
@@ -116,7 +116,7 @@
 	belt = /obj/item/storage/belt/medical/gezena/paramedic
 	gloves = /obj/item/clothing/gloves/nitrile/blue
 	neck = /obj/item/clothing/neck/cloak/gezena/med
-	suit_store = /obj/item/gun/energy/kalix/pgf/pdw/rail_light
+	suit_store = /obj/item/gun/energy/kalix/pgf/pdw
 
 	l_pocket = /obj/item/storage/pouch/ammo/ewc6m
 
@@ -126,7 +126,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/para
 	box = /obj/item/storage/box/survival/medical
 
-	backpack_contents = list(/obj/item/storage/firstaid/medical, /obj/item/grenade/smokebomb = 4)
+	backpack_contents = list(/obj/item/storage/firstaid/medical, /obj/item/grenade/smokebomb = 4, /obj/item/attachment/rail_light)
 
 /datum/outfit/job/gezena/ert/medic/eva
 	name = "ERT - PGF Marine Corpsman (EVA)"
@@ -147,9 +147,9 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	ears = /obj/item/radio/headset/pgf/alt/captain
 	neck = /obj/item/clothing/neck/cloak/gezena/command
-	suit_store = /obj/item/gun/energy/kalix/pgf/rail_light
+	suit_store = /obj/item/gun/energy/kalix/pgf
 
-	backpack_contents = list(/obj/item/grenade/smokebomb = 2, /obj/item/grenade/frag = 2, /obj/item/binoculars)
+	backpack_contents = list(/obj/item/grenade/smokebomb = 2, /obj/item/grenade/frag = 2, /obj/item/binoculars, /obj/item/attachment/rail_light)
 
 /datum/outfit/job/gezena/ert/leader/eva
 	name = "ERT - PGF Marine Squad Leader (EVA)"
@@ -171,7 +171,7 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena
 	belt = /obj/item/storage/belt/sabre/pgf
-	suit_store = /obj/item/gun/energy/kalix/pgf/nock/rail_light
+	suit_store = /obj/item/gun/energy/kalix/pgf/nock
 	mask = /obj/item/clothing/mask/breath/pgfmask/navy
 	glasses = /obj/item/clothing/glasses/sunglasses/ballistic
 	box = /obj/item/storage/box/survival/pgf
@@ -184,7 +184,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 
-	backpack_contents = list(/obj/item/restraints/handcuffs = 2, /obj/item/clothing/mask/whistle, /obj/item/reagent_containers/spray/pepper, /obj/item/grenade/flashbang = 2, /obj/item/grenade/chem_grenade/teargas = 2)
+	backpack_contents = list(/obj/item/restraints/handcuffs = 2, /obj/item/clothing/mask/whistle, /obj/item/reagent_containers/spray/pepper, /obj/item/grenade/flashbang = 2, /obj/item/grenade/chem_grenade/teargas = 2, /obj/item/attachment/rail_light)
 
 /datum/outfit/job/gezena/ert/trooper/eva
 	name = "ERT - PGF Navy Security Trooper (EVA)"
