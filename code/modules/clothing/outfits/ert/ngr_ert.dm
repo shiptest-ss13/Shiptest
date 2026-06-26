@@ -1,3 +1,7 @@
+//NGR ERT outfits
+
+
+//Serviceman
 /datum/outfit/job/syndicate/ert/ngr
 	name = "ERT - NGR Serviceman"
 	id_assignment = "Serviceman"
@@ -38,6 +42,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ngr
 	head = null
 
+//Automatic Rifleman
 /datum/outfit/job/syndicate/ert/ngr/automatic_rifleman
 	name = "ERT - NGR Automatic Rifleman"
 
@@ -56,6 +61,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ngr
 	head = null
 
+//Breacher
 /datum/outfit/job/syndicate/ert/ngr/breacher
 	name = "ERT - NGR Breacher"
 
@@ -78,6 +84,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ngr
 	head = null
 
+//Grenadier
 /datum/outfit/job/syndicate/ert/ngr/grenadier
 	name = "ERT - NGR Grenadier"
 
@@ -98,6 +105,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ngr
 	head = null
 
+//Marksman
 /datum/outfit/job/syndicate/ert/ngr/marksman
 	name = "ERT - NGR Marksman"
 
@@ -118,6 +126,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ngr
 	head = null
 
+//Sniper
 /datum/outfit/job/syndicate/ert/ngr/sniper
 	name = "ERT - NGR Sniper"
 
@@ -142,6 +151,30 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ngr
 	head = null
 
+//Anti Tank
+/datum/outfit/job/syndicate/ert/ngr/anti_tank
+	name = "ERT - NGR Anti Tank"
+
+	mask = /obj/item/clothing/mask/gas/syndicate
+	accessory = /obj/item/clothing/accessory/holster/asp
+	belt = /obj/item/storage/belt/security/webbing/ngr/taipan
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/taipan
+
+	backpack_contents = list(/obj/item/grenade/syndieminibomb/concussion = 2, /obj/item/trench_tool, /obj/item/flashlight/seclite)
+
+/datum/outfit/job/syndicate/ert/ngr/anti_tank/softsuit
+	name = "ERT - NGR Anti Tank (Softsuit)"
+
+	suit = /obj/item/clothing/suit/space/syndicate/ngr
+	head = /obj/item/clothing/head/helmet/space/syndicate/ngr
+
+/datum/outfit/job/syndicate/ert/ngr/anti_tank/hardsuit
+	name = "ERT - NGR Anti Tank (Hardsuit)"
+
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ngr
+	head = null
+
+//Field Medic
 /datum/outfit/job/syndicate/ert/ngr/medic
 	name = "ERT - NGR Field Medic"
 	jobtype = /datum/job/ert/med
@@ -171,6 +204,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ngr
 	head = null
 
+//Leader
 /datum/outfit/job/syndicate/ert/ngr/leader
 	name = "ERT - NGR Lieutenant"
 	job_icon = "lieutenant"
@@ -186,6 +220,7 @@
 	belt = /obj/item/storage/belt/security/webbing/ngr/sidewinder
 	suit_store = /obj/item/gun/ballistic/automatic/smg/sidewinder
 	ears = /obj/item/radio/headset/syndicate/alt/captain/ngr
+	shoes = /obj/item/clothing/shoes/jackboots
 
 	backpack_contents = list(/obj/item/grenade/smokebomb = 2, /obj/item/grenade/frag = 2, /obj/item/melee/knife/combat, /obj/item/attachment/rail_light, /obj/item/binoculars, /obj/item/megaphone/sec)
 
@@ -201,6 +236,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ngr
 	head = null
 
+//Inspector
 /datum/outfit/job/syndicate/ert/ngr/inspector
 	name = "ERT - NGR Official"
 	id_assignment = "Official"
@@ -225,8 +261,72 @@
 	satchel = /obj/item/storage/backpack/satchel/leather
 	courierbag = /obj/item/storage/backpack/satchel/leather
 
-	backpack_contents = list(/obj/item/pen/fourcolor, /obj/item/folder/red, /obj/item/paper_bin/bundlenatural, /obj/item/hand_labeler)
+	backpack_contents = list(/obj/item/pen/fourcolor, /obj/item/folder/red, /obj/item/paper_bin/bundlenatural, /obj/item/hand_labeler, /obj/item/megaphone/sec)
 
+//Military Police
+/datum/outfit/job/syndicate/ert/ngr/military_police
+	name = "ERT - NGR MP"
+	id_assignment = "Military Police"
+
+	head = /obj/item/clothing/head/ngr
+	glasses = /obj/item/clothing/glasses/sunglasses
+	ears = /obj/item/radio/headset/syndicate/alt/ngr
+	mask = /obj/item/clothing/mask/breath/ngr
+	neck = /obj/item/clothing/mask/whistle
+	uniform = /obj/item/clothing/under/syndicate/ngr
+	accessory = /obj/item/clothing/accessory/holster/ringneck
+	gloves = /obj/item/clothing/gloves/combat
+	suit = /obj/item/clothing/suit/armor/ngr
+	belt = /obj/item/storage/belt/security/full/classic
+	shoes = /obj/item/clothing/shoes/combat
+	suit_store = null
+	box = /obj/item/storage/box/survival
+
+	l_hand = /obj/item/gun/ballistic/shotgun/gaboon/empty
+	r_hand = /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/rubber
+
+	l_pocket = /obj/item/storage/pouch/ammo/police
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
+	courierbag = /obj/item/storage/backpack/messenger/sec
+
+	backpack_contents = list(/obj/item/attachment/rail_light, /obj/item/clothing/head/helmet/riot, /obj/item/shield/tele)
+
+/datum/outfit/job/syndicate/ert/ngr/military_police/leader
+	name = "ERT - NGR MP Commander"
+	id_assignment = "Military Police Commander"
+
+	head = /obj/item/clothing/head/ngr/peaked
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	ears = /obj/item/radio/headset/syndicate/alt/captain/ngr
+	mask = /obj/item/clothing/mask/breath/ngr
+	neck = /obj/item/clothing/mask/whistle
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
+	accessory = /obj/item/clothing/accessory/holster/asp
+	gloves = /obj/item/clothing/gloves/combat
+	suit = /obj/item/clothing/suit/armor/ngr
+	belt = /obj/item/storage/belt/security/full/classic
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit_store = null
+	box = /obj/item/storage/box/survival
+
+	l_hand = /obj/item/gun/ballistic/shotgun/gaboon/empty
+	r_hand = /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/rubber
+
+	l_pocket = /obj/item/storage/pouch/ammo/police
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
+	courierbag = /obj/item/storage/backpack/messenger/sec
+
+	backpack_contents = list(/obj/item/attachment/rail_light, /obj/item/clothing/head/helmet/riot, /obj/item/shield/tele, /obj/item/megaphone/sec)
+
+//EOD
 /datum/outfit/job/syndicate/ert/ngr/eod
 	name = "ERT - NGR EOD"
 	id_assignment = "EOD Specialist"
@@ -255,6 +355,7 @@
 
 	backpack_contents = list(/obj/item/storage/toolbox/explosives, /obj/item/trench_tool)
 
+//Pilot
 /datum/outfit/job/syndicate/ert/ngr/pilot
 	name = "ERT - NGR Pilot"
 	id_assignment = "Pilot"
@@ -283,6 +384,7 @@
 
 	backpack_contents = list(/obj/item/attachment/rail_light)
 
+//Wrecker
 /datum/outfit/job/syndicate/ert/ngr/wrecker
 	name = "ERT - NGR Wrecker"
 	id_assignment = "Wrecker"

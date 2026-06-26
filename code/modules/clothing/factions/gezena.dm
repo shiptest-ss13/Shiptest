@@ -413,6 +413,7 @@
 		new /obj/item/stock_parts/cell/gun/pgf(src)
 	new /obj/item/grenade/frag(src)
 	new /obj/item/grenade/smokebomb(src)
+	new /obj/item/attachment/bayonet(src)
 
 /obj/item/storage/belt/military/gezena/engineer/PopulateContents()
 	. = ..()

@@ -221,6 +221,9 @@
 		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 
+/obj/item/gun/energy/kalix/pgf/nock/rail_light
+	default_attachments = list(/obj/item/attachment/rail_light)
+
 /obj/item/gun/energy/kalix/pgf
 	name = "\improper Etherbor BG-16"
 	desc = "Designed as the PGF armed forces primary close-combat weapon, the Etherbor BG-16 trades stability and power at range for an impressive shot capacity."
@@ -252,6 +255,9 @@
 		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
+
+/obj/item/gun/energy/kalix/pgf/rail_light
+	default_attachments = list(/obj/item/attachment/rail_light)
 
 /obj/item/gun/energy/kalix/pgf/empty_cell
 	spawn_no_ammo = TRUE
@@ -416,6 +422,9 @@
 		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 
+/obj/item/gun/energy/kalix/pgf/pdw/rail_light
+	default_attachments = list(/obj/item/attachment/rail_light)
+
 /obj/item/gun/energy/kalix/pgf/medium
 	name = "\improper Etherbor BGC-10"
 	desc = "Etherbor's answer to the PGF armed forces' request for a carbine style weapon; the BGC-10 offers greater accuracy and power than the BG-16, while being less cumbersome than the DMR mode equipped HBG series rifles."
@@ -457,6 +466,9 @@
 		/obj/item/stock_parts/cell/gun/kalix/empty,
 		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
+
+/obj/item/gun/energy/kalix/pgf/medium/rail_light
+	default_attachments = list(/obj/item/attachment/rail_light)
 
 /obj/item/gun/energy/kalix/pgf/heavy
 	name = "\improper Etherbor HBG-7"
@@ -533,6 +545,9 @@
 	range = 20
 	damage_constant = 1
 
+/obj/item/gun/energy/kalix/pgf/heavy/rail_light
+	default_attachments = list(/obj/item/attachment/rail_light)
+
 /obj/item/gun/energy/kalix/pgf/heavy/sniper
 	name = "\improper Etherbor HBG-7L"
 	desc = "HBG-7 with a longer barrel and scope. Intended to get the best use out of the DMR mode, it suffers from longer wield times and greater slowdown, but it's longer barrel makes it ideal for precision shooting."
@@ -568,6 +583,9 @@
 		/obj/item/stock_parts/cell/gun/kalix/empty,
 		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
+
+/obj/item/gun/energy/kalix/pgf/heavy/sniper/rail_light
+	default_attachments = list(/obj/item/attachment/rail_light)
 
 /obj/item/ammo_casing/energy/kalix/hunt
 	projectile_type = /obj/projectile/beam/hitscan/kalix/hunt

@@ -103,6 +103,10 @@
 	var/static/items_inside = list(/obj/item/stock_parts/cell/gun/pgf = 3)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/pouch/ammo/police/PopulateContents()
+	var/static/items_inside = list(/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/beanbag = 1, /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/rubber = 1, /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/buckshot = 1)
+	generate_items_inside(items_inside,src)
+
 /obj/item/storage/pouch/engi
 	name = "technician pouch"
 	desc = "An orange pouch used to hold a small amount of tools or supplies, often used for emergency repair kits."

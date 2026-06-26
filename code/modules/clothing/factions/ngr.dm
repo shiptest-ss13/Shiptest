@@ -392,6 +392,14 @@
 	new /obj/item/grenade/frag(src)
 	new /obj/item/grenade/smokebomb(src)
 
+/obj/item/storage/belt/security/webbing/ngr/taipan/PopulateContents()
+	for(var/i in 1 to 2)
+		new /obj/item/ammo_box/magazine/sniper_rounds(src)
+	for(var/i in 1 to 2)
+		new /obj/item/ammo_box/magazine/sniper_rounds/penetrator(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/smokebomb(src)
+
 /obj/item/storage/belt/security/webbing/ngr/bulldog/PopulateContents()
 	for(var/i in 1 to 2)
 		new /obj/item/ammo_box/magazine/m12g_bulldog(src)
