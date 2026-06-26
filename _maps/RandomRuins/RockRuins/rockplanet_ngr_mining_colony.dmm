@@ -723,7 +723,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
 	},
-/turf/open/floor/plasteel/rockplanet/interior,
+/turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "du" = (
 /obj/structure/cable{
@@ -886,7 +886,7 @@
 /obj/machinery/computer/mech_bay_power_console{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech/grid/rockplanet/interior,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "ej" = (
 /turf/open/floor/plasteel/tech/rockplanet/interior,
@@ -1276,7 +1276,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/turf/open/floor/plasteel/rockplanet/interior,
+/turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "fT" = (
 /obj/structure/cable{
@@ -1829,7 +1829,7 @@
 	color = "#eeac2e"
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
-/turf/open/floor/plasteel/rockplanet/interior,
+/turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "hT" = (
 /obj/structure/cable/yellow{
@@ -2338,6 +2338,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
+"kw" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "kD" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
@@ -2499,7 +2503,7 @@
 	dir = 1;
 	color = "#eeac2e"
 	},
-/turf/open/floor/plasteel/rockplanet/interior,
+/turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "ld" = (
 /obj/machinery/camera/autoname{
@@ -2736,7 +2740,10 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/grid/rockplanet/interior,
+/obj/machinery/door/poddoor/shutters{
+	id = "ngr_rock_colony_warehouse_mechbay"
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "lP" = (
 /turf/closed/wall/concrete/reinforced,
@@ -4842,6 +4849,13 @@
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.038
 	},
+/obj/machinery/button/door{
+	pixel_x = -6;
+	pixel_y = -21;
+	id = "ngr_rock_colony_warehouse_mechbay";
+	name = "Mech Bay Door";
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "vA" = (
@@ -5249,6 +5263,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/control)
+"xd" = (
+/obj/machinery/button/door{
+	pixel_x = -6;
+	pixel_y = 21;
+	id = "ngr_rock_colony_warehouse_mechbay";
+	name = "Mech Bay Door"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "xg" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
@@ -8135,7 +8158,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
 	},
-/turf/open/floor/plasteel/rockplanet/interior,
+/turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "Jy" = (
 /obj/structure/cable/yellow{
@@ -8195,7 +8218,8 @@
 "JN" = (
 /obj/effect/turf_decal/rechargefloor,
 /obj/structure/mecha_wreckage/ripley,
-/turf/open/floor/plasteel/tech/grid/rockplanet/interior,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "JO" = (
 /obj/item/radio/intercom/directional/north{
@@ -8813,7 +8837,10 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech/grid/rockplanet/interior,
+/obj/machinery/door/poddoor/shutters{
+	id = "ngr_rock_colony_warehouse_mechbay"
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "Mg" = (
 /turf/closed/wall/concrete,
@@ -9985,7 +10012,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
-/turf/open/floor/plasteel/tech/grid/rockplanet/interior,
+/obj/machinery/door/poddoor/shutters{
+	id = "ngr_rock_colony_warehouse_mechbay"
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "QY" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -10973,7 +11003,7 @@
 /obj/machinery/mech_bay_recharge_port{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/grid/rockplanet/interior,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "Vu" = (
 /obj/effect/decal/cleanable/blood/footprints{
@@ -11499,7 +11529,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/turf/open/floor/plasteel/rockplanet/interior,
+/turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "XI" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -12657,8 +12687,8 @@ MV
 iH
 XY
 DT
-CT
-CT
+kw
+kw
 DT
 DT
 VJ
@@ -12941,7 +12971,7 @@ hO
 iP
 vz
 DT
-CT
+xd
 CT
 DT
 DT
