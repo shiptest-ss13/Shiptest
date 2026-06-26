@@ -220,22 +220,16 @@
 //	rather then having to add it to something else first. They should only contain liquids. They have a default container size of 50.
 //	Formatting is the same as food.
 
-/obj/item/reagent_containers/food/drinks/coffee
-	name = "Solar's Best black coffee"
-	desc = "A cup of piping hot black coffee. Made from beans grown across the solar cantons for the caffeine that every spacer needs."
-	icon_state = "coffee"
-	icon = 'icons/obj/item/coffee.dmi'
-	list_reagents = list(/datum/reagent/consumable/coffee = 30)
-	spillable = TRUE
-	resistance_flags = FREEZE_PROOF
-	isGlass = FALSE
-	foodtype = BREAKFAST
-
 /obj/item/reagent_containers/food/drinks/ice
 	name = "ice cup"
 	desc = "Careful, cold ice, do not chew."
 	custom_price = 5
-	icon_state = "coffee"
+	icon = 'icons/obj/item/coffee.dmi'
+	icon_state = "coffee_cup"
+	possible_transfer_amounts = list(10)
+	volume = 30
+	spillable = TRUE
+	fill_icon_thresholds = list(30, 90)
 	list_reagents = list(/datum/reagent/consumable/ice = 30)
 	spillable = TRUE
 	isGlass = FALSE
@@ -274,16 +268,34 @@
 /obj/item/reagent_containers/food/drinks/cafelatte
 	name = "cafe latte"
 	desc = "A nice, strong and refreshing beverage while you're reading."
-	icon_state = "cafe_latte"
+	icon = 'icons/obj/item/coffee.dmi'
+	icon_state = "coffee_cup"
+
 	list_reagents = list(/datum/reagent/consumable/cafe_latte = 30)
 	custom_price = 5
+
+	possible_transfer_amounts = list(10)
+	volume = 30
+	fill_icon_thresholds = list(30, 90)
+	spillable = TRUE
+	resistance_flags = FREEZE_PROOF
+	isGlass = FALSE
+	foodtype = BREAKFAST
 
 /obj/item/reagent_containers/food/drinks/soylatte
 	name = "soy latte"
 	desc = "A nice and refreshing beverage while you're reading."
-	icon_state = "soy_latte"
+	icon = 'icons/obj/item/coffee.dmi'
+	icon_state = "coffee_cup"
 	list_reagents = list(/datum/reagent/consumable/soy_latte = 30)
 	custom_price = 5
+	possible_transfer_amounts = list(10)
+	volume = 30
+	fill_icon_thresholds = list(30, 90)
+	spillable = TRUE
+	resistance_flags = FREEZE_PROOF
+	isGlass = FALSE
+	foodtype = BREAKFAST
 
 /obj/item/reagent_containers/food/drinks/dry_ramen
 	name = "cup ramen"
@@ -369,48 +381,66 @@
 	desc +=  span_notice("The writing reads '[random_reagent.name]'.")
 	update_appearance()
 
+//not even in the fucking right subtype? wow.... repath under bottle
 /obj/item/reagent_containers/food/drinks/mead
-	name = "Bizircan Brewery Dark Mead" //ditto the plan for bottled water, need to find a way to make multiple variants
+	name = "Bizircan Brewery Dark Mead"
 	desc = "A popular Gezenan drink made of fermented honey and spices, known as Gezenan Dark Mead, or GDM for short."
-	icon_state = "beer"
+	icon_state = "mead"
 	list_reagents = list(/datum/reagent/consumable/ethanol/mead = 30)
 	foodtype = SUGAR | ALCOHOL
 	custom_price = 10
+	item_state = "beer" //Generic held-item sprite until unique ones are made.
+	can_have_cap = TRUE
+	cap_on = TRUE
+
+	icon = 'icons/obj/drinks/bottle.dmi'
+	lefthand_file = 'icons/obj/drinks/bottle_lefthand.dmi'
+	righthand_file = 'icons/obj/drinks/bottle_righthand.dmi'
 
 /obj/item/reagent_containers/food/drinks/beer
 	name = "Carp Lite"
 	desc = "Brewed with \"Pure Ice Asteroid Spring Water\"."
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/light = 30)
-	icon_state = "beer"
+	icon_state = "carplite"
+	item_state = "beer" //Generic held-item sprite until unique ones are made.
+	can_have_cap = TRUE
+	cap_on = TRUE
+
+	icon = 'icons/obj/drinks/bottle.dmi'
+	lefthand_file = 'icons/obj/drinks/bottle_lefthand.dmi'
+	righthand_file = 'icons/obj/drinks/bottle_righthand.dmi'
 
 /obj/item/reagent_containers/food/drinks/ale
 	name = "RHIMBASA TAP"
 	desc = "An ale that is brewed on Reh'himl, named after the planet that shields it from their sun. Telh'aim Pale Ales are shortened to TAP, with most breweries reducing their names to acronyms alongside it."
-	icon_state = "alebottle"
+	icon_state = "rhimbasa"
 	item_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/ale = 30)
 	foodtype = GRAIN | ALCOHOL
 	custom_price = 15
+	item_state = "beer" //Generic held-item sprite until unique ones are made.
+	can_have_cap = TRUE
+	cap_on = TRUE
+
+	icon = 'icons/obj/drinks/bottle.dmi'
+	lefthand_file = 'icons/obj/drinks/bottle_lefthand.dmi'
+	righthand_file = 'icons/obj/drinks/bottle_righthand.dmi'
 
 /obj/item/reagent_containers/food/drinks/sillycup
 	name = "paper cup"
 	desc = "A paper water cup."
-	icon_state = "water_cup_e"
+	icon_state = "water_cup"
 	possible_transfer_amounts = list()
+	fill_icon_thresholds = list(40, 100)
 	volume = 10
 	spillable = TRUE
 	isGlass = FALSE
-
-/obj/item/reagent_containers/food/drinks/sillycup/on_reagent_change(changetype)
-	if(reagents.total_volume)
-		icon_state = "water_cup"
-	else
-		icon_state = "water_cup_e"
 
 /obj/item/reagent_containers/food/drinks/sillycup/smallcarton
 	name = "small carton"
 	desc = "A small carton, intended for holding drinks."
 	icon_state = "juicebox"
+	fill_icon_thresholds = null
 	volume = 15 //I figure if you have to craft these it should at least be slightly better than something you can get for free from a watercooler
 
 /obj/item/reagent_containers/food/drinks/sillycup/smallcarton/smash(atom/target, mob/thrower, ranged = FALSE)

@@ -22,10 +22,8 @@
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 45
 	taste_description = "a bitter combination"
-	glass_icon_state = "kahluaglass"
 	glass_name = "glass of coffee liquor"
 	glass_desc = "Bitter from the coffee and alcohol alike!"
-	shot_glass_icon_state = "shotglasscream"
 
 /datum/reagent/consumable/ethanol/kahlua/on_mob_life(mob/living/carbon/M)
 	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
@@ -45,12 +43,11 @@
 	glass_icon_state = "whiskeyglass"
 	glass_name = "glass of whiskey"
 	glass_desc = "Often described as having a silky mouthfeel and a smokey aftertaste. The brown-amber color catches the light very well."
-	shot_glass_icon_state = "shotglassbrown"
 
 /datum/reagent/consumable/ethanol/vodka
 	name = "Vodka"
 	description = "A clear, hard liquor. Doubles as a flammable fuel source, if you really need it."
-	color = "#0064C8" // rgb: 0, 100, 200
+	color = "#e7e6ff" // rgb: 0, 100, 200
 	boozepwr = 65
 	taste_description = "grain alcohol"
 	glass_icon_state = "ginvodkaglass"
@@ -81,7 +78,6 @@
 	glass_icon_state = "rumglass"
 	glass_name = "glass of rum"
 	glass_desc = "There's no need to worry about being seen as a pirate with one of these. If you add enough ice and let it melt, it'll turn into grog."
-	shot_glass_icon_state = "shotglassbrown"
 
 /datum/reagent/consumable/ethanol/tequila
 	name = "Tequila"
@@ -92,7 +88,6 @@
 	glass_icon_state = "tequilaglass"
 	glass_name = "glass of tequila"
 	glass_desc = "Despite the strong, woody taste, there's just enough sweetness to keep you coming for more."
-	shot_glass_icon_state = "shotglassgold"
 
 /datum/reagent/consumable/ethanol/vermouth
 	name = "Vermouth"
@@ -111,10 +106,8 @@
 	color = "#7E4043" // rgb: 126, 64, 67
 	boozepwr = 35
 	taste_description = "bitter sweetness"
-	glass_icon_state = "wineglass"
 	glass_name = "glass of wine"
 	glass_desc = "Deeply red wine in a glass. You're not enough of a sommelier to really describe how it smells."
-	shot_glass_icon_state = "shotglassred"
 
 /datum/reagent/consumable/ethanol/lizardwine
 	name = "Blueflame Pyrecask"
@@ -130,7 +123,6 @@
 	color = "#F8EBF1"
 	boozepwr = 60
 	taste_description = "classy bitter sweetness"
-	glass_icon_state = "grappa"
 	glass_name = "glass of grappa"
 	glass_desc = "Despite being made from the recycled remains of wine grapes, it's not bad at all."
 
@@ -140,7 +132,6 @@
 	color = "#E17600"
 	boozepwr = 25
 	taste_description = "fruity and nutty sweetness"
-	glass_icon_state = "amarettoglass"
 	glass_name = "glass of amaretto"
 	glass_desc = "A sweet and syrupy looking alcohol. You're lucky it wasn't lost to history."
 
@@ -150,10 +141,8 @@
 	color = "#AB3C05" // rgb: 171, 60, 5
 	boozepwr = 75
 	taste_description = "sharp and relaxing"
-	glass_icon_state = "cognacglass"
 	glass_name = "glass of cognac"
 	glass_desc = "You wonder how many exhausted Solarian bureaucrats are drinking this the same way you are, right now."
-	shot_glass_icon_state = "shotglassbrown"
 
 /datum/reagent/consumable/ethanol/absinthe
 	name = "Absinthe"
@@ -161,10 +150,8 @@
 	color = rgb(10, 206, 0)
 	boozepwr = 80 //Very strong even by default
 	taste_description = "death and licorice"
-	glass_icon_state = "absinthe"
 	glass_name = "glass of absinthe"
 	glass_desc = "The smell is enough to bring you to the verge of tears. The hint of liquorice threatens to bring you over the edge."
-	shot_glass_icon_state = "shotglassgreen"
 
 /datum/reagent/consumable/ethanol/absinthe/on_mob_life(mob/living/carbon/M)
 	if(prob(10) && !HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
@@ -177,7 +164,6 @@
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 100
 	taste_description = "pure resignation"
-	glass_icon_state = "glass_brown2"
 	glass_name = "Hooch"
 	glass_desc = "You can't help but feel like you'd rather drink anything else right now, just from looking at it."
 
@@ -193,7 +179,6 @@
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 65
 	taste_description = "hearty alcoholic grains"
-	glass_icon_state = "aleglass"
 	glass_name = "glass of ale"
 	glass_desc = "A pint of ale. A classic for the working class."
 
@@ -207,7 +192,6 @@
 	glass_icon_state = "whiskeyglass"
 	glass_name = "hard cider"
 	glass_desc = "Sharper tasting, alcoholic apple cider."
-	shot_glass_icon_state = "shotglassbrown"
 
 /datum/reagent/consumable/ethanol/triple_sec
 	name = "Triple Sec"
@@ -215,7 +199,6 @@
 	color = "#ffcc66"
 	boozepwr = 30
 	taste_description = "a warm flowery orange taste which recalls the ocean air and summer wind of distant shores"
-	glass_icon_state = "glass_orange"
 	glass_name = "Triple Sec"
 	glass_desc = "A glass of straight triple sec. Citrusy and warm."
 
@@ -225,7 +208,6 @@
 	color = "#00cc00"
 	boozepwr = 20
 	taste_description = "a minty, cool, and invigorating splash of cold streamwater"
-	glass_icon_state = "glass_green"
 	glass_name = "Creme de Menthe"
 	glass_desc = "Bright green and minty - enough to tell you what it's going to taste like."
 
@@ -235,7 +217,6 @@
 	color = "#996633"
 	boozepwr = 20
 	taste_description = "a slick and aromatic hint of chocolates swirling in a bite of alcohol"
-	glass_icon_state = "glass_brown"
 	glass_name = "Creme de Cacao"
 	glass_desc = "Creme de Cacao - chocolate-wine, essentially. Not milk chocolate, so expect some bite."
 
@@ -245,7 +226,6 @@
 	color = "#F7F0D0"
 	boozepwr = 20
 	taste_description = "a sweet milky flavor with notes of toasted sugar"
-	glass_icon_state = "glass_white"
 	glass_name = "Creme de Coconut"
 	glass_desc = "A white glass of coconut liqueur."
 
@@ -274,7 +254,6 @@
 	color = "#ff6633"
 	boozepwr = 20
 	taste_description = "resisting gravity through brandy"
-	glass_icon_state = "applejack_glass"
 	glass_name = "Applejack"
 	glass_desc = "You lament you can't watch any Agrav Races while out here."
 
@@ -284,7 +263,6 @@
 	color = "#ffffc1"
 	boozepwr = 40
 	taste_description = "auspicious occasions and bad decisions"
-	glass_icon_state = "champagne_glass"
 	glass_name = "Champagne"
 	glass_desc = "A sparkling wine, traditionally served in a flute that clearly displays the slowly rising bubbles."
 

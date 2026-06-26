@@ -26,7 +26,9 @@
 
 /obj/item/reagent_containers/Initialize(mapload, vol)
 	. = ..()
-	if(can_have_cap && cap_icon_state)
+	if(can_have_cap)
+		if(!cap_icon_state)
+			cap_icon_state = "[src::icon_state]_cap"
 		cap_overlay = mutable_appearance(icon, cap_icon_state)
 	if(isnum(vol) && vol > 0)
 		volume = vol

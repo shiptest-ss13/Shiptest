@@ -3,7 +3,8 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass
 	name = "drinking glass"
 	desc = "Your standard drinking glass."
-	icon_state = "glass_empty"
+	icon_state = "glass"
+	fill_icon_thresholds = list(1, 20, 50, 70, 90)
 	amount_per_transfer_from_this = 10
 	volume = 50
 	custom_materials = list(/datum/material/glass=500)
@@ -25,12 +26,10 @@
 		if(R.glass_icon_state)
 			icon_state = R.glass_icon_state
 		else
-			var/mutable_appearance/reagent_overlay = mutable_appearance(icon, "glassoverlay")
-			icon_state = "glass_empty"
-			reagent_overlay.color = mix_color_from_reagents(reagents.reagent_list)
-			add_overlay(reagent_overlay)
+			icon_state = "glass"
+			update_overlays()
 	else
-		icon_state = "glass_empty"
+		icon_state = "glass"
 		renamedByPlayer = FALSE //so new drinks can rename the glass
 
 /obj/item/reagent_containers/food/drinks/beaglemug
@@ -72,6 +71,7 @@
 	icon_state = "shotglass"
 	gulp_size = 15
 	amount_per_transfer_from_this = 15
+	fill_icon_thresholds = list(1, 30, 60, 90)
 	possible_transfer_amounts = list()
 	volume = 15
 	custom_materials = list(/datum/material/glass=100)
@@ -91,16 +91,13 @@
 		if(largest_reagent.shot_glass_icon_state)
 			icon_state = largest_reagent.shot_glass_icon_state
 		else
-			icon_state = "shotglassclear"
-			var/mutable_appearance/shot_overlay = mutable_appearance(icon, "shotglassoverlay")
-			shot_overlay.color = mix_color_from_reagents(reagents.reagent_list)
-			add_overlay(shot_overlay)
-
+			icon_state = "shotglass"
+			update_overlays()
 
 	else
 		icon_state = "shotglass"
-		name = initial(src.name)
-		desc = initial(src.desc)
+		name = src::name
+		desc = src::desc
 		return
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/commemorative

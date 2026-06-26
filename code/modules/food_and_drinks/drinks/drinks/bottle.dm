@@ -6,26 +6,27 @@
 
 /obj/item/reagent_containers/food/drinks/bottle
 	name = "glass bottle"
-	desc = "This blank bottle is unyieldingly anonymous, offering no clues to its contents."
+	desc = "A clear, unlabeled and unmarked bottle."
+	icon = 'icons/obj/drinks/bottle.dmi'
 	icon_state = "glassbottle"
-	fill_icon_thresholds = list(0, 10, 20, 30, 40, 50, 60, 70, 80, 90)
+	can_have_cap = TRUE
+	cap_on = TRUE
+	fill_icon_thresholds = list(1, 20, 50, 70, 90)
 	custom_price = 15
 	amount_per_transfer_from_this = 10
 	volume = 100
 	force = 15 //Smashing bottles over someone's head hurts.
 	throwforce = 15
-	item_state = "broken_beer" //Generic held-item sprite until unique ones are made.
-	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	item_state = "beer" //Generic held-item sprite until unique ones are made.
+
+	lefthand_file = 'icons/obj/drinks/bottle_lefthand.dmi'
+	righthand_file = 'icons/obj/drinks/bottle_righthand.dmi'
+
 	pickup_sound =  'sound/items/handling/bottle_pickup.ogg'
 	drop_sound = 'sound/items/handling/bottle_drop.ogg'
-	var/const/duration = 13 //Directly relates to the 'knockdown' duration. Lowered by armor (i.e. helmets)
+	var/const/duration = 1.3 SECONDS //Directly relates to the 'knockdown' duration. Lowered by armor (i.e. helmets)
 	isGlass = TRUE
 	foodtype = ALCOHOL
-
-/obj/item/reagent_containers/food/drinks/bottle/update_overlays()
-	. = ..()
-	. += "[initial(icon_state)]shine"
 
 /obj/item/reagent_containers/food/drinks/bottle/small
 	name = "small glass bottle"
@@ -128,12 +129,14 @@
 	desc = "A bottle of high quality gin, cultivated from juniper berries grown across the Solar cantons. Brewed in Stuteföhle."
 	icon_state = "ginbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/gin = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/whiskey
 	name = "Kadi-Witka Reserve Whiskey"
 	desc = "An equivalent to single-malt whiskey, commonly enjoyed and brewed in a brewery originally founded Zohil. While different from traditionally used wheat, it can be safely enjoyed by every species."
 	icon_state = "whiskeybottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/candycornliquor
 	name = "candy corn liquor"
@@ -143,20 +146,31 @@
 /obj/item/reagent_containers/food/drinks/bottle/vodka
 	name = "Triple Horned Vodka"
 	desc = "Potato-based liquor commonly known as Vodka, distilled thrice to the standards of the PGF's requirements for their rations."
-	icon_state = "vodkabottle"
+	icon_state = "triplehorned"
+	fill_icon_state = "glassbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
+	fill_icon_thresholds = list(1, 20, 50, 70, 90)
+
+/obj/item/reagent_containers/food/drinks/bottle/vodka/update_overlays()
+	. = ..()
+	//so it overlays the reagent overlays
+	if(.)
+		add_overlay("[icon_state]_overlay")
+
 
 /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka
 	name = "Badminka vodka"
 	desc = "The label's written in some unknown language. All you can make out is the name and a word that looks vaguely like 'Vodka'."
 	icon_state = "badminka"
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/tequila
 	name = "Rimeki Letisa Tequila"
 	desc = "Originally made from fermented succulents growing near Teceti's equator-deserts, this brand considers itself equivalent to the original tequila."
 	icon_state = "tequilabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/tequila = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/bottleofnothing
 	name = "bottle of nothing"
@@ -164,19 +178,28 @@
 	icon_state = "bottleofnothing"
 	list_reagents = list(/datum/reagent/consumable/nothing = 100)
 	foodtype = NONE
+	fill_icon_thresholds = null
 
 
 /obj/item/reagent_containers/food/drinks/bottle/patron
 	name = "Wrapp Artiste Patron"
 	desc = "Tequila laced with silver, showy enough to impress when ordered in nightclubs across the galaxy."
 	icon_state = "patronbottle"
+	fill_icon_state = "glassbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/patron = 100)
+
+/obj/item/reagent_containers/food/drinks/bottle/patron/update_overlays()
+	. = ..()
+	//so it overlays the reagent overlays
+	if(.)
+		add_overlay("[icon_state]_overlay")
 
 /obj/item/reagent_containers/food/drinks/bottle/rum
 	name = "Ahkskra Spiced Rum"
 	desc = "Ahkskra Spiced - a spiced rum for the vox folkhero in everyone. Features a gallant-looking vox on the front of the bottle."
 	icon_state = "rumbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/rum = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/holywater
 	name = "flask of holy water"
@@ -185,11 +208,13 @@
 	list_reagents = list(/datum/reagent/water/holywater = 100)
 	foodtype = NONE
 
+
 /obj/item/reagent_containers/food/drinks/bottle/vermouth
 	name = "Whitespear Dry Vermouth"
 	desc = "Dry and sweet vermouth, commonly used for mixed drinks. Some Solarians drink it as a digestive before meals."
 	icon_state = "vermouthbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/vermouth = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/kahlua
 	name = "Keh'Lu'Tex 'Kahlua' Liqueur"
@@ -197,18 +222,21 @@
 	icon_state = "kahluabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/kahlua = 100)
 	foodtype = SUGAR | ALCOHOL //it's coffee and rum .
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/goldschlager
 	name = "Student-Union's Gold Standard"
 	desc = "Extremely high-proof cinnamon schnapps, typically found in commemorative bottles by those in the Student-Union Association of Naturalistic Sciences. Nigh-undrinkable and with a tasteless amount of gold flakes floating within."
 	icon_state = "goldschlagerbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/goldschlager = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/cognac
 	name = "Geheimnis Cognac"
 	desc = "While the origins of the name 'cognac' are lost to time, this type of brandy is reserved as a high-class drink with particular methods of brewing."
 	icon_state = "cognacbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/cognac = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/wine
 	name = "Waldstätte Sauvignon"
@@ -216,24 +244,33 @@
 	icon_state = "winebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/wine = 100)
 	foodtype = FRUIT | ALCOHOL
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/absinthe
 	name = "Severtail Green Absinthe"
 	desc = "Strong absinthe brewed in the Pan-Gezenan Federation, with their own transplants of Wormwood gifted to them during the first contact with humankind. If the legend (and label) means anything, the first attempt at brewing this caused some poor sarathi's tail to fall off."
 	icon_state = "absinthebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/absinthe = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/absinthe/premium
 	name = "Chacheyi Gold Absinthe"
 	desc = "A higher shelf absinthe, distributed primarily from The Shoal. Features the folkhero Chacheyi on the label, alongside their goldgrub companions."
-	icon_state = "absinthepremium"
+	icon_state = "absintheshoal"
+
+/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium/update_overlays()
+	. = ..()
+	//so it overlays the reagent overlays
+	if(.)
+		add_overlay("[icon_state]_overlay")
 
 /obj/item/reagent_containers/food/drinks/bottle/lizardwine
 	name = "bottle of Blueflame Pyrecask"
 	desc = "An alcoholic beverage originating from isolated vineyards on Zohil, maintained by the reclusive religious sects of the Blueflame. Now considered so popular and high quality, imitation bottles can be found everywhere. Check the label for point of origin."
-	icon_state = "lizardwine"
+	icon_state = "pyrecask"
 	list_reagents = list(/datum/reagent/consumable/ethanol/lizardwine = 100)
 	foodtype = FRUIT | ALCOHOL
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/hcider
 	name = "Neue Hamburg Spiced Cider"
@@ -241,24 +278,29 @@
 	icon_state = "hcider"
 	volume = 50
 	list_reagents = list(/datum/reagent/consumable/ethanol/hcider = 50)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/amaretto
 	name = "Lu'Ni'Xer'Nan Amaretto"
 	desc = "A popular Rachnid take on the recipe for Amaretto, which fell to obscurity after only being semi-rediscovered by Solarian historians. Features a semi-reconstructed depiction of a supposed origin story, with the painter Lu'Ni'Xer'Nan and her muse, an innkeeper."
 	icon_state = "disaronno"
 	list_reagents = list(/datum/reagent/consumable/ethanol/amaretto = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/grappa
 	name = "Neue Maynila Grappamiel"
 	desc = "A bottle of Grappa, premixed with honey-based spirits. Commonly seen as a drink for recycling grapes after their use in winemaking, and commonly seen as a winter drink."
 	icon_state = "grappabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/grappa = 100)
+	can_have_cap = FALSE
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/sake
 	name = "Sakamai Sake"
 	desc = "An alcoholic drink derived from rice, rediscovered by Solarian historians and reintroduced to the best of their ability to reproduce it."
 	icon_state = "sakebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/sake = 100)
+	fill_icon_thresholds = null
 	var/random = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/sake/Initialize()
@@ -291,12 +333,20 @@
 	desc = "A bitter and aromatic drink, commonly enjoyed in the intersolar cantons due to relaxed alcoholic tariffs from being technically classified as a medicinal beverage. Commonly mixed with cola-based soft drinks."
 	icon_state = "fernetbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/fernet = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/triplesec
 	name = "Teeka-Gih's triple sec liqueur"
 	desc = "A bottle of triple sec originating from Bezuts."
 	icon_state = "triplesecbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/triple_sec = 100)
+	fill_icon_thresholds = list(1, 20, 50, 70, 90)
+
+/obj/item/reagent_containers/food/drinks/bottle/triplesec/update_overlays()
+	. = ..()
+	//so it overlays the reagent overlays
+	if(.)
+		add_overlay("[icon_state]_overlay")
 
 /obj/item/reagent_containers/food/drinks/bottle/milk
 	name = "bottle of cow milk"
@@ -316,6 +366,7 @@
 	isGlass = FALSE
 	list_reagents = list(/datum/reagent/consumable/orangejuice = 100)
 	foodtype = FRUIT | BREAKFAST
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/lemonjuice
 	name = "lemon juice"
@@ -328,6 +379,7 @@
 	isGlass = FALSE
 	list_reagents = list(/datum/reagent/consumable/lemonjuice = 100)
 	foodtype = FRUIT
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/cream
 	name = "milk cream"
@@ -340,6 +392,7 @@
 	isGlass = FALSE
 	list_reagents = list(/datum/reagent/consumable/cream = 100)
 	foodtype = DAIRY
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/tomatojuice
 	name = "tomato juice"
@@ -352,6 +405,7 @@
 	isGlass = FALSE
 	list_reagents = list(/datum/reagent/consumable/tomatojuice = 100)
 	foodtype = VEGETABLES
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/limejuice
 	name = "lime juice"
@@ -364,6 +418,7 @@
 	isGlass = FALSE
 	list_reagents = list(/datum/reagent/consumable/limejuice = 100)
 	foodtype = FRUIT
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/pineapplejuice
 	name = "pineapple juice"
@@ -376,6 +431,7 @@
 	isGlass = FALSE
 	list_reagents = list(/datum/reagent/consumable/pineapplejuice = 100)
 	foodtype = FRUIT | PINEAPPLE
+	fill_icon_thresholds = null
 
 
 /obj/item/reagent_containers/food/drinks/bottle/menthol
@@ -388,6 +444,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	isGlass = FALSE
 	list_reagents = list(/datum/reagent/consumable/menthol = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/grenadine
 	name = "Three-Star Grenadine"
@@ -397,6 +454,7 @@
 	isGlass = TRUE
 	list_reagents = list(/datum/reagent/consumable/grenadine = 100)
 	foodtype = FRUIT
+	fill_icon_thresholds = null
 
 
 /obj/item/reagent_containers/food/drinks/bottle/applejack
@@ -407,6 +465,7 @@
 	isGlass = TRUE
 	list_reagents = list(/datum/reagent/consumable/ethanol/applejack = 100)
 	foodtype = FRUIT
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/champagne
 	name = "Treu Champagne"
@@ -415,12 +474,20 @@
 	icon_state = "champagne_bottle"
 	isGlass = TRUE
 	list_reagents = list(/datum/reagent/consumable/ethanol/champagne = 100)
+	fill_icon_state = "glassbottle"
+
+/obj/item/reagent_containers/food/drinks/bottle/champagne/update_overlays()
+	. = ..()
+	//so it overlays the reagent overlays
+	if(.)
+		add_overlay("[icon_state]_overlay")
 
 /obj/item/reagent_containers/food/drinks/bottle/blazaam
 	name = "Hyperspace Highball"
 	desc = "Infamously expensive, infamously contains bluespace 'flakes' for bragging rights, and infamously removed from most shelves due to accidents involving teleportation accidents upon ingestion."
 	icon_state = "blazaambottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/blazaam = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/trappist
 	name = "Roumain Trapper's"
@@ -429,18 +496,21 @@
 	icon_state = "trappistbottle"
 	volume = 50
 	list_reagents = list(/datum/reagent/consumable/ethanol/trappist = 50)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/hooch
 	name = "hooch bottle"
 	desc = "A bottle of homebrewed, low quality alcohol. The paper wrapping is covered in little signatures and messages - how many hands have passed this bottle before you came around?"
 	icon_state = "hoochbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/hooch = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/moonshine
-	name = "moonshine jug"
-	desc = "High-proof hard liquor, most likely made in the privacy of a bootlegger's ship. Permanent marker on packaging tape is the most you'll get for a label. Remember: if it doesn't burn blue, don't drink it!"
-	icon_state = "moonshinebottle"
+	name = "chemshine jug"
+	desc = "High-proof hard liquor, most likely made in the privacy of a bootlegger's ship. Distilled from rocket fuel in repurposed coolant radiators, it's probably not the best idea to drink this; especially not dying with it in your system."
+	icon_state = "chemshine"
 	list_reagents = list(/datum/reagent/consumable/ethanol/moonshine = 100)
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/coconut
 	name = "T4l1's Pure Coconut Delight"
@@ -448,20 +518,25 @@
 	icon_state = "coconutbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 100)
 	isGlass = TRUE
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/cacao
 	name = "Sharai's Pure Cacao Delight"
 	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
 	icon_state = "cacaobottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_cacao = 100)
+	can_have_cap = FALSE
 	isGlass = TRUE
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/menthe
 	name = "Mora's Pure Mint Delight"
 	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
 	icon_state = "mintbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_menthe = 100)
+	can_have_cap = FALSE
 	isGlass = TRUE
+	fill_icon_thresholds = null
 
 ///Teceti Drinks
 
@@ -470,14 +545,18 @@
 	desc = "A bottle of Dotusira liquor, decorated in tiny fruits and berries. A small label on the bottle declares it a product of the Southern Teceti Combine."
 	icon_state = "dotusira"
 	list_reagents = list(/datum/reagent/consumable/ethanol/dotusira = 100)
+	can_have_cap = FALSE
 	isGlass = TRUE
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/faraseta
 	name = "Faraseta Lirili!"
 	desc = "A tall, slim bottle of Faraseta cider. Decorative flames run the base of the bottle. A small label declares it the product of the Northern Teceti Coalition."
 	icon_state = "faraseta"
 	list_reagents = list(/datum/reagent/consumable/ethanol/faraseta = 100)
+	can_have_cap = FALSE
 	isGlass = TRUE
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/sosomira
 	name = "Yikiki Sososi-Mira"
@@ -485,6 +564,7 @@
 	icon_state = "sososi-mira"
 	list_reagents = list(/datum/reagent/consumable/ethanol/sosomira = 100)
 	isGlass = TRUE
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/sososeta
 	name = "Meskili Clear Sososi-Seta"
@@ -492,12 +572,13 @@
 	icon_state = "sososi-seta"
 	list_reagents = list(/datum/reagent/consumable/ethanol/sososeta = 100)
 	isGlass = TRUE
+	fill_icon_thresholds = null
 
 ////////////////////////// MOLOTOV ///////////////////////
 /obj/item/reagent_containers/food/drinks/molotov
 	name = "molotov cocktail"
 	desc = "A throwing weapon used to ignite things, typically filled with an accelerant. Recommended highly by desperate militias and revolutionaries. Light and toss."
-	icon_state = "vodkabottle"
+	icon_state = "glassbottle"
 	fill_icon_thresholds = list(0, 10, 20, 30, 40, 50, 60, 70, 80, 90)
 	amount_per_transfer_from_this = 10
 	volume = 100
@@ -634,14 +715,16 @@
 	icon_state = "lean"
 	list_reagents = list(/datum/reagent/consumable/lean = 50)
 	random_sprite = FALSE
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla
 	name = "Sandblast Sarsaparilla"
-	desc = "Sealed for a guaranteed fresh taste in every bottle."
+	desc = "A brand of root-beer that was produced and very popular on the outer frontier. While the company was destroyed in the ICW, it was so popular you can usually find crates of these abandoned."
 	icon_state = "sandbottle"
 	volume = 50
 	list_reagents = list(/datum/reagent/consumable/molten/sand = 50)
 	reagent_flags = null //Cap's on
+	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/attack_self(mob/user)
 	if(!is_drainable()) // Uses the reagents.flags cause reagent_flags is only the init value
