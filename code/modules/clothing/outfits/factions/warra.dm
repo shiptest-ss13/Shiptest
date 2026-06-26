@@ -1,7 +1,6 @@
 /*
  * OUTFIT DATUMS THAT NEED MAKING:
  * Research Director
- * Medical Director
 */
 
 /datum/outfit/job/warra
@@ -602,6 +601,35 @@
 	backpack_contents = null
 
 // Medical //
+
+// Medical Director
+/datum/outfit/job/warra/cmo
+	name = "Makosso-Warra - Medical Director"
+	job_icon = "chiefmedicalofficer"
+	jobtype = /datum/job/cmo
+
+	belt = /obj/item/pda/medical
+	ears = /obj/item/radio/headset/headset_med
+	head = /obj/item/clothing/head/warra/surgical/blue
+	uniform = /obj/item/clothing/under/warra/medical/director
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	suit =  /obj/item/clothing/suit/toggle/labcoat/warra/blue
+	alt_suit = /obj/item/clothing/suit/warra/medical_smock
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
+
+	backpack = /obj/item/storage/backpack/medic
+	satchel = /obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	courierbag = /obj/item/storage/backpack/messenger/med
+	box = /obj/item/storage/box/survival/medical
+
+/datum/outfit/job/warra/warra/cmo/empty
+	name = "Makosso-Warra - Medical Director (Naked)"
+
+	belt = null
+	head = null
+	suit =  null
+	alt_suit = null
 
 // Medical Doctor
 /datum/outfit/job/warra/doctor
