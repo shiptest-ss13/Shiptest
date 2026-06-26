@@ -1965,7 +1965,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		target_human.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/cold, multiplicative_slowdown = ((bodytemp_cold_damage_limit - body_temp) / COLD_SLOWDOWN_FACTOR))
 		// Display alerts based how cold it is
 		if(body_temp < bodytemp_cold_damage_limit - 7)
-			target_human.throw_alert("tempfeeltemp", /atom/movable/screen/alert/cold, 3)
+			target_human.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 3)
 		else if(body_temp < bodytemp_cold_damage_limit)
 			target_human.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
 		else if(body_temp < (bodytemp_cold_damage_limit + 5))
@@ -1976,6 +1976,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	// We are not to hot or cold, remove status and moods
 	else
 		target_human.clear_alert("tempfeel")
+		target_human.clear_alert("tempdamage")
 		target_human.remove_movespeed_modifier(/datum/movespeed_modifier/cold)
 		SEND_SIGNAL(target_human, COMSIG_CLEAR_MOOD_EVENT, "cold")
 		SEND_SIGNAL(target_human, COMSIG_CLEAR_MOOD_EVENT, "hot")
@@ -2020,19 +2021,19 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(target_human.mob_biotypes & MOB_ROBOTIC) //robors have a alternative cooling fan graphic
 			switch(burn_damage)
 				if(0 to 1)
-					target_human.throw_alert("temp", /atom/movable/screen/alert/fans, 1)
+					target_human.throw_alert("tempdamage", /atom/movable/screen/alert/fans, 1)
 				if(2 to 3)
-					target_human.throw_alert("temp", /atom/movable/screen/alert/fans, 2)
+					target_human.throw_alert("tempdamage", /atom/movable/screen/alert/fans, 2)
 				else
-					target_human.throw_alert("temp", /atom/movable/screen/alert/fans, 3)
+					target_human.throw_alert("tempdamage", /atom/movable/screen/alert/fans, 3)
 		else
 			switch(burn_damage)
 				if(0 to 1)
-					target_human.throw_alert("temp", /atom/movable/screen/alert/sweat, 1)
+					target_human.throw_alert("tempdamage", /atom/movable/screen/alert/sweat, 1)
 				if(2 to 3)
-					target_human.throw_alert("temp", /atom/movable/screen/alert/sweat, 2)
+					target_human.throw_alert("tempdamage", /atom/movable/screen/alert/sweat, 2)
 				else
-					target_human.throw_alert("temp", /atom/movable/screen/alert/sweat, 3)
+					target_human.throw_alert("tempdamage", /atom/movable/screen/alert/sweat, 3)
 
 
 	// Apply some burn damage to the body
@@ -2040,13 +2041,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		switch(target_human.coretemperature)
 			if(201 to HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT)
 				target_human.apply_damage(COLD_DAMAGE_LEVEL_1 * coldmod * seconds_per_tick * target_human.physiology.cold_mod, BURN)
-				target_human.throw_alert("temp", /atom/movable/screen/alert/shiver, 1)
+				target_human.throw_alert("tempdamage", /atom/movable/screen/alert/shiver, 1)
 			if(120 to 200)
 				target_human.apply_damage(COLD_DAMAGE_LEVEL_2 * coldmod * seconds_per_tick * target_human.physiology.cold_mod, BURN)
-				target_human.throw_alert("temp", /atom/movable/screen/alert/shiver, 2)
+				target_human.throw_alert("tempdamage", /atom/movable/screen/alert/shiver, 2)
 			else
 				target_human.apply_damage(COLD_DAMAGE_LEVEL_3 * coldmod * seconds_per_tick * target_human.physiology.cold_mod, BURN)
-				target_human.throw_alert("temp", /atom/movable/screen/alert/shiver, 3)
+				target_human.throw_alert("tempdamage", /atom/movable/screen/alert/shiver, 3)
 
 /**
  * Used to apply burn wounds on random limbs
