@@ -1257,10 +1257,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
-/obj/machinery/emergency_panel{
-	pixel_y = 8;
-	pixel_x = 8
-	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "uz" = (
@@ -2476,6 +2472,7 @@
 /area/ship/crew)
 "Tj" = (
 /obj/docking_port/mobile{
+	can_move_docking_ports = 1;
 	dir = 4;
 	port_direction = 2;
 	preferred_direction = 4

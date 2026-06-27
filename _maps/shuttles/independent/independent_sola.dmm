@@ -12,7 +12,8 @@
 "al" = (
 /obj/structure/chair/bench/grey/directional/north{
 	dir = 4;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 0
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -24,7 +25,8 @@
 "ao" = (
 /obj/structure/chair/sofa/grey/right,
 /obj/item/bedsheet/black{
-	pixel_x = 11
+	pixel_x = 11;
+	pixel_y = 0
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
@@ -416,7 +418,8 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/light/directional/south{
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -32
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -435,7 +438,8 @@
 	},
 /obj/structure/table,
 /obj/machinery/coffeemaker{
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 4
 	},
 /obj/item/storage/fancy/coffee_cart_rack{
 	pixel_x = -9;
@@ -478,6 +482,7 @@
 	pixel_y = 5
 	},
 /obj/item/clothing/suit/armor/captaincoat{
+	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/machinery/light/small/directional/east,
@@ -507,7 +512,8 @@
 	},
 /obj/machinery/light/small/directional/west,
 /obj/machinery/firealarm/directional/north{
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
@@ -536,10 +542,12 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/firealarm/directional/north{
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 32
 	},
 /obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering/atmospherics)
@@ -604,7 +612,8 @@
 "hH" = (
 /obj/structure/rack,
 /obj/item/trench_tool{
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 0
 	},
 /obj/item/trench_tool{
 	pixel_x = 5;
@@ -696,7 +705,8 @@
 "jx" = (
 /obj/structure/rack,
 /obj/item/melee/sword/mass{
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 0
 	},
 /obj/item/melee/sword/mass{
 	pixel_x = -6;
@@ -722,9 +732,11 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/east{
+	pixel_x = 32;
 	pixel_y = -3
 	},
 /obj/structure/extinguisher_cabinet/directional/east{
+	pixel_x = 28;
 	pixel_y = 10
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -803,7 +815,8 @@
 /area/ship/bridge)
 "kz" = (
 /obj/machinery/iv_drip{
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
@@ -868,7 +881,8 @@
 	dir = 4;
 	pixel_x = -7;
 	density = 0;
-	layer = 2.809
+	layer = 2.809;
+	pixel_y = 0
 	},
 /obj/item/clipboard,
 /obj/item/folder,
@@ -1044,10 +1058,12 @@
 /obj/effect/turf_decal/corner/transparent/grey/full,
 /obj/effect/turf_decal/corner/transparent/lightgrey/diagonal,
 /obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 28
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/canteen)
@@ -1298,10 +1314,12 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 32
 	},
 /obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/fore)
@@ -1339,7 +1357,8 @@
 	dir = 1
 	},
 /obj/machinery/computer/helm/viewscreen/directional/south{
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -17
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -1386,9 +1405,6 @@
 	},
 /obj/effect/turf_decal/corner/opaque/black/half{
 	dir = 1
-	},
-/obj/machinery/emergency_panel{
-	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -1903,6 +1919,7 @@
 	pixel_y = -4
 	},
 /obj/item/storage/firstaid/regular{
+	pixel_x = 0;
 	pixel_y = -5
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -2158,7 +2175,8 @@
 	pixel_x = 9
 	},
 /obj/item/clothing/under/pants/blackjeans{
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 0
 	},
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 9
@@ -2251,9 +2269,11 @@
 /area/ship/hallway/fore)
 "Dk" = (
 /obj/structure/extinguisher_cabinet/directional/east{
+	pixel_x = 28;
 	pixel_y = 10
 	},
 /obj/machinery/firealarm/directional/east{
+	pixel_x = 32;
 	pixel_y = -3
 	},
 /turf/open/floor/carpet/green,
@@ -2334,6 +2354,7 @@
 "Fm" = (
 /obj/machinery/shower{
 	dir = 4;
+	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals9{
@@ -2362,7 +2383,8 @@
 	pixel_y = 9
 	},
 /obj/item/reagent_containers/food/drinks/soda_cans/lunapunch{
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 0
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
@@ -2509,7 +2531,8 @@
 	pixel_y = -6
 	},
 /obj/item/clothing/under/rank/medical/doctor/red{
-	pixel_x = -11
+	pixel_x = -11;
+	pixel_y = 0
 	},
 /obj/item/clothing/under/rank/medical/doctor/purple{
 	pixel_x = -11;
@@ -2605,7 +2628,8 @@
 	anchored = 1
 	},
 /obj/item/clothing/under/pants/camo{
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 0
 	},
 /obj/item/clothing/shoes/workboots/mining{
 	pixel_y = -9
@@ -2634,10 +2658,12 @@
 	pixel_y = 1
 	},
 /obj/item/clothing/under/shorts/explorer{
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 0
 	},
 /obj/item/clothing/under/shorts/explorer{
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 0
 	},
 /obj/item/storage/backpack/satchel/explorer{
 	pixel_y = -6;
@@ -2836,9 +2862,11 @@
 "KP" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/toy/cards/deck/kotahi{
+	pixel_x = 0;
 	pixel_y = 12
 	},
 /obj/item/toy/cards/deck{
+	pixel_x = 0;
 	pixel_y = 4
 	},
 /turf/open/floor/wood/walnut,
@@ -3229,6 +3257,7 @@
 	pixel_y = 18
 	},
 /obj/item/melee/knife/butcher{
+	pixel_x = 0;
 	pixel_y = 14
 	},
 /obj/machinery/light_switch{
@@ -3238,9 +3267,11 @@
 	},
 /obj/structure/table/chem,
 /obj/item/reagent_containers/condiment/soysauce{
-	pixel_x = 11
+	pixel_x = 11;
+	pixel_y = 0
 	},
 /obj/structure/closet/wall/directional/east{
+	pixel_x = 28;
 	pixel_y = 2;
 	name = "kitchen cabinet"
 	},
@@ -3482,7 +3513,9 @@
 /area/ship/bridge)
 "Sl" = (
 /obj/structure/platform/ship_two{
-	dir = 8
+	dir = 8;
+	pixel_x = 0;
+	pixel_y = 0
 	},
 /obj/structure/railing{
 	layer = 3.09;
@@ -3490,6 +3523,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/black/half,
 /obj/item/radio/intercom/wideband/directional/north{
+	pixel_x = 0;
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/tech,
@@ -3766,7 +3800,8 @@
 	pixel_y = 6
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -3823,10 +3858,12 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 32
 	},
 /obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)

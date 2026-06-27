@@ -114,7 +114,9 @@
 /obj/effect/turf_decal/steeldecal/steel_decals6{
 	dir = 10
 	},
-/obj/structure/window,
+/obj/structure/window{
+	pixel_y = 0
+	},
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/button/door{
 	pixel_x = -10;
@@ -433,6 +435,7 @@
 /area/ship/external/dark)
 "gK" = (
 /obj/machinery/door/airlock/public{
+	dir = 2;
 	name = "Cryogenic Storage"
 	},
 /obj/machinery/door/firedoor/border_only,
@@ -544,6 +547,7 @@
 	pixel_x = -13
 	},
 /obj/structure/mirror{
+	pixel_y = 0;
 	pixel_x = -24
 	},
 /obj/effect/turf_decal/siding/white{
@@ -625,7 +629,8 @@
 /area/ship/storage/equip)
 "ka" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030
+	layer = 2.030;
+	dir = 2
 	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/line,
 /obj/effect/turf_decal/siding/white,
@@ -633,7 +638,9 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/storage/equip)
 "kb" = (
-/obj/machinery/power/shuttle/engine/electric,
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -651,10 +658,6 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
 	name = "Navigations"
-	},
-/obj/machinery/emergency_panel{
-	pixel_x = 8;
-	pixel_y = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -975,7 +978,8 @@
 /area/ship/crew/canteen)
 "pX" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030
+	layer = 2.030;
+	dir = 2
 	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/corner{
 	dir = 8
@@ -1353,7 +1357,8 @@
 /area/ship/hallway)
 "vg" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030
+	layer = 2.030;
+	dir = 2
 	},
 /obj/structure/closet/secure_closet/wall/directional/south{
 	icon_door = "sec_wall";
@@ -1464,6 +1469,8 @@
 /area/ship/cargo/office)
 "wM" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer1{
+	dir = 2;
+	pixel_y = 0;
 	name = "Storage to Exhaust"
 	},
 /obj/machinery/atmospherics/pipe/simple/yellow,
@@ -1744,6 +1751,7 @@
 	name = "Air to Adapter"
 	},
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
+	dir = 2;
 	name = "Adapter to Supply"
 	},
 /obj/structure/cable{
@@ -1781,17 +1789,21 @@
 	pixel_y = 7
 	},
 /obj/item/kitchen/fork{
-	pixel_y = 7
+	pixel_y = 7;
+	pixel_x = 0
 	},
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker{
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 0
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 0
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 0
 	},
 /obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = -12;
@@ -2059,7 +2071,8 @@
 /area/ship/cargo)
 "FB" = (
 /obj/machinery/door/airlock/public/glass{
-	name = "Canteen"
+	name = "Canteen";
+	dir = 2
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -2262,7 +2275,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "ns_quail_starboardnac"
@@ -2584,7 +2599,9 @@
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/crew/dorm)
 "MO" = (
-/obj/machinery/power/shuttle/engine/electric,
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -2594,7 +2611,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "ns_quail_portnac"

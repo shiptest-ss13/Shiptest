@@ -154,6 +154,7 @@
 	},
 /obj/machinery/light_switch{
 	pixel_x = 21;
+	pixel_y = 0;
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
@@ -196,7 +197,8 @@
 /obj/item/clothing/shoes/workboots,
 /obj/item/storage/belt/utility/full/engi,
 /obj/item/clothing/gloves/insulated{
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 0
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
@@ -272,7 +274,9 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "fa" = (
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -317,6 +321,7 @@
 /obj/effect/turf_decal/corner/opaque/black,
 /obj/structure/filingcabinet/double/grey{
 	pixel_x = 14;
+	pixel_y = 0;
 	dir = 8;
 	density = 0
 	},
@@ -341,13 +346,16 @@
 	pixel_y = 1
 	},
 /obj/item/radio{
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 0
 	},
 /obj/item/radio{
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 0
 	},
 /obj/item/radio{
-	pixel_x = 12
+	pixel_x = 12;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
@@ -375,7 +383,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "hM" = (
-/obj/machinery/power/shuttle/engine/electric,
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -601,10 +611,12 @@
 "ow" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/glass/twenty{
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 0
 	},
 /obj/item/stack/sheet/metal/twenty{
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 0
 	},
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/patterned/grid,
@@ -619,10 +631,6 @@
 	},
 /obj/effect/turf_decal/corner/transparent/green/border{
 	dir = 4
-	},
-/obj/machinery/emergency_panel{
-	pixel_x = -8;
-	pixel_y = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -775,7 +783,9 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "ra" = (
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -908,7 +918,8 @@
 /obj/structure/table/reinforced,
 /obj/item/cutting_board,
 /obj/item/melee/knife/kitchen{
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 0
 	},
 /obj/item/kitchen/rollingpin{
 	pixel_x = -4;
@@ -1125,7 +1136,8 @@
 	dir = 10
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 32
 	},
 /obj/machinery/light_switch{
 	pixel_x = -9;
@@ -1190,6 +1202,7 @@
 "Ah" = (
 /obj/structure/table/reinforced,
 /obj/item/wrench{
+	pixel_x = 0;
 	pixel_y = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -1249,7 +1262,8 @@
 	pixel_y = -7
 	},
 /obj/item/clothing/suit/toggle/hazard{
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 0
 	},
 /obj/item/clothing/suit/toggle/hazard{
 	pixel_x = -1;
@@ -1585,7 +1599,8 @@
 	},
 /obj/structure/chair/bench/beige/directional/west,
 /obj/item/clothing/mask/cigarette/rollie/cannabis{
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/ash/large,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -1697,7 +1712,9 @@
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 5
 	},
-/obj/effect/turf_decal/industrial/loading,
+/obj/effect/turf_decal/industrial/loading{
+	dir = 2
+	},
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
@@ -1940,7 +1957,9 @@
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 5
 	},
-/obj/effect/turf_decal/industrial/loading,
+/obj/effect/turf_decal/industrial/loading{
+	dir = 2
+	},
 /obj/structure/cable{
 	icon_state = "5-9"
 	},
@@ -1970,6 +1989,7 @@
 /area/ship/cargo)
 "Qq" = (
 /obj/item/gear_pack/anglegrinder{
+	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/effect/turf_decal/box,
@@ -1990,7 +2010,8 @@
 	pixel_y = 4
 	},
 /obj/item/radio/intercom/directional/north{
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 31
 	},
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/decal/cleanable/cobweb,
@@ -2127,7 +2148,8 @@
 	dir = 5
 	},
 /obj/machinery/light/small/directional/north{
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
@@ -2290,7 +2312,9 @@
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 5
 	},
-/obj/effect/turf_decal/industrial/loading,
+/obj/effect/turf_decal/industrial/loading{
+	dir = 2
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 10
 	},

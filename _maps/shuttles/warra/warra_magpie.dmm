@@ -571,7 +571,9 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hallway/port)
 "eK" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma,
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 4
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering/atmospherics)
 "eO" = (
@@ -2277,7 +2279,9 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "qH" = (
-/obj/machinery/power/shuttle/engine/electric,
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -3356,7 +3360,9 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/dorm/commad)
 "yZ" = (
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -4759,7 +4765,9 @@
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/medical)
 "Ie" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater,
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "magpie_starthruster"
@@ -5144,10 +5152,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/obj/machinery/emergency_panel{
-	pixel_x = -8;
-	pixel_y = 8
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ln" = (
@@ -5381,7 +5385,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Mn" = (
-/obj/machinery/power/shuttle/engine/electric,
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -5814,7 +5820,9 @@
 /turf/open/floor/suns/hatch/walnut,
 /area/ship/crew/office)
 "Pt" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma,
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 4
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering)
 "Px" = (
@@ -6659,7 +6667,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/cryo)
 "Ws" = (
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -6694,7 +6704,8 @@
 	},
 /obj/item/plate_shard{
 	icon_state = "plate_shard4";
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 0
 	},
 /obj/item/plate_shard{
 	icon_state = "plate_shard3";
@@ -6789,7 +6800,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "XJ" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater,
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "magpie_portthruster"

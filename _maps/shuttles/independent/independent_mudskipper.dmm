@@ -13,10 +13,12 @@
 	pixel_y = -9
 	},
 /obj/item/clothing/under/overalls/brown{
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 0
 	},
 /obj/item/clothing/under/overalls/olive{
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 0
 	},
 /obj/item/clothing/head/hardhat/orange{
 	pixel_x = 3;
@@ -49,12 +51,16 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "ag" = (
-/obj/machinery/power/shuttle/engine/electric,
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -109,7 +115,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "bZ" = (
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -514,7 +522,8 @@
 	},
 /obj/structure/toilet{
 	dir = 4;
-	pixel_x = -11
+	pixel_x = -11;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/toilet)
@@ -1023,6 +1032,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 2;
 	id = "mudskipper_bridge"
 	},
 /turf/open/floor/plasteel/dark,
@@ -1038,7 +1048,8 @@
 /obj/structure/closet/secure_closet/freezer{
 	anchored = 1;
 	name = "fridge";
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 0
 	},
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/waterbottle,
@@ -1083,7 +1094,9 @@
 	dir = 5
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance)
 "wj" = (
@@ -1175,7 +1188,8 @@
 	},
 /obj/structure/table,
 /obj/machinery/light/small/directional/south{
-	pixel_x = 13
+	pixel_x = 13;
+	pixel_y = -28
 	},
 /obj/structure/bedsheetbin,
 /obj/machinery/power/apc/auto_name/directional/west,
@@ -1289,7 +1303,9 @@
 /area/ship/cargo)
 "yB" = (
 /obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
@@ -1301,7 +1317,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "yY" = (
@@ -1354,10 +1372,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/emergency_panel{
-	pixel_y = 8;
-	pixel_x = 8
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "AN" = (
@@ -1381,6 +1395,7 @@
 	pixel_y = -14
 	},
 /obj/machinery/light/small/directional/east{
+	pixel_x = 28;
 	pixel_y = 11
 	},
 /turf/open/floor/plating,
@@ -1611,9 +1626,11 @@
 	},
 /obj/machinery/autolathe/hacked,
 /obj/item/stack/sheet/glass/twenty{
+	pixel_x = 0;
 	pixel_y = -3
 	},
 /obj/item/stack/sheet/metal/twenty{
+	pixel_x = 0;
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1934,6 +1951,7 @@
 	pixel_y = -5
 	},
 /obj/item/extinguisher/mini{
+	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/structure/rack,
@@ -1949,11 +1967,13 @@
 	},
 /obj/item/gps/mining{
 	gpstag = "SCAV1";
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 0
 	},
 /obj/item/gps/mining{
 	gpstag = "SCAV1";
-	pixel_x = -13
+	pixel_x = -13;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -2325,7 +2345,8 @@
 	},
 /obj/structure/dresser{
 	dir = 4;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 0
 	},
 /obj/item/lipstick{
 	pixel_x = -4;
@@ -2401,7 +2422,8 @@
 /area/ship/crew)
 "Wz" = (
 /obj/structure/mirror{
-	pixel_y = -25
+	pixel_y = -25;
+	pixel_x = 0
 	},
 /obj/effect/turf_decal/corner/transparent/black/diagonal{
 	dir = 4
@@ -2411,7 +2433,9 @@
 	},
 /obj/structure/table,
 /obj/structure/sink/kitchen{
-	dir = 1
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2434,7 +2458,9 @@
 "Xh" = (
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
 /obj/structure/chair{
 	dir = 4
 	},
@@ -2559,7 +2585,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
 /obj/effect/decal/cleanable/robot_debris,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
