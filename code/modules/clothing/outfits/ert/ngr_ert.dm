@@ -151,24 +151,24 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ngr
 	head = null
 
-//Anti Tank
-/datum/outfit/job/syndicate/ert/ngr/anti_tank
-	name = "ERT - NGR Anti Tank"
+//Anti Material
+/datum/outfit/job/syndicate/ert/ngr/anti_material
+	name = "ERT - NGR Anti Material"
 
 	mask = /obj/item/clothing/mask/gas/syndicate
 	accessory = /obj/item/clothing/accessory/holster/asp
 	belt = /obj/item/storage/belt/security/webbing/ngr/taipan
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/taipan
 
-	backpack_contents = list(/obj/item/grenade/syndieminibomb/concussion = 2, /obj/item/trench_tool, /obj/item/flashlight/seclite)
+	backpack_contents = list(/obj/item/grenade/syndieminibomb/concussion = 2, /obj/item/trench_tool, /obj/item/binoculars, /obj/item/flashlight/seclite)
 
-/datum/outfit/job/syndicate/ert/ngr/anti_tank/softsuit
+/datum/outfit/job/syndicate/ert/ngr/anti_material/softsuit
 	name = "ERT - NGR Anti Tank (Softsuit)"
 
 	suit = /obj/item/clothing/suit/space/syndicate/ngr
 	head = /obj/item/clothing/head/helmet/space/syndicate/ngr
 
-/datum/outfit/job/syndicate/ert/ngr/anti_tank/hardsuit
+/datum/outfit/job/syndicate/ert/ngr/anti_material/hardsuit
 	name = "ERT - NGR Anti Tank (Hardsuit)"
 
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ngr
