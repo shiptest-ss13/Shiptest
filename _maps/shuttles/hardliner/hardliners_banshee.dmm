@@ -61,7 +61,6 @@
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/structure/sign/number/random{
-	pixel_x = 0;
 	pixel_y = -26
 	},
 /turf/open/floor/engine/hull,
@@ -120,7 +119,6 @@
 /area/ship/engineering)
 "dF" = (
 /obj/structure/sign/number/random{
-	pixel_x = 0;
 	pixel_y = -26
 	},
 /turf/open/floor/engine/hull,
@@ -131,7 +129,6 @@
 "dO" = (
 /obj/structure/dresser,
 /obj/machinery/firealarm/directional/east{
-	pixel_x = 32;
 	pixel_y = 6
 	},
 /obj/item/toy/plush/rilena{
@@ -203,9 +200,7 @@
 /area/ship/crew/dorm)
 "ec" = (
 /obj/structure/closet/wall/white/directional/west{
-	name = "kitchen cabinet";
-	pixel_y = 0;
-	pixel_x = -28
+	name = "kitchen cabinet"
 	},
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/kitchen/rollingpin{
@@ -244,7 +239,6 @@
 	pixel_y = -6
 	},
 /obj/item/reagent_containers/condiment/soysauce{
-	pixel_x = 0;
 	pixel_y = -10
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -373,6 +367,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/emergency_panel,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "gQ" = (
@@ -415,7 +410,6 @@
 	},
 /obj/structure/table,
 /obj/item/plate{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /obj/item/food/pancakes/chocolatechip{
@@ -451,8 +445,7 @@
 	name = "medical supplies"
 	},
 /obj/item/storage/firstaid/regular{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/item/hypospray/mkii/brute{
 	pixel_x = -7;
@@ -500,10 +493,7 @@
 	pixel_x = 9;
 	pixel_y = 23
 	},
-/obj/machinery/computer/monitor{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/machinery/computer/monitor,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "it" = (
@@ -552,7 +542,6 @@
 	icon_state = "cargo_wall";
 	name = "Wreckers closet";
 	req_access_txt = "48";
-	pixel_x = -28;
 	pixel_y = 3
 	},
 /obj/effect/turf_decal/siding/thinplating{
@@ -816,8 +805,7 @@
 	pixel_y = 6
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_y = -6;
-	pixel_x = -32
+	pixel_y = -6
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm)
@@ -1078,7 +1066,6 @@
 	icon_state = "cargo_wall";
 	name = "Wreckers closet";
 	req_access_txt = "48";
-	pixel_x = -28;
 	pixel_y = 3
 	},
 /obj/effect/turf_decal/siding/thinplating{
@@ -1167,7 +1154,6 @@
 /obj/structure/filingcabinet/double/grey{
 	dir = 4;
 	pixel_x = -10;
-	pixel_y = 0;
 	density = 0
 	},
 /obj/effect/turf_decal/siding/wood/bamboo,
@@ -1259,8 +1245,7 @@
 	dir = 10
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_y = -6;
-	pixel_x = -32
+	pixel_y = -6
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_y = 6
@@ -1357,8 +1342,7 @@
 "vt" = (
 /obj/structure/toilet{
 	dir = 8;
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -1387,11 +1371,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/table,
 /obj/item/plate{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/item/food/pancakes/chocolatechip{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /obj/item/food/ration/condiment/maple_syrup{
@@ -1424,12 +1406,10 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/firealarm/directional/south{
-	pixel_x = -12;
-	pixel_y = -32
+	pixel_x = -12
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = 1;
-	pixel_y = -28
+	pixel_x = 1
 	},
 /obj/machinery/light_switch{
 	dir = 1;
@@ -1727,10 +1707,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/light/small/directional/north,
-/obj/machinery/firealarm/directional/east{
-	pixel_x = 32;
-	pixel_y = 0
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 20;
@@ -2144,8 +2121,7 @@
 	icon_state = "cargo_wall";
 	name = "mechanic's closet";
 	req_access_txt = "10";
-	pixel_x = -5;
-	pixel_y = -28
+	pixel_x = -5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -2618,12 +2594,10 @@
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/light/floor,
 /obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = 10;
-	pixel_y = -28
+	pixel_x = 10
 	},
 /obj/machinery/firealarm/directional/south{
-	pixel_x = -2;
-	pixel_y = -32
+	pixel_x = -2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -3256,7 +3230,6 @@
 "WP" = (
 /obj/structure/table/reinforced,
 /obj/item/cutting_board{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/item/melee/knife/kitchen{
@@ -3274,7 +3247,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/photocopier{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -3346,8 +3318,7 @@
 	pixel_y = -8
 	},
 /obj/item/clothing/head/soft/cybersun{
-	pixel_x = 9;
-	pixel_y = 0
+	pixel_x = 9
 	},
 /obj/item/storage/backpack/duffelbag{
 	pixel_x = -10;

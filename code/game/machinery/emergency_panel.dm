@@ -11,6 +11,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	clicksound = "terminal_type"
 	use_power = NO_POWER_USE // signal distress regardless of power
+	plane = FLOOR_PLANE
 
 	// inserted ship key
 	var/obj/item/key/ship/ship_key

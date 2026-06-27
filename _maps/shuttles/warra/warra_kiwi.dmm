@@ -1454,18 +1454,14 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/storage/equip)
 "gG" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering/engines/starboard)
 "gH" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "ns_starthruster"
@@ -1661,8 +1657,7 @@
 "hR" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/helm/viewscreen/directional/north{
-	layer = 2.7;
-	pixel_y = 17
+	layer = 2.7
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/table{
@@ -1755,8 +1750,7 @@
 	},
 /obj/item/plate_shard{
 	icon_state = "plate_shard4";
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/item/plate_shard{
 	icon_state = "plate_shard5"
@@ -2357,9 +2351,7 @@
 	},
 /area/ship/cargo/starboard)
 "lr" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -3155,9 +3147,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "oV" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -3455,8 +3445,7 @@
 "qK" = (
 /obj/machinery/computer/telecomms/server,
 /obj/machinery/computer/helm/viewscreen/directional/north{
-	layer = 2.7;
-	pixel_y = 17
+	layer = 2.7
 	},
 /obj/effect/turf_decal/industrial/hatch/blue,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -4718,9 +4707,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "ym" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "ns_portthruster"
@@ -5335,9 +5322,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines/starboard)
 "AY" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Bh" = (
@@ -5998,7 +5983,6 @@
 /obj/docking_port/mobile{
 	port_direction = 4;
 	preferred_direction = 4;
-	dir = 1;
 	launch_status = 0
 	},
 /turf/open/floor/plasteel/tech,
@@ -7258,9 +7242,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/starboard)
 "MB" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -7710,9 +7692,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Pb" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering/engines/starboard)
 "Ph" = (
@@ -9479,6 +9459,7 @@
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
+/obj/machinery/emergency_panel,
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)

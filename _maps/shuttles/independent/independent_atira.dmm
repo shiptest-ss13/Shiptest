@@ -21,9 +21,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "aD" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -372,8 +370,7 @@
 	},
 /obj/item/plate_shard{
 	icon_state = "plate_shard4";
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/item/plate_shard{
 	icon_state = "plate_shard5"
@@ -518,9 +515,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engine)
 "eB" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1156,6 +1151,7 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
+/obj/machinery/emergency_panel/dark,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "jq" = (
@@ -1434,9 +1430,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "mN" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1791,9 +1785,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/office/lobby)
 "oS" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},

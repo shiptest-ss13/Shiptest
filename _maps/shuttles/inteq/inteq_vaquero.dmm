@@ -487,7 +487,6 @@
 	dir = 4
 	},
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	dir = 4;
 	port_direction = 2;
 	preferred_direction = 4
@@ -4102,8 +4101,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/stairs{
-	color = "#a3a2a0";
-	dir = 2
+	color = "#a3a2a0"
 	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "med";
@@ -5457,6 +5455,10 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
+	},
+/obj/machinery/emergency_panel{
+	pixel_x = 8;
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/starboard)

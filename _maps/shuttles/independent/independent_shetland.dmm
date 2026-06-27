@@ -407,8 +407,7 @@
 	},
 /obj/item/plate_shard{
 	icon_state = "plate_shard4";
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/item/plate_shard{
 	icon_state = "plate_shard5"
@@ -526,7 +525,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/stairs{
-	dir = 2;
 	color = "#a3a2a0"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -559,7 +557,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/stairs{
-	dir = 2;
 	color = "#a3a2a0"
 	},
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden,
@@ -3037,9 +3034,7 @@
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm/captain)
 "pn" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -3983,9 +3978,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore/starboard)
 "tb" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -4110,9 +4103,7 @@
 	},
 /area/ship/engineering/engine)
 "tv" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -6736,9 +6727,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "EO" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -9496,6 +9485,10 @@
 	},
 /obj/machinery/firealarm/directional/west{
 	pixel_y = -6
+	},
+/obj/machinery/emergency_panel/dark{
+	pixel_x = -8;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)

@@ -1001,6 +1001,10 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
+/obj/machinery/emergency_panel/dark{
+	pixel_x = 8;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "qp" = (
@@ -2472,7 +2476,6 @@
 /area/ship/crew)
 "Tj" = (
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	dir = 4;
 	port_direction = 2;
 	preferred_direction = 4

@@ -453,8 +453,7 @@
 	pixel_y = 9
 	},
 /obj/item/reagent_containers/glass/maunamug{
-	pixel_x = 10;
-	pixel_y = 0
+	pixel_x = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -464,10 +463,7 @@
 "cE" = (
 /obj/structure/table,
 /obj/machinery/airalarm/directional/west,
-/obj/machinery/coffeemaker/premium{
-	pixel_x = 0;
-	pixel_y = 4
-	},
+/obj/machinery/coffeemaker/premium,
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/vanilla{
 	pixel_x = 11;
 	pixel_y = 17
@@ -4808,6 +4804,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/machinery/emergency_panel,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "zU" = (
@@ -8951,7 +8948,6 @@
 	pixel_y = 15
 	},
 /obj/item/food/grilled_cheese_sandwich{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /turf/open/floor/carpet/blue,
@@ -9233,8 +9229,7 @@
 /obj/structure/table/wood,
 /obj/item/paper_bin,
 /obj/item/pen/fourcolor{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/item/pen/fountain{
 	pixel_x = -7;
@@ -9466,7 +9461,6 @@
 	dir = 4
 	},
 /obj/item/storage/pill_bottle/dice{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel,

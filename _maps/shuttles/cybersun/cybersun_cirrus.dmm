@@ -117,7 +117,6 @@
 /obj/item/food/grown/sososi,
 /obj/item/food/grown/sososi,
 /obj/item/food/grown/dote_berries{
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /obj/item/food/grown/dote_berries{
@@ -6500,6 +6499,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 10
+	},
+/obj/machinery/emergency_panel{
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)

@@ -306,7 +306,6 @@
 	dir = 8
 	},
 /obj/machinery/suit_storage_unit/independent/security{
-	name = "security suit storage unit";
 	req_access_txt = "1"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -581,7 +580,6 @@
 	dir = 8
 	},
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	dir = 4;
 	port_direction = 2;
 	preferred_direction = 4;
@@ -2098,6 +2096,10 @@
 /obj/structure/cable{
 	icon_state = "8-10"
 	},
+/obj/machinery/emergency_panel{
+	pixel_x = -8;
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/fore)
 "Pl" = (
@@ -2600,7 +2602,6 @@
 	dir = 9
 	},
 /obj/machinery/suit_storage_unit/independent/security{
-	name = "security suit storage unit";
 	req_access_txt = "1"
 	},
 /turf/open/floor/plasteel/tech/grid,

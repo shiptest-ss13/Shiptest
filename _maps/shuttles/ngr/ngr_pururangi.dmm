@@ -131,7 +131,6 @@
 /area/ship/bridge)
 "bd" = (
 /obj/effect/turf_decal/stairs{
-	dir = 2;
 	color = "#575757"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2998,9 +2997,7 @@
 	id = "puru_turrets";
 	pixel_y = 24
 	},
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner_techfloor_grid,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 8
 	},
@@ -3768,7 +3765,6 @@
 	pixel_y = -12
 	},
 /obj/item/gps{
-	pixel_x = 0;
 	pixel_y = 10
 	},
 /obj/item/gps{
@@ -4813,7 +4809,6 @@
 /area/ship/crew)
 "Jw" = (
 /obj/effect/turf_decal/stairs{
-	dir = 2;
 	color = "#575757"
 	},
 /obj/structure/cable/yellow{
@@ -5265,9 +5260,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "On" = (
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner_techfloor_grid,
 /obj/effect/turf_decal/techfloor/corner,
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters{
 	dir = 4
@@ -5770,8 +5763,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/item/radio/intercom/directional/north{
-	pixel_x = -5;
-	pixel_y = 31
+	pixel_x = -5
 	},
 /obj/machinery/light_switch{
 	pixel_x = 11;
@@ -6237,6 +6229,10 @@
 	},
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters{
 	dir = 1
+	},
+/obj/machinery/emergency_panel/dark{
+	pixel_x = 8;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)

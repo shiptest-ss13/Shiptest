@@ -1129,6 +1129,10 @@
 /obj/structure/cable/white{
 	icon_state = "2-8"
 	},
+/obj/machinery/emergency_panel/dark{
+	pixel_y = 16;
+	pixel_x = 16
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "hp" = (
@@ -1455,8 +1459,7 @@
 /obj/item/plate_shard,
 /obj/item/plate_shard{
 	icon_state = "plate_shard4";
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/item/reagent_containers/food/drinks/coffee/empty,
 /obj/effect/decal/cleanable/dirt,
@@ -2299,7 +2302,6 @@
 /obj/docking_port/mobile{
 	port_direction = 4;
 	preferred_direction = 4;
-	dir = 1;
 	launch_status = 0
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
@@ -2340,9 +2342,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "tH" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -3358,9 +3358,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "Ep" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -3800,9 +3798,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "IG" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -3850,9 +3846,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
 "JJ" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -4695,7 +4689,6 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/corner_steel_grid{
-	dir = 2;
 	layer = 2.030
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -5605,7 +5598,6 @@
 	name = "Filter Waste to Exhaust"
 	},
 /obj/effect/turf_decal/corner_steel_grid{
-	dir = 2;
 	layer = 2.030
 	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
