@@ -32,11 +32,11 @@
 /obj/machinery/emergency_panel/update_appearance()
 	. = ..()
 	if(hatch_open)
-		icon_state = "panel_open"
+		icon_state = "[initial(icon_state)]_open"
 	if(ship_key)
-		icon_state = "panel_open_key"
+		icon_state = "[initial(icon_state)]_open_key"
 	else
-		icon_state = "panel"
+		icon_state = initial(icon_state)
 
 /obj/machinery/emergency_panel/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
@@ -94,5 +94,8 @@
 			distress_cooldown = world.time + EMERGENCY_PANEL_COOLDOWN
 		else
 			return
+
+/obj/machinery/emergency_panel/dark
+	icon_state = "panel-dark"
 
 #undef EMERGENCY_PANEL_COOLDOWN
