@@ -4614,8 +4614,8 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/telecomms/receiver/preset_left/birdstation{
-	autolinkers = list("receiverG", "bus", "hub");
+/obj/machinery/telecomms/receiver/preset_right{
+	autolinkers = list("receiverG", "hub");
 	network = "ngr_commnet"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
