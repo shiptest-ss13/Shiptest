@@ -694,15 +694,6 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plating,
 /area/ship/hallway)
-"dL" = (
-/obj/effect/turf_decal/industrial/outline/red,
-/obj/machinery/telecomms/hub{
-	autolinkers = list("hub","bus","relay","broadcasterG","receiverG");
-	id = "Communications Hub";
-	network = "indie_commnet"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "dR" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8;
@@ -9797,7 +9788,7 @@ ck
 ZP
 MM
 QX
-dL
+WF
 NW
 jc
 WF
