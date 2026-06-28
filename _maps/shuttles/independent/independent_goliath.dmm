@@ -1569,18 +1569,6 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plating,
 /area/ship/external/dark)
-"jz" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8;
-	color = "#eeac2e"
-	},
-/obj/machinery/telecomms/hub{
-	autolinkers = list("hub","bus","relay","broadcasterG","receiverG");
-	id = "Communications Hub";
-	network = "indie_commnet"
-	},
-/turf/open/floor/plating,
-/area/ship/hangar)
 "jB" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -10040,7 +10028,7 @@ MU
 uK
 dR
 dR
-jz
+dR
 za
 za
 Ye
