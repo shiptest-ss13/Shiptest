@@ -323,6 +323,14 @@
 	pixel_x = 2
 	},
 /obj/machinery/light/floor,
+/obj/item/storage/box/flares{
+	pixel_y = 5;
+	pixel_x = 0
+	},
+/obj/item/stack/marker_beacon/thirty{
+	pixel_y = -4;
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/port)
 "bo" = (
@@ -7222,11 +7230,11 @@
 	pixel_y = 8
 	},
 /obj/item/clothing/suit/hooded/wintercoat/cargo{
-	pixel_x = -8;
-	pixel_y = 10
+	pixel_x = -10;
+	pixel_y = 12
 	},
 /obj/item/clothing/suit/hooded/wintercoat/cargo{
-	pixel_x = -8;
+	pixel_x = -10;
 	pixel_y = 10
 	},
 /obj/item/clothing/suit/hooded/wintercoat/cargo{
@@ -7234,27 +7242,31 @@
 	pixel_y = 5
 	},
 /obj/item/clothing/suit/hooded/wintercoat/cargo{
-	pixel_x = -8;
-	pixel_y = 5
+	pixel_x = -10;
+	pixel_y = 8
 	},
 /obj/item/clothing/shoes/winterboots/ice_boots{
 	pixel_x = -5;
 	pixel_y = -5
 	},
 /obj/item/clothing/shoes/winterboots/ice_boots{
-	pixel_x = -5;
+	pixel_x = -10;
 	pixel_y = -5
 	},
 /obj/item/clothing/shoes/winterboots/ice_boots{
-	pixel_x = 5;
+	pixel_x = 1;
 	pixel_y = -5
 	},
 /obj/item/clothing/shoes/winterboots/ice_boots{
-	pixel_x = 5;
+	pixel_x = -4;
 	pixel_y = -5
 	},
 /obj/machinery/light/floor,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/shoes/winterboots/ice_boots{
+	pixel_x = 8;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/starboard)
 "MB" = (
@@ -8606,20 +8618,8 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
-/obj/structure/rack,
-/obj/item/storage/box/flares{
-	pixel_y = 8;
-	pixel_x = -6
-	},
-/obj/item/stack/marker_beacon/thirty{
-	pixel_y = 8;
-	pixel_x = 8
-	},
-/obj/item/clothing/shoes/winterboots/ice_boots{
-	pixel_x = -5;
-	pixel_y = -5
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "UB" = (
