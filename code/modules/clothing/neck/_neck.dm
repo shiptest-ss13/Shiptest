@@ -696,6 +696,34 @@
 	icon_state = "neckwraps_blue"
 	current_skin = "blue neckwraps"
 
+/obj/item/clothing/neck/shawl
+	name = "shawl"
+	desc = "An aging shawl, still serving as good protection from the elements."
+	icon_state = "shawl"
+	item_state = "shawl"
+	unique_reskin = list("brown shawl" = "shawl",
+						"grey shawl" = "shawl_grey",
+						"green shawl" = "shawl_green",
+						"yellow shawl" = "shawl_yellow"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/neck/shawl/grey
+	name = "grey shawl"
+	icon_state = "shawl_grey"
+	current_skin = "grey shawl"
+
+/obj/item/clothing/neck/shawl/green
+	name = "green shawl"
+	icon_state = "shawl_green"
+	current_skin = "green shawl"
+
+/obj/item/clothing/neck/shawl/yellow
+	name = "yellow shawl"
+	icon_state = "shawl_yellow"
+	current_skin = "yellow shawl"
+
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
 //However, these 4 don't have corgi versions of their sprites

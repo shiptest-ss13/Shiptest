@@ -261,7 +261,7 @@
 
 /datum/blackmarket_item/weapon/guncase/cm23
 	name = "CM-23 pistol"
-	desc = "The service pistol of the Confederated League. Chambered in 10x22mm and fresh off a crashed clipper. We made sure to scratch the ID off this time."
+	desc = "The service pistol of the Confederated League. Chambered in 10mm and fresh off a crashed clipper. We made sure to scratch the ID off this time."
 
 	item = /obj/item/gun/ballistic/automatic/pistol/cm23
 	pair_item = list(/datum/blackmarket_item/ammo/cm23_mag)
@@ -272,7 +272,7 @@
 
 /datum/blackmarket_item/weapon/guncase/cm70
 	name = "CM-70 Machine Pistol"
-	desc = "One slick piece from the Confederated League. Chambered in 9x18mm. That officer wasn't happy to lose this but you should be safe."
+	desc = "One slick piece from the Confederated League. Chambered in 9mm. That officer wasn't happy to lose this but you should be safe."
 
 	item = /obj/item/gun/ballistic/automatic/pistol/cm70
 	pair_item = list(/datum/blackmarket_item/ammo/cm70_mag)
@@ -283,7 +283,7 @@
 
 /datum/blackmarket_item/weapon/guncase/cm5
 	name = "CM-5 SMG"
-	desc = "Now isn't this a good find? A whole League sub-machinegun, chambered in 9x18mm. We're pretty sure no one is gonna notice the pallet of these missing."
+	desc = "Now isn't this a good find? A whole League sub-machinegun, chambered in 9mm. We're pretty sure no one is gonna notice the pallet of these missing."
 
 	item = /obj/item/gun/ballistic/automatic/smg/cm5
 	pair_item = list(/datum/blackmarket_item/ammo/cm5_mag)
@@ -413,7 +413,7 @@
 
 /datum/blackmarket_item/weapon/guncase/spitter
 	name = "Spitter Submachine Gun"
-	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the other hand? Let's just say the bereaved will be wanting a closed-casket funeral. Chambered in 9x18mm."
+	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the other hand? Let's just say the bereaved will be wanting a closed-casket funeral. Chambered in 9mm."
 	item = /obj/item/gun/ballistic/automatic/pistol/spitter
 	pair_item = list(/datum/blackmarket_item/ammo/spitter_mag)
 
@@ -436,7 +436,7 @@
 
 /datum/blackmarket_item/weapon/guncase/cottonmouth
 	name = "MP-84m Cottonmouth Machinepistol"
-	desc = "Ramzi suppliers been rechambering a buncha Rattlesnakes into 10x22mm. Ol' nine ain't cutting it anymore. Kicks a liiiiiiittle bit worse aaaand it's just a two burst, but it'll suit ya well."
+	desc = "Ramzi suppliers been rechambering a buncha Rattlesnakes into 10mm. Ol' nine ain't cutting it anymore. Kicks a liiiiiiittle bit worse aaaand it's just a two burst, but it'll suit ya well."
 	item = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth
 	pair_item = list(/datum/blackmarket_item/ammo/cottonmouth)
 
@@ -522,6 +522,19 @@
 	cost_min = 5000
 	cost_max = 7000
 	stock_max = 2
+	availability_prob = 15
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/guncase/rail_cannon
+	name = "Model 'Atelier' Railgun"
+	desc = "If you ask me, warfare boils down to basically throwing rocks as fast and hard as possible. This thing might not be fast, but it's certainly hard as hell. Chambered in ferromagnetic rods to put a baseball sized hole in your unlucky victim."
+	item = /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+	mag_type = /obj/item/ammo_box/magazine/ammo_stack/prefilled/ferrorods
+	pair_item = list(/datum/blackmarket_item/ammo/rods)
+
+	cost_min = 6500
+	cost_max = 8000
+	stock = 1
 	availability_prob = 15
 	spawn_weighting = FALSE
 

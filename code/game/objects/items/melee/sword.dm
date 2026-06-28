@@ -264,7 +264,7 @@
 		/datum/reagent/toxin/mindbreaker = 10,
 		/datum/reagent/drug/space_drugs = 10,
 		/datum/reagent/drug/crank = 5,
-		/datum/reagent/drug/methamphetamine = 5,
+		/datum/reagent/drug/rahkrahene = 5,
 		/datum/reagent/drug/mammoth = 5,
 		/datum/reagent/drug/aranesp = 5,
 		/datum/reagent/drug/pumpup = 10,

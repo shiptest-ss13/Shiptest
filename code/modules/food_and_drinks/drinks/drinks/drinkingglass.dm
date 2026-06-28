@@ -128,7 +128,7 @@
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/bridge_bunny
 	name = "Bridge Bunny"
-	list_reagents = list(/datum/reagent/consumable/ethanol/sidecar = 50)
+	list_reagents = list(/datum/reagent/consumable/ethanol/bridge_bunny = 50)
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/gorlex_surprise
 	name = "Gorlex Surprise"

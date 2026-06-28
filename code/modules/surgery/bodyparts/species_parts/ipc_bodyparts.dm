@@ -1591,3 +1591,49 @@
 /obj/item/bodypart/leg/right/ipc/pgf_monocolor/type_d
 	name = "\improper PGF Mechanics MK.V Type-D right leg"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+// Custom 3D Printed Cybersun Ghost
+
+/obj/item/bodypart/head/ipc/customghost
+	name = "\improper Custom 3D Printed Cybersun 'Ghost' head"
+	icon_state = "customcyber_head"
+	limb_id = "customcyber"
+	eye_state_override = "eyes_cybersun_ghost_greyscale"
+	draw_eyes = TRUE
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/chest/ipc/customghost
+	name = "\improper Custom 3D Printed Cybersun 'Ghost' chest"
+	icon_state = "customcyber_chest"
+	limb_id = "customcyber"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/l_arm/ipc/customghost
+	name = "\improper Custom 3D Printed Cybersun 'Ghost' left arm"
+	icon_state = "customcyber_l_arm"
+	limb_id = "customcyber"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/r_arm/ipc/customghost
+	name = "\improper Custom 3D Printed Cybersun 'Ghost' right arm"
+	icon_state = "customcyber_r_arm"
+	limb_id = "customcyber"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/left/ipc/customghost
+	name = "\improper Custom 3D Printed SeeCybersun 'Ghost'eker left leg"
+	icon_state = "customcyber_l_leg"
+	limb_id = "customcyber"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/right/ipc/customghost
+	name = "\improper Custom 3D Printed Cybersun 'Ghost' right leg"
+	icon_state = "customcyber_r_leg"
+	limb_id = "customcyber"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE

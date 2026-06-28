@@ -38,7 +38,7 @@
 
 /datum/supply_pack/gun/commanders
 	name = "PS9 Challenger Pistol Crate"
-	desc = "Contains a double stacked Challenger pistol, produced by Makosso-Warra Advantage. Chambered in 9x18mm."
+	desc = "Contains a double stacked Challenger pistol, produced by Makosso-Warra Advantage. Chambered in 9mm."
 	cost = 750
 	contains = list(/obj/item/storage/guncase/pistol/commander)
 	faction = /datum/faction/warra
@@ -46,14 +46,14 @@
 
 /datum/supply_pack/gun/ringneck
 	name = "Ringneck Pistol Crate"
-	desc = "Contains a civilian variant of the Ringneck pistol, produced by Scarborough Arms and chambered in 10x22mm."
+	desc = "Contains a civilian variant of the Ringneck pistol, produced by Scarborough Arms and chambered in 10mm."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/ringneck)
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/gun/pc76
 	name = "PC-76 'Ringneck' Pistol Crate"
-	desc = "Contains a noticably smaller military variant of the Ringneck pistol, chambered in 10x22mm."
+	desc = "Contains a noticably smaller military variant of the Ringneck pistol, chambered in 10mm."
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/pistol/pc76)
 	faction = /datum/faction/syndicate/scarborough
@@ -62,7 +62,7 @@
 
 /datum/supply_pack/gun/cm23
 	name = "CM-23 Pistol Crate"
-	desc = "Contains a 10x22mm CM-23 Pistol, standard issue of the Confederated Minutemen."
+	desc = "Contains a 10mm CM-23 Pistol, standard issue of the Confederated Minutemen."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/cm23)
 	faction = /datum/faction/clip
@@ -71,7 +71,7 @@
 
 /datum/supply_pack/gun/cm70
 	name = "CM-70 Machinepistol Crate"
-	desc = "Contains a 9x18mm machinepistol produced proudly within Lanchester City. Confederated Minuteman issue only."
+	desc = "Contains a 9mm machinepistol produced proudly within Lanchester City. Confederated Minuteman issue only."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/pistol/cm70)
 	faction = /datum/faction/clip
@@ -230,8 +230,8 @@
 
 /datum/supply_pack/gun/l204
 	name = "L204 'Resistor' Plasma Rifle Crate"
-	desc = "Contains a lethal, high-energy laser gun."
-	cost = 1000
+	desc = "Contains a lethal, high-energy electroplasma gun with a higher power consumption. Rated for moderatedly armored opponents."
+	cost = 2500
 	contains = list(/obj/item/storage/guncase/energy/laser)
 	crate_name = "laser crate"
 	faction = /datum/faction/warra
@@ -534,7 +534,7 @@
 
 /datum/supply_pack/gun/expedition
 	name = "SGL9 Expedition SMG Crate"
-	desc = "Contains a Expedition SMG produced by Makosso-Warra Advantage. Chambered in 9x18mm."
+	desc = "Contains a Expedition SMG produced by Makosso-Warra Advantage. Chambered in 9mm."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/vector)
 	crate_name = "SMG crate"
@@ -544,7 +544,7 @@
 
 /datum/supply_pack/gun/mongrel
 	name = "SKM-44v Mongrel SMG Crate"
-	desc = "Contains a shortened variant of the SKM rechambered to 10x22mm and painted in the brown-and-gold of Inteq."
+	desc = "Contains a shortened variant of the SKM rechambered to 10mm and painted in the brown-and-gold of Inteq."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/mongrel)
 	crate_name = "SMG crate"
@@ -573,7 +573,7 @@
 
 /datum/supply_pack/gun/champion
 	name = "PHB Champion Machinepistol Crate"
-	desc = "Contains a compact 9x18mm burst fire machine pistol produced by Makosso-Warra Advantage. For MW employee use only."
+	desc = "Contains a compact 9mm burst fire machine pistol produced by Makosso-Warra Advantage. For MW employee use only."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/saber)
 	crate_name = "Machinepistol crate"
@@ -603,7 +603,7 @@
 
 /datum/supply_pack/gun/rattlesnake
 	name = "Rattlesnake Machinepistol Crate"
-	desc = "Contains an automatic machinepistol produced by Scarborough Arms, chambered in 9x18mm."
+	desc = "Contains an automatic machinepistol produced by Scarborough Arms, chambered in 9mm."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/rattlesnake)
 	crate_name = "Machinepistol crate"
@@ -613,7 +613,7 @@
 
 /datum/supply_pack/gun/kingsnake
 	name = "Kingsnake Machinepistol Crate"
-	desc = "Contains an automatic machinepistol chambered in 9x18mm, painted in the brown-and-gold of Inteq."
+	desc = "Contains an automatic machinepistol chambered in 9mm, painted in the brown-and-gold of Inteq."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/kingsnake)
 	crate_name = "Machinepistol crate"
@@ -972,6 +972,16 @@
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/ssg669)
 	crate_name = "sniper rifle crate"
+	faction = /datum/faction/solgov
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/railgun
+	name = "Model 'Atelier' Railgun"
+	desc = "A high powered Solarian gauss sniper with high penetration power. Chambered in ferromagnetic rods Not for export."
+	cost = 6500
+	contains = list(/obj/item/storage/guncase/railgun)
+	crate_name = "gauss crate"
 	faction = /datum/faction/solgov
 	faction_discount = 0
 	faction_locked = TRUE

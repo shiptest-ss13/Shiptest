@@ -1013,6 +1013,9 @@
 	if(bodytype & BODYTYPE_HAIR)
 		draw_color = source.hair_color
 		return
+	if(limb_id == SPECIES_MOTH) // this is a terrible and bad solution and should be replaced
+		draw_color = source.dna.features["moth_bodyfluff_color"]
+		return
 	if(spec.fixed_mut_color)
 		draw_color = spec.fixed_mut_color
 		return

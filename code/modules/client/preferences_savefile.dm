@@ -513,13 +513,20 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_mcolor"], features["mcolor"])
 	READ_FILE(S["feature_mcolor2"], features["mcolor2"])
 	READ_FILE(S["feature_ethcolor"], features["ethcolor"])
+	READ_FILE(S["feature_moth_bodyfluff_color"], features["moth_bodyfluff_color"])
+	READ_FILE(S["feature_moth_neckfluff_color"], features["moth_neckfluff_color"])
 	READ_FILE(S["feature_lizard_face_markings"], features["face_markings"])
 	READ_FILE(S["feature_lizard_horns"], features["horns"])
 	READ_FILE(S["feature_lizard_frills"], features["frills"])
 	READ_FILE(S["feature_lizard_spines"], features["spines"])
 	READ_FILE(S["feature_lizard_body_markings"], features["body_markings"])
 	READ_FILE(S["feature_moth_wings"], features["moth_wings"])
+	READ_FILE(S["feature_moth_wings_color"], features["moth_wings_color"])
 	READ_FILE(S["feature_moth_markings"], features["moth_markings"])
+	READ_FILE(S["feature_moth_markings_color"], features["moth_markings_color"])
+	READ_FILE(S["feature_moth_antennae"], features["moth_antennae"])
+	READ_FILE(S["feature_moth_antennae_color"], features["moth_antennae_color"])
+	READ_FILE(S["feature_moth_head"], features["moth_head"])
 
 	READ_FILE(S["jumpsuit_style"], jumpsuit_style)
 	READ_FILE(S["exowear"], exowear)
@@ -604,6 +611,21 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!features["ethcolor"] || text2num(features["ethcolor"], 16) == 0)
 		features["ethcolor"] = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)]
 
+	if(!features["moth_bodyfluff_color"] || text2num(features["moth_bodyfluff_color"], 16) == 0)
+		features["moth_bodyfluff_color"] = random_color()
+
+	if(!features["moth_wings_color"] || text2num(features["moth_wings_color"], 16) == 0)
+		features["moth_wings_color"] = "#E6C684"
+
+	if(!features["moth_neckfluff_color"] || text2num(features["moth_neckfluff_color"], 16) == 0)
+		features["moth_neckfluff_color"] = "#E6C684"
+
+	if(!features["moth_markings_color"] || text2num(features["moth_markings_color"], 16) == 0)
+		features["moth_markings_color"] = random_color()
+
+	if(!features["moth_antennae_color"] || text2num(features["moth_antennae_color"], 16) == 0)
+		features["moth_antennae_color"] = "#E6C684"
+
 	randomise = SANITIZE_LIST(randomise)
 
 	if(gender == MALE)
@@ -635,6 +657,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["mcolor"]					= sanitize_hexcolor(features["mcolor"])
 	features["mcolor2"]					= sanitize_hexcolor(features["mcolor2"])
 	features["ethcolor"]				= copytext_char(features["ethcolor"], 1, 7)
+	features["moth_bodyfluff_color"]	= sanitize_hexcolor(features["moth_bodyfluff_color"])
 	features["face_markings"]			= sanitize_inlist(features["face_markings"], GLOB.face_markings_list)
 	features["horns"]					= sanitize_inlist(features["horns"], GLOB.horns_list)
 	features["ears"]					= sanitize_inlist(features["ears"], GLOB.ears_list, "None")
@@ -642,10 +665,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["spines"]					= sanitize_inlist(features["spines"], GLOB.spines_list)
 	features["body_markings"]			= sanitize_inlist(features["body_markings"], GLOB.body_markings_list)
 	features["moth_wings"]				= sanitize_inlist(features["moth_wings"], GLOB.moth_wings_list, "Plain")
+	features["moth_wings_color"]		= sanitize_hexcolor(features["moth_wings_color"])
 	features["moth_fluff"]				= sanitize_inlist(features["moth_fluff"], GLOB.moth_fluff_list, "Plain")
+	features["moth_neckfluff_color"]	= sanitize_hexcolor(features["moth_neckfluff_color"])
 	features["spider_legs"] 			= sanitize_inlist(features["spider_legs"], GLOB.spider_legs_list, "Plain")
 	features["spider_spinneret"] 		= sanitize_inlist(features["spider_spinneret"], GLOB.spider_spinneret_list, "Plain")
 	features["moth_markings"]			= sanitize_inlist(features["moth_markings"], GLOB.moth_markings_list, "None")
+	features["moth_markings_color"]		= sanitize_hexcolor(features["moth_markings_color"])
+	features["moth_antennae"]			= sanitize_inlist(features["moth_antennae"], GLOB.moth_antennae_list, "Plain")
+	features["moth_antennae_color"]		= sanitize_hexcolor(features["moth_antennae_color"])
+	features["moth_head"]				= sanitize_inlist(features["moth_head"], GLOB.moth_head_list, "Flat")
 	features["ipc_screen"]				= sanitize_inlist(features["ipc_screen"], GLOB.ipc_screens_list)
 	features["ipc_antenna"]				= sanitize_inlist(features["ipc_antenna"], GLOB.ipc_antennas_list)
 	features["ipc_chassis"]				= sanitize_inlist(features["ipc_chassis"], GLOB.ipc_chassis_list)
@@ -707,6 +736,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_mcolor"]				, features["mcolor"])
 	WRITE_FILE(S["feature_mcolor2"]				, features["mcolor2"])
 	WRITE_FILE(S["feature_ethcolor"]			, features["ethcolor"])
+	WRITE_FILE(S["feature_moth_bodyfluff_color"], features["moth_bodyfluff_color"])
+	WRITE_FILE(S["feature_moth_neckfluff_color"], features["moth_neckfluff_color"])
 	WRITE_FILE(S["feature_lizard_face_markings"], features["face_markings"])
 	WRITE_FILE(S["feature_lizard_horns"]		, features["horns"])
 	WRITE_FILE(S["feature_human_ears"]			, features["ears"])
@@ -714,7 +745,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_lizard_spines"]		, features["spines"])
 	WRITE_FILE(S["feature_lizard_body_markings"], features["body_markings"])
 	WRITE_FILE(S["feature_moth_wings"]			, features["moth_wings"])
+	WRITE_FILE(S["feature_moth_wings_color"]	, features["moth_wings_color"])
 	WRITE_FILE(S["feature_moth_markings"]		, features["moth_markings"])
+	WRITE_FILE(S["feature_moth_markings_color"]	, features["moth_markings_color"])
+	WRITE_FILE(S["feature_moth_antennae"]		, features["moth_antennae"])
+	WRITE_FILE(S["feature_moth_antennae_color"]	, features["moth_antennae_color"])
+	WRITE_FILE(S["feature_moth_head"]			, features["moth_head"])
 	WRITE_FILE(S["jumpsuit_style"]				, jumpsuit_style)
 	WRITE_FILE(S["exowear"]						, exowear)
 	WRITE_FILE(S["equipped_gear"]				, equipped_gear)

@@ -56,6 +56,8 @@
 		BODY_ZONE_TAIL = /obj/item/bodypart/tail/elzu,
 	)
 
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/elzuouse
+
 	var/current_color
 	var/EMPeffect = FALSE
 	var/static/unhealthy_color = rgb(237, 164, 149)

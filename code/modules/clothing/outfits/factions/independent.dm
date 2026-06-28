@@ -113,7 +113,7 @@
 
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
-	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/captain)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/volt, /obj/item/stamp/captain)
 
 /datum/outfit/job/independent/captain/empty
 	name = "Independent - Captain (Naked)"
@@ -137,7 +137,7 @@
 
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
-	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/captain)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/volt, /obj/item/stamp/captain)
 
 /datum/outfit/job/independent/captain/cheap //for Miskilamo ships
 	name = "Independent - Captain (Low Budget)"
@@ -255,7 +255,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
 
-	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/officer)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/volt, /obj/item/stamp/officer)
 
 /datum/outfit/job/independent/hop/hunter
 	name = "Independent - Head of Personnel (Hunter)"
@@ -341,7 +341,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec
 	box = /obj/item/storage/box/survival/security
 
-	chameleon_extras = list(/obj/item/gun/energy/sharplite/x01, /obj/item/stamp/hos)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/yari, /obj/item/stamp/hos)
 
 /datum/outfit/job/independent/hos/merc
 	name = "Independent - Mercenary XO"
@@ -733,6 +733,18 @@
 	suit = /obj/item/clothing/suit/jacket/leather/duster
 	gloves = /obj/item/clothing/gloves/fingerless
 	head = /obj/item/clothing/head/cowboy/sec
+
+/datum/outfit/job/independent/quartermaster/gown
+	name = "Independent - Quartermaster (Gown)"
+
+	ears = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	gloves = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	suit = null
+	dcoat = null
+	l_pocket = null
+	backpack_contents = null
 
 /datum/outfit/job/independent/miner
 	name = "Independent - Miner"

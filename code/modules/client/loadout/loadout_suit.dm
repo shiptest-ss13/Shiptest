@@ -11,6 +11,14 @@
 	display_name = "winter coat"
 	path = /obj/item/clothing/suit/hooded/wintercoat
 
+/datum/gear/suit/parkaclip
+	display_name = "parka, serene sporting"
+	path = /obj/item/clothing/suit/hooded/parka/serene
+
+/datum/gear/suit/parka
+	display_name = "parka, colorable"
+	path = /obj/item/clothing/suit/hooded/parka
+
 //JACKETS
 /datum/gear/suit/jacket
 	subtype_path = /datum/gear/suit/jacket
@@ -102,6 +110,14 @@
 /datum/gear/suit/limehazard
 	display_name = " lime hazard jacket"
 	path = /obj/item/clothing/suit/toggle/hazard/lime
+
+/datum/gear/suit/chorejacketteceti
+	display_name = "chore jacket, riso-teceian"
+	path = /obj/item/clothing/suit/toggle/chorejacket/teceti
+
+/datum/gear/suit/chorejacket
+	display_name = "chore jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/chorejacket
 
 /datum/gear/suit/overcoat
 	display_name = "overcoat, colorable"
