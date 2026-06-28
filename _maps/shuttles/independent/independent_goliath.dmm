@@ -6235,7 +6235,7 @@
 /obj/machinery/telecomms/bus/preset_one{
 	autolinkers = list("hub","processor4","bus");
 	network = "indie_commnet";
-	freq_listening = list(1353)
+	freq_listening = list(1353, 1459)
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -7079,7 +7079,7 @@
 	},
 /obj/machinery/telecomms/server/presets/common{
 	autolinkers = list("common","hub");
-	freq_listening = list(1353);
+	freq_listening = list(1353, 1459);
 	network = "indie_commnet"
 	},
 /obj/effect/turf_decal/techfloor,
