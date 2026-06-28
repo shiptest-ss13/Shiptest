@@ -739,6 +739,11 @@
 /obj/machinery/camera/autoname{
 	network = list("ngr_colony")
 	},
+/obj/item/storage/box/ammo/a357,
+/obj/structure/closet/wall/red/directional/north,
+/obj/item/clothing/under/syndicate/ngr/officer,
+/obj/item/clothing/suit/armor/ngr/lieutenant,
+/obj/item/clothing/head/ngr/peaked,
 /turf/open/floor/pod/dark,
 /area/ruin/rockplanet/ngrcolony/security)
 "dt" = (
@@ -3053,11 +3058,6 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/utility)
-"mS" = (
-/obj/item/ammo_casing/spent/magnum_brass,
-/obj/structure/flora/ash/cacti,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/ruin/rockplanet/ngrcolony/outdoors)
 "mU" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
 /turf/open/floor/plasteel/dark,
@@ -10436,16 +10436,28 @@
 /obj/structure/closet/wall/red/directional/north,
 /obj/structure/dresser/wall/directional/west,
 /obj/item/clothing/under/syndicate/ngr/officer{
-	pixel_x = 8;
-	pixel_y = 9
+	pixel_x = 6;
+	pixel_y = 6
 	},
 /obj/item/clothing/head/ngr/peaked{
-	pixel_x = 8;
-	pixel_y = 18
+	pixel_x = 6;
+	pixel_y = 22
 	},
 /obj/item/clothing/glasses/sunglasses{
-	pixel_x = -3;
-	pixel_y = 16
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/clothing/neck/shemagh/ngr{
+	pixel_x = 5;
+	pixel_y = 18
+	},
+/obj/item/storage/belt/military/assault{
+	pixel_x = -9;
+	pixel_y = 14
+	},
+/obj/item/storage/box/ammo/a357{
+	pixel_x = -10;
+	pixel_y = -7
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ruin/rockplanet/ngrcolony/control)
@@ -13742,7 +13754,7 @@ GD
 SU
 JI
 nA
-mS
+MB
 Fz
 mL
 pe
