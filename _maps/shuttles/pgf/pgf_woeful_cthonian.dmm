@@ -2183,7 +2183,8 @@
 /obj/machinery/telecomms/bus/preset_five{
 	id = "PGF Communications Bus";
 	network = "pgf_commnet";
-	freq_listening = list(1353,1349,1459)
+	freq_listening = list(1353,1349,1459);
+	autolinkers = list("processor5","pgf","messaging")
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -3797,7 +3798,7 @@
 /area/ship/engineering/communications)
 "Lc" = (
 /obj/machinery/telecomms/hub{
-	autolinkers = list("hub","bus","relay","messaging","minutemen","broadcasterB","receiverB");
+	autolinkers = list("hub","bus","relay","messaging","pgf","broadcasterB","receiverB");
 	id = "PGF Communications Hub";
 	network = "pgf_commnet"
 	},
