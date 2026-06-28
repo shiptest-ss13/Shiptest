@@ -592,6 +592,15 @@
 "de" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/electrical)
+"df" = (
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/machinery/telecomms/hub{
+	autolinkers = list("hub","bus","relay","broadcasterG","receiverG");
+	id = "Communications Hub";
+	network = "indie_commnet"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "dm" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
 	piping_layer = 4;
@@ -893,7 +902,7 @@
 	dir = 5
 	},
 /obj/machinery/telecomms/receiver/preset_right{
-	autolinkers = list("receiverG", "hub", "bus");
+	autolinkers = list("receiverG", "hub");
 	network = "indie_commnet"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -1982,15 +1991,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway)
-"kV" = (
-/obj/effect/turf_decal/industrial/outline/red,
-/obj/machinery/telecomms/hub{
-	autolinkers = list("hub","bus","relay","broadcasterG","receiverG");
-	id = "Communications Hub";
-	network = "indie_commnet"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "kW" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
@@ -4355,6 +4355,20 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
+"xO" = (
+/obj/effect/spawner/bunk_bed{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 6
+	},
+/obj/structure/curtain/bounty{
+	layer = 4.1
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/carpet/nanoweave,
+/area/ship/crew/dorm)
 "xV" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hangar)
@@ -5041,18 +5055,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
-"BX" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8;
-	color = "#eeac2e"
-	},
-/obj/machinery/telecomms/hub{
-	autolinkers = list("hub","bus","relay","broadcasterG","receiverG");
-	id = "Communications Hub";
-	network = "indie_commnet"
-	},
-/turf/open/floor/plating,
-/area/ship/hangar)
 "BY" = (
 /obj/structure/table/chem,
 /obj/effect/turf_decal/borderfloorblack{
@@ -7691,6 +7693,18 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"SO" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8;
+	color = "#eeac2e"
+	},
+/obj/machinery/telecomms/hub{
+	autolinkers = list("hub","bus","relay","broadcasterG","receiverG");
+	id = "Communications Hub";
+	network = "indie_commnet"
+	},
+/turf/open/floor/plating,
+/area/ship/hangar)
 "ST" = (
 /obj/structure/filingcabinet/double/grey{
 	dir = 8;
@@ -7864,20 +7878,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
-"TR" = (
-/obj/effect/spawner/bunk_bed{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 6
-	},
-/obj/structure/curtain/bounty{
-	layer = 4.1
-	},
-/obj/machinery/airalarm/directional/east,
-/turf/open/floor/carpet/nanoweave,
-/area/ship/crew/dorm)
 "TS" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -9796,7 +9796,7 @@ ck
 ZP
 MM
 QX
-kV
+df
 NW
 jc
 WF
@@ -10048,7 +10048,7 @@ MU
 uK
 dR
 dR
-BX
+SO
 za
 za
 Ye
@@ -10719,7 +10719,7 @@ OQ
 Ra
 LV
 eX
-TR
+xO
 uj
 aY
 aY
