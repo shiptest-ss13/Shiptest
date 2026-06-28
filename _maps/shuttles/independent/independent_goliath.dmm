@@ -893,9 +893,8 @@
 	dir = 5
 	},
 /obj/machinery/telecomms/receiver/preset_right{
-	autolinkers = list("receiverB", "hub");
-	network = "indie_commnet";
-	freq_listening = list(1353,1459)
+	autolinkers = list("receiverG", "hub", "bus");
+	network = "indie_commnet"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -1983,6 +1982,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway)
+"kV" = (
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/machinery/telecomms/hub{
+	autolinkers = list("hub","bus","relay","broadcasterG","receiverG");
+	id = "Communications Hub";
+	network = "indie_commnet"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "kW" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
@@ -5033,6 +5041,18 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
+"BX" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8;
+	color = "#eeac2e"
+	},
+/obj/machinery/telecomms/hub{
+	autolinkers = list("hub","bus","relay","broadcasterG","receiverG");
+	id = "Communications Hub";
+	network = "indie_commnet"
+	},
+/turf/open/floor/plating,
+/area/ship/hangar)
 "BY" = (
 /obj/structure/table/chem,
 /obj/effect/turf_decal/borderfloorblack{
@@ -7658,20 +7678,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/storage)
-"SK" = (
-/obj/effect/spawner/bunk_bed{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 6
-	},
-/obj/structure/curtain/bounty{
-	layer = 4.1
-	},
-/obj/machinery/airalarm/directional/east,
-/turf/open/floor/carpet/nanoweave,
-/area/ship/crew/dorm)
 "SL" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/structure/disposalpipe/segment{
@@ -7858,6 +7864,20 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
+"TR" = (
+/obj/effect/spawner/bunk_bed{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 6
+	},
+/obj/structure/curtain/bounty{
+	layer = 4.1
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/carpet/nanoweave,
+/area/ship/crew/dorm)
 "TS" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -9776,7 +9796,7 @@ ck
 ZP
 MM
 QX
-WF
+kV
 NW
 jc
 WF
@@ -10028,7 +10048,7 @@ MU
 uK
 dR
 dR
-dR
+BX
 za
 za
 Ye
@@ -10699,7 +10719,7 @@ OQ
 Ra
 LV
 eX
-SK
+TR
 uj
 aY
 aY

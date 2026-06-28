@@ -4615,8 +4615,7 @@
 	dir = 8
 	},
 /obj/machinery/telecomms/receiver/preset_left/birdstation{
-	autolinkers = list("receiverG");
-	freq_listening = list(1353, 1205);
+	autolinkers = list("receiverG", "bus", "hub");
 	network = "ngr_commnet"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
