@@ -35,6 +35,8 @@
 			icon_state = ""
 	if(climbable)
 		AddElement(/datum/element/climbable, climb_time, climb_stun)
+	if(pass_through)
+		AddComponent(/datum/component/cover, passchance)
 	GLOB.cameranet.updateVisibility(src)
 
 /obj/structure/Destroy()
@@ -60,15 +62,15 @@
 
 /obj/structure/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	if(istype(mover, /obj/projectile) && pass_through)
-		var/obj/projectile/proj = mover
-		if(proj.firer && Adjacent(proj.firer))
-			return TRUE
-		if(prob(passchance))
-			return TRUE
-		return FALSE
-	if((mover.pass_flags & PASSGRILLE) && pass_through)
-		return prob(passchance)
+	// if(istype(mover, /obj/projectile) && pass_through)
+	// 	var/obj/projectile/proj = mover
+	// 	if(proj.firer && Adjacent(proj.firer))
+	// 		return TRUE
+	// 	if(prob(passchance))
+	// 		return TRUE
+	// 	return FALSE
+	// if((mover.pass_flags & PASSGRILLE) && pass_through)
+	// 	return prob(passchance)
 
 /obj/structure/examine(mob/user)
 	. = ..()

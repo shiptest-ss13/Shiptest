@@ -26,16 +26,8 @@
 	. = ..()
 	. += span_notice("You could right the [name] by <b>Control Shift-Clicking</b> it.")
 
-/obj/structure/flippedtable/proc/check_dir()
-	if(dir == NORTHEAST || dir == SOUTHEAST)
-		return EAST
-	if(dir == NORTHWEST || dir == SOUTHWEST)
-		return WEST
-	return dir
-
 /obj/structure/flippedtable/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	// var/table_dir = check_dir()
 	var/attempted_dir = get_dir(loc, mover)
 	if(table_type == /obj/structure/table/glass) //Glass table, lasers can pass
 		if(istype(mover) && (mover.pass_flags & PASSGLASS))
@@ -44,9 +36,6 @@
 		var/obj/projectile/proj = mover
 		if(proj.firer && Adjacent(proj.firer)) //adjacent, let the bullet pass
 			return TRUE
-		//Lets through bullets shot from behind the cover of the table
-		// if(proj_obj.trajectory && angle2dir_cardinal(proj_obj.trajectory.angle) == dir)
-		// 	return TRUE
 		if(dir != border_dir) //Make sure looking at appropriate border
 			return TRUE
 		if(prob(proj_pass_rate))
@@ -56,10 +45,8 @@
 
 /obj/structure/flippedtable/proc/on_exit(datum/source, atom/movable/exiter, direction)
 	SIGNAL_HANDLER
-	//var/table_dir = check_dir()
 	if(exiter == src)
 		return // Let's not block ourselves.
-
 	if(table_type == /obj/structure/table/glass) //Glass table, lasers pass
 		if(istype(exiter) && (exiter.pass_flags & PASSGLASS))
 			return
