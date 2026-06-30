@@ -1075,6 +1075,7 @@
 /obj/item/clothing/suit/space/syndicate/ngr,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/tank/jetpack/oxygen/harness,
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "gR" = (
@@ -1396,6 +1397,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/camera/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "jK" = (
@@ -3532,7 +3534,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "ym" = (
@@ -3716,7 +3717,6 @@
 	layer = 2.04
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname/directional/south,
 /obj/structure/closet/secure_closet/wall/directional/west{
 	req_access_txt = "3";
 	icon_state = "sec_wall";
@@ -4473,7 +4473,6 @@
 /obj/structure/chair/handrail{
 	dir = 4
 	},
-/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
@@ -4555,6 +4554,7 @@
 	desc = "A rolling table model standard in the Republic. It can and will move."
 	},
 /obj/item/radio/intercom/directional/east,
+/obj/machinery/camera/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "GZ" = (
@@ -6492,7 +6492,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/camera/autoname/directional/north,
 /obj/item/reagent_containers/food/drinks/bottle/wine{
 	pixel_y = 17;
 	pixel_x = 9

@@ -10605,8 +10605,9 @@
 	id = "outpost2";
 	dir = 8
 	},
-/obj/machinery/computer/processing_unit_console/directional/north{
-	dist = 7
+/obj/machinery/computer/processing_unit_console/directional/east{
+	pixel_x = 17;
+	pixel_y = 32
 	},
 /turf/open/floor/plating,
 /area/outpost/cargo/smeltery)
@@ -13440,8 +13441,9 @@
 	id = "outpost1";
 	dir = 8
 	},
-/obj/machinery/computer/processing_unit_console/directional/north{
-	dist = 7
+/obj/machinery/computer/processing_unit_console/directional/east{
+	pixel_x = 17;
+	pixel_y = -32
 	},
 /turf/open/floor/plating,
 /area/outpost/cargo/smeltery)
@@ -13944,9 +13946,8 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/checkpoint)
 "HS" = (
-/obj/machinery/computer/processing_unit_console/directional/north{
-	name = "micro-furnace controller";
-	machinedir = 9
+/obj/machinery/computer/processing_unit_console/directional/east{
+	name = "micro-furnace controller"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)

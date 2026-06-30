@@ -1696,6 +1696,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "jW" = (
@@ -1736,9 +1737,6 @@
 	},
 /obj/structure/disposalpipe/trunk{
 	dir = 8
-	},
-/obj/structure/sign/poster/contraband/cardinal_fore_aft{
-	pixel_x = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2029,6 +2027,10 @@
 "lx" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
+	},
+/obj/structure/sign/poster/contraband/cardinal_fore_aft{
+	pixel_x = -32;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -4957,7 +4959,6 @@
 	pixel_y = 4;
 	pixel_x = -2
 	},
-/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_x = -7;
@@ -8313,6 +8314,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Wy" = (
@@ -8561,7 +8563,6 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/light_switch{
 	pixel_x = 11;
 	pixel_y = 22

@@ -2169,6 +2169,7 @@
 	pixel_x = -4;
 	pixel_y = -2
 	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "kx" = (
@@ -5042,7 +5043,8 @@
 /obj/machinery/light/directional/east,
 /obj/machinery/camera/autoname/directional/north,
 /obj/structure/sign/warning/electricshock{
-	pixel_y = 24
+	pixel_y = 31;
+	pixel_x = -10
 	},
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
@@ -8762,7 +8764,6 @@
 /obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 4
 	},
-/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/firealarm/directional/south{
 	pixel_x = -6
 	},
@@ -9170,11 +9171,6 @@
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 8
 	},
-/obj/machinery/camera/autoname/directional/west,
-/obj/structure/sign/warning/fire{
-	pixel_x = -24;
-	pixel_y = 7
-	},
 /obj/structure/sign/warning/electricshock{
 	pixel_x = -24;
 	pixel_y = -5
@@ -9193,6 +9189,11 @@
 /obj/machinery/light/small/directional/south{
 	pixel_x = 14
 	},
+/obj/structure/sign/warning/fire{
+	pixel_x = -24;
+	pixel_y = 7
+	},
+/obj/machinery/camera/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "So" = (

@@ -900,7 +900,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering/communications)
 "fY" = (
@@ -2617,12 +2616,12 @@
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/head/helmet/space/gezena,
 /obj/machinery/suit_storage_unit/inherit,
-/obj/machinery/camera/autoname/directional/west,
 /obj/machinery/advanced_airlock_controller/directional/west,
 /obj/item/clothing/mask/breath/pgfmask/navy{
 	pixel_x = 0;
 	pixel_y = -5
 	},
+/obj/machinery/camera/directional/north,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hallway/fore)
 "pu" = (
@@ -2948,6 +2947,7 @@
 /obj/structure/chair/handrail{
 	dir = 4
 	},
+/obj/machinery/camera/directional/west,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "rB" = (
@@ -2996,7 +2996,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
-/obj/machinery/camera/autoname/directional/east,
 /obj/effect/turf_decal/box/red,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -3429,6 +3428,7 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/camera/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "ux" = (
@@ -6667,7 +6667,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 1
 	},
-/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "LQ" = (
@@ -8834,6 +8833,7 @@
 	pixel_x = -7;
 	pixel_y = 1
 	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering/communications)
 "Yi" = (

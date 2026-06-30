@@ -3068,6 +3068,7 @@
 "rL" = (
 /obj/machinery/iv_drip,
 /obj/machinery/light/directional/west,
+/obj/machinery/camera/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "rQ" = (
@@ -3737,6 +3738,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/machinery/camera/directional/south,
 /turf/open/floor/carpet/cyan,
 /area/ship/medical)
 "uI" = (
@@ -3803,7 +3805,6 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/arrow_ccw{
 	dir = 4
 	},
-/obj/machinery/camera/autoname/directional/east,
 /obj/structure/chair/handrail{
 	dir = 8
 	},
@@ -4703,7 +4704,6 @@
 "zv" = (
 /obj/effect/turf_decal/trimline/opaque/blue/line,
 /obj/structure/closet/emcloset/wall/directional/south,
-/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "zx" = (
@@ -4957,7 +4957,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/camera/autoname/directional/north,
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/carpet/cyan,
 /area/ship/medical)
@@ -7802,6 +7801,7 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/storage/eva)
 "PU" = (

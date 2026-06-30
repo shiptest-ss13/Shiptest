@@ -2074,12 +2074,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/corner/opaque/black/half,
 /obj/effect/turf_decal/trimline/opaque/blue/warning,
-/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/corner/opaque/mauve/border{
 	dir = 1
-	},
-/obj/machinery/camera/autoname/directional/north{
-	network = list("atlas")
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -5998,7 +5994,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/warning,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/light/directional/north,
+/obj/machinery/camera/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "TK" = (

@@ -491,37 +491,10 @@
 "dF" = (
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line,
 /obj/effect/turf_decal/trimline/opaque/white/line,
-/obj/machinery/camera/autoname/directional/south,
-/obj/structure/closet/wall/directional/south{
-	name = "cleaning utensil closet"
+/obj/machinery/camera/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
 	},
-/obj/item/clothing/under/warra/janitor,
-/obj/item/clothing/shoes/jackboots{
-	pixel_y = -7
-	},
-/obj/item/clothing/gloves/color/black{
-	pixel_y = -10
-	},
-/obj/item/clothing/head/warra/cap/janitor{
-	pixel_y = 8
-	},
-/obj/item/storage/belt/janitor,
-/obj/item/storage/box/lights/mixed,
-/obj/item/storage/bag/trash{
-	pixel_y = 4;
-	pixel_x = -4
-	},
-/obj/item/pushbroom{
-	pixel_y = 1
-	},
-/obj/item/mop{
-	pixel_x = 4
-	},
-/obj/item/reagent_containers/glass/bucket{
-	pixel_x = 6;
-	pixel_y = -6
-	},
-/obj/item/reagent_containers/glass/rag,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "dH" = (
@@ -855,6 +828,7 @@
 	pixel_y = -6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/directional/south,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "fQ" = (
@@ -897,7 +871,6 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
-/obj/machinery/camera/autoname/directional/east,
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -1359,7 +1332,6 @@
 	pixel_y = 4
 	},
 /obj/item/radio/intercom/directional/east,
-/obj/machinery/camera/autoname/directional/east,
 /obj/effect/turf_decal/industrial/fire/fulltile,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -3324,6 +3296,7 @@
 	pixel_y = -32
 	},
 /obj/machinery/light/small/directional/east,
+/obj/machinery/camera/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Ee" = (
@@ -3767,6 +3740,7 @@
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/industrial/fire/fulltile,
+/obj/machinery/camera/directional/east,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Ij" = (
@@ -3789,6 +3763,41 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
+"Io" = (
+/obj/effect/turf_decal/trimline/opaque/vired/filled/line,
+/obj/effect/turf_decal/trimline/opaque/white/line,
+/obj/structure/closet/wall/directional/south{
+	name = "cleaning utensil closet"
+	},
+/obj/item/reagent_containers/glass/rag,
+/obj/item/reagent_containers/glass/bucket{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/pushbroom{
+	pixel_y = 1
+	},
+/obj/item/mop{
+	pixel_x = 4
+	},
+/obj/item/storage/box/lights/mixed,
+/obj/item/storage/bag/trash{
+	pixel_y = 4;
+	pixel_x = -4
+	},
+/obj/item/clothing/head/warra/cap/janitor{
+	pixel_y = 8
+	},
+/obj/item/storage/belt/janitor,
+/obj/item/clothing/under/warra/janitor,
+/obj/item/clothing/gloves/color/black{
+	pixel_y = -10
+	},
+/obj/item/clothing/shoes/jackboots{
+	pixel_y = -7
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "IG" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -3992,7 +4001,6 @@
 /obj/item/gun/energy/sharplite/ohm/empty_cell{
 	pixel_y = -5
 	},
-/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/light_switch{
 	pixel_x = 12;
 	pixel_y = 22
@@ -6335,7 +6343,7 @@ xb
 if
 fQ
 tt
-sM
+Io
 iM
 Zc
 zy

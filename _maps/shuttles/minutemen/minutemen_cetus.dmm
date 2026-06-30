@@ -543,7 +543,6 @@
 	pixel_x = 12;
 	pixel_y = 20
 	},
-/obj/machinery/camera/autoname/directional/west,
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
@@ -837,7 +836,6 @@
 /obj/machinery/computer/security{
 	dir = 1
 	},
-/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "eP" = (
@@ -2163,7 +2161,6 @@
 	id = "typhon_cargo_holo";
 	name = "Cargo Holofield"
 	},
-/obj/machinery/camera/autoname/directional/south,
 /obj/structure/chair/handrail{
 	dir = 1
 	},
@@ -2183,6 +2180,7 @@
 	dir = 8;
 	color = "#CBB1CA"
 	},
+/obj/machinery/camera/directional/east,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "mN" = (
@@ -2354,6 +2352,7 @@
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_y = -24
 	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "nI" = (
@@ -2414,6 +2413,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"nY" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/trimline/transparent/blue/line,
+/obj/machinery/camera/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
 "of" = (
 /obj/structure/toilet{
 	dir = 8
@@ -6422,6 +6427,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/camera/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "JM" = (
@@ -6913,7 +6919,8 @@
 	pixel_x = 32
 	},
 /obj/structure/sign/warning/nosmoking/circle{
-	pixel_y = 24
+	pixel_y = 31;
+	pixel_x = 0
 	},
 /obj/item/geiger_counter{
 	pixel_x = 3;
@@ -7177,7 +7184,6 @@
 	id = "typhon_port_windows";
 	name = "Window Shutters"
 	},
-/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 2
 	},
@@ -7754,6 +7760,7 @@
 	pixel_x = -28;
 	pixel_y = 0
 	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "QR" = (
@@ -7825,7 +7832,6 @@
 	pixel_y = 0;
 	pixel_x = 32
 	},
-/obj/machinery/camera/autoname/directional/east,
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_y = 24
 	},
@@ -8282,6 +8288,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 2
 	},
+/obj/machinery/camera/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "TS" = (
@@ -8906,6 +8913,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-4"
 	},
+/obj/machinery/camera/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "WJ" = (
@@ -9237,7 +9245,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/camera/autoname/directional/north,
 /obj/structure/extinguisher_cabinet/directional/north{
 	pixel_x = 6
 	},
@@ -9280,7 +9287,6 @@
 	id = "typhon_starboard_windows";
 	name = "Window Shutters"
 	},
-/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "YV" = (
@@ -10612,7 +10618,7 @@ Bb
 vV
 LT
 KF
-AL
+nY
 vi
 NA
 az

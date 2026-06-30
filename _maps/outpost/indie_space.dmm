@@ -845,7 +845,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
 /obj/machinery/computer/electrolyzer_console/directional/east{
-	density = 0
+	density = 0;
+	pixel_x = -4;
+	pixel_y = 0
 	},
 /obj/structure/railing/thin{
 	dir = 4

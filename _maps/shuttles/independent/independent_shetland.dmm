@@ -172,13 +172,16 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/west,
-/obj/machinery/newscaster/directional/south,
+/obj/machinery/newscaster/directional/south{
+	pixel_x = -5;
+	pixel_y = -30
+	},
 /obj/item/plate/small{
 	pixel_y = 8;
 	pixel_x = 6
 	},
 /obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south{
-	pixel_x = 18;
+	pixel_x = 15;
 	pixel_y = -22
 	},
 /turf/open/floor/plasteel/dark,
@@ -5145,7 +5148,7 @@
 	},
 /obj/effect/turf_decal/trimline/transparent/green/filled/line,
 /obj/item/radio/intercom/directional/south{
-	pixel_x = 6;
+	pixel_x = 4;
 	pixel_y = -31
 	},
 /turf/open/floor/plasteel/dark,
@@ -7730,11 +7733,8 @@
 /obj/effect/turf_decal/industrial/warning/dust/corner{
 	dir = 1
 	},
-/obj/machinery/light_switch{
-	pixel_x = -12;
-	pixel_y = 22
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "JH" = (
@@ -9760,7 +9760,10 @@
 	},
 /obj/item/radio/intercom/directional/north,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 22
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Sb" = (

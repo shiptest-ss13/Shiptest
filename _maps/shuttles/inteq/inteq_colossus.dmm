@@ -467,6 +467,7 @@
 /obj/machinery/light/small/directional/north{
 	pixel_x = -12
 	},
+/obj/machinery/camera/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "dQ" = (
@@ -743,6 +744,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/external/dark)
 "fQ" = (
@@ -1264,6 +1266,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/machinery/camera/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "jY" = (
@@ -3242,7 +3245,6 @@
 	dir = 9
 	},
 /obj/machinery/light/directional/south,
-/obj/machinery/camera/autoname/directional/south,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -4740,11 +4742,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -20;
-	pixel_y = -10
-	},
+/obj/machinery/camera/directional/west,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "Dp" = (
@@ -5089,7 +5087,6 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
 	},
-/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -5244,6 +5241,16 @@
 "Gx" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/cryo)
+"GA" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/hallway/central)
 "GG" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -6107,7 +6114,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/camera/autoname/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/external/dark)
@@ -6239,6 +6245,7 @@
 	pixel_y = -10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Mo" = (
@@ -7121,7 +7128,6 @@
 /obj/item/tank/internals/oxygen/yellow,
 /obj/item/clothing/suit/space/hardsuit/security/inteq,
 /obj/item/clothing/mask/gas/inteq,
-/obj/machinery/camera/autoname/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/light_switch{
@@ -7132,6 +7138,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/camera/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
 "RS" = (
@@ -7155,6 +7162,10 @@
 /obj/item/kirbyplants{
 	icon_state = "plant-24";
 	pixel_y = 18
+	},
+/obj/machinery/light_switch{
+	pixel_x = -12;
+	pixel_y = 21
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
@@ -8664,7 +8675,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/power/apc/auto_name/directional/west,
-/obj/machinery/camera/autoname/directional/west,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -9474,7 +9484,7 @@ rS
 iT
 Dm
 aH
-VJ
+GA
 Ko
 OL
 Sx

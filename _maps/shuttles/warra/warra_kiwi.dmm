@@ -1917,6 +1917,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/machinery/camera/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines/starboard)
 "ji" = (
@@ -2439,7 +2440,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light/directional/west,
-/obj/machinery/camera/autoname/directional/west,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/hallway/port)
@@ -3483,7 +3483,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light/directional/west,
-/obj/machinery/camera/autoname/directional/west,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
@@ -6775,6 +6774,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 5
 	},
+/obj/machinery/camera/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
 "Kg" = (
@@ -8189,6 +8189,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer1,
 /obj/machinery/portable_atmospherics/canister,
+/obj/machinery/camera/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
 "Ss" = (
@@ -9132,7 +9133,6 @@
 	pixel_x = -28;
 	pixel_y = 5
 	},
-/obj/machinery/camera/autoname/directional/west,
 /obj/structure/cable/white{
 	icon_state = "1-2"
 	},

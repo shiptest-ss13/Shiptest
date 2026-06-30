@@ -440,6 +440,7 @@
 /obj/item/radio/intercom/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/plasma,
+/obj/machinery/camera/directional/east,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "eL" = (
@@ -1191,7 +1192,6 @@
 	pixel_x = 11;
 	pixel_y = 22
 	},
-/obj/machinery/camera/autoname/directional/north,
 /obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
@@ -5601,6 +5601,7 @@
 	pixel_y = -6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "WA" = (
@@ -5608,8 +5609,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/warning,
-/obj/machinery/camera/autoname/directional/west,
 /obj/machinery/light/directional/west,
+/obj/machinery/camera/directional/south,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "WB" = (
@@ -6160,7 +6161,6 @@
 	icon_state = "1-8"
 	},
 /obj/item/radio/intercom/directional/south,
-/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "ZB" = (
