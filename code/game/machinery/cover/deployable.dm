@@ -273,29 +273,6 @@
 		return COMPONENT_ATOM_BLOCK_EXIT
 	return
 
-/obj/structure/barricade/directional/flippedtable
-	name = "flipped table"
-	desc = "A flipped table."
-	icon = 'icons/obj/flipped_tables.dmi'
-	icon_state = "table"
-	var/table_type = /obj/structure/table
-
-/obj/structure/barricade/directional/flippedtable/examine(mob/user)
-	. = ..()
-	. += span_notice("You could right the [name] by <b>Control Shift-Clicking</b> it.")
-
-/obj/structure/barricade/directional/flippedtable/CtrlShiftClick(mob/living/user)
-	. = ..()
-	if(!istype(user) || !user.can_interact_with(src))
-		return FALSE
-	user.visible_message(span_danger("[user] starts flipping [src]!"), span_notice("You start flipping over the [src]!"))
-	if(do_after(user, max_integrity/12))
-		var/obj/structure/table/table_unflip = new table_type(src.loc)
-		table_unflip.update_integrity(atom_integrity)
-		user.visible_message(span_danger("[user] flips over the [src]!"), span_notice("You flip over the [src]!"))
-		playsound(src, 'sound/items/trayhit2.ogg', 100)
-		qdel(src)
-
 #undef SINGLE
 #undef VERTICAL
 #undef HORIZONTAL

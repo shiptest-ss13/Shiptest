@@ -360,6 +360,7 @@
 	icon_state = "glass_table-0"
 	base_icon_state = "glass_table"
 	buildstack = /obj/item/stack/sheet/glass
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/glass
 	smoothing_groups = list(SMOOTH_GROUP_GLASS_TABLES)
 	canSmoothWith = list(SMOOTH_GROUP_GLASS_TABLES)
 	max_integrity = 70
@@ -449,6 +450,7 @@
 	frame = /obj/structure/table_frame/wood
 	framestack = /obj/item/stack/sheet/mineral/wood
 	buildstack = /obj/item/stack/sheet/mineral/wood
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/wood
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
 	smoothing_groups = list(SMOOTH_GROUP_WOOD_TABLES) //Don't smooth with SMOOTH_GROUP_TABLES
@@ -467,6 +469,7 @@
 	icon_state = "poker_table-0"
 	base_icon_state = "poker_table"
 	buildstack = /obj/item/stack/tile/carpet
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/poker
 
 /obj/structure/table/wood/poker/narsie_act()
 	..(FALSE)
@@ -482,60 +485,70 @@
 	buildstack = /obj/item/stack/tile/carpet
 	smoothing_groups = list(SMOOTH_GROUP_FANCY_WOOD_TABLES) //Don't smooth with SMOOTH_GROUP_TABLES or SMOOTH_GROUP_WOOD_TABLES
 	canSmoothWith = list(SMOOTH_GROUP_FANCY_WOOD_TABLES)
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy
 
 /obj/structure/table/wood/fancy/black
 	icon_state = "fancy_table_black-0"
 	base_icon_state = "fancy_table_black"
 	buildstack = /obj/item/stack/tile/carpet/black
 	icon = 'icons/obj/smooth_structures/fancy_table_black.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/black
 
 /obj/structure/table/wood/fancy/blue
 	icon_state = "fancy_table_blue-0"
 	base_icon_state = "fancy_table_blue"
 	buildstack = /obj/item/stack/tile/carpet/blue
 	icon = 'icons/obj/smooth_structures/fancy_table_blue.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/blue
 
 /obj/structure/table/wood/fancy/cyan
 	icon_state = "fancy_table_cyan-0"
 	base_icon_state = "fancy_table_cyan"
 	buildstack = /obj/item/stack/tile/carpet/cyan
 	icon = 'icons/obj/smooth_structures/fancy_table_cyan.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/cyan
 
 /obj/structure/table/wood/fancy/green
 	icon_state = "fancy_table_green-0"
 	base_icon_state = "fancy_table_green"
 	buildstack = /obj/item/stack/tile/carpet/green
 	icon = 'icons/obj/smooth_structures/fancy_table_green.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/green
 
 /obj/structure/table/wood/fancy/orange
 	icon_state = "fancy_table_orange-0"
 	base_icon_state = "fancy_table_orange"
 	buildstack = /obj/item/stack/tile/carpet/orange
 	icon = 'icons/obj/smooth_structures/fancy_table_orange.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/orange
 
 /obj/structure/table/wood/fancy/purple
 	icon_state = "fancy_table_purple-0"
 	base_icon_state = "fancy_table_purple"
 	buildstack = /obj/item/stack/tile/carpet/purple
 	icon = 'icons/obj/smooth_structures/fancy_table_purple.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/purple
 
 /obj/structure/table/wood/fancy/red
 	icon_state = "fancy_table_red-0"
 	base_icon_state = "fancy_table_red"
 	buildstack = /obj/item/stack/tile/carpet/red
 	icon = 'icons/obj/smooth_structures/fancy_table_red.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/purple
 
 /obj/structure/table/wood/fancy/royalblack
 	icon_state = "fancy_table_royalblack-0"
 	base_icon_state = "fancy_table_royalblack"
 	buildstack = /obj/item/stack/tile/carpet/royalblack
 	icon = 'icons/obj/smooth_structures/fancy_table_royalblack.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/purple
 
 /obj/structure/table/wood/fancy/royalblue
 	icon_state = "fancy_table_royalblue-0"
 	base_icon_state = "fancy_table_royalblue"
 	buildstack = /obj/item/stack/tile/carpet/royalblue
 	icon = 'icons/obj/smooth_structures/fancy_table_royalblue.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/royal_blue
 
 /obj/structure/table/wood/fancy/red_gold //same sprites as red since we have two red carpets but not two red tables
 	icon_state = "fancy_table_red-0"
@@ -592,6 +605,7 @@
 	base_icon_state = "brass_table"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	buildstack = /obj/item/stack/tile/bronze
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/bronze
 	smoothing_groups = list(SMOOTH_GROUP_BRONZE_TABLES) //Don't smooth with SMOOTH_GROUP_TABLES
 	canSmoothWith = list(SMOOTH_GROUP_BRONZE_TABLES)
 
