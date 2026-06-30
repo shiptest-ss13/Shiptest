@@ -118,7 +118,7 @@
 //fucking gezena
 
 /datum/supply_pack/spacesuits/spacesuit/pgf
-	name = "Rakalla Navy Utility Suit Crate"
+	name = "Rakalla Navy Utility Space Suit Crate"
 	desc = "Contains one Rakalla Utility Suit. The aging but beloved workhorse of Navy space operations."
 	cost = 600
 	contains = list(/obj/item/clothing/suit/space/gezena,
@@ -129,7 +129,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/spacesuit/pgf/marine
-	name = "Lataka Composite Combat Suit Crate"
+	name = "Lataka Marine Combat Space Suit Crate"
 	desc = "Contains one Lataka Combat Suit. The backbone of any Marine Corps space assault."
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/space/gezena/marine,
@@ -504,6 +504,17 @@
 	cost = 5000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/solgov/roumain)
 	crate_name = "roumain hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/roumain_hardsuitelite
+	name = "Raskas Combat Hardsuit"
+	desc = "A heavily clad hardsuit manufactured by Hunter's Pride, used when quarries of ballistic natures are to be expected. The heavy, bulky plates inhibit movement at the cost of second-to-none protection."
+	cost = 5000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security/roumain/elite)
+	crate_name = "Raskas combat hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/srm
 	faction_discount = 0

@@ -252,6 +252,27 @@
 	new /obj/item/reagent_containers/glass/bottle/formaldehyde(src)
 	update_appearance()
 
+/obj/item/storage/belt/medical/traumateam/PopulateContents()
+	new /obj/item/sensor_device(src)
+	new /obj/item/pinpointer/crew(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/hypospray/mkii/chimorph(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/critmix(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/stasis(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/panacea(src)
+	update_appearance()
+
+/obj/item/storage/belt/medical/webbing/traumateam/PopulateContents()
+	new /obj/item/sensor_device(src)
+	new /obj/item/pinpointer/crew(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/hypospray/mkii/chimorph(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/critmix(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/stasis(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/panacea(src)
+	update_appearance()
+
+
 /obj/item/storage/belt/medical/surgery/PopulateContents()
 	new /obj/item/scalpel(src)
 	new /obj/item/circular_saw(src)
@@ -330,7 +351,7 @@
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/laser,
-		/obj/item/gun/energy/sharplite/x26,
+		/obj/item/gun/energy/sharplite/ohm,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/kalix/pistol,
 		))
@@ -486,8 +507,8 @@
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/laser,
-		/obj/item/gun/energy/sharplite/x26,
-		/obj/item/gun/energy/sharplite/x01,
+		/obj/item/gun/energy/sharplite/ohm,
+		/obj/item/gun/energy/sharplite/yari,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/kalix/pistol,
 		/obj/item/bodycamera,

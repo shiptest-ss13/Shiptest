@@ -26,9 +26,48 @@
 	neck = /obj/item/clothing/neck/dogtag/ramzi
 	id = /obj/item/card/id/syndicate
 
+/obj/effect/mob_spawn/human/corpse/ramzi/runt
+	name = "Ramzi Runt"
+	outfit = /datum/outfit/ramzi/runt
+
+/datum/outfit/ramzi/runt
+	name = "Ramzi Runt Corpse"
+	head = /obj/item/clothing/head/ramzi
+	neck = /obj/item/clothing/neck/dogtag/ramzi
+	ears = /obj/item/radio/headset //civilian
+
+/obj/effect/mob_spawn/human/corpse/ramzi/runt/flapcap
+	name = "Flap-cap Ramzi Runt"
+	outfit = /datum/outfit/ramzi/runt/flapcap
+
+/datum/outfit/ramzi/runt/flapcap
+	name = "Flap-Cap Ramzi Runt Corpse"
+	head = /obj/item/clothing/head/ramzi/flap
+	neck = /obj/item/clothing/neck/dogtag/ramzi
+	ears = /obj/item/radio/headset //civilian
+
+/obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour
+	name = "Ramzi Runt Unarmoured"
+	outfit = /datum/outfit/ramzi/runt/noarmour
+
+/datum/outfit/ramzi/runt/noarmour
+	name = "Unarmoured Ramzi Runt Corpse"
+	suit = /obj/item/clothing/suit/ramzi
+	neck = /obj/item/clothing/neck/shemagh/ramzi
+	mask = /obj/item/clothing/mask/breath/facemask
+
+/obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour/flapcap
+	name = "Flap-cap Ramzi Runt Unarmoured"
+	outfit = /datum/outfit/ramzi/runt/noarmour/flapcap
+
+/datum/outfit/ramzi/runt/noarmour/flapcap
+	name = "Flap-Cap Unarmoured Ramzi Runt Corpse"
+	head = /obj/item/clothing/head/ramzi/flap
+
 /obj/effect/mob_spawn/human/corpse/ramzi/engi
 	name = "Ramzi Engineer"
 	outfit = /datum/outfit/ramzi/engi
+
 
 /datum/outfit/ramzi/engi
 	name = "Ramzi Technician Corpse"
@@ -46,7 +85,7 @@
 	name = "Ramzi Sawbones Corpse"
 	uniform = /obj/item/clothing/under/syndicate/ramzi
 	suit = /obj/item/clothing/suit/ramzi/smock
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil //EVIL
+	gloves = /obj/item/clothing/gloves/nitrile/evil //EVIL
 	head = /obj/item/clothing/head/ramzi/surgical
 
 /datum/outfit/ramzi/bulletproof
@@ -56,7 +95,7 @@
 	belt = /obj/item/storage/belt/security/webbing/ramzi/alt
 	mask = /obj/item/clothing/mask/breath/facemask
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
-	neck = /obj/item/clothing/neck/shemagh/ramzi
+	neck = /obj/item/clothing/neck/dogtag/ramzi
 
 /obj/effect/mob_spawn/human/corpse/ramzi/trooper
 	name = "Ramzi Trooper"
@@ -145,6 +184,32 @@
 	name = "Ramzi Clique Officer"
 	outfit = /datum/outfit/ramzi/officer
 
+/obj/effect/mob_spawn/human/corpse/ramzi/ensign
+	name = "Ramzi Clique Ensign"
+	outfit = /datum/outfit/ramzi/officer/ensign
+
+/datum/outfit/ramzi/officer/ensign
+	name = "Ramzi Clique Ensign"
+	head = /obj/item/clothing/head/ramzi
+
+/obj/effect/mob_spawn/human/corpse/ramzi/lieutenant
+	name = "Ramzi Clique Lieutenant"
+	outfit = /datum/outfit/ramzi/officer/lieutenant
+
+/datum/outfit/ramzi/officer/lieutenant
+	name = "Ramzi Clique Lieutenant"
+	head = /obj/item/clothing/head/ramzi/peaked
+
+/obj/effect/mob_spawn/human/corpse/ramzi/officer/captain
+	name = "Ramzi Clique Captain"
+	outfit = /datum/outfit/ramzi/officer/captain
+
+/datum/outfit/ramzi/officer/captain
+	name = "Ramzi Clique Captain"
+	suit = /obj/item/clothing/suit/armor/ramzi/captain
+	head = /obj/item/clothing/head/ramzi/peaked
+	back = /obj/item/storage/backpack/satchel/leather
+
 /obj/effect/mob_spawn/human/corpse/ramzi/officer/beach
 	name = "Ramzi Clique Quartermaster"
 	mob_species = /datum/species/human
@@ -191,7 +256,7 @@
 	uniform = /obj/item/clothing/under/cybersun/doctor
 	suit = /obj/item/clothing/suit/cybersun
 	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	gloves = /obj/item/clothing/gloves/nitrile/evil
 	ears = /obj/item/radio/headset/syndicate/cybersun
 	belt = /obj/item/gun/ballistic/automatic/pistol/challenger
 	head = /obj/item/clothing/head/soft/cybersun/medical
@@ -209,7 +274,7 @@
 	uniform = /obj/item/clothing/under/cybersun/medic
 	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	gloves = /obj/item/clothing/gloves/nitrile/evil
 	ears = /obj/item/radio/headset/syndicate/cybersun
 	belt = /obj/item/storage/belt/medical/paramedic
 	head = /obj/item/clothing/head/soft/cybersun/medical
@@ -350,7 +415,7 @@
 	uniform = /obj/item/clothing/under/rank/medical/doctor/green
 	suit = /obj/item/clothing/suit/apron/surgical
 	shoes = /obj/item/clothing/shoes/sneakers/white
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	gloves = /obj/item/clothing/gloves/nitrile/blue
 	ears = /obj/item/radio/headset
 	back = /obj/item/storage/backpack/satchel/med
 	id = /obj/item/card/id
@@ -424,3 +489,29 @@
 	id_job = "Captain"
 	outfit = /datum/outfit/job/gezena/captain
 
+//Hardliner
+
+/obj/effect/mob_spawn/human/corpse/hardliner
+	name = "Hardliner Junior Agent"
+	id_job = "Junior Agent"
+	outfit = /datum/outfit/job/syndicate/assistant/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/mechanic
+	name = "Hardliner Mechanic"
+	id_job = "Mechanic"
+	outfit = /datum/outfit/job/syndicate/engineer/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/trooper
+	name = "Hardliner Trooper"
+	id_job = "Trooper"
+	outfit = /datum/outfit/job/syndicate/security/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/sergeant
+	name = "Hardliner Sergeant"
+	id_job = "Sergeant"
+	outfit = /datum/outfit/job/syndicate/hos/gorlex
+
+/obj/effect/mob_spawn/human/corpse/hardliner/captain
+	name = "Hardliner Captain"
+	id_job = "Captain"
+	outfit = /datum/outfit/job/syndicate/captain/gorlex

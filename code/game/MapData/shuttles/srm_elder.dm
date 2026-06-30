@@ -58,11 +58,6 @@
 	desc = "The closet of mining equipment."
 	icon_state = "mining"
 
-/area/ship/external/dark
-	name = "Dark External"
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-	icon_state = "space_near"
-
 /area/ship/roumain
 	name = "Hunter's Glade"
 	icon_state = "Sleep"

@@ -9,9 +9,9 @@
 
 /obj/machinery/computer/atmos_control/ship/bolide
 	sensors = list(
-		"bolide_air" = "Airmix Chamber",
-		"bolide_fuel_1" = "Port Fuel Chamber",
-		"bolide_fuel_2" = "Starboard Fuel Chamber",
+		"bolide_air" = "Air Mix Chamber",
+		"bolide_fuel_1" = "Port Fuel Mix Chamber",
+		"bolide_fuel_2" = "Starboard Fuel Mix Chamber",
 	)
 
 //this should go somewhere else
@@ -231,7 +231,7 @@
 			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 			</head>
 			<hr>
-			<font face="serif" size="2"><center><b>PAN-GEZENAN FEDERATION MARINE CORPS</b><br>THE BASIC SCHOOL<br>MARINE CORPS TRAINING COMMAND<br>CAMP AKHROZIN, YAVIR 88543-6809<br><br>
+			<font face="serif" size="2"><center><b>PAN-GEZENAN FEDERATION MARINE CORPS</b><br>THE BASIC SCHOOL<br>MARINE CORPS TRAINING COMMAND<br>CAMP AKHROZIN, YAZIR 88543-6809<br><br>
 			<font face="serif" size="6"><div align="right"><b>
 			COMBAT LIFESAVING STANDARDS AND PROCEDURES
 			R554926
@@ -250,14 +250,14 @@
 			4. <b>TREAT FOR SHOCK</b>:
 			Advanced shock treatment should be undertaken by trained medical personnel, but until such care is available, ensure the casualty does not suffer from hypothermia and watch for signs of cardiac arrest, administering an epinephrine pen as emergency treatment.<br><br>
 			<font face="serif" size="3"><u>MARINE FIRST AID DISTRIBUTION STANDARDS:</u>
-			<font face="serif" size="2"><br><br>For every 4 marines deployed, 1 standard first aid kit should be allotted. 1 of the 4 marines shall be designated "Combat Lifesaver". The 3 remaining marines, excluding the "Combat Lifesaver", will be issued from the first aid kit or otherwise provided the following supplies <b>at minimum</b>.<br><br>
+			<font face="serif" size="2"><br><br>For every team of marines deployed, the following standard of first aid equipment should be allotted with at least 1 marine being designated "Combat Lifesaver". The marines, excluding the "Combat Lifesaver", should be issued or otherwise provided the following supplies <b>at minimum</b>.<br><br>
 			- 5 Lengths of medical sutures<br>
 			- 5 Portions of regenerative mesh<br>
 			- 5 Lengths of hemostatic gauze<br>
 			- 1 Epinephrine medipen<br>
 			- 1 Extremity splint<br><br>
 			These supplies are to be carried <b>at all times</b> while on combat deployment, either securely on their person or within a container which has been <b>clearly marked</b> "First Aid", "IFAK", "BooBoo Box" or another derivative there-of.<br><br>
-			The "Combat Lifesaver" should retain the standard first aid kit and keep it on their person. The contents within should include the following supplies <b>at minimum</b>.<br><br>
+			The "Combat Lifesaver" should be issued or otherwise provided the following supplies <b>at minimum</b>.<br><br>
 			- 15 Lengths of medical Sutures<br>
 			- 15 Portions of regenerative mesh<br>
 			- 6 Lengths of hemostatic gauze<br>

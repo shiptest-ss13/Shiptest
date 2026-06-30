@@ -45,7 +45,7 @@
 	pixel_y = -5
 	},
 /obj/item/storage/pouch/engi,
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_y = -8
 	},
 /obj/item/clothing/glasses/welding{
@@ -1307,22 +1307,6 @@
 	pixel_y = 4;
 	pixel_x = 2
 	},
-/obj/item/storage/firstaid/regular{
-	pixel_x = -9;
-	pixel_y = 15
-	},
-/obj/item/storage/firstaid/toxin{
-	pixel_y = 15;
-	pixel_x = 9
-	},
-/obj/item/storage/firstaid/fire{
-	pixel_x = -9;
-	pixel_y = 9
-	},
-/obj/item/storage/firstaid/advanced{
-	pixel_x = 9;
-	pixel_y = 9
-	},
 /obj/item/storage/box/bodybags{
 	pixel_x = -9;
 	pixel_y = 4
@@ -1354,6 +1338,14 @@
 /obj/item/reagent_containers/blood/synthetic,
 /obj/item/sensor_device,
 /obj/item/pinpointer/crew,
+/obj/item/storage/firstaid/medical{
+	pixel_x = -5;
+	pixel_y = 12
+	},
+/obj/item/storage/firstaid/brute{
+	pixel_x = 4;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "jI" = (
@@ -1500,11 +1492,7 @@
 	pixel_y = -24;
 	pixel_x = -8
 	},
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25;
-	pixel_x = 15
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/effect/decal/cleanable/food/egg_smudge,
 /obj/item/trash/dote,
 /obj/item/trash/can,
@@ -2429,7 +2417,7 @@
 	pixel_y = -8;
 	pixel_x = -5
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/inteq{
+/obj/item/clothing/gloves/nitrile/inteq{
 	pixel_x = 5;
 	pixel_y = -10
 	},
@@ -4795,9 +4783,7 @@
 /area/ship/external/dark)
 "ON" = (
 /obj/structure/table/reinforced,
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
 	},
@@ -5440,10 +5426,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "Ul" = (
@@ -6110,9 +6093,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "Zh" = (
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/item/paper/guides/bodycam{
 	pixel_y = 25
 	},

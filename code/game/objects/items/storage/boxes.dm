@@ -25,14 +25,70 @@
 	name = "box"
 	desc = "It's just an ordinary box."
 	icon_state = "box"
-	item_state = "syringe_kit"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	item_state = "box"
+	icon = 'icons/obj/storage/boxes.dmi'
+	///DO NOT UNCOMMENT UNTIL THERES MORE WORLD ICONS, MAKING BOXES HARD TO FIND WHEN THERES NOTHING ELSE HAS A WORLD ICON IS A BAD, BAD IDEA
+	//world_file = 'icons/obj/storage/boxes_world_test.dmi'
+
 	resistance_flags = FLAMMABLE
 	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
 	var/foldable = /obj/item/stack/sheet/cardboard
-	var/illustration = "writing"
+	var/illustration = null
+	var/list/possible_illustrations = list(
+									"Erase Label",
+									"blanklabel",
+									"writing",
+									"writing_warning",
+									"heart",
+									"fruit",
+									"foamnade",
+									"bulb",
+									"tube",
+									"mixedlights",
+									"id",
+									"pda",
+									"glass",
+									"armband",
+									"condiment",
+									"papercup",
+									"chemnade",
+									"empnade",
+									"patch",
+									"circuit",
+									"science",
+									"sandbag",
+									"firecracker",
+									"grenade",
+									"disks",
+									"sparkler",
+									"pen",
+									"spray",
+									"flash",
+									"helmet",
+									"beaker",
+									"beaker_alt",
+									"bodybags",
+									"pillbottle",
+									"blubeaker",
+									"dna",
+									"syringe",
+									"gloves",
+									"masks",
+									"implant",
+									"glasses",
+									"emergency",
+									"handcuff",
+									"internals_old",
+									"internals",
+									"internalsplus",
+									"flashbang",
+									"t1",
+									"t2",
+									"t3",
+									"t4",
+									"mousetrap",
+									)
 
 /obj/item/storage/box/Initialize(mapload)
 	. = ..()
@@ -45,6 +101,13 @@
 	STR.max_volume = STORAGE_VOLUME_CONTAINER_S
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 	STR.use_sound = 'sound/items/storage/briefcase.ogg'
+//	if(world_file) //DO NOT UNCOMMENT UNTIL THERES MORE WORLD ICONS
+//		AddElement(/datum/element/world_icon, null, world_file, icon) //DO NOT UNCOMMENT UNTIL THERES MORE WORLD ICONS
+
+/obj/item/storage/box/examine_more(mob/user)
+	. = ..()
+	if(possible_illustrations)
+		. += "[span_notice("You can change the label of [src] by using a [span_bold("pen")] on it with [span_bold("right-click")].")]"
 
 /obj/item/storage/box/update_overlays()
 	. = ..()
@@ -72,11 +135,41 @@
 		return 0
 	return ..()
 
+/obj/item/storage/box/attackby_secondary(obj/item/object, mob/user, params)
+	if(istype(object, /obj/item/pen) && possible_illustrations)
+		var/chosen_illustration = tgui_input_list(user, "Which label do you want to draw on the box?", "Labeling Box", possible_illustrations)
+		if(!chosen_illustration || !Adjacent(user))
+			return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+		illustration = chosen_illustration
+		if(chosen_illustration == "Erase Label")
+			illustration = null
+		update_icon()
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return ..()
+
+//Generic ones for crafting
+
+/obj/item/storage/box/blue
+	icon_state = "bluebox"
+	item_state = "bluebox"
+
+/obj/item/storage/box/pink
+	icon_state = "pinkbox"
+	item_state = "pinkbox"
+
+/obj/item/storage/box/grey
+	icon_state = "secbox"
+	item_state = "secbox"
+
+/obj/item/storage/box/red
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
+
 //Disk boxes
 
 /obj/item/storage/box/disks
 	name = "diskette box"
-	illustration = "disk_kit"
+	illustration = "disks"
 
 /obj/item/storage/box/disks/PopulateContents()
 	for(var/i in 1 to 7)
@@ -84,7 +177,7 @@
 
 /obj/item/storage/box/holodisc
 	name = "holodisc box"
-	illustration = "disk_kit"
+	illustration = "disks"
 
 /obj/item/storage/box/holodisc/PopulateContents()
 	for(var/i in 1 to 7)
@@ -93,7 +186,7 @@
 //guys why are my tests failing
 /obj/item/storage/box/disks_plantgene
 	name = "plant data disks box"
-	illustration = "disk_kit"
+	illustration = "disks"
 
 /obj/item/storage/box/disks_plantgene/PopulateContents()
 	for(var/i in 1 to 7)
@@ -101,7 +194,7 @@
 
 /obj/item/storage/box/disks_nanite
 	name = "nanite program disks box"
-	illustration = "disk_kit"
+	illustration = "disks"
 
 /obj/item/storage/box/disks_nanite/PopulateContents()
 	for(var/i in 1 to 7)
@@ -113,6 +206,11 @@
 	var/internal_type = /obj/item/tank/internals/emergency_oxygen
 	var/medipen_type = /obj/item/reagent_containers/hypospray/medipen
 	var/radio_type = /obj/item/radio
+
+	name = "box"
+	icon_state = "bluebox"
+	item_state = "bluebox"
+	illustration = "internals"
 
 /obj/item/storage/box/survival/PopulateContents()
 	if(!isnull(mask_type))
@@ -140,11 +238,13 @@
 // Engineer survival box
 /obj/item/storage/box/survival/engineer
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+	illustration = "internalsplus"
 
 // Syndie survival box
 /obj/item/storage/box/survival/syndie
 	mask_type = /obj/item/clothing/mask/gas/syndicate
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+	illustration = "internalsplus"
 	medipen_type = null
 
 // Security survival box
@@ -157,6 +257,7 @@
 
 /obj/item/storage/box/survival/clip
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi //clip actually cares about their personnel
+	illustration = "internalsplus"
 
 /obj/item/storage/box/survival/clip/command
 	radio_type = /obj/item/radio/command
@@ -164,20 +265,26 @@
 /obj/item/storage/box/survival/clip/minutemen
 	mask_type = /obj/item/clothing/mask/balaclava/combat
 	internal_type = /obj/item/tank/internals/emergency_oxygen/double
+	illustration = "internalsplus"
 
 /obj/item/storage/box/survival/clip/minutemen/command
 	radio_type = /obj/item/radio/command
 
 /obj/item/storage/box/survival/pgf
-	mask_type = /obj/item/clothing/mask/breath/pgfmask
+	mask_type = /obj/item/clothing/mask/breath/pgfmask/navy
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+	illustration = "internalsplus"
 
 /obj/item/storage/box/survival/pgf/command
 	radio_type = /obj/item/radio/command
 
+/obj/item/storage/box/survival/pgf/marine
+	mask_type = /obj/item/clothing/mask/breath/pgfmask
+
 /obj/item/storage/box/survival/inteq
 	mask_type = /obj/item/clothing/mask/balaclava/inteq
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+	illustration = "internalsplus"
 
 /obj/item/storage/box/survival/inteq/command
 	radio_type = /obj/item/radio/command
@@ -189,6 +296,7 @@
 /obj/item/storage/box/survival/vi
 	mask_type = /obj/item/clothing/mask/gas/vigilitas
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+	illustration = "internalsplus"
 
 /obj/item/storage/box/survival/vi/command
 	radio_type = /obj/item/radio/command
@@ -197,18 +305,36 @@
 	radio_type = /obj/item/radio/command
 
 /obj/item/storage/box/gloves
-	name = "box of latex gloves"
-	desc = "Contains sterile latex gloves."
-	illustration = "latex"
+	name = "box of disposable gloves"
+	desc = "Contains sterile disposable gloves."
+	illustration = "gloves"
 
 /obj/item/storage/box/gloves/PopulateContents()
+	var/obj/item/clothing/gloves/nitrile/picked_gloves
+
+	picked_gloves = pick(
+		/obj/item/clothing/gloves/nitrile,
+		/obj/item/clothing/gloves/nitrile/blue,
+		/obj/item/clothing/gloves/nitrile/pink,
+		/obj/item/clothing/gloves/nitrile/green,
+		)
+
 	for(var/i in 1 to 7)
-		new /obj/item/clothing/gloves/color/latex(src)
+		new picked_gloves(src)
+
+/obj/item/storage/box/gloves/formal
+	name = "box of formal gloves"
+	desc = "Contains formal white gloves."
+	illustration = "latex"
+
+/obj/item/storage/box/gloves/formal/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/clothing/gloves/color/white(src)
 
 /obj/item/storage/box/masks
 	name = "box of sterile masks"
 	desc = "This box contains sterile medical masks."
-	illustration = "sterile"
+	illustration = "masks"
 
 /obj/item/storage/box/masks/PopulateContents()
 	for(var/i in 1 to 7)
@@ -282,7 +408,9 @@
 	name = "hypospray mk. II kit"
 	icon = 'icons/obj/storage.dmi'		//WS Edit - Suitcases
 	icon_state = "medbriefcase"
+	item_state = "bluebox"
 	illustration = null
+	possible_illustrations = null
 
 /obj/item/storage/box/hypospray/PopulateContents()
 	new /obj/item/hypospray/mkii(src)
@@ -306,15 +434,16 @@
 
 /obj/item/storage/box/hypospray/mkiii/PopulateContents()
 	new /obj/item/hypospray/mkii/mkiii(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/cureall(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/salglu(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/morphine(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/hadramide(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/quadratane(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/pancrazine(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/salbutamol(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/morphine(src)
 
 /obj/item/storage/box/medigels
 	name = "box of medical gels"
 	desc = "A box full of medical gel applicators, with unscrewable caps and precision spray heads."
-	illustration = "medgel"
+	illustration = "spray"
 
 /obj/item/storage/box/medigels/PopulateContents()
 	for(var/i in 1 to 7)
@@ -335,6 +464,7 @@
 	name = "box of smoke grenades (WARNING)"
 	desc = "<B>WARNING: Do not use in enclosed areas. Protective mask must be worn when in smoke cloud.</B>"
 	icon_state = "secbox"
+	item_state = "secbox"
 	illustration = "smoke"
 
 /obj/item/storage/box/smokebombs/PopulateContents()
@@ -345,6 +475,7 @@
 	name = "box of barrier grenades (WARNING)"
 	desc = "<B>WARNING: Deploy barriers with care, providing ample space for automatic deployment to prevent accidental injury.</B>"
 	icon_state = "secbox"
+	item_state = "secbox"
 	illustration = "flashbang"
 
 /obj/item/storage/box/barriers/PopulateContents()
@@ -354,7 +485,8 @@
 /obj/item/storage/box/flashbangs
 	name = "box of flashbangs (WARNING)"
 	desc = "<B>WARNING: These devices are extremely dangerous and can cause blindness or deafness in repeated use.</B>"
-	icon_state = "secbox"
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
 	illustration = "flashbang"
 
 /obj/item/storage/box/flashbangs/PopulateContents()
@@ -364,7 +496,7 @@
 /obj/item/storage/box/stingbangs
 	name = "box of stingbangs (WARNING)"
 	desc = "<B>WARNING: These devices are extremely dangerous and can cause severe injuries or death in repeated use.</B>"
-	icon_state = "secbox"
+	icon_state = "dangerbox"
 	illustration = "flashbang"
 
 /obj/item/storage/box/stingbangs/PopulateContents()
@@ -375,6 +507,7 @@
 	name = "box of flashbulbs"
 	desc = "<B>WARNING: Flashes can cause serious eye damage, protective eyewear is required.</B>"
 	icon_state = "secbox"
+	item_state = "secbox"
 	illustration = "flash"
 
 /obj/item/storage/box/flashes/PopulateContents()
@@ -385,6 +518,7 @@
 	name = "wall-mounted flash kit"
 	desc = "This box contains everything necessary to build a wall-mounted flash. <B>WARNING: Flashes can cause serious eye damage, protective eyewear is required.</B>"
 	icon_state = "secbox"
+	item_state = "secbox"
 	illustration = "flash"
 
 /obj/item/storage/box/wall_flash/PopulateContents()
@@ -404,8 +538,9 @@
 /obj/item/storage/box/teargas
 	name = "box of tear gas grenades (WARNING)"
 	desc = "<B>WARNING: These devices are extremely dangerous and can cause blindness and skin irritation.</B>"
-	icon_state = "secbox"
-	illustration = "grenade"
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
+	illustration = "chemnade"
 
 /obj/item/storage/box/teargas/PopulateContents()
 	for(var/i in 1 to 7)
@@ -414,7 +549,9 @@
 /obj/item/storage/box/emps
 	name = "box of emp grenades"
 	desc = "A box with 5 emp grenades."
-	illustration = "emp"
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
+	illustration = "empnade"
 
 /obj/item/storage/box/emps/PopulateContents()
 	for(var/i in 1 to 5)
@@ -424,6 +561,7 @@
 	name = "boxed tracking implant kit"
 	desc = "Box full of scum-bag tracking utensils."
 	icon_state = "secbox"
+	item_state = "secbox"
 	illustration = "implant"
 
 /obj/item/storage/box/trackimp/PopulateContents()
@@ -493,7 +631,7 @@
 /obj/item/storage/box/drinkingglasses
 	name = "box of drinking glasses"
 	desc = "It has a picture of drinking glasses on it."
-	illustration = "drinkglass"
+	illustration = "glass"
 
 /obj/item/storage/box/drinkingglasses/PopulateContents()
 	for(var/i in 1 to 6)
@@ -502,7 +640,7 @@
 /obj/item/storage/box/shotglasses
 	name = "box of shot glasses"
 	desc = "It has a picture of shot glasses on it."
-	illustration = "drinkglass"
+	illustration = "glass"
 
 /obj/item/storage/box/shotglasses/PopulateContents()
 	for(var/i in 1 to 6)
@@ -511,7 +649,7 @@
 /obj/item/storage/box/modglasses
 	name = "box of malleable glasses"
 	desc = "It has a picture of malleable glasses on it."
-	illustration = "drinkglass"
+	illustration = "glass"
 
 /obj/item/storage/box/modglasses/PopulateContents()
 	for(var/i in 1 to 6)
@@ -529,7 +667,7 @@
 /obj/item/storage/box/cups
 	name = "box of paper cups"
 	desc = "It has pictures of paper cups on the front."
-	illustration = "cup"
+	illustration = "papercup"
 
 /obj/item/storage/box/cups/PopulateContents()
 	for(var/i in 1 to 7)
@@ -538,8 +676,10 @@
 /obj/item/storage/box/shoalpockets
 	name = "box of shoalwiches"
 	desc = "An ultra-processed form of food originating from upper layers of the Shoal - now commercialized. Contrary to popular belief, it contains no real grain. Heated in the microwave."
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "shoalpocketbox"
-	illustration=null
+	illustration = null
+	possible_illustrations = null
 	var/shoalpockettype = /obj/item/food/shoalpocket
 
 /obj/item/storage/box/shoalpockets/PopulateContents()
@@ -569,8 +709,10 @@
 /obj/item/storage/box/monkeycubes
 	name = "monkey cube box"
 	desc = "Drymate brand monkey cubes. Just add water!"
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "monkeycubebox"
 	illustration = null
+	possible_illustrations = null
 	var/cube_type = /obj/item/food/monkeycube
 
 /obj/item/storage/box/monkeycubes/PopulateContents()
@@ -626,6 +768,7 @@
 	name = "box of prisoner IDs"
 	desc = "Take away their last shred of dignity, their name."
 	icon_state = "secbox"
+	item_state = "secbox"
 	illustration = "id"
 
 /obj/item/storage/box/prisoner/PopulateContents()
@@ -642,6 +785,7 @@
 	name = "box of PDA security cartridges"
 	desc = "A box full of PDA cartridges used by Security."
 	icon_state = "secbox"
+	item_state = "secbox"
 	illustration = "pda"
 
 /obj/item/storage/box/seccarts/PopulateContents()
@@ -653,6 +797,7 @@
 	name = "box of spare handcuffs"
 	desc = "A box full of handcuffs."
 	icon_state = "secbox"
+	item_state = "secbox"
 	illustration = "handcuff"
 
 /obj/item/storage/box/handcuffs/PopulateContents()
@@ -663,6 +808,7 @@
 	name = "box of spare zipties"
 	desc = "A box full of zipties."
 	icon_state = "secbox"
+	item_state = "secbox"
 	illustration = "handcuff"
 
 /obj/item/storage/box/zipties/PopulateContents()
@@ -672,7 +818,7 @@
 /obj/item/storage/box/alienhandcuffs
 	name = "box of spare handcuffs"
 	desc = "A box full of handcuffs."
-	icon_state = "alienbox"
+	icon_state = "toremove_box"
 	illustration = "handcuff"
 
 /obj/item/storage/box/alienhandcuffs/PopulateContents()
@@ -691,7 +837,7 @@
 /obj/item/storage/box/pillbottles
 	name = "box of pill bottles"
 	desc = "It has pictures of pill bottles on its front."
-	illustration = "pillbox"
+	illustration = "pillbottle"
 
 /obj/item/storage/box/pillbottles/PopulateContents()
 	for(var/i in 1 to 7)
@@ -732,12 +878,8 @@
 
 /obj/item/storage/box/lights
 	name = "box of replacement bulbs"
-	icon = 'icons/obj/storage.dmi'
-	illustration = "light"
+	illustration = "bulb"
 	desc = "This box is shaped on the inside so that only light tubes and bulbs fit."
-	item_state = "syringe_kit"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	foldable = /obj/item/stack/sheet/cardboard //BubbleWrap
 
 /obj/item/storage/box/lights/ComponentInitialize()//holy oversized box. this one can stay the way it is, for now
@@ -755,7 +897,7 @@
 
 /obj/item/storage/box/lights/tubes
 	name = "box of replacement tubes"
-	illustration = "lighttube"
+	illustration = "tube"
 
 /obj/item/storage/box/lights/tubes/PopulateContents()
 	for(var/i in 1 to 21)
@@ -763,7 +905,7 @@
 
 /obj/item/storage/box/lights/mixed
 	name = "box of replacement lights"
-	illustration = "lightmixed"
+	illustration = "mixedlights"
 
 /obj/item/storage/box/lights/mixed/PopulateContents()
 	for(var/i in 1 to 14)
@@ -791,7 +933,8 @@
 	name = "box of deputy armbands"
 	desc = "To be issued to those authorized to act as deputy of security."
 	icon_state = "secbox"
-	illustration = "depband"
+	item_state = "secbox"
+	illustration = "armband"
 
 /obj/item/storage/box/deputy/PopulateContents()
 	for(var/i in 1 to 7)
@@ -800,7 +943,7 @@
 /obj/item/storage/box/metalfoam
 	name = "box of metal foam grenades"
 	desc = "To be used to rapidly seal hull breaches."
-	illustration = "grenade"
+	illustration = "foamnade"
 
 /obj/item/storage/box/metalfoam/PopulateContents()
 	for(var/i in 1 to 7)
@@ -809,7 +952,7 @@
 /obj/item/storage/box/smart_metal_foam
 	name = "box of smart metal foam grenades"
 	desc = "Used to rapidly seal hull breaches. This variety conforms to the walls of its area."
-	illustration = "grenade"
+	illustration = "foamnade"
 
 /obj/item/storage/box/smart_metal_foam/PopulateContents()
 	for(var/i in 1 to 7)
@@ -818,7 +961,8 @@
 /obj/item/storage/box/hug
 	name = "box of hugs"
 	desc = "A special box for sensitive people."
-	icon_state = "hugbox"
+	icon_state = "pinkbox"
+	item_state = "pinkbox"
 	illustration = "heart"
 	foldable = null
 
@@ -834,52 +978,68 @@
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/hypospray/medipen(src)
 
+//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
 /obj/item/storage/box/rubbershot
 	name = "box of rubber shots"
 	desc = "A box full of rubber shots, designed for riot shotguns."
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "rubbershot_box"
 	illustration = null
+	possible_illustrations = null
 
 /obj/item/storage/box/rubbershot/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/rubbershot(src)
 
+//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
 /obj/item/storage/box/lethalshot
 	name = "box of lethal shotgun shots"
 	desc = "A box full of lethal shots, designed for riot shotguns."
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "lethalshot_box"
 	illustration = null
+	possible_illustrations = null
 
 /obj/item/storage/box/lethalshot/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/buckshot(src)
 
+//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
 /obj/item/storage/box/techshot
 	name = "box of unloaded shotgun tech shells"
 	desc = "A box full of unloaded tech shells, capable of producing a variety of effects once loaded."
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "techshot_box"
 	illustration = null
+	possible_illustrations = null
 
 /obj/item/storage/box/techshot/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/techshell(src)
 
+//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
 /obj/item/storage/box/beanbag
 	name = "box of beanbags"
 	desc = "A box full of beanbag shells."
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "beanbag_box"
 	illustration = null
+	possible_illustrations = null
 
 /obj/item/storage/box/beanbag/PopulateContents()
 	for(var/i in 1 to 6)
 		new /obj/item/ammo_casing/shotgun/beanbag(src)
 
+//TODO: REMOVE; ALL HAVE BEEN REPLACED BY THEIR CORRESPONDING AMMO BOX USING THE NEW AMMO STACK SYSTEM
 /obj/item/storage/box/slugshot
 	name = "box of 12-gauge slug shotgun shells"
 	desc = "a box full of slug shots, designed for riot shotguns"
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "slugshot_box"
+
 	illustration = null
+	possible_illustrations = null
+
 
 /obj/item/storage/box/slugshot/PopulateContents()
 	for(var/i in 1 to 7)
@@ -898,11 +1058,14 @@
 /obj/item/storage/box/papersack
 	name = "paper sack"
 	desc = "A sack neatly crafted out of paper."
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "paperbag_None"
 	item_state = "paperbag_None"
 	illustration = null
+	possible_illustrations = null
 	resistance_flags = FLAMMABLE
 	foldable = null
+	custom_price = 1
 	/// A list of all available papersack reskins
 	var/list/papersack_designs = list()
 
@@ -1139,7 +1302,7 @@
 /obj/item/storage/box/rndboards
 	name = "\proper the liberator's legacy"
 	desc = "A box containing a gift for worthy golems."
-	illustration = "scicircuit"
+	illustration = "circuit"
 	custom_price = 2000
 
 /obj/item/storage/box/rndboards/PopulateContents()
@@ -1156,7 +1319,7 @@
 /obj/item/storage/box/rndmining
 	name = "\proper QWIK-RND: M.I.D.A.S. Module"
 	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print resource-extraction and finance related designs."
-	illustration = "scicircuit"
+	illustration = "circuit"
 
 /obj/item/storage/box/rndmining/PopulateContents()
 	new /obj/item/circuitboard/machine/protolathe/department/cargo(src)
@@ -1167,7 +1330,7 @@
 /obj/item/storage/box/rndengi
 	name = "\proper QWIK-RND: A.T.L.A.S. Module"
 	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print maintenance, construction, and repair related designs."
-	illustration = "scicircuit"
+	illustration = "circuit"
 
 /obj/item/storage/box/rndengi/PopulateContents()
 	new /obj/item/circuitboard/machine/protolathe/department/engineering(src)
@@ -1178,7 +1341,7 @@
 /obj/item/storage/box/rndmed
 	name = "\proper QWIK-RND: C.A.R.E. Module"
 	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print medical and pharmaceutical care related designs."
-	illustration = "scicircuit"
+	illustration = "circuit"
 
 /obj/item/storage/box/rndmed/PopulateContents()
 	new /obj/item/circuitboard/machine/protolathe/department/medical(src)
@@ -1189,7 +1352,7 @@
 /obj/item/storage/box/rndsec
 	name = "\proper QWIK-RND: P.E.A.C.E. Module"
 	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print military designs."
-	illustration = "scicircuit"
+	illustration = "circuit"
 
 /obj/item/storage/box/rndsec/PopulateContents()
 	new /obj/item/circuitboard/machine/protolathe/department/security(src)
@@ -1200,7 +1363,7 @@
 /obj/item/storage/box/rndciv
 	name = "\proper QWIK-RND: H.O.M.E. Module"
 	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print a variety of service industry designs."
-	illustration = "scicircuit"
+	illustration = "circuit"
 
 /obj/item/storage/box/rndciv/PopulateContents()
 	new /obj/item/circuitboard/machine/protolathe/department/service(src)
@@ -1211,7 +1374,7 @@
 /obj/item/storage/box/rndbasic
 	name = "\proper QWIK-RND: B.A.S.I.C. Module"
 	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print a variety of low-tier miscellaneous designs."
-	illustration = "scicircuit"
+	illustration = "circuit"
 
 /obj/item/storage/box/rndbasic/PopulateContents()
 	new /obj/item/circuitboard/machine/protolathe/department/basic(src)
@@ -1222,7 +1385,7 @@
 /obj/item/storage/box/rndsci
 	name = "\proper QWIK-RND: K.N.O.W. Module"
 	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print designs related to high-level scientific disciplines."
-	illustration = "scicircuit"
+	illustration = "circuit"
 
 /obj/item/storage/box/rndsci/PopulateContents()
 	new /obj/item/circuitboard/machine/protolathe/department/science(src)
@@ -1233,7 +1396,7 @@
 /obj/item/storage/box/alvitane
 	name = "box of alvitane patches"
 	desc = "Contains patches used to treat burns."
-	illustration = "firepatch"
+	illustration = "patch"
 
 /obj/item/storage/box/alvitane/PopulateContents()
 	for(var/i in 1 to 7)
@@ -1241,7 +1404,7 @@
 
 /obj/item/storage/box/fountainpens
 	name = "box of fountain pens"
-	illustration = "fpen"
+	illustration = "pen"
 
 /obj/item/storage/box/fountainpens/PopulateContents()
 	for(var/i in 1 to 7)
@@ -1250,6 +1413,8 @@
 /obj/item/storage/box/holy_grenades
 	name = "box of holy hand grenades"
 	desc = "Contains several grenades used to rapidly purge heresy."
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
 	illustration = "grenade"
 
 /obj/item/storage/box/holy_grenades/PopulateContents()
@@ -1259,6 +1424,7 @@
 /obj/item/storage/box/stockparts/basic //for ruins where it's a bad idea to give access to an autolathe/protolathe, but still want to make stock parts accessible
 	name = "box of stock parts"
 	desc = "Contains a variety of basic stock parts."
+	illustration = "t1"
 
 /obj/item/storage/box/stockparts/basic/PopulateContents()
 	var/static/items_inside = list(
@@ -1272,6 +1438,7 @@
 /obj/item/storage/box/stockparts/t2
 	name = "box of T2 stock parts"
 	desc = "Contains a variety of advanced stock parts."
+	illustration = "t2"
 
 /obj/item/storage/box/stockparts/t2/PopulateContents()
 	var/static/items_inside = list(
@@ -1320,6 +1487,7 @@
 /obj/item/storage/box/stockparts/t3
 	name = "box of T3 stock parts"
 	desc = "Contains a variety of super stock parts."
+	illustration = "t3"
 
 /obj/item/storage/box/stockparts/t3/PopulateContents()
 	var/static/items_inside = list(
@@ -1368,7 +1536,9 @@
 /obj/item/storage/box/stockparts/deluxe
 	name = "box of deluxe stock parts"
 	desc = "Contains a variety of deluxe stock parts."
-	icon_state = "syndiebox"
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
+	illustration = "t4"
 
 /obj/item/storage/box/stockparts/deluxe/PopulateContents()
 	var/static/items_inside = list(
@@ -1439,7 +1609,8 @@
 
 /obj/item/storage/box/debugtools
 	name = "box of debug tools"
-	icon_state = "syndiebox"
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
 
 /obj/item/storage/box/debugtools/PopulateContents()
 	var/static/items_inside = list(
@@ -1464,7 +1635,7 @@
 /obj/item/storage/box/plastic
 	name = "plastic box"
 	desc = "It's a solid, plastic shell box."
-	icon_state = "plasticbox"
+	icon_state = "milbox"
 	foldable = null
 	illustration = "writing"
 	custom_materials = list(/datum/material/plastic = 1000) //You lose most if recycled.
@@ -1495,7 +1666,8 @@
 /obj/item/storage/box/firecrackers
 	name = "box of firecrackers"
 	desc = "A box filled with illegal firecracker. You wonder who still makes these."
-	icon_state = "syndiebox"
+	icon_state = "dangerbox"
+	item_state = "dangerbox"
 	illustration = "firecracker"
 
 /obj/item/storage/box/firecrackers/PopulateContents()

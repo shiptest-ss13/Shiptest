@@ -89,8 +89,8 @@
 	item_state = "armoralt"
 	body_parts_covered = CHEST|GROIN
 	armor = list("melee" = 60, "bullet" = 45, "laser" = 20, "energy" = 50, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20)
-	supports_variations = null
-	slowdown = 0.4
+	supports_variations = KEPORI_VARIATION
+
 
 /obj/item/clothing/suit/armor/roumain/plate/montagne
 	name = "saint-roumain montagne battle coat"
@@ -117,6 +117,28 @@
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20)
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
+	supports_variations = KEPORI_VARIATION
+
+/obj/item/clothing/suit/armor/roumain/plate/medium
+	name = "Three Quarter Plate Harness"
+	desc= "An exquisitely designed chestplate alongside a large, protective shoulder plate, and tassets to protect the user's legs. One shoulder is left open to let the Roumainist level their weapon and aim true. Provides above-average protection to the chest and extremities at the cost of mobility."
+	icon_state = "armor_rouma_plate_medium"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	heat_protection = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 60, "bullet" = 45, "laser" = 20, "energy" = 50, "bomb" = 50, "bio" = 0, "fire" = 50, "acid" = 50, "wound" = 30)
+	slowdown = 0.4
+	supports_variations = KEPORI_VARIATION
+
+/obj/item/clothing/suit/armor/roumain/plate/heavy
+	name = "Heavy Three Quarter Plate Harness"
+	desc= "A masterworked breastplate alongside heavy tassets and spaulders provide the user with more than ample protection against gunfire and beast alike. Its angled design allows for higher overall protection. Though bulky, it allows for unparalleled protection reserved only for highly precarious hunts."
+	icon_state = "armor_rouma_plate_heavy"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	heat_protection = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 70, "bullet" = 55, "laser" = 25, "energy" = 55, "bomb" = 60, "bio" = 0, "fire" = 60, "acid" = 60, "wound" = 40)
+	slowdown = 0.8
 	supports_variations = KEPORI_VARIATION
 
 ///////////////
@@ -168,6 +190,28 @@
 	slowdown = 0.5
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
 
+/obj/item/clothing/suit/space/hardsuit/security/roumain/elite
+	name = "Raskas Combat Hardsuit"
+	desc = "A meticilously, and carefully smithed armor from Hunter's Pride that bears a heavy, single unified angled plate to protect the main body with noticable heavier armor on the extremities. While well-rated against beasts, bullets, and the vaccum of space, this hardsuit is specifically designed for combat against foes armed with rifles instead of claws."
+	icon = 'icons/obj/clothing/faction/srm/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/suits.dmi'
+	icon_state = "hardsuit-rouma-combat"
+	item_state = "hardsuit-rouma-combat"
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 75, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 100, "wound" = 50)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/roumain/elite
+	slowdown = 1.25
+	supports_variations = KEPORI_VARIATION
+
+/obj/item/clothing/head/helmet/space/hardsuit/security/roumain/elite
+	name = "Raska combat hardsuit helmet"
+	desc = "A large sallet style helmet manufactured by Hunter's Pride. The light alloys used in it's construction allow for both safe and comfortable use in vacuum. Topped off with an immaculate crest of ornamental feathers, this helmet is a testament to Roumainist craftsmanship."
+	icon = 'icons/obj/clothing/faction/srm/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/head.dmi'
+	icon_state = "hardsuit0-roumainelite"
+	item_state = "hardsuit0-roumainelite"
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 30, "energy" =40, "bomb" = 75, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 100, "wound" = 50)
+	hardsuit_type = "roumainelite"
+	supports_variations = KEPORI_VARIATION
 /////////
 //Hats//
 ////////
@@ -230,6 +274,7 @@
 	icon_state = "rouma_heavy"
 	icon = 'icons/obj/clothing/faction/srm/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/head.dmi'
+	supports_variations = KEPORI_VARIATION
 ///////////////
 //Accessories//
 ///////////////

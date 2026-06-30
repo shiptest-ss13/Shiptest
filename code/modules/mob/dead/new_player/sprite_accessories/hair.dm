@@ -266,6 +266,10 @@
 	name = "Kusanagi Hair (Ponytail)"
 	icon_state = "hair_kusanagipony"
 
+/datum/sprite_accessory/hair/long
+	name = "Long Hair"
+	icon_state = "hair_long"
+
 /datum/sprite_accessory/hair/longhalf
 	name = "Long Half"
 	icon_state = "hair_longhalf"
@@ -490,6 +494,10 @@
 	name = "Stride"
 	icon_state = "hair_stride"
 
+/datum/sprite_accessory/hair/sweptback
+	name = "Swept Back"
+	icon_state = "hair_sweptback"
+
 /datum/sprite_accessory/hair/thinning
 	name = "Thinning"
 	icon_state = "hair_thinning"
@@ -573,6 +581,10 @@
 /datum/sprite_accessory/hair/wavyalt
 	name = "Wavy (Alt Bangs)"
 	icon_state = "hair_wavyalt"
+
+/datum/sprite_accessory/hair/wavyshort
+	name = "Wavy (Short)"
+	icon_state = "hair_wavyshort"
 
 /*
 /////////////////////////////////////

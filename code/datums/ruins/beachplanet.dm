@@ -4,11 +4,11 @@
 	prefix = "_maps/RandomRuins/BeachRuins/"
 	ruin_type = RUINTYPE_BEACH
 
-/datum/map_template/ruin/beachplanet/ancient
-	name = "Ancient Danger"
-	id = "beach_ancient"
-	description = "As you draw near the ancient wall, a sense of foreboding overcomes you. You aren't sure why, but you feel this dusty structure may contain great dangers."
-	suffix = "beach_ancient_ruin.dmm"
+/datum/map_template/ruin/beachplanet/corpo_resort
+	name = "Corporate Resort"
+	id = "beach_corpo_resort"
+	description = "A corporate resort dating back to before the ICW, attacked during the War and then later seized by the Ramzi Clique. Hivebots fester around its geothermal plant like a tumor."
+	suffix = "beach_corpo_resort.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 
 /datum/map_template/ruin/beachplanet/treasurecove

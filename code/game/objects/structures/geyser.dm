@@ -3,6 +3,7 @@
 
 /obj/structure/geyser
 	name = "geyser"
+	desc = "A small hole in the earth, spilling out a chemically scented smoke."
 	icon = 'icons/obj/lavaland/terrain.dmi'
 	icon_state = "geyser"
 	anchored = TRUE
@@ -16,11 +17,28 @@
 	///used for missions
 	var/mission_scanned = FALSE
 
+	//holder for the geyser particles.
+	var/obj/effect/particle_holder/part_hold
+
+/obj/structure/geyser/Initialize()
+	. = ..()
+
+	part_hold = new(get_turf(src))
+	part_hold.layer = EDGED_TURF_LAYER
+	part_hold.particles = new /particles/smoke/geyser_smoke(reagent_id.color)
+
+/obj/structure/geyser/Destroy()
+	. = ..()
+
+	qdel(part_hold)
+
 /obj/structure/geyser/proc/start_chemming()
 	activated = TRUE
 	create_reagents(max_volume, DRAINABLE)
 	reagents.add_reagent(reagent_id, start_volume)
 	START_PROCESSING(SSfluids, src) //It's main function is to be plumbed, so use SSfluids
+	if(part_hold)
+		part_hold.particles?.friction = 0.1
 	if(erupting_state)
 		icon_state = erupting_state
 	else
@@ -44,17 +62,18 @@
 /obj/structure/geyser/random
 	erupting_state = null
 	var/list/options = list(
-		/datum/reagent/clf3 = 10,
-		/datum/reagent/uranium/radium = 10,
-		/datum/reagent/ammonia = 6,
+		/datum/reagent/medicine/panacea/effluvial = 6,
+		/datum/reagent/ammonia = 4,
 		/datum/reagent/saltpetre = 6,
-		/datum/reagent/medicine/panacea/effluvial = 3,
-		/datum/reagent/wittel = 1
+		/datum/reagent/rahene = 4,
+		/datum/reagent/uranium/radium = 4,
+		/datum/reagent/fuel/oil = 4,
+		/datum/reagent/wittel = 4
 	)
 
 /obj/structure/geyser/random/Initialize()
-	. = ..()
 	reagent_id = pick_weight(options)
+	. = ..()
 
 /obj/item/plunger
 	name = "plunger"
