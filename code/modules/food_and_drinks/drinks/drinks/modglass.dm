@@ -242,3 +242,31 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	icon_state = "umbrellagreen"
 	garnish_state = "umbrellagreen"
 	garnish_layer = GARNISH_LEFT
+
+/obj/item/garnish/straw
+	name = "paper straw"
+	desc = "A paper straw meant to be used with drinks."
+	icon_state = "paperstraw"
+	garnish_state = "paperstraw"
+	garnish_layer = GARNISH_LEFT
+
+/obj/item/garnish/stripedstraw
+	name = "red striped paper straw"
+	desc = "A red striped paper straw meant to be used with drinks. Perfect with smoothies."
+	icon_state = "paperstraw"
+	garnish_state = "paperstraw"
+	garnish_layer = GARNISH_LEFT
+
+/obj/item/garnish/woodmixingstick
+	name = "wooden mixing stick"
+	desc = "A wooden mixing stick. While it would be great for mixing drinks, it's actually used to garnish drinking glasses, go figure."
+	icon_state = "woodmixingstick"
+	garnish_state = "woodmixingstick"
+	garnish_layer = GARNISH_RIGHT
+
+/obj/item/garnish/blackmixingstick
+	name = "black mixing stick"
+	desc = "A black mixing stick made of plastic. While it would be great for mixing drinks, it's actually used to garnish drinking glasses, go figure."
+	icon_state = "blackmixingstick"
+	garnish_state = "blackmixingstick"
+	garnish_layer = GARNISH_RIGHT
