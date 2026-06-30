@@ -534,7 +534,7 @@
 	base_icon_state = "fancy_table_red"
 	buildstack = /obj/item/stack/tile/carpet/red
 	icon = 'icons/obj/smooth_structures/fancy_table_red.dmi'
-	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/purple
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/red
 
 /obj/structure/table/wood/fancy/royalblack
 	icon_state = "fancy_table_royalblack-0"
