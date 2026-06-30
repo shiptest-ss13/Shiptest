@@ -38,7 +38,7 @@
 	smoothing_groups = list(SMOOTH_GROUP_TABLES)
 	canSmoothWith = list(SMOOTH_GROUP_TABLES)
 	/// The type created when this table is flipped
-	var/flipped_table_type = /obj/structure/flippedtable
+	var/flipped_table_type = /obj/structure/barricade/directional/flippedtable
 	/// Whether or not this table can actually be flipped. TODO: Make setting flipped_table_type to null do this instead and remove this var
 	var/can_flip = TRUE
 
@@ -263,7 +263,7 @@
 	if(can_flip)
 		user.visible_message(span_danger("[user] starts flipping [src]!"), span_notice("You start flipping over the [src]!"))
 		if(do_after(user, max_integrity/12))
-			var/obj/structure/flippedtable/flipped = new flipped_table_type(src.loc)
+			var/obj/structure/barricade/directional/flippedtable/flipped = new flipped_table_type(src.loc)
 			flipped.name = "flipped [src.name]"
 			flipped.desc = "[src.desc] It is flipped!"
 			flipped.icon_state = src.base_icon_state

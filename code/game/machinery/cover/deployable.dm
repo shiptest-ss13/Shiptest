@@ -249,18 +249,66 @@
 /obj/item/grenade/barrier/ui_action_click(mob/user)
 	toggle_mode(user)
 
-/obj/item/deployable_turret_folded
-	name = "folded heavy machine gun"
-	desc = "A folded and unloaded heavy machine gun, ready to be deployed and used."
-	icon = 'icons/obj/turrets.dmi'
-	icon_state = "folded_hmg"
-	max_integrity = 250
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+/obj/structure/barricade/directional
+	name = "Half Wall"
+	desc = "This would probably make for good over from one direction."
+	layer = ABOVE_MOB_LAYER
+	opacity = FALSE
+	pass_flags_self = LETPASSTHROW
+	flags_1 = ON_BORDER_1
+	climbable = TRUE
+	climb_time = 1.5 SECONDS
+	continuous_cover = FALSE
+	directional_cover = TRUE
 
-/obj/item/deployable_turret_folded/Initialize(mapload)
+/obj/structure/barricade/directional/Initialize()
 	. = ..()
-	AddComponent(/datum/component/deployable, 5 SECONDS, /obj/machinery/deployable_turret/hmg, delete_on_use = TRUE)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_EXIT = PROC_REF(on_exit),
+	)
+
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/structure/barricade/directional/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	// var/attempted_dir = get_dir(loc, mover)
+	return border_dir != dir
+
+/obj/structure/barricade/directional/proc/on_exit(datum/source, atom/movable/exiter, direction)
+	SIGNAL_HANDLER
+	if(exiter == src)
+		return // Let's not block ourselves.
+	if(istype(exiter, /obj/projectile))
+		return
+	if(istype(exiter, /obj/item))
+		return
+	if(direction == dir)
+		exiter.Bump(src)
+		return COMPONENT_ATOM_BLOCK_EXIT
+	return
+
+/obj/structure/barricade/directional/flippedtable
+	name = "flipped table"
+	desc = "A flipped table."
+	icon = 'icons/obj/flipped_tables.dmi'
+	icon_state = "table"
+	var/table_type = /obj/structure/table
+
+/obj/structure/barricade/directional/flippedtable/examine(mob/user)
+	. = ..()
+	. += span_notice("You could right the [name] by <b>Control Shift-Clicking</b> it.")
+
+/obj/structure/barricade/directional/flippedtable/CtrlShiftClick(mob/living/user)
+	. = ..()
+	if(!istype(user) || !user.can_interact_with(src))
+		return FALSE
+	user.visible_message(span_danger("[user] starts flipping [src]!"), span_notice("You start flipping over the [src]!"))
+	if(do_after(user, max_integrity/12))
+		var/obj/structure/table/table_unflip = new table_type(src.loc)
+		table_unflip.update_integrity(atom_integrity)
+		user.visible_message(span_danger("[user] flips over the [src]!"), span_notice("You flip over the [src]!"))
+		playsound(src, 'sound/items/trayhit2.ogg', 100)
+		qdel(src)
 
 #undef SINGLE
 #undef VERTICAL
