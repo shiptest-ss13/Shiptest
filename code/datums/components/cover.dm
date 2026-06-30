@@ -28,11 +28,13 @@
 
 
 /datum/component/cover/proc/update_cover(obj/blocker, pass_rate)
+	SIGNAL_HANDLER
 	if(pass_rate)
 		proj_pass_rate = pass_rate
 	return
 
 /datum/component/cover/proc/try_block(obj/blocker, atom/movable/mover, border_dir)
+	SIGNAL_HANDLER
 	var/turf/mover_turf = get_turf(mover)
 	if(continuous_cover && ((locate(blocker.type) in mover_turf) || (locate(allowed_in_from) in mover_turf)))
 		return TRUE
@@ -47,4 +49,3 @@
 		if(prob(proj_pass_rate))
 			return TRUE
 		return FALSE
-

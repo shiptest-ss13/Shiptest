@@ -271,7 +271,8 @@
 
 /obj/structure/barricade/directional/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	// var/attempted_dir = get_dir(loc, mover)
+	if(.)
+		return TRUE
 	return border_dir != dir
 
 /obj/structure/barricade/directional/proc/on_exit(datum/source, atom/movable/exiter, direction)
@@ -279,7 +280,8 @@
 	if(exiter == src)
 		return // Let's not block ourselves.
 	if(istype(exiter, /obj/projectile))
-		return
+		if(SEND_SIGNAL(src, COMSIG_ATOM_TRY_ALLOW_THROUGH, exiter, direction))
+			return
 	if(istype(exiter, /obj/item))
 		return
 	if(direction == dir)
