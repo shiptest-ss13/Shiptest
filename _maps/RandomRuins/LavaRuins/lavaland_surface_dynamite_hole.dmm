@@ -3378,10 +3378,6 @@
 "KI" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/transparent/blue/full,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 1;
-	pixel_y = -26
-	},
 /obj/item/plate{
 	pixel_x = 0;
 	pixel_y = 4
@@ -3390,6 +3386,7 @@
 	pixel_x = -1;
 	pixel_y = 6
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/dynamitehole/living_quarters)
 "La" = (
