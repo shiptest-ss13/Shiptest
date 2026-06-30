@@ -209,3 +209,125 @@
 		if(active_portal_pairs[i] == P)
 			return DESTINATION_PORTAL
 	return FALSE
+
+/*
+ * Gravitational Jaunter
+ */
+
+/obj/item/gravitational_jaunter
+	name = "gravitational jaunter"
+	desc = "A device that allows its users to bend space around themselves into a 'bubble'. The lensing of this bubble is set to send its user directly ahead of the direction they're facing. Upon contact with matter, the bubble loses form, but not without causing damage to structures -- or people -- in its way. Created as a result of research into gravitational phenomena."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "gravitational_jaunter"
+	item_state = "electronic"
+	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	throwforce = 5
+	w_class = WEIGHT_CLASS_SMALL
+	throw_speed = 4
+	throw_range = 10
+
+	//Uses of the device left
+	var/charges = 4
+	//The maximum number of stored uses
+	var/max_charges = 4
+	var/minimum_teleport_distance = 6
+	var/maximum_teleport_distance = 8
+	//How far the emergency teleport checks for a safe position
+	var/parallel_teleport_distance = 3
+	//How long it takes to replenish a charge
+	var/recharge_time = 15 SECONDS
+	//If the device is recharging, prevents timers stacking
+	var/recharging = FALSE
+	//stores the recharge timer id
+	var/recharge_timer
+
+/obj/item/gravitational_jaunter/examine(mob/user)
+	. = ..()
+	. += span_notice("[src] has [charges] out of [max_charges] charges left.")
+	if(recharging)
+		. += span_notice("<b>A small display on the back reads:</b>")
+		var/timeleft = timeleft(recharge_timer)
+		var/loadingbar = num2loadingbar(timeleft/recharge_time, reverse=TRUE)
+		. += span_notice("<b>CHARGING: [loadingbar] ([timeleft*0.1]s)</b>")
+
+/obj/item/gravitational_jaunter/attack_self(mob/user)
+	..()
+	attempt_teleport(user, FALSE)
+
+/obj/item/gravitational_jaunter/proc/check_charges()
+	if(recharging)
+		return
+	if(charges < max_charges)
+		recharge_timer = addtimer(CALLBACK(src, PROC_REF(recharge)), recharge_time, TIMER_STOPPABLE)
+		recharging = TRUE
+
+/obj/item/gravitational_jaunter/proc/recharge()
+	charges++
+	playsound(src,'sound/machines/twobeep.ogg',10,TRUE, extrarange = SILENCED_SOUND_EXTRARANGE, falloff_distance = 0)
+	recharging = FALSE
+	check_charges()
+
+/obj/item/gravitational_jaunter/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	if(!prob(50 / severity))
+		return
+	if(istype(loc, /mob/living/carbon/human))
+		var/mob/living/carbon/human/user = loc
+		to_chat(user, span_danger("[src] buzzes and activates!"))
+		attempt_teleport(user, TRUE) //EMP Activates a teleport with no safety.
+	else
+		visible_message(span_warning("[src] activates and blinks out of existence!"))
+		do_sparks(2, 1, src)
+		qdel(src)
+
+/obj/item/gravitational_jaunter/proc/attempt_teleport(mob/user, EMP_D = FALSE)
+	if(!charges)
+		to_chat(user, span_warning("[src] is still recharging."))
+		return
+
+	var/turf/original_location = get_turf(user)
+
+	var/teleport_distance = rand(minimum_teleport_distance,maximum_teleport_distance)
+	var/list/bagholding = user.GetAllContents(/obj/item/storage/backpack/holding)
+	var/direction = (EMP_D || length(bagholding)) ? pick(GLOB.cardinals) : user.dir
+	var/turf/destination = get_ranged_target_turf(user, direction, teleport_distance)
+
+	var/turf/new_location = do_dash(user, original_location, destination, obj_damage=150, phase=FALSE, on_turf_cross=CALLBACK(src, PROC_REF(telefrag), user))
+	if(isnull(new_location))
+		to_chat(user, span_notice("\The [src] is malfunctioning."))
+		return
+
+	new /obj/effect/temp_visual/teleport_abductor/gravitational_jaunter(original_location)
+	new /obj/effect/temp_visual/teleport_abductor/gravitational_jaunter(new_location)
+	charges--
+	check_charges()
+	playsound(new_location, 'sound/effects/phasein.ogg', 25, 1)
+	playsound(new_location, "sparks", 50, 1)
+
+/obj/item/gravitational_jaunter/proc/telefrag(mob/user, turf/fragging_location)
+	for(var/mob/living/target in fragging_location)//Hit everything in the turf
+		// Skip any mobs that aren't standing, or aren't dense
+		if ((target.body_position == LYING_DOWN) || !target.density || user == target)
+			continue
+		// Run armour checks and apply damage
+		var/armor_block = target.run_armor_check(BODY_ZONE_CHEST, MELEE)
+		if(istype(target, /mob/living/simple_animal))
+			target.apply_damage(60, BRUTE, blocked = armor_block) //because simplemobs can't be stunned or paralyzed, the total brute damage is increased
+		else
+			target.apply_damage(25, BRUTE, blocked = armor_block)
+		target.Paralyze(10 * (100 - armor_block) / 100)
+		target.Knockdown(40 * (100 - armor_block) / 100)
+		// Check if we successfully knocked them down
+		if (target.body_position == LYING_DOWN)
+			to_chat(target, span_userdanger("[user] teleports into you, knocking you to the floor with the bluespace wave!"))
+		else
+			to_chat(user, span_userdanger("[target] resists the force of your jaunt's wake, bringing you to stop!"))
+			to_chat(target, span_userdanger("[user] slams into you, falling out of their bluespace jaunt tunnel!"))
+			return FALSE
+	return TRUE
+
+/obj/effect/temp_visual/teleport_abductor/gravitational_jaunter
+	duration = 5
