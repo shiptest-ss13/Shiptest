@@ -4584,10 +4584,10 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/telecomms/receiver/preset_left/birdstation{
-	autolinkers = list("receiverG");
-	freq_listening = list(1353, 1205);
-	network = "ngr_commnet"
+/obj/machinery/telecomms/receiver/preset_right{
+	autolinkers = list("receiverG", "hub");
+	network = "ngr_commnet";
+	freq_listening = list(1353,1205,1459)
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications/room)
