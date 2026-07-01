@@ -1670,9 +1670,7 @@
 	pixel_x = -8;
 	pixel_y = 5
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 30
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "tL" = (
@@ -1840,13 +1838,13 @@
 /area/ship/crew/canteen)
 "vQ" = (
 /obj/structure/table/glass,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -15;
-	pixel_y = -25
-	},
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = -8;
 	pixel_y = 4
+	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south{
+	pixel_x = -16;
+	pixel_y = -22
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm)
