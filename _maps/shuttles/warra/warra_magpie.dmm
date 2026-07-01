@@ -70,9 +70,6 @@
 /obj/structure/chair/office/light{
 	dir = 8
 	},
-/obj/structure/cable/white{
-	icon_state = "2-4"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "aN" = (
@@ -133,7 +130,7 @@
 /obj/structure/flora/junglebush,
 /obj/structure/flora/driftlog,
 /obj/structure/sign/warning/incident{
-	pixel_y = 30;
+	pixel_y = 32;
 	layer = 2.9
 	},
 /turf/open/floor/plating/ship/water,
@@ -289,13 +286,13 @@
 /obj/item/clothing/suit/space/hardsuit/security,
 /obj/item/clothing/mask/gas/vigilitas,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm/directional/east{
-	pixel_y = 6
+/obj/machinery/airalarm/directional/east,
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = -6
 	},
-/obj/structure/extinguisher_cabinet/directional/east{
-	pixel_y = -6
+/obj/machinery/firealarm/directional/north{
+	pixel_x = 6
 	},
-/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "cd" = (
@@ -312,7 +309,7 @@
 	dir = 5
 	},
 /obj/structure/cable/white{
-	icon_state = "1-2"
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -401,7 +398,6 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 4
 	},
-/obj/machinery/camera/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "cC" = (
@@ -453,10 +449,7 @@
 /area/ship/crew/cryo)
 "cX" = (
 /obj/structure/table/reinforced,
-/obj/machinery/computer/helm/viewscreen/directional/north{
-	layer = 2.7;
-	pixel_y = 16
-	},
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/item/megaphone{
 	pixel_x = 5;
@@ -541,8 +534,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
-/obj/structure/chair/handrail,
-/obj/machinery/camera/autoname/directional/north,
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
 "eg" = (
@@ -567,7 +559,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
-/obj/structure/chair/handrail,
+/obj/structure/closet/firecloset/wall/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
 "ez" = (
@@ -608,7 +600,7 @@
 "eY" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/sign/warning/electricshock{
-	pixel_y = 24
+	pixel_y = 32
 	},
 /obj/machinery/power/terminal{
 	dir = 8
@@ -630,9 +622,6 @@
 "fe" = (
 /obj/machinery/holopad,
 /obj/item/disk/holodisk/ship/magpie/securitynotice,
-/obj/structure/cable/white{
-	icon_state = "1-8"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "fh" = (
@@ -642,25 +631,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/machinery/button/door{
-	dir = 1;
-	id = "magpie_bathroom";
-	name = "Bathroom Bolt Override";
-	normaldoorcontrol = 1;
-	pixel_x = -6;
-	pixel_y = -21;
-	specialfunctions = 4
-	},
-/obj/machinery/button/door{
-	dir = 1;
-	id = "magpie_office";
-	name = "Office Bolt Override";
-	normaldoorcontrol = 1;
-	pixel_x = 6;
-	pixel_y = -21;
-	specialfunctions = 4
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "fj" = (
@@ -777,7 +750,6 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
 "fD" = (
@@ -1064,6 +1036,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/siding/white,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "gE" = (
@@ -1155,6 +1128,7 @@
 	},
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/office)
 "hs" = (
@@ -1317,7 +1291,7 @@
 	},
 /obj/structure/sign/warning/electricshock{
 	pixel_x = -32;
-	pixel_y = 5
+	pixel_y = 12
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 8
@@ -1332,7 +1306,8 @@
 	dir = 4;
 	id = "magpie_portthruster";
 	name = "Thruster Shield Control";
-	pixel_x = -20
+	pixel_x = -20;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/atmospherics)
@@ -1347,7 +1322,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/camera/autoname/directional/east,
 /obj/effect/turf_decal/corner/opaque/warrablue/three_quarters{
 	dir = 8
 	},
@@ -1468,7 +1442,10 @@
 	pixel_y = 4
 	},
 /obj/item/pda/security,
-/obj/item/radio/intercom/directional/west,
+/obj/structure/cable/white{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "jq" = (
@@ -1617,11 +1594,33 @@
 	},
 /obj/item/kirbyplants/fullysynthetic{
 	icon_state = "plant-29";
-	pixel_x = 10;
-	pixel_y = 8
+	pixel_x = 9;
+	pixel_y = 12
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/light/directional/east,
+/obj/machinery/button/door{
+	dir = 8;
+	id = "magpie_bridge";
+	name = "Bridge Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = 21;
+	pixel_y = 1;
+	specialfunctions = 4;
+	req_access_txt = "19"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "magpie_bridgehall_window";
+	name = "Hallway Window Control";
+	pixel_x = 21;
+	pixel_y = -10;
+	req_access_txt = "19"
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "kj" = (
@@ -1658,6 +1657,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
 "ks" = (
@@ -1879,12 +1879,10 @@
 /obj/structure/cable/white{
 	icon_state = "6-10"
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 4
 	},
+/obj/machinery/camera/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "mA" = (
@@ -2118,8 +2116,8 @@
 /area/ship/crew/canteen)
 "pk" = (
 /obj/structure/closet/secure_closet/wall/directional/north{
-	icon_door = "solgov_wall";
-	icon_state = "solgov_wall";
+	icon_door = "command_wall";
+	icon_state = "blue_wall";
 	name = "first officer's locker";
 	req_access_txt = "57"
 	},
@@ -2481,9 +2479,7 @@
 	specialfunctions = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/machinery/button/door{
 	id = "magpie_miner_window";
 	name = "Window Control";
@@ -2513,7 +2509,7 @@
 "sh" = (
 /obj/structure/sign/warning/securearea{
 	pixel_x = -8;
-	pixel_y = -6
+	pixel_y = 8
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/atmospherics)
@@ -2634,7 +2630,6 @@
 /obj/structure/table/reinforced,
 /obj/machinery/airalarm/directional/south,
 /obj/machinery/computer/helm/viewscreen/directional/east{
-	layer = 2.7;
 	pixel_y = 2
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2769,8 +2764,8 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
 	dir = 8
 	},
-/obj/machinery/camera/autoname/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
 "tE" = (
@@ -2794,7 +2789,7 @@
 	},
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_x = -23;
-	pixel_y = 8
+	pixel_y = 14
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
@@ -3279,8 +3274,8 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/structure/sign/warning{
-	pixel_y = 26;
-	pixel_x = 8;
+	pixel_y = 32;
+	pixel_x = 10;
 	layer = 2.9;
 	name = "\improper DO NOT TAP GLASS: IT CAN CAUSE STRESS AND HARM sign";
 	desc = "A warning sign informing you in the harm of tapping the glass."
@@ -3428,10 +3423,9 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 4
 	},
-/obj/structure/chair/handrail,
 /obj/structure/closet/secure_closet/wall/directional/north{
-	icon_door = "cargo_wall";
-	icon_state = "cargo_wall";
+	icon_door = "engi_wall";
+	icon_state = "engi_wall";
 	name = "tool locker";
 	req_access_txt = "10"
 	},
@@ -3593,7 +3587,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/wall/directional/north,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
 "zM" = (
@@ -3834,9 +3828,9 @@
 /obj/structure/cable/white{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/item/radio/intercom/directional/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/starboard)
 "BE" = (
@@ -3885,6 +3879,10 @@
 	},
 /obj/item/flashlight/lamp{
 	pixel_x = -6;
+	pixel_y = -10
+	},
+/obj/item/stock_parts/cell/high{
+	pixel_x = 8;
 	pixel_y = -10
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -4172,9 +4170,6 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
-/obj/structure/chair/handrail{
-	dir = 1
-	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
 "DW" = (
@@ -4342,7 +4337,7 @@
 /obj/machinery/door/airlock/command{
 	dir = 4;
 	name = "Bridge";
-	req_access_txt = "19"
+	id_tag = "magpie_bridge"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
@@ -4413,13 +4408,8 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
 	},
-/obj/machinery/firealarm/directional/east{
-	pixel_y = 6
-	},
-/obj/structure/extinguisher_cabinet/directional/east{
-	pixel_y = -6
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Fx" = (
@@ -4501,10 +4491,6 @@
 	pixel_y = 5
 	},
 /obj/item/radio/intercom/directional/south,
-/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south{
-	pixel_x = 0;
-	pixel_y = -38
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
 "FW" = (
@@ -4580,15 +4566,13 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "He" = (
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
 /obj/structure/marker_beacon{
 	picked_color = "Teal"
 	},
 /obj/item/radio/intercom/directional/east,
 /obj/effect/turf_decal/industrial/warning/dust/corner,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Hj" = (
@@ -4697,15 +4681,14 @@
 	pixel_x = 6
 	},
 /obj/structure/sign/warning/nosmoking/circle{
-	pixel_x = -23;
-	pixel_y = -8
+	pixel_x = -23
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
 "HP" = (
 /obj/structure/closet/secure_closet/wall/directional/north{
-	icon_door = "solgov_wall";
-	icon_state = "solgov_wall";
+	icon_door = "command_wall";
+	icon_state = "blue_wall";
 	name = "captain's locker";
 	req_access_txt = "20"
 	},
@@ -4821,6 +4804,9 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
 "HZ" = (
@@ -4934,9 +4920,7 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/item/clipboard{
 	pixel_x = 12;
 	pixel_y = 8
@@ -4976,19 +4960,34 @@
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/light_switch{
-	pixel_x = -12;
-	pixel_y = 22
-	},
-/obj/structure/cable/white{
-	icon_state = "0-8"
+	pixel_x = 10;
+	pixel_y = 20
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "magpie_bridgehall_window";
+	name = "Hallway Window Control";
+	pixel_x = 1;
+	pixel_y = 21;
+	req_access_txt = "19"
+	},
+/obj/machinery/button/door{
+	id = "magpie_bridge";
+	name = "Bridge Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = -10;
+	pixel_y = 21;
+	specialfunctions = 4;
+	req_access_txt = "19"
+	},
+/obj/structure/cable/white{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -5015,9 +5014,7 @@
 "Jm" = (
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/effect/turf_decal/corner/transparent/white/mono,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/structure/filingcabinet/double{
 	dir = 1
 	},
@@ -5066,8 +5063,7 @@
 	pixel_y = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable/white,
+/obj/machinery/computer/security/telescreen/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Jt" = (
@@ -5226,8 +5222,7 @@
 /obj/item/radio/intercom/directional/south{
 	pixel_x = -9
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = -25;
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/south{
 	pixel_x = 15
 	},
 /turf/open/floor/plasteel/mono,
@@ -5260,7 +5255,6 @@
 	pixel_x = 12;
 	pixel_y = 21
 	},
-/obj/machinery/camera/autoname,
 /obj/item/clipboard{
 	pixel_x = 12;
 	pixel_y = 8
@@ -5282,6 +5276,9 @@
 	pixel_y = -2
 	},
 /obj/item/disk/holodisk/ship/magpie/commandnotice,
+/obj/machinery/camera/autoname/directional/north{
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ln" = (
@@ -5344,9 +5341,6 @@
 	},
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = 32
-	},
-/obj/machinery/camera/autoname{
-	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -5506,7 +5500,7 @@
 	},
 /obj/structure/sign/warning/electricshock{
 	pixel_x = -32;
-	pixel_y = 5
+	pixel_y = 12
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 8
@@ -5521,7 +5515,8 @@
 	dir = 4;
 	id = "magpie_starthruster";
 	name = "Thruster Shield Control";
-	pixel_x = -20
+	pixel_x = -20;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -5588,29 +5583,38 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband/table{
 	layer = 2.9;
-	pixel_x = 4;
-	pixel_y = -2
+	pixel_x = 5
 	},
 /obj/item/radio/intercom/table{
-	pixel_x = -14;
-	pixel_y = -2
+	pixel_x = -12
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "magpie_bridgehall_window";
-	name = "Hallway Window Control";
-	pixel_x = -6;
+	id = "magpie_bridge_window";
+	name = "External Window Control";
+	pixel_x = 12;
 	pixel_y = -21
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "magpie_bridge_window";
-	name = "External Window Control";
-	pixel_x = 6;
-	pixel_y = -21
+	id = "magpie_bathroom";
+	name = "Bathroom Bolt Override";
+	normaldoorcontrol = 1;
+	pixel_x = -12;
+	pixel_y = -21;
+	specialfunctions = 4
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "magpie_office";
+	name = "Office Bolt Override";
+	normaldoorcontrol = 1;
+	pixel_x = -3;
+	pixel_y = -21;
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -6009,19 +6013,13 @@
 	dir = 10
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/computer/helm/viewscreen/directional/west{
-	layer = 2.7;
-	pixel_y = 2
-	},
 /obj/item/flashlight/lamp{
 	pixel_x = -6;
 	pixel_y = 4
 	},
-/obj/machinery/computer/security/telescreen/directional/south{
-	desc = "A telescreen that connects to the ship's security camera network.";
-	network = list("ss13")
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/helm/viewscreen/directional/south,
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Pm" = (
@@ -6171,9 +6169,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Qu" = (
-/obj/structure/sign/warning/docking{
-	pixel_y = -6
-	},
+/obj/structure/sign/warning/docking,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "QE" = (
@@ -6327,9 +6323,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "Rl" = (
@@ -6351,6 +6345,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
+	},
+/obj/structure/chair/handrail{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
@@ -6473,9 +6470,6 @@
 	},
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
@@ -6499,9 +6493,6 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
-/obj/structure/chair/handrail{
-	dir = 1
-	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
 "Ti" = (
@@ -6510,13 +6501,15 @@
 	pixel_y = 20
 	},
 /obj/machinery/light/small/directional/west{
-	pixel_x = -28;
-	pixel_y = -13
+	pixel_x = -28
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/camera/autoname/directional/west{
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/external/dark)
 "Tk" = (
@@ -6528,6 +6521,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/structure/chair/handrail{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -6669,6 +6665,9 @@
 /obj/item/camera,
 /obj/item/disk/holodisk/ship/magpie/securitynotice,
 /obj/item/stamp/warra/vigilitas,
+/obj/structure/cable/white{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Um" = (
@@ -6831,6 +6830,9 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
 "VN" = (
@@ -6882,12 +6884,17 @@
 /obj/item/kitchen/rollingpin{
 	pixel_x = 8
 	},
-/obj/machinery/airalarm/directional/west,
 /obj/item/melee/knife/pizza_cutter{
 	pixel_x = -4;
 	pixel_y = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_y = 6
+	},
+/obj/machinery/firealarm/directional/west{
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Wf" = (
@@ -7091,6 +7098,9 @@
 /obj/effect/turf_decal/trimline/opaque/white/line,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/structure/cable/white{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -7316,6 +7326,9 @@
 	},
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname/directional/south{
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
 "Zi" = (
@@ -7336,6 +7349,9 @@
 	},
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 1
+	},
+/obj/item/kirbyplants/fullysynthetic{
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
@@ -7391,6 +7407,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/white,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
 "ZJ" = (
@@ -7427,8 +7444,7 @@
 	pixel_y = -2
 	},
 /obj/structure/sign/warning/nosmoking/circle{
-	pixel_y = -23;
-	pixel_x = -8
+	pixel_y = -18
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
