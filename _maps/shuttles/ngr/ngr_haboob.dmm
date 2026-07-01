@@ -698,6 +698,10 @@
 	pixel_x = 31;
 	pixel_y = 0
 	},
+/obj/item/radio/intercom/directional/south{
+	pixel_x = 3;
+	pixel_y = -31
+	},
 /turf/open/floor/carpet/red,
 /area/ship/crew)
 "jf" = (
@@ -1458,10 +1462,6 @@
 /area/ship/engineering)
 "rY" = (
 /obj/structure/table,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 30;
-	pixel_y = 1
-	},
 /obj/effect/turf_decal/corner/opaque/beige/half{
 	dir = 8
 	},
@@ -1472,6 +1472,7 @@
 	pixel_x = -3;
 	pixel_y = 11
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "sh" = (
@@ -1813,12 +1814,9 @@
 /area/ship/bridge)
 "yF" = (
 /obj/structure/table,
-/obj/item/radio/intercom/directional/south{
-	pixel_x = 15
-	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = -32;
-	pixel_x = 15
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/south{
+	pixel_x = 15;
+	pixel_y = -22
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew)

@@ -1493,10 +1493,6 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 33;
-	pixel_x = 7
-	},
 /obj/item/radio/intercom/directional/north{
 	pixel_x = 3;
 	pixel_y = 30
@@ -1534,6 +1530,10 @@
 	pixel_x = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north{
+	pixel_x = 4;
+	pixel_y = 37
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/security/armory)
 "pr" = (
@@ -3551,14 +3551,12 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "KU" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 26
-	},
 /obj/structure/platform/wood{
 	dir = 1;
 	layer = 2.8
 	},
 /obj/structure/chair/sofa/brown,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north,
 /turf/open/floor/carpet/green,
 /area/ship/crew/canteen/kitchen)
 "KV" = (

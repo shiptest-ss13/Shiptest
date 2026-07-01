@@ -217,9 +217,22 @@
 		if((!QDELETED(spawner) && spawner.faction_check_mob(L)) || L.stat == DEAD)
 			continue
 		visible_message(span_danger("[src] grabs hold of [L]!"))
-		L.Stun(10)
-		L.adjustBruteLoss(rand(30,35))
-		latched = TRUE
+		var/mob/living/target = L
+		var/obj/item/bodypart/affecting
+		if(ishuman(target))
+			if(prob(50))
+				affecting = target.get_bodypart(BODY_ZONE_R_LEG)
+			else
+				affecting = target.get_bodypart(BODY_ZONE_L_LEG)
+			if(!affecting)
+				affecting = target.get_bodypart(BODY_ZONE_CHEST)
+			var/armor_block
+			armor_block = target.run_armor_check(affecting, MELEE)
+			target.Knockdown(1 DECISECONDS)
+			target.apply_damage(rand(30,35), BRUTE, affecting, armor_block, FALSE, wound_bonus = CANT_WOUND)
+			latched = TRUE
+		else
+			target.apply_damage(rand(30,35), BRUTE, wound_bonus = CANT_WOUND)
 	if(!latched)
 		retract()
 	else

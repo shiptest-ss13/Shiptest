@@ -5,13 +5,15 @@
 	item_state = "bayonet"
 	lefthand_file = 'icons/mob/inhands/weapons/knifes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/knifes_righthand.dmi'
-	force = 15
-	throwforce = 10
+	force = 18
+	throwforce = 18
 	pickup_sound =  'sound/items/handling/knife1_pickup.ogg'
 	drop_sound = 'sound/items/handling/knife3_drop.ogg'
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_POINTY
+	attack_cooldown = LIGHT_WEAPON_CD
+	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	slot = ATTACHMENT_SLOT_MUZZLE
 
 	pixel_shift_x = 1

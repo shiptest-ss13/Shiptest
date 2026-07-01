@@ -401,6 +401,7 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 4
 	},
+/obj/machinery/camera/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "cC" = (
@@ -541,6 +542,7 @@
 	dir = 4
 	},
 /obj/structure/chair/handrail,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
 "eg" = (
@@ -1345,9 +1347,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/effect/turf_decal/corner/opaque/warrablue/three_quarters{
 	dir = 8
 	},
@@ -2008,9 +2008,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
 "nP" = (
@@ -2771,9 +2769,7 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
@@ -3597,7 +3593,6 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
-/obj/machinery/camera/autoname,
 /obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
@@ -4506,6 +4501,10 @@
 	pixel_y = 5
 	},
 /obj/item/radio/intercom/directional/south,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south{
+	pixel_x = 0;
+	pixel_y = -38
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
 "FW" = (
@@ -5182,9 +5181,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/stairs/right{
 	dir = 1
 	},
@@ -5375,7 +5372,11 @@
 /obj/item/gun/ballistic/automatic/pistol/challenger/no_mag{
 	pixel_y = -8
 	},
-/obj/machinery/light/small/directional/east,
+/obj/machinery/light/small/directional/east{
+	pixel_x = 28;
+	pixel_y = -13
+	},
+/obj/machinery/camera/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "LE" = (
@@ -5927,9 +5928,7 @@
 /area/ship/engineering)
 "OR" = (
 /obj/effect/turf_decal/industrial/hatch/blue,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/monitor{
 	dir = 1;
@@ -6018,11 +6017,9 @@
 	pixel_x = -6;
 	pixel_y = 4
 	},
-/obj/machinery/computer/security/telescreen{
+/obj/machinery/computer/security/telescreen/directional/south{
 	desc = "A telescreen that connects to the ship's security camera network.";
-	dir = 1;
-	network = list("ss13");
-	pixel_y = -26
+	network = list("ss13")
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -6512,7 +6509,10 @@
 	pixel_x = 11;
 	pixel_y = 20
 	},
-/obj/machinery/light/small/directional/west,
+/obj/machinery/light/small/directional/west{
+	pixel_x = -28;
+	pixel_y = -13
+	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
 	},

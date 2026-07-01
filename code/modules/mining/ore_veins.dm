@@ -480,7 +480,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 20,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 30,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/heat = 10,
 		)
 
 	ore_list = list(
