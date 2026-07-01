@@ -633,12 +633,12 @@
 	icon_state = "4-8"
 	},
 /obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = -7;
+	pixel_x = -5;
 	pixel_y = 28
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = 5;
-	pixel_y = 32
+	pixel_x = 6;
+	pixel_y = 33
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
@@ -648,12 +648,12 @@
 	dir = 6
 	},
 /obj/machinery/firealarm/directional/east{
-	pixel_x = 32;
+	pixel_x = 34;
 	pixel_y = -8
 	},
 /obj/structure/extinguisher_cabinet/directional/east{
-	pixel_x = 29;
-	pixel_y = 6
+	pixel_x = 27;
+	pixel_y = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -709,12 +709,12 @@
 	dir = 9
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = 7;
+	pixel_x = 6;
 	pixel_y = -28
 	},
 /obj/machinery/firealarm/directional/south{
 	pixel_x = -6;
-	pixel_y = -32
+	pixel_y = -33
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
@@ -1132,11 +1132,11 @@
 /obj/machinery/button/shieldwallgen{
 	id = "derecho_workshop_holo";
 	pixel_x = 5;
-	pixel_y = 21
+	pixel_y = 23
 	},
 /obj/machinery/button/door{
 	pixel_x = -6;
-	pixel_y = 22;
+	pixel_y = 23;
 	id = "derecho_workshop_door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1781,7 +1781,7 @@
 /obj/structure/chair/handrail,
 /obj/machinery/button/door{
 	pixel_x = 8;
-	pixel_y = 22;
+	pixel_y = 23;
 	name = "Armory Lock";
 	id = "derecho_armory"
 	},
@@ -2271,8 +2271,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_x = -22;
-	pixel_y = 10
+	pixel_x = -21;
+	pixel_y = 11
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/west,
@@ -2308,7 +2308,7 @@
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 11;
-	pixel_y = -16
+	pixel_y = -19
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2621,6 +2621,10 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
+/obj/item/paper{
+	pixel_x = 3;
+	pixel_y = 3
+	},
 /obj/item/pen{
 	pixel_x = 2;
 	pixel_y = 4
@@ -2674,7 +2678,7 @@
 	},
 /obj/machinery/button/shieldwallgen{
 	pixel_x = 5;
-	pixel_y = 21;
+	pixel_y = 23;
 	id = "derecho_cargo_holo"
 	},
 /turf/open/floor/pod,
@@ -2788,8 +2792,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom/wideband/directional/north{
-	pixel_x = -18;
-	pixel_y = 13
+	pixel_x = -19;
+	pixel_y = 14
 	},
 /obj/effect/turf_decal/trimline/opaque/tan/line{
 	dir = 1
@@ -2911,6 +2915,7 @@
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "Bv" = (
@@ -3976,7 +3981,7 @@
 	},
 /obj/machinery/firealarm/directional/south{
 	pixel_x = 8;
-	pixel_y = -32
+	pixel_y = -33
 	},
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/mono/dark,
@@ -4092,12 +4097,12 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = -8;
+	pixel_x = -6;
 	pixel_y = 28
 	},
 /obj/machinery/firealarm/directional/north{
 	pixel_x = 5;
-	pixel_y = 32
+	pixel_y = 33
 	},
 /obj/item/storage/box/flares{
 	pixel_y = 8;
@@ -4366,12 +4371,12 @@
 	dir = 2
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = 7;
-	pixel_y = 32
+	pixel_x = 6;
+	pixel_y = 34
 	},
 /obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = -7;
-	pixel_y = 29
+	pixel_x = -5;
+	pixel_y = 28
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/secure_closet/medical3{
@@ -4552,10 +4557,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"Oi" = (
-/obj/machinery/computer/security/telescreen/entertainment,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/canteen)
 "Oo" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -6394,7 +6395,7 @@ EU
 Su
 Wp
 Bo
-Oi
+gm
 Tq
 "}
 (15,1,1) = {"
