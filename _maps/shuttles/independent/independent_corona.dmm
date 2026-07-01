@@ -616,9 +616,6 @@
 "gz" = (
 /obj/effect/turf_decal/siding/wood/corner/maple,
 /obj/structure/table/glass,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 36
-	},
 /obj/item/radio/intercom/directional/north{
 	pixel_x = -5
 	},
@@ -633,6 +630,10 @@
 /obj/item/pen/fountain/captain{
 	pixel_x = -6;
 	pixel_y = 4
+	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north{
+	pixel_x = -1;
+	pixel_y = 37
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
@@ -3358,10 +3359,11 @@
 	color = "#FFFFFF"
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner,
-/obj/machinery/computer/security/telescreen{
-	pixel_y = 35;
+/obj/machinery/computer/security/telescreen/directional/north{
 	network = list("ss13");
-	desc = "A telescreen that connects to the ship's security camera network."
+	desc = "A telescreen that connects to the ship's security camera network.";
+	pixel_x = 0;
+	pixel_y = 26
 	},
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
@@ -3463,9 +3465,7 @@
 "Nj" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /obj/machinery/light/floor,
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Nr" = (
@@ -3515,7 +3515,7 @@
 /obj/structure/sign/warning/vacuum/external{
 	pixel_y = 35
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -3972,10 +3972,7 @@
 	id = "cyberindie_airlock";
 	name = "Airlock Lockdown"
 	},
-/obj/machinery/computer/security/telescreen{
-	dir = 4;
-	pixel_x = -26;
-	pixel_y = 6;
+/obj/machinery/computer/security/telescreen/directional/west{
 	network = list("ss13");
 	desc = "A telescreen that connects to the ship's security camera network."
 	},
@@ -4104,11 +4101,9 @@
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 1
 	},
-/obj/machinery/computer/security/telescreen{
-	pixel_y = -26;
+/obj/machinery/computer/security/telescreen/directional/south{
 	network = list("ss13");
-	desc = "A telescreen that connects to the ship's security camera network.";
-	dir = 1
+	desc = "A telescreen that connects to the ship's security camera network."
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)

@@ -71,12 +71,12 @@ NGR_OUTPOST_OUTSIDE_TURF_HELPER(plasteel/stairs/left)
 /obj/structure/fluff/vehicle_battery
 	name = "vehicle battery"
 	desc = "An old, battery-acid crusted vehicle cell, completely useless, and probably a hazard to even breathe next to."
-	icon = 'icons/obj/power.dmi'
+	icon = 'icons/obj/item/cells.dmi'
 	icon_state = "bg-cell"
 
 /obj/structure/fluff/geothermal
 	name = "Geothermal Power Tap"
 	desc = "A complex machine that drills into the soil below it to gather thermal power."
 	density = 1
-	icon = 'icons/obj/power.dmi'
+	icon = 'icons/obj/machines/rtg.dmi'
 	icon_state = "rtg"
