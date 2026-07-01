@@ -146,6 +146,13 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
+"aN" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "aO" = (
 /obj/structure/platform,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -358,6 +365,12 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "bB" = (
@@ -564,6 +577,15 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
+"cu" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "cv" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
@@ -958,6 +980,9 @@
 	network = list("ngr_colony","ngr_colony_mines");
 	dir = 2
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "en" = (
@@ -1121,6 +1146,13 @@
 	},
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"eX" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "eY" = (
 /obj/structure/dresser/wall/directional/east,
 /turf/open/floor/plasteel/mono/dark,
@@ -1481,6 +1513,10 @@
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "gk" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plastic,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "gm" = (
@@ -1506,6 +1542,10 @@
 /obj/structure/ore_box,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
+"gp" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "gq" = (
 /obj/structure/platform/corner{
 	dir = 1
@@ -1705,6 +1745,12 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "ha" = (
@@ -1854,6 +1900,10 @@
 	network = list("ngr_colony");
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plating/rust/rockplanet,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "hH" = (
@@ -2964,6 +3014,7 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "me" = (
@@ -3259,6 +3310,13 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
+"nu" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "nv" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -3636,6 +3694,12 @@
 "oT" = (
 /obj/effect/mob_spawn/human/corpse/ngr/trooper,
 /obj/effect/decal/cleanable/blood/old,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "oV" = (
@@ -4353,6 +4417,8 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only/closed,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "sj" = (
@@ -5905,6 +5971,15 @@
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
+"ye" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "yg" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
@@ -6070,6 +6145,15 @@
 	icon_state = "wood-broken4"
 	},
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
+"yQ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "yR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow{
@@ -6352,13 +6436,13 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
 "At" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
 /obj/structure/toilet{
 	dir = 8;
-	pixel_x = 9;
-	pixel_y = 9
+	pixel_x = 7;
+	pixel_y = 17
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 10
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/ngrcolony/security/prison)
@@ -6430,6 +6514,9 @@
 /obj/structure/mirror{
 	pixel_x = 25;
 	pixel_y = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/ngrcolony/security/prison)
@@ -6786,6 +6873,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/canteen)
+"BP" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "BQ" = (
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/structure/cable/yellow{
@@ -6888,6 +6982,8 @@
 /area/ruin/rockplanet/ngrcolony/canteen)
 "Cf" = (
 /obj/item/ammo_casing/spent/pistol_steel,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plastic,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "Ci" = (
@@ -7203,6 +7299,10 @@
 "DE" = (
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"DF" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "DH" = (
 /obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
@@ -7446,6 +7546,9 @@
 	network = list("ngr_colony");
 	dir = 1
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "Ev" = (
@@ -7494,6 +7597,10 @@
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "EB" = (
 /obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "EC" = (
@@ -7769,6 +7876,8 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "FQ" = (
@@ -8214,6 +8323,10 @@
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/utility)
 "HA" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "HD" = (
@@ -8999,8 +9112,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
@@ -9779,6 +9892,21 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/control)
+"NM" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "NN" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -10293,6 +10421,8 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "PF" = (
@@ -10334,6 +10464,15 @@
 	},
 /turf/open/floor/concrete,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
+"PQ" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plastic,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "PU" = (
 /obj/item/reagent_containers/hypospray/medipen/rabbit{
 	list_reagents = null;
@@ -10635,6 +10774,15 @@
 /obj/structure/flora/rock/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
+"Rk" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "Rl" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -11032,6 +11180,12 @@
 	},
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet/overslab4,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"Tb" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "Tc" = (
 /obj/structure/platform/corner{
 	dir = 1
@@ -11351,6 +11505,12 @@
 /obj/machinery/holopad/emergency/bar,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
+"Up" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "Ut" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/techfloor{
@@ -11784,6 +11944,8 @@
 /area/ruin/rockplanet/ngrcolony/canteen)
 "VM" = (
 /obj/effect/decal/cleanable/blood/old,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "VO" = (
@@ -12160,6 +12322,8 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "Xw" = (
@@ -12267,6 +12431,15 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/rockplanet/ngrcolony/security)
+"XP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/security/prison)
 "XQ" = (
 /obj/effect/turf_decal/industrial/traffic,
 /turf/open/floor/concrete/pavement,
@@ -12612,6 +12785,9 @@
 "Zu" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/small/directional/south,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
 /turf/open/floor/plating/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "Zv" = (
@@ -12626,6 +12802,8 @@
 	name = "Brig";
 	req_access = list(2)
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "Zz" = (
@@ -16973,7 +17151,7 @@ jP
 jP
 So
 Gp
-HA
+nu
 So
 FR
 Ut
@@ -17039,12 +17217,12 @@ md
 Xv
 PE
 Cf
-gk
+PQ
 gk
 gk
 EB
 HA
-HA
+aN
 So
 qO
 Mj
@@ -17251,10 +17429,10 @@ Dh
 UY
 hF
 sh
-ap
-ap
+BP
+cu
 VM
-ap
+eX
 Zx
 Sd
 Yr
@@ -17322,10 +17500,10 @@ So
 wd
 Zu
 So
+XP
 ap
 ap
-ap
-ap
+ye
 So
 JG
 RU
@@ -17393,7 +17571,7 @@ So
 So
 So
 So
-gX
+NM
 So
 So
 gX
@@ -17463,14 +17641,14 @@ SU
 SU
 Ga
 So
-pa
-pa
+DF
+yQ
 So
-pa
-pa
+DF
+Rk
 FP
-pa
-pa
+gp
+Tb
 So
 yw
 yw
@@ -17535,7 +17713,7 @@ VJ
 SU
 So
 At
-pa
+Up
 So
 pa
 AD
