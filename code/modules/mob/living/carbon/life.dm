@@ -428,7 +428,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		silent = max(silent-(0.5 * seconds_per_tick), 0)
 
 	if(druggy)
-		adjust_drugginess((0.5 * seconds_per_tick))
+		adjust_drugginess((-0.5 * seconds_per_tick))
 
 	if(hallucination)
 		handle_hallucinations(seconds_per_tick, times_fired)
