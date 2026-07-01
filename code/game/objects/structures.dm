@@ -21,13 +21,13 @@
 	var/broken = 0 //similar to machinery's stat BROKEN
 	///If projectiles are allowed to pass through a structure at all
 	var/pass_through = FALSE
-	///The chance of a projectile to pass through the structure
+	///The chance of a projectile to pass through the structure. Lower number means less projectiles pass through
 	var/pass_chance = 0
 	///If this is directional cover. eg. flipped tables
 	var/directional_cover = FALSE
-	///If this allows in projectiles incoming from the same type
+	///check if the turf the incoming thing is coming from the same type of cover object on it. If it is, let it through.
 	var/continuous_cover = FALSE
-	///If continuous_cover is enabled, is there any other types this should allow projectiles in from?
+	///if continuous cover is enabled, is there other types this cover should let things through from?
 	var/allowed_in_from
 
 /obj/structure/Initialize()
