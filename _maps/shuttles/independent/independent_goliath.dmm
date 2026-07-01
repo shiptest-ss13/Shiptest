@@ -766,9 +766,7 @@
 	id = "goliathblaststarboard";
 	name = "Thruster Blastdoors"
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "ez" = (
@@ -892,9 +890,10 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/machinery/telecomms/receiver/preset_left/birdstation{
-	autolinkers = list("receiverG");
-	freq_listening = list(1353)
+/obj/machinery/telecomms/receiver/preset_right{
+	autolinkers = list("receiverG", "hub");
+	network = "indie_commnet";
+	freq_listening = list(1353,1459)
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -1678,16 +1677,16 @@
 /area/ship/crew/dorm/captain)
 "jQ" = (
 /obj/effect/turf_decal/industrial/traffic/fulltile,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 1;
-	id = "goliathholohangar2"
-	},
 /obj/machinery/door/poddoor{
 	dir = 8;
 	id = "goliathblasthangar2"
 	},
 /obj/structure/cable{
 	icon_state = "0-10"
+	},
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart{
+	dir = 1;
+	id = "goliathholohangar2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hangar)
@@ -1698,6 +1697,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "jW" = (
@@ -1738,9 +1738,6 @@
 	},
 /obj/structure/disposalpipe/trunk{
 	dir = 8
-	},
-/obj/structure/sign/poster/contraband/cardinal_fore_aft{
-	pixel_x = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2032,6 +2029,10 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/structure/sign/poster/contraband/cardinal_fore_aft{
+	pixel_x = -32;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "lA" = (
@@ -2300,6 +2301,20 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office)
+"mZ" = (
+/obj/effect/spawner/bunk_bed{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 6
+	},
+/obj/structure/curtain/bounty{
+	layer = 4.1
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/carpet/nanoweave,
+/area/ship/crew/dorm)
 "nb" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -3605,9 +3620,6 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 9
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 32
-	},
 /obj/machinery/newscaster/directional/west{
 	pixel_y = 1
 	},
@@ -3618,6 +3630,7 @@
 	name = "Exterior Window Lockdown";
 	pixel_y = 12
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north,
 /turf/open/floor/carpet/green,
 /area/ship/maintenance/port)
 "uj" = (
@@ -3745,8 +3758,9 @@
 /obj/item/radio/intercom/directional/north{
 	pixel_y = 31
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north{
+	pixel_x = 0;
+	pixel_y = 38
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/canteen)
@@ -4076,15 +4090,15 @@
 /area/ship/hangar)
 "wM" = (
 /obj/effect/turf_decal/industrial/traffic/fulltile,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "goliathholohangar2"
-	},
 /obj/machinery/door/poddoor{
 	dir = 8;
 	id = "goliathblasthangar2"
 	},
 /obj/structure/cable{
 	icon_state = "0-9"
+	},
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart{
+	id = "goliathholohangar2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hangar)
@@ -4933,9 +4947,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/structure/sign/warning/electricshock{
 	pixel_y = 32
 	},
@@ -4961,9 +4973,6 @@
 /obj/item/binoculars{
 	pixel_y = 4;
 	pixel_x = -2
-	},
-/obj/machinery/camera/autoname{
-	dir = 1
 	},
 /obj/machinery/button/door{
 	dir = 1;
@@ -5697,6 +5706,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/storage)
 "Fn" = (
@@ -6198,7 +6208,7 @@
 /obj/machinery/telecomms/bus/preset_one{
 	autolinkers = list("hub","processor4","bus");
 	network = "indie_commnet";
-	freq_listening = list(1353)
+	freq_listening = list(1353, 1459)
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -6257,9 +6267,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway)
 "JW" = (
@@ -6605,9 +6613,7 @@
 	pixel_y = 32;
 	pixel_x = -8
 	},
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Mc" = (
@@ -7042,7 +7048,7 @@
 	},
 /obj/machinery/telecomms/server/presets/common{
 	autolinkers = list("common","hub");
-	freq_listening = list(1353);
+	freq_listening = list(1353, 1459);
 	network = "indie_commnet"
 	},
 /obj/effect/turf_decal/techfloor,
@@ -7099,6 +7105,10 @@
 /obj/machinery/light/small/directional/north,
 /obj/item/food/canned/peaches{
 	pixel_y = 7
+	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/east{
+	pixel_x = 22;
+	pixel_y = 4
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm)
@@ -7425,10 +7435,6 @@
 	dir = 6
 	},
 /obj/structure/table/wood,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34;
-	pixel_x = 32
-	},
 /obj/item/radio/intercom/directional/east{
 	pixel_y = 0
 	},
@@ -8324,6 +8330,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Wy" = (
@@ -8572,7 +8579,6 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/machinery/camera/autoname,
 /obj/machinery/light_switch{
 	pixel_x = 11;
 	pixel_y = 22
@@ -10683,7 +10689,7 @@ OQ
 Ra
 LV
 eX
-qP
+mZ
 uj
 aY
 aY

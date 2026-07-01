@@ -5,7 +5,7 @@
 
 /obj/machinery/pipedispenser
 	name = "pipe dispenser"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/machines/pipedispenser.dmi'
 	icon_state = "pipe_d"
 	desc = "Dispenses countless types of pipes. Very useful if you need pipes."
 	layer = GATEWAY_UNDERLAY_LAYER //so it renders underneath dispensed disposals

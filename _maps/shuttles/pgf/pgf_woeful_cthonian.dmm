@@ -923,10 +923,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "if" = (
-/obj/machinery/camera/autoname{
-	dir = 9;
-	pixel_y = 0
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/item/radio/intercom/directional/east{
 	pixel_y = 2
 	},
@@ -1877,6 +1874,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/camera/directional/east,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "sT" = (
@@ -4022,9 +4020,6 @@
 	pixel_x = -9;
 	id = "cth_in";
 	name = "shutter control"
-	},
-/obj/machinery/camera/autoname{
-	dir = 6
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
