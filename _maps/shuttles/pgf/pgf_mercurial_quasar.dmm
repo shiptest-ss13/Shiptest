@@ -221,6 +221,7 @@
 	pixel_y = 4;
 	pixel_x = -3
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "cP" = (
@@ -424,7 +425,7 @@
 /area/ship/crew/canteen)
 "eI" = (
 /obj/machinery/button/door{
-	pixel_y = 23;
+	pixel_y = 22;
 	specialfunctions = 4;
 	name = "door bolt control";
 	id = "quasar_bathroom_bolt";
@@ -432,8 +433,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 2;
-	pixel_y = 23;
-	pixel_x = 11
+	pixel_y = 20;
+	pixel_x = 12
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -688,7 +689,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/east{
-	pixel_y = 5
+	pixel_y = 6
 	},
 /obj/structure/extinguisher_cabinet/directional/east{
 	pixel_y = -7
@@ -1135,10 +1136,10 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = -6
+	pixel_x = -7
 	},
 /obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = 6
+	pixel_x = 7
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
@@ -1897,7 +1898,7 @@
 /obj/machinery/firealarm/directional/south,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = -11;
+	pixel_x = -12;
 	pixel_y = -19
 	},
 /obj/item/storage/box/flares{
@@ -2145,7 +2146,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 2;
-	pixel_y = 22;
+	pixel_y = 20;
 	pixel_x = 12
 	},
 /obj/structure/cable{
@@ -2222,7 +2223,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/light_switch{
-	pixel_y = 23;
+	pixel_y = 20;
 	pixel_x = -12
 	},
 /turf/open/floor/mineral/titanium,
@@ -2351,7 +2352,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 8;
-	pixel_y = -11;
+	pixel_y = -12;
 	pixel_x = 20
 	},
 /obj/item/clothing/suit/armor/gezena/navy{
@@ -2418,8 +2419,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = -10;
-	pixel_y = -19
+	pixel_x = -12;
+	pixel_y = -20
 	},
 /obj/machinery/computer/helm/viewscreen/directional/south{
 	pixel_x = 6
@@ -2463,6 +2464,11 @@
 	pixel_y = -3
 	},
 /obj/machinery/camera/autoname/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = -12
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "FL" = (
@@ -2608,8 +2614,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 2;
-	pixel_y = 23;
-	pixel_x = -11
+	pixel_y = 20;
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -2703,7 +2709,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 8;
-	pixel_y = -11;
+	pixel_y = -12;
 	pixel_x = 20
 	},
 /obj/structure/filingcabinet/chestdrawer{
@@ -3950,7 +3956,7 @@
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
-	pixel_y = -11
+	pixel_y = -12
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/turf_decal/trimline/opaque/green/filled/corner{
@@ -4059,7 +4065,10 @@
 	pixel_y = 8
 	},
 /obj/effect/turf_decal/corner/opaque/lime/diagonal,
-/obj/machinery/airalarm/directional/north,
+/obj/item/radio/intercom/directional/north,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north{
+	pixel_y = 37
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Yu" = (
@@ -4142,13 +4151,11 @@
 	dir = 2;
 	layer = 5
 	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -20;
-	pixel_y = 11
-	},
 /obj/machinery/firealarm/directional/west{
-	pixel_y = 0
+	pixel_y = -7
+	},
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -4183,7 +4190,6 @@
 	dir = 5
 	},
 /obj/item/radio/intercom/directional/east,
-/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "ZZ" = (

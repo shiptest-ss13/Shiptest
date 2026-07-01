@@ -101,7 +101,7 @@
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 20;
-	pixel_y = -10
+	pixel_y = -12
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
@@ -544,7 +544,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = -11;
+	pixel_x = -12;
 	pixel_y = -20
 	},
 /obj/machinery/light/directional/east,
@@ -604,7 +604,7 @@
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
-	pixel_y = -11
+	pixel_y = -12
 	},
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/tech,
@@ -647,7 +647,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = 10;
+	pixel_x = 12;
 	pixel_y = -20
 	},
 /obj/structure/chair/bench/beige/directional/south{
@@ -818,11 +818,6 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_x = 11;
-	pixel_y = -16
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "ft" = (
@@ -1122,7 +1117,7 @@
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -21;
-	pixel_y = -10
+	pixel_y = -12
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
@@ -1447,7 +1442,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = 10;
+	pixel_x = 12;
 	pixel_y = -20
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -1862,7 +1857,7 @@
 /obj/item/bedsheet/double/brown,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = -10;
+	pixel_x = -12;
 	pixel_y = -20
 	},
 /obj/machinery/firealarm/directional/south{
@@ -2405,7 +2400,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "og" = (
-/obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -2415,10 +2409,11 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = 11;
-	pixel_y = -16
+	pixel_x = 12;
+	pixel_y = -20
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/cic)
 "oj" = (
@@ -3320,8 +3315,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_x = -21;
-	pixel_y = -10
+	pixel_x = -20;
+	pixel_y = -12
 	},
 /obj/effect/turf_decal/corner/opaque/orange{
 	dir = 9
@@ -3982,8 +3977,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/structure/closet/firecloset/wall/directional/south,
-/obj/machinery/airalarm/directional/east,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 12
+	},
+/obj/machinery/airalarm/directional/south,
+/obj/structure/closet/firecloset/wall/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "xM" = (
@@ -4481,7 +4481,7 @@
 	id = "bolide_win_1";
 	name = "external window shutters";
 	pixel_y = -21;
-	pixel_x = -6
+	pixel_x = -4
 	},
 /obj/machinery/button/door{
 	dir = 1;
@@ -7284,10 +7284,10 @@
 	pixel_y = 3
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_y = 2
+	pixel_y = 4
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
-	pixel_y = -10
+	pixel_y = -8
 	},
 /obj/machinery/button/door{
 	pixel_y = 15;
@@ -7952,7 +7952,7 @@
 /area/ship/storage/starboard)
 "To" = (
 /obj/machinery/light_switch{
-	pixel_x = -11;
+	pixel_x = -12;
 	pixel_y = 20
 	},
 /obj/effect/turf_decal/box/corners{
@@ -8409,7 +8409,7 @@
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 20;
-	pixel_y = -10
+	pixel_y = -12
 	},
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /obj/item/radio/intercom/directional/north,
@@ -9181,7 +9181,7 @@
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 20;
-	pixel_y = 10
+	pixel_y = 12
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
