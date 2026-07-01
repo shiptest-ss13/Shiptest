@@ -1,7 +1,7 @@
 /datum/component/cover
 	///how many projectiles will pass this cover, lower means stronger cover
 	var/proj_pass_rate = 50
-	///if this is directional cover (eg. flipped tables)
+	///if this is directional cover and blocks one direction. (eg. flipped tables)
 	var/directional_cover = FALSE
 	///check if the turf the incoming thing is coming from the same type of cover object on it. If it is, let it through.
 	var/continuous_cover = FALSE

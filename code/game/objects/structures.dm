@@ -23,7 +23,7 @@
 	var/pass_through = FALSE
 	///The chance of a projectile to pass through the structure. Lower number means less projectiles pass through
 	var/pass_chance = 0
-	///If this is directional cover. eg. flipped tables
+	///If this is directional cover and blocks one direction. eg. flipped tables
 	var/directional_cover = FALSE
 	///check if the turf the incoming thing is coming from the same type of cover object on it. If it is, let it through.
 	var/continuous_cover = FALSE
