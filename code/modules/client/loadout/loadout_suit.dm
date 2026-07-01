@@ -161,6 +161,10 @@
 
 //Misc
 
+/datum/gear/suit/apron
+	display_name = "apron"
+	path = /obj/item/clothing/suit/apron
+
 /datum/gear/suit/labcoat
 	display_name = "labcoat"
 	path = /obj/item/clothing/suit/toggle/labcoat
