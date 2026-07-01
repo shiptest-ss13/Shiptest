@@ -22,7 +22,7 @@
 	///If projectiles are allowed to pass through a structure at all
 	var/pass_through = FALSE
 	///The chance of a projectile to pass through the structure
-	var/passchance = 0
+	var/pass_chance = 0
 	///If this is directional cover. eg. flipped tables
 	var/directional_cover = FALSE
 	///If this allows in projectiles incoming from the same type
@@ -42,7 +42,7 @@
 	if(climbable)
 		AddElement(/datum/element/climbable, climb_time, climb_stun)
 	if(pass_through)
-		AddComponent(/datum/component/cover, passchance, directional_cover, continuous_cover, allowed_in_from)
+		AddComponent(/datum/component/cover, pass_chance, directional_cover, continuous_cover, allowed_in_from)
 	GLOB.cameranet.updateVisibility(src)
 
 /obj/structure/Destroy()

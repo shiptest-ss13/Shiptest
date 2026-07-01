@@ -16,7 +16,7 @@
 	max_integrity = 100
 	var/bar_material = METAL
 	pass_through = TRUE
-	passchance = 50
+	pass_chance = 50
 	continuous_cover = TRUE
 	allowed_in_from = /obj/structure/barricade
 
@@ -108,7 +108,7 @@
 	icon_state = "woodenbarricade-old"
 	drop_amount = 1
 	max_integrity = 50
-	passchance = 65
+	pass_chance = 65
 	crowbar_time = 2 SECONDS
 
 /obj/structure/barricade/wooden/crude/snow
@@ -126,7 +126,7 @@
 	icon_state = "sandbags-0"
 	base_icon_state = "sandbags"
 	max_integrity = 280
-	passchance = 20
+	pass_chance = 20
 	pass_flags_self = LETPASSTHROW
 	bar_material = SAND
 	climbable = TRUE
@@ -160,7 +160,7 @@
 	density = FALSE
 	anchored = FALSE
 	max_integrity = 180
-	passchance = 20
+	pass_chance = 20
 	armor = list("melee" = 10, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 10, "acid" = 0)
 
 	var/deploy_time = 40

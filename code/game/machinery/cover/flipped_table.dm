@@ -11,7 +11,7 @@
 		name = "flipped [table_type.name]"
 		desc = "[table_type.desc] It is flipped!"
 		max_integrity = table_type.max_integrity
-//		atom_integrity = table_type.atom_integity
+		atom_integrity = table_type.atom_integity
 
 /obj/structure/barricade/directional/flippedtable/examine(mob/user)
 	. = ..()

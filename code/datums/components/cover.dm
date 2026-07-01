@@ -1,10 +1,12 @@
 /datum/component/cover
-	var/proj_pass_rate = 50 // how many projectiles will pass this cover, lower means stronger cover
-	var/directional_cover = FALSE // if this is directional cover (eg. flipped tables)
-	var/cover_on_own_tile = FALSE
-	// whether the cover should let projectiles come in from similar cover objects. eg sandbags vs random rocks
+	/// how many projectiles will pass this cover, lower means stronger cover
+	var/proj_pass_rate = 50
+	/// if this is directional cover (eg. flipped tables)
+	var/directional_cover = FALSE
+	/// check if the incoming thing is coming from the same type of cover object. If it is, let it through.
 	var/continuous_cover = FALSE
-	var/allowed_in_from // if continuous cover is enabled, is there other types this cover should allow projectiles in from?
+	/// if continuous cover is enabled, is there other types this cover should things in from?
+	var/allowed_in_from
 
 /datum/component/cover/Initialize(pass_rate, d_cover, continuous, allowed)
 	. = ..()
