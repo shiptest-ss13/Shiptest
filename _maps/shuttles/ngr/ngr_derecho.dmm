@@ -494,16 +494,15 @@
 /obj/effect/turf_decal/corner/opaque/tan/half,
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/mineral/processing_unit_console{
-	pixel_x = 28;
-	pixel_y = 28;
-	dir = 2;
-	machinedir = 1;
-	dist = 2
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1;
 	color = "#eeac2e"
+	},
+/obj/machinery/computer/processing_unit_console/directional/north{
+	dist = 2;
+	pixel_x = 32;
+	pixel_y = 18;
+	machinedir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
@@ -5294,14 +5293,14 @@
 "Uh" = (
 /obj/effect/turf_decal/corner/opaque/tan/half,
 /obj/effect/turf_decal/trimline/opaque/bar/line,
-/obj/machinery/conveyor_switch/oneway{
-	pixel_x = -9;
-	pixel_y = 13;
-	id = "derecho_conveyor"
-	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1;
 	color = "#eeac2e"
+	},
+/obj/machinery/conveyor_switch/oneway{
+	pixel_x = -13;
+	pixel_y = 12;
+	id = "derecho_conveyor"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
