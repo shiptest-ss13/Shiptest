@@ -133,10 +133,10 @@
 	pixel_y = 32;
 	pixel_x = 5
 	},
-/obj/machinery/computer/security{
-	dir = 2;
-	layer = 3.09;
-	icon_state = "computer-left"
+/obj/structure/table/reinforced,
+/obj/machinery/recharger{
+	pixel_y = 8;
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -147,9 +147,11 @@
 /obj/effect/spawner/bunk_bed{
 	dir = 4
 	},
-/obj/structure/curtain/cloth/grey,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
+	},
+/obj/structure/sign/flag/gezena{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -173,9 +175,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "cA" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -185,6 +184,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 9
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
@@ -467,13 +469,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "eL" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/structure/railing/corner{
-	dir = 4;
-	pixel_y = -22;
-	layer = 3.09
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 5
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 1
@@ -505,9 +502,6 @@
 /obj/item/storage/backpack/duffelbag{
 	pixel_x = -10;
 	pixel_y = -6
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
 	},
 /obj/machinery/firealarm/directional/west{
 	pixel_y = 2
@@ -602,6 +596,9 @@
 /obj/item/clothing/under/gezena{
 	pixel_y = 3;
 	pixel_x = -9
+	},
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 10
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
@@ -1093,6 +1090,16 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/engine,
 /area/ship/engineering)
+"mw" = (
+/obj/effect/spawner/bunk_bed{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "mD" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1325,11 +1332,11 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "qM" = (
-/obj/structure/railing{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 10
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 2
@@ -1443,7 +1450,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1455,6 +1461,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/orange{
 	dir = 9
+	},
+/obj/structure/sign/departments/engineering{
+	pixel_y = 24
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
@@ -1481,7 +1490,7 @@
 	},
 /obj/machinery/button/door{
 	pixel_y = 20;
-	pixel_x = 8;
+	pixel_x = 7;
 	id = "quasar_starboard_gate";
 	name = "starboard blast doors control";
 	dir = 2
@@ -1496,13 +1505,13 @@
 	id = "quasar_port_holofield";
 	dir = 2;
 	pixel_y = 27;
-	pixel_x = -2;
+	pixel_x = -3;
 	name = "port holofield control"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 2;
 	pixel_y = 27;
-	pixel_x = 6;
+	pixel_x = 7;
 	id = "quasar_starboard_holofield";
 	name = "starboard holofield control"
 	},
@@ -1557,20 +1566,28 @@
 	pixel_x = -7;
 	pixel_y = -2
 	},
-/obj/item/attachment/rail_light{
-	pixel_y = -12
+/obj/item/attachment/bayonet{
+	pixel_x = -8;
+	pixel_y = 0
 	},
 /obj/item/attachment/rail_light{
-	pixel_y = -8;
-	pixel_x = -3
+	pixel_y = -12
 	},
 /obj/item/attachment/rail_light{
 	pixel_y = -12;
 	pixel_x = -3
 	},
 /obj/item/attachment/rail_light{
+	pixel_y = -8;
+	pixel_x = -3
+	},
+/obj/item/attachment/rail_light{
 	pixel_y = -10;
 	pixel_x = -6
+	},
+/obj/item/grenade/smokebomb{
+	pixel_x = 9;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -1941,10 +1958,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "yc" = (
-/obj/structure/railing/corner{
-	dir = 8;
-	layer = 5
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2089,7 +2102,8 @@
 	pixel_x = -2
 	},
 /obj/structure/sign/warning/nosmoking{
-	pixel_x = -26
+	pixel_x = -24;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -2240,16 +2254,16 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	pixel_y = 20;
-	pixel_x = -3;
+	pixel_y = 22;
+	pixel_x = -5;
 	id = "quasar_port_gate";
 	name = "port blast door control"
 	},
 /obj/machinery/button/shieldwallgen{
 	id = "quasar_port_holofield";
 	dir = 2;
-	pixel_y = 19;
-	pixel_x = 6;
+	pixel_y = 22;
+	pixel_x = 5;
 	name = "port holofield control"
 	},
 /turf/open/floor/plasteel/tech,
@@ -2273,6 +2287,7 @@
 	pixel_x = 9;
 	pixel_y = 19
 	},
+/obj/machinery/computer/security/telescreen/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge/cool)
 "EC" = (
@@ -2474,10 +2489,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "GR" = (
-/obj/machinery/door/window/brigdoor/westright{
-	dir = 8;
-	req_one_access_txt = "1"
-	},
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/warning{
 	dir = 9
 	},
@@ -2522,9 +2533,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
 "Hn" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2535,6 +2543,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 6
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "HE" = (
@@ -2777,9 +2788,6 @@
 	pixel_y = -1;
 	pixel_x = 6
 	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/item/storage/backpack/satchel/sec/gezena{
 	pixel_x = -8;
 	pixel_y = -12
@@ -2997,13 +3005,8 @@
 /obj/item/storage/backpack/industrial{
 	pixel_x = 7
 	},
-/obj/structure/table/reinforced,
 /obj/item/geiger_counter,
 /obj/item/radio/headset/pgf/alt,
-/obj/structure/closet/secure_closet/wall/directional/south{
-	icon_state = "cargo_wall";
-	name = "engineer's locker"
-	},
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/suit/armor/gezena/engi{
 	pixel_y = -6
@@ -3016,6 +3019,10 @@
 	pixel_x = 9
 	},
 /obj/item/analyzer,
+/obj/structure/closet/secure_closet/engineering_personal{
+	populate = 0;
+	anchored = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Lw" = (
@@ -3326,16 +3333,20 @@
 	pixel_x = -8
 	},
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
-	pixel_x = 5;
+	pixel_x = 2;
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_x = 5;
+	pixel_x = 2;
 	pixel_y = 4
 	},
 /obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_x = 5;
+	pixel_x = 2;
 	pixel_y = 0
+	},
+/obj/item/storage/pill_bottle/tramal{
+	pixel_x = 10;
+	pixel_y = 3
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
@@ -3344,10 +3355,12 @@
 	dir = 2
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/light/directional/west,
 /obj/structure/bedsheetbin{
 	pixel_y = 7;
 	pixel_x = -1
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -3368,14 +3381,14 @@
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
-	pixel_y = -19;
-	pixel_x = 6;
+	pixel_y = -20;
+	pixel_x = 5;
 	id = "quasar_starboard_holofield";
 	name = "starboard holofield control"
 	},
 /obj/machinery/button/door{
 	pixel_y = -20;
-	pixel_x = -3;
+	pixel_x = -5;
 	id = "quasar_starboard_gate";
 	name = "starboard blast doors control";
 	dir = 1
@@ -3427,16 +3440,11 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Px" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/structure/railing/corner{
-	dir = 1;
-	pixel_y = -22;
-	layer = 3.09
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 5
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 1
@@ -3521,16 +3529,16 @@
 /turf/template_noop,
 /area/template_noop)
 "Re" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "Rm" = (
@@ -3541,10 +3549,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office/cic)
 "Rv" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood/corner,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -3560,6 +3564,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner/walnut,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "Sr" = (
@@ -3648,8 +3656,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Tv" = (
-/obj/structure/railing{
-	dir = 4
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 10
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 2
@@ -3690,15 +3698,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "TW" = (
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/end/walnut{
+	dir = 4
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
@@ -3715,7 +3723,8 @@
 	icon_state = "4-8"
 	},
 /obj/structure/sign/departments/medbay/alt{
-	pixel_y = -28
+	pixel_y = -14;
+	pixel_x = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge/cool)
@@ -4020,10 +4029,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security/armory)
 "XW" = (
-/obj/structure/railing/corner{
-	dir = 2;
-	layer = 5
-	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
@@ -4054,6 +4059,7 @@
 	pixel_y = 8
 	},
 /obj/effect/turf_decal/corner/opaque/lime/diagonal,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Yu" = (
@@ -4171,8 +4177,7 @@
 /area/ship/engineering)
 "ZY" = (
 /obj/machinery/computer/cargo{
-	dir = 2;
-	icon_state = "computer-right"
+	dir = 2
 	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 5
@@ -4413,7 +4418,7 @@ sB
 (13,1,1) = {"
 sB
 bU
-bZ
+mw
 Re
 Fm
 bU
