@@ -306,6 +306,7 @@
 	quality = DRINK_NICE
 	nutriment_factor = 2
 	taste_description = "bitter tea"
+	glass_icon_state = "arnold_palmer"
 	glass_name = "Arnold Palmer"
 	glass_desc = "Iced tea and lemonade. You don't think you know any Arnolds, though."
 
@@ -669,19 +670,19 @@
 	color = "#FF8CFF" // rgb: 255, 140, 255
 	quality = DRINK_VERYGOOD
 	taste_description = "homely fruit"
+	glass_icon_state = "doctorsdelightglass"
 	glass_name = "Doctor's Delight"
 	glass_desc = "A homemade curative. Helps the body heal with the nutrition density, but it leaves a gnawing hunger afterwards."
 
 /datum/reagent/consumable/doctor_delight/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-0.5, 0)
-	M.adjustFireLoss(-0.5, 0)
-	M.adjustToxLoss(-0.5, 0)
-	M.adjustOxyLoss(-0.5, 0)
+	M.adjustBruteLoss(-0.2, FALSE)
+	M.adjustFireLoss(-0.2, FALSE)
+	M.adjustToxLoss(-0.2, FALSE)
+	M.adjustOxyLoss(-0.2, FALSE)
 	if(M.nutrition && (M.nutrition - 2 > 0))
-		if(!(M.mind && M.mind.assigned_role == "Medical Doctor")) //Drains the nutrition of the holder. Not medical doctors though, since it's the Doctor's Delight!
-			M.adjust_nutrition(-2)
+		M.adjust_nutrition(-1)
 	..()
-	. = 1
+	return TRUE
 
 /datum/reagent/consumable/chocolatepudding
 	name = "Chocolate Pudding"
@@ -761,7 +762,8 @@
 	description = "A solution."
 	color = "#EEFF00"
 	quality = DRINK_NICE
-	taste_description = "extreme sourness" //needs own sprite mine are trash //your sprite is great tho
+	taste_description = "extreme sourness"
+	glass_icon_state = "triplecitrus"
 	glass_name = "glass of triple citrus"
 	glass_desc = "A mixture of citrus juices. Intensely sour and leaves you reeling afterwards."
 

@@ -457,6 +457,7 @@
 	boozepwr = 35
 	quality = DRINK_NICE
 	taste_description = "dry and salty"
+	glass_icon_state = "margaritaglass"
 	glass_name = "Margarita"
 	glass_desc = "On the rocks with salt on the rim. Apparently the name meant something in a language long lost on Earth."
 
@@ -563,6 +564,7 @@
 	boozepwr = 70
 	quality = DRINK_NICE
 	taste_description = "tart bitterness"
+	glass_icon_state = "vodkatonicglass"
 	glass_name = "Vodka and Tonic"
 	glass_desc = "The stronger sibling of the Gin and Tonic."
 
@@ -820,6 +822,7 @@
 	boozepwr = 35
 	quality = DRINK_GOOD
 	taste_description = "sour lemons"
+	glass_icon_state = "whiskey_sour"
 	glass_name = "whiskey sour"
 	glass_desc = "Lemon juice mixed with whiskey and a dash of sugar. Surprisingly satisfying."
 
@@ -1484,6 +1487,7 @@
 	color = "#FFF1B2"
 	quality = DRINK_FANTASTIC
 	taste_description = "pineapple, coconut, and a hint of the ocean"
+	glass_icon_state = "pina_colada"
 	glass_name = "Pina Colada"
 	glass_desc = "If you like pina coladas, and getting caught in the rain... well, you'll like this drink."
 
@@ -1508,6 +1512,7 @@
 	color = "#EFB42A"
 	quality = DRINK_GOOD
 	taste_description = "sweetness followed by a soft sourness and warmth"
+	glass_icon_state = "gingeramaretto"
 	glass_name = "Ginger Amaretto"
 	glass_desc = "Technically intended to come with a sprig of rosemary... but where are you going to get your hands on that?"
 

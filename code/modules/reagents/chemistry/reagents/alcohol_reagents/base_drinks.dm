@@ -22,6 +22,7 @@
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 45
 	taste_description = "a bitter combination"
+	glass_icon_state = "kahluaglass"
 	glass_name = "glass of coffee liquor"
 	glass_desc = "Bitter from the coffee and alcohol alike!"
 
@@ -106,6 +107,7 @@
 	color = "#7E4043" // rgb: 126, 64, 67
 	boozepwr = 35
 	taste_description = "bitter sweetness"
+	glass_icon_state = "wineglass"
 	glass_name = "glass of wine"
 	glass_desc = "Deeply red wine in a glass. You're not enough of a sommelier to really describe how it smells."
 
@@ -132,6 +134,7 @@
 	color = "#E17600"
 	boozepwr = 25
 	taste_description = "fruity and nutty sweetness"
+	glass_icon_state = "amarettoglass"
 	glass_name = "glass of amaretto"
 	glass_desc = "A sweet and syrupy looking alcohol. You're lucky it wasn't lost to history."
 
@@ -179,6 +182,7 @@
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 65
 	taste_description = "hearty alcoholic grains"
+	glass_icon_state = "aleglass"
 	glass_name = "glass of ale"
 	glass_desc = "A pint of ale. A classic for the working class."
 
@@ -263,6 +267,7 @@
 	color = "#ffffc1"
 	boozepwr = 40
 	taste_description = "auspicious occasions and bad decisions"
+	glass_icon_state = "champagne_glass"
 	glass_name = "Champagne"
 	glass_desc = "A sparkling wine, traditionally served in a flute that clearly displays the slowly rising bubbles."
 
