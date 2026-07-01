@@ -565,7 +565,7 @@
 	. = ..()
 	if(.)
 
-		var/obj/item/storage/part_replacer/cyborg/RPED = locate() in R
+		var/obj/item/borg/upgrade/rped/RPED = locate() in R
 		if(RPED)
 			to_chat(user, span_warning("This unit is already equipped with a RPED module!"))
 			return FALSE
@@ -577,7 +577,7 @@
 /obj/item/borg/upgrade/rped/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
 	if (.)
-		var/obj/item/storage/part_replacer/cyborg/RPED = locate() in R.module
+		var/obj/item/borg/upgrade/rped/RPED = locate() in R.module
 		if (RPED)
 			R.module.remove_module(RPED, TRUE)
 
