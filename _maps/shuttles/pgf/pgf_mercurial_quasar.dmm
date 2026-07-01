@@ -1371,9 +1371,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "ru" = (
@@ -2387,9 +2385,7 @@
 	dir = 5;
 	id = "mercurial_quasar_grid"
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Fm" = (
@@ -2451,9 +2447,7 @@
 	pixel_x = 10;
 	pixel_y = -3
 	},
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "FL" = (
@@ -3362,7 +3356,7 @@
 	dir = 6;
 	id = "mercurial_quasar_grid"
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "On" = (

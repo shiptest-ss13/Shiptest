@@ -391,8 +391,7 @@
 /obj/structure/platform{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 6;
+/obj/machinery/camera/autoname/directional/north{
 	network = list("ns-depot")
 	},
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet/interior,
@@ -982,7 +981,7 @@
 	pixel_y = 22;
 	pixel_x = 6
 	},
-/obj/machinery/camera/autoname{
+/obj/machinery/camera/autoname/directional/north{
 	network = list("ns-depot")
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
@@ -1344,7 +1343,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
+/obj/machinery/camera/autoname/directional/north{
 	network = list("ns-depot")
 	},
 /turf/open/floor/plasteel/patterned/jungleplanet/interior,
@@ -1565,8 +1564,7 @@
 	locked = 0
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
-	dir = 4;
+/obj/machinery/camera/autoname/directional/west{
 	network = list("ns-depot")
 	},
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
@@ -2149,8 +2147,7 @@
 	pixel_x = 3;
 	pixel_y = -4
 	},
-/obj/machinery/camera/autoname{
-	dir = 1;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("ns-depot")
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
@@ -2236,7 +2233,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/autoname{
+/obj/machinery/camera/autoname/directional/north{
 	network = list("ns-depot")
 	},
 /turf/open/floor/plasteel/patterned/jungleplanet/lit,
@@ -2885,8 +2882,7 @@
 /obj/structure/platform{
 	dir = 5
 	},
-/obj/machinery/camera/autoname{
-	dir = 1;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("ns-depot")
 	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
@@ -3313,7 +3309,7 @@
 "yn" = (
 /obj/effect/turf_decal/trimline/opaque/nsorange/warning,
 /obj/structure/spacevine/weak,
-/obj/machinery/camera/autoname{
+/obj/machinery/camera/autoname/directional/north{
 	network = list("ns-depot")
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
@@ -3622,8 +3618,7 @@
 /obj/structure/platform{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 6;
+/obj/machinery/camera/autoname/directional/north{
 	network = list("ns-depot")
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
@@ -3697,8 +3692,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/vomit/old,
-/obj/machinery/camera/autoname{
-	dir = 1;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("ns-depot")
 	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
@@ -4679,7 +4673,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 9
 	},
-/obj/machinery/camera/autoname{
+/obj/machinery/camera/autoname/directional/north{
 	network = list("ns-depot")
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -5908,7 +5902,7 @@
 	dir = 1
 	},
 /obj/structure/chair/bench/orange/directional/south,
-/obj/machinery/camera/autoname{
+/obj/machinery/camera/autoname/directional/north{
 	network = list("ns-depot")
 	},
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
