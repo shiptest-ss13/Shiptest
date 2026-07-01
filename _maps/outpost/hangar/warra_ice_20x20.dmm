@@ -502,7 +502,7 @@
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/hangar)
 "vw" = (
-/obj/structure/sign/departments/cargo,
+/obj/structure/sign/departments/cargo/warra,
 /turf/closed/indestructible/titanium/nodiagnonal,
 /area/hangar)
 "wQ" = (
@@ -650,6 +650,9 @@
 	},
 /obj/structure/chair{
 	dir = 4
+	},
+/obj/structure/sign/departments/cargo/warra{
+	pixel_y = 29
 	},
 /turf/open/floor/plasteel/tech/grid/warra_outpost/lit,
 /area/hangar)
@@ -1080,6 +1083,15 @@
 /turf/open/floor/plasteel/patterned/brushed{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"ZN" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
+/obj/machinery/holosign/random{
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/tech/warra_outpost/lit,
 /area/hangar)
 "ZO" = (
 /obj/structure/flora/grass/green,
@@ -2266,7 +2278,7 @@ ac
 ac
 ac
 am
-vw
+am
 Ga
 nh
 VP
@@ -2350,7 +2362,7 @@ ac
 ac
 ac
 am
-Hu
+ZN
 kq
 Aq
 Np

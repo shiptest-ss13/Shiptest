@@ -1500,10 +1500,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/cargo)
 "lS" = (
-/obj/machinery/computer/electrolyzer_console{
-	pixel_x = 0;
-	pixel_y = 25
-	},
+/obj/machinery/computer/electrolyzer_console/directional/north,
 /obj/machinery/conveyor_switch/oneway{
 	id = "conveyors"
 	},

@@ -2446,10 +2446,8 @@
 	pixel_x = -11;
 	pixel_y = 13
 	},
-/obj/machinery/mineral/processing_unit_console{
-	machinedir = 9;
-	pixel_x = -32;
-	pixel_y = -4
+/obj/machinery/computer/processing_unit_console/directional/north{
+	machinedir = 9
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -4206,10 +4204,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "rn" = (
-/obj/machinery/mineral/processing_unit_console{
-	machinedir = 9;
-	pixel_x = -32;
-	pixel_y = -4
+/obj/machinery/computer/processing_unit_console/directional/north{
+	machinedir = 9
 	},
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/dark,
@@ -12759,7 +12755,7 @@
 /obj/structure/table{
 	name = "picnic table"
 	},
-/obj/structure/sign/warning/enginesafety{
+/obj/structure/sign/poster/official/moth/hardhats{
 	pixel_x = -32
 	},
 /obj/item/weldingtool{

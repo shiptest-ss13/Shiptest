@@ -826,12 +826,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/outpost/crew/lounge)
-"eh" = (
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
-/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost/lit,
-/area/outpost/exterior/warra)
 "ei" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/catwalk/over/plated_catwalk,
@@ -1427,9 +1421,7 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/port)
 "hv" = (
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/effect/turf_decal/siding/white,
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
@@ -1698,11 +1690,8 @@
 /obj/effect/turf_decal/corner/opaque/nsorange/border{
 	dir = 1
 	},
-/obj/machinery/mineral/processing_unit_console{
-	dir = 8;
-	machinedir = 1;
-	output_dir = 4;
-	pixel_x = 24
+/obj/machinery/computer/processing_unit_console/directional/east{
+	machinedir = 1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
@@ -1751,6 +1740,9 @@
 	},
 /obj/effect/landmark/outpost/elevator_machine{
 	shaft = "2"
+	},
+/obj/machinery/holosign/random{
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
@@ -1879,6 +1871,9 @@
 "jz" = (
 /obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/trimline/opaque/warrablue/line,
+/obj/machinery/holosign/random{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
 "jA" = (
@@ -1903,9 +1898,7 @@
 /turf/open/floor/plasteel/patterned/cargo_one/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "jK" = (
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/firealarm/directional/south,
 /mob/living/simple_animal/bot/cleanbot{
 	desc = "Pray for your life, litter!";
@@ -2209,9 +2202,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -2232,9 +2223,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 6
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
@@ -2470,9 +2459,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 1
 	},
@@ -2569,6 +2556,15 @@
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
+"mz" = (
+/obj/structure/flora/grass/green{
+	layer = 3.1
+	},
+/obj/machinery/holosign/random{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/snow/warra_outpost/lit,
+/area/outpost/exterior/warra)
 "mB" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 4
@@ -2637,9 +2633,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 9
 	},
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/machinery/light/directional/west,
 /obj/machinery/computer/outpost_export_console{
 	dir = 4
@@ -2835,7 +2829,7 @@
 "om" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/outpost/vacant_rooms/shop)
 "or" = (
@@ -2974,7 +2968,7 @@
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 8
 	},
-/obj/structure/sign/departments/evac{
+/obj/structure/sign/departments/evac/warra{
 	name = "\improper Shuttle Dock sign";
 	pixel_y = -31
 	},
@@ -3131,6 +3125,9 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
+/obj/structure/sign/departments/deck_2_warra{
+	pixel_x = 26
+	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "qd" = (
@@ -3329,7 +3326,7 @@
 /area/outpost/exterior/warra)
 "ri" = (
 /obj/structure/railing,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/conveyor{
 	dir = 4;
 	id = "NTrock"
@@ -3726,9 +3723,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
@@ -4082,9 +4077,7 @@
 /area/outpost/maintenance/port)
 "vt" = (
 /obj/structure/flora/rock/pile/icy,
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plating/asteroid/snow/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "vu" = (
@@ -4110,6 +4103,9 @@
 	},
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 4
+	},
+/obj/structure/sign/departments/medbay/warra{
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
@@ -4762,9 +4758,7 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/machinery/vending/boozeomat/syndicate_access,
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
@@ -4879,9 +4873,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
 "zm" = (
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "zn" = (
@@ -5631,10 +5623,8 @@
 /area/outpost/exterior/warra)
 "CU" = (
 /obj/effect/turf_decal/corner/opaque/nsorange/border,
-/obj/machinery/computer/electrolyzer_console{
-	density = 0;
-	dir = 8;
-	pixel_x = 24
+/obj/machinery/computer/electrolyzer_console/directional/east{
+	density = 0
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
@@ -5908,9 +5898,7 @@
 /obj/effect/turf_decal/trimline/opaque/warrablue/line{
 	dir = 4
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 31
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/bar)
 "El" = (
@@ -6025,9 +6013,7 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/vacant_rooms/shop)
 "ER" = (
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/dorm)
@@ -6069,9 +6055,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/maintenance/starboard)
 "EZ" = (
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost/lit,
 /area/outpost/exterior/warra)
@@ -7325,6 +7309,9 @@
 	},
 /obj/structure/chair/bench/blue/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/departments/evac/warra{
+	pixel_x = 26
+	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "Lq" = (
@@ -7794,6 +7781,9 @@
 /obj/item/trash/sosjerky{
 	pixel_y = 12
 	},
+/obj/structure/sign/departments/restroom/warra{
+	pixel_x = 26
+	},
 /turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "Nx" = (
@@ -8262,9 +8252,7 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/machinery/portable_atmospherics/canister{
 	icon_state = "orangews"
 	},
@@ -8349,7 +8337,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/white,
 /area/outpost/medical)
 "Rq" = (
@@ -8604,6 +8592,12 @@
 /obj/machinery/door/poddoor/ert,
 /turf/open/floor/plasteel/tech/warra_outpost,
 /area/outpost/exterior/warra/wilderness)
+"SB" = (
+/obj/structure/sign/departments/evac/warra{
+	pixel_x = 26
+	},
+/turf/open/floor/plating/asteroid/snow/warra_outpost/lit,
+/area/outpost/exterior/warra)
 "SC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/catwalk/over/plated_catwalk,
@@ -9209,6 +9203,12 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
+"VG" = (
+/obj/structure/sign/departments/cargo/warra{
+	pixel_x = 26
+	},
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost/lit,
+/area/outpost/exterior/warra)
 "VJ" = (
 /turf/open/floor/plating/ice/temperate{
 	light_color = "#1B1D2E"
@@ -9305,7 +9305,7 @@
 	},
 /obj/effect/turf_decal/siding/white,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/warning/coldtemp{
+/obj/structure/sign/warning/coldtemp/warra{
 	pixel_y = -30
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -9335,6 +9335,12 @@
 "Wm" = (
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
+"Wn" = (
+/obj/structure/sign/departments/deck_1_warra{
+	pixel_x = 26
+	},
+/turf/open/floor/plating/asteroid/snow/warra_outpost/lit,
+/area/outpost/exterior/warra)
 "Ww" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
@@ -9413,7 +9419,7 @@
 "Xd" = (
 /obj/machinery/cryopod,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/cryo)
 "Xg" = (
@@ -9563,7 +9569,7 @@
 /turf/open/floor/plating,
 /area/outpost/vacant_rooms/shop)
 "XD" = (
-/obj/structure/sign/warning/coldtemp{
+/obj/structure/sign/warning/coldtemp/warra{
 	pixel_x = -30;
 	pixel_y = 2
 	},
@@ -9796,6 +9802,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
+"YG" = (
+/obj/machinery/holosign/random{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost/lit,
+/area/outpost/exterior/warra)
 "YH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
@@ -9813,9 +9825,7 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/structure/closet/secure_closet/brig,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security)
 "YO" = (
@@ -9897,9 +9907,7 @@
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "Zp" = (
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/conveyor{
 	dir = 4;
 	id = "NTice"
@@ -14655,7 +14663,7 @@ Lq
 Lq
 mJ
 FP
-qO
+YG
 kD
 Ts
 js
@@ -14747,7 +14755,7 @@ fL
 Uq
 Xr
 Sx
-eh
+zm
 kD
 Xu
 vC
@@ -15202,7 +15210,7 @@ TS
 TS
 qW
 qW
-dR
+mz
 qO
 ym
 rh
@@ -15489,9 +15497,9 @@ ia
 dR
 eo
 vt
+SB
+Wn
 eo
-eo
-kq
 eo
 vs
 vs
@@ -15577,7 +15585,7 @@ Lq
 mB
 Gt
 AB
-qO
+YG
 pH
 pH
 pH
@@ -15752,7 +15760,7 @@ QU
 bM
 PS
 kH
-qO
+VG
 Pp
 qO
 WO
@@ -15847,7 +15855,7 @@ mk
 mk
 qO
 Ie
-qO
+VG
 gM
 qO
 UL

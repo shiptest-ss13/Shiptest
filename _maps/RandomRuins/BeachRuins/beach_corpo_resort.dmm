@@ -2238,9 +2238,6 @@
 	dir = 1
 	},
 /obj/machinery/door/window/northleft,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -32
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
 	pixel_x = -21;
@@ -2249,6 +2246,7 @@
 	id = "corporate_resort_bar_main_window";
 	dir = 4
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/west,
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/corpo_resort/bar)
 "jz" = (
@@ -3984,8 +3982,7 @@
 /obj/structure/platform/corner{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("resort_power_station")
 	},
 /turf/open/water/beach/underground,
@@ -4084,8 +4081,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("resort_power_station")
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -10895,7 +10891,7 @@
 /area/ruin/beach/corpo_resort/bar)
 "TP" = (
 /obj/structure/hazard/spray/steam/safe,
-/obj/machinery/camera/autoname{
+/obj/machinery/camera/autoname/directional/north{
 	network = list("resort_power_station")
 	},
 /obj/item/ammo_casing/spent/rifle_steel,
