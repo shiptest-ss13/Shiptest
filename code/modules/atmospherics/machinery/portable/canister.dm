@@ -38,21 +38,22 @@
 
 	var/update = 0
 	var/static/list/label2types = list(
-		"n2" = /obj/machinery/portable_atmospherics/canister/nitrogen,
-		"o2" = /obj/machinery/portable_atmospherics/canister/oxygen,
-		"co2" = /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+		"nitrogen" = /obj/machinery/portable_atmospherics/canister/nitrogen,
+		"oxygen" = /obj/machinery/portable_atmospherics/canister/oxygen,
+		"carbon dioxide" = /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+		"carbon monoxide" = /obj/machinery/portable_atmospherics/canister/carbon_monoxide,
 		"plasma" = /obj/machinery/portable_atmospherics/canister/toxins,
-		"n2o" = /obj/machinery/portable_atmospherics/canister/nitrous_oxide,
+		"nitrous oxide" = /obj/machinery/portable_atmospherics/canister/nitrous_oxide,
 		"bz" = /obj/machinery/portable_atmospherics/canister/bz,
 		"air" = /obj/machinery/portable_atmospherics/canister/air,
 		"water vapor" = /obj/machinery/portable_atmospherics/canister/water_vapor,
 		"tritium" = /obj/machinery/portable_atmospherics/canister/tritium,
-		"caution" = /obj/machinery/portable_atmospherics/canister,
+		"yellow" = /obj/machinery/portable_atmospherics/canister,
 		"freon" = /obj/machinery/portable_atmospherics/canister/freon,
 		"hydrogen" = /obj/machinery/portable_atmospherics/canister/hydrogen,
 		"fuel mix" = /obj/machinery/portable_atmospherics/canister/fuel,
-		"cl2" = /obj/machinery/portable_atmospherics/canister/chlorine,
-		"hcl" =/obj/machinery/portable_atmospherics/canister/hydrogen_chloride,
+		"chlorine" = /obj/machinery/portable_atmospherics/canister/chlorine,
+		"hydrogen chloride" =/obj/machinery/portable_atmospherics/canister/hydrogen_chloride,
 	)
 
 /obj/machinery/portable_atmospherics/canister/interact(mob/user)
@@ -71,60 +72,60 @@
 /obj/machinery/portable_atmospherics/canister/oxygen
 	name = "o2 canister"
 	desc = "Oxygen. Necessary for human life."
-	icon_state = "blue"
+	icon_state = "oxygen"
 	gas_type = GAS_O2
 
 /obj/machinery/portable_atmospherics/canister/ozone
 	name = "ozone canister"
 	desc = "Ozone. Sometimes called as 'pure air', this is far from the truth; ozone is not good for your lungs nor heart."
-	icon_state = "darkblue"
+	icon_state = "ozone"
 	gas_type = GAS_O3
 
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide
 	name = "co2 canister"
-	desc = "Carbon dioxide. What the fuck is carbon dioxide?"
-	icon_state = "black"
+	desc = "Carbon dioxide. Dangerous and invisible to the naked eye"
+	icon_state = "carbondioxide"
 	gas_type = GAS_CO2
 
 /obj/machinery/portable_atmospherics/canister/carbon_monoxide
 	name = "co canister"
 	desc = "Carbon Monoxide. Highly dangerous and invisible to the naked eye."
-	icon_state = "black"
+	icon_state = "carbonmonoxide"
 	gas_type = GAS_CO
 
 /obj/machinery/portable_atmospherics/canister/toxins
 	name = "plasma canister"
-	desc = "Plasma gas. The reason YOU are here. Highly toxic."
+	desc = "Plasma gas. Highly flammable and toxic to boot."
 	icon_state = "plasma"
 	gas_type = GAS_PLASMA
 
 /obj/machinery/portable_atmospherics/canister/bz
 	name = "\improper BZ canister"
 	desc = "BZ, a powerful hallucinogenic nerve agent."
-	icon_state = "purple"
+	icon_state = "bz"
 	gas_type = GAS_BZ
 
 /obj/machinery/portable_atmospherics/canister/nitrous_oxide
 	name = "n2o canister"
 	desc = "Nitrous oxide gas. Known to cause drowsiness."
-	icon_state = "n2o"
+	icon_state = "nitrous_oxide"
 	gas_type = GAS_NITROUS
 
 /obj/machinery/portable_atmospherics/canister/air
 	name = "air canister"
 	desc = "Pre-mixed air."
-	icon_state = "grey"
+	icon_state = "air"
 
 /obj/machinery/portable_atmospherics/canister/tritium
 	name = "tritium canister"
 	desc = "Tritium. Inhalation might cause irradiation."
-	icon_state = "green"
+	icon_state = "trit"
 	gas_type = GAS_TRITIUM
 
 /obj/machinery/portable_atmospherics/canister/argon
 	name = "argon canister"
 	desc = "Argon. A noble gas that prevents other gases from reacting."
-	icon_state = "purple"
+	icon_state = "argon"
 	gas_type = GAS_ARGON
 
 /obj/machinery/portable_atmospherics/canister/water_vapor
@@ -183,14 +184,14 @@
 /obj/machinery/portable_atmospherics/canister/chlorine
 	name = "chlorine canister"
 	desc = "Chlorine gas. Highly toxic."
-	icon_state = "greenys"
+	icon_state = "chlorine"
 	gas_type = GAS_CHLORINE
 	filled = 1
 
 /obj/machinery/portable_atmospherics/canister/hydrogen_chloride
 	name = "hydrogen chloride canister"
 	desc = "Hydrogen chloride gas. Don't breathe this."
-	icon_state = "greenyshaz"
+	icon_state = "hydrogen_chloride"
 	gas_type = GAS_HYDROGEN_CHLORIDE
 	filled = 1
 
@@ -215,30 +216,6 @@
 	if(timing)
 		valve_timer = world.time + (timer_set * 10)
 	update_appearance()
-
-/obj/machinery/portable_atmospherics/canister/proto
-	name = "prototype canister"
-
-
-/obj/machinery/portable_atmospherics/canister/proto/default
-	name = "prototype canister"
-	desc = "The best way to fix an atmospheric emergency... or the best way to introduce one."
-	icon_state = "proto"
-	volume = 5000
-	max_integrity = 300
-	temperature_resistance = 2000 + T0C
-	can_max_release_pressure = (ONE_ATMOSPHERE * 30)
-	can_min_release_pressure = (ONE_ATMOSPHERE / 30)
-	prototype = TRUE
-
-
-/obj/machinery/portable_atmospherics/canister/proto/default/oxygen
-	name = "prototype canister"
-	desc = "A prototype canister for a prototype bike, what could go wrong?"
-	icon_state = "proto"
-	gas_type = GAS_O2
-	filled = 1
-	release_pressure = ONE_ATMOSPHERE*2
 
 /obj/machinery/portable_atmospherics/canister/Initialize(mapload, datum/gas_mixture/existing_mixture)
 	. = ..()
@@ -269,7 +246,7 @@
 
 /obj/machinery/portable_atmospherics/canister/update_icon_state()
 	if(machine_stat & BROKEN)
-		icon_state = "[icon_state]-1"
+		icon_state = "[icon_state]-broken"
 	return ..()
 
 /obj/machinery/portable_atmospherics/canister/update_overlays()
@@ -332,6 +309,7 @@
 
 	atom_break()
 	density = FALSE
+	visible_message(span_danger("[src]'s lid blows off!"), blind_message=span_danger("You hear a hollow drum implode very loudly!"))
 	playsound(src.loc, 'sound/effects/spray.ogg', 10, TRUE, -3)
 	investigate_log("was destroyed.", INVESTIGATE_ATMOS)
 

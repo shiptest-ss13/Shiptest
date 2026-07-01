@@ -1,12 +1,21 @@
+#define CABLE_COLOR_YELLOW "#fff957"
+#define CABLE_COLOR_GREEN "#00aa00"
+#define CABLE_COLOR_BLUE "#4252ff"
+#define CABLE_COLOR_PINK "#ff78eb"
+#define CABLE_COLOR_ORANGE "#ff8000"
+#define CABLE_COLOR_CYAN "#60d5fc"
+#define CABLE_COLOR_WHITE "#efefef"
+#define CABLE_COLOR_RED "#ff3030"
+
 GLOBAL_LIST_INIT(cable_colors, list(
-	"yellow" = "#fff957",
-	"green" = "#00aa00",
-	"blue" = "#4252ff",
-	"pink" = "#ff78eb",
-	"orange" = "#ff8000",
-	"cyan" = "#60d5fc",
-	"white" = "#efefef",
-	"red" = "#ff3030"
+	"yellow" = CABLE_COLOR_YELLOW,
+	"green" = CABLE_COLOR_GREEN,
+	"blue" = CABLE_COLOR_BLUE,
+	"pink" = CABLE_COLOR_PINK,
+	"orange" = CABLE_COLOR_ORANGE,
+	"cyan" = CABLE_COLOR_CYAN,
+	"white" = CABLE_COLOR_WHITE,
+	"red" = CABLE_COLOR_RED
 	))
 
 ///////////////////////////////
@@ -51,7 +60,7 @@ GLOBAL_LIST_INIT(cable_colors, list(
 	var/obj/item/stack/cable_coil/stored
 
 	var/cable_color = "red"
-	color = "#ff0000"
+	color = CABLE_COLOR_RED
 	FASTDMM_PROP(\
 		pipe_type = PIPE_TYPE_CABLE,\
 		pipe_interference_group = list("cable"),\
@@ -60,31 +69,31 @@ GLOBAL_LIST_INIT(cable_colors, list(
 
 /obj/structure/cable/yellow
 	cable_color = "yellow"
-	color = "#ffff00"
+	color = CABLE_COLOR_YELLOW
 
 /obj/structure/cable/green
 	cable_color = "green"
-	color = "#00aa00"
+	color = CABLE_COLOR_GREEN
 
 /obj/structure/cable/blue
 	cable_color = "blue"
-	color = "#1919c8"
+	color = CABLE_COLOR_BLUE
 
 /obj/structure/cable/pink
 	cable_color = "pink"
-	color = "#ff3cc8"
+	color = CABLE_COLOR_PINK
 
 /obj/structure/cable/orange
 	cable_color = "orange"
-	color = "#ff8000"
+	color = CABLE_COLOR_ORANGE
 
 /obj/structure/cable/cyan
 	cable_color = "cyan"
-	color = "#00ffff"
+	color = CABLE_COLOR_CYAN
 
 /obj/structure/cable/white
 	cable_color = "white"
-	color = "#ffffff"
+	color = CABLE_COLOR_WHITE
 
 // the power cable object
 /obj/structure/cable/Initialize(mapload, param_color)
