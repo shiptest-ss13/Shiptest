@@ -439,6 +439,7 @@
 /obj/item/reagent_containers/food/drinks/sillycup/smallcarton
 	name = "small carton"
 	desc = "A small carton, intended for holding drinks."
+	icon = 'icons/obj/drinks/carton.dmi'
 	icon_state = "juicebox"
 	fill_icon_thresholds = null
 	volume = 15 //I figure if you have to craft these it should at least be slightly better than something you can get for free from a watercooler
@@ -581,6 +582,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans
 	name = "soda can"
+	icon = 'icons/obj/drinks/sodacan.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	reagent_flags = NONE
@@ -758,12 +760,6 @@
 	item_state = "xeno_energy"
 	list_reagents = list(/datum/reagent/consumable/xeno_energy = 40, /datum/reagent/consumable/electrolytes = 10)
 	foodtype = SUGAR | JUNKFOOD
-
-/obj/item/reagent_containers/food/drinks/soda_cans/air
-	name = "Tradewind Canned"
-	desc = "Intended to be filled with air from home planets for the sake of nostalgia after it's initial failure as an emergency method of 'canning air'. Tradewind Canned - a breath from home."
-	icon_state = "air"
-	list_reagents = list(/datum/reagent/nitrogen = 24, /datum/reagent/oxygen = 6)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/molten
 	name = "Molten Bubbles"

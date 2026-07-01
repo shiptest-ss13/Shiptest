@@ -359,6 +359,7 @@
 	name = "orange juice"
 	desc = "Sweet and tart orange juice. Usually found fortified to make it more nutritious. Full of vitamin C!"
 	custom_price = 10
+	icon = 'icons/obj/drinks/carton.dmi'
 	icon_state = "orangejuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -372,6 +373,7 @@
 	name = "lemon juice"
 	desc = "Lemonade for everyone!"
 	custom_price = 10
+	icon = 'icons/obj/drinks/carton.dmi'
 	icon_state = "lemonjuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -385,6 +387,7 @@
 	name = "milk cream"
 	desc = "Cream made from milk. It's thicker than milk, which hopefully prevents any mixups."
 	custom_price = 10
+	icon = 'icons/obj/drinks/carton.dmi'
 	icon_state = "cream"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -398,6 +401,7 @@
 	name = "tomato juice"
 	desc = "Juice from tomatoes and salt. You'll often find some technicians soaking in this if they've been working with plasma."
 	custom_price = 10
+	icon = 'icons/obj/drinks/carton.dmi'
 	icon_state = "tomatojuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -411,6 +415,7 @@
 	name = "lime juice"
 	desc = "Lime juice. You might want to mix something with this instead of drinking it straight..."
 	custom_price = 10
+	icon = 'icons/obj/drinks/carton.dmi'
 	icon_state = "limejuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -424,6 +429,7 @@
 	name = "pineapple juice"
 	desc = "Tart, sweet juice from the tropical pineapple."
 	custom_price = 10
+	icon = 'icons/obj/drinks/carton.dmi'
 	icon_state = "pineapplejuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -438,6 +444,7 @@
 	name = "menthol"
 	desc = "Tastes naturally minty, and imparts a very mild numbing sensation."
 	custom_price = 10
+	icon = 'icons/obj/drinks/carton.dmi'
 	icon_state = "mentholbox"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
