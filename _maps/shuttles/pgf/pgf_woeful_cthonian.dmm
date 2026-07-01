@@ -158,6 +158,10 @@
 	pixel_x = -3
 	},
 /obj/item/clothing/suit/armor/gezena/medic,
+/obj/item/clothing/gloves/gezena{
+	pixel_x = 0;
+	pixel_y = -13
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical/surgery)
 "bw" = (
@@ -615,6 +619,7 @@
 /obj/item/clothing/glasses/safety{
 	pixel_y = 7
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "fn" = (
@@ -835,10 +840,6 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "wcth_bay";
-	dir = 8
-	},
 /obj/machinery/door/firedoor/heavy,
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1022,6 +1023,7 @@
 	pixel_y = -3
 	},
 /obj/item/pickaxe,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "iW" = (
@@ -1076,9 +1078,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "jh" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -1289,8 +1288,7 @@
 	},
 /obj/machinery/computer/helm{
 	dir = 8;
-	pixel_y = 0;
-	layer = 3
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge/cool)
@@ -1347,23 +1345,27 @@
 /obj/machinery/computer/cargo{
 	dir = 8;
 	pixel_y = 0;
-	layer = 3.04
+	layer = 2.94
 	},
 /obj/item/radio/intercom/table{
 	pixel_y = 19;
 	dir = 4;
-	layer = 3.03
+	layer = 2.93;
+	pixel_x = 1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge/cool)
 "ml" = (
-/obj/machinery/washing_machine,
+/obj/machinery/washing_machine{
+	pixel_y = 6
+	},
 /obj/structure/railing{
 	dir = 4;
 	layer = 2.89
 	},
-/obj/structure/sign/poster/radio/vkxs{
-	pixel_y = -32
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -1641,9 +1643,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "pF" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -1699,12 +1698,13 @@
 	},
 /obj/structure/table/emptycomputer{
 	dir = 8;
-	layer = 3.02
+	layer = 2.92
 	},
 /obj/item/radio/intercom/wideband/table{
 	dir = 4;
 	pixel_y = 19;
-	layer = 3.01
+	layer = 2.91;
+	pixel_x = 1
 	},
 /obj/machinery/button/door{
 	pixel_y = 1;
@@ -1809,6 +1809,9 @@
 	pixel_y = -9
 	},
 /obj/effect/turf_decal/siding/black,
+/obj/structure/sign/poster/pgf/choose{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "rA" = (
@@ -1841,12 +1844,11 @@
 /obj/machinery/modular_computer/console/preset/command{
 	icon_state = "computer-right"
 	},
-/obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = -12;
-	pixel_y = 28
+/obj/item/radio/intercom/directional/north{
+	pixel_x = -10
 	},
 /obj/item/radio/intercom/directional/north{
-	pixel_x = 3
+	pixel_x = 7
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge/cool)
@@ -1859,7 +1861,7 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "sO" = (
-/obj/machinery/camera/directional/east,
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
 	dir = 1
@@ -2341,9 +2343,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "ws" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
@@ -2440,7 +2439,8 @@
 	specialfunctions = 4;
 	name = "door bolt control";
 	id = "cth_cappie";
-	normaldoorcontrol = 1
+	normaldoorcontrol = 1;
+	pixel_x = -4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -2449,7 +2449,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light_switch{
-	pixel_x = -10;
+	pixel_x = -12;
 	pixel_y = 20
 	},
 /turf/open/floor/plasteel/sepia,
@@ -2469,16 +2469,15 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/structure/sign/poster/radio/vkxs{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
@@ -2882,6 +2881,10 @@
 /obj/item/radio/headset/pgf/captain{
 	pixel_x = -10;
 	pixel_y = -3
+	},
+/obj/item/clothing/gloves/gezena{
+	pixel_x = 0;
+	pixel_y = -13
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical/surgery)
@@ -3431,7 +3434,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
@@ -3823,9 +3826,6 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 9
 	},
@@ -3898,6 +3898,9 @@
 	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
@@ -4930,7 +4933,7 @@
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 2;
-	pixel_y = 19;
+	pixel_y = 20;
 	pixel_x = 5;
 	id = "wcth_bay";
 	name = "cargobay holofield switch"
@@ -4985,6 +4988,11 @@
 	pixel_y = 0;
 	pixel_x = 2;
 	c_tag = "ALPHA-3"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_y = -12;
+	pixel_x = -20
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge/cool)
@@ -5056,9 +5064,6 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 8
@@ -5107,9 +5112,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "ZR" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/effect/turf_decal/steeldecal/steel_decals6{
 	dir = 5
 	},
@@ -5148,14 +5150,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_x = -12;
-	pixel_y = -20
-	},
-/obj/machinery/firealarm/directional/south,
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 6
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
