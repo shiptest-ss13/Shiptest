@@ -556,10 +556,11 @@
 "dU" = (
 /obj/effect/turf_decal/corner/transparent/blue/full,
 /obj/item/radio/intercom/directional/north,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34
-	},
 /obj/structure/chair,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north{
+	pixel_x = 0;
+	pixel_y = 38
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "dW" = (
@@ -1416,10 +1417,7 @@
 /obj/effect/turf_decal/corner/transparent/blue/border{
 	dir = 1
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 31;
-	pixel_y = 0
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "kC" = (
@@ -4086,11 +4084,11 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical/surgery)
 "EE" = (
+/obj/effect/turf_decal/siding/white,
 /obj/item/radio/intercom/directional/east{
 	pixel_x = 31;
-	pixel_y = 15
+	pixel_y = 9
 	},
-/obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "EG" = (
