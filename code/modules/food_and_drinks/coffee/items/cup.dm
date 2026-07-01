@@ -1,7 +1,7 @@
 //the hell is it with the drinks subtype and using hacky workarounds for reagent fillings...
 /obj/item/reagent_containers/food/drinks/coffee
-	name = "coffee cup"
-	desc = "A plastic coffee cup. Can theoretically be used for other hot drinks, if you're feeling adventurous."
+	name = "paper cup"
+	desc = "A paper cup, often filled with coffee."
 	icon = 'icons/obj/item/coffee.dmi'
 	icon_state = "coffee_cup"
 	possible_transfer_amounts = list(10)
@@ -16,10 +16,18 @@
 
 /obj/item/reagent_containers/food/drinks/coffee/empty
 	list_reagents = null
-	desc = "A plastic coffee cup. It's empty."
+	desc = "A paper cup. It's empty."
+
+//subtype that uses the vending machine's text
+/obj/item/reagent_containers/food/drinks/coffee/vendingmachine
+	name = "Solar's Best black coffee"
+	desc = "A cup of piping hot black coffee. Made from beans grown across the solar cantons for the caffeine that every spacer needs."
+
+/obj/item/reagent_containers/food/drinks/coffee/vendingmachine/empty
+	list_reagents = null
 
 /obj/item/reagent_containers/food/drinks/coffee/large
-	name = "paper coffee cup"
+	name = "large paper coffee cup"
 	desc = "A larger paper cup for coffee, usually found in cafes. Comes with a lid!"
 	icon = 'icons/obj/item/coffee.dmi'
 	icon_state = "paper_coffee"

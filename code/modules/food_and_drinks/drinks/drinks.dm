@@ -168,6 +168,7 @@
 /obj/item/reagent_containers/food/drinks/trophy
 	name = "pewter cup"
 	desc = "Everyone gets a trophy."
+	icon = 'icons/obj/drinks/trophycup.dmi'
 	icon_state = "pewter_cup"
 	w_class = WEIGHT_CLASS_TINY
 	force = 1
@@ -239,31 +240,35 @@
 	desc = "Either Makosso-Warra's water supply is contaminated, or this machine actually vends lemon, chocolate, and cherry snow cones."
 	list_reagents  = list(/datum/reagent/consumable/ice = 25, /datum/reagent/liquidgibs = 5)
 
-/obj/item/reagent_containers/food/drinks/mug/ // parent type is literally just so empty mug sprites are a thing
-	name = "mug"
-	desc = "A drink served in a classy mug."
-	icon_state = "tea"
-	item_state = "coffee"
-	spillable = TRUE
-
-/obj/item/reagent_containers/food/drinks/mug/on_reagent_change(changetype)
-	if(reagents.total_volume)
-		icon_state = "tea"
-	else
-		icon_state = "tea_empty"
-
+// /obj/item/reagent_containers/food/drinks/mug/tea  -> /obj/item/reagent_containers/food/drinks/coffee/tea
+// /obj/item/reagent_containers/food/drinks/mug/coco  -> /obj/item/reagent_containers/food/drinks/coffee/coco
 /obj/item/reagent_containers/food/drinks/mug/tea
 	name = "Guildmaiden's tea"
 	desc = "Dark tea, made from pressed, fermented tea leaves. Originally from Sol, it became wildly popular among the Rachnid Guilds, and has become a staple."
 	list_reagents = list(/datum/reagent/consumable/tea = 30)
+	volume = 50
+	can_have_cap = TRUE
+	cap_icon_state = "paper_coffee_cap"
+	can_have_cap = TRUE
+	fill_icon_thresholds = list(30, 50, 70, 90)
+	spillable = TRUE
+	resistance_flags = FREEZE_PROOF
+	isGlass = FALSE
 
 /obj/item/reagent_containers/food/drinks/mug/coco
 	name = "Solar's Best Hot Cocoa"
 	desc = "A cup of hot water mixed with chocolate and malted milk powder. A classic hot drink from the Solarian Confederation."
 	list_reagents = list(/datum/reagent/consumable/hot_coco = 15, /datum/reagent/consumable/sugar = 5)
 	foodtype = SUGAR
-	resistance_flags = FREEZE_PROOF
 	custom_price = 5
+
+	volume = 50
+	can_have_cap = TRUE
+	cap_icon_state = "paper_coffee_cap"
+	can_have_cap = TRUE
+	fill_icon_thresholds = list(30, 50, 70, 90)
+	spillable = TRUE
+	isGlass = FALSE
 
 /obj/item/reagent_containers/food/drinks/cafelatte
 	name = "cafe latte"
@@ -309,7 +314,7 @@
 /obj/item/reagent_containers/food/drinks/waterbottle
 	name = "Ryuunosuke Reserve" //we still have to find a way to make multiple variants as per the plan
 	desc = "Water bottled from a plant somewhere on Ryuunosuke. It has a mild, mineral-y flavor."
-	icon = 'icons/obj/drinks/drinks.dmi'
+	icon = 'icons/obj/drinks/waterbottle.dmi'
 	icon_state = "smallbottle"
 	item_state = "bottle"
 	list_reagents = list(/datum/reagent/water = 50)
@@ -536,6 +541,7 @@
 /obj/item/reagent_containers/food/drinks/shaker
 	name = "shaker"
 	desc = "A metal shaker to mix drinks in."
+	icon = 'icons/obj/drinks/flask.dmi'
 	icon_state = "shaker"
 	custom_materials = list(/datum/material/iron=1500)
 	amount_per_transfer_from_this = 10
@@ -546,6 +552,7 @@
 	name = "flask"
 	desc = "Every good spacer knows it's a good idea to bring along a couple of pints of whiskey wherever they go."
 	custom_price = 20
+	icon = 'icons/obj/drinks/flask.dmi'
 	icon_state = "flask"
 	custom_materials = list(/datum/material/iron=250)
 	volume = 60
@@ -562,20 +569,6 @@
 	desc = "The detective's only true friend."
 	icon_state = "detflask"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 30)
-
-/obj/item/reagent_containers/food/drinks/mug
-	name = "cup"
-	desc = "A mug. Stylishly plain."
-	icon_state = "tea_empty"
-	volume = 30
-	spillable = TRUE
-
-/obj/item/reagent_containers/food/drinks/rilenacup
-	name = "RILENA mug"
-	desc = "A mug with RILENA: LMR protagonist Ri's face on it."
-	icon_state = "rilenacup"
-	volume = 30
-	spillable = TRUE
 
 //////////////////////////soda_cans//
 //These are in their own group to be used as IED's in /obj/item/grenade/ghettobomb.dm
