@@ -7,7 +7,7 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 /obj/machinery/keycard_auth
 	name = "Keycard Authentication Device"
 	desc = "This device is used to trigger functions which require more than one ID card to authenticate."
-	icon = 'icons/obj/monitors.dmi'
+	icon = 'icons/obj/wallmounts/auth_controller.dmi'
 	icon_state = "auth_off"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_MINIMAL

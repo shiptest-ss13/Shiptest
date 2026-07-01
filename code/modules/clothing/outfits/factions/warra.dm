@@ -42,7 +42,7 @@
 
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
-	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/captain)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/volt, /obj/item/stamp/captain)
 
 
 /datum/outfit/job/warra/captain/ns
@@ -163,7 +163,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/com
 
 	chameleon_extras = list(
-						/obj/item/gun/energy/sharplite/x12,
+						/obj/item/gun/energy/sharplite/volt,
 						/obj/item/stamp/warra/officer,
 						)
 
@@ -207,7 +207,7 @@
 
 	implants = list(/obj/item/implant/mindshield)
 
-	chameleon_extras = list(/obj/item/gun/energy/sharplite/x01, /obj/item/stamp/hos)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/yari, /obj/item/stamp/hos)
 
 /datum/outfit/job/warra/hos/vi
 	name = "Makosso-Warra - Vigilitas Sergeant"
@@ -789,42 +789,3 @@
 	head = /obj/item/clothing/head/beret/sec/officer
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
-
-// ERT //
-
-/datum/outfit/job/warra/security/ert
-	name = "Makosso-Warra - ERT Officer"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/camo
-	head = null
-	backpack = /obj/item/storage/backpack/ert/security
-	belt = /obj/item/storage/belt/military
-	id = /obj/item/card/id/ert/security
-	r_pocket = /obj/item/melee/knife/survival
-	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
-
-/datum/outfit/job/warra/security/ert/engi
-	name = "Makosso-Warra - ERT Engineering Officer"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/camo
-	head = null
-	backpack = /obj/item/storage/backpack/ert/engineer
-	belt = /obj/item/storage/belt/utility/full/ert
-	id = /obj/item/card/id/ert/security
-	r_pocket = /obj/item/melee/knife/survival
-	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
-	accessory = /obj/item/clothing/accessory/armband/engine
-	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
-
-/datum/outfit/job/warra/security/ert/med
-	name = "Makosso-Warra - ERT Medical Officer"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/camo
-	head = /obj/item/clothing/head/beret/med
-	backpack = /obj/item/storage/backpack/ert/medical
-	belt = /obj/item/storage/belt/medical/webbing/paramedic
-	id = /obj/item/card/id/ert/security
-	r_pocket = /obj/item/melee/knife/survival
-	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
-	accessory = /obj/item/clothing/accessory/armband/med
-	glasses = /obj/item/clothing/glasses/hud/health/night

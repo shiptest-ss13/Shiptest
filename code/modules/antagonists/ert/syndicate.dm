@@ -31,50 +31,6 @@
 	to_chat(owner, "<B><font size=3 color=red>You are a mid-rank official from the Liberation Front.</font></B>")
 	to_chat(owner, "The Syndicate Coalition is sending you to [station_name()] with the task: [ert_team.mission.explanation_text]")
 
-/datum/antagonist/ert/syndicate/ngr
-	name = "Gorlex Republic Serviceman"
-	outfit = /datum/outfit/job/syndicate/ert/ngr
-	role = "Serviceman"
-
-/datum/antagonist/ert/syndicate/ngr/greet()
-	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
-	var/missiondesc = "You're an enlistee of the New Gorlex Republic sent to [station_name()].<BR>"
-	if(leader) //If Squad Leader
-		missiondesc += "Lead your team to ensure the completion of your objectives."
-	else
-		missiondesc += "Follow orders given to you by your Sergeant."
-
-	missiondesc += "<BR><B>Your Mission</B>: [ert_team.mission.explanation_text]"
-	to_chat(owner,missiondesc)
-
-/*
-/datum/antagonist/ert/syndicate/ngr/grenadier
-	name = "Gorlex Republic Grenadier"
-	outfit = /datum/outfit/job/syndicate/ert/ngr/grenadier
-	role = "Grenadier"
-*/
-
-/datum/antagonist/ert/syndicate/ngr/medic
-	name = "Gorlex Republic Field Medic"
-	outfit = /datum/outfit/job/syndicate/ert/ngr/medic
-	role = "Medic"
-
-/datum/antagonist/ert/syndicate/ngr/sniper
-	name = "Gorlex Republic Marksman"
-	outfit = /datum/outfit/job/syndicate/ert/ngr/sniper
-	role = "Marksman"
-
-/datum/antagonist/ert/syndicate/ngr/leader
-	name = "Gorlex Republic Sergeant"
-	leader = TRUE
-	outfit = /datum/outfit/job/syndicate/ert/ngr/leader
-	role = "Officer"
-
-/datum/antagonist/ert/syndicate/ngr/inspector
-	name = "Gorlex Republic Official"
-	outfit = /datum/outfit/job/syndicate/ert/ngr/inspector
-	role = "Official"
-
 // cybersun
 
 /datum/antagonist/ert/syndicate/cybersun
