@@ -56,7 +56,7 @@
 	DELAY 50
 	SAY When one is bold, the other is subtle. This manner of approach appeals to the widest demographic, ensuring your staff will feel comfortable approaching either of you.
 	DELAY 60
-	SAY Utilize these strategies during your command strategically to increase your daily productivity.
+	SAY Utilize these strategies during your command to increase your daily productivity.
 	DELAY 50
 	SAY Afterwards, I'll reach out and touch base to discuss the results of the day. Hope I helped, I look forward to hearing from you then!
 	DELAY 50
