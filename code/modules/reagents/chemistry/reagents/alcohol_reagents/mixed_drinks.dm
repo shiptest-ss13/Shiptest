@@ -138,7 +138,6 @@
 	taste_description = "metallic and expensive"
 	glass_name = "glass of patron"
 	glass_desc = "A glass of Patron. The silver is for show, but you can't help but wonder how you would show it off to anyone."
-	shot_glass_icon_state = "shotglassclear"
 
 /datum/reagent/consumable/ethanol/gintonic
 	name = "Gin and Tonic"
@@ -437,7 +436,6 @@
 	glass_icon_state = "amg"
 	glass_name = "AM-G"
 	glass_desc = "Coffee liquor, Zohil Cream, and cognac. Enough to make you hide before the blast."
-	shot_glass_icon_state = "b52glass"
 
 /datum/reagent/consumable/ethanol/gezenan_coffee
 	name = "Gezenan Coffee"
@@ -1742,3 +1740,32 @@
 	else if(prob(30))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REM)
 		M.adjust_disgust(5)
+
+/datum/reagent/consumable/ethanol/royal_battery_acid
+	name = "Royal Battery Acid"
+	description = "Appears to be battery byproducts mixed with metals."
+	color = "#b5e61d"
+	boozepwr = 40
+	quality = DRINK_GOOD
+	taste_description = "extremely bitter and sour metal"
+	glass_name = "Royal Battery Acid"
+	glass_desc = "Drinking this makes you want to laugh maniacally, but perhaps that's just the acid acting like a neurotoxin."
+	glass_icon_state = "royal_battery_acid"
+	var/toxpwr = 0.7
+
+/datum/reagent/consumable/ethanol/royal_battery_acid/on_mob_life(mob/living/carbon/M, method=TOUCH, reac_volume)
+	if((method == INGEST || method == INJECT || method == PATCH) && iscarbon(M))
+		var/mob/living/carbon/drinking_carbon = M
+		var/obj/item/organ/stomach/ethereal/stomach = drinking_carbon.getorganslot(ORGAN_SLOT_STOMACH)
+		if(istype(stomach))
+			stomach.adjust_charge((reac_volume * toxpwr) * REM * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+
+	if(iselzuose(M) || isvox(M))
+		return ..()
+
+	if(toxpwr)
+		M.adjustToxLoss(toxpwr*REM, 0)
+		. = TRUE
+		return ..()
+
+

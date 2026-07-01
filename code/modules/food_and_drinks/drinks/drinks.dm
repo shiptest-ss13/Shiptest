@@ -246,13 +246,13 @@
 	name = "Guildmaiden's tea"
 	desc = "Dark tea, made from pressed, fermented tea leaves. Originally from Sol, it became wildly popular among the Rachnid Guilds, and has become a staple."
 	list_reagents = list(/datum/reagent/consumable/tea = 30)
-	volume = 50
-	can_have_cap = TRUE
-	cap_icon_state = "paper_coffee_cap"
-	can_have_cap = TRUE
-	fill_icon_thresholds = list(30, 50, 70, 90)
+	icon = 'icons/obj/item/coffee.dmi'
+	icon_state = "coffee_cup"
+	possible_transfer_amounts = list(10)
+	volume = 30
 	spillable = TRUE
-	resistance_flags = FREEZE_PROOF
+	fill_icon_thresholds = list(30, 90)
+	spillable = TRUE
 	isGlass = FALSE
 
 /obj/item/reagent_containers/food/drinks/mug/coco
@@ -262,13 +262,13 @@
 	foodtype = SUGAR
 	custom_price = 5
 
-	volume = 50
-	can_have_cap = TRUE
-	cap_icon_state = "paper_coffee_cap"
-	can_have_cap = TRUE
-	fill_icon_thresholds = list(30, 50, 70, 90)
+	icon = 'icons/obj/item/coffee.dmi'
+	icon_state = "coffee_cup"
+	possible_transfer_amounts = list(10)
+	volume = 30
 	spillable = TRUE
-	isGlass = FALSE
+	fill_icon_thresholds = list(30, 90)
+	spillable = TRUE
 
 /obj/item/reagent_containers/food/drinks/cafelatte
 	name = "cafe latte"
@@ -305,6 +305,7 @@
 /obj/item/reagent_containers/food/drinks/dry_ramen
 	name = "cup ramen"
 	desc = "A cup full of dried noodles, premixed with a flavor powder. Adding 5 units of water will cause the cup to self-heat, cooking it rapidly. Commonly eaten under dozens of brands, from students to eating on a budget. Always umami!"
+	icon = 'icons/obj/drinks/cup.dmi'
 	icon_state = "ramen"
 	list_reagents = list(/datum/reagent/consumable/dry_ramen = 15, /datum/reagent/consumable/sodiumchloride = 3)
 	foodtype = GRAIN

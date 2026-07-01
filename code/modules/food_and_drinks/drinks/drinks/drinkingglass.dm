@@ -26,11 +26,14 @@
 		if(R.glass_icon_state)
 			icon_state = R.glass_icon_state
 		else
-			icon_state = "glass"
-			update_overlays()
+			icon_state = src::icon_state
+			update_appearance()
 	else
-		icon_state = "glass"
+		name = src::name
+		desc = src::desc
+		icon_state = src::icon_state
 		renamedByPlayer = FALSE //so new drinks can rename the glass
+
 
 /obj/item/reagent_containers/food/drinks/beaglemug
 	name = "beagle mug"
@@ -80,25 +83,20 @@
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/on_reagent_change(changetype)
 	cut_overlays()
-
-	gulp_size = max(round(reagents.total_volume / 15), 15)
-
-	if (reagents.reagent_list.len > 0)
-		var/datum/reagent/largest_reagent = reagents.get_master_reagent()
-		name = "filled [initial(src.name)]"
-		desc = filled_desc
-
-		if(largest_reagent.shot_glass_icon_state)
-			icon_state = largest_reagent.shot_glass_icon_state
+	if(reagents.reagent_list.len)
+		var/datum/reagent/R = reagents.get_master_reagent()
+		if(!renamedByPlayer)
+			desc = R.glass_desc
+		if(R.shot_glass_icon_state)
+			icon_state = R.shot_glass_icon_state
 		else
-			icon_state = "shotglass"
-			update_overlays()
-
+			icon_state = src::icon_state
+			update_appearance()
 	else
-		icon_state = "shotglass"
-		name = src::name
 		desc = src::desc
-		return
+		icon_state = src::icon_state
+		renamedByPlayer = FALSE //so new drinks can rename the glass
+
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/commemorative
 	name = "commemorative shot glass"

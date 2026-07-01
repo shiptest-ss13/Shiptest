@@ -1,6 +1,7 @@
 /obj/item/reagent_containers/food/drinks/mug // parent type is literally just so empty mug sprites are a thing
 	name = "mug"
 	desc = "A ceramic mug that incldues a handle. Handles hot drinks best."
+	icon = 'icons/obj/drinks/cup.dmi'
 	icon_state = "mug"
 	item_state = "coffee"
 	spillable = TRUE

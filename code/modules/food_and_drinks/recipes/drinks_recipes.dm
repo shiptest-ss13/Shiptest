@@ -672,3 +672,7 @@
 	results = list(/datum/reagent/consumable/ethanol/eudaimonia = 2)
 	required_reagents = list(/datum/reagent/medicine/lithium_carbonate = 2, /datum/reagent/consumable/ethanol/hcider = 2)
 	mix_message = "The LiCarb dust incorporates into the cider, producing a pleasant chemical coloration!"
+
+/datum/chemical_reaction/royal_battery_acid
+	results = list(/datum/reagent/consumable/ethanol/royal_battery_acid = 2)
+	required_reagents = list(/datum/reagent/lithium = 1, /datum/reagent/toxin/acid = 1, /datum/reagent/gold = 1, /datum/reagent/iron = 1)

@@ -42,6 +42,13 @@
 	time = 5
 	category = CAT_DRINK
 
+/datum/crafting_recipe/chilipowder_garnish
+	name = "Chili Powder Garnish"
+	result = /obj/item/garnish/chilipowder
+	reqs = list(/datum/reagent/consumable/capsaicin = 10)
+	time = 5
+	category = CAT_DRINK
+
 /datum/crafting_recipe/woodmixingstick
 	name = "Wooden Mixing Stick"
 	result = /obj/item/garnish/woodmixingstick

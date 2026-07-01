@@ -54,7 +54,6 @@
 	glass_icon_state = "ginvodkaglass"
 	glass_name = "glass of vodka"
 	glass_desc = "It's almost difficult to tell the glass is full of vodka until you tip it around. The smell makes your nose wrinkle... but it might just be worth it."
-	shot_glass_icon_state = "shotglassclear"
 
 /datum/reagent/consumable/ethanol/vodka/on_mob_life(mob/living/carbon/M)
 	M.radiation = max(M.radiation-2,0)
@@ -99,7 +98,6 @@
 	glass_icon_state = "vermouthglass"
 	glass_name = "glass of vermouth"
 	glass_desc = "Vermouth was used as a medicine in the past, and the flavor makes sure to remind you of that."
-	shot_glass_icon_state = "shotglassclear"
 
 /datum/reagent/consumable/ethanol/wine
 	name = "Wine"
@@ -150,7 +148,7 @@
 /datum/reagent/consumable/ethanol/absinthe
 	name = "Absinthe"
 	description = "A powerful alcoholic drink. Rumored to cause hallucinations if taken irresponsibly."
-	color = rgb(10, 206, 0)
+	color = "#0ace00"
 	boozepwr = 80 //Very strong even by default
 	taste_description = "death and licorice"
 	glass_name = "glass of absinthe"

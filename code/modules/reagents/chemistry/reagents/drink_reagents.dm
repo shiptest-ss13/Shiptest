@@ -128,9 +128,8 @@
 /datum/reagent/consumable/lemonjuice
 	name = "Lemon Juice"
 	description = "This juice is VERY sour."
-	color = "#caad19"
+	color = "#fff782"
 	taste_description = "sourness"
-	glass_icon_state  = "lemonglass"
 	glass_name = "glass of lemon juice"
 	glass_desc = "A glass of intensely sour lime juice. You wonder to yourself: how much do you really need to ward off scurvy for it to come to this point?"
 
@@ -148,7 +147,6 @@
 	taste_description = "nothing"
 	glass_name = "nothing"
 	glass_desc = "Absolutely nothing."
-	shot_glass_icon_state = "shotglass"
 
 /datum/reagent/consumable/potato_juice
 	name = "Potato Juice"
@@ -954,7 +952,6 @@
 	color = "#DE55ED"
 	quality = DRINK_NICE
 	taste_description = "purple with a hint of opioid"
-	glass_icon_state = "lean"
 	glass_name = "glass of lean"
 	glass_desc = "You just don't often get to see cough syrup out here, and someone had enough to mix it with soda. You're left wondering why."
 

@@ -5,7 +5,7 @@
 
 //glass variant defines, if you're adding new glasses make sure to update these
 #define SMALL_VARIANTS 6
-#define MEDIUM_VARIANTS 13
+#define MEDIUM_VARIANTS 14
 #define LARGE_VARIANTS 5
 
 //garnish layer defines, higher numbers go above low ones, add more of these if you manage to get sprites that can fit in a new part of the glass
@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	icon = 'icons/obj/food/modglass.dmi'
 	icon_state = "mglass-1-"
 	fill_icon = 'icons/obj/food/modglass_fillings.dmi'
-	fill_icon_thresholds = list(50,90)
+	fill_icon_thresholds = list(1,50,90)
 	amount_per_transfer_from_this = 10
 	volume = 50
 	custom_materials = list(/datum/material/glass=500, /datum/material/silver=100)
@@ -145,13 +145,19 @@ GLOBAL_LIST_EMPTY(glass_variants)
 //this will allow it to layer over things inside the glass
 /obj/item/garnish/salt
 	name = "salt garnish"
-	desc = "Harvested from the tears of the saltiest assistant."
+	desc = "Harvested from the tears of wasteplanet explorers."
 
 /obj/item/garnish/ash
 	name = "ash garnish"
 	desc = "But why would you do this though."
 	icon_state = "drim"
 	garnish_state = "drim"
+
+/obj/item/garnish/chilipowder
+	name = "chili powder garnish"
+	desc = "For that jalapeño margarita touch."
+	icon_state = "chilirim"
+	garnish_state = "chilirim"
 
 /obj/item/garnish/puce
 	name = "puce garnish"
@@ -253,8 +259,8 @@ GLOBAL_LIST_EMPTY(glass_variants)
 /obj/item/garnish/stripedstraw
 	name = "red striped paper straw"
 	desc = "A red striped paper straw meant to be used with drinks. Perfect with smoothies."
-	icon_state = "paperstraw"
-	garnish_state = "paperstraw"
+	icon_state = "stripedstraw"
+	garnish_state = "stripedstraw"
 	garnish_layer = GARNISH_LEFT
 
 /obj/item/garnish/woodmixingstick
