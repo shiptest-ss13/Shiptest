@@ -109,6 +109,10 @@
 	},
 /obj/structure/table/wood,
 /obj/machinery/newscaster/directional/north,
+/obj/item/plate{
+	pixel_y = 5;
+	pixel_x = 2
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "aU" = (
@@ -1769,6 +1773,12 @@
 	pixel_y = -12;
 	pixel_x = 2
 	},
+/obj/machinery/button/door{
+	id = "magpie_kitchen_window";
+	name = "Window Control";
+	pixel_x = 10;
+	pixel_y = 21
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "lx" = (
@@ -3038,6 +3048,14 @@
 "uX" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/toilet)
+"uZ" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_canteen_window"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/canteen)
 "ve" = (
 /obj/structure/chair/sofa/blue/corpo/right,
 /turf/open/floor/carpet/nanoweave,
@@ -4339,6 +4357,7 @@
 	name = "Bridge";
 	id_tag = "magpie_bridge"
 	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "Fh" = (
@@ -5276,7 +5295,7 @@
 	},
 /obj/item/disk/holodisk/ship/magpie/commandnotice,
 /obj/machinery/camera/autoname/directional/north{
-	pixel_x = -6
+	pixel_x = -4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -7318,7 +7337,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "magpie_kitchen_window";
+	id = "magpie_canteen_window";
 	name = "Window Control";
 	pixel_x = 10;
 	pixel_y = -21
@@ -8304,7 +8323,7 @@ AU
 ph
 Ek
 mh
-zy
+uZ
 hc
 hc
 hc
@@ -8328,7 +8347,7 @@ za
 pJ
 ks
 TE
-zy
+uZ
 hc
 hc
 hc
@@ -8352,7 +8371,7 @@ ce
 FL
 tf
 mA
-zy
+uZ
 hc
 hc
 hc
