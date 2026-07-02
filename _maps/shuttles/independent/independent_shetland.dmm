@@ -4040,6 +4040,13 @@
 	icon_state = "0-9"
 	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/item/toy/plush/shipgirl/shetland{
+	pixel_x = 8
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_x = 9;
+	pixel_y = -4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "ti" = (
@@ -7640,6 +7647,10 @@
 	icon_state = "1-2"
 	},
 /obj/structure/cable/pink,
+/obj/item/toy/plush/among{
+	pixel_y = -4;
+	pixel_x = -2
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "IT" = (

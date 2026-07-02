@@ -305,6 +305,9 @@
 		backpack_contents += /obj/item/reagent_containers/hypospray/medipen/survival
 	if(prob(5))
 		backpack_contents += /obj/item/reagent_containers/hypospray/medipen/combat_drug
+	//rare easter egg
+	if(prob(1))
+		backpack_contents += /obj/item/toy/plush/shipgirl/prague
 
 	//masks
 	mask = pick_weight(list(
