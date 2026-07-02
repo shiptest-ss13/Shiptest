@@ -1,4 +1,3 @@
-//this shit iset even in the rped...
 /obj/machinery/atmospherics/components/binary/pressure_valve
 	icon_state = "pvalve_map-3"
 	name = "pressure valve"

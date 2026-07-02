@@ -31,16 +31,21 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 	var/togglesound = 'sound/effects/bin_open.ogg'
 	var/sound_vol = 100
 
-/obj/machinery/atmospherics/components/binary/valve/update_icon_nopipes(animation = FALSE)
+	var/mutable_appearance/valve_handle = null
+
+/obj/machinery/atmospherics/components/binary/valve/Initialize()
+	. = ..()
+	if(valve_overlay_prefix)
+		valve_handle = mutable_appearance(icon, "[valve_overlay_prefix]-[set_overlay_offset(piping_layer)]")
+
+/obj/machinery/atmospherics/components/binary/valve/update_icon_nopipes()
 	normalize_cardinal_directions()
 	cut_overlays()
 	//why isnt the offset set manually like other atmos shit? oldcode everyone...
 	icon_state = "[valve_type]valve_[on ? "on" : "off"]-[set_overlay_offset(piping_layer)]"
 	if(!valve_overlay_prefix)
 		return
-	add_overlay("[valve_overlay_prefix]-[set_overlay_offset(piping_layer)]")
-	if(animation)
-		flick_overlay_view("[valve_overlay_prefix]-[set_overlay_offset(piping_layer)]-turning")
+	add_overlay(valve_handle)
 
 /obj/machinery/atmospherics/components/binary/valve/proc/toggle()
 	if(on)
@@ -74,9 +79,14 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 			visible_message(span_notice("[user] toggles \the [src] with a button press."), span_notice("You toggle \the [src]."), span_notice("You hear a click followed by a beep."))
 	else
 		visible_message(span_notice("[src] silently beeps."), blind_message=span_notice("You hear a silent beep."))
-	update_icon_nopipes(TRUE)
+	update_icon_nopipes()
 	toggle()
 	switching = FALSE
+
+/obj/machinery/atmospherics/components/binary/valve/Destroy()
+	. = ..()
+	if(valve_handle)
+		QDEL_NULL(valve_handle)
 
 /obj/machinery/atmospherics/components/binary/valve/digital // can be controlled by AI
 	icon_state = "dvalve_map-3"
