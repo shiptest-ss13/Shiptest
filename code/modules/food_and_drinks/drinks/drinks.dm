@@ -400,6 +400,7 @@
 	cap_on = TRUE
 
 	icon = 'icons/obj/drinks/bottle.dmi'
+	//world_file = 'icons/obj/drinks/bottle_world.dmi'
 	lefthand_file = 'icons/obj/drinks/bottle_lefthand.dmi'
 	righthand_file = 'icons/obj/drinks/bottle_righthand.dmi'
 
@@ -413,6 +414,7 @@
 	cap_on = TRUE
 
 	icon = 'icons/obj/drinks/bottle.dmi'
+	//world_file = 'icons/obj/drinks/bottle_world.dmi'
 	lefthand_file = 'icons/obj/drinks/bottle_lefthand.dmi'
 	righthand_file = 'icons/obj/drinks/bottle_righthand.dmi'
 
@@ -429,6 +431,7 @@
 	cap_on = TRUE
 
 	icon = 'icons/obj/drinks/bottle.dmi'
+	//world_file = 'icons/obj/drinks/bottle_world.dmi'
 	lefthand_file = 'icons/obj/drinks/bottle_lefthand.dmi'
 	righthand_file = 'icons/obj/drinks/bottle_righthand.dmi'
 

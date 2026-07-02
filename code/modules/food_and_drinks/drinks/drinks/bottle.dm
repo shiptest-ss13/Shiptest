@@ -8,6 +8,7 @@
 	name = "glass bottle"
 	desc = "A clear, unlabeled and unmarked bottle."
 	icon = 'icons/obj/drinks/bottle.dmi'
+	//world_file = 'icons/obj/drinks/bottle_world.dmi'
 	icon_state = "glassbottle"
 	can_have_cap = TRUE
 	cap_on = TRUE
@@ -156,13 +157,7 @@
 	fill_icon_state = "glassbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
 	fill_icon_thresholds = list(1, 20, 50, 70, 90)
-
-/obj/item/reagent_containers/food/drinks/bottle/vodka/update_overlays()
-	. = ..()
-	//so it overlays the reagent overlays
-	if(.)
-		add_overlay("[icon_state]_overlay")
-
+	has_overlay_sprite = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka
 	name = "Badminka vodka"
@@ -184,12 +179,7 @@
 	icon_state = "patronbottle"
 	fill_icon_state = "glassbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/patron = 100)
-
-/obj/item/reagent_containers/food/drinks/bottle/patron/update_overlays()
-	. = ..()
-	//so it overlays the reagent overlays
-	if(.)
-		add_overlay("[icon_state]_overlay")
+	has_overlay_sprite = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/rum
 	name = "Ahkskra Spiced Rum"
@@ -254,12 +244,7 @@
 	name = "Chacheyi Gold Absinthe"
 	desc = "A higher shelf absinthe, distributed primarily from The Shoal. Features the folkhero Chacheyi on the label, alongside their goldgrub companions."
 	icon_state = "absintheshoal"
-
-/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium/update_overlays()
-	. = ..()
-	//so it overlays the reagent overlays
-	if(.)
-		add_overlay("[icon_state]_overlay")
+	has_overlay_sprite = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/lizardwine
 	name = "bottle of Blueflame Pyrecask"
@@ -338,12 +323,7 @@
 	icon_state = "triplesecbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/triple_sec = 100)
 	fill_icon_thresholds = list(1, 20, 50, 70, 90)
-
-/obj/item/reagent_containers/food/drinks/bottle/triplesec/update_overlays()
-	. = ..()
-	//so it overlays the reagent overlays
-	if(.)
-		add_overlay("[icon_state]_overlay")
+	has_overlay_sprite = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/milk
 	name = "bottle of cow milk"
@@ -479,12 +459,7 @@
 	isGlass = TRUE
 	list_reagents = list(/datum/reagent/consumable/ethanol/champagne = 100)
 	fill_icon_state = "glassbottle"
-
-/obj/item/reagent_containers/food/drinks/bottle/champagne/update_overlays()
-	. = ..()
-	//so it overlays the reagent overlays
-	if(.)
-		add_overlay("[icon_state]_overlay")
+	has_overlay_sprite = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/blazaam
 	name = "Hyperspace Highball"
