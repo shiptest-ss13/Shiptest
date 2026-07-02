@@ -226,6 +226,7 @@
 	hardsuit_type = "ngrminer"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
+	supports_variations = null
 
 /////////
 //Hats//
@@ -350,12 +351,63 @@
 	. = ..()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/m45_cobra(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/smokebomb(src)
+
+/obj/item/storage/belt/security/webbing/ngr/sidewinder/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/smokebomb(src)
+
+/obj/item/storage/belt/security/webbing/ngr/hydra/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/smokebomb(src)
+
+/obj/item/storage/belt/security/webbing/ngr/hydra_lmg/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m556_42_hydra/extended(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/smokebomb(src)
 
 /obj/item/storage/belt/security/webbing/ngr/hydra_grenadier/PopulateContents()
 	for(var/i in 1 to 3)
 		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
 	new /obj/item/ammo_casing/a40mm(src)
 	new /obj/item/ammo_casing/a40mm(src)
+	new /obj/item/ammo_casing/a40mm(src)
+
+/obj/item/storage/belt/security/webbing/ngr/hydra_dmr/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m556_42_hydra/small(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/smokebomb(src)
+
+/obj/item/storage/belt/security/webbing/ngr/boomslang/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/boomslang(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/smokebomb(src)
+
+/obj/item/storage/belt/security/webbing/ngr/taipan/PopulateContents()
+	for(var/i in 1 to 2)
+		new /obj/item/ammo_box/magazine/sniper_rounds(src)
+	for(var/i in 1 to 2)
+		new /obj/item/ammo_box/magazine/sniper_rounds/penetrator(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/smokebomb(src)
+
+/obj/item/storage/belt/security/webbing/ngr/bulldog/PopulateContents()
+	for(var/i in 1 to 2)
+		new /obj/item/ammo_box/magazine/m12g_bulldog(src)
+	for(var/i in 1 to 2)
+		new /obj/item/ammo_box/magazine/m12g_bulldog/slug(src)
+	new /obj/item/grenade/c4(src)
+	new /obj/item/grenade/c4(src)
+
 
 /obj/item/storage/belt/security/webbing/ngr/alt
 	name = "NGR drop pouch harness"
@@ -365,6 +417,14 @@
 	icon = 'icons/obj/clothing/faction/ngr/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'
 	supports_variations = null
+
+/obj/item/storage/belt/security/webbing/ngr/alt/pilot/PopulateContents()
+	for(var/i in 1 to 2)
+		new /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/slug(src)
+	for(var/i in 1 to 2)
+		new /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/buckshot(src)
+	new /obj/item/binoculars(src)
+	new /obj/item/melee/knife/combat(src)
 
 /obj/item/storage/belt/mining/ngr
 	name = "NGR industrial webbing"

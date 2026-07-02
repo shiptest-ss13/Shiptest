@@ -14,8 +14,8 @@
 	unique_reskin = list(
 		"EXPLOSIVE" = "ammobox_expl",
 		"12ga Buckshot" = "ammobox_12ga",
-		"9x18mm" = "ammobox_9mm",
-		"10x22mm" = "ammobox_10mm",
+		"9mm" = "ammobox_9mm",
+		"10mm" = "ammobox_10mm",
 		".45" = "ammobox_45",
 		".38" = "ammobox_38",
 		".22lr" = "ammobox_22",
@@ -92,16 +92,16 @@
 		new /obj/item/storage/box/ammo/c45(src)
 
 /obj/item/storage/toolbox/ammo/c9mm/PopulateContents()
-	name = "ammo can (9x18mm)"
+	name = "ammo can (9mm)"
 	icon_state = "ammobox_9mm"
-	current_skin = "9x18mm"
+	current_skin = "9mm"
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/c9mm(src)
 
 /obj/item/storage/toolbox/ammo/c10mm/PopulateContents()
-	name = "ammo can (10x22mm)"
+	name = "ammo can (10mm)"
 	icon_state = "ammobox_10mm"
-	current_skin = "10x22mm"
+	current_skin = "10mm"
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/c10mm(src)
 

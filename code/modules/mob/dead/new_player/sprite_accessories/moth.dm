@@ -54,6 +54,15 @@
 	name = "Feathery"
 	icon_state = "feathery"
 
+/datum/sprite_accessory/moth_wings/small
+	name = "Tiny"
+	icon_state = "small"
+	color_src = WINGCOLORS
+
+/datum/sprite_accessory/moth_wings/rosy
+	name = "Rosy"
+	icon_state = "rosy"
+
 /datum/sprite_accessory/moth_wings/plasmafire
 	name = "Plasmafire"
 	icon_state = "plasmafire"
@@ -120,6 +129,10 @@
 	name = "Feathery"
 	icon_state = "feathery"
 
+/datum/sprite_accessory/moth_fluff/rosy
+	name = "Rosy"
+	icon_state = "rosy"
+
 /datum/sprite_accessory/moth_fluff/plasmafire
 	name = "Plasmafire"
 	icon_state = "plasmafire"
@@ -171,6 +184,10 @@
 /datum/sprite_accessory/moth_antennae/feathery
 	name = "Feathery"
 	icon_state = "feathery"
+
+/datum/sprite_accessory/moth_antennae/rosy
+	name = "Rosy"
+	icon_state = "rosy"
 
 /datum/sprite_accessory/moth_antennae/plasmafire
 	name = "Plasmafire"
