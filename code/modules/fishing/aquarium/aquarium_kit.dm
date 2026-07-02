@@ -53,6 +53,7 @@
 /obj/item/aquarium_prop/rocks
 	name = "rocks"
 	icon_state = "rocks"
+	layer_mode = AQUARIUM_LAYER_MODE_BOTTOM
 
 /obj/item/aquarium_prop/seaweed_top
 	name = "dense seaweeds"
@@ -72,7 +73,17 @@
 /obj/item/aquarium_prop/treasure
 	name = "tiny treasure chest"
 	icon_state = "treasure"
-	layer_mode = AQUARIUM_LAYER_MODE_BOTTOM
+	layer_mode = AQUARIUM_LAYER_MODE_TOP
+
+/obj/item/aquarium_prop/diver
+	name = "eva suit diver"
+	icon_state = "diver"
+	layer_mode = AQUARIUM_LAYER_MODE_TOP
+
+/obj/item/aquarium_prop/castle
+	name = "mini castle"
+	icon_state = "castle"
+	layer_mode = AQUARIUM_LAYER_MODE_TOP
 
 /obj/item/storage/box/aquarium_props
 	name = "aquarium props box"
