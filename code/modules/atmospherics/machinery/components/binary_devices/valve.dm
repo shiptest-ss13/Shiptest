@@ -142,6 +142,10 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 /obj/machinery/atmospherics/components/binary/valve/on
 	on = TRUE
 
+/obj/machinery/atmospherics/components/binary/valve/on/layer1
+	piping_layer = 1
+	icon_state = "mvalve_map-1"
+
 /obj/machinery/atmospherics/components/binary/valve/on/layer2
 	piping_layer = 2
 	icon_state = "mvalve_map-2"
@@ -149,6 +153,132 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 /obj/machinery/atmospherics/components/binary/valve/on/layer4
 	piping_layer = 4
 	icon_state = "mvalve_map-4"
+
+/obj/machinery/atmospherics/components/binary/valve/on/layer5
+	piping_layer = 5
+	icon_state = "mvalve_map-5"
+
+//blue
+/obj/machinery/atmospherics/components/binary/valve/blue
+	valve_overlay_prefix = "blue"
+	icon_state = "mvalve_blue_map-3"
+
+/obj/machinery/atmospherics/components/binary/valve/blue/layer1
+	piping_layer = 1
+	icon_state = "mvalve_blue_map-1"
+
+/obj/machinery/atmospherics/components/binary/valve/blue/layer2
+	piping_layer = 2
+	icon_state = "mvalve_blue_map-2"
+
+/obj/machinery/atmospherics/components/binary/valve/blue/layer4
+	piping_layer = 4
+	icon_state = "mvalve_blue_map-4"
+
+/obj/machinery/atmospherics/components/binary/valve/blue/layer5
+	piping_layer = 5
+	icon_state = "mvalve_blue_map-5"
+
+/obj/machinery/atmospherics/components/binary/valve/blue/on
+	on = TRUE
+
+/obj/machinery/atmospherics/components/binary/valve/blue/on/layer1
+	piping_layer = 1
+	icon_state = "mvalve_blue_map-1"
+
+/obj/machinery/atmospherics/components/binary/valve/blue/on/layer2
+	piping_layer = 2
+	icon_state = "mvalve_blue_map-2"
+
+/obj/machinery/atmospherics/components/binary/valve/blue/on/layer4
+	piping_layer = 4
+	icon_state = "mvalve_blue_map-4"
+
+/obj/machinery/atmospherics/components/binary/valve/blue/on/layer5
+	piping_layer = 5
+	icon_state = "mvalve_blue_map-5"
+
+//yellow
+
+/obj/machinery/atmospherics/components/binary/valve/yellow
+	valve_overlay_prefix = "yellow"
+	icon_state = "mvalve_yellow_map-3"
+
+/obj/machinery/atmospherics/components/binary/valve/yellow/layer1
+	piping_layer = 1
+	icon_state = "mvalve_yellow_map-1"
+
+/obj/machinery/atmospherics/components/binary/valve/yellow/layer2
+	piping_layer = 2
+	icon_state = "mvalve_yellow_map-2"
+
+/obj/machinery/atmospherics/components/binary/valve/yellow/layer4
+	piping_layer = 4
+	icon_state = "mvalve_yellow_map-4"
+
+/obj/machinery/atmospherics/components/binary/valve/yellow/layer5
+	piping_layer = 5
+	icon_state = "mvalve_yellow_map-5"
+
+/obj/machinery/atmospherics/components/binary/valve/yellow/on
+	on = TRUE
+
+/obj/machinery/atmospherics/components/binary/valve/yellow/on/layer1
+	piping_layer = 1
+	icon_state = "mvalve_yellow_map-1"
+
+/obj/machinery/atmospherics/components/binary/valve/yellow/on/layer2
+	piping_layer = 2
+	icon_state = "mvalve_yellow_map-2"
+
+/obj/machinery/atmospherics/components/binary/valve/yellow/on/layer4
+	piping_layer = 4
+	icon_state = "mvalve_yellow_map-4"
+
+/obj/machinery/atmospherics/components/binary/valve/yellow/on/layer5
+	piping_layer = 5
+	icon_state = "mvalve_yellow_map-5"
+
+//green
+
+/obj/machinery/atmospherics/components/binary/valve/green
+	valve_overlay_prefix = "green"
+	icon_state = "mvalve_green_map-3"
+
+/obj/machinery/atmospherics/components/binary/valve/green/layer1
+	piping_layer = 1
+	icon_state = "mvalve_green_map-1"
+
+/obj/machinery/atmospherics/components/binary/valve/green/layer2
+	piping_layer = 2
+	icon_state = "mvalve_green_map-2"
+
+/obj/machinery/atmospherics/components/binary/valve/green/layer4
+	piping_layer = 4
+	icon_state = "mvalve_green_map-4"
+
+/obj/machinery/atmospherics/components/binary/valve/green/layer5
+	piping_layer = 5
+	icon_state = "mvalve_green_map-5"
+
+/obj/machinery/atmospherics/components/binary/valve/green/on
+	on = TRUE
+
+/obj/machinery/atmospherics/components/binary/valve/green/on/layer1
+	piping_layer = 1
+	icon_state = "mvalve_green_map-1"
+
+/obj/machinery/atmospherics/components/binary/valve/green/on/layer2
+	piping_layer = 2
+	icon_state = "mvalve_green_map-2"
+
+/obj/machinery/atmospherics/components/binary/valve/green/on/layer4
+	piping_layer = 4
+	icon_state = "mvalve_green_map-4"
+
+/obj/machinery/atmospherics/components/binary/valve/green/on/layer5
+	piping_layer = 5
+	icon_state = "mvalve_green_map-5"
 
 /obj/machinery/atmospherics/components/binary/valve/digital/layer2
 	piping_layer = 2
