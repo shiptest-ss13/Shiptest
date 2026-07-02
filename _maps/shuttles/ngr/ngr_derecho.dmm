@@ -45,10 +45,6 @@
 /obj/item/pen,
 /obj/item/pen,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/directional/north{
-	pixel_x = 1;
-	pixel_y = 41
-	},
 /obj/item/modular_computer/tablet/preset/cheap,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -890,8 +886,8 @@
 	},
 /obj/machinery/button/door{
 	dir = 2;
-	pixel_x = 2;
-	pixel_y = 25;
+	pixel_x = 4;
+	pixel_y = 26;
 	id = "derecho_canteen_shutters";
 	name = "Canteen Shutters"
 	},
@@ -1778,7 +1774,6 @@
 	dir = 8;
 	layer = 2.040
 	},
-/obj/structure/chair/handrail,
 /obj/machinery/button/door{
 	pixel_x = 8;
 	pixel_y = 23;
@@ -1786,6 +1781,10 @@
 	id = "derecho_armory"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/bin{
+	pixel_x = -7;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "px" = (
@@ -2307,7 +2306,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = 11;
+	pixel_x = -10;
 	pixel_y = -19
 	},
 /turf/open/floor/plasteel/dark,
@@ -2558,6 +2557,7 @@
 "ys" = (
 /obj/machinery/airalarm/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "yv" = (
@@ -2971,6 +2971,9 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/pod/dark,
 /area/ship/engineering/electrical)
 "BL" = (
@@ -4013,7 +4016,6 @@
 	pixel_x = 6;
 	pixel_y = -1
 	},
-/obj/machinery/light/dim/directional/north,
 /obj/machinery/door/poddoor/shutters{
 	id = "derecho_armory";
 	name = "Armory Shutters"
