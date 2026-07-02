@@ -5,6 +5,7 @@
 	name = "defibrillator"
 	desc = "A device that delivers powerful shocks to detachable paddles that resuscitate incapacitated patients."
 	icon = 'icons/obj/defib.dmi'
+	world_file = 'icons/obj/world/defib_world.dmi'
 	icon_state = "defibunit"
 	item_state = "defibunit"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
@@ -235,11 +236,13 @@
 	paddles.update_appearance()
 	update_power()
 
+//when you touch up defib code, maybe just remove?
 /obj/item/defibrillator/compact
 	name = "compact defibrillator"
 	desc = "A belt-equipped defibrillator that can be rapidly deployed."
 	icon_state = "defibcompact"
 	item_state = "defibcompact"
+	world_file = null
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
 
@@ -257,6 +260,7 @@
 	desc = "A belt-equipped blood-red defibrillator. Can revive through spacesuits, has an experimental self-recharging battery, and can be utilized in combat via applying the paddles in a disarming or agressive manner."
 	icon_state = "defibcombat" //needs defib inhand sprites
 	item_state = "defibcombat"
+	world_file = null
 	combat = TRUE
 	safety = FALSE
 	cooldown_duration = 2.5 SECONDS

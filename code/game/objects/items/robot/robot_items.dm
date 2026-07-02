@@ -637,7 +637,9 @@
 	if(stored)
 		var/obj/item/reagent_containers/C = stored
 		C.SplashReagents(get_turf(src))
-		qdel(stored)
+		C.forceMove(get_turf(src))
+		stored = null
+		qdel(C)
 	. = ..()
 
 /obj/item/borg/apparatus/beaker/examine()

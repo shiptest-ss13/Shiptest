@@ -8,7 +8,7 @@
 	name = "outpost communications console"
 	desc = "This console allows the user to communicate with a nearby outpost to \
 			purchase supplies and manage missions. Purchases will be delivered to your hangar's delivery zone."
-	icon_screen = "supply_express"
+	icon_screen = "outpost_com"
 	circuit = /obj/item/circuitboard/computer/cargo
 	light_color = COLOR_BRIGHT_ORANGE
 

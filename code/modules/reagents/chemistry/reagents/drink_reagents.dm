@@ -306,7 +306,17 @@
 	taste_description = "sunshine and distant shores"
 	glass_icon_state = "lemonpitcher"
 	glass_name = "pitcher of lemonade"
-	glass_desc = "Sweet, slightly tart, and refreshing. You feel some misplaced nostalgia when you have this, even though you're not sure you've ever squeezed a lemon before."
+	glass_desc = "Sweet, slightly tart, and refreshing."
+
+/datum/reagent/consumable/brazilian_lemonade
+	name = "Brazilian Lemonade"
+	description = "Intense bitterness tempered by condensed milk. Refreshingly cool."
+	color = "#5fcf82"
+	quality = DRINK_NICE
+	taste_description = "rich cream and mild sourness"
+	glass_icon_state = "brazilian_lemonade"
+	glass_name = "Brazilian Lemonade"
+	glass_desc = "A refreshing drink originating from what is now Nova Brasilia. Contrary to the name, limes are used to prepare this drink."
 
 /datum/reagent/consumable/tea/arnold_palmer
 	name = "Arnold Palmer"

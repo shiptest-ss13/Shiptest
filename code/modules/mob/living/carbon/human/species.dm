@@ -228,6 +228,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	/// Default prosthetic replacements.
 	var/datum/sprite_accessory/body/prosthetic_style = /datum/sprite_accessory/body/prosthetic
 
+	/// Digitigrade sprite accessory
+	var/datum/sprite_accessory/body/digitigrade_style
+
 	///For custom overrides for species ass images
 	var/icon/ass_image
 
@@ -774,11 +777,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  */
 /datum/species/proc/handle_mutant_bodyparts(mob/living/carbon/human/H, forced_colour)
 	var/list/bodyparts_to_add = mutant_bodyparts.Copy()
-	var/list/relevent_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
+	var/list/relevent_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_ADJ_HIGH_LAYER, BODY_FRONT_LAYER)
 	var/list/standing	= list()
 
 	H.remove_overlay(BODY_BEHIND_LAYER)
 	H.remove_overlay(BODY_ADJ_LAYER)
+	H.remove_overlay(BODY_ADJ_HIGH_LAYER)
 	H.remove_overlay(BODY_FRONT_LAYER)
 
 	if(!mutant_bodyparts)
@@ -927,6 +931,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.moth_fluff_list[H.dna.features["moth_fluff"]]
 				if("moth_markings")
 					S = GLOB.moth_markings_list[H.dna.features["moth_markings"]]
+				if("moth_antennae")
+					S = GLOB.moth_antennae_list[H.dna.features["moth_antennae"]]
+				if("moth_head")
+					S = GLOB.moth_head_list[H.dna.features["moth_head"]]
 				if("ipc_screen")
 					S = GLOB.ipc_screens_list[H.dna.features["ipc_screen"]]
 				if("ipc_antenna")
@@ -1001,6 +1009,16 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 							accessory_overlay.color = "#[H.dna.features["mcolor2"]]"
 						if(SKINCOLORS)
 							accessory_overlay.color = "#[(skintone2hex(H.skin_tone))]"
+						if(NECKFLUFFCOLORS)
+							accessory_overlay.color = "#[H.dna.features["moth_neckfluff_color"]]"
+						if(WINGCOLORS)
+							accessory_overlay.color = "#[H.dna.features["moth_wings_color"]]"
+						if(ANTENNAECOLORS)
+							accessory_overlay.color = "#[H.dna.features["moth_antennae_color"]]"
+						if(MARKINGCOLORS)
+							accessory_overlay.color = "#[H.dna.features["moth_markings_color"]]"
+						if(BODYFLUFFCOLORS)
+							accessory_overlay.color = "#[H.dna.features["moth_bodyfluff_color"]]"
 
 						if(HAIR)
 							if(hair_color == "mutcolor")
@@ -1046,6 +1064,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	H.apply_overlay(BODY_BEHIND_LAYER)
 	H.apply_overlay(BODY_ADJ_LAYER)
+	H.apply_overlay(BODY_ADJ_HIGH_LAYER)
 	H.apply_overlay(BODY_FRONT_LAYER)
 
 //This exists so sprite accessories can still be per-layer without having to include that layer's
@@ -1056,6 +1075,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return "BEHIND"
 		if(BODY_ADJ_LAYER)
 			return "ADJ"
+		if(BODY_ADJ_HIGH_LAYER)
+			return "ADJ-HIGH"
 		if(BODY_FRONT_LAYER)
 			return "FRONT"
 

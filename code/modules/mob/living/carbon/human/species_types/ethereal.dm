@@ -56,6 +56,8 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ethereal,
 	)
 
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/elzuouse
+
 	var/current_color
 	var/EMPeffect = FALSE
 	var/static/unhealthy_color = rgb(237, 164, 149)

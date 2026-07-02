@@ -12,7 +12,7 @@
 /obj/item/storage/firstaid
 	name = "first-aid kit"
 	desc = "An emergency medical aid kit."
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/medkit.dmi'
 	icon_state = "firstaid"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
@@ -126,7 +126,6 @@
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/ancient
-	icon = 'icons/obj/storage.dmi'
 	icon_state = "firstaid_old"
 	desc = "A basic first aid kit. It looks a little old..."
 

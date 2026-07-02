@@ -1,12 +1,12 @@
 /datum/species/moth
 	name = "\improper Moth"
 	id = SPECIES_MOTH
-	default_color = "00FF00"
-	species_traits = list(LIPS, HAIR, EMOTE_OVERLAY)
+	default_color = "#ECCF8C"
+	species_traits = list(LIPS, HAIR, EMOTE_OVERLAY, MUTCOLORS)
 	inherent_traits = list(TRAIT_ANTENNAE)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
-	mutant_bodyparts = list("moth_wings", "moth_fluff", "moth_markings")
-	default_features = list("moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None")
+	mutant_bodyparts = list("moth_wings", "moth_fluff", "moth_markings", "moth_antennae", "moth_head")
+	default_features = list("moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None", "moth_antennae" = "Plain", "moth_head" = "Flat")
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -43,6 +43,7 @@
 	)
 
 	prosthetic_style = /datum/sprite_accessory/body/prosthetic/human
+	digitigrade_style = /datum/sprite_accessory/body/digitigrade/moth
 
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 5
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 5

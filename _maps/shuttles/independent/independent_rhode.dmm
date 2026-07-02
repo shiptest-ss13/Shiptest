@@ -1530,11 +1530,12 @@
 	dir = 10;
 	color = "#543C30"
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 17;
-	pixel_y = 2
-	},
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/computer/security/telescreen/entertainment{
+	dir = 1;
+	pixel_x = 16;
+	pixel_y = 0
+	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken2"
 	},

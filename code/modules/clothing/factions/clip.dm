@@ -479,6 +479,8 @@
 	item_state = "clip_m10_correspondant"
 	can_flashlight = TRUE
 
+	unique_reskin = null
+
 /obj/item/clothing/head/helmet/riot/clip
 	name = "\improper Minutemen CM-13 Riot Helmet"
 	desc = "A sturdy blue helmet, made with crowd control in mind. The foldable protective visor makes it CLIP-BARD's preferred helmet against hostile xenofauna."

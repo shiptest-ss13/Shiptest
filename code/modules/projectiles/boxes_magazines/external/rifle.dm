@@ -104,6 +104,7 @@
 	caliber = "5.56x42mm"
 	max_ammo = 60
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/p16/casket/empty
 	start_empty = TRUE

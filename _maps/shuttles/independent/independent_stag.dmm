@@ -905,10 +905,7 @@
 /area/ship/cargo)
 "jA" = (
 /obj/structure/chair/sofa/grey/old/left,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 0;
-	pixel_y = 25
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north,
 /turf/open/floor/carpet/purple,
 /area/ship/crew)
 "jD" = (
@@ -2124,7 +2121,7 @@
 	dir = 4;
 	id = "stagarmory"
 	},
-/obj/item/gun/energy/sharplite/x26/empty_cell{
+/obj/item/gun/energy/sharplite/ohm/empty_cell{
 	pixel_x = 1;
 	pixel_y = -7
 	},
@@ -2716,10 +2713,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/machinery/holosign/hardline{
-	pixel_x = 0;
-	pixel_y = 32
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "AW" = (
@@ -3204,10 +3197,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/machinery/holosign/hardline{
-	pixel_x = 30;
-	pixel_y = 0
-	},
 /obj/structure/chair/handrail{
 	dir = 8
 	},
@@ -3513,6 +3502,7 @@
 "IB" = (
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south,
 /turf/open/floor/carpet/green,
 /area/ship/crew/canteen)
 "IG" = (
@@ -3638,6 +3628,20 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
+"JK" = (
+/obj/structure/railing/thin{
+	layer = 3.09;
+	dir = 8
+	},
+/obj/structure/platform/ship_two{
+	dir = 8
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "JN" = (
 /obj/machinery/computer/helm{
 	dir = 8;
@@ -3839,10 +3843,6 @@
 /obj/item/dice/d6/ebony{
 	pixel_x = 5;
 	pixel_y = 0
-	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 0;
-	pixel_y = -32
 	},
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/carpet/green,
@@ -4292,11 +4292,7 @@
 /area/ship/external/dark)
 "PM" = (
 /obj/structure/table,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 0;
-	pixel_y = -32
-	},
-/obj/item/radio/intercom/directional/south,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "PN" = (
@@ -4645,10 +4641,6 @@
 "Ss" = (
 /obj/structure/cable/green{
 	icon_state = "5-10"
-	},
-/obj/machinery/holosign/clover{
-	pixel_x = 0;
-	pixel_y = -30
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
@@ -6172,7 +6164,7 @@ Ud
 Zv
 hb
 yu
-yu
+JK
 rH
 ci
 "}
