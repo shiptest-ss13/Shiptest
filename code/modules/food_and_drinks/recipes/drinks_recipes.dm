@@ -26,8 +26,8 @@
 	required_reagents = list(/datum/reagent/toxin/hot_ice = 1, /datum/reagent/consumable/coffee = 2)
 
 /datum/chemical_reaction/moonshine
-	results = list(/datum/reagent/consumable/ethanol/moonshine = 10)
-	required_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 5)
+	results = list(/datum/reagent/consumable/ethanol/moonshine = 15)
+	required_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3, /datum/reagent/hydrogen = 6, /datum/reagent/oxygen = 3)
 	required_catalysts = list(/datum/reagent/consumable/enzyme = 5)
 	required_container = /obj/structure/fermenting_barrel
 
@@ -327,11 +327,11 @@
 
 /datum/chemical_reaction/silencer
 	results = list(/datum/reagent/consumable/ethanol/silencer = 3)
-	required_reagents = list(/datum/reagent/consumable/nothing = 1, /datum/reagent/consumable/cream = 1, /datum/reagent/consumable/sugar = 1)
+	required_reagents = list(/datum/reagent/toxin/mutetoxin = 1, /datum/reagent/consumable/cream = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/driestmartini
 	results = list(/datum/reagent/consumable/ethanol/driestmartini = 2)
-	required_reagents = list(/datum/reagent/consumable/nothing = 1, /datum/reagent/consumable/ethanol/gin = 1)
+	required_reagents = list(/datum/reagent/toxin/mutetoxin = 1, /datum/reagent/consumable/ethanol/gin = 1)
 
 /datum/chemical_reaction/vimukti
 	results = list(/datum/reagent/consumable/ethanol/vimukti = 3)
@@ -521,7 +521,7 @@
 
 /datum/chemical_reaction/blank_paper
 	results = list(/datum/reagent/consumable/ethanol/blank_paper = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol/silencer = 1, /datum/reagent/consumable/nothing = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/silencer = 1, /datum/reagent/sulfur = 1)
 
 /datum/chemical_reaction/wizz_fizz
 	results = list(/datum/reagent/consumable/ethanol/wizz_fizz = 3)

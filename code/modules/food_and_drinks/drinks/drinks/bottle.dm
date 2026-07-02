@@ -27,6 +27,12 @@
 	var/const/duration = 1.3 SECONDS //Directly relates to the 'knockdown' duration. Lowered by armor (i.e. helmets)
 	isGlass = TRUE
 	foodtype = ALCOHOL
+	var/has_overlay_sprite = FALSE
+
+/obj/item/reagent_containers/food/drinks/bottle/patron/update_overlays()
+	. = ..()
+	//so it overlays the reagent overlays, so we dont need a seperate filled sprite for covered drinks
+	add_overlay("[icon_state]_overlay")
 
 /obj/item/reagent_containers/food/drinks/bottle/small
 	name = "small glass bottle"
@@ -171,15 +177,6 @@
 	icon_state = "tequilabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/tequila = 100)
 	fill_icon_thresholds = null
-
-/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing
-	name = "bottle of nothing"
-	desc = "A bottle filled with nothing."
-	icon_state = "bottleofnothing"
-	list_reagents = list(/datum/reagent/consumable/nothing = 100)
-	foodtype = NONE
-	fill_icon_thresholds = null
-
 
 /obj/item/reagent_containers/food/drinks/bottle/patron
 	name = "Wrapp Artiste Patron"
@@ -726,7 +723,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla
 	name = "Sandblast Sarsaparilla"
-	desc = "A brand of root-beer that was produced and very popular on the outer frontier. While the company was destroyed in the ICW, it was so popular you can usually find crates of these abandoned."
+	desc = "A brand of root-beer that was produced and very popular on the outer frontier. While the company was destroyed in the ICW, it's popularity means one often can find crates of it left behind."
 	icon_state = "sandbottle"
 	volume = 50
 	list_reagents = list(/datum/reagent/consumable/molten/sand = 50)

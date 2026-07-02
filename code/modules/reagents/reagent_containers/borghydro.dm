@@ -175,7 +175,7 @@ Borg Shaker
 	/datum/reagent/consumable/cream, /datum/reagent/consumable/tadrixx, /datum/reagent/consumable/grenadine,
 	/datum/reagent/consumable/ice, /datum/reagent/consumable/lemonjuice, /datum/reagent/consumable/lemon_lime,
 	/datum/reagent/consumable/limejuice, /datum/reagent/consumable/menthol, /datum/reagent/consumable/milk,
-	/datum/reagent/consumable/nothing, /datum/reagent/consumable/orangejuice, /datum/reagent/consumable/peachjuice,
+	/datum/reagent/consumable/orangejuice, /datum/reagent/consumable/peachjuice,
 	/datum/reagent/consumable/sodawater, /datum/reagent/consumable/space_cola, /datum/reagent/consumable/comet_trail,
 	/datum/reagent/consumable/pacfuel, /datum/reagent/consumable/shoal_punch, /datum/reagent/consumable/soymilk,
 	/datum/reagent/consumable/space_up, /datum/reagent/consumable/sugar, /datum/reagent/consumable/tea,

@@ -417,6 +417,7 @@
 	glass_name = "Golden Pearl Iced Tea"
 	glass_desc = "An excessive, cloyingly sweet cocktail originating from the beachside estates of Ryuunosukan nobles. Does not contain tea."
 
+///datum/reagent/consumable/ethanol/moonshine -> /datum/reagent/consumable/ethanol/chemshine
 /datum/reagent/consumable/ethanol/moonshine
 	name = "Chemshine"
 	description = "Appears to distilled rocket fuel mixture.  Harmful leftovers detected in mixture,"
@@ -424,7 +425,45 @@
 	boozepwr = 95
 	taste_description = "bitterness"
 	glass_name = "Chemshine"
-	glass_desc = "You've really hit rock bottom now... your liver packed its bags and left last night. At the very least, don't die with it left in your system. Never ends well."
+	glass_desc = "You've really hit rock bottom now... your liver packed its bags and left last night. At the very least, don't die with it left in your system; that never ends well."
+
+/datum/reagent/consumable/ethanol/moonshine/on_mob_add(mob/living/affected_mob)
+	. = ..()
+	if (!iscarbon(affected_mob))
+		return
+	to_chat(affected_mob, span_danger("You feel chemshined."))
+	RegisterSignal(affected_mob, COMSIG_LIVING_DEATH, PROC_REF(on_death), affected_mob)
+
+/datum/reagent/consumable/ethanol/moonshine/on_mob_delete(mob/living/affected_mob)
+	. = ..()
+
+	if (!iscarbon(affected_mob))
+		return
+
+	to_chat(affected_mob, span_notice("You no longer feel chemshined."))
+	UnregisterSignal(affected_mob, COMSIG_LIVING_DEATH)
+
+/datum/reagent/consumable/ethanol/moonshine/proc/on_death(datum/source)
+	SIGNAL_HANDLER
+	var/mob/living/carbon/dead_drunk = source
+	//max of 6, min of 1
+	var/flame_range
+	var/light_range
+	//max of 2, min of 0
+	var/heavy_range
+	var/turf/drunk_turf = get_turf(dead_drunk)
+
+
+	if(drunk_turf)
+		flame_range = clamp(round(volume/15), 1, 6)
+		light_range = clamp(round(volume/15), 1, 6)
+		heavy_range = max(round(volume/50), 2)
+		explosion(drunk_turf, heavy_impact_range = heavy_range, light_impact_range = light_range, flame_range = flame_range)
+		flame_radius(drunk_turf, flame_range)
+	//purge us so we dont explode again
+	holder.del_reagent(src.type)
+	//holder.remove_reagent(src, volume)
+
 
 /datum/reagent/consumable/ethanol/amg
 	name = "AM-G"
