@@ -40,7 +40,7 @@
 
 /obj/item/aquarium_prop
 	name = "generic aquarium prop"
-	desc = "very boring"
+	desc = "A decoration for the interior of a aquarium."
 	icon = 'icons/obj/aquarium.dmi'
 
 	w_class = WEIGHT_CLASS_TINY
