@@ -356,17 +356,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"hb" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	disable_on_owner_ship_dock = 1;
-	dwidth = 15;
-	height = 30;
-	name = "Squall Wing Dock";
-	width = 35
-	},
-/turf/template_noop,
-/area/template_noop)
 "hp" = (
 /obj/effect/turf_decal/corner/opaque/black/half{
 	dir = 1
@@ -482,7 +471,10 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/machinery/recharger,
+/obj/machinery/recharger{
+	pixel_x = -7;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "jY" = (
@@ -525,7 +517,13 @@
 	pixel_y = 8
 	},
 /obj/machinery/button/door{
-	pixel_x = -1;
+	pixel_x = -2;
+	pixel_y = 22;
+	name = "bridge lockdown";
+	id = "squallbridge"
+	},
+/obj/machinery/button/door{
+	pixel_x = 8;
 	pixel_y = 22;
 	name = "window control";
 	id = "squallwindows"
@@ -611,6 +609,18 @@
 	},
 /obj/effect/turf_decal/corner/opaque/beige,
 /obj/machinery/light/small/directional/north,
+/obj/structure/filingcabinet/double/grey{
+	dir = 4;
+	pixel_x = -9;
+	pixel_y = 0;
+	density = 0
+	},
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "ma" = (
@@ -928,6 +938,17 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"st" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 15;
+	height = 30;
+	name = "Squall Wing Dock";
+	width = 35
+	},
+/turf/template_noop,
+/area/template_noop)
 "sY" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -1197,8 +1218,10 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/grunge{
-	name = "Bridge";
-	req_access_txt = "20"
+	name = "Bridge"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "squallbridge"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -3471,7 +3494,7 @@ km
 Tf
 "}
 (20,1,1) = {"
-hb
+st
 eG
 Mt
 EP
