@@ -944,7 +944,7 @@
 	name = "Dwayne MK.I"
 	longname = "Mark.I Dwayne-class Long Range Mining Transport"
 	desc_extra = "\
-	Makosso-Warra's famous mining transport, the orignal varaint was only designed for short expeditions on planets in the same system, and came with two subshuttles. Delays in mass production resulted in many of her sisters being repurposed into the Mark two.\n\
+	Makosso-Warra's famous mining transport, the orignal variant was only designed for short expeditions on planets in the same system, and came with two subshuttles. Delays in mass production resulted in many of her sisters being repurposed into the Mark two.\n\
 	\nHere she is wearing a era correct N+S Shaft miner outfit. Just an miner."
 	icon_state = "dwayne-1"
 
@@ -960,8 +960,8 @@
 	name = "Shetland"
 	longname = "Shetland-class Multipurpose Frigate"
 	desc_extra = "\
-	Miskilamo's (As of 507 F.S.C.) flagship vessel. The original revision was known to be extremely flawed andd strangely constructed, causing the famous 'curse of the shetland' mass hallucions, yet it was the largest ship available for purchase for many back then.\n\
-	\nThis one is based on orignal revision, thus afflicted with the curse. They conceal their face with a helmet, hiding their idenity for unkown reasons. They wear an oxygen tank, and captain duster, but <span class='italics'>are they even the captain?</span>" //before someone asks, span macros do NOT WORK ON DESCRIPTIONS. DO NOT ASK ME WHY.
+	Miskilamo's (As of 507 F.S.C.) flagship vessel. The original revision was known to be extremely flawed and strangely constructed, causing the famous 'curse of the shetland' mass hallucinations, yet it was the largest ship available for purchase for many back then.\n\
+	\nThis one is based on original revision, thus afflicted with the curse. They conceal their face with a helmet, hiding their identity for unknown reasons. They wear an oxygen tank, and captain duster, but <span class='italics'>are they even the captain?</span>" //before someone asks, span macros do NOT WORK ON DESCRIPTIONS. DO NOT ASK ME WHY.
 	icon_state = "shetland"
 	gender = NEUTER
 
@@ -969,7 +969,7 @@
 	name = "Boyardee"
 	longname = "Boyardee-class Entertainment Vessel"
 	desc_extra = "\
-	Ihejirika's suprise blowout success; when recycling old VI dropships into restruant ships at a very low cost, Adaeze Ihejirika could have never imagined the amount of success and popularity it would bring. Long discontinued due to safety concerns, it's legacy lives on in Ihejirika's logo.\n\
+	Ihejirika's suprise blowout success; when recycling old VI dropships into restaurant ships at a very low cost, Adaeze Ihejirika could have never imagined the amount of success and popularity it would bring. Long discontinued due to safety concerns, it's legacy lives on in Ihejirika's logo.\n\
 	\nShe's based off the ship's namesake, although some artistic liberties were taken, as the Roumain legend was most likely male. She wears a cute chef hat and red tie, though maybe she should put away the cutting knife?"
 	icon_state = "boyardee-a"
 
@@ -977,7 +977,7 @@
 	name = "Boyardee (B)"
 	longname = "Boyardee-class Type B Entertainment Vessel"
 	desc_extra = "\
-	Adaeze Ihejirika, attempting to capitalize on the success of the original Boyardee-class, made a variant recycled from Coalition hulls with a stronger focus on bartending. While not as successful as the orignal, it still made a good profit as the low cost of prodduction meant that even at 'cheap prices' they still made a profit.\n\
+	Adaeze Ihejirika, attempting to capitalize on the success of the original Boyardee-class, made a variant recycled from Coalition hulls with a stronger focus on bartending. While not as successful as the orignal, it still made a good profit as the low cost of production meant that even at 'cheap prices' they still made a profit.\n\
 	\nShe's very similar to her sister, but wearing a beret and armor vest. But what's with the bulldog with slugs?"
 	icon_state = "boyardee-b"
 
@@ -985,15 +985,15 @@
 	name = "Kugelblitz"
 	longname = "Kugelblitz-class Experimental Vessel"
 	desc_extra = "\
-	A very strange vessel, the GEC custom Kugelblitz was designed to have a small vessel capable of flying with a Supermatter, while also having it's thrusters powered by it's exhaust. You may say it had 'mixed success,' but it proved important in the safety of much newer ships.\n\
-	\nShe's based off the unoffical mascot for the Kugelblitz during the era. She's adorned in GEC standard CE equipment, and looks pepped to do her job. You should say hi to her sister, Radi Shipscorch for her!"
+	A very strange vessel, the GEC custom Kugelblitz was designed to have a small vessel capable of flying with a supermatter, while also having the thrusters powered by it's exhaust. You may say it had 'mixed success,' but it proved important in the safety of much newer ships.\n\
+	\nShe's based off the unofficial mascot for the Kugelblitz during the era. She's adorned in GEC standard CE equipment, and looks prepped to do her job. You should say hi to her sister, Radi Shipscorch for her!"
 	icon_state = "kugelblitz"
 
 /obj/item/toy/plush/shipgirl/skipper
 	name = "Skipper"
 	longname = "Skipper-class Heavy Cruiser"
 	desc_extra = "\
-	The Skipper was smaller and less equipped to it's contemparies, but was a common sight in the immediate aftermath of the ICW. Generally, MW attempted to make a general all-rounder to make up for the losses of many faclities. It has been succeeded by the much better Harrier-class.\n\
+	The Skipper was smaller and less equipped to it's contemporaries, but was a common sight in the immediate aftermath of the ICW. Generally, MW attempted to make a general all-rounder to make up for the losses of many facilities. It has been succeeded by the much better Harrier-class.\n\
 	\nShe wears a standard (of the era) First Officer uniform, to show her less prestigious status than the Osprey (Who likely wears a full captain outfit!) She also looks very overworked, also very common for the era."
 	icon_state = "skipper"
 
@@ -1009,7 +1009,7 @@
 	name = "Solar"
 	longname = "Solar-class Research Vessel"
 	desc_extra = "\
-	The Solar was a fairly standard research vessel, most common during the early era of ship miniturization. It was abandoned due to better hulls being made, but despite this, they went crazy on the used market, so much so that they seen for way longer than they really should have been.\n\
+	The Solar was a fairly standard research vessel, most common during the early era of ship miniaturization. It was abandoned due to much better hulls being made. Despite this, the used market kept it alive for way longer than perhaps it really should have been, giving it a very poor reputation. \n\
 	\nShe's based off her original iteration, so she wears a MW scientist outfit; turtleneck fitting snug on her."
 	icon_state = "solar"
 
@@ -1033,7 +1033,7 @@
 	name = "Libertatia"
 	longname = "Libertatia-class Hauler"
 	desc_extra = "\
-	An extremely cheap vessel by Miskilamo, it's low profile, high speed, and lack of capacity to do most common tasks has made it popular with a ton of shady types. Later revisions attempted to make it more appealing to common vessel buyers, but it could never shake off it's 'shady' reputation before discontinuation.\n\
+	An extremely cheap vessel by Miskilamo known for it's low profile and high speed, however the lack of space meant it suffered at many common civilian tasks; making it perfect for smuggling and piracy. Later revisions attempted to make it more appealing to common vessel buyers, but it could never shake off it's 'shady' reputation before discontinuation.\n\
 	\nShe's based off the early audience of the Libertatia, looking really suspicious. Her hat has a feather in it, an eyepatch on her right eye, and her jacket only has one sleeve on."
 	icon_state = "libertatia"
 
@@ -1041,6 +1041,6 @@
 	name = "Riggs"
 	longname = "Riggs-class Sloop"
 	desc_extra = "\
-	A testament to KFP's engineering, the Riggs-class has had variants, modifications, and replacements, yet the original still lives on (As of 507 F.S.C.). It has had famous captains in the frontier, although it's popularity has wanned considerably in recent years.\n\
+	A testament to KFP's engineering, the Riggs-class has had variants, modifications, and replacements, yet the original still lives on (As of 507 F.S.C.). It has had famous captains in the frontier, although its popularity has waned considerably in recent years.\n\
 	\nnShe is wearing the outfit worn by many famous Riggs captains. Her chassis is industrial, referencing the many industrial uses for the Riggs."
 	icon_state = "riggs-a"
