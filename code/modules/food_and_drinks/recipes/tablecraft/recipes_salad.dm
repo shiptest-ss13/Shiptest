@@ -37,7 +37,7 @@
 		/obj/item/food/grown/apple = 1,
 		/obj/item/food/grown/citrus/orange = 1,
 		/obj/item/food/grown/citrus/lemon = 1,
-		/obj/item/food/grown/banana = 1,
+		/obj/item/food/grown/grapes = 1,
 		/obj/item/food/grown/cabbage = 1
 	)
 	result = /obj/item/food/melonfruitbowl
@@ -62,7 +62,7 @@
 		/obj/item/food/grown/apple = 1,
 		/obj/item/food/grown/grapes = 1,
 		/obj/item/food/grown/banana = 2,
-		/obj/item/food/watermelonslice = 2
+		/obj/item/food/grown/berries = 2
 
 	)
 	result = /obj/item/food/salad/jungle
