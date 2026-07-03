@@ -74,6 +74,28 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/south,
+/obj/structure/closet/crate/medical,
+/obj/item/storage/firstaid/medical{
+	pixel_x = 4;
+	pixel_y = 1
+	},
+/obj/item/storage/firstaid/brute{
+	pixel_x = -5;
+	pixel_y = 1
+	},
+/obj/item/roller{
+	pixel_x = 0;
+	pixel_y = 8
+	},
+/obj/item/clothing/gloves/nitrile/evil{
+	pixel_x = 0;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = 0;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/syringe,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "bK" = (
@@ -435,6 +457,14 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
+"jQ" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/recharger,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "jY" = (
 /obj/effect/turf_decal/corner/opaque/red/mono,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -718,6 +748,17 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
+"pm" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 15;
+	height = 30;
+	name = "Squall Wing Dock";
+	width = 35
+	},
+/turf/template_noop,
+/area/template_noop)
 "pn" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -1402,6 +1443,14 @@
 /obj/effect/turf_decal/corner/opaque/black/half{
 	dir = 1
 	},
+/obj/item/storage/part_replacer{
+	pixel_x = 7;
+	pixel_y = -3
+	},
+/obj/item/plasmacutter{
+	pixel_x = -6;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "Cn" = (
@@ -1455,6 +1504,10 @@
 /obj/item/ammo_box/magazine/m45_cobra{
 	pixel_x = 7;
 	pixel_y = -5
+	},
+/obj/item/ammo_box/magazine/m45_cobra{
+	pixel_x = 6;
+	pixel_y = -1
 	},
 /obj/item/ammo_box/magazine/m45_cobra{
 	pixel_x = 6;
@@ -1950,6 +2003,15 @@
 /obj/structure/rack,
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/light/directional/east,
+/obj/item/stack/sheet/metal/twenty{
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/obj/item/stack/sheet/glass/twenty{
+	pixel_x = -4;
+	pixel_y = 0
+	},
+/obj/item/stack/sheet/plastic/five,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Lr" = (
@@ -2870,6 +2932,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/north,
+/obj/structure/closet/crate/rations,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "XL" = (
@@ -2894,6 +2957,24 @@
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table/reinforced,
 /obj/machinery/light/small/directional/south,
+/obj/structure/closet/wall/directional/east,
+/obj/item/plate{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/plate{
+	pixel_x = 3;
+	pixel_y = -1
+	},
+/obj/item/plate/large{
+	pixel_x = -4;
+	pixel_y = 0
+	},
+/obj/item/plate{
+	pixel_x = 3;
+	pixel_y = 0
+	},
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Ym" = (
@@ -3221,7 +3302,7 @@ Tf
 Tf
 iH
 XK
-Fw
+jQ
 Fw
 bH
 iH
@@ -3350,7 +3431,7 @@ km
 Tf
 "}
 (20,1,1) = {"
-Tf
+pm
 eG
 Mt
 EP
