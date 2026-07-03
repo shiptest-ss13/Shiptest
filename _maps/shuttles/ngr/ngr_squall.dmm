@@ -40,6 +40,11 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -13
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "aO" = (
@@ -251,6 +256,10 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/light/small/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 10;
+	pixel_y = 20
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/toilet)
 "eR" = (
@@ -575,6 +584,11 @@
 	icon_state = "0-10"
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -13
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "lT" = (
@@ -748,17 +762,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
-"pm" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	disable_on_owner_ship_dock = 1;
-	dwidth = 15;
-	height = 30;
-	name = "Squall Wing Dock";
-	width = 35
-	},
-/turf/template_noop,
-/area/template_noop)
 "pn" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -863,6 +866,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "rA" = (
@@ -2241,6 +2245,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -10;
+	pixel_y = -20
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "OK" = (
@@ -2254,6 +2263,11 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light/small/directional/east,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "OO" = (
@@ -2364,6 +2378,11 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -20
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Qg" = (
@@ -2417,12 +2436,28 @@
 	},
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -19;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications/room)
 "Rb" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
+"Rd" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 15;
+	height = 30;
+	name = "Squall Wing Dock";
+	width = 35
+	},
+/turf/template_noop,
+/area/template_noop)
 "Rr" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -2632,9 +2667,13 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -10;
+	pixel_y = -19
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -3431,7 +3470,7 @@ km
 Tf
 "}
 (20,1,1) = {"
-pm
+Rd
 eG
 Mt
 EP
