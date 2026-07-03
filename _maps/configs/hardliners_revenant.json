@@ -1,0 +1,48 @@
+{
+	"faction": "/datum/faction/syndicate/hardliners",
+	"prefix": "ISV",
+	"manufacturer": "Kasagi-Fischer Partnership",
+	"namelists": [
+		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"WEAPONS"
+	],
+	"map_name": "Revenant-class Heavy Tug",
+	"map_short_name": "Revenant-class",
+	"description": "",
+	"tags": [
+		"RP Focus",
+		"mining"
+	],
+	"map_path": "_maps/shuttles/hardliner/hardliners_leyak.dmm",
+	"map_id": "hardliners_leyak",
+	"limit": 1,
+	"tranist_y_offset": -11,
+	"starting_funds": 1500,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Sergeant": {
+			"outfit": "/datum/outfit/job/syndicate/hos/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex",
+			"slots": 1
+		},
+		"Wrecker": {
+			"outfit": "/datum/outfit/job/syndicate/miner/gorlex",
+			"slots": 2
+		},
+		"Junior Agent": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
