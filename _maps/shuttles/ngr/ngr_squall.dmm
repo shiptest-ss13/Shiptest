@@ -192,7 +192,7 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 8
 	},
-/obj/machinery/computer/cargo{
+/obj/machinery/computer/helm{
 	dir = 8;
 	icon_state = "computer-left"
 	},
@@ -208,6 +208,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
+"dM" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 15;
+	height = 30;
+	name = "Squall Wing Dock";
+	width = 35
+	},
+/turf/template_noop,
+/area/template_noop)
 "ef" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/closet/wall/directional/south,
@@ -938,17 +949,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"st" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	disable_on_owner_ship_dock = 1;
-	dwidth = 15;
-	height = 30;
-	name = "Squall Wing Dock";
-	width = 35
-	},
-/turf/template_noop,
-/area/template_noop)
 "sY" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -959,7 +959,7 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 8
 	},
-/obj/machinery/computer/helm{
+/obj/machinery/computer/cargo{
 	dir = 8;
 	icon_state = "computer-right"
 	},
@@ -1070,6 +1070,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -1580,9 +1583,6 @@
 	dir = 2;
 	layer = 2.040
 	},
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Ek" = (
@@ -1683,6 +1683,10 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
+	},
+/obj/item/clipboard{
+	pixel_x = -7;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -3494,7 +3498,7 @@ km
 Tf
 "}
 (20,1,1) = {"
-st
+dM
 eG
 Mt
 EP
