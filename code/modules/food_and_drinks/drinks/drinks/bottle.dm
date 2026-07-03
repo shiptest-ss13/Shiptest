@@ -188,14 +188,6 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/rum = 100)
 	fill_icon_thresholds = null
 
-/obj/item/reagent_containers/food/drinks/bottle/holywater
-	name = "flask of holy water"
-	desc = "A flask of water, sanctified in some way by the supertitious."
-	icon_state = "holyflask"
-	list_reagents = list(/datum/reagent/water/holywater = 100)
-	foodtype = NONE
-
-
 /obj/item/reagent_containers/food/drinks/bottle/vermouth
 	name = "Whitespear Dry Vermouth"
 	desc = "Dry and sweet vermouth, commonly used for mixed drinks. Some Solarians drink it as a digestive before meals."
