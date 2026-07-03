@@ -1055,6 +1055,11 @@
 	dir = 1;
 	color = "#eeac2e"
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "jW" = (
@@ -2137,7 +2142,8 @@
 	dir = 8
 	},
 /obj/structure/sign/warning/nosmoking/circle{
-	pixel_y = 22
+	pixel_y = 34;
+	pixel_x = 0
 	},
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/pod,
@@ -5390,10 +5396,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-8"
-	},
-/obj/machinery/light_switch{
-	pixel_x = 0;
-	pixel_y = 23
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
