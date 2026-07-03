@@ -913,9 +913,8 @@
 	icon = 'icons/obj/item/toys/shipgirl_plushes.dmi'
 	icon_state = "generic"
 	gender = FEMALE
+	///list of all the plushes, stored for description
 	var/list/total_list = list()
-	var/shows_in_list = TRUE
-	var/num_in_list = 0
 
 /obj/item/toy/plush/shipgirl/Initialize()
 	. = ..()
@@ -946,7 +945,7 @@
 	longname = "Mark.I Dwayne-class Long Range Mining Transport"
 	desc_extra = "\
 	Makosso-Warra's famous mining transport, the orignal varaint was only designed for short expeditions on planets in the same system, and came with two subshuttles. Delays in mass production resulted in many of her sisters being repurposed into the Mark two.\n\
-	\nHere she is wearing a era correct MW Shaft miner outfit. Just an miner."
+	\nHere she is wearing a era correct N+S Shaft miner outfit. Just an miner."
 	icon_state = "dwayne-1"
 
 /obj/item/toy/plush/shipgirl/dwayne2
