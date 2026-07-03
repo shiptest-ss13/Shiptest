@@ -1,0 +1,44 @@
+{
+	"faction": "/datum/faction/syndicate/ngr",
+	"prefix": "NGRV",
+	"manufacturer": "Hardline Salvage and Mining",
+	"namelists": [
+		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"WEAPONS"
+	],
+	"map_name": "Squall-class Relay Tender",
+	"map_short_name": "Squall-class",
+	"tranist_x_offset": -35,
+	"tranist_y_offset": -25,
+	"description": "The Squall-class is a recent commission to the NGR's navy, appearing first in 505fsc. Originally planned by commander Jeelius-Itan to purely be a special operations vessel, the plan quickly fell apart due to unneeded overspecialization, overuse of advanced technology and an agreed waste of money for the New Gorlex military. Not wanting to completely waste the effort put into the Squall, it was repurposed to be a cheap, mass-producable relay vessel, able to supply local NGR vessels with communications and coherency.",
+	"tags": [
+		"RP Focus",
+		"Combat",
+		"Telecomms"
+	],
+	"map_path": "_maps/shuttles/ngr/ngr_squall.dmm",
+	"map_id": "ngr_squall",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/ngr/stripped",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/ngr/stripped",
+			"slots": 1
+		},
+		"Operative": {
+			"outfit": "/datum/outfit/job/syndicate/security/ngr",
+			"slots": 1
+		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/ngr",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
