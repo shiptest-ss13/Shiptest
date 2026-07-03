@@ -159,7 +159,7 @@
 
 /obj/item/fake_anglegrinder
 	name = "angle grinder"
-	desc = "Adminhelp if you see this, please. This is a jank solution to some technical chicanery involving angle grinder simeplemobs."
+	desc = "I DEMAND that you adminhelp this thing's existence IMMEDIATELY!!! it is an affront to GOD used by coders to make the ramzi clique pretend to have angle grinders!!!! it also does LITERALLY NOTHING so you should throw it into a crusher or something!!!! also if someone mapped this, lol, lmao even, dingus"
 	icon = 'icons/obj/item/gear_packs.dmi'
 	icon_state = "anglegrinder-wield"
 	item_state = "anglegrinder-wield"
@@ -524,6 +524,17 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
 	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/gaboon
+	name = "Ramzi Clique Doorkicker"
+	desc = "A deserter from the Gorlex Marauders turned pirate. They rush at you to close any distance - wielding a thin, jet-black shotgun."
+	l_hand = /obj/item/gun/ballistic/shotgun/gaboon
+	rapid = 1 //not exactly a bockadam is it now
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/gaboon/ballistic
+	desc = "A deserter from the Gorlex Marauders turned pirate. They cradle a thin, jet-black shotgun, their yellow goggles hiding an expression of malice as they charge towards you."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
+	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/incendiary
 	name = "Ramzi Clique Firestarter"
 	desc = "A deserter from the Gorlex Marauders turned pirate. Their finger twitches around the trigger of their combat shotgun."
@@ -582,16 +593,10 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/engineer
 	name = "Ramzi Clique Combat Engineer"
-	desc = "A deserter from the Gorlex Marauders turned pirate. They cradle a dirty-beige sidearm in tattered gloves, hoping it will save them."
+	desc = "A deserter from the Gorlex Marauders turned pirate. They cradle a dirty-beige sidearm in tattered gloves, sweeping from side to side."
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/engi
 	armor_base = /obj/item/clothing/suit/ramzi
-
-/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/gaboon
-	name = "Ramzi Clique Doorkicker"
-	desc = "A deserter from the Gorlex Marauders turned pirate. They rush at you to close any distance - wielding a thin, jet-black shotgun."
-	l_hand = /obj/item/gun/ballistic/shotgun/gaboon
-	rapid = 1 //not exactly a bockadam is it now
 
 /* Space Ranged */
 
@@ -866,7 +871,7 @@
 	desc = "A deserter from the Gorlex Marauders turned pirate. This one is not only unarmed, but also just got out the shower."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/towel
 	armor_base = null
-	helpcall = list("HELP!!!","SOMEBODY, HELP!!!","INTRUDER!! HELP!!!","I JUST WANT TO REST!!","LEAVE ME ALONE!!","GUARDS!!!")
+	helpcall = list("HELP!!!","SOMEBODY, HELP!!!","INTRUDER!! HELP!!!","GO AWAY!!","LEAVE ME ALONE!!","GUARDS!!!")
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian/runt
 	name = "Ramzi Clique Runt"

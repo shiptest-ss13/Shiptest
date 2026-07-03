@@ -20,9 +20,9 @@
 	armor_base = /obj/item/clothing/suit/armor/ramzi
 
 /obj/effect/mob_spawn/human/corpse/frontier/ramzifriend_smuggler
-	outfit = /datum/outfit/frontier/internals/smuggler
+	outfit = /datum/outfit/frontier/internals/ramzifriend_smuggler
 
-/datum/outfit/frontier/internals/smuggler
+/datum/outfit/frontier/internals/ramzifriend_smuggler
 	name = "Frontiersman Smuggler Corpse"
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
 	suit = /obj/item/clothing/suit/armor/ramzi
