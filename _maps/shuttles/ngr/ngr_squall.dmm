@@ -356,6 +356,17 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"hb" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 15;
+	height = 30;
+	name = "Squall Wing Dock";
+	width = 35
+	},
+/turf/template_noop,
+/area/template_noop)
 "hp" = (
 /obj/effect/turf_decal/corner/opaque/black/half{
 	dir = 1
@@ -2349,6 +2360,7 @@
 	populate = 0
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/item/clothing/head/ngr,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Ps" = (
@@ -2447,17 +2459,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
-"Rd" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	disable_on_owner_ship_dock = 1;
-	dwidth = 15;
-	height = 30;
-	name = "Squall Wing Dock";
-	width = 35
-	},
-/turf/template_noop,
-/area/template_noop)
 "Rr" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -3470,7 +3471,7 @@ km
 Tf
 "}
 (20,1,1) = {"
-Rd
+hb
 eG
 Mt
 EP
