@@ -417,8 +417,7 @@
 	glass_name = "Golden Pearl Iced Tea"
 	glass_desc = "An excessive, cloyingly sweet cocktail originating from the beachside estates of Ryuunosukan nobles. Does not contain tea."
 
-///datum/reagent/consumable/ethanol/moonshine -> /datum/reagent/consumable/ethanol/chemshine
-/datum/reagent/consumable/ethanol/moonshine
+/datum/reagent/consumable/ethanol/chemshine
 	name = "Chemshine"
 	description = "Appears to distilled rocket fuel mixture.  Harmful leftovers detected in mixture,"
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha) (like water)
@@ -427,14 +426,14 @@
 	glass_name = "Chemshine"
 	glass_desc = "You've really hit rock bottom now... your liver packed its bags and left last night. At the very least, don't die with it left in your system; that never ends well."
 
-/datum/reagent/consumable/ethanol/moonshine/on_mob_add(mob/living/affected_mob)
+/datum/reagent/consumable/ethanol/chemshine/on_mob_add(mob/living/affected_mob)
 	. = ..()
 	if (!iscarbon(affected_mob))
 		return
 	to_chat(affected_mob, span_danger("You feel chemshined."))
 	RegisterSignal(affected_mob, COMSIG_LIVING_DEATH, PROC_REF(on_death), affected_mob)
 
-/datum/reagent/consumable/ethanol/moonshine/on_mob_delete(mob/living/affected_mob)
+/datum/reagent/consumable/ethanol/chemshine/on_mob_delete(mob/living/affected_mob)
 	. = ..()
 
 	if (!iscarbon(affected_mob))
@@ -443,7 +442,7 @@
 	to_chat(affected_mob, span_notice("You no longer feel chemshined."))
 	UnregisterSignal(affected_mob, COMSIG_LIVING_DEATH)
 
-/datum/reagent/consumable/ethanol/moonshine/proc/on_death(datum/source)
+/datum/reagent/consumable/ethanol/chemshine/proc/on_death(datum/source)
 	SIGNAL_HANDLER
 	var/mob/living/carbon/dead_drunk = source
 	//max of 6, min of 1

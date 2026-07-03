@@ -476,11 +476,11 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/hooch = 100)
 	fill_icon_thresholds = null
 
-/obj/item/reagent_containers/food/drinks/bottle/moonshine
+/obj/item/reagent_containers/food/drinks/bottle/chemshine
 	name = "chemshine jug"
 	desc = "High-proof hard liquor, most likely made in the privacy of a bootlegger's ship. Distilled from rocket fuel in repurposed coolant radiators, it's probably not the best idea to drink this; especially not dying with it in your system."
 	icon_state = "chemshine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/moonshine = 100)
+	list_reagents = list(/datum/reagent/consumable/ethanol/chemshine = 100)
 	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/coconut
@@ -787,16 +787,16 @@
 	for(var/i in 1 to 6)
 		new /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla(src)
 
-/obj/item/storage/bottles/moonshine
-	name = "moonshine bottle crate"
+/obj/item/storage/bottles/chemshine
+	name = "chemshine bottle crate"
 	desc = "Holds four bottles of the strongest hooch this side of the Frontier."
 	icon_state = "hoochcrate"
 	max_bottles = 4
-	valid_bottles = list(/obj/item/reagent_containers/food/drinks/bottle/moonshine)
+	valid_bottles = list(/obj/item/reagent_containers/food/drinks/bottle/chemshine)
 
-/obj/item/storage/bottles/moonshine/PopulateContents()
+/obj/item/storage/bottles/chemshine/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/reagent_containers/food/drinks/bottle/moonshine(src)
+		new /obj/item/reagent_containers/food/drinks/bottle/chemshine(src)
 
-/obj/item/storage/bottles/moonshine/sealed
+/obj/item/storage/bottles/chemshine/sealed
 	sealed = TRUE

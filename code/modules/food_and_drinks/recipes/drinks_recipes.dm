@@ -25,8 +25,8 @@
 	results = list(/datum/reagent/consumable/hot_ice_coffee = 3)
 	required_reagents = list(/datum/reagent/toxin/hot_ice = 1, /datum/reagent/consumable/coffee = 2)
 
-/datum/chemical_reaction/moonshine
-	results = list(/datum/reagent/consumable/ethanol/moonshine = 15)
+/datum/chemical_reaction/chemshine
+	results = list(/datum/reagent/consumable/ethanol/chemshine = 15)
 	required_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3, /datum/reagent/hydrogen = 6, /datum/reagent/oxygen = 3)
 	required_catalysts = list(/datum/reagent/consumable/enzyme = 5)
 	required_container = /obj/structure/fermenting_barrel
@@ -542,7 +542,7 @@
 
 /datum/chemical_reaction/turbo
 	results = list(/datum/reagent/consumable/ethanol/turbo = 5)
-	required_reagents = list(/datum/reagent/consumable/ethanol/moonshine = 2, /datum/reagent/nitrous_oxide = 1, /datum/reagent/consumable/ethanol/sugar_rush = 1, /datum/reagent/consumable/pacfuel = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/chemshine = 2, /datum/reagent/nitrous_oxide = 1, /datum/reagent/consumable/ethanol/sugar_rush = 1, /datum/reagent/consumable/pacfuel = 1)
 
 /datum/chemical_reaction/old_timer
 	results = list(/datum/reagent/consumable/ethanol/old_timer = 6)
