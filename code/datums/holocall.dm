@@ -178,6 +178,7 @@
 	hangup.Grant(user)
 	playsound(H, 'sound/machines/ping.ogg', 100)
 	H.say("Connection established.")
+	H.update_appearance()
 
 //Checks the validity of a holocall and qdels itself if it's not. Returns TRUE if valid, FALSE otherwise
 /datum/holocall/proc/Check()
