@@ -112,6 +112,7 @@ GLOBAL_LIST_EMPTY(glass_variants)
  * if the garnish is a "rim" garnish, it is instead split into two halves, one drawn below all others,
  * and one above all others, allowing garnishes to be placed "inside" the glass
  */
+
 /obj/item/reagent_containers/food/drinks/modglass/update_overlays()
 	. = ..()
 	var/rimtype = garnishes["1"]
