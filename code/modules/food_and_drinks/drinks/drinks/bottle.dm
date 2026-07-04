@@ -28,9 +28,11 @@
 	var/const/duration = 1.3 SECONDS //Directly relates to the 'knockdown' duration. Lowered by armor (i.e. helmets)
 	isGlass = TRUE
 	foodtype = ALCOHOL
+	cap_sfx = 'sound/items/openbottle.ogg'
+	///meant for bottles overlaying the reagents
 	var/has_overlay_sprite = FALSE
 
-/obj/item/reagent_containers/food/drinks/bottle/patron/update_overlays()
+/obj/item/reagent_containers/food/drinks/bottle/update_overlays()
 	. = ..()
 	//so it overlays the reagent overlays, so we dont need a seperate filled sprite for covered drinks
 	add_overlay("[icon_state]_overlay")
@@ -686,34 +688,27 @@
 	desc = "Despite this mix of codeine-based cough syrup and a soft drink of choice being popular online, you're not sure anyone talking about ever tried it. First time for everything?"
 	icon_state = "lean"
 	list_reagents = list(/datum/reagent/consumable/lean = 50)
-	random_sprite = FALSE
+
 	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla
 	name = "Sandblast Sarsaparilla"
-	desc = "A brand of root-beer that was produced and very popular on the outer frontier. While the company was destroyed in the ICW, it's popularity means one often can find crates of it left behind."
-	icon_state = "sandbottle"
+	desc = "A brand of root-beer that was produced and very popular on the outer frontier. While the company producing it was destroyed in the ICW, it's popularity means crates full of Sarsaparilla are left behind abandonded."
+	icon_state = "sarsaparilla"
 	volume = 50
 	list_reagents = list(/datum/reagent/consumable/molten/sand = 50)
-	reagent_flags = null //Cap's on
 	fill_icon_thresholds = null
+	//when set to true it means we checked for the rare cap, thus not checking again
+	var/checked_for_special_cap = FALSE
 
-/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/attack_self(mob/user)
-	if(!is_drainable()) // Uses the reagents.flags cause reagent_flags is only the init value
-		playsound(src, 'sound/items/openbottle.ogg', 30, 1)
-		user.visible_message(span_notice("[user] takes the cap off \the [src]."), span_notice("You take the cap off [src]."))
-		reagents.flags |= OPENCONTAINER //Cap's off
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/set_cap_status(value_to_set)
+	. = ..()
+	if(!checked_for_special_cap && !value_to_set)
 		if(prob(1)) //Lucky you
 			var/S = new /obj/item/sandstar(src)
-			user.put_in_hands(S)
-			to_chat(user, span_notice("You found a Sandblast Star!"))
-	else
-		. = ..()
-
-/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/examine(mob/user)
-	. = ..()
-	if(!is_drainable())
-		. += span_info("The cap is still sealed.")
+			usr.put_in_hands(S)
+			cap_lost = TRUE
+			to_chat(usr, span_notice("Lucky you! You found a Sandblast Star! You decide to take the cap, making [src] uncappable ever again."))
 
 /obj/item/sandstar
 	name = "SandBlast Sarsaparilla star"

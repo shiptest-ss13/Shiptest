@@ -16,6 +16,9 @@
 	var/fill_icon_state = null // Optional custom name for reagent fill icon_state prefix
 	var/fill_icon = 'icons/obj/reagentfillings.dmi'
 
+	/// What sound ddoes this container make when it's uncapped?
+	var/cap_sfx = 'sound/items/glass_cap.ogg'
+
 	/// To enable caps, set can_have_cap to TRUE and define a cap_icon_state. Do not change at runtime.
 	var/can_have_cap = FALSE
 	VAR_PROTECTED/cap_icon_state = null
@@ -164,7 +167,7 @@
 		else
 			set_cap_status(TRUE)
 			to_chat(user, span_notice("You put the cap on [src]."))
-		playsound(src, 'sound/items/glass_cap.ogg', 50, 1)
+		playsound(src, cap_sfx, 50, 1)
 
 /obj/item/reagent_containers/proc/canconsume(mob/eater, mob/user)
 	if(!iscarbon(eater))

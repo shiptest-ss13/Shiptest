@@ -388,6 +388,8 @@
 	update_appearance()
 
 //not even in the fucking right subtype? wow.... repath under bottle
+//thinking about it, these three are used in a ton of maps. TODO: repath these under bottle in another PR
+
 /obj/item/reagent_containers/food/drinks/mead
 	name = "Bizircan Brewery Dark Mead"
 	desc = "A popular Gezenan drink made of fermented honey and spices, known as Gezenan Dark Mead, or GDM for short."
@@ -398,6 +400,7 @@
 	item_state = "mead"
 	can_have_cap = TRUE
 	cap_on = TRUE
+	cap_sfx = 'sound/items/openbottle.ogg'
 
 	icon = 'icons/obj/drinks/bottle.dmi'
 	//world_file = 'icons/obj/drinks/bottle_world.dmi'
@@ -412,6 +415,7 @@
 	item_state = "carplite"
 	can_have_cap = TRUE
 	cap_on = TRUE
+	cap_sfx = 'sound/items/openbottle.ogg'
 
 	icon = 'icons/obj/drinks/bottle.dmi'
 	//world_file = 'icons/obj/drinks/bottle_world.dmi'
@@ -428,6 +432,7 @@
 	custom_price = 15
 	can_have_cap = TRUE
 	cap_on = TRUE
+	cap_sfx = 'sound/items/openbottle.ogg'
 
 	icon = 'icons/obj/drinks/bottle.dmi'
 	//world_file = 'icons/obj/drinks/bottle_world.dmi'
@@ -437,6 +442,7 @@
 /obj/item/reagent_containers/food/drinks/sillycup
 	name = "paper cup"
 	desc = "A paper water cup."
+	icon = 'icons/obj/drinks/cup.dmi'
 	icon_state = "water_cup"
 	possible_transfer_amounts = list()
 	fill_icon_thresholds = list(40, 100)
@@ -514,10 +520,10 @@
 
 
 /obj/item/reagent_containers/food/drinks/colocup
-	name = "colo cup"
-	desc = "A cheap, mass produced style of cup, typically used at parties. They never seem to come out red, for some reason..."
-	icon = 'icons/obj/drinks/drinks.dmi'
-	icon_state = "colocup"
+	name = "plastic cup"
+	desc = "A plastic cup. They're cheap and convinent to produce, making it a staple of parties."
+	icon = 'icons/obj/drinks/cup.dmi'
+	icon_state = "plasticcup_red"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	item_state = "colocup"
@@ -526,15 +532,33 @@
 	volume = 20
 	amount_per_transfer_from_this = 5
 	isGlass = FALSE
+
+	//for decoration
+	//allow_post_reskins = TRUE
+
+	unique_reskin = list(
+		"red" = "plasticcup_red",
+		"orange" = "plasticcup_orange",
+		"yellow" = "plasticcup_yellow",
+		"cyan" = "plasticcup_cyan",
+		"purple" = "plasticcup_purple",
+		"pink" = "plasticcup_pink",
+		"brown" = "plasticcup_brown",
+		"white" = "plasticcup_white",
+		)
+
 	/// Allows the lean sprite to display upon crafting
 	var/random_sprite = TRUE
 
 /obj/item/reagent_containers/food/drinks/colocup/Initialize()
-	.=..()
+	. = ..()
+
 	pixel_x = rand(-4,4)
 	pixel_y = rand(-4,4)
+
 	if (random_sprite)
-		icon_state = "colocup[rand(0, 6)]"
+		//picks a random skin but does not reset it
+		icon_state = unique_reskin[pick(unique_reskin)]
 
 //////////////////////////drinkingglass and shaker//
 //Note by Darem: This code handles the mixing of drinks. New drinks go in three places: In Chemistry-Reagents.dm (for the drink
