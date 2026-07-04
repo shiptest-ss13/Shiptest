@@ -403,7 +403,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /mob/living/carbon/handle_status_effects(seconds_per_tick, times_fired)
 	..()
 
-	var/restingpwr = 0.5 + 2 * resting
+	var/restingpwr = 0.5 + 2 * resting * seconds_per_tick
 
 	if(drowsyness)
 		drowsyness = max(drowsyness - restingpwr, 0)
