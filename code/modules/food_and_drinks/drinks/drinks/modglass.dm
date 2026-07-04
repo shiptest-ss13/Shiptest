@@ -5,7 +5,7 @@
 
 //glass variant defines, if you're adding new glasses make sure to update these
 #define SMALL_VARIANTS 6
-#define MEDIUM_VARIANTS 14
+#define MEDIUM_VARIANTS 13
 #define LARGE_VARIANTS 5
 
 //garnish layer defines, higher numbers go above low ones, add more of these if you manage to get sprites that can fit in a new part of the glass
@@ -23,13 +23,9 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	name = "malleable glass"
 	desc = "Not your standard drinking glass!"
 	icon = 'icons/obj/food/modglass.dmi'
-	lefthand_file = 'icons/obj/drinks/drinks_lefthand.dmi'
-	righthand_file = 'icons/obj/drinks/drinks_righthand.dmi'
-
 	icon_state = "mglass-1-"
-	item_state = "glass"
 	fill_icon = 'icons/obj/food/modglass_fillings.dmi'
-	fill_icon_thresholds = list(1,50,90)
+	fill_icon_thresholds = list(50,90)
 	amount_per_transfer_from_this = 10
 	volume = 50
 	custom_materials = list(/datum/material/glass=500, /datum/material/silver=100)
@@ -112,7 +108,6 @@ GLOBAL_LIST_EMPTY(glass_variants)
  * if the garnish is a "rim" garnish, it is instead split into two halves, one drawn below all others,
  * and one above all others, allowing garnishes to be placed "inside" the glass
  */
-
 /obj/item/reagent_containers/food/drinks/modglass/update_overlays()
 	. = ..()
 	var/rimtype = garnishes["1"]
@@ -137,7 +132,6 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	desc = "you should not see this"
 	icon = 'icons/obj/food/modglass_garnishes_items.dmi'
 	icon_state = "rim"
-	w_class = WEIGHT_CLASS_TINY
 	var/garnish_state = "rim"
 	var/garnish_layer = GARNISH_RIM
 
@@ -151,19 +145,13 @@ GLOBAL_LIST_EMPTY(glass_variants)
 //this will allow it to layer over things inside the glass
 /obj/item/garnish/salt
 	name = "salt garnish"
-	desc = "Harvested from the tears of wasteplanet explorers."
+	desc = "Harvested from the tears of the saltiest assistant."
 
 /obj/item/garnish/ash
 	name = "ash garnish"
 	desc = "But why would you do this though."
 	icon_state = "drim"
 	garnish_state = "drim"
-
-/obj/item/garnish/chilipowder
-	name = "chili powder garnish"
-	desc = "For that jalapeño margarita touch."
-	icon_state = "chilirim"
-	garnish_state = "chilirim"
 
 /obj/item/garnish/puce
 	name = "puce garnish"
@@ -219,13 +207,6 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	garnish_state = "orange"
 	garnish_layer = GARNISH_RIGHT
 
-/obj/item/garnish/apple
-	name = "apple wedge"
-	desc = "An uncommon topping for your drink, but will work just as well."
-	icon_state = "apple"
-	garnish_state = "apple"
-	garnish_layer = GARNISH_RIGHT
-
 /obj/item/garnish/cherry
 	name = "bunch of cherries"
 	desc = "A classic topping for your drink."
@@ -239,13 +220,6 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	desc = "This would look good in a martini."
 	icon_state = "olives"
 	garnish_state = "olives"
-	garnish_layer = GARNISH_LEFT
-
-/obj/item/garnish/pineapples
-	name = "skewered pineapple chunks"
-	desc = "This would look good in a drink."
-	icon_state = "pineappleslice"
-	garnish_state = "pineappleslice"
 	garnish_layer = GARNISH_LEFT
 
 /obj/item/garnish/umbrellared
@@ -268,31 +242,3 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	icon_state = "umbrellagreen"
 	garnish_state = "umbrellagreen"
 	garnish_layer = GARNISH_LEFT
-
-/obj/item/garnish/straw
-	name = "paper straw"
-	desc = "A paper straw meant to be used with drinks."
-	icon_state = "paperstraw"
-	garnish_state = "paperstraw"
-	garnish_layer = GARNISH_LEFT
-
-/obj/item/garnish/stripedstraw
-	name = "red striped paper straw"
-	desc = "A red striped paper straw meant to be used with drinks. Perfect with smoothies."
-	icon_state = "stripedstraw"
-	garnish_state = "stripedstraw"
-	garnish_layer = GARNISH_LEFT
-
-/obj/item/garnish/woodmixingstick
-	name = "wooden mixing stick"
-	desc = "A wooden mixing stick. While it would be great for mixing drinks, it's actually used to garnish drinking glasses, go figure."
-	icon_state = "woodmixingstick"
-	garnish_state = "woodmixingstick"
-	garnish_layer = GARNISH_RIGHT
-
-/obj/item/garnish/blackmixingstick
-	name = "black mixing stick"
-	desc = "A black mixing stick made of plastic. While it would be great for mixing drinks, it's actually used to garnish drinking glasses, go figure."
-	icon_state = "blackmixingstick"
-	garnish_state = "blackmixingstick"
-	garnish_layer = GARNISH_RIGHT
