@@ -23,7 +23,11 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	name = "malleable glass"
 	desc = "Not your standard drinking glass!"
 	icon = 'icons/obj/food/modglass.dmi'
+	lefthand_file = 'icons/obj/drinks/drinks_lefthand.dmi'
+	righthand_file = 'icons/obj/drinks/drinks_righthand.dmi'
+
 	icon_state = "mglass-1-"
+	item_state = "glass"
 	fill_icon = 'icons/obj/food/modglass_fillings.dmi'
 	fill_icon_thresholds = list(1,50,90)
 	amount_per_transfer_from_this = 10
@@ -132,6 +136,7 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	desc = "you should not see this"
 	icon = 'icons/obj/food/modglass_garnishes_items.dmi'
 	icon_state = "rim"
+	w_class = WEIGHT_CLASS_TINY
 	var/garnish_state = "rim"
 	var/garnish_layer = GARNISH_RIM
 
@@ -213,6 +218,13 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	garnish_state = "orange"
 	garnish_layer = GARNISH_RIGHT
 
+/obj/item/garnish/apple
+	name = "apple wedge"
+	desc = "An uncommon topping for your drink, but will work just as well."
+	icon_state = "apple"
+	garnish_state = "apple"
+	garnish_layer = GARNISH_RIGHT
+
 /obj/item/garnish/cherry
 	name = "bunch of cherries"
 	desc = "A classic topping for your drink."
@@ -226,6 +238,13 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	desc = "This would look good in a martini."
 	icon_state = "olives"
 	garnish_state = "olives"
+	garnish_layer = GARNISH_LEFT
+
+/obj/item/garnish/pineapples
+	name = "skewered pineapple chunks"
+	desc = "This would look good in a drink."
+	icon_state = "pineappleslice"
+	garnish_state = "pineappleslice"
 	garnish_layer = GARNISH_LEFT
 
 /obj/item/garnish/umbrellared

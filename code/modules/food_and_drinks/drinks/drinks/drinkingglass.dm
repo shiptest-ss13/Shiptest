@@ -3,6 +3,8 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass
 	name = "drinking glass"
 	desc = "Your standard drinking glass."
+	lefthand_file = 'icons/obj/drinks/drinks_lefthand.dmi'
+	righthand_file = 'icons/obj/drinks/drinks_righthand.dmi'
 	//world_file = 'icons/obj/drinks/drinks_world.dmi'
 	icon_state = "glass"
 	fill_icon_thresholds = list(1, 20, 50, 70, 90)
