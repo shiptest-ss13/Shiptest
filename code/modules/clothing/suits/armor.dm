@@ -56,6 +56,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 	slowdown = 0 //one day...
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list(
 		"None" = "marine_light",
 		"Desert" = "marine_light_desert",
