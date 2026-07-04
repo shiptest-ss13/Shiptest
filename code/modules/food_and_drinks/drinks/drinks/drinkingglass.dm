@@ -7,6 +7,7 @@
 	righthand_file = 'icons/obj/drinks/drinks_righthand.dmi'
 	//world_file = 'icons/obj/drinks/drinks_world.dmi'
 	icon_state = "glass"
+	item_state = "glass"
 	fill_icon_thresholds = list(1, 20, 50, 70, 90)
 	amount_per_transfer_from_this = 10
 	volume = 50
@@ -48,6 +49,7 @@
 	name = "shot glass"
 	desc = "A shot glass - the universal symbol for bad decisions."
 	icon_state = "shotglass"
+	item_state = "shotglass"
 	gulp_size = 15
 	amount_per_transfer_from_this = 15
 	fill_icon_thresholds = list(1, 30, 60, 90)

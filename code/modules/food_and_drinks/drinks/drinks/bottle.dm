@@ -693,7 +693,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla
 	name = "Sandblast Sarsaparilla"
-	desc = "A brand of root-beer that was produced and very popular on the outer frontier. While the company producing it was destroyed in the ICW, it's popularity means crates full of Sarsaparilla are left behind abandonded."
+	desc = "A brand of root-beer that was produced and very popular on the outer frontier. While the company producing it was destroyed in the ICW, it's popularity results in crates full of Sarsaparilla are left behind, abandoned."
 	icon_state = "sarsaparilla"
 	volume = 50
 	list_reagents = list(/datum/reagent/consumable/molten/sand = 50)
@@ -708,7 +708,8 @@
 			var/S = new /obj/item/sandstar(src)
 			usr.put_in_hands(S)
 			cap_lost = TRUE
-			to_chat(usr, span_notice("Lucky you! You found a Sandblast Star! You decide to take the cap, making [src] uncappable ever again."))
+			checked_for_special_cap = TRUE
+			to_chat(usr, span_notice("Lucky you! You found a Sandblast Star! You decide to take the cap, making \the [src] uncappable ever again."))
 
 /obj/item/sandstar
 	name = "SandBlast Sarsaparilla star"
