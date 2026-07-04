@@ -196,7 +196,7 @@ Possible to do for anyone motivated enough:
 			. += span_notice("The caller history indicates the last call received was from: [caller_history].")
 
 /obj/machinery/holopad/attackby(obj/item/P, mob/user, params)
-	if(default_deconstruction_screwdriver(user, "holopad_open", "holopad", P))
+	if(default_deconstruction_screwdriver(user, "holopad_open", base_icon_state, P))
 		return
 
 	if(default_pry_open(P))
