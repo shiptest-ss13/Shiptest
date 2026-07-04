@@ -395,7 +395,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/mead = 30)
 	foodtype = SUGAR | ALCOHOL
 	custom_price = 10
-	item_state = "beer" //Generic held-item sprite until unique ones are made.
+	item_state = "mead"
 	can_have_cap = TRUE
 	cap_on = TRUE
 
@@ -409,7 +409,7 @@
 	desc = "Brewed with \"Pure Ice Asteroid Spring Water\"."
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/light = 30)
 	icon_state = "carplite"
-	item_state = "beer" //Generic held-item sprite until unique ones are made.
+	item_state = "carplite"
 	can_have_cap = TRUE
 	cap_on = TRUE
 
@@ -422,11 +422,10 @@
 	name = "RHIMBASA TAP"
 	desc = "An ale that is brewed on Reh'himl, named after the planet that shields it from their sun. Telh'aim Pale Ales are shortened to TAP, with most breweries reducing their names to acronyms alongside it."
 	icon_state = "rhimbasa"
-	item_state = "beer"
+	item_state = "rhimbasa"
 	list_reagents = list(/datum/reagent/consumable/ethanol/ale = 30)
 	foodtype = GRAIN | ALCOHOL
 	custom_price = 15
-	item_state = "beer" //Generic held-item sprite until unique ones are made.
 	can_have_cap = TRUE
 	cap_on = TRUE
 

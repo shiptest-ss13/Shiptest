@@ -18,7 +18,7 @@
 	volume = 100
 	force = 15 //Smashing bottles over someone's head hurts.
 	throwforce = 15
-	item_state = "beer" //Generic held-item sprite until unique ones are made.
+	item_state = "glassbottle" //Generic held-item sprite until unique ones are made.
 
 	lefthand_file = 'icons/obj/drinks/bottle_lefthand.dmi'
 	righthand_file = 'icons/obj/drinks/bottle_righthand.dmi'
@@ -121,7 +121,7 @@
 	throw_speed = 3
 	throw_range = 5
 	w_class = WEIGHT_CLASS_TINY
-	item_state = "beer"
+	item_state = "glassbottle"
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("stabbed", "slashed", "attacked")
 	sharpness = SHARP_EDGED
@@ -480,6 +480,7 @@
 	name = "chemshine jug"
 	desc = "High-proof hard liquor, most likely made in the privacy of a bootlegger's ship. Distilled from rocket fuel in repurposed coolant radiators, it's probably not the best idea to drink this; especially not dying with it in your system."
 	icon_state = "chemshine"
+	item_state = "chemshine"
 	list_reagents = list(/datum/reagent/consumable/ethanol/chemshine = 100)
 	fill_icon_thresholds = null
 
