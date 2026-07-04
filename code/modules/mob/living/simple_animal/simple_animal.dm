@@ -371,8 +371,8 @@
 
 	if(!environment_pressure_is_safe())
 		adjustHealth(unsuitable_atmos_damage)
-			if(unsuitable_atmos_damage > 0)
-				throw_alert("pressure", /atom/movable/screen/alert/lowpressure, 2)
+		if(unsuitable_atmos_damage > 0)
+			throw_alert("pressure", /atom/movable/screen/alert/badpressure, 2)
 	else
 		clear_alert("pressure")
 
