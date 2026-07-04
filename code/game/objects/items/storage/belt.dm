@@ -508,17 +508,17 @@
 		"Urban" = "militarywebbing_urban",
 		)
 
-//this might seem obtuse instead of setting allow_post_reskins to TRUE, but then the reskin menu would open every alt click, which is not good for a storage item
+//this might seem obtuse instead of allowing infinte reskins, but then the reskin menu would open every alt click, which is not good for a storage item such as this
 /obj/item/storage/belt/military/examine(mob/user)
 	. = ..()
 	if(unique_reskin && current_skin)
-		. += "You can <b>Ctrl-Click</b> [src] to reskin it again after skinning it."
+		. += "You can [span_bold("Ctrl-Click")] [src] to reskin it again after skinning it."
 
 /obj/item/storage/belt/military/CtrlClick(mob/user)
 	. = ..()
 	if(isliving(user) && in_range(src, user))
 		current_skin = null
-		to_chat(user, "You can reskin [src] again wtih <b>Alt-Click</b>.")
+		to_chat(user, "You can now reskin [src] again wtih [span_bold("Alt-Click")].")
 
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
