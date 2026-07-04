@@ -18,7 +18,7 @@
 	volume = 100
 	force = 15 //Smashing bottles over someone's head hurts.
 	throwforce = 15
-	item_state = "glassbottle" //Generic held-item sprite until unique ones are made.
+	item_state = "glassbottle"
 
 	lefthand_file = 'icons/obj/drinks/bottle_lefthand.dmi'
 	righthand_file = 'icons/obj/drinks/bottle_righthand.dmi'
@@ -116,7 +116,7 @@
 /obj/item/broken_bottle
 	name = "broken bottle"
 	desc = "A bottle with a sharp broken bottom."
-	icon = 'icons/obj/drinks/drinks.dmi'
+	icon = 'icons/obj/drinks/bottle.dmi'
 	icon_state = "broken_bottle"
 	force = 9
 	throwforce = 5
@@ -127,7 +127,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("stabbed", "slashed", "attacked")
 	sharpness = SHARP_EDGED
-	var/static/icon/broken_outline = icon('icons/obj/drinks/drinks.dmi', "broken")
+	var/static/icon/broken_outline = icon('icons/obj/drinks/bottle.dmi', "broken")
 
 /obj/item/broken_bottle/Initialize()
 	. = ..()
@@ -474,7 +474,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/hooch
 	name = "hooch bottle"
 	desc = "A bottle of homebrewed, low quality alcohol. The paper wrapping is covered in little signatures and messages - how many hands have passed this bottle before you came around?"
-	icon_state = "hoochbottle"
+
 	list_reagents = list(/datum/reagent/consumable/ethanol/hooch = 100)
 	fill_icon_thresholds = null
 
@@ -558,11 +558,15 @@
 	volume = 100
 	force = 15 //Smashing bottles over someone's head hurts.
 	throwforce = 15
-	item_state = "broken_beer" //Generic held-item sprite until unique ones are made.
-	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+
+	item_state = "glassbottle"
+	icon = 'icons/obj/drinks/bottle.dmi'
+	lefthand_file = 'icons/obj/drinks/bottle_lefthand.dmi'
+	righthand_file = 'icons/obj/drinks/bottle_righthand.dmi'
+
 	pickup_sound =  'sound/items/handling/bottle_pickup.ogg'
 	drop_sound = 'sound/items/handling/bottle_drop.ogg'
+
 	var/const/duration = 13 //Directly relates to the 'knockdown' duration. Lowered by armor (i.e. helmets)
 	isGlass = TRUE
 	foodtype = ALCOHOL
@@ -686,10 +690,7 @@
 /obj/item/reagent_containers/food/drinks/colocup/lean
 	name = "lean"
 	desc = "Despite this mix of codeine-based cough syrup and a soft drink of choice being popular online, you're not sure anyone talking about ever tried it. First time for everything?"
-	icon_state = "lean"
 	list_reagents = list(/datum/reagent/consumable/lean = 50)
-
-	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla
 	name = "Sandblast Sarsaparilla"

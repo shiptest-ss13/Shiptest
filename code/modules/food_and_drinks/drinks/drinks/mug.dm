@@ -13,6 +13,7 @@
 	name = "RILENA mug"
 	desc = "A mug with RILENA: LMR protagonist Ri's face on it."
 	icon_state = "rilenacup"
+	icon = 'icons/obj/drinks/cup.dmi'
 	volume = 30
 	spillable = TRUE
 ///obj/item/reagent_containers/food/drinks/beaglemug -> /obj/item/reagent_containers/food/drinks/mug/beagle FUCK this pathing
