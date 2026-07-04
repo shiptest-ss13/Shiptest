@@ -136,6 +136,8 @@
 /obj/item/stock_parts/cell/proc/corrupt()
 	charge /= 2
 	maxcharge = max(maxcharge/2, chargerate)
+	desc = initial(desc)
+	desc += " This one is damaged and has a rating of [DisplayEnergy(maxcharge)], and you should not swallow it."
 	if (prob(10))
 		rigged = TRUE //broken batterys are dangerous
 
