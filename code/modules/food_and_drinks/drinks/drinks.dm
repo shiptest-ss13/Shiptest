@@ -527,8 +527,9 @@
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	item_state = "colocup"
+	fill_icon_state = "coffee_cup"
 	custom_materials = list(/datum/material/plastic = 1000)
-	possible_transfer_amounts = list(5, 10, 15, 20)
+	fill_icon_thresholds = list(30, 90)
 	volume = 20
 	amount_per_transfer_from_this = 5
 	isGlass = FALSE
