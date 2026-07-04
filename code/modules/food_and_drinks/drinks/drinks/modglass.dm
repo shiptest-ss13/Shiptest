@@ -49,6 +49,10 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	//a list to be filled with the current garnishes placed on the glass
 	var/list/garnishes = list()
 
+/obj/item/reagent_containers/food/drinks/modglass/examine(mob/user)
+	. = ..()
+	. += span_notice("You can remove any attatched garnishes by simply cleaning \the [src].")
+
 /obj/item/reagent_containers/food/drinks/modglass/small
 	name = "small malleable glass"
 	icon_state = "sglass-1-"
@@ -99,11 +103,18 @@ GLOBAL_LIST_EMPTY(glass_variants)
 		return ..()
 	garnishes["[garnish.garnish_layer]"] = garnish.garnish_state
 	update_appearance()
-	qdel(garnish)
+	garnish.forceMove(src)
 
 //clear garnishes on wash
 /obj/item/reagent_containers/food/drinks/modglass/wash(clean_types)
 	. = ..()
+	var/turf/dump_location = get_turf(src)
+	if(!dump_location)
+		return
+	for(var/obj/item/cleaned_garnish in contents)
+		cleaned_garnish.forceMove(dump_location)
+		cleaned_garnish.pixel_x = rand(-10,10)
+		cleaned_garnish.pixel_y = rand(-10,10)
 	garnishes = list()
 	update_appearance()
 

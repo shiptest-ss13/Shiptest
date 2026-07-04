@@ -704,11 +704,11 @@
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/set_cap_status(value_to_set)
 	. = ..()
 	if(!checked_for_special_cap && !value_to_set)
-		if(prob(1)) //Lucky you
+		checked_for_special_cap = TRUE
+		if(prob(2)) //Lucky you
 			var/S = new /obj/item/sandstar(src)
 			usr.put_in_hands(S)
 			cap_lost = TRUE
-			checked_for_special_cap = TRUE
 			to_chat(usr, span_notice("Lucky you! You found a Sandblast Star! You decide to take the cap, making \the [src] uncappable ever again."))
 
 /obj/item/sandstar

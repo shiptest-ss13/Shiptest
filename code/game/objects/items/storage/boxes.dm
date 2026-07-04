@@ -1714,9 +1714,9 @@
 	illustration = "straw"
 
 /obj/item/storage/box/straw/PopulateContents()
-	for(var/i in 1 to 3)
+	for(var/i in 1 to 4)
 		new /obj/item/garnish/straw(src)
-	for(var/i in 1 to 3)
+	for(var/i in 1 to 4)
 		new /obj/item/garnish/stripedstraw(src)
 
 /obj/item/storage/box/garnish
@@ -1732,6 +1732,7 @@
 		/obj/item/garnish/lime = 1,
 		/obj/item/garnish/lemon = 1,
 		/obj/item/garnish/orange = 1,
+		/obj/item/garnish/apple = 1,
 		/obj/item/garnish/chilipowder = 1,
 		/obj/item/garnish/salt = 1,
 		/obj/item/garnish/woodmixingstick = 1,
