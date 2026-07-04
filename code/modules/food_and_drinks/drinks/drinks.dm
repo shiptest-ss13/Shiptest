@@ -534,7 +534,7 @@
 	isGlass = FALSE
 
 	//for decoration
-	//allow_post_reskins = TRUE
+	obj_flags = INFINITE_RESKIN
 
 	unique_reskin = list(
 		"red" = "plasticcup_red",
