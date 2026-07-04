@@ -31,7 +31,7 @@ Possible to do for anyone motivated enough:
 	name = "holopad"
 	desc = "It's a floor-mounted device for projecting holographic images."
 	icon = 'icons/obj/machines/holopad.dmi'
-	icon_state = "holopad0"
+	icon_state = "holopad"
 	base_icon_state = "holopad"
 	layer = LOW_OBJ_LAYER
 	plane = FLOOR_PLANE
@@ -196,7 +196,7 @@ Possible to do for anyone motivated enough:
 			. += span_notice("The caller history indicates the last call received was from: [caller_history].")
 
 /obj/machinery/holopad/attackby(obj/item/P, mob/user, params)
-	if(default_deconstruction_screwdriver(user, "holopad_open", "holopad0", P))
+	if(default_deconstruction_screwdriver(user, "holopad_open", "holopad", P))
 		return
 
 	if(default_pry_open(P))
