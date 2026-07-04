@@ -31,7 +31,7 @@ Possible to do for anyone motivated enough:
 	name = "holopad"
 	desc = "It's a floor-mounted device for projecting holographic images."
 	icon = 'icons/obj/machines/holopad.dmi'
-	icon_state = "holopad0"
+	icon_state = "holopad"
 	base_icon_state = "holopad"
 	layer = LOW_OBJ_LAYER
 	plane = FLOOR_PLANE
@@ -79,12 +79,16 @@ Possible to do for anyone motivated enough:
 	var/secure = FALSE
 	/// If we are currently calling another holopad
 	var/calling = FALSE
+	///If this pad has been overriden to hide the call location
+	var/hidden_pad = FALSE
+	///If this pad has been overriden to hide the user
+	var/secret_user = FALSE
+	///the name we use when our location is overriden (usually by hidden_pad)
+	var/name_override
+	///does this pad get broadcast globally at all?
+	var/secret_pad = FALSE
 	/// The last holopad that called this one.
 	var/caller_history
-
-/obj/machinery/holopad/Initialize()
-	. = ..()
-	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
 /obj/machinery/holopad/secure
 	name = "secure holopad"
@@ -133,8 +137,14 @@ Possible to do for anyone motivated enough:
 
 /obj/machinery/holopad/Initialize()
 	. = ..()
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 	if(on_network)
 		holopads += src
+
+/obj/machinery/holopad/examine(mob/user)
+	. = ..()
+	if(panel_open)
+		. += span_notice("You could use a multitool to alter the circuitry inside..")
 
 /obj/machinery/holopad/Destroy()
 	if(outgoing_call)
@@ -186,7 +196,7 @@ Possible to do for anyone motivated enough:
 			. += span_notice("The caller history indicates the last call received was from: [caller_history].")
 
 /obj/machinery/holopad/attackby(obj/item/P, mob/user, params)
-	if(default_deconstruction_screwdriver(user, "holopad_open", "holopad0", P))
+	if(default_deconstruction_screwdriver(user, "[base_icon_state]_open", base_icon_state, P))
 		return
 
 	if(default_pry_open(P))
@@ -209,6 +219,50 @@ Possible to do for anyone motivated enough:
 		return
 
 	return ..()
+
+/obj/machinery/holopad/multitool_act(mob/living/user, obj/item/I, list/modifiers)
+	. = ..()
+
+	if(panel_open)
+		to_chat(user, span_notice("You start to access the internal circuitry of [src]..."))
+		playsound(src, 'sound/items/equip/toolbelt_equip.ogg', 25)
+		if(do_after(user, 10 SECONDS, src, extra_checks = CALLBACK(src, PROC_REF(holopad_hack), user,  panel_open, anchored)))
+			var/list/choices = list(
+				"Location Tag" = image(icon = 'icons/effects/radial_holopad.dmi', icon_state = "location[hidden_pad]"),
+				"Answering Mechanism" = image(icon= 'icons/effects/radial_holopad.dmi', icon_state = "force[force_answer_call]"),
+				"Scanner" = image(icon = 'icons/effects/radial_holopad.dmi', icon_state = "secret[secret_user]"),
+				"CommNet Publicity" = image(icon = 'icons/effects/radial_holopad.dmi', icon_state = "secure[secret_pad]"),
+			)
+			var/hack_choice = show_radial_menu(user, src, choices)
+			switch(hack_choice)
+				if("Location Tag")
+					to_chat(user, span_warning("You [hidden_pad ? "reset" : "short"] the location circuit in [src]!"))
+					if(hidden_pad)
+						name_override = 0
+					else
+						name_override = random_string(7, list("#","@","!","G","N","O","M","E","*","0","S","T","V","&","^","*","=","+","-","!"))
+					hidden_pad = !hidden_pad
+
+				if("Answering Mechanism")
+					to_chat(user, span_warning("You [force_answer_call ? "disable" : "enable"] the auto-answerer circuit in [src]!"))
+					force_answer_call = !force_answer_call
+				if("Scanner")
+					to_chat(user, span_warning("You [secret_user ? "reset" : "blur"] the [src]'s camera!"))
+					secret_user = !secret_user
+				if("CommNet Publicity")
+					to_chat(user, span_warning("You [secret_pad ? "disable" : "enable"] [src]'s publicity!"))
+					secret_pad = !secret_pad
+		return TRUE
+
+
+/obj/machinery/holopad/proc/holopad_hack(user, state, anchored)
+	if(!state || !anchored)
+		return FALSE
+	if(SPT_PROB(5, 1))
+		//wear your gloves kids
+		electrocute_mob(user, get_area(src), src, dist_check = TRUE)
+		do_sparks(3, 0, src)
+	return TRUE
 
 /obj/machinery/holopad/ui_status(mob/user)
 	if(!is_operational)
@@ -270,12 +324,17 @@ Possible to do for anyone motivated enough:
 			if(usr.loc == loc)
 				var/list/callnames = list()
 				for(var/obj/machinery/holopad/pad as anything in holopads)
-					if (pad.is_operational)
-						var/area/area = get_area(pad)
-						if(area)
-							LAZYADD(callnames[area], pad)
-				callnames -= get_area(src)
-				var/result = tgui_input_list(usr, "Choose an area to call", "Holocall", sortNames(callnames))
+					if(pad == src)
+						continue
+					if (pad.is_operational && !pad.secret_pad)
+						if(pad.name_override)
+							LAZYADD(callnames[ref(pad.name_override)], pad)
+						else
+							var/area/area = get_area(pad)
+							if(area)
+								LAZYADD(callnames[area], pad)
+
+				var/result = tgui_input_list(usr, "Choose an holopad to call", "Holocall", sortNames(callnames))
 				if(QDELETED(usr) || !result || outgoing_call)
 					return
 				var/interference = SSovermap.get_overmap_interference(src)
@@ -340,6 +399,11 @@ Possible to do for anyone motivated enough:
 			if(outgoing_call)
 				outgoing_call.Disconnect(src)
 
+/obj/machinery/holopad/proc/get_pad_name()
+	if(name_override)
+		return name_override
+	return get_area_name(src)
+
 /**
  * hangup_all_calls: Disconnects all current holocalls from the holopad
  */
@@ -399,7 +463,7 @@ Possible to do for anyone motivated enough:
 
 	update_appearance()
 
-/obj/machinery/holopad/proc/activate_holo(mob/living/user)
+/obj/machinery/holopad/proc/activate_holo(mob/living/user, secret)
 	var/mob/living/silicon/ai/AI = user
 	if(!istype(AI))
 		AI = null
@@ -413,9 +477,13 @@ Possible to do for anyone motivated enough:
 		if(AI)
 			Hologram.icon = AI.holo_icon
 		else	//make it like real life
-			Hologram.icon = user.icon
-			Hologram.icon_state = user.icon_state
-			Hologram.copy_overlays(user, TRUE)
+			if(secret)
+				Hologram.icon = 'icons/effects/effects.dmi'
+				Hologram.icon_state = "static"
+			else
+				Hologram.icon = user.icon
+				Hologram.icon_state = user.icon_state
+				Hologram.copy_overlays(user, TRUE)
 			//codersprite some holo effects here
 			Hologram.alpha = 100
 			Hologram.add_atom_colour("#77abff", FIXED_COLOUR_PRIORITY)
@@ -424,7 +492,10 @@ Possible to do for anyone motivated enough:
 		Hologram.mouse_opacity = MOUSE_OPACITY_TRANSPARENT//So you can't click on it.
 		Hologram.layer = FLY_LAYER//Above all the other objects/mobs. Or the vast majority of them.
 		Hologram.set_anchored(TRUE)//So space wind cannot drag it.
-		Hologram.name = "[user.name] (Hologram)"//If someone decides to right click.
+		if(secret)
+			Hologram.name = "???"
+		else
+			Hologram.name = "[user.name] (Hologram)"//If someone decides to right click.
 		Hologram.set_light(2)	//hologram lighting
 		move_hologram(user, loc)
 
@@ -471,6 +542,9 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	var/total_users = LAZYLEN(masters) + LAZYLEN(holo_calls)
 	if(ringing)
 		icon_state = "[base_icon_state]_ringing"
+		return ..()
+	if(panel_open)
+		icon_state = "[base_icon_state]_open"
 		return ..()
 	icon_state = "[base_icon_state][(total_users || replay_mode) ? 1 : 0]"
 	return ..()
@@ -696,6 +770,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 
 /obj/effect/overlay/holo_pad_hologram
 	initial_language_holder = /datum/language_holder/universal
+	light_color = LIGHT_COLOR_LIGHT_CYAN
 	var/mob/living/Impersonation
 	var/datum/holocall/HC
 
@@ -705,12 +780,22 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		HC.Disconnect(HC.calling_holopad)
 	return ..()
 
+/obj/effect/overlay/holo_pad_hologram/say(message, bubble_type, list/spans, sanitize, datum/language/language, ignore_spam, forced, filterproof, message_range, datum/saymode/saymode, list/message_mods)
+	if(Impersonation)
+		language = Impersonation.get_selected_language()
+	. = ..()
+
 /obj/effect/overlay/holo_pad_hologram/Process_Spacemove(movement_dir = 0)
 	return TRUE
 
 /obj/effect/overlay/holo_pad_hologram/examine(mob/user)
-	if(Impersonation)
+	if(Impersonation && !HC.calling_holopad.secret_user)
 		return Impersonation.examine(user)
+	return ..()
+
+/obj/effect/overlay/holo_pad_hologram/examine_more(mob/user)
+	if(Impersonation && !HC.calling_holopad.secret_user)
+		return Impersonation.examine_more(user)
 	return ..()
 
 /obj/effect/overlay/holoray
