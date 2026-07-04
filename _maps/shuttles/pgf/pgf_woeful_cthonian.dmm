@@ -2542,7 +2542,7 @@
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_y = -22;
-	pixel_x = -9;
+	pixel_x = -10;
 	id = "cth_in";
 	name = "shutter control"
 	},
@@ -4190,9 +4190,27 @@
 	},
 /obj/machinery/button/door{
 	pixel_y = 20;
-	pixel_x = -9;
+	pixel_x = -10;
 	id = "cth_in";
 	name = "shutter control"
+	},
+/obj/structure/filingcabinet/double{
+	pixel_x = 7;
+	pixel_y = 17;
+	density = 0
+	},
+/obj/item/folder/pgf/blue{
+	pixel_x = 7;
+	pixel_y = 9
+	},
+/obj/item/folder/pgf/red{
+	pixel_x = 7;
+	pixel_y = 3
+	},
+/obj/item/clipboard,
+/obj/item/pen{
+	pixel_x = 1;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
