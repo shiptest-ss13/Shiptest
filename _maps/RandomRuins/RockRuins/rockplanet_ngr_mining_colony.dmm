@@ -10875,6 +10875,22 @@
 "RA" = (
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet/overpavement,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"RB" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/secure/plasma{
+	armor = list("melee" = 30, "bullet" = 50, "laser" = 50, "energy" = 100, "bomb" = 75, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80);
+	name = "explosives crate";
+	desc = "A secure explosives crate. It has been reinforced against explosives."
+	},
+/obj/item/grenade/firecracker/dynamite,
+/obj/item/grenade/firecracker/dynamite,
+/obj/item/grenade/firecracker/dynamite,
+/obj/item/grenade/firecracker/dynamite,
+/obj/item/grenade/firecracker/dynamite,
+/obj/item/grenade/firecracker/dynamite,
+/obj/item/lighter/greyscale,
+/turf/open/floor/plasteel/mono/dark/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "RC" = (
 /obj/structure/dresser{
 	dir = 4;
@@ -13535,7 +13551,7 @@ HP
 Ba
 FO
 Yy
-FO
+RB
 th
 VX
 DT
