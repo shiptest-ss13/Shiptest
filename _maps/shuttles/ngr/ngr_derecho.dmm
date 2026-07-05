@@ -344,11 +344,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/workshop)
-"dC" = (
-/obj/machinery/light/floor/hangar,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/pod,
-/area/ship/cargo)
 "dS" = (
 /obj/effect/turf_decal/corner/opaque/beige/half,
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -928,6 +923,7 @@
 /obj/structure/ore_box,
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "iS" = (
@@ -1422,10 +1418,10 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "mv" = (
-/obj/machinery/airalarm/directional/west,
 /obj/effect/turf_decal/industrial/warning{
 	color = "#eeac2e"
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "mM" = (
@@ -2153,7 +2149,7 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/floor/hangar,
+/obj/machinery/light/floor,
 /turf/open/floor/pod,
 /area/ship/science/workshop)
 "sL" = (
@@ -2694,6 +2690,7 @@
 	pixel_y = 23;
 	id = "derecho_cargo_holo"
 	},
+/obj/machinery/light/floor,
 /turf/open/floor/pod,
 /area/ship/cargo)
 "zr" = (
@@ -3384,7 +3381,7 @@
 	},
 /obj/effect/decal/cleanable/oil/streak,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/dim/directional/south,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/science/workshop)
 "Eu" = (
@@ -5001,6 +4998,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/radio/intercom/directional/south,
+/obj/machinery/light/floor,
 /turf/open/floor/pod,
 /area/ship/cargo)
 "RQ" = (
@@ -5146,7 +5144,6 @@
 /area/ship/engineering/atmospherics)
 "Th" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light/dim/directional/north,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -5158,6 +5155,7 @@
 	pixel_y = 2;
 	pixel_x = -11
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Tl" = (
@@ -6021,6 +6019,7 @@
 	icon_state = "5-10"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/floor,
 /turf/open/floor/pod,
 /area/ship/science/workshop)
 "ZW" = (
@@ -7026,7 +7025,7 @@ uE
 zn
 nU
 BL
-dC
+BL
 RP
 uE
 Tq
