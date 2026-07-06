@@ -25,8 +25,11 @@
 /area/centcom/prison
 	name = "Admin Prison"
 
-/area/centcom/holding
-	name = "Holding Facility"
+/area/centcom/television
+	name = "Broadcasting Office 1"
+
+/area/centcom/television/secondary
+	name = "Broadcasting Office 2"
 
 /area/centcom/supplypod/supplypod_temp_holding
 	name = "Supplypod Shipping lane"
