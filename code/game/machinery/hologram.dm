@@ -101,6 +101,11 @@ Possible to do for anyone motivated enough:
 	board.secure = TRUE
 	board.build_path = /obj/machinery/holopad/secure
 
+/obj/machinery/holopad/secret
+	name = "one-way holopad"
+	desc = "It's a floor-mounted device for projecting holographic images. This one is designed to only connect outwardly."
+	secret_pad = TRUE
+
 /obj/machinery/holopad/tutorial
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	flags_1 = NODECONSTRUCT_1
