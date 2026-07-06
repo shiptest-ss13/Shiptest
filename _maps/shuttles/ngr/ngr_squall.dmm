@@ -235,7 +235,6 @@
 	pixel_y = 5
 	},
 /obj/machinery/light/small/directional/east,
-/obj/effect/spawner/random/fourtywsfauna,
 /turf/open/floor/noslip,
 /area/ship/crew/toilet)
 "eG" = (
@@ -485,6 +484,14 @@
 /obj/machinery/recharger{
 	pixel_x = -7;
 	pixel_y = 7
+	},
+/obj/item/trench_tool{
+	pixel_x = -4;
+	pixel_y = -7
+	},
+/obj/item/trench_tool{
+	pixel_x = 5;
+	pixel_y = -9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -1808,14 +1815,10 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/canteen)
 "HD" = (
-/obj/item/clothing/mask/balaclava/ngr,
-/obj/item/clothing/mask/balaclava/ngr,
-/obj/item/clothing/mask/balaclava/ngr,
 /obj/item/clothing/mask/breath/ngr,
 /obj/item/clothing/head/ngr,
 /obj/item/clothing/mask/breath/ngr,
 /obj/item/clothing/mask/breath/ngr,
-/obj/item/clothing/head/ngr,
 /obj/item/clothing/head/ngr,
 /obj/item/clothing/head/ngr/flap,
 /obj/item/clothing/head/ngr/flap,
@@ -1836,6 +1839,9 @@
 /obj/structure/closet/wall/directional/west{
 	name = "uniform closet"
 	},
+/obj/item/clothing/suit/toggle/ngr,
+/obj/item/clothing/suit/toggle/ngr,
+/obj/item/clothing/suit/toggle/ngr,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
 "HG" = (
