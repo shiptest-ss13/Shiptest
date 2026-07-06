@@ -198,21 +198,22 @@
 /* 3d printer 'pseudo guns' for borgs */
 
 /obj/item/gun/energy/printer
-	name = "integrated LMG"
-	desc = "A modified energy weapon re-designed to fire 3D-printed flechettes, pulled directly from the cyborg's internal power source."
-	icon_state = "l6_cyborg"
-	icon = 'icons/obj/guns/projectile.dmi'
+	name = "integrated SAW-80 LMG"
+	desc = "A modified Hydra-80 SAW integrated directly into the Assault platform, with a built-in ammo printer pulling directly from the internal cell."
+	icon_state = "hydra_lmg"
+	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	default_ammo_type = /obj/item/stock_parts/cell/secborg
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/secborg,
 	)
-	ammo_type = list(/obj/item/ammo_casing/energy/c3dbullet)
+	ammo_type = list(/obj/item/ammo_casing/energy/integrated_lmg)
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
 
-	fire_delay = 0.3 SECONDS
+	burst_delay = 0.08 SECONDS
+	fire_delay = 0.08 SECONDS
 
-	gun_firemodes = list(FIREMODE_FULLAUTO)
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
 /obj/item/gun/energy/printer/ComponentInitialize()

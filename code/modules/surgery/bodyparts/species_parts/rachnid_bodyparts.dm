@@ -5,6 +5,7 @@
 	overlay_icon_state = TRUE
 	biological_state = (BIO_FLESH|BIO_BLOODED)
 	draw_eyes = FALSE
+	draw_sclera = FALSE
 
 /obj/item/bodypart/chest/rachnid
 	static_icon = 'icons/mob/species/rachnid/bodyparts.dmi'

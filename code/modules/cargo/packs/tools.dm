@@ -73,7 +73,7 @@
 		/obj/item/storage/bag/ore,
 		/obj/item/mining_scanner)
 	crate_name = "basic mining crate"
-	faction = /datum/faction/nt/ns_logi
+	faction = /datum/faction/warra/ns_logi
 
 /datum/supply_pack/tools/entrenching
 	name = "Entrenching Tool Crate"
@@ -112,7 +112,7 @@
 	name = "Insulated Gloves Crate"
 	desc = "The backbone of modern society. Contains a pair of insulated gloves."
 	cost = 750
-	contains = list(/obj/item/clothing/gloves/color/yellow)
+	contains = list(/obj/item/clothing/gloves/insulated)
 	crate_name = "insulated gloves crate"
 
 /datum/supply_pack/tools/inducer
@@ -121,12 +121,12 @@
 	cost = 750
 	contains = list(/obj/item/inducer)
 	crate_name = "inducer crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 
 /datum/supply_pack/tools/jetpack
 	name = "Jetpack Crate"
 	desc = "For when you need to go fast in space."
-	cost = 750
+	cost = 500
 	contains = list(/obj/item/tank/jetpack/carbondioxide)
 	crate_name = "jetpack crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
@@ -134,13 +134,13 @@
 /datum/supply_pack/tools/jetpack/harness
 	name = "Jetpack Harness Crate"
 	desc = "A compact jetpack harness for those who don't wish to be weighed down by larger traditional jetpacks."
-	cost = 1500
+	cost = 750
 	contains = list(/obj/item/tank/jetpack/oxygen/harness)
 
 /datum/supply_pack/tools/jetpack/suit
 	name = "Hardsuit Jetpack Upgrade Crate"
 	desc = "A standardized jetpack attachment designed for direct integration with hardsuits. For when every gram matters."
-	cost = 2000
+	cost = 1250
 	contains = list(/obj/item/tank/jetpack/suit)
 
 /datum/supply_pack/tools/anglegrinder
@@ -176,6 +176,13 @@
 
 /datum/supply_pack/tools/sledgehammer
 	name = "Sledgehammer Crate"
+	desc = "Contains a Sledgehammer, useful for demolishing any obstacles in your path."
+	cost = 1400
+	contains = list(/obj/item/melee/sledgehammer)
+	crate_name = "sledgehammer crate"
+
+/datum/supply_pack/tools/breachinghammer
+	name = "Breaching Sledgehammer Crate"
 	desc = "Contains a freshly fabricated Breaching Sledgehammer, capable of wrecking hull and flesh with ease."
 	cost = 1500
 	contains = list(/obj/item/melee/sledgehammer/gorlex)
@@ -235,3 +242,10 @@
 	crate_name = "foam tank crate"
 	crate_type = /obj/structure/closet/crate/large
 	no_bundle = TRUE
+
+/datum/supply_pack/tools/headlight
+	name = "Headlamp Crate"
+	desc = "Contains a single headlamp, mounts on your head and provides a stable light source."
+	contains = list(/obj/item/clothing/ears/headlamp)
+	cost = 75
+	crate_name = "headlamp crate"

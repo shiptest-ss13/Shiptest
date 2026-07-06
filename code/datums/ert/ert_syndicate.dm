@@ -19,27 +19,6 @@
 /datum/ert/syndicate/inspector/New()
 	mission = "Conduct a routine review on [station_name()]'s Coalition vessels."
 
-// new gorlex republic
-
-/datum/ert/syndicate/ngr
-	teamsize = 5
-	leader_role = /datum/antagonist/ert/syndicate/ngr/leader
-	roles = list(/datum/antagonist/ert/syndicate/ngr, /* /datum/antagonist/ert/syndicate/ngr/grenadier = 1, */ /datum/antagonist/ert/syndicate/ngr/medic = 1, /datum/antagonist/ert/syndicate/ngr/sniper = 1)
-	mission = "Uphold the sovereignty of the New Gorlex Republic."
-	rename_team = "Gorlex Republic Detachment"
-	polldesc = "a Gorlex Republic battle squad"
-
-/datum/ert/syndicate/ngr/inspector
-	teamsize = 1
-	leader_role = /datum/antagonist/ert/syndicate/ngr/inspector
-	roles = list(/datum/antagonist/ert/syndicate/ngr/inspector)
-	rename_team = "Gorlex Republic Official"
-	polldesc = "a Gorlex Republic inspector"
-
-/datum/ert/syndicate/ngr/inspector/guarded
-	teamsize = 3
-	leader_role = /datum/antagonist/ert/syndicate/ngr/inspector
-	roles = list(/datum/antagonist/ert/syndicate/ngr)
 
 // cybersun
 

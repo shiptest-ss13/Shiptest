@@ -66,14 +66,28 @@
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/asteroid/dirt/beach
 
-/* non organic */
+/* did you know jungleplanets get a turf helper to make our work easier? i didn't! */
 
-/turf/open/floor/concrete/pavement/beachplanet
-	baseturfs = /turf/open/floor/plating/asteroid/sand
-	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
-	light_color = COLOR_BEACHPLANET_LIGHT
-	planetary_atmos = TRUE
+#define BEACH_TURF_HELPER(turf_type)								\
+	/turf/open/floor/##turf_type/beachplanet {						\
+		baseturfs = /turf/open/floor/plating/asteroid/dirt/beach;	\
+		initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS;				\
+		planetary_atmos = TRUE;										\
+		light_color = COLOR_BEACHPLANET_LIGHT;						\
+	}																\
+	/turf/open/floor/##turf_type/beachplanet/lit {					\
+		light_power = 0.8;											\
+		light_range = 2;											\
+	}																\
+	/turf/open/floor/##turf_type/beachplanet/interior {			\
+		planetary_atmos = FALSE;									\
+	}
 
-/turf/open/floor/concrete/pavement/beachplanet/lit
-	light_range = 2
-	light_power = 0.80
+BEACH_TURF_HELPER(concrete)
+BEACH_TURF_HELPER(concrete/slab_1)
+BEACH_TURF_HELPER(concrete/slab_2)
+BEACH_TURF_HELPER(concrete/slab_3)
+BEACH_TURF_HELPER(concrete/slab_4)
+BEACH_TURF_HELPER(concrete/tiles)
+BEACH_TURF_HELPER(concrete/reinforced)
+BEACH_TURF_HELPER(concrete/pavement)

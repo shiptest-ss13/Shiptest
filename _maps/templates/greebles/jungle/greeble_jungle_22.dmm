@@ -290,7 +290,7 @@
 	pixel_x = -3;
 	pixel_y = -3
 	},
-/obj/item/trash/cheesie{
+/obj/item/trash/gummycarps{
 	pixel_x = 4;
 	pixel_y = -4
 	},
@@ -301,9 +301,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/noticeboard{
-	pixel_y = 30
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},

@@ -5,7 +5,7 @@
 //Botanist
 /obj/item/clothing/suit/apron
 	name = "apron"
-	desc = "A basic blue apron."
+	desc = "A basic black apron."
 	icon = 'icons/obj/clothing/suits/utility.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/utility.dmi'
 	icon_state = "apron"

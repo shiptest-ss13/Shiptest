@@ -94,7 +94,7 @@
 	mask = /obj/item/clothing/mask/balaclava/inteq
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 	belt = /obj/item/storage/belt/utility/full
 
 	id = /obj/item/card/id/silver
@@ -172,7 +172,7 @@
 	mask = null
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = null
-	gloves = /obj/item/clothing/gloves/color/evening
+	gloves = /obj/item/clothing/gloves/long/white
 
 	backpack = /obj/item/storage/backpack/messenger/inteq
 	satchel = /obj/item/storage/backpack/messenger/inteq

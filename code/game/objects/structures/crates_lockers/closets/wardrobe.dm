@@ -1,6 +1,6 @@
 /obj/structure/closet/wardrobe
 	name = "wardrobe"
-	desc = "It's a storage unit for standard-issue Nanotrasen attire."
+	desc = "It's a storage unit for general attire."
 	icon_door = "blue"
 
 /obj/structure/closet/wardrobe/PopulateContents()
@@ -68,7 +68,7 @@
 
 /obj/structure/closet/wardrobe/orange
 	name = "prison wardrobe"
-	desc = "It's a storage unit for Nanotrasen-regulation prisoner attire."
+	desc = "It's a storage unit for prisoner attire."
 	icon_door = "orange"
 
 /obj/structure/closet/wardrobe/orange/PopulateContents()
@@ -214,13 +214,15 @@
 	return
 
 /obj/structure/closet/wardrobe/clip/wall
-	icon = 'icons/obj/wallcloset.dmi'
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
 	icon_state = "generic_wall"
 	icon_door = null
 	wall_mounted = TRUE
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wardrobe/clip/wall, 27)
 
 /obj/structure/closet/wardrobe/clip/formal
 	name = "formal CLIP spare uniforms locker"
@@ -237,13 +239,15 @@
 	return
 
 /obj/structure/closet/wardrobe/clip/formal/wall
-	icon = 'icons/obj/wallcloset.dmi'
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
 	icon_state = "generic_wall"
 	icon_door = null
 	wall_mounted = TRUE
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wardrobe/clip/formal/wall, 27)
 
 /obj/structure/closet/wardrobe/clip/minutemen
 	name = "C-MM spare uniforms locker"
@@ -265,10 +269,12 @@
 	return
 
 /obj/structure/closet/wardrobe/clip/minutemen/wall
-	icon = 'icons/obj/wallcloset.dmi'
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
 	icon_state = "generic_wall"
 	icon_door = null
 	wall_mounted = TRUE
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wardrobe/clip/minutemen/wall, 27)

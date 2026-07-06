@@ -53,8 +53,8 @@
 	AddElement(/datum/element/immerse, "immerse", 215)
 	immerse_added = TRUE
 
-/turf/open/lava/ex_act(severity, target)
-	contents_explosion(severity, target)
+/turf/open/lava/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
+	contents_explosion(severity, target, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 
 /turf/open/lava/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return

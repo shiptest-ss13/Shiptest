@@ -21,7 +21,7 @@
 	var/default_driver_move = TRUE	//handle driver movement instead of letting something else do it like riding datums.
 	var/list/autogrant_actions_passenger	//plain list of typepaths
 	var/list/autogrant_actions_controller	//assoc list "[bitflag]" = list(typepaths)
-	var/list/mob/occupant_actions			//assoc list mob = list(type = action datum assigned to mob)
+	var/list/list/datum/action/occupant_actions //assoc list mob = list(type = action datum assigned to mob)
 	var/obj/vehicle/trailer
 	var/are_legs_exposed = FALSE
 

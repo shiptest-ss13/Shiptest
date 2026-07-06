@@ -76,6 +76,9 @@
 		return wear_mask
 	if(glasses?.flags_cover & SEALS_EYES)
 		return glasses
+	var/obj/item/bodypart/target_bodypart = get_bodypart(BODY_ZONE_HEAD)
+	if(target_bodypart?.bodytype & BODYTYPE_ROBOTIC)
+		return target_bodypart
 
 /mob/living/carbon/human/handle_traits()
 	if (getOrganLoss(ORGAN_SLOT_BRAIN) >= 60)

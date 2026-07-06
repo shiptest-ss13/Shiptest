@@ -139,14 +139,13 @@
 /obj/item/organ/regenerative_core/legion/grind_requirements(obj/machinery/reagentgrinder/R)
 	return !inert
 
-/obj/item/organ/regenerative_core/legion/on_grind()
-	if(inert) // Sanity check
-		return -1
-	if (preserved)
-		grind_results = preserved_grind_results
+/obj/item/organ/regenerative_core/legion/on_grind(simulated=FALSE)
+	if(inert)
+		return grind_results
+	else if (preserved)
+		return preserved_grind_results
 	else
-		grind_results = unpreserved_grind_results
-	. = ..()
+		return unpreserved_grind_results
 
 /obj/item/organ/regenerative_core/legion/Initialize()
 	. = ..()

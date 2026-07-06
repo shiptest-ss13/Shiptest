@@ -15,6 +15,7 @@
 	var/datum/callback/on_alt_click
 	var/datum/callback/on_examine
 	var/datum/callback/on_attack_hand
+	var/datum/callback/on_safety
 	///Called on the parent's fire_gun
 	var/datum/callback/on_fire_gun
 	///Called on the parents preattack
@@ -48,6 +49,7 @@
 		datum/callback/on_examine = null,
 		datum/callback/on_alt_click = null,
 		datum/callback/on_attack_hand = null,
+		datum/callback/on_safety = null,
 		list/signals = null
 	)
 
@@ -71,6 +73,7 @@
 	src.on_examine = on_examine
 	src.on_alt_click = on_alt_click
 	src.on_attack_hand = on_attack_hand
+	src.on_safety = on_safety
 
 	ADD_TRAIT(parent, TRAIT_ATTACHABLE, "attachable")
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACH, PROC_REF(try_attach))
@@ -95,6 +98,7 @@
 	RegisterSignal(parent, COMSIG_ATTACHMENT_CTRL_CLICK, PROC_REF(relay_ctrl_click))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ALT_CLICK, PROC_REF(relay_alt_click))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACK_HAND, PROC_REF(relay_attack_hand))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE_SAFETY, PROC_REF(relay_safety))
 
 	for(var/signal in signals)
 		RegisterSignal(parent, signal, signals[signal])
@@ -258,6 +262,12 @@
 
 	if(on_attack_hand)
 		return on_attack_hand.Invoke(gun, user, params)
+
+/datum/component/attachment/proc/relay_safety(obj/item/parent, obj/item/gun, mob/user, params)
+	SIGNAL_HANDLER_DOES_SLEEP
+
+	if(on_safety)
+		return on_safety.Invoke(gun, user, params)
 
 /datum/component/attachment/proc/send_slot(obj/item/parent)
 	SIGNAL_HANDLER

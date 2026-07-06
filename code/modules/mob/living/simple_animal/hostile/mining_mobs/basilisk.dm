@@ -61,6 +61,7 @@
 	damage = 40
 	damage_type = BRUTE
 	nodamage = FALSE
+	flag = ENERGY
 	temperature = 0
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/GiveTarget(new_target)
@@ -194,10 +195,6 @@
 			icon_state = "basilisk_whitesands_shell0"
 	else
 		icon_state = "basilisk_whitesands_dead"
-
-/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/heat
-	name = "glowing basilisk"
-	projectiletype = /obj/projectile/temp/basilisk/heated
 
 //Watcher
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher

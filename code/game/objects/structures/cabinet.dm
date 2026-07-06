@@ -1,7 +1,7 @@
 /obj/structure/cabinet
 	name = "\improper cabinet"
 	desc = "There is a small label that reads \"For Emergency use only\". Yeah right."
-	icon = 'icons/obj/wallmounts.dmi'
+	icon = 'icons/obj/wallmounts/cabinet.dmi'
 	icon_state = "fireaxe"
 	anchored = TRUE
 	density = FALSE

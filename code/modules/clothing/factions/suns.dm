@@ -492,7 +492,7 @@
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 
-/obj/item/clothing/gloves/color/latex/nitrile/suns
+/obj/item/clothing/gloves/nitrile/suns
 	name = "white nitrile gloves"
 	desc = "Thick sterile white gloves that reach up to the elbows. The nanochips that transfer basic paramedic knowledge are disabled during finals week."
 	icon_state = "suns_latexgloves"

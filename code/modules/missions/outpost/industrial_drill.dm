@@ -6,6 +6,7 @@
 	num_wanted = 1
 	objective_type = /obj/item/drill_sample
 	container_type = /obj/item/drill_core_container
+	blackbox_prefix = "T4 Drill "
 	var/obj/machinery/drill/sampler_mission/mission_drill
 
 /datum/mission/acquire/industrial_drill/New(...)

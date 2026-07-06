@@ -6,7 +6,7 @@
 		planetary_atmos = TRUE;							\
 		light_color = COLOR_CYBERSUN_OUTPOST_LIGHTING;	\
 		light_power = 1;								\
-		light_range = 2;								\
+		light_range = 5;								\
 	}
 
 /turf/open/cybersun_outpost_exterior

@@ -70,18 +70,15 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 		unprocessed_packs -= combo_packs
 
 /datum/cargo_market/proc/send_order(mob/user, list/packs, atom/landing_zone)
-	var/name = "*None Provided*"
 	var/rank = "*None Provided*"
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		name = H.get_authentification_name()
 		rank = H.get_assignment(hand_first = TRUE)
 	else if(issilicon(user))
-		name = user.real_name
 		rank = "Silicon"
 	//Including the ship bank account means you cant open the crate lol
 	//var/datum/supply_order/SO = new(packs, name, rank, user.ckey, charge_account, market = current_market)
-	var/datum/supply_order/order = new(packs, name, rank, user.ckey, market = src, landing_zone = landing_zone)
+	var/datum/supply_order/order = new(packs, user, rank, user.ckey, market = src, landing_zone = landing_zone)
 	SScargo.queue_item(order)
 	return TRUE
 

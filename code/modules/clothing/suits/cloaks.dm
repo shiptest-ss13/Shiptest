@@ -44,7 +44,7 @@
 
 /obj/item/clothing/neck/cloak/cap
 	name = "captain's cloak"
-	desc = "Worn by the valiant vessel and station commanders of the Nanotrasen Corporation."
+	desc = "Worn by the valiant vessel and station commanders of the Makosso-Warra Corporation."
 	icon_state = "capcloak"
 
 /obj/item/clothing/neck/cloak/head_of_personnel

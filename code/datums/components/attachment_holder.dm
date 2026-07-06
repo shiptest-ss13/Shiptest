@@ -39,6 +39,7 @@
 	RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(handle_alt_click))
 	RegisterSignal(parent, COMSIG_CLICK_SECONDARY_ACTION, PROC_REF(handle_secondary_action))
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(handle_overlays))
+	RegisterSignal(parent, COMSIG_GUN_TOGGLE_SAFETY, PROC_REF(handle_safety))
 
 	if(length(default_attachments))
 		for(var/attachment in default_attachments)
@@ -248,4 +249,11 @@
 
 	for(var/obj/item/attach as anything in attachments)
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_SECONDARY_ACTION, parent, user, params))
+			return TRUE
+
+/datum/component/attachment_holder/proc/handle_safety(obj/item/gun/parent_gun, mob/user, atom/target, flag, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_TOGGLE_SAFETY, parent_gun, user, target, flag, params))
 			return TRUE

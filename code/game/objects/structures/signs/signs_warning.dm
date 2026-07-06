@@ -94,6 +94,13 @@
 	icon_state = "nosmoking2_b"
 	is_editable = TRUE
 
+/obj/structure/sign/warning/smoking/circle
+	name = "\improper SMOKING sign"
+	sign_change_name = "Warning - Smoking Alt"
+	desc = "A warning sign which reads 'SMOKING PERMITTED'."
+	icon_state = "smoking"
+	is_editable = TRUE
+
 /obj/structure/sign/warning/radiation
 	name = "\improper HAZARDOUS RADIATION sign"
 	sign_change_name = "Warning - Radiation"
@@ -113,13 +120,6 @@
 	desc = "A sign that warns would-be travellers of hostile alien life in the vicinity."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "xeno_warning"
-	is_editable = TRUE
-
-/obj/structure/sign/warning/enginesafety
-	name = "\improper ENGINEERING SAFETY sign"
-	sign_change_name = "Warning - Engineering Safety Protocols"
-	desc = "A sign detailing the various safety protocols when working on-site to ensure a safe shift."
-	icon_state = "safety"
 	is_editable = TRUE
 
 /obj/structure/sign/warning/explosives
@@ -192,4 +192,13 @@
 	sign_change_name = "Location - Escape Pods"
 	desc = "A warning sign which reads 'ESCAPE PODS'."
 	icon_state = "pods"
+	is_editable = TRUE
+
+//mw varaints, nod to old
+
+/obj/structure/sign/warning/coldtemp/warra
+	name = "\improper FREEZING AIR sign"
+	sign_change_name = "Warning - Temp: Cold"
+	desc = "A sign that warns of extremely cold air in the vicinity."
+	icon_state = "mw_cold"
 	is_editable = TRUE

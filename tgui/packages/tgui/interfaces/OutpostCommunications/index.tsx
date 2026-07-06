@@ -17,6 +17,9 @@ export const OutpostCommunications = (props, context) => {
   const { act, data } = useBackend<Data>(context);
   const { outpostDocked, onShip, points } = data;
   const [tab, setTab] = useSharedState(context, 'outpostTab', '');
+  if (!outpostDocked && tab !== 'shipMission') {
+    setTab('shipMissions');
+  }
   return (
     <Window width={600} height={700} resizable>
       <Window.Content scrollable>
@@ -104,7 +107,13 @@ const ShipMissionsContent = (props, context) => {
 
 const OutpostMissionsContent = (props, context) => {
   const { data } = useBackend<Data>(context);
-  const { numMissions, maxMissions, outpostDocked, outpostMissions } = data;
+  const {
+    numMissions,
+    maxMissions,
+    outpostDocked,
+    outpostMissions,
+    highPriorityAssigned,
+  } = data;
   const disabled = numMissions >= maxMissions;
   return (
     <Section title={'Available Missions ' + numMissions + '/' + maxMissions}>
@@ -112,6 +121,7 @@ const OutpostMissionsContent = (props, context) => {
         showButton={outpostDocked}
         missions={outpostMissions}
         disabled={disabled}
+        hasHighPriority={highPriorityAssigned}
         tooltip={(disabled && 'You have too many missions!') || null}
       />
     </Section>
@@ -123,6 +133,7 @@ const MissionsList = (props, context) => {
   const disabled = props.disabled as Boolean;
   const tooltip = props.tooltip as string;
   const missionsArray = props.missions as Array<Mission>;
+  const hasHighPriority = props.highPriorityAssigned as Boolean;
   const { act } = useBackend(context);
   //   const { numMissions, maxMissions } = data;
 
@@ -168,7 +179,9 @@ const MissionsList = (props, context) => {
       </Stack.Item>
 
       <Stack.Item>
-        {(showButton && buttonJSX(mission, tooltip, disabled)) || undefined}
+        {(((hasHighPriority && mission.highPriority) || showButton) &&
+          buttonJSX(mission, tooltip, disabled)) ||
+          undefined}
       </Stack.Item>
     </Stack>
   );

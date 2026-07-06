@@ -1,6 +1,8 @@
 /datum/mission/acquire
 	desc = "Get me some things."
 
+	blackbox_prefix = "Acquire "
+
 	/// The type of container to be spawned when the mission is accepted.
 	var/atom/movable/container_type
 	/// Instance of the container, spawned after the mission is accepted.

@@ -2158,7 +2158,8 @@
 		var/obj/item/paper/paper_to_show = locate(href_list["show_paper"])
 		if(!istype(paper_to_show))
 			return
-		paper_to_show.ui_interact(usr)
+		var/datum/component/writing/text_to_show = paper_to_show.GetComponent(/datum/component/writing)
+		text_to_show.ui_interact(usr)
 
 	else if(href_list["show_photo"])
 		if(!check_rights(R_ADMIN))

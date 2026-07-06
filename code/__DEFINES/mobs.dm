@@ -90,23 +90,14 @@
 #define SPECIES_ABDUCTOR "abductor"
 #define SPECIES_ANDROID "android"
 #define SPECIES_CORPORATE "corporate"
-#define SPECIES_DULLAHAN "dullahan"
 #define SPECIES_ELZUOSE "elzuose"
 #define SPECIES_FLYPERSON "fly"
 #define SPECIES_HUMAN "human"
 #define SPECIES_IPC "ipc"
-#define SPECIES_JELLYPERSON "jelly"
-#define SPECIES_SLIMEPERSON "slime_person"
-#define SPECIES_LUMINESCENT "luminescent"
-#define SPECIES_STARGAZER "stargazer"
 #define SPECIES_SARATHI "sarathi"
-#define SPECIES_ASHWALKER "ashwalker"
-#define SPECIES_KOBOLD "kobold"
 #define SPECIES_MONKEY "monkey"
 #define SPECIES_MOTH "moth"
 #define SPECIES_PLASMAMAN "plasmaman"
-#define SPECIES_POD "pod"
-#define SPECIES_SHADOW "shadow"
 #define SPECIES_SKELETON "skeleton"
 #define SPECIES_SNAIL "snail"
 #define SPECIES_RACHNID "rachnid"
@@ -253,9 +244,9 @@
 
 //Disgust levels for humans
 #define DISGUST_LEVEL_MAXEDOUT 200
-#define DISGUST_LEVEL_DISGUSTED 100
-#define DISGUST_LEVEL_VERYGROSS 50
-#define DISGUST_LEVEL_GROSS 25
+#define DISGUST_LEVEL_DISGUSTED 150
+#define DISGUST_LEVEL_VERYGROSS 100
+#define DISGUST_LEVEL_GROSS 75
 
 //Used as an upper limit for species that continuously gain nutriment
 #define NUTRITION_LEVEL_ALMOST_FULL 535
@@ -501,6 +492,7 @@ GLOBAL_LIST_INIT(human_heights_to_offsets, list(
 #define SPLINT_LAYER 17
 #define SUIT_LAYER 16
 #define BELT_LAYER 15
+#define BODY_ADJ_HIGH_LAYER 14.5
 #define FACEWRAP_LAYER 14
 #define GLASSES_LAYER 13
 #define SUIT_STORE_LAYER 12

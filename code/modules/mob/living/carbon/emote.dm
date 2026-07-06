@@ -117,6 +117,24 @@
 	mob_type_allowed_typecache = list(/mob/living/carbon/human)
 	hands_use_check = TRUE
 
+/datum/emote/living/carbon/thumbup
+	key = "thumbup"
+	key_third_person = "raises a thumbs up"
+	message = "raises a thumbs up."
+	hands_use_check = TRUE
+
+/datum/emote/living/carbon/thumbdown
+	key = "thumbdown"
+	key_third_person = "shows a thumbs down"
+	message = "shows a thumbs down."
+	hands_use_check = TRUE
+
+/datum/emote/living/carbon/beckon
+	key = "beckon"
+	key_third_person = "motions to follow them"
+	message = "motions to follow them."
+	hands_use_check = TRUE
+
 /datum/emote/living/carbon/tail
 	key = "tail"
 	message = "waves their tail."

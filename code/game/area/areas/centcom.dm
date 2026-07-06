@@ -7,7 +7,7 @@
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
-	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT
+	area_flags = VALID_TERRITORY | UNIQUE_AREA
 	flags_1 = NONE
 
 /area/centcom/control

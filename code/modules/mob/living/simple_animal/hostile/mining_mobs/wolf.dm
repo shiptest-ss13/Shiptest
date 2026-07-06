@@ -135,3 +135,22 @@
 	if(prob(15))
 		new /mob/living/simple_animal/hostile/asteroid/wolf/alpha(loc)
 		return INITIALIZE_HINT_QDEL
+
+/mob/living/simple_animal/hostile/asteroid/wolf/hound //should get a sprite someday probably
+	name = "Reisehund"
+	desc = "A mutt breed hailing from Sol, Reisehunds are known for their territorial attitude, large size and loyal nature."
+	faction = list(FACTION_NEUTRAL)
+	maxHealth = 75
+	health = 75
+	icon = 'icons/mob/icemoon/icemoon_monsters_wide.dmi'
+	icon_state = "hound"
+	icon_living = "hound"
+	icon_dead = "hound_dead"
+
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ramzi
+	desc = "A mutt breed hailing from Sol, Reisehunds are known for their territorial attitude, large size and loyal nature. This one is most certainly not loyal to you."
+	faction = list(FACTION_RAMZI)
+
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/frontie
+	desc = "A mutt breed hailing from Sol, Reisehunds are known for their territorial attitude, large size and loyal nature. This one is most certainly not loyal to you."
+	faction = list(FACTION_FRONTIERSMEN)

@@ -133,6 +133,11 @@
 	icon_state = "enzyme"
 	list_reagents = list(/datum/reagent/consumable/enzyme = 50)
 
+/obj/item/reagent_containers/condiment/enzyme/small
+	name = "small universal enzyme"
+	icon_state = "small_enzyme"
+	list_reagents = list(/datum/reagent/consumable/enzyme = 15)
+
 /obj/item/reagent_containers/food/condiment/enzyme/examine(mob/user)
 	. = ..()
 	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/cheesewheel]

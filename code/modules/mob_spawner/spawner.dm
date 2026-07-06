@@ -48,6 +48,7 @@
 	icon = 'icons/mob/nest.dmi'
 	icon_state = "hole"
 	max_integrity = 100
+	mouse_opacity = 0
 	var/particle_to_spawn = /particles/smoke/drill_vent
 	var/obj/effect/particle_holder/part_hold
 	var/obj/structure/vein/our_vein

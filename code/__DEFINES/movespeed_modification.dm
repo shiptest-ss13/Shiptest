@@ -5,6 +5,8 @@
 
 #define MOVE_CONFLICT_JETPACK "JETPACK"
 
+#define MOVE_CONFLICT_DRUG "DRUGS"
+
 //ids
 #define MOVESPEED_ID_SANITY "sanity_component"
 

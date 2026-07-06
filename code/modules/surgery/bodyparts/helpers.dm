@@ -1,8 +1,10 @@
 /mob/living/proc/get_bodypart(zone)
+	RETURN_TYPE(/obj/item/bodypart)
 	return
 
 /// Returns a bodypart occupying a specific zone. If using a precise zone and no such part is present, it falls back to a non-precise zone.
 /mob/living/carbon/get_bodypart(zone, simplify = FALSE)
+	RETURN_TYPE(/obj/item/bodypart)
 	if(!zone)
 		zone = BODY_ZONE_CHEST
 	var/returned_part = bodyparts[zone]
@@ -12,6 +14,7 @@
 
 /// Returns all bodyparts that exist on the mob.
 /mob/living/proc/get_all_bodyparts()
+	RETURN_TYPE(/list)
 	return
 
 // Try not to use this too much, it's more expensive than doing it directly when iterating
@@ -161,10 +164,27 @@
 // No it's wasnt, but now it is. -sarah
 /mob/living/carbon/proc/new_body_part(zone, robotic, fixed_icon, datum/species/species)
 	species ||= dna.species
-	var/bodypart_type = robotic ? species.species_robotic_limbs[zone] : species.species_limbs[zone]
+	robotic ||= HAS_TRAIT(src, TRAIT_USE_PROSTHETIC)
+	var/bodypart_type
+	if(robotic && species.prosthetic_style)
+		bodypart_type = species.prosthetic_style.replacement_bodyparts[zone]
+	else
+		bodypart_type = species.species_limbs[zone]
 	if(!bodypart_type)
 		return null
 	return new bodypart_type()
+
+/mob/living/carbon/proc/new_organ(slot, robotic = FALSE, datum/species/species)
+	species ||= dna.species
+	robotic ||= HAS_TRAIT(src, TRAIT_USE_PROSTHETIC)
+	var/organ_type
+	if(robotic && species.prosthetic_style && (slot in species.prosthetic_style.replacement_organs))
+		organ_type = species.prosthetic_style.replacement_organs[slot]
+	else
+		organ_type = species.species_organs[slot]
+	if(!organ_type)
+		return null
+	return new organ_type()
 
 /mob/living/carbon/monkey/new_body_part(zone, robotic, fixed_icon, datum/species/species)
 	var/obj/item/bodypart/L
@@ -225,29 +245,49 @@
 /proc/skintone2hex(skin_tone)
 	. = 0
 	switch(skin_tone)
-		if("caucasian1")
+		if("porcelain")
 			. = "ffe0d1"
-		if("caucasian2")
+		if("cotton")
+			. = "e0dbdc"
+		if("peach")
 			. = "fcccb3"
-		if("caucasian3")
+		if("coral")
 			. = "e8b59b"
-		if("latino")
+		if("bisque")
 			. = "d9ae96"
-		if("mediterranean")
+		if("rosewood")
 			. = "c79b8b"
-		if("asian1")
+		if("sepia")
+			. = "895C51"
+		if("taupe")
+			. = "A5805D"
+		if("russet")
+			. = "874B3D"
+		if("beige")
+			. = "BD9D7D"
+		if("walnut")
+			. = "9F766D"
+		if("bronze")
+			. = "7F592B"
+		if("burnet")
+			. = "532B18"
+		if("amber")
+			. = "A37746"
+		if("hazel")
+			. = "A67138"
+		if("champagne")
 			. = "ffdeb3"
-		if("asian2")
+		if("olive")
 			. = "e3ba84"
-		if("arab")
+		if("tawny")
 			. = "c4915e"
-		if("indian")
+		if("ochre")
 			. = "b87840"
-		if("african1")
+		if("cedar")
 			. = "754523"
-		if("african2")
+		if("sable")
 			. = "471c18"
-		if("albino")
+		if("ivory")
 			. = "fff4e6"
 		if("orange")
 			. = "ffc905"

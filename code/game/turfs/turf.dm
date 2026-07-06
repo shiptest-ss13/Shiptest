@@ -516,7 +516,8 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 
 /turf/proc/is_shielded()
 
-/turf/contents_explosion(severity, target)
+//most explosions actually passed here
+/turf/contents_explosion(severity, target, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 
 	for(var/atom/A as anything in contents)
 		if(!QDELETED(A))
@@ -524,13 +525,14 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 				var/atom/movable/AM = A
 				if(!AM.ex_check(explosion_id))
 					continue
+			var/list/to_explode = list(A, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 			switch(severity)
 				if(EXPLODE_DEVASTATE)
-					SSexplosions.highobj += A
+					SSexplosions.highobj += list(to_explode)
 				if(EXPLODE_HEAVY)
-					SSexplosions.medobj += A
+					SSexplosions.medobj += list(to_explode)
 				if(EXPLODE_LIGHT)
-					SSexplosions.lowobj += A
+					SSexplosions.lowobj += list(to_explode)
 
 /turf/narsie_act(force, ignore_mobs, probability = 20)
 	. = (force || prob(probability))

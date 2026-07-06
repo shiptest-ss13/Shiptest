@@ -135,6 +135,14 @@ GLOBAL_LIST_INIT(leather_recipes, list ( \
 /obj/item/stack/sheet/leather/get_main_recipes()
 	. = ..()
 	. += GLOB.leather_recipes
+
+/obj/item/stack/sheet/leather/synthetic
+	name = "synthetic leather"
+	desc = "Fabricator extruded fibers woven into something approximating leather. It has an odd sheen."
+	singular_name = "synthetic leather piece"
+	icon_state = "sheet-leather"
+	item_state = "sheet-leather"
+
 /*
  * Sinew
  */

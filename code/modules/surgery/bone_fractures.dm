@@ -23,7 +23,7 @@
 	requires_real_bodypart = TRUE
 	targetable_wound = /datum/wound/blunt/bone/critical
 
-/datum/surgery/reset_compound_fracture/can_start(mob/living/user, mob/living/carbon/target)
+/datum/surgery/repair_bone_compound/can_start(mob/living/user, mob/living/carbon/target)
 	if(..())
 		var/obj/item/bodypart/targeted_bodypart = target.get_bodypart(user.zone_selected)
 		return(targeted_bodypart.get_wound_type(targetable_wound))

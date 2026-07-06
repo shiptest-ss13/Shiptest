@@ -25,8 +25,8 @@
 		return FALSE
 	return ..()
 
-/turf/open/water/acid/ex_act(severity, target)
-	contents_explosion(severity, target)
+/turf/open/water/acid/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
+	contents_explosion(severity, target, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 
 /turf/open/water/acid/Melt()
 	to_be_destroyed = FALSE

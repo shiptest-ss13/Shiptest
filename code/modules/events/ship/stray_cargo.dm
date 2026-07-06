@@ -3,7 +3,7 @@
 	name = "Stray Cargo Pod"
 	typepath = /datum/round_event/ship/stray_cargo
 	weight = 1
-	max_occurrences = 2
+	max_occurrences = 0
 	min_players = 10
 	earliest_start = 10 MINUTES
 	category = EVENT_CATEGORY_BUREAUCRATIC

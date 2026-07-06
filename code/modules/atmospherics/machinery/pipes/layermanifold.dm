@@ -7,6 +7,7 @@
 	initialize_directions = NORTH|SOUTH
 	pipe_flags = PIPING_ALL_LAYER | PIPING_DEFAULT_LAYER_ONLY | PIPING_CARDINAL_AUTONORMALIZE
 	piping_layer = PIPING_LAYER_DEFAULT
+	layer = UNDER_CATWALK
 	device_type = 0
 	volume = 260
 	construction_type = /obj/item/pipe/binary
@@ -41,9 +42,6 @@
 
 /obj/machinery/atmospherics/pipe/layer_manifold/proc/get_all_connected_nodes()
 	return front_nodes + back_nodes + nodes
-
-/obj/machinery/atmospherics/pipe/layer_manifold/update_layer()
-	layer = initial(layer) + (PIPING_LAYER_MAX * PIPING_LAYER_LCHANGE)	//This is above everything else.
 
 /obj/machinery/atmospherics/pipe/layer_manifold/update_overlays()
 	. = ..()

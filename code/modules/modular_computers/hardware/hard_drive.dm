@@ -25,7 +25,7 @@
 /obj/item/computer_hardware/hard_drive/diagnostics(mob/user)
 	..()
 	// 999 is a byond limit that is in place. It's unlikely someone will reach that many files anyway, since you would sooner run out of space.
-	to_chat(user, "NT-NFS File Table Status: [stored_files.len]/999")
+	to_chat(user, "MW-NFS File Table Status: [stored_files.len]/999")
 	to_chat(user, "Storage capacity: [used_capacity]/[max_capacity]GQ")
 
 // Use this proc to add file to the drive. Returns 1 on success and 0 on failure. Contains necessary sanity checks.
@@ -180,7 +180,7 @@
 
 /obj/item/computer_hardware/hard_drive/small/nukeops/install_default_programs()
 	store_file(new/datum/computer_file/program/computerconfig(src))
-	store_file(new/datum/computer_file/program/ntnetdownload/syndicate(src)) // Syndicate version; automatic access to syndicate apps and no NT apps
+	store_file(new/datum/computer_file/program/ntnetdownload/syndicate(src)) // Syndicate version; automatic access to syndicate apps and no MW apps
 	store_file(new/datum/computer_file/program/filemanager(src))
 	store_file(new/datum/computer_file/program/radar/fission360(src)) //I am legitimately afraid if I don't do this, Ops players will think they just don't get a pinpointer anymore.
 

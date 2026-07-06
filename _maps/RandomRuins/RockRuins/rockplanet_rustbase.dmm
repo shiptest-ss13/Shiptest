@@ -116,7 +116,7 @@
 	dir = 8
 	},
 /turf/open/floor/engine/hull/reinforced/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/ruin/rockplanet/rust_base/engine_one)
 "aK" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -316,7 +316,7 @@
 	picked_color = "Lime"
 	},
 /turf/open/floor/engine/hull/reinforced/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/ruin/rockplanet/rust_base/engine_one)
 "ce" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2{
 	dir = 4
@@ -373,7 +373,6 @@
 /obj/item/clothing/suit/armor/ramzi/captain,
 /obj/item/clothing/under/syndicate/ramzi/officer,
 /obj/item/clothing/head/ramzi/beret,
-/obj/item/storage/guncase/pistol/a357,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/rust_base/dorms)
 "cq" = (
@@ -1425,7 +1424,7 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/ruin/rockplanet/rust_base)
 "jn" = (
 /obj/structure/poddoor_assembly/shutters,
 /turf/open/floor/concrete/pavement/rockplanet/lit,
@@ -1601,7 +1600,7 @@
 /area/ruin/rockplanet/rust_base/slop)
 "kx" = (
 /turf/open/floor/engine/hull/reinforced/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/ruin/rockplanet/rust_base/engine_one)
 "kA" = (
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 4
@@ -4069,8 +4068,7 @@
 	dir = 4
 	},
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun{
-	name = "'Armored' O. Ray";
-	weapon_drop_chance = 100
+	name = "'Armored' O. Ray"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/rust_base/armory)
@@ -6266,6 +6264,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/item/gun/ballistic/shotgun/gaboon/empty,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/rust_base/armory)
 "RV" = (

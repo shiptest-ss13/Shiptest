@@ -78,7 +78,7 @@
 	var/atom/final_target = hiding_target ? hiding_target : target
 
 	if(!can_see(basic_mob, final_target, required_distance))
-		return AI_BEHAVIOR_INSTANT
+		return AI_BEHAVIOR_DELAY
 
 	if(avoid_friendly_fire && check_friendly_in_path(basic_mob, target, targetting_datum))
 		adjust_position(basic_mob, target)

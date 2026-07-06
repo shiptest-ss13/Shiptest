@@ -115,3 +115,21 @@
 	var/explosion_loc = get_turf(src)
 	resolve()
 	explosion(explosion_loc,-1,-1,2)
+
+/obj/item/grenade/firecracker/dynamite
+	name = "dynamite"
+	desc = "the traditional cave-obliterator. A large stick of mean explosive power."
+	icon = 'icons/obj/grenade.dmi'
+	icon_state = "dynamite"
+	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+	item_state = "flare"
+	throw_speed = 3
+	throw_range = 7
+	det_time = 30
+	ex_dev = 0
+	ex_heavy = 2
+	heavy_damage = 50
+	ex_light = 3
+	ex_flame = 3

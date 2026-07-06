@@ -64,6 +64,7 @@
 		CALLBACK(src, PROC_REF(on_examine)), \
 		CALLBACK(src, PROC_REF(on_alt_click)), \
 		CALLBACK(src, PROC_REF(on_attack_hand)), \
+		CALLBACK(src, PROC_REF(on_safety)), \
 		signals)
 
 /obj/item/attachment/Destroy()
@@ -133,6 +134,9 @@
 	return
 
 /obj/item/attachment/proc/on_attack_hand(obj/item/gun/gun, mob/user, list/examine_list)
+	return FALSE
+
+/obj/item/attachment/proc/on_safety(obj/item/gun/gun, mob/user, list/examine_list)
 	return FALSE
 
 /obj/item/attachment/proc/on_alt_click(obj/item/gun/gun, mob/user, list/examine_list)

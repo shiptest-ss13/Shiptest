@@ -202,17 +202,17 @@
 	item_state = "p_suit"
 
 /obj/item/clothing/under/color/jumpskirt/lightpurple
-	name = "lightpurple jumpskirt"
+	name = "purple jumpskirt"
 	icon_state = "lightpurple_skirt"
 	item_state = "p_suit"
 
 /obj/item/clothing/under/color/darkgreen
-	name = "darkgreen jumpsuit"
+	name = "dark green jumpsuit"
 	icon_state = "darkgreen"
 	item_state = "g_suit"
 
 /obj/item/clothing/under/color/jumpskirt/darkgreen
-	name = "darkgreen jumpskirt"
+	name = "dark green jumpskirt"
 	icon_state = "darkgreen_skirt"
 	item_state = "g_suit"
 

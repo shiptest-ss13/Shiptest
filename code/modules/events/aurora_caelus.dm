@@ -21,7 +21,7 @@
 /datum/round_event/aurora_caelus/announce()
 	priority_announce("A harmless cloud of ions is approaching your sector, and will exhaust their energy battering the hull. During this time, starlight will be bright but gentle, shifting between quiet green and blue colors.",
 		sound = 'sound/misc/notice2.ogg',
-		sender_override = "Nanotrasen Meteorology Division"
+		sender_override = "Makosso-Warra Meteorology Division"
 	)
 	for(var/V in GLOB.player_list)
 		var/mob/M = V
@@ -53,7 +53,7 @@
 				fade_to_black(S)
 	priority_announce("The aurora caelus event is now ending. Starlight conditions will slowly return to normal. Have a good day [station_name()], and thank you for watching with us.",
 	sound = 'sound/misc/notice2.ogg',
-	sender_override = "Nanotrasen Meteorology Division")
+	sender_override = "Makosso-Warra Meteorology Division")
 
 /datum/round_event/aurora_caelus/proc/fade_to_black(turf/open/space/S)
 	set waitfor = FALSE

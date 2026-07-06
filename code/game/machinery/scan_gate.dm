@@ -137,10 +137,6 @@
 						scan_species = /datum/species/plasmaman
 					if(SCANGATE_MOTH)
 						scan_species = /datum/species/moth
-					if(SCANGATE_JELLY)
-						scan_species = /datum/species/jelly
-					if(SCANGATE_POD)
-						scan_species = /datum/species/pod
 					if(SCANGATE_ZOMBIE)
 						scan_species = /datum/species/zombie
 					if(SCANGATE_SPIDER)

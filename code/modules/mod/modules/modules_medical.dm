@@ -62,7 +62,7 @@
 /obj/item/mod/module/quick_carry
 	name = "MOD quick carry module"
 	desc = "A suite of advanced servos, redirecting power from the suit's arms to help carry the wounded; \
-		or simply for fun. However, Nanotrasen has locked the module's ability to assist in hand-to-hand combat."
+		or simply for fun. However, Makosso-Warra has locked the module's ability to assist in hand-to-hand combat."
 	icon_state = "carry"
 	complexity = 1
 	idle_power_cost = DEFAULT_CHARGE_DRAIN * 0.3

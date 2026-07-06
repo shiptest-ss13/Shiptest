@@ -58,14 +58,6 @@
 	make_reagents = list(/datum/reagent/consumable/flour = 10)
 	category = list("initial","Food")
 
-/datum/design/monkey_cube
-	name = "Monkey Cube"
-	id = "mcube"
-	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass= 250)
-	build_path = /obj/item/food/monkeycube
-	category = list("initial","Food")
-
 /datum/design/ez_nut   //easy nut :)
 	name = "25u E-Z Nutrient"
 	id = "ez_nut"
@@ -143,47 +135,15 @@
 	id = "leather"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass= 150)
-	build_path = /obj/item/stack/sheet/leather
+	build_path = /obj/item/stack/sheet/leather/synthetic
 	category = list("initial","Organic Materials")
 
-/datum/design/secbelt
-	name = "Security Belt"
-	id = "secbelt"
+/datum/design/meatproduct
+	name = "Synthetic Meat Product"
+	id = "meats"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass= 300)
-	build_path = /obj/item/storage/belt/security
-	category = list("initial","Organic Materials")
-
-/datum/design/medbelt
-	name = "Medical Belt"
-	id = "medbel"
-	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass= 300)
-	build_path = /obj/item/storage/belt/medical
-	category = list("initial","Organic Materials")
-
-/datum/design/janibelt
-	name = "Janitorial Belt"
-	id = "janibelt"
-	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass= 300)
-	build_path = /obj/item/storage/belt/janitor
-	category = list("initial","Organic Materials")
-
-/datum/design/plantbelt
-	name = "Botanical Belt"
-	id = "plantbelt"
-	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass= 300)
-	build_path = /obj/item/storage/belt/plant
-	category = list("initial","Organic Materials")
-
-/datum/design/s_holster
-	name = "Shoulder Holster"
-	id = "s_holster"
-	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass= 400)
-	build_path = /obj/item/clothing/accessory/holster
+	materials = list(/datum/material/biomass= 150)
+	build_path = /obj/item/food/meat/slab/meatproduct
 	category = list("initial","Organic Materials")
 
 /datum/design/rngplant

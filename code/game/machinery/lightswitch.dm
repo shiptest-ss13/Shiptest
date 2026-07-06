@@ -1,7 +1,7 @@
 /// The light switch. Can have multiple per area.
 /obj/machinery/light_switch
 	name = "light switch"
-	icon = 'icons/obj/power.dmi'
+	icon = 'icons/obj/machines/lightswitch.dmi'
 	icon_state = "light1"
 	base_icon_state = "light"
 	desc = "Make dark."

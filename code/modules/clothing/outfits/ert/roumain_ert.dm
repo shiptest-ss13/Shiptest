@@ -81,7 +81,7 @@
 	head = /obj/item/clothing/head/cowboy/sec/roumain/machinist
 	glasses = /obj/item/clothing/glasses/welding
 	accessory = /obj/item/clothing/accessory/waistcoat/roumain
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 
 
 /datum/outfit/job/roumain/ert/leader

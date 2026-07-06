@@ -115,7 +115,7 @@
 		apply_damage(damage, damagetype, null, run_armor_check(null, armor_type, armour_pen, silent=TRUE))
 		return TRUE
 
-/mob/living/simple_animal/ex_act(severity, target, origin)
+/mob/living/simple_animal/ex_act(severity, target, origin, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	if(origin && istype(origin, /datum/spacevine_mutation) && isvineimmune(src))
 		return
 	..()
@@ -130,13 +130,13 @@
 				gib()
 				return
 		if (EXPLODE_HEAVY)
-			var/bloss = 60
+			var/bloss = heavy_dam
 			if(prob(bomb_armor))
 				bloss = bloss / 1.5
 			adjustBruteLoss(bloss)
 
 		if(EXPLODE_LIGHT)
-			var/bloss = 30
+			var/bloss = light_dam
 			if(prob(bomb_armor))
 				bloss = bloss / 1.5
 			adjustBruteLoss(bloss)

@@ -39,11 +39,13 @@
 	if(HAS_TRAIT(src, TRAIT_PAIN_RESIST))
 		power = power/2
 	switch(power)
+		if(0 to 10)
+			EMPTY_BLOCK_GUARD
 		if(10 to 25)
 			emote("gasp")
 		if(25 to 50)
 			emote("groan")
-		if(50 to 100)
+		if(50 to INFINITY)
 			emote("scream")
 
 /mob/proc/force_manual_scream()
@@ -52,7 +54,7 @@
 	if(HAS_TRAIT(src, TRAIT_PAIN_RESIST))
 		manual_emote("gasp")
 		return
-	manual_emote("scream")
+	manual_emote("screams")
 
 /datum/emote/flip
 	key = "flip"

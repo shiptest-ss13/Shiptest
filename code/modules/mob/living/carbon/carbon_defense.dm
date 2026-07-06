@@ -523,7 +523,7 @@
 						null, span_hear("You hear the rustling of clothes."), DEFAULT_MESSAGE_RANGE, list(M, src))
 			to_chat(M, span_notice("You wrap [src] into a tight bear hug!"))
 			to_chat(src, span_notice("[M] squeezes you super tightly in a firm bear hug!"))
-		else if((M.grab_state == GRAB_PASSIVE) && (M.pulling))
+		else if((M.grab_state == GRAB_PASSIVE) && (M.pulling == src))
 			M.visible_message(span_notice("[M] hugs [src] to make [p_them()] feel better!"), \
 					span_notice("You hug [src] to make [p_them()] feel better!"))
 		else
@@ -552,7 +552,7 @@
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/bad_touch_bear_hug)
 
 		// Let people know if they hugged someone really warm or really cold
-		if ((M.grab_state == GRAB_PASSIVE) && (M.pulling))
+		if ((M.grab_state == GRAB_PASSIVE) && (M.pulling == src))
 			if(M.bodytemperature > M.dna.species.bodytemp_heat_damage_limit)
 				to_chat(src, span_warning("It feels like [M] is over heating as they hug you."))
 			else if(M.bodytemperature < M.dna.species.bodytemp_cold_damage_limit)
@@ -576,7 +576,7 @@
 	else if((M.zone_selected == BODY_ZONE_L_ARM) || (M.zone_selected == BODY_ZONE_R_ARM))
 		if(!get_bodypart(check_zone(M.zone_selected)))
 			to_chat(M, span_warning("[src] does not have a [M.zone_selected == BODY_ZONE_L_ARM ? "left" : "right"] arm!"))
-		else if((M.grab_state == GRAB_PASSIVE) && (M.pulling))
+		else if((M.grab_state == GRAB_PASSIVE) && (M.pulling == src))
 			M.visible_message(span_notice("[M] shakes [src]'s hand."), \
 						span_notice("You shake [src]'s hand."))
 		else

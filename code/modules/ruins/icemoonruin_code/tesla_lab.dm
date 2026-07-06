@@ -83,12 +83,14 @@
 
 /obj/effect/temp_visual/phase_in
 	name = "anomalous field"
-	icon_state = "phasein"
+	icon = 'icons/effects/anomalies.dmi'
+	icon_state = "static"
 	layer = 4
 	duration = 5
 
 /obj/effect/temp_visual/phase_out
 	name = "anomalous field"
-	icon_state = "phaseout"
+	icon = 'icons/effects/anomalies.dmi'
+	icon_state = "static"
 	layer = 4
 	duration = 5

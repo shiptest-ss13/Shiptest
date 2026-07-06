@@ -450,7 +450,7 @@
 		..()
 
 
-/mob/living/carbon/human/ex_act(severity, target, origin)
+/mob/living/carbon/human/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	if(TRAIT_BOMBIMMUNE in dna.species.species_traits)
 		return
 	..()
@@ -469,32 +469,47 @@
 
 	switch (severity)
 		if (EXPLODE_DEVASTATE)
-			brute_loss = 500
-			damage_clothes(400 - bomb_armor, BRUTE, "bomb")
+			if(bomb_armor < EXPLODE_GIB_THRESHOLD)
+				for(var/I in contents)
+					var/atom/A = I
+					var/list/to_explode = list(A,light_dam,light_item_dam,heavy_dam,heavy_item_dam)
+					if(!QDELETED(A))
+						switch(severity)
+							if(EXPLODE_DEVASTATE)
+								SSexplosions.highobj += list(to_explode)
+							if(EXPLODE_HEAVY)
+								SSexplosions.medobj += list(to_explode)
+							if(EXPLODE_LIGHT)
+								SSexplosions.lowobj += list(to_explode)
+
+				brute_loss = 500
+				var/atom/throw_target = get_edge_target_turf(src, get_dir(src, get_step_away(src, src)))
+				throw_at(throw_target, 200, 4)
+				damage_clothes(400 - bomb_armor, BRUTE, "bomb")
 
 		if (EXPLODE_HEAVY)
-			brute_loss = 35
-			burn_loss = 35
+			brute_loss = heavy_dam/2
+			burn_loss = heavy_dam/2
 			if(bomb_armor)
 				brute_loss = 20*(2 - round(bomb_armor*0.01, 0.05))
 				burn_loss = brute_loss				//damage gets reduced from 120 to up to 60 combined brute+burn
 			intensity = 2
-			ear_damage = 30
-			deafness_power = 120
-			damage_clothes(max(rand(90,150) - bomb_armor, 0), BRUTE, "bomb")
+			ear_damage = heavy_dam/3
+			deafness_power = heavy_dam * (3/2)
+			damage_clothes(max(heavy_item_dam - bomb_armor, 0), BRUTE, "bomb")
 			Unconscious(20)							//short amount of time for follow up attacks against elusive enemies like wizards
 			Knockdown(200 - (bomb_armor * 1.6)) 	//between ~4 and ~20 seconds of knockdown depending on bomb armor
 
 		if(EXPLODE_LIGHT)
-			brute_loss = 20
-			burn_loss = 20
+			brute_loss = light_dam/2
+			burn_loss = light_dam/2
 			if(bomb_armor)
 				brute_loss = 15*(2 - round(bomb_armor*0.01, 0.05))
 				burn_loss = bruteloss
-			damage_clothes(max(rand(10,90) - bomb_armor, 0), BRUTE, "bomb")
+			damage_clothes(max(light_item_dam - bomb_armor, 0), BRUTE, "bomb")
 			intensity = 1.5
-			ear_damage = 15
-			deafness_power = 60
+			ear_damage = light_dam/3
+			deafness_power = light_dam * (3/2)
 			Knockdown(160 - (bomb_armor * 1.6))		//100 bomb armor will prevent knockdown altogether
 
 	take_overall_damage(brute_loss,burn_loss)

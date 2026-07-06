@@ -24,7 +24,7 @@ SUBSYSTEM_DEF(missions)
 		"Cybersun Virtual Solutions",
 		"CLIP-GOLD Frontier Investigations Office",
 		"CLIP-LAND Frontier Development Office",
-		"Nanotrasen Frontier Studies Division",
+		"Makosso-Warra Frontier Studies Division",
 		"The N+S Survey Corps",
 		"The Naturalienwissenschaftlicher Studentenverbindungs-Verband",
 		"The Central Solarian Frontier Research Agency",

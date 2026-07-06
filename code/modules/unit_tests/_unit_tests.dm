@@ -118,6 +118,7 @@
 #include "say.dm"
 #include "serving_tray.dm"
 #include "spawn_humans.dm"
+#include "species_limbs_and_organs.dm"
 #include "species_unique_id.dm"
 #include "species_whitelists.dm"
 #include "stack_singular_name.dm"

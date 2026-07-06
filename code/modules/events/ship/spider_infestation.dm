@@ -2,7 +2,7 @@
 	name = "Spider Infestation"
 	typepath = /datum/round_event/ship/spider_infestation
 	weight = 1
-	max_occurrences = 2
+	max_occurrences = 0
 	min_players = 15
 	earliest_start = 30 MINUTES
 

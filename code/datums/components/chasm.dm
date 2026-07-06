@@ -15,6 +15,8 @@ GLOBAL_LIST_INIT(chasm_storage, list())
 		/obj/docking_port,
 		/obj/structure/lattice,
 		/obj/structure/stone_tile,
+		/obj/structure/platform,
+		/obj/structure/railing,
 		/obj/projectile,
 		/obj/effect/projectile,
 		/obj/effect/portal,

@@ -640,7 +640,7 @@
 	if(isitem(host))
 		var/obj/item/IP = host
 		var/datum/component/storage/STR_I = I.GetComponent(/datum/component/storage)
-		if((I.w_class >= IP.w_class) && STR_I && !allow_big_nesting)
+		if((I.w_class >= IP.w_class) && STR_I && !allow_big_nesting && !is_type_in_list(I, exception_hold))
 			if(!stop_messages)
 				to_chat(M, span_warning("[IP] cannot hold [I] as it's a storage item of the same size!"))
 			return FALSE //To prevent the stacking of same sized storage items.

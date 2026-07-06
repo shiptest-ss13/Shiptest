@@ -22,7 +22,7 @@
 					/obj/item/multitool = 2,
 					/obj/item/weldingtool/hugetank = 1,
 					/obj/item/clothing/head/welding = 1,
-					/obj/item/clothing/gloves/color/yellow = 1)
+					/obj/item/clothing/gloves/insulated = 1)
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
 	default_price = 75

@@ -391,18 +391,18 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 	laws.associate(src)
 	update_icons()
 
-/mob/living/silicon/robot/ex_act(severity, target)
+/mob/living/silicon/robot/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	switch(severity)
 		if(1)
 			gib()
 			return
 		if(2)
 			if (stat != DEAD)
-				adjustBruteLoss(60)
-				adjustFireLoss(60)
+				adjustBruteLoss(heavy_dam/2)
+				adjustFireLoss(heavy_dam/2)
 		if(3)
 			if (stat != DEAD)
-				adjustBruteLoss(30)
+				adjustBruteLoss(light_dam)
 
 /mob/living/silicon/robot/bullet_act(obj/projectile/Proj, def_zone)
 	. = ..()

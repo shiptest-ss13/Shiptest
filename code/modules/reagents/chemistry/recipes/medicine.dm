@@ -2,11 +2,11 @@
 
 /datum/chemical_reaction/indomide
 	results = list(/datum/reagent/medicine/indomide = 4)
-	required_reagents = list(/datum/reagent/copper = 1, /datum/reagent/acetone = 2,  /datum/reagent/phosphorus = 1)
+	required_reagents = list(/datum/reagent/copper = 1, /datum/reagent/fuel/oil = 2,  /datum/reagent/phosphorus = 1)
 
 /datum/chemical_reaction/hadrakine
-	results = list(/datum/reagent/medicine/hadrakine = 4)
-	required_reagents = list(/datum/reagent/aluminium = 3, /datum/reagent/hydrogen = 1, /datum/reagent/oxygen = 1, /datum/reagent/toxin/acid = 1)
+	results = list(/datum/reagent/medicine/hadrakine = 5)
+	required_reagents = list(/datum/reagent/aluminium = 2, /datum/reagent/hydrogen = 1, /datum/reagent/oxygen = 1, /datum/reagent/toxin/acid = 1)
 	mix_message = "The solution yields an astringent powder."
 
 /datum/chemical_reaction/silfrine
@@ -15,6 +15,15 @@
 	required_catalysts = list(/datum/reagent/toxin/plasma = 2)
 	required_temp = 450
 	mix_message = "The solution rapidly bubbles, before yielding a dark blue compound"
+
+/datum/chemical_reaction/alt_silfrine
+	results = list(/datum/reagent/medicine/silfrine = 5, /datum/reagent/toxin/acid/fluacid = 5)
+	required_reagents = list(/datum/reagent/wittel = 2, /datum/reagent/toxin/acid = 1)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 2)
+	required_temp = 250
+	is_cold_recipe = TRUE
+	mix_message = "The solution slowly takes on a blue coloration as the temperature lowers. There is a distinct acid smell."
+
 
 // burn chems
 
@@ -34,6 +43,11 @@
 /datum/chemical_reaction/quardexane
 	results = list(/datum/reagent/medicine/quardexane = 5)
 	required_reagents = list(/datum/reagent/cryostylane = 3, /datum/reagent/bromine = 1, /datum/reagent/lye = 1)
+
+/datum/chemical_reaction/alt_quardexane
+	results = list(/datum/reagent/medicine/quardexane = 5)
+	required_reagents = list(/datum/reagent/rahene = 3, /datum/reagent/bromine = 1, /datum/reagent/carbon = 1)
+	required_temp = 520
 
 /datum/chemical_reaction/ysiltane
 	results = list(/datum/reagent/medicine/ysiltane = 5)
@@ -107,7 +121,7 @@
 	results = list(/datum/reagent/medicine/cureall = 3)
 	required_reagents = list(/datum/reagent/medicine/alvitane = 1, /datum/reagent/medicine/indomide = 1, /datum/reagent/medicine/charcoal = 1)
 
-/datum/chemical_reaction/cureall_alternative
+/datum/chemical_reaction/alt_cureall
 	results = list(/datum/reagent/medicine/cureall = 5)
 	required_reagents = list(/datum/reagent/medicine/panacea/effluvial = 5, /datum/reagent/toxin/plasma = 1)
 	mix_message = "The plasma begins tinting the compound as it incorporates into the mix"
@@ -116,6 +130,12 @@
 	results = list(/datum/reagent/medicine/panacea = 5)
 	required_reagents = list(/datum/reagent/medicine/panacea/effluvial = 3, /datum/reagent/stable_plasma = 1, /datum/reagent/medicine/cryoxadone = 1)
 	required_temp = 78
+	is_cold_recipe = TRUE
+
+/datum/chemical_reaction/alt_panacea
+	results = list(/datum/reagent/medicine/panacea = 4)
+	required_reagents = list(/datum/reagent/rahene = 2, /datum/reagent/stable_plasma = 1, /datum/reagent/medicine/panacea/effluvial = 1)
+	required_temp = 23
 	is_cold_recipe = TRUE
 
 /datum/chemical_reaction/hunter_extract
@@ -175,7 +195,6 @@
 	results = list(/datum/reagent/medicine/morphine = 2)
 	required_reagents = list(/datum/reagent/carbon = 2, /datum/reagent/hydrogen = 2, /datum/reagent/consumable/ethanol = 1, /datum/reagent/oxygen = 1)
 	required_temp = 480
-
 
 /datum/chemical_reaction/carfen
 	results = list(/datum/reagent/medicine/carfencadrizine = 4)
@@ -271,7 +290,7 @@
 	results = list(/datum/reagent/medicine/mine_salve = 3)
 	required_reagents = list(/datum/reagent/fuel/oil = 1, /datum/reagent/water = 1, /datum/reagent/iron = 1)
 
-/datum/chemical_reaction/mine_salve2
+/datum/chemical_reaction/alt_mine_salve
 	results = list(/datum/reagent/medicine/mine_salve = 15)
 	required_reagents = list(/datum/reagent/toxin/plasma = 5, /datum/reagent/iron = 5, /datum/reagent/consumable/sugar = 1) // A sheet of plasma, a twinkie and a sheet of metal makes four of these
 

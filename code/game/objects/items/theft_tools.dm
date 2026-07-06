@@ -85,7 +85,7 @@
 	random_color = FALSE
 
 /obj/item/paper/guides/antag/nuke_instructions
-	default_raw_text = "How to break into a Nanotrasen self-destruct terminal and remove its plutonium core:<br>\
+	default_raw_text = "How to break into a Makosso-Warra self-destruct terminal and remove its plutonium core:<br>\
 	<ul>\
 	<li>Use a screwdriver with a very thin tip (provided) to unscrew the terminal's front panel</li>\
 	<li>Dislodge and remove the front panel with a crowbar</li>\

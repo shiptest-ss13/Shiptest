@@ -17,7 +17,7 @@
 	id = "spacemall"
 	suffix = "spacemall.dmm"
 	name = "Space Mall"
-	description = "An old shopping centre, owned by a former member of Nanotrasen's board of directors.."
+	description = "An old shopping centre, owned by a former member of Makosso-Warra's board of directors.."
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
 
 /datum/map_template/ruin/space/scrapstation
@@ -37,6 +37,6 @@
 /datum/map_template/ruin/space/onefull
 	id = "onehalftwo"
 	suffix = "onehalftwo.dmm"
-	name = "Nanotrasen Refueling Station"
-	description = "An abandoned Nanotrasen refueling post evacuated after an attempted ACLF plasmaflood. Since then, hivebots and a small Ramzi Clique salvage team have attempted to claim the station."
+	name = "Makosso-Warra Refueling Station"
+	description = "An abandoned Makosso-Warra refueling post evacuated after an attempted ACLF plasmaflood. Since then, hivebots and a small Ramzi Clique salvage team have attempted to claim the station."
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)

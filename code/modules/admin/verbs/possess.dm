@@ -25,7 +25,7 @@
 	usr.control_object = O
 	BLACKBOX_LOG_ADMIN_VERB("Possess Object")
 
-/proc/release()
+/proc/release(obj/O in world)
 	set name = "Release Obj"
 	set category = "Object"
 	//usr.loc = get_turf(usr)

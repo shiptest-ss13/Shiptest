@@ -2,6 +2,7 @@
 	name = "robusta beans"
 	desc = "A bag containing fresh, dried coffee robusta beans."
 	illustration = null
+	possible_illustrations = null
 	icon = 'icons/obj/item/coffee.dmi'
 	icon_state = "robusta_beans"
 
@@ -19,6 +20,7 @@
 	name = "arabica beans"
 	desc = "A bag containing fresh, dried coffee arabica beans."
 	illustration = null
+	possible_illustrations = null
 	icon = 'icons/obj/item/coffee.dmi'
 	icon_state = "arabica_beans"
 

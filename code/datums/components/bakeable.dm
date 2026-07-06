@@ -72,7 +72,7 @@
 		)
 	else
 		used_oven.visible_message(
-			span_boldwarning("Black smoke spills from the oven![used_oven]."),
+			span_boldwarning("Black smoke spills from the [used_oven]!"),
 			blind_message = span_boldwarning("You smell something burning..."),
 		)
 	SEND_SIGNAL(parent, COMSIG_BAKE_COMPLETED, baked_result)

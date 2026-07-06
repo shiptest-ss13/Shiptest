@@ -127,6 +127,14 @@
 	minimize_when_attached = FALSE
 	attachment_slot = null
 
+/obj/item/clothing/accessory/barcoat
+	name = "bartender waistcoat"
+	desc = "For help with drink spillage."
+	icon_state = "barcoat"
+	item_state = "barcoat"
+	minimize_when_attached = TRUE
+	attachment_slot = null
+
 //////////
 //Medals//
 //////////
@@ -162,7 +170,7 @@
 					span_notice("You try to pin [src] on [M]'s chest."))
 			var/input
 			if(!commended && user != M)
-				input = stripped_input(user,"Please input a reason for this commendation, it will be recorded by Nanotrasen.", ,"", 140)
+				input = stripped_input(user,"Please input a reason for this commendation. It will be recorded by Makosso-Warra.", ,"", 140)
 			if(do_after(user, delay, target = M))
 				if(U.attach_accessory(src, user, 0)) //Attach it, do not notify the user of the attachment
 					if(user == M)
@@ -219,7 +227,7 @@
 
 /obj/item/clothing/accessory/medal/silver/excellence
 	name = "\proper the head of personnel award for outstanding achievement in the field of excellence"
-	desc = "Nanotrasen's dictionary defines excellence as \"the quality or condition of being excellent\". This is awarded to those rare crewmembers who fit that definition."
+	desc = "Makosso-Warra's dictionary defines excellence as \"the quality or condition of being excellent\". This is awarded to those rare crewmembers who fit that definition."
 
 /obj/item/clothing/accessory/medal/silver/bureaucracy
 	name = "\improper Excellence in Bureaucracy Medal"
@@ -295,9 +303,9 @@
 ////////////
 
 /obj/item/clothing/accessory/armband
-	name = "red armband"
-	desc = "A fancy red armband!"
-	icon_state = "redband"
+	name = "yellow armband"
+	desc = "A fancy yellow armband!"
+	icon_state = "yellowband"
 	attachment_slot = null
 
 /obj/item/clothing/accessory/armband/deputy
@@ -466,6 +474,32 @@
 	new /obj/item/gun/ballistic/automatic/pistol/candor(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
+
+
+/obj/item/clothing/accessory/holster/cybersun/Initialize()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/pistol/rattlesnake(src)
+	new /obj/item/ammo_box/magazine/m9mm_rattlesnake(src)
+	new /obj/item/ammo_box/magazine/m9mm_rattlesnake(src)
+
+/obj/item/clothing/accessory/holster/ringneck/Initialize()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/pistol/ringneck(src)
+	new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
+	new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
+
+/obj/item/clothing/accessory/holster/asp/Initialize()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/pistol/asp(src)
+	new /obj/item/ammo_box/magazine/m57_39_asp(src)
+	new /obj/item/ammo_box/magazine/m57_39_asp(src)
+
+/obj/item/clothing/accessory/holster/pgf/Initialize()
+	. = ..()
+	new /obj/item/gun/energy/kalix/pistol(src)
+	new /obj/item/stock_parts/cell/gun/kalix(src)
+	new /obj/item/stock_parts/cell/gun/kalix(src)
+
 
 //////////
 //RILENA//

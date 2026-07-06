@@ -128,7 +128,7 @@
 	pixel_x = -5
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
-/obj/item/trash/cheesie{
+/obj/item/trash/gummycarps{
 	pixel_x = -5;
 	pixel_y = -10
 	},
@@ -2835,9 +2835,7 @@
 /obj/machinery/door/window/southleft{
 	dir = 4
 	},
-/obj/machinery/mineral/processing_unit_console{
-	pixel_y = 30
-	},
+/obj/machinery/computer/processing_unit_console/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "pX" = (
@@ -5374,10 +5372,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "DX" = (
-/obj/structure/noticeboard{
-	pixel_y = 33;
+/obj/structure/noticeboard/directional/north{
 	desc = "A board for mounting trophies or momentos on.";
-	name = "wall board"
+	name = "wall board";
+	pixel_y = 36
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 1
@@ -9536,13 +9534,13 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "Ze" = (
-/obj/structure/noticeboard{
-	pixel_y = 33;
+/obj/structure/noticeboard/directional/north{
 	desc = "A board for mounting trophies or momentos on.";
-	name = "wall board"
+	name = "wall board";
+	pixel_y = 36
 	},
 /obj/item/pickaxe/drill/jackhammer/old{
-	pixel_y = 31;
+	pixel_y = 26;
 	name = "old jackhammer";
 	desc = "The old fashioned solution to a stubborn wall- used heavily all over known space until the onset of sonic deconstruction technology and Rapid Construction Devices. <i>Don't forget. -485 FS.</i> is carved into the side."
 	},

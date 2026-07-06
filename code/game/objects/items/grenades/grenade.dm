@@ -23,8 +23,14 @@
 	var/ex_dev = 0
 	///how big of a heavy explosion radius on prime
 	var/ex_heavy = 0
+	// how much damage the heavy explosion deals.
+	var/heavy_damage = EX_HEAVY_BASE_DAM
+	var/heavy_item_damage = EX_HEAVY_BASE_ITEM_DAM
 	///how big of a light explosion radius on prime
 	var/ex_light = 0
+	// how much damage the light explosion deals.
+	var/light_damage = EX_LIGHT_BASE_DAM
+	var/light_item_damage = EX_LIGHT_BASE_ITEM_DAM
 	///how big of a flame explosion radius on prime
 	var/ex_flame = 0
 
@@ -94,7 +100,7 @@
 
 	SEND_SIGNAL(src, COMSIG_GRENADE_PRIME)
 	if(ex_dev || ex_heavy || ex_light || ex_flame)
-		explosion(loc, ex_dev, ex_heavy, ex_light, flame_range = ex_flame)
+		explosion(loc, ex_dev, ex_heavy, ex_light, flame_range = ex_flame, light_dam = light_damage, light_item_dam = light_item_damage, heavy_dam = heavy_damage, heavy_item_dam = heavy_item_damage)
 
 /obj/item/grenade/proc/update_mob()
 	if(ismob(loc))

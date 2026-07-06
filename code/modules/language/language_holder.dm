@@ -382,7 +382,7 @@ GLOBAL_LIST_INIT(prototype_language_holders, init_language_holder_prototypes())
 	understood_languages = list(/datum/language/galactic_common = list(LANGUAGE_ATOM),
 								/datum/language/machine = list(LANGUAGE_ATOM),
 								/datum/language/gezena_kalixcian = list(LANGUAGE_ATOM),
-								/datum/language/moffic = list(LANGUAGE_ATOM),
+								/datum/language/vox_pidgin = list(LANGUAGE_ATOM),
 								/datum/language/rachnidian = list(LANGUAGE_ATOM),
 								/datum/language/teceti_unified = list(LANGUAGE_ATOM),
 								/datum/language/solarian_international = list(LANGUAGE_ATOM),
@@ -390,7 +390,7 @@ GLOBAL_LIST_INIT(prototype_language_holders, init_language_holder_prototypes())
 	spoken_languages = list(/datum/language/galactic_common = list(LANGUAGE_ATOM),
 							/datum/language/machine = list(LANGUAGE_ATOM),
 							/datum/language/gezena_kalixcian = list(LANGUAGE_ATOM),
-							/datum/language/moffic = list(LANGUAGE_ATOM),
+							/datum/language/vox_pidgin = list(LANGUAGE_ATOM),
 							/datum/language/teceti_unified = list(LANGUAGE_ATOM),
 							/datum/language/solarian_international = list(LANGUAGE_ATOM),
 							/datum/language/sign_language = list(LANGUAGE_ATOM))

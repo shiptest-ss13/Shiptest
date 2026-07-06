@@ -9,6 +9,7 @@
 	var/slot
 	// DO NOT add slots with matching names to different zones - it will break internal_organs_slot list!
 	var/organ_flags = ORGAN_EDIBLE
+	/// Status Effects that are given to the holder of the organ.
 	var/maxHealth = STANDARD_ORGAN_THRESHOLD
 	var/damage = 0		//total damage this organ has sustained
 	///Healing factor and decay factor function on % of maxhealth, and do not work by applying a static number per tick
@@ -242,7 +243,7 @@
 
 /mob/living/carbon/human/regenerate_organs()
 	SEND_SIGNAL(src, COMSIG_CARBON_PRE_REGENERATE_ORGANS)
-	dna.species.regenerate_organs(src, robotic = fbp)
+	dna.species.regenerate_organs(src, robotic = HAS_TRAIT(src, TRAIT_USE_PROSTHETIC))
 	SEND_SIGNAL(src, COMSIG_CARBON_POST_REGENERATE_ORGANS)
 
 /** get_availability

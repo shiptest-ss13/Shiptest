@@ -4,6 +4,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	greyscale_eyes = FALSE
+	draw_sclera = FALSE
 	biological_state = BIO_BONE
 
 /obj/item/bodypart/chest/plasmaman

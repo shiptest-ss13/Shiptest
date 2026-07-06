@@ -403,7 +403,10 @@ GLOBAL_LIST_EMPTY(teleportlocs)
  */
 /area/proc/close_and_lock_door(obj/machinery/door/DOOR)
 	set waitfor = FALSE
-	DOOR.close()
+	if(DOOR.close_exception)
+		return
+	else
+		DOOR.close()
 	if(DOOR.density)
 		DOOR.lock()
 

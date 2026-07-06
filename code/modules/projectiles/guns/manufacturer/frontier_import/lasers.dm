@@ -1,6 +1,6 @@
 /obj/item/gun/energy/laser/wasp
 	name = "Wasp"
-	desc = "While the E-40 was the finest laser rifle of it's day, many have failed over the years to time. This is the New Frontiersmen solution to that problem. Removing the ballistic parts while keeping the internal electronics. They also take modern NT power cells in exchange for a weaker lens."
+	desc = "While the E-40 was the finest laser rifle of it's day, many have failed over the years to time. This is the New Frontiersmen solution to that problem. Removing the ballistic parts while keeping the internal electronics. They also take modern Makosso-Warra power cells in exchange for a weaker lens."
 	icon_state = "wasp"
 	item_state = "wasp"
 
@@ -42,3 +42,6 @@
 	)
 
 	default_attachments = list(/obj/item/attachment/foldable_stock/wasp)
+
+/obj/item/gun/energy/laser/wasp/empty_cell
+	spawn_no_ammo = TRUE

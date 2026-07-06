@@ -248,9 +248,8 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/dorm)
 "cD" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 1
 	},
 /obj/structure/closet/wall/directional/south,
 /obj/item/clothing/under/pants/cargo/grey{
@@ -304,9 +303,8 @@
 /obj/effect/spawner/bunk_bed{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 1
 	},
 /obj/machinery/airalarm/directional/south,
 /obj/item/radio/intercom/directional/west{
@@ -1371,9 +1369,8 @@
 /area/ship/medical)
 "qT" = (
 /obj/effect/spawner/bunk_bed,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 1
 	},
 /obj/machinery/airalarm/directional/south,
 /obj/item/radio/intercom/directional/east{
@@ -1525,7 +1522,7 @@
 	pixel_x = 9;
 	pixel_y = 3
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = -9;
 	pixel_y = -4
 	},
@@ -1778,7 +1775,7 @@
 	desc = "A basic white surgical apron.";
 	name = "smock"
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/clip{
+/obj/item/clothing/gloves/nitrile{
 	pixel_x = 9;
 	pixel_y = -9
 	},
@@ -2097,9 +2094,7 @@
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/commad)
 "yF" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -2109,9 +2104,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "yL" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -2155,11 +2148,7 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
 	},
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_x = 0;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -2683,9 +2672,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Gy" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 16;
-	pixel_y = -25
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/south{
+	pixel_x = 17;
+	pixel_y = -22
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken2"
@@ -2715,9 +2704,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "GG" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
@@ -3387,9 +3374,7 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/dorm/dormfour)
 "OT" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/structure/cable/green{
@@ -3585,9 +3570,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Rr" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -3897,9 +3880,8 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Uy" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 1
 	},
 /obj/structure/closet/wall/directional/south,
 /obj/machinery/light/small/directional/east,
@@ -4082,7 +4064,8 @@
 	dir = 8
 	},
 /obj/structure/chair/sofa/red/old/right{
-	dir = 8
+	dir = 8;
+	buckle_dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -4236,9 +4219,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "YE" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},

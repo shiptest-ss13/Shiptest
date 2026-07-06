@@ -29,6 +29,6 @@
 	icon_state = "lizard-blue"
 	default_priority = 90
 	mutual_understanding = list(
-		/datum/language/gezena_kalixcian = 90, // enough to sort of understand each other, but not perfectly
-		/datum/language/league_kalixcian = 90
+		/datum/language/gezena_kalixcian = 70,
+		/datum/language/league_kalixcian = 95,
 	)

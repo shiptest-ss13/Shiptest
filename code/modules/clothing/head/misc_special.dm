@@ -185,6 +185,12 @@
 		add_atom_colour(newcolor, FIXED_COLOUR_PRIORITY)
 	update_appearance()
 
+/obj/item/clothing/head/wig/attack_hand_secondary(mob/living/carbon/human/user, modifiers)
+	attack_self(user)
+	user.update_inv_head()
+	user.update_inv_neck()
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
 /obj/item/clothing/head/wig/afterattack(mob/living/carbon/human/target, mob/user)
 	. = ..()
 	if (istype(target) && (HAIR in target.dna.species.species_traits) && target.hairstyle != "Bald")

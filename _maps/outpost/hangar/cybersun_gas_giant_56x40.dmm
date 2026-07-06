@@ -53,6 +53,16 @@
 "dD" = (
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
+"dK" = (
+/obj/effect/turf_decal/siding/wood/bamboo{
+	dir = 4
+	},
+/obj/structure/chair/bench/red/directional/west,
+/obj/machinery/holosign/cs_outpost_lift{
+	pixel_x = 27
+	},
+/turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
+/area/hangar)
 "ei" = (
 /obj/structure/platform/ship_three/indestructible{
 	dir = 8
@@ -79,8 +89,7 @@
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
 "eV" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -295,9 +304,7 @@
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
 "qq" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA"
-	},
+/obj/effect/turf_decal/siding/wood/bamboo,
 /turf/open/floor/plasteel/patterned/brushed/cybersun_outpost,
 /area/hangar)
 "qP" = (
@@ -364,8 +371,8 @@
 /obj/structure/railing/thin/corner{
 	dir = 4
 	},
-/obj/structure/sign/departments/cargo{
-	pixel_x = 28
+/obj/machinery/holosign/cs_outpost_cargo{
+	pixel_x = 27
 	},
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
@@ -413,14 +420,11 @@
 /turf/open/cybersun_outpost_exterior,
 /area/hangar)
 "wT" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/corner/bamboo{
 	dir = 8
 	},
 /obj/machinery/light/floor,
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#E6D2BA"
-	},
+/obj/effect/turf_decal/siding/wood/corner/bamboo,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/hangar)
 "wX" = (
@@ -486,10 +490,8 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 1
 	},
-/obj/structure/noticeboard{
-	pixel_y = -25;
-	name = "local notice board";
-	dir = 1
+/obj/structure/noticeboard/directional/south{
+	name = "local notice board"
 	},
 /obj/structure/table,
 /turf/open/floor/plasteel/mono/cybersun_outpost,
@@ -595,9 +597,7 @@
 /turf/open/floor/plasteel/tech/cybersun_outpost,
 /area/hangar)
 "EV" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA"
-	},
+/obj/effect/turf_decal/siding/wood/bamboo,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/hangar)
 "FG" = (
@@ -608,13 +608,7 @@
 /area/hangar)
 "FO" = (
 /obj/structure/chair/sofa/red/corpo/left/directional/south,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 28;
-	icon_state = "frame"
-	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 27
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north,
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
 "FU" = (
@@ -673,8 +667,8 @@
 /obj/effect/turf_decal/corner/transparent/lightgrey/half{
 	dir = 8
 	},
-/obj/structure/sign/departments/cargo{
-	pixel_x = 28
+/obj/machinery/holosign/cs_outpost_cargo{
+	pixel_x = 27
 	},
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
@@ -721,8 +715,7 @@
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
 "KV" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 4
 	},
 /obj/structure/chair/bench/red/directional/west,
@@ -776,12 +769,10 @@
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
 "Mh" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/north,
@@ -812,24 +803,20 @@
 /turf/closed/indestructible/titanium,
 /area/hangar)
 "Nf" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/corner/bamboo{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/corner/bamboo{
 	dir = 1
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/hangar)
 "Nt" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -893,15 +880,13 @@
 /area/hangar)
 "RS" = (
 /obj/structure/chair/bench/red/directional/east,
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 8
 	},
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
 "Te" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 4
 	},
 /obj/machinery/elevator_call_button{
@@ -919,8 +904,7 @@
 /turf/open/floor/engine/hull/reinforced/cybersun_outpost,
 /area/hangar)
 "Ty" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 1
 	},
 /obj/machinery/light/floor,
@@ -1023,9 +1007,7 @@
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
 "XZ" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA"
-	},
+/obj/effect/turf_decal/siding/wood/bamboo,
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/patterned/brushed/cybersun_outpost,
 /area/hangar)
@@ -1045,8 +1027,7 @@
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
 "ZR" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 4
 	},
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
@@ -6700,7 +6681,7 @@ Ty
 hU
 MM
 XZ
-KV
+dK
 KV
 OB
 IF

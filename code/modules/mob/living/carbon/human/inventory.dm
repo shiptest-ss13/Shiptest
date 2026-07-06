@@ -237,7 +237,8 @@
 		put_in_hand(new dna.species.mutanthands(), index)
 	if(I == wear_suit)
 		if(s_store && invdrop)
-			dropItemToGround(s_store, TRUE) //It makes no sense for your suit storage to stay on you if you drop your suit.
+			if(!(HAS_TRAIT(s_store, TRAIT_FORCE_SUIT_STORAGE) || HAS_TRAIT(s_store, TRAIT_FORCE_SUIT_STORAGE_ALWAYS))) //Don't drop things that don't need a suit
+				dropItemToGround(s_store, TRUE) //It makes no sense for your suit storage to stay on you if you drop your suit.
 		if(wear_suit.breakouttime) //when unequipping a straightjacket
 			REMOVE_TRAIT(src, TRAIT_RESTRAINED, SUIT_TRAIT)
 			drop_all_held_items() //suit is restraining
@@ -257,6 +258,8 @@
 				dropItemToGround(wear_id)
 			if(belt)
 				dropItemToGround(belt)
+			if(s_store && !wear_suit && !HAS_TRAIT(s_store, TRAIT_FORCE_SUIT_STORAGE_ALWAYS))
+				dropItemToGround(s_store, TRUE)
 		w_uniform = null
 		update_suit_sensors()
 		if(!QDELETED(src))

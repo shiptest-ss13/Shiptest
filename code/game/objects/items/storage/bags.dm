@@ -228,7 +228,7 @@
 
 /obj/item/storage/bag/sheetsnatcher
 	name = "sheet snatcher"
-	desc = "A patented Nanotrasen storage system designed for any kind of mineral sheet."
+	desc = "A patented Makosso-Warra storage system designed for any kind of mineral sheet."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "sheetsnatcher"
 

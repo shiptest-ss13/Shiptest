@@ -630,7 +630,7 @@
 
 /datum/mod_theme/magnate
 	name = "magnate"
-	desc = "A fancy, very protective suit for Nanotrasen's captains. Shock, fire and acid-proof while also having a large capacity and high speed."
+	desc = "A fancy, very protective suit for Makosso-Warra's captains. Shock, fire and acid-proof while also having a large capacity and high speed."
 	default_skin = "magnate"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 60, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 100)
 	resistance_flags = FIRE_PROOF|ACID_PROOF

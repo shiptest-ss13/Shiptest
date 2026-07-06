@@ -651,9 +651,7 @@
 /obj/machinery/hydroponics/proc/update_tray(mob/user)
 	harvest = FALSE
 	lastproduce = age
-	if(istype(myseed, /obj/item/seeds/replicapod))
-		to_chat(user, span_notice("You harvest from the [myseed.plantname]."))
-	else if(myseed.getYield() <= 0)
+	if(myseed.getYield() <= 0)
 		to_chat(user, span_warning("You fail to harvest anything useful!"))
 	else
 		to_chat(user, span_notice("You harvest [myseed.getYield()] items from the [myseed.plantname]."))

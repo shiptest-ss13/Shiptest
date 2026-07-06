@@ -7,13 +7,8 @@ export type Data = {
   maxMissions: number;
   shipMissions: Array<Mission>;
   outpostMissions: Array<Mission>;
-  beaconZone: string;
-  beaconName: string;
-  hasBeacon: boolean;
-  usingBeacon: boolean;
   message: string;
-  printMsg: string;
-  canBuyBeacon: boolean;
+  highPriorityAssigned: boolean;
 };
 
 export type Mission = {
@@ -25,4 +20,5 @@ export type Mission = {
   actStr: string;
   value: number;
   remaining: number;
+  highPriority: boolean;
 };
