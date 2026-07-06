@@ -25,6 +25,9 @@
 /area/centcom/prison
 	name = "Admin Prison"
 
+/area/centcom/holding
+	name = "Holding Facility"
+
 /area/centcom/television
 	name = "Broadcasting Office 1"
 
