@@ -1,17 +1,17 @@
 /obj/machinery/air_sensor/ship/bolide/air
 	id_tag = "bolide_air"
 
-/obj/machinery/air_sensor/ship/bolide/fuel
-	id_tag = "bolide_fuel_1"
+/obj/machinery/air_sensor/ship/bolide/fuel_port
+	id_tag = "bolide_fuel_port"
 
-/obj/machinery/air_sensor/ship/bolide/fuel_2
-	id_tag = "bolide_fuel_2"
+/obj/machinery/air_sensor/ship/bolide/fuel_starboard
+	id_tag = "bolide_fuel_starboard"
 
 /obj/machinery/computer/atmos_control/ship/bolide
 	sensors = list(
 		"bolide_air" = "Air Mix Chamber",
-		"bolide_fuel_1" = "Port Fuel Mix Chamber",
-		"bolide_fuel_2" = "Starboard Fuel Mix Chamber",
+		"bolide_fuel_port" = "Port Fuel Mix Chamber",
+		"bolide_fuel_starboard" = "Starboard Fuel Mix Chamber",
 	)
 
 //this should go somewhere else
@@ -49,7 +49,7 @@
 	new /obj/item/paper/fluff/ship/bolide/one(src)
 	new /obj/item/paper/fluff/ship/bolide/two(src)
 	new /obj/item/paper/fluff/ship/bolide/three(src)
-	new /obj/item/paper/fluff/ship/bolide/four(src)
+	new /obj/item/paper/fluff/ship/pgf/relations(src)
 	update_appearance()
 
 /mob/living/simple_animal/pet/fox/bolide
@@ -91,11 +91,11 @@
 			<font>
 			<hr>
 			<div style=/"margin-left:5%;margin-right:5%/"><strong>BRIEFING OF VESSEL COMMAND STAFF:</strong><br>
-			<b>1.</b> The Office of Naval Deployment has seen fit to deploy you in command of an Elated Bolide class Frigate Assault Lander (Bolide-class). Congratulations on your assignment. You are expected to coordinate with the Marine Lieutenant assigned to the vessel for the duration of this deployment.<br><br>
+			<b>1.</b> The Office of Naval Deployment has seen fit to deploy you in command of an Elated Bolide class Frigate Assault Lander (Bolide-class). Congratulations on your assignment. You are expected to coordinate with the Marine Squad Leader assigned to the vessel for the duration of this deployment.<br><br>
 			<b>2.</b> A Bolide-class Lander's mission profile is traditionally; landing in occupied regions, planetary assault in contested systems, construction of Navy Infrastructure, assistance of CLIP colonists, and aiding in conducting Federation Readiness Drills.<br><br>
 			<b>3.</b> The assignment issued to your vessel is as follows: Identify locations of interest, construct infrastructure, avoid non-decisive confrontations, conduct readiness drills if possible. Deviation from these goals is accepted and expected. Failure to meet any of them will result in an investigatory effort on your command.<br><br>
 			<b>4.</b> The Office Of Naval Deployment directs that it is supplied with the following: Reports on construction projects, reports on conflict in area, reports on crew readiness. Failure to supply pertinent reports in a timely fashion will lead to termination of your command.<br><br>
-			<b>5.</b> The Office Of Naval Deployment directs that you coordinate with the Marine Lieutenant to ensure a chain of command is followed aboard at all times. The Office recommends assigning 'buddies' to risk-prone marines, assigning 'Team Leaders' to watch over any group of more than 3, and ensuring radio contact at all times.<br><br>
+			<b>5.</b> The Office Of Naval Deployment directs that you coordinate with the Marine Squad Leader to ensure a chain of command is followed aboard at all times. The Office recommends assigning 'buddies' to risk-prone marines, assigning 'Team Leaders' for any group of 3 or more, and ensuring radio contact at all times.<br><br>
 			<b>6.</b> The Office recommends that all other documents in this folder are read, and distributed to the crew as necessary.
 			"}
 
@@ -125,43 +125,13 @@
 			<div style=/"margin-left:5%;margin-right:5%/"><strong>SAFE STORAGE OF EXPLOSIVE MATERIALS:</strong><br>
 			<b>1.</b> The Office of Requisition has seen fit to deploy your command with a complement of explosive compounds. These compounds include - Composition C-4, Composition X-4.<br><br>
 			<b>2.</b> Composition C-4 is an dense explosive package composed of; RDX, Plastic binders, plasticizer. Composition C-4 is a stable, malleable explosive meant for demolition usage. It is resistant to detonation from gunshots and jostling. The C-4 charges you have been issued include a detonator in their assembly, and should not be tinkered with by untrained hands.<br><br>
-			<b>3.</b> Ensure that any usage of Composition C-4 is monitored and controlled. Do not issue Composition c-4 to your vessel without a cause for such.<br><br>
+			<b>3.</b> Ensure that any usage of Composition C-4 is monitored and controlled. Do not issue Composition C-4 to your vessel without a cause for such.<br><br>
 			<b>4.</b> Composition X-4 is a high powered explosive package composed of an RDX filling mixed with a teslium based detonator, allowing for a far more focused explosion. Unless the casing has degraded, it is safe to handle in the same manner as Composition C-4.<br><br>
 			<b>5.</b> Take care in assigning usage of Composition X-4 due to it's increased potency. While focused, an injury resulting from being caught in a blast would likely prove fatal.<br><br>
-			<b>6.</b> The Office recommends assigning a trained expert to monitor field usage of explosives.
+			<b>6.</b> The Office recommends the field usage of explosives is monitored or performed only by those with appropriate training.
 			"}
 
 /obj/item/paper/fluff/ship/bolide/three
-	name = "Crew Relationships"
-	default_raw_text = {"<html>
-			<head>
-			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-			</head>
-			<font face="serif" size="2">
-			<head>
-			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-			</head>
-			<body>
-			<hr>
-			<table align=/"center/" width="100%">
-			<tr>
-			<td>Department of<br>Navy Issuances</td>
-			<td style="padding-top:%">
-			<b>Crew Relationships<br> Elated Bolide Class Assault Lander</b>
-			</td>
-			<td>02 - 07 - 505</td>
-			</tr>
-			</table>
-			<font>
-			<hr>
-			<div style=/"margin-left:5%;margin-right:5%/"><strong>PREVENTION OF INNAPROPRIATE RELATIONSHIPS:</strong><br>
-			The Office of Personnel recommends that the captain of any PGFN vessel keep an active eye out for inappropriate relationships in the ranks.<br><br>
-			Inappropriate relationships are a relationship that fulfills one of the following criteria; Compromises the integrity of supervisory authority, causes unfairness, involves improper use of rank or position for personal gain, gives the perception that it is exploitive or coercive in nature, can create an adverse effect on good order and discipline or mission accomplishment.<br><br>
-			As an officer, behaviors to avoid including enlisted in are; business matters, gambling, dating, sharing living accomodations.<br><br>
-			<strong>Actual or perceived, these activities are prohibited. If it looks wrong, it's probably wrong.</strong>
-			"}
-
-/obj/item/paper/fluff/ship/bolide/four
 	name = "Chain Of Command"
 	default_raw_text = {"<html>
 			<head>
@@ -188,7 +158,7 @@
 			The Office of Personnel recommends that the Captain of a PGFN vessel in deployment establish a chain of command that encompasses all crew aboard the vessel.<br><br>
 			The ranks of all serving members aboard a vessel creates a natural chain of command for the Captain and any other officers to base any further Chain Of Command alterations upon. It should be stressed that a Captain should avoid issuing field promotions to fulfill an artificial chain of command.<br><br>
 			A Captain should discuss any change in chain of command with any other officers aboard before putting it into action. This allows multiple opinions to be fed into the process, thus creating a stronger product.<br><br>
-			Aboard a Bolide-class Lander, the Office of Personnel recommends that the captain designate one 'team leader' per three marines aboard. These team leaders should report directly to the Marine Lieutenant, They should be reported to by the two marines in their team. It is not suggested to work the naval engineers into this program, as they are not expected to deploy in combat.<br><br>
+			Aboard a Bolide-class Lander, the Office of Personnel recommends that the captain designate one 'team leader' per three marines aboard. These team leaders should report directly to the Marine Squad Leader, They should be reported to by the two marines in their team. It is not suggested to work the naval engineers into this program, as they are not expected to deploy in combat.<br><br>
 			Marines should be made aware that being declared team leader carries no authority unless delegated. In the event of a conflicted chain of command, or contested order, the figure with rank should be obeyed.<br><br>
 			This Office recommends monitoring marines for behavioral patterns before assigning a team leader. The ideal marine team leader is cool-headed, rational, and able to make tough choices.
 			"}
@@ -298,3 +268,35 @@
 			The Stand Down announcement from General Quarters is as follows:<br><br>
 			<b>"Stand Down. Stand Down. All hands return to Standards."</b>
 			"}
+
+/obj/item/paper/fluff/ship/pgf/relations
+	name = "Crew Relationships"
+	default_raw_text = {"<html>
+			<font face="serif" size="2">
+			<hr>
+			<table align=/"center/" width="100%">
+			<tr>
+			<td>Department of<br>Navy Issuances</td>
+			<td style="padding-top:%">
+			<b>Crew Relationships<br> Armed Service Personnel Notice </b>
+			</td>
+			<td>02 - 07 - 505</td>
+			</tr>
+			</table>
+			<hr>
+			<b>PREVENTION OF INAPPROPRIATE RELATIONSHIPS:</b><br>
+			The Office of Personnel recommends that the command staff of any PGFN vessel keep an active eye any out for inappropriate relationships in the ranks.<br><br>
+			Inappropriate relationships are any relationship that fulfills one of the following criteria;<br><br>
+			- Compromises the integrity of supervisory authority<br>
+			- Causes unfairness<br>
+			- Involves improper use of rank or position for personal gain<br>
+			- Gives the perception that it is exploitive or coercive in nature<br>
+			- Can create an adverse effect on good order and discipline or mission accomplishment.<br><br>
+			As an officer, behaviors to avoid including enlisted in are;<br>
+			- Business matters<br>
+			- Gambling<br>
+			- Dating<br>
+			- Sharing living accommodations.<br><br>
+			<b>Actual or perceived, these activities are prohibited. If it looks wrong, it's probably wrong.</b>
+			"}
+
