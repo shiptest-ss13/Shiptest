@@ -1782,7 +1782,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/bin{
 	pixel_x = -7;
-	pixel_y = 11
+	pixel_y = 11;
+	dense_when_open = 0;
+	density = 0
 	},
 /obj/machinery/light/directional/north{
 	pixel_x = 0;
