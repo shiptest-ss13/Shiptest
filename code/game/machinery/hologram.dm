@@ -87,6 +87,8 @@ Possible to do for anyone motivated enough:
 	var/name_override
 	///does this pad get broadcast globally at all?
 	var/secret_pad = FALSE
+	///is this holopad monitored as an 'admin' holopad? if so, calls to it create an alert.
+	var/admin_pad = FALSE
 	/// The last holopad that called this one.
 	var/caller_history
 
@@ -100,6 +102,11 @@ Possible to do for anyone motivated enough:
 	var/obj/item/circuitboard/machine/holopad/board = circuit
 	board.secure = TRUE
 	board.build_path = /obj/machinery/holopad/secure
+
+/obj/machinery/holopad/secure/admin
+	name = "administrative holopad"
+	desc = "It's a floor-mounted device for projecting holographic images. This one is equipped with a full administrative suite."
+	secure = TRUE
 
 /obj/machinery/holopad/secret
 	name = "one-way holopad"

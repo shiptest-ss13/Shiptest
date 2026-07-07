@@ -60,6 +60,8 @@
 		if(!QDELETED(H) && H.is_operational)
 			dialed_holopads += H
 			H.say("Incoming call.")
+			if(H.admin_pad)
+				to_chat(GLOB.admins, span_adminnotice("[icon2html(calling_holopad.icon, GLOB.admins)]<b><font color=green>Incoming Holocall</font>[ADMIN_FULLMONTY(usr)]:</b> <span class='linkify'> is calling from [calling_pad.get_area_name()][ADMIN_FLW(calling_pad)] to [H.get_area_name()][ADMIN_FLW(H)]"))
 			LAZYADD(H.holo_calls, src)
 
 	if(!dialed_holopads.len)
