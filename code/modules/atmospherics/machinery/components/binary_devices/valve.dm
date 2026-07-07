@@ -45,6 +45,7 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 	icon_state = "[valve_type]valve_[on ? "on" : "off"]-[set_overlay_offset(piping_layer)]"
 	if(!valve_overlay_prefix)
 		return
+	valve_handle.icon_state = "[valve_overlay_prefix]-[set_overlay_offset(piping_layer)]"
 	add_overlay(valve_handle)
 
 /obj/machinery/atmospherics/components/binary/valve/proc/toggle()
