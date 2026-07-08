@@ -219,7 +219,6 @@
 	pixel_y = 1
 	},
 /obj/item/food/dofi_tese{
-	pixel_x = 0;
 	pixel_y = -7
 	},
 /obj/item/food/fara_reti{
@@ -289,7 +288,6 @@
 	pixel_y = 7
 	},
 /obj/item/cutting_board{
-	pixel_x = 0;
 	pixel_y = 2
 	},
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
@@ -374,8 +372,7 @@
 "dJ" = (
 /obj/structure/dresser{
 	dir = 8;
-	pixel_x = 4;
-	pixel_y = 0
+	pixel_x = 4
 	},
 /obj/machinery/firealarm/directional/south,
 /obj/machinery/light_switch{
@@ -499,8 +496,7 @@
 	pixel_y = 13
 	},
 /obj/item/food/ration/entree/battered_fish_sticks{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /obj/machinery/light/directional/south,
 /turf/open/floor/carpet/green,
@@ -618,8 +614,7 @@
 	pixel_y = 2
 	},
 /obj/item/towel{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/item/towel{
 	pixel_x = -3;
@@ -807,7 +802,6 @@
 /area/ruin/moon/hideout)
 "iq" = (
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = 5
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
@@ -937,8 +931,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/structure/toilet{
 	dir = 8;
-	pixel_x = 4;
-	pixel_y = 0
+	pixel_x = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -971,7 +964,6 @@
 "jI" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/ammo/a12g_blank{
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /obj/item/stack/rods{
@@ -1028,6 +1020,9 @@
 "km" = (
 /obj/machinery/porta_turret/ruin/ramzi,
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ruin/moon/hideout)
 "kA" = (
@@ -1124,11 +1119,9 @@
 /area/ruin/moon/hideout/exterior)
 "lJ" = (
 /obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/item/storage/cans/sixbeer,
@@ -1610,6 +1603,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/orange{
+	icon_state = "4-9"
+	},
 /turf/open/floor/concrete/reinforced,
 /area/ruin/moon/hideout)
 "pZ" = (
@@ -1865,6 +1861,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/moon/hideout/engineering)
+"sF" = (
+/obj/structure/cable/orange{
+	icon_state = "1-6"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/moon/hideout)
 "sH" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
@@ -1883,7 +1885,6 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = 5
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
@@ -1910,7 +1911,6 @@
 "sS" = (
 /obj/structure/table/reinforced,
 /obj/item/food/pizza/dank{
-	pixel_x = 0;
 	pixel_y = 7
 	},
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
@@ -1926,6 +1926,9 @@
 /area/ruin/moon/hideout/bathroom)
 "sZ" = (
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ruin/moon/hideout)
 "tt" = (
@@ -2017,6 +2020,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/moon/hideout)
+"uo" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/moon/hideout)
 "us" = (
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 10;
@@ -2088,6 +2098,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-8"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2198,8 +2211,7 @@
 /area/ruin/moon/hideout/fortress)
 "wl" = (
 /obj/machinery/washing_machine{
-	pixel_x = 7;
-	pixel_y = 0
+	pixel_x = 7
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -2402,7 +2414,6 @@
 	},
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/gloves/combat{
-	pixel_x = 0;
 	pixel_y = -10
 	},
 /obj/item/clothing/under/syndicate/ramzi/officer,
@@ -2489,7 +2500,6 @@
 "zD" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
@@ -2558,8 +2568,7 @@
 /area/ruin/moon/hideout)
 "Aj" = (
 /obj/structure/sign/poster/contraband/lusty_xenomorph{
-	pixel_x = 30;
-	pixel_y = 0
+	pixel_x = 30
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
 	dir = 5
@@ -2665,7 +2674,6 @@
 "AM" = (
 /obj/structure/filingcabinet/double/grey{
 	pixel_x = 7;
-	pixel_y = 0;
 	dir = 8;
 	density = 0
 	},
@@ -2751,14 +2759,15 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/canteen)
 "BC" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/moon/hideout)
 "BM" = (
@@ -2931,8 +2940,7 @@
 	dir = 8;
 	id = "ramzimoongate2";
 	name = "Interior Door Control";
-	pixel_x = 21;
-	pixel_y = 0
+	pixel_x = 21
 	},
 /obj/machinery/button/shieldwallgen{
 	pixel_x = 20;
@@ -3013,12 +3021,10 @@
 	pixel_x = 2
 	},
 /obj/item/coffee_cartridge/fancy/blue{
-	pixel_x = -6;
-	pixel_y = 0
+	pixel_x = -6
 	},
 /obj/item/coffee_cartridge/fancy/blend{
-	pixel_x = 7;
-	pixel_y = 0
+	pixel_x = 7
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/dorms)
@@ -3083,8 +3089,7 @@
 /obj/structure/closet/crate/trashcart,
 /obj/item/trash/can/food/beans,
 /obj/item/trash/can/food/peaches{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/dorms)
@@ -3145,7 +3150,6 @@
 /area/ruin/moon/hideout/fortress)
 "FC" = (
 /obj/machinery/shower{
-	pixel_x = 0;
 	pixel_y = 17
 	},
 /obj/structure/window/reinforced/tinted{
@@ -3294,7 +3298,6 @@
 /area/ruin/moon/hideout/exterior)
 "HK" = (
 /obj/structure/filingcabinet/double/grey{
-	pixel_x = 0;
 	pixel_y = 18;
 	density = 0
 	},
@@ -3396,11 +3399,9 @@
 /area/ruin/moon/hideout/dorms/one)
 "IW" = (
 /obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/item/storage/cans/sixbeer,
@@ -3437,11 +3438,9 @@
 /area/ruin/moon/hideout)
 "Jp" = (
 /obj/structure/sink{
-	pixel_x = 0;
 	pixel_y = 17
 	},
 /obj/structure/mirror{
-	pixel_x = 0;
 	pixel_y = 35
 	},
 /obj/machinery/door/window{
@@ -3513,12 +3512,10 @@
 /area/ruin/moon/hideout)
 "JX" = (
 /obj/structure/sink{
-	pixel_x = 0;
 	pixel_y = 19
 	},
 /obj/structure/mirror{
-	pixel_y = 36;
-	pixel_x = 0
+	pixel_y = 36
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -3546,6 +3543,7 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable/orange,
 /turf/open/floor/plating,
 /area/ruin/moon/hideout)
 "Kf" = (
@@ -3644,6 +3642,19 @@
 "Ln" = (
 /turf/closed/wall/r_wall,
 /area/ruin/moon/hideout/bathroom)
+"Ly" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/moon/hideout)
 "Lz" = (
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/box,
@@ -3862,7 +3873,6 @@
 	pixel_y = 5
 	},
 /obj/item/towel{
-	pixel_x = 0;
 	pixel_y = -3
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -3894,8 +3904,7 @@
 	dir = 8;
 	id = "ramzimoongate";
 	name = "Exterior Door Control";
-	pixel_x = 21;
-	pixel_y = 0
+	pixel_x = 21
 	},
 /obj/machinery/button/shieldwallgen{
 	pixel_x = 20;
@@ -3937,7 +3946,6 @@
 "Pa" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
@@ -3955,8 +3963,7 @@
 /area/ruin/moon/hideout/canteen)
 "Pm" = (
 /obj/item/ammo_casing/spent/slug/buck{
-	pixel_x = 11;
-	pixel_y = 0
+	pixel_x = 11
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 10
@@ -4227,7 +4234,6 @@
 /obj/structure/closet/crate/freezer,
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -4628,7 +4634,6 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = 5
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
@@ -4765,7 +4770,6 @@
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = 5
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
@@ -4812,7 +4816,6 @@
 /obj/structure/table/reinforced,
 /obj/item/gun/ballistic/shotgun/blasting_hammer,
 /obj/item/storage/pill_bottle/finobranc{
-	pixel_x = 0;
 	pixel_y = 10
 	},
 /obj/item/storage/pill_bottle/finobranc{
@@ -6377,8 +6380,8 @@ ep
 ep
 ep
 Mc
-sZ
-Js
+uo
+sF
 jP
 VX
 bE
@@ -6521,7 +6524,7 @@ rk
 rk
 CW
 rm
-pY
+Ly
 Mc
 ep
 ep
