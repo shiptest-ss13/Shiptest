@@ -1040,9 +1040,6 @@
 /obj/effect/turf_decal/corner/opaque/tan/half{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 1
-	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-1"
@@ -1055,6 +1052,9 @@
 	dir = 4;
 	pixel_x = -20;
 	pixel_y = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/warning{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -1091,6 +1091,15 @@
 "kq" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering/electrical)
+"kr" = (
+/obj/effect/turf_decal/corner/opaque/tan/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "ks" = (
 /obj/structure/platform/ship_two{
 	dir = 8
@@ -3914,11 +3923,10 @@
 /obj/effect/turf_decal/corner/opaque/tan/half{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/trimline/opaque/bar/warning{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Im" = (
@@ -4147,10 +4155,10 @@
 /obj/effect/turf_decal/corner/opaque/tan/half{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/trimline/opaque/bar/warning{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Ko" = (
@@ -4852,6 +4860,7 @@
 /obj/machinery/computer/mech_bay_power_console{
 	dir = 8
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/workshop)
 "Qq" = (
@@ -6865,7 +6874,7 @@ Nk
 sS
 HQ
 qQ
-gW
+kr
 Xi
 Mm
 TG
@@ -6919,7 +6928,7 @@ uE
 Th
 SL
 qQ
-gW
+kr
 OC
 Jj
 TG
@@ -6946,7 +6955,7 @@ uE
 JV
 Za
 qQ
-gW
+kr
 wV
 Qh
 uE
