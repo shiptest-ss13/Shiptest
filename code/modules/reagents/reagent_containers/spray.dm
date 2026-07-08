@@ -161,10 +161,10 @@
 //space cleaner
 /obj/item/reagent_containers/spray/cleaner
 	name = "space cleaner"
-	desc = "BLAM!-brand non-foaming space cleaner!"
+	desc = "Cleanaway branded space cleaner!"
 	icon_state = "sprayer"
 	volume = 100
-	list_reagents = list(/datum/reagent/space_cleaner = 100)
+	list_reagents = list(/datum/reagent/space_cleaner = 10, /datum/reagent/water = 90)
 	amount_per_transfer_from_this = 2
 	stream_amount = 5
 

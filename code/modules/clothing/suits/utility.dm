@@ -32,6 +32,8 @@
 	resistance_flags = FIRE_PROOF
 	equip_self_flags = null
 
+	allow_laundry_buffs = FALSE
+
 /obj/item/clothing/suit/fire/firefighter
 	icon_state = "firesuit"
 	item_state = "firefighter"

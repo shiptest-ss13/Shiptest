@@ -61,6 +61,16 @@
 	var/lighting_alpha
 	var/list/icon/current = list() //the current hud icons
 
+
+	/// If true, allow laundry machines to apply the positive effects bellow. Probably makes no sense on gas masks.
+	var/allow_laundry_buffs = FALSE
+	///Used when this item has been cleaned by detergent
+	var/freshly_laundered = FALSE
+	///Used when this item has been softened by fabric softener
+	var/softened = FALSE
+	///Used when this item has dried by a dryer
+	var/freshly_dryed_and_warm = FALSE
+
 /obj/item/clothing/Initialize()
 	if((clothing_flags & VOICEBOX_TOGGLABLE))
 		actions_types += /datum/action/item_action/toggle_voice_box
@@ -143,6 +153,9 @@
 			ADD_CLOTHING_TRAIT(user, trait)
 		if(!wearer?.resolve())
 			wearer = WEAKREF(user)
+	if(freshly_laundered)
+		freshly_laundered = FALSE
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "fresh_laundry", /datum/mood_event/fresh_laundry)
 
 /**
  * Inserts a trait (or multiple traits) into the clothing traits list

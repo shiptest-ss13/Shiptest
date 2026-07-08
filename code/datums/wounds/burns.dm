@@ -56,6 +56,9 @@
 		return
 
 	if(victim.reagents)
+		//at what cost?
+		if(victim.reagents.has_reagent(/datum/reagent/space_cleaner))
+			sanitization += 1
 		if(victim.reagents.has_reagent(/datum/reagent/medicine/spaceacillin))
 			sanitization += 0.9
 		if(victim.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine))

@@ -117,29 +117,160 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	)
 ))
 
+#define CYCLESTATE_NOT_STARTED 0
+#define CYCLESTATE_FILL 1
+#define CYCLESTATE_WASH 2
+#define CYCLESTATE_SPIN 3
+
 /obj/machinery/washing_machine
 	name = "washing machine"
-	desc = "Gets rid of those pesky bloodstains, or your money back!"
-	icon = 'icons/obj/machines/washing_machine.dmi'
-	icon_state = "wm_1_0"
+	desc = "A machine commonly used to clean clothing. There shouldn't be that many ways to misuse this, but you never know. A standard wash cycle takes about 12 minutes."
+	icon = 'icons/obj/machines/laundry_machines.dmi'
+	base_icon_state = "washingmachine"
+	icon_state = "washingmachine"
 	density = TRUE
 	state_open = TRUE
-	var/busy = FALSE
-	var/bloody_mess = 0
+	///Used for when simplemobs are thrown in. Could be a generic 'dirtyness', truth be told.
+	var/is_dirty = FALSE
+	///The current item being used to dye everything, such as crayons or stamps. Is deleted upon cycle finishing.
+	///Could be refactored into being its own reagent i think, have the little cup you pour things into. Would also mean doesn't need a dye color var for every item ever
 	var/obj/item/color_source
-	var/max_wash_capacity = 5
+
+	///We store color_source's color here after we destroy it
+	var/current_dye_color
+
+	/// The maximum amount of items that can be held here.
+	var/max_wash_capacity = 20
+
+	///The max amounnt of reagents that can be held in the machine.
+	var/max_reagent_vol = 1000
+
+	///Hacky workaround if washing machines are mapped in to not be dense
 	var/should_we_be_dense = TRUE
+
+	///The current cycle state we are in.
+	var/cycle_state = CYCLESTATE_NOT_STARTED
+
+	///how long a cycle state lasts
+	///this means a full cycle takes 12 minutes on the washing machine,
+	var/cycle_time = 4 MINUTES
+
+/obj/machinery/washing_machine/Initialize(mapload, apply_default_parts)
+	. = ..()
+	if(!reagents)
+		create_reagents(max_reagent_vol)
 
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
-	if(!busy)
-		. += span_notice("<b>Right-click</b> it to start a wash cycle.")
+	if(!cycle_state)
+		. += span_notice("<b>Right-click</b> it to start a cycle.")
+
+/obj/machinery/washing_machine/update_icon_state()
+	var/full = contents.len ? 1 : 0
+	var/cycle_icon
+	switch(cycle_state)
+		if(CYCLESTATE_FILL)
+			cycle_icon = "_fill"
+		if(CYCLESTATE_WASH)
+			cycle_icon = "_wash"
+		if(CYCLESTATE_SPIN)
+			cycle_icon = "_spin"
+	if(cycle_state)
+		icon_state = "[base_icon_state]_running[cycle_icon][is_dirty ? "_blood" : ""]"
+		return ..()
+	icon_state = "[base_icon_state][state_open ? "_open" : ""][full ? "_filled" : ""][is_dirty ? "_blood" : ""]"
+	return ..()
+
+/obj/machinery/washing_machine/update_overlays()
+	. = ..()
+	if(panel_open)
+		. += "[base_icon_state]_panel"
+
+/obj/machinery/washing_machine/attackby(obj/item/attacking_item, mob/user, params)
+	if(panel_open && default_unfasten_wrench(user, attacking_item))
+		return
+
+	if(default_deconstruction_screwdriver(user, null, null, attacking_item))
+		update_appearance()
+		return
+
+	else if(user.a_intent != INTENT_HARM)
+		if (!state_open)
+			to_chat(user, span_warning("Open the door first!"))
+			return TRUE
+
+		if(is_dirty)
+			to_chat(user, span_warning("[src] must be cleaned up first!"))
+			return TRUE
+
+		if(contents.len >= max_wash_capacity)
+			to_chat(user, span_warning("The washing machine is full!"))
+			return TRUE
+
+		if(!user.transferItemToLoc(attacking_item, src))
+			to_chat(user, span_warning("\The [attacking_item] is stuck to your hand, you cannot put it in the washing machine!"))
+			return TRUE
+
+		//As far as i can tell, this is used by crayons, and WILL be deleted upon being washed
+		//Could be refactored into being its own reagent i think, have the little cup you pour things into
+		if(attacking_item.dye_color)
+			color_source = attacking_item
+
+		update_appearance()
+	else
+		return ..()
+
+/obj/machinery/washing_machine/attack_hand(mob/living/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	if(cycle_state)
+		to_chat(user, span_warning("The door's hatches are locked! Wait until the cycle finishes!"))
+		return
+	if(user.pulling && isliving(user.pulling))
+		var/mob/living/L = user.pulling
+		if(L.buckled || L.has_buckled_mobs())
+			return
+		if(state_open)
+			if(istype(L, /mob/living/simple_animal/pet))
+				L.forceMove(src)
+				update_appearance()
+		return
+	if(!state_open)
+		open_machine()
+	else
+		state_open = FALSE //close the door
+		update_appearance()
+
+
+/obj/machinery/washing_machine/attack_hand_secondary(mob/user, modifiers)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+
+	if(!user.canUseTopic(src, !issilicon(user)))
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+	if(cycle_state)
+		to_chat(user, span_warning("The door's hatches are locked! Wait until the cycle finishes!"))
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+	if(state_open)
+		to_chat(user, span_warning("Close the door first!"))
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+	if(is_dirty)
+		to_chat(user, span_warning("[src] must be cleaned up first!"))
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+
+	update_appearance()
+	addtimer(CALLBACK(src, PROC_REF(do_cycle)), 20 SECONDS)
+	START_PROCESSING(SSfastprocess, src)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/machinery/washing_machine/process(seconds_per_tick)
-	if(!busy)
+	if(!cycle_state)
 		animate(src, transform=matrix(), time=2)
 		return PROCESS_KILL
-	if(anchored)
+
+	if(anchored && cycle_state > CYCLESTATE_FILL)
 		if(SPT_PROB(2.5, seconds_per_tick))
 			var/matrix/M = new
 			M.Translate(rand(-1, 1), rand(0, 1))
@@ -152,32 +283,133 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		M.Translate(rand(-3, 3), rand(-1, 3))
 		animate(src, transform=M, time=2)
 
+	if(cycle_state > CYCLESTATE_FILL && reagents.reagent_list)
+		for(var/atom/movable/washed_atom as anything in contents)
+			reagents.expose(washed_atom, TOUCH, 0.2)
+
+	//we fill up until 300u water, then stop
+	if(reagents.get_reagent_amount(/datum/reagent/water) <=  300)
+		reagents.add_reagent(/datum/reagent/water, 10)
+
+///This proc is meant for sleepers, which is why it uses should_we_be_dense
+/obj/machinery/washing_machine/open_machine(drop = 1)
+	..()
+	if(should_we_be_dense)
+		density = TRUE //because machinery/open_machine() sets it to 0
+	color_source = null
+
 /obj/machinery/washing_machine/wash(clean_types)
 	. = ..()
-	if(!busy && bloody_mess && (clean_types & CLEAN_TYPE_BLOOD))
-		bloody_mess = FALSE
+	if(!cycle_state && is_dirty && (clean_types & CLEAN_TYPE_BLOOD))
+		is_dirty = TRUE
 		update_appearance()
 		. = TRUE
 
-/obj/machinery/washing_machine/proc/wash_cycle()
-	for(var/X in contents)
-		var/atom/movable/AM = X
-		AM.wash(CLEAN_WASH)
-		AM.machine_wash(src)
+/obj/machinery/washing_machine/proc/do_cycle()
+	switch(cycle_state)
+		if(CYCLESTATE_NOT_STARTED)
+			cycle_state = CYCLESTATE_FILL
+			addtimer(CALLBACK(src, PROC_REF(do_cycle)), 20 SECONDS)
+			audible_message(span_notice("[src] clicks and hums as it fills with water."), span_notice("You hear water running."))
+		if(CYCLESTATE_FILL)
+			cycle_state = CYCLESTATE_WASH
+			addtimer(CALLBACK(src, PROC_REF(do_cycle)), 20 SECONDS)
+			if(color_source)
+				current_dye_color = color_source.dye_color
+				reagents.add_reagent_list(color_source.on_grind())
+				QDEL_NULL(color_source)
+			audible_message(span_notice("[src] starts to hum as it starts washing."), span_notice("You hear a motor."))
+			for(var/atom/movable/washed_atom as anything in contents)
+				washed_atom.machine_wash()
+		if(CYCLESTATE_WASH)
+			cycle_state = CYCLESTATE_SPIN
+			reagents.clear_reagents()
+			audible_message(span_notice("[src] starts to spin real fast."), span_notice("You hear a motor going real fast."))
+			addtimer(CALLBACK(src, PROC_REF(do_cycle)), 20 SECONDS)
+		if(CYCLESTATE_SPIN)
+			cycle_state = CYCLESTATE_NOT_STARTED
+			audible_message(span_notice("[src] buzzes happily as the wash cycle is done!"), span_notice("You hear a happy buzzing."))
 
-	busy = FALSE
-	if(color_source)
-		qdel(color_source)
-		color_source = null
 	update_appearance()
 
+/obj/machinery/washing_machine/relaymove(mob/living/user)
+	container_resist_act(user)
+
+/obj/machinery/washing_machine/container_resist_act(mob/living/user)
+	if(!cycle_state)
+		add_fingerprint(user)
+		open_machine()
+
+/obj/machinery/washing_machine/deconstruct(disassembled = TRUE)
+	new /obj/item/stack/sheet/metal(drop_location(), 5)
+	qdel(src)
+
+/obj/machinery/washing_machine/dryer
+	name = "dryer"
+	desc = "Used to dry clothing after they get out the washer. Convient, however some prefer drying them in the outdoors."
+	base_icon_state = "washingmachine"
+	icon_state = "washingmachine"
+	density = TRUE
+	state_open = TRUE
+	///Used for when simplemobs are thrown in. Could be a generic 'dirtyness', truth be told.
+	var/is_dirty = FALSE
+	///The current item being used to dye everything, such as crayons or stamps. Is deleted upon cycle finishing.
+	///Could be refactored into being its own reagent i think, have the little cup you pour things into. Would also mean doesn't need a dye color var for every item ever
+	var/obj/item/color_source
+
+	///We store color_source's color here after we destroy it
+	var/current_dye_color
+
+	/// The maximum amount of items that can be held here.
+	var/max_wash_capacity = 20
+
+	///The max amounnt of reagents that can be held in the machine.
+	var/max_reagent_vol = 1000
+
+	///Hacky workaround if washing machines are mapped in to not be dense
+	var/should_we_be_dense = TRUE
+
+	///The current cycle state we are in.
+	var/cycle_state = CYCLESTATE_NOT_STARTED
+
+	///how long a cycle state lasts
+	///this means a full cycle takes 12 minutes on the washing machine,
+	var/cycle_time = 4 MINUTES
+
+/obj/machinery/washing_machine/Initialize(mapload, apply_default_parts)
+	. = ..()
+	if(!reagents)
+		create_reagents(max_reagent_vol)
+
+/obj/machinery/washing_machine/examine(mob/user)
+	. = ..()
+	if(!cycle_state)
+		. += span_notice("<b>Right-click</b> it to start a cycle.")
+
+/obj/machinery/washing_machine/update_icon_state()
+	var/full = contents.len ? 1 : 0
+	var/cycle_icon
+	switch(cycle_state)
+		if(CYCLESTATE_FILL)
+			cycle_icon = "_fill"
+		if(CYCLESTATE_WASH)
+			cycle_icon = "_wash"
+		if(CYCLESTATE_SPIN)
+			cycle_icon = "_spin"
+	if(cycle_icon)
+		icon_state = "[base_icon_state]_running[cycle_icon][is_dirty ? "_blood" : ""]"
+		return ..()
+	icon_state = "[base_icon_state][state_open ? "_open" : ""][full ? "_filled" : ""][is_dirty ? "_blood" : ""]"
+	return ..()
+
+
+///Item specific procs. Could be its own file
 /obj/item/proc/dye_item(dye_color, dye_key_override)
 	var/dye_key_selector = dye_key_override ? dye_key_override : dying_key
 	if(undyeable)
 		return FALSE
 	if(dye_key_selector)
 		if(!GLOB.dye_registry[dye_key_selector])
-			log_runtime("Item just tried to be dyed with an invalid registry key: [dye_key_selector]")
 			return FALSE
 		var/obj/item/target_type = GLOB.dye_registry[dye_key_selector][dye_color]
 		if(target_type)
@@ -205,12 +437,12 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	qdel(src)
 
 /mob/living/simple_animal/pet/machine_wash(obj/machinery/washing_machine/WM)
-	WM.bloody_mess = TRUE
+	WM.is_dirty = TRUE
 	gib()
 
 /obj/item/machine_wash(obj/machinery/washing_machine/WM)
-	if(WM.color_source)
-		dye_item(WM.color_source.dye_color)
+	if(WM.current_dye_color)
+		dye_item(WM.current_dye_color)
 
 /obj/item/clothing/under/dye_item(dye_color, dye_key)
 	. = ..()
@@ -225,128 +457,15 @@ GLOBAL_LIST_INIT(dye_registry, list(
 			if(ROLLED_STYLE)
 				toggle_jumpsuit_adjust(ROLLED_STYLE)
 
-/obj/item/clothing/under/machine_wash(obj/machinery/washing_machine/WM)
-	freshly_laundered = TRUE
-	addtimer(VARSET_CALLBACK(src, freshly_laundered, FALSE), 5 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE)
-	..()
-
 /obj/item/clothing/head/mob_holder/machine_wash(obj/machinery/washing_machine/WM)
-	..()
+	. = ..()
 	held_mob.machine_wash(WM)
 
 /obj/item/clothing/shoes/sneakers/machine_wash(obj/machinery/washing_machine/WM)
+	if(can_be_tied)
+		tied = SHOES_UNTIED
 	if(chained)
 		chained = 0
 		slowdown = SHOES_SLOWDOWN
 		new /obj/item/restraints/handcuffs(loc)
-	..()
-
-/obj/machinery/washing_machine/relaymove(mob/living/user)
-	container_resist_act(user)
-
-/obj/machinery/washing_machine/container_resist_act(mob/living/user)
-	if(!busy)
-		add_fingerprint(user)
-		open_machine()
-
-/obj/machinery/washing_machine/update_icon_state()
-	if(busy)
-		icon_state = "wm_running_[bloody_mess]"
-		return ..()
-	if(bloody_mess)
-		icon_state = "wm_[state_open]_blood"
-		return ..()
-
-	var/full = contents.len ? 1 : 0
-	icon_state = "wm_[state_open]_[full]"
 	return ..()
-
-/obj/machinery/washing_machine/update_overlays()
-	. = ..()
-	if(panel_open)
-		. += "wm_panel"
-
-/obj/machinery/washing_machine/attackby(obj/item/W, mob/user, params)
-	if(panel_open && !busy && default_unfasten_wrench(user, W))
-		return
-
-	if(default_deconstruction_screwdriver(user, null, null, W))
-		update_appearance()
-		return
-
-	else if(user.a_intent != INTENT_HARM)
-		if (!state_open)
-			to_chat(user, span_warning("Open the door first!"))
-			return TRUE
-
-		if(bloody_mess)
-			to_chat(user, span_warning("[src] must be cleaned up first!"))
-			return TRUE
-
-		if(contents.len >= max_wash_capacity)
-			to_chat(user, span_warning("The washing machine is full!"))
-			return TRUE
-
-		if(!user.transferItemToLoc(W, src))
-			to_chat(user, span_warning("\The [W] is stuck to your hand, you cannot put it in the washing machine!"))
-			return TRUE
-		if(W.dye_color)
-			color_source = W
-		update_appearance()
-
-	else
-		return ..()
-
-/obj/machinery/washing_machine/attack_hand(mob/living/user, list/modifiers)
-	. = ..()
-	if(.)
-		return
-	if(busy)
-		to_chat(user, span_warning("[src] is busy!"))
-		return
-	if(user.pulling && isliving(user.pulling))
-		var/mob/living/L = user.pulling
-		if(L.buckled || L.has_buckled_mobs())
-			return
-		if(state_open)
-			if(istype(L, /mob/living/simple_animal/pet))
-				L.forceMove(src)
-				update_appearance()
-		return
-	if(!state_open)
-		open_machine()
-	else
-		state_open = FALSE //close the door
-		update_appearance()
-
-/obj/machinery/washing_machine/attack_hand_secondary(mob/user, modifiers)
-	. = ..()
-	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
-		return
-
-	if(!user.canUseTopic(src, !issilicon(user)))
-		return SECONDARY_ATTACK_CONTINUE_CHAIN
-	if(busy)
-		to_chat(user, span_warning("[src] is busy!"))
-		return SECONDARY_ATTACK_CONTINUE_CHAIN
-	if(state_open)
-		to_chat(user, span_warning("Close the door first!"))
-		return SECONDARY_ATTACK_CONTINUE_CHAIN
-	if(bloody_mess)
-		to_chat(user, span_warning("[src] must be cleaned up first!"))
-		return SECONDARY_ATTACK_CONTINUE_CHAIN
-	busy = TRUE
-	update_appearance()
-	addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 20 SECONDS)
-	START_PROCESSING(SSfastprocess, src)
-	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-
-/obj/machinery/washing_machine/deconstruct(disassembled = TRUE)
-	new /obj/item/stack/sheet/metal(drop_location(), 2)
-	qdel(src)
-
-/obj/machinery/washing_machine/open_machine(drop = 1)
-	..()
-	if(should_we_be_dense)
-		density = TRUE //because machinery/open_machine() sets it to 0
-	color_source = null
