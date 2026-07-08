@@ -312,7 +312,7 @@
 			<b>(Baron Actual)</b> "<b>{#3}</b> Roger. <b>{#4}</b> Out."<br>
 			<hr>
 			Remember, clarity and efficiency are always of the utmost priority. The presented pattern serves as a proven and effective baseline which may be streamlined or amplified based on your situation and needs.<br><br>
-			<font face="serif" size="3"><u>PHONETICS:</u><br>
+			<font face="serif" size="3"><u>PHONETIC ALPHABET:</u><br>
 			<table><tbody><tr><td>A -</td><td>Alpha</td><td>N -</td><td>November</td></tr><tr><td>B -</td><td>Bravo</td><td>O -</td><td>Oscar</td></tr><tr><td>C -</td><td>Charlie</td><td>P -</td><td>Papa</td></tr><tr><td>D -</td><td>Delta</td><td>Q -</td><td>Quebec</td></tr><tr><td>E -</td><td>Echo</td><td>R -</td><td>Romeo</td></tr><tr><td>F -</td><td>Foxtrot</td><td>S -</td><td>Sierra</td></tr><tr><td>G -</td><td>Golf</td><td>T -</td><td>Tango</td></tr><tr><td>H -</td><td>Hotel</td><td>U -</td><td>Uniform</td></tr><tr><td>I -</td><td>India</td><td>V -</td><td>Victor</td></tr><tr><td>J -</td><td>Juliet</td><td>W -</td><td>Whiskey</td></tr><tr><td>K -</td><td>Kilo</td><td>X -</td><td>X-ray</td></tr><tr><td>L -</td><td>Lima</td><td>Y -</td><td>Yankee</td></tr><tr><td>M -</td><td>Mike</td><td>Z -</td><td>Zulu</td></tr></tbody></table>
 			"}
 
