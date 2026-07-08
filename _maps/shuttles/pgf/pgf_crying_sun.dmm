@@ -5167,6 +5167,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/sign/poster/pgf/sergeant{
+	pixel_y = 0;
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "AG" = (
@@ -10524,10 +10528,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/sign/poster/pgf/sergeant{
-	pixel_y = 0;
-	pixel_x = -32
-	},
+/obj/structure/noticeboard/directional/west,
+/obj/item/paper/fluff/ship/pgf/general_quarters,
+/obj/item/paper/fluff/ship/pgf/lifesaving,
+/obj/item/paper/fluff/ship/pgf/radio_etiquette,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "Xv" = (

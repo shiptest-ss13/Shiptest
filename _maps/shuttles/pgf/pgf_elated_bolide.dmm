@@ -1222,11 +1222,6 @@
 /area/ship/crew/toilet)
 "hP" = (
 /obj/structure/table/reinforced,
-/obj/machinery/computer/security/telescreen/directional/north{
-	network = list("ss13");
-	desc = "A telescreen that connects to the ship's security camera network.";
-	layer = 2.7
-	},
 /obj/item/reagent_containers/glass/maunamug{
 	pixel_x = 8;
 	pixel_y = 3
@@ -1234,6 +1229,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office/cic)
 "id" = (
@@ -2019,6 +2015,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/range)
+"md" = (
+/obj/item/paper/fluff/ship/pgf/lifesaving,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/security)
 "mh" = (
 /obj/structure/railing{
 	dir = 8
@@ -2075,10 +2075,10 @@
 	icon_state = "computer-left"
 	},
 /obj/machinery/light/small/directional/south,
-/obj/machinery/computer/helm/viewscreen/directional/west,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/machinery/computer/security/telescreen/directional/west,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office/cic)
 "mA" = (
@@ -2923,6 +2923,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
+"qx" = (
+/obj/item/paper/fluff/ship/pgf/lifesaving,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/toilet)
 "qH" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -3063,6 +3067,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
+"rE" = (
+/obj/item/paper/fluff/ship/pgf/lifesaving,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/medical)
 "rJ" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -4968,6 +4976,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/black,
+/obj/structure/chair/office{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/cic)
 "BQ" = (
@@ -5338,6 +5349,8 @@
 /obj/item/clothing/head/helmet/gezena{
 	pixel_y = 14
 	},
+/obj/item/paper/fluff/ship/pgf/general_quarters,
+/obj/item/paper/fluff/ship/pgf/lifesaving,
 /obj/item/paper/fluff/ship/pgf/radio_etiquette,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -5562,6 +5575,13 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
+"EQ" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/obj/item/paper/fluff/ship/pgf/lifesaving,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/security)
 "ER" = (
 /obj/machinery/shower{
 	dir = 4
@@ -5800,6 +5820,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge/cool)
 "Gi" = (
@@ -7016,6 +7037,9 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 4
 	},
+/obj/structure/chair/office{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/cic)
 "MP" = (
@@ -8213,7 +8237,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/holopad/secure,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -8937,9 +8960,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security)
 "Xc" = (
-/obj/structure/chair/office{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -10270,7 +10290,7 @@ jE
 jE
 Bq
 Bv
-ww
+rE
 aI
 Kk
 QW
@@ -10305,8 +10325,8 @@ ww
 dg
 Ds
 WY
-WY
-cZ
+EQ
+md
 Ho
 yD
 Xd
@@ -10338,8 +10358,8 @@ gU
 Da
 er
 Eo
-Eo
-Eo
+qx
+qx
 Eo
 cZ
 cZ
