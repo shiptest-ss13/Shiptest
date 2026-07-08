@@ -1,9 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ab" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/extinguisher_cabinet/directional/west,
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
 "am" = (
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer4{
 	dir = 5
@@ -215,6 +210,11 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
+"dI" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "dM" = (
 /obj/docking_port/stationary{
 	dheight = 1;
@@ -1523,7 +1523,6 @@
 /obj/item/clothing/head/hardhat/ngr,
 /obj/item/clothing/under/syndicate/ngr/jumpsuit,
 /obj/item/clothing/shoes/workboots,
-/obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/suit/hazardvest/ngr,
 /obj/item/clothing/glasses/welding,
 /obj/item/storage/backpack/industrial,
@@ -1549,6 +1548,9 @@
 	pixel_x = -5;
 	pixel_y = 3
 	},
+/obj/item/clothing/gloves/insulated,
+/obj/item/storage/belt/utility/full,
+/obj/item/storage/toolbox/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "Cn" = (
@@ -3439,7 +3441,7 @@ Jg
 HT
 jJ
 VT
-ab
+dI
 aT
 Hv
 Tf
