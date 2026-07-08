@@ -1,4 +1,9 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "am" = (
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer4{
 	dir = 5
@@ -64,6 +69,7 @@
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/machinery/griddle,
 /obj/machinery/light/small/directional/south,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "bk" = (
@@ -101,6 +107,7 @@
 	pixel_y = -4
 	},
 /obj/item/reagent_containers/syringe,
+/obj/item/healthanalyzer,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "bK" = (
@@ -583,6 +590,16 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/closet/crate/internals,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "lf" = (
@@ -887,6 +904,7 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/communications/room)
 "qZ" = (
@@ -1025,6 +1043,14 @@
 /obj/effect/turf_decal/hardline_small/left{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/north{
+	pixel_x = 6;
+	pixel_y = 32
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = -6;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "tX" = (
@@ -1058,6 +1084,15 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
+/obj/machinery/button/door{
+	pixel_x = 20;
+	pixel_y = 11;
+	name = "bathroom lock";
+	id = "squall_bathroom";
+	dir = 8;
+	normaldoorcontrol = 1;
+	specialfunctions = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/toilet)
 "vE" = (
@@ -1126,6 +1161,14 @@
 	environment_smash = 0;
 	name = "Gideon"
 	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 6;
+	pixel_y = -32
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -6;
+	pixel_y = -23
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "xH" = (
@@ -1192,7 +1235,10 @@
 	},
 /obj/item/radio/intercom/directional/west{
 	pixel_x = -31;
-	pixel_y = 4
+	pixel_y = 4;
+	freqlock = 1;
+	frequency = 1205;
+	name = "New Gorlex Channel"
 	},
 /obj/item/radio/intercom/directional/west{
 	pixel_x = -31;
@@ -1499,6 +1545,10 @@
 	pixel_x = -6;
 	pixel_y = -7
 	},
+/obj/item/clothing/suit/toggle/ngr{
+	pixel_x = -5;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "Cn" = (
@@ -1737,6 +1787,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /obj/machinery/light/small/directional/west,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/communications/room)
 "FY" = (
@@ -2294,6 +2345,7 @@
 	pixel_x = -10;
 	pixel_y = -20
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "OK" = (
@@ -2344,6 +2396,10 @@
 	pixel_x = -5;
 	pixel_y = 7
 	},
+/obj/machinery/firealarm/directional/west{
+	pixel_x = -32;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/toilet)
 "Pi" = (
@@ -2384,15 +2440,27 @@
 	pixel_x = 9;
 	pixel_y = 3
 	},
-/obj/item/storage/guncase/pistol/viper{
-	pixel_x = -2;
-	pixel_y = -5
-	},
 /obj/structure/closet/syndicate/personal{
 	name = "captain's closet";
 	populate = 0
 	},
 /obj/item/clothing/head/ngr,
+/obj/machinery/firealarm/directional/west{
+	pixel_y = 8;
+	pixel_x = -32
+	},
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_x = -26;
+	pixel_y = -4
+	},
+/obj/item/storage/guncase/pistol/a357{
+	pixel_x = -3;
+	pixel_y = -5
+	},
+/obj/item/clothing/suit/toggle/ngr{
+	pixel_x = -4;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Ps" = (
@@ -2490,6 +2558,14 @@
 /area/ship/engineering/communications/room)
 "Rb" = (
 /obj/structure/table/reinforced,
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_x = -24;
+	pixel_y = -5
+	},
+/obj/machinery/firealarm/directional/west{
+	pixel_x = -32;
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "Rr" = (
@@ -2659,7 +2735,8 @@
 	dir = 1
 	},
 /obj/machinery/suit_storage_unit/inherit/locked{
-	name = "Engineer's suit storage unit"
+	name = "Engineer's suit storage unit";
+	req_access_txt = "10"
 	},
 /obj/item/clothing/suit/space/syndicate/engie,
 /obj/item/clothing/head/helmet/space/syndicate/engie,
@@ -2709,6 +2786,14 @@
 	pixel_x = -10;
 	pixel_y = -19
 	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 11;
+	pixel_y = -32
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -2;
+	pixel_y = -23
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "TH" = (
@@ -2725,6 +2810,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "TS" = (
@@ -2791,6 +2877,14 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = 6;
+	pixel_y = -23
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -6;
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
@@ -3345,7 +3439,7 @@ Jg
 HT
 jJ
 VT
-VT
+ab
 aT
 Hv
 Tf

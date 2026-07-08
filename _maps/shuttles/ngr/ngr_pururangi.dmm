@@ -1620,7 +1620,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "lj" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -1630,29 +1629,6 @@
 	pixel_x = -20;
 	pixel_y = 13
 	},
-/obj/structure/closet/crate/engineering{
-	name = "relay crate"
-	},
-/obj/effect/mapping_helpers/crate_shelve,
-/obj/item/circuitboard/machine/telecomms/relay,
-/obj/item/circuitboard/machine/telecomms/relay,
-/obj/item/stock_parts/subspace/filter,
-/obj/item/stock_parts/subspace/filter,
-/obj/item/stock_parts/subspace/filter,
-/obj/item/stock_parts/subspace/filter,
-/obj/item/stock_parts/manipulator,
-/obj/item/stock_parts/manipulator,
-/obj/item/stack/cable_coil/white,
-/obj/item/stock_parts/subspace/transmitter,
-/obj/item/stock_parts/subspace/transmitter,
-/obj/item/stock_parts/subspace/transmitter,
-/obj/item/stock_parts/subspace/transmitter,
-/obj/item/stock_parts/subspace/transmitter,
-/obj/item/stock_parts/subspace/transmitter,
-/obj/item/stock_parts/subspace/transmitter,
-/obj/item/stock_parts/subspace/transmitter,
-/obj/item/stock_parts/manipulator,
-/obj/item/stock_parts/manipulator,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "lm" = (
@@ -2151,6 +2127,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "puruairtank"
 	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ou" = (
