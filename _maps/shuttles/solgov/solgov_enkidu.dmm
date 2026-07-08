@@ -256,7 +256,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = 9;
+	pixel_x = 11;
 	pixel_y = -20
 	},
 /obj/structure/cable{
@@ -1129,10 +1129,7 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
-/obj/machinery/power/apc/auto_name/directional/west{
-	pixel_x = -25;
-	pixel_y = -2
-	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
@@ -1929,9 +1926,6 @@
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 10
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -2175,7 +2169,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = 9;
+	pixel_x = 11;
 	pixel_y = -20
 	},
 /turf/open/floor/wood/ebony,
@@ -3365,8 +3359,8 @@
 "Fc" = (
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = -11;
-	pixel_y = -19
+	pixel_x = -12;
+	pixel_y = -16
 	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30"
@@ -3375,8 +3369,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/south{
-	pixel_x = 1;
-	pixel_y = -28
+	pixel_x = 0;
+	pixel_y = -25
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage/eva)
@@ -4046,9 +4040,6 @@
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 10
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -4433,11 +4424,11 @@
 	pixel_y = 0
 	},
 /obj/machinery/light_switch{
-	pixel_x = 9;
-	pixel_y = 20
+	pixel_x = 11;
+	pixel_y = 23
 	},
 /obj/machinery/power/apc/auto_name/directional/north{
-	pixel_x = -3;
+	pixel_x = 0;
 	pixel_y = 25
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -5744,11 +5735,11 @@
 "ZR" = (
 /obj/structure/chair/bench/blue/directional/west,
 /obj/machinery/light_switch{
-	pixel_x = 8;
+	pixel_x = 11;
 	pixel_y = 23
 	},
 /obj/machinery/power/apc/auto_name/directional/north{
-	pixel_x = -3;
+	pixel_x = 0;
 	pixel_y = 25
 	},
 /obj/structure/cable{
