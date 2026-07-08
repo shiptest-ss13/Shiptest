@@ -886,14 +886,14 @@
 
 /datum/reagent/space_cleaner/expose_obj(obj/O, reac_volume)
 	///Whats the % of the holder that is this chemical?
-	var/percent_this_chem = volume/holder.total_volume
+	var/percent_this_chem = volume/holder.total_volume * 100
 	///Whats the % of the holder is water?
-	var/percent_water = holder.get_reagent_amount(/datum/reagent/water)/holder.total_volume
+	var/percent_water = holder.get_reagent_amount(/datum/reagent/water)/holder.total_volume * 100
 	///In case its a clothing item, we can bleach it.
 	var/obj/item/obj_item = O
 
-	//as long as over 70% of this chemical is water and we are at least 10% of this chemical, as well as 1u, we can clean
-	if(reac_volume >= 1 && percent_this_chem >= 10 && percent_water >= 70)
+	//as long as over 70% of this chemical is water and we are at least 10% of this chemical, we can clean
+	if(percent_this_chem >= 10 && percent_water >= 70)
 		O?.wash(clean_types)
 
 	//if we are at least 3u of bleach and  more than 30% of the container, we actually bleach the object in particular
@@ -916,9 +916,9 @@
 	if (!istype(T))
 		return
 	///Whats the % of the holder that is this chemical?
-	var/percent_this_chem = volume/holder.total_volume
+	var/percent_this_chem = volume/holder.total_volume * 100
 	///Whats the % of the holder is water?
-	var/percent_water = holder.get_reagent_amount(/datum/reagent/water)/holder.total_volume
+	var/percent_water = holder.get_reagent_amount(/datum/reagent/water)/holder.total_volume * 100
 	///Do we wash things with the extreme clean types?
 	var/extreme_clean = FALSE
 
@@ -949,7 +949,7 @@
 	var/mechanical = FALSE
 
 	///Whats the % of the holder that is this chemical?
-	var/percent_this_chem = volume/holder.total_volume
+	var/percent_this_chem = volume/holder.total_volume * 100
 
 	var/mob/living/carbon/victim = M
 	var/mob/living/carbon/human/human_victim = victim
@@ -964,7 +964,7 @@
 		if(HAS_TRAIT(victim, TRAIT_ANALGESIA)) //if we can't feel pain, dont give the pain messages
 			feels_pain = FALSE
 
-		burndamage = (max(sqrt(reac_volume), 0) * percent_this_chem)
+		burndamage = (max(sqrt(reac_volume), 0) * (percent_this_chem/100))
 
 		if(burndamage >= 1 && !human_victim.check_for_goggles() && !mechanical)
 			victim.set_blurriness(rand(5,15))
@@ -976,7 +976,7 @@
 					victim.emote("cry")
 
 		if(burndamage >= 2 && percent_this_chem >= 30)
-			victim.apply_damage(burndamage, BURN, spread_damage = TRUE, bare_wound_bonus = 5)
+			victim.apply_damage(burndamage, BURN, spread_damage = TRUE, wound_bonus = 5 bare_wound_bonus = 10)
 			if(feels_pain)
 				to_chat(victim, span_userdanger("You're [mechanical ? "corroding" : "melting"]!"))
 			playsound(victim, 'sound/items/welder.ogg', 30, TRUE)
@@ -985,7 +985,7 @@
 		if(reac_volume >= 2 && percent_this_chem >= 30)
 			human_victim.hair_color = COLOR_WHITE
 
-			human_victim.visible_message("<span class='notice'>[src.name]'s hair loses all color.</span>")
+			human_victim.visible_message("<span class='notice'>[human_victim.name]'s hair loses all color.</span>")
 			human_victim.update_hair()
 
 
@@ -2770,9 +2770,9 @@
 
 /datum/reagent/detergent/expose_obj(obj/O, reac_volume)
 	///Whats the % of the holder that is this chemical?
-	var/percent_this_chem = volume/holder.total_volume
+	var/percent_this_chem = volume/holder.total_volume * 100
 	///Whats the % of the holder is water?
-	var/percent_water = holder.get_reagent_amount(/datum/reagent/water)/holder.total_volume
+	var/percent_water = holder.get_reagent_amount(/datum/reagent/water)/holder.total_volume * 100
 	///Our item
 	var/obj/item/clothing/obj_item = O
 
@@ -2783,9 +2783,9 @@
 	if(reac_volume >= 20 && percent_this_chem >= 5 && percent_water >= 70)
 		if(obj_item)
 			obj_item.wash(clean_types)
-				if(obj_item.allow_laundry_buffs)
-					freshly_laundered = TRUE
-					addtimer(VARSET_CALLBACK(src, freshly_laundered, FALSE), 25 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE)
+			if(obj_item.allow_laundry_buffs)
+				obj_item.freshly_laundered = TRUE
+				addtimer(VARSET_CALLBACK(obj_item, freshly_laundered, FALSE), 25 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE)
 		O?.wash(clean_types)
 
 /datum/reagent/detergent/expose_mob(mob/living/M, method=TOUCH, reac_volume)
@@ -2819,9 +2819,9 @@
 /datum/reagent/detergent/on_mob_life(mob/living/carbon/affected_carbon)
 	var/toxpwr = sqrt(volume)
 	affected_carbon.adjust_disgust(toxpwr/2)
-	if(toxpwr >= 2)
+	if(toxpwr >= 4)
 		affected_carbon.adjustToxLoss(toxpwr*REM, FALSE)
-		victim.set_blurriness(rand(5,15))
+		affected_carbon.set_blurriness(rand(5,15))
 		affected_carbon.adjustOrganLoss(ORGAN_SLOT_LIVER,toxpwr*REM)
 		affected_carbon.adjustOrganLoss(ORGAN_SLOT_STOMACH,(toxpwr*2)*REM)
 		. = TRUE
@@ -2833,13 +2833,13 @@
 	description = "Standrd issue Fabric Softener. When mixed with water while in a washing machine (or very large container), it prevents clothes from scratching people after drying, which pleasing."
 	color = "#debee6"
 	///Type of cleaning this has
-	var/clean_types = NONE
+	clean_types = NONE
 
 /datum/reagent/detergent/fabirc_softener/expose_obj(obj/O, reac_volume)
 	///Whats the % of the holder that is this chemical?
-	var/percent_this_chem = volume/holder.total_volume
+	var/percent_this_chem = volume/holder.total_volume * 100
 	///Whats the % of the holder is water?
-	var/percent_water = holder.get_reagent_amount(/datum/reagent/water)/holder.total_volume
+	var/percent_water = holder.get_reagent_amount(/datum/reagent/water)/holder.total_volume * 100
 	///Our item
 	var/obj/item/clothing/obj_item = O
 
@@ -2850,5 +2850,5 @@
 	if(reac_volume >= 10 && percent_this_chem >= 5 && percent_water >= 70)
 		if(obj_item)
 			if(obj_item.allow_laundry_buffs)
-				softened = TRUE
-				addtimer(VARSET_CALLBACK(src, softened, FALSE), 25 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE)
+				obj_item.softened = TRUE
+				addtimer(VARSET_CALLBACK(obj_item, softened, FALSE), 25 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE)

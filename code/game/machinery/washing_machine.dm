@@ -129,7 +129,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	base_icon_state = "washingmachine"
 	icon_state = "washingmachine"
 	density = TRUE
-	state_open = TRUE
+	state_open = FALSE
 	///Used for when simplemobs are thrown in. Could be a generic 'dirtyness', truth be told.
 	var/is_dirty = FALSE
 	///The current item being used to dye everything, such as crayons or stamps. Is deleted upon cycle finishing.
@@ -155,6 +155,9 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	///this means a full cycle takes 12 minutes on the washing machine,
 	var/cycle_time = 4 MINUTES
 
+	///Do we allow reagent pouring?
+	var/allow_reagent_pouring = TRUE
+
 /obj/machinery/washing_machine/Initialize(mapload, apply_default_parts)
 	. = ..()
 	if(!reagents)
@@ -175,7 +178,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 			cycle_icon = "_wash"
 		if(CYCLESTATE_SPIN)
 			cycle_icon = "_spin"
-	if(cycle_state)
+	if(cycle_icon)
 		icon_state = "[base_icon_state]_running[cycle_icon][is_dirty ? "_blood" : ""]"
 		return ..()
 	icon_state = "[base_icon_state][state_open ? "_open" : ""][full ? "_filled" : ""][is_dirty ? "_blood" : ""]"
@@ -193,6 +196,17 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	if(default_deconstruction_screwdriver(user, null, null, attacking_item))
 		update_appearance()
 		return
+
+	else if(istype(attacking_item, /obj/item/reagent_containers) && allow_reagent_pouring)
+		if(attacking_item.is_drainable())
+			var/obj/item/reagent_containers/container_poured = attacking_item
+			var/units = container_poured.reagents.trans_to(src, container_poured.amount_per_transfer_from_this, transfered_by = user)
+			if(units)
+				to_chat(user, span_notice("You transfer [units] units of the solution to [src]."))
+				return TRUE
+		else
+			to_chat(user, span_notice("[attacking_item.name] isn't open!"))
+			return TRUE
 
 	else if(user.a_intent != INTENT_HARM)
 		if (!state_open)
@@ -261,7 +275,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		return SECONDARY_ATTACK_CONTINUE_CHAIN
 
 	update_appearance()
-	addtimer(CALLBACK(src, PROC_REF(do_cycle)), 20 SECONDS)
+	INVOKE_ASYNC(src, PROC_REF(do_cycle))
 	START_PROCESSING(SSfastprocess, src)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
@@ -276,12 +290,14 @@ GLOBAL_LIST_INIT(dye_registry, list(
 			M.Translate(rand(-1, 1), rand(0, 1))
 			animate(src, transform=M, time=1)
 			animate(transform=matrix(), time=1)
-	else
+	else if(!anchored)
 		if(SPT_PROB(0.5, seconds_per_tick))
 			step(src, pick(GLOB.cardinals))
 		var/matrix/M = new
 		M.Translate(rand(-3, 3), rand(-1, 3))
 		animate(src, transform=M, time=2)
+	else
+		animate(src, transform=matrix(), time=2)
 
 	if(cycle_state > CYCLESTATE_FILL && reagents.reagent_list)
 		for(var/atom/movable/washed_atom as anything in contents)
@@ -309,23 +325,23 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	switch(cycle_state)
 		if(CYCLESTATE_NOT_STARTED)
 			cycle_state = CYCLESTATE_FILL
-			addtimer(CALLBACK(src, PROC_REF(do_cycle)), 20 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(do_cycle)), cycle_time)
 			audible_message(span_notice("[src] clicks and hums as it fills with water."), span_notice("You hear water running."))
 		if(CYCLESTATE_FILL)
 			cycle_state = CYCLESTATE_WASH
-			addtimer(CALLBACK(src, PROC_REF(do_cycle)), 20 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(do_cycle)), cycle_time)
 			if(color_source)
 				current_dye_color = color_source.dye_color
 				reagents.add_reagent_list(color_source.on_grind())
 				QDEL_NULL(color_source)
 			audible_message(span_notice("[src] starts to hum as it starts washing."), span_notice("You hear a motor."))
 			for(var/atom/movable/washed_atom as anything in contents)
-				washed_atom.machine_wash()
+				washed_atom.machine_wash(src)
 		if(CYCLESTATE_WASH)
 			cycle_state = CYCLESTATE_SPIN
 			reagents.clear_reagents()
 			audible_message(span_notice("[src] starts to spin real fast."), span_notice("You hear a motor going real fast."))
-			addtimer(CALLBACK(src, PROC_REF(do_cycle)), 20 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(do_cycle)), cycle_time)
 		if(CYCLESTATE_SPIN)
 			cycle_state = CYCLESTATE_NOT_STARTED
 			audible_message(span_notice("[src] buzzes happily as the wash cycle is done!"), span_notice("You hear a happy buzzing."))
@@ -347,60 +363,69 @@ GLOBAL_LIST_INIT(dye_registry, list(
 /obj/machinery/washing_machine/dryer
 	name = "dryer"
 	desc = "Used to dry clothing after they get out the washer. Convient, however some prefer drying them in the outdoors."
-	base_icon_state = "washingmachine"
-	icon_state = "washingmachine"
-	density = TRUE
-	state_open = TRUE
-	///Used for when simplemobs are thrown in. Could be a generic 'dirtyness', truth be told.
-	var/is_dirty = FALSE
-	///The current item being used to dye everything, such as crayons or stamps. Is deleted upon cycle finishing.
-	///Could be refactored into being its own reagent i think, have the little cup you pour things into. Would also mean doesn't need a dye color var for every item ever
-	var/obj/item/color_source
+	base_icon_state = "dryingmachine"
+	icon_state = "dryingmachine"
 
-	///We store color_source's color here after we destroy it
-	var/current_dye_color
+	///We don't even have water...
+	allow_reagent_pouring = FALSE
+	///since this only does one cycle, its set to 10 minutes
+	cycle_time = 10 MINUTES
 
-	/// The maximum amount of items that can be held here.
-	var/max_wash_capacity = 20
-
-	///The max amounnt of reagents that can be held in the machine.
-	var/max_reagent_vol = 1000
-
-	///Hacky workaround if washing machines are mapped in to not be dense
-	var/should_we_be_dense = TRUE
-
-	///The current cycle state we are in.
-	var/cycle_state = CYCLESTATE_NOT_STARTED
-
-	///how long a cycle state lasts
-	///this means a full cycle takes 12 minutes on the washing machine,
-	var/cycle_time = 4 MINUTES
-
-/obj/machinery/washing_machine/Initialize(mapload, apply_default_parts)
-	. = ..()
-	if(!reagents)
-		create_reagents(max_reagent_vol)
-
-/obj/machinery/washing_machine/examine(mob/user)
-	. = ..()
-	if(!cycle_state)
-		. += span_notice("<b>Right-click</b> it to start a cycle.")
-
-/obj/machinery/washing_machine/update_icon_state()
+/obj/machinery/washing_machine/dryer/update_icon_state()
 	var/full = contents.len ? 1 : 0
-	var/cycle_icon
-	switch(cycle_state)
-		if(CYCLESTATE_FILL)
-			cycle_icon = "_fill"
-		if(CYCLESTATE_WASH)
-			cycle_icon = "_wash"
-		if(CYCLESTATE_SPIN)
-			cycle_icon = "_spin"
-	if(cycle_icon)
-		icon_state = "[base_icon_state]_running[cycle_icon][is_dirty ? "_blood" : ""]"
+	if(cycle_state)
+		icon_state = "[base_icon_state]_running"
 		return ..()
-	icon_state = "[base_icon_state][state_open ? "_open" : ""][full ? "_filled" : ""][is_dirty ? "_blood" : ""]"
+	if(state_open)
+		icon_state = "[base_icon_state]_open[full ? "_filled" : ""]"
+		return ..()
+	icon_state = "[base_icon_state]"
 	return ..()
+
+/obj/machinery/washing_machine/dryer/update_overlays()
+	. = ..()
+	if(panel_open)
+		. += "[base_icon_state]_panel"
+
+/obj/machinery/washing_machine/dryer/process(seconds_per_tick)
+	if(!cycle_state)
+		animate(src, transform=matrix(), time=2)
+		return PROCESS_KILL
+
+	if(anchored && cycle_state > CYCLESTATE_FILL)
+		if(SPT_PROB(2.5, seconds_per_tick))
+			var/matrix/M = new
+			M.Translate(rand(-1, 1), rand(0, 1))
+			animate(src, transform=M, time=1)
+			animate(transform=matrix(), time=1)
+	else
+		if(SPT_PROB(0.5, seconds_per_tick))
+			step(src, pick(GLOB.cardinals))
+		var/matrix/M = new
+		M.Translate(rand(-3, 3), rand(-1, 3))
+		animate(src, transform=M, time=2)
+
+/obj/machinery/washing_machine/dryer/do_cycle()
+	switch(cycle_state)
+		if(CYCLESTATE_NOT_STARTED)
+			cycle_state = CYCLESTATE_SPIN
+			addtimer(CALLBACK(src, PROC_REF(do_cycle)), cycle_time)
+			audible_message(span_notice("[src] clicks and hums as it starts to spin real fast."), span_notice("You hear a motor going real fast."))
+		if(CYCLESTATE_SPIN)
+			cycle_state = CYCLESTATE_NOT_STARTED
+			audible_message(span_notice("[src] buzzes happily as the dry cycle is done!"), span_notice("You hear a happy buzzing."))
+			for(var/atom/movable/washed_atom as anything in contents)
+				var/obj/item/clothing/obj_item = washed_atom
+				if(!obj_item || !obj_item.allow_laundry_buffs)
+					continue
+				obj_item.freshly_dryed_and_warm = TRUE
+				addtimer(VARSET_CALLBACK(obj_item, freshly_dryed_and_warm, FALSE), 25 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE)
+				//if theres the other buffs, reset their timers since theyre reduced by around 10 minutes just by being in the dryer
+				if(obj_item.freshly_laundered)
+					addtimer(VARSET_CALLBACK(obj_item, freshly_laundered, FALSE), 25 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE)
+				if(obj_item.softened)
+					addtimer(VARSET_CALLBACK(obj_item, softened, FALSE), 25 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE)
+	update_appearance()
 
 
 ///Item specific procs. Could be its own file

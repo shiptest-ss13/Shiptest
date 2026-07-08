@@ -6,7 +6,7 @@
 	icon_state = "chem_jug"
 	item_state = "sheet-plastic"
 	w_class = WEIGHT_CLASS_BULKY
-	reagent_flags = REFILLABLE | DUNKABLE
+	reagent_flags = REFILLABLE | DUNKABLE | DRAINABLE
 	throw_range = 2
 	volume = 150
 	amount_per_transfer_from_this = 25
@@ -198,3 +198,33 @@
 /obj/item/reagent_containers/glass/chem_jug/liquidearthquake
 	name = "chemical jug (Liquid Earthquake)"
 	list_reagents = list(/datum/reagent/plantnutriment/liquidearthquake = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/bleach
+	name = "Cleanaway jug"
+	desc = "A large jug containing large amounts of bleach, useful for sterilizing or cleaning stains. This brand is called 'Cleanaway'. 'DANGER: Ingestion may cause unhappiness, followed by death.' Provided with an anti-tamper seal which ensures that the contents are pure."
+	icon_state = "chem_jug_bleach"
+
+	tamper_cap_icon_state = "chem_jug_bleach_cap"
+	cap_icon_state = "chem_jug_bleach_cap_tamper"
+
+	list_reagents = list(/datum/reagent/space_cleaner = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/detergent
+	name = "Reladore jug"
+	desc = "A large jug containing large amounts of laundury detergent, useful for use in washing machines. The brand is called 'Reladore', based somewhere in South Teceti. The mascot is giving you a thumbs up wtih a speech bubble saying 'Use 30u for best results!'. Provided with an anti-tamper seal which ensures that the contents are pure."
+	icon_state = "chem_jug_detergent"
+
+	tamper_cap_icon_state = "chem_jug_detergent_cap"
+	cap_icon_state = "chem_jug_detergent_cap_tamper"
+
+	list_reagents = list(/datum/reagent/detergent = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/fabric_softener
+	name = "Milah jug"
+	desc = "A large jug containing large amounts of fabric softener, useful for use in washing machines. The brand is called 'Milah', and features a sleeping drakeling at night. It reccomends using 30u per wash load. Provided with an anti-tamper seal which ensures that the contents are pure."
+	icon_state = "chem_jug_fabricsoftener"
+
+	tamper_cap_icon_state = "chem_jug_fabricsoftener_cap"
+	cap_icon_state = "chem_jug_fabricsoftener_cap_tamper"
+
+	list_reagents = list(/datum/reagent/detergent/fabirc_softener = 150)
