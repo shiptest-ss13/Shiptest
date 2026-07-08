@@ -89,7 +89,10 @@
 
 	var/icon_val = round((env_pressure/30), 1)
 
-	if(env_pressure >= ONE_ATMOSPHERE * 30)
+	//failsure in case of NaN
+	if(isnan(env_pressure))
+		icon_state = "[base_icon_state]-0"
+	else if(env_pressure >= ONE_ATMOSPHERE * 30)
 		icon_state = "[base_icon_state]-34"
 	else if(icon_val >= 33)
 		icon_state = "[base_icon_state]-33"
@@ -235,7 +238,10 @@
 
 	var/icon_val = round((env_temp/20), 1)
 
-	if(env_temp >= 723.15)
+	//failsure in case of NaN
+	if(isnan(env_temp))
+		icon_state = "[base_icon_state]-0"
+	else if(env_temp >= 723.15)
 		icon_state = "[base_icon_state]-34"
 	else if(icon_val >= 33)
 		icon_state = "[base_icon_state]-33"
