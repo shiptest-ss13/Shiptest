@@ -170,52 +170,26 @@
 	pixel_y = -5;
 	pixel_x = 3
 	},
-/obj/item/storage/box/syringes{
+/obj/item/storage/box/evidence{
 	pixel_y = 6;
 	pixel_x = -6
 	},
-/obj/item/storage/box/stockparts/basic{
-	pixel_x = 6;
-	pixel_y = 6
+/obj/item/storage/box/bodybags{
+	pixel_x = -6
 	},
-/obj/item/storage/backpack/chemistry{
-	pixel_y = 4;
-	pixel_x = 8
+/obj/item/storage/box/gloves{
+	pixel_y = 6;
+	pixel_x = 7
 	},
-/obj/item/storage/bag/chemistry{
-	pixel_y = -5;
-	pixel_x = 8
+/obj/item/storage/box/masks{
+	pixel_x = 7;
+	pixel_y = 0
 	},
-/obj/item/reagent_containers/glass/filter{
-	pixel_x = -12
-	},
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/reagent_containers/glass/beaker{
-	pixel_x = 12
-	},
-/obj/item/reagent_containers/glass/beaker{
-	pixel_x = 12
-	},
-/obj/item/reagent_containers/glass/bottle/dimorlin{
-	pixel_y = -9;
-	pixel_x = -9
-	},
-/obj/item/reagent_containers/glass/bottle/tramal{
-	pixel_y = -9
-	},
-/obj/item/reagent_containers/glass/bottle/formaldehyde{
-	pixel_x = 9;
-	pixel_y = -9
-	},
-/obj/item/reagent_containers/dropper,
-/obj/item/reagent_scanner{
-	pixel_y = -10
-	},
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/glasses/safety,
+/obj/item/storage/box/beakers,
+/obj/item/clothing/gloves/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
+/obj/item/clothing/gloves/nitrile/green,
+/obj/item/clothing/gloves/nitrile/pink,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "cg" = (
@@ -381,6 +355,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "dB" = (
@@ -392,7 +367,6 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "dN" = (
-/obj/machinery/door/window/eastleft,
 /obj/structure/closet/wall/white/directional/west,
 /obj/item/towel{
 	pixel_x = -4
@@ -581,18 +555,6 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/south,
-/obj/machinery/reagentgrinder{
-	pixel_x = -7;
-	pixel_y = 9
-	},
-/obj/item/storage/box/masks{
-	pixel_y = 6;
-	pixel_x = 7
-	},
-/obj/item/storage/box/gloves{
-	pixel_y = 6;
-	pixel_x = 7
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "fG" = (
@@ -1974,9 +1936,6 @@
 /obj/machinery/shower{
 	pixel_y = 18
 	},
-/obj/structure/window{
-	dir = 4
-	},
 /obj/structure/chair/handrail{
 	dir = 4
 	},
@@ -2509,7 +2468,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engine)
 "wA" = (
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external,
 /obj/machinery/door/poddoor/shutters{
 	id = "m_airlockdown"
 	},
@@ -3180,7 +3139,7 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 9
 	},
-/obj/machinery/smartfridge/bloodbank/preloaded,
+/obj/machinery/smartfridge/bloodbank/preloaded/less,
 /obj/machinery/light_switch{
 	pixel_x = 12;
 	pixel_y = 19
@@ -3207,7 +3166,8 @@
 /area/ship/crew/canteen)
 "Bn" = (
 /obj/machinery/atmospherics/components/unary/tank/oxygen{
-	dir = 8
+	dir = 8;
+	name = "pressure tank (Oxygen)"
 	},
 /obj/effect/turf_decal/box,
 /obj/machinery/light/small/directional/east,
@@ -3223,7 +3183,8 @@
 /area/ship/medical)
 "BA" = (
 /obj/machinery/atmospherics/components/unary/tank/nitrogen{
-	dir = 8
+	dir = 8;
+	name = "pressure tank (Nitrogen)"
 	},
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt,
@@ -3278,9 +3239,9 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/medical{
-	name = "Armoury";
-	id_tag = "m_armoury"
+/obj/machinery/door/airlock/security{
+	id_tag = "m_armoury";
+	name = "Armoury"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -4121,7 +4082,7 @@
 /area/ship/storage/eva)
 "JS" = (
 /obj/effect/decal/fakelattice{
-	icon_state = "lattice-110"
+	icon_state = "lattice-127"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/warning/nosmoking/burnt{
@@ -4302,9 +4263,6 @@
 	name = "Input to Filters"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/sign/warning/nosmoking/burnt{
-	pixel_y = 32
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash,
 /obj/item/cigbutt,
@@ -4312,6 +4270,8 @@
 	pixel_x = -10;
 	pixel_y = 4
 	},
+/obj/structure/noticeboard/directional/north,
+/obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "LE" = (
@@ -5094,7 +5054,8 @@
 "Rv" = (
 /obj/machinery/atmospherics/components/unary/tank{
 	dir = 8;
-	layer = 3.07
+	layer = 3.07;
+	name = "pressure tank (Fuel)"
 	},
 /obj/effect/turf_decal/box,
 /obj/machinery/light/small/directional/east,
@@ -5176,10 +5137,6 @@
 /area/ship/engineering/engine)
 "So" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/command{
-	pixel_y = 6;
-	pixel_x = -7
-	},
 /obj/item/radio/command{
 	pixel_y = 6;
 	pixel_x = 4
@@ -5624,17 +5581,6 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 1
 	},
-/obj/structure/sign/warning/chemdiamond{
-	pixel_y = -15;
-	pixel_x = 15
-	},
-/obj/item/reagent_containers/pill/patch/indomide{
-	pixel_x = -12;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/pill/patch/alvitane{
-	pixel_x = -12
-	},
 /obj/item/reagent_containers/glass/rag{
 	pixel_y = 8;
 	pixel_x = 2
@@ -5704,7 +5650,6 @@
 /turf/open/floor/noslip,
 /area/ship/cargo)
 "XS" = (
-/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "XU" = (
@@ -5728,6 +5673,9 @@
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/nosmoking/burnt{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "Yc" = (
@@ -5909,7 +5857,7 @@
 /area/ship/crew/canteen)
 "Zl" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external,
 /obj/machinery/door/poddoor/shutters{
 	id = "m_airlockdown"
 	},
@@ -6033,17 +5981,9 @@
 /obj/item/storage/backpack/satchel/med,
 /obj/item/storage/backpack/messenger/med,
 /obj/item/storage/backpack/messenger/para,
-/obj/item/storage/box/evidence{
-	pixel_y = 6;
-	pixel_x = -6
-	},
-/obj/item/storage/box/bodybags{
-	pixel_x = -6;
-	pixel_y = -4
-	},
-/obj/item/storage/firstaid/medical{
-	pixel_y = 5;
-	pixel_x = 7
+/obj/item/storage/firstaid/regular{
+	pixel_x = 7;
+	pixel_y = 5
 	},
 /obj/item/storage/firstaid/toxin{
 	pixel_x = 7
@@ -6055,23 +5995,25 @@
 /obj/item/roller{
 	pixel_x = -4
 	},
-/obj/item/sensor_device{
-	pixel_x = -8;
-	pixel_y = 10
-	},
-/obj/item/pinpointer/crew{
-	pixel_x = -8
-	},
 /obj/item/healthanalyzer{
 	pixel_x = -6;
 	pixel_y = -8
 	},
 /obj/item/bonesetter,
-/obj/item/inhaler/salbutamol,
-/obj/item/clothing/gloves/nitrile,
-/obj/item/clothing/gloves/nitrile/blue,
-/obj/item/clothing/gloves/nitrile/green,
-/obj/item/clothing/gloves/nitrile/pink,
+/obj/item/reagent_containers/pill/patch/indomide{
+	pixel_x = -12;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/pill/patch/alvitane{
+	pixel_x = -12
+	},
+/obj/item/storage/pill_bottle/tramal{
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/glass/bottle/dimorlin{
+	pixel_x = 10;
+	pixel_y = -9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "ZJ" = (

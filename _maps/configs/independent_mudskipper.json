@@ -17,7 +17,7 @@
 	],
 	"map_path": "_maps/shuttles/independent/independent_mudskipper.dmm",
 	"limit": 1,
-	"starting_funds": 2500,
+	"starting_funds": 1500,
 	"tranist_x_offset": -20,
 	"tranist_y_offset": -20,
 	"job_slots": {
@@ -28,11 +28,15 @@
 		},
 		"Salvage Technician": {
 			"outfit": "/datum/outfit/job/independent/engineer/gown",
+			"slots": 2
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/independent/engineer/gown",
 			"slots": 1
 		},
 		"Deckhand": {
 			"outfit": "/datum/outfit/job/independent/assistant/gown",
-			"slots": 2
+			"slots": 1
 		}
 	},
 	"enabled": true
