@@ -145,6 +145,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/box/corners,
+/obj/structure/closet/crate/secure/weapon,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "aR" = (
@@ -844,24 +845,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "fc" = (
-/obj/effect/turf_decal/arrows{
-	dir = 1
-	},
-/obj/effect/turf_decal/floordetail/traction,
-/obj/effect/turf_decal/steeldecal/steel_decals9{
-	dir = 1
-	},
-/obj/effect/turf_decal/steeldecal/steel_decals9{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/item/storage/bottles{
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "4-8"
+	},
+/obj/structure/chair/plastic{
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -1132,6 +1123,35 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/table,
+/obj/item/dice/d6/ebony{
+	pixel_x = -7;
+	pixel_y = 15
+	},
+/obj/item/dice/d6{
+	pixel_x = 7;
+	pixel_y = 15
+	},
+/obj/item/dice/d6{
+	pixel_x = 7;
+	pixel_y = 15
+	},
+/obj/item/dice/d6{
+	pixel_x = 7;
+	pixel_y = 15
+	},
+/obj/item/dice/d6{
+	pixel_x = 7;
+	pixel_y = 15
+	},
+/obj/item/dice/d6{
+	pixel_x = 7;
+	pixel_y = 15
+	},
+/obj/item/food/ration/bar/energy_bar{
+	pixel_x = 3;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -3206,6 +3226,10 @@
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_y = 6
 	},
+/obj/item/clothing/gloves/color/white{
+	pixel_x = 0;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "qH" = (
@@ -3837,14 +3861,20 @@
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "tF" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 4
+/obj/structure/table,
+/obj/item/toy/cards/deck{
+	pixel_x = 0;
+	pixel_y = -1
 	},
-/obj/effect/turf_decal/box/corners{
-	dir = 1
+/obj/item/food/ration/snack/channeler_meat_candy{
+	pixel_x = -3;
+	pixel_y = 7
 	},
-/obj/structure/closet/crate/secure/weapon,
-/turf/open/floor/plasteel/patterned,
+/obj/item/reagent_containers/food/drinks/waterbottle/empty{
+	pixel_y = 10;
+	pixel_x = 7
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "tK" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -4130,6 +4160,7 @@
 	},
 /obj/structure/noticeboard/directional/east,
 /obj/item/paper/fluff/ship/sun/nail,
+/obj/item/paper/fluff/ship/pgf/radio_etiquette,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/eva)
 "vv" = (
@@ -4253,9 +4284,6 @@
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals9{
 	dir = 1
-	},
-/obj/structure/chair/plastic{
-	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -4477,10 +4505,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
-"xi" = (
-/obj/structure/chair/plastic,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ship/cargo)
 "xm" = (
 /obj/effect/turf_decal/corner/opaque/navyblue/diagonal,
 /obj/effect/turf_decal/siding/black{
@@ -6815,6 +6839,7 @@
 	},
 /obj/structure/noticeboard/directional/west,
 /obj/item/paper/fluff/ship/pgf/general_quarters,
+/obj/item/paper/fluff/ship/pgf/radio_etiquette,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/port)
 "Ie" = (
@@ -7047,20 +7072,13 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "Jq" = (
-/obj/structure/table,
-/obj/item/food/ration/snack/channeler_meat_candy{
-	pixel_x = 2;
-	pixel_y = 6
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/rack,
+/obj/item/chair/plastic{
+	pixel_x = 0;
+	pixel_y = 11
 	},
-/obj/item/reagent_containers/food/drinks/waterbottle/empty{
-	pixel_y = 3;
-	pixel_x = 8
-	},
-/obj/item/dice/d6/ebony{
-	pixel_x = -11;
-	pixel_y = 0
-	},
-/turf/open/floor/plasteel/patterned/cargo_one,
+/turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "Jt" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -7592,6 +7610,10 @@
 /obj/item/storage/backpack/satchel/explorer{
 	pixel_y = -11;
 	pixel_x = 11
+	},
+/obj/item/clothing/gloves/color/white{
+	pixel_x = 0;
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/commad)
@@ -8648,38 +8670,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/eva)
-"Qa" = (
-/obj/structure/table,
-/obj/item/toy/cards/deck{
-	pixel_x = 15;
-	pixel_y = 12
-	},
-/obj/item/food/ration/bar/energy_bar{
-	pixel_x = -5;
-	pixel_y = 9
-	},
-/obj/item/dice/d6{
-	pixel_x = 7;
-	pixel_y = 0
-	},
-/obj/item/dice/d6{
-	pixel_x = 7;
-	pixel_y = 0
-	},
-/obj/item/dice/d6{
-	pixel_x = 7;
-	pixel_y = 0
-	},
-/obj/item/dice/d6{
-	pixel_x = 7;
-	pixel_y = 0
-	},
-/obj/item/dice/d6{
-	pixel_x = 7;
-	pixel_y = 0
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/cargo)
 "Qb" = (
 /obj/structure/punching_bag{
 	desc = "A punching bag. The Makosso-Warra symbol has been cheekily hand-painted on.";
@@ -8955,6 +8945,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/camera/autoname/directional/south,
+/obj/structure/chair/plastic{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Rl" = (
@@ -9065,6 +9058,10 @@
 /obj/item/radio/headset/pgf/captain{
 	pixel_x = -12;
 	pixel_y = 1
+	},
+/obj/item/clothing/gloves/color/white{
+	pixel_x = 0;
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/commad)
@@ -10132,6 +10129,7 @@
 	dir = 2
 	},
 /obj/item/paper/fluff/ship/pgf/general_quarters,
+/obj/item/paper/fluff/ship/pgf/radio_etiquette,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "VT" = (
@@ -11822,7 +11820,7 @@ iz
 Ny
 wi
 QW
-ur
+Jq
 QW
 lj
 Ny
@@ -11957,7 +11955,7 @@ IC
 Ws
 bc
 zP
-fc
+eU
 wp
 eU
 FC
@@ -11991,8 +11989,8 @@ RS
 Ws
 RJ
 Qi
-tF
-Qa
+zr
+Sb
 aQ
 Rg
 Ny
@@ -12025,9 +12023,9 @@ RS
 aC
 TF
 Qi
-xi
-Jq
 kd
+kd
+tF
 gd
 Ny
 vj
@@ -12060,9 +12058,9 @@ AG
 Ny
 Jt
 Di
-Xx
 kd
-gd
+Xx
+fc
 CM
 xS
 ve

@@ -128,7 +128,7 @@
 			<b>3.</b> Ensure that any usage of Composition C-4 is monitored and controlled. Do not issue Composition C-4 to your vessel without a cause for such.<br><br>
 			<b>4.</b> Composition X-4 is a high powered explosive package composed of an RDX filling mixed with a teslium based detonator, allowing for a far more focused explosion. Unless the casing has degraded, it is safe to handle in the same manner as Composition C-4.<br><br>
 			<b>5.</b> Take care in assigning usage of Composition X-4 due to it's increased potency. While focused, an injury resulting from being caught in a blast would likely prove fatal.<br><br>
-			<b>6.</b> The Office recommends the field usage of explosives is monitored or performed only by those with appropriate training.
+			<b>6.</b> The Office recommends the field usage of explosives is monitored and performed only by those with appropriate training.
 			"}
 
 /obj/item/paper/fluff/ship/bolide/three
@@ -197,20 +197,17 @@
 /obj/item/paper/fluff/ship/pgf/lifesaving
 	name = "Combat Lifesaving"
 	default_raw_text = {"<html>
-			<head>
-			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-			</head>
 			<hr>
 			<font face="serif" size="2"><center><b>PAN-GEZENAN FEDERATION MARINE CORPS</b><br>THE BASIC SCHOOL<br>MARINE CORPS TRAINING COMMAND<br>CAMP AKHROZIN, YAZIR 88543-6809<br><br>
 			<font face="serif" size="6"><div align="right"><b>
-			COMBAT LIFESAVING STANDARDS AND PROCEDURES
-			R554926
+			COMBAT LIFESAVING STANDARDS AND PROCEDURES<br>
+			R554926<br>
 			REFRESHER HANDOUT</b><br><br>
 			<font face="serif" size="3"><div align="left"><u>PREFACE:</u>
-			<font face="serif" size="2"> Casualty assessment in a tactical environment and the care to follow are applied under very different circumstances than pre-hospital care in the civilian or medical treatment facility setting. Civilian and MTF care does not have to take into consideration incoming fire, darkness, or other environmental factors. In a tactical environment, the care rendered at the scene of the  injury will most likely occur while the caregiver and the casualty are under effective hostile fire; the threat has not been reduced or the area has not been secured.<br><br>
+			<font face="serif" size="2"><br> Casualty assessment in a tactical environment and the care to follow are applied under very different circumstances than pre-hospital care in the civilian or medical treatment facility setting. Civilian and MTF care does not have to take into consideration incoming fire, darkness, or other environmental factors. In a tactical environment, the care rendered at the scene of the  injury will most likely occur while the caregiver and the casualty are under effective hostile fire; the threat has not been reduced or the area has not been secured.<br><br>
 			It is for this reason that a medically correct intervention performed at the wrong time in combat may lead to further casualties. In other words, good medicine may be bad tactics. Because of this, <b>fire superiority is the best medicine on the battlefield</b>. Consider it the first and best measure to any casualty response plan.<br><br>
 			<font face="serif" size="3"><u>FOUR BASIC LIFE SAVING STEPS:</u>
-			<font face="serif" size="2"><br><br>
+			<font face="serif" size="2"><br>
 			1. <b>PREVENT MASSIVE HEMORRHAGE</b>:
 			Upon beginning treatment of a casualty, the loss of blood must be stemmed immediately. After the loss of even 20% of the body's blood, the casualty will begin to go into hemorrhagic shock. The onset of this shock will happen quickly, as the body can potentially bleed out from <b>anywhere</b> in 60 to 120 seconds.<br><br>
 			2. <b>FACILITATE SAFE RESPIRATION</b>:
@@ -220,7 +217,7 @@
 			4. <b>TREAT FOR SHOCK</b>:
 			Advanced shock treatment should be undertaken by trained medical personnel, but until such care is available, ensure the casualty does not suffer from hypothermia and watch for signs of cardiac arrest, administering an epinephrine pen as emergency treatment.<br><br>
 			<font face="serif" size="3"><u>MARINE FIRST AID DISTRIBUTION STANDARDS:</u>
-			<font face="serif" size="2"><br><br>For every team of marines deployed, the following standard of first aid equipment should be allotted with at least 1 marine being designated "Combat Lifesaver". The marines, excluding the "Combat Lifesaver", should be issued or otherwise provided the following supplies <b>at minimum</b>.<br><br>
+			<font face="serif" size="2"><br>For every team of marines deployed, the following standard of first aid equipment should be allotted with at least 1 marine being designated "Combat Lifesaver". The marines, excluding the "Combat Lifesaver", should be issued or otherwise provided the following supplies <b>at minimum</b>.<br><br>
 			- 5 Lengths of medical sutures<br>
 			- 5 Portions of regenerative mesh<br>
 			- 5 Lengths of hemostatic gauze<br>
@@ -267,6 +264,56 @@
 			<b>STAND DOWN FROM GENERAL QUARTERS:</b><br> Once active or probable threat has been cleared from the vessel, the order to Stand Down may be announced, at which point all hands may relax from their action stations and return to Standards (standard conditions).<br><br>
 			The Stand Down announcement from General Quarters is as follows:<br><br>
 			<b>"Stand Down. Stand Down. All hands return to Standards."</b>
+			"}
+
+/obj/item/paper/fluff/ship/pgf/radio_etiquette
+	name = "Radio Etiquette"
+	default_raw_text = {"<html>
+			<hr>
+			<font face="serif" size="2"><center><b>PAN-GEZENAN FEDERATION MARINE CORPS</b><br>THE BASIC SCHOOL<br>MARINE CORPS TRAINING COMMAND<br>CAMP AKHROZIN, YAZIR 88543-6809<br><br>
+			<font face="serif" size="6"><div align="right"><b>
+			BASICS OF OPERATIONAL RADIO ETIQUETTE<br>
+			R591483<br>
+			REFRESHER HANDOUT</b><br><br>
+			<font face="serif" size="3"><div align="left"><u>PREFACE:</u>
+			<font face="serif" size="2"><br> The establishment of clear and efficient lines of communication is oftentimes the difference between the success and failure of an operation. While the relaxed etiquette commonly utilized in civilian radio communication maximizes convenience, such loose practices are inappropriate and oftentimes inadequate for personnel expected to engage in strategic organization.<br><br>
+			Similarly, excessive utilization of operational radio etiquette may be detrimental to a unit’s performance by means of overcomplicating or delaying the transmission of orders and information. For this reason, it is the responsibility of all participants to find an appropriate balance of clarity, urgency, and detail as is necessitated by their current situation while minimizing room for miscommunication or doubt.<br><br>
+			<font face="serif" size="3"><u>COMMUNICATION:</u>
+			<font face="serif" size="2"><br>
+			1. <b>CLARITY</b>:
+			Proper radio communication should heavily prioritize the clarity of any sent message. Many aspects go into sending a clear and concise message, but one of the most distinct variables is the vocabulary used. Try to use prowords, or procedure words, when able.<br>
+			<b>Some examples include:</b><br>
+			- Instead of “yes” or “no” use “affirmative” or “negative”.<br>
+			- Instead of “repeat” or “what?” use “I say again” or “say again”.<br>
+			- Instead of “that was wrong” or “nevermind” use “correction” or “disregard”.<br><br>
+			2. <b>TITLES AND CALLSIGNS</b>:
+			Small units are often assigned simple callsigns for ease of communication and organization. These identifiers can vary or may not be used at all. Thusly, it is important to coordinate how your unit will be structured as well as ensure all participating parties are coordinated and aware.<br>
+			<b>Some common titles include:</b><br>
+			- “Command/Overwatch” = Refers to the collective command structure over your unit, most commonly referring to executive command staff.<br>
+			- “Actual” = The individual at the top of the unit’s command hierarchy.<br>
+			- “Lead” = An individual assigned to lead a section of the unit who may not be at the top of the unit’s command hierarchy.<br><br>
+			3. <b>PROFESSIONALISM</b>:
+			During periods of heightened stress, it is easy for even veteran personnel to lose their composure or allow emotion to influence their decisionmaking temporarily. This loss of composure can negatively affect the efficiency of radio communications in any number of ways and must be consciously avoided.<br>
+			<b>Notable examples to avoid:</b><br>
+			- The dilution of messages with profanities or vulgar language.<br>
+			- Namecalling, fingerpointing, or otherwise directing blame.<br>
+			- Expressing panic or resignation.<br><br>
+			<font face="serif" size="3"><u>ANATOMY OF A MESSAGE:</u>
+			<font face="serif" size="2"><br> A properly formatted radio communication should adhere approximately to the following format, especially when initially establishing a transmission.<br><br>
+			<b>"{#1 Intended recipient}, this is {#2 Identity of sender}, {#2.5 optional intent} {#3 intended message}, {#4 disposition}"</b><br><br>
+			For the sake of simplicity in this refresher, a brief radio conversation between a squad leader, Porter Lead, and their commanding officer, Baron Actual, is simulated below.<br>
+			<hr>
+			<b>(Porter Lead)</b> "<b>{#1}</b> Baron Actual, this is <b>{#2}</b> Porter Lead. <b>{#3}</b> Hostile compound is now clear. <b>{#4}</b> Awaiting orders, over."<br><br>
+			<b>(Baron Actual)</b> "<b>{#1}</b> Porter Lead, <b>{#2}</b> Baron Actual. <b>{#2.5}</b> Interrogative. <b>{#3}</b> How many casualties? <b>{#4}</b> Over."<br><br>
+			<b>(Porter Lead)</b> "<b>{#3}</b> Six hostile casualties. <b>{#4}</b> Break."<br><br>
+			<b>(Porter Lead)</b> "<b>{#3}</b> One friendly casualty. <b>{#4}</b> Over."<br><br>
+			<b>(Baron Actual)</b> "<b>{#2.5}</b> Acknowledged, Porter Lead. <b>{#3}</b> Evacuate the friendly casualty and set up security on the compound’s perimeter. <b>{#4}</b> Over."<br><br>
+			<b>(Porter Lead)</b> "<b>{#2.5}</b> Wilco. <b>{#3}</b> Evacuating casualty and establishing a perimeter. <b>{#4}</b> Over."<br><br>
+			<b>(Baron Actual)</b> "<b>{#3}</b> Roger. <b>{#4}</b> Out."<br>
+			<hr>
+			Remember, clarity and efficiency are always of the utmost priority. The presented pattern serves as a proven and effective baseline which may be streamlined or amplified based on your situation and needs.<br><br>
+			<font face="serif" size="3"><u>PHONETICS:</u><br>
+			<table><tbody><tr><td>A -</td><td>Alpha</td><td>N -</td><td>November</td></tr><tr><td>B -</td><td>Bravo</td><td>O -</td><td>Oscar</td></tr><tr><td>C -</td><td>Charlie</td><td>P -</td><td>Papa</td></tr><tr><td>D -</td><td>Delta</td><td>Q -</td><td>Quebec</td></tr><tr><td>E -</td><td>Echo</td><td>R -</td><td>Romeo</td></tr><tr><td>F -</td><td>Foxtrot</td><td>S -</td><td>Sierra</td></tr><tr><td>G -</td><td>Golf</td><td>T -</td><td>Tango</td></tr><tr><td>H -</td><td>Hotel</td><td>U -</td><td>Uniform</td></tr><tr><td>I -</td><td>India</td><td>V -</td><td>Victor</td></tr><tr><td>J -</td><td>Juliet</td><td>W -</td><td>Whiskey</td></tr><tr><td>K -</td><td>Kilo</td><td>X -</td><td>X-ray</td></tr><tr><td>L -</td><td>Lima</td><td>Y -</td><td>Yankee</td></tr><tr><td>M -</td><td>Mike</td><td>Z -</td><td>Zulu</td></tr></tbody></table>
 			"}
 
 /obj/item/paper/fluff/ship/pgf/relations
