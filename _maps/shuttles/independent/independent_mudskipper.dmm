@@ -1111,7 +1111,9 @@
 /obj/structure/sign/poster/contraband/lusty_xenomorph{
 	pixel_y = 32
 	},
-/obj/structure/dresser/wall/directional/west,
+/obj/structure/dresser/wall/directional/west{
+	pixel_y = 8
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "kC" = (
@@ -4054,19 +4056,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"Jb" = (
-/obj/effect/spawner/bunk_bed,
-/obj/effect/turf_decal/siding/wood/end/walnut{
-	dir = 1
-	},
-/obj/machinery/light/small/directional/east,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/dresser/wall/directional/west,
-/obj/structure/sign/poster/radio/orn{
-	pixel_y = 32
-	},
-/turf/open/floor/wood/walnut,
-/area/ship/crew)
 "Jt" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2{
 	dir = 4
@@ -4190,6 +4179,21 @@
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plating,
 /area/ship/crew/cryo)
+"Ky" = (
+/obj/effect/spawner/bunk_bed,
+/obj/effect/turf_decal/siding/wood/end/walnut{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/dresser/wall/directional/west{
+	pixel_y = 8
+	},
+/obj/structure/sign/poster/radio/orn{
+	pixel_y = 32
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/crew)
 "KA" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer2,
@@ -6481,7 +6485,7 @@ DS
 Mi
 ZJ
 OB
-Jb
+Ky
 Sq
 FZ
 IU
