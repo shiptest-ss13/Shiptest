@@ -463,7 +463,7 @@
 		return
 	var/obj/item/broken_bottle/B = new (loc)
 	B.icon_state = icon_state
-	var/icon/I = new('icons/obj/drinks/drinks.dmi', src.icon_state)
+	var/icon/I = new('icons/obj/drinks/carton.dmi', src.icon_state)
 	I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
 	I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
 	B.icon = I
