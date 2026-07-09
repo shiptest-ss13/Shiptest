@@ -203,15 +203,22 @@
 	crate_name = "bulk sulfur crate"
 
 /datum/supply_pack/chemistry/bleach
-	name = "Bleach jug"
-	desc = "Contains a jug with common household bleach, intended for cleaning and disinfecting. However, it seems to be marked up signifcantly for frontier crews. Wonder why that is."
+	name = "Bleach"
+	desc = "Contains a jug with common household bleach, intended for cleaning and disinfecting. It appears to be marked up signifcantly for frontier crews; wonder why that is."
 	cost = 200
 	contains = list(/obj/item/reagent_containers/glass/chem_jug/bleach)
 	crate_name = "bleach crate"
 
-/datum/supply_pack/chemistry/sulfur
-	name = "laundry detergent"
-	desc = "Contains a jug with common household bleach, intended for cleaning and disinfecting. However, it seems to be marked up signifcantly for frontier crews. Wonder why that is."
+/datum/supply_pack/chemistry/laundry_detergent
+	name = "Laundry Detergent"
+	desc = "Contains a jug with laundry detergent. Perfect for cleaning  your crew's clothing in a washing machine."
+	cost = 75
+	contains = list(/obj/item/reagent_containers/glass/chem_jug/detergent)
+	crate_name = "laundry detergent crate"
+
+/datum/supply_pack/chemistry/fabric_softener
+	name = "Fabric Softener"
+	desc = "Contains a jug with fabric softener. Perfect for making uniforms nice and soft to wear."
 	cost = 50
-	contains = list(/obj/item/reagent_containers/glass/chem_jug/bleach)
-	crate_name = "bleach crate"
+	contains = list(/obj/item/reagent_containers/glass/chem_jug/fabric_softener)
+	crate_name = "laundry detergent crate"

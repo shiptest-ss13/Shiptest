@@ -426,7 +426,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 ///This proc is meant for sleepers, which is why it uses should_we_be_dense
 /obj/machinery/washing_machine/open_machine(drop = 1)
-	..()
+	. = ..()
 	if(should_we_be_dense)
 		density = TRUE //because machinery/open_machine() sets it to 0
 	color_source = null
@@ -446,7 +446,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		if(CYCLESTATE_NOT_STARTED)
 			cycle_state = CYCLESTATE_FILL
 			cycle_timer_id = addtimer(CALLBACK(src, PROC_REF(do_cycle)), cycle_time, TIMER_STOPPABLE)
-			START_PROCESSING(SSfastprocess, src)
+			START_PROCESSING(SSprocessing, src)
 			audible_message(span_notice("[src] clicks and hums as it fills with water."), span_notice("You hear water running."))
 			soundloop_fill.start()
 
