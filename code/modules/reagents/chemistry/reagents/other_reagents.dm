@@ -964,9 +964,6 @@
 		if(HAS_TRAIT(victim, TRAIT_ANALGESIA)) //if we can't feel pain, dont give the pain messages
 			feels_pain = FALSE
 
-		//burndamage = (min(log(reac_volume * (percent_this_chem/100), 50), 0))
-		//LOGISTIC_FUNCTION(40,0.1,-3.3 )
-		//burndamage = (max(LOGISTIC_FUNCTION(40, 0.1, -3.3, -5), 50))
 		burndamage = (reac_volume * (percent_this_chem/100)*(1 - touch_protection))
 
 		if(burndamage >= 1 && !human_victim.check_for_goggles() && !mechanical)
