@@ -618,7 +618,7 @@
 /obj/structure/curtain/thin
 	name = "thin curtains"
 	layer = WALL_OBJ_LAYER
-	desc = "Thin used to separate debris and obfuscate vision while allowing easy passage."
+	desc = "Thin curtains used to separate debris and obfuscate vision while allowing easy passage."
 	icon_type = "curtain_thin"
 	icon_state = "curtain_thin-open"
 
