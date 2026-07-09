@@ -115,7 +115,7 @@
 	time = 5 SECONDS
 
 /datum/surgery_step/solder_wiring/tool_check(mob/user, obj/item/tool)
-	if(istype /obj/item && tool.get_temperature() < SOLDER_MELTING_POINT)
+	if(istype(tool, /obj/item) && tool.get_temperature() < SOLDER_MELTING_POINT)
 		return FALSE
 	if(istype(tool, /obj/item/reagent_containers) && tool.reagents?.get_reagent_amount(/datum/reagent/medicine/liquid_solder) < 2)
 		to_chat(user, span_warning("You need more liquid solder to repair the wiring!"))
