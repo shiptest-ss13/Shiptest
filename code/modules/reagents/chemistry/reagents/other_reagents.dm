@@ -2849,10 +2849,10 @@
 	var/toxpwr = sqrt(volume)
 	affected_carbon.adjust_disgust(toxpwr/2)
 	if(toxpwr >= 4)
-		affected_carbon.adjustToxLoss(toxpwr*REM, FALSE)
+		affected_carbon.adjustToxLoss((toxpwr/2)*REM, FALSE)
 		affected_carbon.set_blurriness(rand(5,15))
-		affected_carbon.adjustOrganLoss(ORGAN_SLOT_LIVER,toxpwr*REM)
-		affected_carbon.adjustOrganLoss(ORGAN_SLOT_STOMACH,(toxpwr*2)*REM)
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_LIVER,(toxpwr/2)*REM)
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_STOMACH,toxpwr*REM)
 		. = TRUE
 
 	return ..()
