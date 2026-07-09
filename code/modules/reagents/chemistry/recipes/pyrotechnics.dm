@@ -538,7 +538,7 @@
 	return ..()
 
 /datum/chemical_reaction/bleach_decomposition
-	required_temp = 374
+	required_temp = 380
 	results = list(/datum/reagent/sodium = 1)
 	required_reagents = list(/datum/reagent/bleach = 3)
 	mix_message = "The solution decomposes!"
