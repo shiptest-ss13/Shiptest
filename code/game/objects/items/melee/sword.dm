@@ -112,17 +112,22 @@
 		if(0 to 25)
 			. += span_warning("It's falling apart!")
 
-/obj/item/melee/sword/katana
-	name = "katana"
-	desc = "Woefully underpowered in D20."
-	icon_state = "katana"
-	item_state = "katana"
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	force = 30
+/obj/item/melee/sword/podao
+	name = "podao"
+	desc = "A replica of a historic Solarian blade originating in Asia. Huge and heavy, its effectiveness shines when full body momentum is utilized."
+	icon_state = "podao"
+	item_state = "podao"
+	slot_flags = ITEM_SLOT_BELT
+	force = 25
 	throwforce = 10
+	armour_penetration = 30
 	w_class = WEIGHT_CLASS_HUGE
 	block_chance = 10
 	max_integrity = 200
+
+/obj/item/melee/sword/podao/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 35, icon_wielded = "[base_icon_state]_w")
 
 /obj/item/melee/sword/chainsaw
 	name = "sacred chainsaw sword"
