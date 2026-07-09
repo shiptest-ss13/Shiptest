@@ -508,3 +508,72 @@
 	required_reagents = list(/datum/reagent/stabilizing_agent = 1,/datum/reagent/fluorosurfactant = 1,/datum/reagent/carbon = 1)
 	required_temp = 200
 	is_cold_recipe = TRUE
+
+/datum/chemical_reaction/reagent_explosion/bleach_peroxide
+	//slightly better than water/potassum
+	strengthdiv = 7
+	results = list(/datum/reagent/consumable/sodiumchloride = 1)
+	required_reagents = list(/datum/reagent/space_cleaner = 2, /datum/reagent/hydrogen_peroxide = 2)
+	mix_message = "The solution violently explodes!"
+
+/datum/chemical_reaction/reagent_explosion/bleach_peroxide/on_reaction(datum/reagents/holder, created_volume)
+	holder.remove_reagent(/datum/reagent/space_cleaner, created_volume*3)
+	holder.remove_reagent(/datum/reagent/hydrogen_peroxide, created_volume*3)
+	var/smoke_radius = round(sqrt(created_volume), 1)
+	var/turf/open/our_turf = get_turf(holder.my_atom)
+	var/datum/effect_system/smoke_spread/chem/plume = new
+	plume.attach(our_turf)
+	playsound(our_turf, 'sound/effects/smoke.ogg', 50, TRUE, -3)
+	if(plume)
+		plume.set_up(holder, smoke_radius, our_turf, 0)
+		plume.start()
+	if(holder && holder.my_atom)
+		holder.clear_reagents()
+
+	if(istype(our_turf))
+		var/temp = holder ? holder.chem_temp : T20C
+		our_turf.atmos_spawn_air("[GAS_O2]=[created_volume/3];TEMP=[temp]")
+		our_turf.atmos_spawn_air("[GAS_HYDROGEN]=[created_volume/3];TEMP=[temp]")
+
+	return ..()
+
+/datum/chemical_reaction/bleach_decomposition
+	required_temp = 374
+	results = list(/datum/reagent/sodium = 1)
+	required_reagents = list(/datum/reagent/space_cleaner = 3)
+	mix_message = "The solution decomposes!"
+
+/datum/chemical_reaction/bleach_decomposition/on_reaction(datum/reagents/holder, created_volume)
+	if(holder.has_reagent(/datum/reagent/stabilizing_agent))
+		return
+	var/turf/open/our_turf = get_turf(holder.my_atom)
+	if(istype(our_turf))
+		var/temp = holder ? holder.chem_temp : T20C
+		our_turf.atmos_spawn_air("[GAS_CHLORINE]=[created_volume/3];TEMP=[temp]")
+		our_turf.atmos_spawn_air("[GAS_O2]=[created_volume/3];TEMP=[temp]")
+	return
+
+/datum/chemical_reaction/bleach_ammonia
+	//this is cleared upon mixture anyways, so...
+	results = list(/datum/reagent/space_cleaner = 2)
+	required_reagents = list(/datum/reagent/space_cleaner = 1, /datum/reagent/ammonia = 1)
+	mix_message = "The solution turns into a plume of vapor!"
+
+/datum/chemical_reaction/bleach_ammonia/on_reaction(datum/reagents/holder, created_volume)
+	var/smoke_radius = round(sqrt(created_volume/3), 1)
+	var/turf/open/our_turf = get_turf(holder.my_atom)
+	var/datum/effect_system/smoke_spread/chem/plume = new
+	plume.attach(our_turf)
+	playsound(our_turf, 'sound/effects/smoke.ogg', 50, TRUE, -3)
+	if(plume)
+		plume.set_up(holder, smoke_radius, our_turf, 0)
+		plume.start()
+	if(holder && holder.my_atom)
+		holder.clear_reagents()
+
+	if(istype(our_turf))
+		var/temp = holder ? holder.chem_temp : T20C
+		our_turf.atmos_spawn_air("[GAS_CHLORINE]=[created_volume/2];TEMP=[temp]")
+		our_turf.atmos_spawn_air("[GAS_AMMONIA]=[created_volume/2];TEMP=[temp]")
+	holder.clear_reagents()
+	return

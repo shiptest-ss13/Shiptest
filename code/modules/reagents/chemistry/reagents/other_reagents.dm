@@ -686,7 +686,7 @@
 	name = "Sterilizine"
 	description = "Sterilizes wounds in preparation for surgery."
 	color = "#D0EFEE" // space cleaner but lighter
-	taste_description = "bitterness"
+	istoxic = FALSE
 
 /datum/reagent/space_cleaner/sterilizine/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR, PATCH))
@@ -875,7 +875,7 @@
 	color = "#d0f0a5"
 	taste_description = "extreme bitterness"
 	reagent_weight = 0.6 //so it sprays further
-	var/robot_clean_power = 2
+	var/robot_clean_power = 10
 
 	///Type of cleaning this has
 	var/clean_types = CLEAN_WASH
@@ -896,8 +896,8 @@
 	if(percent_this_chem >= 10 && percent_water >= 70)
 		O?.wash(clean_types)
 
-	//if we are at least 3u of bleach and  more than 30% of the container, we actually bleach the object in particular
-	if(reac_volume >= 3 && percent_this_chem >= 30)
+	//if we are more than 30% of the mixture, we actually bleach the object in particular
+	if(percent_this_chem >= 30)
 		O?.wash(extreme_clean_types)
 		if(obj_item)
 			obj_item.dye_item(DYE_WHITE)
@@ -941,9 +941,9 @@
 
 	//if we are at least 10u and at least 80% of the reagents there, we act as worse acid
 	if(reac_volume >= 10 && percent_this_chem >= 80)
-		T.acid_act(2, round(reac_volume,0.1))
+		T.acid_act(5, round(reac_volume,0.1))
 
-/datum/reagent/space_cleaner/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+/datum/reagent/space_cleaner/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	///How mcuh burn damage to deal, if any
 	var/burndamage = 0
 	var/mechanical = FALSE
@@ -964,22 +964,26 @@
 		if(HAS_TRAIT(victim, TRAIT_ANALGESIA)) //if we can't feel pain, dont give the pain messages
 			feels_pain = FALSE
 
-		//burndamage = (max(log(reac_volume * (percent_this_chem/100), 50), 0))
+		//burndamage = (min(log(reac_volume * (percent_this_chem/100), 50), 0))
 		//LOGISTIC_FUNCTION(40,0.1,-3.3 )
 		//burndamage = (max(LOGISTIC_FUNCTION(40, 0.1, -3.3, -5), 50))
-		burndamage = (max(reac_volume * (percent_this_chem/100), 70))
+		burndamage = (reac_volume * (percent_this_chem/100)*(1 - touch_protection))
 
 		if(burndamage >= 1 && !human_victim.check_for_goggles() && !mechanical)
-			victim.set_blurriness(rand(5,15))
+			victim.set_blurriness(rand(1,5))
 			if(percent_this_chem >= 20)
-				victim.adjustOrganLoss(ORGAN_SLOT_EYES, burndamage*2)
+				victim.adjustOrganLoss(ORGAN_SLOT_EYES, round(burndamage/3, 0.1))
+				victim.set_blurriness(rand(5,15))
 			if(feels_pain)
-				to_chat(victim, span_danger("Your eyes burn!"))
 				if(percent_this_chem >= 20)
+					to_chat(victim, span_danger("Your eyes get a little irritated."))
+				if(percent_this_chem >= 20)
+					to_chat(victim, span_danger("Your eyes burn!"))
 					victim.emote("cry")
 
-		if(burndamage >= 2 && percent_this_chem >= 30)
-			victim.apply_damage(burndamage, BURN, spread_damage = TRUE, wound_bonus = 5, bare_wound_bonus = 10)
+		if(burndamage >= 2 && percent_this_chem >= 30 && !touch_protection)
+			victim.apply_damage((burndamage*0.1), BURN, spread_damage = TRUE)
+			victim.acid_act(5, round(burndamage,0.1))
 			if(feels_pain)
 				to_chat(victim, span_userdanger("You're [mechanical ? "corroding" : "melting"]!"))
 			playsound(victim, 'sound/items/welder.ogg', 30, TRUE)
@@ -1019,6 +1023,16 @@
 	affected_carbon.adjust_disgust(volume)
 
 	return ..()
+
+/datum/reagent/space_cleaner/dip_object(obj/item/dipped_item, mob/user, obj/item/reagent_containers/holding_container)
+	. = ..()
+	if(istype(dipped_item, /obj/item/stock_parts/capacitor))
+		///1/3
+		holding_container.reagents.add_reagent(/datum/reagent/sodium = 1, (holding_container.reagents.remove_reagent(/datum/reagent/space_cleaner, 10*dipped_item.get_part_rating())/3))
+		holding_container.reagents.add_reagent(/datum/reagent/oxygen = 1, (holding_container.reagents.remove_reagent(/datum/reagent/space_cleaner, 10*dipped_item.get_part_rating())/3))
+		holding_container.reagents.add_reagent(/datum/reagent/chlorine = 1, (holding_container.reagents.remove_reagent(/datum/reagent/space_cleaner, 10*dipped_item.get_part_rating())/3))
+		return TRUE
+	return
 
 /datum/reagent/space_cleaner/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
@@ -2777,7 +2791,6 @@
 	color = "#c5b7ce"
 	taste_description = "sourness"
 	reagent_weight = 0.6 //so it sprays further
-	var/robot_clean_power = 2
 
 	///Type of cleaning this has
 	var/clean_types = CLEAN_WASH

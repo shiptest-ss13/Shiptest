@@ -153,9 +153,15 @@
 			ADD_CLOTHING_TRAIT(user, trait)
 		if(!wearer?.resolve())
 			wearer = WEAKREF(user)
-	if(freshly_laundered)
-		freshly_laundered = FALSE
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "fresh_laundry", /datum/mood_event/fresh_laundry)
+		if(freshly_laundered)
+			freshly_laundered = FALSE
+			SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "fresh_laundry", /datum/mood_event/fresh_laundry)
+		if(softened)
+			softened = FALSE
+			SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "softened", /datum/mood_event/soft_laundry)
+		if(freshly_dryed_and_warm)
+			freshly_dryed_and_warm = FALSE
+			SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "freshly_dryed_and_warm", /datum/mood_event/warm_laundry)
 
 /**
  * Inserts a trait (or multiple traits) into the clothing traits list

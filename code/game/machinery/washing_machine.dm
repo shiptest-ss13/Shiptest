@@ -135,6 +135,9 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	icon_state = "washingmachine"
 	density = TRUE
 	state_open = FALSE
+
+	obj_flags = parent_type::obj_flags | ELEVATED_SURFACE
+
 	///Used for when simplemobs are thrown in. Could be a generic 'dirtyness', truth be told.
 	var/is_dirty = FALSE
 	///The current item being used to dye everything, such as crayons or stamps. Is deleted upon cycle finishing.
@@ -195,8 +198,22 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
-	if(!cycle_state)
-		. += span_notice("<b>Right-click</b> it to start a cycle.")
+//	. += "\n"
+	if(!state_open)
+		. += span_notice("The doors are closed, allowing items to be <b>placed on top of it.</b>\n")
+
+	if(!allow_reagent_pouring)
+		. += span_notice("Past the door, there's a little intake to pour into. You can pour <b>any fluid container</b> in it, and it will be mixed during the wash cycle.\n")
+
+	switch(cycle_state)
+		if(CYCLESTATE_FILL)
+			. += span_notice("It is currently <b>filling with water.</b>.")
+		if(CYCLESTATE_WASH)
+			. += span_notice("It is currently <b>washing the contents.</b>.")
+		if(CYCLESTATE_SPIN)
+			. += span_notice("It is currently <b>spinning very fast.</b>.")
+		else
+			. += span_notice("It is currently not running a cycle.")
 
 /obj/machinery/washing_machine/update_icon_state()
 	var/full = contents.len ? 1 : 0
@@ -227,6 +244,18 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		update_appearance()
 		return
 
+	else if(user.a_intent != INTENT_HARM && density && !state_open)
+		//place items on top of the washer if its not open. Think it would be nice?
+		var/list/modifiers = params2list(params)
+		if(user.transferItemToLoc(attacking_item, drop_location(), silent = FALSE))
+			//Center the icon where the user clicked.
+			if(!LAZYACCESS(modifiers, ICON_X) || !LAZYACCESS(modifiers, ICON_Y))
+				return
+			//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
+			attacking_item.pixel_x = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
+			attacking_item.pixel_y = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
+			return TRUE
+
 	else if(istype(attacking_item, /obj/item/reagent_containers) && allow_reagent_pouring)
 		if(attacking_item.is_drainable())
 			var/obj/item/reagent_containers/container_poured = attacking_item
@@ -249,12 +278,13 @@ GLOBAL_LIST_INIT(dye_registry, list(
 			return TRUE
 
 		if(contents.len >= max_wash_capacity)
-			to_chat(user, span_warning("The washing machine is full!"))
+			to_chat(user, span_warning("\the [src] is full!"))
 			return TRUE
 
 		if(!user.transferItemToLoc(attacking_item, src))
-			to_chat(user, span_warning("\The [attacking_item] is stuck to your hand, you cannot put it in the washing machine!"))
+			to_chat(user, span_warning("\The [attacking_item] is stuck to your hand, you cannot put it in \the [src]!"))
 			return TRUE
+
 
 		//As far as i can tell, this is used by crayons, and WILL be deleted upon being washed
 		//Could be refactored into being its own reagent i think, have the little cup you pour things into
@@ -300,8 +330,12 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	else
 		radial_options -= RADIAL_LAUNDRY_OPEN
 
-	if(cycle_state) //these are completely redundant  if you can reload everything with a speedloader
-		radial_options -= RADIAL_LAUNDRY_START
+	//dont show start unless doors are closed
+	if(state_open)
+		if(cycle_state) //these are completely redundant  if you can reload everything with a speedloader
+			radial_options -= RADIAL_LAUNDRY_START
+		else
+			radial_options -= RADIAL_LAUNDRY_STOP
 	else
 		radial_options -= RADIAL_LAUNDRY_STOP
 
@@ -344,10 +378,10 @@ GLOBAL_LIST_INIT(dye_registry, list(
 			if(doors_locked)
 				to_chat(user, span_warning("The door's hatches are locked! Wait until the cycle finishes!"))
 			else if(!state_open)
-				playsound(src, 'sound/machines/laundry/laundry_open.ogg', 80)
+				playsound(src, 'sound/machines/laundry/laundry_open.ogg', 65)
 				open_machine()
 			else
-				playsound(src, 'sound/machines/laundry/laundry_close.ogg', 80)
+				playsound(src, 'sound/machines/laundry/laundry_close.ogg', 65)
 				state_open = FALSE //close the door
 				update_appearance()
 		if(null)
@@ -386,10 +420,11 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 	if(cycle_state > CYCLESTATE_FILL && reagents.reagent_list)
 		for(var/atom/movable/washed_atom as anything in contents)
-			reagents.expose(washed_atom, TOUCH, 0.2)
+			if(istype(washed_atom))
+				reagents.expose(washed_atom, TOUCH, 1)
 
 	//we fill up until 300u water, then stop
-	if(reagents.get_reagent_amount(/datum/reagent/water) <=  300)
+	if(reagents.get_reagent_amount(/datum/reagent/water) < 300)
 		reagents.add_reagent(/datum/reagent/water, 10)
 
 ///This proc is meant for sleepers, which is why it uses should_we_be_dense
@@ -444,7 +479,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 			doors_locked = FALSE
 			audible_message(span_notice("[src] buzzes happily as the wash cycle is done!"), span_notice("You hear a happy buzzing."))
 			soundloop_spin.stop()
-			playsound(src, 'sound/machines/laundry/washing_end_cycle.ogg', 50)
+			playsound(src, 'sound/machines/laundry/washing_end_cycle.ogg', 40)
 
 	update_appearance()
 
@@ -455,6 +490,8 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	cycle_state = CYCLESTATE_NOT_STARTED
 	doors_locked = FALSE
 	cycle_canceled = FALSE
+
+	update_appearance()
 
 	soundloop_fill.stop()
 	soundloop_wash.stop()
@@ -488,7 +525,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 /obj/machinery/washing_machine/dryer/create_soundloops()
 	soundloop_dryer = new(list(src), FALSE)
 
-/obj/machinery/washing_machine/Destroy()
+/obj/machinery/washing_machine/dryer/Destroy()
 	. = ..()
 	QDEL_NULL(soundloop_dryer)
 
@@ -538,6 +575,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		if(CYCLESTATE_SPIN)
 			cycle_state = CYCLESTATE_NOT_STARTED
 			audible_message(span_notice("[src] buzzes happily as the dry cycle is done!"), span_notice("You hear a happy buzzing."))
+			doors_locked = FALSE
 			playsound(src, 'sound/machines/laundry/washing_end_cycle.ogg', 50)
 			soundloop_dryer.stop()
 			for(var/atom/movable/washed_atom as anything in contents)
@@ -560,6 +598,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	cycle_state = CYCLESTATE_NOT_STARTED
 	doors_locked = FALSE
 	cycle_canceled = FALSE
+	update_appearance()
 
 	soundloop_dryer.stop()
 
@@ -567,11 +606,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 
 ///Item specific procs. Could be its own file, to be honest
-
-
-
-
-
 
 /obj/item/proc/dye_item(dye_color, dye_key_override)
 	var/dye_key_selector = dye_key_override ? dye_key_override : dying_key

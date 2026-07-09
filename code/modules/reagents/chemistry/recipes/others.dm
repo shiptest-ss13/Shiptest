@@ -336,10 +336,6 @@
 	results = list(/datum/reagent/diethylamine = 2)
 	required_reagents = list (/datum/reagent/ammonia = 1, /datum/reagent/consumable/ethanol = 1)
 
-/datum/chemical_reaction/space_cleaner
-	results = list(/datum/reagent/space_cleaner = 2)
-	required_reagents = list(/datum/reagent/ammonia = 1, /datum/reagent/water = 1)
-
 /datum/chemical_reaction/bleach
 	results = list(/datum/reagent/space_cleaner = 2)
 	required_reagents = list(/datum/reagent/sodium = 1, /datum/reagent/oxygen = 1, /datum/reagent/chlorine = 1)

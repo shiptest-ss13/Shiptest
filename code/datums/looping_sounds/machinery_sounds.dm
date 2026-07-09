@@ -100,3 +100,6 @@
 
 /datum/looping_sound/dryer
 	mid_sounds = list('sound/machines/laundry/dryer_01.ogg'=3, 'sound/machines/laundry/dryer_02.ogg'=5, 'sound/machines/laundry/dryer_03.ogg'=5)
+	mid_length = 3 SECONDS
+	volume = 50
+
