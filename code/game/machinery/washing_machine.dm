@@ -141,11 +141,8 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	///Used for when simplemobs are thrown in. Could be a generic 'dirtyness', truth be told.
 	var/is_dirty = FALSE
 	///The current item being used to dye everything, such as crayons or stamps. Is deleted upon cycle finishing.
-	///Could be refactored into being its own reagent i think, have the little cup you pour things into. Would also mean doesn't need a dye color var for every item ever
+	///Since we dont use the weird old schoold dye method, it just grinds them and hopes it applies the color to everything inside
 	var/obj/item/color_source
-
-	///We store color_source's color here after we destroy it
-	var/current_dye_color
 
 	/// The maximum amount of items that can be held here.
 	var/max_wash_capacity = 20
@@ -457,7 +454,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 			cycle_state = CYCLESTATE_WASH
 			cycle_timer_id = addtimer(CALLBACK(src, PROC_REF(do_cycle)), cycle_time, TIMER_STOPPABLE)
 			if(color_source)
-				current_dye_color = color_source.dye_color
 				reagents.add_reagent_list(color_source.on_grind())
 				QDEL_NULL(color_source)
 			audible_message(span_notice("[src] starts to hum as it starts washing."), span_notice("You hear a motor."))
@@ -642,10 +638,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 /mob/living/simple_animal/pet/machine_wash(obj/machinery/washing_machine/WM)
 	WM.is_dirty = TRUE
 	gib()
-
-/obj/item/machine_wash(obj/machinery/washing_machine/WM)
-	if(WM.current_dye_color)
-		dye_item(WM.current_dye_color)
 
 /obj/item/clothing/under/dye_item(dye_color, dye_key)
 	. = ..()
