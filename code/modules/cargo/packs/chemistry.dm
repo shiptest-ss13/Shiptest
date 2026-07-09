@@ -202,3 +202,16 @@
 	contains = list(/obj/item/reagent_containers/glass/chem_jug/sulfur)
 	crate_name = "bulk sulfur crate"
 
+/datum/supply_pack/chemistry/bleach
+	name = "Bleach jug"
+	desc = "Contains a jug with common household bleach, intended for cleaning and disinfecting. However, it seems to be marked up signifcantly for frontier crews. Wonder why that is."
+	cost = 200
+	contains = list(/obj/item/reagent_containers/glass/chem_jug/bleach)
+	crate_name = "bleach crate"
+
+/datum/supply_pack/chemistry/sulfur
+	name = "laundry detergent"
+	desc = "Contains a jug with common household bleach, intended for cleaning and disinfecting. However, it seems to be marked up signifcantly for frontier crews. Wonder why that is."
+	cost = 50
+	contains = list(/obj/item/reagent_containers/glass/chem_jug/bleach)
+	crate_name = "bleach crate"

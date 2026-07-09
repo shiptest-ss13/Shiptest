@@ -25,7 +25,7 @@
 
 
 /obj/item/mop/proc/clean(turf/target, mob/living/cleaner)
-	if(reagents.has_reagent(/datum/reagent/water, 1) || reagents.has_reagent(/datum/reagent/water/holywater, 1) || reagents.has_reagent(/datum/reagent/consumable/ethanol/vodka, 1) || reagents.has_reagent(/datum/reagent/space_cleaner, 1))
+	if(reagents.has_reagent(/datum/reagent/water, 1) || reagents.has_reagent(/datum/reagent/water/holywater, 1) || reagents.has_reagent(/datum/reagent/consumable/ethanol/vodka, 1) || reagents.has_reagent(/datum/reagent/bleach, 1))
 		for(var/obj/effect/decal/cleanable/cleanable_decal in target)
 			cleaner?.mind.adjust_experience(/datum/skill/cleaning, max(round(cleanable_decal.beauty / CLEAN_SKILL_BEAUTY_ADJUSTMENT, 1), 0)) //it is intentional that the mop rounds xp but soap does not, USE THE SACRED TOOL
 		target.wash(CLEAN_SCRUB)

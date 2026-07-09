@@ -682,13 +682,13 @@
 	color = "#D3B913"
 	taste_description = "sweetness"
 
-/datum/reagent/space_cleaner/sterilizine
+/datum/reagent/bleach/sterilizine
 	name = "Sterilizine"
 	description = "Sterilizes wounds in preparation for surgery."
 	color = "#D0EFEE" // space cleaner but lighter
 	istoxic = FALSE
 
-/datum/reagent/space_cleaner/sterilizine/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
+/datum/reagent/bleach/sterilizine/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR, PATCH))
 		for(var/s in C.surgeries)
 			var/datum/surgery/S = s
@@ -869,7 +869,7 @@
 	..()
 	return TRUE
 
-/datum/reagent/space_cleaner
+/datum/reagent/bleach
 	name = "Sodium Hypochlorite"
 	description = "An extremely potent cleaning agent, commonly sold as household bleach. It can cause serious organic harm, however this means it can be used as an disinfectant."
 	color = "#d0f0a5"
@@ -884,7 +884,7 @@
 	///Meant for subtypes that are subtyped from this, for some reason.
 	var/istoxic = TRUE
 
-/datum/reagent/space_cleaner/expose_obj(obj/O, reac_volume)
+/datum/reagent/bleach/expose_obj(obj/O, reac_volume)
 	///Whats the % of the holder that is this chemical?
 	var/percent_this_chem = volume/holder.total_volume * 100
 	///Whats the % of the holder is water?
@@ -912,7 +912,7 @@
 	if(reac_volume >= 10 && percent_this_chem >= 80)
 		O.acid_act(2, reac_volume)
 
-/datum/reagent/space_cleaner/expose_turf(turf/T, reac_volume)
+/datum/reagent/bleach/expose_turf(turf/T, reac_volume)
 	if (!istype(T))
 		return
 	///Whats the % of the holder that is this chemical?
@@ -943,7 +943,7 @@
 	if(reac_volume >= 10 && percent_this_chem >= 80)
 		T.acid_act(5, round(reac_volume,0.1))
 
-/datum/reagent/space_cleaner/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+/datum/reagent/bleach/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	///How mcuh burn damage to deal, if any
 	var/burndamage = 0
 	var/mechanical = FALSE
@@ -998,7 +998,7 @@
 			human_victim.update_hair()
 
 
-/datum/reagent/space_cleaner/on_mob_life(mob/living/carbon/affected_carbon)
+/datum/reagent/bleach/on_mob_life(mob/living/carbon/affected_carbon)
 	var/toxpwr = sqrt(volume)
 
 	if(prob (min(current_cycle/4, 25)))
@@ -1024,37 +1024,37 @@
 
 	return ..()
 
-/datum/reagent/space_cleaner/dip_object(obj/item/dipped_item, mob/user, obj/item/reagent_containers/holding_container)
+/datum/reagent/bleach/dip_object(obj/item/dipped_item, mob/user, obj/item/reagent_containers/holding_container)
 	. = ..()
 	if(istype(dipped_item, /obj/item/stock_parts/capacitor))
 		///1/3
-		holding_container.reagents.add_reagent(/datum/reagent/sodium = 1, (holding_container.reagents.remove_reagent(/datum/reagent/space_cleaner, 10*dipped_item.get_part_rating())/3))
-		holding_container.reagents.add_reagent(/datum/reagent/oxygen = 1, (holding_container.reagents.remove_reagent(/datum/reagent/space_cleaner, 10*dipped_item.get_part_rating())/3))
-		holding_container.reagents.add_reagent(/datum/reagent/chlorine = 1, (holding_container.reagents.remove_reagent(/datum/reagent/space_cleaner, 10*dipped_item.get_part_rating())/3))
+		holding_container.reagents.add_reagent(/datum/reagent/sodium = 1, (holding_container.reagents.remove_reagent(/datum/reagent/bleach, 10*dipped_item.get_part_rating())/3))
+		holding_container.reagents.add_reagent(/datum/reagent/oxygen = 1, (holding_container.reagents.remove_reagent(/datum/reagent/bleach, 10*dipped_item.get_part_rating())/3))
+		holding_container.reagents.add_reagent(/datum/reagent/chlorine = 1, (holding_container.reagents.remove_reagent(/datum/reagent/bleach, 10*dipped_item.get_part_rating())/3))
 		return TRUE
 	return
 
-/datum/reagent/space_cleaner/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+/datum/reagent/bleach/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
 	if(chems.has_reagent(type, 1))
 		mytray.adjustHealth(-round(chems.get_reagent_amount(type)*  2))
 		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 3))
 		mytray.adjustWeeds(-rand(2,4))
 
-/datum/reagent/space_cleaner/ez_clean
+/datum/reagent/bleach/ez_clean
 	name = "EZ Clean"
 	description = "A powerful, acidic cleaner sold by Waffle Co. Affects organic matter while leaving other objects unaffected."
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	taste_description = "acid"
 	robot_clean_power = 15
 
-/datum/reagent/space_cleaner/ez_clean/on_mob_life(mob/living/carbon/M)
+/datum/reagent/bleach/ez_clean/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(3.33)
 	M.adjustFireLoss(3.33)
 	M.adjustToxLoss(3.33)
 	..()
 
-/datum/reagent/space_cleaner/ez_clean/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+/datum/reagent/bleach/ez_clean/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	..()
 	if((method == TOUCH || method == VAPOR) && !issilicon(M))
 		M.adjustBruteLoss(1.5)

@@ -513,11 +513,11 @@
 	//slightly better than water/potassum
 	strengthdiv = 7
 	results = list(/datum/reagent/consumable/sodiumchloride = 1)
-	required_reagents = list(/datum/reagent/space_cleaner = 2, /datum/reagent/hydrogen_peroxide = 2)
+	required_reagents = list(/datum/reagent/bleach = 2, /datum/reagent/hydrogen_peroxide = 2)
 	mix_message = "The solution violently explodes!"
 
 /datum/chemical_reaction/reagent_explosion/bleach_peroxide/on_reaction(datum/reagents/holder, created_volume)
-	holder.remove_reagent(/datum/reagent/space_cleaner, created_volume*3)
+	holder.remove_reagent(/datum/reagent/bleach, created_volume*3)
 	holder.remove_reagent(/datum/reagent/hydrogen_peroxide, created_volume*3)
 	var/smoke_radius = round(sqrt(created_volume), 1)
 	var/turf/open/our_turf = get_turf(holder.my_atom)
@@ -540,7 +540,7 @@
 /datum/chemical_reaction/bleach_decomposition
 	required_temp = 374
 	results = list(/datum/reagent/sodium = 1)
-	required_reagents = list(/datum/reagent/space_cleaner = 3)
+	required_reagents = list(/datum/reagent/bleach = 3)
 	mix_message = "The solution decomposes!"
 
 /datum/chemical_reaction/bleach_decomposition/on_reaction(datum/reagents/holder, created_volume)
@@ -555,8 +555,8 @@
 
 /datum/chemical_reaction/bleach_ammonia
 	//this is cleared upon mixture anyways, so...
-	results = list(/datum/reagent/space_cleaner = 2)
-	required_reagents = list(/datum/reagent/space_cleaner = 1, /datum/reagent/ammonia = 1)
+	results = list(/datum/reagent/bleach = 2)
+	required_reagents = list(/datum/reagent/bleach = 1, /datum/reagent/ammonia = 1)
 	mix_message = "The solution turns into a plume of vapor!"
 
 /datum/chemical_reaction/bleach_ammonia/on_reaction(datum/reagents/holder, created_volume)

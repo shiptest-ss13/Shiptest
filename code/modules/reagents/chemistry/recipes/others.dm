@@ -1,6 +1,6 @@
 
 /datum/chemical_reaction/sterilizine
-	results = list(/datum/reagent/space_cleaner/sterilizine = 3)
+	results = list(/datum/reagent/bleach/sterilizine = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/medicine/charcoal = 1, /datum/reagent/chlorine = 1)
 
 /datum/chemical_reaction/lube
@@ -337,11 +337,11 @@
 	required_reagents = list (/datum/reagent/ammonia = 1, /datum/reagent/consumable/ethanol = 1)
 
 /datum/chemical_reaction/bleach
-	results = list(/datum/reagent/space_cleaner = 2)
+	results = list(/datum/reagent/bleach = 2)
 	required_reagents = list(/datum/reagent/sodium = 1, /datum/reagent/oxygen = 1, /datum/reagent/chlorine = 1)
 
 /datum/chemical_reaction/system_cleaner
-	results = list(/datum/reagent/space_cleaner/system_cleaner = 4)
+	results = list(/datum/reagent/bleach/system_cleaner = 4)
 	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/chlorine = 1, /datum/reagent/phenol = 2, /datum/reagent/potassium = 1)
 
 /datum/chemical_reaction/plantbgone

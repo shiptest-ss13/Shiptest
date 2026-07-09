@@ -207,7 +207,7 @@
 	tamper_cap_icon_state = "chem_jug_bleach_cap"
 	cap_icon_state = "chem_jug_bleach_cap_tamper"
 
-	list_reagents = list(/datum/reagent/space_cleaner = 150)
+	list_reagents = list(/datum/reagent/bleach = 150)
 
 /obj/item/reagent_containers/glass/chem_jug/detergent
 	name = "Reladore jug"

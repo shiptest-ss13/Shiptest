@@ -164,7 +164,7 @@
 	desc = "Cleanaway branded space cleaner!"
 	icon_state = "sprayer"
 	volume = 100
-	list_reagents = list(/datum/reagent/space_cleaner = 10, /datum/reagent/water = 90)
+	list_reagents = list(/datum/reagent/bleach = 10, /datum/reagent/water = 90)
 	amount_per_transfer_from_this = 2
 	stream_amount = 5
 
@@ -301,11 +301,11 @@
 	lefthand_file = GUN_LEFTHAND_ICON
 	righthand_file = GUN_RIGHTHAND_ICON
 	reagent_flags = NONE
-	list_reagents = list(/datum/reagent/space_cleaner = 1000)
+	list_reagents = list(/datum/reagent/bleach = 1000)
 	volume = 1000
 	amount_per_transfer_from_this = 5
 	var/generate_amount = 50
-	var/generate_type = /datum/reagent/space_cleaner
+	var/generate_type = /datum/reagent/bleach
 	var/last_generate = 0
 	var/generate_delay = 10	//deciseconds
 
