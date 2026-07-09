@@ -337,7 +337,7 @@
 	required_reagents = list (/datum/reagent/ammonia = 1, /datum/reagent/consumable/ethanol = 1)
 
 /datum/chemical_reaction/bleach
-	results = list(/datum/reagent/bleach = 2)
+	results = list(/datum/reagent/bleach = 3)
 	required_reagents = list(/datum/reagent/sodium = 1, /datum/reagent/oxygen = 1, /datum/reagent/chlorine = 1)
 
 /datum/chemical_reaction/system_cleaner
