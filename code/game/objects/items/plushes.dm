@@ -914,15 +914,16 @@
 	icon_state = "generic"
 	gender = FEMALE
 	///list of all the plushes, stored for description
-	var/list/total_list = list()
+	var/static/list/total_list = list()
 
 /obj/item/toy/plush/shipgirl/Initialize()
 	. = ..()
-	var/list/all_shipgirls = list()
-	all_shipgirls = subtypesof(/obj/item/toy/plush/shipgirl)
+	if(!total_list)
+		var/list/all_shipgirls = list()
+		all_shipgirls = subtypesof(/obj/item/toy/plush/shipgirl)
 
-	for(var/obj/item/toy/plush/shipgirl/current_iteration as anything in all_shipgirls)
-		LAZYADD(total_list, current_iteration::longname)
+		for(var/obj/item/toy/plush/shipgirl/current_iteration as anything in all_shipgirls)
+			LAZYADD(total_list, current_iteration::longname)
 
 /obj/item/toy/plush/shipgirl/examine(mob/user)
 	. = ..()
