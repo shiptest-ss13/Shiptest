@@ -117,6 +117,7 @@
 	desc = "A replica of a historic Solarian blade originating in Asia. Huge and heavy, its effectiveness shines when full body momentum is utilized."
 	icon_state = "podao"
 	item_state = "podao"
+	base_icon_state = "podao"
 	slot_flags = ITEM_SLOT_BELT
 	force = 25
 	throwforce = 10
@@ -124,6 +125,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 	block_chance = 10
 	max_integrity = 200
+	attack_cooldown = 10
 
 /obj/item/melee/sword/podao/ComponentInitialize()
 	. = ..()
