@@ -1,12 +1,18 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ac" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
 /area/ship/engineering/engine)
 "ag" = (
 /obj/machinery/power/shuttle/engine/electric{
@@ -16,6 +22,22 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/engine/hull/reinforced,
+/area/ship/engineering/engine)
+"ai" = (
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/sheet/mineral/wood,
+/obj/item/stack/sheet/mineral/wood,
+/obj/item/stack/sheet/mineral/wood,
+/obj/item/stack/sheet/mineral/wood,
+/obj/item/stack/sheet/mineral/wood,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ak" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
@@ -230,6 +252,9 @@
 /obj/machinery/light_switch{
 	pixel_x = 19;
 	pixel_y = 12;
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/black{
 	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -1073,6 +1098,12 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/black/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/black/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/toilet)
 "ky" = (
@@ -1755,9 +1786,6 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
 /obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -3265,21 +3293,20 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/security/armory)
 "Cg" = (
-/obj/structure/cable/green{
-	icon_state = "0-4"
+/obj/effect/spawner/bunk_bed,
+/obj/effect/turf_decal/siding/wood/end/walnut{
+	dir = 1
 	},
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/stack/sheet/mineral/wood,
-/obj/item/stack/sheet/mineral/wood,
-/obj/item/stack/sheet/mineral/wood,
-/obj/item/stack/sheet/mineral/wood,
-/obj/item/stack/sheet/mineral/wood,
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
+/obj/structure/dresser/wall/directional/west{
+	pixel_y = 8
+	},
+/obj/structure/sign/poster/radio/orn{
+	pixel_y = 32
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/crew)
 "Ch" = (
 /obj/structure/catwalk/over,
 /obj/structure/marker_beacon{
@@ -3599,6 +3626,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/siding/black{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/toilet)
 "Fe" = (
@@ -3752,6 +3782,9 @@
 	},
 /obj/structure/extinguisher_cabinet/directional/east{
 	pixel_y = -6
+	},
+/obj/effect/turf_decal/siding/black{
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/toilet)
@@ -4179,21 +4212,6 @@
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plating,
 /area/ship/crew/cryo)
-"Ky" = (
-/obj/effect/spawner/bunk_bed,
-/obj/effect/turf_decal/siding/wood/end/walnut{
-	dir = 1
-	},
-/obj/machinery/light/small/directional/east,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/dresser/wall/directional/west{
-	pixel_y = 8
-	},
-/obj/structure/sign/poster/radio/orn{
-	pixel_y = 32
-	},
-/turf/open/floor/wood/walnut,
-/area/ship/crew)
 "KA" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer2,
@@ -6189,7 +6207,7 @@ QF
 qE
 qE
 qE
-Cg
+ai
 ao
 yY
 ht
@@ -6485,7 +6503,7 @@ DS
 Mi
 ZJ
 OB
-Ky
+Cg
 Sq
 FZ
 IU
