@@ -117,6 +117,11 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	)
 ))
 
+#define RADIAL_LAUNDRY_OPEN "open door"
+#define RADIAL_LAUNDRY_CLOSE "close door"
+#define RADIAL_LAUNDRY_START "start cycle"
+#define RADIAL_LAUNDRY_STOP "stop cycle"
+
 #define CYCLESTATE_NOT_STARTED 0
 #define CYCLESTATE_FILL 1
 #define CYCLESTATE_WASH 2
@@ -151,17 +156,42 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	///The current cycle state we are in.
 	var/cycle_state = CYCLESTATE_NOT_STARTED
 
+	///prevents the washer from opening during a cycle, while still allowing for spinning down
+	var/doors_locked = FALSE
+
+	///When the cycle is cancled, this is TRUE, so we can't spam cancel the cycles
+	var/cycle_canceled = FALSE
+
+	///timer id of the cyle
+	var/cycle_timer_id
 	///how long a cycle state lasts
 	///this means a full cycle takes 12 minutes on the washing machine,
-	var/cycle_time = 4 MINUTES
+	var/cycle_time = 2 MINUTES
 
 	///Do we allow reagent pouring?
 	var/allow_reagent_pouring = TRUE
+
+	///Our soundloop. This changes depending on which cycle, which may be a bit annoying...
+	var/datum/looping_sound/washing_machine_fill/soundloop_fill
+	var/datum/looping_sound/washing_machine_wash/soundloop_wash
+	var/datum/looping_sound/washing_machine_spin/soundloop_spin
 
 /obj/machinery/washing_machine/Initialize(mapload, apply_default_parts)
 	. = ..()
 	if(!reagents)
 		create_reagents(max_reagent_vol)
+	create_soundloops()
+
+/obj/machinery/washing_machine/proc/create_soundloops()
+	soundloop_fill = new(list(src), FALSE)
+	soundloop_wash = new(list(src), FALSE)
+	soundloop_spin = new(list(src), FALSE)
+
+/obj/machinery/washing_machine/Destroy()
+	. = ..()
+	QDEL_NULL(soundloop_fill)
+	QDEL_NULL(soundloop_wash)
+	QDEL_NULL(soundloop_spin)
 
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
@@ -203,6 +233,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 			var/units = container_poured.reagents.trans_to(src, container_poured.amount_per_transfer_from_this, transfered_by = user)
 			if(units)
 				to_chat(user, span_notice("You transfer [units] units of the solution to [src]."))
+				playsound(src, 'sound/items/glass_transfer.ogg', 50, 1)
 				return TRUE
 		else
 			to_chat(user, span_notice("[attacking_item.name] isn't open!"))
@@ -238,10 +269,10 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	. = ..()
 	if(.)
 		return
-	if(cycle_state)
-		to_chat(user, span_warning("The door's hatches are locked! Wait until the cycle finishes!"))
-		return
 	if(user.pulling && isliving(user.pulling))
+		if(doors_locked)
+			to_chat(user, span_warning("The door's hatches are locked! Wait until the cycle finishes!"))
+			return
 		var/mob/living/L = user.pulling
 		if(L.buckled || L.has_buckled_mobs())
 			return
@@ -250,34 +281,88 @@ GLOBAL_LIST_INIT(dye_registry, list(
 				L.forceMove(src)
 				update_appearance()
 		return
-	if(!state_open)
-		open_machine()
 	else
-		state_open = FALSE //close the door
-		update_appearance()
+		show_menu(user)
 
-
-/obj/machinery/washing_machine/attack_hand_secondary(mob/user, modifiers)
-	. = ..()
-	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+/obj/machinery/washing_machine/proc/show_menu(mob/living/user)
+	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		return
 
-	if(!user.canUseTopic(src, !issilicon(user)))
-		return SECONDARY_ATTACK_CONTINUE_CHAIN
-	if(cycle_state)
-		to_chat(user, span_warning("The door's hatches are locked! Wait until the cycle finishes!"))
-		return SECONDARY_ATTACK_CONTINUE_CHAIN
-	if(state_open)
-		to_chat(user, span_warning("Close the door first!"))
-		return SECONDARY_ATTACK_CONTINUE_CHAIN
-	if(is_dirty)
-		to_chat(user, span_warning("[src] must be cleaned up first!"))
-		return SECONDARY_ATTACK_CONTINUE_CHAIN
+	var/radial_options = list(
+		RADIAL_LAUNDRY_OPEN = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_laundry_open[doors_locked ? "_locked":""]"),
+		RADIAL_LAUNDRY_CLOSE = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_laundry_close[doors_locked ? "_locked":""]"),
+		RADIAL_LAUNDRY_START = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_laundry_start[doors_locked ? "_on":""]"),
+		RADIAL_LAUNDRY_STOP = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_laundry_stop[doors_locked ? "_on":""]"),
+		)
 
-	update_appearance()
-	INVOKE_ASYNC(src, PROC_REF(do_cycle))
-	START_PROCESSING(SSfastprocess, src)
-	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	if(!state_open)
+		radial_options -= RADIAL_LAUNDRY_CLOSE
+	else
+		radial_options -= RADIAL_LAUNDRY_OPEN
+
+	if(cycle_state) //these are completely redundant  if you can reload everything with a speedloader
+		radial_options -= RADIAL_LAUNDRY_START
+	else
+		radial_options -= RADIAL_LAUNDRY_STOP
+
+	var/pick = show_radial_menu(user, src, radial_options, custom_check = CALLBACK(src, PROC_REF(can_use_radial), user), require_near = TRUE)
+	switch(pick)
+		if(RADIAL_LAUNDRY_START)
+			if(cycle_timer_id && !cycle_state && !is_dirty && !state_open)
+				deltimer(cycle_timer_id)
+
+			if(state_open)
+				to_chat(user, span_warning("Close the doors first!"))
+			else if(cycle_state)
+				to_chat(user, span_warning("You cant cancel a cycle once it's started! You need to stop it instead!"))
+			else if(doors_locked && !cycle_state)
+				doors_locked = FALSE
+				audible_message(span_notice("You hear \the [src]'s doors click as the cycle is canceled."), span_notice("You hear a click."))
+				play_click_sound("switch")
+			else if(is_dirty)
+				to_chat(user, span_warning("[src] must be cleaned up first!"))
+			else
+				doors_locked = TRUE
+				audible_message(span_notice("You hear \the [src]'s doors click."), span_notice("You hear a click."))
+				cycle_timer_id = addtimer(CALLBACK(src, PROC_REF(do_cycle)), 10 SECONDS, TIMER_STOPPABLE)
+				play_click_sound("switch")
+
+		if(RADIAL_LAUNDRY_STOP)
+			if(cycle_timer_id && cycle_state && !cycle_canceled)
+				deltimer(cycle_timer_id)
+			if(!cycle_state)
+				to_chat(user, span_warning("You cant stop a cycle that hasn't even started!"))
+			else if (cycle_canceled)
+				to_chat(user, span_warning("The cycle was already stopped!"))
+			else
+				cycle_timer_id = addtimer(CALLBACK(src, PROC_REF(stop_cycle)), 10 SECONDS, TIMER_STOPPABLE)
+				audible_message(span_notice("You hear \the [src] beep softly as it slowly starts to spin down."), span_notice("You hear a soft beep."))
+				cycle_canceled = TRUE
+				play_click_sound("switch")
+
+		if(RADIAL_LAUNDRY_OPEN, RADIAL_LAUNDRY_CLOSE)
+			if(doors_locked)
+				to_chat(user, span_warning("The door's hatches are locked! Wait until the cycle finishes!"))
+			else if(!state_open)
+				playsound(src, 'sound/machines/laundry/laundry_open.ogg', 80)
+				open_machine()
+			else
+				playsound(src, 'sound/machines/laundry/laundry_close.ogg', 80)
+				state_open = FALSE //close the door
+				update_appearance()
+		if(null)
+			return
+
+	show_menu(user)
+
+/obj/machinery/washing_machine/proc/can_use_radial(mob/user)
+	if(QDELETED(src))
+		return FALSE
+	if(!istype(user))
+		return FALSE
+	if(user.incapacitated())
+		return FALSE
+	return TRUE
 
 /obj/machinery/washing_machine/process(seconds_per_tick)
 	if(!cycle_state)
@@ -322,31 +407,58 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		. = TRUE
 
 /obj/machinery/washing_machine/proc/do_cycle()
+	if(cycle_timer_id)
+		deltimer(cycle_timer_id)
+
 	switch(cycle_state)
 		if(CYCLESTATE_NOT_STARTED)
 			cycle_state = CYCLESTATE_FILL
-			addtimer(CALLBACK(src, PROC_REF(do_cycle)), cycle_time)
+			cycle_timer_id = addtimer(CALLBACK(src, PROC_REF(do_cycle)), cycle_time, TIMER_STOPPABLE)
+			START_PROCESSING(SSfastprocess, src)
 			audible_message(span_notice("[src] clicks and hums as it fills with water."), span_notice("You hear water running."))
+			soundloop_fill.start()
+
 		if(CYCLESTATE_FILL)
 			cycle_state = CYCLESTATE_WASH
-			addtimer(CALLBACK(src, PROC_REF(do_cycle)), cycle_time)
+			cycle_timer_id = addtimer(CALLBACK(src, PROC_REF(do_cycle)), cycle_time, TIMER_STOPPABLE)
 			if(color_source)
 				current_dye_color = color_source.dye_color
 				reagents.add_reagent_list(color_source.on_grind())
 				QDEL_NULL(color_source)
 			audible_message(span_notice("[src] starts to hum as it starts washing."), span_notice("You hear a motor."))
+			soundloop_fill.stop()
+			soundloop_wash.start()
+			//If i could, i would make it so everything inside becomes sopping wet, but alas
 			for(var/atom/movable/washed_atom as anything in contents)
 				washed_atom.machine_wash(src)
 		if(CYCLESTATE_WASH)
 			cycle_state = CYCLESTATE_SPIN
 			reagents.clear_reagents()
 			audible_message(span_notice("[src] starts to spin real fast."), span_notice("You hear a motor going real fast."))
-			addtimer(CALLBACK(src, PROC_REF(do_cycle)), cycle_time)
+			soundloop_wash.stop()
+			soundloop_spin.start()
+			cycle_timer_id = addtimer(CALLBACK(src, PROC_REF(do_cycle)), cycle_time, TIMER_STOPPABLE)
 		if(CYCLESTATE_SPIN)
+			//And here, i would put my only makes clothing slightly wet, IF I HAD THE MECHANIC!
 			cycle_state = CYCLESTATE_NOT_STARTED
+			doors_locked = FALSE
 			audible_message(span_notice("[src] buzzes happily as the wash cycle is done!"), span_notice("You hear a happy buzzing."))
+			soundloop_spin.stop()
+			playsound(src, 'sound/machines/laundry/washing_end_cycle.ogg', 50)
 
 	update_appearance()
+
+/obj/machinery/washing_machine/proc/stop_cycle()
+	audible_message(span_notice("[src] buzzes quietly as the machine stops moving."), span_notice("You hear a quiet buzzing."))
+	playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE)
+	reagents.clear_reagents()
+	cycle_state = CYCLESTATE_NOT_STARTED
+	doors_locked = FALSE
+	cycle_canceled = FALSE
+
+	soundloop_fill.stop()
+	soundloop_wash.stop()
+	soundloop_spin.stop()
 
 /obj/machinery/washing_machine/relaymove(mob/living/user)
 	container_resist_act(user)
@@ -368,19 +480,30 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 	///We don't even have water...
 	allow_reagent_pouring = FALSE
-	///since this only does one cycle, its set to 10 minutes
-	cycle_time = 10 MINUTES
+	///since this only does one cycle, its set to 5 minutes
+	cycle_time = 5 MINUTES
+	///dryer soundloop
+	var/datum/looping_sound/dryer/soundloop_dryer
+
+/obj/machinery/washing_machine/dryer/create_soundloops()
+	soundloop_dryer = new(list(src), FALSE)
+
+/obj/machinery/washing_machine/Destroy()
+	. = ..()
+	QDEL_NULL(soundloop_dryer)
+
 
 /obj/machinery/washing_machine/dryer/update_icon_state()
+	. = ..()
 	var/full = contents.len ? 1 : 0
 	if(cycle_state)
 		icon_state = "[base_icon_state]_running"
-		return ..()
+		return
 	if(state_open)
 		icon_state = "[base_icon_state]_open[full ? "_filled" : ""]"
-		return ..()
+		return
 	icon_state = "[base_icon_state]"
-	return ..()
+	return
 
 /obj/machinery/washing_machine/dryer/update_overlays()
 	. = ..()
@@ -409,11 +532,14 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	switch(cycle_state)
 		if(CYCLESTATE_NOT_STARTED)
 			cycle_state = CYCLESTATE_SPIN
-			addtimer(CALLBACK(src, PROC_REF(do_cycle)), cycle_time)
+			cycle_timer_id = addtimer(CALLBACK(src, PROC_REF(do_cycle)), cycle_time, TIMER_STOPPABLE)
 			audible_message(span_notice("[src] clicks and hums as it starts to spin real fast."), span_notice("You hear a motor going real fast."))
+			soundloop_dryer.start()
 		if(CYCLESTATE_SPIN)
 			cycle_state = CYCLESTATE_NOT_STARTED
 			audible_message(span_notice("[src] buzzes happily as the dry cycle is done!"), span_notice("You hear a happy buzzing."))
+			playsound(src, 'sound/machines/laundry/washing_end_cycle.ogg', 50)
+			soundloop_dryer.stop()
 			for(var/atom/movable/washed_atom as anything in contents)
 				var/obj/item/clothing/obj_item = washed_atom
 				if(!obj_item || !obj_item.allow_laundry_buffs)
@@ -427,8 +553,26 @@ GLOBAL_LIST_INIT(dye_registry, list(
 					addtimer(VARSET_CALLBACK(obj_item, softened, FALSE), 25 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE)
 	update_appearance()
 
+/obj/machinery/washing_machine/dryer/stop_cycle()
+	audible_message(span_notice("[src] buzzes quietly as the machine stops moving."), span_notice("You hear a quiet buzzing."))
+	playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE)
+	reagents.clear_reagents()
+	cycle_state = CYCLESTATE_NOT_STARTED
+	doors_locked = FALSE
+	cycle_canceled = FALSE
 
-///Item specific procs. Could be its own file
+	soundloop_dryer.stop()
+
+
+
+
+///Item specific procs. Could be its own file, to be honest
+
+
+
+
+
+
 /obj/item/proc/dye_item(dye_color, dye_key_override)
 	var/dye_key_selector = dye_key_override ? dye_key_override : dying_key
 	if(undyeable)

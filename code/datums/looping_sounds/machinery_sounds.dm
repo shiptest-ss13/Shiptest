@@ -81,3 +81,22 @@
 	mid_sounds = list('sound/effects/bubbles2.ogg' = 1)
 	mid_length = 7 SECONDS
 	volume = 25
+
+/datum/looping_sound/washing_machine_fill
+	mid_sounds = list('sound/machines/laundry/washing_fill_01.ogg'=5, 'sound/machines/laundry/washing_fill_02.ogg'=5, 'sound/machines/laundry/washing_fill_03.ogg'=5, 'sound/machines/laundry/washing_fill_04.ogg'=1)
+	mid_length = 3 SECONDS
+	volume = 50
+
+/datum/looping_sound/washing_machine_wash
+	mid_sounds = list('sound/machines/laundry/washing_wash_01.ogg'=5, 'sound/machines/laundry/washing_wash_02.ogg'=5, 'sound/machines/laundry/washing_wash_03.ogg'=5)
+	mid_length = 3 SECONDS
+	volume = 50
+
+/datum/looping_sound/washing_machine_spin
+	mid_sounds = list('sound/machines/laundry/washing_spin_01.ogg'=5, 'sound/machines/laundry/washing_spin_02.ogg'=5, 'sound/machines/laundry/washing_spin_03.ogg'=5)
+	mid_length = 3 SECONDS
+	end_sound = 'sound/machines/laundry/washing_spin_end.ogg'
+	volume = 60
+
+/datum/looping_sound/dryer
+	mid_sounds = list('sound/machines/laundry/dryer_01.ogg'=3, 'sound/machines/laundry/dryer_02.ogg'=5, 'sound/machines/laundry/dryer_03.ogg'=5)

@@ -964,7 +964,10 @@
 		if(HAS_TRAIT(victim, TRAIT_ANALGESIA)) //if we can't feel pain, dont give the pain messages
 			feels_pain = FALSE
 
-		burndamage = (max(sqrt(reac_volume), 0) * (percent_this_chem/100))
+		//burndamage = (max(log(reac_volume * (percent_this_chem/100), 50), 0))
+		//LOGISTIC_FUNCTION(40,0.1,-3.3 )
+		//burndamage = (max(LOGISTIC_FUNCTION(40, 0.1, -3.3, -5), 50))
+		burndamage = (max(reac_volume * (percent_this_chem/100), 70))
 
 		if(burndamage >= 1 && !human_victim.check_for_goggles() && !mechanical)
 			victim.set_blurriness(rand(5,15))
@@ -976,7 +979,7 @@
 					victim.emote("cry")
 
 		if(burndamage >= 2 && percent_this_chem >= 30)
-			victim.apply_damage(burndamage, BURN, spread_damage = TRUE, wound_bonus = 5 bare_wound_bonus = 10)
+			victim.apply_damage(burndamage, BURN, spread_damage = TRUE, wound_bonus = 5, bare_wound_bonus = 10)
 			if(feels_pain)
 				to_chat(victim, span_userdanger("You're [mechanical ? "corroding" : "melting"]!"))
 			playsound(victim, 'sound/items/welder.ogg', 30, TRUE)
@@ -984,6 +987,8 @@
 		//besides the suffering, perhaps we also give this the actual niche use of bleaching hair?
 		if(reac_volume >= 2 && percent_this_chem >= 30)
 			human_victim.hair_color = COLOR_WHITE
+			human_victim.facial_hair_color = COLOR_WHITE
+			human_victim.grad_color = COLOR_WHITE
 
 			human_victim.visible_message("<span class='notice'>[human_victim.name]'s hair loses all color.</span>")
 			human_victim.update_hair()
@@ -991,18 +996,29 @@
 
 /datum/reagent/space_cleaner/on_mob_life(mob/living/carbon/affected_carbon)
 	var/toxpwr = sqrt(volume)
-	if(toxpwr)
-		affected_carbon.adjustToxLoss(toxpwr*REM, FALSE)
-	if(prob (min(current_cycle/4, 10)))
+
+	if(prob (min(current_cycle/4, 25)))
 		affected_carbon.adjustOrganLoss(ORGAN_SLOT_BRAIN,volume*REM)
+	if(current_cycle>10)
+		//grace peroid before we just fuck up someone
+		affected_carbon.adjustToxLoss(toxpwr*REM, FALSE)
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_LIVER,volume*REM)
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_STOMACH,(volume*1.2)*REM)
 
-	affected_carbon.adjustOrganLoss(ORGAN_SLOT_LIVER,volume*REM)
+		for(var/datum/disease/found_disease as anything in affected_carbon.diseases)
+			//you cant cure a heart attack with bleach
+			if(found_disease.spread_flags & DISEASE_SPREAD_NON_CONTAGIOUS)
+				continue
+			//this might make bleach overpowered, but it is literally killing you horribly at this point reguardless
+			if(prob(min(toxpwr, 40)))
+				found_disease.update_stage(found_disease.stage - 1)
 
-	affected_carbon.adjustOrganLoss(ORGAN_SLOT_STOMACH,(volume*2)*REM)
+	else
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_STOMACH,(toxpwr)*REM)
+		affected_carbon.adjustToxLoss((toxpwr/2)*REM, FALSE)
 	affected_carbon.adjust_disgust(volume)
-	. = TRUE
 
-	..()
+	return ..()
 
 /datum/reagent/space_cleaner/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
