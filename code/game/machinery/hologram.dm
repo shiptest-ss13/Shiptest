@@ -107,6 +107,8 @@ Possible to do for anyone motivated enough:
 	name = "administrative holopad"
 	desc = "It's a floor-mounted device for projecting holographic images. This one is equipped with a full administrative suite."
 	secure = TRUE
+	admin_pad = TRUE
+	name_override = "Unconfigured admin holopad"
 
 /obj/machinery/holopad/secret
 	name = "one-way holopad"
@@ -340,13 +342,13 @@ Possible to do for anyone motivated enough:
 						continue
 					if (pad.is_operational && !pad.secret_pad)
 						if(pad.name_override)
-							LAZYADD(callnames[ref(pad.name_override)], pad)
+							LAZYADD(callnames[pad.name_override], pad)
 						else
 							var/area/area = get_area(pad)
 							if(area)
 								LAZYADD(callnames[area], pad)
 
-				var/result = tgui_input_list(usr, "Choose an holopad to call", "Holocall", sortNames(callnames))
+				var/result = tgui_input_list(usr, "Choose an holopad to call", "Holocall", sortList(callnames))
 				if(QDELETED(usr) || !result || outgoing_call)
 					return
 				var/interference = SSovermap.get_overmap_interference(src)

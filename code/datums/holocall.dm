@@ -61,7 +61,7 @@
 			dialed_holopads += H
 			H.say("Incoming call.")
 			if(H.admin_pad)
-				to_chat(GLOB.admins, span_adminnotice("[icon2html(calling_holopad.icon, GLOB.admins)]<b><font color=green>Incoming Holocall</font>[ADMIN_FULLMONTY(usr)]:</b> <span class='linkify'> is calling from [calling_pad.get_area_name()][ADMIN_FLW(calling_pad)] to [H.get_area_name()][ADMIN_FLW(H)]"))
+				to_chat(GLOB.admins, span_adminnotice("[icon2html(calling_holopad.icon, GLOB.admins)]<b><font color=green> Incoming Holocall! \n </font>[ADMIN_FULLMONTY(requester)]:</b><span class='linkify'> is calling [H.get_pad_name()][ADMIN_FLW(H)] from [get_area_name(calling_holopad)][ADMIN_FLW(calling_pad)]!"))
 			LAZYADD(H.holo_calls, src)
 
 	if(!dialed_holopads.len)
