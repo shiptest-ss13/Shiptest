@@ -367,9 +367,10 @@
 /obj/item/storage/belt/weebstick
 	name = "nanoforged blade sheath"
 	desc = "It yearns to bath in the blood of your enemies... but you hold it back!"
-	icon = 'icons/obj/weapon/sword.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
 	icon_state = "weeb_sheath"
-	item_state = "sheath"
+	item_state = "weeb_sheath"
 	force = 3
 	var/primed = FALSE //Prerequisite to anime bullshit
 	// ##The anime bullshit## - Mostly stolen from action/innate/dash
