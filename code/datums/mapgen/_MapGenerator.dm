@@ -21,6 +21,7 @@
 		for(var/turf/open/space/adj in RANGE_TURFS(1, gen_turf))
 			adj.check_starlight(gen_turf)
 
+		postgen_check_turf(gen_turf)
 		// CHECK_TICK here is fine -- we are assuming that the turfs we're generating are staying relatively constant
 		CHECK_TICK
 
@@ -74,5 +75,11 @@
 /// Internal proc that actually adds objects to a turf passed to populate_turfs().
 /// Should never sleep.
 /datum/map_generator/proc/populate_turf(turf/gen_turf)
+	SHOULD_NOT_SLEEP(TRUE)
+	return
+
+/// Internal proc that actually adds objects to a turf passed to postgen_check_turf().
+/// Should never sleep.
+/datum/map_generator/proc/postgen_check_turf(turf/gen_turf)
 	SHOULD_NOT_SLEEP(TRUE)
 	return
