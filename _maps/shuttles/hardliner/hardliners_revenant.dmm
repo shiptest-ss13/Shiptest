@@ -301,13 +301,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "dM" = (
-/obj/structure/guncloset,
-/obj/item/gun/ballistic/automatic/pistol/asp/no_mag,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/obj/item/gun/ballistic/shotgun/gaboon/empty,
-/obj/item/gun/ballistic/shotgun/gaboon/empty,
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "dW" = (
@@ -1019,35 +1016,8 @@
 /obj/structure/platform{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/armorycage{
-	pixel_x = 3;
-	pixel_y = 0
-	},
-/obj/item/ammo_box/magazine/m57_39_asp{
-	pixel_x = -8;
-	pixel_y = -6
-	},
-/obj/item/ammo_box/magazine/m57_39_asp{
-	pixel_x = -8;
-	pixel_y = -6
-	},
-/obj/item/ammo_box/magazine/m57_39_asp{
-	pixel_x = -8;
-	pixel_y = -6
-	},
 /obj/machinery/light/small/directional/south,
-/obj/item/ammo_box/magazine/m57_39_asp{
-	pixel_x = -8;
-	pixel_y = -6
-	},
-/obj/item/ammo_box/magazine/m57_39_asp{
-	pixel_x = -8;
-	pixel_y = -6
-	},
-/obj/item/ammo_box/magazine/m57_39_asp{
-	pixel_x = -8;
-	pixel_y = -6
-	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/bridge)
 "nH" = (
@@ -1177,8 +1147,11 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "qe" = (
-/obj/structure/table/reinforced,
 /obj/machinery/light/small/directional/south,
+/obj/structure/guncloset,
+/obj/item/gun/ballistic/shotgun/gaboon/empty,
+/obj/item/gun/ballistic/shotgun/gaboon/empty,
+/obj/item/gun/ballistic/automatic/assault/hydra/indie/no_mag,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "qk" = (
@@ -1338,7 +1311,34 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/storage/equip)
 "rq" = (
-/obj/structure/table/reinforced,
+/obj/structure/closet/secure_closet/armorycage{
+	pixel_x = 3;
+	pixel_y = 0
+	},
+/obj/item/ammo_box/magazine/m57_39_asp{
+	pixel_x = -8;
+	pixel_y = -6
+	},
+/obj/item/ammo_box/magazine/m57_39_asp{
+	pixel_x = -8;
+	pixel_y = -6
+	},
+/obj/item/ammo_box/magazine/m57_39_asp{
+	pixel_x = -8;
+	pixel_y = -6
+	},
+/obj/item/ammo_box/magazine/m556_42_hydra/small/empty{
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/obj/item/ammo_box/magazine/m556_42_hydra/small/empty{
+	pixel_x = 7;
+	pixel_y = -3
+	},
+/obj/item/ammo_box/magazine/m556_42_hydra/small/empty{
+	pixel_x = 9;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "rx" = (
@@ -2486,6 +2486,7 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "Hr" = (
+/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "HA" = (
@@ -3504,11 +3505,8 @@
 /obj/structure/platform{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/armorycage{
-	pixel_x = 3;
-	pixel_y = 0
-	},
 /obj/machinery/light/small/directional/north,
+/obj/structure/filingcabinet/double/grey,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/bridge)
 "VK" = (
@@ -3539,6 +3537,14 @@
 	pixel_y = -20;
 	id = "revenantbridge";
 	name = "bridge lock"
+	},
+/obj/item/paper_bin{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_x = -8;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
