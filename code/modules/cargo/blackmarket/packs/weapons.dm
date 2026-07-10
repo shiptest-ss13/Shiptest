@@ -90,7 +90,7 @@
 /datum/blackmarket_item/weapon/podao
 	name = "Solarian Podao Replica"
 	desc = "Some historian kept bothering us about this kind of sword, saying its got unmatched cutting potential. After they graciously helped us test it, we can say it does a good chop! Two hands recommended. It's heavy."
-	item = /obj/item/storage/belt/sabre/pgf
+	item = /obj/item/melee/sword/podao
 
 	cost_min = 2000
 	cost_max = 3000
