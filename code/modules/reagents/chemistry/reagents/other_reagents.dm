@@ -2225,10 +2225,14 @@
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM // 5u (WOUND_DETERMINATION_CRITICAL) will last for ~17 ticks
 	self_consuming = TRUE
 	taste_description = "pure determination"
-	overdose_threshold = 45
+	overdose_threshold = 0
 	process_flags = ALL
 	/// Whether we've had at least WOUND_DETERMINATION_SEVERE (2.5u) of determination at any given time. No damage slowdown immunity or indication we're having a second wind if it's just a single moderate wound
 	var/significant = FALSE
+
+/datum/reagent/determination/on_mob_metabolize(mob/living/L)
+	. = ..()
+	ADD_TRAIT(L, TRAIT_NOSOFTCRIT, type)
 
 /datum/reagent/determination/on_mob_life(mob/living/carbon/M)
 	if(!significant && volume >= WOUND_DETERMINATION_SEVERE)
@@ -2246,6 +2250,8 @@
 	..()
 
 /datum/reagent/determination/on_mob_end_metabolize(mob/living/carbon/M)
+	REMOVE_TRAIT(M, TRAIT_NOSOFTCRIT, type)
+
 	if(significant)
 		var/stam_crash = 0
 		for(var/thing in M.all_wounds)
