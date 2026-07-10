@@ -666,15 +666,14 @@
 	glass_desc = "A homemade curative. Helps the body heal with the nutrition density, but it leaves a gnawing hunger afterwards."
 
 /datum/reagent/consumable/doctor_delight/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-0.5, 0)
-	M.adjustFireLoss(-0.5, 0)
-	M.adjustToxLoss(-0.5, 0)
-	M.adjustOxyLoss(-0.5, 0)
+	M.adjustBruteLoss(-0.2, FALSE)
+	M.adjustFireLoss(-0.2, FALSE)
+	M.adjustToxLoss(-0.2, FALSE)
+	M.adjustOxyLoss(-0.2, FALSE)
 	if(M.nutrition && (M.nutrition - 2 > 0))
-		if(!(M.mind && M.mind.assigned_role == "Medical Doctor")) //Drains the nutrition of the holder. Not medical doctors though, since it's the Doctor's Delight!
-			M.adjust_nutrition(-2)
+		M.adjust_nutrition(-1)
 	..()
-	. = 1
+	return TRUE
 
 /datum/reagent/consumable/chocolatepudding
 	name = "Chocolate Pudding"

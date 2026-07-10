@@ -1720,10 +1720,6 @@
 	glass_name = "Shot in the Dark"
 	glass_desc = "A specially made drink from the popular webseries RILENA: LMR. Contains traces of gold from the real bullet inside... which wouldn't make sense outside of the series it comes from."
 
-//remove this after tm
-/datum/reagent/consumable/nothing
-	name = "nothin"
-
 /datum/reagent/consumable/ethanol/bullethell
 	name = "Bullet Hell"
 	description = "An incredibly potent combination drink and fire hazard, typically served in a brass shell casing. May spontaneously combust."
@@ -1809,4 +1805,5 @@
 		M.adjustToxLoss(toxpwr*REM, 0)
 		. = TRUE
 		return ..()
+
 
