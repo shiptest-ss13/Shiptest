@@ -37,6 +37,7 @@
 	recipe = first_atmos
 
 /obj/machinery/pipedispenser/ui_assets(mob/user)
+	//wait, couldnt the chem dispensor literally just use this spritesheet isntead of pngs...? TODO: make chem dispensors do that for pills
 	return list(
 		get_asset_datum(/datum/asset/spritesheet/pipes),
 	)
@@ -167,7 +168,11 @@
 	var/queued_p_flipped = p_flipped
 	switch(category)
 		if(ATMOS_CATEGORY)
-			if(recipe.type == /datum/pipe_info/meter)
+			//BOOKMARK
+			if(recipe.type == /datum/pipe_info/meter/temperature)
+				new /obj/item/pipe_meter/temperature(loc)
+				on_make_pipe()
+			else if(recipe.type == /datum/pipe_info/meter)
 				new /obj/item/pipe_meter(loc)
 				on_make_pipe()
 			else

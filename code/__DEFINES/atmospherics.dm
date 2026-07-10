@@ -401,18 +401,18 @@
 	T.pixel_y = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_Y;
 
 GLOBAL_LIST_INIT(pipe_paint_colors, sortList(list(
-	"amethyst" = rgb(130,43,255), //supplymain
-	"blue" = rgb(0,0,255),
-	"brown" = rgb(178,100,56),
-	"cyan" = rgb(0,255,249),
-	"dark" = rgb(69,69,69),
-	"green" = rgb(30,255,0),
-	"grey" = rgb(255,255,255),
-	"orange" = rgb(255,129,25),
-	"purple" = rgb(128,0,182),
-	"red" = rgb(255,0,0),
-	"violet" = rgb(64,0,128),
-	"yellow" = rgb(255,198,0)
+	"amethyst" = "#9565fc", //supplymain
+	"blue" = "#5c7fff",
+	"brown" = "#a65326",
+	"cyan" = "#60d5fc",
+	"dark" = "#898aad",
+	"green" = "#8cff75",
+	"grey" = "#ffffff",
+	"orange" = "#ff904f",
+	"purple" = "#ed69ff",
+	"red" = "#ff3030",
+	"violet" = "#6640ff",
+	"yellow" = "#fff957"
 )))
 
 #define IMMUNE_ATMOS_REQS list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
