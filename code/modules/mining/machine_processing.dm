@@ -62,24 +62,35 @@
 	if(T)
 		S.forceMove(T)
 
-/obj/machinery/mineral/processing_unit_console
+/obj/machinery/computer/processing_unit_console
 	name = "production machine console"
-	icon = 'icons/obj/machines/mining_machines.dmi'
-	icon_state = "console"
+
+	icon = 'icons/obj/machines/wallconsole.dmi'
+	icon_state = "wallconsole"
+	icon_screen = "wallconsole_production"
+	icon_keyboard = null
+	layer = SIGN_LAYER
+	unique_icon = TRUE
+
 	density = FALSE
 	///Connected processing unit
 	var/obj/machinery/mineral/processing_unit/machine
 	/// Direction for which console looks for stacking machine to connect to
 	var/machinedir = EAST
+	///Useless, kept to avoid maploading errors
+	var/input_dir = NORTH
+	var/output_dir = SOUTH
 	var/dist = 1
 
-/obj/machinery/mineral/processing_unit_console/Initialize()
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/processing_unit_console, 17)
+
+/obj/machinery/computer/processing_unit_console/Initialize()
 	. = ..()
 	machine = locate(/obj/machinery/mineral/processing_unit, get_ranged_target_turf(src, machinedir, dist))
 	if (machine)
 		machine.CONSOLE = src
 
-/obj/machinery/mineral/processing_unit_console/multitool_act(mob/living/user, obj/item/I) //TEMP newly adding: multitool linkage
+/obj/machinery/computer/processing_unit_console/multitool_act(mob/living/user, obj/item/I) //TEMP newly adding: multitool linkage
 	if(!multitool_check_buffer(user, I))
 		return
 	var/obj/item/multitool/M = I
@@ -87,7 +98,7 @@
 	to_chat(user, span_notice("You store linkage information in [I]'s buffer."))
 	return TRUE
 
-/obj/machinery/mineral/processing_unit_console/ui_interact(mob/user)
+/obj/machinery/computer/processing_unit_console/ui_interact(mob/user)
 	. = ..()
 	if(!machine)
 		return
@@ -98,7 +109,7 @@
 	popup.set_content(dat)
 	popup.open()
 
-/obj/machinery/mineral/processing_unit_console/Topic(href, href_list)
+/obj/machinery/computer/processing_unit_console/Topic(href, href_list)
 	if(..())
 		return
 	usr.set_machine(src)
@@ -121,7 +132,7 @@
 	updateUsrDialog()
 	return
 
-/obj/machinery/mineral/processing_unit_console/Destroy()
+/obj/machinery/computer/processing_unit_console/Destroy()
 	machine = null
 	return ..()
 
@@ -134,7 +145,7 @@
 	icon_state = "furnace"
 	density = TRUE
 	needs_item_input = TRUE
-	var/obj/machinery/mineral/processing_unit_console/CONSOLE = null
+	var/obj/machinery/computer/processing_unit_console/CONSOLE = null
 	var/on = FALSE
 	var/datum/material/selected_material = null
 	var/selected_alloy = null
@@ -156,7 +167,7 @@
 
 /obj/machinery/mineral/processing_unit/multitool_act(mob/living/user, obj/item/multitool/M)
 	if(istype(M))
-		if(istype(M.buffer, /obj/machinery/mineral/processing_unit_console))
+		if(istype(M.buffer, /obj/machinery/computer/processing_unit_console))
 			CONSOLE = M.buffer
 			CONSOLE.machine = src
 			to_chat(user, span_notice("You link [src] to the console in [M]'s buffer."))

@@ -5,13 +5,13 @@
 
 /obj/machinery/pipedispenser
 	name = "pipe dispenser"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/machines/pipedispenser.dmi'
 	icon_state = "pipe_d"
 	desc = "Dispenses countless types of pipes. Very useful if you need pipes."
 	layer = GATEWAY_UNDERLAY_LAYER //so it renders underneath dispensed disposals
 	density = TRUE
 	circuit = /obj/item/circuitboard/machine/pipedispenser
-	interaction_flags_machine = INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_OFFLINE
+	interaction_flags_machine = INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_UNPOWERED
 	var/delay = 0
 	var/busy = FALSE
 	var/p_dir = NORTH

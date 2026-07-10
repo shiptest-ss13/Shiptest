@@ -36,6 +36,8 @@
 	var/restricted = FALSE
 	req_access = list()
 
+	interaction_flags_machine = INTERACT_MACHINE_UNPOWERED | INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE
+
 	var/update = 0
 	var/static/list/label2types = list(
 		"n2" = /obj/machinery/portable_atmospherics/canister/nitrogen,
@@ -182,14 +184,14 @@
 
 /obj/machinery/portable_atmospherics/canister/chlorine
 	name = "chlorine canister"
-	desc = "chlorine"
+	desc = "Chlorine gas. Highly toxic."
 	icon_state = "greenys"
 	gas_type = GAS_CHLORINE
 	filled = 1
 
 /obj/machinery/portable_atmospherics/canister/hydrogen_chloride
 	name = "hydrogen chloride canister"
-	desc = "awful"
+	desc = "Hydrogen chloride gas. Don't breathe this."
 	icon_state = "greenyshaz"
 	gas_type = GAS_HYDROGEN_CHLORIDE
 	filled = 1

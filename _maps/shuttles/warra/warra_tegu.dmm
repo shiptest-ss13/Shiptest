@@ -628,7 +628,7 @@
 /obj/item/holosign_creator/engineering,
 /obj/item/clothing/glasses/meson/prescription,
 /obj/item/storage/toolbox/mechanical,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/storage/belt/utility/full/engi,
 /obj/item/gear_pack/anglegrinder,
 /obj/item/cartridge/ce,
@@ -1584,10 +1584,7 @@
 	dir = 4
 	},
 /obj/item/toy/plush/moth/atlas,
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/structure/noticeboard/directional/west,
 /turf/open/floor/wood,
 /area/ship/cargo/office)
 "mG" = (
@@ -1644,10 +1641,8 @@
 /obj/effect/turf_decal/industrial/loading{
 	dir = 4
 	},
-/obj/machinery/mineral/processing_unit_console{
+/obj/machinery/computer/processing_unit_console/directional/south{
 	output_dir = 1;
-	dir = 1;
-	pixel_y = -20;
 	machinedir = 8
 	},
 /turf/open/floor/plasteel/patterned,
@@ -3730,9 +3725,7 @@
 	},
 /obj/effect/turf_decal/borderfloor,
 /obj/structure/chair/handrail,
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/hallway/central)
 "FY" = (

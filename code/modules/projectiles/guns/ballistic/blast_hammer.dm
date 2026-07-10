@@ -80,7 +80,7 @@
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = 30)
+	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = 40)
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/on_wield(obj/item/source, mob/user, instant)
 	. = ..()
@@ -143,6 +143,15 @@
 		demolition_mod = 10
 	else
 		demolition_mod = initial(demolition_mod)
+
+/obj/item/gun/ballistic/shotgun/blasting_hammer/afterattack(atom/A, mob/user, proximity)
+	. = ..()
+	if(!proximity)
+		return
+	if(HAS_TRAIT(src, TRAIT_WIELDED)) //destroys windows and grilles in one hit
+		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille))
+			var/obj/structure/W = A
+			W.atom_destruction("axe")
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/update_icon_state()
 	. = ..()

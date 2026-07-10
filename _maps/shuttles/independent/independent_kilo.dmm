@@ -131,7 +131,7 @@
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/head/hardhat/dblue,
 /obj/effect/turf_decal/box,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/storage/belt/utility/full/engi,
 /obj/item/clothing/head/hardhat/orange,
 /obj/item/clothing/under/overalls/olive,
@@ -665,11 +665,11 @@
 /area/ship/crew/canteen/kitchen)
 "dc" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 16;
-	pixel_y = -25
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/south{
+	pixel_x = 16;
+	pixel_y = -22
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/canteen/kitchen)
 "de" = (
@@ -926,13 +926,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/corner/walnut,
 /obj/item/kirbyplants/fullysynthetic{
 	pixel_x = 11;
 	pixel_y = 21
@@ -980,9 +977,8 @@
 	pixel_x = 9;
 	pixel_y = 7
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 1
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken"
@@ -1202,13 +1198,11 @@
 	pixel_x = -28;
 	pixel_y = -14
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/corner/walnut{
+	dir = 4
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
@@ -1262,7 +1256,7 @@
 	pixel_y = 0
 	},
 /obj/item/roller,
-/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "oj" = (
@@ -1897,9 +1891,8 @@
 	},
 /obj/machinery/light/small/directional/east,
 /obj/machinery/airalarm/directional/south,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 6
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
@@ -2257,13 +2250,11 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/corner/walnut{
+	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/corner/walnut{
+	dir = 4
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken2"
@@ -2312,9 +2303,7 @@
 	melee_damage_upper = 10;
 	name = "maurice"
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken5"
 	},
@@ -2332,9 +2321,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 4
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken4"

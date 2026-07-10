@@ -21,6 +21,14 @@
 	color = WOOD_COLOR_GENERIC
 	flammability = 3
 
+/turf/open/floor/wood/beach
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/wood/beach/lit
+	light_range = 2
+	light_power = 0.80
+	light_color = COLOR_BEACHPLANET_LIGHT
+
 /turf/open/floor/wood/mahogany
 	color = WOOD_COLOR_RICH
 
@@ -47,6 +55,14 @@
 
 /turf/open/floor/wood/birch
 	color = WOOD_COLOR_PALE3
+
+/turf/open/floor/wood/birch/beach
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/wood/birch/beach/lit
+	light_range = 2
+	light_power = 0.80
+	light_color = COLOR_BEACHPLANET_LIGHT
 
 /turf/open/floor/wood/yew
 	color = WOOD_COLOR_YELLOW

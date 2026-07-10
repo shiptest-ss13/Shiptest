@@ -172,10 +172,17 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/west,
-/obj/machinery/newscaster/directional/south,
+/obj/machinery/newscaster/directional/south{
+	pixel_x = -5;
+	pixel_y = -30
+	},
 /obj/item/plate/small{
 	pixel_y = 8;
 	pixel_x = 6
+	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south{
+	pixel_x = 15;
+	pixel_y = -22
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office/lobby)
@@ -456,7 +463,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/structure/chair/handrail{
 	dir = 8
 	},
@@ -522,8 +529,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/transparent/brown,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 8
 	},
 /obj/effect/turf_decal/stairs{
@@ -1057,9 +1063,7 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable/pink,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/hallway/aft)
 "fI" = (
@@ -1190,14 +1194,11 @@
 /obj/item/food/cherrycupcake{
 	pixel_x = 4
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 24;
-	layer = 2.9
-	},
 /obj/item/desk_flag/trans{
 	pixel_y = 18;
 	pixel_x = 16
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "ge" = (
@@ -1377,10 +1378,6 @@
 /obj/effect/turf_decal/corner/transparent/lightgrey/half,
 /obj/effect/turf_decal/corner/transparent/solgovblue/border,
 /obj/structure/table/glass,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = -32
-	},
-/obj/item/radio/intercom/directional/south,
 /obj/item/reagent_containers/spray/cleaner{
 	pixel_x = 8;
 	pixel_y = 3
@@ -1390,6 +1387,7 @@
 	pixel_x = -3
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "gF" = (
@@ -2651,9 +2649,7 @@
 	pixel_x = -20;
 	pixel_y = -12
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "nU" = (
@@ -2833,9 +2829,7 @@
 /area/ship/crew/canteen)
 "oq" = (
 /obj/structure/chair/handrail,
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
@@ -2973,8 +2967,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/beige/half,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3112,8 +3105,7 @@
 /obj/effect/turf_decal/corner/transparent/beige{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3160,10 +3152,6 @@
 	pixel_x = 6;
 	pixel_y = -8
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34
-	},
-/obj/item/radio/intercom/directional/north,
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis{
 	pixel_y = 12;
 	pixel_x = 3
@@ -3177,6 +3165,7 @@
 	pixel_y = 2;
 	pixel_x = -6
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
 "pR" = (
@@ -3352,7 +3341,7 @@
 	pixel_y = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "qr" = (
@@ -3406,6 +3395,7 @@
 /obj/structure/chair/comfy/orange/old/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken2"
 	},
@@ -3767,6 +3757,9 @@
 	layer = 4.1
 	},
 /obj/machinery/light/small/directional/east,
+/obj/structure/sign/poster/official/moth/epi{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "rY" = (
@@ -3942,8 +3935,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/brown/full,
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/garbage,
@@ -4874,8 +4866,7 @@
 /obj/effect/turf_decal/corner/transparent/brown{
 	dir = 9
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4908,9 +4899,7 @@
 	name = "Monitor Deco";
 	desc = "A little pill shaped guy, they diligently monitor the camera network for suspicious activity."
 	},
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/item/paper/guides/bodycam{
 	pixel_x = 8;
 	pixel_y = 15
@@ -5154,17 +5143,14 @@
 /area/ship/cargo)
 "xy" = (
 /obj/structure/table,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = -32;
-	pixel_x = -15
-	},
-/obj/item/radio/intercom/directional/south{
-	pixel_x = -15
-	},
 /obj/item/trash/popcorn{
 	pixel_y = 7
 	},
 /obj/effect/turf_decal/trimline/transparent/green/filled/line,
+/obj/item/radio/intercom/directional/south{
+	pixel_x = 4;
+	pixel_y = -31
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office/lobby)
 "xB" = (
@@ -5672,6 +5658,10 @@
 /obj/machinery/computer/helm/viewscreen/directional/north{
 	layer = 2.7;
 	pixel_y = 16
+	},
+/obj/item/clipboard{
+	pixel_x = -9;
+	pixel_y = 4
 	},
 /obj/item/folder/yellow{
 	pixel_y = 2;
@@ -7013,8 +7003,7 @@
 /obj/effect/turf_decal/corner/transparent/beige{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -7635,7 +7624,7 @@
 	desc = "A basic white surgical apron.";
 	name = "smock"
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/clip,
+/obj/item/clothing/gloves/nitrile,
 /obj/item/storage/belt/medical/webbing/frontiersmen,
 /obj/item/clothing/suit/hooded/wintercoat/medical,
 /obj/item/clothing/mask/surgical,
@@ -7744,11 +7733,8 @@
 /obj/effect/turf_decal/industrial/warning/dust/corner{
 	dir = 1
 	},
-/obj/machinery/light_switch{
-	pixel_x = -12;
-	pixel_y = 22
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "JH" = (
@@ -8333,6 +8319,10 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
+/obj/item/clipboard{
+	pixel_y = 4;
+	pixel_x = 5
+	},
 /obj/item/stack/cable_coil/orange{
 	pixel_x = 6;
 	pixel_y = 7
@@ -8592,11 +8582,11 @@
 	pixel_y = 5;
 	pixel_x = -11
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = -5;
 	pixel_y = -5
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = -5;
 	pixel_y = -5
 	},
@@ -9359,12 +9349,9 @@
 	pixel_y = -32
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/security/telescreen{
-	dir = 8;
-	pixel_x = 24;
+/obj/machinery/computer/security/telescreen/directional/east{
 	network = list("ss13");
-	desc = "A telescreen that connects to the ship's security camera network.";
-	pixel_y = 9
+	desc = "A telescreen that connects to the ship's security camera network."
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -9773,7 +9760,10 @@
 	},
 /obj/item/radio/intercom/directional/north,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 22
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Sb" = (
@@ -9824,9 +9814,6 @@
 /obj/item/toy/figure/cmo{
 	pixel_x = -9
 	},
-/obj/structure/sign/poster/official/moth/epi{
-	pixel_y = -32
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/west,
 /obj/item/storage/box/masks{
@@ -9837,6 +9824,7 @@
 	pixel_y = 4;
 	pixel_x = 5
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Sf" = (
@@ -9981,10 +9969,7 @@
 	name = "Oxygen to Air Mix, Burn Mix"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/structure/noticeboard/directional/east,
 /obj/item/paper/guides/jobs/engi/combustion_thruster{
 	pixel_x = 10
 	},
@@ -10647,8 +10632,7 @@
 /obj/effect/turf_decal/corner/transparent/beige{
 	dir = 10
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/corner/walnut{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -11214,6 +11198,10 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable/pink,
+/obj/item/clipboard{
+	pixel_x = -4;
+	pixel_y = -3
+	},
 /obj/item/food/popcorn{
 	pixel_x = 6;
 	pixel_y = 8

@@ -249,7 +249,7 @@
 
 			if(materials.has_materials(materials_used))
 				busy = TRUE
-				to_chat(usr, "<span class=\"notice\">You print [multiplier] item(s) from the [src]</span>")
+				to_chat(usr, "<span class=\"notice\">You print [multiplier] item(s) from the [src].</span>")
 				use_power(power)
 				icon_state = "autolathe_n"
 				var/time = is_stack ? 32 : (32 * coeff * multiplier) ** 0.8
@@ -267,6 +267,13 @@
 		d_disk = null
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	materials.retrieve_all()
+
+/obj/machinery/autolathe/attackby_secondary(obj/item/O, mob/living/user, params)
+	if(O.tool_behaviour == TOOL_SCREWDRIVER)
+		var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+		materials.OnAttackBy(materials, O, user)
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return SECONDARY_ATTACK_CALL_NORMAL
 
 /obj/machinery/autolathe/attackby(obj/item/O, mob/living/user, params)
 	if (busy)

@@ -90,17 +90,16 @@
 	if(!recipe.output || !loc || QDELETED(src))
 		return
 
-	//var/food_multiplier = recipe.food_multiplier
-	//for(var/i in 1 to food_multiplier)
-	var/obj/new_food_item = new recipe.output(drop_location())
-	new_food_item.pixel_x = rand(-6, 6)
-	new_food_item.pixel_y = rand(-6, 6)
+	var/food_multiplier = recipe.food_multiplier
+	for(var/i in 1 to food_multiplier)
+		var/obj/new_food_item = new recipe.output(drop_location())
+		new_food_item.pixel_x = rand(-6, 6)
+		new_food_item.pixel_y = rand(-6, 6)
 
-	if(!processed_thing.reagents) //backup in case we really fuck up
-		return
+		if(!processed_thing.reagents) //backup in case we really fuck up
+			return
 
-	processed_thing.reagents.copy_to(new_food_item, processed_thing.reagents.total_volume)//, multiplier = 1 / food_multiplier)
-
+		processed_thing.reagents.copy_to(new_food_item, processed_thing.reagents.total_volume, 1 / food_multiplier)
 	qdel(processed_thing)
 	update_appearance()
 

@@ -229,23 +229,19 @@
 		new /obj/effect/hotspot(turf)
 	holder.chem_temp = 1000 // hot as shit
 
-/datum/chemical_reaction/reagent_explosion/methsplosion
-	required_temp = 380 //slightly above the meth mix time.
-	required_reagents = list(/datum/reagent/drug/methamphetamine = 1)
+/datum/chemical_reaction/reagent_explosion/rahkrahene
+	required_temp = 497 //slightly above the meth mix time.
+	required_reagents = list(/datum/reagent/drug/rahkrahene = 1)
 	strengthdiv = 6
 	modifier = 1
 	mob_react = FALSE
 
-/datum/chemical_reaction/reagent_explosion/methsplosion/on_reaction(datum/reagents/holder, created_volume)
+/datum/chemical_reaction/reagent_explosion/rahkrahene/on_reaction(datum/reagents/holder, created_volume)
 	var/turf/T = get_turf(holder.my_atom)
 	for(var/turf/turf in range(1,T))
 		new /obj/effect/hotspot(turf)
 	holder.chem_temp = 1000 // hot as shit
 	..()
-
-/datum/chemical_reaction/reagent_explosion/methsplosion/methboom2
-	required_reagents = list(/datum/reagent/diethylamine = 1, /datum/reagent/iodine = 1, /datum/reagent/phosphorus = 1, /datum/reagent/hydrogen = 1) //diethylamine is often left over from mixing the ephedrine.
-	required_temp = 300 //room temperature, chilling it even a little will prevent the explosion
 
 /datum/chemical_reaction/sorium
 	results = list(/datum/reagent/sorium = 4)

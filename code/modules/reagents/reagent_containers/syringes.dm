@@ -2,6 +2,7 @@
 	name = "syringe"
 	desc = "A syringe that can hold up to 15 units."
 	icon = 'icons/obj/syringe.dmi'
+	world_file = 'icons/obj/world/syringe_world.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	icon_state = "syringe_0"
@@ -156,8 +157,16 @@
 
 /obj/item/reagent_containers/syringe/update_overlays()
 	. = ..()
+
+	var/fill_name = fill_icon_state? fill_icon_state : base_icon_state
+	var/is_world = FALSE
+	if(world_file && icon == world_file)
+		is_world = TRUE
+	if(is_world)
+		fill_name += "_world"
+
 	if(reagents?.total_volume)
-		var/mutable_appearance/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "syringe[get_rounded_vol()]")
+		var/mutable_appearance/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "[fill_name][get_rounded_vol()]")
 		filling_overlay.color = mix_color_from_reagents(reagents.reagent_list)
 		. += filling_overlay
 
@@ -219,6 +228,7 @@
 /obj/item/reagent_containers/syringe/bluespace
 	name = "bluespace syringe"
 	desc = "An advanced syringe that can hold 60 units of chemicals."
+	//unclear if used, ddididnt resprite
 	icon_state = "bluespace_0"
 	base_icon_state = "bluespace"
 	amount_per_transfer_from_this = 20
@@ -227,6 +237,8 @@
 /obj/item/reagent_containers/syringe/piercing
 	name = "piercing syringe"
 	desc = "A diamond-tipped syringe that pierces armor when launched at high velocity. It can hold up to 10 units."
+	//unclear if used, ddididnt resprite
+	world_file = null
 	icon_state = "piercing_0"
 	base_icon_state = "piercing"
 	volume = 10
@@ -262,8 +274,8 @@
 /obj/item/reagent_containers/syringe/contraband/crank
 	list_reagents = list(/datum/reagent/drug/crank = 15)
 
-/obj/item/reagent_containers/syringe/contraband/methamphetamine
-	list_reagents = list(/datum/reagent/drug/methamphetamine = 15)
+/obj/item/reagent_containers/syringe/contraband/rahkrahene
+	list_reagents = list(/datum/reagent/drug/rahkrahene = 15)
 
 /obj/item/reagent_containers/syringe/contraband/mammoth
 	list_reagents = list(/datum/reagent/drug/mammoth = 15)
@@ -273,7 +285,7 @@
 
 /obj/item/reagent_containers/syringe/pancrazine
 	name = "syringe (pancrazine)"
-	desc = "Contains pancrazine, used to treat toxins and purge chemicals. The tag on the syringe states 'Heat before injection'."
+	desc = "Contains pancrazine, used to treat toxins."
 	list_reagents = list(/datum/reagent/medicine/pancrazine = 15)
 
 /obj/item/reagent_containers/syringe/charcoal

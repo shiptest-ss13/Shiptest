@@ -13,7 +13,7 @@
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
-	force = 5
+	force = 10
 
 	bad_type = /obj/item/gun
 
@@ -147,6 +147,15 @@
 	var/wield_delay	= 0.4 SECONDS
 	///Storing value for above
 	var/wield_time = 0
+
+//Beam aim (does this need to charge up it's shots before firing)
+	var/aiming = FALSE
+	var/aiming_time = 12
+	var/aiming_time_fire_threshold = 5
+	var/aiming_time_left = 12
+	var/aiming_time_increase_user_movement = 3
+	var/aiming_time_increase_angle_multiplier = 0.1
+	var/list/obj/effect/projectile/tracer/current_tracers
 
 // BALLISTIC
 	///Whether the gun has to be racked each shot or not.
@@ -327,9 +336,9 @@
 	///Firemode index, due to code shit this is the currently selected firemode
 	var/firemode_index
 	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
-	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO)
+	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO, FIREMODE_AIMED)
 	/// A acoc list that determines the names of firemodes. Use if you wanna be weird and set the name of say, FIREMODE_OTHER to "Underbarrel grenade launcher" for example.
-	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire", FIREMODE_UNDERBARREL = "underbarrel weapon")
+	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire", FIREMODE_AIMED = "charged")
 	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
 	var/fire_select_icon_state_prefix = ""
 	///If true, we put "safety_" before fire_select_icon_state_prefix's prefix. ex. "safety_laser_single"
@@ -425,16 +434,13 @@
 		. += span_notice("It has <b>[manufacturer]</b> engraved on it.")
 	if(HAS_TRAIT(src,TRAIT_FORCE_SUIT_STORAGE))
 		. += span_notice("It has clips and hooks for easy carrying.")
+	if(gun_firemodes[firemode_index] == FIREMODE_AIMED)
+		. += span_notice("You can cancel a charged shot by pressing the <b>unique action</b> key. By default, this is <b>space</b>.")
 
 /obj/item/gun/examine_more(mob/user)
 	. = ..()
 	if(has_safety)
-		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Right-Click to toggle the safety."
-
-/obj/item/gun/attackby(obj/item/I, mob/living/user, params)
-	. = ..()
-	if(gun_firemodes[firemode_index] == FIREMODE_UNDERBARREL)
-		return TRUE
+		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Ctrl-Click to toggle the safety."
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
@@ -463,7 +469,6 @@
 	if(!(. & EMP_PROTECT_CONTENTS))
 		for(var/obj/O in contents)
 			O.emp_act(severity)
-
 
 /obj/item/gun/proc/recharge_newshot()
 	return
@@ -796,7 +801,7 @@
 			span_notice("[user] turns the [safety_wording] on [src] [safety ? span_green("ON") : span_red("OFF")]."),
 			span_notice("You turn the [safety_wording] on [src] [safety ? span_green("ON") : span_red("OFF")]."),
 		)
-
+	SEND_SIGNAL(src, COMSIG_GUN_TOGGLE_SAFETY, user)
 	update_appearance()
 	return TRUE
 
@@ -1145,6 +1150,10 @@
 		if(!GetComponent(/datum/component/automatic_fire))
 			AddComponent(/datum/component/automatic_fire, fire_delay)
 		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
+	if(FIREMODE_AIMED in gun_firemodes)
+		if(!GetComponent(/datum/component/aimed_fire))
+			AddComponent(/datum/component/aimed_fire, aiming_time, aiming_time_fire_threshold, aiming_time_increase_user_movement, aiming_time_increase_angle_multiplier)
+		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AIMEDFIRE)
 	for(var/datum/action/item_action/toggle_firemode/old_firemode in actions)
 		old_firemode.Destroy()
 	var/datum/action/item_action/our_action
@@ -1157,6 +1166,8 @@
 			firemode_index = i
 			if(gun_firemodes[i] == FIREMODE_FULLAUTO)
 				SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AUTOFIRE)
+			if(gun_firemodes[i] == FIREMODE_AIMED)
+				SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AIMEDFIRE)
 			if(our_action)
 				our_action.UpdateButtonIcon()
 			return
@@ -1190,6 +1201,11 @@
 		SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AUTOFIRE)
 	else
 		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
+
+	if(current_firemode == FIREMODE_AIMED)
+		SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AIMEDFIRE)
+	else
+		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AIMEDFIRE)
 //wawa
 	to_chat(user, span_notice("Switched to [gun_firenames[current_firemode]]."))
 	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
@@ -1203,10 +1219,7 @@
 	var/current_firemode = our_gun.gun_firemodes[our_gun.firemode_index]
 	//tldr; if we have adjust_fire_select_icon_state_on_safety as true, we append "safety_" to the prefix, otherwise nothing.
 	var/safety_prefix = "[our_gun.adjust_fire_select_icon_state_on_safety ? "[our_gun.safety ? "safety_" : ""]" : ""]"
-	if(current_firemode == FIREMODE_UNDERBARREL)
-		button_icon_state = "[safety_prefix][our_gun.underbarrel_prefix][current_firemode]"
-	else
-		button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
+	button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
 	return ..()
 
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
@@ -1253,3 +1266,5 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 ///used for sawing guns, causes the gun to fire without the input of the user
 /obj/item/gun/proc/blow_up(mob/user)
 	return
+
+/// AIMING BEAM BEHAVIOR
