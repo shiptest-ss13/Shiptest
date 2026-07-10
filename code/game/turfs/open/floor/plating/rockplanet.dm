@@ -97,8 +97,8 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit
 	light_range = 2
 	light_power = 0.6
-	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit
-	turf_type = /turf/open/floor/plating/asteroid/rockplanet/lit
+	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
+	turf_type = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
 
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS

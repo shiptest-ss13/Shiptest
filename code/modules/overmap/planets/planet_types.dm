@@ -123,7 +123,7 @@
 	icon_state = "ocean"
 	color = "#c6b597"
 	mapgen = /datum/map_generator/planet_generator/beach
-	default_baseturf = /turf/open/floor/plating/asteroid/sand/lit
+	default_baseturf = /turf/open/floor/plating/asteroid/sand
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_BEACH
@@ -275,7 +275,7 @@
 	//ruin_type = RUINTYPE_DESERT
 	mapgen = /datum/map_generator/planet_generator/desert
 	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
+	default_baseturf = /turf/open/floor/plating/asteroid/desert
 	weather_controller_type = /datum/weather_controller/desert_yellow
 	primary_ores = list(
 		/obj/item/stack/ore/gold,
@@ -314,7 +314,7 @@
 	mapgen = /datum/map_generator/planet_generator/moon
 	ruin_type = RUINTYPE_MOON
 	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/floor/plating/asteroid/moon/lit
+	default_baseturf = /turf/open/floor/plating/asteroid/moon
 	weather_controller_type = null
 
 	primary_ores = list(\
@@ -386,12 +386,12 @@
 	color = COLOR_WHITE
 	mapgen = /datum/map_generator/single_turf/dustball
 	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/floor/plating/asteroid/whitesands/lit
+	default_baseturf = /turf/open/floor/plating/asteroid/whitesands
 	weather_controller_type = /datum/weather_controller/rockplanet/severe
 	weight = 1
 
 /datum/map_generator/single_turf/dustball
-	turf_type = /turf/open/floor/plating/asteroid/whitesands/lit
+	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	area_type = /area/overmap_encounter/planetoid/dustball
 
 
@@ -403,12 +403,12 @@
 	color = COLOR_WHITE
 	mapgen = /datum/map_generator/single_turf/duneball
 	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
+	default_baseturf = /turf/open/floor/plating/asteroid/desert
 	weather_controller_type = /datum/weather_controller/rockplanet/severe
 	weight = 1
 
 /datum/map_generator/single_turf/duneball
-	turf_type = /turf/open/floor/plating/asteroid/desert/lit
+	turf_type = /turf/open/floor/plating/asteroid/desert
 	area_type = /area/overmap_encounter/planetoid/duneball
 
 /datum/planet_type/waterball
@@ -419,10 +419,10 @@
 	color = COLOR_WHITE
 	mapgen = /datum/map_generator/single_turf/waterball
 	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
+	default_baseturf = /turf/open/floor/plating/asteroid/desert
 	weather_controller_type = /datum/weather_controller/waterplanet/severe
 	weight = 1
 
 /datum/map_generator/single_turf/waterball
-	turf_type = /turf/open/water/stormy_planet_lit
+	turf_type = /turf/open/water/stormy_planet_underground
 	area_type = /area/overmap_encounter/planetoid/waterball

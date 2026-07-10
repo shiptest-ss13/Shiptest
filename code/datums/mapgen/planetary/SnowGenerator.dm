@@ -87,7 +87,7 @@
 
 /datum/biome/snow
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/snow/lit = 25
+		/turf/open/floor/plating/asteroid/snow = 25
 	)
 	flora_spawn_list = list(
 		/obj/structure/flora/tree/pine = 4,
@@ -124,7 +124,7 @@
 
 /datum/biome/snow/lush
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/snow/lit = 25
+		/turf/open/floor/plating/asteroid/snow = 25
 	)
 	flora_spawn_list = list(
 		/obj/structure/flora/grass/both = 1,
@@ -133,7 +133,7 @@
 
 /datum/biome/snow/thawed
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/icerock/lit = 1
+		/turf/open/floor/plating/asteroid/icerock = 1
 	)
 	flora_spawn_chance = 40
 	flora_spawn_list = list(
@@ -163,7 +163,7 @@
 
 /datum/biome/arctic
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/snow/lit = 1
+		/turf/open/floor/plating/asteroid/snow = 1
 	)
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(
@@ -195,7 +195,7 @@
 
 /datum/biome/iceberg
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/iceberg/lit = 7,
+		/turf/open/floor/plating/asteroid/iceberg = 7,
 		/turf/closed/mineral/ice = 10
 	)
 	mob_spawn_chance = 2
