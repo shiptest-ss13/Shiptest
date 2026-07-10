@@ -305,6 +305,10 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
+/obj/item/storage/toolbox/ammo/c556hp{
+	pixel_x = 1;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "dW" = (
@@ -699,6 +703,7 @@
 "iq" = (
 /obj/structure/chair/bench/red/directional/north,
 /obj/machinery/light/small/directional/south,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/canteen)
 "ir" = (
@@ -904,6 +909,33 @@
 	dir = 9
 	},
 /obj/structure/closet/wall/directional/east,
+/obj/item/clothing/under/syndicate/hardliners{
+	pixel_x = 9;
+	pixel_y = 2
+	},
+/obj/item/clothing/under/syndicate/hardliners{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/clothing/under/syndicate/hardliners{
+	pixel_x = 7;
+	pixel_y = -8
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = -6;
+	pixel_y = -1
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = -6;
+	pixel_y = -3
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners,
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners,
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm)
 "me" = (
@@ -1195,7 +1227,6 @@
 	},
 /obj/item/clothing/gloves/combat,
 /obj/item/storage/box/ammo/a357,
-/obj/item/megaphone,
 /obj/item/clothing/under/syndicate/hardliners/jumpsuit,
 /obj/item/clothing/suit/armor/hardliners/sergeant,
 /obj/item/storage/guncase/pistol/a357,
@@ -1203,6 +1234,11 @@
 /obj/item/storage/belt/security/webbing/hardliners,
 /obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
 /obj/item/radio/headset/syndicate/alt/captain/cybersun,
+/obj/structure/closet/secure_closet/wall/directional/west{
+	req_access_txt = "20";
+	icon_state = "solgov_wall";
+	name = "captain's locker"
+	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/captain)
 "qC" = (
@@ -1519,6 +1555,10 @@
 /area/ship/cargo)
 "tZ" = (
 /obj/structure/closet/secure_closet/engineering_welding,
+/obj/structure/sign/poster/contraband/engis_unite{
+	pixel_x = 1;
+	pixel_y = 31
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "uj" = (
@@ -2241,6 +2281,31 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/structure/closet/secure_closet/wall/directional/west{
+	req_access_txt = "56";
+	icon_state = "solgov_wall";
+	name = "foreman's locker"
+	},
+/obj/item/clothing/suit/hazardvest/hardliners,
+/obj/item/storage/belt/utility/chief/full{
+	pixel_x = -2;
+	pixel_y = -5
+	},
+/obj/item/clothing/under/syndicate/hardliners/officer{
+	pixel_x = 6;
+	pixel_y = -1
+	},
+/obj/item/clothing/head/hardhat/hardliners{
+	pixel_x = 0;
+	pixel_y = 6
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -8;
+	pixel_x = -2
+	},
+/obj/item/radio/headset/syndicate/alt/captain/cybersun,
+/obj/item/clothing/suit/armor/hardliners/sergeant,
+/obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/captain)
 "Fh" = (
@@ -2410,6 +2475,12 @@
 /obj/effect/turf_decal/box/corners,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"GX" = (
+/obj/structure/marker_beacon{
+	picked_color = "Lime"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "Ha" = (
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 5
@@ -2569,6 +2640,11 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
+"II" = (
+/obj/structure/table,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/east,
+/turf/open/floor/carpet/nanoweave,
+/area/ship/crew/canteen)
 "IM" = (
 /obj/effect/turf_decal/siding/black{
 	dir = 4
@@ -2584,6 +2660,18 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"IQ" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/structure/sign/poster/contraband/eoehoma{
+	pixel_x = 1;
+	pixel_y = -29
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/storage/equip)
 "IU" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -3027,6 +3115,12 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"Om" = (
+/obj/structure/marker_beacon{
+	picked_color = "Burgundy"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "Oq" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm/dormtwo)
@@ -3065,7 +3159,8 @@
 	},
 /obj/machinery/door/airlock{
 	name = "Officer's Bunks";
-	dir = 4
+	dir = 4;
+	req_access_txt = "56"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3103,6 +3198,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/sign/poster/contraband/bulldog{
+	pixel_x = 0;
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "PP" = (
@@ -3297,6 +3396,33 @@
 	dir = 5
 	},
 /obj/structure/closet/wall/directional/west,
+/obj/item/clothing/under/syndicate/hardliners{
+	pixel_x = -9;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/syndicate/hardliners{
+	pixel_x = -9;
+	pixel_y = -2
+	},
+/obj/item/clothing/under/syndicate/hardliners{
+	pixel_x = -9;
+	pixel_y = -7
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 1;
+	pixel_y = 11
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 0;
+	pixel_y = 3
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = -1;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners,
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners,
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm/dormtwo)
 "So" = (
@@ -4188,7 +4314,7 @@ Ej
 iu
 tD
 rl
-Dl
+GX
 Nj
 rV
 uW
@@ -4199,7 +4325,7 @@ lB
 RI
 lB
 lB
-Dl
+Om
 LE
 lC
 Br
@@ -4397,7 +4523,7 @@ cR
 Vn
 "}
 (20,1,1) = {"
-Dl
+GX
 LM
 GN
 Lt
@@ -4424,7 +4550,7 @@ il
 KJ
 lQ
 SR
-Dl
+Om
 Vn
 "}
 (21,1,1) = {"
@@ -4467,7 +4593,7 @@ jt
 LM
 ig
 Ac
-Hf
+IQ
 rn
 fA
 bq
@@ -4506,7 +4632,7 @@ bJ
 RS
 nx
 Ai
-Uz
+II
 iq
 Ng
 fQ
