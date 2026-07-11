@@ -1296,7 +1296,7 @@
 	illustration = "sandbag"
 
 /obj/item/storage/box/emptysandbags/PopulateContents()
-	new /obj/item/stack/empty_sandbag/half(src)
+	new /obj/item/stack/empty_sandbags/half(src)
 
 /obj/item/storage/box/rndboards
 	name = "\proper the liberator's legacy"
