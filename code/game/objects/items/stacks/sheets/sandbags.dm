@@ -13,7 +13,7 @@
 
 GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	new/datum/stack_recipe("sandbag wall", /obj/structure/barricade/sandbags, 5, time = 25, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("empty sandbag", /obj/item/stack/empty_sandbag, 1, time = 15)
+	new/datum/stack_recipe("empty sandbag", /obj/item/stack/empty_sandbag, 1, time = 5)
 	))
 
 /obj/item/stack/sandbags/get_main_recipes()
@@ -25,7 +25,8 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	desc = "A bag to be filled with sand."
 	icon_state = "empty_sandbags"
 	singular_name = "empty sandbag"
-	full_w_class = WEIGHT_CLASS_SMALL
+	full_w_class = WEIGHT_CLASS_BULKY
+	max+_amount = 60
 
 /obj/item/stack/empty_sandbag/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/stack/ore/glass))
@@ -43,3 +44,9 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 				break
 	else
 		return ..()
+
+/obj/item/stack/empty_sandbag/half
+	amount = 30
+
+/obj/item/stack/empty_sandbag/full
+	amount = 60

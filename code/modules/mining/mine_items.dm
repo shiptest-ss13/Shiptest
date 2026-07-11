@@ -48,7 +48,7 @@
 
 /obj/structure/closet/secure_closet/miner/PopulateContents()
 	..()
-	new /obj/item/stack/sandbags(src, 5)
+	new /obj/item/stack/empty_sandbag(src, 15)
 	new /obj/item/storage/box/emptysandbags(src)
 	new /obj/item/shovel(src)
 	new /obj/item/pickaxe/mini(src)
