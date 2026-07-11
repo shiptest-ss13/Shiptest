@@ -266,7 +266,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	wear_minor_threshold = 240
 	wear_major_threshold = 720
 	wear_maximum = 1200
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
 NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
