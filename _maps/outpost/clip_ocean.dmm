@@ -204,7 +204,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "aH" = (
 /obj/structure/chair/pew{
 	dir = 8
@@ -479,7 +479,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "bv" = (
 /obj/effect/turf_decal/trimline/transparent/blue/corner{
 	dir = 8
@@ -719,7 +719,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "ci" = (
 /obj/structure/chair/comfy/grey/directional/west,
 /obj/effect/turf_decal/corner/transparent/blue/border{
@@ -740,6 +740,9 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/cargo/smeltery)
+"co" = (
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/outpost/hallway/aft)
 "cp" = (
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030;
@@ -797,7 +800,7 @@
 /area/outpost/exterior/ocean)
 "cv" = (
 /turf/open/floor/plasteel/tech,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "cw" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1013,7 +1016,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "cQ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1045,7 +1048,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "cT" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/machinery/light/directional/south,
@@ -1080,7 +1083,7 @@
 "cY" = (
 /obj/structure/platform/industrial_alt/indestructible,
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "da" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -1201,7 +1204,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "dz" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
@@ -1227,7 +1230,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "dI" = (
 /obj/machinery/light/directional/north,
 /turf/open/floor/ship/dirt/dark,
@@ -1247,7 +1250,7 @@
 	},
 /obj/effect/decal/fakelattice,
 /turf/open/floor/hangar/clipoutpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "dS" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/wood/walnut,
@@ -1346,7 +1349,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "el" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/suns/hatch/maple,
@@ -1366,7 +1369,7 @@
 /area/outpost/crew/lounge)
 "eo" = (
 /turf/open/floor/plating/asteroid/waterplanet,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "ep" = (
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
 	dir = 1;
@@ -1466,7 +1469,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "eH" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 1
@@ -1475,7 +1478,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "eL" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/soda_cans/lunapunch{
@@ -1777,7 +1780,7 @@
 "fD" = (
 /obj/structure/catwalk/over,
 /turf/open/floor/hangar/clipoutpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "fG" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -1817,7 +1820,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "fP" = (
 /obj/machinery/computer/apc_control{
 	icon_state = "computer-right";
@@ -1891,7 +1894,7 @@
 /area/outpost/hallway/starboard)
 "gb" = (
 /turf/open/floor/hangar/clipoutpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "ge" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/effect/decal/cleanable/dirt,
@@ -2134,7 +2137,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "gY" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/transparent/blue/line,
@@ -2222,7 +2225,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "hp" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -2384,7 +2387,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "hQ" = (
 /obj/structure/chair/pew/right,
 /turf/open/floor/suns/hatch/mahogany,
@@ -2531,6 +2534,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/crew/cryo)
+"io" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/hangar/clipoutpost,
+/area/outpost/hallway/aft)
 "ip" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -2561,7 +2568,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "ir" = (
 /obj/structure/chair/sofa/blue/corner/directional/south,
 /obj/effect/turf_decal/borderfloorblack/corner{
@@ -2586,7 +2593,7 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "ix" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2797,7 +2804,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "jm" = (
 /obj/structure/chair/pew/right{
 	dir = 8
@@ -2890,7 +2897,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "jG" = (
 /obj/effect/turf_decal/trimline/transparent/blue/warning{
 	dir = 4
@@ -2964,7 +2971,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "jW" = (
 /obj/structure/plaque{
 	pixel_y = 29;
@@ -2972,7 +2979,7 @@
 	desc = "A greeting to Captain Peck's wrecked vessel, with information explaining the Frontiersman menace, and the outposts first defense against them."
 	},
 /turf/open/floor/plasteel/tech,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "jX" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -2995,7 +3002,7 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "ka" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 4
@@ -3017,7 +3024,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "kd" = (
 /obj/structure/chair{
 	dir = 1
@@ -3039,7 +3046,7 @@
 	dir = 8
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "kf" = (
 /obj/machinery/holopad{
 	pixel_y = 7;
@@ -3129,7 +3136,7 @@
 "ko" = (
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/tech,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "kp" = (
 /obj/structure/chair/sofa/blue/corpo/directional/south,
 /obj/effect/decal/cleanable/dirt,
@@ -3428,6 +3435,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/cargo/smeltery)
+"lx" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/hangar/clipoutpost,
+/area/outpost/hallway/fore)
 "lz" = (
 /obj/structure/closet/secure_closet{
 	icon_door = "ce";
@@ -3508,7 +3519,7 @@
 	},
 /obj/structure/platform/industrial_alt/corner/indestructible,
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "lK" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/transparent/orange/warning,
@@ -3563,7 +3574,7 @@
 /turf/open/floor/plating/asteroid/waterplanet{
 	color = "#999999"
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "lW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/stairs/left,
@@ -3698,7 +3709,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "mw" = (
 /obj/structure/chair/bench/beige,
 /obj/effect/turf_decal/techfloor{
@@ -3892,7 +3903,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "mY" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -4096,7 +4107,7 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "nu" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -4155,7 +4166,7 @@
 	dir = 9
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "nH" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -4295,7 +4306,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "ob" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -4368,7 +4379,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "ou" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -4482,7 +4493,7 @@
 	color = "#999999"
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "oM" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /obj/structure/railing/thin/corner{
@@ -4705,7 +4716,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "po" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	dir = 1
@@ -4716,14 +4727,14 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "pq" = (
 /obj/structure/railing{
 	dir = 4;
 	layer = 4.1
 	},
 /turf/open/floor/plasteel/tech,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "ps" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 1
@@ -4821,7 +4832,7 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "pI" = (
 /obj/machinery/computer/processing_unit_console/directional/south{
 	machinedir = 8
@@ -4920,7 +4931,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "qb" = (
 /obj/effect/turf_decal/siding/wood/corner/maple{
 	dir = 4
@@ -4948,7 +4959,7 @@
 	},
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "qh" = (
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/structure/rack,
@@ -5058,7 +5069,7 @@
 	dir = 8
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "qx" = (
 /obj/effect/turf_decal/industrial/traffic,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -5083,7 +5094,7 @@
 /turf/open/floor/plating{
 	color = "#999999"
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "qA" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/sign/poster/contraband/have_a_puff{
@@ -5095,7 +5106,7 @@
 "qC" = (
 /obj/structure/platform/industrial_alt/corner/indestructible,
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "qG" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -5112,7 +5123,7 @@
 	layer = 2
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "qL" = (
 /obj/structure/chair/bench/blue/directional/east,
 /turf/open/floor/carpet/blue,
@@ -5134,7 +5145,7 @@
 	dir = 8
 	},
 /turf/open/floor/hangar/clipoutpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "qR" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -5162,7 +5173,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "qY" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 4
@@ -5181,7 +5192,7 @@
 	shaft = "2"
 	},
 /turf/open/floor/plasteel/tech,
-/area/outpost/exterior/ocean)
+/area/outpost/hallway/fore)
 "rb" = (
 /obj/effect/turf_decal/trimline/transparent/blue/warning,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -5198,7 +5209,7 @@
 "re" = (
 /obj/structure/spacevine/weak,
 /turf/open/floor/plating/asteroid/waterplanet,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "rg" = (
 /obj/structure/window/reinforced/fulltile/indestructible,
 /turf/open/floor/plasteel/tech/grid,
@@ -5220,7 +5231,7 @@
 /area/outpost/operations)
 "rj" = (
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "rl" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 4
@@ -5309,7 +5320,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "ry" = (
 /obj/structure/railing/thin{
 	dir = 8
@@ -5476,7 +5487,7 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "rN" = (
 /obj/structure/chair/pew,
 /obj/machinery/light/dim/directional/north,
@@ -5732,7 +5743,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "sS" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/cable{
@@ -5811,7 +5822,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "to" = (
 /obj/machinery/atmospherics/components/binary/volume_pump{
 	dir = 8
@@ -5965,7 +5976,7 @@
 	shaft = "1"
 	},
 /turf/open/floor/plasteel/tech,
-/area/outpost/exterior/ocean)
+/area/outpost/hallway/aft)
 "ul" = (
 /obj/machinery/light/floor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -6118,7 +6129,7 @@
 /turf/open/floor/plating/asteroid/waterplanet{
 	color = "#999999"
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "uw" = (
 /obj/machinery/door/airlock/outpost{
 	dir = 4;
@@ -6144,7 +6155,7 @@
 "uz" = (
 /obj/structure/railing,
 /turf/open/floor/plasteel/tech,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "uB" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -6315,7 +6326,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "ve" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8;
@@ -6374,7 +6385,7 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "vk" = (
 /obj/structure/railing/thin,
 /turf/open/floor/engine/hull/interior,
@@ -6389,7 +6400,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "vm" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -6427,7 +6438,7 @@
 	},
 /obj/structure/platform/industrial_alt/indestructible,
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "vt" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/security/inteq,
@@ -6730,7 +6741,7 @@
 /area/outpost/exterior/ocean)
 "wt" = (
 /turf/closed/mineral/random/waterplanet,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "wu" = (
 /obj/structure/table/reinforced,
 /obj/item/weldingtool/mini{
@@ -6860,7 +6871,7 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "wM" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
@@ -6888,7 +6899,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "wP" = (
 /obj/effect/turf_decal/techfloor/corner,
 /obj/effect/turf_decal/steeldecal/steel_decals9,
@@ -7022,14 +7033,14 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "xj" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/decal/fakelattice,
 /turf/open/floor/hangar/clipoutpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "xl" = (
 /obj/effect/turf_decal/trimline/transparent/blue/warning{
 	dir = 8
@@ -7360,7 +7371,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "yg" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -7403,7 +7414,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "yn" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -7629,7 +7640,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "zb" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 8
@@ -7643,7 +7654,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "zd" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -7674,7 +7685,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "zj" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
@@ -7751,7 +7762,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "zv" = (
 /obj/structure/window/reinforced/fulltile/indestructible,
 /obj/machinery/door/poddoor/shutters/indestructible/preopen{
@@ -7777,7 +7788,7 @@
 	dir = 8
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "zz" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -8043,7 +8054,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Az" = (
 /obj/machinery/mineral/processing_unit{
 	pixel_y = 2;
@@ -8247,7 +8258,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk/over,
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Bi" = (
 /obj/structure/railing{
 	dir = 1
@@ -8469,7 +8480,7 @@
 /turf/open/floor/plating{
 	color = "#999999"
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Cd" = (
 /obj/effect/turf_decal/trimline/transparent/blue/corner{
 	dir = 4
@@ -8531,7 +8542,7 @@
 	layer = 3.1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Co" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/engineering)
@@ -8752,14 +8763,14 @@
 	dir = 6
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "CW" = (
 /obj/structure/platform/industrial_alt/indestructible,
 /turf/open/floor/hangar/clipoutpost{
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "CX" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 6
@@ -8983,7 +8994,7 @@
 	dir = 6
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "DB" = (
 /obj/structure/guncloset,
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq,
@@ -9075,7 +9086,7 @@
 	shaft = "2"
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/outpost/exterior/ocean)
+/area/outpost/hallway/fore)
 "DM" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
@@ -9104,7 +9115,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "DO" = (
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030;
@@ -9211,7 +9222,7 @@
 /area/outpost/crew/library)
 "Ec" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
-/area/outpost/exterior/ocean)
+/area/outpost/hallway/fore)
 "Ed" = (
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
@@ -9281,7 +9292,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "En" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -9327,7 +9338,7 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/poddoor/ert,
 /turf/open/floor/plasteel/tech,
-/area/outpost/exterior/ocean)
+/area/outpost/hallway/aft)
 "Es" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 1
@@ -9337,7 +9348,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Et" = (
 /obj/structure/platform/ship_four{
 	dir = 8
@@ -9553,7 +9564,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "ET" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/structure/table/chem,
@@ -9614,7 +9625,7 @@
 	dir = 5
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Fc" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -9700,7 +9711,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Fn" = (
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/starboard)
@@ -9729,7 +9740,7 @@
 /turf/open/floor/plating{
 	color = "#999999"
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Fs" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -9823,7 +9834,7 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "FF" = (
 /obj/machinery/light/floor,
 /obj/effect/landmark/observer_start,
@@ -9975,7 +9986,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Gi" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -10024,7 +10035,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Gs" = (
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030;
@@ -10130,7 +10141,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "GH" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -10290,7 +10301,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Hk" = (
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 4
@@ -10317,13 +10328,13 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Ht" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 10
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Hu" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	color = "#999999";
@@ -10331,7 +10342,7 @@
 	dir = 10
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Hv" = (
 /obj/machinery/cryopod{
 	dir = 8
@@ -10815,7 +10826,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "IT" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
@@ -10837,7 +10848,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "IV" = (
 /obj/effect/turf_decal/trimline/transparent/green/filled/warning{
 	dir = 1
@@ -11047,7 +11058,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Jv" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 5
@@ -11082,7 +11093,7 @@
 	dir = 9
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "JD" = (
 /turf/open/floor/carpet/blue,
 /area/outpost/vacant_rooms)
@@ -11204,7 +11215,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Kb" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1;
@@ -11218,7 +11229,7 @@
 	},
 /obj/structure/platform/industrial_alt/indestructible,
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Kd" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/arrow_cw{
 	dir = 10
@@ -11255,7 +11266,7 @@
 /obj/structure/catwalk/over,
 /obj/structure/platform/industrial_alt/indestructible,
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Ki" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -11573,7 +11584,7 @@
 	dir = 8
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Lp" = (
 /obj/effect/turf_decal/trimline/transparent/orange/corner{
 	dir = 8
@@ -11741,7 +11752,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "LP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -11760,7 +11771,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "LT" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 8
@@ -11790,7 +11801,7 @@
 	dir = 8
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "LW" = (
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -11960,7 +11971,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "MB" = (
 /obj/structure/closet/secure_closet{
 	anchored = 1;
@@ -12123,7 +12134,7 @@
 	layer = 2
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Nb" = (
 /obj/structure/chair/bench/beige/directional/east{
 	dir = 2
@@ -12225,7 +12236,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Nu" = (
 /obj/effect/turf_decal/trimline/transparent/blue/warning{
 	dir = 8
@@ -12278,7 +12289,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "NF" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 8
@@ -12351,7 +12362,7 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "NO" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -12397,7 +12408,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "NW" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -12488,6 +12499,12 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms/shop)
+"Oh" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/outpost/hallway/aft)
 "Oi" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output{
 	dir = 1;
@@ -12612,7 +12629,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "ON" = (
 /obj/structure/table,
 /obj/machinery/light/directional/north,
@@ -12640,7 +12657,7 @@
 	shaft = "1"
 	},
 /turf/open/floor/plasteel/elevatorshaft,
-/area/outpost/exterior/ocean)
+/area/outpost/hallway/aft)
 "OR" = (
 /obj/machinery/door/poddoor/ert{
 	id = "inteqERT1"
@@ -12721,7 +12738,7 @@
 "Pa" = (
 /obj/structure/railing/corner,
 /turf/open/floor/plasteel/tech,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Pb" = (
 /obj/machinery/door/airlock/outpost{
 	dir = 4;
@@ -12783,7 +12800,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Po" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -12896,7 +12913,7 @@
 	shaft = "2"
 	},
 /turf/open/floor/plasteel/elevatorshaft,
-/area/outpost/exterior/ocean)
+/area/outpost/hallway/fore)
 "PQ" = (
 /obj/effect/turf_decal/trimline/transparent/orange/warning{
 	dir = 6
@@ -13046,7 +13063,7 @@
 	layer = 3.1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Qn" = (
 /obj/machinery/door/airlock/outpost{
 	dir = 4;
@@ -13202,7 +13219,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "QL" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -13429,7 +13446,7 @@
 /turf/open/floor/plating{
 	color = "#999999"
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Rw" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 5
@@ -13770,7 +13787,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Sx" = (
 /obj/effect/turf_decal/trimline/transparent/blue/warning{
 	dir = 1
@@ -14314,7 +14331,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Uo" = (
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
@@ -14404,7 +14421,7 @@
 	},
 /obj/structure/platform/industrial_alt/corner/indestructible,
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "UC" = (
 /obj/effect/turf_decal/corner/transparent/inteqbrown/half{
 	dir = 1
@@ -14459,7 +14476,7 @@
 	shaft = "1"
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/outpost/exterior/ocean)
+/area/outpost/hallway/aft)
 "UL" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -14525,7 +14542,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "UT" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8;
@@ -14569,7 +14586,7 @@
 	},
 /obj/machinery/door/poddoor/ert,
 /turf/open/floor/plasteel/tech,
-/area/outpost/exterior/ocean)
+/area/outpost/hallway/fore)
 "UZ" = (
 /obj/effect/turf_decal/trimline/transparent/orange/warning{
 	dir = 1
@@ -14598,7 +14615,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Vc" = (
 /obj/effect/turf_decal/trimline/transparent/blue/warning{
 	dir = 8
@@ -14930,7 +14947,7 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Wr" = (
 /obj/effect/turf_decal/trimline/transparent/blue/warning,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -15042,7 +15059,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "WG" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 1
@@ -15124,7 +15141,7 @@
 /turf/open/floor/plating{
 	color = "#999999"
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "WU" = (
 /obj/effect/landmark/ert_outpost_spawn,
 /obj/structure/chair{
@@ -15305,6 +15322,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/office)
+"Xo" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/outpost/hallway/fore)
 "Xq" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	color = "#999999";
@@ -15313,11 +15336,11 @@
 	},
 /obj/structure/platform/industrial_alt/corner/indestructible,
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Xr" = (
 /obj/structure/catwalk/over,
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Xs" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/syndi/inteq,
@@ -15424,7 +15447,7 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "XJ" = (
 /obj/effect/turf_decal/trimline/transparent/green/filled/warning{
 	dir = 1
@@ -15446,7 +15469,7 @@
 /area/outpost/vacant_rooms/shop)
 "XL" = (
 /turf/open/floor/plasteel/elevatorshaft,
-/area/outpost/exterior/ocean)
+/area/outpost/hallway/fore)
 "XM" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	color = "#999999";
@@ -15457,7 +15480,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "XO" = (
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030;
@@ -15557,7 +15580,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "XY" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -15615,10 +15638,13 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Yc" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/hallway/starboard)
+"Yf" = (
+/turf/open/floor/plasteel/elevatorshaft,
+/area/outpost/hallway/aft)
 "Yg" = (
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -15665,7 +15691,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Yo" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -15956,7 +15982,7 @@
 	dir = 5
 	},
 /turf/open/water/beach/deep/outpost,
-/area/outpost/external)
+/area/outpost/external/ocean)
 "Zn" = (
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/canteen)
@@ -16170,7 +16196,7 @@
 	},
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
-/area/outpost/external)
+/area/outpost/external/ocean)
 
 (1,1,1) = {"
 rj
@@ -21754,13 +21780,13 @@ wJ
 wJ
 wJ
 Dy
-Ec
-Ec
-Ec
-Ec
-Ec
-Ec
-Ec
+co
+co
+co
+co
+co
+co
+co
 zk
 ce
 ce
@@ -21878,13 +21904,13 @@ qg
 qg
 qg
 Er
-XL
-XL
-XL
-XL
+Yf
+Yf
+Yf
+Yf
 OQ
-Ec
-Ec
+co
+co
 Wp
 WJ
 Wp
@@ -22001,11 +22027,11 @@ Xr
 Xr
 Xr
 Er
-XL
-XL
-XL
-XL
-XL
+Yf
+Yf
+Yf
+Yf
+Yf
 ui
 UJ
 Jc
@@ -22124,13 +22150,13 @@ rj
 rj
 rj
 Er
-XL
-XL
-XL
-XL
-XL
+Yf
+Yf
+Yf
+Yf
+Yf
 ui
-qf
+io
 qf
 Tn
 qf
@@ -22159,7 +22185,7 @@ qf
 Tn
 qf
 qf
-qf
+lx
 ra
 XL
 XL
@@ -22247,13 +22273,13 @@ Xr
 Xr
 Xr
 Er
-XL
-XL
-XL
-XL
-XL
+Yf
+Yf
+Yf
+Yf
+Yf
 ui
-BG
+Oh
 kU
 BG
 BG
@@ -22282,7 +22308,7 @@ BG
 BG
 BG
 wq
-BG
+Xo
 ra
 XL
 XL
@@ -22370,13 +22396,13 @@ ZZ
 ZZ
 ZZ
 Er
-XL
-XL
-XL
-XL
-XL
-Ec
-Ec
+Yf
+Yf
+Yf
+Yf
+Yf
+co
+co
 wo
 vh
 Lf
@@ -22492,13 +22518,13 @@ Lo
 Lo
 Lo
 Ht
-Ec
-Ec
-Ec
-Ec
-Ec
-Ec
-Ec
+co
+co
+co
+co
+co
+co
+co
 bF
 NZ
 NZ
