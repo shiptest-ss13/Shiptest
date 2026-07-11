@@ -23,26 +23,30 @@
 	"token_icon_state": "ship_generic",
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/syndicate/captain/ngr",
+			"outfit": "/datum/outfit/job/syndicate/captain/ngr/stripped",
 			"officer": true,
 			"slots": 1
 		},
 		"Foreman": {
-			"outfit": "/datum/outfit/job/syndicate/ce/ngr",
+			"outfit": "/datum/outfit/job/syndicate/ce/ngr/stripped",
 			"officer": true,
 			"slots": 1
 		},
 		"Mechanic": {
-			"outfit": "/datum/outfit/job/syndicate/engineer/ngr",
+			"outfit": "/datum/outfit/job/syndicate/engineer/ngr/stripped",
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/syndicate/paramedic/ngr/stripped",
 			"slots": 1
 		},
 		"Wrecker": {
-			"outfit": "/datum/outfit/job/syndicate/miner/ngr",
+			"outfit": "/datum/outfit/job/syndicate/miner/ngr/stripped",
 			"slots": 2
 		},
 		"Crewman": {
 			"outfit": "/datum/outfit/job/syndicate/assistant/ngr",
-			"slots": 2
+			"slots": 1
 		}
 	},
 	"enabled": true
