@@ -32,6 +32,9 @@
 
 	unsuitable_atmos_damage = 15
 	minbodytemp = 180
+
+	minimum_pressure = HAZARD_LOW_PRESSURE
+	maximum_pressure = HAZARD_HIGH_PRESSURE
 	status_flags = CANPUSH
 
 	footstep_type = FOOTSTEP_MOB_SHOE
