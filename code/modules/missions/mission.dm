@@ -44,6 +44,10 @@
 	/// The ship that accepted this mission. Passed in accept().
 	var/datum/overmap/ship/controlled/servant
 
+	//to-do post pr: refactor into bitfield & do planet bitfield defines so that get_valid_mission() can be optimized
+	/// A list of locations, the mission requires at least 1 to exist to be created.
+	var/list/required_locations = list()
+
 	/// Assoc list of atoms "bound" to this mission; each atom is associated with a 2-element list. The first
 	/// entry in that list is a bool that determines if the mission should fail when the atom qdeletes; the second
 	/// is a callback to be invoked upon the atom's qdeletion.
@@ -52,7 +56,7 @@
 
 	var/blackbox_prefix = ""
 
-/datum/mission/New(_outpost)
+/datum/mission/New(datum/overmap/outpost/_outpost)
 	source_outpost = _outpost
 	RegisterSignal(source_outpost, COMSIG_QDELETING, PROC_REF(on_vital_delete))
 

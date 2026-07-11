@@ -3,7 +3,7 @@
 	var/name = "planet"
 	///The description we show on examine
 	var/desc = "A planet."
-	///The ID tag this planet uses. Depreciated
+	///The ID tag this planet uses.
 	var/planet = null
 	///The ID  tag for the set of ruins this planet uses
 	var/ruin_type = null
@@ -19,8 +19,6 @@
 	var/icon_state = "globe"
 	///The color we set the token to, note this is overridden by fancy overmaps
 	var/color = "#ffffff"
-	///Our weight when picking a new overmap object
-	var/weight = 40
 	///Do we not self destruct when a ship undocks with no players left behind?
 	var/preserve_level = FALSE
 	///The sound we play when we are landed on. Not recommended outside of stingers.
@@ -38,6 +36,8 @@
 	var/light_power = 0
 	///This planet's light color per turf.
 	var/light_color = COLOR_WHITE
+	///what kind of veins spawn on this planet? Mostly a holder for drill missions.
+	var/vein_type = null
 
 
 /datum/planet_type/lava
@@ -55,6 +55,7 @@
 	light_color = COLOR_LAVAPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
+	vein_type = /obj/structure/vein/lavaland
 
 	primary_ores = list(
 		/obj/item/stack/ore/iron,
@@ -77,6 +78,7 @@
 	light_color = COLOR_ICEPLANET_LIGHT
 	light_range = 2
 	light_power = 1
+	vein_type = /obj/structure/vein/ice
 
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
@@ -98,6 +100,7 @@
 	light_range = 2
 	light_power = 1
 	light_color = COLOR_VERY_LIGHT_GRAY
+	vein_type = /obj/structure/vein/jungle
 
 	primary_ores = list(\
 		/obj/item/stack/ore/gold,
@@ -119,6 +122,7 @@
 	light_color = COLOR_ROCKPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
+	vein_type = /obj/structure/vein/rockplanet
 
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
@@ -139,6 +143,7 @@
 	light_color = COLOR_SANDPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
+	vein_type = /obj/structure/vein/sand
 
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
@@ -177,7 +182,6 @@
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/chasm/reebe_void
 	weather_controller_type = null
-	weight = 0
 	ruin_type = RUINTYPE_YELLOW
 	interference_power = 20
 
@@ -198,7 +202,6 @@
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
 	ruin_type = null // asteroid ruins when
-	weight = 0
 #ifndef RUIN_PLACEMENT_TEST
 	selfloop = TRUE
 #endif
@@ -229,7 +232,6 @@
 	planet = DYNAMIC_WORLD_SPACE_NO_RUIN
 	icon_state = "signal_strange"
 	color = null
-	weight = 0
 	mapgen = /datum/map_generator/single_turf/space
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
@@ -272,7 +274,6 @@
 	default_baseturf = /turf/open/chasm/gas_giant
 	weather_controller_type = null
 	ruin_type = null //it's a Gas Giant. Not Cloud fuckin City
-	weight = 0
 	preserve_level = TRUE
 	interference_power = 10
 
@@ -288,7 +289,6 @@
 	mapgen = /datum/map_generator/single_biome/plasma_giant
 	gravity = GAS_GIANT_GRAVITY
 	default_baseturf = /turf/open/chasm/gas_giant/plasma
-	weight = 0
 	icon_state = "giant"
 	preserve_level = TRUE
 	interference_power = 10
@@ -303,7 +303,6 @@
 	planet = DYNAMIC_WORLD_WATERPLANET
 	icon_state = "water"
 	color = LIGHT_COLOR_DARK_BLUE
-	weight = 0
 
 	//ruin_type = RUINTYPE_WATER
 	mapgen = /datum/map_generator/planet_generator/waterplanet
@@ -326,8 +325,6 @@
 	planet = DYNAMIC_WORLD_DESERT
 	icon_state = "desert"
 	color = "#f3c282"
-	weight = 0
-
 	//ruin_type = RUINTYPE_DESERT
 	mapgen = /datum/map_generator/planet_generator/desert
 	gravity = STANDARD_GRAVITY
@@ -347,7 +344,6 @@
 	planet = DYNAMIC_WORLD_SHROUDED
 	icon_state = "shrouded"
 	color = "#783ca4"
-	weight = 0
 
 	//ruin_type = RUINTYPE_SHROUDED
 	mapgen = /datum/map_generator/planet_generator/shrouded
@@ -368,7 +364,6 @@
 	planet = DYNAMIC_WORLD_MOON
 	icon_state = "moon"
 	color = "#d1c3c3"
-	weight = 20
 	interference_power = -5
 
 	mapgen = /datum/map_generator/planet_generator/moon
@@ -380,6 +375,7 @@
 	light_range = 2
 	light_power = 1
 	light_color = "#FFFFFF" // should look liminal, due to moons lighting
+	vein_type = /obj/structure/vein/moon
 
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
@@ -392,7 +388,6 @@
 	planet = DYNAMIC_WORLD_BATTLEFIELD
 	icon_state = "battlefield"
 	color = "#b32048"
-	weight = 0
 
 	ruin_type = RUINTYPE_BATTLEFIELD // minor 'planets' have no ruins
 	mapgen = /datum/map_generator/planet_generator/battlefield
@@ -417,7 +412,6 @@
 	default_baseturf = /turf/open/floor/white/lit
 	weather_controller_type = null
 	ruin_type = null
-	weight = 0
 
 /turf/open/floor/white/lit
 	light_range = 2
@@ -440,7 +434,6 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/snow/lit
 	weather_controller_type = /datum/weather_controller/snow_planet/severe
 	ruin_type = null
-	weight = 1
 
 	light_color = "#67769e"
 	light_range = 2
@@ -460,7 +453,6 @@
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/whitesands
 	weather_controller_type = /datum/weather_controller/rockplanet/severe
-	weight = 1
 
 	light_color = "#bf9b9b"
 	light_range = 2
@@ -481,7 +473,6 @@
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/desert
 	weather_controller_type = /datum/weather_controller/rockplanet/severe
-	weight = 1
 
 	light_color = "#be956b"
 	light_range = 2
@@ -501,7 +492,6 @@
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/desert
 	weather_controller_type = /datum/weather_controller/waterplanet/severe
-	weight = 1
 
 	light_color = "#09121a"
 	light_range = 2
