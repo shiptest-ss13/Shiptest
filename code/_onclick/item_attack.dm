@@ -357,9 +357,9 @@
 	return 1
 
 /**
-  * Does a swing depending on the object's swing_type var.
-  * user - The mob swinging the object
-  */
+	* Does a swing depending on the object's swing_type var.
+	* user - The mob swinging the object
+	*/
 /obj/item/proc/swing_attack(mob/living/user, atom/thing_to_not_hit)
 	if(!COOLDOWN_FINISHED(user, swing_cooldown))
 		return
