@@ -2165,11 +2165,11 @@
 	},
 /obj/item/ammo_box/magazine/m12g_bulldog{
 	pixel_y = -4;
-	pixel_x = -8
+	pixel_x = -5
 	},
 /obj/item/ammo_box/magazine/m12g_bulldog{
 	pixel_y = -4;
-	pixel_x = -8
+	pixel_x = -2
 	},
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_y = 23
@@ -3683,11 +3683,11 @@
 	pixel_y = -2
 	},
 /obj/item/ammo_box/magazine/co9mm{
-	pixel_x = -6;
+	pixel_x = -2;
 	pixel_y = -2
 	},
 /obj/item/ammo_box/magazine/co9mm{
-	pixel_x = -6;
+	pixel_x = 2;
 	pixel_y = -2
 	},
 /obj/machinery/airalarm/directional/east,
@@ -5280,23 +5280,24 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
 	},
-/obj/item/gun/ballistic/automatic/pistol/rattlesnake/inteq/no_mag{
-	pixel_y = 3
-	},
-/obj/item/ammo_box/magazine/m9mm_rattlesnake{
-	pixel_y = -2;
-	pixel_x = -9
-	},
-/obj/item/ammo_box/magazine/m9mm_rattlesnake{
-	pixel_y = -2;
-	pixel_x = -9
-	},
-/obj/item/ammo_box/magazine/m9mm_rattlesnake{
-	pixel_y = -2;
-	pixel_x = -9
-	},
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/no_mag{
+	pixel_x = -7;
+	pixel_y = 4
+	},
+/obj/item/ammo_box/magazine/smgm10mm{
+	pixel_x = 4;
+	pixel_y = -3
+	},
+/obj/item/ammo_box/magazine/smgm10mm{
+	pixel_x = 0;
+	pixel_y = -3
+	},
+/obj/item/ammo_box/magazine/smgm10mm{
+	pixel_x = -4;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "TC" = (
@@ -5767,7 +5768,6 @@
 /obj/item/storage/toolbox/ammo/shotgun{
 	pixel_y = 7
 	},
-/obj/item/storage/toolbox/ammo/c9mm,
 /obj/machinery/button/door{
 	pixel_y = 21;
 	name = "Cargo Window Shutters";
@@ -5776,13 +5776,25 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
+/obj/item/storage/toolbox/ammo/c10mm{
+	pixel_x = 0;
+	pixel_y = 3
+	},
 /obj/item/storage/box/ammo/c46x30mm{
 	pixel_x = 4;
-	pixel_y = -2
+	pixel_y = 3
 	},
 /obj/item/storage/box/ammo/c46x30mm{
 	pixel_x = 6;
-	pixel_y = -2
+	pixel_y = 3
+	},
+/obj/item/storage/box/ammo/c10mm{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/storage/box/ammo/c10mm{
+	pixel_x = 6;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
