@@ -329,5 +329,6 @@
 		/turf/open/floor/plating/asteroid/icerock/smooth = 1
 	)
 
-/datum/map_generator/planet_generator/snow/postgen_check_turf()
-	return //REMINDER TO DO THIS MELT SNOW AROUND LAVA
+//TODO: REMINDER TO DO THIS MELT SNOW AROUND LAVA
+///datum/map_generator/planet_generator/snow/postgen_check_turf()
+//	return
