@@ -343,7 +343,7 @@
 			return TRUE
 		if(item_type == "bottle")
 			var/obj/item/reagent_containers/glass/bottle/P = new /obj/item/reagent_containers/glass/bottle(src)
-			if(!check_for_material(P))
+			if(!check_for_material(P, amount))
 				qdel(P)
 				return FALSE
 			for(var/i = 0; i < amount; i++)
@@ -354,7 +354,7 @@
 			return TRUE
 		if(item_type == "condimentPack")
 			var/obj/item/reagent_containers/condiment/pack/P = new /obj/item/reagent_containers/condiment/pack(src)
-			if(!check_for_material(P), amount)
+			if(!check_for_material(P, amount))
 				return FALSE
 			for(var/i = 0; i < amount; i++)
 				P.forceMove(drop_location())
