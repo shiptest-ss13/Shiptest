@@ -509,3 +509,16 @@
 	//fixed? return to service after
 	port_to_fix.is_adjusting_now = FALSE
 	return TRUE
+
+/datum/overmap/outpost/update_planet_lighting(target_range, target_power, target_color)
+	if(!mapzone)
+		if(usr)
+			to_chat(usr, span_warning("Load the planet first with load_level!"), confidential = TRUE)
+		return
+	for(var/datum/virtual_level/found_level as anything in mapzone.virtual_levels)
+		var/list/lighting_traits = found_level.traits[ZTRAIT_PLANETARY_LIGHTING]
+		lighting_traits[ZTRAIT_LIGHT_COLOR] = target_color
+		lighting_traits[ZTRAIT_LIGHT_POWER] = target_power
+		lighting_traits[ZTRAIT_LIGHT_RANGE] = target_range
+		found_level.update_lighting_in_bounds()
+	return
