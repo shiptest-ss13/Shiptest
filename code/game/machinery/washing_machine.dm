@@ -129,7 +129,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 /obj/machinery/washing_machine
 	name = "washing machine"
-	desc = "A machine commonly used to clean clothing. There shouldn't be that many ways to misuse this, but you never know. A standard wash cycle takes about 12 minutes."
+	desc = "A machine commonly used to clean clothing. There shouldn't be that many ways to misuse this, but you never know. A standard wash cycle takes about 6 minutes."
 	icon = 'icons/obj/machines/laundry_machines.dmi'
 	base_icon_state = "washingmachine"
 	icon_state = "washingmachine"

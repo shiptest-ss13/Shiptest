@@ -211,7 +211,7 @@
 
 /obj/item/reagent_containers/glass/chem_jug/detergent
 	name = "Reladore jug"
-	desc = "A large jug containing large amounts of laundury detergent, useful for use in washing machines. The brand is called 'Reladore', based somewhere in South Teceti. The mascot is giving you a thumbs up wtih a speech bubble saying 'Use 30u for best results!'. Provided with an anti-tamper seal which ensures that the contents are pure."
+	desc = "A large jug containing large amounts of laundury detergent, useful for use in washing machines. The brand is called 'Reladore', based somewhere in South Teceti. The mascot is giving you a thumbs up with a speech bubble saying 'Use 30u for best results!'. Provided with an anti-tamper seal which ensures that the contents are pure."
 	icon_state = "chem_jug_detergent"
 
 	tamper_cap_icon_state = "chem_jug_detergent_cap"
