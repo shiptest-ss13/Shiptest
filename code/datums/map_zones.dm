@@ -698,14 +698,6 @@
 /turf/closed/indestructible/edge/is_transition_turf()
 	return TRUE
 
-/datum/virtual_level/vv_edit_var(var_name, var_value)
-	switch (var_name)
-		if (NAMEOF(src, traits))
-			if(!traits[ZTRAIT_PLANETARY_LIGHTING])
-				return ..()
-			update_lighting_in_bounds()
-	return ..()
-
 /datum/virtual_level/proc/update_lighting_in_bounds()
 	var/list/turf/block_turfs = get_block()
 	var/list/already_checked_areas = list()
