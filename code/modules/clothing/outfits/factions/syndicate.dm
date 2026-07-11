@@ -249,7 +249,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 
 /datum/outfit/job/syndicate/captain/gorlex/stripped
-	name = "Syndicate - Captain (Hardliner)"
+	name = "Syndicate - Captain - Stripped (Hardliner)"
 	uniform = /obj/item/clothing/under/syndicate/hardliners/officer
 	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
 
@@ -875,7 +875,7 @@
 	ears = /obj/item/radio/headset/alt
 
 /datum/outfit/job/syndicate/miner/gorlex/stripped
-	name = "Syndicate - Wrecker (Hardliner)"
+	name = "Syndicate - Wrecker - Stripped (Hardliner)"
 	id_assignment = "Wrecker"
 
 	head = null
@@ -971,7 +971,7 @@
 	glasses = null
 
 /datum/outfit/job/syndicate/engineer/gorlex/stripped
-	name = "Syndicate - Mechanic (Hardliner)"
+	name = "Syndicate - Mechanic - Stripped (Hardliner)"
 	id_assignment = "Mechanic"
 
 	head = null

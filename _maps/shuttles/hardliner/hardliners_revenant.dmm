@@ -2798,11 +2798,16 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm/captain)
 "JD" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 8
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
 	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
+/obj/machinery/computer/processing_unit_console/directional/east{
+	pixel_x = 17;
+	pixel_y = -32;
+	dist = 2
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "JJ" = (
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 9
@@ -3338,16 +3343,11 @@
 	},
 /area/ship/bridge)
 "QR" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	dir = 8
 	},
-/obj/machinery/computer/processing_unit_console/directional/east{
-	pixel_x = 17;
-	pixel_y = -32;
-	dist = 2
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "QV" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/power/smes/engineering,
@@ -3627,6 +3627,14 @@
 "Uh" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/directional/west,
+/obj/item/clipboard{
+	pixel_x = 8;
+	pixel_y = 5
+	},
+/obj/item/hand_labeler{
+	pixel_y = 1;
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Ut" = (
@@ -3946,6 +3954,15 @@
 /area/ship/bridge)
 "YO" = (
 /obj/structure/table/reinforced,
+/obj/item/stack/sheet/metal/twenty{
+	pixel_x = -3;
+	pixel_y = 2
+	},
+/obj/item/stack/sheet/glass/twenty{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/stack/sheet/plastic/five,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "YW" = (
@@ -4315,7 +4332,7 @@ PJ
 vq
 CE
 Jg
-QR
+JD
 Od
 If
 lB
@@ -4893,7 +4910,7 @@ Vn
 Vn
 LM
 Dl
-JD
+QR
 Dl
 LM
 Vn
