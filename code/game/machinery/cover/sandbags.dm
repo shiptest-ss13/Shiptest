@@ -37,6 +37,9 @@
 		playsound(src, 'sound/effects/sandbag_break.ogg', 50)
 		effective_bags--
 		bag_damage = 0
+		//make a bit of a mess. It's soulful.
+		new /obj/obj/effect/decal/cleanable/generic(get_step(src, (rand(1,8))))
+		new /obj/effect/decal/cleanable/dirt/dust(get_step(src, rand(1,8)))
 	if(effective_bags == 0)
 		deconstruct()
 
