@@ -3,7 +3,8 @@
 	desc = "A small device capable of administering short bursts of aerosolized chemicals. Requires a canister to function."
 	w_class = WEIGHT_CLASS_SMALL
 
-	icon = 'icons/obj/medical/chemical.dmi'
+	icon = 'icons/obj/chemical/inhaler.dmi'
+	//world_file = 'icons/obj/chemical/inhaler_world.dmi'
 	icon_state = "inhaler_generic"
 
 	custom_materials = list(/datum/material/plastic = 100)
@@ -15,8 +16,6 @@
 
 	/// The underlay of our canister, if one is installed.
 	var/mutable_appearance/canister_underlay
-	/// The y offset to be applied to [canister_underlay].
-	var/canister_underlay_y_offset = -2
 	/// If true, we will show a rotary display with how many puffs we can be used for until the canister runs out.
 	var/show_puffs_left = TRUE // this is how real inhalers work
 
@@ -40,8 +39,7 @@
 		underlays -= canister_underlay
 		canister_underlay = null
 	else if (isnull(canister_underlay))
-		canister_underlay = mutable_appearance(canister.icon, canister.icon_state)
-		canister_underlay.pixel_z = canister_underlay_y_offset
+		canister_underlay = mutable_appearance(canister.icon, "inhaler_[canister.icon_state]")
 		underlays += canister_underlay
 
 /obj/item/inhaler/examine(mob/user)
@@ -213,8 +211,9 @@
 	desc = "A small canister filled with aerosolized reagents for use in a inhaler."
 	w_class = WEIGHT_CLASS_TINY
 
-	icon = 'icons/obj/medical/chemical.dmi'
-	icon_state = "canister_generic"
+	icon = 'icons/obj/chemical/inhaler.dmi'
+	//world_file = 'icons/obj/chemical/inhaler.dmi'
+	icon_state = "can_canister"
 
 	reagent_flags = /*SEALED_CONTAINER|*/DRAINABLE|REFILLABLE
 	//has_variable_transfer_amount = FALSE
@@ -289,7 +288,7 @@
 	name = "salbutamol canister"
 	desc = "A small canister filled with aerosolized reagents for use in an inhaler. This one contains salbutamol, a potent bronchodilator that can stop \
 	asthma attacks in their tracks."
-	icon_state = "canister_medical"
+	icon_state = "can_blue"
 	custom_price = 100
 	list_reagents = list(/datum/reagent/medicine/salbutamol = 30)
 
@@ -306,7 +305,7 @@
 /obj/item/reagent_containers/inhaler_canister/sting
 	name = "sting canister"
 	desc = "A small canister filled with aerosolized reagents for use in an inhaler. This one contains Sting, and the mark of a Syeben'Altch guild."
-	icon_state = "canister_generic"
+	icon_state = "can_green"
 	list_reagents = list(/datum/reagent/drug/sting = 30)
 
 /obj/item/inhaler/cocktail
@@ -317,8 +316,19 @@
 /obj/item/reagent_containers/inhaler_canister/combat_drug
 	name = "shoalmix canister"
 	desc = "A small canister filled with aerosolized reagents for use in an inhaler. This one contains a blend of shoalmix and panacea. Hit it in a fight!"
-	icon_state = "canister_syndicate"
+	icon_state = "can_syndicate"
 	list_reagents = list(/datum/reagent/drug/combat_drug = 20, /datum/reagent/medicine/panacea = 10)
+
+/obj/item/inhaler/rahkrahene
+	name = "rahkrahene inhaler"
+	icon_state = "inhaler_generic"
+	initial_canister_path = /obj/item/reagent_containers/inhaler_canister/rahkrahene
+
+/obj/item/reagent_containers/inhaler_canister/rahkrahene
+	name = "rahkrahene canister"
+	desc = "A small canister filled with aerosolized reagents for use in a inhaler. This one contains rahkrahene, a speed-enhancing vapor."
+	icon_state = "can_yellow"
+	list_reagents = list(/datum/reagent/drug/rahkrahene = 30)
 
 /obj/item/inhaler/placebatol
 	name = "prescription inhaler"
@@ -328,5 +338,5 @@
 /obj/item/reagent_containers/inhaler_canister/placebatol
 	name = "presciption canister"
 	desc = "A small canister filled with aerosolized reagents for use in an inhaler. A small stamp on the side reads: \"TAKE ONLY AS DIRECTED\"."
-	icon_state = "canister_medical"
+	icon_state = "can_pink"
 	list_reagents = list(/datum/reagent/drug/placebatol = 30)

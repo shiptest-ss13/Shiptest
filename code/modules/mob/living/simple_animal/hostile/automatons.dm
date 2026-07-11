@@ -21,6 +21,7 @@
 	del_on_death = TRUE
 	faction = list(FACTION_HOSTILE)
 	loot = list(/obj/effect/decal/cleanable/robot_debris)
+	speech_span = SPAN_ROBOT
 
 /mob/living/simple_animal/hostile/automated/quadrotor
 	name = "Quadrotor drone"
@@ -80,6 +81,117 @@
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
 
+//rovers
+
+/mob/living/simple_animal/hostile/automated/rover
+	name = "Vigilitas \"Scenthound\" defense rover"
+	desc = "A scouting drone manufactured by Sharplite during the Inter-Corporate War. Commonly fielded in small forward groups ahead of Vigilitas teams, or placed in security checkpoints."
+	health = 100
+	maxHealth = 100
+	armor = list("melee" = 20, "bullet" = 30, "laser" = 30, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+	icon_state = "warratread"
+	projectilesound = 'sound/weapons/gun/smg/resolution.ogg'
+	casingtype = /obj/item/ammo_casing/c46x30mm
+	faction = list(ROLE_DEATHSQUAD)
+	rapid = 3
+	rapid_fire_delay = 3
+	retreat_distance = 2
+	minimum_distance = 3
+
+/mob/living/simple_animal/hostile/automated/rover/coalition
+	name = "\"Teemeres\" combat rover"
+	desc = "A boxy drone manufactured by Cybersun during the Inter-Corporate War. Stylized to be as basic and armored as possible to mesh with marauder forces, the Teemeres garnered a positive reputation for being a reliable diversion against enemy forces."
+	icon_state = "coalitiontread"
+	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
+	casingtype = /obj/item/ammo_casing/c57x39mm
+	faction = list(FACTION_HOSTILE)
+	retreat_distance = 3
+	minimum_distance = 3
+
+/mob/living/simple_animal/hostile/automated/rover/coalition/dmr
+	name = "\"Temere-Lito\" combat rover"
+	desc = "A boxy drone manufactured by Cybersun during the Inter-Corporate War. Stylized to be as basic and armored as possible to mesh with marauder forces, the Temere-Lito garnered a poor reputation for its tendency to misfire into advancing marauders."
+	icon_state = "coalitiontread_range"
+	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
+	casingtype = /obj/item/ammo_casing/a556_42
+	faction = list(FACTION_HOSTILE)
+	rapid = 2
+	rapid_fire_delay = 3
+	minimum_distance = 7
+	vision_range = 12
+	aggro_vision_range = 14
+
+/mob/living/simple_animal/hostile/automated/rover/ngr
+	name = "\"Teemeres\" defense rover"
+	desc = "A boxy drone manufactured by the New Gorlex Republic. Effectively the same as the original Teemeres rover, with modern NGR IFF. The modern Teemeres has found itself a new role as a checkpoint security drone for NGR facilities."
+	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
+	icon_state = "ngrtread"
+	casingtype = /obj/item/ammo_casing/c57x39mm
+	faction = list(FACTION_NGR)
+	retreat_distance = 3
+	minimum_distance = 3
+
+/mob/living/simple_animal/hostile/automated/rover/ngr/dmr
+	name = "\"Temere-Lito\" defense rover"
+	desc = "A boxy drone manufactured by the New Gorlex Republic. Effectively the same as the original Temere-Lito, albeit with improved IFF systems to help prevent friendly fire incidents. The modern Temere-Lito has found itself a new role as a scouting drone, occasionally fielded on planetary survey missions."
+	icon_state = "ngrtread_range"
+	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
+	casingtype = /obj/item/ammo_casing/a556_42
+	faction = list(FACTION_NGR)
+	rapid = 2
+	rapid_fire_delay = 3
+	minimum_distance = 7
+	vision_range = 12
+	aggro_vision_range = 14
+
+//agrav
+
+/mob/living/simple_animal/hostile/automated/agrav
+	name = "'Verefasa' Gravity Drone"
+	desc = "An advanced form of loitering munition designed by Cybersun as the ICW came to a close. A major portion of the bots have been repurposed as simple worker drones for Cybersun and its associates after the ICW, this just so happens to be one for your sake."
+	icon_state = "independent_agrav"
+	var/glow_color = COLOR_BLUE_LIGHT
+
+	health = 150
+	maxHealth = 150
+	armor = list("melee" = 10, "bullet" = 35, "laser" = 35, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+
+	attack_verb_continuous = "bonks"
+	attack_verb_simple = "bonk"
+	armour_penetration = 0
+	melee_damage_lower = 10
+	melee_damage_upper = 10
+
+	move_to_delay = 5
+	is_flying_animal = TRUE
+	ranged = FALSE
+	faction = list(FACTION_NEUTRAL)
+
+/mob/living/simple_animal/hostile/automated/agrav/Initialize(mob/living/source)
+	. = ..()
+	src.mob_light(2, 0.4, glow_color)
+
+/mob/living/simple_animal/hostile/automated/agrav/cybersun
+	name = "'Verefasa' Combat Munition"
+	desc = "An advanced form of loitering munition designed by Cybersun as the ICW came to a close; the Verefasa contains a barely-sentient combat AI for autonomous operations, a gravitic induction drive, and a microfusion heart. Often deployed en-masse to make reclaiming an area a pain, spacers tell horror stories of encountering hives of Verefasa active on salvage claims in deep space."
+	icon_state = "cybersun_agrav"
+	glow_color = LIGHT_COLOR_FLARE
+
+	attack_verb_continuous = "slashes"
+	attack_verb_simple = "slash"
+	attack_sound = 'sound/weapons/blade1.ogg'
+	armour_penetration = 60
+	melee_damage_lower = 35
+	melee_damage_upper = 35
+	melee_damage_type = BURN
+	rapid_melee = 2
+
+	on_aggro_say = list("Unregistered entity detected. Removing.", "You're not supposed to be here.", "Code 5-11-7. This area is under claim. Please leave immediately.")
+	aggro_say_chance = 70
+	faction = list(FACTION_HOSTILE)
+
+//bipedal
+
 /mob/living/simple_animal/hostile/automated/bipedal
 	name = "Bipedal Assault Platform"
 	desc = "A lumbering automaton garbed in Coalition colors, with an integrated shotgun attached in place of a left arm. Driven by basic threat detection software the barrel of its shotgun steadies itself in your direction."
@@ -123,3 +235,79 @@
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
+
+/mob/living/simple_animal/hostile/automated/walkmine
+	name = "G-80W Walkmine"
+	desc = "An unconventional modification of the traditional G-80P Bouncer. Famously dubbed, 'a proactive solution to unsavory intruders', use of the Walkmine was banned in most jurisdictions following the Inter-Corporate War."
+	icon = 'icons/obj/landmine.dmi'
+	icon_state = "mine_walker"
+	light_color = "#D74722"
+	del_on_death = FALSE
+	ranged_cooldown_time = 0
+	vision_range = 12
+	rapid_fire_delay = 0 SECONDS
+	wander = 0
+	health = 45
+	maxHealth = 45
+	move_to_delay = 2
+//Distance at which walkmine will be allowed to explode
+	var/explode_distance = 2
+//Delay after explosion is triggered
+	var/blast_delay = 15 DECISECONDS
+//Explosion ranges
+	var/mine_devastation = 0
+	var/mine_heavy = 1
+	var/mine_light = 3
+	var/mine_flame = 1 //this is funny but sort of evil
+//Shrapnel
+	var/shrapnel_magnitude = 1 //Amount of shrapnel. 0 = None.
+	var/shrapnel_type = /obj/projectile/bullet/shrapnel/walkmine //potential for evil
+//Used for manufacturer text.
+	var/examine_text = null
+
+/mob/living/simple_animal/hostile/automated/walkmine/examine(mob/user)
+	. = ..()
+	if(examine_text)
+		. += examine_text
+
+/mob/living/simple_animal/hostile/automated/walkmine/OpenFire(atom/victim)
+	if(get_dist(src,victim) > explode_distance)
+		return
+	if(blast_delay >= 5 DECISECONDS)
+		playsound(src, 'sound/items/mine_activate.ogg', 70, FALSE)
+	else
+		playsound(src, 'sound/items/mine_activate_short.ogg', 80, FALSE)
+	Stun(-1) //forever stun brownie
+	LoseTarget()
+	icon_state = "mine_walker_explode"
+	mob_light(3, 1, light_color)
+	if(!blast_delay)
+		death()
+	else
+		addtimer(CALLBACK(src, PROC_REF(death)), blast_delay)
+
+/mob/living/simple_animal/hostile/automated/walkmine/death()
+	. = ..()
+	visible_message(span_warning("[src] explodes!"))
+	explosion(get_turf(loc),mine_devastation,mine_heavy,mine_light,flame_range = mine_flame, adminlog = FALSE)
+	if(shrapnel_magnitude > 0)
+		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
+	SEND_SIGNAL(src, COMSIG_MOB_PELLETS)
+	qdel(src)
+
+/mob/living/simple_animal/hostile/automated/walkmine/Aggro()
+	mob_light(2, 0.25, light_color)
+
+/mob/living/simple_animal/hostile/automated/walkmine/makosso
+	faction = list("Deathsquad")
+	examine_text = span_notice("It has a <span class='boldnotice'>Makosso-Warra</span> logo printed on its outer plating.")
+
+/mob/living/simple_animal/hostile/automated/walkmine/cybersun
+	faction = list("hostile")
+	examine_text = span_notice(" It has a <span class='boldnotice'>Cybersun Virtual Solutions</span> logo printed on its outer plating.")
+
+/mob/living/simple_animal/hostile/automated/walkmine/frontiersman
+	faction = list("Frontiersmen")
+
+/mob/living/simple_animal/hostile/automated/walkmine/ramzi
+	faction = list("Ramzi Clique")

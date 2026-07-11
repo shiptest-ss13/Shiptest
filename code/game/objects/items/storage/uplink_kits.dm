@@ -123,7 +123,7 @@
 			new /obj/item/reagent_containers/glass/rag(src)
 
 		if("ninja")
-			new /obj/item/melee/sword/katana(src)
+			new /obj/item/melee/sword/podao(src)
 			new /obj/item/implanter/adrenalin(src) // 8 tc
 			for(var/i in 1 to 6)
 				new /obj/item/throwing_star(src) // ~5 tc for all 6

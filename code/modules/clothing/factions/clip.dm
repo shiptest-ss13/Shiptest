@@ -439,6 +439,7 @@
 	desc = "A cheap, but comfortable and light helmet painted in Minutemen colors, often seen in the hands of the reserves or Minutemen in the backline. Features a little attachment rail on the side where you can mount a flashlight."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 	icon_state = "clip_m10"
 	can_flashlight = TRUE
 	unique_reskin = list(
@@ -447,12 +448,13 @@
 		"Triple Column" = "clip_m10_triple"
 		)
 
+	supports_variations = VOX_VARIATION
+
 /obj/item/clothing/head/helmet/m10/clip_vc
 	name = "\improper Minutemen CM-12 Helmet"
 	desc = "A special, lightweight and padded helmet issued to Vehicle Crewmen of the Minutemen. Features noise-reducing technology and a microphone that automatically connects with worn headsets. Hopefully protects you from bumpy rides."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
-	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip_m10_vc"
 	unique_reskin = list(
@@ -461,8 +463,6 @@
 		"Spearhead" = "clip_m10_vc_spearhead"
 		)
 	can_flashlight = TRUE
-
-	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/m10/clip_vc/ComponentInitialize()
 	. = ..()
@@ -474,22 +474,23 @@
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
-	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip_m10_correspondant"
 	item_state = "clip_m10_correspondant"
 	can_flashlight = TRUE
 
-	supports_variations = VOX_VARIATION
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/riot/clip
 	name = "\improper Minutemen CM-13 Riot Helmet"
 	desc = "A sturdy blue helmet, made with crowd control in mind. The foldable protective visor makes it CLIP-BARD's preferred helmet against hostile xenofauna."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 	icon_state = "riot_clip"
 	base_icon_state = "riot_clip"
-	supports_variations = SNOUTED_VARIATION
+	supports_variations = SNOUTED_VARIATION | VOX_VARIATION
+	unique_reskin = null
 
 // CLIP-GOLD
 

@@ -28,6 +28,7 @@
 	name = "syrup bottle"
 	desc = "A bottle with a syrup pump to dispense the delicious substance directly into your coffee cup."
 	icon = 'icons/obj/item/coffee.dmi'
+	world_file = null
 	icon_state = "syrup"
 	fill_icon_state = "syrup"
 	fill_icon_thresholds = list(0, 20, 40, 60, 80, 100)

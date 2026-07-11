@@ -3,7 +3,11 @@
 /obj/item/reagent_containers/glass/bottle
 	name = "bottle"
 	desc = "A small bottle."
+	icon = 'icons/obj/chemical/beakers.dmi'
+	world_file = 'icons/obj/chemical/beakers_world.dmi'
 	icon_state = "bottle"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	item_state = "atoxinbottle"
 	possible_transfer_amounts = list(5,10,15,25,30)
 	volume = 30
@@ -34,6 +38,11 @@
 	name = "spewium bottle"
 	desc = "A small bottle of spewium."
 	list_reagents = list(/datum/reagent/toxin/spewium = 30)
+
+/obj/item/reagent_containers/glass/bottle/rezadone
+	name = "rezadone bottle"
+	desc = "A small bottle of rezadone."
+	list_reagents = list(/datum/reagent/medicine/rezadone = 30)
 
 /obj/item/reagent_containers/glass/bottle/morphine
 	name = "morphine bottle"
@@ -103,8 +112,6 @@
 /obj/item/reagent_containers/glass/bottle/adminordrazine
 	name = "Adminordrazine Bottle"
 	desc = "A small bottle. Contains the liquid essence of the gods."
-	icon = 'icons/obj/drinks/drinks.dmi'
-	icon_state = "holyflask"
 	list_reagents = list(/datum/reagent/medicine/adminordrazine = 30)
 	can_have_cap = FALSE
 	cap_icon_state = null

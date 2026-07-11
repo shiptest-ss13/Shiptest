@@ -84,6 +84,9 @@
 	ruin_turfs = null
 	SSovermap.dynamic_encounters -= src
 	current_overmap.dynamic_encounters -= src
+	for(var/datum/overmap/outpost/target_outpost as anything in SSovermap.outposts)
+		if(target_outpost.mission_system == current_overmap)
+			SEND_SIGNAL(target_outpost, COMSIG_OVERMAP_PLANET_UNLOADED, planet.planet)
 	. = ..()
 	//This NEEDS to be last so any docked ships get deleted properly
 	if(mapzone)
@@ -175,6 +178,7 @@
 		return
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
+	current_overmap.dynamic_probabilities[planet.planet] += 20
 	qdel(src)
 
 /**
@@ -187,6 +191,7 @@
 		planet = force_encounter
 	else
 		planet = SSmapping.planet_types[force_encounter ? force_encounter : pick_weight_allow_zero(probabilities)]
+		current_overmap.dynamic_probabilities[planet.planet] -= 20
 
 	set_planet_type(planet)
 
@@ -211,14 +216,9 @@
 	mapgen = planet.mapgen
 	weather_controller_type = planet.weather_controller_type
 	landing_sound = planet.landing_sound
-	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
+	preserve_level = planet.preserve_level
 	selfloop = planet.selfloop
 	interference_power = planet.interference_power
-
-	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
-		planet_name = "LV-[pick(rand(11111,99999))]"
-		token.icon_state = "sector"
-		Rename(planet_name)
 
 	alter_token_appearance()
 
