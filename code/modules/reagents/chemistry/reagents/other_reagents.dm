@@ -999,7 +999,7 @@
 	var/toxpwr = sqrt(volume)
 
 	if(prob (min(current_cycle/4, 25)))
-		affected_carbon.adjustOrganLoss(ORGAN_SLOT_BRAIN,volume*REM)
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_BRAIN, volume * REM)
 	if(current_cycle>10)
 		//grace peroid before we just fuck up someone
 		affected_carbon.adjustToxLoss(toxpwr*REM, FALSE)
