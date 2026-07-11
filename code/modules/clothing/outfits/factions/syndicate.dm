@@ -874,7 +874,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	ears = /obj/item/radio/headset/alt
 
-/datum/outfit/job/syndicate/miner/gorlex
+/datum/outfit/job/syndicate/miner/gorlex/stripped
 	name = "Syndicate - Wrecker (Hardliner)"
 	id_assignment = "Wrecker"
 
