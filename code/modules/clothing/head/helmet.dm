@@ -236,6 +236,7 @@
 	alt_toggle_message = "You push the visor up on"
 	can_toggle = TRUE
 	armor = list("melee" = 40, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 20)
+	can_flashlight = TRUE
 	slowdown = 0.1
 	flags_inv = HIDEEARS|HIDEFACE
 	strip_delay = 80

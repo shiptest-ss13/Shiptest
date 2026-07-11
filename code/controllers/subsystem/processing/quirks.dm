@@ -29,7 +29,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("Alcohol Tolerance","Light Drinker"),
 		list("Bad Touch", "Friendly"),
 		list("Self-Aware", "Congenital Analgesia"),
-		list("Trilingual", "Monolingual"),
+		list("Trilingual", "Monolingual", "Polyglot"),
 	)
 
 	species_blacklist = list(
@@ -39,7 +39,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		"Smoker" = list(SPECIES_IPC, SPECIES_PLASMAMAN),
 		"Asthma" = list(SPECIES_IPC, SPECIES_PLASMAMAN),
 		"Robust Metabolism" = list(SPECIES_IPC, SPECIES_ELZUOSE),
-		"Fast Metabolism" = list(SPECIES_IPC, SPECIES_ELZUOSE)
+		"Fast Metabolism" = list(SPECIES_IPC, SPECIES_ELZUOSE),
+		"Electronic Voicebox" = list(SPECIES_IPC),
 	)
 
 	for(var/client/client in GLOB.clients)

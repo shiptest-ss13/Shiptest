@@ -150,6 +150,9 @@
 #define COMSIG_ATOM_CREATEDBY_PROCESSING "atom_createdby_processing"
 ///when an atom is processed (mob/living/user, obj/item/I, list/atom/results)
 #define COMSIG_ATOM_PROCESSED "atom_processed"
+///from base of atom/CanAllowThrough(): (/atom/movable, border/dir)
+#define COMSIG_ATOM_TRY_ALLOW_THROUGH "atom_allow_through"
+
 
 ///from base of atom/screwdriver_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_SCREWDRIVER_ACT "atom_screwdriver_act"
@@ -775,6 +778,11 @@
 
 /// generally called before temporary non-parallel animate()s on the atom (animation_duration)
 #define COMSIG_ATOM_TEMPORARY_ANIMATION_START "atom_temp_animate_start"
+
+/// send when enabling/diabling an autofire component for guns
+#define COMSIG_GUN_DISABLE_AIMEDFIRE "disable_aimedfire"
+#define COMSIG_GUN_ENABLE_AIMEDFIRE "enable_aimedfire"
+#define COMSIG_GUN_SET_AIMEDFIRE_SPEED "set_aimedfire_speed"
 
 /// send when enabling/diabling an autofire component for guns
 #define COMSIG_GUN_DISABLE_AUTOFIRE "disable_autofire"

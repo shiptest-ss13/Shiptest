@@ -45,7 +45,6 @@
 
 
 /datum/status_effect/trickwine/on_apply()
-	owner.visible_message(span_notice("[owner] " + message_apply_others), span_notice(message_apply_self))
 	if(trait)
 		ADD_TRAIT(owner, trait, id)
 	if(!particle_generator)
@@ -54,14 +53,12 @@
 	return ..()
 
 /datum/status_effect/trickwine/on_remove()
-	owner.visible_message(span_notice("[owner] " + message_remove_others), span_notice(message_remove_self))
 	if(trait)
 		REMOVE_TRAIT(owner, trait, id)
 	if(particle_generator)
 		QDEL_NULL(particle_generator)
 
 /datum/status_effect/trickwine/get_examine_text()
-		return span_notice("[owner.p_they(TRUE)] seem[owner.p_s()] to be affected by [src].")
 
 //////////
 // BUFF //

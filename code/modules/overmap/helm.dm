@@ -535,11 +535,12 @@
 		say("[src] is currently locked; please insert your key to continue.")
 		playsound(src, 'sound/machines/buzz-two.ogg')
 	return TRUE
-
+//
 /obj/machinery/computer/helm/viewscreen
 	name = "ship viewscreen"
-	icon_state = "wallconsole"
-	icon_screen = "wallconsole_navigation"
+	icon = 'icons/obj/machines/wallconsole.dmi'
+	icon_state = "wallmonitor"
+	icon_screen = "wallmonitor_navigation"
 	icon_keyboard = null
 	layer = SIGN_LAYER
 	density = FALSE
@@ -548,6 +549,7 @@
 
 /obj/machinery/computer/helm/viewscreen/computer
 	name = "viewscreen console"
+	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "oldcomp"
 	icon_screen = "oldcomp_retro_rnd"
 	density = TRUE

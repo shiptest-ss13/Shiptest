@@ -4,7 +4,7 @@
 /datum/mission/drill
 	name = "Class 1 core sample mission"
 	desc = "We require geological information from one of the neighboring planetoids. \
-			Please anchor the drill in place and defend it until it has gathered enough samples. \
+			Please anchor the drill in place and defend it until it has gathered enough samples.  \
 			Operation of the core sampling drill is extremely dangerous, caution is advised. "
 	value = 2500
 	weight = 11
@@ -118,7 +118,7 @@
 
 /datum/mission/drill/turn_in()
 	//Gives players a little extra money for going past the mission goal
-	value += (sampler.num_current - num_wanted)*200
+	value += (sampler.num_current - num_wanted)*(200*class_wanted)
 	if(punchcard)
 		//500 credit punchcard
 		value += 500
@@ -231,7 +231,7 @@
 	. = ..()
 	. += span_notice("The drill contains [num_current] of the [num_wanted] samples needed.")
 	if(num_current>=num_wanted)
-		. += span_notice("Additional samples can be gathered for 200 credits per sample.")
+		. += span_notice("Additional samples can be gathered for [200*mission_class] credits per sample.")
 
 /obj/machinery/drill/mission/start_mining()
 	if(orevein_wanted && !istype(our_vein, orevein_wanted))
@@ -247,6 +247,11 @@
 
 	if(num_current == num_wanted)
 		SEND_SIGNAL(src, COMSIG_DRILL_SAMPLES_DONE)
-		say("Required samples gathered. Additional samples valued at 200cr per. Now shutting down!")
+		say("Required samples gathered. Additional samples valued at [200*mission_class]cr per. Now shutting down!")
+		if(active)
+			stop_mining()
+
+	if(num_current > (num_wanted + 3))
+		say("Core sample collector full. Unable to continue drilling.")
 		if(active)
 			stop_mining()
