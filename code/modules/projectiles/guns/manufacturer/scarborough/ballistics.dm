@@ -299,8 +299,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	recoil = 0.5
 	recoil_unwielded = 3
 	burst_size = 2
-	burst_delay = 0.1 SECONDS
-	fire_delay = 0.4 SECONDS
+	burst_delay = 0.07 SECONDS
+	fire_delay = 0.1 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 
 /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	name = "Rattlesnake magazine (9mm)"
