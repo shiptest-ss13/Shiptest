@@ -337,9 +337,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/structure/flippedtable{
-	icon_state = "wood_table";
-	table_type = /obj/structure/table/wood
+/obj/structure/barricade/directional/flippedtable/wood{
+	table_type = /obj/structure/table/wood;
+	dir = 2
 	},
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer/smg{
 	name = "Jerry";
@@ -916,7 +916,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -929,7 +929,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 4
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/human/ramzi/ranged{
@@ -1028,7 +1028,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -2454,7 +2454,7 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged{
 	environment_smash = 0
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -3173,7 +3173,7 @@
 "Wx" = (
 /obj/effect/turf_decal/corner/opaque/orange/three_quarters,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
@@ -3298,7 +3298,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /obj/item/ammo_box/magazine/m10mm_ringneck{
@@ -3364,9 +3364,9 @@
 	pixel_x = -12;
 	pixel_y = 5
 	},
-/obj/structure/flippedtable{
-	icon_state = "wood_table";
-	table_type = /obj/structure/table/wood
+/obj/structure/barricade/directional/flippedtable/wood{
+	table_type = /obj/structure/table/wood;
+	dir = 2
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/jerry)
@@ -3536,7 +3536,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
