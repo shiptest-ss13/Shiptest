@@ -64,16 +64,26 @@
 		if(0 to 25)
 			. += span_warning("It's falling apart!")
 
-/obj/item/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE)
+/obj/item/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE, reversed = FALSE)
 	if(transparent && (hitby.pass_flags & PASSGLASS))
 		return FALSE
 
+	var/shield_worn = (owner.back == src)
+
 	switch(abs(dir2angle(hitby.dir) - dir2angle(owner.dir)))
-		//Frontal Impact
+		//front facing impact
+		if(135, 180, 225)
+			//if we're wearing the shield our owner gets shot
+			if(shield_worn)
+				return FALSE
+		//Shot in the Ass Effect
 		if(0, 45, 315)
-			return FALSE
+			//if we're not wearing the shield our owner gets shot
+			if(!shield_worn)
+				return FALSE
+
 		//sideshots
-		if(90, 135, 225, 270)
+		if(90, 270)
 			if(prob(80))
 				return FALSE
 
