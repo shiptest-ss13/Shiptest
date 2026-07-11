@@ -26,7 +26,7 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	icon_state = "empty_sandbags"
 	singular_name = "empty sandbag"
 	full_w_class = WEIGHT_CLASS_BULKY
-	max+_amount = 60
+	max_amount = 60
 
 /obj/item/stack/empty_sandbag/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/stack/ore/glass))
