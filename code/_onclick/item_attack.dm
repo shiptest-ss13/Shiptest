@@ -390,7 +390,7 @@
 				if(get_dir(user, ranged_turf) & user.dir) //the three tiles in front of the user
 					affected_turfs[ranged_turf] = 0.75
 			if(user.dir & NORTHWEST) //makes it so you always swing the same way around
-				reverseRange(affected_turfs)
+				reverse_range(affected_turfs)
 
 		if(SWINGABLE_FLAIL)
 			for(var/ranged_turf in RANGE_TURFS(1, user))
@@ -401,7 +401,7 @@
 					else
 						affected_turfs[ranged_turf] = 0.25
 			if(user.dir & NORTHWEST) //makes it so you always swing the same way around
-				reverseRange(affected_turfs)
+				reverse_range(affected_turfs)
 
 		if(SWINGABLE_THRUST)
 			effect_type = /obj/effect/temp_visual/dir_setting/item_swing/stab
@@ -455,7 +455,7 @@
 			slash2.color = "red"
 
 			if(user.dir & NORTHWEST) //makes it so you always swing the same way around
-				reverseRange(affected_turfs)
+				reverse_range(affected_turfs)
 
 	user.changeNext_move(attack_cooldown)
 	COOLDOWN_START(user, swing_cooldown, swing_attack_cooldown)
