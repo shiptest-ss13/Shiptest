@@ -67,8 +67,16 @@
 /obj/item/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE)
 	if(transparent && (hitby.pass_flags & PASSGLASS))
 		return FALSE
-	if(!(REVERSE_DIR(hitby.dir) & owner.dir))
-		return FALSE
+
+	switch(abs(dir2angle(hitby.dir) - dir2angle(owner.dir)))
+		//Frontal Impact
+		if(0, 45, 315)
+			return FALSE
+		//sideshots
+		if(90, 135, 225, 270)
+			if(prob(80))
+				return FALSE
+
 	if(attack_type == THROWN_PROJECTILE_ATTACK)
 		final_block_chance += 30
 	if(attack_type == LEAP_ATTACK)
