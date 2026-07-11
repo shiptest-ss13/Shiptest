@@ -14,8 +14,11 @@
 	anchored = TRUE
 	density = TRUE
 	max_integrity = 100
-	var/proj_pass_rate = 50 //How many projectiles will pass the cover. Lower means stronger cover
 	var/bar_material = METAL
+	pass_through = TRUE
+	pass_chance = 50
+	continuous_cover = TRUE
+	allowed_in_from = /obj/structure/barricade
 
 /obj/structure/barricade/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -36,22 +39,6 @@
 				atom_integrity = clamp(atom_integrity + 20, 0, max_integrity)
 	else
 		return ..()
-
-/obj/structure/barricade/CanAllowThrough(atom/movable/mover, border_dir)//So bullets will fly over and stuff.
-	. = ..()
-	if(locate(/obj/structure/barricade) in get_turf(mover))
-		return TRUE
-	else if(istype(mover, /obj/projectile))
-		if(!anchored)
-			return TRUE
-		var/obj/projectile/proj = mover
-		if(proj.firer && Adjacent(proj.firer))
-			return TRUE
-		if(prob(proj_pass_rate))
-			return TRUE
-		return FALSE
-
-
 
 /////BARRICADE TYPES///////
 
@@ -121,7 +108,7 @@
 	icon_state = "woodenbarricade-old"
 	drop_amount = 1
 	max_integrity = 50
-	proj_pass_rate = 65
+	pass_chance = 65
 	crowbar_time = 2 SECONDS
 
 /obj/structure/barricade/wooden/crude/snow
@@ -139,7 +126,7 @@
 	icon_state = "sandbags-0"
 	base_icon_state = "sandbags"
 	max_integrity = 280
-	proj_pass_rate = 20
+	pass_chance = 20
 	pass_flags_self = LETPASSTHROW
 	bar_material = SAND
 	climbable = TRUE
@@ -173,7 +160,7 @@
 	density = FALSE
 	anchored = FALSE
 	max_integrity = 180
-	proj_pass_rate = 20
+	pass_chance = 20
 	armor = list("melee" = 10, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 10, "acid" = 0)
 
 	var/deploy_time = 40
@@ -246,18 +233,45 @@
 /obj/item/grenade/barrier/ui_action_click(mob/user)
 	toggle_mode(user)
 
-/obj/item/deployable_turret_folded
-	name = "folded heavy machine gun"
-	desc = "A folded and unloaded heavy machine gun, ready to be deployed and used."
-	icon = 'icons/obj/turrets.dmi'
-	icon_state = "folded_hmg"
-	max_integrity = 250
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+/obj/structure/barricade/directional
+	name = "Half Wall"
+	desc = "This would probably make for good over from one direction."
+	layer = ABOVE_MOB_LAYER
+	opacity = FALSE
+	pass_flags_self = LETPASSTHROW
+	flags_1 = ON_BORDER_1
+	climbable = TRUE
+	climb_time = 1.5 SECONDS
+	continuous_cover = FALSE
+	directional_cover = TRUE
 
-/obj/item/deployable_turret_folded/Initialize(mapload)
+/obj/structure/barricade/directional/Initialize()
 	. = ..()
-	AddComponent(/datum/component/deployable, 5 SECONDS, /obj/machinery/deployable_turret/hmg, delete_on_use = TRUE)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_EXIT = PROC_REF(on_exit),
+	)
+
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/structure/barricade/directional/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	if(.)
+		return TRUE
+	return border_dir != dir
+
+/obj/structure/barricade/directional/proc/on_exit(datum/source, atom/movable/exiter, direction)
+	SIGNAL_HANDLER
+	if(exiter == src)
+		return // Let's not block ourselves.
+	if(istype(exiter, /obj/projectile))
+		if(SEND_SIGNAL(src, COMSIG_ATOM_TRY_ALLOW_THROUGH, exiter, direction))
+			return
+	if(istype(exiter, /obj/item))
+		return
+	if(direction == dir)
+		exiter.Bump(src)
+		return COMPONENT_ATOM_BLOCK_EXIT
+	return
 
 #undef SINGLE
 #undef VERTICAL
