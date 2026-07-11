@@ -152,6 +152,8 @@
 	return TRUE
 
 /obj/machinery/chem_master/on_deconstruction()
+	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+	materials.retrieve_all()
 	replace_beaker()
 	if(bottle)
 		bottle.forceMove(drop_location())
@@ -352,7 +354,7 @@
 			return TRUE
 		if(item_type == "condimentPack")
 			var/obj/item/reagent_containers/condiment/pack/P = new /obj/item/reagent_containers/condiment/pack(src)
-			if(!check_for_material(P))
+			if(!check_for_material(P), amount)
 				return FALSE
 			for(var/i = 0; i < amount; i++)
 				P.forceMove(drop_location())
@@ -397,10 +399,10 @@
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	///I fucking hate this.
 	for(var/mat in target.custom_materials)
-		if(materials.materials[mat] < target.custom_materials[mat])
-			say("Insufficient [mat] to print container.")
+		if(materials.materials[mat] < (amounts * target.custom_materials[mat]))
+			say("Insufficient [mat] to print [amounts] containers.")
 			return FALSE
-		materials.materials[mat] -= target.custom_materials[mat]
+		materials.materials[mat] -= (amounts * target.custom_materials[mat])
 	return TRUE
 
 /obj/machinery/chem_master/proc/isgoodnumber(num)
