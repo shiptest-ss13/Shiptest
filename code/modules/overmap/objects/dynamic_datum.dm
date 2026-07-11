@@ -226,6 +226,14 @@
 	light_power = planet.light_power
 	light_color = planet.light_color
 
+	//if an admin overidded planet lighting, lets use that instead
+	if(GLOB.override_new_planet_lighting_range)
+		light_range = GLOB.override_new_planet_lighting_range
+	if(GLOB.override_new_planet_lighting_power)
+		light_power = GLOB.override_new_planet_lighting_power
+	if(GLOB.override_new_planet_lighting_color)
+		light_color = GLOB.override_new_planet_lighting_color
+
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
 		token.icon_state = "sector"

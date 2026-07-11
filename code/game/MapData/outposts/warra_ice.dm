@@ -29,9 +29,6 @@ WARRA_OUTPOST_TURF_HELPER(plasteel/tech)
 	sound_environment = SOUND_ENVIRONMENT_CITY
 	ambience_index = AMBIENCE_SPOOKY
 	allow_weather = TRUE
-	light_color = COLOR_WARRA_OUTPOST_LIGHTING
-	light_power = 1
-	light_range = 2
 	use_ztrait_lighting = TRUE
 
 /area/outpost/exterior/warra/wilderness
@@ -40,9 +37,6 @@ WARRA_OUTPOST_TURF_HELPER(plasteel/tech)
 	ambience_index = AMBIENCE_TUNDRA
 	icon_state = "space_near"
 	allow_weather = TRUE
-	light_color = COLOR_WARRA_OUTPOST_LIGHTING
-	light_power = 1
-	light_range = 2
 	use_ztrait_lighting = TRUE
 
 /turf/open/floor/plating/asteroid/snow/no_smooth
@@ -50,7 +44,4 @@ WARRA_OUTPOST_TURF_HELPER(plasteel/tech)
 
 /area/hangar/yebiri_outdoors
 	allow_weather = TRUE
-	light_color = COLOR_WARRA_OUTPOST_LIGHTING
-	light_power = 1
-	light_range = 2
 	use_ztrait_lighting = TRUE

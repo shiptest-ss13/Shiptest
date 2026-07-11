@@ -31,3 +31,8 @@ GLOBAL_PROTECT(poll_options)
 GLOBAL_VAR_INIT(internal_tick_usage, 0.2 * world.tick_lag) //This var is updated every tick by a DLL if present, used to reduce lag
 
 GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
+
+///overrides all newly generated planet lighting with this
+GLOBAL_VAR(override_new_planet_lighting_color)
+GLOBAL_VAR(override_new_planet_lighting_range)
+GLOBAL_VAR(override_new_planet_lighting_power)

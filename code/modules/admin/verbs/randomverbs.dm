@@ -1103,6 +1103,58 @@
 	message_admins(span_big("Click here to jump to the overmap Jump point: " + ADMIN_JMP(point.token)))
 	BLACKBOX_LOG_ADMIN_VERB("Spawn Overmap Jump Point")
 
+/client/proc/setall_planetlights_inround()
+	set name = "Set Planetary Lighting on All Loaded Planets"
+	set category = "Event.Spawning"
+	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
+		return
+
+	if(tgui_alert(usr, "This will change the lights on all loaded planets, including ones with no players on them. This may cause lots of lag. Continue?", "Set Planetary Lighting", list("Yes", "No"), 20 SECONDS) != "Yes")
+		return
+
+	var/new_lightrange
+	var/new_lightpower
+	var/new_lightcolor
+
+	var/inputed
+
+	inputed = input(usr, "Enter light range", "Set Planetary Lighting", 2) as num
+	if(isnull(inputed))
+		return
+	new_lightrange = inputed
+
+	inputed = input(usr, "Enter light power", "Set Planetary Lighting", 0.8) as num
+	if(isnull(inputed))
+		return
+	new_lightpower = inputed
+
+	inputed = input(usr, "Enter hex color:", "Set Planetary Lighting", "#FFFFFF")
+	if(isnull(inputed))
+		return
+	new_lightcolor = inputed
+
+	inputed = tgui_alert(usr, "Should all NEWLY generated planets have their lighting overidden by the selection?", "Set Planetary Lighting", list("Yes", "No"))
+	if(!inputed)
+		return
+	if(inputed == "Yes")
+		GLOB.override_new_planet_lighting_color = new_lightcolor
+		GLOB.override_new_planet_lighting_power = new_lightpower
+		GLOB.override_new_planet_lighting_range = new_lightrange
+	for(var/datum/overmap/dynamic/found_planet as anything in SSovermap.dynamic_encounters)
+		if(!istype(found_planet))
+			continue
+		if(!found_planet.mapzone)
+			continue
+		for(var/datum/virtual_level/found_level as anything in found_planet.mapzone.virtual_levels)
+			var/list/lighting_traits = found_level.traits[ZTRAIT_PLANETARY_LIGHTING]
+			lighting_traits[ZTRAIT_LIGHT_COLOR] = new_lightcolor
+			lighting_traits[ZTRAIT_LIGHT_POWER] = new_lightpower
+			lighting_traits[ZTRAIT_LIGHT_RANGE] = new_lightrange
+			found_level.update_lighting_in_bounds()
+
+	message_admins(span_big("Updated all planets to use lighting [new_lightcolor] "))
+	BLACKBOX_LOG_ADMIN_VERB("Set Planetary Lighting on All Loaded Planets")
+
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"
 	set category = "Event.Fun"

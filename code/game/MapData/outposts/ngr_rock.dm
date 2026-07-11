@@ -55,9 +55,6 @@ NGR_OUTPOST_OUTSIDE_TURF_HELPER(plasteel/stairs/left)
 
 /area/hangar/agni
 	allow_weather = TRUE
-	light_color = COLOR_ROCKPLANET_LIGHT
-	light_power = 0.8
-	light_range = 2
 	use_ztrait_lighting = TRUE
 
 /area/outpost/exterior/rock
@@ -65,9 +62,6 @@ NGR_OUTPOST_OUTSIDE_TURF_HELPER(plasteel/stairs/left)
 	icon_state = "space"
 	ambience_index = AMBIENCE_DESERT
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
-	light_color = COLOR_ROCKPLANET_LIGHT
-	light_power = 0.8
-	light_range = 2
 	use_ztrait_lighting = TRUE
 
 /area/outpost/exterior/rock/noweather
