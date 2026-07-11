@@ -209,8 +209,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 			. += span_notice("It is currently <b>washing the contents.</b>.")
 		if(CYCLESTATE_SPIN)
 			. += span_notice("It is currently <b>spinning very fast.</b>.")
-		else
-			. += span_notice("It is currently not running a cycle.")
 
 /obj/machinery/washing_machine/update_icon_state()
 	var/full = contents.len ? 1 : 0
