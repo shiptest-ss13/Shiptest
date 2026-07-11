@@ -261,7 +261,6 @@
 
 /datum/world_topic/manifest //Inspired by SunsetStation
 	keyword = "manifest"
-	require_comms_key = TRUE //not really needed, but I don't think any bot besides ours would need it
 
 /datum/world_topic/manifest/Run(list/input)
 	. = list()
