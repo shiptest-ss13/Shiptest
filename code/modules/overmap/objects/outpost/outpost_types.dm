@@ -237,7 +237,6 @@
 		)
 	)
 	hangar_ztraits =  list(
-		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/icerock/temperate/lit,
@@ -268,20 +267,19 @@
 		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit,
 		ZTRAIT_PLANETARY_LIGHTING = list(
 			ZTRAIT_LIGHT_COLOR = COLOR_ROCKPLANET_LIGHT,
-			ZTRAIT_LIGHT_POWER = 2,
-			ZTRAIT_LIGHT_RANGE = 0.6
+			ZTRAIT_LIGHT_POWER = 0.6,
+			ZTRAIT_LIGHT_RANGE = 2
 		)
 	)
 
 	hangar_ztraits =  list(
-		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit,
 		ZTRAIT_PLANETARY_LIGHTING = list(
 			ZTRAIT_LIGHT_COLOR = COLOR_ROCKPLANET_LIGHT,
-			ZTRAIT_LIGHT_POWER = 2,
-			ZTRAIT_LIGHT_RANGE = 0.6
+			ZTRAIT_LIGHT_POWER = 0.6,
+			ZTRAIT_LIGHT_RANGE = 2
 		)
 	)
 
@@ -310,7 +308,6 @@
 		)
 	)
 	hangar_ztraits =  list(
-		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost,

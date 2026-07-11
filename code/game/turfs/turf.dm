@@ -130,9 +130,9 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	RegisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT, PROC_REF(try_update_area_light))
 
 	if(!override_area_lighting)
-		try_update_area_light()
-
-	if (light_power && light_range)
+		if(!try_update_area_light())
+			update_light()
+	else if (light_power && light_range)
 		update_light()
 
 	var/turf/T = above()
@@ -722,8 +722,11 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		return FALSE
 	var/area/selected_area = loc
 	if(!istype(selected_area) || !selected_area.use_ztrait_lighting)
+		//in case of landing shuttles
+		if(light_range)
+			INVOKE_ASYNC(src, PROC_REF(reset_turf_light))
 		return FALSE
-	get_z_lighting()
+	return get_z_lighting()
 
 /turf/proc/get_z_lighting()
 	var/list/lighting_traits = virtual_level_trait(ZTRAIT_PLANETARY_LIGHTING)
@@ -736,4 +739,8 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	light_range = target_range
 	light_power = target_power
 	light_color = target_color
+	update_light()
+
+/turf/proc/reset_turf_light(datum/source)
+	light_range = 0
 	update_light()

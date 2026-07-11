@@ -667,4 +667,4 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	for(var/turf/updating_turf as anything in contents)
 		if(!istype(updating_turf))
 			continue
-		SEND_SIGNAL(updating_turf, COMSIG_OVERMAPTURF_UPDATE_LIGHT, light_range, light_power, light_color)
+		SEND_SIGNAL(updating_turf, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
