@@ -5,6 +5,25 @@
 	},
 /turf/open/space/basic,
 /area/space)
+"bG" = (
+/obj/effect/turf_decal/stairs{
+	dir = 5;
+	color = "#a3a2a0"
+	},
+/turf/open/space/basic,
+/area/space)
+"cZ" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/engine/hull,
+/area/space)
+"fe" = (
+/obj/structure/railing{
+	dir = 6
+	},
+/turf/open/floor/engine/hull,
+/area/space)
 "fu" = (
 /obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "sec_wall"
@@ -20,10 +39,12 @@
 	},
 /turf/open/space/basic,
 /area/space)
+"ho" = (
+/obj/structure/railing,
+/turf/open/floor/engine/hull,
+/area/space)
 "hV" = (
-/obj/effect/spawner/bunk_bed{
-	dir = 1
-	},
+/obj/structure/table,
 /turf/open/space/basic,
 /area/space)
 "iy" = (
@@ -37,7 +58,9 @@
 /turf/open/space/basic,
 /area/space)
 "iH" = (
-/obj/machinery/door/airlock/medical/glass,
+/obj/structure/chair/plastic{
+	dir = 8
+	},
 /turf/open/space/basic,
 /area/space)
 "iP" = (
@@ -49,8 +72,20 @@
 "jA" = (
 /turf/closed/wall/r_wall,
 /area/space)
+"kw" = (
+/obj/structure/railing{
+	dir = 9
+	},
+/turf/open/floor/engine/hull,
+/area/space)
 "lh" = (
 /obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/turf/open/floor/engine/hull,
+/area/space)
+"ni" = (
+/obj/structure/railing{
 	dir = 4
 	},
 /turf/open/floor/engine/hull,
@@ -67,6 +102,10 @@
 	},
 /turf/open/space/basic,
 /area/space)
+"ot" = (
+/obj/machinery/door/airlock/grunge,
+/turf/open/space/basic,
+/area/space)
 "oQ" = (
 /obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "solgov_wall"
@@ -75,6 +114,10 @@
 /area/space)
 "px" = (
 /turf/closed/wall,
+/area/space)
+"qn" = (
+/obj/effect/spawner/bunk_bed,
+/turf/open/space/basic,
 /area/space)
 "qp" = (
 /turf/open/space/basic,
@@ -100,6 +143,13 @@
 "so" = (
 /turf/closed/wall/r_wall/rust,
 /area/space)
+"sp" = (
+/obj/effect/turf_decal/stairs{
+	dir = 9;
+	color = "#a3a2a0"
+	},
+/turf/open/space/basic,
+/area/space)
 "tN" = (
 /obj/machinery/door/airlock/mining{
 	name = "Cargo Bay";
@@ -109,6 +159,20 @@
 /area/space)
 "uI" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/space)
+"yc" = (
+/obj/structure/table/optable,
+/obj/machinery/iv_drip{
+	pixel_x = 9;
+	pixel_y = 22
+	},
+/turf/open/space/basic,
+/area/space)
+"zd" = (
+/obj/machinery/suit_storage_unit/frontiersmen,
+/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
+/obj/machinery/door/poddoor/shutters/preopen,
+/turf/open/space/basic,
 /area/space)
 "Ae" = (
 /obj/machinery/door/poddoor,
@@ -120,6 +184,23 @@
 	dir = 4
 	},
 /turf/open/space/basic,
+/area/space)
+"AX" = (
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space)
+"Bk" = (
+/obj/machinery/portable_atmospherics/canister/chlorine,
+/obj/machinery/door/poddoor/shutters/preopen,
+/turf/open/space/basic,
+/area/space)
+"Bl" = (
+/obj/structure/railing{
+	dir = 10
+	},
+/turf/open/floor/engine/hull,
 /area/space)
 "BR" = (
 /obj/machinery/door/airlock/external/glass{
@@ -151,12 +232,33 @@
 	},
 /turf/open/space/basic,
 /area/space)
+"IC" = (
+/obj/structure/dresser,
+/turf/open/space/basic,
+/area/space)
 "IW" = (
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 8;
 	pixel_x = 7;
 	icon_state = "computer-right"
 	},
+/turf/open/space/basic,
+/area/space)
+"JJ" = (
+/obj/structure/railing{
+	dir = 5
+	},
+/turf/open/floor/engine/hull,
+/area/space)
+"Kf" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	name = "Cryogenics"
+	},
+/turf/open/space/basic,
+/area/space)
+"Ly" = (
+/obj/machinery/door/poddoor/shutters/preopen,
 /turf/open/space/basic,
 /area/space)
 "MF" = (
@@ -174,11 +276,20 @@
 /turf/open/space/basic,
 /area/space)
 "OA" = (
-/obj/machinery/suit_storage_unit/frontiersmen,
+/obj/effect/spawner/bunk_bed{
+	dir = 4
+	},
 /turf/open/space/basic,
 /area/space)
 "QJ" = (
 /obj/machinery/door/poddoor,
+/turf/open/space/basic,
+/area/space)
+"Rq" = (
+/obj/machinery/door/airlock/grunge{
+	name = "Port Engine";
+	dir = 4
+	},
 /turf/open/space/basic,
 /area/space)
 "Tv" = (
@@ -186,6 +297,10 @@
 	dir = 4;
 	id = "kilothrusters"
 	},
+/turf/open/space/basic,
+/area/space)
+"UW" = (
+/obj/machinery/camera/directional/east,
 /turf/open/space/basic,
 /area/space)
 "VB" = (
@@ -200,6 +315,10 @@
 	name = "Captain's Quarters";
 	req_access_txt = "20"
 	},
+/turf/open/space/basic,
+/area/space)
+"Wn" = (
+/obj/machinery/door/airlock/medical,
 /turf/open/space/basic,
 /area/space)
 "WB" = (
@@ -397,8 +516,8 @@ qp
 qp
 px
 px
-px
 BR
+px
 px
 qp
 qp
@@ -435,11 +554,11 @@ jA
 qp
 qp
 qp
+px
 qp
 qp
 qp
-qp
-qp
+px
 qp
 qp
 qp
@@ -475,11 +594,11 @@ jA
 qp
 qp
 qp
+ot
 qp
 qp
 qp
-qp
-qp
+px
 qp
 qp
 qp
@@ -510,21 +629,21 @@ qp
 qp
 qp
 qp
-Fx
+kw
 jA
 qp
 qp
 qp
+px
 qp
 qp
 qp
-qp
-qp
+px
 px
 px
 px
 jA
-Fx
+Bl
 qp
 qp
 qp
@@ -550,21 +669,21 @@ qp
 qp
 qp
 qp
-Fx
+cZ
 jA
-qp
-qp
-qp
-qp
-qp
 qp
 qp
 qp
 px
 qp
+qp
+qp
+px
+qp
+qp
 gL
 jA
-Fx
+ho
 qp
 qp
 qp
@@ -590,21 +709,21 @@ qp
 qp
 qp
 qp
-Fx
+cZ
 jA
-qp
-qp
-qp
-qp
-qp
 qp
 qp
 qp
 px
 qp
+qp
+qp
+px
+qp
+qp
 gL
 jA
-Fx
+ho
 qp
 qp
 qp
@@ -630,7 +749,7 @@ qp
 qp
 qp
 qp
-Fx
+cZ
 jA
 px
 px
@@ -644,7 +763,7 @@ px
 VB
 px
 jA
-Fx
+ho
 qp
 qp
 qp
@@ -673,11 +792,11 @@ Fy
 jA
 jA
 hV
-qp
 hV
-qp
 px
 qp
+qp
+px
 qp
 qp
 qp
@@ -710,17 +829,17 @@ qp
 qp
 qp
 jA
-qp
-qp
-qp
+OA
 qp
 qp
 qp
 px
 qp
 qp
+px
 qp
-qp
+AX
+AX
 qp
 qp
 qp
@@ -750,17 +869,17 @@ qp
 qp
 qp
 jA
+IC
 qp
 qp
 qp
+px
+px
+Kf
+px
 qp
-qp
-qp
-qp
-qp
-qp
-qp
-qp
+hV
+hV
 qp
 qp
 qp
@@ -790,17 +909,17 @@ qp
 qp
 qp
 jA
+qn
+qp
+qp
+qp
+ot
 qp
 qp
 qp
 qp
-qp
-qp
-px
-qp
-qp
-qp
-qp
+iH
+iH
 qp
 qp
 qp
@@ -834,9 +953,9 @@ qp
 qp
 qp
 qp
-qp
-qp
 px
+qp
+qp
 qp
 qp
 qp
@@ -878,7 +997,7 @@ px
 px
 px
 px
-px
+Rq
 px
 px
 px
@@ -912,17 +1031,17 @@ qp
 qp
 qp
 qp
-qp
-qp
-px
-qp
-qp
-qp
-qp
+bG
 qp
 px
 qp
 qp
+qp
+qp
+px
+px
+qp
+bG
 qp
 qp
 qp
@@ -954,13 +1073,13 @@ qp
 qp
 qp
 qp
-iH
-qp
+px
 qp
 qp
 qp
 qp
 px
+zd
 qp
 qp
 qp
@@ -994,13 +1113,13 @@ qp
 qp
 qp
 qp
+Wn
+qp
+qp
+qp
+yc
 px
-qp
-qp
-qp
-qp
-qp
-px
+zd
 qp
 qp
 qp
@@ -1035,12 +1154,12 @@ qp
 qp
 qp
 px
+qp
+qp
+iz
+iz
 px
-px
-px
-px
-px
-px
+zd
 qp
 qp
 qp
@@ -1075,12 +1194,12 @@ qp
 qp
 qp
 px
-iz
-iz
-qp
-qp
 px
-OA
+px
+px
+px
+px
+px
 qp
 qp
 qp
@@ -1107,7 +1226,7 @@ qp
 qp
 QJ
 qp
-qp
+UW
 qp
 QJ
 qp
@@ -1115,12 +1234,12 @@ qp
 qp
 qp
 px
-bd
-qp
+px
+iz
+iz
 qp
 qp
 px
-OA
 qp
 qp
 qp
@@ -1154,12 +1273,12 @@ qp
 qp
 qp
 qp
+Bk
 px
-bd
 qp
 qp
 qp
-px
+qp
 px
 qp
 qp
@@ -1194,13 +1313,13 @@ qp
 qp
 qp
 qp
+Ly
 px
-qp
+bd
 qp
 qp
 qp
 px
-OA
 qp
 qp
 qp
@@ -1234,13 +1353,13 @@ qp
 qp
 qp
 qp
+Ly
 px
-qp
+bd
 qp
 qp
 qp
 px
-OA
 qp
 qp
 qp
@@ -1272,17 +1391,17 @@ qp
 qp
 qp
 qp
-qp
-qp
-px
-qp
-qp
-qp
+sp
 qp
 px
 px
 qp
 qp
+qp
+qp
+px
+qp
+sp
 qp
 qp
 qp
@@ -1316,8 +1435,8 @@ tN
 px
 px
 px
-oa
 px
+oa
 px
 px
 px
@@ -1513,7 +1632,7 @@ nE
 qp
 qp
 qp
-px
+VW
 qp
 qp
 qp
@@ -1670,8 +1789,8 @@ qp
 qp
 qp
 qp
-Fx
-Fx
+JJ
+ni
 jA
 px
 qp
@@ -1683,8 +1802,8 @@ qp
 qp
 px
 jA
-Fx
-Fx
+ni
+fe
 qp
 qp
 qp
