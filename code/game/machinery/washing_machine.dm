@@ -327,7 +327,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 	//dont show start unless doors are closed
 	if(state_open)
-		if(cycle_state) //these are completely redundant  if you can reload everything with a speedloader
+		if(cycle_state)
 			radial_options -= RADIAL_LAUNDRY_START
 		else
 			radial_options -= RADIAL_LAUNDRY_STOP
