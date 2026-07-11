@@ -1089,9 +1089,6 @@
 /obj/structure/dresser/wall/directional/west{
 	pixel_y = 6
 	},
-/obj/machinery/light/small/directional/east{
-	pixel_y = 10
-	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -3628,6 +3625,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/siding/black{
 	dir = 8
+	},
+/obj/machinery/light/small/directional/east{
+	pixel_y = -13
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/toilet)
