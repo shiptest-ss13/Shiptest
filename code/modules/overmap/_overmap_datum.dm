@@ -727,11 +727,86 @@
 
 	return TRUE
 
+/*
+ * For use when needing to update a planet's lighting. This does nothing on non-dockable overmap objects.
+ */
+/datum/overmap/proc/update_planet_lighting_gui()
+	if(!(istype(src, /datum/overmap/dynamic) \
+		|| istype(src, /datum/overmap/outpost) \
+		|| istype(src, /datum/overmap/static_object)\
+		))
+		to_chat(usr, span_warning("You can only use this on an non-ship overmap object with a virtual level."), confidential = TRUE)
+		return
+
+	var/new_lightrange
+	var/new_lightpower
+	var/new_lightcolor
+
+	var/inputed
+
+	inputed = input(usr, "Enter light range", "Update planet lighting", 2) as num
+	if(isnull(inputed))
+		return
+	new_lightrange = inputed
+
+	inputed = input(usr, "Enter light power", "Update planet lighting", 0.8) as num
+	if(isnull(inputed))
+		return
+	new_lightpower = inputed
+
+	inputed = input(usr, "Enter hex color:", "Update planet lighting", "#FFFFFF")
+	if(isnull(inputed))
+		return
+	new_lightcolor = inputed
+	return update_planet_lighting(new_lightrange, new_lightpower, new_lightcolor)
+
+/datum/overmap/proc/update_planet_lighting(target_range, target_power, target_color)
+	return
+
+/datum/overmap/dynamic/update_planet_lighting(target_range, target_power, target_color)
+	if(!mapzone)
+		if(usr)
+			to_chat(usr, span_warning("Load the planet first with load_level!"), confidential = TRUE)
+		return
+	for(var/datum/virtual_level/found_level as anything in mapzone.virtual_levels)
+		var/list/lighting_traits = found_level.traits[ZTRAIT_PLANETARY_LIGHTING]
+		lighting_traits[ZTRAIT_LIGHT_COLOR] = target_color
+		lighting_traits[ZTRAIT_LIGHT_POWER] = target_power
+		lighting_traits[ZTRAIT_LIGHT_RANGE] = target_range
+		found_level.update_lighting_in_bounds()
+	return
+
+/datum/overmap/outpost/update_planet_lighting(target_range, target_power, target_color)
+	if(!mapzone)
+		if(usr)
+			to_chat(usr, span_warning("Load the planet first with load_level!"), confidential = TRUE)
+		return
+	for(var/datum/virtual_level/found_level as anything in mapzone.virtual_levels)
+		var/list/lighting_traits = found_level.traits[ZTRAIT_PLANETARY_LIGHTING]
+		lighting_traits[ZTRAIT_LIGHT_COLOR] = target_color
+		lighting_traits[ZTRAIT_LIGHT_POWER] = target_power
+		lighting_traits[ZTRAIT_LIGHT_RANGE] = target_range
+		found_level.update_lighting_in_bounds()
+	return
+
+/datum/overmap/static_object/update_planet_lighting(target_range, target_power, target_color)
+	if(!mapzone)
+		if(usr)
+			to_chat(usr, span_warning("Load the planet first with load_level!"), confidential = TRUE)
+		return
+	for(var/datum/virtual_level/found_level as anything in mapzone.virtual_levels)
+		var/list/lighting_traits = found_level.traits[ZTRAIT_PLANETARY_LIGHTING]
+		lighting_traits[ZTRAIT_LIGHT_COLOR] = target_color
+		lighting_traits[ZTRAIT_LIGHT_POWER] = target_power
+		lighting_traits[ZTRAIT_LIGHT_RANGE] = target_range
+		found_level.update_lighting_in_bounds()
+	return
 
 /datum/overmap/vv_get_dropdown()
 	. = ..()
 	VV_DROPDOWN_OPTION("", "---------")
 	VV_DROPDOWN_OPTION(VV_HK_VV_PARENT, "View Variables Of Parent Datum")
+	VV_DROPDOWN_OPTION(VV_HK_UPDATE_PLANET_LIGHT, "Update planet lighting")
 	VV_DROPDOWN_OPTION(VV_HK_UNFSCK_OBJECT, "Unfsck this overmap object | PANIC BUTTON")
 
 /datum/overmap/vv_do_topic(list/href_list)
@@ -748,6 +823,10 @@
 			to_chat(usr, span_bolddanger("fsck() returned nothing, something went very wrong."))
 		catch
 			to_chat(usr, span_bolddanger("fsck() Runtimed. This is very bad check runtimes now."))
+	if(href_list[VV_HK_UPDATE_PLANET_LIGHT])
+		if(!check_rights(R_VAREDIT))
+			return
+		update_planet_lighting_gui()
 
 /datum/overmap/proc/admin_load()
 	return

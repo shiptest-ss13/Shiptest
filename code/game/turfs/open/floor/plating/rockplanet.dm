@@ -296,6 +296,10 @@
 	light_color = COLOR_ROCKPLANET_LIGHT
 
 ///snow
+/turf/open/floor/plating/asteroid/snow/rockplanet
+	baseturfs = /turf/open/floor/plating/asteroid/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet
 	light_color = COLOR_ROCKPLANET_LIGHT
 	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit

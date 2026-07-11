@@ -62,6 +62,15 @@ require only minor tweaks.
 #define ZTRAITS_CENTCOM list(ZTRAIT_CENTCOM = TRUE)
 #define ZTRAITS_STATION list(ZTRAIT_STATION = TRUE)
 
+// used for lighting colors
+#define ZTRAIT_PLANETARY_LIGHTING "Planet Lighting"
+	#define ZTRAIT_LIGHT_COLOR "Light Color"
+	#define ZTRAIT_LIGHT_POWER "Light Power"
+	#define ZTRAIT_LIGHT_RANGE "Light Range"
+// used for custom atmos for outdoors areas
+#define ZTRAIT_PLANETARY_ATMOS "Atmospherics Tag"
+
+
 #define DL_NAME "name"
 #define DL_TRAITS "traits"
 #define DECLARE_LEVEL(NAME, TRAITS) list(DL_NAME = NAME, DL_TRAITS = TRAITS)

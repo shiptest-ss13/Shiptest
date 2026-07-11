@@ -17,6 +17,8 @@
 	clawfootstep = FOOTSTEP_LAVA
 	heavyfootstep = FOOTSTEP_LAVA
 
+	override_area_lighting = FALSE
+
 	var/particle_emitter = /obj/effect/particle_emitter/lava
 	var/particle_prob = 15
 
@@ -25,6 +27,7 @@
 
 	/// Whether the lava has been dug with hellstone found successfully
 	var/is_mined = FALSE
+
 
 /turf/open/lava/Initialize(mapload)
 	. = ..()

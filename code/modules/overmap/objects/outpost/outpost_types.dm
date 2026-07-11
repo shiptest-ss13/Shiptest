@@ -229,13 +229,23 @@
 		ZTRAIT_STATION = TRUE,
 		ZTRAIT_SUN_TYPE = AZIMUTH,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
-		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/icerock/temperate/lit
+		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/icerock/temperate/lit,
+		ZTRAIT_PLANETARY_LIGHTING = list(
+			ZTRAIT_LIGHT_COLOR = "#1B1D2E",
+			ZTRAIT_LIGHT_POWER = 1,
+			ZTRAIT_LIGHT_RANGE = 2
+		)
 	)
 	hangar_ztraits =  list(
 		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
-		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/icerock/temperate/lit
+		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/icerock/temperate/lit,
+		ZTRAIT_PLANETARY_LIGHTING = list(
+			ZTRAIT_LIGHT_COLOR = "#1B1D2E",
+			ZTRAIT_LIGHT_POWER = 1,
+			ZTRAIT_LIGHT_RANGE = 2
+		)
 	)
 
 /datum/overmap/outpost/ngr_rock
@@ -255,13 +265,24 @@
 		ZTRAIT_STATION = TRUE,
 		ZTRAIT_SUN_TYPE = AZIMUTH,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
-		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
+		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit,
+		ZTRAIT_PLANETARY_LIGHTING = list(
+			ZTRAIT_LIGHT_COLOR = COLOR_ROCKPLANET_LIGHT,
+			ZTRAIT_LIGHT_POWER = 2,
+			ZTRAIT_LIGHT_RANGE = 0.6
+		)
 	)
+
 	hangar_ztraits =  list(
 		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
-		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
+		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit,
+		ZTRAIT_PLANETARY_LIGHTING = list(
+			ZTRAIT_LIGHT_COLOR = COLOR_ROCKPLANET_LIGHT,
+			ZTRAIT_LIGHT_POWER = 2,
+			ZTRAIT_LIGHT_RANGE = 0.6
+		)
 	)
 
 /datum/overmap/outpost/clip_ocean
@@ -281,13 +302,23 @@
 		ZTRAIT_STATION = TRUE,
 		ZTRAIT_SUN_TYPE = AZIMUTH,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
-		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost
+		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost,
+		ZTRAIT_PLANETARY_LIGHTING = list(
+			ZTRAIT_LIGHT_COLOR = "#97442f",
+			ZTRAIT_LIGHT_POWER = 0.9,
+			ZTRAIT_LIGHT_RANGE = 2
+		)
 	)
 	hangar_ztraits =  list(
 		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
-		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost
+		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost,
+		ZTRAIT_PLANETARY_LIGHTING = list(
+			ZTRAIT_LIGHT_COLOR = "#97442f",
+			ZTRAIT_LIGHT_POWER = 0.9,
+			ZTRAIT_LIGHT_RANGE = 2
+		)
 	)
 
 /datum/overmap/outpost/cybersun_gas_giant
@@ -308,13 +339,24 @@
 		ZTRAIT_STATION = TRUE,
 		ZTRAIT_SUN_TYPE = AZIMUTH,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
-		ZTRAIT_BASETURF = /turf/open/cybersun_outpost_exterior
+		ZTRAIT_BASETURF = /turf/open/cybersun_outpost_exterior,
+		ZTRAIT_PLANETARY_LIGHTING = list(
+			ZTRAIT_LIGHT_COLOR = COLOR_CYBERSUN_OUTPOST_LIGHTING,
+			ZTRAIT_LIGHT_POWER = 0.4,
+			ZTRAIT_LIGHT_RANGE = 2
+		)
+
 	)
 	hangar_ztraits =  list(
 		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
-		ZTRAIT_BASETURF = /turf/open/cybersun_outpost_exterior
+		ZTRAIT_BASETURF = /turf/open/cybersun_outpost_exterior,
+		ZTRAIT_PLANETARY_LIGHTING = list(
+			ZTRAIT_LIGHT_COLOR = COLOR_CYBERSUN_OUTPOST_LIGHTING,
+			ZTRAIT_LIGHT_POWER = 0.4,
+			ZTRAIT_LIGHT_RANGE = 2
+		)
 	)
 
 

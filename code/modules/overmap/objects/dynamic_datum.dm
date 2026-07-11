@@ -67,6 +67,13 @@
 	///Do we selfloop? If so the borders of the map connect to the other side of the planet. Not recommended.
 	var/selfloop
 
+	///This planet's light range per turf
+	var/light_range = 0
+	///This planet's light power per turf.
+	var/light_power = 0
+	///This planet's light color per turf.
+	var/light_color = COLOR_WHITE
+
 /datum/overmap/dynamic/Initialize(position, datum/overmap_star_system/system_spawned_in, load_now=TRUE, ...)
 	. = ..()
 	SSovermap.dynamic_encounters += src
@@ -214,6 +221,10 @@
 	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
 	selfloop = planet.selfloop
 	interference_power = planet.interference_power
+
+	light_range = planet.light_range
+	light_power = planet.light_power
+	light_color = planet.light_color
 
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
@@ -394,6 +405,7 @@
 	ambience_index = AMBIENCE_RUINS
 	outdoors = TRUE
 	allow_weather = TRUE
+	use_ztrait_lighting = TRUE
 
 /area/overmap_encounter/New(...)
 	if(area_flags & UNIQUE_AREA)
@@ -410,12 +422,6 @@
 	light_power = 0.80
 	light_color = "#FFFFFF"
 
-/area/overmap_encounter/planetoid/update_light()
-	for(var/turf/updating_turf as anything in contents)
-		if(!istype(updating_turf))
-			continue
-		SEND_SIGNAL(updating_turf, COMSIG_OVERMAPTURF_UPDATE_LIGHT, light_range, light_power, light_color)
-
 // Used for caves on multi-biome planetoids.
 /area/overmap_encounter/planetoid/cave
 	name = "\improper Planetoid Cavern"
@@ -424,6 +430,7 @@
 	allow_weather = FALSE
 	light_range = 0
 	light_power = 0
+	use_ztrait_lighting = FALSE
 
 /area/overmap_encounter/planetoid/cave/explored
 	area_flags = VALID_TERRITORY

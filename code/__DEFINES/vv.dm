@@ -149,3 +149,4 @@
 //overmap objects
 #define VV_HK_VV_PARENT "vv_parent"
 #define VV_HK_UNFSCK_OBJECT "unfsck"
+#define VV_HK_UPDATE_PLANET_LIGHT "vv_planet_light"

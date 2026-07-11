@@ -53,6 +53,28 @@ NGR_OUTPOST_OUTSIDE_TURF_HELPER(plasteel/stairs/mid)
 NGR_OUTPOST_OUTSIDE_TURF_HELPER(plasteel/stairs/right)
 NGR_OUTPOST_OUTSIDE_TURF_HELPER(plasteel/stairs/left)
 
+/area/hangar/agni
+	allow_weather = TRUE
+	light_color = COLOR_ROCKPLANET_LIGHT
+	light_power = 0.8
+	light_range = 2
+	use_ztrait_lighting = TRUE
+
+/area/outpost/exterior/rock
+	name = "Agni"
+	icon_state = "space"
+	ambience_index = AMBIENCE_DESERT
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
+	light_color = COLOR_ROCKPLANET_LIGHT
+	light_power = 0.8
+	light_range = 2
+	use_ztrait_lighting = TRUE
+
+/area/outpost/exterior/rock/noweather
+	name = "Agni Underground"
+	icon_state = "blue"
+	allow_weather = FALSE
+
 /turf/open/water/ngr_outpost //all the water is indoors so we can't use the helper
 	name = "river water"
 	desc = "Cold, fresh water."
@@ -80,3 +102,4 @@ NGR_OUTPOST_OUTSIDE_TURF_HELPER(plasteel/stairs/left)
 	density = 1
 	icon = 'icons/obj/machines/rtg.dmi'
 	icon_state = "rtg"
+
