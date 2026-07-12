@@ -24,7 +24,7 @@ SUBSYSTEM_DEF(shuttle)
 	/// Current state of the jump
 	var/jump_mode = BS_JUMP_IDLE
 	/// Time taken for bluespace jump to begin after it is requested (in deciseconds)
-	var/jump_request_time = 6000
+	var/jump_request_time = 9000
 	/// Time taken for a bluespace jump to complete after it initiates (in deciseconds)
 	var/jump_completion_time = 1200
 
@@ -60,7 +60,8 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/request_jump(modifier = 1)
 	jump_mode = BS_JUMP_CALLED
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(initiate_jump)), jump_request_time * modifier, TIMER_STOPPABLE)
-	priority_announce("Mobile ships preparing for jump. ETD: [jump_request_time * modifier / (1 MINUTES)] minutes.", null, null, ANNOUNCEMENT_PRIORITY)
+	priority_announce("Bluespace disturbances intensifying. ETA: [jump_request_time * modifier / (1 MINUTES)] minutes.", null, null, ANNOUNCEMENT_PRIORITY)
+	new /datum/eor_outpost_picker()
 
 /// Cancels a currently requested bluespace jump. Can only be done after the jump has been requested but before the jump has actually begun.
 /datum/controller/subsystem/shuttle/proc/cancel_jump()

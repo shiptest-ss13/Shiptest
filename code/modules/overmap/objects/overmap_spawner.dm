@@ -43,6 +43,9 @@
 	//if no or an invalid overmap is passed onto the proc, nope the hell out
 	if(!istype(current_overmap))
 		CRASH("Invalid Overmap passed to punchcard generation! Aborting!")
+	//if planets shouldn't refresh/spawn naturally in this sector, reject the card
+	if(!current_overmap.encounters_refresh)
+		return FALSE
 	// if position is none we get a random square
 	if(!position)
 		position = current_overmap.get_unused_overmap_square()

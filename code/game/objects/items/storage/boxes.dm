@@ -1707,3 +1707,37 @@
 		new /obj/item/kitchen/fork/plastic(src)
 		new /obj/item/kitchen/spoon/plastic(src)
 		new /obj/item/melee/knife/plastic(src)
+
+/obj/item/storage/box/straw
+	name = "paper straw box"
+	desc = "Contains paper straws for drinking things. These only fit in malleable glassses, not normal drinking glasses, because of course they don't."
+	illustration = "straw"
+
+/obj/item/storage/box/straw/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/garnish/straw(src)
+	for(var/i in 1 to 4)
+		new /obj/item/garnish/stripedstraw(src)
+
+/obj/item/storage/box/garnish
+	name = "garnish box"
+	desc = "Contains various garnishes for decorating your drinks. These only fit in malleable glassses, not normal drinking glasses, because of course they don't."
+	illustration = "garnish"
+
+/obj/item/storage/box/garnish/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/garnish/umbrellared = 1,
+		/obj/item/garnish/umbrellablue = 1,
+		/obj/item/garnish/umbrellagreen = 1,
+		/obj/item/garnish/lime = 1,
+		/obj/item/garnish/lemon = 1,
+		/obj/item/garnish/orange = 1,
+		/obj/item/garnish/apple = 1,
+		/obj/item/garnish/chilipowder = 1,
+		/obj/item/garnish/salt = 1,
+		/obj/item/garnish/woodmixingstick = 1,
+		/obj/item/garnish/blackmixingstick = 1,
+		)
+	generate_items_inside(items_inside,src)
+
+

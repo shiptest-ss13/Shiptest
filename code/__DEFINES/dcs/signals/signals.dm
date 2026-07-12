@@ -150,6 +150,9 @@
 #define COMSIG_ATOM_CREATEDBY_PROCESSING "atom_createdby_processing"
 ///when an atom is processed (mob/living/user, obj/item/I, list/atom/results)
 #define COMSIG_ATOM_PROCESSED "atom_processed"
+///from base of atom/CanAllowThrough(): (/atom/movable, border/dir)
+#define COMSIG_ATOM_TRY_ALLOW_THROUGH "atom_allow_through"
+
 
 ///from base of atom/screwdriver_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_SCREWDRIVER_ACT "atom_screwdriver_act"

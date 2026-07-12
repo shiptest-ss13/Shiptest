@@ -72,6 +72,8 @@
 	icon_living = "piratespaceranged"
 	icon_dead = "piratespaceranged_dead"
 	atmos_requirements = IMMUNE_ATMOS_REQS
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	minbodytemp = 0
 	speed = 1
 	armor_base = /obj/item/clothing/suit/space

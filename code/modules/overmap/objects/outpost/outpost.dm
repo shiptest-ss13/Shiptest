@@ -53,15 +53,26 @@
 	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
 
+	///the overmap this outpost tries to target with mission generation.
+	var/datum/overmap_star_system/mission_system
+
 	var/datum/cargo_market/outpost/market
 
-	/// Our faction of the outpost
+	/// The faction of the outpost
 	var/datum/faction/faction
 	/// simple var that toggles the flag on/off, intended to show that this place is "inhabited". Turn off during events when something happens that causes the place to no longer be inhabited.
 	var/flag_overlay = TRUE
-	var/outpost_name
+
+	///Official name of the outpost, used for announcements and the like.
+	var/outpost_name = "Fallback Outpost"
+	///Who 'runs' the outpost, used for announcements.
+	var/outpost_administrator = "Fallback Administration"
+
+	///Can this outpost be selected as a spawning location during ship spawn?
+	var/valid_spawn_location = FALSE
 
 /datum/overmap/outpost/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
+	RegisterSignal(src, COMSIG_OVERMAP_PLANET_UNLOADED, PROC_REF(update_mission_list))
 	. = ..()
 	// init our template vars with the correct singletons
 	main_template = SSmapping.outpost_templates[main_template]
@@ -87,10 +98,10 @@
 		market = new()
 		market.name = "[name] market"
 
+/datum/overmap/outpost/on_overmaps_loaded()
+	mission_system = current_overmap.next_overmap
 	fill_missions()
-	addtimer(CALLBACK(src, PROC_REF(cycle_missions)), 1 HOURS, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
-	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 30 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
-
+	addtimer(CALLBACK(src, PROC_REF(cycle_missions)), 30 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/Destroy(...)
 	SSpoints_of_interest.remove_point_of_interest(token)
@@ -144,8 +155,8 @@
 
 // Shamelessly cribbed from how Elite: Dangerous does station names.
 /datum/overmap/outpost/proc/gen_outpost_name()
-	if(main_template?.outpost_name)
-		return "[main_template.outpost_name]"
+	if(outpost_name)
+		return "[outpost_name]"
 	return "[random_species_name()] [pick(GLOB.station_suffixes)]"
 
 /proc/random_species_name()
@@ -163,10 +174,27 @@
 				person_name = vox_name()
 	return person_name
 
+/datum/overmap/outpost/proc/update_mission_list()
+	for(var/datum/mission/target_mission as anything in missions)
+		for(var/location in target_mission.required_locations)
+			if(check_for_planet_type(location))
+				continue
+			qdel(target_mission)
+	fill_missions()
+
+/datum/overmap/outpost/proc/check_for_planet_type(planet_id)
+	for(var/datum/overmap/dynamic/encounter as anything in mission_system.dynamic_encounters)
+		if(encounter.planet.planet == planet_id)
+			return TRUE
+	return FALSE
+
 /datum/overmap/outpost/proc/fill_missions()
 	max_missions = min(20 + (SSovermap.controlled_ships.len * 2), 40)
 	while(LAZYLEN(missions) < max_missions)
-		var/mission_type = SSmissions.get_weighted_mission_type()
+		var/mission_type = SSmissions.get_weighted_mission_type(get_mission_sector())
+		if(!mission_type)
+			stack_trace("[src] could not find any valid missions while attempting to refill its mission list!")
+			return FALSE
 		var/datum/mission/M = new mission_type(src)
 		LAZYADD(missions, M)
 
@@ -509,3 +537,8 @@
 	//fixed? return to service after
 	port_to_fix.is_adjusting_now = FALSE
 	return TRUE
+
+/datum/overmap/outpost/proc/get_mission_sector()
+	if(!mission_system)
+		return SSovermap.wild_sectors[1]
+	return mission_system

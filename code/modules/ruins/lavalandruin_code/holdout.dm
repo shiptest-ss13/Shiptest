@@ -54,7 +54,6 @@
 		/obj/item/reagent_containers/food/drinks/soda_cans/vimukti = 0,
 		/obj/item/reagent_containers/food/drinks/soda_cans/shoal_punch = 0)
 	premium = list(
-		/obj/item/reagent_containers/food/drinks/soda_cans/air = 0,
 		/obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy = 0,
 		/obj/item/reagent_containers/food/drinks/soda_cans/crosstalk = 0)
 

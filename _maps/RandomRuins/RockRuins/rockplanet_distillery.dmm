@@ -208,7 +208,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-5"
 	},
-/obj/item/storage/bottles/moonshine/sealed,
+/obj/item/storage/bottles/chemshine/sealed,
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery/shuttle)
 "bS" = (
@@ -447,7 +447,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "en" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/item/storage/bottles/moonshine/sealed,
+/obj/item/storage/bottles/chemshine/sealed,
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery/crew)
 "eF" = (
@@ -474,7 +474,7 @@
 /obj/structure/reagent_dispensers/cooking_oil{
 	desc = "A huge metal vat with a tap on the front. Filled with moonshine.";
 	name = "moonshine vat";
-	reagent_id = /datum/reagent/consumable/ethanol/moonshine
+	reagent_id = /datum/reagent/consumable/ethanol/chemshine
 	},
 /obj/structure/fermenting_barrel/distiller{
 	density = 0;
@@ -566,7 +566,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "fW" = (
 /obj/structure/rack,
-/obj/item/storage/bottles/moonshine{
+/obj/item/storage/bottles/chemshine{
 	pixel_y = 6
 	},
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
@@ -651,7 +651,7 @@
 /obj/structure/reagent_dispensers/beerkeg{
 	desc = "A keg full of liver-shredding spirits brewed by amateur bootleggers.";
 	name = "moonshine keg";
-	reagent_id = /datum/reagent/consumable/ethanol/moonshine
+	reagent_id = /datum/reagent/consumable/ethanol/chemshine
 	},
 /obj/effect/turf_decal/industrial/loading/white{
 	dir = 4
@@ -2410,7 +2410,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/wrapping,
-/obj/item/storage/bottles/moonshine/sealed,
+/obj/item/storage/bottles/chemshine/sealed,
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/distillery/shuttle)
 "BJ" = (
@@ -3109,7 +3109,7 @@
 "JD" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	pixel_x = -6;
 	pixel_y = 12
 	},
@@ -3174,7 +3174,7 @@
 	layer = 2.8;
 	name = "moonshine keg";
 	pixel_x = -8;
-	reagent_id = /datum/reagent/consumable/ethanol/moonshine
+	reagent_id = /datum/reagent/consumable/ethanol/chemshine
 	},
 /obj/structure/reagent_dispensers/beerkeg{
 	anchored = 1;
@@ -3182,7 +3182,7 @@
 	name = "moonshine keg";
 	pixel_x = 8;
 	pixel_y = -2;
-	reagent_id = /datum/reagent/consumable/ethanol/moonshine
+	reagent_id = /datum/reagent/consumable/ethanol/chemshine
 	},
 /obj/structure/reagent_dispensers/beerkeg{
 	anchored = 1;
@@ -3191,7 +3191,7 @@
 	name = "moonshine keg";
 	pixel_x = -4;
 	pixel_y = 14;
-	reagent_id = /datum/reagent/consumable/ethanol/moonshine
+	reagent_id = /datum/reagent/consumable/ethanol/chemshine
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/spline/fancy/opaque/white{
@@ -3423,7 +3423,7 @@
 	pixel_x = 6;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	pixel_x = -6;
 	pixel_y = 6
 	},
@@ -3675,7 +3675,7 @@
 /area/ruin/rockplanet/distillery)
 "Qr" = (
 /obj/structure/catwalk/over,
-/obj/item/storage/bottles/moonshine{
+/obj/item/storage/bottles/chemshine{
 	pixel_y = 6
 	},
 /turf/open/floor/plating/rockplanet/lit{
@@ -3728,7 +3728,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 6
 	},
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	pixel_x = -6;
 	pixel_y = 4
 	},
@@ -3852,25 +3852,25 @@
 "Sq" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline/red,
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	list_reagents = null;
 	pixel_x = -6
 	},
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	list_reagents = null;
 	pixel_x = -6
 	},
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	list_reagents = null
 	},
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	list_reagents = null
 	},
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	list_reagents = null;
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	list_reagents = null;
 	pixel_x = 6
 	},
@@ -3894,11 +3894,11 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Sx" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	pixel_x = 4;
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	pixel_x = -6;
 	pixel_y = 2
 	},
@@ -4016,7 +4016,7 @@
 /area/ruin/rockplanet/distillery/saloon)
 "TR" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/item/storage/bottles/moonshine,
+/obj/item/storage/bottles/chemshine,
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery/crew)
 "TW" = (

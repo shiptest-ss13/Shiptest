@@ -38,7 +38,8 @@
 				spawn_location = SSovermap.outposts[1]
 
 		if(!spawn_location)
-			spawn_location = SSovermap.safe_system.get_unused_overmap_square()
+			var/datum/overmap_star_system/system = pick(SSovermap.safe_sectors)
+			spawn_location = system.get_unused_overmap_square()
 
 		var/datum/overmap/ship/controlled/ship = new(spawn_location, template)
 
