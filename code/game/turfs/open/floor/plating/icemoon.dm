@@ -330,3 +330,25 @@
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	light_color = COLOR_ICEPLANET_LIGHT
+
+/turf/open/floor/plasteel/tech/techmaint/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+
+/turf/open/floor/plasteel/dark/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+
+/turf/open/floor/plasteel/stairs/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+
+/turf/open/floor/plasteel/patterned/brushed/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+
+
