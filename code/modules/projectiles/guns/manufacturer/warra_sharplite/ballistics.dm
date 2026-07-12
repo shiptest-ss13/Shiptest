@@ -405,15 +405,6 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 
 	default_attachments = list(/obj/item/attachment/foldable_stock/resolution_inteq)
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/foldable_stock/resolution,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/ammo_counter
-	)
-
 NO_MAG_GUN_HELPER(automatic/smg/resolution/inteq)
 
 /obj/item/ammo_box/magazine/wt550m9
