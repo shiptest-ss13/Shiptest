@@ -1002,9 +1002,9 @@
 		affected_carbon.adjustOrganLoss(ORGAN_SLOT_BRAIN, volume * REM)
 	if(current_cycle>10)
 		//grace peroid before we just fuck up someone
-		affected_carbon.adjustToxLoss(toxpwr*REM, FALSE)
-		affected_carbon.adjustOrganLoss(ORGAN_SLOT_LIVER,volume*REM)
-		affected_carbon.adjustOrganLoss(ORGAN_SLOT_STOMACH,(volume*1.2)*REM)
+		affected_carbon.adjustToxLoss(toxpwr * REM, FALSE)
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_LIVER, volume * REM)
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_STOMACH, (volume * 1.2) * REM)
 
 		for(var/datum/disease/found_disease as anything in affected_carbon.diseases)
 			//you cant cure a heart attack with bleach
@@ -1015,8 +1015,8 @@
 				found_disease.update_stage(found_disease.stage - 1)
 
 	else
-		affected_carbon.adjustOrganLoss(ORGAN_SLOT_STOMACH,(toxpwr)*REM)
-		affected_carbon.adjustToxLoss((toxpwr/2)*REM, FALSE)
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_STOMACH, (toxpwr) * REM)
+		affected_carbon.adjustToxLoss((toxpwr / 2) * REM, FALSE)
 	affected_carbon.adjust_disgust(volume)
 
 	return ..()
@@ -1025,16 +1025,16 @@
 	. = ..()
 	if(istype(dipped_item, /obj/item/stock_parts/capacitor))
 		///1/3
-		holding_container.reagents.add_reagent(/datum/reagent/sodium = 1, (holding_container.reagents.remove_reagent(/datum/reagent/bleach, 10*dipped_item.get_part_rating())/3))
-		holding_container.reagents.add_reagent(/datum/reagent/oxygen = 1, (holding_container.reagents.remove_reagent(/datum/reagent/bleach, 10*dipped_item.get_part_rating())/3))
-		holding_container.reagents.add_reagent(/datum/reagent/chlorine = 1, (holding_container.reagents.remove_reagent(/datum/reagent/bleach, 10*dipped_item.get_part_rating())/3))
+		holding_container.reagents.add_reagent(/datum/reagent/sodium = 1, (holding_container.reagents.remove_reagent(/datum/reagent/bleach, 10*dipped_item.get_part_rating()) / 3))
+		holding_container.reagents.add_reagent(/datum/reagent/oxygen = 1, (holding_container.reagents.remove_reagent(/datum/reagent/bleach, 10*dipped_item.get_part_rating()) / 3))
+		holding_container.reagents.add_reagent(/datum/reagent/chlorine = 1, (holding_container.reagents.remove_reagent(/datum/reagent/bleach, 10*dipped_item.get_part_rating()) / 3))
 		return TRUE
 	return
 
 /datum/reagent/bleach/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
 	if(chems.has_reagent(type, 1))
-		mytray.adjustHealth(-round(chems.get_reagent_amount(type)*  2))
+		mytray.adjustHealth(-round(chems.get_reagent_amount(type) * 2))
 		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 3))
 		mytray.adjustWeeds(-rand(2,4))
 

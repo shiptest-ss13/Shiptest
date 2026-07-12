@@ -517,8 +517,8 @@
 	mix_message = "The solution violently explodes!"
 
 /datum/chemical_reaction/reagent_explosion/bleach_peroxide/on_reaction(datum/reagents/holder, created_volume)
-	holder.remove_reagent(/datum/reagent/bleach, created_volume*3)
-	holder.remove_reagent(/datum/reagent/hydrogen_peroxide, created_volume*3)
+	holder.remove_reagent(/datum/reagent/bleach, created_volume * 3)
+	holder.remove_reagent(/datum/reagent/hydrogen_peroxide, created_volume * 3)
 	var/smoke_radius = round(sqrt(created_volume), 1)
 	var/turf/open/our_turf = get_turf(holder.my_atom)
 	var/datum/effect_system/smoke_spread/chem/plume = new
