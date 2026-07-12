@@ -315,3 +315,18 @@
 /turf/open/floor/concrete/pavement/icemoon/lit
 	light_range = 2
 	light_power = 1
+
+/turf/open/floor/plating/rust/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+
+/turf/open/floor/plasteel/tech/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+
+/turf/open/floor/pod/dark/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
