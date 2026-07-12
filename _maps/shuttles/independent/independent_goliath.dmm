@@ -890,9 +890,10 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/machinery/telecomms/receiver/preset_left/birdstation{
-	autolinkers = list("receiverG");
-	freq_listening = list(1353)
+/obj/machinery/telecomms/receiver/preset_right{
+	autolinkers = list("receiverG", "hub");
+	network = "indie_commnet";
+	freq_listening = list(1353,1459)
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -1676,16 +1677,16 @@
 /area/ship/crew/dorm/captain)
 "jQ" = (
 /obj/effect/turf_decal/industrial/traffic/fulltile,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 1;
-	id = "goliathholohangar2"
-	},
 /obj/machinery/door/poddoor{
 	dir = 8;
 	id = "goliathblasthangar2"
 	},
 /obj/structure/cable{
 	icon_state = "0-10"
+	},
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart{
+	dir = 1;
+	id = "goliathholohangar2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hangar)
@@ -2300,6 +2301,20 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office)
+"mZ" = (
+/obj/effect/spawner/bunk_bed{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 6
+	},
+/obj/structure/curtain/bounty{
+	layer = 4.1
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/carpet/nanoweave,
+/area/ship/crew/dorm)
 "nb" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -4075,15 +4090,15 @@
 /area/ship/hangar)
 "wM" = (
 /obj/effect/turf_decal/industrial/traffic/fulltile,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "goliathholohangar2"
-	},
 /obj/machinery/door/poddoor{
 	dir = 8;
 	id = "goliathblasthangar2"
 	},
 /obj/structure/cable{
 	icon_state = "0-9"
+	},
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart{
+	id = "goliathholohangar2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hangar)
@@ -5691,6 +5706,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/storage)
 "Fn" = (
@@ -6192,7 +6208,7 @@
 /obj/machinery/telecomms/bus/preset_one{
 	autolinkers = list("hub","processor4","bus");
 	network = "indie_commnet";
-	freq_listening = list(1353)
+	freq_listening = list(1353, 1459)
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -7032,7 +7048,7 @@
 	},
 /obj/machinery/telecomms/server/presets/common{
 	autolinkers = list("common","hub");
-	freq_listening = list(1353);
+	freq_listening = list(1353, 1459);
 	network = "indie_commnet"
 	},
 /obj/effect/turf_decal/techfloor,
@@ -10673,7 +10689,7 @@ OQ
 Ra
 LV
 eX
-qP
+mZ
 uj
 aY
 aY

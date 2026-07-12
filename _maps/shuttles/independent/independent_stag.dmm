@@ -2713,6 +2713,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/machinery/holosign/hardline{
+	pixel_x = 0;
+	pixel_y = 30
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "AW" = (
@@ -3199,6 +3203,10 @@
 	},
 /obj/structure/chair/handrail{
 	dir = 8
+	},
+/obj/machinery/holosign/hardline{
+	pixel_x = 29;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -4641,6 +4649,10 @@
 "Ss" = (
 /obj/structure/cable/green{
 	icon_state = "5-10"
+	},
+/obj/machinery/holosign/clover{
+	pixel_x = 0;
+	pixel_y = -30
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)

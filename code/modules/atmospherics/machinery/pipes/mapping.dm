@@ -64,18 +64,19 @@
 	HELPER_PARTIAL_NAMED(/obj/machinery/atmospherics/pipe/manifold4w/##Type, #Type, "manifold4w", Color, Name)
 
 HELPER(general, null)
-HELPER(yellow, rgb(255, 198, 0))
-HELPER(cyan, rgb(0, 255, 249))
-HELPER(green, rgb(30, 255, 0))
-HELPER(orange, rgb(255, 129, 25))
-HELPER(purple, rgb(128, 0, 182))
-HELPER(dark, rgb(69, 69, 69))
-HELPER(brown, rgb(178, 100, 56))
-HELPER(violet, rgb(64, 0, 128))
+HELPER(yellow, "#fff957")
+HELPER(cyan, "#60d5fc")
+HELPER(green, "#8cff75")
+HELPER(orange, "#ff904f")
+HELPER(purple, "#ed69ff")
+HELPER(dark, "#898aad")
+HELPER(brown, "#a65326")
+HELPER(violet, "#6640ff")
 
-HELPER_NAMED(scrubbers, "scrubbers pipe", rgb(255, 0, 0))
-HELPER_NAMED(supply, "air supply pipe", rgb(0, 0, 255))
-HELPER_NAMED(supplymain, "main air supply pipe", rgb(130, 43, 255))
+HELPER_NAMED(scrubbers, "scrubbers pipe", "#ff3030")
+HELPER_NAMED(supply, "air supply pipe", "#5c7fff")
+HELPER_NAMED(supplymain, "main air supply pipe", "#9565fc")
+
 
 #undef HELPER_NAMED
 #undef HELPER

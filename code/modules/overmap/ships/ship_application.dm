@@ -143,9 +143,11 @@
 
 	if(!app_mob)
 		return
-	SEND_SOUND(app_mob, sound('sound/misc/server-ready.ogg', volume=50))
+
 	switch(status)
 		if(SHIP_APPLICATION_ACCEPTED)
 			to_chat(app_mob, span_notice("Your application to [parent_ship] was accepted!"), MESSAGE_TYPE_INFO)
+			SEND_SOUND(app_mob, sound('sound/misc/server-ready.ogg', volume=50))
 		if(SHIP_APPLICATION_DENIED)
 			to_chat(app_mob, span_warning("Your application to [parent_ship] was denied!"), MESSAGE_TYPE_INFO)
+			SEND_SOUND(app_mob, sound('sound/machines/buzz-sigh.ogg', volume=50))

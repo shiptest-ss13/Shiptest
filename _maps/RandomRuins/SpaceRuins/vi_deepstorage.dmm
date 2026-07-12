@@ -649,7 +649,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby)
 "ep" = (
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
@@ -3435,7 +3435,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/canteen)
 "vS" = (
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/deepstorage/canteen)
@@ -3504,7 +3504,7 @@
 /turf/open/floor/plating/asteroid/moon,
 /area/ruin/space/deepstorage)
 "wp" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4510,7 +4510,7 @@
 	},
 /area/ruin/space/deepstorage)
 "Cw" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
@@ -5279,7 +5279,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/engineering)
 "HR" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -6329,7 +6329,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby/med)
 "NB" = (
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
@@ -7611,11 +7611,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/hallway)
 "WO" = (
-/mob/living/simple_animal/bot/secbot/ed209/rockplanet{
-	faction = list("Deathsquad");
-	name = "\improper  ED-209 Robot"
-	},
 /obj/machinery/light/floor,
+/mob/living/simple_animal/hostile/automated/rover,
 /turf/open/floor/circuit/red,
 /area/ruin/space/has_grav/deepstorage/lobby)
 "WS" = (

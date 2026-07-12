@@ -378,6 +378,16 @@
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/insulated
 
+/datum/outfit/job/syndicate/ce/ngr/stripped
+	name = "Syndicate - Foreman - Stripped (New Gorlex Republic)"
+	faction = FACTION_NGR
+
+	head = null
+	ears = /obj/item/radio/headset/syndicate/alt/captain/ngr
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
+	suit = null
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = null
 
 //Chief Medical Officer
 

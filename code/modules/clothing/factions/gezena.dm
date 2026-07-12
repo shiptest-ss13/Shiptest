@@ -417,12 +417,13 @@
 		new /obj/item/stock_parts/cell/gun/pgf(src)
 	new /obj/item/grenade/frag(src)
 	new /obj/item/grenade/smokebomb(src)
+	new /obj/item/attachment/bayonet(src)
 
 /obj/item/storage/belt/military/gezena/engineer/PopulateContents()
 	. = ..()
-	for(var/i in 1 to 3)
+	for(var/i in 1 to 4)
 		new /obj/item/stock_parts/cell/gun/pgf(src)
-	new /obj/item/grenade/smokebomb(src)
+	new /obj/item/grenade/c4(src)
 	new /obj/item/grenade/c4(src)
 	new /obj/item/grenade/c4(src)
 
