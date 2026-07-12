@@ -1446,7 +1446,7 @@
 				else
 					target = marked_datum
 
-		var/obj/structure/closet/supplypod/centcompod/pod
+		var/obj/structure/closet/supplypod/pod
 
 		if(target)
 			if(where == "frompod")
