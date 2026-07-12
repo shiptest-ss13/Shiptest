@@ -167,6 +167,7 @@
 
 	if(limb.current_gauze)
 		to_chat(user, span_warning("[user == M ? "Your" : "[M]'s"] [limb.name] is already bandaged!"))
+		return
 
 	user.visible_message(
 		span_warning("[user] begins wrapping [M]'s [limb.name] with [src]..."),
