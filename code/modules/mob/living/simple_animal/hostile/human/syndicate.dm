@@ -31,6 +31,8 @@
 	icon_living = "syndicate_space"
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	speed = 1
 
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space
@@ -209,6 +211,8 @@
 	icon_living = "syndicate_space_knife"
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	speed = 1
 	projectile_deflect_chance = 0
 
@@ -608,6 +612,8 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	speed = 1
 	rapid = 2
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
@@ -865,6 +871,8 @@
 	armor_base = /obj/item/clothing/suit/space/syndicate/ramzi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space/soft/surplus
 	environment_smash = ENVIRONMENT_SMASH_NONE
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian/towel
 	name = "Ramzi Clique Soapmaster"
