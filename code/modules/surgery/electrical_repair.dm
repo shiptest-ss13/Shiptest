@@ -115,6 +115,8 @@
 	time = 5 SECONDS
 
 /datum/surgery_step/solder_wiring/tool_check(mob/user, obj/item/tool)
+	if(tool.tool_behaviour == TOOL_CAUTERY)
+		return TRUE
 	if(istype(tool, /obj/item) && tool.get_temperature() < SOLDER_MELTING_POINT)
 		return FALSE
 	if(istype(tool, /obj/item/reagent_containers) && tool.reagents?.get_reagent_amount(/datum/reagent/medicine/liquid_solder) < 2)
