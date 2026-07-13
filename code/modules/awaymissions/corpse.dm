@@ -354,6 +354,13 @@
 	name = "dead junglefowl"
 	mob_type = /mob/living/simple_animal/hostile/retaliate/chicken
 
+/obj/effect/mob_spawn/animal_corpse/reisehund
+	name = "dead hound"
+	mob_type = /mob/living/simple_animal/hostile/asteroid/wolf/hound
+
+/obj/effect/mob_spawn/animal_corpse/reisehund/ngr
+	mob_type = /mob/living/simple_animal/hostile/asteroid/wolf/hound/ngr
+
 // I'll work on making a list of corpses people request for maps, or that I think will be commonly used. Syndicate operatives for example.
 
 ///////////Civilians//////////////////////
