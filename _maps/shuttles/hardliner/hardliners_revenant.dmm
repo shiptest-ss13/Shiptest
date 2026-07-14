@@ -131,6 +131,26 @@
 	dir = 4
 	},
 /obj/structure/rack,
+/obj/item/extinguisher/mini{
+	pixel_x = -9;
+	pixel_y = 7
+	},
+/obj/item/extinguisher/mini{
+	pixel_x = -9;
+	pixel_y = 4
+	},
+/obj/item/extinguisher/mini{
+	pixel_x = -9;
+	pixel_y = 1
+	},
+/obj/item/pinpointer/mineral{
+	pixel_y = 6;
+	pixel_x = 2
+	},
+/obj/item/pinpointer/mineral{
+	pixel_y = 1;
+	pixel_x = 2
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "bq" = (
@@ -288,6 +308,9 @@
 /obj/item/clothing/shoes/workboots{
 	pixel_x = -13;
 	pixel_y = 6
+	},
+/obj/item/storage/bag/ore{
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
@@ -475,6 +498,9 @@
 	dir = 4;
 	id = "revenantport"
 	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engines/port)
 "eU" = (
@@ -648,7 +674,7 @@
 /obj/structure/railing,
 /obj/machinery/conveyor{
 	dir = 10;
-	id = "ns_port_conveyor"
+	id = "rvconveyor"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -712,13 +738,7 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 1
 	},
-/obj/machinery/firealarm/directional/north{
-	pixel_x = 6
-	},
-/obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = -7;
-	pixel_y = 28
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "ih" = (
@@ -1062,7 +1082,6 @@
 /obj/effect/turf_decal/techfloor,
 /obj/structure/closet/crate/radiation{
 	name = "fuel crate";
-	anchored = 1;
 	populate = 0
 	},
 /obj/machinery/light/small/directional/west,
@@ -1241,7 +1260,6 @@
 	pixel_x = 1;
 	pixel_y = 8
 	},
-/obj/item/storage/belt/utility/full,
 /obj/item/storage/toolbox/syndicate{
 	pixel_x = -2;
 	pixel_y = -5
@@ -1251,6 +1269,7 @@
 	pixel_y = -3
 	},
 /obj/item/clothing/glasses/welding,
+/obj/item/storage/belt/utility,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "pE" = (
@@ -1280,10 +1299,16 @@
 /area/ship/cargo)
 "qe" = (
 /obj/machinery/light/small/directional/south,
-/obj/structure/guncloset,
 /obj/item/gun/ballistic/shotgun/gaboon/empty,
 /obj/item/gun/ballistic/automatic/assault/hydra/indie/no_mag,
 /obj/item/gun/ballistic/automatic/pistol/asp/no_mag,
+/obj/structure/closet/secure_closet/armorycage{
+	pixel_x = 3;
+	pixel_y = 0;
+	req_access = list(56);
+	name = "gun locker";
+	anchored = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "qk" = (
@@ -1340,6 +1365,10 @@
 	name = "captain's locker"
 	},
 /obj/item/storage/box/ammo/a357,
+/obj/item/radio/command{
+	pixel_x = 12
+	},
+/obj/item/storage/belt/security/webbing/hardliners/alt,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/captain)
 "qC" = (
@@ -1449,10 +1478,6 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/storage/equip)
 "rq" = (
-/obj/structure/closet/secure_closet/armorycage{
-	pixel_x = 3;
-	pixel_y = 0
-	},
 /obj/item/ammo_box/magazine/m57_39_asp{
 	pixel_x = -8;
 	pixel_y = -6
@@ -1476,6 +1501,13 @@
 /obj/item/ammo_box/magazine/m556_42_hydra/small/empty{
 	pixel_x = 9;
 	pixel_y = -6
+	},
+/obj/structure/closet/secure_closet/armorycage{
+	pixel_x = 3;
+	pixel_y = 0;
+	req_access = list(56);
+	name = "gun locker";
+	anchored = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -1655,7 +1687,7 @@
 /obj/structure/railing,
 /obj/machinery/conveyor{
 	dir = 9;
-	id = "ns_port_conveyor"
+	id = "rvconveyor"
 	},
 /obj/machinery/mineral/processing_unit{
 	output_dir = 8;
@@ -1786,10 +1818,6 @@
 "vG" = (
 /obj/machinery/oven,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/machinery/reagentgrinder{
-	pixel_x = 5;
-	pixel_y = 20
-	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "wc" = (
@@ -1974,6 +2002,9 @@
 	dir = 4;
 	id = "revenantstar"
 	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engines/starboard)
 "yx" = (
@@ -2086,6 +2117,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -2285,6 +2319,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
+/obj/machinery/drill,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "DD" = (
@@ -2453,6 +2488,9 @@
 /obj/item/clothing/suit/armor/hardliners/sergeant,
 /obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
 /obj/item/melee/knife/switchblade,
+/obj/item/radio/command{
+	pixel_x = 12
+	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/captain)
 "Fg" = (
@@ -2676,6 +2714,14 @@
 	pixel_x = 1;
 	pixel_y = 3
 	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -7;
+	pixel_y = -28
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 5;
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "Hn" = (
@@ -2733,6 +2779,9 @@
 	pixel_y = 9
 	},
 /obj/machinery/light/small/directional/south,
+/obj/item/storage/bag/ore{
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "Hr" = (
@@ -2876,6 +2925,11 @@
 "Jg" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/machinery/conveyor_switch{
+	pixel_x = -7;
+	pixel_y = 17;
+	id = "rvconveyor"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -3473,6 +3527,9 @@
 	dir = 4;
 	id = "revenantstar"
 	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engines/starboard)
 "Qi" = (
@@ -3989,6 +4046,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "Wa" = (
@@ -4139,6 +4197,9 @@
 	dir = 4;
 	id = "revenantport"
 	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engines/port)
 "YK" = (
@@ -4253,7 +4314,7 @@
 "Zx" = (
 /obj/machinery/conveyor{
 	dir = 5;
-	id = "ns_port_conveyor"
+	id = "rvconveyor"
 	},
 /obj/machinery/mineral/unloading_machine,
 /obj/machinery/light/small/directional/north,
@@ -4306,7 +4367,7 @@
 "ZY" = (
 /obj/machinery/conveyor{
 	dir = 6;
-	id = "ns_port_conveyor"
+	id = "rvconveyor"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
