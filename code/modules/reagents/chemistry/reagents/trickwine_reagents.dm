@@ -10,7 +10,7 @@
 	name = trickwine_reagent.name
 	icon_state = "template"
 	cut_overlays()
-	var/icon/flask_icon = icon('icons/obj/drinks/drinks.dmi', trickwine_reagent.breakaway_flask_icon_state)
+	var/icon/flask_icon = icon('icons/obj/drinks/trickwine.dmi', trickwine_reagent.breakaway_flask_icon_state)
 	add_overlay(flask_icon)
 
 /datum/status_effect/trickwine
@@ -21,7 +21,7 @@
 	var/obj/effect/abstract/particle_holder/particle_generator
 	// Used to make icon for status_effect
 	var/flask_icon_state
-	var/flask_icon = 'icons/obj/drinks/drinks.dmi'
+	var/flask_icon = 'icons/obj/drinks/trickwine.dmi'
 	// Used for mod outline
 	var/reagent_color = "#FFFFFF"
 	var/message_apply_others = "is affected by a trickwine!"
