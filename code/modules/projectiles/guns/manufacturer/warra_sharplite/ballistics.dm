@@ -407,7 +407,7 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
-		/obj/item/attachment/foldable_stock/resolution/inteq,
+		/obj/item/attachment/foldable_stock/resolution_inteq,
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
