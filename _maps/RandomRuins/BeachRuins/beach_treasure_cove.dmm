@@ -316,11 +316,15 @@
 /turf/open/floor/suns/hatch/mahogany,
 /area/space)
 "jy" = (
-/obj/structure/chair/stool{
-	dir = 1
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 9
 	},
-/mob/living/basic/mouse/rat,
-/turf/open/space/basic,
+/obj/item/gun/ballistic/automatic/pistol/rattlesnake/no_mag{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "jF" = (
 /obj/structure/platform/ship_three{
@@ -521,6 +525,14 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
 	},
+/obj/item/ammo_box/magazine/m9mm_rattlesnake{
+	pixel_x = -9;
+	pixel_y = -2
+	},
+/obj/item/ammo_box/magazine/m9mm_rattlesnake{
+	pixel_x = 2;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "oq" = (
@@ -600,6 +612,10 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
+/area/space)
+"pv" = (
+/obj/effect/anomaly/phantom/planetary,
+/turf/open/space/basic,
 /area/space)
 "pz" = (
 /obj/item/ammo_casing/spent/rifle_steel,
@@ -1276,8 +1292,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "Fj" = (
-/obj/structure/chair/stool,
-/mob/living/basic/mouse/rat,
+/obj/item/food/deadmouse,
 /turf/open/space/basic,
 /area/space)
 "Fl" = (
@@ -2799,7 +2814,7 @@ ie
 ie
 ie
 ie
-tD
+zW
 ie
 ie
 ie
@@ -3207,7 +3222,7 @@ ie
 ie
 ie
 ie
-tD
+zW
 ie
 ie
 cF
@@ -3312,7 +3327,7 @@ eF
 tD
 zh
 tD
-tD
+zW
 fU
 xc
 EU
@@ -3384,14 +3399,14 @@ Tl
 cU
 Oi
 fU
+zW
 tD
 tD
 tD
-tD
-uy
-tD
+Fj
 tD
 tD
+pv
 tD
 tD
 Jh
@@ -3416,7 +3431,7 @@ eF
 tD
 tD
 tD
-tD
+zW
 fU
 lI
 HP
@@ -3436,6 +3451,7 @@ Tl
 cU
 Oi
 fU
+zW
 tD
 tD
 tD
@@ -3443,8 +3459,7 @@ tD
 tD
 tD
 tD
-tD
-uy
+Fj
 tD
 Jh
 vW
@@ -3489,10 +3504,10 @@ cU
 Oi
 GA
 ie
-tD
 Fj
+yX
 TB
-jy
+TN
 tD
 tD
 tD
@@ -3519,7 +3534,7 @@ ie
 ie
 ie
 ie
-tD
+zW
 ie
 ie
 cF
@@ -3545,7 +3560,7 @@ tD
 yX
 TB
 TN
-uy
+tD
 ie
 tD
 tD
@@ -3570,7 +3585,7 @@ tD
 ie
 iF
 oh
-oh
+jy
 Nf
 Nf
 ie
