@@ -682,13 +682,14 @@
 	color = "#D3B913"
 	taste_description = "sweetness"
 
-/datum/reagent/bleach/sterilizine
+/datum/reagent/sterilizine
 	name = "Sterilizine"
 	description = "Sterilizes wounds in preparation for surgery."
 	color = "#D0EFEE" // space cleaner but lighter
-	istoxic = FALSE
+	taste_description = "bitterness"
+	var/robot_clean_power = 10
 
-/datum/reagent/bleach/sterilizine/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
+/datum/reagent/sterilizine/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR, PATCH))
 		for(var/s in C.surgeries)
 			var/datum/surgery/S = s

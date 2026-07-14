@@ -1,5 +1,5 @@
 /datum/chemical_reaction/medmesh
-	required_reagents = list(/datum/reagent/cellulose = 20, /datum/reagent/consumable/aloejuice = 20, /datum/reagent/bleach/sterilizine = 10)
+	required_reagents = list(/datum/reagent/cellulose = 20, /datum/reagent/consumable/aloejuice = 20, /datum/reagent/sterilizine = 10)
 	mob_react = FALSE
 
 /datum/chemical_reaction/medmesh/on_reaction(datum/reagents/holder, created_volume)
@@ -8,4 +8,4 @@
 		new /obj/item/stack/medical/mesh/advanced(location)
 
 /datum/chemical_reaction/medmesh/ash
-	required_reagents = list(/datum/reagent/ash_fibers = 20, /datum/reagent/consumable/aloejuice = 20, /datum/reagent/bleach/sterilizine = 10)
+	required_reagents = list(/datum/reagent/ash_fibers = 20, /datum/reagent/consumable/aloejuice = 20, /datum/reagent/sterilizine = 10)
