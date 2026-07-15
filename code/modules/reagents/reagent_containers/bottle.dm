@@ -38,6 +38,11 @@
 	desc = "A small bottle of spewium."
 	list_reagents = list(/datum/reagent/toxin/spewium = 30)
 
+/obj/item/reagent_containers/glass/bottle/rezadone
+	name = "rezadone bottle"
+	desc = "A small bottle of rezadone."
+	list_reagents = list(/datum/reagent/medicine/rezadone = 30)
+
 /obj/item/reagent_containers/glass/bottle/morphine
 	name = "morphine bottle"
 	desc = "A small bottle of morphine."
@@ -106,8 +111,6 @@
 /obj/item/reagent_containers/glass/bottle/adminordrazine
 	name = "Adminordrazine Bottle"
 	desc = "A small bottle. Contains the liquid essence of the gods."
-	icon = 'icons/obj/drinks/drinks.dmi'
-	icon_state = "holyflask"
 	list_reagents = list(/datum/reagent/medicine/adminordrazine = 30)
 	can_have_cap = FALSE
 	cap_icon_state = null

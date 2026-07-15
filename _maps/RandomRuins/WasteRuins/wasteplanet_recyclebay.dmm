@@ -28,7 +28,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/security)
 "aq" = (
@@ -617,9 +617,7 @@
 /area/ruin/wasteplanet/recycle_bay/security)
 "eP" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/vault)
@@ -2036,9 +2034,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/recycle_bay/vault)
 "nW" = (
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -4571,10 +4567,7 @@
 /turf/closed/wall,
 /area/ruin/wasteplanet/recycle_bay/salvage_bay)
 "EO" = (
-/obj/machinery/mineral/processing_unit_console{
-	dir = 4;
-	pixel_x = -28;
-	pixel_y = 1;
+/obj/machinery/computer/processing_unit_console/directional/west{
 	input_dir = 2;
 	machinedir = 1
 	},
@@ -5898,7 +5891,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /obj/structure/cable{
@@ -6758,7 +6751,7 @@
 /turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Uu" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,

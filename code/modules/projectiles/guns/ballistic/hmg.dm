@@ -39,8 +39,7 @@
 	/obj/structure/barricade,
 	/obj/structure/bed,
 	/obj/structure/chair,
-	/obj/structure/railing,
-	/obj/structure/flippedtable
+	/obj/structure/railing
 	)
 	wear_minor_threshold = 300
 	wear_major_threshold = 900

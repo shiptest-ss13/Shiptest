@@ -13,7 +13,7 @@
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
-	force = 5
+	force = 10
 
 	bad_type = /obj/item/gun
 

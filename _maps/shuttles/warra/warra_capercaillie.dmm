@@ -16,7 +16,7 @@
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
-/obj/structure/sign/warning/enginesafety{
+/obj/structure/sign/poster/official/moth/hardhats{
 	pixel_y = 32
 	},
 /turf/open/floor/plating,
@@ -227,9 +227,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/black,
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/structure/cable/white,
 /obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -493,39 +491,10 @@
 "dF" = (
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line,
 /obj/effect/turf_decal/trimline/opaque/white/line,
-/obj/machinery/camera/autoname{
-	dir = 10
+/obj/machinery/camera/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
 	},
-/obj/structure/closet/wall/directional/south{
-	name = "cleaning utensil closet"
-	},
-/obj/item/clothing/under/warra/janitor,
-/obj/item/clothing/shoes/jackboots{
-	pixel_y = -7
-	},
-/obj/item/clothing/gloves/color/black{
-	pixel_y = -10
-	},
-/obj/item/clothing/head/warra/cap/janitor{
-	pixel_y = 8
-	},
-/obj/item/storage/belt/janitor,
-/obj/item/storage/box/lights/mixed,
-/obj/item/storage/bag/trash{
-	pixel_y = 4;
-	pixel_x = -4
-	},
-/obj/item/pushbroom{
-	pixel_y = 1
-	},
-/obj/item/mop{
-	pixel_x = 4
-	},
-/obj/item/reagent_containers/glass/bucket{
-	pixel_x = 6;
-	pixel_y = -6
-	},
-/obj/item/reagent_containers/glass/rag,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "dH" = (
@@ -686,7 +655,7 @@
 /obj/structure/cable/white{
 	icon_state = "0-2"
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -859,6 +828,7 @@
 	pixel_y = -6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/directional/south,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "fQ" = (
@@ -900,9 +870,6 @@
 	},
 /obj/effect/turf_decal/siding/white{
 	dir = 4
-	},
-/obj/machinery/camera/autoname{
-	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -1365,9 +1332,6 @@
 	pixel_y = 4
 	},
 /obj/item/radio/intercom/directional/east,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
 /obj/effect/turf_decal/industrial/fire/fulltile,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -2399,7 +2363,7 @@
 "ux" = (
 /obj/machinery/atmospherics/components/unary/tank/nitrogen,
 /obj/effect/turf_decal/industrial/outline/red,
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -2539,9 +2503,7 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/south,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/medical)
 "wl" = (
@@ -3334,6 +3296,7 @@
 	pixel_y = -32
 	},
 /obj/machinery/light/small/directional/east,
+/obj/machinery/camera/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Ee" = (
@@ -3777,6 +3740,7 @@
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/industrial/fire/fulltile,
+/obj/machinery/camera/directional/east,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Ij" = (
@@ -3799,6 +3763,41 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
+"Io" = (
+/obj/effect/turf_decal/trimline/opaque/vired/filled/line,
+/obj/effect/turf_decal/trimline/opaque/white/line,
+/obj/structure/closet/wall/directional/south{
+	name = "cleaning utensil closet"
+	},
+/obj/item/reagent_containers/glass/rag,
+/obj/item/reagent_containers/glass/bucket{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/pushbroom{
+	pixel_y = 1
+	},
+/obj/item/mop{
+	pixel_x = 4
+	},
+/obj/item/storage/box/lights/mixed,
+/obj/item/storage/bag/trash{
+	pixel_y = 4;
+	pixel_x = -4
+	},
+/obj/item/clothing/head/warra/cap/janitor{
+	pixel_y = 8
+	},
+/obj/item/storage/belt/janitor,
+/obj/item/clothing/under/warra/janitor,
+/obj/item/clothing/gloves/color/black{
+	pixel_y = -10
+	},
+/obj/item/clothing/shoes/jackboots{
+	pixel_y = -7
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "IG" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -3999,10 +3998,9 @@
 	pixel_x = -5;
 	pixel_y = -2
 	},
-/obj/item/gun/energy/sharplite/x26/empty_cell{
+/obj/item/gun/energy/sharplite/ohm/empty_cell{
 	pixel_y = -5
 	},
-/obj/machinery/camera/autoname,
 /obj/machinery/light_switch{
 	pixel_x = 12;
 	pixel_y = 22
@@ -4331,11 +4329,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/hatch/blue,
-/obj/machinery/computer/security/telescreen{
+/obj/machinery/computer/security/telescreen/directional/south{
 	desc = "A telescreen that connects to the ship's security camera network.";
-	dir = 1;
-	network = list("ss13");
-	pixel_y = -26
+	network = list("ss13")
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -4908,9 +4904,7 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable/white{
 	icon_state = "0-8"
@@ -5332,7 +5326,7 @@
 	pixel_x = -8;
 	pixel_y = 15
 	},
-/obj/item/gun/energy/sharplite/x01{
+/obj/item/gun/energy/sharplite/yari{
 	pixel_x = -5
 	},
 /obj/machinery/light_switch{
@@ -5462,14 +5456,15 @@
 /area/ship/bridge)
 "VS" = (
 /obj/structure/table,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34
-	},
 /obj/item/radio/intercom/directional/north,
 /obj/item/reagent_containers/food/drinks/sillycup/smallcarton{
 	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north{
+	pixel_x = 0;
+	pixel_y = 37
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Wh" = (
@@ -6348,7 +6343,7 @@ xb
 if
 fQ
 tt
-sM
+Io
 iM
 Zc
 zy
