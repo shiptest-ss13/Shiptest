@@ -261,7 +261,7 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "bc" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -1157,7 +1157,7 @@
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ex" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /obj/effect/turf_decal/borderfloor{
@@ -1822,7 +1822,7 @@
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "hI" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/grid,
@@ -1980,7 +1980,7 @@
 /turf/open/floor/carpet/executive,
 /area/ruin/beach/corpo_resort/hotel)
 "il" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/grid,
@@ -2238,9 +2238,6 @@
 	dir = 1
 	},
 /obj/machinery/door/window/northleft,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -32
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
 	pixel_x = -21;
@@ -2249,6 +2246,7 @@
 	id = "corporate_resort_bar_main_window";
 	dir = 4
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/west,
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/corpo_resort/bar)
 "jz" = (
@@ -3056,7 +3054,7 @@
 	},
 /obj/item/flashlight,
 /obj/item/storage/belt/utility/full/engi,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/clothing/head/hardhat/warra,
 /obj/item/clothing/under/warra/engineering,
 /obj/item/clothing/shoes/workboots,
@@ -3984,8 +3982,7 @@
 /obj/structure/platform/corner{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("resort_power_station")
 	},
 /turf/open/water/beach/underground,
@@ -4084,8 +4081,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("resort_power_station")
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -4334,7 +4330,7 @@
 /obj/effect/turf_decal/trimline/opaque/orange/line{
 	dir = 8
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 1
 	},
 /mob/living/simple_animal/hostile/human/ramzi/ranged/runt/flapcap{
@@ -6070,7 +6066,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/beach/corpo_resort/hotel/rooms/one)
 "yC" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /mob/living/basic/hivebot/strong,
@@ -6427,7 +6423,7 @@
 	dir = 4
 	},
 /obj/structure/foamedmetal/iron,
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/thin{
 	dir = 4
@@ -10895,7 +10891,7 @@
 /area/ruin/beach/corpo_resort/bar)
 "TP" = (
 /obj/structure/hazard/spray/steam/safe,
-/obj/machinery/camera/autoname{
+/obj/machinery/camera/autoname/directional/north{
 	network = list("resort_power_station")
 	},
 /obj/item/ammo_casing/spent/rifle_steel,
@@ -10959,7 +10955,7 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "TY" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -11243,9 +11239,8 @@
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "UW" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable/wood{
 	dir = 8;
-	icon_state = "wood_table";
 	table_type = /obj/structure/table/wood
 	},
 /obj/effect/turf_decal/siding/wood{
@@ -11953,7 +11948,6 @@
 "XJ" = (
 /obj/structure/closet/crate/trashcart,
 /obj/item/stock_parts/cell/gun/sharplite/plus/empty,
-/obj/item/gun/energy/sharplite/l201/l204/empty_cell,
 /obj/item/stack/ore/salvage/scrapmetal/ten,
 /obj/item/stack/ore/salvage/scraptitanium/five,
 /obj/item/circuitboard/machine/recharger,
@@ -11963,6 +11957,7 @@
 /obj/item/melee/classic_baton/telescopic,
 /obj/item/restraints/handcuffs,
 /obj/item/gun/energy/disabler,
+/obj/item/gun/energy/sharplite/volt/empty_cell,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "XM" = (

@@ -1522,7 +1522,7 @@
 	pixel_x = 9;
 	pixel_y = 3
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = -9;
 	pixel_y = -4
 	},
@@ -1775,7 +1775,7 @@
 	desc = "A basic white surgical apron.";
 	name = "smock"
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/clip{
+/obj/item/clothing/gloves/nitrile{
 	pixel_x = 9;
 	pixel_y = -9
 	},
@@ -2672,9 +2672,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Gy" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 16;
-	pixel_y = -25
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/south{
+	pixel_x = 17;
+	pixel_y = -22
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken2"

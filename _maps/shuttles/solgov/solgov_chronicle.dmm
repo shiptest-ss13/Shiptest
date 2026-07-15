@@ -1408,9 +1408,7 @@
 	pixel_x = 5;
 	pixel_y = 8
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 24
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/starboard)
 "ji" = (
@@ -2692,9 +2690,7 @@
 "tC" = (
 /obj/item/radio/intercom/directional/east,
 /obj/machinery/airalarm/directional/south,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/machinery/telecomms/bus{
 	autolinkers = list("processor7","SolCon");
 	id = "bus mainframe";
@@ -3038,9 +3034,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "vN" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 29
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/east,
 /turf/open/floor/carpet/green,
 /area/ship/crew)
 "vP" = (
@@ -3702,7 +3696,7 @@
 /obj/structure/closet/wall/white/directional/east{
 	name = "medical doctor's locker"
 	},
-/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
 /obj/item/storage/firstaid/regular{
 	pixel_x = 6;
 	pixel_y = -6
@@ -3908,9 +3902,6 @@
 "Bc" = (
 /obj/structure/table/wood/fancy,
 /obj/structure/platform/wood,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = -25
-	},
 /obj/item/paper_bin/bundlenatural{
 	pixel_y = 5;
 	pixel_x = -6
@@ -3919,6 +3910,7 @@
 	pixel_x = -5;
 	pixel_y = 5
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south,
 /turf/open/floor/wood/yew,
 /area/ship/crew/dorm/captain)
 "Bk" = (
@@ -5739,9 +5731,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/outline/orange,
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
@@ -6006,12 +5996,10 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
 "Qt" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 30
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
 "Qy" = (
@@ -6606,7 +6594,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer5,
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/structure/closet/wall/orange/directional/east,
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_y = -7
 	},
 /obj/item/clothing/glasses/meson/prescription,

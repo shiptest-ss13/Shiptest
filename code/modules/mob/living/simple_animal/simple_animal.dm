@@ -65,6 +65,10 @@
 	///This damage is taken when atmos doesn't fit all the requirements above.
 	var/unsuitable_atmos_damage = 2
 
+	///The safe pressure for this mob
+	var/minimum_pressure = 0
+	var/maximum_pressure = INFINITY
+
 	//Defaults to zero so Ian can still be cuddly. Moved up the tree to living! This allows us to bypass some hardcoded stuff.
 	melee_damage_lower = 0
 	melee_damage_upper = 0
@@ -338,6 +342,17 @@
 	if((areatemp < minbodytemp) || (areatemp > maxbodytemp))
 		. = FALSE
 
+/mob/living/simple_animal/proc/environment_pressure_is_safe()
+	. = TRUE
+	if(isturf(loc) && isopenturf(loc))
+		var/turf/open/ST = loc
+		if(ST.air)
+			if(ST.air.return_pressure() < minimum_pressure || ST.air.return_pressure() > maximum_pressure)
+				. = FALSE
+		else
+			if(minimum_pressure > 0)
+				. = FALSE
+
 /mob/living/simple_animal/handle_environment(datum/gas_mixture/environment)
 	var/atom/A = loc
 	if(isturf(A))
@@ -353,6 +368,13 @@
 			throw_alert(ALERT_NOT_ENOUGH_OXYGEN, /atom/movable/screen/alert/not_enough_oxy)
 	else
 		clear_alert(ALERT_NOT_ENOUGH_OXYGEN)
+
+	if(!environment_pressure_is_safe())
+		adjustHealth(unsuitable_atmos_damage)
+		if(unsuitable_atmos_damage > 0)
+			throw_alert("pressure", /atom/movable/screen/alert/badpressure, 2)
+	else
+		clear_alert("pressure")
 
 	handle_temperature_damage()
 

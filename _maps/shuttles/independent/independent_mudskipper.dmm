@@ -40,7 +40,7 @@
 	pixel_x = 10;
 	pixel_y = -6
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = 7;
 	pixel_y = -2
 	},
@@ -301,10 +301,6 @@
 	pixel_y = -1;
 	pixel_x = 9
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 31;
-	pixel_y = 2
-	},
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = -18;
 	pixel_y = 12
@@ -317,6 +313,7 @@
 	pixel_x = 3;
 	pixel_y = 9
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/aft)
 "eX" = (
@@ -703,7 +700,7 @@
 	pixel_x = -8;
 	pixel_y = 2
 	},
-/obj/item/gun/energy/sharplite/l305,
+/obj/item/gun/energy/sharplite/rush,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ot" = (
@@ -801,9 +798,9 @@
 	dir = 10
 	},
 /obj/structure/guncloset,
-/obj/item/gun/energy/sharplite/l201/l204,
 /obj/item/gun/energy/laser/e10,
 /obj/item/gun/energy/laser/e10,
+/obj/item/gun/energy/sharplite/volt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance)
 "pY" = (
@@ -1934,11 +1931,11 @@
 /obj/effect/turf_decal/box{
 	layer = 2.04
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = 7;
 	pixel_y = 4
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = 6;
 	pixel_y = 8
 	},

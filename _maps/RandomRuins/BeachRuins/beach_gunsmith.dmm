@@ -2377,7 +2377,7 @@
 /area/ruin/beach/gunsmith/workshop)
 "xU" = (
 /obj/structure/rack,
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = -4;
 	pixel_y = 6
 	},
@@ -2703,6 +2703,11 @@
 	pixel_x = 31;
 	pixel_y = -6
 	},
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = 3;
+	pixel_y = 16;
+	dir = 8
+	},
 /turf/open/floor/carpet/green,
 /area/ruin/beach/gunsmith/crewquarters)
 "Bd" = (
@@ -2734,10 +2739,6 @@
 /obj/item/radio/intercom/directional/east{
 	pixel_x = 31;
 	pixel_y = 6
-	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 31;
-	pixel_y = -17
 	},
 /turf/open/floor/carpet/green,
 /area/ruin/beach/gunsmith/crewquarters)

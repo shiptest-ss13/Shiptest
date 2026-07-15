@@ -31,12 +31,9 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "ah" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -32;
-	pixel_y = 6
-	},
 /obj/item/radio/intercom/directional/west{
-	pixel_y = -12
+	pixel_y = -1;
+	pixel_x = -31
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -45,6 +42,10 @@
 /obj/structure/chair/sofa/blue/corpo/right/directional,
 /obj/item/clothing/head/hairbow/darkblue{
 	pixel_x = -3
+	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/west{
+	pixel_x = -42;
+	pixel_y = -1
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
@@ -1107,8 +1108,9 @@
 	pixel_y = -13
 	},
 /obj/item/radio/intercom/directional/north,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north{
+	pixel_x = 0;
+	pixel_y = 39
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
@@ -3554,7 +3556,7 @@
 /obj/item/clothing/under/clip/medic,
 /obj/item/pinpointer/crew,
 /obj/item/sensor_device,
-/obj/item/clothing/gloves/color/latex/nitrile/clip{
+/obj/item/clothing/gloves/nitrile{
 	pixel_x = -11;
 	pixel_y = 5
 	},

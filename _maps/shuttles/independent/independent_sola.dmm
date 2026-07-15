@@ -266,6 +266,10 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 5
 	},
+/obj/item/radio/intercom/directional/south{
+	pixel_x = 5;
+	pixel_y = -31
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "eG" = (
@@ -1534,7 +1538,7 @@
 	pixel_y = -11;
 	pixel_x = 5
 	},
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/suit/toggle/flight,
 /turf/open/floor/plasteel/dark,
@@ -2386,6 +2390,10 @@
 	pixel_x = 8;
 	pixel_y = 0
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south{
+	pixel_x = -17;
+	pixel_y = -22
+	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "FL" = (
@@ -2550,7 +2558,7 @@
 	pixel_x = -2;
 	pixel_y = 6
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/clip{
+/obj/item/clothing/gloves/nitrile{
 	pixel_x = 7;
 	pixel_y = -9
 	},
@@ -3687,12 +3695,9 @@
 	dir = 9
 	},
 /obj/machinery/airalarm/directional/west,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = -32;
-	pixel_x = 15
-	},
-/obj/item/radio/intercom/directional/south{
-	pixel_x = 15
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south{
+	pixel_x = 16;
+	pixel_y = -22
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -3957,14 +3962,11 @@
 /area/ship/engineering/atmospherics)
 "WH" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = -32;
-	pixel_x = 15
-	},
-/obj/item/radio/intercom/directional/south{
-	pixel_x = 15
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom/directional/south{
+	pixel_x = -5;
+	pixel_y = -31
+	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "WK" = (
@@ -4081,6 +4083,9 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "YS" = (

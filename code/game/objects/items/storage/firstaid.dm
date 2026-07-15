@@ -12,7 +12,7 @@
 /obj/item/storage/firstaid
 	name = "first-aid kit"
 	desc = "An emergency medical aid kit."
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/medkit.dmi'
 	icon_state = "firstaid"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
@@ -126,7 +126,6 @@
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/ancient
-	icon = 'icons/obj/storage.dmi'
 	icon_state = "firstaid_old"
 	desc = "A basic first aid kit. It looks a little old..."
 
@@ -254,8 +253,8 @@
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/medigel/hadrakine = 1,
 		/obj/item/storage/pill_bottle/indomide = 1,
-		/obj/item/stack/medical/bone_gel = 1,
-		/obj/item/stack/sticky_tape/surgical = 1,
+		/obj/item/stack/medical/bone_gel/four = 1,
+		/obj/item/stack/sticky_tape/surgical/four = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/splint = 1,
 		/obj/item/reagent_containers/hypospray/medipen/silfrine = 1,
@@ -378,12 +377,29 @@
 /obj/item/storage/pill_bottle
 	name = "pill bottle"
 	desc = "It's an airtight container for storing medication."
-	icon_state = "pill_canister"
+	icon_state = "pill_bottle"
 	icon = 'icons/obj/chemical/medicine.dmi'
 	item_state = "pillbottle"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
+
+	unique_reskin = list(\
+		"pill bottle" = "pill_bottle",
+		"pill bottle (no label)" = "pill_bottle_nolabel",
+		"blue pill bottle" = "pill_bottleblue",
+		"blue pill bottle (no label)" = "pill_bottleblue_nolabel",
+		"red pill bottle" = "pill_bottler",
+		"red pill bottle (no label)" = "pill_bottler_nolabel",
+		"green pill bottle" = "pill_bottleg",
+		"green pill bottle (no label)" = "pill_bottleg_nolabel",
+		"black pill bottle" = "pill_bottleb",
+		"black pill bottle (no label)" = "pill_bottleb_nolabel",
+		"yellow pill bottle" = "pill_bottley",
+		"yellow pill bottle (no label)" = "pill_bottley_nolabel",
+		"white pill bottle" = "pill_bottlew",
+		"white pill bottle (no label)" = "pill_bottlew_nolabel",
+		)
 
 /obj/item/storage/pill_bottle/ComponentInitialize()
 	. = ..()
@@ -459,6 +475,7 @@
 /obj/item/storage/pill_bottle/zoom
 	name = "suspicious pill bottle"
 	desc = "The label is pretty old and almost unreadable, you recognize some chemical compounds."
+	icon_state = "pill_bottley"
 
 /obj/item/storage/pill_bottle/zoom/PopulateContents()
 	for(var/i in 1 to 5)
@@ -467,6 +484,7 @@
 /obj/item/storage/pill_bottle/happy
 	name = "suspicious pill bottle"
 	desc = "There is a smiley on the top."
+	icon_state = "pill_bottle_nolabel"
 
 /obj/item/storage/pill_bottle/happy/PopulateContents()
 	for(var/i in 1 to 5)
@@ -483,6 +501,7 @@
 /obj/item/storage/pill_bottle/aranesp
 	name = "suspicious pill bottle"
 	desc = "The label has 'fuck disablers' hastily scrawled in black marker."
+	icon_state = "pill_bottlew_nolabel"
 
 /obj/item/storage/pill_bottle/aranesp/PopulateContents()
 	for(var/i in 1 to 5)
@@ -516,6 +535,7 @@
 /obj/item/storage/pill_bottle/floorpill
 	name = "bottle of floorpills"
 	desc = "An old pill bottle. It smells musty."
+	icon_state = "pill_bottle_nolabel"
 
 /obj/item/storage/pill_bottle/floorpill/Initialize()
 	. = ..()

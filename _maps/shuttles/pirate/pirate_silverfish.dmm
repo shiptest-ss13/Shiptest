@@ -350,9 +350,8 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/machinery/camera{
-	network = list("silversecurity");
-	dir = 8
+/obj/machinery/camera/directional/east{
+	network = list("silversecurity")
 	},
 /obj/effect/decal/cleanable/insectguts,
 /turf/open/floor/wood/walnut,
@@ -459,7 +458,7 @@
 	dir = 10
 	},
 /obj/item/clothing/head/ramzi/surgical,
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/item/clothing/gloves/nitrile/evil,
 /obj/item/clothing/suit/ramzi/smock,
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -652,9 +651,8 @@
 /obj/item/gun/ballistic/automatic/marksman/boomslang/no_mag,
 /obj/item/gun/ballistic/automatic/smg/cobra/no_mag,
 /obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
-/obj/machinery/camera{
-	network = list("silversecurity");
-	dir = 4
+/obj/machinery/camera/directional/west{
+	network = list("silversecurity")
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -1433,9 +1431,8 @@
 	pixel_x = -9;
 	pixel_y = 22
 	},
-/obj/machinery/camera{
-	network = list("silversecurity");
-	dir = 9
+/obj/machinery/camera/directional/east{
+	network = list("silversecurity")
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -1703,9 +1700,8 @@
 /obj/structure/sign/departments/cargo{
 	pixel_x = 30
 	},
-/obj/machinery/camera{
-	network = list("silversecurity");
-	dir = 8
+/obj/machinery/camera/directional/east{
+	network = list("silversecurity")
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/ccommons)
@@ -1982,7 +1978,7 @@
 	},
 /obj/item/clothing/under/syndicate/ramzi,
 /obj/item/storage/toolbox/syndicate,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/clothing/head/hardhat/ramzi,
 /obj/item/clothing/under/syndicate/ramzi/overalls,
 /obj/item/storage/belt/utility/syndicate,
@@ -1996,9 +1992,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
-/obj/machinery/camera{
-	network = list("silversecurity");
-	dir = 5
+/obj/machinery/camera/directional/west{
+	network = list("silversecurity")
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -2123,9 +2118,8 @@
 /obj/structure/sign/warning/securearea{
 	pixel_y = 26
 	},
-/obj/machinery/camera{
-	network = list("silversecurity");
-	dir = 6
+/obj/machinery/camera/directional/north{
+	network = list("silversecurity")
 	},
 /obj/effect/spawner/random/trash/bin,
 /turf/open/floor/plating,
@@ -2465,9 +2459,8 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera{
-	network = list("silversecurity");
-	dir = 5
+/obj/machinery/camera/directional/west{
+	network = list("silversecurity")
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/cryo)
@@ -2637,9 +2630,8 @@
 /obj/structure/sign/poster/contraband/m90{
 	pixel_y = -30
 	},
-/obj/machinery/camera{
-	network = list("silversecurity");
-	dir = 8
+/obj/machinery/camera/directional/east{
+	network = list("silversecurity")
 	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
@@ -2987,7 +2979,7 @@
 	dir = 6
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/camera{
+/obj/machinery/camera/directional/north{
 	network = list("silversecurity")
 	},
 /turf/open/floor/plating,
@@ -3416,7 +3408,7 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/camera{
+/obj/machinery/camera/directional/north{
 	network = list("silversecurity")
 	},
 /turf/open/floor/plasteel/dark,
@@ -4041,9 +4033,8 @@
 /obj/structure/extinguisher_cabinet/directional/north{
 	pixel_x = -6
 	},
-/obj/machinery/camera{
-	network = list("silversecurity");
-	dir = 9
+/obj/machinery/camera/directional/east{
+	network = list("silversecurity")
 	},
 /obj/effect/spawner/random/trash/bin,
 /turf/open/floor/plating/rust,
@@ -4425,9 +4416,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/camera{
-	network = list("silversecurity");
-	dir = 10
+/obj/machinery/camera/directional/south{
+	network = list("silversecurity")
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
@@ -4660,9 +4650,8 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
-/obj/machinery/camera{
-	network = list("silversecurity");
-	dir = 4
+/obj/machinery/camera/directional/west{
+	network = list("silversecurity")
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8

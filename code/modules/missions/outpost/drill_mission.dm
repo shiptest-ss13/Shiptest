@@ -1,10 +1,10 @@
 /*
-		Core sampling missions
+		Break: the earth
 */
 /datum/mission/drill
 	name = "Class 1 core sample mission"
 	desc = "We require geological information from one of the neighboring planetoids. \
-			Please anchor the drill in place and defend it until it has gathered enough samples. \
+			Please anchor the drill in place and defend it until it has gathered enough samples.  \
 			Operation of the core sampling drill is extremely dangerous, caution is advised. "
 	value = 2500
 	weight = 11
@@ -13,6 +13,7 @@
 
 	var/datum/planet_type/selected_planet
 	var/list/available_planets = list(
+		/* This is what a constructed list looks like. It's empty until created
 		/datum/planet_type/lava = /obj/structure/vein/lavaland,
 		/datum/planet_type/ice = /obj/structure/vein/ice,
 		/datum/planet_type/jungle = /obj/structure/vein/jungle,
@@ -20,6 +21,7 @@
 		/datum/planet_type/rock = /obj/structure/vein/rockplanet,
 		/datum/planet_type/moon = /obj/structure/vein/moon,
 		/datum/planet_type/asteroid = /obj/structure/vein/asteroid,
+		*/
 	)
 	///a punchcard spawned on mission init, allows spawning a specific kind of planet
 	var/obj/item/overmap_punchcard_spawner/dynamic/mission/punchcard
@@ -34,13 +36,31 @@
 	///what class of vein does this mission want
 	var/class_wanted = 1
 	///does this mission spawn a punchcard?
-	var/spawn_punchcard = TRUE
+	var/spawn_punchcard = FALSE
 	///bonus fluff
-	var/bonus_text = TRUE
+	var/bonus_text = FALSE
+
+/datum/mission/drill/New(datum/overmap/outpost/_outpost)
+	var/datum/overmap_star_system/mission_system = _outpost.get_mission_sector()
+	for(var/datum/overmap/dynamic/location in mission_system.dynamic_encounters)
+		if(location.planet.vein_type)
+			available_planets += location.planet.type
+			available_planets[location.planet.type] = location.planet.vein_type
+
+	if(locate(/datum/overmap/event/meteor) in mission_system.events)
+		available_planets += /datum/planet_type/asteroid
+		available_planets[/datum/planet_type/asteroid] = /obj/structure/vein/asteroid
+
+	if(!length(available_planets))
+		return INITIALIZE_HINT_QDEL
+
+	selected_planet = pick(available_planets)
+
+	return ..()
 
 /datum/mission/drill/generate_mission_details()
 	. = ..()
-	selected_planet = pick(available_planets)
+
 	num_wanted = rand(num_wanted-2,num_wanted+2)
 	value += num_wanted*100
 	name = "Class [class_wanted] [selected_planet.name] core sample mission"
@@ -98,7 +118,7 @@
 
 /datum/mission/drill/turn_in()
 	//Gives players a little extra money for going past the mission goal
-	value += (sampler.num_current - num_wanted)*200
+	value += (sampler.num_current - num_wanted)*(200*class_wanted)
 	if(punchcard)
 		//500 credit punchcard
 		value += 500
@@ -130,7 +150,8 @@
 
 /*
 		Variant for rare planets
-*/
+		Disabled due to rare planets not spawning
+
 /datum/mission/drill/rareplanet
 	name = "Class 1 rare core sample mission"
 	desc = "We have discovered a rare planetoid and wish to study it's geology. \
@@ -193,6 +214,7 @@
 		/datum/planet_type/desert = /obj/structure/vein/desert,
 		/datum/planet_type/shrouded = /obj/structure/vein/shrouded,
 	)
+*/
 
 /* The drill itself */
 
@@ -209,7 +231,7 @@
 	. = ..()
 	. += span_notice("The drill contains [num_current] of the [num_wanted] samples needed.")
 	if(num_current>=num_wanted)
-		. += span_notice("Additional samples can be gathered for 200 credits per sample.")
+		. += span_notice("Additional samples can be gathered for [200*mission_class] credits per sample.")
 
 /obj/machinery/drill/mission/start_mining()
 	if(orevein_wanted && !istype(our_vein, orevein_wanted))
@@ -225,6 +247,11 @@
 
 	if(num_current == num_wanted)
 		SEND_SIGNAL(src, COMSIG_DRILL_SAMPLES_DONE)
-		say("Required samples gathered. Additional samples valued at 200cr per. Now shutting down!")
+		say("Required samples gathered. Additional samples valued at [200*mission_class]cr per. Now shutting down!")
+		if(active)
+			stop_mining()
+
+	if(num_current > (num_wanted + 3))
+		say("Core sample collector full. Unable to continue drilling.")
 		if(active)
 			stop_mining()

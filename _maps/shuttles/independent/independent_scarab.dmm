@@ -236,7 +236,7 @@
 /area/ship/bridge)
 "cO" = (
 /obj/structure/closet/crate/medical,
-/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
 /obj/item/storage/firstaid/regular,
 /obj/item/roller,
 /obj/item/storage/pill_bottle/charcoal/less,
@@ -1446,11 +1446,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "rC" = (
-/obj/machinery/mineral/processing_unit_console{
-	dir = 1;
+/obj/machinery/computer/processing_unit_console/directional/south{
 	machinedir = 6;
-	output_dir = 1;
-	pixel_y = -18
+	output_dir = 1
 	},
 /obj/effect/turf_decal/corner_techfloor_grid,
 /turf/open/floor/plasteel/mono,
@@ -1926,8 +1924,8 @@
 /obj/item/stack/tape/industrial/electrical{
 	pixel_y = -4
 	},
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
+/obj/item/clothing/gloves/insulated,
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/clothing/glasses/welding,

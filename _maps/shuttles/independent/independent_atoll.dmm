@@ -443,7 +443,7 @@
 	dir = 10
 	},
 /obj/item/clothing/under/rank/medical/doctor/blue,
-/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
 /obj/item/megaphone/command,
 /obj/item/clothing/shoes/sneakers/brown{
 	pixel_y = -12
@@ -654,7 +654,7 @@
 /obj/item/clothing/shoes/laceup{
 	pixel_y = -12
 	},
-/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
 /obj/machinery/light/directional/north,
 /obj/item/storage/backpack/satchel/med,
 /obj/item/storage/backpack/messenger/med,
@@ -1284,7 +1284,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/autolathe,
 /obj/item/radio/intercom/directional/north,
-/obj/structure/sign/warning/enginesafety{
+/obj/structure/sign/poster/official/moth/hardhats{
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel/tech,
@@ -1909,8 +1909,8 @@
 /obj/item/clothing/shoes/workboots{
 	pixel_y = -8
 	},
-/obj/item/clothing/gloves/color/latex/nitrile,
-/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
+/obj/item/clothing/gloves/nitrile/blue,
 /obj/item/radio/intercom/directional/east,
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 8
@@ -3096,7 +3096,7 @@
 	name = "Mechanic's Locker"
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/clothing/head/hardhat/dblue,
 /obj/item/clothing/shoes/workboots,
 /obj/item/storage/backpack/industrial,
@@ -4612,7 +4612,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_x = 10;
+	pixel_x = 8;
 	name = "Lobby Airlock Control";
 	pixel_y = 6;
 	normaldoorcontrol = 1;
@@ -4620,7 +4620,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_x = 10;
+	pixel_x = 8;
 	name = "Lobby Airlock Bolts";
 	pixel_y = -6;
 	normaldoorcontrol = 1;

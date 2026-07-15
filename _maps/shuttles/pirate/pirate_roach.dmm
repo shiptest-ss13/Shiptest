@@ -619,10 +619,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 0;
-	pixel_y = -25
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/prison)
 "iO" = (
@@ -1043,10 +1040,7 @@
 	pixel_x = -1;
 	pixel_y = -3
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 0;
-	pixel_y = 26
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north,
 /turf/open/floor/carpet,
 /area/ship/crew/canteen)
 "nZ" = (
@@ -2035,7 +2029,7 @@
 /obj/item/gear_pack/anglegrinder,
 /obj/item/melee/sledgehammer/gorlex,
 /obj/item/storage/toolbox/syndicate,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/storage/belt/utility,
 /obj/item/radio/headset/pirate/alt,
 /obj/structure/cable{
@@ -4049,7 +4043,7 @@
 	desc = "A basic white surgical apron. It seems it could stain very easily...";
 	name = "surgical smock"
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/item/clothing/gloves/nitrile/evil,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},

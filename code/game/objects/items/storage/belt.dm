@@ -351,7 +351,7 @@
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/laser,
-		/obj/item/gun/energy/sharplite/x26,
+		/obj/item/gun/energy/sharplite/ohm,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/kalix/pistol,
 		))
@@ -365,6 +365,14 @@
 	new /obj/item/grenade/flashbang(src)
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/melee/baton/loaded(src)
+	update_appearance()
+
+/obj/item/storage/belt/security/full/classic/PopulateContents()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/restraints/handcuffs(src)
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/melee/classic_baton(src)
 	update_appearance()
 
 /obj/item/storage/belt/security/webbing
@@ -507,8 +515,8 @@
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/laser,
-		/obj/item/gun/energy/sharplite/x26,
-		/obj/item/gun/energy/sharplite/x01,
+		/obj/item/gun/energy/sharplite/ohm,
+		/obj/item/gun/energy/sharplite/yari,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/kalix/pistol,
 		/obj/item/bodycamera,
@@ -542,6 +550,16 @@
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
+
+/obj/item/storage/belt/military/warra/resolution/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/wt550m9(src)
+
+/obj/item/storage/belt/military/warra/sharplite/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/cell/gun/sharplite/plus(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
