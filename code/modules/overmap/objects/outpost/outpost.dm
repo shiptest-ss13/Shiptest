@@ -43,7 +43,7 @@
 	/// The mapzone used by the outpost level and hangars. Using a single mapzone means networked radio messages.
 	var/datum/map_zone/mapzone
 	var/list/datum/hangar_shaft/shaft_datums = list()
-	///The border size to use. It's recommended to set this to 0 if your map is above 121 tiles wide/high, otherwise it may fail to load on a local build.
+	///The border size to use. It's recommended to always have this set to at least one. Make sure your map has the borders mapped in, and that they match this number.
 	var/border_size = QUADRANT_SIZE_BORDER
 	///The weather the virtual z will have. If null, the outpost will have no weather.
 	var/datum/weather_controller/weather_controller_type
