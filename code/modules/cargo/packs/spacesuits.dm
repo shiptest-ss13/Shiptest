@@ -17,8 +17,7 @@
 	name = "Pilot Space Suit Crate"
 	desc = "One pilot space suit, for improved mobility in exosuits."
 	cost = 500
-	contains = list(/obj/item/clothing/suit/space/pilot,
-					/obj/item/clothing/head/helmet/space/pilot/random)
+	contains = list(/obj/item/clothing/suit/space/pilot)
 	crate_name = "pilot space suit crate"
 
 /datum/supply_pack/spacesuits/engi_spacesuit
@@ -119,7 +118,7 @@
 //fucking gezena
 
 /datum/supply_pack/spacesuits/spacesuit/pgf
-	name = "Rakalla Navy Utility Suit Crate"
+	name = "Rakalla Navy Utility Space Suit Crate"
 	desc = "Contains one Rakalla Utility Suit. The aging but beloved workhorse of Navy space operations."
 	cost = 600
 	contains = list(/obj/item/clothing/suit/space/gezena,
@@ -130,7 +129,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/spacesuit/pgf/marine
-	name = "Lataka Composite Combat Suit Crate"
+	name = "Lataka Marine Combat Space Suit Crate"
 	desc = "Contains one Lataka Combat Suit. The backbone of any Marine Corps space assault."
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/space/gezena/marine,
@@ -308,6 +307,7 @@
 	crate_name = "pointman hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/inteq
+	faction_discount = 0
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/ranger_hardsuit
@@ -380,6 +380,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/clip_industrial
+	name = "CLIP Industrial Hardsuit Crate"
+	desc = "An industrial-grade hardsuit rated for impacts, fires and radiation."
+	cost = 1500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/clip)
+	crate_name = "CLIP industrial hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/spacesuits/clip
 	name = "CLIP softsuit crate"
 	desc = "Contains one civilian-grade CLIP softsuit."
@@ -428,6 +439,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/hardstealth
+	name = "Asura Shock Hardsuit Crate"
+	desc = "A stripped-down version of an older hardsuit, the Asura has been modified to keep its quick movement and armor at the cost of its night-vision technology. Due to this, its role is often shifted from recon to blitz maneuvers."
+	cost = 4500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/stealth/hardliners)
+	crate_name = "Asura Shock Hardsuit Crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/syndicate/hardliners
+	faction_discount = 0
+	faction_locked = TRUE
+
 //ngr
 
 /datum/supply_pack/spacesuits/beige_red_hardsuit
@@ -452,6 +474,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/ngr_miner
+	name = "NGR Mining Hardsuit Crate"
+	desc = "A heavy-duty hardsuit built to protect wreckers from harsh frontier conditions."
+	cost = 2000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/heavy/ngr)
+	crate_name = "NGR mining hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = /datum/faction/syndicate/ngr
+	faction_discount = 0
+	faction_locked = TRUE
+
 //srm
 
 /datum/supply_pack/spacesuits/roumain_miningsuit
@@ -471,6 +504,17 @@
 	cost = 5000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/solgov/roumain)
 	crate_name = "roumain hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/roumain_hardsuitelite
+	name = "Raskas Combat Hardsuit"
+	desc = "A heavily clad hardsuit manufactured by Hunter's Pride, used when quarries of ballistic natures are to be expected. The heavy, bulky plates inhibit movement at the cost of second-to-none protection."
+	cost = 5000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security/roumain/elite)
+	crate_name = "Raskas combat hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/srm
 	faction_discount = 0

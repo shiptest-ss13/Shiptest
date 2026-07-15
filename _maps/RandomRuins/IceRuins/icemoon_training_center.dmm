@@ -214,10 +214,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
 	},
-/obj/item/valentine{
-	pixel_x = -2;
-	pixel_y = 10
-	},
 /obj/item/clothing/neck/tie/gay{
 	pixel_x = 8;
 	pixel_y = 15
@@ -263,6 +259,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/item/storage/box/ammo/a12g_buckshot,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/armory)
 "bj" = (
@@ -3872,7 +3869,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/central_hall)
 "sI" = (
-/obj/structure/noticeboard,
+/obj/structure/noticeboard/directional/north,
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/locker_room)
 "sJ" = (
@@ -3924,10 +3921,10 @@
 "tf" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/pilot,
-/obj/item/clothing/head/helmet/space/pilot/random,
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 8
 	},
+/obj/item/clothing/head/helmet/space/pilot,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/mech_garage)
 "ti" = (
@@ -5272,13 +5269,11 @@
 /obj/structure/closet/secure_closet/armorycage{
 	req_access = list(0)
 	},
-/obj/item/ammo_box/magazine/m556_42_hydra/empty,
-/obj/item/ammo_box/magazine/m556_42_hydra/empty,
-/obj/item/gun/ballistic/automatic/assault/hydra/no_mag,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
 /obj/machinery/light/directional/east,
+/obj/item/gun/ballistic/shotgun/gaboon/empty,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/armory)
 "zR" = (
@@ -5789,7 +5784,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/range)
 "Cp" = (
-/obj/structure/noticeboard,
+/obj/structure/noticeboard/directional/north,
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/office_1)
 "Cs" = (
@@ -6582,9 +6577,7 @@
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/office_2)
 "Gv" = (
-/obj/structure/noticeboard{
-	pixel_x = -32
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/techfloor{
 	dir = 9
@@ -9738,7 +9731,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/icemoon/training_facility/cafeteria)
 "Vo" = (
-/obj/structure/noticeboard,
+/obj/structure/noticeboard/directional/north,
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/lobby)
 "Vp" = (

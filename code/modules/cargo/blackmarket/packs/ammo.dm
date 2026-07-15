@@ -63,14 +63,14 @@
 	desc = "A 30 round magazine for the E-40 Hybrid Rifle."
 	item = /obj/item/ammo_box/magazine/e40
 
-	cost_min = 400
-	cost_max = 800
-	stock = 6
+	cost_min = 200
+	cost_max = 400
+	stock = 4
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/cm23_mag
 	name = "CM-23 Magazines"
-	desc = "10 round 10x22mm magazines for use in the CM-23 pistol."
+	desc = "10 round 10mm magazines for use in the CM-23 pistol."
 	item = /obj/item/ammo_box/magazine/cm23
 
 	cost_min = 100
@@ -81,7 +81,7 @@
 
 /datum/blackmarket_item/ammo/cm70_mag
 	name = "CM-70 Magazines"
-	desc = "18 round 9x18mm magazines for use in the CM-70 pistol."
+	desc = "18 round 9mm magazines for use in the CM-70 pistol."
 	item = /obj/item/ammo_box/magazine/m9mm_cm70
 
 	cost_min = 200
@@ -92,7 +92,7 @@
 
 /datum/blackmarket_item/ammo/cm5_mag
 	name = "CM-5 Magazines"
-	desc = "30 round 9x18mm magazines for use in the CM-5 SMG."
+	desc = "30 round 9mm magazines for use in the CM-5 SMG."
 	item = /obj/item/ammo_box/magazine/cm5_9mm
 
 	cost_min = 200
@@ -176,6 +176,17 @@
 	stock_max = 4
 	availability_prob = 40
 
+/datum/blackmarket_item/ammo/sharplite_plus_cell
+	name = "Sharplite Plus Cell"
+	desc = "A sharplite plus energy weapon cell. The plus in the name means bigger, if that wasn't obvious."
+	item = /obj/item/stock_parts/cell/gun/sharplite/plus
+
+	cost_min = 800
+	cost_max = 1200
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 40
+
 /datum/blackmarket_item/ammo/gauss_cell
 	name = "SolCon Weapon Cell"
 	desc = "A Solarian weapon cell, for powering their gauss weaponry."
@@ -213,8 +224,8 @@
 	desc = "These upgraded weapon powercells come with twice the capacity of the standard cells, and quality checked to make sure they won't explode!"
 	item = /obj/item/stock_parts/cell/gun/upgraded
 
-	cost_min = 1000
-	cost_max = 1750
+	cost_min = 800
+	cost_max = 1200
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 25
@@ -243,7 +254,7 @@
 
 /datum/blackmarket_item/ammo/mauler_mag
 	name = "Mauler Magazine"
-	desc = "A 12 round 9x18mm magazine for the Mauler machine pistol."
+	desc = "A 12 round 9mm magazine for the Mauler machine pistol."
 	item = /obj/item/ammo_box/magazine/m9mm_mauler/extended
 
 	cost_min = 150
@@ -254,7 +265,7 @@
 
 /datum/blackmarket_item/ammo/spitter_mag
 	name = "Spitter Magazine"
-	desc = "A 30 round 9x18mm magazine for the Spitter submachine gun."
+	desc = "A 30 round 9mm magazine for the Spitter submachine gun."
 	item = /obj/item/ammo_box/magazine/spitter_9mm
 
 	cost_min = 150
@@ -368,3 +379,23 @@
 	cost_max = 500
 	stock_min = 4
 	stock_max = 8
+
+/datum/blackmarket_item/ammo/a12gdragonsbreath
+	name = "Dragonsbreath Shells"
+	desc = "32 shells to rain a firestorm upon your enemies. Just make sure to not to catch yourself on fire!"
+	item = /obj/item/storage/box/ammo/a12g_dragonsbreath
+	cost_min = 300
+	cost_max = 700
+	stock_min = 3
+	stock_max = 6
+	availability_prob = 80
+
+/datum/blackmarket_item/ammo/rods
+	name = "Ferromagnetic rods"
+	desc = "20 ferromagetic rods to rail your enemies."
+	item = /obj/item/storage/box/ammo/ferrorods
+	cost_min = 500
+	cost_max = 900
+	stock_min = 3
+	stock_max = 6
+	availability_prob = 0

@@ -189,9 +189,6 @@
 		if(MUTE_ADMINHELP)
 			mute_string = "adminhelp, admin PM and ASAY"
 			feedback_string = "Adminhelp"
-		if(MUTE_MENTORHELP)
-			mute_string = "mentorhelp"
-			feedback_string = "Mentorhelp"
 		if(MUTE_DEADCHAT)
 			mute_string = "deadchat and DSAY"
 			feedback_string = "Deadchat"
@@ -373,16 +370,13 @@
 
 	if(!istype(overmap_location)) // Sanity check
 		return
-	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
 
-	switch(confirm)
-		if("Yes")
-			var/distress_message = input(src, "Input any information you'd like attached with the distress signal.", "Distress Signal Message")
-			if(distress_message)
-				create_distress_beacon(overmap_location, distress_message)
-			else
-				create_distress_beacon(overmap_location)
-		if("No")
+	var/distress_message = input(src, "Input any information you'd like attached with the distress signal.", "Distress Signal Message")
+	if(tgui_alert(src,"Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?","Distress Signal",list("Yes","No")) == "Yes")
+		if(distress_message)
+			create_distress_beacon(overmap_location, distress_message)
+		else
+			create_distress_beacon(overmap_location)
 			return
 
 /client/proc/cmd_admin_distress_signal_here()
@@ -404,17 +398,12 @@
 	if(!overmap_location && !istype(overmap_location))
 		return
 
-	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
-
-	switch(confirm)
-		if("Yes")
-			var/distress_message = input(src, "Input any information you'd like attached with the distress signal.", "Distress Signal Message")
-			if(distress_message)
-				create_distress_beacon(overmap_location, distress_message)
-			else
-				create_distress_beacon(overmap_location)
-		if("No")
-			return
+	var/distress_message = input(src, "Input any information you'd like attached with the distress signal.", "Distress Signal Message")
+	if(tgui_alert(src,"Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?","Distress Signal",list("Yes","No"),0) == "Yes")
+		if(distress_message)
+			create_distress_beacon(overmap_location, distress_message)
+		else
+			create_distress_beacon(overmap_location)
 
 /client/proc/cmd_admin_delete(atom/A as obj|mob|turf in world)
 	set category = "Debug"
@@ -1209,11 +1198,11 @@
 				if(!squish_part)
 					continue
 				var/severity = pick(list(
-					"[WOUND_SEVERITY_MODERATE]",
-					"[WOUND_SEVERITY_SEVERE]",
-					"[WOUND_SEVERITY_SEVERE]",
-					"[WOUND_SEVERITY_CRITICAL]",
-					"[WOUND_SEVERITY_CRITICAL]",
+					WOUND_SEVERITY_MODERATE,
+					WOUND_SEVERITY_SEVERE,
+					WOUND_SEVERITY_SEVERE,
+					WOUND_SEVERITY_CRITICAL,
+					WOUND_SEVERITY_CRITICAL,
 				))
 				C.cause_wound_of_type_and_severity(WOUND_BLUNT, squish_part, severity)
 

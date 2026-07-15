@@ -91,6 +91,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"grad_style" = "None",
 							"grad_color" = "FFF",
 							"ethcolor" = "9c3030",
+							"moth_bodyfluff_color" = "ECCF8C",
 							"tail_lizard" = "Smooth",
 							"tail_human" = "None",
 							"face_markings" = "None",
@@ -100,13 +101,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"frills" = "None",
 							"spines" = "None",
 							"body_markings" = "None",
+							"moth_head" = "Flat",
 							"moth_wings" = "Plain",
+							"moth_wings_color" = "ECCF8C",
 							"moth_fluff" = "Plain",
+							"moth_neckfluff_color" = "ECCF8C",
 							"moth_markings" = "None",
+							"moth_markings_color" = "ECCF8C",
+							"moth_antennae" = "Plain",
+							"moth_antennae_color" = "ECCF8C",
 							"spider_legs" = "Plain",
 							"spider_spinneret" = "Plain",
 							"spider_mandibles" = "Plain",
-							"squid_face" = "Squidward",
 							"ipc_screen" = "Blue",
 							"ipc_antenna" = "None",
 							"ipc_tail" = "None",
@@ -179,7 +185,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/datum/language/native_language = /datum/language/galactic_common
 
 	/// Associated list with language levels of understanding and their point costs.
-	var/static/list/language_level_costs = list(LANGUAGE_UNKNOWN = 0, LANGUAGE_RECOGNIZED = 1, LANGUAGE_FAMILIAR = 2, LANGUAGE_FLUENT = 3)
+	var/static/list/list/language_level_data = list(
+		LANGUAGE_UNKNOWN = list(0, 0),
+		LANGUAGE_FAMILIAR = list(1, POINT_DISCOUNT_THRESHOLD_LOW),
+		LANGUAGE_CONVERSATIONAL = list(2, POINT_DISCOUNT_THRESHOLD_HIGH),
+		LANGUAGE_FLUENT = list(3, 100),
+	)
 
 	// 0 = character settings, 1 = game preferences
 	var/current_tab = 0
@@ -320,7 +331,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</center>"
 
 			dat += "<center><h2>Outfit Preview Settings</h2>"
-			dat += "<a href='byond://?_src_=prefs;preference=job'>Set Preview Job Gear</a><br></center>"
+			dat += "<center>Current outfit: [selected_outfit]</center>"
+			dat += "<a href='byond://?_src_=prefs;preference=joba'>Set Preview Job Gear</a><br>"
+			dat += "<a href='byond://?_src_=prefs;preference=jobb'>Set Preview Job Gear By Ship</a><br></center>"
+
 			if(CONFIG_GET(flag/roundstart_traits))
 				dat += "<center><h2>Quirk Setup</h2>"
 				dat += "<a href='byond://?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
@@ -488,6 +502,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				dat += "<span style='border: 1px solid #161616; background-color: #[features["ethcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=color_ethereal;task=input'>Change</a><BR>"
 
+			if(istype(pref_species, /datum/species/moth))
+
+				dat += "<h3>Body Fluff Color</h3>"
+
+				dat += "<span style='border: 1px solid #161616; background-color: #[features["moth_bodyfluff_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=moth_fluff_color;task=input'>Change</a><BR>"
+
 			var/obj/item/bodypart/head/spec_head = pref_species.species_limbs[BODY_ZONE_HEAD]
 			if(initial(spec_head.draw_eyes) && initial(spec_head.greyscale_eyes))
 
@@ -531,6 +551,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<br><span style='border: 1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=facial;task=input'>Change</a>"
 				dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br></td>"
+
+			if(("moth_head" in pref_species.default_features) && (!fbp))
+
+				dat += "<h3>Moth Head Type</h3>"
+
+				dat += "<a href='byond://?_src_=prefs;preference=moth_head;task=input'>[features["moth_head"]]</a>"
+				dat += "<a href='byond://?_src_=prefs;preference=previous_mothhead_style;task=input'>&lt;</a> <a href='byond://?_src_=prefs;preference=next_mothhead_style;task=input'>&gt;</a><BR>"
 
 			//Mutant stuff
 			var/mutant_category = 0
@@ -619,9 +646,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>Moth wings</h3>"
+				dat += "<h3>Moth Wings</h3>"
 
-				dat += "<a href='byond://?_src_=prefs;preference=moth_wings;task=input'>[features["moth_wings"]]</a><BR>"
+				dat += "<a href='byond://?_src_=prefs;preference=moth_wings;task=input'>[features["moth_wings"]]</a>"
+				dat += "<a href='byond://?_src_=prefs;preference=previous_mothwing_style;task=input'>&lt;</a> <a href='byond://?_src_=prefs;preference=next_mothwing_style;task=input'>&gt;</a><BR>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features["moth_wings_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=moth_wings_color;task=input'>Change</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -632,9 +661,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>Moth fluff</h3>"
+				dat += "<h3>Moth Fluff</h3>"
 
-				dat += "<a href='byond://?_src_=prefs;preference=moth_fluff;task=input'>[features["moth_fluff"]]</a><BR>"
+				dat += "<a href='byond://?_src_=prefs;preference=moth_fluff;task=input'>[features["moth_fluff"]]</a>"
+				dat += "<a href='byond://?_src_=prefs;preference=previous_mothfluff_style;task=input'>&lt;</a> <a href='byond://?_src_=prefs;preference=next_mothfluff_style;task=input'>&gt;</a><BR>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features["moth_neckfluff_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=moth_neckfluff_color;task=input'>Change</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -645,14 +676,32 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>Moth markings</h3>"
+				dat += "<h3>Moth Markings</h3>"
 
-				dat += "<a href='byond://?_src_=prefs;preference=moth_markings;task=input'>[features["moth_markings"]]</a><BR>"
+				dat += "<a href='byond://?_src_=prefs;preference=moth_markings;task=input'>[features["moth_markings"]]</a>"
+				dat += "<a href='byond://?_src_=prefs;preference=previous_mothmarkings_style;task=input'>&lt;</a> <a href='byond://?_src_=prefs;preference=next_mothmarkings_style;task=input'>&gt;</a><BR>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features["moth_markings_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=moth_markings_color;task=input'>Change</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+
+			if("moth_antennae" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Moth Antennae</h3>"
+
+				dat += "<a href='byond://?_src_=prefs;preference=moth_antennae;task=input'>[features["moth_antennae"]]</a>"
+				dat += "<a href='byond://?_src_=prefs;preference=previous_mothantennae_style;task=input'>&lt;</a> <a href='byond://?_src_=prefs;preference=next_mothantennae_style;task=input'>&gt;</a><BR>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features["moth_antennae_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=moth_antennae_color;task=input'>Change</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
 
 			if("spider_legs" in pref_species.default_features)
 				if(!mutant_category)
@@ -672,19 +721,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Spinneret</h3>"
 
 				dat += "<a href='byond://?_src_=prefs;preference=spider_spinneret;task=input'>[features["spider_spinneret"]]</a><BR>"
-
-				mutant_category++
-				if(mutant_category >= MAX_MUTANT_ROWS)
-					dat += "</td>"
-					mutant_category = 0
-
-			if("squid_face" in pref_species.default_features)
-				if(!mutant_category)
-					dat += APPEARANCE_CATEGORY_COLUMN
-
-				dat += "<h3>Face Type</h3>"
-
-				dat += "<a href='byond://?_src_=prefs;preference=squid_face;task=input'>[features["squid_face"]]</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -740,7 +776,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				dat += "<h3>Chassis Style</h3>"
 
-				dat += "<a href='byond://?_src_=prefs;preference=ipc_chassis;task=input'>[features["ipc_chassis"]]</a><BR>"
+				var/datum/sprite_accessory/body/ipc_chassis/chassis_style = GLOB.ipc_chassis_list[features["ipc_chassis"]]
+				if(!chassis_style)
+					chassis_style = pick(GLOB.ipc_chassis_list)
+					features["ipc_chassis"] = chassis_style.name
+				dat += "<a href='byond://?_src_=prefs;preference=ipc_chassis;task=input'>[chassis_style.name]</a>"
+				if(chassis_style.desc)
+					dat += "<a href='byond://?_src_=prefs;preference=body_desc;limb_style=[REF(chassis_style)]'>?</a>"
+				dat += "<br>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -935,9 +978,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				mutant_category = 0
 			dat += "</tr></table>"
 
-			var/metal_skin = fbp || pref_species.inherent_biotypes & MOB_ROBOTIC
+			var/metal_skin = fbp || (pref_species.inherent_biotypes & MOB_ROBOTIC)
 			dat += metal_skin ? "<h3>Chassis Customization</h3>" : "<h3>Prosthetic Limbs</h3>"
-			dat += "<a href='byond://?_src_=prefs;preference=fbp'>Full Body Prosthesis: [fbp ? "Yes" : "No"]</a><br>"
+			if(!(pref_species.inherent_biotypes & MOB_ROBOTIC))
+				dat += "<a href='byond://?_src_=prefs;preference=fbp'>Full Body Prosthesis: [fbp ? "Yes" : "No"]</a><br>"
 
 			dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_PROSTHETIC]'>Random Prosthetic: [(randomise[RANDOM_PROSTHETIC]) ? "Yes" : "No"]</a><br>"
 
@@ -945,9 +989,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			for(var/index in prosthetic_limbs)
 				if(!metal_skin && (index == BODY_ZONE_CHEST || index == BODY_ZONE_HEAD))
 					continue
-				var/bodypart_name = parse_zone(index)
-				dat += "<tr><td><b>[bodypart_name]:</b></td>"
-				dat += "<td><a href='byond://?_src_=prefs;preference=limbs;customize_limb=[index]'>[prosthetic_limbs[index]]</a></td></tr>"
+				var/zone_name = parse_zone(index)
+				dat += "<tr><td><b>[zone_name]:</b></td>"
+				var/limb_name = prosthetic_limbs[index]
+				dat += "<td><a href='byond://?_src_=prefs;preference=limbs;customize_limb=[index]'>[limb_name]</a>"
+				switch(limb_name)
+					if(PROSTHETIC_NORMAL, PROSTHETIC_AMPUTATED, PROSTHETIC_ROBOTIC)
+						dat += "</td></tr>"
+					else
+						var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[limb_name]
+						if(!limb_style?.desc)
+							continue
+						dat += "<a href='byond://?_src_=prefs;preference=body_desc;limb_style=[REF(limb_style)]'>?</a></td></tr>"
 			dat += "</table><br>"
 
 		if(2) //Loadout
@@ -1309,7 +1362,26 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.open(FALSE)
 	onclose(user, "capturekeypress", src)
 
-/datum/preferences/proc/SetChoices(mob/user)
+/datum/preferences/proc/set_preview_outfit(mob/user)
+	if(!SSmapping)
+		return
+
+	var/static/list/job_paths = subtypesof(/datum/outfit/job)
+	var/static/list/job_outfits = list()
+	if(!length(job_outfits))
+		for(var/path in job_paths)
+			var/datum/outfit/O = path
+			if(initial(O.can_be_admin_equipped))
+				job_outfits[initial(O.name)] = path
+
+	var/outfit_choice = tgui_input_list(user, "Please select which job to preview outfits for.", "Outfit selection", job_outfits)
+	if(!job_outfits[outfit_choice])
+		return
+	outfit_choice = job_outfits[outfit_choice]
+
+	selected_outfit = new outfit_choice
+
+/datum/preferences/proc/set_preview_outfit_by_ship(mob/user)
 	if(!SSmapping)
 		return
 
@@ -1326,6 +1398,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		return
 
 	selected_outfit = new preview_job.outfit
+
 
 /datum/preferences/proc/ShowSpeciesChoices(mob/user)
 	var/list/dat = list()
@@ -1535,15 +1608,41 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /datum/preferences/proc/get_language_point_balance()
 	var/points_balance = MAX_LANGUAGE_POINTS
+	var/list/checked_langs = list()
 	for(var/datum/language/lang_type as anything in learned_languages)
 		if(lang_type == native_language)
 			continue // this should happen but just in case
-		points_balance -= language_level_costs[learned_languages[lang_type]]
+		var/level = learned_languages[lang_type]
+		if(level == LANGUAGE_UNKNOWN)
+			continue
+		points_balance -= language_level_data[learned_languages[lang_type]][INDEX_POINT_COST]
+		var/discount = get_intelligibility_discount(lang_type, native_language)
+		if(discount < MAXIMUM_POINT_DISCOUNT)
+			for(var/datum/language/mutual_type as anything in checked_langs)
+				if(level != LANGUAGE_FLUENT && learned_languages[mutual_type] != LANGUAGE_FLUENT)
+					continue
+				discount = max(discount, get_intelligibility_discount(lang_type, mutual_type))
+				if(discount >= MAXIMUM_POINT_DISCOUNT)
+					break
+		points_balance += discount
+		checked_langs += lang_type
 	if("Trilingual" in all_quirks)
 		points_balance += 2
+	if("Polyglot" in all_quirks)
+		points_balance += 5
 	if("Monolingual" in all_quirks)
 		points_balance -= 2
 	return points_balance
+
+/datum/preferences/proc/get_intelligibility_discount(datum/language/first_type, datum/language/second_type)
+	var/datum/language/first_instance = GLOB.language_datum_instances[first_type]
+	var/datum/language/second_instance = GLOB.language_datum_instances[second_type]
+	var/intelligibility = max(first_instance.mutual_understanding?[second_type], second_instance.mutual_understanding?[first_type])
+	if(intelligibility >= POINT_DISCOUNT_THRESHOLD_HIGH)
+		return 2
+	if(intelligibility >= POINT_DISCOUNT_THRESHOLD_LOW)
+		return 1
+	return 0
 
 /datum/preferences/Topic(href, href_list, hsrc)			//yeah, gotta do this I guess..
 	. = ..()
@@ -1569,8 +1668,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				expires = " The ban is for [DisplayTimeText(text2num(ban_details["duration"]) MINUTES)] and expires on [ban_details["expiration_time"]] (server time)."
 			to_chat(user, span_danger("You, or another user of this computer or connection ([ban_details["key"]]) is banned from playing [href_list["bancheck"]].<br>The ban reason is: [ban_details["reason"]]<br>This ban (BanID #[ban_details["id"]]) was applied by [ban_details["admin_key"]] on [ban_details["bantime"]] during round ID [ban_details["round_id"]].<br>[expires]"))
 			return
-	if(href_list["preference"] == "job")
-		SetChoices(user)
+	if(href_list["preference"] == "joba")
+		set_preview_outfit(user)
+		ShowChoices(user)
+		return TRUE
+
+	if(href_list["preference"] == "jobb")
+		set_preview_outfit_by_ship(user)
 		ShowChoices(user)
 		return TRUE
 
@@ -1914,6 +2018,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						else
 							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
+				if("moth_fluff_color")
+					var/new_moth_bodyfluff_color = input(user, "Choose your character's body fluff color:", "Character Preference","#" + features["moth_bodyfluff_color"]) as color|null
+					if(new_moth_bodyfluff_color)
+						var/temp_hsv = RGBtoHSV(new_moth_bodyfluff_color)
+						if(new_moth_bodyfluff_color == "#000000")
+							features["moth_bodyfluff_color"] = pref_species.default_color
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3])
+							features["moth_bodyfluff_color"] = sanitize_hexcolor(new_moth_bodyfluff_color)
+						else
+							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
+
 				if("color_ethereal")
 					var/new_etherealcolor = input(user, "Choose your elzuose color:", "Character Preference","#"+features["ethcolor"]) as color|null
 					if(new_etherealcolor)
@@ -1978,11 +2093,40 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_body_markings)
 						features["body_markings"] = new_body_markings
 
+				if("moth_head")
+					var/new_moth_head
+					new_moth_head = input(user, "Choose your character's head type:", "Character Preference") as null|anything in GLOB.moth_head_list
+					if(new_moth_head)
+						features["moth_head"] = new_moth_head
+
+				if("next_mothhead_style")
+					features["moth_head"] = next_list_item(features["moth_head"], GLOB.moth_head_list)
+
+				if("previous_mothhead_style")
+					features["moth_head"] = previous_list_item(features["moth_head"], GLOB.moth_head_list)
+
 				if("moth_wings")
 					var/new_moth_wings
 					new_moth_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.moth_wings_list
 					if(new_moth_wings)
 						features["moth_wings"] = new_moth_wings
+
+				if("next_mothwing_style")
+					features["moth_wings"] = next_list_item(features["moth_wings"], GLOB.moth_wings_list)
+
+				if("previous_mothwing_style")
+					features["moth_wings"] = previous_list_item(features["moth_wings"], GLOB.moth_wings_list)
+
+				if("moth_wings_color")
+					var/new_moth_wings_color = input(user, "Choose your character's wing color:", "Character Preference","#" + features["moth_wings_color"]) as color|null
+					if(new_moth_wings_color)
+						var/temp_hsv = RGBtoHSV(new_moth_wings_color)
+						if(new_moth_wings_color == "#000000")
+							features["moth_wings_color"] = pref_species.default_color
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3])
+							features["moth_wings_color"] = sanitize_hexcolor(new_moth_wings_color)
+						else
+							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
 				if("moth_fluff")
 					var/new_moth_fluff
@@ -1990,11 +2134,68 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_moth_fluff)
 						features["moth_fluff"] = new_moth_fluff
 
+				if("next_mothfluff_style")
+					features["moth_fluff"] = next_list_item(features["moth_fluff"], GLOB.moth_fluff_list)
+
+				if("previous_mothfluff_style")
+					features["moth_fluff"] = previous_list_item(features["moth_fluff"], GLOB.moth_fluff_list)
+
+				if("moth_neckfluff_color")
+					var/new_moth_neckfluff_color = input(user, "Choose your character's neck fluff color:", "Character Preference","#" + features["moth_neckfluff_color"]) as color|null
+					if(new_moth_neckfluff_color)
+						var/temp_hsv = RGBtoHSV(new_moth_neckfluff_color)
+						if(new_moth_neckfluff_color == "#000000")
+							features["moth_neckfluff_color"] = pref_species.default_color
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3])
+							features["moth_neckfluff_color"] = sanitize_hexcolor(new_moth_neckfluff_color)
+						else
+							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
+
 				if("moth_markings")
 					var/new_moth_markings
 					new_moth_markings = input(user, "Choose your character's markings:", "Character Preference") as null|anything in GLOB.moth_markings_list
 					if(new_moth_markings)
 						features["moth_markings"] = new_moth_markings
+
+				if("next_mothmarkings_style")
+					features["moth_markings"] = next_list_item(features["moth_markings"], GLOB.moth_markings_list)
+
+				if("previous_mothmarkings_style")
+					features["moth_markings"] = previous_list_item(features["moth_markings"], GLOB.moth_markings_list)
+
+				if("moth_markings_color")
+					var/new_moth_markings_color = input(user, "Choose your character's markings color:", "Character Preference","#" + features["moth_markings_color"]) as color|null
+					if(new_moth_markings_color)
+						var/temp_hsv = RGBtoHSV(new_moth_markings_color)
+						if(new_moth_markings_color == "#000000")
+							features["moth_markings_color"] = pref_species.default_color
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3])
+							features["moth_markings_color"] = sanitize_hexcolor(new_moth_markings_color)
+						else
+							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
+
+				if("moth_antennae")
+					var/new_moth_antennae
+					new_moth_antennae = input(user, "Choose your character's antennae style:", "Character Preference") as null|anything in GLOB.moth_antennae_list
+					if(new_moth_antennae)
+						features["moth_antennae"] = new_moth_antennae
+
+				if("next_mothantennae_style")
+					features["moth_antennae"] = next_list_item(features["moth_antennae"], GLOB.moth_antennae_list)
+
+				if("previous_mothantennae_style")
+					features["moth_antennae"] = previous_list_item(features["moth_antennae"], GLOB.moth_antennae_list)
+
+				if("moth_antennae_color")
+					var/new_moth_antennae_color = input(user, "Choose your character's antennae color:", "Character Preference","#" + features["moth_antennae_color"]) as color|null
+					if(new_moth_antennae_color)
+						var/temp_hsv = RGBtoHSV(new_moth_antennae_color)
+						if(new_moth_antennae_color == "#000000")
+							features["moth_antennae_color"] = pref_species.default_color
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3])
+							features["moth_antennae_color"] = sanitize_hexcolor(new_moth_antennae_color)
+						else
+							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
 				if("spider_legs")
 					var/new_spider_legs
@@ -2152,10 +2353,29 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(selected_lang.type == native_language) // wuh oh
 						CRASH("[usr] attempted to change level of understanding for [selected_lang] despite it being their native language!")
 					if(selected_lang && (selected_lang.flags & ROUNDSTART_LANGUAGE)) // no using html exploits to learn codespeak
-						var/understanding = tgui_input_list(user, "Select level of understanding:", "Learn Language", language_level_costs)
+						var/discount = get_intelligibility_discount(selected_lang.type, native_language)
+						if(discount < MAXIMUM_POINT_DISCOUNT)
+							for(var/datum/language/lang_type as anything in learned_languages)
+								if(learned_languages[lang_type] != LANGUAGE_FLUENT)
+									continue
+								discount = max(discount, get_intelligibility_discount(selected_lang.type, lang_type))
+								if(discount >= MAXIMUM_POINT_DISCOUNT)
+									break
+						var/list/level_options = list()
+						for(var/option in language_level_data)
+							var/cost = language_level_data[option][INDEX_POINT_COST]
+							if(cost && cost <= discount)
+								continue
+							level_options["[option] ([cost ? (cost - discount) : 0])"] = option
+						var/understanding = level_options[tgui_input_list(
+							user,
+							"Select level of understanding for [selected_lang.name]. [discount ? "Discounted by [discount] points due to mutual intelligibility." : ""]",
+							"Learn Language",
+							level_options,
+						)]
 						if(!understanding)
 							return
-						if(!(understanding in language_level_costs))
+						if(!(understanding in language_level_data))
 							CRASH("[usr] attempted to set level of understanding for [selected_lang.type] to \"[understanding]\"")
 						var/old_value = learned_languages[selected_lang.type]
 						learned_languages[selected_lang.type] = understanding
@@ -2232,11 +2452,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						pronouns = friendlyPronouns[pickedPronouns]
 				if("fbp")
 					fbp = !fbp
-
+					if(("moth_head" in pref_species.default_features) && (fbp))
+						features["moth_head"] = "Flat"
 				if("limbs")
 					if(href_list["customize_limb"])
 						var/limb = href_list["customize_limb"]
-						var/list/limb_options = list(PROSTHETIC_NORMAL, PROSTHETIC_ROBOTIC)
+						var/list/limb_options = list(PROSTHETIC_NORMAL)
+						if(pref_species.prosthetic_style)
+							limb_options.Add(PROSTHETIC_ROBOTIC)
 						if(limb != BODY_ZONE_CHEST && limb != BODY_ZONE_HEAD)
 							limb_options.Add(PROSTHETIC_AMPUTATED) // starting without a head or chest causes instant death, must be disallowed
 
@@ -2244,19 +2467,32 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/datum/sprite_accessory/body/limb_style
 						for(var/body in GLOB.alternative_body_list)
 							limb_style = GLOB.alternative_body_list[body]
+							if(limb_style.locked)
+								continue
 							part_candidate = limb_style.replacement_bodyparts[limb]
 							if(isnull(part_candidate))
 								continue
-							if(length(limb_style.allowed_species))
-								if(!(pref_species.type in limb_style.allowed_species))
-									continue
+							if(limb_style.allowed_species && !(pref_species.type in limb_style.allowed_species))
+								continue
 							if(!(pref_species.bodytype & initial(part_candidate.bodytype))) // don't allow vox and kepori to select limbs that aren't compatible
 								continue
 							limb_options.Add(body)
 
-						var/status = input(user, "You are modifying your [parse_zone(limb)], what should it be changed to?", "Character Preference", prosthetic_limbs[limb]) in limb_options
-						if(status)
-							prosthetic_limbs[limb] = status
+						var/limb_selection = tgui_input_list(
+							user,
+							"You are modifying your [parse_zone(limb)], what should it be changed to?",
+							"Bodypart Selection",
+							limb_options,
+						)
+						if(limb_selection)
+							prosthetic_limbs[limb] = limb_selection
+
+				if("body_desc")
+					var/datum/sprite_accessory/body/limb_style = locate(href_list["limb_style"])
+					if(!limb_style?.desc)
+						return
+					tgui_alert(user, limb_style.desc, limb_style.name, list("Close"), 0)
+					return
 
 				if("hotkeys")
 					hotkeys = !hotkeys
@@ -2593,7 +2829,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.exowear = exowear
 
-	character.fbp = fbp
+	if(fbp && !(pref_species.inherent_biotypes & MOB_ROBOTIC))
+		ADD_TRAIT(character, TRAIT_USE_PROSTHETIC, ROUNDSTART_TRAIT)
+	else
+		REMOVE_TRAIT(character, TRAIT_USE_PROSTHETIC, ROUNDSTART_TRAIT)
 
 	character.flavor_text = features["flavor_text"] //Let's update their flavor_text at least initially
 
@@ -2615,40 +2854,41 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.features = features.Copy()
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE, robotic = fbp)
 
-	for(var/pros_limb in prosthetic_limbs)
-		var/obj/item/bodypart/old_part = character.get_bodypart(pros_limb)
+	var/is_robotic = HAS_TRAIT(character, TRAIT_USE_PROSTHETIC)
+	for(var/zone in prosthetic_limbs)
+		var/obj/item/bodypart/old_part = character.get_bodypart(zone)
 		if(old_part)
 			icon_updates = TRUE
-		switch(prosthetic_limbs[pros_limb])
+		switch(prosthetic_limbs[zone])
 			if(PROSTHETIC_NORMAL)
 				if(old_part)
 					old_part.drop_limb(TRUE)
 					qdel(old_part)
-				character.regenerate_limb(pros_limb, robotic = fbp)
+				character.regenerate_limb(zone, robotic = is_robotic)
 			if(PROSTHETIC_AMPUTATED)
 				if(old_part)
 					old_part.drop_limb(TRUE)
 					qdel(old_part)
-				if(pros_limb == BODY_ZONE_CHEST || pros_limb == BODY_ZONE_HEAD)
-					stack_trace("[parent] somehow had their [parse_zone(pros_limb)] set to [PROSTHETIC_AMPUTATED]!")
-					prosthetic_limbs[pros_limb] = PROSTHETIC_NORMAL
-					character.regenerate_limb(pros_limb, robotic = fbp)
+				if(zone == BODY_ZONE_CHEST || zone == BODY_ZONE_HEAD)
+					stack_trace("[parent] somehow had their [parse_zone(zone)] set to [PROSTHETIC_AMPUTATED]!")
+					prosthetic_limbs[zone] = PROSTHETIC_NORMAL
+					character.regenerate_limb(zone, robotic = is_robotic)
 			if(PROSTHETIC_ROBOTIC)
 				if(old_part)
 					old_part.drop_limb(TRUE)
 					qdel(old_part)
-				character.regenerate_limb(pros_limb, robotic = TRUE)
+				character.regenerate_limb(zone, robotic = TRUE)
 			else
-				var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[prosthetic_limbs[pros_limb]]
-				var/obj/item/bodypart/new_part = limb_style.replacement_bodyparts[pros_limb]
+				var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[prosthetic_limbs[zone]]
+				var/obj/item/bodypart/new_part = limb_style.replacement_bodyparts[zone]
 				new_part = new new_part()
 				if(old_part)
 					old_part.drop_limb(TRUE)
 					qdel(old_part)
 				if(!(new_part.bodytype & pref_species.bodytype))
 					stack_trace("[parent] had [limb_style.name] selected, which isn't compatible with [pref_species.name]!")
-					prosthetic_limbs[pros_limb] = PROSTHETIC_NORMAL
-					character.regenerate_limb(pros_limb, robotic = fbp)
+					prosthetic_limbs[zone] = PROSTHETIC_NORMAL
+					character.regenerate_limb(zone, robotic = is_robotic)
 					continue
 				// species that don't use mutant colors normally should still be able to color prosthetics that do
 				if(new_part.should_draw_greyscale)
@@ -2687,17 +2927,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	for(var/datum/language/lang_type as anything in learned_languages)
 		if(lang_type == native_language)
 			continue
-		switch(learned_languages[lang_type])
-			if(LANGUAGE_FLUENT)
+		var/understanding = language_level_data[learned_languages[lang_type]][INDEX_UNDERSTANDING]
+		switch(understanding)
+			if(100 to INFINITY)
 				character.grant_language(lang_type)
-			if(LANGUAGE_FAMILIAR)
+			if(POINT_DISCOUNT_THRESHOLD_HIGH to 100)
 				character.grant_language(lang_type, SPOKEN_LANGUAGE)
 				character.remove_language(lang_type, UNDERSTOOD_LANGUAGE)
-				character.grant_partial_language(lang_type, 80)
-			if(LANGUAGE_RECOGNIZED)
+				character.grant_partial_language(lang_type, understanding)
+			if(POINT_DISCOUNT_THRESHOLD_LOW to POINT_DISCOUNT_THRESHOLD_HIGH)
 				character.remove_language(lang_type)
-				character.grant_partial_language(lang_type, 40)
-			if(LANGUAGE_UNKNOWN)
+				character.grant_partial_language(lang_type, understanding)
+			if(0 to POINT_DISCOUNT_THRESHOLD_LOW)
 				character.remove_language(lang_type)
 
 /datum/preferences/proc/get_default_name(name_id)

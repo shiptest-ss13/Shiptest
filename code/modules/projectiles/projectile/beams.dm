@@ -58,7 +58,7 @@
 
 /obj/projectile/beam/weak/sharplite
 	icon_state = "sharplite_laser_light"
-	damage = 15
+	damage = 20
 	speed = 0.3
 	light_color = COLOR_BLUE_LIGHT
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
@@ -67,8 +67,8 @@
 
 /obj/projectile/beam/laser/sharplite/dmr
 	icon_state = "sharplite_laser_stronger"
-	damage = 30
-	armour_penetration = 20
+	damage = 35
+	armour_penetration = 30
 
 /obj/projectile/beam/laser/assault/sharplite
 	icon_state = "sharplite_laser_heavy"
@@ -84,8 +84,8 @@
 
 /obj/projectile/beam/laser/sharplite/sniper
 	icon_state = "sharplite_laser_sniper"
-	damage = 35
-	armour_penetration = 30
+	damage = 40
+	armour_penetration = 40
 	speed = 0.2
 	wound_bonus = 0
 	bare_wound_bonus = 20
@@ -107,14 +107,12 @@
 
 /obj/projectile/beam/laser/eoehoma/heavy
 	icon_state = "heavylaser"
-	damage = 60
-	knockdown = 50
-	armour_penetration = 20
+	damage = 40
 	speed = 1
 
 /obj/projectile/beam/laser/eoehoma/heavy/on_hit(atom/target, blocked = FALSE)
 	..()
-	explosion(get_turf(loc),0,0,0,flame_range = 3)
+	explosion(get_turf(loc),0,0,2,flame_range = 3, light_dam = 20, light_item_dam = 0)
 	return BULLET_ACT_HIT
 
 /obj/projectile/beam/laser/assault
@@ -282,15 +280,19 @@
 	damage = 40
 	bullet_identifier = "pulse"
 	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS | PROJECTILE_BONUS_DAMAGE_WALLS | PROJECTILE_BONUS_DAMAGE_RWALLS
-	wall_damage_override = 200
+	wall_damage_override = 250
+	demolition_mod = 5
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
 	impact_type = /obj/effect/projectile/impact/pulse
+	var/starts_fires = TRUE
 
 /obj/projectile/beam/pulse/on_hit(atom/target, blocked = FALSE)
 	. = ..()
+	if(!starts_fires)
+		return
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
 		return
@@ -299,10 +301,12 @@
 /obj/projectile/beam/pulse/sharplite_turret
 	wall_damage_flags = null
 	wall_damage_override = 0
+	demolition_mod = 0
 	speed = 0.4
 
 /obj/projectile/beam/pulse/shotgun
 	damage = 40
+	starts_fires = FALSE
 
 /obj/projectile/beam/pulse/condor
 	range = 128

@@ -32,29 +32,29 @@
 	cost = 310
 
 
-/* 9x18mm */
+/* 9mm */
 
 /datum/supply_pack/ammo/c9mm_ammo_box
-	name = "9x18mm Ammo Box Crate"
-	desc = "Contains a 60-round 9x18mm box for pistols and SMGs such as the Commander or Saber."
+	name = "9mm Ammo Box Crate"
+	desc = "Contains a 60-round 9mm box for pistols and SMGs such as the Commander or Saber."
 	contains = list(/obj/item/storage/box/ammo/c9mm)
 	cost = 200 //6 ammo efficiency at 20 damage
 
 /datum/supply_pack/ammo/c9mmap_ammo_box
-	name = "9x18mm AP Ammo Box Crate"
-	desc = "Contains a 60-round 9x18mm box loaded with armor piercing ammo."
+	name = "9mm AP Ammo Box Crate"
+	desc = "Contains a 60-round 9mm box loaded with armor piercing ammo."
 	contains = list(/obj/item/storage/box/ammo/c9mm_ap)
 	cost = 250
 
 /datum/supply_pack/ammo/c9mmhp_ammo_box
-	name = "9x18mm HP Ammo Box Crate"
-	desc = "Contains a 60-round 9x18mm box loaded with hollow point ammo, great against unarmored targets."
+	name = "9mm HP Ammo Box Crate"
+	desc = "Contains a 60-round 9mm box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/storage/box/ammo/c9mm_hp)
 	cost = 250
 
 /datum/supply_pack/ammo/c9mmrubber_ammo_box
-	name = "9x18mm Rubber Ammo Box Crate"
-	desc = "Contains a 60-round 9x18mm box loaded with less-than-lethal rubber rounds."
+	name = "9mm Rubber Ammo Box Crate"
+	desc = "Contains a 60-round 9mm box loaded with less-than-lethal rubber rounds."
 	contains = list(/obj/item/storage/box/ammo/c9mm_rubber)
 	cost = 200
 
@@ -67,29 +67,29 @@
 	contains = list(/obj/item/storage/box/ammo/c38)
 	crate_name = "ammo crate"
 
-/* 10x22mm */
+/* 10mm */
 
 /datum/supply_pack/ammo/c10mm_ammo_box
-	name = "10x22mm Ammo Box Crate"
-	desc = "Contains a 48-round 10x22mm box for pistols and SMGs like the Ringneck or the SkM-44(k)."
+	name = "10mm Ammo Box Crate"
+	desc = "Contains a 48-round 10mm box for pistols and SMGs like the Ringneck or the SkM-44(k)."
 	contains = list(/obj/item/storage/box/ammo/c10mm)
 	cost = 210 //5.7 ammo efficiency at 25 damage
 
 /datum/supply_pack/ammo/c10mmap_ammo_box
-	name = "10x22mm AP Ammo Box Crate"
-	desc = "Contains a 48-round 10x22mm box loaded with armor piercing ammo."
+	name = "10mm AP Ammo Box Crate"
+	desc = "Contains a 48-round 10mm box loaded with armor piercing ammo."
 	contains = list(/obj/item/storage/box/ammo/c10mm_ap)
 	cost = 260
 
 /datum/supply_pack/ammo/c10mmhp_ammo_box
-	name = "10x22mm HP Ammo Box Crate"
-	desc = "Contains a 48-round 10x22mm box loaded with hollow point ammo, great against unarmored targets."
+	name = "10mm HP Ammo Box Crate"
+	desc = "Contains a 48-round 10mm box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/storage/box/ammo/c10mm_hp)
 	cost = 260
 
 /datum/supply_pack/ammo/c10mmrubber_ammo_box
-	name = "10x22mm Rubber Ammo Box Crate"
-	desc = "Contains a 48-round 10x22mm box loaded with less-than-lethal rubber rounds."
+	name = "10mm Rubber Ammo Box Crate"
+	desc = "Contains a 48-round 10mm box loaded with less-than-lethal rubber rounds."
 	contains = list(/obj/item/storage/box/ammo/c10mm_rubber)
 	cost = 210
 
@@ -226,11 +226,29 @@
 	cost = 350
 	contains = list(/obj/item/storage/box/ammo/a12g_rubbershot)
 
-/datum/supply_pack/ammo/techshells
-	name = "Unloaded Shotgun Technological Shells Crate"
-	desc = "Contains a box of 7 versatile tech shells, capable of producing a variety of deadly effects for any situation. Some assembly required."
-	cost = 210
-	contains = list(/obj/item/storage/box/techshot)
+/datum/supply_pack/ammo/scattershells
+	name = "Scatter Laser Shell Crate"
+	desc = "Contains a box of 32 shells modified to fire Sharplite lasers. Perfect for high-velocity crowd control."
+	cost = 380
+	contains = list(/obj/item/storage/box/ammo/a12g_scatter)
+
+/datum/supply_pack/ammo/pulseshells
+	name = "Pulse Slug Crate"
+	desc = "Contains a box of 32 shells modified to fire a strong pulse projectile. Decent damage and respectable at demolishing fortifications."
+	cost = 300
+	contains = list(/obj/item/storage/box/ammo/pulseslug)
+
+/datum/supply_pack/ammo/incenshells
+	name = "Incendiary Shell Crate"
+	desc = "Contains a box of 32 shells filled with an incendiary payload. Low damage but catches targets on fire."
+	cost = 400
+	contains = list(/obj/item/storage/box/ammo/a12g_incen)
+
+/datum/supply_pack/ammo/ion
+	name = "Ion Shell Crate"
+	desc = "Contains a box of 32 shells filled with an electromagnetic payload. No damage but EMPs the target."
+	cost = 800
+	contains = list(/obj/item/storage/box/ammo/a12g_ion)
 
 /* .45-70 */
 
@@ -454,3 +472,9 @@
 	desc = "Contains a 60-round box for high-powered gauss guns such as the GAR assault rifle."
 	contains = list(/obj/item/storage/box/ammo/ferrolance/hc)
 	cost = 380
+
+/datum/supply_pack/ammo/ferrorodboxcrate
+	name = "Ferromagnetic Rod Box Crate"
+	desc = "Contains a 20-round box for high-powered gauss guns such as the Model 'Atelier' Railgun."
+	contains = list(/obj/item/storage/box/ammo/ferrorods)
+	cost = 500

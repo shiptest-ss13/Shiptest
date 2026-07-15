@@ -77,9 +77,9 @@
 	if(istype(target, /obj/item/gun)) //checks if they really clicked on a gun
 		var/created_gun
 		if(istype(target, /obj/item/gun/energy/laser/captain/brazil)) //the gun that comes with the ruin
-			created_gun = /obj/item/gun/energy/sharplite/x01/brazil // hos gun with a fancy skin
+			created_gun = /obj/item/gun/energy/sharplite/yari/brazil // hos gun with a fancy skin
 		else if(istype(target, /obj/item/gun/energy/laser/captain)) //a actual antique gun, only on the skipper as of writing and a lavaland ruin
-			created_gun = /obj/item/gun/energy/sharplite/x01/brazil/true // hos gun with a fancy skin, but also recharging!!
+			created_gun = /obj/item/gun/energy/sharplite/yari/brazil/true // hos gun with a fancy skin, but also recharging!!
 		else
 			to_chat(user, span_warning("You can't upgrade this gun!.")) //wrong gun
 			return
@@ -100,10 +100,10 @@
 
 /obj/item/crystal_shard
 	name = "crystal shard"
-	icon = 'icons/obj/lavaland/artefacts.dmi'
-	desc = "A wing with a terminal infection of the strange crystals."
-	icon_state = "watcher_wing_crystal"
-	grind_results = list(/datum/reagent/crystal_reagent = 25)
+	desc = "A broken-off crystal cut from a strange growth. Handle it carefully."
+	icon = 'icons/obj/lavaland/ash_flora.dmi'
+	icon_state = "unnamed_crystal"
+	grind_results = list(/datum/reagent/crystal_reagent = 10)
 
 /obj/item/strange_crystal/attackby(obj/item/item, mob/user, params)
 	. = ..()

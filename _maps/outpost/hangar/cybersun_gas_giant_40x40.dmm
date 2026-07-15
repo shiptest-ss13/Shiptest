@@ -66,12 +66,10 @@
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
 "dQ" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/north,
@@ -170,21 +168,17 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 1
 	},
-/obj/structure/noticeboard{
-	pixel_y = -25;
-	name = "local notice board";
-	dir = 1
+/obj/structure/noticeboard/directional/south{
+	name = "local notice board"
 	},
 /obj/structure/table,
 /turf/open/floor/plasteel/mono/cybersun_outpost,
 /area/hangar)
 "gV" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/corner/bamboo{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/corner/bamboo{
 	dir = 1
 	},
 /obj/machinery/light/floor,
@@ -253,9 +247,7 @@
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
 "jy" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA"
-	},
+/obj/effect/turf_decal/siding/wood/bamboo,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/hangar)
 "jL" = (
@@ -317,8 +309,7 @@
 /turf/open/floor/hangar/cybersun_outpost,
 /area/hangar)
 "ni" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 1
 	},
 /obj/machinery/light/floor,
@@ -446,8 +437,7 @@
 /turf/open/cybersun_outpost_exterior,
 /area/hangar)
 "xA" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 4
 	},
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
@@ -543,8 +533,8 @@
 /obj/effect/turf_decal/corner/transparent/lightgrey/half{
 	dir = 8
 	},
-/obj/structure/sign/departments/cargo{
-	pixel_x = 28
+/obj/machinery/holosign/cs_outpost_cargo{
+	pixel_x = 27
 	},
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
@@ -559,12 +549,10 @@
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
 "CR" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -696,13 +684,7 @@
 /area/hangar)
 "HG" = (
 /obj/structure/chair/sofa/red/corpo/left/directional/south,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 28;
-	icon_state = "frame"
-	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 27
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north,
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
 "HU" = (
@@ -845,14 +827,11 @@
 /turf/open/cybersun_outpost_exterior,
 /area/hangar)
 "LX" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/corner/bamboo{
 	dir = 8
 	},
 /obj/machinery/light/floor,
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#E6D2BA"
-	},
+/obj/effect/turf_decal/siding/wood/corner/bamboo,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/hangar)
 "Ma" = (
@@ -896,9 +875,7 @@
 /turf/open/cybersun_outpost_exterior,
 /area/hangar)
 "NK" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA"
-	},
+/obj/effect/turf_decal/siding/wood/bamboo,
 /turf/open/floor/plasteel/patterned/brushed/cybersun_outpost,
 /area/hangar)
 "NR" = (
@@ -911,6 +888,16 @@
 	dir = 4
 	},
 /turf/open/cybersun_outpost_exterior,
+/area/hangar)
+"Ok" = (
+/obj/effect/turf_decal/siding/wood/bamboo{
+	dir = 4
+	},
+/obj/structure/chair/bench/red/directional/west,
+/obj/machinery/holosign/cs_outpost_lift{
+	pixel_x = 27
+	},
+/turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
 "Pb" = (
 /obj/structure/fluff/hedge/opaque,
@@ -931,8 +918,7 @@
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
 "SB" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 4
 	},
 /obj/structure/chair/bench/red/directional/west,
@@ -946,15 +932,13 @@
 /area/hangar)
 "TI" = (
 /obj/structure/chair/bench/red/directional/east,
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 8
 	},
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
 "Up" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -977,9 +961,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark/cybersun_outpost,
 /area/hangar)
 "Wy" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA"
-	},
+/obj/effect/turf_decal/siding/wood/bamboo,
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/patterned/brushed/cybersun_outpost,
 /area/hangar)
@@ -1015,8 +997,7 @@
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
 "YY" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 4
 	},
 /obj/machinery/elevator_call_button{
@@ -6066,7 +6047,7 @@ ni
 Ld
 Cl
 Wy
-SB
+Ok
 SB
 sc
 zZ

@@ -49,6 +49,8 @@
 #define COMSIG_GUN_TRY_FIRE "gun_try_fire"
 	#define COMPONENT_CANCEL_GUN_FIRE (1<<0) /// Also returned to cancel COMSIG_MOB_TRYING_TO_FIRE_GUN
 
+#define COMSIG_GUN_TOGGLE_SAFETY "gun_try_safety"
+
 ///from base of item/sharpener/attackby(): (amount, max)
 #define COMSIG_ITEM_SHARPEN_ACT "sharpen_act"
 	#define COMPONENT_BLOCK_SHARPEN_APPLIED 1
@@ -62,8 +64,8 @@
 #define COMSIG_TOOL_START_USE "tool_start_use" ///from base of [/obj/item/proc/tool_start_check]: (mob/living/user)
 #define COMSIG_ITEM_DISABLE_EMBED "item_disable_embed" ///from [/obj/item/proc/disableEmbedding]:
 #define COMSIG_MINE_TRIGGERED "minegoboom" ///from [/obj/item/mine/proc/trigger_mine]:
-///from [/obj/structure/closet/supplypod/proc/endlaunch]:
-#define COMSIG_SUPPLYPOD_LANDED "supplypodgoboom"
+#define COMSIG_MOB_PELLETS "mobgoboom" ///from [/mob/living/simple_animal/hostile/automated/walkmine/death()]
+#define COMSIG_SUPPLYPOD_LANDED "supplypodgoboom" ///from [/obj/structure/closet/supplypod/proc/endlaunch]:
 
 // Item mouse siganls
 #define COMSIG_ITEM_MOUSE_EXIT "item_mouse_exit"				//from base of obj/item/MouseExited(): (location, control, params)

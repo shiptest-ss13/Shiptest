@@ -88,7 +88,7 @@
 	icon_state = "combat_hypo"
 	volume = 90
 	ignore_flags = 1 // So they can heal their comrades.
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 30, /datum/reagent/medicine/panacea = 30, /datum/reagent/medicine/leporazine = 15, /datum/reagent/medicine/atropine = 15)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 30, /datum/reagent/medicine/panacea = 30, /datum/reagent/medicine/dimorlin = 15, /datum/reagent/medicine/atropine = 15)
 
 //MediPens
 
@@ -339,7 +339,7 @@
 
 /obj/item/reagent_containers/hypospray/medipen/badstop/update_icon_state()
 	. = ..()
-	if(reagents.total_volume > 30)
+	if(reagents.total_volume >= 30)
 		icon_state = base_icon_state
 		return
 	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? 1 : 0]"
@@ -437,6 +437,14 @@
 
 /obj/item/hypospray/mkii/cureall
 	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/cureall
+
+//morphine administered
+/obj/item/hypospray/mkii/morphine
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/morphine
+
+/obj/item/hypospray/mkii/chimorph
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/chimorph
+
 
 /obj/item/hypospray/mkii/mkiii
 	name = "hypospray mk.III"
@@ -695,7 +703,7 @@
 	custom_price = 500
 	volume = 35
 	amount_per_transfer_from_this = 36
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 5.5, /datum/reagent/medicine/hunter_extract = 3, /datum/reagent/drug/methamphetamine = 2, /datum/reagent/medicine/morphine = 0.5, /datum/reagent/medicine/leporazine = 6, /datum/reagent/medicine/salglu_solution = 8, /datum/reagent/medicine/ysiltane = 5, /datum/reagent/medicine/silfrine = 5)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 5.5, /datum/reagent/medicine/hunter_extract = 3, /datum/reagent/drug/rahkrahene = 2, /datum/reagent/medicine/morphine = 0.5, /datum/reagent/medicine/leporazine = 6, /datum/reagent/medicine/salglu_solution = 8, /datum/reagent/medicine/ysiltane = 5, /datum/reagent/medicine/silfrine = 5)
 
 #undef HYPO_SPRAY
 #undef HYPO_INJECT

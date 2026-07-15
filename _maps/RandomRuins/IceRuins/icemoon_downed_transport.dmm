@@ -182,10 +182,6 @@
 	icon_state = "monotile_light"
 	},
 /area/ruin/unpowered/icemoon/downed_transport/crew_accomodations)
-"bG" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/carbon_input,
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/overmap_encounter/planetoid/ice/explored)
 "bH" = (
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/box,
@@ -477,6 +473,20 @@
 /obj/structure/flora/tree/dead,
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
+"ef" = (
+/obj/structure/noticeboard/directional/north,
+/obj/structure/rack,
+/obj/item/clothing/head/hardhat/white{
+	pixel_y = 8;
+	pixel_x = -6
+	},
+/obj/item/clothing/head/hardhat/dblue{
+	pixel_y = -2;
+	pixel_x = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/icemoon,
+/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
 "eh" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -1124,22 +1134,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/ice/explored)
-"ix" = (
-/obj/structure/noticeboard{
-	pixel_y = 30
-	},
-/obj/structure/rack,
-/obj/item/clothing/head/hardhat/white{
-	pixel_y = 8;
-	pixel_x = -6
-	},
-/obj/item/clothing/head/hardhat/dblue{
-	pixel_y = -2;
-	pixel_x = 3
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/icemoon,
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
 "iD" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -2367,6 +2361,16 @@
 	icon_state = "monotile_light"
 	},
 /area/ruin/unpowered/icemoon/downed_transport/crew_accomodations)
+"sc" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/mob/living/simple_animal/hostile/human/hermit/ranged/energy,
+/turf/open/floor/carpet/red,
+/area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
 "sd" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -2593,11 +2597,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/machinery/camera{
-	dir = 4;
-	pixel_y = -9;
-	pixel_x = -9
-	},
+/obj/machinery/camera/directional/west,
 /obj/item/radio/intercom/directional/south,
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -2633,11 +2633,15 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "tW" = (
-/obj/item/stack/medical/gauze,
 /obj/item/stock_parts/cell/gun/pgf/empty{
 	pixel_y = -6;
 	pixel_x = 6
 	},
+/obj/item/stock_parts/cell/gun/pgf/empty{
+	pixel_y = -8;
+	pixel_x = -8
+	},
+/obj/item/stack/medical/gauze,
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
 "ua" = (
@@ -3481,7 +3485,7 @@
 "Ao" = (
 /obj/structure/catwalk/over,
 /obj/structure/rack,
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_y = -4;
 	pixel_x = -3
 	},
@@ -3493,7 +3497,7 @@
 	pixel_x = -7;
 	pixel_y = 5
 	},
-/obj/machinery/camera{
+/obj/machinery/camera/directional/north{
 	pixel_y = 13;
 	pixel_x = 11
 	},
@@ -5329,8 +5333,9 @@
 	pixel_x = 27
 	},
 /obj/effect/mob_spawn/human/corpse/pgf/skeleton_marine,
-/obj/item/gun/energy/kalix/pgf/medium/empty_cell{
-	pixel_y = -11
+/obj/item/gun/energy/kalix/pgf/pdw/empty_cell{
+	pixel_x = -8;
+	pixel_y = -10
 	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -6031,16 +6036,6 @@
 	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
-"Ve" = (
-/obj/structure/cable{
-	icon_state = "4-9"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
-/turf/open/floor/carpet/red,
-/area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
 "Vh" = (
 /obj/structure/catwalk/over,
 /obj/effect/decal/cleanable/glass/strange,
@@ -6532,7 +6527,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "ZL" = (
-/obj/machinery/camera{
+/obj/machinery/camera/directional/north{
 	pixel_y = 13;
 	pixel_x = 11
 	},
@@ -6904,7 +6899,7 @@ yu
 yu
 yu
 yu
-bG
+yu
 yu
 yu
 yu
@@ -7815,7 +7810,7 @@ RR
 BI
 Ml
 uc
-Ve
+sc
 QY
 XS
 yu
@@ -13205,7 +13200,7 @@ bJ
 bJ
 bJ
 Mw
-ix
+ef
 fS
 EK
 Mw

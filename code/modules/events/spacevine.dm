@@ -113,24 +113,6 @@
 	if(prey && !prey.mutations.Find(src))  //Eat all vines that are not of the same origin
 		qdel(prey)
 
-/datum/spacevine_mutation/aggressive_spread  //very OP, but im out of other ideas currently
-	name = "aggressive spreading"
-	hue = "#333333"
-	severity = 3
-	quality = NEGATIVE
-
-/datum/spacevine_mutation/aggressive_spread/on_spread(obj/structure/spacevine/holder, turf/target)
-	switch(severity)
-		if(EXPLODE_DEVASTATE)
-			SSexplosions.highturf += target
-		if(EXPLODE_HEAVY)
-			SSexplosions.medturf += target
-		if(EXPLODE_LIGHT)
-			SSexplosions.lowturf += target
-
-/datum/spacevine_mutation/aggressive_spread/on_buckle(obj/structure/spacevine/holder, mob/living/buckled)
-	buckled.ex_act(severity, null, src)
-
 /datum/spacevine_mutation/transparency
 	name = "transparent"
 	hue = ""
