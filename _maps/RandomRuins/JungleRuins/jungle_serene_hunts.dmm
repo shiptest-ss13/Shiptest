@@ -3171,7 +3171,9 @@
 /obj/structure/closet/mob_capture{
 	opened = 1;
 	name = "\improper Damaged Lifeform Containment Unit";
-	desc = "A container used to capture hostile lifeforms for retrieval and analysis. The interior is heavily armored, preventing animals from breaking out while inside. The lock on this one seems a little loose however."
+	desc = "A container used to capture hostile lifeforms for retrieval and analysis. The interior is heavily armored, preventing animals from breaking out while inside. The lock on this one seems a little loose however.";
+	secure = 0;
+	locked = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hunts/shuttle)
