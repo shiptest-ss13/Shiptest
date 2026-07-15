@@ -6333,14 +6333,6 @@
 /turf/open/water/beach/deep/outpost,
 /area/outpost/external)
 "pI" = (
-/obj/machinery/mineral/processing_unit_console{
-	pixel_x = 1;
-	pixel_y = -21;
-	dir = 1;
-	output_dir = 8;
-	input_dir = 2;
-	machinedir = 8
-	},
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)
@@ -8151,8 +8143,6 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 4
 	},
-/obj/item/gun/energy/sharplite/x12/inteq,
-/obj/item/gun/energy/sharplite/al655/inteq,
 /obj/item/gun/ballistic/automatic/marksman/f4/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/security/armory)
@@ -8836,6 +8826,9 @@
 	icon_state = "platingdmg3"
 	},
 /area/outpost/maintenance/central)
+"wc" = (
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/outpost/external)
 "wd" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 4
@@ -17283,6 +17276,9 @@
 	dir = 1;
 	layer = 3.1
 	},
+/obj/structure/fluff/arrowsong/wall{
+	dir = 1
+	},
 /turf/open/water/beach/deep/outpost,
 /area/outpost/external)
 "Qo" = (
@@ -21145,6 +21141,21 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/armory)
+"ZF" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	color = "#999999";
+	layer = 2;
+	dir = 4
+	},
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 1;
+	layer = 3.1
+	},
+/obj/structure/fluff/arrowsong/wall{
+	dir = 1
+	},
+/turf/open/water/beach/deep/outpost,
+/area/outpost/external)
 "ZH" = (
 /obj/effect/turf_decal/trimline/transparent/green/filled/warning{
 	dir = 1
@@ -28971,7 +28982,7 @@ xH
 YI
 Fg
 mj
-Ck
+ZF
 Wq
 Wq
 Wq
@@ -30077,8 +30088,8 @@ VL
 zH
 dY
 mj
-nF
-FE
+wc
+tG
 rj
 rj
 rj
@@ -30200,8 +30211,8 @@ Ll
 CM
 Fe
 mj
-WF
-rj
+nF
+FE
 rj
 rj
 rj
