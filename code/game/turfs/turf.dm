@@ -129,10 +129,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 
 	RegisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT, PROC_REF(try_update_area_light))
 
-	if(!override_area_lighting)
-		if(!try_update_area_light(do_update_light=FALSE))
-			SEND_SIGNAL(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
-	else if (light_power && light_range)
+	if (!(!override_area_lighting && try_update_area_light(do_update_light=FALSE)) && (light_power && light_range))
 		update_light()
 
 	var/turf/T = above()

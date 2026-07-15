@@ -622,6 +622,10 @@
 	if(use_mapgen)
 		mapgen.populate_turfs(vlevel.get_unreserved_block())
 
+	var/list/turf/block_turfs = vlevel.get_block()
+	for(var/turf/turf as anything in block_turfs)
+		turf.AfterChange(CHANGETURF_IGNORE_AIR)
+
 	if(static_datum.weather_controller_type)
 		new static_datum.weather_controller_type(mapzone)
 

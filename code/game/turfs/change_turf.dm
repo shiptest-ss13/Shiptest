@@ -153,10 +153,6 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			for(var/turf/open/space/S in RANGE_TURFS(1, W)) //RANGE_TURFS is in code\__HELPERS\game.dm
 				S.check_starlight(W)
 
-			if(!override_area_lighting)
-				SEND_SIGNAL(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
-			else if (light_power && light_range)
-				update_light()
 
 	if(old_opacity != opacity && SSticker)
 		GLOB.cameranet.bareMajorChunkChange(src)
@@ -329,6 +325,11 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		var/turf/T = I
 		for(var/obj/machinery/door/firedoor/FD in T)
 			FD.CalculateAffectingAreas()
+
+	if(!override_area_lighting)
+		SEND_SIGNAL(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
+	else if (light_power && light_range)
+		update_light()
 
 
 /turf/open/AfterChange(flags)

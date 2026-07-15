@@ -226,6 +226,10 @@
 
 	main_template.load(vlevel.get_unreserved_bottom_left_turf())
 
+	var/list/turf/block_turfs = vlevel.get_block()
+	for(var/turf/turf as anything in block_turfs)
+		turf.AfterChange(CHANGETURF_IGNORE_AIR)
+
 	if(weather_controller_type)
 		new weather_controller_type(mapzone)
 

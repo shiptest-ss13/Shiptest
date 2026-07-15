@@ -22,9 +22,6 @@
 		for(var/turf/open/space/adj in RANGE_TURFS(1, gen_turf))
 			adj.check_starlight(gen_turf)
 
-		if(!gen_turf.override_area_lighting)
-			SEND_SIGNAL(gen_turf, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
-
 		// CHECK_TICK here is fine -- we are assuming that the turfs we're generating are staying relatively constant
 		CHECK_TICK
 
