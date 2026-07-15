@@ -1,6 +1,8 @@
 /datum/mission/acquire
 	desc = "Get me some things."
 
+	blackbox_prefix = "Acquire "
+
 	/// The type of container to be spawned when the mission is accepted.
 	var/atom/movable/container_type
 	/// Instance of the container, spawned after the mission is accepted.
@@ -92,6 +94,13 @@
 	objective_type = /mob/living/simple_animal/hostile/asteroid/goliath
 	num_wanted = 1
 	count_stacks = FALSE
+
+	required_locations = list(
+		DYNAMIC_WORLD_LAVA,
+		DYNAMIC_WORLD_SAND,
+		DYNAMIC_WORLD_ROCKPLANET
+	)
+
 	var/creature_name = "goliath"
 
 /datum/mission/acquire/creature/New(...)
@@ -114,36 +123,60 @@
 	value = 1300
 	objective_type = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
 	creature_name = "legion"
+	required_locations = list(
+		DYNAMIC_WORLD_LAVA,
+		DYNAMIC_WORLD_SAND,
+		DYNAMIC_WORLD_ICE
+	)
+
 
 /datum/mission/acquire/creature/ice_whelp
-	value = 1700
+	value = 3000
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_whelp
 	creature_name = "ice whelp"
+	required_locations = list(
+		DYNAMIC_WORLD_ICE
+	)
 
 /datum/mission/acquire/creature/migo
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/netherworld/migo/asteroid
 	creature_name = "mi-go"
+	required_locations = list(
+		DYNAMIC_WORLD_ROCKPLANET
+	)
+
 
 /datum/mission/acquire/creature/basilisk
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands
 	creature_name = "sandworld basilisk"
+	required_locations = list(
+		DYNAMIC_WORLD_SAND
+	)
 
 /datum/mission/acquire/creature/lobster_activity
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/lobstrosity
 	creature_name = "lobstrocity"
+	required_locations = list(
+		DYNAMIC_WORLD_BEACHPLANET,
+		DYNAMIC_WORLD_ICE
+	)
 
 /datum/mission/acquire/creature/watcher
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/watcher
 	creature_name = "watcher"
+	required_locations = list(
+		DYNAMIC_WORLD_SAND,
+		DYNAMIC_WORLD_LAVA
+	)
 
 /*
 		Acquiry mission containers

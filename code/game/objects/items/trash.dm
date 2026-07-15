@@ -20,9 +20,9 @@
 	name = "candy"
 	icon_state= "candy"
 
-/obj/item/trash/cheesie
-	name = "cheesie honkers"
-	icon_state = "cheesie_honkers"
+/obj/item/trash/gummycarps
+	name = "Ringer's Carps"
+	icon_state = "gummy_carps"
 
 /obj/item/trash/chips
 	name = "chips"
@@ -36,6 +36,10 @@
 /obj/item/trash/popcorn
 	name = "popcorn"
 	icon_state = "popcorn"
+
+/obj/item/trash/channelercandy
+	name = "\improper Channeler Meat Candy"
+	icon_state = "channelercandy"
 
 /obj/item/trash/sosjerky
 	name = "\improper Scaredy's Private Reserve Beef Jerky"
@@ -89,6 +93,7 @@
 
 /obj/item/trash/can
 	name = "crushed can"
+	icon = 'icons/obj/drinks/sodacan_crushed.dmi'
 	icon_state = "cola"
 	resistance_flags = NONE
 	grind_results = list(/datum/reagent/aluminium = 10)

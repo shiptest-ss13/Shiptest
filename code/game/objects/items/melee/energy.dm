@@ -125,7 +125,7 @@
 
 /obj/item/melee/energy/sword
 	name = "energy sword"
-	desc = "For when a katana isn't enough. While Nanotrasen and the Syndicate both produce the so-called e-swords, they are visually and functionaly identical."
+	desc = "For when a katana isn't enough. While Makosso-Warra and the Syndicate both produce the so-called e-swords, they are visually and functionaly identical."
 	icon_state = "sword"
 	base_icon_state = "sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -323,6 +323,7 @@
 
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
 
 	throwforce = 5
 	active_throwforce = 20
@@ -333,6 +334,7 @@
 	armour_penetration = -20
 
 	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
 
 	active_hitsound = 'sound/weapons/blade1.ogg'
 
@@ -391,8 +393,10 @@
 		icon_state = "[base_icon_state]-on"
 		item_state = "[base_icon_state]-on"
 		armour_penetration = 60
+		slot_flags = null
 	else
 		icon_state = base_icon_state
 		item_state = base_icon_state
 		armour_penetration = -20
+		slot_flags = ITEM_SLOT_BELT
 	. = ..()

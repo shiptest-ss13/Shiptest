@@ -139,7 +139,7 @@ SUBSYSTEM_DEF(traumas)
 			/obj/item/clothing/suit/space/space_ninja,
 			/obj/item/clothing/mask/gas/space_ninja, /obj/item/clothing/shoes/space_ninja, /obj/item/clothing/gloves/space_ninja,
 			/obj/item/melee/sword/vibro, /obj/item/melee/sword/energy_katana, /obj/item/toy/katana,
-			/obj/item/melee/sword/katana, /obj/structure/window/paperframe, /obj/structure/mineral_door/paperframe))
+			/obj/structure/window/paperframe, /obj/structure/mineral_door/paperframe))
 	)
 
 	phobia_turfs = list(
@@ -158,7 +158,7 @@ SUBSYSTEM_DEF(traumas)
 		"conspiracies" = typecacheof(list(/datum/species/abductor, /datum/species/lizard)),
 		"robots" = typecacheof(list(/datum/species/android, /datum/species/ipc)),
 		"aliens" = typecacheof(list(
-			/datum/species/abductor, /datum/species/jelly, /datum/species/pod)),
+			/datum/species/abductor)),
 		"spiders" = typecacheof(list(/datum/species/spider))
 	)
 

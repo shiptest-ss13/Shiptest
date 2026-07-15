@@ -55,20 +55,48 @@
 	requisition_paper.update_appearance()
 	return requisition_paper
 
-/datum/supply_order/proc/generateManifest(obj/structure/closet/crate/container, owner) //generates-the-manifests.
-	var/manifest_text = "<h2>[market.name] Shipping Manifest</h2>"
+/datum/supply_order/proc/generateManifest(obj/structure/closet/crate/container, owner, ordering_ship_name)
+	var/manifest_text = "<h2><font face = 'Adobe Pi Std'>[market.name] Shipping Manifest</h2>"
 	manifest_text += "<hr/>"
-	if(owner && !(owner == "Unknown"))
-		manifest_text += "Direct purchase from [owner]<br/>"
-	manifest_text += "Destination: [market.name]<br/>"
+	if(ordering_ship_name)
+		manifest_text += "Destination: [ordering_ship_name]<br/>"
+	manifest_text += "Order #[id]<br/>"
+	manifest_text += "Time of Order: [station_time_timestamp("hh:mm")] [sector_datestamp()]<br/>"
+	manifest_text += "<br/>"
+	manifest_text += "Supply Packs Purchased:<br/>"
+	var/previous_pack
+	var/pack_counter
+	var/list/datum/supply_pack/sorted_packs = sortNames(supply_packs)
+	for(var/datum/supply_pack/pack in sorted_packs)
+		if(!previous_pack || (previous_pack != pack.name))
+			if ((previous_pack != pack.name) && !!previous_pack)
+				manifest_text += "<li>[previous_pack] x [pack_counter]</li>"
+			previous_pack = pack.name
+			pack_counter = 1
+		else
+			pack_counter += 1
+	manifest_text += "<li>[previous_pack] x [pack_counter]</li>"
+	manifest_text += "<br/>"
 	manifest_text += "Contents: <br/>"
-	manifest_text += "<ul>"
+	manifest_text += "<table border>"
+	manifest_text += "<tr>"
+	manifest_text += "<td><div align = 'center'>QTY</td>"
+	manifest_text += "<td><div align = 'center'>ITEM</td>"
+	manifest_text += "</tr>"
 	var/container_contents = list() // Associative list with the format (item_name = nº of occurrences, ...)
 	for(var/atom/movable/AM in container.contents)
-		container_contents[AM.name]++
+		if(istype(AM, /obj/item/storage/guncase))
+			var/obj/item/storage/guncase/purchased_guncase = AM
+			for(var/obj/guncase_contents in purchased_guncase.contents)
+				container_contents[guncase_contents.name]++
+		else
+			container_contents[AM.name]++
 	for(var/item in container_contents)
-		manifest_text += "<li> [container_contents[item]] [item][container_contents[item] == 1 ? "" : "s"]</li>"
-	manifest_text += "</ul>"
+		manifest_text += "<td><div align = 'center'>[container_contents[item]]</td>"
+		manifest_text += "<td><div align = 'center'>[item]</td>"
+		manifest_text += "</tr>"
+	manifest_text += "</table>"
+	manifest_text += "<br/>"
 	manifest_text += "<h4>Stamp below to confirm receipt of goods:</h4>"
 
 	container.manifest_id = id
@@ -78,6 +106,7 @@
 /datum/supply_order/proc/generate(atom/location)
 	var/account_holder
 	var/datum/supply_pack/initial_pack = supply_packs[1]
+	var/ordering_ship_name
 
 	var/obj/structure/closet/crate/order_crate
 	if(paying_account)
@@ -88,7 +117,12 @@
 		account_holder = "Unknown"
 		order_crate = new initial_pack.crate_type(location)
 
+	//really really awful, but I'm not seeing a nicer way to get the ship name
+	var/area/ship/current_ship_area = get_area(src.orderer)
+	if(istype(current_ship_area) && current_ship_area.mobile_port)
+		ordering_ship_name = current_ship_area.mobile_port.current_ship.name
+
 	for(var/datum/supply_pack/filling_pack in supply_packs)
 		filling_pack.fill(order_crate)
-	generateManifest(order_crate, account_holder)
+	generateManifest(order_crate, account_holder, ordering_ship_name)
 	return order_crate

@@ -293,7 +293,6 @@
 	},
 /obj/effect/decal/cleanable/robot_debris/gib,
 /obj/effect/decal/cleanable/oil,
-/obj/structure/AIcore/deactivated,
 /obj/structure/spacevine/dense,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
@@ -5577,9 +5576,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 6
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starlauncherone)
@@ -5872,9 +5869,7 @@
 	dir = 8
 	},
 /obj/structure/ore_box,
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/afthall)
 "Xy" = (

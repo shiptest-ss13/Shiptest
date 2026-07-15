@@ -28,7 +28,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/security)
 "aq" = (
@@ -617,9 +617,7 @@
 /area/ruin/wasteplanet/recycle_bay/security)
 "eP" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/vault)
@@ -651,14 +649,6 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/recycle_bay/security)
-"fa" = (
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 26
-	},
-/obj/item/paper/fluff/ruins/wasteplanet/reminder,
-/turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/security)
 "fb" = (
 /obj/machinery/computer/atmos_alert{
@@ -888,13 +878,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/corner/ebony{
+	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/corner/ebony{
+	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1093,8 +1081,7 @@
 /area/ruin/wasteplanet/recycle_bay/security)
 "hP" = (
 /obj/item/kirbyplants/dead,
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 6
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1265,8 +1252,7 @@
 	name = "quartermaster's cabinet"
 	},
 /obj/item/paper/fluff/ruins/wasteplanet/derringer,
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 6
 	},
 /obj/item/clothing/under/syndicate/ramzi/officer,
@@ -1316,9 +1302,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "jB" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521"
-	},
+/obj/effect/turf_decal/siding/wood/corner/ebony,
 /turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers_dorms)
 "jE" = (
@@ -1502,7 +1486,10 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "kD" = (
 /obj/structure/table,
-/obj/item/storage/firstaid/tactical,
+/obj/item/storage/firstaid/advanced{
+	pixel_x = 3;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/wasteplanet/recycle_bay/eva)
 "kG" = (
@@ -1704,8 +1691,7 @@
 /obj/item/bedsheet/syndie{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 10
 	},
 /turf/open/floor/wood/walnut,
@@ -1741,8 +1727,7 @@
 /turf/open/floor/concrete/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "lM" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1872,8 +1857,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/atmospherics)
 "mM" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 9
 	},
 /obj/item/kirbyplants/dead,
@@ -2050,9 +2034,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/recycle_bay/vault)
 "nW" = (
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -2267,8 +2249,7 @@
 /obj/structure/closet/secure_closet/cabinet{
 	name = "lieutenant's cabinet"
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 5
 	},
 /obj/item/clothing/under/syndicate/ramzi/officer,
@@ -2633,8 +2614,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security_dorms)
 "rF" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 2
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2780,8 +2760,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/recycle_bay/dorms)
 "sk" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut{
@@ -2809,8 +2788,7 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/wasteplanet/recycle_bay/dorms)
 "st" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/west,
@@ -3178,8 +3156,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/wasteplanet/recycle_bay/armory)
 "vb" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 4
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -3424,14 +3401,6 @@
 "wF" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/wasteplanet/recycle_bay/security)
-"wH" = (
-/obj/structure/table/glass,
-/obj/item/reagent_containers/syringe/contraband/methamphetamine{
-	pixel_y = 5;
-	pixel_x = -3
-	},
-/turf/open/floor/carpet/green,
-/area/ruin/wasteplanet/recycle_bay/officers)
 "wI" = (
 /obj/structure/rack,
 /obj/item/clothing/ears/earmuffs{
@@ -4023,16 +3992,6 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security_dorms)
-"Bw" = (
-/obj/structure/closet/toolcloset/empty,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/plasmacutter,
-/obj/item/plasmacutter,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/gloves/color/yellow,
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/wasteplanet/recycle_bay/eva)
 "BE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -4175,8 +4134,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/security)
 "Ci" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 10
 	},
 /obj/machinery/light/directional/west,
@@ -4317,6 +4275,14 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"Db" = (
+/obj/structure/table/glass,
+/obj/item/inhaler/rahkrahene{
+	pixel_y = 5;
+	pixel_x = -3
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/wasteplanet/recycle_bay/officers)
 "Dd" = (
 /obj/item/target,
 /turf/open/floor/plating,
@@ -4392,8 +4358,7 @@
 /turf/open/floor/carpet/green,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "DG" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 2
 	},
 /obj/structure/table/wood,
@@ -4547,21 +4512,17 @@
 /obj/item/bedsheet/syndie{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 6
 	},
 /obj/item/toy/plush/blahaj,
 /turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers_dorms)
 "Ep" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521"
-	},
+/obj/effect/turf_decal/siding/wood/corner/ebony,
 /turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "Ey" = (
@@ -4606,10 +4567,7 @@
 /turf/closed/wall,
 /area/ruin/wasteplanet/recycle_bay/salvage_bay)
 "EO" = (
-/obj/machinery/mineral/processing_unit_console{
-	dir = 4;
-	pixel_x = -28;
-	pixel_y = 1;
+/obj/machinery/computer/processing_unit_console/directional/west{
 	input_dir = 2;
 	machinedir = 1
 	},
@@ -4710,8 +4668,7 @@
 	},
 /area/ruin/wasteplanet/recycle_bay/dorms)
 "Fm" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -4984,6 +4941,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"Ha" = (
+/obj/structure/noticeboard/directional/east,
+/obj/item/paper/fluff/ruins/wasteplanet/reminder,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/wasteplanet/recycle_bay/security)
 "He" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plating,
@@ -5442,8 +5404,7 @@
 	pixel_x = -6;
 	pixel_y = 10
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 9
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -5602,8 +5563,7 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/dorms)
 "LA" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5805,7 +5765,6 @@
 /obj/structure/closet/wall/med/directional/south,
 /obj/item/reagent_containers/syringe/contraband/morphine,
 /obj/item/reagent_containers/syringe/contraband/morphine,
-/obj/item/storage/firstaid/tactical,
 /obj/item/storage/firstaid/regular,
 /obj/item/clothing/neck/stethoscope,
 /turf/open/floor/plasteel/mono/white,
@@ -5907,8 +5866,7 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "NN" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 2
 	},
 /obj/structure/dresser{
@@ -5933,7 +5891,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /obj/structure/cable{
@@ -6078,8 +6036,7 @@
 /turf/open/floor/concrete/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Pb" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
@@ -6166,6 +6123,16 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
+"PM" = (
+/obj/structure/closet/toolcloset/empty,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/plasmacutter,
+/obj/item/plasmacutter,
+/obj/item/clothing/gloves/insulated,
+/obj/item/clothing/gloves/insulated,
+/obj/item/clothing/gloves/insulated,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/wasteplanet/recycle_bay/eva)
 "PN" = (
 /obj/effect/turf_decal/siding/red{
 	dir = 4;
@@ -6784,7 +6751,7 @@
 /turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Uu" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
@@ -6821,12 +6788,10 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 2
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -7068,8 +7033,7 @@
 /turf/closed/wall/r_wall/rust,
 /area/ruin/wasteplanet/recycle_bay/armory)
 "WJ" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 8
 	},
 /obj/structure/table,
@@ -7419,8 +7383,7 @@
 /turf/open/floor/concrete/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "YH" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 2
 	},
 /turf/open/floor/wood/walnut,
@@ -9172,7 +9135,7 @@ hx
 jZ
 YC
 IX
-fa
+Ha
 Mf
 TG
 bu
@@ -10087,7 +10050,7 @@ DE
 DE
 Ft
 kJ
-wH
+Db
 kk
 KJ
 gk
@@ -10578,7 +10541,7 @@ Wi
 Wi
 Wi
 vy
-Bw
+PM
 MH
 lX
 xD

@@ -214,19 +214,9 @@
 		Miscellaneous machines
 */
 
-/datum/supply_pack/ship_hardware/wall_shield_gen
-	name = "Shield Generator Crate"
-	desc = "These two shield wall generators are guaranteed to keep any unwanted lifeforms on the outside, where they belong! Not rated for containing singularities or tesla balls."
-	cost = 1000
-	contains = list(/obj/machinery/power/shieldwallgen,
-					/obj/machinery/power/shieldwallgen)
-	crate_name = "shield generators crate"
-	crate_type = /obj/structure/closet/crate/secure/plasma
-	no_bundle = TRUE
-
 /datum/supply_pack/machinery/drill_crate
 	name = "Heavy duty laser mining drill"
-	desc = "An experimental laser-based mining drill that Nanotrasen is kindly allowing YOU, the customer, to opt into testing of."
+	desc = "An experimental laser-based mining drill that Makoso-Warra is kindly allowing YOU, the customer, to opt into testing of."
 	cost = 1000 //Only while TMed, jack up the price before merging
 	contains = list(
 		/obj/machinery/drill,
@@ -244,6 +234,16 @@
 		/obj/machinery/power/planet_beacon
 	)
 	crate_name = "point beacon crate"
+	crate_type = /obj/structure/closet/crate/engineering
+
+/datum/supply_pack/machinery/turret
+	name = "Automated Turret Board Crate"
+	desc = "A crate containing a circuitboard used for constructing an automated turret. Does not include a firearm."
+	cost = 1000 // Useless on its own, you will need a weapon to construct it
+	contains = list(
+		/obj/item/circuitboard/machine/turret
+	)
+	crate_name = "turret crate"
 	crate_type = /obj/structure/closet/crate/engineering
 
 /*

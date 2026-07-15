@@ -7,29 +7,49 @@
 	armour_penetration = 100
 	dismemberment = 30
 
+	var/devastation = 0
+	var/range_heavy= 1
+	var/heavy_damage = EX_HEAVY_BASE_DAM
+	var/heavy_item_damage = EX_HEAVY_BASE_ITEM_DAM
+	var/range_light = 2
+	var/light_damage = EX_LIGHT_BASE_DAM
+	var/light_item_damage = EX_LIGHT_BASE_ITEM_DAM
+	var/flame_range = 4
+
+
 /obj/projectile/bullet/a84mm/on_hit(atom/target, blocked = FALSE)
 	..()
-	explosion(target, 0, 1, 2, 1, 0, flame_range = 4)
+	explosion(target, devastation, range_heavy, range_light, 1, 0, flame_range = flame_range,\
+	light_dam = light_damage, light_item_dam = light_item_damage, heavy_dam = heavy_damage, heavy_item_dam = heavy_item_damage)
 
-	if(ismecha(target))
-		var/obj/mecha/M = target
-		M.take_damage(anti_armour_damage)
-	if(issilicon(target))
-		var/mob/living/silicon/S = target
-		S.take_overall_damage(anti_armour_damage*0.75, anti_armour_damage*0.25)
+	if(anti_armour_damage)
+		if(ismecha(target))
+			var/obj/mecha/M = target
+			M.take_damage(anti_armour_damage)
+		if(issilicon(target))
+			var/mob/living/silicon/S = target
+			S.take_overall_damage(anti_armour_damage*0.75, anti_armour_damage*0.25)
 	return BULLET_ACT_HIT
 
-/obj/projectile/bullet/a84mm_he
+/obj/projectile/bullet/a84mm/he
 	name ="\improper HE missile"
 	desc = "Boom."
 	icon_state = "missile"
 	damage = 30
+	anti_armour_damage = 0
+	light_range = 4
 	ricochets_max = 0 //it's a MISSILE
 
-/obj/projectile/bullet/a84mm_he/on_hit(atom/target, blocked=0)
-	..()
-	explosion(target, 0, 1, 2, 4)
-	return BULLET_ACT_HIT
+/obj/projectile/bullet/a84mm/he/weak
+	name ="\improper Light HE missile"
+	desc = "Boom."
+	icon_state = "missile-light"
+	dismemberment = 0
+	damage = 20
+	heavy_damage = 40
+	heavy_item_damage = 40
+	light_damage = 25
+	light_item_damage = 20
 
 /obj/projectile/bullet/a84mm_br
 	name ="\improper HE missile"

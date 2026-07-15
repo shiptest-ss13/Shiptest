@@ -157,7 +157,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "aE" = (
-/obj/machinery/camera/autoname{
+/obj/machinery/camera/autoname/directional/north{
 	network = list("mall")
 	},
 /obj/machinery/disposal/bin,
@@ -243,8 +243,7 @@
 /area/ruin/space/has_grav/spacemall)
 "aV" = (
 /obj/effect/turf_decal/corner/transparent/mauve,
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("mall")
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -555,8 +554,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "cu" = (
-/obj/machinery/camera/autoname{
-	dir = 9;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("mall")
 	},
 /obj/structure/catwalk/over/plated_catwalk,
@@ -814,8 +812,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "du" = (
-/obj/machinery/camera/autoname{
-	dir = 5;
+/obj/machinery/camera/autoname/directional/west{
 	network = list("mall")
 	},
 /obj/effect/turf_decal/corner/transparent/lime{
@@ -841,8 +838,7 @@
 	dir = 1;
 	icon_state = "blood2"
 	},
-/obj/machinery/camera/autoname{
-	dir = 5;
+/obj/machinery/camera/autoname/directional/west{
 	network = list("mall")
 	},
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
@@ -1011,8 +1007,7 @@
 "dW" = (
 /obj/effect/decal/cleanable/wrapping,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
-	dir = 9;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("mall")
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -1986,8 +1981,7 @@
 /area/ruin/space/has_grav/spacemall)
 "hN" = (
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("mall")
 	},
 /turf/open/floor/plasteel/white,
@@ -2307,8 +2301,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "iW" = (
-/obj/machinery/camera/autoname{
-	dir = 5;
+/obj/machinery/camera/autoname/directional/west{
 	network = list("mall")
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -2636,10 +2629,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "kj" = (
-/obj/machinery/camera/autoname{
-	dir = 10;
-	network = list("mall");
-	pixel_x = -7
+/obj/machinery/camera/autoname/directional/south{
+	network = list("mall")
 	},
 /obj/structure/railing{
 	dir = 1
@@ -2649,8 +2640,7 @@
 	},
 /area/ruin/space/has_grav/spacemall/maint)
 "km" = (
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("mall")
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -2937,8 +2927,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "lr" = (
-/obj/machinery/camera/autoname{
-	dir = 5;
+/obj/machinery/camera/autoname/directional/west{
 	network = list("mall")
 	},
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
@@ -3086,8 +3075,7 @@
 /area/ruin/space/has_grav/spacemall/shop)
 "lV" = (
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("mall")
 	},
 /obj/structure/cable{
@@ -3162,8 +3150,7 @@
 /area/ruin/space/has_grav/spacemall)
 "mr" = (
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
-/obj/machinery/camera/autoname{
-	dir = 6;
+/obj/machinery/camera/autoname/directional/north{
 	network = list("mall")
 	},
 /turf/open/floor/plasteel/white,
@@ -3292,8 +3279,7 @@
 /turf/open/floor/eighties,
 /area/ruin/space/has_grav/spacemall/shop2)
 "mR" = (
-/obj/machinery/camera/autoname{
-	dir = 9;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("mall")
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -3508,8 +3494,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 6;
+/obj/machinery/camera/autoname/directional/north{
 	network = list("mall")
 	},
 /turf/open/floor/wood/walnut,
@@ -4143,8 +4128,7 @@
 	network = list("mall")
 	},
 /obj/effect/turf_decal/corner/opaque/red/mono,
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("mall")
 	},
 /turf/open/floor/plasteel,
@@ -5114,8 +5098,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop)
 "tg" = (
-/obj/machinery/camera/autoname{
-	dir = 6;
+/obj/machinery/camera/autoname/directional/north{
 	network = list("mall")
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
@@ -5331,10 +5314,8 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/dorms)
 "tP" = (
-/obj/machinery/camera/autoname{
-	dir = 10;
-	network = list("mall");
-	pixel_x = -5
+/obj/machinery/camera/autoname/directional/south{
+	network = list("mall")
 	},
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /turf/open/floor/plasteel/dark,
@@ -5517,13 +5498,13 @@
 	can_buckle = 0;
 	desc = "A spike for collecting CLOTHING from PEOPLE."
 	},
-/obj/item/clothing/suit/jacket/letterman_nanotrasen{
+/obj/item/clothing/suit/jacket/letterman_warra{
 	pixel_y = -7
 	},
-/obj/item/clothing/suit/jacket/letterman_nanotrasen{
+/obj/item/clothing/suit/jacket/letterman_warra{
 	pixel_y = -7
 	},
-/obj/item/clothing/suit/jacket/letterman_nanotrasen{
+/obj/item/clothing/suit/jacket/letterman_warra{
 	pixel_y = -7
 	},
 /obj/item/clothing/suit/jacket/letterman,
@@ -6195,8 +6176,7 @@
 /obj/item/instrument/trumpet{
 	pixel_y = 5
 	},
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("mall")
 	},
 /turf/open/floor/plasteel/showroomfloor,
@@ -6216,11 +6196,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "xx" = (
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	pixel_y = 5
 	},
 /obj/structure/table/wood/fancy,
-/obj/item/reagent_containers/food/drinks/bottle/moonshine{
+/obj/item/reagent_containers/food/drinks/bottle/chemshine{
 	pixel_y = 5
 	},
 /obj/item/reagent_containers/food/drinks/bottle/vodka{
@@ -6743,8 +6723,7 @@
 "zl" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("mall")
 	},
 /turf/open/floor/plating,
@@ -7940,8 +7919,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "Ek" = (
-/obj/machinery/camera/autoname{
-	dir = 6;
+/obj/machinery/camera/autoname/directional/north{
 	network = list("mall")
 	},
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
@@ -9151,8 +9129,7 @@
 "Iw" = (
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /obj/effect/turf_decal/road/line/transparent/solgovblue,
-/obj/machinery/camera/autoname{
-	dir = 5;
+/obj/machinery/camera/autoname/directional/west{
 	network = list("mall")
 	},
 /obj/machinery/firealarm/directional/north,
@@ -9345,8 +9322,7 @@
 "Jm" = (
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
 /obj/effect/decal/cleanable/blood,
-/obj/machinery/camera/autoname{
-	dir = 6;
+/obj/machinery/camera/autoname/directional/north{
 	network = list("mall")
 	},
 /turf/open/floor/plasteel/dark,
@@ -10003,8 +9979,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "LZ" = (
-/obj/machinery/camera/autoname{
-	dir = 6;
+/obj/machinery/camera/autoname/directional/north{
 	network = list("mall")
 	},
 /obj/item/storage/fancy/cigarettes,
@@ -10069,8 +10044,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "Ml" = (
-/obj/machinery/camera/autoname{
-	dir = 9;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("mall")
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -10290,8 +10264,7 @@
 /area/ruin/space/has_grav/spacemall)
 "MV" = (
 /obj/effect/turf_decal/corner/opaque/blue/half,
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("mall")
 	},
 /obj/structure/cable{
@@ -10423,10 +10396,8 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "Nr" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/camera/autoname{
-	dir = 9;
-	network = list("mall");
-	pixel_y = 5
+/obj/machinery/camera/autoname/directional/east{
+	network = list("mall")
 	},
 /turf/open/floor/eighties,
 /area/ruin/space/has_grav/spacemall/shop2)
@@ -11067,8 +11038,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 5;
+/obj/machinery/camera/autoname/directional/west{
 	network = list("mall")
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -11451,8 +11421,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "QY" = (
-/obj/machinery/camera/autoname{
-	dir = 9;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("mall")
 	},
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
@@ -11565,8 +11534,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 9;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("mall")
 	},
 /turf/open/floor/plasteel/dark,
@@ -11724,9 +11692,7 @@
 	dir = 4
 	},
 /obj/structure/spider/stickyweb,
-/obj/machinery/computer/security/telescreen{
-	pixel_y = 30
-	},
+/obj/machinery/computer/security/telescreen/directional/north,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/maint)
 "Sg" = (
@@ -12371,8 +12337,7 @@
 /obj/effect/turf_decal/corner/transparent/black{
 	dir = 6
 	},
-/obj/machinery/camera/autoname{
-	dir = 5;
+/obj/machinery/camera/autoname/directional/west{
 	network = list("mall")
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
@@ -12799,18 +12764,14 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "Wl" = (
-/obj/machinery/camera/autoname{
-	dir = 10;
+/obj/machinery/camera/autoname/directional/south{
 	network = list("mall")
 	},
 /obj/machinery/photocopier,
 /obj/effect/turf_decal/corner/transparent/lime{
 	dir = 8
 	},
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -30
-	},
+/obj/structure/noticeboard/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "Wm" = (
@@ -13258,8 +13219,7 @@
 /area/ruin/space/has_grav/spacemall)
 "Ym" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
-/obj/machinery/camera/autoname{
-	dir = 9;
+/obj/machinery/camera/autoname/directional/east{
 	network = list("mall")
 	},
 /turf/open/floor/plasteel/freezer,
@@ -13608,14 +13568,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
-"ZM" = (
-/obj/machinery/camera/autoname{
-	dir = 10;
-	network = list("mall")
-	},
-/obj/effect/turf_decal/corner/transparent/green/diagonal,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/spacemall)
 "ZN" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -16654,7 +16606,7 @@ jC
 ze
 bM
 SX
-ZM
+tP
 Cy
 pG
 WK

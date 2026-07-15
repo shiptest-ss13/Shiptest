@@ -1,9 +1,10 @@
-/obj/item/ammo_casing/energy/c3dbullet
-	projectile_type = /obj/projectile/bullet/c3d
+/obj/item/ammo_casing/energy/integrated_lmg
+	projectile_type = /obj/projectile/bullet/a556_42
 	select_name = "spraydown"
-	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/hydra.ogg'
 	e_cost = 20
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect
+	delay = 0.08 // Match integrated LMG
 
 /obj/item/ammo_casing/energy/ctac
 	projectile_type = /obj/projectile/bullet/ctac

@@ -59,7 +59,7 @@
 
 /obj/projectile/bullet/slug/frag12/on_hit(atom/target, blocked = FALSE)
 	..()
-	explosion(target, -1, 0, 1)
+	explosion(target, -1, 0, 2, light_dam = 30)
 	return BULLET_ACT_HIT
 
 /obj/projectile/bullet/pellet
@@ -122,7 +122,7 @@
 /obj/projectile/bullet/pellet/buckshot/twobore
 	name = "two-bore pellet"
 	damage = 30
-	armour_penetration = -25
+	armour_penetration = 5
 	tile_dropoff = 3
 	bullet_identifier = "massive pellet"
 

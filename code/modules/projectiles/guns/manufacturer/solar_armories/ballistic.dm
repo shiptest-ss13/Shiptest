@@ -34,7 +34,7 @@
 	show_magazine_on_sprite = FALSE
 	empty_indicator = FALSE
 	manufacturer = MANUFACTURER_SOLARARMORIES
-	recoil = 2
+	recoil = 1
 	recoil_unwielded = 4
 	spread = 6
 	spread_unwielded = 12
@@ -50,15 +50,6 @@
 
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh/no_mag
 	default_ammo_type = FALSE
-
-/obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns
-	desc = "A standard-issue pistol exported from the Solarian Confederation. It fires slow flesh-rending ferromagnetic slugs at a high energy cost, however they are ineffective on any armor. It is painted in the colors of SUNS."
-	default_ammo_type = /obj/item/ammo_box/magazine/modelh
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/modelh,
-	)
-	icon_state = "model-h_suns"
-	item_state = "model-h_suns"
 
 //not gauss pistol
 /obj/item/gun/ballistic/automatic/pistol/solgov
@@ -128,12 +119,7 @@
 	light_range = 0
 
 	doesnt_keep_bullet = TRUE
-
-
-/obj/item/gun/ballistic/automatic/powered/gauss/claris/suns
-	desc = "An antiquated Solarian rifle. Chambered in ferromagnetic pellets, just as the founding Solarians intended. Evidently, SUNS' founders echo the sentiment, as it appears to be painted in their colors."
-	icon_state = "claris_suns"
-	item_state = "claris_suns"
+	casing_ejector = TRUE
 
 /obj/item/gun/ballistic/automatic/powered/gauss/gar
 	name = "Solar 'GAR' Carbine"
@@ -176,11 +162,6 @@
 	wield_delay = 0.7 SECONDS
 	fire_select_icon_state_prefix = "lance_"
 
-/obj/item/gun/ballistic/automatic/powered/gauss/gar/suns
-	desc = "A Solarian carbine, unusually modern for its producers. It's just modern enough for SUNS, however, who have painted the weapon in their colors. Launches ferromagnetic lances at alarming speeds."
-	icon_state = "gar_suns"
-	item_state = "gar_suns"
-
 ///Sniper
 /obj/item/gun/ballistic/rifle/solgov
 	name = "SSG-669C"
@@ -211,3 +192,50 @@
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
+/obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+	name = "Model 'Atelier' Railgun"
+	desc = "A high powered Solarian railgun. The heavy-duty electromagnets may require time to calibrate before each shot, but the power behind each ferromagnetic rod is well worth the wait."
+	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
+
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/rail
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/rail,
+	)
+	default_cell_type = /obj/item/stock_parts/cell/gun/solgov
+	allowed_cell_types = list(
+		/obj/item/stock_parts/cell/gun/solgov,
+	)
+
+	gun_firemodes = list(FIREMODE_AIMED)
+	default_firemode = FIREMODE_AIMED
+
+	icon_state = "railgun"
+	item_state = "railgun"
+
+	manufacturer = MANUFACTURER_SOLARARMORIES
+	spread = -5
+	spread_unwielded = 10
+	weapon_weight = WEAPON_HEAVY
+	recoil = 1
+	recoil_unwielded = 8
+	wield_slowdown = SNIPER_SLOWDOWN
+	wield_delay = 1.3 SECONDS
+	doesnt_keep_bullet = TRUE
+	aiming_time = 25
+	aiming_time_fire_threshold = 10
+
+	zoomable = TRUE
+	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_out_amt = 5
+
+	fire_sound = 'sound/weapons/blastcannon.ogg'
+
+	bolt_type = BOLT_TYPE_NO_BOLT
+	internal_magazine = TRUE
+	show_magazine_on_sprite = FALSE
+	empty_indicator = FALSE
+
+	refused_attachments = list(/obj/item/attachment/silencer)

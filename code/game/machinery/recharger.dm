@@ -1,6 +1,6 @@
 /obj/machinery/recharger
 	name = "recharger"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/machines/recharger.dmi'
 	icon_state = "recharger"
 	base_icon_state = "recharger"
 	desc = "A charging dock for energy based weaponry. However someones modified it to work with most things with cells."

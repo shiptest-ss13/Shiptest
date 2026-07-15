@@ -369,6 +369,10 @@
 /atom/proc/CanAllowThrough(atom/movable/mover, border_dir)
 	SHOULD_CALL_PARENT(TRUE)
 	//SHOULD_BE_PURE(TRUE)
+
+	//put some kinda signal here
+	if(SEND_SIGNAL(src, COMSIG_ATOM_TRY_ALLOW_THROUGH, mover, border_dir))
+		return TRUE
 	if(mover.pass_flags & pass_flags_self)
 		return TRUE
 	if(mover.throwing && (pass_flags_self & LETPASSTHROW))
@@ -492,6 +496,22 @@
 /// Is this atom drainable of reagents
 /atom/proc/is_drainable()
 	return reagents && (reagents.flags & DRAINABLE)
+
+/// gives the informations to display on a reagent scanner when scanned, returns a string
+/atom/proc/reagent_scan()
+	var/list/render_list = list()
+
+	if(!isnull(reagents))
+		if(reagents.reagent_list.len > 0)
+			var/reagents_length = reagents.reagent_list.len
+			var/reagents_temp =	reagents.chem_temp
+			render_list += span_notice("[reagents_length] chemical agent[reagents_length > 1 ? "s" : ""] found inside [src] at [reagents_temp]°K.") + "<br>"
+			for (var/re in reagents.reagent_list)
+				var/datum/reagent/R = re
+				var/amount = R.volume
+				render_list += span_notice("\t [amount] units of [re].") + "<br>"
+
+	return jointext(render_list, "")
 
 /** Handles exposing this atom to a list of reagents.
  *
@@ -739,7 +759,7 @@
 	return
 
 /// Handle what happens when your contents are exploded by a bomb
-/atom/proc/contents_explosion(severity, target)
+/atom/proc/contents_explosion(severity, target, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 	return //For handling the effects of explosions on contents that would not normally be effected
 
 /**
@@ -747,10 +767,10 @@
  *
  * Default behaviour is to call [contents_explosion][/atom/proc/contents_explosion] and send the [COMSIG_ATOM_EX_ACT] signal
  */
-/atom/proc/ex_act(severity, target)
+/atom/proc/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	set waitfor = FALSE
-	contents_explosion(severity, target)
-	SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target)
+	contents_explosion(severity, target, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
+	SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 
 /atom/proc/fire_act(exposed_temperature, exposed_volume)
 	SEND_SIGNAL(src, COMSIG_ATOM_FIRE_ACT, exposed_temperature, exposed_volume)
@@ -1439,8 +1459,6 @@
 			log_shuttle(log_text)
 		if(LOG_RADIO_EMOTE)
 			log_radio_emote(log_text)
-		if(LOG_MSAY)
-			log_mentor(log_text)
 		if(LOG_LOOC)
 			log_looc(log_text)
 		if(LOG_SUBTLER)

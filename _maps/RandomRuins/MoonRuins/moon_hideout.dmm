@@ -1336,7 +1336,7 @@
 	req_access = null;
 	populate = 0
 	},
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/storage/belt/utility/full,
 /obj/item/clothing/head/hardhat/ramzi,
 /obj/item/clothing/under/syndicate/ramzi,
@@ -1844,9 +1844,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/fortress)
 "sr" = (
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 4
@@ -2331,7 +2329,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/hideout/fortress)
 "xT" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk,
@@ -2407,7 +2405,6 @@
 	pixel_x = 0;
 	pixel_y = -10
 	},
-/obj/item/radio/headset/syndicate/alt/captain,
 /obj/item/clothing/under/syndicate/ramzi/officer,
 /obj/item/clothing/neck/shemagh/ramzi,
 /obj/item/clothing/head/ramzi/beret,
@@ -2421,6 +2418,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/item/radio/headset/alt,
 /turf/open/floor/wood/walnut,
 /area/ruin/moon/hideout/dorms/officer/bedroom)
 "yL" = (
@@ -2998,9 +2996,7 @@
 	dir = 4;
 	piping_layer = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/moon/hideout)
 "EF" = (
@@ -3468,9 +3464,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/moon/hideout)
 "Jv" = (
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/machinery/light/small/directional/west,
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 1
@@ -4852,7 +4846,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout)
 "Yk" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/red/line{

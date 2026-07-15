@@ -31,6 +31,8 @@
 	icon_living = "syndicate_space"
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	speed = 1
 
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space
@@ -81,6 +83,20 @@
 		visible_message(span_danger("[src] blocks [Proj] with its shield!"))
 		return BULLET_ACT_BLOCK
 	return ..()
+
+/mob/living/simple_animal/hostile/human/ramzi/melee/runt
+	name = "Ramzi Clique Runt"
+	desc = "A deserter from the Gorlex Marauders turned pirate. They hold a razor-sharp knife shakily, moving with less precision than their colleagues."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt
+
+/mob/living/simple_animal/hostile/human/ramzi/melee/runt/chef
+	name = "Ramzi Clique Ration Cook"
+	desc = "A deserter from the Gorlex Marauders turned pirate. They hold a clean, razor-sharp knife with both precision and disdain, against the backdrop of a simple jacket."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour
+	armor_base = /obj/item/clothing/suit/ramzi
+	l_hand = /obj/item/melee/knife/kitchen
+	melee_damage_lower = 18
+	melee_damage_upper = 18
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/machete
 	name = "Ramzi Clique Pioneer"
@@ -151,10 +167,6 @@
 	attack_verb_simple = "smash"
 	attack_sound = 'sound/weapons/genhit1.ogg'
 
-	light_color = COLOR_SOFT_RED
-	var/obj/effect/light_emitter/red_energy_sword/sord
-	projectile_deflect_chance = 25
-
 /mob/living/simple_animal/hostile/human/ramzi/melee/sledge/AttackingTarget()
 	. = ..()
 	if(isliving(target))
@@ -163,15 +175,23 @@
 			var/atom/throw_target = get_edge_target_turf(bonk, src.dir)
 			bonk.throw_at(throw_target, rand(1,2), 2, src, gentle = TRUE)
 
+/mob/living/simple_animal/hostile/human/ramzi/melee/sledge/engi
+	name = "Ramzi Clique Demolitionist"
+	desc = "A deserter from the Gorlex Marauders turned pirate. Tattered yellow gloves cover palms that curl around the shaft of a crimson-black sledgehammer."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/engi
+	armor_base = /obj/item/clothing/suit/ramzi
+
 /* Space Melee */
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/space
 	name = "Ramzi Clique Infiltrator"
-	desc = "A deserter from the Gorlex Marauders turned pirate. Rusted hardsuit gauntlets hold a shard of polished steel in an veteran's guard."
+	desc = "A deserter from the Gorlex Marauders turned pirate. Rusted hardsuit gauntlets hold a shard of polished steel in a veteran's guard."
 	icon_state = "syndicate_space_knife"
 	icon_living = "syndicate_space_knife"
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	speed = 1
 	projectile_deflect_chance = 0
 
@@ -248,13 +268,27 @@
 	desc = "Wicked knifepoint tracks your every impulse. Clean, black-red armor plate glides across itself, bereft of all sound or resistance."
 	icon_state = "syndicate_stormtrooper_knife"
 	icon_living = "syndicate_stormtrooper_knife"
-	name = "Ramzi Clique Stormtrooper"
 	maxHealth = 250
 	health = 250
 	projectile_deflect_chance = 0
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/commander
+	name = "Ramzi Clique Assassin"
+	desc = "Wicked knifepoint tracks your every impulse. Clean, black-red armor plate glides across itself, bereft of all sound or resistance."
+	icon_state = "syndicate_stormtrooper_knife"
+	icon_living = "syndicate_stormtrooper_knife"
+	maxHealth = 250
+	health = 250
+	projectile_deflect_chance = 0
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
+
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/commander/Aggro()
+	..()
+	summon_backup(4)
+	say("SIC 'EM!!")
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge
 	name = "Ramzi Clique Supercollider"
@@ -295,6 +329,24 @@
 	rapid_melee = 1
 	l_hand =/obj/item/gun/ballistic/automatic/pistol/ringneck
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/himehabu
+	name = "Ramzi Clique Runt"
+	desc = "A terrified deserter from the Gorlex Marauders turned pirate, with nothing but fear in their eyes. They cradle a pitiful .22 pistol, shivering and hoping it might just buy them another second."
+	armor_base = /obj/item/clothing/suit/ramzi
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour
+	casingtype = /obj/item/ammo_casing/c22lr
+	projectilesound = 'sound/weapons/gun/pistol/himehabu.ogg'
+	l_hand = /obj/item/gun/ballistic/automatic/pistol/himehabu
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/runt
+	name = "Ramzi Clique Initiate"
+	desc = "A deserter from the Gorlex Marauders turned pirate. They clutch a compact sidearm, seeming to shiver a bit at every slight movement."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt
+	retreat_distance = 3 //they don't run as much because they suck at aiming
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/runt/flapcap
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt/flapcap //i was considering making it random but i dont think itd end well
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth
 	name = "Ramzi Clique Operative"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They warily glance around, a modified machinepistol held at the ready."
@@ -331,6 +383,11 @@
 	casingtype = /obj/item/ammo_casing/c57x39mm
 	projectilesound = 'sound/weapons/gun/smg/sidewinder.ogg'
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg/sidewinder/ballistic
+	desc = "A deserter from the Gorlex Marauders turned pirate. They hold a PDW level to their yellow visor, sweeping the room with disdain and precision."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
+	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/hydra
 	name = "Ramzi Clique Trooper"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan the room with their assault rifle held at eye level, sweeping every corner."
@@ -359,6 +416,19 @@
 	vision_range = 12
 	aggro_vision_range = 14
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/hydra/dmr/sentry
+	vision_range = 14
+	aggro_vision_range = 14
+	minimum_distance = 14
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/hydra/dmr/sentry/ballistic
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
+	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer
 	name = "Ramzi Clique Quartermaster"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They hold themselves high, clad in well-taken care of officer garbs. They clutch a blackened revolver in their hands."
@@ -367,6 +437,14 @@
 	l_hand = /obj/item/gun/ballistic/revolver/viper
 	projectilesound = 'sound/weapons/gun/revolver/viper.ogg'
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/officer/asp
+	name = "Ramzi Clique Ensign"
+	desc = "A deserter from the Gorlex Marauders turned pirate. They glance around warily, clad in well-maintained officer garbs. They clutch a rather hefty pistol in their hands."
+	casingtype = /obj/item/ammo_casing/c57x39mm
+	l_hand = /obj/item/gun/ballistic/automatic/pistol/asp
+	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/ensign
 
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer/smg
@@ -397,6 +475,19 @@
 
 	armor_base = /obj/item/clothing/suit/armor/ngr/lieutenant
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/officer/lieutenant
+	name = "Ramzi Clique Lieutenant"
+	desc = "A commanding deserter from the Gorlex Marauders turned pirate. They cradle a revolver as black as a starless sky, covered in a thick, dirty-green coat. They turn their gaze in your direction; intent on ensuring they are the last thing you see."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/lieutenant
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/officer/captain
+	name = "Ramzi Clique Captain"
+	desc = "A commanding deserter from the Gorlex Marauders turned pirate. They hold themselves high, clad in an imposing, well-maintained greatcoat; calmly wielding a pitch-black revolver."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer/captain
+	armor_base = /obj/item/clothing/suit/armor/ramzi/captain
+	rapid = 2 //they are well-trained and can thus fire a viper quicker
+	rapid_fire_delay = 4
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun
 	name = "Ramzi Clique Breacher"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They move low and quickly, heavy combat shotgun at the ready."
@@ -408,13 +499,19 @@
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot //buckshot fired in a two-round burst. This will two-tap unarmored players.
 	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'
-	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog
+	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
 	shoot_point_blank = TRUE
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/ballistic
+	desc = "A deserter from the Gorlex Marauders turned pirate. Their yellow goggles hide an expression of malice, a heavy combat shotgun already trained in your direction."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
+	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/incendiary
 	name = "Ramzi Clique Firestarter"
 	desc = "A deserter from the Gorlex Marauders turned pirate. Their finger twitches around the trigger of their combat shotgun."
 	casingtype = /obj/item/ammo_casing/shotgun/incendiary
+	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog
 	rapid = 1
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/sniper
@@ -448,6 +545,8 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	speed = 1
 	rapid = 2
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
@@ -531,12 +630,12 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun
 	name = "Ramzi Clique Breacher"
-	desc = "A deserter from the Gorlex Marauders turned pirate. The unmistakeable bulk of a Bulldog shotgun graces the wrapped, patched hands of their aging hardsuit."
+	desc = "A deserter from the Gorlex Marauders turned pirate. The unmistakeable bulk of a Bockadam shotgun graces the wrapped, patched hands of their aging hardsuit."
 	icon_state = "syndicate_space_shotgun"
 	icon_living = "syndicate_space_shotgun"
 	name = "Ramzi Clique Commando"
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
-	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog
+	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
 	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	rapid = 2
 	rapid_fire_delay = 6
@@ -641,7 +740,7 @@
 	icon_state = "syndicate_stormtrooper_shotgun"
 	icon_living = "syndicate_stormtrooper_shotgun"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
-	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog
+	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	rapid = 3
@@ -682,18 +781,19 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian
 	name = "Ramzi Clique Technician"
-	desc = "A deserter from the Gorlex Marauders turned pirate. This one is not only unarmed, but a coward as well."
+	desc = "A deserter from the Gorlex Marauders turned pirate. A tattered respirator and hard-hat conceals their identity as they cower."
 	minimum_distance = 10
 	retreat_distance = 10
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/engi
 	armor_base = /obj/item/clothing/suit/ramzi //nope
+	var/helpcall = "GUARDS!!!"
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian/Aggro()
 	..()
 	summon_backup(15)
-	say("GUARDS!!")
+	say(helpcall)
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian/space
 	name = "Ramzi Clique Technician"
@@ -704,12 +804,24 @@
 	armor_base = /obj/item/clothing/suit/space/syndicate/ramzi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space/soft/surplus
 	environment_smash = ENVIRONMENT_SMASH_NONE
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian/towel
 	name = "Ramzi Clique Soapmaster"
 	desc = "A deserter from the Gorlex Marauders turned pirate. This one is not only unarmed, but also just got out the shower."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/towel
 	armor_base = null
+	helpcall = "HELP!!!"
+
+/mob/living/simple_animal/hostile/human/ramzi/civilian/runt
+	name = "Ramzi Clique Runt"
+	desc = "A deserter from the Gorlex Marauders turned pirate. This one is not only unarmed, but a coward as well."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour
+	helpcall = "I DON'T WANT TO DIE!! HELP!!!"
+
+/mob/living/simple_animal/hostile/human/ramzi/civilian/runt/flapcap
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour/flapcap
 
 /mob/living/simple_animal/hostile/viscerator
 	name = "viscerator"

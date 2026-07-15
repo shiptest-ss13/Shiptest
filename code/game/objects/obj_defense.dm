@@ -5,7 +5,7 @@
 	..()
 	take_damage(AM.throwforce, BRUTE, "melee", 1, get_dir(src, AM))
 
-/obj/ex_act(severity, target)
+/obj/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	if(resistance_flags & INDESTRUCTIBLE)
 		return
 	..() //contents explosion
@@ -14,21 +14,23 @@
 	if(target == src)
 		take_damage(INFINITY, BRUTE, BOMB, 0)
 		return
+	var/heavy_damage = heavy_item_dam ? heavy_item_dam : rand(100, 150)
+	var/light_damage = light_item_dam ? light_item_dam : rand(10, 90)
 	switch(severity)
 		if(EXPLODE_DEVASTATE)
 			take_damage(rand(1000, 2000), BRUTE, BOMB, 0)
 		if(EXPLODE_HEAVY)
-			take_damage(rand(100, 150), BRUTE, BOMB, 0)
+			take_damage(heavy_damage, BRUTE, BOMB, 0)
 		if(EXPLODE_LIGHT)
-			take_damage(rand(10, 90), BRUTE, BOMB, 0)
+			take_damage(light_damage, BRUTE, BOMB, 0)
 
 /obj/bullet_act(obj/projectile/hitting_projectile)
 	. = ..()
 	bullet_hit_sfx(hitting_projectile)
-	if(hitting_projectile.suppressed != SUPPRESSED_VERY)
+	if(hitting_projectile.suppressed < SUPPRESSED_VERY)
 		visible_message(span_danger("[src] is hit by \a [hitting_projectile]!"), null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src)) //Bullet on_hit effect might have already destroyed this object
-		take_damage(hitting_projectile.damage, hitting_projectile.damage_type, hitting_projectile.flag, 0, turn(hitting_projectile.dir, 180), hitting_projectile.armour_penetration)
+		take_damage(hitting_projectile.damage * hitting_projectile.demolition_mod, hitting_projectile.damage_type, hitting_projectile.flag, 0, turn(hitting_projectile.dir, 180), hitting_projectile.armour_penetration)
 
 ///Called to get the damage that hulks will deal to the obj.
 /obj/proc/hulk_damage()

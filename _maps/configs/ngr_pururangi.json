@@ -1,0 +1,62 @@
+{
+	"faction": "/datum/faction/syndicate/ngr",
+	"prefix": "NGRV",
+	"manufacturer": "Hardline Salvage and Mining",
+	"namelists": [
+		"GORLEX",
+		"NATURAL",
+		"BEASTS",
+		"CRUISE"
+	],
+	"map_name": "Puru-Rangi-class Auxiliary Response Vessel",
+	"map_short_name": "Puru-Rangi-class",
+	"tranist_x_offset": -21,
+	"tranist_y_offset": -11,
+	"description": "While destroyers and patrol craft maintain the Republic's borders, it is the Puru-Rangi that ensures that there are not unprotected gaps in its territory. These response vessels are a common sight within the Second Battlegroup's auxiliary fleet, providing a versatile complement of personnel for disaster response and military escort. While their relative size renders them impractical to manufacture on a large scale, their communications equipment and diverse crew are valuable assets for coordinating and leading quick response forces staged in the backline.",
+	"tags": [
+		"RP Focus",
+		"Combat",
+		"Medical",
+		"Telecomms"
+	],
+	"map_path": "_maps/shuttles/ngr/ngr_pururangi.dmm",
+	"map_id": "syndicate_gorlex_pururangi",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/ngr/stripped",
+			"officer": true,
+			"slots": 1
+		},
+		"Lieutenant": {
+			"outfit": "/datum/outfit/job/syndicate/hos/ngr/stripped",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/syndicate/doctor/ngr/stripped",
+			"slots": 1
+		},
+		"Field Medic": {
+			"outfit": "/datum/outfit/job/syndicate/paramedic/ngr/stripped",
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/ngr/stripped",
+			"slots": 1
+		},
+		"Operative": {
+			"outfit": "/datum/outfit/job/syndicate/security/ngr",
+			"slots": 1
+		},
+		"Wrecker": {
+			"outfit": "/datum/outfit/job/syndicate/miner/ngr",
+			"slots": 1
+		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/ngr",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

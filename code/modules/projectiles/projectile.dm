@@ -304,7 +304,7 @@
 		var/limb_hit = hit_limb
 		if(limb_hit)
 			organ_hit_text = " in \the [parse_zone(limb_hit)]"
-		if(suppressed==SUPPRESSED_VERY)
+		if(suppressed >= SUPPRESSED_VERY)
 			playsound(loc, hitsound, 5, TRUE, -1)
 		else if(suppressed)
 			playsound(loc, hitsound, 5, TRUE, -1)
@@ -470,19 +470,24 @@
  * 0. Anything that is already in impacted is ignored no matter what. Furthermore, in any bracket, if the target atom parameter is in it, that's hit first.
  * 	Furthermore, can_hit_target is always checked. This (entire proc) is PERFORMANCE OVERHEAD!! But, it shouldn't be ""too"" bad and I frankly don't have a better *generic non snowflakey* way that I can think of right now at 3 AM.
  *		FURTHERMORE, mobs/objs have a density check from can_hit_target - to hit non dense objects over a turf, you must click on them, same for mobs that usually wouldn't get hit.
- * 1. The thing originally aimed at/clicked on
- * 2. Mobs - picks lowest buckled mob to prevent scarp piggybacking memes
- * 3. Objs
- * 4. Turf
- * 5. Nothing
+ * 1. The target if it has the ON_BORDER_1 flag since those has priority for impacts.
+ * 2. The thing originally aimed at/clicked on
+ * 3. Mobs - picks lowest buckled mob to prevent scarp piggybacking memes
+ * 4. Objs
+ * 5. Turf
+ * 6. Nothing
  */
 /obj/projectile/proc/select_target(turf/T, atom/target)
-	// 1. original
+	// 1. ON_BORDER_1 stuff
+	if(target.flags_1 & ON_BORDER_1)
+		if(can_hit_target(target, target == original, TRUE))
+			return target
+	// 2. original
 	if(can_hit_target(original, TRUE, FALSE))
 		return original
 	var/list/atom/possible = list()		// let's define these ONCE
 	var/list/atom/considering = list()
-	// 2. mobs
+	// 3. mobs
 	possible = typecache_filter_list(T, GLOB.typecache_living)	// living only
 	for(var/i in possible)
 		if(!can_hit_target(i, i == original, TRUE))
@@ -492,7 +497,7 @@
 		var/mob/living/M = pick(considering)
 		return M.lowest_buckled_mob()
 	considering.len = 0
-	// 3. objs
+	// 4. objs
 	possible = typecache_filter_list(T, GLOB.typecache_machine_or_structure)	// because why are items ever dense?
 	for(var/i in possible)
 		if(!can_hit_target(i, i == original, TRUE))
@@ -500,10 +505,10 @@
 		considering += i
 	if(considering.len)
 		return pick(considering)
-	// 4. turf
+	// 5. turf
 	if(can_hit_target(T, T == original, TRUE))
 		return T
-	// 5. nothing
+	// 6. nothing
 		// (returns null)
 
 //Returns true if the target atom is on our current turf and above the right layer

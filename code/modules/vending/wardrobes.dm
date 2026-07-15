@@ -87,8 +87,8 @@
 					/obj/item/storage/backpack/industrial = 3,
 					/obj/item/storage/backpack/satchel/eng = 3,
 					/obj/item/clothing/suit/hooded/wintercoat/engineering = 3,
-					/obj/item/clothing/under/rank/engineering/engineer/nt = 3,
-					/obj/item/clothing/under/rank/engineering/engineer/nt/skirt = 3,
+					/obj/item/clothing/under/rank/engineering/engineer/warra = 3,
+					/obj/item/clothing/under/rank/engineering/engineer/warra/skirt = 3,
 					/obj/item/clothing/under/rank/engineering/engineer/hazard = 3,
 					/obj/item/clothing/head/beret/eng = 3, //WS edit - Berets
 					/obj/item/clothing/head/beret/eng/hazard = 3, //WS edit - Berets
@@ -318,7 +318,7 @@
 					/obj/item/clothing/suit/caution = 6,
 					/obj/item/holosign_creator = 2,
 					/obj/item/lightreplacer = 2,
-					/obj/item/soap/nanotrasen = 2,
+					/obj/item/soap/warra = 2,
 					/obj/item/storage/bag/trash = 2,
 					/obj/item/clothing/shoes/sneakers/brown = 2,
 					/obj/item/clothing/shoes/sneakers/purple = 2,
@@ -463,7 +463,7 @@
 					/obj/item/clothing/head/fedora = 2,
 					/obj/item/clothing/accessory/armband/deputy = 4,
 					/obj/item/clothing/gloves/color/black = 2,
-					/obj/item/clothing/gloves/color/latex = 2,
+					/obj/item/clothing/gloves/nitrile = 2,
 					/obj/item/reagent_containers/food/drinks/flask/det = 2,
 					/obj/item/storage/fancy/cigarettes = 5)
 	premium = list(/obj/item/clothing/head/flatcap = 1)
@@ -527,7 +527,7 @@
 		/obj/item/clothing/mask/gas/clip = 3,
 		/obj/item/storage/belt/military/clip = 3,
 		/obj/item/storage/belt/medical/webbing/clip = 3,
-		/obj/item/clothing/gloves/color/latex/nitrile/clip = 3,
+		/obj/item/clothing/gloves/nitrile = 3,
 
 		/obj/item/clothing/suit/toggle/lawyer/clip = 3,
 		/obj/item/clothing/suit/armor/vest/capcarapace/clip = 3,

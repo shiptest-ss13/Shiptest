@@ -45,7 +45,7 @@
 
 /obj/item/clothing/under/suit/black/skirt
 	name = "black suitskirt"
-	desc = "A professional black suitskirt. Nanotrasen Investigation Bureau approved!"
+	desc = "A professional black suitskirt. Makosso-Warra Investigation Bureau approved!"
 	icon_state = "black_suit_skirt"
 	item_state = "black_suit_skirt"
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
@@ -91,6 +91,7 @@
 	item_state = "charcoal_suit"
 	roll_sleeves = TRUE
 	roll_down = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/suit/charcoal/skirt
 	name = "charcoal skirt"
@@ -105,6 +106,7 @@
 	item_state = "navy_suit"
 	roll_sleeves = TRUE
 	roll_down = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/suit/navy/skirt
 	name = "navy skirt"
@@ -119,6 +121,7 @@
 	item_state = "burgundy_suit"
 	roll_sleeves = TRUE
 	roll_down = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/suit/burgundy/skirt
 	name = "burgundy skirt"

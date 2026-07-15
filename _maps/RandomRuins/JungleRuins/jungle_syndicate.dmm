@@ -339,8 +339,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/structure/flippedtable{
-	icon_state = "wood_table";
+/obj/structure/barricade/directional/flippedtable/wood{
 	table_type = /obj/structure/table/wood;
 	dir = 2
 	},
@@ -769,9 +768,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/syndifort/electrical)
 "lG" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 6
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
@@ -865,9 +863,8 @@
 /area/ruin/jungle/syndifort/jerry)
 "nT" = (
 /obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 4
 	},
 /obj/structure/table/wood,
 /turf/open/floor/wood/walnut{
@@ -921,7 +918,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -934,7 +931,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 4
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/human/ramzi/ranged{
@@ -1033,7 +1030,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -1132,9 +1129,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/atmos)
 "qh" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 10
 	},
 /obj/machinery/washing_machine,
 /turf/open/floor/wood/walnut,
@@ -1301,9 +1297,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/electrical)
 "sr" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 9
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/dorms)
@@ -1355,13 +1350,11 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort/electrical)
 "sQ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/corner/walnut{
+	dir = 8
 	},
 /obj/item/radio/intercom/directional/north,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -1394,9 +1387,8 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort/electrical)
 "tt" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1477,9 +1469,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort)
 "uj" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 5
 	},
 /obj/structure/closet/wall/red/directional/east,
 /obj/item/spacecash/bundle/pocketchange,
@@ -1620,9 +1611,8 @@
 /turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort/storage)
 "xA" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 2;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 2
 	},
 /obj/item/radio/intercom/directional/south,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -1903,9 +1893,8 @@
 /area/ruin/jungle/syndifort)
 "AJ" = (
 /obj/effect/spawner/bunk_bed,
-/obj/effect/turf_decal/siding/wood{
-	dir = 2;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 2
 	},
 /obj/structure/sign/poster/rilena/random{
 	pixel_x = 32
@@ -2194,9 +2183,8 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "GL" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 5
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2264,9 +2252,8 @@
 /obj/effect/spawner/bunk_bed{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 2;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 2
 	},
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/grimy,
@@ -2321,9 +2308,8 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ji" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/corner/walnut{
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/wood/walnut,
@@ -2480,7 +2466,7 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged{
 	environment_smash = 0
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -2810,13 +2796,11 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Qf" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 2;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 2
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/corner/walnut{
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -2855,9 +2839,8 @@
 /obj/effect/spawner/bunk_bed{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 4
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/syndifort/dorms)
@@ -2898,9 +2881,8 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ru" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 10
 	},
 /obj/structure/closet/wall/red/directional/south,
 /obj/item/toy/plush/rilena,
@@ -3049,9 +3031,8 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Uj" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 2;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 2
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
@@ -3212,7 +3193,7 @@
 "Wx" = (
 /obj/effect/turf_decal/corner/opaque/orange/three_quarters,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
@@ -3337,7 +3318,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /obj/item/ammo_box/magazine/m10mm_ringneck{
@@ -3406,8 +3387,7 @@
 	pixel_x = -12;
 	pixel_y = 5
 	},
-/obj/structure/flippedtable{
-	icon_state = "wood_table";
+/obj/structure/barricade/directional/flippedtable/wood{
 	table_type = /obj/structure/table/wood;
 	dir = 2
 	},
@@ -3457,9 +3437,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/canteen)
 "YR" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
@@ -3505,9 +3484,8 @@
 /obj/effect/spawner/bunk_bed{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 4
 	},
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/grimy,
@@ -3584,7 +3562,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,

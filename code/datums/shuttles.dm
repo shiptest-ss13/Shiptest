@@ -346,6 +346,7 @@
 	faction = /datum/faction/independent
 	starting_funds = 0
 	unique_ship_access = FALSE
+	token_icon_state = "ship_tiny_generic"
 
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
@@ -353,6 +354,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
+	token_icon_state = "missile"
 
 /datum/map_template/shuttle/subshuttles/pillb
 	file_name = "independent_blackpill"
@@ -360,6 +362,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
+	token_icon_state = "missile"
 
 /datum/map_template/shuttle/subshuttles/pills
 	file_name = "independent_superpill"
@@ -367,6 +370,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
+	token_icon_state = "missile"
 
 /datum/map_template/shuttle/subshuttles/kunai
 	file_name = "independent_kunai"
@@ -396,12 +400,19 @@
 	faction = /datum/faction/clip
 	prefix = "CLSV"
 
-/datum/map_template/shuttle/subshuttles/ancon
-	file_name = "nanotrasen_ancon"
-	name = "Nanotrasen Ancon-class Command Ship"
+/datum/map_template/shuttle/subshuttles/glaucus
+	file_name = "minutemen_mira"
+	name = "Mira-class Pursuit Shuttle"
 	token_icon_state = "ship_tiny_generic"
-	faction = /datum/faction/nt
-	prefix = "NTSV"
+	faction = /datum/faction/clip
+	prefix = "CMSV"
+
+/datum/map_template/shuttle/subshuttles/ancon
+	file_name = "warra_ancon"
+	name = "Makosso-Warra Ancon-class Command Ship"
+	token_icon_state = "ship_tiny_generic"
+	faction = /datum/faction/warra
+	prefix = "MWSV"
 	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
@@ -450,16 +461,26 @@
 	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/skink
-	file_name = "nanotrasen_skink"
+	file_name = "warra_skink"
 	name = "Skink-class Cargo Runner"
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 	token_icon_state = "ship_tiny_generic"
-	prefix = "NTSV"
+	prefix = "MWSV"
+
+//technically
+/datum/map_template/shuttle/subshuttles/nimbus
+	file_name = "cybersun_nimbus"
+	name = "Nimbus-class Executive Courier"
+	faction = /datum/faction/syndicate/cybersun
+	prefix = "CSSV"
+	manufacturer = "ISF Spacecraft"
+	name_categories = list("NATURAL_AGGRESSIVE")
 
 /datum/map_template/shuttle/subshuttles/bambulance
 	file_name = "cybersun_bambulance"
 	name = "Gauze-class Ambulance Pod"
 	faction = /datum/faction/syndicate/cybersun
+	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 
 /datum/map_template/shuttle/subshuttles/thunder
@@ -501,3 +522,9 @@
 	name = "June-class Dropship"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/flail
+	file_name = "independent_flail"
+	name = "Flail-class Modified Boarder"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "ISV"

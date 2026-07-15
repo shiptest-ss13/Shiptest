@@ -2,7 +2,7 @@
 
 /obj/item/clothing/under/cybersun
 	name = "cybersun jumpsuit"
-	desc = "The standard jumpsuit used by the agents employed by Cybersun, in its distinctive half-black-half-white aesthetic."
+	desc = "The standard jumpsuit used by the agents employed by Cybersun, in its distinctive full-white aesthetic."
 	icon_state = "cybersun_agent"
 	roll_sleeves = FALSE
 	roll_down = TRUE
@@ -51,6 +51,14 @@
 	roll_sleeves = FALSE
 	roll_down = FALSE
 	//supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/cybersun/sneak
+	name = "Cybersun sneaksuit"
+	desc = "A tight form-fitting uniform made from a silky metamaterial. It clings to flesh like shadow clings to light. Near frictionless but extremely comfortable."
+	icon_state = "cybersun_sneaksuit"
+	roll_sleeves = TRUE
+	roll_down = FALSE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/cybersun/suit
 	name = "cybersun suit"
@@ -250,7 +258,6 @@
 	desc = "A robust combat helmet commonly employed by Cybersun. Painted in a distinct maroon."
 	icon_state = "cybersun_m10helm"
 	item_state = "traumahelm"
-	can_flashlight = TRUE
 	unique_reskin = null
 
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
@@ -264,6 +271,9 @@
 		"None" = "trauma_m10helm",
 		"Trauma Teal" = "trauma_teal_m10helm"
 	)
+
+/obj/item/clothing/head/helmet/m10/cybersun/trauma/teal
+	current_skin = "Trauma Teal"
 
 /obj/item/clothing/head/helmet/bulletproof/x11/cybersun
 	name = "\improper X11 \"Troubleshooter\""
@@ -303,12 +313,49 @@
 		"None" = "riot_trauma",
 		"Trauma Teal" = "riot_trauma_teal"
 	)
+//Cybersun Collapsar hardsuit
+/obj/item/clothing/suit/space/hardsuit/collapsar
+	name = "\improper Collapsar assault hardsuit"
+	desc = "Thick plates of flexible plastitanium-kevlar weave with a titanium laminate applied to seal the top make this armor maneuverable and durable. Typically only issued when a fight is expected."
+	icon_state = "hardsuit-collapsar"
+	hardsuit_type = "collapsar"
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 30)
+	slowdown = 0.5
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/collapsar
+	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/suits.dmi'
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/head/helmet/space/hardsuit/collapsar
+	name = "\improper Collapsar assault hardsuit helmet"
+	desc = "Impact resistant plasmaglass is inset with plastitanium to make a durable helmet with clean unassisted field-of-view."
+	icon_state = "hardsuit0-collapsar"
+	hardsuit_type = "collapsar"
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 30)
+	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
+
+/obj/item/clothing/suit/space/hardsuit/collapsar/paramed
+	name = "\improper Collapsar retrieval hardsuit"
+	desc = "A Collapsar assault hardsuit coated in teal-tinted titanium coverings. Emblematic of the Trauma Team. "
+	icon_state = "hardsuit-collapsmed"
+	hardsuit_type = "collapsmed"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/collapsar/paramed
+	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/suits.dmi'
+
+/obj/item/clothing/head/helmet/space/hardsuit/collapsar/paramed
+	name = "\improper Collapsar retrieval hardsuit helmet"
+	icon_state = "hardsuit0-collapsmed"
+	hardsuit_type = "collapsmed"
+	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
 
 //Cybersun Hardsuit
 /obj/item/clothing/suit/space/hardsuit/syndi/cybersun
 	name = "neutron-star combat hardsuit"
-	desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in EVA mode. Produced by Cybersun Industries."
-	alt_desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in travel mode. Produced by Cybersun Industries."
+	desc = "Designed with fighting Makosso-Warra weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in EVA mode. Produced by Cybersun Industries."
+	alt_desc = "Designed with fighting Makosso-Warra weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in travel mode. Produced by Cybersun Industries."
 	icon_state = "hardsuit1-cybersun"
 	hardsuit_type = "cybersun"
 	armor = list("melee" = 30, "bullet" = 35, "laser" = 60, "energy" = 60, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
@@ -319,8 +366,8 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun
 	name = "neutron-star combat hardsuit helmet"
-	desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in EVA mode. Produced by Cybersun Industries."
-	alt_desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in travel mode. Produced by Cybersun Industries."
+	desc = "Designed with fighting Makosso-Warra weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in EVA mode. Produced by Cybersun Industries."
+	alt_desc = "Designed with fighting Makosso-Warra weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in travel mode. Produced by Cybersun Industries."
 	icon_state = "hardsuit1-cybersun"
 	hardsuit_type = "cybersun"
 	armor = list("melee" = 30, "bullet" = 35, "laser" = 60, "energy" = 60, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
@@ -362,11 +409,23 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/stealth/cybersun
 	name = "\improper Magnetar hardsuit helmet"
-	desc = "Thin, slick plates part into a visor of light reflective material. Sensors aboard function as a nightvision unit"
+	desc = "Thin, slick plates let off a light reflection. Sensors aboard function as a nightvision unit."
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
 	icon_state = "hardsuit0-cyberstealth"
 	hardsuit_type = "cyberstealth"
+	supports_variations = SNOUTED_VARIATION
+
+//mask
+
+/obj/item/clothing/mask/gas/cybersun
+	name = "Cybersun gas mask"
+	desc = "A protective gas mask manufactured by Cybersun Biodynamics. This model holds in a single reinforced filter built into the front of the mask, minimizing weight and allowing for easier head movement."
+	icon = 'icons/obj/clothing/faction/cybersun/mask.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/mask.dmi'
+	icon_state = "cybersun_gas"
+	item_state = "cybersun_gas"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /* BELTS */
 
@@ -382,6 +441,23 @@
 
 	unique_reskin = list(
 		"Troubleshooter" = "cybersun_webbing",
-		"Trauma Team" = "trauma_webbing"
+		"Trauma Team" = "cybersun_med_webbing",
+		"Troubleshooter Alt" = "cybersun_webalt",
+		"Trauma Alt" = "cybersun_med_webalt"
 	)
 
+/obj/item/storage/belt/military/cybersun/sidewinder/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m57_39_sidewinder(src)
+
+/obj/item/storage/belt/military/cybersun/hydra/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
+
+/obj/item/storage/belt/military/cybersun/boomslang/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/boomslang(src)
+
+/obj/item/storage/belt/military/cybersun/bulldog/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m12g_bulldog(src)

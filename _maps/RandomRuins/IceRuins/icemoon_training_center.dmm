@@ -214,10 +214,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
 	},
-/obj/item/valentine{
-	pixel_x = -2;
-	pixel_y = 10
-	},
 /obj/item/clothing/neck/tie/gay{
 	pixel_x = 8;
 	pixel_y = 15
@@ -263,6 +259,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/item/storage/box/ammo/a12g_buckshot,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/armory)
 "bj" = (
@@ -1166,7 +1163,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2104,7 +2101,7 @@
 /area/ruin/icemoon/training_facility/engineering)
 "kp" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/smg,
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 10
 	},
@@ -2388,7 +2385,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/syndiered/border,
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -2427,7 +2424,7 @@
 	},
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/remains/human,
-/obj/item/clothing/head/nanotrasen/cap/security{
+/obj/item/clothing/head/warra/cap/security{
 	pixel_y = 9
 	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
@@ -3642,7 +3639,7 @@
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/range)
 "rK" = (
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 2
 	},
@@ -3872,7 +3869,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/central_hall)
 "sI" = (
-/obj/structure/noticeboard,
+/obj/structure/noticeboard/directional/north,
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/locker_room)
 "sJ" = (
@@ -3924,10 +3921,10 @@
 "tf" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/pilot,
-/obj/item/clothing/head/helmet/space/pilot/random,
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 8
 	},
+/obj/item/clothing/head/helmet/space/pilot,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/mech_garage)
 "ti" = (
@@ -4733,7 +4730,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/dorms)
 "xe" = (
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/killship/crew)
 "xf" = (
@@ -5272,13 +5269,11 @@
 /obj/structure/closet/secure_closet/armorycage{
 	req_access = list(0)
 	},
-/obj/item/ammo_box/magazine/m556_42_hydra/empty,
-/obj/item/ammo_box/magazine/m556_42_hydra/empty,
-/obj/item/gun/ballistic/automatic/assault/hydra/no_mag,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
 /obj/machinery/light/directional/east,
+/obj/item/gun/ballistic/shotgun/gaboon/empty,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/armory)
 "zR" = (
@@ -5316,7 +5311,7 @@
 /area/ruin/icemoon/training_facility/garage)
 "Ac" = (
 /obj/structure/statue/snow/snowman,
-/obj/item/clothing/head/nanotrasen/beret/security{
+/obj/item/clothing/head/warra/beret/security{
 	pixel_y = 11
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
@@ -5789,7 +5784,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/range)
 "Cp" = (
-/obj/structure/noticeboard,
+/obj/structure/noticeboard/directional/north,
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/office_1)
 "Cs" = (
@@ -6582,9 +6577,7 @@
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/office_2)
 "Gv" = (
-/obj/structure/noticeboard{
-	pixel_x = -32
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/techfloor{
 	dir = 9
@@ -6692,7 +6685,7 @@
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/office_2)
 "GW" = (
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /turf/open/floor/wood{
 	icon_state = "wood-broken3"
 	},
@@ -6714,7 +6707,7 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/icemoon/training_facility/killship/medical)
 "Hd" = (
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/demo_course)
 "He" = (
@@ -9738,7 +9731,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/icemoon/training_facility/cafeteria)
 "Vo" = (
-/obj/structure/noticeboard,
+/obj/structure/noticeboard/directional/north,
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/lobby)
 "Vp" = (
@@ -10067,7 +10060,7 @@
 	pixel_y = -4;
 	pixel_x = 11
 	},
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 6
 	},

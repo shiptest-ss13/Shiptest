@@ -157,6 +157,14 @@
 	icon_state = "hood_inteq_alt"
 	item_state = "hood_inteq_alt"
 
+/obj/item/clothing/suit/toggle/flight/inteq
+	name = "Inteq Pilot Jacket"
+	desc = "A standard-issue flight jacket for subshuttle pilots. Lined with fur for any cold occasion."
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	icon_state = "flightinteq"
+	unique_reskin = null
+
 /obj/item/clothing/suit/space/inteq
 	name = "inteq space suit"
 	desc = "A lightly armored space suit for IRMG personnel for EVA operations, it seems more flexible than most space suits."
@@ -460,9 +468,9 @@
 
 // Gloves
 
-/obj/item/clothing/gloves/color/latex/nitrile/inteq
+/obj/item/clothing/gloves/nitrile/inteq
 	name = "green nitrile gloves"
-	desc = "Thick sterile gloves that reach up to the wrists, colored in a pine green shade. Transfers combat medic knowledge into the user via nanochips."
+	desc = "Thick sterile gloves that reach up to the wrists, colored in a pine green shade. The material makes it easier to pick up patients."
 	icon = 'icons/obj/clothing/faction/inteq/gloves.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/gloves.dmi'
 	icon_state = "nitrile_inteq"

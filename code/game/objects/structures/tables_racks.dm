@@ -38,7 +38,7 @@
 	smoothing_groups = list(SMOOTH_GROUP_TABLES)
 	canSmoothWith = list(SMOOTH_GROUP_TABLES)
 	/// The type created when this table is flipped
-	var/flipped_table_type = /obj/structure/flippedtable
+	var/flipped_table_type = /obj/structure/barricade/directional/flippedtable
 	/// Whether or not this table can actually be flipped. TODO: Make setting flipped_table_type to null do this instead and remove this var
 	var/can_flip = TRUE
 
@@ -263,17 +263,16 @@
 	if(can_flip)
 		user.visible_message(span_danger("[user] starts flipping [src]!"), span_notice("You start flipping over the [src]!"))
 		if(do_after(user, max_integrity/12))
-			var/obj/structure/flippedtable/flipped = new flipped_table_type(src.loc)
+			var/obj/structure/barricade/directional/flippedtable/flipped = new flipped_table_type(src.loc)
 			flipped.name = "flipped [src.name]"
 			flipped.desc = "[src.desc] It is flipped!"
 			flipped.icon_state = src.base_icon_state
-			var/new_dir = get_dir(user, flipped)
+			var/new_dir = get_cardinal_dir(user,flipped)
 			flipped.dir = new_dir
 			if(new_dir == NORTH)
 				flipped.layer = BELOW_MOB_LAYER
 			flipped.max_integrity = src.max_integrity
 			flipped.atom_integrity = src.atom_integrity
-			flipped.table_type = src.type
 			user.visible_message(span_danger("[user] flips over the [src]!"), span_notice("You flip over the [src]!"))
 			playsound(src, 'sound/items/trayhit2.ogg', 100)
 			qdel(src)
@@ -315,7 +314,7 @@
 ///Table on wheels
 /obj/structure/table/rolling
 	name = "Rolling table"
-	desc = "A NT brand \"Rolly poly\" rolling table. It can and will move."
+	desc = "A Makosso-Warra brand \"Rolly poly\" rolling table. It can and will move."
 	anchored = FALSE
 	smoothing_flags = NONE
 	smoothing_groups = null
@@ -360,6 +359,7 @@
 	icon_state = "glass_table-0"
 	base_icon_state = "glass_table"
 	buildstack = /obj/item/stack/sheet/glass
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/glass
 	smoothing_groups = list(SMOOTH_GROUP_GLASS_TABLES)
 	canSmoothWith = list(SMOOTH_GROUP_GLASS_TABLES)
 	max_integrity = 70
@@ -449,6 +449,7 @@
 	frame = /obj/structure/table_frame/wood
 	framestack = /obj/item/stack/sheet/mineral/wood
 	buildstack = /obj/item/stack/sheet/mineral/wood
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/wood
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
 	smoothing_groups = list(SMOOTH_GROUP_WOOD_TABLES) //Don't smooth with SMOOTH_GROUP_TABLES
@@ -467,6 +468,7 @@
 	icon_state = "poker_table-0"
 	base_icon_state = "poker_table"
 	buildstack = /obj/item/stack/tile/carpet
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/poker
 
 /obj/structure/table/wood/poker/narsie_act()
 	..(FALSE)
@@ -474,73 +476,84 @@
 /obj/structure/table/wood/fancy
 	name = "fancy table"
 	desc = "A standard metal table frame covered with an amazingly fancy, patterned cloth."
-	icon = 'icons/obj/structures.dmi'
-	icon_state = "fancy_table"
+	icon = 'icons/obj/smooth_structures/fancy_table.dmi'
+	icon_state = "fancy_table-0"
 	base_icon_state = "fancy_table"
 	frame = /obj/structure/table_frame
 	framestack = /obj/item/stack/rods
 	buildstack = /obj/item/stack/tile/carpet
 	smoothing_groups = list(SMOOTH_GROUP_FANCY_WOOD_TABLES) //Don't smooth with SMOOTH_GROUP_TABLES or SMOOTH_GROUP_WOOD_TABLES
 	canSmoothWith = list(SMOOTH_GROUP_FANCY_WOOD_TABLES)
-	var/smooth_icon = 'icons/obj/smooth_structures/fancy_table.dmi' // see Initialize()
-
-/obj/structure/table/wood/fancy/Initialize()
-	. = ..()
-	// Needs to be set dynamically because table smooth sprites are 32x34,
-	// which the editor treats as a two-tile-tall object. The sprites are that
-	// size so that the north/south corners look nice - examine the detail on
-	// the sprites in the editor to see why.
-	icon = smooth_icon
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy
 
 /obj/structure/table/wood/fancy/black
+	icon_state = "fancy_table_black-0"
 	base_icon_state = "fancy_table_black"
 	buildstack = /obj/item/stack/tile/carpet/black
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_black.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_black.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/black
 
 /obj/structure/table/wood/fancy/blue
+	icon_state = "fancy_table_blue-0"
 	base_icon_state = "fancy_table_blue"
 	buildstack = /obj/item/stack/tile/carpet/blue
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_blue.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_blue.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/blue
 
 /obj/structure/table/wood/fancy/cyan
+	icon_state = "fancy_table_cyan-0"
 	base_icon_state = "fancy_table_cyan"
 	buildstack = /obj/item/stack/tile/carpet/cyan
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_cyan.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_cyan.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/cyan
 
 /obj/structure/table/wood/fancy/green
+	icon_state = "fancy_table_green-0"
 	base_icon_state = "fancy_table_green"
 	buildstack = /obj/item/stack/tile/carpet/green
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_green.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_green.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/green
 
 /obj/structure/table/wood/fancy/orange
+	icon_state = "fancy_table_orange-0"
 	base_icon_state = "fancy_table_orange"
 	buildstack = /obj/item/stack/tile/carpet/orange
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_orange.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_orange.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/orange
 
 /obj/structure/table/wood/fancy/purple
+	icon_state = "fancy_table_purple-0"
 	base_icon_state = "fancy_table_purple"
 	buildstack = /obj/item/stack/tile/carpet/purple
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_purple.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_purple.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/purple
 
 /obj/structure/table/wood/fancy/red
+	icon_state = "fancy_table_red-0"
 	base_icon_state = "fancy_table_red"
 	buildstack = /obj/item/stack/tile/carpet/red
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_red.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_red.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/red
 
 /obj/structure/table/wood/fancy/royalblack
+	icon_state = "fancy_table_royalblack-0"
 	base_icon_state = "fancy_table_royalblack"
 	buildstack = /obj/item/stack/tile/carpet/royalblack
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_royalblack.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_royalblack.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/purple
 
 /obj/structure/table/wood/fancy/royalblue
+	icon_state = "fancy_table_royalblue-0"
 	base_icon_state = "fancy_table_royalblue"
 	buildstack = /obj/item/stack/tile/carpet/royalblue
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_royalblue.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_royalblue.dmi'
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/fancy/royal_blue
 
-/obj/structure/table/wood/fancy/red_gold
+/obj/structure/table/wood/fancy/red_gold //same sprites as red since we have two red carpets but not two red tables
+	icon_state = "fancy_table_red-0"
 	base_icon_state = "fancy_table_red"
 	buildstack = /obj/item/stack/tile/carpet/red_gold
-	smooth_icon = 'icons/obj/smooth_structures/fancy_table_red.dmi'
+	icon = 'icons/obj/smooth_structures/fancy_table_red.dmi'
 
 /*
  * Reinforced tables
@@ -591,6 +604,7 @@
 	base_icon_state = "brass_table"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	buildstack = /obj/item/stack/tile/bronze
+	flipped_table_type = /obj/structure/barricade/directional/flippedtable/bronze
 	smoothing_groups = list(SMOOTH_GROUP_BRONZE_TABLES) //Don't smooth with SMOOTH_GROUP_TABLES
 	canSmoothWith = list(SMOOTH_GROUP_BRONZE_TABLES)
 

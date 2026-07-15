@@ -46,22 +46,36 @@
 #define COMSIG_AUTOFIRE_SHOT "autofire_shot"
 	#define COMPONENT_AUTOFIRE_SHOT_SUCCESS (1<<0)
 
+//Aimed fire component
+/// Compatible firemode is in the gun. Wait until it's held in the user hands.
+#define AIMEDFIRE_STAT_IDLE (1<<0)
+/// Gun is active and in the user hands. Wait until user does a valid click.
+#define AIMEDFIRE_STAT_ALERT (1<<1)
+/// Gun is shooting.
+#define AIMEDFIRE_STAT_AIMING (1<<2)
+
+#define COMSIG_AIMEDFIRE_ONMOUSEDOWN "aimedfire_onmousedown"
+	#define COMPONENT_AIMEDFIRE_ONMOUSEDOWN_BYPASS (1<<0)
+#define COMSIG_AIMEDFIRE_SHOT "aimedfire_shot"
+	#define COMPONENT_AIMEDFIRE_SHOT_SUCCESS (1<<0)
+
 #define SUPPRESSED_NONE 0
 #define SUPPRESSED_QUIET 1 ///standard suppressed
 #define SUPPRESSED_VERY 2 /// no message
+#define SUPPRESSED_EXTREME 3 /// doesnt trigger aggro
 
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
 
 #define MANUFACTURER_NONE null
 #define MANUFACTURER_SHARPLITE "the Sharplite Defense logo"
-#define MANUFACTURER_SHARPLITE_NEW "the Nanotrasen-Sharplite logo"
+#define MANUFACTURER_SHARPLITE_NEW "the Makosso-Warra-Sharplite logo"
 #define MANUFACTURER_HUNTERSPRIDE "the Hunter's Pride Arms and Ammunition logo"
 #define MANUFACTURER_SOLARARMORIES "the Solarbundswaffenkammer emblem"
 #define MANUFACTURER_SCARBOROUGH "the Scarborough Arms logo"
 #define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
-#define MANUFACTURER_NANOTRASEN_OLD "an outdated Nanotrasen logo"
-#define MANUFACTURER_NANOTRASEN "the Nanotrasen logo"
-#define MANUFACTURER_VIGILITAS "the Nanotrasen Advantage logo"
+#define MANUFACTURER_WARRA_OLD "an outdated Makosso-Warra logo"
+#define MANUFACTURER_WARRA "the Makosso-Warra logo"
+#define MANUFACTURER_VIGILITAS "the Makosso-Warra Advantage logo"
 #define MANUFACTURER_BRAZIL "a green flag with a blue circle and a yellow diamond around it"
 #define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"
 #define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
@@ -140,6 +154,7 @@
 #define COMSIG_ATTACHMENT_CTRL_CLICK "attach-ctrl-click"
 #define COMSIG_ATTACHMENT_ALT_CLICK "attach-alt-click"
 #define COMSIG_ATTACHMENT_ATTACK_HAND "attach-attack-hand"
+#define COMSIG_ATTACHMENT_TOGGLE_SAFETY "attach-safety"
 
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
 #define COMSIG_ATTACHMENT_TOGGLE_AMMO "attach-ammo"
@@ -224,9 +239,10 @@
 #define FIREMODE_SEMIAUTO "single"
 #define FIREMODE_BURST "burst"
 #define FIREMODE_FULLAUTO "auto"
+#define FIREMODE_AIMED "aim"
 #define FIREMODE_OTHER "other"
 #define FIREMODE_OTHER_TWO "other2"
-#define FIREMODE_UNDERBARREL "underbarrel"
+
 
 #define GUN_LEFTHAND_ICON 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 #define GUN_RIGHTHAND_ICON 'icons/mob/inhands/weapons/guns_righthand.dmi'

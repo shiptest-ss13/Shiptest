@@ -113,7 +113,7 @@
 
 /obj/item/storage/backpack/captain
 	name = "captain's backpack"
-	desc = "It's a special backpack made exclusively for Nanotrasen officers."
+	desc = "It's a special backpack made exclusively for Makosso-Warra officers."
 	icon_state = "captainpack"
 	item_state = "captainpack"
 
@@ -269,7 +269,7 @@
 
 /obj/item/storage/backpack/satchel/cap
 	name = "captain's satchel"
-	desc = "An exclusive satchel for Nanotrasen officers."
+	desc = "An exclusive satchel for Makosso-Warra officers."
 	icon_state = "satchel-cap"
 	item_state = "satchel-cap"
 
@@ -331,6 +331,31 @@
 	new /obj/item/stack/telecrystal/five(src)
 	new /obj/item/storage/toolbox/syndicate(src)
 
+// lizard bags from dopplerstation by paxilmaniac
+
+/obj/item/storage/backpack/satchel/tailbag
+	name = "tailbag"
+	desc = "A pair of bags with straps for wear around a person's tail. You need a tail to wear it."
+	icon_state = "tailbag_black"
+	item_state = "tailbag_black"
+
+/obj/item/storage/backpack/satchel/tailbag/mob_can_equip(mob/living/target, mob/living/equipper, slot, bypass_equip_delay_self)
+	var/mob/living/H = target
+	if(!HAS_TRAIT(H, TRAIT_TAILED))
+		return FALSE
+	return ..()
+
+/obj/item/storage/backpack/satchel/kitbag
+	name = "kitbag"
+	desc = "A bag mounted on the lower back, for storing equipment. Incompatible with tails."
+	icon_state = "backbag_black"
+	item_state = "backbag_black"
+
+/obj/item/storage/backpack/satchel/kitbag/mob_can_equip(mob/living/target, mob/living/equipper, slot, bypass_equip_delay_self)
+	var/mob/living/H = target
+	if(HAS_TRAIT(H, TRAIT_TAILED))
+		return FALSE
+	return ..()
 
 /*
 * Messenger Bag Types from Baystation
@@ -404,6 +429,12 @@
 	desc = "A tactical backpack worn over one shoulder. This one is in Security colors."
 	icon_state = "courierbagsec"
 	item_state = "courierbagsec"
+
+/obj/item/storage/backpack/messenger/sport
+	name = "running bag"
+	desc = "A sturdy bag built for sprinting."
+	icon_state = "sportsbag"
+	item_state = "sportsbag"
 
 /*
 * Duffelbag Types
@@ -519,7 +550,7 @@
 	STR.silent = TRUE
 
 /obj/item/storage/backpack/duffelbag/syndie/hitman
-	desc = "A large duffel bag for holding extra things. There is a Nanotrasen logo on the back."
+	desc = "A large duffel bag for holding extra things. There is a Makosso-Warra logo on the back."
 	icon_state = "duffel-syndieammo"
 	item_state = "duffel-syndieammo"
 

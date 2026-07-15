@@ -29,12 +29,14 @@ The cells are removed from objects with the component through alt-click.
 	var/datum/callback/on_cell_removed = null
 	///Can this cell be removed from the parent?
 	var/cell_can_be_removed = TRUE
+	///What is the largest cell that can fit in this?
+	var/max_cell_size = WEIGHT_CLASS_SMALL
 	///Our reference to the cell overlay
 	var/mutable_appearance/cell_overlay = null
 	///Do we have cell overlays to be applied?
 	var/has_cell_overlays
 
-/datum/component/cell/Initialize(cell_override, _on_cell_removed, _power_use_amount, start_with_cell = TRUE, _cell_can_be_removed=TRUE, _has_cell_overlays = TRUE)
+/datum/component/cell/Initialize(cell_override, _on_cell_removed, _power_use_amount, start_with_cell = TRUE, _cell_can_be_removed=TRUE, _cell_weight_class=WEIGHT_CLASS_SMALL, _has_cell_overlays = TRUE)
 	if(QDELETED(parent))
 		qdel(src)
 		return
@@ -55,6 +57,8 @@ The cells are removed from objects with the component through alt-click.
 		power_use_amount = equipment.power_use_amount
 
 	cell_can_be_removed = _cell_can_be_removed
+
+	max_cell_size = _cell_weight_class
 
 	if(start_with_cell)
 		var/obj/item/stock_parts/cell/new_cell
@@ -172,6 +176,9 @@ The cells are removed from objects with the component through alt-click.
 	if(inserted_cell) //No quickswap compatibility
 		to_chat(user, span_danger("There is already a cell in [equipment]!"))
 		return
+
+	if(inserting_item.w_class > max_cell_size)
+		to_chat(user, span_danger("[inserting_item] is too large to fit in [equipment]!"))
 
 	to_chat(user, span_notice("You connect [inserting_item] onto [equipment]."))
 	playsound(equipment, 'sound/weapons/magin.ogg', 40, TRUE)

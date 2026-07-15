@@ -11,6 +11,14 @@
 	display_name = "winter coat"
 	path = /obj/item/clothing/suit/hooded/wintercoat
 
+/datum/gear/suit/parkaclip
+	display_name = "parka, serene sporting"
+	path = /obj/item/clothing/suit/hooded/parka/serene
+
+/datum/gear/suit/parka
+	display_name = "parka, colorable"
+	path = /obj/item/clothing/suit/hooded/parka
+
 //JACKETS
 /datum/gear/suit/jacket
 	subtype_path = /datum/gear/suit/jacket
@@ -54,6 +62,10 @@
 /datum/gear/suit/jacket/navy
 	display_name = "suit jacket, navy"
 	path = /obj/item/clothing/suit/lawyer/navy
+
+/datum/gear/suit/toggle/flight
+	display_name = "flight jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/flight
 
 /datum/gear/suit/jacket/charcoal
 	display_name = "suit jacket, charcoal"
@@ -99,6 +111,14 @@
 	display_name = " lime hazard jacket"
 	path = /obj/item/clothing/suit/toggle/hazard/lime
 
+/datum/gear/suit/chorejacketteceti
+	display_name = "chore jacket, riso-teceian"
+	path = /obj/item/clothing/suit/toggle/chorejacket/teceti
+
+/datum/gear/suit/chorejacket
+	display_name = "chore jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/chorejacket
+
 /datum/gear/suit/overcoat
 	display_name = "overcoat, colorable"
 	path = /obj/item/clothing/suit/toggle/overcoat
@@ -118,6 +138,11 @@
 /datum/gear/suit/jacket/puffervest
 	display_name = "puffervest, colorable"
 	path = /obj/item/clothing/suit/toggle/puffervest
+
+/datum/gear/suit/jacket/track
+	display_name = "track jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/track
+
 //Suspenders
 /datum/gear/suit/suspenders
 	subtype_path = /datum/gear/suit/suspenders
@@ -135,6 +160,10 @@
 	path = /obj/item/clothing/suit/toggle/suspenders/gray
 
 //Misc
+
+/datum/gear/suit/apron
+	display_name = "apron"
+	path = /obj/item/clothing/suit/apron
 
 /datum/gear/suit/labcoat
 	display_name = "labcoat"
