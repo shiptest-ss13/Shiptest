@@ -1797,8 +1797,9 @@
 		var/obj/item/organ/stomach/ethereal/stomach = drinking_carbon.getorganslot(ORGAN_SLOT_STOMACH)
 		if(istype(stomach))
 			stomach.adjust_charge((volume * toxpwr) * REM * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+		return ..()
 
-	if(iselzuose(drinking_mob) || isvox(drinking_mob))
+	if(isvox(drinking_mob))
 		return ..()
 
 	if(toxpwr)
