@@ -161,12 +161,19 @@
 //space cleaner
 /obj/item/reagent_containers/spray/cleaner
 	name = "space cleaner"
-	desc = "Cleanaway branded space cleaner!"
+	desc = "Cleanaway branded space cleaner. Cleans off most grime."
 	icon_state = "sprayer"
 	volume = 100
 	list_reagents = list(/datum/reagent/bleach = 10, /datum/reagent/water = 90)
 	amount_per_transfer_from_this = 2
 	stream_amount = 5
+
+/obj/item/reagent_containers/spray/bleach
+	name = "Cleanaway Bleach Spray"
+	desc = "Cleanaway branded bleach sprayer. This will usually sanitize anything it's sprayed on. However, it will also bleach hair, so spraying it on people is not recommended (unless that is the intention)."
+	icon_state = "sprayer_bleach"
+	volume = 100
+	list_reagents = list(/datum/reagent/bleach = 40, /datum/reagent/water = 60)
 
 //spray tan
 /obj/item/reagent_containers/spray/spraytan

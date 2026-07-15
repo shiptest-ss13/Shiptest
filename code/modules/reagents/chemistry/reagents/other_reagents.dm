@@ -900,7 +900,7 @@
 	//if we are more than 30% of the mixture, we actually bleach the object in particular
 	if(percent_this_chem >= 30)
 		O?.wash(extreme_clean_types)
-		if(obj_item)
+		if(istype(obj_item))
 			obj_item.dye_item(DYE_WHITE)
 
 	//if we are at least 5u and at least 60% of the reagents there, we start to damage clothing

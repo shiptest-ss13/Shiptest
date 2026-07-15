@@ -129,7 +129,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 /obj/machinery/washing_machine
 	name = "washing machine"
-	desc = "A machine commonly used to clean clothing. There shouldn't be that many ways to misuse this, but you never know. A standard wash cycle takes about 6 minutes."
+	desc = "A machine commonly used to clean clothing. While it doesn't do anything on it's own, pouring various detergent makes it clean clothing. A standard wash cycle takes about 6 minutes."
 	icon = 'icons/obj/machines/laundry_machines.dmi'
 	base_icon_state = "washingmachine"
 	icon_state = "washingmachine"
@@ -195,11 +195,10 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
-//	. += "\n"
 	if(!state_open)
 		. += span_notice("The doors are closed, allowing items to be <b>placed on top of it.</b>\n")
 
-	if(!allow_reagent_pouring)
+	if(allow_reagent_pouring)
 		. += span_notice("Past the door, there's a little intake to pour into. You can pour <b>any fluid container</b> in it, and it will be mixed during the wash cycle.\n")
 
 	switch(cycle_state)
@@ -501,6 +500,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 /obj/machinery/washing_machine/deconstruct(disassembled = TRUE)
 	new /obj/item/stack/sheet/metal(drop_location(), 5)
+	dropContents()
 	qdel(src)
 
 /obj/machinery/washing_machine/dryer
@@ -535,11 +535,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		return
 	icon_state = "[base_icon_state]"
 	return
-
-/obj/machinery/washing_machine/dryer/update_overlays()
-	. = ..()
-	if(panel_open)
-		. += "[base_icon_state]_panel"
 
 /obj/machinery/washing_machine/dryer/process(seconds_per_tick)
 	if(!cycle_state)
