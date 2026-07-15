@@ -1720,20 +1720,21 @@
 	glass_name = "Royal Battery Acid"
 	glass_desc = "Drinking this makes you want to laugh maniacally, but perhaps that's just the acid acting like a neurotoxin."
 	glass_icon_state = "royal_battery_acid"
-	var/toxpwr = 0.7
+	var/toxpwr = 0.5
 
-/datum/reagent/consumable/ethanol/royal_battery_acid/on_mob_life(mob/living/carbon/M, method=TOUCH, reac_volume)
-	if((method == INGEST || method == INJECT || method == PATCH) && iscarbon(M))
-		var/mob/living/carbon/drinking_carbon = M
+/datum/reagent/consumable/ethanol/royal_battery_acid/on_mob_life(mob/living/carbon/drinking_mob)
+	if(iselzuose(drinking_mob))
+		var/mob/living/carbon/drinking_carbon = drinking_mob
 		var/obj/item/organ/stomach/ethereal/stomach = drinking_carbon.getorganslot(ORGAN_SLOT_STOMACH)
 		if(istype(stomach))
-			stomach.adjust_charge((reac_volume * toxpwr) * REM * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+			stomach.adjust_charge((volume * toxpwr) * REM * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+		return ..()
 
-	if(iselzuose(M) || isvox(M))
+	if(isvox(drinking_mob))
 		return ..()
 
 	if(toxpwr)
-		M.adjustToxLoss(toxpwr*REM, 0)
+		drinking_mob.adjustToxLoss(toxpwr*REM, 0)
 		. = TRUE
 		return ..()
 
