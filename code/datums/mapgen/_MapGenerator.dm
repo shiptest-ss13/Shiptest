@@ -13,6 +13,7 @@
 	log_world(message)
 
 	for(var/turf/gen_turf as anything in turfs)
+		postgen_check_turf(gen_turf)
 		gen_turf.AfterChange(CHANGETURF_IGNORE_AIR)
 
 		QUEUE_SMOOTH(gen_turf)
@@ -22,12 +23,8 @@
 			adj.check_starlight(gen_turf)
 
 		if(!gen_turf.override_area_lighting)
-			if(!gen_turf.try_update_area_light(do_update_light = TRUE))
-				gen_turf.update_light()
-			else if (gen_turf.light_power && gen_turf.light_range)
-				gen_turf.update_light()
+			SEND_SIGNAL(gen_turf, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
 
-		postgen_check_turf(gen_turf)
 		// CHECK_TICK here is fine -- we are assuming that the turfs we're generating are staying relatively constant
 		CHECK_TICK
 

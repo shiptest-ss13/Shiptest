@@ -188,6 +188,7 @@
 
 	//Then, we smooth and finalize planetgen since after everything spawns, we can gurantee that everything has spawned by now
 	for(var/turf/gen_turf as anything in turfs)
+		postgen_check_turf(gen_turf)
 		gen_turf.AfterChange(CHANGETURF_IGNORE_AIR)
 
 		QUEUE_SMOOTH(gen_turf)
@@ -196,7 +197,12 @@
 		for(var/turf/open/space/adj in RANGE_TURFS(1, gen_turf))
 			adj.check_starlight(gen_turf)
 
-		postgen_check_turf(gen_turf)
+		if(!gen_turf.override_area_lighting)
+			if(!gen_turf.try_update_area_light(do_update_light = TRUE))
+				gen_turf.update_light()
+			else if (gen_turf.light_power && gen_turf.light_range)
+				gen_turf.update_light()
+
 		// CHECK_TICK here is fine -- we are assuming that the turfs we're generating are staying relatively constant
 		CHECK_TICK
 

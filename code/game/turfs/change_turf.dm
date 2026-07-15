@@ -154,8 +154,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 				S.check_starlight(W)
 
 			if(!override_area_lighting)
-				if(!try_update_area_light(do_update_light = TRUE))
-					update_light()
+				SEND_SIGNAL(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
 			else if (light_power && light_range)
 				update_light()
 

@@ -131,7 +131,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 
 	if(!override_area_lighting)
 		if(!try_update_area_light(do_update_light=FALSE))
-			update_light()
+			SEND_SIGNAL(gen_turf, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
 	else if (light_power && light_range)
 		update_light()
 
@@ -732,7 +732,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	var/list/lighting_traits = virtual_level_trait(ZTRAIT_PLANETARY_LIGHTING)
 	if(!lighting_traits)
 		return FALSE
-	set_turf_light(src, lighting_traits[ZTRAIT_LIGHT_RANGE], lighting_traits[ZTRAIT_LIGHT_POWER], lighting_traits[ZTRAIT_LIGHT_COLOR], )
+	set_turf_light(src, lighting_traits[ZTRAIT_LIGHT_RANGE], lighting_traits[ZTRAIT_LIGHT_POWER], lighting_traits[ZTRAIT_LIGHT_COLOR], do_update_light)
 	return TRUE
 
 /turf/proc/set_turf_light(datum/source, target_range, target_power, target_color, do_update_light = TRUE)
