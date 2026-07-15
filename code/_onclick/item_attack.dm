@@ -490,3 +490,8 @@
 		I.melee_attack_chain(user, M, modifier = damage_modifier)
 		return TRUE
 
+	var/list/typecache = typesof(/obj/structure/spacevine, /obj/structure/spider/stickyweb, /obj/structure/flora)
+
+	for(var/obj/found_obj as anything in contents)
+		if(is_type_in_list(found_obj, typecache))
+			I.melee_attack_chain(user, found_obj, modifier = damage_modifier)
