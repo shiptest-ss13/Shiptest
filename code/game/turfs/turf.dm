@@ -131,7 +131,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 
 	if(!override_area_lighting)
 		if(!try_update_area_light(do_update_light=FALSE))
-			SEND_SIGNAL(gen_turf, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
+			SEND_SIGNAL(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
 	else if (light_power && light_range)
 		update_light()
 
