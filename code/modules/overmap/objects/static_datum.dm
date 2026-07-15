@@ -14,7 +14,7 @@
 
 	///The active turf reservation, if there is one
 	var/datum/map_zone/mapzone
-	///The border size to use. It's recommended to set this to 0 if you  use up the entirety of the allocated space (eg. 255x255 map where theres no bordering map levels)
+	///The border size to use. //The border size to use. It's recommended to always have this set to at least one. Make sure your map has the borders mapped in, and that they match this number.
 	var/border_size = QUADRANT_SIZE_BORDER
 	///The preset map to load
 	var/datum/map_template/map_to_load
