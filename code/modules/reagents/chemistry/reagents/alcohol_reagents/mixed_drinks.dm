@@ -1792,7 +1792,7 @@
 	var/toxpwr = 0.5
 
 /datum/reagent/consumable/ethanol/royal_battery_acid/on_mob_life(mob/living/carbon/drinking_mob)
-	if(iscarbon(drinking_mob))
+	if(iselzuose(drinking_mob))
 		var/mob/living/carbon/drinking_carbon = drinking_mob
 		var/obj/item/organ/stomach/ethereal/stomach = drinking_carbon.getorganslot(ORGAN_SLOT_STOMACH)
 		if(istype(stomach))
