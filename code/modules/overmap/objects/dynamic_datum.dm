@@ -546,7 +546,7 @@
 /area/overmap_encounter/planetoid/wasteplanet
 	name = "\improper Waste Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_HANGAR
-	ambience_index = AMBIENCE_MAINT
+	ambience_index = AMBIENCE_WASTE
 	light_color = COLOR_WASTEPLANET_LIGHT
 	light_range = 2
 	light_power = 0.2
