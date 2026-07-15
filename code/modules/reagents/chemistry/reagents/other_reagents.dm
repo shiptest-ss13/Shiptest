@@ -875,8 +875,6 @@
 	var/clean_types = CLEAN_WASH
 	/// Used when in high amounts
 	var/extreme_clean_types = CLEAN_SCRUB
-	///Meant for subtypes that are subtyped from this, for some reason.
-	var/istoxic = TRUE
 
 /datum/reagent/bleach/expose_obj(obj/O, reac_volume)
 	///Whats the % of the holder that is this chemical?
@@ -947,7 +945,7 @@
 
 	var/mob/living/carbon/victim = M
 	var/mob/living/carbon/human/human_victim = victim
-	if(!victim || !istoxic || percent_this_chem < 5)
+	if(!victim || percent_this_chem < 5)
 		return
 
 	if(method == TOUCH || method == VAPOR)
@@ -2791,8 +2789,6 @@
 
 	///Type of cleaning this has
 	var/clean_types = CLEAN_WASH
-	///Meant for subtypes that are subtyped from this, for some reason.
-	var/istoxic = TRUE
 
 /datum/reagent/detergent/expose_obj(obj/O, reac_volume)
 	///Whats the % of the holder that is this chemical?
@@ -2820,7 +2816,7 @@
 
 	var/mob/living/carbon/victim = M
 	var/mob/living/carbon/human/human_victim = victim
-	if(!victim || !istoxic)
+	if(!victim)
 		return
 
 	if(method == TOUCH || method == VAPOR)
