@@ -153,6 +153,12 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			for(var/turf/open/space/S in RANGE_TURFS(1, W)) //RANGE_TURFS is in code\__HELPERS\game.dm
 				S.check_starlight(W)
 
+			if(!override_area_lighting)
+				if(!try_update_area_light(do_update_light = TRUE))
+					update_light()
+			else if (light_power && light_range)
+				update_light()
+
 	if(old_opacity != opacity && SSticker)
 		GLOB.cameranet.bareMajorChunkChange(src)
 

@@ -17,7 +17,7 @@
 	clawfootstep = FOOTSTEP_LAVA
 	heavyfootstep = FOOTSTEP_LAVA
 
-	override_area_lighting = FALSE
+	override_area_lighting = TRUE
 
 	var/particle_emitter = /obj/effect/particle_emitter/lava
 	var/particle_prob = 15
