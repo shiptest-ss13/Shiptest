@@ -195,19 +195,19 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
-	if(!state_open)
-		. += span_notice("The doors are closed, allowing items to be <b>placed on top of it.</b>\n")
+	if(!state_open && density)
+		. += span_notice("\nThe doors are closed, allowing items to be <b>placed on top of it.</b>")
 
 	if(allow_reagent_pouring)
-		. += span_notice("Past the door, there's a little intake to pour into. You can pour <b>any fluid container</b> in it, and it will be mixed during the wash cycle.\n")
+		. += span_notice("\nPast the door, there's a little intake to pour into. You can pour <b>any fluid container</b> in it, and it will be mixed during the wash cycle.")
 
 	switch(cycle_state)
 		if(CYCLESTATE_FILL)
-			. += span_notice("It is currently <b>filling with water.</b>.")
+			. += span_notice("\nIt is currently <b>filling with water.</b>.")
 		if(CYCLESTATE_WASH)
-			. += span_notice("It is currently <b>washing the contents.</b>.")
+			. += span_notice("\nIt is currently <b>washing the contents.</b>.")
 		if(CYCLESTATE_SPIN)
-			. += span_notice("It is currently <b>spinning very fast.</b>.")
+			. += span_notice("\nIt is currently <b>spinning very fast.</b>.")
 
 /obj/machinery/washing_machine/update_icon_state()
 	var/full = contents.len ? 1 : 0
@@ -325,12 +325,13 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		radial_options -= RADIAL_LAUNDRY_OPEN
 
 	//dont show start unless doors are closed
-	if(state_open)
+	if(!state_open)
 		if(cycle_state)
 			radial_options -= RADIAL_LAUNDRY_START
 		else
 			radial_options -= RADIAL_LAUNDRY_STOP
 	else
+		radial_options -= RADIAL_LAUNDRY_START
 		radial_options -= RADIAL_LAUNDRY_STOP
 
 	var/pick = show_radial_menu(user, src, radial_options, custom_check = CALLBACK(src, PROC_REF(can_use_radial), user), require_near = TRUE)
