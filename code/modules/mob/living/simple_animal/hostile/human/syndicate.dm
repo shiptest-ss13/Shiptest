@@ -14,7 +14,7 @@
 	stat_attack = HARD_CRIT
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	maxbodytemp = 400
-	unsuitable_atmos_damage = 15
+	unsuitable_atmos_damage = 7.5
 	faction = list(FACTION_RAMZI)
 	loot = list()
 	check_friendly_fire = TRUE

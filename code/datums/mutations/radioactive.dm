@@ -9,8 +9,8 @@
 	power_coeff = 1
 
 
-/datum/mutation/human/radioactive/on_life()
-	radiation_pulse(owner, 20 * GET_MUTATION_POWER(src))
+/datum/mutation/human/radioactive/on_life(seconds_per_tick, times_fired)
+	radiation_pulse(owner, 10 * GET_MUTATION_POWER(src) * seconds_per_tick)
 
 /datum/mutation/human/radioactive/New(class_ = MUT_OTHER, timer, datum/mutation/human/copymut)
 	..()

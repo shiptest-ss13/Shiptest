@@ -11,8 +11,8 @@
 	process_flags = SYNTHETIC
 	var/robot_clean_power = 15
 
-/datum/reagent/system_cleaner/on_mob_life(mob/living/M)
-	M.adjustToxLoss(-2*REM, 0)
+/datum/reagent/system_cleaner/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
+	M.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
 	. = 1
 	for(var/datum/reagent/R in M.reagents.reagent_list)
 		if(R != src)
@@ -26,8 +26,8 @@
 	taste_description = "metallic"
 	process_flags = SYNTHETIC
 
-/datum/reagent/medicine/liquid_solder/on_mob_life(mob/living/M)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -3*REM)
+/datum/reagent/medicine/liquid_solder/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1.5 * REM * seconds_per_tick)
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		if(prob(30) && C.has_trauma_type(BRAIN_TRAUMA_SPECIAL))
