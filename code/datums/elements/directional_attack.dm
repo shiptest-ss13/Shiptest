@@ -17,8 +17,14 @@
 /datum/element/directional_attack/proc/on_mob_afterattack(mob/source, atom/target, obj/item/weapon, proximity, params)
 	SIGNAL_HANDLER
 
+	var/mob/living/carbon/our_carbon = source
+
 	if(source.next_move > world.time) // prevents recursion
 		return NONE
+
+	if(istype(our_carbon))
+		if(our_carbon.a_intent == INTENT_HELP)
+			return NONE
 
 	var/mob/living/target_mob = find_target(source, target, params2list(params))
 	if(target_mob)
