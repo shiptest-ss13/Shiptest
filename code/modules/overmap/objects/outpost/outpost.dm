@@ -215,9 +215,7 @@
 	log_game("[src] [REF(src)] OUTPOST MAP LEVEL INIT")
 	log_shuttle("[src] [REF(src)] OUTPOST MAP LEVEL INIT")
 
-	var/datum/virtual_level/vlevel
-
-	vlevel = SSmapping.create_virtual_level(
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
 		name,
 		main_level_ztraits,
 		mapzone,
