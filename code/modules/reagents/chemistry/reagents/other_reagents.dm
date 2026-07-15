@@ -987,7 +987,7 @@
 			human_victim.update_hair()
 
 
-/datum/reagent/bleach/on_mob_life(mob/living/carbon/affected_carbon)
+/datum/reagent/bleach/on_mob_life(mob/living/carbon/affected_carbon, seconds_per_tick, times_fired)
 	var/toxpwr = sqrt(volume)
 
 	if(prob (min(current_cycle/4, 25)))
@@ -2816,7 +2816,7 @@
 				if(burndamage >= 2)
 					victim.emote("cry")
 
-/datum/reagent/detergent/on_mob_life(mob/living/carbon/affected_carbon)
+/datum/reagent/detergent/on_mob_life(mob/living/carbon/affected_carbon, seconds_per_tick, times_fired)
 	var/toxpwr = sqrt(volume)
 	affected_carbon.adjust_disgust(toxpwr/2)
 	if(toxpwr >= 4)
