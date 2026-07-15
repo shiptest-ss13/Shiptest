@@ -342,9 +342,6 @@
 /obj/effect/mob_spawn/human/corpse/assistant/husked
 	husk = TRUE
 
-/obj/effect/mob_spawn/human/corpse/assistant/beesease_infection
-	disease = /datum/disease/beesease
-
 /obj/effect/mob_spawn/human/corpse/assistant/brainrot_infection
 	disease = /datum/disease/brainrot
 

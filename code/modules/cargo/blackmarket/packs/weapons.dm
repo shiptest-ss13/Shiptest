@@ -87,6 +87,16 @@
 	stock = 1
 	availability_prob = 25
 
+/datum/blackmarket_item/weapon/podao
+	name = "Solarian Podao Replica"
+	desc = "Some historian kept bothering us about this kind of sword, saying its got unmatched cutting potential. After they graciously helped us test it, we can say it does a good chop! Two hands recommended. It's heavy."
+	item = /obj/item/melee/sword/podao
+
+	cost_min = 2000
+	cost_max = 3000
+	stock = 1
+	availability_prob = 20
+
 /datum/blackmarket_item/weapon/sabre
 	name = "SUNS Dueling Sabre"
 	desc = "A mastercrafted sabre formerly wielded by a SUNS academic. It's very sharp; we had to spend hours stitching our fingers back on after getting it."

@@ -346,6 +346,7 @@
 	faction = /datum/faction/independent
 	starting_funds = 0
 	unique_ship_access = FALSE
+	token_icon_state = "ship_tiny_generic"
 
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
@@ -353,6 +354,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
+	token_icon_state = "missile"
 
 /datum/map_template/shuttle/subshuttles/pillb
 	file_name = "independent_blackpill"
@@ -360,6 +362,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
+	token_icon_state = "missile"
 
 /datum/map_template/shuttle/subshuttles/pills
 	file_name = "independent_superpill"
@@ -367,6 +370,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
+	token_icon_state = "missile"
 
 /datum/map_template/shuttle/subshuttles/kunai
 	file_name = "independent_kunai"
