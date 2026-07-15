@@ -68,31 +68,6 @@
 	tastes = list("bun" = 4, "tofu" = 4)
 	foodtypes = GRAIN | VEGETABLES
 
-/obj/item/food/burger/roburger
-	name = "roburger"
-	desc = "The lettuce is the only organic component. Beep."
-	icon_state = "roburger"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 8,
-		/datum/reagent/nanomachines = 7,
-		/datum/reagent/consumable/nutriment/vitamin = 6,
-	)
-	tastes = list("bun" = 4, "lettuce" = 2, "sludge" = 1)
-	foodtypes = GRAIN | TOXIC
-
-/obj/item/food/burger/roburgerbig
-	name = "roburger"
-	desc = "This massive patty looks like poison. Beep."
-	icon_state = "roburger"
-	max_volume = 120
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 11,
-		/datum/reagent/nanomachines = 140,
-		/datum/reagent/consumable/nutriment/vitamin = 15,
-	)
-	tastes = list("bun" = 4, "lettuce" = 2, "sludge" = 1)
-	foodtypes = GRAIN | TOXIC
-
 /obj/item/food/burger/xeno
 	name = "xenoburger"
 	desc = "Smells caustic. Tastes like heresy."

@@ -154,15 +154,15 @@
 	debuff_effect = /datum/status_effect/trickwine/debuff/ash
 	dip_ammo_type = /obj/item/ammo_casing/c38/ashwine
 
-/datum/reagent/consumable/ethanol/trickwine/ash_wine/on_mob_life(mob/living/M)
+/datum/reagent/consumable/ethanol/trickwine/ash_wine/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
 	var/high_message = pick("You feel far more devoted to the cause.", "You feel like you should go on a hunt.")
 	var/cleanse_message = pick("Divine light purifies you.", "You are purged of foul spirts.")
-	if(prob(10))
+	if(SPT_PROB(5, seconds_per_tick))
 		M.adjust_drugginess(5)
 		to_chat(M, span_notice("[high_message]"))
 	if(M.faction && ("roumain" in M.faction))
-		M.adjustToxLoss(-2)
-		if(prob(10))
+		M.adjustToxLoss(-1 * seconds_per_tick)
+		if(SPT_PROB(5, seconds_per_tick))
 			to_chat(M, span_notice("[cleanse_message]"))
 	return ..()
 
@@ -210,10 +210,10 @@
 	debuff_effect = /datum/status_effect/trickwine/debuff/ice
 	dip_ammo_type = /obj/item/ammo_casing/c38/iceblox
 
-/datum/reagent/consumable/ethanol/trickwine/ice_wine/on_mob_life(mob/living/M)
+/datum/reagent/consumable/ethanol/trickwine/ice_wine/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	M.adjustFireLoss(-0.25)
-	if(prob(5))
+	if(SPT_PROB(2.5, seconds_per_tick))
 		to_chat(M, span_notice("Sweat runs down your body."))
 	return ..()
 
@@ -348,19 +348,19 @@
 
 	return ..()
 
-/datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M)
+/datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	if(!ishuman(M))
 		return ..()
 	var/mob/living/carbon/guy_who_probably_got_shot = M
-	if(prob(20) && length(guy_who_probably_got_shot.all_wounds))
+	if(SPT_PROB(10, seconds_per_tick) && length(guy_who_probably_got_shot.all_wounds))
 		to_chat(M, span_warning("Your cuts and punctures sear for a second, before ceasing their bloody flow!"))
 		for(var/datum/wound/slash/flesh/cut in guy_who_probably_got_shot.all_wounds)
 			cut.remove_wound()
 		for(var/datum/wound/pierce/bleed/hole in guy_who_probably_got_shot.all_wounds)
 			hole.remove_wound()
 
-	if(prob(10) && length(guy_who_probably_got_shot.all_wounds))
+	if(SPT_PROB(5, seconds_per_tick) && length(guy_who_probably_got_shot.all_wounds))
 		to_chat(M, span_warning("Warmth blossoms across your body!"))
 		for(var/datum/wound/muscle/muscle_ouchie in guy_who_probably_got_shot.all_wounds)
 			muscle_ouchie.remove_wound()
