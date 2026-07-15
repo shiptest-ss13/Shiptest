@@ -321,6 +321,7 @@
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/cybersun_outpost_exterior
 	)
+
 	border_size = 1
 
 	outpost_name = "Thousand Eyed Perch"
