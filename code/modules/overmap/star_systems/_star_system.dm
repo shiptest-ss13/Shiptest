@@ -62,6 +62,11 @@
 		DYNAMIC_WORLD_MOON = 20
 	)
 
+	///These vars completely overide the usual planet colors planets have. Useful for red giants, or events
+	var/dynamic_light_range_override
+	var/dynamic_light_power_override
+	var/dynamic_light_color_override
+
 	///weighted list of events that this system type can spawn during creation.
 	var/list/event_probabilities = list(
 		/datum/overmap/event/wormhole = 10,

@@ -234,10 +234,16 @@
 	//if an admin overidded planet lighting, lets use that instead
 	if(GLOB.override_new_planet_lighting_range)
 		light_range = GLOB.override_new_planet_lighting_range
+	else if(current_overmap.dynamic_light_range_override)
+		light_range = current_overmap.dynamic_light_range_override
 	if(GLOB.override_new_planet_lighting_power)
 		light_power = GLOB.override_new_planet_lighting_power
+	else if(current_overmap.dynamic_light_power_override)
+		light_power = current_overmap.dynamic_light_power_override
 	if(GLOB.override_new_planet_lighting_color)
 		light_color = GLOB.override_new_planet_lighting_color
+	else if(current_overmap.dynamic_light_color_override)
+		light_color = current_overmap.dynamic_light_color_override
 
 	alter_token_appearance()
 

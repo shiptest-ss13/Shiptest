@@ -1103,8 +1103,8 @@
 	message_admins(span_big("Click here to jump to the overmap Jump point: " + ADMIN_JMP(point.token)))
 	BLACKBOX_LOG_ADMIN_VERB("Spawn Overmap Jump Point")
 
-/client/proc/setall_planetlights_inround()
-	set name = "Set Planetary Lighting on All Loaded Planets"
+/client/proc/set_all_planetlights()
+	set name = "Set Planetary Lighting on All Planets"
 	set category = "Event.Spawning"
 	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
 		return
@@ -1117,6 +1117,24 @@
 	var/new_lightcolor
 
 	var/inputed
+
+	///Basically changes every system's light color
+	var/target_all_systems
+	var/datum/overmap_star_system/selected_system
+	var/list/choices = LAZYCOPY(SSovermap.tracked_star_systems)
+	LAZYADD(choices, "All Overmaps")
+
+	if(length(SSovermap.tracked_star_systems) > 1)
+		inputed = tgui_input_list(usr, "Which star system should point A be in?", "Creating Jump Point", choices)
+	else
+		inputed = "All Overmaps"
+	if(isnull(inputed))
+		return
+
+	if(inputed != "All Overmaps")
+		selected_system = inputed
+	else
+		target_all_systems = TRUE
 
 	inputed = input(usr, "Enter light range", "Set Planetary Lighting", 2) as num
 	if(isnull(inputed))
@@ -1137,12 +1155,22 @@
 	if(!inputed)
 		return
 	if(inputed == "Yes")
-		GLOB.override_new_planet_lighting_color = new_lightcolor
-		GLOB.override_new_planet_lighting_power = new_lightpower
-		GLOB.override_new_planet_lighting_range = new_lightrange
+		if(target_all_systems)
+			GLOB.override_new_planet_lighting_color = new_lightcolor
+			GLOB.override_new_planet_lighting_power = new_lightpower
+			GLOB.override_new_planet_lighting_range = new_lightrange
+		else
+			selected_system.dynamic_light_color_override = new_lightcolor
+			selected_system.dynamic_light_power_override = new_lightpower
+			selected_system.dynamic_light_range_override = new_lightrange
 	for(var/datum/overmap/dynamic/found_planet as anything in SSovermap.dynamic_encounters)
 		if(!istype(found_planet))
 			continue
+		if(!target_all_systems && found_planet.current_overmap != selected_system)
+			continue
+		found_planet.light_color = new_lightcolor
+		found_planet.light_power = new_lightpower
+		found_planet.light_range = new_lightrange
 		if(!found_planet.mapzone)
 			continue
 		for(var/datum/virtual_level/found_level as anything in found_planet.mapzone.virtual_levels)
@@ -1151,8 +1179,10 @@
 			lighting_traits[ZTRAIT_LIGHT_POWER] = new_lightpower
 			lighting_traits[ZTRAIT_LIGHT_RANGE] = new_lightrange
 			found_level.update_lighting_in_bounds()
-
-	message_admins(span_big("Updated all planets to use lighting [new_lightcolor] "))
+	if(target_all_systems)
+		message_admins(span_big("Updated all planets in the round to use lighting [new_lightcolor] "))
+	else
+		message_admins(span_big("Updated all planets in [selected_system.name] use lighting [new_lightcolor] "))
 	BLACKBOX_LOG_ADMIN_VERB("Set Planetary Lighting on All Loaded Planets")
 
 /client/proc/smite(mob/living/target as mob)
