@@ -94,6 +94,8 @@
 /obj/item/clothing/suit/armor/vest/marine/ramzi
 	name = "Ramzi tactical armor vest"
 	desc = "A reinforced vest repaired by the Ramzi Clique. Its bulky profile proves an intimidating sight to the person unlucky enough to be on the other side of it."
+	icon = 'icons/obj/clothing/faction/ramzi/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/suits.dmi'
 	icon_state = "ramzi_light"
 	item_state = "armor"
 
@@ -102,6 +104,8 @@
 /obj/item/clothing/suit/armor/vest/marine/medium/ramzi
 	name = "Ramzi medium tactical armor vest"
 	desc = "A reinforced vest repaired by the Ramzi Clique. Its bulky profile proves an intimidating sight to the person unlucky enough to be on the other side of it."
+	icon = 'icons/obj/clothing/faction/ramzi/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/suits.dmi'
 	icon_state = "ramzi_medium"
 	unique_reskin = null
 
