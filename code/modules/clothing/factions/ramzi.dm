@@ -91,6 +91,20 @@
 	blood_overlay_type = "coat"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
+/obj/item/clothing/suit/armor/vest/marine/ramzi
+	name = "Ramzi tactical armor vest"
+	desc = "A reinforced vest repaired by the Ramzi Clique. Its bulky profile proves an intimidating sight to the person unlucky enough to be on the other side of it."
+	icon_state = "ramzi_light"
+	item_state = "armor"
+
+	unique_reskin = null
+
+/obj/item/clothing/suit/armor/vest/marine/medium/ramzi
+	name = "Ramzi medium tactical armor vest"
+	desc = "A reinforced vest repaired by the Ramzi Clique. Its bulky profile proves an intimidating sight to the person unlucky enough to be on the other side of it."
+	icon_state = "ramzi_medium"
+	unique_reskin = null
+
 ///////////////
 //Spacesuits//
 //////////////
@@ -223,6 +237,21 @@
 	can_flashlight = TRUE
 	content_overlays = TRUE
 	unique_reskin = null
+
+/obj/item/clothing/head/helmet/ramzi
+	name = "\improper Ramzi Clique reinforced welding helmet"
+	desc = "A heavy, reinforced welding helmet with significant frontal plating. The welding visor seems to be useless now."
+	icon = 'icons/obj/clothing/faction/ramzi/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/head.dmi'
+	icon_state = "ramzi_welder"
+	item_state = "ramzi_welder"
+	armor = list("melee" = 35, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 20)
+	slowdown = 0.1
+	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
+	clothing_flags = STOPSPRESSUREDAMAGE | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
+	can_flashlight = TRUE
 
 /obj/item/clothing/head/helmet/bulletproof/x11/ramzi
 	name = "\improper Ramzi Clique X-11 helmet"
