@@ -10,7 +10,15 @@
 /obj/structure/elevator_platform/tile/tech,
 /obj/machinery/light/dim/directional/east,
 /obj/structure/railing/thin{
-	dir = 1
+	dir = 5;
+	layer = 2.7
+	},
+/turf/template_noop,
+/area/template_noop)
+"d" = (
+/obj/structure/elevator_platform/tile/dark,
+/obj/structure/railing/thin/corner{
+	dir = 8
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -24,6 +32,18 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"h" = (
+/obj/structure/elevator_platform,
+/obj/structure/railing/thin/corner,
+/turf/template_noop,
+/area/template_noop)
+"i" = (
+/obj/structure/elevator_platform,
+/obj/structure/railing/thin/corner{
+	dir = 1
+	},
+/turf/template_noop,
+/area/template_noop)
 "k" = (
 /obj/structure/elevator_platform/tile/dark,
 /turf/template_noop,
@@ -32,6 +52,13 @@
 /obj/machinery/light/dim/directional/west,
 /obj/structure/elevator_platform/tile/tech,
 /obj/structure/railing/thin{
+	dir = 9
+	},
+/turf/template_noop,
+/area/template_noop)
+"s" = (
+/obj/structure/elevator_platform/tile/dark,
+/obj/structure/railing/thin/corner{
 	dir = 1
 	},
 /turf/template_noop,
@@ -44,6 +71,23 @@
 	},
 /obj/structure/chair/bench/blue/directional/west,
 /obj/structure/elevator_platform/tile/dark,
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/turf/template_noop,
+/area/template_noop)
+"J" = (
+/obj/structure/elevator_platform,
+/obj/structure/railing/thin/corner{
+	dir = 4
+	},
+/turf/template_noop,
+/area/template_noop)
+"K" = (
+/obj/structure/elevator_platform,
+/obj/structure/railing/thin/corner{
+	dir = 8
+	},
 /turf/template_noop,
 /area/template_noop)
 "L" = (
@@ -52,12 +96,17 @@
 /obj/machinery/status_display/elevator{
 	pixel_x = 32
 	},
+/obj/structure/railing/thin{
+	dir = 4
+	},
 /turf/template_noop,
 /area/template_noop)
 "M" = (
 /obj/machinery/light/dim/directional/west,
 /obj/structure/elevator_platform/tile/tech,
-/obj/structure/railing/thin,
+/obj/structure/railing/thin{
+	dir = 10
+	},
 /turf/template_noop,
 /area/template_noop)
 "S" = (
@@ -66,23 +115,25 @@
 	},
 /obj/structure/elevator_platform/tile/tech,
 /obj/machinery/light/dim/directional/east,
-/obj/structure/railing/thin,
+/obj/structure/railing/thin{
+	dir = 6
+	},
 /turf/template_noop,
 /area/template_noop)
 
 (1,1,1) = {"
 p
+s
 k
-k
-k
+d
 M
 "}
 (2,1,1) = {"
-a
+i
 k
 k
 k
-a
+K
 "}
 (3,1,1) = {"
 a
@@ -92,11 +143,11 @@ a
 a
 "}
 (4,1,1) = {"
-a
+J
 k
 k
 k
-a
+h
 "}
 (5,1,1) = {"
 c
