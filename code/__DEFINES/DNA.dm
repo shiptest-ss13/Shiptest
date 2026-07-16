@@ -131,6 +131,12 @@
 #define MUTCOLORS_SECONDARY 25
 ///Human skintones
 #define SKINCOLORS 26
+///Mothperson colortones
+#define NECKFLUFFCOLORS 27
+#define WINGCOLORS 28
+#define ANTENNAECOLORS 29
+#define MARKINGCOLORS 30
+#define BODYFLUFFCOLORS 31
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"
@@ -169,7 +175,7 @@
 
 //organ defines
 #define STANDARD_ORGAN_THRESHOLD 100
-#define STANDARD_ORGAN_HEALING 0.003
+#define STANDARD_ORGAN_HEALING 0.0015
 //Organs fail in around ~30 minutes
 #define STANDARD_ORGAN_DECAY 0.00050
 //Vital organs (brain, heart) fail in quite a long time

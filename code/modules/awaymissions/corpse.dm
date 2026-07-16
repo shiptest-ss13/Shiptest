@@ -342,9 +342,6 @@
 /obj/effect/mob_spawn/human/corpse/assistant/husked
 	husk = TRUE
 
-/obj/effect/mob_spawn/human/corpse/assistant/beesease_infection
-	disease = /datum/disease/beesease
-
 /obj/effect/mob_spawn/human/corpse/assistant/brainrot_infection
 	disease = /datum/disease/brainrot
 
@@ -529,13 +526,6 @@
 	shoes = /obj/item/clothing/shoes/combat/swat
 	r_pocket = /obj/item/lighter
 	id = /obj/item/card/id
-
-
-/obj/effect/mob_spawn/human/warrasoldier
-	name = "\improper Vigilitas LP Security Specialist"
-	id_job = "Private Security Force"
-	id_access_list = list(ACCESS_CENT_CAPTAIN, ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_STORAGE, ACCESS_SECURITY, ACCESS_MECH_SECURITY)
-	outfit = /datum/outfit/job/warra/security/lp
 
 /obj/effect/mob_spawn/human/commander/alive
 	death = FALSE

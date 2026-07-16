@@ -50,7 +50,7 @@
 
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
-/mob/living/simple_animal/hostile/asteroid/goliath/Life()
+/mob/living/simple_animal/hostile/asteroid/goliath/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	handle_preattack()
 
@@ -260,7 +260,7 @@
 	var/turf/last_location
 	var/tentacle_recheck_cooldown = 70
 
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/Life()
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	if(!.) // dead
 		return
@@ -275,7 +275,7 @@
 				LAZYADD(cached_tentacle_turfs, T)
 		for(var/t in cached_tentacle_turfs)
 			if(isopenturf(t))
-				if(prob(10))
+				if(SPT_PROB(5, seconds_per_tick))
 					new tentacle_type(t, src)
 			else
 				cached_tentacle_turfs -= t
@@ -339,12 +339,22 @@
 		timerid = addtimer(CALLBACK(src, PROC_REF(retract)), 10, TIMER_STOPPABLE)
 
 /obj/effect/temp_visual/goliath_tentacle/proc/on_hit(mob/living/target)
-	target.apply_damage(rand(10,20), BRUTE, pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG), wound_bonus = CANT_WOUND) //already dangerous, don't break legs too
-
+	var/obj/item/bodypart/affecting
+	if(ishuman(target))
+		if(prob(50))
+			affecting = target.get_bodypart(BODY_ZONE_R_LEG)
+		else
+			affecting = target.get_bodypart(BODY_ZONE_L_LEG)
+		if(!affecting) //(!target.get_bodypart(BODY_ZONE_R_LEG) && !target.get_bodypart(BODY_ZONE_L_LEG))
+			affecting = target.get_bodypart(BODY_ZONE_CHEST)
+		var/armor_block
+		armor_block = target.run_armor_check(affecting, MELEE)
+		target.apply_damage(rand(20,25), BRUTE, affecting, armor_block, FALSE, wound_bonus = CANT_WOUND)
+	else
+		target.apply_damage(rand(20,25), BRUTE, wound_bonus = CANT_WOUND)
 	if(iscarbon(target))
 		var/obj/item/restraints/legcuffs/beartrap/goliath/B = new /obj/item/restraints/legcuffs/beartrap/goliath(get_turf(target))
 		B.on_entered(src, target)
-
 /obj/effect/temp_visual/goliath_tentacle/proc/retract()
 	icon_state = "marker"
 	flick(retract,src)

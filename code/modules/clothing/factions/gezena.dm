@@ -109,6 +109,8 @@
 	item_state = "navyvest"
 	blood_overlay_type = "armor"
 	body_parts_covered = CHEST|GROIN
+	cold_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -229,7 +231,7 @@
 	item_state = "greencloth"
 
 /obj/item/clothing/head/gezena/engi
-	name = "navy engineer cap"
+	name = "navy engineering cap"
 	desc = "The standard cap of the PGF military. The coloring indicates the wearer as an engineering specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -256,7 +258,7 @@
 	item_state = "whitecloth"
 
 /obj/item/clothing/head/gezena/flap/medic
-	name = "medic flap cap"
+	name = "medical flap cap"
 	desc = "The standard cap of the PGF military. Features a neck-covering flap for harsher environments. The coloring indicates the wearer as a medical specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -274,7 +276,7 @@
 	item_state = "bluecloth"
 
 /obj/item/clothing/head/gezena/flap/captain
-	name = "command flap cap"
+	name = "navy command flap cap"
 	desc = "The standard cap of the PGF military. Features a neck-covering flap for harsher environments. The decoration indicates the wearer as a ship's Captain."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -290,6 +292,7 @@
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	flags_inv = 0
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
@@ -309,6 +312,8 @@
 	flags_inv = HIDEHAIR
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+	cold_protection = HEAD
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
 	icon_state = "marinehelmet"
 	item_state = "marinehelm"
@@ -412,12 +417,13 @@
 		new /obj/item/stock_parts/cell/gun/pgf(src)
 	new /obj/item/grenade/frag(src)
 	new /obj/item/grenade/smokebomb(src)
+	new /obj/item/attachment/bayonet(src)
 
 /obj/item/storage/belt/military/gezena/engineer/PopulateContents()
 	. = ..()
-	for(var/i in 1 to 3)
+	for(var/i in 1 to 4)
 		new /obj/item/stock_parts/cell/gun/pgf(src)
-	new /obj/item/grenade/smokebomb(src)
+	new /obj/item/grenade/c4(src)
 	new /obj/item/grenade/c4(src)
 	new /obj/item/grenade/c4(src)
 

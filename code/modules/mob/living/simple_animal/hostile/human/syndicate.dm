@@ -14,7 +14,7 @@
 	stat_attack = HARD_CRIT
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	maxbodytemp = 400
-	unsuitable_atmos_damage = 15
+	unsuitable_atmos_damage = 7.5
 	faction = list(FACTION_RAMZI)
 	loot = list()
 	check_friendly_fire = TRUE
@@ -31,6 +31,8 @@
 	icon_living = "syndicate_space"
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	speed = 1
 
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space
@@ -165,10 +167,6 @@
 	attack_verb_simple = "smash"
 	attack_sound = 'sound/weapons/genhit1.ogg'
 
-	light_color = COLOR_SOFT_RED
-	var/obj/effect/light_emitter/red_energy_sword/sord
-	projectile_deflect_chance = 25
-
 /mob/living/simple_animal/hostile/human/ramzi/melee/sledge/AttackingTarget()
 	. = ..()
 	if(isliving(target))
@@ -192,6 +190,8 @@
 	icon_living = "syndicate_space_knife"
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	speed = 1
 	projectile_deflect_chance = 0
 
@@ -268,13 +268,27 @@
 	desc = "Wicked knifepoint tracks your every impulse. Clean, black-red armor plate glides across itself, bereft of all sound or resistance."
 	icon_state = "syndicate_stormtrooper_knife"
 	icon_living = "syndicate_stormtrooper_knife"
-	name = "Ramzi Clique Stormtrooper"
 	maxHealth = 250
 	health = 250
 	projectile_deflect_chance = 0
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/commander
+	name = "Ramzi Clique Assassin"
+	desc = "Wicked knifepoint tracks your every impulse. Clean, black-red armor plate glides across itself, bereft of all sound or resistance."
+	icon_state = "syndicate_stormtrooper_knife"
+	icon_living = "syndicate_stormtrooper_knife"
+	maxHealth = 250
+	health = 250
+	projectile_deflect_chance = 0
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
+
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/commander/Aggro()
+	..()
+	summon_backup(4)
+	say("SIC 'EM!!")
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge
 	name = "Ramzi Clique Supercollider"
@@ -531,6 +545,8 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	speed = 1
 	rapid = 2
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
@@ -788,6 +804,8 @@
 	armor_base = /obj/item/clothing/suit/space/syndicate/ramzi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space/soft/surplus
 	environment_smash = ENVIRONMENT_SMASH_NONE
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian/towel
 	name = "Ramzi Clique Soapmaster"

@@ -1203,7 +1203,7 @@
 /area/ruin/lavaland/factory/manager_office)
 "md" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning,
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /obj/effect/mob_spawn/human/miner,
@@ -1672,7 +1672,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /obj/item/ammo_casing/spent,
@@ -1803,8 +1803,8 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)
 "rk" = (
-/obj/structure/flippedtable,
-/obj/item/gun/energy/sharplite/x12,
+/obj/structure/barricade/directional/flippedtable,
+/obj/item/gun/energy/sharplite/volt,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/lobby)
 "rF" = (
@@ -3195,10 +3195,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/lavaland/factory/warehouse)
 "Gw" = (
-/mob/living/simple_animal/bot/secbot/ed209/rockplanet{
-	faction = list("Deathsquad");
-	name = "\improper  ED-209 Robot"
-	},
+/mob/living/simple_animal/hostile/automated/rover,
 /turf/open/floor/circuit/red,
 /area/ruin/lavaland/factory/manager_office)
 "Gy" = (
@@ -3393,7 +3390,7 @@
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 1
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /obj/item/reagent_containers/food/drinks/molotov/full,
@@ -3604,7 +3601,7 @@
 /obj/item/clipboard,
 /obj/item/storage/box/shipping,
 /obj/item/clothing/suit/space/hardsuit/mining/heavy,
-/obj/item/gun/energy/sharplite/x26,
+/obj/item/gun/energy/sharplite/ohm,
 /obj/item/stock_parts/cell/gun/sharplite/mini,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/manager_office)
@@ -3830,7 +3827,7 @@
 	dir = 5
 	},
 /obj/structure/guncloset,
-/obj/item/gun/energy/sharplite/x12,
+/obj/item/gun/energy/sharplite/volt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/adminstrative)
 "Ne" = (
@@ -3883,7 +3880,7 @@
 /turf/closed/mineral/volcanic,
 /area/overmap_encounter/planetoid/cave/explored)
 "NG" = (
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /obj/effect/mob_spawn/human/corpse/vigilitas_private,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -4298,8 +4295,6 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "RU" = (
 /obj/effect/decal/cleanable/robot_debris/old,
-/obj/item/assembly/prox_sensor,
-/obj/item/bot_assembly/ed209,
 /turf/open/floor/circuit/red,
 /area/ruin/lavaland/factory/manager_office)
 "RZ" = (
@@ -4796,8 +4791,9 @@
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
 "XA" = (
-/obj/machinery/computer/security/telescreen/entertainment,
-/turf/closed/wall/mineral/titanium,
+/obj/structure/chair,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north,
+/turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)
 "XB" = (
 /obj/structure/table_frame,
@@ -4817,11 +4813,8 @@
 /area/ruin/lavaland/factory/lobby)
 "XM" = (
 /obj/machinery/newscaster/directional/west,
-/obj/structure/noticeboard/staff{
-	dir = 1;
-	pixel_y = -26
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/noticeboard/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "XR" = (
@@ -5772,8 +5765,8 @@ LZ
 Zc
 Zc
 Zc
+Zc
 XA
-SZ
 cm
 el
 Zc

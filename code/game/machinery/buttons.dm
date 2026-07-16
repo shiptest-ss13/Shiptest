@@ -1,9 +1,9 @@
 /obj/machinery/button
 	name = "button"
 	desc = "A remote control switch."
-	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "doorctrl"
-	var/skin = "doorctrl"
+	icon = 'icons/obj/wallmounts/buttons.dmi'
+	icon_state = "generic"
+	var/skin = "generic"
 	power_channel = AREA_USAGE_ENVIRON
 	var/obj/item/assembly/device
 	var/obj/item/electronics/airlock/board
@@ -200,6 +200,9 @@
 /obj/machinery/button/door
 	name = "door button"
 	desc = "A door remote control switch."
+	icon_state = "doorctrl"
+	skin = "doorctrl"
+
 	var/normaldoorcontrol = FALSE
 	var/specialfunctions = OPEN // Bitflag, see assembly file
 	var/sync_doors = TRUE

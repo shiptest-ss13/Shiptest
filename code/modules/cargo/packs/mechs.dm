@@ -10,7 +10,7 @@ Completed Suits
 
 /datum/supply_pack/mech/ripley
 	name = "Surplus APLU MK-I"
-	desc = "A worn cargo loader that has aged out of active use. Comes with an attachable drill."
+	desc = "A worn cargo loader that has aged out of active use. Comes with an attached hydraulic clamp."
 	cost = 2000
 	contains = list(
 		/obj/mecha/working/ripley/cargo,

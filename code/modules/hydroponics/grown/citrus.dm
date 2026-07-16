@@ -64,7 +64,7 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/triple_sec
 
 /obj/item/food/grown/citrus/orange/make_processable()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/garnish/lime, 3, 3 SECONDS, table_required = TRUE)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/garnish/orange, 3, 3 SECONDS, table_required = TRUE)
 
 // Lemon
 /obj/item/seeds/lemon

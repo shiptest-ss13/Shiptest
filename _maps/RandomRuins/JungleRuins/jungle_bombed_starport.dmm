@@ -111,7 +111,7 @@
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "aA" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /obj/structure/spider/stickyweb,
@@ -3814,7 +3814,7 @@
 	populate = 0
 	},
 /obj/item/plasmacutter,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/storage/belt/utility/syndicate,
 /obj/item/clothing/under/syndicate/gec,
 /turf/open/floor/plasteel/tech,
@@ -3973,7 +3973,7 @@
 /area/ruin/jungle/airbase/engineering)
 "rh" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/airbase)
 "ri" = (
@@ -7388,7 +7388,7 @@
 /area/ruin/jungle/airbase/tower)
 "GY" = (
 /obj/structure/table/optable,
-/obj/item/clothing/gloves/color/latex/nitrile/evil{
+/obj/item/clothing/gloves/nitrile/evil{
 	pixel_y = -8;
 	pixel_x = 5
 	},
@@ -7496,7 +7496,7 @@
 /turf/open/floor/plating/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "HB" = (
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/airbase)

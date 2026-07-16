@@ -1,7 +1,7 @@
 /obj/structure/extinguisher_cabinet
 	name = "extinguisher cabinet"
 	desc = "A small wall mounted cabinet designed to hold a fire extinguisher."
-	icon = 'icons/obj/wallmounts.dmi'
+	icon = 'icons/obj/wallmounts/extinguisher_cabinet.dmi'
 	icon_state = "extinguisher"
 	anchored = TRUE
 	density = FALSE
@@ -18,7 +18,7 @@
 		dir_amount = 4\
 	)
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 23)
 
 /obj/structure/extinguisher_cabinet/Initialize(mapload, ndir, building)
 	. = ..()

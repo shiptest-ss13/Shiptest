@@ -8,7 +8,6 @@
 	glass_icon_state = "glass_red"
 	glass_name = "glass of tomato juice"
 	glass_desc = "Are you sure this is tomato juice?"
-	shot_glass_icon_state = "shotglassred"
 
 /datum/reagent/blood/expose_mob(mob/living/L, method=TOUCH, reac_volume)
 	if(data && data["viruses"])
@@ -96,7 +95,6 @@
 	color = "#CC4633"
 	description = "You don't even want to think about what's in here."
 	taste_description = "gross iron"
-	shot_glass_icon_state = "shotglassred"
 	material = /datum/material/meat
 
 /datum/reagent/vaccine
@@ -135,10 +133,8 @@
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen."
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
 	taste_description = "water"
-	glass_icon_state = "glass_clear"
 	glass_name = "glass of water"
 	glass_desc = "The father of all refreshments."
-	shot_glass_icon_state = "shotglassclear"
 
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs //WS Edit - IPCs
 
@@ -228,7 +224,6 @@
 	name = "Holy Water"
 	description = "Water blessed by some deity."
 	color = "#E0E8EF" // rgb: 224, 232, 239
-	glass_icon_state  = "glass_clear"
 	glass_name = "glass of holy water"
 	glass_desc = "A glass of holy water."
 	self_consuming = TRUE //divine intervention won't be limited by the lack of a liver
@@ -268,10 +263,8 @@
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
 	taste_description = "burning water"
 	var/cooling_temperature = 2
-	glass_icon_state = "glass_clear"
 	glass_name = "glass of oxygenated water"
 	glass_desc = "The father of all refreshments. Surely it tastes great, right?"
-	shot_glass_icon_state = "shotglassclear"
 
 /*
  *	Water reaction to turf
@@ -943,28 +936,6 @@
 		M.drowsyness = max(M.drowsyness, 3)
 	..()
 
-/datum/reagent/nanomachines
-	name = "Nanomachines"
-	description = "Microscopic construction robots."
-	color = "#535E66" // rgb: 83, 94, 102
-	can_synth = FALSE
-	taste_description = "sludge"
-
-/datum/reagent/nanomachines/expose_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
-	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
-		L.ForceContractDisease(new /datum/disease/transformation/robot(), FALSE, TRUE)
-
-/datum/reagent/xenomicrobes
-	name = "Xenomicrobes"
-	description = "Microbes with an entirely alien cellular structure."
-	color = "#535E66" // rgb: 83, 94, 102
-	can_synth = FALSE
-	taste_description = "sludge"
-
-/datum/reagent/xenomicrobes/expose_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
-	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
-		L.ForceContractDisease(new /datum/disease/transformation/xeno(), FALSE, TRUE)
-
 /datum/reagent/fungalspores
 	name = "Tubercle bacillus Cosmosis microbes"
 	description = "Active fungal spores."
@@ -975,17 +946,6 @@
 /datum/reagent/fungalspores/expose_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
 		L.ForceContractDisease(new /datum/disease/tuberculosis(), FALSE, TRUE)
-
-/datum/reagent/snail
-	name = "Agent-S"
-	description = "Virological agent that infects the subject with Gastrolosis."
-	color = "#003300" // rgb(0, 51, 0)
-	taste_description = "goo"
-	can_synth = FALSE //special orange man request
-
-/datum/reagent/snail/expose_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
-	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
-		L.ForceContractDisease(new /datum/disease/gastrolosis(), FALSE, TRUE)
 
 /datum/reagent/fluorosurfactant//foam precursor
 	name = "Fluorosurfactant"
@@ -2116,6 +2076,41 @@
 	color = "#FFFFFF" // rgb: 255, 255, 255
 	taste_mult = 0 // oderless and tasteless
 
+/datum/reagent/rahene
+	name = "Rahene"
+	description = "A crimson-red vapor typically found on geologically active frontier worlds."
+	color = "#ca1111" // rgb: 255, 255, 255
+	taste_mult = 4
+	taste_description = "red"
+	overdose_threshold = 30
+
+/datum/reagent/rahene/on_mob_metabolize(mob/living/L)
+	..()
+	L?.add_client_colour(/datum/client_colour/rahkrahene)
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/rahene)
+
+/datum/reagent/rahene/on_mob_end_metabolize(mob/living/L)
+	L.remove_client_colour(/datum/client_colour/rahkrahene)
+	L.remove_client_colour(/datum/client_colour/rahkrahene_overdose)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/rahene)
+	..()
+
+/datum/reagent/rahene/overdose_start(mob/living/M)
+	M.add_client_colour(/datum/client_colour/rahkrahene_overdose)
+	. = ..()
+
+/datum/reagent/rahene/overdose_process(mob/living/M)
+	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !ismovable(M.loc) && prob(33))
+		step(M, pick(GLOB.cardinals))
+	if(prob(5))
+		M.visible_message(span_danger("[M]'s hands flip out and flail everywhere!"))
+		M.drop_all_held_items()
+	..()
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, pick(0.5, 0.6, 0.7, 0.8, 0.9, 1))
+	. = 1
+
+
+
 /datum/reagent/metalgen
 	name = "Metalgen"
 	data = list("material"=null)
@@ -2201,10 +2196,14 @@
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM // 5u (WOUND_DETERMINATION_CRITICAL) will last for ~17 ticks
 	self_consuming = TRUE
 	taste_description = "pure determination"
-	overdose_threshold = 45
+	overdose_threshold = 0
 	process_flags = ALL
 	/// Whether we've had at least WOUND_DETERMINATION_SEVERE (2.5u) of determination at any given time. No damage slowdown immunity or indication we're having a second wind if it's just a single moderate wound
 	var/significant = FALSE
+
+/datum/reagent/determination/on_mob_metabolize(mob/living/L)
+	. = ..()
+	ADD_TRAIT(L, TRAIT_NOSOFTCRIT, type)
 
 /datum/reagent/determination/on_mob_life(mob/living/carbon/M)
 	if(!significant && volume >= WOUND_DETERMINATION_SEVERE)
@@ -2222,6 +2221,8 @@
 	..()
 
 /datum/reagent/determination/on_mob_end_metabolize(mob/living/carbon/M)
+	REMOVE_TRAIT(M, TRAIT_NOSOFTCRIT, type)
+
 	if(significant)
 		var/stam_crash = 0
 		for(var/thing in M.all_wounds)

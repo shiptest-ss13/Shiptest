@@ -141,7 +141,7 @@
 	var/shooter = P.firer
 	if(!dam)
 		return
-	if(P.suppressed != SUPPRESSED_VERY)
+	if(P.suppressed < SUPPRESSED_VERY)
 		visible_message(span_danger("[src] is hit by \a [P]!"), null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src))
 		add_dent(WALL_DENT_SHOT)

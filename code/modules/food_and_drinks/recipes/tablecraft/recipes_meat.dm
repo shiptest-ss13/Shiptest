@@ -53,7 +53,6 @@
 	name = "Fish fingers"
 	reqs = list(
 		/datum/reagent/consumable/flour = 5,
-		/obj/item/food/bun = 1,
 		/obj/item/food/fishmeat = 1
 	)
 	result = /obj/item/food/fishfingers
@@ -63,7 +62,6 @@
 	name = "Sashimi"
 	reqs = list(
 		/datum/reagent/consumable/soysauce = 5,
-		/obj/item/food/spidereggs = 1,
 		/obj/item/food/fishmeat = 1
 	)
 	result = /obj/item/food/sashimi
