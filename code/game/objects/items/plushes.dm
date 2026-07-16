@@ -903,3 +903,145 @@
 		return
 	playsound(src, 'sound/items/mine_activate_short.ogg', 80, FALSE)
 
+
+/obj/item/toy/plush/shipgirl
+	name = "generic shipgirl"
+	var/longname = "generic shipgirl wants you demoted"
+	desc = "A special line of plushies created for the anniversary of the invention of the AU/W bluespace drive. Can you collect them all?"
+	var/desc_extra = "\
+	This one almost practically demands you be demoted! Perhaps a github issue report would suffice?"
+	icon = 'icons/obj/item/toys/shipgirl_plushes.dmi'
+	icon_state = "generic"
+	gender = FEMALE
+	///list of all the plushes, stored for description
+	var/static/list/total_list = list()
+
+/obj/item/toy/plush/shipgirl/Initialize()
+	. = ..()
+	if(!total_list)
+		var/list/all_shipgirls = list()
+		all_shipgirls = subtypesof(/obj/item/toy/plush/shipgirl)
+
+		for(var/obj/item/toy/plush/shipgirl/current_iteration as anything in all_shipgirls)
+			LAZYADD(total_list, current_iteration::longname)
+
+/obj/item/toy/plush/shipgirl/examine(mob/user)
+	. = ..()
+	. += span_notice("[desc_extra]")
+	. += span_italics("You can examine closer to see a tag listing the full collection of shipgirls.")
+
+/obj/item/toy/plush/shipgirl/examine_more(mob/user)
+	. = ..()
+	. += span_bold("\"Collect all the shipgirls!\"")
+	var/i = 1
+	for(var/current_iteration as anything in total_list)
+		var/is_plush_us = FALSE
+		if(src::longname == current_iteration)
+			is_plush_us = TRUE
+		. += span_notice("([is_plush_us ? "X" : " "]) - #[i] - [current_iteration]")
+		i++
+
+/obj/item/toy/plush/shipgirl/dwayne1
+	name = "Dwayne MK.I"
+	longname = "Mark.I Dwayne-class Long Range Mining Transport"
+	desc_extra = "\
+	Makosso-Warra's famous mining transport, the orignal variant was only designed for short expeditions on planets in the same system, and came with two subshuttles. Delays in mass production resulted in many of her sisters being repurposed into the Mark two.\n\
+	\nHere she is wearing a era correct N+S Shaft miner outfit. Just an miner."
+	icon_state = "dwayne-1"
+
+/obj/item/toy/plush/shipgirl/dwayne2
+	name = "Dwayne MK.II"
+	longname = "Mark.II Dwayne-class Long Range Mining Transport"
+	desc_extra = "\
+	Makosso-Warra's even more famous mining transport. Popular with independents and quite comfortable to boot; her safety record is very clean unlike many other vessels of her era.\n\
+	\nShe is wearing the most common outfit worn by Mark II captains. Her personal additions are a cigarette and a pair of glasses."
+	icon_state = "dwayne-2"
+
+/obj/item/toy/plush/shipgirl/shetland
+	name = "Shetland"
+	longname = "Shetland-class Multipurpose Frigate"
+	desc_extra = "\
+	Miskilamo's (As of 507 F.S.C.) flagship vessel. The original revision was known to be extremely flawed and strangely constructed, causing the famous 'curse of the shetland' mass hallucinations, yet it was the largest ship available for purchase for many back then.\n\
+	\nThis one is based on original revision, thus afflicted with the curse. They conceal their face with a helmet, hiding their identity for unknown reasons. They wear an oxygen tank, and captain duster, but <span class='italics'>are they even the captain?</span>" //before someone asks, span macros do NOT WORK ON DESCRIPTIONS. DO NOT ASK ME WHY.
+	icon_state = "shetland"
+	gender = NEUTER
+
+/obj/item/toy/plush/shipgirl/boyardee_a
+	name = "Boyardee"
+	longname = "Boyardee-class Entertainment Vessel"
+	desc_extra = "\
+	Ihejirika's suprise blowout success; when recycling old VI dropships into restaurant ships at a very low cost, Adaeze Ihejirika could have never imagined the amount of success and popularity it would bring. Long discontinued due to safety concerns, it's legacy lives on in Ihejirika's logo.\n\
+	\nShe's based off the ship's namesake, although some artistic liberties were taken, as the Roumain legend was most likely male. She wears a cute chef hat and red tie, though maybe she should put away the cutting knife?"
+	icon_state = "boyardee-a"
+
+/obj/item/toy/plush/shipgirl/boyardee_b
+	name = "Boyardee (B)"
+	longname = "Boyardee-class Type B Entertainment Vessel"
+	desc_extra = "\
+	Adaeze Ihejirika, attempting to capitalize on the success of the original Boyardee-class, made a variant recycled from Coalition hulls with a stronger focus on bartending. While not as successful as the orignal, it still made a good profit as the low cost of production meant that even at 'cheap prices' they still made a profit.\n\
+	\nShe's very similar to her sister, but wearing a beret and armor vest. But what's with the bulldog with slugs?"
+	icon_state = "boyardee-b"
+
+/obj/item/toy/plush/shipgirl/kugelblitz
+	name = "Kugelblitz"
+	longname = "Kugelblitz-class Experimental Vessel"
+	desc_extra = "\
+	A very strange vessel, the GEC custom Kugelblitz was designed to have a small vessel capable of flying with a supermatter, while also having the thrusters powered by it's exhaust. You may say it had 'mixed success,' but it proved important in the safety of much newer ships.\n\
+	\nShe's based off the unofficial mascot for the Kugelblitz during the era. She's adorned in GEC standard CE equipment, and looks prepped to do her job. You should say hi to her sister, Radi Shipscorch for her!"
+	icon_state = "kugelblitz"
+
+/obj/item/toy/plush/shipgirl/skipper
+	name = "Skipper"
+	longname = "Skipper-class Heavy Cruiser"
+	desc_extra = "\
+	The Skipper was smaller and less equipped to it's contemporaries, but was a common sight in the immediate aftermath of the ICW. Generally, MW attempted to make a general all-rounder to make up for the losses of many facilities. It has been succeeded by the much better Harrier-class.\n\
+	\nShe wears a standard (of the era) First Officer uniform, to show her less prestigious status than the Osprey (Who likely wears a full captain outfit!) She also looks very overworked, also very common for the era."
+	icon_state = "skipper"
+
+/obj/item/toy/plush/shipgirl/kilo
+	name = "Kilo"
+	longname = "Kilo-class Mining Ship"
+	desc_extra = "\
+	A considerably tiny vessel, its very small size has allowed it's continued production and various modifications well after the era it was designed in. Miskilamo currently owns the rights, but earlier iterations were popular with custom vessel builders.\n\
+	\nnShe's based off one of the original iterations donning an industrial spacesuit along with a pickaxe and blueprints; Perhaps she's planning something big on her Kilo. Got plans?"
+	icon_state = "kilo-st"
+
+/obj/item/toy/plush/shipgirl/solar
+	name = "Solar"
+	longname = "Solar-class Research Vessel"
+	desc_extra = "\
+	The Solar was a fairly standard research vessel, most common during the early era of ship miniaturization. It was abandoned due to much better hulls being made. Despite this, the used market kept it alive for way longer than perhaps it really should have been, giving it a very poor reputation. \n\
+	\nShe's based off her original iteration, so she wears a MW scientist outfit; turtleneck fitting snug on her."
+	icon_state = "solar"
+
+/obj/item/toy/plush/shipgirl/twinkleshine
+	name = "Twinkleshine"
+	longname = "Twinkleshine-class Battle Cruiser"
+	desc_extra = "\
+	The Twinkleshine was a downsized version of the Starfury Battle Cruisers, produced far too late for use in the ICW. It was often used to show the Coalition's might and unity, despite it's rapidly fracturing status of it. It still holds a large amount of prestige, despite it's retirement.\n\
+	\nShe's based off her most famous captain Rouge-11, wearing the iconic ICW-era captain outfit."
+	icon_state = "twinkleshine"
+
+/obj/item/toy/plush/shipgirl/prague
+	name = "Prague"
+	longname = "Prague-class Independent Research Vessel"
+	desc_extra = "\
+	A very, very, VERY old vessel, it actually preceeded the mass adoption of the AU/W Bluespace drive, instead being designed to be carried on a AU Drive equipped mothership. It was discontinued sometime in the early 400s.\n\
+	\nShe's based off an old myth carried by crews of Pragues, that a mysterious spirit would aid members of the crew in their sleep during times of great need."
+	icon_state = "prague"
+
+/obj/item/toy/plush/shipgirl/libertatia
+	name = "Libertatia"
+	longname = "Libertatia-class Hauler"
+	desc_extra = "\
+	An extremely cheap vessel by Miskilamo known for it's low profile and high speed, however the lack of space meant it suffered at many common civilian tasks; making it perfect for smuggling and piracy. Later revisions attempted to make it more appealing to common vessel buyers, but it could never shake off it's 'shady' reputation before discontinuation.\n\
+	\nShe's based off the early audience of the Libertatia, looking really suspicious. Her hat has a feather in it, an eyepatch on her right eye, and her jacket only has one sleeve on."
+	icon_state = "libertatia"
+
+/obj/item/toy/plush/shipgirl/riggs
+	name = "Riggs"
+	longname = "Riggs-class Sloop"
+	desc_extra = "\
+	A testament to KFP's engineering, the Riggs-class has had variants, modifications, and replacements, yet the original still lives on (As of 507 F.S.C.). It has had famous captains in the frontier, although its popularity has waned considerably in recent years.\n\
+	\nnShe is wearing the outfit worn by many famous Riggs captains. Her chassis is industrial, referencing the many industrial uses for the Riggs."
+	icon_state = "riggs-a"
