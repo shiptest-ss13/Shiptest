@@ -318,7 +318,7 @@
 		prefixed = current_ship.name,
 		class = current_ship.source_template.name,
 		mass = current_ship.shuttle_port.turf_count,
-		sensor_range = 4
+		sensor_range = current_ship.sensor_range
 	)
 	.["hasCloaking"] = !isnull(current_ship.ship_modules[SHIPMODULE_CLOAKING])
 	.["canFly"] = TRUE
