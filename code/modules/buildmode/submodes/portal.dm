@@ -1,5 +1,5 @@
 /datum/buildmode_mode/portal
-	key = "smite" // temp
+	key = "portal"
 
 	use_corner_selection = TRUE
 
@@ -46,7 +46,8 @@
 				alert("Not a portal!")
 				return
 		objholder = temp_path
-	BM.preview_selected_item(objholder)
+	if(!isnull(objholder))
+		BM.preview_selected_item(objholder)
 
 /datum/buildmode_mode/portal/handle_selected_area(client/c, params)
 	if(make_ladder)
