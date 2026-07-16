@@ -1,12 +1,12 @@
-/proc/create_ladder_pair(turf/source, turf/destinationl)
+/proc/create_ladder_pair(turf/source, turf/destination)
 	if(!istype(source) || !istype(destination))
 		return
-	var/obj/structure/ladder/top = new newtype(source)
-	var/obj/structure/ladder/bottom = new newtype(destination1)
-	if(!istype(P1)||!istype(P2))
+	var/obj/structure/ladder/top = new(source)
+	var/obj/structure/ladder/bottom = new(destination)
+	if(!istype(top)||!istype(bottom))
 		return
 	bottom.connect(top)
-	return list(P1, P2)
+	return list(top, bottom)
 
 // Basic ladder. By default links to the z-level above/below.
 /obj/structure/ladder

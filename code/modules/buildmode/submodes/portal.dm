@@ -23,7 +23,7 @@
 	..()
 
 /datum/buildmode_mode/portal/change_settings(client/target_client)
-	if(tgui_alert(target_client,"Make it a ladder instead?", "Ladderfy?", list("Yes", "No") == "Yes"))
+	if(tgui_alert(target_client,"Make it a ladder instead?", "Ladderfy?", list("Yes", "No")) == "Yes")
 		objholder = /obj/structure/ladder
 		make_ladder = TRUE
 	else
@@ -34,6 +34,7 @@
 		portal_accuracy = input(target_client, "Set portal accuracy. Lower is better. Minimum 0.", text("Input")) as num|null
 		if(portal_accuracy == null)
 			portal_accuracy = 0
+		var/atom/temp_path
 		var/target_path = input(target_client, "Enter typepath:", "Typepath", "/obj/effect/portal")
 		temp_path = text2path(target_path)
 		if(!ispath(temp_path))
@@ -51,4 +52,4 @@
 	if(make_ladder)
 		create_ladder_pair(get_turf(cornerA), get_turf(cornerB))
 	else
-		create_portal_pair(get_turf(cornerA), get_turf(cornerB), portal_lifespan, portal_accuracy, objholder, atmos_link_destination)
+		create_portal_pair(get_turf(cornerA), get_turf(cornerB), portal_lifespan, portal_accuracy, objholder)
