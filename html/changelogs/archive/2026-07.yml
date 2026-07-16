@@ -113,3 +113,15 @@
   - balance: Flipped Tables have 25 pass chance
   - bugfix: Tiles on Downed Transport and Hardliner Holdout
   - rscadd: Game panel spawn drop pod uses default pod
+2026-07-16:
+  Erika (Porting Fox), Nightred, TemporalOroboros:
+  - refactor: Mobcode is now ever so slightly more consistent
+  - refactor: Humans body temperature stabilization overhauled
+  - refactor: Humans will now receive temperature alerts before they taking damage
+  - refactor: Humans now take wounds and burn damage based on body temperature
+  - refactor: Watchers temperature shot reworked
+  rye-rice:
+  - balance: Royal Battery Acid is very very very slightly less toxic
+  - bugfix: Trickwine Status effects show the right sprites
+  - bugfix: Royal Battery Acid should now charge elzu
+  - bugfix: Fixes jump points sometimes failing
