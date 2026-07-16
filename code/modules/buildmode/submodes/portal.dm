@@ -31,7 +31,7 @@
 		portal_lifespan = input(target_client, "Set portal lifespan time. 0 for infinite", text("Input")) as num|null
 		if(portal_lifespan <= 0)
 			portal_lifespan = 0
-		portal_accuracy = input(target_client, "Set portal accuracy. Lower is better. Minimum 0.", text("Input")) as num|null
+		portal_accuracy = input(target_client, "Set portal accuracy. Lower is better.", text("Input")) as num|null
 		if(portal_accuracy == null)
 			portal_accuracy = 0
 		var/atom/temp_path
