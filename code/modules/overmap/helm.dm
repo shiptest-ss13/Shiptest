@@ -115,15 +115,19 @@
 	if(!jump_destination)
 		qdel(current_ship)
 		return
-	var/quote = pick(jump_destination.entry_quotes)
-	for(var/mob/looker as anything in GLOB.player_list)
-		if(current_ship.shuttle_port.is_in_shuttle_bounds(looker))
-			jump_announcement(jump_destination ? "Bluespace Jump Completed. Welcome to [jump_destination.name]" : "Bluespace Jump Completed", quote, current_ship.name, looker)
 
 	if(jump_coords)
 		current_ship.move_overmaps(jump_destination, jump_coords["x"], jump_coords["y"])
 	else
 		current_ship.move_overmaps(jump_destination)
+
+	var/quote
+	if(jump_destination.entry_quotes.len)
+		quote = pick(jump_destination.entry_quotes)
+	for(var/mob/looker as anything in GLOB.player_list)
+		if(current_ship.shuttle_port.is_in_shuttle_bounds(looker))
+			jump_announcement(jump_destination ? "Bluespace Jump Completed. Welcome to [jump_destination.name]" : "Bluespace Jump Completed", quote, current_ship.name, looker)
+
 	jump_destination = null
 	jump_state = JUMP_STATE_OFF
 	jump_coords = null
@@ -132,7 +136,7 @@
 /obj/machinery/computer/helm/proc/jump_announcement(message, quote, title = "Attention:", mob/living/target)
 	if(!message)
 		return
-	target.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[jump_destination.name] [jump_destination.faction ? "([jump_destination.faction.name]-controlled)" : ""]</u></span><br>[station_time_timestamp("hh:mm")]<br><i>\"[quote]\"</i>")
+	target.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[jump_destination.name] [jump_destination.faction ? "([jump_destination.faction.name]-controlled)" : ""]</u></span><br>[station_time_timestamp("hh:mm")][quote ? "<br><i>\"[quote]\"</i>" : ""]")
 	to_chat(target, "[span_minorannounce("<font color = red>[title]</font color><BR>[message]")]<BR>")
 	SEND_SOUND(target, sound('sound/effects/overmap/jump.ogg', volume = 50))
 
@@ -314,7 +318,7 @@
 		prefixed = current_ship.name,
 		class = current_ship.source_template.name,
 		mass = current_ship.shuttle_port.turf_count,
-		sensor_range = 4
+		sensor_range = current_ship.sensor_range
 	)
 	.["hasCloaking"] = !isnull(current_ship.ship_modules[SHIPMODULE_CLOAKING])
 	.["canFly"] = TRUE
