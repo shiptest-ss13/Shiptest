@@ -44,6 +44,7 @@
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
 	icon_state = "fireaxe"
 	base_icon_state = "fireaxe"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	force_wielded = 35
 
 /obj/item/melee/axe/bone  // Blatant imitation of the fireaxe, but made out of bone.

@@ -237,7 +237,7 @@
 		visible_message(span_warning("The focusing diamond in [src]'s eye looks intact!"))
 	..()
 
-/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/Life()
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	if(stat == CONSCIOUS)
 		consume_bait()

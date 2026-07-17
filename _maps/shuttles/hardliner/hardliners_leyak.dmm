@@ -437,6 +437,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/item/clothing/suit/toggle/hardliners,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
 "dZ" = (
@@ -723,16 +724,8 @@
 /area/ship/cargo)
 "hu" = (
 /obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = 5;
-	pixel_y = 8
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
 	pixel_x = 8;
 	pixel_y = -1
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = -4;
-	pixel_y = 7
 	},
 /obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
 	pixel_x = -3;
@@ -741,24 +734,31 @@
 /obj/item/clothing/head/soft/cybersun,
 /obj/item/clothing/head/soft/cybersun,
 /obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/gloves/combat,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
 /obj/item/clothing/under/syndicate/hardliners/jumpsuit,
 /obj/item/clothing/under/syndicate/hardliners/jumpsuit,
 /obj/item/clothing/under/syndicate/hardliners/jumpsuit,
-/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
-/obj/item/clothing/under/syndicate/hardliners,
 /obj/item/clothing/under/syndicate/hardliners,
 /obj/item/clothing/under/syndicate/hardliners,
 /obj/item/clothing/under/syndicate/hardliners,
 /obj/structure/closet/wall/red/directional/south,
+/obj/item/clothing/suit/toggle/hardliners{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/obj/item/clothing/suit/toggle/hardliners{
+	pixel_x = -8;
+	pixel_y = 7
+	},
+/obj/item/clothing/suit/toggle/hardliners{
+	pixel_x = 0;
+	pixel_y = -4
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm)
 "hw" = (
@@ -1651,6 +1651,7 @@
 	pixel_y = -1
 	},
 /obj/item/radio/headset/syndicate/alt/captain/cybersun,
+/obj/item/clothing/suit/toggle/hardliners,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "sM" = (
@@ -2983,6 +2984,7 @@
 	},
 /obj/item/radio/headset/syndicate/alt/captain/cybersun,
 /obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
+/obj/item/clothing/suit/toggle/hardliners,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Lg" = (
