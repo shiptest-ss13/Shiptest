@@ -1602,7 +1602,7 @@
 	width = 60;
 	disable_on_owner_ship_dock = 1;
 	dheight = 1;
-	name = "Colossus Port Beam Dock";
+	name = "Revenant Airlock Dock";
 	dir = 2
 	},
 /turf/template_noop,
@@ -1754,18 +1754,16 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "uB" = (
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/docking_port/mobile{
-	dir = 4;
-	launch_status = 0;
-	port_direction = 2;
-	preferred_direction = 4
+	port_direction = 4;
+	preferred_direction = 4;
+	dir = 1;
+	launch_status = 0
 	},
-/obj/machinery/door/poddoor{
-	dir = 8;
-	id = "revenantcargo"
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/cargo)
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/central)
 "uL" = (
 /obj/effect/turf_decal/siding/black/corner{
 	dir = 8
@@ -2564,6 +2562,18 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/canteen)
+"FS" = (
+/obj/docking_port/stationary{
+	dwidth = 30;
+	height = 60;
+	width = 60;
+	disable_on_owner_ship_dock = 1;
+	dheight = 1;
+	name = "Revenant Cargo Dock";
+	dir = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "Ga" = (
 /obj/effect/turf_decal/siding/black{
 	dir = 1
@@ -2658,8 +2668,7 @@
 /obj/structure/closet/crate/secure{
 	desc = "A secure crate. This one is particularly large.";
 	name = "field equipment";
-	storage_capacity = 40;
-	req_access_txt = "48"
+	storage_capacity = 40
 	},
 /obj/item/storage/backpack/duffelbag/syndie/c4{
 	name = "Demolition charges";
@@ -4411,7 +4420,7 @@ Vn
 Vn
 Vn
 Vn
-Vn
+FS
 Vn
 Vn
 Vn
@@ -4442,7 +4451,7 @@ lB
 MB
 sL
 sL
-uB
+sL
 sL
 au
 lB
@@ -4920,7 +4929,7 @@ Qi
 oY
 UP
 eg
-CW
+uB
 sq
 "}
 (18,1,1) = {"
