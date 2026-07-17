@@ -75,37 +75,36 @@
 
 /datum/action/innate/liz_lighter
 	name = "Ignite"
-	desc = "(Requires you to drink alcohol beforehand)"
+	desc = "Exhale a small flame from your mouth."
 	check_flags = AB_CHECK_CONSCIOUS
 	button_icon_state = "fire"
 	icon_icon = 'icons/effects/fire.dmi'
 	background_icon_state = "bg_alien"
+	var/cooldown_time = 3 MINUTES
+	var/last_use = 0
 
-/datum/action/innate/liz_lighter/proc/get_alcohol()
-	var/obj/item/organ/stomach/belly = owner.getorganslot(ORGAN_SLOT_STOMACH)
-	if(!belly)
-		return null
-	for(var/datum/reagent/R in belly.reagents.reagent_list)
-		if(istype(R, /datum/reagent/consumable/ethanol))
-			return R
-	return null
 
 /datum/action/innate/liz_lighter/Activate()
 	var/mob/living/carbon/human/H = owner
+	// Cooldown check
+	if(world.time < last_use + cooldown_time)
+		to_chat(H, span_warning("Your throat is still sore. You can't ignite another flame yet."))
+		return
+	// Mouth covering check
+	if(H.wear_mask || (H.head && H.head.flags_inv & HIDEFACE))
+		to_chat(H, span_warning("Your mouth is covered. You can't ignite a flame."))
+		return
 	var/obj/item/lighter/liz/N = new(H)
 	if(H.put_in_hands(N))
+		last_use = world.time
 		to_chat(H, span_notice("You ignite a small flame in your mouth."))
-		var/datum/reagent/alcohol = get_alcohol()
-		if(alcohol)
-			var/obj/item/organ/stomach/belly = owner.getorganslot(ORGAN_SLOT_STOMACH)
-			belly.reagents.remove_reagent(alcohol.type, 4)
 	else
 		qdel(N)
 		to_chat(H, span_warning("You don't have any free hands."))
 
 /datum/action/innate/liz_lighter/IsAvailable()
 	if(..())
-		return !!get_alcohol()
+		return TRUE
 	return FALSE
 
 /datum/species/lizard/random_name(gender,unique,lastname)
