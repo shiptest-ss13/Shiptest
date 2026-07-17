@@ -57,6 +57,7 @@
 	)
 
 	prosthetic_style = /datum/sprite_accessory/body/prosthetic/elzuouse
+	digitigrade_style = /datum/sprite_accessory/body/digitigrade/elzuose
 
 	var/current_color
 	var/EMPeffect = FALSE
