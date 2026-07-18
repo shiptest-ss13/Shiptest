@@ -11,29 +11,29 @@
 	desc = "If left untreated subject will regurgitate butterflies."
 	severity = DISEASE_SEVERITY_MINOR
 
-/datum/disease/anxiety/stage_act()
+/datum/disease/anxiety/stage_act(seconds_per_tick, times_fired)
 	..()
 	switch(stage)
 		if(2) //also changes say, see say.dm
-			if(prob(5))
+			if(SPT_PROB(2.5, seconds_per_tick))
 				to_chat(affected_mob, span_notice("You feel anxious."))
 		if(3)
-			if(prob(10))
+			if(SPT_PROB(5, seconds_per_tick))
 				to_chat(affected_mob, span_notice("Your stomach flutters."))
-			if(prob(5))
+			if(SPT_PROB(2.5, seconds_per_tick))
 				to_chat(affected_mob, span_notice("You feel panicky."))
-			if(prob(2))
+			if(SPT_PROB(1, seconds_per_tick))
 				to_chat(affected_mob, span_danger("You're overtaken with panic!"))
 				affected_mob.confused += (rand(2,3))
 		if(4)
-			if(prob(10))
+			if(SPT_PROB(5, seconds_per_tick))
 				to_chat(affected_mob, span_danger("You feel butterflies in your stomach."))
-			if(prob(5))
+			if(SPT_PROB(2.5, seconds_per_tick))
 				affected_mob.visible_message(span_danger("[affected_mob] stumbles around in a panic."), \
 												span_userdanger("You have a panic attack!"))
 				affected_mob.confused += (rand(6,8))
 				affected_mob.set_timed_status_effect(rand(12 SECONDS, 16 SECONDS), /datum/status_effect/jitter, only_if_higher = TRUE)
-			if(prob(2))
+			if(SPT_PROB(1, seconds_per_tick))
 				affected_mob.visible_message(span_danger("[affected_mob] coughs up butterflies!"), \
 													span_userdanger("You cough up butterflies!"))
 				new /mob/living/simple_animal/butterfly(affected_mob.loc)
