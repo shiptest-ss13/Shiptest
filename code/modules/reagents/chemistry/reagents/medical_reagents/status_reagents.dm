@@ -14,7 +14,7 @@
 	color = "#5096C8"
 	taste_description = "acid"
 
-/datum/reagent/medicine/mutadone/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/mutadone/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	M.adjust_timed_status_effect(-100 SECONDS * REM, /datum/status_effect/jitter)
 	if(M.has_dna())
 		M.dna.remove_all_mutations(list(MUT_NORMAL, MUT_EXTRA), TRUE)
@@ -27,16 +27,16 @@
 	color = "#00B4C8"
 	taste_description = "raw egg"
 
-/datum/reagent/medicine/antihol/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/antihol/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	M.remove_status_effect(/datum/status_effect/dizziness)
 	M.drowsyness = 0
 	M.slurring = 0
 	M.confused = 0
 	M.reagents.remove_all_type(/datum/reagent/consumable/ethanol, 3*REM, 0, 1)
-	M.adjustToxLoss(-0.2*REM, 0)
+	M.adjustToxLoss(-0.1 * REM * seconds_per_tick, 0)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		H.adjust_drunk_effect(-10)
+		H.adjust_drunk_effect(-5 * seconds_per_tick)
 	..()
 	. = 1
 
@@ -47,9 +47,9 @@
 	color = "#64FFE6"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/diphenhydramine/on_mob_life(mob/living/carbon/M)
-	if(prob(10))
-		M.drowsyness += 1
+/datum/reagent/medicine/diphenhydramine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	if(SPT_PROB(5, seconds_per_tick))
+		M.drowsyness += 0.5 * seconds_per_tick
 	M.adjust_timed_status_effect(-12 SECONDS, /datum/status_effect/jitter)
 	holder.remove_reagent(/datum/reagent/toxin/histamine,3)
 	..()
@@ -62,17 +62,17 @@
 	color = "#27870a"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/haloperidol/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/haloperidol/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	for(var/datum/reagent/drug/R in M.reagents.reagent_list)
-		M.reagents.remove_reagent(R.type,5)
-	M.drowsyness += 2
+		M.reagents.remove_reagent(R.type, 2.5 * seconds_per_tick)
+	M.drowsyness += 1 * seconds_per_tick
 	if(M.get_timed_status_effect_duration(/datum/status_effect/jitter) >= 6 SECONDS)
 		M.adjust_timed_status_effect(-6 SECONDS * REM, /datum/status_effect/jitter)
 	if (M.hallucination >= 5)
-		M.hallucination -= 5
-	if(prob(20))
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REM, 50)
-	M.adjustStaminaLoss(2.5*REM, 0)
+		M.hallucination -= 2.5 * seconds_per_tick
+	if(SPT_PROB(10, seconds_per_tick))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.5 * REM * seconds_per_tick, 50)
+	M.adjustStaminaLoss(1.25 * REM * seconds_per_tick, 0)
 	..()
 	return TRUE
 
@@ -94,48 +94,63 @@
 	REMOVE_TRAIT(M, TRAIT_SLEEPIMMUNE, type)
 	..()
 
-/datum/reagent/medicine/modafinil/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/modafinil/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(!overdosed) // We do not want any effects on OD
 		overdose_threshold = overdose_threshold + rand(-10,10)/10 // for extra fun
 		M.AdjustAllImmobility(-5)
-		M.adjustStaminaLoss(-0.5*REM, 0)
+		M.adjustStaminaLoss(-0.25 * REM * seconds_per_tick, 0)
 		M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, max_duration = 20 SECONDS)
-		metabolization_rate = 0.01 * REAGENTS_METABOLISM * rand(5,20) // randomizes metabolism between 0.02 and 0.08 per tick
+		metabolization_rate = 0.01 * REM * rand(5,20) // randomizes metabolism between 0.02 and 0.08 per tick
 		. = TRUE
 	..()
 
 /datum/reagent/medicine/modafinil/overdose_start(mob/living/M)
 	to_chat(M, span_userdanger("You feel awfully out of breath and jittery!"))
-	metabolization_rate = 0.025 * REAGENTS_METABOLISM // sets metabolism to 0.01 per tick on overdose
+	metabolization_rate = 0.025 * REM // sets metabolism to 0.01 per tick on overdose
 
-/datum/reagent/medicine/modafinil/overdose_process(mob/living/M)
+/datum/reagent/medicine/modafinil/on_mob_life(mob/living/carbon/metabolizer, delta_time, times_fired)
+	if(!overdosed) // We do not want any effects on OD
+		overdose_threshold = overdose_threshold + ((rand(-10, 10) / 10) * REM * delta_time) // for extra fun
+		metabolizer.AdjustAllImmobility(-5 * REM * delta_time)
+		metabolizer.adjustStaminaLoss(-0.5 * REM * delta_time, 0)
+		metabolizer.adjust_timed_status_effect(1 SECONDS, /datum/status_effect/jitter)
+		metabolization_rate = 0.005 * REAGENTS_METABOLISM * rand(5, 20) // randomizes metabolism between 0.02 and 0.08 per second
+		. = TRUE
+	..()
+
+/datum/reagent/medicine/modafinil/overdose_start(mob/living/M)
+	to_chat(M, "<span class='userdanger'>You feel awfully out of breath and jittery!</span>")
+	metabolization_rate = 0.025 * REAGENTS_METABOLISM // sets metabolism to 0.005 per second on overdose
+
+/datum/reagent/medicine/modafinil/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	overdose_progress++
 	switch(overdose_progress)
 		if(1 to 40)
-			M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, max_duration = 40 SECONDS)
-			M.stuttering = min(M.stuttering+1, 10)
-			M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-			if(prob(50))
+			M.adjust_timed_status_effect(4 SECONDS, /datum/status_effect/jitter)
+			M.stuttering = min(M.stuttering + (1 * REM * seconds_per_tick), 10)
+			M.adjust_timed_status_effect(4 SECONDS, /datum/status_effect/dizziness)
+			if(SPT_PROB(30, seconds_per_tick))
 				M.losebreath++
 		if(41 to 80)
-			M.adjustOxyLoss(0.1*REM, 0)
-			M.adjustStaminaLoss(0.1*REM, 0)
-			M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, max_duration = 40 SECONDS)
-			M.stuttering = min(M.stuttering+1, 20)
-			M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-			if(prob(50))
+			M.adjustOxyLoss(0.1 * REM * seconds_per_tick, 0)
+			M.adjustStaminaLoss(0.1 * REM * seconds_per_tick, 0)
+			M.adjust_timed_status_effect(10 SECONDS, /datum/status_effect/jitter)
+			M.stuttering = min(M.stuttering + (1 * REM * seconds_per_tick), 20)
+			M.adjust_timed_status_effect(10 SECONDS, /datum/status_effect/dizziness)
+			if(SPT_PROB(30, seconds_per_tick))
 				M.losebreath++
-			if(prob(20))
-				to_chat(M, span_userdanger("You have a sudden fit!"))
+			if(SPT_PROB(10, seconds_per_tick))
+				to_chat(M, "<span class='userdanger'>You have a sudden fit!</span>")
+				M.emote("moan")
 				M.Paralyze(20) // you should be in a bad spot at this point unless epipen has been used
 		if(81)
-			to_chat(M, span_userdanger("You feel too exhausted to continue!")) // at this point you will eventually die unless you get charcoal
-			M.adjustOxyLoss(0.1*REM, 0)
-			M.adjustStaminaLoss(0.1*REM, 0)
+			to_chat(M, "<span class='userdanger'>You feel too exhausted to continue!</span>") // at this point you will eventually die unless you get charcoal
+			M.adjustOxyLoss(0.1 * REM * seconds_per_tick, 0)
+			M.adjustStaminaLoss(0.1 * REM * seconds_per_tick, 0)
 		if(82 to INFINITY)
-			M.Sleeping(100)
-			M.adjustOxyLoss(1.5*REM, 0)
-			M.adjustStaminaLoss(1.5*REM, 0)
+			M.Sleeping(100 * REM * seconds_per_tick)
+			M.adjustOxyLoss(1.5 * REM * seconds_per_tick, 0)
+			M.adjustStaminaLoss(1.5 * REM * seconds_per_tick, 0)
 	..()
 	return TRUE
 
@@ -144,19 +159,19 @@
 	description = "Increases resistance to stuns as well as reducing drowsiness and hallucinations."
 	color = "#FF00FF"
 
-/datum/reagent/medicine/synaptizine/on_mob_life(mob/living/carbon/M)
-	M.drowsyness = max(M.drowsyness-5, 0)
-	M.AdjustStun(-20)
-	M.AdjustKnockdown(-20)
-	M.AdjustUnconscious(-20)
-	M.AdjustImmobilized(-20)
-	M.AdjustParalyzed(-20)
+/datum/reagent/medicine/synaptizine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	M.drowsyness = max(M.drowsyness - (5 * REM * seconds_per_tick), 0)
+	M.AdjustStun(-20 * REM * seconds_per_tick)
+	M.AdjustKnockdown(-20 * REM * seconds_per_tick)
+	M.AdjustUnconscious(-20 * REM * seconds_per_tick)
+	M.AdjustImmobilized(-20 * REM * seconds_per_tick)
+	M.AdjustParalyzed(-20 * REM * seconds_per_tick)
 	if(holder.has_reagent(/datum/reagent/toxin/mindbreaker))
-		holder.remove_reagent(/datum/reagent/toxin/mindbreaker, 5)
-	M.hallucination = max(0, M.hallucination - 10)
-	if(prob(30))
+		holder.remove_reagent(/datum/reagent/toxin/mindbreaker, 5 * REM * seconds_per_tick)
+	M.hallucination = max(M.hallucination - (10 * REM * seconds_per_tick), 0)
+	if(SPT_PROB(16, seconds_per_tick))
 		M.adjustToxLoss(1, 0)
-		. = 1
+		. = TRUE
 	..()
 
 /datum/reagent/medicine/synaphydramine
@@ -164,16 +179,16 @@
 	description = "Reduces drowsiness, hallucinations, and Histamine from body."
 	color = "#EC536D" // rgb: 236, 83, 109
 
-/datum/reagent/medicine/synaphydramine/on_mob_life(mob/living/carbon/M)
-	M.drowsyness = max(M.drowsyness-5, 0)
+/datum/reagent/medicine/synaphydramine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	M.drowsyness = max(M.drowsyness - (5 * REM * seconds_per_tick), 0)
 	if(holder.has_reagent(/datum/reagent/toxin/mindbreaker))
-		holder.remove_reagent(/datum/reagent/toxin/mindbreaker, 5)
+		holder.remove_reagent(/datum/reagent/toxin/mindbreaker, 5 * REM * seconds_per_tick)
 	if(holder.has_reagent(/datum/reagent/toxin/histamine))
-		holder.remove_reagent(/datum/reagent/toxin/histamine, 5)
-	M.hallucination = max(0, M.hallucination - 10)
-	if(prob(30))
+		holder.remove_reagent(/datum/reagent/toxin/histamine, 5 * REM * seconds_per_tick)
+	M.hallucination = max(M.hallucination - (10 * REM * seconds_per_tick), 0)
+	if(SPT_PROB(16, seconds_per_tick))
 		M.adjustToxLoss(1, 0)
-		. = 1
+		. = TRUE
 	..()
 
 
@@ -221,7 +236,7 @@
 	L.recoil_effect /= 0.8
 	..()
 
-/datum/reagent/medicine/psicodine/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/psicodine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	M.adjust_timed_status_effect(-6 SECONDS * REM, /datum/status_effect/jitter)
 	M.adjust_timed_status_effect(-12 SECONDS * REM, /datum/status_effect/dizziness)
 	M.confused = max(0, M.confused-6)
@@ -234,7 +249,7 @@
 	..()
 	. = 1
 
-/datum/reagent/medicine/psicodine/overdose_process(mob/living/M)
+/datum/reagent/medicine/psicodine/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	M.hallucination = min(max(0, M.hallucination + 5), 60)
 	M.adjustToxLoss(1, 0)
 	..()
@@ -258,19 +273,19 @@
 	REMOVE_TRAIT(L, TRAIT_STUNRESISTANCE, type)
 	..()
 
-/datum/reagent/medicine/ephedrine/on_mob_life(mob/living/carbon/M)
-	if(prob(20) && iscarbon(M))
+/datum/reagent/medicine/ephedrine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	if(SPT_PROB(10, seconds_per_tick) && iscarbon(M))
 		var/obj/item/I = M.get_active_held_item()
 		if(I && M.dropItemToGround(I))
 			to_chat(M, span_notice("Your hands spaz out and you drop what you were holding!"))
 			M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 
 	M.AdjustAllImmobility(-20)
-	M.adjustStaminaLoss(-1*REM, FALSE)
+	M.adjustStaminaLoss(-0.5 * REM * seconds_per_tick, FALSE)
 	..()
 	return TRUE
 
-/datum/reagent/medicine/ephedrine/overdose_process(mob/living/M)
+/datum/reagent/medicine/ephedrine/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	if(prob(2) && iscarbon(M))
 		var/datum/disease/D = new /datum/disease/heart_failure
 		M.ForceContractDisease(D)
