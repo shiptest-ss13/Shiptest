@@ -1080,14 +1080,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(BODY_FRONT_LAYER)
 			return "FRONT"
 
-/datum/species/proc/spec_life(mob/living/carbon/human/H)
+/datum/species/proc/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	if(HAS_TRAIT(H, TRAIT_NOBREATH))
 		H.setOxyLoss(0)
 		H.losebreath = 0
 
 		var/takes_crit_damage = (!HAS_TRAIT(H, TRAIT_NOCRITDAMAGE) && H.stat != DEAD)
 		if((H.health < H.crit_threshold) && takes_crit_damage)
-			H.adjustBruteLoss(1)
+			H.adjustBruteLoss(0.5 * seconds_per_tick)
 	if(flying_species)
 		HandleFlight(H)
 
@@ -1326,11 +1326,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 // Return 0 if it should do normal processing too
 // Return 1 if it's effect is handled entirely by species code
 // Other return values will cause weird badness
-/datum/species/proc/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+/datum/species/proc/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	SHOULD_CALL_PARENT(TRUE)
 
 	if(chem.type == exotic_blood)
-		H.blood_volume = min(H.blood_volume + round(chem.volume, 0.1), BLOOD_VOLUME_MAXIMUM)
+		H.blood_volume = min(H.blood_volume + round(chem.volume, 0.05) * seconds_per_tick, BLOOD_VOLUME_MAXIMUM)
 		H.reagents.del_reagent(chem.type)
 		return TRUE
 	//This handles dumping unprocessable reagents.
@@ -1362,7 +1362,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 ////////
 //LIFE//
 ////////
-/datum/species/proc/handle_digestion(mob/living/carbon/human/H)
+/datum/species/proc/handle_digestion(mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
 		return //hunger is for BABIES
 
@@ -1382,19 +1382,20 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			H.satiety = -MAX_SATIETY
 		else if(H.satiety < 0)
 			H.satiety++
-			if(prob(round(-H.satiety/40)))
+			if(SPT_PROB(round(-H.satiety/77), seconds_per_tick))
 				H.adjust_timed_status_effect(5 SECONDS, /datum/status_effect/jitter)
 			hunger_rate = 3 * HUNGER_FACTOR
 		hunger_rate *= H.physiology.hunger_mod
-		H.adjust_nutrition(-hunger_rate)
+		H.adjust_nutrition(-hunger_rate * seconds_per_tick)
 
 
-	if (H.nutrition > NUTRITION_LEVEL_FULL)
-		if(H.overeatduration < 600) //capped so people don't take forever to unfat
-			H.overeatduration++
+	if(H.nutrition > NUTRITION_LEVEL_FULL)
+		if(H.overeatduration < 20 MINUTES) //capped so people don't take forever to unfat
+			H.overeatduration = min(H.overeatduration + (1 SECONDS * seconds_per_tick), 20 MINUTES)
+
 	else
-		if(H.overeatduration > 1)
-			H.overeatduration -= 2 //doubled the unfat rate
+		if(H.overeatduration > 0)
+			H.overeatduration = max(H.overeatduration - (2 SECONDS * seconds_per_tick), 0) //doubled the unfat rate
 
 	//metabolism change
 	if(H.nutrition > NUTRITION_LEVEL_FED && H.satiety > 80)
@@ -1434,36 +1435,42 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/update_health_hud(mob/living/carbon/human/H)
 	return 0
 
-/datum/species/proc/handle_mutations_and_radiation(mob/living/carbon/human/H)
-	if(HAS_TRAIT(H, TRAIT_RADIMMUNE))
-		H.radiation = 0
+/**
+ * Species based handling for irradiation
+ *
+ * Arguments:
+ * - [source][/mob/living/carbon/human]: The mob requesting handling
+ * - seconds_per_tick: The amount of time that has passed since the last tick
+ * - times_fired: The number of times SSmobs has fired
+ */
+/datum/species/proc/handle_mutations_and_radiation(mob/living/carbon/human/source, seconds_per_tick, times_fired)
+	if(HAS_TRAIT(source, TRAIT_RADIMMUNE))
+		source.radiation = 0
 		return TRUE
 
 	. = FALSE
-	var/radiation = H.radiation
+	var/radiation = source.radiation
+	if(radiation > RAD_MOB_KNOCKDOWN && SPT_PROB(RAD_MOB_KNOCKDOWN_PROB, seconds_per_tick))
+		if(!source.IsParalyzed())
+			source.emote("collapse")
+		source.Paralyze(RAD_MOB_KNOCKDOWN_AMOUNT)
+		to_chat(source, "<span class='danger'>You feel weak.</span>")
 
-	if(radiation > RAD_MOB_KNOCKDOWN && prob(RAD_MOB_KNOCKDOWN_PROB))
-		if(!H.IsParalyzed())
-			H.emote("collapse")
-		H.Paralyze(RAD_MOB_KNOCKDOWN_AMOUNT)
-		to_chat(H, span_danger("You feel weak."))
+	if(radiation > RAD_MOB_VOMIT && SPT_PROB(RAD_MOB_VOMIT_PROB, seconds_per_tick))
+		source.vomit(10, TRUE)
 
-	if(radiation > RAD_MOB_VOMIT && prob(RAD_MOB_VOMIT_PROB))
-		H.vomit(10, TRUE)
+	/*
+	if(radiation > RAD_MOB_MUTATE && SPT_PROB(RAD_MOB_MUTATE_PROB, seconds_per_tick))
+		to_chat(source, "<span class='danger'>You mutate!</span>")
+		source.easy_randmut(NEGATIVE + MINOR_NEGATIVE)
+		source.emote("gasp")
+		source.domutcheck()
 
-	if(radiation > RAD_MOB_SICKNESS)
-		if(prob(15))
-			var/num = rand(1,4)
-			switch(num)
-				if(1)
-					to_chat(H, span_danger("You're finding it hard to keep standing."))
-				if(2)
-					to_chat(H, span_danger("You feel a pain in your head."))
-				if(3)
-					to_chat(H, span_danger("You feel sickly."))
-				if(4)
-					to_chat(H, span_danger("You feel like the world is spinning."))
-
+	if(radiation > RAD_MOB_HAIRLOSS && SPT_PROB(RAD_MOB_HAIRLOSS_PROB, seconds_per_tick))
+		if(!(source.hairstyle == "Bald") && (HAIR in species_traits))
+			to_chat(source, "<span class='danger'>Your hair starts to fall out in clumps...</span>")
+			addtimer(CALLBACK(src, go_bald, source), 5 SECONDS)
+	*/
 
 //////////////////
 // ATTACK PROCS //
@@ -1831,24 +1838,296 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 //////////////////////////
 
 /**
- * Enviroment handler for species
+ * Environment handler for species
  *
  * vars:
- * * environment The environment gas mix
- * * H The mob we will stabilize
+ * * environment (required) The environment gas mix
+ * * humi (required)(type: /mob/living/carbon/human) The mob we will target
  */
-/datum/species/proc/handle_environment(datum/gas_mixture/environment, mob/living/carbon/human/H)
-	var/areatemp = H.get_temperature(environment)
+/datum/species/proc/handle_environment(datum/gas_mixture/environment, mob/living/carbon/human/target_human, seconds_per_tick, times_fired)
+	handle_environment_pressure(environment, target_human, seconds_per_tick, times_fired)
+	handle_environment_gasses(environment, target_human, seconds_per_tick, times_fired)
 
-	if(H.stat != DEAD) // If you are dead your body does not stabilize naturally
-		bodytemp_natural_stabilization = natural_bodytemperature_stabilization(environment, H)
-
-	if(!H.on_fire || areatemp > H.bodytemperature) // If we are not on fire or the area is hotter
-		bodytemp_environment_change = H.adjust_bodytemperature((areatemp - H.bodytemperature), use_insulation=TRUE, use_steps=TRUE, hardsuit_fix=bodytemp_normal - H.bodytemperature)
-
-	if(H.check_for_seal())
+/**
+ * Body temperature handler for species
+ *
+ * These procs manage body temp, bamage, and alerts
+ * Some of these will still fire when not alive to balance body temp to the room temp.
+ * vars:
+ * * humi (required)(type: /mob/living/carbon/human) The mob we will target
+ */
+/datum/species/proc/handle_body_temperature(mob/living/carbon/human/target_human, seconds_per_tick, times_fired)
+	//when in a cryo unit we suspend all natural body regulation
+	if(istype(target_human.loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 		return
 
+	//Only stabilise core temp when alive and not in statis
+	if(target_human.stat < DEAD && !IS_IN_STASIS(target_human))
+		body_temperature_core(target_human, seconds_per_tick, times_fired)
+
+	//These do run in statis
+	body_temperature_skin(target_human, seconds_per_tick, times_fired)
+	body_temperature_alerts(target_human, seconds_per_tick, times_fired)
+
+	//Do not cause more damage in statis
+	if(!IS_IN_STASIS(target_human))
+		body_temperature_damage(target_human, seconds_per_tick, times_fired)
+
+/**
+ * Used to stabilize the core temperature back to normal on living mobs
+ *
+ * The metabolisim heats up the core of the mob trying to keep it at the normal body temp
+ * vars:
+ * * humi (required) The mob we will stabilize
+ */
+/datum/species/proc/body_temperature_core(mob/living/carbon/human/target_human, seconds_per_tick, times_fired)
+	var/natural_change = get_temp_change_amount(target_human.get_body_temp_normal() - target_human.coretemperature, 0.06 * seconds_per_tick)
+	target_human.adjust_coretemperature(target_human.metabolism_efficiency * natural_change)
+
+/**
+ * Used to normalize the skin temperature on living mobs
+ *
+ * The core temp effects the skin, then the enviroment effects the skin, then we refect that back to the core.
+ * This happens even when dead so bodies revert to room temp over time.
+ * vars:
+ * * humi (required) The mob we will targeting
+ * - seconds_per_tick: The amount of time that is considered as elapsing
+ * - times_fired: The number of times SSmobs has fired
+ */
+/datum/species/proc/body_temperature_skin(mob/living/carbon/human/target_human, seconds_per_tick, times_fired)
+
+	// change the core based on the skin temp
+	var/skin_core_diff = target_human.bodytemperature - target_human.coretemperature
+	// change rate of 0.04 per second to be slightly below area to skin change rate and still have a solid curve
+	var/skin_core_change = get_temp_change_amount(skin_core_diff, 0.04 * seconds_per_tick)
+
+	target_human.adjust_coretemperature(skin_core_change)
+
+	// get the enviroment details of where the mob is standing
+	var/datum/gas_mixture/environment = target_human.return_air()
+
+	if(!environment) // if there is no environment (nullspace) drop out here.
+		return
+
+	// Get the temperature of the environment for area
+	var/area_temp = target_human.get_temperature(environment)
+
+
+	// Get the insulation value based on the area's temp
+	var/thermal_protection = target_human.get_insulation_protection(area_temp)
+
+	// Changes to the skin temperature based on the area
+	var/area_skin_diff = area_temp - target_human.bodytemperature
+	if(!target_human.on_fire || area_skin_diff > 0)
+		// change rate of 0.05 as area temp has large impact on the surface
+		var/area_skin_change = get_temp_change_amount(area_skin_diff, 0.05 * seconds_per_tick)
+
+		// We need to apply the thermal protection of the clothing when applying area to surface change
+		// If the core bodytemp goes over the normal body temp you are overheating and becom sweaty
+		// This will cause the insulation value of any clothing to reduced in effect (70% normal rating)
+		// we add 10 degree over normal body temp before triggering as thick insulation raises body temp
+		if(target_human.get_body_temp_normal(apply_change=FALSE) + 10 < target_human.coretemperature)
+			// we are overheating and sweaty insulation is not as good reducing thermal protection
+			area_skin_change = (1 - (thermal_protection * 0.7)) * area_skin_change
+		else
+			area_skin_change = (1 - thermal_protection) * area_skin_change
+
+		target_human.adjust_bodytemperature(area_skin_change)
+
+	// Core to skin temp transfer, when not on fire
+	if(!target_human.on_fire)
+		// Get the changes to the skin from the core temp
+		var/core_skin_diff = target_human.coretemperature - target_human.bodytemperature
+		// change rate of 0.045 to reflect temp back to the skin at the slight higher rate then core to skin
+		var/core_skin_change = (1 + thermal_protection) * get_temp_change_amount(core_skin_diff, 0.045 * seconds_per_tick)
+
+		// We do not want to over shoot after using protection
+		if(core_skin_diff > 0)
+			core_skin_change = min(core_skin_change, core_skin_diff)
+		else
+			core_skin_change = max(core_skin_change, core_skin_diff)
+
+		target_human.adjust_bodytemperature(core_skin_change)
+
+/**
+ * Used to set alerts and debuffs based on body temperature
+ * vars:
+ * * humi (required) The mob we will targeting
+ */
+/datum/species/proc/body_temperature_alerts(mob/living/carbon/human/target_human)
+	var/body_temp = target_human.bodytemperature
+	// Body temperature is too hot, and we do not have resist traits
+	if(target_human.bodytemperature > max_temp_comfortable && !HAS_TRAIT(target_human, TRAIT_RESISTHEAT))
+		// Clear cold mood and apply hot mood
+		SEND_SIGNAL(target_human, COMSIG_CLEAR_MOOD_EVENT, "cold")
+		SEND_SIGNAL(target_human, COMSIG_ADD_MOOD_EVENT, "hot", /datum/mood_event/hot)
+
+		//Remove any slowdown from the cold.
+		target_human.remove_movespeed_modifier(/datum/movespeed_modifier/cold)
+		// display alerts based on how hot it is
+		if(body_temp > bodytemp_heat_damage_limit)
+			switch(calculate_burn_damage(target_human))
+				if(2 to INFINITY)
+					target_human.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 3)
+				if(0 to 2)
+					target_human.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
+		else
+			if(body_temp < (bodytemp_heat_damage_limit - 3))
+				target_human.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 1)
+			else
+				target_human.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
+
+	// Body temperature is too cold, and we do not have resist traits
+	else if(target_human.bodytemperature < bodytemp_cold_damage_limit && !HAS_TRAIT(target_human, TRAIT_RESISTCOLD))
+		// clear any hot moods and apply cold mood
+		SEND_SIGNAL(target_human, COMSIG_CLEAR_MOOD_EVENT, "hot")
+		SEND_SIGNAL(target_human, COMSIG_ADD_MOOD_EVENT, "cold", /datum/mood_event/cold)
+		// Apply cold slow down
+		target_human.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/cold, multiplicative_slowdown = ((bodytemp_cold_damage_limit - body_temp) / COLD_SLOWDOWN_FACTOR))
+		// Display alerts based how cold it is
+		if(body_temp < bodytemp_cold_damage_limit - 7)
+			target_human.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 3)
+		else if(body_temp < bodytemp_cold_damage_limit)
+			target_human.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
+		else if(body_temp < (bodytemp_cold_damage_limit + 5))
+			target_human.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 1)
+		else
+			target_human.throw_alert("tempfeel", /atom/movable/screen/alert/chilly)
+
+	// We are not to hot or cold, remove status and moods
+	else
+		target_human.clear_alert("tempfeel")
+		target_human.clear_alert("tempdamage")
+		target_human.remove_movespeed_modifier(/datum/movespeed_modifier/cold)
+		SEND_SIGNAL(target_human, COMSIG_CLEAR_MOOD_EVENT, "cold")
+		SEND_SIGNAL(target_human, COMSIG_CLEAR_MOOD_EVENT, "hot")
+
+/*
+ * Used to apply wounds and damage based on core/body temp
+ * vars:
+ * * target_human (required) The mob we will targeting
+ */
+/datum/species/proc/body_temperature_damage(mob/living/carbon/human/target_human, seconds_per_tick, times_fired)
+	//If the body temp is above the wound limit start adding exposure stacks
+	if(target_human.bodytemperature > HUMAN_BODYTEMP_HEAT_WOUND_LIMIT)
+		target_human.heat_exposure_stacks = min(target_human.heat_exposure_stacks + (0.5 * seconds_per_tick), 40)
+	else //When below the wound limit, reduce the exposure stacks fast.
+		target_human.heat_exposure_stacks = max(target_human.heat_exposure_stacks - (2 * seconds_per_tick), 0)
+
+	//when exposure stacks are greater then 10 + rand20 try to apply wounds and reset stacks
+	if(target_human.heat_exposure_stacks > (10 + rand(0, 20)))
+		apply_burn_wounds(target_human, seconds_per_tick, times_fired)
+		target_human.heat_exposure_stacks = 0
+
+	// Body temperature is too hot, and we do not have resist traits
+	// Apply some burn damage to the body
+	if(target_human.coretemperature > bodytemp_heat_damage_limit && !HAS_TRAIT(target_human, TRAIT_RESISTHEAT))
+		var/firemodifier = target_human.fire_stacks / 50
+		if (!target_human.on_fire) // We are not on fire, reduce the modifier
+			firemodifier = min(firemodifier, 0)
+
+		// this can go below 5 at log 2.5
+		var/burn_damage = max(log(2 - firemodifier, (target_human.coretemperature - target_human.get_body_temp_normal(apply_change=FALSE))) - 5, 0)
+
+		// Apply species and physiology modifiers to heat damage
+		burn_damage = burn_damage * heatmod * target_human.physiology.heat_mod * 0.5 * seconds_per_tick
+
+		// 40% for level 3 damage on humans to scream in pain
+		if (target_human.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4)
+			target_human.emote("scream")
+
+		// Apply the damage to all body parts
+		target_human.apply_damage(burn_damage, BURN, spread_damage = TRUE)
+
+		if(target_human.mob_biotypes & MOB_ROBOTIC) //robors have a alternative cooling fan graphic
+			switch(burn_damage)
+				if(0 to 1)
+					target_human.throw_alert("tempdamage", /atom/movable/screen/alert/fans, 1)
+				if(2 to 3)
+					target_human.throw_alert("tempdamage", /atom/movable/screen/alert/fans, 2)
+				else
+					target_human.throw_alert("tempdamage", /atom/movable/screen/alert/fans, 3)
+		else
+			switch(burn_damage)
+				if(0 to 1)
+					target_human.throw_alert("tempdamage", /atom/movable/screen/alert/sweat, 1)
+				if(2 to 3)
+					target_human.throw_alert("tempdamage", /atom/movable/screen/alert/sweat, 2)
+				else
+					target_human.throw_alert("tempdamage", /atom/movable/screen/alert/sweat, 3)
+
+
+	// Apply some burn damage to the body
+	if(target_human.coretemperature < bodytemp_cold_damage_limit && !HAS_TRAIT(target_human, TRAIT_RESISTCOLD))
+		switch(target_human.coretemperature)
+			if(201 to HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT)
+				target_human.apply_damage(COLD_DAMAGE_LEVEL_1 * coldmod * seconds_per_tick * target_human.physiology.cold_mod, BURN)
+				target_human.throw_alert("tempdamage", /atom/movable/screen/alert/shiver, 1)
+			if(120 to 200)
+				target_human.apply_damage(COLD_DAMAGE_LEVEL_2 * coldmod * seconds_per_tick * target_human.physiology.cold_mod, BURN)
+				target_human.throw_alert("tempdamage", /atom/movable/screen/alert/shiver, 2)
+			else
+				target_human.apply_damage(COLD_DAMAGE_LEVEL_3 * coldmod * seconds_per_tick * target_human.physiology.cold_mod, BURN)
+				target_human.throw_alert("tempdamage", /atom/movable/screen/alert/shiver, 3)
+
+/**
+ * Used to apply burn wounds on random limbs
+ *
+ * This is called from body_temperature_damage when exposure to extream heat adds up and causes a wound.
+ * The wounds will increase in severity as the temperature increases.
+ * vars:
+ * * humi (required) The mob we will targeting
+ */
+/datum/species/proc/apply_burn_wounds(mob/living/carbon/human/target_human)
+	// If we are resistant to heat exit
+	if(HAS_TRAIT(target_human, TRAIT_RESISTHEAT))
+		return
+
+	// If our body temp is to low for a wound exit
+	if(target_human.bodytemperature < HUMAN_BODYTEMP_HEAT_WOUND_LIMIT)
+		return
+
+	// Lets pick a random body part and check for an existing burn
+	var/zone = pick(target_human.bodyparts)
+	var/obj/item/bodypart/bodypart = target_human.bodyparts[zone]
+	var/datum/wound/burn/existing_burn = locate(/datum/wound/burn) in bodypart.wounds
+
+	// If we have an existing burn try to upgrade it
+	if(existing_burn)
+		//gotta be a more graceful way to do this
+		if(bodypart.bodytype & BODYTYPE_ROBOTIC)
+			switch(existing_burn.severity)
+				if(WOUND_SEVERITY_MODERATE)
+					if(target_human.bodytemperature > HUMAN_BODYTEMP_HEAT_WOUND_LIMIT + 400) // 800k
+						bodypart.force_wound_upwards(/datum/wound/burn/heat_warping/severe)
+				if(WOUND_SEVERITY_SEVERE)
+					if(target_human.bodytemperature > HUMAN_BODYTEMP_HEAT_WOUND_LIMIT + 2800) // 3200k
+						bodypart.force_wound_upwards(/datum/wound/burn/heat_warping/critical)
+		else
+			switch(existing_burn.severity)
+				if(WOUND_SEVERITY_MODERATE)
+					if(target_human.bodytemperature > HUMAN_BODYTEMP_HEAT_WOUND_LIMIT + 400) // 800ksd
+						bodypart.force_wound_upwards(/datum/wound/burn/flesh/severe)
+				if(WOUND_SEVERITY_SEVERE)
+					if(target_human.bodytemperature > HUMAN_BODYTEMP_HEAT_WOUND_LIMIT + 2800) // 3200k
+						bodypart.force_wound_upwards(/datum/wound/burn/flesh/critical)
+	else // If we have no burn apply the lowest level burn
+		if(bodypart.bodytype & BODYTYPE_ROBOTIC)
+			bodypart.force_wound_upwards(/datum/wound/burn/heat_warping/moderate)
+		else
+			bodypart.force_wound_upwards(/datum/wound/burn/flesh/moderate)
+
+	// always take some burn damage
+	var/burn_damage = HEAT_DAMAGE_LEVEL_1
+	if(target_human.bodytemperature > HUMAN_BODYTEMP_HEAT_WOUND_LIMIT + 400)
+		burn_damage = HEAT_DAMAGE_LEVEL_2
+	if(target_human.bodytemperature > HUMAN_BODYTEMP_HEAT_WOUND_LIMIT + 2800)
+		burn_damage = HEAT_DAMAGE_LEVEL_3
+
+	target_human.apply_damage(burn_damage, BURN, bodypart)
+
+//very lazy porting hack to preserve our custom gas effects.
+/datum/species/proc/handle_environment_gasses(datum/gas_mixture/environment, mob/living/carbon/human/target_human)
 	var/plasma = environment.get_moles(GAS_PLASMA)
 	var/tritium = environment.get_moles(GAS_TRITIUM)
 	var/chlorine = environment.get_moles(GAS_CHLORINE)
@@ -1867,7 +2146,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(inherent_biotypes & MOB_ROBOTIC) //robots are not flesh
 		mechanical = TRUE
 
-	if(HAS_TRAIT(H, TRAIT_ANALGESIA)) //if we can't feel pain, dont give the pain messages
+	if(HAS_TRAIT(target_human, TRAIT_ANALGESIA)) //if we can't feel pain, dont give the pain messages
 		feels_pain = FALSE
 
 	if(plasma > MINIMUM_MOLS_TO_HARM)
@@ -1905,129 +2184,20 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		burndamage /= 5
 		if(round(burndamage) == 0)
 			return FALSE
-	H.apply_damage(burndamage, BURN, spread_damage = TRUE)
+	target_human.apply_damage(burndamage, BURN, spread_damage = TRUE)
 	if(prob(5) && burndamage)
 		if(feels_pain)
-			to_chat(H, span_userdanger("You're [mechanical ? "corroding" : "melting"]!"))
-		playsound(H, 'sound/items/welder.ogg', 30, TRUE)
-	if(!H.check_for_goggles() && eyedamage && !mechanical)
+			to_chat(target_human, span_userdanger("You're [mechanical ? "corroding" : "melting"]!"))
+		playsound(target_human, 'sound/items/welder.ogg', 30, TRUE)
+	if(!target_human.check_for_goggles() && eyedamage && !mechanical)
 		if(prob(30))
-			H.adjustOrganLoss(ORGAN_SLOT_EYES, 1)
+			target_human.adjustOrganLoss(ORGAN_SLOT_EYES, 1)
 		if(prob(15) && feels_pain)
-			to_chat(H, span_danger("Your eyes burn!"))
-			H.emote("cry")
-		H.set_blurriness(rand(5,15))
+			to_chat(target_human, span_danger("Your eyes burn!"))
+			target_human.emote("cry")
+		target_human.set_blurriness(rand(5,15))
 	if(irritant && prob(5) && feels_pain)
-		to_chat(H, span_danger("Your [mechanical ? "outer shell smolders" : "skin itches"]."))
-
-/// Handle the body temperature status effects for the species
-/// Traits for resitance to heat or cold are handled here.
-/datum/species/proc/handle_body_temperature(mob/living/carbon/human/H)
-	var/body_temp = H.bodytemperature
-
-	//tempature is no longer comfy, throw alert
-	if(body_temp > max_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
-		if(body_temp > bodytemp_heat_damage_limit)
-			var/burn_damage = calculate_burn_damage(H)
-			if(burn_damage > 2)
-				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 3)
-			else
-				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 2)
-		else
-			if(body_temp < (bodytemp_heat_damage_limit - 3))
-				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 1)
-			else
-				H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
-	else if (body_temp < min_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
-		if(body_temp < bodytemp_cold_damage_limit -7)
-			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 3)
-		else if(body_temp < bodytemp_cold_damage_limit)
-			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 2)
-		else if(body_temp < (bodytemp_cold_damage_limit + 5))
-			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 1)
-		else
-			H.throw_alert("tempfeel", /atom/movable/screen/alert/chilly)
-	else
-		H.clear_alert("tempfeel")
-
-	// Body temperature is too hot, and we do not have resist traits
-	if(body_temp > bodytemp_heat_damage_limit && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
-		// Clear cold mood and apply hot mood
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
-		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hot", /datum/mood_event/hot)
-
-		//Remove any slowdown from the cold.
-		H.remove_movespeed_modifier(/datum/movespeed_modifier/cold)
-
-		var/burn_damage = calculate_burn_damage(H)
-
-		// sweats depending on burn damage, not actually a mechanic but a alternative to pinpoint when you are taking damage
-		if(burn_damage)
-			if(H.mob_biotypes & MOB_ROBOTIC) //robors have a alternative cooling fan graphic
-				switch(burn_damage)
-					if(0 to 1)
-						H.throw_alert("temp", /atom/movable/screen/alert/fans, 1)
-					if(2 to 3)
-						H.throw_alert("temp", /atom/movable/screen/alert/fans, 2)
-					else
-						H.throw_alert("temp", /atom/movable/screen/alert/fans, 3)
-			else
-				switch(burn_damage)
-					if(0 to 1)
-						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 1)
-					if(2 to 3)
-						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 2)
-					else
-						H.throw_alert("temp", /atom/movable/screen/alert/sweat, 3)
-
-		// Apply species and physiology modifiers to heat damage
-		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
-
-		// 40% for level 3 damage on humans to scream in pain
-		if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4)
-			H.force_scream()
-
-		// Apply the damage to all body parts
-		H.apply_damage(burn_damage, BURN, spread_damage = TRUE)
-
-	// Body temperature is too cold, and we do not have resist traits
-	else if(body_temp < bodytemp_cold_damage_limit && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
-		// clear any hot moods and apply cold mood
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
-		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "cold", /datum/mood_event/cold)
-		// Apply cold slow down
-		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/cold, multiplicative_slowdown = ((bodytemp_cold_damage_limit - H.bodytemperature) / COLD_SLOWDOWN_FACTOR))
-		// Display alerts based on the amount of cold damage being taken
-		// Apply more damage based on how cold you are
-
-		if(body_temp < bodytemp_cold_damage_limit - 15)
-			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 3)
-			if(H.stat != DEAD) // probably can store them in cold storage like this
-				H.apply_damage(COLD_DAMAGE_LEVEL_3 * coldmod * H.physiology.cold_mod, BURN)
-				H.emote("shiver")
-
-		else if(body_temp < bodytemp_cold_damage_limit - 7)
-			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 2)
-			if(H.stat != DEAD) // when you think about it, being cold wouldnt do skin damaage if there nothing even alive?
-				H.apply_damage(COLD_DAMAGE_LEVEL_2 * coldmod * H.physiology.cold_mod, BURN)
-				if(prob(30))
-					H.emote("shiver")
-
-		else
-			H.throw_alert("temp", /atom/movable/screen/alert/shiver, 1)
-			if(H.stat != DEAD) // to prevent a bug where bodies at room tempertue actually take damage from their body being cold
-				H.apply_damage(COLD_DAMAGE_LEVEL_1 * coldmod * H.physiology.cold_mod, BURN)
-				if(prob(10))
-					H.emote("shiver")
-
-	// We are not to hot or cold, remove status and moods
-	else
-		H.clear_alert("temp")
-		H.remove_movespeed_modifier(/datum/movespeed_modifier/cold)
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
+		to_chat(target_human, span_danger("Your [mechanical ? "outer shell smolders" : "skin itches"]."))
 
 /datum/species/proc/calculate_burn_damage(mob/living/carbon/human/current_human)
 	var/burn_damage = 0
@@ -2040,7 +2210,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	return burn_damage
 
 /// Handle the air pressure of the environment
-/datum/species/proc/handle_environment_pressure(datum/gas_mixture/environment, mob/living/carbon/human/H)
+/datum/species/proc/handle_environment_pressure(datum/gas_mixture/environment, mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	var/pressure = environment.return_pressure()
 	var/adjusted_pressure = H.calculate_affecting_pressure(pressure)
 
@@ -2050,8 +2220,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		// Very high pressure, show an alert and take damage
 		if(HAZARD_HIGH_PRESSURE to INFINITY)
 			if(!HAS_TRAIT(H, TRAIT_RESISTHIGHPRESSURE))
-				H.adjustBruteLoss(min(((adjusted_pressure / HAZARD_HIGH_PRESSURE) -1) * \
-					PRESSURE_DAMAGE_COEFFICIENT, MAX_HIGH_PRESSURE_DAMAGE) * H.physiology.pressure_mod)
+				H.adjustBruteLoss(min(((adjusted_pressure / HAZARD_HIGH_PRESSURE) - 1) * PRESSURE_DAMAGE_COEFFICIENT, MAX_HIGH_PRESSURE_DAMAGE) * H.physiology.pressure_mod * seconds_per_tick)
 				H.throw_alert("pressure", /atom/movable/screen/alert/highpressure, 2)
 			else
 				H.clear_alert("pressure")
@@ -2081,64 +2250,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				H.adjustBruteLoss(LOW_PRESSURE_DAMAGE * H.physiology.pressure_mod)
 				H.throw_alert("pressure", /atom/movable/screen/alert/lowpressure, 2)
 
-/**
- * Used to stabilize the body temperature back to normal on living mobs
- *
- * vars:
- * * environment The environment gas mix
- * * H The mob we will stabilize
- */
-/datum/species/proc/natural_bodytemperature_stabilization(datum/gas_mixture/environment, mob/living/carbon/human/H)
-	var/areatemp = H.get_temperature(environment)
-	var/body_temp = H.bodytemperature // Get current body temperature
-	var/body_temperature_difference = H.get_body_temp_normal() - body_temp
-	var/natural_change = 0
-	var/recovery_temp = bodytemp_autorecovery_min
-	//if in crit, we struggle to regulate temperture. this will make extreme tempertures more dangerous to injured
-	if (H.stat > SOFT_CRIT)
-		recovery_temp =  recovery_temp / 2
-
-	// we are cold, reduce the minimum increment and do not jump over the difference
-	if(body_temp > bodytemp_cold_damage_limit && body_temp < H.get_body_temp_normal())
-		natural_change = max(body_temperature_difference * H.metabolism_efficiency / bodytemp_autorecovery_divisor, \
-			min(body_temperature_difference, recovery_temp / 4))
-
-	// We are hot, reduce the minimum increment and do not jump below the difference
-	else if(body_temp > H.get_body_temp_normal() && body_temp <= bodytemp_heat_damage_limit)
-		natural_change = min(body_temperature_difference * H.metabolism_efficiency / bodytemp_autorecovery_divisor, \
-			max(body_temperature_difference, -(recovery_temp / 4)))
-
-
-	var/thermal_protection = H.get_insulation_protection(body_temp + natural_change)
-	if(areatemp > body_temp) // It is hot here
-		if(body_temp < H.get_body_temp_normal())
-			// Our bodytemp is below normal we are cold, insulation helps us retain body heat
-			// and will reduce the heat we lose to the environment
-			natural_change = (thermal_protection + 1) * natural_change
-		else
-			// Our bodytemp is above normal and sweating, insulation hinders out ability to reduce heat
-			// but will reduce the amount of heat we get from the environment
-			natural_change = (1 / (thermal_protection + 1)) * natural_change
-	else // It is cold here
-		if(!H.on_fire) // If on fire ignore ignore local temperature in cold areas
-			if(body_temp < H.get_body_temp_normal())
-				// Our bodytemp is below normal, insulation helps us retain body heat
-				// and will reduce the heat we lose to the environment
-				natural_change = (thermal_protection + 1) * natural_change
-			else
-				// Our bodytemp is above normal and sweating, insulation hinders out ability to reduce heat
-				// but will reduce the amount of heat we get from the environment
-				natural_change = (1 / (thermal_protection + 1)) * natural_change
-
-	// Apply the natural stabilization changes
-	H.adjust_bodytemperature(natural_change)
-	return natural_change
-
 //////////
 // FIRE //
 //////////
 
-/datum/species/proc/handle_fire(mob/living/carbon/human/H, no_protection = FALSE)
+/datum/species/proc/handle_fire(mob/living/carbon/human/H, no_protection = FALSE, seconds_per_tick, times_fired)
 	return no_protection
 
 /datum/species/proc/spec_revival(mob/living/carbon/human/H)
