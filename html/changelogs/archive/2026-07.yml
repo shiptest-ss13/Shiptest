@@ -73,3 +73,70 @@
   - rscadd: Added some fluff and QOL reorganization to the PGF lineup
   thearbiber:
   - rscadd: hardhat resprite
+2026-07-11:
+  Gristlebee:
+  - rscadd: Cover Component
+  - rscadd: Directional Barricades
+  - rscadd: UpdatePaths script
+  - bugfix: Directional cover blocking when it shouldn't
+  Imaginos, rye-rice:
+  - rscadd: Resprites a few atmos related things
+  - rscadd: Resprites canisters from scratch
+  - rscadd: Resprites dipsoal bins
+  thearbiber:
+  - rscadd: various resprites of weapons and tools
+  - balance: hatchet has been buffed
+  - balance: katana replaced with podao
+  - rscadd: holosigns back to stag
+  zimon9:
+  - balance: gives determination similar characteristics to carfencadrizine
+  - balance: prevents determination OD on wound procs
+2026-07-12:
+  Erikafox, Ryerice:
+  - rscadd: The overmap will now spawn 4 systems by default. They are linked linearly
+      1->2->3->4. Sectors 1/3 are outpost sectors, 2/4 are wilderness sectors.
+  - rscadd: jump points now allow for unpaired placement. If a jump point is unpaired,
+      it will default to targetting the edge of the next sector.
+  - rscdel: The overmap will no longer loop.
+  - soundadd: replaced the jump sfx
+  - code_imp: created code/datums/overmap
+  - code_imp: moved star system datums into /code/datums/overmap/
+  - config: removed deprecated config option, maximum dynamic missions
+  - config: modified default overmap config options
+  MysticalFaceLesS:
+  - bugfix: Removed the ability to duplicate modules on a robot.
+  goober3:
+  - soundadd: Wasteplanets now have an assortment of new ambient sounds, including
+      a short ambience track.
+2026-07-13:
+  Gristlebee:
+  - balance: Flipped Tables have 25 pass chance
+  - bugfix: Tiles on Downed Transport and Hardliner Holdout
+  - rscadd: Game panel spawn drop pod uses default pod
+2026-07-16:
+  Erika (Porting Fox), Nightred, TemporalOroboros:
+  - refactor: Mobcode is now ever so slightly more consistent
+  - refactor: Humans body temperature stabilization overhauled
+  - refactor: Humans will now receive temperature alerts before they taking damage
+  - refactor: Humans now take wounds and burn damage based on body temperature
+  - refactor: Watchers temperature shot reworked
+  rye-rice:
+  - balance: Royal Battery Acid is very very very slightly less toxic
+  - bugfix: Trickwine Status effects show the right sprites
+  - bugfix: Royal Battery Acid should now charge elzu
+  - bugfix: Fixes jump points sometimes failing
+2026-07-17:
+  Erikafox:
+  - rscadd: Empty sandbags can now stack.
+  - rscadd: You can now empty sandbags from being filled
+  - balance: Sandbags now only stack to 15, and start at weight class normal
+  - balance: You now need 5 sandbags to make a sandbag barricade
+  - balance: Sandbag barricades can be repaired with new sandbags
+  moffball19:
+  - rscadd: gave the Lifeform Containment Unit it's own sprite and rolling sounds
+  thearbiber:
+  - rscadd: hardliner leather jacket
+2026-07-18:
+  thearbiber:
+  - rscadd: armwarmer touchup
+  - rscadd: walkmine resprite

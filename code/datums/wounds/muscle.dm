@@ -50,12 +50,12 @@
 		UnregisterSignal(victim, COMSIG_HUMAN_EARLY_UNARMED_ATTACK)
 	return ..()
 
-/datum/wound/muscle/handle_process()
+/datum/wound/muscle/handle_process(seconds_per_tick, times_fired)
 	. = ..()
 	regen_ticks_current++
 
 	if(victim.body_position == LYING_DOWN)
-		if(prob(50))
+		if(SPT_PROB(25, seconds_per_tick))
 			regen_ticks_current += 0.5
 		if(victim.IsSleeping())
 			regen_ticks_current += 0.5

@@ -94,6 +94,13 @@
 	objective_type = /mob/living/simple_animal/hostile/asteroid/goliath
 	num_wanted = 1
 	count_stacks = FALSE
+
+	required_locations = list(
+		DYNAMIC_WORLD_LAVA,
+		DYNAMIC_WORLD_SAND,
+		DYNAMIC_WORLD_ROCKPLANET
+	)
+
 	var/creature_name = "goliath"
 
 /datum/mission/acquire/creature/New(...)
@@ -116,46 +123,70 @@
 	value = 1300
 	objective_type = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
 	creature_name = "legion"
+	required_locations = list(
+		DYNAMIC_WORLD_LAVA,
+		DYNAMIC_WORLD_SAND,
+		DYNAMIC_WORLD_ICE
+	)
+
 
 /datum/mission/acquire/creature/ice_whelp
-	value = 1700
+	value = 3000
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_whelp
 	creature_name = "ice whelp"
+	required_locations = list(
+		DYNAMIC_WORLD_ICE
+	)
 
 /datum/mission/acquire/creature/migo
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/netherworld/migo/asteroid
 	creature_name = "mi-go"
+	required_locations = list(
+		DYNAMIC_WORLD_ROCKPLANET
+	)
+
 
 /datum/mission/acquire/creature/basilisk
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands
 	creature_name = "sandworld basilisk"
+	required_locations = list(
+		DYNAMIC_WORLD_SAND
+	)
 
 /datum/mission/acquire/creature/lobster_activity
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/lobstrosity
 	creature_name = "lobstrocity"
+	required_locations = list(
+		DYNAMIC_WORLD_BEACHPLANET,
+		DYNAMIC_WORLD_ICE
+	)
 
 /datum/mission/acquire/creature/watcher
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/watcher
 	creature_name = "watcher"
+	required_locations = list(
+		DYNAMIC_WORLD_SAND,
+		DYNAMIC_WORLD_LAVA
+	)
 
 /*
 		Acquiry mission containers
 */
 /obj/structure/closet/mob_capture
 	name = "\improper Lifeform Containment Unit"
-	desc = "A large closet-like container, used to capture hostile lifeforms for retrieval and analysis. The interior is heavily armored, preventing animals from breaking out while inside."
-	icon_state = "abductor"
-	icon_door = "abductor"
-	color = "#FF88FF"
+	desc = "A large container used to capture hostile lifeforms for retrieval and analysis. The interior is heavily armored, preventing animals from breaking out while inside."
+	icon_state = "mobcapture"
+	secure = TRUE
+	locked = TRUE
 	drag_slowdown = 1
 	max_integrity = 300
 	armor = list("melee" = 50, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 30, "fire" = 80, "acid" = 70)
@@ -168,3 +199,8 @@
 	if(M.loc == src)
 		return FALSE
 	return ..()
+
+/obj/structure/closet/mob_capture/Moved()
+	. = ..()
+	if(has_gravity())
+		playsound(src, 'sound/effects/roll.ogg', 100, TRUE)
