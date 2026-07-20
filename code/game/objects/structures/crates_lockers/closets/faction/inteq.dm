@@ -141,7 +141,8 @@ first-aid in corpsman lockers? no!
 		/obj/item/clothing/under/syndicate/inteq/sneaksuit = 2,
 		/obj/item/clothing/shoes/combat = 2,
 		/obj/item/clothing/gloves/combat = 2,
-		/obj/item/clothing/mask/balaclava/inteq = 2)
+		/obj/item/clothing/mask/balaclava/inteq = 2,
+		/obj/item/radio/headset = 2)
 	generate_items_inside(items_inside,src)
 
 // jobs
