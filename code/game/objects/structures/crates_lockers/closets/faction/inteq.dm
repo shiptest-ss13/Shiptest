@@ -114,7 +114,7 @@
 /obj/structure/closet/faction/inteq/secure/ert/enforcer
 	name = "enforcer honor guard's locker"
 	desc = "A sturdy, keycard-locked storage unit. It's black colouration, vertical gold stripe, and golden helmet emblem denote it's belonging to an IRMG Enforcer Honor Guard."
-	icon_state = "inteqbvanguard"
+	icon_state = "inteqbenf"
 	req_access = list(ACCESS_CENT_SPECOPS)
 
 /*
