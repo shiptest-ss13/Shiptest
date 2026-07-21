@@ -158,6 +158,9 @@
 /obj/effect/turf_decal/siding/black,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
+"bu" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/dorm/captain)
 "by" = (
 /obj/machinery/computer/cryopod/directional/west,
 /obj/effect/turf_decal/siding/black,
@@ -807,7 +810,7 @@
 	dir = 1
 	},
 /turf/open/floor/suns/hatch/mahogany,
-/area/ship/hallway/central)
+/area/ship/crew/dorm/captain)
 "ip" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 1
@@ -821,7 +824,7 @@
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/tech,
-/area/ship/hallway/central)
+/area/ship/crew/dorm/captain)
 "is" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 4
@@ -951,7 +954,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/suns/hatch/mahogany,
-/area/ship/hallway/central)
+/area/ship/crew/dorm/captain)
 "jW" = (
 /obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 5
@@ -1827,7 +1830,7 @@
 	icon_state = "2-9"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/hallway/central)
+/area/ship/crew/dorm/captain)
 "uo" = (
 /obj/effect/turf_decal/isf_big/six,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2354,7 +2357,7 @@
 	},
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech,
-/area/ship/hallway/central)
+/area/ship/crew/dorm/captain)
 "Ae" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
@@ -2614,7 +2617,7 @@
 	},
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/suns/hatch/mahogany,
-/area/ship/hallway/central)
+/area/ship/crew/dorm/captain)
 "Dr" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 6
@@ -2627,7 +2630,7 @@
 	pixel_y = 7
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/hallway/central)
+/area/ship/crew/dorm/captain)
 "DK" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -3148,7 +3151,7 @@
 	icon_state = "0-6"
 	},
 /turf/open/floor/suns/hatch/mahogany,
-/area/ship/hallway/central)
+/area/ship/crew/dorm/captain)
 "JY" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -5248,9 +5251,9 @@ Mp
 QX
 vm
 Pz
-zF
-zF
-zF
+bu
+bu
+bu
 GQ
 kw
 eD
@@ -5272,7 +5275,7 @@ Mp
 QX
 vm
 PK
-zF
+bu
 Dp
 jT
 GQ
@@ -5296,7 +5299,7 @@ Mp
 QX
 vm
 PK
-zF
+bu
 JL
 ib
 GQ
@@ -5320,7 +5323,7 @@ Mp
 QX
 vm
 PK
-zF
+bu
 ip
 ul
 Nt
@@ -5344,7 +5347,7 @@ Mp
 Mp
 vm
 PK
-zF
+bu
 Ad
 Dr
 GQ
