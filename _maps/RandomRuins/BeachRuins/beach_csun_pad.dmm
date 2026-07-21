@@ -199,7 +199,7 @@
 /obj/structure/platform/ship_three/corner{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/sand/dense,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "cs" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal{
@@ -966,7 +966,7 @@
 	dir = 1;
 	layer = 2.9
 	},
-/turf/open/floor/plating/asteroid/sand/dense,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "jG" = (
 /obj/item/clothing/under/cybersun/suit{
@@ -2147,7 +2147,7 @@
 /obj/structure/platform/ship_three/corner{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/sand/dense,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "uy" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2506,12 +2506,6 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ruin/beach/csunpad/medical)
-"yT" = (
-/obj/structure/platform/ship_three{
-	dir = 6
-	},
-/turf/open/floor/plating/asteroid/sand/dense,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "yX" = (
 /obj/structure/chair/stool,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2854,12 +2848,6 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/spacevine/weak,
 /turf/open/floor/plating/asteroid/dirt/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
-"Cd" = (
-/obj/structure/platform/ship_three{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ce" = (
 /obj/structure/table/glass,
@@ -3263,12 +3251,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"FL" = (
-/obj/structure/platform/ship_three{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/sand/dense,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ga" = (
 /turf/template_noop,
 /area/template_noop)
@@ -3369,12 +3351,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/beach/csunpad)
-"GA" = (
-/obj/structure/platform/ship_three{
-	dir = 9
-	},
-/turf/open/floor/plating/asteroid/sand/dense,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "GH" = (
 /obj/effect/turf_decal/rechargefloor,
 /obj/machinery/light/small/directional/east,
@@ -3596,10 +3572,6 @@
 	icon_state = "floor3"
 	},
 /turf/open/floor/plasteel/mono/dark/beachplanet/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
-"Jd" = (
-/obj/structure/platform/ship_three,
-/turf/open/floor/plating/asteroid/sand/dense,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Je" = (
 /obj/structure/dresser{
@@ -3899,12 +3871,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/suns/dark/plain,
 /area/ruin/beach/csunpad/canteen)
-"MI" = (
-/obj/structure/platform/ship_three{
-	dir = 5
-	},
-/turf/open/floor/plating/asteroid/sand/dense,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "MT" = (
 /obj/structure/chair/bench/red/directional/east{
 	dir = 8
@@ -4480,12 +4446,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/csunpad/june)
-"Te" = (
-/obj/structure/platform/ship_three{
-	dir = 10
-	},
-/turf/open/floor/plating/asteroid/sand/dense,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "Tl" = (
 /obj/structure/platform/ship_three,
 /turf/open/floor/plating/asteroid/dirt/beach,
@@ -4948,7 +4908,7 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/structure/platform/ship_three,
 /obj/machinery/atmospherics/components/unary/passive_vent/layer2,
-/turf/open/floor/plating/asteroid/sand/dense,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Ys" = (
 /obj/structure/platform/ship_three{
@@ -5863,9 +5823,9 @@ ti
 WQ
 ZD
 Rp
-cF
-cF
-cF
+pU
+pU
+pU
 cF
 cF
 cF
@@ -5917,11 +5877,11 @@ Rp
 Tx
 gv
 Rp
-cF
-cF
-cF
-cF
-cF
+pU
+pU
+pU
+pU
+pU
 cF
 cF
 cF
@@ -5963,19 +5923,19 @@ Nx
 gS
 gS
 gS
-KO
-KO
-KO
-KO
-yT
+gS
+gS
+gS
+gS
+SH
 eg
 GW
-MI
-KO
-KO
-KO
-KO
-KO
+Nx
+gS
+gS
+gS
+gS
+gS
 cr
 cF
 cF
@@ -6127,17 +6087,17 @@ xA
 ES
 Dm
 ES
-GA
-Ku
-Te
+WM
+Uf
+xA
 el
 Oi
-GA
-Ku
-Ku
-Ku
-Ku
-Ku
+WM
+Uf
+Uf
+Uf
+Uf
+Uf
 um
 cF
 cF
@@ -6182,19 +6142,19 @@ bO
 Wy
 bO
 bO
-cF
-Jd
+pU
+Tl
 el
 Oi
-FL
+Ql
+pU
+pU
 cF
 cF
 cF
 cF
-vW
-vW
-vW
-vW
+cF
+cF
 vW
 vW
 vW
@@ -6237,17 +6197,17 @@ zp
 fz
 bO
 bO
-Jd
+Tl
 el
 Oi
-FL
+Ql
+pU
 cF
 cF
 cF
-vW
-vW
-vW
-vW
+cF
+cF
+cF
 vW
 vW
 vW
@@ -6294,7 +6254,7 @@ bO
 Tl
 el
 Oi
-FL
+Ql
 ie
 ie
 Jh
@@ -6348,7 +6308,7 @@ bO
 Tl
 uz
 Oi
-FL
+Ql
 ie
 sx
 Zl
@@ -6402,7 +6362,7 @@ bO
 Tl
 FF
 Oi
-FL
+Ql
 ie
 Zg
 yX
@@ -6726,7 +6686,7 @@ cD
 NU
 el
 Oi
-FL
+Ql
 ie
 ZE
 Zl
@@ -6780,7 +6740,7 @@ cD
 Tl
 el
 Oi
-FL
+Ql
 ie
 ie
 Jh
@@ -6788,8 +6748,8 @@ Jh
 Jh
 ie
 ie
-vW
-vW
+cF
+cF
 vW
 vW
 vW
@@ -6834,15 +6794,15 @@ cD
 Tl
 el
 Oi
-FL
+Ql
+pU
 cF
 cF
 cF
 cF
 cF
-vW
-vW
-vW
+cF
+cF
 vW
 vW
 vW
@@ -6888,14 +6848,14 @@ gd
 Kb
 el
 Oi
-FL
+Ql
+pU
+pU
+pU
+pU
 cF
 cF
 cF
-cF
-cF
-cF
-vW
 vW
 vW
 vW
@@ -6942,13 +6902,13 @@ bd
 SH
 el
 DK
-MI
-KO
-KO
-KO
-KO
-KO
-KO
+Nx
+gS
+gS
+gS
+gS
+gS
+gS
 zk
 zk
 yB
@@ -7089,30 +7049,30 @@ pU
 pU
 pU
 pU
-cF
-Jd
+pU
+Tl
 kW
 kx
-GA
-Ku
+WM
 Uf
 Uf
 Uf
 Uf
 Uf
 Uf
-Te
+Uf
+xA
 kW
 Oi
-GA
-Ku
-Ku
-Ku
-Ku
-Cd
+WM
+Uf
+Uf
+Uf
+Uf
+Uf
 Zd
 yD
-Cd
+Uf
 eK
 vW
 vW
@@ -7143,31 +7103,31 @@ pU
 pU
 pU
 cF
-cF
-Jd
+pU
+Tl
 tS
 jZ
 jF
-cF
-cF
+pU
 cF
 pU
 pU
 pU
-cF
-Jd
+pU
+pU
+Tl
 CN
 Dr
 jF
+pU
+pU
+pU
+pU
+pU
+pU
+pU
+pU
 cF
-cF
-cF
-cF
-cF
-Wh
-Wh
-Wh
-Wh
 vW
 vW
 vW
@@ -7198,7 +7158,7 @@ cF
 cF
 cF
 cF
-Jd
+Tl
 fU
 JL
 jF
@@ -7217,11 +7177,11 @@ Vq
 Vq
 Vq
 Mv
+pU
+pU
+pU
 cF
-Wh
-Wh
-Wh
-Wh
+cF
 Wh
 vW
 vW
@@ -7271,10 +7231,10 @@ Iv
 Iv
 Iv
 yA
-Wh
-Wh
-Wh
-Wh
+pU
+cF
+cF
+cF
 Wh
 Wh
 Wh
@@ -7325,10 +7285,10 @@ pT
 Iv
 Iv
 yA
-Wh
-Wh
-Wh
-Wh
+cF
+cF
+cF
+cF
 Wh
 gu
 Wh
@@ -7379,7 +7339,7 @@ YL
 tT
 Iv
 yA
-Wh
+cF
 Wh
 Wh
 Wh
