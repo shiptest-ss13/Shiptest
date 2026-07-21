@@ -418,6 +418,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "dJ" = (
@@ -832,6 +835,18 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
+"iL" = (
+/obj/structure/table/reinforced,
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = 7;
+	pixel_y = -23
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -6;
+	pixel_y = -31
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "iS" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 8
@@ -1518,18 +1533,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
-"pa" = (
-/obj/structure/table/reinforced,
-/obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = 7;
-	pixel_y = -23
-	},
-/obj/machinery/firealarm/directional/south{
-	pixel_x = -6;
-	pixel_y = -31
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "pi" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
@@ -2249,9 +2252,6 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 5
 	},
-/obj/structure/cable{
-	icon_state = "2-9"
-	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
@@ -2828,9 +2828,6 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines)
-"FO" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/dorm/captain)
 "FQ" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 4
@@ -3356,9 +3353,6 @@
 "Mc" = (
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "0-6"
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/syndicate/engie,
@@ -4048,9 +4042,6 @@
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
 	dir = 1;
 	piping_layer = 4
@@ -4095,6 +4086,9 @@
 	},
 /obj/machinery/firealarm/directional/south,
 /obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "TL" = (
@@ -4164,6 +4158,9 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
+"UA" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/dorm/captain)
 "UB" = (
 /obj/machinery/door/airlock/public{
 	dir = 4;
@@ -5267,9 +5264,9 @@ Mp
 QX
 vm
 Pz
-FO
-FO
-FO
+UA
+UA
+UA
 GQ
 kw
 eD
@@ -5291,7 +5288,7 @@ Mp
 QX
 vm
 PK
-FO
+UA
 Dp
 jT
 GQ
@@ -5315,7 +5312,7 @@ Mp
 QX
 vm
 PK
-FO
+UA
 JL
 ib
 GQ
@@ -5339,7 +5336,7 @@ Mp
 QX
 vm
 PK
-FO
+UA
 ip
 ul
 Nt
@@ -5363,7 +5360,7 @@ Mp
 Mp
 vm
 PK
-FO
+UA
 Ad
 Dr
 GQ
@@ -5534,7 +5531,7 @@ MZ
 zT
 gW
 Kl
-pa
+iL
 MZ
 hq
 bb
