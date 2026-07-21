@@ -69,9 +69,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk/white,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -158,9 +156,6 @@
 /obj/effect/turf_decal/siding/black,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
-"bu" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/dorm/captain)
 "by" = (
 /obj/machinery/computer/cryopod/directional/west,
 /obj/effect/turf_decal/siding/black,
@@ -2137,7 +2132,6 @@
 	},
 /obj/structure/closet/crate/radiation{
 	name = "fuel crate";
-	anchored = 1;
 	populate = 0
 	},
 /obj/item/stack/sheet/mineral/uranium/five,
@@ -4180,6 +4174,9 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
+"UX" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/dorm/captain)
 "Vd" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5251,9 +5248,9 @@ Mp
 QX
 vm
 Pz
-bu
-bu
-bu
+UX
+UX
+UX
 GQ
 kw
 eD
@@ -5275,7 +5272,7 @@ Mp
 QX
 vm
 PK
-bu
+UX
 Dp
 jT
 GQ
@@ -5299,7 +5296,7 @@ Mp
 QX
 vm
 PK
-bu
+UX
 JL
 ib
 GQ
@@ -5323,7 +5320,7 @@ Mp
 QX
 vm
 PK
-bu
+UX
 ip
 ul
 Nt
@@ -5347,7 +5344,7 @@ Mp
 Mp
 vm
 PK
-bu
+UX
 Ad
 Dr
 GQ
