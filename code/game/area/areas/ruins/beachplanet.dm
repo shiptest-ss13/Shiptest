@@ -80,6 +80,11 @@
 /area/ruin/beach/csunpad
 	name = "Operations"
 	icon_state = "bridge"
+	always_unpowered = FALSE
+	requires_power = TRUE
+	power_light = FALSE
+	power_equip = FALSE
+	power_environ = FALSE
 
 /area/ruin/beach/csunpad/medical
 	name = "Medical Bay"
@@ -108,6 +113,9 @@
 /area/ruin/beach/csunpad/june
 	name = "June Shuttle"
 	icon_state = "purple"
+	power_light = TRUE
+	power_equip = TRUE
+	power_environ = TRUE
 
 // bunkerg
 
