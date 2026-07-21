@@ -65,7 +65,7 @@
 	name = "corpsman class one's locker"
 	desc = "A sturdy, keycard-locked storage unit. It's white colouration, vertical gold stripe, and golden cross emblem denote it's belonging to an IRMG Corpsman Class One."
 	icon_state = "inteqcorpsc1"
-	req_access = list(ACCESS_VIROLOGY)
+	req_access = list(ACCESS_SURGERY)
 
 // command
 
@@ -393,7 +393,7 @@ these lack assets, here for consistency and futureproofing
 	new /obj/item/clothing/mask/balaclava/inteq(src)
 //eyes/ears
 	new /obj/item/clothing/glasses/hud/health(src)
-	new /obj/item/radio/headset/inteq/alt(src)
+	new /obj/item/radio/headset/inteq(src)
 
 /obj/structure/closet/faction/inteq/secure/command/vanguard/prefilled/PopulateContents()
 	..()
