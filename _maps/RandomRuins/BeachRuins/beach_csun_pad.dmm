@@ -2512,7 +2512,6 @@
 /turf/open/floor/suns/hatch/maple,
 /area/ruin/beach/csunpad/canteen)
 "zh" = (
-/mob/living/simple_animal/hostile/viscerator,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 1
 	},
@@ -2523,6 +2522,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("hostile")
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/beach/csunpad/security)
 "zk" = (
