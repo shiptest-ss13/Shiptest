@@ -291,8 +291,7 @@
 	},
 /obj/effect/turf_decal/spline/plain/opaque/syndiered,
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 4;
-	piping_layer = 1
+	dir = 4
 	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines)
@@ -460,8 +459,8 @@
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/suit/toggle/hardliners,
-/obj/machinery/atmospherics/components/binary/temperature_gate/layer4{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
@@ -1286,18 +1285,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
-"mm" = (
-/obj/structure/table/reinforced,
-/obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = 7;
-	pixel_y = -23
-	},
-/obj/machinery/firealarm/directional/south{
-	pixel_x = -6;
-	pixel_y = -31
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "mD" = (
 /obj/structure/closet/emcloset{
 	populate = 0
@@ -1675,6 +1662,18 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
+"rk" = (
+/obj/structure/table/reinforced,
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = 7;
+	pixel_y = -23
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -6;
+	pixel_y = -31
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "rM" = (
 /obj/docking_port/stationary{
 	dwidth = 30;
@@ -2071,6 +2070,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"wY" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/dorm/captain)
 "xp" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6;
@@ -2771,14 +2773,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
 "ET" = (
-/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
-	dir = 8
-	},
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "leyakengine"
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
@@ -3378,6 +3380,9 @@
 /obj/item/clothing/shoes/magboots/syndie,
 /obj/item/clothing/head/helmet/space/syndicate/engie,
 /obj/item/clothing/mask/gas/syndicate,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines)
 "Ml" = (
@@ -3863,9 +3868,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
 /obj/machinery/button/door{
 	pixel_x = -1;
 	pixel_y = 23;
@@ -3877,6 +3879,9 @@
 	pixel_y = 23;
 	name = "Window Control";
 	id = "leyakengine"
+	},
+/obj/machinery/atmospherics/components/binary/temperature_gate/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
@@ -3944,6 +3949,9 @@
 "Sv" = (
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
@@ -4314,9 +4322,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
-"VS" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/dorm/captain)
 "Wd" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -5270,9 +5275,9 @@ Mp
 QX
 vm
 Pz
-VS
-VS
-VS
+wY
+wY
+wY
 GQ
 kw
 eD
@@ -5294,7 +5299,7 @@ Mp
 QX
 vm
 PK
-VS
+wY
 Dp
 jT
 GQ
@@ -5318,7 +5323,7 @@ Mp
 QX
 vm
 PK
-VS
+wY
 JL
 ib
 GQ
@@ -5342,7 +5347,7 @@ Mp
 QX
 vm
 PK
-VS
+wY
 ip
 ul
 Nt
@@ -5366,7 +5371,7 @@ Mp
 Mp
 vm
 PK
-VS
+wY
 Ad
 Dr
 GQ
@@ -5537,7 +5542,7 @@ MZ
 zT
 gW
 Kl
-mm
+rk
 MZ
 hq
 bb
