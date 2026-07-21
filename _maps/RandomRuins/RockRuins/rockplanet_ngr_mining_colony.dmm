@@ -4183,6 +4183,7 @@
 /obj/item/poster/random_rilena,
 /obj/item/modular_computer/laptop/preset/civilian/rilena,
 /obj/item/poster/random_rilena,
+/obj/item/clothing/suit/hooded/hoodie/fbp,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "nV" = (
@@ -5471,6 +5472,9 @@
 /obj/item/clothing/suit/toggle/ngr,
 /obj/item/spacecash/bundle/pocketchange,
 /obj/item/modular_computer/laptop/preset/civilian,
+/obj/item/clothing/suit/toggle/hazard/orange,
+/obj/item/clothing/head/hardhat/ngr,
+/obj/item/spacecash/bundle/pocketchange,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "sv" = (
@@ -10409,6 +10413,12 @@
 /obj/effect/turf_decal/techfloor,
 /obj/structure/closet/wall/directional/west,
 /obj/machinery/light/small/directional/north,
+/obj/item/clothing/head/beret/black,
+/obj/item/clothing/under/syndicate/gorlex,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/melee/knife/survival,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/suit/toggle/ngr,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "Ja" = (
@@ -10705,7 +10715,7 @@
 /obj/item/clothing/accessory/bonearmlet,
 /obj/machinery/light/small/directional/north,
 /obj/item/spacecash/bundle/pocketchange,
-/obj/item/modular_computer/laptop/preset/civilian,
+/obj/item/clothing/suit/jacket/leather/duster,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "JZ" = (
@@ -11274,6 +11284,11 @@
 	},
 /obj/structure/closet/wall/directional/east,
 /obj/machinery/light/small/directional/south,
+/obj/item/clothing/under/syndicate/ngr/fatigues,
+/obj/item/clothing/head/motorcycle/cat/red,
+/obj/item/clothing/suit/jacket,
+/obj/item/storage/backpack/satchel/leather/withwallet,
+/obj/item/clothing/mask/gas/sechailer,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "LE" = (
@@ -11357,6 +11372,12 @@
 /obj/effect/turf_decal/techfloor,
 /obj/structure/closet/wall/directional/east,
 /obj/machinery/light/small/directional/north,
+/obj/item/clothing/suit/hooded/hoodie/red,
+/obj/item/clothing/under/shorts/red{
+	name = "cybersun jorts";
+	desc = "A pair of Cybersun-branded jorts, possibly dating back to the Inter-Corporate War. For styling on your corporate rivals."
+	},
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "LX" = (
@@ -13141,6 +13162,10 @@
 	dir = 4
 	},
 /obj/item/storage/guncase/pistol,
+/obj/item/clothing/under/syndicate/gorlex{
+	pixel_x = -4;
+	pixel_y = 23
+	},
 /turf/open/floor/carpet/red_gold,
 /area/ruin/rockplanet/ngrcolony/control)
 "RO" = (
