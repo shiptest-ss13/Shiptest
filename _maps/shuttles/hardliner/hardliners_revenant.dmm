@@ -1060,6 +1060,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "mt" = (
@@ -3502,6 +3503,14 @@
 "Ps" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
+"Pz" = (
+/obj/effect/turf_decal/siding/black,
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
+	},
+/obj/structure/closet/firecloset,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "PJ" = (
 /obj/effect/turf_decal/industrial/warning{
 	color = "#FFFFFF";
@@ -4819,7 +4828,7 @@ QV
 rl
 Dl
 Nj
-Es
+Pz
 uW
 ra
 Dh
