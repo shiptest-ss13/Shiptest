@@ -192,18 +192,17 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "bB" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
@@ -418,6 +417,7 @@
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "dJ" = (
@@ -459,10 +459,10 @@
 /obj/item/storage/belt/utility,
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/glasses/welding,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
-	},
 /obj/item/clothing/suit/toggle/hardliners,
+/obj/machinery/atmospherics/components/binary/temperature_gate/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
 "dZ" = (
@@ -585,18 +585,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
-"eT" = (
-/obj/structure/table/reinforced,
-/obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = 7;
-	pixel_y = -23
-	},
-/obj/machinery/firealarm/directional/south{
-	pixel_x = -6;
-	pixel_y = -31
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "eV" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
@@ -1298,6 +1286,18 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
+"mm" = (
+/obj/structure/table/reinforced,
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = 7;
+	pixel_y = -23
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -6;
+	pixel_y = -31
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "mD" = (
 /obj/structure/closet/emcloset{
 	populate = 0
@@ -1919,9 +1919,6 @@
 "vo" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/canteen)
-"vs" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/dorm/captain)
 "vx" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm)
@@ -1934,6 +1931,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "vE" = (
@@ -2254,13 +2254,13 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
 "yY" = (
@@ -2758,22 +2758,17 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "ES" = (
-/obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 9
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
-/obj/item/clothing/suit/space/syndicate/engie,
-/obj/item/clothing/shoes/magboots/syndie,
-/obj/item/clothing/head/helmet/space/syndicate/engie,
-/obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/light/small/directional/north,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
+/obj/machinery/atmospherics/components/binary/temperature_gate/layer4{
+	dir = 4
 	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
 "ET" = (
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
@@ -3275,6 +3270,9 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 10
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
 "Ll" = (
@@ -3375,7 +3373,11 @@
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
-/obj/machinery/power/ship_gravity,
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/syndicate/engie,
+/obj/item/clothing/shoes/magboots/syndie,
+/obj/item/clothing/head/helmet/space/syndicate/engie,
+/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines)
 "Ml" = (
@@ -3943,7 +3945,6 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
 "SK" = (
@@ -4093,6 +4094,7 @@
 	dir = 9
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "TL" = (
@@ -4312,6 +4314,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"VS" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/dorm/captain)
 "Wd" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -5265,9 +5270,9 @@ Mp
 QX
 vm
 Pz
-vs
-vs
-vs
+VS
+VS
+VS
 GQ
 kw
 eD
@@ -5289,7 +5294,7 @@ Mp
 QX
 vm
 PK
-vs
+VS
 Dp
 jT
 GQ
@@ -5313,7 +5318,7 @@ Mp
 QX
 vm
 PK
-vs
+VS
 JL
 ib
 GQ
@@ -5337,7 +5342,7 @@ Mp
 QX
 vm
 PK
-vs
+VS
 ip
 ul
 Nt
@@ -5361,7 +5366,7 @@ Mp
 Mp
 vm
 PK
-vs
+VS
 Ad
 Dr
 GQ
@@ -5532,7 +5537,7 @@ MZ
 zT
 gW
 Kl
-eT
+mm
 MZ
 hq
 bb
