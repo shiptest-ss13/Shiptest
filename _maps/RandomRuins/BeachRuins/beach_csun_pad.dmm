@@ -641,6 +641,11 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ruin/beach/csunpad/medical)
+"gM" = (
+/obj/effect/turf_decal/siding/wood/maple,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/suns/hatch/maple,
+/area/ruin/beach/csunpad/security)
 "gQ" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal{
 	dir = 10
@@ -1000,17 +1005,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/csunpad/june)
-"kn" = (
-/obj/structure/table/wood,
-/obj/machinery/button/door{
-	pixel_x = 20;
-	pixel_y = 6;
-	dir = 8;
-	id = "checkpointbot";
-	name = "automated security release"
-	},
-/turf/open/floor/suns/hatch/mahogany,
-/area/ruin/beach/csunpad/director)
 "kx" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal{
 	dir = 10
@@ -1105,6 +1099,11 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner,
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 9
+	},
+/obj/machinery/light/directional/north,
+/obj/item/storage/box/ammo/c9mm_ap{
+	pixel_x = 5;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/beach/csunpad/security)
@@ -1301,6 +1300,7 @@
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 6
 	},
+/obj/structure/closet/wall/red/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/beach/csunpad/security)
 "or" = (
@@ -1822,6 +1822,17 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/beach/csunpad/medical)
+"tI" = (
+/obj/structure/table/wood,
+/obj/machinery/button/door{
+	pixel_x = 20;
+	pixel_y = 6;
+	dir = 8;
+	id = "checkpointbot";
+	name = "automated security release"
+	},
+/turf/open/floor/suns/hatch/mahogany,
+/area/ruin/beach/csunpad/director)
 "tS" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal{
 	dir = 5
@@ -2398,11 +2409,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/storage/box/ammo/c9mm_ap{
-	pixel_x = -18;
-	pixel_y = 7
-	},
-/obj/machinery/light/directional/north,
+/obj/structure/closet/wall/red/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/beach/csunpad/security)
 "AW" = (
@@ -2410,13 +2417,25 @@
 /turf/open/floor/suns/dark/plain,
 /area/ruin/beach/csunpad/canteen)
 "Bg" = (
-/obj/machinery/light/small/directional/east,
+/obj/machinery/light/small/directional/west,
+/obj/structure/closet/wall/directional/north,
 /turf/open/floor/carpet/red,
 /area/ruin/beach/csunpad/security)
 "Bl" = (
 /obj/structure/platform/ship_three/corner,
 /turf/open/floor/plating/asteroid/sand/dense,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"By" = (
+/obj/structure/table/glass,
+/obj/machinery/button/door{
+	pixel_x = 20;
+	pixel_y = 2;
+	dir = 8;
+	id = "checkpointbot";
+	name = "automated security release"
+	},
+/turf/open/floor/suns/dark/plain,
+/area/ruin/beach/csunpad)
 "BA" = (
 /obj/effect/turf_decal/siding/wood/maple,
 /obj/item/wallframe/apc{
@@ -3435,11 +3454,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/suns/dark/plain,
 /area/ruin/beach/csunpad/medical)
-"MY" = (
-/obj/effect/turf_decal/siding/wood/maple,
-/obj/machinery/firealarm/directional/south,
-/turf/open/floor/suns/hatch/maple,
-/area/ruin/beach/csunpad/security)
 "Nc" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 8
@@ -3991,10 +4005,6 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ruin/beach/csunpad/security)
-"TE" = (
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/carpet/red,
-/area/ruin/beach/csunpad/security)
 "TF" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4
@@ -4055,17 +4065,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/csunpad)
-"UH" = (
-/obj/structure/table/glass,
-/obj/machinery/button/door{
-	pixel_x = 20;
-	pixel_y = 2;
-	dir = 8;
-	id = "checkpointbot";
-	name = "automated security release"
-	},
-/turf/open/floor/suns/dark/plain,
-/area/ruin/beach/csunpad)
 "UR" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/diagonal{
 	dir = 4
@@ -4117,6 +4116,11 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/csunpad)
+"Vq" = (
+/obj/machinery/light/small/directional/east,
+/obj/structure/closet/wall/directional/north,
+/turf/open/floor/carpet/red,
+/area/ruin/beach/csunpad/security)
 "Vv" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer2,
 /turf/open/floor/suns/dark/plain,
@@ -4367,11 +4371,6 @@
 	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ruin/beach/csunpad/director)
-"XN" = (
-/obj/effect/turf_decal/siding/wood/bamboo,
-/obj/structure/extinguisher_cabinet/directional/south,
-/turf/open/floor/suns/hatch/bamboo,
-/area/ruin/beach/csunpad/medical)
 "XO" = (
 /obj/effect/turf_decal/rechargefloor,
 /turf/open/floor/plasteel/tech,
@@ -4466,6 +4465,11 @@
 /obj/machinery/washing_machine,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/csunpad/security)
+"ZD" = (
+/obj/effect/turf_decal/siding/wood/bamboo,
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/suns/hatch/bamboo,
+/area/ruin/beach/csunpad/medical)
 "ZE" = (
 /obj/effect/turf_decal/siding/wood/maple,
 /turf/open/floor/suns/dark/plain,
@@ -5230,7 +5234,7 @@ cF
 Rp
 ti
 WQ
-XN
+ZD
 Rp
 cF
 cF
@@ -5458,7 +5462,7 @@ Ga
 Sv
 Sv
 KR
-Bg
+Vq
 Pg
 Ny
 cT
@@ -5512,7 +5516,7 @@ KR
 KR
 KR
 dn
-MY
+gM
 KR
 cF
 Lg
@@ -5558,7 +5562,7 @@ Ga
 Ga
 Sv
 KR
-TE
+Bg
 KH
 Ny
 cy
@@ -5725,7 +5729,7 @@ bO
 tx
 QJ
 bO
-kn
+tI
 oN
 bO
 Tl
@@ -7168,7 +7172,7 @@ cF
 Lg
 Lg
 Lg
-UH
+By
 wh
 wh
 Lg
