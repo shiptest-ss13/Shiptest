@@ -29,6 +29,7 @@
 /obj/effect/turf_decal/siding/thinplating/end{
 	dir = 1
 	},
+/obj/machinery/light/floor,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "as" = (
@@ -110,6 +111,7 @@
 	pixel_x = 9;
 	pixel_y = 8
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "bh" = (
@@ -305,6 +307,7 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 1
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "cr" = (
@@ -383,7 +386,6 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 10
 	},
-/obj/machinery/light/floor,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "dz" = (
@@ -570,17 +572,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
-"eJ" = (
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner{
-	dir = 8
-	},
-/obj/machinery/light/directional/south,
-/obj/effect/turf_decal/siding/black{
-	dir = 5
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/white,
-/area/ship/hallway/central)
 "eS" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
@@ -1075,7 +1066,6 @@
 	dir = 9
 	},
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/directional/north,
 /obj/item/bodycamera{
 	pixel_y = 8
 	},
@@ -1085,6 +1075,11 @@
 /obj/item/bodycamera{
 	pixel_x = 10
 	},
+/obj/machinery/light/small/directional/north{
+	pixel_x = 12;
+	pixel_y = 28
+	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/suns/hatch{
 	color = "#E6D2BA"
 	},
@@ -1753,7 +1748,6 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
 /obj/structure/table/reinforced,
 /obj/machinery/fax/syndicate,
-/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "sY" = (
@@ -1849,6 +1843,7 @@
 	},
 /obj/item/radio/intercom/directional/north,
 /obj/effect/turf_decal/siding/black,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "uA" = (
@@ -1932,6 +1927,7 @@
 	},
 /obj/machinery/holopad/secure,
 /obj/structure/chair/handrail,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "vQ" = (
@@ -2873,6 +2869,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/black,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "Gl" = (
@@ -2919,7 +2916,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
 "Hi" = (
-/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/siding/black{
 	dir = 8
 	},
@@ -3118,7 +3114,6 @@
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
 	dir = 1
 	},
-/obj/machinery/light/directional/north,
 /obj/machinery/computer/crew{
 	icon_state = "computer-left"
 	},
@@ -3177,7 +3172,6 @@
 "Ku" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border,
 /obj/effect/turf_decal/corner/opaque/syndiered/border,
-/obj/machinery/light/directional/south,
 /obj/effect/turf_decal/siding/black{
 	dir = 1
 	},
@@ -3639,11 +3633,11 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
+/obj/structure/table/glass,
 /obj/structure/sign/poster/contraband/cybersun_borg{
 	pixel_x = 0;
 	pixel_y = 30
 	},
-/obj/structure/table/glass,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "OS" = (
@@ -3871,7 +3865,6 @@
 	dir = 1
 	},
 /obj/structure/chair/handrail,
-/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/siding/black,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/white,
@@ -3947,6 +3940,7 @@
 /obj/item/folder/syndicate,
 /obj/item/pen,
 /obj/item/pen,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "SQ" = (
@@ -5314,7 +5308,7 @@ SK
 GQ
 UT
 Eq
-eJ
+mM
 zF
 PK
 EH
