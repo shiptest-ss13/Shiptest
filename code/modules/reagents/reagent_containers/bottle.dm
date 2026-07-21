@@ -111,8 +111,6 @@
 /obj/item/reagent_containers/glass/bottle/adminordrazine
 	name = "Adminordrazine Bottle"
 	desc = "A small bottle. Contains the liquid essence of the gods."
-	icon = 'icons/obj/drinks/drinks.dmi'
-	icon_state = "holyflask"
 	list_reagents = list(/datum/reagent/medicine/adminordrazine = 30)
 	can_have_cap = FALSE
 	cap_icon_state = null
@@ -259,20 +257,10 @@
 	desc = "A small bottle. Contains a small dosage of Fukkos Miracos."
 	spawned_disease = /datum/disease/magnitis
 
-/obj/item/reagent_containers/glass/bottle/wizarditis
-	name = "Wizarditis culture bottle"
-	desc = "A small bottle. Contains a sample of Rincewindus Vulgaris."
-	spawned_disease = /datum/disease/wizarditis
-
 /obj/item/reagent_containers/glass/bottle/anxiety
 	name = "Severe Anxiety culture bottle"
 	desc = "A small bottle. Contains a sample of Lepidopticides."
 	spawned_disease = /datum/disease/anxiety
-
-/obj/item/reagent_containers/glass/bottle/beesease
-	name = "Beesease culture bottle"
-	desc = "A small bottle. Contains a sample of invasive Apidae."
-	spawned_disease = /datum/disease/beesease
 
 /obj/item/reagent_containers/glass/bottle/fluspanish
 	name = "Spanish flu culture bottle"

@@ -140,9 +140,9 @@
 	aiPDA.ownjob = "pAI Messenger"
 	aiPDA.name = real_name + " (" + aiPDA.ownjob + ")"
 
-/mob/living/silicon/pai/proc/process_hack()
+/mob/living/silicon/pai/proc/process_hack(seconds_per_tick, times_fired)
 	if(cable && cable.machine && istype(cable.machine, /obj/machinery/door) && cable.machine == hackdoor && get_dist(src, hackdoor) <= 1)
-		hackprogress = clamp(hackprogress + 4, 0, 100)
+		hackprogress = clamp(hackprogress + (2 * seconds_per_tick), 0, 100)
 	else
 		temp = "Door Jack: Connection to airlock has been lost. Hack aborted."
 		hackprogress = 0
@@ -267,7 +267,7 @@
 	. = ..()
 	. += "A personal AI in holochassis mode. Its master ID string seems to be [master]."
 
-/mob/living/silicon/pai/Life()
+/mob/living/silicon/pai/Life(seconds_per_tick, times_fired)
 	. = ..()
 	if(QDELETED(src) || stat == DEAD)
 		return
@@ -277,7 +277,7 @@
 			T.visible_message(span_warning("[cable] rapidly retracts back into its spool."), span_hear("You hear a click and the sound of wire spooling rapidly."))
 			QDEL_NULL(cable)
 	if(hacking)
-		process_hack()
+		process_hack(seconds_per_tick, times_fired)
 	silent = max(silent - 1, 0)
 
 /mob/living/silicon/pai/updatehealth()

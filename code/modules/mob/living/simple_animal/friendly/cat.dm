@@ -19,7 +19,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	minbodytemp = 200
 	maxbodytemp = 400
-	unsuitable_atmos_damage = 1
+	unsuitable_atmos_damage = 0.5
 	animal_species = /mob/living/simple_animal/pet/cat
 	childtype = list(/mob/living/simple_animal/pet/cat/kitten)
 	butcher_results = list(/obj/item/food/meat/slab = 2, /obj/item/organ/ears/cat = 1, /obj/item/organ/tail/cat = 1)
@@ -32,7 +32,7 @@
 	var/turns_since_scan = 0
 	var/mob/living/basic/mouse/movement_target
 	///Limits how often cats can spam chasing mice.
-	var/emote_cooldown = 0
+	COOLDOWN_DECLARE(emote_cooldown)
 	collar_type = "cat"
 	held_state = "cat2"
 
@@ -105,7 +105,7 @@
 	Read_Memory()
 	. = ..()
 
-/mob/living/simple_animal/pet/cat/Runtime/Life()
+/mob/living/simple_animal/pet/cat/Runtime/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	if(!cats_deployed && SSticker.current_state >= GAME_STATE_SETTING_UP)
 		Deploy_The_Cats()
 	if(!stat && SSticker.current_state == GAME_STATE_FINISHED && !memory_saved)
@@ -207,7 +207,7 @@
 	if(glow_strength <= 1)
 		src.remove_filter("ray_cat_glow")
 
-/mob/living/simple_animal/pet/cat/Life()
+/mob/living/simple_animal/pet/cat/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	radiation_count -= radiation_count/RAD_MEASURE_SMOOTHING
 	radiation_count += current_tick_amount/RAD_MEASURE_SMOOTHING
 
@@ -244,10 +244,10 @@
 		if(!stat && !resting && !buckled)
 			for(var/mob/living/basic/mouse/M in view(1,src))
 				if(istype(M, /mob/living/basic/mouse/brown/tom) && (name == "Jerry")) //Turns out there's no jerry subtype.
-					if (emote_cooldown < (world.time - 600))
+					if(COOLDOWN_FINISHED(src, emote_cooldown))
 						visible_message(span_warning("[src] chases [M] around, to no avail!"))
 						step(M, pick(GLOB.cardinals))
-						emote_cooldown = world.time
+						COOLDOWN_START(src, emote_cooldown, 1 MINUTES)
 					break
 				if(!M.stat && Adjacent(M))
 					manual_emote("splats \the [M]!")
@@ -267,7 +267,7 @@
 	if(!stat && !resting && !buckled)
 		turns_since_scan++
 		if(turns_since_scan > 5)
-			walk_to(src,0)
+			walk_to(src, 0)
 			turns_since_scan = 0
 			if((movement_target) && !(isturf(movement_target.loc) || ishuman(movement_target.loc)))
 				movement_target = null
@@ -341,12 +341,12 @@
 		to_chat(src, span_notice("Your name is now <b>\"new_name\"</b>!"))
 		name = new_name
 
-/mob/living/simple_animal/pet/cat/cak/Life()
+/mob/living/simple_animal/pet/cat/cak/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	..()
 	if(stat)
 		return
 	if(health < maxHealth)
-		adjustBruteLoss(-8) //Fast life regen
+		adjustBruteLoss(-4 * seconds_per_tick) //Fast life regen
 	for(var/obj/item/food/donut/D in range(1, src)) //Frosts nearby donuts!
 		if(!D.is_decorated)
 			D.decorate_donut()
