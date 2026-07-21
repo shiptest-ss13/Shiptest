@@ -83,11 +83,15 @@
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "as" = (
-/obj/structure/platform{
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/ruin/rockplanet/ngrcolony/outdoors)
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/rockplanet/ngrcolony/main_gate)
 "at" = (
 /obj/structure/bed{
 	dir = 1
@@ -168,6 +172,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"aQ" = (
+/obj/item/chair/plastic,
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/ruin/rockplanet/ngrcolony/mine)
 "aS" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -309,6 +317,12 @@
 	},
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"bl" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/opaque/tan/mono,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/ngrcolony/security)
 "bm" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -349,6 +363,10 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel/rockplanet/interior,
@@ -392,8 +410,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/crawlergarage)
 "bx" = (
-/obj/item/ammo_casing/spent/pistol_steel,
-/obj/item/ammo_casing/spent/pistol_steel,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
@@ -403,6 +419,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "bB" = (
@@ -453,6 +470,15 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/engineering)
+"bH" = (
+/obj/effect/turf_decal/techfloor,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/closet/firecloset{
+	anchored = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "bI" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -532,7 +558,7 @@
 	},
 /obj/effect/turf_decal/road/stripes,
 /turf/open/floor/concrete/pavement/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "cb" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/ngrcolony/crawlergarage)
@@ -587,6 +613,10 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "cn" = (
@@ -627,6 +657,19 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/ngrcolony/security)
+"cs" = (
+/obj/item/pickaxe{
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/item/shovel,
+/obj/item/shovel{
+	pixel_x = 2;
+	pixel_y = -1
+	},
+/obj/structure/rack,
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/ngrcolony/mine)
 "cu" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -662,7 +705,7 @@
 	pixel_y = 0
 	},
 /turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "cC" = (
 /obj/effect/turf_decal/trimline/opaque/red/corner,
 /obj/effect/turf_decal/borderfloorblack{
@@ -711,11 +754,15 @@
 /obj/machinery/light/street{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "cJ" = (
 /turf/template_noop,
 /area/template_noop)
+"cL" = (
+/obj/structure/fence,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "cN" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -769,6 +816,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
 "dg" = (
@@ -826,6 +874,7 @@
 /area/ruin/rockplanet/ngrcolony/security)
 "dp" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/structure/closet/crate/large,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
 "dq" = (
@@ -926,6 +975,7 @@
 	},
 /obj/effect/turf_decal/borderfloorblack,
 /obj/structure/railing,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/ngrcolony/engineering)
 "dL" = (
@@ -944,6 +994,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "dP" = (
@@ -1033,6 +1084,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/canteen)
+"ea" = (
+/obj/structure/closet/mob_capture,
+/turf/open/floor/plasteel/mono/dark/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "ef" = (
 /obj/structure/table/wood,
 /turf/open/floor/wood,
@@ -1080,16 +1135,35 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/obj/structure/closet/wall/directional/south,
-/obj/item/towel,
-/obj/item/towel,
-/obj/item/towel,
-/obj/item/towel,
+/obj/structure/closet/wall/directional/south{
+	pixel_x = 5;
+	pixel_y = -27
+	},
+/obj/item/towel{
+	pixel_x = 8;
+	pixel_y = 0
+	},
+/obj/item/towel{
+	pixel_x = 7;
+	pixel_y = 0
+	},
+/obj/item/towel{
+	pixel_x = 4;
+	pixel_y = 0
+	},
+/obj/item/towel{
+	pixel_x = 4;
+	pixel_y = 0
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -10;
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
@@ -1103,7 +1177,7 @@
 	network = list("ngr_colony","ngr_colony_mines")
 	},
 /turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "eA" = (
 /obj/structure/platform,
 /obj/structure/cable/yellow{
@@ -1127,6 +1201,15 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
+"eF" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "eG" = (
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 4
@@ -1172,7 +1255,7 @@
 	},
 /obj/item/ammo_casing/spent/rifle_steel,
 /turf/open/floor/concrete/pavement/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "eL" = (
 /turf/closed/wall/concrete,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
@@ -1209,6 +1292,15 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = 8;
+	id = "ngr_rock_colony_bathroom_unit1";
+	specialfunctions = 4;
+	normaldoorcontrol = 1;
+	name = "Bolts"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
@@ -1271,6 +1363,17 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"fe" = (
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.038;
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/west{
+	pixel_x = -28;
+	pixel_y = 16
+	},
+/turf/open/floor/plasteel/tech/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "ff" = (
 /obj/structure/holohoop,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
@@ -1302,6 +1405,12 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
 	},
 /turf/open/floor/plasteel/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
@@ -1378,6 +1487,30 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
+"fu" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/transparent/black/full,
+/obj/effect/turf_decal/industrial/warning{
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "fw" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -1411,6 +1544,18 @@
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ruin/rockplanet/ngrcolony/control)
+"fz" = (
+/obj/item/stack/empty_sandbags,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/rockplanet,
+/area/ruin/rockplanet/ngrcolony/mine)
+"fA" = (
+/obj/structure/platform{
+	dir = 4
+	},
+/obj/item/stack/empty_sandbags,
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "fF" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-10"
@@ -1473,6 +1618,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "fT" = (
@@ -1507,6 +1655,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
+"fV" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/turf/open/floor/pod,
+/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "fW" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -1520,8 +1677,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "fX" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
+/obj/item/stack/cable_coil/cut/yellow{
+	pixel_x = 5;
+	pixel_y = -4
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
@@ -1571,6 +1729,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
 "gh" = (
@@ -1636,6 +1795,12 @@
 /obj/structure/ore_box,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
+"go" = (
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/turf/open/floor/concrete/reinforced/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "gp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1672,6 +1837,10 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 4
 	},
+/obj/machinery/coffeemaker/premium{
+	pixel_y = 5;
+	pixel_x = 2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/control)
 "gt" = (
@@ -1680,6 +1849,8 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "gu" = (
@@ -1709,6 +1880,18 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
+"gB" = (
+/obj/effect/turf_decal/corner/transparent/black/full,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plasteel/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "gC" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -1873,6 +2056,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/door/airlock/freezer{
+	dir = 8;
+	name = "Shower"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "ha" = (
@@ -1888,6 +2075,12 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/warehouse)
@@ -1948,9 +2141,13 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "hr" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ruin/rockplanet/ngrcolony/main_gate)
+/obj/effect/turf_decal/industrial/traffic,
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.038
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel/tech/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "hs" = (
 /obj/machinery/light/small/directional/east,
 /obj/structure/reagent_dispensers/watertank,
@@ -1972,6 +2169,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/control)
+"hv" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/structure/closet/crate/large,
+/turf/open/floor/plasteel/mono/dark/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "hw" = (
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "dismantle";
@@ -2038,6 +2240,7 @@
 	pixel_x = 0;
 	pixel_y = 17
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "hJ" = (
@@ -2107,6 +2310,9 @@
 	color = "#eeac2e"
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "hT" = (
@@ -2153,6 +2359,9 @@
 "id" = (
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters,
 /obj/effect/turf_decal/corner/opaque/beige{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -2202,6 +2411,13 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/utility)
+"it" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "iu" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
@@ -2212,11 +2428,45 @@
 /obj/structure/cable/yellow,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/warehouse)
+"iv" = (
+/obj/structure/platform{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
+"iy" = (
+/obj/structure/table/emptycomputer{
+	icon_state = "emptycomputer-middle";
+	dir = 8;
+	pixel_x = 5;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4;
+	layer = 2.04
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/ngrcolony/mine_gate)
 "iA" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
+/obj/structure/bed/roller,
+/obj/effect/turf_decal/box/white,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_x = -1;
+	pixel_y = 24
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
+"iB" = (
+/obj/item/ammo_casing/spent/rifle_steel,
+/turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
+"iC" = (
+/obj/structure/closet/mob_capture,
+/obj/effect/mob_spawn/animal_corpse/crystal_watcher,
+/turf/open/floor/plasteel/mono/dark/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "iE" = (
 /obj/effect/mob_spawn/animal_corpse/creature,
 /turf/open/floor/concrete/pavement/rockplanet/lit,
@@ -2257,6 +2507,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
 	},
 /turf/open/floor/plasteel/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
@@ -2314,18 +2567,24 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "iR" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
+/obj/effect/turf_decal/corner/transparent/black/full,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4;
+	color = "#eeac2e"
 	},
-/obj/machinery/door/firedoor/border_only,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
 	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/rockplanet/ngrcolony/main_gate)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "iS" = (
 /obj/structure/fluff/fokoff_sign,
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet,
@@ -2364,6 +2623,19 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"jd" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/rockplanet/ngrcolony/main_gate)
 "jf" = (
 /obj/structure/flora/grass/rockplanet/dead,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
@@ -2389,6 +2661,9 @@
 /obj/effect/spawner/random/salvage/ore/metal,
 /obj/effect/spawner/random/salvage/ore/uranium,
 /obj/effect/spawner/random/salvage/part/scanning,
+/obj/machinery/camera/autoname/directional/south{
+	network = list("ngr_colony","ngr_colony_mines")
+	},
 /turf/open/floor/concrete/reinforced/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "jm" = (
@@ -2411,6 +2686,13 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/engineering)
+"jr" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/turf/open/floor/pod,
+/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "js" = (
 /obj/structure/platform{
 	dir = 5
@@ -2448,6 +2730,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "jA" = (
@@ -2459,6 +2742,10 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "jF" = (
@@ -2497,7 +2784,7 @@
 /obj/machinery/light/directional/east,
 /obj/item/ammo_casing/spent/rifle_steel,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "jP" = (
 /obj/structure/frame/machine{
 	state = 2;
@@ -2632,7 +2919,13 @@
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "ki" = (
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "kj" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -2682,7 +2975,11 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
+"ko" = (
+/obj/structure/fence/corner,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "ks" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -2704,6 +3001,10 @@
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "kw" = (
 /obj/structure/table/reinforced,
+/obj/item/clothing/head/welding{
+	pixel_x = 4;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "kA" = (
@@ -2727,6 +3028,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/engineering)
 "kE" = (
@@ -2832,7 +3134,7 @@
 	id = "ngr_mining_colony_cave_lockdown"
 	},
 /turf/open/floor/concrete/pavement/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "kT" = (
 /obj/effect/turf_decal/road/stripes{
 	dir = 8
@@ -2852,6 +3154,13 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"kY" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/ngrcolony/mine_gate)
 "kZ" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -2885,6 +3194,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1;
 	color = "#eeac2e"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/warehouse)
@@ -2954,6 +3266,17 @@
 	},
 /turf/open/floor/concrete,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
+"li" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/rockplanet/ngrcolony/main_gate)
 "lk" = (
 /obj/structure/barricade/sandbags,
 /obj/item/stack/ore/salvage/scrapmetal{
@@ -3144,6 +3467,10 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
 /turf/open/floor/plasteel/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
+"lK" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/pod,
+/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "lM" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/effect/turf_decal/industrial/traffic{
@@ -3155,7 +3482,17 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "ngr_rock_colony_warehouse_mechbay"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/grid,
+/area/ruin/rockplanet/ngrcolony/warehouse)
+"lN" = (
+/obj/structure/table/reinforced,
+/obj/machinery/airalarm/directional/west,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -2;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "lP" = (
 /turf/closed/wall/concrete/reinforced,
@@ -3209,6 +3546,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
+"mc" = (
+/obj/effect/turf_decal/industrial/traffic,
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.038
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "md" = (
 /obj/effect/turf_decal/corner/opaque/tan/full,
 /obj/effect/turf_decal/trimline/opaque/bar/line{
@@ -3263,6 +3608,8 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/effect/spawner/random/vending/snack,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/security)
 "ml" = (
@@ -3293,6 +3640,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-10"
 	},
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
 "mt" = (
@@ -3397,6 +3745,8 @@
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/utility)
 "mU" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/closet/wall/med/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "mX" = (
@@ -3464,8 +3814,31 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
+"nk" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/security{
+	dir = 4;
+	name = "Checkpoint Desk"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/rockplanet/ngrcolony/main_gate)
 "nl" = (
 /obj/machinery/button/door{
 	dir = 1;
@@ -3560,10 +3933,22 @@
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
 "nw" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/filingcabinet{
+	density = 0;
+	pixel_x = 10;
+	pixel_y = 0;
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
 "nx" = (
@@ -3643,6 +4028,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/closet/emcloset/anchored,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "nE" = (
@@ -3701,6 +4087,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 8;
+	pixel_y = -33
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/engineering)
 "nN" = (
@@ -3741,7 +4134,7 @@
 	id = "ngr_mining_colony_cave_lockdown"
 	},
 /turf/open/floor/concrete/pavement/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "nV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
@@ -3848,9 +4241,6 @@
 /turf/open/floor/concrete/slab_4/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/farm)
 "oq" = (
-/obj/structure/platform{
-	dir = 4
-	},
 /obj/structure/sign/warning/securearea{
 	pixel_x = 0;
 	pixel_y = 26
@@ -3861,6 +4251,10 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"os" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/rockplanet,
+/area/ruin/rockplanet/ngrcolony/mine)
 "ou" = (
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/farm)
@@ -3969,6 +4363,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/engineering)
 "oW" = (
@@ -4134,6 +4529,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/structure/closet/firecloset{
+	anchored = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "pH" = (
@@ -4144,6 +4542,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
 "pK" = (
@@ -4187,6 +4586,7 @@
 /area/ruin/rockplanet/ngrcolony/control)
 "pP" = (
 /obj/machinery/light/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/pod,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "pR" = (
@@ -4273,6 +4673,11 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/ngrcolony/crawlergarage)
+"qh" = (
+/obj/effect/mob_spawn/human/corpse/ngr/mechanic,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "qi" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -4315,6 +4720,18 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/security)
+"qu" = (
+/obj/effect/turf_decal/corner/transparent/black/full,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plasteel/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "qv" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 9
@@ -4328,6 +4745,15 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = -3;
+	pixel_y = 2
+	},
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 5;
+	pixel_y = -1
+	},
+/obj/structure/rack,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/engineering)
 "qx" = (
@@ -4400,6 +4826,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/ngrcolony/engineering)
 "qL" = (
@@ -4461,6 +4888,9 @@
 /obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/closet/firecloset{
+	anchored = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "rb" = (
@@ -4479,6 +4909,9 @@
 /obj/effect/turf_decal/industrial/traffic,
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "ngr_colony_warehouse_main"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/warehouse)
@@ -4593,6 +5026,7 @@
 /obj/effect/spawner/random/medical/minor_healing,
 /obj/item/book/manual/wiki/medicine,
 /obj/item/book/manual/wiki/surgery,
+/obj/item/spacecash/bundle/pocketchange,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "rB" = (
@@ -4633,6 +5067,12 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/structure/chair/office/dark{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
@@ -4733,6 +5173,7 @@
 "sl" = (
 /obj/structure/cable/yellow,
 /obj/structure/salvageable/turret,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
 "sn" = (
@@ -4754,7 +5195,18 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "sq" = (
-/turf/open/floor/plasteel/tech,
+/obj/machinery/computer/security{
+	dir = 8;
+	icon_state = "computer-right";
+	network = list("ngr_colony_mines");
+	pixel_x = 5;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4;
+	layer = 2.04
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/ngrcolony/mine_gate)
 "sr" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/sniper/illestren{
@@ -4771,6 +5223,13 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-10"
 	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "ngr_colony_warehouse_main_holo";
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "ngr_colony_warehouse_main"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "su" = (
@@ -4780,6 +5239,12 @@
 /obj/structure/closet/wall/directional/west,
 /obj/machinery/light/small/directional/south,
 /obj/item/clothing/suit/toggle/ngr,
+/obj/item/clothing/suit/hooded/hoodie/rilena,
+/obj/item/clothing/accessory/rilena_pin,
+/obj/item/reagent_containers/food/drinks/rilenacup,
+/obj/item/poster/random_rilena,
+/obj/item/modular_computer/laptop/preset/civilian/rilena,
+/obj/item/poster/random_rilena,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "sv" = (
@@ -4798,6 +5263,12 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "sw" = (
@@ -4814,8 +5285,17 @@
 /obj/structure/barricade/concrete{
 	dir = 4
 	},
+/obj/effect/spawner/random/trash/graffiti{
+	pixel_y = -32
+	},
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"sC" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/pod,
+/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "sJ" = (
 /obj/structure/platform/corner{
 	dir = 8
@@ -4843,7 +5323,8 @@
 	},
 /obj/machinery/door/airlock/freezer{
 	dir = 8;
-	name = "Unit 2"
+	name = "Unit 2";
+	id_tag = "ngr_rock_colony_bathroom_unit2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -4862,6 +5343,16 @@
 /obj/effect/mob_spawn/animal_corpse/gruboid,
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
+"sS" = (
+/obj/machinery/light/street{
+	dir = 8;
+	pixel_x = 15;
+	pixel_y = 0
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/concrete/slab_4/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "sT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
@@ -4910,6 +5401,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "td" = (
@@ -4930,6 +5422,25 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"tg" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner/transparent/black/full,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/floor{
+	pixel_y = 16;
+	pixel_x = 16
+	},
+/turf/open/floor/plasteel/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "th" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -4970,6 +5481,17 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/security)
+"to" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-10"
+	},
+/obj/item/pickaxe/rusted{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/effect/spawner/random/decoration/glowstick/on,
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "tp" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -5016,6 +5538,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/structure/closet/emcloset/anchored,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "tE" = (
@@ -5035,8 +5558,17 @@
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "tG" = (
+/obj/machinery/button/door{
+	dir = 4;
+	id = "ngr_mining_colony_cave_lockdown";
+	pixel_x = -20;
+	pixel_y = -8;
+	name = "Emergency Override"
+	},
+/obj/item/ammo_casing/spent/rifle_steel,
+/obj/item/ammo_casing/spent/rifle_steel,
 /turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "tH" = (
 /obj/structure/platform{
 	dir = 4
@@ -5076,6 +5608,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"tX" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light/small/directional/west,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/rockplanet/ngrcolony/main_gate)
 "tY" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/turf_decal/corner/opaque/beige/diagonal{
@@ -5162,6 +5705,8 @@
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.038
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "uq" = (
@@ -5194,7 +5739,8 @@
 	},
 /obj/machinery/door/airlock/freezer{
 	dir = 8;
-	name = "Unit 1"
+	name = "Unit 1";
+	id_tag = "ngr_rock_colony_bathroom_unit1"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -5297,6 +5843,10 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "uL" = (
@@ -5368,6 +5918,7 @@
 	dir = 8;
 	pixel_x = 9
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "uX" = (
@@ -5394,6 +5945,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/security,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "vb" = (
@@ -5418,6 +5971,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
+"vh" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/item/trench_tool,
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "vi" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/random/trash/graffiti{
@@ -5442,7 +6000,7 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/pavement/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "vp" = (
 /obj/machinery/light/street{
 	pixel_x = 0;
@@ -5524,6 +6082,12 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
+"vL" = (
+/obj/structure/barricade/directional/flippedtable{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "vN" = (
 /obj/effect/mob_spawn/animal_corpse/crystal_watcher,
 /obj/structure/cable/yellow{
@@ -5546,8 +6110,27 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-9"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
+"vR" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = -10;
+	id = "ngr_rock_colony_bathroom_unit2";
+	specialfunctions = 4;
+	normaldoorcontrol = 1;
+	name = "Bolts"
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/ngrcolony/bunkhouse)
 "vT" = (
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/ngrcolony/crawlergarage)
@@ -5711,10 +6294,11 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "wt" = (
+/obj/structure/closet/wall/red/directional/east,
 /obj/effect/turf_decal/techfloor{
-	dir = 10
+	dir = 4
 	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/pod,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "wv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -5722,15 +6306,56 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
-"wy" = (
-/obj/structure/platform{
+"ww" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/traffic{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/snow/lit/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "ngr_colony_warehouse_side_holo"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "ngr_colony_warehouse_side"
+	},
+/turf/open/floor/plasteel/tech/grid/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
+"wy" = (
+/obj/machinery/deployable_turret/spotlight{
+	dir = 10
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/concrete/reinforced/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "wA" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/ngrcolony/mine)
+"wB" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1;
+	layer = 2.04
+	},
+/obj/structure/sign/flag/ngr{
+	pixel_y = 32
+	},
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/drinks/coffee/vendingmachine/empty{
+	pixel_x = 0;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/food/drinks/coffee/vendingmachine/empty{
+	pixel_x = 9;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/ngrcolony/mine_gate)
 "wF" = (
 /obj/structure/chair/bench/beige/directional/north,
 /obj/machinery/holosign/gec{
@@ -5778,9 +6403,6 @@
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "wO" = (
-/obj/structure/sign/warning/securearea{
-	pixel_y = -23
-	},
 /obj/structure/barricade/concrete{
 	dir = 4
 	},
@@ -5810,6 +6432,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/security)
 "wS" = (
@@ -6137,6 +6760,7 @@
 	icon_state = "6-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/borderfloorblack/corner,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
 "xG" = (
@@ -6240,8 +6864,13 @@
 /obj/structure/platform/corner{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"xX" = (
+/obj/machinery/light/broken/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced/rockplanet,
+/area/ruin/rockplanet/ngrcolony/mine)
 "ya" = (
 /obj/structure/closet/crate/engineering,
 /obj/item/reagent_containers/glass/chem_jug/hexacrete,
@@ -6279,7 +6908,8 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/north{
-	start_charge = 0
+	start_charge = 100;
+	cell_type = /obj/item/stock_parts/cell/high/plus
 	},
 /turf/open/floor/concrete/reinforced/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
@@ -6287,10 +6917,13 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
 /obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
 "ye" = (
@@ -6299,6 +6932,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -9;
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/security/prison)
@@ -6493,7 +7130,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-/obj/machinery/airalarm/directional/south,
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = -9;
+	id = "ngr_rock_colony_prison_bathroom";
+	specialfunctions = 4;
+	normaldoorcontrol = 1;
+	name = "Bolts"
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "yR" = (
@@ -6513,18 +7158,26 @@
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "yX" = (
-/obj/structure/platform{
-	dir = 8
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
-/obj/machinery/camera/autoname/directional/south{
-	network = list("ngr_colony","ngr_colony_mines")
-	},
-/turf/open/floor/plating/asteroid/snow/lit/rockplanet,
-/area/ruin/rockplanet/ngrcolony/outdoors)
+/obj/structure/closet/wall/directional/west,
+/obj/machinery/light/small/directional/south,
+/obj/item/clothing/suit/toggle/ngr,
+/obj/item/spacecash/bundle/pocketchange,
+/obj/item/modular_computer/laptop/preset/civilian,
+/turf/open/floor/carpet/red,
+/area/ruin/rockplanet/ngrcolony/bunkhouse)
 "yY" = (
 /obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/concrete,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
+"zb" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "zg" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -6604,6 +7257,10 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
+"zB" = (
+/obj/item/stack/empty_sandbags,
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "zD" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -6611,6 +7268,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/security/prison)
+"zE" = (
+/obj/effect/mob_spawn/animal_corpse/goliath/crystal,
+/obj/item/ammo_casing/spent/rifle_steel,
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "zF" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "ngr_colony_ramzi_farm_shed"
@@ -6671,6 +7333,12 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/machinery/power/apc/auto_name/directional/west{
+	start_charge = 0
+	},
+/obj/structure/cable/yellow,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/main_gate)
 "zS" = (
@@ -6777,6 +7445,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/control)
+"Ar" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-10"
+	},
+/obj/item/stack/empty_sandbags,
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "As" = (
 /obj/item/stack/ore/slag{
 	pixel_x = 2;
@@ -7142,6 +7817,7 @@
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "Bq" = (
 /obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
 "Bs" = (
@@ -7194,6 +7870,18 @@
 /obj/structure/barricade/concrete,
 /turf/open/floor/concrete/slab_4/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
+"BB" = (
+/obj/machinery/computer/crew{
+	dir = 8;
+	icon_state = "computer-left";
+	pixel_x = 5;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/ngrcolony/mine_gate)
 "BC" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
@@ -7219,27 +7907,30 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/canteen)
-"BH" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
+"BG" = (
+/obj/structure/table/reinforced{
+	color = "#a3a2a0"
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
+/obj/machinery/coffeemaker/premium{
+	pixel_y = 5;
+	pixel_x = 2
 	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/airlock/security{
-	dir = 4;
-	name = "Checkpoint Desk"
-	},
-/turf/open/floor/plasteel/tech/grid,
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
+"BH" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/barricade/wooden,
+/turf/open/floor/concrete/pavement/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "BL" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/turf_decal/corner/opaque/beige/diagonal{
@@ -7371,6 +8062,14 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "ngr_colony_warehouse_side_holo";
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "ngr_colony_warehouse_side"
+	},
 /turf/open/floor/plasteel/tech/grid/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "Ce" = (
@@ -7385,8 +8084,24 @@
 /obj/item/ammo_casing/spent/pistol_steel,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plastic,
 /area/ruin/rockplanet/ngrcolony/security/prison)
+"Ch" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner/transparent/black/full,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "Ci" = (
 /obj/structure/barricade/concrete,
 /turf/open/floor/concrete/rockplanet,
@@ -7418,6 +8133,11 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal{
 	dir = 8
 	},
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
+"Cn" = (
+/obj/structure/platform,
+/obj/item/stack/empty_sandbags,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
 "Cr" = (
@@ -7604,6 +8324,10 @@
 /obj/structure/closet/crate/wooden,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
+"CY" = (
+/obj/effect/mob_spawn/animal_corpse/crystal_watcher,
+/turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "Dd" = (
 /obj/structure/platform/corner,
 /obj/structure/flora/rock/rockplanet,
@@ -7676,6 +8400,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/canteen)
+"Dz" = (
+/obj/item/ammo_casing/spent/rifle_steel,
+/turf/open/floor/plating/asteroid/snow/lit/rockplanet/overpavement,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "DA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -7684,6 +8412,12 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
+"DB" = (
+/obj/structure/fence/corner{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "DC" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/turf_decal/corner/opaque/beige/diagonal{
@@ -7722,6 +8456,7 @@
 /obj/machinery/camera/autoname/directional/south{
 	network = list("ngr_colony","ngr_colony_mines")
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
 "DM" = (
@@ -7761,6 +8496,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "DW" = (
@@ -7922,6 +8659,15 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/main_gate)
@@ -8086,6 +8832,13 @@
 /obj/item/sign/flag/ngr,
 /turf/open/floor/plasteel/mono/dark/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
+"EQ" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/item/chair/plastic,
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "ES" = (
 /obj/structure/fence/cut/large{
 	dir = 4
@@ -8100,13 +8853,38 @@
 /obj/effect/turf_decal/road/stripes{
 	dir = 1
 	},
+/obj/structure/barricade/wooden,
 /turf/open/floor/concrete/pavement/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "EU" = (
 /obj/structure/barricade/concrete,
 /obj/item/ammo_casing/spent/magnum_brass,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"EV" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/transparent/black/full,
+/obj/effect/turf_decal/industrial/warning{
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "EX" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
@@ -8265,10 +9043,12 @@
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "FA" = (
+/obj/structure/closet/wall/red/directional/east,
 /obj/effect/turf_decal/techfloor{
-	dir = 8
+	dir = 4
 	},
-/turf/open/floor/plasteel/tech/grid,
+/obj/item/trench_tool,
+/turf/open/floor/pod,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "FB" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
@@ -8345,12 +9125,15 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/airlock/freezer{
+	name = "Shower"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "FQ" = (
 /obj/item/ammo_casing/spent/rifle_steel,
 /turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "FR" = (
 /obj/item/paper/crumpled/fluff/ruins/ngr_rock_colony/prisoner_procedure{
 	pixel_x = -8;
@@ -8427,6 +9210,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/closet/emcloset/anchored,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
 "Gj" = (
@@ -8548,7 +9332,7 @@
 /obj/machinery/light/street{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "GH" = (
 /obj/structure/platform{
@@ -8608,6 +9392,21 @@
 	},
 /turf/open/floor/plasteel/tech/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/refinery)
+"GQ" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/spawner/bunk_bed,
+/obj/structure/curtain/cloth/grey,
+/obj/item/toy/plush/rilena{
+	pixel_x = 5;
+	pixel_y = 12
+	},
+/obj/structure/sign/poster/rilena/random{
+	pixel_y = -32
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/rockplanet/ngrcolony/bunkhouse)
 "GR" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/o2,
 /obj/effect/turf_decal/box/white,
@@ -8652,7 +9451,7 @@
 	id = "ngr_mining_colony_cave_lockdown"
 	},
 /turf/open/floor/plasteel/tech/rockplanet/interior,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "GY" = (
 /obj/machinery/computer/security{
 	dir = 4;
@@ -8771,6 +9570,15 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_x = -23;
+	pixel_y = 11
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/firealarm/directional/west{
+	pixel_x = -32;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/engineering)
 "Ht" = (
@@ -8791,6 +9599,17 @@
 	layer = 2.038;
 	dir = 1
 	},
+/obj/machinery/button/shieldwallgen{
+	id = "ngr_colony_warehouse_main_holo";
+	pixel_x = 4;
+	pixel_y = 22
+	},
+/obj/machinery/button/door{
+	id = "ngr_colony_warehouse_main";
+	name = "Receiving Gate";
+	pixel_x = -4;
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel/tech/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "Hw" = (
@@ -8801,6 +9620,25 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Hx" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner/transparent/black/full,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/floor{
+	pixel_y = 16;
+	pixel_x = -16
+	},
+/turf/open/floor/plasteel/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "Hy" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -8817,6 +9655,13 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/utility)
+"Hz" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/chair/plastic,
+/turf/open/floor/concrete/reinforced/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "HA" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -8842,7 +9687,7 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/item/ammo_casing/spent/rifle_steel,
 /turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "HE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -8866,6 +9711,14 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
+"HK" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4;
+	layer = 2.04
+	},
+/obj/structure/guncloset,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/ngrcolony/mine_gate)
 "HM" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -8943,14 +9796,16 @@
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "Ig" = (
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "Ii" = (
 /obj/effect/turf_decal/road/stripes{
 	dir = 1
 	},
+/obj/structure/barricade/wooden,
 /turf/open/floor/concrete/pavement/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "Im" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -8976,6 +9831,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-10"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
 "Iq" = (
@@ -8986,6 +9842,10 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 8;
+	pixel_y = -33
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/security)
@@ -9014,6 +9874,19 @@
 	layer = 2.038;
 	dir = 4
 	},
+/obj/machinery/button/shieldwallgen{
+	id = "ngr_colony_warehouse_side_holo";
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 0
+	},
+/obj/machinery/button/door{
+	pixel_x = 20;
+	pixel_y = -8;
+	id = "ngr_colony_warehouse_side";
+	name = "Offloading Gate";
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "IA" = (
@@ -9027,6 +9900,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-5"
 	},
+/obj/item/stack/empty_sandbags,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
 "ID" = (
@@ -9095,6 +9969,9 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/utility)
+"IL" = (
+/turf/open/floor/plasteel/mono/dark/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "IM" = (
 /obj/structure/catwalk/over,
 /obj/structure/cable{
@@ -9113,6 +9990,10 @@
 	},
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "ngr_colony_warehouse_side"
 	},
 /turf/open/floor/plasteel/tech/grid/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
@@ -9170,6 +10051,12 @@
 /obj/structure/bed/dogbed,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
+"IV" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/concrete/reinforced/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "IX" = (
 /obj/structure/salvageable/turret,
 /obj/structure/cable/yellow{
@@ -9178,6 +10065,7 @@
 /obj/machinery/camera/autoname/directional/north{
 	network = list("ngr_colony")
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
 "IY" = (
@@ -9206,14 +10094,32 @@
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "Jd" = (
 /obj/effect/turf_decal/techfloor,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/stamp/denied{
+	pixel_x = 3;
+	pixel_y = 1
+	},
+/obj/item/stamp{
+	pixel_x = 9;
+	pixel_y = 2
+	},
+/obj/item/stamp/ngr{
+	pixel_x = 9;
+	pixel_y = 12
+	},
+/obj/item/paper_bin{
+	pixel_x = -7;
+	pixel_y = 5
+	},
+/obj/item/pen/fourcolor{
+	pixel_x = -8;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
@@ -9227,11 +10133,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/canteen)
@@ -9296,7 +10202,7 @@
 "Jv" = (
 /obj/machinery/light/directional/west,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "Jx" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
 /obj/effect/turf_decal/industrial/warning{
@@ -9306,12 +10212,18 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "Jy" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-5"
 	},
+/obj/effect/mob_spawn/human/corpse/ngr/miner,
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
 "Jz" = (
@@ -9364,12 +10276,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "JN" = (
 /obj/effect/turf_decal/rechargefloor,
 /obj/machinery/light/directional/south,
-/obj/mecha/working/ripley/cargo,
+/obj/mecha/working/ripley/cargo{
+	name = "APLU 'Hand o' the Republic'"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "JO" = (
@@ -9391,6 +10306,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-9"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
 "JU" = (
@@ -9405,6 +10321,12 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/medical{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -9440,6 +10362,8 @@
 /obj/item/clothing/under/syndicate/ngr,
 /obj/item/clothing/accessory/bonearmlet,
 /obj/machinery/light/small/directional/north,
+/obj/item/spacecash/bundle/pocketchange,
+/obj/item/modular_computer/laptop/preset/civilian,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "Ka" = (
@@ -9470,6 +10394,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"Kd" = (
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.038
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel/tech/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "Kf" = (
 /obj/item/stack/ore/salvage/scrapmetal{
 	pixel_x = 6;
@@ -9757,6 +10688,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "KW" = (
@@ -9882,6 +10816,10 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/tank/internals/emergency_oxygen/low_capacity,
+/obj/item/tank/internals/emergency_oxygen/low_capacity,
+/obj/item/tank/internals/emergency_oxygen/low_capacity,
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
 "Lt" = (
@@ -9918,7 +10856,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/concrete/pavement/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "LA" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -10057,6 +10995,19 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"Ma" = (
+/obj/effect/turf_decal/corner/opaque/bottlegreen/full,
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/medical{
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/obj/item/healthanalyzer{
+	pixel_x = 5;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "Mb" = (
 /obj/structure/cable/yellow{
 	icon_state = "5-10"
@@ -10123,6 +11074,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
+"Mp" = (
+/obj/structure/flora/rock/pile/rockplanet,
+/turf/open/floor/plating/asteroid/snow/lit/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Mq" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
@@ -10134,11 +11089,9 @@
 	},
 /area/ruin/rockplanet/ngrcolony/control)
 "Ms" = (
-/obj/machinery/deployable_turret/spotlight,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable/yellow,
-/turf/open/floor/plating,
-/area/ruin/rockplanet/ngrcolony/main_gate)
+/obj/structure/flora/tree/cactus,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Mt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/concrete{
@@ -10154,6 +11107,27 @@
 /obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
+"My" = (
+/obj/machinery/firealarm/directional/west{
+	pixel_x = -32;
+	pixel_y = -6
+	},
+/obj/structure/closet/secure_closet/freezer/fridge/open{
+	populate = 0
+	},
+/obj/item/storage/fancy/donut_box,
+/obj/item/storage/fancy/donut_box,
+/obj/item/coffee_cartridge,
+/obj/item/coffee_cartridge,
+/obj/item/coffee_cartridge,
+/obj/item/coffee_cartridge/fancy/blend,
+/obj/item/coffee_cartridge/fancy/roast,
+/obj/item/coffee_cartridge/fancy/roast,
+/obj/item/coffee_cartridge/fancy/mocha,
+/obj/item/coffee_cartridge/fancy/blue,
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/main_gate)
 "Mz" = (
 /obj/effect/turf_decal/corner/opaque/red/full,
 /obj/machinery/camera/autoname/directional/south{
@@ -10190,6 +11164,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/engineering)
 "ME" = (
@@ -10217,6 +11194,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/engineering)
 "MI" = (
@@ -10298,12 +11276,21 @@
 /turf/open/floor/plating/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/refinery)
 "MZ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
 /turf/open/floor/pod,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "Nb" = (
 /obj/machinery/light/directional/east,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "Nc" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/turf_decal/corner/opaque/beige/diagonal{
@@ -10316,6 +11303,18 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
+/area/ruin/rockplanet/ngrcolony/canteen)
+"Nh" = (
+/obj/effect/turf_decal/techfloor,
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = 4;
+	pixel_y = -23
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -7;
+	pixel_y = -23
+	},
+/turf/open/floor/plastic,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "Nj" = (
 /obj/machinery/atmospherics/components/unary/tank/carbon_dioxide{
@@ -10381,6 +11380,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/engineering)
 "Nt" = (
@@ -10435,8 +11437,9 @@
 /obj/effect/turf_decal/road/stripes{
 	dir = 1
 	},
+/obj/structure/barricade/wooden,
 /turf/open/floor/concrete/pavement/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "NF" = (
 /obj/structure/barricade/concrete{
 	dir = 4
@@ -10462,6 +11465,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/engineering)
 "NI" = (
@@ -10504,6 +11508,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/machinery/door/airlock/freezer{
+	dir = 8;
+	name = "Lavatory";
+	id_tag = "ngr_rock_colony_prison_bathroom"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "NN" = (
@@ -10527,14 +11536,43 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-6"
 	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "ngr_colony_warehouse_main_holo";
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "ngr_colony_warehouse_main"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/warehouse)
+"NQ" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/closet/syndicate{
+	name = "foreman's closet"
+	},
+/obj/item/clothing/head/hardhat/ngr/foreman,
+/obj/item/clothing/suit/ngr,
+/obj/item/flashlight,
+/obj/item/clothing/under/syndicate/ngr/officer,
+/obj/item/spacecash/bundle/pocketchange,
+/obj/item/megaphone/cargo{
+	name = "foreman's megaphone"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/ngrcolony/mine_gate)
 "NR" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 5
 	},
 /turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
 /area/ruin/rockplanet/ngrcolony/canteen)
+"NS" = (
+/obj/effect/turf_decal/corner/opaque/bottlegreen/full,
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "NV" = (
 /obj/effect/turf_decal/corner/opaque/bar/diagonal,
 /obj/effect/turf_decal/corner/opaque/tan/diagonal{
@@ -10575,6 +11613,13 @@
 /area/ruin/rockplanet/ngrcolony/ramzi_camp/dorms)
 "Od" = (
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
+"Oe" = (
+/obj/structure/barricade/directional/flippedtable{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
 "Og" = (
 /obj/effect/turf_decal/techfloor{
@@ -10727,6 +11772,12 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "OC" = (
@@ -10798,7 +11849,7 @@
 	},
 /obj/item/ammo_casing/spent/rifle_steel,
 /turf/open/floor/concrete/pavement/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "OR" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
@@ -10843,7 +11894,20 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/tech,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/industrial/warning/cee{
+	dir = 2;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/corner/transparent/black/full,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/mine_gate)
 "OV" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -10859,8 +11923,24 @@
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "OX" = (
 /obj/machinery/light/directional/west,
+/obj/item/ammo_casing/spent/rifle_steel,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
+"Pb" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner/transparent/black/full,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "Pc" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 4;
@@ -11048,8 +12128,9 @@
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "PI" = (
+/obj/item/ammo_casing/spent/rifle_steel,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "PJ" = (
 /obj/item/toy/beach_ball/holoball,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
@@ -11088,6 +12169,13 @@
 	},
 /turf/open/floor/plastic,
 /area/ruin/rockplanet/ngrcolony/security/prison)
+"PT" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-6"
+	},
+/obj/structure/flora/rock/pile/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "PU" = (
 /obj/item/reagent_containers/hypospray/medipen/rabbit{
 	list_reagents = null;
@@ -11153,6 +12241,7 @@
 /obj/effect/turf_decal/corner/opaque/beige{
 	dir = 8
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "Qk" = (
@@ -11172,6 +12261,12 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 9
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "Qm" = (
@@ -11189,11 +12284,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/main_gate)
 "Qn" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
+/obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
 "Qr" = (
 /obj/effect/decal/cleanable/ash,
@@ -11311,22 +12406,24 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/pod,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "QN" = (
-/obj/structure/filingcabinet{
-	density = 0;
-	pixel_x = 10;
-	pixel_y = 0;
-	dir = 8
-	},
-/obj/machinery/light/directional/east,
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/light/directional/east,
+/obj/machinery/jukebox/boombox{
+	can_be_unanchored = 1;
+	pixel_y = 5;
+	pixel_x = -9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
@@ -11337,8 +12434,15 @@
 /obj/structure/closet/wall/directional/east,
 /obj/machinery/light/small/directional/south,
 /obj/item/clothing/suit/toggle/ngr,
+/obj/item/modular_computer/laptop/preset/civilian,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
+"QP" = (
+/obj/structure/closet/crate/wooden,
+/obj/item/stack/sheet/mineral/wood/twentyfive,
+/obj/item/stack/empty_sandbags/half,
+/turf/open/floor/concrete/slab_4/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "QU" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -11374,6 +12478,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "ngr_rock_colony_warehouse_mechbay"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "QY" = (
@@ -11421,6 +12526,7 @@
 	dir = 4
 	},
 /obj/structure/flora/rock/pile/rockplanet,
+/obj/item/stack/empty_sandbags,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
 "Rj" = (
@@ -11471,12 +12577,22 @@
 /obj/effect/turf_decal/corner/opaque/tan/mono,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/security)
+"Ru" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/reinforced/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "Rx" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
 /obj/structure/table/reinforced,
 /obj/structure/sink/chem,
+/obj/machinery/firealarm/directional/north{
+	pixel_x = -8;
+	pixel_y = 33
+	},
 /turf/open/floor/plastic,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "Ry" = (
@@ -11568,9 +12684,9 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "RL" = (
-/obj/effect/mob_spawn/animal_corpse/crystal_watcher,
+/obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "RN" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/closet/wall/red/directional/north,
@@ -11609,6 +12725,19 @@
 /obj/structure/flora/ash/garden/arid,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"RP" = (
+/obj/structure/closet/crate/secure/plasma{
+	armor = list("melee" = 30, "bullet" = 50, "laser" = 50, "energy" = 100, "bomb" = 75, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80);
+	name = "explosives crate";
+	desc = "A secure explosives crate. It has been reinforced to reduce the chance of explosive ordnance detonating its contents, though you doubt that reinforcement would be enough."
+	},
+/obj/item/grenade/firecracker/dynamite,
+/obj/item/grenade/firecracker/dynamite,
+/obj/item/grenade/firecracker/dynamite,
+/obj/item/grenade/firecracker/dynamite,
+/obj/item/lighter/greyscale,
+/turf/open/floor/plating/asteroid/rockplanet/safe,
+/area/ruin/rockplanet/ngrcolony/ramzi_camp/utility)
 "RR" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -11688,6 +12817,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/structure/closet/emcloset/anchored,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "Sc" = (
@@ -11696,6 +12826,9 @@
 	},
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
+	},
+/obj/structure/closet/firecloset{
+	anchored = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/warehouse)
@@ -11755,8 +12888,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "Sq" = (
-/turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "Sr" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -11777,6 +12913,7 @@
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/ngrcolony/engineering)
 "Su" = (
@@ -11795,6 +12932,31 @@
 	},
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"Sy" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/rockplanet/ngrcolony/main_gate)
+"Sz" = (
+/obj/effect/turf_decal/corner/transparent/black/full,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/rockplanet/interior,
+/area/ruin/rockplanet/ngrcolony/warehouse)
 "SC" = (
 /obj/effect/turf_decal/corner/opaque/bar/diagonal,
 /obj/effect/turf_decal/corner/opaque/tan/diagonal{
@@ -11871,6 +13033,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/closet/firecloset{
+	anchored = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
 "SS" = (
@@ -12029,31 +13194,23 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_x = -7;
-	pixel_y = 5
-	},
-/obj/item/pen/fourcolor{
-	pixel_x = -8;
-	pixel_y = 7
-	},
-/obj/item/stamp/ngr{
-	pixel_x = 9;
-	pixel_y = 12
-	},
-/obj/item/stamp/denied{
-	pixel_x = 6;
-	pixel_y = 3
-	},
-/obj/item/stamp{
-	pixel_x = 10;
-	pixel_y = 0
-	},
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/machinery/firealarm/directional/north{
+	pixel_x = 6;
+	pixel_y = 34
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
 "Tr" = (
@@ -12062,6 +13219,13 @@
 /obj/machinery/chem_dispenser/drinks/beer,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
+"Ts" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/stack/empty_sandbags,
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "Tu" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/reinforced{
@@ -12162,6 +13326,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "TO" = (
@@ -12298,6 +13463,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/ngrcolony/security/prison)
 "Uq" = (
@@ -12357,6 +13523,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "UA" = (
@@ -12382,7 +13549,23 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/plating,
+/area/ruin/rockplanet/ngrcolony/warehouse)
+"UE" = (
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.038
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 8;
+	pixel_y = -33
+	},
+/turf/open/floor/plasteel/tech/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "UF" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
@@ -12392,7 +13575,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "UG" = (
@@ -12436,12 +13621,28 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "UL" = (
-/obj/item/trench_tool,
-/turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/ruin/rockplanet/ngrcolony/mine)
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/turf_decal/corner/transparent/black/full,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/ngrcolony/mine_gate)
 "UN" = (
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/hydroponics,
@@ -12565,6 +13766,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/reinforced/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
 "Vi" = (
@@ -12578,6 +13780,18 @@
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "Vk" = (
 /turf/closed/wall/concrete/reinforced,
+/area/ruin/rockplanet/ngrcolony/main_gate)
+"Vl" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/airlock/external{
+	name = "Overlook Access"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/main_gate)
 "Vp" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -12615,7 +13829,24 @@
 /obj/machinery/power/apc/auto_name/directional/west{
 	start_charge = 0
 	},
-/turf/open/floor/plasteel/tech,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/corner/transparent/black/full,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/mine_gate)
 "Vt" = (
 /obj/machinery/mech_bay_recharge_port{
@@ -12732,7 +13963,7 @@
 	},
 /obj/effect/turf_decal/road/stripes,
 /turf/open/floor/concrete/pavement/rockplanet,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "VL" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/turf_decal/corner/opaque/beige/diagonal{
@@ -12809,6 +14040,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/rockplanet,
 /area/ruin/rockplanet/ngrcolony/mine)
 "Wc" = (
@@ -12820,7 +14052,7 @@
 	dir = 8
 	},
 /turf/closed/wall/concrete/reinforced,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "Wj" = (
 /obj/structure/barricade/concrete{
 	dir = 1
@@ -12881,6 +14113,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
+"Wt" = (
+/obj/structure/table/reinforced{
+	color = "#a3a2a0"
+	},
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/ngrcolony/main_gate)
 "Wv" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
@@ -12912,9 +14151,55 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"WA" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/pod,
+/area/ruin/rockplanet/ngrcolony/mine_supplies)
+"WB" = (
+/obj/machinery/button/door{
+	pixel_y = 7;
+	id = "ngr_mining_colony_cave_lockdown";
+	name = "Lockdown Controls";
+	pixel_x = 37;
+	dir = 8
+	},
+/obj/item/radio/intercom/directional/east{
+	pixel_x = 44;
+	pixel_y = -6
+	},
+/obj/structure/chair/office/dark{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/cee{
+	dir = 1;
+	color = "#eeac2e"
+	},
+/obj/effect/turf_decal/corner/transparent/black/full,
+/obj/effect/turf_decal/siding/thinplating/dark/end{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/ngrcolony/mine_gate)
+"WD" = (
+/obj/structure/flora/grass/rockplanet/dead,
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "WE" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/closet/emcloset/anchored,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "WJ" = (
@@ -12939,8 +14224,9 @@
 /area/ruin/rockplanet/ngrcolony/outdoors)
 "WM" = (
 /obj/machinery/camera/autoname/directional/west,
+/obj/structure/barricade/wooden,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
-/area/ruin/rockplanet/ngrcolony/mine_gate)
+/area/ruin/rockplanet/ngrcolony/mine)
 "WQ" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table/reinforced,
@@ -13010,14 +14296,27 @@
 /obj/machinery/camera/autoname/directional/south{
 	network = list("ngr_colony")
 	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -9;
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/security)
 "WZ" = (
-/obj/machinery/camera/autoname/directional/west{
-	network = list("ngr_colony")
+/obj/effect/turf_decal/techfloor{
+	dir = 4;
+	layer = 2.04
 	},
-/turf/open/floor/concrete/slab_4/rockplanet/lit,
-/area/ruin/rockplanet/ngrcolony/outdoors)
+/obj/structure/closet/secure_closet/armorycage{
+	anchored = 1;
+	can_be_unanchored = 1;
+	name = "ammunition locker";
+	req_access = null
+	},
+/obj/item/storage/box/ammo/a12g_buckshot,
+/obj/item/storage/box/ammo/a12g_buckshot,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/ngrcolony/mine_gate)
 "Xc" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -13026,10 +14325,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -13056,12 +14355,17 @@
 "Xf" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
-	icon_state = "1-2"
+	icon_state = "1-8"
 	},
-/obj/machinery/power/apc/auto_name/directional/west{
-	start_charge = 0
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
 	},
-/obj/structure/cable/yellow,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/structure/sign/poster/radio/arf{
+	pixel_x = 32
+	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/main_gate)
 "Xk" = (
@@ -13092,6 +14396,16 @@
 	},
 /turf/open/floor/plasteel/tech/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/warehouse)
+"Xn" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/rockplanet/ngrcolony/mine_supplies)
 "Xo" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
 	dir = 4
@@ -13123,6 +14437,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-9"
+	},
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/ngrcolony/ramzi_camp)
@@ -13219,6 +14536,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/warehouse)
 "XI" = (
@@ -13257,6 +14575,10 @@
 	},
 /turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
 /area/ruin/rockplanet/ngrcolony/canteen)
+"XN" = (
+/obj/item/ammo_casing/spent/rifle_steel,
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/ruin/rockplanet/ngrcolony/mine)
 "XO" = (
 /obj/machinery/power/apc/auto_name/directional/north{
 	start_charge = 0
@@ -13272,6 +14594,15 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/machinery/button/door{
+	pixel_y = 23;
+	pixel_x = 8;
+	id = "ngr_rock_colony_prison_bathroom";
+	specialfunctions = 4;
+	normaldoorcontrol = 1;
+	name = "Override";
+	req_access = list(2)
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/security/prison)
@@ -13292,6 +14623,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/engineering)
+"XV" = (
+/obj/structure/sign/warning/securearea{
+	pixel_y = -23
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/ngrcolony/outdoors)
 "XY" = (
 /obj/effect/turf_decal/industrial/traffic/corner,
 /obj/effect/turf_decal/borderfloorblack{
@@ -13315,6 +14652,13 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/ngrcolony/outdoors)
+"Yf" = (
+/obj/effect/turf_decal/road/stripes{
+	dir = 1
+	},
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/concrete/pavement/rockplanet,
+/area/ruin/rockplanet/ngrcolony/mine)
 "Yg" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 1;
@@ -13334,7 +14678,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/spawner/random/vending/cola,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "Yl" = (
@@ -13398,6 +14742,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "Yx" = (
@@ -13453,7 +14798,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "5-10"
 	},
-/obj/effect/mob_spawn/human/corpse/ngr/miner,
 /obj/item/mob_trophy/legion_skull_crystal{
 	pixel_x = -7;
 	pixel_y = -3
@@ -13465,6 +14809,7 @@
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/blood/drip,
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
 /area/ruin/rockplanet/ngrcolony/mine)
 "YK" = (
@@ -13516,9 +14861,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
+/obj/machinery/vending/coffee,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/ngrcolony/canteen)
 "Zc" = (
@@ -13527,6 +14870,15 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/north{
 	start_charge = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
 	},
 /turf/open/floor/pod,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
@@ -13547,6 +14899,19 @@
 /turf/open/floor/plasteel/tech/rockplanet/interior,
 /area/ruin/rockplanet/ngrcolony/refinery)
 "Zg" = (
+/obj/structure/table/reinforced{
+	color = "#a3a2a0"
+	},
+/obj/machinery/light/small/directional/north,
+/obj/item/reagent_containers/food/drinks/coffee/large/empty{
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/drinks/coffee/large/empty{
+	pixel_x = 7;
+	pixel_y = 8
+	},
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/ngrcolony/main_gate)
 "Zi" = (
@@ -13715,7 +15080,11 @@
 /area/ruin/rockplanet/ngrcolony/bunkhouse)
 "ZM" = (
 /obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/ngrcolony/mine_gate)
 "ZN" = (
 /obj/structure/catwalk/over,
@@ -13819,7 +15188,7 @@ VJ
 VJ
 VJ
 VJ
-VJ
+Ms
 VJ
 VJ
 VJ
@@ -13963,8 +15332,8 @@ VJ
 VJ
 VJ
 VJ
-VJ
-VJ
+Cx
+Cx
 VJ
 VJ
 VJ
@@ -14032,11 +15401,11 @@ ZF
 ZF
 ZF
 ZF
-ZF
-ZF
+iv
+iv
 xW
 DT
-VJ
+SX
 VJ
 VJ
 VJ
@@ -14045,7 +15414,7 @@ VJ
 Yn
 VJ
 VJ
-VJ
+PH
 VJ
 VJ
 VJ
@@ -14105,7 +15474,7 @@ In
 In
 In
 In
-as
+Jc
 DT
 DT
 DT
@@ -14116,8 +15485,8 @@ DT
 DT
 DT
 DT
-VJ
-VJ
+PH
+PH
 VJ
 VJ
 cJ
@@ -14161,7 +15530,7 @@ VJ
 VJ
 VJ
 VJ
-VJ
+SX
 VJ
 VJ
 VJ
@@ -14182,13 +15551,13 @@ xn
 iW
 Ko
 Ko
-Ko
+fe
 Ko
 iW
 Xm
 DT
-VJ
-VJ
+eV
+PH
 VJ
 VJ
 VJ
@@ -14231,7 +15600,7 @@ VJ
 VJ
 VJ
 VJ
-VJ
+wS
 VJ
 VJ
 VJ
@@ -14258,9 +15627,9 @@ CG
 iF
 GE
 DT
-VJ
-VJ
-VJ
+kE
+PH
+eV
 VJ
 VJ
 cJ
@@ -14371,7 +15740,7 @@ VJ
 VJ
 VJ
 Yn
-VJ
+YB
 VJ
 VJ
 VJ
@@ -14395,13 +15764,13 @@ Mk
 ao
 MV
 MV
-MV
-MV
+tg
+Ch
 iH
 XY
 DT
 kw
-kw
+lN
 DT
 DT
 VJ
@@ -14427,6 +15796,7 @@ cJ
 cJ
 cJ
 VJ
+SX
 VJ
 VJ
 VJ
@@ -14435,8 +15805,7 @@ VJ
 VJ
 VJ
 VJ
-VJ
-VJ
+Ms
 VJ
 VJ
 VJ
@@ -14465,11 +15834,11 @@ rj
 LQ
 dU
 SM
-SM
-SM
-SM
+qu
+iR
+iR
 sv
-OK
+mc
 lM
 XF
 Jx
@@ -14539,7 +15908,7 @@ be
 FO
 EP
 Yy
-Oy
+EV
 OK
 Md
 lb
@@ -14571,7 +15940,7 @@ CD
 CD
 CD
 CD
-VJ
+wS
 VJ
 VJ
 VJ
@@ -14606,12 +15975,12 @@ rg
 rj
 LQ
 HP
-FO
+Ba
 Yy
 FO
 Ba
 Oy
-OK
+hr
 QW
 fS
 dt
@@ -14678,9 +16047,9 @@ rj
 LQ
 xt
 hO
-hO
-hO
-hO
+gB
+Sz
+Sz
 iP
 vz
 DT
@@ -14726,7 +16095,7 @@ Cx
 Cx
 VJ
 VJ
-VJ
+Ms
 VJ
 wM
 Ve
@@ -14750,15 +16119,15 @@ KA
 lI
 pu
 pu
-pu
-pu
+Hx
+Pb
 bs
-GE
+Kd
 DT
 DT
 DT
 DT
-EL
+Mp
 VJ
 VJ
 cJ
@@ -14790,7 +16159,7 @@ NG
 CD
 CD
 CD
-VJ
+SX
 VJ
 VJ
 Cx
@@ -14819,12 +16188,12 @@ rg
 st
 LQ
 HP
-Yy
-Ba
-FO
-Yy
-Oy
-GE
+ea
+iC
+hv
+IL
+fu
+UE
 DT
 Sb
 Sc
@@ -14848,10 +16217,10 @@ NG
 NG
 NG
 CD
-Od
+Yu
 nr
 gJ
-eI
+PT
 JU
 CD
 wA
@@ -14933,7 +16302,7 @@ NG
 NG
 NG
 CD
-VJ
+wS
 VJ
 VJ
 VJ
@@ -14941,8 +16310,8 @@ VJ
 EL
 GD
 iA
-mU
-mU
+Ma
+NS
 GD
 VJ
 VJ
@@ -15000,7 +16369,7 @@ Dr
 ty
 wA
 CD
-Od
+Yu
 CD
 NG
 NG
@@ -15016,7 +16385,7 @@ gt
 Ql
 GD
 VJ
-VJ
+SX
 aq
 In
 In
@@ -15028,12 +16397,12 @@ lG
 lG
 lG
 lG
-as
+Jc
 DT
 DT
 DT
 DT
-Cd
+ww
 IO
 Cd
 DT
@@ -15155,7 +16524,7 @@ GD
 yj
 hi
 Rl
-MZ
+WA
 HG
 GD
 SU
@@ -15224,10 +16593,10 @@ EL
 EL
 GD
 pP
-MZ
-MZ
-MZ
-MZ
+lK
+lK
+jr
+sC
 GD
 SU
 Ww
@@ -15294,7 +16663,7 @@ dq
 dq
 EL
 GD
-FA
+wt
 FA
 wt
 MZ
@@ -15359,9 +16728,9 @@ Od
 CD
 CD
 dq
-sq
+kY
 ZM
-sq
+NQ
 dq
 dq
 GD
@@ -15369,7 +16738,7 @@ GD
 GD
 GD
 Zc
-MZ
+fV
 GD
 DE
 bM
@@ -15430,9 +16799,9 @@ CD
 CD
 CD
 dq
-sq
-sq
-sq
+wB
+WB
+UL
 Vs
 OU
 va
@@ -15496,19 +16865,19 @@ BT
 Zv
 VU
 Zv
-Od
+Yu
 CD
 CD
 CD
 dq
+BB
+iy
 sq
-sq
-sq
-sq
-sq
+HK
+WZ
 GD
 ki
-ki
+Xn
 GD
 GD
 nn
@@ -15567,8 +16936,8 @@ Lw
 Od
 un
 VU
-Zv
-Od
+iB
+XN
 gn
 CD
 dq
@@ -15639,7 +17008,7 @@ Yu
 Zv
 Zv
 VU
-Zv
+iB
 Zv
 rL
 OX
@@ -15647,12 +17016,12 @@ tG
 GU
 WM
 Jv
-oW
+QP
 oW
 lo
 KW
 GD
-WE
+bH
 Bp
 GD
 gd
@@ -15712,16 +17081,16 @@ Zv
 Zv
 oF
 Zv
+aQ
 rL
-PI
 bV
 nR
-Ii
+Yf
 vn
 In
 ul
 ZT
-oW
+gF
 GD
 GD
 zp
@@ -15758,7 +17127,7 @@ Cx
 Cx
 VJ
 VJ
-VJ
+SX
 "}
 (29,1,1) = {"
 cJ
@@ -15772,15 +17141,15 @@ Od
 Zv
 BT
 vN
-UL
-CD
-CD
-CD
-CD
-CD
-CD
 Od
-Zv
+CD
+CD
+CD
+CD
+CD
+CD
+vL
+Oe
 Zv
 Zm
 fX
@@ -15791,10 +17160,10 @@ ET
 eK
 Uv
 vO
-ZT
-oW
-WZ
-mL
+Dz
+gF
+SZ
+qr
 HC
 mL
 mL
@@ -15851,20 +17220,20 @@ CD
 CD
 CD
 Jy
-gJ
+EQ
 dg
 Zv
-Zv
-PI
-tG
+wc
+rL
+Gg
 GU
 RL
 FQ
 Zq
 ZT
 hy
-In
-In
+rh
+rh
 lG
 aX
 lG
@@ -15917,26 +17286,26 @@ Zv
 CD
 CD
 CD
-Od
+it
 CD
 CD
 qR
 Od
+vh
+Zv
+Zv
+iB
 Od
-Zv
-Zv
-Zv
-Sq
 cB
 GU
-tG
+RL
 HD
 jZ
 XK
 uf
 te
 gM
-mv
+BH
 uC
 VZ
 VZ
@@ -15988,15 +17357,15 @@ Zv
 CD
 wA
 yc
-gJ
+eF
 gJ
 mr
 Od
 CD
 Rj
-Zv
-Zv
-Zv
+iB
+OP
+CY
 PI
 bV
 nR
@@ -16007,10 +17376,10 @@ yu
 oE
 RT
 mL
-WU
+sS
 Pf
 Pf
-mL
+dI
 QJ
 mL
 bk
@@ -16059,16 +17428,16 @@ QH
 NG
 wA
 GC
-Lb
-LC
+qh
+to
 Od
 CD
 CD
 CD
-qB
+zE
+iB
 Zv
-Zv
-PI
+rL
 bV
 kS
 NE
@@ -16208,13 +17577,13 @@ CD
 CD
 CD
 wA
-Gg
+cs
 Gg
 Wf
-dq
-dq
-dq
-dq
+wA
+wA
+wA
+wA
 XI
 cx
 NN
@@ -16393,8 +17762,8 @@ VC
 nF
 Vk
 oq
-qn
-pi
+VJ
+VJ
 EL
 EL
 VJ
@@ -16418,7 +17787,7 @@ qx
 Yu
 IH
 Bq
-LE
+os
 wA
 NG
 NG
@@ -16463,12 +17832,12 @@ bS
 rR
 jv
 Vk
-hr
-hr
-GH
+SU
+VJ
+VJ
 EL
 VJ
-VJ
+Yn
 "}
 (39,1,1) = {"
 cJ
@@ -16486,9 +17855,9 @@ CM
 TL
 DI
 Od
-Od
-IH
-LE
+Lb
+Cn
+os
 Wb
 wA
 NG
@@ -16533,10 +17902,10 @@ Vk
 nz
 yd
 Jd
-iR
-Ms
-hr
-zV
+Vk
+ZF
+qn
+pi
 VJ
 VJ
 cJ
@@ -16559,7 +17928,7 @@ nN
 Od
 Od
 IH
-LE
+fz
 DL
 wA
 NG
@@ -16605,8 +17974,8 @@ Tp
 nw
 QN
 Vk
-hr
-hr
+Kb
+uR
 GH
 VJ
 VJ
@@ -16669,16 +18038,16 @@ Uy
 Xc
 YZ
 Vk
-Zg
+My
 oj
 Vk
+nk
 Vk
-BH
 Vk
 Vk
 wy
-oa
-lz
+EE
+zV
 VJ
 VJ
 cJ
@@ -16690,7 +18059,7 @@ cJ
 NG
 NG
 wA
-jL
+xX
 Od
 qR
 PX
@@ -16740,16 +18109,16 @@ aw
 Ji
 id
 Vk
-Zg
+BG
 Em
 zO
 Xf
 Qn
-Zg
 Vk
-EL
-VJ
-VJ
+go
+zb
+EE
+GH
 VJ
 VJ
 cJ
@@ -16765,7 +18134,7 @@ Vg
 vI
 Od
 nN
-rB
+Ts
 Zv
 mq
 Zv
@@ -16773,7 +18142,7 @@ zr
 Zv
 Od
 Od
-Od
+zB
 NG
 CD
 CD
@@ -16812,17 +18181,17 @@ VL
 qA
 Vk
 Zg
-Zg
-Zg
-Zg
-Zg
-Zg
+jd
 Vk
+Vk
+Vk
+Vk
+go
+Hz
+EE
+GH
 VJ
-VJ
-Yn
-VJ
-VJ
+SX
 cJ
 "}
 (44,1,1) = {"
@@ -16847,7 +18216,7 @@ Od
 Od
 NG
 CD
-SU
+DE
 SU
 qL
 in
@@ -16882,16 +18251,16 @@ wY
 OS
 DC
 Vk
-Zg
-Zg
-Zg
-Zg
-Zg
-Zg
-Vk
-VJ
-VJ
-VJ
+Wt
+Sy
+Vl
+li
+tX
+as
+Ru
+IV
+EE
+GH
 VJ
 cJ
 cJ
@@ -16905,7 +18274,7 @@ NG
 NG
 wA
 Bq
-LE
+os
 sd
 kG
 nN
@@ -16917,8 +18286,8 @@ Od
 Od
 NG
 NG
-SU
-SU
+DE
+DE
 SU
 cw
 in
@@ -16961,8 +18330,8 @@ Vk
 Vk
 Vk
 lP
-VJ
-VJ
+NF
+GH
 VJ
 cJ
 cJ
@@ -16976,19 +18345,19 @@ NG
 NG
 wA
 IX
-LE
+os
 sd
-Od
+zB
 xb
 Yu
 LC
 nN
 Od
-Od
+zB
 gn
 NG
 CD
-SU
+DE
 SU
 in
 in
@@ -17032,9 +18401,9 @@ OG
 NR
 Zi
 lP
-VJ
-VJ
-VJ
+oa
+lz
+Yn
 cJ
 cJ
 "}
@@ -17046,15 +18415,15 @@ sk
 NG
 NG
 wA
-LE
+os
 JS
 pH
-vI
+Ar
 Od
 Od
 Lu
 tH
-tH
+fA
 tH
 NG
 NG
@@ -17103,7 +18472,7 @@ XM
 XM
 Zi
 lP
-VJ
+Ms
 VJ
 cJ
 cJ
@@ -17124,8 +18493,8 @@ bg
 sJ
 cp
 hx
-LE
-LE
+fz
+os
 Bq
 wA
 NG
@@ -17168,7 +18537,7 @@ Jm
 lP
 Wo
 Oo
-Fv
+Nh
 lP
 aK
 cn
@@ -17197,7 +18566,7 @@ Od
 vQ
 de
 sl
-LE
+fz
 wA
 NG
 wS
@@ -17277,7 +18646,7 @@ SU
 in
 in
 in
-Sh
+vR
 in
 PY
 Sh
@@ -17292,7 +18661,7 @@ su
 in
 IY
 il
-su
+yX
 in
 oB
 SZ
@@ -17359,7 +18728,7 @@ dC
 in
 Cc
 eY
-VF
+GQ
 in
 Cc
 eY
@@ -17415,7 +18784,7 @@ Si
 PH
 VJ
 VJ
-VJ
+Ms
 SU
 in
 in
@@ -17582,7 +18951,7 @@ DM
 uv
 sY
 mL
-pe
+XA
 rr
 Ee
 vX
@@ -17774,7 +19143,7 @@ VJ
 VJ
 VJ
 VJ
-VJ
+Ms
 VJ
 VJ
 DE
@@ -18076,7 +19445,7 @@ Mj
 Uc
 QK
 GS
-Rs
+bl
 AE
 QK
 wR
@@ -18200,7 +19569,7 @@ VJ
 VJ
 Tc
 FL
-yX
+yI
 So
 So
 So
@@ -18297,7 +19666,7 @@ QK
 QK
 Sm
 Jc
-pe
+WD
 Cx
 jf
 VJ
@@ -18363,12 +19732,12 @@ QK
 mk
 od
 QK
-pe
-pe
+XA
+Sq
 gh
 EH
 Jc
-pe
+Sq
 Cx
 VJ
 VJ
@@ -18413,7 +19782,7 @@ VJ
 VJ
 VJ
 Df
-SU
+XV
 So
 So
 So
@@ -18435,11 +19804,11 @@ QK
 QK
 QK
 SU
-pe
+Sq
 kX
 jb
 iV
-pe
+Sq
 Yn
 VJ
 VJ
@@ -18453,7 +19822,7 @@ VJ
 PH
 PH
 PH
-PH
+kE
 PH
 PH
 cJ
@@ -18506,11 +19875,11 @@ sX
 SU
 SU
 SU
-SU
-pe
-pe
-pe
-SU
+DB
+cL
+cL
+cL
+ko
 VJ
 VJ
 VJ
@@ -18628,7 +19997,7 @@ VJ
 VJ
 VJ
 VJ
-SU
+XV
 So
 So
 So
@@ -18648,7 +20017,7 @@ SU
 VJ
 VJ
 VJ
-VJ
+YB
 VJ
 VJ
 VJ
@@ -18776,6 +20145,7 @@ VJ
 VJ
 VJ
 VJ
+Yn
 VJ
 VJ
 VJ
@@ -18795,9 +20165,8 @@ VJ
 VJ
 VJ
 VJ
-VJ
-VJ
-VJ
+PH
+PH
 VJ
 VJ
 VJ
@@ -18849,6 +20218,7 @@ VJ
 VJ
 VJ
 VJ
+Bm
 VJ
 VJ
 VJ
@@ -18865,11 +20235,10 @@ VJ
 VJ
 VJ
 VJ
-VJ
-VJ
-VJ
-VJ
-VJ
+PH
+PH
+PH
+PH
 VJ
 VJ
 VJ
@@ -18924,24 +20293,24 @@ VJ
 VJ
 VJ
 VJ
+Sa
 VJ
 VJ
 VJ
 VJ
 VJ
 VJ
+Bm
 VJ
 VJ
 VJ
 VJ
 VJ
-VJ
-VJ
-VJ
-VJ
-Yn
-VJ
-VJ
+YB
+PH
+eV
+PH
+PH
 VJ
 VJ
 VJ
@@ -18999,6 +20368,7 @@ VJ
 VJ
 VJ
 VJ
+Ms
 VJ
 VJ
 VJ
@@ -19009,11 +20379,10 @@ VJ
 VJ
 VJ
 VJ
-VJ
-VJ
-VJ
-VJ
-VJ
+PH
+PH
+PH
+PH
 VJ
 VJ
 VJ
@@ -19066,7 +20435,7 @@ VJ
 VJ
 VJ
 VJ
-VJ
+Bm
 VJ
 VJ
 VJ
@@ -19081,9 +20450,9 @@ Yn
 VJ
 VJ
 VJ
-VJ
-wS
-VJ
+PH
+xj
+PH
 VJ
 VJ
 VJ
@@ -19154,7 +20523,7 @@ VJ
 VJ
 VJ
 VJ
-VJ
+PH
 VJ
 VJ
 VJ
@@ -19393,7 +20762,7 @@ Ht
 yC
 Ff
 ST
-GN
+RP
 Ht
 hw
 fg
