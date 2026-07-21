@@ -573,11 +573,18 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged/sniper/illestren
 	name = "Ramzi Clique Hunter"
 	desc = "A deserter from the Gorlex Marauders turned pirate. A dirty wood-furnished rifle is cradled in their tattered gloves - ironsights turned to the horizon."
-	vision_range = 9 //should still be better than standard but theyre using ironsights
-	aggro_vision_range = 9
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 	casingtype = /obj/item/ammo_casing/a8_50r
 	l_hand = /obj/item/gun/ballistic/rifle/illestren
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/sniper/illestren/sentry
+	vision_range = 9 //should still be better than standard but theyre using ironsights
+	aggro_vision_range = 9
+	minimum_distance = 9
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer/lieutenant/indie_boomslang
 	name = "Ramzi Clique Overseer"
@@ -585,9 +592,15 @@
 	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
 	casingtype = /obj/item/ammo_casing/a65clip
 	projectilesound = 'sound/weapons/gun/sniper/cmf90.ogg'
-	minimum_distance = 7
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/officer/lieutenant/indie_boomslang/sentry
+	minimum_distance = 11
 	vision_range = 11 //worse scope but more of a threat than the illestren
-	aggro_vision_range = 12
+	aggro_vision_range = 11
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/smg/indiegun
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan their surroundings with a dirty beige submachinegun - finger on the trigger."
