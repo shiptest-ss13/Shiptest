@@ -153,7 +153,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "bO" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/beach/csunpad/director)
@@ -165,7 +165,7 @@
 	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "bY" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal{
 	dir = 9
@@ -278,6 +278,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/suns/hatch/maple,
 /area/ruin/beach/csunpad/security)
 "dE" = (
@@ -291,7 +292,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "dG" = (
 /obj/structure/chair/office/purple{
 	dir = 4
@@ -410,7 +411,7 @@
 	layer = 2.6
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "eK" = (
 /obj/structure/platform/ship_three/corner{
 	dir = 4
@@ -475,7 +476,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/stairs/left,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "fu" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal{
 	dir = 9
@@ -502,6 +503,7 @@
 	pixel_x = -8;
 	pixel_y = 1
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/suns/dark/plain,
 /area/ruin/beach/csunpad/director)
 "fB" = (
@@ -677,7 +679,7 @@
 	dir = 5
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "hn" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -901,6 +903,13 @@
 	pixel_x = 5;
 	pixel_y = 4
 	},
+/obj/machinery/button/door{
+	pixel_x = -19;
+	pixel_y = 4;
+	dir = 4;
+	id = "checkpointbot";
+	name = "automated security release"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/csunpad/security)
 "jD" = (
@@ -959,7 +968,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "jZ" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal{
 	dir = 10
@@ -990,7 +999,18 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
+"kn" = (
+/obj/structure/table/wood,
+/obj/machinery/button/door{
+	pixel_x = 20;
+	pixel_y = 6;
+	dir = 8;
+	id = "checkpointbot";
+	name = "automated security release"
+	},
+/turf/open/floor/suns/hatch/mahogany,
+/area/ruin/beach/csunpad/director)
 "kx" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal{
 	dir = 10
@@ -1026,6 +1046,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/csunpad/medical)
 "kW" = (
@@ -1053,7 +1074,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "lt" = (
 /obj/effect/turf_decal/siding/wood/bamboo,
 /turf/open/floor/suns/hatch/bamboo,
@@ -1150,7 +1171,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "mN" = (
 /obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 6
@@ -1184,7 +1205,7 @@
 	id = "midwich_blast5"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "nh" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 1
@@ -1224,7 +1245,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "nR" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -1241,7 +1262,7 @@
 	},
 /obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "nV" = (
 /obj/machinery/oven,
 /obj/machinery/light/small/directional/north,
@@ -1260,6 +1281,7 @@
 	pixel_x = 4;
 	pixel_y = -2
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/csunpad/security)
 "oo" = (
@@ -1287,7 +1309,7 @@
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central4,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "ox" = (
 /obj/effect/turf_decal/siding/wood/mahogany,
 /obj/effect/turf_decal/siding/wood/mahogany{
@@ -1344,7 +1366,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "oS" = (
 /obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 1
@@ -1461,7 +1483,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "pT" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "pU" = (
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -1499,7 +1521,7 @@
 /obj/structure/cable,
 /obj/effect/turf_decal/techfloor/orange,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "qy" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/diagonal{
 	dir = 4
@@ -1571,7 +1593,7 @@
 /obj/item/flashlight/seclite,
 /obj/item/flashlight/seclite,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "ro" = (
 /obj/effect/turf_decal/siding/wood/corner/maple,
 /turf/open/floor/suns/dark/plain,
@@ -1594,7 +1616,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/stairs/right,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "rE" = (
 /obj/structure/filingcabinet/chestdrawer{
 	dir = 1
@@ -1605,7 +1627,7 @@
 /obj/structure/railing/corner,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "rL" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1618,7 +1640,7 @@
 	name = "Cockpit"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "sd" = (
 /mob/living/simple_animal/hostile/viscerator,
 /obj/effect/turf_decal/siding/wood/bamboo{
@@ -1643,6 +1665,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/csunpad/security)
 "sx" = (
@@ -1666,7 +1689,7 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/turf_decal/techfloor/orange,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "sR" = (
 /obj/effect/turf_decal/siding/wood/corner/maple{
 	dir = 4
@@ -1724,6 +1747,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/beach/csunpad/medical)
 "tm" = (
@@ -1762,12 +1786,13 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "tB" = (
 /obj/structure/table/glass,
 /obj/machinery/atmospherics/components/unary/passive_vent/layer2{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ruin/beach/csunpad/security)
 "tD" = (
@@ -1896,7 +1921,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "uS" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "checkpointbot"
@@ -1955,6 +1980,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "vX" = (
 /obj/effect/turf_decal/siding/wood/maple,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/suns/hatch/maple,
 /area/ruin/beach/csunpad/security)
 "wc" = (
@@ -1981,7 +2007,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "wA" = (
 /obj/structure/closet/wall/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2000,7 +2026,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "xb" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal{
 	dir = 9
@@ -2124,7 +2150,7 @@
 	pixel_x = 2
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "xX" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4;
@@ -2152,7 +2178,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "yh" = (
 /obj/machinery/computer/operating{
 	dir = 1
@@ -2338,7 +2364,7 @@
 	},
 /obj/effect/turf_decal/techfloor/orange,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "Ap" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 6
@@ -2356,7 +2382,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "AN" = (
 /obj/machinery/power/smes,
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -2376,6 +2402,7 @@
 	pixel_x = -18;
 	pixel_y = 7
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/beach/csunpad/security)
 "AW" = (
@@ -2383,6 +2410,7 @@
 /turf/open/floor/suns/dark/plain,
 /area/ruin/beach/csunpad/canteen)
 "Bg" = (
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet/red,
 /area/ruin/beach/csunpad/security)
 "Bl" = (
@@ -2482,7 +2510,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "CB" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/suns/dark/plain,
@@ -2605,7 +2633,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "DA" = (
 /obj/structure/table/glass,
 /obj/item/plate{
@@ -2692,7 +2720,7 @@
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "EC" = (
 /obj/structure/fluff/paper/stack{
 	pixel_x = 5;
@@ -2854,7 +2882,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/stairs/old,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "Gr" = (
 /obj/machinery/vending/cigarette/syndicate,
 /turf/open/floor/plasteel/dark,
@@ -2913,6 +2941,7 @@
 	pixel_x = -1;
 	pixel_y = 12
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/beach/csunpad/security)
 "GW" = (
@@ -2946,7 +2975,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "Hk" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal{
 	dir = 9
@@ -3131,6 +3160,7 @@
 	pixel_y = 5
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/beach/csunpad/medical)
 "JL" = (
@@ -3156,7 +3186,7 @@
 	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "JW" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -3196,7 +3226,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "Km" = (
 /obj/machinery/door/airlock/public{
 	dir = 4;
@@ -3224,7 +3254,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "Ku" = (
 /obj/structure/platform/ship_three{
 	dir = 8
@@ -3326,6 +3356,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/csunpad/security)
 "Ma" = (
@@ -3404,6 +3435,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/suns/dark/plain,
 /area/ruin/beach/csunpad/medical)
+"MY" = (
+/obj/effect/turf_decal/siding/wood/maple,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/suns/hatch/maple,
+/area/ruin/beach/csunpad/security)
 "Nc" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 8
@@ -3418,6 +3454,8 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/west,
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/csunpad/security)
 "Nu" = (
@@ -3571,7 +3609,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "OU" = (
 /obj/machinery/power/rtg/geothermal,
 /obj/structure/cable/yellow{
@@ -3660,7 +3698,7 @@
 	id = "midwich_blast3"
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "Ql" = (
 /obj/structure/platform/ship_three{
 	dir = 1
@@ -3674,6 +3712,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/csunpad/security)
 "QJ" = (
@@ -3767,7 +3806,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "RG" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -3781,7 +3820,7 @@
 	id = "midwich_blast3"
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "RL" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal{
 	dir = 5
@@ -3815,7 +3854,7 @@
 	},
 /obj/effect/turf_decal/industrial/outline/red,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "Sk" = (
 /obj/structure/chair/office/dark{
 	dir = 8
@@ -3906,7 +3945,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "Te" = (
 /obj/structure/platform/ship_three{
 	dir = 10
@@ -3943,13 +3982,18 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/airless,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "TB" = (
 /obj/structure/table/glass,
 /obj/machinery/atmospherics/components/unary/passive_vent/layer2{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/suns/hatch/mahogany,
+/area/ruin/beach/csunpad/security)
+"TE" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/carpet/red,
 /area/ruin/beach/csunpad/security)
 "TF" = (
 /obj/machinery/door/airlock/hatch{
@@ -3962,7 +4006,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "TN" = (
 /obj/structure/chair/stool{
 	dir = 1
@@ -3996,6 +4040,7 @@
 	dir = 10
 	},
 /obj/machinery/firealarm/directional/east,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/suns/dark/plain,
 /area/ruin/beach/csunpad/dorm)
 "UD" = (
@@ -4009,6 +4054,17 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/mono/dark,
+/area/ruin/beach/csunpad)
+"UH" = (
+/obj/structure/table/glass,
+/obj/machinery/button/door{
+	pixel_x = 20;
+	pixel_y = 2;
+	dir = 8;
+	id = "checkpointbot";
+	name = "automated security release"
+	},
+/turf/open/floor/suns/dark/plain,
 /area/ruin/beach/csunpad)
 "UR" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/diagonal{
@@ -4035,7 +4091,7 @@
 	id = "midwich_blast3"
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "Vm" = (
 /obj/machinery/door/airlock/public{
 	dir = 4;
@@ -4128,7 +4184,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "Wb" = (
 /obj/effect/turf_decal/industrial/traffic/fulltile,
 /obj/machinery/door/poddoor/shutters{
@@ -4142,7 +4198,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "Wh" = (
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -4253,7 +4309,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "Xq" = (
 /obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 10
@@ -4311,6 +4367,11 @@
 	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ruin/beach/csunpad/director)
+"XN" = (
+/obj/effect/turf_decal/siding/wood/bamboo,
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/suns/hatch/bamboo,
+/area/ruin/beach/csunpad/medical)
 "XO" = (
 /obj/effect/turf_decal/rechargefloor,
 /turf/open/floor/plasteel/tech,
@@ -4372,7 +4433,7 @@
 /area/ruin/beach/csunpad/medical)
 "YL" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/space)
+/area/ruin/beach/csunpad/june)
 "Zd" = (
 /turf/open/floor/plasteel/stairs/right{
 	dir = 4
@@ -4440,7 +4501,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
+/area/ruin/beach/csunpad/june)
 
 (1,1,1) = {"
 Ga
@@ -5169,7 +5230,7 @@ cF
 Rp
 ti
 WQ
-lt
+XN
 Rp
 cF
 cF
@@ -5451,7 +5512,7 @@ KR
 KR
 KR
 dn
-vX
+MY
 KR
 cF
 Lg
@@ -5497,7 +5558,7 @@ Ga
 Ga
 Sv
 KR
-Bg
+TE
 KH
 Ny
 cy
@@ -5664,7 +5725,7 @@ bO
 tx
 QJ
 bO
-oN
+kn
 oN
 bO
 Tl
@@ -6499,7 +6560,7 @@ Ga
 Ga
 Sv
 Sv
-Ga
+cF
 cF
 cF
 cF
@@ -6548,8 +6609,8 @@ Ga
 Ga
 Ga
 Ga
-Ga
-Ga
+cF
+cF
 cF
 cF
 cF
@@ -6599,8 +6660,8 @@ Ga
 Ga
 Ga
 Ga
-Ga
-Ga
+cF
+cF
 cF
 cF
 Lg
@@ -6649,8 +6710,8 @@ Ga
 Ga
 Ga
 Ga
-Ga
-Ga
+cF
+cF
 cF
 cF
 Lg
@@ -6699,8 +6760,8 @@ Ga
 Ga
 Ga
 Ga
-Ga
-Ga
+cF
+cF
 cF
 cF
 Lg
@@ -7107,7 +7168,7 @@ cF
 Lg
 Lg
 Lg
-wh
+UH
 wh
 wh
 Lg
