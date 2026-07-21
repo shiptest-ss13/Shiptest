@@ -129,7 +129,7 @@
 	},
 /obj/machinery/suit_storage_unit/inherit/locked{
 	req_access_txt = "3";
-	name = "Troopers suit storage unit"
+	name = "Sergeant's suit storage unit"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -585,6 +585,18 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
+"eT" = (
+/obj/structure/table/reinforced,
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = 7;
+	pixel_y = -23
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -6;
+	pixel_y = -31
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "eV" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
@@ -1907,6 +1919,9 @@
 "vo" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/canteen)
+"vs" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/dorm/captain)
 "vx" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm)
@@ -2056,9 +2071,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
-"xk" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/dorm/captain)
 "xp" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6;
@@ -3912,18 +3924,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
-"Sb" = (
-/obj/structure/table/reinforced,
-/obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = 7;
-	pixel_y = -23
-	},
-/obj/machinery/firealarm/directional/south{
-	pixel_x = -6;
-	pixel_y = -31
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "Sf" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
@@ -5265,9 +5265,9 @@ Mp
 QX
 vm
 Pz
-xk
-xk
-xk
+vs
+vs
+vs
 GQ
 kw
 eD
@@ -5289,7 +5289,7 @@ Mp
 QX
 vm
 PK
-xk
+vs
 Dp
 jT
 GQ
@@ -5313,7 +5313,7 @@ Mp
 QX
 vm
 PK
-xk
+vs
 JL
 ib
 GQ
@@ -5337,7 +5337,7 @@ Mp
 QX
 vm
 PK
-xk
+vs
 ip
 ul
 Nt
@@ -5361,7 +5361,7 @@ Mp
 Mp
 vm
 PK
-xk
+vs
 Ad
 Dr
 GQ
@@ -5532,7 +5532,7 @@ MZ
 zT
 gW
 Kl
-Sb
+eT
 MZ
 hq
 bb
