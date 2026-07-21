@@ -75,9 +75,37 @@
 /area/ruin/beach/piratecrash/storage
 	name = "Scrap Hut"
 
-//beach_treasure_cove, the beeginning
+//beach_csunpad, the beeginning
 
-/area/ruin/beach/treasure_cove
+/area/ruin/beach/csunpad
+	name = "Operations"
+	icon_state = "bridge"
+
+/area/ruin/beach/csunpad/medical
+	name = "Medical Bay"
+	icon_state = "purple"
+
+/area/ruin/beach/csunpad/engineering
+	name = "Engineering"
+	icon_state = "engine"
+
+/area/ruin/beach/csunpad/canteen
+	name = "Bar"
+	icon_state = "green"
+
+/area/ruin/beach/csunpad/security
+	name = "Security Post"
+	icon_state = "red"
+
+/area/ruin/beach/csunpad/dorm
+	name = "Dormitory"
+	icon_state = "crew_quarters"
+
+/area/ruin/beach/csunpad/director
+	name = "Director's Dormitory"
+	icon_state = "crew_quarters"
+
+/area/ruin/beach/csunpad
 	name = "Pirate Cavern"
 	icon_state = "purple"
 
