@@ -310,7 +310,7 @@
 /datum/reagent/consumable/icecoffee
 	name = "Iced Coffee"
 	description = "Coffee and ice, refreshing and cool."
-	color = "#112a3b" // rgb: 16, 40, 56
+	color = "#572b07" // rgb: 72, 32, 0
 	nutriment_factor = 0
 	overdose_threshold = 80
 	taste_description = "bitter coldness"
