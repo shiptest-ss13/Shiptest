@@ -1890,7 +1890,7 @@
 	icon_state = "4-8"
 	},
 /mob/living/simple_animal/hostile/viscerator{
-	faction = list("Hostile")
+	faction = list("hostile")
 	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/beach/csunpad/medical)
@@ -2135,7 +2135,7 @@
 "uh" = (
 /obj/effect/turf_decal/rechargefloor,
 /mob/living/simple_animal/hostile/viscerator{
-	faction = list("Hostile")
+	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/beach/csunpad/security)
@@ -2645,7 +2645,7 @@
 "Ab" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/viscerator{
-	faction = list("Hostile")
+	faction = list("hostile")
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ruin/beach/csunpad/medical)
@@ -3626,8 +3626,10 @@
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Jq" = (
-/mob/living/simple_animal/hostile/viscerator,
 /obj/effect/turf_decal/rechargefloor,
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("hostile")
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/beach/csunpad)
 "JG" = (
@@ -4033,12 +4035,12 @@
 /turf/open/floor/suns/hatch/mahogany,
 /area/ruin/beach/csunpad/security)
 "Oe" = (
-/mob/living/simple_animal/hostile/viscerator{
-	faction = list("Hostile")
-	},
 /obj/effect/turf_decal/corner/transparent/lightgrey/mono,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/beach/csunpad)
