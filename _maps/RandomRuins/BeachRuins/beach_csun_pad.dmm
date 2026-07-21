@@ -2907,9 +2907,7 @@
 /area/ruin/beach/csunpad)
 "CK" = (
 /obj/machinery/light/directional/south,
-/obj/structure/filingcabinet/double{
-	dir = 1
-	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ruin/beach/csunpad/director)
 "CL" = (
@@ -3824,7 +3822,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/csunpad/canteen)
 "Mg" = (
-/obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/siding/wood/mahogany{
 	dir = 5
 	},
@@ -4972,10 +4969,13 @@
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Zz" = (
-/obj/item/storage/box/hypospray/mkiii/cargo,
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
+	},
+/obj/item/hypospray/mkii/mkiii{
+	pixel_x = 3;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/beach/csunpad/medical)
