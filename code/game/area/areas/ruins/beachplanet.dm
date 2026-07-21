@@ -75,7 +75,7 @@
 /area/ruin/beach/piratecrash/storage
 	name = "Scrap Hut"
 
-//beach_csunpad, the beeginning
+//beach_csunpad, goodbye treasure cove
 
 /area/ruin/beach/csunpad
 	name = "Operations"
@@ -105,8 +105,8 @@
 	name = "Director's Dormitory"
 	icon_state = "crew_quarters"
 
-/area/ruin/beach/csunpad
-	name = "Pirate Cavern"
+/area/ruin/beach/csunpad/june
+	name = "June Shuttle"
 	icon_state = "purple"
 
 // bunkerg
