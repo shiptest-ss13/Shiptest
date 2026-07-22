@@ -587,7 +587,7 @@
 	name = "NGR Trooper Corpse"
 	suit = /obj/item/clothing/suit/armor/ngr
 	head = /obj/item/clothing/head/helmet/ngr
-	mask = /obj/item/clothing/mask/gas/syndicate
+	mask = /obj/item/clothing/mask/balaclava/ngr
 	gloves = /obj/item/clothing/gloves/combat
 	belt = /obj/item/storage/belt/security/webbing/ngr
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ngr
@@ -603,7 +603,6 @@
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	head = /obj/item/clothing/head/ngr/peaked
 	neck = /obj/item/clothing/neck/shemagh/ngr
-	mask = /obj/item/clothing/mask/balaclava/ngr
 	belt = /obj/item/storage/belt/security/webbing/ngr/alt
 	r_pocket = /obj/item/clothing/mask/whistle/trench //CHARGE
 
