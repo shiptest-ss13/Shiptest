@@ -222,6 +222,8 @@
 	job_icon = "paramedic"
 	jobtype = /datum/job/paramedic
 
+	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
+
 /datum/outfit/job/inteq/paramedic/equipped
 	name = "IRMG - Corpsman (Equipped)"
 
@@ -229,7 +231,6 @@
 	glasses = /obj/item/clothing/glasses/hud/health
 	mask = /obj/item/clothing/mask/balaclava/inteq
 
-	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
 	suit = /obj/item/clothing/suit/armor/inteq/corpsman
 
 	belt = /obj/item/storage/belt/medical/webbing
