@@ -189,6 +189,7 @@ first-aid in corpsman lockers? no!
 //suits
 	new /obj/item/clothing/suit/hooded/wintercoat/security/inteq(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt(src)
+	new /obj/item/clothing/suit/hazardvest(src)
 //uniforms
 	new /obj/item/clothing/under/syndicate/inteq/artificer(src)
 	new /obj/item/clothing/under/syndicate/inteq/artificer/skirt(src)
