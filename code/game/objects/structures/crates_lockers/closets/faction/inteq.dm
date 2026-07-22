@@ -216,7 +216,7 @@ first-aid in corpsman lockers? no!
 //hats
 	new /obj/item/clothing/head/soft/inteq/corpsman(src)
 //suits
-	new /obj/item/clothing/suit/armor/inteq/corpsman
+	new /obj/item/clothing/suit/armor/inteq/corpsman(src)
 //uniforms
 	new /obj/item/clothing/under/syndicate/inteq/corpsman(src)
 	new /obj/item/clothing/under/syndicate/inteq/corpsman/skirt(src)
@@ -301,7 +301,7 @@ these lack assets, here for consistency and futureproofing
 //hats
 	new /obj/item/clothing/head/soft/inteq/corpsman(src)
 //suits
-	new /obj/item/clothing/suit/armor/inteq/corpsman
+	new /obj/item/clothing/suit/armor/inteq/corpsman(src)
 //uniforms
 	new /obj/item/clothing/under/syndicate/inteq/corpsman(src)
 	new /obj/item/clothing/under/syndicate/inteq/corpsman/skirt(src)
@@ -382,7 +382,7 @@ these lack assets, here for consistency and futureproofing
 //hats
 	new /obj/item/clothing/head/soft/inteq/corpsman(src)
 //suits
-	new /obj/item/clothing/suit/armor/inteq/corpsman
+	new /obj/item/clothing/suit/armor/inteq/corpsman(src)
 //uniforms
 	new /obj/item/clothing/under/syndicate/inteq/corpsman(src)
 	new /obj/item/clothing/under/syndicate/inteq/corpsman/skirt(src)
@@ -768,7 +768,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/merc
 //hats
 	new /obj/item/clothing/head/soft/inteq/corpsman(src)
 //suits
-	new /obj/item/clothing/suit/armor/inteq/corpsman
+	new /obj/item/clothing/suit/armor/inteq/corpsman(src)
 //uniforms
 	new /obj/item/clothing/under/syndicate/inteq/corpsman(src)
 	new /obj/item/clothing/under/syndicate/inteq/corpsman/skirt(src)
@@ -857,7 +857,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/clas
 //hats
 	new /obj/item/clothing/head/soft/inteq/corpsman(src)
 //suits
-	new /obj/item/clothing/suit/armor/inteq/corpsman
+	new /obj/item/clothing/suit/armor/inteq/corpsman(src)
 //uniforms
 	new /obj/item/clothing/under/syndicate/inteq/corpsman(src)
 	new /obj/item/clothing/under/syndicate/inteq/corpsman/skirt(src)
@@ -942,7 +942,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/comm
 //hats
 	new /obj/item/clothing/head/soft/inteq/corpsman(src)
 //suits
-	new /obj/item/clothing/suit/armor/inteq/corpsman
+	new /obj/item/clothing/suit/armor/inteq/corpsman(src)
 //uniforms
 	new /obj/item/clothing/under/syndicate/inteq/corpsman(src)
 	new /obj/item/clothing/under/syndicate/inteq/corpsman/skirt(src)
