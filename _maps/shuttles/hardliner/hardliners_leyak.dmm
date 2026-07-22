@@ -1210,6 +1210,14 @@
 	pixel_x = -6;
 	pixel_y = -31
 	},
+/obj/item/paper_bin{
+	pixel_y = 4;
+	pixel_x = 6
+	},
+/obj/item/pen{
+	pixel_y = 4;
+	pixel_x = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "lG" = (
@@ -1652,14 +1660,8 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner{
 	dir = 4
 	},
-/obj/structure/table/reinforced,
 /obj/machinery/airalarm/directional/south,
-/obj/item/paper_bin{
-	pixel_y = 4
-	},
-/obj/item/pen{
-	pixel_y = 4
-	},
+/obj/structure/rack,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "qq" = (
