@@ -65,7 +65,7 @@
 	name = "corpsman class one's locker"
 	desc = "A sturdy, keycard-locked storage unit. It's white colouration, vertical gold stripe, and golden cross emblem denote it's belonging to an IRMG Corpsman Class One."
 	icon_state = "inteqcorpsc1"
-	req_access = list(ACCESS_SURGERY)
+	req_access = list(ACCESS_VIROLOGY)
 
 // command
 
@@ -80,13 +80,13 @@
 /obj/structure/closet/faction/inteq/secure/command/artificer
 	name = "honorable artificer's locker"
 	desc = "A sturdy, keycard-locked storage unit. It's black colouration, vertical gold stripe, and golden wrench emblem denote it's belonging to an IRMG Honorable Artificer."
-	icon_state = "inteqbarti"
+	icon_state = "inteqartihonor"
 	req_access = list(ACCESS_CE)
 
 /obj/structure/closet/faction/inteq/secure/command/corpsman
 	name = "honorable corpsman's locker"
 	desc = "A sturdy, keycard-locked storage unit. It's black colouration, vertical gold stripe, and golden cross emblem denote it's belonging to an IRMG Honorable Corpsman."
-	icon_state = "inteqbcorps"
+	icon_state = "inteqcorpshonor"
 	req_access = list(ACCESS_CMO)
 
 /obj/structure/closet/faction/inteq/secure/command/vanguard
@@ -99,7 +99,7 @@
 	name = "pilot's locker"
 	desc = "A sturdy, keycard-locked storage unit. It's brown colouration, vertical gold stripe, and golden shuttle emblem denote it's belonging to an IRMG Pilot."
 	icon_state = "inteqpilot"
-	req_access = list(ACCESS_MINING)
+	req_access = list(ACCESS_HOP)
 
 // ERT
 
@@ -108,13 +108,13 @@
 /obj/structure/closet/faction/inteq/secure/ert/vanguard
 	name = "honorable vanguard's locker"
 	desc = "A sturdy, keycard-locked storage unit. It's black colouration, vertical white stripe, and white shield emblem denote it's belonging to an IRMG Honorable Vanguard."
-	icon_state = "inteqbvanguard"
+	icon_state = "inteqvanguardhonor"
 	req_access = list(ACCESS_CENT_CAPTAIN)
 
 /obj/structure/closet/faction/inteq/secure/ert/enforcer
 	name = "enforcer honor guard's locker"
 	desc = "A sturdy, keycard-locked storage unit. It's black colouration, vertical gold stripe, and golden helmet emblem denote it's belonging to an IRMG Enforcer Honor Guard."
-	icon_state = "inteqbenf"
+	icon_state = "inteqenfhonor"
 	req_access = list(ACCESS_CENT_SPECOPS)
 
 /*
