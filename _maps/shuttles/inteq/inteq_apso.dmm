@@ -192,60 +192,14 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/engineering_personal{
-	name = "artificer's locker";
-	populate = 0;
-	anchored = 1
-	},
-/obj/item/storage/backpack/industrial{
-	pixel_y = 5
-	},
-/obj/item/storage/backpack/satchel/eng,
-/obj/item/storage/backpack/duffelbag/engineering{
-	pixel_y = -5
-	},
-/obj/item/clothing/under/syndicate/inteq/artificer{
-	pixel_x = -5
-	},
-/obj/item/clothing/under/syndicate/inteq/artificer/skirt{
-	pixel_x = 5;
-	pixel_y = -1
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -8;
-	pixel_x = -5
-	},
-/obj/item/clothing/head/beret/sec/inteq{
-	pixel_y = 5;
-	pixel_x = -5
-	},
-/obj/item/clothing/head/soft/inteq{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/storage/belt/utility/full/engi{
-	pixel_y = -5
-	},
-/obj/item/storage/pouch/engi,
-/obj/item/clothing/gloves/insulated{
-	pixel_y = -8
-	},
-/obj/item/clothing/glasses/welding{
-	pixel_x = -4
-	},
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt{
-	pixel_x = 8;
-	pixel_y = -4
-	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/structure/closet/faction/inteq/secure/classone/artificer/prefilled{
+	anchored = 1
+	},
+/obj/item/storage/pouch/engi,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "fH" = (
@@ -623,7 +577,6 @@
 /obj/item/tank/jetpack/carbondioxide,
 /obj/item/clothing/suit/space/inteq,
 /obj/item/clothing/head/helmet/space/inteq,
-/obj/item/clothing/mask/gas/inteq,
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/holosign/irmg{
 	pixel_y = 32
