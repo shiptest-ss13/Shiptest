@@ -125,12 +125,6 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
-"ee" = (
-/obj/structure/sign/warning/electricshock{
-	pixel_y = -4
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/medical)
 "fa" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
@@ -208,10 +202,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "gp" = (
-/obj/structure/sign/warning/electricshock{
-	pixel_x = -32;
-	pixel_y = 5
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable,
@@ -222,6 +212,9 @@
 	id = "aspo_portthruster"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/electricshock{
+	pixel_y = -18
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "ha" = (
@@ -802,7 +795,7 @@
 "ns" = (
 /obj/structure/sign/warning/electricshock{
 	pixel_x = 6;
-	pixel_y = 4
+	pixel_y = 10
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/canteen)
@@ -1793,7 +1786,7 @@
 "Ce" = (
 /obj/structure/sign/warning/electricshock{
 	pixel_x = 6;
-	pixel_y = 4
+	pixel_y = 10
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -3032,10 +3025,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/cargo)
 "RL" = (
-/obj/structure/sign/warning/electricshock{
-	pixel_x = -32;
-	pixel_y = 5
-	},
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 4;
 	piping_layer = 2
@@ -3049,6 +3038,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
+/obj/structure/sign/warning/electricshock{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "RT" = (
@@ -3103,6 +3095,9 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	name = "exhaust injector";
 	dir = 8
+	},
+/obj/structure/sign/warning/electricshock{
+	pixel_y = 32
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -4036,7 +4031,7 @@ Or
 xP
 Tw
 UC
-ee
+xP
 Se
 "}
 (12,1,1) = {"

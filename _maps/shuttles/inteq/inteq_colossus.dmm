@@ -10,7 +10,7 @@
 /obj/machinery/light/directional/west,
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4,
 /obj/structure/sign/warning/securearea{
-	pixel_y = 28;
+	pixel_y = 32;
 	pixel_x = 6
 	},
 /turf/open/floor/engine/hull/reinforced,
@@ -122,6 +122,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/autolathe,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "bx" = (
@@ -322,9 +323,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
 "cJ" = (
-/obj/structure/sign/warning/electricshock{
-	pixel_y = -4
-	},
+/obj/structure/sign/warning/electricshock,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/canteen)
 "cM" = (
@@ -1866,7 +1865,6 @@
 	pixel_x = 20;
 	pixel_y = 12
 	},
-/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plating,
 /area/ship/hangar)
 "mL" = (
@@ -2449,6 +2447,7 @@
 	},
 /obj/structure/closet/crate/freezer/blood,
 /obj/machinery/airalarm/directional/south,
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/office)
 "qx" = (
@@ -2769,7 +2768,6 @@
 /area/ship/engineering/engines/starboard)
 "sC" = (
 /obj/machinery/light/directional/north,
-/obj/machinery/camera/autoname/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
 /obj/item/chair/plastic{
@@ -3362,7 +3360,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "vB" = (
@@ -3442,7 +3439,7 @@
 /area/ship/storage/equip)
 "vK" = (
 /obj/structure/sign/warning/electricshock{
-	pixel_y = 8
+	pixel_y = 14
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
@@ -3561,8 +3558,7 @@
 	pixel_y = -6
 	},
 /obj/structure/sign/warning/electricshock{
-	pixel_y = 28;
-	pixel_x = -6
+	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -4229,7 +4225,6 @@
 /area/ship/external/dark)
 "AQ" = (
 /obj/machinery/light/directional/south,
-/obj/machinery/camera/autoname/directional/south,
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/secure/gear{
 	name = "training equipment crate"
@@ -4293,6 +4288,7 @@
 	dir = 10
 	},
 /obj/item/kirbyplants/random,
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "AV" = (
@@ -4732,7 +4728,6 @@
 	pixel_x = -20;
 	pixel_y = 12
 	},
-/obj/machinery/camera/autoname/directional/west,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
@@ -4927,7 +4922,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/firealarm/directional/south{
 	pixel_x = -2
 	},
@@ -5128,6 +5122,7 @@
 /obj/structure/sign/poster/contraband/inteq{
 	pixel_y = 32
 	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "Gu" = (
@@ -5260,7 +5255,7 @@
 "Hb" = (
 /obj/structure/sign/warning/electricshock{
 	pixel_x = 24;
-	pixel_y = -6
+	pixel_y = -1
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -5388,7 +5383,7 @@
 /area/ship/crew/canteen)
 "HA" = (
 /obj/structure/sign/warning/docking{
-	pixel_y = 8
+	pixel_y = 14
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/external/dark)
@@ -6848,6 +6843,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/hangar)
 "QS" = (
@@ -6884,7 +6880,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/sign/warning/electricshock{
-	pixel_y = -24
+	pixel_y = -18
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -7359,8 +7355,7 @@
 	pixel_y = -6
 	},
 /obj/structure/sign/warning/electricshock{
-	pixel_y = -24;
-	pixel_x = -6
+	pixel_y = -18
 	},
 /obj/item/storage/bag/ore{
 	pixel_y = 4;
@@ -7727,7 +7722,7 @@
 	dir = 8
 	},
 /obj/structure/sign/warning/electricshock{
-	pixel_y = 28
+	pixel_y = 32
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -7852,6 +7847,7 @@
 	icon_state = "2-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "Vm" = (
@@ -7891,7 +7887,7 @@
 	dir = 1
 	},
 /obj/structure/sign/warning/securearea{
-	pixel_y = -24;
+	pixel_y = -18;
 	pixel_x = 6
 	},
 /turf/open/floor/engine/hull/reinforced,
@@ -7955,17 +7951,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
-"VJ" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/yellow/line{
-	dir = 8
-	},
-/obj/machinery/light/directional/west,
-/obj/machinery/camera/autoname/directional/west,
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/hallway/central)
 "VO" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/structure/cable{
@@ -9413,7 +9398,7 @@ GU
 Sx
 jD
 Ko
-VJ
+GA
 ML
 AT
 mU
