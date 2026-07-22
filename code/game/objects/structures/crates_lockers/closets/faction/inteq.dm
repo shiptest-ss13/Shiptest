@@ -599,7 +599,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/clas
 
 // command
 
-obj/structure/closet/faction/inteq/secure/wall/command
+/obj/structure/closet/faction/inteq/secure/wall/command
 	icon_state = "inteqbsecure_wall"
 
 /obj/structure/closet/faction/inteq/secure/wall/command/masteratarms
@@ -670,3 +670,401 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/ert/
 	icon_door = "inteqenfhonor_wall"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/ert/enforcer, 27)
+
+// wall closet populate
+
+/obj/structure/closet/faction/inteq/wall/uniforms
+	name = "inteq uniform closet"
+
+/obj/structure/closet/faction/inteq/wall/uniforms/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/storage/backpack/messenger/inteq = 2,
+		/obj/item/clothing/head/soft/inteq = 2,
+		/obj/item/clothing/head/beret/sec/inteq = 2,
+		/obj/item/clothing/suit/hooded/wintercoat/security/inteq = 2,
+		/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt = 2,
+		/obj/item/clothing/under/syndicate/inteq = 2,
+		/obj/item/clothing/under/syndicate/inteq/skirt = 2,
+		/obj/item/clothing/under/syndicate/inteq/sneaksuit = 2,
+		/obj/item/clothing/shoes/combat = 2,
+		/obj/item/clothing/gloves/combat = 2,
+		/obj/item/clothing/mask/balaclava/inteq = 2,
+		/obj/item/radio/headset = 2)
+	generate_items_inside(items_inside,src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/wall/uniforms, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/merc/enforcer/prefilled/PopulateContents()
+	..()
+//bags
+	new /obj/item/storage/backpack/duffelbag(src)
+	new /obj/item/storage/backpack(src)
+	new /obj/item/storage/backpack/satchel(src)
+	new /obj/item/storage/backpack/messenger/inteq(src)
+//hats
+	new /obj/item/clothing/head/soft/inteq(src)
+	new /obj/item/clothing/head/beret/sec/inteq(src)
+//suits
+	new /obj/item/clothing/suit/hooded/wintercoat/security/inteq(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt(src)
+//uniforms
+	new /obj/item/clothing/under/syndicate/inteq(src)
+	new /obj/item/clothing/under/syndicate/inteq/skirt(src)
+	new /obj/item/clothing/under/syndicate/inteq/sneaksuit(src)
+//hands/feet
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/gloves/combat(src)
+//belts
+	new /obj/item/storage/belt/security/webbing/inteq(src)
+	new /obj/item/storage/belt/security/webbing/inteq/alt(src)
+//masks
+	new /obj/item/clothing/mask/balaclava/inteq(src)
+//eyes/ears
+	new /obj/item/clothing/glasses/hud/security/sunglasses/inteq(src)
+	new /obj/item/radio/headset/alt/(src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/merc/enforcer/prefilled, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/merc/artificer/prefilled/PopulateContents()
+	..()
+//bags
+	new /obj/item/storage/backpack/duffelbag/engineering(src)
+	new /obj/item/storage/backpack/industrial(src)
+	new /obj/item/storage/backpack/satchel/eng(src)
+	new /obj/item/storage/backpack/messenger/inteq(src)
+//hats
+	new /obj/item/clothing/head/soft/inteq(src)
+	new /obj/item/clothing/head/beret/sec/inteq(src)
+//suits
+	new /obj/item/clothing/suit/hooded/wintercoat/security/inteq(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt(src)
+	new /obj/item/clothing/suit/hazardvest(src)
+//uniforms
+	new /obj/item/clothing/under/syndicate/inteq/artificer(src)
+	new /obj/item/clothing/under/syndicate/inteq/artificer/skirt(src)
+	new /obj/item/clothing/under/syndicate/inteq/sneaksuit(src)
+//hands/feet
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/gloves/insulated(src)
+//belts
+	new /obj/item/storage/belt/utility/full/engi(src)
+//masks
+	new /obj/item/clothing/mask/gas/inteq(src)
+//eyes/ears
+	new /obj/item/clothing/glasses/welding(src)
+	new /obj/item/radio/headset/alt/(src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/merc/artificer/prefilled, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/merc/corpsman/prefilled/PopulateContents()
+	..()
+//bags
+	new /obj/item/storage/backpack/duffelbag/med(src)
+	new /obj/item/storage/backpack/medic(src)
+	new /obj/item/storage/backpack/satchel/med(src)
+	new /obj/item/storage/backpack/messenger/inteq(src)
+//hats
+	new /obj/item/clothing/head/soft/inteq/corpsman(src)
+//suits
+	new /obj/item/clothing/suit/armor/inteq/corpsman
+//uniforms
+	new /obj/item/clothing/under/syndicate/inteq/corpsman(src)
+	new /obj/item/clothing/under/syndicate/inteq/corpsman/skirt(src)
+//hands/feet
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/gloves/nitrile/inteq(src)
+//belts
+	new /obj/item/storage/belt/medical/webbing(src)
+//masks
+	new /obj/item/clothing/mask/balaclava/inteq(src)
+//eyes/ears
+	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/radio/headset/headset_medsec/alt(src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/merc/corpsman/prefilled, 27)
+
+// class one
+
+/obj/structure/closet/faction/inteq/secure/wall/classone/enforcer/prefilled/PopulateContents()
+	..()
+//bags
+	new /obj/item/storage/backpack/duffelbag(src)
+	new /obj/item/storage/backpack(src)
+	new /obj/item/storage/backpack/satchel(src)
+	new /obj/item/storage/backpack/messenger/inteq(src)
+//hats
+	new /obj/item/clothing/head/soft/inteq(src)
+	new /obj/item/clothing/head/beret/sec/inteq(src)
+//suits
+	new /obj/item/clothing/suit/hooded/wintercoat/security/inteq(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt(src)
+//uniforms
+	new /obj/item/clothing/under/syndicate/inteq(src)
+	new /obj/item/clothing/under/syndicate/inteq/skirt(src)
+	new /obj/item/clothing/under/syndicate/inteq/sneaksuit(src)
+//hands/feet
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/gloves/combat(src)
+//belts
+	new /obj/item/storage/belt/security/webbing/inteq(src)
+	new /obj/item/storage/belt/security/webbing/inteq/alt(src)
+//masks
+	new /obj/item/clothing/mask/balaclava/inteq(src)
+//eyes/ears
+	new /obj/item/clothing/glasses/hud/security/sunglasses/inteq(src)
+	new /obj/item/radio/headset/inteq/alt(src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/classone/enforcer/prefilled, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/classone/artificer/prefilled/PopulateContents()
+	..()
+//bags
+	new /obj/item/storage/backpack/duffelbag/engineering(src)
+	new /obj/item/storage/backpack/industrial(src)
+	new /obj/item/storage/backpack/satchel/eng(src)
+	new /obj/item/storage/backpack/messenger/inteq(src)
+//hats
+	new /obj/item/clothing/head/soft/inteq(src)
+	new /obj/item/clothing/head/beret/sec/inteq(src)
+//suits
+	new /obj/item/clothing/suit/hooded/wintercoat/security/inteq(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt(src)
+//uniforms
+	new /obj/item/clothing/under/syndicate/inteq/artificer(src)
+	new /obj/item/clothing/under/syndicate/inteq/artificer/skirt(src)
+//hands/feet
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/gloves/insulated(src)
+//belts
+	new /obj/item/storage/belt/utility/full/engi(src)
+//masks
+	new /obj/item/clothing/mask/gas/inteq(src)
+//eyes/ears
+	new /obj/item/clothing/glasses/welding(src)
+	new /obj/item/radio/headset/inteq/alt(src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/classone/artificer/prefilled, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/classone/corpsman/prefilled/PopulateContents()
+	..()
+//bags
+	new /obj/item/storage/backpack/duffelbag/med(src)
+	new /obj/item/storage/backpack/medic(src)
+	new /obj/item/storage/backpack/satchel/med(src)
+	new /obj/item/storage/backpack/messenger/inteq(src)
+//hats
+	new /obj/item/clothing/head/soft/inteq/corpsman(src)
+//suits
+	new /obj/item/clothing/suit/armor/inteq/corpsman
+//uniforms
+	new /obj/item/clothing/under/syndicate/inteq/corpsman(src)
+	new /obj/item/clothing/under/syndicate/inteq/corpsman/skirt(src)
+//hands/feet
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/gloves/nitrile/inteq(src)
+//belts
+	new /obj/item/storage/belt/medical/webbing(src)
+//masks
+	new /obj/item/clothing/mask/balaclava/inteq(src)
+//eyes/ears
+	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/radio/headset/inteq/alt(src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/classone/corpsman/prefilled, 27)
+
+//command
+
+/obj/structure/closet/faction/inteq/secure/wall/command/masteratarms/prefilled/PopulateContents()
+	..()
+//bags
+	new /obj/item/storage/backpack/duffelbag(src)
+	new /obj/item/storage/backpack(src)
+	new /obj/item/storage/backpack/satchel(src)
+	new /obj/item/storage/backpack/messenger/inteq(src)
+//hats
+	new /obj/item/clothing/head/warden/inteq(src)
+//suits
+	new /obj/item/clothing/suit/armor/vest/security/warden/inteq(src)
+//uniforms
+	new /obj/item/clothing/under/syndicate/inteq/honorable(src)
+	new /obj/item/clothing/under/syndicate/inteq/sneaksuit(src)
+//hands/feet
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/gloves/tackler/combat/insulated(src)
+//belts
+	new /obj/item/storage/belt/military/assault(src)
+//masks
+	new /obj/item/clothing/mask/balaclava/inteq(src)
+//eyes/ears
+	new /obj/item/clothing/glasses/hud/security/sunglasses/inteq(src)
+	new /obj/item/radio/headset/inteq/alt(src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/command/masteratarms/prefilled, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/command/artificer/prefilled/PopulateContents()
+	..()
+//bags
+	new /obj/item/storage/backpack/duffelbag/engineering(src)
+	new /obj/item/storage/backpack/industrial(src)
+	new /obj/item/storage/backpack/satchel/eng(src)
+	new /obj/item/storage/backpack/messenger/inteq(src)
+//hats
+	new /obj/item/clothing/head/soft/inteq(src)
+	new /obj/item/clothing/head/hardhat/white(src)
+//suits
+	new /obj/item/clothing/suit/hooded/wintercoat/security/inteq(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt(src)
+//uniforms
+	new /obj/item/clothing/under/syndicate/inteq/artificer(src)
+	new /obj/item/clothing/under/syndicate/inteq/artificer/skirt(src)
+//hands/feet
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/gloves/insulated(src)
+//belts
+	new /obj/item/storage/belt/utility/chief/full(src)
+//masks
+	new /obj/item/clothing/mask/gas/inteq(src)
+//eyes/ears
+	new /obj/item/clothing/glasses/welding(src)
+	new /obj/item/radio/headset/inteq/alt(src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/command/artificer/prefilled, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/command/corpsman/prefilled/PopulateContents()
+	..()
+//bags
+	new /obj/item/storage/backpack/duffelbag/med(src)
+	new /obj/item/storage/backpack/medic(src)
+	new /obj/item/storage/backpack/satchel/med(src)
+	new /obj/item/storage/backpack/messenger/inteq(src)
+//hats
+	new /obj/item/clothing/head/soft/inteq/corpsman(src)
+//suits
+	new /obj/item/clothing/suit/armor/inteq/corpsman
+//uniforms
+	new /obj/item/clothing/under/syndicate/inteq/corpsman(src)
+	new /obj/item/clothing/under/syndicate/inteq/corpsman/skirt(src)
+//hands/feet
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/gloves/nitrile/inteq(src)
+//belts
+	new /obj/item/storage/belt/medical/webbing(src)
+//masks
+	new /obj/item/clothing/mask/balaclava/inteq(src)
+//eyes/ears
+	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/radio/headset/inteq(src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/command/corpsman/prefilled, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/command/vanguard/prefilled/PopulateContents()
+	..()
+//bags
+	new /obj/item/storage/backpack/duffelbag(src)
+	new /obj/item/storage/backpack(src)
+	new /obj/item/storage/backpack/satchel(src)
+	new /obj/item/storage/backpack/messenger/inteq(src)
+//hats
+	new /obj/item/clothing/head/inteq_peaked(src)
+	new /obj/item/clothing/head/beret/sec/hos/inteq(src)
+//suits
+	new /obj/item/clothing/suit/armor/hos/inteq(src)
+//uniforms
+	new /obj/item/clothing/under/syndicate/inteq/honorable(src)
+	new /obj/item/clothing/under/syndicate/inteq/sneaksuit(src)
+//hands/feet
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/gloves/tackler/combat/insulated(src)
+//belts
+	new /obj/item/storage/belt/military/assault(src)
+//masks
+	new /obj/item/clothing/mask/balaclava/inteq(src)
+//eyes/ears
+	new /obj/item/clothing/glasses/hud/security/sunglasses/inteq(src)
+	new /obj/item/radio/headset/inteq/alt/captain(src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/command/vanguard/prefilled, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/command/pilot/prefilled/PopulateContents()
+	..()
+//bags
+	new /obj/item/storage/backpack/duffelbag(src)
+	new /obj/item/storage/backpack(src)
+	new /obj/item/storage/backpack/satchel(src)
+	new /obj/item/storage/backpack/messenger/inteq(src)
+//hats
+	new /obj/item/clothing/head/soft/inteq(src)
+	new /obj/item/clothing/head/beret/sec/inteq(src)
+//suits
+	new /obj/item/clothing/suit/toggle/flight/inteq(src)
+//uniforms
+	new /obj/item/clothing/under/syndicate/inteq/honorable(src)
+	new /obj/item/clothing/under/syndicate/inteq/sneaksuit(src)
+//hands/feet
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/gloves/combat(src)
+//belts
+	new /obj/item/storage/belt/security/webbing/inteq/alt(src)
+//masks
+	new /obj/item/clothing/mask/balaclava/inteq(src)
+//eyes/ears
+	new /obj/item/clothing/glasses/hud/security/sunglasses/inteq(src)
+	new /obj/item/radio/headset/inteq/alt/captain(src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/command/pilot/prefilled, 27)
+
+// ERT
+
+/obj/structure/closet/faction/inteq/secure/wall/ert/vanguard/prefilled/PopulateContents()
+	..()
+//bags
+	new /obj/item/storage/backpack/duffelbag(src)
+	new /obj/item/storage/backpack(src)
+	new /obj/item/storage/backpack/satchel(src)
+	new /obj/item/storage/backpack/messenger/inteq(src)
+//hats
+	new /obj/item/clothing/head/beret/sec/hos/inteq/honorable(src)
+//suits
+	new /obj/item/clothing/suit/armor/hos/inteq/honorable(src)
+//uniforms
+	new /obj/item/clothing/under/syndicate/inteq/honorable(src)
+	new /obj/item/clothing/under/syndicate/inteq/sneaksuit(src)
+//hands/feet
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/gloves/tackler/combat/insulated(src)
+//belts
+	new /obj/item/storage/belt/military/assault(src)
+//masks
+	new /obj/item/clothing/mask/balaclava/inteq(src)
+//eyes/ears
+	new /obj/item/clothing/glasses/hud/security/sunglasses/inteq(src)
+	new /obj/item/radio/headset/inteq/alt/captain(src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/ert/vanguard/prefilled, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/ert/enforcer/prefilled/PopulateContents()
+	..()
+//bags
+	new /obj/item/storage/backpack/duffelbag(src)
+	new /obj/item/storage/backpack(src)
+	new /obj/item/storage/backpack/satchel(src)
+	new /obj/item/storage/backpack/messenger/inteq(src)
+//hats
+	new /obj/item/clothing/head/beret/sec/hos/inteq/honorable(src)
+//uniforms
+	new /obj/item/clothing/under/syndicate/inteq/honorable(src)
+	new /obj/item/clothing/under/syndicate/inteq/sneaksuit(src)
+//hands/feet
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/gloves/tackler/combat/insulated(src)
+//belts
+	new /obj/item/storage/belt/security/webbing/inteq(src)
+	new /obj/item/storage/belt/security/webbing/inteq/alt(src)
+//masks
+	new /obj/item/clothing/mask/balaclava/inteq(src)
+//eyes/ears
+	new /obj/item/clothing/glasses/hud/security/sunglasses/inteq(src)
+	new /obj/item/radio/headset/inteq/alt/captain(src)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/ert/enforcer/prefilled, 27)
