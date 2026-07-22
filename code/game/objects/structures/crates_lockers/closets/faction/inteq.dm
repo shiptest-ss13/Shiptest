@@ -73,7 +73,7 @@
 
 /obj/structure/closet/faction/inteq/secure/command/masteratarms
 	name = "master at arms' locker"
-	desc = "A sturdy, keycard-locked storage unit. It's brown colouration, vertical gold stripe, and golden pistol emblem denote it's belonging to an IRMG Master At Arms'."
+	desc = "A sturdy, keycard-locked storage unit. It's black colouration, vertical gold stripe, and golden pistol emblem denote it's belonging to an IRMG Master At Arms'."
 	icon_state = "inteqmaster"
 	req_access = list(ACCESS_HOS)
 
@@ -91,13 +91,13 @@
 
 /obj/structure/closet/faction/inteq/secure/command/vanguard
 	name = "vanguard's locker"
-	desc = "A sturdy, keycard-locked storage unit. It's brown colouration, vertical gold stripe, and golden shield emblem denote it's belonging to an IRMG Vanguard."
+	desc = "A sturdy, keycard-locked storage unit. It's black colouration, vertical gold stripe, and golden shield emblem denote it's belonging to an IRMG Vanguard."
 	icon_state = "inteqvanguard"
 	req_access = list(ACCESS_CAPTAIN)
 
 /obj/structure/closet/faction/inteq/secure/command/pilot
 	name = "pilot's locker"
-	desc = "A sturdy, keycard-locked storage unit. It's brown colouration, vertical gold stripe, and golden shuttle emblem denote it's belonging to an IRMG Pilot."
+	desc = "A sturdy, keycard-locked storage unit. It's black colouration, vertical gold stripe, and golden shuttle emblem denote it's belonging to an IRMG Pilot."
 	icon_state = "inteqpilot"
 	req_access = list(ACCESS_HOP)
 
@@ -113,7 +113,7 @@
 
 /obj/structure/closet/faction/inteq/secure/ert/enforcer
 	name = "enforcer honor guard's locker"
-	desc = "A sturdy, keycard-locked storage unit. It's black colouration, vertical gold stripe, and golden helmet emblem denote it's belonging to an IRMG Enforcer Honor Guard."
+	desc = "A sturdy, keycard-locked storage unit. It's black colouration, vertical white stripe, and white helmet emblem denote it's belonging to an IRMG Enforcer Honor Guard."
 	icon_state = "inteqenfhonor"
 	req_access = list(ACCESS_CENT_SPECOPS)
 
