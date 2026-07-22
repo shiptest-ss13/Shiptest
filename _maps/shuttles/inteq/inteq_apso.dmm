@@ -942,10 +942,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/obj/machinery/computer/helm/viewscreen/directional/west{
-	layer = 2.7;
-	pixel_y = 2
-	},
 /obj/item/bodycamera{
 	pixel_y = 6;
 	pixel_x = -6
@@ -963,6 +959,7 @@
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/helm/viewscreen/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "oP" = (
@@ -1231,15 +1228,15 @@
 	pixel_y = 20
 	},
 /obj/machinery/button/door{
-	pixel_y = 7;
-	pixel_x = -21;
-	dir = 4;
+	pixel_y = 21;
+	pixel_x = 4;
 	id = "aspo_bridgehall_window";
 	name = "Hallway Window Control"
 	},
+/obj/machinery/computer/security/telescreen/directional/west,
 /obj/machinery/button/door{
 	pixel_y = 21;
-	pixel_x = 2;
+	pixel_x = -5;
 	id = "aspo_bridge";
 	normaldoorcontrol = 1;
 	specialfunctions = 4;
@@ -1252,15 +1249,9 @@
 	normaldoorcontrol = 1;
 	specialfunctions = 4;
 	name = "Bathroom Bolt Override";
-	pixel_x = -9;
-	pixel_y = 21
-	},
-/obj/machinery/button/door{
-	pixel_y = -4;
 	pixel_x = -21;
-	dir = 4;
-	id = "aspo_bridge_window";
-	name = "External Window Control"
+	pixel_y = -16;
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -1410,6 +1401,13 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	pixel_y = -21;
+	id = "aspo_bridge_window";
+	name = "External Window Control";
+	pixel_x = 10;
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "wu" = (
@@ -1609,10 +1607,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
-/obj/machinery/computer/security/telescreen/directional/west{
-	network = list("ss13");
-	desc = "A telescreen that connects to the ship's security camera network."
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/paper_bin{
 	pixel_x = -7;
@@ -1634,6 +1628,7 @@
 	pixel_x = -8;
 	pixel_y = -8
 	},
+/obj/machinery/computer/security/telescreen/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "zY" = (
@@ -1694,14 +1689,21 @@
 	},
 /obj/machinery/button/door{
 	pixel_y = -21;
-	pixel_x = 7;
+	pixel_x = 4;
+	id = "aspo_bridgehall_window";
+	name = "Hallway Window Control";
+	dir = 1
+	},
+/obj/machinery/button/door{
+	pixel_y = -21;
+	pixel_x = -5;
 	id = "aspo_bridge";
 	normaldoorcontrol = 1;
 	specialfunctions = 4;
-	name = "Bridge Bolt Control";
-	dir = 1;
+	name = "Bolt Control";
 	req_ship_access = 1;
-	req_one_access = list(19,3,48)
+	req_one_access = list(19,3,48);
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -2876,6 +2878,9 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
+	},
+/obj/machinery/camera/autoname/directional/south{
+	pixel_x = 13
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
