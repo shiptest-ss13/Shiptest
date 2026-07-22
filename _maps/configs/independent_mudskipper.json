@@ -16,23 +16,26 @@
 		"SPACE"
 	],
 	"map_path": "_maps/shuttles/independent/independent_mudskipper.dmm",
-	"token_icon_state": "ship_small_long_generic",
 	"limit": 1,
 	"starting_funds": 1500,
-	"tranist_x_offset": -15,
-	"tranist_y_offset": -10,
+	"tranist_x_offset": -20,
+	"tranist_y_offset": -20,
 	"job_slots": {
 		"Salvage Leader": {
-			"outfit": "/datum/outfit/job/independent/captain/cheap",
+			"outfit": "/datum/outfit/job/independent/captain/gown",
 			"officer": true,
 			"slots": 1
 		},
-		"Salvager": {
-			"outfit": "/datum/outfit/job/independent/engineer/salvage",
+		"Salvage Technician": {
+			"outfit": "/datum/outfit/job/independent/engineer/gown",
 			"slots": 2
 		},
-		"Salvage Technician": {
-			"outfit": "/datum/outfit/job/independent/engineer",
+		"Engineer": {
+			"outfit": "/datum/outfit/job/independent/engineer/gown",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/independent/assistant/gown",
 			"slots": 1
 		}
 	},
