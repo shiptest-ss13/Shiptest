@@ -5,6 +5,7 @@
 	max_damage = 200
 	body_zone = BODY_ZONE_CHEST
 	body_part = CHEST
+	body_weight = 64
 	plaintext_zone = "chest"
 	px_x = 0
 	px_y = 0
@@ -244,6 +245,7 @@
 	desc = "Some athletes prefer to tie their left shoelaces first for good \
 		luck. In this instance, it probably would not have helped."
 	icon_state = "human_l_leg"
+	mask_icon = 'icons/mob/leg_masks.dmi'
 	attack_verb = list("kicks", "stomps")
 	max_damage = 50
 	body_zone = BODY_ZONE_L_LEG
@@ -326,6 +328,7 @@
 		The hokey pokey has certainly changed a lot since space colonisation."
 	// alternative spellings of 'pokey' are available
 	icon_state = "human_r_leg"
+	mask_icon = 'icons/mob/leg_masks.dmi'
 	attack_verb = list("kicks", "stomps")
 	max_damage = 50
 	body_zone = BODY_ZONE_R_LEG
@@ -404,3 +407,82 @@
 	can_be_disabled = FALSE
 	max_damage = 100
 	animal_origin = ALIEN_BODYPART
+
+/obj/item/bodypart/tail
+	name = "tail"
+	desc = "A severed tail. What did you cut this off of?"
+	// all bodyparts need to have a valid sprite even if they aren't meant to be instantiated so enjoy this placeholder
+	limb_id = SPECIES_SARATHI
+	icon = 'icons/mob/species/lizard/bodyparts.dmi'
+	mask_icon = 'icons/mob/tail_masks.dmi'
+	plaintext_zone = "tail"
+	bodypart_layer = BODY_FRONT_LAYER
+	body_zone = BODY_ZONE_TAIL
+	body_part = TAIL
+	dismemberable = TRUE
+	can_be_disabled = TRUE
+	body_damage_coeff = 0.5
+	max_damage = 20
+	max_stamina_damage = 20
+	body_weight = 4 // hard to hit, but very weak
+	/// Sound played when using the *thump emote
+	var/can_thump = FALSE
+	/// Whether the tail has an animated sprite
+	var/can_wag = TRUE
+	/// Should this be currently using the animated sprite?
+	var/wagging = FALSE
+	/// Allows equipping certain storage items
+	var/sturdy = TRUE
+
+/obj/item/bodypart/tail/set_owner(new_owner)
+	. = ..()
+	if(. == FALSE)
+		return
+	if(owner)
+		if(HAS_TRAIT(owner, TRAIT_PARALYSIS_TAIL))
+			ADD_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_TAIL)
+			RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_TAIL), PROC_REF(on_owner_paralysis_loss))
+		else
+			REMOVE_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_TAIL)
+			RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_TAIL), PROC_REF(on_owner_paralysis_gain))
+	if(.)
+		var/mob/living/carbon/old_owner = .
+		if(HAS_TRAIT(old_owner, TRAIT_PARALYSIS_TAIL))
+			UnregisterSignal(old_owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_TAIL))
+			if(!owner || !HAS_TRAIT(owner, TRAIT_PARALYSIS_TAIL))
+				REMOVE_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_TAIL)
+		else
+			UnregisterSignal(old_owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_TAIL))
+
+///Reacts to the owner gaining the TRAIT_PARALYSIS_TAIL trait.
+/obj/item/bodypart/tail/proc/on_owner_paralysis_gain(mob/living/carbon/source)
+	SIGNAL_HANDLER
+	ADD_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_TAIL)
+	UnregisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_TAIL))
+	RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_TAIL), PROC_REF(on_owner_paralysis_loss))
+
+///Reacts to the owner losing the TRAIT_PARALYSIS_TAIL trait.
+/obj/item/bodypart/tail/proc/on_owner_paralysis_loss(mob/living/carbon/source)
+	SIGNAL_HANDLER
+	REMOVE_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_TAIL)
+	UnregisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_TAIL))
+	RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_TAIL), PROC_REF(on_owner_paralysis_gain))
+
+/obj/item/bodypart/tail/set_disabled(new_disabled)
+	if(..())
+		set_wag(FALSE)
+		return TRUE
+	return FALSE
+
+/obj/item/bodypart/tail/proc/set_wag(new_state = FALSE)
+	if(!can_wag)
+		return FALSE
+	if(new_state == wagging)
+		return FALSE
+	wagging = new_state
+	if(wagging)
+		limb_id = "[initial(limb_id)]_wagging"
+	else
+		limb_id = initial(limb_id)
+	owner?.update_body()
+	return TRUE

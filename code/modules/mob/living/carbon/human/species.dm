@@ -355,14 +355,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	//Note for future: Potentionally add a new C.dna.species() to build a template species for more accurate limb replacement
 
 	var/obj/item/bodypart/old_part
-	var/list/all_zones = new_species.species_limbs
+	var/list/all_zones = new_species.species_limbs | C.bodyparts
 	if(old_species)
 		all_zones |= old_species.species_limbs
 	for(var/zone in all_zones)
 		old_part = C.bodyparts[zone]
-		if(!old_part && (zone in C.bodyparts)) // if the old species has a bodypart by default but it's missing, don't replace it
+		if(!old_part && old_species && !isnull(old_species?.species_limbs)) // if the old species has a bodypart by default but it's missing, don't replace it
 			continue
-		var/obj/item/bodypart/new_part = C.new_body_part(zone, robotic, FALSE, new_species)
+		var/obj/item/bodypart/new_part = new_species.new_body_part(C, zone, robotic, FALSE)
 		if(new_part)
 			new_part.replace_limb(C, TRUE)
 			if(old_part)
@@ -373,6 +373,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else if(old_part)
 			old_part.drop_limb(TRUE)
 			qdel(old_part)
+
+/datum/species/proc/new_body_part(mob/living/carbon/carbon_mob, zone, robotic, fixed_icon)
+	return carbon_mob.new_body_part(zone, robotic, fixed_icon, src)
 
 /**
 	* Proc called when a carbon becomes this species.
@@ -796,25 +799,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/horn_visiblity = ((H?.head?.flags_inv & HIDEHORNS) || (H?.wear_mask?.flags_inv & HIDEHORNS) || (H?.wear_neck?.flags_inv & HIDEHORNS))
 
-	if("tail_human" in mutant_bodyparts)
-		if(tail_visibility)
-			bodyparts_to_add -= "tail_human"
-
-	if("waggingtail_human" in mutant_bodyparts)
-		if(tail_visibility)
-			bodyparts_to_add -= "waggingtail_human"
-		else if ("tail_human" in mutant_bodyparts)
-			bodyparts_to_add -= "waggingtail_human"
-
 	if("spines" in mutant_bodyparts)
 		if(!H.dna.features["spines"] || H.dna.features["spines"] == "None" || tail_visibility)
 			bodyparts_to_add -= "spines"
-
-	if("waggingspines" in mutant_bodyparts)
-		if(!H.dna.features["spines"] || H.dna.features["spines"] == "None" || tail_visibility)
-			bodyparts_to_add -= "waggingspines"
-		else if ("tail" in mutant_bodyparts)
-			bodyparts_to_add -= "waggingspines"
 
 	if("face_markings" in mutant_bodyparts) //Take a closer look at that snout! //technically
 		if((H.wear_mask?.flags_inv & HIDEFACE) || (H.head?.flags_inv & HIDEFACE) || !HD)
@@ -896,21 +883,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	for(var/layer in relevent_layers)
 		var/layertext = mutant_bodyparts_layertext(layer)
 
+		var/obj/item/bodypart/tail/our_tail = H.get_bodypart(BODY_ZONE_TAIL)
 		for(var/bodypart in bodyparts_to_add)
 			var/datum/sprite_accessory/S
 			switch(bodypart)
-				if("tail_lizard")
-					S = GLOB.tails_list_lizard[H.dna.features["tail_lizard"]]
-				if("waggingtail_lizard")
-					S = GLOB.animated_tails_list_lizard[H.dna.features["tail_lizard"]]
-				if("tail_human")
-					S = GLOB.tails_list_human[H.dna.features["tail_human"]]
-				if("waggingtail_human")
-					S = GLOB.animated_tails_list_human[H.dna.features["tail_human"]]
 				if("spines")
-					S = GLOB.spines_list[H.dna.features["spines"]]
-				if("waggingspines")
-					S = GLOB.animated_spines_list[H.dna.features["spines"]]
+					S = our_tail?.wagging ? GLOB.animated_spines_list[H.dna.features["spines"]] : GLOB.spines_list[H.dna.features["spines"]] // FUCK
 				if("face_markings")
 					S = GLOB.face_markings_list[H.dna.features["face_markings"]]
 				if("frills")
@@ -939,8 +917,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.ipc_screens_list[H.dna.features["ipc_screen"]]
 				if("ipc_antenna")
 					S = GLOB.ipc_antennas_list[H.dna.features["ipc_antenna"]]
-				if("ipc_tail")
-					S = GLOB.ipc_tail_list[H.dna.features["ipc_tail"]]
 				if("ipc_chassis")
 					S = GLOB.ipc_chassis_list[H.dna.features["ipc_chassis"]]
 				if("ipc_brain")
@@ -963,21 +939,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.vox_neck_quills_list[H.dna.features["vox_neck_quills"]]
 				if("elzu_horns")
 					S = GLOB.elzu_horns_list[H.dna.features["elzu_horns"]]
-				if("tail_elzu")
-					S = GLOB.tails_list_elzu[H.dna.features["tail_elzu"]]
-				if("waggingtail_elzu")
-					S = GLOB.animated_tails_list_elzu[H.dna.features["tail_elzu"]]
 			if(!S || S.icon_state == "none")
 				continue
 
 			var/mutable_appearance/accessory_overlay = mutable_appearance(S.icon, layer = -layer)
 
-			//A little rename so we don't have to use tail_lizard, tail_human, or tail_elzu when naming the sprites.
 			accessory_overlay.alpha = S.image_alpha
-			if(bodypart == "tail_lizard" || bodypart == "tail_human" || bodypart == "tail_elzu")
-				bodypart = "tail"
-			else if(bodypart == "waggingtail_lizard" || bodypart == "waggingtail_human" || bodypart == "waggingtail_elzu")
-				bodypart = "waggingtail"
 
 			var/used_color_src = S.color_src
 
@@ -2284,50 +2251,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(H.movement_type & FLYING)
 		return TRUE
 	return FALSE
-
-////////////////
-//Tail Wagging//
-////////////////
-
-/datum/species/proc/can_wag_tail(mob/living/carbon/human/H)
-	return (locate(/obj/item/organ/tail) in H.internal_organs)
-
-/datum/species/proc/is_wagging_tail(mob/living/carbon/human/H)
-	return ("waggingtail_human" in mutant_bodyparts) || ("waggingtail_lizard" in mutant_bodyparts) || ("waggingtail_elzu" in mutant_bodyparts)
-
-/datum/species/proc/start_wagging_tail(mob/living/carbon/human/H)
-	if("tail_human" in mutant_bodyparts)
-		mutant_bodyparts -= "tail_human"
-		mutant_bodyparts |= "waggingtail_human"
-
-	else if("tail_lizard" in mutant_bodyparts)
-		mutant_bodyparts -= "tail_lizard"
-		mutant_bodyparts -= "spines"
-		mutant_bodyparts |= "waggingtail_lizard"
-		mutant_bodyparts |= "waggingspines"
-
-	else if("tail_elzu" in mutant_bodyparts)
-		mutant_bodyparts -= "tail_elzu"
-		mutant_bodyparts |= "waggingtail_elzu"
-
-	H.update_body()
-
-/datum/species/proc/stop_wagging_tail(mob/living/carbon/human/H)
-	if("waggingtail_human" in mutant_bodyparts)
-		mutant_bodyparts -= "waggingtail_human"
-		mutant_bodyparts |= "tail_human"
-
-	else if("waggingtail_lizard" in mutant_bodyparts)
-		mutant_bodyparts -= "waggingtail_lizard"
-		mutant_bodyparts -= "waggingspines"
-		mutant_bodyparts |= "tail_lizard"
-		mutant_bodyparts |= "spines"
-
-	else if("waggingtail_elzu" in mutant_bodyparts)
-		mutant_bodyparts -= "waggingtail_elzu"
-		mutant_bodyparts |= "tail_elzu"
-
-	H.update_body()
 
 ///////////////
 //FLIGHT SHIT//

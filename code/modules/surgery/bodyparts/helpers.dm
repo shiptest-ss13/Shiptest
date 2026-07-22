@@ -3,19 +3,19 @@
 	return
 
 /// Returns a bodypart occupying a specific zone. If using a precise zone and no such part is present, it falls back to a non-precise zone.
-/mob/living/carbon/get_bodypart(zone, simplify = FALSE)
+/mob/living/carbon/get_bodypart(zone, simplify = TRUE)
 	RETURN_TYPE(/obj/item/bodypart)
 	if(!zone)
 		zone = BODY_ZONE_CHEST
 	var/returned_part = bodyparts[zone]
-	if(!returned_part)
+	if(!returned_part && simplify)
 		returned_part = bodyparts[check_zone(zone)]
 	return returned_part
 
 /// Returns all bodyparts that exist on the mob.
 /mob/living/proc/get_all_bodyparts()
 	RETURN_TYPE(/list)
-	return
+	return list()
 
 // Try not to use this too much, it's more expensive than doing it directly when iterating
 /mob/living/carbon/get_all_bodyparts()
@@ -41,6 +41,29 @@
 			continue
 		all_parts += limb
 	return pick(all_parts)
+
+/// Returns a random available bodypart, weighted based on body_weight.
+/mob/living/proc/get_weighted_bodypart()
+	return
+
+/mob/living/carbon/get_weighted_bodypart()
+	var/list/weighted_parts = list()
+	var/obj/item/bodypart/part
+	for(var/body_zone in bodyparts)
+		part = bodyparts[body_zone]
+		weighted_parts[body_zone] = part.body_weight
+	return pick_weight(weighted_parts)
+
+/**
+ * Return the zone or randomly, another valid zone
+ *
+ * probability controls the chance it chooses the passed in zone, or another random zone
+ * defaults to 80
+ */
+/mob/living/proc/run_zone(zone, probability = 80)
+	if(prob(probability))
+		return get_bodypart(zone)
+	return get_weighted_bodypart()
 
 /// Returns the number of bodyparts.
 /mob/living/proc/get_bodypart_count()

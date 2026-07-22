@@ -241,12 +241,14 @@
 		if(SBAG)
 			back = /obj/item/storage/backpack/messenger/sport //sports bag
 		if(TAILBAG)
-			if(!HAS_TRAIT(H, TRAIT_TAILED))
+			var/obj/item/bodypart/tail/mob_tail = H.get_bodypart(BODY_ZONE_TAIL)
+			if(!mob_tail?.sturdy)
 				back = /obj/item/storage/backpack/satchel/kitbag //fallback bag
 				return FALSE
 			back = /obj/item/storage/backpack/satchel/tailbag //Tailbag
 		if(KITBAG)
-			if(HAS_TRAIT(H, TRAIT_TAILED))
+			var/obj/item/bodypart/tail/mob_tail = H.get_bodypart(BODY_ZONE_TAIL)
+			if(mob_tail?.sturdy)
 				back = /obj/item/storage/backpack/satchel/tailbag //fallback bag
 				return FALSE
 			back = /obj/item/storage/backpack/satchel/kitbag //kitbag

@@ -103,10 +103,19 @@
 	emote_type = EMOTE_AUDIBLE
 	vary = TRUE
 
+/datum/emote/living/carbon/human/tailthump/can_run_emote(mob/living/user, status_check, intentional)
+	var/obj/item/bodypart/tail/user_tail = user.get_bodypart(BODY_ZONE_TAIL)
+	if(!user_tail?.can_thump)
+		return FALSE
+	if(user_tail.bodypart_disabled)
+		return FALSE
+	return ..()
+
 /datum/emote/living/carbon/human/tailthump/get_sound(mob/living/user)
 	if(!ishuman(user))
 		return
-	if(!isnull(user.getorgan(/obj/item/organ/tail)) || (isvox(user)))
+	var/obj/item/bodypart/tail/user_tail = user.get_bodypart(BODY_ZONE_TAIL)
+	if(user_tail?.can_thump)
 		return 'sound/voice/lizard/tailthump.ogg' //https://freesound.org/people/TylerAM/sounds/389665/
 
 /datum/emote/living/carbon/human/stomp
@@ -163,31 +172,31 @@
 	key_third_person = "wags"
 	message = "wags their tail."
 
-/datum/emote/living/carbon/human/wag/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/carbon/human/wag/run_emote(mob/living/user, params, type_override, intentional)
 	. = ..()
 	if(!.)
 		return
-	var/mob/living/carbon/human/H = user
-	if(!istype(H) || !H.dna || !H.dna.species || !H.dna.species.can_wag_tail(H))
+	var/obj/item/bodypart/tail/the_tail = user.get_bodypart(BODY_ZONE_TAIL, FALSE)
+	if(!the_tail)
 		return
-	if(!H.dna.species.is_wagging_tail())
-		H.dna.species.start_wagging_tail(H)
-	else
-		H.dna.species.stop_wagging_tail(H)
+	the_tail.set_wag(!the_tail.wagging)
+	user.update_body()
 
-/datum/emote/living/carbon/human/wag/can_run_emote(mob/user, status_check = TRUE , intentional)
+/datum/emote/living/carbon/human/wag/can_run_emote(mob/living/user, status_check = TRUE , intentional)
 	if(!..())
 		return FALSE
-	var/mob/living/carbon/human/H = user
-	return H.dna && H.dna.species && H.dna.species.can_wag_tail(user)
+	var/obj/item/bodypart/tail/the_tail = user.get_bodypart(BODY_ZONE_TAIL, FALSE)
+	if(!the_tail)
+		return FALSE
+	return TRUE
 
-/datum/emote/living/carbon/human/wag/select_message_type(mob/user, intentional)
-	. = ..()
-	var/mob/living/carbon/human/H = user
-	if(!H.dna || !H.dna.species)
+/datum/emote/living/carbon/human/wag/select_message_type(mob/living/user, intentional)
+	var/obj/item/bodypart/tail/the_tail = user.get_bodypart(BODY_ZONE_TAIL, FALSE)
+	if(!the_tail)
 		return
-	if(H.dna.species.is_wagging_tail())
-		. = null
+	if(the_tail.wagging)
+		return
+	return ..()
 
 /datum/emote/living/carbon/human/wing
 	key = "wing"

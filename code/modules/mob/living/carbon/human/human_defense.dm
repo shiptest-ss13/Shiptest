@@ -834,21 +834,21 @@
 			var/msg
 			switch(W.severity)
 				if(WOUND_SEVERITY_TRIVIAL)
-					msg = "\t <span class='danger'>Your [body_part.name] is suffering [W.a_or_from] [W.get_topic_name(src)].</span>"
+					msg = "\t <span class='danger'>Your [body_part.plaintext_zone] is suffering [W.a_or_from] [W.get_topic_name(src)].</span>"
 				if(WOUND_SEVERITY_MODERATE)
-					msg = "\t <span class='warning'>Your [body_part.name] is suffering [W.a_or_from] [W.get_topic_name(src)]!</span>"
+					msg = "\t <span class='warning'>Your [body_part.plaintext_zone] is suffering [W.a_or_from] [W.get_topic_name(src)]!</span>"
 				if(WOUND_SEVERITY_SEVERE)
-					msg = "\t <span class='warning'><b>Your [body_part.name] is suffering [W.a_or_from] [W.get_topic_name(src)]!</b></span>"
+					msg = "\t <span class='warning'><b>Your [body_part.plaintext_zone] is suffering [W.a_or_from] [W.get_topic_name(src)]!</b></span>"
 				if(WOUND_SEVERITY_CRITICAL)
-					msg = "\t <span class='warning'><b>Your [body_part.name] is suffering [W.a_or_from] [W.get_topic_name(src)]!!</b></span>"
+					msg = "\t <span class='warning'><b>Your [body_part.plaintext_zone] is suffering [W.a_or_from] [W.get_topic_name(src)]!!</b></span>"
 			combined_msg += msg
 
 		if(body_part.current_gauze)
 			var/datum/bodypart_aid/current_gauze = body_part.current_gauze
-			combined_msg += "\t <span class='notice'>Your [body_part.name] is [current_gauze.desc_prefix] with <a href='?src=[REF(current_gauze)];remove=1'>[current_gauze.get_description()]</a>.</span>"
+			combined_msg += "\t <span class='notice'>Your [body_part.plaintext_zone] is [current_gauze.desc_prefix] with <a href='?src=[REF(current_gauze)];remove=1'>[current_gauze.get_description()]</a>.</span>"
 		if(body_part.current_splint)
 			var/datum/bodypart_aid/current_splint = body_part.current_splint
-			combined_msg += "\t <span class='notice'>Your [body_part.name] is [current_splint.desc_prefix] with <a href='?src=[REF(current_splint)];remove=1'>[current_splint.get_description()]</a>.</span>"
+			combined_msg += "\t <span class='notice'>Your [body_part.plaintext_zone] is [current_splint.desc_prefix] with <a href='?src=[REF(current_splint)];remove=1'>[current_splint.get_description()]</a>.</span>"
 
 		for(var/obj/item/I in body_part.embedded_objects)
 			if(I.isEmbedHarmless())
@@ -876,8 +876,8 @@
 			if(3 to INFINITY)
 				for(var/i in 1 to (num_bleeds - 1))
 					var/obj/item/bodypart/BP = bleeding_limbs[i]
-					bleed_text += " [BP.name],"
-				bleed_text += " and [bleeding_limbs[num_bleeds].name]"
+					bleed_text += " [BP.plaintext_zone],"
+				bleed_text += " and [bleeding_limbs[num_bleeds].plaintext_zone]"
 		bleed_text += "!</span>"
 		to_chat(src, bleed_text)
 
