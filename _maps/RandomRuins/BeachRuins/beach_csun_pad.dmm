@@ -124,12 +124,11 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/item/wallframe/apc{
-	pixel_x = 0;
-	pixel_y = 20
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/north{
+	start_charge = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/csunpad/engineering)
@@ -354,15 +353,14 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 5
 	},
-/obj/item/wallframe/apc{
-	pixel_x = 0;
-	pixel_y = 20
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/north{
+	start_charge = 0
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/csunpad)
@@ -1293,16 +1291,15 @@
 /obj/effect/turf_decal/siding/wood/mahogany{
 	dir = 9
 	},
-/obj/item/wallframe/apc{
-	pixel_x = 0;
-	pixel_y = 20
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/washing_machine{
 	pixel_x = 8;
 	pixel_y = 1
+	},
+/obj/machinery/power/apc/auto_name/directional/north{
+	start_charge = 0
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ruin/beach/csunpad/dorm)
@@ -2025,7 +2022,9 @@
 /area/ruin/beach/csunpad/director)
 "tA" = (
 /obj/effect/turf_decal/industrial/outline/red,
-/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/power/apc/auto_name/directional/north{
+	start_charge = 0
+	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -2807,12 +2806,11 @@
 /area/ruin/beach/csunpad)
 "BA" = (
 /obj/effect/turf_decal/siding/wood/maple,
-/obj/item/wallframe/apc{
-	pixel_x = 0;
-	pixel_y = 20
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/directional/north{
+	start_charge = 0
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ruin/beach/csunpad/canteen)
@@ -2871,12 +2869,11 @@
 /obj/machinery/computer/crew{
 	icon_state = "computer-left"
 	},
-/obj/item/wallframe/apc{
-	pixel_x = 0;
-	pixel_y = 20
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/north{
+	start_charge = 0
 	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/beach/csunpad/medical)
@@ -3775,12 +3772,11 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 1
 	},
-/obj/item/wallframe/apc{
-	pixel_x = 0;
-	pixel_y = 20
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/north{
+	start_charge = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/csunpad/security)
@@ -3826,13 +3822,12 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/wallframe/apc{
-	pixel_x = 0;
-	pixel_y = 21
-	},
 /obj/machinery/firealarm/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/north{
+	start_charge = 0
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ruin/beach/csunpad/director)
