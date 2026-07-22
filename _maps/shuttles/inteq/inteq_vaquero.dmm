@@ -10,60 +10,14 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/engineering_personal{
-	name = "artificer's locker";
-	populate = 0;
+/obj/structure/closet/faction/inteq/secure/merc/artificer/prefilled{
 	anchored = 1
 	},
-/obj/item/storage/backpack/industrial{
-	pixel_y = 5
-	},
-/obj/item/storage/backpack/satchel/eng,
-/obj/item/storage/backpack/duffelbag/engineering{
-	pixel_y = -5
-	},
-/obj/item/clothing/under/syndicate/inteq/artificer{
-	pixel_x = -5
-	},
-/obj/item/clothing/under/syndicate/inteq/artificer/skirt{
-	pixel_x = 5;
-	pixel_y = -1
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -8;
-	pixel_x = -5
-	},
-/obj/item/clothing/head/beret/sec/inteq{
-	pixel_y = 5;
-	pixel_x = -5
-	},
-/obj/item/clothing/head/soft/inteq{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/storage/belt/utility/full/engi{
-	pixel_y = -5
-	},
-/obj/item/storage/pouch/engi,
-/obj/item/clothing/gloves/insulated{
-	pixel_y = -8
-	},
-/obj/item/clothing/glasses/welding{
-	pixel_x = -4
-	},
-/obj/item/clothing/suit/hazardvest,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt{
-	pixel_x = 8;
-	pixel_y = -4
-	},
+/obj/item/storage/pouch/engi,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "aq" = (
@@ -901,9 +855,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "hp" = (
-/obj/structure/closet/wardrobe/orange{
-	name = "uniform wardrobe";
-	populate = 0;
+/obj/structure/closet/faction/inteq/uniforms{
 	anchored = 1
 	},
 /obj/effect/turf_decal/corner/opaque/yellow{
@@ -912,68 +864,6 @@
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
-	},
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/clothing/under/syndicate/inteq{
-	pixel_x = -8
-	},
-/obj/item/clothing/under/syndicate/inteq{
-	pixel_x = -8
-	},
-/obj/item/clothing/under/syndicate/inteq/skirt{
-	pixel_x = 8
-	},
-/obj/item/clothing/under/syndicate/inteq/skirt{
-	pixel_x = 8
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt{
-	pixel_x = 8;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt{
-	pixel_x = 8;
-	pixel_y = -4
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -8;
-	pixel_x = -8
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -8;
-	pixel_x = -8
-	},
-/obj/item/clothing/shoes/sneakers/black{
-	pixel_x = 8;
-	pixel_y = -13
-	},
-/obj/item/clothing/shoes/sneakers/black{
-	pixel_x = 8;
-	pixel_y = -13
-	},
-/obj/item/clothing/head/soft/inteq{
-	pixel_x = -8;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/soft/inteq{
-	pixel_x = -8;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/beret/sec/inteq{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/beret/sec/inteq{
-	pixel_x = 8;
-	pixel_y = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/cable{
@@ -1959,9 +1849,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
 "ro" = (
-/obj/structure/closet/wardrobe/orange{
-	name = "uniform wardrobe";
-	populate = 0;
+/obj/structure/closet/faction/inteq/uniforms{
 	anchored = 1
 	},
 /obj/effect/turf_decal/corner/opaque/yellow{
@@ -1970,68 +1858,6 @@
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
-	},
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/clothing/under/syndicate/inteq{
-	pixel_x = -8
-	},
-/obj/item/clothing/under/syndicate/inteq{
-	pixel_x = -8
-	},
-/obj/item/clothing/under/syndicate/inteq/skirt{
-	pixel_x = 8
-	},
-/obj/item/clothing/under/syndicate/inteq/skirt{
-	pixel_x = 8
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt{
-	pixel_x = 8;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt{
-	pixel_x = 8;
-	pixel_y = -4
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -8;
-	pixel_x = -8
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -8;
-	pixel_x = -8
-	},
-/obj/item/clothing/shoes/sneakers/black{
-	pixel_x = 8;
-	pixel_y = -13
-	},
-/obj/item/clothing/shoes/sneakers/black{
-	pixel_x = 8;
-	pixel_y = -13
-	},
-/obj/item/clothing/head/soft/inteq{
-	pixel_x = -8;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/soft/inteq{
-	pixel_x = -8;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/beret/sec/inteq{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/beret/sec/inteq{
-	pixel_x = 8;
-	pixel_y = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/cable{
@@ -2392,47 +2218,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/structure/closet/secure_closet/medical3{
-	populate = 0;
-	anchored = 1;
-	name = "corpsman's locker"
-	},
-/obj/item/storage/backpack/medic{
-	pixel_y = 5
-	},
-/obj/item/storage/backpack/satchel/med,
-/obj/item/storage/backpack/duffelbag/med{
-	pixel_y = -5
-	},
-/obj/item/clothing/under/syndicate/inteq/corpsman{
-	pixel_x = -5
-	},
-/obj/item/clothing/under/syndicate/inteq/corpsman/skirt{
-	pixel_x = 5
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -8;
-	pixel_x = -5
-	},
-/obj/item/clothing/gloves/nitrile/inteq{
-	pixel_x = 5;
-	pixel_y = -10
-	},
-/obj/item/clothing/mask/balaclava/inteq{
-	pixel_x = -5
-	},
-/obj/item/clothing/suit/armor/inteq/corpsman{
-	pixel_x = 5
-	},
-/obj/item/clothing/head/soft/inteq/corpsman{
-	pixel_y = 5
-	},
-/obj/item/clothing/glasses/hud/health{
-	pixel_x = 5
-	},
-/obj/item/storage/belt/medical/webbing,
-/obj/item/storage/pouch/medical{
-	pixel_y = -5
+/obj/structure/closet/faction/inteq/secure/merc/corpsman/prefilled{
+	anchored = 1
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
@@ -2445,13 +2232,8 @@
 	},
 /obj/machinery/camera/autoname/directional/north,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt{
-	pixel_x = 8;
-	pixel_y = -4
+/obj/item/storage/pouch/medical{
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
@@ -5009,7 +4791,6 @@
 /obj/item/tank/jetpack/carbondioxide,
 /obj/item/clothing/suit/space/inteq,
 /obj/item/clothing/head/helmet/space/inteq,
-/obj/item/clothing/mask/gas/inteq,
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
