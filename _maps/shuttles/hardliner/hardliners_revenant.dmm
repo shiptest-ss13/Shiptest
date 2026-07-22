@@ -19,6 +19,10 @@
 "ah" = (
 /obj/structure/chair/bench/red/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/contraband/c20r{
+	pixel_x = 0;
+	pixel_y = -29
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/canteen)
 "au" = (
@@ -963,6 +967,10 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 9
 	},
+/obj/structure/sign/poster/contraband/gec{
+	pixel_x = 0;
+	pixel_y = -32
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "lB" = (
@@ -1667,6 +1675,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/sign/departments/evac{
+	pixel_x = -4;
+	pixel_y = -22
+	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
 "th" = (
@@ -1836,6 +1848,10 @@
 "vG" = (
 /obj/machinery/oven,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
+/obj/structure/sign/poster/contraband/diet_guide{
+	pixel_x = 0;
+	pixel_y = -31
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "wc" = (
@@ -2325,6 +2341,10 @@
 	pixel_x = -8;
 	pixel_y = 4
 	},
+/obj/structure/sign/poster/contraband/radiofreefrontier{
+	pixel_x = 13;
+	pixel_y = 31
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "DB" = (
@@ -2410,6 +2430,10 @@
 	icon_state = "computer-right"
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/structure/sign/poster/radio/icf{
+	pixel_x = 0;
+	pixel_y = 31
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Es" = (
@@ -3318,6 +3342,10 @@
 /area/ship/crew/canteen)
 "Nd" = (
 /obj/structure/reagent_dispensers/watertank,
+/obj/structure/sign/poster/contraband/twelve_gauge{
+	pixel_x = 0;
+	pixel_y = -31
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Ng" = (
@@ -3878,6 +3906,10 @@
 "Tm" = (
 /obj/effect/turf_decal/siding/black,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/contraband/have_a_puff{
+	pixel_x = 13;
+	pixel_y = 29
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "Ts" = (
@@ -3993,6 +4025,19 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
+"Ve" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/sign/departments/evac{
+	pixel_x = -4;
+	pixel_y = 24
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/cargo)
 "Vh" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -4485,7 +4530,7 @@ Vn
 Vn
 bj
 lB
-sM
+Ve
 pu
 pu
 pu
