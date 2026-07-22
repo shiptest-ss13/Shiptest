@@ -70,6 +70,7 @@
 // command
 
 /obj/structure/closet/faction/inteq/secure/command
+	icon_state = "inteqbsecure"
 
 /obj/structure/closet/faction/inteq/secure/command/masteratarms
 	name = "master at arms' locker"
