@@ -543,18 +543,8 @@
 	},
 /obj/machinery/button/door{
 	id = "vaq_armory";
-	name = "Door Control";
-	normaldoorcontrol = 1;
-	pixel_x = -6;
-	pixel_y = -21;
-	req_access_txt = "3";
-	dir = 1
-	},
-/obj/machinery/button/door{
-	id = "vaq_armory";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
-	pixel_x = 6;
 	pixel_y = -21;
 	req_access_txt = "3";
 	specialfunctions = 4;
@@ -718,51 +708,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "gY" = (
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	can_be_unanchored = 1;
-	icon_state = "warden";
-	name = "enforcer class one's locker";
-	req_access_txt = "3"
+/obj/structure/closet/faction/inteq/secure/classone/enforcer/prefilled{
+	anchored = 1
 	},
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/clothing/under/syndicate/inteq{
-	pixel_x = -5
-	},
-/obj/item/clothing/under/syndicate/inteq/skirt{
-	pixel_x = 5
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt{
-	pixel_x = 8;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/armor/vest/security/warden/inteq{
-	name = "enforcer class one's armored coat";
-	desc = "A brown armored coat with a bulletproof vest over it, usually worn by the mid-ranking members of the IRMG."
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -8;
-	pixel_x = -5
-	},
-/obj/item/clothing/gloves/combat{
-	pixel_y = -10;
-	pixel_x = 5
-	},
-/obj/item/clothing/mask/balaclava/inteq,
-/obj/item/clothing/head/soft/inteq{
-	pixel_x = -8;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/beret/sec/inteq{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/storage/belt/security/webbing/inteq/alt,
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
@@ -775,7 +723,14 @@
 	},
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/pouch/squad{
+	pixel_y = -5
+	},
 /obj/item/megaphone/sec,
+/obj/item/clothing/suit/armor/vest/security/warden/inteq{
+	name = "enforcer class one's armored coat";
+	desc = "A brown armored coat with a bulletproof vest over it, usually worn by the mid-ranking members of the IRMG."
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/captain)
 "hh" = (
@@ -1181,10 +1136,8 @@
 /area/ship/cargo)
 "jE" = (
 /obj/structure/table/chem,
-/obj/structure/closet/secure_closet/wall/directional/north{
-	icon_door = "med_wall";
-	name = "medical locker";
-	req_access_txt = "5"
+/obj/structure/closet/faction/inteq/secure/wall/merc/corpsman/directional/north{
+	name = "medical locker"
 	},
 /obj/structure/sink/chem{
 	pixel_y = 4;
@@ -2482,12 +2435,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "wQ" = (
-/obj/structure/closet/secure_closet/armorycage{
+/obj/structure/closet/faction/inteq/secure/black{
 	anchored = 1;
-	can_be_unanchored = 1;
-	name = "equipment locker";
-	req_access = null;
-	req_access_txt = "1"
+	name = "equipment locker"
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -2637,12 +2587,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "xs" = (
-/obj/structure/closet/secure_closet/armorycage{
+/obj/structure/closet/faction/inteq/secure/black{
 	anchored = 1;
-	can_be_unanchored = 1;
-	name = "armor locker";
-	req_access = null;
-	req_access_txt = "1"
+	name = "armour locker"
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -2730,16 +2677,15 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = -8;
-	pixel_y = 8
-	},
+/obj/machinery/hydroponics/wooden,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/south,
+/obj/item/shovel/spade{
+	pixel_x = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "xy" = (
@@ -3342,7 +3288,8 @@
 /obj/structure/table/reinforced,
 /obj/item/gps{
 	pixel_y = 3;
-	pixel_x = -8
+	pixel_x = -8;
+	gpstag = "!IRMG-FRIGATE-L"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4164,43 +4111,8 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ld" = (
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	can_be_unanchored = 1;
-	icon_state = "cap";
-	name = "vanguard's locker";
-	req_access_txt = "20"
-	},
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/clothing/shoes/combat{
-	pixel_y = -8;
-	pixel_x = -5
-	},
-/obj/item/clothing/gloves/tackler/combat/insulated{
-	pixel_x = 5;
-	pixel_y = -10
-	},
-/obj/item/clothing/mask/balaclava/inteq{
-	pixel_x = -5
-	},
-/obj/item/clothing/suit/armor/hos/inteq{
-	pixel_x = 5
-	},
-/obj/item/clothing/head/beret/sec/hos/inteq{
-	pixel_y = 5;
-	pixel_x = -5
-	},
-/obj/item/clothing/head/inteq_peaked{
-	pixel_y = 5;
-	pixel_x = 5
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/storage/belt/military/assault{
-	pixel_y = -5
-	},
-/obj/item/megaphone/command,
-/obj/item/storage/pouch/squad{
-	pixel_y = -5
+/obj/structure/closet/faction/inteq/secure/command/vanguard/prefilled{
+	anchored = 1
 	},
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
@@ -4217,11 +4129,13 @@
 	pixel_x = 20;
 	pixel_y = 12
 	},
-/obj/item/clothing/under/syndicate/inteq/honorable,
 /obj/item/storage/guncase/pistol/podium_inteq{
-	pixel_x = 5;
-	pixel_y = -8
+	pixel_y = -7
 	},
+/obj/item/storage/pouch/squad{
+	pixel_y = -5
+	},
+/obj/item/megaphone/command,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/captain)
 "Lt" = (
@@ -4613,6 +4527,10 @@
 	icon_state = "2-4"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = -8;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "Pi" = (
@@ -5534,12 +5452,9 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "XA" = (
-/obj/structure/closet/secure_closet/armorycage{
+/obj/structure/closet/faction/inteq/secure/black{
 	anchored = 1;
-	can_be_unanchored = 1;
-	name = "ammunition locker";
-	req_access = null;
-	req_access_txt = "1"
+	name = "ammunition locker"
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
