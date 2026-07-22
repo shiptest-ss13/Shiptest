@@ -1948,7 +1948,7 @@
 	pixel_x = -8
 	},
 /obj/structure/sign/warning/nosmoking/circle{
-	pixel_y = 23
+	pixel_y = 32
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -5523,11 +5523,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
-/obj/structure/closet/secure_closet/wall/directional/north{
-	name = "tool locker";
-	icon_state = "cargo_wall";
-	icon_door = "cargo_wall";
-	req_access_txt = "10"
+/obj/structure/closet/faction/inteq/secure/wall/merc/artificer/directional/north{
+	name = "tool locker"
 	},
 /obj/item/storage/bag/construction{
 	pixel_y = 8

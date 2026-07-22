@@ -1219,7 +1219,7 @@
 	},
 /obj/machinery/light_switch{
 	pixel_x = 11;
-	pixel_y = 20
+	pixel_y = 19
 	},
 /obj/machinery/button/door{
 	pixel_y = 21;
@@ -1613,11 +1613,7 @@
 	},
 /obj/item/encryptionkey/headset_com{
 	pixel_y = -3;
-	pixel_x = 3
-	},
-/obj/item/radio/headset/inteq/alt{
-	pixel_x = 6;
-	pixel_y = -5
+	pixel_x = 7
 	},
 /obj/item/radio/weather_monitor{
 	pixel_x = -8;
@@ -1698,6 +1694,11 @@
 	name = "Bolt Control";
 	req_ship_access = 1;
 	req_one_access = list(19,3,48);
+	dir = 1
+	},
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = -19;
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
