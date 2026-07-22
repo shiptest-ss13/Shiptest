@@ -137,7 +137,7 @@
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
 	self_delay = 2 SECONDS
 	other_delay = 1.5 SECONDS
-	heal_brute = 10
+	heal_brute = 15
 	grind_results = list(/datum/reagent/medicine/indomide = 10)
 	merge_type = /obj/item/stack/medical/bruise_pack
 
