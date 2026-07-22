@@ -498,3 +498,175 @@ these lack assets, here for consistency and futureproofing
 //eyes/ears
 	new /obj/item/clothing/glasses/hud/security/sunglasses/inteq(src)
 	new /obj/item/radio/headset/inteq/alt/captain(src)
+
+// wall closets
+
+/obj/structure/closet/faction/inteq/wall
+	wall_mounted = TRUE
+	anchored = TRUE
+	density = TRUE
+	can_be_unanchored = FALSE
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
+	icon_state = "inteq_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/wall, 27)
+
+/obj/structure/closet/faction/inteq/wall/black
+	icon_state = "inteqb_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/wall/black, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall
+	wall_mounted = TRUE
+	anchored = TRUE
+	density = TRUE
+	can_be_unanchored = FALSE
+	icon = 'icons/obj/wallmounts/wallcloset.dmi'
+	icon_state = "inteqsecure_wall"
+	icon_door = "inteqsecure_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/black
+	icon_state = "inteqbsecure_wall"
+	icon_door = "inteqbsecure_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/black, 27)
+
+// jobs
+
+/obj/structure/closet/faction/inteq/secure/wall/merc
+
+/obj/structure/closet/faction/inteq/secure/wall/merc/enforcer
+	name = "enforcer's locker"
+	desc = "A sturdy, wall-mounted, keycard-locked storage unit. It's brown colouration and golden helmet emblem denote it's belonging to an IRMG Enforcer."
+	req_access = list(ACCESS_SECURITY)
+
+	icon_door = "inteqenf_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/merc/enforcer, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/merc/artificer
+	name = "artificer's locker"
+	desc = "A sturdy, wall-mounted, keycard-locked storage unit. It's brown colouration and golden wrench emblem denote it's belonging to an IRMG Artificer."
+	req_access = list(ACCESS_ENGINE)
+
+	icon_door = "inteqarti_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/merc/artificer, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/merc/corpsman
+	name = "corpsman's locker"
+	desc = "A sturdy, wall-mounted, keycard-locked storage unit. It's white colouration and green cross emblem denote it's belonging to an IRMG Artificer."
+	req_access = list(ACCESS_MEDICAL)
+
+	icon_state = "inteqcorps_wall"
+	icon_door = "inteqcorps_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/merc/corpsman, 27)
+
+// class 1
+
+/obj/structure/closet/faction/inteq/secure/wall/classone
+
+/obj/structure/closet/faction/inteq/secure/wall/classone/enforcer
+	name = "enforcer class one's locker"
+	desc = "A sturdy, wall-mounted, keycard-locked storage unit. It's brown colouration, horizontal gold stripe, and golden helmet emblem denote it's belonging to an IRMG Enforcer Class One."
+	req_access = list(ACCESS_ARMORY)
+
+	icon_door = "inteqenfc1_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/classone/enforcer, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/classone/artificer
+	name = "artificer class one's locker"
+	desc = "A sturdy, wall-mounted, keycard-locked storage unit. It's brown colouration, horizontal gold stripe, and golden wrench emblem denote it's belonging to an IRMG Artificer Class One."
+	req_access = list(ACCESS_ATMOSPHERICS)
+
+	icon_door = "inteqartic1_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/classone/artificer, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/classone/corpsman
+	name = "corpsman class one's locker"
+	desc = "A sturdy, wall-mounted, keycard-locked storage unit. It's white colouration, horizontal gold stripe, and golden cross emblem denote it's belonging to an IRMG Corpsman Class One."
+	req_access = list(ACCESS_VIROLOGY)
+
+	icon_state = "inteqcorps_wall"
+	icon_door = "inteqcorpsc1_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/classone/corpsman, 27)
+
+// command
+
+obj/structure/closet/faction/inteq/secure/wall/command
+	icon_state = "inteqbsecure_wall"
+
+/obj/structure/closet/faction/inteq/secure/wall/command/masteratarms
+	name = "master at arms' locker"
+	desc = "A sturdy, wall-mounted, keycard-locked storage unit. It's black colouration, horizontal gold stripe, and golden pistol emblem denote it's belonging to an IRMG Master At Arms'."
+	req_access = list(ACCESS_HOS)
+
+	icon_door = "inteqmaster_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/command/masteratarms, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/command/artificer
+	name = "honorable artificer's locker"
+	desc = "A sturdy, wall-mounted, keycard-locked storage unit. It's black colouration, horizontal gold stripe, and golden wrench emblem denote it's belonging to an IRMG Honorable Artificer."
+	req_access = list(ACCESS_CE)
+
+	icon_door = "inteqartihonor_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/command/artificer, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/command/corpsman
+	name = "honorable corpsman's locker"
+	desc = "A sturdy, wall-mounted, keycard-locked storage unit. It's black colouration, horizontal gold stripe, and golden cross emblem denote it's belonging to an IRMG Honorable Corpsman."
+	req_access = list(ACCESS_VIROLOGY)
+
+	icon_state = "inteqcorpshonor_wall"
+	icon_door = "inteqcorpshonor_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/command/corpsman, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/command/vanguard
+	name = "vanguard's locker"
+	desc = "A sturdy, wall-mounted, keycard-locked storage unit. It's black colouration, horizontal gold stripe, and golden shield emblem denote it's belonging to an IRMG Vanguard."
+	req_access = list(ACCESS_CAPTAIN)
+
+	icon_door = "inteqvanguard_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/command/vanguard, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/command/pilot
+	name = "pilot's locker"
+	desc = "A sturdy, wall-mounted, keycard-locked storage unit. It's black colouration, horizontal gold stripe, and golden shuttle emblem denote it's belonging to an IRMG Pilot."
+	req_access = list(ACCESS_HOP)
+
+	icon_door = "inteqpilot_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/command/pilot, 27)
+
+// ERT
+
+/obj/structure/closet/faction/inteq/secure/wall/ert
+	icon_state = "inteqbsecure_wall"
+
+/obj/structure/closet/faction/inteq/secure/wall/ert/vanguard
+	name = "honorable vanguard's locker"
+	desc = "A sturdy, wall-mounted, keycard-locked storage unit. It's black colouration, horizontal white stripe, and white shield emblem denote it's belonging to an IRMG Honorable Vanguard."
+	req_access = list(ACCESS_CENT_CAPTAIN)
+
+	icon_door = "inteqvanguardhonor_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/ert/vanguard, 27)
+
+/obj/structure/closet/faction/inteq/secure/wall/ert/enforcer
+	name = "enforcer honor guard's locker"
+	desc = "A sturdy, wall-mounted, keycard-locked storage unit. It's black colouration, horizontal white stripe, and white helmet emblem denote it's belonging to an IRMG Honor Guard."
+	req_access = list(ACCESS_CENT_SPECOPS)
+
+	icon_door = "inteqenfhonor_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/ert/enforcer, 27)
