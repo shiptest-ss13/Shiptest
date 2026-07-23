@@ -7,10 +7,10 @@
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
 	drop_sound = 'sound/items/handling/device_drop.ogg'
 	icon_state = "floor_sprayer"
-	desc = "An airlock painter, reprogramed to use a different style of paint in order to apply decals for floor tiles as well, in addition to repainting doors. Decals break when the floor tiles are removed. Use it inhand to change the design, and Ctrl-Click to switch to decal-painting mode."
+	desc = "An advanced autopainter capable of applying decorative finishes to standard floor tiles. These finishes are removed when the floor tile is pried up. Use it inhand to change the design."
 
 	var/floor_icon
-	var/floor_state = "steel"
+	var/floor_state = "tiled_gray"
 	var/floor_dir = SOUTH
 
 	item_state = "electronic"
@@ -18,9 +18,11 @@
 	var/list/allowed_directions = list("south")
 
 	var/static/list/allowed_states = list(
-		"steel", "dark", "white", "freezer", "tile_full", "cargo_one_full",
-		"kafel_full", "monotile", "grid", "ridged", "stairs",
-		"stairs-l", "stairs-m", "stairs-r", "stairs-old", "stairs-t", "stairs-b"
+		"tiled_gray", "tiled_dark", "tiled_light", "tile_full",
+		"kafel_full", "ridged", "grid", "grid_dark",
+		"monotile_gray", "monotile_dark", "monotile_light", "cargo_one_full",
+		"stairs", "stairs-l", "stairs-m", "stairs-r",
+		"stairs-old", "stairs-t", "stairs-b"
 	)
 
 	var/static/list/floor_four_dirs = list(
@@ -34,7 +36,7 @@
 
 	var/turf/open/floor/plasteel/F = A
 	if(!istype(F) || istype(F, /turf/open/floor/plasteel/tech))
-		to_chat(user, span_warning("\The [src] can only be used on plasteel flooring."))
+		to_chat(user, span_warning("\The [src] can only be used on standard metal floor tiles."))
 		return
 
 	F.icon_state = floor_state
@@ -135,7 +137,7 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "decal_sprayer"
 	item_state = "decalsprayer"
-	desc = "An airlock painter, reprogramed to use a different style of paint in order to apply decals for floor tiles. Decals break when the floor tiles are removed. Use it inhand to change the design."
+	desc = "An advanced autopainter for applying decals to floor tiles. These decals are removed when the floor tile is pried up. Use it inhand to change the design."
 	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=500)
 
 	var/decal_icon
