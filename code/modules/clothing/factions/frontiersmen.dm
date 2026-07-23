@@ -90,6 +90,7 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/frontier
 	name = "reinforced fur coat"

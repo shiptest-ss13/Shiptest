@@ -17,6 +17,7 @@
 	"map_short_name": "Kiwi-class",
 	"map_path": "_maps/shuttles/warra/warra_kiwi.dmm",
 	"limit": 1,
+"tranist_x_offset": -20,
 	"job_slots": {
 		"Supply Director": {
 			"outfit": "/datum/outfit/job/warra/captain/ns/empty",
@@ -32,21 +33,17 @@
 			"outfit": "/datum/outfit/job/warra/miner/empty",
 			"slots": 3
 		},
-		"Paramedic": {
-			"outfit": "/datum/outfit/job/warra/paramedic/empty",
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/warra/doctor/empty",
 			"slots": 1
 		},
 		"Engineer": {
 			"outfit": "/datum/outfit/job/warra/engineer/empty",
 			"slots": 1
 		},
-		"Cargo Technician": {
-			"outfit": "/datum/outfit/job/warra/cargo_tech/empty",
-			"slots": 1
-		},
 		"Assistant": {
 			"outfit": "/datum/outfit/job/warra/assistant/empty",
-			"slots": 1
+			"slots": 2
 		}
 	},
 	"enabled": true

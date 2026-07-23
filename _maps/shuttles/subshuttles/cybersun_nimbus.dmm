@@ -1,11 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "af" = (
 /obj/machinery/griddle,
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D"
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/maple,
+/obj/effect/turf_decal/siding/wood/maple{
 	dir = 1
 	},
 /turf/open/floor/suns/dark/plain,
@@ -87,8 +84,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "cw" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -161,10 +157,10 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_y = -1
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -393,8 +389,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "he" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/east,
@@ -416,8 +411,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "hM" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/corner/bamboo{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -514,8 +508,7 @@
 /area/ship/crew/dorm)
 "kp" = (
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/maple{
 	dir = 5
 	},
 /obj/machinery/light/directional/north,
@@ -555,9 +548,7 @@
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
 "lp" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#E6D2BA"
-	},
+/obj/effect/turf_decal/siding/wood/corner/bamboo,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
@@ -700,12 +691,10 @@
 /obj/structure/closet/secure_closet/freezer/fridge{
 	populate = 0
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/maple{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/maple{
 	dir = 8
 	},
 /obj/item/food/meat/slab/tiris{
@@ -764,9 +753,7 @@
 /area/ship/crew/canteen)
 "oC" = (
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#D2BC9D"
-	},
+/obj/effect/turf_decal/siding/wood/end/maple,
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
 "oP" = (
@@ -862,9 +849,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engine)
 "pR" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA"
-	},
+/obj/effect/turf_decal/siding/wood/bamboo,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -880,8 +865,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/ccommons)
 "ql" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 8
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -947,8 +931,7 @@
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm)
 "rS" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/corner/bamboo{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -970,8 +953,7 @@
 /area/ship/crew/canteen)
 "sU" = (
 /obj/structure/table/glass,
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#792f27";
+/obj/effect/turf_decal/siding/wood/end/mahogany{
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/south,
@@ -1002,8 +984,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "tp" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 4
 	},
 /turf/open/floor/suns/hatch/bamboo,
@@ -1011,8 +992,7 @@
 "tP" = (
 /obj/structure/table/glass,
 /obj/machinery/light/directional/west,
-/obj/effect/turf_decal/siding/wood{
-	color = "#792f27";
+/obj/effect/turf_decal/siding/wood/mahogany{
 	dir = 10
 	},
 /obj/machinery/button/door{
@@ -1100,9 +1080,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "uF" = (
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#D2BC9D"
-	},
+/obj/effect/turf_decal/siding/wood/end/maple,
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/suns/dark/plain,
@@ -1198,8 +1176,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#792f27";
+/obj/effect/turf_decal/siding/wood/end/mahogany{
 	dir = 1
 	},
 /obj/item/radio/intercom/directional/west,
@@ -1268,13 +1245,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#792f27";
+/obj/effect/turf_decal/siding/wood/mahogany{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#792f27"
-	},
+/obj/effect/turf_decal/siding/wood/mahogany,
 /obj/machinery/photocopier,
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm)
@@ -1304,8 +1278,7 @@
 /area/ship/bridge)
 "xM" = (
 /obj/machinery/light/small/directional/south,
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#792f27";
+/obj/effect/turf_decal/siding/wood/end/mahogany{
 	dir = 8
 	},
 /obj/machinery/modular_computer/console/preset/civilian{
@@ -1338,8 +1311,7 @@
 /turf/open/floor/wood/maple,
 /area/ship/crew/canteen)
 "zA" = (
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#792f27";
+/obj/effect/turf_decal/siding/wood/end/mahogany{
 	dir = 4
 	},
 /obj/machinery/light/directional/east,
@@ -1410,8 +1382,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "zV" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1488,8 +1459,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Be" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1649,12 +1619,10 @@
 /area/ship/external/dark)
 "Fq" = (
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/maple{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/maple{
 	dir = 8
 	},
 /obj/structure/sign/poster/radio/pris{
@@ -1699,8 +1667,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Gi" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 5
 	},
 /turf/open/floor/suns/hatch/bamboo,
@@ -1816,8 +1783,7 @@
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "HB" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 9
 	},
 /turf/open/floor/suns/hatch/bamboo,
@@ -2024,8 +1990,7 @@
 	pixel_y = -1;
 	pixel_x = -10
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/corner/bamboo{
 	dir = 4
 	},
 /obj/machinery/light/directional/south,
@@ -2083,8 +2048,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Na" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/bamboo{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2194,12 +2158,10 @@
 /obj/machinery/modular_computer/console/preset/civilian{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#792f27";
+/obj/effect/turf_decal/siding/wood/mahogany{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#792f27";
+/obj/effect/turf_decal/siding/wood/mahogany{
 	dir = 4
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
@@ -2230,9 +2192,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/canteen)
 "Qk" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA"
-	},
+/obj/effect/turf_decal/siding/wood/bamboo,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -2270,11 +2230,8 @@
 /area/ship/crew/ccommons)
 "Rh" = (
 /obj/machinery/oven,
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D"
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/maple,
+/obj/effect/turf_decal/siding/wood/maple{
 	dir = 1
 	},
 /turf/open/floor/suns/dark/plain,
@@ -2453,13 +2410,10 @@
 /area/ship/bridge)
 "Ud" = (
 /obj/structure/table/glass,
-/obj/effect/turf_decal/siding/wood{
-	color = "#792f27";
+/obj/effect/turf_decal/siding/wood/mahogany{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#792f27"
-	},
+/obj/effect/turf_decal/siding/wood/mahogany,
 /obj/item/paper/crumpled{
 	pixel_y = 4;
 	pixel_x = -4
@@ -2491,8 +2445,7 @@
 	pixel_y = -1;
 	pixel_x = 10
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#E6D2BA";
+/obj/effect/turf_decal/siding/wood/corner/bamboo{
 	dir = 1
 	},
 /obj/machinery/light/directional/south,
@@ -2552,8 +2505,7 @@
 /area/ship/bridge)
 "VD" = (
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/maple{
 	dir = 9
 	},
 /obj/machinery/light/directional/north,
@@ -2655,9 +2607,7 @@
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm)
 "XJ" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#E6D2BA"
-	},
+/obj/effect/turf_decal/siding/wood/corner/bamboo,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
@@ -2720,11 +2670,8 @@
 /area/ship/bridge)
 "ZD" = (
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D"
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/maple,
+/obj/effect/turf_decal/siding/wood/maple{
 	dir = 1
 	},
 /obj/item/cutting_board{

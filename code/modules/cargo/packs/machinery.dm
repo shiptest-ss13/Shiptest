@@ -236,6 +236,16 @@
 	crate_name = "point beacon crate"
 	crate_type = /obj/structure/closet/crate/engineering
 
+/datum/supply_pack/machinery/turret
+	name = "Automated Turret Board Crate"
+	desc = "A crate containing a circuitboard used for constructing an automated turret. Does not include a firearm."
+	cost = 1000 // Useless on its own, you will need a weapon to construct it
+	contains = list(
+		/obj/item/circuitboard/machine/turret
+	)
+	crate_name = "turret crate"
+	crate_type = /obj/structure/closet/crate/engineering
+
 /*
 		Power generation machines
 */

@@ -504,14 +504,14 @@
 	id = "nail_door_blast";
 	name = "Nail Blast Doors";
 	dir = 2;
-	pixel_y = 20;
+	pixel_y = 22;
 	pixel_x = 4
 	},
 /obj/machinery/button/shieldwallgen{
 	id = "nail_holo";
 	dir = 2;
 	pixel_x = -6;
-	pixel_y = 19;
+	pixel_y = 22;
 	name = "Holofield Switch"
 	},
 /obj/structure/cable{
@@ -563,7 +563,7 @@
 /obj/machinery/light/small/directional/north,
 /obj/machinery/button/door{
 	pixel_x = 16;
-	pixel_y = 21;
+	pixel_y = 22;
 	name = "Cabin Lockdown";
 	id = "nail_lockdown"
 	},
@@ -597,7 +597,7 @@
 	id = "nail_port_engine_blast";
 	name = "Engine Shutters";
 	dir = 2;
-	pixel_y = 20
+	pixel_y = 22
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)

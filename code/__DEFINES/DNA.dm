@@ -131,6 +131,12 @@
 #define MUTCOLORS_SECONDARY 25
 ///Human skintones
 #define SKINCOLORS 26
+///Mothperson colortones
+#define NECKFLUFFCOLORS 27
+#define WINGCOLORS 28
+#define ANTENNAECOLORS 29
+#define MARKINGCOLORS 30
+#define BODYFLUFFCOLORS 31
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"

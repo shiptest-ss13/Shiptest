@@ -24,6 +24,9 @@
 	/// The character that represents this overmap datum on the overmap in the admin ASCII mode.
 	var/char_rep
 
+	/// the layer override of the token
+	var/layer = 3
+
 	/// The x position of this datum on the overmap. Use [/datum/overmap/proc/move] to change this.
 	VAR_FINAL/x
 	/// The y position of this datum on the overmap. Use [/datum/overmap/proc/move] to change this.
@@ -67,6 +70,7 @@
 
 /datum/overmap/New(position, datum/overmap_star_system/system_spawned_in, ...)
 	SHOULD_NOT_OVERRIDE(TRUE) // Use [/datum/overmap/proc/Initialize] instead.
+	RegisterSignal(SSdcs, COMSIG_OVERMAP_FINISHED_CREATION, PROC_REF(on_overmaps_loaded))
 	current_overmap = system_spawned_in
 	if(!position)
 		position = current_overmap.get_unused_overmap_square(force = TRUE)
@@ -80,7 +84,8 @@
 		current_overmap = docked_object.current_overmap
 
 	if(!current_overmap)
-		current_overmap = SSovermap.safe_system
+		//select the first outpost sector.
+		current_overmap = SSovermap.tracked_star_systems[1]
 		stack_trace("[src.name] has no overmap on load!! This is very bad!! Set the object's overmap to the default overmap of the round!!")
 	current_overmap.overmap_objects |= src
 	SSovermap.overmap_objects |= src
@@ -129,6 +134,12 @@
  */
 /datum/overmap/proc/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	PROTECTED_PROC(TRUE)
+	return
+
+/**
+ * This proc is called when SSovermaps has completed all overmap system set-up, to allow for finer manipulation of things.
+ */
+/datum/overmap/proc/on_overmaps_loaded()
 	return
 
 /**
@@ -181,14 +192,13 @@
 	if(new_x == x && new_y == y)
 		return
 	if(!current_overmap)
-		current_overmap = SSovermap.safe_system
+		current_overmap = SSovermap.tracked_star_systems[1]
 		CRASH("Overmap datum [src] tried to move() with no valid overmap! What?? Moving to the default sector of SSovermap as a failsafe!")
-	new_x %= current_overmap.size
-	new_y %= current_overmap.size
-	if(new_x == 0) // I don't know how to do this better atm
-		new_x = current_overmap.size
-	if(new_y == 0)
-		new_y = current_overmap.size
+	//no overmap looping hack
+	if(new_x > current_overmap.size || new_x == 0) // I don't know how to do this better atm
+		return
+	if(new_y > current_overmap.size || new_y == 0)
+		return
 	try
 		current_overmap.overmap_container[x][y] -= src
 	catch(var/exception/error)
@@ -689,6 +699,8 @@
 		token.color = current_overmap.primary_color
 	current_overmap.post_edit_token_state(src)
 
+	token.layer = layer
+
 /datum/overmap/proc/activate_cloak()
 	alter_token_appearance()
 
@@ -703,10 +715,10 @@
  */
 /datum/overmap/proc/fsck()
 	//set the current overmap to the default one. If theres no default overmap shit is truly fucked
-	if(!SSovermap.safe_system)
+	if(!SSovermap.tracked_star_systems[1])
 		message_admins(span_userdanger("There is no default overmap set. Consider restarting the round."))
 		CRASH("There is no default overmap set. Consider restarting the round.")
-	current_overmap = SSovermap.safe_system
+	current_overmap = SSovermap.tracked_star_systems[1]
 
 	//reset all docking timers
 	dock_time = null

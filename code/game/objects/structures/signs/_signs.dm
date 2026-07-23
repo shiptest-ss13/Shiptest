@@ -216,7 +216,7 @@
 	name = "\improper Makosso-Warra logo sign"
 	sign_change_name = "Corporate Logo - Makosso-Warra"
 	desc = "A sign with the Makosso-Warra logo on it."
-	icon = 'icons/obj/warra_logos.dmi'
+	icon = 'icons/obj/structures/signs/warra_logos.dmi'
 	icon_state = "warra"
 	is_editable = TRUE
 

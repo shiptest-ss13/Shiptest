@@ -46,9 +46,23 @@
 #define COMSIG_AUTOFIRE_SHOT "autofire_shot"
 	#define COMPONENT_AUTOFIRE_SHOT_SUCCESS (1<<0)
 
+//Aimed fire component
+/// Compatible firemode is in the gun. Wait until it's held in the user hands.
+#define AIMEDFIRE_STAT_IDLE (1<<0)
+/// Gun is active and in the user hands. Wait until user does a valid click.
+#define AIMEDFIRE_STAT_ALERT (1<<1)
+/// Gun is shooting.
+#define AIMEDFIRE_STAT_AIMING (1<<2)
+
+#define COMSIG_AIMEDFIRE_ONMOUSEDOWN "aimedfire_onmousedown"
+	#define COMPONENT_AIMEDFIRE_ONMOUSEDOWN_BYPASS (1<<0)
+#define COMSIG_AIMEDFIRE_SHOT "aimedfire_shot"
+	#define COMPONENT_AIMEDFIRE_SHOT_SUCCESS (1<<0)
+
 #define SUPPRESSED_NONE 0
 #define SUPPRESSED_QUIET 1 ///standard suppressed
 #define SUPPRESSED_VERY 2 /// no message
+#define SUPPRESSED_EXTREME 3 /// doesnt trigger aggro
 
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
 
@@ -225,8 +239,10 @@
 #define FIREMODE_SEMIAUTO "single"
 #define FIREMODE_BURST "burst"
 #define FIREMODE_FULLAUTO "auto"
+#define FIREMODE_AIMED "aim"
 #define FIREMODE_OTHER "other"
 #define FIREMODE_OTHER_TWO "other2"
+
 
 #define GUN_LEFTHAND_ICON 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 #define GUN_RIGHTHAND_ICON 'icons/mob/inhands/weapons/guns_righthand.dmi'

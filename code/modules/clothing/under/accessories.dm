@@ -303,9 +303,9 @@
 ////////////
 
 /obj/item/clothing/accessory/armband
-	name = "red armband"
-	desc = "A fancy red armband!"
-	icon_state = "redband"
+	name = "yellow armband"
+	desc = "A fancy yellow armband!"
+	icon_state = "yellowband"
 	attachment_slot = null
 
 /obj/item/clothing/accessory/armband/deputy
@@ -481,6 +481,24 @@
 	new /obj/item/gun/ballistic/automatic/pistol/rattlesnake(src)
 	new /obj/item/ammo_box/magazine/m9mm_rattlesnake(src)
 	new /obj/item/ammo_box/magazine/m9mm_rattlesnake(src)
+
+/obj/item/clothing/accessory/holster/ringneck/Initialize()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/pistol/ringneck(src)
+	new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
+	new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
+
+/obj/item/clothing/accessory/holster/asp/Initialize()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/pistol/asp(src)
+	new /obj/item/ammo_box/magazine/m57_39_asp(src)
+	new /obj/item/ammo_box/magazine/m57_39_asp(src)
+
+/obj/item/clothing/accessory/holster/pgf/Initialize()
+	. = ..()
+	new /obj/item/gun/energy/kalix/pistol(src)
+	new /obj/item/stock_parts/cell/gun/kalix(src)
+	new /obj/item/stock_parts/cell/gun/kalix(src)
 
 
 //////////

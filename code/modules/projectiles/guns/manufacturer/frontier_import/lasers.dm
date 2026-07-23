@@ -42,3 +42,6 @@
 	)
 
 	default_attachments = list(/obj/item/attachment/foldable_stock/wasp)
+
+/obj/item/gun/energy/laser/wasp/empty_cell
+	spawn_no_ammo = TRUE

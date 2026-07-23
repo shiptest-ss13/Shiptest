@@ -1007,6 +1007,8 @@
 
 		draw_color = mutation_color
 		if(should_draw_greyscale) //Should the limb be colored?
+			if(limb_id == SPECIES_MOTH)
+				species_color = H.dna.features["moth_bodyfluff_color"]
 			draw_color ||= (species_color) || (skin_tone && skintone2hex(skin_tone))
 
 		dmg_overlay_type = S.damage_overlay_type

@@ -33,10 +33,19 @@
 /obj/machinery/computer/electrolyzer_console
 	name = "electrolyzer console"
 	desc = "Deposits hydrogen merits, with 20% going to outpost upkeep."
-	icon = 'icons/obj/machines/mining_machines.dmi'
-	icon_state = "console"
+
+	icon = 'icons/obj/machines/wallconsole.dmi'
+	icon_state = "wallconsole"
+	icon_screen = "wallconsole_electrolyzer"
+	icon_keyboard = null
+	layer = SIGN_LAYER
+	unique_icon = TRUE
+
+	density = FALSE
 
 	var/obj/machinery/mineral/electrolyzer/linked_electrolyzer
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/electrolyzer_console, 17)
 
 /obj/machinery/computer/electrolyzer_console/proc/electrolyze_item(obj/item/I)
 	var/obj/item/stack/ore/ice/S = I
@@ -147,7 +156,7 @@
 /obj/machinery/atmospherics/components/unary/hydrogen_pump
 	name = "hydrogen pump"
 	desc = "Lets you use merits to buy hydrogen."
-	icon = 'icons/obj/atmos.dmi'
+	icon = 'icons/obj/atmospherics/port_atmos.dmi'
 	icon_state = "hydrogen_pump"
 
 	use_power = IDLE_POWER_USE

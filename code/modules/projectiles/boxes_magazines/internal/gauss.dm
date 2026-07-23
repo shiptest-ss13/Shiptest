@@ -4,3 +4,10 @@
 	caliber = "pellet"
 	max_ammo = 22
 	instant_load = TRUE
+
+/obj/item/ammo_box/magazine/internal/rail
+	name = "rail cannon internal mag"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss/rod
+	caliber = "rod"
+	max_ammo = 2
+	instant_load = TRUE

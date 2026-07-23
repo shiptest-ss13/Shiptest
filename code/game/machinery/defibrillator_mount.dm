@@ -1,6 +1,8 @@
 //Holds defibs and recharges them from the powernet
 //You can activate the mount with an empty hand to grab the paddles
 //Not being adjacent will cause the paddles to snap back
+
+//TODO: directionals / wallmount dir system
 /obj/machinery/defibrillator_mount
 	name = "defibrillator mount"
 	desc = "Holds defibrillators. You can grab the paddles if one is mounted."
@@ -25,6 +27,7 @@
 
 /obj/machinery/defibrillator_mount/Destroy()
 	if(defib)
+		UnregisterSignal(defib, COMSIG_ATOM_UPDATE_APPEARANCE)
 		QDEL_NULL(defib)
 	. = ..()
 
@@ -45,15 +48,20 @@
 
 	. += "defib"
 
-	if(defib.powered)
-		var/obj/item/stock_parts/cell/C = get_cell()
-		. += (defib.safety ? "online" : "emagged")
-		var/ratio = C.charge / C.maxcharge
-		ratio = CEILING(ratio * 4, 1) * 25
-		. += "charge[ratio]"
+	if(!defib.on)
+		. += "paddles"
 
-	if(clamps_locked)
-		. += "clamps"
+	if(defib.powered)
+		var/obj/item/stock_parts/cell/defibs_cell = get_cell()
+		. += (defib.safety ? "powered" : "emagged")
+		if(!QDELETED(defibs_cell))
+			var/ratio = defibs_cell.charge / defibs_cell.maxcharge
+			ratio = CEILING(ratio * 4, 1) * 25
+			. += "charge[ratio]"
+
+	if(!get_cell())
+		. += "nocell"
+
 
 /obj/machinery/defibrillator_mount/get_cell()
 	if(defib)
@@ -67,7 +75,9 @@
 	if(defib.paddles.loc != defib)
 		to_chat(user, span_warning("[defib.paddles.loc == user ? "You are already" : "Someone else is"] holding [defib]'s paddles!"))
 		return
+	defib.on = TRUE
 	user.put_in_hands(defib.paddles)
+	update_appearance()
 
 /obj/machinery/defibrillator_mount/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/defibrillator))
@@ -83,11 +93,13 @@
 			return
 		user.visible_message(span_notice("[user] hooks up [I] to [src]!"), \
 		span_notice("You press [I] into the mount, and it clicks into place."))
-		playsound(src, 'sound/machines/click.ogg', 50, TRUE)
+		playsound(src, 'sound/items/taperecorder_close.ogg', 50, TRUE)
 		// Make sure the defib is set before processing begins.
 		defib = I
 		begin_processing()
+		RegisterSignal(defib, COMSIG_ATOM_UPDATE_APPEARANCE, PROC_REF(defib_update_appearance))
 		update_appearance()
+
 		return
 	else if(defib && I == defib.paddles)
 		defib.paddles.snap_back()
@@ -158,6 +170,7 @@
 	playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 	// Make sure processing ends before the defib is nulled
 	end_processing()
+	UnregisterSignal(defib, COMSIG_ATOM_UPDATE_APPEARANCE)
 	defib = null
 	update_appearance()
 
@@ -190,6 +203,9 @@
 		use_power(50 * seconds_per_tick)
 		C.give(40 * seconds_per_tick)
 		update_appearance()
+
+/obj/machinery/defibrillator_mount/proc/defib_update_appearance()
+	update_appearance()
 
 //wallframe, for attaching the mounts easily
 /obj/item/wallframe/defib_mount

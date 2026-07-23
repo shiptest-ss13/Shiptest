@@ -307,7 +307,7 @@
 	id = "eng_gloves"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron=2000, /datum/material/silver=1500, /datum/material/gold = 1000)
-	build_path = /obj/item/clothing/gloves/color/latex/engineering
+	build_path = /obj/item/clothing/gloves/nitrile/engineering
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_ENGINEERING
 

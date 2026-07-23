@@ -15,6 +15,8 @@
 	melee_damage_upper = 15
 	minbodytemp = 0
 	maxbodytemp = 1500
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	healable = 0 //they're skeletons how would bruise packs help them??
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"

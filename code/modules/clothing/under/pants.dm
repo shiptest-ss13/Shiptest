@@ -88,11 +88,11 @@
 	icon_state = "blackpants"
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
-/obj/item/clothing/under/pants/tan
-	name = "tan pants"
-	desc = "Some tan pants. You look like a white collar worker with these on."
-	icon_state = "khaki"
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
+/obj/item/clothing/under/pants/brown
+	name = "brown jeans"
+	desc = "Some brown jeans. You look like a white collar worker with these on."
+	icon_state = "brownjeans"
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/pants/track
 	name = "track pants"
@@ -163,3 +163,38 @@
 	desc = "A comfy pair of pajamas. Probably not the best for work attire."
 	icon_state = "pajamagreen"
 	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/pants/sweat
+	name = "sweatpants"
+	desc = "A pair of sweatpants, for the athletic."
+	icon_state = "sweatpants"
+	unique_reskin = list("black sweatpants" = "sweatpants",
+						"teal sweatpants" = "sweatpantsteal",
+						"pink sweatpants" = "sweatpantspink",
+						"blue sweatpants" = "sweatpantsblue",
+						"red sweatpants" = "sweatpantsred",
+						"purple sweatpants" = "sweatpantspurple",
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/pants/sweat/teal
+	name = "teal sweatpants"
+	current_skin = "teal sweatpants"
+
+/obj/item/clothing/under/pants/sweat/pink
+	name = "pink sweatpants"
+	current_skin = "pink sweatpants"
+
+/obj/item/clothing/under/pants/sweat/blue
+	name = "blue sweatpants"
+	current_skin = "blue sweatpants"
+
+/obj/item/clothing/under/pants/sweat/red
+	name = "red sweatpants"
+	current_skin = "red sweatpants"
+
+/obj/item/clothing/under/pants/sweat/purple
+	name = "purple sweatpants"
+	current_skin = "purple sweatpants"

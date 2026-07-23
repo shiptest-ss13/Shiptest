@@ -289,6 +289,9 @@
 /obj/structure/chair{
 	dir = 4
 	},
+/obj/structure/sign/departments/cargo/warra{
+	pixel_y = 29
+	},
 /turf/open/floor/plasteel/tech/grid/warra_outpost/lit,
 /area/hangar)
 "hr" = (
@@ -472,6 +475,15 @@
 	},
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/patterned,
+/area/hangar)
+"of" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
+/obj/machinery/holosign/random{
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/tech/warra_outpost/lit,
 /area/hangar)
 "oC" = (
 /obj/effect/turf_decal/borderfloor{
@@ -941,7 +953,7 @@
 	},
 /area/hangar)
 "IV" = (
-/obj/structure/sign/departments/cargo,
+/obj/structure/sign/departments/cargo/warra,
 /turf/closed/indestructible/titanium/nodiagnonal,
 /area/hangar)
 "JI" = (
@@ -4391,7 +4403,7 @@ aT
 aT
 aT
 aa
-IV
+aa
 hm
 Op
 hN
@@ -4515,7 +4527,7 @@ aT
 aT
 aT
 aa
-eN
+of
 Ne
 UL
 oL

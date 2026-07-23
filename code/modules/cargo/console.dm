@@ -8,7 +8,7 @@
 	name = "outpost communications console"
 	desc = "This console allows the user to communicate with a nearby outpost to \
 			purchase supplies and manage missions. Purchases will be delivered to your hangar's delivery zone."
-	icon_screen = "supply_express"
+	icon_screen = "outpost_com"
 	circuit = /obj/item/circuitboard/computer/cargo
 	light_color = COLOR_BRIGHT_ORANGE
 
@@ -27,7 +27,8 @@
 
 	var/blockade_warning = "Bluespace instability detected. Delivery impossible."
 	var/message
-	var/list/supply_pack_data
+	var/list/categories_data
+	var/list/all_packs_data
 	/// The account to charge purchases to, defaults to the cargo budget
 	var/datum/bank_account/charge_account
 
@@ -60,12 +61,16 @@
 	. = ..()
 	current_ship = port.current_ship
 	reconnect(port)
+	RegisterSignals(current_ship, list(COMSIG_OVERMAP_DOCK, COMSIG_OVERMAP_UNDOCK), PROC_REF(reconnect))
 
 /obj/machinery/computer/cargo/proc/reconnect(obj/docking_port/mobile/port)
+	SIGNAL_HANDLER
+
 	if(current_ship)
 		current_faction = current_ship.source_template.faction
 		charge_account = current_ship.ship_account
 		outpost_docked = current_ship.docked_to
+		update_static_data_for_all_viewers()
 
 /obj/machinery/computer/cargo/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -76,12 +81,12 @@
 			reconnect()
 
 /obj/machinery/computer/cargo/ui_static_data(mob/user)
-	. = ..()
-	outpost_docked = current_ship.docked_to
-	if(istype(outpost_docked))
-		generate_pack_data()
-	else
-		supply_pack_data = list()
+	generate_pack_data()
+
+	var/list/static_data = list()
+	static_data["categories"] = categories_data
+	static_data["all_packs"] = all_packs_data
+	return static_data
 
 /obj/machinery/computer/cargo/ui_data(mob/user)
 	var/list/data = list()
@@ -99,7 +104,6 @@
 		message = blockade_warning
 		data["blockade"] = TRUE
 	data["message"] = message
-	data["supplies"] = supply_pack_data
 
 	data["shipMissions"] = list()
 	data["outpostMissions"] = list()
@@ -136,11 +140,10 @@
 		if("purchase")
 			var/list/purchasing = params["cart"]
 			var/total_cost = text2num(params["total"])
-			var/datum/overmap/outpost/current_outpost = current_ship.docked_to
-			if(!istype(current_ship.docked_to) || purchasing.len == 0)
+			if(!istype(outpost_docked) || purchasing.len == 0)
 				return
 
-			if(istype(outpost_docked) && outpost_docked.market.supply_blocked)
+			if(outpost_docked.market.supply_blocked)
 				say("Outpost cargo unavailable!")
 				return
 
@@ -152,17 +155,20 @@
 			say("Order incoming!")
 
 			var/list/unprocessed_packs = list()
-			for(var/list/current_item as anything in purchasing)
-				unprocessed_packs += locate(current_item["ref"]) in current_outpost.market.supply_packs
+			for(var/list/pack_ref as anything in purchasing)
+				var/pack = locate(pack_ref) in outpost_docked.market.supply_packs
+				var/amount = purchasing[pack_ref]
+				for(var/i = 0; i < amount; i++)
+					unprocessed_packs += pack
 
-			current_outpost.market.make_order(usr, unprocessed_packs, return_crate_spawner())
+			outpost_docked.market.make_order(usr, unprocessed_packs, return_crate_spawner())
 
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
 			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
 			var/datum/overmap/ship/controlled/ship = D.current_ship
 			var/datum/overmap/outpost/outpost = ship.docked_to
-			if(!istype(outpost) || mission.source_outpost != outpost) // important to check these to prevent href fuckery
+			if(!istype(outpost)) // important to check these to prevent href fuckery
 				return
 			if(!mission.accepted)
 				if(LAZYLEN(ship.missions) >= ship.max_missions)
@@ -188,36 +194,43 @@
 	..()
 
 /obj/machinery/computer/cargo/proc/generate_pack_data()
-	supply_pack_data = list()
+	categories_data = list()
+	all_packs_data = list()
 
 	if(!current_ship.docked_to)
-		return supply_pack_data
+		return
 
 	if(!istype(outpost_docked))
-		return supply_pack_data
+		return
 
 	for(var/datum/supply_pack/current_pack as anything in outpost_docked.market.supply_packs)
-		if(!supply_pack_data[current_pack.category])
-			supply_pack_data[current_pack.category] = list(
-				"name" = current_pack.category,
-				"packs" = list()
-			)
 		if((!current_pack.available))
 			continue
 		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_faction) : FALSE
 		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null
 		if(current_pack.faction_locked && !same_faction)
 			continue
-		supply_pack_data[current_pack.category]["packs"] += list(list(
+
+		if(!categories_data[current_pack.category])
+			categories_data[current_pack.category] = list(
+				"name" = current_pack.category,
+				"packs" = list()
+			)
+		categories_data[current_pack.category]["packs"] += list(REF(current_pack))
+		all_packs_data[REF(current_pack)] = list(
 			"name" = current_pack.name,
 			"cost" = current_pack.cost,
 			"discountedcost" = discountedcost ? discountedcost : null,
 			"discountpercent" = current_pack.faction_discount,
 			"faction_locked" = current_pack.faction_locked, //this will only show if you are same faction, so no issue
 			"ref" = REF(current_pack),
-			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[current_pack.faction_discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : ""), // If there is a description, use it. Otherwise use the pack's name.
+
+			// If there is a description, use it. Otherwise use the pack's name.
+			"desc" = (current_pack.desc || current_pack.name) \
+				+ (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : "") \
+				+ (discountedcost ? "\n[-current_pack.faction_discount]% [current_pack.faction_discount > 0 ? "off" : "upcharge"] due to your faction affiliation.\nWas [current_pack.cost]" : ""),
 			"no_bundle" = current_pack.no_bundle
-		))
+		)
 
 
 /obj/machinery/computer/cargo/proc/return_crate_spawner()

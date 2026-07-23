@@ -196,7 +196,7 @@
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/shoes/workboots,
 /obj/item/storage/belt/utility/full/engi,
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = -7;
 	pixel_y = 0
 	},
@@ -1336,7 +1336,7 @@
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/shoes/workboots,
 /obj/item/storage/belt/utility/full/engi,
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = -8;
 	pixel_y = -5
 	},
@@ -1511,7 +1511,7 @@
 /obj/item/storage/belt/utility/full,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/item/clothing/glasses/welding,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/clothing/under/shorts/explorer,
 /obj/item/radio/headset/alt,
 /turf/open/floor/plasteel/dark,
@@ -1530,11 +1530,12 @@
 	dir = 10;
 	color = "#543C30"
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 17;
-	pixel_y = 2
-	},
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/computer/security/telescreen/entertainment{
+	dir = 1;
+	pixel_x = 16;
+	pixel_y = 0
+	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken2"
 	},

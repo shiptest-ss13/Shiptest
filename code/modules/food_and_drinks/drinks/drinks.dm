@@ -168,6 +168,7 @@
 /obj/item/reagent_containers/food/drinks/trophy
 	name = "pewter cup"
 	desc = "Everyone gets a trophy."
+	icon = 'icons/obj/drinks/trophycup.dmi'
 	icon_state = "pewter_cup"
 	w_class = WEIGHT_CLASS_TINY
 	force = 1
@@ -220,22 +221,16 @@
 //	rather then having to add it to something else first. They should only contain liquids. They have a default container size of 50.
 //	Formatting is the same as food.
 
-/obj/item/reagent_containers/food/drinks/coffee
-	name = "Solar's Best black coffee"
-	desc = "A cup of piping hot black coffee. Made from beans grown across the solar cantons for the caffeine that every spacer needs."
-	icon_state = "coffee"
-	icon = 'icons/obj/item/coffee.dmi'
-	list_reagents = list(/datum/reagent/consumable/coffee = 30)
-	spillable = TRUE
-	resistance_flags = FREEZE_PROOF
-	isGlass = FALSE
-	foodtype = BREAKFAST
-
 /obj/item/reagent_containers/food/drinks/ice
 	name = "ice cup"
 	desc = "Careful, cold ice, do not chew."
 	custom_price = 5
-	icon_state = "coffee"
+	icon = 'icons/obj/item/coffee.dmi'
+	icon_state = "coffee_cup"
+	possible_transfer_amounts = list(10)
+	volume = 30
+	spillable = TRUE
+	fill_icon_thresholds = list(30, 90)
 	list_reagents = list(/datum/reagent/consumable/ice = 30)
 	spillable = TRUE
 	isGlass = FALSE
@@ -245,49 +240,72 @@
 	desc = "Either Makosso-Warra's water supply is contaminated, or this machine actually vends lemon, chocolate, and cherry snow cones."
 	list_reagents  = list(/datum/reagent/consumable/ice = 25, /datum/reagent/liquidgibs = 5)
 
-/obj/item/reagent_containers/food/drinks/mug/ // parent type is literally just so empty mug sprites are a thing
-	name = "mug"
-	desc = "A drink served in a classy mug."
-	icon_state = "tea"
-	item_state = "coffee"
-	spillable = TRUE
-
-/obj/item/reagent_containers/food/drinks/mug/on_reagent_change(changetype)
-	if(reagents.total_volume)
-		icon_state = "tea"
-	else
-		icon_state = "tea_empty"
-
+// /obj/item/reagent_containers/food/drinks/mug/tea  -> /obj/item/reagent_containers/food/drinks/coffee/tea
+// /obj/item/reagent_containers/food/drinks/mug/coco  -> /obj/item/reagent_containers/food/drinks/coffee/coco
 /obj/item/reagent_containers/food/drinks/mug/tea
 	name = "Guildmaiden's tea"
 	desc = "Dark tea, made from pressed, fermented tea leaves. Originally from Sol, it became wildly popular among the Rachnid Guilds, and has become a staple."
 	list_reagents = list(/datum/reagent/consumable/tea = 30)
+	icon = 'icons/obj/item/coffee.dmi'
+	icon_state = "coffee_cup"
+	possible_transfer_amounts = list(10)
+	volume = 30
+	spillable = TRUE
+	fill_icon_thresholds = list(30, 90)
+	spillable = TRUE
+	isGlass = FALSE
 
 /obj/item/reagent_containers/food/drinks/mug/coco
 	name = "Solar's Best Hot Cocoa"
 	desc = "A cup of hot water mixed with chocolate and malted milk powder. A classic hot drink from the Solarian Confederation."
 	list_reagents = list(/datum/reagent/consumable/hot_coco = 15, /datum/reagent/consumable/sugar = 5)
 	foodtype = SUGAR
-	resistance_flags = FREEZE_PROOF
 	custom_price = 5
+
+	icon = 'icons/obj/item/coffee.dmi'
+	icon_state = "coffee_cup"
+	possible_transfer_amounts = list(10)
+	volume = 30
+	spillable = TRUE
+	fill_icon_thresholds = list(30, 90)
+	spillable = TRUE
 
 /obj/item/reagent_containers/food/drinks/cafelatte
 	name = "cafe latte"
 	desc = "A nice, strong and refreshing beverage while you're reading."
-	icon_state = "cafe_latte"
+	icon = 'icons/obj/item/coffee.dmi'
+	icon_state = "coffee_cup"
+
 	list_reagents = list(/datum/reagent/consumable/cafe_latte = 30)
 	custom_price = 5
+
+	possible_transfer_amounts = list(10)
+	volume = 30
+	fill_icon_thresholds = list(30, 90)
+	spillable = TRUE
+	resistance_flags = FREEZE_PROOF
+	isGlass = FALSE
+	foodtype = BREAKFAST
 
 /obj/item/reagent_containers/food/drinks/soylatte
 	name = "soy latte"
 	desc = "A nice and refreshing beverage while you're reading."
-	icon_state = "soy_latte"
+	icon = 'icons/obj/item/coffee.dmi'
+	icon_state = "coffee_cup"
 	list_reagents = list(/datum/reagent/consumable/soy_latte = 30)
 	custom_price = 5
+	possible_transfer_amounts = list(10)
+	volume = 30
+	fill_icon_thresholds = list(30, 90)
+	spillable = TRUE
+	resistance_flags = FREEZE_PROOF
+	isGlass = FALSE
+	foodtype = BREAKFAST
 
 /obj/item/reagent_containers/food/drinks/dry_ramen
 	name = "cup ramen"
 	desc = "A cup full of dried noodles, premixed with a flavor powder. Adding 5 units of water will cause the cup to self-heat, cooking it rapidly. Commonly eaten under dozens of brands, from students to eating on a budget. Always umami!"
+	icon = 'icons/obj/drinks/cup.dmi'
 	icon_state = "ramen"
 	list_reagents = list(/datum/reagent/consumable/dry_ramen = 15, /datum/reagent/consumable/sodiumchloride = 3)
 	foodtype = GRAIN
@@ -297,7 +315,7 @@
 /obj/item/reagent_containers/food/drinks/waterbottle
 	name = "Ryuunosuke Reserve" //we still have to find a way to make multiple variants as per the plan
 	desc = "Water bottled from a plant somewhere on Ryuunosuke. It has a mild, mineral-y flavor."
-	icon = 'icons/obj/drinks/drinks.dmi'
+	icon = 'icons/obj/drinks/waterbottle.dmi'
 	icon_state = "smallbottle"
 	item_state = "bottle"
 	list_reagents = list(/datum/reagent/water = 50)
@@ -369,48 +387,75 @@
 	desc +=  span_notice("The writing reads '[random_reagent.name]'.")
 	update_appearance()
 
+//not even in the fucking right subtype? wow.... repath under bottle
+//thinking about it, these three are used in a ton of maps. TODO: repath these under bottle in another PR
+
 /obj/item/reagent_containers/food/drinks/mead
-	name = "Bizircan Brewery Dark Mead" //ditto the plan for bottled water, need to find a way to make multiple variants
+	name = "Bizircan Brewery Dark Mead"
 	desc = "A popular Gezenan drink made of fermented honey and spices, known as Gezenan Dark Mead, or GDM for short."
-	icon_state = "beer"
+	icon_state = "mead"
 	list_reagents = list(/datum/reagent/consumable/ethanol/mead = 30)
 	foodtype = SUGAR | ALCOHOL
 	custom_price = 10
+	item_state = "mead"
+	can_have_cap = TRUE
+	cap_on = TRUE
+	cap_sfx = 'sound/items/openbottle.ogg'
+
+	icon = 'icons/obj/drinks/bottle.dmi'
+	//world_file = 'icons/obj/drinks/bottle_world.dmi'
+	lefthand_file = 'icons/obj/drinks/bottle_lefthand.dmi'
+	righthand_file = 'icons/obj/drinks/bottle_righthand.dmi'
 
 /obj/item/reagent_containers/food/drinks/beer
 	name = "Carp Lite"
 	desc = "Brewed with \"Pure Ice Asteroid Spring Water\"."
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/light = 30)
-	icon_state = "beer"
+	icon_state = "carplite"
+	item_state = "carplite"
+	can_have_cap = TRUE
+	cap_on = TRUE
+	cap_sfx = 'sound/items/openbottle.ogg'
+
+	icon = 'icons/obj/drinks/bottle.dmi'
+	//world_file = 'icons/obj/drinks/bottle_world.dmi'
+	lefthand_file = 'icons/obj/drinks/bottle_lefthand.dmi'
+	righthand_file = 'icons/obj/drinks/bottle_righthand.dmi'
 
 /obj/item/reagent_containers/food/drinks/ale
 	name = "RHIMBASA TAP"
 	desc = "An ale that is brewed on Reh'himl, named after the planet that shields it from their sun. Telh'aim Pale Ales are shortened to TAP, with most breweries reducing their names to acronyms alongside it."
-	icon_state = "alebottle"
-	item_state = "beer"
+	icon_state = "rhimbasa"
+	item_state = "rhimbasa"
 	list_reagents = list(/datum/reagent/consumable/ethanol/ale = 30)
 	foodtype = GRAIN | ALCOHOL
 	custom_price = 15
+	can_have_cap = TRUE
+	cap_on = TRUE
+	cap_sfx = 'sound/items/openbottle.ogg'
+
+	icon = 'icons/obj/drinks/bottle.dmi'
+	//world_file = 'icons/obj/drinks/bottle_world.dmi'
+	lefthand_file = 'icons/obj/drinks/bottle_lefthand.dmi'
+	righthand_file = 'icons/obj/drinks/bottle_righthand.dmi'
 
 /obj/item/reagent_containers/food/drinks/sillycup
 	name = "paper cup"
 	desc = "A paper water cup."
-	icon_state = "water_cup_e"
+	icon = 'icons/obj/drinks/cup.dmi'
+	icon_state = "water_cup"
 	possible_transfer_amounts = list()
+	fill_icon_thresholds = list(40, 100)
 	volume = 10
 	spillable = TRUE
 	isGlass = FALSE
 
-/obj/item/reagent_containers/food/drinks/sillycup/on_reagent_change(changetype)
-	if(reagents.total_volume)
-		icon_state = "water_cup"
-	else
-		icon_state = "water_cup_e"
-
 /obj/item/reagent_containers/food/drinks/sillycup/smallcarton
 	name = "small carton"
 	desc = "A small carton, intended for holding drinks."
+	icon = 'icons/obj/drinks/carton.dmi'
 	icon_state = "juicebox"
+	fill_icon_thresholds = null
 	volume = 15 //I figure if you have to craft these it should at least be slightly better than something you can get for free from a watercooler
 
 /obj/item/reagent_containers/food/drinks/sillycup/smallcarton/smash(atom/target, mob/thrower, ranged = FALSE)
@@ -418,7 +463,7 @@
 		return
 	var/obj/item/broken_bottle/B = new (loc)
 	B.icon_state = icon_state
-	var/icon/I = new('icons/obj/drinks/drinks.dmi', src.icon_state)
+	var/icon/I = new('icons/obj/drinks/carton.dmi', src.icon_state)
 	I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
 	I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
 	B.icon = I
@@ -475,27 +520,46 @@
 
 
 /obj/item/reagent_containers/food/drinks/colocup
-	name = "colo cup"
-	desc = "A cheap, mass produced style of cup, typically used at parties. They never seem to come out red, for some reason..."
-	icon = 'icons/obj/drinks/drinks.dmi'
-	icon_state = "colocup"
+	name = "plastic cup"
+	desc = "A plastic cup. They're cheap and convinent to produce, making it a staple of parties."
+	icon = 'icons/obj/drinks/cup.dmi'
+	icon_state = "plasticcup_red"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	item_state = "colocup"
+	fill_icon_state = "coffee_cup"
 	custom_materials = list(/datum/material/plastic = 1000)
-	possible_transfer_amounts = list(5, 10, 15, 20)
+	fill_icon_thresholds = list(30, 90)
 	volume = 20
 	amount_per_transfer_from_this = 5
 	isGlass = FALSE
+
+	//for decoration
+	obj_flags = INFINITE_RESKIN
+
+	unique_reskin = list(
+		"red" = "plasticcup_red",
+		"orange" = "plasticcup_orange",
+		"yellow" = "plasticcup_yellow",
+		"cyan" = "plasticcup_cyan",
+		"purple" = "plasticcup_purple",
+		"pink" = "plasticcup_pink",
+		"brown" = "plasticcup_brown",
+		"white" = "plasticcup_white",
+		)
+
 	/// Allows the lean sprite to display upon crafting
 	var/random_sprite = TRUE
 
 /obj/item/reagent_containers/food/drinks/colocup/Initialize()
-	.=..()
+	. = ..()
+
 	pixel_x = rand(-4,4)
 	pixel_y = rand(-4,4)
+
 	if (random_sprite)
-		icon_state = "colocup[rand(0, 6)]"
+		//picks a random skin but does not reset it
+		icon_state = unique_reskin[pick(unique_reskin)]
 
 //////////////////////////drinkingglass and shaker//
 //Note by Darem: This code handles the mixing of drinks. New drinks go in three places: In Chemistry-Reagents.dm (for the drink
@@ -505,6 +569,7 @@
 /obj/item/reagent_containers/food/drinks/shaker
 	name = "shaker"
 	desc = "A metal shaker to mix drinks in."
+	icon = 'icons/obj/drinks/flask.dmi'
 	icon_state = "shaker"
 	custom_materials = list(/datum/material/iron=1500)
 	amount_per_transfer_from_this = 10
@@ -515,6 +580,7 @@
 	name = "flask"
 	desc = "Every good spacer knows it's a good idea to bring along a couple of pints of whiskey wherever they go."
 	custom_price = 20
+	icon = 'icons/obj/drinks/flask.dmi'
 	icon_state = "flask"
 	custom_materials = list(/datum/material/iron=250)
 	volume = 60
@@ -532,25 +598,12 @@
 	icon_state = "detflask"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 30)
 
-/obj/item/reagent_containers/food/drinks/mug
-	name = "cup"
-	desc = "A mug. Stylishly plain."
-	icon_state = "tea_empty"
-	volume = 30
-	spillable = TRUE
-
-/obj/item/reagent_containers/food/drinks/rilenacup
-	name = "RILENA mug"
-	desc = "A mug with RILENA: LMR protagonist Ri's face on it."
-	icon_state = "rilenacup"
-	volume = 30
-	spillable = TRUE
-
 //////////////////////////soda_cans//
 //These are in their own group to be used as IED's in /obj/item/grenade/ghettobomb.dm
 
 /obj/item/reagent_containers/food/drinks/soda_cans
 	name = "soda can"
+	icon = 'icons/obj/drinks/sodacan.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	reagent_flags = NONE
@@ -728,12 +781,6 @@
 	item_state = "xeno_energy"
 	list_reagents = list(/datum/reagent/consumable/xeno_energy = 40, /datum/reagent/consumable/electrolytes = 10)
 	foodtype = SUGAR | JUNKFOOD
-
-/obj/item/reagent_containers/food/drinks/soda_cans/air
-	name = "Tradewind Canned"
-	desc = "Intended to be filled with air from home planets for the sake of nostalgia after it's initial failure as an emergency method of 'canning air'. Tradewind Canned - a breath from home."
-	icon_state = "air"
-	list_reagents = list(/datum/reagent/nitrogen = 24, /datum/reagent/oxygen = 6)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/molten
 	name = "Molten Bubbles"

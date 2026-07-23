@@ -268,6 +268,13 @@
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	materials.retrieve_all()
 
+/obj/machinery/autolathe/attackby_secondary(obj/item/O, mob/living/user, params)
+	if(O.tool_behaviour == TOOL_SCREWDRIVER)
+		var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+		materials.OnAttackBy(materials, O, user)
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return SECONDARY_ATTACK_CALL_NORMAL
+
 /obj/machinery/autolathe/attackby(obj/item/O, mob/living/user, params)
 	if (busy)
 		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")

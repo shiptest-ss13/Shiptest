@@ -1,0 +1,43 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Enkidu-class Light Raider",
+	"faction": "/datum/faction/solgov",
+	"prefix": "SCSV",
+	"namelists": [
+		"SOLGOV",
+		"SPACE",
+		"BRITISH_NAVY",
+		"NATURAL"
+	],
+	"map_short_name": "Enkidu-class",
+	"description": "The Solar Confederation's presence in the frontier is not built on writing alone. Where diplomatic efforts fail and desperate times call for desperate measures, the Sonnensoldiers are more than willing to aid local frontier governments in matters of stabilizing their sectors quickly and efficiently. The Enkidu-Class was made with the sole intent of rapid deployment of both the Expeditionary and Stewardship companies wherever they are needed. The design has gained particular fame by the volatile Reisekompanien during the battle between the SCSV Blood In The Water and the SV Go Home, where a ship-to-ship weapons failure led to a spectacular ramming maneuver towards the frontiersmen vessel's bridge, hooking the enemy in place between its forward wings and initiating a swift massacre as the Sonnensöldneren boarded with their signature energy-halberds through a shattered window, earning the design its evocative name.",
+	"tags": ["RP Focus", "Combat"],
+	"map_path": "_maps/shuttles/solgov/solgov_enkidu.dmm",
+	"token_icon_state": "ship_small_generic",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/solgov/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/solgov/engineer",
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/solgov/doctor",
+			"slots": 1
+		},
+		"Sonnensöldner": {
+			"outfit": "/datum/outfit/job/solgov/sonnensoldner",
+			"slots": 2
+		},
+		"Scribe": {
+			"outfit": "/datum/outfit/job/solgov/assistant",
+			"slots" : 1
+		}
+
+	},
+	"enabled": true
+}

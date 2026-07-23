@@ -51,7 +51,7 @@
 	head = /obj/item/clothing/head/soft/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
 	belt = /obj/item/storage/belt/utility/full/engi
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/challenger/inteq
 
 	backpack_contents = list(/obj/item/ammo_box/magazine/co9mm=2)

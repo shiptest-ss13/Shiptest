@@ -448,7 +448,7 @@
 	pass_flags_self = LETPASSTHROW
 	max_integrity = 100
 	var/obj/item/stack/mineResult = /obj/item/stack/ore/glass/basalt
-	passchance = 50
+	pass_chance = 50
 	pass_through = TRUE
 
 	hitsound_type = PROJECTILE_HITSOUND_STONE

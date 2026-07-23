@@ -335,6 +335,16 @@
 
 		a_intent = possible_a_intents[current_intent]
 
+
+	if (a_intent == INTENT_HARM)
+		var/obj/O = pulling
+		if (istype(O) && (O.density || O.drag_slowdown))
+			face_mouse = FALSE
+		else
+			face_mouse = TRUE
+	else
+		face_mouse = FALSE
+
 	if(hud_used && hud_used.action_intent)
 		hud_used.action_intent.icon_state = "[a_intent]"
 

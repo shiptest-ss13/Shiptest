@@ -177,7 +177,7 @@
 			swift_dash(target, dash_num_short, 5)
 
 /////PROJECTILE SHOOTING
-/mob/living/simple_animal/hostile/megafauna/claw/proc/shoot_projectile(angle)
+/mob/living/simple_animal/hostile/megafauna/claw/shoot_projectile(angle)
 	var/obj/projectile/shot_proj = new projectiletype(get_turf(src))
 	playsound(src, projectilesound, 100, TRUE)
 	shot_proj.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))

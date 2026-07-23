@@ -8,6 +8,7 @@
 	desc = "A sign with weak holoemitters on the front, designed to display information in enviroments with many distractions."
 	var/desc_add
 	icon = 'icons/obj/machines/holoposter.dmi'
+	base_icon_state = "holosign"
 	icon_state = "holosign"
 	var/overlay_state
 	anchored = TRUE
@@ -42,7 +43,7 @@
 		randomise()
 	if(!overlay_state)
 		overlay_state = icon_state
-	icon_state = "holosign"
+	icon_state = base_icon_state
 
 	AddElement(/datum/element/beauty, 300)
 
@@ -178,7 +179,7 @@
 
 /obj/machinery/holosign/clover
 	name = "holosign - Clover Corporation"
-	desc_add = "Clover Corporation - Lucky products for lucky people. Postrionics? Computers? Washing machines? Moible phones? Lucky you, we got them too!"
+	desc_add = "Clover Corporation - Lucky products for lucky people. Postrionics? Computers? Washing machines? Mobile phones? Lucky you, we got them too!"
 	icon_state = "clover"
 	light_color = LIGHT_COLOR_ELECTRIC_CYAN
 
@@ -244,8 +245,8 @@
 
 /obj/machinery/holosign/vitcom
 	name = "holosign - VitCom Consumer Electronics"
-	desc_add = "VitCom - Keeping the galaxy connected, our new flip-phone and PDA help you stay in touch with the galaxy!"
-	icon_state = "ihejirika"
+	desc_add = "VitCom - Keeping the galaxy connected, our new flip-phone and tablet help you stay in touch with the galaxy!"
+	icon_state = "vitcom"
 	light_color = LIGHT_COLOR_DARK_BLUE
 
 /obj/machinery/holosign/random
@@ -254,6 +255,107 @@
 	never_random = TRUE
 	random_basetype = /obj/machinery/holosign
 	random_type = POSTER_SUBTYPES
+
+//1000 eyes perch exclusives
+
+/obj/machinery/holosign/cs_outpost_cargo
+	name = "holosign - Cargo"
+	desc_add = "Cargo - Refine ores here."
+	icon_state = "outpost_cargo"
+	light_color = LIGHT_COLOR_FLARE
+	never_random = TRUE
+
+/obj/machinery/holosign/cs_outpost_sec
+	name = "holosign - Security"
+	desc_add = "Security - Get help here."
+	icon_state = "outpost_sec"
+	light_color = LIGHT_COLOR_FLARE
+	never_random = TRUE
+
+/obj/machinery/holosign/cs_outpost_temp
+	name = "holosign - Heat Warning"
+	desc_add = "! Hot ! - Beware of extreme heat here."
+	icon_state = "outpost_temp"
+	light_color = LIGHT_COLOR_FLARE
+	never_random = TRUE
+
+/obj/machinery/holosign/cs_outpost_restroom
+	name = "holosign - Restroom"
+	desc_add = "Restroom - Restroom facilities here."
+	icon_state = "outpost_rest"
+	light_color = LIGHT_COLOR_FLARE
+	never_random = TRUE
+
+/obj/machinery/holosign/cs_outpost_club
+	name = "holosign - Club this way"
+	desc_add = "Club - The 'Her Eyes' club is located in this direction; Open to outsiders, workers permitted entry on break."
+	icon_state = "outpost_club"
+	light_color = LIGHT_COLOR_FLARE
+	never_random = TRUE
+
+/obj/machinery/holosign/cs_outpost_hydro
+	name = "holosign - Hydroponics"
+	desc_add = "Hydroponics - Garden located here."
+	icon_state = "outpost_hydro"
+	light_color = LIGHT_COLOR_FLARE
+	never_random = TRUE
+
+/obj/machinery/holosign/cs_outpost_lift
+	name = "holosign - Lift"
+	desc_add = "Lift - Transfer to docking ares here."
+	icon_state = "outpost_lift"
+	light_color = LIGHT_COLOR_FLARE
+	never_random = TRUE
+
+/obj/machinery/holosign/tiny
+	name = "holosign"
+	desc = "A very short holosign, intended for giving directions and not much else."
+	icon = 'icons/obj/structures/signs/directions.dmi'
+	icon_state = "holodir"
+	base_icon_state = "holodir"
+	never_random = TRUE
+
+/obj/machinery/holosign/tiny/cs_eng
+	name = "holosign - Engineering"
+	desc_add = "Engineering this way."
+	icon_state = "holodir_eng"
+	light_color = LIGHT_COLOR_FLARE
+
+/obj/machinery/holosign/tiny/cs_sec
+	name = "holosign - Security"
+	desc_add = "Security this way."
+	icon_state = "holodir_sec"
+	light_color = LIGHT_COLOR_FLARE
+
+/obj/machinery/holosign/tiny/cs_med
+	name = "holosign - Medical"
+	desc_add = "Engineering this way."
+	icon_state = "holodir_med"
+	light_color = LIGHT_COLOR_FLARE
+
+/obj/machinery/holosign/tiny/cs_supply
+	name = "holosign - Supply"
+	desc_add = "Supply this way."
+	icon_state = "holodir_supply"
+	light_color = LIGHT_COLOR_FLARE
+
+/obj/machinery/holosign/tiny/cs_club
+	name = "holosign - Club"
+	desc_add = "'Her Eyes' Club this way."
+	icon_state = "holodir_club"
+	light_color = LIGHT_COLOR_FLARE
+
+/obj/machinery/holosign/tiny/cs_command
+	name = "holosign - Command"
+	desc_add = "Command this way."
+	icon_state = "holodir_command"
+	light_color = LIGHT_COLOR_FLARE
+
+/obj/machinery/holosign/tiny/cs_lift
+	name = "holosign - Lift"
+	desc_add = "Lift this way."
+	icon_state = "holodir_lift"
+	light_color = LIGHT_COLOR_FLARE
 
 /obj/machinery/holosign/switchadvert
 	name = "blank holosign"

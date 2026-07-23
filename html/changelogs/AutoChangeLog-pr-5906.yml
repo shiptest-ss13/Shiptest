@@ -1,0 +1,13 @@
+author: Erikafox, Ryerice
+changes:
+  - {rscadd: 'The overmap will now spawn 4 systems by default. They are linked linearly
+      1->2->3->4. Sectors 1/3 are outpost sectors, 2/4 are wilderness sectors.'}
+  - {rscadd: 'jump points now allow for unpaired placement. If a jump point is unpaired,
+      it will default to targetting the edge of the next sector.'}
+  - {rscdel: The overmap will no longer loop.}
+  - {soundadd: replaced the jump sfx}
+  - {code_imp: created code/datums/overmap}
+  - {code_imp: moved star system datums into /code/datums/overmap/}
+  - {config: 'removed deprecated config option, maximum dynamic missions'}
+  - {config: modified default overmap config options}
+delete-after: true

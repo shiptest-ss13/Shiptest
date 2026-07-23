@@ -646,7 +646,7 @@
 	},
 /area/hangar)
 "vY" = (
-/obj/structure/sign/departments/cargo,
+/obj/structure/sign/departments/cargo/warra,
 /turf/closed/indestructible/titanium/nodiagnonal,
 /area/hangar)
 "wT" = (
@@ -1149,6 +1149,15 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"Qo" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
+/obj/machinery/holosign/random{
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/tech/warra_outpost/lit,
+/area/hangar)
 "Qx" = (
 /obj/effect/landmark/outpost/hangar_dock,
 /turf/open/floor/hangar/warra_outpost/lit,
@@ -1221,6 +1230,9 @@
 	},
 /obj/structure/chair{
 	dir = 4
+	},
+/obj/structure/sign/departments/cargo/warra{
+	pixel_y = 29
 	},
 /turf/open/floor/plasteel/tech/grid/warra_outpost/lit,
 /area/hangar)
@@ -5378,7 +5390,7 @@ aI
 aI
 aI
 aH
-vY
+aH
 Uz
 pM
 yY
@@ -5502,7 +5514,7 @@ aI
 aI
 aI
 aH
-kT
+Qo
 xe
 tj
 pP

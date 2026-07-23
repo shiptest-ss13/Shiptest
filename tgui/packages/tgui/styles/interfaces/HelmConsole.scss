@@ -1,0 +1,52 @@
+@use '../base.scss';
+
+$background-color: rgba(0, 0, 0, 0.33) !default;
+
+.HelmConsole__left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: base.em(220px);
+}
+
+.HelmConsole__right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: base.em(220px);
+}
+
+.HelmConsole__toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2em;
+  line-height: 2em;
+  margin: 0.25em 1em 0;
+}
+
+.HelmConsole__center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: base.em(220px);
+  right: base.em(220px);
+  background-color: $background-color;
+}
+
+.HelmConsole__map {
+  position: absolute;
+  top: base.em(26px);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0.5em;
+  text-align: center;
+
+  .NoticeBox {
+    margin-top: calc(50% - 2em);
+  }
+}

@@ -86,8 +86,6 @@
 			SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 			update_appearance()
 			return
-		else
-			return ..()
 	else
 		return ..()
 
@@ -98,12 +96,8 @@
 		for(var/obj/item/ammo_casing/casing_to_eject in get_ammo_list(FALSE, TRUE))
 			if(!casing_to_eject)
 				continue
-			casing_to_eject.forceMove(drop_location())
-			var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
-			casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(450, 550) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing_to_eject.bounce_sfx_override)
-
+			eject_casing(user, casing_to_eject)
 			num_unloaded++
-			SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
 		chamber_round(FALSE)
 		return num_unloaded
 	else
@@ -115,7 +109,7 @@
 			var/doafter_time = 0.4 SECONDS
 			if(!do_after(user, doafter_time, user))
 				break
-			if(!eject_casing(user))
+			if(!eject_chamber(user))
 				doafter_time = 0 SECONDS
 			else
 				num_unloaded++
@@ -128,34 +122,29 @@
 		update_appearance()
 		return num_unloaded
 
-/obj/item/gun/ballistic/revolver/proc/eject_casing(mob/living/user, obj/item/ammo_casing/casing_to_eject, casing_index)
+/obj/item/gun/ballistic/revolver/proc/eject_chamber(mob/living/user, obj/item/ammo_casing/casing_to_eject, casing_index)
 	var/list/rounds = magazine.ammo_list()
 	if(!casing_to_eject)
-		casing_to_eject = rounds[gate_offset+1] //byond arrays start at 1, so we add 1 to get the correct index
+		casing_to_eject = rounds[gate_offset + 1] //byond arrays start at 1, so we add 1 to get the correct index
 	if(!casing_to_eject) //if theres STILL nothing, we cancel this
 		if(user)
 			to_chat(user, "<span class='warning'>There's nothing in the gate to eject from [src]!</span>")
 		return FALSE
 	playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
-	casing_to_eject.forceMove(drop_location())
-	var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
-	casing_to_eject.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing_to_eject.bounce_sfx_override)
-
-	SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
+	eject_casing(user, casing_to_eject)
 	if(!gate_loaded)
 		magazine.stored_ammo[casing_index] = null
 		chamber_round(FALSE)
 	else
-		magazine.stored_ammo[gate_offset+1] = null
+		magazine.stored_ammo[gate_offset + 1] = null
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
-
 
 	if(user)
 		to_chat(user, "<span class='notice'>You eject the [cartridge_wording] from [src].</span>")
 	return TRUE
 
-/obj/item/gun/ballistic/revolver/proc/insert_casing(mob/living/user, obj/item/ammo_casing/casing_to_insert, allow_ejection)
+/obj/item/gun/ballistic/revolver/proc/insert_casing(mob/living/user, obj/item/ammo_casing/casing_to_insert, allow_ejection, display_messages)
 	if(!casing_to_insert)
 		return FALSE
 
@@ -165,14 +154,13 @@
 		return FALSE
 
 	var/list/rounds = magazine.ammo_list()
-	var/obj/item/ammo_casing/slot = rounds[gate_offset+1] //byond arrays start at 1, so we add 1 to get the correct index
+	var/obj/item/ammo_casing/slot = rounds[gate_offset + 1] //byond arrays start at 1, so we add 1 to get the correct index
 	var/doafter_time = 0.4 SECONDS
 	if(!gate_loaded) //"normal" revolvers
 		for(var/i in 1 to magazine.stored_ammo.len)
 			var/obj/item/ammo_casing/casing_to_eject = magazine.stored_ammo[i]
-			if(casing_to_eject)
-				if(!casing_to_eject.BB && allow_ejection)
-					eject_casing(user, casing_to_eject, i)
+			if(casing_to_eject && !casing_to_eject.BB && allow_ejection)
+				eject_chamber(user, casing_to_eject, i)
 
 			casing_to_eject = magazine.stored_ammo[i] //check again
 			if(casing_to_eject)
@@ -183,93 +171,88 @@
 				chamber_round(FALSE)
 				break
 	else
-		if(slot)
-			if(!slot.BB && allow_ejection)
-				if(!do_after(user, doafter_time, user))
-					eject_casing(user)
+		if(slot && !slot.BB && allow_ejection)
+			if(!do_after(user, doafter_time, user))
+				eject_chamber(user)
 
 		rounds = magazine.ammo_list()
-		slot = rounds[gate_offset+1] //check again
+		slot = rounds[gate_offset + 1] //check again
 		if(slot)
-			to_chat(user, "<span class='warning'>There's already a casing in the gate of [src]!</span>")
+			if(display_messages)
+				to_chat(user, "<span class='warning'>There's already a casing in the gate of [src]!</span>")
 			return FALSE
 
-		magazine.stored_ammo[gate_offset+1] = casing_to_insert
+		magazine.stored_ammo[gate_offset + 1] = casing_to_insert
 		casing_to_insert.forceMove(magazine)
 
 	playsound(src, load_sound, load_sound_volume, load_sound_vary)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
-	if(user)
+	if(user && display_messages)
 		to_chat(user, "<span class='notice'>You load the [cartridge_wording] into [src].</span>")
 	return TRUE
 
 /obj/item/gun/ballistic/revolver/attackby(obj/item/attacking_obj, mob/user, params)
-	if (istype(attacking_obj, /obj/item/ammo_casing) || istype(attacking_obj, /obj/item/ammo_box))
-		if(istype(attacking_obj, /obj/item/ammo_casing))
-			insert_casing(user, attacking_obj, TRUE)
-		else
-			var/obj/item/ammo_box/attacking_box = attacking_obj
-			var/num_loaded = 0
-			var/list/ammo_list_no_empty = get_ammo_list(FALSE)
-			listclearnulls(ammo_list_no_empty)
-			var/num_to_load = magazine.max_ammo - LAZYLEN(ammo_list_no_empty) //get the number of empty bits
-
-			if(!num_to_load)
-				to_chat(user, span_warning("There's no empty space in [src]!"))
-				return TRUE
-
-			if(!gate_loaded) //"normal" revolvers
-				var/i = 0
-				for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
-					if(!casing_to_insert || (magazine.caliber && casing_to_insert.caliber != magazine.caliber) || (!magazine.caliber && casing_to_insert.type != magazine.ammo_type))
-						break
-					var/doafter_time = 0.5 SECONDS
-					if(magazine.instant_load && attacking_box.instant_load)
-						doafter_time = 0 SECONDS
-					if(!do_after(user, doafter_time, user))
-						break
-					if(!insert_casing(user, casing_to_insert, FALSE))
-						break
-					else
-						num_loaded++
-						attacking_box.update_ammo_count()
-						attacking_box.stored_ammo -= casing_to_insert
-					i++
-					if(i >= num_to_load)
-						break
-			else
-				var/i = 0
-				for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
-					if(!casing_to_insert || (magazine.caliber && casing_to_insert.caliber != magazine.caliber) || (!magazine.caliber && casing_to_insert.type != magazine.ammo_type))
-						break
-					var/doafter_time = 0.4 SECONDS
-					if(!do_after(user, doafter_time, user))
-						break
-					if(!insert_casing(null, casing_to_insert, FALSE))
-						doafter_time = 0 SECONDS
-					else
-						num_loaded++
-						attacking_box.update_ammo_count()
-						attacking_box.stored_ammo -= casing_to_insert
-					if(!do_after(user, doafter_time, user))
-						break
-					switch(gate_load_direction)
-						if(REVOLVER_AUTO_ROTATE_RIGHT_LOADING)
-							chamber_round(TRUE)
-						if(REVOLVER_AUTO_ROTATE_LEFT_LOADING)
-							chamber_round(TRUE, TRUE)
-					i++
-					if(i >= num_to_load)
-						break
-
-			if(num_loaded)
-				to_chat(user, span_notice("You load [num_loaded] [cartridge_wording]\s into [src]."))
-				attacking_box.update_ammo_count()
-				update_appearance()
-			return TRUE
-	else
+	if(!(istype(attacking_obj, /obj/item/ammo_casing) || istype(attacking_obj, /obj/item/ammo_box)))
 		return ..()
+
+	if(istype(attacking_obj, /obj/item/ammo_casing))
+		insert_casing(user, attacking_obj, TRUE, TRUE)
+		return
+
+	var/obj/item/ammo_box/attacking_box = attacking_obj
+	var/num_loaded = 0
+	var/is_stack = istype(attacking_obj, /obj/item/ammo_box/magazine/ammo_stack)
+	var/num_to_load = 0
+
+	// for normal revolvers we are replacing spent casings, not just empty slots
+	if(is_stack && !gate_loaded)
+		num_to_load = magazine.max_ammo - get_ammo(FALSE, FALSE)
+	else
+		var/list/ammo_list_no_empty = get_ammo_list(FALSE)
+		listclearnulls(ammo_list_no_empty)
+		num_to_load = magazine.max_ammo - LAZYLEN(ammo_list_no_empty) //get the number of empty bits
+
+	if(!num_to_load)
+		to_chat(user, span_warning("There's no empty space in [src]!"))
+		return TRUE
+
+	var/tries = 0
+	for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
+		if(!casing_to_insert || (magazine.caliber && casing_to_insert.caliber != magazine.caliber) || (!magazine.caliber && casing_to_insert.type != magazine.ammo_type))
+			break
+		var/doafter_time = gate_loaded ? 0.4 SECONDS : 0.5 SECONDS
+		if(!gate_loaded && magazine.instant_load && attacking_box.instant_load)
+			doafter_time = 0 SECONDS
+		if(!do_after(user, doafter_time, user))
+			break
+		if(casing_to_insert.loc != attacking_box) // make sure bullet has not left stack
+			break
+		if(!insert_casing(user, casing_to_insert, !gate_loaded && is_stack, FALSE))
+			if(gate_loaded)
+				doafter_time = 0 SECONDS
+			else
+				break
+		else
+			num_loaded++
+			attacking_box.update_ammo_count()
+			attacking_box.stored_ammo -= casing_to_insert
+		if(gate_loaded)
+			if(!do_after(user, doafter_time, user))
+				break
+			switch(gate_load_direction)
+				if(REVOLVER_AUTO_ROTATE_RIGHT_LOADING)
+					chamber_round(TRUE)
+				if(REVOLVER_AUTO_ROTATE_LEFT_LOADING)
+					chamber_round(TRUE, TRUE)
+		tries++
+		if(tries >= magazine.max_ammo || num_loaded >= num_to_load)
+			break
+	if(num_loaded)
+		to_chat(user, span_notice("You load [num_loaded] [cartridge_wording]\s into [src]."))
+		attacking_box.update_ammo_count()
+		update_appearance()
+		return TRUE
 
 /obj/item/gun/ballistic/revolver/unique_action(mob/living/user)
 	rack(user)
@@ -345,7 +328,7 @@
 			unload_all_ammo(user)
 			return
 		if(REVOLVER_EJECT_CURRENT)
-			eject_casing(user)
+			eject_chamber(user)
 		if(REVOLVER_FLIP)
 			tryflip(user)
 		if(null)

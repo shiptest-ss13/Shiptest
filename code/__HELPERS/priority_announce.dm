@@ -39,6 +39,8 @@
 	if(auth_id)															//WS Edit - Make cap's announcement use logged-in name
 		announcement += "[span_alert("-[auth_id]")]<br>"		//WS Edit - Make cap's announcement use logged-in name
 
+	if(!sound)
+		return
 	var/sound/S = sound(sound)
 	S.environment = SOUND_ENVIRONMENT_CONCERT_HALL
 	for(var/mob/M in GLOB.player_list)

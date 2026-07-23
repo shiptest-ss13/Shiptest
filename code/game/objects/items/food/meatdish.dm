@@ -31,6 +31,24 @@
 	eatverbs = list("bite", "chew", "gnaw", "swallow", "chomp")
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/food/fishmeat/make_grillable()
+	AddComponent(/datum/component/grillable, /obj/item/food/grilled_fish, rand(20 SECONDS, 45 SECONDS), TRUE, TRUE)
+
+/obj/item/food/grilled_fish
+	name = "grilled fish"
+	desc = "A fillet of grilled, flaky fish."
+	icon = 'icons/obj/food/meat.dmi'
+	icon_state = "grilled_fish"
+	bite_consumption = 3
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment/protein = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 3,
+	)
+	tastes = list("flaky, tender fish" = 1)
+	foodtypes = MEAT
+	eatverbs = list("bite", "chew", "gnaw", "swallow", "chomp")
+	w_class = WEIGHT_CLASS_SMALL
+
 /obj/item/food/fishmeat/moonfish
 	name = "moonfish fillet"
 	desc = "A fillet of moonfish."
@@ -608,16 +626,16 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/sashimi
-	name = "carp sashimi"
-	desc = "Carefully prepared, thinly cut space carp sashimi. Thanks to the preparation, the carpotoxin has denatured into an intensely pungent spice."
+	name = "sashimi"
+	desc = "Carefully prepared, thinly cut sashimi with soy sauce for dipping."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "sashimi"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment/protein = 10,
-		/datum/reagent/consumable/capsaicin = 9,
 		/datum/reagent/consumable/nutriment/vitamin = 4,
+		/datum/reagent/consumable/soysauce = 5,
 	)
-	tastes = list("fish" = 1, "hot peppers" = 1)
+	tastes = list("fish" = 1, "intense umami" = 1)
 	foodtypes = MEAT
 	w_class = WEIGHT_CLASS_TINY
 

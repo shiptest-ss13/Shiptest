@@ -699,7 +699,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "cI" = (
 /obj/item/ammo_casing/spent,
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
@@ -8021,7 +8021,7 @@
 "Gg" = (
 /obj/structure/closet/crate/grave/loot,
 /obj/effect/mob_spawn/human/corpse/vigilitas_private,
-/obj/item/gun/energy/sharplite/l305,
+/obj/item/gun/energy/sharplite/rush,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS)
 "Gi" = (
@@ -8061,11 +8061,11 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
-/obj/item/storage/bottles/moonshine/sealed{
+/obj/item/storage/bottles/chemshine/sealed{
 	pixel_x = -3;
 	pixel_y = 4
 	},
-/obj/item/storage/bottles/moonshine/sealed{
+/obj/item/storage/bottles/chemshine/sealed{
 	pixel_x = 3;
 	pixel_y = -3
 	},
@@ -9090,7 +9090,7 @@
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 9
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -9594,7 +9594,7 @@
 /obj/item/gun/ballistic/automatic/pistol/asp/no_mag,
 /obj/item/ammo_box/magazine/m57_39_asp/empty,
 /obj/effect/decal/cleanable/blood/drip,
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /obj/machinery/airalarm/directional/west,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{
 	dir = 9
@@ -10826,7 +10826,7 @@
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "RW" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /obj/machinery/light/small/directional/north,
@@ -10955,7 +10955,7 @@
 "Sr" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /obj/effect/turf_decal/corner/opaque/cybersunteal/bordercee,
-/obj/item/reagent_containers/food/drinks/bottle/moonshine,
+/obj/item/reagent_containers/food/drinks/bottle/chemshine,
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "St" = (
@@ -12090,7 +12090,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "WH" = (
 /obj/structure/closet/crate/grave/loot,
-/obj/item/gun/energy/sharplite/l305,
+/obj/item/gun/energy/sharplite/rush,
 /obj/effect/mob_spawn/human/corpse/vigilitas_private,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS)
@@ -12951,7 +12951,7 @@
 	},
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "ZW" = (
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/filled/line{

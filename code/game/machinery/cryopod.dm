@@ -13,6 +13,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/computer/cryopod
 	name = "cryogenic oversight console"
 	desc = "An interface between crew and the cryogenic storage oversight systems."
+	icon = 'icons/obj/machines/wallconsole.dmi'
 	icon_state = "wallconsole"
 	icon_screen = "wallconsole_cryo"
 	icon_keyboard = null
@@ -33,10 +34,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 17)
 
 /obj/machinery/computer/cryopod/retro
 	desc = "An interface between crew and the cryogenic storage oversight systems. Currently strugggling to catch up with the modern cryogenic storage system."
-	icon_state = "wallconsole_old"
-	icon_screen = "wallconsole_old_cryo"
+	icon = 'icons/obj/machines/television.dmi'
+	icon_state = "crt_beige_wall"
+	icon_screen = "crt_wall_cryo"
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 22)
 
 /obj/machinery/computer/cryopod/Initialize()
 	. = ..()

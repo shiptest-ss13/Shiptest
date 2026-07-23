@@ -22,20 +22,6 @@
 	if(istype(A, /obj/item/ammo_box) || istype(A, /obj/item/ammo_casing))
 		chamber_round()
 
-/obj/item/gun/ballistic/revolver/grenadelauncher/cyborg
-	desc = "A heavy grenade launcher with an oversized 6-shot cylinder."
-	name = "multi grenade launcher"
-	icon = 'icons/mecha/mecha_equipment.dmi'
-	icon_state = "mecha_grenadelnchr"
-	bad_type = /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg
-	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/grenademulti
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/internal/cylinder/grenademulti,
-	)
-
-/obj/item/gun/ballistic/revolver/grenadelauncher/cyborg/attack_self()
-	return
-
 GLOBAL_LIST_INIT(rpg_scrawlings, list(
 	"\"FRONT TOWARDS ENEMY\"",
 	"\"MY WIFE LEFT ME\"",

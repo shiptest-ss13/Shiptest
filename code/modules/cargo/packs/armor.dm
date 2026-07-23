@@ -194,6 +194,18 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/armor/srm_sentry
+	name = "SRM Three Quarter Plate Crate"
+	desc = "One three-quarter plate harness and helmet for the brave Roumainian to provide a staunch defense."
+	cost = 3000
+	contains = list(/obj/item/clothing/suit/armor/roumain/plate/medium,
+					/obj/item/clothing/head/helmet/roumain/plate)
+	crate_name = "three quarter plate harness crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
+
 //Cybersun
 
 /datum/supply_pack/armor/basic_cybersun

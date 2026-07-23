@@ -1,42 +1,108 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /obj/structure/elevator_platform,
-/obj/machinery/elevator_floor_button{
-	pixel_y = -8;
-	dir = 4;
-	pixel_x = -24
+/obj/machinery/light/dim/directional/east,
+/obj/machinery/status_display/elevator{
+	pixel_y = 28
 	},
 /turf/template_noop,
 /area/template_noop)
-"f" = (
+"d" = (
 /obj/structure/elevator_platform,
-/obj/machinery/light/floor,
+/obj/machinery/light/dim/directional/west,
+/turf/template_noop,
+/area/template_noop)
+"g" = (
+/obj/structure/elevator_platform,
+/obj/item/radio/intercom/directional/west,
 /turf/template_noop,
 /area/template_noop)
 "j" = (
 /obj/structure/elevator_platform,
+/obj/machinery/elevator_floor_button{
+	layer = 2.91;
+	pixel_x = -20;
+	dir = 4;
+	pixel_y = 3
+	},
+/turf/template_noop,
+/area/template_noop)
+"t" = (
+/obj/structure/elevator_platform,
+/turf/template_noop,
+/area/template_noop)
+"y" = (
+/obj/structure/elevator_platform,
+/obj/machinery/light/dim/directional/west,
+/obj/machinery/status_display/elevator{
+	pixel_y = 28
+	},
+/turf/template_noop,
+/area/template_noop)
+"A" = (
+/obj/structure/elevator_platform/tile/tech,
+/obj/structure/table/reinforced,
+/turf/template_noop,
+/area/template_noop)
+"D" = (
+/obj/structure/elevator_platform/tile/tech,
+/obj/structure/chair/bench/red/directional/south,
+/turf/template_noop,
+/area/template_noop)
+"F" = (
+/obj/structure/elevator_platform/tile/tech,
+/obj/structure/chair/bench/red/directional/north,
+/turf/template_noop,
+/area/template_noop)
+"I" = (
+/obj/structure/elevator_platform,
+/obj/machinery/light/dim/directional/east,
+/turf/template_noop,
+/area/template_noop)
+"L" = (
+/obj/structure/elevator_platform/tile/tech,
 /turf/template_noop,
 /area/template_noop)
 "V" = (
-/obj/structure/elevator_platform,
-/obj/machinery/status_display/elevator{
-	pixel_x = -32
+/obj/structure/elevator_platform/tile/tech,
+/obj/structure/crate_shelf{
+	capacity = 2
 	},
 /turf/template_noop,
 /area/template_noop)
 
 (1,1,1) = {"
-a
-V
+y
+g
+t
 j
+d
 "}
 (2,1,1) = {"
-j
-f
-j
+t
+L
+V
+L
+t
 "}
 (3,1,1) = {"
-j
-j
-j
+t
+F
+A
+D
+t
+"}
+(4,1,1) = {"
+t
+L
+V
+L
+t
+"}
+(5,1,1) = {"
+a
+t
+t
+t
+I
 "}

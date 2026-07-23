@@ -50,38 +50,6 @@
 	icon_state = "red"
 	always_unpowered = TRUE
 
-//holy shit, how does this work.
-
-//Jungle Paradise
-
-/area/ruin/jungle/paradise/comms
-	name = "Communications center"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/dorms
-	name = "sleeping hut"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/power
-	name = "electricity hut"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/construction
-	name = "construction site"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/med
-	name = "surgical medical pod"
-	icon_state = "blue"
-
-/area/ruin/jungle/paradise/misc
-	name = "Paradise"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/cargo
-	name = "cargo dump"
-	icon_state = "dk_yellow"
-
 // Abandoned Airbase
 
 /area/ruin/jungle/airbase
@@ -280,3 +248,36 @@
 /area/ruin/jungle/bighole/ferry
 	name = "Militarized Ferry"
 	icon_state = "hangar"
+
+//N&S Depot
+/area/ruin/jungle/depot/warehouse_1
+	name = "Warehouse 1"
+	icon_state = "auxstorage"
+
+/area/ruin/jungle/depot/warehouse_2
+	name = "Warehouse 2"
+	icon_state = "storage"
+
+/area/ruin/jungle/depot/warehouse_3
+	name = "Warehouse 3"
+	icon_state = "primarystorage"
+
+/area/ruin/jungle/depot/supply_office
+	name = "Supply Office"
+	icon_state = "quartoffice"
+
+/area/ruin/jungle/depot/residential
+	name = "Residential"
+	icon_state = "crew_quarters"
+
+/area/ruin/jungle/depot/canteen
+	name = "Canteen"
+	icon_state = "prison_mess"
+
+/area/ruin/jungle/depot/offices
+	name = "Offices"
+	icon_state = "bluenew"
+
+/area/ruin/jungle/depot/electrical
+	name = "Electrical"
+	icon_state = "maint_electrical"

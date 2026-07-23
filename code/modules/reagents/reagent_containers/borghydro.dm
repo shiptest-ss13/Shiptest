@@ -164,7 +164,7 @@ Borg Shaker
 /obj/item/reagent_containers/borghypo/borgshaker
 	name = "cyborg shaker"
 	desc = "An advanced drink synthesizer and mixer."
-	icon = 'icons/obj/drinks/drinks.dmi'
+	icon = 'icons/obj/drinks/flask.dmi'
 	icon_state = "shaker"
 	possible_transfer_amounts = list(5,10,20)
 	charge_cost = 20 //Lots of reagents all regenerating at once, so the charge cost is lower. They also regenerate faster.
@@ -175,7 +175,7 @@ Borg Shaker
 	/datum/reagent/consumable/cream, /datum/reagent/consumable/tadrixx, /datum/reagent/consumable/grenadine,
 	/datum/reagent/consumable/ice, /datum/reagent/consumable/lemonjuice, /datum/reagent/consumable/lemon_lime,
 	/datum/reagent/consumable/limejuice, /datum/reagent/consumable/menthol, /datum/reagent/consumable/milk,
-	/datum/reagent/consumable/nothing, /datum/reagent/consumable/orangejuice, /datum/reagent/consumable/peachjuice,
+	/datum/reagent/consumable/orangejuice, /datum/reagent/consumable/peachjuice,
 	/datum/reagent/consumable/sodawater, /datum/reagent/consumable/space_cola, /datum/reagent/consumable/comet_trail,
 	/datum/reagent/consumable/pacfuel, /datum/reagent/consumable/shoal_punch, /datum/reagent/consumable/soymilk,
 	/datum/reagent/consumable/space_up, /datum/reagent/consumable/sugar, /datum/reagent/consumable/tea,
@@ -231,8 +231,6 @@ Borg Shaker
 /obj/item/reagent_containers/borghypo/borgshaker/hacked
 	name = "cyborg shaker"
 	desc = "Will mix drinks that knock them dead."
-	icon = 'icons/obj/drinks/drinks.dmi'
-	icon_state = "threemileislandglass"
 	possible_transfer_amounts = list(5,10,20)
 	charge_cost = 20 //Lots of reagents all regenerating at once, so the charge cost is lower. They also regenerate faster.
 	recharge_time = 3

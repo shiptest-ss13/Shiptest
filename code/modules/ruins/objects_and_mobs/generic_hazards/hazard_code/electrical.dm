@@ -32,7 +32,7 @@
 	//flags for the stun, SHOCK_NOGLOVES ignores gloves, SHOCK_NOSTUN doesn't stun (built in stun_time is seperate), SHOCK_ILLUSION does stamina damage instead.
 	var/shock_flags = SHOCK_NOGLOVES | SHOCK_NOSTUN
 	//examine text shown in can_be_disabled is TRUE
-	disable_text = "cutting the wires."
+	disable_text = "cutting the wires"
 
 /obj/structure/hazard/electrical/Initialize()
 	//if contact, need to set enter_activated

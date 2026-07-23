@@ -11,16 +11,18 @@
 	icon = 'icons/obj/power.dmi'
 	anchored = TRUE
 	obj_flags = CAN_BE_HIT | ON_BLUEPRINTS
-	var/datum/powernet/powernet = null
 	use_power = NO_POWER_USE
 	idle_power_usage = 0
 	active_power_usage = 0
 	req_ship_access = TRUE
+	power_flags = POWER_ALLOW_WIRE
+	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE | INTERACT_MACHINE_UNPOWERED
 
-/obj/machinery/power/Destroy()
-	disconnect_from_network()
-	set_no_power()
-	return ..()
+/obj/machinery/vv_edit_var(var_name, var_value)
+	. = ..() // Need to change the flag first before we can handle it proper
+	// If we VV power_flags, also call power_change() to update
+	if(var_name == NAMEOF(src, power_flags))
+		power_change()
 
 ///////////////////////////////
 // General procedures
@@ -31,103 +33,75 @@
 // Machines should use add_load(), surplus(), avail()
 // Non-machines should use add_delayedload(), delayed_surplus(), newavail()
 
-/obj/machinery/power/proc/add_avail(amount)
-	if(powernet)
-		powernet.newavail += amount
-		return TRUE
-	else
-		return FALSE
+/obj/machinery/proc/add_avail(amount)
+	return general_temp_avail(amount = amount)
 
-/obj/machinery/power/proc/add_load(amount)
-	if(powernet)
-		powernet.load += amount
+/obj/machinery/proc/add_load(amount)
+	return general_temp_load(amount = amount)
 
-/obj/machinery/power/proc/surplus()
+/obj/machinery/proc/surplus()
 	if(powernet)
 		return clamp(powernet.avail-powernet.load, 0, powernet.avail)
 	else
 		return 0
 
-/obj/machinery/power/proc/avail(amount)
-	if(powernet)
-		return amount ? powernet.avail >= amount : powernet.avail
-	else
-		return 0
+/obj/machinery/proc/avail(amount)
+	return general_powered(amount = amount)
 
-/obj/machinery/power/proc/add_delayedload(amount)
+/obj/machinery/proc/add_delayedload(amount)
 	if(powernet)
 		powernet.delayedload += amount
 
-/obj/machinery/power/proc/delayed_surplus()
+/obj/machinery/proc/delayed_surplus()
 	if(powernet)
 		return clamp(powernet.newavail - powernet.delayedload, 0, powernet.newavail)
 	else
 		return 0
 
-/obj/machinery/power/proc/newavail()
+/obj/machinery/proc/newavail()
 	if(powernet)
 		return powernet.newavail
 	else
 		return 0
 
-/obj/machinery/power/proc/disconnect_terminal() // machines without a terminal will just return, no harm no fowl.
+/obj/machinery/proc/disconnect_terminal() // machines without a terminal will just return, no harm no fowl.
 	return
 
 // returns true if the area has power on given channel (or doesn't require power).
 // defaults to power_channel
 /obj/machinery/proc/powered(chan = -1) // defaults to power_channel
-	if(!loc)
-		return FALSE
-	if(!use_power)
-		return TRUE
-
-	var/area/A = get_area(src)		// make sure it's in an area
-	if(!A)
-		return FALSE					// if not, then not powered
-	if(chan == -1)
-		chan = power_channel
-	return A.powered(chan)	// return power status of the area
+	return general_powered(chan)
 
 // increment the power usage stats for an area
 /obj/machinery/proc/use_power(amount, chan = -1) // defaults to power_channel
-	var/area/A = get_area(src)		// make sure it's in an area
-	if(!A)
-		return
-	if(chan == -1)
-		chan = power_channel
-	A.use_power(amount, chan)
+	general_temp_load(chan, amount)
 
 /obj/machinery/proc/addStaticPower(value, powerchannel, area/A)
-	if(!A)
-		if(get_area(src))
-			A = get_area(src)
-		else
-			return
-	A.addStaticPower(value, powerchannel)
+	return general_add_static(powerchannel, value, A)
 
 /obj/machinery/proc/removeStaticPower(value, powerchannel, area/A)
-	addStaticPower(-value, powerchannel, A)
+	general_add_static(powerchannel, -value, A)
 
 /obj/machinery/proc/set_idle_power(area/A)
 	set_no_power(A)
 	if(use_power == NO_POWER_USE)
 		return
 	use_static_power = IDLE_POWER_USE
-	addStaticPower(idle_power_usage, power_channel + 3, A)
+	general_add_static(idle_power_usage, power_channel + 3, A)
 
 /obj/machinery/proc/set_active_power(area/A)
 	set_no_power(A)
 	if(use_power == NO_POWER_USE)
 		return
 	use_static_power = ACTIVE_POWER_USE
-	addStaticPower(active_power_usage, power_channel + 3, A)
+	general_add_static(active_power_usage, power_channel + 3, A)
 
 /obj/machinery/proc/set_no_power(area/A)
 	switch(use_static_power)
 		if(IDLE_POWER_USE)
-			removeStaticPower(idle_power_usage, power_channel + 3, A)
+			general_remove_static(idle_power_usage, power_channel + 3, A)
 		if(ACTIVE_POWER_USE)
-			removeStaticPower(active_power_usage, power_channel + 3, A)
+			general_remove_static(active_power_usage, power_channel + 3, A)
 	use_static_power = NO_POWER_USE
 
 /obj/machinery/proc/set_static_power(area/A)//used to set the actual draw to the value of use_static_power
@@ -149,11 +123,14 @@
 /obj/machinery/proc/power_change(area/A)
 	SIGNAL_HANDLER
 	SHOULD_CALL_PARENT(1)
+
+	if(power_flags & POWER_ALLOW_WIRE && !powernet)
+		connect_to_network()
 	set_no_power(A)
 
 	if(machine_stat & BROKEN)
 		return
-	if(powered(power_channel))
+	if(general_powered(chan = power_channel))
 		set_static_power(A)
 		if(machine_stat & NOPOWER)
 			SEND_SIGNAL(src, COMSIG_MACHINERY_POWER_RESTORED)
@@ -166,25 +143,84 @@
 		set_machine_stat(machine_stat | NOPOWER)
 	update_appearance()
 
+///////////////////////////////////////////
+// Generic Power Procs
+///////////////////////////////////////////
+
 // connect the machine to a powernet if a node cable is present on the turf
-/obj/machinery/power/proc/connect_to_network()
-	var/turf/T = src.loc
-	if(!T || !istype(T))
-		return FALSE
-
-	var/obj/structure/cable/C = T.get_cable_node() //check if we have a node cable on the machine turf, the first found is picked
-	if(!C || !C.powernet)
-		return FALSE
-
-	C.powernet.add_machine(src)
-	return TRUE
+/obj/machinery/proc/connect_to_network()
+	. = FALSE
+	// powernet = null
+	var/turf/T = get_turf(src)
+	if(!T)
+		return
+	var/obj/structure/cable/attached_wire = T.get_cable_node()
+	if((power_flags & POWER_ALLOW_WIRE) && attached_wire?.powernet)
+		attached_wire.powernet.add_machine(src)
+		return TRUE
+	if((power_flags & POWER_ALLOW_AREA) && get_area(src))
+		disconnect_from_network()
+		return TRUE
 
 // remove and disconnect the machine from its current powernet
-/obj/machinery/power/proc/disconnect_from_network()
+/obj/machinery/proc/disconnect_from_network()
 	if(!powernet)
 		return FALSE
 	powernet.remove_machine(src)
 	return TRUE
+
+/obj/machinery/proc/general_powered(chan = -1, amount)
+	if(!loc)
+		return FALSE
+	if(power_flags & POWER_ALLOW_WIRE && powernet)
+		return amount ? powernet.avail >= amount : powernet.avail
+	if(power_flags & POWER_ALLOW_AREA)
+		var/area/A = get_area(src)		// make sure it's in an area
+		if(!A)
+			return FALSE					// if not, then not powered
+		if(chan == -1)
+			chan = power_channel
+		return A.powered(chan)	// return power status of the area
+	return (use_power == NO_POWER_USE)
+
+/obj/machinery/proc/general_temp_load(chan = -1, amount)
+	if(power_flags & POWER_ALLOW_WIRE && powernet)
+		powernet.load += amount
+		return TRUE
+	if(power_flags & POWER_ALLOW_AREA)
+		var/area/A = get_area(src)		// make sure it's in an area
+		if(!A)
+			return
+		if(chan == -1)
+			chan = power_channel
+		A.use_power(amount, chan)
+	return FALSE
+
+/obj/machinery/proc/general_temp_avail(chan = -1, amount)
+	if(power_flags & POWER_ALLOW_WIRE && powernet)
+		powernet.newavail += amount
+		return TRUE
+	if(power_flags & POWER_ALLOW_AREA)
+		return // TODO
+	return FALSE
+
+/obj/machinery/proc/general_add_static(chan = -1, amount, area/area)
+	if(power_flags & POWER_ALLOW_WIRE && powernet)
+		powernet.static_load += amount
+		return TRUE
+	if(power_flags & POWER_ALLOW_AREA)
+		area ||= get_area(src)
+		if(!area)
+			return FALSE
+		area.addStaticPower(amount, chan)
+	return FALSE
+
+/obj/machinery/proc/general_remove_static(chan = -1, amount, area/area)
+	if(power_flags & POWER_ALLOW_WIRE && powernet)
+		return general_add_static(chan, -amount, area)
+	if(power_flags & POWER_ALLOW_AREA)
+		return general_add_static(chan, -amount, area)
+	return FALSE
 
 // attach a wire to a power machine - leads from the turf you are standing on
 //almost never called, overwritten by all power machines but terminal and generator
@@ -207,7 +243,7 @@
 
 //returns all the cables WITHOUT a powernet in neighbors turfs,
 //pointing towards the turf the machine is located at
-/obj/machinery/power/proc/get_connections()
+/obj/machinery/proc/get_connections()
 
 	. = list()
 	var/cdir
@@ -226,7 +262,7 @@
 
 //returns all the cables in neighbors turfs,
 //pointing towards the turf the machine is located at
-/obj/machinery/power/proc/get_marked_connections()
+/obj/machinery/proc/get_marked_connections()
 
 	. = list()
 
@@ -243,7 +279,7 @@
 	return .
 
 //returns all the NODES (O-X) cables WITHOUT a powernet in the turf the machine is located at
-/obj/machinery/power/proc/get_indirect_connections()
+/obj/machinery/proc/get_indirect_connections()
 	. = list()
 	for(var/obj/structure/cable/C in loc)
 		if(C.powernet)
@@ -266,8 +302,8 @@
 	for(var/AM in T)
 		if(AM == source)
 			continue			//we don't want to return source
-		if(!cable_only && istype(AM, /obj/machinery/power))
-			var/obj/machinery/power/P = AM
+		if(!cable_only && istype(AM, /obj/machinery))
+			var/obj/machinery/P = AM
 			if(P.powernet == 0)
 				continue		// exclude APCs which have powernet=0
 
@@ -305,16 +341,16 @@
 				PN.add_cable(C)
 			worklist |= C.get_connections() //get adjacents power objects, with or without a powernet
 
-		else if(P.anchored && istype(P, /obj/machinery/power))
-			var/obj/machinery/power/M = P
+		else if(P.anchored && istype(P, /obj/machinery))
+			var/obj/machinery/M = P
 			found_machines |= M //we wait until the powernet is fully propagates to connect the machines
 		else
 			continue
 
 	//now that the powernet is set, connect found machines to it
-	for(var/obj/machinery/power/PM in found_machines)
-		if(!PM.connect_to_network()) //couldn't find a node on its turf...
-			PM.disconnect_from_network() //... so disconnect if already on a powernet
+	for(var/obj/machinery/found in found_machines)
+		if(!found.connect_to_network()) //couldn't find a node on its turf...
+			found.disconnect_from_network() //... so disconnect if already on a powernet
 
 
 //Merge two powernets, the bigger (in cable length term) absorbing the other
@@ -335,7 +371,7 @@
 	for(var/obj/structure/cable/Cable in net2.cables) //merge cables
 		net1.add_cable(Cable)
 
-	for(var/obj/machinery/power/Node in net2.nodes) //merge power machines
+	for(var/obj/machinery/Node in net2.nodes) //merge power machines
 		if(!Node.connect_to_network())
 			Node.disconnect_from_network() //if somehow we can't connect the machine to the new powernet, disconnect it from the old nonetheless
 
@@ -440,8 +476,6 @@
 		if(C.d1 == 0)
 			return C
 	return null
-
-
 
 /area/proc/get_apc()
 	for(var/obj/machinery/power/apc/APC in GLOB.apcs_list)

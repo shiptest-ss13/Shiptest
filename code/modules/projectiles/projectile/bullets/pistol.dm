@@ -40,10 +40,10 @@
 	ricochet_decay_damage = 0.8
 	bullet_identifier = "tiny rubber bullet"
 
-// 9x18mm (Commander, SABR)
+// 9mm (Commander, SABR)
 
 /obj/projectile/bullet/c9mm
-	name = "9x18mm bullet"
+	name = "9mm bullet"
 	damage = 20
 	armour_penetration = -20
 	embedding = list(embed_chance=15, fall_chance=3, jostle_chance=4, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=5, jostle_pain_mult=6, rip_time=10)
@@ -51,56 +51,56 @@
 	bullet_identifier = "small bullet"
 
 /obj/projectile/bullet/c9mm/surplus
-	name = "9x18mm surplus bullet"
+	name = "9mm surplus bullet"
 	speed_mod = BULLET_SPEED_SURPLUS_MOD
 
 /obj/projectile/bullet/c9mm/ap
-	name = "9x18mm armor-piercing bullet"
+	name = "9mm armor-piercing bullet"
 	damage = 18
 	armour_penetration = 10
 	speed_mod = BULLET_SPEED_AP_MOD
 
 /obj/projectile/bullet/c9mm/hp
-	name = "9x18mm hollow point bullet"
+	name = "9mm hollow point bullet"
 	damage = 30
 	armour_penetration = -30
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/c9mm/rubber
-	name = "9x18mm rubber bullet"
+	name = "9mm rubber bullet"
 	damage = 5
 	armour_penetration = -40
 	stamina = 30
 	speed_mod = BULLET_SPEED_RUBBER_MOD
 	bullet_identifier = "small rubber bullet"
 
-// 10x22mm (Ringneck)
+// 10mm (Ringneck)
 
 /obj/projectile/bullet/c10mm
-	name = "10x22mm bullet"
+	name = "10mm bullet"
 	damage = 25
 	armour_penetration = -20
 	speed = BULLET_SPEED_HANDGUN
 	bullet_identifier = "small bullet"
 
 /obj/projectile/bullet/c10mm/surplus
-	name = "10x22mm surplus bullet"
+	name = "10mm surplus bullet"
 	speed_mod = BULLET_SPEED_SURPLUS_MOD
 
 /obj/projectile/bullet/c10mm/ap
-	name = "10x22mm armor-piercing bullet"
+	name = "10mm armor-piercing bullet"
 	damage = 23
 	armour_penetration = 10
 	speed_mod = BULLET_SPEED_AP_MOD
 
 /obj/projectile/bullet/c10mm/hp
-	name = "10x22mm hollow point bullet"
+	name = "10mm hollow point bullet"
 	damage = 35
 	armour_penetration = -30
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/c10mm/rubber
-	name = "10x22mm rubber bullet"
+	name = "10mm rubber bullet"
 	damage = 7
 	stamina = 35
 	armour_penetration = -30

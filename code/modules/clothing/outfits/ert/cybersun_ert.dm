@@ -137,7 +137,7 @@
 	suit_store = /obj/item/gun/ballistic/automatic/smg/sidewinder
 	mask = /obj/item/clothing/mask/gas/cybersun
 	glasses = /obj/item/clothing/glasses/hud/health/night
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	gloves = /obj/item/clothing/gloves/nitrile/evil
 
 	belt = /obj/item/storage/belt/medical/webbing/traumateam
 	back = /obj/item/storage/backpack/satchel/med

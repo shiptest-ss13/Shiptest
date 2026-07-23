@@ -25,34 +25,38 @@
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/independent/captain",
+			"outfit": "/datum/outfit/job/independent/captain/gown",
 			"officer": true,
 			"slots": 1
 		},
 		"First Officer": {
-			"outfit": "/datum/outfit/job/independent/hop",
+			"outfit": "/datum/outfit/job/independent/hop/gown",
 			"officer": true,
 			"slots": 1
 		},
 		"Shuttle Pilot": {
-			"outfit": "/datum/outfit/job/independent/quartermaster",
+			"outfit": "/datum/outfit/job/independent/quartermaster/gown",
 			"officer": true,
 			"slots": 1
 		},
 		"Technician": {
-			"outfit": "/datum/outfit/job/independent/engineer",
-			"slots": 2
+			"outfit": "/datum/outfit/job/independent/engineer/gown",
+			"slots": 1
 		},
 		"Security Detail": {
-			"outfit": "/datum/outfit/job/independent/security/disarmed",
+			"outfit": "/datum/outfit/job/independent/security/gown",
 			"slots": 2
 		},
 		"Medical Doctor": {
-			"outfit": "/datum/outfit/job/independent/doctor",
+			"outfit": "/datum/outfit/job/independent/doctor/gown",
+			"slots": 1
+		},
+		"Shaft Miner": {
+			"outfit": "/datum/outfit/job/independent/miner/gown",
 			"slots": 1
 		},
 		"Deckhand": {
-			"outfit": "/datum/outfit/job/independent/assistant",
+			"outfit": "/datum/outfit/job/independent/assistant/gown",
 			"slots": 3
 		}
 	},

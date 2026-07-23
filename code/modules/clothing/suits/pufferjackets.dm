@@ -9,7 +9,7 @@
 	item_state = "pufferwhite"
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	togglename = "zipper"
 	allowed = list(
@@ -77,6 +77,7 @@
 	item_state = "pufvestwhite"
 	body_parts_covered = CHEST|GROIN
 	cold_protection = CHEST|GROIN
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	togglename = "zipper"
 	allowed = list(
