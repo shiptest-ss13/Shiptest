@@ -201,7 +201,7 @@ first-aid in corpsman lockers? no!
 //belts
 	new /obj/item/storage/belt/utility/full/engi(src)
 //masks
-	new /obj/item/clothing/mask/gas/inteq(src)
+	new /obj/item/clothing/mask/balaclava/inteq(src)
 //eyes/ears
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/radio/headset/alt/(src)
@@ -286,7 +286,7 @@ these lack assets, here for consistency and futureproofing
 //belts
 	new /obj/item/storage/belt/utility/full/engi(src)
 //masks
-	new /obj/item/clothing/mask/gas/inteq(src)
+	new /obj/item/clothing/mask/balaclava/inteq(src)
 //eyes/ears
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/radio/headset/inteq/alt(src)
@@ -367,7 +367,7 @@ these lack assets, here for consistency and futureproofing
 //belts
 	new /obj/item/storage/belt/utility/chief/full(src)
 //masks
-	new /obj/item/clothing/mask/gas/inteq(src)
+	new /obj/item/clothing/mask/balaclava/inteq(src)
 //eyes/ears
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/radio/headset/inteq/alt(src)
@@ -751,7 +751,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/merc
 //belts
 	new /obj/item/storage/belt/utility/full/engi(src)
 //masks
-	new /obj/item/clothing/mask/gas/inteq(src)
+	new /obj/item/clothing/mask/balaclava/inteq(src)
 //eyes/ears
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/radio/headset/alt/(src)
@@ -840,7 +840,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/clas
 //belts
 	new /obj/item/storage/belt/utility/full/engi(src)
 //masks
-	new /obj/item/clothing/mask/gas/inteq(src)
+	new /obj/item/clothing/mask/balaclava/inteq(src)
 //eyes/ears
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/radio/headset/inteq/alt(src)
@@ -925,7 +925,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/faction/inteq/secure/wall/comm
 //belts
 	new /obj/item/storage/belt/utility/chief/full(src)
 //masks
-	new /obj/item/clothing/mask/gas/inteq(src)
+	new /obj/item/clothing/mask/balaclava/inteq(src)
 //eyes/ears
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/radio/headset/inteq/alt(src)
