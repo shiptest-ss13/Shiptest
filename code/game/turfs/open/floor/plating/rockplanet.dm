@@ -220,5 +220,8 @@ ROCK_TURF_HELPER(mineral/titanium/tiled)
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet/overslab4
 	baseturfs = /turf/open/floor/concrete/slab_4/rockplanet/lit
 
+/turf/open/floor/plating/asteroid/snow/lit/rockplanet/overslab1
+	baseturfs = /turf/open/floor/concrete/slab_1/rockplanet/lit
+
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet/overplating
 	baseturfs = /turf/open/floor/plating/rockplanet
