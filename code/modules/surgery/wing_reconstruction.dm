@@ -5,7 +5,8 @@
 		/datum/surgery_step/incise,
 		/datum/surgery_step/retract_skin,
 		/datum/surgery_step/clamp_bleeders,
-		/datum/surgery_step/wing_repair
+		/datum/surgery_step/wing_repair,
+		/datum/surgery_step/close
 		)
 	target_mobtypes = list(/mob/living/carbon/human)
 	possible_locs = list(BODY_ZONE_CHEST)
@@ -35,6 +36,12 @@
 /datum/surgery_step/wing_repair/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/obj/item/organ/moth_wings/M = target.getorganslot(ORGAN_SLOT_WINGS)
 	target.dna.features["moth_wings"] = M.original_wings
+	if (!M.original_wings)
+		var/list/valid_wings = GLOB.moth_wings_list
+		var/chosen_wings = input(user, "Choose a new pair of wings to assign.", "Wing Reconstruction") as null|anything in valid_wings
+		if(!chosen_wings)
+			return
+		target.dna.features["moth_wings"] = chosen_wings
 	target.dna.species.handle_mutant_bodyparts(target)
 	display_results(user, target, span_notice("You successfully repair [target]'s wings."),
 		span_notice("[user] successfully repairs [target]'s wings."),
