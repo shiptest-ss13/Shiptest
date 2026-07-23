@@ -21,6 +21,8 @@
 	strip_delay = EQUIP_DELAY_HAT * 1.5
 	equip_self_flags = EQUIP_ALLOW_MOVEMENT
 
+	allow_laundry_buffs = TRUE
+
 ///Special throw_impact for hats to frisbee hats at people to place them on their heads/attempt to de-hat them.
 /obj/item/clothing/head/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
 	. = ..()

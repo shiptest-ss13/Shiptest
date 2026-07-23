@@ -2,16 +2,16 @@
 ** for some reason
 */
 
-/datum/reagent/space_cleaner/system_cleaner
+/datum/reagent/system_cleaner
 	name = "System Cleaner"
 	description = "Neutralizes harmful chemical compounds inside synthetic systems."
 	reagent_state = LIQUID
 	color = "#F1C40F"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	process_flags = SYNTHETIC
-	robot_clean_power = 10
+	var/robot_clean_power = 15
 
-/datum/reagent/space_cleaner/system_cleaner/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/system_cleaner/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
 	M.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
 	. = 1
 	for(var/datum/reagent/R in M.reagents.reagent_list)

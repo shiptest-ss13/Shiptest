@@ -31,7 +31,8 @@
 	var/alt_covers_chest = FALSE // for rolled-down jumpsuits, FALSE = exposes chest and arms, TRUE = does not expose any part
 	var/obj/item/clothing/accessory/attached_accessory
 	var/mutable_appearance/accessory_overlay
-	var/freshly_laundered = FALSE
+
+	allow_laundry_buffs = TRUE
 
 	supports_variations = VOX_VARIATION
 	blood_overlay_type = "uniform"
@@ -108,12 +109,6 @@
 		attached_accessory.on_uniform_equip(src, user)
 		if(attached_accessory.above_suit)
 			H.update_inv_wear_suit()
-
-/obj/item/clothing/under/equipped(mob/user, slot)
-	..()
-	if(slot == ITEM_SLOT_ICLOTHING && freshly_laundered)
-		freshly_laundered = FALSE
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "fresh_laundry", /datum/mood_event/fresh_laundry)
 
 /obj/item/clothing/under/dropped(mob/user)
 	if(attached_accessory)
@@ -197,8 +192,6 @@
 
 /obj/item/clothing/under/examine(mob/user)
 	. = ..()
-	if(freshly_laundered)
-		. += "It looks fresh and clean."
 	if(roll_down)
 		if(adjusted == ROLLED_STYLE)
 			. += "Alt-click on [src] to roll your suit back up."

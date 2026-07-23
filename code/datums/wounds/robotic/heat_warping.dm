@@ -132,7 +132,11 @@
 	if(!(methods & (TOUCH|VAPOR|PATCH)))
 		return
 	var/total_clean_power = 0
-	for(var/datum/reagent/space_cleaner/cleaner in reagents)
+	for(var/datum/reagent/bleach/cleaner in reagents)
+		total_clean_power += cleaner.volume * cleaner.robot_clean_power * volume_modifier
+	for(var/datum/reagent/sterilizine/cleaner in reagents)
+		total_clean_power += cleaner.volume * cleaner.robot_clean_power * volume_modifier
+	for(var/datum/reagent/system_cleaner/cleaner in reagents)
 		total_clean_power += cleaner.volume * cleaner.robot_clean_power * volume_modifier
 	if (total_clean_power)
 		source.visible_message(

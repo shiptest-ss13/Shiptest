@@ -675,13 +675,14 @@
 	color = "#D3B913"
 	taste_description = "sweetness"
 
-/datum/reagent/space_cleaner/sterilizine
+/datum/reagent/sterilizine
 	name = "Sterilizine"
 	description = "Sterilizes wounds in preparation for surgery."
 	color = "#D0EFEE" // space cleaner but lighter
 	taste_description = "bitterness"
+	var/robot_clean_power = 10
 
-/datum/reagent/space_cleaner/sterilizine/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
+/datum/reagent/sterilizine/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR, PATCH))
 		for(var/s in C.surgeries)
 			var/datum/surgery/S = s
@@ -862,47 +863,187 @@
 	..()
 	return TRUE
 
-/datum/reagent/space_cleaner
-	name = "Space Cleaner"
-	description = "A compound used to clean things. Now with 50% more sodium hypochlorite!"
-	color = "#A5F0EE" // rgb: 165, 240, 238
-	taste_description = "sourness"
+/datum/reagent/bleach
+	name = "Sodium Hypochlorite"
+	description = "An extremely potent cleaning agent, commonly sold as household bleach. It can cause serious organic harm, however this means it can be used as an disinfectant."
+	color = "#d0f0a5"
+	taste_description = "extreme bitterness"
 	reagent_weight = 0.6 //so it sprays further
-	var/robot_clean_power = 2
+	var/robot_clean_power = 10
+
+	///Type of cleaning this has
 	var/clean_types = CLEAN_WASH
+	/// Used when in high amounts
+	var/extreme_clean_types = CLEAN_SCRUB
 
-/datum/reagent/space_cleaner/expose_obj(obj/O, reac_volume)
-	O?.wash(clean_types)
+/datum/reagent/bleach/expose_obj(obj/O, reac_volume)
+	///Whats the % of the holder that is this chemical?
+	var/percent_this_chem = volume/holder.total_volume * 100
+	///Whats the % of the holder is water?
+	var/percent_water = holder.get_reagent_amount(/datum/reagent/water)/holder.total_volume * 100
+	///In case its a clothing item, we can bleach it.
+	var/obj/item/obj_item = O
 
-/datum/reagent/space_cleaner/expose_turf(turf/T, reac_volume)
-	if(reac_volume >= 1)
+	//as long as over 70% of this chemical is water and we are at least 10% of this chemical, we can clean
+	if(percent_this_chem >= 10 && percent_water >= 70)
+		O?.wash(clean_types)
+
+	//if we are more than 30% of the mixture, we actually bleach the object in particular
+	if(percent_this_chem >= 30)
+		O?.wash(extreme_clean_types)
+		if(istype(obj_item))
+			obj_item.dye_item(DYE_WHITE)
+
+	//if we are at least 5u and at least 60% of the reagents there, we start to damage clothing
+	if(reac_volume >= 5 && percent_this_chem >= 60)
+		if(isclothing(O))
+			var/acid_damage = (max(sqrt(reac_volume), 0) * percent_this_chem)
+			O.take_damage(acid_damage, damage_type = "BURN", damage_flag = ACID)
+
+	//if we are at least 10u and at least 80% of the reagents there, we act as worse acid
+	if(reac_volume >= 10 && percent_this_chem >= 80)
+		O.acid_act(2, reac_volume)
+
+/datum/reagent/bleach/expose_turf(turf/T, reac_volume)
+	if (!istype(T))
+		return
+	///Whats the % of the holder that is this chemical?
+	var/percent_this_chem = volume/holder.total_volume * 100
+	///Whats the % of the holder is water?
+	var/percent_water = holder.get_reagent_amount(/datum/reagent/water)/holder.total_volume * 100
+	///Do we wash things with the extreme clean types?
+	var/extreme_clean = FALSE
+
+	//if we are at least 3u of bleach and  more than 30% of the container, we clean things more than normal
+	if(reac_volume >= 3 && percent_this_chem >= 30)
+		extreme_clean = TRUE
+	//as long as over 70% of this chemical is water and we are at least 10% of this chemical, as well as 1u, we can clean
+	if(reac_volume >= 1 && percent_this_chem >= 10 && percent_water >= 70)
 		T.wash(clean_types)
 		for(var/atom/movable/movable_content in T)
 			if(ismopable(movable_content)) // Mopables will be cleaned anyways by the turf wash
 				continue
-			movable_content.wash(clean_types)
+			if(!extreme_clean)
+				movable_content.wash(clean_types)
+			else
+				movable_content.wash(extreme_clean_types)
 
 		for(var/mob/living/simple_animal/slime/M in T)
-			M.adjustToxLoss(rand(5,10))
+			M.adjustToxLoss(rand(5,15))
 
-/datum/reagent/space_cleaner/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+	//if we are at least 10u and at least 80% of the reagents there, we act as worse acid
+	if(reac_volume >= 10 && percent_this_chem >= 80)
+		T.acid_act(5, round(reac_volume,0.1))
+
+/datum/reagent/bleach/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+	///How mcuh burn damage to deal, if any
+	var/burndamage = 0
+	var/mechanical = FALSE
+
+	///Whats the % of the holder that is this chemical?
+	var/percent_this_chem = volume/holder.total_volume * 100
+
+	var/mob/living/carbon/victim = M
+	var/mob/living/carbon/human/human_victim = victim
+	if(!victim || percent_this_chem < 5)
+		return
+
 	if(method == TOUCH || method == VAPOR)
-		M.wash(clean_types)
+		var/feels_pain = TRUE
+		if(victim.dna.species.inherent_biotypes & MOB_ROBOTIC) //robots are not flesh
+			mechanical = TRUE
 
-/datum/reagent/space_cleaner/ez_clean
+		if(HAS_TRAIT(victim, TRAIT_ANALGESIA)) //if we can't feel pain, dont give the pain messages
+			feels_pain = FALSE
+
+		burndamage = (reac_volume * (percent_this_chem/100)*(1 - touch_protection))
+
+		if(burndamage >= 1 && !human_victim.check_for_goggles() && !mechanical)
+			victim.set_blurriness(rand(1,5))
+			if(percent_this_chem >= 20)
+				victim.adjustOrganLoss(ORGAN_SLOT_EYES, round(burndamage/3, 0.1))
+				victim.set_blurriness(rand(5,15))
+			if(feels_pain)
+				if(percent_this_chem >= 20)
+					to_chat(victim, span_danger("Your eyes get a little irritated."))
+				if(percent_this_chem >= 20)
+					to_chat(victim, span_danger("Your eyes burn!"))
+					victim.emote("cry")
+
+		if(burndamage >= 2 && percent_this_chem >= 30 && !touch_protection)
+			victim.apply_damage((burndamage*0.1), BURN, spread_damage = TRUE)
+			victim.acid_act(5, round(burndamage,0.1))
+			if(feels_pain)
+				to_chat(victim, span_userdanger("You're [mechanical ? "corroding" : "melting"]!"))
+			playsound(victim, 'sound/items/welder.ogg', 30, TRUE)
+
+		//besides the suffering, perhaps we also give this the actual niche use of bleaching hair?
+		if(reac_volume >= 2 && percent_this_chem >= 30)
+			human_victim.hair_color = COLOR_WHITE
+			human_victim.facial_hair_color = COLOR_WHITE
+			human_victim.grad_color = COLOR_WHITE
+
+			human_victim.visible_message("<span class='notice'>[human_victim.name]'s hair loses all color.</span>")
+			human_victim.update_hair()
+
+
+/datum/reagent/bleach/on_mob_life(mob/living/carbon/affected_carbon, seconds_per_tick, times_fired)
+	var/toxpwr = sqrt(volume)
+
+	if(prob (min(current_cycle/4, 25)))
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_BRAIN, volume * REM)
+	if(current_cycle>10)
+		//grace peroid before we just fuck up someone
+		affected_carbon.adjustToxLoss(toxpwr * REM, FALSE)
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_LIVER, volume * REM)
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_STOMACH, (volume * 1.2) * REM)
+
+		for(var/datum/disease/found_disease as anything in affected_carbon.diseases)
+			//you cant cure a heart attack with bleach
+			if(found_disease.spread_flags & DISEASE_SPREAD_NON_CONTAGIOUS)
+				continue
+			//this might make bleach overpowered, but it is literally killing you horribly at this point reguardless
+			if(prob(min(toxpwr, 40)))
+				found_disease.update_stage(found_disease.stage - 1)
+
+	else
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_STOMACH, (toxpwr) * REM)
+		affected_carbon.adjustToxLoss((toxpwr / 2) * REM, FALSE)
+	affected_carbon.adjust_disgust(volume)
+
+	return ..()
+
+/datum/reagent/bleach/dip_object(obj/item/dipped_item, mob/user, obj/item/reagent_containers/holding_container)
+	. = ..()
+	if(istype(dipped_item, /obj/item/stock_parts/capacitor))
+		///1/3
+		holding_container.reagents.add_reagent(/datum/reagent/sodium = 1, (holding_container.reagents.remove_reagent(/datum/reagent/bleach, 10*dipped_item.get_part_rating()) / 3))
+		holding_container.reagents.add_reagent(/datum/reagent/oxygen = 1, (holding_container.reagents.remove_reagent(/datum/reagent/bleach, 10*dipped_item.get_part_rating()) / 3))
+		holding_container.reagents.add_reagent(/datum/reagent/chlorine = 1, (holding_container.reagents.remove_reagent(/datum/reagent/bleach, 10*dipped_item.get_part_rating()) / 3))
+		return TRUE
+	return
+
+/datum/reagent/bleach/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(-round(chems.get_reagent_amount(type) * 2))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 3))
+		mytray.adjustWeeds(-rand(2,4))
+
+/datum/reagent/bleach/ez_clean
 	name = "EZ Clean"
 	description = "A powerful, acidic cleaner sold by Waffle Co. Affects organic matter while leaving other objects unaffected."
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	taste_description = "acid"
 	robot_clean_power = 15
 
-/datum/reagent/space_cleaner/ez_clean/on_mob_life(mob/living/carbon/M)
+/datum/reagent/bleach/ez_clean/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(3.33)
 	M.adjustFireLoss(3.33)
 	M.adjustToxLoss(3.33)
 	..()
 
-/datum/reagent/space_cleaner/ez_clean/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+/datum/reagent/bleach/ez_clean/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	..()
 	if((method == TOUCH || method == VAPOR) && !issilicon(M))
 		M.adjustBruteLoss(1.5)
@@ -2616,3 +2757,98 @@
 		var/temp = holder ? holder.chem_temp : T20C
 		exposed_turf.atmos_spawn_air("[GAS_SO2]=[reac_volume/2];TEMP=[temp]")
 	return
+
+/datum/reagent/detergent
+	name = "Laundry Detergent"
+	description = "Standrd issue Laundry Detergent. When mixed with water while in a washing machine (or very large container), it cleans articles of clothing."
+	color = "#c5b7ce"
+	taste_description = "sourness"
+	reagent_weight = 0.6 //so it sprays further
+
+	///Type of cleaning this has
+	var/clean_types = CLEAN_WASH
+
+/datum/reagent/detergent/expose_obj(obj/O, reac_volume)
+	///Whats the % of the holder that is this chemical?
+	var/percent_this_chem = volume/holder.total_volume * 100
+	///Whats the % of the holder is water?
+	var/percent_water = holder.get_reagent_amount(/datum/reagent/water)/holder.total_volume * 100
+	///Our item
+	var/obj/item/clothing/obj_item = O
+
+	if(!obj_item)
+		return
+
+	//as long as over 70% of the mixture is water and we are at least 5% of this chemical, as well as 20u, we clean clothing, but ONLY clothing
+	if(reac_volume >= 20 && percent_this_chem >= 5 && percent_water >= 70)
+		if(obj_item)
+			obj_item.wash(clean_types)
+			if(obj_item.allow_laundry_buffs)
+				obj_item.freshly_laundered = TRUE
+				addtimer(VARSET_CALLBACK(obj_item, freshly_laundered, FALSE), 25 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE)
+		O?.wash(clean_types)
+
+/datum/reagent/detergent/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+	///How mcuh burn damage to deal, if any
+	var/burndamage = 0
+
+	var/mob/living/carbon/victim = M
+	var/mob/living/carbon/human/human_victim = victim
+	if(!victim)
+		return
+
+	if(method == TOUCH || method == VAPOR)
+		var/feels_pain = TRUE
+		if(victim.dna.species.inherent_biotypes & MOB_ROBOTIC)
+			return
+
+		if(HAS_TRAIT(victim, TRAIT_ANALGESIA)) //if we can't feel pain, dont give the pain messages
+			feels_pain = FALSE
+
+		burndamage = (max(sqrt(reac_volume)-5 , 0))
+
+		if(burndamage > 0 && !human_victim.check_for_goggles())
+			victim.set_blurriness(rand(5,15))
+			if(burndamage >= 2)
+				victim.adjustOrganLoss(ORGAN_SLOT_EYES, burndamage/2)
+			if(feels_pain)
+				to_chat(victim, span_danger("Your eyes burn!"))
+				if(burndamage >= 2)
+					victim.emote("cry")
+
+/datum/reagent/detergent/on_mob_life(mob/living/carbon/affected_carbon, seconds_per_tick, times_fired)
+	var/toxpwr = sqrt(volume)
+	affected_carbon.adjust_disgust(toxpwr/2)
+	if(toxpwr >= 4)
+		affected_carbon.adjustToxLoss((toxpwr/2)*REM, FALSE)
+		affected_carbon.set_blurriness(rand(5,15))
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_LIVER,(toxpwr/2)*REM)
+		affected_carbon.adjustOrganLoss(ORGAN_SLOT_STOMACH,toxpwr*REM)
+		. = TRUE
+
+	return ..()
+
+/datum/reagent/detergent/fabirc_softener
+	name = "Fabric Softener"
+	description = "Standrd issue Fabric Softener. When mixed with water while in a washing machine (or very large container), it prevents clothes from scratching people after drying, which pleasing."
+	color = "#debee6"
+	///Type of cleaning this has
+	clean_types = NONE
+
+/datum/reagent/detergent/fabirc_softener/expose_obj(obj/O, reac_volume)
+	///Whats the % of the holder that is this chemical?
+	var/percent_this_chem = volume/holder.total_volume * 100
+	///Whats the % of the holder is water?
+	var/percent_water = holder.get_reagent_amount(/datum/reagent/water)/holder.total_volume * 100
+	///Our item
+	var/obj/item/clothing/obj_item = O
+
+	if(!obj_item)
+		return
+
+	//as long as over 70% of the mixture is water and we are at least 5% of this chemical, as well as 20u, we clean clothing, but ONLY clothing
+	if(reac_volume >= 10 && percent_this_chem >= 5 && percent_water >= 70)
+		if(obj_item)
+			if(obj_item.allow_laundry_buffs)
+				obj_item.softened = TRUE
+				addtimer(VARSET_CALLBACK(obj_item, softened, FALSE), 25 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE)

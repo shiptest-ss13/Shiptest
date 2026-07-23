@@ -343,6 +343,8 @@ GLOBAL_PROTECT(donators)
 	else
 		if(!donator_allow_other_usage)
 			. += span_warning("A strange force prevents you from making eye contact with it.")
+	if(freshly_laundered)
+		. += "It looks fresh and clean."
 
 /obj/item/clothing/proc/check_donator(mob/user)
 	return ckey(user.key) == ckey(donator_key)
