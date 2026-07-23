@@ -133,6 +133,14 @@ SUBSYSTEM_DEF(overmap)
 
 	tracked_star_systems[1].create_jump_point_link(tracked_star_systems[2],4)
 
+#else
+
+	tracked_star_systems[1] = spawn_new_star_system(/datum/overmap_star_system/safezone)
+	safe_sectors += tracked_star_systems[1]
+	tracked_star_systems[2] = spawn_new_star_system(/datum/overmap_star_system/wilderness)
+	wild_sectors += tracked_star_systems[2]
+	tracked_star_systems[1].create_jump_point_link(tracked_star_systems[2],4)
+
 #endif
 
 	SEND_GLOBAL_SIGNAL(COMSIG_OVERMAP_FINISHED_CREATION)
