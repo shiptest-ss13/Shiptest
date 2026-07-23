@@ -5,7 +5,7 @@
 /obj/item/stock_parts/cell
 	name = "power cell"
 	desc = "A rechargeable electrochemical power cell."
-	icon = 'icons/obj/power.dmi'
+	icon = 'icons/obj/item/cells.dmi'
 	icon_state = "cell"
 	item_state = "cell"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
@@ -66,7 +66,7 @@
 /obj/item/stock_parts/cell/update_overlays()
 	. = ..()
 	if(grown_battery)
-		. += mutable_appearance('icons/obj/power.dmi', "grown_wires")
+		. += mutable_appearance('icons/obj/item/cells.dmi', "grown_wires")
 	if(blinky_light)
 		if(charge < 0.01)
 			return
@@ -136,6 +136,8 @@
 /obj/item/stock_parts/cell/proc/corrupt()
 	charge /= 2
 	maxcharge = max(maxcharge/2, chargerate)
+	desc = initial(desc)
+	desc += " This one is damaged and has a rating of [DisplayEnergy(maxcharge)], and you should not swallow it."
 	if (prob(10))
 		rigged = TRUE //broken batterys are dangerous
 
@@ -376,7 +378,7 @@
 /obj/item/stock_parts/cell/gun
 	name = "eoehoma power cell"
 	desc = "A rechargeable weapon cell. While intended for Eoehoma laser weapons, these are compatable with various other manufactorer's designs, intentionally or not."
-	icon = 'icons/obj/power.dmi'
+	icon = 'icons/obj/item/cells.dmi'
 	icon_state = "e-cell"
 	maxcharge = 10000
 	custom_materials = list(/datum/material/glass=60)
@@ -471,7 +473,7 @@
 /obj/item/stock_parts/cell/gun/sharplite
 	name = "Sharplite power cell"
 	desc = "A proprietary power cell primarily used by Sharplite weaponry. Makosso-Warra's large market share has forced some weapon developers to include adapters for these cells"
-	icon = 'icons/obj/power.dmi'
+	icon = 'icons/obj/item/cells.dmi'
 	icon_state = "warra-cell"
 
 /obj/item/stock_parts/cell/gun/sharplite/empty

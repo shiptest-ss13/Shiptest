@@ -926,6 +926,8 @@
 		regenerate_organs()
 	remove_all_embedded_objects()
 	set_heartattack(FALSE)
+	coretemperature = get_body_temp_normal(apply_change=FALSE)
+	heat_exposure_stacks = 0
 	for(var/datum/mutation/human/HM in dna.mutations)
 		if(HM.quality != POSITIVE)
 			dna.remove_mutation(HM.name)
@@ -1384,9 +1386,6 @@
 
 /mob/living/carbon/human/species/skeleton
 	race = /datum/species/skeleton
-
-/mob/living/carbon/human/species/snail
-	race = /datum/species/snail
 
 /mob/living/carbon/human/species/vox
 	race = /datum/species/vox

@@ -3,7 +3,7 @@
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 1
 	},
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "aj" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/diagonal,
@@ -41,7 +41,7 @@
 /obj/structure/fence/cut/large{
 	dir = 4
 	},
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/mono/white/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "ax" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
@@ -175,7 +175,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "bu" = (
 /obj/structure/grille,
@@ -188,7 +188,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "bO" = (
 /obj/structure/guncloset,
@@ -245,6 +245,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/lavaland/holdout/office)
+"ci" = (
+/obj/structure/catwalk/over/plated_catwalk/white,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/lava,
+/area/overmap_encounter/planetoid/lava/explored)
 "cm" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "holdoutfleawindow"
@@ -303,7 +310,7 @@
 /obj/structure/crate_shelf,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable/yellow,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/patterned/grid/dark/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "cK" = (
 /obj/effect/turf_decal/industrial/hatch{
@@ -420,7 +427,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/tech/grid/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "dL" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -483,7 +490,7 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "eS" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -583,7 +590,7 @@
 "fz" = (
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/rifle_steel,
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "fB" = (
 /obj/structure/barricade/sandbags,
@@ -651,7 +658,7 @@
 "gk" = (
 /obj/structure/rack,
 /obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/patterned/grid/dark/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "gl" = (
 /obj/structure/cable{
@@ -955,7 +962,7 @@
 	icon_state = "2-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk/white,
-/turf/open/floor/plating,
+/turf/open/floor/plating/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "iI" = (
 /obj/structure/cable/yellow{
@@ -973,7 +980,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/lava,
 /area/ruin/lavaland/holdout/ramziflea)
 "iQ" = (
 /obj/effect/turf_decal/techfloor/corner,
@@ -1027,7 +1034,7 @@
 "jk" = (
 /obj/effect/turf_decal/trimline/opaque/red/line,
 /obj/machinery/porta_turret/ruin/ramzi/light,
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "jp" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
@@ -1080,7 +1087,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "jN" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner{
@@ -1267,7 +1274,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "ln" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/diagonal,
@@ -1316,11 +1323,11 @@
 	dir = 9;
 	layer = 2.041
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/lava,
 /area/ruin/lavaland/holdout/ramziflea)
 "lE" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "lR" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
@@ -1391,7 +1398,7 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/patterned/grid/dark/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "mj" = (
 /obj/structure/flora/ausbushes/grassybush/hell,
@@ -1409,7 +1416,7 @@
 	dir = 8
 	},
 /obj/structure/window/plasma/reinforced,
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "mo" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning{
@@ -1475,7 +1482,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/lavaland/holdout/engineering)
 "mY" = (
@@ -1483,7 +1490,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner{
 	dir = 8
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "nb" = (
 /obj/structure/cable{
@@ -1705,7 +1712,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/lava,
 /area/ruin/lavaland/holdout/ramziflea)
 "oP" = (
 /obj/structure/fence{
@@ -1781,7 +1788,7 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 1
 	},
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "ph" = (
 /obj/structure/closet/secure_closet{
@@ -1796,7 +1803,7 @@
 	},
 /obj/item/storage/belt/security/webbing/ramzi/alt,
 /obj/item/clothing/head/ramzi/beret,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/tech/grid/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "pi" = (
 /obj/effect/decal/cleanable/blood/squirt{
@@ -1842,7 +1849,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/patterned/grid/dark/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "po" = (
 /obj/effect/turf_decal/borderfloorwhite,
@@ -1872,7 +1879,7 @@
 "pp" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner,
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "pq" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
@@ -1919,7 +1926,7 @@
 "pH" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /obj/structure/barricade/sandbags,
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "pP" = (
 /obj/effect/turf_decal/siding/black{
@@ -1945,7 +1952,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "holdoutfleawindow"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/lava,
 /area/ruin/lavaland/holdout/ramziflea)
 "pU" = (
 /obj/structure/cable{
@@ -2000,14 +2007,14 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "qo" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/mono/white/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "qw" = (
 /obj/item/trash/syndi_cakes{
@@ -2153,7 +2160,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/patterned/grid/dark/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "sn" = (
 /obj/structure/railing/corner,
@@ -2231,7 +2238,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/mono/white/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "te" = (
 /obj/effect/turf_decal/industrial/fire,
@@ -2364,7 +2371,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/mono/white/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "uP" = (
 /obj/item/circuitboard/machine/telecomms/receiver,
@@ -2508,7 +2515,7 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "wc" = (
 /obj/machinery/button/door{
@@ -2530,13 +2537,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/mess)
-"wg" = (
-/obj/structure/catwalk/over/plated_catwalk/white,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/overmap_encounter/planetoid/lava/explored)
 "wi" = (
 /obj/structure/table,
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
@@ -2667,7 +2667,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech/grid/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "wU" = (
 /obj/structure/cable/yellow{
@@ -2705,7 +2705,7 @@
 /obj/structure/fence/cut/large{
 	dir = 4
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "xq" = (
 /obj/machinery/porta_turret/ship/hardliners{
@@ -2844,7 +2844,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/tech/grid/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "yy" = (
 /obj/effect/anomaly/pyro/planetary,
@@ -2856,7 +2856,7 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "yM" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
@@ -2993,7 +2993,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 6
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "zD" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -3056,7 +3056,7 @@
 	},
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior,
 /area/ruin/lavaland/holdout/office)
 "Au" = (
 /obj/item/stack/ore/salvage/scraptitanium,
@@ -3150,7 +3150,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/patterned/grid/dark/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "Bl" = (
 /obj/structure/table/reinforced,
@@ -3188,7 +3188,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "Bw" = (
 /obj/structure/extinguisher_cabinet/directional/west{
@@ -3266,7 +3266,7 @@
 /area/ruin/lavaland/holdout/tcomms)
 "Cj" = (
 /obj/structure/catwalk/over/plated_catwalk/white,
-/turf/open/floor/plating,
+/turf/open/floor/plating/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "Cm" = (
 /obj/effect/turf_decal/stairs,
@@ -3310,7 +3310,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 10
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "Cz" = (
 /obj/machinery/power/terminal{
@@ -3323,7 +3323,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/patterned/grid/dark/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "CC" = (
 /obj/structure/grille,
@@ -3357,7 +3357,7 @@
 	id = "holdoutfleashield"
 	},
 /obj/machinery/light/directional/south,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/patterned/grid/dark/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "CQ" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -3430,7 +3430,7 @@
 /turf/open/floor/plating/asteroid/purple/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "Dz" = (
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "DC" = (
 /obj/structure/flora/ausbushes/hell,
@@ -3567,7 +3567,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/patterned/grid/dark/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "EO" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
@@ -3802,7 +3802,7 @@
 /obj/effect/turf_decal/trimline/opaque/red/line,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/lava,
 /area/ruin/lavaland/holdout/ramziflea)
 "Gu" = (
 /obj/structure/barricade/sandbags,
@@ -3832,7 +3832,7 @@
 	turret_flags = 62
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior,
 /area/ruin/lavaland/holdout/office)
 "GI" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
@@ -3931,7 +3931,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_box/magazine/m57_39_sidewinder/empty,
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/mono/white/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "GZ" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
@@ -4112,7 +4112,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "II" = (
 /obj/structure/flora/rock/pile,
@@ -4344,13 +4344,11 @@
 /area/ruin/lavaland/holdout/engineering)
 "KA" = (
 /obj/structure/table/glass,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 32
-	},
 /obj/item/paper/fluff/ruins/holdout/goodbye{
 	pixel_x = 6;
 	pixel_y = 6
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/holdout/barracks)
 "KC" = (
@@ -4518,7 +4516,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/patterned/grid/dark/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "LV" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
@@ -4565,7 +4563,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/patterned/grid/dark/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "Mt" = (
 /obj/machinery/telecomms/bus,
@@ -4655,7 +4653,7 @@
 /obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus,
 /obj/item/clothing/suit/space/syndicate/ramzi/surplus,
 /obj/item/tank/internals/emergency_oxygen/engi,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/tech/grid/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "MZ" = (
 /obj/structure/cable{
@@ -4779,7 +4777,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "holdoutfleawindow"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/lava,
 /area/ruin/lavaland/holdout/ramziflea)
 "Ob" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
@@ -4895,7 +4893,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "OA" = (
 /obj/structure/table,
@@ -4925,7 +4923,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "OH" = (
 /obj/effect/turf_decal/siding/black{
@@ -5241,7 +5239,7 @@
 	dir = 1
 	},
 /obj/machinery/porta_turret/ruin/ramzi/light,
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "QT" = (
 /obj/machinery/door/firedoor/border_only{
@@ -5264,7 +5262,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/patterned/grid/dark/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "Ra" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
@@ -5402,7 +5400,7 @@
 /area/ruin/lavaland/holdout/warehousea)
 "Sx" = (
 /obj/effect/turf_decal/trimline/opaque/red/line,
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "SB" = (
 /obj/item/multitool{
@@ -5715,7 +5713,7 @@
 	},
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "Vr" = (
 /obj/structure/cable{
@@ -5745,7 +5743,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/mono/white/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "VK" = (
 /obj/effect/turf_decal/siding/black{
@@ -5885,7 +5883,7 @@
 	icon_state = "2-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/mono/white/lavaland,
 /area/ruin/lavaland/holdout/office)
 "WL" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth{
@@ -5972,7 +5970,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "Xn" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -6010,7 +6008,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior,
 /area/ruin/lavaland/holdout/office)
 "Xt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -6032,7 +6030,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 4
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior/lavaland,
 /area/ruin/lavaland/holdout/office)
 "XP" = (
 /obj/structure/cable/yellow{
@@ -6107,7 +6105,7 @@
 /area/ruin/lavaland/holdout/kitchen)
 "Yx" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/mono/white/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "YE" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
@@ -6191,7 +6189,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/patterned/grid/dark/lavaland,
 /area/ruin/lavaland/holdout/ramziflea)
 "YW" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
@@ -6286,7 +6284,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "ZD" = (
 /obj/effect/turf_decal/siding/black{
@@ -7037,7 +7035,7 @@ Ex
 QC
 aC
 sY
-wg
+ci
 lm
 zk
 gj
@@ -7570,7 +7568,7 @@ OH
 ZE
 au
 Bt
-wg
+ci
 uM
 zk
 fD
@@ -7807,11 +7805,11 @@ ZE
 au
 WK
 ao
-wg
+ci
 av
-wg
+ci
 ee
-wg
+ci
 Ox
 ZC
 hJ
@@ -8042,7 +8040,7 @@ kx
 ZE
 Dg
 Bt
-wg
+ci
 uM
 wC
 UX
@@ -8455,7 +8453,7 @@ Oo
 wk
 uE
 iC
-wg
+ci
 uM
 wC
 Ko

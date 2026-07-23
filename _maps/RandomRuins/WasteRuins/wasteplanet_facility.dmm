@@ -2100,11 +2100,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/mineral/processing_unit_console{
-	dir = 4;
-	machinedir = 2;
-	pixel_y = 32;
-	pixel_x = -24
+/obj/machinery/computer/processing_unit_console/directional/west{
+	machinedir = 2
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/facility/northwing)
@@ -2805,15 +2802,9 @@
 /area/ruin/wasteplanet/facility/northwing)
 "sX" = (
 /obj/structure/flora/ash/garden/waste,
-/obj/item/emptysandbag,
-/obj/item/emptysandbag{
-	pixel_y = -6;
-	pixel_x = 6
-	},
-/obj/item/emptysandbag{
-	pixel_y = -6;
-	pixel_x = -6
-	},
+/obj/item/stack/empty_sandbags,
+/obj/item/stack/empty_sandbags,
+/obj/item/stack/empty_sandbags,
 /obj/structure/closet,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/grass/ship/jungle,

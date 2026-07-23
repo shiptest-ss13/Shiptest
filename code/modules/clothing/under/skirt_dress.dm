@@ -54,6 +54,7 @@
 	desc = "A black, casual skirt."
 	icon_state = "blackskirt"
 	roll_down = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/dress/skirt/color/blue
 	name = "blue skirt"

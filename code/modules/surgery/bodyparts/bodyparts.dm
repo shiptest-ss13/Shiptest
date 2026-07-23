@@ -290,7 +290,7 @@
 	return bodypart_organs
 
 //Return TRUE to get whatever mob this is in to update health.
-/obj/item/bodypart/proc/on_life()
+/obj/item/bodypart/proc/on_life(stam_regen, seconds_per_tick, times_fired)
 	SHOULD_CALL_PARENT(TRUE)
 
 	if(stamina_dam > DAMAGE_PRECISION && owner.stam_regen_start_time <= world.time) //DO NOT update health here, it'll be done in the carbon's life.
@@ -1215,7 +1215,7 @@
 
 	var/bleed_rate = 0
 	if(generic_bleedstacks > 0)
-		bleed_rate++
+		bleed_rate += 0.5
 
 	//We want an accurate reading of .len
 	listclearnulls(embedded_objects)

@@ -1223,9 +1223,7 @@
 	pixel_x = 9;
 	pixel_y = 8
 	},
-/obj/machinery/computer/security/telescreen{
-	dir = 4;
-	pixel_x = -32;
+/obj/machinery/computer/security/telescreen/directional/west{
 	network = list("ss13");
 	desc = "A telescreen that connects to the ship's security camera network."
 	},
@@ -1537,9 +1535,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/machinery/firealarm/directional/south{
 	pixel_x = -6
 	},
@@ -2051,9 +2047,7 @@
 /obj/item/extinguisher/mini,
 /obj/item/extinguisher/mini,
 /obj/item/extinguisher/mini,
-/obj/machinery/computer/security/telescreen{
-	dir = 8;
-	pixel_x = 32;
+/obj/machinery/computer/security/telescreen/directional/east{
 	network = list("ss13");
 	desc = "A telescreen that connects to the ship's security camera network."
 	},
@@ -3785,9 +3779,7 @@
 	},
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
+/obj/machinery/camera/autoname/directional/west,
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -5398,8 +5390,7 @@
 	dir = 8
 	},
 /obj/machinery/computer/cargo/solgov,
-/obj/machinery/computer/security/telescreen{
-	pixel_y = 26;
+/obj/machinery/computer/security/telescreen/directional/north{
 	network = list("ss13");
 	desc = "A telescreen that connects to the ship's security camera network."
 	},

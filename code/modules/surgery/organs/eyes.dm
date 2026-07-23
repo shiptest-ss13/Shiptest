@@ -147,7 +147,7 @@
 	owner.cure_blind(EYE_SCARRING_TRAIT)
 	owner.update_body()
 
-/obj/item/organ/eyes/on_life()
+/obj/item/organ/eyes/on_life(seconds_per_tick, times_fired)
 	..()
 	var/mob/living/carbon/C = owner
 	//various degrees of "oh fuck my eyes", from "point a laser at your eye" to "staring at the Sun" intensities
