@@ -57,7 +57,7 @@ SUBSYSTEM_DEF(overmap)
 	dynamic_encounters = list()
 	events = list()
 
-#ifdef FULL_INIT
+/* #ifdef FULL_INIT
 
 	var/list/outpost_sectors = list()
 
@@ -114,11 +114,21 @@ SUBSYSTEM_DEF(overmap)
 
 	looplink_4_systems()
 
-#else
+*/
 
-	tracked_star_systems[1] = spawn_new_star_system(/datum/overmap_star_system/safezone)
+#ifdef FULL_INIT
+
+	var/list/outpost_sectors = list()
+
+	var/list/datum/overmap_star_system/wilderness/wilderness_sectors = list()
+
+	outpost_sectors += pick(subtypesof(/datum/overmap_star_system/safezone) - /datum/overmap_star_system/safezone/json_example)
+
+	wilderness_sectors += pick(typesof(/datum/overmap_star_system/wilderness))
+
+	tracked_star_systems[1] = spawn_new_star_system(outpost_sectors[1])
 	safe_sectors += tracked_star_systems[1]
-	tracked_star_systems[2] = spawn_new_star_system(/datum/overmap_star_system/wilderness)
+	tracked_star_systems[2] = spawn_new_star_system(wilderness_sectors[1])
 	wild_sectors += tracked_star_systems[2]
 
 	tracked_star_systems[1].create_jump_point_link(tracked_star_systems[2],4)

@@ -170,7 +170,7 @@
 	overmap_vlevel.current_systen = src
 	overmap_vlevel.reserve_margin(MAP_EDGE_PAD)
 	overmap_vlevel.fill_in(/turf/open/overmap, /area/overmap)
-	//overmap_vlevel.selfloop()
+	overmap_vlevel.selfloop()
 	var/area/our_area = get_area(OVERMAP_TOKEN_TURF(1, 1, src))
 
 	our_area.rename_area ("[our_area.name] ([name])")
