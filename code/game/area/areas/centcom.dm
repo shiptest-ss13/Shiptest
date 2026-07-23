@@ -28,6 +28,60 @@
 /area/centcom/holding
 	name = "Holding Facility"
 
+/area/centcom/television
+	name = "Broadcasting Office 1"
+
+/area/centcom/television/secondary
+	name = "Broadcasting Office 2"
+
+/area/centcom/buildarea
+	name = "Construction Room"
+
+/area/centcom/commandoffices
+	name = "Command Offices"
+
+/area/centcom/commandoffices/ngr
+	name = "2nd Battlegroup High Command"
+
+/area/centcom/commandoffices/cybersun
+	name = "Cybersun Corporate Headquarters"
+
+/area/centcom/commandoffices/inteq
+	name = "Inteq Mothership"
+
+/area/centcom/commandoffices/suns
+	name = "Student-Union Academic Headquarters"
+
+/area/centcom/commandoffices/solgov
+	name = "Solar Confederation DAA"
+
+/area/centcom/commandoffices/srm
+	name = "Huntsman's Office"
+
+/area/centcom/commandoffices/pgf
+	name = "Pan-Gezenan High Command"
+
+/area/centcom/commandoffices/clip
+	name = "CLIP Colonial Command"
+
+/area/centcom/commandoffices/ramzi
+	name = "Ramzi Clique Cell Command"
+
+/area/centcom/commandoffices/frontiersmen
+	name = "Frontiersmen Relay Command"
+
+/area/centcom/commandoffices/warra
+	name = "Makosso-Warra Central Command"
+
+/area/centcom/commandoffices/vigilitas
+	name = "Vigilitas Interstellar Command Center"
+
+/area/centcom/commandoffices/n_s
+	name = "N+S Logistics Comms Center"
+
+/area/centcom/commandoffices/zohil // hello this is the zohil explorat all your base are belong to us
+	name = "Zohil Explorat Communications"
+
 /area/centcom/supplypod/supplypod_temp_holding
 	name = "Supplypod Shipping lane"
 	icon_state = "supplypod_flight"

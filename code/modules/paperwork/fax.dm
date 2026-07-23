@@ -609,10 +609,25 @@
 	fax_name = "Solarian Confederation Frontier Affairs"
 	admin_fax_id = "solgov"
 
+/obj/machinery/fax/admin/suns
+	name = "SUNS Fax Machine"
+	fax_name = "Student-Union Academic Headquarters"
+	admin_fax_id = "solgov"
+
 /obj/machinery/fax/admin/syndicate
 	name = "Syndicate Coordination Fax Machine"
 	fax_name = "Syndicate Coordination Center"
 	admin_fax_id = "syndicate"
+
+/obj/machinery/fax/admin/ngr
+	name = "New Gorlex Republic Fax Machine"
+	fax_name = "2nd Battlegroup High Command"
+	admin_fax_id = "ngr"
+
+/obj/machinery/fax/admin/cybersun
+	name = "Cybersun Fax Machine"
+	fax_name = "Cybersun Corporate"
+	admin_fax_id = "cybersun"
 
 /obj/machinery/fax/admin/inteq
 	name = "IRMG Fax Machine"
@@ -645,3 +660,8 @@
 	fax_name = "Ramzi Communications Quartermaster"
 	admin_fax_id = "ramzi"
 	frontier_network = TRUE
+
+/obj/machinery/fax/admin/zohil // we are the zohil explorat
+	name = "Zohil Explorat Fax Machine"
+	fax_name = "Zohil Explorat Communications"
+	admin_fax_id = "zohil"
