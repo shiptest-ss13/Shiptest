@@ -697,3 +697,14 @@
 
 /turf/closed/indestructible/edge/is_transition_turf()
 	return TRUE
+
+/datum/virtual_level/proc/update_lighting_in_bounds()
+	var/list/turf/block_turfs = get_block()
+	var/list/already_checked_areas = list()
+	for(var/turf/turf as anything in block_turfs)
+		var/area/found_area = turf.loc
+		if(!istype(found_area) || (found_area in already_checked_areas))
+			continue
+		already_checked_areas += found_area
+		INVOKE_ASYNC(found_area, TYPE_PROC_REF(/area,update_turf_lights))
+		CHECK_TICK

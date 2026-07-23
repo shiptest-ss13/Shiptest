@@ -44,6 +44,13 @@
 	//controls what kind of sound we play when we land and the maptext comes up
 	var/landing_sound
 
+	///This planet's light range per turf
+	var/light_range = 0
+	///This planet's light power per turf.
+	var/light_power = 0
+	///This planet's light color per turf.
+	var/light_color = COLOR_WHITE
+
 /datum/overmap/static_object/Destroy()
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
 		reserve_docks -= dock
@@ -145,6 +152,19 @@
 	SEND_SIGNAL(src, COMSIG_OVERMAP_LOADED)
 	loading = FALSE
 	return TRUE
+
+/datum/overmap/static_object/update_planet_lighting(target_range, target_power, target_color)
+	if(!mapzone)
+		if(usr)
+			to_chat(usr, span_warning("Load the planet first with load_level!"), confidential = TRUE)
+		return
+	for(var/datum/virtual_level/found_level as anything in mapzone.virtual_levels)
+		var/list/lighting_traits = found_level.traits[ZTRAIT_PLANETARY_LIGHTING]
+		lighting_traits[ZTRAIT_LIGHT_COLOR] = target_color
+		lighting_traits[ZTRAIT_LIGHT_POWER] = target_power
+		lighting_traits[ZTRAIT_LIGHT_RANGE] = target_range
+		found_level.update_lighting_in_bounds()
+	return
 
 /datum/overmap/static_object/admin_loaded
 	name = "floating admin bus"

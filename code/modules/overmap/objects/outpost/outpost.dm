@@ -226,6 +226,10 @@
 
 	main_template.load(vlevel.get_unreserved_bottom_left_turf())
 
+	var/list/turf/block_turfs = vlevel.get_block()
+	for(var/turf/turf as anything in block_turfs)
+		turf.AfterChange(CHANGETURF_IGNORE_AIR)
+
 	if(weather_controller_type)
 		new weather_controller_type(mapzone)
 
@@ -538,6 +542,18 @@
 	port_to_fix.is_adjusting_now = FALSE
 	return TRUE
 
+/datum/overmap/outpost/update_planet_lighting(target_range, target_power, target_color)
+	if(!mapzone)
+		if(usr)
+			to_chat(usr, span_warning("Load the planet first with load_level!"), confidential = TRUE)
+		return
+	for(var/datum/virtual_level/found_level as anything in mapzone.virtual_levels)
+		var/list/lighting_traits = found_level.traits[ZTRAIT_PLANETARY_LIGHTING]
+		lighting_traits[ZTRAIT_LIGHT_COLOR] = target_color
+		lighting_traits[ZTRAIT_LIGHT_POWER] = target_power
+		lighting_traits[ZTRAIT_LIGHT_RANGE] = target_range
+		found_level.update_lighting_in_bounds()
+	return
 /datum/overmap/outpost/proc/get_mission_sector()
 	if(!mission_system)
 		return SSovermap.wild_sectors[1]

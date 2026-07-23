@@ -28,12 +28,20 @@ WARRA_OUTPOST_TURF_HELPER(plasteel/tech)
 	name = "Yebiri External"
 	sound_environment = SOUND_ENVIRONMENT_CITY
 	ambience_index = AMBIENCE_SPOOKY
+	allow_weather = TRUE
+	use_ztrait_lighting = TRUE
 
 /area/outpost/exterior/warra/wilderness
 	name = "Yebiri Wilderness"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambience_index = AMBIENCE_TUNDRA
 	icon_state = "space_near"
+	allow_weather = TRUE
+	use_ztrait_lighting = TRUE
 
 /turf/open/floor/plating/asteroid/snow/no_smooth
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_SNOWED, SMOOTH_GROUP_FLOOR_PLASTEEL)
+
+/area/hangar/yebiri_outdoors
+	allow_weather = TRUE
+	use_ztrait_lighting = TRUE

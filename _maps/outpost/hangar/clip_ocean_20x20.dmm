@@ -5,14 +5,14 @@
 	layer = 2
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "ak" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 1
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "ap" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/hangar/clipoutpost,
@@ -25,17 +25,17 @@
 "aJ" = (
 /obj/structure/catwalk/over,
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "aY" = (
 /turf/open/floor/hangar/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "bI" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /obj/effect/decal/fakelattice,
 /turf/open/floor/hangar/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "ch" = (
 /obj/structure/railing/thin,
 /obj/structure/rack,
@@ -59,14 +59,14 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/hangar)
+/area/hangar/clip_ocean)
 "cJ" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/corner,
 /obj/structure/railing/thin{
 	dir = 9
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "dv" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 4
@@ -77,7 +77,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "dz" = (
 /obj/effect/landmark/outpost/hangar_numbers,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
@@ -88,7 +88,7 @@
 	},
 /obj/structure/railing/thin,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "eI" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 9
@@ -97,7 +97,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/hangar)
+/area/hangar/clip_ocean)
 "fb" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -129,7 +129,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "hq" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	color = "#999999";
@@ -137,13 +137,13 @@
 	dir = 10
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "hs" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "ir" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/hangar)
@@ -155,7 +155,7 @@
 	dir = 8
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "jo" = (
 /obj/structure/plasticflaps/outpost,
 /obj/machinery/conveyor/auto/outpost{
@@ -185,12 +185,16 @@
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "lT" = (
 /obj/machinery/conveyor/auto/outpost,
 /obj/effect/landmark/outpost/hangar_crate_spawner,
 /turf/open/floor/pod/dark,
 /area/hangar)
+"ma" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/hangar/clip_ocean)
 "ml" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	color = "#999999";
@@ -200,19 +204,19 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "mu" = (
 /obj/structure/marker_beacon{
 	picked_color = "Teal"
 	},
 /turf/open/floor/hangar/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "mV" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 4
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "nf" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 8
@@ -221,7 +225,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/hangar)
+/area/hangar/clip_ocean)
 "np" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	dir = 4
@@ -230,7 +234,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/hangar)
+/area/hangar/clip_ocean)
 "nK" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	color = "#999999";
@@ -238,18 +242,18 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "or" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk/over,
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "oR" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "pm" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/corner{
 	dir = 1
@@ -258,18 +262,18 @@
 	dir = 6
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "pK" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /obj/machinery/light/floor,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "qW" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 9
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "qZ" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	color = "#999999";
@@ -277,7 +281,7 @@
 	dir = 6
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "rf" = (
 /obj/structure/railing{
 	dir = 8
@@ -299,7 +303,7 @@
 	dir = 4
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "tg" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /obj/structure/railing/thin/corner{
@@ -309,7 +313,11 @@
 	dir = 4
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
+"tl" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/hangar/clipoutpost,
+/area/hangar/clip_ocean)
 "tm" = (
 /turf/open/floor/plasteel/elevatorshaft,
 /area/hangar)
@@ -319,14 +327,14 @@
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "tq" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "tr" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
@@ -338,7 +346,7 @@
 	dir = 8
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "uC" = (
 /obj/structure/railing/thin{
 	dir = 1
@@ -354,7 +362,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/hangar)
+/area/hangar/clip_ocean)
 "vv" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 4
@@ -375,7 +383,7 @@
 	dir = 4
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "zs" = (
 /obj/structure/platform/industrial_alt/indestructible,
 /obj/structure/fluff/arrowsong_big,
@@ -383,7 +391,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/hangar)
+/area/hangar/clip_ocean)
 "zu" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	color = "#999999";
@@ -392,7 +400,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk/over,
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "Br" = (
 /obj/machinery/conveyor/auto/outpost{
 	dir = 8
@@ -408,14 +416,14 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/hangar)
+/area/hangar/clip_ocean)
 "Ci" = (
 /obj/structure/platform/industrial_alt/corner/indestructible,
 /turf/open/floor/hangar/clipoutpost{
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/hangar)
+/area/hangar/clip_ocean)
 "Ct" = (
 /obj/structure/railing/thin{
 	dir = 1
@@ -441,7 +449,7 @@
 	dir = 4
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "Cx" = (
 /obj/structure/railing/thin{
 	dir = 4
@@ -453,7 +461,7 @@
 	dir = 8
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "Dv" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	color = "#999999";
@@ -461,7 +469,7 @@
 	dir = 8
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "DS" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 1
@@ -479,20 +487,20 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/hangar)
+/area/hangar/clip_ocean)
 "Fu" = (
 /obj/structure/platform/industrial_alt/indestructible,
 /turf/open/floor/hangar/clipoutpost{
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/hangar)
+/area/hangar/clip_ocean)
 "GD" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 10
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "GN" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 1
@@ -501,7 +509,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/hangar)
+/area/hangar/clip_ocean)
 "Hq" = (
 /obj/effect/landmark/outpost/shaft_number,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
@@ -512,17 +520,17 @@
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "JQ" = (
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "JX" = (
 /obj/structure/railing/thin{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "KC" = (
 /obj/structure/railing/thin{
 	dir = 8
@@ -537,7 +545,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "Lj" = (
 /obj/structure/plasticflaps/outpost,
 /obj/machinery/conveyor/auto/outpost{
@@ -552,18 +560,18 @@
 	dir = 9
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "Nq" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /obj/structure/railing/thin{
 	dir = 1
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "Nt" = (
 /obj/effect/landmark/outpost/hangar_dock,
 /turf/open/floor/hangar/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "Nz" = (
 /obj/machinery/conveyor/auto/outpost{
 	dir = 6;
@@ -576,7 +584,7 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/hangar)
+/area/hangar/clip_ocean)
 "OG" = (
 /obj/effect/landmark/outpost/elevator{
 	shaft = "1"
@@ -592,7 +600,7 @@
 	dir = 8
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "QA" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	color = "#999999";
@@ -600,7 +608,7 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "QJ" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 1
@@ -615,13 +623,19 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/hangar)
+/area/hangar/clip_ocean)
 "RZ" = (
 /obj/machinery/conveyor/auto/outpost{
 	dir = 10
 	},
 /turf/open/floor/pod/dark,
 /area/hangar)
+"SH" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 1
+	},
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/hangar/clip_ocean)
 "SR" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/corner{
 	dir = 4
@@ -630,7 +644,7 @@
 	dir = 10
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "Tk" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -663,14 +677,14 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk/over,
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "Wm" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	color = "#999999";
 	layer = 2
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "WB" = (
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
@@ -682,14 +696,14 @@
 	color = "#999999";
 	light_power = 0.7
 	},
-/area/hangar)
+/area/hangar/clip_ocean)
 "WU" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/decal/fakelattice,
 /turf/open/floor/hangar/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "Xa" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -705,14 +719,14 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "Xp" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 9
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "XX" = (
 /obj/structure/chair/bench/blue/directional/south,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
@@ -723,18 +737,18 @@
 	},
 /obj/structure/railing/thin/corner,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "ZG" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 "ZV" = (
 /obj/structure/catwalk/over,
 /turf/open/floor/hangar/clipoutpost,
-/area/hangar)
+/area/hangar/clip_ocean)
 
 (1,1,1) = {"
 JQ
@@ -1219,30 +1233,30 @@ JQ
 aj
 Fu
 Nq
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
 dA
 GN
 Ok
@@ -1266,7 +1280,7 @@ JQ
 aj
 Fu
 Nq
-ap
+tl
 Xp
 Qk
 Qk
@@ -1289,7 +1303,7 @@ Qk
 Qk
 Qk
 lC
-ap
+tl
 dA
 GN
 Ok
@@ -1313,8 +1327,8 @@ JQ
 aj
 Fu
 Nq
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -1335,8 +1349,8 @@ aY
 aY
 aY
 Nt
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -1360,8 +1374,8 @@ JQ
 aj
 Fu
 JX
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -1382,8 +1396,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -1407,8 +1421,8 @@ JQ
 aj
 Fu
 JX
-ap
-QJ
+tl
+SH
 mu
 aY
 aY
@@ -1429,8 +1443,8 @@ aY
 aY
 aY
 mu
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -1454,8 +1468,8 @@ JQ
 aj
 Fu
 JX
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -1476,8 +1490,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -1501,8 +1515,8 @@ JQ
 aj
 Fu
 JX
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -1523,8 +1537,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -1548,8 +1562,8 @@ JQ
 aj
 Fu
 JX
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -1570,8 +1584,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -1595,8 +1609,8 @@ JQ
 aj
 Fu
 Nq
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -1617,8 +1631,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -1642,7 +1656,7 @@ JQ
 aj
 Fu
 Nq
-ap
+tl
 ak
 mu
 aY
@@ -1665,7 +1679,7 @@ aY
 aY
 mu
 pK
-ap
+tl
 dA
 GN
 Ok
@@ -1689,8 +1703,8 @@ JQ
 aj
 Fu
 Nq
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -1711,8 +1725,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -1736,8 +1750,8 @@ JQ
 aj
 Fu
 Nq
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -1758,8 +1772,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -1783,8 +1797,8 @@ JQ
 aj
 Fu
 Nq
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -1805,8 +1819,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -1830,8 +1844,8 @@ Xh
 qZ
 Fu
 Nq
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -1852,8 +1866,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -1877,7 +1891,7 @@ Ci
 cu
 Eg
 Nq
-ap
+tl
 ak
 mu
 aY
@@ -1900,7 +1914,7 @@ aY
 aY
 mu
 pK
-ap
+tl
 dA
 GN
 Ok
@@ -1924,8 +1938,8 @@ Fu
 ir
 KC
 tg
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -1946,8 +1960,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -1971,8 +1985,8 @@ Fu
 ir
 PD
 ZG
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -1993,8 +2007,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -2018,8 +2032,8 @@ Eg
 ir
 Br
 ZG
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -2040,8 +2054,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -2065,8 +2079,8 @@ ir
 ir
 lz
 ZG
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -2087,8 +2101,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -2112,8 +2126,8 @@ aG
 aG
 RZ
 ZG
-ap
-QJ
+tl
+SH
 mu
 aY
 aY
@@ -2134,8 +2148,8 @@ aY
 aY
 aY
 mu
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -2159,8 +2173,8 @@ ir
 rX
 rf
 tq
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -2181,8 +2195,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -2206,8 +2220,8 @@ vv
 ir
 XX
 pK
-ap
-QJ
+tl
+SH
 aY
 aY
 aY
@@ -2228,8 +2242,8 @@ aY
 aY
 aY
 aY
-tr
-ap
+ma
+tl
 dA
 GN
 Ok
@@ -2252,8 +2266,8 @@ ir
 Tk
 ir
 UQ
-tr
-ap
+ma
+tl
 HI
 mV
 mV
@@ -2276,7 +2290,7 @@ mV
 mV
 mV
 tp
-ap
+tl
 dA
 GN
 Ok
@@ -2299,31 +2313,31 @@ lT
 DS
 ir
 XX
-tr
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-ap
+ma
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
+tl
 dA
 GN
 Ok
@@ -2358,7 +2372,7 @@ sU
 vB
 Qk
 lC
-ap
+tl
 Xp
 Qk
 Yj

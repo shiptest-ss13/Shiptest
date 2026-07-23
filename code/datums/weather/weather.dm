@@ -150,10 +150,10 @@
 		if(protect_indoors && !A.allow_weather)
 			outside_areas |= A
 			continue
-		if(A.underground && !affects_underground)
+		if(A.allow_underground_specific_weather && !affects_underground)
 			outside_areas |= A
 			continue
-		if(!A.underground && !affects_aboveground)
+		if(!A.allow_underground_specific_weather && !affects_aboveground)
 			outside_areas |= A
 			continue
 		impacted_areas |= A

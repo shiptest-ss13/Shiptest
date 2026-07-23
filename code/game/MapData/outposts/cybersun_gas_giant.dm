@@ -158,6 +158,14 @@
 	name = "Scaffolding"
 	sound_environment = SOUND_ENVIRONMENT_UNDERWATER
 	ambience_index = AMBIENCE_MAINT
+	use_ztrait_lighting = TRUE
+
+/area/hangar/csoutpost_outdoors_noweather
+	use_ztrait_lighting = TRUE
+
+/area/hangar/csoutpost_outdoors
+	allow_weather = TRUE
+	use_ztrait_lighting = TRUE
 
 CYBERSUN_OUTPOST_TURF_HELPER(plasteel/mono)
 CYBERSUN_OUTPOST_TURF_HELPER(plasteel/mono/white)

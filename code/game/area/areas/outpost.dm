@@ -228,25 +228,6 @@
 	ambience_index = AMBIENCE_SPOOKY
 	allow_weather = TRUE
 
-/area/outpost/exterior/rock
-	name = "Exterior"
-	icon_state = "space"
-	ambience_index = AMBIENCE_DESERT
-	sound_environment = SOUND_ENVIRONMENT_QUARRY
-
-/area/outpost/exterior/rock/noweather
-	name = "Exterior"
-	icon_state = "blue"
-	ambience_index = AMBIENCE_DESERT
-	sound_environment = SOUND_ENVIRONMENT_QUARRY
-	allow_weather = FALSE
-
-/area/outpost/exterior/ocean
-	name = "Walkway"
-	sound_environment = SOUND_ENVIRONMENT_FOREST
-	ambience_index = AMBIENCE_BEACH
-
-// this might be redundant with /area/space/nearstation. unsure; use with caution?
 /area/outpost/external
 	name = "External"
 	icon_state = "space_near"
@@ -255,7 +236,6 @@
 	ambience_index = AMBIENCE_SPACE
 	sound_environment = SOUND_AREA_SPACE
 	allow_weather = TRUE
-
 
 /area/hangar
 	name = "Hangar"
@@ -269,3 +249,4 @@
 	power_equip = TRUE // provided begrudgingly, mostly for mappers
 	power_light = TRUE
 	power_environ = TRUE
+

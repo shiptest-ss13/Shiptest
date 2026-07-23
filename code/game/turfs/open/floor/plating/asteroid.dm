@@ -56,21 +56,6 @@
 		transform = translation
 		icon = smooth_icon
 
-	var/area/overmap_encounter/selected_area = get_area(src)
-	if(!istype(selected_area))
-		return
-
-	RegisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT, PROC_REF(get_light))
-	if(istype(selected_area))
-		light_range = selected_area.light_range
-		light_range = selected_area.light_range
-		light_power = selected_area.light_power
-		update_light()
-
-/turf/open/floor/plating/asteroid/Destroy()
-	. = ..()
-	UnregisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
-
 /// Drops itemstack when dug and changes icon
 /turf/open/floor/plating/asteroid/proc/getDug(no_dirt)
 	if(dug)
@@ -237,12 +222,6 @@
 
 /turf/open/floor/burn_tile()
 	return
-
-/turf/open/floor/plating/asteroid/proc/get_light(obj/item/source, target_light, target_power, target_color,)
-	light_range = target_light
-	light_power = target_power
-	light_color = target_color
-	update_light()
 
 /turf/open/floor/plating/asteroid/lowpressure
 	initial_gas_mix = OPENTURF_LOW_PRESSURE

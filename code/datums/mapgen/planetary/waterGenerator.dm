@@ -86,7 +86,7 @@
 	)
 
 /datum/biome/ocean/deep/waterplanet
-	open_turf_types = list(/turf/open/water/stormy_planet_lit = 1)
+	open_turf_types = list(/turf/open/water/stormy_planet_underground = 1)
 	mob_spawn_chance = 1.4
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/carp = 6,

@@ -13,6 +13,7 @@
 	log_world(message)
 
 	for(var/turf/gen_turf as anything in turfs)
+		postgen_check_turf(gen_turf)
 		gen_turf.AfterChange(CHANGETURF_IGNORE_AIR)
 
 		QUEUE_SMOOTH(gen_turf)
@@ -74,5 +75,11 @@
 /// Internal proc that actually adds objects to a turf passed to populate_turfs().
 /// Should never sleep.
 /datum/map_generator/proc/populate_turf(turf/gen_turf)
+	SHOULD_NOT_SLEEP(TRUE)
+	return
+
+/// Internal proc that actually adds objects to a turf passed to postgen_check_turf().
+/// Should never sleep.
+/datum/map_generator/proc/postgen_check_turf(turf/gen_turf)
 	SHOULD_NOT_SLEEP(TRUE)
 	return

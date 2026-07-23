@@ -75,23 +75,6 @@
 	UnregisterSignal(src, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON)
 	return ..()
 
-/turf/open/water/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	var/area/overmap_encounter/selected_area = get_area(src)
-	if(!istype(selected_area))
-		return
-
-	RegisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT, PROC_REF(get_light))
-	if(istype(selected_area))
-		light_range = selected_area.light_range
-		light_range = selected_area.light_range
-		light_power = selected_area.light_power
-		update_light()
-
-/turf/open/water/Destroy()
-	. = ..()
-	UnregisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
-
 /turf/open/water/examine(mob/user)
 	. = ..()
 	if(reagent_to_extract)
@@ -152,12 +135,6 @@
 
 /turf/open/water/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent) //water? wet? not in this economy.
 	return
-
-/turf/open/water/proc/get_light(obj/item/source, target_light, target_power, target_color,)
-	light_range = target_light
-	light_power = target_power
-	light_color = target_color
-	update_light()
 
 /turf/open/water/jungle
 	light_range = 2
