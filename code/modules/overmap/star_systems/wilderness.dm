@@ -12,12 +12,10 @@
 		"..burn bright, burn fast..",
 	)
 
+	size = 20
+	max_overmap_dynamic_events = 7
 	///Bool for if the system is unique, and should only be spawned once during overmap gen
 	var/unique_system = FALSE
-
-/datum/overmap_star_system/wilderness/create_map()
-	max_overmap_dynamic_events = CONFIG_GET(number/max_overmap_dynamic_events)
-	. = ..()
 
 /* to-do: heat signature
 /datum/overmap_star_system/wilderness/acid_nebula
