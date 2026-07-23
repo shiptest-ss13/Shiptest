@@ -532,6 +532,7 @@
 	name = "Ramzi Clique Doorkicker"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They rush at you to close any distance - wielding a thin, jet-black shotgun."
 	l_hand = /obj/item/gun/ballistic/shotgun/gaboon
+	projectilesound = 'sound/weapons/gun/shotgun/brimstone.ogg'
 	rapid = 1 //not exactly a bockadam is it now
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/gaboon/ballistic
