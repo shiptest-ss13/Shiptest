@@ -75,18 +75,21 @@
 	density = FALSE
 	///Connected processing unit
 	var/obj/machinery/mineral/processing_unit/machine
-	/// Direction for which console looks for stacking machine to connect to
-	var/machinedir = EAST
 	///Useless, kept to avoid maploading errors
 	var/input_dir = NORTH
 	var/output_dir = SOUTH
-	var/dist = 1
+	///Position of the smelter relative to the processing machine in tiles. Negative X is left, Positive X is to the right.
+	var/dx = 0
+	///Position of the smelter relative to the processing machine in tiles. Negative Y is down, Positive Y is up.
+	var/dy = 0
+	/// To help hook up to smelters on roundstart.
+	var/roundstart_id
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/processing_unit_console, 17)
 
 /obj/machinery/computer/processing_unit_console/Initialize()
 	. = ..()
-	machine = locate(/obj/machinery/mineral/processing_unit, get_ranged_target_turf(src, machinedir, dist))
+	machine = locate(/obj/machinery/mineral/processing_unit, get_offset_target_turf(src, dx, dy))
 	if (machine)
 		machine.CONSOLE = src
 

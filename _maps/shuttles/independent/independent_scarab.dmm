@@ -1446,11 +1446,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "rC" = (
-/obj/machinery/computer/processing_unit_console/directional/south{
-	machinedir = 6;
-	output_dir = 1
-	},
 /obj/effect/turf_decal/corner_techfloor_grid,
+/obj/machinery/computer/processing_unit_console/directional/south{
+	dx = 1;
+	dy = -1
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "rL" = (
