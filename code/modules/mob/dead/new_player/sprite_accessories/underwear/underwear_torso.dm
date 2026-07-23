@@ -157,7 +157,7 @@
 	icon_state = "turtle"
 
 /datum/sprite_accessory/undershirt/turtle_rearless
-	name = "Rearless Turtleneck"
+	name = "Backless Turtleneck"
 	icon_state = "turtle_rearless"
 
 /datum/sprite_accessory/undershirt/turtle_crop
