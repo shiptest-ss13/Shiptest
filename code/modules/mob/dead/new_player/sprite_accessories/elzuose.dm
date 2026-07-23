@@ -100,3 +100,27 @@
 /datum/sprite_accessory/tails_animated/elzu/stubby
 	name = "Stubby"
 	icon_state = "stubby"
+
+/datum/sprite_accessory/tails/elzu/curled
+	name = "Curled"
+	icon_state = "curled"
+
+/datum/sprite_accessory/tails_animated/elzu/curled
+	name = "Curled"
+	icon_state = "curled"
+
+/datum/sprite_accessory/tails/elzu/pine
+	name = "Pine"
+	icon_state = "pine"
+
+/datum/sprite_accessory/tails_animated/elzu/pine
+	name = "Pine"
+	icon_state = "pine"
+
+/datum/sprite_accessory/tails/elzu/medium
+	name = "Medium"
+	icon_state = "medium"
+
+/datum/sprite_accessory/tails_animated/elzu/medium
+	name = "Medium"
+	icon_state = "medium"
