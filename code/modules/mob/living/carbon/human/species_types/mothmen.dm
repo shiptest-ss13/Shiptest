@@ -80,7 +80,6 @@
 			H.dna.features["wings"] = "None"
 			handle_mutant_bodyparts(H)
 
-
 /datum/species/moth/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	if(chem.type == /datum/reagent/toxin/pestkiller)
 		H.adjustToxLoss(3 * REAGENTS_EFFECT_MULTIPLIER * seconds_per_tick)
