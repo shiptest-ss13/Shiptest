@@ -654,15 +654,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "gj" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -22;
-	pixel_y = -5
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "gs" = (
@@ -2178,9 +2174,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "xP" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /obj/structure/table/reinforced,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "ye" = (
@@ -2394,7 +2391,10 @@
 /area/ship/medical)
 "Ah" = (
 /obj/structure/table/reinforced,
-/obj/item/cutting_board,
+/obj/item/cutting_board{
+	pixel_x = 0;
+	pixel_y = -9
+	},
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_x = -23;
 	pixel_y = 10
@@ -2403,7 +2403,15 @@
 	pixel_x = -32;
 	pixel_y = -4
 	},
-/obj/item/melee/knife/kitchen,
+/obj/item/melee/knife/kitchen{
+	pixel_x = 5;
+	pixel_y = -7
+	},
+/obj/structure/sink/counter{
+	pixel_x = -4;
+	pixel_y = 6;
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "Av" = (
