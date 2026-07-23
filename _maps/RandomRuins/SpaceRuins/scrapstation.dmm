@@ -2835,7 +2835,10 @@
 /obj/machinery/door/window/southleft{
 	dir = 4
 	},
-/obj/machinery/computer/processing_unit_console/directional/north,
+/obj/machinery/computer/processing_unit_console/directional/north{
+	dy = -3;
+	dx = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
 "pX" = (

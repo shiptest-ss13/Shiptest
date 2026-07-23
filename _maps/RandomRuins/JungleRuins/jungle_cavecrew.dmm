@@ -1418,11 +1418,10 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
-/obj/machinery/computer/processing_unit_console/directional/north{
-	machinedir = 2;
-	output_dir = 4
-	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter,
+/obj/machinery/computer/processing_unit_console/directional/north{
+	dy = 3
+	},
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/engineering)
 "jF" = (

@@ -652,16 +652,16 @@
 /obj/structure/cable/white{
 	icon_state = "1-2"
 	},
-/obj/machinery/computer/processing_unit_console/directional/west{
-	machinedir = 10;
-	dist = 2
-	},
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_x = -20;
 	pixel_y = 14;
 	id = "ns_starboard_refinery";
 	name = "Refinery Shutters"
+	},
+/obj/machinery/computer/processing_unit_console/directional/west{
+	dy = -2;
+	dx = -2
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/starboard)
@@ -2768,10 +2768,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/machinery/computer/processing_unit_console/directional/west{
-	machinedir = 9;
-	dist = 2
-	},
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_x = -20;
@@ -2781,6 +2777,10 @@
 	},
 /obj/structure/cable/white{
 	icon_state = "1-2"
+	},
+/obj/machinery/computer/processing_unit_console/directional/west{
+	dy = 2;
+	dx = -2
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)

@@ -486,12 +486,6 @@
 	dir = 1;
 	color = "#eeac2e"
 	},
-/obj/machinery/computer/processing_unit_console/directional/north{
-	dist = 2;
-	pixel_x = 32;
-	pixel_y = 18;
-	machinedir = 1
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
 "ez" = (
@@ -5331,6 +5325,10 @@
 	pixel_x = -13;
 	pixel_y = 12;
 	id = "derecho_conveyor"
+	},
+/obj/machinery/computer/processing_unit_console/directional/north{
+	dx = -1;
+	dy = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)

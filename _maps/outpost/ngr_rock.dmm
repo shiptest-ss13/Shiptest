@@ -1682,11 +1682,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/computer/processing_unit_console/directional/north{
-	machinedir = 1;
-	pixel_x = 32;
-	pixel_y = 17
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
 	},
@@ -5982,6 +5977,10 @@
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
+	},
+/obj/machinery/computer/processing_unit_console/directional/north{
+	dy = 1;
+	dx = -1
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
