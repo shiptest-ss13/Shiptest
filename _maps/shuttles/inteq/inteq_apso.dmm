@@ -107,9 +107,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/machinery/computer/helm/viewscreen/directional/north{
-	pixel_x = 5
-	},
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -603,7 +601,11 @@
 	pixel_x = 21;
 	dir = 8;
 	id = "aspo_canteen_window";
-	name = "Window Control"
+	name = "Window Control";
+	pixel_y = -10
+	},
+/obj/item/radio/intercom/directional/east{
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -772,11 +774,7 @@
 	pixel_y = -12
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/radio/intercom/directional/north,
-/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north{
-	pixel_x = 0;
-	pixel_y = 38
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "nm" = (
