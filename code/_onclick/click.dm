@@ -161,6 +161,9 @@
 
 	//Standard reach turf to turf or reaching inside storage
 	if(CanReach(A, W))
+		//WS edit - Swingable objects
+		if(W?.swing_type && a_intent != INTENT_HELP)
+			W.swing_attack(src, A)
 		if(W)
 			W.melee_attack_chain(src, A, params)
 		else
@@ -196,7 +199,7 @@
  * A backwards depth-limited breadth-first-search to see if the target is
  * logically "in" anything adjacent to us.
  */
-/atom/movable/proc/CanReach(atom/ultimate_target, obj/item/tool, view_only = FALSE)
+/atom/movable/proc/CanReach(atom/ultimate_target, obj/item/tool, view_only = FALSE, reach_multiplier = 1)
 	var/list/direct_access = DirectAccess()
 	var/depth = 1 + (view_only ? STORAGE_VIEW_DEPTH : INVENTORY_DEPTH)
 
@@ -212,7 +215,7 @@
 			closed[target] = TRUE
 
 			if(isturf(target) || isturf(target.loc) || (target in direct_access) || (ismovable(target) && target.flags_1 & IS_ONTOP_1)) //Directly accessible atoms
-				if(Adjacent(target) || (tool && CheckToolReach(src, target, tool.reach))) //Adjacent or reaching attacks
+				if(Adjacent(target) || (tool && CheckToolReach(src, target, tool.reach * reach_multiplier))) //Adjacent or reaching attacks
 					return TRUE
 
 			if(!target.loc)

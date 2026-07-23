@@ -19,6 +19,7 @@
 	force = 15 //Smashing bottles over someone's head hurts.
 	throwforce = 15
 	item_state = "glassbottle"
+	swing_type = SWINGABLE_SWING
 
 	lefthand_file = 'icons/obj/drinks/bottle_lefthand.dmi'
 	righthand_file = 'icons/obj/drinks/bottle_righthand.dmi'
@@ -122,6 +123,7 @@
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
+	swing_type = SWINGABLE_STAB
 	w_class = WEIGHT_CLASS_TINY
 	item_state = "glassbottle"
 	hitsound = 'sound/weapons/bladeslice.ogg'

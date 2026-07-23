@@ -226,6 +226,13 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 //We will round to this value in damage calculations.
 #define DAMAGE_PRECISION 0.1
 
+#define SWINGABLE_STAB "stab"
+#define SWINGABLE_SWING "swing"
+#define SWINGABLE_FLAIL "flail"
+#define SWINGABLE_THRUST "thrust"
+#define SWINGABLE_CLEAVE "cleave"
+
+#define SWING_COOLDOWN_TIME 1 SECONDS
 /// Calls the effects of flashes. Screen overlays and such.
 #define FLASH_EFFECT (1<<0)
 /// Whether the flash should cause eye damage.

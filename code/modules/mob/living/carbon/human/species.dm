@@ -1662,7 +1662,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if("disarm")
 			disarm(M, H, attacker_style)
 
-/datum/species/proc/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)
+/datum/species/proc/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H, modifier = 1)
 	// Allows you to put in item-specific reactions based on species
 	if(user != H)
 		if(H.check_shields(I, I.force, "the [I.name]", MELEE_ATTACK, I.armour_penetration))
@@ -1689,7 +1689,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	H.send_item_attack_message(I, user, hit_area, affecting)
 	var/attack_direction = get_dir(user, H)
-	apply_damage(I.force , I.damtype, def_zone, armor_block, H, wound_bonus = Iwound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness(), attack_direction = attack_direction)
+	apply_damage(I.force * modifier, I.damtype, def_zone, armor_block, H, wound_bonus = Iwound_bonus * modifier, bare_wound_bonus = I.bare_wound_bonus * modifier, sharpness = I.get_sharpness(), attack_direction = attack_direction)
 
 	if(!I.force)
 		return 0 //item force is zero

@@ -48,7 +48,7 @@
 	playsound(user, 'sound/magic/clockwork/fellowship_armory.ogg', 35, TRUE, frequency = 90000 - (active * 30000))
 	return COMPONENT_NO_DEFAULT_MESSAGE
 
-/obj/item/melee/cleaving_saw/melee_attack_chain(mob/user, atom/target, params)
+/obj/item/melee/cleaving_saw/melee_attack_chain(mob/user, atom/target, params, modifier = 1)
 	. = ..()
 	if(!HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		user.changeNext_move(CLICK_CD_MELEE * 0.5) //when closed, it attacks very rapidly

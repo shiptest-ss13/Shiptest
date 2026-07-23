@@ -225,7 +225,13 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	var/canMouseDown = FALSE
 
+	///If the item can be swung to attack stuff
+	var/swing_type
+
+	/// What sound do we use when swinging?
+	var/swing_sfx = 'sound/weapons/punchmiss.ogg'
 	var/attack_cooldown = CLICK_CD_MELEE
+	var/swing_attack_cooldown = CLICK_CD_MELEE
 
 	/// Has the item been reskinned?
 	var/current_skin

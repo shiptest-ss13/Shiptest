@@ -16,7 +16,9 @@
 	throw_range = 6
 	custom_materials = list(/datum/material/iron=12000)
 	attack_cooldown = LIGHT_WEAPON_CD
+	swing_attack_cooldown = LIGHT_WEAPON_CD
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	swing_type = SWINGABLE_STAB
 	sharpness = SHARP_POINTY
 	wound_bonus = 15
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
@@ -87,6 +89,7 @@
 	throwforce = 10
 	custom_materials = list(/datum/material/iron=18000)
 	attack_cooldown = CLICK_CD_MELEE
+	swing_attack_cooldown = CLICK_CD_MELEE
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_price = 600

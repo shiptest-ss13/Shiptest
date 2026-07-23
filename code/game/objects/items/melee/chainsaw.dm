@@ -17,6 +17,8 @@
 	throw_range = 4
 	custom_materials = list(/datum/material/iron=13000)
 	attack_cooldown = HEAVY_WEAPON_CD
+	swing_attack_cooldown = HEAVY_WEAPON_CD
+	swing_type = SWINGABLE_SWING
 	attack_verb = list("sawed", "tore", "lacerated", "cut", "chopped", "diced")
 	hitsound = "swing_hit"
 	sharpness = SHARP_EDGED
