@@ -308,15 +308,13 @@
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/westbay)
 "bA" = (
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/porta_turret/ruin/burst{
 	faction = list("hermit","turret");
 	dir = 6
 	},
 /turf/open/floor/plating/wasteplanet/lit,
-/area/ruin/wasteplanet/facility/eastbay)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "bE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
@@ -621,9 +619,7 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/facility/crew)
 "dv" = (
@@ -706,9 +702,7 @@
 	dir = 1
 	},
 /obj/structure/barricade/wooden/crude,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "2-9"
@@ -1266,9 +1260,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility)
@@ -1370,9 +1362,7 @@
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility)
 "iC" = (
@@ -1582,9 +1572,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/mining,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/facility/southwing)
@@ -2313,9 +2301,7 @@
 "oU" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
@@ -2760,9 +2746,7 @@
 /turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "sL" = (
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner_techfloor_gray,
 /obj/machinery/suit_storage_unit/engine,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility/northwing)
@@ -2835,9 +2819,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility/northwing)
 "tf" = (
-/obj/structure/platform/corner{
-	dir = 2
-	},
+/obj/structure/platform/corner,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/salvageable/computer{
 	anchored = 0;
@@ -3001,9 +2983,7 @@
 "tX" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
@@ -3249,9 +3229,7 @@
 /area/ruin/wasteplanet/facility/northwing)
 "vW" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer2,
 /obj/machinery/light/small/directional/east,
 /obj/structure/cable{
@@ -3270,9 +3248,7 @@
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/facility/northwing)
 "wf" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 4
 	},
@@ -4090,7 +4066,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/wasteplanet/rust/lit,
-/area/ruin/wasteplanet/facility/westbay)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Al" = (
 /turf/closed/mineral/random/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -4196,9 +4172,7 @@
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/airlock/public/glass,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
@@ -4344,9 +4318,7 @@
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/white/end{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/white/end,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/facility/northwing)
 "Ch" = (
@@ -4382,9 +4354,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "CB" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/disposalpipe/segment{
 	dir = 5
@@ -4395,9 +4365,7 @@
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -4484,9 +4452,7 @@
 	pixel_x = 8;
 	pixel_y = -12
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility/southwing)
@@ -4565,7 +4531,7 @@
 	layer = 3.1
 	},
 /turf/open/floor/plating/wasteplanet/rust/lit,
-/area/ruin/wasteplanet/facility/northwing)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "DC" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 8
@@ -5020,7 +4986,7 @@
 	dir = 5
 	},
 /turf/open/floor/plating/wasteplanet/lit,
-/area/ruin/wasteplanet/facility/eastbay)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "GJ" = (
 /obj/structure/closet/crate/bin{
 	pixel_y = 4
@@ -5114,9 +5080,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
@@ -5206,15 +5170,13 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility/westbay)
 "Im" = (
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/porta_turret/ruin/burst{
 	faction = list("hermit","turret");
 	dir = 10
 	},
 /turf/open/floor/plating/wasteplanet/lit,
-/area/ruin/wasteplanet/facility/westbay)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Io" = (
 /obj/structure/closet/wardrobe/mixed{
 	name = "custodial wardrobe";
@@ -5312,7 +5274,7 @@
 	layer = 3.1
 	},
 /turf/open/floor/plating/wasteplanet/rust/lit,
-/area/ruin/wasteplanet/facility/northwing)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "IR" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/corner_techfloor_gray{
@@ -5572,9 +5534,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "KA" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
@@ -6056,7 +6016,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/wasteplanet/rust/lit,
-/area/ruin/wasteplanet/facility/eastbay)
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "MS" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
@@ -6226,9 +6186,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/girder/displaced,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
@@ -6375,9 +6333,7 @@
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/facility/eastbay)
 "Pe" = (
-/obj/structure/platform/corner{
-	dir = 2
-	},
+/obj/structure/platform/corner,
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/eastbay)
 "Pj" = (
@@ -6998,9 +6954,7 @@
 /area/ruin/wasteplanet/facility/eastbay)
 "SC" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
@@ -7266,9 +7220,7 @@
 /area/ruin/wasteplanet/facility/southwing)
 "TX" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
@@ -7469,9 +7421,7 @@
 "Vj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility/northwing)
@@ -7480,9 +7430,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -7536,9 +7484,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/facility/northwing)
@@ -8063,9 +8009,7 @@
 "YV" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
