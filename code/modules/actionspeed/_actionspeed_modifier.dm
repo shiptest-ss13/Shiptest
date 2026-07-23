@@ -31,8 +31,8 @@ can next move
 	var/priority = 0
 	var/flags = NONE
 
-	/// The actionspeed reduction associated with the datum
-	var/actionspeed_slowdown = 0
+	/// Multiplicative slowdown
+	var/multiplicative_slowdown = 0
 
 	/// Other modification datums this conflicts with.
 	var/conflicts_with
@@ -99,7 +99,7 @@ GLOBAL_LIST_EMPTY(actionspeed_modification_cache)
 	4. If any of the rest of the args are not null (see: multiplicative slowdown), modify the datum
 	5. Update if necessary
 */
-/mob/proc/add_or_update_variable_actionspeed_modifier(datum/actionspeed_modifier/type_id_datum, update = TRUE, actionspeed_slowdown)
+/mob/proc/add_or_update_variable_actionspeed_modifier(datum/actionspeed_modifier/type_id_datum, update = TRUE, multiplicative_slowdown)
 	var/modified = FALSE
 	var/inject = FALSE
 	var/datum/actionspeed_modifier/final
@@ -122,8 +122,8 @@ GLOBAL_LIST_EMPTY(actionspeed_modification_cache)
 		if(!LAZYACCESS(actionspeed_modification, final.id))
 			inject = TRUE
 			modified = TRUE
-	if(!isnull(actionspeed_slowdown))
-		final.actionspeed_slowdown = actionspeed_slowdown
+	if(!isnull(multiplicative_slowdown))
+		final.multiplicative_slowdown = multiplicative_slowdown
 		modified = TRUE
 	if(inject)
 		add_actionspeed_modifier(final, FALSE)
@@ -149,7 +149,7 @@ GLOBAL_LIST_EMPTY(actionspeed_modification_cache)
 	for(var/key in get_actionspeed_modifiers())
 		var/datum/actionspeed_modifier/M = actionspeed_modification[key]
 		var/conflict = M.conflicts_with
-		var/amt = M.actionspeed_slowdown
+		var/amt = M.multiplicative_slowdown
 		if(conflict)
 			// Conflicting modifiers prioritize the larger slowdown or the larger speedup
 			// We purposefuly don't handle mixing speedups and slowdowns on the same id
@@ -162,7 +162,7 @@ GLOBAL_LIST_EMPTY(actionspeed_modification_cache)
 
 ///Adds a default action speed
 /mob/proc/initialize_actionspeed()
-	add_or_update_variable_actionspeed_modifier(/datum/actionspeed_modifier/base, actionspeed_slowdown = 1)
+	add_or_update_variable_actionspeed_modifier(/datum/actionspeed_modifier/base, multiplicative_slowdown = 1)
 
 /// Get the action speed modifiers list of the mob
 /mob/proc/get_actionspeed_modifiers()
@@ -172,4 +172,4 @@ GLOBAL_LIST_EMPTY(actionspeed_modification_cache)
 
 /// Checks if a action speed modifier is valid and not missing any data
 /proc/actionspeed_data_null_check(datum/actionspeed_modifier/M)		//Determines if a data list is not meaningful and should be discarded.
-	. = !(M.actionspeed_slowdown)
+	. = !(M.multiplicative_slowdown)
