@@ -599,6 +599,17 @@
 	visible_to_network = FALSE
 	admin_fax_id = "warra"
 
+/obj/machinery/fax/admin/n_s
+	name = "N+S Fax Machine"
+	fax_name = "N+S Logistics Command"
+	admin_fax_id = "n_s"
+
+/obj/machinery/fax/admin/vi
+	name = "Central Command Fax Machine"
+	fax_name = "Viligitas Interstellar High Command"
+	visible_to_network = FALSE
+	admin_fax_id = "vi"
+
 /obj/machinery/fax/admin/outpost
 	name = "Outpost Fax Machine"
 	fax_name = "Outpost Authority"
