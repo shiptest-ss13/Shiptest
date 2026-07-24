@@ -83,6 +83,15 @@
 	M.buckling = null
 	M.set_buckled(src)
 	M.setDir(dir)
+
+	if(iskepori(M)) // flip kepori so they aren't vertical on a horizontal bed
+		if(dir & NORTH)
+			M.setDir(EAST)
+		else if(dir & SOUTH)
+			M.setDir(WEST)
+		M.set_lying_angle(180)
+		M.pixel_x = 8
+
 	buckled_mobs |= M
 	M.throw_alert("buckled", /atom/movable/screen/alert/restrained/buckled)
 	M.set_glide_size(glide_size)
