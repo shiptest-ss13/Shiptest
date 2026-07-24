@@ -84,5 +84,6 @@
 	base_icon_state = "frontiersmen_axe"
 	force_wielded = 60
 	attack_cooldown = HEAVY_WEAPON_CD
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	wound_bonus = 10
 	armour_penetration = 20
