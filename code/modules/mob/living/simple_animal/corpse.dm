@@ -440,22 +440,22 @@
 /obj/effect/mob_spawn/human/corpse/inteq/medic
 	name = "IRMG Corpsman"
 	id_job = "Corpsman"
-	outfit = /datum/outfit/job/inteq/paramedic
+	outfit = /datum/outfit/job/inteq/paramedic/equipped
 
 /obj/effect/mob_spawn/human/corpse/inteq/enforcer
 	name = "IRMG Enforcer"
 	id_job = "Enforcer"
-	outfit = /datum/outfit/job/inteq/security
+	outfit = /datum/outfit/job/inteq/security/equipped
 
 /obj/effect/mob_spawn/human/corpse/inteq/vanguard
 	name = "IRMG Vanguard"
 	id_job = "Vanguard"
-	outfit = /datum/outfit/job/inteq/captain
+	outfit = /datum/outfit/job/inteq/command/captain/equipped
 
 /obj/effect/mob_spawn/human/corpse/inteq/artificer
 	name = "IRMG Artificer"
 	id_job = "Artificer"
-	outfit = /datum/outfit/job/inteq/engineer
+	outfit = /datum/outfit/job/inteq/engineer/equipped
 
 /* SRM */
 
