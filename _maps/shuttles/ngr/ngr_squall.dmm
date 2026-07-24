@@ -90,15 +90,12 @@
 	pixel_y = 1
 	},
 /obj/item/roller{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /obj/item/clothing/gloves/nitrile/evil{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /obj/item/reagent_containers/syringe,
@@ -205,9 +202,7 @@
 	anchored = 1
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable/yellow{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/yellow,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "dI" = (
@@ -230,7 +225,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/closet/wall/directional/south,
 /obj/item/soap{
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /obj/item/towel{
@@ -342,6 +336,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/emergency_panel,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "gr" = (
@@ -508,7 +503,6 @@
 	dir = 9
 	},
 /obj/structure/chair/handrail{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -647,7 +641,6 @@
 /obj/structure/filingcabinet/double/grey{
 	dir = 4;
 	pixel_x = -9;
-	pixel_y = 0;
 	density = 0
 	},
 /obj/item/folder,
@@ -687,15 +680,12 @@
 	populate = 0
 	},
 /obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = 9;
-	pixel_y = 0
+	pixel_x = 9
 	},
 /obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/item/reagent_containers/condiment/rice{
@@ -743,7 +733,6 @@
 /obj/item/reagent_containers/condiment/milk,
 /obj/item/storage/fancy/egg_box,
 /obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /turf/open/floor/plasteel,
@@ -768,10 +757,7 @@
 	icon_state = "computer-left";
 	dir = 4
 	},
-/obj/item/radio/intercom/directional/west{
-	pixel_x = -31;
-	pixel_y = 0
-	},
+/obj/item/radio/intercom/directional/west,
 /obj/effect/turf_decal/corner/transparent/black/full,
 /obj/effect/turf_decal/corner/opaque/red/half{
 	dir = 4
@@ -969,9 +955,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "so" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 2
-	},
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "sY" = (
@@ -1008,11 +992,9 @@
 "te" = (
 /obj/structure/table/reinforced,
 /obj/item/gun_maint_kit{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/item/gun_maint_kit{
-	pixel_x = 0;
 	pixel_y = -6
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -1044,12 +1026,10 @@
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = 6;
-	pixel_y = 32
+	pixel_x = 6
 	},
 /obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = -6;
-	pixel_y = 23
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -1138,9 +1118,7 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "wQ" = (
@@ -1162,12 +1140,10 @@
 	name = "Gideon"
 	},
 /obj/machinery/firealarm/directional/south{
-	pixel_x = 6;
-	pixel_y = -32
+	pixel_x = 6
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = -6;
-	pixel_y = -23
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
@@ -1176,7 +1152,6 @@
 /obj/structure/table/reinforced,
 /obj/structure/sink/kitchen/counter{
 	dir = 1;
-	pixel_x = 0;
 	pixel_y = 13
 	},
 /turf/open/floor/plasteel,
@@ -1234,7 +1209,6 @@
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/west{
-	pixel_x = -31;
 	pixel_y = 4;
 	freqlock = 1;
 	frequency = 1205;
@@ -1242,7 +1216,6 @@
 	freerange = 1
 	},
 /obj/item/radio/intercom/directional/west{
-	pixel_x = -31;
 	pixel_y = -14
 	},
 /obj/effect/turf_decal/corner/transparent/black/full,
@@ -1332,7 +1305,6 @@
 "zs" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/corner/opaque/red/border{
-	dir = 2;
 	layer = 2.040
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1640,7 +1612,6 @@
 	},
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/corner/opaque/red/border{
-	dir = 2;
 	layer = 2.040
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -1689,11 +1660,8 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/closet/crate/secure/plasma,
 /obj/item/stack/sheet/mineral/plasma/ten,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/button/door{
-	pixel_x = 0;
 	pixel_y = -21;
 	name = "window control";
 	id = "squallengine";
@@ -2017,8 +1985,7 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband/table{
 	dir = 4;
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2059,8 +2026,7 @@
 	pixel_y = 4
 	},
 /obj/item/radio/headset{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
@@ -2106,20 +2072,16 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/light/directional/east,
 /obj/item/stack/sheet/metal/twenty{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/item/stack/sheet/glass/twenty{
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /obj/item/stack/sheet/plastic/five,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Lr" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -2400,7 +2362,6 @@
 	pixel_y = 7
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = -3
 	},
 /turf/open/floor/plasteel/tech,
@@ -2449,8 +2410,7 @@
 	},
 /obj/item/clothing/head/ngr,
 /obj/machinery/firealarm/directional/west{
-	pixel_y = 8;
-	pixel_x = -32
+	pixel_y = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_x = -26;
@@ -2482,7 +2442,6 @@
 /obj/item/clothing/mask/gas/syndicate,
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/corner/opaque/red/border{
-	dir = 2;
 	layer = 2.040
 	},
 /obj/machinery/suit_storage_unit/inherit/locked{
@@ -2566,7 +2525,6 @@
 	pixel_y = -5
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = 9
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -2789,12 +2747,10 @@
 	pixel_y = -19
 	},
 /obj/machinery/firealarm/directional/south{
-	pixel_x = 11;
-	pixel_y = -32
+	pixel_x = 11
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = -2;
-	pixel_y = -23
+	pixel_x = -2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2816,9 +2772,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "TS" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -2881,12 +2835,10 @@
 	icon_state = "4-8"
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = 6;
-	pixel_y = -23
+	pixel_x = 6
 	},
 /obj/machinery/firealarm/directional/south{
-	pixel_x = -6;
-	pixel_y = -32
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
@@ -3136,12 +3088,10 @@
 	pixel_y = -1
 	},
 /obj/item/plate/large{
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /obj/item/plate{
-	pixel_x = 3;
-	pixel_y = 0
+	pixel_x = 3
 	},
 /obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel,

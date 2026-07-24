@@ -11,6 +11,8 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	clicksound = "terminal_type"
 	use_power = NO_POWER_USE // signal distress regardless of power
+	plane = FLOOR_PLANE
+	layer = LOW_OBJ_LAYER
 
 	// inserted ship key
 	var/obj/item/key/ship/ship_key
@@ -74,6 +76,7 @@
 		ship_key = key
 	else
 		. = ..()
+	update_appearance()
 
 /obj/machinery/emergency_panel/attack_hand(mob/living/user)
 	. = ..()

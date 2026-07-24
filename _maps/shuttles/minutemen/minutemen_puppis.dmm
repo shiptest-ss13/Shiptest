@@ -32,8 +32,7 @@
 /area/ship/medical)
 "ah" = (
 /obj/item/radio/intercom/directional/west{
-	pixel_y = -1;
-	pixel_x = -31
+	pixel_y = -1
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -1109,7 +1108,6 @@
 	},
 /obj/item/radio/intercom/directional/north,
 /obj/machinery/computer/security/telescreen/entertainment/wall/directional/north{
-	pixel_x = 0;
 	pixel_y = 39
 	},
 /turf/open/floor/plasteel/dark,
@@ -1436,6 +1434,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/emergency_panel/dark,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "oz" = (
