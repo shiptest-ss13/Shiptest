@@ -86,7 +86,7 @@
 	outfit = /datum/outfit/frontier/hullpiercer
 
 /datum/outfit/frontier/hullpiercer
-	name = "Frontiersman Armored Corpse"
+	name = "Frontiersman Hullpiercer Corpse"
 	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 	head = /obj/item/clothing/head/helmet/frontier
 	mask = /obj/item/clothing/mask/gas/frontiersmen
