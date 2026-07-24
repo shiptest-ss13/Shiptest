@@ -447,6 +447,11 @@
 	glasses = null
 	gloves = null
 
+/datum/outfit/job/syndicate/head_of_personnel/ngr/stripped
+	name = "Syndicate - Ensign - Stripped (NGR)"
+	suit = null
+	head = null
+
 /datum/outfit/job/syndicate/head_of_personnel/suns
 	name = "Syndicate - Academic Staff (SUNS)"
 	id_assignment = "Academic Staff"

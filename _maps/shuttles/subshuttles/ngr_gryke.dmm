@@ -1,0 +1,291 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"c" = (
+/obj/machinery/porta_turret/ship/ngr/light{
+	dir = 6;
+	id = "grykegrid"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"e" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/telecomms/relay/preset/ngr,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"h" = (
+/turf/template_noop,
+/area/ship/bridge)
+"k" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/machinery/door/airlock/maintenance/external/glass{
+	dir = 4;
+	req_ship_access = 0;
+	name = "Cockpit";
+	id_tag = "karst_cockpit";
+	req_access = list(1)
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"l" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 2
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "karstcharger"
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"n" = (
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"o" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"t" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shuttle/engine/electric,
+/obj/structure/window/plasma/reinforced,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/bridge)
+"u" = (
+/obj/structure/grille,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"v" = (
+/obj/machinery/porta_turret/ship/ngr/light{
+	dir = 5;
+	id = "grykegrid"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"z" = (
+/obj/machinery/light/floor{
+	icon_state = "floor-on"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/bridge)
+"D" = (
+/obj/structure/chair/handrail{
+	dir = 8
+	},
+/turf/template_noop,
+/area/ship/bridge)
+"F" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"I" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/power/smes/engineering{
+	input_level = 10000
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"M" = (
+/obj/machinery/power/shuttle/engine/electric{
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/bridge)
+"N" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"Q" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"S" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "karstcharger"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"U" = (
+/obj/docking_port/mobile{
+	dir = 4;
+	launch_status = 0;
+	port_direction = 2;
+	preferred_direction = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"V" = (
+/turf/template_noop,
+/area/template_noop)
+"Y" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+
+(1,1,1) = {"
+V
+z
+Y
+U
+o
+Y
+z
+V
+"}
+(2,1,1) = {"
+V
+M
+Y
+h
+h
+Y
+t
+V
+"}
+(3,1,1) = {"
+Y
+l
+a
+h
+h
+a
+S
+Y
+"}
+(4,1,1) = {"
+Y
+I
+h
+h
+h
+h
+e
+Y
+"}
+(5,1,1) = {"
+Y
+h
+h
+h
+h
+h
+h
+Y
+"}
+(6,1,1) = {"
+N
+h
+h
+D
+D
+h
+h
+N
+"}
+(7,1,1) = {"
+Y
+Y
+Y
+F
+F
+k
+Y
+Y
+"}
+(8,1,1) = {"
+V
+Y
+h
+h
+h
+h
+Y
+V
+"}
+(9,1,1) = {"
+n
+Q
+Y
+h
+h
+Q
+Y
+n
+"}
+(10,1,1) = {"
+n
+v
+Y
+Y
+Y
+Y
+c
+n
+"}
+(11,1,1) = {"
+V
+n
+Y
+u
+u
+Y
+n
+V
+"}
