@@ -936,28 +936,6 @@
 		M.drowsyness = max(M.drowsyness, 3)
 	..()
 
-/datum/reagent/nanomachines
-	name = "Nanomachines"
-	description = "Microscopic construction robots."
-	color = "#535E66" // rgb: 83, 94, 102
-	can_synth = FALSE
-	taste_description = "sludge"
-
-/datum/reagent/nanomachines/expose_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
-	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
-		L.ForceContractDisease(new /datum/disease/transformation/robot(), FALSE, TRUE)
-
-/datum/reagent/xenomicrobes
-	name = "Xenomicrobes"
-	description = "Microbes with an entirely alien cellular structure."
-	color = "#535E66" // rgb: 83, 94, 102
-	can_synth = FALSE
-	taste_description = "sludge"
-
-/datum/reagent/xenomicrobes/expose_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
-	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
-		L.ForceContractDisease(new /datum/disease/transformation/xeno(), FALSE, TRUE)
-
 /datum/reagent/fungalspores
 	name = "Tubercle bacillus Cosmosis microbes"
 	description = "Active fungal spores."

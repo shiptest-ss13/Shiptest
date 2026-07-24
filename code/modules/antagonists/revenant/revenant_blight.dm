@@ -6,7 +6,7 @@
 	cure_text = "Holy water or extensive rest."
 	spread_text = "A burst of unholy energy"
 	cures = list(/datum/reagent/water/holywater)
-	cure_chance = 50 //higher chance to cure, because revenants are assholes
+	cure_chance = 30 //higher chance to cure, because revenants are assholes
 	agent = "Unholy Forces"
 	viable_mobtypes = list(/mob/living/carbon/human)
 	disease_flags = CURABLE
@@ -24,9 +24,9 @@
 		to_chat(affected_mob, span_notice("You feel better."))
 	..()
 
-/datum/disease/revblight/stage_act()
+/datum/disease/revblight/stage_act(seconds_per_tick, times_fired)
 	if(!finalstage)
-		if(affected_mob.body_position == LYING_DOWN && prob(stage * 6))
+		if(affected_mob.body_position == LYING_DOWN && SPT_PROB(3 * stage, seconds_per_tick))
 			cure()
 			return
 		if(prob(stage*3))
@@ -36,26 +36,26 @@
 			new /obj/effect/temp_visual/revenant(affected_mob.loc)
 		if(stagedamage < stage)
 			stagedamage++
-			affected_mob.adjustToxLoss(stage*2) //should, normally, do about 30 toxin damage.
+			affected_mob.adjustToxLoss(1 * stage * seconds_per_tick, FALSE) //should, normally, do about 30 toxin damage.
 			new /obj/effect/temp_visual/revenant(affected_mob.loc)
-		if(prob(45))
+		if(SPT_PROB(25, seconds_per_tick))
 			affected_mob.adjustStaminaLoss(stage)
 	..() //So we don't increase a stage before applying the stage damage.
 	switch(stage)
 		if(2)
-			if(prob(5))
+			if(SPT_PROB(2.5, seconds_per_tick))
 				affected_mob.emote("pale")
 		if(3)
-			if(prob(10))
+			if(SPT_PROB(5, seconds_per_tick))
 				affected_mob.emote(pick("pale","shiver"))
 		if(4)
-			if(prob(15))
+			if(SPT_PROB(7.5, seconds_per_tick))
 				affected_mob.emote(pick("pale","shiver","cries"))
 		if(5)
 			if(!finalstage)
 				finalstage = TRUE
 				to_chat(affected_mob, span_revenbignotice("You feel like [pick("nothing's worth it anymore", "nobody ever needed your help", "nothing you did mattered", "everything you tried to do was worthless")]."))
-				affected_mob.adjustStaminaLoss(45)
+				affected_mob.adjustStaminaLoss(22.5 * seconds_per_tick, FALSE)
 				new /obj/effect/temp_visual/revenant(affected_mob.loc)
 				if(affected_mob.dna && affected_mob.dna.species)
 					affected_mob.dna.species.handle_mutant_bodyparts(affected_mob,"#1d2953")

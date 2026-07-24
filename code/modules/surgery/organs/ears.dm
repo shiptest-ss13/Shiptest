@@ -27,7 +27,7 @@
 	// Multiplier for both long term and short term ear damage
 	var/damage_multiplier = 1
 
-/obj/item/organ/ears/on_life()
+/obj/item/organ/ears/on_life(seconds_per_tick, times_fired)
 	if(!iscarbon(owner))
 		return
 	..()
@@ -36,8 +36,8 @@
 	if(HAS_TRAIT(C, TRAIT_DEAF))
 		deaf = max(deaf, 1)
 	else if(!(organ_flags & ORGAN_FAILING)) // if this organ is failing, do not clear deaf stacks.
-		deaf = max(deaf - 1, 0)
-		if(prob(damage / 30) && (damage > low_threshold))
+		deaf = max(deaf - (0.5 * seconds_per_tick), 0)
+		if((damage > low_threshold) && SPT_PROB(damage / 30, seconds_per_tick))
 			adjustEarDamage(0, 4)
 			SEND_SOUND(C, sound('sound/weapons/flash_ring.ogg'))
 			to_chat(C, span_warning("The ringing in your ears grows louder, blocking out any external noises for a moment."))

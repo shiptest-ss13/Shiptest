@@ -2015,10 +2015,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/range)
-"md" = (
-/obj/item/paper/fluff/ship/pgf/lifesaving,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/security)
 "mh" = (
 /obj/structure/railing{
 	dir = 8
@@ -2923,10 +2919,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
-"qx" = (
-/obj/item/paper/fluff/ship/pgf/lifesaving,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/toilet)
 "qH" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -3067,10 +3059,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
-"rE" = (
-/obj/item/paper/fluff/ship/pgf/lifesaving,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/medical)
 "rJ" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -5575,13 +5563,6 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
-"EQ" = (
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 4
-	},
-/obj/item/paper/fluff/ship/pgf/lifesaving,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/security)
 "ER" = (
 /obj/machinery/shower{
 	dir = 4
@@ -7313,6 +7294,9 @@
 	dir = 5
 	},
 /obj/machinery/light/directional/north,
+/obj/structure/chair/handrail{
+	dir = 2
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge/cool)
 "Ot" = (
@@ -10290,7 +10274,7 @@ jE
 jE
 Bq
 Bv
-rE
+ww
 aI
 Kk
 QW
@@ -10325,8 +10309,8 @@ ww
 dg
 Ds
 WY
-EQ
-md
+WY
+cZ
 Ho
 yD
 Xd
@@ -10358,8 +10342,8 @@ gU
 Da
 er
 Eo
-qx
-qx
+Eo
+Eo
 Eo
 cZ
 cZ
