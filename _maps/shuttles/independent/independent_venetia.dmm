@@ -1273,26 +1273,6 @@
 	pixel_x = 4;
 	pixel_y = 8
 	},
-/obj/item/storage/belt/security/webbing/inteq{
-	pixel_x = -8
-	},
-/obj/item/storage/belt/security/webbing/inteq{
-	pixel_x = -8
-	},
-/obj/item/storage/belt/security/webbing/inteq/alt{
-	pixel_x = 4;
-	pixel_y = -2
-	},
-/obj/item/storage/belt/security/webbing/inteq/alt{
-	pixel_x = 4;
-	pixel_y = -2
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_y = -8
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_y = -8
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
@@ -3209,7 +3189,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/sign/warning/electricshock{
-	pixel_y = 24;
+	pixel_y = 30;
 	pixel_x = 8;
 	layer = 3.201
 	},
@@ -3363,19 +3343,9 @@
 	dir = 6
 	},
 /obj/machinery/light/small/directional/east,
-/obj/structure/closet/secure_closet{
-	name = "uniform closet"
+/obj/structure/closet/faction/inteq/secure/merc/enforcer/prefilled{
+	anchored = 1
 	},
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/clothing/under/syndicate/inteq,
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt,
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq,
-/obj/item/clothing/mask/balaclava/inteq,
-/obj/item/clothing/head/soft/inteq,
-/obj/item/clothing/head/beret/sec/inteq,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/storage/backpack/messenger/inteq,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "JK" = (
@@ -3570,7 +3540,7 @@
 /area/ship/hallway/central)
 "KX" = (
 /obj/structure/sign/warning/electricshock{
-	pixel_y = 8
+	pixel_y = 14
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security/armory)
@@ -4060,7 +4030,9 @@
 "RT" = (
 /obj/structure/railing/thin,
 /obj/structure/table/wood/reinforced,
-/obj/structure/noticeboard/directional/east,
+/obj/structure/noticeboard/directional/east{
+	pixel_y = 7
+	},
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
@@ -4224,20 +4196,10 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 5
 	},
-/obj/structure/closet/secure_closet{
-	name = "uniform closet"
-	},
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/clothing/under/syndicate/inteq,
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt,
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq,
-/obj/item/clothing/mask/balaclava/inteq,
-/obj/item/clothing/head/soft/inteq,
-/obj/item/clothing/head/beret/sec/inteq,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/storage/backpack/messenger/inteq,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/faction/inteq/secure/merc/enforcer/prefilled{
+	anchored = 1
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "Um" = (
