@@ -28,8 +28,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/firealarm/directional/south{
-	pixel_x = 8;
-	pixel_y = -32
+	pixel_x = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = -4;
@@ -295,7 +294,6 @@
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/sign/warning/vacuum/external{
-	pixel_x = 0;
 	pixel_y = 25
 	},
 /turf/open/floor/plasteel/dark,
@@ -357,9 +355,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/canteen)
 "df" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -397,7 +393,6 @@
 	anchored = 1
 	},
 /obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
 	pixel_y = -10
 	},
 /obj/item/storage/cans/sixbeer{
@@ -417,9 +412,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "ea" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -474,12 +467,10 @@
 	name = "surplus EVA crate"
 	},
 /obj/item/clothing/suit/space/orange{
-	pixel_x = 3;
-	pixel_y = 0
+	pixel_x = 3
 	},
 /obj/item/clothing/suit/space/orange{
-	pixel_x = 3;
-	pixel_y = 0
+	pixel_x = 3
 	},
 /obj/item/clothing/head/helmet/space/orange{
 	pixel_x = -6;
@@ -585,8 +576,7 @@
 	},
 /obj/machinery/vending/cigarette,
 /obj/structure/sign/departments/engineering{
-	pixel_x = -28;
-	pixel_y = 0
+	pixel_x = -28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -650,7 +640,6 @@
 /area/ship/external/dark)
 "gn" = (
 /obj/structure/sign/poster/contraband/have_a_puff{
-	pixel_x = 0;
 	pixel_y = -29
 	},
 /turf/open/floor/wood/walnut,
@@ -705,9 +694,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "gH" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -719,7 +706,6 @@
 	dir = 8
 	},
 /obj/structure/sign/warning/nosmoking/circle{
-	pixel_x = 0;
 	pixel_y = -21
 	},
 /turf/open/floor/plasteel/tech,
@@ -834,13 +820,10 @@
 	},
 /obj/structure/table,
 /obj/structure/mirror{
-	pixel_y = -25;
-	pixel_x = 0
+	pixel_y = -25
 	},
 /obj/structure/sink/kitchen{
-	dir = 1;
-	pixel_x = 0;
-	pixel_y = 0
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/toilet)
@@ -922,7 +905,6 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = 0;
 	pixel_y = -22;
 	id = "stagbridge";
 	name = "bridge access";
@@ -944,7 +926,6 @@
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/box,
 /obj/structure/sign/poster/contraband/steppyflag{
-	pixel_x = 0;
 	pixel_y = 31
 	},
 /turf/open/floor/plasteel/dark,
@@ -1051,7 +1032,6 @@
 "lo" = (
 /obj/structure/table,
 /obj/item/food/grilled_cheese_sandwich{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /turf/open/floor/wood/walnut,
@@ -1369,7 +1349,6 @@
 /obj/structure/filingcabinet/double/grey{
 	dir = 8;
 	pixel_x = 10;
-	pixel_y = 0;
 	density = 0
 	},
 /obj/item/folder,
@@ -1489,7 +1468,6 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = 0;
 	name = "Turbine Window Control";
 	id = "stagbine";
 	pixel_y = -21;
@@ -1555,7 +1533,6 @@
 	pixel_y = -9
 	},
 /obj/item/clothing/head/hardhat{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /obj/item/clothing/suit/toggle/industrial{
@@ -1569,9 +1546,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "pD" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1715,7 +1690,6 @@
 	pixel_y = -6
 	},
 /obj/item/storage/box/metalfoam{
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /obj/item/stock_parts/cell/high{
@@ -1931,8 +1905,7 @@
 	pixel_y = -5
 	},
 /obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -8;
-	pixel_y = 0
+	pixel_x = -8
 	},
 /obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = -7;
@@ -2126,7 +2099,6 @@
 	pixel_y = -7
 	},
 /obj/item/gun/energy/kalix/empty_cell{
-	pixel_x = 0;
 	pixel_y = 9
 	},
 /obj/item/gun/energy/laser/wasp/empty_cell,
@@ -2280,8 +2252,7 @@
 	dir = 1
 	},
 /obj/structure/sign/poster/radio/lt101{
-	pixel_x = 30;
-	pixel_y = 0
+	pixel_x = 30
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
@@ -2305,8 +2276,7 @@
 "vT" = (
 /obj/structure/chair/bench/beige{
 	dir = 8;
-	pixel_x = 4;
-	pixel_y = 0
+	pixel_x = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -2429,8 +2399,7 @@
 	pixel_y = -3
 	},
 /obj/structure/sign/poster/rilena/run{
-	pixel_x = -29;
-	pixel_y = 0
+	pixel_x = -29
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
@@ -2444,8 +2413,7 @@
 	pixel_y = 7
 	},
 /obj/item/towel{
-	pixel_x = 7;
-	pixel_y = 0
+	pixel_x = 7
 	},
 /obj/item/soap{
 	pixel_x = -4;
@@ -2615,8 +2583,7 @@
 "zB" = (
 /obj/structure/chair/plastic{
 	dir = 8;
-	pixel_x = -2;
-	pixel_y = 0
+	pixel_x = -2
 	},
 /turf/open/floor/carpet/purple,
 /area/ship/crew)
@@ -2641,11 +2608,9 @@
 	pixel_y = 4
 	},
 /obj/item/chair/plastic{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /obj/item/chair/plastic{
-	pixel_x = 0;
 	pixel_y = 9
 	},
 /obj/machinery/airalarm/directional/north,
@@ -2714,7 +2679,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/holosign/hardline{
-	pixel_x = 0;
 	pixel_y = 30
 	},
 /turf/open/floor/plating,
@@ -2790,7 +2754,6 @@
 "Bs" = (
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -2878,7 +2841,6 @@
 /obj/machinery/light/small/directional/west,
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = 0;
 	pixel_y = -21;
 	id = "stagcapdorm";
 	name = "window control"
@@ -3011,11 +2973,9 @@
 	populate = 0
 	},
 /obj/item/food/grown/cabbage{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/food/grown/cabbage{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/food/grown/cabbage{
@@ -3049,11 +3009,9 @@
 	},
 /obj/item/reagent_containers/condiment/enzyme,
 /obj/item/food/grown/garlic{
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /obj/item/food/grown/cabbage{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/food/grown/garlic{
@@ -3065,8 +3023,7 @@
 	pixel_y = -5
 	},
 /obj/item/food/homemade_jerky{
-	pixel_x = 7;
-	pixel_y = 0
+	pixel_x = 7
 	},
 /obj/item/food/homemade_jerky{
 	pixel_x = 7;
@@ -3166,8 +3123,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/sign/poster/official/moth/hardhats{
-	pixel_x = 28;
-	pixel_y = 0
+	pixel_x = 28
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -3205,8 +3161,7 @@
 	dir = 8
 	},
 /obj/machinery/holosign/hardline{
-	pixel_x = 29;
-	pixel_y = 0
+	pixel_x = 29
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -3241,8 +3196,7 @@
 	pixel_y = 5
 	},
 /obj/item/clothing/glasses/safety{
-	pixel_x = 1;
-	pixel_y = 0
+	pixel_x = 1
 	},
 /obj/item/clothing/gloves/fingerless{
 	pixel_x = 6;
@@ -3288,7 +3242,6 @@
 "FZ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/shower{
-	pixel_x = 0;
 	pixel_y = 19
 	},
 /obj/machinery/door/window{
@@ -3405,7 +3358,6 @@
 	},
 /obj/item/clothing/gloves/insulated,
 /obj/item/clothing/head/hardhat/weldhat/white{
-	pixel_x = 0;
 	pixel_y = 15
 	},
 /obj/item/clothing/suit/hazardvest{
@@ -3584,7 +3536,6 @@
 	pixel_y = -8
 	},
 /obj/item/clothing/head/hardhat{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/item/clothing/suit/toggle/industrial{
@@ -3600,8 +3551,7 @@
 "Jr" = (
 /obj/structure/chair/bench/beige{
 	dir = 8;
-	pixel_x = 4;
-	pixel_y = 0
+	pixel_x = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -3667,9 +3617,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "JX" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -3736,8 +3684,7 @@
 /area/ship/engineering/electrical)
 "La" = (
 /obj/machinery/vending/cola/starkist{
-	pixel_x = 1;
-	pixel_y = 0
+	pixel_x = 1
 	},
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/patterned,
@@ -3751,7 +3698,6 @@
 /area/ship/crew)
 "Lc" = (
 /obj/structure/sign/poster/clip/clover{
-	pixel_x = 0;
 	pixel_y = -30
 	},
 /obj/structure/chair/sofa/red/old/left/directional/west,
@@ -3773,8 +3719,7 @@
 	pixel_y = -2
 	},
 /obj/item/clothing/under/pants/sweat{
-	pixel_x = 11;
-	pixel_y = 0
+	pixel_x = 11
 	},
 /obj/item/clothing/under/overalls/black{
 	pixel_x = -7;
@@ -3793,8 +3738,7 @@
 	pixel_y = -9
 	},
 /obj/item/clothing/suit/toggle/pufferjacket/orange{
-	pixel_x = 7;
-	pixel_y = 0
+	pixel_x = 7
 	},
 /obj/structure/closet/wall/directional/south,
 /turf/open/floor/carpet,
@@ -3849,8 +3793,7 @@
 	pixel_y = 5
 	},
 /obj/item/dice/d6/ebony{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/carpet/green,
@@ -4022,8 +3965,7 @@
 	pixel_y = -28
 	},
 /obj/machinery/firealarm/directional/south{
-	pixel_x = 8;
-	pixel_y = -32
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/electrical)
@@ -4096,9 +4038,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "Nx" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -4327,8 +4267,7 @@
 /area/ship/crew/dorm/dormtwo)
 "Qc" = (
 /obj/structure/sign/poster/radio/icf{
-	pixel_x = -30;
-	pixel_y = 0
+	pixel_x = -30
 	},
 /obj/machinery/smartfridge/drying_rack,
 /turf/open/floor/plasteel/tech,
@@ -4429,12 +4368,10 @@
 	dir = 4
 	},
 /obj/item/grenade/chem_grenade/metalfoam{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/item/grenade/chem_grenade/metalfoam{
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /obj/structure/closet/crate/secure{
 	name = "scavenging supplies";
@@ -4496,8 +4433,7 @@
 "QV" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/part_replacer{
-	pixel_y = 7;
-	pixel_x = 0
+	pixel_y = 7
 	},
 /obj/structure/platform/ship_two{
 	dir = 8
@@ -4533,8 +4469,7 @@
 "Ry" = (
 /obj/structure/chair/bench/beige{
 	dir = 8;
-	pixel_x = 4;
-	pixel_y = 0
+	pixel_x = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -4567,8 +4502,7 @@
 	pixel_y = -3
 	},
 /obj/structure/sign/poster/contraband/gec{
-	pixel_x = 30;
-	pixel_y = 0
+	pixel_x = 30
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -4630,10 +4564,7 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "So" = (
-/obj/structure/railing/thin{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/structure/railing/thin,
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
 	pixel_x = 8;
@@ -4651,7 +4582,6 @@
 	icon_state = "5-10"
 	},
 /obj/machinery/holosign/clover{
-	pixel_x = 0;
 	pixel_y = -30
 	},
 /turf/open/floor/plasteel/tech,
@@ -4815,6 +4745,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/emergency_panel,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Uq" = (
@@ -4846,7 +4777,6 @@
 "UR" = (
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = 0;
 	pixel_y = -21;
 	id = "stagkitchen";
 	name = "window control"
@@ -4887,7 +4817,6 @@
 	dir = 8
 	},
 /obj/structure/sign/poster/official/moth/piping{
-	pixel_x = 0;
 	pixel_y = 30
 	},
 /turf/open/floor/plasteel/tech,
@@ -4904,7 +4833,6 @@
 	pixel_y = 11
 	},
 /obj/item/clothing/suit/armor/vest/alt{
-	pixel_x = 0;
 	pixel_y = 10
 	},
 /obj/item/clothing/head/helmet/m10{
@@ -5095,7 +5023,6 @@
 	},
 /obj/machinery/light/small/directional/west,
 /obj/structure/sign/poster/contraband/lusty_xenomorph{
-	pixel_x = 0;
 	pixel_y = 32
 	},
 /turf/open/floor/wood/walnut,
@@ -5159,7 +5086,6 @@
 	},
 /obj/structure/chair/handrail,
 /obj/structure/sign/warning/vacuum{
-	pixel_x = 0;
 	pixel_y = 28
 	},
 /obj/effect/decal/cleanable/dirt/dust,

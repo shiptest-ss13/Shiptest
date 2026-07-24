@@ -15,9 +15,7 @@
 	},
 /area/ship/engineering/engine)
 "ag" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -172,9 +170,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "bZ" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -209,8 +205,7 @@
 	pixel_x = 7
 	},
 /obj/item/storage/box/masks{
-	pixel_x = 7;
-	pixel_y = 0
+	pixel_x = 7
 	},
 /obj/item/storage/box/beakers,
 /obj/item/clothing/gloves/nitrile,
@@ -1075,8 +1070,7 @@
 /area/ship/external/dark)
 "jM" = (
 /obj/machinery/hydroponics/wooden{
-	pixel_x = -1;
-	pixel_y = 0
+	pixel_x = -1
 	},
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/decal/cleanable/dirt,
@@ -1305,8 +1299,7 @@
 	},
 /obj/item/kirbyplants{
 	icon_state = "plant-18";
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable/green{
@@ -2179,8 +2172,7 @@
 	},
 /obj/structure/chair/bench/blue{
 	dir = 4;
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -5300,8 +5292,7 @@
 	},
 /obj/structure/chair/bench/blue{
 	dir = 4;
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -5865,6 +5856,10 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/machinery/emergency_panel/dark{
+	pixel_y = 8;
+	pixel_x = -8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)

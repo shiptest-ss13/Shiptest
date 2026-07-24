@@ -833,7 +833,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/directional/north,
 /obj/machinery/computer/security/telescreen/entertainment/wall/directional/north{
-	pixel_x = 0;
 	pixel_y = 38
 	},
 /turf/open/floor/plasteel/dark,
@@ -1663,10 +1662,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
-/obj/machinery/computer/security/telescreen/directional/west{
-	network = list("ss13");
-	desc = "A telescreen that connects to the ship's security camera network."
-	},
+/obj/machinery/computer/security/telescreen/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/paper_bin{
 	pixel_x = -7;
@@ -2101,8 +2097,9 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/emergency_panel{
-	pixel_y = 9
+/obj/machinery/emergency_panel/dark{
+	pixel_y = 8;
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/communications)

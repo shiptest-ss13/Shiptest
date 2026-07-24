@@ -756,7 +756,6 @@
 	pixel_y = 7
 	},
 /obj/item/clothing/suit/toggle/hardliners{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /turf/open/floor/carpet/nanoweave,
@@ -1747,12 +1746,10 @@
 "uA" = (
 /obj/structure/chair/sofa/red/corpo/right,
 /obj/item/bedsheet/black{
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /obj/structure/sign/poster/contraband/syndiemoth{
-	pixel_x = -28;
-	pixel_y = 0
+	pixel_x = -28
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm)
@@ -1908,8 +1905,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/firealarm/directional/north{
-	pixel_x = -4;
-	pixel_y = 32
+	pixel_x = -4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -2382,8 +2378,7 @@
 "CB" = (
 /obj/structure/table/glass,
 /obj/item/radio/intercom/directional/south{
-	pixel_x = -6;
-	pixel_y = -31
+	pixel_x = -6
 	},
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/carpet/nanoweave,
@@ -2871,8 +2866,7 @@
 /obj/effect/spawner/bunk_bed,
 /obj/structure/curtain/cloth/grey,
 /obj/structure/sign/poster/contraband/backdoor_xeno_babes_6{
-	pixel_y = -32;
-	pixel_x = 0
+	pixel_y = -32
 	},
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet/nanoweave,
@@ -3075,7 +3069,6 @@
 	},
 /obj/effect/decal/cleanable/oil,
 /obj/structure/sign/poster/contraband/cybersun_med{
-	pixel_x = 0;
 	pixel_y = 31
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -3745,6 +3738,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/emergency_panel,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "Tr" = (
@@ -3961,10 +3955,7 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/west,
-/obj/structure/dresser{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/structure/dresser,
 /obj/structure/bedsheetbin{
 	pixel_x = -1;
 	pixel_y = 7
