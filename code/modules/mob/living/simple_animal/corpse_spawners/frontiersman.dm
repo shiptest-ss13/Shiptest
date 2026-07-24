@@ -81,6 +81,18 @@
 	mask = /obj/item/clothing/mask/gas/frontiersmen
 	back = /obj/item/tank/jetpack/carbondioxide
 
+/obj/effect/mob_spawn/human/corpse/frontier/hullpiercer
+	name = "Frontiersman Hullpiercer"
+	outfit = /datum/outfit/frontier/hullpiercer
+
+/datum/outfit/frontier/hullpiercer
+	name = "Frontiersman Armored Corpse"
+	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	head = /obj/item/clothing/head/helmet/frontier
+	mask = /obj/item/clothing/mask/gas/frontiersmen
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+	back = /obj/item/tank/jetpack/carbondioxide
+
 /datum/outfit/frontier/trooper/internals
 	name = "Frontiersman Armored Corpse Internals"
 	mask = /obj/item/clothing/mask/gas/frontiersmen

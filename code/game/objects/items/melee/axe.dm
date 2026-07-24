@@ -76,3 +76,13 @@
 	throwforce = 20
 	demolition_mod = 2
 	bare_wound_bonus = 10
+
+/obj/item/melee/axe/frontiersmen_axe
+	name = "hullsplitter axe"
+	desc = "A terrifying combination of a bearded axe and a warpick made up of reinforced sharpened plasteel that is most commonly wielded by the most deranged of frontiersmen. Unless you're hopped up on just as many combat drugs as they are, you might just struggle to wield this."
+	icon_state = "frontiersmen_axe"
+	base_icon_state = "frontiersmen_axe"
+	force_wielded = 60
+	attack_cooldown = HEAVY_WEAPON_CD
+	wound_bonus = 10
+	armour_penetration = 20
