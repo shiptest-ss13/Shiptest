@@ -3098,10 +3098,6 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
-/obj/structure/sign/warning/docking{
-	pixel_x = -26;
-	pixel_y = -7
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -6004,6 +6000,10 @@
 	},
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/docking{
+	pixel_x = 6;
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/hangar)
 "ML" = (
@@ -6443,10 +6443,6 @@
 	},
 /obj/structure/tank_dispenser,
 /obj/effect/turf_decal/siding/thinplating,
-/obj/structure/sign/warning/docking{
-	pixel_x = -26;
-	pixel_y = 7
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -6578,7 +6574,13 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname/directional/south,
+/obj/machinery/camera/autoname/directional/south{
+	pixel_x = -2
+	},
+/obj/structure/sign/warning/docking{
+	pixel_x = 6;
+	pixel_y = -18
+	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/hangar)
 "QS" = (
