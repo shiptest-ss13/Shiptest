@@ -362,6 +362,7 @@
 
 #define HUNGER_FACTOR 0.05 //factor at which mob nutrition decreases
 #define ELZUOSE_CHARGE_FACTOR (0.025 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases
+#define CLOTHING_NUTRITION_GAIN (15 * REAGENTS_METABOLISM) // How much nutrition eating clothes as moth gives and drains
 #define REAGENTS_METABOLISM 0.2 //How many units of reagent are consumed per second, by default.
 #define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4) // By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
 ///Greater numbers mean that less alcohol has greater intoxication potential
