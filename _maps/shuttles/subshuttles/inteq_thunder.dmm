@@ -403,12 +403,7 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "F" = (
-/obj/structure/closet/secure_closet/wall/directional/south{
-	name = "pilot's locker";
-	req_access_txt = "48";
-	icon_state = "solgov_wall";
-	icon_door = "solgov_wall"
-	},
+/obj/structure/closet/faction/inteq/secure/wall/command/pilot/directional/south,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/power/terminal{
 	dir = 4
