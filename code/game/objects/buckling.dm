@@ -84,7 +84,7 @@
 	M.set_buckled(src)
 	M.setDir(dir)
 
-	if(iskepori(M)) // flip kepori so they aren't vertical on a horizontal bed
+	if(iskepori(M) && buckle_lying != NO_BUCKLE_LYING && buckle_lying != 0) // flip kepori so they aren't vertical on a horizontal bed
 		if(dir & NORTH)
 			M.setDir(EAST)
 		else if(dir & SOUTH)
