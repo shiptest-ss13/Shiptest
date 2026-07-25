@@ -619,6 +619,6 @@
 	neck = /obj/item/clothing/neck/shemagh/ngr
 	mask = /obj/item/clothing/mask/gas/syndicate
 	belt = /obj/item/storage/belt/utility/full
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 	r_pocket = /obj/item/flashlight //backup
 
