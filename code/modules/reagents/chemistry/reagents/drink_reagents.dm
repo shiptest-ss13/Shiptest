@@ -209,7 +209,6 @@
 	description = "The fatty, still liquid part of milk."
 	color = "#DFD7AF" // rgb: 223, 215, 175
 	taste_description = "creamy milk"
-	glass_icon_state  = "glass_white"
 	glass_name = "glass of cream"
 	glass_desc = "It's a bit thick to drink straight."
 
@@ -377,7 +376,6 @@
 	description = "A refreshing beverage."
 	color = "#743c05" // rgb: 16, 8, 0
 	taste_description = "cola"
-	glass_icon_state  = "glass_brown"
 	glass_name = "glass of cola"
 	glass_desc = "A carbonated cola. You should drink it before it gets flat!"
 
@@ -392,7 +390,6 @@
 	color = "#EEFF00" // rgb: 238, 255, 0
 	quality = DRINK_VERYGOOD
 	taste_description = "carbonated battery acid with a spoonful of sugar"
-	glass_icon_state = "crosstalk_glass"
 	glass_name = "glass of Crosstalk"
 	glass_desc = "The amount of sugar and chemicals in this drink makes your eyes water."
 
@@ -899,7 +896,6 @@
 	name = "Beef Broth"
 	color = "#100800" // rgb: 16, 8, 0 , just like cola
 	taste_description = "pure beef essence"
-	glass_icon_state  = "glass_brown"
 	glass_name = "glass of Master Cola?"
 	glass_desc = "A glass of what appears to be refreshing Space Cola."
 
