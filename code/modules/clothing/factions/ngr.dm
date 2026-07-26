@@ -435,6 +435,11 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'
 	supports_variations = null
 
+	unique_reskin = list(
+		"Black" = "ngr_droppouch",
+		"Beige" = "ngr_droppouchalt"
+	)
+
 /obj/item/storage/belt/security/webbing/ngr/alt/pilot/PopulateContents()
 	for(var/i in 1 to 2)
 		new /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/slug(src)
