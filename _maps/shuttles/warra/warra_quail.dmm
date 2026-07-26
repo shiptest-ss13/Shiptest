@@ -245,10 +245,6 @@
 	layer = 2.030
 	},
 /obj/structure/rack,
-/obj/item/storage/box/flares{
-	pixel_x = 7;
-	pixel_y = 0
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
 "dP" = (
@@ -2510,6 +2506,24 @@
 /obj/machinery/firealarm/directional/north{
 	pixel_x = 6
 	},
+/obj/structure/closet/crate/engineering{
+	name = "field equipment crate"
+	},
+/obj/machinery/recharger{
+	pixel_x = 5;
+	pixel_y = 0;
+	anchored = 0
+	},
+/obj/machinery/recharger{
+	pixel_x = -6;
+	pixel_y = 0;
+	anchored = 0
+	},
+/obj/item/storage/box/emptysandbags,
+/obj/item/storage/box/emptysandbags,
+/obj/item/rcl/pre_loaded,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Lv" = (
