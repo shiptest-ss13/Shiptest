@@ -1,13 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aa" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor{
-	id = "ns_quail_windows"
-	},
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating,
-/area/ship/engineering/electrical)
 "an" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -1315,6 +1306,15 @@
 /obj/effect/turf_decal/warra/ns,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"um" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor{
+	id = "ns_quail_windows"
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plating,
+/area/ship/engineering/electrical)
 "ur" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -1662,28 +1662,28 @@
 	pixel_x = 8;
 	pixel_y = 8
 	},
-/obj/item/clothing/shoes/sneakers/brown{
-	pixel_x = -8;
-	pixel_y = -13
-	},
-/obj/item/clothing/shoes/sneakers/brown{
-	pixel_x = -8;
-	pixel_y = -13
-	},
-/obj/item/clothing/shoes/sneakers/black{
-	pixel_x = 8;
-	pixel_y = -13
-	},
-/obj/item/clothing/shoes/sneakers/black{
-	pixel_x = 8;
-	pixel_y = -13
-	},
 /obj/item/clothing/suit/toggle/chorejacket/warra,
 /obj/item/clothing/suit/toggle/chorejacket/warra,
 /obj/item/clothing/suit/toggle/chorejacket/warra,
 /obj/item/clothing/suit/toggle/chorejacket/warra,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = -3;
+	pixel_y = -4
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = -3;
+	pixel_y = -7
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 7;
+	pixel_y = -5
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 8;
+	pixel_y = -8
 	},
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/crew/dorm)
@@ -3504,7 +3504,7 @@ an
 TN
 TN
 TN
-aa
+um
 Ku
 CJ
 Pb
@@ -3522,7 +3522,7 @@ an
 TN
 TN
 TN
-aa
+um
 aE
 uv
 XY
