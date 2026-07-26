@@ -650,6 +650,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"lc" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor{
+	id = "ns_quail_windows"
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plating,
+/area/ship/engineering/electrical)
 "lR" = (
 /obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/dark,
@@ -1306,15 +1315,6 @@
 /obj/effect/turf_decal/warra/ns,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"um" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor{
-	id = "ns_quail_windows"
-	},
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating,
-/area/ship/engineering/electrical)
 "ur" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -3504,7 +3504,7 @@ an
 TN
 TN
 TN
-um
+lc
 Ku
 CJ
 Pb
@@ -3522,7 +3522,7 @@ an
 TN
 TN
 TN
-um
+lc
 aE
 uv
 XY
