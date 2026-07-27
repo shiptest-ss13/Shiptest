@@ -360,15 +360,15 @@
 /obj/item/t_scanner{
 	pixel_x = 10
 	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1;
-	color = "#FFFFFF"
-	},
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
 /obj/structure/closet/wall/eng/directional/east{
 	name = "tool closet"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1;
+	color = "#FFFFFF"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -412,6 +412,11 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
+/area/ship/cargo)
+"eR" = (
+/obj/effect/turf_decal/box/white,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "eU" = (
 /obj/structure/table/wood/reinforced,
@@ -498,6 +503,30 @@
 /area/ship/crew/canteen)
 "gH" = (
 /obj/structure/closet/wall/directional/west,
+/obj/item/clothing/under/suit/charcoal{
+	pixel_x = 2;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/suit/charcoal{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/clothing/under/suit/charcoal/skirt{
+	pixel_x = -7;
+	pixel_y = -6
+	},
+/obj/item/clothing/under/suit/charcoal/skirt{
+	pixel_x = -14;
+	pixel_y = -9
+	},
+/obj/item/clothing/shoes/laceup{
+	pixel_x = 4;
+	pixel_y = -9
+	},
+/obj/item/clothing/shoes/laceup{
+	pixel_x = 4;
+	pixel_y = -12
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "gJ" = (
@@ -519,6 +548,14 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
+"gW" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx{
+	pixel_x = -10;
+	pixel_y = 8
+	},
+/turf/open/floor/suns/dark/plain,
+/area/ship/bridge)
 "ha" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 8
@@ -764,6 +801,11 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
+"kK" = (
+/obj/machinery/light/small/directional/west,
+/obj/structure/table/chem,
+/turf/open/floor/suns/dark/plain,
+/area/ship/bridge)
 "kO" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -1128,6 +1170,10 @@
 	pixel_x = -23;
 	pixel_y = -6
 	},
+/obj/machinery/emergency_panel{
+	pixel_x = 6;
+	pixel_y = 0
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
 "qn" = (
@@ -1194,8 +1240,20 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "rw" = (
+/obj/structure/table/reinforced,
 /obj/machinery/light/small/directional/west,
-/obj/structure/table/chem,
+/obj/item/paper_bin{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/pen/fountain{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_x = 5;
+	pixel_y = 2
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
 "rX" = (
@@ -1203,12 +1261,19 @@
 /obj/structure/platform/ship_three{
 	dir = 8
 	},
-/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx{
-	pixel_x = 0;
-	pixel_y = 5
+/obj/item/reagent_containers/food/drinks/bottle/rum{
+	pixel_x = 6;
+	pixel_y = 7
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
+"sa" = (
+/obj/structure/sign/poster/contraband/backdoor_xeno_babes_6{
+	pixel_x = -28;
+	pixel_y = 0
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engines/port)
 "sg" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/shieldwallgen{
@@ -1335,9 +1400,9 @@
 /obj/structure/platform/ship_three{
 	dir = 8
 	},
-/obj/item/reagent_containers/food/drinks/bottle/rum{
-	pixel_x = 6;
-	pixel_y = 7
+/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx{
+	pixel_x = 0;
+	pixel_y = 5
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
@@ -2062,7 +2127,6 @@
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 8
 	},
-/obj/machinery/emergency_panel,
 /turf/open/floor/wood/maple,
 /area/ship/bridge)
 "FB" = (
@@ -2475,11 +2539,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"Mm" = (
-/obj/effect/turf_decal/box/white,
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo)
 "Mv" = (
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 10
@@ -2637,13 +2696,9 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 "Ov" = (
-/obj/structure/table/glass,
-/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx{
-	pixel_x = -10;
-	pixel_y = 8
-	},
-/turf/open/floor/suns/dark/plain,
-/area/ship/bridge)
+/obj/effect/decal/cleanable/food/flour,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/canteen)
 "OQ" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -2760,6 +2815,8 @@
 	pixel_y = 20
 	},
 /obj/machinery/light/small/directional/west,
+/obj/item/clothing/suit/armor/captaincoat,
+/obj/item/clothing/under/rank/security/officer/camo,
 /turf/open/floor/suns/hatch{
 	color = "#792f27"
 	},
@@ -2975,10 +3032,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
-"St" = (
-/obj/effect/decal/cleanable/food/flour,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/canteen)
 "Sx" = (
 /obj/effect/turf_decal/isf_big/six{
 	dir = 8
@@ -3239,6 +3292,46 @@
 "VR" = (
 /obj/structure/closet/wall/directional/west,
 /obj/machinery/light/small/directional/south,
+/obj/item/clothing/suit/hooded/parka{
+	pixel_x = -9;
+	pixel_y = -7
+	},
+/obj/item/clothing/suit/hooded/parka{
+	pixel_x = -11;
+	pixel_y = -1
+	},
+/obj/item/clothing/suit/hooded/parka{
+	pixel_x = -10;
+	pixel_y = 9
+	},
+/obj/item/clothing/suit/hooded/parka{
+	pixel_x = -10;
+	pixel_y = -5
+	},
+/obj/item/clothing/head/flap{
+	pixel_x = 7;
+	pixel_y = 3
+	},
+/obj/item/clothing/head/flap{
+	pixel_x = 6;
+	pixel_y = -1
+	},
+/obj/item/clothing/head/flap{
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/obj/item/clothing/head/flap{
+	pixel_x = 5;
+	pixel_y = -7
+	},
+/obj/item/clothing/neck/neckwraps{
+	pixel_x = -3;
+	pixel_y = 1
+	},
+/obj/item/clothing/neck/neckwraps{
+	pixel_x = -4;
+	pixel_y = -6
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "Wd" = (
@@ -3421,23 +3514,6 @@
 "XW" = (
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engines/port)
-"Yf" = (
-/obj/structure/table/reinforced,
-/obj/machinery/light/small/directional/west,
-/obj/item/paper_bin{
-	pixel_x = -6;
-	pixel_y = 4
-	},
-/obj/item/pen/fountain{
-	pixel_x = -6;
-	pixel_y = 4
-	},
-/obj/item/pen{
-	pixel_x = 5;
-	pixel_y = 2
-	},
-/turf/open/floor/suns/dark/plain,
-/area/ship/bridge)
 "Yr" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -3449,13 +3525,6 @@
 	color = "#792f27"
 	},
 /area/ship/bridge)
-"Yz" = (
-/obj/structure/sign/poster/contraband/backdoor_xeno_babes_6{
-	pixel_x = -28;
-	pixel_y = 0
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines/port)
 "YG" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 10
@@ -3722,7 +3791,7 @@ ky
 aE
 gl
 gl
-Mm
+eR
 AK
 UJ
 IE
@@ -3743,7 +3812,7 @@ gl
 yk
 YR
 Kc
-Yz
+sa
 gl
 xF
 iy
@@ -3975,7 +4044,7 @@ Sz
 Sz
 mf
 AT
-St
+Ov
 dZ
 tk
 Ar
@@ -4250,14 +4319,14 @@ VH
 VH
 vO
 jC
-rw
+kK
 yH
 qm
 ts
 Dt
 yi
 QA
-Yf
+rw
 jC
 vO
 VH
@@ -4343,12 +4412,12 @@ vO
 vO
 vO
 xx
-uo
-Yr
-FH
-FH
-Yr
 rX
+Yr
+FH
+FH
+Yr
+uo
 xx
 vO
 vO
@@ -4371,7 +4440,7 @@ cn
 cn
 cn
 cn
-Ov
+gW
 xx
 uR
 vO
