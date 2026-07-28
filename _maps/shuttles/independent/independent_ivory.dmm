@@ -223,7 +223,8 @@
 	specialfunctions = 4;
 	name = "Captain's Quarters Bolt Control";
 	pixel_y = 21;
-	req_access_txt = "20"
+	req_access_txt = "20";
+	req_ship_access = 1
 	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
@@ -259,14 +260,6 @@
 	color = "#792f27"
 	},
 /area/ship/bridge)
-"cw" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/obj/effect/turf_decal/box/white,
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/dorm)
 "cO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -781,7 +774,8 @@
 	name = "Captain's Quarters Bolt Control";
 	pixel_y = -21;
 	dir = 1;
-	req_access_txt = "20"
+	req_access_txt = "20";
+	req_ship_access = 1
 	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
@@ -874,6 +868,14 @@
 /obj/structure/chair/sofa/grey/old/left/directional/south,
 /turf/open/floor/carpet/green,
 /area/ship/crew/crewtwo)
+"lM" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/white,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/dorm)
 "mc" = (
 /obj/machinery/washing_machine{
 	pixel_x = 7;
@@ -1614,7 +1616,8 @@
 	id = "ivory_airlock";
 	name = "shutter control";
 	pixel_y = 9;
-	dir = 8
+	dir = 8;
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
@@ -3100,7 +3103,8 @@
 	name = "Hunter's Quarters Bolt Control";
 	pixel_y = -19;
 	req_access_txt = "1";
-	dir = 1
+	dir = 1;
+	req_ship_access = 1
 	},
 /obj/machinery/light_switch{
 	dir = 1;
@@ -3134,7 +3138,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box/white,
-/obj/machinery/light/small/directional/north,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "SX" = (
@@ -3239,7 +3243,8 @@
 	specialfunctions = 4;
 	name = "Hunter's Quarters Bolt Control";
 	pixel_y = 21;
-	req_access_txt = "1"
+	req_access_txt = "1";
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -4139,8 +4144,8 @@ VH
 VH
 vO
 mf
+lM
 Sz
-cw
 mf
 AT
 Ov
