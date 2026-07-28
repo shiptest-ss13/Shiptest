@@ -128,32 +128,17 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "cm" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 10
+/obj/effect/turf_decal/borderfloor{
+	layer = 2.030
 	},
-/obj/structure/table,
-/obj/item/radio/weather_monitor{
-	pixel_x = -6;
-	pixel_y = 9
+/obj/machinery/suit_storage_unit/inherit/industrial/locked{
+	name = "supply director's industrial suit storage unit";
+	req_access_txt = "20"
 	},
-/obj/item/gps{
-	pixel_y = 1;
-	pixel_x = -8
-	},
-/obj/item/bodycamera{
-	pixel_y = 6;
-	pixel_x = 3
-	},
-/obj/item/bodycamera{
-	pixel_y = 6;
-	pixel_x = 9
-	},
-/obj/item/bodycamera{
-	pixel_y = 2;
-	pixel_x = 6
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/light/directional/north,
+/obj/item/tank/jetpack/carbondioxide,
+/obj/item/clothing/suit/space/hardsuit/mining/heavy/ns,
+/obj/item/clothing/mask/gas/explorer,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "cn" = (
@@ -924,6 +909,21 @@
 	},
 /obj/item/clothing/glasses/meson,
 /obj/machinery/airalarm/directional/north,
+/obj/item/bodycamera{
+	pixel_y = 0
+	},
+/obj/item/bodycamera{
+	pixel_y = 0
+	},
+/obj/item/bodycamera{
+	pixel_y = 0
+	},
+/obj/item/radio/weather_monitor{
+	pixel_y = 0
+	},
+/obj/item/gps{
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "pb" = (
@@ -2999,7 +2999,6 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/structure/closet/crate/internals,
-/obj/item/clothing/suit/space/orange,
 /obj/item/clothing/suit/space/orange{
 	pixel_x = -3
 	},
@@ -3007,20 +3006,11 @@
 	pixel_y = -1;
 	pixel_x = -7
 	},
-/obj/item/clothing/head/helmet/space/orange{
-	pixel_x = -7;
-	pixel_y = -1
-	},
-/obj/item/tank/internals/oxygen/red,
 /obj/item/tank/internals/oxygen/red,
 /obj/item/tank/internals/emergency_oxygen,
 /obj/item/tank/internals/emergency_oxygen,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/clothing/mask/gas{
-	pixel_x = -1;
-	pixel_y = 6
-	},
 /obj/item/clothing/mask/gas{
 	pixel_x = -6;
 	pixel_y = 6
