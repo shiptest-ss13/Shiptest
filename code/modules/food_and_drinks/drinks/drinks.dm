@@ -611,8 +611,6 @@
 	isGlass = FALSE
 	custom_price = 5
 	var/pierced = FALSE
-	// obj_flags = CAN_BE_HIT
-
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attack(mob/M, mob/user)
 	if(istype(M, /mob/living/carbon) && !reagents.total_volume && user.a_intent == INTENT_HARM && user.zone_selected == BODY_ZONE_HEAD)
