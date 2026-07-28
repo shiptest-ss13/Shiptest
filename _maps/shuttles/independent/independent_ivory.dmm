@@ -804,6 +804,7 @@
 "kK" = (
 /obj/machinery/light/small/directional/west,
 /obj/structure/table/chem,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north,
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
 "kO" = (
@@ -976,6 +977,10 @@
 /turf/open/floor/wood/maple,
 /area/ship/bridge)
 "nN" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/structure/noticeboard/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/dorm)
 "nQ" = (
@@ -1116,6 +1121,7 @@
 	id = "ivory_commons";
 	name = "shutter control"
 	},
+/obj/machinery/newscaster/directional/east,
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
 "pS" = (
@@ -1254,6 +1260,7 @@
 	pixel_x = 5;
 	pixel_y = 2
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south,
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
 "rX" = (
@@ -1698,6 +1705,10 @@
 /obj/machinery/recharger{
 	pixel_x = -6;
 	pixel_y = 3
+	},
+/obj/machinery/newscaster/directional/west{
+	pixel_y = 16;
+	pixel_x = -30
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
@@ -2924,6 +2935,10 @@
 	pixel_y = -12
 	},
 /obj/machinery/computer/cryopod/directional/north,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/dorm)
 "Rn" = (
@@ -3043,6 +3058,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box/white,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "SX" = (
@@ -3590,6 +3606,14 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/bridge)
+"Zd" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/white,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/dorm)
 "Zm" = (
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_door = "sec_wall";
@@ -4040,7 +4064,7 @@ VH
 VH
 vO
 mf
-Sz
+Zd
 Sz
 mf
 AT
