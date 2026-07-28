@@ -194,20 +194,6 @@
 
 	// preset colors matching color defines used in mapping
 	var/list/preset_colors = list(
-		// misc tile colors (???)
-		"Gray (Monotile)"  = COLOR_MONOTILE,
-		"Gray (Dark Tile)" = COLOR_TILE_DARK_GRAY,
-		"Warning"          = COLOR_WARNING,
-
-		// wood colors
-		"Wood (Generic)"   = WOOD_COLOR_GENERIC,
-		"Wood (Rich)"      = WOOD_COLOR_RICH,
-		"Wood (Pale)"      = WOOD_COLOR_PALE,
-		"Wood (Pale 2)"    = WOOD_COLOR_PALE2,
-		"Wood (Pale 3)"    = WOOD_COLOR_PALE3,
-		"Wood (Black)"     = WOOD_COLOR_BLACK,
-		"Wood (Chocolate)" = WOOD_COLOR_CHOCOLATE,
-		"Wood (Yellow)"    = WOOD_COLOR_YELLOW,
 
 		// grayscale colors
 		"White"                    = COLOR_WHITE,
@@ -216,6 +202,8 @@
 		"Silver"                   = COLOR_SILVER,
 		"Gray"                     = COLOR_GRAY,
 		"Gray (Floor Tile)"        = COLOR_FLOORTILE_GRAY,
+		"Gray (Monotile)"          = COLOR_MONOTILE,
+		"Gray (Dark Tile)"         = COLOR_TILE_DARK_GRAY,
 		"Black (Almost)"           = COLOR_ALMOST_BLACK,
 		"Black"                    = COLOR_BLACK,
 		"Black (Half-transparent)" = COLOR_HALF_TRANSPARENT_BLACK,
@@ -244,6 +232,7 @@
 		"Yellow"             = COLOR_YELLOW,
 		"Yellow (Vivid)"     = COLOR_VIVID_YELLOW,
 		"Yellow (Very Soft)" = COLOR_VERY_SOFT_YELLOW,
+		"Yellow (Warning)"   = COLOR_WARNING,
 
 		// greens
 		"Green"                = COLOR_GREEN,
@@ -289,11 +278,22 @@
 		"Red (Pale Gray)"    = COLOR_PALE_RED_GRAY,
 		"Purple (Gray)"      = COLOR_PURPLE_GRAY,
 		"Purple (Pale Gray)" = COLOR_PALE_PURPLE_GRAY,
+
+		// wood colors
+		"Wood (Generic)"   = WOOD_COLOR_GENERIC,
+		"Wood (Rich)"      = WOOD_COLOR_RICH,
+		"Wood (Pale)"      = WOOD_COLOR_PALE,
+		"Wood (Pale 2)"    = WOOD_COLOR_PALE2,
+		"Wood (Pale 3)"    = WOOD_COLOR_PALE3,
+		"Wood (Black)"     = WOOD_COLOR_BLACK,
+		"Wood (Chocolate)" = WOOD_COLOR_CHOCOLATE,
+		"Wood (Yellow)"    = WOOD_COLOR_YELLOW,
 		)
 
 /obj/item/decal_painter/afterattack(atom/A, mob/user, proximity, params)
 	if(!proximity)
 		return
+
 	var/turf/open/floor/F = A
 	if(!istype(F))
 		to_chat(user, span_warning("\The [src] can only be used on flooring."))
