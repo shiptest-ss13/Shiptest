@@ -198,14 +198,14 @@
 		// grayscale colors
 		"White"                    = COLOR_WHITE,
 		"Off-White"                = COLOR_OFF_WHITE,
-		"Gray (Very Light)"        = COLOR_VERY_LIGHT_GRAY,
 		"Silver"                   = COLOR_SILVER,
 		"Gray"                     = COLOR_GRAY,
+		"Gray (Very Light)"        = COLOR_VERY_LIGHT_GRAY,
 		"Gray (Floor Tile)"        = COLOR_FLOORTILE_GRAY,
 		"Gray (Monotile)"          = COLOR_MONOTILE,
 		"Gray (Dark Tile)"         = COLOR_TILE_DARK_GRAY,
-		"Black (Almost)"           = COLOR_ALMOST_BLACK,
 		"Black"                    = COLOR_BLACK,
+		"Black (Almost)"           = COLOR_ALMOST_BLACK,
 		"Black (Half-transparent)" = COLOR_HALF_TRANSPARENT_BLACK,
 
 		// reds
@@ -217,6 +217,8 @@
 		"Red (Grayish)"     = COLOR_LIGHT_GRAYISH_RED,
 		"Red (Soft)"        = COLOR_SOFT_RED,
 		"Red (Bubblegum)"   = COLOR_BUBBLEGUM_RED,
+		"Red (Gray)"        = COLOR_RED_GRAY,
+		"Red (Pale Gray)"   = COLOR_PALE_RED_GRAY,
 		"Maroon"            = COLOR_MAROON,
 
 		// oranges
@@ -236,6 +238,8 @@
 
 		// greens
 		"Green"                = COLOR_GREEN,
+		"Green (Gray)"         = COLOR_GREEN_GRAY,
+		"Green (Pale Gray)"    = COLOR_PALE_GREEN_GRAY,
 		"Olive"                = COLOR_OLIVE,
 		"Lime (Vibrant)"       = COLOR_VIBRANT_LIME,
 		"Lime"                 = COLOR_LIME,
@@ -244,14 +248,16 @@
 		"Lime (Moderate Dark)" = COLOR_DARK_MODERATE_LIME_GREEN,
 
 		// blues
-		"Blue"            = COLOR_BLUE,
-		"Blue (Bright)"   = COLOR_BRIGHT_BLUE,
-		"Blue (Moderate)" = COLOR_MODERATE_BLUE,
-		"Blue (Light)"    = COLOR_BLUE_LIGHT,
-		"Blue (Navy)"     = COLOR_NAVY,
-		"Cyan"            = COLOR_CYAN,
-		"Cyan (Dark)"     = COLOR_DARK_CYAN,
-		"Teal"            = COLOR_TEAL,
+		"Blue"             = COLOR_BLUE,
+		"Blue (Bright)"    = COLOR_BRIGHT_BLUE,
+		"Blue (Moderate)"  = COLOR_MODERATE_BLUE,
+		"Blue (Light)"     = COLOR_BLUE_LIGHT,
+		"Blue (Navy)"      = COLOR_NAVY,
+		"Blue (Gray)"      = COLOR_BLUE_GRAY,
+		"Blue (Pale Gray)" = COLOR_PALE_BLUE_GRAY,
+		"Cyan"             = COLOR_CYAN,
+		"Cyan (Dark)"      = COLOR_DARK_CYAN,
+		"Teal"             = COLOR_TEAL,
 
 		// pinks and purples
 		"Pink"               = COLOR_PINK,
@@ -261,6 +267,8 @@
 		"Magenta (Strong)"   = COLOR_STRONG_MAGENTA,
 		"Purple"             = COLOR_PURPLE,
 		"Purple (Dark)"      = COLOR_DARK_PURPLE,
+		"Purple (Gray)"      = COLOR_PURPLE_GRAY,
+		"Purple (Pale Gray)" = COLOR_PALE_PURPLE_GRAY,
 		"Violet"             = COLOR_VIOLET,
 		"Violet (Strong)"    = COLOR_STRONG_VIOLET,
 
@@ -268,16 +276,6 @@
 		"Beige"      = COLOR_BEIGE,
 		"Brown"      = COLOR_BROWN,
 		"Dark Brown" = COLOR_DARK_BROWN,
-
-		// grayed colors
-		"Green (Gray)"       = COLOR_GREEN_GRAY,
-		"Green (Pale Gray)"  = COLOR_PALE_GREEN_GRAY,
-		"Blue (Gray)"        = COLOR_BLUE_GRAY,
-		"Blue (Pale Gray)"   = COLOR_PALE_BLUE_GRAY,
-		"Red (Gray)"         = COLOR_RED_GRAY,
-		"Red (Pale Gray)"    = COLOR_PALE_RED_GRAY,
-		"Purple (Gray)"      = COLOR_PURPLE_GRAY,
-		"Purple (Pale Gray)" = COLOR_PALE_PURPLE_GRAY,
 
 		// wood colors
 		"Wood (Generic)"   = WOOD_COLOR_GENERIC,
