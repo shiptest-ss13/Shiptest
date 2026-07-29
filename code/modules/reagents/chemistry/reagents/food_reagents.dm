@@ -415,10 +415,28 @@
 
 /datum/reagent/consumable/nutraslop
 	name = "Nutraslop"
-	description = "Mixture of leftover prison foods served on previous days."
+	description = "An unidentifiable mixture of various ground up foods. Technically edible."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#3E4A00" // rgb: 62, 74, 0
-	taste_description = "your imprisonment"
+	taste_description = "uninitialized variables"
+	var/list/possible_slop_tastes = list(
+		"slop", "slime", "sludge", "gloop", "glop", "goop", "swill",
+		"sweetness", "something savory", "salt", "a hint of spice",
+		"despair")
+
+/datum/reagent/consumable/nutraslop/New()
+	SSticker.OnRoundstart(CALLBACK(src, PROC_REF(slopify)))
+
+/datum/reagent/consumable/nutraslop/on_transfer()
+	slopify()
+
+/datum/reagent/consumable/nutraslop/proc/slopify()
+	var/taste_one = pick(possible_slop_tastes)
+	var/taste_two = pick(possible_slop_tastes)
+	if (taste_one != taste_two)
+		taste_description = "[taste_one] and [taste_two]"
+	else
+		taste_description = taste_one
 
 /datum/reagent/consumable/hot_ramen/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	metabolizer.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, metabolizer.get_body_temp_normal(), FALSE)
