@@ -30,6 +30,14 @@
 	number_of_tumblers = 3;
 	tumblers = list(20,45,19)
 	},
+/obj/item/ammo_box/magazine/m23/empty{
+	pixel_x = 1;
+	pixel_y = -10
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -9;
+	pixel_y = 6
+	},
 /turf/open/floor/suns/hatch{
 	color = "#792f27"
 	},
@@ -154,7 +162,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "bk" = (
-/obj/structure/bookcase/random/nonfiction,
+/obj/structure/table,
+/obj/item/modular_computer/laptop/preset/civilian{
+	pixel_x = 0;
+	pixel_y = 5
+	},
+/obj/structure/sign/poster/radio/lt101{
+	pixel_x = -1;
+	pixel_y = -31
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen)
 "bp" = (
@@ -340,6 +356,13 @@
 /obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
+"dJ" = (
+/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/structure/marker_beacon{
+	picked_color = "Burgundy"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "dN" = (
 /obj/effect/turf_decal/box/white,
 /obj/machinery/suit_storage_unit/inherit,
@@ -395,11 +418,11 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "ec" = (
-/obj/structure/rack,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
 /obj/machinery/light/directional/south,
+/obj/machinery/pipedispenser,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "en" = (
@@ -1213,6 +1236,17 @@
 	pixel_x = 6;
 	pixel_y = 0
 	},
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/clipboard,
+/obj/item/clipboard,
+/obj/item/pen,
+/obj/item/modular_computer/tablet/preset/cheap{
+	pixel_x = -7;
+	pixel_y = 0
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
 "qn" = (
@@ -1619,6 +1653,7 @@
 	dir = 8;
 	req_ship_access = 1
 	},
+/obj/structure/rack,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "wW" = (
@@ -1793,6 +1828,13 @@
 	},
 /turf/open/floor/plasteel/patterned/external,
 /area/ship/cargo)
+"Ae" = (
+/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/structure/marker_beacon{
+	picked_color = "Lime"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "Ao" = (
 /obj/machinery/door/airlock/freezer{
 	dir = 4;
@@ -2264,6 +2306,7 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
+/obj/item/soap/deluxe,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/toilet)
 "Gv" = (
@@ -3329,6 +3372,18 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
+"UM" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/coffee/empty{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/food/drinks/coffee/empty{
+	pixel_x = 5;
+	pixel_y = 9
+	},
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/canteen)
 "UT" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -3498,6 +3553,26 @@
 /obj/item/reagent_containers/glass/bowl,
 /obj/item/reagent_containers/glass/bowl,
 /obj/item/reagent_containers/glass/bowl,
+/obj/item/reagent_containers/food/drinks/modglass{
+	pixel_x = 12;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/food/drinks/modglass{
+	pixel_x = 11;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -10;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -10;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/food/drinks/modglass/large,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/glass/beaker/large,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "WZ" = (
@@ -3634,6 +3709,7 @@
 	dir = 10
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/structure/chair/office,
 /turf/open/floor/wood/maple,
 /area/ship/crew/canteen)
 "YH" = (
@@ -4134,7 +4210,7 @@ en
 Pv
 Pv
 RM
-bk
+UM
 kO
 VH
 VH
@@ -4210,7 +4286,7 @@ uR
 VH
 "}
 (20,1,1) = {"
-vO
+Ae
 vO
 mf
 mf
@@ -4229,7 +4305,7 @@ fy
 fy
 fy
 vO
-vO
+dJ
 VH
 "}
 (21,1,1) = {"
@@ -4512,7 +4588,7 @@ VH
 VH
 VH
 VH
-vO
+Ae
 vO
 vO
 xx
@@ -4525,7 +4601,7 @@ uo
 xx
 vO
 vO
-vO
+dJ
 VH
 VH
 VH
