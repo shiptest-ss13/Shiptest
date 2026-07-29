@@ -60,6 +60,10 @@
 
 /area/centcom/commandoffices/pgf
 	name = "Pan-Gezenan High Command"
+	ambientsounds = list('sound/ambience/signal.ogg')
+	lighting_colour_tube = "#7794c9"
+	lighting_colour_bulb = "#7794c9"
+	lighting_brightness_tube = 6
 
 /area/centcom/commandoffices/clip
 	name = "CLIP Colonial Command"
