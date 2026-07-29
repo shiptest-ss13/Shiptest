@@ -86,11 +86,7 @@
 
 /datum/action/innate/liz_lighter/Activate()
 	var/mob/living/carbon/human/H = owner
-	// Cooldown check
-	if(world.time < last_use + cooldown_time)
-		to_chat(H, span_warning("Your throat is still sore. You can't ignite another flame yet."))
-		return
-	// Mouth covering check
+	// Mouth covering check, has to be here or players won't get the prompt to remove their mask
 	if(H.wear_mask || (H.head && H.head.flags_inv & HIDEFACE))
 		to_chat(H, span_warning("Your mouth is covered. You can't ignite a flame."))
 		return
@@ -104,8 +100,9 @@
 
 /datum/action/innate/liz_lighter/IsAvailable()
 	if(..())
-		return TRUE
-	return FALSE
+		if(world.time < last_use + cooldown_time)
+			return FALSE
+	return TRUE
 
 /datum/species/lizard/random_name(gender,unique,lastname)
 	if(unique)
