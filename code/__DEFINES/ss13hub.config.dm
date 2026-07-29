@@ -1,5 +1,5 @@
 #define SS13LIB_EXTERNAL_CONFIGURATION
-//#define SS13LIB_EXTERNAL_INIT
+#define SS13LIB_EXTERNAL_INIT
 #define SS13LIB_EXTERNAL_HEARTBEAT
 
 #define SS13LIB_HUB_VISIBILITY world.visibility
@@ -42,7 +42,7 @@
 #define SS13LIB_ERROR_LOG(message) log_world("SS13Hub Error: [##message]")
 
 //Needs rust_g 6.2.0
-//#define SS13LIB_ATTEST_DOMAIN CONFIG_GET(string/verified_domain)
-//#define SS13LIB_ATTEST_PRIVKEY CONFIG_GET(string/verified_private_key)
-//#define SS13LIB_ED25519_SIGN(privkey, message) rustg_ed25519_sign(privkey, message)
-//#define SS13LIB_UNIX_EPOCH rustg_unix_timestamp()
+#define SS13LIB_ATTEST_DOMAIN CONFIG_GET(string/verified_domain)
+#define SS13LIB_ATTEST_PRIVKEY CONFIG_GET(string/verified_private_key)
+#define SS13LIB_ED25519_SIGN(privkey, message) rustg_ed25519_sign(privkey, message)
+#define SS13LIB_UNIX_EPOCH rustg_unix_timestamp()

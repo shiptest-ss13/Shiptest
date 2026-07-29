@@ -46,7 +46,7 @@ fi
 echo "Deploying rust-g..."
 cd rust-g
 git checkout "$RUST_G_VERSION"
-env PKG_CONFIG_ALLOW_CROSS=1 RUSTFLAGS="-C target-cpu=native" ~/.cargo/bin/cargo build --release --target=i686-unknown-linux-gnu
+env PKG_CONFIG_ALLOW_CROSS=1 RUSTFLAGS="-C target-cpu=native" ~/.cargo/bin/cargo build --release --target=i686-unknown-linux-gnu --features "default,ed25519"
 mv target/i686-unknown-linux-gnu/release/librust_g.so "$1/librust_g.so"
 cd ..
 
