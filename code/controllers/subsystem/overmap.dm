@@ -131,7 +131,7 @@ SUBSYSTEM_DEF(overmap)
 	tracked_star_systems[2] = spawn_new_star_system(wilderness_sectors[1])
 	wild_sectors += tracked_star_systems[2]
 
-	tracked_star_systems[1].create_jump_point_link(tracked_star_systems[2],4)
+	tracked_star_systems[1].create_jump_point_link(tracked_star_systems[2],5)
 
 #else
 
