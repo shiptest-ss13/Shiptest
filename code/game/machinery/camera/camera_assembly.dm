@@ -10,7 +10,8 @@
 	icon_state = "cameracase"
 	custom_materials = list(/datum/material/iron=400, /datum/material/glass=250)
 	result_path = /obj/structure/camera_assembly
-	inverse = FALSE
+	pixel_shift = 16
+	inverse_pixel_shift = TRUE
 
 /obj/structure/camera_assembly
 	name = "camera assembly"
@@ -234,6 +235,8 @@
 	var/obj/machinery/camera/C = new(loc, src)
 	forceMove(C)
 	C.setDir(src.dir)
+	C.pixel_x = src.pixel_x
+	C.pixel_y = src.pixel_y
 
 	C.network = tempnetwork
 	var/area/A = get_area(src)
