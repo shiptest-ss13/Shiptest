@@ -267,8 +267,14 @@
 	},
 /area/ship/cargo)
 "dH" = (
-/obj/item/radio/intercom/directional/south,
-/turf/template_noop,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/sign/solgov_seal{
+	pixel_y = -30;
+	pixel_x = -1
+	},
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "dI" = (
 /obj/machinery/door/poddoor{
@@ -465,11 +471,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "fx" = (
-/obj/structure/sign/solgov_seal{
-	pixel_x = 28;
-	pixel_y = 0
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
 	},
-/turf/template_noop,
+/obj/structure/sign/solgov_seal{
+	pixel_x = -1;
+	pixel_y = 32
+	},
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "fI" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue{
@@ -5756,11 +5765,11 @@ gk
 kv
 Gk
 Gk
-fx
 Gk
 Gk
 Gk
-fx
+Gk
+Gk
 Gk
 Gk
 iM
@@ -5785,9 +5794,9 @@ Bj
 Gk
 Gk
 ys
+fx
 qC
-qC
-qC
+dH
 ys
 Gk
 Gk
@@ -6137,7 +6146,7 @@ jr
 jr
 "}
 (19,1,1) = {"
-dH
+Gk
 jX
 jX
 jX

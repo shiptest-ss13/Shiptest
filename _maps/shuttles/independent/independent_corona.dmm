@@ -1353,6 +1353,9 @@
 	pixel_x = 10;
 	pixel_y = -2
 	},
+/obj/item/clothing/glasses/safety,
+/obj/item/clothing/glasses/safety,
+/obj/item/clothing/glasses/safety,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "pn" = (
@@ -3253,11 +3256,11 @@
 	pixel_y = 12;
 	pixel_x = 4
 	},
-/obj/item/clothing/mask/breath{
+/obj/machinery/light/directional/north,
+/obj/item/clothing/mask/gas{
 	pixel_x = -8;
 	pixel_y = -8
 	},
-/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "Kn" = (
@@ -4310,9 +4313,9 @@
 	pixel_y = 12;
 	pixel_x = 4
 	},
-/obj/item/clothing/mask/breath{
-	pixel_x = -8;
-	pixel_y = -8
+/obj/item/clothing/mask/gas{
+	pixel_x = -7;
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
@@ -4801,6 +4804,24 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
+"Yk" = (
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/tank/jetpack/oxygen{
+	pixel_x = 8
+	},
+/obj/item/clothing/suit/space/eva{
+	pixel_x = -5
+	},
+/obj/item/clothing/head/helmet/space/eva{
+	pixel_y = 12;
+	pixel_x = 4
+	},
+/obj/item/clothing/mask/gas{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/cargo)
 "YD" = (
 /obj/effect/turf_decal/box/white,
 /obj/structure/table/reinforced,
@@ -5343,7 +5364,7 @@ Tw
 SQ
 gr
 rX
-SU
+Yk
 Zr
 BJ
 by
