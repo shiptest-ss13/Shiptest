@@ -132,6 +132,7 @@
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	light_color = COLOR_ROCKPLANET_LIGHT
 	name = "pond"
+	color = "#719af1"
 
 ///plating
 
