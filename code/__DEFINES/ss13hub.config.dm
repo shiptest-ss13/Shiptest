@@ -20,8 +20,11 @@
 									list("type" = "discord", "link" = CONFIG_GET(string/discordurl)))
 
 #define SS13LIB_ENGINE_MIN_VERSION "[CONFIG_GET(number/client_error_version)].[CONFIG_GET(number/client_error_build)]"
-//#define SS13LIB_ENGINE_MAX_VERSION
-//#define SS13LIB_ENGINE_BLACKLISTED_VERSIONS
+#define SS13LIB_ENGINE_MAX_VERSION CONFIG_GET(string/client_max_version_full)
+#define SS13LIB_ENGINE_BLACKLISTED_VERSIONS CONFIG_GET(str_list/client_blacklisted_versions)
+
+#define SS13LIB_WHITELISTED CONFIG_GET(flag/usewhitelist)
+#define SS13LIB_TERMS_OF_SERVICE CONFIG_GET(string/termsofserviceurl)
 
 #define SS13LIB_ROUND_MAP_NAME GLOB.station_name
 //#define SS13LIB_ROUND_STARTED_AT_BYOND SSticker?.round_start_time

@@ -245,6 +245,8 @@
 /datum/config_entry/string/mapviewerurl
 	config_entry_value = "https://shiptest.net/map"
 
+/datum/config_entry/string/termsofserviceurl
+
 /datum/config_entry/string/centcom_ban_db	// URL for the CentCom Galactic Ban DB API
 
 /datum/config_entry/string/roundstatsurl
@@ -418,6 +420,11 @@
 /datum/config_entry/number/client_error_build
 	config_entry_value = null
 	min_val = 0
+
+/datum/config_entry/string/client_max_version_full
+	config_entry_value = null
+
+/datum/config_entry/str_list/client_blacklisted_versions
 
 /datum/config_entry/number/minute_topic_limit
 	config_entry_value = null

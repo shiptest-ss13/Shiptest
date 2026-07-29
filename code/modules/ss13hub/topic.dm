@@ -89,6 +89,14 @@
 		"links" = SS13LIB_SERVER_LINKS,
 #endif
 
+#ifdef SS13LIB_WHITELISTED
+		"whitelisted" = SS13LIB_WHITELISTED,
+#endif
+
+#ifdef SS13LIB_TERMS_OF_SERVICE
+		"terms_of_service" = list("url" = SS13LIB_TERMS_OF_SERVICE),
+#endif
+
 #ifdef SS13LIB_CONNECTION_ADDRESS
 		"connection_address" = SS13LIB_CONNECTION_ADDRESS,
 #endif
@@ -125,5 +133,4 @@
 	)
 
 	return json_encode(response)
-
 

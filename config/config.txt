@@ -268,6 +268,9 @@ WEBURL https://shiptest.net
 ## Map viewer address, will have `?=[map_short_name]` appended to it
 # MAPVIEWERURL https://shiptest.net/map
 
+## Terms of service URL
+# TERMSOFSERVICEURL https://shiptest.net/
+
 ## Round specific stats address
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()
 ## This will take priority over the game logs address during reboot.
@@ -433,6 +436,12 @@ CLIENT_ERROR_VERSION 511
 CLIENT_ERROR_MESSAGE Your version of byond is not supported. Please upgrade.
 ## The minimum build needed for joining the server, if using 512, a good minimum build would be 1421 as that disables the Middle Mouse Button exploit.
 CLIENT_ERROR_BUILD 1421
+
+## This is specified differently from the above, it's a full string including both version and build. Used only for SS13lib.
+#CLIENT_MAX_VERSION_FULL 516.1685
+
+## List of specific blacklisted versions for ss13lib. Use multiple entries, like with interview questions in interviews.txt.
+CLIENT_BLACKLISTED_VERSIONS 516.1660
 
 ## TOPIC RATE LIMITING
 ## This allows you to limit how many topic calls (clicking on an interface window) the client can do in any given game second and/or game minute.
