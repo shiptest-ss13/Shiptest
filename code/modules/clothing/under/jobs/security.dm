@@ -284,6 +284,7 @@
 		)
 	supports_variations = DIGITIGRADE_VARIATION
 	roll_down = TRUE
+	roll_sleeves = FALSE
 
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
