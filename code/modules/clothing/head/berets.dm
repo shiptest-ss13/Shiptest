@@ -13,8 +13,6 @@
 	name = "ACLF beret"
 	desc = "A hand-stitched beret bearing Anti-Corporation Liberation Front iconography."
 	icon_state = "aclfberet"
-	icon = 'icons/obj/clothing/head/color.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
 
 /obj/item/clothing/head/beret/highlander
 	desc = "That was white fabric. <i>Was.</i>"
