@@ -793,6 +793,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/tdome/arena)
 "arH" = (
+/obj/structure/sign/poster/official/obey{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/mono,
 /area/centcom/prison)
 "arJ" = (
@@ -6987,6 +6990,13 @@
 /obj/effect/turf_decal/corner/opaque/yellow/half,
 /turf/open/floor/plasteel,
 /area/centcom/supply)
+"iIj" = (
+/obj/effect/turf_decal/corner/opaque/yellow/half{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel,
+/area/centcom/supplypod)
 "iIJ" = (
 /turf/open/floor/plasteel/mono/dark,
 /area/centcom/supplypod/loading/one)
@@ -8970,6 +8980,12 @@
 /obj/effect/turf_decal/corner/transparent/warrabluelight,
 /turf/open/floor/plasteel,
 /area/centcom/control)
+"lVC" = (
+/obj/structure/sign/poster/official/obey{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/mono,
+/area/centcom/prison)
 "lVD" = (
 /obj/effect/turf_decal/road{
 	icon_state = "road_arrow"
@@ -42219,7 +42235,7 @@ aaa
 aaa
 aaa
 wER
-mCR
+mzM
 eJV
 aJZ
 aYn
@@ -42476,9 +42492,9 @@ aaa
 aaa
 aaa
 wER
-mzM
+mCR
 eJV
-aJZ
+aQT
 aYn
 sEJ
 iIJ
@@ -43510,7 +43526,7 @@ aJZ
 fwH
 bsB
 bsB
-bsB
+iIj
 bsB
 bsB
 bsB
@@ -44791,7 +44807,7 @@ aaa
 wER
 mCR
 eJV
-aJZ
+aQT
 aYn
 iAG
 kQE
@@ -45295,13 +45311,13 @@ aHx
 jEB
 jEB
 jEB
+cnW
 jEB
 jEB
 jEB
 jEB
 jEB
-jEB
-jEB
+cnW
 jEB
 aoH
 eJV
@@ -46578,7 +46594,7 @@ bXj
 amD
 mCR
 eJV
-aJZ
+aQT
 ers
 qgt
 mEh
@@ -48634,7 +48650,7 @@ gTh
 amD
 mCR
 eJV
-aJZ
+aQT
 ers
 qgt
 vRc
@@ -49665,12 +49681,12 @@ eJV
 rja
 wER
 jEB
-jEB
-jEB
+cnW
 jEB
 jEB
 jEB
 cnW
+jEB
 wER
 aaa
 aaa
@@ -50179,12 +50195,12 @@ eJV
 fZL
 wER
 aJn
-aJn
-aJn
+aZB
 aJn
 aJn
 aJn
 aZB
+aJn
 wER
 aaa
 bhp
@@ -50431,7 +50447,7 @@ gJY
 exN
 aGL
 amD
-mCR
+mzM
 eJV
 aJZ
 wER
@@ -50688,9 +50704,9 @@ amD
 amD
 amD
 amD
-mzM
+mCR
 eJV
-aJZ
+aQT
 wER
 aaa
 oGj
@@ -52232,7 +52248,7 @@ ibd
 wER
 uPI
 eJV
-aJZ
+aQT
 bUH
 lYF
 rDI
@@ -53003,7 +53019,7 @@ eaU
 fkV
 mzM
 eJV
-aQT
+aJZ
 bUH
 nvA
 nvA
@@ -53774,8 +53790,8 @@ eJV
 wER
 uPI
 eJV
-aJZ
-aab
+aQT
+wER
 aaa
 aaa
 aaa
@@ -54800,7 +54816,7 @@ wER
 aQw
 kxm
 wER
-mCR
+mzM
 eJV
 aJZ
 aEp
@@ -55057,9 +55073,9 @@ wER
 asF
 hSn
 wER
-mzM
+mCR
 eJV
-aJZ
+aQT
 aEp
 pqn
 aqD
@@ -56858,7 +56874,7 @@ aaa
 wER
 mCR
 eJV
-aJZ
+aQT
 aEp
 kbC
 khG
@@ -60437,16 +60453,16 @@ aaa
 aaa
 ail
 toe
-arH
+lVC
 ail
 toe
-arH
+lVC
 ail
 toe
-arH
+lVC
 ail
 toe
-arH
+lVC
 ail
 aaa
 wER
@@ -60454,9 +60470,9 @@ jKo
 eEM
 eEM
 wER
-aTT
+mCR
 eJV
-aJZ
+aQT
 aEp
 fOu
 cux
@@ -60713,7 +60729,7 @@ kzK
 trf
 mzM
 eJV
-aJZ
+mwF
 aEp
 azA
 cux
@@ -61484,7 +61500,7 @@ aOD
 fkV
 mzM
 eJV
-aQT
+aJZ
 aEp
 aEp
 aOo
@@ -61998,7 +62014,7 @@ ibd
 wER
 wWB
 eJV
-aJZ
+aQT
 aEp
 ykD
 aqD
@@ -63283,7 +63299,7 @@ eJV
 fkV
 mzM
 eJV
-aQT
+aJZ
 aEp
 dWD
 uQI
@@ -63540,7 +63556,7 @@ eJV
 wER
 wWB
 eJV
-aJZ
+aQT
 aEp
 alr
 alr
@@ -65080,9 +65096,9 @@ wER
 wER
 wER
 wER
-mzM
+mCR
 eJV
-aJZ
+aQT
 wER
 dGb
 jiN
@@ -65339,7 +65355,7 @@ aaa
 wER
 rJp
 eJV
-aQT
+aJZ
 wER
 wyk
 aZr
