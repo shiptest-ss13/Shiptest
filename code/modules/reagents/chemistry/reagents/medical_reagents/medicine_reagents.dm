@@ -649,18 +649,24 @@
 	color = "#FFEBEB"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/synthflesh/expose_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1) //Touch application converts brute and burn to oxy at a 1u for 2 damage rate
+/datum/reagent/medicine/synthflesh/expose_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1) //Touch application converts brute and burn to oxy at a 1u for 1 damage rate for splashed beakers, 1u for 2 damage for patches and hypos/medsprays
 	if(iscarbon(M))
 		var/mob/living/carbon/carbies = M
 		if (carbies.stat == DEAD)
 			show_message = 0
 		if(method in list(PATCH, TOUCH, VAPOR))
-			var/harmies = min(carbies.getBruteLoss(),carbies.adjustBruteLoss(-2 * reac_volume)*-1)
-			var/burnies = min(carbies.getFireLoss(),carbies.adjustFireLoss(-2 * reac_volume)*-1)
+			if(method in list(PATCH))
+				var/harmies = min(carbies.getBruteLoss(),carbies.adjustBruteLoss(-2 * reac_volume)*-1)
+				var/burnies = min(carbies.getFireLoss(),carbies.adjustFireLoss(-2 * reac_volume)*-1)
+				carbies.adjustOxyLoss((harmies+burnies)*1)
+			else
+				var/harmies = min(carbies.getBruteLoss(),carbies.adjustBruteLoss(-1 * reac_volume)*-1)
+				var/burnies = min(carbies.getFireLoss(),carbies.adjustFireLoss(-1 * reac_volume)*-1)
+				carbies.adjustOxyLoss((harmies+burnies)*1)
 			for(var/i in carbies.all_wounds)
 				var/datum/wound/iter_wound = i
 				iter_wound.on_synthflesh(reac_volume)
-			carbies.adjustOxyLoss((harmies+burnies)*1)
+			carbies.reagents.remove_reagent(/datum/reagent/medicine/synthflesh, reac_volume)
 			if(show_message)
 				to_chat(carbies, span_danger("You feel your burns and bruises healing! It stings like hell!"))
 			SEND_SIGNAL(carbies, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
