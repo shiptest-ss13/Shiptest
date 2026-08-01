@@ -1,11 +1,5 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ac" = (
-/obj/machinery/button/door{
-	pixel_x = -4;
-	id = "ivory_captains";
-	name = "shutter control";
-	pixel_y = 22
-	},
 /obj/structure/sign/poster/contraband/c20r{
 	pixel_x = -31;
 	pixel_y = -1
@@ -59,7 +53,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/engines/starboard)
 "ah" = (
-/obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "ivory_cargo"
@@ -1309,7 +1302,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "rv" = (
-/obj/machinery/vending/boozeomat,
+/obj/machinery/vending/boozeomat{
+	dir = 4;
+	pixel_x = -4;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "rw" = (
@@ -2140,7 +2137,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/captain)
 "Ef" = (
-/obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "ivory_cargo"
@@ -2405,7 +2401,6 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "Il" = (
-/obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "ivory_cargo"
