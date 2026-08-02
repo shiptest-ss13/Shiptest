@@ -37,6 +37,10 @@
 	display_name = "beret, recolorable"
 	path = /obj/item/clothing/head/beret/color
 
+/datum/gear/hat/beret/aclf
+	display_name = "ACLF beret"
+	path = /obj/item/clothing/head/beret/aclf
+
 /datum/gear/hat/beret/departmental
 	display_name = "beret, departmental"
 	path = /obj/item/clothing/head/beret/grey
