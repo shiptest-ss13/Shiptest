@@ -9,7 +9,7 @@
 
 /datum/supply_pack/magazine/co9mm_mag
 	name = "9mm Pistol Magazine Crate"
-	desc = "Contains a 9mm magazine for the Challenger and Challenger pistols, with a capacity of twelve rounds."
+	desc = "Contains a 9mm magazine for the Challenger and Champion pistols, with a capacity of twelve rounds."
 	contains = list(/obj/item/ammo_box/magazine/co9mm/empty)
 	cost = 150
 	faction = /datum/faction/warra
