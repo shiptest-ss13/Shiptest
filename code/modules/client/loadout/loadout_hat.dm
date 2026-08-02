@@ -165,6 +165,10 @@
 	display_name = "flap cap, recolorable"
 	path = /obj/item/clothing/head/flap
 
+/datum/gear/hat/boonie
+	display_name = "boonie, recolorable"
+	path = /obj/item/clothing/head/boonie
+
 /datum/gear/hat/sunhat
 	display_name = "sun hat"
 	path = /obj/item/clothing/head/sunhat
