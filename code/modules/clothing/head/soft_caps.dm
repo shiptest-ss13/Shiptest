@@ -63,7 +63,7 @@
 
 /obj/item/clothing/head/soft/examine(mob/user)
 	. = ..()
-	. += span_notice("Alt-click the cap to flip it [flipped ? "forwards" : "backwards"].")
+	. += span_notice("Right click the cap to flip it [flipped ? "forwards" : "backwards"].")
 
 /obj/item/clothing/head/soft/white
 	name = "white cap"
