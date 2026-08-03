@@ -120,6 +120,12 @@
 /obj/structure/flora/junglebush/b,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"cI" = (
+/obj/effect/turf_decal/siding/wood/maple,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood/maple/jungleplanet/interior,
+/area/ruin/jungle/swamp)
 "cJ" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 8
@@ -860,12 +866,6 @@
 	},
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"om" = (
-/obj/effect/turf_decal/siding/wood/maple,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/south,
-/turf/open/floor/wood/maple/jungleplanet/interior,
-/area/ruin/jungle/swamp)
 "oo" = (
 /turf/open/floor/carpet/red/jungleplanet/interior,
 /area/ruin/jungle/swamp)
@@ -923,14 +923,6 @@
 	},
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp)
-"oY" = (
-/obj/structure/table/wood,
-/obj/item/storage/box/ammo/a762_40{
-	pixel_x = -10;
-	pixel_y = 4
-	},
-/turf/open/floor/wood/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "pe" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/gun/ballistic/automatic/zip_pistol{
@@ -1560,6 +1552,14 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/swamp/butchery)
+"zx" = (
+/obj/structure/table/wood,
+/obj/item/storage/box/ammo/a762_40{
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/turf/open/floor/wood/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "zD" = (
 /obj/structure/platform/wood_two{
 	dir = 5
@@ -1819,14 +1819,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/swamp)
-"DS" = (
-/obj/structure/table/wood,
-/obj/item/storage/box/ammo/a762_40{
-	pixel_x = 8;
-	pixel_y = 1
-	},
-/turf/open/floor/wood/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "Ee" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/wood/jungleplanet/lit{
@@ -1897,6 +1889,10 @@
 "Gf" = (
 /obj/structure/cable/orange{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/wood{
+	name = "Main Building";
+	dir = 4
 	},
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp)
@@ -2258,6 +2254,14 @@
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /turf/open/floor/suns/diagonal/walnut/cold,
 /area/ruin/jungle/swamp/butchery)
+"Mc" = (
+/obj/structure/table/wood,
+/obj/item/storage/box/ammo/a762_40{
+	pixel_x = 8;
+	pixel_y = 1
+	},
+/turf/open/floor/wood/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Mg" = (
 /obj/structure/platform/wood_two/corner,
 /turf/open/floor/wood/jungleplanet/lit,
@@ -5990,7 +5994,7 @@ Cc
 oM
 Dm
 ql
-om
+cI
 oM
 pP
 Xx
@@ -6248,7 +6252,7 @@ NN
 NN
 NN
 jW
-oY
+zx
 QY
 pE
 jd
@@ -7083,7 +7087,7 @@ NN
 jW
 pE
 zR
-DS
+Mc
 jd
 NN
 NN
