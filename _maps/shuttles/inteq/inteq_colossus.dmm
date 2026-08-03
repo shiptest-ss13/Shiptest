@@ -765,8 +765,7 @@
 	pixel_y = 8
 	},
 /obj/item/radio/intercom/directional/south{
-	pixel_x = 6;
-	pixel_y = -31
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -6245,6 +6244,7 @@
 /area/ship/engineering/engines/starboard)
 "On" = (
 /obj/effect/turf_decal/corner/opaque/yellow/full,
+/obj/machinery/emergency_panel,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "Oo" = (
@@ -7276,12 +7276,10 @@
 	},
 /obj/item/folder/syndicate{
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	name = "folder";
 	pixel_x = 8
 	},
 /obj/item/folder/syndicate{
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	name = "folder";
 	pixel_x = 8;
 	pixel_y = -4
 	},
@@ -8249,7 +8247,6 @@
 	icon_state = "4-8"
 	},
 /obj/item/storage/guncase/pistol/podium_inteq{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /obj/item/melee/classic_baton/telescopic{

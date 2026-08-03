@@ -611,7 +611,6 @@
 	isGlass = FALSE
 	custom_price = 5
 	var/pierced = FALSE
-	obj_flags = CAN_BE_HIT
 
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attack(mob/M, mob/user)
@@ -629,7 +628,7 @@
 	. = ..()
 	if(is_drainable() && pierced && chugged)
 		M.changeNext_move(CLICK_CD_RAPID)
-		if(iscarbon(M))
+		if(iscarbon(M) && HAS_TRAIT(M, TRAIT_LIGHT_DRINKER))
 			var/mob/living/carbon/broh = M
 			broh.adjustOxyLoss(2)
 			broh.losebreath++
@@ -644,7 +643,6 @@
 						user.visible_message("<b>[broh]</b> makes \an [pick(list("uncomfortable", "gross", "troubling"))] gurgling noise as [broh.p_they()] chug the can of [src]!")
 				if(9 to INFINITY)
 					broh.vomit(2, stun=FALSE)
-
 
 /obj/item/reagent_containers/food/drinks/soda_cans/bullet_act(obj/projectile/P)
 	. = ..()
@@ -667,13 +665,13 @@
 		open_soda(user)
 	return ..()
 
-/obj/item/reagent_containers/food/drinks/soda_cans/attacked_by(obj/item/I, mob/living/user)
+/obj/item/reagent_containers/food/drinks/soda_cans/attackby(obj/item/I, mob/living/user)
 	if(I.sharpness && !pierced && user && user.a_intent != INTENT_HARM)
 		user.visible_message("<b>[user]</b> pierces [src] with [I].", span_notice("You pierce \the [src] with [I]."))
 		playsound(src, "can_open", 50, TRUE)
 		pierced = TRUE
 		return
-	else if(I.force)
+	else if(I.force >= 5 && I.damtype == BRUTE && user.a_intent == INTENT_HARM)
 		user.visible_message("<b>[user]</b> crushes [src] with [I]! Party foul!", span_warning("You crush \the [src] with [I]! Party foul!"))
 		playsound(src, "can_open", 50, TRUE)
 		var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(src.loc)

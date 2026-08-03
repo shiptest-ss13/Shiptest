@@ -284,7 +284,7 @@
 	icon_state = "hardsuit1-pointman"
 	hardsuit_type = "pointman"
 	full_retraction = TRUE
-	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION | SNOUTED_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/inteq
 	name = "elite rampart hardsuit helmet"
