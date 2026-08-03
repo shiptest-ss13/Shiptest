@@ -482,7 +482,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "hU" = (
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "hW" = (
 /turf/open/floor/wood/jungleplanet/lit,
 /area/ruin/jungle/swamp/colligne)
@@ -860,6 +860,12 @@
 	},
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"om" = (
+/obj/effect/turf_decal/siding/wood/maple,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood/maple/jungleplanet/interior,
+/area/ruin/jungle/swamp)
 "oo" = (
 /turf/open/floor/carpet/red/jungleplanet/interior,
 /area/ruin/jungle/swamp)
@@ -917,6 +923,14 @@
 	},
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"oY" = (
+/obj/structure/table/wood,
+/obj/item/storage/box/ammo/a762_40{
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/turf/open/floor/wood/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "pe" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/gun/ballistic/automatic/zip_pistol{
@@ -1075,6 +1089,10 @@
 /turf/open/floor/plasteel/tech/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "rf" = (
+/obj/machinery/door/airlock/wood{
+	name = "Washroom";
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "rh" = (
@@ -1132,10 +1150,6 @@
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
 "sc" = (
-/obj/item/mob_trophy/ash_spike{
-	pixel_x = -1;
-	pixel_y = 3
-	},
 /obj/structure/rack,
 /obj/effect/turf_decal/siding/brown/corner{
 	dir = 1
@@ -1666,6 +1680,7 @@
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "Cc" = (
@@ -1804,6 +1819,14 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"DS" = (
+/obj/structure/table/wood,
+/obj/item/storage/box/ammo/a762_40{
+	pixel_x = 8;
+	pixel_y = 1
+	},
+/turf/open/floor/wood/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ee" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/wood/jungleplanet/lit{
@@ -5967,7 +5990,7 @@ Cc
 oM
 Dm
 ql
-wS
+om
 oM
 pP
 Xx
@@ -6225,7 +6248,7 @@ NN
 NN
 NN
 jW
-EB
+oY
 QY
 pE
 jd
@@ -6272,7 +6295,7 @@ In
 oM
 pN
 Ub
-Vq
+Ao
 oM
 gw
 nP
@@ -7060,7 +7083,7 @@ NN
 jW
 pE
 zR
-EB
+DS
 jd
 NN
 NN
