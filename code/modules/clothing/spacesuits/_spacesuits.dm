@@ -51,3 +51,5 @@
 	greyscale_colors = list(list(17, 16), list(9, 17), list(13, 13))
 	greyscale_icon_state = "spacesuit"
 	equip_self_flags = null
+
+	allow_laundry_buffs = FALSE

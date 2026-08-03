@@ -215,9 +215,9 @@
 /obj/machinery/fax/proc/clear_jam(obj/item/item, mob/user)
 	if(istype(item, /obj/item/reagent_containers/spray))
 		var/obj/item/reagent_containers/spray/clean_spray = item
-		if(!clean_spray.reagents.has_reagent(/datum/reagent/space_cleaner, clean_spray.amount_per_transfer_from_this))
+		if(!clean_spray.reagents.has_reagent(/datum/reagent/bleach, clean_spray.amount_per_transfer_from_this))
 			return FALSE
-		clean_spray.reagents.remove_reagent(/datum/reagent/space_cleaner, clean_spray.amount_per_transfer_from_this, 1)
+		clean_spray.reagents.remove_reagent(/datum/reagent/bleach, clean_spray.amount_per_transfer_from_this, 1)
 		playsound(loc, 'sound/effects/spray3.ogg', 50, TRUE, -5)
 		user.visible_message(span_notice("[user] cleans \the [src]."), span_notice("You clean \the [src]."))
 		jammed = FALSE

@@ -84,6 +84,16 @@
 	timeout = 5 MINUTES
 
 /datum/mood_event/fresh_laundry
-	description = span_nicegreen("There's nothing like the feeling of a freshly laundered jumpsuit.")
+	description = span_nicegreen("There's nothing like the feeling of freshly washed clothing.")
 	mood_change = 2
-	timeout = 10 MINUTES
+	timeout = 75 MINUTES
+
+/datum/mood_event/soft_laundry
+	description = span_nicegreen("This laundry is so soft and comfortable.")
+	mood_change = 2
+	timeout = 75 MINUTES
+
+/datum/mood_event/warm_laundry
+	description = span_nicegreen("Nothing like freshly dried and warm laundry!.")
+	mood_change = 2
+	timeout = 75 MINUTES

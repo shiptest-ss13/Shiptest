@@ -24,6 +24,8 @@
 	strip_delay = EQUIP_DELAY_SUIT * 1.5
 	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
 
+	allow_laundry_buffs = FALSE
+
 /obj/item/clothing/suit/armor/Initialize()
 	. = ..()
 	if(!allowed)

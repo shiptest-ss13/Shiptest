@@ -33,6 +33,8 @@
 	equip_sound = 'sound/items/equip/straps_equip.ogg'
 	equip_self_flags = null
 
+	allow_laundry_buffs = FALSE
+
 //Virology biosuit, green stripe
 /obj/item/clothing/head/bio_hood/virology
 	icon_state = "bio_virology"

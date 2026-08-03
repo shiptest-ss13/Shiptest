@@ -365,15 +365,15 @@
 
 	B1.reagents.add_reagent(/datum/reagent/fluorosurfactant, 40)
 	B2.reagents.add_reagent(/datum/reagent/water, 40)
-	B2.reagents.add_reagent(/datum/reagent/space_cleaner, 10)
+	B2.reagents.add_reagent(/datum/reagent/bleach, 10)
 
 	beakers += B1
 	beakers += B2
 
 
 /obj/item/grenade/chem_grenade/ez_clean
-	name = "cleaner grenade"
-	desc = "Waffle Co.-brand foaming space cleaner. In a special applicator for rapid cleaning of wide areas."
+	name = "'EZ Clean' grenade"
+	desc = "An ICW era chemical weapon, nicknamed 'EZ Clean'. In a special applicator for rapid cleaning of wide areas."
 	stage = GRENADE_READY
 
 /obj/item/grenade/chem_grenade/ez_clean/Initialize()
@@ -383,7 +383,7 @@
 
 	B1.reagents.add_reagent(/datum/reagent/fluorosurfactant, 40)
 	B2.reagents.add_reagent(/datum/reagent/water, 40)
-	B2.reagents.add_reagent(/datum/reagent/space_cleaner/ez_clean, 60) //ensures a  t h i c c  distribution
+	B2.reagents.add_reagent(/datum/reagent/bleach/ez_clean, 60) //ensures a  t h i c c  distribution
 
 	beakers += B1
 	beakers += B2

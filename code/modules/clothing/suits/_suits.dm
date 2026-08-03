@@ -26,6 +26,8 @@
 	strip_delay = EQUIP_DELAY_OVERSUIT * 1.5
 	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
 
+	allow_laundry_buffs = TRUE
+
 /obj/item/clothing/suit/worn_overlays(isinhands = FALSE)
 	. = ..()
 	if(!isinhands)

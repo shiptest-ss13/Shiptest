@@ -19,7 +19,7 @@ types
 	//how far smoke and foam spreads, smoke spreads further with same number.
 	var/range = 2
 	//the datum path of the foam/smoke reagent, needs chem_foam = TRUE or chem_smoke = TRUE
-	var/reagent_type = /datum/reagent/space_cleaner
+	var/reagent_type = /datum/reagent/bleach
 
 	//randomly emits smoke between random_min and random_max time
 	var/random_steam = FALSE

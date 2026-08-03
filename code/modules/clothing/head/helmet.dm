@@ -24,6 +24,8 @@
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
+	allow_laundry_buffs = FALSE
+
 	//if a flashlight can be mounted. if it has a flashlight and this is false, it is permanently attached.
 	var/can_flashlight = FALSE
 	var/obj/item/flashlight/seclite/attached_light
