@@ -1,0 +1,40 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Madagascar-class Improvised Boarding Ferry",
+	"faction": "/datum/faction/frontiersmen",
+	"prefix": "ISV",
+	"manufacturer": "Miskilamo Spacefaring",
+	"namelists": ["PIRATES", "ACLF"],
+	"map_short_name": "Madagascar-class",
+	"map_path": "_maps/shuttles/pirate/pirate_madigascar.dmm",
+	"description": "The Madagascar is a collective designation for a great number of frontiersmen vessels 'upgraded' for improved ship-to-ship boarding capabilities. The Madagascar was subject to an extensive refit, including installing a 'docking tube' inside the cargo bay, an armory, and a 'brig' for prisoners.",
+	"tags": ["Combat"],
+	"limit": 1,
+	"tranist_x_offset": -30,
+	"tranist_y_offset": -25,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/frontiersmen/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Plank Boss": {
+			"outfit": "/datum/outfit/job/frontiersmen/hos",
+			"officer": true,
+			"slots": 1
+		},
+		"Surgeon": {
+			"outfit": "/datum/outfit/job/frontiersmen/doctor",
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/frontiersmen/engineer",
+			"slots": 1
+		},
+		"Boarder": {
+			"outfit": "/datum/outfit/job/frontiersmen/security",
+			"slots": 2
+		}
+	},
+	"enabled": false
+}
