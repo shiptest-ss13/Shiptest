@@ -120,12 +120,6 @@
 /obj/structure/flora/junglebush/b,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"cI" = (
-/obj/effect/turf_decal/siding/wood/maple,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/south,
-/turf/open/floor/wood/maple/jungleplanet/interior,
-/area/ruin/jungle/swamp)
 "cJ" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 8
@@ -1071,13 +1065,13 @@
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "rb" = (
-/obj/machinery/power/solar,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/machinery/power/tracker,
 /turf/open/floor/plasteel/tech/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "rf" = (
@@ -1412,6 +1406,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/swamp/crew)
+"wO" = (
+/obj/structure/table/wood,
+/obj/item/storage/box/ammo/a762_40{
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/turf/open/floor/wood/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "wQ" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
@@ -1552,14 +1554,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/swamp/butchery)
-"zx" = (
-/obj/structure/table/wood,
-/obj/item/storage/box/ammo/a762_40{
-	pixel_x = -10;
-	pixel_y = 4
-	},
-/turf/open/floor/wood/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "zD" = (
 /obj/structure/platform/wood_two{
 	dir = 5
@@ -2203,6 +2197,12 @@
 /obj/structure/platform/wood_two/corner,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"KZ" = (
+/obj/effect/turf_decal/siding/wood/maple,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood/maple/jungleplanet/interior,
+/area/ruin/jungle/swamp)
 "Le" = (
 /obj/item/chair/wood{
 	pixel_x = 7;
@@ -2254,14 +2254,6 @@
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /turf/open/floor/suns/diagonal/walnut/cold,
 /area/ruin/jungle/swamp/butchery)
-"Mc" = (
-/obj/structure/table/wood,
-/obj/item/storage/box/ammo/a762_40{
-	pixel_x = 8;
-	pixel_y = 1
-	},
-/turf/open/floor/wood/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "Mg" = (
 /obj/structure/platform/wood_two/corner,
 /turf/open/floor/wood/jungleplanet/lit,
@@ -2997,6 +2989,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/swamp)
+"UV" = (
+/obj/structure/table/wood,
+/obj/item/storage/box/ammo/a762_40{
+	pixel_x = 8;
+	pixel_y = 1
+	},
+/turf/open/floor/wood/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Vq" = (
 /obj/effect/turf_decal/siding/wood/maple,
 /turf/open/floor/wood/maple/jungleplanet/interior,
@@ -5994,7 +5994,7 @@ Cc
 oM
 Dm
 ql
-cI
+KZ
 oM
 pP
 Xx
@@ -6252,7 +6252,7 @@ NN
 NN
 NN
 jW
-zx
+wO
 QY
 pE
 jd
@@ -7087,7 +7087,7 @@ NN
 jW
 pE
 zR
-Mc
+UV
 jd
 NN
 NN
