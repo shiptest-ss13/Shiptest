@@ -441,9 +441,7 @@
 /area/ship/crew/canteen)
 "fq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/light_switch{
 	dir = 8;
@@ -2111,7 +2109,6 @@
 	dir = 4
 	},
 /obj/structure/sign/poster/retro/radio{
-	desc = "A poster advertising one of Makosso-Warra's earliest products, a radio. One of its main selling points was a integrated OS and two way automatic translation for Solarian Common and Gezenan, which made it a smash hit. This thing is ancient.";
 	pixel_x = -28
 	},
 /obj/item/cutting_board{
@@ -4700,12 +4697,7 @@
 	icon_state = "emptycomputer-left"
 	},
 /obj/item/radio/intercom/wideband/directional/north{
-	pixel_x = 9;
 	pixel_y = 13
-	},
-/obj/machinery/emergency_panel{
-	pixel_y = 4;
-	pixel_x = -6
 	},
 /obj/item/reagent_containers/glass/maunamug,
 /obj/item/radio/intercom/directional/west,
@@ -5527,6 +5519,10 @@
 /obj/effect/turf_decal/trimline/opaque/warrablue/filled/warning,
 /obj/effect/turf_decal/trimline/opaque/warrablue/filled/corner{
 	dir = 4
+	},
+/obj/machinery/emergency_panel{
+	pixel_x = -8;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
