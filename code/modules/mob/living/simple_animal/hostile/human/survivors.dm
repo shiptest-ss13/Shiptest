@@ -395,12 +395,12 @@
 	name = "Hermit Warlord"
 	desc = "A figure covered in dirty roumainist plate, slinging around a pristine HP Pyre. They carry such with some finesse, though they are still clearly high off their mind."
 	rapid = 3
-	rapid_fire_delay = 6
+	rapid_fire_delay = 5
 	ranged = 1
 	retreat_distance = 3
 	minimum_distance = 5
 	icon_state = "survivor_base"
-	casingtype = /obj/item/ammo_casing/a308
+	casingtype = /obj/item/ammo_casing/a4570
 	l_hand = /obj/item/gun/ballistic/shotgun/flamingarrow/pyre/factory
 	projectilesound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/swampboss
@@ -413,6 +413,7 @@
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	suit = /obj/item/clothing/suit/armor/roumain/plate/medium
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+	belt = /obj/item/storage/belt/security/military/frontiersmen
 	gloves = /obj/item/clothing/gloves/fingerless
 	head = /obj/item/clothing/head/boonie/brown
 	mask = /obj/item/clothing/mask/gas/explorer
