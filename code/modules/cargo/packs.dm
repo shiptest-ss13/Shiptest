@@ -105,7 +105,7 @@
 	fill(C)
 	return C
 
-/datum/supply_pack/proc/fill(obj/structure/closet/crate/C, var/datum/faction/F = null)
+/datum/supply_pack/proc/fill(obj/structure/closet/crate/C, datum/faction/F = null)
 	if (admin_spawned)
 		for(var/item in contains)
 			var/atom/A = new item(C)
