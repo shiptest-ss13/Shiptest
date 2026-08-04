@@ -111,7 +111,7 @@
 			var/atom/A = new item(C)
 			A.flags_1 |= ADMIN_SPAWNED_1
 	else
-		if (contains_factional && faction ? faction.allowed_factions(F) : FALSE)
+		if (contains_factional && faction ? faction.allowed_faction(F) : FALSE)
 			for(var/item in contains_factional)
 				new item(C)
 		else
