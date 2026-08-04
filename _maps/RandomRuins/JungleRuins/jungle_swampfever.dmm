@@ -26,6 +26,10 @@
 /obj/structure/table/reinforced{
 	color = "#a8b2b6"
 	},
+/obj/item/melee/knife/butcher{
+	pixel_x = 0;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp/butchery)
 "bq" = (
@@ -351,10 +355,12 @@
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "gE" = (
-/mob/living/simple_animal/hostile/asteroid/wolf/hound/hermit,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/carpet/red/jungleplanet/interior,
-/area/ruin/jungle/swamp/colligne)
+/obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 8
+	},
+/turf/open/floor/suns/diagonal/walnut/cold,
+/area/ruin/jungle/swamp/butchery)
 "gI" = (
 /obj/structure/platform/wood_two{
 	dir = 8
@@ -648,6 +654,9 @@
 /area/ruin/jungle/swamp/colligne)
 "li" = (
 /obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 4
+	},
 /turf/open/floor/suns/diagonal/walnut/cold,
 /area/ruin/jungle/swamp/butchery)
 "lq" = (
@@ -1236,6 +1245,46 @@
 	},
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"tE" = (
+/obj/structure/closet/wall/directional/north,
+/obj/item/plate{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/plate{
+	pixel_x = -7;
+	pixel_y = -3
+	},
+/obj/item/plate{
+	pixel_x = -10;
+	pixel_y = 0
+	},
+/obj/item/plate{
+	pixel_x = -13;
+	pixel_y = -5
+	},
+/obj/item/plate_shard{
+	pixel_x = 0;
+	pixel_y = -10
+	},
+/obj/item/plate_shard{
+	pixel_x = 14;
+	pixel_y = 2
+	},
+/obj/item/plate_shard{
+	pixel_x = 13;
+	pixel_y = -14
+	},
+/obj/item/plate_shard{
+	pixel_x = -5;
+	pixel_y = 1
+	},
+/obj/item/plate{
+	pixel_x = -10;
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
+/area/ruin/jungle/swamp/butchery)
 "tX" = (
 /obj/effect/turf_decal/siding/brown,
 /turf/open/floor/wood/ebony/jungleplanet/interior,
@@ -1268,6 +1317,15 @@
 /area/ruin/jungle/swamp)
 "uj" = (
 /obj/structure/kitchenspike,
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 1
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/cold,
 /area/ruin/jungle/swamp/butchery)
 "uq" = (
@@ -1362,7 +1420,7 @@
 	},
 /obj/effect/mob_spawn/human/corpse/srm,
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel/tech/cold,
+/turf/open/floor/wood/ebony/cold,
 /area/ruin/jungle/swamp/butchery)
 "vQ" = (
 /obj/structure/platform/wood_two,
@@ -1907,7 +1965,7 @@
 	pixel_x = -1;
 	pixel_y = -20
 	},
-/turf/open/floor/carpet/red/jungleplanet/interior,
+/turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "Gq" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2004,6 +2062,9 @@
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp/flamebearer)
 "Ia" = (
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 8
+	},
 /turf/open/floor/wood/ebony/cold,
 /area/ruin/jungle/swamp/butchery)
 "Id" = (
@@ -2260,6 +2321,9 @@
 /area/ruin/jungle/swamp/butchery)
 "LN" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 1
+	},
 /turf/open/floor/suns/diagonal/walnut/cold,
 /area/ruin/jungle/swamp/butchery)
 "Mg" = (
@@ -2338,6 +2402,12 @@
 /obj/effect/turf_decal/siding/white/end,
 /turf/open/floor/plasteel/dark/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"NF" = (
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 1
+	},
+/turf/open/floor/suns/diagonal/walnut/cold,
+/area/ruin/jungle/swamp/butchery)
 "NJ" = (
 /obj/structure/closet/wall/directional/north,
 /obj/item/clothing/suit/hooded/survivor{
@@ -2459,6 +2529,10 @@
 	},
 /obj/item/cutting_board{
 	pixel_y = 2
+	},
+/obj/item/melee/knife/hunting{
+	pixel_x = 0;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/tech/cold,
 /area/ruin/jungle/swamp/butchery)
@@ -2596,6 +2670,12 @@
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Qr" = (
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 9
+	},
+/turf/open/floor/suns/diagonal/walnut/cold,
+/area/ruin/jungle/swamp/butchery)
 "QD" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
@@ -2792,6 +2872,12 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
+"Tx" = (
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 5
+	},
+/turf/open/floor/suns/diagonal/walnut/cold,
+/area/ruin/jungle/swamp/butchery)
 "Ty" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/water/jungle/lit,
@@ -2947,13 +3033,13 @@
 	pixel_x = 0;
 	pixel_y = 2
 	},
-/turf/open/floor/plasteel/tech/cold,
+/turf/open/floor/wood/ebony/cold,
 /area/ruin/jungle/swamp/butchery)
 "Uv" = (
 /obj/structure/table_frame/wood,
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/carpet/red/jungleplanet/interior,
+/turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "Uy" = (
 /obj/effect/turf_decal/siding/brown{
@@ -3068,7 +3154,10 @@
 	pixel_y = -2
 	},
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel/tech/cold,
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 4
+	},
+/turf/open/floor/wood/ebony/cold,
 /area/ruin/jungle/swamp/butchery)
 "VA" = (
 /mob/living/simple_animal/hostile/asteroid/wolf/hound/hermit,
@@ -3145,6 +3234,15 @@
 "WK" = (
 /obj/structure/kitchenspike,
 /obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 1
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/cold,
 /area/ruin/jungle/swamp/butchery)
 "WL" = (
@@ -3170,6 +3268,11 @@
 /obj/item/clothing/suit/armor/roumain/montagne,
 /obj/item/clothing/under/suit/roumain/montagne,
 /obj/item/clothing/head/cowboy/sec/roumain/montagne,
+/obj/item/clothing/under/pants/camo,
+/obj/item/clothing/shoes/workboots{
+	pixel_x = 3;
+	pixel_y = -3
+	},
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "Xx" = (
@@ -3291,7 +3394,7 @@
 	pixel_x = -9;
 	pixel_y = -7
 	},
-/turf/open/floor/plasteel/tech/cold,
+/turf/open/floor/wood/ebony/cold,
 /area/ruin/jungle/swamp/butchery)
 
 (1,1,1) = {"
@@ -4552,7 +4655,7 @@ hW
 Po
 zU
 FY
-gE
+Re
 Re
 Fl
 Mk
@@ -7346,7 +7449,7 @@ OK
 Ia
 Ia
 OK
-Kl
+tE
 Kl
 Sm
 OK
@@ -7404,8 +7507,8 @@ jd
 jW
 OK
 vP
-ei
-li
+Qr
+gE
 OK
 kY
 Kl
@@ -7526,7 +7629,7 @@ jd
 jW
 OK
 Ur
-ei
+NF
 ei
 IQ
 MW
@@ -7587,7 +7690,7 @@ jd
 jW
 OK
 Vy
-ei
+Tx
 li
 OK
 TU
