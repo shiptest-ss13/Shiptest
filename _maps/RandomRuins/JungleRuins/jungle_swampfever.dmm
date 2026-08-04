@@ -1,4 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"az" = (
+/obj/item/stack/sheet/mineral/wood{
+	pixel_x = 4;
+	pixel_y = -8
+	},
+/turf/open/water/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "aC" = (
 /obj/structure/closet/wall/directional/south,
 /obj/item/clothing/suit/hooded/survivor/yellow{
@@ -16,13 +23,6 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
-"aN" = (
-/obj/item/stack/sheet/mineral/wood{
-	pixel_x = 4;
-	pixel_y = -8
-	},
-/turf/open/water/jungle/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "aU" = (
 /obj/structure/platform/wood_two/corner{
 	dir = 8
@@ -39,6 +39,12 @@
 	},
 /turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp/butchery)
+"bb" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor3-old"
+	},
+/turf/open/floor/wood/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "bq" = (
 /obj/item/clothing/head/cowboy/sec/roumain/flamebearer{
 	pixel_x = 8;
@@ -188,16 +194,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/jungleplanet/interior,
 /area/ruin/jungle/swamp)
-"di" = (
-/obj/effect/turf_decal/siding/wood/maple{
-	dir = 4
-	},
-/obj/item/reagent_containers/pill/finobranc{
-	pixel_x = -12;
-	pixel_y = -10
-	},
-/turf/open/floor/wood/maple/jungleplanet/interior,
-/area/ruin/jungle/swamp)
 "dl" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -212,10 +208,6 @@
 	},
 /turf/open/floor/plasteel/dark/jungleplanet/lit,
 /area/ruin/jungle/swamp)
-"dm" = (
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/suns/diagonal/walnut/cold,
-/area/ruin/jungle/swamp/butchery)
 "dn" = (
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
@@ -235,6 +227,10 @@
 /obj/structure/rack,
 /turf/open/floor/plasteel/tech/jungleplanet/lit,
 /area/ruin/jungle/swamp)
+"dB" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/suns/diagonal/walnut/cold,
+/area/ruin/jungle/swamp/butchery)
 "dG" = (
 /turf/open/floor/plasteel/stairs/wood/jungleplanet/lit{
 	dir = 1
@@ -314,6 +310,10 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/swamp/crew)
+"fi" = (
+/obj/effect/mob_spawn/human/corpse/srm,
+/turf/open/water/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "fk" = (
 /obj/structure/chair/plastic{
 	dir = 1
@@ -366,6 +366,12 @@
 /obj/structure/flora/rock/jungle,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"fV" = (
+/obj/item/reagent_containers/hypospray/medipen/combat_drug{
+	list_reagents = null
+	},
+/turf/open/floor/carpet/jungleplanet/interior,
+/area/ruin/jungle/swamp)
 "ga" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/platform/wood_two,
@@ -406,13 +412,6 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
-"hb" = (
-/obj/item/stack/sheet/mineral/wood{
-	pixel_x = -10;
-	pixel_y = 4
-	},
-/turf/open/water/jungle/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "hc" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/gun_maint_kit,
@@ -459,13 +458,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp)
-"ht" = (
-/obj/item/stack/sheet/mineral/wood{
-	pixel_x = 3;
-	pixel_y = -1
-	},
-/turf/open/water/jungle/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "hx" = (
 /obj/structure/table/wood,
 /obj/item/spacecash/bundle/smallrand{
@@ -626,6 +618,17 @@
 /obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plasteel/tech/jungleplanet/lit,
 /area/ruin/jungle/swamp)
+"kg" = (
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 1
+	},
+/obj/item/reagent_containers/pill/finobranc{
+	pixel_x = 9;
+	pixel_y = 7
+	},
+/obj/effect/decal/cleanable/ash,
+/turf/open/floor/wood/maple/jungleplanet/interior,
+/area/ruin/jungle/swamp)
 "kp" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 8
@@ -717,6 +720,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
+"lv" = (
+/obj/effect/mob_spawn/human/corpse/srm,
+/obj/item/stack/sheet/mineral/wood{
+	pixel_x = 7;
+	pixel_y = 2
+	},
+/turf/open/water/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "lB" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/hatchet{
@@ -823,6 +834,13 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/jungle/swamp/colligne)
+"mF" = (
+/obj/item/stack/sheet/mineral/wood{
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/turf/open/water/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "mG" = (
 /obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/carpet/green/jungleplanet/interior,
@@ -965,15 +983,6 @@
 	},
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp)
-"oZ" = (
-/obj/structure/cable/orange{
-	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor3-old"
-	},
-/turf/open/floor/wood/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "pe" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/gun/ballistic/automatic/zip_pistol{
@@ -1056,6 +1065,16 @@
 	},
 /turf/open/floor/wood/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"qq" = (
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 4
+	},
+/obj/item/reagent_containers/pill/finobranc{
+	pixel_x = -12;
+	pixel_y = -10
+	},
+/turf/open/floor/wood/maple/jungleplanet/interior,
+/area/ruin/jungle/swamp)
 "qw" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor/lunatic,
 /obj/effect/turf_decal/siding/wood{
@@ -1117,12 +1136,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/red/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
-"qV" = (
-/obj/item/reagent_containers/hypospray/medipen/combat_drug{
-	list_reagents = null
-	},
-/turf/open/floor/carpet/jungleplanet/interior,
-/area/ruin/jungle/swamp)
 "qW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/ebony/jungleplanet/interior,
@@ -1171,12 +1184,6 @@
 	},
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
-"rB" = (
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor3-old"
-	},
-/turf/open/floor/wood/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "rE" = (
 /obj/item/clothing/suit/armor/roumain/plate{
 	pixel_x = -7;
@@ -1236,6 +1243,10 @@
 	icon_state = "wood-broken5"
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
+"sl" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "sn" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -1248,12 +1259,6 @@
 	},
 /turf/open/floor/carpet/jungleplanet/interior,
 /area/ruin/jungle/swamp)
-"ss" = (
-/obj/effect/decal/cleanable/blood/gibs/old,
-/turf/open/floor/wood/jungleplanet/lit{
-	icon_state = "wood-broken3"
-	},
-/area/overmap_encounter/planetoid/jungle/explored)
 "sw" = (
 /obj/effect/turf_decal/corner/transparent/grey{
 	dir = 5
@@ -1293,13 +1298,6 @@
 	},
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp/flamebearer)
-"te" = (
-/obj/item/stack/sheet/mineral/wood{
-	pixel_x = -6;
-	pixel_y = -7
-	},
-/turf/open/water/jungle/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "tj" = (
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1467,6 +1465,13 @@
 /area/ruin/jungle/swamp)
 "uY" = (
 /obj/item/clothing/suit/armor/roumain/colligne,
+/turf/open/water/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"vj" = (
+/obj/item/stack/sheet/mineral/wood{
+	pixel_x = 3;
+	pixel_y = -1
+	},
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "vv" = (
@@ -1788,10 +1793,6 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
-"Br" = (
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/wood/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "Bs" = (
 /obj/effect/turf_decal/corner/opaque/black/half,
 /obj/effect/turf_decal/corner/transparent/grey{
@@ -1810,14 +1811,6 @@
 /obj/structure/platform/wood_two,
 /turf/open/floor/plating/asteroid/sand/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"BV" = (
-/obj/effect/turf_decal/siding/wood/maple{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/wood/maple/jungleplanet/interior,
-/area/ruin/jungle/swamp)
 "BX" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 1
@@ -1983,15 +1976,6 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"Et" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor3-old"
-	},
-/turf/open/floor/wood/jungleplanet/interior,
-/area/ruin/jungle/swamp/crew)
 "EB" = (
 /obj/structure/table/wood,
 /turf/open/floor/wood/jungleplanet/lit,
@@ -2119,6 +2103,20 @@
 	},
 /turf/open/floor/wood/jungleplanet/lit,
 /area/ruin/jungle/swamp/colligne)
+"GZ" = (
+/obj/item/stack/sheet/mineral/wood{
+	pixel_x = 3;
+	pixel_y = -11
+	},
+/turf/open/water/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"Hc" = (
+/obj/item/stack/sheet/mineral/wood{
+	pixel_x = -6;
+	pixel_y = -7
+	},
+/turf/open/water/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Hg" = (
 /obj/item/chair/wood,
 /turf/open/floor/wood/jungleplanet/interior,
@@ -2219,13 +2217,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/swamp/butchery)
-"Jc" = (
-/obj/item/stack/sheet/mineral/wood{
-	pixel_x = 3;
-	pixel_y = -11
-	},
-/turf/open/water/jungle/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "Je" = (
 /obj/structure/table/wood,
 /obj/item/clothing/mask/cigarette/pipe/cobpipe{
@@ -2397,6 +2388,10 @@
 	pixel_y = 7
 	},
 /obj/structure/table/wood/reinforced,
+/obj/item/food/grilled_cheese_sandwich{
+	pixel_x = 14;
+	pixel_y = 11
+	},
 /turf/open/floor/carpet/red/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "Lk" = (
@@ -2506,14 +2501,6 @@
 /obj/effect/turf_decal/corner/transparent/grey/half,
 /obj/effect/turf_decal/siding/white/end,
 /turf/open/floor/plasteel/dark/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
-"NA" = (
-/obj/effect/mob_spawn/human/corpse/srm,
-/obj/item/stack/sheet/mineral/wood{
-	pixel_x = 7;
-	pixel_y = 2
-	},
-/turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "NF" = (
 /obj/effect/turf_decal/siding/wood/walnut{
@@ -2770,6 +2757,15 @@
 	},
 /turf/open/floor/wood/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Qh" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor3-old"
+	},
+/turf/open/floor/wood/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Qj" = (
 /obj/machinery/computer/solar_control{
 	dir = 8
@@ -2789,10 +2785,15 @@
 	},
 /turf/open/floor/suns/diagonal/walnut/cold,
 /area/ruin/jungle/swamp/butchery)
-"Qu" = (
-/obj/effect/mob_spawn/human/corpse/srm,
-/turf/open/water/jungle/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
+"Qt" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor3-old"
+	},
+/turf/open/floor/wood/jungleplanet/interior,
+/area/ruin/jungle/swamp/crew)
 "QD" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
@@ -2916,6 +2917,14 @@
 	},
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Sj" = (
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood/maple/jungleplanet/interior,
+/area/ruin/jungle/swamp)
 "Sm" = (
 /obj/machinery/oven,
 /turf/open/floor/plasteel/tech/jungleplanet/interior,
@@ -2930,17 +2939,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
-"SK" = (
-/obj/effect/turf_decal/siding/wood/maple{
-	dir = 1
-	},
-/obj/item/reagent_containers/pill/finobranc{
-	pixel_x = 9;
-	pixel_y = 7
-	},
-/obj/effect/decal/cleanable/ash,
-/turf/open/floor/wood/maple/jungleplanet/interior,
-/area/ruin/jungle/swamp)
 "SL" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line{
 	dir = 8
@@ -3013,6 +3011,12 @@
 "TO" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /turf/open/floor/wood/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"TQ" = (
+/obj/effect/decal/cleanable/blood/gibs/old,
+/turf/open/floor/wood/jungleplanet/lit{
+	icon_state = "wood-broken3"
+	},
 /area/overmap_encounter/planetoid/jungle/explored)
 "TT" = (
 /obj/structure/destructible/tribal_torch/lit{
@@ -3219,14 +3223,14 @@
 	},
 /turf/open/floor/wood/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"Vq" = (
-/obj/effect/turf_decal/siding/wood/maple,
-/turf/open/floor/wood/maple/jungleplanet/interior,
-/area/ruin/jungle/swamp)
-"Vu" = (
+"Vd" = (
 /obj/structure/barricade/directional/flippedtable/fancy,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/carpet/jungleplanet/interior,
+/area/ruin/jungle/swamp)
+"Vq" = (
+/obj/effect/turf_decal/siding/wood/maple,
+/turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "Vy" = (
 /obj/structure/closet/crate/freezer{
@@ -3472,6 +3476,10 @@
 /obj/item/spacecash/bundle/mediumrand{
 	pixel_x = 3;
 	pixel_y = 7
+	},
+/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch{
+	pixel_x = -5;
+	pixel_y = -4
 	},
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
@@ -4288,12 +4296,12 @@ QY
 QY
 QY
 sk
-ss
+TQ
 VF
 NN
 Ej
 NN
-hb
+mF
 sk
 sk
 QY
@@ -4346,13 +4354,13 @@ QY
 QY
 QY
 kA
-rB
+bb
 QY
 kA
 NN
-Jc
+GZ
 NN
-hb
+mF
 NN
 NN
 NN
@@ -4412,8 +4420,8 @@ yt
 yt
 cj
 NN
-hb
-NA
+mF
+lv
 NN
 NN
 ZP
@@ -5140,7 +5148,7 @@ ks
 SU
 fg
 Pc
-Et
+Qt
 bt
 Pc
 GR
@@ -5163,7 +5171,7 @@ QY
 QY
 QY
 QY
-Br
+sl
 QY
 QY
 QY
@@ -5561,7 +5569,7 @@ QY
 QY
 QY
 QY
-Br
+sl
 QY
 QY
 QY
@@ -5651,7 +5659,7 @@ Qf
 QY
 QY
 QY
-Br
+sl
 QY
 hR
 yt
@@ -6356,7 +6364,7 @@ jd
 jW
 oM
 KM
-qV
+fV
 rq
 sr
 fy
@@ -6418,7 +6426,7 @@ jW
 oM
 rK
 Jy
-Vu
+Vd
 AJ
 Rx
 Ao
@@ -6477,7 +6485,7 @@ QY
 jd
 jW
 oM
-SK
+kg
 IC
 Yj
 dc
@@ -6539,9 +6547,9 @@ jd
 jW
 oM
 bA
-di
+qq
 OV
-BV
+Sj
 Td
 In
 oM
@@ -7241,7 +7249,7 @@ NN
 NN
 jW
 QY
-rB
+bb
 jd
 NN
 NN
@@ -7767,7 +7775,7 @@ jW
 OK
 Ur
 NF
-dm
+dB
 IQ
 MW
 MW
@@ -7903,10 +7911,10 @@ NN
 KP
 ol
 Js
-rB
+bb
 jd
 NN
-Qu
+fi
 NN
 eu
 NN
@@ -8023,7 +8031,7 @@ sn
 sn
 sn
 sn
-oZ
+Qh
 Wj
 QY
 jd
@@ -8034,7 +8042,7 @@ NN
 NN
 ZP
 NN
-hb
+mF
 aU
 NN
 NN
@@ -8094,7 +8102,7 @@ NN
 NN
 NN
 KP
-ht
+vj
 Ks
 jd
 NN
@@ -8183,12 +8191,12 @@ NN
 NN
 Mi
 tq
-te
+Hc
 NN
 cj
-aN
+az
 NN
-hb
+mF
 NN
 NN
 NN
