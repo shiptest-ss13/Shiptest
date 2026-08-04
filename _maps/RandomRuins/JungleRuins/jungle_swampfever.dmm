@@ -63,6 +63,10 @@
 	dir = 5
 	},
 /obj/machinery/light/directional/north,
+/obj/item/storage/pill_bottle/finobranc{
+	pixel_x = 10;
+	pixel_y = 6
+	},
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "bI" = (
@@ -345,6 +349,15 @@
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/platform/wood_two,
 /turf/open/water/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"gt" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor3-old"
+	},
+/turf/open/floor/wood/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "gw" = (
 /obj/effect/turf_decal/siding/brown,
@@ -644,6 +657,15 @@
 /obj/structure/flora/junglebush/c,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"kS" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor3-old"
+	},
+/turf/open/floor/wood/jungleplanet/interior,
+/area/ruin/jungle/swamp/crew)
 "kY" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
 /turf/open/floor/plasteel/tech/jungleplanet/interior,
@@ -841,6 +863,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/red/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"nT" = (
+/obj/effect/decal/cleanable/blood/gibs/old,
+/turf/open/floor/wood/jungleplanet/lit{
+	icon_state = "wood-broken3"
+	},
+/area/overmap_encounter/planetoid/jungle/explored)
 "oc" = (
 /obj/structure/platform/wood_two,
 /obj/structure/platform/wood_two/corner{
@@ -972,6 +1000,12 @@
 /obj/effect/turf_decal/siding/brown/corner,
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"pV" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor3-old"
+	},
+/turf/open/floor/wood/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "qb" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/wood/maple/jungleplanet/interior,
@@ -1008,6 +1042,17 @@
 	},
 /turf/open/floor/wood/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"qt" = (
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 1
+	},
+/obj/item/reagent_containers/pill/finobranc{
+	pixel_x = 9;
+	pixel_y = 7
+	},
+/obj/effect/decal/cleanable/ash,
+/turf/open/floor/wood/maple/jungleplanet/interior,
+/area/ruin/jungle/swamp)
 "qw" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor/lunatic,
 /obj/effect/turf_decal/siding/wood{
@@ -1239,6 +1284,14 @@
 	},
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"tv" = (
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood/maple/jungleplanet/interior,
+/area/ruin/jungle/swamp)
 "tA" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 10
@@ -1386,6 +1439,9 @@
 "uG" = (
 /obj/structure/chair/wood/wings{
 	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor3-old"
 	},
 /turf/open/floor/carpet/red/jungleplanet/interior,
 /area/ruin/jungle/swamp)
@@ -1620,6 +1676,12 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/swamp/butchery)
+"zt" = (
+/obj/item/reagent_containers/hypospray/medipen/combat_drug{
+	list_reagents = null
+	},
+/turf/open/floor/carpet/jungleplanet/interior,
+/area/ruin/jungle/swamp)
 "zD" = (
 /obj/structure/platform/wood_two{
 	dir = 5
@@ -1841,6 +1903,10 @@
 	icon_state = "wood-broken7"
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
+"Dd" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/suns/diagonal/walnut/cold,
+/area/ruin/jungle/swamp/butchery)
 "Dm" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 9
@@ -2299,6 +2365,10 @@
 /obj/structure/fluff/hedge,
 /turf/open/floor/wood/mahogany/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"Ln" = (
+/obj/effect/mob_spawn/human/corpse/srm,
+/turf/open/water/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ly" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/grassybush,
@@ -2320,10 +2390,11 @@
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/butchery)
 "LN" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/blood/drip,
+/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /turf/open/floor/suns/diagonal/walnut/cold,
 /area/ruin/jungle/swamp/butchery)
 "Mg" = (
@@ -2680,6 +2751,21 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
+"QE" = (
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 4
+	},
+/obj/item/reagent_containers/pill/finobranc{
+	pixel_x = -12;
+	pixel_y = -10
+	},
+/turf/open/floor/wood/maple/jungleplanet/interior,
+/area/ruin/jungle/swamp)
+"QK" = (
+/obj/structure/barricade/directional/flippedtable/fancy,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/carpet/jungleplanet/interior,
+/area/ruin/jungle/swamp)
 "QT" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor4-old"
@@ -2828,6 +2914,10 @@
 	},
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
+"SZ" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Td" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 4
@@ -3243,6 +3333,9 @@
 /obj/effect/turf_decal/steeldecal/steel_decals6{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor3-old"
+	},
 /turf/open/floor/plasteel/tech/cold,
 /area/ruin/jungle/swamp/butchery)
 "WL" = (
@@ -3394,6 +3487,7 @@
 	pixel_y = -7
 	},
 /obj/effect/mob_spawn/human/corpse/srm/hunter,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/wood/ebony/cold,
 /area/ruin/jungle/swamp/butchery)
 
@@ -4151,7 +4245,7 @@ QY
 QY
 QY
 sk
-VF
+nT
 VF
 NN
 Ej
@@ -4209,7 +4303,7 @@ QY
 QY
 QY
 kA
-QY
+pV
 QY
 kA
 NN
@@ -4276,7 +4370,7 @@ yt
 cj
 NN
 NN
-NN
+Ln
 NN
 NN
 ZP
@@ -5003,7 +5097,7 @@ ks
 SU
 fg
 Pc
-My
+kS
 bt
 Pc
 GR
@@ -5026,7 +5120,7 @@ QY
 QY
 QY
 QY
-QY
+SZ
 QY
 QY
 QY
@@ -5424,7 +5518,7 @@ QY
 QY
 QY
 QY
-QY
+SZ
 QY
 QY
 QY
@@ -5514,7 +5608,7 @@ Qf
 QY
 QY
 QY
-QY
+SZ
 QY
 hR
 yt
@@ -6219,7 +6313,7 @@ jd
 jW
 oM
 KM
-XV
+zt
 rq
 sr
 fy
@@ -6281,7 +6375,7 @@ jW
 oM
 rK
 Jy
-rq
+QK
 AJ
 Rx
 Ao
@@ -6340,7 +6434,7 @@ QY
 jd
 jW
 oM
-KM
+qt
 IC
 Yj
 dc
@@ -6402,9 +6496,9 @@ jd
 jW
 oM
 bA
+QE
 OV
-OV
-Td
+tv
 Td
 In
 oM
@@ -7104,7 +7198,7 @@ NN
 NN
 jW
 QY
-QY
+pV
 jd
 NN
 NN
@@ -7630,7 +7724,7 @@ jW
 OK
 Ur
 NF
-ei
+Dd
 IQ
 MW
 MW
@@ -7766,10 +7860,10 @@ NN
 KP
 ol
 Js
-QY
+pV
 jd
 NN
-NN
+Ln
 NN
 eu
 NN
@@ -7886,7 +7980,7 @@ sn
 sn
 sn
 sn
-sn
+gt
 Wj
 QY
 jd
