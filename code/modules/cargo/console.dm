@@ -206,7 +206,7 @@
 	for(var/datum/supply_pack/current_pack as anything in outpost_docked.market.supply_packs)
 		if((!current_pack.available))
 			continue
-		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_faction) : FALSE
+		var/same_faction = current_pack.faction ? current_pack.faction.allowed_factions(current_faction) : FALSE
 		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null
 		if(current_pack.faction_locked && !same_faction)
 			continue
