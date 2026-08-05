@@ -375,6 +375,40 @@
 	gun_type = /obj/item/gun/ballistic/automatic/hmg/cm40
 	mag_type = /obj/item/ammo_box/magazine/cm40_762_40_box
 
+/* Clover */
+
+/obj/item/storage/guncase/ecm7
+	gun_type = /obj/item/gun/energy/clover
+	mag_type = /obj/item/stock_parts/cell/gun/mini
+
+/obj/item/storage/guncase/pl7
+	gun_type = /obj/item/gun/energy/clover/indie
+	mag_type = /obj/item/stock_parts/cell/gun/mini
+
+/obj/item/storage/guncase/ecm9
+	gun_type = /obj/item/gun/energy/clover/thistle
+	mag_type = /obj/item/stock_parts/cell/gun/mini
+
+/obj/item/storage/guncase/pl9
+	gun_type = /obj/item/gun/energy/clover/thistle/indie
+	mag_type = /obj/item/stock_parts/cell/gun/mini
+
+/obj/item/storage/guncase/ecm12
+	gun_type = /obj/item/gun/energy/clover/shillelagh
+	mag_type = /obj/item/stock_parts/cell/gun/upgraded
+
+/obj/item/storage/guncase/pl12
+	gun_type = /obj/item/gun/energy/clover/shillelagh/indie
+	mag_type = /obj/item/stock_parts/cell/gun
+
+/obj/item/storage/guncase/ecm25
+	gun_type = /obj/item/gun/energy/clover/faveleira
+	mag_type = /obj/item/stock_parts/cell/gun/upgraded
+
+/obj/item/storage/guncase/pl25
+	gun_type = /obj/item/gun/energy/clover/faveleira/indie
+	mag_type = /obj/item/stock_parts/cell/gun
+
 /* Inteq */
 
 /obj/item/storage/guncase/skm_inteq
