@@ -893,9 +893,6 @@
 	color = "#999999"
 	},
 /area/outpost/external)
-"ch" = (
-/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
-/area/outpost/external)
 "ci" = (
 /obj/structure/chair/comfy/grey/directional/west,
 /obj/effect/turf_decal/corner/transparent/blue/border{
@@ -1394,6 +1391,9 @@
 	light_range = 2
 	},
 /area/outpost/cargo/smeltery)
+"df" = (
+/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
+/area/outpost/external)
 "dh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2394,10 +2394,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/green,
 /area/outpost/crew/court)
-"gj" = (
-/obj/structure/spacevine/weak,
-/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
-/area/outpost/external)
 "gk" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -2623,6 +2619,12 @@
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/outpost/crew/court)
+"gO" = (
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit{
+	color = "#999999"
+	},
+/area/outpost/external)
 "gP" = (
 /obj/effect/turf_decal/industrial/warning/green,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2871,6 +2873,7 @@
 /area/outpost/security)
 "ht" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/closet/wall/directional/west,
 /turf/open/floor/carpet/blue,
 /area/outpost/crew/dorm)
 "hu" = (
@@ -3723,14 +3726,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/security/armory)
-"jD" = (
-/obj/structure/spacevine/weak{
-	color = "#999999"
-	},
-/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit{
-	color = "#999999"
-	},
-/area/outpost/external)
 "jE" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -4436,6 +4431,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/checkpoint)
 "lj" = (
@@ -4700,7 +4696,9 @@
 /obj/structure/spacevine/weak{
 	color = "#999999"
 	},
-/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
+/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit{
+	color = "#999999"
+	},
 /area/outpost/external)
 "lV" = (
 /obj/structure/sink{
@@ -4708,6 +4706,7 @@
 	pixel_x = -14;
 	pixel_y = 5
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/checkpoint)
 "lW" = (
@@ -6183,6 +6182,13 @@
 	},
 /turf/open/floor/plasteel/dark/clip_outpost/lit,
 /area/outpost/exterior/ocean)
+"py" = (
+/obj/effect/spawner/bunk_bed{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/outpost/crew/dorm)
 "pA" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -7906,6 +7912,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/security/checkpoint)
 "tD" = (
@@ -8707,15 +8714,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/cargo/smeltery)
 "vP" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/airlock/outpost,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/tech/grid,
-/area/outpost/security/checkpoint)
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
+/area/outpost/external)
 "vQ" = (
 /obj/structure/railing/thin{
 	dir = 1;
@@ -10849,6 +10850,7 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet/blue,
 /area/outpost/crew/dorm)
 "Bd" = (
@@ -13481,6 +13483,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/security/checkpoint)
 "Hh" = (
@@ -16009,6 +16012,7 @@
 /area/outpost/crew/court)
 "Nm" = (
 /obj/effect/spawner/bunk_bed,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/dorm)
 "Nn" = (
@@ -16891,6 +16895,11 @@
 	},
 /turf/open/floor/plasteel/dark/clip_outpost/lit,
 /area/outpost/exterior/ocean)
+"PE" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/closet/wall/directional/east,
+/turf/open/floor/carpet/blue,
+/area/outpost/crew/dorm)
 "PF" = (
 /obj/machinery/portable_atmospherics/canister{
 	icon_state = "orangews"
@@ -17863,6 +17872,7 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/carpet/blue,
 /area/outpost/crew/dorm)
 "RH" = (
@@ -20540,6 +20550,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/cargo/smeltery)
+"Ys" = (
+/obj/structure/spacevine/weak{
+	color = "#999999"
+	},
+/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
+/area/outpost/external)
 "Yu" = (
 /obj/structure/railing/thin,
 /obj/structure/frame/computer/retro{
@@ -20967,12 +20983,6 @@
 "Zz" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/cargo/office)
-"ZA" = (
-/obj/structure/spacevine/weak,
-/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit{
-	color = "#999999"
-	},
-/area/outpost/external)
 "ZB" = (
 /obj/effect/turf_decal/minutemen/corner,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -21161,6 +21171,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/court)
+"ZT" = (
+/obj/machinery/atmospherics/components/unary/passive_vent/layer4,
+/turf/open/floor/hangar/clip_outpost/lit,
+/area/outpost/external)
 "ZU" = (
 /obj/machinery/vending/clothing,
 /turf/open/floor/plasteel/tech,
@@ -23570,7 +23584,7 @@ rj
 rj
 cY
 Ul
-KH
+py
 IG
 NT
 iz
@@ -23693,7 +23707,7 @@ rj
 rj
 cY
 Ul
-ht
+PE
 Bc
 aB
 iE
@@ -23939,7 +23953,7 @@ rj
 rj
 cY
 Ul
-KH
+py
 IG
 NT
 nf
@@ -24062,7 +24076,7 @@ rj
 rj
 cY
 Ul
-ht
+PE
 Bc
 aB
 iE
@@ -24801,7 +24815,7 @@ rj
 rj
 qC
 Dy
-gb
+ZT
 pg
 DF
 DF
@@ -30740,7 +30754,7 @@ NL
 ey
 YB
 US
-vP
+cF
 DU
 pT
 fI
@@ -32667,7 +32681,7 @@ rj
 rj
 rj
 rj
-ch
+df
 re
 uv
 rj
@@ -32792,7 +32806,7 @@ rj
 uv
 wt
 wt
-jD
+lU
 rj
 rj
 rj
@@ -32904,17 +32918,17 @@ rj
 rj
 rj
 rf
-jD
-jD
+lU
+lU
 ho
 uv
 rj
 rj
 rj
 rj
-jD
+lU
 wt
-ZA
+gO
 rj
 rj
 rj
@@ -33025,12 +33039,12 @@ rj
 rj
 rj
 oJ
-jD
-gj
+lU
+vP
 wt
 wt
 HE
-jD
+lU
 uv
 rj
 rj
@@ -33147,8 +33161,8 @@ rj
 rj
 rj
 rj
-ch
-gj
+df
+vP
 wt
 wt
 wt
@@ -33270,11 +33284,11 @@ rj
 rj
 rj
 uv
-ch
+df
 wt
 wt
 wt
-gj
+vP
 uv
 uv
 rj
@@ -33393,11 +33407,11 @@ rj
 rj
 rj
 uv
-jD
-ch
-ch
-ch
 lU
+df
+df
+df
+Ys
 rj
 rj
 rj
@@ -38341,7 +38355,7 @@ fs
 As
 re
 aZ
-ch
+df
 uv
 rj
 rj
@@ -38587,8 +38601,8 @@ fs
 re
 eo
 eo
-ch
-ch
+df
+df
 uv
 rj
 rj
@@ -38708,10 +38722,10 @@ nm
 LX
 fs
 re
-ch
-ch
-ch
-ch
+df
+df
+df
+df
 uv
 uv
 rj
@@ -38833,7 +38847,7 @@ fs
 Oy
 nX
 be
-ch
+df
 uv
 uv
 rj
@@ -38952,9 +38966,9 @@ rj
 rj
 rj
 uv
-jD
-ch
-ch
+lU
+df
+df
 uv
 uv
 uv
