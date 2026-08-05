@@ -477,11 +477,11 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/court)
 "be" = (
-/obj/structure/table/rolling,
 /obj/item/toy/beach_ball{
 	pixel_x = 0;
 	pixel_y = 15
 	},
+/obj/structure/table,
 /turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
 /area/outpost/external)
 "bf" = (
@@ -1391,9 +1391,6 @@
 	light_range = 2
 	},
 /area/outpost/cargo/smeltery)
-"df" = (
-/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
-/area/outpost/external)
 "dh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1588,6 +1585,10 @@
 	},
 /turf/open/floor/plasteel/dark/clip_outpost/lit,
 /area/outpost/operations)
+"dF" = (
+/obj/machinery/atmospherics/components/unary/passive_vent/layer4,
+/turf/open/floor/hangar/clip_outpost/lit,
+/area/outpost/external)
 "dH" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1964,6 +1965,13 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
+"eT" = (
+/obj/effect/spawner/bunk_bed{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/outpost/crew/dorm)
 "eU" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/paper_bin{
@@ -2619,12 +2627,6 @@
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/outpost/crew/court)
-"gO" = (
-/obj/structure/spacevine/weak,
-/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit{
-	color = "#999999"
-	},
-/area/outpost/external)
 "gP" = (
 /obj/effect/turf_decal/industrial/warning/green,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -4999,6 +5001,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms)
+"mG" = (
+/obj/structure/spacevine/weak{
+	color = "#999999"
+	},
+/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
+/area/outpost/external)
 "mH" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line,
 /obj/machinery/firealarm/directional/south,
@@ -6183,12 +6191,9 @@
 /turf/open/floor/plasteel/dark/clip_outpost/lit,
 /area/outpost/exterior/ocean)
 "py" = (
-/obj/effect/spawner/bunk_bed{
-	dir = 4
-	},
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plasteel/dark,
-/area/outpost/crew/dorm)
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
+/area/outpost/external)
 "pA" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -8714,7 +8719,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/cargo/smeltery)
 "vP" = (
-/obj/structure/spacevine/weak,
 /turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
 /area/outpost/external)
 "vQ" = (
@@ -9108,6 +9112,10 @@
 /obj/effect/turf_decal/trimline/opaque/blue/warning,
 /turf/open/floor/plasteel/dark/clip_outpost/lit,
 /area/outpost/exterior/ocean)
+"wS" = (
+/obj/structure/table,
+/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
+/area/outpost/external)
 "wT" = (
 /obj/effect/turf_decal/trimline/transparent/green/filled/warning{
 	dir = 8
@@ -15658,6 +15666,12 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/engineering)
+"Mw" = (
+/obj/structure/chair/plastic{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
+/area/outpost/external)
 "Mx" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 5
@@ -16895,11 +16909,6 @@
 	},
 /turf/open/floor/plasteel/dark/clip_outpost/lit,
 /area/outpost/exterior/ocean)
-"PE" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/structure/closet/wall/directional/east,
-/turf/open/floor/carpet/blue,
-/area/outpost/crew/dorm)
 "PF" = (
 /obj/machinery/portable_atmospherics/canister{
 	icon_state = "orangews"
@@ -19959,6 +19968,12 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
+"Xb" = (
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit{
+	color = "#999999"
+	},
+/area/outpost/external)
 "Xc" = (
 /obj/structure/railing/thin,
 /obj/structure/cable/yellow{
@@ -20550,12 +20565,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/cargo/smeltery)
-"Ys" = (
-/obj/structure/spacevine/weak{
-	color = "#999999"
-	},
-/turf/open/floor/plating/asteroid/waterplanet/clip_outpost/lit,
-/area/outpost/external)
 "Yu" = (
 /obj/structure/railing/thin,
 /obj/structure/frame/computer/retro{
@@ -20905,6 +20914,11 @@
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/vacant_rooms/shop)
+"Zn" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/closet/wall/directional/east,
+/turf/open/floor/carpet/blue,
+/area/outpost/crew/dorm)
 "Zo" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -21171,10 +21185,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/court)
-"ZT" = (
-/obj/machinery/atmospherics/components/unary/passive_vent/layer4,
-/turf/open/floor/hangar/clip_outpost/lit,
-/area/outpost/external)
 "ZU" = (
 /obj/machinery/vending/clothing,
 /turf/open/floor/plasteel/tech,
@@ -23584,7 +23594,7 @@ rj
 rj
 cY
 Ul
-py
+eT
 IG
 NT
 iz
@@ -23707,7 +23717,7 @@ rj
 rj
 cY
 Ul
-PE
+Zn
 Bc
 aB
 iE
@@ -23953,7 +23963,7 @@ rj
 rj
 cY
 Ul
-py
+eT
 IG
 NT
 nf
@@ -24076,7 +24086,7 @@ rj
 rj
 cY
 Ul
-PE
+Zn
 Bc
 aB
 iE
@@ -24815,7 +24825,7 @@ rj
 rj
 qC
 Dy
-ZT
+dF
 pg
 DF
 DF
@@ -32681,7 +32691,7 @@ rj
 rj
 rj
 rj
-df
+vP
 re
 uv
 rj
@@ -32928,7 +32938,7 @@ rj
 rj
 lU
 wt
-gO
+Xb
 rj
 rj
 rj
@@ -33040,7 +33050,7 @@ rj
 rj
 oJ
 lU
-vP
+py
 wt
 wt
 HE
@@ -33161,8 +33171,8 @@ rj
 rj
 rj
 rj
-df
 vP
+py
 wt
 wt
 wt
@@ -33284,11 +33294,11 @@ rj
 rj
 rj
 uv
-df
-wt
-wt
-wt
 vP
+wt
+wt
+wt
+py
 uv
 uv
 rj
@@ -33408,10 +33418,10 @@ rj
 rj
 uv
 lU
-df
-df
-df
-Ys
+vP
+vP
+vP
+mG
 rj
 rj
 rj
@@ -38355,7 +38365,7 @@ fs
 As
 re
 aZ
-df
+vP
 uv
 rj
 rj
@@ -38601,8 +38611,8 @@ fs
 re
 eo
 eo
-df
-df
+vP
+vP
 uv
 rj
 rj
@@ -38722,10 +38732,10 @@ nm
 LX
 fs
 re
-df
-df
-df
-df
+vP
+wS
+Mw
+vP
 uv
 uv
 rj
@@ -38847,7 +38857,7 @@ fs
 Oy
 nX
 be
-df
+vP
 uv
 uv
 rj
@@ -38967,8 +38977,8 @@ rj
 rj
 uv
 lU
-df
-df
+vP
+vP
 uv
 uv
 uv
