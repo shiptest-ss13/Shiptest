@@ -356,7 +356,7 @@
 /datum/reagent/consumable/icetea
 	name = "Iced Tea"
 	description = "Iced, sweetened tea."
-	color = "#104038" // rgb: 16, 64, 56
+	color = "#5f4a05"
 	nutriment_factor = 0
 	taste_description = "sweet tea"
 	glass_name = "iced tea"
