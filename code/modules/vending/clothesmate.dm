@@ -77,7 +77,7 @@
 		/obj/item/clothing/suit/toggle/chorejacket = 3,
 		/obj/item/clothing/suit/hooded/parka = 3,
 		/obj/item/clothing/suit/hooded/hoodie = 3,
-		/obj/item/clothing/suit/hooded/hoodie/cropped = 6,
+		/obj/item/clothing/suit/hooded/croppedhoodie = 6,
 		/obj/item/clothing/suit/toggle/overcoat = 3,
 		/obj/item/clothing/suit/toggle/windbreaker = 3,
 		/obj/item/clothing/suit/toggle/windbreaker/cropped = 3,
