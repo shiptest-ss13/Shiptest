@@ -225,7 +225,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 				proc_disk.uses -= 1
 				end_message = "Operation concluded."
 				end_sound = 'sound/machines/defib_success.ogg'
-				say("Commencing operation. Estimated time to completion: [get_operation_length() + SSmachines.wait].")
+				say("Commencing operation. Estimated time to completion: [get_operation_length()].")
 				begin_processing()
 
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
