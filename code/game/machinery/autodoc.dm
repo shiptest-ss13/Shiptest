@@ -78,24 +78,22 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	uses = 100
 
 /obj/item/disk/autodoc/proc/get_heal_flags_string()
-	var/string
-	if(heal_flags)
-		if(heal_flags & DO_BRUTE)
-			string += span_boldnotice("Tissue Damage<span class='notice'>,</span> ") //Call me insane for unbolding my commas. I don't care.
-		if(heal_flags & DO_BURN)
-			string += span_boldnotice("Burns<span class='notice'>,</span> ")
-		if(heal_flags & DO_TOX)
-			string += span_boldnotice("Toxin Purge<span class='notice'>,</span> ")
-		if(heal_flags & DO_OXY)
-			string += span_boldnotice("Respiratory<span class='notice'>,</span> ")
-		if(heal_flags & DO_CLONE)
-			string += span_boldnotice("Cellular Damage<span class='notice'>,</span> ")
-		if(heal_flags & DO_REVIVE)
-			string += span_boldnotice("Resuscitation<span class='notice'>,</span> ")
-	else
-		return FALSE
-	string = copytext(string,1,length(string)-36) //Shave off the last comma. This is really long because we have to cut through like two spans. I wonder why. (There's probably a better way of doing this)
-	return string
+	if(!heal_flags)
+		return
+	var/flag_list = list()
+	if(heal_flags & DO_BRUTE)
+		flag_list += span_boldnotice("Tissue Damage")
+	if(heal_flags & DO_BURN)
+		flag_list += span_boldnotice("Burns")
+	if(heal_flags & DO_TOX)
+		flag_list += span_boldnotice("Toxin Purge")
+	if(heal_flags & DO_OXY)
+		flag_list += span_boldnotice("Respiratory")
+	if(heal_flags & DO_CLONE)
+		flag_list += span_boldnotice("Cellular Damage")
+	if(heal_flags & DO_REVIVE)
+		flag_list += span_boldnotice("Resuscitation")
+	return jointext(flag_list, span_notice(", "))
 
 /obj/item/disk/autodoc/examine()
 	. = ..()
