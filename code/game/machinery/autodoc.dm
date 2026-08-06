@@ -331,5 +331,6 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 
 /obj/effect/spawner/structure/aaaaa
 	name = "debug autodoc spawner"
+	icon = 'icons/obj/salvage_structure.dmi'
 	icon_state = "computer_broken"
 	spawn_list = list(/obj/machinery/autodoc, /obj/item/disk/autodoc/test, /obj/item/melee/sledgehammer/gorlex)
