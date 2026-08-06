@@ -59,7 +59,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	///This also needs to be here I guess.
 	var/attempting_revive = FALSE
 	///Amount healed per second
-	var/heal_amount = -4
+	var/heal_amount = -3
 	///What gets dropped when dropContents() is called.
 	var/list/subset = null
 	///Total damage calculated by heal_tick()
@@ -103,11 +103,13 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 /obj/machinery/autodoc/examine(mob/user)
 	. = ..()
 	var/mob/living/carbon/patient = occupant
-	if(proc_disk)
-		if(!operating)
-			. += span_notice("Alt-click to eject [icon2html(proc_disk, user)] [proc_disk].")
-		else if(proc_disk.heal_flags)
-			. += span_notice("[src] is currently operating with settings: [proc_disk.get_heal_flags_string()]")
+	if(!proc_disk)
+		return
+	if(!operating)
+		. += span_notice("Alt-click to eject [icon2html(proc_disk, user)] [proc_disk].")
+	if(proc_disk.heal_flags && operating)
+		. += span_notice("[src] is currently operating with settings: [proc_disk.get_heal_flags_string()]")
+		. += span_notice("Estimated time until completion: [span_boldnotice("[get_operation_length()]")].")
 	if(patient)
 		healthscan(user, patient, FALSE, FALSE)
 
@@ -230,16 +232,8 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 
 /obj/machinery/autodoc/proc/get_operation_length()
 	var/time
-	time = (total_damage / heal_amount) * -1 + SSmachines.wait
-	if(round(time) > 60)
-		time = time / 60
-		if(round(time) <= 1)
-			return "[round(time)] minute"
-		return "[round(time)] minutes"
-	else
-		if(round(time) <= 1)
-			return "[round(time)] second"
-		return "[round(time)] seconds"
+	time = (total_damage / heal_amount) * -10 + SSmachines.wait
+	return DisplayTimeText(time, 1)
 
 //Runs through our healing flags and acts accordingly. Kills the process if we have nothing to do.
 /obj/machinery/autodoc/process(seconds_per_tick)
