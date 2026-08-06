@@ -370,6 +370,8 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
 
+
+
 /obj/projectile/beam/emitter/singularity_pull()
 	return //don't want the emitters to miss
 
@@ -463,3 +465,10 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser/emitter
 	impact_type = /obj/effect/projectile/impact/laser/emitter
 	impact_effect_type = null
+
+/obj/projectile/beam/emitter/hitscan/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	var/turf/targets_turf = target.loc
+	if(!isopenturf(targets_turf))
+		return
+	targets_turf.ignite_turf(rand(8,22), "green")
