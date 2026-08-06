@@ -1,4 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"as" = (
+/obj/structure/girder,
+/turf/open/floor/engine/hull/interior/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "az" = (
 /obj/item/stack/sheet/mineral/wood{
 	pixel_x = 4;
@@ -39,6 +43,11 @@
 	},
 /turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp/butchery)
+"aY" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/cable,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "bb" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor3-old"
@@ -82,6 +91,20 @@
 	},
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"bB" = (
+/obj/machinery/button/door{
+	pixel_x = 21;
+	pixel_y = 3;
+	dir = 8;
+	id = "pintsafe";
+	name = "shutter control"
+	},
+/obj/item/wallframe/apc{
+	pixel_x = -18;
+	pixel_y = 0
+	},
+/turf/open/floor/plating/rust/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "bI" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line,
 /mob/living/simple_animal/hostile/asteroid/wolf/hound/hermit,
@@ -91,9 +114,7 @@
 /turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp/flamebearer)
 "bQ" = (
-/obj/structure/bed/dogbed,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood/jungleplanet/interior,
+/turf/open/floor/plating/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "bV" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line{
@@ -152,7 +173,9 @@
 /obj/structure/bed/dogbed,
 /mob/living/simple_animal/hostile/asteroid/wolf/hound/hermit,
 /obj/machinery/light/small/broken/directional/north,
-/turf/open/floor/wood/jungleplanet/interior,
+/turf/open/floor/wood/jungleplanet/interior{
+	icon_state = "wood-broken"
+	},
 /area/ruin/jungle/swamp/colligne)
 "cM" = (
 /obj/structure/cable/yellow{
@@ -172,7 +195,7 @@
 "cQ" = (
 /obj/structure/window/fulltile,
 /obj/structure/grille,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
 "cR" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line,
@@ -236,6 +259,19 @@
 	dir = 1
 	},
 /area/overmap_encounter/planetoid/jungle/explored)
+"dJ" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "eg" = (
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/wood/ebony/jungleplanet/interior,
@@ -294,7 +330,7 @@
 	},
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
 "fg" = (
 /obj/effect/spawner/bunk_bed,
@@ -308,10 +344,10 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
 "fi" = (
-/obj/effect/mob_spawn/human/corpse/srm,
+/obj/effect/mob_spawn/human/corpse/srm/hunter,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "fk" = (
@@ -328,7 +364,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "fy" = (
 /obj/item/food/eggwrap,
@@ -355,8 +391,20 @@
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "fF" = (
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/wood/jungleplanet/interior,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	pixel_x = -21;
+	pixel_y = 3;
+	dir = 4;
+	id = "pintsafe";
+	name = "shutter control"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "fP" = (
 /obj/effect/turf_decal/siding/wood/walnut,
@@ -385,6 +433,13 @@
 	},
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"gx" = (
+/obj/structure/platform/industrial{
+	dir = 8
+	},
+/obj/structure/crate_shelf,
+/turf/open/floor/plasteel/tech/techmaint/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "gE" = (
 /obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/siding/wood/walnut{
@@ -393,14 +448,11 @@
 /turf/open/floor/suns/diagonal/walnut/cold,
 /area/ruin/jungle/swamp/butchery)
 "gI" = (
-/obj/structure/platform/wood_two{
-	dir = 8
+/obj/structure/cable{
+	icon_state = "1-9"
 	},
-/obj/structure/platform/wood_two{
-	dir = 4
-	},
-/turf/open/water/jungle/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
+/turf/open/floor/plating/rust/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "gR" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
@@ -432,7 +484,7 @@
 	pixel_y = -6
 	},
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "he" = (
 /turf/closed/wall/mineral/wood,
@@ -478,6 +530,9 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
+"hz" = (
+/turf/open/floor/plasteel/mono/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "hA" = (
 /obj/structure/filingcabinet/double{
 	dir = 4;
@@ -522,6 +577,36 @@
 /area/template_noop)
 "hW" = (
 /turf/open/floor/wood/jungleplanet/lit,
+/area/ruin/jungle/swamp/colligne)
+"ie" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 5
+	},
+/obj/structure/table/emptycomputer{
+	dir = 8;
+	icon_state = "emptycomputer-left"
+	},
+/obj/structure/railing{
+	dir = 5;
+	layer = 2.7
+	},
+/obj/machinery/button/door{
+	pixel_x = -6;
+	pixel_y = 1;
+	id = "pintblast";
+	name = "exterior blastdoors button";
+	dir = 8
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = -8;
+	pixel_y = -9;
+	id = "pintfield";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "iq" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line,
@@ -584,9 +669,36 @@
 	},
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"je" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/machinery/computer/helm{
+	dir = 8;
+	icon_state = "computer-right"
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "jl" = (
-/obj/structure/fermenting_barrel,
-/turf/open/floor/wood/jungleplanet/interior,
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
+"jA" = (
+/obj/structure/chair/bench/olive/directional/south{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "jO" = (
 /obj/structure/chair/comfy/orange/old/alt/directional/west,
@@ -668,7 +780,7 @@
 	},
 /obj/item/clothing/head/helmet/roumain/plate,
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "kM" = (
 /obj/structure/rack,
@@ -691,8 +803,20 @@
 /turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp/butchery)
 "ld" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
+/obj/structure/chair/bench/olive/directional/south{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	pixel_x = 21;
+	pixel_y = 3;
+	dir = 8;
+	id = "pintsafe";
+	name = "shutter control"
+	},
+/turf/open/floor/plasteel/mono/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "li" = (
 /obj/machinery/light/small/directional/south,
@@ -717,11 +841,14 @@
 /turf/open/floor/plasteel/dark/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "lu" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood/jungleplanet/interior,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 5
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/tech/jungleplanet,
 /area/ruin/jungle/swamp/colligne)
 "lv" = (
-/obj/effect/mob_spawn/human/corpse/srm,
+/obj/effect/mob_spawn/human/corpse/srm/hunter,
 /obj/item/stack/sheet/mineral/wood{
 	pixel_x = 7;
 	pixel_y = 2
@@ -735,7 +862,7 @@
 	pixel_y = 14
 	},
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "lD" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line{
@@ -832,7 +959,7 @@
 "mE" = (
 /obj/structure/window/fulltile,
 /obj/structure/grille,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "mF" = (
 /obj/item/stack/sheet/mineral/wood{
@@ -845,6 +972,12 @@
 /obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/carpet/green/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
+"mU" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 6
+	},
+/turf/open/floor/plasteel/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "mX" = (
 /obj/machinery/door/airlock/wood{
 	name = "Flamebearer's Deck"
@@ -863,7 +996,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line{
 	dir = 10
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "nn" = (
 /obj/structure/cable/orange{
@@ -874,6 +1007,24 @@
 	},
 /turf/open/floor/wood/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"np" = (
+/turf/open/floor/engine/hull/reinforced/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
+"ny" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/rust/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
+"nJ" = (
+/obj/item/radio/intercom/wideband/directional/west,
+/obj/machinery/holopad/emergency/command,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "nM" = (
 /obj/effect/turf_decal/corner/transparent/grey{
 	dir = 5
@@ -906,12 +1057,13 @@
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "od" = (
-/obj/structure/platform/wood_two{
-	dir = 8
+/obj/structure/table/reinforced,
+/obj/machinery/light/dim/directional/north,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
-/obj/structure/platform/wood_two/corner,
-/turf/open/water/jungle/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
+/turf/open/floor/plasteel/mono/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "of" = (
 /obj/machinery/power/solar,
 /obj/structure/cable/yellow,
@@ -983,6 +1135,21 @@
 	},
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"oV" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "pe" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/gun/ballistic/automatic/zip_pistol{
@@ -993,7 +1160,7 @@
 	pixel_x = 7;
 	pixel_y = -3
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "pr" = (
 /obj/structure/platform/wood_two{
@@ -1096,7 +1263,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "qP" = (
 /obj/machinery/power/solar,
@@ -1199,7 +1366,7 @@
 	pixel_y = 0
 	},
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "rK" = (
 /mob/living/simple_animal/hostile/human/hermit/swampboss,
@@ -1232,7 +1399,7 @@
 	pixel_x = -2;
 	pixel_y = 6
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "sh" = (
 /obj/structure/platform/wood_two,
@@ -1299,8 +1466,8 @@
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp/flamebearer)
 "tj" = (
-/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/hermit,
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "tq" = (
@@ -1369,6 +1536,17 @@
 	},
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
+"ua" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 6
+	},
+/obj/structure/table/reinforced,
+/obj/structure/railing{
+	dir = 6
+	},
+/obj/item/stack/sheet/mineral/uranium/ten,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "uf" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/water/jungle/lit,
@@ -1384,7 +1562,7 @@
 	pixel_y = -6
 	},
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "uj" = (
 /obj/structure/kitchenspike,
@@ -1452,7 +1630,7 @@
 /obj/structure/cable/orange{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "uG" = (
 /obj/structure/chair/wood/wings{
@@ -1474,6 +1652,13 @@
 	},
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"vn" = (
+/obj/machinery/power/port_gen/pacman/super/not_very,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "vv" = (
 /mob/living/simple_animal/hostile/asteroid/wolf/hound/hermit,
 /obj/effect/turf_decal/siding/wood/maple,
@@ -1551,7 +1736,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
 "wO" = (
 /obj/structure/table/wood,
@@ -1589,6 +1774,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"xi" = (
+/obj/machinery/power/shieldwallgen/atmos{
+	dir = 8;
+	id = "pintfield"
+	},
+/obj/structure/poddoor_assembly/shutters,
+/turf/open/floor/engine/hull/interior/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "xp" = (
 /turf/open/floor/wood/jungleplanet/lit{
 	icon_state = "wood-broken6"
@@ -1609,7 +1802,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "xX" = (
 /obj/machinery/door/airlock/wood{
@@ -1625,11 +1818,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
 "ym" = (
-/obj/structure/bed/dogbed,
-/turf/open/floor/wood/jungleplanet/interior,
+/turf/open/floor/plating/rust/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "yn" = (
 /obj/structure/table/wood,
@@ -1691,6 +1883,12 @@
 	},
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp/flamebearer)
+"zd" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plasteel/stairs/left{
+	dir = 4
+	},
+/area/ruin/jungle/swamp/colligne)
 "zq" = (
 /obj/machinery/door/airlock/wood{
 	dir = 8;
@@ -1707,6 +1905,12 @@
 	},
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"zM" = (
+/obj/structure/chair/bench/olive/directional/south{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "zO" = (
 /obj/structure/flora/ash/garden,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
@@ -1714,7 +1918,7 @@
 "zQ" = (
 /obj/structure/window/fulltile,
 /obj/structure/grille,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "zR" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/hunter/sentry,
@@ -1729,7 +1933,9 @@
 	icon_state = "floor3-old"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood/jungleplanet/interior,
+/turf/open/floor/wood/jungleplanet/interior{
+	icon_state = "wood-broken"
+	},
 /area/ruin/jungle/swamp/colligne)
 "zZ" = (
 /obj/machinery/griddle,
@@ -1740,9 +1946,34 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"Av" = (
+/turf/open/floor/wood/jungleplanet/lit{
+	icon_state = "wood-broken3"
+	},
+/area/ruin/jungle/swamp/colligne)
 "AA" = (
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/wood/jungleplanet/interior,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 10
+	},
+/obj/structure/bed/dogbed,
+/turf/open/floor/plasteel/tech/jungleplanet,
+/area/ruin/jungle/swamp/colligne)
+"AC" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/rust/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
+"AF" = (
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plasteel/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "AJ" = (
 /obj/item/plate_shard,
@@ -1752,6 +1983,13 @@
 	},
 /turf/open/floor/carpet/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"AO" = (
+/obj/machinery/power/smes,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "AT" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/wood/jungleplanet/interior,
@@ -1760,6 +1998,27 @@
 /mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
 /turf/open/floor/wood/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"AW" = (
+/obj/structure/platform/industrial{
+	dir = 8
+	},
+/obj/structure/crate_shelf,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
+"Bb" = (
+/obj/effect/turf_decal/miskilamo_small/right{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/structure/bed/dogbed,
+/turf/open/floor/plasteel/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "Bc" = (
 /obj/structure/cable/orange{
 	icon_state = "2-4"
@@ -1811,6 +2070,14 @@
 /obj/structure/platform/wood_two,
 /turf/open/floor/plating/asteroid/sand/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"BR" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 5
+	},
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/hermit,
+/turf/open/floor/plasteel/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "BX" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 1
@@ -1832,16 +2099,18 @@
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "Cg" = (
-/mob/living/simple_animal/hostile/asteroid/wolf/hound/hermit,
-/obj/structure/bed/dogbed,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/wood/jungleplanet/interior,
+/obj/machinery/power/shieldwallgen/atmos{
+	dir = 4;
+	id = "pintfield"
+	},
+/obj/structure/poddoor_assembly/shutters,
+/turf/open/floor/engine/hull/interior/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "Cj" = (
 /obj/structure/fence/post{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "Cw" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -1933,6 +2202,11 @@
 /mob/living/simple_animal/hostile/asteroid/wolf/hound/hermit,
 /turf/open/floor/wood/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Dt" = (
+/turf/open/floor/wood/jungleplanet/lit{
+	icon_state = "wood-broken"
+	},
+/area/ruin/jungle/swamp/colligne)
 "Dw" = (
 /obj/item/fishing_rod,
 /turf/open/floor/wood/jungleplanet/lit,
@@ -1980,18 +2254,26 @@
 /obj/structure/table/wood,
 /turf/open/floor/wood/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"ES" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "pintengine"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ruin/jungle/swamp/colligne)
 "EU" = (
-/obj/structure/platform/wood_two{
-	dir = 8
-	},
-/obj/structure/platform/wood_two/corner{
-	dir = 8
-	},
-/turf/open/water/jungle/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plating/rust/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "Fe" = (
 /obj/structure/fence/post,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "Fk" = (
 /obj/effect/turf_decal/siding/wood/maple,
@@ -2002,6 +2284,20 @@
 /obj/structure/girder,
 /turf/open/floor/plating/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
+"Fo" = (
+/obj/effect/turf_decal/miskilamo_small{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/turf/open/floor/plasteel/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
+"Fp" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/structure/bed/dogbed,
+/turf/open/floor/plasteel/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "Fs" = (
 /obj/structure/chair/comfy/orange/old/alt/directional/west,
 /obj/effect/decal/cleanable/dirt,
@@ -2011,6 +2307,12 @@
 /mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
 /turf/open/floor/carpet/green/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
+"FT" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "FU" = (
 /obj/item/clothing/suit/armor/roumain/flamebearer{
 	pixel_x = 5;
@@ -2118,8 +2420,11 @@
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Hg" = (
-/obj/item/chair/wood,
-/turf/open/floor/wood/jungleplanet/interior,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "pintsafe"
+	},
+/turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "Ht" = (
 /obj/structure/table/wood/reinforced,
@@ -2132,7 +2437,7 @@
 	pixel_y = 4
 	},
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "HG" = (
 /turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
@@ -2270,6 +2575,18 @@
 /obj/structure/chair/wood,
 /turf/open/floor/carpet/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"JC" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "JN" = (
 /obj/structure/fireplace{
 	dir = 4
@@ -2290,7 +2607,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
 "Kd" = (
 /obj/effect/turf_decal/corner/opaque/black/half,
@@ -2361,6 +2678,15 @@
 /obj/structure/platform/wood_two/corner,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"KY" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "KZ" = (
 /obj/effect/turf_decal/siding/wood/maple,
 /obj/effect/decal/cleanable/dirt,
@@ -2398,15 +2724,17 @@
 /obj/structure/fluff/hedge,
 /turf/open/floor/wood/mahogany/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"Lq" = (
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/mono/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "Ly" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "LB" = (
-/obj/machinery/door/airlock/wood,
-/obj/effect/mapping_helpers/airlock/sealed,
-/turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
+/turf/closed/wall/r_wall,
 /area/ruin/jungle/swamp/colligne)
 "LC" = (
 /obj/structure/cable/orange{
@@ -2560,6 +2888,16 @@
 	},
 /turf/open/floor/carpet/red/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"NS" = (
+/turf/closed/wall/r_wall/yesdiag,
+/area/ruin/jungle/swamp/colligne)
+"NT" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plating/rust/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "NW" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/ebony/jungleplanet/interior,
@@ -2606,22 +2944,10 @@
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ou" = (
-/obj/item/reagent_containers/glass/bowl{
-	pixel_x = 5;
-	pixel_y = 8
+/obj/effect/turf_decal/industrial/warning{
+	dir = 9
 	},
-/obj/item/reagent_containers/glass/bowl{
-	pixel_x = -16;
-	pixel_y = 2
-	},
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor4-old"
-	},
-/obj/item/food/kebab{
-	pixel_x = 8;
-	pixel_y = -6
-	},
-/turf/open/floor/wood/jungleplanet/interior,
+/turf/open/floor/plasteel/tech/jungleplanet,
 /area/ruin/jungle/swamp/colligne)
 "Oy" = (
 /obj/structure/table/reinforced{
@@ -2644,7 +2970,7 @@
 /area/ruin/jungle/swamp)
 "OI" = (
 /obj/structure/rack,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "OK" = (
 /turf/closed/wall/mineral/iron,
@@ -2672,9 +2998,9 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
 /area/overmap_encounter/planetoid/jungle/explored)
 "OU" = (
-/obj/structure/table_frame/wood,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood/jungleplanet/interior,
+/turf/open/floor/wood/jungleplanet/interior{
+	icon_state = "wood-broken3"
+	},
 /area/ruin/jungle/swamp/colligne)
 "OV" = (
 /obj/effect/turf_decal/siding/wood/maple{
@@ -2682,23 +3008,24 @@
 	},
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"Pa" = (
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plasteel/stairs/left{
+	dir = 4
+	},
+/area/ruin/jungle/swamp/colligne)
 "Pc" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/jungle/swamp/crew)
 "Pm" = (
-/obj/item/reagent_containers/glass/bowl{
-	pixel_x = 4;
-	pixel_y = 9
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "pintsafe"
 	},
-/obj/item/reagent_containers/glass/bowl{
-	pixel_x = -3;
-	pixel_y = -2
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/item/food/kebab{
-	pixel_x = 6;
-	pixel_y = -8
-	},
-/turf/open/floor/wood/jungleplanet/interior,
+/turf/open/floor/plasteel/tech/grid/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "Po" = (
 /turf/closed/wall/mineral/wood,
@@ -2728,8 +3055,13 @@
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "PG" = (
-/mob/living/simple_animal/hostile/asteroid/wolf/hound/hermit,
-/turf/open/floor/wood/jungleplanet/interior,
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/jungle/swamp/colligne)
 "PI" = (
 /obj/structure/fence/door,
@@ -2773,7 +3105,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "Qp" = (
 /obj/structure/flora/ausbushes/sunnybush,
@@ -2798,6 +3130,13 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
+"QG" = (
+/obj/structure/platform/industrial{
+	dir = 8
+	},
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/tech/techmaint/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "QT" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor4-old"
@@ -2818,7 +3157,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
 "QY" = (
 /turf/open/floor/wood/jungleplanet/lit,
@@ -2939,12 +3278,50 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
+"St" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/structure/chair/bench/olive/directional/south{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
+"SI" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "SL" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"SO" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
+"SP" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood/jungleplanet/lit,
+/area/ruin/jungle/swamp/colligne)
+"SS" = (
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/plasteel/stairs/right{
+	dir = 4
+	},
+/area/ruin/jungle/swamp/colligne)
 "SU" = (
 /obj/structure/dresser{
 	dir = 8
@@ -3008,6 +3385,12 @@
 /obj/structure/flora/junglebush/b,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"TN" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/plasteel/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "TO" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /turf/open/floor/wood/jungleplanet/lit,
@@ -3039,6 +3422,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"Ui" = (
+/turf/open/floor/plasteel/stairs/right{
+	dir = 4
+	},
+/area/ruin/jungle/swamp/colligne)
 "Uo" = (
 /obj/structure/closet/secure_closet/freezer/fridge{
 	populate = 0
@@ -3197,12 +3585,12 @@
 /obj/structure/rack,
 /obj/item/gun/ballistic/automatic/smg/firestorm/no_mag,
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "US" = (
 /obj/structure/window/fulltile,
 /obj/structure/grille,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet/interior,
 /area/ruin/jungle/swamp/flamebearer)
 "UU" = (
 /obj/structure/fireplace{
@@ -3213,7 +3601,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "UV" = (
 /obj/structure/table/wood,
@@ -3395,6 +3783,10 @@
 	},
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
+"WY" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/mono/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "Xa" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/food/grown/tobacco{
@@ -3402,6 +3794,12 @@
 	pixel_y = 5
 	},
 /turf/open/floor/wood/ebony/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
+"Xq" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/plating/rust/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
 "Xu" = (
 /obj/structure/closet/cabinet,
@@ -3425,6 +3823,11 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/butchery)
+"XD" = (
+/obj/effect/turf_decal/siding/thinplating,
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/hermit,
+/turf/open/floor/plating/rust/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "XE" = (
 /obj/machinery/door/airlock/wood{
 	name = "Dining Room"
@@ -3458,7 +3861,7 @@
 	pixel_y = 1
 	},
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "Yy" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -3483,6 +3886,21 @@
 	},
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
+"YO" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "YP" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/shotgun,
 /turf/open/floor/wood/jungleplanet/lit,
@@ -3519,11 +3937,40 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
+"Zz" = (
+/obj/effect/turf_decal/miskilamo_small/left{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plasteel/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "ZC" = (
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/ebony/jungleplanet/interior,
 /area/ruin/jungle/swamp)
+"ZL" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 5
+	},
+/obj/structure/sign/poster/contraband/lusty_xenomorph{
+	pixel_x = -18;
+	pixel_y = 32
+	},
+/obj/structure/sign/poster/contraband/backdoor_xeno_babes_6{
+	pixel_x = 7;
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/jungleplanet/interior,
+/area/ruin/jungle/swamp/colligne)
 "ZP" = (
 /obj/structure/platform/wood_two/corner{
 	dir = 1
@@ -3883,10 +4330,10 @@ mf
 mf
 mf
 mf
-mf
-mf
 OS
-OS
+np
+LB
+np
 OS
 OS
 OS
@@ -3944,13 +4391,13 @@ mf
 NN
 NN
 NN
-NN
-NN
-NN
-NN
-NN
-NN
-NN
+LB
+PG
+LB
+PG
+LB
+OS
+OS
 NN
 NN
 NN
@@ -4004,13 +4451,13 @@ NN
 NN
 NN
 NN
-Ty
-NN
-NN
-Ej
-NN
-NN
-NN
+NS
+LB
+ES
+LB
+ES
+LB
+NS
 NN
 NN
 NN
@@ -4064,15 +4511,15 @@ NN
 NN
 NN
 NN
-NN
-NN
-NN
-NN
-NN
-NN
-NN
-NN
-NN
+NS
+LB
+AO
+dJ
+nJ
+aY
+vn
+LB
+NS
 uf
 NN
 NN
@@ -4125,15 +4572,15 @@ Qp
 NN
 NN
 NN
-NN
-NN
-Ej
-NN
-NN
-NN
-kP
-NN
-NN
+LB
+KY
+YO
+oV
+jl
+SI
+JC
+fF
+LB
 NN
 NN
 NN
@@ -4186,15 +4633,15 @@ NN
 Ty
 NN
 NN
-NN
-NN
-NN
-NN
-NN
-NN
-NN
-NN
-NN
+LB
+SS
+zd
+ie
+je
+ua
+Ui
+Pa
+LB
 NN
 NN
 kP
@@ -4245,18 +4692,18 @@ pr
 pr
 pr
 pr
-pr
-pr
-pr
-pr
-pr
-pr
-pr
-pr
-pr
-pr
-pr
-pr
+NN
+NN
+LB
+Xq
+Fp
+AW
+QG
+gx
+TN
+XD
+LB
+NN
 pr
 pr
 pr
@@ -4304,23 +4751,23 @@ NN
 mF
 sk
 sk
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
+kA
+kA
+mF
+NN
+LB
+ZL
+SO
+Zz
+Fo
+Bb
+AF
+mU
+LB
+NN
+kA
+XG
+XG
 QY
 QY
 zD
@@ -4366,21 +4813,21 @@ NN
 NN
 VF
 kA
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
-QY
+NN
+mF
+NN
+LB
+jA
+zM
+BR
+NT
+mU
+hz
+Lq
+LB
+NN
+NN
+VF
 QY
 QY
 QY
@@ -4427,20 +4874,20 @@ NN
 ZP
 yt
 yt
-yt
-yt
-yt
-yt
+NN
+NN
+NN
+LB
 od
+WY
+ym
+AC
 gI
-gI
-gI
-gI
-gI
+ym
 EU
-yt
-yt
-yt
+LB
+NN
+NN
 yt
 Oi
 iI
@@ -4491,15 +4938,15 @@ Ej
 NN
 NN
 NN
-KP
-ol
-Po
-Po
-Po
-Po
-Po
-zD
-pr
+LB
+St
+ld
+FT
+ny
+FT
+bB
+ym
+Fl
 pr
 aU
 NN
@@ -4552,15 +4999,15 @@ NN
 NN
 KP
 pr
-ol
-Po
-Po
+LB
+LB
+LB
 Hg
 Pm
-jl
-Po
-Po
-Po
+Hg
+LB
+Fl
+Fl
 Po
 jd
 kP
@@ -4612,14 +5059,14 @@ NN
 NN
 KP
 ol
+Av
 hW
-IG
-Po
+Dt
 Cg
 Ou
 ym
 AA
-Po
+Cg
 pL
 cd
 Po
@@ -4675,12 +5122,12 @@ jW
 DI
 hW
 hW
-Po
-ym
+Av
+xi
 lu
-PG
-fF
-Po
+ym
+ym
+ym
 tj
 wF
 mE
@@ -4735,13 +5182,13 @@ NN
 jW
 Je
 GT
+Dt
 hW
-LB
-bQ
+as
 OU
 dn
 bQ
-ld
+ym
 qW
 wF
 mE
@@ -4795,9 +5242,9 @@ NN
 NN
 jW
 PY
+SP
 hW
-hW
-Po
+Av
 zU
 FY
 Re
