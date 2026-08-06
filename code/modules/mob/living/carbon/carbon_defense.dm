@@ -737,6 +737,7 @@
 	if(!limb)
 		return
 
+//Return health excluding prosthetics / robotic limbs.
 /mob/living/carbon/get_organic_health()
 	. = health
 	var/obj/item/bodypart/limb
@@ -744,8 +745,18 @@
 		limb = bodyparts[zone]
 		if(!limb)
 			continue
-		if(limb.bodytype != BODYPART_ORGANIC)
+		if(!IS_ORGANIC_LIMB(limb))
 			. += (limb.brute_dam * limb.body_damage_coeff) + (limb.burn_dam * limb.body_damage_coeff)
+
+//Return true if we have an organic limb.
+/mob/living/carbon/proc/check_organic_parts()
+	var/obj/item/bodypart/limb
+	for (var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
+		if(IS_ORGANIC_LIMB(limb))
+			return TRUE
 
 /mob/living/carbon/grabbedby(mob/living/carbon/user, supress_message = FALSE)
 	if(user != src)
