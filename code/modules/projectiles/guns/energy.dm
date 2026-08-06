@@ -307,6 +307,8 @@
 		manufacturer_prefix = "sharplite"
 	else if (our_gun.manufacturer == MANUFACTURER_PGF)
 		manufacturer_prefix = "etherbor"
+	else if (our_gun.manufacturer == MANUFACTURER_MINUTEMAN_LASER)
+		manufacturer_prefix = "clip"
 	else
 		current_ammotype = "fallback"
 

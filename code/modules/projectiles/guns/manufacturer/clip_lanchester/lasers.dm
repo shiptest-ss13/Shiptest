@@ -89,6 +89,8 @@
 /obj/projectile/beam/emitter/hitscan/clip
 	damage = 35
 
+/obj/item/ammo_casing/energy/kalix
+
 /obj/projectile/beam/hitscan/kalix/faveleira
 	damage = 30
 	armour_penetration = 10
@@ -107,6 +109,8 @@
 
 	icon_state = "ecm7"
 	item_state = "clover_generic"
+
+	modifystate = TRUE
 
 	manufacturer = MANUFACTURER_MINUTEMAN_LASER
 
@@ -139,21 +143,21 @@
 	icon_state = "pl7"
 	item_state = "clover_generic_civ"
 
-	spread = 6
-	spread_unwielded = 8
+	recoil = 1
+	recoil_unwielded = 2
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 
 /obj/item/gun/energy/clover/auto
-	name = "EPL-7 \"Stinging Nettle\""
-	desc = "An extremely rare, prototyped version of the ECM-7, designed with a electropulse gas recycling chamber to allow it to fire in full auto at an extreme speed. The serial numbers have been scratched off. Uses Eoehoma Mini Cells"
+	name = "xPL-7 \"Stinging Nettle\""
+	desc = "An 'off-the-streets' modified version of the PL-7, that uses an electropulse gas recycler to convert the firearm into a fully automatic version. The serial numbers have been filed off. Uses Eoehoma Mini Cells"
 
 	icon_state = "stinging_nettle"
 
-	spread = 9
-	spread_unwielded = 10
+	spread = 15
+	spread_unwielded = 17
 
-	fire_delay = 0.12 SECONDS
+	fire_delay = 0.1 SECONDS
 
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
@@ -181,8 +185,8 @@
 	icon_state = "pl9"
 	item_state = "clover_generic_civ"
 
-	spread = 3
-	spread_unwielded = 10
+	recoil = 1
+	recoil_unwielded = 2
 
 /obj/item/gun/energy/clover/shillelagh
 	name = "ECM-12 \"Shillelagh\""
@@ -191,7 +195,7 @@
 	icon_state = "ecm12"
 	item_state = "ecm12"
 
-	default_ammo_type = /obj/item/stock_parts/cell/gun
+	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/stock_parts/cell/gun/empty,
@@ -219,6 +223,8 @@
 	icon_state = "pl12"
 	item_state = "pl12"
 
+	default_ammo_type = /obj/item/stock_parts/cell/gun
+
 	burst_size = 3
 	burst_delay = 0.16 SECONDS
 	fire_delay = 0.4 SECONDS
@@ -232,7 +238,7 @@
 	icon_state = "ecm25"
 	item_state = "ecm25"
 
-	default_ammo_type = /obj/item/stock_parts/cell/gun
+	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/stock_parts/cell/gun/empty,
@@ -254,9 +260,9 @@
 /obj/item/ammo_casing/energy/laser/clover/beam
 	projectile_type = /obj/projectile/beam/hitscan/kalix/faveleira
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
-	e_cost = 1000
+	e_cost = 1250
 	delay = 1 SECONDS
-	select_name = "focused"
+
 
 /obj/item/gun/energy/clover/faveleira/indie
 	name = "PL-24 \"Faveleira\""
@@ -264,4 +270,5 @@
 
 	icon_state = "pl25"
 	item_state = "pl25"
+	default_ammo_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/shotgun)

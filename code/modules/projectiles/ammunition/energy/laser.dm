@@ -141,7 +141,7 @@
 	projectile_type = /obj/projectile/beam/laser/clover
 	select_name = "kill"
 	e_cost = 277
-	delay = 0.12 SECONDS
+	delay = 0.10 SECONDS
 
 /obj/item/ammo_casing/energy/laser/clover/smg
 	projectile_type = /obj/projectile/beam/laser/clover/smg
@@ -156,7 +156,7 @@
 	projectile_type = /obj/projectile/beam/laser/clover/shotgun
 	pellets = 5
 	variance = 25
-	e_cost = 1000
+	e_cost = 1250
 	select_name = "scatter"
 
 /obj/item/ammo_casing/energy/laser/clover/highpower

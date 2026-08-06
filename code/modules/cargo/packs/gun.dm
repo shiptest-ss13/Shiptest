@@ -402,7 +402,7 @@
 /datum/supply_pack/gun/energy/nettle
 	name = "ECM-7 'Nettle' Energy Pistol"
 	desc = "Contains a single ECM-7 Energy Pistol, a burst-fire pistol manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses eoehoma mini cells."
-	cost = 1000
+	cost = 1750
 	contains = list(/obj/item/storage/guncase/ecm7)
 	crate_name = "beam pistol crate"
 	faction = /datum/faction/clip
@@ -449,8 +449,8 @@
 
 /datum/supply_pack/gun/energy/shillelagh/indie
 	name = "PL-12 'Shillelagh' Energy SMG"
-	desc = "Contains a single PL-12 Submachine Gun, a civilian grade energy gun with a high rate of fire manufactured by Clover Photonics. Uses eoehoma cells."
-	cost = 3000
+	desc = "Contains a single PL-12 Submachine Gun, a civilian grade energy gun with a burst fire mode manufactured by Clover Photonics. Uses eoehoma cells."
+	cost = 2000
 	contains = list(/obj/item/storage/guncase/pl12)
 	crate_name = "beam pistol crate"
 	faction = /datum/faction/clip
@@ -469,7 +469,7 @@
 /datum/supply_pack/gun/energy/faveleira/indie
 	name = "PL-24 'Faveleira' Energy Scattergun"
 	desc = "Contains a single PL-24 Energy Scattergun, a civilian grade energy gun that fires a spread of energy bolts, manufactured by Clover Photonics. Uses eoehoma cells."
-	cost = 4000
+	cost = 3500
 	contains = list(/obj/item/storage/guncase/pl12)
 	crate_name = "beam pistol crate"
 	faction = /datum/faction/clip

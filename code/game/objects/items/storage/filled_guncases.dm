@@ -385,6 +385,10 @@
 	gun_type = /obj/item/gun/energy/clover/indie
 	mag_type = /obj/item/stock_parts/cell/gun/mini
 
+/obj/item/storage/guncase/stingingnettle
+	gun-type = /obj/item/gun/energy/clover/auto
+	mag_type = /obj/item/stock_parts/cell/gun/mini
+
 /obj/item/storage/guncase/ecm9
 	gun_type = /obj/item/gun/energy/clover/thistle
 	mag_type = /obj/item/stock_parts/cell/gun/mini
