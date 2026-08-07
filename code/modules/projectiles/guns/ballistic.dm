@@ -505,6 +505,15 @@
 		unsafe_shot(darwin)
 		return FALSE
 
+// SAWING //
+// list of implements with which you can saw off a gun
+GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
+	/obj/item/plasmacutter,
+	/obj/item/melee/energy,
+	/obj/item/gear_handle/anglegrinder,
+	/obj/item/hatchet,
+	)))
+
 // handles trying to saw off guns
 /obj/item/gun/ballistic/proc/try_sawoff(mob/user, obj/item/saw)
 	if(!saw.get_sharpness() || !is_type_in_typecache(saw, GLOB.gun_saw_types) && saw.tool_behaviour != TOOL_SAW) //needs to be sharp. Otherwise turned off eswords can cut this.

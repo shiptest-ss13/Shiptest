@@ -21,8 +21,8 @@
 #define REVOLVER_FLIP "flip the revolver by the trigger"
 
 /obj/item/gun/ballistic/revolver
-	name = "i demand"
-	desc = "You feel as if you should make a 'adminhelp' if you see one of these, along with a 'github' report. You don't really understand what this means though."
+	name = "I DEMAND!!!"
+	desc = "The mere sight of this revolver fills you with the compulsion to file a bug report. Yes, you. After this round. Make one."
 	icon_state = "revolver"
 	bad_type = /obj/item/gun/ballistic/revolver
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder
@@ -50,7 +50,6 @@
 	recoil_unwielded = 2
 	semi_auto = FALSE
 	bolt_wording = "hammer"
-	dry_fire_sound = 'sound/weapons/gun/general/bolt_drop.ogg'
 	dry_fire_text = "snap"
 
 	wield_slowdown = REVOLVER_SLOWDOWN
@@ -61,15 +60,18 @@
 
 	safety_wording = "hammer"
 
-	// yeehaw
+	// gunslingers love these!
 	gunslinger_recoil_bonus = -1
 	gunslinger_spread_bonus = -8
 
+	// SPINNING //
 	var/spin_delay = 10
 	var/recent_spin = 0
-	var/gate_loaded = FALSE //for stupid wild west shit
-	var/gate_offset = 5 //for wild west shit 2: instead of ejecting the chambered round, eject the next round if 1
-	var/gate_load_direction = REVOLVER_AUTO_ROTATE_RIGHT_LOADING //when we load ammo with a box, which direction do we rotate the cylinder? unused with normal revolvers
+
+	// GATE LOADED //
+	var/gate_loaded = FALSE // are we a cowboy gun that unloads one at a time
+	var/gate_offset = 5 // index of the accessible round when gate loaded
+	var/gate_load_direction = REVOLVER_AUTO_ROTATE_RIGHT_LOADING // which way do we spin when loading?
 
 	COOLDOWN_DECLARE(flip_cooldown)
 

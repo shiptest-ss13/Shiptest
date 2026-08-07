@@ -69,8 +69,9 @@
 	var/wield_time = 0 // timer for above
 
 	// OPERATION - ENERGY //
+	// this var is used to select the ammo type for energy guns
+	// but is here because the e40 also uses it. fix this Later
 	var/select = 1 // what index of the ammo_type list are we firing?
-	               // used for energy guns but also the insidious e40
 
 	// OPERATION - BEAM AIMING //
 	// if we have a beam aiming mode, these are used for it
@@ -284,7 +285,7 @@
 	return ..()
 
 /obj/item/gun/proc/fire_gun(atom/target, mob/living/user, flag, params)
-	if(!actually_shoots) // gun is a dud
+	if(!actually_shoots) // you got the dud
 		return
 	if(!target) // we have no target
 		return
@@ -1027,11 +1028,3 @@
 	var/safety_prefix = "[our_gun.adjust_fire_select_icon_state_on_safety ? "[our_gun.safety ? "safety_" : ""]" : ""]"
 	button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
 	return ..()
-
-GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
-	/obj/item/plasmacutter,
-	/obj/item/melee/energy,
-	/obj/item/gear_handle/anglegrinder,
-	/obj/item/hatchet,
-	)))
-
