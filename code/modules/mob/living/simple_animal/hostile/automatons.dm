@@ -144,6 +144,16 @@
 	vision_range = 12
 	aggro_vision_range = 14
 
+/mob/living/simple_animal/hostile/automated/rover/coalition/ramzi
+	name = "\"Teemeres\" combat rover"
+	desc = "A boxy drone manufactured by Cybersun during the Inter-Corporate War. Stylized to be as basic and armored as possible to mesh with marauder forces, the Teemeres garnered a positive reputation for being a reliable diversion against enemy forces. This example has been heavily modified and reprogrammed by the Ramzi Clique, to the point where you aren't sure whether this is a wartime-era drone or a post-War replacement."
+	faction = list(FACTION_RAMZI)
+
+/mob/living/simple_animal/hostile/automated/rover/coalition/dmr/ramzi
+	name = "\"Temere-Lito\" combat rover"
+	desc = "A boxy drone manufactured by Cybersun during the Inter-Corporate War. Stylized to be as basic and armored as possible to mesh with marauder forces, the Temere-Lito garnered a poor reputation for its tendency to misfire into advancing marauders. This one, despite its reputation for friendly fire, has been dragged back into service by the Ramzi Clique; whether from a New Gorlex Republic stockpile or wartime graveyard, you can't say."
+	faction = list(FACTION_RAMZI)
+
 //agrav
 
 /mob/living/simple_animal/hostile/automated/agrav
