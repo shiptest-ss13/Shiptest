@@ -215,6 +215,17 @@
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 22,
+			"y" = 17,
+		)
+	)
+
 /obj/item/gun/energy/clover/shillelagh/indie
 	name = "PL-12 \"Shillelagh\""
 	desc = "A pulsed-energy SMG, restricted to a burst fire mode. A simple, light, and economical automatic for the discerning captain looking for self-defense firearms. Uses Eoehoma cells."
@@ -258,6 +269,16 @@
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/shotgun, /obj/item/ammo_casing/energy/laser/clover/beam)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 36,
+			"y" = 16,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 30,
+			"y" = 14,
+		)
 
 /obj/item/ammo_casing/energy/laser/clover/beam
 	projectile_type = /obj/projectile/beam/hitscan/kalix/faveleira
