@@ -29,14 +29,6 @@
 	crate_name = "engineering space suit crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 
-/datum/supply_pack/spacesuits/esh_hardsuit
-	name = "ESH Hardsuit Crate"
-	desc = "Contains one ESH hardsuit, to provide the best protection against the elements. MediPen not included for injector module."
-	cost = 2000
-	contains = list(/obj/item/clothing/suit/space/hardsuit/esh)
-	crate_name = "ESH hardsuit crate"
-	crate_type = /obj/structure/closet/crate/secure/plasma
-
 /datum/supply_pack/spacesuits/armored_spacesuit
 	name = "Armored Space Suit Crate"
 	desc = "Contains one lightly armored softsuit, able to protect against the smaller day-to-day hazards."
@@ -167,6 +159,14 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/security/independent)
 	crate_name = "security hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/spacesuits/esh_hardsuit
+	name = "ESH Hardsuit Crate"
+	desc = "Contains one ESH hardsuit, to provide the best protection against the elements. MediPen not included for injector module."
+	cost = 2250
+	contains = list(/obj/item/clothing/suit/space/hardsuit/esh)
+	crate_name = "ESH hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
 
 /datum/supply_pack/spacesuits/eod_hardsuit
 	name = "EOD Hardsuit Crate"
