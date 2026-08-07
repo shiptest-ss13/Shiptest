@@ -101,7 +101,7 @@
 
 /obj/item/gun/energy/clover
 	name = "ECM-7 \"Nettle\""
-	desc = "A light, compact energy pistol designed to fire in 3 round bursts. Its light weight and logistical ease have made it the preferred sidearm in many CLIP divisions. Uses Eoehoma Mini Cells"
+	desc = "A light, compact energy pistol designed to fire in 3 round bursts. Its light weight and logistical ease have made it the preferred sidearm in many CLIP divisions. Uses Eoehoma Mini cells."
 
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
@@ -165,7 +165,7 @@
 
 /obj/item/gun/energy/clover/thistle
 	name = "ECM-9 \"Thistle\""
-	desc = "A midweight energy-based handgun, designed in response to the Minutemen’s request for a sidearm that can pierce armor, and has a surprising kick for an energy gun. Uses Eoehoma mini cells."
+	desc = "A midweight energy-based handgun, it trades stopping power for armor penetration, and is often found in the hands of CLIP agents, law enforcement, and discerning Minutemen. Uses Eoehoma mini cells."
 
 	icon_state = "ecm9"
 	item_state = "clover_generic"
@@ -183,7 +183,7 @@
 
 /obj/item/gun/energy/clover/thistle/indie
 	name = "PL-9 \"Thistle\""
-	desc = "A midweight, armor-piercing energy handgun, it trades stopping power for armor penetration. Often found in the hands of mercenaries and captains who prefer a strong, but economic sidearm. Uses Eoehoma mini cells."
+	desc = "A midweight, armor-piercing energy handgun, trading stopping power for punch. Famous on the Intranet for its frequent apperance on 'firing range fail' compalation videos, due to its often unexpected recoil. Uses Eoehoma mini cells."
 	icon_state = "pl9"
 	item_state = "clover_generic_civ"
 
