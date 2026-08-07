@@ -142,14 +142,14 @@
 
 /obj/item/gun/energy/clover/indie
 	name = "PL-7 \"Nettle\""
-	desc = "A light, compact energy pistol designed to fire in 3 round bursts. A simple pistol favored by law enforcement and league citizens alike for its simple design and rate of fire. Uses Eoehoma Mini cells."
+	desc = "A light, compact energy pistol designed to fire in 3 round bursts. A simple pistol favored by law enforcement and league citizens alike for its simple design and rate of fire. Uses Eoehoma mini cells."
 
 	icon_state = "pl7"
 	item_state = "clover_generic_civ"
 
 /obj/item/gun/energy/clover/auto
 	name = "xPL-7 \"Stinging Nettle\""
-	desc = "An 'off-the-streets' modified version of the PL-7, that uses an electropulse gas recycler to convert the firearm into a fully automatic version. The serial numbers have been filed off. Uses Eoehoma Mini cells."
+	desc = "An 'off-the-streets' modified version of the PL-7, that uses an electropulse gas recycler to convert the firearm into a fully automatic version. The serial numbers have been filed off. Uses Eoehoma mini cells."
 
 	icon_state = "stinging_nettle"
 
@@ -165,8 +165,7 @@
 
 /obj/item/gun/energy/clover/thistle
 	name = "ECM-9 \"Thistle\""
-	desc = "A midweight energy-based handgun, designed in response to the Minutemen’s request for a sidearm that can pierce armor, and has a surprising kick for an energy gun. Uses Eoehoma Mini cells.
-. Uses Eoehoma Mini Cells."
+	desc = "A midweight energy-based handgun, designed in response to the Minutemen’s request for a sidearm that can pierce armor, and has a surprising kick for an energy gun. Uses Eoehoma mini cells.
 
 	icon_state = "ecm9"
 	item_state = "clover_generic"
@@ -184,7 +183,7 @@
 
 /obj/item/gun/energy/clover/thistle/indie
 	name = "PL-9 \"Thistle\""
-	desc = "A midweight, armor-piercing energy handgun, it trades stopping power for armor penetration. Often found in the hands of mercenaries and captains who prefer a strong, but economic sidearm. Uses Eoehoma Mini cells."
+	desc = "A midweight, armor-piercing energy handgun, it trades stopping power for armor penetration. Often found in the hands of mercenaries and captains who prefer a strong, but economic sidearm. Uses Eoehoma mini cells."
 	icon_state = "pl9"
 	item_state = "clover_generic_civ"
 
