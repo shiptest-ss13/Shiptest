@@ -158,3 +158,7 @@
 /mob/living/simple_animal/hostile/asteroid/wolf/hound/hermit
 	desc = "A mutt breed hailing from Sol, Reisehunds are known for their territorial attitude, large size and loyal nature. This one is most certainly not loyal to you."
 	faction = list(FACTION_ANTAG_HERMITS)
+  
+/mob/living/simple_animal/hostile/asteroid/wolf/hound/ngr
+	desc = "A mutt breed hailing from Sol, Reisehunds are known for their territorial attitude, large size and loyal nature. This one wears a collar engraved with the insignia of the New Gorlex Republic."
+	faction = list(FACTION_NGR)
