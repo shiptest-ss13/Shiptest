@@ -279,6 +279,16 @@
 	stock_max = 2
 	availability_prob = 30
 
+/datum/blackmarket_item/weapon/guncase/faveleira
+	name = "ECM-25 Faveleira"
+	desc = "A fancy Clover Photonics multi-mode energy scattergun, fresh and only lightly used from some poor mining team that bit off more than they could drill. Fun for all ranges. Uses Eoehoma cells, and comes with upgraded ones, you're welcome."
+	item = /obj/item/gun/energy/clover/auto
+
+	cost_min = 3500
+	cost_max = 4500
+	stock_max = 2
+	availability_prob = 20
+
 /datum/blackmarket_item/weapon/guncase/cm23
 	name = "CM-23 pistol"
 	desc = "The service pistol of the Confederated League. Chambered in 10mm and fresh off a crashed clipper. We made sure to scratch the ID off this time."
