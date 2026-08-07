@@ -4,6 +4,7 @@
 	taste_description = "bitterness"
 	category = "Drug"
 	var/trippy = TRUE //Does this drug make you trip?
+	bad_type = /datum/reagent/drug
 
 /datum/reagent/drug/on_mob_end_metabolize(mob/living/M)
 	if(trippy)
