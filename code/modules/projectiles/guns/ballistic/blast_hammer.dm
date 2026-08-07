@@ -30,7 +30,6 @@
 
 	actually_shoots = FALSE
 	door_breaching_weapon = FALSE //this doesn't breach doors. it OBLITERATES THEM
-	ignores_wear = TRUE
 	manufacturer = null
 	gunslinger_recoil_bonus = 0
 	wield_slowdown = 0

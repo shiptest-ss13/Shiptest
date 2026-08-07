@@ -1,3 +1,17 @@
+/*
+	THROUGH ME YOU PASS INTO THE CITY OF WOE:
+	THROUGH ME YOU PASS INTO ETERNAL PAIN:
+	THROUGH ME AMONG THE PEOPLE LOST FOR AYE.
+	JUSTICE THE FOUNDER OF MY FABRIC MOVED:
+	TO REAR ME WAS THE TASK OF POWER DIVINE,
+	SUPREMEST WISDOM, AND PRIMEVAL LOVE.
+	BEFORE ME THINGS CREATE WERE NONE, SAVE THINGS
+	ETERNAL, AND ETERNAL I SHALL ENDURE.
+	ABANDON ALL HOPE, YE WHO ENTER HERE.
+*/
+
+// contains the basetype for revolvers
+
 #define REVOLVER_ROTATE_LEFT "rotate chamber left"
 #define REVOLVER_ROTATE_RIGHT "rotate chamber right"
 #define REVOLVER_AUTO_ROTATE_RIGHT_LOADING "auto rotate right when loading ammo"
@@ -26,8 +40,6 @@
 	internal_magazine = TRUE
 	bolt_type = BOLT_TYPE_NO_BOLT
 	tac_reloads = FALSE
-	var/spin_delay = 10
-	var/recent_spin = 0
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	valid_attachments = list()
@@ -49,9 +61,12 @@
 
 	safety_wording = "hammer"
 
+	// yeehaw
 	gunslinger_recoil_bonus = -1
 	gunslinger_spread_bonus = -8
 
+	var/spin_delay = 10
+	var/recent_spin = 0
 	var/gate_loaded = FALSE //for stupid wild west shit
 	var/gate_offset = 5 //for wild west shit 2: instead of ejecting the chambered round, eject the next round if 1
 	var/gate_load_direction = REVOLVER_AUTO_ROTATE_RIGHT_LOADING //when we load ammo with a box, which direction do we rotate the cylinder? unused with normal revolvers
@@ -444,22 +459,7 @@
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
 
-EMPTY_GUN_HELPER(revolver/viper)
-
-/obj/item/gun/ballistic/revolver/rhino
-	name = "\improper Unica 6 auto-revolver"
-	desc = "A high-powered revolver with a unique auto-reloading system. Uses .357 ammo."
-	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
-	icon_state = "mateba"
-	manufacturer = MANUFACTURER_NONE
-	semi_auto = TRUE
-	safety_wording = "safety"
-	spread = 0
-	spread_unwielded = 7
-
+// TODO find a home for this stupid thing
 /obj/item/gun/ballistic/revolver/golden
 	name = "\improper Golden revolver"
 	desc = "This ain't no game, ain't never been no show, And I'll gladly gun down the oldest lady you know. Uses .357 ammo."
