@@ -1,5 +1,5 @@
 /obj/item/gun/energy/kalix/clip
-	name = "ECM-6 Rubus"
+	name = "ECM-6 \"Rubus\""
 	desc = "A modernized copy of the ECM-1, CLIP's first service weapon. Features a number of improvements to bring the aging design back into the modern age."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
@@ -65,7 +65,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix)
 
 /obj/item/gun/energy/laser/e50/clip
-	name = "ECM-50 Pyracanth"
+	name = "ECM-50 \"Pyracanth\""
 	desc = "An extensive modification of the Eoehoma E-50 Emitter by Clover Photonics, customized for CLIP-BARD to fight Xenofauna. Sacrifices some of the E-50's raw power for vastly improved energy efficiency, while preserving its incendiary side-effects."
 
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
@@ -165,7 +165,7 @@
 
 /obj/item/gun/energy/clover/thistle
 	name = "ECM-9 \"Thistle\""
-	desc = "A midweight energy-based handgun, designed in response to the Minutemen’s request for a sidearm that can pierce armor, and has a surprising kick for an energy gun. Uses Eoehoma mini cells.
+	desc = "A midweight energy-based handgun, designed in response to the Minutemen’s request for a sidearm that can pierce armor, and has a surprising kick for an energy gun. Uses Eoehoma mini cells."
 
 	icon_state = "ecm9"
 	item_state = "clover_generic"
@@ -268,7 +268,7 @@
 
 /obj/item/gun/energy/clover/faveleira/indie
 	name = "PL-24 \"Faveleira\""
-	desc = "An older model of the ECM-25. The PL-24 lacks the concentrated fire feature, but still makes for a dependable energy-based scattergun. Uses Eoehoma Cells"
+	desc = "An older model of the ECM-25. The PL-24 lacks the concentrated fire feature, but still makes for a dependable energy-based scattergun. Uses Eoehoma cells"
 
 	icon_state = "pl25"
 	item_state = "pl25"
