@@ -274,4 +274,3 @@
 	item_state = "pl25"
 	default_ammo_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/shotgun)
-a
