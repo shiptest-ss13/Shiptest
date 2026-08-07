@@ -33,7 +33,7 @@
 		/obj/item/stock_parts/cell/gun/kalix/empty,
 		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
-	ammo_type = list(/obj/item/ammo_casing/energy/kalix, /obj/item/ammo_casing/energy/disabler/hitscan)
+	ammo_type = list(/obj/item/ammo_casing/energy/kalix/clip, /obj/item/ammo_casing/energy/disabler/hitscan)
 
 	manufacturer = MANUFACTURER_MINUTEMAN_LASER
 
@@ -86,10 +86,11 @@
 	e_cost = 6250
 	delay = 0.6 SECONDS
 
+/obj/item/ammo_casing/energy/kalix/clip
+	select_name = "focus"
+
 /obj/projectile/beam/emitter/hitscan/clip
 	damage = 35
-
-/obj/item/ammo_casing/energy/kalix
 
 /obj/projectile/beam/hitscan/kalix/faveleira
 	damage = 30
@@ -123,6 +124,9 @@
 	spread = 4
 	spread_unwielded = 7
 
+	recoil = 0
+	recoil_unwielded = 1
+
 	default_ammo_type = /obj/item/stock_parts/cell/gun/mini
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/mini,
@@ -142,11 +146,6 @@
 
 	icon_state = "pl7"
 	item_state = "clover_generic_civ"
-
-	recoil = 1
-	recoil_unwielded = 2
-
-	gun_firemodes = list(FIREMODE_SEMIAUTO)
 
 /obj/item/gun/energy/clover/auto
 	name = "xPL-7 \"Stinging Nettle\""
@@ -176,6 +175,9 @@
 	spread = 2
 	spread_unwielded = 9
 
+	recoil = 1
+	recoil_unwielded = 2
+
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/magnum, /obj/item/ammo_casing/energy/disabler/clover/magnum)
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 
@@ -184,9 +186,6 @@
 	desc = "A midweight, armor-piercing energy handgun, it trades stopping power for armor penetration. Often found in the hands of mercenaries and captains who prefer a more economic firearm. Uses Eoehoma Mini Cells"
 	icon_state = "pl9"
 	item_state = "clover_generic_civ"
-
-	recoil = 1
-	recoil_unwielded = 2
 
 /obj/item/gun/energy/clover/shillelagh
 	name = "ECM-12 \"Shillelagh\""
@@ -254,6 +253,9 @@
 	spread = 1
 	spread_unwielded = 20
 
+	recoil = 1
+	recoil_unwielded = 3
+
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/shotgun, /obj/item/ammo_casing/energy/laser/clover/beam)
 
@@ -262,7 +264,7 @@
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	e_cost = 1250
 	delay = 1 SECONDS
-
+	select_name = "focus"
 
 /obj/item/gun/energy/clover/faveleira/indie
 	name = "PL-24 \"Faveleira\""
