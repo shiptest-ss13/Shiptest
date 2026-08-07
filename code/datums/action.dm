@@ -277,6 +277,20 @@
 /datum/action/item_action/activate_injector
 	name = "Activate Injector"
 
+/datum/action/item_action/activate_suit_injector
+	name = "Activate Injector System"
+	icon_icon = 'icons/obj/syringe.dmi'
+	button_icon_state = "syringe_15"
+
+/datum/action/item_action/activate_suit_injector/Trigger()
+	if(istype(target, /obj/item/clothing/suit/space/hardsuit/esh))
+		var/obj/item/clothing/suit/space/hardsuit/esh/esh_hardsuit = target
+		if(esh_hardsuit.injector == null || esh_hardsuit.injector.reagents.total_volume <= 0)
+			to_chat(owner, span_warning("Warning: no medipen found or current one is empty. Please insert a fresh medipen."))
+			return
+		esh_hardsuit.injector.inject(owner)
+		to_chat(owner, span_warning("Administering medical attention. Medipen administered."))
+
 /datum/action/item_action/toggle_helmet_light
 	name = "Toggle Helmet Light"
 
