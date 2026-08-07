@@ -2278,15 +2278,9 @@
 
 /datum/reagent/three_eye
 	name = "Three Eye"
-	taste_description = "liquid starlight"
+	taste_description = "warm static"
 	taste_mult = 100
-	description = "Out on the edge of human space, at the limits of scientific understanding and \
-	cultural taboo, people develop and dose themselves with substances that would curl the hair on \
-	a brinker's vatgrown second head. Three Eye is one of the most notorious narcotics to ever come \
-	out of the independent habitats, and it has about as much in common with recreational drugs as a \
-	Stok does with an Unathi strike trooper. It is equally effective on humans, Skrell, dionaea, and \
-	probably the Captain's cat, and distributing it will get you guaranteed jail time in every \
-	human territory."
+	description = "A scintillating powder made from the ground up remnants of a static anomaly. You're not really going to take this, are you?"
 	reagent_state = LIQUID
 	color = "#ccccff"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
