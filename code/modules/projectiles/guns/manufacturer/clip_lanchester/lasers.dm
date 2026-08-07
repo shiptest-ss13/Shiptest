@@ -142,14 +142,14 @@
 
 /obj/item/gun/energy/clover/indie
 	name = "PL-7 \"Nettle\""
-	desc = "A light, compact energy pistol designed to fire in 3 round bursts. A simple pistol favored by law enforcement and league citizens alike for its simple design and rate of fire. Uses Eoehoma Mini Cells"
+	desc = "A light, compact energy pistol designed to fire in 3 round bursts. A simple pistol favored by law enforcement and league citizens alike for its simple design and rate of fire. Uses Eoehoma Mini cells."
 
 	icon_state = "pl7"
 	item_state = "clover_generic_civ"
 
 /obj/item/gun/energy/clover/auto
 	name = "xPL-7 \"Stinging Nettle\""
-	desc = "An 'off-the-streets' modified version of the PL-7, that uses an electropulse gas recycler to convert the firearm into a fully automatic version. The serial numbers have been filed off. Uses Eoehoma Mini Cells"
+	desc = "An 'off-the-streets' modified version of the PL-7, that uses an electropulse gas recycler to convert the firearm into a fully automatic version. The serial numbers have been filed off. Uses Eoehoma Mini cells."
 
 	icon_state = "stinging_nettle"
 
@@ -165,7 +165,8 @@
 
 /obj/item/gun/energy/clover/thistle
 	name = "ECM-9 \"Thistle\""
-	desc = "A midweight energy-based handgun, designed in part to effectively penetrate most body armor. Popular among CLIP-GOLD field agents and military policemen. Uses Eoehoma Mini Cells."
+	desc = "A midweight energy-based handgun, designed in response to the Minutemen’s request for a sidearm that can pierce armor, and has a surprising kick for an energy gun. Uses Eoehoma Mini cells.
+. Uses Eoehoma Mini Cells."
 
 	icon_state = "ecm9"
 	item_state = "clover_generic"
@@ -183,13 +184,13 @@
 
 /obj/item/gun/energy/clover/thistle/indie
 	name = "PL-9 \"Thistle\""
-	desc = "A midweight, armor-piercing energy handgun, it trades stopping power for armor penetration. Often found in the hands of mercenaries and captains who prefer a more economic firearm. Uses Eoehoma Mini Cells"
+	desc = "A midweight, armor-piercing energy handgun, it trades stopping power for armor penetration. Often found in the hands of mercenaries and captains who prefer a strong, but economic sidearm. Uses Eoehoma Mini cells."
 	icon_state = "pl9"
 	item_state = "clover_generic_civ"
 
 /obj/item/gun/energy/clover/shillelagh
 	name = "ECM-12 \"Shillelagh\""
-	desc = "A pulsed energy SMG that fires relatively high-power bolts for improved performance, at the cost of overall magazine capacity. Uses Eoehoma Cells"
+	desc = "A pulsed-energy SMG that fires relatively high-power bolts for improved performance and armor penetration, at the cost of overall ammo capacity. Uses Eoehoma cells."
 
 	icon_state = "ecm12"
 	item_state = "ecm12"
@@ -217,7 +218,7 @@
 
 /obj/item/gun/energy/clover/shillelagh/indie
 	name = "PL-12 \"Shillelagh\""
-	desc = "A pulsed energy SMG, restricted to a burst fire mode. A simple, light, and economical automatic for the discerning captain looking for self-defense firearms. Uses Eoehoma Cells"
+	desc = "A pulsed-energy SMG, restricted to a burst fire mode. A simple, light, and economical automatic for the discerning captain looking for self-defense firearms. Uses Eoehoma cells."
 
 	icon_state = "pl12"
 	item_state = "pl12"
@@ -232,7 +233,7 @@
 
 /obj/item/gun/energy/clover/faveleira
 	name = "ECM-25 \"Faveleira\""
-	desc = "Clover Photonic's latest product, the ECM-25 can switch between a diffuse scattershot mode, with all five lenses firing independently. Or in a 'concentrated' mode to release a hypervelocity bolt of plasma. Uses Eoehoma Cells"
+	desc = "Clover Photonic's latest product, the ECM-25 can switch between a diffuse scattershot mode, with all five lenses firing independently. Or in a 'concentrated' mode to release a hypervelocity bolt of plasma. Uses Eoehoma cells."
 
 	icon_state = "ecm25"
 	item_state = "ecm25"
