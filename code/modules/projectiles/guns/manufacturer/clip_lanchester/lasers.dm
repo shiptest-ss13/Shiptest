@@ -279,6 +279,7 @@
 			"x" = 30,
 			"y" = 14,
 		)
+	)
 
 /obj/item/ammo_casing/energy/laser/clover/beam
 	projectile_type = /obj/projectile/beam/hitscan/kalix/faveleira
