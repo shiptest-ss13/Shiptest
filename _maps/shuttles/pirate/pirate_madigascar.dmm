@@ -80,7 +80,7 @@
 /area/ship/cargo/starboard)
 "bl" = (
 /obj/structure/closet/secure_closet/wall/directional/south{
-	name = "defensive supplies";
+	name = "ammo";
 	icon_state = "sec_wall"
 	},
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
@@ -321,9 +321,6 @@
 /area/ship/hallway/aft)
 "dK" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/flippedtable{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -348,7 +345,7 @@
 	icon_state = "0-1"
 	},
 /obj/machinery/door/poddoor{
-	id = "madagascar_starboard"
+	id = "madagascar_starboard_cargo"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo/starboard)
@@ -538,10 +535,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/hallway)
 "fK" = (
-/obj/machinery/portable_atmospherics/canister/fuel,
-/obj/machinery/atmospherics/components/unary/portables_connector/visible{
-	dir = 8
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "fQ" = (
@@ -554,7 +547,7 @@
 	icon_state = "0-1"
 	},
 /obj/machinery/door/poddoor{
-	id = "madagascar_starboard"
+	id = "madagascar_starboard_cargo"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo/starboard)
@@ -580,9 +573,6 @@
 /area/ship/cargo/starboard)
 "gj" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 5
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/structure/cable/pink{
@@ -639,9 +629,7 @@
 /area/ship/cargo/starboard)
 "hc" = (
 /obj/effect/turf_decal/corner/transparent/lightgrey/full,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	welded = 1
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/cable/pink{
 	icon_state = "4-9"
 	},
@@ -711,6 +699,9 @@
 /obj/item/storage/firstaid/fire{
 	pixel_x = 4;
 	pixel_y = 4
+	},
+/obj/effect/turf_decal/corner/transparent/lightgrey/half{
+	dir = 8
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -859,7 +850,6 @@
 "iQ" = (
 /obj/machinery/door/airlock/grunge,
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/pink{
 	icon_state = "1-2"
@@ -867,15 +857,19 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/hallway)
 "iU" = (
-/obj/effect/turf_decal/corner/opaque/white/half,
-/obj/effect/turf_decal/corner/transparent/lightgrey/half,
 /obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable/pink{
-	icon_state = "0-2"
-	},
 /obj/machinery/light_switch{
 	pixel_x = 12;
 	pixel_y = 21
+	},
+/obj/structure/cable/pink{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/corner/opaque/white/half{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/lightgrey/half{
+	dir = 8
 	},
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
@@ -960,7 +954,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "plank_exterior"
+	id = "madagascar_plank_exterior"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/cargo/port)
@@ -973,7 +967,6 @@
 	dir = 1;
 	piping_layer = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -1023,6 +1016,7 @@
 /obj/structure/cable/pink{
 	icon_state = "2-6"
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/janitor)
 "kd" = (
@@ -1039,6 +1033,7 @@
 /obj/item/clothing/glasses/hud/security/sunglasses,
 /obj/item/storage/pouch/squad,
 /obj/item/binoculars,
+/obj/item/clothing/under/frontiersmen/fireproof,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken6"
 	},
@@ -1070,9 +1065,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -1337,9 +1329,6 @@
 /area/ship/external/dark)
 "nj" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/flippedtable{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -1402,9 +1391,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "oe" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 6
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/tech,
@@ -1511,7 +1497,7 @@
 	},
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor{
-	id = "plank_interior"
+	id = "madagascar_plank_interior"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/cargo/port)
@@ -1603,7 +1589,7 @@
 	pixel_y = -3;
 	dir = 8;
 	pixel_x = 0;
-	id = "plank_exterior";
+	id = "madagascar_plank_exterior";
 	name = "Plank Exterior Doors";
 	normaldoorcontrol = 1;
 	specialfunctions = 4
@@ -1784,9 +1770,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/structure/cable/pink{
-	icon_state = "1-5"
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
@@ -1865,7 +1848,7 @@
 	},
 /obj/machinery/light/small/directional/south,
 /obj/structure/closet/crate/medical{
-	name = "Stims Crate";
+	name = "stims crate";
 	populate = 0
 	},
 /obj/item/reagent_containers/hypospray/medipen/stimpack/crisis{
@@ -2118,9 +2101,6 @@
 	piping_layer = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 9
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "uI" = (
@@ -2223,6 +2203,15 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/hallway/fore)
+"vB" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/engineering/engines/starboard)
 "vC" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 8
@@ -2244,7 +2233,6 @@
 /area/ship/cargo/starboard)
 "vL" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable/pink{
@@ -2335,9 +2323,6 @@
 /area/ship/cargo/port)
 "wu" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 10
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
@@ -2430,7 +2415,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/starboard)
 "xB" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
@@ -2619,7 +2603,7 @@
 /obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
 /obj/item/clothing/mask/gas/frontiersmen,
 /obj/machinery/door/poddoor/shutters{
-	id = "madagascar_suits_port"
+	id = "madagascar_suits_starboard"
 	},
 /obj/item/tank/internals/oxygen/red,
 /turf/open/floor/plasteel/tech/grid,
@@ -2694,9 +2678,11 @@
 	},
 /area/ship/bridge)
 "zP" = (
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/structure/window/reinforced{
 	dir = 8
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
@@ -2762,6 +2748,9 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -2897,7 +2886,7 @@
 	dir = 8;
 	pixel_x = 22;
 	pixel_y = 0;
-	id = s;
+	id = "madagascar_kitchen_windows";
 	name = "Window Control"
 	},
 /obj/machinery/light_switch{
@@ -3013,9 +3002,6 @@
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/canteen)
 "CN" = (
-/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
-	dir = 4
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3090,14 +3076,12 @@
 	dir = 8;
 	pixel_x = 13
 	},
-/obj/structure/toilet{
-	dir = 8;
-	pixel_x = 9;
-	pixel_y = 0
-	},
 /obj/structure/mirror{
 	pixel_x = 28;
 	pixel_y = 3
+	},
+/obj/structure/toilet{
+	dir = 1
 	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/patterned,
@@ -3116,7 +3100,12 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/port)
 "DG" = (
-/obj/machinery/power/shuttle/engine/fire,
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines/port)
 "DL" = (
@@ -3137,6 +3126,9 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
@@ -3260,7 +3252,7 @@
 	pixel_y = 4;
 	dir = 8;
 	pixel_x = 0;
-	id = "plank_interior";
+	id = "madagascar_plank_interior";
 	name = "Plank Interior Doors";
 	normaldoorcontrol = 1;
 	specialfunctions = 4
@@ -3431,7 +3423,6 @@
 "Hn" = (
 /obj/machinery/door/airlock/grunge,
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/pink{
 	icon_state = "1-2"
@@ -3545,9 +3536,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable/pink{
-	icon_state = "1-10"
-	},
 /obj/machinery/button/door{
 	pixel_x = 25;
 	pixel_y = 24
@@ -3556,6 +3544,9 @@
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 0;
 	pixel_y = -2
+	},
+/obj/structure/cable/pink{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -3611,15 +3602,17 @@
 /area/ship/crew/canteen)
 "Je" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/binary/valve{
-	dir = 4;
-	layer = 2.43
-	},
 /obj/structure/cable/pink{
 	icon_state = "4-6"
 	},
 /obj/structure/cable/pink{
 	icon_state = "1-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/pink{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -3685,13 +3678,15 @@
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
 "Kg" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "madagascar_starboard_engine"
-	},
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
-/obj/structure/window/reinforced{
-	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -3780,10 +3775,8 @@
 	pixel_x = 0;
 	pixel_y = -8
 	},
-/obj/item/storage/toolbox/ammo/frag{
-	pixel_x = -1;
-	pixel_y = -6
-	},
+/obj/item/restraints/legcuffs/beartrap,
+/obj/item/restraints/legcuffs/beartrap,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Ll" = (
@@ -3841,7 +3834,6 @@
 	},
 /area/ship/bridge)
 "Mp" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/power/terminal{
 	dir = 8
 	},
@@ -3862,6 +3854,7 @@
 	pixel_y = -19
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Mr" = (
@@ -3929,7 +3922,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/turf/open/space/basic,
+/turf/open/floor/plating,
 /area/ship/engineering/hallway)
 "MS" = (
 /obj/machinery/door/airlock/public{
@@ -4117,15 +4110,17 @@
 /area/ship/engineering/engines/starboard)
 "OX" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/binary/valve{
-	dir = 4;
-	layer = 2.43
-	},
 /obj/structure/cable/pink{
 	icon_state = "2-6"
 	},
 /obj/structure/cable/pink{
 	icon_state = "1-6"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/pink{
+	icon_state = "0-6"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -4141,7 +4136,6 @@
 /area/ship/cargo/starboard)
 "Pq" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/pink{
 	icon_state = "1-2"
@@ -4237,7 +4231,7 @@
 /area/ship/cargo/port)
 "Qg" = (
 /obj/structure/closet/secure_closet/wall/directional/south{
-	name = "defensive supplies";
+	name = "armor";
 	icon_state = "sec_wall"
 	},
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
@@ -4296,7 +4290,7 @@
 "QJ" = (
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor{
-	id = "madagascar_starboard"
+	id = "madagascar_starboard_cargo"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo/starboard)
@@ -4409,7 +4403,7 @@
 /obj/machinery/button/door{
 	pixel_x = 0;
 	pixel_y = 23;
-	id = "madagascar_suits_port";
+	id = "madagascar_suits_starboard";
 	name = "Starboard Equipment Storage"
 	},
 /obj/effect/turf_decal/corner_steel_grid{
@@ -4475,8 +4469,20 @@
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "Sm" = (
-/obj/machinery/power/shuttle/engine/fire,
-/turf/open/floor/engine/hull,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "madagascar_starboard_engine"
+	},
+/turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "So" = (
 /obj/effect/turf_decal/corner/opaque/white/three_quarters{
@@ -4629,7 +4635,7 @@
 	dir = 1
 	},
 /obj/structure/closet/secure_closet/wall/directional/south{
-	name = "defensive supplies";
+	name = "gear";
 	icon_state = "sec_wall"
 	},
 /obj/item/melee/knife/survival,
@@ -4666,6 +4672,9 @@
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "madagascar_starboard_engine"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -4704,7 +4713,9 @@
 	pixel_x = -3;
 	pixel_y = 8
 	},
-/obj/structure/closet/secure_closet/wall/directional/west,
+/obj/structure/closet/secure_closet/wall/directional/west{
+	name = "non-lethal gear"
+	},
 /obj/item/storage/box/handcuffs{
 	pixel_x = -3;
 	pixel_y = 0
@@ -4817,8 +4828,8 @@
 	pixel_y = -11;
 	dir = 8;
 	pixel_x = 0;
-	id = "madagascar_starboard";
-	name = "Bathroom Bolt Control";
+	id = "madagascar_starboard_cargo";
+	name = "Starboard Blast Door";
 	normaldoorcontrol = 1;
 	specialfunctions = 4
 	},
@@ -4958,9 +4969,7 @@
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	welded = 1
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable/pink{
 	icon_state = "5-8"
@@ -5111,7 +5120,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/port)
 "Wr" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/power/terminal{
 	dir = 8
 	},
@@ -5119,6 +5127,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/light/small/directional/south,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Wz" = (
@@ -5201,9 +5210,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Xq" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	welded = 1
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/port)
 "Xu" = (
@@ -5519,17 +5526,17 @@ qn
 qn
 qn
 LI
-jm
 DG
 jm
+DG
 tn
 vC
 SI
 fH
 tn
+vB
 lh
-Sm
-lh
+vB
 dc
 qn
 qn
@@ -5555,7 +5562,7 @@ YC
 rT
 SO
 Ps
-Tv
+Sm
 Kg
 Tv
 Sb
