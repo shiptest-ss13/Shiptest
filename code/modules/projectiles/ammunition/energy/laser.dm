@@ -134,7 +134,7 @@
 /obj/item/ammo_casing/energy/laser/clover
 	projectile_type = /obj/projectile/beam/laser/clover
 	select_name = "kill"
-	e_cost = 277
+	e_cost = 333
 	delay = 0.5 SECONDS
 
 /obj/item/ammo_casing/energy/laser/clover/auto
