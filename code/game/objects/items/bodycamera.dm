@@ -323,8 +323,8 @@
 	c_tag_addition = "Grub Cam"
 	icon = 'icons/obj/machines/camera.dmi'
 	icon_state = "camera"
-	start_active = 1
-	status = 1
+	start_active = TRUE
+	status = TRUE
 	anchored = 1
 
 #undef BODYCAM_UPDATE_BUFFER
