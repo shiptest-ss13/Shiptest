@@ -39,6 +39,7 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/lizard,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/lizard/digitigrade,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/lizard/digitigrade,
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/lizard/synth,
 	)
 	replacement_organs = list(
 		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic,
@@ -60,6 +61,7 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/kepori,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/kepori,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/kepori,
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/kepori/robot,
 	)
 	replacement_organs = list(
 		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic,
@@ -82,6 +84,7 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/vox,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/vox,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/vox,
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/vox/robot,
 	)
 	allowed_species = list(/datum/species/vox)
 	bodytype = BODYTYPE_VOX
