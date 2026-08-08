@@ -2733,6 +2733,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(PIXEL_SCALING_1_2X)
 							pixel_size = PIXEL_SCALING_2X
 						if(PIXEL_SCALING_2X)
+							pixel_size = PIXEL_SCALING_2_1X
+						if(PIXEL_SCALING_2_1X)
+							pixel_size = PIXEL_SCALING_2_2X
+						if(PIXEL_SCALING_2_2X)
+							pixel_size = PIXEL_SCALING_2_3X
+						if(PIXEL_SCALING_2_3X)
+							pixel_size = PIXEL_SCALING_2_4X
+						if(PIXEL_SCALING_2_4X)
+							pixel_size = PIXEL_SCALING_2_5X
+						if(PIXEL_SCALING_2_5X)
 							pixel_size = PIXEL_SCALING_3X
 						if(PIXEL_SCALING_3X)
 							pixel_size = PIXEL_SCALING_AUTO
