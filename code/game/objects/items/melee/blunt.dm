@@ -103,3 +103,24 @@
 /obj/item/brass_knuckles/update_icon_state()
 	icon_state = base_icon_state
 	return ..()
+
+/obj/item/trench_club
+	name = "trench club"
+	desc = "A simplistic club made with a wooden handle and a crude lead macehead. Stings like a bitch."
+	icon = 'icons/obj/weapon/blunt.dmi'
+	icon_state = "trench_club"
+	lefthand_file = 'icons/mob/inhands/weapons/blunt_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/blunt_righthand.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
+	force = 25
+	throwforce = 15
+	wound_bonus = 5
+	demolition_mod = 1.25
+	armour_penetration = 20
+	sharpness = SHARP_NONE
+	slot_flags = ITEM_SLOT_BELT
+	attack_verb = list("beat", "smacked", "clubbed", "clobbered", "whipped")
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+	resistance_flags = FIRE_PROOF
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
