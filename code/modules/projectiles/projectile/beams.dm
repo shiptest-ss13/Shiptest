@@ -136,11 +136,11 @@
 
 /obj/projectile/beam/laser/clover/shotgun
 	damage = 20
-	armour_penetration = -10
+	armour_penetration = -15
 
 	var/tile_dropoff = 2
 	var/ap_dropoff = 5
-	var/ap_dropoff_cutoff = -35
+	var/ap_dropoff_cutoff = -40
 
 /obj/projectile/beam/laser/eoehoma/heavy/on_hit(atom/target, blocked = FALSE)
 	..()

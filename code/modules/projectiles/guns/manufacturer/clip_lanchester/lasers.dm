@@ -95,6 +95,7 @@
 /obj/projectile/beam/hitscan/kalix/faveleira
 	damage = 30
 	armour_penetration = 10
+	damage_constant = 0.95
 
 	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
 
@@ -120,7 +121,7 @@
 
 	burst_size = 3
 	burst_delay = 0.2 SECONDS
-	fire_delay = 0.5 SECONDS
+	fire_delay = 0.7 SECONDS
 	spread = 4
 	spread_unwielded = 7
 
@@ -146,6 +147,9 @@
 
 	icon_state = "pl7"
 	item_state = "clover_generic_civ"
+
+	spread = 6
+	spread_unwielded = 9
 
 /obj/item/gun/energy/clover/auto
 	name = "xPL-7 \"Stinging Nettle\""
@@ -174,6 +178,7 @@
 
 	spread = 2
 	spread_unwielded = 9
+	fire_delay = 0.35 SECONDS
 
 	recoil = 1
 	recoil_unwielded = 2
@@ -186,6 +191,8 @@
 	desc = "A midweight, armor-piercing energy handgun, trading stopping power for punch. Famous on the Intranet for its frequent apperance on 'firing range fail' compalation videos, due to its often unexpected recoil. Uses Eoehoma mini cells."
 	icon_state = "pl9"
 	item_state = "clover_generic_civ"
+
+	fire_delay = 0.7 SECONDS
 
 /obj/item/gun/energy/clover/shillelagh
 	name = "ECM-12 \"Shillelagh\""
@@ -237,7 +244,7 @@
 
 	burst_size = 3
 	burst_delay = 0.16 SECONDS
-	fire_delay = 0.4 SECONDS
+	fire_delay = 0.6 SECONDS
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 
@@ -260,7 +267,7 @@
 	wield_delay = 0.9 SECONDS
 	wield_slowdown = LASER_RIFLE_SLOWDOWN
 
-	fire_delay = 0.3 SECONDS
+	fire_delay = 0.7 SECONDS
 	spread = 1
 	spread_unwielded = 20
 
