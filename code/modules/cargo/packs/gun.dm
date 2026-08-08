@@ -456,7 +456,7 @@
 	name = "ECM-25 'Faveleira' Energy Accelerating Scattergun"
 	desc = "Contains a single ECM-25 Energy Accelerating Scattergun, a flexible energy gun that can fire in diffuse shot or a focused blast, manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses eoehoma cells."
 	cost = 4000
-	contains = list(/obj/item/storage/guncase/ecm12)
+	contains = list(/obj/item/storage/guncase/ecm25)
 	crate_name = "beam shotgun crate"
 	faction = /datum/faction/clip
 	faction_discount = 0
@@ -466,7 +466,7 @@
 	name = "PL-24 'Faveleira' Energy Scattergun"
 	desc = "Contains a single PL-24 Energy Scattergun, a civilian grade energy gun that fires a spread of energy bolts, manufactured by Clover Photonics. Uses eoehoma cells."
 	cost = 4000
-	contains = list(/obj/item/storage/guncase/pl12)
+	contains = list(/obj/item/storage/guncase/pl25)
 	faction_discount = 10
 	faction_locked = FALSE
 
