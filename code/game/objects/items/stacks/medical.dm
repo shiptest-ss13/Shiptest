@@ -158,7 +158,6 @@
 	merge_type = /obj/item/stack/medical/gauze
 	var/gauze_type = /datum/bodypart_aid/gauze
 
-// gauze is only relevant for wounds, which are handled in the wounds themselves
 /obj/item/stack/medical/gauze/try_heal(mob/living/M, mob/user, silent)
 	var/obj/item/bodypart/limb = M.get_bodypart(check_zone(user.zone_selected))
 
@@ -166,27 +165,13 @@
 		to_chat(user, span_notice("There's nothing there to bandage!"))
 		return
 
-	if(!LAZYLEN(limb.wounds))
-		to_chat(user, span_notice("There's no wounds that require bandaging on [user == M ? "your" : "[M]'s"] [limb.name]!"))
-		return
-
-	var/gauzeable_wound = FALSE
-	for(var/i in limb.wounds)
-		var/datum/wound/woundies = i
-		if(woundies.wound_flags & ACCEPTS_GAUZE)
-			gauzeable_wound = TRUE
-			break
-
-	if(!gauzeable_wound)
-		to_chat(user, span_notice("There's no wounds that require bandaging on [user == M ? "your" : "[M]'s"] [limb.name]!"))
-		return
-
 	if(limb.current_gauze)
 		to_chat(user, span_warning("[user == M ? "Your" : "[M]'s"] [limb.name] is already bandaged!"))
+		return
 
 	user.visible_message(
-		span_warning("[user] begins wrapping the wounds on [M]'s [limb.name] with [src]..."),
-		span_warning("You begin wrapping the wounds on [user == M ? "your" : "[M]'s"] [limb.name] with [src]..."),
+		span_warning("[user] begins wrapping [M]'s [limb.name] with [src]..."),
+		span_warning("You begin wrapping  [user == M ? "your" : "[M]'s"] [limb.name] with [src]..."),
 	)
 
 	if(!do_after(user, (user == M ? self_delay : other_delay), target=M))
@@ -194,7 +179,7 @@
 
 	user.visible_message(
 		span_green("[user] applies [src] to [M]'s [limb.name]."),
-		span_green("You bandage the wounds on [user == M ? "your" : "[M]'s"] [limb.name]."),
+		span_green("You bandage [user == M ? "your" : "[M]'s"] [limb.name]."),
 	)
 	limb.apply_gauze(src)
 
