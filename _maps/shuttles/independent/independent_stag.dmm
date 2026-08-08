@@ -1915,8 +1915,14 @@
 	dir = 4;
 	id = "stagarmory"
 	},
-/obj/item/stock_parts/cell/gun/sharplite/mini,
-/obj/item/stock_parts/cell/gun/sharplite/mini,
+/obj/item/stock_parts/cell/gun/mini{
+	pixel_x = 0;
+	pixel_y = 2
+	},
+/obj/item/stock_parts/cell/gun/mini{
+	pixel_x = 0;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "sY" = (
@@ -2094,14 +2100,11 @@
 	dir = 4;
 	id = "stagarmory"
 	},
-/obj/item/gun/energy/sharplite/ohm/empty_cell{
-	pixel_x = 1;
-	pixel_y = -7
-	},
 /obj/item/gun/energy/kalix/empty_cell{
 	pixel_y = 9
 	},
-/obj/item/gun/energy/laser/wasp/empty_cell,
+/obj/item/gun/energy/clover/shillelagh/indie,
+/obj/item/gun/energy/clover/indie,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "uF" = (
@@ -4091,9 +4094,9 @@
 	pixel_x = -32;
 	pixel_y = 2
 	},
-/obj/item/gun/energy/laser/e10/empty_cell{
-	pixel_x = 2;
-	pixel_y = 7
+/obj/item/gun/energy/clover/thistle/indie{
+	pixel_x = 3;
+	pixel_y = 6
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)

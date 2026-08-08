@@ -871,12 +871,6 @@
 /obj/item/clothing/head/helmet/m10{
 	pixel_y = 1
 	},
-/obj/item/storage/box/ammo/c10mm{
-	pixel_y = -3
-	},
-/obj/item/storage/box/ammo/c10mm{
-	pixel_y = -3
-	},
 /obj/item/reagent_containers/spray/pepper{
 	pixel_y = 3;
 	pixel_x = 9
@@ -1501,12 +1495,6 @@
 /turf/open/floor/plasteel/telecomms_floor/tatmos,
 /area/ship/engineering/communications)
 "OJ" = (
-/obj/item/storage/guncase/pistol/cm23,
-/obj/item/storage/guncase/pistol/cm23{
-	pixel_y = 8
-	},
-/obj/item/melee/knife/survival,
-/obj/item/melee/knife/survival,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -1514,6 +1502,16 @@
 /obj/machinery/door/window/brigdoor/northright{
 	req_access = list(1)
 	},
+/obj/item/storage/guncase/ecm7{
+	pixel_x = -1;
+	pixel_y = 3
+	},
+/obj/item/storage/guncase/ecm12{
+	pixel_x = -1;
+	pixel_y = 5
+	},
+/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival,
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "OK" = (
