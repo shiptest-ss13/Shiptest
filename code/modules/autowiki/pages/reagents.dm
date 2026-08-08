@@ -1,19 +1,25 @@
 /datum/autowiki/reagents
 	page = "Template:Autowiki/Content/Reagents"
+	var/list/unmixable_reagents = list()
 
 /datum/autowiki/reagents/generate()
 	var/output = list()
 
+	var/list/all_reagents = subtypesof(/datum/reagent)
 	var/list/mixable_reagents = list()
 	for(var/type in subtypesof(/datum/chemical_reaction))
 		var/datum/chemical_reaction/reaction = new type
 		mixable_reagents |= reaction.results
 		qdel(reaction)
 
+	unmixable_reagents = all_reagents - mixable_reagents
+
 	var/list/categories = list()
 
-	for(var/reagent in mixable_reagents)
+	for(var/reagent in all_reagents)
 		var/datum/reagent/chem = new reagent
+		if (chem.autowiki_hidden || chem.type == chem.bad_type)
+			continue
 
 		LAZYINITLIST(categories[chem.category])
 		categories[chem.category] += list(chem)
@@ -38,7 +44,10 @@
 
 	for(var/datum/reagent/reagent as anything in reagents)
 		output += "! style='background-color: #FFEE88;' | [include_template("anchor", list("1" = escape_value(reagent.name)))][escape_value(reagent.name)] <span style='color:[escape_value(reagent.color)];background-color:[escape_value(reagent.color)]'>__</span>\n"
-		output += "|[include_template("Autowiki/Content/Reactions/[escape_value(reagent.name)]")]\n"
+		if (reagent.type in unmixable_reagents)
+			output += "! style='background-color: #DDD;' |\n"
+		else
+			output += "|[include_template("Autowiki/Content/Reactions/[escape_value(reagent.name)]")]\n"
 		output += "|[escape_value(reagent.description)]\n"
 		output += "|data-sort-value=[reagent.metabolization_rate]|[reagent.metabolization_rate] units per tick\n"
 		output += "|[reagent.overdose_threshold || "data-sort-value=0|N/A"]\n"
