@@ -318,4 +318,23 @@
 			TV.notify(TRUE, "[c_tag] is now live on [network[1]]!")
 			COOLDOWN_START(src, broadcast_announcement, 20 SECONDS)
 
+/obj/item/bodycamera/broadcast_camera/agnigrubcam
+	icon = 'icons/obj/machines/camera.dmi'
+	icon_state = "camera"
+	start_active = TRUE
+	status = TRUE
+	anchored = 1
+
+/obj/item/bodycamera/broadcast_camera/Initialize() //because the other initialize fucks up the name
+	. = ..()
+	radio = new /obj/item/radio/broadcast(src)
+	radio.sectorwide = TRUE
+	radio.canhear_range = 7
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+	RegisterSignal(radio, COMSIG_RADIO_NEW_FREQUENCY, PROC_REF(adjust_name))
+	c_tag = "Agni Live - Grub Cam"
+	name = c_tag
+	update_appearance()
+
 #undef BODYCAM_UPDATE_BUFFER
