@@ -437,7 +437,7 @@ NO_MAG_GUN_HELPER(automatic/smg/resolution/inteq)
 
 /obj/item/gun/ballistic/shotgun/automatic/negotiator
 	name = "Advantage AST12 Negotiator"
-	desc = "A pump-action shotgun with a twin-tube design that allows the user to switch between two ammo types on demand, or simply double their available ammunition."
+	desc = "An automatic shotgun with a twin-tube design that allows the user to switch between two ammo types on demand, or simply double their available ammunition."
 
 	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
