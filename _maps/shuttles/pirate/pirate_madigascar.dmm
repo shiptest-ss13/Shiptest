@@ -107,9 +107,13 @@
 	},
 /obj/item/storage/toolbox/ammo/shotgun{
 	pixel_x = 8;
-	pixel_y = 2
+	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/toolbox/ammo/c357{
+	pixel_x = 8;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "bG" = (
@@ -1242,6 +1246,7 @@
 /obj/item/gun/ballistic/automatic/assault/skm,
 /obj/item/gun/ballistic/automatic/pistol/mauler/regular,
 /obj/effect/turf_decal/techfloor,
+/obj/item/gun/ballistic/shotgun/doublebarrel/presawn/empty,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "mc" = (
@@ -1470,6 +1475,7 @@
 /obj/item/radio/command,
 /obj/item/storage/pouch/squad,
 /obj/item/binoculars,
+/obj/item/storage/guncase/pistol/viper,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
 "pa" = (
@@ -3200,6 +3206,14 @@
 /obj/item/bodycamera/broadcast_camera,
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/lighter{
+	pixel_x = -5;
+	pixel_y = 14
+	},
+/obj/item/lighter{
+	pixel_x = -11;
+	pixel_y = 14
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "En" = (
