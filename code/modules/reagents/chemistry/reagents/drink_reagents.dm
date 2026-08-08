@@ -209,7 +209,6 @@
 	description = "The fatty, still liquid part of milk."
 	color = "#DFD7AF" // rgb: 223, 215, 175
 	taste_description = "creamy milk"
-	glass_icon_state  = "glass_white"
 	glass_name = "glass of cream"
 	glass_desc = "It's a bit thick to drink straight."
 
@@ -377,7 +376,6 @@
 	description = "A refreshing beverage."
 	color = "#743c05" // rgb: 16, 8, 0
 	taste_description = "cola"
-	glass_icon_state  = "glass_brown"
 	glass_name = "glass of cola"
 	glass_desc = "A carbonated cola. You should drink it before it gets flat!"
 
@@ -392,7 +390,6 @@
 	color = "#EEFF00" // rgb: 238, 255, 0
 	quality = DRINK_VERYGOOD
 	taste_description = "carbonated battery acid with a spoonful of sugar"
-	glass_icon_state = "crosstalk_glass"
 	glass_name = "glass of Crosstalk"
 	glass_desc = "The amount of sugar and chemicals in this drink makes your eyes water."
 
@@ -433,7 +430,6 @@
 	description = "A Kalixcian drink made from a plant that tastes similar to sassafrass, which is used in root beer. A stumpy drake holding a mug of it is on the front."
 	color = "#732a03"
 	taste_description = "root beer" // FALSE ADVERTISING
-	glass_icon_state = "tadrixx_glass"
 	glass_name = "glass of Tadrixx"
 	glass_desc = "A cup of fizzy Tadrixx. It smells sweet."
 
@@ -476,7 +472,6 @@
 	description = "A spinoff of the popular Molten Bubbles drink from Kalixcis, made to emulate the flavor of spiced grape instead. It's... not exactly convincing or a very good mix."
 	color = "#5f2010"
 	taste_description = "spiced grape soda"
-	glass_icon_state = "plasma_fizz_glass"
 	glass_name = "glass of Plasma Fizz"
 	glass_desc = "A glass of Plasma Fizz. The spices (and fake grape flavoring) wrinkles your nose."
 
@@ -571,7 +566,6 @@
 	color = "#88b488" // rgb: 243, 155, 3
 	overdose_threshold = 60
 	taste_description = "tooth-rotting sweetness"
-	glass_icon_state = "xeno_energy_glass"
 	glass_name = "glass of Xeno Energy"
 	glass_desc = "A glass of Xeno Energy. It seems to swirl and roil outside of the can..."
 
@@ -612,7 +606,6 @@
 	quality = DRINK_NICE
 	overdose_threshold = 80
 	taste_description = "creamy coffee"
-	glass_icon_state = "soy_latte"
 	glass_name = "soy latte"
 	glass_desc = "A nice and refreshing beverage. It goes well with a book, if you have the time to read."
 
@@ -637,7 +630,6 @@
 	quality = DRINK_NICE
 	overdose_threshold = 80
 	taste_description = "bitter cream"
-	glass_icon_state = "cafe_latte"
 	glass_name = "cafe latte"
 	glass_desc = "A nice, strong, refreshing beverage. It goes well with a book, if you have the time to read."
 
@@ -791,7 +783,6 @@
 	nutriment_factor = 3 * REAGENTS_METABOLISM
 	color = "#4f3a11" // rgb: 64, 48, 16
 	taste_description = "creamy chocolate"
-	glass_icon_state  = "chocolateglass"
 	glass_name = "glass of hot cocoa."
 	glass_desc = "A favorite winter drink from the Solar Confederation. Good for warming yourself up."
 
@@ -899,7 +890,6 @@
 	name = "Beef Broth"
 	color = "#100800" // rgb: 16, 8, 0 , just like cola
 	taste_description = "pure beef essence"
-	glass_icon_state  = "glass_brown"
 	glass_name = "glass of Master Cola?"
 	glass_desc = "A glass of what appears to be refreshing Space Cola."
 

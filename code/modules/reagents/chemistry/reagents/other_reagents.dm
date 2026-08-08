@@ -5,7 +5,6 @@
 	metabolization_rate = 5 //fast rate so it disappears fast.
 	taste_description = "iron"
 	taste_mult = 1.3
-	glass_icon_state = "glass_red"
 	glass_name = "glass of tomato juice"
 	glass_desc = "Are you sure this is tomato juice?"
 
@@ -845,7 +844,6 @@
 	description = "Required for welders. Flammable."
 	color = "#660000" // rgb: 102, 0, 0
 	taste_description = "gross metal"
-	glass_icon_state = "dr_gibb_glass"
 	glass_name = "glass of welder fuel"
 	glass_desc = "Unless you're an industrial tool, this is probably not safe for consumption."
 	process_flags = ORGANIC | SYNTHETIC
