@@ -38,6 +38,7 @@
 
 /obj/structure/disposaloutlet/Moved()
 	target = get_ranged_target_turf(src, dir, 10)
+	return ..()
 
 // expel the contents of the holder object, then delete it
 // called when the holder exits the outlet
