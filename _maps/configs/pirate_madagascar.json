@@ -1,0 +1,40 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Madagascar-class Improvised Boarding Ferry",
+	"faction": "/datum/faction/frontiersmen",
+	"prefix": "ISV",
+	"manufacturer": "Miskilamo Spacefaring",
+	"namelists": ["PIRATES", "ACLF"],
+	"map_short_name": "Madagascar-class",
+	"map_path": "_maps/shuttles/pirate/pirate_madigascar.dmm",
+	"description": "The Madagascar is a collective designation for any similarly-sized hulls operated by the free frontiersmen 'upgraded' for improved ship-to-ship boarding capabilities. The most common is a modification of Miskilamo's Cornwall-Class Light Freighter. These modifications include expanding the medical bay and armory, and the installation of a 'docking tube' (often either locally sourced, or assembled in-situ) for compatibility and ease of interfacing with their target vessels. It's not uncommon to find them encased in a lattice of metal beams for ease of EVA navigation while in the depths of space, where these vessels specialize in preying on unarmed ships.",
+	"tags": ["Combat"],
+	"limit": 1,
+	"tranist_x_offset": -30,
+	"tranist_y_offset": -25,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/frontiersmen/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Plank Boss": {
+			"outfit": "/datum/outfit/job/frontiersmen/hos",
+			"officer": true,
+			"slots": 1
+		},
+		"Surgeon": {
+			"outfit": "/datum/outfit/job/frontiersmen/doctor",
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/frontiersmen/engineer",
+			"slots": 1
+		},
+		"Boarder": {
+			"outfit": "/datum/outfit/job/frontiersmen/security",
+			"slots": 2
+		}
+	},
+	"enabled": false
+}
