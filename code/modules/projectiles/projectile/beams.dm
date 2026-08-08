@@ -138,6 +138,8 @@
 	damage = 20
 	armour_penetration = -15
 
+	wound_bonus = -30
+
 	var/tile_dropoff = 2
 	var/ap_dropoff = 5
 	var/ap_dropoff_cutoff = -40
@@ -293,7 +295,7 @@
 /obj/projectile/beam/disabler/clover/weak
 	icon_state = "clover_disabler_light"
 	damage = 15
-	armour_penetration = -10
+	armour_penetration = -20
 
 /obj/projectile/beam/disabler/weak
 	damage = 15
