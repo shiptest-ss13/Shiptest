@@ -2276,19 +2276,13 @@
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
 	H.set_heartattack(TRUE)
 
-/datum/reagent/three_eye
-	name = "Three Eye"
-	taste_description = "liquid starlight"
+/datum/reagent/truesight
+	name = "Truesight"
+	taste_description = "warm static"
 	taste_mult = 100
-	description = "Out on the edge of human space, at the limits of scientific understanding and \
-	cultural taboo, people develop and dose themselves with substances that would curl the hair on \
-	a brinker's vatgrown second head. Three Eye is one of the most notorious narcotics to ever come \
-	out of the independent habitats, and it has about as much in common with recreational drugs as a \
-	Stok does with an Unathi strike trooper. It is equally effective on humans, Skrell, dionaea, and \
-	probably the Captain's cat, and distributing it will get you guaranteed jail time in every \
-	human territory."
+	description = "A scintillating powder made from grinding up the remnants of a static anomaly. You're not really going to take this, are you?"
 	reagent_state = LIQUID
-	color = "#ccccff"
+	color = "#000000" // evil and ominous
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 25
 	var/worthy = FALSE
@@ -2328,7 +2322,7 @@
 		"GET OUT GET OUT GET OUT GET OUT",
 		"NO MORE NO MORE NO MORE"
 	)
-/datum/reagent/three_eye/on_mob_metabolize(mob/living/L)
+/datum/reagent/truesight/on_mob_metabolize(mob/living/L)
 	. = ..()
 	L.add_client_colour(/datum/client_colour/thirdeye)
 	if(L.client?.holder) //You are worthy.
@@ -2339,7 +2333,7 @@
 		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)
 		return
 
-/datum/reagent/three_eye/on_mob_life(mob/living/carbon/M)
+/datum/reagent/truesight/on_mob_life(mob/living/carbon/M)
 	. = ..()
 	if(worthy)
 		return
@@ -2356,7 +2350,7 @@
 	if(prob(7))
 		to_chat(M, span_warning("[pick(dose_messages)]"))
 
-/datum/reagent/three_eye/overdose_start(mob/living/M)
+/datum/reagent/truesight/overdose_start(mob/living/M)
 	on_mob_metabolize(M) //set worthy
 	if(worthy)
 		overdosed = FALSE
@@ -2366,7 +2360,7 @@
 		var/mob/living/carbon/human/H = M
 		addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living, seizure)), rand(1 SECONDS, 5 SECONDS))
 
-/datum/reagent/three_eye/overdose_process(mob/living/M)
+/datum/reagent/truesight/overdose_process(mob/living/M)
 	. = ..()
 	if(worthy)
 		return
@@ -2377,7 +2371,7 @@
 	if(prob(7))
 		to_chat(M, span_danger("<font size = [rand(2,4)]>[pick(overdose_messages)]</font>"))
 
-/datum/reagent/three_eye/on_mob_end_metabolize(mob/living/L)
+/datum/reagent/truesight/on_mob_end_metabolize(mob/living/L)
 	. = ..()
 	L.remove_client_colour(/datum/client_colour/thirdeye)
 	if(overdosed && !worthy)
