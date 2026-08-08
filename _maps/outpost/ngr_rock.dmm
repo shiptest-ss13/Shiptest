@@ -1417,15 +1417,11 @@
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/canister{
-	icon_state = "orangews";
-	name = "hydrogen canister";
-	desc = "Hydrogen. Used in thruster fuel."
-	},
 /obj/machinery/camera/directional/north{
 	network = list("1000eye")
 	},
 /obj/machinery/light/directional/north,
+/obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/cargo)
 "cY" = (
@@ -7430,12 +7426,8 @@
 /turf/open/floor/plating,
 /area/outpost/vacant_rooms/office)
 "pS" = (
-/obj/machinery/portable_atmospherics/canister{
-	icon_state = "orangews";
-	name = "hydrogen canister";
-	desc = "Hydrogen. Used in thruster fuel."
-	},
 /obj/effect/turf_decal/industrial/outline/orange,
+/obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/cargo)
 "pT" = (
@@ -11680,15 +11672,6 @@
 /obj/structure/chair/sofa/brown/old/corner/directional/west,
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
-"zj" = (
-/obj/effect/turf_decal/industrial/outline/orange,
-/obj/machinery/portable_atmospherics/canister{
-	icon_state = "orangews";
-	name = "hydrogen canister";
-	desc = "Hydrogen. Used in thruster fuel."
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/outpost/cargo)
 "zk" = (
 /obj/item/reagent_containers/food/drinks/beer{
 	pixel_y = -8;
@@ -28634,7 +28617,7 @@ Tk
 Tk
 aw
 wl
-zj
+pS
 pS
 Rx
 aw

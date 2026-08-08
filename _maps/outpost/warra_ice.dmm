@@ -1369,6 +1369,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
+"gY" = (
+/turf/closed/indestructible/titanium/nodiagnonal,
+/area/outpost/hallway/port)
 "gZ" = (
 /turf/open/floor/engine/air,
 /area/outpost/engineering/atmospherics)
@@ -2068,7 +2071,7 @@
 /area/outpost/exterior/warra)
 "ks" = (
 /turf/open/floor/plating/asteroid/icerock/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
+/area/outpost/hallway/port)
 "kw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -2181,6 +2184,9 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/maintenance/port)
+"kJ" = (
+/turf/closed/indestructible/titanium/nodiagnonal,
+/area/outpost/hallway/fore)
 "kK" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 8
@@ -2238,6 +2244,9 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
+"lc" = (
+/turf/open/floor/plating/asteroid/icerock/warra_outpost,
+/area/outpost/hallway/starboard)
 "le" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced,
@@ -2751,6 +2760,9 @@
 /obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plating/asteroid/icerock/warra_outpost/lit,
 /area/outpost/exterior/warra)
+"nw" = (
+/turf/closed/indestructible/rock/schist,
+/area/outpost/hallway/port)
 "nA" = (
 /obj/effect/decal/fakelattice{
 	layer = 2.010
@@ -2803,7 +2815,7 @@
 "ob" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating/asteroid/icerock/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
+/area/outpost/hallway/fore)
 "oe" = (
 /obj/effect/turf_decal/siding/wood/corner/ebony{
 	dir = 1
@@ -3134,6 +3146,9 @@
 /obj/structure/crate_shelf,
 /turf/open/floor/plasteel/mono,
 /area/outpost/cargo/smeltery)
+"qf" = (
+/turf/open/floor/plating/asteroid/icerock/warra_outpost,
+/area/outpost/hallway/fore)
 "qi" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/structure/railing{
@@ -3148,7 +3163,7 @@
 "qk" = (
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plating/asteroid/icerock/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
+/area/outpost/hallway/starboard)
 "ql" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -3245,6 +3260,10 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/vacant_rooms/shop)
+"qI" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating/asteroid/icerock/warra_outpost,
+/area/outpost/hallway/port)
 "qO" = (
 /turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost/lit,
 /area/outpost/exterior/warra)
@@ -5237,6 +5256,10 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/asteroid/snow/no_smooth/warra_outpost/lit,
 /area/outpost/exterior/warra)
+"Bb" = (
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plating/asteroid/icerock/warra_outpost,
+/area/outpost/hallway/starboard)
 "Bc" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -5261,14 +5284,12 @@
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/starboard)
 "Bi" = (
-/obj/machinery/portable_atmospherics/canister{
-	icon_state = "orangews"
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/sign/warra/ns{
 	pixel_x = 32
 	},
 /obj/item/wrench,
+/obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "Bm" = (
@@ -5586,7 +5607,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
+/area/outpost/hallway/port)
 "CM" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 4
@@ -5847,6 +5868,9 @@
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plating/warra_outpost/lit,
 /area/outpost/exterior/warra)
+"DS" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/outpost/hallway/starboard)
 "DX" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only{
@@ -6715,7 +6739,7 @@
 "IC" = (
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/asteroid/icerock/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
+/area/outpost/hallway/port)
 "ID" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
@@ -6767,6 +6791,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/smeltery)
+"IS" = (
+/turf/closed/indestructible/rock/schist,
+/area/outpost/hallway/starboard)
 "IU" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/dresser{
@@ -7192,6 +7219,9 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
+"KM" = (
+/turf/closed/indestructible/rock/schist,
+/area/outpost/hallway/fore)
 "KP" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -8253,10 +8283,8 @@
 	dir = 1
 	},
 /obj/machinery/camera/autoname/directional/east,
-/obj/machinery/portable_atmospherics/canister{
-	icon_state = "orangews"
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/outpost/exterior/warra)
 "QY" = (
@@ -8591,7 +8619,7 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor/ert,
 /turf/open/floor/plasteel/tech/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
+/area/outpost/hallway/fore)
 "SB" = (
 /obj/structure/sign/departments/evac/warra{
 	pixel_x = 26
@@ -9287,7 +9315,7 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
+/area/outpost/hallway/starboard)
 "VZ" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -10022,7 +10050,7 @@
 "ZF" = (
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/asteroid/icerock/warra_outpost,
-/area/outpost/exterior/warra/wilderness)
+/area/outpost/hallway/fore)
 "ZG" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -10152,11 +10180,11 @@ Rj
 Rj
 Rj
 Rj
-KY
+gY
 CD
 CD
 CD
-KY
+gY
 Rj
 Rj
 Rj
@@ -10244,11 +10272,11 @@ Rj
 Rj
 Rj
 Rj
-Rj
+nw
 ks
 ks
 ks
-Rj
+nw
 Rj
 Rj
 Rj
@@ -10336,11 +10364,11 @@ Rj
 Rj
 Rj
 Rj
-Rj
+nw
 ks
 ks
 ks
-Rj
+nw
 Rj
 Rj
 Rj
@@ -10428,11 +10456,11 @@ Rj
 Rj
 Rj
 Rj
-KY
-qk
+gY
+qI
 ks
 IC
-KY
+gY
 Rj
 Rj
 Rj
@@ -10520,11 +10548,11 @@ Rj
 Rj
 Rj
 Rj
-Rj
+nw
 ks
 ks
 ks
-Rj
+nw
 Rj
 Rj
 Rj
@@ -10612,11 +10640,11 @@ Rj
 Rj
 Rj
 Rj
-Rj
+nw
 ks
 ks
 ks
-Rj
+nw
 Rj
 Rj
 Rj
@@ -10704,11 +10732,11 @@ Rj
 Rj
 Rj
 Rj
-KY
+gY
 ks
 ks
 ks
-KY
+gY
 Rj
 Rj
 Rj
@@ -10796,11 +10824,11 @@ Rj
 Rj
 Rj
 Rj
-Rj
+nw
 ks
 ks
 ks
-Rj
+nw
 Rj
 Rj
 Rj
@@ -10888,11 +10916,11 @@ Rj
 Rj
 Rj
 Rj
-Rj
+nw
 ks
 ks
 ks
-Rj
+nw
 Rj
 Rj
 Rj
@@ -10980,11 +11008,11 @@ Rj
 Rj
 Rj
 Rj
-KY
-qk
+gY
+qI
 ks
 IC
-KY
+gY
 Rj
 Rj
 Rj
@@ -11072,11 +11100,11 @@ Rj
 Rj
 Rj
 Rj
-Rj
+nw
 ks
 ks
 ks
-Rj
+nw
 Rj
 Rj
 Rj
@@ -11164,11 +11192,11 @@ Rj
 Rj
 Rj
 Rj
-Rj
+nw
 ks
 ks
 ks
-Rj
+nw
 Rj
 Rj
 Rj
@@ -11256,11 +11284,11 @@ Rj
 Rj
 Rj
 Rj
-KY
+gY
 CD
 CD
 CD
-KY
+gY
 Rj
 Rj
 Rj
@@ -12309,12 +12337,12 @@ Rj
 Rj
 "}
 (25,1,1) = {"
-KY
-KY
-Rj
-Rj
-KY
-KY
+kJ
+kJ
+KM
+KM
+kJ
+kJ
 Hg
 QL
 QL
@@ -12403,8 +12431,8 @@ Rj
 (26,1,1) = {"
 SA
 ob
-ks
-ks
+qf
+qf
 ob
 SA
 QL
@@ -12494,10 +12522,10 @@ Rj
 "}
 (27,1,1) = {"
 SA
-ks
-ks
-ks
-ks
+qf
+qf
+qf
+qf
 SA
 QL
 QL
@@ -12587,8 +12615,8 @@ Rj
 (28,1,1) = {"
 SA
 ZF
-ks
-ks
+qf
+qf
 ZF
 SA
 QL
@@ -12677,12 +12705,12 @@ Rj
 Rj
 "}
 (29,1,1) = {"
-KY
-KY
-Rj
-Rj
-KY
-KY
+kJ
+kJ
+KM
+KM
+kJ
+kJ
 Hg
 QL
 QL
@@ -16081,12 +16109,12 @@ Rj
 Rj
 "}
 (66,1,1) = {"
-KY
-KY
-Rj
-Rj
-KY
-KY
+kJ
+kJ
+KM
+KM
+kJ
+kJ
 cw
 QL
 QL
@@ -16175,8 +16203,8 @@ Rj
 (67,1,1) = {"
 SA
 ob
-ks
-ks
+qf
+qf
 ob
 SA
 QL
@@ -16266,10 +16294,10 @@ Rj
 "}
 (68,1,1) = {"
 SA
-ks
-ks
-ks
-ks
+qf
+qf
+qf
+qf
 SA
 QL
 QL
@@ -16359,8 +16387,8 @@ Rj
 (69,1,1) = {"
 SA
 ZF
-ks
-ks
+qf
+qf
 ZF
 SA
 QL
@@ -16449,12 +16477,12 @@ Rj
 Rj
 "}
 (70,1,1) = {"
-KY
-KY
-Rj
-Rj
-KY
-KY
+kJ
+kJ
+KM
+KM
+kJ
+kJ
 Hg
 QL
 QL
@@ -18616,11 +18644,11 @@ QL
 QL
 Rj
 Rj
-JH
-JH
+DS
+DS
 VY
-JH
-JH
+DS
+DS
 Rj
 Rj
 QL
@@ -18708,11 +18736,11 @@ Rj
 Rj
 Rj
 Rj
-Rj
-ks
-ks
-ks
-Rj
+IS
+lc
+lc
+lc
+IS
 Rj
 Rj
 Rj
@@ -18800,11 +18828,11 @@ Rj
 Rj
 Rj
 Rj
-Rj
-ks
-ks
-ks
-Rj
+IS
+lc
+lc
+lc
+IS
 Rj
 Rj
 Rj
@@ -18892,11 +18920,11 @@ Rj
 Rj
 Rj
 Rj
-JH
+DS
 qk
-ks
-IC
-JH
+lc
+Bb
+DS
 Rj
 Rj
 Rj
@@ -18984,11 +19012,11 @@ Rj
 Rj
 Rj
 Rj
-Rj
-ks
-ks
-ks
-Rj
+IS
+lc
+lc
+lc
+IS
 Rj
 Rj
 Rj
@@ -19076,11 +19104,11 @@ Rj
 Rj
 Rj
 Rj
-Rj
-ks
-ks
-ks
-Rj
+IS
+lc
+lc
+lc
+IS
 Rj
 Rj
 Rj
@@ -19168,11 +19196,11 @@ Rj
 Rj
 Rj
 Rj
-JH
-JH
+DS
+DS
 VY
-JH
-JH
+DS
+DS
 Rj
 Rj
 Rj

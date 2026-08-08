@@ -70,6 +70,9 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	/// Used to stop radiation from travelling across virtual z-levels such as transit zones and planetary encounters.
 	var/rad_fullblocker = FALSE
 
+	///if true, we dont inherit the area's light_color and light_range if spawned outdoors
+	var/override_area_lighting = FALSE
+
 	hitsound_volume = 90
 
 /turf/vv_edit_var(var_name, new_value)
@@ -124,7 +127,9 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	if(requires_activation)
 		ImmediateCalculateAdjacentTurfs()
 
-	if (light_power && light_range)
+	RegisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT, PROC_REF(try_update_area_light))
+
+	if (!(!override_area_lighting && try_update_area_light(do_update_light=FALSE)) && (light_power && light_range))
 		update_light()
 
 	var/turf/T = above()
@@ -187,6 +192,8 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	QDEL_LIST(blueprint_data)
 	flags_1 &= ~INITIALIZED_1
 	requires_activation = FALSE
+	UnregisterSignal(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
+
 	..()
 
 	vis_contents.Cut()
@@ -705,3 +712,34 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		if(turf_to_check.density || LinkBlockedWithAccess(turf_to_check, requester, ID))
 			continue
 		. += turf_to_check
+
+// Handles lighting for planetary lighting, sort of
+/turf/proc/try_update_area_light(datum/source, do_update_light = TRUE)
+	if(override_area_lighting)
+		return FALSE
+	var/area/selected_area = loc
+	if(!istype(selected_area) || !selected_area.use_ztrait_lighting)
+		//in case of landing shuttles
+		if(light_range)
+			INVOKE_ASYNC(src, PROC_REF(reset_turf_light))
+		return FALSE
+	return get_z_lighting(do_update_light)
+
+/turf/proc/get_z_lighting(do_update_light = TRUE)
+	var/list/lighting_traits = virtual_level_trait(ZTRAIT_PLANETARY_LIGHTING)
+	if(!lighting_traits)
+		return FALSE
+	set_turf_light(src, lighting_traits[ZTRAIT_LIGHT_RANGE], lighting_traits[ZTRAIT_LIGHT_POWER], lighting_traits[ZTRAIT_LIGHT_COLOR], do_update_light)
+	return TRUE
+
+/turf/proc/set_turf_light(datum/source, target_range, target_power, target_color, do_update_light = TRUE)
+	light_range = target_range
+	light_power = target_power
+	light_color = target_color
+	if(do_update_light)
+		update_light()
+
+/turf/proc/reset_turf_light(datum/source, do_update_light = TRUE)
+	light_range = 0
+	if(do_update_light)
+		update_light()

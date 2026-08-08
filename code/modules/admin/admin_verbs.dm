@@ -138,6 +138,7 @@ GLOBAL_LIST_INIT(admin_verbs_spawn, list(
 	/client/proc/spawn_overmap,
 	/client/proc/spawn_overmap_json,
 	/client/proc/spawn_jump_point,
+	/client/proc/set_all_planetlights,
 	))
 GLOBAL_PROTECT(admin_verbs_spawn)
 GLOBAL_LIST_INIT(admin_verbs_server, world.AVerbsServer())

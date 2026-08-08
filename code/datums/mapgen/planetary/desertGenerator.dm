@@ -80,7 +80,7 @@
 	)
 
 /datum/biome/desert
-	open_turf_types = list(/turf/open/floor/plating/asteroid/desert/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/desert = 1)
 
 	flora_spawn_chance = 0
 	mob_spawn_chance = 1
@@ -93,7 +93,7 @@
 	)
 
 /datum/biome/dry_seafloor
-	open_turf_types = list(/turf/open/floor/plating/asteroid/dry_seafloor/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dry_seafloor = 1)
 
 	flora_spawn_list = list(
 		/obj/structure/flora/rock/pile = 5,

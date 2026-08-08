@@ -97,6 +97,7 @@
 
 
 /turf/proc/change_area(area/old_area, area/new_area)
+	SEND_SIGNAL(src, COMSIG_OVERMAPTURF_UPDATE_LIGHT)
 	if(SSlighting.initialized)
 		if (new_area.dynamic_lighting != old_area.dynamic_lighting)
 			if (IS_DYNAMIC_LIGHTING(src))

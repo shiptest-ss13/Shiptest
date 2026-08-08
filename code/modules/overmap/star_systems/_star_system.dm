@@ -62,6 +62,11 @@
 		DYNAMIC_WORLD_MOON = 20
 	)
 
+	///These vars completely overide the usual planet colors planets have. Useful for red giants, or events
+	var/dynamic_light_range_override
+	var/dynamic_light_power_override
+	var/dynamic_light_color_override
+
 	///weighted list of events that this system type can spawn during creation.
 	var/list/event_probabilities = list(
 		/datum/overmap/event/wormhole = 10,
@@ -407,13 +412,23 @@
 	var/datum/map_generator/mapgen = new dynamic_datum.mapgen
 	var/datum/map_template/ruin/used_ruin = ispath(ruin_type) ? (new ruin_type) : ruin_type
 	SSblackbox.record_feedback("tally", "encounter_spawned", 1, "[dynamic_datum.mapgen]")
+	var/list/ztraits = list(
+			ZTRAIT_MINING = TRUE,
+			ZTRAIT_BASETURF = dynamic_datum.default_baseturf,
+			ZTRAIT_GRAVITY = dynamic_datum.gravity,
+		)
+
+	//only write lighting if the planet has specific lighting
+	if(dynamic_datum.light_power || dynamic_datum.light_range)
+		ztraits += ZTRAIT_PLANETARY_LIGHTING
+		ztraits[ZTRAIT_PLANETARY_LIGHTING] = list(ZTRAIT_LIGHT_COLOR=dynamic_datum.light_color, ZTRAIT_LIGHT_POWER=dynamic_datum.light_power, ZTRAIT_LIGHT_RANGE=dynamic_datum.light_range)
 
 	// name is random but PROBABLY unique
 	var/encounter_name = dynamic_datum.planet_name || "\improper Uncharted Space [dynamic_datum.x]/[dynamic_datum.y]-[rand(1111, 9999)]"
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
 	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
 		encounter_name,
-		list(ZTRAIT_MINING = TRUE, ZTRAIT_BASETURF = dynamic_datum.default_baseturf, ZTRAIT_GRAVITY = dynamic_datum.gravity),
+		ztraits,
 		mapzone,
 		dynamic_datum.vlevel_width,
 		dynamic_datum.vlevel_height,
@@ -562,6 +577,17 @@
 	var/datum/map_zone/mapzone
 	var/datum/virtual_level/vlevel
 
+	var/list/ztraits = list(
+			ZTRAIT_MINING = TRUE,
+			ZTRAIT_BASETURF = static_datum.default_baseturf,
+			ZTRAIT_GRAVITY = static_datum.gravity,
+		)
+
+	//only write lighting if the planet has specific lighting
+	if(static_datum.light_power || static_datum.light_range)
+		ztraits += ZTRAIT_PLANETARY_LIGHTING
+		ztraits[ZTRAIT_PLANETARY_LIGHTING] = list(ZTRAIT_LIGHT_COLOR=static_datum.light_color, ZTRAIT_LIGHT_POWER=static_datum.light_power, ZTRAIT_LIGHT_RANGE=static_datum.light_range)
+
 	if(static_datum.load_seperate_z)
 		mapzone = map_to_load.load_new_z()
 		vlevel = mapzone.virtual_levels[1]
@@ -571,7 +597,7 @@
 		mapzone = SSmapping.create_map_zone(encounter_name)
 		vlevel = SSmapping.create_virtual_level(
 			encounter_name,
-			list(ZTRAIT_MINING = TRUE, ZTRAIT_BASETURF = static_datum.default_baseturf, ZTRAIT_GRAVITY = static_datum.gravity),
+			ztraits,
 			mapzone,
 			map_to_load.width,
 			map_to_load.height,
@@ -595,6 +621,10 @@
 
 	if(use_mapgen)
 		mapgen.populate_turfs(vlevel.get_unreserved_block())
+
+	var/list/turf/block_turfs = vlevel.get_block()
+	for(var/turf/turf as anything in block_turfs)
+		turf.AfterChange(CHANGETURF_IGNORE_AIR)
 
 	if(static_datum.weather_controller_type)
 		new static_datum.weather_controller_type(mapzone)
@@ -890,6 +920,9 @@
 			current_data["default_baseturf "] = current_static.default_baseturf
 			current_data["border_size"] = current_static.border_size
 			current_data["landing_sound"] = current_static.landing_sound
+			current_data["light_range"] = current_static.light_range
+			current_data["light_power"] = current_static.light_power
+			current_data["light_color"] = current_static.light_color
 
 		current_data["x"] = current_object.x
 		current_data["y"] = current_object.y
@@ -1022,6 +1055,9 @@
 			current_static.default_baseturf = current_data["default_baseturf "]
 			current_static.border_size = current_data["border_size"]
 			current_static.landing_sound = current_data["landing_sound"]
+			current_static.light_range = current_data["light_range"]
+			current_static.light_power = current_data["light_power"]
+			current_static.light_color = current_data["light_color"]
 
 		//add any spawned outposts to the system's outpost list.
 		if(istype(new_obj, /datum/overmap/outpost))
