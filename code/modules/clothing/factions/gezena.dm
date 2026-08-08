@@ -118,11 +118,13 @@
 
 /obj/item/clothing/suit/armor/gezena/marine
 	name = "\improper composite combat vest"
-	desc = "An AR-98 series combat vest constructed of heavy composite plating in a striking bright green, with sturdy shoulder pads for extra protection."
+	desc = "An AR-98 series combat vest constructed of heavy composite plating in a striking bright green, with sturdy shoulder pads for extra protection. Has an internal lining mesh for enhanced thermoregulation."
 	icon_state = "marinevest"
 	item_state = "marinevest"
 	blood_overlay_type = "armor"
 	body_parts_covered = CHEST|GROIN
+	cold_protection = CHEST|GROIN|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -209,7 +211,7 @@
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 	cold_protection = HEAD
-	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/gezena/marine
@@ -295,6 +297,8 @@
 	flags_inv = 0
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+	cold_protection = HEAD
+	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	icon_state = "navyhelmet"
 	item_state = "navyhelm"
@@ -303,7 +307,7 @@
 
 /obj/item/clothing/head/helmet/gezena
 	name = "composite combat helmet"
-	desc = "An AR-98 series composite combat helmet employed by the PGFMC. Fitted to connect seamlessly with the L-98 respirator"
+	desc = "An AR-98 series composite combat helmet employed by the PGFMC. Fitted to connect seamlessly with the L-98 respirator. Has an internal lining mesh for enhanced thermoregulation."
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -313,7 +317,7 @@
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 	cold_protection = HEAD
-	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
 	icon_state = "marinehelmet"
 	item_state = "marinehelm"

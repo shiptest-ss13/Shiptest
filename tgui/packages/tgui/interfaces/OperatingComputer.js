@@ -99,6 +99,7 @@ const PatientStateView = (props, context) => {
           <LabeledList>
             <LabeledList.Item label="Next Step">
               {procedure.next_step}
+              <br />
               {procedure.chems_needed && (
                 <>
                   <b>Required Chemicals:</b>
