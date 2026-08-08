@@ -330,9 +330,6 @@
 	radio = new /obj/item/radio/broadcast(src)
 	radio.sectorwide = TRUE
 	radio.canhear_range = 7
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-	RegisterSignal(radio, COMSIG_RADIO_NEW_FREQUENCY, PROC_REF(adjust_name))
 	c_tag = "Agni Live - Grub Cam"
 	name = c_tag
 	update_appearance()
