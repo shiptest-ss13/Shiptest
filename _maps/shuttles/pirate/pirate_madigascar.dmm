@@ -350,7 +350,9 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo/starboard)
 "dR" = (
-/obj/machinery/door/poddoor/shutters/preopen,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "madagascar_bridge_lock"
+	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -523,7 +525,12 @@
 "fF" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	id = "sus_engishutters"
+	dir = 1;
+	id = "madigascar_front_shutters"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "madigascar_front_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -1276,6 +1283,7 @@
 	pixel_x = -6;
 	pixel_y = 1
 	},
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/starboard)
 "mP" = (
@@ -1383,7 +1391,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cutter_bridge_lockdown";
+	id = "madagascar_bridge_lock";
 	name = "Lockdown Shutters";
 	dir = 4
 	},
@@ -1524,7 +1532,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ps" = (
-/obj/machinery/door/poddoor/shutters/preopen,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "madagascar_bridge_lock"
+	},
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -1557,6 +1567,7 @@
 /obj/structure/cable{
 	icon_state = "5-6"
 	},
+/obj/machinery/light/floor,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/port)
 "pI" = (
@@ -1590,9 +1601,7 @@
 	dir = 8;
 	pixel_x = 0;
 	id = "madagascar_plank_exterior";
-	name = "Plank Exterior Doors";
-	normaldoorcontrol = 1;
-	specialfunctions = 4
+	name = "Plank Exterior Doors"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
@@ -1654,6 +1663,7 @@
 /obj/item/stack/sheet/glass/twenty{
 	pixel_y = 3
 	},
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/starboard)
 "qS" = (
@@ -1691,6 +1701,13 @@
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 8
+	},
+/obj/machinery/button/door{
+	pixel_y = -15;
+	dir = 8;
+	pixel_x = 0;
+	id = "madigascar_front_shutters";
+	name = "Bridge Shutters"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -1945,6 +1962,7 @@
 	pixel_x = 5;
 	pixel_y = -8
 	},
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/starboard)
 "sV" = (
@@ -2677,6 +2695,14 @@
 	icon_state = "plating_rust"
 	},
 /area/ship/bridge)
+"zI" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	dir = 1;
+	id = "madigascar_front_shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "zP" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -3144,6 +3170,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/radiation,
 /obj/item/stack/sheet/mineral/uranium/ten,
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/starboard)
 "Ek" = (
@@ -3253,9 +3280,7 @@
 	dir = 8;
 	pixel_x = 0;
 	id = "madagascar_plank_interior";
-	name = "Plank Interior Doors";
-	normaldoorcontrol = 1;
-	specialfunctions = 4
+	name = "Plank Interior Doors"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -3701,8 +3726,6 @@
 	},
 /obj/machinery/button/door{
 	id = "madagascar_suits_port";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
 	name = "Port Equipment Storage";
 	dir = 1;
 	pixel_x = 0;
@@ -4018,7 +4041,8 @@
 "Nu" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	dir = 4
+	dir = 4;
+	id = "madigascar_front_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -4055,7 +4079,9 @@
 /turf/closed/wall/rust,
 /area/ship/engineering/engines/port)
 "Oj" = (
-/obj/machinery/door/poddoor/shutters/preopen,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "madagascar_bridge_lock"
+	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -4073,6 +4099,13 @@
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 8
+	},
+/obj/machinery/button/door{
+	pixel_y = -15;
+	dir = 8;
+	pixel_x = 0;
+	id = "madagascar_bridge_lock";
+	name = "Bridge Lockdown"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -4691,7 +4724,9 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "TB" = (
-/obj/machinery/door/poddoor/shutters/preopen,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "madagascar_bridge_lock"
+	},
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -4829,9 +4864,7 @@
 	dir = 8;
 	pixel_x = 0;
 	id = "madagascar_starboard_cargo";
-	name = "Starboard Blast Door";
-	normaldoorcontrol = 1;
-	specialfunctions = 4
+	name = "Starboard Blast Door"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
@@ -5319,6 +5352,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/rations,
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/starboard)
 "YC" = (
@@ -6509,11 +6543,11 @@ qn
 rZ
 SF
 SF
-fF
+zI
 rG
 Ok
 IW
-fF
+zI
 SF
 SF
 rZ
