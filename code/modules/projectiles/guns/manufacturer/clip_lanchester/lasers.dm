@@ -128,6 +128,8 @@
 	recoil = 0
 	recoil_unwielded = 1
 
+	w_class = WEIGHT_CLASS_SMALL
+
 	default_ammo_type = /obj/item/stock_parts/cell/gun/mini
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/mini,
@@ -183,6 +185,8 @@
 	recoil = 1
 	recoil_unwielded = 2
 
+	w_class = WEIGHT_CLASS_NORMAL
+
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/magnum, /obj/item/ammo_casing/energy/disabler/clover/magnum)
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 
@@ -219,6 +223,8 @@
 
 	fire_delay = 0.16 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
+
+	w_class = WEIGHT_CLASS_BULKY
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 
@@ -273,6 +279,8 @@
 
 	recoil = 1
 	recoil_unwielded = 3
+
+	w_class = WEIGHT_CLASS_BULKY
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/shotgun, /obj/item/ammo_casing/energy/laser/clover/beam)
