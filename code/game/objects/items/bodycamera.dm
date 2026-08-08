@@ -325,7 +325,7 @@
 	status = TRUE
 	anchored = 1
 
-/obj/item/bodycamera/broadcast_camera/Initialize() //because the other initialize fucks up the name
+/obj/item/bodycamera/broadcast_camera/agnigrubcam/Initialize() //because the other initialize fucks up the name
 	. = ..()
 	radio = new /obj/item/radio/broadcast(src)
 	radio.sectorwide = TRUE
