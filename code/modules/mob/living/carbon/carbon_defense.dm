@@ -66,7 +66,8 @@
 						return 1
 	..()
 
-/mob/living/carbon/attacked_by(obj/item/I, mob/living/user)
+
+/mob/living/carbon/attacked_by(obj/item/I, mob/living/user, modifier = 1)
 	var/obj/item/bodypart/affecting
 	if(user == src)
 		affecting = get_bodypart(check_zone(user.zone_selected)) //we're self-mutilating! yay!
@@ -83,7 +84,7 @@
 
 	if(I.force)
 		var/attack_direction = get_dir(user, src)
-		apply_damage(I.force, I.damtype, affecting, wound_bonus = I.wound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness(), attack_direction = attack_direction)
+		apply_damage(I.force * modifier, I.damtype, affecting, wound_bonus = I.wound_bonus * modifier, bare_wound_bonus = I.bare_wound_bonus * modifier, sharpness = I.get_sharpness(), attack_direction = attack_direction)
 		if(I.damtype == BRUTE && affecting.can_bleed())
 			if(prob(33))
 				I.add_mob_blood(src)

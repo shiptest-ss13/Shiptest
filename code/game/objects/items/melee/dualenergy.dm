@@ -10,6 +10,7 @@
 	light_color = LIGHT_COLOR_ELECTRIC_GREEN
 	light_on = FALSE
 	attack_cooldown = HEAVY_WEAPON_CD
+	swing_attack_cooldown = HEAVY_WEAPON_CD
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "cut")
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
@@ -56,6 +57,7 @@
 /obj/item/melee/duelenergy/proc/on_wield(obj/item/source, mob/living/carbon/user)
 	SIGNAL_HANDLER
 
+	swing_type = SWINGABLE_SWING
 	sharpness = SHARP_EDGED
 	w_class = active_w_class
 	hitsound = 'sound/weapons/blade1.ogg'
@@ -70,6 +72,7 @@
 
 	sharpness = initial(sharpness)
 	w_class = initial(w_class)
+	swing_type = null
 	hitsound = "swing_hit"
 	STOP_PROCESSING(SSobj, src)
 	set_light_on(FALSE)

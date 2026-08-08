@@ -530,6 +530,21 @@
 /obj/effect/constructing_effect/proc/end()
 	qdel(src)
 
+/obj/effect/temp_visual/dir_setting/item_swing
+	icon_state = "swing"
+	duration = 2.5
+
+/obj/effect/temp_visual/dir_setting/item_swing/stab
+	icon_state = "stab"
+
+/obj/effect/temp_visual/dir_setting/item_swing/big_swipe
+	icon = 'icons/effects/96x96.dmi'
+	icon_state = "big_slash"
+	duration = 0.3 SECONDS
+
+/obj/effect/temp_visual/dir_setting/item_swing/big_swipe/reverse
+	icon_state = "big_slash_reverse"
+
 /obj/effect/muzzle_flash
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "muzzle_flash"
