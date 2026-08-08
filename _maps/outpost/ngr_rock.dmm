@@ -19098,15 +19098,8 @@
 	},
 /area/outpost/vacant_rooms/office)
 "Pp" = (
-/obj/item/bodycamera/broadcast_camera{
-	pixel_y = -16;
-	icon = 'icons/obj/machines/camera.dmi';
-	icon_state = "camera";
-	anchored = 1;
-	c_tag = "Live Broadcast";
-	c_tag_addition = "Agni Grub Cam";
-	start_active = 1;
-	status = 1
+/obj/item/bodycamera/broadcast_camera/agnigrubcam{
+	pixel_y = -16
 	},
 /turf/open/floor/plating/asteroid/rockplanet/safe/lit/ngr_outpost_outside,
 /area/outpost/maintenance/aft)

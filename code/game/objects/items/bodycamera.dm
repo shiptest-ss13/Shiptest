@@ -318,4 +318,13 @@
 			TV.notify(TRUE, "[c_tag] is now live on [network[1]]!")
 			COOLDOWN_START(src, broadcast_announcement, 20 SECONDS)
 
+/obj/item/bodycamera/broadcast_camera/agnigrubcam
+	c_tag = "Agni Live"
+	c_tag_addition = "Grub Cam"
+	icon = 'icons/obj/machines/camera.dmi'
+	icon_state = "camera"
+	start_active = 1
+	status = 1
+	anchored = 1
+
 #undef BODYCAM_UPDATE_BUFFER
