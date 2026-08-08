@@ -412,11 +412,9 @@
 /datum/supply_pack/gun/energy/nettle/indie
 	name = "PL-7 'Nettle' Energy Pistol"
 	desc = "Contains a single PL-7 Energy Pistol, a civilian grade, burst-fire pistol manufactured by Clover Photonics. Uses eoehoma mini cells."
-	cost = 1750
 	contains = list(/obj/item/storage/guncase/pl7)
-	crate_name = "beam pistol crate"
-	faction = /datum/faction/clip
 	faction_discount = 10
+	faction_locked = FALSE
 
 /datum/supply_pack/gun/energy/thistle
 	name = "ECM-9 'Thistle' Heavy Energy Pistol"
@@ -433,9 +431,8 @@
 	desc = "Contains a single PL-9 Heavy Energy Pistol, a civilian grade heavy pistol manufactured by Clover Photonics. Uses eoehoma mini cells."
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/pl9)
-	crate_name = "beam pistol crate"
-	faction = /datum/faction/clip
 	faction_discount = 10
+	faction_locked = FALSE
 
 /datum/supply_pack/gun/energy/shillelagh
 	name = "ECM-12 'Shillelagh' Energy SMG"
@@ -452,16 +449,15 @@
 	desc = "Contains a single PL-12 Submachine Gun, a civilian grade energy gun with a burst fire mode manufactured by Clover Photonics. Uses eoehoma cells."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/pl12)
-	crate_name = "beam pistol crate"
-	faction = /datum/faction/clip
 	faction_discount = 10
+	faction_locked = FALSE
 
 /datum/supply_pack/gun/energy/faveleira
 	name = "ECM-25 'Faveleira' Energy Accelerating Scattergun"
 	desc = "Contains a single ECM-25 Energy Accelerating Scattergun, a flexible energy gun that can fire in diffuse shot or a focused blast, manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses eoehoma cells."
-	cost = 4500
+	cost = 4000
 	contains = list(/obj/item/storage/guncase/ecm12)
-	crate_name = "beam smg crate"
+	crate_name = "beam shotgun crate"
 	faction = /datum/faction/clip
 	faction_discount = 0
 	faction_locked = TRUE
@@ -471,9 +467,8 @@
 	desc = "Contains a single PL-24 Energy Scattergun, a civilian grade energy gun that fires a spread of energy bolts, manufactured by Clover Photonics. Uses eoehoma cells."
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/pl12)
-	crate_name = "beam pistol crate"
-	faction = /datum/faction/clip
 	faction_discount = 10
+	faction_locked = FALSE
 
 /*
 		Shotguns
