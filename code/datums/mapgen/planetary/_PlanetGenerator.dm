@@ -177,6 +177,7 @@
 	log_shuttle(message)
 	log_world(message)
 
+	//We first spawn greebles...
 	for(var/turf/check_turf as anything in turfs)
 
 		var/obj/effect/greeble_spawner/our_greeble = locate(/obj/effect/greeble_spawner) in check_turf
@@ -185,7 +186,9 @@
 
 		CHECK_TICK
 
+	//Then, we smooth and finalize planetgen since after everything spawns, we can gurantee that everything has spawned by now
 	for(var/turf/gen_turf as anything in turfs)
+		postgen_check_turf(gen_turf)
 		gen_turf.AfterChange(CHANGETURF_IGNORE_AIR)
 
 		QUEUE_SMOOTH(gen_turf)
@@ -196,6 +199,7 @@
 
 		// CHECK_TICK here is fine -- we are assuming that the turfs we're generating are staying relatively constant
 		CHECK_TICK
+
 
 	message = "MAPGEN: MAPGEN REF [REF(src)] ([type]) HAS FINISHED POST GEN IN [(REALTIMEOFDAY - start_time)/10]s"
 	log_shuttle(message)

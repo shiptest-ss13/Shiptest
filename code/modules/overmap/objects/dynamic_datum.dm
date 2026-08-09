@@ -67,6 +67,13 @@
 	///Do we selfloop? If so the borders of the map connect to the other side of the planet. Not recommended.
 	var/selfloop
 
+	///This planet's light range per turf
+	var/light_range = 0
+	///This planet's light power per turf.
+	var/light_power = 0
+	///This planet's light color per turf.
+	var/light_color = COLOR_WHITE
+
 /datum/overmap/dynamic/Initialize(position, datum/overmap_star_system/system_spawned_in, load_now=TRUE, ...)
 	. = ..()
 	SSovermap.dynamic_encounters += src
@@ -220,6 +227,24 @@
 	selfloop = planet.selfloop
 	interference_power = planet.interference_power
 
+	light_range = planet.light_range
+	light_power = planet.light_power
+	light_color = planet.light_color
+
+	//if an admin overidded planet lighting, lets use that instead
+	if(GLOB.override_new_planet_lighting_range)
+		light_range = GLOB.override_new_planet_lighting_range
+	else if(current_overmap.dynamic_light_range_override)
+		light_range = current_overmap.dynamic_light_range_override
+	if(GLOB.override_new_planet_lighting_power)
+		light_power = GLOB.override_new_planet_lighting_power
+	else if(current_overmap.dynamic_light_power_override)
+		light_power = current_overmap.dynamic_light_power_override
+	if(GLOB.override_new_planet_lighting_color)
+		light_color = GLOB.override_new_planet_lighting_color
+	else if(current_overmap.dynamic_light_color_override)
+		light_color = current_overmap.dynamic_light_color_override
+
 	alter_token_appearance()
 
 /datum/overmap/dynamic/alter_token_appearance()
@@ -319,6 +344,19 @@
 		var/turf/ruin_turf = ruin_turfs[ruin]
 		message_admins(span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
 
+/datum/overmap/dynamic/update_planet_lighting(target_range, target_power, target_color)
+	if(!mapzone)
+		if(usr)
+			to_chat(usr, span_warning("Load the planet first with load_level!"), confidential = TRUE)
+		return
+	for(var/datum/virtual_level/found_level as anything in mapzone.virtual_levels)
+		var/list/lighting_traits = found_level.traits[ZTRAIT_PLANETARY_LIGHTING]
+		lighting_traits[ZTRAIT_LIGHT_COLOR] = target_color
+		lighting_traits[ZTRAIT_LIGHT_POWER] = target_power
+		lighting_traits[ZTRAIT_LIGHT_RANGE] = target_range
+		found_level.update_lighting_in_bounds()
+	return
+
 /datum/overmap/dynamic/empty
 	name = "Empty Space"
 	token_icon_state = "signal_ship"
@@ -394,6 +432,7 @@
 	ambience_index = AMBIENCE_RUINS
 	outdoors = TRUE
 	allow_weather = TRUE
+	use_ztrait_lighting = TRUE
 
 /area/overmap_encounter/New(...)
 	if(area_flags & UNIQUE_AREA)
@@ -410,12 +449,6 @@
 	light_power = 0.80
 	light_color = "#FFFFFF"
 
-/area/overmap_encounter/planetoid/update_light()
-	for(var/turf/updating_turf as anything in contents)
-		if(!istype(updating_turf))
-			continue
-		SEND_SIGNAL(updating_turf, COMSIG_OVERMAPTURF_UPDATE_LIGHT, light_range, light_power, light_color)
-
 // Used for caves on multi-biome planetoids.
 /area/overmap_encounter/planetoid/cave
 	name = "\improper Planetoid Cavern"
@@ -424,6 +457,7 @@
 	allow_weather = FALSE
 	light_range = 0
 	light_power = 0
+	use_ztrait_lighting = FALSE
 
 /area/overmap_encounter/planetoid/cave/explored
 	area_flags = VALID_TERRITORY

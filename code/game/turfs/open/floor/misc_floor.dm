@@ -18,6 +18,7 @@
 	icon_state = "bcircuit"
 	var/icon_normal = "bcircuit"
 	light_color = LIGHT_COLOR_CYAN
+	override_area_lighting = TRUE
 	floor_tile = /obj/item/stack/tile/circuit
 	var/on = TRUE
 
@@ -63,6 +64,7 @@
 	icon_state = "gcircuit"
 	icon_normal = "gcircuit"
 	light_color = LIGHT_COLOR_GREEN
+	override_area_lighting = TRUE
 	floor_tile = /obj/item/stack/tile/circuit/green
 
 /turf/open/floor/circuit/green/off
@@ -87,6 +89,7 @@
 	icon_state = "rcircuit"
 	icon_normal = "rcircuit"
 	light_color = LIGHT_COLOR_FLARE
+	override_area_lighting = TRUE
 	floor_tile = /obj/item/stack/tile/circuit/red
 
 /turf/open/floor/circuit/red/off
