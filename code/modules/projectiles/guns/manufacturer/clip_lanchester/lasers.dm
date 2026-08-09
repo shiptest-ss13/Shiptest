@@ -248,12 +248,6 @@
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun
 
-	burst_size = 3
-	burst_delay = 0.16 SECONDS
-	fire_delay = 0.6 SECONDS
-
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
-
 /obj/item/gun/energy/clover/faveleira
 	name = "ECM-25 \"Faveleira\""
 	desc = "Clover Photonic's latest product, the ECM-25 can switch between a diffuse scattershot mode, with all five lenses firing independently. Or in a 'concentrated' mode to release a hypervelocity bolt of plasma. Uses Eoehoma cells."
