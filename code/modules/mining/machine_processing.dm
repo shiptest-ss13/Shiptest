@@ -82,8 +82,6 @@
 	var/dx = 0
 	///Position of the smelter relative to the processing machine in tiles. Negative Y is down, Positive Y is up.
 	var/dy = 0
-	/// To help hook up to smelters on roundstart.
-	var/roundstart_id
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/processing_unit_console, 17)
 
