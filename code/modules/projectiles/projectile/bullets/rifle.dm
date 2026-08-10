@@ -11,7 +11,7 @@
 /obj/projectile/bullet/a556_42/hp
 	name = "5.56x42mm CLIP hollow point bullet"
 	damage = 35
-	armour_penetration = -10
+	armour_penetration = -20
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/a556_42/ap
@@ -73,7 +73,7 @@
 /obj/projectile/bullet/a762_40/hp
 	name = "7.62x40mm CLIP hollow point bullet"
 	damage = 40
-	armour_penetration = -10
+	armour_penetration = -20
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/a762_40/ap
