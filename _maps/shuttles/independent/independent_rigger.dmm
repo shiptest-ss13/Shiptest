@@ -36,13 +36,13 @@
 "ae" = (
 /obj/effect/turf_decal/siding/wood/walnut,
 /obj/structure/bed/dogbed{
-	name = "Jonsey's bed";
+	name = "Jonesy's bed";
 	pixel_x = 0;
-	pixel_y = -1
+	pixel_y = 0
 	},
 /obj/item/toy/cattoy{
-	pixel_x = -4;
-	pixel_y = 5
+	pixel_x = -1;
+	pixel_y = 3
 	},
 /obj/machinery/light/small/directional/north{
 	pixel_x = 0;
@@ -270,14 +270,6 @@
 	pixel_x = 8;
 	pixel_y = 6
 	},
-/obj/item/storage/backpack/duffelbag{
-	pixel_x = 1;
-	pixel_y = -3
-	},
-/obj/item/storage/backpack/satchel/explorer{
-	pixel_x = 8;
-	pixel_y = -4
-	},
 /obj/item/clothing/under/pants/track{
 	pixel_x = -7;
 	pixel_y = 6
@@ -305,11 +297,8 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "bl" = (
-/obj/machinery/firealarm/directional/north{
-	pixel_x = 6;
-	pixel_y = 31
-	},
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "bm" = (
@@ -878,9 +867,6 @@
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "eb" = (
@@ -1144,13 +1130,19 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "fy" = (
@@ -1158,7 +1150,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -1166,9 +1158,6 @@
 "fH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -1266,9 +1255,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/storage)
@@ -1319,8 +1305,11 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "go" = (
-/obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/firealarm/directional/north{
+	pixel_x = 6;
+	pixel_y = 31
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "gr" = (
@@ -1611,13 +1600,19 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "ja" = (
@@ -1853,9 +1848,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/storage)
@@ -2124,10 +2116,10 @@
 /area/ship/cargo)
 "mY" = (
 /obj/machinery/atmospherics/components/binary/valve/digital,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "6-8"
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "ng" = (
@@ -2728,10 +2720,6 @@
 	pixel_x = -20;
 	pixel_y = -7
 	},
-/obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
-	pixel_y = 8
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
@@ -3105,10 +3093,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
 "sP" = (
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 8;
-	dir = 4
+/obj/docking_port/stationary{
+	dir = 8;
+	name = "Riggs Rear Dock"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -3731,9 +3718,6 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "xE" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/structure/grille,
 /obj/machinery/door/firedoor,
 /obj/structure/cable{
@@ -3906,13 +3890,6 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 3
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/door/airlock/maintenance_hatch{
 	dir = 1
 	},
@@ -3998,7 +3975,7 @@
 	pixel_y = 24
 	},
 /obj/effect/turf_decal/industrial/warning{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -4044,10 +4021,10 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "6-8"
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "yT" = (
@@ -4125,7 +4102,7 @@
 /area/ship/cargo)
 "yW" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 8
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4166,10 +4143,10 @@
 /obj/machinery/atmospherics/components/binary/valve/digital{
 	dir = 3
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "5-8"
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "zk" = (
@@ -4248,6 +4225,22 @@
 	pixel_x = 9;
 	pixel_y = 6
 	},
+/obj/item/clothing/suit/hazardvest{
+	pixel_y = 5;
+	pixel_x = -6
+	},
+/obj/item/clothing/suit/hazardvest{
+	pixel_y = 2;
+	pixel_x = -6
+	},
+/obj/item/clothing/suit/hazardvest{
+	pixel_y = -1;
+	pixel_x = -6
+	},
+/obj/item/clothing/suit/hazardvest{
+	pixel_y = -4;
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/cryo)
 "zv" = (
@@ -4261,9 +4254,6 @@
 	icon_state = "2-4"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "zz" = (
@@ -4620,9 +4610,6 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "2-9"
-	},
-/obj/structure/cable{
 	icon_state = "0-2"
 	},
 /turf/open/floor/wood/walnut{
@@ -4715,9 +4702,6 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -5022,6 +5006,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "DW" = (
@@ -5195,6 +5182,14 @@
 	pixel_x = -6;
 	pixel_y = 11
 	},
+/obj/item/storage/backpack/satchel/explorer{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_x = 1;
+	pixel_y = -3
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "Er" = (
@@ -5271,6 +5266,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-9"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/security)
@@ -5366,9 +5364,6 @@
 "Fe" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5558,12 +5553,6 @@
 "Gp" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -5782,7 +5771,7 @@
 	})
 "Hx" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 8
+	dir = 4
 	},
 /obj/effect/turf_decal/arrows{
 	dir = 8
@@ -5932,7 +5921,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/black/half,
 /obj/structure/cable{
-	icon_state = "1-6"
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -6020,7 +6009,7 @@
 /area/ship/cargo)
 "ID" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 8
+	dir = 4
 	},
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
@@ -6032,9 +6021,6 @@
 	dir = 3
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -6269,9 +6255,6 @@
 /turf/closed/wall/mineral/plastitanium/interior,
 /area/ship/crew)
 "JW" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
@@ -6698,6 +6681,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/storage/starboard)
+"Nu" = (
+/obj/structure/catwalk,
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 8;
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/external/dark)
 "Nv" = (
 /obj/structure/curtain/bounty,
 /obj/effect/spawner/bunk_bed{
@@ -7007,6 +6999,7 @@
 	pixel_x = 0;
 	pixel_y = -32
 	},
+/obj/item/clothing/under/rank/cargo/miner/hazard,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "Pj" = (
@@ -7511,9 +7504,6 @@
 	pixel_x = -5;
 	pixel_y = 4
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/storage)
 "SC" = (
@@ -7864,10 +7854,10 @@
 	icon_state = "0-1"
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "5-8"
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "UU" = (
@@ -7952,7 +7942,8 @@
 /area/ship/storage/starboard)
 "VX" = (
 /obj/docking_port/stationary{
-	dir = 4
+	dir = 4;
+	name = "Riggs Foward Dock"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -8040,10 +8031,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/smes/engineering,
 /obj/structure/cable{
 	icon_state = "0-10"
 	},
+/obj/machinery/power/smes/engineering,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "WA" = (
@@ -8615,7 +8606,7 @@ ml
 yB
 Gs
 Gl
-ky
+Nu
 RA
 Qn
 MA
@@ -9482,7 +9473,7 @@ SC
 Cl
 OG
 Ve
-Ve
+OG
 Cl
 yU
 WE
