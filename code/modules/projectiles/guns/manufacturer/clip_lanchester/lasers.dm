@@ -93,8 +93,8 @@
 	damage = 35
 
 /obj/projectile/beam/hitscan/kalix/faveleira
-	damage = 30
-	armour_penetration = 10
+	damage = 35
+	armour_penetration = 15
 	damage_constant = 0.95
 
 	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass

@@ -135,7 +135,7 @@
 	armour_penetration = 0
 
 /obj/projectile/beam/laser/clover/shotgun
-	damage = 20
+	damage = 15
 	armour_penetration = -15
 
 	wound_bonus = -30
@@ -143,6 +143,17 @@
 	var/tile_dropoff = 2
 	var/ap_dropoff = 5
 	var/ap_dropoff_cutoff = -40
+
+/obj/projectile/beam/laser/clover/shotgun/Range() //10% loss per tile = max range of 10, generally
+	..()
+	if(damage > 0)
+		damage -= tile_dropoff
+	if(armour_penetration > ap_dropoff_cutoff)
+		armour_penetration -= ap_dropoff
+	if(accuracy_mod < 3)
+		accuracy_mod += 0.3
+	if(damage < 0 && stamina < 0)
+		qdel(src)
 
 /obj/projectile/beam/laser/eoehoma/heavy/on_hit(atom/target, blocked = FALSE)
 	..()
