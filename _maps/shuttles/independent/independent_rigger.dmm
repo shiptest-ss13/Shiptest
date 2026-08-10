@@ -10,7 +10,9 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "ac" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -32,7 +34,9 @@
 	name = "Engineering"
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "ae" = (
 /obj/effect/turf_decal/siding/wood/walnut,
 /obj/structure/bed/dogbed{
@@ -141,7 +145,9 @@
 	pixel_y = 26
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "aC" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -229,7 +235,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/storage{
 	name = "Engineering Port Storage Room"
-	})
+	}),
 "aT" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1109,7 +1115,9 @@
 /area/ship/engineering/engines/starboard)
 "fk" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "fp" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -1246,7 +1254,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/orange,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "gc" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
@@ -1257,7 +1267,9 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "gd" = (
 /obj/structure/cable{
 	icon_state = "6-8"
@@ -1286,7 +1298,9 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "gi" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1850,7 +1864,9 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "jZ" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	pixel_x = 0;
@@ -1940,7 +1956,7 @@
 /area/ship/engineering/atmospherics)
 "lh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4{
 	dir = 6
 	},
 /turf/open/floor/plating,
@@ -2129,13 +2145,13 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/storage{
 	name = "Engineering Port Storage Room"
@@ -2607,7 +2623,9 @@
 	pixel_y = 7
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "qd" = (
 /obj/machinery/light_switch{
 	pixel_y = 22;
@@ -2815,7 +2833,9 @@
 	pixel_y = -8
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "qY" = (
 /obj/structure/railing/thin/corner{
 	dir = 4
@@ -3040,7 +3060,9 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "sH" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -3821,7 +3843,9 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "xV" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -4724,8 +4748,8 @@
 /area/ship/bridge)
 "BR" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -4770,7 +4794,9 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "Ce" = (
 /obj/machinery/airalarm/directional/west,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/half{
@@ -4960,7 +4986,9 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "DE" = (
 /obj/structure/cable{
 	icon_state = "4-9"
@@ -5360,7 +5388,9 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "Fe" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -5433,7 +5463,9 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "Fu" = (
 /obj/structure/catwalk,
 /obj/machinery/light_switch{
@@ -5472,7 +5504,9 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "Gd" = (
 /turf/closed/wall/mineral/plastitanium/interior,
 /area/ship/storage/starboard)
@@ -5687,7 +5721,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/security)
 "GI" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4{
 	dir = 9
 	},
 /obj/structure/catwalk,
@@ -6146,7 +6180,9 @@
 	pixel_y = -5
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "Jl" = (
 /obj/machinery/light/small/directional/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -6208,7 +6244,9 @@
 	pixel_y = 0
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "JF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light_switch{
@@ -6262,7 +6300,9 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "Kl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
@@ -6424,7 +6464,9 @@
 /area/ship/maintenance/starboard)
 "KP" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "Lg" = (
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -6516,7 +6558,9 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "Ly" = (
 /obj/structure/curtain,
 /obj/structure/closet/wall/directional/west{
@@ -6681,15 +6725,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/storage/starboard)
-"Nu" = (
-/obj/structure/catwalk,
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 8;
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/external/dark)
 "Nv" = (
 /obj/structure/curtain/bounty,
 /obj/effect/spawner/bunk_bed{
@@ -7082,7 +7117,9 @@
 	pixel_y = 9
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "Pv" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
@@ -7338,7 +7375,9 @@
 	},
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "Ry" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -7505,7 +7544,9 @@
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "SC" = (
 /obj/machinery/button/shieldwallgen{
 	id = "riggs_airshield";
@@ -7651,12 +7692,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "TF" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
@@ -7803,7 +7843,9 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "Uo" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/eastleft{
@@ -8203,6 +8245,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
+"XA" = (
+/obj/structure/catwalk,
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 8;
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/external/dark)
 "XB" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
 	piping_layer = 4;
@@ -8231,7 +8282,9 @@
 	pixel_x = -8
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering/storage)
+/area/ship/engineering/storage{
+	name = "Engineering Office"
+	})
 "XS" = (
 /obj/structure/sign/directions/engineering{
 	dir = 8;
@@ -8606,7 +8659,7 @@ ml
 yB
 Gs
 Gl
-Nu
+XA
 RA
 Qn
 MA
