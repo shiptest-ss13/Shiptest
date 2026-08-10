@@ -779,22 +779,6 @@
 	pixel_x = 14;
 	pixel_y = 1
 	},
-/obj/item/bodycamera{
-	pixel_x = 1;
-	pixel_y = 9
-	},
-/obj/item/bodycamera{
-	pixel_x = 1;
-	pixel_y = 6
-	},
-/obj/item/bodycamera{
-	pixel_x = 1;
-	pixel_y = 3
-	},
-/obj/item/bodycamera{
-	pixel_x = 1;
-	pixel_y = 0
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "gc" = (
@@ -5248,8 +5232,8 @@
 /obj/effect/turf_decal/spline/plain/opaque/blue,
 /obj/machinery/airalarm/directional/east,
 /obj/item/gun/ballistic/shotgun/cm15/no_mag,
-/obj/item/gun/energy/clover,
-/obj/item/gun/energy/clover/shillelagh,
+/obj/item/gun/energy/clover/pistol/clip,
+/obj/item/gun/energy/clover/clip,
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
@@ -5796,7 +5780,6 @@
 	pixel_x = 8;
 	pixel_y = -9
 	},
-/obj/item/healthanalyzer,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
 "SX" = (

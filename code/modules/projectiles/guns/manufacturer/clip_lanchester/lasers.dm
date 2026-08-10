@@ -99,34 +99,88 @@
 
 	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
 
+/obj/item/ammo_casing/energy/laser/clover/beam
+	projectile_type = /obj/projectile/beam/hitscan/kalix/faveleira
+	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+	e_cost = 1250
+	delay = 1 SECONDS
+	select_name = "focus"
 
 /obj/item/gun/energy/clover
-	name = "ECM-7 \"Nettle\""
-	desc = "A light, compact energy pistol designed to fire in 3 round bursts. Its light weight and logistical ease have made it the preferred sidearm in many CLIP divisions. Uses Eoehoma Mini cells."
+	name = "PL-12 \"Shillelagh\""
+	desc = "A pulsed-energy SMG, that fires relatively high power bolts. A simple, light, and economical automatic for the discerning captain looking for self-defense firearms. Uses Eoehoma cells."
 
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
 
-	icon_state = "ecm7"
-	item_state = "clover_generic"
+	icon_state = "pl12"
+	item_state = "pl12"
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/stock_parts/cell/gun/empty,
+		/obj/item/stock_parts/cell/gun/upgraded,
+		/obj/item/stock_parts/cell/gun/upgraded/empty,
+	)
+
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/smg, /obj/item/ammo_casing/energy/disabler/clover/smg)
 
 	modifystate = TRUE
 
 	manufacturer = MANUFACTURER_MINUTEMAN_LASER
 
-	wield_delay = 0.7 SECONDS
+	modifystate = FALSE
+	weapon_weight = WEAPON_MEDIUM
+
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+
+	recoil = 0
+	recoil_unwielded = 1
+	fire_delay = 0.16 SECONDS
+	wield_slowdown = LASER_SMG_SLOWDOWN
+	wield_delay = 0.5 SECONDS
+	w_class = WEIGHT_CLASS_BULKY
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 22,
+			"y" = 17,
+		)
+	)
+
+	muzzleflash_iconstate = "muzzle_flash_pulse"
+
+/obj/item/gun/energy/clover/clip
+	name = "ECM-12 \"Shillelagh\""
+	desc = "A pulsed-energy SMG that fires relatively high-power bolts for improved performance and armor penetration, at the cost of overall ammo capacity. Uses Eoehoma cells."
+	icon_state = "ecm12"
+	item_state = "ecm12"
+	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
+
+/obj/item/gun/energy/clover/pistol
+	name = "PL-7 \"Nettle\""
+	desc = "A light, compact energy pistol designed to fire in 3 round bursts. A simple pistol favored by law enforcement and league citizens alike for its simple design and rate of fire. Uses Eoehoma mini cells."
+	icon_state = "pl7"
+	item_state = "clover_generic_civ"
+
+	wield_delay = 0.2 SECONDS
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	burst_size = 3
 	burst_delay = 0.2 SECONDS
 	fire_delay = 0.7 SECONDS
-	spread = 4
-	spread_unwielded = 7
-
-	recoil = 0
-	recoil_unwielded = 1
+	spread = 6
+	spread_unwielded = 9
 
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -141,22 +195,18 @@
 
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover, /obj/item/ammo_casing/energy/disabler/clover)
 
-	muzzleflash_iconstate = "muzzle_flash_pulse"
+/obj/item/gun/energy/clover/pistol/clip
+	name = "ECM-7 \"Nettle\""
+	desc = "A light, compact energy pistol designed to fire in 3 round bursts. Its light weight and logistical ease have made it the preferred sidearm in many CLIP divisions. Uses Eoehoma Mini cells."
+	icon_state = "ecm7"
+	item_state = "clover_generic"
 
-/obj/item/gun/energy/clover/indie
-	name = "PL-7 \"Nettle\""
-	desc = "A light, compact energy pistol designed to fire in 3 round bursts. A simple pistol favored by law enforcement and league citizens alike for its simple design and rate of fire. Uses Eoehoma mini cells."
+	spread = 4
+	spread_unwielded = 7
 
-	icon_state = "pl7"
-	item_state = "clover_generic_civ"
-
-	spread = 6
-	spread_unwielded = 9
-
-/obj/item/gun/energy/clover/auto
+/obj/item/gun/energy/clover/pistol/auto
 	name = "xPL-7 \"Stinging Nettle\""
 	desc = "An 'off-the-streets' modified version of the PL-7, that uses an electropulse gas recycler to convert the firearm into a fully automatic version. The serial numbers have been filed off. Uses Eoehoma mini cells."
-
 	icon_state = "stinging_nettle"
 
 	spread = 15
@@ -169,18 +219,14 @@
 
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/auto)
 
-/obj/item/gun/energy/clover/thistle
-	name = "ECM-9 \"Thistle\""
-	desc = "A midweight energy-based handgun, it trades stopping power for armor penetration, and is often found in the hands of CLIP agents, law enforcement, and discerning Minutemen. Uses Eoehoma mini cells."
-
-	icon_state = "ecm9"
-	item_state = "clover_generic"
-
-	wield_slowdown = LASER_PISTOL_SLOWDOWN
+/obj/item/gun/energy/clover/pistol/thistle
+	name = "PL-9 \"Thistle\""
+	desc = "A midweight, armor-piercing energy handgun, trading stopping power for punch. Famous on the Intranet for its frequent apperance on 'firing range fail' compalation videos, due to its often unexpected recoil. Uses Eoehoma mini cells."
+	icon_state = "pl9"
 
 	spread = 2
 	spread_unwielded = 9
-	fire_delay = 0.35 SECONDS
+	fire_delay = 0.5 SECONDS
 
 	recoil = 1
 	recoil_unwielded = 2
@@ -190,79 +236,21 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/magnum, /obj/item/ammo_casing/energy/disabler/clover/magnum)
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 
-/obj/item/gun/energy/clover/thistle/indie
-	name = "PL-9 \"Thistle\""
-	desc = "A midweight, armor-piercing energy handgun, trading stopping power for punch. Famous on the Intranet for its frequent apperance on 'firing range fail' compalation videos, due to its often unexpected recoil. Uses Eoehoma mini cells."
-	icon_state = "pl9"
-	item_state = "clover_generic_civ"
+/obj/item/gun/energy/clover/pistol/thistle/clip
+	name = "ECM-9 \"Thistle\""
+	desc = "A midweight energy-based handgun, it trades stopping power for armor penetration, and is often found in the hands of CLIP agents, law enforcement, and discerning Minutemen. Uses Eoehoma mini cells."
+	icon_state = "ecm9"
+	item_state = "clover_generic"
 
-	fire_delay = 0.7 SECONDS
-
-/obj/item/gun/energy/clover/shillelagh
-	name = "ECM-12 \"Shillelagh\""
-	desc = "A pulsed-energy SMG that fires relatively high-power bolts for improved performance and armor penetration, at the cost of overall ammo capacity. Uses Eoehoma cells."
-
-	icon_state = "ecm12"
-	item_state = "ecm12"
-
-	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
-	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun,
-		/obj/item/stock_parts/cell/gun/empty,
-		/obj/item/stock_parts/cell/gun/upgraded,
-		/obj/item/stock_parts/cell/gun/upgraded/empty,
-	)
-
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/smg, /obj/item/ammo_casing/energy/disabler/clover/smg)
-
-
-	modifystate = FALSE
-	weapon_weight = WEAPON_MEDIUM
-
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
-
-	fire_delay = 0.16 SECONDS
-	wield_slowdown = LASER_SMG_SLOWDOWN
-
-	w_class = WEIGHT_CLASS_BULKY
-
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
-
-	slot_offsets = list(
-		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 26,
-			"y" = 20,
-		),
-		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 22,
-			"y" = 17,
-		)
-	)
-
-/obj/item/gun/energy/clover/shillelagh/indie
-	name = "PL-12 \"Shillelagh\""
-	desc = "A pulsed-energy SMG, restricted to a burst fire mode. A simple, light, and economical automatic for the discerning captain looking for self-defense firearms. Uses Eoehoma cells."
-
-	icon_state = "pl12"
-	item_state = "pl12"
-
-	default_ammo_type = /obj/item/stock_parts/cell/gun
+	fire_delay = 0.35 SECONDS
 
 /obj/item/gun/energy/clover/faveleira
-	name = "ECM-25 \"Faveleira\""
-	desc = "Clover Photonic's latest product, the ECM-25 can switch between a diffuse scattershot mode, with all five lenses firing independently. Or in a 'concentrated' mode to release a hypervelocity bolt of plasma. Uses Eoehoma cells."
+	name = "PL-24 \"Faveleira\""
+	desc = "An older model of the ECM-25. The PL-24 lacks the concentrated fire feature, but still makes for a dependable energy-based scattergun. Uses Eoehoma cells"
+	icon_state = "pl25"
+	item_state = "pl25"
 
-	icon_state = "ecm25"
-	item_state = "ecm25"
-
-	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
-	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun,
-		/obj/item/stock_parts/cell/gun/empty,
-		/obj/item/stock_parts/cell/gun/upgraded,
-		/obj/item/stock_parts/cell/gun/upgraded/empty,
-	)
-	weapon_weight = WEAPON_MEDIUM
+	default_ammo_type = /obj/item/stock_parts/cell/gun
 
 	wield_delay = 0.9 SECONDS
 	wield_slowdown = LASER_RIFLE_SLOWDOWN
@@ -277,7 +265,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/shotgun, /obj/item/ammo_casing/energy/laser/clover/beam)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/shotgun)
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -290,18 +278,10 @@
 		)
 	)
 
-/obj/item/ammo_casing/energy/laser/clover/beam
-	projectile_type = /obj/projectile/beam/hitscan/kalix/faveleira
-	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
-	e_cost = 1250
-	delay = 1 SECONDS
-	select_name = "focus"
-
-/obj/item/gun/energy/clover/faveleira/indie
-	name = "PL-24 \"Faveleira\""
-	desc = "An older model of the ECM-25. The PL-24 lacks the concentrated fire feature, but still makes for a dependable energy-based scattergun. Uses Eoehoma cells"
-
-	icon_state = "pl25"
-	item_state = "pl25"
-	default_ammo_type = /obj/item/stock_parts/cell/gun
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/shotgun)
+/obj/item/gun/energy/clover/faveleira/clip
+	name = "ECM-25 \"Faveleira\""
+	desc = "Clover Photonic's latest product, the ECM-25 can switch between a diffuse scattershot mode, with all five lenses firing independently. Or in a 'concentrated' mode to release a hypervelocity bolt of plasma. Uses Eoehoma cells."
+	icon_state = "ecm25"
+	item_state = "ecm25"
+	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/shotgun, /obj/item/ammo_casing/energy/laser/clover/beam)

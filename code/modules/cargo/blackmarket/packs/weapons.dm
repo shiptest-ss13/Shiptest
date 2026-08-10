@@ -272,7 +272,7 @@
 /datum/blackmarket_item/weapon/guncase/stingingnettle
 	name = "xPL-7 Stinging Nettle"
 	desc = "An 'off the streets' version of the PL-7 Nettle. Someone installed an electrowhatever chamber on the back, and now it fires like a machine pistol. I also took the liberty of painting over the atrocious paintjob of its previous owner, thank me later."
-	item = /obj/item/gun/energy/clover/auto
+	item = /obj/item/gun/energy/clover/pistol/auto
 
 	cost_min = 1500
 	cost_max = 2250
