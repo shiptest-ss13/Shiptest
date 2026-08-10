@@ -32,8 +32,8 @@
 
 /obj/projectile/bullet/a8_50r
 	name = "8x50mmR bullet"
-	damage = 37
-	armour_penetration = 30
+	damage = 35
+	armour_penetration = 40
 	speed = BULLET_SPEED_RIFLE
 	bullet_identifier = "large bullet"
 
