@@ -149,7 +149,8 @@
 
 /obj/projectile/bullet/a4570/match
 	name = ".45-70 match bullet"
-	armour_penetration = 10
+	damage = 45
+	armour_penetration = 15
 	speed_mod = BULLET_SPEED_AP_MOD
 	ricochets_max = 5
 	ricochet_chance = 140
