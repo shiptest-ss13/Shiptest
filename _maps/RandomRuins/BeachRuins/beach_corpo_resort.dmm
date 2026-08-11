@@ -78,6 +78,16 @@
 "ao" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/beach/corpo_resort/hotel)
+"ap" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/maintenance/external{
+	dir = 4;
+	name = "Emplacement"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/corpo_resort/ramzi_emplacement/west)
 "aq" = (
 /obj/structure/platform/corner{
 	dir = 4
@@ -125,7 +135,7 @@
 	},
 /obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/beach/corpo_resort/ramzi_emplacement/west)
 "aH" = (
 /obj/structure/salvageable/autolathe,
 /obj/effect/decal/cleanable/dirt,
@@ -202,7 +212,7 @@
 "aU" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/beach/corpo_resort/ramzi_emplacement)
 "aW" = (
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "f";
@@ -914,7 +924,7 @@
 	name = "Emplacement"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/beach/corpo_resort/ramzi_emplacement)
 "dw" = (
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 10
@@ -1681,6 +1691,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/corpo_resort/hotel)
+"hb" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/beach/corpo_resort/ramzi_emplacement/west)
 "hc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2512,7 +2525,7 @@
 "kE" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/beach/corpo_resort/ramzi_emplacement)
 "kF" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
@@ -2891,7 +2904,7 @@
 /area/ruin/beach/corpo_resort/staff_dorms)
 "lZ" = (
 /turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/beach/corpo_resort/ramzi_emplacement/west)
 "mc" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
@@ -5305,6 +5318,10 @@
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"vT" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/corpo_resort/ramzi_emplacement/west)
 "vV" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 4
@@ -6121,6 +6138,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
+"zq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/corpo_resort/ramzi_emplacement/west)
 "zs" = (
 /obj/effect/turf_decal/corner/opaque/red/three_quarters,
 /obj/effect/decal/cleanable/dirt,
@@ -6141,7 +6165,7 @@
 	icon_state = "4-10"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/beach/corpo_resort/ramzi_emplacement)
 "zx" = (
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/asteroid/sand/lit,
@@ -7562,7 +7586,7 @@
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/beach/corpo_resort/ramzi_emplacement/west)
 "Fp" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/effect/decal/cleanable/dirt,
@@ -7744,14 +7768,15 @@
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "Gr" = (
 /obj/machinery/porta_turret/ruin/ramzi/light{
-	dir = 10
+	dir = 10;
+	power_flags = 2
 	},
 /obj/effect/turf_decal/box/white,
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/beach/corpo_resort/ramzi_emplacement)
 "Gu" = (
 /obj/effect/turf_decal/corner/opaque/red/three_quarters{
 	dir = 1
@@ -8692,7 +8717,7 @@
 /area/ruin/beach/corpo_resort/hotel/rooms/officer)
 "KC" = (
 /turf/closed/wall/concrete/reinforced,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/beach/corpo_resort/ramzi_emplacement)
 "KD" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -8828,7 +8853,7 @@
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/beach/corpo_resort/ramzi_emplacement)
 "Ls" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -9416,6 +9441,10 @@
 /obj/structure/flora/junglebush,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Ob" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/corpo_resort/ramzi_emplacement/west)
 "Oc" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 1
@@ -9513,7 +9542,7 @@
 /obj/structure/platform/wood,
 /obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/slab_1,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/beach/corpo_resort/ramzi_emplacement/west)
 "Oy" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -10836,6 +10865,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Uj" = (
+/obj/machinery/porta_turret/ruin/ramzi/light{
+	dir = 10;
+	power_flags = 2
+	},
+/obj/effect/turf_decal/box/white,
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/corpo_resort/ramzi_emplacement/west)
 "Uk" = (
 /obj/structure/platform,
 /obj/structure/platform{
@@ -11057,8 +11097,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "UW" = (
 /obj/structure/barricade/directional/flippedtable/wood{
-	dir = 8;
-	table_type = /obj/structure/table/wood
+	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -13104,9 +13143,9 @@ Rv
 RD
 FJ
 XN
-KC
-kE
-kE
+hb
+vT
+vT
 Ov
 zX
 zX
@@ -13183,7 +13222,7 @@ xe
 XN
 Fl
 lZ
-Gr
+Uj
 aE
 Rl
 nu
@@ -13258,10 +13297,10 @@ yX
 Oo
 aO
 XN
-aU
-zv
+Ob
+zq
 lZ
-kE
+vT
 VU
 iu
 hv
@@ -13335,10 +13374,10 @@ Zt
 ae
 xL
 XN
-KC
-dv
-KC
-KC
+hb
+ap
+hb
+hb
 PP
 iu
 lu
