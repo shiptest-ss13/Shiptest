@@ -2067,9 +2067,10 @@
 "mJ" = (
 /obj/structure/catwalk,
 /obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 8;
-	dir = 4
+	dir = 4;
+	port_direction = 2;
+	preferred_direction = 4;
+	launch_status = 0
 	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
@@ -3062,7 +3063,12 @@
 "sP" = (
 /obj/docking_port/stationary{
 	dir = 8;
-	name = "Riggs Rear Dock"
+	name = "Riggs Rear Dock";
+	width = 40;
+	dwidth = 40;
+	dheight = 1;
+	height = 30;
+	disable_on_owner_ship_dock = 1
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -7872,7 +7878,11 @@
 "VX" = (
 /obj/docking_port/stationary{
 	dir = 4;
-	name = "Riggs Foward Dock"
+	name = "Riggs Forward Dock";
+	width = 40;
+	dwidth = 40;
+	dheight = 1;
+	height = 30
 	},
 /turf/template_noop,
 /area/template_noop)
