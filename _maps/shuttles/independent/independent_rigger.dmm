@@ -1137,7 +1137,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
-/turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "fH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1171,11 +1170,9 @@
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 4
 	},
-/obj/machinery/button/door{
-	pixel_x = 7;
-	pixel_y = 24;
-	name = "Window Shutter Control";
-	id = "riggerwindows"
+/obj/machinery/firealarm/directional/north{
+	pixel_x = 6;
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1420,10 +1417,6 @@
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "hP" = (
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_x = 0;
-	pixel_y = 26
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1433,6 +1426,7 @@
 	pixel_x = -20;
 	pixel_y = -6
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "ia" = (
@@ -1594,7 +1588,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = -5;
+	pixel_x = -7;
 	pixel_y = -20
 	},
 /obj/machinery/light/small/directional/south{
@@ -1950,7 +1944,7 @@
 	pixel_y = 22
 	},
 /obj/machinery/light_switch{
-	pixel_x = -10;
+	pixel_x = -9;
 	pixel_y = 22
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1960,9 +1954,11 @@
 	pixel_x = 0;
 	pixel_y = 0
 	},
-/obj/machinery/firealarm/directional/north{
-	pixel_x = 6;
-	pixel_y = 32
+/obj/machinery/button/door{
+	pixel_x = 8;
+	pixel_y = 24;
+	name = "Window Shutter Control";
+	id = "riggerwindows"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -2217,13 +2213,12 @@
 	pixel_y = 0;
 	dir = 8
 	},
-/obj/machinery/power/apc/auto_name/directional/east{
-	dir = 2;
-	pixel_x = -1;
-	pixel_y = -27
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/south{
+	pixel_x = 0;
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/toilet)
@@ -3061,10 +3056,6 @@
 /turf/closed/wall/mineral/plastitanium/interior,
 /area/ship/maintenance/starboard)
 "sV" = (
-/obj/machinery/power/apc/auto_name/directional/south{
-	pixel_x = 0;
-	pixel_y = -26
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -3073,6 +3064,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/directional/south{
+	pixel_x = 0;
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
@@ -3277,14 +3272,14 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "uy" = (
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_x = 0;
-	pixel_y = 26
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/structure/chair/comfy/blue/corpo,
+/obj/machinery/power/apc/auto_name/directional/north{
+	pixel_x = 0;
+	pixel_y = 25
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm/commad)
 "uC" = (
@@ -3461,7 +3456,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/directional/west{
-	pixel_x = -27;
+	pixel_x = -24;
 	pixel_y = 4
 	},
 /obj/machinery/light_switch{
@@ -3477,7 +3472,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
-	name = "Airlock shutters";
+	name = "Airlock Shutters";
 	id = "riggsairlock"
 	},
 /obj/machinery/door/firedoor,
@@ -5784,13 +5779,13 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_x = 0;
-	pixel_y = 27
-	},
 /obj/item/bot_assembly/cleanbot{
 	pixel_x = 4;
 	pixel_y = -1
+	},
+/obj/machinery/power/apc/auto_name/directional/north{
+	pixel_x = 0;
+	pixel_y = 25
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -5927,10 +5922,7 @@
 	pixel_x = -2;
 	pixel_y = 1
 	},
-/obj/machinery/power/apc/auto_name/directional/west{
-	pixel_x = -26;
-	pixel_y = 0
-	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/hallway/aft)
 "Jj" = (
@@ -6754,10 +6746,6 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 1
 	},
-/obj/structure/sign/poster/radio/icf{
-	pixel_x = 0;
-	pixel_y = -32
-	},
 /obj/item/clothing/under/rank/cargo/miner/hazard,
 /obj/item/radio{
 	pixel_x = -8;
@@ -6784,13 +6772,15 @@
 	name = "deckhand's personal closet";
 	icon_state = "mining"
 	},
+/obj/structure/sign/poster/radio/icf{
+	pixel_x = 0;
+	pixel_y = -32
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "Pj" = (
 /obj/structure/catwalk,
-/obj/structure/railing/thin{
-	dir = 9
-	},
+/obj/structure/railing/thin,
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "Pk" = (
@@ -6870,7 +6860,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "Pv" = (
-/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
@@ -6889,6 +6878,10 @@
 	pixel_y = 3
 	},
 /obj/item/mop,
+/obj/machinery/power/apc/auto_name/directional/west{
+	pixel_x = -25;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/ccommons)
 "PA" = (
@@ -7047,33 +7040,33 @@
 	pixel_x = 20;
 	pixel_y = -9
 	},
+/obj/item/food/ration/pack/freeze_dried_coffee_hazelnut{
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/obj/item/food/ration/pack/freeze_dried_coffee_orange{
+	pixel_x = 1;
+	pixel_y = 7
+	},
+/obj/item/food/ration/pack/freeze_dried_coffee_chocolate{
+	pixel_x = 1;
+	pixel_y = 0
+	},
+/obj/item/food/ration/pack/freeze_dried_coffee_orange{
+	pixel_x = -6;
+	pixel_y = 0
+	},
+/obj/item/food/ration/pack/freeze_dried_coffee_chocolate{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/obj/item/food/ration/pack/freeze_dried_coffee_hazelnut{
+	pixel_x = 8;
+	pixel_y = 0
+	},
 /obj/machinery/power/apc/auto_name/directional/east{
-	pixel_x = 27;
-	pixel_y = 5
-	},
-/obj/item/food/ration/pack/freeze_dried_coffee_hazelnut{
-	pixel_x = -6;
-	pixel_y = 7
-	},
-/obj/item/food/ration/pack/freeze_dried_coffee_orange{
-	pixel_x = 1;
-	pixel_y = 7
-	},
-/obj/item/food/ration/pack/freeze_dried_coffee_chocolate{
-	pixel_x = 1;
-	pixel_y = 0
-	},
-/obj/item/food/ration/pack/freeze_dried_coffee_orange{
-	pixel_x = -6;
-	pixel_y = 0
-	},
-/obj/item/food/ration/pack/freeze_dried_coffee_chocolate{
-	pixel_x = 8;
-	pixel_y = 7
-	},
-/obj/item/food/ration/pack/freeze_dried_coffee_hazelnut{
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 25;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/cryo)
@@ -7085,7 +7078,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
-	name = "Airlock shutters";
+	name = "Airlock Shutters";
 	id = "riggsairlock"
 	},
 /obj/machinery/door/firedoor,
@@ -7365,7 +7358,7 @@
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
-	pixel_y = 11
+	pixel_y = 10
 	},
 /obj/structure/table/reinforced{
 	pixel_x = 0;
@@ -7391,11 +7384,11 @@
 	pixel_x = -6;
 	pixel_y = 12
 	},
-/obj/machinery/newscaster/directional/west,
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = -1;
 	pixel_y = -28
 	},
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Tl" = (
@@ -7757,16 +7750,16 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Wl" = (
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_x = -5;
-	pixel_y = 24
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/light_switch{
 	pixel_x = 9;
 	pixel_y = 22
+	},
+/obj/machinery/power/apc/auto_name/directional/north{
+	pixel_x = -4;
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/starboard)
