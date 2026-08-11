@@ -403,6 +403,9 @@
 	pixel_x = 6;
 	pixel_y = -32
 	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
 "bO" = (
@@ -634,12 +637,17 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 8
 	},
 /obj/structure/chair/handrail{
 	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/white/half{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
@@ -1108,6 +1116,8 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/half{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/opaque/white/half,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
 "fx" = (
@@ -1744,16 +1754,15 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "jC" = (
-/obj/structure/bed/roller,
-/obj/item/bedsheet/medical,
 /obj/structure/curtain,
-/obj/effect/turf_decal/corner/opaque/bottlegreen{
+/obj/effect/turf_decal/corner/opaque/bottlegreen/half{
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/white/half{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/white,
+/obj/structure/bed/roller,
+/obj/item/bedsheet/medical,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "jG" = (
@@ -3968,6 +3977,9 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/half{
 	dir = 4
 	},
+/obj/effect/turf_decal/corner/opaque/white/half{
+	dir = 8
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
 "yP" = (
@@ -4545,6 +4557,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/opaque/white/half{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
 "Bk" = (
@@ -4736,6 +4751,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
@@ -5278,6 +5296,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/bottlegreen,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 8
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
 "ET" = (
@@ -5458,6 +5479,9 @@
 	pixel_y = -21;
 	id = "Riggsmedbay";
 	name = "Surgical Room Shutters"
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
@@ -6304,6 +6328,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/half{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/opaque/white/half,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
 "KI" = (
