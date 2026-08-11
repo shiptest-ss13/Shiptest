@@ -219,7 +219,6 @@
 /area/ship/cargo)
 "aK" = (
 /obj/structure/closet/emcloset{
-	pixel_x = -3;
 	pixel_y = 0
 	},
 /obj/effect/turf_decal/siding/black{
@@ -2156,7 +2155,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/external/dark)
+/area/ship/external)
 "nz" = (
 /obj/machinery/computer/cryopod/directional/north,
 /turf/open/floor/plasteel,
@@ -2508,7 +2507,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/external/dark)
+/area/ship/external)
 "qc" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2652,9 +2651,7 @@
 /obj/machinery/cryopod{
 	dir = 4
 	},
-/obj/structure/railing/thin{
-	dir = 4
-	},
+/obj/structure/railing/thin,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "qJ" = (
@@ -3501,7 +3498,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ship/external/dark)
+/area/ship/external)
 "wo" = (
 /obj/structure/sign/number,
 /turf/closed/wall/mineral/plastitanium,
@@ -5385,7 +5382,7 @@
 /area/ship/medical/surgery)
 "Gk" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/external/dark)
+/area/ship/external)
 "Gl" = (
 /obj/structure/sign/warning/docking{
 	pixel_x = 25;
@@ -5576,7 +5573,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/external/dark)
+/area/ship/external)
 "Hf" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
 	piping_layer = 4;
@@ -5926,7 +5923,7 @@
 /area/ship/security)
 "IY" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/external/dark)
+/area/ship/external)
 "Jb" = (
 /obj/effect/decal/cleanable/oil/streak{
 	pixel_x = 0;
@@ -6693,7 +6690,7 @@
 	},
 /obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/external/dark)
+/area/ship/external)
 "OQ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7060,9 +7057,7 @@
 /obj/structure/table/reinforced{
 	name = "kitchen counter"
 	},
-/obj/structure/railing/thin{
-	dir = 4
-	},
+/obj/structure/railing/thin,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 20;
@@ -7117,7 +7112,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ship/external/dark)
+/area/ship/external)
 "QZ" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plating,
@@ -7690,7 +7685,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/external/dark)
+/area/ship/external)
 "Vo" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
