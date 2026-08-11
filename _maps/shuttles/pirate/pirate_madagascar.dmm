@@ -1918,8 +1918,7 @@
 "sj" = (
 /obj/machinery/door/airlock{
 	name = "Restroom";
-	id_tag = "cock_bathroom";
-	id = "madagascar_bathroom"
+	id_tag = "madagascar_bathroom"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/dark,
@@ -5286,8 +5285,8 @@
 /area/ship/cargo/port)
 "VW" = (
 /obj/machinery/door/airlock/command{
-	id = "madagascar_command_lock";
-	name = "Command Quarters"
+	name = "Command Quarters";
+	id_tag = "madagascar_command_lock"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
