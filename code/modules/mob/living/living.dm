@@ -1022,7 +1022,7 @@
 		if(has_gravity == 1)
 			clear_alert("gravity")
 		else
-			if(has_gravity >= GRAVITY_DAMAGE_TRESHOLD)
+			if(has_gravity >= GRAVITY_DAMAGE_THRESHOLD)
 				throw_alert("gravity", /atom/movable/screen/alert/veryhighgravity)
 			else
 				throw_alert("gravity", /atom/movable/screen/alert/highgravity)
@@ -1372,12 +1372,12 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 * Handles effects happening when mob is on normal fire
 *
 * Vars:
-* * delta_time
+* * seconds_per_tick
 * * times_fired
 * * fire_handler: Current fire status effect that called the proc
 */
 
-/mob/living/proc/on_fire_stack(delta_time, datum/status_effect/fire_handler/fire_stacks/fire_handler)
+/mob/living/proc/on_fire_stack(seconds_per_tick, datum/status_effect/fire_handler/fire_stacks/fire_handler)
 	return
 
 //Mobs on Fire end

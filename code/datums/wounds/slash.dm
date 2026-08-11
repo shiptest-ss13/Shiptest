@@ -103,9 +103,14 @@
 		return BLOOD_FLOW_INCREASING
 	return BLOOD_FLOW_STEADY
 
-/datum/wound/slash/flesh/handle_process()
+/datum/wound/slash/flesh/handle_process(seconds_per_tick, times_fired)
 	if(!victim || IS_IN_STASIS(victim))
 		return
+
+	if(victim.bodytemperature < (HUMAN_BODYTEMP_NORMAL -  10))
+		blood_flow -= 0.1 * seconds_per_tick
+		if(SPT_PROB(2.5, seconds_per_tick))
+			to_chat(victim, "<span class='notice'>You feel the [lowertext(name)] in your [limb.name] firming up from the cold!</span>")
 
 	if(victim.stat == DEAD)
 		blood_flow -= max(clot_rate, WOUND_SLASH_DEAD_CLOT_MIN)
@@ -119,15 +124,15 @@
 	blood_flow = min(blood_flow, WOUND_SLASH_MAX_BLOODFLOW)
 
 	if(HAS_TRAIT(victim, TRAIT_BLOODY_MESS))
-		blood_flow += 0.5 // adds 0.5 bleed flow to ALL open cuts
+		blood_flow += 0.25 * seconds_per_tick // adds 0.5 bleed flow to ALL open cuts
 
 	if(limb.current_gauze)
 		if(clot_rate > 0)
-			blood_flow -= clot_rate
+			blood_flow -= clot_rate * seconds_per_tick
 		if(limb.current_gauze && limb.current_gauze.seep_gauze(limb.current_gauze.absorption_rate, GAUZE_STAIN_BLOOD))
-			blood_flow -= limb.current_gauze.absorption_rate
+			blood_flow -= limb.current_gauze.absorption_rate * seconds_per_tick
 	else
-		blood_flow -= clot_rate
+		blood_flow -= clot_rate * seconds_per_tick
 
 	if(blood_flow > highest_flow)
 		highest_flow = blood_flow
@@ -139,7 +144,7 @@
 			to_chat(victim, span_green("The cut on your [limb.name] has stopped bleeding!"))
 			qdel(src)
 
-/datum/wound/slash/flesh/on_stasis()
+/datum/wound/slash/flesh/on_stasis(seconds_per_tick, times_fired)
 	if(blood_flow >= minimum_flow)
 		return
 	if(demotes_to)
@@ -268,7 +273,7 @@
 	severity = WOUND_SEVERITY_MODERATE
 	initial_flow = 1.5
 	minimum_flow = 0.1
-	clot_rate = 0.015
+	clot_rate = 0.0075
 	threshold_penalty = 10
 	status_effect_type = /datum/status_effect/wound/slash/flesh/moderate
 
@@ -288,7 +293,7 @@
 	severity = WOUND_SEVERITY_SEVERE
 	initial_flow = 2
 	minimum_flow = 1.5
-	clot_rate = 0.025
+	clot_rate = 0.0125
 	threshold_penalty = 20
 	demotes_to = /datum/wound/slash/flesh/moderate
 	status_effect_type = /datum/status_effect/wound/slash/flesh/severe
@@ -309,7 +314,7 @@
 	severity = WOUND_SEVERITY_CRITICAL
 	initial_flow = 3
 	minimum_flow = 2
-	clot_rate = -0.005 // critical cuts actively get worse instead of better
+	clot_rate = -0.0025 // critical cuts actively get worse instead of better
 	threshold_penalty = 50
 	demotes_to = /datum/wound/slash/flesh/severe
 	status_effect_type = /datum/status_effect/wound/slash/flesh/critical

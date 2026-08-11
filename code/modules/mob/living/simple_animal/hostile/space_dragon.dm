@@ -84,9 +84,9 @@
 	rift.Grant(src)
 	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
-/mob/living/simple_animal/hostile/space_dragon/Life(mapload)
+/mob/living/simple_animal/hostile/space_dragon/Life(seconds_per_tick = SSMOBS_DT, times_fired, mapload)
 	. = ..()
-	tiredness = max(tiredness - 1, 0)
+	tiredness = max(tiredness - (0.5 * seconds_per_tick), 0)
 	if(rifts_charged == 3 && !objective_complete)
 		victory()
 	if(riftTimer == -1)

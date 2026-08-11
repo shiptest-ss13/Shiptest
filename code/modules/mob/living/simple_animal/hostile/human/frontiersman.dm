@@ -70,6 +70,8 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 
@@ -139,6 +141,8 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	icon_state = "frontiersmanpounder"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
@@ -204,6 +208,8 @@
 	icon_state = "frontiersmanrangedrifle_space"
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 
@@ -280,6 +286,8 @@
 	icon_state = "frontiersmenrangedelite_space"
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 
@@ -402,6 +410,8 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	icon_state = "frontiersmanrangedak47_space"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
@@ -462,6 +472,8 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	icon_state = "frontiersmanrangedminigun_space"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
 

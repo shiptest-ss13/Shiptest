@@ -2802,15 +2802,9 @@
 /area/ruin/wasteplanet/facility/northwing)
 "sX" = (
 /obj/structure/flora/ash/garden/waste,
-/obj/item/emptysandbag,
-/obj/item/emptysandbag{
-	pixel_y = -6;
-	pixel_x = 6
-	},
-/obj/item/emptysandbag{
-	pixel_y = -6;
-	pixel_x = -6
-	},
+/obj/item/stack/empty_sandbags,
+/obj/item/stack/empty_sandbags,
+/obj/item/stack/empty_sandbags,
 /obj/structure/closet,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/grass/ship/jungle,
