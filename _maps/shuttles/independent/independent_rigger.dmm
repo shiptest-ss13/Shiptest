@@ -909,10 +909,6 @@
 	pixel_x = 6;
 	pixel_y = -19
 	},
-/obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = -8;
-	pixel_y = -25
-	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "ek" = (
@@ -2425,13 +2421,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/closet/wall/directional/south{
-	name = "Cleaning Supplies";
-	pixel_x = 0;
-	pixel_y = -28
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -7;
+	pixel_y = -26
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
