@@ -13,7 +13,7 @@
 	icon_state = "crew_quarters"
 
 /area/ruin/jungle/swamp/crew
-	name = "Hunters Quarters"
+	name = "Hunter's Quarters"
 	icon_state = "crew_quarters"
 
 /area/ruin/jungle/swamp/butchery

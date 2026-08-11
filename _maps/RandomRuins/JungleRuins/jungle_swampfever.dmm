@@ -1303,6 +1303,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/red/jungleplanet/interior,
 /area/ruin/jungle/swamp/colligne)
+"qV" = (
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "qW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/ebony/jungleplanet/interior,
@@ -1871,6 +1875,10 @@
 	dir = 1
 	},
 /turf/open/water/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"yS" = (
+/obj/item/stack/ore/salvage/scrapmetal/five,
+/turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "yT" = (
 /obj/structure/flora/junglebush/large,
@@ -2442,6 +2450,10 @@
 "HG" = (
 /turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
 /area/overmap_encounter/planetoid/jungle/explored)
+"HH" = (
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "HO" = (
 /obj/structure/toilet{
 	pixel_x = 7;
@@ -2513,8 +2525,7 @@
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "IO" = (
-/obj/structure/flora/ash/garden,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "IQ" = (
 /obj/machinery/door/airlock/wood{
@@ -4000,6 +4011,128 @@ hU
 hU
 hU
 hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+IO
+IO
+HH
+OS
+OS
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+"}
+(2,1,1) = {"
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+IO
+IO
+IO
+IO
+OS
+IO
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+"}
+(3,1,1) = {"
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
 OS
 OS
 OS
@@ -4025,13 +4158,13 @@ OS
 OS
 OS
 rh
+IO
+IO
+IO
+IO
+IO
+yS
 rh
-rh
-hU
-hU
-hU
-hU
-hU
 hU
 hU
 hU
@@ -4050,7 +4183,7 @@ hU
 hU
 hU
 "}
-(2,1,1) = {"
+(4,1,1) = {"
 hU
 hU
 hU
@@ -4086,12 +4219,12 @@ OS
 OS
 OS
 OS
-rh
-rh
-rh
-cg
-rh
-rh
+IO
+yS
+qV
+IO
+IO
+IO
 rh
 OS
 OS
@@ -4111,7 +4244,7 @@ hU
 hU
 hU
 "}
-(3,1,1) = {"
+(5,1,1) = {"
 hU
 hU
 hU
@@ -4148,11 +4281,11 @@ OS
 OS
 OS
 IO
-rh
-rh
-rh
-HG
-Yy
+IO
+qV
+IO
+IO
+OS
 HG
 HG
 OS
@@ -4172,7 +4305,7 @@ hU
 hU
 hU
 "}
-(4,1,1) = {"
+(6,1,1) = {"
 hU
 hU
 hU
@@ -4208,13 +4341,13 @@ mf
 mf
 mf
 mf
+qV
+IO
+OS
+IO
+IO
 OS
 OS
-QD
-rh
-rh
-rh
-HG
 HG
 HG
 OS
@@ -4233,7 +4366,7 @@ hU
 hU
 hU
 "}
-(5,1,1) = {"
+(7,1,1) = {"
 hU
 hU
 hU
@@ -4269,13 +4402,13 @@ mf
 mf
 mf
 OS
+qV
+IO
 OS
+IO
+IO
+qV
 OS
-OS
-OS
-OS
-OS
-Ij
 OS
 OS
 OS
@@ -4294,7 +4427,7 @@ hU
 hU
 hU
 "}
-(6,1,1) = {"
+(8,1,1) = {"
 hU
 hU
 hU
@@ -4329,13 +4462,13 @@ mf
 mf
 mf
 mf
-mf
-OS
+yS
+IO
 np
 LB
 np
-OS
-OS
+IO
+IO
 OS
 OS
 OS
@@ -4355,7 +4488,7 @@ OS
 hU
 hU
 "}
-(7,1,1) = {"
+(9,1,1) = {"
 hU
 hU
 hU
@@ -4390,13 +4523,13 @@ mf
 mf
 NN
 NN
-NN
+IO
 LB
 PG
 LB
 PG
 LB
-OS
+IO
 OS
 NN
 NN
@@ -4416,7 +4549,7 @@ OS
 hU
 hU
 "}
-(8,1,1) = {"
+(10,1,1) = {"
 hU
 hU
 hU
@@ -4477,7 +4610,7 @@ OS
 hU
 hU
 "}
-(9,1,1) = {"
+(11,1,1) = {"
 hU
 hU
 hU
@@ -4538,7 +4671,7 @@ OS
 OS
 hU
 "}
-(10,1,1) = {"
+(12,1,1) = {"
 hU
 hU
 hU
@@ -4599,7 +4732,7 @@ OS
 OS
 hU
 "}
-(11,1,1) = {"
+(13,1,1) = {"
 hU
 hU
 rh
@@ -4660,7 +4793,7 @@ OS
 OS
 hU
 "}
-(12,1,1) = {"
+(14,1,1) = {"
 hU
 hU
 rh
@@ -4721,7 +4854,7 @@ OS
 OS
 hU
 "}
-(13,1,1) = {"
+(15,1,1) = {"
 hU
 hU
 rh
@@ -4782,7 +4915,7 @@ OS
 OS
 hU
 "}
-(14,1,1) = {"
+(16,1,1) = {"
 hU
 hU
 rh
@@ -4843,7 +4976,7 @@ OS
 hU
 hU
 "}
-(15,1,1) = {"
+(17,1,1) = {"
 hU
 hU
 rh
@@ -4904,7 +5037,7 @@ OS
 hU
 hU
 "}
-(16,1,1) = {"
+(18,1,1) = {"
 hU
 hU
 rh
@@ -4965,7 +5098,7 @@ OS
 hU
 hU
 "}
-(17,1,1) = {"
+(19,1,1) = {"
 hU
 hU
 rh
@@ -5026,7 +5159,7 @@ OS
 hU
 hU
 "}
-(18,1,1) = {"
+(20,1,1) = {"
 hU
 hU
 rh
@@ -5087,7 +5220,7 @@ OS
 hU
 hU
 "}
-(19,1,1) = {"
+(21,1,1) = {"
 hU
 hU
 hU
@@ -5148,7 +5281,7 @@ OS
 hU
 OS
 "}
-(20,1,1) = {"
+(22,1,1) = {"
 hU
 hU
 hU
@@ -5209,7 +5342,7 @@ OS
 OS
 OS
 "}
-(21,1,1) = {"
+(23,1,1) = {"
 hU
 hU
 hU
@@ -5270,7 +5403,7 @@ OS
 OS
 OS
 "}
-(22,1,1) = {"
+(24,1,1) = {"
 hU
 hU
 hU
@@ -5331,7 +5464,7 @@ mf
 OS
 OS
 "}
-(23,1,1) = {"
+(25,1,1) = {"
 hU
 hU
 HG
@@ -5392,7 +5525,7 @@ mf
 OS
 OS
 "}
-(24,1,1) = {"
+(26,1,1) = {"
 hU
 hU
 HG
@@ -5453,7 +5586,7 @@ mf
 OS
 OS
 "}
-(25,1,1) = {"
+(27,1,1) = {"
 hU
 hU
 HG
@@ -5514,7 +5647,7 @@ mf
 OS
 hU
 "}
-(26,1,1) = {"
+(28,1,1) = {"
 hU
 HG
 HG
@@ -5575,7 +5708,7 @@ mf
 OS
 hU
 "}
-(27,1,1) = {"
+(29,1,1) = {"
 hU
 HG
 OS
@@ -5636,7 +5769,7 @@ mf
 OS
 HG
 "}
-(28,1,1) = {"
+(30,1,1) = {"
 hU
 HG
 OS
@@ -5697,7 +5830,7 @@ mf
 HG
 HG
 "}
-(29,1,1) = {"
+(31,1,1) = {"
 hU
 HG
 DN
@@ -5758,7 +5891,7 @@ mf
 HG
 Yy
 "}
-(30,1,1) = {"
+(32,1,1) = {"
 hU
 HG
 OS
@@ -5819,7 +5952,7 @@ OS
 HG
 HG
 "}
-(31,1,1) = {"
+(33,1,1) = {"
 hU
 Yy
 OS
@@ -5880,7 +6013,7 @@ OS
 OS
 HG
 "}
-(32,1,1) = {"
+(34,1,1) = {"
 hU
 HG
 HG
@@ -5941,7 +6074,7 @@ OS
 gR
 rh
 "}
-(33,1,1) = {"
+(35,1,1) = {"
 hU
 mf
 HG
@@ -6002,7 +6135,7 @@ HG
 OS
 rh
 "}
-(34,1,1) = {"
+(36,1,1) = {"
 hU
 mf
 mf
@@ -6063,7 +6196,7 @@ HG
 rh
 cg
 "}
-(35,1,1) = {"
+(37,1,1) = {"
 hU
 mf
 mf
@@ -6124,7 +6257,7 @@ HG
 rh
 rh
 "}
-(36,1,1) = {"
+(38,1,1) = {"
 hU
 mf
 mf
@@ -6185,7 +6318,7 @@ HG
 cg
 rh
 "}
-(37,1,1) = {"
+(39,1,1) = {"
 hU
 mf
 mf
@@ -6246,7 +6379,7 @@ HG
 rh
 HG
 "}
-(38,1,1) = {"
+(40,1,1) = {"
 hU
 mf
 mf
@@ -6307,7 +6440,7 @@ HG
 HG
 HG
 "}
-(39,1,1) = {"
+(41,1,1) = {"
 hU
 mf
 mf
@@ -6368,7 +6501,7 @@ zO
 HG
 HG
 "}
-(40,1,1) = {"
+(42,1,1) = {"
 mf
 mf
 NN
@@ -6429,7 +6562,7 @@ zO
 HG
 OS
 "}
-(41,1,1) = {"
+(43,1,1) = {"
 mf
 NN
 NN
@@ -6490,7 +6623,7 @@ HG
 OS
 OS
 "}
-(42,1,1) = {"
+(44,1,1) = {"
 mf
 NN
 NN
@@ -6551,7 +6684,7 @@ OS
 OS
 HG
 "}
-(43,1,1) = {"
+(45,1,1) = {"
 NN
 NN
 NN
@@ -6612,7 +6745,7 @@ RT
 OS
 HG
 "}
-(44,1,1) = {"
+(46,1,1) = {"
 NN
 NN
 NN
@@ -6673,7 +6806,7 @@ OS
 OS
 HG
 "}
-(45,1,1) = {"
+(47,1,1) = {"
 NN
 NN
 NN
@@ -6734,7 +6867,7 @@ OS
 OS
 hU
 "}
-(46,1,1) = {"
+(48,1,1) = {"
 NN
 NN
 NN
@@ -6795,7 +6928,7 @@ OS
 OS
 hU
 "}
-(47,1,1) = {"
+(49,1,1) = {"
 NN
 NN
 NN
@@ -6856,7 +6989,7 @@ OS
 OS
 hU
 "}
-(48,1,1) = {"
+(50,1,1) = {"
 NN
 NN
 NN
@@ -6917,7 +7050,7 @@ Yy
 hU
 hU
 "}
-(49,1,1) = {"
+(51,1,1) = {"
 NN
 NN
 NN
@@ -6978,7 +7111,7 @@ HG
 hU
 hU
 "}
-(50,1,1) = {"
+(52,1,1) = {"
 NN
 NN
 NN
@@ -7039,7 +7172,7 @@ HG
 hU
 hU
 "}
-(51,1,1) = {"
+(53,1,1) = {"
 NN
 NN
 Ej
@@ -7100,7 +7233,7 @@ HG
 hU
 hU
 "}
-(52,1,1) = {"
+(54,1,1) = {"
 NN
 NN
 NN
@@ -7161,7 +7294,7 @@ OS
 hU
 hU
 "}
-(53,1,1) = {"
+(55,1,1) = {"
 NN
 NN
 NN
@@ -7222,7 +7355,7 @@ OS
 hU
 hU
 "}
-(54,1,1) = {"
+(56,1,1) = {"
 NN
 NN
 NN
@@ -7283,7 +7416,7 @@ OS
 hU
 hU
 "}
-(55,1,1) = {"
+(57,1,1) = {"
 NN
 NN
 NN
@@ -7344,7 +7477,7 @@ hU
 hU
 hU
 "}
-(56,1,1) = {"
+(58,1,1) = {"
 NN
 NN
 NN
@@ -7405,7 +7538,7 @@ hU
 hU
 hU
 "}
-(57,1,1) = {"
+(59,1,1) = {"
 NN
 NN
 NN
@@ -7466,7 +7599,7 @@ OS
 hU
 hU
 "}
-(58,1,1) = {"
+(60,1,1) = {"
 NN
 NN
 NN
@@ -7527,7 +7660,7 @@ OS
 hU
 hU
 "}
-(59,1,1) = {"
+(61,1,1) = {"
 NN
 NN
 NN
@@ -7588,7 +7721,7 @@ OS
 hU
 hU
 "}
-(60,1,1) = {"
+(62,1,1) = {"
 NN
 NN
 NN
@@ -7649,7 +7782,7 @@ OS
 hU
 hU
 "}
-(61,1,1) = {"
+(63,1,1) = {"
 NN
 Ty
 NN
@@ -7710,7 +7843,7 @@ HG
 hU
 hU
 "}
-(62,1,1) = {"
+(64,1,1) = {"
 NN
 NN
 NN
@@ -7771,7 +7904,7 @@ HG
 hU
 hU
 "}
-(63,1,1) = {"
+(65,1,1) = {"
 NN
 NN
 NN
@@ -7832,7 +7965,7 @@ HG
 hU
 hU
 "}
-(64,1,1) = {"
+(66,1,1) = {"
 hU
 NN
 NN
@@ -7893,7 +8026,7 @@ OS
 hU
 hU
 "}
-(65,1,1) = {"
+(67,1,1) = {"
 hU
 NN
 NN
@@ -7954,7 +8087,7 @@ OS
 hU
 hU
 "}
-(66,1,1) = {"
+(68,1,1) = {"
 hU
 NN
 NN
@@ -8015,7 +8148,7 @@ OS
 hU
 hU
 "}
-(67,1,1) = {"
+(69,1,1) = {"
 hU
 hU
 NN
@@ -8076,7 +8209,7 @@ OS
 hU
 hU
 "}
-(68,1,1) = {"
+(70,1,1) = {"
 hU
 hU
 NN
@@ -8137,7 +8270,7 @@ OS
 hU
 hU
 "}
-(69,1,1) = {"
+(71,1,1) = {"
 hU
 hU
 mf
@@ -8198,7 +8331,7 @@ DN
 hU
 hU
 "}
-(70,1,1) = {"
+(72,1,1) = {"
 hU
 hU
 mf
@@ -8259,7 +8392,7 @@ OS
 hU
 hU
 "}
-(71,1,1) = {"
+(73,1,1) = {"
 hU
 hU
 mf
@@ -8320,7 +8453,7 @@ OS
 hU
 hU
 "}
-(72,1,1) = {"
+(74,1,1) = {"
 hU
 hU
 mf
@@ -8381,7 +8514,7 @@ HG
 hU
 hU
 "}
-(73,1,1) = {"
+(75,1,1) = {"
 hU
 hU
 hU
@@ -8442,7 +8575,7 @@ hU
 hU
 hU
 "}
-(74,1,1) = {"
+(76,1,1) = {"
 hU
 hU
 hU
@@ -8503,7 +8636,7 @@ hU
 hU
 hU
 "}
-(75,1,1) = {"
+(77,1,1) = {"
 hU
 hU
 hU
@@ -8564,7 +8697,7 @@ hU
 hU
 hU
 "}
-(76,1,1) = {"
+(78,1,1) = {"
 hU
 hU
 hU
@@ -8625,7 +8758,7 @@ hU
 hU
 hU
 "}
-(77,1,1) = {"
+(79,1,1) = {"
 hU
 hU
 hU
@@ -8686,7 +8819,7 @@ hU
 hU
 hU
 "}
-(78,1,1) = {"
+(80,1,1) = {"
 hU
 hU
 hU
@@ -8747,7 +8880,7 @@ hU
 hU
 hU
 "}
-(79,1,1) = {"
+(81,1,1) = {"
 hU
 hU
 hU
@@ -8808,7 +8941,7 @@ hU
 hU
 hU
 "}
-(80,1,1) = {"
+(82,1,1) = {"
 hU
 hU
 hU
@@ -8869,7 +9002,7 @@ hU
 hU
 hU
 "}
-(81,1,1) = {"
+(83,1,1) = {"
 hU
 hU
 hU
@@ -8930,7 +9063,7 @@ hU
 hU
 hU
 "}
-(82,1,1) = {"
+(84,1,1) = {"
 hU
 hU
 hU
@@ -8991,7 +9124,7 @@ hU
 hU
 hU
 "}
-(83,1,1) = {"
+(85,1,1) = {"
 hU
 hU
 hU
@@ -9052,7 +9185,7 @@ hU
 hU
 hU
 "}
-(84,1,1) = {"
+(86,1,1) = {"
 hU
 hU
 hU
@@ -9113,7 +9246,7 @@ hU
 hU
 hU
 "}
-(85,1,1) = {"
+(87,1,1) = {"
 hU
 hU
 hU
@@ -9174,7 +9307,7 @@ hU
 hU
 hU
 "}
-(86,1,1) = {"
+(88,1,1) = {"
 hU
 hU
 hU
@@ -9235,7 +9368,7 @@ hU
 hU
 hU
 "}
-(87,1,1) = {"
+(89,1,1) = {"
 hU
 hU
 hU
@@ -9296,7 +9429,7 @@ hU
 hU
 hU
 "}
-(88,1,1) = {"
+(90,1,1) = {"
 hU
 hU
 hU

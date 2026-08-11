@@ -12,7 +12,7 @@
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 
 /datum/map_template/ruin/jungle/swampfever
-	name = "Raided SRM bog"
+	name = "Raided SRM Bog"
 	id = "swampfever"
 	description = "A raided SRM compound overtaken by a large number of hermits. They Ate Them."
 	suffix = "jungle_swampfever.dmm"

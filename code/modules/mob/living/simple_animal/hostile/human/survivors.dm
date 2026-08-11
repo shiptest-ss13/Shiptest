@@ -393,7 +393,7 @@
 
 /mob/living/simple_animal/hostile/human/hermit/swampboss
 	name = "Hermit Warlord"
-	desc = "A figure covered in dirty roumainist plate, slinging around a pristine HP Pyre. They carry such with some finesse, though they are still clearly high off their mind."
+	desc = "A figure covered in dirty Roumainist plate, slinging around a pristine HP Pyre. They carry the weapon with finesse, though they are still clearly high off their mind."
 	rapid = 3
 	rapid_fire_delay = 5
 	ranged = 1
