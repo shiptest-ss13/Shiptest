@@ -2084,6 +2084,7 @@
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 1
 	},
+/obj/machinery/emergency_panel,
 /turf/open/floor/wood/maple,
 /area/ship/crew)
 "IR" = (
@@ -2470,7 +2471,6 @@
 /area/ship/crew)
 "Tj" = (
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	dir = 4;
 	port_direction = 2;
 	preferred_direction = 4
