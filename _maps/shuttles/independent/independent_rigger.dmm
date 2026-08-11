@@ -384,7 +384,7 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood/corner/walnut,
+/obj/effect/turf_decal/siding/wood/walnut,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
 "bN" = (
@@ -758,6 +758,9 @@
 	dir = 1;
 	pixel_x = 8;
 	pixel_y = -19
+	},
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
@@ -1406,11 +1409,6 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
-"hI" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/maintenance/starboard{
-	name = "Starboard Storage"
-	})
 "hK" = (
 /obj/structure/railing/thin/corner{
 	dir = 6
@@ -1517,14 +1515,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/hallway/aft)
 "ip" = (
@@ -1836,7 +1828,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood/walnut,
-/obj/effect/turf_decal/siding/wood/corner/walnut{
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
@@ -1863,7 +1855,40 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/storage)
 "kQ" = (
-/obj/structure/dresser/wall/directional/north,
+/obj/item/storage/box/ammo/c38,
+/obj/item/clothing/accessory/holster,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/clothing/head/HoS/cowboy,
+/obj/item/clothing/suit/jacket/leather/duster/command,
+/obj/item/clothing/under/rank/security/detective/grey,
+/obj/item/clothing/shoes/cowboy/black,
+/obj/item/clothing/accessory/pocketprotector,
+/obj/item/storage/backpack/satchel/cap{
+	name = "first mate's satchel"
+	},
+/obj/item/clothing/suit/toggle/overcoat/tan,
+/obj/item/clothing/under/suit/tan,
+/obj/item/clothing/shoes/sneakers/brown{
+	pixel_x = 0;
+	pixel_y = -12
+	},
+/obj/item/storage/backpack/duffelbag/captain{
+	name = "first mate's duffel bag";
+	pixel_x = 0;
+	pixel_y = -8
+	},
+/obj/item/storage/guncase/pistol/detective{
+	pixel_x = 0;
+	pixel_y = -10;
+	mag_count = 3
+	},
+/obj/structure/closet/secure_closet/wall/directional/north{
+	name = "officer's locker";
+	req_access_txt = "19";
+	icon_state = "solgov_wall";
+	pixel_x = 0;
+	pixel_y = 30
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm/commad)
 "lb" = (
@@ -2456,9 +2481,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/sealed,
 /turf/open/floor/plasteel/dark,
-/area/ship/maintenance/starboard{
-	name = "Starboard Storage"
-	})
+/area/ship/maintenance/starboard)
 "pP" = (
 /obj/machinery/light/directional/south{
 	pixel_x = 0;
@@ -2761,6 +2784,9 @@
 	icon_state = "1-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "rm" = (
@@ -3029,10 +3055,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/obj/effect/turf_decal/siding/wood/walnut{
-	dir = 4
-	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/carpet/blue,
 /area/ship/crew/dorm/commad)
 "sU" = (
 /turf/closed/wall/mineral/plastitanium/interior,
@@ -3054,44 +3077,11 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "sW" = (
-/obj/item/storage/box/ammo/c38,
-/obj/item/clothing/accessory/holster,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/clothing/head/HoS/cowboy,
-/obj/item/clothing/suit/jacket/leather/duster/command,
-/obj/item/clothing/under/rank/security/detective/grey,
-/obj/item/clothing/shoes/cowboy/black,
-/obj/item/clothing/accessory/pocketprotector,
-/obj/item/storage/backpack/satchel/cap{
-	name = "first mate's satchel"
-	},
-/obj/item/clothing/suit/toggle/overcoat/tan,
-/obj/item/clothing/under/suit/tan,
-/obj/item/clothing/shoes/sneakers/brown{
-	pixel_x = 0;
-	pixel_y = -12
-	},
-/obj/item/storage/backpack/duffelbag/captain{
-	name = "first mate's duffel bag";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/item/storage/guncase/pistol/detective{
-	pixel_x = 0;
-	pixel_y = -10;
-	mag_count = 3
-	},
-/obj/structure/closet/secure_closet/wall/directional/north{
-	name = "captain's locker";
-	req_access_txt = "20";
-	icon_state = "solgov_wall";
-	dir = 8;
-	pixel_x = -30;
-	pixel_y = 0
-	},
+/obj/structure/dresser/wall/directional/west,
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/wood/corner/walnut,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
 "tc" = (
@@ -3295,10 +3285,7 @@
 	icon_state = "0-2"
 	},
 /obj/structure/chair/comfy/blue/corpo,
-/obj/effect/turf_decal/siding/wood/walnut{
-	dir = 8
-	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/carpet/blue,
 /area/ship/crew/dorm/commad)
 "uC" = (
 /obj/machinery/airalarm/directional/west,
@@ -3625,9 +3612,6 @@
 "xE" = (
 /obj/structure/grille,
 /obj/machinery/door/firedoor,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -5683,6 +5667,9 @@
 /obj/effect/turf_decal/siding/wood/corner/walnut{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 8
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
 "HL" = (
@@ -7035,9 +7022,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "QJ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/hallway/aft)
@@ -7288,12 +7272,12 @@
 	pixel_y = 8
 	},
 /obj/structure/closet/secure_closet/wall/directional/north{
-	name = "officer's locker";
-	req_access_txt = "19";
+	name = "captain's locker";
+	req_access_txt = "20";
 	icon_state = "solgov_wall";
 	dir = 2;
 	pixel_x = 0;
-	pixel_y = -27
+	pixel_y = -30
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm/commad)
@@ -7652,11 +7636,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
-"UU" = (
-/turf/closed/wall/mineral/plastitanium/interior,
-/area/ship/maintenance/starboard{
-	name = "Starboard Storage"
-	})
 "UW" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/central)
@@ -7691,6 +7670,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood/walnut,
+/obj/effect/turf_decal/siding/wood/corner/walnut{
+	dir = 1
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
 "Vq" = (
@@ -7815,12 +7797,12 @@
 "Wz" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
 	icon_state = "0-8"
 	},
 /obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "WA" = (
@@ -9122,12 +9104,12 @@ WE
 ES
 yO
 Gi
-hI
-UU
+Sh
+sU
 pJ
-UU
-UU
-hI
+sU
+sU
+Sh
 "}
 (24,1,1) = {"
 cN
