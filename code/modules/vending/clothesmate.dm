@@ -59,6 +59,7 @@
 		/obj/item/clothing/under/overalls/brown = 2,
 		/obj/item/clothing/under/color = 9,
 		/obj/item/clothing/under/color/jumpskirt = 9,
+		/obj/item/clothing/under/shortjumpsuit = 6,
 		/obj/item/clothing/under/shorts/skirt = 6,
 		/obj/item/clothing/under/shorts/miniskirt = 6,
 		/obj/item/clothing/under/dress/skirt/color = 2,
@@ -118,7 +119,7 @@
 		/obj/item/clothing/mask/breath/facemask = 3,
 		/obj/item/clothing/head/wig/natural = 4,
 		/obj/item/clothing/glasses/regular = 2,
-		/obj/item/clothing/glasses/cheapsuns = 2, //WS Edit - Cheap sunglasses
+		/obj/item/clothing/glasses/cheapsuns = 2,
 		/obj/item/clothing/glasses/regular/jamjar = 1,
 		/obj/item/clothing/glasses/orange = 1,
 		/obj/item/clothing/glasses/red = 1,
