@@ -17,6 +17,7 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/south,
+/obj/machinery/telecomms/relay/preset/frontiersmen,
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
@@ -372,10 +373,6 @@
 	pixel_y = 21
 	},
 /obj/machinery/light/small/directional/north,
-/obj/item/documents/frontier{
-	pixel_x = 0;
-	pixel_y = 9
-	},
 /obj/structure/dresser{
 	dir = 4;
 	pixel_x = 4;
@@ -900,6 +897,14 @@
 	dir = 8
 	},
 /obj/item/bedsheet/double/brown,
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = -9;
+	pixel_y = -20;
+	id = "madagascar_command_window";
+	name = "Window Switch";
+	req_one_access = list(19,41)
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
 "iQ" = (
@@ -1053,6 +1058,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
+/obj/structure/sign/poster/contraband/radiofreefrontier{
+	pixel_x = -30;
+	pixel_y = 0
+	},
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
@@ -1536,7 +1545,6 @@
 	},
 /obj/item/clothing/suit/armor/frontier,
 /obj/item/clothing/glasses/hud/security/sunglasses,
-/obj/item/gun/energy/laser/e10,
 /obj/item/megaphone/command,
 /obj/item/radio/command,
 /obj/item/storage/pouch/squad,
@@ -2206,6 +2214,10 @@
 /area/ship/crew/dorm)
 "uP" = (
 /obj/structure/table/reinforced,
+/obj/item/documents/frontier{
+	pixel_x = 0;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "uR" = (
@@ -3148,6 +3160,14 @@
 "Dv" = (
 /obj/structure/table/wood,
 /obj/machinery/firealarm/directional/west,
+/obj/item/storage/fancy/cigarettes/cigars/havana{
+	pixel_x = 1;
+	pixel_y = 4
+	},
+/obj/item/storage/box/matches{
+	pixel_x = -3;
+	pixel_y = 9
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
 "Dw" = (
@@ -3493,6 +3513,10 @@
 /obj/machinery/light/small/directional/south,
 /obj/structure/chair/sofa/blue/old/left/directional/west{
 	name = "Jouch"
+	},
+/obj/structure/sign/poster/contraband/shamblers_juice{
+	pixel_x = 29;
+	pixel_y = 0
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -4564,6 +4588,10 @@
 	pixel_x = 0;
 	pixel_y = 5
 	},
+/obj/structure/sign/poster/ripped{
+	pixel_x = 0;
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Sb" = (
@@ -5136,7 +5164,7 @@
 "Vd" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	id = "madagascar_suits_port"
+	id = "madagascar_command_window"
 	},
 /obj/structure/grille,
 /turf/open/floor/plating,
@@ -5163,6 +5191,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm/directional/east,
+/obj/structure/sign/poster/contraband/red_rum{
+	pixel_x = 0;
+	pixel_y = 31
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/hallway)
 "Vg" = (
@@ -5230,6 +5262,10 @@
 	},
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/light/directional/north,
+/obj/item/clothing/head/beret/sec/frontier/officer{
+	pixel_x = 2;
+	pixel_y = 13
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "VN" = (
