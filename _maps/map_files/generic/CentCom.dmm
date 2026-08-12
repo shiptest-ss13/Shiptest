@@ -5309,7 +5309,9 @@
 /turf/open/floor/concrete,
 /area/ctf)
 "gaU" = (
-/obj/machinery/holopad/secure/admin,
+/obj/machinery/holopad/secure/admin{
+	name_override = "SUNS Academic Headquarters Hololine"
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/centcom/commandoffices/suns)
 "gba" = (
@@ -5353,7 +5355,9 @@
 "gfJ" = (
 /obj/effect/turf_decal/corner/opaque/vired/full,
 /obj/effect/turf_decal/industrial/outline,
-/obj/machinery/holopad/secure/admin,
+/obj/machinery/holopad/secure/admin{
+	name_override = "Vigilitas Interstellar Hololine"
+	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/commandoffices/vigilitas)
 "ggX" = (
@@ -7616,7 +7620,9 @@
 /area/centcom/commandoffices/cybersun)
 "jNY" = (
 /obj/effect/turf_decal/solgov/all/center,
-/obj/machinery/holopad/secure/admin,
+/obj/machinery/holopad/secure/admin{
+	name_override = "Solar Confederation DAA Hololine"
+	},
 /turf/open/floor/wood/ebony,
 /area/centcom/commandoffices/solgov)
 "jPn" = (
@@ -8818,7 +8824,9 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
-/obj/machinery/holopad/secure/admin,
+/obj/machinery/holopad/secure/admin{
+	name_override = "Huntsman's Office Hololine"
+	},
 /turf/open/floor/carpet/red_gold,
 /area/centcom/commandoffices/srm)
 "lGm" = (
@@ -9468,7 +9476,10 @@
 /area/centcom/commandoffices/zohil)
 "mAD" = (
 /obj/effect/turf_decal/siding/wood/walnut,
-/obj/machinery/holopad/secure/admin,
+/obj/machinery/holopad/secure/admin{
+	name_override = "Command Hololine";
+	secret_pad = 1
+	},
 /turf/open/floor/wood/walnut,
 /area/centcom/commandoffices)
 "mAL" = (
@@ -9516,7 +9527,9 @@
 /area/tdome/arena)
 "mDr" = (
 /obj/effect/turf_decal/minutemen/middle,
-/obj/machinery/holopad/secure/admin,
+/obj/machinery/holopad/secure/admin{
+	name_override = "CLIP Colonial Command Hololine"
+	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/commandoffices/clip)
 "mDJ" = (
@@ -9592,7 +9605,10 @@
 "mJP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/holopad/secret,
+/obj/machinery/holopad/secure/admin{
+	name_override = "Frontiersmen Relay Command Hololine";
+	secret_pad = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/centcom/commandoffices/frontiersmen)
 "mKp" = (
@@ -11398,7 +11414,9 @@
 /area/ctf)
 "pKi" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/machinery/holopad/secure/admin,
+/obj/machinery/holopad/secure/admin{
+	name_override = "NGR 2nd Battlegroup Hololine"
+	},
 /turf/open/floor/plasteel/tech,
 /area/centcom/commandoffices/ngr)
 "pKS" = (
@@ -13614,7 +13632,9 @@
 /turf/open/floor/plating,
 /area/ctf)
 "tsg" = (
-/obj/machinery/holopad/secure/admin,
+/obj/machinery/holopad/secure/admin{
+	name_override = "N+S Logistics Hololine"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/centcom/commandoffices/n_s)
 "tss" = (
@@ -13771,7 +13791,9 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 9
 	},
-/obj/machinery/holopad/secure/admin,
+/obj/machinery/holopad/secure/admin{
+	name_override = "PGF High Command Hololine"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/centcom/commandoffices/pgf)
 "tBo" = (
@@ -13808,7 +13830,9 @@
 /area/centcom/commandoffices/ramzi)
 "tDm" = (
 /obj/effect/turf_decal/corner/opaque/yellow/full,
-/obj/machinery/holopad/secure/admin,
+/obj/machinery/holopad/secure/admin{
+	name_override = "Inteq Mothership Hololine"
+	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/commandoffices/inteq)
 "tEz" = (
@@ -13980,7 +14004,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/holopad/secret,
+/obj/machinery/holopad/secure/admin{
+	name_override = "Clique Cell Command Hololine";
+	secret_pad = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/centcom/commandoffices/ramzi)
 "tUy" = (
@@ -14863,7 +14890,9 @@
 /turf/open/floor/concrete/pavement,
 /area/ctf)
 "vuG" = (
-/obj/machinery/holopad/secure/admin,
+/obj/machinery/holopad/secure/admin{
+	name_override = "Cybersun Corporate Hololine"
+	},
 /turf/open/floor/suns/dark/plain,
 /area/centcom/commandoffices/cybersun)
 "vvs" = (
@@ -16183,7 +16212,9 @@
 /turf/open/floor/concrete,
 /area/ctf)
 "yaA" = (
-/obj/machinery/holopad/secure/admin,
+/obj/machinery/holopad/secure/admin{
+	name_override = "Makosso-Warra Central Command Hololine"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/centcom/commandoffices/warra)
 "yco" = (
