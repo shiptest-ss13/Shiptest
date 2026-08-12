@@ -15574,7 +15574,9 @@
 /turf/open/floor/concrete/pavement,
 /area/ctf)
 "wEd" = (
-/obj/machinery/holopad/secure/admin,
+/obj/machinery/holopad/secure/admin{
+	name_override = "Radio Broadcast Office Hololine - OFF AIR"
+	},
 /turf/open/floor/carpet/green,
 /area/centcom/television)
 "wER" = (
