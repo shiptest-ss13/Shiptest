@@ -87,6 +87,8 @@ Possible to do for anyone motivated enough:
 	var/name_override
 	///does this pad get broadcast globally at all?
 	var/secret_pad = FALSE
+	///is this holopad monitored as an 'admin' holopad? if so, calls to it create an alert.
+	var/admin_pad = FALSE
 	/// The last holopad that called this one.
 	var/caller_history
 
@@ -100,6 +102,18 @@ Possible to do for anyone motivated enough:
 	var/obj/item/circuitboard/machine/holopad/board = circuit
 	board.secure = TRUE
 	board.build_path = /obj/machinery/holopad/secure
+
+/obj/machinery/holopad/secure/admin
+	name = "administrative holopad"
+	desc = "It's a floor-mounted device for projecting holographic images. This one is equipped with a full administrative suite."
+	secure = TRUE
+	admin_pad = TRUE
+	name_override = "Unconfigured admin holopad"
+
+/obj/machinery/holopad/secret
+	name = "one-way holopad"
+	desc = "It's a floor-mounted device for projecting holographic images. This one is designed to only connect outwardly."
+	secret_pad = TRUE
 
 /obj/machinery/holopad/tutorial
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
@@ -328,13 +342,13 @@ Possible to do for anyone motivated enough:
 						continue
 					if (pad.is_operational && !pad.secret_pad)
 						if(pad.name_override)
-							LAZYADD(callnames[ref(pad.name_override)], pad)
+							LAZYADD(callnames[pad.name_override], pad)
 						else
 							var/area/area = get_area(pad)
 							if(area)
 								LAZYADD(callnames[area], pad)
 
-				var/result = tgui_input_list(usr, "Choose an holopad to call", "Holocall", sortNames(callnames))
+				var/result = tgui_input_list(usr, "Choose an holopad to call", "Holocall", sortList(callnames))
 				if(QDELETED(usr) || !result || outgoing_call)
 					return
 				var/interference = SSovermap.get_overmap_interference(src)

@@ -215,7 +215,6 @@
 	dir = 4;
 	secure = 1;
 	locked = 1;
-	pixel_y = 0;
 	name = "flight officer's locker";
 	req_access = list(57);
 	pixel_x = 28
@@ -233,7 +232,6 @@
 	pixel_x = 11
 	},
 /obj/item/clothing/gloves/color/white{
-	pixel_x = 0;
 	pixel_y = -7
 	},
 /turf/open/floor/plasteel/tech,
@@ -299,9 +297,7 @@
 	pixel_x = 20
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 20;
@@ -969,7 +965,6 @@
 	},
 /obj/structure/chair/bench/beige/directional/east{
 	dir = 8;
-	pixel_y = 0;
 	pixel_x = 18
 	},
 /turf/open/floor/plasteel/dark,
@@ -1853,7 +1848,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/button/door{
-	dir = 2;
 	id = "bolide_win_bridge";
 	name = "window shutters";
 	pixel_y = 29;
@@ -2314,7 +2308,6 @@
 	pixel_y = -1
 	},
 /obj/item/attachment/bayonet{
-	pixel_x = 0;
 	pixel_y = -3
 	},
 /obj/item/attachment/bayonet{
@@ -2334,8 +2327,7 @@
 	pixel_x = -3
 	},
 /obj/item/trench_tool/gezena{
-	pixel_y = 4;
-	pixel_x = 0
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -2696,7 +2688,6 @@
 /obj/machinery/suit_storage_unit/inherit,
 /obj/machinery/advanced_airlock_controller/directional/west,
 /obj/item/clothing/mask/breath/pgfmask/navy{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/machinery/camera/directional/north,
@@ -2718,9 +2709,7 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge/cool)
 "pG" = (
@@ -2846,9 +2835,7 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 5
 	},
-/obj/structure/dresser{
-	dir = 2
-	},
+/obj/structure/dresser,
 /obj/item/toy/plush/flushed{
 	pixel_x = 3;
 	pixel_y = 8
@@ -2893,7 +2880,6 @@
 	dir = 1
 	},
 /obj/machinery/computer/atmos_control/ship/bolide{
-	dir = 2;
 	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -3123,24 +3109,19 @@
 	dir = 1
 	},
 /obj/item/towel{
-	pixel_x = -8;
-	pixel_y = 0
+	pixel_x = -8
 	},
 /obj/item/towel{
-	pixel_x = -8;
-	pixel_y = 0
+	pixel_x = -8
 	},
 /obj/item/towel{
-	pixel_x = -8;
-	pixel_y = 0
+	pixel_x = -8
 	},
 /obj/item/towel{
-	pixel_x = -8;
-	pixel_y = 0
+	pixel_x = -8
 	},
 /obj/item/towel{
-	pixel_x = -8;
-	pixel_y = 0
+	pixel_x = -8
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
@@ -3204,20 +3185,16 @@
 	dir = 6
 	},
 /obj/item/clothing/suit/space/hardsuit/bomb{
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/item/clothing/suit/space/hardsuit/bomb{
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /obj/item/clothing/gloves/gezena/engi{
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/item/clothing/gloves/gezena/engi{
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /obj/item/radio/headset/pgf/alt{
 	pixel_x = -7
@@ -3291,8 +3268,7 @@
 	icon_state = "sec_wall";
 	name = "supply cabinet";
 	dir = 4;
-	pixel_x = 28;
-	pixel_y = 0
+	pixel_x = 28
 	},
 /obj/item/clothing/glasses/welding{
 	pixel_x = -7;
@@ -3328,9 +3304,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge/cool)
 "tg" = (
@@ -3453,12 +3427,10 @@
 	icon_state = "4-8"
 	},
 /obj/item/radio/intercom/directional/north{
-	pixel_x = 6;
-	pixel_y = 31
+	pixel_x = 6
 	},
 /obj/item/radio/intercom/directional/north{
-	pixel_x = -11;
-	pixel_y = 31
+	pixel_x = -11
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge/cool)
@@ -3552,7 +3524,6 @@
 	},
 /obj/structure/dresser{
 	dir = 4;
-	pixel_y = 0;
 	pixel_x = 4
 	},
 /obj/item/desk_flag/gezena{
@@ -3621,27 +3592,21 @@
 	pixel_y = 7
 	},
 /obj/item/clothing/mask/breath/pgfmask/navy{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/item/clothing/mask/breath/pgfmask/navy{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/item/clothing/mask/breath/pgfmask/navy{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/item/clothing/mask/breath/pgfmask/navy{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/item/clothing/mask/breath/pgfmask/navy{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/item/clothing/mask/breath/pgfmask/navy{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /turf/open/floor/plasteel/patterned/ridged,
@@ -4186,7 +4151,6 @@
 	pixel_y = -1
 	},
 /obj/structure/sign/poster/etherbor/random{
-	pixel_y = 0;
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel/tech,
@@ -4219,9 +4183,7 @@
 /obj/structure/railing/corner{
 	layer = 5
 	},
-/obj/effect/turf_decal/corner_steel_grid/full{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner_steel_grid/full,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -4262,7 +4224,6 @@
 	},
 /obj/item/modular_computer/laptop/preset{
 	pixel_y = 3;
-	pixel_x = 0;
 	layer = 3.1
 	},
 /turf/open/floor/plasteel/sepia,
@@ -4462,8 +4423,7 @@
 	dir = 4
 	},
 /obj/item/hand_labeler{
-	pixel_y = -5;
-	pixel_x = 0
+	pixel_y = -5
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
@@ -4479,7 +4439,6 @@
 /obj/machinery/newscaster/directional/west,
 /obj/structure/dresser{
 	dir = 8;
-	pixel_y = 0;
 	pixel_x = -4
 	},
 /obj/item/desk_flag/gezena{
@@ -4568,7 +4527,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/command{
-	dir = 2;
 	name = "Captain's Quarters";
 	req_access_txt = "20"
 	},
@@ -4885,7 +4843,6 @@
 	dir = 8
 	},
 /obj/structure/chair/bench/beige/directional/east{
-	dir = 4;
 	pixel_x = -18
 	},
 /turf/open/floor/plasteel/dark,
@@ -5428,7 +5385,6 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/binary/pump{
-	dir = 2;
 	layer = 2.43;
 	name = "air injection pump"
 	},
@@ -5443,7 +5399,6 @@
 	pixel_y = -17
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/mix_output{
-	pixel_y = 0;
 	dir = 1;
 	on = 0
 	},
@@ -6299,7 +6254,6 @@
 	dir = 8;
 	secure = 1;
 	locked = 1;
-	pixel_y = 0;
 	name = "captain's locker";
 	req_access = list(20);
 	pixel_x = -28
@@ -6312,7 +6266,6 @@
 	icon_state = "2-4"
 	},
 /obj/item/clothing/gloves/color/white{
-	pixel_x = 0;
 	pixel_y = -7
 	},
 /turf/open/floor/plasteel/tech,
@@ -6409,7 +6362,6 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
 	name = "grav couch";
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -6516,9 +6468,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "JZ" = (
-/obj/effect/turf_decal/trimline/opaque/white/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/opaque/white/line,
 /obj/effect/turf_decal/trimline/opaque/white/line{
 	dir = 1
 	},
@@ -6585,12 +6535,10 @@
 	pixel_y = 11
 	},
 /obj/item/gun/energy/kalix/pgf/nock{
-	pixel_y = 4;
-	pixel_x = 0
+	pixel_y = 4
 	},
 /obj/item/gun/energy/kalix/pgf/nock{
-	pixel_y = -3;
-	pixel_x = 0
+	pixel_y = -3
 	},
 /obj/effect/turf_decal/corner/opaque/purple/border,
 /turf/open/floor/plasteel/tech,
@@ -6613,7 +6561,6 @@
 /obj/effect/turf_decal/trimline/opaque/green/line,
 /obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 8;
-	pixel_y = 0;
 	pixel_x = -1
 	},
 /obj/effect/turf_decal/trimline/opaque/green/line{
@@ -6628,9 +6575,7 @@
 /obj/effect/turf_decal/trimline/opaque/green/filled/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security)
 "Ky" = (
@@ -6755,9 +6700,7 @@
 	dir = 4;
 	id = "bolide_win_bridge"
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge/cool)
 "Li" = (
@@ -7123,8 +7066,7 @@
 	},
 /obj/effect/turf_decal/techfloor,
 /obj/item/gear_pack/anglegrinder{
-	pixel_x = 9;
-	pixel_y = 0
+	pixel_x = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
@@ -7294,9 +7236,7 @@
 	dir = 5
 	},
 /obj/machinery/light/directional/north,
-/obj/structure/chair/handrail{
-	dir = 2
-	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge/cool)
 "Ot" = (
@@ -7432,12 +7372,10 @@
 /obj/item/geiger_counter,
 /obj/item/geiger_counter,
 /obj/item/reagent_containers/hypospray/medipen/anti_rad{
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /obj/item/reagent_containers/hypospray/medipen/anti_rad{
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /obj/effect/mapping_helpers/crate_shelve,
 /obj/structure/sign/poster/contraband/missing_gloves{
@@ -7837,15 +7775,13 @@
 	pixel_x = -8
 	},
 /obj/item/clothing/gloves/gezena/marine{
-	pixel_x = -1;
-	pixel_y = 0
+	pixel_x = -1
 	},
 /obj/item/radio/headset/pgf/captain{
 	pixel_x = -9;
 	pixel_y = 1
 	},
 /obj/item/clothing/gloves/color/white{
-	pixel_x = 0;
 	pixel_y = -7
 	},
 /turf/open/floor/plasteel/tech,
@@ -7893,7 +7829,6 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/engineering{
-	dir = 2;
 	name = "Engine Bay"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -8250,9 +8185,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "TB" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 2
-	},
+/obj/effect/turf_decal/techfloor,
 /obj/structure/table/reinforced,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -8364,6 +8297,10 @@
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 4
 	},
+/obj/machinery/emergency_panel/dark{
+	pixel_x = -8;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "Uc" = (
@@ -8435,8 +8372,7 @@
 	},
 /obj/machinery/door/airlock/command{
 	name = "Command Quarters";
-	req_one_access = list(20, 57, 58);
-	dir = 2
+	req_one_access = list(20, 57, 58)
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/commad)
@@ -8477,7 +8413,6 @@
 	dir = 6
 	},
 /obj/structure/chair/bench/beige/directional/east{
-	dir = 4;
 	pixel_x = -18
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -8802,9 +8737,7 @@
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/storage/equip)
 "VY" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Wk" = (
@@ -8836,9 +8769,7 @@
 /obj/machinery/door/airlock/external/glass{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 2
-	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/storage/equip)
 "Wp" = (
@@ -8912,9 +8843,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge/cool)
 "WV" = (
@@ -8991,7 +8920,6 @@
 /obj/effect/turf_decal/trimline/opaque/green/line,
 /obj/effect/turf_decal/trimline/opaque/green/line{
 	dir = 8;
-	pixel_y = 0;
 	pixel_x = -1
 	},
 /obj/effect/turf_decal/trimline/opaque/green/filled/corner{
@@ -9006,9 +8934,7 @@
 /obj/effect/turf_decal/trimline/opaque/green/filled/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security)
 "Xr" = (
@@ -9062,7 +8988,6 @@
 	dir = 9
 	},
 /obj/machinery/computer/monitor{
-	dir = 2;
 	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -9132,9 +9057,7 @@
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -9151,7 +9074,6 @@
 	},
 /obj/structure/chair/bench/beige/directional/east{
 	dir = 8;
-	pixel_y = 0;
 	pixel_x = 18
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -9528,9 +9450,7 @@
 /obj/structure/bed/dogbed{
 	pixel_y = 2
 	},
-/mob/living/simple_animal/pet/fox/bolide{
-	pixel_y = 0
-	},
+/mob/living/simple_animal/pet/fox/bolide,
 /obj/effect/turf_decal/trimline/transparent/beige/filled/corner,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
