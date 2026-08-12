@@ -296,6 +296,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"bl" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/security)
 "bm" = (
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_x = 1;
@@ -1280,13 +1286,11 @@
 /obj/effect/turf_decal/corner/opaque/red/half{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/grey/half{
-	dir = 8
+/obj/effect/turf_decal/corner/opaque/black/half{
+	dir = 8;
+	pixel_x = 0;
+	pixel_y = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 3
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono,
 /area/ship/security)
 "gr" = (
@@ -2490,15 +2494,17 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "qb" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 10
-	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -3743,9 +3749,16 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "yo" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/effect/turf_decal/corner/opaque/red/half{
+	dir = 4
 	},
+/obj/effect/turf_decal/corner/opaque/grey/half{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 3
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono,
 /area/ship/security)
 "yp" = (
@@ -4548,17 +4561,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"BW" = (
-/obj/effect/turf_decal/corner/opaque/red/half{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/black/half{
-	dir = 8;
-	pixel_x = 0;
-	pixel_y = 0
-	},
-/turf/open/floor/plasteel/mono,
-/area/ship/security)
 "BZ" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/machinery/firealarm/directional/west{
@@ -5527,14 +5529,19 @@
 /area/ship/storage/starboard)
 "GT" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/external{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	name = "Airlock Shutters";
+	id = "riggsairlock"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/external)
@@ -6645,7 +6652,7 @@
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 20;
-	pixel_y = -7
+	pixel_y = -8
 	},
 /obj/machinery/advanced_airlock_controller{
 	dir = 8;
@@ -8656,7 +8663,7 @@ Iq
 BD
 rD
 yt
-BW
+go
 Yj
 cR
 Gw
@@ -8692,7 +8699,7 @@ Te
 IS
 GF
 Uy
-yo
+bl
 Ij
 DT
 lb
@@ -8728,7 +8735,7 @@ Iq
 Ex
 Oh
 eB
-go
+yo
 vF
 Bt
 EC
