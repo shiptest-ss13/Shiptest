@@ -297,9 +297,16 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "bl" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/effect/turf_decal/corner/opaque/red/half{
+	dir = 4
 	},
+/obj/effect/turf_decal/corner/opaque/grey/half{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 3
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono,
 /area/ship/security)
 "bm" = (
@@ -1283,13 +1290,8 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "go" = (
-/obj/effect/turf_decal/corner/opaque/red/half{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/black/half{
-	dir = 8;
-	pixel_x = 0;
-	pixel_y = 0
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/security)
@@ -2713,12 +2715,12 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/engine)
 "qY" = (
-/obj/structure/railing/thin/corner{
-	dir = 1
-	},
 /obj/structure/catwalk,
 /obj/structure/marker_beacon{
 	picked_color = "Burgundy"
+	},
+/obj/structure/railing/thin/corner{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
@@ -3049,11 +3051,11 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "sW" = (
-/obj/structure/dresser/wall/directional/west,
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood/corner/walnut,
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
 "tc" = (
@@ -3748,19 +3750,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
-"yo" = (
-/obj/effect/turf_decal/corner/opaque/red/half{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/grey/half{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 3
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/mono,
-/area/ship/security)
 "yp" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical)
@@ -4561,6 +4550,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"BW" = (
+/obj/effect/turf_decal/corner/opaque/red/half{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/black/half{
+	dir = 8;
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/security)
 "BZ" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/machinery/firealarm/directional/west{
@@ -5350,12 +5350,12 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/external)
 "Gl" = (
+/obj/structure/railing/thin/corner{
+	dir = 1
+	},
 /obj/structure/sign/warning/docking{
 	pixel_x = 25;
 	pixel_y = 6
-	},
-/obj/structure/railing/thin/corner{
-	dir = 1
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -6654,11 +6654,7 @@
 	pixel_x = 20;
 	pixel_y = -8
 	},
-/obj/machinery/advanced_airlock_controller{
-	dir = 8;
-	pixel_x = -25;
-	pixel_y = 0
-	},
+/obj/machinery/advanced_airlock_controller/directional/west,
 /obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/external)
@@ -8663,7 +8659,7 @@ Iq
 BD
 rD
 yt
-go
+BW
 Yj
 cR
 Gw
@@ -8699,7 +8695,7 @@ Te
 IS
 GF
 Uy
-bl
+go
 Ij
 DT
 lb
@@ -8735,7 +8731,7 @@ Iq
 Ex
 Oh
 eB
-yo
+bl
 vF
 Bt
 EC
