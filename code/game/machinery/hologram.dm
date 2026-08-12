@@ -161,6 +161,7 @@ Possible to do for anyone motivated enough:
 	. = ..()
 	if(panel_open)
 		. += span_notice("You could use a multitool to alter the circuitry inside..")
+		. += span_notice("A <b>Radio</b> could be connected for notifications.")
 
 /obj/machinery/holopad/Destroy()
 	if(outgoing_call)
@@ -241,7 +242,7 @@ Possible to do for anyone motivated enough:
 		if(do_after(user, 5 SECONDS, src))
 			if(linked_radio)
 				var/obj/item/radio/unlinked_radio = linked_radio.resolve()
-				if(unlinked_radio.can_receive(FREQ_COMMON, get_map_zone()))
+				if(unlinked_radio.can_receive(unlinked_radio.frequency, list(get_map_zone())) && unlinked_radio != P)
 					unlinked_radio.say("Radio unlinked from holopad")
 			linked_radio = WEAKREF(P)
 			P.say("Radio linked to holopad")
