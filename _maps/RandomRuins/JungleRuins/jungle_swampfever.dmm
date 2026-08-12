@@ -643,13 +643,6 @@
 	},
 /turf/open/floor/wood/jungleplanet/interior,
 /area/ruin/jungle/swamp/crew)
-"iX" = (
-/obj/structure/platform/wood_two{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/asteroid/wolf/hound/hermit,
-/turf/open/floor/wood/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "iZ" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 1
@@ -1929,7 +1922,10 @@
 /turf/open/floor/plating/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "zR" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/hunter/sentry,
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter/sentry{
+	aggro_vision_range = 12;
+	vision_range = 12
+	},
 /turf/open/floor/wood/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "zU" = (
@@ -5989,9 +5985,9 @@ NN
 KP
 ol
 QY
-QY
-QY
-QY
+pE
+pE
+pE
 QY
 QY
 QY
@@ -6052,7 +6048,7 @@ iI
 QY
 QY
 TO
-QY
+pE
 Rr
 QY
 fk
@@ -6299,7 +6295,7 @@ QT
 Qf
 QY
 QY
-QY
+Dq
 QY
 Ks
 zD
@@ -6417,7 +6413,7 @@ jW
 QY
 QZ
 yF
-iX
+yF
 nO
 fk
 QY
@@ -6478,8 +6474,8 @@ jW
 iI
 QY
 QY
-QY
-QY
+VK
+pE
 fk
 QY
 Rr
@@ -6538,11 +6534,11 @@ jd
 cB
 Oi
 Ks
+pE
+pE
+pE
 QY
 QY
-QY
-QY
-VK
 QY
 QY
 hR
