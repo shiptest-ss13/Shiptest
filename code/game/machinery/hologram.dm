@@ -91,6 +91,8 @@ Possible to do for anyone motivated enough:
 	var/admin_pad = FALSE
 	/// The last holopad that called this one.
 	var/caller_history
+	/// the radio linked to this holopad as a weak reference. announces when a call is incoming
+	var/datum/weakref/linked_radio
 
 /obj/machinery/holopad/secure
 	name = "secure holopad"
@@ -176,6 +178,8 @@ Possible to do for anyone motivated enough:
 	if(record_mode)
 		record_stop()
 
+	QDEL_NULL(linked_radio)
+
 	QDEL_NULL(disk)
 
 	holopads -= src
@@ -230,6 +234,17 @@ Possible to do for anyone motivated enough:
 			return
 		to_chat(user,span_notice("You insert [P] into [src]."))
 		disk = P
+		return
+
+	if(istype(P, /obj/item/radio) && panel_open)
+		to_chat(user,  span_notice("You start linking [P] to [src]..."))
+		if(do_after(user, 5 SECONDS, src))
+			if(linked_radio)
+				var/obj/item/radio/unlinked_radio = linked_radio.resolve()
+				if(unlinked_radio.can_receive(FREQ_COMMON, get_map_zone()))
+					unlinked_radio.say("Radio unlinked from holopad")
+			linked_radio = WEAKREF(P)
+			P.say("Radio linked to holopad")
 		return
 
 	return ..()
