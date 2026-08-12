@@ -83,7 +83,7 @@
 /datum/blackmarket_item/weapon/trench_mace
 	name = "Frontiersman Trench Mace"
 	desc = "A makeshift mace made by the frontiersmen. Honestly? We've just got too many of these sitting around. They sting like a motherfucker, even if it's basically just a bunch of nails beat into an empty grenade."
-	item = /obj/item/storage/belt/sabre/pgf
+	item = /obj/item/trench_club
 
 	cost_min = 1000
 	cost_max = 1750
