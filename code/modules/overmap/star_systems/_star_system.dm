@@ -254,7 +254,7 @@
  */
 /datum/overmap_star_system/proc/spawn_events()
 	//var/max_clusters = CONFIG_GET(number/max_overmap_event_clusters)
-	var/max_clusters = 5
+	var/max_clusters = 8
 	for(var/i in 1 to max_clusters)
 		spawn_event_cluster(pick(subtypesof(/datum/overmap/event)), get_unused_overmap_square())
 
@@ -272,7 +272,7 @@
 		orbits += "[i]"
 
 	//var/max_clusters = CONFIG_GET(number/max_overmap_event_clusters)
-	var/max_clusters = 5
+	var/max_clusters = 8
 	for(var/i in 1 to max_clusters)
 		if(CONFIG_GET(number/max_overmap_events) <= length(events))
 			return
