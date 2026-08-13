@@ -492,9 +492,6 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "ci" = (
-/obj/effect/turf_decal/corner/opaque/yellow/border{
-	dir = 8
-	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "cj" = (
@@ -709,7 +706,7 @@
 /area/ship/crew/canteen)
 "dh" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 10
+	dir = 8
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -948,21 +945,18 @@
 	pixel_y = 19;
 	name = "Bridge Privacy Shutters";
 	id = "riggerprivacyshutters";
-	req_access = list(20,41);
-	dir = 8
+	dir = 8;
+	req_access_txt = "19"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "eA" = (
-/obj/effect/turf_decal/corner/opaque/yellow/border{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 9;
 	pixel_y = -20
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "eB" = (
@@ -1187,6 +1181,10 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
+	},
+/obj/item/mecha_parts/part/ripley_right_arm{
+	pixel_x = 15;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -1418,6 +1416,7 @@
 	pixel_x = -20;
 	pixel_y = -6
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "ia" = (
@@ -1440,15 +1439,19 @@
 	},
 /obj/structure/table,
 /obj/item/coffee_cartridge/decaf{
-	pixel_x = -6;
+	pixel_x = -7;
 	pixel_y = -2
 	},
 /obj/item/coffee_cartridge/fancy/blend{
-	pixel_x = 0;
+	pixel_x = -3;
 	pixel_y = -2
 	},
 /obj/item/coffee_cartridge/fancy/roast{
-	pixel_x = 6;
+	pixel_x = 1;
+	pixel_y = -2
+	},
+/obj/item/coffee_cartridge/fancy/mocha{
+	pixel_x = 5;
 	pixel_y = -2
 	},
 /turf/open/floor/wood/walnut,
@@ -1902,7 +1905,8 @@
 /obj/structure/cable{
 	icon_state = "2-5"
 	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/catwalk,
+/turf/open/floor/plating,
 /area/ship/storage/starboard)
 "lp" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -1940,8 +1944,9 @@
 /obj/machinery/button/door{
 	pixel_x = 8;
 	pixel_y = 24;
-	name = "Window Shutter Control";
-	id = "riggerwindows"
+	name = "Starboard Window Shutter Control";
+	id = "riggerwindows";
+	req_access_txt = "19"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -2036,6 +2041,9 @@
 	port_direction = 2;
 	preferred_direction = 4;
 	launch_status = 0
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -2157,6 +2165,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/external)
@@ -2504,7 +2518,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
-	dir = 8
+	dir = 9
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -2740,9 +2754,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/hallway/aft)
 "rk" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 10
-	},
 /obj/structure/closet/wall/orange/directional/north{
 	name = "fuel supply";
 	dir = 4;
@@ -2751,6 +2762,9 @@
 	},
 /obj/item/stack/sheet/mineral/uranium/five,
 /obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "rl" = (
@@ -2959,6 +2973,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "sH" = (
@@ -4535,7 +4552,8 @@
 	},
 /obj/machinery/door/airlock/command/glass{
 	name = "Bridge";
-	dir = 4
+	dir = 4;
+	req_access_txt = "19"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "riggerprivacyshutters";
@@ -4850,11 +4868,11 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
+/obj/structure/table,
 /obj/item/toy/prize/ripley{
 	pixel_y = 10;
 	pixel_x = -4
 	},
-/obj/structure/table,
 /obj/machinery/newscaster/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
@@ -4869,7 +4887,8 @@
 	pixel_x = 33;
 	pixel_y = -13;
 	desc = "The Bridge Shutter switch";
-	name = "Bridge Window Shutters"
+	name = "Bridge Window Shutters";
+	req_access_txt = "19"
 	},
 /obj/effect/turf_decal/corner/opaque/black/half{
 	dir = 8;
@@ -5357,6 +5376,7 @@
 	pixel_x = 25;
 	pixel_y = 6
 	},
+/obj/effect/turf_decal/industrial/warning/corner,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Go" = (
@@ -5574,6 +5594,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "Ht" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "Hu" = (
@@ -5836,6 +5857,10 @@
 /obj/item/mecha_parts/mecha_equipment/drill{
 	pixel_x = 2;
 	pixel_y = -7
+	},
+/obj/item/mecha_parts/part/ripley_right_leg{
+	pixel_x = 13;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -6421,11 +6446,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/starboard)
-"MO" = (
-/obj/machinery/suit_storage_unit/inherit/industrial/locked{
-	name = "security detail's suit storage unit";
-	req_access_txt = "1"
+"MH" = (
+/obj/structure/marker_beacon{
+	picked_color = "Yellow"
 	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"MO" = (
+/obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/mask/gas,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/clothing/suit/space/hardsuit/mining/independent,
@@ -6656,6 +6687,12 @@
 	},
 /obj/machinery/advanced_airlock_controller/directional/west,
 /obj/structure/chair/handrail,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/external)
 "OQ" = (
@@ -7397,13 +7434,13 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "TF" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 10
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "TG" = (
@@ -7557,10 +7594,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Ut" = (
-/obj/machinery/suit_storage_unit/inherit/industrial/locked{
-	name = "security detail's suit storage unit";
-	req_access_txt = "1"
-	},
+/obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/engineer,
 /obj/item/clothing/head/helmet/space/light/engineer,
 /obj/item/clothing/mask/gas,
@@ -7621,6 +7655,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/external)
 "Vo" = (
@@ -7641,10 +7681,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "Vs" = (
-/obj/machinery/suit_storage_unit/inherit/industrial/locked{
-	name = "security detail's suit storage unit";
-	req_access_txt = "1"
-	},
+/obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/engineer,
 /obj/item/clothing/head/helmet/space/light/engineer,
 /obj/item/clothing/mask/gas,
@@ -8008,10 +8045,7 @@
 /area/ship/crew/toilet)
 "XZ" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 10
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 10
+	dir = 9
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -8022,6 +8056,9 @@
 /obj/effect/decal/cleanable/greenglow{
 	pixel_x = 1;
 	pixel_y = -1
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
@@ -8294,7 +8331,7 @@ yB
 Gs
 Gl
 mJ
-DS
+MH
 Qn
 MA
 MA
