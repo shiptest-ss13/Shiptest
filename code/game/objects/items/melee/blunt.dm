@@ -118,7 +118,7 @@
 	demolition_mod = 1.25
 	armour_penetration = 20
 	sharpness = SHARP_NONE
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered", "whipped")
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
