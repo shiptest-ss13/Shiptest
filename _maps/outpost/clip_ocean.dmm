@@ -6636,7 +6636,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/machinery/light/dim/directional/north,
 /obj/structure/table/chem,
 /obj/machinery/coffeemaker{
 	pixel_x = 3;
@@ -6657,6 +6656,10 @@
 /obj/item/coffee_cartridge/fancy{
 	pixel_x = 7;
 	pixel_y = 1
+	},
+/obj/machinery/holosign/clover{
+	pixel_x = 0;
+	pixel_y = 31
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar)
@@ -8153,7 +8156,6 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/court)
 "ul" = (
-/obj/machinery/light/floor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
@@ -9350,10 +9352,7 @@
 	pixel_x = -12;
 	dir = 1
 	},
-/obj/machinery/holosign/clover{
-	pixel_x = 0;
-	pixel_y = 31
-	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar)
 "xs" = (
@@ -10763,12 +10762,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/suns/hatch/maple,
 /area/outpost/crew/bar)
-"AN" = (
-/obj/machinery/light/floor,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/tech,
-/area/outpost/exterior/ocean)
 "AP" = (
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 8
@@ -18126,7 +18119,6 @@
 /turf/open/floor/suns/hatch/maple,
 /area/outpost/crew/bar)
 "Sj" = (
-/obj/machinery/light/floor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -31916,7 +31908,7 @@ cQ
 cQ
 Py
 cQ
-AN
+cQ
 cQ
 cQ
 cQ
