@@ -128,7 +128,7 @@
 	description = "Destroyed engine bay of a Miskilamo hull."
 	clear_everything = TRUE
 
-/datum/map_template/greeble/space/two // random spawner (remember)
+/datum/map_template/greeble/space/two // random spawner (remember) + rare
 	name = "Space Greeble 2"
 	mappath = "_maps/templates/greebles/space/greeble_space_2.dmm"
 	description = "Detached half of a former Kilo engine bay."
@@ -152,4 +152,19 @@
 	name = "Space Greeble 6"
 	mappath = "_maps/templates/greebles/space/greeble_space_6.dmm"
 	description = "Destroyed engine bay of a Miskilamo hull."
+
+/datum/map_template/greeble/space/seven // rare
+	name = "Space Greeble 7"
+	mappath = "_maps/templates/greebles/space/greeble_space_7.dmm"
+	description = "Detached cargo bay of a former ICW-era Marauder vessel." // old hyena
+
+/datum/map_template/greeble/space/eight // random spawner (remember)
+	name = "Space Greeble 8"
+	mappath = "_maps/templates/greebles/space/greeble_space_8.dmm"
+	description = "Piecemeal hull of a larger Miskilamo vessel. Sections of a cargo bay, hallway, and medbay."
+
+/datum/map_template/greeble/space/nine // random spawner (remember)
+	name = "Space Greeble 9"
+	mappath = "_maps/templates/greebles/space/greeble_space_9.dmm"
+	description = "Medbay and operating theatre of an ISF medical vessel."
 

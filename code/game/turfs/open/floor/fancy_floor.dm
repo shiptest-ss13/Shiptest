@@ -35,6 +35,9 @@
 /turf/open/floor/wood/maple
 	color = WOOD_COLOR_PALE
 
+/turf/open/floor/wood/maple/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
 /turf/open/floor/wood/maple/chlorine
 	initial_gas_mix = COMBAT_CHLORINE
 
