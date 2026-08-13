@@ -638,7 +638,6 @@
 					O.Remove(src)
 					visible_message(span_danger("[src] vomits up their [O.name]!"), span_danger("You vomit up your [O.name]")) //no "vomit up your the heart"
 					O.forceMove(drop_location())
-
 	else
 		switch(rand(0,5))
 			if(0)

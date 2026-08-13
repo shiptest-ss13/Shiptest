@@ -17,6 +17,7 @@
 	cap_on = TRUE
 	drop_sound = 'sound/items/handling/beaker_drop.ogg'
 	pickup_sound =  'sound/items/handling/beaker_pickup.ogg'
+	custom_materials = list(/datum/material/glass = 200)
 
 /obj/item/reagent_containers/glass/bottle/epinephrine
 	name = "epinephrine bottle"
@@ -257,20 +258,10 @@
 	desc = "A small bottle. Contains a small dosage of Fukkos Miracos."
 	spawned_disease = /datum/disease/magnitis
 
-/obj/item/reagent_containers/glass/bottle/wizarditis
-	name = "Wizarditis culture bottle"
-	desc = "A small bottle. Contains a sample of Rincewindus Vulgaris."
-	spawned_disease = /datum/disease/wizarditis
-
 /obj/item/reagent_containers/glass/bottle/anxiety
 	name = "Severe Anxiety culture bottle"
 	desc = "A small bottle. Contains a sample of Lepidopticides."
 	spawned_disease = /datum/disease/anxiety
-
-/obj/item/reagent_containers/glass/bottle/beesease
-	name = "Beesease culture bottle"
-	desc = "A small bottle. Contains a sample of invasive Apidae."
-	spawned_disease = /datum/disease/beesease
 
 /obj/item/reagent_containers/glass/bottle/fluspanish
 	name = "Spanish flu culture bottle"
