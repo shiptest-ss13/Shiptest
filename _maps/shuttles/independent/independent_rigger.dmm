@@ -492,6 +492,19 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "ci" = (
+/obj/machinery/button/door{
+	dir = 4;
+	id = "riggs_cargo";
+	name = "Blast Door Control";
+	pixel_x = -22;
+	pixel_y = 7
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "riggs_airshield";
+	pixel_x = -22;
+	pixel_y = -6;
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "cj" = (
@@ -6409,6 +6422,15 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm)
+"LW" = (
+/obj/structure/marker_beacon{
+	picked_color = "Yellow"
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "Md" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 3
@@ -6446,15 +6468,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/starboard)
-"MH" = (
-/obj/structure/marker_beacon{
-	picked_color = "Yellow"
-	},
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 4
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "MO" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/mask/gas,
@@ -8331,7 +8344,7 @@ yB
 Gs
 Gl
 mJ
-MH
+LW
 Qn
 MA
 MA
