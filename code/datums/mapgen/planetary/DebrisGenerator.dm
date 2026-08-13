@@ -100,7 +100,7 @@
 /datum/biome/debris
 	open_turf_types = list(
 		/turf/open/space = 100,
-		/obj/effect/spawner/random/greeble/jungleplanet = 5
+		/obj/effect/spawner/random/greeble/space = 5
 	)
 
 /datum/biome/cave/debris
