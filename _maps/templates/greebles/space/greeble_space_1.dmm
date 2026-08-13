@@ -4,7 +4,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/template_noop)
 "b" = (
 /obj/structure/girder/reinforced,
@@ -14,7 +14,7 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
-/turf/open/floor/plating{
+/turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
 /area/template_noop)
@@ -28,7 +28,9 @@
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
 /area/template_noop)
 "j" = (
 /obj/structure/frame,
@@ -42,11 +44,11 @@
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/template_noop)
 "o" = (
-/turf/open/floor/plating{
-	icon_state = "platingdmg2"
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
 	},
 /area/template_noop)
 "q" = (
@@ -60,12 +62,11 @@
 /area/template_noop)
 "s" = (
 /obj/effect/turf_decal/miskilamo_small/right,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/template_noop)
 "t" = (
-/turf/open/floor/plating{
-	icon_state = "platingdmg3"
-	},
+/obj/structure/girder/reinforced,
+/turf/open/floor/plating/airless,
 /area/template_noop)
 "u" = (
 /obj/structure/lattice,
@@ -83,18 +84,18 @@
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/airless,
 /area/template_noop)
 "E" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/template_noop)
 "F" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/template_noop)
 "I" = (
 /obj/machinery/power/smes/shuttle/precharged{
@@ -107,18 +108,16 @@
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg2"
-	},
+/turf/open/floor/plating/airless,
 /area/template_noop)
 "K" = (
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/template_noop)
 "L" = (
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/template_noop)
 "O" = (
 /obj/structure/frame,
@@ -127,7 +126,7 @@
 "P" = (
 /obj/structure/closet/crate/secure/engineering,
 /obj/item/stack/sheet/mineral/uranium/five,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/template_noop)
 "U" = (
 /obj/item/stack/ore/salvage,
@@ -172,10 +171,10 @@ r
 r
 r
 L
-t
+L
 x
-b
-b
+t
+t
 r
 "}
 (5,1,1) = {"
@@ -224,7 +223,7 @@ r
 a
 K
 y
-o
+L
 x
 b
 "}
@@ -233,7 +232,7 @@ r
 r
 o
 q
-b
+t
 x
 x
 r

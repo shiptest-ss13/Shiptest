@@ -121,3 +121,35 @@
 
 /obj/effect/greeble_spawner/space/thirty
 	template = /datum/map_template/greeble/space/thirty
+
+/datum/map_template/greeble/space
+	name = "Space Greeble 1"
+	mappath = "_maps/templates/greebles/space/greeble_space_1.dmm"
+	description = "Destroyed engine bay of a Miskilamo hull."
+	clear_everything = TRUE
+
+/datum/map_template/greeble/space/two // random spawner (remember)
+	name = "Space Greeble 2"
+	mappath = "_maps/templates/greebles/space/greeble_space_2.dmm"
+	description = "Detached half of a former Kilo engine bay."
+
+/datum/map_template/greeble/space/three // Remember to add smuggler satchel
+	name = "Space Greeble 3"
+	mappath = "_maps/templates/greebles/space/greeble_space_3.dmm"
+	description = "Bridge of a derelict ISF Cybersun vessel."
+
+/datum/map_template/greeble/space/four // random spawner (remember)
+	name = "Space Greeble 4"
+	mappath = "_maps/templates/greebles/space/greeble_space_4.dmm"
+	description = "Engine bay of a Makosso-Warra hull."
+
+/datum/map_template/greeble/space/five
+	name = "Space Greeble 5"
+	mappath = "_maps/templates/greebles/space/greeble_space_5.dmm"
+	description = "Destroyed interior cargo space of a Hardline freighter."
+
+/datum/map_template/greeble/space/six
+	name = "Space Greeble 6"
+	mappath = "_maps/templates/greebles/space/greeble_space_6.dmm"
+	description = "Destroyed engine bay of a Miskilamo hull."
+
