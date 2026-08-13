@@ -18,19 +18,20 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 */
 
 /*TO-DO:
--Consider adding organ/rad/blood treatment? Maybe on an advanced variant for event use.
 -Create procedure disk vendor, work out pricing. Bonus points if you can pay extra for more uses. Idk how to do that with regular vendor UI.
 -Map changes
 -Voucher system (low priority. Would be funny.)
 -Sound stuff
 */
 
-#define DO_BRUTE (1<<0) // 000001 = 1 in binary
-#define DO_BURN (1<<1) // 000010 = 2 in binary
-#define DO_TOX (1<<2) // 000100 = 4 in binary
-#define DO_OXY (1<<3) // 001000 = 8 in binary
-#define DO_CLONE (1<<4) // 010000 = 16 in binary
-#define DO_REVIVE (1<<5) // 100000 = 32 in binary
+#define DO_BRUTE (1<<0) // 00000001 = 1 in binary
+#define DO_BURN (1<<1) // 00000010 = 2 in binary
+#define DO_TOX (1<<2) // 00000100 = 4 in binary
+#define DO_OXY (1<<3) // 00001000 = 8 in binary
+#define DO_CLONE (1<<4) // 00010000 = 16 in binary
+#define DO_ORGANS (1<<5) // 00100000 = 32 in binary
+#define DO_WOUNDS (1<<6) // 01000000 = 64 in binary
+#define DO_REVIVE (1<<7) // 10000000 = 128 in binary
 
 /obj/machinery/autodoc
 	name = "\improper Autodoc"
@@ -48,16 +49,12 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 
 	///Used to check whether the machine is actively working.
 	var/operating = FALSE
+	///Toggled on when post_procedure is called. This only exists so damage applied at this point isn't factored into operation length.
+	var/post_procedure = FALSE
 	///Message once operation has ended.
 	var/end_message = "Operation concluded."
 	///Changes depending on outcome.
 	var/end_sound = 'sound/machines/defib_success.ogg'
-	///Health threshold at which machine will attempt revival of patient.
-	var/revive_threshold = HEALTH_THRESHOLD_FULLCRIT
-	///Stops us from attempting revival more than once, in case the initial revival goes wrong somehow.
-	var/revival_attempted = FALSE
-	///This also needs to be here I guess.
-	var/attempting_revive = FALSE
 	///Amount healed per second
 	var/heal_amount = -3
 	///What gets dropped when dropContents() is called.
@@ -74,7 +71,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 
 /obj/item/disk/autodoc/test
 	name = "everything disk"
-	heal_flags = DO_BRUTE | DO_BURN | DO_TOX | DO_OXY | DO_CLONE | DO_REVIVE //collect my flags
+	heal_flags = DO_BRUTE | DO_BURN | DO_TOX | DO_OXY | DO_CLONE | DO_WOUNDS | DO_ORGANS | DO_REVIVE //collect my flags
 	uses = 100
 
 /obj/item/disk/autodoc/proc/get_heal_flags_string()
@@ -91,9 +88,13 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 		flag_list += span_boldnotice("Respiratory")
 	if(heal_flags & DO_CLONE)
 		flag_list += span_boldnotice("Cellular Damage")
+	if(heal_flags & DO_WOUNDS)
+		flag_list += span_boldnotice("Complex Wounds")
+	if(heal_flags & DO_ORGANS)
+		flag_list += span_boldnotice("Internal Damage")
 	if(heal_flags & DO_REVIVE)
 		flag_list += span_boldnotice("Resuscitation")
-	return jointext(flag_list, span_notice(", "))
+	return english_list(flag_list, null, span_notice(", "))
 
 /obj/item/disk/autodoc/examine()
 	. = ..()
@@ -122,9 +123,13 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 			proc_disk = thing
 			to_chat(user, span_notice("You insert [thing] into [src]."))
 			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+			return
+	else
+		return ..()
 
 //Remove procedure disk
 /obj/machinery/autodoc/AltClick(mob/living/carbon/user)
+	. = ..()
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE) || occupant == user)
 		return
 	if(!proc_disk)
@@ -143,6 +148,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 
 //Left click to open/close machine.
 /obj/machinery/autodoc/interact(mob/user)
+	. = ..()
 	if(issiliconoradminghost(user))
 		attack_hand_secondary(user)
 		return TRUE
@@ -195,7 +201,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 			say("ERROR: Patient is not compatible.")
 			return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
-		if(!heal_tick() && !(proc_disk.heal_flags & DO_REVIVE && !patient.stat == DEAD)) //Don't bother with people we can't heal.
+		if(!heal_tick() && !(proc_disk.heal_flags & DO_REVIVE && patient.stat == DEAD)) //Don't bother with people we can't heal.
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 30, TRUE)
 			say("ERROR: Patient cannot be tended by current procedure.")
 			return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
@@ -213,18 +219,20 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 				span_notice("You begin enabling the manual stop on [src]'s interface."), \
 				span_hear("You hear a series of taps coming from [src]'s direction."))
 			if(do_after(user, 30, target = src))
-				end_procedure()
-				end_message = "Manual stop engaged. Operation concluded."
-				end_sound = 'sound/machines/defib_success.ogg'
+				if(operating) //check again, in case the operation has ended.
+					end_message = "Manual stop engaged. Operation concluded."
+					end_sound = 'sound/machines/defib_success.ogg'
+					end_procedure()
 
 		else
 			to_chat(user, span_notice("You start turning [src] on."))
-			heal_tick()
 			if(do_after(user, 20, target = src))
+				if(operating)
+					return
 				operating = TRUE
 				proc_disk.uses -= 1
-				end_message = "Operation concluded."
-				end_sound = 'sound/machines/defib_success.ogg'
+				end_message = initial(end_message)
+				end_sound = initial(end_sound)
 				say("Commencing operation. Estimated time to completion: [get_operation_length()].")
 				begin_processing()
 
@@ -232,33 +240,25 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 
 /obj/machinery/autodoc/proc/get_operation_length()
 	var/time
+	var/mob/living/carbon/patient = occupant
+	if(!post_procedure)
+		heal_tick(0)
 	time = (total_damage / heal_amount) * -10
+	if(patient && patient.all_wounds)
+		time += (30 * patient.all_wounds.len + 1)
 	return DisplayTimeText(time, 1)
 
 //Runs through our healing flags and acts accordingly. Kills the process if we have nothing to do.
 /obj/machinery/autodoc/process(seconds_per_tick)
-	var/mob/living/carbon/patient = occupant
 	if(!is_operational || !occupant || !operating)
 		return PROCESS_KILL
 
-	if(patient.stat == DEAD) //To-do: Add a check for ckey.
-		if(proc_disk.heal_flags & DO_REVIVE && !revival_attempted && patient.get_organic_health() > revive_threshold) //get_organic_health() Used here as we can't heal prosthetics and will get in a loop otherwise.
-			attempting_revive = TRUE
-			revival_attempted = TRUE
-			addtimer(CALLBACK(src, PROC_REF(attempt_revive)), 30)
-			playsound(src, 'sound/machines/defib_charge.ogg', 50, FALSE)
-			patient.notify_ghost_cloning("You're being revived in an autodoc!")
-			patient.grab_ghost()
-
-		else if(!attempting_revive && revival_attempted)
-			end_message = "Revival failed, stopping procedure. A voucher will be dispensed as compensation." //There is no voucher.
-			end_sound = 'sound/machines/defib_failed.ogg'
-			end_procedure()
-			return
-
 	if(heal_tick(seconds_per_tick))
 		playsound(src, 'sound/surgery/retractor2.ogg', 50, FALSE)
+		return
 
+	if(proc_disk.heal_flags & DO_REVIVE || DO_WOUNDS)
+		post_procedure()
 	else
 		end_procedure()
 
@@ -276,13 +276,16 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	if(proc_disk.heal_flags & DO_BURN && patient.getFireLoss(BODYTYPE_ORGANIC) > 0)
 		if(operating)
 			patient.adjustFireLoss(heal_amount * seconds_per_tick)
+			if(HAS_TRAIT(patient, TRAIT_HUSK) && patient.getFireLoss() < THRESHOLD_UNHUSK)
+				patient.cure_husk()
 		total_damage += patient.getFireLoss(BODYTYPE_ORGANIC)
 		. = TRUE
 
-	if(proc_disk.heal_flags & DO_TOX && patient.getToxLoss() > 0)
+	if(proc_disk.heal_flags & DO_TOX && patient.getToxLoss() > 0 || patient.radiation > 0)
 		if(operating)
 			patient.adjustToxLoss(heal_amount * seconds_per_tick)
-		total_damage += patient.getToxLoss()
+			patient.radiation -= min(patient.radiation, heal_amount * (seconds_per_tick * 2) * -1)
+		total_damage += patient.getToxLoss() + patient.radiation / 2
 		. = TRUE
 
 	if(proc_disk.heal_flags & DO_OXY && patient.getOxyLoss() > 0)
@@ -297,32 +300,71 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 		total_damage += patient.getCloneLoss()
 		. = TRUE
 
+	if(proc_disk.heal_flags & DO_ORGANS) //This should probably require a replacement organ, but this works for now. (Totally Not A Permanent Solution)
+		var/highest_damage = 0
+		for(var/thing in patient.internal_organs)
+			var/obj/item/organ/target = thing
+			if(target.organ_flags & ORGAN_SYNTHETIC || target.damage <= 1)
+				continue
+			if(target.damage > highest_damage)
+				highest_damage = target.damage
+			target.applyOrganDamage(heal_amount * seconds_per_tick)
+			total_damage += highest_damage
+			. = TRUE
+
 /obj/machinery/autodoc/proc/attempt_revive() //Must be a separate proc because timer. Grrrr. My eyes turn red.
 	var/mob/living/carbon/patient = occupant
-	attempting_revive = FALSE
-	if(!patient)
-		return FALSE
-	playsound(src, 'sound/machines/defib_zap.ogg', 50, FALSE)
-	if(!patient.mind)
-		return FALSE
-	patient.set_heartattack(FALSE)
-	patient.revive(full_heal = FALSE, admin_revive = FALSE)
-	patient.emote("gasp")
-	patient.set_timed_status_effect(200 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
-	SEND_SIGNAL(occupant, COMSIG_LIVING_MINOR_SHOCK)
-	if (patient.health > HEALTH_THRESHOLD_FULLCRIT) //Call me when you can be awake and unconscious at the same time. This will always be true unless the patient has prosthetics.
-		to_chat(patient, span_notice("<b>You suddenly jolt awake in the cold darkness of an Autodoc.</b> Innumerous small instruments surround you, attentively tending to your wounds."))
+	if(patient)
+		playsound(src, 'sound/machines/defib_zap.ogg', 50, FALSE)
+		if(patient.mind && patient.revive())
+			patient.set_heartattack(FALSE)
+			patient.emote("gasp")
+			patient.set_timed_status_effect(200 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+			patient.adjustOxyLoss(30)
+			patient.adjustStaminaLoss(40)
+			SEND_SIGNAL(occupant, COMSIG_LIVING_MINOR_SHOCK)
+			if (patient.health > HEALTH_THRESHOLD_FULLCRIT) //Call me when you can be awake and unconscious at the same time. This will always be true unless the patient has prosthetics.
+				to_chat(patient, span_notice("<b>You suddenly jolt awake in the cold darkness of an Autodoc.</b> Innumerous small instruments surround you, attentively tending to your wounds."))
+	if(operating)
+		post_procedure(20, TRUE)
+
+/obj/machinery/autodoc/proc/post_procedure(delay, revved)
+	var/mob/living/carbon/patient = occupant
+	end_processing()
+	post_procedure = TRUE
+	if(proc_disk.heal_flags & DO_WOUNDS)
+		patient.remove_status_effect(STATUS_EFFECT_DETERMINED)
+		for(var/datum/wound/current_wound in patient.all_wounds)
+			current_wound.remove_wound()
+			playsound(src, pick('sound/surgery/bone1.ogg','sound/surgery/bone2.ogg','sound/surgery/bone3.ogg'), 30, FALSE)
+			if(patient.getOxyLoss() <= 50)
+				patient.adjustOxyLoss(10)
+			say("[current_wound] repaired.")
+			addtimer(CALLBACK(src, PROC_REF(post_procedure)), 30)
+			return
+	if(patient && patient.stat == DEAD)
+		if(proc_disk.heal_flags & DO_REVIVE && !revved)
+			addtimer(CALLBACK(src, PROC_REF(attempt_revive)), 30)
+			playsound(src, 'sound/machines/defib_charge.ogg', 50, FALSE)
+			patient.notify_ghost_cloning("You're being revived in an autodoc!")
+			patient.grab_ghost()
+
+			return
+		else if(revved)
+			end_message = "Revival failed, stopping procedure. A voucher will be dispensed as compensation." //There is no voucher.
+			end_sound = 'sound/machines/defib_failed.ogg'
+	addtimer(CALLBACK(src, PROC_REF(end_procedure)), delay)
 
 /obj/machinery/autodoc/proc/end_procedure()
 	end_processing()
 	operating = FALSE
+	post_procedure = FALSE
 	playsound(src, end_sound, 100)
 	say("[end_message]")
-	revival_attempted = FALSE
 	open_machine()
 
 /obj/effect/spawner/structure/aaaaa
 	name = "debug autodoc spawner"
 	icon = 'icons/obj/salvage_structure.dmi'
 	icon_state = "computer_broken"
-	spawn_list = list(/obj/machinery/autodoc, /obj/item/disk/autodoc/test, /obj/item/melee/sledgehammer/gorlex)
+	spawn_list = list(/obj/machinery/autodoc, /obj/item/disk/autodoc/test, /obj/item/melee/sledgehammer/gorlex, /obj/effect/mob_spawn/human/corpse, /obj/effect/mob_spawn/human/corpse/damaged)
