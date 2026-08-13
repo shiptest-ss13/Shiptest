@@ -188,10 +188,10 @@
 	mappath = "_maps/templates/greebles/space/greeble_space_13.dmm"
 	description = "Fragments of two rooms and a connecting hallway of what was once a ship or station."
 
-/datum/map_template/greeble/space/fourteen // apparently i forgot to do this one so it'll come later
+/datum/map_template/greeble/space/fourteen
 	name = "Space Greeble 14"
 	mappath = "_maps/templates/greebles/space/greeble_space_14.dmm"
-	description = "N/A"
+	description = "Two connecting hallways of a former CLIP vessel."
 
 /datum/map_template/greeble/space/fifteen
 	name = "Space Greeble 15"
