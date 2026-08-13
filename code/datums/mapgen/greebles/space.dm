@@ -168,3 +168,33 @@
 	mappath = "_maps/templates/greebles/space/greeble_space_9.dmm"
 	description = "Medbay and operating theatre of an ISF medical vessel."
 
+/datum/map_template/greeble/space/ten
+	name = "Space Greeble 10"
+	mappath = "_maps/templates/greebles/space/greeble_space_10.dmm"
+	description = "A very old hull crashed into a small asteroid. Home to a nest of carp."
+
+/datum/map_template/greeble/space/eleven
+	name = "Space Greeble 11"
+	mappath = "_maps/templates/greebles/space/greeble_space_11.dmm"
+	description = "Medical Ihejirika vessel cleaved in two. Hivelords have wandered in."
+
+/datum/map_template/greeble/space/twelve
+	name = "Space Greeble 12"
+	mappath = "_maps/templates/greebles/space/greeble_space_12.dmm"
+	description = "Very old hull shattered between multiple asteroids. Home to a nest of carp."
+
+/datum/map_template/greeble/space/thirteen // this truly was a space station 13
+	name = "Space Greeble 13"
+	mappath = "_maps/templates/greebles/space/greeble_space_13.dmm"
+	description = "Fragments of two rooms and a connecting hallway of what was once a ship or station."
+
+/datum/map_template/greeble/space/fourteen // apparently i forgot to do this one so it'll come later
+	name = "Space Greeble 14"
+	mappath = "_maps/templates/greebles/space/greeble_space_14.dmm"
+	description = "N/A"
+
+/datum/map_template/greeble/space/fifteen
+	name = "Space Greeble 15"
+	mappath = "_maps/templates/greebles/space/greeble_space_15.dmm"
+	description = "Lobby and connecting thruster bays of an ISF Cybersun vessel."
+
