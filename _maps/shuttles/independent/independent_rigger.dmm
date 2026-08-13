@@ -2964,7 +2964,6 @@
 	pixel_y = -4
 	},
 /obj/item/bonesetter,
-/obj/item/healthanalyzer,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "sb" = (
@@ -3349,6 +3348,10 @@
 	icon_door = "med_wall"
 	},
 /obj/structure/table/chem,
+/obj/item/storage/box/gloves{
+	pixel_x = -3;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "vm" = (
@@ -5103,11 +5106,6 @@
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "EK" = (
-/obj/structure/closet/secure_closet/personal{
-	pixel_x = 0;
-	pixel_y = 0;
-	name = "deckhand's personal closet"
-	},
 /obj/item/storage/backpack/satchel/fireproof{
 	pixel_x = 13;
 	pixel_y = -11
@@ -5147,6 +5145,9 @@
 /obj/item/clothing/under/shorts/explorer,
 /obj/item/clothing/suit/toggle/hazard,
 /obj/item/clothing/suit/toggle/chorejacket,
+/obj/structure/closet/secure_closet{
+	name = "Miner's Personal Closet"
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "EM" = (
@@ -5694,11 +5695,6 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
 "HL" = (
-/obj/structure/closet/secure_closet/personal{
-	pixel_x = 0;
-	pixel_y = 0;
-	name = "deckhand's personal closet"
-	},
 /obj/item/storage/backpack/satchel/fireproof{
 	pixel_x = 14;
 	pixel_y = -10
@@ -5737,6 +5733,9 @@
 /obj/item/clothing/under/shorts/explorer,
 /obj/item/clothing/suit/toggle/hazard,
 /obj/item/clothing/suit/toggle/chorejacket,
+/obj/structure/closet/secure_closet{
+	name = "Miner's Personal Closet"
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "HR" = (
@@ -6804,15 +6803,13 @@
 /obj/item/clothing/under/shorts/explorer,
 /obj/item/clothing/suit/toggle/hazard,
 /obj/item/clothing/suit/toggle/chorejacket,
-/obj/structure/closet/secure_closet/personal{
-	pixel_x = 0;
-	pixel_y = 0;
-	name = "miner's personal closet";
-	icon_state = "mining"
-	},
 /obj/structure/sign/poster/radio/icf{
 	pixel_x = 0;
 	pixel_y = -32
+	},
+/obj/structure/closet/secure_closet{
+	name = "Miner's Personal Closet";
+	icon_state = "mining"
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
