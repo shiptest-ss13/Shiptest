@@ -1,0 +1,123 @@
+/obj/effect/spawner/random/greeble/space
+	loot = list(
+			/obj/effect/greeble_spawner/space = 5,
+			/obj/effect/greeble_spawner/space/two = 5,
+			/obj/effect/greeble_spawner/space/three = 5,
+			/obj/effect/greeble_spawner/space/four = 5,
+			/obj/effect/greeble_spawner/space/five = 5,
+			/obj/effect/greeble_spawner/space/six = 5,
+			/obj/effect/greeble_spawner/space/seven = 5,
+			/obj/effect/greeble_spawner/space/eight = 5,
+			/obj/effect/greeble_spawner/space/nine = 5,
+			/obj/effect/greeble_spawner/space/ten = 5,
+			/obj/effect/greeble_spawner/space/eleven = 5,
+			/obj/effect/greeble_spawner/space/twelve = 5,
+			/obj/effect/greeble_spawner/space/thirteen = 5,
+			/obj/effect/greeble_spawner/space/fourteen = 5,
+			/obj/effect/greeble_spawner/space/fifteen = 5,
+			/obj/effect/greeble_spawner/space/sixteen = 5,
+			/obj/effect/greeble_spawner/space/seventeen = 5,
+			/obj/effect/greeble_spawner/space/eighteen = 5,
+			/obj/effect/greeble_spawner/space/nineteen = 5,
+			/obj/effect/greeble_spawner/space/twenty = 5,
+			/obj/effect/greeble_spawner/space/twentyone = 5,
+			/obj/effect/greeble_spawner/space/twentytwo = 5,
+			/obj/effect/greeble_spawner/space/twentythree = 5,
+			/obj/effect/greeble_spawner/space/twentyfour = 5,
+			/obj/effect/greeble_spawner/space/twentyfive = 5,
+			/obj/effect/greeble_spawner/space/twentysix = 5,
+			/obj/effect/greeble_spawner/space/twentyseven = 5,
+			/obj/effect/greeble_spawner/space/twentyeight = 5,
+			/obj/effect/greeble_spawner/space/twentynine = 5,
+			/obj/effect/greeble_spawner/space/thirty = 5,
+	)
+
+/obj/effect/greeble_spawner/space
+	template = /datum/map_template/greeble/space
+
+/obj/effect/greeble_spawner/space/two
+	template = /datum/map_template/greeble/space/two
+
+/obj/effect/greeble_spawner/space/three
+	template = /datum/map_template/greeble/space/three
+
+/obj/effect/greeble_spawner/space/four
+	template = /datum/map_template/greeble/space/four
+
+/obj/effect/greeble_spawner/space/five
+	template = /datum/map_template/greeble/space/five
+
+/obj/effect/greeble_spawner/space/six
+	template = /datum/map_template/greeble/space/six
+
+/obj/effect/greeble_spawner/space/seven
+	template = /datum/map_template/greeble/space/seven
+
+/obj/effect/greeble_spawner/space/eight
+	template = /datum/map_template/greeble/space/eight
+
+/obj/effect/greeble_spawner/space/nine
+	template = /datum/map_template/greeble/space/nine
+
+/obj/effect/greeble_spawner/space/ten
+	template = /datum/map_template/greeble/space/ten
+
+/obj/effect/greeble_spawner/space/eleven
+	template = /datum/map_template/greeble/space/eleven
+
+/obj/effect/greeble_spawner/space/twelve
+	template = /datum/map_template/greeble/space/twelve
+
+/obj/effect/greeble_spawner/space/thirteen
+	template = /datum/map_template/greeble/space/thirteen
+
+/obj/effect/greeble_spawner/space/fourteen
+	template = /datum/map_template/greeble/space/fourteen
+
+/obj/effect/greeble_spawner/space/fifteen
+	template = /datum/map_template/greeble/space/fifteen
+
+/obj/effect/greeble_spawner/space/sixteen
+	template = /datum/map_template/greeble/space/sixteen
+
+/obj/effect/greeble_spawner/space/seventeen
+	template = /datum/map_template/greeble/space/seventeen
+
+/obj/effect/greeble_spawner/space/eighteen
+	template = /datum/map_template/greeble/space/eighteen
+
+/obj/effect/greeble_spawner/space/nineteen
+	template = /datum/map_template/greeble/space/nineteen
+
+/obj/effect/greeble_spawner/space/twenty
+	template = /datum/map_template/greeble/space/twenty
+
+/obj/effect/greeble_spawner/space/twentyone
+	template = /datum/map_template/greeble/space/twentyone
+
+/obj/effect/greeble_spawner/space/twentytwo
+	template = /datum/map_template/greeble/space/twentytwo
+
+/obj/effect/greeble_spawner/space/twentythree
+	template = /datum/map_template/greeble/space/twentythree
+
+/obj/effect/greeble_spawner/space/twentyfour
+	template = /datum/map_template/greeble/space/twentyfour
+
+/obj/effect/greeble_spawner/space/twentyfive
+	template = /datum/map_template/greeble/space/twentyfive
+
+/obj/effect/greeble_spawner/space/twentysix
+	template = /datum/map_template/greeble/space/twentysix
+
+/obj/effect/greeble_spawner/space/twentyseven
+	template = /datum/map_template/greeble/space/twentyseven
+
+/obj/effect/greeble_spawner/space/twentyeight
+	template = /datum/map_template/greeble/space/twentyeight
+
+/obj/effect/greeble_spawner/space/twentynine
+	template = /datum/map_template/greeble/space/twentynine
+
+/obj/effect/greeble_spawner/space/thirty
+	template = /datum/map_template/greeble/space/thirty
