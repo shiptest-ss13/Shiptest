@@ -78,6 +78,7 @@
 	icon_state = "0-4"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "ax" = (
@@ -225,6 +226,20 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
+"aL" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/closet/firecloset/wall/directional/north,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "aP" = (
 /obj/structure/closet/emcloset/wall/directional/east,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -1098,6 +1113,7 @@
 	icon_state = "0-4"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "fk" = (
@@ -1328,6 +1344,10 @@
 	pixel_y = 31
 	},
 /obj/structure/rack,
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = 7;
+	pixel_y = 24
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "hg" = (
@@ -1958,8 +1978,7 @@
 	pixel_x = 8;
 	pixel_y = 24;
 	name = "Starboard Window Shutter Control";
-	id = "riggerwindows";
-	req_access_txt = "19"
+	id = "riggerwindows"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -2020,8 +2039,8 @@
 	pixel_x = -8;
 	pixel_y = -5
 	},
-/obj/item/storage/firstaid/regular{
-	pixel_x = 2;
+/obj/item/storage/firstaid/medical{
+	pixel_x = 1;
 	pixel_y = 9
 	},
 /obj/item/storage/pill_bottle/charcoal{
@@ -2309,6 +2328,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/blue/bordercorner,
+/obj/structure/reagent_dispensers/water_cooler{
+	pixel_x = 5;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "oV" = (
@@ -2344,10 +2367,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "ph" = (
-/obj/structure/reagent_dispensers/water_cooler{
-	pixel_x = -25;
-	pixel_y = 0
-	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
 "pl" = (
@@ -2964,6 +2983,7 @@
 	pixel_y = -4
 	},
 /obj/item/bonesetter,
+/obj/item/healthanalyzer,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "sb" = (
@@ -3052,7 +3072,7 @@
 	disable_on_owner_ship_dock = 1
 	},
 /turf/template_noop,
-/area/template_noop)
+/area/space)
 "sS" = (
 /obj/structure/cable{
 	icon_state = "2-5"
@@ -3159,13 +3179,13 @@
 	pixel_y = 18;
 	pixel_x = 10
 	},
-/obj/item/reagent_containers/condiment/mayonnaise{
-	pixel_x = 10;
-	pixel_y = 11
-	},
 /obj/item/reagent_containers/condiment/enzyme{
 	pixel_x = 1;
 	pixel_y = 17
+	},
+/obj/item/reagent_containers/condiment/mayonnaise{
+	pixel_x = 10;
+	pixel_y = 11
 	},
 /obj/item/reagent_containers/food/drinks/colocup{
 	pixel_x = -8;
@@ -4459,7 +4479,7 @@
 	},
 /obj/item/kirbyplants{
 	icon_state = "plant-12";
-	pixel_x = 6;
+	pixel_x = 8;
 	pixel_y = 0
 	},
 /obj/effect/turf_decal/corner/opaque/grey/half{
@@ -4600,10 +4620,6 @@
 /obj/machinery/firealarm/directional/west{
 	pixel_x = -31;
 	pixel_y = 8
-	},
-/obj/structure/extinguisher_cabinet/directional/west{
-	pixel_x = -24;
-	pixel_y = -6
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
@@ -4920,6 +4936,12 @@
 /obj/machinery/firealarm/directional/north{
 	pixel_x = 5;
 	pixel_y = 32
+	},
+/obj/machinery/button/door{
+	pixel_x = -6;
+	pixel_y = 24;
+	name = "Starboard Window Shutter Control";
+	id = "riggerwindows"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/starboard)
@@ -5874,6 +5896,10 @@
 	pixel_x = 13;
 	pixel_y = 2
 	},
+/obj/structure/sign/warning/incident{
+	pixel_x = -32;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "ID" = (
@@ -6049,6 +6075,10 @@
 /area/ship/crew/dorm)
 "JD" = (
 /obj/structure/chair/sofa/brown/old/left/directional/north,
+/obj/machinery/light/small/directional/south{
+	pixel_x = -6;
+	pixel_y = -28
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "JE" = (
@@ -6065,6 +6095,12 @@
 	pixel_x = -20;
 	pixel_y = -7;
 	dir = 4
+	},
+/obj/machinery/button/door{
+	pixel_x = 8;
+	pixel_y = 24;
+	name = "Starboard Window Shutter Control";
+	id = "riggerwindows"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -6450,10 +6486,10 @@
 	pixel_x = 0;
 	pixel_y = 0
 	},
-/area/template_noop)
+/area/space)
 "MA" = (
 /turf/template_noop,
-/area/template_noop)
+/area/space)
 "MF" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6468,7 +6504,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/starboard)
 "MO" = (
-/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/machinery/suit_storage_unit/inherit/industrial{
+	name = "miner's suit storage unit"
+	},
 /obj/item/clothing/mask/gas,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/clothing/suit/space/hardsuit/mining/independent,
@@ -6920,9 +6958,9 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
 	},
-/obj/structure/sign/warning/incident{
+/obj/structure/closet/firecloset/wall/directional/north{
 	pixel_x = 0;
-	pixel_y = 33
+	pixel_y = 30
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -6993,7 +7031,6 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew)
 "Qd" = (
-/obj/machinery/light/small/directional/west,
 /obj/structure/rack,
 /obj/effect/spawner/random/entertainment/lighter{
 	pixel_x = 7;
@@ -7024,7 +7061,7 @@
 	pixel_y = 4
 	},
 /turf/template_noop,
-/area/template_noop)
+/area/space)
 "Qs" = (
 /obj/structure/chair/sofa/brown/old/right/directional/north,
 /turf/open/floor/plating,
@@ -7725,7 +7762,7 @@
 	height = 30
 	},
 /turf/template_noop,
-/area/template_noop)
+/area/space)
 "VY" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -8711,7 +8748,7 @@ Yj
 cR
 Gw
 lf
-Ad
+aL
 XB
 GI
 iw
@@ -9183,7 +9220,7 @@ jL
 qR
 xO
 JD
-xK
+Sh
 "}
 (26,1,1) = {"
 Bk
@@ -9255,7 +9292,7 @@ zk
 wE
 OD
 Qs
-Sh
+xK
 "}
 (28,1,1) = {"
 Ze
