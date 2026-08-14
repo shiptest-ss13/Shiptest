@@ -66,12 +66,9 @@
 			if(L)
 				L.adjust_fire_stacks(20) //dipping into a stream of plasma would probably make you more flammable than usual
 				L.adjust_bodytemperature(-rand(10,20)) //its cold, man
-				if(ishuman(L))//are they a carbon?
-					var/mob/living/carbon/human/PP = L
-
-					if(prob(35)) //used to be used to slowly convert limbs, I'm not changing the mechnical function outside of removing limb/species conversion, so plasma just kinda random crits now lol.
-						PP.adjustToxLoss(15)
-						PP.adjustFireLoss(25)
+				if(prob(35)) //used to be used to slowly convert limbs, I'm not changing the mechnical function outside of removing limb/species conversion, so plasma just kinda random crits now lol.
+					L.adjustToxLoss(15)
+					L.adjustFireLoss(25)
 
 /obj/vehicle/ridden/lavaboat/plasma
 	name = "plasma boat"
