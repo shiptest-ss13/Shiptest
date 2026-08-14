@@ -639,6 +639,7 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 8
 	},
+/obj/structure/window/reinforced/spawner/west,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "cV" = (
@@ -859,6 +860,10 @@
 	dir = 10
 	},
 /obj/structure/table/reinforced,
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "dU" = (
@@ -1614,6 +1619,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/door/window/eastright{
+	dir = 8;
+	req_access_txt = "19";
+	name = "Bridge Office Door"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "ji" = (
@@ -2308,7 +2321,7 @@
 	pixel_y = -11;
 	name = "Bridge Privacy Shutters";
 	id = "riggerprivacyshutters";
-	req_access = list(20,41);
+	req_access = list(19);
 	dir = 8
 	},
 /obj/item/radio/intercom/wideband/directional/east{
@@ -5273,6 +5286,7 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 6
 	},
+/obj/structure/window/reinforced/spawner,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "Fn" = (
