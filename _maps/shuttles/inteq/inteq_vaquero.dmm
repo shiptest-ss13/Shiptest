@@ -488,7 +488,6 @@
 	dir = 4
 	},
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	dir = 4;
 	port_direction = 2;
 	preferred_direction = 4
@@ -4086,8 +4085,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/stairs{
-	color = "#a3a2a0";
-	dir = 2
+	color = "#a3a2a0"
 	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "med";
@@ -4146,6 +4144,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"Jb" = (
+/obj/effect/turf_decal/corner/opaque/yellow/full,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/emergency_panel{
+	pixel_y = -16
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/hallway/aft)
 "Jc" = (
 /obj/machinery/suit_storage_unit/inherit{
 	req_access_txt = "1";
@@ -6444,7 +6454,7 @@ Hn
 Hn
 ui
 hy
-Ti
+Jb
 Ti
 xj
 pM
