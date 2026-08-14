@@ -627,11 +627,6 @@
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "cU" = (
-/obj/machinery/computer/cargo{
-	pixel_x = 0;
-	pixel_y = 0;
-	dir = 4
-	},
 /obj/item/radio/intercom/directional/north{
 	pixel_x = 0;
 	pixel_y = 31
@@ -640,6 +635,11 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced/spawner/west,
+/obj/machinery/modular_computer/console/preset/command{
+	pixel_x = 0;
+	pixel_y = 0;
+	dir = 4
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "cV" = (
@@ -2382,10 +2382,6 @@
 "ph" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
-"pl" = (
-/obj/effect/turf_decal/corner/opaque/bottlegreen/border,
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "pp" = (
 /obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = -10;
@@ -5648,10 +5644,6 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "Hu" = (
-/obj/machinery/modular_computer/console/preset/command{
-	pixel_x = 0;
-	pixel_y = 0
-	},
 /obj/machinery/light/directional/north{
 	pixel_x = 0;
 	pixel_y = 29
@@ -5663,6 +5655,7 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 1
 	},
+/obj/machinery/computer/cargo,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "Hx" = (
@@ -8932,7 +8925,7 @@ Zb
 oF
 Jz
 OW
-pl
+yJ
 Lu
 Tl
 rK
