@@ -392,19 +392,19 @@
 
 /datum/supply_pack/magazine/miniguncell
 	name = "Eoehoma-style Mini Power Cell"
-	desc = "Contains a Clover Photonics-liscensed copy of an Eoehoma Mini Cell, compatable with Eoehoma Mini weapons."
+	desc = "Contains a Clover Photonics copy of an Eoehoma Mini Cell, compatable with systems that use Eoehoma Mini-style cells."
 	contains = list(/obj/item/stock_parts/cell/gun/mini)
 	cost = 200
 
 /datum/supply_pack/magazine/guncell
 	name = "Eoehoma-style Power Cell"
-	desc = "Contains a Clover Photonics-liscensed copy of an Eoehoma cell, compatable with Eoehoma weapons, and systems that still use Eoehoma's style of cell."
+	desc = "Contains a Clover Photonics copy of an Eoehoma cell, compatible with Eoehoma weapons, and systems that still use Eoehoma-style cells."
 	contains = list(/obj/item/stock_parts/cell/gun)
 	cost = 500
 
 /datum/supply_pack/magazine/upgradedguncellclip
 	name = "High-Capacity Eoehoma-style Power Cell"
-	desc = "Contains a Clover Photonics-liscensed copy of a High-Cap Eoehoma cell, compatable with Eoehoma weapons, and systems that still use Eoehoma's style of cell."
+	desc = "Contains a Clover Photonics copy of a High-Cap Eoehoma cell, compatible with Eoehoma weapons, and systems that still use Eoehoma-style cells."
 	contains = list(/obj/item/stock_parts/cell/gun/upgraded)
 	cost = 800
 	faction = /datum/faction/clip
