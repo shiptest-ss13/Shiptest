@@ -189,7 +189,7 @@
 		owner.mind.set_current(null)
 	return ..()
 
-/obj/item/organ/brain/on_life()
+/obj/item/organ/brain/on_life(seconds_per_tick, times_fired)
 	if(damage >= BRAIN_DAMAGE_DEATH) //rip
 		to_chat(owner, span_userdanger("The last spark of life in your brain fizzles out..."))
 		owner.death()

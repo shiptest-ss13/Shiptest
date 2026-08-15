@@ -240,7 +240,7 @@
 	addtimer(CALLBACK(src, PROC_REF(death)), 5 SECONDS)
 	AddComponent(/datum/component/swarming)
 
-/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/Life()
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	if(stat == DEAD || !isturf(loc))
 		return
@@ -302,7 +302,7 @@
 	malignance.cure()
 	..()
 
-/obj/item/organ/legion_skull/on_life()
+/obj/item/organ/legion_skull/on_life(seconds_per_tick, times_fired)
 	. = ..()
 	skull_check()
 

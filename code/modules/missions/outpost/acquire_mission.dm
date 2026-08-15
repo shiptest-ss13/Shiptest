@@ -183,10 +183,10 @@
 */
 /obj/structure/closet/mob_capture
 	name = "\improper Lifeform Containment Unit"
-	desc = "A large closet-like container, used to capture hostile lifeforms for retrieval and analysis. The interior is heavily armored, preventing animals from breaking out while inside."
-	icon_state = "abductor"
-	icon_door = "abductor"
-	color = "#FF88FF"
+	desc = "A large container used to capture hostile lifeforms for retrieval and analysis. The interior is heavily armored, preventing animals from breaking out while inside."
+	icon_state = "mobcapture"
+	secure = TRUE
+	locked = TRUE
 	drag_slowdown = 1
 	max_integrity = 300
 	armor = list("melee" = 50, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 30, "fire" = 80, "acid" = 70)
@@ -199,3 +199,8 @@
 	if(M.loc == src)
 		return FALSE
 	return ..()
+
+/obj/structure/closet/mob_capture/Moved()
+	. = ..()
+	if(has_gravity())
+		playsound(src, 'sound/effects/roll.ogg', 100, TRUE)

@@ -30,7 +30,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/damaged)
 	del_on_death = TRUE
 
-	unsuitable_atmos_damage = 15
+	unsuitable_atmos_damage = 7.5
 	minbodytemp = 180
 
 	minimum_pressure = HAZARD_LOW_PRESSURE
