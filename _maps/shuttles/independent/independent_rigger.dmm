@@ -1365,6 +1365,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "hp" = (
@@ -1463,8 +1466,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/storage)
 "ib" = (
-/obj/structure/chair/handrail,
-/turf/open/floor/plasteel/patterned/cargo_one,
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "riggerprivacyshutters";
+	name = "privacy shutters"
+	},
+/turf/open/floor/plating,
 /area/ship/cargo)
 "id" = (
 /obj/machinery/coffeemaker{
@@ -1917,6 +1926,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "lo" = (
@@ -2050,18 +2062,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"mG" = (
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-9"
-	},
-/obj/effect/turf_decal/steeldecal/steel_decals_central7{
-	pixel_x = 0;
-	pixel_y = 2;
-	dir = 6
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
 "mJ" = (
 /obj/docking_port/mobile{
 	dir = 4;
@@ -2647,9 +2647,6 @@
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "qt" = (
-/obj/structure/cable{
-	icon_state = "2-9"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 3
 	},
@@ -3578,6 +3575,7 @@
 	pixel_x = 6;
 	pixel_y = 5
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "wS" = (
@@ -3656,7 +3654,8 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "riggerprivacyshutters";
-	dir = 4
+	dir = 4;
+	name = "privacy shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -4618,7 +4617,8 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "riggerprivacyshutters";
-	dir = 4
+	dir = 4;
+	name = "privacy shutters"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -5579,10 +5579,6 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "GC" = (
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
-/obj/structure/table/wood,
 /obj/item/reagent_containers/glass/mortar/glass{
 	name = "ashtray";
 	desc = "A place to put your butts.";
@@ -5596,6 +5592,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/structure/table/wood,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "GF" = (
@@ -6107,7 +6104,7 @@
 	icon_state = "5-8"
 	},
 /obj/structure/cable{
-	icon_state = "6-8"
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -6366,9 +6363,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "Lh" = (
-/obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "0-9"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -7655,6 +7655,9 @@
 "Uf" = (
 /obj/machinery/holopad/emergency/command,
 /obj/effect/turf_decal/box/white,
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Ug" = (
@@ -9194,9 +9197,9 @@ lH
 Ov
 Uf
 lj
-mG
-WE
-ek
+Ov
+ib
+Ve
 xJ
 nq
 tj
@@ -9232,7 +9235,7 @@ Eh
 SG
 Lh
 WE
-ib
+ek
 Od
 nr
 lp
