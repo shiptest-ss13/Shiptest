@@ -60,6 +60,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"ft" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "fB" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -103,6 +115,9 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_ccw,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -173,6 +188,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "nd" = (
@@ -195,6 +213,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -246,6 +267,9 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "qO" = (
@@ -270,6 +294,7 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
+/obj/machinery/atmospherics/components/unary/portables_connector/layer2,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "rS" = (
@@ -319,6 +344,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "zW" = (
@@ -332,6 +360,9 @@
 /obj/structure/cable,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -422,6 +453,11 @@
 /obj/structure/crate_shelf,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
+"Jn" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "LI" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
@@ -442,6 +478,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -504,6 +543,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Rb" = (
@@ -524,6 +566,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "6-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -558,9 +603,7 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
 	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Vq" = (
@@ -570,12 +613,30 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"Wc" = (
+/obj/structure/sign/number/random{
+	pixel_x = 7;
+	pixel_y = -6
+	},
+/obj/structure/sign/number/random{
+	pixel_x = -8;
+	pixel_y = -6
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
 "WW" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "Xp" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_ccw{
 	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/computer/helm{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -603,6 +664,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_cw{
 	dir = 4
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 
@@ -644,17 +706,17 @@ nP
 is
 LI
 bD
-WW
+Wc
 "}
 (5,1,1) = {"
 WW
 rs
-LI
+Jn
 Re
 Cb
 LI
 LI
-WW
+Wc
 "}
 (6,1,1) = {"
 qO
@@ -700,7 +762,7 @@ ly
 sr
 WW
 Vo
-Gd
+ft
 Gd
 Sl
 WW

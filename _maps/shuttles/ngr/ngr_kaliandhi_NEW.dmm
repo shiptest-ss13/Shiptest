@@ -8,6 +8,20 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ship/engineering/engine)
+"aq" = (
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500";
+	layer = 2.04
+	},
+/obj/machinery/suit_storage_unit/inherit{
+	req_access = list(1)
+	},
+/obj/item/clothing/suit/space/syndicate/ngr,
+/obj/item/tank/jetpack/oxygen/harness,
+/obj/item/clothing/head/helmet/space/syndicate/ngr,
+/obj/item/clothing/mask/gas/syndicate,
+/turf/open/floor/plasteel/tech,
+/area/ship/hangar)
 "aP" = (
 /obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/plating,
@@ -27,7 +41,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "bx" = (
-/turf/template_noop,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/hangar)
 "bD" = (
 /obj/machinery/atmospherics/components/binary/pump{
@@ -48,6 +63,16 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"cc" = (
+/obj/effect/turf_decal/stairs{
+	dir = 9;
+	color = "#575757"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hangar)
 "cg" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/turf_decal/techfloor{
@@ -151,6 +176,20 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines/starboard)
+"dX" = (
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500";
+	layer = 2.04
+	},
+/obj/structure/platform/industrial{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/plasteel/tech,
+/area/ship/hangar)
 "er" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -219,6 +258,7 @@
 /obj/effect/spawner/bunk_bed{
 	dir = 8
 	},
+/obj/structure/curtain/cloth/grey,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
 "fv" = (
@@ -293,6 +333,23 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
+"hX" = (
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500";
+	layer = 2.04
+	},
+/obj/structure/platform/industrial{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/structure/closet/crate/engineering{
+	name = "lattice construction crate"
+	},
+/obj/item/stack/rods/fifty,
+/turf/open/floor/plasteel/tech,
+/area/ship/hangar)
 "ii" = (
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer4{
 	dir = 9
@@ -330,6 +387,11 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"iE" = (
+/obj/machinery/light/directional/north,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/hangar)
 "iZ" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
 /obj/effect/turf_decal/industrial/warning{
@@ -577,6 +639,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
+"qy" = (
+/turf/open/floor/plasteel/tech,
+/area/ship/hangar)
 "qQ" = (
 /obj/structure/platform/industrial{
 	dir = 4
@@ -856,6 +921,9 @@
 /obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines/starboard)
+"xB" = (
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hangar)
 "xW" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -1085,6 +1153,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
+"Co" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hangar)
 "CA" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
 	dir = 8
@@ -1236,6 +1310,15 @@
 /obj/structure/transit_tube,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/crew/cryo)
+"Gk" = (
+/obj/structure/closet/wall/red/directional/west,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/gps,
+/turf/open/floor/plasteel/tech,
+/area/ship/hangar)
 "Gs" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1249,6 +1332,7 @@
 /area/ship/engineering/atmospherics)
 "GD" = (
 /obj/effect/spawner/bunk_bed,
+/obj/structure/curtain/cloth/fancy,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/commad)
 "GT" = (
@@ -1341,6 +1425,7 @@
 /obj/effect/spawner/bunk_bed{
 	dir = 4
 	},
+/obj/structure/curtain/cloth/grey,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
 "IP" = (
@@ -1374,7 +1459,11 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/template_noop,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/binary/valve/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ship/hangar)
 "Jt" = (
 /obj/item/toy/plush/nukeplushie{
@@ -1464,6 +1553,9 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines/port)
+"Lb" = (
+/turf/template_noop,
+/area/ship/crew/canteen)
 "Lt" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible/layer2{
 	dir = 4
@@ -1482,6 +1574,11 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
+"LD" = (
+/obj/machinery/light/directional/south,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/hangar)
 "LH" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /obj/structure/cable{
@@ -1576,8 +1673,24 @@
 	desc = "A coarse wool bedsheet. Surprisingly comfortable. In adversity we find strength.";
 	dream_messages = list("a better future","the fires of the past","blazing skies","the ashes of the old","watering a tree","a perpetual march forward")
 	},
+/obj/structure/curtain/cloth/fancy,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/commad)
+"NS" = (
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500";
+	layer = 2.04
+	},
+/obj/machinery/suit_storage_unit/inherit{
+	req_access = list(1)
+	},
+/obj/item/clothing/suit/space/syndicate/ngr,
+/obj/item/tank/jetpack/oxygen/harness,
+/obj/item/clothing/head/helmet/space/syndicate/ngr,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/tech,
+/area/ship/hangar)
 "Od" = (
 /obj/machinery/atmospherics/components/binary/circulator/cold/flipped,
 /obj/effect/turf_decal/industrial/outline/blue,
@@ -1615,7 +1728,11 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/template_noop,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/binary/valve/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ship/hangar)
 "Pi" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
@@ -1824,6 +1941,11 @@
 /obj/machinery/computer/cryopod/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
+"UF" = (
+/obj/structure/curtain/cloth/grey,
+/obj/machinery/recharge_station,
+/turf/open/floor/carpet/red,
+/area/ship/crew/dorm)
 "UQ" = (
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/storage)
@@ -1965,6 +2087,12 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines/starboard)
+"YC" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hangar)
 "YJ" = (
 /obj/effect/landmark/subship{
 	subship_template = /datum/map_template/shuttle/subshuttles/gryke;
@@ -2557,7 +2685,7 @@ df
 xq
 Ec
 Ec
-Ec
+UF
 sX
 ZQ
 ZQ
@@ -2655,11 +2783,11 @@ sX
 sX
 sX
 sX
-DP
-DP
-DP
-DP
-DP
+Lb
+Lb
+Lb
+Lb
+Lb
 DP
 DP
 DP
@@ -2680,18 +2808,18 @@ ta
 WI
 YV
 Mz
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
 DP
 DP
 DP
@@ -2712,18 +2840,18 @@ Kd
 Kd
 YV
 eI
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
 DP
 DP
 DP
@@ -2744,18 +2872,18 @@ Kd
 Kd
 oj
 Mz
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
 DP
 DP
 DP
@@ -2776,18 +2904,18 @@ Kd
 Kd
 Vk
 Mz
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
 DP
 DP
 DP
@@ -2808,17 +2936,17 @@ Kd
 GD
 BW
 Mz
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
 DP
 DP
 DP
@@ -2840,17 +2968,17 @@ Mz
 Mz
 Mz
 Mz
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
-DP
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
 DP
 DP
 DP
@@ -2874,12 +3002,12 @@ DP
 DP
 DP
 DP
-DP
-DP
-DP
-DP
-DP
-DP
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
 DP
 DP
 DP
@@ -2906,12 +3034,12 @@ DP
 DP
 DP
 DP
-DP
-DP
-DP
-DP
-DP
-DP
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
 DP
 DP
 DP
@@ -2938,12 +3066,12 @@ DP
 DP
 DP
 DP
-DP
-DP
-DP
-DP
-DP
-DP
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
 DP
 DP
 DP
@@ -2970,12 +3098,12 @@ DP
 DP
 DP
 DP
-DP
-DP
-DP
-DP
-DP
-DP
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
 DP
 DP
 DP
@@ -3140,11 +3268,11 @@ DP
 DP
 DP
 DP
-DP
-DP
-DP
-DP
-DP
+lN
+lN
+lN
+lN
+lN
 DP
 DP
 "}
@@ -3172,11 +3300,11 @@ DP
 DP
 DP
 DP
-DP
-DP
-DP
-DP
-DP
+lN
+aq
+Gk
+aq
+lN
 DP
 DP
 "}
@@ -3204,11 +3332,11 @@ DP
 DP
 DP
 DP
-DP
-DP
-DP
-DP
-DP
+lN
+NS
+qy
+aq
+lN
 DP
 DP
 "}
@@ -3233,13 +3361,13 @@ DP
 DP
 lN
 lN
+xB
 lN
 lN
 lN
-lN
-lN
-lN
-lN
+dX
+cc
+hX
 lN
 DP
 DP
@@ -3263,7 +3391,8 @@ DP
 DP
 DP
 DP
-bx
+lN
+iE
 bx
 bx
 bx
@@ -3272,7 +3401,6 @@ bx
 bx
 bx
 lN
-DP
 DP
 DP
 "}
@@ -3295,16 +3423,16 @@ DP
 DP
 DP
 DP
+lN
 bx
-bx
-bx
+YC
 bx
 Jp
 OX
 bx
-bx
+Co
+LD
 lN
-DP
 DP
 DP
 "}
@@ -3328,14 +3456,14 @@ DP
 DP
 DP
 lN
-lN
 pC
+lN
 lN
 JG
 Dv
 lN
-pC
 lN
+pC
 lN
 DP
 DP
