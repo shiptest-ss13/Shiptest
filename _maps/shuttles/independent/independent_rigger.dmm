@@ -947,11 +947,13 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "ek" = (
-/obj/structure/closet/emcloset/wall/directional/north{
-	pixel_x = 0;
-	pixel_y = 30
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "riggerprivacyshutters"
 	},
-/turf/open/floor/plasteel/patterned/cargo_one,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "eu" = (
 /obj/structure/cable{
@@ -1465,16 +1467,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/storage)
-"ib" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "riggerprivacyshutters";
-	name = "privacy shutters"
-	},
-/turf/open/floor/plating,
-/area/ship/cargo)
 "id" = (
 /obj/machinery/coffeemaker{
 	pixel_y = 7;
@@ -3654,8 +3646,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "riggerprivacyshutters";
-	dir = 4;
-	name = "privacy shutters"
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -4617,8 +4608,7 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "riggerprivacyshutters";
-	dir = 4;
-	name = "privacy shutters"
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -9198,7 +9188,7 @@ Ov
 Uf
 lj
 Ov
-ib
+ek
 Ve
 xJ
 nq
@@ -9235,7 +9225,7 @@ Eh
 SG
 Lh
 WE
-ek
+Ve
 Od
 nr
 lp
