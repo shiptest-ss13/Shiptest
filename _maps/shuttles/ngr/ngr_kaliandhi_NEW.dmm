@@ -215,6 +215,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
+"fp" = (
+/obj/effect/spawner/bunk_bed{
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
+/area/ship/crew/dorm)
 "fv" = (
 /obj/machinery/power/generator{
 	dir = 8
@@ -1331,6 +1337,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"IH" = (
+/obj/effect/spawner/bunk_bed{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/ship/crew/dorm)
 "IP" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
@@ -2481,7 +2493,7 @@ df
 xq
 Ec
 Ec
-Ec
+IH
 sX
 ZQ
 ZQ
@@ -2513,7 +2525,7 @@ df
 xq
 Ec
 Ec
-Ec
+IH
 sX
 ZQ
 ZQ
@@ -2577,7 +2589,7 @@ df
 xq
 Ec
 Ec
-Ec
+fp
 sX
 ZQ
 ZQ
@@ -2609,7 +2621,7 @@ df
 xq
 Ec
 Ec
-Ec
+fp
 sX
 eP
 Kl
