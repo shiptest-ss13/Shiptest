@@ -74,3 +74,18 @@
 	limb_id = "stubby_" + SPECIES_ELZUOSE
 	body_weight = 4
 	can_thump = FALSE
+
+/obj/item/bodypart/tail/elzu/curled
+	name = "curled elzuose tail"
+	icon_state = "curled_elzuose_tail"
+	limb_id = "curled_" + SPECIES_ELZUOSE
+
+/obj/item/bodypart/tail/elzu/pine
+	name = "pine elzuose tail"
+	icon_state = "pine_elzuose_tail"
+	limb_id = "pine_" + SPECIES_ELZUOSE
+
+/obj/item/bodypart/tail/elzu/medium
+	name = "medium elzuose tail"
+	icon_state = "medium_elzuose_tail"
+	limb_id = "medium_" + SPECIES_ELZUOSE

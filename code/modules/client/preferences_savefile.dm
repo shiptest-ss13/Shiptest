@@ -167,6 +167,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			"Long" = PROSTHETIC_NORMAL,
 			"Bifurcated" = "Bifurcated Elzuose Tail",
 			"Stubby" = "Stubby Elzuose Tail",
+			"Curled" = "Curled Elzuose Tail",
+			"Pine" = "Pine Elzuose Tail",
+			"Medium" = "Medium Elzuose Tail",
 			"None" = PROSTHETIC_NONE,
 		) // hell
 		var/legacy_feature
