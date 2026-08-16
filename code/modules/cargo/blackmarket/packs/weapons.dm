@@ -305,7 +305,7 @@
 /datum/blackmarket_item/weapon/guncase/faveleira
 	name = "ECM-25 Faveleira"
 	desc = "A fancy Clover Photonics multi-mode energy scattergun, fresh and only lightly used from some poor mining team that bit off more than they could drill. Fun for all ranges. Uses Eoehoma cells, and comes with upgraded ones, you're welcome."
-	item = /obj/item/gun/energy/clover/faveleira
+	item = /obj/item/gun/energy/clover/faveleira/clip
 
 	cost_min = 3500
 	cost_max = 4500

@@ -158,6 +158,7 @@
 	variance = 25
 	e_cost = 1250
 	select_name = "scatter"
+	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
 
 /obj/item/ammo_casing/energy/laser/clover/highpower
 	projectile_type = /obj/projectile/beam/laser/clover/highpower
