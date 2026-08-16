@@ -270,6 +270,8 @@
 	desc = "Cybersuns all-rounder combat hardsuit, this collapsar variant is in the colors of the trauma team."
 	cost = 5000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/collapsar/paramed)
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/syndicate/cybersun
 	crate_name = "Collapsar hardsuit crate"
 	faction_discount = 0
 	faction_locked = TRUE
