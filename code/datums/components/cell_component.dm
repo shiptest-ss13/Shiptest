@@ -76,14 +76,16 @@ The cells are removed from objects with the component through alt-click.
 	//Component to Parent signal registries
 	RegisterSignal(parent, COMSIG_ITEM_POWER_USE, PROC_REF(simple_power_use))
 	RegisterSignal(parent, COMSIG_ATOM_ATTACKBY, PROC_REF(insert_cell))
-	RegisterSignal(parent, COMSIG_CLICK_ALT , PROC_REF(remove_cell))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND_SECONDARY, PROC_REF(remove_cell))
 	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(examine_cell))
 
 /datum/component/cell/UnregisterFromParent()
-	UnregisterSignal(parent, COMSIG_ITEM_POWER_USE)
-	UnregisterSignal(parent, COMSIG_ATOM_ATTACKBY)
-	UnregisterSignal(parent, COMSIG_CLICK_ALT)
-	UnregisterSignal(parent, COMSIG_ATOM_EXAMINE)
+	UnregisterSignal(parent, list(
+		COMSIG_ITEM_POWER_USE,
+		COMSIG_ATOM_ATTACKBY,
+		COMSIG_ATOM_ATTACK_HAND_SECONDARY,
+		COMSIG_ATOM_EXAMINE,
+	))
 
 /datum/component/cell/Destroy(force)
 
@@ -138,7 +140,7 @@ The cells are removed from objects with the component through alt-click.
 	else
 		examine_list += span_notice("It has a [inserted_cell] inserted. \
 						The cell has <b>[inserted_cell.percent()]%</b> charge remaining. \
-						[cell_can_be_removed ? "<b>Alt-click</b> to remove the cell." : ""]")
+						[cell_can_be_removed ? "<b>Right-click</b> to remove the cell." : ""]")
 
 /// Handling of cell removal.
 /datum/component/cell/proc/remove_cell(datum/source, mob/user)
@@ -167,8 +169,6 @@ The cells are removed from objects with the component through alt-click.
 /// Handling of cell insertion.
 /datum/component/cell/proc/insert_cell(datum/source, obj/item/inserting_item, mob/living/user, params)
 	SIGNAL_HANDLER
-	if(!equipment.can_interact(user))
-		return
 
 	if(!istype(inserting_item, /obj/item/stock_parts/cell))
 		return
