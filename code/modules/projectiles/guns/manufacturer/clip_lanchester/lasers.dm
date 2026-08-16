@@ -162,7 +162,7 @@
 
 /obj/item/gun/energy/clover/clip
 	name = "ECM-12 \"Shillelagh\""
-	desc = "A pulsed-energy SMG that fires relatively high-power bolts for improved performance and armor penetration, at the cost of overall ammo capacity. Uses Eoehoma cells."
+	desc = "A pulsed-energy SMG that fires relatively high-power bolts for improved performance and armor penetration, at the cost of overall ammo capacity. Originally derived from the E-11 Energy Gun. Uses Eoehoma cells."
 	icon_state = "ecm12"
 	item_state = "ecm12"
 	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
