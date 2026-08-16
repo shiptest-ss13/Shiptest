@@ -511,19 +511,6 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "ci" = (
-/obj/machinery/button/door{
-	dir = 4;
-	id = "riggs_cargo";
-	name = "Blast Door Control";
-	pixel_x = -22;
-	pixel_y = 7
-	},
-/obj/machinery/button/shieldwallgen{
-	id = "riggs_airshield";
-	pixel_x = -22;
-	pixel_y = -6;
-	dir = 4
-	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "cj" = (
@@ -4868,9 +4855,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "DJ" = (
-/obj/effect/turf_decal/siding/wood/corner/walnut{
-	dir = 6
-	},
 /obj/machinery/light/directional/west,
 /obj/structure/bed{
 	dir = 4
@@ -7701,6 +7685,12 @@
 /obj/machinery/light/floor,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"UN" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "UR" = (
 /turf/closed/wall/mineral/plastitanium/interior,
 /area/ship/crew/canteen)
@@ -9083,7 +9073,7 @@ qJ
 WE
 WE
 qa
-WE
+UN
 WE
 WE
 yp
