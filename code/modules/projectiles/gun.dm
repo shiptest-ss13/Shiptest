@@ -75,7 +75,6 @@
 
 	// OPERATION - BEAM AIMING //
 	// if we have a beam aiming mode, these are used for it
-	// TODO these are just a wrapper for a component idk if we need this here
 	var/aiming = FALSE
 	var/aiming_time = 12
 	var/aiming_time_fire_threshold = 5
@@ -142,8 +141,7 @@
 	var/safety_multiplier = 1 // misfire chance multiplier. higher = more
 
 	// SPAWN INFO //
-	// Controls how the gun is spawned. Not used afterwards.
-	// Primarily for giving mappers control over guns.
+	// for giving mappers control over guns. only affects init
 	var/list/default_attachments = list() // attachments to spawn with
 	var/spawn_no_ammo = FALSE // should we spawn with no ammo
 

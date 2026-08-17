@@ -461,7 +461,7 @@
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
 
-// TODO find a home for this stupid thing
+// golden revolver. it is here. woe
 /obj/item/gun/ballistic/revolver/golden
 	name = "\improper Golden revolver"
 	desc = "This ain't no game, ain't never been no show, And I'll gladly gun down the oldest lady you know. Uses .357 ammo."
