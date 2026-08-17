@@ -538,7 +538,6 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 		sawoff(user, saw)
 
 // saw off your gun. comes from init or try_sawoff
-// TODO this should really be a component
 /obj/item/gun/ballistic/proc/sawoff(forced = FALSE)
 	if(sawn_off && !forced)
 		return

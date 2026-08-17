@@ -1,15 +1,3 @@
-/*
-	THROUGH ME YOU PASS INTO THE CITY OF WOE:
-	THROUGH ME YOU PASS INTO ETERNAL PAIN:
-	THROUGH ME AMONG THE PEOPLE LOST FOR AYE.
-	JUSTICE THE FOUNDER OF MY FABRIC MOVED:
-	TO REAR ME WAS THE TASK OF POWER DIVINE,
-	SUPREMEST WISDOM, AND PRIMEVAL LOVE.
-	BEFORE ME THINGS CREATE WERE NONE, SAVE THINGS
-	ETERNAL, AND ETERNAL I SHALL ENDURE.
-	ABANDON ALL HOPE, YE WHO ENTER HERE.
-*/
-
 // contains the basetype for revolvers
 
 #define REVOLVER_ROTATE_LEFT "rotate chamber left"
@@ -106,6 +94,8 @@
 	else
 		return ..()
 
+// code for dumping all the ammo out of the revolver
+// either all at once or one at a time depending on if it's gate loaded
 /obj/item/gun/ballistic/revolver/proc/unload_all_ammo(mob/living/user)
 	var/num_unloaded = 0
 
@@ -117,7 +107,7 @@
 			num_unloaded++
 		chamber_round(FALSE)
 		return num_unloaded
-	else
+	else // gate loaded
 		var/num_to_unload = magazine.max_ammo
 		if(!get_ammo_list(FALSE))
 			return num_unloaded
@@ -161,6 +151,7 @@
 		to_chat(user, "<span class='notice'>You eject the [cartridge_wording] from [src].</span>")
 	return TRUE
 
+// checks for making sure a round we're trying to insert is okay
 /obj/item/gun/ballistic/revolver/proc/insert_casing(mob/living/user, obj/item/ammo_casing/casing_to_insert, allow_ejection, display_messages)
 	if(!casing_to_insert)
 		return FALSE
@@ -209,6 +200,7 @@
 		to_chat(user, "<span class='notice'>You load the [cartridge_wording] into [src].</span>")
 	return TRUE
 
+// attackby - reloading code is here
 /obj/item/gun/ballistic/revolver/attackby(obj/item/attacking_obj, mob/user, params)
 	if(!(istype(attacking_obj, /obj/item/ammo_casing) || istype(attacking_obj, /obj/item/ammo_box)))
 		return ..()
@@ -272,7 +264,7 @@
 		return TRUE
 
 /obj/item/gun/ballistic/revolver/unique_action(mob/living/user)
-	rack(user)
+	rack(user) // operate hammer
 	return
 
 ///updates a bunch of racking related stuff and also handles the sound effects and the like
@@ -297,6 +289,7 @@
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
 
+// move a new round into "chambered" for firing
 /obj/item/gun/ballistic/revolver/chamber_round(spin_cylinder = TRUE, counter_clockwise = FALSE)
 	if(spin_cylinder)
 		chambered = magazine.get_round(TRUE, counter_clockwise)
@@ -305,6 +298,7 @@
 		chambered = magazine.stored_ammo[1]
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
+// pop up our radial menu when we altclick
 /obj/item/gun/ballistic/revolver/AltClick(mob/user)
 	if (unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		return ..()
@@ -325,7 +319,7 @@
 	if(!HAS_TRAIT(user, TRAIT_GUNSLINGER)) //only gunslingers are allowed to flip
 		chamber_options -= REVOLVER_FLIP
 
-	if(!gate_loaded) //these are completely redundant  if you can reload everything with a speedloader
+	if(!gate_loaded) //these are completely redundant if you can reload everything with a speedloader
 		chamber_options -= REVOLVER_AUTO_ROTATE_LEFT_LOADING
 		chamber_options -= REVOLVER_AUTO_ROTATE_RIGHT_LOADING
 		chamber_options -= REVOLVER_EJECT_CURRENT
@@ -396,6 +390,7 @@
 		boolets += magazine.ammo_count(countempties)
 	return boolets
 
+// handles hammer operation. or safety on regular revolvers
 /obj/item/gun/ballistic/revolver/toggle_safety(mob/user, silent=FALSE, rack_gun=TRUE)
 	if(semi_auto)//apogee said double actions should have normal safeties, so...
 		return ..()
@@ -421,6 +416,7 @@
 	if (current_skin)
 		. += "It can be spun with <b>alt+click</b>"
 
+// hammer fanning behavior for gunslingers
 /obj/item/gun/ballistic/revolver/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	var/fan = FALSE
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && !wielded && loc == user && !safety && !user.get_inactive_held_item())
