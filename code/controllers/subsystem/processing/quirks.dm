@@ -41,7 +41,6 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		"Robust Metabolism" = list(SPECIES_IPC, SPECIES_ELZUOSE),
 		"Fast Metabolism" = list(SPECIES_IPC, SPECIES_ELZUOSE),
 		"Electronic Voicebox" = list(SPECIES_IPC),
-		"Scoopable" = list(SPECIES_KEPORI),
 	)
 
 	for(var/client/client in GLOB.clients)
