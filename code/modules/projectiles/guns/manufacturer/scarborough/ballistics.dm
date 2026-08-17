@@ -194,6 +194,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 /obj/item/gun/ballistic/revolver/viper/no_mag
 	spawn_no_ammo = TRUE
 
+EMPTY_GUN_HELPER(revolver/viper)
+
 /obj/item/gun/ballistic/revolver/viper/indie
 	name = "Viper-23"
 	desc = "A powerful bull-barrel revolver. Very popular among mercenaries and the occasional well-to-do spacer or pirate for its flashy appearance and powerful cartridge. Chambered in .357 Magnum."
