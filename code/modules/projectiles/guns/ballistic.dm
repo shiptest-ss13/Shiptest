@@ -132,7 +132,8 @@
 	if (spawn_no_ammo)
 		get_ammo_list(drop_all = TRUE)
 	else
-		chamber_round()
+		if(bolt_type != BOLT_TYPE_OPEN) // open bolts don't "chamber" until they fire
+			chamber_round()
 	update_appearance()
 
 /obj/item/gun/ballistic/Destroy()
@@ -188,11 +189,18 @@
 	var/obj/item/ammo_casing/casing = chambered //Find chambered round
 	if(istype(casing)) //there's a chambered round
 		if(casing_ejector || !from_firing)
-			casing.on_eject(shooter)
+			if (ishuman(shooter))
+				var/mob/living/carbon/human/catcher = shooter
+				if (catcher.a_intent == INTENT_GRAB && !from_firing && catcher.put_in_hands(casing))
+					to_chat(catcher, span_notice("You grab \the [casing] as it is ejected."))
+				else
+					casing.on_eject(shooter)
+			else
+				casing.on_eject(shooter)
 			chambered = null
 		else if(empty_chamber)
 			chambered = null
-	if (chamber_next_round && (magazine?.max_ammo >= 1) && !condition_check(from_firing, shooter))
+	if (bolt_type != BOLT_TYPE_OPEN && chamber_next_round && (magazine?.max_ammo >= 1) && !condition_check(from_firing, shooter))
 		chamber_round()
 	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
 
@@ -219,14 +227,12 @@
 			chambered = magazine.get_round(FALSE)
 		else
 			chambered = magazine.get_round(keep_bullet || bolt_type == BOLT_TYPE_NO_BOLT)
-		if (bolt_type != BOLT_TYPE_OPEN)
-			chambered.forceMove(src)
 
 ///updates a bunch of racking related stuff and also handles the sound effects and the like
 /obj/item/gun/ballistic/proc/rack(mob/user = null, chamber_new_round = TRUE)
 	if (bolt_type == BOLT_TYPE_NO_BOLT) //If there's no bolt, nothing to rack
 		return
-	if (bolt_type == BOLT_TYPE_OPEN)
+	if (bolt_type == BOLT_TYPE_OPEN) // TODO what the fuck is this actually supposed to do
 		if(!bolt_locked)	//If it's an open bolt, racking again would do nothing
 			if (user)
 				to_chat(user, span_notice("\The [src]'s [bolt_wording] is already cocked!"))
@@ -266,8 +272,6 @@
 			playsound(src, load_sound, load_sound_volume, load_sound_vary)
 		else
 			playsound(src, load_empty_sound, load_sound_volume, load_sound_vary)
-		if (bolt_type == BOLT_TYPE_OPEN && !bolt_locked)
-			chamber_round(TRUE)
 		update_appearance()
 		SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 		return TRUE
@@ -277,8 +281,6 @@
 
 ///Handles all the logic of magazine ejection, if tac_load is set that magazine will be tacloaded in the place of the old eject
 /obj/item/gun/ballistic/proc/eject_magazine(mob/user, display_message = TRUE, obj/item/ammo_box/magazine/tac_load = null)
-	if(bolt_type == BOLT_TYPE_OPEN)
-		chambered = null
 	if (magazine.ammo_count())
 		playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
 	else
@@ -308,7 +310,7 @@
 /obj/item/gun/ballistic/can_shoot()
 	if(safety)
 		return FALSE
-	return chambered
+	return chambered || (bolt_type == BOLT_TYPE_OPEN && magazine && magazine.ammo_count()) // loathsome kludge but it works...
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
 	if(..())
@@ -375,6 +377,8 @@
 	return ..()
 
 /obj/item/gun/ballistic/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
+	if (bolt_type == BOLT_TYPE_OPEN) // open bolts chamber right before firing!
+		chamber_round()
 	. = ..() //The gun actually firing
 	postfire_empty_checks(.)
 
