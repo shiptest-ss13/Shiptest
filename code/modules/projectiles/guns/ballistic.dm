@@ -200,7 +200,7 @@
 			chambered = null
 		else if(empty_chamber)
 			chambered = null
-	if (bolt_type != BOLT_TYPE_OPEN && chamber_next_round && (magazine?.max_ammo >= 1) && !condition_check(from_firing, shooter))
+	if (!condition_check(from_firing, shooter) && bolt_type != BOLT_TYPE_OPEN && chamber_next_round && (magazine?.max_ammo >= 1))
 		chamber_round()
 	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
 
@@ -232,7 +232,7 @@
 /obj/item/gun/ballistic/proc/rack(mob/user = null, chamber_new_round = TRUE)
 	if (bolt_type == BOLT_TYPE_NO_BOLT) //If there's no bolt, nothing to rack
 		return
-	if (bolt_type == BOLT_TYPE_OPEN) // TODO what the fuck is this actually supposed to do
+	if (bolt_type == BOLT_TYPE_OPEN)
 		if(!bolt_locked)	//If it's an open bolt, racking again would do nothing
 			if (user)
 				to_chat(user, span_notice("\The [src]'s [bolt_wording] is already cocked!"))
@@ -310,7 +310,7 @@
 /obj/item/gun/ballistic/can_shoot()
 	if(safety)
 		return FALSE
-	return chambered || (bolt_type == BOLT_TYPE_OPEN && magazine && magazine.ammo_count()) // loathsome kludge but it works...
+	return chambered || (bolt_type == BOLT_TYPE_OPEN && !bolt_locked && magazine && magazine.ammo_count()) // loathsome kludge but it works...
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
 	if(..())
@@ -352,7 +352,7 @@
 ///Prefire empty checks for the bolt drop
 /obj/item/gun/ballistic/proc/prefire_empty_checks()
 	if (!chambered && !get_ammo())
-		if (bolt_type == BOLT_TYPE_OPEN && !bolt_locked)
+		if (bolt_type == BOLT_TYPE_OPEN && !bolt_locked) // open bolts snap shut when dry fired
 			bolt_locked = TRUE
 			playsound(src, bolt_drop_sound, bolt_drop_sound_volume)
 			update_appearance()

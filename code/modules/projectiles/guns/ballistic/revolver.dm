@@ -124,13 +124,13 @@
 
 		for(var/i in 1 to num_to_unload)
 			var/doafter_time = 0.4 SECONDS
-			if(!do_after(user, doafter_time, user))
+			if(!do_after(user, doafter_time, user, timed_action_flags = IGNORE_USER_LOC_CHANGE))
 				break
 			if(!eject_chamber(user))
 				doafter_time = 0 SECONDS
 			else
 				num_unloaded++
-			if(!do_after(user, doafter_time, user))
+			if(!do_after(user, doafter_time, user, timed_action_flags = IGNORE_USER_LOC_CHANGE))
 				break
 			chamber_round(TRUE, TRUE)
 
@@ -189,7 +189,7 @@
 				break
 	else
 		if(slot && !slot.BB && allow_ejection)
-			if(!do_after(user, doafter_time, user))
+			if(!do_after(user, doafter_time, user, timed_action_flags = IGNORE_USER_LOC_CHANGE))
 				eject_chamber(user)
 
 		rounds = magazine.ammo_list()
@@ -241,7 +241,7 @@
 		var/doafter_time = gate_loaded ? 0.4 SECONDS : 0.5 SECONDS
 		if(!gate_loaded && magazine.instant_load && attacking_box.instant_load)
 			doafter_time = 0 SECONDS
-		if(!do_after(user, doafter_time, user))
+		if(!do_after(user, doafter_time, user, timed_action_flags = IGNORE_USER_LOC_CHANGE))
 			break
 		if(casing_to_insert.loc != attacking_box) // make sure bullet has not left stack
 			break
@@ -255,7 +255,7 @@
 			attacking_box.update_ammo_count()
 			attacking_box.stored_ammo -= casing_to_insert
 		if(gate_loaded)
-			if(!do_after(user, doafter_time, user))
+			if(!do_after(user, doafter_time, user, timed_action_flags = IGNORE_USER_LOC_CHANGE))
 				break
 			switch(gate_load_direction)
 				if(REVOLVER_AUTO_ROTATE_RIGHT_LOADING)
