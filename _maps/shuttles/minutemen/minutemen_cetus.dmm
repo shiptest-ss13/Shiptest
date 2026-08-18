@@ -375,12 +375,24 @@
 	pixel_y = 10
 	},
 /obj/item/stock_parts/cell/gun/upgraded{
-	pixel_x = 1;
-	pixel_y = 6
+	pixel_x = 7;
+	pixel_y = 5
 	},
 /obj/item/stock_parts/cell/gun/upgraded{
-	pixel_x = 1;
+	pixel_x = 7;
 	pixel_y = 5
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -5;
+	pixel_y = 0
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -5;
+	pixel_y = 0
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -5;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
@@ -7003,10 +7015,6 @@
 	pixel_x = -5;
 	pixel_y = 7
 	},
-/obj/item/gun/ballistic/automatic/smg/cm5/no_mag{
-	pixel_x = 0;
-	pixel_y = 0
-	},
 /obj/item/gun/energy/kalix/clip{
 	pixel_y = -3
 	},
@@ -7019,6 +7027,7 @@
 	pixel_x = 0;
 	pixel_y = -9
 	},
+/obj/item/gun/ballistic/automatic/smg/cm5/compact/no_mag,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
 "NE" = (
