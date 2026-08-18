@@ -414,6 +414,11 @@
 /obj/structure/flora/rock/jungle,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"fS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/magnum_brass,
+/turf/open/floor/wood/maple/jungleplanet/interior,
+/area/ruin/jungle/swamp)
 "fV" = (
 /obj/item/reagent_containers/hypospray/medipen/combat_drug{
 	list_reagents = null
@@ -425,6 +430,14 @@
 /obj/structure/platform/wood_two,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"gh" = (
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood/maple/jungleplanet/interior,
+/area/ruin/jungle/swamp)
 "gw" = (
 /obj/effect/turf_decal/siding/brown,
 /obj/machinery/light_switch{
@@ -462,6 +475,14 @@
 	dir = 9
 	},
 /obj/machinery/light/directional/north,
+/turf/open/floor/wood/maple/jungleplanet/interior,
+/area/ruin/jungle/swamp)
+"gV" = (
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/magnum_brass,
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "hc" = (
@@ -1214,6 +1235,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/magnum_brass,
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
 "qo" = (
@@ -1945,6 +1967,11 @@
 /obj/machinery/griddle,
 /turf/open/floor/plasteel/tech/jungleplanet/interior,
 /area/ruin/jungle/swamp/butchery)
+"Ae" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/magnum_brass,
+/turf/open/floor/carpet/red/jungleplanet/interior,
+/area/ruin/jungle/swamp)
 "Ao" = (
 /obj/effect/turf_decal/siding/wood/maple,
 /obj/machinery/light/directional/south,
@@ -2825,6 +2852,9 @@
 /obj/effect/turf_decal/siding/wood/maple,
 /obj/effect/turf_decal/siding/wood/corner/maple{
 	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor4-old"
 	},
 /turf/open/floor/wood/maple/jungleplanet/interior,
 /area/ruin/jungle/swamp)
@@ -6886,7 +6916,7 @@ IC
 wS
 oM
 pN
-Ub
+fS
 Vq
 oM
 tX
@@ -7007,7 +7037,7 @@ AJ
 Rx
 Ao
 oM
-pN
+gV
 Ub
 wH
 xX
@@ -7129,12 +7159,12 @@ Sj
 Td
 In
 oM
-pN
+gh
 Ub
 Ao
 oM
 gw
-nP
+Ae
 oo
 oo
 WI
