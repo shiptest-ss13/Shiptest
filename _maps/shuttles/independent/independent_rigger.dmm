@@ -298,9 +298,9 @@
 	pixel_x = -7;
 	pixel_y = -12
 	},
-/obj/item/clothing/shoes/cowboy{
-	pixel_x = 7;
-	pixel_y = -6
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 5;
+	pixel_y = -9
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
@@ -615,6 +615,13 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 1
 	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -22;
+	pixel_y = -8;
+	name = "Maintenance Lock";
+	id = "Riggssecmaintlock"
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "cU" = (
@@ -626,9 +633,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced/spawner/west,
-/obj/machinery/modular_computer/console/preset/command{
-	pixel_x = 0;
-	pixel_y = 0;
+/obj/machinery/computer/cargo{
 	dir = 4
 	},
 /turf/open/floor/carpet/blue,
@@ -772,7 +777,8 @@
 	pixel_y = -22;
 	dir = 1;
 	id = "riggofficerdormsshutters";
-	name = "Officer Bunk Shutter Control"
+	name = "Officer Bunk Shutter Control";
+	req_access_txt = "19"
 	},
 /obj/machinery/light_switch{
 	dir = 1;
@@ -952,6 +958,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "ev" = (
@@ -1026,6 +1033,10 @@
 	},
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 4
+	},
+/obj/item/melee/knife/survival{
+	pixel_x = 3;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/security)
@@ -1302,7 +1313,8 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/maintenance_hatch{
-	dir = 1
+	dir = 1;
+	id_tag = "Riggssecmaintlock"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
@@ -1316,8 +1328,9 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/security)
 "gr" = (
-/turf/open/floor/carpet/green,
-/area/ship/crew/dorm)
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/cargo)
 "gU" = (
 /turf/closed/wall/mineral/plastitanium/interior,
 /area/ship/bridge)
@@ -1355,7 +1368,7 @@
 	dir = 9
 	},
 /obj/structure/cable{
-	icon_state = "6-8"
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -1443,6 +1456,10 @@
 	pixel_y = -6
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/firealarm/directional/west{
+	pixel_x = -31;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "ia" = (
@@ -1706,15 +1723,44 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "jC" = (
-/obj/structure/curtain,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/half{
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/white/half{
 	dir = 8
 	},
-/obj/structure/bed/roller,
-/obj/item/bedsheet/medical,
+/obj/structure/closet/secure_closet/wall/directional/south{
+	name = "Doctor's Locker";
+	icon_door = "med_wall";
+	dir = 8;
+	pixel_x = -29;
+	pixel_y = 0
+	},
+/obj/item/storage/box/masks{
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/item/storage/box/syringes{
+	pixel_x = 7;
+	pixel_y = -4
+	},
+/obj/item/storage/backpack/satchel/med,
+/obj/item/storage/backpack/duffelbag/med{
+	pixel_x = 0;
+	pixel_y = -8
+	},
+/obj/item/reagent_containers/glass/bottle/formaldehyde{
+	pixel_y = -8
+	},
+/obj/item/clothing/under/rank/medical/paramedic/emt,
+/obj/item/clothing/under/rank/medical/doctor/red,
+/obj/item/clothing/suit/hooded/wintercoat/medical,
+/obj/item/sensor_device,
+/obj/item/bonesetter,
+/obj/item/storage/belt/medical{
+	pixel_y = -4
+	},
+/obj/item/healthanalyzer,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "jG" = (
@@ -1905,9 +1951,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "lo" = (
@@ -1958,6 +2001,13 @@
 /obj/structure/chair/handrail{
 	pixel_x = 0;
 	pixel_y = 0
+	},
+/obj/machinery/button/door{
+	req_access_txt = "19";
+	name = "Bridge Entrance Lock";
+	pixel_x = -1;
+	pixel_y = 24;
+	id = "RiggsBridge"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -2276,14 +2326,6 @@
 	},
 /obj/effect/turf_decal/siding/black{
 	dir = 5
-	},
-/obj/machinery/button/door{
-	pixel_x = 23;
-	pixel_y = -11;
-	name = "Bridge Privacy Shutters";
-	id = "riggerprivacyshutters";
-	req_access = list(19);
-	dir = 8
 	},
 /obj/item/radio/intercom/wideband/directional/east{
 	pixel_x = 32;
@@ -2907,38 +2949,9 @@
 	pixel_x = 20;
 	pixel_y = -9
 	},
-/obj/structure/closet/secure_closet/wall/directional/south{
-	name = "Doctor's Locker";
-	icon_door = "med_wall";
-	dir = 4;
-	pixel_x = 28;
-	pixel_y = 0
-	},
-/obj/item/storage/backpack/duffelbag/med{
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/item/storage/backpack/satchel/med,
-/obj/item/clothing/suit/hooded/wintercoat/medical,
-/obj/item/clothing/under/rank/medical/doctor/red,
-/obj/item/clothing/under/rank/medical/paramedic/emt,
-/obj/item/storage/box/syringes{
-	pixel_x = 7;
-	pixel_y = -4
-	},
-/obj/item/storage/box/masks{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/sensor_device,
-/obj/item/reagent_containers/glass/bottle/formaldehyde{
-	pixel_y = -8
-	},
-/obj/item/storage/belt/medical{
-	pixel_y = -4
-	},
-/obj/item/bonesetter,
-/obj/item/healthanalyzer,
+/obj/structure/curtain,
+/obj/structure/bed/roller,
+/obj/item/bedsheet/medical,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "sb" = (
@@ -4591,7 +4604,8 @@
 	},
 /obj/machinery/door/airlock/command/glass{
 	name = "Bridge";
-	dir = 4
+	dir = 4;
+	id_tag = "RiggsBridge"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "riggerprivacyshutters";
@@ -4615,13 +4629,14 @@
 	pixel_x = 0;
 	pixel_y = 0
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/ship/security)
 "BZ" = (
 /obj/effect/turf_decal/industrial/traffic,
-/obj/machinery/firealarm/directional/west{
-	pixel_x = -31;
-	pixel_y = 8
+/obj/structure/closet/emcloset/wall/directional/west{
+	pixel_x = -29;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
@@ -4904,7 +4919,10 @@
 	pixel_y = 10;
 	pixel_x = -4
 	},
-/obj/machinery/newscaster/directional/east,
+/obj/machinery/computer/helm/viewscreen/directional/east{
+	pixel_x = 17;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "Eh" = (
@@ -4928,6 +4946,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-9"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -5393,7 +5414,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = 7;
+	pixel_x = 6;
 	pixel_y = -21;
 	id = "Riggsmedbay";
 	name = "Surgical Room Shutters"
@@ -5559,9 +5580,9 @@
 	pixel_x = 3;
 	pixel_y = 2
 	},
-/obj/item/lighter{
-	pixel_x = -6;
-	pixel_y = 7
+/obj/item/lighter/greyscale{
+	pixel_x = -7;
+	pixel_y = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -5662,7 +5683,7 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 1
 	},
-/obj/machinery/computer/cargo,
+/obj/machinery/modular_computer/console/preset/command,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "Hx" = (
@@ -5844,6 +5865,7 @@
 	pixel_x = 4;
 	pixel_y = -1
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Iq" = (
@@ -6237,6 +6259,13 @@
 	pixel_y = 0;
 	dir = 4
 	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = -9;
+	pixel_y = -23;
+	name = "Maintenance Lock";
+	id = "Riggsmedmaintlock"
+	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "Kw" = (
@@ -6320,6 +6349,12 @@
 "KP" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/storage)
+"KR" = (
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
 "Lg" = (
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -6342,7 +6377,7 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
-	icon_state = "0-9"
+	icon_state = "0-1"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -6436,8 +6471,8 @@
 /obj/item/storage/fancy/egg_box,
 /obj/item/reagent_containers/condiment/milk,
 /obj/item/reagent_containers/condiment/soymilk,
-/obj/item/food/fishmeat,
-/obj/item/food/fishmeat,
+/obj/item/food/fishmeat/carp,
+/obj/item/food/fishmeat/carp,
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice,
 /obj/item/food/grown/potato,
 /obj/item/food/grown/potato,
@@ -6571,9 +6606,9 @@
 	pixel_x = 1;
 	pixel_y = 2
 	},
-/obj/item/stock_parts/cell/super{
-	pixel_x = -4;
-	pixel_y = -4
+/obj/item/stock_parts/cell/high/plus{
+	pixel_x = -5;
+	pixel_y = -2
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -7414,6 +7449,9 @@
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "SS" = (
@@ -7463,6 +7501,10 @@
 	pixel_y = 10
 	},
 /obj/structure/chair/sofa/blue/left/directional/east,
+/obj/structure/sign/warning/smoking/circle{
+	pixel_x = -24;
+	pixel_y = 2
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "Tl" = (
@@ -7528,7 +7570,8 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/maintenance_hatch{
-	dir = 1
+	dir = 1;
+	id_tag = "Maintenance Lock"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
@@ -7582,12 +7625,24 @@
 	gpstag = "!SHIP"
 	},
 /obj/item/modular_computer/tablet/preset/cheap,
-/obj/machinery/computer/helm/viewscreen/directional/east{
-	pixel_x = 20;
-	pixel_y = 2
-	},
 /obj/effect/turf_decal/siding/black{
 	dir = 4
+	},
+/obj/machinery/button/door{
+	req_access_txt = "19";
+	name = "Bridge Entrance Lock";
+	pixel_x = 24;
+	pixel_y = -3;
+	id = "RiggsBridge";
+	dir = 8
+	},
+/obj/machinery/button/door{
+	pixel_x = 24;
+	pixel_y = 8;
+	name = "Bridge Privacy Shutters";
+	id = "riggerprivacyshutters";
+	req_access = list(19);
+	dir = 8
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
@@ -7629,9 +7684,6 @@
 "Uf" = (
 /obj/machinery/holopad/emergency/command,
 /obj/effect/turf_decal/box/white,
-/obj/structure/cable{
-	icon_state = "2-9"
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Ug" = (
@@ -7867,11 +7919,15 @@
 	pixel_y = 2;
 	dir = 8
 	},
-/obj/item/stock_parts/cell/high/empty{
-	pixel_x = 6;
-	pixel_y = -8
+/obj/item/stock_parts/cell/high{
+	pixel_x = 5;
+	pixel_y = -4
 	},
 /obj/structure/table,
+/obj/machinery/newscaster/directional/east{
+	pixel_x = 31;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "Wz" = (
@@ -7988,7 +8044,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Xe" = (
-/obj/machinery/newscaster/directional/south,
 /obj/item/folder/yellow{
 	pixel_x = -5;
 	pixel_y = 3
@@ -7998,6 +8053,7 @@
 	pixel_y = 4
 	},
 /obj/structure/table,
+/obj/machinery/computer/helm/viewscreen/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Xt" = (
@@ -8923,7 +8979,7 @@ oG
 Be
 Rz
 az
-lt
+JU
 lt
 qd
 wf
@@ -9174,7 +9230,7 @@ kG
 Sy
 gU
 lH
-Ov
+KR
 Uf
 lj
 Ov
@@ -9200,7 +9256,7 @@ Sh
 (24,1,1) = {"
 cN
 Nv
-gr
+rY
 Bb
 nY
 Eo
@@ -9215,7 +9271,7 @@ Eh
 SG
 Lh
 WE
-Ve
+gr
 Od
 nr
 lp
