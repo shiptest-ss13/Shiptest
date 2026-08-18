@@ -480,6 +480,7 @@
 
 /obj/item/gun/proc/fire_gun(atom/target, mob/living/user, flag, params)
 	if(!actually_shoots)// this gun doesn't actually fire bullets. Dont shoot.
+		balloon_alert(user, "broken!")
 		return
 	//No target? Why are we even firing anyways...
 	if(!target)

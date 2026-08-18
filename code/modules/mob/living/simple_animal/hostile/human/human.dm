@@ -84,6 +84,43 @@
 		armor = instance.armor
 		qdel(instance)
 
+// applies special stuff to guns, which are very special indeed
+/mob/living/simple_animal/hostile/human/proc/modify_dropped_gun(obj/item/gun/dropped_gun)
+	// BALLISTICS - apply wear and empty the mag partially
+	if(istype(dropped_gun, /obj/item/gun/ballistic))
+		var/obj/item/gun/ballistic/cosmetic_damage = dropped_gun
+		cosmetic_damage.gun_wear = rand(cosmetic_damage.wear_minor_threshold, cosmetic_damage.wear_maximum) //my free gun... it's bowowken...
+		if(cosmetic_damage.magazine)
+			for(var/i = 0, i < rand(0, cosmetic_damage.magazine.max_ammo), i++)
+				qdel(cosmetic_damage.magazine.get_round()) // this feels kludgy but like. how else
+				cosmetic_damage.magazine.update_ammo_count()
+				cosmetic_damage.update_appearance()
+
+	// ENERGY - drain cell a random amount
+	if(istype(dropped_gun, /obj/item/gun/energy))
+		var/obj/item/gun/energy/lazor = dropped_gun
+		if(lazor.cell)
+			lazor.cell.charge = rand(0, lazor.cell.maxcharge)
+			lazor.update_appearance()
+
+	// apply break chance
+	if(!prob(weapon_drop_chance)) // you got the dud!
+		visible_message(span_danger("[src]'s [dropped_gun.name] is destroyed as they collapse!"))
+		dropped_gun.actually_shoots = FALSE
+			dropped_gun.desc += span_warning("\nIt appears to be irreparably broken.")
+
+// determines behavior for dropping the held item
+/mob/living/simple_animal/hostile/human/proc/handle_hand_item_destruction(var/obj/hand)
+	if(hand && weapon_drop_chance)
+		if(ispath(hand, /obj/item/gun)) // we always drop guns, the gun chance just busts them
+			var/obj/item/gun/dropped_gun = new hand(loc)
+			modify_dropped_gun(dropped_gun)
+		else // for melee weapons and stuff they just explode into dust
+			if(prob(weapon_drop_chance))
+				new hand(loc)
+			else
+				visible_message(span_danger("[src]'s [hand.name] is destroyed as they collapse!"))
+
 /mob/living/simple_animal/hostile/human/drop_loot()
 	. = ..()
 	if(QDELING(src))
@@ -92,15 +129,8 @@
 		return
 	if(mob_spawner)
 		new mob_spawner(loc, mob_species)
-	for (var/obj/hand in list(l_hand, r_hand))
-		if(hand && weapon_drop_chance)
-			var/obj/item/gun/ballistic/cosmetic_damage = new hand(loc)
-			if(istype(cosmetic_damage)) // add wear to ballistics
-				cosmetic_damage.gun_wear = rand(cosmetic_damage.wear_minor_threshold, cosmetic_damage.wear_maximum) //my free gun... it's bowowken...
-			if(!prob(weapon_drop_chance)) // you got the dud!
-				visible_message(span_danger("[src]'s [hand.name] is destroyed as they collapse!"))
-				cosmetic_damage.actually_shoots = FALSE
-				cosmetic_damage.desc += span_warning("\nIt appears to be irreparably broken.")
+	handle_hand_item_destruction(l_hand)
+	handle_hand_item_destruction(r_hand)
 
 /mob/living/simple_animal/hostile/human/vv_edit_var(var_name, var_value)
 	switch(var_name)

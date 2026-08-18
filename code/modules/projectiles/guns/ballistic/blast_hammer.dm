@@ -51,6 +51,9 @@
 	. = ..()
 	update_appearance()
 
+/obj/item/gun/ballistic/shotgun/blasting_hammer/fire_gun(atom/target, mob/living/user, flag, params)
+	return // actually_shoots stops it from shooting but this avoids displaying the "broke" text
+
 /obj/item/gun/ballistic/shotgun/blasting_hammer/pre_attack(atom/A, mob/living/user, params)
 	if(charging)
 		charge(A,user)
