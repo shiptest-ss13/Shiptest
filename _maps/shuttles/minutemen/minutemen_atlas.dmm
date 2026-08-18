@@ -743,13 +743,18 @@
 	pixel_y = 28
 	},
 /obj/machinery/recharger{
-	pixel_y = 3
+	pixel_y = 3;
+	pixel_x = -6
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
 /obj/effect/turf_decal/spline/plain/opaque/blue{
 	dir = 1
+	},
+/obj/machinery/recharger{
+	pixel_x = 6;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -3588,17 +3593,20 @@
 	},
 /obj/item/gun/ballistic/automatic/marksman/f4{
 	pixel_x = -11;
-	pixel_y = 28
+	pixel_y = 23
 	},
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag{
 	pixel_x = -10;
-	pixel_y = 23
+	pixel_y = 15
 	},
 /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag{
 	pixel_x = -6;
-	pixel_y = 5
+	pixel_y = 12
 	},
-/obj/item/gun/energy/clover/faveleira/clip,
+/obj/item/gun/energy/clover/faveleira/clip{
+	pixel_x = -11;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "An" = (

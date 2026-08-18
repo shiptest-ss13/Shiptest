@@ -879,6 +879,15 @@
 	pixel_y = 3;
 	pixel_x = 9
 	},
+/obj/structure/closet/wall/directional/south,
+/obj/machinery/recharger{
+	pixel_x = -2;
+	pixel_y = 2
+	},
+/obj/machinery/recharger{
+	pixel_x = 10;
+	pixel_y = 2
+	},
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "yu" = (
@@ -1002,6 +1011,9 @@
 /obj/item/storage/toolbox/electrical{
 	pixel_y = 1;
 	pixel_x = 2
+	},
+/obj/machinery/cell_charger{
+	pixel_y = 3
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)

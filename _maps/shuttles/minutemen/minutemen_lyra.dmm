@@ -3413,7 +3413,11 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/trimline/transparent/blue/filled,
 /obj/machinery/recharger{
-	pixel_x = 5;
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/machinery/recharger{
+	pixel_x = -6;
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
