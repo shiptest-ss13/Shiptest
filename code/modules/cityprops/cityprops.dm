@@ -118,6 +118,8 @@
 
 /obj/machinery/deployable_turret/spotlight/proc/toggle_power(status_to_set)
 	var/force_off
+	if(!linked_searchlight)
+		return
 	if(machine_stat & (NOPOWER|BROKEN))
 		. = FALSE
 		force_off = TRUE
