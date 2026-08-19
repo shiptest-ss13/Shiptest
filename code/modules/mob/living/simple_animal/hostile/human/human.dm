@@ -94,7 +94,7 @@
 			for(var/i = 0, i < rand(0, cosmetic_damage.magazine.max_ammo), i++)
 				qdel(cosmetic_damage.magazine.get_round()) // this feels kludgy but like. how else
 				cosmetic_damage.magazine.update_ammo_count()
-				cosmetic_damage.update_appearance()
+			cosmetic_damage.update_appearance()
 
 	// ENERGY - drain cell a random amount, apply separate drop chance to cell
 	if(istype(dropped_gun, /obj/item/gun/energy))
@@ -116,15 +116,16 @@
 
 // determines behavior for dropping the held item
 /mob/living/simple_animal/hostile/human/proc/handle_hand_item_destruction(obj/hand)
-	if(hand)
-		if(ispath(hand, /obj/item/gun)) // we always drop guns, the gun chance just busts them
-			var/obj/item/gun/dropped_gun = new hand(loc)
-			modify_dropped_gun(dropped_gun)
-		else // for melee weapons and stuff they just explode into dust
-			if(prob(weapon_drop_chance))
-				new hand(loc)
-			else
-				visible_message(span_danger("[src]'s [hand.name] is destroyed as they collapse!"))
+	if(!hand) // wow look nothing
+		return
+	if(ispath(hand, /obj/item/gun)) // we always drop guns, the drop chance just makes them functional
+		var/obj/item/gun/dropped_gun = new hand(loc)
+		modify_dropped_gun(dropped_gun)
+	else // for melee weapons and stuff they just explode into dust
+		if(prob(weapon_drop_chance))
+			new hand(loc)
+		else
+			visible_message(span_danger("[src]'s [hand.name] is destroyed as they collapse!"))
 
 /mob/living/simple_animal/hostile/human/drop_loot()
 	. = ..()
