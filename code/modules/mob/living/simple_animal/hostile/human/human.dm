@@ -96,7 +96,7 @@
 				cosmetic_damage.magazine.update_ammo_count()
 				cosmetic_damage.update_appearance()
 
-	// ENERGY - drain cell a random amount, apply Good Cell drop chance to cell
+	// ENERGY - drain cell a random amount, apply separate drop chance to cell
 	if(istype(dropped_gun, /obj/item/gun/energy))
 		var/obj/item/gun/energy/lazor = dropped_gun
 		if(lazor.cell)
@@ -105,7 +105,7 @@
 			lazor.cell.name = "dented [lazor.cell.name]"
 			lazor.cell.desc += " It doesn't seem to be in the greatest condition..."
 			if(!prob(weapon_drop_chance))
-				lazor.cell.rigged = TRUE
+				lazor.cell.rigged = TRUE // smiles warmly
 				lazor.cell.show_rigged = FALSE
 
 	// apply break chance
@@ -116,7 +116,7 @@
 
 // determines behavior for dropping the held item
 /mob/living/simple_animal/hostile/human/proc/handle_hand_item_destruction(obj/hand)
-	if(hand && weapon_drop_chance)
+	if(hand)
 		if(ispath(hand, /obj/item/gun)) // we always drop guns, the gun chance just busts them
 			var/obj/item/gun/dropped_gun = new hand(loc)
 			modify_dropped_gun(dropped_gun)
