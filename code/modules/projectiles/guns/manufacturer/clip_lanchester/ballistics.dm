@@ -69,7 +69,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/cm70
 	name = "CM-70 machine pistol"
-	desc = "A compact machine pistol designed to rapidly fire 3-round bursts. Popular with officers and certain special units, the CM-70 is incredibly dangerous at close range. Chambered in 9mm."
+	desc = "A compact machine pistol designed to rapidly fire 9mm ammo. Popular with officers and certain special units, the CM-70 is incredibly dangerous at close range. Chambered in 9mm."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
@@ -82,8 +82,8 @@
 	)
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
-	fire_delay = 0.4 SECONDS
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	fire_delay = 0.07 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 	manufacturer = MANUFACTURER_MINUTEMAN
 
