@@ -110,7 +110,7 @@
 			dropped_gun.desc += span_warning("\nIt appears to be irreparably broken.")
 
 // determines behavior for dropping the held item
-/mob/living/simple_animal/hostile/human/proc/handle_hand_item_destruction(var/obj/hand)
+/mob/living/simple_animal/hostile/human/proc/handle_hand_item_destruction(obj/hand)
 	if(hand && weapon_drop_chance)
 		if(ispath(hand, /obj/item/gun)) // we always drop guns, the gun chance just busts them
 			var/obj/item/gun/dropped_gun = new hand(loc)
