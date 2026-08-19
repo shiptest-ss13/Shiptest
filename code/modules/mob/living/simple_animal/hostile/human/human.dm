@@ -107,7 +107,7 @@
 	if(!prob(weapon_drop_chance)) // you got the dud!
 		visible_message(span_danger("[src]'s [dropped_gun.name] is destroyed as they collapse!"))
 		dropped_gun.actually_shoots = FALSE
-			dropped_gun.desc += span_warning("\nIt appears to be irreparably broken.")
+		dropped_gun.desc += span_warning("\nIt appears to be irreparably broken.")
 
 // determines behavior for dropping the held item
 /mob/living/simple_animal/hostile/human/proc/handle_hand_item_destruction(obj/hand)
