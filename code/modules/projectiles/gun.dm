@@ -284,6 +284,7 @@
 
 /obj/item/gun/proc/fire_gun(atom/target, mob/living/user, flag, params)
 	if(!actually_shoots) // you got the dud
+		balloon_alert(user, "broken!")
 		return
 	if(!target) // we have no target
 		return
