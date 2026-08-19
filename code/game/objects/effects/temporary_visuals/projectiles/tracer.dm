@@ -82,3 +82,12 @@
 
 /obj/effect/projectile/tracer/gauss
 	icon_state = "hc_gauss"
+
+/obj/effect/projectile/tracer/ionization
+	icon_state = "ionization"
+
+/obj/effect/projectile/tracer/lorentz
+	icon_state = "lorentz"
+
+/obj/effect/projectile/tracer/flare
+	icon_state = "flare"

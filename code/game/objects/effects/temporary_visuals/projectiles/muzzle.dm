@@ -44,3 +44,12 @@
 
 /obj/effect/projectile/muzzle/gauss
 	icon_state = "muzzle_gauss_rifle"
+
+/obj/effect/projectile/muzzle/ionization
+	icon_state = "ionization"
+
+/obj/effect/projectile/muzzle/lorentz
+	icon_state = "lorentz"
+
+/obj/effect/projectile/muzzle/flare
+	icon_state = "flare"

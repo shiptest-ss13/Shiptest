@@ -36,8 +36,16 @@
 	tac_reloads = FALSE
 	tactical_reload_delay = 1.2 SECONDS
 
+	///is the gun's latch closed right now?
 	var/latch_closed = TRUE
+	///time to toggle the gun's securing latch
 	var/latch_toggle_delay = 0.6 SECONDS
+
+	///latch icon state(for overriding)
+	var/latch_iconstate = "latch"
+
+	//file to pull the latch icon from
+	var/latch_icon = 'icons/obj/guns/cell_latch.dmi'
 
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
@@ -352,24 +360,24 @@
 	. = ..()
 	if(!automatic_charge_overlays || QDELETED(src))
 		return
-	// Every time I see code this "flexible", a kitten fucking dies //it got worse
+	// Every time I see code this "flexible", a kitten fucking dies //it got worse //help
 	//todo: refactor this a bit to allow showing of charge on a gun's cell
 	var/overlay_icon_state = "[icon_state]_charge"
 	var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]
 	var/ratio = get_charge_ratio()
 	if(ismob(loc) && !internal_magazine)
 		var/mutable_appearance/latch_overlay
-		latch_overlay = mutable_appearance('icons/obj/guns/cell_latch.dmi')
+		latch_overlay = mutable_appearance([latch_icon])
 		if(latch_closed)
 			if(cell)
-				latch_overlay.icon_state = "latch-on-full"
+				latch_overlay.icon_state = "[latch_icon_state]-on-full"
 			else
-				latch_overlay.icon_state = "latch-on-empty"
+				latch_overlay.icon_state = "[latch_icon_state]-on-empty"
 		else
 			if(cell)
-				latch_overlay.icon_state = "latch-off-full"
+				latch_overlay.icon_state = "[latch_icon_state]-off-full"
 			else
-				latch_overlay.icon_state = "latch-off-empty"
+				latch_overlay.icon_state = "[latch_icon_state]-off-empty"
 		. += latch_overlay
 	if(cell)
 		. += "[icon_state]_cell"

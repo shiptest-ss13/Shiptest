@@ -56,3 +56,12 @@
 /obj/effect/projectile/impact/gauss
 	name = "gauss impact"
 	icon_state = "hc_gauss"
+
+/obj/effect/projectile/impact/ionization
+	icon_state = "ionization"
+
+/obj/effect/projectile/impact/lorentz
+	icon_state = "lorentz"
+
+/obj/effect/projectile/impact/flare
+	icon_state = "flare"
