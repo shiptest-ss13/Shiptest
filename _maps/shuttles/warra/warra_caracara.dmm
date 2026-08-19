@@ -202,7 +202,7 @@
 /area/ship/bridge)
 "cJ" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "m_bridgewindow";
+	id = "caracara_cargo_shutters";
 	dir = 4
 	},
 /obj/structure/cable/white{
@@ -492,6 +492,7 @@
 	pixel_x = 6;
 	pixel_y = -2
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "eP" = (
@@ -569,7 +570,7 @@
 	dir = 1;
 	id = "carcara_laundry_win";
 	name = "Window Control";
-	pixel_x = 10;
+	pixel_x = 0;
 	pixel_y = -23
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -685,7 +686,6 @@
 /obj/structure/sink/counter{
 	dir = 1
 	},
-/obj/machinery/light/small/directional/west,
 /obj/machinery/button/door{
 	pixel_y = 9;
 	pixel_x = -22;
@@ -693,6 +693,7 @@
 	id = "carabath_bolt";
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet)
 "hJ" = (
@@ -918,10 +919,10 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "jM" = (
-/obj/machinery/airalarm/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/captain)
 "jV" = (
@@ -1336,6 +1337,7 @@
 	pixel_x = 0;
 	pixel_y = -32
 	},
+/obj/structure/dresser/wall/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "qF" = (
@@ -1849,6 +1851,7 @@
 "wt" = (
 /obj/effect/spawner/bunk_bed,
 /obj/machinery/newscaster/directional/west,
+/obj/structure/dresser/wall/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "wM" = (
@@ -2353,7 +2356,6 @@
 /area/ship/storage/equip)
 "EK" = (
 /obj/structure/table/wood,
-/obj/machinery/light/small/directional/west,
 /obj/structure/closet/secure_closet/wall/directional/north{
 	icon_door = "command_wall";
 	icon_state = "blue_wall";
@@ -2628,10 +2630,10 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 6
 	},
-/obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet)
 "Is" = (
@@ -2997,6 +2999,7 @@
 	pixel_x = 6
 	},
 /obj/machinery/firealarm/directional/north,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
 "Ox" = (
@@ -3026,6 +3029,13 @@
 	pixel_x = -20;
 	pixel_y = -13
 	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "caracara_cargo_shutters";
+	name = "Cargo Bay Shutters";
+	pixel_x = -21;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway)
 "OC" = (
@@ -3043,7 +3053,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "OE" = (
-/obj/structure/dresser/wall/directional/south,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm)
 "OP" = (
@@ -3213,6 +3223,7 @@
 /obj/item/tank/internals/emergency_oxygen,
 /obj/item/tank/internals/emergency_oxygen,
 /obj/item/tank/internals/emergency_oxygen,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "PX" = (
@@ -3233,10 +3244,16 @@
 	},
 /obj/effect/turf_decal/box/corners,
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/light/directional/east,
 /obj/item/hand_labeler{
 	pixel_x = 4;
 	pixel_y = 8
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "caracara_cargo_shutters";
+	name = "Cargo Bay Shutters";
+	pixel_x = 22;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -3512,10 +3529,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
-"Uw" = (
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/carpet/nanoweave,
-/area/ship/crew/dorm)
 "UG" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
@@ -3757,7 +3770,7 @@
 /area/ship/storage/equip)
 "XL" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "m_bridgewindow";
+	id = "caracara_cargo_shutters";
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -3913,6 +3926,7 @@
 /obj/machinery/firealarm/directional/north{
 	pixel_x = 6
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 
@@ -4373,7 +4387,7 @@ nG
 Lw
 vo
 hn
-Uw
+BS
 qy
 Yy
 qq
