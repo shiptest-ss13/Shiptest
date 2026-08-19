@@ -86,15 +86,18 @@
 
 // applies special stuff to guns, which are very special indeed
 /mob/living/simple_animal/hostile/human/proc/modify_dropped_gun(obj/item/gun/dropped_gun)
-	// BALLISTICS - apply wear and empty the mag partially
+	// BALLISTICS - apply wear, mag drop chance, and empty the mag partially
 	if(istype(dropped_gun, /obj/item/gun/ballistic))
 		var/obj/item/gun/ballistic/cosmetic_damage = dropped_gun
 		cosmetic_damage.gun_wear = rand(cosmetic_damage.wear_minor_threshold, cosmetic_damage.wear_maximum) //my free gun... it's bowowken...
+		if(!prob(weapon_drop_chance))
+			qdel(cosmetic_damage.magazine)
+			cosmetic_damage.magazine = null
 		if(cosmetic_damage.magazine)
 			for(var/i = 0, i < rand(0, cosmetic_damage.magazine.max_ammo), i++)
 				qdel(cosmetic_damage.magazine.get_round()) // this feels kludgy but like. how else
 				cosmetic_damage.magazine.update_ammo_count()
-			cosmetic_damage.update_appearance()
+		cosmetic_damage.update_appearance()
 
 	// ENERGY - drain cell a random amount, apply separate drop chance to cell
 	if(istype(dropped_gun, /obj/item/gun/energy))
@@ -113,6 +116,15 @@
 		visible_message(span_danger("[src]'s [dropped_gun.name] is destroyed as they collapse!"))
 		dropped_gun.actually_shoots = FALSE
 		dropped_gun.desc += span_warning("\nIt appears to be irreparably broken.")
+		var/icon/scuff = icon(initial(dropped_gun.icon), initial(dropped_gun.icon_state))
+		var/icon/temp = icon('icons/effects/item_damage.dmi', "itemdamaged")
+		temp.Scale(64, 32)
+		temp.Shift(EAST, 32)
+		temp.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_OVERLAY)
+		scuff.Blend("#fff", ICON_ADD)
+		scuff.Blend(temp, ICON_MULTIPLY)
+		var/mutable_appearance/oops = new(scuff)
+		dropped_gun.add_overlay(oops)
 
 // determines behavior for dropping the held item
 /mob/living/simple_animal/hostile/human/proc/handle_hand_item_destruction(obj/hand)
