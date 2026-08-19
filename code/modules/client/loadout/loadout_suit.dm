@@ -63,6 +63,10 @@
 	display_name = "suit jacket, navy"
 	path = /obj/item/clothing/suit/lawyer/navy
 
+/datum/gear/suit/toggle/aclf
+	display_name = "ACLF leather jacket"
+	path = /obj/item/clothing/suit/toggle/aclf
+
 /datum/gear/suit/toggle/flight
 	display_name = "flight jacket, colorable"
 	path = /obj/item/clothing/suit/toggle/flight

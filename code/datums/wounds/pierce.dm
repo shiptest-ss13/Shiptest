@@ -92,19 +92,24 @@
 		return BLOOD_FLOW_DECREASING
 	return BLOOD_FLOW_STEADY
 
-/datum/wound/pierce/bleed/handle_process()
+/datum/wound/pierce/bleed/handle_process(seconds_per_tick, times_fired)
 	blood_flow = min(blood_flow, WOUND_SLASH_MAX_BLOODFLOW)
 
+	if(victim.bodytemperature < (HUMAN_BODYTEMP_NORMAL -  10))
+		blood_flow -= 0.1 * seconds_per_tick
+		if(SPT_PROB(2.5, seconds_per_tick))
+			to_chat(victim, "<span class='notice'>You feel the [lowertext(name)] in your [limb.name] firming up from the cold!</span>")
+
 	if(HAS_TRAIT(victim, TRAIT_BLOODY_MESS))
-		blood_flow += 0.3
+		blood_flow += 0.15 * seconds_per_tick
 
 	if(limb.current_gauze)
-		blood_flow -= limb.current_gauze.absorption_rate * gauzed_clot_rate
+		blood_flow -= limb.current_gauze.absorption_rate * gauzed_clot_rate * seconds_per_tick
 
 	if(blood_flow <= 0)
 		qdel(src)
 
-/datum/wound/pierce/bleed/on_stasis()
+/datum/wound/pierce/bleed/on_stasis(seconds_per_tick, times_fired)
 	. = ..()
 	if(blood_flow <= 0)
 		qdel(src)

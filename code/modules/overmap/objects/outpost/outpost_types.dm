@@ -8,8 +8,7 @@
 	// (Interestingly, this is much less of a problem for ruins: PlaceOnTop ignores the top closed turf in the baseturfs stack
 	// of the new tile, meaning that placing plating on top of a wall doesn't result in a wall underneath the plating.)
 	should_place_on_top = FALSE
-	var/outpost_name = "Fallback Outpost"
-	var/outpost_administrator = "Fallback Administration"
+
 
 /datum/map_template/outpost/New()
 	. = ..(path = "_maps/outpost/[name].dmm")
@@ -41,8 +40,7 @@
 */
 /datum/map_template/outpost/indie_space
 	name = "indie_space"
-	outpost_name = "Installation Trifuge"
-	outpost_administrator = "Caldwell"
+
 
 /datum/map_template/outpost/hangar/indie_space_20x20
 	name = "hangar/indie_space_20x20"
@@ -74,8 +72,6 @@
 */
 /datum/map_template/outpost/warra_ice
 	name = "warra_ice"
-	outpost_name = "Yebiri Sipili"
-	outpost_administrator = "Makosso-Warra Authorities"
 
 /datum/map_template/outpost/hangar/warra_ice_20x20
 	name = "hangar/warra_ice_20x20"
@@ -107,8 +103,7 @@
 */
 /datum/map_template/outpost/ngr_rock
 	name = "ngr_rock"
-	outpost_name = "Agni Trading Post"
-	outpost_administrator = "The NGR Bureau Of Development"
+
 
 /datum/map_template/outpost/hangar/ngr_rock_20x20
 	name = "hangar/ngr_rock_20x20"
@@ -140,8 +135,7 @@
 */
 /datum/map_template/outpost/clip_ocean
 	name = "clip_ocean"
-	outpost_name = "Arrowsong Refueling Platform"
-	outpost_administrator = "The Arrowsong Executive Council"
+
 
 /datum/map_template/outpost/hangar/clip_ocean_20x20
 	name = "hangar/clip_ocean_20x20"
@@ -171,8 +165,7 @@
 //Cybersun Gas Giant
 /datum/map_template/outpost/cybersun_gas_giant
 	name = "cybersun_gas_giant"
-	outpost_name = "Thousand Eyes Perch"
-	outpost_administrator = "Cybersun Frontier Developments"
+
 
 /datum/map_template/outpost/hangar/cybersun_gas_giant_20x20
 	name = "hangar/cybersun_gas_giant_20x20"
@@ -208,10 +201,13 @@
 	main_template = /datum/map_template/outpost/indie_space
 	elevator_template = /datum/map_template/outpost/elevator_indie
 	faction = FACTION_INDEPENDENT
+
+	outpost_name = "Installation Trifuge"
+	outpost_administrator = "Caldwell"
 	// Uses "default" hangars (indie_space).
 
 /datum/overmap/outpost/warra_ice
-	token_icon_state = "station_asteroid"
+	token_icon_state = "station_planet"
 	main_template = /datum/map_template/outpost/warra_ice
 	elevator_template = /datum/map_template/outpost/elevator_ice
 	faction = FACTION_WARRA
@@ -223,6 +219,9 @@
 		/datum/map_template/outpost/hangar/warra_ice_56x20,
 		/datum/map_template/outpost/hangar/warra_ice_56x40
 	)
+
+	outpost_name = "Yebiri Sipili"
+	outpost_administrator = "Makosso-Warra Authorities"
 	faction = /datum/faction/warra
 
 	main_level_ztraits = list(
@@ -232,14 +231,13 @@
 		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/icerock/temperate/lit
 	)
 	hangar_ztraits =  list(
-		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/icerock/temperate/lit
 	)
 
 /datum/overmap/outpost/ngr_rock
-	token_icon_state = "station_asteroid"
+	token_icon_state = "station_planet"
 	main_template = /datum/map_template/outpost/ngr_rock
 	elevator_template = /datum/map_template/outpost/elevator_rock
 	weather_controller_type = /datum/weather_controller/rockplanet_safe
@@ -251,6 +249,9 @@
 		/datum/map_template/outpost/hangar/ngr_rock_56x40
 	)
 
+	outpost_name = "Agni Trading Post"
+	outpost_administrator = "The NGR Bureau Of Development"
+
 	main_level_ztraits = list(
 		ZTRAIT_STATION = TRUE,
 		ZTRAIT_SUN_TYPE = AZIMUTH,
@@ -258,7 +259,6 @@
 		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
 	)
 	hangar_ztraits =  list(
-		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
@@ -277,6 +277,9 @@
 		/datum/map_template/outpost/hangar/clip_ocean_56x40
 	)
 
+	outpost_name = "Arrowsong Refueling Platform"
+	outpost_administrator = "The Arrowsong Executive Council"
+
 	main_level_ztraits = list(
 		ZTRAIT_STATION = TRUE,
 		ZTRAIT_SUN_TYPE = AZIMUTH,
@@ -284,7 +287,6 @@
 		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost
 	)
 	hangar_ztraits =  list(
-		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost
@@ -316,6 +318,9 @@
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/cybersun_outpost_exterior
 	)
+
+	outpost_name = "Thousand Eyed Perch"
+	outpost_administrator = "Cybersun Frontier Developments"
 
 
 /datum/overmap/outpost/cybersun_gas_giant/alter_token_appearance()
