@@ -96,12 +96,17 @@
 				cosmetic_damage.magazine.update_ammo_count()
 				cosmetic_damage.update_appearance()
 
-	// ENERGY - drain cell a random amount
+	// ENERGY - drain cell a random amount, apply Good Cell drop chance to cell
 	if(istype(dropped_gun, /obj/item/gun/energy))
 		var/obj/item/gun/energy/lazor = dropped_gun
 		if(lazor.cell)
 			lazor.cell.charge = rand(0, lazor.cell.maxcharge)
 			lazor.update_appearance()
+			lazor.cell.name = "dented [lazor.cell.name]"
+			lazor.cell.desc += " It doesn't seem to be in the greatest condition..."
+			if(!prob(weapon_drop_chance))
+				lazor.cell.rigged = TRUE
+				lazor.cell.show_rigged = FALSE
 
 	// apply break chance
 	if(!prob(weapon_drop_chance)) // you got the dud!
