@@ -104,7 +104,7 @@
 	icon_state = base_icon_state
 	return ..()
 
-/obj/item/trench_club
+/obj/item/melee/trench_club
 	name = "trench club"
 	desc = "A simplistic club made with a wooden handle and a crude lead macehead. Stings like a bitch."
 	icon = 'icons/obj/weapon/blunt.dmi'
