@@ -755,7 +755,7 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
-
+	fire_delay = 0.3 SECONDS
 	manufacturer = MANUFACTURER_MINUTEMAN
 
 	weapon_weight = WEAPON_MEDIUM
