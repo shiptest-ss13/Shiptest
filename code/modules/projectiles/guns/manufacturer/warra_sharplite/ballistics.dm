@@ -43,7 +43,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger)
 
 /obj/item/gun/ballistic/automatic/pistol/champion
 	name = "Advantage PHB Champion"
-	desc = "A large, burst-fire machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Chambered in 9mm."
+	desc = "A large machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Chambered in 9mm."
 	icon_state = "champion"
 	item_state = "champion"
 	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
@@ -85,7 +85,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger)
 
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
-	fire_delay = 0.4 SECONDS
+	fire_delay = 0.08 SECONDS
 
 	wear_minor_threshold = 240
 	wear_major_threshold = 720
