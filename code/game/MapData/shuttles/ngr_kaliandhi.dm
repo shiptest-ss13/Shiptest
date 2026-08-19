@@ -1,38 +1,53 @@
-/obj/machinery/air_sensor/atmos/air_tank/kaliandhi
-	id_tag = "kali_air_sensor"
+/obj/machinery/air_sensor/atmos/oxygen_tank/kaliandhi
+	id_tag = "kali_oxygen_sensor"
 
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input/kaliandhi
-	id = "kali_air_in"
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input/kaliandhi
+	id = "kali_oxygen_in"
 
-/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output/kaliandhi
-	id_tag = "kali_air_out"
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/oxygen_output/kaliandhi
+	id_tag = "kali_oxygen_out"
 
-/obj/machinery/air_sensor/atmos/kali_andhi_fuel
-	id_tag = "kali_fuel_sensor"
+/obj/machinery/air_sensor/atmos/nitrogen_tank/kaliandhi
+	id_tag = "kali_nitrogen_sensor"
 
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/kali_andhi_fuel
-	id = "kali_fuel_in"
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input/kaliandhi
+	id = "kali_nitrogen_in"
 
-/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/kali_andhi_fuel
-	id_tag = "kali_fuel_out"
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/nitrogen_output/kaliandhi
+	id_tag = "kali_nitrogen_out"
+
+/obj/machinery/air_sensor/atmos/kali_andhi_hydrogen
+	id_tag = "kali_hydrogen_sensor"
+
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/kali_andhi_hydrogen
+	id = "kali_hydrogen_in"
+
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/kali_andhi_hydrogen
+	id_tag = "kali_hydrogen_out"
 
 /obj/machinery/air_sensor/atmos/kali_andhi_burn
 	id_tag = "kali_burn_sensor"
 
-/obj/machinery/computer/atmos_control/tank/air_tank/kaliandhi
-	input_tag = "kali_air_in"
-	output_tag = "kali_air_out"
-	sensors = list("kali_air_sensor" = "Air Mix Tank")
 
-/obj/machinery/computer/atmos_control/tank/kali_andhi_fuel
-	name = "fuel tank control console"
-	input_tag = "kali_fuel_in"
-	output_tag = "kali_fuel_out"
-	sensors = list("kali_fuel_sensor" = "Fuel Mix Tank")
+/obj/machinery/computer/atmos_control/tank/nitrogen_tank/kaliandhi
+	input_tag = "kali_nitrogen_in"
+	output_tag = "kali_nitrogen_out"
+	sensors = list("kali_nitrogen_sensor" = "Nitrogen Mix Tank")
+
+/obj/machinery/computer/atmos_control/tank/oxygen_tank/kaliandhi
+	input_tag = "kali_oxygen_in"
+	output_tag = "kali_oxygen_out"
+	sensors = list("kali_oxygen_sensor" = "Oxygen Mix Tank")
+
+/obj/machinery/computer/atmos_control/tank/kali_andhi_hydrogen
+	name = "Hydrogen Tank Control Console"
+	input_tag = "kali_hydrogen_in"
+	output_tag = "kali_hydrogen_out"
+	sensors = list("kali_hydrogen_sensor" = "Hydrogen Mix Tank")
 
 /obj/machinery/computer/atmos_control/tank/kali_andhi_burn
-	name = "burn chamber monitoring console"
-	sensors = list("kali_fuel_sensor" = "Fuel Mix Tank")
+	name = "Burn Chamber Monitoring Console"
+	sensors = list("kali_burn_sensor" = "Burn Chamber")
 
 /obj/machinery/air_sensor/external/kaliandhi
 	id_tag = "kali_external_sensor"
