@@ -795,6 +795,18 @@
 
 	backpack_contents = list(/obj/item/weldingtool/hugetank)
 
+/datum/outfit/job/warra/roboticist/empty
+	name = "Makosso-Warra - Roboticist (Naked)"
+	id_assignment = "Roboticist"
+	job_icon = "roboticist"
+	jobtype = /datum/job/roboticist
+
+	uniform = /obj/item/clothing/under/warra/science/robotics
+	suit = null
+	glasses = null
+
+	backpack_contents = null
+
 // Pilot. idk
 /datum/outfit/job/warra/pilot
 	name = "Makosso-Warra - Pilot"
