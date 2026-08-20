@@ -322,7 +322,7 @@
 /mob/living/simple_animal/hostile/automated/walkmine/ramzi
 	faction = list("Ramzi Clique")
 
-// shotgun hoppers
+// shotgun hoppers (To-do, make them "jump" around like the antlions do?)
 
 /mob/living/simple_animal/hostile/automated/hopper
 	name = "Al'sa CQB 'Hopper'"
