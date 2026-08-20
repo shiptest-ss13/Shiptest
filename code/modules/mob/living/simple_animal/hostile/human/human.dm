@@ -90,7 +90,7 @@
 	if(istype(dropped_gun, /obj/item/gun/ballistic))
 		var/obj/item/gun/ballistic/cosmetic_damage = dropped_gun
 		cosmetic_damage.gun_wear = rand(cosmetic_damage.wear_minor_threshold, cosmetic_damage.wear_maximum) //my free gun... it's bowowken...
-		if(!prob(weapon_drop_chance))
+		if(!prob(weapon_drop_chance) && !cosmetic_damage.internal_magazine)
 			qdel(cosmetic_damage.magazine)
 			cosmetic_damage.magazine = null
 		if(cosmetic_damage.magazine)
@@ -111,14 +111,15 @@
 				lazor.cell.rigged = TRUE // smiles warmly
 				lazor.cell.show_rigged = FALSE
 
-	// apply break chance
+	// apply break chance and broken overlay
 	if(!prob(weapon_drop_chance)) // you got the dud!
 		visible_message(span_danger("[src]'s [dropped_gun.name] is destroyed as they collapse!"))
 		dropped_gun.actually_shoots = FALSE
 		dropped_gun.desc += span_warning("\nIt appears to be irreparably broken.")
+		// overlay manipulation...
 		var/icon/scuff = icon(initial(dropped_gun.icon), initial(dropped_gun.icon_state))
 		var/icon/temp = icon('icons/effects/item_damage.dmi', "itemdamaged")
-		temp.Scale(64, 32)
+		temp.Scale(64, 32) // we clone the overlay twice so it actually fits on guns
 		temp.Shift(EAST, 32)
 		temp.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_OVERLAY)
 		scuff.Blend("#fff", ICON_ADD)
