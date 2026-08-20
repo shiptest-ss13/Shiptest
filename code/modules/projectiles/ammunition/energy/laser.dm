@@ -131,6 +131,10 @@
 	e_cost = 1000
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/laser/shotgun/drone
+	projectile_type = /obj/projectile/beam/weak/shotgun
+	pellets = 4
+
 /obj/item/ammo_casing/energy/laser/shotgun/sharplite
 	projectile_type = /obj/projectile/beam/weak/shotgun/sharplite
 	delay = 0.4 SECONDS
