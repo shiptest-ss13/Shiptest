@@ -725,6 +725,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/structure/closet/crate/rations,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "hN" = (
@@ -1054,6 +1056,10 @@
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/north,
+/obj/item/kirbyplants/fullysynthetic{
+	icon_state = "plant-27";
+	pixel_x = -8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway)
 "mj" = (
@@ -1768,6 +1774,14 @@
 	pixel_x = 5;
 	pixel_y = 0
 	},
+/obj/item/clothing/under/warra/science/robotics{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/obj/item/clothing/under/warra/science/robotics{
+	pixel_x = -4;
+	pixel_y = -5
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "vp" = (
@@ -2076,10 +2090,14 @@
 /obj/effect/turf_decal/corner/opaque/warrablue{
 	dir = 10
 	},
-/obj/machinery/light/small/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/machinery/photocopier{
+	pixel_x = 0;
+	pixel_y = -3
+	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/fore)
 "Af" = (
@@ -2115,6 +2133,13 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/fore)
+"Bm" = (
+/obj/item/kirbyplants/fullysynthetic{
+	pixel_x = -8;
+	pixel_y = 0
+	},
+/turf/open/floor/carpet/nanoweave,
+/area/ship/crew/dorm)
 "Bp" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
@@ -2286,6 +2311,11 @@
 /area/ship/crew/cryo)
 "Dc" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/closet/crate/secure/plasma{
+	req_access_txt = "10"
+	},
+/obj/item/stack/sheet/mineral/plasma/ten,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Dd" = (
@@ -3634,6 +3664,9 @@
 	pixel_x = 32;
 	pixel_y = 1
 	},
+/obj/item/kirbyplants/fullysynthetic{
+	pixel_x = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway)
 "Vk" = (
@@ -4468,7 +4501,7 @@ Xo
 Yy
 rd
 mj
-BS
+Bm
 OE
 Yy
 DW
