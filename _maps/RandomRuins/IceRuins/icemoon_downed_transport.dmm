@@ -6591,7 +6591,9 @@
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/powered/icemoon/downed_transport/ramshackle_workroom)
 "ZF" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor,
+/mob/living/simple_animal/hostile/human/hermit/survivor{
+	desc = "A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body."
+	},
 /turf/open/floor/wood/icemoon{
 	icon_state = "wood-broken2"
 	},
