@@ -18,7 +18,6 @@
 	desc = "A metal rod struck into the ground."
 	},
 /obj/item/clothing/head/helmet/ngr{
-	pixel_x = 0;
 	pixel_y = 24
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
@@ -181,7 +180,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/button/door{
-	pixel_x = 0;
 	pixel_y = 24;
 	id = "frontiepod3"
 	},
@@ -475,6 +473,9 @@
 /area/ruin/rockplanet/rust_base)
 "dk" = (
 /obj/structure/platform/wood,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/stairs/wood/mid{
 	dir = 8
 	},
@@ -507,8 +508,7 @@
 /area/ruin/rockplanet/rust_base/hallway2)
 "dC" = (
 /obj/item/stack/sheet/mineral/snow{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet,
 /area/ruin/rockplanet/rust_base)
@@ -527,7 +527,6 @@
 	pixel_y = 7
 	},
 /obj/machinery/recharger{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -585,8 +584,7 @@
 	pixel_y = -4
 	},
 /obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = -2;
@@ -601,8 +599,7 @@
 /obj/item/food/grown/potato,
 /obj/item/food/grown/potato,
 /obj/item/food/grown/potato{
-	pixel_x = 4;
-	pixel_y = 0
+	pixel_x = 4
 	},
 /obj/item/food/grown/potato{
 	pixel_x = 5;
@@ -664,15 +661,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/mechbay)
+"ej" = (
+/obj/structure/platform/wood{
+	dir = 8
+	},
+/obj/item/ammo_casing/spent/pistol_steel,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/pavement/rockplanet/lit,
+/area/ruin/rockplanet/rust_base)
 "ek" = (
 /obj/structure/sink{
 	dir = 8;
-	pixel_x = 14;
-	pixel_y = 0
+	pixel_x = 14
 	},
 /obj/structure/mirror{
-	pixel_x = 26;
-	pixel_y = 0
+	pixel_x = 26
 	},
 /obj/machinery/door/window{
 	dir = 1
@@ -1179,6 +1184,15 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/rust_base/hallway)
+"hu" = (
+/obj/structure/platform/wood{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/pavement/rockplanet/lit,
+/area/ruin/rockplanet/rust_base)
 "hw" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/machinery/light/directional/north,
@@ -1187,8 +1201,7 @@
 "hA" = (
 /obj/structure/chair/stool,
 /obj/structure/sign/poster/contraband/syndiemoth{
-	pixel_x = 30;
-	pixel_y = 0
+	pixel_x = 30
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/rust_base)
@@ -1275,6 +1288,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/rust_base)
 "it" = (
@@ -1294,7 +1310,6 @@
 "iw" = (
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger{
-	pixel_x = 0;
 	pixel_y = 1
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
@@ -1327,7 +1342,6 @@
 "iA" = (
 /obj/machinery/button/door{
 	pixel_x = 21;
-	pixel_y = 0;
 	dir = 8;
 	id = "rustbunk1"
 	},
@@ -1348,8 +1362,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/south{
-	pixel_x = 8;
-	pixel_y = -32
+	pixel_x = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = -5;
@@ -1422,6 +1435,9 @@
 "jl" = (
 /obj/machinery/porta_turret/ruin/ramzi/heavy{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
@@ -1704,7 +1720,6 @@
 /obj/machinery/button/door{
 	id = "rustbridge";
 	dir = 1;
-	pixel_x = 0;
 	pixel_y = -21
 	},
 /obj/effect/decal/cleanable/glass/plastitanium,
@@ -1719,7 +1734,6 @@
 /area/ruin/rockplanet/rust_base/hallway2)
 "lG" = (
 /obj/machinery/button/shieldwallgen{
-	pixel_x = 0;
 	pixel_y = -20;
 	id = "rusteastholo";
 	dir = 1
@@ -1745,8 +1759,7 @@
 	dir = 10
 	},
 /obj/item/wrench{
-	pixel_x = 11;
-	pixel_y = 0
+	pixel_x = 11
 	},
 /obj/item/stock_parts/manipulator{
 	pixel_x = -8;
@@ -1922,7 +1935,6 @@
 "np" = (
 /obj/structure/table,
 /obj/machinery/microwave{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -1993,8 +2005,7 @@
 	pixel_y = 7
 	},
 /obj/item/clothing/suit/ramzi{
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/item/clothing/under/syndicate/ramzi{
 	pixel_x = -3;
@@ -2005,7 +2016,6 @@
 	pixel_y = -9
 	},
 /obj/item/clothing/neck/shemagh/ramzi{
-	pixel_x = 0;
 	pixel_y = 12
 	},
 /obj/item/clothing/neck/shemagh/ramzi{
@@ -2052,9 +2062,7 @@
 	dir = 6
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/bridge)
@@ -2072,9 +2080,7 @@
 	dir = 8
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/rust_base/mechbay)
 "nY" = (
@@ -2097,9 +2103,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/dorms)
@@ -2119,7 +2123,6 @@
 	pixel_y = -3
 	},
 /obj/item/clothing/suit/ramzi{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /obj/item/clothing/suit/ramzi{
@@ -2383,9 +2386,7 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
 "pU" = (
@@ -2860,6 +2861,18 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base/engine_two)
+"sN" = (
+/obj/machinery/door/airlock/external{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/rockplanet/rust_base)
 "sO" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -2884,7 +2897,6 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "tf" = (
 /obj/item/melee/knife/kitchen{
-	pixel_x = 0;
 	pixel_y = 14
 	},
 /obj/effect/mapping_helpers/turf/burnt,
@@ -2956,9 +2968,7 @@
 "tC" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base/engine_two)
 "tD" = (
@@ -2978,9 +2988,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/bridge)
 "tE" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -3104,6 +3112,13 @@
 /obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/pod,
 /area/ruin/rockplanet/rust_base/tanto2)
+"us" = (
+/obj/structure/platform/wood,
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/concrete/pavement/rockplanet/lit,
+/area/ruin/rockplanet/rust_base)
 "uu" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3116,7 +3131,6 @@
 /area/ruin/rockplanet/rust_base/engine_one)
 "uw" = (
 /obj/item/stack/ore/salvage/scrapgold{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
@@ -3424,8 +3438,7 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/firealarm/directional/north{
-	pixel_x = -5;
-	pixel_y = 32
+	pixel_x = -5
 	},
 /obj/structure/extinguisher_cabinet/directional/north{
 	pixel_x = 8;
@@ -3462,7 +3475,6 @@
 /obj/structure/rack,
 /obj/item/ammo_casing/spent/pistol_steel,
 /obj/structure/sign/poster/contraband/bulldog{
-	pixel_x = 0;
 	pixel_y = 30
 	},
 /turf/open/floor/plasteel/tech,
@@ -4051,7 +4063,6 @@
 	},
 /obj/machinery/turretid/lethal{
 	id = "rustguns";
-	pixel_x = 0;
 	pixel_y = 25
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -4343,7 +4354,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/button/door{
-	pixel_x = 0;
 	pixel_y = 24;
 	id = "frontiepod4"
 	},
@@ -4449,7 +4459,6 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = 0;
 	pixel_y = -20;
 	id = "frontiepod2"
 	},
@@ -4605,6 +4614,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/rust_base)
 "FA" = (
@@ -4675,6 +4687,9 @@
 "FU" = (
 /obj/structure/platform/wood,
 /obj/item/ammo_casing/spent/pistol_steel,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
 "FZ" = (
@@ -4700,8 +4715,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/sign/poster/contraband/cybersun{
-	pixel_x = 28;
-	pixel_y = 0
+	pixel_x = 28
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/rust_base/hallway2)
@@ -4883,6 +4897,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base)
 "HJ" = (
@@ -4911,8 +4928,7 @@
 	},
 /obj/structure/chair/stool{
 	dir = 4;
-	pixel_x = -11;
-	pixel_y = 0
+	pixel_x = -11
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -4988,7 +5004,6 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = 0;
 	pixel_y = -20;
 	id = "frontiepod1"
 	},
@@ -5211,8 +5226,7 @@
 /area/ruin/rockplanet/rust_base/drop1)
 "JQ" = (
 /obj/machinery/washing_machine{
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/structure/window{
 	dir = 1
@@ -5342,7 +5356,6 @@
 "KX" = (
 /obj/structure/chair,
 /obj/structure/sign/poster/contraband/punch_shit{
-	pixel_x = 0;
 	pixel_y = 30
 	},
 /turf/open/floor/carpet/green,
@@ -5360,6 +5373,9 @@
 	dir = 1
 	},
 /obj/structure/platform/wood,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
 "Le" = (
@@ -5509,12 +5525,10 @@
 	},
 /obj/item/radio/intercom/wideband/table{
 	dir = 1;
-	pixel_y = 0;
 	pixel_x = -13
 	},
 /obj/item/radio/intercom/table{
 	dir = 1;
-	pixel_y = 0;
 	pixel_x = 5
 	},
 /obj/effect/decal/cleanable/glass/plastitanium,
@@ -5638,7 +5652,6 @@
 	dir = 1
 	},
 /obj/structure/sign/poster/contraband/cybersun_med{
-	pixel_x = 0;
 	pixel_y = -30
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -5805,7 +5818,6 @@
 	pixel_y = -7
 	},
 /obj/item/radio/intercom/directional/west{
-	pixel_x = -31;
 	pixel_y = 12
 	},
 /turf/open/floor/carpet/green,
@@ -6014,7 +6026,6 @@
 	dir = 1
 	},
 /obj/item/gun_maint_kit{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -6131,12 +6142,9 @@
 "QN" = (
 /obj/structure/sink/kitchen{
 	dir = 1;
-	pixel_x = 0;
-	pixel_y = 0;
 	name = "sink"
 	},
 /obj/structure/mirror{
-	pixel_x = 0;
 	pixel_y = -25
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -6177,9 +6185,7 @@
 /turf/closed/wall/r_wall,
 /area/ruin/rockplanet/rust_base/bridge)
 "Rl" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -6214,6 +6220,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/rust_base)
@@ -6391,8 +6400,7 @@
 	pixel_y = 28
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = 6;
-	pixel_y = 32
+	pixel_x = 6
 	},
 /turf/open/floor/hangar/plasteel/dark,
 /area/ruin/rockplanet/rust_base/slop)
@@ -6401,6 +6409,9 @@
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
 "Th" = (
@@ -6667,6 +6678,9 @@
 /obj/structure/platform/wood/corner{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
 "Vj" = (
@@ -6699,6 +6713,9 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base)
@@ -6744,6 +6761,9 @@
 	dir = 1
 	},
 /obj/structure/platform/wood,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
 "VH" = (
@@ -6775,8 +6795,7 @@
 	pixel_y = 5
 	},
 /obj/item/storage/pouch/ammo{
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
@@ -6822,8 +6841,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/contraband/cybersun_borg{
-	pixel_x = 28;
-	pixel_y = 0
+	pixel_x = 28
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/rust_base/hallway2)
@@ -6887,7 +6905,6 @@
 "Wh" = (
 /obj/machinery/button/door{
 	pixel_x = -21;
-	pixel_y = 0;
 	dir = 4;
 	id = "rustbunk2"
 	},
@@ -7136,8 +7153,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/south{
-	pixel_x = -7;
-	pixel_y = -32
+	pixel_x = -7
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = 6;
@@ -7168,7 +7184,6 @@
 	desc = "A metal rod struck into the ground."
 	},
 /obj/item/clothing/head/helmet/frontier{
-	pixel_x = 0;
 	pixel_y = 25;
 	name = "dented frontiersmen reinforced helmet";
 	desc = "A reinforced Frontiersmen X-11. The front plate has a small window to let the user see. It also has a noticeable bullet-dent on the forehead."
@@ -7319,6 +7334,13 @@
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/tech/grid,
+/area/ruin/rockplanet/rust_base)
+"Zr" = (
+/obj/structure/platform/wood,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
 "Zw" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9243,8 +9265,8 @@ Wd
 WG
 Wd
 Vi
-vW
-Wd
+ej
+hu
 SZ
 zM
 mF
@@ -9308,7 +9330,7 @@ fV
 ma
 zn
 Wy
-pU
+us
 FA
 ez
 ez
@@ -9432,7 +9454,7 @@ ez
 ez
 do
 RW
-pU
+Zr
 mF
 ez
 ez
@@ -9494,7 +9516,7 @@ ez
 ez
 gj
 RW
-pU
+Zr
 mF
 ez
 ez
@@ -9556,7 +9578,7 @@ ez
 ez
 gj
 RW
-pU
+Zr
 mF
 ez
 ez
@@ -9618,7 +9640,7 @@ yU
 ez
 do
 RW
-pU
+Zr
 FA
 ez
 ez
@@ -9680,7 +9702,7 @@ yU
 do
 do
 RW
-pU
+Zr
 FA
 ez
 ez
@@ -9742,7 +9764,7 @@ ny
 ny
 pr
 nl
-pU
+Zr
 mF
 ez
 ez
@@ -9804,7 +9826,7 @@ ny
 Ag
 Rx
 nr
-pU
+Zr
 mF
 ez
 ez
@@ -9928,7 +9950,7 @@ NY
 Ho
 Oh
 eZ
-eZ
+sN
 fT
 ez
 ez
