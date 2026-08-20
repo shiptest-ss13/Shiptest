@@ -126,6 +126,15 @@
 		if(shield_result == -1)
 			return -1
 
+	if(back && istype(back, /obj/item/shield))
+		var/obj/item/shield/turtle = back
+		var/final_block_chance = turtle.block_chance - (clamp((armour_penetration - turtle.armour_penetration)/2,0,100)) + block_chance_modifier
+		var/shield_result = turtle.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type)
+		if(shield_result >= 1)
+			return TRUE
+		if(shield_result == -1)
+			return -1
+
 	if(wear_suit)
 		var/final_block_chance = wear_suit.block_chance - (clamp((armour_penetration - wear_suit.armour_penetration)/2,0,100)) + block_chance_modifier
 		if(wear_suit.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
