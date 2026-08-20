@@ -135,7 +135,7 @@
 /obj/projectile/bullet/a357/hp
 	name = ".357 hollow point bullet"
 	damage = 50
-	armour_penetration = -20
+	armour_penetration = -30
 	speed_mod = BULLET_SPEED_HP_MOD
 	ricochet_chance = 0
 
@@ -143,13 +143,14 @@
 
 /obj/projectile/bullet/a4570
 	name = ".45-70 bullet"
-	damage = 45 //crits in 3-4 taps depending on armor
+	damage = 50 //might seem crazy but armor will tank this
 	speed = BULLET_SPEED_REVOLVER
 	bullet_identifier = "large bullet"
 
 /obj/projectile/bullet/a4570/match
 	name = ".45-70 match bullet"
-	armour_penetration = 10
+	damage = 45
+	armour_penetration = 15
 	speed_mod = BULLET_SPEED_AP_MOD
 	ricochets_max = 5
 	ricochet_chance = 140
@@ -160,8 +161,8 @@
 
 /obj/projectile/bullet/a4570/hp
 	name = ".45-70 hollow point bullet"
-	damage = 55
-	armour_penetration = -10
+	damage = 70 //will two tap goliaths armor pen should stop it from annihilating people
+	armour_penetration = -35
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/a4570/explosive //for extra oof
@@ -192,6 +193,6 @@
 /obj/projectile/bullet/a44roum/hp
 	name = ".44 roumain hollow point bullet"
 	damage =  45
-	armour_penetration = -10
+	armour_penetration = -20
 	ricochet_chance = 0
 	speed_mod = BULLET_SPEED_HP_MOD
