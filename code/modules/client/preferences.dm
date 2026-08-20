@@ -1609,10 +1609,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			else
 				var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[custom_limb]
 				if(
-					(limb_style.allowed_species && !(pref_species.type in limb_style.allowed_species)) \
+					!limb_style \
+					|| (limb_style.allowed_species && !(pref_species.type in limb_style.allowed_species)) \
 					|| !(limb_style.replacement_bodyparts[zone]) \
 					|| !(pref_species.bodytype & limb_style.bodytype) \
 				)
+					if(!limb_style)
+						stack_trace("Could not find a body datum for [custom_limb]!")
 					new_limbs[zone] = isnull(pref_species.species_limbs[zone]) ? PROSTHETIC_NONE : PROSTHETIC_NORMAL
 	return new_limbs
 

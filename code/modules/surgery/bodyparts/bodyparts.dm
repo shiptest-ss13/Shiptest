@@ -996,6 +996,9 @@
 	var/datum/species/spec = source.dna.species
 	dmg_overlay_type = spec.damage_overlay_type
 
+	if(is_dimorphic)
+		limb_gender = (source.gender == FEMALE) ? "f" : "m" // need to make this its own setting later
+
 	if(overlay_icon_state) // throwing rye into a volcano for this
 		if(overlay_use_primary_color)
 			draw_color_overlay = source.dna.features["mcolor"]
