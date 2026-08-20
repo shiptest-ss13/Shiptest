@@ -551,6 +551,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
+/obj/structure/cable/white{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering)
 "gJ" = (
@@ -607,7 +610,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "hn" = (
-/obj/structure/closet/wall/directional/west,
+/obj/structure/closet/wall/directional/west{
+	name = "Outerwear Closet"
+	},
 /obj/item/clothing/shoes/workboots{
 	pixel_x = -5;
 	pixel_y = 0
@@ -727,7 +732,9 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
 	},
-/obj/structure/closet/wall/directional/south,
+/obj/structure/closet/wall/directional/south{
+	name = "Cabinet"
+	},
 /obj/item/reagent_containers/glass/bowl,
 /obj/item/reagent_containers/glass/bowl,
 /obj/item/plate,
@@ -864,18 +871,10 @@
 /area/ship/bridge)
 "jj" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/cable/white{
-	icon_state = "2-4"
-	},
-/obj/structure/cable/white{
-	icon_state = "0-2"
-	},
-/obj/structure/cable/white{
-	icon_state = "1-2"
-	},
 /obj/machinery/power/terminal{
 	dir = 8
 	},
+/obj/structure/cable/white,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "jk" = (
@@ -913,9 +912,13 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen)
 "jK" = (
-/obj/machinery/power/smes/engineering,
-/obj/structure/cable/white,
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-5"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "jM" = (
@@ -1212,17 +1215,15 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "oH" = (
-/obj/machinery/power/port_gen/pacman{
-	anchored = 1
-	},
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = 6
 	},
 /obj/machinery/firealarm/directional/south{
 	pixel_x = -6
+	},
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable/white{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -1490,7 +1491,6 @@
 /turf/open/space/basic,
 /area/ship/external/dark)
 "so" = (
-/obj/structure/closet/wall/eng/directional/north,
 /obj/item/gear_pack/anglegrinder{
 	pixel_x = -5;
 	pixel_y = 6
@@ -1512,6 +1512,10 @@
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/gloves/insulated,
 /obj/item/radio/headset/alt,
+/obj/structure/closet/secure_closet/wall/directional/north{
+	icon_state = "cargo_wall";
+	name = "Salvaging Gear"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/storage/equip)
 "st" = (
@@ -1645,6 +1649,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/structure/cable/white{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering)
 "tq" = (
@@ -1723,7 +1730,9 @@
 	},
 /area/ship/cargo)
 "vo" = (
-/obj/structure/closet/wall/directional/west,
+/obj/structure/closet/wall/directional/west{
+	name = "Uniforms Closet"
+	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -2090,11 +2099,12 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable/cyan{
+	icon_state = "0-10"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering)
@@ -2320,7 +2330,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/fore)
 "EE" = (
-/obj/structure/closet/wall/eng/directional/north,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4;
 	layer = 2.030
@@ -2352,6 +2361,10 @@
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/gloves/insulated,
 /obj/item/radio/headset/alt,
+/obj/structure/closet/secure_closet/wall/directional/north{
+	icon_state = "cargo_wall";
+	name = "Salvaging Gear"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/storage/equip)
 "EK" = (
@@ -2405,18 +2418,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/captain)
 "EN" = (
-/obj/structure/cable/white{
-	icon_state = "2-8"
-	},
-/obj/structure/cable/white{
-	icon_state = "1-8"
-	},
 /obj/effect/turf_decal/warraspaceworks_small{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
+	},
+/obj/structure/cable/white{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering)
@@ -2685,6 +2695,9 @@
 	dir = 8;
 	pixel_y = -12
 	},
+/obj/structure/cable/white{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering)
 "JV" = (
@@ -2933,6 +2946,9 @@
 	pixel_y = 24;
 	name = "Engine Blast Doors";
 	id = "caracara_port_engine"
+	},
+/obj/structure/cable/white{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
