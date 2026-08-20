@@ -120,7 +120,10 @@
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "aN" = (
-/obj/item/toy/crayon/spraycan,
+/obj/item/toy/crayon/spraycan{
+	is_capped = 0;
+	paint_color = "#FF3333"
+	},
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "aS" = (
@@ -148,6 +151,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/south{
+	start_charge = 0
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/icemoon/downed_transport/the_descent)
@@ -205,10 +211,13 @@
 /area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
 "bS" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_2"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "bU" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/asteroid/icerock/lit,
@@ -498,7 +507,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/icemoon,
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "eh" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -746,7 +755,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_2"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "fY" = (
 /obj/machinery/light/directional/west,
 /obj/machinery/power/terminal{
@@ -1262,14 +1271,14 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "jK" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_3"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "jO" = (
 /obj/machinery/atmospherics/components/binary/pump/layer4,
 /turf/open/floor/plating/asteroid/icerock,
@@ -1815,10 +1824,6 @@
 	icon_state = "conc_slab_1"
 	},
 /area/ruin/unpowered/icemoon/downed_transport/security_office)
-"nb" = (
-/obj/effect/spawner/random/food_or_drink/garden/cold,
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/overmap_encounter/planetoid/ice/explored)
 "nf" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -2544,7 +2549,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_2"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "ta" = (
 /obj/structure/table,
 /obj/machinery/light/directional/east,
@@ -2641,7 +2646,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_4"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "tK" = (
 /obj/structure/railing/corner/wood{
 	dir = 8
@@ -2703,7 +2708,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_3"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "ug" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -2943,10 +2948,50 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "wp" = (
-/obj/machinery/camera/directional/east{
-	status = 0
+/obj/structure/flora/rock/pile/icy{
+	pixel_x = 7;
+	pixel_y = 2;
+	layer = 2.89
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
+/obj/structure/flora/stump{
+	icon_state = "anchored_rod";
+	pixel_y = -3;
+	name = "strange totem";
+	desc = "Standing out against its industrial backdrop, the marker stares you down with a foggy, inscrutable gaze. You feel like you're being watched."
+	},
+/obj/structure/flora/rock/pile/icy{
+	pixel_x = 0;
+	pixel_y = -1;
+	layer = 2.91
+	},
+/obj/item/trash/candle{
+	pixel_x = -11;
+	pixel_y = -4
+	},
+/obj/item/trash/candle{
+	pixel_x = -1;
+	pixel_y = -9
+	},
+/obj/item/trash/candle{
+	pixel_x = 11;
+	pixel_y = -5
+	},
+/obj/item/clothing/neck/crystal_amulet{
+	pixel_x = 0;
+	pixel_y = 9;
+	anchored = 1;
+	name = "strange totem";
+	desc = "Standing out against its industrial backdrop, the marker stares you down with a foggy, inscrutable gaze. You feel like you're being watched."
+	},
+/obj/item/clothing/head/hooded/survivor_hood/green{
+	pixel_x = 1;
+	pixel_y = 26;
+	anchored = 1;
+	layer = 3.1;
+	name = "strange totem";
+	desc = "Standing out against its industrial backdrop, the marker stares you down with a foggy, inscrutable gaze. You feel like you're being watched."
+	},
+/turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "wu" = (
 /obj/structure/flora/rock/pile/icy,
@@ -3244,7 +3289,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_2"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "yF" = (
 /obj/structure/railing/corner,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -3597,7 +3642,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_2"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "BI" = (
 /obj/structure/bed/dogbed{
 	pixel_x = -15;
@@ -3827,7 +3872,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_4"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "DI" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3998,7 +4043,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_2"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "EO" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -4320,7 +4365,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_4"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "Gs" = (
 /obj/effect/turf_decal/spline/fancy/transparent/green,
 /obj/effect/turf_decal/industrial/warning{
@@ -4372,13 +4417,10 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/icemoon/downed_transport/mining_power_station)
 "Hk" = (
-/obj/structure/fence{
-	dir = 2
-	},
-/obj/machinery/camera/directional/west{
+/obj/machinery/camera/directional/east{
 	status = 0
 	},
-/turf/open/floor/plating/asteroid/snow/lit,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Hl" = (
 /obj/structure/grille,
@@ -4590,7 +4632,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_2"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "IK" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
 	dir = 4
@@ -4635,15 +4677,17 @@
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "IT" = (
-/obj/structure/sign/warning/nosmoking{
-	pixel_y = 8;
-	pixel_x = -24
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/apc/auto_name/directional/west{
+	start_charge = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_4"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "IU" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/spacecash/bundle/smallrand{
@@ -4786,7 +4830,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_4"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "Km" = (
 /turf/closed/wall,
 /area/ruin/unpowered/icemoon/downed_transport/crew_accomodations)
@@ -5001,9 +5045,6 @@
 	},
 /turf/open/floor/wood/icemoon,
 /area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
-"Mw" = (
-/turf/closed/wall/mineral/wood,
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
 "MC" = (
 /obj/structure/table/wood,
 /obj/structure/closet/wall/blue/directional/north{
@@ -5169,8 +5210,9 @@
 /turf/open/floor/wood/icemoon,
 /area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
 "NO" = (
-/turf/closed/wall/rust,
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/obj/structure/flora/ash/garden/frigid,
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "NT" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
@@ -5296,7 +5338,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_3"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "ON" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/shotgun,
 /turf/open/floor/wood/icemoon,
@@ -5563,7 +5605,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_1"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "Rh" = (
 /obj/structure/catwalk/over,
 /obj/effect/decal/cleanable/glass/strange,
@@ -5769,7 +5811,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_4"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "Tw" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 6
@@ -5956,7 +5998,7 @@
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_4"
 	},
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "Uo" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
@@ -6052,10 +6094,6 @@
 	},
 /turf/open/floor/wood/icemoon,
 /area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
-"UZ" = (
-/obj/structure/flora/ash/garden/frigid,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/overmap_encounter/planetoid/ice/explored)
 "Vd" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 4
@@ -6262,48 +6300,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "WQ" = (
-/obj/structure/flora/rock/pile/icy{
-	pixel_x = 7;
-	pixel_y = 2;
-	layer = 2.89
+/obj/structure/fence{
+	dir = 2
 	},
-/obj/structure/flora/stump{
-	icon_state = "anchored_rod";
-	pixel_y = -3;
-	name = "strange totem";
-	desc = "Standing out against its industrial backdrop, the marker stares you down with a foggy, inscrutable gaze. You feel like you're being watched."
-	},
-/obj/structure/flora/rock/pile/icy{
-	pixel_x = 0;
-	pixel_y = -1;
-	layer = 2.91
-	},
-/obj/item/trash/candle{
-	pixel_x = -11;
-	pixel_y = -4
-	},
-/obj/item/trash/candle{
-	pixel_x = -1;
-	pixel_y = -9
-	},
-/obj/item/trash/candle{
-	pixel_x = 11;
-	pixel_y = -5
-	},
-/obj/item/clothing/neck/crystal_amulet{
-	pixel_x = 0;
-	pixel_y = 9;
-	anchored = 1;
-	name = "strange totem";
-	desc = "Standing out against its industrial backdrop, the marker stares you down with a foggy, inscrutable gaze. You feel like you're being watched."
-	},
-/obj/item/clothing/head/hooded/survivor_hood/green{
-	pixel_x = 1;
-	pixel_y = 26;
-	anchored = 1;
-	layer = 3.1;
-	name = "strange totem";
-	desc = "Standing out against its industrial backdrop, the marker stares you down with a foggy, inscrutable gaze. You feel like you're being watched."
+/obj/machinery/camera/directional/west{
+	status = 0
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
@@ -8440,7 +8441,7 @@ yu
 Ug
 yu
 yu
-UZ
+NO
 Ww
 BE
 Rd
@@ -8584,7 +8585,7 @@ yu
 tK
 uG
 PV
-UZ
+NO
 yu
 yu
 OD
@@ -10399,7 +10400,7 @@ yu
 yu
 yu
 yu
-nb
+yu
 yu
 yu
 js
@@ -12376,7 +12377,7 @@ fR
 OD
 Oz
 OD
-wp
+Hk
 OD
 OD
 OD
@@ -12992,9 +12993,9 @@ bJ
 bJ
 bJ
 bJ
-Mw
-NO
-Mw
+Lg
+rA
+Lg
 bJ
 bJ
 XQ
@@ -13131,11 +13132,11 @@ bJ
 bJ
 bJ
 bJ
-Mw
+Lg
 DH
 bS
 Ui
-Mw
+Lg
 bJ
 XQ
 XQ
@@ -13271,11 +13272,11 @@ bJ
 bJ
 bJ
 bJ
-Mw
+Lg
 ef
 fS
 EK
-Mw
+Lg
 bJ
 bJ
 XQ
@@ -13485,7 +13486,7 @@ kA
 Ue
 Tl
 Rf
-Mw
+Lg
 bJ
 yu
 yu
@@ -13642,7 +13643,7 @@ yu
 sN
 OD
 yu
-WQ
+wp
 yu
 js
 yu
@@ -14263,7 +14264,7 @@ LQ
 LQ
 LV
 LQ
-Hk
+WQ
 OS
 pp
 pp
