@@ -116,16 +116,21 @@
 		visible_message(span_danger("[src]'s [dropped_gun.name] is destroyed as they collapse!"))
 		dropped_gun.actually_shoots = FALSE
 		dropped_gun.desc += span_warning("\nIt appears to be irreparably broken.")
-		// overlay manipulation...
-		var/icon/scuff = icon(initial(dropped_gun.icon), initial(dropped_gun.icon_state))
-		var/icon/temp = icon('icons/effects/item_damage.dmi', "itemdamaged")
-		temp.Scale(64, 32) // we clone the overlay twice so it actually fits on guns
-		temp.Shift(EAST, 32)
-		temp.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_OVERLAY)
-		scuff.Blend("#fff", ICON_ADD)
-		scuff.Blend(temp, ICON_MULTIPLY)
-		var/mutable_appearance/oops = new(scuff)
-		dropped_gun.add_overlay(oops)
+		// broken overlay
+		var/index = "[REF(initial(dropped_gun.icon))]-[initial(dropped_gun.icon_state)]"
+		var/static/list/scuff_cache = list()
+		var/icon/scuff = scuff_cache[index]
+		if(!scuff) // we only need to generate each scuff overlay once
+			scuff = icon(initial(dropped_gun.icon), initial(dropped_gun.icon_state))
+			var/icon/temp = icon('icons/effects/item_damage.dmi', "itemdamaged")
+			temp.Scale(64, 32)
+			temp.Shift(EAST, 32) // we put two side by side so it fits on guns
+			temp.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_OVERLAY)
+			scuff.Blend("#fff", ICON_ADD)
+			scuff.Blend(temp, ICON_MULTIPLY)
+			scuff_cache[index] = scuff
+		var/mutable_appearance/scuff_instance = new(scuff)
+		dropped_gun.add_overlay(scuff_instance)
 
 // determines behavior for dropping the held item
 /mob/living/simple_animal/hostile/human/proc/handle_hand_item_destruction(obj/hand)
