@@ -351,12 +351,12 @@
 
 /mob/living/simple_animal/hostile/automated/hopper/warra
 	name = "Al'sa CQB 'Hopper'"
-	desc = "A specialized drone made by the Al'sa Guild for quick skirmishes at close range, nicknamed 'Hopper' for its way of running. Sought after by both Makosso-Warra and the Coalition during the ICW, many were sold off and produced locally in the frontier. This model is painted in Vigilitas Interstellar colors."
+	desc = "A specialized drone made by the Al'sa Guild for quick skirmishes at close range, nicknamed 'Hopper' for its way of running. Sought after by both Makosso-Warra and the Coalition during the ICW, many were sold off and produced locally in the frontier. This model is painted in the colors of Vigilitas Interstellar."
 	faction = list(ROLE_DEATHSQUAD)
 	icon_state = "hopper_warra"
 
 /mob/living/simple_animal/hostile/automated/hopper/coalition
 	name = "Al'sa CQB 'Hopper'"
-	desc = "A specialized drone made by the Al'sa Guild for quick skirmishes at close range, nicknamed 'Hopper' for its way of running. Sought after by both Makosso-Warra and the Coalition during the ICW, many were sold off and produced locally in the frontier. This model is painted in the Syndicate Coalition colors."
+	desc = "A specialized drone made by the Al'sa Guild for quick skirmishes at close range, nicknamed 'Hopper' for its way of running. Sought after by both Makosso-Warra and the Coalition during the ICW, many were sold off and produced locally in the frontier. This model is painted in the colors of the Syndicate Coalition"
 	faction = list(FACTION_HOSTILE)
 	icon_state = "hopper_coalition"
