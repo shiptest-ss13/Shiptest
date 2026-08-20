@@ -285,11 +285,7 @@
 /datum/action/item_action/activate_suit_injector/Trigger()
 	if(istype(target, /obj/item/clothing/suit/space/hardsuit/esh))
 		var/obj/item/clothing/suit/space/hardsuit/esh/esh_hardsuit = target
-		if(esh_hardsuit.injector == null || esh_hardsuit.injector.reagents.total_volume <= 0)
-			to_chat(owner, span_warning("Warning: no medipen found or current one is empty. Please insert a fresh medipen."))
-			return
-		esh_hardsuit.injector.inject(owner)
-		to_chat(owner, span_warning("Administering medical attention. Medipen administered."))
+		esh_hardsuit.inject_user(owner)
 
 /datum/action/item_action/toggle_helmet_light
 	name = "Toggle Helmet Light"
