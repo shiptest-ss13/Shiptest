@@ -807,6 +807,16 @@
 
 	backpack_contents = null
 
+//Salvager
+/datum/outfit/job/warra/salvager
+	name = "Makosso-Warra - Salvager"
+	id_assignment = "Salvager"
+	job_icon = "engineer"
+	jobtype = /datum/job/engineer
+
+	uniform = /obj/item/clothing/under/warra/science/robotics
+	ears = /obj/item/radio/headset/warra
+
 // Pilot. idk
 /datum/outfit/job/warra/pilot
 	name = "Makosso-Warra - Pilot"
