@@ -188,6 +188,7 @@
 	fire_products = list(GAS_H2O = 1)
 	fire_burn_rate = 2
 	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50
+	enthalpy = FIRE_HYDROGEN_ENERGY_RELEASED // like 2.8 megajoules or something. why was this not set
 
 /datum/gas/chlorine
 	id = GAS_CHLORINE
