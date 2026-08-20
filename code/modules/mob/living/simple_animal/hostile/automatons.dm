@@ -345,6 +345,10 @@
 	rapid_fire_delay = 3
 	attack_sound = 'sound/weapons/genhit1.ogg'
 
+/mob/living/simple_animal/hostile/automated/hopper/Initialize()
+	. = ..()
+	AddElement(/datum/element/waddling)
+
 /mob/living/simple_animal/hostile/automated/hopper/warra
 	name = "Al'sa CQB 'Hopper'"
 	desc = "A specialized drone made by the Al'sa Guild for quick skirmishes at close range, nicknamed 'Hopper' for its way of running. Sought after by both Makosso-Warra and the Coalition during the ICW, many were sold off and produced locally in the frontier. This model is painted in Vigilitas Interstellar colors."
