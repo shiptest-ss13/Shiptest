@@ -403,15 +403,6 @@
 	. += span_notice("You can slot a fresh medipen in by clicking on the suit with a medipen.")
 	. += span_notice("You can <b>Alt+Click</b> the ESH to eject any inserted medipens.")
 
-/*
-procedurally:
-
-inform significant harm CHECK
-check for injector CHECK
-inject if it exists CHECK
-if injected wait, then inform of injection WIP
-*/
-
 /obj/item/clothing/suit/space/hardsuit/esh/proc/declare_wound(mob/living/carbon/human/user)
 	to_chat(user, span_warning("Warning: significant bodily harm detected."))
 	inject_user(user)
@@ -423,8 +414,7 @@ if injected wait, then inform of injection WIP
 	injector.inject(user, user)
 	playsound(src, 'sound/items/hypospray_long.ogg', 50, FALSE)
 	injector.forceMove(drop_location())
-	// Make wait here
-	to_chat(user, span_warning("Administering medical attention. Medipen administered and ejected."))
+	addtimer(CALLBACK(src, GLOBAL_PROC_REF(to_chat), user, span_warning("Administering medical attention. Medipen administered and ejected.")), 20, TIMER_STOPPABLE)
 
 /obj/item/clothing/suit/space/hardsuit/esh/equipped(mob/user, slot)
 	. = ..()
