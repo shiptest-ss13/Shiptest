@@ -102,7 +102,7 @@
 		new /obj/item/soap(location)
 
 /datum/chemical_reaction/omegasoapification
-	required_reagents = list(/datum/reagent/consumable/potato_juice = 10, /datum/reagent/consumable/ethanol/lizardwine = 10, /datum/reagent/monkey_powder = 10, /datum/reagent/toxin/acid/nitracid = 10, /datum/reagent/baldium = 10, /datum/reagent/consumable/ethanol/hooch = 10, /datum/reagent/bluespace = 10, /datum/reagent/drug/pumpup = 10, /datum/reagent/consumable/space_cola = 10)
+	required_reagents = list(/datum/reagent/consumable/potato_juice = 10, /datum/reagent/consumable/ethanol/lizardwine = 10, /datum/reagent/monkey_powder = 10, /datum/reagent/toxin/acid/nitracid = 10, /datum/reagent/lye = 10, /datum/reagent/consumable/ethanol/hooch = 10, /datum/reagent/bluespace = 10, /datum/reagent/drug/pumpup = 10, /datum/reagent/consumable/space_cola = 10)
 	required_temp = 999
 	mob_react = FALSE
 
@@ -366,49 +366,6 @@
 	results = list(/datum/reagent/acetone = 3)
 	required_reagents = list(/datum/reagent/fuel/oil = 1, /datum/reagent/fuel = 1, /datum/reagent/oxygen = 1)
 
-/datum/chemical_reaction/carpet
-	results = list(/datum/reagent/carpet = 2)
-	required_reagents = list(/datum/reagent/drug/space_drugs = 1, /datum/reagent/blood = 1)
-
-/datum/chemical_reaction/carpet/black
-	results = list(/datum/reagent/carpet/black = 2)
-	required_reagents = list(/datum/reagent/carpet = 1, /datum/reagent/fuel/oil = 1)
-
-/datum/chemical_reaction/carpet/blue
-	results = list(/datum/reagent/carpet/blue = 2)
-	required_reagents = list(/datum/reagent/carpet = 1, /datum/reagent/cryostylane = 1)
-
-/datum/chemical_reaction/carpet/cyan
-	results = list(/datum/reagent/carpet/cyan = 2)
-	required_reagents = list(/datum/reagent/carpet = 1, /datum/reagent/toxin/cyanide = 1)
-	//cyan = cyanide get it huehueuhuehuehheuhe
-
-/datum/chemical_reaction/carpet/green
-	results = list(/datum/reagent/carpet/green = 2)
-	required_reagents = list(/datum/reagent/carpet = 1, /datum/reagent/consumable/ethanol/beer/green = 1)
-	//make green beer by grinding up green crayons and mixing with beer
-
-/datum/chemical_reaction/carpet/orange
-	results = list(/datum/reagent/carpet/orange = 2)
-	required_reagents = list(/datum/reagent/carpet = 1, /datum/reagent/consumable/orangejuice = 1)
-
-/datum/chemical_reaction/carpet/purple
-	results = list(/datum/reagent/carpet/purple = 2)
-	required_reagents = list(/datum/reagent/carpet = 1, /datum/reagent/colorful_reagent/powder/purple = 1)
-	//slimes only party
-
-/datum/chemical_reaction/carpet/red
-	results = list(/datum/reagent/carpet/red = 2)
-	required_reagents = list(/datum/reagent/carpet/ = 1, /datum/reagent/liquidgibs = 1)
-
-/datum/chemical_reaction/carpet/royalblack
-	results = list(/datum/reagent/carpet/royal/black = 2)
-	required_reagents = list(/datum/reagent/carpet/black = 1, /datum/reagent/royal_bee_jelly = 1)
-
-/datum/chemical_reaction/carpet/royalblue
-	results = list(/datum/reagent/carpet/royal/blue = 2)
-	required_reagents = list(/datum/reagent/carpet/blue = 1, /datum/reagent/royal_bee_jelly = 1)
-
 /datum/chemical_reaction/genesis
 	results = list(/datum/reagent/genesis = 10)
 	required_reagents = list(/datum/reagent/diethylamine = 10, /datum/reagent/medicine/strange_reagent = 1, /datum/reagent/teslium = 1)
@@ -471,30 +428,6 @@
 	for(var/i = rand(1, created_volume), i <= created_volume, i++)
 		new /mob/living/simple_animal/butterfly(location)
 	..()
-//scream powder
-/datum/chemical_reaction/scream
-	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/consumable/cream = 5, /datum/reagent/consumable/ethanol/lizardwine = 5)
-	required_temp = 374
-
-/datum/chemical_reaction/scream/on_reaction(datum/reagents/holder, created_volume)
-	playsound(holder.my_atom, pick(list('sound/voice/human/malescream_1.ogg', 'sound/voice/human/malescream_2.ogg', 'sound/voice/human/malescream_3.ogg', 'sound/voice/human/malescream_4.ogg', 'sound/voice/human/malescream_5.ogg', 'sound/voice/human/malescream_6.ogg', 'sound/voice/human/femalescream_1.ogg', 'sound/voice/human/femalescream_2.ogg', 'sound/voice/human/femalescream_3.ogg', 'sound/voice/human/femalescream_4.ogg', 'sound/voice/human/femalescream_5.ogg', 'sound/voice/human/wilhelm_scream.ogg')), created_volume*5,TRUE)
-
-/datum/chemical_reaction/hair_dye
-	results = list(/datum/reagent/hair_dye = 5)
-	required_reagents = list(/datum/reagent/colorful_reagent = 1, /datum/reagent/uranium/radium = 1, /datum/reagent/drug/space_drugs = 1)
-
-/datum/chemical_reaction/barbers_aid
-	results = list(/datum/reagent/barbers_aid = 5)
-	required_reagents = list(/datum/reagent/carpet = 1, /datum/reagent/uranium/radium = 1, /datum/reagent/drug/space_drugs = 1)
-
-/datum/chemical_reaction/concentrated_barbers_aid
-	results = list(/datum/reagent/concentrated_barbers_aid = 2)
-	required_reagents = list(/datum/reagent/barbers_aid = 1, /datum/reagent/toxin/mutagen = 1)
-
-/datum/chemical_reaction/baldium
-	results = list(/datum/reagent/baldium = 1)
-	required_reagents = list(/datum/reagent/uranium/radium = 1, /datum/reagent/toxin/acid = 1, /datum/reagent/lye = 1)
-	required_temp = 395
 
 /datum/chemical_reaction/saltpetre
 	results = list(/datum/reagent/saltpetre = 3)
@@ -576,11 +509,6 @@
 	results = list(/datum/reagent/acetaldehyde = 3)
 	required_reagents = list(/datum/reagent/acetone = 1, /datum/reagent/toxin/formaldehyde = 1, /datum/reagent/water = 1)
 	required_temp = 450
-
-/datum/chemical_reaction/holywater
-	results = list(/datum/reagent/water/holywater = 1)
-	required_reagents = list(/datum/reagent/water/hollowwater = 1)
-	required_catalysts = list(/datum/reagent/water/holywater = 1)
 
 /datum/chemical_reaction/bone_gel
 	required_reagents = list(/datum/reagent/calcium = 10, /datum/reagent/carbon = 10)

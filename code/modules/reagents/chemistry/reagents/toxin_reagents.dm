@@ -1006,6 +1006,7 @@
 		metabolizer.confused += 5
 	return ..()
 
+// disease crap
 /datum/reagent/toxin/lava_microbe
 	name = "Lavaland Microbes"
 	description = "Microbes isolated from the dirt."
@@ -1016,3 +1017,44 @@
 
 /datum/reagent/toxin/lava_microbe/expose_mob(mob/living/expose_target, method=TOUCH, reac_volume,show_message = 1)
 	expose_target.ForceContractDisease(new /datum/disease/advance/random(2, 3), FALSE, TRUE)
+
+/datum/reagent/fungalspores
+	name = "Tubercle bacillus Cosmosis microbes"
+	description = "Active fungal spores."
+	color = "#92D17D" // rgb: 146, 209, 125
+	can_synth = FALSE
+	taste_description = "slime"
+
+/datum/reagent/fungalspores/expose_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
+		L.ForceContractDisease(new /datum/disease/tuberculosis(), FALSE, TRUE)
+
+// the follow reagents aren't toxin subtypes but primarily kill you. fun!
+/datum/reagent/cryptobiolin
+	name = "Cryptobiolin"
+	description = "Cryptobiolin causes confusion and dizziness."
+	color = "#ADB5DB"
+	metabolization_rate = 1.5 * REAGENTS_METABOLISM
+	taste_description = "sourness"
+
+/datum/reagent/cryptobiolin/on_mob_life(mob/living/carbon/M)
+	M.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+	if(!M.confused)
+		M.confused = 1
+	M.confused = max(M.confused, 20)
+	..()
+
+/datum/reagent/impedrezene
+	name = "Impedrezene"
+	description = "Impedrezene is a narcotic that impedes one's ability by slowing down the higher brain cell functions."
+	color = "#E07DDD" // pink = happy = dumb
+	taste_description = "numbness"
+
+/datum/reagent/impedrezene/on_mob_life(mob/living/carbon/M)
+	M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	if(prob(80))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
+	if(prob(50))
+		M.drowsyness = max(M.drowsyness, 3)
+	..()
+
