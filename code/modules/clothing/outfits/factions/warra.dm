@@ -419,6 +419,15 @@
 	box = /obj/item/storage/box/survival/engineer
 	chameleon_extras = /obj/item/stamp/ce
 
+/datum/outfit/job/warra/ce/empty
+	name = "Makosso-Warra - Chief Engineer - Naked"
+	jobtype = /datum/job/chief_engineer
+	job_icon = "chiefengineer"
+
+	belt = null
+	dcoat = null
+	head = null
+
 // Atmos Tech
 /datum/outfit/job/warra/atmos
 	name = "Makosso-Warra - Atmos Tech"
