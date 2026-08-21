@@ -195,7 +195,7 @@
 /obj/item/assembly/signaler/anomaly/tvstatic
 	name = "\improper static anomaly core"
 	desc = "The stabilized core of a static anomaly. Your head hurts just staring at it"
-	grind_results = list(/datum/reagent/three_eye = 5)
+	grind_results = list(/datum/reagent/truesight = 5)
 
 /obj/item/assembly/signaler/anomaly/tvstatic/anomaly_core_detonation()
 	visible_message(span_warning("[src] withdraws into itself, one last message escaping it!"))
