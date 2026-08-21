@@ -37,3 +37,30 @@
 
 /obj/item/ammo_box/magazine/gar/empty
 	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/cs_gauss
+	name = "gauss box (2x15mm Tav'Sha)"
+	desc = "A 24-round magazine for the prototype gauss rifle. Ferromagnetic pellets do okay damage with significant armor penetration."
+	icon_state = "convergence_mag"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss
+	caliber = "no"
+	max_ammo = 60
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/cs_gauss/pistol
+	name = "gauss box (2x15mm Tav'Sha)"
+	desc = "A 24-round magazine for the prototype gauss rifle. Ferromagnetic pellets do okay damage with significant armor penetration."
+	icon_state = "rectifier_mag"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss
+	caliber = "loading"
+	max_ammo = 30
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/cs_gauss/rifle
+	name = "gauss box (3x20mm Deu'Sha)"
+	desc = "A 24-round magazine for the prototype gauss rifle. Ferromagnetic pellets do okay damage with significant armor penetration."
+	icon_state = "vector_mag"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss
+	caliber = "these"
+	max_ammo = 40
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
