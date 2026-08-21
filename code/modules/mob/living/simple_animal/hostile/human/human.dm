@@ -84,35 +84,12 @@
 		armor = instance.armor
 		qdel(instance)
 
-// applies special stuff to guns, which are very special indeed
+// applies special stuff to guns that are dropped, which are very special indeed
 /mob/living/simple_animal/hostile/human/proc/modify_dropped_gun(obj/item/gun/dropped_gun)
-	// BALLISTICS - apply wear, mag drop chance, and empty the mag partially
-	if(istype(dropped_gun, /obj/item/gun/ballistic))
-		var/obj/item/gun/ballistic/cosmetic_damage = dropped_gun
-		cosmetic_damage.gun_wear = rand(cosmetic_damage.wear_minor_threshold, cosmetic_damage.wear_maximum) //my free gun... it's bowowken...
-		if(!prob(weapon_drop_chance) && !cosmetic_damage.internal_magazine)
-			qdel(cosmetic_damage.magazine)
-			cosmetic_damage.magazine = null
-		if(cosmetic_damage.magazine)
-			for(var/i = 0, i < rand(0, cosmetic_damage.magazine.max_ammo), i++)
-				qdel(cosmetic_damage.magazine.get_round()) // this feels kludgy but like. how else
-				cosmetic_damage.magazine.update_ammo_count()
-		cosmetic_damage.update_appearance()
-
-	// ENERGY - drain cell a random amount, apply separate drop chance to cell
-	if(istype(dropped_gun, /obj/item/gun/energy))
-		var/obj/item/gun/energy/lazor = dropped_gun
-		if(lazor.cell)
-			lazor.cell.charge = rand(0, lazor.cell.maxcharge)
-			lazor.update_appearance()
-			lazor.cell.name = "dented [lazor.cell.name]"
-			lazor.cell.desc += " It doesn't seem to be in the greatest condition..."
-			if(!prob(weapon_drop_chance))
-				lazor.cell.rigged = TRUE // smiles warmly
-				lazor.cell.show_rigged = FALSE
-
-	// apply break chance and broken overlay
+	var/good = TRUE
+	// break gun and apply broken overlay
 	if(!prob(weapon_drop_chance)) // you got the dud!
+		good = FALSE
 		visible_message(span_danger("[src]'s [dropped_gun.name] is destroyed as they collapse!"))
 		dropped_gun.actually_shoots = FALSE
 		dropped_gun.desc += span_warning("\nIt appears to be irreparably broken.")
@@ -132,7 +109,33 @@
 		var/mutable_appearance/scuff_instance = new(scuff)
 		dropped_gun.add_overlay(scuff_instance)
 
-// determines behavior for dropping the held item
+	// BALLISTICS - apply wear, mag drop chance, and empty the mag partially
+	if(istype(dropped_gun, /obj/item/gun/ballistic))
+		var/obj/item/gun/ballistic/cosmetic_damage = dropped_gun
+		cosmetic_damage.gun_wear = rand(cosmetic_damage.wear_minor_threshold, cosmetic_damage.wear_maximum) //my free gun... it's bowowken...
+		if(!prob(weapon_drop_chance) && !cosmetic_damage.internal_magazine)
+			qdel(cosmetic_damage.magazine)
+			cosmetic_damage.magazine = null
+		if(cosmetic_damage.magazine)
+			for(var/i = 0, i < rand(0, cosmetic_damage.magazine.max_ammo), i++)
+				qdel(cosmetic_damage.magazine.get_round()) // feels kludgy but like. how else
+				cosmetic_damage.magazine.update_ammo_count()
+		cosmetic_damage.update_appearance()
+
+	// ENERGY - drain cell a random amount, cell drop chance
+	if(istype(dropped_gun, /obj/item/gun/energy))
+		var/obj/item/gun/energy/lazor = dropped_gun
+		if(lazor.cell)
+			lazor.cell.charge = rand(0, lazor.cell.maxcharge)
+			lazor.update_appearance()
+			if(!good) // undamaged guns never have dud cells
+				lazor.cell.name = "dented [lazor.cell.name]"
+				lazor.cell.desc += " It doesn't seem to be in the greatest condition..."
+				if(!prob(weapon_drop_chance))
+					lazor.cell.rigged = TRUE // smiles warmly
+					lazor.cell.show_rigged = FALSE
+
+// handles behavior for either dropping the held item or damaging it
 /mob/living/simple_animal/hostile/human/proc/handle_hand_item_destruction(obj/hand)
 	if(!hand) // wow look nothing
 		return
