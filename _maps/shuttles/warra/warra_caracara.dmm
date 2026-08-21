@@ -376,9 +376,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "caracara_vi_shutters"
-	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/security)
 "dZ" = (
@@ -1054,7 +1051,7 @@
 	pixel_x = -4;
 	pixel_y = -6
 	},
-/obj/item/pickaxe/drill/jackhammer,
+/obj/item/pickaxe/drill/jackhammer/old,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "kQ" = (
@@ -1653,11 +1650,20 @@
 	},
 /obj/machinery/computer/helm/viewscreen/directional/south,
 /obj/machinery/button/door{
-	pixel_y = 8;
+	pixel_y = -1;
 	pixel_x = 22;
 	name = "Privacy Shutters";
 	id = "caracara_vi_shutters";
 	dir = 8
+	},
+/obj/machinery/button/door{
+	pixel_y = 8;
+	pixel_x = 22;
+	name = "Door Bolt";
+	id = "caracara_vi_bolt";
+	dir = 8;
+	specialfunctions = 4;
+	normaldoorcontrol = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -3380,6 +3386,15 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/button/door{
+	pixel_y = -4;
+	pixel_x = -22;
+	name = "Door Bolt";
+	id = "caracara_vi_bolt";
+	dir = 4;
+	specialfunctions = 4;
+	normaldoorcontrol = 1
+	},
 /turf/open/floor/plating,
 /area/ship/hallway)
 "PC" = (
