@@ -733,7 +733,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/machinery/suit_storage_unit/inherit,
+/obj/machinery/suit_storage_unit/inherit{
+	name = "lead engineer's suit storage unit"
+	},
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/suit/space/hardsuit/engine/elite,
 /obj/item/tank/internals/oxygen,
