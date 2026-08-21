@@ -318,7 +318,7 @@
 	},
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
-	req_access = "1"
+	req_access_txt = "1"
 	},
 /obj/item/storage/backpack/duffelbag/sec,
 /obj/item/storage/backpack/security,
@@ -373,11 +373,11 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "caracara_vi_shutters"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/security)
 "dZ" = (
@@ -719,8 +719,8 @@
 	name = "Door Bolt";
 	id = "carabath_bolt";
 	dir = 4;
-	normaldoorcontrol = 1;
-	specialfunctions = 4
+	specialfunctions = 4;
+	normaldoorcontrol = 1
 	},
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -733,12 +733,12 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/machinery/suit_storage_unit/inherit{
-	name = "lead engineer's suit storage unit"
-	},
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/suit/space/hardsuit/engine/elite,
 /obj/item/tank/internals/oxygen,
+/obj/machinery/suit_storage_unit/inherit/locked{
+	req_access_txt = "56"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "hM" = (
@@ -939,7 +939,7 @@
 /obj/machinery/blackbox_recorder,
 /obj/machinery/airalarm/directional/south,
 /obj/machinery/turretid/ship{
-	id = "carcara_grid";
+	id = "caracara_grid";
 	pixel_y = -28;
 	pixel_x = 0
 	},
@@ -1602,7 +1602,8 @@
 /obj/item/radio/headset/alt,
 /obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "cargo_wall";
-	name = "Salvaging Gear"
+	name = "Salvaging Gear";
+	req_access_txt = "10"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/storage/equip)
@@ -1666,7 +1667,7 @@
 	icon_door = "engi_wall";
 	icon_state = "engi_wall";
 	name = "tool locker";
-	req_access_txt = "10"
+	req_access_txt = "56"
 	},
 /obj/item/storage/belt/utility/full/engi{
 	pixel_y = -4
@@ -1701,6 +1702,8 @@
 	pixel_y = -11;
 	req_ship_access = 1
 	},
+/obj/item/clothing/under/warra/engineering/director,
+/obj/item/storage/belt/utility/chief,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "tf" = (
@@ -2501,7 +2504,8 @@
 /obj/item/radio/headset/alt,
 /obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "cargo_wall";
-	name = "Salvaging Gear"
+	name = "Salvaging Gear";
+	req_access_txt = "10"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/storage/equip)
@@ -2675,7 +2679,10 @@
 "GM" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/closet/crate/medical,
-/obj/effect/mapping_helpers/crate_shelve,
+/obj/effect/mapping_helpers/crate_shelve{
+	pixel_x = 0;
+	pixel_y = 0
+	},
 /obj/item/storage/firstaid/regular{
 	pixel_x = 6;
 	pixel_y = -3
@@ -2686,6 +2693,18 @@
 	},
 /obj/item/storage/firstaid/o2{
 	pixel_x = -7;
+	pixel_y = -3
+	},
+/obj/item/storage/pill_bottle/tramal{
+	pixel_x = 12;
+	pixel_y = -4
+	},
+/obj/item/storage/pill_bottle/charcoal/less{
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/obj/item/stack/medical/splint/twelve{
+	pixel_x = 4;
 	pixel_y = -3
 	},
 /turf/open/floor/plasteel/patterned/grid,
@@ -2752,7 +2771,7 @@
 /obj/item/tank/internals/oxygen/yellow,
 /obj/item/clothing/mask/gas,
 /obj/machinery/suit_storage_unit/inherit/industrial/locked{
-	req_access = "10"
+	req_access_txt = "10"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
@@ -2954,7 +2973,7 @@
 /obj/item/tank/internals/oxygen/red,
 /obj/item/radio/intercom/directional/south,
 /obj/machinery/suit_storage_unit/inherit/locked{
-	req_access = "1"
+	req_access_txt = "1"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -3553,7 +3572,7 @@
 /obj/item/tank/internals/oxygen/yellow,
 /obj/item/clothing/mask/gas,
 /obj/machinery/suit_storage_unit/inherit/industrial/locked{
-	req_access = "10"
+	req_access_txt = "10"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
@@ -3778,7 +3797,7 @@
 	},
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
-	req_access = "1"
+	req_access_txt = "1"
 	},
 /obj/item/storage/toolbox/ammo/c46,
 /obj/item/ammo_box/magazine/wt550m9{
