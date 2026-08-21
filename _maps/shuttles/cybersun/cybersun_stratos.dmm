@@ -9,12 +9,6 @@
 "bF" = (
 /turf/open/floor/suns/hatch/mahogany,
 /area/space)
-"bL" = (
-/obj/effect/turf_decal/atmos/air{
-	dir = 8
-	},
-/turf/open/floor/engine/air,
-/area/space)
 "ca" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
@@ -22,6 +16,7 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/space)
 "ce" = (
@@ -125,12 +120,6 @@
 /area/space)
 "gT" = (
 /turf/open/floor/plasteel/dark,
-/area/space)
-"hi" = (
-/obj/effect/turf_decal/atmos/hydrogen{
-	dir = 1
-	},
-/turf/open/floor/engine/hydrogen_fuel,
 /area/space)
 "hq" = (
 /obj/structure/table/wood,
@@ -277,9 +266,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/space)
-"mx" = (
-/turf/open/floor/engine/hydrogen_fuel,
-/area/space)
 "mL" = (
 /obj/structure/chair/office/light,
 /obj/effect/turf_decal/trimline/transparent/syndiered/end,
@@ -331,12 +317,6 @@
 	dir = 8
 	},
 /turf/open/floor/engine/hull,
-/area/space)
-"ov" = (
-/obj/effect/turf_decal/atmos/mix{
-	dir = 1
-	},
-/turf/open/floor/engine/hydrogen_fuel,
 /area/space)
 "oM" = (
 /obj/effect/spawner/bunk_bed{
@@ -484,7 +464,8 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-5"
 	},
-/turf/open/space/basic,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/space)
 "re" = (
 /obj/machinery/computer/helm,
@@ -540,9 +521,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "tE" = (
-/obj/effect/turf_decal/siding/wood/mahogany{
-	dir = 4
-	},
+/obj/effect/turf_decal/siding/wood/mahogany,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "tL" = (
@@ -557,10 +536,6 @@
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
-/area/space)
-"tZ" = (
-/obj/machinery/shower,
-/turf/open/space/basic,
 /area/space)
 "uC" = (
 /obj/structure/table/reinforced,
@@ -619,6 +594,7 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/space)
 "vI" = (
@@ -670,12 +646,6 @@
 	pixel_x = -5
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
-"wU" = (
-/obj/structure/urinal{
-	pixel_y = 25
-	},
-/turf/open/space/basic,
 /area/space)
 "xl" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
@@ -811,18 +781,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
-"Ai" = (
-/obj/structure/toilet{
-	pixel_y = 15
-	},
-/turf/open/space/basic,
-/area/space)
-"AI" = (
-/obj/structure/cable/cyan{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating,
-/area/space)
 "AU" = (
 /obj/structure/aquarium/cirrus,
 /turf/open/floor/suns/dark/plain,
@@ -839,12 +797,6 @@
 /obj/effect/turf_decal/number/left_one,
 /obj/effect/turf_decal/number/right_zero,
 /turf/open/floor/engine/hull,
-/area/space)
-"BL" = (
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating,
 /area/space)
 "BP" = (
 /obj/structure/table/wood,
@@ -897,22 +849,10 @@
 /obj/structure/table/wood,
 /turf/open/floor/suns/dark/plain,
 /area/space)
-"DA" = (
-/obj/machinery/door/airlock/hatch{
-	name = "Common Quarters"
-	},
-/turf/open/floor/plasteel/tech,
-/area/space)
 "DJ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
-/area/space)
-"DL" = (
-/obj/structure/cable/cyan{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/tech,
 /area/space)
 "DY" = (
 /obj/machinery/power/shuttle/engine/turbine{
@@ -976,6 +916,10 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
+"Gz" = (
+/obj/effect/turf_decal/atmos/mix,
+/turf/open/space/basic,
+/area/space)
 "Hd" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "stratus_airlock_shield";
@@ -1030,10 +974,6 @@
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/space)
-"Jt" = (
-/obj/effect/spawner/bunk_bed,
-/turf/open/floor/suns/hatch/mahogany,
-/area/space)
 "Jv" = (
 /obj/effect/turf_decal/trimline/transparent/syndiered/line,
 /turf/open/floor/suns/hatch/maple,
@@ -1050,6 +990,12 @@
 	},
 /obj/effect/turf_decal/trimline/transparent/syndiered/corner,
 /turf/open/floor/suns/hatch/maple,
+/area/space)
+"JJ" = (
+/obj/effect/turf_decal/siding/wood/mahogany{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "JU" = (
 /obj/effect/turf_decal/isf_big/five,
@@ -1178,6 +1124,10 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/space)
+"Tu" = (
+/obj/effect/turf_decal/atmos/air,
+/turf/open/space/basic,
+/area/space)
 "TD" = (
 /obj/structure/cable/cyan{
 	icon_state = "0-8"
@@ -1188,11 +1138,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
-"TV" = (
-/turf/open/floor/engine/air,
-/area/space)
 "Vn" = (
 /turf/open/space/basic,
+/area/space)
+"Vp" = (
+/obj/structure/grille,
+/turf/open/floor/plating,
 /area/space)
 "VO" = (
 /obj/machinery/griddle,
@@ -1282,13 +1233,6 @@
 	dir = 1
 	},
 /turf/open/floor/suns/hatch/maple,
-/area/space)
-"YV" = (
-/obj/structure/cable/cyan{
-	icon_state = "2-4"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating,
 /area/space)
 "YW" = (
 /obj/effect/turf_decal/stratos_2,
@@ -1443,7 +1387,7 @@ ca
 qU
 pz
 ND
-du
+Vp
 mu
 fh
 QL
@@ -1470,7 +1414,7 @@ rF
 pR
 dQ
 vu
-Vn
+gT
 TD
 xW
 fP
@@ -1490,8 +1434,8 @@ fP
 fP
 fP
 fP
-Vn
-Vn
+fP
+du
 fP
 fP
 ZJ
@@ -1499,8 +1443,8 @@ fP
 ZJ
 fP
 fP
-BL
-Vn
+IB
+gT
 fP
 fP
 fP
@@ -1521,20 +1465,20 @@ bF
 bF
 fP
 Vn
-Vn
+is
 oQ
 is
 xS
 QT
 eG
-YV
-DL
-AI
-Vn
+is
 oQ
-Vn
-Vn
-Vn
+is
+gT
+du
+Tu
+du
+Gz
 fP
 tL
 IE
@@ -1551,19 +1495,19 @@ bF
 bF
 fP
 Vn
-Vn
-fP
+is
+is
+is
+is
+is
+is
+is
+is
 is
 gT
-gT
-gT
-IB
-fP
-fP
-fP
-fP
-zL
+du
 Vn
+du
 Vn
 fP
 BF
@@ -1580,21 +1524,21 @@ bF
 bF
 bF
 fP
-ZJ
-ZJ
-fP
+Vn
+Vn
+Vn
+Vn
+Vn
+Vn
+Vn
+Vn
+Vn
 is
 gT
-gT
-gT
-IB
-ZJ
-mx
-ov
 fP
-Vn
-Vn
-Vn
+du
+fP
+du
 fP
 Cv
 Cv
@@ -1610,21 +1554,21 @@ fP
 oQ
 fP
 fP
-bL
-TV
-fP
-is
-is
-is
-is
-is
-ZJ
-mx
-hi
-fP
 wL
+zL
 Vn
 Vn
+Vn
+Vn
+Vn
+Vn
+Vn
+is
+is
+is
+is
+is
+is
 fP
 px
 px
@@ -1645,11 +1589,11 @@ fP
 fP
 fP
 fP
+fP
+fP
+fP
+fP
 oQ
-fP
-fP
-fP
-fP
 fP
 fP
 fP
@@ -1672,13 +1616,13 @@ bF
 yn
 QB
 QB
-QB
-DA
-OU
-OU
-OU
-OU
-OU
+JJ
+fP
+Vn
+Vn
+fP
+Vn
+fP
 OU
 OU
 oQ
@@ -1700,15 +1644,15 @@ mP
 bF
 bF
 HH
+gT
+gT
 tE
-tE
-tE
-DA
-OU
-OU
-OU
-OU
-OU
+Vn
+Vn
+Vn
+Vn
+Vn
+fP
 OU
 OU
 oQ
@@ -1730,15 +1674,15 @@ BP
 bF
 vI
 fP
+gT
+gT
+tE
 fP
-oQ
+Vn
+Vn
 fP
+Vn
 fP
-fP
-oQ
-fP
-fP
-OU
 OU
 OU
 fP
@@ -1760,15 +1704,15 @@ fP
 oQ
 fP
 fP
-bF
-bF
-bF
+gT
+gT
+tE
 fP
-wU
-Vn
-Vn
 fP
-OU
+fP
+fP
+fP
+fP
 OU
 OU
 fP
@@ -1790,11 +1734,11 @@ bF
 bF
 bF
 fP
-bF
-bF
-bF
+gT
+gT
+gT
 fP
-Ai
+Vn
 Vn
 Vn
 fP
@@ -1820,18 +1764,18 @@ bF
 bF
 bF
 fP
-Jt
-bF
-bF
-fP
-fP
+gT
+gT
+gT
+Vn
+Vn
+Vn
 Vn
 fP
-fP
 OU
 OU
 OU
-Vn
+oQ
 Vn
 Vn
 Vn
@@ -1850,11 +1794,11 @@ oM
 bF
 fP
 fP
+oQ
+oQ
 fP
 fP
-fP
-fP
-tZ
+Vn
 Vn
 Vn
 fP
@@ -1880,8 +1824,8 @@ fP
 fP
 fP
 NA
-NA
-NA
+pZ
+pZ
 NA
 fP
 fP
@@ -1936,7 +1880,7 @@ Vn
 Vn
 fh
 sE
-du
+Vp
 kj
 pZ
 pZ
@@ -1966,7 +1910,7 @@ Vn
 fh
 fh
 sE
-du
+Vp
 kj
 pZ
 pZ
@@ -1996,7 +1940,7 @@ Vn
 fh
 fh
 sE
-du
+Vp
 hJ
 pZ
 pZ
@@ -2026,7 +1970,7 @@ Vn
 fh
 fh
 sE
-du
+Vp
 zE
 pZ
 pZ
@@ -2056,7 +2000,7 @@ Vn
 Vn
 fh
 Hj
-du
+Vp
 AU
 pZ
 pZ
@@ -2204,7 +2148,7 @@ Vn
 Vn
 Vn
 Vn
-Vn
+fP
 Vn
 Vn
 du
@@ -2234,7 +2178,7 @@ Vn
 Vn
 Vn
 Vn
-Vn
+fP
 Vn
 Vn
 du
@@ -2264,7 +2208,7 @@ Vn
 Vn
 Vn
 Vn
-Vn
+fP
 Vn
 Vn
 du
