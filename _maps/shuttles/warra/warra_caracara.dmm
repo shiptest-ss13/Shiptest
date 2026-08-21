@@ -68,10 +68,19 @@
 	},
 /obj/machinery/light/small/directional/north,
 /obj/machinery/button/door{
-	pixel_x = -10;
-	pixel_y = 12;
+	pixel_x = -8;
+	pixel_y = 25;
 	id = "caracara_bridge_lockdown";
 	name = "Bridge Lockdown"
+	},
+/obj/machinery/button/door{
+	pixel_y = 25;
+	pixel_x = 8;
+	name = "Bathroom Bolt Override";
+	id = "carabath_bolt";
+	dir = 2;
+	normaldoorcontrol = 1;
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -707,9 +716,11 @@
 /obj/machinery/button/door{
 	pixel_y = 9;
 	pixel_x = -22;
-	name = "Privacy Shutters";
+	name = "Door Bolt";
 	id = "carabath_bolt";
-	dir = 4
+	dir = 4;
+	normaldoorcontrol = 1;
+	specialfunctions = 4
 	},
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
