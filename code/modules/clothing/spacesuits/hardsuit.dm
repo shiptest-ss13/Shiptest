@@ -413,6 +413,7 @@
 		return
 	injector.inject(user, user)
 	playsound(src, 'sound/items/hypospray_long.ogg', 50, FALSE)
+	injector = null
 	injector.forceMove(drop_location())
 	addtimer(CALLBACK(src, GLOBAL_PROC_REF(to_chat), user, span_warning("Administering medical attention. Medipen administered and ejected.")), 20, TIMER_STOPPABLE)
 
