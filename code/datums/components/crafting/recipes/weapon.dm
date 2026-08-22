@@ -122,6 +122,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+<<<<<<< HEAD
 /datum/crafting_recipe/dynamite
 	name = "Dynamite"
 	result = /obj/item/grenade/firecracker/dynamite
@@ -133,55 +134,6 @@
 	time = 50
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-
-/*/datum/crafting_recipe/pipebow
-	name = "Pipe Bow"
-	result = /obj/item/gun/ballistic/bow/pipe
-	reqs = list(/obj/item/pipe = 5,
-				/obj/item/stack/sheet/plastic = 15,
-				/obj/item/weaponcrafting/silkstring = 10)
-	time = 450
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/arrow
-	name = "Arrow"
-	result = /obj/item/ammo_casing/caseless/arrow/wood
-	time = 30
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
-				/obj/item/stack/sheet/silk = 1,
-				/obj/item/stack/rods = 1) //1 metal sheet = 2 rods= 2 arrows
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/bone_arrow
-	name = "Bone Arrow"
-	result = /obj/item/ammo_casing/caseless/arrow/bone
-	time = 30
-	reqs = list(/obj/item/stack/sheet/bone = 1,
-				/obj/item/stack/sheet/sinew = 1,
-				/obj/item/ammo_casing/caseless/arrow/ash = 1)
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/ashen_arrow
-	name = "Fire hardened arrow"
-	result = /obj/item/ammo_casing/caseless/arrow/ash
-	tools = list(TOOL_WELDER)
-	time = 30
-	reqs = list(/obj/item/ammo_casing/caseless/arrow/wood = 1)
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/bronze_arrow
-	name = "Bronze arrow"
-	result = /obj/item/ammo_casing/caseless/arrow/bronze
-	time = 30
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
-				/obj/item/stack/tile/bronze = 1,
-				/obj/item/stack/sheet/silk = 1)
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO */
 
 /datum/crafting_recipe/zip_pistol
 	name = "Zip Pistol"
