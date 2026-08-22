@@ -1539,7 +1539,7 @@
 	},
 /obj/item/storage/fancy/donut_box{
 	pixel_x = -1;
-	pixel_y = -4
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -2212,10 +2212,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/structure/sign/poster/radio/random{
-	pixel_x = 0;
-	pixel_y = -32
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/fore)
 "Af" = (
@@ -2791,7 +2787,7 @@
 /area/ship/storage/equip)
 "Ie" = (
 /obj/machinery/door/airlock/mining{
-	name = "Starboard Cargo Bay"
+	name = "Equipment Room"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3574,7 +3570,8 @@
 	dir = 8;
 	pixel_x = -6;
 	pixel_y = -15;
-	id = "caracara_bridge_win"
+	id = "caracara_bridge_win";
+	name = "Bridge Shutters"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -4011,6 +4008,10 @@
 /obj/structure/bedsheetbin,
 /obj/effect/turf_decal/corner/opaque/warrablue/three_quarters,
 /obj/machinery/light/small/directional/east,
+/obj/structure/sign/poster/radio/random{
+	pixel_x = 0;
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/fore)
 "Xt" = (
