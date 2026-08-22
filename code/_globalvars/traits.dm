@@ -155,9 +155,6 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_MOB_EATER" = TRAIT_MOB_EATER,
 		"TRAIT_SCARRED_EYE" = TRAIT_SCARRED_EYE,
 		),
-	/obj/item/organ = list(
-		"TRAIT_TAILED" = TRAIT_TAILED,
-	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS,
 		),

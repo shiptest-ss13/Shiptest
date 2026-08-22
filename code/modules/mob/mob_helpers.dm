@@ -67,19 +67,6 @@
 			return /obj/item
 	return null
 
-/**
- * Return the zone or randomly, another valid zone
- *
- * probability controls the chance it chooses the passed in zone, or another random zone
- * defaults to 80
- */
-/proc/ran_zone(zone, probability = 80)
-	if(prob(probability))
-		zone = check_zone(zone)
-	else
-		zone = pick_weight(list(BODY_ZONE_HEAD = 4, BODY_ZONE_CHEST = 64, BODY_ZONE_L_ARM = 8, BODY_ZONE_R_ARM = 8, BODY_ZONE_L_LEG = 8, BODY_ZONE_R_LEG = 8))
-	return zone
-
 ///Would this zone be above the neck
 /proc/above_neck(zone)
 	var/list/zones = list(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_EYES)
