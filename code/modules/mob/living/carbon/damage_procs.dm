@@ -10,7 +10,7 @@
 			BP = def_zone
 		else
 			if(!def_zone)
-				def_zone = ran_zone(def_zone)
+				def_zone = run_zone(def_zone)
 			BP = get_bodypart(check_zone(def_zone))
 			if(!BP)
 				BP = get_first_available_bodypart()

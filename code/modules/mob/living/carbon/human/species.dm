@@ -1515,7 +1515,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		var/damage = rand(user.dna.species.punchdamagelow, user.dna.species.punchdamagehigh)
 
-		var/obj/item/bodypart/affecting = target.get_bodypart(ran_zone(user.zone_selected))
+		var/obj/item/bodypart/affecting = target.get_bodypart(target.run_zone(user.zone_selected))
 
 		var/miss_chance = 100//calculate the odds that a punch misses entirely. considers stamina and brute damage of the puncher. punches miss by default to prevent weird cases
 		if(user.dna.species.punchdamagelow)
@@ -1729,8 +1729,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			BP = def_zone
 		else
 			if(!def_zone)
-				def_zone = ran_zone(def_zone)
-			BP = H.get_bodypart(check_zone(def_zone))
+				def_zone = H.run_zone(def_zone)
+			BP = H.get_bodypart(def_zone)
 			if(!BP)
 				BP = H.get_first_available_bodypart()
 

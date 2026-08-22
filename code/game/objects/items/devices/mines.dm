@@ -410,10 +410,10 @@
 
 
 //pew pew
-/obj/item/mine/directional/mine_effect(mob/victim)
+/obj/item/mine/directional/mine_effect(mob/living/victim)
 	if(casingtype && target_turf && victim ?(src.loc != victim.loc) : victim == null)
 		var/obj/item/ammo_casing/casing = new casingtype(src)
-		casing.fire_casing(target_turf, null, null, null, 30, ran_zone(), 60, src)
+		casing.fire_casing(target_turf, null, null, null, 30, null, 60, src)
 	. = ..()
 
 /obj/item/mine/directional/disarm()
@@ -697,7 +697,7 @@
 	else
 		. = ..()
 
-/obj/item/mine/directional/claymore/mine_effect(mob/victim)
+/obj/item/mine/directional/claymore/mine_effect(mob/living/victim)
 	. = ..()
 	//if you somehow explode it while on the same tile, you win bonus shrapnel
 	//also spews stuff everywhere if it's triggered while not set up
@@ -716,7 +716,7 @@
 		light_dam = light_damage, light_item_dam = light_item_damage, heavy_dam = heavy_damage, heavy_item_dam = heavy_item_damage)
 		if(shredtype)
 			var/obj/item/ammo_casing/shredcasing = new shredtype(src)
-			shredcasing.fire_casing(target_turf, null, null, null, 30, ran_zone(), 50, src)
+			shredcasing.fire_casing(target_turf, null, null, null, 30, null, 50, src)
 
 /obj/item/mine/directional/claymore/plasma
 	name = "\improper Etherbor EC-1"

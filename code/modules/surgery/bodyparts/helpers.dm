@@ -43,10 +43,10 @@
 	return pick(all_parts)
 
 /// Returns a random available bodypart, weighted based on body_weight.
-/mob/living/proc/get_weighted_bodypart()
+/mob/living/proc/get_weighted_body_zone()
 	return
 
-/mob/living/carbon/get_weighted_bodypart()
+/mob/living/carbon/get_weighted_body_zone()
 	var/list/weighted_parts = list()
 	var/obj/item/bodypart/part
 	for(var/body_zone in bodyparts)
@@ -61,9 +61,9 @@
  * defaults to 80
  */
 /mob/living/proc/run_zone(zone, probability = 80)
-	if(prob(probability))
-		return get_bodypart(zone)
-	return get_weighted_bodypart()
+	if(zone && prob(probability))
+		return get_bodypart(zone) || get_weighted_body_zone()
+	return get_weighted_body_zone()
 
 /// Returns the number of bodyparts.
 /mob/living/proc/get_bodypart_count()
