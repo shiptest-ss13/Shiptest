@@ -27,6 +27,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	force = 10
 	throwforce = 7
+	swing_type = SWINGABLE_FLAIL
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
 	hitsound = 'sound/weapons/chainhit.ogg'
@@ -59,6 +60,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	force = 15
 	w_class = WEIGHT_CLASS_NORMAL
+	swing_type = SWINGABLE_FLAIL
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
 	hitsound = 'sound/weapons/whip.ogg'
 
@@ -82,6 +84,7 @@
 	throwforce = 8
 	armour_penetration = 50
 	attack_verb = list("smacked", "struck", "cracked", "beaten")
+	swing_type = SWINGABLE_FLAIL
 	var/overlay_state = "mace_handle"
 	var/mutable_appearance/overlay
 
@@ -104,6 +107,7 @@
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 3.5)
 	w_class = WEIGHT_CLASS_HUGE
 	demolition_mod = 1.25
+	swing_type = SWINGABLE_SWING
 	var/homerun_ready = FALSE
 	var/homerun_able = FALSE
 

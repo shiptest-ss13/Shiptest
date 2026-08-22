@@ -8,6 +8,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
+	swing_type = SWINGABLE_SWING
 	block_chance = 10
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_EDGED
@@ -156,6 +157,7 @@
 	resistance_flags = FIRE_PROOF
 
 	attack_cooldown = LIGHT_WEAPON_CD
+	swing_attack_cooldown = LIGHT_WEAPON_CD
 	force = 30
 	wound_bonus = 5
 	bare_wound_bonus = 10
@@ -495,3 +497,125 @@
 	sword.name = "[n_title] blade of clan [n_name]"
 	name = "[n_title] scabbard of clan [n_name]"
 	update_appearance()
+
+/obj/item/melee/sword/volcano
+	name = "Volcano"
+	desc = "It looks like it's made out of fire, but its made out of some unidentifiable material! Who would even be able to wield such a thing?"
+
+	icon = 'icons/obj/weapon/sword_48x32.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+
+	base_icon_state = "volcano"
+	icon_state = "volcano"
+	force = 15
+	var/force_wielded = 45
+	throwforce = 15
+	slowdown = 1
+	drag_slowdown = 1
+
+	block_chance = 0
+	var/block_chance_wielded = 40
+	demolition_mod = 2
+
+	armour_penetration = 80
+	w_class = WEIGHT_CLASS_HUGE
+	attack_cooldown = 0.8 SECONDS
+	swing_attack_cooldown = 0.8 SECONDS
+	var/attack_cooldown_wielded = 2.5 SECONDS
+
+
+	attack_verb = list("hilt-bashed", "hilt-smashed", "hilt-crushed", "hilt-smacked")
+	var/list/attack_verb_wielded = list("ripped", "chopped", "cleaved", "torn", "cut", "pierces")
+
+	hitsound = list('sound/weapons/melee/heavyblunt_hit1.ogg', 'sound/weapons/melee/heavyblunt_hit2.ogg', 'sound/weapons/melee/heavyblunt_hit3.ogg')
+	var/unwielded_hitsound = list('sound/weapons/melee/heavyblunt_hit1.ogg', 'sound/weapons/melee/heavyblunt_hit2.ogg', 'sound/weapons/melee/heavyblunt_hit3.ogg')
+	var/hitsound_wielded = list('sound/weapons/melee/heavyaxe_hit1.ogg', 'sound/weapons/melee/heavyaxe_hit2.ogg')
+
+	pickup_sound = 'sound/weapons/melee/heavy_pickup.ogg'
+	sharpness = SHARP_NONE
+	swing_type = SWINGABLE_SWING
+	max_integrity = 400
+	resistance_flags = FIRE_PROOF | LAVA_PROOF
+	wound_bonus = 10
+	bare_wound_bonus = 25
+	slot_flags = NONE
+
+	var/wielded = FALSE
+
+
+/obj/item/melee/sword/volcano/Initialize(mapload, spawn_empty)
+	. = ..()
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+
+/obj/item/melee/sword/volcano/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 100, 80, 0 , 'sound/weapons/bladeslice.ogg') //axes are not known for being precision butchering tools
+	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = force_wielded, icon_wielded="[base_icon_state]_w")
+
+/obj/item/melee/sword/volcano/update_icon_state()
+	icon_state = "[base_icon_state]"
+	return ..()
+
+/// triggered on wield of two handed item
+/obj/item/melee/sword/volcano/proc/on_wield(obj/item/source, mob/user, instant)
+	wielded = TRUE
+	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = slowdown)
+
+	wound_bonus = 20
+	bare_wound_bonus = 40
+	swing_type = SWINGABLE_CLEAVE
+	sharpness = SHARP_EDGED
+
+	attack_cooldown = attack_cooldown_wielded
+	swing_attack_cooldown = attack_cooldown_wielded
+	hitsound = hitsound_wielded
+	attack_verb = attack_verb_wielded
+	block_chance = block_chance_wielded
+	swing_sfx = 'sound/creatures/claw_attack.ogg'
+
+/// triggered on unwield of two handed item
+/obj/item/melee/sword/volcano/proc/on_unwield(obj/item/source, mob/user)
+	wielded = FALSE
+	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
+
+	swing_type = SWINGABLE_SWING
+	sharpness = SHARP_NONE
+
+	attack_cooldown = src::attack_cooldown
+	swing_attack_cooldown = 1 SECONDS
+
+	wound_bonus = src::wound_bonus
+	bare_wound_bonus = src::bare_wound_bonus
+	hitsound = unwielded_hitsound
+	swing_sfx = src::swing_sfx
+	attack_verb = src::attack_verb
+	block_chance = src::block_chance
+
+/obj/item/melee/sword/volcano/attack(mob/living/target, mob/living/user)
+	. = ..()
+	var/atom/throw_target = get_edge_target_turf(target, user.dir)
+	if(!target.anchored && !wielded)
+		var/whack_speed = (prob(60) ? 1 : 3)
+		target.throw_at(throw_target, rand(1,2), whack_speed, user, gentle = TRUE)
+	if(wielded)
+		target.adjust_fire_stacks(0.05)
+		target.ignite_mob()
+
+
+
+/obj/item/melee/sword/volcano/swing_attack(mob/living/user, atom/thing_to_not_hit)
+	. = ..()
+	if(wielded)
+		user.Immobilize(1 SECONDS)
+		user.balloon_alert_to_viewers("stunned", "after-swing stun")
+		user.visible_message(span_danger("[user] is stunned after swinging the [src]!"), span_danger("[src] stuns you momentarily after swinging!"))
+
+/obj/item/melee/sword/volcano/pre_attack(atom/attacked_atom, mob/living/user, params)
+	if(user.a_intent == INTENT_HELP)
+		to_chat(user, span_danger("To wield the sword, your [span_bold("intent")] must be to slay, you fool."))
+		return COMPONENT_NO_ATTACK
+	return ..()

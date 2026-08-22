@@ -1,4 +1,5 @@
 /obj/item/melee/axe
+
 	icon = 'icons/obj/weapon/axes/axe.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
@@ -9,9 +10,11 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	attack_cooldown = HEAVY_WEAPON_CD
+	swing_attack_cooldown = HEAVY_WEAPON_CD
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	hitsound = list('sound/weapons/melee/heavyaxe_hit1.ogg', 'sound/weapons/melee/heavyaxe_hit2.ogg')
 	pickup_sound = 'sound/weapons/melee/heavy_pickup.ogg'
+	swing_type = SWINGABLE_SWING
 	sharpness = SHARP_EDGED
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
