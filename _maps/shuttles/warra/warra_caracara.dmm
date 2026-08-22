@@ -443,7 +443,9 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
 	},
-/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/structure/closet/secure_closet/freezer/fridge{
+	populate = 0
+	},
 /obj/item/food/grown/cabbage{
 	pixel_x = -4;
 	pixel_y = 2
@@ -1135,9 +1137,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway)
 "mb" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 4
-	},
 /obj/item/radio/intercom/directional/north,
 /obj/machinery/portable_atmospherics/scrubber,
 /obj/machinery/atmospherics/components/unary/portables_connector/layer4,
