@@ -403,3 +403,56 @@
 	if(locate(/obj/effect/particle_effect/smoke) in get_turf(owner))
 		return TRUE
 	qdel(src) // we didnt find any smoke, so remove status
+
+/datum/status_effect/synthflesh
+	id = "Synthflesh"
+	tick_interval = 20
+	alert_type = /atom/movable/screen/alert/status_effect/synthflesh
+	var/Rampup = 1
+
+/atom/movable/screen/alert/status_effect/synthflesh
+	name = "Synthflesh Regeneration"
+	desc = "Your body is currently regenerating due to the effects of Synthflesh. However during this time you are more vulnerable to damage!"
+	icon_state = "synthflesh"
+
+//Handles changing our rampup value, which scales how much hp we regenerate per tick.
+/datum/status_effect/synthflesh/proc/stack(value)
+	Rampup = (Rampup + value)
+
+//Flavortext
+/datum/status_effect/synthflesh/on_apply()
+	. = ..()
+	to_chat(owner, span_warning("Your flesh starts to feel like a liquid as your wounds begin to close."))
+	if(!ishuman(owner))
+		Destroy()
+
+/datum/status_effect/synthflesh/tick(mob/living/carbon/human/M)
+	. = ..()
+	var/mob/living/carbon/human/subject = owner
+	//Heal whoever has the status effect based on how many stacks we have, gaining and losing stacks is handled below.
+	owner.adjustBruteLoss(-0.1 * Rampup)
+	owner.adjustFireLoss(-0.1 * Rampup)
+	//Handles the ramping up and ramping down. We gain a multiplicitave 3% damage vulnerability each tick its going up, and lose the same each tick its going down.
+	//We check if there is synthflesh in the body and if the person using this is alive, if either of these are untrue we tick down. We check for living because if someone died with synthflesh in their system they'd gain an ungodly ammount of stacks which would suck.
+	if((owner.reagents.has_reagent(/datum/reagent/medicine/synthflesh)) && (owner.stat != DEAD))
+		subject.physiology.burn_mod *= 1.03
+		subject.physiology.brute_mod *= 1.03
+		stack(1)
+	else
+	//Rampdown, does the opposite of rampup, lowers the damage multiplier and stack count.
+		stack(-1)
+		subject.physiology.burn_mod /= 1.03
+		subject.physiology.brute_mod /= 1.03
+	//The lose stack part of code fires one more time than the gainstack, so this handles destroying the effect at 0 stacks and making sure we have the same damage mult as when we started.
+	if(Rampup < 1)
+		Destroy()
+		subject.physiology.burn_mod *= 1.03
+		subject.physiology.brute_mod *= 1.03
+
+//flavortext 2
+/datum/status_effect/synthflesh/on_remove()
+	. = ..()
+	to_chat(owner, span_notice("Your flesh once again feels solid."))
+
+
+
