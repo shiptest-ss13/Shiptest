@@ -60,6 +60,10 @@
 		if(!QDELETED(H) && H.is_operational)
 			dialed_holopads += H
 			H.say("Incoming call.")
+			if(H.linked_radio)
+				var/obj/item/radio/linked = H.linked_radio.resolve()
+				if(linked.can_receive(linked.frequency, list(H.get_map_zone())))
+					linked.say("Incoming holocall.")
 			if(H.admin_pad)
 				to_chat(GLOB.admins, span_adminnotice("[icon2html(calling_holopad.icon, GLOB.admins)]<b><font color=green> Incoming Holocall! \n </font>[ADMIN_FULLMONTY(requester)]:</b><span class='linkify'> is calling <b>[H.get_pad_name()][ADMIN_FLW(H)]</b> from <b>[get_area_name(calling_holopad)][ADMIN_FLW(calling_pad)]</b>!"))
 			LAZYADD(H.holo_calls, src)
