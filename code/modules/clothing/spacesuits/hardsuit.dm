@@ -368,6 +368,79 @@
 	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
 	supports_variations = KEPORI_VARIATION
 
+	//ESH hardsuit
+/obj/item/clothing/head/helmet/space/hardsuit/esh
+	name = "ES-Hardsuit helmet"
+	desc = "An EXOCOM-brand helmet designed for work in extremely hazardous environments. Rated for high impacts, radiological threats, extreme temperatures, and strong acids."
+	icon_state = "hardsuit0-esh"
+	item_state = "esh_helm"
+	hardsuit_type = "esh"
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	heat_protection = HEAD
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 20)
+	light_range = 7
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals)
+
+/obj/item/clothing/suit/space/hardsuit/esh
+	name = "ES-Hardsuit"
+	desc = "A surprisingly light suit designed by EXOCOM; the 'Extreme Survival Hardsuit' is made up of materials rated for extremely hazardous environments. Alongside this it contains an injector module that can be loaded with MediPens of any variety, which will then be automatically used when the user suffers from any noticeable wound or the user manually activates the system."
+	icon_state = "hardsuit-esh"
+	item_state = "esh_hardsuit"
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 20)
+	slowdown = 0.4
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals)
+	actions_types = list(/datum/action/item_action/toggle_helmet, /datum/action/item_action/activate_suit_injector)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/esh
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	supports_variations = DIGITIGRADE_VARIATION
+	var/obj/item/reagent_containers/hypospray/medipen/injector = null
+
+/obj/item/clothing/suit/space/hardsuit/esh/examine(mob/user)
+	. = ..()
+	. += span_notice("You can slot a fresh medipen in by clicking on the suit with a medipen.")
+	. += span_notice("You can <b>Alt+Click</b> the ESH to eject any inserted medipens.")
+
+/obj/item/clothing/suit/space/hardsuit/esh/proc/declare_wound(mob/living/carbon/human/user)
+	to_chat(user, span_warning("Warning: significant bodily harm detected."))
+	inject_user(user)
+
+/obj/item/clothing/suit/space/hardsuit/esh/proc/inject_user(mob/user)
+	if(!injector || injector.reagents.total_volume <= 0)
+		to_chat(user, span_warning("Warning: no medipen found or current one is empty."))
+		return
+	injector.inject(user, user)
+	playsound(src, 'sound/items/hypospray_long.ogg', 50, FALSE)
+	injector = null
+	injector.forceMove(drop_location())
+	addtimer(CALLBACK(src, GLOBAL_PROC_REF(to_chat), user, span_warning("Administering medical attention. Medipen administered and ejected.")), 20, TIMER_STOPPABLE)
+
+/obj/item/clothing/suit/space/hardsuit/esh/equipped(mob/user, slot)
+	. = ..()
+	RegisterSignal(user, COMSIG_CARBON_GAIN_WOUND, PROC_REF(declare_wound))
+
+/obj/item/clothing/suit/space/hardsuit/esh/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	if(istype(I, /obj/item/reagent_containers/hypospray/medipen))
+		if(injector)
+			to_chat(user, span_notice("[src]'s injector system already has a medipen slotted in."))
+			return
+		if(user.transferItemToLoc(I, src))
+			injector = I
+			to_chat(user, span_notice("You slot the medipen into the [src]'s injector system."))
+			return
+
+/obj/item/clothing/suit/space/hardsuit/esh/AltClick(mob/user)
+	. = ..()
+	if(!injector)
+		to_chat(user, span_notice("There is no medipen to take out."))
+	injector.forceMove(drop_location())
+	user.put_in_active_hand(injector)
+	injector = null
+	to_chat(user, span_notice("You pop the medipen out from the [src]'s injector system."))
+
 	//Syndicate hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	name = "blood-red hardsuit helmet"
