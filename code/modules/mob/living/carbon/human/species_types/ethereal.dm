@@ -119,7 +119,7 @@
 	var/obj/item/organ/stomach/ethereal/stomach = _human.getorganslot(ORGAN_SLOT_STOMACH)
 	var/mob/living/carbon/target = owner.pulling
 
-	if(( isipc(target) && owner.grab_state >= GRAB_AGGRESSIVE && owner.grab_state < GRAB_KILL)) //if you try to root while agggrabing a posi you'll charge from them
+	if((isipc(target) && owner.grab_state >= GRAB_AGGRESSIVE && owner.grab_state < GRAB_KILL)) //if you try to root while agggrabing a posi you'll charge from them
 		var/juice = target.nutrition
 		if(istype(stomach))
 			while(do_after(owner, 1.5 SECONDS, target = target)) //target = target, amazing.
@@ -154,7 +154,7 @@
 						return
 		return
 
-	if(( isipc(target) && owner.grab_state >= GRAB_KILL))
+	if((isipc(target) && owner.grab_state >= GRAB_KILL))
 		if(stomach.crystal_charge < 666)
 			to_chat(_human, span_notice("You don't have enough charge to overload [target]"))
 			return
@@ -234,7 +234,7 @@
 			return FALSE
 		if(is_type_in_list(terrain, GOOD_SOIL))
 			return TRUE
-		if(( isipc(target) && owner.grab_state >= GRAB_AGGRESSIVE))
+		if((isipc(target) && owner.grab_state >= GRAB_AGGRESSIVE))
 			return TRUE
 		for(var/atom/movable/thing in terrain.contents)
 			if(is_type_in_list(thing, list(/obj/machinery/hydroponics/wooden, /obj/machinery/hydroponics/soil)))
