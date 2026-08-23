@@ -1,54 +1,24 @@
-//Interceptor Crash Site
+//swamp fever sorry interceptor
 
-/area/ruin/jungle/interceptor/crashsite
-	name = "Makosso-Warra Interceptor Crashsite"
-	icon_state = "yellow"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/afthall
-	name = "MWSV Retribution Aft Hall"
-	icon_state = "hallA"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/porthall
-	name = "MWSV Retribution Port Hall"
-	icon_state = "hallP"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/starhall
-	name = "MWSV Retribution Starbard Hall"
-	icon_state = "hallS"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/forehall
-	name = "MWSV Retribution Fore Hall"
-	icon_state = "hallF"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/bridge
-	name = "MWSV Retribution Bridge"
+/area/ruin/jungle/swamp
+	name = "Main Building"
 	icon_state = "bridge"
-	always_unpowered = TRUE
 
-/area/ruin/jungle/interceptor/security
-	name = "MWSV Retribution Security"
-	icon_state = "security"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/crewquarters
-	name = "MWSV Retribution Crewquarters"
+/area/ruin/jungle/swamp/flamebearer
+	name = "Flamebearer's Deck"
 	icon_state = "crew_quarters"
-	always_unpowered = TRUE
 
-/area/ruin/jungle/interceptor/starlauncherone
-	name = "MWSV Retribution Starboard Launcher One"
-	icon_state = "red"
-	always_unpowered = TRUE
+/area/ruin/jungle/swamp/colligne
+	name = "Colligne's Deck"
+	icon_state = "crew_quarters"
 
-/area/ruin/jungle/interceptor/starlaunchertwo
-	name = "MWSV Retribution Starboard Launcher Two"
+/area/ruin/jungle/swamp/crew
+	name = "Hunter's Quarters"
+	icon_state = "crew_quarters"
+
+/area/ruin/jungle/swamp/butchery
+	name = "Butcher's Shed"
 	icon_state = "red"
-	always_unpowered = TRUE
 
 // Abandoned Airbase
 
