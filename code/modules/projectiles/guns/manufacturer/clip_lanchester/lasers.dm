@@ -177,8 +177,8 @@
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	burst_size = 3
-	burst_delay = 0.2 SECONDS
-	fire_delay = 0.7 SECONDS
+	burst_delay = 0.15 SECONDS
+	fire_delay = 0.6 SECONDS
 	spread = 6
 	spread_unwielded = 9
 
@@ -201,6 +201,7 @@
 	icon_state = "ecm7"
 	item_state = "clover_generic"
 
+	fire_delay = 0.5 SECONDS
 	spread = 4
 	spread_unwielded = 7
 
