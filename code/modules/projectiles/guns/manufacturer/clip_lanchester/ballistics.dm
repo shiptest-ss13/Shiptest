@@ -757,7 +757,8 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 	adjust_fire_select_icon_state_on_safety = TRUE
 	fire_delay = 0.3 SECONDS
 	manufacturer = MANUFACTURER_MINUTEMAN
-
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_FULLAUTO = "auto")
 	weapon_weight = WEAPON_MEDIUM
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g
 	allowed_ammo_types = list(
