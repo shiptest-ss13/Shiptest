@@ -158,7 +158,7 @@
 	item_state = "hood_inteq_alt"
 
 /obj/item/clothing/suit/toggle/flight/inteq
-	name = "Inteq Pilot Jacket"
+	name = "inteq pilot jacket"
 	desc = "A standard-issue flight jacket for subshuttle pilots. Lined with fur for any cold occasion."
 	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
@@ -505,7 +505,7 @@
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 
 /obj/item/clothing/mask/balaclava/inteq
-	name = "Inteq combat balaclava"
+	name = "inteq combat balaclava"
 	desc = "A surprisingly advanced balaclava. While it doesn't muffle your voice, it has a mouthpiece for internals. Comfy to boot! This one is a variataion commonly used by the IRMG to protect it's members idenites."
 	icon = 'icons/obj/clothing/faction/inteq/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/mask.dmi'
