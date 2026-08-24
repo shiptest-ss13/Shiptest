@@ -301,9 +301,14 @@
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	icon_state = "navyhelmet"
-	item_state = "navyhelm"
+	item_state = "navyhelmet"
 	can_flashlight = TRUE
 	content_overlays = TRUE
+	obj_flags = INFINITE_RESKIN
+	unique_reskin = list(
+		"Standard" = "navyhelmet",
+		"Medic" = "navyhelmet_medic",
+	)
 
 /obj/item/clothing/head/helmet/gezena
 	name = "composite combat helmet"
@@ -323,6 +328,14 @@
 	item_state = "marinehelm"
 	can_flashlight = TRUE
 	content_overlays = TRUE
+	obj_flags = INFINITE_RESKIN
+	unique_reskin = list(
+		"Standard" = "marinehelmet",
+		"Follow Me" = "marinehelmet_follow",
+		"Single Stripe" = "marinehelmet_singlestripe",
+		"Double Stripe" = "marinehelmet_doublestripe",
+		"Medic" = "marinehelmet_medic",
+	)
 
 //Gloves
 
