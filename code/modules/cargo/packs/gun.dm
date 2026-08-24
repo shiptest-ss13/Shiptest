@@ -818,7 +818,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/hades
-	name = "AL655 Plasma Assault Rifle crate"
+	name = "AL655 'Hades' Plasma Assault Rifle crate"
 	desc = "Contains a high-energy, automatic plasma rifle. For Makosso-Warra employee use only."
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/hades)
