@@ -311,7 +311,6 @@
 	boozepwr = 25
 	quality = DRINK_VERYGOOD
 	taste_description = "spicy toxins"
-	glass_icon_state = "toxinsspecialglass"
 	glass_name = "Toxins Special"
 	glass_desc = "Traditionally lit with a welder while the server is blindfolded, but you don't want to cause an ACTUAL accident here."
 
@@ -471,7 +470,7 @@
 	boozepwr = 70
 	quality = DRINK_NICE
 	taste_description = "soda"
-	glass_icon_state = "whiskeysodaglass2"
+	glass_icon_state = "whiskeysodaglass"
 	glass_name = "whiskey soda"
 	glass_desc = "Bitter and refreshing."
 
@@ -901,7 +900,6 @@
 	quality = DRINK_VERYGOOD
 	taste_description = "a numbing sensation"
 	metabolization_rate = 1 * REAGENTS_METABOLISM
-	glass_icon_state = "neurotoxinglass"
 	glass_name = "Neurotoxin"
 	glass_desc = "The story goes that this drink was made on a bet between Cybersun chemists, debating if a drink could be used to put down a suspected Makosso-Warra spy. While morphine wasn't <i>supposed</i> to be used, it put them down all the same."
 
@@ -1071,7 +1069,6 @@
 	boozepwr = 40
 	taste_description = "stale bread with a staler aftertaste"
 	nutriment_factor = 2 * REAGENTS_METABOLISM
-	glass_icon_state = "squirt_cider"
 	glass_name = "Squirt Cider"
 	glass_desc = "Squirt cider will toughen you right up. Too bad about the musty aftertaste."
 
@@ -1129,7 +1126,6 @@
 	taste_description = "mint and chocolate"
 	boozepwr = 25
 	quality = DRINK_GOOD
-	glass_icon_state = "peppermint_patty"
 	glass_name = "Peppermint Patty"
 	glass_desc = "A boozy, minty hot cocoa that warms your belly on a cold night."
 
