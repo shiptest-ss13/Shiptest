@@ -620,7 +620,9 @@
 	pixel_x = -22;
 	pixel_y = -8;
 	name = "Maintenance Lock";
-	id = "riggssecmaintlock"
+	id = "riggssecmaintlock";
+	normaldoorcontrol = 1;
+	specialfunctions = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/security)
@@ -2007,7 +2009,9 @@
 	name = "Bridge Entrance Lock";
 	pixel_x = -1;
 	pixel_y = 24;
-	id = "riggsbridge"
+	id = "riggsbridge";
+	normaldoorcontrol = 1;
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -6260,7 +6264,9 @@
 	pixel_x = -9;
 	pixel_y = -23;
 	name = "Maintenance Lock";
-	id = "riggsmedmaintlock"
+	id = "riggsmedmaintlock";
+	normaldoorcontrol = 1;
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
