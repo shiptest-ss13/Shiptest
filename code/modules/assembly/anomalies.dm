@@ -96,7 +96,7 @@
 /obj/item/assembly/signaler/anomaly/heartbeat
 	name = "\improper heartbeat anomaly core"
 	desc = "The stabilized core of a heartbeat anomaly. Pulses of heat run across its shell."
-	grind_results = list(/datum/reagent/uranium/heartbeat = 30)
+	grind_results = list(/datum/reagent/heartbeat = 10)
 
 /obj/item/assembly/signaler/anomaly/heartbeat/anomaly_core_detonation()
 	visible_message(span_warning("[src] expands and throbs, before shattering into dozens of fragments!"))
@@ -144,7 +144,7 @@
 /obj/item/assembly/signaler/anomaly/plasmasoul
 	name = "\improper plasmasoul anomaly core"
 	desc = "The stabilized core of a plasmasoul anomaly. The air around it hisses."
-	grind_results = list(/datum/reagent/toxin/plasma = 50)
+	grind_results = list(/datum/reagent/toxin/plasma = 100)
 
 /obj/item/assembly/signaler/anomaly/plasmasoul/anomaly_core_detonation()
 	visible_message(span_warning("[src] rapidly delaminates into plasma!"))
@@ -155,7 +155,7 @@
 /obj/item/assembly/signaler/anomaly/pulsar
 	name = "\improper pulsar anomaly core"
 	desc = "The stabilized core of a pulsar anomaly. Electromagnetic crackles come off it."
-	grind_results = list(/datum/reagent/iron = 25, /datum/reagent/uranium = 25)
+	grind_results = list(/datum/reagent/iron = 25, /datum/reagent/uranium = 25) // emp
 
 /obj/item/assembly/signaler/anomaly/pulsar/anomaly_core_detonation()
 	visible_message(span_warning("[src] gives off one last pulse as it melts!"))

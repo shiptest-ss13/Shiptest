@@ -102,7 +102,7 @@
 		new /obj/item/soap(location)
 
 /datum/chemical_reaction/omegasoapification
-	required_reagents = list(/datum/reagent/consumable/potato_juice = 10, /datum/reagent/consumable/ethanol/lizardwine = 10, /datum/reagent/monkey_powder = 10, /datum/reagent/toxin/acid/nitracid = 10, /datum/reagent/lye = 10, /datum/reagent/consumable/ethanol/hooch = 10, /datum/reagent/bluespace = 10, /datum/reagent/drug/pumpup = 10, /datum/reagent/consumable/space_cola = 10)
+	required_reagents = list(/datum/reagent/consumable/potato_juice = 10, /datum/reagent/consumable/ethanol/lizardwine = 10, /datum/reagent/drug/finobranc = 10, /datum/reagent/toxin/acid/nitracid = 10, /datum/reagent/lye = 10, /datum/reagent/consumable/ethanol/hooch = 10, /datum/reagent/bluespace = 10, /datum/reagent/drug/pumpup = 10, /datum/reagent/consumable/space_cola = 10)
 	required_temp = 999
 	mob_react = FALSE
 
@@ -112,9 +112,12 @@
 		new /obj/item/soap/omega(location)
 
 /datum/chemical_reaction/candlefication
-	required_reagents = list(/datum/reagent/liquidgibs = 5, /datum/reagent/oxygen  = 5) //
+	required_reagents = list(/datum/reagent/liquidgibs = 5, /datum/reagent/oxygen = 5)
 	required_temp = 374
 	mob_react = FALSE
+
+/datum/chemical_reaction/candlefication/wax
+	required_reagents = list(/datum/reagent/wax = 5, /datum/reagent/oxygen = 5)
 
 /datum/chemical_reaction/candlefication/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -140,146 +143,6 @@
 	results = list(/datum/reagent/nitrous_oxide = 5)
 	required_reagents = list(/datum/reagent/ammonia = 2, /datum/reagent/nitrogen = 1, /datum/reagent/oxygen = 2)
 	required_temp = 525
-
-////////////////////////////////// VIROLOGY //////////////////////////////////////////
-
-/datum/chemical_reaction/virus_food
-	results = list(/datum/reagent/consumable/virus_food = 15)
-	required_reagents = list(/datum/reagent/water = 5, /datum/reagent/consumable/milk = 5)
-
-/datum/chemical_reaction/virus_food_mutagen
-	results = list(/datum/reagent/toxin/mutagen/mutagenvirusfood = 1)
-	required_reagents = list(/datum/reagent/toxin/mutagen = 1, /datum/reagent/consumable/virus_food = 1)
-
-/datum/chemical_reaction/virus_food_synaptizine
-	results = list(/datum/reagent/medicine/synaptizine/synaptizinevirusfood = 1)
-	required_reagents = list(/datum/reagent/medicine/synaptizine = 1, /datum/reagent/consumable/virus_food = 1)
-
-/datum/chemical_reaction/virus_food_plasma
-	results = list(/datum/reagent/toxin/plasma/plasmavirusfood = 1)
-	required_reagents = list(/datum/reagent/toxin/plasma = 1, /datum/reagent/consumable/virus_food = 1)
-
-/datum/chemical_reaction/virus_food_plasma_synaptizine
-	results = list(/datum/reagent/toxin/plasma/plasmavirusfood/weak = 2)
-	required_reagents = list(/datum/reagent/medicine/synaptizine = 1, /datum/reagent/toxin/plasma/plasmavirusfood = 1)
-
-/datum/chemical_reaction/virus_food_mutagen_sugar
-	results = list(/datum/reagent/toxin/mutagen/mutagenvirusfood/sugar = 2)
-	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/toxin/mutagen/mutagenvirusfood = 1)
-
-/datum/chemical_reaction/virus_food_mutagen_salineglucose
-	results = list(/datum/reagent/toxin/mutagen/mutagenvirusfood/sugar = 2)
-	required_reagents = list(/datum/reagent/medicine/salglu_solution = 1, /datum/reagent/toxin/mutagen/mutagenvirusfood = 1)
-
-/datum/chemical_reaction/virus_food_uranium
-	results = list(/datum/reagent/uranium/uraniumvirusfood = 1)
-	required_reagents = list(/datum/reagent/uranium = 1, /datum/reagent/consumable/virus_food = 1)
-
-/datum/chemical_reaction/virus_food_uranium_plasma
-	results = list(/datum/reagent/uranium/uraniumvirusfood/unstable = 1)
-	required_reagents = list(/datum/reagent/uranium = 5, /datum/reagent/toxin/plasma/plasmavirusfood = 1)
-
-/datum/chemical_reaction/virus_food_uranium_plasma_gold
-	results = list(/datum/reagent/uranium/uraniumvirusfood/stable = 1)
-	required_reagents = list(/datum/reagent/uranium = 10, /datum/reagent/gold = 10, /datum/reagent/toxin/plasma = 1)
-
-/datum/chemical_reaction/virus_food_uranium_plasma_silver
-	results = list(/datum/reagent/uranium/uraniumvirusfood/stable = 1)
-	required_reagents = list(/datum/reagent/uranium = 10, /datum/reagent/silver = 10, /datum/reagent/toxin/plasma = 1)
-
-/datum/chemical_reaction/mix_virus
-	results = list(/datum/reagent/blood = 1)
-	required_reagents = list(/datum/reagent/consumable/virus_food = 1)
-	required_catalysts = list(/datum/reagent/blood = 1)
-	var/level_min = 1
-	var/level_max = 2
-
-/datum/chemical_reaction/mix_virus/on_reaction(datum/reagents/holder, created_volume)
-	var/datum/reagent/blood/B = locate(/datum/reagent/blood) in holder.reagent_list
-	if(B && B.data)
-		var/datum/disease/advance/D = locate(/datum/disease/advance) in B.data["viruses"]
-		if(D)
-			D.Evolve(level_min, level_max)
-
-
-/datum/chemical_reaction/mix_virus/mix_virus_2
-	required_reagents = list(/datum/reagent/toxin/mutagen = 1)
-	level_min = 2
-	level_max = 4
-
-/datum/chemical_reaction/mix_virus/mix_virus_3
-	required_reagents = list(/datum/reagent/toxin/plasma = 1)
-	level_min = 4
-	level_max = 6
-
-/datum/chemical_reaction/mix_virus/mix_virus_4
-	required_reagents = list(/datum/reagent/uranium = 1)
-	level_min = 5
-	level_max = 6
-
-/datum/chemical_reaction/mix_virus/mix_virus_5
-	required_reagents = list(/datum/reagent/toxin/mutagen/mutagenvirusfood = 1)
-	level_min = 3
-	level_max = 3
-
-/datum/chemical_reaction/mix_virus/mix_virus_6
-	required_reagents = list(/datum/reagent/toxin/mutagen/mutagenvirusfood/sugar = 1)
-	level_min = 4
-	level_max = 4
-
-/datum/chemical_reaction/mix_virus/mix_virus_7
-	required_reagents = list(/datum/reagent/toxin/plasma/plasmavirusfood/weak = 1)
-	level_min = 5
-	level_max = 5
-
-/datum/chemical_reaction/mix_virus/mix_virus_8
-	required_reagents = list(/datum/reagent/toxin/plasma/plasmavirusfood = 1)
-	level_min = 6
-	level_max = 6
-
-/datum/chemical_reaction/mix_virus/mix_virus_9
-	required_reagents = list(/datum/reagent/medicine/synaptizine/synaptizinevirusfood = 1)
-	level_min = 1
-	level_max = 1
-
-/datum/chemical_reaction/mix_virus/mix_virus_10
-	required_reagents = list(/datum/reagent/uranium/uraniumvirusfood = 1)
-	level_min = 6
-	level_max = 7
-
-/datum/chemical_reaction/mix_virus/mix_virus_11
-	required_reagents = list(/datum/reagent/uranium/uraniumvirusfood/unstable = 1)
-	level_min = 7
-	level_max = 7
-
-/datum/chemical_reaction/mix_virus/mix_virus_12
-	required_reagents = list(/datum/reagent/uranium/uraniumvirusfood/stable = 1)
-	level_min = 8
-	level_max = 8
-
-/datum/chemical_reaction/mix_virus/rem_virus
-	required_reagents = list(/datum/reagent/medicine/synaptizine = 1)
-	required_catalysts = list(/datum/reagent/blood = 1)
-
-/datum/chemical_reaction/mix_virus/rem_virus/on_reaction(datum/reagents/holder, created_volume)
-	var/datum/reagent/blood/B = locate(/datum/reagent/blood) in holder.reagent_list
-	if(B && B.data)
-		var/datum/disease/advance/D = locate(/datum/disease/advance) in B.data["viruses"]
-		if(D)
-			D.Devolve()
-
-/datum/chemical_reaction/mix_virus/neuter_virus
-	required_reagents = list(/datum/reagent/toxin/formaldehyde = 1)
-	required_catalysts = list(/datum/reagent/blood = 1)
-
-/datum/chemical_reaction/mix_virus/neuter_virus/on_reaction(datum/reagents/holder, created_volume)
-	var/datum/reagent/blood/B = locate(/datum/reagent/blood) in holder.reagent_list
-	if(B && B.data)
-		var/datum/disease/advance/D = locate(/datum/disease/advance) in B.data["viruses"]
-		if(D)
-			D.Neuter()
-
-
 
 ////////////////////////////////// foam and foam precursor ///////////////////////////////////////////////////
 
@@ -369,7 +232,7 @@
 /datum/chemical_reaction/genesis
 	results = list(/datum/reagent/genesis = 10)
 	required_reagents = list(/datum/reagent/diethylamine = 10, /datum/reagent/medicine/strange_reagent = 1, /datum/reagent/teslium = 1)
-	mix_message = "The diethylamine sparks and is infused with the essence of vibrant life, turning a brillian green!"
+	mix_message = "The diethylamine sparks and is infused with the essence of vibrant life, turning a brilliant green!"
 
 /datum/chemical_reaction/oil
 	results = list(/datum/reagent/fuel/oil = 3)
@@ -388,46 +251,10 @@
 	results = list(/datum/reagent/colorful_reagent = 5)
 	required_reagents = list(/datum/reagent/stable_plasma = 1, /datum/reagent/uranium/radium = 1, /datum/reagent/drug/space_drugs = 1, /datum/reagent/medicine/cryoxadone = 1, /datum/reagent/consumable/triple_citrus = 1)
 
-/datum/chemical_reaction/corgium
-	required_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/colorful_reagent = 1, /datum/reagent/medicine/strange_reagent = 1, /datum/reagent/blood = 1)
-	required_temp = 374
-
-/datum/chemical_reaction/corgium/on_reaction(datum/reagents/holder, created_volume)
-	var/location = get_turf(holder.my_atom)
-	for(var/i = rand(1, created_volume), i <= created_volume, i++) // More lulz.
-		new /mob/living/simple_animal/pet/dog/corgi(location)
-	..()
-
-//monkey powder heehoo
-/datum/chemical_reaction/monkey_powder
-	results = list(/datum/reagent/monkey_powder = 3)
-	required_reagents = list(/datum/reagent/consumable/banana = 1, /datum/reagent/consumable/nutriment=2,/datum/reagent/liquidgibs = 1)
-
-/datum/chemical_reaction/monkey
-	required_reagents = list(/datum/reagent/monkey_powder = 30, /datum/reagent/water = 1)
-
-/datum/chemical_reaction/monkey/on_reaction(datum/reagents/holder, created_volume)
-	var/obj/item/food/monkeycube/cube = holder.my_atom
-	if(istype(cube))
-		cube.Expand()
-	else
-		var/location = get_turf(holder.my_atom)
-		new /mob/living/carbon/monkey(location)
-
 //water electrolysis
 /datum/chemical_reaction/electrolysis
 	results = list(/datum/reagent/oxygen = 20, /datum/reagent/hydrogen = 40)
 	required_reagents = list(/datum/reagent/consumable/liquidelectricity = 1, /datum/reagent/water = 10)
-
-//butterflium
-/datum/chemical_reaction/butterflium
-	required_reagents = list(/datum/reagent/colorful_reagent = 1, /datum/reagent/medicine/panacea = 1, /datum/reagent/medicine/strange_reagent = 1, /datum/reagent/consumable/nutriment = 1)
-
-/datum/chemical_reaction/butterflium/on_reaction(datum/reagents/holder, created_volume)
-	var/location = get_turf(holder.my_atom)
-	for(var/i = rand(1, created_volume), i <= created_volume, i++)
-		new /mob/living/simple_animal/butterfly(location)
-	..()
 
 /datum/chemical_reaction/saltpetre
 	results = list(/datum/reagent/saltpetre = 3)
@@ -465,7 +292,6 @@
 	results = list(/datum/reagent/yuck = 4)
 	required_reagents = list(/datum/reagent/fuel = 3)
 	required_container = /obj/item/food/deadmouse
-
 
 /datum/chemical_reaction/slimejelly
 	results = list(/datum/reagent/toxin/slimejelly = 5)

@@ -229,6 +229,17 @@
 	fade_in = 5 SECONDS
 	easing = SINE_EASING
 
+/datum/client_colour/funkytown
+	colour = list(
+			-2, 0, -2, 0.00,\
+			-2, 0, -2, 0.00,\
+			-2, 0, -2, 0.00,\
+			0.00, 0.00, 0.00, 1.00,\
+			1, 0, 1, 0.00)
+	priority = PRIORITY_HIGH
+	fade_in = 3 SECONDS
+	easing = SINE_EASING
+
 /datum/client_colour/rahkrahene
 	colour = "#e5a5b5"
 	fade_in = 5 SECONDS
