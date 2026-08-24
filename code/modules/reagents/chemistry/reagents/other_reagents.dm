@@ -2270,6 +2270,11 @@
 	// ...but irradiates you a fuckton
 	// hope you got a rad medkit buddy
 	radboy.apply_effect(rand(150, 300), EFFECT_IRRADIATE, 0)
+
+	// babum
+	if(SPT_PROB(15, seconds_per_tick))
+		playsound(radboy, 'sound/effects/singlebeat.ogg', 80, TRUE)
+
 	..()
 
 // Melter Anomaly
