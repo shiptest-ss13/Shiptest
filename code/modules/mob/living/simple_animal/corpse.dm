@@ -622,3 +622,6 @@
 	gloves = /obj/item/clothing/gloves/insulated
 	r_pocket = /obj/item/flashlight //backup
 
+/obj/effect/mob_spawn/human/corpse/ipcshell
+	mob_species = /datum/species/ipc
+	icon_state = "corpsehuman"
