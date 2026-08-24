@@ -58,7 +58,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	///Amount healed per second
 	var/heal_amount = -3
 	///What gets dropped when dropContents() is called.
-	var/list/subset = null
+	var/list/subset
 	///Total damage calculated by heal_tick()
 	var/total_damage = 0
 
@@ -85,13 +85,13 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	if(heal_flags & DO_TOX)
 		flag_list += span_boldnotice("Toxin Purge")
 	if(heal_flags & DO_OXY)
-		flag_list += span_boldnotice("Respiratory")
+		flag_list += span_boldnotice("Respiratory Damage")
 	if(heal_flags & DO_CLONE)
 		flag_list += span_boldnotice("Cellular Damage")
 	if(heal_flags & DO_WOUNDS)
 		flag_list += span_boldnotice("Complex Wounds")
 	if(heal_flags & DO_ORGANS)
-		flag_list += span_boldnotice("Internal Damage")
+		flag_list += span_boldnotice("Organ Damage")
 	if(heal_flags & DO_REVIVE)
 		flag_list += span_boldnotice("Resuscitation")
 	return english_list(flag_list, null, span_notice(", "))
@@ -100,17 +100,21 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	. = ..()
 	if(heal_flags)
 		. += span_notice("The following procedures are stored on the disk: [get_heal_flags_string()]")
+	if(uses)
+		. += span_info("It has [uses] uses left.")
 
 /obj/machinery/autodoc/examine(mob/user)
 	. = ..()
 	var/mob/living/carbon/patient = occupant
-	if(!proc_disk)
-		return
-	if(!operating)
-		. += span_notice("Alt-click to eject [icon2html(proc_disk, user)] [proc_disk].")
-	if(proc_disk.heal_flags && operating)
-		. += span_notice("[src] is currently operating with settings: [proc_disk.get_heal_flags_string()]")
-		. += span_notice("Estimated time until completion: [span_boldnotice("[get_operation_length()]")].")
+	if(proc_disk)
+		if(proc_disk.heal_flags && operating)
+			. += span_notice("[src] is currently operating with settings: [proc_disk.get_heal_flags_string()]")
+			. += span_notice("Estimated time until completion: [span_boldnotice("[get_operation_length()]")].")
+		else
+			. += span_info("Right click to start [src].")
+			. += span_info("Alt-click to eject [icon2html(proc_disk, user)] [proc_disk].")
+	else
+		. += span_notice("There is no procedure disk inserted.")
 	if(patient)
 		healthscan(user, patient, FALSE, FALSE)
 
@@ -323,6 +327,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 			patient.adjustOxyLoss(30)
 			patient.adjustStaminaLoss(40)
 			SEND_SIGNAL(occupant, COMSIG_LIVING_MINOR_SHOCK)
+			say("Rescusitation successful.")
 			if (patient.health > HEALTH_THRESHOLD_FULLCRIT) //Call me when you can be awake and unconscious at the same time. This will always be true unless the patient has prosthetics.
 				to_chat(patient, span_notice("<b>You suddenly jolt awake in the cold darkness of an Autodoc.</b> Innumerous small instruments surround you, attentively tending to your wounds."))
 	if(operating)
@@ -332,6 +337,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	var/mob/living/carbon/patient = occupant
 	end_processing()
 	post_procedure = TRUE
+
 	if(proc_disk.heal_flags & DO_WOUNDS)
 		patient.remove_status_effect(STATUS_EFFECT_DETERMINED)
 		for(var/datum/wound/current_wound in patient.all_wounds)
@@ -342,14 +348,16 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 			say("[current_wound] repaired.")
 			addtimer(CALLBACK(src, PROC_REF(post_procedure)), 30)
 			return
+
 	if(patient && patient.stat == DEAD)
 		if(proc_disk.heal_flags & DO_REVIVE && !revved)
 			addtimer(CALLBACK(src, PROC_REF(attempt_revive)), 30)
+			say("Attempting rescusitation.")
 			playsound(src, 'sound/machines/defib_charge.ogg', 50, FALSE)
 			patient.notify_ghost_cloning("You're being revived in an autodoc!")
 			patient.grab_ghost()
-
 			return
+
 		else if(revved)
 			end_message = "Revival failed, stopping procedure. A voucher will be dispensed as compensation." //There is no voucher.
 			end_sound = 'sound/machines/defib_failed.ogg'
@@ -365,6 +373,107 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 
 /obj/effect/spawner/structure/aaaaa
 	name = "debug autodoc spawner"
-	icon = 'icons/obj/salvage_structure.dmi'
-	icon_state = "computer_broken"
+	icon = 'icons/obj/machines/borgcharger.dmi'
+	icon_state = "borgcharger0"
 	spawn_list = list(/obj/machinery/autodoc, /obj/item/disk/autodoc/test, /obj/item/melee/sledgehammer/gorlex, /obj/effect/mob_spawn/human/corpse, /obj/effect/mob_spawn/human/corpse/damaged)
+
+
+//												Now entering: Vendor Hell												//
+
+/obj/machinery/autodoc_vendor
+	name = "autodoc vendor"
+	desc = "vends autodocs"
+	icon = 'icons/obj/vending.dmi'
+	icon_state = "robotics"
+	density = TRUE
+	///Times printed disk can be used.
+	var/uses = 1
+	///Procedures on our printed disk. All = 128.
+	var/heal_flags = 0
+	///Total cost to print
+	var/cost = 0
+	///Total cost of procedures, minus multipliers. Used for cost scaling.
+	var/base_cost = 0
+	///Whether we're ignoring cost.
+	var/free = FALSE
+
+/obj/machinery/autodoc_vendor/ui_interact(mob/user, datum/tgui/ui)
+	if(machine_stat & BROKEN)
+		return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "AutodocVendor", name)
+		ui.open()
+
+/obj/machinery/autodoc_vendor/ui_data(mob/user)
+	var/list/data = list()
+	data["uses"] = uses
+	data["heal_flags"] = heal_flags
+	data["cost"] = adjust_cost()
+	data["free"] = free
+
+	var/mob/living/carbon/human/carbon
+	var/obj/item/card/bank/card
+	if(ishuman(user))
+		carbon = user
+		card = carbon.get_bankcard()
+		if(card && card.registered_account)
+			data["user"] = list()
+			data["user"]["name"] = card.registered_account.account_holder
+			data["user"]["cash"] = card.registered_account.account_balance
+
+	//Basic procedures = Brute, Burn, etc.
+	//Complex procedures = Revival, Wounds, and Clone (is that even used anywhere?)
+	//Organ repair has a higher cost to incentivise prosthetic use. Oxygen recovery is cheaper because it's Ephemeral.
+	data["cost_basic"] = 250
+	data["cost_complex"] = 500
+	data["cost_organs"] = 800
+	data["cost_oxy"] = 100
+
+	data["do_brute"] = DO_BRUTE
+	data["do_burn"] = DO_BURN
+	data["do_tox"] = DO_TOX
+	data["do_oxy"] = DO_OXY
+	data["do_clone"] = DO_CLONE
+
+	data["do_organs"] = DO_ORGANS
+	data["do_wounds"] = DO_WOUNDS
+	data["do_revive"] = DO_REVIVE
+	return data
+
+/obj/machinery/autodoc_vendor/ui_act(action, params)
+	. = ..()
+	var/toggle = text2num(params["toggle"])
+	var/flag = text2num(params["flag"])
+	var/adjustcost = text2num(params["adjustcost"])
+	if(.)
+		return
+
+	switch(action)
+		if("toggle-procedure")
+			if(toggle == TRUE)
+				heal_flags &= ~flag
+				adjust_cost(-adjustcost)
+			if(toggle == FALSE)
+				heal_flags |= flag
+				adjust_cost(adjustcost)
+			. = TRUE
+		if("less-uses")
+			if(uses > 1)
+				uses--
+				adjust_cost()
+				. = TRUE
+		if("more-uses")
+			if(uses < 12)
+				uses++
+				adjust_cost()
+				. = TRUE
+
+/obj/machinery/autodoc_vendor/proc/adjust_cost(amount)
+	if(amount)
+		base_cost += amount
+	if(uses > 1)
+		cost = base_cost * (0.8 * uses)
+	else
+		cost = base_cost
+	return cost
