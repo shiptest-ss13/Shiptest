@@ -127,6 +127,7 @@
 	crate_name = "surgical supplies crate"
 	faction = /datum/faction/syndicate/cybersun
 	faction_discount = 20
+	faction_locked = TRUE
 
 /datum/supply_pack/medical/filter
 	name = "Blood Filter Crate"
@@ -150,6 +151,7 @@
 	crate_name = "surgical supplies crate"
 	faction = /datum/faction/syndicate/cybersun
 	faction_discount = 20
+	faction_locked = TRUE
 
 /datum/supply_pack/medical/disk/cybersun
 	name = "Cybersun Surgical Procedure Disk"
@@ -159,6 +161,7 @@
 	crate_name = "surgical supplies crate"
 	faction = /datum/faction/syndicate/cybersun
 	faction_discount = 20
+	faction_locked = TRUE
 
 /datum/supply_pack/medical/console
 	name = "Operating Console Crate"
