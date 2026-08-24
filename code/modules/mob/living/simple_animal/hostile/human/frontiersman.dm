@@ -43,7 +43,7 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 	armour_penetration = 20
-	r_hand = /obj/item/trench_club
+	r_hand = /obj/item/melee/trench_club
 	sharpness = SHARP_NONE
 	dodging = TRUE
 

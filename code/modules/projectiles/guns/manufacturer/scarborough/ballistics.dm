@@ -262,11 +262,11 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
-	fire_delay = 0.4 SECONDS
+	fire_delay = 0.07 SECONDS
 	wear_minor_threshold = 240
 	wear_major_threshold = 720
 	wear_maximum = 1200
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
 NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
@@ -299,8 +299,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	recoil = 0.5
 	recoil_unwielded = 3
 	burst_size = 2
-	burst_delay = 0.1 SECONDS
-	fire_delay = 0.4 SECONDS
+	burst_delay = 0.07 SECONDS
+	fire_delay = 0.1 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 
 /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	name = "Rattlesnake magazine (9mm)"
