@@ -3403,7 +3403,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "vF" = (
@@ -4817,7 +4819,9 @@
 	icon_state = "0-4"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
+	},
 /obj/structure/sign/warning/radiation{
 	pixel_x = 6;
 	pixel_y = 32
