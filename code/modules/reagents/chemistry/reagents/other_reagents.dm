@@ -2180,14 +2180,13 @@
 			addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon, adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 3 SECONDS) // you should not have done that
 
 // Hallucination anomaly
-// make this more !!FUN!! if/when fancy client colors and stuff are ported
 /datum/reagent/fairydust
 	name = "Fairy Dust"
 	taste_description = "normal"
 	description = "The concentrated essence of a hallucination anomaly. It shifts and shimmers in its vessel, never settling for a moment."
 	color = "#ff00ff" // eyebleed pink, like the anomaly
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 6
+	overdose_threshold = 6 // watch out
 	var/datum/brain_trauma/scary_chaser
 
 /datum/reagent/fairydust/on_mob_life(mob/living/carbon/idiot, seconds_per_tick)
@@ -2195,6 +2194,15 @@
 		idiot.slurring = 1
 	idiot.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	idiot.hallucination += 20 // the kids are smoking the anomaly cores
+
+	// slowly spins your screen. fun for the whole family
+	var/list/screens = list(
+		idiot.hud_used.plane_masters["[FLOOR_PLANE]"],
+		idiot.hud_used.plane_masters["[GAME_PLANE]"],
+		idiot.hud_used.plane_masters["[LIGHTING_PLANE]"])
+	var/rot = 90 * (current_cycle % 4);
+	for(var/plane in screens)
+		animate(plane, transform = matrix(rot, MATRIX_ROTATE), time = 20, easing = QUAD_EASING)
 	..()
 
 /datum/reagent/fairydust/on_mob_metabolize(mob/living/carbon/idiot)
@@ -2202,17 +2210,25 @@
 	idiot.add_client_colour(/datum/client_colour/funkytown)
 
 /datum/reagent/fairydust/overdose_start(mob/living/carbon/idiot)
-	scary_chaser = idiot.gain_trauma(/datum/brain_trauma/magic/stalker) // fazbear
+	scary_chaser = idiot.gain_trauma(/datum/brain_trauma/magic/stalker) // release the nextbots
 	..()
 
 /datum/reagent/fairydust/on_mob_end_metabolize(mob/living/carbon/idiot)
 	. = ..()
 	idiot.remove_client_colour(/datum/client_colour/funkytown)
 	qdel(scary_chaser)
+	var/list/screens = list(
+		idiot.hud_used.plane_masters["[FLOOR_PLANE]"],
+		idiot.hud_used.plane_masters["[GAME_PLANE]"],
+		idiot.hud_used.plane_masters["[LIGHTING_PLANE]"])
+	for(var/plane in screens)
+		animate(plane, transform = matrix(), time = 10, easing = QUAD_EASING)
+	..()
 
 // Bluespace anomaly
+// this one's pretty boring tbh but I can't think of much else
 /datum/reagent/bluespace/jumper
-	name = "High Energy Bluespace Dust" // meh
+	name = "High Energy Bluespace Dust"
 	description = "An exotic form of bluespace crystal extracted from an anomaly core. It crackles with latent energy."
 	taste_description = "the inside of a warp drive"
 	start_cycle = 0
@@ -2220,19 +2236,28 @@
 
 // Heartbeat anomaly
 /datum/reagent/heartbeat
-	name = "Skiketiskretah"
+	name = "Skekitiskretah"
 	description = "An eerie, pulsating fluid. Known since antiquity to Shoalites, it is said to restore life to those who imbibe it at a terrible cost."
 	reagent_state = SOLID
 	color = "#44CC00"
 	taste_description = "hot metal"
 
+/datum/reagent/heartbeat/on_mob_metabolize(mob/living/the_liverrr)
+	. = ..()
+	// despite everything, your heart keeps beating
+	ADD_TRAIT(the_liverrr, TRAIT_NOSOFTCRIT, type)
+	ADD_TRAIT(the_liverrr, TRAIT_NOHARDCRIT, type)
+
+/datum/reagent/heartbeat/on_mob_end_metabolize(mob/living/the_liverrr)
+	. = ..()
+	REMOVE_TRAIT(the_liverrr, TRAIT_NOSOFTCRIT, type)
+	REMOVE_TRAIT(the_liverrr, TRAIT_NOHARDCRIT, type)
+
 /datum/reagent/heartbeat/on_mob_life(mob/living/carbon/radboy, seconds_per_tick)
-	// rapidly heals all Number Damage...
+	// rapidly heals Number Damage...
 	radboy.adjustBruteLoss(-1 * REM * seconds_per_tick, 0)
 	radboy.adjustFireLoss(-1 * REM * seconds_per_tick, 0)
-	radboy.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
-	radboy.adjustOxyLoss(-1 * REM * seconds_per_tick, 0)
-	radboy.adjustCloneLoss(-1 * REM * seconds_per_tick, 0)
+	var/should_babum = FALSE
 
 	// ...as well as wounds...
 	if(length(radboy.all_wounds))
@@ -2246,8 +2271,8 @@
 				hole.remove_wound()
 				did_anything = TRUE
 			if(did_anything)
-				to_chat(radboy, span_warning("Your open wounds throb, then quickly seal themselves shut!"))
-				playsound(radboy, 'sound/effects/singlebeat.ogg', 80, TRUE)
+				to_chat(radboy, span_warning("Your open wounds throb, then quickly seal shut!"))
+				should_babum = TRUE
 		// muscle tears
 		if(SPT_PROB(5, seconds_per_tick))
 			var/did_anything = FALSE
@@ -2255,8 +2280,8 @@
 				booboo.remove_wound()
 				did_anything = TRUE
 			if(did_anything)
-				playsound(radboy, 'sound/effects/singlebeat.ogg', 80, TRUE)
 				to_chat(radboy, span_warning("A pulse of strength permeates your body!"))
+				should_babum = TRUE
 		// broken bones
 		if(SPT_PROB(5, seconds_per_tick))
 			var/did_anything = FALSE
@@ -2264,15 +2289,19 @@
 				snap.remove_wound()
 				did_anything = TRUE
 			if(did_anything)
-				playsound(radboy, 'sound/effects/singlebeat.ogg', 80, TRUE)
 				to_chat(radboy, span_warning("You feel your broken bones suddenly snap back together!"))
+				should_babum = TRUE
 
 	// ...but irradiates you a fuckton
 	// hope you got a rad medkit buddy
 	radboy.apply_effect(rand(150, 300), EFFECT_IRRADIATE, 0)
 
-	// babum
+	// handle sound effect
 	if(SPT_PROB(15, seconds_per_tick))
+		should_babum = TRUE
+
+	// don't play heartbeat sfx in crit because it already has a heartbeat sound and it sounds spammy
+	if(should_babum && radboy.health >= radboy.crit_threshold)
 		playsound(radboy, 'sound/effects/singlebeat.ogg', 80, TRUE)
 
 	..()
@@ -2293,7 +2322,6 @@
 		burn.thermite_melt() // BURN!!
 	if(isopenturf(burnzone))
 		burnzone.ignite_turf(rand(10,30), "green")
-
 
 /datum/reagent/toxin/acid/melter/expose_mob(mob/living/burnboy, method=TOUCH, reac_volume)
 	burnboy.adjust_fire_stacks(1)
@@ -2342,3 +2370,37 @@
 	. = ..()
 	if(chems.has_reagent(type, 5))
 		mytray.spawnplant()
+
+
+// Transfusion Anomaly
+/datum/reagent/transfusion
+	name = "Viscous Ichor"
+	description = "A dark, thick liquid extracted from a transfusion anomaly. It smells terrible."
+	reagent_state = LIQUID
+	color = "#400010" // like clotted blood
+	taste_description = "gore"
+
+/datum/reagent/transfusion/on_mob_life(mob/living/carbon/bloodboy, seconds_per_tick)
+	bloodboy.adjust_disgust(2)
+	if(SPT_PROB(10, seconds_per_tick))
+		to_chat(bloodboy, span_warning(pick(
+			"Your gut shifts uncomfortably.",
+			"You feel an odd pressure inside your chest.",
+			"You feel off.",
+			"You feel something flowing inside you.")))
+	if(bloodboy.blood_volume < BLOOD_VOLUME_NORMAL)
+		bloodboy.blood_volume += 5
+	..()
+
+// Phantom Anomaly
+/datum/reagent/phantom
+	name = "Ectoplasm"
+	description = "A foggy purple liquid extracted from a phantom anomaly. If you listen closely, you can hear it screaming."
+	color = "#400050"
+	taste_description = "claws"
+
+/datum/reagent/phantom/on_mob_metabolize(mob/living/carbon/victim)
+	victim.apply_necropolis_curse(CURSE_BLINDING | CURSE_WASTING | CURSE_GRASPING)
+
+/datum/reagent/phantom/on_mob_end_metabolize(mob/living/carbon/victim)
+	victim.remove_status_effect(/datum/status_effect/necropolis_curse)

@@ -90,13 +90,13 @@
 	name = "\improper hallucination anomaly core"
 	desc = "The stabilized core of a hallucination anomaly. It's never entirely there."
 	icon_state = "hallucination_core"
-	grind_results = list(/datum/reagent/fairydust = 10) // super LSD orb
+	grind_results = list(/datum/reagent/fairydust = 15) // super LSD orb
 
 ///Heartbeat Anomaly
 /obj/item/assembly/signaler/anomaly/heartbeat
 	name = "\improper heartbeat anomaly core"
 	desc = "The stabilized core of a heartbeat anomaly. Pulses of heat run across its shell."
-	grind_results = list(/datum/reagent/heartbeat = 10)
+	grind_results = list(/datum/reagent/heartbeat = 10) // this stuff is pretty good so
 
 /obj/item/assembly/signaler/anomaly/heartbeat/anomaly_core_detonation()
 	visible_message(span_warning("[src] expands and throbs, before shattering into dozens of fragments!"))
@@ -120,7 +120,7 @@
 /obj/item/assembly/signaler/anomaly/phantom
 	name = "\improper phantom anomaly core"
 	desc = "The stabilized core of a phantom anomaly. It quietly screams."
-	grind_results = list(/datum/reagent/blood = 20)
+	grind_results = list(/datum/reagent/phantom = 20, /datum/reagent/blood = 20)
 
 /obj/item/assembly/signaler/anomaly/phantom/anomaly_core_detonation()
 	playsound(src,'sound/hallucinations/far_noise.ogg', 100, 0, 50, TRUE, TRUE)
@@ -167,7 +167,7 @@
 	name = "\improper plasmaball anomaly core"
 	desc = "The stabilized core of a plasmaball anomaly. It almost burns to touch."
 	icon_state = "pyro core"
-	grind_results = list(/datum/reagent/clf3 = 25, /datum/reagent/toxin/plasma = 15)
+	grind_results = list(/datum/reagent/clf3 = 50, /datum/reagent/toxin/plasma = 50)
 
 //glorified molotov
 /obj/item/assembly/signaler/anomaly/pyro/anomaly_core_detonation()
@@ -211,7 +211,7 @@
 	name = "\improper transfusion anomaly core"
 	desc = "The stabilized core of a tranfusion anomaly. Crimson slowly seeps out of the containment unit."
 	icon_state = "pyro core"
-	grind_results = list(/datum/reagent/toxin/heparin = 15, /datum/reagent/blood = 35)
+	grind_results = list(/datum/reagent/transfusion = 15, /datum/reagent/blood = 35)
 	var/blood_stored
 	var/blood_max
 
