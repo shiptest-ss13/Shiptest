@@ -43,7 +43,7 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 	armour_penetration = 20
-	r_hand = /obj/item/trench_club
+	r_hand = /obj/item/melee/trench_club
 	sharpness = SHARP_NONE
 	dodging = TRUE
 
@@ -608,7 +608,7 @@
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	shoot_point_blank = TRUE
-	r_hand = /obj/item/gun/ballistic/shotgun/cm15
+	r_hand = /obj/item/gun/ballistic/shotgun/automatic/cm15
 	weapon_drop_chance = 100
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/f4

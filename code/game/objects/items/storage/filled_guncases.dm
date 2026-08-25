@@ -360,7 +360,7 @@
 	mag_type = /obj/item/ammo_box/magazine/f4_308
 
 /obj/item/storage/guncase/cm15
-	gun_type = /obj/item/gun/ballistic/shotgun/cm15
+	gun_type = /obj/item/gun/ballistic/shotgun/automatic/cm15
 	mag_type = /obj/item/ammo_box/magazine/cm15_12g
 
 /obj/item/storage/guncase/cm24
