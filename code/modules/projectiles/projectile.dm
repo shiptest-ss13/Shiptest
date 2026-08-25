@@ -221,6 +221,8 @@
 
 /// Returns the chance to hit the limb it's aiming for
 /obj/projectile/proc/get_accuracy(atom/target)
+	if(firer && HAS_TRAIT(firer, TRAIT_PERFECT_ATTACKER))
+		return 100
 	return max(80-(7*get_dist(get_turf(target), starting)*accuracy_mod), 5)
 
 /**
@@ -275,7 +277,7 @@
 				splatter_dir = get_dir(starting, target_loca)
 			if(isalien(L))
 				new /obj/effect/temp_visual/dir_setting/bloodsplatter/xenosplatter(target_loca, splatter_dir)
-			var/obj/item/bodypart/B = L.get_bodypart(def_zone)
+			var/obj/item/bodypart/B = L.get_bodypart(hit_zone)
 			if(B && !IS_ORGANIC_LIMB(B)) // So if you hit a robotic, it sparks instead of bloodspatters
 				do_sparks(2, FALSE, target.loc)
 			else
