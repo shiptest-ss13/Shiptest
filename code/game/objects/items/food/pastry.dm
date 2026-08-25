@@ -248,3 +248,15 @@
 	tastes = list("pastry" = 1, "sweetness" = 1)
 	foodtypes = GRAIN | SUGAR
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/food/hotcrossbun
+	name = "hot-cross bun"
+	desc = "The Cross represents the Assistants that died for your sins."
+	icon_state = "hotcrossbun"
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/sugar = 1
+	)
+	tastes = list("pastry" = 1, "sweetness" = 1)
+	foodtypes = GRAIN | SUGAR
+	w_class = WEIGHT_CLASS_SMALL

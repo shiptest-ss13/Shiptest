@@ -8,7 +8,7 @@
 		/obj/item/food/cheese/wedge = 1
 	)
 	result = /obj/item/food/loaded_baked_potato
-	category = CAT_MISCFOOD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/miras_potato
 	name = "Miras loaded potato"
