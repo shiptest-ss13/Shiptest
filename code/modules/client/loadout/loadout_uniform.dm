@@ -123,8 +123,8 @@
 /datum/gear/uniform/suit
 	subtype_path = /datum/gear/uniform/suit
 
-/datum/gear/uniform/suit/amish
-	display_name = "suit, amish"
+/datum/gear/uniform/suit/formal
+	display_name = "suit, formal"
 	path = /obj/item/clothing/under/suit/sl
 
 /datum/gear/uniform/suit/white
