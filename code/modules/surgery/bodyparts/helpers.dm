@@ -61,8 +61,8 @@
  * defaults to 80
  */
 /mob/living/proc/run_zone(zone, probability = 80)
-	if(zone && prob(probability))
-		return get_bodypart(zone) || get_weighted_body_zone()
+	if(get_bodypart(zone) && prob(probability))
+		return zone || get_weighted_body_zone()
 	return get_weighted_body_zone()
 
 /// Returns the number of bodyparts.
