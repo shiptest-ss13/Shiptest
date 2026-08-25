@@ -388,6 +388,27 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/cigarette/rollie/mindbreaker
 	list_reagents = list(/datum/reagent/toxin/mindbreaker = 35, /datum/reagent/drug/retukemi = 15)
 
+/obj/item/clothing/mask/cigarette/rollie/anomalous
+	list_reagents = list(/datum/reagent/drug/retukemi = 15)
+
+/obj/item/clothing/mask/cigarette/rollie/anomalous/Initialize()
+	// add a random anomaly chem!
+	list_reagents[pick(
+		/datum/reagent/drug/space_drugs, // fake
+		/datum/reagent/heartbeat,
+		/datum/reagent/transfusion,
+		/datum/reagent/phantom,
+		/datum/reagent/toxin/acid/melter,
+		/datum/reagent/bluespace/jumper,
+		/datum/reagent/fairydust,
+		/datum/reagent/truesight,
+		/datum/reagent/gravitum,
+		/datum/reagent/medicine/strange_reagent,
+		/datum/reagent/teslium,
+		/datum/reagent/liquid_dark_matter,
+		/datum/reagent/clf3)] = rand(5,10)
+	..()
+
 /obj/item/clothing/mask/cigarette/candy
 	name = "Little Timmy's candy cigarette"
 	desc = "For all ages*! Doesn't contain any amount of nicotine. Health and safety risks can be read on the tip of the cigarette."
