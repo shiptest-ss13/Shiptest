@@ -94,7 +94,7 @@
 
 /obj/projectile/beam/hitscan/kalix/faveleira
 	damage = 35
-	armour_penetration = 15
+	armour_penetration = 30
 	damage_constant = 0.95
 
 	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
@@ -102,7 +102,7 @@
 /obj/item/ammo_casing/energy/laser/clover/beam
 	projectile_type = /obj/projectile/beam/hitscan/kalix/faveleira
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
-	e_cost = 1250
+	e_cost = 2500
 	delay = 1 SECONDS
 	select_name = "focus"
 
