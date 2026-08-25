@@ -293,8 +293,10 @@
 
 	if(!held_item)
 		return
-	if(held_item == parent)
+	if(held_item == parent && !ispath(/obj/item/gun/ || /obj/item/melee/))
 		return COMPONENT_BLOCK_SWAP
+	else
+		unwield(user)
 
 /**
  * on_sharpen Triggers on usage of a sharpening stone on the item
