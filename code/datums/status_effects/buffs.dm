@@ -421,7 +421,7 @@
 	. = ..()
 	to_chat(owner, span_warning("Your flesh starts to feel like a liquid as your wounds begin to close."))
 	if(!ishuman(owner))
-		Destroy()
+		return FALSE
 
 /datum/status_effect/synthflesh/tick(mob/living/carbon/human/M)
 	. = ..()
@@ -442,7 +442,7 @@
 		subject.physiology.brute_mod /= 1.03
 	//The lose stack part of code fires one more time than the gainstack, so this handles destroying the effect at 0 stacks and making sure we have the same damage mult as when we started.
 	if(Rampup < 1)
-		Destroy()
+		qdel(src)
 		subject.physiology.burn_mod *= 1.03
 		subject.physiology.brute_mod *= 1.03
 
