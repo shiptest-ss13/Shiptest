@@ -941,6 +941,12 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/medical/recovery/recoverytwo)
+"de" = (
+/obj/effect/turf_decal/siding/white,
+/obj/effect/turf_decal/number/left_zero,
+/obj/effect/turf_decal/number/right_six,
+/turf/open/floor/plasteel/mono,
+/area/ship/crew/canteen)
 "dh" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/vired{
@@ -6492,7 +6498,7 @@
 /obj/effect/turf_decal/trimline/transparent/white/filled/line{
 	dir = 8
 	},
-/obj/machinery/camera/autoname/directional/west,
+/obj/structure/noticeboard/directional/west,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/medical)
 "vU" = (
@@ -6670,6 +6676,11 @@
 /obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/incinerator)
+"wU" = (
+/obj/effect/turf_decal/siding/white,
+/obj/effect/turf_decal/number/right_five,
+/turf/open/floor/plasteel/mono,
+/area/ship/crew/canteen)
 "wY" = (
 /obj/effect/turf_decal/corner/transparent/warrabluelight/full,
 /turf/open/floor/plasteel/dark,
@@ -6882,6 +6893,10 @@
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = 6
+	},
+/obj/item/advertisement/gec{
+	pixel_x = 12;
+	pixel_y = -6
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -7419,6 +7434,7 @@
 	},
 /obj/structure/bed/roller,
 /obj/item/radio/intercom/directional/south,
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/medical)
 "zJ" = (
@@ -9389,6 +9405,7 @@
 /obj/item/roller,
 /obj/item/roller,
 /obj/machinery/light/directional/east,
+/obj/structure/noticeboard/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/medical/storage)
 "Gp" = (
@@ -10543,6 +10560,10 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "guy";
+	pixel_x = -10
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Kc" = (
@@ -11462,6 +11483,14 @@
 /obj/machinery/light/small/directional/north,
 /obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/toy/crayon/spraycan{
+	pixel_x = -9;
+	pixel_y = 20
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 3;
+	pixel_y = 15
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Ok" = (
@@ -16071,7 +16100,7 @@ Sk
 Sk
 an
 Cm
-Zc
+wU
 tM
 ep
 WY
@@ -16109,7 +16138,7 @@ RT
 Ge
 cT
 eh
-Zc
+de
 tG
 bn
 Wk
