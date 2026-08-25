@@ -208,6 +208,19 @@
 
 	chameleon_extras = list(/obj/item/gun/energy/sharplite/yari, /obj/item/stamp/hos)
 
+/datum/outfit/job/warra/hos/empty
+	name = "Makosso-Warra - Head of Security (Naked)"
+
+	belt = null
+	suit = null
+	alt_suit = null
+	gloves = null
+	head = null
+	glasses = null
+	r_pocket = null
+	l_pocket = null
+	backpack_contents = null
+
 /datum/outfit/job/warra/hos/vi
 	name = "Makosso-Warra - Vigilitas Sergeant"
 

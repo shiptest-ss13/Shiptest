@@ -1,0 +1,61 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Rhea-class Exploration Cruiser",
+	"prefix": "MWSV",
+	"manufacturer": "Makosso-Warra Spaceworks",
+	"faction": "/datum/faction/warra",
+	"namelists": [
+		"MAKOSSO-WARRA",
+		"SPACE",
+		"MYTHOLOGICAL"
+	],
+	"map_short_name": "Rhea-class",
+	"map_path": "_maps/shuttles/warra/warra_rhea.dmm",
+	"token_icon_state": "ship_big_generic",
+	"description": "Originally an advanced ICW-era command cruiser, the surviving Harriers have been refurbished as exploration and \"reclamation\" ships in the post-ICW era. Large, well-rounded, and boasting excellent crew accomodations, Harriers are exceedingly popular with Makosso-Warra crews in spite of their lack of specialized equipment.",
+	"tags": ["Generalist"],
+	"limit": 1,
+	"starting_funds": 3000,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/warra/captain/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Security Director": {
+			"outfit": "/datum/outfit/job/warra/hos/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Director": {
+			"outfit": "/datum/outfit/job/warra/cmo/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Internal Affairs Agent": {
+			"outfit": "/datum/outfit/job/warra/lawyer/corporaterepresentative",
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/warra/doctor/empty",
+			"slots": 1
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/warra/paramedic/empty",
+			"slots": 1
+		},
+		"Security Guard": {
+			"outfit": "/datum/outfit/job/warra/security/empty",
+			"slots": 2
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/warra/engineer/empty",
+			"slots": 2
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/warra/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
