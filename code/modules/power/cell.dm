@@ -512,6 +512,7 @@
 	icon_state = "cybersun-cell"
 	rating = 2
 	maxcharge = 15000
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stock_parts/cell/gun/cybersun/empty
 	start_empty = TRUE
@@ -523,7 +524,7 @@
 
 	maxcharge = 40000
 	rating = 3
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/stock_parts/cell/gun/cybersun/heavy/empty
 	start_empty = TRUE
