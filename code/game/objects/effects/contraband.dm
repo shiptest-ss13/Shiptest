@@ -1258,7 +1258,7 @@
 
 /obj/structure/sign/poster/pgf/raider
 	name = "PGF Marine Raiders"
-	desc = "This poster depicts a PGF Marine Raider stalking a city skyline at night. \"Trained for infiltration, extraction, and all other matter of high risk mission, the PGF Marine Raiders are the best of the best. Do you have what it takes? \""
+	desc = "This poster depicts a PGF Marine Raider stalking a city skyline at night. \"Trained for infiltration, extraction, and all other matter of high risk mission, the PGF Marine Raiders are the best of the best. Do you have what it takes?\""
 	icon_state = "poster-pgf_raider"
 
 //PGF Mission Accomplished
