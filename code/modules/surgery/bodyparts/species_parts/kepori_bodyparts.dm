@@ -52,6 +52,7 @@
 	limb_id = SPECIES_KEPORI
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ORGANIC
 	biological_state = BIO_FLESH | BIO_BLOODED // boneless
+	bodypart_layer = BODY_ADJ_LAYER
 	can_wag = FALSE
 	var/feathers
 
@@ -68,4 +69,4 @@
 	else if(.)
 		var/mob/living/carbon/old_owner = .
 		old_owner.dna.species.mutant_bodyparts -= "kepori_tail_feathers"
-		feathers = owner.dna.features["kepori_tail_feathers"]
+		feathers = old_owner.dna.features["kepori_tail_feathers"]

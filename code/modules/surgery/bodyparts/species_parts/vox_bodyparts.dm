@@ -50,6 +50,7 @@
 	static_icon = 'icons/mob/species/vox/bodyparts.dmi'
 	limb_id = SPECIES_VOX
 	bodytype = BODYTYPE_VOX | BODYTYPE_ORGANIC
+	bodypart_layer = BODY_ADJ_LAYER
 	should_draw_greyscale = FALSE
 	max_damage = 50
 	max_stamina_damage = 50
