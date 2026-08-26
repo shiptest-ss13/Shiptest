@@ -222,3 +222,36 @@
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c299 = 4)
 	generate_items_inside(items_inside,src)
+
+//2x15/3x20 Tav/Deu'Sha
+
+/obj/item/storage/box/ammo/c215
+	name = "box of short 2x15mm dart magazines"
+	desc = "A box of short 2x15mm dart magazines, for the Rectifier gauss pistol."
+	icon_state = "2x15box"
+
+/obj/item/storage/box/ammo/c215/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/cs_gauss/pistol = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/ammo/c215/long
+	name = "box of long 2x15mm dart magazines"
+	desc = "A box of long 2x15mm dart magazines, for the Convergence light gauss rifle."
+	icon_state = "2x15box"
+
+/obj/item/storage/box/ammo/c215/long/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/cs_gauss = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/ammo/c320
+	name = "box of 3x20mm dart magazines"
+	desc = "A box of long 2x15mm dart magazines, for the Vector gauss rifle."
+	icon_state = "3x20box"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/ammo/c320/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/cs_gauss/rifle = 4)
+	generate_items_inside(items_inside,src)

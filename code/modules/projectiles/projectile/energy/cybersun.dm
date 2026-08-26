@@ -92,9 +92,9 @@
 
 	flag = "laser"
 
-	var/tile_dropoff = 1
+	var/tile_dropoff = 0.5
 
-	var/ap_dropoff = 5
+	var/ap_dropoff = 3
 	var/ap_dropoff_cutoff = -20
 
 /obj/projectile/beam/lorentz/shotgun/Range()

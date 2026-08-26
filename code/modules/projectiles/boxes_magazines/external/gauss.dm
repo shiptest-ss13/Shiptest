@@ -49,6 +49,7 @@
 	sealed = TRUE
 	quick_empty = FALSE
 	custom_materials = list(/datum/material/iron = 500)
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/cs_gauss/pistol
 	name = "gauss box (2x15mm Tav'Sha)"
