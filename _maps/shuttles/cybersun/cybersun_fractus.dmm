@@ -521,14 +521,14 @@
 /obj/structure/sign/poster/contraband/c20r{
 	pixel_x = 31
 	},
-/obj/item/storage/guncase/c20r{
-	pixel_y = 4
+/obj/item/storage/guncase/convergence{
+	pixel_y = 6
 	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = 5
-	},
-/obj/item/storage/box/ammo/c45_ap{
+/obj/item/ammo_box/magazine/cs_gauss{
 	pixel_x = -6
+	},
+/obj/item/ammo_box/magazine/cs_gauss{
+	pixel_x = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -1900,21 +1900,14 @@
 /area/ship/crew/ccommons)
 "vg" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/guncase/sidewinder{
-	pixel_y = 7
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 6
 	},
-/obj/item/storage/box/ammo/c57x39{
-	pixel_x = 6;
-	pixel_y = -4
-	},
-/obj/item/storage/box/ammo/c57x39{
-	pixel_x = -8;
-	pixel_y = -4
-	},
 /obj/item/radio/intercom/directional/east,
+/obj/item/gun/energy/cybersun/lorentz/impactor{
+	pixel_y = 7;
+	pixel_x = -8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "vk" = (
@@ -2517,26 +2510,24 @@
 	number_of_tumblers = 3;
 	tumblers = list(22,9,62)
 	},
-/obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag{
-	name = "PC-83 'Himejin'";
-	desc = "A limited production run of the 'Himehabu' catered towards Cybersun Executives. It has an engraving of two women kissing each other across the handle.";
-	pixel_y = -8;
-	pixel_x = -3
-	},
-/obj/item/ammo_box/magazine/m22lr_himehabu{
-	pixel_x = 13
-	},
-/obj/item/ammo_box/magazine/m22lr_himehabu{
-	pixel_x = 13
-	},
-/obj/item/ammo_box/magazine/m22lr_himehabu{
-	pixel_x = 13
-	},
 /obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl{
 	pixel_x = 12
 	},
 /obj/item/folder/documents/syndicate/cybersun,
 /obj/item/reagent_containers/food/drinks/flask,
+/obj/item/gun/energy/cybersun/troubleshooter/bridge_safe,
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -8;
+	pixel_x = -5
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
 "CE" = (

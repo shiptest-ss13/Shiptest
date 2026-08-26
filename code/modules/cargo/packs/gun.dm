@@ -536,7 +536,7 @@
 	name = "SGL9 Expedition SMG Crate"
 	desc = "Contains a Expedition SMG produced by Makosso-Warra Advantage. Chambered in 9mm."
 	cost = 3000
-	contains = list(/obj/item/storage/guncase/vector)
+	contains = list(/obj/item/storage/guncase/expedition)
 	crate_name = "SMG crate"
 	faction = /datum/faction/warra
 	faction_discount = 0
@@ -983,5 +983,74 @@
 	contains = list(/obj/item/storage/guncase/railgun)
 	crate_name = "gauss crate"
 	faction = /datum/faction/solgov
+	faction_discount = 0
+	faction_locked = TRUE
+
+/* Cybersun Guns */
+
+/datum/supply_pack/gun/rectifier
+	name = "Rectifier Gauss Pistol"
+	desc = "Contains an SG27 Rectifier gauss pistol, designed to fire disposable cell/magazine stacks at rapid speed."
+	cost = 1500
+	contains = list(/obj/item/storage/guncase/pistol/rectifier)
+	crate_name = "rectifier crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/rectifier/export
+	name = "Amend Gauss Pistol"
+	desc = "Contains an SG11 Amend gauss pistol, designed to fire disposable cell/magazine stacks at rapid speed."
+	cost = 1500
+	contains = list(/obj/item/storage/guncase/pistol/rectifier/export)
+	crate_name = "amend crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_locked = FALSE
+
+/datum/supply_pack/gun/convergence
+	name = "Convergence Gauss Rifle"
+	desc = "Contains an SG49 Convergence gauss rifle, made to lay down suppressing low calibre fire."
+	cost = 2500
+	contains = list(/obj/item/storage/guncase/convergence)
+	crate_name = "convergence crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/convergence/export
+	name = "Divergence Gauss Rifle"
+	desc = "Contains an SG48 Amend gauss pistol, designed to fire disposable cell/magazine stacks at rapid speed."
+	cost = 2500
+	contains = list(/obj/item/storage/guncase/convergence/export)
+	crate_name = "amend crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_locked = FALSE
+
+/datum/supply_pack/gun/vector
+	name = "Vector Gauss Rifle"
+	desc = "Contains an SG95 Vector gauss rifle, made to take down lightly armored targets with volume of fire."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/vector)
+	crate_name = "convergence crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/vector/export
+	name = "Director Gauss Rifle"
+	desc = "Contains an SG90 Vector gauss rifle, made as a compromise between a gauss marksman rifle and the SG95 Vector."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/vector/export)
+	crate_name = "amend crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_locked = FALSE
+
+/datum/supply_pack/gun/troubleshooter
+	name = "Troubleshooter Pistol"
+	desc = "Contains an SG27 Rectifier gauss pistol, designed to fire disposable cell/magazine stacks at rapid speed."
+	cost = 1500
+	contains = list(/obj/item/storage/guncase/pistol/rectifier)
+	crate_name = "rectifier crate"
+	faction = /datum/faction/syndicate/cybersun
 	faction_discount = 0
 	faction_locked = TRUE

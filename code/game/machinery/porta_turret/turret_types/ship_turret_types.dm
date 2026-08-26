@@ -422,3 +422,81 @@
 	scan_range = 8
 	burst_size = 6
 	burst_delay = 2
+
+/* Cybersun Turrets */
+/* Consistent and high grade */
+
+/obj/machinery/porta_turret/ship/cybersun
+	name = "MT98 Axion Turret"
+	desc = "A decidedly Cybersun production - a luxury turret manufactured under contract to Tadeusz Armory incorporating their lorentz force weaponry to an automated targetting system. Typically mounted on Cybersun craft."
+	faction = list(FACTION_CYBERSUN, FACTION_TURRET)
+	subsystem_type = /datum/controller/subsystem/processing/fastprocess
+	integrity_failure = 0.4
+	max_integrity = 200
+
+	stun_projectile = /obj/projectile/beam/lorentz
+	stun_projectile_sound = 'sound/weapons/gun/cybersun/lorentz.ogg'
+	lethal_projectile = /obj/projectile/beam/lorentz
+	lethal_projectile_sound = 'sound/weapons/gun/cybersun/lorentz.ogg'
+
+	scan_range = 7
+	shot_delay = 6
+
+	turret_flags = TURRET_FLAG_HOSTILE
+
+/obj/machinery/porta_turret/ship/cybersun/light
+	name = "MT44 Photino Turret"
+	desc = "The lightest turret produced by Tadeusz Armory, an ionization beamer is melded with an advanced targetting system to swat everything from asteroids to anarchists."
+
+	integrity_failure = 0.4
+	max_integrity = 150
+
+	stun_projectile = /obj/projectile/beam/ionization
+	stun_projectile_sound = 'sound/weapons/gun/cybersun/ionization.ogg'
+	lethal_projectile = /obj/projectile/beam/ionization
+	lethal_projectile_sound = 'sound/weapons/gun/cybersun/ionization.ogg'
+	scan_range = 7
+	shot_delay = 10
+	burst_size = 4
+	burst_delay = 3
+	spread = 5
+
+	turret_flags = TURRET_FLAG_HOSTILE
+
+/obj/machinery/porta_turret/ship/cybersun/heavy
+	name = "MT157 Meson Turret"
+	desc = "A heavy turret typically mounted on Cybersun combat craft for the express purpose of clearing a landing zone. The lorentz beams descending in night has been found to be psychologically effective."
+	stun_projectile = /obj/projectile/beam/lorentz/mg
+	stun_projectile_sound = 'sound/weapons/gun/cybersun/lorentz.ogg'
+	lethal_projectile = /obj/projectile/beam/lorentz/mg
+	lethal_projectile_sound = 'sound/weapons/gun/cybersun/lorentz.ogg'
+
+	integrity_failure = 0.4
+	max_integrity = 300
+
+	shot_delay = 20
+	scan_range = 10
+	burst_size = 3
+	burst_delay = 0.25 SECONDS
+	spread = 5
+
+/obj/machinery/porta_turret/ship/cybersun/seeker
+	name = "MT205 Pion Turret"
+	desc = "A target-locking gauss seeker cannon mounted on rapid magnetized swivels. Capable of high-grade lethality."
+	integrity_failure = 0.4
+	max_integrity = 200
+
+	stun_projectile = /obj/projectile/bullet/gauss/deusha
+	stun_projectile_sound = 'sound/weapons/gun/cybersun/gauss2.ogg'
+	lethal_projectile = /obj/projectile/bullet/gauss/deusha
+	lethal_projectile_sound = 'sound/weapons/gun/cybersun/gauss2.ogg'
+
+	scan_range = 10
+	burst_size = 6
+	burst_delay = 1
+	spread = 5
+
+/obj/machinery/porta_turret/ship/cybersun/seeker/turret_fire(our_turf, target_turf)
+	. = ..()
+	shot.homing_target = current_target
+	shot.homing = TRUE

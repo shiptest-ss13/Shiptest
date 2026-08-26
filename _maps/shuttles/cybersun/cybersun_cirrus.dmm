@@ -540,6 +540,7 @@
 	pixel_y = 6;
 	pixel_x = -6
 	},
+/obj/item/melee/energy/flyssa,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "df" = (
@@ -1245,24 +1246,17 @@
 	dir = 6
 	},
 /obj/structure/closet/wall/red/directional/north,
-/obj/item/storage/guncase/c20r{
-	pixel_y = 10
+/obj/item/storage/guncase/galvanizer{
+	pixel_y = 7
 	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = 6
+/obj/item/stock_parts/cell/gun/cybersun{
+	pixel_y = -4;
+	pixel_x = -6
 	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = -5
+/obj/item/stock_parts/cell/gun/cybersun{
+	pixel_y = -4;
+	pixel_x = 9
 	},
-/obj/item/storage/box/ammo/c45_rubber{
-	pixel_x = 6;
-	pixel_y = -5
-	},
-/obj/item/storage/box/ammo/c45_rubber{
-	pixel_x = -5;
-	pixel_y = -5
-	},
-/obj/item/melee/energy/flyssa,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "ie" = (
@@ -3237,13 +3231,6 @@
 /obj/item/clipboard,
 /obj/item/pen/edagger,
 /obj/item/pen/edagger,
-/obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag{
-	name = "PC-82 'Himejoshi'";
-	desc = "A limited production run of the 'Himehabu' catered towards Cybersun Executives. It has an engraving of two women kissing each other across the handle."
-	},
-/obj/item/ammo_box/magazine/m22lr_himehabu,
-/obj/item/ammo_box/magazine/m22lr_himehabu,
-/obj/item/ammo_box/magazine/m22lr_himehabu,
 /obj/machinery/button/door{
 	pixel_y = 21;
 	pixel_x = 8;
@@ -3253,6 +3240,19 @@
 /obj/item/reagent_containers/food/drinks/bottle/fernet,
 /obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl,
 /obj/effect/turf_decal/siding/wood/maple,
+/obj/item/gun/energy/cybersun/troubleshooter/bridge_safe,
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -8;
+	pixel_x = -5
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
 "yM" = (
@@ -4494,24 +4494,18 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
 	},
-/obj/item/storage/guncase/c20r{
-	pixel_y = 10
+/obj/item/storage/guncase/vector{
+	pixel_y = 6
 	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = 4
+/obj/item/ammo_box/magazine/cs_gauss/rifle{
+	pixel_y = -1
 	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = -5
-	},
-/obj/item/storage/box/ammo/c45_rubber{
-	pixel_x = 4;
+/obj/item/ammo_box/magazine/cs_gauss/rifle{
 	pixel_y = -5
 	},
-/obj/item/storage/box/ammo/c45_rubber{
-	pixel_x = -5;
-	pixel_y = -5
+/obj/item/ammo_box/magazine/cs_gauss/rifle{
+	pixel_y = -10
 	},
-/obj/item/melee/energy/flyssa,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "KQ" = (

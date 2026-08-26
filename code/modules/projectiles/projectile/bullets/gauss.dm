@@ -79,3 +79,39 @@
 		var/atom/movable/M = target
 		var/atom/throw_target = get_edge_target_turf(M, dir)
 		M.throw_at(throw_target, 4, 2)
+
+/obj/projectile/bullet/gauss/tavsha
+	name = "tav'sha dart"
+	icon_state = "gauss-pellet"
+	bullet_identifier = "dart"
+
+	damage = 5
+	armour_penetration = 10
+
+	homing_turn_speed = 7
+	homing_inaccuracy_min = 0
+	homing_inaccuracy_max = 16
+
+	ricochets_max = 0
+	range = 20
+	light_system = 0
+	speed = BULLET_SPEED_HANDGUN
+
+	transform = matrix(0.7, 0, 0, 0, 0.7, 0)
+
+/obj/projectile/bullet/gauss/deusha
+	name = "deu'sha dart"
+	icon_state = "gauss-pellet"
+	bullet_identifier = "dart"
+
+	damage = 8
+	armour_penetration = 10
+
+	homing_turn_speed = 4
+	homing_inaccuracy_min = 0
+	homing_inaccuracy_max = 16
+
+	ricochets_max = 0
+	range = 20
+	light_system = 0
+	speed = BULLET_SPEED_HANDGUN

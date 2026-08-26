@@ -27,6 +27,11 @@
 	scale = list(0.8, 0.8)
 	velocity = list(0, 0.4, 0)
 
+/particles/smoke/burning/cell_smoke
+	spawning = 3
+	scale = list(0.8, 0.8)
+	velocity = list(0, 0.4, 0)
+
 /particles/smoke/steam
 	icon_state = list("steam_1" = 1, "steam_2" = 1, "steam_3" = 2)
 	fade = 1.5 SECONDS

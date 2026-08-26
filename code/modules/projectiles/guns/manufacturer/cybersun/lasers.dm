@@ -1,4 +1,6 @@
 //THEY ARENT LASERS
+//THEYRE PLASMA GUNS
+//USING LORENTZ FORCE
 
 /obj/item/gun/energy/cybersun
 	name = "cybersun gun master type"
@@ -10,6 +12,7 @@
 
 	ammo_type = list()
 
+	vary_fire_sound = FALSE
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/cybersun
 
@@ -22,8 +25,8 @@
 		/obj/item/stock_parts/cell/gun/cybersun/mini/empty,
 	)
 
-	muzzleflash_iconstate = ""
-	light_color = COLOR_PALE_BLUE_GRAY
+	muzzleflash_iconstate = null
+	light_color = COLOR_MAROON
 
 	modifystate = FALSE
 	ammo_x_offset = 2
@@ -32,17 +35,15 @@
 	manufacturer = MANUFACTURER_CYBERSUN
 	w_class = WEIGHT_CLASS_NORMAL
 
-
 //ionization pistol
-/obj/item/gun/energy/cybersun/trouble
-	name = "YT22 Troubleshooter"
-	//rewrite
-	desc = "A compact energy pistol functioning off ionization principles. A low-powered laser provides a path of least resistance for a plasma bolt to travel through. Typically issued to Virtual Solutions support staff."
+/obj/item/gun/energy/cybersun/troubleshooter
+	name = "\improper IT22 Troubleshooter"
+	desc = "A compact energy pistol functioning off ionization principles. A low-powered laser provides a path of least resistance for a low-intensity plasma bolt to travel through. Typically issued to Virtual Solutions support staff."
 
 	icon_state = "troubleshooter"
-	item_state = "troubleshooter"
+	item_state = "small"
 
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	weapon_weight = WEAPON_LIGHT
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/cybersun/mini
@@ -57,6 +58,9 @@
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
+	min_recoil = 0
+	recoil = 0.1
+
 	spread = -2
 	spread_unwielded = 2
 
@@ -65,15 +69,144 @@
 /obj/item/gun/energy/cybersun/trouble/empty_cell
 	spawn_no_ammo = TRUE
 
+/obj/item/gun/energy/cybersun/troubleshooter/bridge_safe/Initialize(mapload, spawn_empty)
+	name = "Ship's Aide"
+	desc = "A custom-engraved IT22 Troubleshooter Ionization Pistol. An engraving of two [pick("women", "men", "kepori sloppily")] kissing has been delicately engraved into the barrel. Below it, \"Absolute power, absolute destiny\" has been written in Galactic Common."
+	. = ..()
+
+/obj/item/gun/energy/cybersun/troubleshooter/lensman
+	name = "\improper Lensman-5"
+	desc = "A high-powered conversion of the IT22 Troubleshooter typically used by paramilitary organizations in CLIP space. Despite Tadeusz Armories not manufacturing them officially, an ever-growing amount seems to exist."
+
+	icon_state = "lensman"
+	item_state = "lensman"
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun/cybersun/mini
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/cybersun/mini,
+	)
+	ammo_type = list(/obj/item/ammo_casing/energy/ionization/sniper)
+
+	zoom_amt = DMR_ZOOM
+	zoom_out_amt = -1
+
+	recoil = 1
+
+	spread = 0
+	spread_unwielded = 2
+
+	muzzleflash_iconstate = ""
+
+/obj/item/gun/energy/cybersun/trouble/empty_cell
+	spawn_no_ammo = TRUE
+
+/obj/item/gun/energy/cybersun/galvanizer
+	name = "\improper IT34 Galvanizer"
+	desc = "A marksman rifle functioning off ionization principles. A low powered laser makes a clear path for a high intensity plasma bolt to near-instantly travel. The integrated scope allows for accurate fire at long distances."
+
+	icon_state = "galvanizer"
+	item_state = "galvanizer"
+
+	ammo_type = list(/obj/item/ammo_casing/energy/ionization/sniper)
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun/cybersun
+
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/cybersun,
+		/obj/item/stock_parts/cell/gun/cybersun/heavy,
+		/obj/item/stock_parts/cell/gun/cybersun/empty,
+		/obj/item/stock_parts/cell/gun/cybersun/heavy/empty,
+	)
+
+
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_MEDIUM
+
+	zoomable = TRUE
+	zoom_amt = DMR_ZOOM
+
+	wield_delay = 1 SECONDS
+	fire_delay = 0.8 SECONDS
+
+	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
+	aimed_wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
+
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+
+	spread = 0
+	spread_unwielded = 12
+
+	min_recoil = 0
+	recoil = 0.5
+
+//parent type for lorentz guns since they have snowflake behavior
+/obj/item/gun/energy/cybersun/lorentz
+	name = "cybersun lawrence gun supertype"
+	desc = "hey if you guys see this can you tell my mom i'm like really busy right now so i cant watch for it"
+
+	//ammo_type = list(/obj/item/ammo_casing/energy/lorentz, /obj/item/ammo_casing/energy/flare)
+
+	latch_icon = 'icons/obj/guns/manufacturer/cybersun/48x32.dmi'
+	latch_icon_state = "opportunist"
+
+	always_show_latch = TRUE
+
+	min_recoil = 0.1
+	min_recoil_aimed = 0
+
+
+/obj/item/gun/energy/cybersun/lorentz/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
+	var/flaring = FALSE
+	if(istype(chambered, /obj/item/ammo_casing/energy/flare))
+		if(!latch_closed)
+			return FALSE
+		flaring = TRUE
+		var/obj/projectile/beam/flare/bang = chambered.BB
+		var/cell_charge = cell.percent()/100
+		if(cell_charge < 0.5)
+			return FALSE
+		bang.damage = bang.damage * cell_charge * cell.rating
+		fire_sound_volume = 150 * cell_charge
+		bang.range = round(bang.range * cell_charge)
+		recoil = recoil * 2
+	. = ..()
+	if(flaring)
+		recoil = recoil / 2
+		explosive_cell_eject(user)
+
+/obj/item/gun/energy/cybersun/lorentz/proc/explosive_cell_eject(atom/shooter)
+	cell.charge = 0
+	cell.rigged = TRUE
+	playsound(loc, 'sound/effects/empulse.ogg', 25, TRUE)
+
+	//snowflake casing ejection
+	cell.burning_particles = new(cell, /particles/smoke/burning/cell_smoke)
+	QDEL_IN(cell.burning_particles, 3 SECONDS)
+
+	latch_closed = FALSE
+	cell.forceMove(drop_location())
+	cell.pixel_x = rand(-4, 4)
+	cell.pixel_y = rand(-4, 4)
+	cell.pixel_z = 8
+	var/angle_of_movement = !isnull(shooter) ? (rand(-3000, 3000) / 100) + dir2angle(turn(shooter.dir, 180)) : rand(-3000, 3000) / 100
+	cell.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(400, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = 'sound/weapons/gun/general/bulletcasing_shotgun_bounce.ogg')
+
+	cell = null
+	update_appearance()
+
 //flare pistol
-/obj/item/gun/energy/cybersun/opportunist
-	name = "VS-434 Opportunist"
+/obj/item/gun/energy/cybersun/lorentz/opportunist
+	name = "\improper LS207 Opportunist"
 	//rewrite
 	desc = "A bulky brute of revolver intended to neutralize any threat in close range. Lorentz mode rapidly ionizes air and fills it with plasma to melt through targets, while plasma flare dumps the entire plasma cell into one ferocious shot."
 
 	w_class = WEIGHT_CLASS_NORMAL
 	icon_state = "opportunist"
 	item_state = "opportunist"
+	latch_icon_state = "opportunist"
+
+	recoil = 2
+	recoil_unwielded = 6
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/cybersun
 	allowed_ammo_types = list(
@@ -85,406 +218,190 @@
 
 	ammo_type = list(/obj/item/ammo_casing/energy/lorentz, /obj/item/ammo_casing/energy/flare)
 
-/obj/item/gun/energy/cybersun/opportunist/empty_cell
+/obj/item/gun/energy/cybersun/lorentz/opportunist/empty_cell
 	spawn_no_ammo = TRUE
 
-/obj/item/gun/energy/cybersun/impactor
-	name = "\improper VS-126 Impactor"
-	desc = ""
+//flare shotgun
+/obj/item/gun/energy/cybersun/lorentz/impactor
+	name = "\improper LS126 Impactor"
+	desc = "A divisor lens makes the LS126 Impactor into a proper shotgun, allowing it to cast multiple Lorentz beams at a time. While not as powerful as an individual beam can be, combined the massed impact causes much more damage to a target. A close quarters combat tool to be reckoned with. "
 
 	icon_state = "impactor"
 	item_state = "impactor"
 
-	ammo_type = list(/obj/item/ammo_casing/energy/lorentz/scatter)
+	ammo_type = list(/obj/item/ammo_casing/energy/lorentz/scatter, /obj/item/ammo_casing/energy/flare)
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/cybersun
 
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/cybersun
+		/obj/item/stock_parts/cell/gun/cybersun,
+		/obj/item/stock_parts/cell/gun/cybersun/heavy,
 		/obj/item/stock_parts/cell/gun/cybersun/empty,
+		/obj/item/stock_parts/cell/gun/cybersun/heavy/empty,
 	)
 
+	latch_icon = 'icons/obj/guns/manufacturer/cybersun/48x32.dmi'
+	latch_icon_state = "impactor"
 
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_BULKY
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
-	fire_delay = 0.13 SECONDS
+	wield_delay = 0.8 SECONDS
+
 	wield_slowdown = LASER_RIFLE_SLOWDOWN
 
 	default_firemode = FIREMODE_SEMIAUTO
 
-	slot_available = list(
-		ATTACHMENT_SLOT_RAIL = 1,
-	)
+	recoil = 4
+	recoil_unwielded = 12
 
-	slot_offsets = list(
-		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 36,
-			"y" = 16,
-		),
-	)
-
-/obj/item/gun/energy/cybersun/impactor/empty_cell
+/obj/item/gun/energy/cybersun/lorentz/impactor/empty_cell
 	spawn_no_ammo = TRUE
 
-/obj/item/gun/energy/cybersun/galvanizer
-	name = "VS-304 Galvanizer"
-	desc = ""
+/obj/item/gun/energy/cybersun/lorentz/catalyzer
+	name = "LS451 Catalyzer"
+	desc = "Fitting into the role of light machine gun, the LS451 Catalyzer is the heaviest weapon currently sold by Tadeusz Armory (Discounting the LS9K Anti Starship Battery). An efficient conversion lens allows for the rifle to put down a consistent rain of Lorentz Bolts, or incinerate an opponent with a plasmaflare."
 
-	icon_state = "galvanizer"
-	item_state = "galvanizer"
-	w_class = WEIGHT_CLASS_BULKY
-	ammo_type = list(/obj/item/ammo_casing/energy/ionization/sniper)
-	ammo_x_offset = 1
-	shaded_charge = TRUE
-	modifystate = FALSE
-
-	zoomable = TRUE
-	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
-	aimed_wield_slowdown = LONG_RIFLE_AIM_SLOWDOWN
-	zoom_amt = DMR_ZOOM
-	wield_delay = 1 SECONDS
-	fire_delay = 0.4 SECONDS
-
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
-
-	spread = 0
-	spread_unwielded = 12
-
-	slot_available = list(
-		ATTACHMENT_SLOT_RAIL = 1,
-	)
-
-	slot_offsets = list(
-		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 39,
-			"y" = 13,
-		),
-	)
-
-/obj/item/gun/energy/cybersun/catalyzer
-	name = "Catalyzer"
-	desc = ""
+	base_icon_state = "catalyzer"
 	icon_state = "catalyzer"
 	item_state = "catalyzer"
+	latch_icon_state = "catalyzer"
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault/sharplite)
+	ammo_type = list(/obj/item/ammo_casing/energy/lorentz/mg, /obj/item/ammo_casing/energy/flare)
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun/cybersun/heavy
+
+	//she never did generalize bipod behavior as an attachment.
+	actions_types = list(/datum/action/item_action/deploy_bipod)
+
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/cybersun/heavy,
+		/obj/item/stock_parts/cell/gun/cybersun/heavy/empty
+	)
 
 	zoom_amt = RIFLE_ZOOM
-	wield_slowdown = SMG_SLOWDOWN
-	aimed_wield_slowdown = LONG_RIFLE_AIM_SLOWDOWN
-	wield_delay = 0.4 SECONDS
-	fire_delay = 0.5 SECONDS
-
-	spread = 2
-	spread_unwielded = 10
-
-	slot_available = list(
-		ATTACHMENT_SLOT_RAIL = 1,
-	)
-
-	slot_offsets = list(
-		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 34,
-			"y" = 15,
-		),
-	)
-
-/obj/item/gun/energy/sharplite/surge/resistor/empty_cell
-	spawn_no_ammo = TRUE
-
-/obj/item/gun/energy/sharplite/ohm/empty_cell
-	spawn_no_ammo = TRUE
-
-/obj/item/gun/energy/sharplite/volt
-	name = "SL X12 “Volt” Variable Energy Carbine"
-	desc = "A short, somewhat hefty carbine that can fire electroplasma or disabler bolts. Popular with security details with low-threat assignments."
-
-	icon_state = "x12"
-	item_state = "x12"
-	w_class = WEIGHT_CLASS_BULKY
-	custom_materials = list(/datum/material/iron=2000)
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite, /obj/item/ammo_casing/energy/laser/sharplite)
-	ammo_x_offset = 1
-	shaded_charge = TRUE
-	modifystate = TRUE
-	manufacturer = MANUFACTURER_SHARPLITE_NEW
-
-	wield_slowdown = SMG_SLOWDOWN
-	aimed_wield_slowdown = LONG_RIFLE_AIM_SLOWDOWN
-	wield_delay = 0.4 SECONDS
-
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
-
-	spread = 2
-	spread_unwielded = 10
-
-	slot_available = list(
-		ATTACHMENT_SLOT_RAIL = 1,
-	)
-
-	slot_offsets = list(
-		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 33,
-			"y" = 16,
-		),
-	)
-
-/obj/item/gun/energy/sharplite/volt/empty_cell
-	spawn_no_ammo = TRUE
-
-/obj/item/gun/energy/sharplite/amperage
-	name = "\improper SL X46 “Amperage” Variable Energy Blaster"
-	desc = "A heavy, bulky weapon designed to fire multiple electroplasma or disabler bolts, not unlike a ballistic shotgun. Electroplasma speed tends to lessen the spread and increase effective range over conventional ballistic shotguns."
-
-	icon_state = "x46"
-	item_state = "x46"
-	shaded_charge = TRUE
-	modifystate = TRUE
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/shotgun/sharplite, /obj/item/ammo_casing/energy/laser/shotgun/sharplite)
-
-	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite
-
-	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/sharplite,
-		/obj/item/stock_parts/cell/gun/sharplite/plus,
-		/obj/item/stock_parts/cell/gun/sharplite/empty,
-		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
-	)
-
-	w_class = WEIGHT_CLASS_BULKY
-	fire_delay = 0.4 SECONDS
-	shaded_charge = TRUE
-
-	wield_slowdown = SHOTGUN_SLOWDOWN
-	aimed_wield_slowdown = SHOTGUN_AIM_SLOWDOWN
-	wield_delay = 0.8 SECONDS
-
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
-
-	zoom_amt = SHOTGUN_ZOOM
-
-	slot_available = list(
-		ATTACHMENT_SLOT_RAIL = 1,
-	)
-
-	slot_offsets = list(
-		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 37,
-			"y" = 10,
-		),
-	)
-
-/obj/item/gun/energy/sharplite/amperage/empty_cell
-	spawn_no_ammo = TRUE
-
-/obj/item/gun/energy/sharplite/amperage/zeta
-	name = "\improper SL X-45"
-	desc = "A very old looking X-46, it has no stock or much decoration, and it is from before... Hey! What's this screen next to the mode select button?"
-
-	icon_state = "x46_zeta"
-	item_state = "x46_zeta"
-	shaded_charge = TRUE
-	manufacturer = MANUFACTURER_SHARPLITE
-
-	w_class = WEIGHT_CLASS_BULKY
-	var/obj/item/modular_computer/integratedNTOS
-	var/NTOS_type = /obj/item/modular_computer/internal
-
-/obj/item/gun/energy/sharplite/amperage/zeta/Initialize()
-	. = ..()
-	if(NTOS_type)
-		integratedNTOS = new NTOS_type(src)
-		integratedNTOS.physical = src
-
-/obj/item/gun/energy/sharplite/amperage/zeta/attack_self(mob/user)
-	. = ..()
-	if(!integratedNTOS)
-		return
-	integratedNTOS.interact(user)
-
-	slot_available = list(
-		ATTACHMENT_SLOT_RAIL = 1,
-	)
-
-	slot_offsets = list(
-		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 24,
-			"y" = 12,
-		),
-	)
-
-/obj/item/gun/energy/sharplite/hades
-	name = "SL AL655 “Hades” Assault Plasma Rifle"
-	desc = "A powerful electroplasma gun with a rapid repeater assembly and many capacitors. The APR rapidly fires heavy electroplasma bolts."
-	icon_state = "al655"
-	item_state = "al655"
-
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault/sharplite)
-	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/plus
-
-	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/sharplite,
-		/obj/item/stock_parts/cell/gun/sharplite/plus,
-		/obj/item/stock_parts/cell/gun/sharplite/empty,
-		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
-	)
-
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_BULKY
+	wield_slowdown = LASER_SNIPER_SLOWDOWN
+	aimed_wield_slowdown = LASER_SNIPER_SLOWDOWN
+	wield_delay = 1.5 SECONDS
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	shaded_charge = TRUE
-	modifystate = FALSE
+	recoil = 3
 
-	fire_delay = 0.2 SECONDS
+	spread = 12
+	spread_unwielded = 10
 
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	///is the bipod deployed?
+	var/bipod_deployed = FALSE
+	///how long do we need to deploy the bipod?
+	var/deploy_time = 0.5 SECONDS
 
-	wield_delay = 0.7 SECONDS
-	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
-	spread_unwielded = 20
+	///we add these two values to recoi/spread when we have the bipod deployed
+	var/deploy_recoil_bonus = -2
+	var/deploy_spread_bonus = -8
 
-	slot_available = list(
-		ATTACHMENT_SLOT_RAIL = 1,
+	var/list/deployable_on_structures = list(
+		/obj/structure/table,
+		/obj/structure/barricade,
+		/obj/structure/bed,
+		/obj/structure/chair,
+		/obj/structure/railing
 	)
 
-	slot_offsets = list(
-		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 36,
-			"y" = 11,
-		),
-	)
+/obj/item/gun/energy/cybersun/lorentz/catalyzer/ComponentInitialize()
+	. = ..()
+	RegisterSignals(src, list(COMSIG_ITEM_EQUIPPED,COMSIG_MOVABLE_MOVED), PROC_REF(retract_bipod))
 
-/obj/item/gun/energy/sharplite/hades/inteq
-	name = "PP20 “Barghest” APR"
-	desc = "A Sharplite Assault Plasma Rifle refinished in Inteq Risk Management Group colors. A powerful weapon that can deliver rapid-fire, armor-penetrating electroplasma bolts."
-	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
+/obj/item/gun/energy/cybersun/lorentz/catalyzer/ui_action_click(mob/user, action)
+	if(!istype(action, /datum/action/item_action/deploy_bipod))
+		return ..()
+	if(!bipod_deployed)
+		deploy_bipod(user)
+	else
+		retract_bipod(user=user)
 
-	icon_state = "al655_inteq"
-	item_state = "al655_inteq"
+/obj/item/gun/energy/cybersun/lorentz/catalyzer/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/total_recoil = recoil_bonus
+
+	if(bipod_deployed)
+		total_recoil += deploy_recoil_bonus
+
+	return ..(user, total_recoil)
+
+/obj/item/gun/energy/cybersun/lorentz/catalyzer/calculate_spread(mob/user, bonus_spread)
+	var/total_spread = bonus_spread
+
+	if(bipod_deployed)
+		total_spread += deploy_spread_bonus
+
+	return ..(user, total_spread)
+
+/obj/item/gun/energy/cybersun/lorentz/catalyzer/proc/deploy_bipod(mob/user)
+	//we check if we can actually deploy the thing
+	var/can_deploy = TRUE
+	var/mob/living/wielder = user
+
+	if(!wielder)
+		return
+
+	if(!wielded_fully)
+		to_chat(user, span_warning("You need to fully grip [src] to deploy it's bipod!"))
+		return
+
+	if(wielder.body_position != LYING_DOWN) //are we braced against the ground? if not, we check for objects to brace against
+		can_deploy = FALSE
+
+		for(var/direction_to_check as anything in GLOB.cardinals) //help
+			var/turf/open/turf_to_check = get_step(get_turf(src),direction_to_check)
+			for(var/obj/structure/checked_struct as anything in turf_to_check.contents) //while you can fire in non-braced directions, this makes it so you have to get good positioning to fire standing up.
+				for(var/checking_allowed as anything in deployable_on_structures)
+					if(istype(checked_struct, checking_allowed)) //help if you know how to write this better
+						can_deploy = TRUE
+						break
 
 
-/obj/item/gun/energy/sharplite/sarissa
-	name = "SL AL607 “Sarissa” Plasma Accelerator"
-	desc = "A heavy electroplasma rifle with an extensive accelerator assembly, with an overall length almost comparable to the average Kepori height. Produces singular electroplasma bolts of impressive power and velocity that strike with enough force and precision to overwhelm most infantry defenses."
-	icon_state = "al607"
-	item_state = "al607"
+	if(!can_deploy)
+		to_chat(user, span_warning("You need to brace against something to deploy [src]'s bipod! Either lie on the floor or stand next to a waist high object like a table!"))
+		return
+	if(!do_after(user, deploy_time, src, NONE, TRUE, CALLBACK(src, PROC_REF(is_wielded))))
+		to_chat(user, span_warning("You need to hold still to deploy [src]'s bipod!"))
+		return
+	playsound(src, 'sound/machines/click.ogg', 75, TRUE)
+	to_chat(user, span_notice("You deploy [src]'s bipod."))
+	bipod_deployed = TRUE
 
-	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/sharplite/sniper)
-	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/plus
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(retract_bipod))
+	update_appearance()
 
-	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/sharplite,
-		/obj/item/stock_parts/cell/gun/sharplite/plus,
-		/obj/item/stock_parts/cell/gun/sharplite/empty,
-		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
-	)
+/obj/item/gun/energy/cybersun/lorentz/catalyzer/proc/retract_bipod(atom/source, mob/user)
+	SIGNAL_HANDLER
+	if(!bipod_deployed)
+		return
+	if(!user || !ismob(user))
+		user = loc
+	playsound(src, 'sound/machines/click.ogg', 75, TRUE)
+	to_chat(user, span_notice("The bipod undeploys itself."))
+	bipod_deployed = FALSE
 
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_BULKY
+	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
+	update_appearance()
 
-	gun_firemodes = list(FIREMODE_SEMIAUTO)
-	default_firemode = FIREMODE_SEMIAUTO
 
-	shaded_charge = TRUE
-	modifystate = FALSE
+/obj/item/gun/energy/cybersun/lorentz/catalyzer/on_unwield(obj/item/source, mob/user)
+	. = ..()
+	retract_bipod(user=user)
 
-	spread = -4
-	spread_unwielded = 40
+/obj/item/gun/energy/cybersun/lorentz/catalyzer/update_icon_state()
+	. = ..()
 
-	wield_slowdown = SNIPER_SLOWDOWN
-	wield_delay = 1.3 SECONDS
-	fire_delay = 1 SECONDS
+/obj/item/gun/energy/cybersun/lorentz/catalyzer/update_overlays()
+	. = ..()
+	. += "[base_icon_state]-grip-[bipod_deployed]"
 
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
-
-	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
-	zoom_out_amt = 5
-
-	slot_available = list(
-		ATTACHMENT_SLOT_RAIL = 1,
-	)
-
-	slot_offsets = list(
-		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 35,
-			"y" = 15,
-		),
-	)
-
-/obj/item/gun/energy/sharplite/revolver
-	name = "X11 Advanced Stopping Pistol" //wayland is better
-	desc = "An advanced energy revolver with the capacity to shoot both disabler and lethal lasers, as well as futuristic safari nets."
-	icon_state = "x11"
-	item_state = "warra_generic"
-	force = 7
-	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/mini
-	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/sharplite/mini,
-	)
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite/hos, /obj/item/ammo_casing/energy/laser/sharplite/hos, /obj/item/ammo_casing/energy/trap)
-	ammo_x_offset = 1
-	shaded_charge = TRUE
-	slot_available = list(
-		ATTACHMENT_SLOT_RAIL = 1,
-	)
-
-	slot_offsets = list(
-		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 26,
-			"y" = 15,
-		),
-	)
-
-/obj/item/gun/energy/laser/retro
-	name ="SL L104"
-	desc = "An antiquated model of the L204, no longer used or sold by Sharplite. Nevertheless, the sheer popularity of this model makes it a somewhat common sight to this day."
-
-	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
-
-	icon_state = "laser"
-	item_state = "laser"
-
-	manufacturer = MANUFACTURER_SHARPLITE
-	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite
-
-	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/sharplite,
-		/obj/item/stock_parts/cell/gun/sharplite/plus,
-		/obj/item/stock_parts/cell/gun/sharplite/empty,
-		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
-	)
-
-/obj/item/gun/energy/laser/captain
-	name = "antique laser gun"
-	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
-	icon_state = "caplaser"
-	item_state = "caplaser"
-	desc = "This is the SL X-00, an antique laser gun, out of production for decades and well beyond anyone's capacity to recreate. All craftsmanship is of the highest quality. It is decorated with ashdrake leather and chrome. The gun menaces with spikes of energy. On the item is an image of a space station. The station is exploding."
-	force = 10
-	ammo_x_offset = 3
-	selfcharge = TRUE
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	manufacturer = MANUFACTURER_SHARPLITE
-
-/obj/item/gun/energy/laser/captain/brazil
-	icon_state = "capgun_brazil"
-	item_state = "caplaser"
-	desc = "This is the SL X-00, an antique laser gun, out of production for decades and well beyond anyone's capacity to recreate. It seems all the high quality materials it was once made of are now scratched up and torn. The nuclear power cell has been removed, and the gun will no longer automatically recharge."
-	selfcharge = FALSE
+/obj/item/gun/energy/cybersun/lorentz/catalyzer/empty_cell
+	spawn_no_ammo = TRUE

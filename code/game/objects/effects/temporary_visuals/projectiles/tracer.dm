@@ -86,6 +86,9 @@
 /obj/effect/projectile/tracer/ionization
 	icon_state = "ionization"
 
+/obj/effect/projectile/tracer/ionization/sniper
+	icon_state = "ionization_sniper"
+
 /obj/effect/projectile/tracer/lorentz
 	icon_state = "lorentz"
 

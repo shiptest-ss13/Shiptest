@@ -260,7 +260,7 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/challenger
 	mag_type = /obj/item/ammo_box/magazine/co9mm
 
-/obj/item/storage/guncase/vector
+/obj/item/storage/guncase/expedition
 	gun_type = /obj/item/gun/ballistic/automatic/smg/expedition
 	mag_type = /obj/item/ammo_box/magazine/m9mm_expedition
 
@@ -475,3 +475,57 @@
 /obj/item/storage/guncase/energy/underbarrel_e_gun
 	gun_type = /obj/item/attachment/gun/energy/e_gun
 
+/* Cybersun Guns */
+
+/obj/item/storage/guncase/pistol/rectifier
+	gun_type = /obj/item/gun/ballistic/cs_gauss/rectifier
+	mag_type = /obj/item/ammo_box/magazine/cs_gauss/pistol
+	mag_count = 5
+
+/obj/item/storage/guncase/pistol/rectifier/export
+	gun_type = /obj/item/gun/ballistic/cs_gauss/rectifier/export
+
+/obj/item/storage/guncase/convergence
+	gun_type = /obj/item/gun/ballistic/cs_gauss/convergence
+	mag_type = /obj/item/ammo_box/magazine/cs_gauss
+	mag_count = 3
+
+/obj/item/storage/guncase/convergence/export
+	gun_type = /obj/item/gun/ballistic/cs_gauss/convergence/export
+
+/obj/item/storage/guncase/vector
+	gun_type = /obj/item/gun/ballistic/cs_gauss/vector
+	mag_type = /obj/item/ammo_box/magazine/cs_gauss/rifle
+	mag_count = 3
+
+/obj/item/storage/guncase/vector/export
+	gun_type = /obj/item/gun/ballistic/cs_gauss/vector/export
+
+//energy weapons
+/obj/item/storage/guncase/pistol/troubleshooter
+	gun_type = /obj/item/gun/energy/cybersun/troubleshooter
+	mag_type = /obj/item/stock_parts/cell/gun/cybersun/mini
+	mag_count = 2
+
+/obj/item/storage/guncase/pistol/troubleshooter/lensman
+	gun_type = /obj/item/gun/energy/cybersun/troubleshooter/lensman
+
+/obj/item/storage/guncase/pistol/opportunist
+	gun_type = /obj/item/gun/energy/cybersun/lorentz/opportunist
+	mag_type = /obj/item/stock_parts/cell/gun/cybersun
+	mag_count = 2
+
+/obj/item/storage/guncase/impactor
+	gun_type = /obj/item/gun/energy/cybersun/lorentz/impactor
+	mag_type = /obj/item/stock_parts/cell/gun/cybersun
+	mag_count = 2
+
+/obj/item/storage/guncase/catalyzer
+	gun_type = /obj/item/gun/energy/cybersun/lorentz/catalyzer
+	mag_type = /obj/item/stock_parts/cell/gun/cybersun/heavy
+	mag_count = 2
+
+/obj/item/storage/guncase/galvanizer
+	gun_type = /obj/item/gun/energy/cybersun/galvanizer
+	mag_type = /obj/item/stock_parts/cell/gun/cybersun
+	mag_count = 2

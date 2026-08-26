@@ -60,6 +60,9 @@
 /obj/effect/projectile/impact/ionization
 	icon_state = "ionization"
 
+/obj/effect/projectile/impact/ionization/sniper
+	icon_state = "ionization_sniper"
+
 /obj/effect/projectile/impact/lorentz
 	icon_state = "lorentz"
 

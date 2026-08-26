@@ -42,7 +42,10 @@
 	var/latch_toggle_delay = 0.6 SECONDS
 
 	///latch icon state(for overriding)
-	var/latch_iconstate = "latch"
+	var/latch_icon_state = "latch"
+
+	///do we always show the latch? For snowflaked latches i.e. cybersun weapons
+	var/always_show_latch = FALSE
 
 	//file to pull the latch icon from
 	var/latch_icon = 'icons/obj/guns/cell_latch.dmi'
@@ -365,9 +368,9 @@
 	var/overlay_icon_state = "[icon_state]_charge"
 	var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]
 	var/ratio = get_charge_ratio()
-	if(ismob(loc) && !internal_magazine)
+	if((ismob(loc) && !internal_magazine) || always_show_latch)
 		var/mutable_appearance/latch_overlay
-		latch_overlay = mutable_appearance([latch_icon])
+		latch_overlay = mutable_appearance(latch_icon)
 		if(latch_closed)
 			if(cell)
 				latch_overlay.icon_state = "[latch_icon_state]-on-full"
