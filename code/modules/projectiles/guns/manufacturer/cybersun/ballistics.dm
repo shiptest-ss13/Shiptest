@@ -14,7 +14,6 @@
 	always_chambers = TRUE
 
 	tac_reloads = FALSE
-
 	bolt_wording = "prime"
 	cartridge_wording = "dart"
 
