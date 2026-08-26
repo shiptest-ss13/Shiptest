@@ -10,6 +10,8 @@
 	righthand_file = 'icons/obj/guns/manufacturer/cybersun/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/cybersun/onmob.dmi'
 
+	icon_state = "troubleshooter"
+
 	ammo_type = list()
 
 	vary_fire_sound = FALSE
