@@ -2304,6 +2304,17 @@
 	if(should_babum && radboy.health >= radboy.crit_threshold)
 		playsound(radboy, 'sound/effects/singlebeat.ogg', 80, TRUE)
 
+	if(SPT_PROB(10, seconds_per_tick))
+		to_chat(radboy, span_warning(pick(
+			"Your weakness burns away.",
+			"Keep going, keep going.",
+			"Your heart pounds with great force.",
+			"An otherworldly heat permeates through you.",
+			"Onwards.",
+			"Your muscles sear.",
+			"It burns.",
+			"Your organs feel like they're melting.")))
+
 	..()
 
 // Melter Anomaly
@@ -2371,7 +2382,6 @@
 	if(chems.has_reagent(type, 5))
 		mytray.spawnplant()
 
-
 // Transfusion Anomaly
 /datum/reagent/transfusion
 	name = "Viscous Ichor"
@@ -2385,9 +2395,9 @@
 	if(SPT_PROB(10, seconds_per_tick))
 		to_chat(bloodboy, span_warning(pick(
 			"Your gut shifts uncomfortably.",
-			"You feel an odd pressure inside your chest.",
-			"You feel off.",
-			"You feel something flowing inside you.",
+			"You feel a sharp pressure inside your chest.",
+			"You feel very off.",
+			"You feel something moving inside you.",
 			"Ichor flows with horrid pressure within your veins",
 			"Your heart rejects. Your body embraces.",
 			"Substitute self oozes around your soul",
@@ -2396,6 +2406,30 @@
 	if(bloodboy.blood_volume < BLOOD_VOLUME_NORMAL)
 		bloodboy.blood_volume += 5
 	..()
+
+// dilute transfusion - something of a supercharged saline glucose
+/datum/reagent/dilute_transfusion
+	name = "Pale Ichor"
+	description = "A dilute, stabilized form of anomalous ichor. Its intensity is lessened but its abilities remain."
+	reagent_state = LIQUID
+	color = "#C88080" // greyish-red
+	taste_description = "iron sludge"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	var/temp_blood_amount = 0
+
+/datum/reagent/dilute_transfusion/on_mob_life(mob/living/carbon/patient, seconds_per_tick)
+	// first we remove temp blood
+	if(temp_blood_amount)
+		patient.blood_volume -= temp_blood_amount
+		temp_blood_amount = 0
+	if(patient.blood_volume < BLOOD_VOLUME_NORMAL)
+		patient.blood_volume += 0.15 // a little bit of regen to the "real level"
+		temp_blood_amount = BLOOD_VOLUME_NORMAL - patient.blood_volume
+		patient.blood_volume = BLOOD_VOLUME_NORMAL
+
+/datum/reagent/dilute_transfusion/on_mob_end_metabolize(mob/living/carbon/patient)
+	to_chat(patient, span_warning("The last of the ichor rushes out of you."))
+	patient.blood_volume -= temp_blood_amount
 
 // Phantom Anomaly
 /datum/reagent/phantom
@@ -2407,5 +2441,32 @@
 /datum/reagent/phantom/on_mob_metabolize(mob/living/carbon/victim)
 	victim.apply_necropolis_curse(CURSE_BLINDING | CURSE_WASTING | CURSE_GRASPING)
 
+/datum/reagent/phantom/on_mob_life(mob/living/carbon/victim, seconds_per_tick)
+	if(SPT_PROB(10, seconds_per_tick))
+		to_chat(victim, span_danger(pick(
+			"WHERE ARE YOU?",
+			"COME CLOSER",
+			"PLEASE, PLEASE, PLEASE",
+			"IT HURTS",
+			"HELP",
+			"CAN YOU HEAR ME?",
+			"I SEE YOU",
+			"I MISS YOU")))
+
 /datum/reagent/phantom/on_mob_end_metabolize(mob/living/carbon/victim)
 	victim.remove_status_effect(/datum/status_effect/necropolis_curse)
+
+// Plasmasoul Anomaly
+// Direct effects aren't too exciting - what makes this one interesting is its reactions
+/datum/reagent/plasmasoul
+	name = "Mother-Of-Plasma"
+	description = "The semi-stable core of a plasmasoul, reduced to a fine powder. It simmers with potential, waiting for something to release it."
+	color = "#550055"
+	taste_description = "extreme sourness"
+
+/datum/reagent/plasmasoul/on_mob_life(mob/living/carbon/plasma_eater)
+	plasma_eater.adjustToxLoss(5 * REM, 0) // what made you think this was a good idea
+	..()
+
+// Plasmaball anomaly
+// TODO

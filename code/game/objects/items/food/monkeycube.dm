@@ -33,8 +33,8 @@
 	tastes = list("moonshine" = 1)
 
 /obj/item/food/monkeycube/frontiecube/Initialize()
+	. = ..()
 	spawned_mob = pick(subtypesof(/mob/living/simple_animal/hostile/human/frontier))
-	..()
 
 /obj/item/food/monkeycube/ramzicube
 	name = "ramzi cube"
@@ -42,8 +42,8 @@
 	tastes = list("rust" = 1)
 
 /obj/item/food/monkeycube/ramzicube/Initialize()
+	. = ..()
 	spawned_mob = pick(subtypesof(/mob/living/simple_animal/hostile/human/ramzi))
-	..()
 
 /obj/item/food/monkeycube/supercollider
 	name = "ramzi clique supercubellider"

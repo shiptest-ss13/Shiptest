@@ -96,7 +96,7 @@
 /obj/item/assembly/signaler/anomaly/heartbeat
 	name = "\improper heartbeat anomaly core"
 	desc = "The stabilized core of a heartbeat anomaly. Pulses of heat run across its shell."
-	grind_results = list(/datum/reagent/heartbeat = 10) // this stuff is pretty good so
+	grind_results = list(/datum/reagent/heartbeat = 15) // this stuff is pretty good so
 
 /obj/item/assembly/signaler/anomaly/heartbeat/anomaly_core_detonation()
 	visible_message(span_warning("[src] expands and throbs, before shattering into dozens of fragments!"))
@@ -144,7 +144,7 @@
 /obj/item/assembly/signaler/anomaly/plasmasoul
 	name = "\improper plasmasoul anomaly core"
 	desc = "The stabilized core of a plasmasoul anomaly. The air around it hisses."
-	grind_results = list(/datum/reagent/toxin/plasma = 100)
+	grind_results = list(/datum/reagent/plasmasoul = 10) // enough for you and a friend
 
 /obj/item/assembly/signaler/anomaly/plasmasoul/anomaly_core_detonation()
 	visible_message(span_warning("[src] rapidly delaminates into plasma!"))

@@ -66,7 +66,7 @@
 
 /datum/reagent/toxin/plasma
 	name = "Plasma"
-	description = "Plasma in its liquid formetabolizer."
+	description = "Plasma in its liquid form."
 	taste_description = "bitterness"
 	specific_heat = SPECIFIC_HEAT_PLASMA
 	taste_mult = 1.5
@@ -433,7 +433,7 @@
 
 /datum/reagent/toxin/polonium
 	name = "Polonium"
-	description = "An extremely radioactive material in liquid formetabolizer. Ingestion results in fatal irradiation."
+	description = "An extremely radioactive material in liquid form. Ingestion results in fatal irradiation."
 	reagent_state = LIQUID
 	color = "#787878"
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM

@@ -1,4 +1,3 @@
-
 /datum/chemical_reaction/sterilizine
 	results = list(/datum/reagent/space_cleaner/sterilizine = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/medicine/charcoal = 1, /datum/reagent/chlorine = 1)
@@ -411,3 +410,34 @@
 	results = list(/datum/reagent/cement/roadmix = 2)
 	required_reagents = list(/datum/reagent/cement = 1, /datum/reagent/asphalt = 1)
 	mix_message = "The mixture mixing suddenly reminds you of cramped urban worlds."
+
+/datum/chemical_reaction/transfusion_dilution
+	results = list(/datum/reagent/dilute_transfusion = 15)
+	required_reagents = list(/datum/reagent/transfusion = 5, /datum/reagent/iron = 5, /datum/reagent/blood = 15)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
+	mix_message = "The mixture bubbles violently, then falls still."
+
+/datum/chemical_reaction/plasmasoul_plasmasheet
+	required_reagents = list(/datum/reagent/toxin/acid = 5, /datum/reagent/wittel = 5)
+	required_catalysts = list(/datum/reagent/plasmasoul = 5)
+	mix_message = "The mixture hisses loudly as solid plasma bursts forth!"
+
+/datum/chemical_reaction/plasmasoul_plasmasheet/on_reaction(datum/reagents/holder, created_volume)
+	holder.chem_temp += 25 * created_volume // kehehe
+	var/location = get_turf(holder.my_atom)
+	for(var/i in 1 to created_volume)
+		if(prob(99))
+			new /obj/item/stack/sheet/mineral/plasma(location)
+		else
+			new /obj/item/gem/phoron(location) // jackpot!
+
+/datum/chemical_reaction/reagent_explosion/why_did_you_plasmasoul_explode
+	required_reagents = list(/datum/reagent/plasmasoul = 1)
+	strengthdiv = 4 // the main threat here is the fire it makes
+	required_temp = LIQUID_PLASMA_BP
+	mix_message = span_danger("The mixture detonates into an enormous fireball!")
+
+/datum/chemical_reaction/reagent_explosion/why_did_you_plasmasoul_explode/on_reaction(datum/reagents/holder, created_volume)
+	if(holder.my_atom)
+		var/atom/torch = holder.my_atom
+		torch.atmos_spawn_air("plasma=[created_volume * 10];TEMP=[holder.chem_temp + 100]")

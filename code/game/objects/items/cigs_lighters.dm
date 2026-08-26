@@ -393,6 +393,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/rollie/anomalous/Initialize()
 	// add a random anomaly chem!
+	. = ..()
 	list_reagents[pick(
 		/datum/reagent/drug/space_drugs, // fake
 		/datum/reagent/heartbeat,
@@ -407,7 +408,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		/datum/reagent/teslium,
 		/datum/reagent/liquid_dark_matter,
 		/datum/reagent/clf3)] = rand(5,10)
-	..()
 
 /obj/item/clothing/mask/cigarette/candy
 	name = "Little Timmy's candy cigarette"

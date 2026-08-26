@@ -41,7 +41,7 @@
 
 /datum/reagent/consumable/nutriment
 	name = "Nutriment"
-	description = "All the vitamins, minerals, and carbohydrates the body needs in pure formetabolizer."
+	description = "All the vitamins, minerals, and carbohydrates the body needs in pure form."
 	reagent_state = SOLID
 	nutriment_factor = 15 * REAGENTS_METABOLISM
 	color = "#664330" // rgb: 102, 67, 48
@@ -93,7 +93,7 @@
 
 /datum/reagent/consumable/nutriment/vitamin
 	name = "Vitamin"
-	description = "All the best vitamins, minerals, and carbohydrates the body needs in pure formetabolizer."
+	description = "All the best vitamins, minerals, and carbohydrates the body needs in pure form."
 	taste_description = "bitterness"
 	brute_heal = 1
 	burn_heal = 1
