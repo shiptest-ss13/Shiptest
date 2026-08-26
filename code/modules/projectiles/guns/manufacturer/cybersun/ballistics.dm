@@ -24,9 +24,9 @@
 
 	recoil = 0.3
 
-	wear_minor_threshold = 120
+	wear_minor_threshold = 180
 	/// Gun will start to jam more at this level of wear. The grace period between jams is also removed for extra fun
-	wear_major_threshold = 240
+	wear_major_threshold = 300
 	/// Highest wear value so the gun doesn't end up completely irreperable
 	wear_maximum = 480
 
@@ -183,6 +183,8 @@ NO_MAG_GUN_HELPER(cs_gauss/rectifier/export)
 	w_class = WEIGHT_CLASS_BULKY
 	default_ammo_type = /obj/item/ammo_box/magazine/cs_gauss
 
+	wear_minor_threshold = 240
+	wear_major_threshold = 380
 
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/cs_gauss,
