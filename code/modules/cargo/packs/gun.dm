@@ -1046,11 +1046,51 @@
 	faction_locked = FALSE
 
 /datum/supply_pack/gun/troubleshooter
-	name = "Troubleshooter Pistol"
-	desc = "Contains an SG27 Rectifier gauss pistol, designed to fire disposable cell/magazine stacks at rapid speed."
-	cost = 1500
-	contains = list(/obj/item/storage/guncase/pistol/rectifier)
-	crate_name = "rectifier crate"
+	name = "Troubleshooter Ionization Pistol"
+	desc = "Contains an IT22 Troubleshooter Ionization Pistol, made as the ultimate in holdout pistols."
+	cost = 1000
+	contains = list(/obj/item/storage/guncase/pistol/troubleshooter)
+	crate_name = "troubleshooter crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/opportunist
+	name = "Opportunist Lorentz Magnum"
+	desc = "Contains an LS209 Opportunist lorentz pistol. For the discerning manager in need of robust protection."
+	cost = 2000
+	contains = list(/obj/item/storage/guncase/pistol/opportunist)
+	crate_name = "opportunist crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/impactor
+	name = "Impactor Lorentz Shotgun"
+	desc = "Contains an LS126 Impactor lorentz shotgun. Both modes are effective in close quarters combat."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/impactor)
+	crate_name = "impactor crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/catalyzer
+	name = "Catalyzer Lorentz Rifle"
+	desc = "Contains an LS451 Catalyzer Lorentz Rifle. Adept for assaulting fixed positions."
+	cost = 7000
+	contains = list(/obj/item/storage/guncase/catalyzer)
+	crate_name = "catalyzer crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/galvanizer
+	name = "Galvanizer Marksman Rifle"
+	desc = "Contains an IT34 Galvanizer Ionization Rifle. A long reach and steady charge makes for consistent fire support."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/galvanizer)
+	crate_name = "galvanizer crate"
 	faction = /datum/faction/syndicate/cybersun
 	faction_discount = 0
 	faction_locked = TRUE

@@ -388,6 +388,26 @@
 	contains = list(/obj/item/ammo_box/magazine/e40/empty)
 	cost = 400
 
+/* CS Gauss */
+
+/datum/supply_pack/magazine/convergence
+	name = "Convergence Magazine"
+	desc = "Contains a 60-round magazine for the SG49 Convergence filled with 2x15mm Tav'Sha Dart."
+	contains = list(/obj/item/ammo_box/magazine/cs_gauss)
+	cost = 400
+
+/datum/supply_pack/magazine/rectifier
+	name = "Rectifier Magazine"
+	desc = "Contains a 30-round magazine for the SG29 Convergence filled with 2x15mm Tav'Sha Dart."
+	contains = list(/obj/item/ammo_box/magazine/cs_gauss/pistol)
+	cost = 200
+
+/datum/supply_pack/magazine/vector
+	name = "Vector Magazine"
+	desc = "Contains a 40-round magazine for the SG95 Vector filled with 3x20mm Deu'Sha Dart."
+	contains = list(/obj/item/ammo_box/magazine/cs_gauss/rifle)
+	cost = 500
+
 /* energy weapons */
 
 /datum/supply_pack/magazine/guncell
@@ -458,3 +478,25 @@
 	faction_locked = TRUE
 
 /* Expand once the energy weapons have been actually expanded upon */
+
+/datum/supply_pack/magazine/cybersun_cell
+	name = "Cybersun Plasma Cell"
+	desc = "Contains a Cybersun Plasma Cell, compatible with most Cybersun energy weapons"
+	contains = list(/obj/item/stock_parts/cell/gun/cybersun)
+	cost = 750
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 10
+
+/datum/supply_pack/magazine/cybersun_cell/mini
+	name = "Micro Cybersun Plasma Cell"
+	desc = "Contains a micro Cybersun Plasma Cell, compatible with pistol-scale Cybersun energy weapons"
+	contains = list(/obj/item/stock_parts/cell/gun/cybersun/mini)
+	cost = 300
+
+/datum/supply_pack/magazine/pgfcell
+	name = "Heavy Cybersun Plasma  Cell"
+	desc = "Contains the heaviest plasma cell manufactured by Cybersun. Perfect for heavy weaponry."
+	contains = list(/obj/item/stock_parts/cell/gun/cybersun/heavy)
+	cost = 1500
+	faction_discount = 0
+	faction_locked = TRUE

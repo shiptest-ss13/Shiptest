@@ -497,6 +497,6 @@
 	spread = 5
 
 /obj/machinery/porta_turret/ship/cybersun/seeker/turret_fire(our_turf, target_turf)
-	. = ..()
+	var/obj/projectile/shot = ..()
 	shot.homing_target = current_target
 	shot.homing = TRUE

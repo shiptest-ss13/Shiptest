@@ -758,16 +758,17 @@
 /area/ship/crew/canteen)
 "oP" = (
 /obj/structure/closet/wall/white/directional/east,
-/obj/item/storage/box/ammo/c22lr,
-/obj/item/storage/box/ammo/c22lr{
-	pixel_y = -4
+/obj/item/stock_parts/cell/gun/cybersun{
+	pixel_x = 8;
+	pixel_y = 9
 	},
-/obj/item/ammo_box/magazine/m22lr_himehabu{
-	pixel_y = -7;
-	pixel_x = 8
+/obj/item/stock_parts/cell/gun/cybersun{
+	pixel_x = 8;
+	pixel_y = 2
 	},
-/obj/item/ammo_box/magazine/m22lr_himehabu{
-	pixel_x = 8
+/obj/item/stock_parts/cell/gun/cybersun{
+	pixel_x = 8;
+	pixel_y = -5
 	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm)
@@ -839,6 +840,9 @@
 "pq" = (
 /obj/effect/turf_decal/isf_small/left,
 /obj/machinery/light/directional/west,
+/obj/machinery/porta_turret/ship/cybersun/heavy{
+	id = "nimbus_grid"
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "pL" = (
@@ -2422,10 +2426,7 @@
 	pixel_y = 10;
 	pixel_x = 5
 	},
-/obj/item/gun/ballistic/automatic/pistol/himehabu{
-	pixel_x = 5;
-	pixel_y = -7
-	},
+/obj/item/gun/energy/cybersun/lorentz/opportunist,
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm)
 "UK" = (
@@ -2533,6 +2534,10 @@
 	pixel_y = 5;
 	pixel_x = 2
 	},
+/obj/machinery/turretid/ship{
+	pixel_y = -21;
+	id = "nimbus_grid"
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
 "WC" = (
@@ -2597,6 +2602,10 @@
 /obj/effect/turf_decal/isf_small/right{
 	dir = 1
 	},
+/obj/machinery/porta_turret/ship/cybersun/heavy{
+	dir = 1;
+	id = "nimbus_grid"
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "XI" = (
@@ -2629,14 +2638,23 @@
 	number_of_tumblers = 3;
 	tumblers = list(45,27,54)
 	},
-/obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag,
-/obj/item/ammo_box/magazine/m22lr_himehabu,
-/obj/item/ammo_box/magazine/m22lr_himehabu,
-/obj/item/ammo_box/magazine/m22lr_himehabu,
 /obj/item/clothing/suit/space/hardsuit/syndi/cybersun,
 /obj/item/folder/documents/syndicate/cybersun,
 /obj/item/reagent_containers/food/drinks/flask,
 /obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl,
+/obj/item/gun/energy/cybersun/troubleshooter/bridge_safe,
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -11
+	},
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -11
+	},
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -11
+	},
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -11
+	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
 "YI" = (

@@ -196,7 +196,7 @@
 
 //flare pistol
 /obj/item/gun/energy/cybersun/lorentz/opportunist
-	name = "\improper LS207 Opportunist"
+	name = "\improper LS209 Opportunist"
 	//rewrite
 	desc = "A bulky brute of revolver intended to neutralize any threat in close range. Lorentz mode rapidly ionizes air and fills it with plasma to melt through targets, while plasma flare dumps the entire plasma cell into one ferocious shot."
 
@@ -261,7 +261,7 @@
 	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/cybersun/lorentz/catalyzer
-	name = "LS451 Catalyzer"
+	name = "\improper LS451 Catalyzer"
 	desc = "Fitting into the role of light machine gun, the LS451 Catalyzer is the heaviest weapon currently sold by Tadeusz Armory (Discounting the LS9K Anti Starship Battery). An efficient conversion lens allows for the rifle to put down a consistent rain of Lorentz Bolts, or incinerate an opponent with a plasmaflare."
 
 	base_icon_state = "catalyzer"

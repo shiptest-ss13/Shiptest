@@ -705,11 +705,9 @@
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = 10
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
-	pixel_x = -23;
 	pixel_y = -3
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -1063,26 +1061,6 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
 "kv" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 6
-	},
-/obj/structure/sign/poster/contraband/c20r{
-	pixel_x = 31
-	},
-/obj/item/storage/guncase/convergence{
-	pixel_y = 6
-	},
-/obj/item/ammo_box/magazine/cs_gauss{
-	pixel_x = -6
-	},
-/obj/item/ammo_box/magazine/cs_gauss{
-	pixel_x = 1
-	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 5
 	},
@@ -1227,24 +1205,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "mO" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 6
-	},
 /obj/item/radio/intercom/directional/east,
-/obj/item/gun/energy/cybersun/lorentz/impactor{
-	pixel_y = 7;
-	pixel_x = -8
-	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 6
-	},
-/obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
-	dir = 1
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
@@ -1680,15 +1643,17 @@
 /area/ship/hallway/central)
 "rm" = (
 /obj/structure/guncloset,
-/obj/item/gun/ballistic/automatic/smg/sidewinder/no_mag{
-	pixel_x = -7;
-	pixel_y = -8
-	},
-/obj/item/gun/ballistic/automatic/smg/cobra/no_mag,
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
 	},
 /obj/machinery/light/directional/west,
+/obj/item/gun/ballistic/cs_gauss/convergence/no_mag{
+	pixel_y = -7
+	},
+/obj/item/gun/energy/cybersun/lorentz/impactor/empty_cell{
+	pixel_x = -4;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "rC" = (
@@ -1719,6 +1684,10 @@
 	dir = 1
 	},
 /obj/structure/table/glass,
+/obj/machinery/turretid/ship{
+	pixel_y = 3;
+	id = "fractus_grid"
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
 "sb" = (
@@ -1801,8 +1770,7 @@
 	dir = 6
 	},
 /obj/structure/sign/poster/contraband/c20r{
-	pixel_x = 32;
-	pixel_y = 0
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -2686,22 +2654,6 @@
 /area/ship/crew/dorm/captain)
 "BL" = (
 /obj/structure/closet/secure_closet/armorycage,
-/obj/item/ammo_box/magazine/m45_cobra/empty{
-	pixel_x = 9;
-	pixel_y = -9
-	},
-/obj/item/ammo_box/magazine/m45_cobra/empty{
-	pixel_x = 8;
-	pixel_y = -6
-	},
-/obj/item/ammo_box/magazine/m57_39_sidewinder/empty{
-	pixel_x = -5;
-	pixel_y = 6
-	},
-/obj/item/ammo_box/magazine/m57_39_sidewinder/empty{
-	pixel_x = -4;
-	pixel_y = 7
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
 	},
@@ -3057,6 +3009,17 @@
 	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/hallway/central)
+"Gc" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
+	dir = 1
+	},
+/obj/machinery/porta_turret/ship/cybersun{
+	id = "fractus_grid";
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "GA" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/cyan{
@@ -3238,7 +3201,6 @@
 	},
 /obj/machinery/newscaster/directional{
 	dir = 4;
-	pixel_y = 0;
 	pixel_x = 31
 	},
 /turf/open/floor/suns/dark/plain,
@@ -3451,29 +3413,37 @@
 /obj/structure/closet/wall/red/directional/west{
 	name = "ammo closet"
 	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = 1;
-	pixel_y = -8
+/obj/item/ammo_box/magazine/cs_gauss{
+	pixel_x = -6;
+	pixel_y = -5
 	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = -7;
-	pixel_y = -8
+/obj/item/ammo_box/magazine/cs_gauss{
+	pixel_x = -6
 	},
-/obj/item/storage/box/ammo/c57x39/ap{
-	pixel_x = -7;
-	pixel_y = 7
+/obj/item/ammo_box/magazine/cs_gauss{
+	pixel_x = -6;
+	pixel_y = 5
 	},
-/obj/item/storage/box/ammo/c57x39/ap{
-	pixel_x = -1;
-	pixel_y = 7
+/obj/item/ammo_box/magazine/cs_gauss{
+	pixel_x = -6;
+	pixel_y = 10
 	},
-/obj/item/storage/box/ammo/c57x39/ap{
-	pixel_x = 15;
-	pixel_y = 7
+/obj/item/ammo_box/magazine/cs_gauss{
+	pixel_y = -6
 	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = 15;
-	pixel_y = -8
+/obj/item/ammo_box/magazine/cs_gauss{
+	pixel_y = -1
+	},
+/obj/item/stock_parts/cell/gun/cybersun{
+	pixel_x = 9;
+	pixel_y = 10
+	},
+/obj/item/stock_parts/cell/gun/cybersun{
+	pixel_x = 9;
+	pixel_y = 5
+	},
+/obj/item/stock_parts/cell/gun/cybersun{
+	pixel_x = 9
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
@@ -3482,6 +3452,10 @@
 /obj/machinery/atmospherics/pipe/simple/violet/hidden{
 	dir = 4
 	},
+/obj/machinery/porta_turret/ship/cybersun{
+	id = "fractus_grid"
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "KT" = (
@@ -3619,7 +3593,6 @@
 	dir = 6
 	},
 /obj/structure/sign/poster/contraband/bulldog{
-	pixel_x = 0;
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
@@ -3694,6 +3667,15 @@
 /obj/machinery/vending/cola/shamblers,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
+"Oo" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/machinery/porta_turret/ship/cybersun{
+	id = "fractus_grid";
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Ot" = (
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
@@ -4113,7 +4095,6 @@
 	},
 /obj/effect/turf_decal/siding/black,
 /obj/machinery/computer/helm/viewscreen/directional{
-	dir = 2;
 	pixel_y = -18
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -4236,6 +4217,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
+"VG" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
+	dir = 1
+	},
+/obj/machinery/porta_turret/ship/cybersun{
+	id = "fractus_grid";
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "VI" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/reinforced{
@@ -4693,7 +4685,7 @@ wY
 qI
 "}
 (5,1,1) = {"
-xe
+Gc
 cI
 VI
 ql
@@ -5268,7 +5260,7 @@ qI
 qI
 qI
 po
-xe
+VG
 eD
 Ff
 Ff
@@ -5280,7 +5272,7 @@ Ff
 Rx
 Rx
 Rs
-po
+Oo
 xe
 qI
 qI
