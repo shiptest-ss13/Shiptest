@@ -10,7 +10,7 @@
 	empty_alarm = TRUE
 	empty_autoeject = TRUE
 	//if i read this correctly this should mean its always ready to fire //it doesn't but whatever
-	bolt_type = BOLT_TYPE_OPEN
+	bolt_type = BOLT_TYPE_STANDARD
 	always_chambers = TRUE
 
 	tac_reloads = FALSE
@@ -105,8 +105,8 @@
 		STOP_PROCESSING(SSfastprocess, src)
 
 /obj/item/gun/ballistic/cs_gauss/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread, burst_firing, spread_override, iteration)
-	if(chambered && current_target)
-		if(!prob(lock_loss))
+	if(current_target)
+		if(!prob(lock_loss) || !lock_loss)
 			chambered.BB.homing = TRUE
 			chambered.BB.homing_target = current_target.resolve()
 			chambered.BB.accuracy_mod = 3

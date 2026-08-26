@@ -481,6 +481,7 @@
 	gun_type = /obj/item/gun/ballistic/cs_gauss/rectifier
 	mag_type = /obj/item/ammo_box/magazine/cs_gauss/pistol
 	mag_count = 5
+	ammoless = FALSE
 
 /obj/item/storage/guncase/pistol/rectifier/export
 	gun_type = /obj/item/gun/ballistic/cs_gauss/rectifier/export
@@ -489,6 +490,7 @@
 	gun_type = /obj/item/gun/ballistic/cs_gauss/convergence
 	mag_type = /obj/item/ammo_box/magazine/cs_gauss
 	mag_count = 3
+	ammoless = FALSE
 
 /obj/item/storage/guncase/convergence/export
 	gun_type = /obj/item/gun/ballistic/cs_gauss/convergence/export
@@ -497,6 +499,7 @@
 	gun_type = /obj/item/gun/ballistic/cs_gauss/vector
 	mag_type = /obj/item/ammo_box/magazine/cs_gauss/rifle
 	mag_count = 3
+	ammoless = FALSE
 
 /obj/item/storage/guncase/vector/export
 	gun_type = /obj/item/gun/ballistic/cs_gauss/vector/export

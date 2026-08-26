@@ -183,6 +183,7 @@
 		recoil = recoil * 2
 	. = ..()
 	if(flaring)
+		chambered = null
 		recoil = recoil / 2
 		explosive_cell_eject(user)
 

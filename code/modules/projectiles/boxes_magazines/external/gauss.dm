@@ -47,6 +47,7 @@
 	max_ammo = 60
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	sealed = TRUE
+	quick_empty = FALSE
 
 /obj/item/ammo_box/magazine/cs_gauss/pistol
 	name = "gauss box (2x15mm Tav'Sha)"

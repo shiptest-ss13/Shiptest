@@ -124,7 +124,7 @@
 	hitsound_wood = 'sound/weapons/gun/cybersun/plasmaflareimpact.ogg'
 	hitsound_snow = 'sound/weapons/gun/cybersun/plasmaflareimpact.ogg'
 
-	damage = 100
+	damage = 75
 	armour_penetration = 0
 	damage_type = BURN
 
@@ -153,3 +153,12 @@
 	impact_effect_type = null
 	ricochets_max = 0
 	reflectable = 0
+
+/obj/projectile/beam/flare/on_hit(atom/target, blocked = FALSE, pierce_hit)
+	. = ..()
+
+	if(isliving(target))
+		var/mob/living/exploded = target
+		var/atom/throw_target = get_edge_target_turf(target, dir)
+		if(!exploded.anchored)
+			exploded.throw_at(throw_target, round(damage/35), round(damage/35)*2, gentle = TRUE)
