@@ -22,6 +22,10 @@
 	display_name = "cargo pants, recolorable"
 	path = /obj/item/clothing/under/pants/cargo
 
+/datum/gear/uniform/cargoshorts
+	display_name = "cargo shorts, recolorable"
+	path = /obj/item/clothing/under/shorts/cargo
+
 //Colored jumpsuits
 
 /datum/gear/uniform/color
