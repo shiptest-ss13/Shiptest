@@ -221,7 +221,7 @@ NO_MAG_GUN_HELPER(cs_gauss/convergence/export)
 
 /obj/item/gun/ballistic/cs_gauss/vector
 	name = "\improper SG95 Vector"
-	desc = "The largest smart-gauss weapon manufactured by Tadeusz Armory. The SG95 Vector is an upscaled accelerator mechanism from the SG49 Convergence refitted for 3x15 Deu'Sha gauss darts. Larger darts have mildly more penetrative power, but challenge the power supply, reducing the effective rate of fire."
+	desc = "The largest smart-gauss weapon manufactured by Tadeusz Armory. The SG95 Vector is an upscaled accelerator mechanism from the SG49 Convergence refitted for 3x20mm Deu'Sha gauss darts. Larger darts have mildly more penetrative power, but challenge the power supply, reducing the effective rate of fire."
 	base_icon_state = "vector"
 	icon_state = "vector"
 	item_state = "vector"
