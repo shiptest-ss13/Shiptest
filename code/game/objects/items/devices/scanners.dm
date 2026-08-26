@@ -376,7 +376,7 @@ GENE SCANNER
 		for(var/obj/item/bodypart/wounded_part as anything in wounded_parts)
 			render_list += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
 			for(var/datum/wound/W as anything in wounded_part.wounds)
-				render_list += "<div class='ml-2'>Type: [W.name]\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.treat_text]</div>\n"
+				render_list += "<div class='ml-2'>[W.get_scanner_description()]</div>\n"
 			render_list += "</span>"
 
 	if(iscarbon(M))
@@ -466,7 +466,7 @@ GENE SCANNER
 	if(target.surgeries.len)
 		var/list/render_list = "<span class='boldannounce ml-1'>The patient is undergoing the following surgeries:</span><br>"
 		for(var/datum/surgery/procedure in target.surgeries)
-			render_list += "<span class='notice ml-1'>[capitalize(procedure.name)]: "
+			render_list += "<span class='notice ml-1'>[capitalize(procedure.name)] ([capitalize(parse_zone(procedure.location))]): "
 			var/datum/surgery_step/surgery_step = procedure.get_surgery_step()
 			var/chems_needed = surgery_step.get_chem_list()
 			var/alternative_step

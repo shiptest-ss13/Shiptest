@@ -270,6 +270,8 @@
 	desc = "Cybersuns all-rounder combat hardsuit, this collapsar variant is in the colors of the trauma team."
 	cost = 5000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/collapsar/paramed)
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/syndicate/cybersun
 	crate_name = "Collapsar hardsuit crate"
 	faction_discount = 0
 	faction_locked = TRUE
@@ -464,11 +466,11 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/eod_ngr
-	name = "NGR EOD Hardsuit Crate"
-	desc = "Contains one EOD hardsuit, to provide safety with explosives."
-	cost = 2000
-	contains = list(/obj/item/clothing/suit/space/hardsuit/bomb/ngr)
-	crate_name = "EOD hardsuit crate"
+	name = "NGR Heavy EOD Hardsuit Crate"
+	desc = "Contains one heavy EOD hardsuit, modified with thicker plating for more than just ordinance disposal."
+	cost = 5000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/ngrheavy)
+	crate_name = "heavy EOD hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 	faction = /datum/faction/syndicate/ngr
 	faction_discount = 0

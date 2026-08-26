@@ -597,7 +597,7 @@
 ///like all real 'less' than lethal crowd control options this is, in fact, not very good at being nonlethal
 /obj/item/mine/proximity/explosive/sting
 	name = "\improper'Stinger' Crowd Management Device"
-	desc = "A \"less\" than lethal crowd control weapon, designed to demoralise and scatter anti-NT protestors. The bands of ballistic gel inside strike targets and incapacitate without causing serious maiming. In Theory."
+	desc = "A \"less\" than lethal crowd control weapon, designed to demoralize and scatter protestors. The bands of ballistic gel inside strike targets and incapacitate without causing serious maiming. In Theory."
 
 	range_heavy = 0
 	range_light = 1

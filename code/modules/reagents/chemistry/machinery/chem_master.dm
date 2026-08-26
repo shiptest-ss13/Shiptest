@@ -11,17 +11,27 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	circuit = /obj/item/circuitboard/machine/chem_master
 
+	///currently inserted beaker
 	var/obj/item/reagent_containers/beaker = null
+	///currently inserted pillbottle
 	var/obj/item/storage/pill_bottle/bottle = null
 	var/mode = 1
+	///is this a snowflake bullshit machine?
 	var/condi = FALSE
+	///what kind of pill is this going to make. I hope it's estrogen personally.
 	var/chosenPillStyle = 1
+	///Current screen of the UI
 	var/screen = "home"
+	///vars used in analysis of a chemical.
 	var/analyzeVars[0]
-	var/useramount = 30 // Last used amount
+	/// Last used amount
+	var/useramount = 30
 	var/list/pillStyles = null
 
 /obj/machinery/chem_master/Initialize()
+
+	AddComponent(/datum/component/material_container, list(/datum/material/glass, /datum/material/plastic), 10000, _show_on_examine = TRUE)
+
 	create_reagents(100)
 
 	//Calculate the span tags and ids fo all the available pill icons
@@ -34,6 +44,7 @@
 		pillStyles += list(SL)
 
 	. = ..()
+
 
 /obj/machinery/chem_master/Destroy()
 	QDEL_NULL(beaker)
@@ -141,6 +152,8 @@
 	return TRUE
 
 /obj/machinery/chem_master/on_deconstruction()
+	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+	materials.retrieve_all()
 	replace_beaker()
 	if(bottle)
 		bottle.forceMove(drop_location())
@@ -329,17 +342,22 @@
 				reagents.trans_to(P, vol_each, transfered_by = usr)
 			return TRUE
 		if(item_type == "bottle")
-			var/obj/item/reagent_containers/glass/bottle/P
+			var/obj/item/reagent_containers/glass/bottle/P = new /obj/item/reagent_containers/glass/bottle(src)
+			if(!check_for_material(P, amount))
+				qdel(P)
+				return FALSE
 			for(var/i = 0; i < amount; i++)
-				P = new/obj/item/reagent_containers/glass/bottle(drop_location())
+				P.forceMove(drop_location())
 				P.name = trim("[name] bottle")
 				adjust_item_drop_location(P)
 				reagents.trans_to(P, vol_each, transfered_by = usr)
 			return TRUE
 		if(item_type == "condimentPack")
-			var/obj/item/reagent_containers/condiment/pack/P
+			var/obj/item/reagent_containers/condiment/pack/P = new /obj/item/reagent_containers/condiment/pack(src)
+			if(!check_for_material(P, amount))
+				return FALSE
 			for(var/i = 0; i < amount; i++)
-				P = new/obj/item/reagent_containers/condiment/pack(drop_location())
+				P.forceMove(drop_location())
 				P.originalname = name
 				P.name = trim("[name] pack")
 				P.desc = "A small condiment pack. The label says it contains [name]."
@@ -377,6 +395,15 @@
 
 	return FALSE
 
+/obj/machinery/chem_master/proc/check_for_material(atom/target, amounts)
+	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+	///I fucking hate this.
+	for(var/mat in target.custom_materials)
+		if(materials.materials[mat] < (amounts * target.custom_materials[mat]))
+			say("Insufficient [mat] to print [amounts] containers.")
+			return FALSE
+		materials.materials[mat] -= (amounts * target.custom_materials[mat])
+	return TRUE
 
 /obj/machinery/chem_master/proc/isgoodnumber(num)
 	if(isnum(num))

@@ -215,7 +215,7 @@
 		/obj/item/ammo_box/magazine/c22lr_pounder_pan,
 	)
 	burst_size = 1
-	fire_delay = 0.05 SECONDS
+	fire_delay = 0.04 SECONDS
 	spread = 25
 	spread_unwielded = 50
 

@@ -36,6 +36,10 @@
 	display_name = "fatigues, recolorable"
 	path = /obj/item/clothing/under/rank/security/officer/camo
 
+/datum/gear/uniform/shortjumpsuit
+	display_name = "short jumpsuit, recolorable"
+	path = /obj/item/clothing/under/shortjumpsuit
+
 //Shorts
 
 /datum/gear/uniform/athshorts
@@ -119,8 +123,8 @@
 /datum/gear/uniform/suit
 	subtype_path = /datum/gear/uniform/suit
 
-/datum/gear/uniform/suit/amish
-	display_name = "suit, amish"
+/datum/gear/uniform/suit/formal
+	display_name = "suit, formal"
 	path = /obj/item/clothing/under/suit/sl
 
 /datum/gear/uniform/suit/white
