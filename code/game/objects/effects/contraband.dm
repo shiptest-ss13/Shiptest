@@ -1256,6 +1256,11 @@
 	desc = "This poster depicts a trio of PGF sailors. \"All together now!\""
 	icon_state = "poster-pgf_together"
 
+/obj/structure/sign/poster/pgf/raider
+	name = "PGF Marine Raiders"
+	desc = "This poster depicts a PGF Marine Raider stalking a city skyline at night. \"Trained for infiltration, extraction, and all other matter of high risk mission, the PGF Marine Raiders are the best of the best. Do you have what it takes? \""
+	icon_state = "poster-pgf_raider"
+
 //PGF Mission Accomplished
 /obj/structure/sign/poster/pgf/mission_accomplished_1
 	name = "MISSION ACCOMPLISHED! 1"

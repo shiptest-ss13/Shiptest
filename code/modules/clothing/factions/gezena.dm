@@ -134,7 +134,7 @@
 
 /obj/item/clothing/suit/space/gezena
 	name = "navy utility suit"
-	desc = "Constructed of hardened thermoplastic plating , the 'Rakalla' utility suit stands firmly between you and the void of space."
+	desc = "Constructed of hardened thermoplastic plating, the 'Rakalla' utility suit stands firmly between you and the void of space."
 	icon = 'icons/obj/clothing/faction/gezena/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/suits.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -162,19 +162,19 @@
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/suit/space/gezena/marine/raider
-	name = "marine raider armor"
-	desc = "TEMP."
+	name = "marine raider suit"
+	desc = "Designed with mobility and protection in mind, the EVA capable 'Arawna' skirmisher suit has become the default armor configuration of the PGF Marine Raiders."
 	icon_state = "marineraidersuit"
 	item_state = "marineraidersuit"
 	slowdown = 0
-	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 40, "bio" = 100, "rad" = 40, "fire" = 50, "acid" = 50, "wound" = 20)
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 30, "bio" = 100, "rad" = 40, "fire" = 50, "acid" = 50, "wound" = 20)
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/head/helmet/space/gezena
 	name = "navy utility helmet"
-	desc = "Features rubberized grommets for safely accomodating any length of horn, all the while boasting second to none panoramic visibilty though it's domed visor."
+	desc = "Equipped with rubberized grommets for safely accomodating any length of horn, the 'Rakalla' utility helmet boasts second to none panoramic visibilty though it's domed visor."
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -189,22 +189,22 @@
 
 /obj/item/clothing/head/helmet/space/gezena/marine
 	name = "marine vacuum helmet"
-	desc = "Features rubberized grommets for safely accomodating any length of horn and thicker plating on the forehead, sacrificing visibility for much needed protection."
+	desc = "Aging but reliable, the 'Lataka' combat helmet sacrifices some of the visibility of its navy counterpart for much needed protection."
 	icon_state = "marinespacehelmet"
 	item_state = "marinespacehelm"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/head/helmet/space/gezena/marine/raider
 	name = "marine raider helmet"
-	desc = "TEMP"
+	desc = "Designed off of the AR-98 combat helmet, the 'Arawna' skirmisher helmet offers its user greater protection and range of movement than is offered by similar EVA capable helmets."
 	icon_state = "marineraiderhelmet"
 	item_state = "marineraiderhelmet"
 	can_flashlight = TRUE
 	flashlight_state = "helmet_flight_overlay"
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 40, "bio" = 100, "rad" = 40, "fire" = 50, "acid" = 50, "wound" = 20)
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 40, "fire" = 50, "acid" = 50, "wound" = 20)
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
