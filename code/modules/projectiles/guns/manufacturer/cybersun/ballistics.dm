@@ -40,7 +40,7 @@
 	//if this has the functionality for locking a target
 	var/smart_lock = TRUE
 	//the current target of the gun
-	var/mob/living/current_target = null
+	var/datum/weakref/current_target = null
 	//how fuzzy our smart lock is. Basically a flat chance our shots won't home.
 	var/lock_loss = 0
 
@@ -60,37 +60,36 @@
 		return SECONDARY_ATTACK_CALL_NORMAL
 
 	if(isturf(target))
-		current_target = locate(/mob/living) in get_turf(target)
+		current_target = WEAKREF(locate(/mob/living) in get_turf(target))
 		if(current_target)
-			balloon_alert(user, "Target locked")
+			balloon_alert(user, "target locked")
 			lock_loss = 0
 			START_PROCESSING(SSfastprocess, src)
 		else
 			if(current_target)
 				current_target = null
-				balloon_alert(user, "Target cleared")
+				balloon_alert(user, "target cleared")
 				STOP_PROCESSING(SSfastprocess, src)
 
 	else if(ismob(target))
-		current_target = target
-		balloon_alert(user, "Target locked")
+		current_target = WEAKREF(target)
+		balloon_alert(user, "target locked")
 		lock_loss = 0
 		START_PROCESSING(SSfastprocess, src)
 
 	else
 		if(current_target)
 			current_target = null
-			balloon_alert(user, "Target cleared")
+			balloon_alert(user, "target cleared")
 			STOP_PROCESSING(SSfastprocess, src)
 
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/gun/ballistic/cs_gauss/process(seconds_per_tick)
-	. = ..()
 	if(!current_target)
 		STOP_PROCESSING(SSfastprocess, src)
 
-	if(!can_see(src, current_target, 8))
+	if(!can_see(src, current_target.resolve(), 8))
 		lock_loss = min(lock_loss+5, 100)
 	else
 		lock_loss = max(lock_loss-5, 0)
@@ -105,7 +104,7 @@
 	if(chambered && current_target)
 		if(!prob(lock_loss))
 			chambered.BB.homing = TRUE
-			chambered.BB.homing_target = current_target
+			chambered.BB.homing_target = current_target.resolve()
 			chambered.BB.accuracy_mod = 3
 	. = ..()
 
