@@ -383,7 +383,7 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals)
 
 /obj/item/clothing/suit/space/hardsuit/esh
-	name = "ES-Hardsuit"
+	name = "\improper ES-Hardsuit"
 	desc = "A surprisingly light suit designed by EXOCOM; the 'Extreme Survival Hardsuit' is made up of materials rated for extremely hazardous environments. Alongside this it contains an injector module that can be loaded with MediPens of any variety, which will then be automatically used when the user suffers from any noticeable wound or the user manually activates the system."
 	icon_state = "hardsuit-esh"
 	item_state = "esh_hardsuit"
@@ -405,21 +405,31 @@
 
 /obj/item/clothing/suit/space/hardsuit/esh/proc/declare_wound(mob/living/carbon/human/user)
 	to_chat(user, span_warning("Warning: significant bodily harm detected."))
-	inject_user(user)
+	check_inject(user)
 
-/obj/item/clothing/suit/space/hardsuit/esh/proc/inject_user(mob/user)
+// injection + notification of injection need to be in sync. There should be a delay between the suit notifying you of a wound/critical status and then going through injecting
+// Need to add crit event, maybe other wounding events. Also need to add cooldown to declare_wound so you don't get spammed
+
+/obj/item/clothing/suit/space/hardsuit/esh/proc/check_inject(mob/user)
 	if(!injector || injector.reagents.total_volume <= 0)
 		to_chat(user, span_warning("Warning: no medipen found or current one is empty."))
 		return
+	addtimer(CALLBACK(src, GLOBAL_PROC_REF(inject_user), user), 20, TIMER_STOPPABLE)
+
+/obj/item/clothing/suit/space/hardsuit/esh/proc/inject_user(mob/user)
 	injector.inject(user, user)
 	playsound(src, 'sound/items/hypospray_long.ogg', 50, FALSE)
 	injector = null
 	injector.forceMove(drop_location())
-	addtimer(CALLBACK(src, GLOBAL_PROC_REF(to_chat), user, span_warning("Administering medical attention. Medipen administered and ejected.")), 20, TIMER_STOPPABLE)
+	to_chat(user, span_warning("Administering medical attention. Medipen administered and ejected."))
 
 /obj/item/clothing/suit/space/hardsuit/esh/equipped(mob/user, slot)
 	. = ..()
 	RegisterSignal(user, COMSIG_CARBON_GAIN_WOUND, PROC_REF(declare_wound))
+
+/obj/item/clothing/suit/space/hardsuit/esh/dropped(mob/user)
+	. = ..()
+	UnregisterSignal(user, COMSIG_CARBON_GAIN_WOUND)
 
 /obj/item/clothing/suit/space/hardsuit/esh/attackby(obj/item/I, mob/user, params)
 	. = ..()
@@ -429,7 +439,7 @@
 			return
 		if(user.transferItemToLoc(I, src))
 			injector = I
-			to_chat(user, span_notice("You slot the medipen into the [src]'s injector system."))
+			to_chat(user, span_notice("You slot the medipen into [src]'s injector system."))
 			return
 
 /obj/item/clothing/suit/space/hardsuit/esh/AltClick(mob/user)
@@ -439,7 +449,8 @@
 	injector.forceMove(drop_location())
 	user.put_in_active_hand(injector)
 	injector = null
-	to_chat(user, span_notice("You pop the medipen out from the [src]'s injector system."))
+	playsound(src, 'sound/items/change_drill.ogg', 50, FALSE)
+	to_chat(user, span_notice("You pop the medipen out from [src]'s injector system."))
 
 	//Syndicate hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi
