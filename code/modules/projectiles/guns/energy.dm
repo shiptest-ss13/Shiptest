@@ -1,6 +1,7 @@
+// subtype for all energy guns
 /obj/item/gun/energy
 	name = "energy gun"
-	desc = "A basic energy-based gun."
+	desc = "A profoundly boring and basic energy-based gun. You get the feeling you shouldn't be seeing this and should file a bug report."
 	icon = 'icons/obj/guns/energy.dmi'
 	icon_state = "laser"
 	item_state = "spur"
@@ -12,43 +13,13 @@
 
 	has_safety = TRUE
 	safety = TRUE
-
-	modifystate = FALSE
 	ammo_x_offset = 2
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
-
-	fire_select_icon_state_prefix = "laser_"
-
-	///Ammotype index -- this is the currently selected ammo type
-	var/ammotype_index
-
-	default_ammo_type = /obj/item/stock_parts/cell/gun
-	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun,
-		/obj/item/stock_parts/cell/gun/upgraded,
-		/obj/item/stock_parts/cell/gun/empty,
-		/obj/item/stock_parts/cell/gun/upgraded/empty,
-	)
-	var/ammotype_string = "fallback_laser_fallback"
-
 	tac_reloads = FALSE
 	tactical_reload_delay = 1.2 SECONDS
-
-	///is the gun's latch closed right now?
-	var/latch_closed = TRUE
-	///time to toggle the gun's securing latch
-	var/latch_toggle_delay = 0.6 SECONDS
-
-	///latch icon state(for overriding)
-	var/latch_icon_state = "latch"
-
-	///do we always show the latch? For snowflaked latches i.e. cybersun weapons
-	var/always_show_latch = FALSE
-
-	//file to pull the latch icon from
-	var/latch_icon = 'icons/obj/guns/cell_latch.dmi'
+	fire_select_icon_state_prefix = "laser_"
 
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
@@ -74,6 +45,37 @@
 			"y" = 24,
 		)
 	)
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/stock_parts/cell/gun/upgraded,
+		/obj/item/stock_parts/cell/gun/empty,
+		/obj/item/stock_parts/cell/gun/upgraded/empty,
+	)
+
+	// AMMO TYPE SELECTION //
+	var/ammotype_index // currently selected ammo type
+
+	// LATCHING //
+	var/latch_closed = TRUE
+	var/latch_toggle_delay = 0.6 SECONDS
+	///latch icon state(for overriding)
+	var/latch_icon_state = "latch"
+	///do we always show the latch? For snowflaked latches i.e. cybersun weapons
+	var/always_show_latch = FALSE
+	//file to pull the latch icon from
+	var/latch_icon = 'icons/obj/guns/cell_latch.dmi'
+
+	// RELOADING - ENERGY //
+	var/obj/item/stock_parts/cell/gun/cell // type of cell we use
+	var/can_charge = TRUE // can we put this in a recharger
+	var/selfcharge = FALSE // do we restore power by ourself
+	var/charge_timer = 0
+	var/charge_delay = 8
+	var/use_cyborg_cell = FALSE // can we pull power from a borg cell
+	var/list/ammo_type = list(/obj/item/ammo_casing/energy) // what type of energy projectile are we firing?
+
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()

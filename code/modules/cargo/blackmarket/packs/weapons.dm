@@ -180,7 +180,7 @@
 	if(mag_number > 0)
 		if(!mag_type)
 			var/obj/item/gun/case_gun = item
-			if(case_gun.default_ammo_type && !(case_gun.internal_cell || case_gun.internal_magazine))
+			if(case_gun.default_ammo_type && !case_gun.internal_magazine)
 				mag_type = case_gun.default_ammo_type
 			else
 				mag_number = 0
