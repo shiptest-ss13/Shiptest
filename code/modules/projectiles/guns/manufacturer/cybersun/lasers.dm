@@ -206,8 +206,8 @@
 	item_state = "opportunist"
 	latch_icon_state = "opportunist"
 
-	recoil = 2
-	recoil_unwielded = 6
+	recoil = 1
+	recoil_unwielded = 2
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/cybersun
 	allowed_ammo_types = list(
@@ -255,7 +255,7 @@
 
 	default_firemode = FIREMODE_SEMIAUTO
 
-	recoil = 4
+	recoil = 2
 	recoil_unwielded = 12
 
 /obj/item/gun/energy/cybersun/lorentz/impactor/empty_cell
@@ -292,7 +292,7 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	recoil = 3
+	recoil = 2
 
 	spread = 12
 	spread_unwielded = 10
