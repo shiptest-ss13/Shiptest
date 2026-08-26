@@ -493,7 +493,7 @@
 	contains = list(/obj/item/stock_parts/cell/gun/cybersun/mini)
 	cost = 300
 
-/datum/supply_pack/magazine/pgfcell
+/datum/supply_pack/magazine/cybersun_cell/heavy
 	name = "Heavy Cybersun Plasma  Cell"
 	desc = "Contains the heaviest plasma cell manufactured by Cybersun. Perfect for heavy weaponry."
 	contains = list(/obj/item/stock_parts/cell/gun/cybersun/heavy)

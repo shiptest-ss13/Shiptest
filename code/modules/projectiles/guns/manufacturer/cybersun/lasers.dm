@@ -123,7 +123,6 @@
 		/obj/item/stock_parts/cell/gun/cybersun/heavy/empty,
 	)
 
-
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 
