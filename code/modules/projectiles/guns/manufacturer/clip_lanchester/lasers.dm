@@ -222,7 +222,7 @@
 
 /obj/item/gun/energy/clover/pistol/thistle
 	name = "PL-9 \"Thistle\""
-	desc = "A midweight, armor-piercing energy handgun, trading stopping power for punch. Famous on the Intranet for its frequent apperance on 'firing range fail' compalation videos, due to its often unexpected recoil. Uses Eoehoma mini cells."
+	desc = "A midweight, armor-piercing energy handgun, trading stopping power for punch. Famous on the Intranet for its frequent appearance on 'firing range fail' compilation videos, due to its often unexpected recoil. Uses Eoehoma mini cells."
 	icon_state = "pl9"
 
 	spread = 2
