@@ -15,6 +15,7 @@
 	vary_fire_sound = FALSE
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/cybersun
+	ammo_type = list(/obj/item/ammo_casing/energy/ionization)
 
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/cybersun,
@@ -156,6 +157,8 @@
 
 	min_recoil = 0.1
 	min_recoil_aimed = 0
+
+	ammo_type = list(/obj/item/ammo_casing/energy/lorentz, /obj/item/ammo_casing/energy/flare)
 
 	bad_type = /obj/item/gun/energy/cybersun/lorentz
 
