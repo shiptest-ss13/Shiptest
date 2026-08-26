@@ -185,11 +185,11 @@
 /obj/item/gun/energy/cybersun/lorentz/proc/explosive_cell_eject(atom/shooter)
 	cell.charge = 0
 	cell.rigged = TRUE
-	playsound(loc, 'sound/effects/empulse.ogg', 25, TRUE)
+	playsound(loc, 'sound/effects/empulse.ogg', 50, TRUE)
 
 	//snowflake casing ejection
 	cell.burning_particles = new(cell, /particles/smoke/burning/cell_smoke)
-	QDEL_IN(cell.burning_particles, 3 SECONDS)
+	QDEL_IN(cell.burning_particles, 10 SECONDS)
 
 	latch_closed = FALSE
 	cell.forceMove(drop_location())
