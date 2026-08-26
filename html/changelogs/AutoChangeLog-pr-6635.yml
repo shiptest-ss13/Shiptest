@@ -1,0 +1,13 @@
+author: iamthesilly
+changes:
+  - {rscadd: 'Plasmacutter now activates/deactivates on wield/unwield instead of the
+      unique action key (default: space)'}
+  - {rscadd: Swapping plasmacutter mode moved to its unique action instead of 
+      ctrl-click}
+  - {rscadd: Removing power cells from items is now done with right-click 
+      instead of alt-click}
+  - {rscadd: Plasmacutter ranged attack no longer fires on left click}
+  - {rscadd: Allows plasmacutter in belt and suit storage slots}
+  - {bugfix: Fixed cutting mode not persisting after turning the plasmacutter 
+      off}
+delete-after: true
