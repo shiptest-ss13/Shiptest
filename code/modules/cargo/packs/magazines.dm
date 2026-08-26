@@ -394,19 +394,19 @@
 	name = "Convergence Magazine"
 	desc = "Contains a 60-round magazine for the SG49 Convergence filled with 2x15mm Tav'Sha Dart."
 	contains = list(/obj/item/ammo_box/magazine/cs_gauss)
-	cost = 200
+	cost = 100
 
 /datum/supply_pack/magazine/rectifier
 	name = "Rectifier Magazine"
 	desc = "Contains a 30-round magazine for the SG29 Convergence filled with 2x15mm Tav'Sha Dart."
 	contains = list(/obj/item/ammo_box/magazine/cs_gauss/pistol)
-	cost = 100
+	cost = 50
 
 /datum/supply_pack/magazine/vector
 	name = "Vector Magazine"
 	desc = "Contains a 40-round magazine for the SG95 Vector filled with 3x20mm Deu'Sha Dart."
 	contains = list(/obj/item/ammo_box/magazine/cs_gauss/rifle)
-	cost = 300
+	cost = 150
 
 /* energy weapons */
 

@@ -48,6 +48,7 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	sealed = TRUE
 	quick_empty = FALSE
+	custom_materials = list(/datum/material/iron = 500)
 
 /obj/item/ammo_box/magazine/cs_gauss/pistol
 	name = "gauss box (2x15mm Tav'Sha)"

@@ -92,6 +92,7 @@
 /obj/item/gun/ballistic/cs_gauss/process(seconds_per_tick)
 	if(!current_target)
 		STOP_PROCESSING(SSfastprocess, src)
+		return PROCESS_KILL
 
 	if(!can_see(src, current_target.resolve(), 8))
 		lock_loss = min(lock_loss+5, 100)
