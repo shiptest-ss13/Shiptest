@@ -989,7 +989,7 @@
 /* Cybersun Guns */
 
 /datum/supply_pack/gun/rectifier
-	name = "Rectifier Gauss Pistol"
+	name = "Rectifier Smart-Gauss Pistol"
 	desc = "Contains an SG27 Rectifier gauss pistol, designed to fire disposable cell/magazine stacks at rapid speed."
 	cost = 1500
 	contains = list(/obj/item/storage/guncase/pistol/rectifier)
@@ -1008,7 +1008,7 @@
 	faction_locked = FALSE
 
 /datum/supply_pack/gun/convergence
-	name = "Convergence Gauss Rifle"
+	name = "Convergence Light Smart-Gauss Rifle"
 	desc = "Contains an SG49 Convergence gauss rifle, made to lay down suppressing low calibre fire."
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/convergence)
@@ -1018,8 +1018,8 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/convergence/export
-	name = "Divergence Gauss Rifle"
-	desc = "Contains an SG48 Amend gauss pistol, designed to fire disposable cell/magazine stacks at rapid speed."
+	name = "Divergence Light Gauss Rifle"
+	desc = "Contains an SG48 Converegence gauss rifle, designed to fire disposable cell/magazine stacks at rapid speed."
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/convergence/export)
 	crate_name = "amend crate"
@@ -1027,7 +1027,7 @@
 	faction_locked = FALSE
 
 /datum/supply_pack/gun/vector
-	name = "Vector Gauss Rifle"
+	name = "Vector Smart-Gauss Rifle"
 	desc = "Contains an SG95 Vector gauss rifle, made to take down lightly armored targets with volume of fire."
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/vector)

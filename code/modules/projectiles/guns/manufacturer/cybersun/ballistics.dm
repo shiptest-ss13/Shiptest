@@ -44,6 +44,10 @@
 	//how fuzzy our smart lock is. Basically a flat chance our shots won't home.
 	var/lock_loss = 0
 
+/obj/item/gun/ballistic/cs_gauss/examine(mob/user)
+	. = ..()
+	. += span_notice("You can <b>Right-Click</b> a mob to lock it as a target!")
+
 /obj/item/gun/ballistic/cs_gauss/update_overlays()
 	. = ..()
 	if(smart_lock)

@@ -26,21 +26,19 @@
 
 	select_name = "lorentz"
 	fire_sound = 'sound/weapons/gun/cybersun/lorentz.ogg'
-	delay = 4
+	delay = 0.3 SECONDS
 
 /obj/item/ammo_casing/energy/lorentz/scatter
 	name = "scatter lorentz lens"
 	projectile_type = /obj/projectile/beam/lorentz/shotgun
 	e_cost = 3000
-	select_name = "lorentz"
-	fire_sound = 'sound/weapons/gun/cybersun/lorentz.ogg'
-	delay = 6
+	delay = 0.5 SECONDS
 	pellets = 12
 	variance = 12
 
 /obj/item/ammo_casing/energy/lorentz/mg
 	name = "rapid lorentz lens"
-	fire_sound = 'sound/weapons/gun/cybersun/lorentz.ogg'
+	fire_sound = 'sound/weapons/gun/cybersun/lorentz_heavy.ogg'
 	delay = 0.25 SECONDS
 	projectile_type = /obj/projectile/beam/lorentz/mg
 

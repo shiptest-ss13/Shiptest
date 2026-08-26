@@ -57,6 +57,14 @@
 	muzzle_type = /obj/effect/projectile/muzzle/lorentz
 	impact_type = /obj/effect/projectile/impact/lorentz
 
+	hitsound = 'sound/magic/lightningshock.ogg'
+	hitsound_non_living = 'sound/magic/lightningshock.ogg'
+	hitsound_glass = 'sound/magic/lightningshock.ogg'
+	hitsound_stone = 'sound/magic/lightningshock.ogg'
+	hitsound_metal = 'sound/magic/lightningshock.ogg'
+	hitsound_wood = 'sound/magic/lightningshock.ogg'
+	hitsound_snow = 'sound/magic/lightningshock.ogg'
+
 	bullet_identifier = "bolt"
 
 	flag = "laser"
