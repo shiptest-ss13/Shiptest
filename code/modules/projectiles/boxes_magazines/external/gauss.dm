@@ -55,6 +55,7 @@
 	caliber = "loading"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/cs_gauss/rifle
 	name = "gauss box (3x20mm Deu'Sha)"

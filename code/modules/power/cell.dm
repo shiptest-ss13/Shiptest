@@ -522,8 +522,8 @@
 	icon_state = "cybersun-heavy"
 
 	maxcharge = 40000
-	custom_materials = list(/datum/material/glass=300)
 	rating = 3
+	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/stock_parts/cell/gun/cybersun/heavy/empty
 	start_empty = TRUE
@@ -533,7 +533,6 @@
 	desc = "A small plasma power cell sealed within a casing for safe-keeping. Contains a magnetic catalyst for plasma rejuvenation during charging."
 	icon_state = "cybersun-mini"
 	maxcharge = 7000
-	custom_materials = list(/datum/material/glass=300)
 	chargerate = 1000
 	w_class = WEIGHT_CLASS_TINY
 

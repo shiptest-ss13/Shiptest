@@ -46,7 +46,7 @@
 
 	/* to set */
 	damage = 35
-	armour_penetration = -5
+	armour_penetration = 0
 	damage_type = BURN
 
 	range = 8
@@ -74,8 +74,8 @@
 	icon_state = ""
 
 	/* to set */
-	damage = 8
-	armour_penetration = -10
+	damage = 10
+	armour_penetration = -5
 	damage_type = BURN
 	wound_bonus = -20
 	bare_wound_bonus = 10

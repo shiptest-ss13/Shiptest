@@ -137,6 +137,7 @@
 	spread_unwielded = 12
 
 	min_recoil = 0
+	min_recoil_aimed = 0
 	recoil = 0.5
 
 //parent type for lorentz guns since they have snowflake behavior

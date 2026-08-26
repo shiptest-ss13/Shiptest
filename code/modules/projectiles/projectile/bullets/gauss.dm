@@ -85,7 +85,7 @@
 	icon_state = "gauss-pellet"
 	bullet_identifier = "dart"
 
-	damage = 5
+	damage = 6
 	armour_penetration = 10
 
 	homing_turn_speed = 7
@@ -93,7 +93,7 @@
 	homing_inaccuracy_max = 16
 
 	ricochets_max = 0
-	range = 20
+	range = 30
 	light_system = 0
 	speed = BULLET_SPEED_HANDGUN
 
@@ -104,7 +104,7 @@
 	icon_state = "gauss-pellet"
 	bullet_identifier = "dart"
 
-	damage = 8
+	damage = 9
 	armour_penetration = 10
 
 	homing_turn_speed = 4
@@ -112,6 +112,6 @@
 	homing_inaccuracy_max = 16
 
 	ricochets_max = 0
-	range = 20
+	range = 30
 	light_system = 0
 	speed = BULLET_SPEED_HANDGUN

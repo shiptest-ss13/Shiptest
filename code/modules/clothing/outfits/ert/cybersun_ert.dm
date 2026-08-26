@@ -11,10 +11,10 @@
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/cybersun
 	mask = /obj/item/clothing/mask/gas/cybersun
 
-	belt = /obj/item/storage/belt/military/cybersun/sidewinder
+	belt = /obj/item/storage/belt/military/cybersun/vector
 
 	suit = /obj/item/clothing/suit/armor/vest/marine/cybersun
-	suit_store = /obj/item/gun/ballistic/automatic/smg/sidewinder
+	suit_store = /obj/item/gun/ballistic/cs_gauss/vector
 	ears = /obj/item/radio/headset/syndicate/alt/cybersun
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/hardliners
 
@@ -22,7 +22,6 @@
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
 
 	backpack_contents = list(
-		/obj/item/storage/box/ammo/c57x39 = 1,
 		/obj/item/grenade/smokebomb = 2,
 		/obj/item/grenade/frag = 1,
 		/obj/item/melee/knife/combat = 1,
@@ -43,19 +42,20 @@
 	uniform = /obj/item/clothing/under/cybersun/sneak
 	alt_uniform = /obj/item/clothing/under/cybersun/suit
 
-	belt = /obj/item/storage/belt/military/cybersun/boomslang
+	belt = /obj/item/storage/belt/military/cybersun/cells
 
-	suit_store = /obj/item/gun/ballistic/automatic/marksman/boomslang
+	suit_store = /obj/item/gun/energy/cybersun/galvanizer
 
 	l_pocket = /obj/item/storage/pouch/medical
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
 
 	backpack_contents = list(
-		/obj/item/storage/box/ammo/a65clip = 1,
+		/obj/item/stock_parts/cell/gun/cybersun/heavy,
 		/obj/item/grenade/smokebomb = 4,
 		/obj/item/melee/knife/combat = 1,
 		/obj/item/radio = 1,
-		/obj/item/bodycamera = 1
+		/obj/item/bodycamera = 1,
+		/obj/item/binoculars = 1
 	)
 
 /datum/outfit/job/syndicate/ert/cybersun/marksman/space
@@ -69,9 +69,9 @@
 /datum/outfit/job/syndicate/ert/cybersun/pointman
 	name = "ERT - Cybersun Troubleshooter (Pointman)"
 
-	belt = /obj/item/storage/belt/military/cybersun/bulldog
+	belt = /obj/item/storage/belt/military/cybersun/cells
 
-	suit_store = /obj/item/gun/ballistic/shotgun/automatic/bulldog
+	suit_store = /obj/item/gun/energy/cybersun/lorentz/impactor
 
 	suit = /obj/item/clothing/suit/armor/vest/marine/medium/cybersun
 
@@ -79,7 +79,7 @@
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
 
 	backpack_contents = list(
-		/obj/item/storage/box/ammo/a12g_buckshot = 1,
+		/obj/item/stock_parts/cell/gun/cybersun/heavy = 1,
 		/obj/item/grenade/smokebomb = 2,
 		/obj/item/grenade/c4/x4 = 1,
 		/obj/item/melee/knife/combat = 1,
@@ -102,12 +102,12 @@
 	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
 	glasses = /obj/item/clothing/glasses/hud/security/night
 
-	belt = /obj/item/storage/belt/military/cybersun/hydra
+	belt = /obj/item/storage/belt/military/cybersun/opportunist
 
-	suit_store = /obj/item/gun/ballistic/automatic/assault/hydra
+	suit_store = /obj/item/gun/energy/cybersun/lorentz/impactor
 
 	backpack_contents = list(
-		/obj/item/storage/box/ammo/c556mm = 1,
+		/obj/item/stock_parts/cell/gun/cybersun/heavy = 2,
 		/obj/item/grenade/smokebomb = 2,
 		/obj/item/grenade/c4/x4 = 2,
 		/obj/item/melee/knife/combat = 1,
@@ -202,7 +202,7 @@
 	mask = null
 	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
 
-	r_pocket = /obj/item/gun/ballistic/automatic/pistol/himehabu
+	r_pocket = /obj/item/gun/energy/cybersun/troubleshooter
 	l_pocket = /obj/item/taperecorder
 
 	backpack_contents = list(
@@ -212,8 +212,7 @@
 		/obj/item/folder/red,
 		/obj/item/paper_bin/bundlenatural,
 		/obj/item/hand_labeler,
-		/obj/item/attachment/silencer,
-		/obj/item/ammo_box/magazine/m22lr_himehabu = 2
+		/obj/item/stock_parts/cell/gun/cybersun/mini = 2
 	)
 
 /datum/outfit/job/syndicate/ert/cybersun/cute_secretary
@@ -233,7 +232,7 @@
 	belt = null
 	mask = null
 
-	r_pocket = /obj/item/gun/ballistic/automatic/pistol/himehabu
+	r_pocket = /obj/item/gun/energy/cybersun/troubleshooter
 	l_pocket = /obj/item/taperecorder
 
 	backpack_contents = list(
@@ -243,6 +242,5 @@
 		/obj/item/folder/red,
 		/obj/item/paper_bin/bundlenatural,
 		/obj/item/hand_labeler,
-		/obj/item/attachment/silencer,
-		/obj/item/ammo_box/magazine/m22lr_himehabu = 2
+		/obj/item/stock_parts/cell/gun/cybersun/mini = 2
 	)
