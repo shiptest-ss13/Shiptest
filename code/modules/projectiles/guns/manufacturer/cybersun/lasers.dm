@@ -94,6 +94,8 @@
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/ionization/sniper)
 
+	w_class = WEIGHT_CLASS_SMALL
+
 	zoom_amt = DMR_ZOOM
 	zoom_out_amt = -1
 
@@ -297,6 +299,9 @@
 	wield_slowdown = LASER_SNIPER_SLOWDOWN
 	aimed_wield_slowdown = LASER_SNIPER_SLOWDOWN
 	wield_delay = 1.5 SECONDS
+
+	w_class = WEIGHT_CLASS_HUGE
+	weapon_weight = WEAPON_HEAVY
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
