@@ -1117,11 +1117,12 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/pc76
-	name = "PC-76 'Ringneck' Pistol Crate"
-	desc = "Contains a noticably smaller military variant of the Ringneck pistol, chambered in 10mm."
-	cost = 1250
-	contains = list(/obj/item/storage/guncase/pistol/pc76)
+/datum/supply_pack/gun/rattlesnake
+	name = "Rattlesnake Machinepistol Crate"
+	desc = "Contains an automatic machinepistol produced by Scarborough Arms, chambered in 9mm."
+	cost = 2000
+	contains = list(/obj/item/storage/guncase/rattlesnake)
+	crate_name = "Machinepistol crate"
 	faction = /datum/faction/syndicate/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
