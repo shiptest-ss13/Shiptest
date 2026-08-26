@@ -285,7 +285,7 @@
 /datum/action/item_action/activate_suit_injector/Trigger()
 	if(istype(target, /obj/item/clothing/suit/space/hardsuit/esh))
 		var/obj/item/clothing/suit/space/hardsuit/esh/esh_hardsuit = target
-		esh_hardsuit.inject_user(owner)
+		esh_hardsuit.check_inject(owner)
 
 /datum/action/item_action/toggle_helmet_light
 	name = "Toggle Helmet Light"

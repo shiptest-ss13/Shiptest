@@ -397,6 +397,8 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	supports_variations = DIGITIGRADE_VARIATION
 	var/obj/item/reagent_containers/hypospray/medipen/injector = null
+	// To prevent spamming the user with messages if multiple wounds occur at once
+	var/declare_cooldown = 0
 
 /obj/item/clothing/suit/space/hardsuit/esh/examine(mob/user)
 	. = ..()
@@ -404,6 +406,9 @@
 	. += span_notice("You can <b>Alt+Click</b> the ESH to eject any inserted medipens.")
 
 /obj/item/clothing/suit/space/hardsuit/esh/proc/declare_wound(mob/living/carbon/human/user)
+	if(declare_cooldown > world.time)
+		return
+	declare_cooldown = world.time + 200
 	to_chat(user, span_warning("Warning: significant bodily harm detected."))
 	check_inject(user)
 
