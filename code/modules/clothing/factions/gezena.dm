@@ -181,6 +181,10 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "navyspacehelmet"
 	item_state = "navyspacehelm"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
+	can_flashlight = TRUE
+	flashlight_state = "helmet_flight_overlay"
+	content_overlays = FALSE
 	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 10)
 	w_class = WEIGHT_CLASS_NORMAL
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
@@ -192,6 +196,10 @@
 	desc = "Aging but reliable, the 'Lataka' combat helmet sacrifices some of the visibility of its navy counterpart for much needed protection."
 	icon_state = "marinespacehelmet"
 	item_state = "marinespacehelm"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
+	can_flashlight = TRUE
+	flashlight_state = "helmet_flight_overlay"
+	content_overlays = FALSE
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -202,8 +210,10 @@
 	desc = "Designed off of the AR-98 combat helmet, the 'Arawna' skirmisher helmet offers its user greater protection and range of movement than is offered by similar EVA capable helmets."
 	icon_state = "marineraiderhelmet"
 	item_state = "marineraiderhelmet"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
 	can_flashlight = TRUE
 	flashlight_state = "helmet_flight_overlay"
+	content_overlays = FALSE
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 40, "fire" = 50, "acid" = 50, "wound" = 20)
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'

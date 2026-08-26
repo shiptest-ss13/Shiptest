@@ -2638,12 +2638,8 @@
 "oc" = (
 /obj/machinery/suit_storage_unit/inherit/locked{
 	req_access_txt = "1";
-	name = "marine's suit storage unit"
+	name = "marine squad leader's suit storage unit"
 	},
-/obj/item/tank/internals/oxygen/red,
-/obj/item/clothing/suit/space/gezena/marine,
-/obj/item/clothing/head/helmet/space/gezena/marine,
-/obj/item/clothing/mask/breath/pgfmask,
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 4
 	},
@@ -2652,6 +2648,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/clothing/mask/breath/pgfmask,
+/obj/item/clothing/suit/space/gezena/marine/raider,
+/obj/item/clothing/head/helmet/space/gezena/marine/raider,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
 "of" = (
@@ -5535,6 +5535,10 @@
 /obj/machinery/light/directional/east,
 /obj/structure/railing/thin/corner{
 	dir = 8
+	},
+/obj/structure/sign/poster/clip/maxin{
+	pixel_y = 0;
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -8535,12 +8539,12 @@
 /area/ship/medical)
 "Qp" = (
 /obj/structure/chair/bench/blue/directional/west,
-/obj/structure/sign/poster/clip/maxin{
-	pixel_y = 33
-	},
 /obj/effect/turf_decal/corner/opaque/navyblue/diagonal,
 /obj/effect/turf_decal/siding/white{
 	dir = 1
+	},
+/obj/structure/sign/poster/pgf/raider{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/canteen)
@@ -10742,11 +10746,11 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/structure/sign/poster/contraband/hacking_guide{
-	pixel_y = -32
-	},
 /obj/structure/chair/handrail{
 	dir = 1
+	},
+/obj/structure/sign/poster/contraband/hacking_guide{
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
