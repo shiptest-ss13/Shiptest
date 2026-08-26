@@ -2188,13 +2188,6 @@
 /obj/effect/turf_decal/trimline/opaque/vired/corner,
 /obj/machinery/fax/warra,
 /obj/machinery/computer/security/telescreen/directional/north,
-/obj/machinery/button/door{
-	pixel_x = 20;
-	pixel_y = -10;
-	id = "r_secdir_window";
-	name = "External Window Shutter Control";
-	dir = 8
-	},
 /obj/machinery/newscaster/directional/east{
 	pixel_y = 2
 	},
@@ -6130,6 +6123,13 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable/white,
 /obj/machinery/light/directional/west,
+/obj/machinery/button/door{
+	pixel_x = 10;
+	pixel_y = -20;
+	id = "r_secdir_window";
+	name = "External Window Shutter Control";
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/hos/director)
 "vb" = (
@@ -8459,6 +8459,18 @@
 	},
 /obj/effect/turf_decal/siding/wood/walnut,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/coffee_cartridge/fancy{
+	pixel_y = 11;
+	pixel_x = -7
+	},
+/obj/item/coffee_cartridge/fancy/roast{
+	pixel_y = 11;
+	pixel_x = -2
+	},
+/obj/item/coffee_cartridge/fancy/blue{
+	pixel_y = 11;
+	pixel_x = 3
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/breakroom)
 "DS" = (
@@ -11178,6 +11190,10 @@
 	name = "Bridge Lockdown";
 	req_ship_access = 1;
 	req_access = list(19,38)
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -14497,7 +14513,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/glass/bottle{
 	pixel_y = 8;
-	pixel_x = -9
+	pixel_x = -12
+	},
+/obj/item/reagent_containers/glass/bottle{
+	pixel_y = 8;
+	pixel_x = -8
 	},
 /obj/item/reagent_containers/glass/bottle{
 	pixel_y = 8;
@@ -14516,7 +14536,11 @@
 	},
 /obj/item/reagent_containers/glass/bottle{
 	pixel_y = 4;
-	pixel_x = -9
+	pixel_x = -12
+	},
+/obj/item/reagent_containers/glass/bottle{
+	pixel_y = 4;
+	pixel_x = -8
 	},
 /obj/item/reagent_containers/glass/bottle{
 	pixel_y = 4;
@@ -14531,6 +14555,22 @@
 	},
 /obj/item/reagent_containers/glass/bottle{
 	pixel_y = 4;
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/glass/bottle{
+	pixel_x = -12
+	},
+/obj/item/reagent_containers/glass/bottle{
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/glass/bottle{
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/glass/bottle,
+/obj/item/reagent_containers/glass/bottle{
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/glass/bottle{
 	pixel_x = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
