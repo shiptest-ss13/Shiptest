@@ -33,7 +33,7 @@
 	name = "scatter lorentz lens"
 	projectile_type = /obj/projectile/beam/lorentz/shotgun
 	e_cost = 3000
-	select_name = "lorentz pulse"
+	select_name = "lorentz"
 	fire_sound = 'sound/weapons/gun/cybersun/lorentz.ogg'
 	delay = 6
 	pellets = 12
@@ -52,6 +52,6 @@
 	caliber = "flare"
 	projectile_type = /obj/projectile/beam/flare
 	e_cost = 1
-	select_name = "plasma flare"
+	select_name = "flare"
 	fire_sound = 'sound/weapons/gun/cybersun/plasmaflare.ogg'
 	delay = 20

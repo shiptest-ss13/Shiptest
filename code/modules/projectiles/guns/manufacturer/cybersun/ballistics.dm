@@ -32,6 +32,11 @@
 
 	ammo_counter = TRUE
 
+	//shameless asset reuse
+	fire_select_icon_state_prefix = "lance_"
+
+	bad_type = /obj/item/gun/ballistic/cs_gauss
+
 	//if this has the functionality for locking a target
 	var/smart_lock = TRUE
 	//the current target of the gun
@@ -136,11 +141,11 @@
 	vary_fire_sound = TRUE
 
 	///How much the bullet scatters when fired while wielded.
-	spread	= 12
+	spread	= 8
 	///How much the bullet scatters when fired while unwielded.
-	spread_unwielded = 24
+	spread_unwielded = 16
 	//additional spread when dual wielding
-	dual_wield_spread = 32
+	dual_wield_spread = 24
 
 	fire_delay = 0.04
 	burst_delay = 0.03

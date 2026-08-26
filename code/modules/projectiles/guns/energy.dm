@@ -324,7 +324,7 @@
 	current_ammotype = lowertext(current_ammotype)
 
 	// A list of all ammotypes that have icons for them
-	if (!(current_ammotype in list("kill", "disable", "overcharge", "stun", "ion", "energy", "ar", "dmr")))
+	if (!(current_ammotype in list("kill", "disable", "overcharge", "stun", "ion", "energy", "ar", "dmr", "flare", "lorentz", "ionization")))
 		current_ammotype = "fallback"
 
 	button_icon_state = "[manufacturer_prefix]["_laser_"][current_ammotype]"

@@ -35,6 +35,8 @@
 	manufacturer = MANUFACTURER_CYBERSUN
 	w_class = WEIGHT_CLASS_NORMAL
 
+	bad_type = /obj/item/gun/energy/cybersun
+
 //ionization pistol
 /obj/item/gun/energy/cybersun/troubleshooter
 	name = "\improper IT22 Troubleshooter"
@@ -155,6 +157,7 @@
 	min_recoil = 0.1
 	min_recoil_aimed = 0
 
+	bad_type = /obj/item/gun/energy/cybersun/lorentz
 
 /obj/item/gun/energy/cybersun/lorentz/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	var/flaring = FALSE
