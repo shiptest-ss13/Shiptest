@@ -5,6 +5,8 @@
 	//more bullet per bullet
 	casing_ejector = FALSE
 
+	slot_available = list()
+
 	empty_alarm = TRUE
 	empty_autoeject = TRUE
 	//if i read this correctly this should mean its always ready to fire //it doesn't but whatever
@@ -14,7 +16,6 @@
 	tac_reloads = FALSE
 
 	bolt_wording = "prime"
-	magazine_wording = "box"
 	cartridge_wording = "dart"
 
 	show_magazine_on_sprite = TRUE

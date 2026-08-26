@@ -14,6 +14,8 @@
 
 	ammo_type = list()
 
+	slot_available = list()
+
 	vary_fire_sound = FALSE
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/cybersun
