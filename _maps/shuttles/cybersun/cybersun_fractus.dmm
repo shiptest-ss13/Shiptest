@@ -1205,7 +1205,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "mO" = (
-/obj/item/radio/intercom/directional/east,
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 6
 	},
@@ -1340,15 +1339,6 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/hallway/central)
-"os" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/grille,
-/obj/machinery/door/firedoor/window,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "zbridge"
-	},
-/turf/open/space/basic,
-/area/space)
 "ox" = (
 /obj/effect/turf_decal/industrial/warning/fulltile{
 	color = "#FFFFFF"
@@ -4489,15 +4479,6 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/cryo)
-"YO" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/grille,
-/obj/machinery/door/firedoor/window,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "zbridge"
-	},
-/turf/open/space/basic,
-/area/ship/bridge)
 "Za" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Starboard Engines"
@@ -5372,14 +5353,14 @@ qI
 qI
 qI
 qI
-os
-YO
+ud
+ud
 XW
 fw
 zk
 zL
 sa
-YO
+ud
 ud
 qI
 qI
