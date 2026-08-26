@@ -410,18 +410,18 @@
 // injection + notification of injection need to be in sync. There should be a delay between the suit notifying you of a wound/critical status and then going through injecting
 // Need to add crit event, maybe other wounding events. Also need to add cooldown to declare_wound so you don't get spammed
 
-/obj/item/clothing/suit/space/hardsuit/esh/proc/check_inject(mob/user)
-	if(!injector || injector.reagents.total_volume <= 0)
-		to_chat(user, span_warning("Warning: no medipen found or current one is empty."))
-		return
-	addtimer(CALLBACK(src, GLOBAL_PROC_REF(inject_user), user), 20, TIMER_STOPPABLE)
-
 /obj/item/clothing/suit/space/hardsuit/esh/proc/inject_user(mob/user)
 	injector.inject(user, user)
 	playsound(src, 'sound/items/hypospray_long.ogg', 50, FALSE)
 	injector = null
 	injector.forceMove(drop_location())
 	to_chat(user, span_warning("Administering medical attention. Medipen administered and ejected."))
+
+/obj/item/clothing/suit/space/hardsuit/esh/proc/check_inject(mob/user)
+	if(!injector || injector.reagents.total_volume <= 0)
+		to_chat(user, span_warning("Warning: no medipen found or current one is empty."))
+		return
+	addtimer(CALLBACK(src, PROC_REF(inject_user), user), 20, TIMER_STOPPABLE)
 
 /obj/item/clothing/suit/space/hardsuit/esh/equipped(mob/user, slot)
 	. = ..()
