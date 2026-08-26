@@ -7,7 +7,7 @@
 
 	empty_alarm = TRUE
 	empty_autoeject = TRUE
-	//if i read this correctly this should mean its always ready to fire \\it doesn't but whatever
+	//if i read this correctly this should mean its always ready to fire //it doesn't but whatever
 	bolt_type = BOLT_TYPE_OPEN
 	always_chambers = TRUE
 
