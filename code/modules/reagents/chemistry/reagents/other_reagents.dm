@@ -2387,7 +2387,12 @@
 			"Your gut shifts uncomfortably.",
 			"You feel an odd pressure inside your chest.",
 			"You feel off.",
-			"You feel something flowing inside you.")))
+			"You feel something flowing inside you.",
+			"Ichor flows with horrid pressure within your veins",
+			"Your heart rejects. Your body embraces.",
+			"Substitute self oozes around your soul",
+			"A dozen needles puncture and infuse you.",
+			"So long as you live, it flows.")))
 	if(bloodboy.blood_volume < BLOOD_VOLUME_NORMAL)
 		bloodboy.blood_volume += 5
 	..()
