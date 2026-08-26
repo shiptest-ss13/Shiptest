@@ -89,7 +89,7 @@
 	var/ap_dropoff = 5
 	var/ap_dropoff_cutoff = -20
 
-/obj/projectile/beam/lorentz/shotgun/Range() //10% loss per tile = max range of 10, generally
+/obj/projectile/beam/lorentz/shotgun/Range()
 	..()
 	if(damage > 0)
 		damage -= tile_dropoff

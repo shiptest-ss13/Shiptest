@@ -18,7 +18,6 @@
 	fire_sound = 'sound/weapons/gun/cybersun/heavy_ionization.ogg'
 	delay = 8
 
-//to-do: kill self
 /obj/item/ammo_casing/energy/lorentz
 	name = "lorentz lens"
 	caliber = "lorentz"
