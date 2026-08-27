@@ -483,6 +483,173 @@
 			<br>
 			"}
 
+/obj/item/paper/fluff/ship/rhea/blood
+	name = "Blood Compatibility Chart"
+	default_raw_text = {"<html>
+			<table width="100%"frame="below">
+			<tr>
+			<td><font face="Times"size="2">
+			Makosso-Warra<br>Rhea-class Recovery Vessel Form
+			</td>
+			<td><div align="right"><font face="Times"size="2">
+			FS 506-08-27
+			</td>
+			</tr>
+			</table>
+			<hr>
+			<center><font face="Times"size="3"><b>BLOOD COMPATIBILITY CHART</b></font></center>
+			<hr>
+			<center>
+			<table style="width: 90%;" border="2">
+			<tbody>
+			<tr>
+			<td ><center>+</td>
+			<td><center>O-</td>
+			<td><center>O+</td>
+			<td><center>A-</td>
+			<td><center>A+</td>
+			<td><center>B-</td>
+			<td><center>B+</td>
+			<td><center>AB-</td>
+			<td><center>AB+</td>
+			<td><center>S</td>
+			<td><center>E</td>
+			</tr>
+			<tr>
+			<td><center>O-</td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			</tr>
+			<tr>
+			<td><center>O+</td>
+			<td><center>✔</td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			</tr>
+			<tr>
+			<td><center>A-</td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			</tr>
+			<tr>
+			<td><center>A+</td>
+			<td><center>✔</td>
+			<td><center>✔</td>
+			<td><center>✔</td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			</tr>
+			<tr>
+			<td><center>B-</td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			</tr>
+			<tr>
+			<td><center>B+</td>
+			<td><center>✔</td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td><center>✔</td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			</tr>
+			<tr>
+			<td><center>AB-</td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			</tr>
+			<tr>
+			<td><center>AB+</td>
+			<td><center>✔</td>
+			<td><center>✔</td>
+			<td><center>✔</td>
+			<td><center>✔</td>
+			<td><center>✔</td>
+			<td><center>✔</td>
+			<td><center>✔</td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			</tr>
+			<tr>
+			<td><center>S</td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td><center>✔</td>
+			<td bgcolor="a2a2a2"></td>
+			</tr>
+			<tr>
+			<td><center>E</td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td bgcolor="a2a2a2"></td>
+			<td><center>✔</td>
+			</tr>
+			</tbody>
+			</table>
+			<b>RECIPIENT LEFT ROW. DONOR TOP ROW.</b>
+			"}
+
 /obj/effect/mob_spawn/human/corpse/ship/warra/rhea/morgueminer
 	brute_damage = 148
 	oxy_damage = 52

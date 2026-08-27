@@ -2653,6 +2653,10 @@
 	pixel_x = -6;
 	pixel_y = 4
 	},
+/obj/item/storage/box/syringes{
+	pixel_y = 6;
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/medical/recovery/recoverytwo)
 "jn" = (
@@ -2726,6 +2730,7 @@
 	dir = 4
 	},
 /obj/structure/chair/sofa/blue/right/directional/west,
+/obj/structure/noticeboard/directional/east,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/medical/recovery/recoveryone)
 "jr" = (
@@ -2910,7 +2915,7 @@
 /obj/structure/closet/wall/directional/west{
 	name = "break room supply closet"
 	},
-/obj/item/storage/pill_bottle/dice/hazard,
+/obj/item/storage/pill_bottle/dice,
 /obj/item/toy/cards/deck{
 	pixel_x = 8;
 	pixel_y = 8
@@ -3024,7 +3029,8 @@
 	pixel_y = -20;
 	id = "r_eva_shutter";
 	name = "EVA Storage Shutter Control";
-	dir = 1
+	dir = 1;
+	req_ship_access = 1
 	},
 /obj/machinery/light_switch{
 	dir = 1;
@@ -3049,6 +3055,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "kp" = (
@@ -3440,13 +3447,17 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet)
 "lB" = (
-/obj/structure/table,
+/obj/structure/table/reinforced,
 /obj/item/reagent_containers/glass/bucket{
 	pixel_x = 6;
 	pixel_y = -6
 	},
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_y = 3;
+	pixel_x = -8
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/janitor)
 "lD" = (
@@ -3458,6 +3469,10 @@
 	pixel_x = 3
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/box/syringes{
+	pixel_y = 6;
+	pixel_x = -9
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/medical/recovery/recoveryone)
 "lF" = (
@@ -3767,7 +3782,8 @@
 	pixel_x = -10;
 	pixel_y = 20;
 	id = "r_eva_shutter";
-	name = "EVA Storage Shutter Control"
+	name = "EVA Storage Shutter Control";
+	req_ship_access = 1
 	},
 /obj/machinery/light_switch{
 	pixel_x = -2;
@@ -4282,6 +4298,7 @@
 /obj/item/folder/warra/rhea/med/cremation{
 	pixel_y = -4
 	},
+/obj/item/paper/fluff/ship/rhea/blood,
 /turf/open/floor/wood/walnut,
 /area/ship/medical/cmo/director)
 "oP" = (
@@ -4397,18 +4414,32 @@
 	pixel_x = 8;
 	pixel_y = -5
 	},
+/obj/item/tank/internals/emergency_oxygen/low_capacity{
+	pixel_y = -4;
+	pixel_x = 4
+	},
+/obj/item/tank/internals/emergency_oxygen/low_capacity{
+	pixel_y = -4;
+	pixel_x = 4
+	},
 /obj/item/clothing/mask/breath/medical,
 /obj/item/clothing/mask/breath/medical,
-/obj/item/clothing/mask/breath/medical,
-/obj/item/clothing/mask/breath/medical,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/mapping_helpers/crate_shelve,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/medical/storage)
 "pi" = (
 /obj/structure/closet/wall/directional/west{
 	name = "uniform closet"
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/backpack/duffelbag,
+/obj/item/storage/backpack,
+/obj/item/storage/backpack/satchel,
+/obj/item/storage/backpack/messenger,
+/obj/item/storage/backpack/messenger/sport,
+/obj/item/storage/backpack/satchel/kitbag,
+/obj/item/storage/backpack/satchel/tailbag,
 /obj/item/clothing/under/warra{
 	pixel_x = -4
 	},
@@ -4873,11 +4904,18 @@
 /obj/structure/closet/crate/trashcart/laundry,
 /obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/backpack/duffelbag,
+/obj/item/storage/backpack,
+/obj/item/storage/backpack/satchel,
+/obj/item/storage/backpack/messenger,
+/obj/item/storage/backpack/messenger/sport,
+/obj/item/storage/backpack/satchel/kitbag,
+/obj/item/storage/backpack/satchel/tailbag,
 /obj/item/clothing/under/warra{
 	pixel_x = -4
 	},
 /obj/item/clothing/under/warra{
-	pixel_x = -4
+	pixel_x = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/janitor)
@@ -5269,7 +5307,7 @@
 	pixel_y = 4;
 	pixel_x = -3
 	},
-/obj/item/gun/ballistic/revolver/rhino{
+/obj/item/gun/ballistic/revolver/rhino/no_mag{
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/corner/transparent/warrabluelight/border{
@@ -5527,7 +5565,8 @@
 	pixel_x = -10;
 	pixel_y = 20;
 	id = "r_combreak_window";
-	name = "Internal Window Shutter Control"
+	name = "Internal Window Shutter Control";
+	req_access = list(19,38)
 	},
 /obj/machinery/button/door{
 	id = "r_combreak";
@@ -5623,6 +5662,8 @@
 	},
 /obj/structure/chair/sofa/blue/left/directional/east,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/noticeboard/directional/west,
+/obj/item/paper/fluff/ship/rhea/blood,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/medical/recovery/recoverytwo)
 "sX" = (
@@ -6499,6 +6540,7 @@
 	dir = 8
 	},
 /obj/structure/noticeboard/directional/west,
+/obj/item/paper/fluff/ship/rhea/blood,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/medical)
 "vU" = (
@@ -6911,7 +6953,8 @@
 	pixel_y = -20;
 	id = "r_combreak_window";
 	name = "Internal Window Shutter Control";
-	dir = 1
+	dir = 1;
+	req_access = list(19,38)
 	},
 /obj/machinery/button/door{
 	id = "r_combreak";
@@ -7031,6 +7074,10 @@
 	pixel_y = -18
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/paper/fluff/ship/rhea/blood{
+	pixel_y = 4;
+	pixel_x = 4
+	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/medical/recovery/recoveryone)
 "yj" = (
@@ -7070,7 +7117,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "yw" = (
-/obj/effect/decal/cleanable/wrapping,
 /obj/structure/closet/crate/hydroponics{
 	name = "ration crate"
 	},
@@ -7571,12 +7617,12 @@
 /obj/effect/turf_decal/corner/transparent/white/mono,
 /obj/structure/table,
 /obj/item/storage/box/masks{
-	pixel_y = 8;
+	pixel_y = 10;
 	pixel_x = -4
 	},
 /obj/item/storage/box/gloves{
 	pixel_x = 4;
-	pixel_y = -4
+	pixel_y = -2
 	},
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/mono,
@@ -8082,6 +8128,19 @@
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/newscaster/directional/south,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "face";
+	pixel_y = 22;
+	pixel_x = -8;
+	color = "#d2d53d";
+	paint_colour = "#d2d53d"
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "evac";
+	pixel_x = 8;
+	color = "#32426b";
+	paint_colour = "#32426b"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet)
 "Cp" = (
@@ -8123,18 +8182,20 @@
 /obj/effect/turf_decal/siding/wood/mahogany{
 	dir = 6
 	},
-/obj/item/gun/energy/sharplite/yari{
+/obj/item/gun/energy/sharplite/yari/empty_cell{
 	pixel_y = 4
 	},
-/obj/item/stock_parts/cell/gun/sharplite/plus{
-	pixel_x = 8
-	},
-/obj/item/stock_parts/cell/gun/sharplite,
 /obj/structure/mirror{
 	pixel_x = 24;
 	pixel_y = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/cell/gun/sharplite/plus{
+	pixel_x = 4
+	},
+/obj/item/stock_parts/cell/gun/sharplite{
+	pixel_y = -2
+	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/dorm/commad/hos/director)
 "CD" = (
@@ -9009,10 +9070,20 @@
 	pixel_y = 6
 	},
 /obj/item/geiger_counter{
-	pixel_y = -4
+	pixel_y = -4;
+	pixel_x = -4
 	},
 /obj/item/geiger_counter{
-	pixel_y = -4
+	pixel_y = -4;
+	pixel_x = -4
+	},
+/obj/item/radio/weather_monitor{
+	pixel_y = -3;
+	pixel_x = 8
+	},
+/obj/item/radio/weather_monitor{
+	pixel_y = -3;
+	pixel_x = 8
 	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -9418,6 +9489,7 @@
 /obj/item/roller,
 /obj/machinery/light/directional/east,
 /obj/structure/noticeboard/directional/north,
+/obj/item/paper/fluff/ship/rhea/blood,
 /turf/open/floor/plasteel/mono,
 /area/ship/medical/storage)
 "Gp" = (
@@ -10033,11 +10105,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/breakroom)
 "Ig" = (
-/obj/structure/table,
-/obj/item/reagent_containers/spray/cleaner{
-	pixel_y = 3;
-	pixel_x = 8
-	},
+/obj/structure/table/reinforced,
 /obj/item/reagent_containers/glass/rag{
 	pixel_x = -6;
 	pixel_y = 12
@@ -10049,6 +10117,12 @@
 	pixel_x = 6
 	},
 /obj/item/radio/intercom/directional/east,
+/obj/structure/sink/kitchen/counter{
+	dir = 8;
+	pixel_y = -1;
+	pixel_x = -2;
+	name = "big sink"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/janitor)
 "Ih" = (
@@ -10129,11 +10203,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet/two)
 "IG" = (
-/obj/item/c_tube{
-	pixel_x = 4;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "IH" = (
@@ -10236,7 +10305,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "IX" = (
-/obj/structure/table,
+/obj/structure/table/reinforced,
 /obj/structure/bedsheetbin,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/noticeboard/directional/north,
@@ -10276,6 +10345,11 @@
 	},
 /obj/structure/cable/white{
 	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/wrapping,
+/obj/item/c_tube{
+	pixel_x = 4;
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
@@ -10938,6 +11012,10 @@
 	dir = 4;
 	name = "sink"
 	},
+/obj/item/storage/box/syringes{
+	pixel_y = 6;
+	pixel_x = 5
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
 "LL" = (
@@ -11061,11 +11139,12 @@
 /obj/structure/closet/crate/secure/exo{
 	name = "exploration kit crate"
 	},
-/obj/item/pickaxe,
+/obj/item/storage/bag/ore,
 /obj/item/pickaxe/mini{
 	pixel_x = 2;
 	pixel_y = -2
 	},
+/obj/item/mining_scanner,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Ml" = (
@@ -11788,7 +11867,6 @@
 "Pp" = (
 /obj/effect/turf_decal/corner/opaque/vired/full,
 /obj/structure/easel,
-/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Pv" = (
@@ -12229,6 +12307,7 @@
 	},
 /obj/item/trash/can,
 /obj/item/trash/candy,
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "Rd" = (
@@ -12274,6 +12353,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box/corners,
+/obj/structure/closet/crate/freezer,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Rs" = (
@@ -13222,6 +13302,7 @@
 /obj/machinery/photocopier,
 /obj/effect/turf_decal/trimline/transparent/warrabluelight/filled/line,
 /obj/machinery/light/small/directional/south,
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "UR" = (
@@ -13400,7 +13481,6 @@
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "Vz" = (
@@ -13622,6 +13702,14 @@
 /obj/structure/closet/wall/directional/west{
 	name = "uniform closet"
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/backpack/duffelbag,
+/obj/item/storage/backpack,
+/obj/item/storage/backpack/satchel,
+/obj/item/storage/backpack/messenger,
+/obj/item/storage/backpack/messenger/sport,
+/obj/item/storage/backpack/satchel/kitbag,
+/obj/item/storage/backpack/satchel/tailbag,
 /obj/item/clothing/under/warra{
 	pixel_x = -4
 	},
@@ -13660,7 +13748,6 @@
 	pixel_x = 4;
 	pixel_y = 10
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm)
 "Wi" = (
@@ -14200,6 +14287,9 @@
 /obj/machinery/light_switch{
 	pixel_x = -12;
 	pixel_y = 18
+	},
+/obj/machinery/camera/autoname/directional/north{
+	pixel_x = -2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
