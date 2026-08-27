@@ -124,7 +124,7 @@
 	hitsound_wood = 'sound/weapons/gun/cybersun/plasmaflareimpact.ogg'
 	hitsound_snow = 'sound/weapons/gun/cybersun/plasmaflareimpact.ogg'
 
-	damage = 75
+	damage = 60
 	armour_penetration = 0
 	damage_type = BURN
 

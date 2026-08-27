@@ -169,15 +169,15 @@
 
 /obj/item/gun/energy/cybersun/lorentz/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	var/flaring = FALSE
-	if(istype(chambered, /obj/item/ammo_casing/energy/flare))
-		if(!latch_closed)
+	if(!latch_closed)
 			return FALSE
+	if(istype(chambered, /obj/item/ammo_casing/energy/flare))
 		flaring = TRUE
 		var/obj/projectile/beam/flare/bang = chambered.BB
 		var/cell_charge = cell.percent()/100
 		if(cell_charge < 0.5)
 			return FALSE
-		bang.damage = bang.damage * cell_charge * cell.rating
+		bang.damage = max(120, bang.damage * cell_charge * cell.rating)
 		fire_sound_volume = 150 * cell_charge
 		bang.range = round(bang.range * cell_charge)
 		recoil = recoil * 2
@@ -307,7 +307,7 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	recoil = 2
+	recoil = 1.5
 
 	spread = 12
 	spread_unwielded = 10
@@ -318,7 +318,7 @@
 	var/deploy_time = 0.5 SECONDS
 
 	///we add these two values to recoi/spread when we have the bipod deployed
-	var/deploy_recoil_bonus = -2
+	var/deploy_recoil_bonus = -1
 	var/deploy_spread_bonus = -8
 
 	var/list/deployable_on_structures = list(
