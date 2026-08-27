@@ -30,6 +30,9 @@
 	/// Highest wear value so the gun doesn't end up completely irreperable
 	wear_maximum = 480
 
+	//might just turn this off
+	wear_rate = 0.5
+
 	ammo_counter = TRUE
 
 	//shameless asset reuse

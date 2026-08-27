@@ -40,6 +40,7 @@
 	name = "rapid lorentz lens"
 	fire_sound = 'sound/weapons/gun/cybersun/lorentz_heavy.ogg'
 	delay = 0.25 SECONDS
+	e_cost = 1000
 	projectile_type = /obj/projectile/beam/lorentz/mg
 
 //if you use this on a weapon that's not made for it bad things will happen

@@ -522,7 +522,7 @@
 	desc = "A large proprietary power cell primarily used by Tadeusz Armory weaponry. Contains stabiliized plasma maintained at high temperature within a containment field, as well as a material catalyst to generate more. Understandably very volatile."
 	icon_state = "cybersun-heavy"
 
-	maxcharge = 40000
+	maxcharge = 30000
 	rating = 3
 	w_class = WEIGHT_CLASS_NORMAL
 
