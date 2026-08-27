@@ -861,7 +861,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	if(!message)
 		return
 
-	say(message,FALSE,(),TRUE,speak_in)
+	say(message,FALSE,null,TRUE,speak_in)
 
 /obj/machinery/vending/power_change()
 	. = ..()
