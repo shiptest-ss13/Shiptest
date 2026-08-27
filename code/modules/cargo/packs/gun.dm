@@ -990,7 +990,7 @@
 
 /datum/supply_pack/gun/rectifier
 	name = "Rectifier Smart-Gauss Pistol"
-	desc = "Contains an SG27 Rectifier gauss pistol, designed to fire disposable cell/magazine stacks at rapid speed."
+	desc = "Contains an SG27 Rectifier gauss pistol, designed to fire disposable cell/magazine stacks at rapid speed. Takes short 2x15mm Tav'Sha magazines"
 	cost = 1500
 	contains = list(/obj/item/storage/guncase/pistol/rectifier)
 	crate_name = "rectifier crate"
@@ -1000,7 +1000,7 @@
 
 /datum/supply_pack/gun/rectifier/export
 	name = "Amend Gauss Pistol"
-	desc = "Contains an SG11 Amend gauss pistol, designed to fire disposable cell/magazine stacks at rapid speed."
+	desc = "Contains an SG11 Amend gauss pistol, designed to fire disposable cell/magazine stacks at rapid speed. Takes short 2x15mm Tav'Sha magazines."
 	cost = 1500
 	contains = list(/obj/item/storage/guncase/pistol/rectifier/export)
 	crate_name = "amend crate"
@@ -1009,7 +1009,7 @@
 
 /datum/supply_pack/gun/convergence
 	name = "Convergence Light Smart-Gauss Rifle"
-	desc = "Contains an SG49 Convergence gauss rifle, made to lay down suppressing low calibre fire."
+	desc = "Contains an SG49 Convergence gauss rifle, made to lay down suppressing low calibre fire. Takes long 2x15mm Tav'Sha magazines."
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/convergence)
 	crate_name = "convergence crate"
@@ -1019,7 +1019,7 @@
 
 /datum/supply_pack/gun/convergence/export
 	name = "Divergence Light Gauss Rifle"
-	desc = "Contains an SG48 Converegence gauss rifle, designed to fire disposable cell/magazine stacks at rapid speed."
+	desc = "Contains an SG48 Converegence gauss rifle, designed to fire disposable cell/magazine stacks at rapid speed. Takes long 2x15mm Tav'Sha magazines."
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/convergence/export)
 	crate_name = "amend crate"
@@ -1028,7 +1028,7 @@
 
 /datum/supply_pack/gun/vector
 	name = "Vector Smart-Gauss Rifle"
-	desc = "Contains an SG95 Vector gauss rifle, made to take down lightly armored targets with volume of fire."
+	desc = "Contains an SG95 Vector gauss rifle, made to take down lightly armored targets with volume of fire. Takes 3x20mm Deu'Sha magazines."
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/vector)
 	crate_name = "convergence crate"
@@ -1038,7 +1038,7 @@
 
 /datum/supply_pack/gun/vector/export
 	name = "Director Gauss Rifle"
-	desc = "Contains an SG90 Vector gauss rifle, made as a compromise between a gauss marksman rifle and the SG95 Vector."
+	desc = "Contains an SG90 Vector gauss rifle, made as a compromise between a gauss marksman rifle and the SG95 Vector. Takes 3x20mm Deu'Sha magazines."
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/vector/export)
 	crate_name = "amend crate"

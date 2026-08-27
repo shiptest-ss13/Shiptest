@@ -170,7 +170,7 @@
 /obj/item/gun/energy/cybersun/lorentz/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	var/flaring = FALSE
 	if(!latch_closed)
-			return FALSE
+		return FALSE
 	if(istype(chambered, /obj/item/ammo_casing/energy/flare))
 		flaring = TRUE
 		var/obj/projectile/beam/flare/bang = chambered.BB
