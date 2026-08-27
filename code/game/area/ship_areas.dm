@@ -304,7 +304,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/law_office/affairs
 	name = "Internal Affairs Office"
 	icon_state = "law"
-	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
 
 /area/ship/crew/solgov
 	name = "SolGov Consulate"

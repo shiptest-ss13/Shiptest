@@ -257,7 +257,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
 
-NO_MAG_GUN_HELPER(revolver/rhino)
+EMPTY_GUN_HELPER(revolver/rhino)
 
 /obj/item/gun/ballistic/automatic/smg/expedition
 	name = "\improper Advantage SGL9 Expedition"
