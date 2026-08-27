@@ -49,7 +49,7 @@
 	name = "\improper bluespace anomaly core"
 	desc = "The stabilized core of a bluespace anomaly. It keeps phasing in and out of view."
 	icon_state = "anomaly core"
-	grind_results = list(/datum/reagent/bluespace/jumper = 20)
+	grind_results = list(/datum/reagent/jumper = 20)
 
 /obj/item/assembly/signaler/anomaly/bluespace/anomaly_core_detonation()
 	//just teleports people

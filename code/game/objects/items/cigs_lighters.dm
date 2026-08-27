@@ -400,7 +400,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		/datum/reagent/transfusion,
 		/datum/reagent/phantom,
 		/datum/reagent/toxin/acid/melter,
-		/datum/reagent/bluespace/jumper,
+		/datum/reagent/jumper,
 		/datum/reagent/fairydust,
 		/datum/reagent/truesight,
 		/datum/reagent/gravitum,

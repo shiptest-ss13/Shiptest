@@ -2226,13 +2226,20 @@
 	..()
 
 // Bluespace anomaly
-// this one's pretty boring tbh but I can't think of much else
-/datum/reagent/bluespace/jumper
-	name = "High Energy Bluespace Dust"
+/datum/reagent/jumper
+	name = "Triphasic Bluespace Particulate"
 	description = "An exotic form of bluespace crystal extracted from an anomaly core. It crackles with latent energy."
+	reagent_state = SOLID
+	color = "#000060"
 	taste_description = "the inside of a warp drive"
-	start_cycle = 0
-	teleport_prob = 50 // you're going on a magical journey
+
+/datum/reagent/jumper/on_mob_metabolize(mob/living/zoop)
+	zoop.AddSpell(new /obj/effect/proc_holder/spell/targeted/turf_teleport/jumper(null))
+	..()
+
+/datum/reagent/jumper/on_mob_end_metabolize(mob/living/zoop)
+	zoop.RemoveSpell(new /obj/effect/proc_holder/spell/targeted/turf_teleport/jumper(null))
+	..()
 
 // Heartbeat anomaly
 /datum/reagent/heartbeat
@@ -2417,6 +2424,10 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	var/temp_blood_amount = 0
 
+/datum/reagent/dilute_transfusion/on_mob_metabolize(mob/living/carbon/patient)
+	to_chat(patient, span_warning("You feel a pressure form in your chest."))
+	..()
+
 /datum/reagent/dilute_transfusion/on_mob_life(mob/living/carbon/patient, seconds_per_tick)
 	// first we remove temp blood
 	if(temp_blood_amount)
@@ -2426,10 +2437,14 @@
 		patient.blood_volume += 0.15 // a little bit of regen to the "real level"
 		temp_blood_amount = BLOOD_VOLUME_NORMAL - patient.blood_volume
 		patient.blood_volume = BLOOD_VOLUME_NORMAL
+	..()
 
 /datum/reagent/dilute_transfusion/on_mob_end_metabolize(mob/living/carbon/patient)
 	to_chat(patient, span_warning("The last of the ichor rushes out of you."))
 	patient.blood_volume -= temp_blood_amount
+	if(patient.blood_volume < 0)
+		patient.blood_volume = 0
+	..()
 
 // Phantom Anomaly
 /datum/reagent/phantom
@@ -2440,6 +2455,7 @@
 
 /datum/reagent/phantom/on_mob_metabolize(mob/living/carbon/victim)
 	victim.apply_necropolis_curse(CURSE_BLINDING | CURSE_WASTING | CURSE_GRASPING)
+	..()
 
 /datum/reagent/phantom/on_mob_life(mob/living/carbon/victim, seconds_per_tick)
 	if(SPT_PROB(10, seconds_per_tick))
@@ -2452,9 +2468,11 @@
 			"CAN YOU HEAR ME?",
 			"I SEE YOU",
 			"I MISS YOU")))
+	..()
 
 /datum/reagent/phantom/on_mob_end_metabolize(mob/living/carbon/victim)
 	victim.remove_status_effect(/datum/status_effect/necropolis_curse)
+	..()
 
 // Plasmasoul Anomaly
 // Direct effects aren't too exciting - what makes this one interesting is its reactions
@@ -2467,6 +2485,3 @@
 /datum/reagent/plasmasoul/on_mob_life(mob/living/carbon/plasma_eater)
 	plasma_eater.adjustToxLoss(5 * REM, 0) // what made you think this was a good idea
 	..()
-
-// Plasmaball anomaly
-// TODO

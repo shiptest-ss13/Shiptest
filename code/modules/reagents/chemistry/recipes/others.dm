@@ -412,15 +412,27 @@
 	mix_message = "The mixture mixing suddenly reminds you of cramped urban worlds."
 
 /datum/chemical_reaction/transfusion_dilution
-	results = list(/datum/reagent/dilute_transfusion = 15)
-	required_reagents = list(/datum/reagent/transfusion = 5, /datum/reagent/iron = 5, /datum/reagent/blood = 15)
+	results = list(/datum/reagent/dilute_transfusion = 20)
+	required_reagents = list(/datum/reagent/transfusion = 5, /datum/reagent/water = 10, /datum/reagent/blood = 10)
 	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
-	mix_message = "The mixture bubbles violently, then falls still."
+	mix_message = "Color slowly permeates the mixture."
 
 /datum/chemical_reaction/plasmasoul_plasmasheet
 	required_reagents = list(/datum/reagent/toxin/acid = 5, /datum/reagent/wittel = 5)
 	required_catalysts = list(/datum/reagent/plasmasoul = 5)
 	mix_message = "The mixture hisses loudly as solid plasma bursts forth!"
+
+/datum/chemical_reaction/plasmasoul_panacea
+	results = list(/datum/reagent/medicine/panacea = 1, /datum/reagent/toxin/plasma = 1)
+	required_reagents = list(/datum/reagent/medicine/panacea/effluvial = 5)
+	required_catalysts = list(/datum/reagent/plasmasoul = 5)
+	mix_message = "The mixture sputters loudly, excess liquid quickly boiling away."
+
+/datum/chemical_reaction/plasmasoul_fervor
+	results = list(/datum/reagent/consumable/fervor = 1, /datum/reagent/toxin/plasma = 1)
+	required_reagents = list(/datum/reagent/consumable/vitfro = 1, /datum/reagent/water = 1)
+	required_catalysts = list(/datum/reagent/plasmasoul = 5)
+	mix_message = "The mixture glows brightly and hisses."
 
 /datum/chemical_reaction/plasmasoul_plasmasheet/on_reaction(datum/reagents/holder, created_volume)
 	holder.chem_temp += 25 * created_volume // kehehe
