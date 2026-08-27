@@ -2196,18 +2196,19 @@
 	idiot.hallucination += 20 // the kids are smoking the anomaly cores
 
 	// slowly spins your screen. fun for the whole family
-	var/list/screens = list(
-		idiot.hud_used.plane_masters["[FLOOR_PLANE]"],
-		idiot.hud_used.plane_masters["[GAME_PLANE]"],
-		idiot.hud_used.plane_masters["[LIGHTING_PLANE]"])
-	var/rot = 90 * (current_cycle % 4);
-	for(var/plane in screens)
-		animate(plane, transform = matrix(rot, MATRIX_ROTATE), time = 20, easing = QUAD_EASING)
+	if(idiot.client)
+		var/list/screens = list(
+			idiot.hud_used.plane_masters["[FLOOR_PLANE]"],
+			idiot.hud_used.plane_masters["[GAME_PLANE]"],
+			idiot.hud_used.plane_masters["[LIGHTING_PLANE]"])
+		var/rot = 90 * (current_cycle % 4);
+		for(var/plane in screens)
+			animate(plane, transform = matrix(rot, MATRIX_ROTATE), time = 20, easing = QUAD_EASING)
 	..()
 
 /datum/reagent/fairydust/on_mob_metabolize(mob/living/carbon/idiot)
 	. = ..()
-	idiot.add_client_colour(/datum/client_colour/funkytown)
+	idiot?.add_client_colour(/datum/client_colour/funkytown)
 
 /datum/reagent/fairydust/overdose_start(mob/living/carbon/idiot)
 	scary_chaser = idiot.gain_trauma(/datum/brain_trauma/magic/stalker) // release the nextbots
@@ -2215,14 +2216,15 @@
 
 /datum/reagent/fairydust/on_mob_end_metabolize(mob/living/carbon/idiot)
 	. = ..()
-	idiot.remove_client_colour(/datum/client_colour/funkytown)
+	idiot?.remove_client_colour(/datum/client_colour/funkytown)
 	qdel(scary_chaser)
-	var/list/screens = list(
-		idiot.hud_used.plane_masters["[FLOOR_PLANE]"],
-		idiot.hud_used.plane_masters["[GAME_PLANE]"],
-		idiot.hud_used.plane_masters["[LIGHTING_PLANE]"])
-	for(var/plane in screens)
-		animate(plane, transform = matrix(), time = 10, easing = QUAD_EASING)
+	if(idiot.client)
+		var/list/screens = list(
+			idiot.hud_used.plane_masters["[FLOOR_PLANE]"],
+			idiot.hud_used.plane_masters["[GAME_PLANE]"],
+			idiot.hud_used.plane_masters["[LIGHTING_PLANE]"])
+		for(var/plane in screens)
+			animate(plane, transform = matrix(), time = 10, easing = QUAD_EASING)
 	..()
 
 // Bluespace anomaly
