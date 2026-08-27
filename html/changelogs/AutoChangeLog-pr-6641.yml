@@ -1,0 +1,15 @@
+author: cablefish
+changes:
+  - {rscadd: Ammo counters now have feedback for toggling the alarm.}
+  - {rscadd: 'Racking a gun on grab intent will catch the ejected round, if your other
+      hand is free.'}
+  - {rscadd: 'You can now load and unload revolvers while moving, as with any other
+      gun.'}
+  - {bugfix: Fixes ammo counters not updating your hud when put on.}
+  - {bugfix: Fixes point blank knockback not applying on silenced guns.}
+  - {bugfix: Open bolt guns no longer delete bullets when removing a magazine.}
+  - {bugfix: Open bolt guns no longer leave empty casings in the magazine.}
+  - {bugfix: Open bolt guns properly need cocked before firing.}
+  - {spellcheck: Improved feedback for trying to load the hammer rocket 
+      launcher.}
+delete-after: true
