@@ -47,75 +47,97 @@
 		qdel(src)
 	return TRUE
 
-//Types themself, use them, but not the parent object
-
+// GENERIC MACHINE //
+// Contains stock parts and some mats. Nothing too fancy, this is the "common" one
 /obj/structure/salvageable/machine
 	name = "broken machine"
+	desc = "An unrecognizable hunk of destroyed machinery. Despite the damage, there may be something worthwhile within..."
 	icon_state = "wreck_pda"
 	salvageable_parts = list(
+		// material components
 		/obj/item/stack/sheet/glass/two = 80,
-		/obj/item/stack/cable_coil/cut = 80,
+		/obj/item/stack/sheet/glass = 50,
 		/obj/item/stack/ore/salvage/scrapgold/five = 60,
+		/obj/item/stack/ore/salvage/scrapgold = 50,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
+		/obj/item/stack/ore/salvage/scrapmetal = 20,
+		/obj/item/stack/cable_coil/cut = 80,
+		/obj/item/stack/cable_coil/cut = 80,
 
-		/obj/effect/spawner/random/salvage/part/capacitor = 50,
-		/obj/effect/spawner/random/salvage/part/capacitor = 50,
-		/obj/effect/spawner/random/salvage/part/scanning = 50,
-		/obj/effect/spawner/random/salvage/part/scanning = 50,
+		// stock parts
+		/obj/effect/spawner/random/salvage/part/capacitor = 40,
+		/obj/effect/spawner/random/salvage/part/capacitor = 40,
+		/obj/effect/spawner/random/salvage/part/scanning = 40,
+		/obj/effect/spawner/random/salvage/part/scanning = 40,
 		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
 		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
 		/obj/effect/spawner/random/salvage/part/manipulator = 40,
 		/obj/effect/spawner/random/salvage/part/manipulator = 40,
-		/obj/effect/spawner/random/salvage_laser = 40,
-		/obj/effect/spawner/random/salvage_laser = 40,
-	)
+		/obj/effect/spawner/random/salvage/part/laser = 40,
+		/obj/effect/spawner/random/salvage/part/laser = 40)
 
+// GENERIC COMPUTER //
+// the main thing is computer boards here. some modcomp parts for flavor
 /obj/structure/salvageable/computer
 	name = "broken computer"
+	desc = "The remnants of a particularly unlucky computer. If you're lucky, there may still be working parts inside."
 	icon_state = "computer_broken"
 	frame_type = /obj/structure/frame/computer/retro
 	salvageable_parts = list(
+		// material components
 		/obj/item/stack/sheet/glass/two = 80,
-		/obj/item/stack/cable_coil/cut = 90,
 		/obj/item/stack/ore/salvage/scrapsilver/five = 90,
 		/obj/item/stack/ore/salvage/scrapgold/five = 60,
+		/obj/item/stack/ore/salvage/scrapgold/ = 20,
+		/obj/item/stack/ore/salvage/scrapgold/ = 20,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
+		/obj/item/stack/ore/salvage/scrapmetal/ = 20,
+		/obj/item/stack/ore/salvage/scrapmetal/ = 20,
+		/obj/item/stack/cable_coil/cut = 60,
+		/obj/item/stack/cable_coil/cut = 60,
 
+		// other fluff parts
 		/obj/effect/spawner/random/salvage/part/capacitor = 60,
+		/obj/item/gpu = 1,
 
-		/obj/item/computer_hardware/battery = 40,
-		/obj/item/computer_hardware/battery = 40,
-		/obj/item/computer_hardware/network_card = 40,
-		/obj/item/computer_hardware/network_card = 40,
-		/obj/item/computer_hardware/processor_unit = 40,
-		/obj/item/computer_hardware/processor_unit = 40,
-		/obj/item/computer_hardware/card_slot = 40,
-		/obj/item/computer_hardware/card_slot = 40,
-		/obj/item/computer_hardware/network_card/advanced = 20,
+		// modcomp parts
+		/obj/effect/spawner/random/salvage/part/modcomp/three = 80,
+		/obj/effect/spawner/random/salvage/part/modcomp = 20,
+		/obj/effect/spawner/random/salvage/part/modcomp = 20,
 
-		/obj/effect/spawner/random/circuit/computer/common = 50,
-		/obj/effect/spawner/random/circuit/computer/rare = 5,
-
-		/obj/item/research_notes/loot/tiny = 10,
+		// and the main attraction, our circuit board
+		/obj/effect/spawner/random/circuit/computer/mixed = 75
 	)
 
+// AUTOLATHE
+// contains a decent amount of mats and some lathe garbage
 /obj/structure/salvageable/autolathe
 	name = "broken autolathe"
+	desc = "Older models of autolathe were notorious for suffering mechanical failures. Oftentimes, it was cheaper and easier to just buy another than try to fix it. Maybe there's something of worth still jammed inside?"
 	icon_state = "wreck_autolathe"
 	salvageable_parts = list(
+		// materials for the "frame"
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 80,
 		/obj/item/stack/ore/salvage/scraptitanium/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 
+		// stuff used to build autolathes
 		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
 		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
 		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
 		/obj/effect/spawner/random/salvage/part/manipulator = 30,
-
 		/obj/item/circuitboard/machine/autolathe = 35,
 
+		// lathe junk - what was jammed inside?
+		/obj/effect/spawner/random/salvage/autolathe_junk = 80,
+		/obj/effect/spawner/random/salvage/autolathe_junk = 30,
+		/obj/effect/spawner/random/salvage/autolathe_junk = 10,
+
+		// lathe reserves (more substantial mats)
 		/obj/item/stack/sheet/metal/five = 10,
+		/obj/item/stack/sheet/metal/five = 10,
+		/obj/item/stack/sheet/glass/five = 10,
 		/obj/item/stack/sheet/glass/five = 10,
 		/obj/item/stack/sheet/plastic/five = 10,
 		/obj/item/stack/sheet/plasteel/five = 10,
@@ -123,36 +145,44 @@
 		/obj/item/stack/sheet/mineral/gold/five = 10,
 		/obj/item/stack/sheet/mineral/plasma/five = 10,
 		/obj/item/stack/sheet/mineral/uranium/five = 5,
-		/obj/item/stack/sheet/mineral/diamond/five = 1,
-	)
+		/obj/item/stack/sheet/mineral/diamond/five = 1)
 
 /obj/structure/salvageable/protolathe
 	name = "broken protolathe"
+	desc = "A high-end fabrication machine for producing specialized components. Or, at least it used to be. You may be able to find something of worth within the wreckage."
 	icon_state = "wreck_protolathe"
 	salvageable_parts = list(
+		// materials
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 80,
 		/obj/item/stack/ore/salvage/scrapplasma/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 
+		// stock parts
 		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
 		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
 		/obj/effect/spawner/random/salvage/part/manipulator = 30,
 		/obj/effect/spawner/random/salvage/part/manipulator = 30,
 
-		/obj/effect/spawner/random/engineering/tool = 45,
+		// protolathe special spawns
 		/obj/effect/spawner/random/medical/surgery_tool = 55,
+		/obj/effect/spawner/random/engineering/tool = 45,
 		/obj/effect/spawner/random/medical/beaker = 45,
+		/obj/effect/spawner/random/medical/chem_jug = 30,
 		/obj/effect/spawner/random/medical/prosthetic = 25,
 		/obj/effect/spawner/random/salvage/prolathe/gun = 5, //:flushed:
 		/obj/effect/spawner/random/salvage/prolathe/ammo = 5,
 
+		// part replacers
 		/obj/item/storage/part_replacer = 20,
 		/obj/item/storage/part_replacer/bluespace = 1,
+
+		// mop meme
 		/obj/item/mop = 20,
 		/obj/item/mop/advanced = 1, // the holy grail
 
-		/obj/item/stack/sheet/metal/five = 15, //the point isnt the materials in the protolathe wreckage but you can still get them for flavor and stuff
+		// material reserves
+		/obj/item/stack/sheet/metal/five = 15,
 		/obj/item/stack/sheet/glass/five = 15,
 		/obj/item/stack/sheet/plastic/five = 15,
 		/obj/item/stack/sheet/plasteel/five = 15,
@@ -191,7 +221,7 @@
 
 /obj/structure/salvageable/destructive_analyzer
 	name = "broken destructive analyzer"
-	desc = "If this thing could power up, it would probably slice you in half. You may be able to salvage something from this." //this ones pretty dangerous
+	desc = "A hefty analysis machine containing very strong laser emitter. If this thing could power up, it would probably slice you in half. Maybe there's something inside that's worth the risk?." //this ones pretty dangerous
 	icon_state = "wreck_d_analyzer"
 	salvageable_parts = list(
 		/obj/item/stack/sheet/glass/two = 80,
@@ -201,7 +231,7 @@
 		/obj/item/stack/ore/salvage/scrapplasma = 60,
 
 		/obj/effect/spawner/random/salvage/part/scanning = 40,
-		/obj/effect/spawner/random/salvage_laser = 30,
+		/obj/effect/spawner/random/salvage/part/laser = 30,
 		/obj/effect/spawner/random/salvage/part/manipulator = 30,
 
 		/obj/item/storage/toolbox/syndicate/empty = 80,
@@ -241,6 +271,7 @@
 
 /obj/structure/salvageable/server
 	name = "broken server"
+	desc = "A nearly-destroyed server rack. Maybe there is still usable hardware inside?"
 	icon_state = "wreck_server"
 	salvageable_parts = list(
 		/obj/item/stack/sheet/glass/two = 80,
@@ -248,10 +279,6 @@
 		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 		/obj/item/stack/ore/salvage/scrapbluespace = 60,
-
-		/obj/item/research_notes/loot/tiny = 50,
-		/obj/item/research_notes/loot/medium = 20,
-		/obj/item/research_notes/loot/big = 5, //you have a chance at summoning god damn ripley lobster from this thing, might as well
 
 		/obj/item/disk/tech_disk = 20,
 		/obj/item/disk/data = 20,
@@ -301,6 +328,7 @@
 
 /obj/structure/salvageable/safe_server //i am evil and horrible and i don't deserve to touch code
 	name = "broken server"
+	desc = "A nearly-destroyed server rack. Maybe there is still usable hardware inside?"
 	icon_state = "wreck_server"
 	salvageable_parts = list(
 		/obj/item/stack/sheet/glass/two = 80,
@@ -308,10 +336,6 @@
 		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 		/obj/item/stack/ore/salvage/scrapbluespace = 60,
-
-		/obj/item/research_notes/loot/tiny = 50,
-		/obj/item/research_notes/loot/medium = 20,
-		/obj/item/research_notes/loot/big = 5,
 
 		/obj/item/disk/tech_disk = 20,
 		/obj/item/disk/data = 20,
@@ -412,7 +436,7 @@
 		/obj/effect/spawner/random/salvage/part/scanning = 50,
 		/obj/effect/spawner/random/salvage/part/scanning = 50,
 		/obj/item/weaponcrafting/receiver = 40,
-		/obj/effect/spawner/random/salvage_laser = 40,
+		/obj/effect/spawner/random/salvage/part/laser = 40,
 		/obj/item/storage/toolbox/ammo = 40,
 	)
 
@@ -508,3 +532,9 @@
 
 /obj/item/stack/ore/salvage/scrapbluespace/five
 	amount = 5
+
+/obj/item/gpu
+	name = "high power GPU"
+	desc = "A large, powerful graphics card for use in high-end computer systems. It seems to be in pretty good condition, given its surroundings."
+	icon = 'icons/obj/module.dmi'
+	icon_state = "card_mod" // it looks like a gpu, vaguely
