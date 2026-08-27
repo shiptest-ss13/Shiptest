@@ -249,7 +249,6 @@
 	name = "box of 3x20mm dart magazines"
 	desc = "A box of long 2x15mm dart magazines, for the Vector gauss rifle."
 	icon_state = "3x20box"
-	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/box/ammo/c320/PopulateContents()
 	var/static/items_inside = list(
