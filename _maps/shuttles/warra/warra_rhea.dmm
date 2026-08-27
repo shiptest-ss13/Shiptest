@@ -4507,13 +4507,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/storage/eva)
-"pv" = (
-/obj/structure/sign/number/random{
-	color = "Black";
-	pixel_y = -8
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/security/armory)
 "pw" = (
 /obj/effect/turf_decal/trimline/transparent/warrabluelight/filled/line{
 	dir = 1
@@ -5144,6 +5137,13 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/security)
+"rz" = (
+/obj/structure/sign/number/random{
+	color = "Black";
+	pixel_y = -8
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/security/armory)
 "rB" = (
 /obj/effect/turf_decal/borderfloor/full{
 	layer = 2.030
@@ -5314,25 +5314,25 @@
 	pixel_y = 4;
 	pixel_x = -3
 	},
-/obj/item/gun/ballistic/revolver/rhino/no_mag{
-	pixel_y = 4
-	},
 /obj/effect/turf_decal/corner/transparent/warrabluelight/border{
 	dir = 8
 	},
-/obj/item/ammo_box/a357/empty{
-	pixel_y = -8;
-	pixel_x = 8
-	},
-/obj/item/ammo_box/a357/empty{
-	pixel_y = -8;
-	pixel_x = 8
-	},
-/obj/item/ammo_box/a357/empty{
-	pixel_y = -8;
-	pixel_x = 8
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/revolver/rhino/empty{
+	pixel_y = -4
+	},
+/obj/item/ammo_box/a357/empty{
+	pixel_y = -8;
+	pixel_x = 8
+	},
+/obj/item/ammo_box/a357/empty{
+	pixel_y = -8;
+	pixel_x = 8
+	},
+/obj/item/ammo_box/a357/empty{
+	pixel_y = -8;
+	pixel_x = 8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/breakroom/command)
 "si" = (
@@ -15417,7 +15417,7 @@ uu
 uu
 uu
 uu
-pv
+rz
 NP
 "}
 (17,1,1) = {"
@@ -15455,7 +15455,7 @@ KX
 rh
 Vz
 Bh
-pv
+rz
 NP
 "}
 (18,1,1) = {"
@@ -15493,7 +15493,7 @@ Xg
 gn
 xV
 hS
-pv
+rz
 NP
 "}
 (19,1,1) = {"
@@ -15531,7 +15531,7 @@ Ot
 MS
 xV
 xe
-pv
+rz
 NP
 "}
 (20,1,1) = {"
