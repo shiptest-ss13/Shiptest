@@ -56,7 +56,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	///Changes depending on outcome.
 	var/end_sound = 'sound/machines/defib_success.ogg'
 	///Amount healed per second
-	var/heal_amount = -3
+	var/heal_amount = -4
 	///What gets dropped when dropContents() is called.
 	var/list/subset
 	///Total damage calculated by heal_tick()
@@ -66,8 +66,8 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	name = "generic autodoc procedure"
 	desc = "Waow just like Falout New Vegas"
 	illustration = "autodoc"
-	var/heal_flags = DO_BRUTE
-	var/uses = 1
+	var/heal_flags = 0
+	var/uses = 0
 
 /obj/item/disk/autodoc/test
 	name = "everything disk"
@@ -100,7 +100,9 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	. = ..()
 	if(heal_flags)
 		. += span_notice("The following procedures are stored on the disk: [get_heal_flags_string()]")
-	if(uses)
+	if(!uses)
+		. += span_info("It has 0 uses left.")
+	else
 		. += span_info("It has [uses] uses left.")
 
 /obj/machinery/autodoc/examine(mob/user)
@@ -115,7 +117,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 			. += span_info("Alt-click to eject [icon2html(proc_disk, user)] [proc_disk].")
 	else
 		. += span_notice("There is no procedure disk inserted.")
-	if(patient)
+	if(patient && user.Adjacent(src))
 		healthscan(user, patient, FALSE, FALSE)
 
 //Insert procedure disk
@@ -177,6 +179,25 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	if(occupant)
 		dropContents(subset)
 		subset -= occupant
+
+/obj/machinery/autodoc/MouseDrop_T(mob/living/carbon/target, mob/user)
+	if(!istype(target) || user.incapacitated() || !target.Adjacent(user) || !Adjacent(user) || !ismob(target) || (!ishuman(user) && !iscyborg(user)) || !istype(user.loc, /turf) || target.buckled)
+		return
+
+	if(!state_open)
+		to_chat(user, span_warning("[src] needs to be opened first!"))
+		return
+
+	if(target == user)
+		user.visible_message(span_notice("[user] climbs into [src]."), \
+		span_notice("You climb into [src]."))
+	else
+		user.visible_message(span_notice("[user] inserts [target] into [src]."), \
+		span_notice("You insert [target] into [src]."))
+	close_machine(target)
+	LAZYADD(subset, occupant)
+
+
 
 /obj/machinery/autodoc/update_icon_state()
 	if(!is_operational)
@@ -397,6 +418,14 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	///Whether we're ignoring cost.
 	var/free = FALSE
 
+	//Basic procedures = Brute, Burn, etc.
+	//Complex procedures = Revival, Wounds, and Clone (is that even used anywhere?)
+	//Organ repair has a higher cost to incentivise prosthetic use. Oxygen recovery is cheaper because it's Ephemeral.
+	var/cost_basic = 250
+	var/cost_complex = 500
+	var/cost_organs = 800
+	var/cost_oxy = 100
+
 /obj/machinery/autodoc_vendor/ui_interact(mob/user, datum/tgui/ui)
 	if(machine_stat & BROKEN)
 		return
@@ -412,23 +441,18 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	data["cost"] = adjust_cost()
 	data["free"] = free
 
-	var/mob/living/carbon/human/carbon
-	var/obj/item/card/bank/card
 	if(ishuman(user))
-		carbon = user
-		card = carbon.get_bankcard()
+		var/mob/living/carbon/human/carbon = user
+		var/obj/item/card/bank/card = carbon.get_bankcard()
 		if(card && card.registered_account)
 			data["user"] = list()
 			data["user"]["name"] = card.registered_account.account_holder
 			data["user"]["cash"] = card.registered_account.account_balance
 
-	//Basic procedures = Brute, Burn, etc.
-	//Complex procedures = Revival, Wounds, and Clone (is that even used anywhere?)
-	//Organ repair has a higher cost to incentivise prosthetic use. Oxygen recovery is cheaper because it's Ephemeral.
-	data["cost_basic"] = 250
-	data["cost_complex"] = 500
-	data["cost_organs"] = 800
-	data["cost_oxy"] = 100
+	data["cost_basic"] = cost_basic
+	data["cost_complex"] = cost_complex
+	data["cost_organs"] = cost_organs
+	data["cost_oxy"] = cost_oxy
 
 	data["do_brute"] = DO_BRUTE
 	data["do_burn"] = DO_BURN
@@ -443,31 +467,61 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 
 /obj/machinery/autodoc_vendor/ui_act(action, params)
 	. = ..()
-	var/toggle = text2num(params["toggle"])
-	var/flag = text2num(params["flag"])
-	var/adjustcost = text2num(params["adjustcost"])
+	var/custom_clicksound = 'sound/machines/terminal_prompt_deny.ogg'
+
 	if(.)
 		return
 
 	switch(action)
 		if("toggle-procedure")
-			if(toggle == TRUE)
+			var/flag = text2num(params["flag"])
+			var/toggle = text2num(params["toggle"])
+			var/adjustcost = text2num(params["adjustcost"])
+			custom_clicksound = 'sound/machines/terminal_select.ogg'
+			if(toggle)
 				heal_flags &= ~flag
 				adjust_cost(-adjustcost)
-			if(toggle == FALSE)
+			else
 				heal_flags |= flag
 				adjust_cost(adjustcost)
 			. = TRUE
+
 		if("less-uses")
 			if(uses > 1)
+				custom_clicksound = 'sound/machines/terminal_select.ogg'
 				uses--
 				adjust_cost()
 				. = TRUE
 		if("more-uses")
 			if(uses < 12)
+				custom_clicksound = 'sound/machines/terminal_select.ogg'
 				uses++
 				adjust_cost()
 				. = TRUE
+
+		if("print")
+			var/canafford = text2num(params["canafford"])
+			if(canafford && heal_flags > 0)
+				custom_clicksound = 'sound/machines/pda_button1.ogg'
+				var/obj/item/disk/autodoc/printed_disk = new /obj/item/disk/autodoc(get_turf(src))
+				var/mob/living/carbon/human/carbon = usr
+				var/obj/item/card/bank/card = carbon.get_bankcard()
+
+				printed_disk.heal_flags = heal_flags
+				printed_disk.uses = uses
+				if(card)
+					var/datum/bank_account/account = card.registered_account
+					account.adjust_money(-cost, CREDIT_LOG_VENDOR_PURCHASE)
+					log_econ("[cost] credits were spent by [carbon] on an AutoDoc procedure disk.")
+				if(usr.CanReach(src) && usr.put_in_hands(printed_disk))
+					to_chat(usr, span_notice("You take [printed_disk.name] out of the slot."))
+				else
+					to_chat(usr, span_warning("[printed_disk.name] falls onto the floor!"))
+			else if(!heal_flags)
+				say("No procedures selected.")
+			else
+				say("User funds insufficient.")
+	play_click_sound(custom_clicksound)
 
 /obj/machinery/autodoc_vendor/proc/adjust_cost(amount)
 	if(amount)

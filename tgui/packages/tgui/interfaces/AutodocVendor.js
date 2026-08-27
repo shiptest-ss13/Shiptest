@@ -1,5 +1,6 @@
 import { useBackend } from '../backend';
 import { Button, LabeledList, Section, Box } from '../components';
+import { ButtonConfirm } from '../components/Button';
 import { Window } from '../layouts';
 
 export const AutodocVendor = (props, context) => {
@@ -36,11 +37,11 @@ export const AutodocVendor = (props, context) => {
   let toggle_organs = heal_flags & do_organs ? 1 : 0;
   let toggle_revive = heal_flags & do_revive ? 1 : 0;
 
-  let costColor;
-  if (user && user.cash > cost) {
-    costColor = 'good';
+  let canAfford;
+  if ((user && user.cash > cost) || free) {
+    canAfford = 1;
   } else {
-    costColor = 'bad';
+    canAfford = 0;
   }
   return (
     <Window width={270} height={500}>
@@ -176,16 +177,16 @@ export const AutodocVendor = (props, context) => {
         <Section title={'Print'}>
           <LabeledList>
             {!free && (
-              <LabeledList.Item label="Cost" color={costColor}>
+              <LabeledList.Item label="Cost" color={canAfford ? 'good' : 'bad'}>
                 {cost}
                 {' credits'}
               </LabeledList.Item>
             )}
             <LabeledList.Item>
-              <Button
+              <ButtonConfirm
                 content="Print"
                 icon="floppy-disk"
-                onClick={() => act('print')}
+                onClick={() => act('print', { 'canafford': canAfford })}
               />
             </LabeledList.Item>
           </LabeledList>
