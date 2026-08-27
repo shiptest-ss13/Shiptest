@@ -62,7 +62,7 @@
 
 /obj/item/ammo_box/magazine/cs_gauss/rifle
 	name = "gauss box (3x20mm Deu'Sha)"
-	desc = "A stamped 30-round magazine combined with a limited-use cell. \"PLEASE RECYCLE ME :)\" is engraved into the flip-side. 3x20mm Deu'Sha does low damage and relies on volume of fire."
+	desc = "A stamped 40-round magazine combined with a limited-use cell. \"PLEASE RECYCLE ME :)\" is engraved into the flip-side. 3x20mm Deu'Sha does low damage and relies on volume of fire."
 	icon_state = "vector_mag"
 	ammo_type = /obj/item/ammo_casing/caseless/gauss/deusha
 	caliber = "these"
