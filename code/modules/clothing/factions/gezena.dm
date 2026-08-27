@@ -163,7 +163,7 @@
 
 /obj/item/clothing/suit/space/gezena/marine/raider
 	name = "marine raider suit"
-	desc = "Designed with mobility and protection in mind, the EVA capable 'Arawna' skirmisher suit has become the default armor configuration of the PGF Marine Raiders."
+	desc = "Designed with mobility and protection in mind, the EVA capable 'Arawna' skirmisher suit has become the preferred armor configuration of the PGF Marine Raiders."
 	icon_state = "marineraidersuit"
 	item_state = "marineraidersuit"
 	slowdown = 0
