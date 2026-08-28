@@ -421,7 +421,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 				id = airlockDOOR.id_tag
 			if(id == tag)
 				INVOKE_ASYNC(DOOR, TYPE_PROC_REF(/obj/machinery/door, open_and_lock))
-				DOOR.lock()
+				continue
 
 		INVOKE_ASYNC(DOOR, TYPE_PROC_REF(/obj/machinery/door, close_and_lock))
 

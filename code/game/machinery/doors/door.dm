@@ -57,7 +57,7 @@
 	var/safety_mode = FALSE
 	///Whether or not the door can crush mobs.
 	var/can_crush = TRUE
-	///Will this be triggered by close_and_lock()? This only affects burglar alarms.
+	///Will the door be triggered by open/close_and_lock()?
 	var/close_exception = FALSE
 
 
@@ -403,9 +403,8 @@
 /obj/machinery/door/proc/close_and_lock()
 	if(close_exception)
 		return
-	else
-		unlock()
-		close()
+	unlock()
+	close()
 	if(density)
 		lock()
 
