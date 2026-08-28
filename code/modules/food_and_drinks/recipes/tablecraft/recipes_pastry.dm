@@ -253,3 +253,12 @@
 	)
 	result = /obj/item/food/honeybun
 	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/hotcrossbun
+	name = "Hot cross bun"
+	reqs = list(
+		/obj/item/food/bread/plain = 1,
+		/datum/reagent/consumable/sugar = 1
+	)
+	result = /obj/item/food/hotcrossbun
+	subcategory = CAT_PASTRY

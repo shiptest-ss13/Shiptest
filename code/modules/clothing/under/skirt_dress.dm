@@ -19,12 +19,14 @@
 	desc = "A silky black satin dress, traditionally made for dancing. It's light and easy to move in."
 	icon_state = "black_tango"
 	item_state = "wcoat"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/dress/striped
 	name = "striped dress"
 	desc = "A simple blue striped dress."
 	icon_state = "striped_dress"
 	item_state = "striped_dress"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/dress/sailor
 	name = "sailor dress"
@@ -37,17 +39,20 @@
 	desc = "Fancy dress for space bar singers."
 	icon_state = "red_evening_gown"
 	item_state = "red_evening_gown"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/dress/one_shoulder
 	name = "one shoulder dress"
 	desc = "A modern black dress with only one shoulder strap. Comes with a matching pair of arm warmers."
 	icon_state = "one_shoulder_dress"
 	roll_sleeves = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/dress/iko_ikssoal
 	name = "iko ikssoal"
 	desc = "The “iko-ikssoal”, translating to “long-dress”, is a traditional Kalixcian garment for formal gatherings."
 	icon_state = "iko_ikssoal"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/dress/skirt/color
 	name = "black skirt"
@@ -84,6 +89,7 @@
 	desc = "It's really just an apron that one wears over a shirt or dress. This one is black."
 	icon_state = "black_pinafore"
 	roll_sleeves = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/dress/skirt/pinafore/maroon
 	name = "maroon pinafore"
@@ -121,3 +127,4 @@
 	desc = "A breezy white dress."
 	icon_state = "white_dress"
 	item_state = "white_dress"
+	supports_variations = DIGITIGRADE_VARIATION
