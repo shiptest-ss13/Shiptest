@@ -1106,53 +1106,54 @@
 	faction_locked = TRUE
 
 //snowflaked cybersun scarborough market because why not
+//they get a slight surcharge to encourage using their weapons
 
-/datum/supply_pack/gun/sidewinder
+/datum/supply_pack/gun/cs_sidewinder
 	name = "Sidewinder PDW Crate"
 	desc = "Contains a Sidewinder PDW produced by Scarborough Arms and chambered in 5.7mm for armor-piercing capabilities."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/sidewinder)
 	crate_name = "SMG crate"
 	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 0
+	faction_discount = -10
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/c20r
+/datum/supply_pack/gun/cs_c20r
 	name = "C-20r 'Cobra' SMG Crate"
 	desc = "Contains a military variant of the Cobra SMG, chambered in .45 with an integrated suppressor."
-	cost = 2800 // 100 more than the civ variant (counting it's discount), because they are literally the same right now.
+	cost = 2800
 	contains = list(/obj/item/storage/guncase/c20r)
 	crate_name = "SMG crate"
 	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 0
+	faction_discount = -10
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/rattlesnake
+/datum/supply_pack/gun/cs_rattlesnake
 	name = "Rattlesnake Machinepistol Crate"
 	desc = "Contains an automatic machinepistol produced by Scarborough Arms, chambered in 9mm."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/rattlesnake)
 	crate_name = "Machinepistol crate"
 	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 0
+	faction_discount = -10
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/gaboon
+/datum/supply_pack/gun/cs_gaboon
 	name = "Gaboon Compact Shotgun Crate"
 	desc = "A pump action shotgun chambered in 12ga produced by Scarborough Arms."
 	contains = list(/obj/item/storage/guncase/gaboon)
 	cost = 2000
 	crate_name = "shotgun crate"
 	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 0
+	faction_discount = -10
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/boomslang10
+/datum/supply_pack/gun/cs_boomslang10
 	name = "MSR-90 'Boomslang' Sniper Rifle Crate"
 	desc = "Contains a military variant of the Boomslang Sniper rifle equipped with an 8x sniper scope, for licenesed buyers only. Chambered in the powerful 6.5mm CLIP cartridge."
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/boomslangmilitary)
 	crate_name = "marksman rifle crate"
 	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 0
+	faction_discount = -10
 	faction_locked = TRUE

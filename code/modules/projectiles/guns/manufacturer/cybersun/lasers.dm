@@ -152,7 +152,7 @@
 
 /obj/item/gun/energy/cybersun/anode
 	name = "\improper IT41 Anode"
-	desc = "Cybersun's attempt at replacing Sidewinders within its stocks, the Anode is an ionization PDW, utilizing a heavier 'painter' light to allow for the creation of multiple armor-penetrating plasma beams per second."
+	desc = "Tadeusz Armory's attempt at replacing Cybersun's Sidewinder stocks, the Anode is an ionization PDW, utilizing a heavier 'painter' light to allow for the creation of multiple armor-penetrating plasma beams per second."
 
 	icon_state = "anode"
 	item_state = "anode"
