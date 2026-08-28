@@ -397,27 +397,13 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		ModifyFiredoors(FALSE)
 
 /**
- * Close and lock a door passed into this proc
- *
- * Does this need to exist on area? probably not
- */
-/area/proc/close_and_lock_door(obj/machinery/door/DOOR)
-	set waitfor = FALSE
-	if(DOOR.close_exception)
-		return
-	else
-		DOOR.close()
-	if(DOOR.density)
-		DOOR.lock()
-
-/**
  * Raise a burglar alert for this area
  *
  * Close and locks all doors in the area and alerts silicon mobs of a break in
  *
  * Alarm auto resets after 600 ticks
  */
-/area/proc/burglaralert(obj/trigger)
+/area/proc/burglaralert(obj/trigger, tag)
 	if(always_unpowered) //no burglar alarms in space/asteroid
 		return
 
@@ -425,7 +411,19 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	set_fire_alarm_effect()
 	//Lockdown airlocks
 	for(var/obj/machinery/door/DOOR in src)
-		close_and_lock_door(DOOR)
+		if(tag)
+			var/id
+			if(istype(DOOR, /obj/machinery/door/poddoor))
+				var/obj/machinery/door/poddoor/shutterDOOR = DOOR
+				id = shutterDOOR.id
+			if(istype(DOOR, /obj/machinery/door/airlock))
+				var/obj/machinery/door/airlock/airlockDOOR = DOOR
+				id = airlockDOOR.id_tag
+			if(id == tag)
+				INVOKE_ASYNC(DOOR, TYPE_PROC_REF(/obj/machinery/door, open_and_lock))
+				DOOR.lock()
+
+		INVOKE_ASYNC(DOOR, TYPE_PROC_REF(/obj/machinery/door, close_and_lock))
 
 	for(var/obj/structure/hazard/hazards in src)
 		hazards.alarm()

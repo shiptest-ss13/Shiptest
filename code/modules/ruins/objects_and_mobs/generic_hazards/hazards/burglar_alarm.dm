@@ -12,7 +12,7 @@
 
 /obj/structure/hazard/floor/burglar_alarm/contact()
 	var/area/alarmed = get_area(src)
-	alarmed.burglaralert(src)
+	alarmed.burglaralert(src, id)
 	playsound(src, 'sound/machines/click.ogg', 60, TRUE)
 	playsound(src, 'sound/effects/alert.ogg', 50, TRUE)
 	say(intruder_message)
