@@ -53,7 +53,7 @@
 
 
 	spread = 6 //becuase its compact, spread is slightly worse
-	spread_unwielded = 9
+	spread_unwielded = 6
 	recoil_unwielded = 2
 
 NO_MAG_GUN_HELPER(automatic/pistol/ringneck)
@@ -68,7 +68,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck)
 	w_class = WEIGHT_CLASS_NORMAL
 
 	spread = 5 //this one is normal sized, thus in theory its better, in theory at least
-	spread_unwielded = 7
+	spread_unwielded = 5
 	recoil_unwielded = 3
 
 NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
@@ -184,7 +184,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	fire_delay = 0.35 SECONDS
 
 	spread = 3
-	spread_unwielded = 8
+	spread_unwielded = 3
 	recoil = 1
 	recoil_unwielded = 2
 
@@ -299,7 +299,6 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	wear_rate = 1.5
 
 	recoil = 0.5
-	recoil_unwielded = 3
 	burst_size = 2
 	burst_delay = 0.07 SECONDS
 	fire_delay = 0.1 SECONDS
@@ -391,7 +390,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	spread = -2
 	recoil = -2
 	recoil_unwielded = -2
-	spread_unwielded = 0
+	spread_unwielded = -2
 	wield_slowdown = 0
 
 NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
