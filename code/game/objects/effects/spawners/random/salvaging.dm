@@ -55,8 +55,8 @@
 		/obj/item/stock_parts/subspace/crystal = 10,
 		/obj/item/stock_parts/subspace/transmitter = 10)
 
-/obj/effect/spawner/random/salvage/part/tcomms/two
-	spawn_loot_count = 2
+/obj/effect/spawner/random/salvage/part/tcomms/three
+	spawn_loot_count = 3
 
 // modular computers parts
 /obj/effect/spawner/random/salvage/part/modcomp
@@ -169,38 +169,106 @@
 		/obj/effect/spawner/random/salvage/autolathe_weird = 1)
 
 // BROKEN PROTOLATHE //
-// the gun pool here is mostly geared towards sidearms/smgs
+// gun pool. sidearms / eoehomas
 /obj/effect/spawner/random/salvage/prolathe/gun
 	icon_state = "laser_gun"
 	loot = list(
-		/obj/item/gun/energy/lasercannon = 1,
-		/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber = 1,
-		/obj/item/gun/energy/temperature/security = 1)
+		// eoehomas
+		/obj/item/gun/energy/laser/e10 = 5,
+		/obj/item/gun/energy/laser = 5, // this is an e20 believe it or not
+		// sharplites
+		/obj/item/gun/energy/sharplite/ohm = 5,
+		/obj/item/gun/energy/sharplite/volt = 5,
+		// advantage
+		/obj/item/gun/ballistic/automatic/pistol/challenger = 5,
+		/obj/item/gun/ballistic/automatic/pistol/champion = 5,
+		// scarborough
+		/obj/item/gun/ballistic/automatic/pistol/ringneck = 5,
+		/obj/item/gun/ballistic/automatic/pistol/ringneck/indie = 5,
+		// clip
+		/obj/item/gun/ballistic/automatic/pistol/cm70 = 5,
+		/obj/item/gun/ballistic/automatic/pistol/cm357 = 5)
 
+// mags for the guns you get out of protolathes
 /obj/effect/spawner/random/salvage/prolathe/ammo
 	icon_state = "rubbershot"
 	loot = list(
+		// energy
+		/obj/item/stock_parts/cell/gun = 5,
 		/obj/item/stock_parts/cell/gun/upgraded = 5,
-		/obj/item/ammo_box/magazine/m9mm_expedition = 7)
+		/obj/item/stock_parts/cell/gun/sharplite = 5,
+		/obj/item/stock_parts/cell/gun/sharplite/mini = 5,
+		/obj/item/stock_parts/cell/gun/sharplite/plus = 5,
+		// ballistic
+		/obj/item/ammo_box/magazine/co9mm = 5,
+		/obj/item/ammo_box/magazine/m10mm_ringneck = 5,
+		/obj/item/ammo_box/magazine/m9mm_cm70 = 5,
+		/obj/item/ammo_box/magazine/cm357 = 5)
 
-// DESTRUCTIVE ANALYZER
-/obj/effect/spawner/random/salvage/destructive_analyzer
+// DESTRUCTIVE ANALYZER //
+// loosely based on sciency objects people might want to analyze or research
+
+// gadgets (basically the old pool)
+/obj/effect/spawner/random/salvage/analyzer/gadget
 	loot = list(
-			/obj/item/storage/toolbox/syndicate/empty = 650,
-			/obj/item/gun/ballistic/automatic/pistol/ringneck = 500,
-			/obj/item/camera_bug = 500,
-			/obj/item/clothing/gloves/combat = 200,
-			/obj/item/clothing/head/chameleon = 200,
-			/obj/item/pen/sleepy = 200,
-			/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis = 100,
-			/obj/item/grenade/c4 = 100,
+		/obj/item/camera_bug = 10,
+		/obj/item/clothing/head/chameleon = 10,
+		/obj/item/pen/sleepy = 10,
+		/obj/item/grenade/c4 = 10,
+		/obj/item/bombcore = 5)
 
-			/obj/item/wrench/syndie = 30,
-			/obj/item/screwdriver/nuke = 30,
-			/obj/item/crowbar/syndie = 30,
-			/obj/item/wirecutters/syndie = 30,
-			/obj/item/multitool/syndie = 30,
-		)
+// drugs and medical
+/obj/effect/spawner/random/salvage/analyzer/medical
+	loot = list(
+		/obj/item/reagent_containers/hypospray/medipen/survival = 10,
+		/obj/item/reagent_containers/hypospray/medipen/mammoth = 10,
+		/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis = 10,
+		/obj/item/reagent_containers/hypospray/medipen/combat_drug = 10,
+		/obj/item/hypospray/mkii = 5,
+		/obj/item/hypospray/mkii/mkiii = 5)
+
+// anomaly cores
+/obj/effect/spawner/random/salvage/analyzer/anomaly_core
+	loot = list(
+		/obj/item/assembly/signaler/anomaly/bluespace = 10,
+		/obj/item/assembly/signaler/anomaly/flux = 10,
+		/obj/item/assembly/signaler/anomaly/grav = 10,
+		/obj/item/assembly/signaler/anomaly/hallucination = 10,
+		/obj/item/assembly/signaler/anomaly/heartbeat = 10,
+		/obj/item/assembly/signaler/anomaly/melter = 10,
+		/obj/item/assembly/signaler/anomaly/phantom = 10,
+		/obj/item/assembly/signaler/anomaly/plasmasoul = 10,
+		/obj/item/assembly/signaler/anomaly/pyro = 10,
+		/obj/item/assembly/signaler/anomaly/sparkler = 10,
+		/obj/item/assembly/signaler/anomaly/tvstatic = 10,
+		/obj/item/assembly/signaler/anomaly/transfusion = 10,
+		/obj/item/assembly/signaler/anomaly/veins = 10,
+		/obj/item/assembly/signaler/anomaly/vortex = 10)
+
+// gems! weighted towards the cheaper ones
+/obj/effect/spawner/random/salvage/analyzer/gem_alarm
+	loot = list(
+		/obj/item/gem/rupee = 60,
+		/obj/item/gem/fdiamond = 40,
+		/obj/item/strange_crystal = 35,
+		/obj/item/gem/amber = 15,
+		/obj/item/gem/bloodstone = 5,
+		/obj/item/gem/phoron = 3,
+		/obj/item/gem/void = 1)
+
+// fucked up shit
+/obj/effect/spawner/random/salvage/analyzer/evil
+	loot = list(
+		/obj/machinery/syndicatebomb/live_fucking_bomb = 10,
+		/obj/effect/anomaly/tvstatic/planetary = 10)
+
+/obj/effect/spawner/random/salvage/analyzer
+	loot = list(
+		/obj/effect/spawner/random/salvage/analyzer/gadget = 25,
+		/obj/effect/spawner/random/salvage/analyzer/medical = 25,
+		/obj/effect/spawner/random/salvage/analyzer/gem_alarm = 2,
+		/obj/effect/spawner/random/salvage/analyzer/anomaly_core = 2,
+		/obj/effect/spawner/random/salvage/analyzer/evil = 1)
 
 /obj/effect/spawner/random/salvage/machine
 	name = "salvageable machine spawner"
@@ -212,8 +280,7 @@
 		/obj/structure/salvageable/machine,
 		/obj/structure/salvageable/autolathe,
 		/obj/structure/salvageable/computer,
-		/obj/structure/salvageable/destructive_analyzer
-	)
+		/obj/structure/salvageable/destructive_analyzer)
 
 // MATERIALS
 /obj/effect/spawner/random/salvage
@@ -227,8 +294,7 @@
 		/obj/item/stack/ore/salvage/scrapsilver,
 		/obj/item/stack/ore/salvage/scraptitanium,
 		/obj/item/stack/ore/salvage/scrapbluespace,
-		/obj/item/stack/ore/salvage/scrapuranium
-	)
+		/obj/item/stack/ore/salvage/scrapuranium)
 
 /obj/effect/spawner/random/salvage/half
 	name = "50% salvage spawner"
@@ -237,49 +303,29 @@
 		/obj/effect/spawner/random/maintenance,
 		/obj/effect/spawner/random/salvage/machine,
 		/obj/effect/spawner/random/exotic/ripley,
-		/obj/structure/closet/crate/secure/loot,
-	)
+		/obj/structure/closet/crate/secure/loot)
 
 /obj/effect/spawner/random/salvage/ore/Initialize()
-	spawn_loot_count = pick(list(
-		1,
-		2,
-		3,
-		4
-	))
+	spawn_loot_count = rand(1, 4)
 	return ..()
 
 /obj/effect/spawner/random/salvage/ore/metal
-	loot = list(
-		/obj/item/stack/ore/salvage/scrapmetal
-	)
+	loot = list(/obj/item/stack/ore/salvage/scrapmetal)
 
 /obj/effect/spawner/random/salvage/ore/gold
-	loot = list(
-		/obj/item/stack/ore/salvage/scrapgold
-	)
+	loot = list(/obj/item/stack/ore/salvage/scrapgold)
 
 /obj/effect/spawner/random/salvage/ore/plasma
-	loot = list(
-		/obj/item/stack/ore/salvage/scrapplasma
-	)
+	loot = list(/obj/item/stack/ore/salvage/scrapplasma)
 
 /obj/effect/spawner/random/salvage/ore/silver
-	loot = list(
-		/obj/item/stack/ore/salvage/scrapsilver
-	)
+	loot = list(/obj/item/stack/ore/salvage/scrapsilver)
 
 /obj/effect/spawner/random/salvage/ore/titanium
-	loot = list(
-		/obj/item/stack/ore/salvage/scraptitanium
-	)
+	loot = list(/obj/item/stack/ore/salvage/scraptitanium)
 
 /obj/effect/spawner/random/salvage/ore/bluespace
-	loot = list(
-		/obj/item/stack/ore/salvage/scrapbluespace
-	)
+	loot = list(/obj/item/stack/ore/salvage/scrapbluespace)
 
 /obj/effect/spawner/random/salvage/ore/uranium
-	loot = list(
-		/obj/item/stack/ore/salvage/scrapuranium
-	)
+	loot = list(/obj/item/stack/ore/salvage/scrapuranium)

@@ -148,7 +148,7 @@
 		/obj/item/stack/sheet/mineral/diamond/five = 1)
 
 /obj/structure/salvageable/protolathe
-	name = "broken protolathe"
+	name = "broken assembler"
 	desc = "A high-end fabrication machine for producing specialized components. Or, at least it used to be. You may be able to find something of worth within the wreckage."
 	icon_state = "wreck_protolathe"
 	salvageable_parts = list(
@@ -164,21 +164,20 @@
 		/obj/effect/spawner/random/salvage/part/manipulator = 30,
 		/obj/effect/spawner/random/salvage/part/manipulator = 30,
 
-		// protolathe special spawns
+		// protolathe loot pool spawns
 		/obj/effect/spawner/random/medical/surgery_tool = 55,
 		/obj/effect/spawner/random/engineering/tool = 45,
 		/obj/effect/spawner/random/medical/beaker = 45,
 		/obj/effect/spawner/random/medical/chem_jug = 30,
 		/obj/effect/spawner/random/medical/prosthetic = 25,
 		/obj/effect/spawner/random/salvage/prolathe/gun = 5, //:flushed:
-		/obj/effect/spawner/random/salvage/prolathe/ammo = 5,
+		/obj/effect/spawner/random/salvage/prolathe/ammo = 10,
 
 		// part replacers
 		/obj/item/storage/part_replacer = 20,
 		/obj/item/storage/part_replacer/bluespace = 1,
 
 		// mop meme
-		/obj/item/mop = 20,
 		/obj/item/mop/advanced = 1, // the holy grail
 
 		// material reserves
@@ -195,23 +194,28 @@
 
 /obj/structure/salvageable/circuit_imprinter
 	name = "broken circuit imprinter"
+	desc = "A machine that, at one point, was able to engrave circuit boards. Maybe you can find a few boards inside that aren't broken."
 	icon_state = "wreck_circuit_imprinter"
 	salvageable_parts = list(
+		// materials
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 80,
 		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 		/obj/item/stack/ore/salvage/scrapbluespace = 60,
 
+		// stock parts
 		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
 		/obj/effect/spawner/random/salvage/part/manipulator = 30,
 
-		/obj/item/stack/circuit_stack = 50, //this might be the only way in the game to get a poly circuit, and the only way for many ships to get essensial electronics. huh.
-		/obj/effect/spawner/random/circuit/machine/mech = 45, //with all the wonderful broken mechs lying around, this might be a chance to get something stupidly overpowered.
-		/obj/effect/spawner/random/circuit/machine/common = 50, //well.... "common"
-		/obj/effect/spawner/random/circuit/machine/rare = 5,
+		// circuit pools
+		/obj/item/stack/circuit_stack = 50,
+		/obj/effect/spawner/random/circuit/machine/mech = 45,
+		/obj/effect/spawner/random/circuit/machine/mixed = 60,
+		/obj/effect/spawner/random/circuit/machine/mixed = 60,
 
-		/obj/item/stack/sheet/metal/five = 15, //same as above but more geared towards stuff used by circuit imprinter
+		// material reserves
+		/obj/item/stack/sheet/metal/five = 15,
 		/obj/item/stack/sheet/glass/five = 15,
 		/obj/item/stack/sheet/mineral/silver/five = 15,
 		/obj/item/stack/sheet/mineral/gold/five = 15,
@@ -221,23 +225,26 @@
 
 /obj/structure/salvageable/destructive_analyzer
 	name = "broken destructive analyzer"
-	desc = "A hefty analysis machine containing very strong laser emitter. If this thing could power up, it would probably slice you in half. Maybe there's something inside that's worth the risk?." //this ones pretty dangerous
+	desc = "A hefty sample analysis machine containing very strong laser emitter. If this thing could power up, it would probably slice you in half. There could be something inside that's worth the risk..." //this ones pretty dangerous
 	icon_state = "wreck_d_analyzer"
 	salvageable_parts = list(
+		// materials
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 80,
 		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 		/obj/item/stack/ore/salvage/scrapplasma = 60,
 
+		// stock parts
 		/obj/effect/spawner/random/salvage/part/scanning = 40,
 		/obj/effect/spawner/random/salvage/part/laser = 30,
 		/obj/effect/spawner/random/salvage/part/manipulator = 30,
 
-		/obj/item/storage/toolbox/syndicate/empty = 80,
-		/obj/effect/spawner/random/salvage/destructive_analyzer = 65,
+		// special destructive analyzer pool
+		/obj/effect/spawner/random/salvage/analyzer = 65,
 
-		/obj/item/stack/sheet/metal/five = 15, //same as above but more geared towards stuff used by circuit imprinter
+		// material reserves
+		/obj/item/stack/sheet/metal/five = 15,
 		/obj/item/stack/sheet/glass/five = 15,
 		/obj/item/stack/sheet/mineral/silver/five = 15,
 		/obj/item/stack/sheet/mineral/gold/five = 15,
@@ -274,33 +281,27 @@
 	desc = "A nearly-destroyed server rack. Maybe there is still usable hardware inside?"
 	icon_state = "wreck_server"
 	salvageable_parts = list(
+		// materials
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 80,
 		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 		/obj/item/stack/ore/salvage/scrapbluespace = 60,
 
+		// disks (for fluff)
 		/obj/item/disk/tech_disk = 20,
 		/obj/item/disk/data = 20,
 		/obj/item/disk/holodisk = 20,
 		/obj/item/disk/plantgene = 20,
 
-		/obj/item/computer_hardware/network_card = 40,
-		/obj/item/computer_hardware/network_card = 40,
-		/obj/item/computer_hardware/processor_unit = 40,
-		/obj/item/computer_hardware/processor_unit = 40,
-		/obj/item/stock_parts/subspace/amplifier = 40,
-		/obj/item/stock_parts/subspace/amplifier = 40,
-		/obj/item/stock_parts/subspace/analyzer = 40,
-		/obj/item/stock_parts/subspace/analyzer = 40,
-		/obj/item/stock_parts/subspace/ansible = 40,
-		/obj/item/stock_parts/subspace/ansible = 40,
-		/obj/item/stock_parts/subspace/transmitter = 40,
-		/obj/item/stock_parts/subspace/transmitter = 40,
-		/obj/item/stock_parts/subspace/crystal = 30,
-		/obj/item/stock_parts/subspace/crystal = 30,
-		/obj/item/computer_hardware/network_card/advanced = 20,
-	)
+		// computer parts
+		/obj/effect/spawner/random/salvage/part/modcomp/three = 60,
+		/obj/effect/spawner/random/salvage/part/modcomp/three = 60,
+		/obj/item/gpu = 5,
+
+		// telecomms parts
+		/obj/effect/spawner/random/salvage/part/tcomms/three = 60,
+		/obj/effect/spawner/random/salvage/part/tcomms/three = 60)
 
 /obj/structure/salvageable/server/dismantle(mob/living/user)
 	. = ..()
@@ -331,33 +332,27 @@
 	desc = "A nearly-destroyed server rack. Maybe there is still usable hardware inside?"
 	icon_state = "wreck_server"
 	salvageable_parts = list(
+		// materials
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 80,
 		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 		/obj/item/stack/ore/salvage/scrapbluespace = 60,
 
+		// disks
 		/obj/item/disk/tech_disk = 20,
 		/obj/item/disk/data = 20,
 		/obj/item/disk/holodisk = 20,
 		/obj/item/disk/plantgene = 20,
 
-		/obj/item/computer_hardware/network_card = 40,
-		/obj/item/computer_hardware/network_card = 40,
-		/obj/item/computer_hardware/processor_unit = 40,
-		/obj/item/computer_hardware/processor_unit = 40,
-		/obj/item/stock_parts/subspace/amplifier = 40,
-		/obj/item/stock_parts/subspace/amplifier = 40,
-		/obj/item/stock_parts/subspace/analyzer = 40,
-		/obj/item/stock_parts/subspace/analyzer = 40,
-		/obj/item/stock_parts/subspace/ansible = 40,
-		/obj/item/stock_parts/subspace/ansible = 40,
-		/obj/item/stock_parts/subspace/transmitter = 40,
-		/obj/item/stock_parts/subspace/transmitter = 40,
-		/obj/item/stock_parts/subspace/crystal = 30,
-		/obj/item/stock_parts/subspace/crystal = 30,
-		/obj/item/computer_hardware/network_card/advanced = 20,
-	)
+		// computer parts
+		/obj/effect/spawner/random/salvage/part/modcomp/three = 60,
+		/obj/effect/spawner/random/salvage/part/modcomp/three = 60,
+		/obj/item/gpu = 5,
+
+		// telecomms parts
+		/obj/effect/spawner/random/salvage/part/tcomms/three = 60,
+		/obj/effect/spawner/random/salvage/part/tcomms/three = 60)
 
 /obj/structure/salvageable/seed
 	name = "ruined seed vendor"
@@ -533,8 +528,97 @@
 /obj/item/stack/ore/salvage/scrapbluespace/five
 	amount = 5
 
+// gpu item. does nothing except sell for quite a lot
 /obj/item/gpu
 	name = "high power GPU"
 	desc = "A large, powerful graphics card for use in high-end computer systems. It seems to be in pretty good condition, given its surroundings."
 	icon = 'icons/obj/module.dmi'
-	icon_state = "card_mod" // it looks like a gpu, vaguely
+	icon_state = "card_mod" // looks like a gpu, vaguely
+
+// RUSTED GUN SAFE //
+// similar to abandoned crates but with more guns and less spewium bees
+/obj/structure/rusted_gun_safe
+	name = "rusted gun safe"
+	desc = "A long-abandoned gun safe. Its dial is firmly corroded in place."
+	icon = 'icons/obj/structures.dmi'
+	icon_state = "safe"
+	anchored = FALSE
+	density = TRUE
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	max_integrity = 400
+	armor = list("melee" = 30, "bullet" = 60, "laser" = 60, "energy" = 100, "bomb" = 20, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 30)
+	drag_slowdown = 2.5
+	color = "#c3a28a" // orange-ish
+
+	var/open = FALSE
+
+/obj/structure/rusted_gun_safe/wrench_act(mob/living/user, obj/item/tool)
+	. = ..()
+	to_chat(user, span_warning("The floor bolts on this safe are completely corroded."))
+
+// common drop pool
+// contains unremarkable guns
+/obj/structure/rusted_gun_safe/proc/drop_common()
+	var/roll = rand(1,100)
+	switch(roll)
+		if(1 to 5)
+			new /obj/item/
+
+// uncommon drop pool
+// contains noteworthy guns
+/obj/structure/rusted_gun_safe/proc/drop_uncommon()
+	var/roll = rand(1,100)
+	switch(roll)
+		if(1 to 5)
+
+// rare drop pool
+// contains rather good guns
+/obj/structure/rusted_gun_safe/proc/drop_rare()
+	var/roll = rand(1,100)
+	switch(roll)
+		if(1 to 5)
+
+// weird drop pool
+// contains weird stuff
+/obj/structure/rusted_gun_safe/proc/drop_weird()
+	var/roll = rand(1,100)
+	switch(roll)
+		if(1)
+			var/juckport = new /obj/item/spacecash/bundle/c1
+			juckport.name = "the juckport"
+
+
+/obj/structure/rusted_gun_safe/proc/open_sesame()
+	open = TRUE
+	icon_state = "safe-open"
+	desc = "A long-abandoned gun safe. It has been broken into, exposing its contents to the world."
+	// spawn loot
+	var/rarity = rand(1, 101)
+	switch(rarity)
+		if(1 to 60)
+			drop_common()
+		if(61 to 90)
+			drop_uncommon()
+		if(91 to 100)
+			drop_rare()
+		if(101)
+			drop_weird()
+
+/obj/structure/rusted_gun_safe/deconstruct_act(mob/living/user, obj/item/tool)
+	if(open)
+		return FALSE
+	if(..())
+		return TRUE
+	user.visible_message(
+		span_warning("[user] begin to cut through the lock of \the [src]."),
+		span_notice("You start cutting through the lock of [src]."))
+	if(tool.use_tool(src, user, 45 SECONDS))
+		open_sesame()
+		user.visible_message(
+			span_warning("[user] successfully cuts through the lock of \the [src]."),
+			span_notice("You successfully cut through the lock of [src]."))
+	return TRUE
+
+/obj/structure/rusted_gun_safe/ex_act(severity, target)
+	if(!open) // barely explosion resistant - use the mines!
+		open_sesame()
