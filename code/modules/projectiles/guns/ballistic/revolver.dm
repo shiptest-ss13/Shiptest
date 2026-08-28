@@ -1,3 +1,5 @@
+// contains the basetype for revolvers
+
 #define REVOLVER_ROTATE_LEFT "rotate chamber left"
 #define REVOLVER_ROTATE_RIGHT "rotate chamber right"
 #define REVOLVER_AUTO_ROTATE_RIGHT_LOADING "auto rotate right when loading ammo"
@@ -7,8 +9,8 @@
 #define REVOLVER_FLIP "flip the revolver by the trigger"
 
 /obj/item/gun/ballistic/revolver
-	name = "i demand"
-	desc = "You feel as if you should make a 'adminhelp' if you see one of these, along with a 'github' report. You don't really understand what this means though."
+	name = "I DEMAND!!!"
+	desc = "The mere sight of this revolver fills you with the compulsion to file a bug report. Yes, you. After this round. Make one."
 	icon_state = "revolver"
 	bad_type = /obj/item/gun/ballistic/revolver
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder
@@ -26,8 +28,6 @@
 	internal_magazine = TRUE
 	bolt_type = BOLT_TYPE_NO_BOLT
 	tac_reloads = FALSE
-	var/spin_delay = 10
-	var/recent_spin = 0
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	valid_attachments = list()
@@ -38,7 +38,6 @@
 	recoil_unwielded = 2
 	semi_auto = FALSE
 	bolt_wording = "hammer"
-	dry_fire_sound = 'sound/weapons/gun/general/bolt_drop.ogg'
 	dry_fire_text = "snap"
 
 	wield_slowdown = REVOLVER_SLOWDOWN
@@ -49,12 +48,18 @@
 
 	safety_wording = "hammer"
 
+	// gunslingers love these!
 	gunslinger_recoil_bonus = -1
 	gunslinger_spread_bonus = -8
 
-	var/gate_loaded = FALSE //for stupid wild west shit
-	var/gate_offset = 5 //for wild west shit 2: instead of ejecting the chambered round, eject the next round if 1
-	var/gate_load_direction = REVOLVER_AUTO_ROTATE_RIGHT_LOADING //when we load ammo with a box, which direction do we rotate the cylinder? unused with normal revolvers
+	// SPINNING //
+	var/spin_delay = 10
+	var/recent_spin = 0
+
+	// GATE LOADED //
+	var/gate_loaded = FALSE // are we a cowboy gun that unloads one at a time
+	var/gate_offset = 5 // index of the accessible round when gate loaded
+	var/gate_load_direction = REVOLVER_AUTO_ROTATE_RIGHT_LOADING // which way do we spin when loading?
 
 	COOLDOWN_DECLARE(flip_cooldown)
 
@@ -89,6 +94,8 @@
 	else
 		return ..()
 
+// code for dumping all the ammo out of the revolver
+// either all at once or one at a time depending on if it's gate loaded
 /obj/item/gun/ballistic/revolver/proc/unload_all_ammo(mob/living/user)
 	var/num_unloaded = 0
 
@@ -100,20 +107,20 @@
 			num_unloaded++
 		chamber_round(FALSE)
 		return num_unloaded
-	else
+	else // gate loaded
 		var/num_to_unload = magazine.max_ammo
 		if(!get_ammo_list(FALSE))
 			return num_unloaded
 
 		for(var/i in 1 to num_to_unload)
 			var/doafter_time = 0.4 SECONDS
-			if(!do_after(user, doafter_time, user))
+			if(!do_after(user, doafter_time, user, timed_action_flags = IGNORE_USER_LOC_CHANGE))
 				break
 			if(!eject_chamber(user))
 				doafter_time = 0 SECONDS
 			else
 				num_unloaded++
-			if(!do_after(user, doafter_time, user))
+			if(!do_after(user, doafter_time, user, timed_action_flags = IGNORE_USER_LOC_CHANGE))
 				break
 			chamber_round(TRUE, TRUE)
 
@@ -144,6 +151,7 @@
 		to_chat(user, "<span class='notice'>You eject the [cartridge_wording] from [src].</span>")
 	return TRUE
 
+// checks for making sure a round we're trying to insert is okay
 /obj/item/gun/ballistic/revolver/proc/insert_casing(mob/living/user, obj/item/ammo_casing/casing_to_insert, allow_ejection, display_messages)
 	if(!casing_to_insert)
 		return FALSE
@@ -172,7 +180,7 @@
 				break
 	else
 		if(slot && !slot.BB && allow_ejection)
-			if(!do_after(user, doafter_time, user))
+			if(!do_after(user, doafter_time, user, timed_action_flags = IGNORE_USER_LOC_CHANGE))
 				eject_chamber(user)
 
 		rounds = magazine.ammo_list()
@@ -192,6 +200,7 @@
 		to_chat(user, "<span class='notice'>You load the [cartridge_wording] into [src].</span>")
 	return TRUE
 
+// attackby - reloading code is here
 /obj/item/gun/ballistic/revolver/attackby(obj/item/attacking_obj, mob/user, params)
 	if(!(istype(attacking_obj, /obj/item/ammo_casing) || istype(attacking_obj, /obj/item/ammo_box)))
 		return ..()
@@ -224,7 +233,7 @@
 		var/doafter_time = gate_loaded ? 0.4 SECONDS : 0.5 SECONDS
 		if(!gate_loaded && magazine.instant_load && attacking_box.instant_load)
 			doafter_time = 0 SECONDS
-		if(!do_after(user, doafter_time, user))
+		if(!do_after(user, doafter_time, user, timed_action_flags = IGNORE_USER_LOC_CHANGE))
 			break
 		if(casing_to_insert.loc != attacking_box) // make sure bullet has not left stack
 			break
@@ -238,7 +247,7 @@
 			attacking_box.update_ammo_count()
 			attacking_box.stored_ammo -= casing_to_insert
 		if(gate_loaded)
-			if(!do_after(user, doafter_time, user))
+			if(!do_after(user, doafter_time, user, timed_action_flags = IGNORE_USER_LOC_CHANGE))
 				break
 			switch(gate_load_direction)
 				if(REVOLVER_AUTO_ROTATE_RIGHT_LOADING)
@@ -255,7 +264,7 @@
 		return TRUE
 
 /obj/item/gun/ballistic/revolver/unique_action(mob/living/user)
-	rack(user)
+	rack(user) // operate hammer
 	return
 
 ///updates a bunch of racking related stuff and also handles the sound effects and the like
@@ -280,6 +289,7 @@
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
 
+// move a new round into "chambered" for firing
 /obj/item/gun/ballistic/revolver/chamber_round(spin_cylinder = TRUE, counter_clockwise = FALSE)
 	if(spin_cylinder)
 		chambered = magazine.get_round(TRUE, counter_clockwise)
@@ -288,6 +298,7 @@
 		chambered = magazine.stored_ammo[1]
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
+// pop up our radial menu when we altclick
 /obj/item/gun/ballistic/revolver/AltClick(mob/user)
 	if (unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		return ..()
@@ -308,7 +319,7 @@
 	if(!HAS_TRAIT(user, TRAIT_GUNSLINGER)) //only gunslingers are allowed to flip
 		chamber_options -= REVOLVER_FLIP
 
-	if(!gate_loaded) //these are completely redundant  if you can reload everything with a speedloader
+	if(!gate_loaded) //these are completely redundant if you can reload everything with a speedloader
 		chamber_options -= REVOLVER_AUTO_ROTATE_LEFT_LOADING
 		chamber_options -= REVOLVER_AUTO_ROTATE_RIGHT_LOADING
 		chamber_options -= REVOLVER_EJECT_CURRENT
@@ -379,6 +390,7 @@
 		boolets += magazine.ammo_count(countempties)
 	return boolets
 
+// handles hammer operation. or safety on regular revolvers
 /obj/item/gun/ballistic/revolver/toggle_safety(mob/user, silent=FALSE, rack_gun=TRUE)
 	if(semi_auto)//apogee said double actions should have normal safeties, so...
 		return ..()
@@ -404,6 +416,7 @@
 	if (current_skin)
 		. += "It can be spun with <b>alt+click</b>"
 
+// hammer fanning behavior for gunslingers
 /obj/item/gun/ballistic/revolver/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	var/fan = FALSE
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && !wielded && loc == user && !safety && !user.get_inactive_held_item())
@@ -444,22 +457,7 @@
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
 
-EMPTY_GUN_HELPER(revolver/viper)
-
-/obj/item/gun/ballistic/revolver/rhino
-	name = "\improper Unica 6 auto-revolver"
-	desc = "A high-powered revolver with a unique auto-reloading system. Uses .357 ammo."
-	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
-	icon_state = "mateba"
-	manufacturer = MANUFACTURER_NONE
-	semi_auto = TRUE
-	safety_wording = "safety"
-	spread = 0
-	spread_unwielded = 7
-
+// golden revolver. it is here. woe
 /obj/item/gun/ballistic/revolver/golden
 	name = "\improper Golden revolver"
 	desc = "This ain't no game, ain't never been no show, And I'll gladly gun down the oldest lady you know. Uses .357 ammo."
