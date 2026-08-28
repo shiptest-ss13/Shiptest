@@ -532,3 +532,8 @@
 	gun_type = /obj/item/gun/energy/cybersun/galvanizer
 	mag_type = /obj/item/stock_parts/cell/gun/cybersun
 	mag_count = 2
+
+/obj/item/storage/guncase/anode
+	gun_type = /obj/item/gun/energy/cybersun/anode
+	mag_type = /obj/item/stock_parts/cell/gun/cybersun
+	mag_count = 2

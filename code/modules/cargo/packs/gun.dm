@@ -1065,6 +1065,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/anode
+	name = "Anode Ionization PDW"
+	desc = "Contains an IT41 Anode Ionization PDW. Steady charge and steady target paint allow for rapid fire relative to other energy weapons in the Cybersun Arsenal."
+	cost = 3500
+	contains = list(/obj/item/storage/guncase/anode)
+	crate_name = "anode crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/impactor
 	name = "Impactor Lorentz Shotgun"
 	desc = "Contains an LS126 Impactor lorentz shotgun. Both modes are effective in close quarters combat."
