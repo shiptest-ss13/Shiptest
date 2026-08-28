@@ -27,6 +27,21 @@
 	ricochets_max = 0
 	reflectable = 0
 
+/obj/projectile/beam/ionization/pdw
+	name = "ionization beam"
+	icon_state = ""
+	pass_flags = PASSTABLE | PASSGRILLE
+
+	/* to set */
+	damage = 20
+	armour_penetration = 10
+	damage_type = BURN
+
+	hitscan = TRUE
+	range = 10
+
+	flag = "laser"
+
 /obj/projectile/beam/ionization/sniper
 	name = "far-reach ionization beam"
 

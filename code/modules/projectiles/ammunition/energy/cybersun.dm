@@ -9,6 +9,15 @@
 	fire_sound = 'sound/weapons/gun/cybersun/ionization.ogg'
 	delay = 4
 
+/obj/item/ammo_casing/energy/ionization/pdw
+	name = "rapid ionization lens"
+	caliber = "ionization"
+	projectile_type = /obj/projectile/beam/ionization/sniper
+	e_cost = 500
+	select_name = "rapid ionization"
+	fire_sound = 'sound/weapons/gun/cybersun/ionization.ogg'
+	delay = 0.15 SECONDS
+
 /obj/item/ammo_casing/energy/ionization/sniper
 	name = "far-reach ionization lens"
 	caliber = "ionization"

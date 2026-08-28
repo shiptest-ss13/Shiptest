@@ -30,6 +30,8 @@
 		/obj/item/stock_parts/cell/gun/cybersun/mini/empty,
 	)
 
+	valid_attachments = list()
+
 	muzzleflash_iconstate = null
 	light_color = COLOR_MAROON
 
@@ -147,6 +149,58 @@
 	min_recoil = 0
 	min_recoil_aimed = 0
 	recoil = 0.5
+
+/obj/item/gun/energy/cybersun/anode
+	name = "\improper IT41 Anode"
+	desc = "Cybersun's attempt at replacing Sidewinders within its stocks, the Anode is an ionization PDW, utilizing a heavier 'painter' light to allow for the creation of multiple armor-penetrating plasma beams per second."
+
+	icon_state = "anode"
+	item_state = "anode"
+
+	ammo_type = list(/obj/item/ammo_casing/energy/ionization/pdw)
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun/cybersun
+
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/cybersun,
+		/obj/item/stock_parts/cell/gun/cybersun/mini,
+		/obj/item/stock_parts/cell/gun/cybersun/empty,
+		/obj/item/stock_parts/cell/gun/cybersun/mini/empty,
+	)
+
+	w_class = WEIGHT_CLASS_NORMAL
+	weapon_weight = WEAPON_MEDIUM
+
+	wield_delay = 0.6 SECONDS
+
+	unique_attachments = list(/obj/item/attachment/foldable_stock/anode)
+	valid_attachments = list(/obj/item/attachment/foldable_stock/anode)
+	default_attachments = list(/obj/item/attachment/foldable_stock/anode)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_STOCK = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 18,
+			"y" = 17,
+		)
+	)
+
+	wield_slowdown = LASER_SMG_SLOWDOWN
+	aimed_wield_slowdown = LASER_SMG_SLOWDOWN
+
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	spread = 4
+	spread_unwielded = 8
+
+	min_recoil = 0
+	min_recoil_aimed = 0
+	recoil = 0.2
 
 //parent type for lorentz guns since they have snowflake behavior
 /obj/item/gun/energy/cybersun/lorentz

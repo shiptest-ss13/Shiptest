@@ -40,6 +40,8 @@
 
 	bad_type = /obj/item/gun/ballistic/cs_gauss
 
+	valid_attachments = list()
+
 	//if this has the functionality for locking a target
 	var/smart_lock = TRUE
 	//the current target of the gun
