@@ -72,7 +72,8 @@
 		/obj/structure/salvageable/protolathe = 10,
 		/obj/structure/salvageable/circuit_imprinter = 8,
 		/obj/structure/salvageable/destructive_analyzer = 8,
-		/obj/structure/salvageable/server = 8
+		/obj/structure/salvageable/server = 8,
+		/obj/structure/rusted_gun_safe = 2
 	)
 
 /obj/effect/spawner/random/waste/girder
