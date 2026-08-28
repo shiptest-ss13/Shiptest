@@ -30,7 +30,7 @@
 	light_color = COLOR_SOFT_RED
 	ricochets_max = 50	//Honk!
 	ricochet_chance = 90
-	ricochet_incidence_leeway = 80
+	ricochet_incidence_leeway = 75
 	reflectable = REFLECT_NORMAL
 
 /obj/projectile/beam/throw_atom_into_space()
