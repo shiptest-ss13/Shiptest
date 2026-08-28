@@ -69,9 +69,9 @@
 	The booster is operated through connecting a plasma canister to the port immediately next to the generator (a canister has been issued) and setting the mixer next to it to load about 5% plasma into the loop. It is recommended to lower this to 1% after the generator has reached 2mW production.
 
 	If you slept through enough training days to need to read past the differences, this is the bit you'll want to pay more attention to. First, wander up to the life support room and set the Hydrogen to Generator and Oxygen to Generator pumps up (preferably at max pressure).
-	Then, go back down to the generator and set the first mixture to be about 2/3 hydrogen, 1/3 oxygen (about the same mix as the thrusters, at higher pressure). If you need more than 80kW, set up the plasma booster as instructed prior.
+	Then, go back down to the generator and set the first mixture to be about 2/3 hydrogen, 1/3 oxygen (about the same mix as the thrusters, at higher pressure, or alternatively go with 1/3 hydrogen 2/3 oxygen if you don't need much power). If you need more than 80kW, set up the plasma booster as instructed prior.
 	After doing this, set up the air alarm - set the scrubber in the generator room to scrub out everything but oxygen, hydrogen, and plasma; then open the valve next to the hot side of the generator to exhaust waste gas overboard.
-	Finally, hit the igniter and - if everything worked - the generator should start making power. Remember to set up the SMES units according to the ship's needs.
+	Finally, hit the igniter and - if everything worked - the generator should start making power. Remember to set up the SMES units according to the ship's needs, and remember that once the plasma canister runs out the mixer connecting it to the fuel mix will need to be reconfigured to account for this and avoid cutting off fuel to the chamber.
 
 	If you have any further questions, contact Hardline Salvage & Mining or your senior officer for advice.
 	"}
