@@ -532,6 +532,7 @@
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/kalix/pistol,
 		/obj/item/gun/energy/cybersun/lorentz/opportunist,
+		/obj/item/gun/energy/clover/pistol,
 		/obj/item/bodycamera,
 		))
 	STR.exception_hold = exception_cache

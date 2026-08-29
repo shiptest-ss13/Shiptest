@@ -123,6 +123,7 @@
 		/obj/item/gun/energy/sharplite/ohm,
 		/obj/item/gun/energy/sharplite/yari,
 		/obj/item/gun/energy/kalix/pistol,
+		/obj/item/gun/energy/clover/pistol,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/gun/energy/cybersun/troubleshooter,
 		/obj/item/gun/energy/cybersun/lorentz/opportunist,
