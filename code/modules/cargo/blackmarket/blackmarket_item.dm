@@ -55,7 +55,10 @@
 	cost = rand(cost_min, cost_max)
 
 /datum/blackmarket_item/proc/randomize_stock()
-	stock = rand(stock_min, stock_max)
+	if (initial(stock))
+		stock = initial(stock)
+	else
+		stock = rand(stock_min, stock_max)
 
 /datum/blackmarket_item/proc/cycle(cost = TRUE, availibility = TRUE, stock = TRUE, force_appear = FALSE)
 	if(cost)

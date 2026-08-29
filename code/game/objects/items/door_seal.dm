@@ -16,4 +16,4 @@
 	/// how long the seal takes to place on the door
 	var/seal_time = 3 SECONDS
 	/// how long it takes to remove the seal from a door
-	var/unseal_time = 2 SECONDS
+	var/unseal_time = 10 SECONDS

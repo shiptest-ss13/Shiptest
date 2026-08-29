@@ -49,6 +49,8 @@
 /obj/machinery/camera/autoname
 	var/number = 0 //camera number in area
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera/autoname, 16)
+
 //This camera type automatically sets it's name to whatever the area that it's in is called.
 /obj/machinery/camera/autoname/Initialize()
 	..()

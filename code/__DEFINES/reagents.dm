@@ -34,7 +34,7 @@
 #define THRESHOLD_UNHUSK 50 //Health treshold for instabitaluri and rezadone to unhusk someone
 
 //used by chem masters and pill presses
-#define PILL_STYLE_COUNT 22 //Update this if you add more pill icons or you die
+#define PILL_STYLE_COUNT 37 //Update this if you add more pill icons or you die
 #define RANDOM_PILL_STYLE 22 //Dont change this one though
 
 //used for the autowiki, these reagents you should be able to aquire easily

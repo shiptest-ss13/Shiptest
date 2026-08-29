@@ -22,6 +22,10 @@
 	display_name = "cargo pants, recolorable"
 	path = /obj/item/clothing/under/pants/cargo
 
+/datum/gear/uniform/cargoshorts
+	display_name = "cargo shorts, recolorable"
+	path = /obj/item/clothing/under/shorts/cargo
+
 //Colored jumpsuits
 
 /datum/gear/uniform/color
@@ -31,6 +35,14 @@
 /datum/gear/uniform/color_skirt
 	display_name = "jumpskirt, recolorable"
 	path = /obj/item/clothing/under/color/jumpskirt
+
+/datum/gear/uniform/fatigues
+	display_name = "fatigues, recolorable"
+	path = /obj/item/clothing/under/rank/security/officer/camo
+
+/datum/gear/uniform/shortjumpsuit
+	display_name = "short jumpsuit, recolorable"
+	path = /obj/item/clothing/under/shortjumpsuit
 
 //Shorts
 
@@ -49,6 +61,10 @@
 /datum/gear/uniform/explorershorts
 	display_name = "explorer shorts"
 	path = /obj/item/clothing/under/shorts/explorer
+
+/datum/gear/uniform/brownjorts
+	display_name = "brown jorts"
+	path = /obj/item/clothing/under/shorts/brownjorts
 
 //Pants
 /datum/gear/uniform/pants
@@ -74,9 +90,9 @@
 	display_name = "green pajama pants"
 	path = /obj/item/clothing/under/pants/pajamagreen
 
-/datum/gear/uniform/pants/tan
-	display_name = "tan pants"
-	path = /obj/item/clothing/under/pants/tan
+/datum/gear/uniform/pants/brown
+	display_name = "brown pants"
+	path = /obj/item/clothing/under/pants/brown
 
 /datum/gear/uniform/pants/white
 	display_name = "white pants"
@@ -102,13 +118,17 @@
 	display_name = "camo pants"
 	path = /obj/item/clothing/under/pants/camo
 
+/datum/gear/uniform/pants/sweat
+	display_name = "sweatpants"
+	path = /obj/item/clothing/under/pants/sweat
+
 //JUMPSUIT "SUITS"
 
 /datum/gear/uniform/suit
 	subtype_path = /datum/gear/uniform/suit
 
-/datum/gear/uniform/suit/amish
-	display_name = "suit, amish"
+/datum/gear/uniform/suit/formal
+	display_name = "suit, formal"
 	path = /obj/item/clothing/under/suit/sl
 
 /datum/gear/uniform/suit/white

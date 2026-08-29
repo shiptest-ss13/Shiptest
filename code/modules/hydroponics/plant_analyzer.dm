@@ -18,19 +18,6 @@
 	scan_mode = !scan_mode
 	to_chat(user, span_notice("You switch [src] to [scan_mode == PLANT_SCANMODE_CHEMICALS ? "scan for chemical reagents" : "scan for plant growth statistics and traits"]."))
 
-/obj/item/plant_analyzer/attack(mob/living/M, mob/living/carbon/human/user)
-	//Checks if target is a podman
-	if(ispodperson(M))
-		user.visible_message(span_notice("[user] analyzes [M]'s vitals."), \
-							span_notice("You analyze [M]'s vitals."))
-		if(scan_mode == PLANT_SCANMODE_STATS)
-			healthscan(user, M, advanced = TRUE)
-		else
-			chemscan(user, M)
-		add_fingerprint(user)
-		return
-	return ..()
-
 /obj/item/plant_analyzer/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
 	if(can_scan_target(target))

@@ -23,5 +23,6 @@
 	icon = 'icons/obj/ammunition/ammo_boxes.dmi'
 	icon_state = "9mmbox"
 	custom_materials = list(/datum/material/iron = 200)
+	possible_illustrations = null
 	illustration = null
 	foldable = null

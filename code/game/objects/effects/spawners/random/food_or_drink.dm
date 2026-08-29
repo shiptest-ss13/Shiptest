@@ -220,7 +220,6 @@
 	loot = list(
 		/obj/item/food/grown/cannabis/rainbow = 1,
 		/obj/item/food/grown/cannabis/death = 1,
-		/obj/item/seeds/replicapod = 1,
 		/obj/item/food/grown/mushroom/angel = 1,
 		/obj/item/food/grown/mushroom/libertycap = 2,
 		/obj/item/seeds/tower/steel = 2,

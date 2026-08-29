@@ -65,6 +65,8 @@ GLOBAL_LIST_EMPTY(dummy_mob_list)
 			copycat.add_quirk(applied_quirk.type, target.client, FALSE)
 
 		copycat.updateappearance(icon_update=TRUE, mutcolor_update=TRUE, mutations_overlay_update=TRUE)
+
+		target?.client?.prefs?.copy_to(copycat, icon_updates=TRUE, roundstart_checks=FALSE, character_setup=TRUE)
 	else
 		//even if target isn't a carbon, if they have a client we can make the
 		//dummy look like what their human would look like based on their prefs

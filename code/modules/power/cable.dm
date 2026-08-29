@@ -1,12 +1,21 @@
+#define CABLE_COLOR_YELLOW "#fff957"
+#define CABLE_COLOR_GREEN "#00aa00"
+#define CABLE_COLOR_BLUE "#4252ff"
+#define CABLE_COLOR_PINK "#ff78eb"
+#define CABLE_COLOR_ORANGE "#ff8000"
+#define CABLE_COLOR_CYAN "#60d5fc"
+#define CABLE_COLOR_WHITE "#efefef"
+#define CABLE_COLOR_RED "#ff3030"
+
 GLOBAL_LIST_INIT(cable_colors, list(
-	"yellow" = "#ffff00",
-	"green" = "#00aa00",
-	"blue" = "#1919c8",
-	"pink" = "#ff3cc8",
-	"orange" = "#ff8000",
-	"cyan" = "#00ffff",
-	"white" = "#ffffff",
-	"red" = "#ff0000"
+	"yellow" = CABLE_COLOR_YELLOW,
+	"green" = CABLE_COLOR_GREEN,
+	"blue" = CABLE_COLOR_BLUE,
+	"pink" = CABLE_COLOR_PINK,
+	"orange" = CABLE_COLOR_ORANGE,
+	"cyan" = CABLE_COLOR_CYAN,
+	"white" = CABLE_COLOR_WHITE,
+	"red" = CABLE_COLOR_RED
 	))
 
 ///////////////////////////////
@@ -51,7 +60,7 @@ GLOBAL_LIST_INIT(cable_colors, list(
 	var/obj/item/stack/cable_coil/stored
 
 	var/cable_color = "red"
-	color = "#ff0000"
+	color = CABLE_COLOR_RED
 	FASTDMM_PROP(\
 		pipe_type = PIPE_TYPE_CABLE,\
 		pipe_interference_group = list("cable"),\
@@ -60,31 +69,31 @@ GLOBAL_LIST_INIT(cable_colors, list(
 
 /obj/structure/cable/yellow
 	cable_color = "yellow"
-	color = "#ffff00"
+	color = CABLE_COLOR_YELLOW
 
 /obj/structure/cable/green
 	cable_color = "green"
-	color = "#00aa00"
+	color = CABLE_COLOR_GREEN
 
 /obj/structure/cable/blue
 	cable_color = "blue"
-	color = "#1919c8"
+	color = CABLE_COLOR_BLUE
 
 /obj/structure/cable/pink
 	cable_color = "pink"
-	color = "#ff3cc8"
+	color = CABLE_COLOR_PINK
 
 /obj/structure/cable/orange
 	cable_color = "orange"
-	color = "#ff8000"
+	color = CABLE_COLOR_ORANGE
 
 /obj/structure/cable/cyan
 	cable_color = "cyan"
-	color = "#00ffff"
+	color = CABLE_COLOR_CYAN
 
 /obj/structure/cable/white
 	cable_color = "white"
-	color = "#ffffff"
+	color = CABLE_COLOR_WHITE
 
 // the power cable object
 /obj/structure/cable/Initialize(mapload, param_color)
@@ -349,8 +358,8 @@ GLOBAL_LIST_INIT(cable_colors, list(
 
 			to_connect += N.terminal //we'll connect the machines after all cables are merged
 
-		else if(istype(AM, /obj/machinery/power)) //other power machines
-			var/obj/machinery/power/M = AM
+		else if(istype(AM, /obj/machinery)) //other power machines
+			var/obj/machinery/M = AM
 
 			if(M.powernet == powernet)
 				continue
@@ -358,7 +367,7 @@ GLOBAL_LIST_INIT(cable_colors, list(
 			to_connect += M //we'll connect the machines after all cables are merged
 
 	//now that cables are done, let's connect found machines
-	for(var/obj/machinery/power/PM in to_connect)
+	for(var/obj/machinery/PM in to_connect)
 		if(!PM.connect_to_network())
 			PM.disconnect_from_network() //if we somehow can't connect the machine to the new powernet, remove it from the old nonetheless
 
@@ -446,7 +455,7 @@ GLOBAL_LIST_INIT(cable_colors, list(
 	if(P_list.len == 0)//if nothing in both list, then the cable was a lone cable, just delete it and its powernet
 		powernet.remove_cable(src)
 
-		for(var/obj/machinery/power/P in T1)//check if it was powering a machine
+		for(var/obj/machinery/P in T1)//check if it was powering a machine
 			if(!P.connect_to_network()) //can't find a node cable on a the turf to connect to
 				P.disconnect_from_network() //remove from current network (and delete powernet)
 		return
@@ -461,7 +470,7 @@ GLOBAL_LIST_INIT(cable_colors, list(
 
 	// Disconnect machines connected to nodes
 	if(d1 == 0) // if we cut a node (O-X) cable
-		for(var/obj/machinery/power/P in T1)
+		for(var/obj/machinery/P in T1)
 			if(!P.connect_to_network()) //can't find a node cable on a the turf to connect to
 				P.disconnect_from_network() //remove from current network
 

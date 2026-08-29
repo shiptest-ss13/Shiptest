@@ -272,15 +272,20 @@
 
 /obj/item/clothing/under/rank/security/officer/camo
 	name = "fatigues"
-	desc = "A combat uniform most often worn by mercenaries and TPLRC soldiers. Features polychromatic design to adjust to different environments."
+	desc = "A drab uniform most often worn by mercenaries and hunters. Features polychromatic design to adjust to different environments."
 	icon_state = "camo"
 	item_state = "fatigues"
 
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list("Urban" = "camo",
 		"Desert" = "camo_desert",
 		"Woodland" = "camo_woodland",
+		"Night" = "camo_night",
 		"Snow" = "camo_snow",
 		)
+	supports_variations = DIGITIGRADE_VARIATION
+	roll_down = TRUE
+	roll_sleeves = FALSE
 
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()

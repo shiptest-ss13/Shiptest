@@ -1332,3 +1332,133 @@
 /obj/item/bodypart/leg/right/ipc/pgf_monocolor/type_d
 	name = "\improper PGF Mechanics MK.V Type-D right leg"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+// Custom 3D Printed Cybersun Ghost
+
+/obj/item/bodypart/head/ipc/customghost
+	name = "\improper Custom 3D Printed Cybersun 'Ghost' head"
+	icon_state = "customcyber_head"
+	limb_id = "customcyber"
+	eye_state_override = "eyes_cybersun_ghost_greyscale"
+	draw_eyes = TRUE
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/chest/ipc/customghost
+	name = "\improper Custom 3D Printed Cybersun 'Ghost' chest"
+	icon_state = "customcyber_chest"
+	limb_id = "customcyber"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/l_arm/ipc/customghost
+	name = "\improper Custom 3D Printed Cybersun 'Ghost' left arm"
+	icon_state = "customcyber_l_arm"
+	limb_id = "customcyber"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/r_arm/ipc/customghost
+	name = "\improper Custom 3D Printed Cybersun 'Ghost' right arm"
+	icon_state = "customcyber_r_arm"
+	limb_id = "customcyber"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/left/ipc/customghost
+	name = "\improper Custom 3D Printed SeeCybersun 'Ghost'eker left leg"
+	icon_state = "customcyber_l_leg"
+	limb_id = "customcyber"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/right/ipc/customghost
+	name = "\improper Custom 3D Printed Cybersun 'Ghost' right leg"
+	icon_state = "customcyber_r_leg"
+	limb_id = "customcyber"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+// Al'Sa Spotter
+
+/obj/item/bodypart/head/ipc/alsa
+	name = "\improper Al'sa 'Spotter' head"
+	icon_state = "alsa_head"
+	limb_id = "alsa"
+	eye_state_override = "eyes_alsa_greyscale"
+	draw_eyes = TRUE
+
+/obj/item/bodypart/chest/ipc/alsa
+	name = "\improper Al'sa 'Spotter' chest"
+	icon_state = "alsa_chest"
+	limb_id = "alsa"
+
+/obj/item/bodypart/l_arm/ipc/alsa
+	name = "\improper Al'sa 'Spotter' left arm"
+	icon_state = "alsa_l_arm"
+	limb_id = "alsa"
+
+/obj/item/bodypart/r_arm/ipc/alsa
+	name = "\improper Al'sa 'Spotter' right arm"
+	icon_state = "alsa_r_arm"
+	limb_id = "alsa"
+
+/obj/item/bodypart/leg/left/ipc/alsa
+	name = "\improper Al'sa 'Spotter' left leg"
+	icon_state = "alsa_l_leg"
+	limb_id = "alsa"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/ipc/alsa
+	name = "\improper Al'sa 'Spotter' right leg"
+	icon_state = "alsa_r_leg"
+	limb_id = "alsa"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+// Custom Al'Sa Spotter
+
+/obj/item/bodypart/head/ipc/customalsa
+	name = "\improper Custom 3D Printed Al'sa 'Spotter' head"
+	icon_state = "alsac_head"
+	limb_id = "alsac"
+	eye_state_override = "eyes_alsa_greyscale"
+	draw_eyes = TRUE
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/chest/ipc/customalsa
+	name = "\improper Custom 3D Printed Al'sa 'Spotter' chest"
+	icon_state = "alsac_chest"
+	limb_id = "alsac"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/l_arm/ipc/customalsa
+	name = "\improper Custom 3D Printed Al'sa 'Spotter' left arm"
+	icon_state = "alsac_l_arm"
+	limb_id = "alsac"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/r_arm/ipc/customalsa
+	name = "\improper Custom 3D Printed Al'sa 'Spotter' right arm"
+	icon_state = "alsac_r_arm"
+	limb_id = "alsac"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/left/ipc/customalsa
+	name = "\improper Custom 3D Printed Al'sa 'Spotter' left leg"
+	icon_state = "alsac_l_leg"
+	limb_id = "alsac"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/ipc/customalsa
+	name = "\improper Custom 3D Printed Al'sa 'Spotter' right leg"
+	icon_state = "alsac_r_leg"
+	limb_id = "alsac"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE

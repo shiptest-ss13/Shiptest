@@ -13,7 +13,6 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
 	resistance_flags = FIRE_PROOF
 	hitsound = 'sound/weapons/resonator_blast.ogg'
-	pickup_sound = 'sound/weapons/melee/general_pickup.ogg'
 	wound_bonus = 10
 	armour_penetration = -10
 	bare_wound_bonus = 20

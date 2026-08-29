@@ -259,6 +259,21 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 8,
 		/obj/item/stack/ore/bluespace_crystal = 5,
 		)
+/obj/structure/vein/lavaland/classfour
+	mining_charges = 30
+	vein_class = 4
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 5,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest = 10,
+		)
+	max_mobs = 6
+	spawn_time = 8 SECONDS
+	ore_list = list(
+		/obj/item/stack/ore/bluespace_crystal = 10,
+	)
 
 // TODO: populate all planet veins with class 4s ; this exact path should not be used, used as a templa
 /obj/structure/vein/classfour
@@ -465,7 +480,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 20,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 30,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/heat = 10,
 		)
 
 	ore_list = list(

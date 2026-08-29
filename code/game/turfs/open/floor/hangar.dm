@@ -33,7 +33,7 @@ Each floor in a hangar map must be subtyped here.
 	baseturfs = /turf/open/floor/hangar
 	planetary_atmos = 1
 	initial_gas_mix = "o2=22;n2=82;TEMP=272"
-	light_range = 2
+	light_range = 5
 	light_power = 1
 	light_color = "#1B1D2E"
 
@@ -43,7 +43,7 @@ Each floor in a hangar map must be subtyped here.
 	base_icon_state = "plating"
 	baseturfs = /turf/open/floor/hangar
 	planetary_atmos = 1
-	light_range = 2
+	light_range = 5
 	light_power = 0.90
 	light_color = "#97442f"
 	initial_gas_mix = "o2=22;n2=82;TEMP=305"
@@ -54,7 +54,7 @@ Each floor in a hangar map must be subtyped here.
 	icon_state = "tiled_dark"
 	baseturfs = /turf/open/floor/hangar
 	planetary_atmos = 1
-	light_range = 2
+	light_range = 5
 	light_power = 0.90
 	light_color = "#97442f"
 	initial_gas_mix = "o2=22;n2=82;TEMP=305"

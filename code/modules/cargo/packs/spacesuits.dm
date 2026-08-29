@@ -118,7 +118,7 @@
 //fucking gezena
 
 /datum/supply_pack/spacesuits/spacesuit/pgf
-	name = "Rakalla Navy Utility Suit Crate"
+	name = "Rakalla Navy Utility Space Suit Crate"
 	desc = "Contains one Rakalla Utility Suit. The aging but beloved workhorse of Navy space operations."
 	cost = 600
 	contains = list(/obj/item/clothing/suit/space/gezena,
@@ -129,7 +129,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/spacesuit/pgf/marine
-	name = "Lataka Composite Combat Suit Crate"
+	name = "Lataka Marine Combat Space Suit Crate"
 	desc = "Contains one Lataka Combat Suit. The backbone of any Marine Corps space assault."
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/space/gezena/marine,
@@ -270,6 +270,8 @@
 	desc = "Cybersuns all-rounder combat hardsuit, this collapsar variant is in the colors of the trauma team."
 	cost = 5000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/collapsar/paramed)
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/syndicate/cybersun
 	crate_name = "Collapsar hardsuit crate"
 	faction_discount = 0
 	faction_locked = TRUE
@@ -464,11 +466,11 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/eod_ngr
-	name = "NGR EOD Hardsuit Crate"
-	desc = "Contains one EOD hardsuit, to provide safety with explosives."
-	cost = 2000
-	contains = list(/obj/item/clothing/suit/space/hardsuit/bomb/ngr)
-	crate_name = "EOD hardsuit crate"
+	name = "NGR Heavy EOD Hardsuit Crate"
+	desc = "Contains one heavy EOD hardsuit, modified with thicker plating for more than just ordinance disposal."
+	cost = 5000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/ngrheavy)
+	crate_name = "heavy EOD hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 	faction = /datum/faction/syndicate/ngr
 	faction_discount = 0
@@ -504,6 +506,17 @@
 	cost = 5000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/solgov/roumain)
 	crate_name = "roumain hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/roumain_hardsuitelite
+	name = "Raskas Combat Hardsuit"
+	desc = "A heavily clad hardsuit manufactured by Hunter's Pride, used when quarries of ballistic natures are to be expected. The heavy, bulky plates inhibit movement at the cost of second-to-none protection."
+	cost = 5000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security/roumain/elite)
+	crate_name = "Raskas combat hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/srm
 	faction_discount = 0

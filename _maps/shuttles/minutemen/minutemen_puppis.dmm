@@ -31,12 +31,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "ah" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -32;
-	pixel_y = 6
-	},
 /obj/item/radio/intercom/directional/west{
-	pixel_y = -12
+	pixel_y = -1
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -45,6 +41,10 @@
 /obj/structure/chair/sofa/blue/corpo/right/directional,
 /obj/item/clothing/head/hairbow/darkblue{
 	pixel_x = -3
+	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/west{
+	pixel_x = -42;
+	pixel_y = -1
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
@@ -288,10 +288,7 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5{
 	dir = 8
 	},
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/structure/noticeboard/directional/south,
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -1110,8 +1107,8 @@
 	pixel_y = -13
 	},
 /obj/item/radio/intercom/directional/north,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 34
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north{
+	pixel_y = 39
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
@@ -1163,11 +1160,13 @@
 /area/ship/security/armory)
 "mo" = (
 /obj/effect/turf_decal/industrial/warning/green/fulltile,
-/obj/structure/rack,
-/obj/item/gun_maint_kit{
-	pixel_x = 1;
-	pixel_y = 1
+/obj/machinery/suit_storage_unit/inherit/industrial{
+	req_access_txt = "1";
+	name = "minuteman suit storage unit"
 	},
+/obj/item/clothing/suit/space/hardsuit/clip_patroller,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -1437,6 +1436,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/emergency_panel/dark,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "oz" = (
@@ -1665,6 +1665,10 @@
 /obj/effect/turf_decal/spline/plain/opaque/blue{
 	dir = 8
 	},
+/obj/item/storage/backpack/duffelbag/sec{
+	pixel_x = 4;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "rn" = (
@@ -1798,9 +1802,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "sS" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
@@ -2103,9 +2105,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "wI" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2256,8 +2256,7 @@
 /obj/structure/closet/crate/bin{
 	pixel_y = 5
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
+/obj/effect/turf_decal/siding/wood/walnut{
 	dir = 6
 	},
 /obj/structure/cable{
@@ -2586,9 +2585,7 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 4
 	},
-/obj/structure/noticeboard{
-	pixel_y = 28
-	},
+/obj/structure/noticeboard/directional/north,
 /obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -2775,12 +2772,12 @@
 /area/ship/crew/ccommons)
 "DB" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/backpack/duffelbag/sec{
-	pixel_x = 4;
-	pixel_y = 11
-	},
 /obj/effect/turf_decal/spline/plain/opaque/blue{
 	dir = 8
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = 0;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -3367,6 +3364,10 @@
 	id = "pup_armory"
 	},
 /obj/machinery/light/directional/south,
+/obj/item/gun/energy/clover/clip{
+	pixel_x = 0;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "KM" = (
@@ -3564,7 +3565,7 @@
 /obj/item/clothing/under/clip/medic,
 /obj/item/pinpointer/crew,
 /obj/item/sensor_device,
-/obj/item/clothing/gloves/color/latex/nitrile/clip{
+/obj/item/clothing/gloves/nitrile{
 	pixel_x = -11;
 	pixel_y = 5
 	},
@@ -3810,10 +3811,6 @@
 	pixel_y = 8
 	},
 /obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -8;
-	pixel_y = -9
-	},
-/obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = -7
 	},
 /obj/item/ammo_box/magazine/cm23{
@@ -3822,6 +3819,17 @@
 	},
 /obj/item/ammo_box/magazine/cm23{
 	pixel_x = 12;
+	pixel_y = -4
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -7
+	},
+/obj/item/stock_parts/cell/gun/upgraded{
+	pixel_x = -5;
+	pixel_y = -4
+	},
+/obj/item/stock_parts/cell/gun/upgraded{
+	pixel_x = -5;
 	pixel_y = -4
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -4029,9 +4037,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "PG" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -4404,9 +4410,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/ccommons)
 "Tg" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
@@ -4437,9 +4441,7 @@
 	pixel_x = 8;
 	pixel_y = 8
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/item/clothing/under/clip/minutemen{
 	pixel_x = 7;
 	pixel_y = -5
@@ -4715,9 +4717,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "VN" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},

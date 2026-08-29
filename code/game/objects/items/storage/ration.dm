@@ -27,9 +27,10 @@
 /obj/item/storage/ration/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 7
+	STR.max_items = 8
 	STR.set_holdable(list(
-		/obj/item/reagent_containers/food,
+		/obj/item/reagent_containers/food/drinks/ration,
+		/obj/item/food/ration,
 		/obj/item/ration_heater))
 	STR.locked = TRUE
 	STR.locked_flavor = "seems to be sealed closed!"

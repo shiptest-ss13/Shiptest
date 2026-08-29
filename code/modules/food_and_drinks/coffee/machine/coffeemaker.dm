@@ -202,8 +202,8 @@
 		update_icon()
 		return TRUE
 
-	if(istype(attack_item, /obj/item/reagent_containers/glass/coffee_cup) && !(attack_item.item_flags & ABSTRACT) && attack_item.is_open_container())
-		var/obj/item/reagent_containers/glass/coffee_cup/new_cup = attack_item
+	if(istype(attack_item, /obj/item/reagent_containers/food/drinks/coffee/empty) && !(attack_item.item_flags & ABSTRACT) && attack_item.is_open_container())
+		var/obj/item/reagent_containers/food/drinks/coffee/empty/new_cup = attack_item
 		if(new_cup.reagents.total_volume > 0)
 			balloon_alert(user, "the cup must be empty!")
 			return TRUE
@@ -366,7 +366,7 @@
 	if(!coffee_cups) //shouldn't happen, but we all know how stuff manages to break
 		balloon_alert(user, "no cups left!")
 		return
-	var/obj/item/reagent_containers/glass/coffee_cup/new_cup = new(get_turf(src))
+	var/obj/item/reagent_containers/food/drinks/coffee/empty/new_cup = new(get_turf(src))
 	user.put_in_hands(new_cup)
 	coffee_cups--
 	update_icon()

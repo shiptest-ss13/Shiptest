@@ -106,9 +106,6 @@
 	icon_state = "tile_full"
 	base_icon_state = "tile_full"
 
-/turf/open/floor/plasteel/patterned/jungleplanet
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
 /turf/open/floor/plasteel/patterned/external
 	initial_gas_mix = AIRLESS_ATMOS
 
@@ -118,9 +115,6 @@
 /turf/open/floor/plasteel/patterned/cargo_one
 	icon_state = "cargo_one_full"
 	base_icon_state = "cargo_one_full"
-
-/turf/open/floor/plasteel/patterned/cargo_one/jungleplanet
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/plasteel/patterned/cargo_one/external
 	initial_gas_mix = AIRLESS_ATMOS
@@ -225,6 +219,8 @@
 	base_icon_state = "stairs"
 	tiled_dirt = FALSE
 	color = COLOR_FLOORTILE_GRAY
+	broken_states = null //defaults to generic damaged states. better than broken turfs.
+	burnt_states = null
 
 /turf/open/floor/plasteel/stairs/left
 	icon_state = "stairs-l"
@@ -367,6 +363,9 @@
 /turf/open/floor/plasteel/stairs/wood/yew/right
 	icon_state = "stairs-wood-r"
 	base_icon_state = "stairs-wood-r"
+
+/turf/open/floor/plasteel/stairs/dark
+	color = COLOR_FLOORTILE_GRAY
 
 /turf/open/floor/plasteel/rockvault
 	icon_state = "rockvault"

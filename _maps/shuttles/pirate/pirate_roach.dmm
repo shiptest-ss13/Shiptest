@@ -619,10 +619,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 0;
-	pixel_y = -25
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/prison)
 "iO" = (
@@ -730,8 +727,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
@@ -846,8 +842,7 @@
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
@@ -1045,10 +1040,7 @@
 	pixel_x = -1;
 	pixel_y = -3
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 0;
-	pixel_y = 26
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north,
 /turf/open/floor/carpet,
 /area/ship/crew/canteen)
 "nZ" = (
@@ -2037,7 +2029,7 @@
 /obj/item/gear_pack/anglegrinder,
 /obj/item/melee/sledgehammer/gorlex,
 /obj/item/storage/toolbox/syndicate,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/storage/belt/utility,
 /obj/item/radio/headset/pirate/alt,
 /obj/structure/cable{
@@ -2436,8 +2428,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/extinguisher_cabinet/directional/west,
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
@@ -2706,8 +2697,7 @@
 "IS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut{
@@ -3920,8 +3910,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut{
@@ -4054,7 +4043,7 @@
 	desc = "A basic white surgical apron. It seems it could stain very easily...";
 	name = "surgical smock"
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/item/clothing/gloves/nitrile/evil,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},

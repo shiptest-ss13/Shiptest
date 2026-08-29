@@ -350,6 +350,11 @@
 			update_pull_movespeed()
 
 		set_pull_offsets(M, state)
+	else
+		// We already know it's an object since it's not a mob so no need to typecheck
+		var/obj/O = AM
+		if (O.density || O.drag_slowdown)
+			face_mouse = FALSE
 
 //mob verbs are a lot faster than object verbs
 //for more info on why this is not atom/pull, see examinate() in mob.dm
@@ -368,6 +373,8 @@
 	..()
 	update_pull_movespeed()
 	update_pull_hud_icon()
+	if(a_intent == INTENT_HARM)
+		face_mouse = TRUE
 
 /mob/living/verb/stop_pulling1()
 	set name = "Stop Pulling"
@@ -584,6 +591,49 @@
 
 /mob/living/is_injectable(mob/user, allowmobs = TRUE)
 	return (allowmobs && reagents && can_inject(user))
+
+/mob/living/reagent_scan()
+	if(!reagents)
+		return ""
+
+	var/list/render_list = list() //The master list of readouts, including reagents in the blood/stomach, quirks, etc.
+	var/list/render_block = list() //A second block of readout strings. If this ends up empty after checking stomach/blood contents, we give the "empty" header.
+
+	// Blood reagents
+	if(reagents.reagent_list.len)
+		for(var/r in reagents.reagent_list)
+			var/datum/reagent/reagent = r
+			render_block += "<span class='notice ml-2'>[round(reagent.volume, 0.001)] units of [reagent.name][reagent.overdosed ? "</span> - [span_bolddanger("OVERDOSING")]" : ".</span>"]<br>"
+
+	if(!length(render_block)) //If no VISIBLY DISPLAYED reagents are present, we report as if there is nothing.
+		render_list += "<span class='notice ml-1'>Subject contains no reagents in their blood.</span><br>"
+	else
+		render_list += "<span class='notice ml-1'>Subject contains the following reagents in their blood:</span><br>"
+		render_list += render_block //Otherwise, we add the header, reagent readouts, and clear the readout block for use on the stomach.
+		render_block.Cut()
+
+	// Stomach reagents
+	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
+	if(belly)
+		if(belly.reagents.reagent_list.len)
+			for(var/bile in belly.reagents.reagent_list)
+				var/datum/reagent/bit = bile
+				if(!belly.food_reagents[bit.type])
+					render_block += "<span class='notice ml-2'>[round(bit.volume, 0.001)] units of [bit.name][bit.overdosed ? "</span> - <span class='boldannounce'>OVERDOSING</span>" : ".</span>"]\n"
+				else
+					var/bit_vol = bit.volume - belly.food_reagents[bit.type]
+					if(bit_vol > 0)
+						render_block += "<span class='notice ml-2'>[round(bit_vol, 0.001)] units of [bit.name][bit.overdosed ? "</span> - <span class='boldannounce'>OVERDOSING</span>" : ".</span>"]\n"
+
+		if(!length(render_block))
+			render_list += "<span class='notice ml-1'>Subject contains no reagents in their stomach.</span><br>"
+		else
+			render_list += "<span class='notice ml-1'>Subject contains the following reagents in their stomach:</span><br>"
+			render_list += render_block
+			render_block.Cut()
+
+	return jointext(render_list, "")
+
 
 ///Sets the current mob's health value. Do not call directly if you don't know what you are doing, use the damage procs, instead.
 /mob/living/proc/set_health(new_value)
@@ -972,7 +1022,7 @@
 		if(has_gravity == 1)
 			clear_alert("gravity")
 		else
-			if(has_gravity >= GRAVITY_DAMAGE_TRESHOLD)
+			if(has_gravity >= GRAVITY_DAMAGE_THRESHOLD)
 				throw_alert("gravity", /atom/movable/screen/alert/veryhighgravity)
 			else
 				throw_alert("gravity", /atom/movable/screen/alert/highgravity)
@@ -1322,12 +1372,12 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 * Handles effects happening when mob is on normal fire
 *
 * Vars:
-* * delta_time
+* * seconds_per_tick
 * * times_fired
 * * fire_handler: Current fire status effect that called the proc
 */
 
-/mob/living/proc/on_fire_stack(delta_time, datum/status_effect/fire_handler/fire_stacks/fire_handler)
+/mob/living/proc/on_fire_stack(seconds_per_tick, datum/status_effect/fire_handler/fire_stacks/fire_handler)
 	return
 
 //Mobs on Fire end

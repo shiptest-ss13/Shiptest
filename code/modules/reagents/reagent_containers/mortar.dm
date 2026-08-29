@@ -8,6 +8,7 @@ to accommodate additional materials.
 	desc = "An ancient, simple tool used in conjunction with a mortar to grind or juice items."
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/obj/chemical/mortar.dmi'
+	world_file = 'icons/obj/chemical/mortar_world.dmi'
 	icon_state = "pestle"
 	force = 7
 
@@ -15,6 +16,7 @@ to accommodate additional materials.
 	name = "mortar"
 	desc = "A specially formed bowl of ancient design. It is possible to crush or juice items placed in it using a pestle; however the process, unlike modern methods, is slow and physically exhausting. Alt click to eject the item."
 	icon = 'icons/obj/chemical/mortar.dmi'
+	world_file = 'icons/obj/chemical/mortar_world.dmi'
 	icon_state = "mortar_wood"
 	fill_icon_state = "mortar"
 	fill_icon_thresholds = list(1, 20, 40, 80, 100)
@@ -94,8 +96,7 @@ to accommodate additional materials.
 
 ///Grinds the passed target item, and transfers any contained chems to the mortar as well
 /obj/item/reagent_containers/glass/mortar/proc/grind_target_item(obj/item/to_be_ground, mob/living/carbon/human/user)
-	to_be_ground.on_grind()
-	reagents.add_reagent_list(to_be_ground.grind_results)
+	reagents.add_reagent_list(to_be_ground.on_grind())
 
 	if(to_be_ground.reagents) //If grinded item has reagents within, transfer them to the mortar
 		to_be_ground.reagents.trans_to(src, to_be_ground.reagents.total_volume, transfered_by = user)

@@ -1,0 +1,52 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Capercaillie-class Patrol Vessel",
+	"prefix": "VISV",
+	"manufacturer": "Makosso-Warra Spaceworks",
+	"faction": "/datum/faction/warra/vigilitas",
+	"namelists": [
+		"MAKOSSO-WARRA",
+		"NATURAL_AGGRESSIVE",
+		"WEAPONS"
+	],
+	"map_short_name": "Capercaillie-class",
+	"map_path": "_maps/shuttles/warra/warra_capercaillie.dmm",
+	"token_icon_state": "ship_generic",
+	"description": "First designed in FS-479 as a small patrol ship for Vigilitas Interstellar, the Capercaillie swiftly entered production the same year during times of rising scrutiny towards Makosso-Warra's operations. The design saw widespread use across Makosso-Warra's controlled territories, patrolling the space around the corporation's colonies and stations engaging in anti-piracy, loss prevention, and enforcement of territorial claims. Post-ICW, many Capercaillie have been thoroughly reworked by MW Spaceworks to facilitate travel between the greater distances of the company's remaining holdings; notably receiving a streamlined atmospheric extractor system to allow it to act self-sufficiently for some time in undeveloped (or unfriendly) stretches of space. With this added complexity, MW engineers are often contracted with active crews to maintain these systems and/or make further changes to the design. These overhauled vessels are often put to use in emergency response or recovery operations, aiding allied vessels and recovering high-value assets in the ongoing effort to recoup losses from the war. This compact ship has a mixed reputation in the public eye, while often regarded as a visible background element of civilized Frontier space, groups with shaky relations are indiscreetly tagged and monitored while near facilities operated by MW or it's partners.",
+	"tags": [
+		"Combat",
+		"Engineering"
+	],
+	"limit": 1,
+	"tranist_x_offset": -15,
+	"starting_funds": 2500,
+	"job_slots": {
+		"Security Director": {
+			"outfit": "/datum/outfit/job/warra/captain/vi/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Sergeant": {
+			"outfit": "/datum/outfit/job/warra/hos/vi/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Security Guard": {
+			"outfit": "/datum/outfit/job/warra/security/empty",
+			"slots": 1
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/warra/paramedic/empty",
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/warra/engineer/empty",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/warra/assistant/empty",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

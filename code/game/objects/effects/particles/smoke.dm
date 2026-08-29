@@ -82,3 +82,15 @@
 /particles/fog
 	icon = 'icons/effects/particles/smoke.dmi'
 	icon_state = list("chill_1" = 2, "chill_2" = 2, "chill_3" = 1)
+
+/particles/smoke/geyser_smoke
+	icon_state = list("steam_1" = 1, "steam_2" = 1, "steam_3" = 2)
+	velocity = list(0, 0.4, 0)
+	position = list(-1, 1, 0)
+	drift = generator(GEN_SPHERE, 0, 2, NORMAL_RAND)
+	friction = 0.4
+	grow = 0.03
+
+/particles/smoke/geyser_smoke/New(_color)
+	color = _color
+	. = ..()

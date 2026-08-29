@@ -71,7 +71,7 @@
 	name = "monitoring console"
 	desc = "A stationary computer. This one comes preloaded with monitoring programs."
 
-/obj/machinery/modular_computer/console/preset/command/install_programs()
+/obj/machinery/modular_computer/console/preset/monitoring/install_programs()
 	var/obj/item/computer_hardware/hard_drive/hard_drive = cpu.all_components[MC_HDD]
 	hard_drive.store_file(new/datum/computer_file/program/chatclient())
 	hard_drive.store_file(new/datum/computer_file/program/secureye())

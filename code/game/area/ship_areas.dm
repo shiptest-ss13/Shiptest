@@ -577,3 +577,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambience_index = AMBIENCE_SPACE
 	sound_environment = SOUND_AREA_SPACE
 	lightswitch = TRUE
+
+/area/ship/external/dark
+	name = "Dark External"
+	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
+	icon_state = "space_near"

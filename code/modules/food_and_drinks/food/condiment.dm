@@ -133,6 +133,11 @@
 	icon_state = "enzyme"
 	list_reagents = list(/datum/reagent/consumable/enzyme = 50)
 
+/obj/item/reagent_containers/condiment/enzyme/small
+	name = "small universal enzyme"
+	icon_state = "small_enzyme"
+	list_reagents = list(/datum/reagent/consumable/enzyme = 15)
+
 /obj/item/reagent_containers/food/condiment/enzyme/examine(mob/user)
 	. = ..()
 	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/cheesewheel]
@@ -268,6 +273,7 @@
 	volume = 10
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list()
+	custom_materials = list(/datum/material/plastic = 50)
 	possible_states = list(
 		/datum/reagent/consumable/ketchup = list("condi_ketchup", "Ketchup", "A packet of ketchup. The old standby, given by the fistful."),
 		/datum/reagent/consumable/capsaicin = list("condi_hotsauce", "Hotsauce", "A packet of hotsauce. Good for spicing up food."),

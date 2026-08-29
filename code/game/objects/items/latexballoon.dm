@@ -1,5 +1,5 @@
 /obj/item/latexballon
-	name = "latex glove"
+	name = "nitrile glove"
 	desc = "Sterile and airtight."
 	icon_state = "latexballon"
 	item_state = "lgloves"

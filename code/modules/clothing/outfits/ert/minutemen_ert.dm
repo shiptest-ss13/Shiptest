@@ -12,7 +12,7 @@
 	suit_store = /obj/item/tank/internals/oxygen
 	head = /obj/item/clothing/head/bio_hood/bard
 	mask = /obj/item/clothing/mask/surgical
-	gloves = /obj/item/clothing/gloves/color/latex
+	gloves = /obj/item/clothing/gloves/nitrile
 	shoes = /obj/item/clothing/shoes/sneakers/white
 
 	backpack = /obj/item/storage/backpack/satchel/sec/clip
@@ -71,7 +71,7 @@
 	suit = /obj/item/clothing/suit/bio_suit/bard/medium
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cm5
 	belt = /obj/item/storage/belt/medical/webbing/clip/prefilled
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
+	gloves = /obj/item/clothing/gloves/nitrile
 	r_pocket = /obj/item/reagent_scanner
 	l_pocket = /obj/item/reagent_containers/hypospray/combat
 
@@ -119,7 +119,7 @@
 	glasses = /obj/item/clothing/glasses/hud/health/night
 	mask = /obj/item/clothing/mask/gas/clip
 	suit = /obj/item/clothing/suit/bio_suit/bard/medium
-	suit_store = /obj/item/gun/ballistic/shotgun/cm15/incendiary
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/cm15/incendiary
 	belt = /obj/item/storage/belt/military/clip/alt/cm15_inc
 	shoes = /obj/item/clothing/shoes/jackboots/knife
 

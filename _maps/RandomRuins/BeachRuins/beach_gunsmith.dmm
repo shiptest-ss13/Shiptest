@@ -87,9 +87,8 @@
 /turf/open/floor/plating,
 /area/ruin/beach/gunsmith/dorms/officer)
 "aP" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 10
 	},
 /turf/open/floor/wood/ebony{
 	icon_state = "wood-broken"
@@ -107,7 +106,6 @@
 	dir = 1
 	},
 /obj/structure/sign/warning{
-	pixel_x = 0;
 	pixel_y = -24
 	},
 /turf/open/floor/concrete/slab_4,
@@ -119,13 +117,11 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/ruin/beach/gunsmith)
 "bc" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/corner/ebony{
+	dir = 8
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/dorms/officer)
@@ -138,6 +134,7 @@
 /area/ruin/beach/gunsmith/workshop)
 "bq" = (
 /obj/machinery/porta_turret/ruin/ramzi/light,
+/obj/structure/cable,
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/beach/gunsmith)
 "bv" = (
@@ -151,9 +148,8 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith/workshop)
 "by" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 8
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/crewquarters)
@@ -333,8 +329,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/gunsmith/workshop)
 "cN" = (
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/end/ebony{
 	dir = 4
 	},
 /obj/structure/closet/crate/bin,
@@ -403,7 +398,6 @@
 	},
 /obj/structure/bedsheetbin{
 	pixel_y = 15;
-	pixel_x = 0;
 	layer = 3.1
 	},
 /obj/effect/turf_decal/techfloor{
@@ -413,9 +407,8 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/beach/gunsmith/bathroom)
 "dV" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
 	},
 /obj/structure/table/wood,
 /obj/item/food/crab_rangoon{
@@ -441,7 +434,6 @@
 	},
 /obj/item/plate/large{
 	layer = 2.8;
-	pixel_x = 0;
 	pixel_y = 1
 	},
 /turf/open/floor/wood/ebony,
@@ -655,9 +647,8 @@
 /turf/open/floor/plating/rust,
 /area/ruin/beach/gunsmith/workshop)
 "gZ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5;
-	color = "#D2BC9D"
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 5
 	},
 /obj/machinery/light/directional/north,
 /obj/structure/extinguisher_cabinet/directional/east,
@@ -674,11 +665,8 @@
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "hl" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D"
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/maple,
+/obj/effect/turf_decal/siding/wood/corner/maple{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -790,8 +778,7 @@
 /turf/open/floor/carpet/green,
 /area/ruin/beach/gunsmith/dorms)
 "ii" = (
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/end/ebony{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -821,7 +808,6 @@
 	dir = 1
 	},
 /obj/structure/sign/warning/nosmoking/burnt{
-	pixel_x = 0;
 	pixel_y = 30
 	},
 /obj/machinery/autolathe,
@@ -1029,8 +1015,7 @@
 "kd" = (
 /obj/structure/table/reinforced,
 /obj/machinery/coffeemaker/premium,
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/end/ebony{
 	dir = 4
 	},
 /turf/open/floor/wood/ebony,
@@ -1165,9 +1150,8 @@
 /turf/open/floor/concrete,
 /area/ruin/beach/gunsmith/electrical)
 "lm" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 4
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/kitchen)
@@ -1265,22 +1249,17 @@
 	pixel_y = 4
 	},
 /obj/item/reagent_containers/condiment/mayonnaise{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/item/reagent_containers/condiment/hotsauce{
 	pixel_x = -5;
 	pixel_y = 3
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood/ebony,
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/kitchen)
 "lO" = (
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/end/ebony{
 	dir = 8
 	},
 /obj/machinery/button/door{
@@ -1296,7 +1275,6 @@
 "ml" = (
 /obj/structure/hazard_shutoff/electrical_shutoff{
 	id = "engineeringmoat";
-	pixel_x = 0;
 	pixel_y = 10
 	},
 /obj/structure/cable{
@@ -1325,9 +1303,8 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith/kitchen)
 "mv" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1347,9 +1324,8 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith/workshop)
 "mD" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#D2BC9D"
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 4
 	},
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/coffee{
@@ -1383,12 +1359,9 @@
 /turf/open/floor/plating,
 /area/ruin/beach/gunsmith/workshop)
 "nu" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521"
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony,
+/obj/effect/turf_decal/siding/wood/corner/ebony{
+	dir = 4
 	},
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -1435,9 +1408,8 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/beach/gunsmith/bathroom)
 "nZ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 4
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/dorms/officer)
@@ -1532,15 +1504,10 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/ruin/beach/gunsmith)
 "ow" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 9
 	},
-/obj/structure/noticeboard{
-	pixel_x = -28;
-	pixel_y = -1;
-	dir = 4
-	},
+/obj/structure/noticeboard/directional/west,
 /obj/machinery/atmospherics/components/unary/passive_vent/layer2{
 	dir = 1
 	},
@@ -1598,9 +1565,8 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/gunsmith)
 "oN" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 5
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/kitchen)
@@ -1667,7 +1633,6 @@
 	},
 /obj/item/storage/toolbox/syndicate,
 /obj/item/storage/toolbox/syndicate{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /obj/item/storage/box/stockparts/t2{
@@ -1680,7 +1645,6 @@
 "pA" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/item/storage/toolbox/electrical{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /obj/item/storage/toolbox/mechanical{
@@ -1690,9 +1654,8 @@
 /turf/open/floor/plating,
 /area/ruin/beach/gunsmith/electrical)
 "pE" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 5
 	},
 /obj/structure/chair/bench/orange{
 	dir = 8
@@ -1707,8 +1670,7 @@
 /turf/template_noop,
 /area/template_noop)
 "pT" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/maple{
 	dir = 5
 	},
 /turf/open/floor/wood/maple,
@@ -1732,13 +1694,11 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "ql" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#D2BC9D"
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8;
-	color = "#D2BC9D"
+/obj/effect/turf_decal/siding/wood/corner/maple{
+	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1749,9 +1709,8 @@
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/crewquarters)
 "qo" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 10
 	},
 /obj/structure/chair/bench/orange{
 	dir = 4
@@ -1896,9 +1855,8 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "sb" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9;
-	color = "#D2BC9D"
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 9
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/crewquarters)
@@ -1909,9 +1867,8 @@
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "sh" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 10
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/crewquarters)
@@ -2032,8 +1989,7 @@
 	pixel_y = -11
 	},
 /obj/item/clothing/mask/breath/facemask{
-	pixel_x = -9;
-	pixel_y = 0
+	pixel_x = -9
 	},
 /obj/item/clothing/mask/breath/facemask{
 	pixel_x = -9;
@@ -2229,13 +2185,9 @@
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "vI" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 2;
-	color = "#332521"
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony,
+/obj/effect/turf_decal/siding/wood/corner/ebony{
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -2279,11 +2231,9 @@
 	pixel_y = 4
 	},
 /obj/item/storage/box/coffeepack/robusta{
-	pixel_x = 10;
-	pixel_y = 0
+	pixel_x = 10
 	},
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/end/ebony{
 	dir = 8
 	},
 /obj/machinery/light/directional/south,
@@ -2356,11 +2306,9 @@
 "wZ" = (
 /obj/structure/rack,
 /obj/item/gun_maint_kit{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /obj/item/gun_maint_kit{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -2387,8 +2335,7 @@
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/secure/weapon,
 /obj/item/clothing/suit/space/syndicate/ramzi/surplus{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/item/clothing/suit/space/syndicate/ramzi/surplus{
 	pixel_x = 5;
@@ -2414,7 +2361,7 @@
 /area/ruin/beach/gunsmith/workshop)
 "xU" = (
 /obj/structure/rack,
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_x = -4;
 	pixel_y = 6
 	},
@@ -2504,9 +2451,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "yJ" = (
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#D2BC9D"
-	},
+/obj/effect/turf_decal/siding/wood/end/maple,
 /obj/item/kirbyplants{
 	icon_state = "plant-05";
 	pixel_x = 8;
@@ -2518,7 +2463,6 @@
 /obj/structure/salvageable/machine,
 /obj/structure/hazard_shutoff/electrical_shutoff{
 	id = "bunkermoat";
-	pixel_x = 0;
 	pixel_y = 9
 	},
 /turf/open/floor/concrete/slab_1,
@@ -2555,7 +2499,6 @@
 	dir = 4
 	},
 /obj/structure/sign/warning{
-	pixel_x = 0;
 	pixel_y = -24
 	},
 /turf/open/floor/concrete/slab_4,
@@ -2574,9 +2517,8 @@
 /turf/open/floor/plasteel/stairs/wood/walnut/right,
 /area/ruin/beach/gunsmith)
 "zB" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2646,9 +2588,8 @@
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/gunsmith/workshop)
 "zV" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 10
 	},
 /obj/structure/chair/office/dark,
 /obj/item/radio/intercom/wideband/directional/west,
@@ -2679,9 +2620,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "Ag" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D"
-	},
+/obj/effect/turf_decal/siding/wood/maple,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -2714,9 +2653,8 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/gunsmith)
 "At" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 6
 	},
 /obj/structure/chair/bench/orange{
 	dir = 8
@@ -2727,8 +2665,7 @@
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/secure/weapon,
 /obj/item/ammo_box/magazine/boomslang/empty{
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /obj/item/ammo_box/magazine/boomslang/empty{
 	pixel_x = -4;
@@ -2744,8 +2681,12 @@
 "AC" = (
 /obj/structure/table/wood,
 /obj/item/radio/intercom/directional/east{
-	pixel_x = 31;
 	pixel_y = -6
+	},
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = 3;
+	pixel_y = 16;
+	dir = 8
 	},
 /turf/open/floor/carpet/green,
 /area/ruin/beach/gunsmith/crewquarters)
@@ -2776,12 +2717,7 @@
 "Bv" = (
 /obj/structure/table/wood,
 /obj/item/radio/intercom/directional/east{
-	pixel_x = 31;
 	pixel_y = 6
-	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 31;
-	pixel_y = -17
 	},
 /turf/open/floor/carpet/green,
 /area/ruin/beach/gunsmith/crewquarters)
@@ -2799,16 +2735,14 @@
 	pixel_y = 11
 	},
 /obj/item/documents/syndicate/ngr{
-	pixel_x = 1;
-	pixel_y = 0
+	pixel_x = 1
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "BE" = (
 /obj/machinery/griddle,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/kitchen)
@@ -2969,9 +2903,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/gunsmith/workshop)
 "CN" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 9
 	},
 /obj/structure/chair/bench/orange{
 	dir = 4
@@ -2986,8 +2919,7 @@
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "CX" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 6
 	},
 /obj/structure/table/reinforced,
@@ -3011,9 +2943,7 @@
 /turf/open/floor/carpet/green,
 /area/ruin/beach/gunsmith/dorms/officer)
 "CZ" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D"
-	},
+/obj/effect/turf_decal/siding/wood/maple,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -3123,7 +3053,6 @@
 /area/ruin/beach/gunsmith)
 "EE" = (
 /obj/structure/toilet{
-	pixel_x = 0;
 	pixel_y = 20
 	},
 /obj/structure/cable{
@@ -3149,13 +3078,11 @@
 /turf/open/floor/plating,
 /area/ruin/beach/gunsmith/workshop)
 "Fq" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/corner/ebony{
+	dir = 8
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/workshop)
@@ -3197,9 +3124,8 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/ruin/beach/gunsmith/workshop)
 "Gn" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 8
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/kitchen)
@@ -3223,9 +3149,7 @@
 /turf/open/floor/carpet/green,
 /area/ruin/beach/gunsmith/crewquarters)
 "GC" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521"
-	},
+/obj/effect/turf_decal/siding/wood/ebony,
 /obj/structure/table/wood,
 /obj/item/cutting_board{
 	pixel_x = -2;
@@ -3328,8 +3252,7 @@
 	pixel_y = -6
 	},
 /obj/item/clothing/head/helmet/m10/ramzi{
-	pixel_x = 3;
-	pixel_y = 0
+	pixel_x = 3
 	},
 /obj/item/clothing/head/helmet/m10/ramzi{
 	pixel_x = 3;
@@ -3659,9 +3582,8 @@
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/gunsmith/workshop)
 "LG" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 9
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/dorms/officer)
@@ -3716,9 +3638,8 @@
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "MJ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 5
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3880,9 +3801,8 @@
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/gunsmith/electrical)
 "PE" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10;
-	color = "#D2BC9D"
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3954,9 +3874,8 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith)
 "Qd" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#D2BC9D"
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 1
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/dorms)
@@ -3969,9 +3888,7 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/gunsmith)
 "Qi" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521"
-	},
+/obj/effect/turf_decal/siding/wood/ebony,
 /obj/structure/table/wood,
 /obj/item/paper/crumpled{
 	pixel_x = 3;
@@ -3979,8 +3896,7 @@
 	default_raw_text = "hey love. remember to be a little more careful moving the bookcase for the stash. gonna have to get rei to fix the floorboards again"
 	},
 /obj/item/desk_flag/trans{
-	pixel_x = -9;
-	pixel_y = 0
+	pixel_x = -9
 	},
 /obj/machinery/light/directional/south,
 /turf/open/floor/wood/ebony,
@@ -3991,9 +3907,8 @@
 	pixel_x = -8;
 	pixel_y = 7
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 10;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 10
 	},
 /obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 3;
@@ -4077,9 +3992,8 @@
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "QZ" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/corner/ebony{
+	dir = 1
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/dorms/officer)
@@ -4097,9 +4011,7 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/ruin/beach/gunsmith/workshop)
 "Rj" = (
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#D2BC9D"
-	},
+/obj/effect/turf_decal/siding/wood/end/maple,
 /obj/machinery/light/directional/south,
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/dorms)
@@ -4118,11 +4030,9 @@
 /obj/structure/closet/crate/freezer,
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /turf/open/floor/concrete/slab_1,
@@ -4166,7 +4076,6 @@
 	pixel_y = 4
 	},
 /obj/item/stack/ore/salvage/scrapmetal{
-	pixel_x = 0;
 	pixel_y = 13
 	},
 /obj/item/weaponcrafting/stock{
@@ -4208,16 +4117,14 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/gunsmith)
 "Sw" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 4
 	},
 /obj/structure/chair/office/dark,
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/dorms/officer)
 "SA" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/maple{
 	dir = 8
 	},
 /turf/open/floor/wood/maple,
@@ -4243,9 +4150,8 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith)
 "SM" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 8
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/dorms/officer)
@@ -4284,13 +4190,9 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith/workshop)
 "Te" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 2;
-	color = "#332521"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony,
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -4310,17 +4212,14 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith)
 "Tj" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
 	},
 /obj/structure/filingcabinet/double{
-	pixel_x = 0;
 	pixel_y = 19;
 	density = 0
 	},
 /obj/item/clipboard{
-	pixel_x = 0;
 	pixel_y = 2
 	},
 /turf/open/floor/wood/ebony,
@@ -4368,8 +4267,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "TN" = (
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/end/maple{
 	dir = 8
 	},
 /obj/machinery/button/door{
@@ -4383,12 +4281,10 @@
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/dorms)
 "TV" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 5
 	},
 /obj/structure/sign/warning/incident{
-	pixel_x = 0;
 	pixel_y = 31
 	},
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer/beach,
@@ -4433,13 +4329,10 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "Uk" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/corner/ebony{
+	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521"
-	},
+/obj/effect/turf_decal/siding/wood/ebony,
 /obj/machinery/holopad,
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/workshop)
@@ -4464,13 +4357,10 @@
 /turf/open/floor/plasteel/stairs/right,
 /area/ruin/beach/gunsmith/workshop)
 "UP" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/maple{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#D2BC9D"
-	},
+/obj/effect/turf_decal/siding/wood/corner/maple,
 /obj/item/clothing/under/shorts/red{
 	pixel_x = -25;
 	pixel_y = 5
@@ -4490,9 +4380,8 @@
 	},
 /area/ruin/beach/gunsmith)
 "Va" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 5
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/dorms/officer)
@@ -4577,9 +4466,8 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/gunsmith)
 "WK" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#D2BC9D"
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4648,9 +4536,8 @@
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "Xv" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4681,9 +4568,7 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith)
 "XJ" = (
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#332521"
-	},
+/obj/effect/turf_decal/siding/wood/end/ebony,
 /obj/machinery/photocopier,
 /obj/machinery/button/door{
 	dir = 8;
@@ -4726,8 +4611,7 @@
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "Yj" = (
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#D2BC9D";
+/obj/effect/turf_decal/siding/wood/end/maple{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -4801,9 +4685,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/gunsmith/electrical)
 "Zp" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 9
 	},
 /mob/living/simple_animal/hostile/human/ramzi/melee/sledge,
 /turf/open/floor/wood/ebony,
@@ -4828,9 +4711,8 @@
 /turf/open/water/beach/deep,
 /area/ruin/beach/gunsmith)
 "Zt" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9;
-	color = "#332521"
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 9
 	},
 /obj/machinery/oven,
 /turf/open/floor/wood/ebony,
@@ -4866,13 +4748,11 @@
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/gunsmith/workshop)
 "ZO" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#D2BC9D"
+/obj/effect/turf_decal/siding/wood/maple{
+	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8;
-	color = "#D2BC9D"
+/obj/effect/turf_decal/siding/wood/corner/maple{
+	dir = 8
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/dorms)

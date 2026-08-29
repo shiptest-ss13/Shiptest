@@ -79,3 +79,17 @@
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/ferrolance/hc = 4)
 	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/ferrorods
+	ammo_type = /obj/item/ammo_casing/caseless/gauss/rod
+	max_ammo = 5
+
+/obj/item/storage/box/ammo/ferrorods
+	name = "box of ferromagnetic rods"
+	desc = "A box of ferromagnetic rods for gauss firearms."
+	icon_state = "ferrorodsbox"
+
+/obj/item/storage/box/ammo/ferrorods/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/ferrorods = 4)
+	generate_items_inside(items_inside,src)

@@ -1,0 +1,40 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Quail-class Light Surveyor",
+	"faction": "/datum/faction/warra/ns_logi",
+	"prefix": "NSSV",
+	"manufacturer": "Makosso-Warra Spaceworks",
+	"description": "Being compact and easy to produce, the Quail-class is a cheaper alternative to the mainstay miner-freighters of the N+S fleet. Outfitted for minor salvage and mining operations, the Quail is focused on finding and exploiting lower profile material POIs, being more than capable of conducting strip-mining operations, low-tier core sampling, and light salvage work. Compared to its larger sister vessel(s), the Quail-class is a vulture among hawks, smaller, more agile, and generally more opportunistic in its operations. ",
+	"tags": [
+		"Salvage",
+		"Mining"
+	],
+	"namelists": [
+		"MAKOSSO-WARRA",
+		"SPACE",
+		"MYTHOLOGICAL"
+	],
+	"map_short_name": "Quail-class",
+	"map_path": "_maps/shuttles/warra/warra_quail.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Supply Director": {
+			"outfit": "/datum/outfit/job/warra/captain/ns/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Miner": {
+			"outfit": "/datum/outfit/job/warra/miner/empty",
+			"slots": 1
+		},
+		"Field Technician": {
+			"outfit": "/datum/outfit/job/warra/engineer/empty",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/warra/assistant/empty",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

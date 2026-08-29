@@ -312,6 +312,15 @@
 	user.visible_message(span_notice("[user] washes [user.p_their()] [washing_face ? "face" : "hands"] using [src]."), \
 						span_notice("You wash your [washing_face ? "face" : "hands"] using [src]."))
 
+/obj/structure/sink/proc/try_dump_container(mob/living/user, obj/item/reagent_containers/dump_target)
+	if(dump_target.reagents.total_volume > 0)
+		var/dump_amount = min(dump_target.reagents.total_volume, dump_target.amount_per_transfer_from_this)
+		dump_target.reagents.remove_all(dump_amount)
+		to_chat(user, span_notice("You pour [dump_amount] units of [dump_target] down the drain."))
+		return TRUE
+	to_chat(user, span_notice("\The [dump_target] is already empty!"))
+	return FALSE
+
 /obj/structure/sink/attackby(obj/item/O, mob/living/user, params)
 	if(busy)
 		to_chat(user, span_warning("Someone's already washing here!"))
@@ -319,10 +328,13 @@
 
 	if(istype(O, /obj/item/reagent_containers))
 		var/obj/item/reagent_containers/RG = O
+		if(user.a_intent == INTENT_HARM && RG.is_drainable())
+			return try_dump_container(user, RG)
 		if(RG.is_refillable())
 			if(!RG.reagents.holder_full())
-				RG.reagents.add_reagent(dispensedreagent, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
-				to_chat(user, span_notice("You fill [RG] from [src]."))
+				var/fill_amount = min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)
+				RG.reagents.add_reagent(dispensedreagent, fill_amount)
+				to_chat(user, span_notice("You fill [RG] with [fill_amount] units from [src]."))
 				return TRUE
 			to_chat(user, span_notice("\The [RG] is full."))
 			return FALSE
@@ -386,6 +398,12 @@
 	else
 		return ..()
 
+/obj/structure/sink/attackby_secondary(obj/item/O, mob/user, params)
+	if(istype(O, /obj/item/reagent_containers))
+		try_dump_container(user, O)
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return ..()
+
 /obj/structure/sink/deconstruct()
 	if(!(flags_1 & NODECONSTRUCT_1))
 		drop_materials()
@@ -402,6 +420,12 @@
 /obj/structure/sink/kitchen
 	name = "kitchen sink"
 	icon_state = "sink_alt"
+
+/obj/structure/sink/counter
+	icon_state = "sink_counter"
+
+/obj/structure/sink/kitchen/counter
+	icon_state = "sink_alt_counter"
 
 /obj/structure/sink/chem
 	name = "chemistry lab sink"
@@ -590,3 +614,46 @@
 /obj/structure/curtain/cloth/fancy
 	icon_type = "cur_fancy"
 	icon_state = "cur_fancy-open"
+
+/obj/structure/curtain/thin
+	name = "thin curtains"
+	layer = WALL_OBJ_LAYER
+	desc = "Thin curtains used to separate debris and obfuscate vision while allowing easy passage."
+	icon_type = "curtain_thin"
+	icon_state = "curtain_thin-open"
+
+/obj/structure/curtain/thin/Initialize()
+	. = ..()
+	if(dir == 1)
+		layer = SIGN_LAYER
+
+/obj/structure/curtain/thin/toggle()
+	open = !open
+	if(open)
+		density = FALSE
+		set_opacity(FALSE)
+	else
+		if(opaque_closed)
+			set_opacity(TRUE)
+
+	if(dir == 1)
+		layer = SIGN_LAYER
+
+	update_appearance()
+
+/obj/structure/curtain/thin/cloth
+	color = null
+	alpha = 255
+	opaque_closed = TRUE
+
+/obj/structure/curtain/thin/cloth/grey
+	color = "#696969"
+
+/obj/structure/curtain/thin/plastic
+	name = "plastic strip curtains"
+	desc = "Plastic strip curtains used to separate debris, muffle noise, and control temperature while allowing easy passage."
+	color = null
+	alpha = 255
+	icon = 'icons/obj/structures/plasticflaps.dmi'
+	icon_type = "plastic_thin"
+	icon_state = "plastic_thin-open"

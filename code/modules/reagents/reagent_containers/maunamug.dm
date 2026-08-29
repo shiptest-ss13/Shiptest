@@ -1,13 +1,14 @@
 /obj/item/reagent_containers/glass/maunamug
 	name = "mauna mug"
 	desc = "A drink served in a classy mug. Now with built-in heating!"
-	icon = 'icons/obj/mauna_mug.dmi'
+	icon = 'icons/obj/drinks/mauna_mug.dmi'
 	icon_state = "maunamug"
 	base_icon_state = "maunamug"
 	spillable = TRUE
 	reagent_flags = OPENCONTAINER
-	fill_icon_state = "maunafilling"
-	fill_icon_thresholds = list(25)
+	fill_icon_state = "mug"
+	fill_icon_thresholds = list(30, 50, 70, 90)
+	volume = 30
 	var/obj/item/stock_parts/cell/cell
 	var/open = FALSE
 	var/on = FALSE
@@ -30,7 +31,7 @@
 	cell.use(5 * seconds_per_tick) //Basic cell goes for like 200 seconds, bluespace for 8000
 	if(!reagents.total_volume)
 		return FALSE
-	var/max_temp = min(500 + (500 * (0.2 * cell.rating)), 1000) // 373 to 1000
+	var/max_temp = 308.15 // 35 C
 	reagents.adjust_thermal_energy(0.4 * cell.maxcharge * reagents.total_volume * seconds_per_tick, max_temp = max_temp) // 4 kelvin every tick on a basic cell. 160k on bluespace
 	reagents.handle_reactions()
 	update_appearance()
@@ -102,12 +103,3 @@
 	icon_state = "[base_icon_state][on ? "_on" : null]"
 	return ..()
 
-/obj/item/reagent_containers/glass/maunamug/update_overlays()
-	. = ..()
-	if(!reagents.total_volume || reagents.chem_temp < 400)
-		return
-
-	var/intensity = (reagents.chem_temp - 400) * 1 / 600 //Get the opacity of the incandescent overlay. Ranging from 400 to 1000
-	var/mutable_appearance/mug_glow = mutable_appearance(icon, "maunamug_incand")
-	mug_glow.alpha = 255 * intensity
-	. += mug_glow

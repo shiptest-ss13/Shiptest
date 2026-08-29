@@ -22,8 +22,8 @@
 #define RADIO_TOKEN_NGR ":f"
 
 #define RADIO_CHANNEL_SUNS "SUNS"
-#define RADIO_KEY_SUNS "q"
-#define RADIO_TOKEN_SUNS ":q"
+#define RADIO_KEY_SUNS "u"
+#define RADIO_TOKEN_SUNS ":u"
 
 #define RADIO_CHANNEL_CENTCOM "CentCom"
 #define RADIO_KEY_CENTCOM "e"
@@ -34,8 +34,8 @@
 #define RADIO_TOKEN_SOLGOV ":s"
 
 #define RADIO_CHANNEL_WARRA "Makosso-Warra"
-#define RADIO_KEY_WARRA "w"
-#define RADIO_TOKEN_WARRA ":w"
+#define RADIO_KEY_WARRA "mw"
+#define RADIO_TOKEN_WARRA ":mw"
 
 #define RADIO_CHANNEL_MINUTEMEN "Minutemen"
 #define RADIO_KEY_MINUTEMEN "m"

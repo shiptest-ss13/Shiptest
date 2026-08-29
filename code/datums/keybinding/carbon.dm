@@ -56,7 +56,6 @@
 	if(.)
 		return
 	user.mob?.a_intent_change(INTENT_HELP)
-	user.mob?.face_mouse = FALSE
 	return TRUE
 
 
@@ -73,7 +72,6 @@
 	if(.)
 		return
 	user.mob?.a_intent_change(INTENT_DISARM)
-	user.mob?.face_mouse = FALSE
 	return TRUE
 
 
@@ -90,7 +88,6 @@
 	if(.)
 		return
 	user.mob?.a_intent_change(INTENT_GRAB)
-	user.mob?.face_mouse = FALSE
 	return TRUE
 
 
@@ -107,7 +104,6 @@
 	if(.)
 		return
 	user.mob?.a_intent_change(INTENT_HARM)
-	user.mob?.face_mouse = TRUE
 	return TRUE
 
 /datum/keybinding/carbon/give

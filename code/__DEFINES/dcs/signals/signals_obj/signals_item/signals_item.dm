@@ -64,8 +64,8 @@
 #define COMSIG_TOOL_START_USE "tool_start_use" ///from base of [/obj/item/proc/tool_start_check]: (mob/living/user)
 #define COMSIG_ITEM_DISABLE_EMBED "item_disable_embed" ///from [/obj/item/proc/disableEmbedding]:
 #define COMSIG_MINE_TRIGGERED "minegoboom" ///from [/obj/item/mine/proc/trigger_mine]:
-///from [/obj/structure/closet/supplypod/proc/endlaunch]:
-#define COMSIG_SUPPLYPOD_LANDED "supplypodgoboom"
+#define COMSIG_MOB_PELLETS "mobgoboom" ///from [/mob/living/simple_animal/hostile/automated/walkmine/death()]
+#define COMSIG_SUPPLYPOD_LANDED "supplypodgoboom" ///from [/obj/structure/closet/supplypod/proc/endlaunch]:
 
 // Item mouse siganls
 #define COMSIG_ITEM_MOUSE_EXIT "item_mouse_exit"				//from base of obj/item/MouseExited(): (location, control, params)

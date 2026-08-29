@@ -1,86 +1,24 @@
-//Interceptor Crash Site
+//swamp fever sorry interceptor
 
-/area/ruin/jungle/interceptor/crashsite
-	name = "Makosso-Warra Interceptor Crashsite"
-	icon_state = "yellow"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/afthall
-	name = "MWSV Retribution Aft Hall"
-	icon_state = "hallA"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/porthall
-	name = "MWSV Retribution Port Hall"
-	icon_state = "hallP"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/starhall
-	name = "MWSV Retribution Starbard Hall"
-	icon_state = "hallS"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/forehall
-	name = "MWSV Retribution Fore Hall"
-	icon_state = "hallF"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/bridge
-	name = "MWSV Retribution Bridge"
+/area/ruin/jungle/swamp
+	name = "Main Building"
 	icon_state = "bridge"
-	always_unpowered = TRUE
 
-/area/ruin/jungle/interceptor/security
-	name = "MWSV Retribution Security"
-	icon_state = "security"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/crewquarters
-	name = "MWSV Retribution Crewquarters"
+/area/ruin/jungle/swamp/flamebearer
+	name = "Flamebearer's Deck"
 	icon_state = "crew_quarters"
-	always_unpowered = TRUE
 
-/area/ruin/jungle/interceptor/starlauncherone
-	name = "MWSV Retribution Starboard Launcher One"
+/area/ruin/jungle/swamp/colligne
+	name = "Colligne's Deck"
+	icon_state = "crew_quarters"
+
+/area/ruin/jungle/swamp/crew
+	name = "Hunter's Quarters"
+	icon_state = "crew_quarters"
+
+/area/ruin/jungle/swamp/butchery
+	name = "Butcher's Shed"
 	icon_state = "red"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/starlaunchertwo
-	name = "MWSV Retribution Starboard Launcher Two"
-	icon_state = "red"
-	always_unpowered = TRUE
-
-//holy shit, how does this work.
-
-//Jungle Paradise
-
-/area/ruin/jungle/paradise/comms
-	name = "Communications center"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/dorms
-	name = "sleeping hut"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/power
-	name = "electricity hut"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/construction
-	name = "construction site"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/med
-	name = "surgical medical pod"
-	icon_state = "blue"
-
-/area/ruin/jungle/paradise/misc
-	name = "Paradise"
-	icon_state = "green"
-
-/area/ruin/jungle/paradise/cargo
-	name = "cargo dump"
-	icon_state = "dk_yellow"
 
 // Abandoned Airbase
 
@@ -232,3 +170,84 @@
 /area/ruin/powered/hunts/shuttle
 	name = "Shuttle"
 	icon_state = "shuttle"
+
+// Big Hole
+/area/ruin/powered/bighole/canteen
+	name = "Canteen"
+	icon_state = "cafeteria"
+
+/area/ruin/powered/bighole/dormitory
+	name = "Dormitory"
+	icon_state = "crew_quarters"
+
+/area/ruin/powered/bighole/medbay
+	name = "Medical Bay"
+	icon_state = "red"
+
+/area/ruin/powered/bighole/secoffice
+	name = "Security Office"
+	icon_state = "security"
+
+/area/ruin/jungle/bighole/clipmine
+	name = "Borehole Facility"
+	icon_state = "green"
+
+/area/ruin/powered/bighole/office
+	name = "Communications Office"
+	icon_state = "bridge"
+
+/area/ruin/powered/bighole/lab
+	name = "Geology Lab"
+	icon_state = "blue"
+
+/area/ruin/powered/bighole/cargo
+	name = "Cargo Warehouse"
+	icon_state = "storage"
+
+/area/ruin/powered/bighole/shed
+	name = "Maintinence Shed"
+	icon_state = "yellow"
+
+/area/ruin/powered/bighole/electrical
+	name = "Electrical"
+	icon_state = "yellow"
+
+/area/ruin/jungle/bighole/vent
+	name = "Air Exchanger"
+
+/area/ruin/jungle/bighole/ferry
+	name = "Militarized Ferry"
+	icon_state = "hangar"
+
+//N&S Depot
+/area/ruin/jungle/depot/warehouse_1
+	name = "Warehouse 1"
+	icon_state = "auxstorage"
+
+/area/ruin/jungle/depot/warehouse_2
+	name = "Warehouse 2"
+	icon_state = "storage"
+
+/area/ruin/jungle/depot/warehouse_3
+	name = "Warehouse 3"
+	icon_state = "primarystorage"
+
+/area/ruin/jungle/depot/supply_office
+	name = "Supply Office"
+	icon_state = "quartoffice"
+
+/area/ruin/jungle/depot/residential
+	name = "Residential"
+	icon_state = "crew_quarters"
+
+/area/ruin/jungle/depot/canteen
+	name = "Canteen"
+	icon_state = "prison_mess"
+
+/area/ruin/jungle/depot/offices
+	name = "Offices"
+	icon_state = "bluenew"
+
+/area/ruin/jungle/depot/electrical
+	name = "Electrical"
+	icon_state = "maint_electrical"

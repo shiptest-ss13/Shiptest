@@ -58,6 +58,13 @@
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
 	unique_reskin = null
 
+/obj/item/clothing/under/shorts/brownjorts
+	name = "brown jorts"
+	desc = "Jean shorts cut from denim."
+	icon_state = "brownjorts"
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+	unique_reskin = null
+
 /obj/item/clothing/under/shorts/dolphin
 	name = "dolphin shorts"
 	desc = "Short shorts made for blistering hot days and athletic use."
@@ -149,3 +156,20 @@
 /obj/item/clothing/under/shorts/miniskirt/pink
 	name = "pink mini skirt"
 	icon_state = "miniskirtpink"
+
+/obj/item/clothing/under/shorts/cargo
+	name = "cargo shorts"
+	desc = "A pocket for every need on a hot day."
+	icon_state = "shortcargogrey"
+	unique_reskin = list("grey cargo shorts" = "shortcargogrey",
+						"black cargo pants" = "shortcargoblack",
+						"khaki cargo pants" = "shortcargokhaki",
+						"jean cargo pants" = "shortcargojeans",
+						"olive cargo pants" = "shortcargoolive",
+						"brown cargo pants" = "shortcargobrown",
+						"navy cargo pants" = "shortcargonavy",
+						"camo cargo pants" = "shortcargocamo"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+	supports_variations = DIGITIGRADE_VARIATION

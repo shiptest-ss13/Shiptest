@@ -47,7 +47,6 @@
 	pixel_y = 3
 	},
 /obj/item/ammo_box/magazine/m17{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/item/ammo_box/magazine/illestren_a850r{
@@ -131,7 +130,7 @@
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/head/hardhat/dblue,
 /obj/effect/turf_decal/box,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/storage/belt/utility/full/engi,
 /obj/item/clothing/head/hardhat/orange,
 /obj/item/clothing/under/overalls/olive,
@@ -167,7 +166,6 @@
 	pixel_x = -28
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel,
@@ -205,8 +203,7 @@
 	pixel_y = -19
 	},
 /obj/machinery/firealarm/directional/south{
-	pixel_x = -6;
-	pixel_y = -32
+	pixel_x = -6
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -230,7 +227,6 @@
 "bn" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/effect/turf_decal/corner/transparent/beige/full,
@@ -295,7 +291,6 @@
 	pixel_y = 18
 	},
 /obj/structure/mirror{
-	pixel_x = 0;
 	pixel_y = 34
 	},
 /obj/item/storage/pill_bottle/happy{
@@ -439,8 +434,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/west,
 /obj/machinery/firealarm/directional/south{
-	pixel_x = -6;
-	pixel_y = -32
+	pixel_x = -6
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = 7;
@@ -580,7 +574,6 @@
 	pixel_y = 10
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = -2
 	},
 /obj/machinery/light_switch{
@@ -665,11 +658,11 @@
 /area/ship/crew/canteen/kitchen)
 "dc" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 16;
-	pixel_y = -25
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/south{
+	pixel_x = 16;
+	pixel_y = -22
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/canteen/kitchen)
 "de" = (
@@ -701,8 +694,7 @@
 	pixel_y = 3
 	},
 /obj/item/tank/internals/oxygen{
-	pixel_x = -10;
-	pixel_y = 0
+	pixel_x = -10
 	},
 /obj/item/clothing/head/helmet/space/eva{
 	pixel_x = 11;
@@ -764,6 +756,10 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/emergency_panel{
+	pixel_x = -8;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "fs" = (
@@ -926,13 +922,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/corner/walnut,
 /obj/item/kirbyplants/fullysynthetic{
 	pixel_x = 11;
 	pixel_y = 21
@@ -973,16 +966,14 @@
 	pixel_y = 16
 	},
 /obj/item/clothing/neck/shemagh/olive{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /obj/item/clothing/neck/shemagh/olive{
 	pixel_x = 9;
 	pixel_y = 7
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 1
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken"
@@ -1035,8 +1026,7 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/south{
-	pixel_x = 6;
-	pixel_y = -31
+	pixel_x = 6
 	},
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet,
@@ -1171,7 +1161,6 @@
 	pixel_y = -1
 	},
 /obj/item/stack/sheet/plastic/five{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1195,20 +1184,17 @@
 	pixel_y = 8
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = -2
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_x = -28;
 	pixel_y = -14
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/corner/walnut{
+	dir = 4
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
@@ -1254,15 +1240,13 @@
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/medical,
 /obj/item/storage/firstaid/regular{
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /obj/item/storage/firstaid/regular{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/item/roller,
-/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/nitrile/blue,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "oj" = (
@@ -1507,8 +1491,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm/directional/south{
-	pixel_x = 8;
-	pixel_y = -32
+	pixel_x = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = -4;
@@ -1678,8 +1661,7 @@
 /obj/structure/table,
 /obj/item/radio/intercom/wideband/table{
 	dir = 1;
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1705,8 +1687,7 @@
 /obj/machinery/light/small/directional/east,
 /obj/item/radio/intercom/table{
 	dir = 1;
-	pixel_x = -13;
-	pixel_y = 0
+	pixel_x = -13
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -1736,7 +1717,6 @@
 "GM" = (
 /obj/structure/filingcabinet/double/grey{
 	pixel_x = -10;
-	pixel_y = 0;
 	dir = 4;
 	density = 0
 	},
@@ -1745,10 +1725,7 @@
 /obj/item/pen,
 /obj/item/pen,
 /obj/item/modular_computer/tablet/preset/cheap,
-/obj/item/modular_computer/tablet/preset/cheap{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/item/modular_computer/tablet/preset/cheap,
 /obj/effect/turf_decal/corner/transparent/green{
 	dir = 9
 	},
@@ -1897,9 +1874,8 @@
 	},
 /obj/machinery/light/small/directional/east,
 /obj/machinery/airalarm/directional/south,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 6
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
@@ -2030,8 +2006,7 @@
 	pixel_y = 9
 	},
 /obj/item/kitchen/rollingpin{
-	pixel_x = -8;
-	pixel_y = 0
+	pixel_x = -8
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
@@ -2047,7 +2022,6 @@
 	},
 /obj/structure/sink/kitchen{
 	dir = 4;
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /turf/open/floor/plasteel,
@@ -2182,10 +2156,6 @@
 	pixel_x = 6;
 	pixel_y = 7
 	},
-/obj/machinery/emergency_panel{
-	pixel_x = -10;
-	pixel_y = 2
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "UY" = (
@@ -2257,13 +2227,11 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/corner/walnut{
+	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/corner/walnut{
+	dir = 4
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken2"
@@ -2273,7 +2241,6 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /mob/living/basic/cockroach,
 /obj/item/radio/intercom/directional/east{
-	pixel_x = 31;
 	pixel_y = 7
 	},
 /turf/open/floor/plating,
@@ -2312,9 +2279,7 @@
 	melee_damage_upper = 10;
 	name = "maurice"
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30"
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken5"
 	},
@@ -2332,9 +2297,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#543C30"
+/obj/effect/turf_decal/siding/wood/walnut{
+	dir = 4
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken4"

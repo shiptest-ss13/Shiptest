@@ -58,7 +58,7 @@
 	rapid_fire_delay = 7
 	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/sharplite
-	r_hand = /obj/item/gun/energy/sharplite/l201/l204
+	r_hand = /obj/item/gun/energy/sharplite/surge/resistor
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 
 /mob/living/simple_animal/hostile/human/warra/ranged/laser/space
@@ -94,7 +94,7 @@
 	rapid_fire_delay = 2
 	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/sharplite
-	r_hand = /obj/item/gun/energy/sharplite/l305
+	r_hand = /obj/item/gun/energy/sharplite/rush
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 
 /mob/living/simple_animal/hostile/human/warra/ranged/trooper/shotgun
@@ -103,7 +103,7 @@
 	icon_state = "warrarangedsmg"
 	icon_living = "warrarangedsmg"
 	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
-	r_hand = /obj/item/gun/energy/sharplite/x46
+	r_hand = /obj/item/gun/energy/sharplite/amperage
 	rapid = 2
 	rapid_fire_delay = 5
 	retreat_distance = 0
@@ -145,7 +145,7 @@
 	rapid_fire_delay = 4
 	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
-	r_hand = /obj/item/gun/energy/sharplite/al655
+	r_hand = /obj/item/gun/energy/sharplite/hades
 	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
 
 /mob/living/simple_animal/hostile/human/warra/ranged/trooper/rifle/space
@@ -181,7 +181,7 @@
 	faction = list(ROLE_DEATHSQUAD)
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_elite
 	armor_base = /obj/item/clothing/suit/space/hardsuit/ert/sec
-	r_hand = /obj/item/gun/energy/sharplite/al655
+	r_hand = /obj/item/gun/energy/sharplite/hades
 
 /mob/living/simple_animal/hostile/human/warra/elite/shotgun
 	name = "Vigilitas Response Team"
@@ -197,4 +197,4 @@
 	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
 	projectiletype = null
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire_light.ogg'
-	r_hand = /obj/item/gun/energy/sharplite/x46
+	r_hand = /obj/item/gun/energy/sharplite/amperage

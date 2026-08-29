@@ -168,6 +168,19 @@
 					/obj/item/food/grown/whitebeet,
 	)
 
+/datum/supply_pack/food/ingredients_basic/seaweed
+	name = "Seaweed Sheet Crate"
+	desc = "Crate containing five seaweed sheets."
+	cost = 50 //ingredient only p much
+	contains = list(/obj/item/food/grown/seaweed/sheet,
+					/obj/item/food/grown/seaweed/sheet,
+					/obj/item/food/grown/seaweed/sheet,
+					/obj/item/food/grown/seaweed/sheet,
+					/obj/item/food/grown/seaweed/sheet,
+	)
+
+/datum/supply_pack/food/ingredients_basic/honey
+
 /datum/supply_pack/food/ingredients_basic/redbeet
 	name = "Redbeet Crate"
 	desc = "Crate containing five redbeets."

@@ -1,7 +1,8 @@
 /obj/item/reagent_containers/glass/chem_jug
 	name = "chemical jug"
 	desc = "A large jug used for storing bulk quantities of chemicals. Provided with an anti-tamper seal which ensures that the contents are pure."
-	icon = 'icons/obj/chemical/chem_jug.dmi' // the coloring of labels for elemental chemicals is based on the chemical group block coloring at https://pubchem.ncbi.nlm.nih.gov/periodic-table/ . Everything else is whatever.
+	icon = 'icons/obj/chemical/chem_jug.dmi'
+	world_file = 'icons/obj/chemical/chem_jug_world.dmi'
 	icon_state = "chem_jug"
 	item_state = "sheet-plastic"
 	w_class = WEIGHT_CLASS_BULKY

@@ -44,6 +44,7 @@
 	var/unres_sides = 0 //Unrestricted sides. A bitflag for which direction (if any) can open the door with no access
 	var/safety_mode = FALSE ///Whether or not the airlock can be opened with bare hands while unpowered
 	var/can_crush = TRUE /// Whether or not the door can crush mobs.
+	var/close_exception = FALSE //Will this be triggered by close_and_lock()? This only affects burglar alarms.
 
 
 /obj/machinery/door/examine(mob/user)

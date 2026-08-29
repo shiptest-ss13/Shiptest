@@ -27,10 +27,12 @@
 	var/can_be_disabled = FALSE
 	//Can be used for do_afters on disable checks, also toolchecks.
 	var/time_to_disable = 5 SECONDS
-	//whether this hazard has been disabled, which no longer functions and doesn't listen to hazard shutoffs.
+	//Whether this hazard has been disabled, which no longer functions and doesn't listen to hazard shutoffs.
 	var/disabled = FALSE
-	//examine text shown if can_be_disabled is true. Make sure to set this if you add a way to disable your hazard.
+	//Examine text shown if can_be_disabled is true. Make sure to set this if you add a way to disable your hazard. In context: "[src] could be disabled by [disable_text]."
 	var/disable_text = "a way you don't know! (this needs to be set)"
+	//Examine text shown when 'on' is false. In context: [src] appears to be [off_text].</span>"
+	var/off_text = "turned off"
 
 	//ID for use with hazard shutoffs, should be set per map and not in code.
 	var/id = null
@@ -124,6 +126,8 @@ evil 'code' that sets off the above procs. mappers beware!
 		. += span_notice("[src] has been disabled.</span>")
 	else if(can_be_disabled)
 		. += span_notice("[src] could be disabled by [disable_text].</span>")
+	if(!on)
+		. += span_notice("[src] appears to be [off_text].</span>")
 
 /obj/structure/hazard/proc/random_effect(start = FALSE)
 	if(QDELETED(src))

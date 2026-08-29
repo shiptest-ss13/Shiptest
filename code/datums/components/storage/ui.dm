@@ -1,14 +1,20 @@
 // Generates a list of numbered_display datums for the numerical display system.
 /datum/component/storage/proc/_process_numerical_display()
 	. = list()
-	for(var/obj/item/I in accessible_items())
-		if(QDELETED(I))
+	for(var/obj/item/thing in accessible_items())
+		if(QDELETED(thing))
 			continue
-		if(!.[I.type])
-			.[I.type] = new /datum/numbered_display(I, 1, src)
+
+		var/total_amnt = 1
+		if(isstack(thing))
+			var/obj/item/stack/things = thing
+			total_amnt = things.amount
+
+		if(!.["[thing.type]-[thing.name]"])
+			.["[thing.type]-[thing.name]"] = new /datum/numbered_display(thing, total_amnt, src)
 		else
-			var/datum/numbered_display/ND = .[I.type]
-			ND.number++
+			var/datum/numbered_display/ND = .["[thing.type]-[thing.name]"]
+			ND.number += total_amnt
 
 // Orients all objects in legacy mode, and returns the objects to show to the user.
 /datum/component/storage/proc/orient2hud_legacy(mob/user, maxcolumns)
@@ -41,12 +47,13 @@
 	if(islist(numbered_contents))
 		for(var/type in numbered_contents)
 			var/datum/numbered_display/ND = numbered_contents[type]
-			ND.sample_object.mouse_opacity = MOUSE_OPACITY_OPAQUE
-			ND.sample_object.screen_loc = "[cx]:[screen_pixel_x],[cy]:[screen_pixel_y]"
-			ND.sample_object.maptext = "<font color='white'>[(ND.number > 1)? "[ND.number]" : ""]</font>"
-			ND.sample_object.layer = ABOVE_HUD_LAYER
-			ND.sample_object.plane = ABOVE_HUD_PLANE
-			. += ND.sample_object
+			var/obj/O = ND.holder.our_item
+			ND.holder.mouse_opacity = MOUSE_OPACITY_OPAQUE
+			ND.holder.screen_loc = "[cx]:[screen_pixel_x],[cy]:[screen_pixel_y]"
+			O.maptext = "<font color='white'>[(ND.number > 1)? "[ND.number]" : ""]</font>"
+			O.layer = ABOVE_HUD_LAYER
+			O.plane = ABOVE_HUD_PLANE
+			. += ND.holder
 			cx++
 			if(cx - screen_start_x >= columns)
 				cx = screen_start_x

@@ -25,11 +25,18 @@
 	neck = null
 	mask = /obj/item/clothing/mask/gas/frontiersmen
 
+/datum/outfit/frontier/internals/tagless
+	name = "Tagless Frontiersman Corpse Internals"
+	neck = null
+
 /obj/effect/mob_spawn/human/corpse/frontier/ranged
 	outfit = /datum/outfit/frontier
 
 /obj/effect/mob_spawn/human/corpse/frontier/fake
 	outfit = /datum/outfit/frontier/internals/fake
+
+/obj/effect/mob_spawn/human/corpse/frontier/tagless
+	outfit = /datum/outfit/frontier/internals/tagless
 
 /obj/effect/mob_spawn/human/corpse/frontier/space
 	outfit = /datum/outfit/frontier/trooper/space
@@ -72,6 +79,18 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 	head = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
 	mask = /obj/item/clothing/mask/gas/frontiersmen
+	back = /obj/item/tank/jetpack/carbondioxide
+
+/obj/effect/mob_spawn/human/corpse/frontier/hullpiercer
+	name = "Frontiersman Hullpiercer"
+	outfit = /datum/outfit/frontier/hullpiercer
+
+/datum/outfit/frontier/hullpiercer
+	name = "Frontiersman Hullpiercer Corpse"
+	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	head = /obj/item/clothing/head/helmet/frontier
+	mask = /obj/item/clothing/mask/gas/frontiersmen
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 	back = /obj/item/tank/jetpack/carbondioxide
 
 /datum/outfit/frontier/trooper/internals

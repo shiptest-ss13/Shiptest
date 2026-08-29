@@ -248,6 +248,15 @@
 	suit = /obj/item/clothing/suit/toggle/armor/vest/hardliners
 	shoes = /obj/item/clothing/shoes/combat
 
+/datum/outfit/job/syndicate/captain/gorlex/stripped
+	name = "Syndicate - Captain - Stripped (Hardliner)"
+	uniform = /obj/item/clothing/under/syndicate/hardliners/officer
+	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
+
+	head = null
+	suit = null
+	shoes = /obj/item/clothing/shoes/combat
+
 /datum/outfit/job/syndicate/captain/ngr
 	name = "Syndicate - Captain (New Gorlex Republic)"
 	faction = FACTION_NGR
@@ -363,7 +372,19 @@
 	shoes =/obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/syndicate/alt/captain
 	id = /obj/item/card/id/syndicate_command/captain_id
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
+
+/datum/outfit/job/syndicate/ce/hardliner
+	name = "Syndicate - Foreman (Hardliners)"
+
+	uniform = /obj/item/clothing/under/syndicate/hardliners/officer
+	suit = null
+	head = null
+	shoes =/obj/item/clothing/shoes/workboots
+	belt = null
+	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
+	id = /obj/item/card/id/syndicate_command/captain_id
+	gloves = /obj/item/clothing/gloves/insulated
 
 /datum/outfit/job/syndicate/ce/ngr
 	name = "Syndicate - Foreman (New Gorlex Republic)"
@@ -376,8 +397,18 @@
 	suit = /obj/item/clothing/suit/ngr
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 
+/datum/outfit/job/syndicate/ce/ngr/stripped
+	name = "Syndicate - Foreman - Stripped (New Gorlex Republic)"
+	faction = FACTION_NGR
+
+	head = null
+	ears = /obj/item/radio/headset/syndicate/alt/captain/ngr
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
+	suit = null
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = null
 
 //Chief Medical Officer
 
@@ -395,7 +426,7 @@
 	r_hand = /obj/item/storage/belt/sabre/suns/cmo
 	suit_store = /obj/item/flashlight/pen/paramedic
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/suns
+	gloves = /obj/item/clothing/gloves/nitrile/suns
 	glasses = /obj/item/clothing/glasses/hud/health/suns
 	head = /obj/item/clothing/head/suns/cmo
 
@@ -554,7 +585,7 @@
 	uniform = /obj/item/clothing/under/syndicate/suns/doctorscrubs
 	shoes = /obj/item/clothing/shoes/sneakers/suns
 	suit = /obj/item/clothing/suit/toggle/labcoat/suns/doctorlabcoat
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/suns
+	gloves = /obj/item/clothing/gloves/nitrile/suns
 	head = /obj/item/clothing/head/suns/surgery
 	glasses = /obj/item/clothing/glasses/hud/health/suns
 	mask = /obj/item/clothing/mask/surgical/suns
@@ -615,7 +646,7 @@
 	head = /obj/item/clothing/head/soft/paramedic
 	suit =  /obj/item/clothing/suit/toggle/labcoat/paramedic
 	alt_suit = /obj/item/clothing/suit/apron/surgical
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	gloves = /obj/item/clothing/gloves/nitrile/evil
 	belt = /obj/item/storage/belt/medical/paramedic
 	id = /obj/item/card/id
 	suit_store = /obj/item/flashlight/pen/paramedic
@@ -850,7 +881,16 @@
 	head = /obj/item/clothing/head/hardhat/hardliners
 	suit = /obj/item/clothing/suit/hazardvest/hardliners
 	uniform = /obj/item/clothing/under/syndicate/hardliners/jumpsuit
-	accessory = /obj/item/clothing/accessory/armband/cargo
+	shoes = /obj/item/clothing/shoes/workboots
+	ears = /obj/item/radio/headset/alt
+
+/datum/outfit/job/syndicate/miner/gorlex/stripped
+	name = "Syndicate - Wrecker - Stripped (Hardliner)"
+	id_assignment = "Wrecker"
+
+	head = null
+	suit = null
+	uniform = /obj/item/clothing/under/syndicate/hardliners/jumpsuit
 	shoes = /obj/item/clothing/shoes/workboots
 	ears = /obj/item/radio/headset/alt
 
@@ -936,6 +976,16 @@
 
 	head = /obj/item/clothing/head/hardhat/hardliners
 	suit = /obj/item/clothing/suit/hazardvest/hardliners
+	uniform = /obj/item/clothing/under/syndicate/hardliners
+	shoes = /obj/item/clothing/shoes/workboots
+	glasses = null
+
+/datum/outfit/job/syndicate/engineer/gorlex/stripped
+	name = "Syndicate - Mechanic - Stripped (Hardliner)"
+	id_assignment = "Mechanic"
+
+	head = null
+	suit = null
 	uniform = /obj/item/clothing/under/syndicate/hardliners
 	shoes = /obj/item/clothing/shoes/workboots
 	glasses = null

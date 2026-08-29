@@ -600,10 +600,6 @@
 	name = "Perennial Growth"
 	description = "It may be harvested multiple times from the same plant."
 	icon = "cubes-stacked"
-	/// Don't allow replica pods to be multi harvested, please.
-	seed_blacklist = list(
-		/obj/item/seeds/replicapod,
-	)
 	mutability_flags = PLANT_GENE_REMOVABLE | PLANT_GENE_MUTATABLE | PLANT_GENE_EXTRACTABLE
 
 /*

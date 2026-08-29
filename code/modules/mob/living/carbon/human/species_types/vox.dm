@@ -3,6 +3,7 @@
 	name = "\improper Vox"
 	id = SPECIES_VOX
 	default_color = "6060FF"
+	inherent_traits = list(TRAIT_TAILED,)
 	species_age_max = 280
 	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None")

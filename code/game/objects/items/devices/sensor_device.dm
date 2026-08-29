@@ -1,7 +1,8 @@
 /obj/item/sensor_device
 	name = "handheld crew monitor" //Thanks to Gun Hog for the name!
 	desc = "A miniature machine that tracks suit sensors across the station."
-	icon = 'icons/obj/device.dmi'
+	icon = 'icons/obj/item/hand_crew_monitor.dmi'
+	//world_file = 'icons/obj/item/hand_crew_monitor_world.dmi'
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
 	drop_sound = 'sound/items/handling/device_drop.ogg'
 	icon_state = "scanner"

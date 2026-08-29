@@ -24,7 +24,7 @@
 	mask = null
 	uniform = /obj/item/clothing/under/rank/medical/paramedic
 	shoes = /obj/item/clothing/shoes/sneakers/white
-	gloves = /obj/item/clothing/gloves/color/latex
+	gloves = /obj/item/clothing/gloves/nitrile
 	ears = /obj/item/radio/headset
 	suit = /obj/item/clothing/suit/toggle/labcoat/paramedic
 	back = /obj/item/storage/backpack/medic
@@ -69,7 +69,7 @@
 	job_icon = "paramedic"
 
 	mask = /obj/item/clothing/mask/breath/medical
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	gloves = /obj/item/clothing/gloves/nitrile/evil
 	glasses = /obj/item/clothing/glasses/hud/health
 	suit_store = /obj/item/tank/internals/emergency_oxygen
 
@@ -86,7 +86,7 @@
 	suit_store = /obj/item/tank/internals/oxygen/red
 	head = null
 	belt = /obj/item/storage/belt/utility/atmostech
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 
 	backpack_contents = null
 	box = null
@@ -104,7 +104,7 @@
 	head = /obj/item/clothing/head/hardhat
 	uniform = /obj/item/clothing/under/rank/engineering/engineer
 	belt = /obj/item/storage/belt/utility/full/engi
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 	suit = /obj/item/clothing/suit/toggle/hazard
 	shoes = /obj/item/clothing/shoes/workboots
 	back = /obj/item/storage/backpack/industrial
@@ -137,7 +137,7 @@
 	ears = /obj/item/radio/headset
 	mask = null
 	shoes = /obj/item/clothing/shoes/combat/swat
-	gloves = /obj/item/clothing/gloves/color/purple
+	gloves = /obj/item/clothing/gloves/color/lightpurple
 	suit = null
 	belt = /obj/item/storage/belt/janitor/full
 

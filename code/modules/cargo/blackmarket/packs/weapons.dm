@@ -68,6 +68,29 @@
 	new /obj/item/gun/ballistic/shotgun/blasting_hammer(B)
 	new /obj/item/storage/box/ammo/a12g_blank(B)
 	return B
+
+/datum/blackmarket_item/weapon/hullpiercer
+	name = "Frontiersman Hullpiercer Axe"
+	desc = "An obnoxiously heavy battleaxe wielded by the most fearsome frontiersmen the fleet can find. We suggest buying a few combat pens to make sure you don't pull a muscle trying to lift this thing."
+	item = /obj/item/melee/axe/frontiersmen_axe
+
+	cost_min = 3500
+	cost_max = 5500
+	stock = 1
+	availability_prob = 40
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/trench_mace
+	name = "Frontiersman Trench Mace"
+	desc = "A makeshift mace made by the frontiersmen. Honestly? We've just got too many of these sitting around. They sting like a motherfucker, even if it's basically just a bunch of nails beat into an empty grenade."
+	item = /obj/item/melee/trench_club
+
+	cost_min = 1000
+	cost_max = 1750
+	stock_max = 2
+	availability_prob = 40
+
+
 /datum/blackmarket_item/weapon/powerfist
 	name = "Powerfist"
 	desc = "Lookin' to give a fisting someone'll remember? This electrically assisted powerfist'll slam 'em in the face hard enough they won't ever forget. Unless they black out an' forget it."
@@ -86,6 +109,16 @@
 	cost_max = 1750
 	stock = 1
 	availability_prob = 25
+
+/datum/blackmarket_item/weapon/podao
+	name = "Solarian Podao Replica"
+	desc = "Some historian kept bothering us about this kind of sword, saying its got unmatched cutting potential. After they graciously helped us test it, we can say it does a good chop! Two hands recommended. It's heavy."
+	item = /obj/item/melee/sword/podao
+
+	cost_min = 2000
+	cost_max = 3000
+	stock = 1
+	availability_prob = 20
 
 /datum/blackmarket_item/weapon/sabre
 	name = "SUNS Dueling Sabre"
@@ -147,7 +180,7 @@
 	if(mag_number > 0)
 		if(!mag_type)
 			var/obj/item/gun/case_gun = item
-			if(case_gun.default_ammo_type && !(case_gun.internal_cell || case_gun.internal_magazine))
+			if(case_gun.default_ammo_type && !case_gun.internal_magazine)
 				mag_type = case_gun.default_ammo_type
 			else
 				mag_number = 0
@@ -259,9 +292,29 @@
 	stock_max = 3
 	availability_prob = 40
 
+/datum/blackmarket_item/weapon/guncase/stingingnettle
+	name = "xPL-7 Stinging Nettle"
+	desc = "An 'off the streets' version of the PL-7 Nettle. Someone installed an electrowhatever chamber on the back, and now it fires like a machine pistol. I also took the liberty of painting over the atrocious paintjob of its previous owner, thank me later."
+	item = /obj/item/gun/energy/clover/pistol/auto
+
+	cost_min = 1500
+	cost_max = 2250
+	stock_max = 2
+	availability_prob = 30
+
+/datum/blackmarket_item/weapon/guncase/faveleira
+	name = "ECM-25 Faveleira"
+	desc = "A fancy Clover Photonics multi-mode energy scattergun, fresh and only lightly used from some poor mining team that bit off more than they could drill. Fun for all ranges. Uses Eoehoma cells, and comes with upgraded ones, you're welcome."
+	item = /obj/item/gun/energy/clover/faveleira/clip
+
+	cost_min = 3500
+	cost_max = 4500
+	stock_max = 2
+	availability_prob = 20
+
 /datum/blackmarket_item/weapon/guncase/cm23
 	name = "CM-23 pistol"
-	desc = "The service pistol of the Confederated League. Chambered in 10x22mm and fresh off a crashed clipper. We made sure to scratch the ID off this time."
+	desc = "The service pistol of the Confederated League. Chambered in 10mm and fresh off a crashed clipper. We made sure to scratch the ID off this time."
 
 	item = /obj/item/gun/ballistic/automatic/pistol/cm23
 	pair_item = list(/datum/blackmarket_item/ammo/cm23_mag)
@@ -272,7 +325,7 @@
 
 /datum/blackmarket_item/weapon/guncase/cm70
 	name = "CM-70 Machine Pistol"
-	desc = "One slick piece from the Confederated League. Chambered in 9x18mm. That officer wasn't happy to lose this but you should be safe."
+	desc = "One slick piece from the Confederated League. Chambered in 9mm. That officer wasn't happy to lose this but you should be safe."
 
 	item = /obj/item/gun/ballistic/automatic/pistol/cm70
 	pair_item = list(/datum/blackmarket_item/ammo/cm70_mag)
@@ -283,7 +336,7 @@
 
 /datum/blackmarket_item/weapon/guncase/cm5
 	name = "CM-5 SMG"
-	desc = "Now isn't this a good find? A whole League sub-machinegun, chambered in 9x18mm. We're pretty sure no one is gonna notice the pallet of these missing."
+	desc = "Now isn't this a good find? A whole League sub-machinegun, chambered in 9mm. We're pretty sure no one is gonna notice the pallet of these missing."
 
 	item = /obj/item/gun/ballistic/automatic/smg/cm5
 	pair_item = list(/datum/blackmarket_item/ammo/cm5_mag)
@@ -413,7 +466,7 @@
 
 /datum/blackmarket_item/weapon/guncase/spitter
 	name = "Spitter Submachine Gun"
-	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the other hand? Let's just say the bereaved will be wanting a closed-casket funeral. Chambered in 9x18mm."
+	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the other hand? Let's just say the bereaved will be wanting a closed-casket funeral. Chambered in 9mm."
 	item = /obj/item/gun/ballistic/automatic/pistol/spitter
 	pair_item = list(/datum/blackmarket_item/ammo/spitter_mag)
 
@@ -436,7 +489,7 @@
 
 /datum/blackmarket_item/weapon/guncase/cottonmouth
 	name = "MP-84m Cottonmouth Machinepistol"
-	desc = "Ramzi suppliers been rechambering a buncha Rattlesnakes into 10x22mm. Ol' nine ain't cutting it anymore. Kicks a liiiiiiittle bit worse aaaand it's just a two burst, but it'll suit ya well."
+	desc = "Ramzi suppliers been rechambering a buncha Rattlesnakes into 10mm. Ol' nine ain't cutting it anymore. Kicks a liiiiiiittle bit worse aaaand it's just a two burst, but it'll suit ya well."
 	item = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth
 	pair_item = list(/datum/blackmarket_item/ammo/cottonmouth)
 
@@ -453,6 +506,17 @@
 
 	cost_min = 3500
 	cost_max = 4500
+	stock_min = 1
+	stock_max = 2
+	availability_prob = 25
+
+/datum/blackmarket_item/weapon/guncase/gaboon
+	name = "CSG-12 Gaboon Compact Shotgun"
+	desc = "These old ass Scarborough designs are easy to find layin' around, especially these cute little relics. Unlike their newer toys it's pump-action so make sure you get your hand exercises in, yeah?"
+	item = /obj/item/gun/ballistic/shotgun/gaboon
+
+	cost_min = 2500
+	cost_max = 3200
 	stock_min = 1
 	stock_max = 2
 	availability_prob = 25
@@ -511,6 +575,19 @@
 	cost_min = 5000
 	cost_max = 7000
 	stock_max = 2
+	availability_prob = 15
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/guncase/rail_cannon
+	name = "Model 'Atelier' Railgun"
+	desc = "If you ask me, warfare boils down to basically throwing rocks as fast and hard as possible. This thing might not be fast, but it's certainly hard as hell. Chambered in ferromagnetic rods to put a baseball sized hole in your unlucky victim."
+	item = /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+	mag_type = /obj/item/ammo_box/magazine/ammo_stack/prefilled/ferrorods
+	pair_item = list(/datum/blackmarket_item/ammo/rods)
+
+	cost_min = 6500
+	cost_max = 8000
+	stock = 1
 	availability_prob = 15
 	spawn_weighting = FALSE
 

@@ -218,7 +218,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/wideband, 26)
 	name = "wideband relay table frame"
 	desc = "A detached wideband relay. Attach to a table and screw it in to use."
 	icon_state = "intercom-wideband"
-	icon = 'icons/obj/wallframe.dmi'
+	icon = 'icons/obj/wallmounts/wallframe_items.dmi'
 	result_path = /obj/item/radio/intercom/wideband/table
 	pixel_shift = 0
 

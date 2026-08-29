@@ -91,7 +91,7 @@
 	switch(extra_class)
 		if("Doctor")
 			backpack_contents += list(/obj/item/storage/firstaid/medical = 1)
-			gloves = /obj/item/clothing/gloves/color/latex
+			gloves = /obj/item/clothing/gloves/nitrile
 			suit = /obj/item/clothing/suit/frontiersmen
 			head = /obj/item/clothing/head/frontier
 			if(prob(50))
@@ -132,7 +132,7 @@
 			/obj/item/gun/ballistic/revolver/firebrand,
 			/obj/item/gun/ballistic/revolver/shadow,
 			/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn,
-			/obj/item/gun/energy/sharplite/x26))
+			/obj/item/gun/energy/sharplite/ohm))
 			if(prob(80))
 				l_hand = pick(list(
 				/obj/item/gun/ballistic/automatic/pistol/disposable,
@@ -140,7 +140,7 @@
 				/obj/item/gun/ballistic/revolver/firebrand,
 				/obj/item/gun/ballistic/revolver/shadow,
 				/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn,
-				/obj/item/gun/energy/sharplite/x26))
+				/obj/item/gun/energy/sharplite/ohm))
 		if("Melee")
 			r_hand = pick_weight(list(
 			/obj/item/melee/knife/survival = 15,
@@ -226,7 +226,7 @@
 	head = /obj/item/clothing/head/frontier
 	back = /obj/item/storage/backpack/medic
 	mask = /obj/item/clothing/mask/surgical
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	gloves = /obj/item/clothing/gloves/nitrile/blue
 	belt = /obj/item/storage/belt/medical/webbing/frontiersmen/surgery
 	suit = /obj/item/clothing/suit/frontiersmen
 	suit_store = null
@@ -298,3 +298,15 @@
 	l_hand = /obj/item/gun/ballistic/automatic/hmg/shredder // this doesnt even fit on the suit storage slot
 
 	backpack_contents = list(/obj/item/ammo_box/magazine/m12_shredder=2,/obj/item/ammo_box/a357=2,/obj/item/grenade/frag=1,/obj/item/radio=1)
+
+/datum/outfit/job/frontiersmen/ert/hullpiercer
+	name = "ERT - Frontiersman Hullpiercer"
+
+	head = /obj/item/clothing/head/helmet/frontier
+	mask = /obj/item/clothing/mask/balaclava
+	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	suit_store = /obj/item/melee/axe/frontiersmen_axe
+	gloves = /obj/item/clothing/gloves/combat
+	belt = /obj/item/storage/belt/security/military/frontiersmen/spitter_with_ammo
+
+	backpack_contents = list(/obj/item/reagent_containers/hypospray/medipen/mammoth=3,/obj/item/grenade/smokebomb=1,/obj/item/radio=1)

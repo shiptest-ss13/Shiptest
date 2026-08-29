@@ -1322,7 +1322,7 @@
 	pixel_y = -1;
 	pixel_x = -6
 	},
-/obj/item/clothing/gloves/color/latex{
+/obj/item/clothing/gloves/nitrile{
 	pixel_y = -13
 	},
 /obj/item/storage/belt/medical/webbing{
@@ -2341,7 +2341,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -5801,13 +5801,11 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Zz" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 26
-	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "ZC" = (

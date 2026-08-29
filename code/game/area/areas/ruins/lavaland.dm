@@ -1,25 +1,40 @@
 //Lavaland Ruins
 
-// Winter Biodome
+// Dynamite hole
 
-/area/ruin/unpowered/winter_biodome
+/area/ruin/unpowered/dynamitehole
 	icon_state = "bluenew"
-	name = "Biodome Main Area"
+	name = "dynamite exterior"
 
-/area/ruin/unpowered/winter_biodome/entrance
-	name = "Biodome Entrance"
+/area/ruin/unpowered/dynamitehole/security
+	name = "Security"
+	icon_state = "red"
 
-/area/ruin/unpowered/winter_biodome/living_quarters
-	name = "Biodome Living Quarters"
+/area/ruin/unpowered/dynamitehole/living_quarters
+	name = "Living Quarters"
+	icon_state = "purple"
 
-/area/ruin/unpowered/winter_biodome/cabin
-	name = "Biodome Cabin"
+/area/ruin/unpowered/dynamitehole/medbay
+	name = "Research Lab"
 
-/area/ruin/unpowered/winter_biodome/engineering
-	name = "Biodome Engineering"
+/area/ruin/unpowered/dynamitehole/engineering
+	name = "Engineering"
+	icon_state = "cargo_warehouse"
 
-/area/ruin/unpowered/winter_biodome/sauna
-	name = "Biodome Sauna"
+/area/ruin/unpowered/dynamitehole/dorms
+	name = "Dormitory"
+	icon_state = "yellow"
+
+/area/ruin/unpowered/dynamitehole/dorms/two
+	name = "Dormitory Two"
+
+/area/ruin/unpowered/dynamitehole/gear
+	name = "Gear Room"
+	icon_state = "green"
+
+/area/ruin/unpowered/dynamitehole/dogs
+	name = "Dynamite Pit"
+	icon_state = "red"
 
 //Hierophant Arena
 
@@ -89,3 +104,52 @@
 /area/ruin/unpowered/listening_post/engineering
 	name = "Listening Post Engineering"
 	icon_state = "dk_yellow"
+
+// Hardliner Holdout
+/area/ruin/lavaland/holdout/office
+	name = "Sergeant's Office"
+	icon_state = "bridge"
+
+/area/ruin/lavaland/holdout/armory
+	name = "Site Armory"
+	icon_state = "armory"
+
+/area/ruin/lavaland/holdout/warehousea
+	name = "Alpha Warehouse"
+	icon_state = "cargo_warehouse"
+
+/area/ruin/lavaland/holdout/warehouseb
+	name = "Bravo Warehouse"
+	icon_state = "auxstorage"
+
+/area/ruin/lavaland/holdout/mainhall
+	name = "Site Hallway"
+	icon_state = "entry"
+
+/area/ruin/lavaland/holdout/engineering
+	name = "Site Engineering"
+	icon_state = "engine"
+
+/area/ruin/lavaland/holdout/kitchen
+	name = "Site Kitchen"
+	icon_state = "kitchen"
+
+/area/ruin/lavaland/holdout/mess
+	name = "Site Mess Hall"
+	icon_state = "cafeteria"
+
+/area/ruin/lavaland/holdout/barracks
+	name = "Site Barracks"
+	icon_state = "crew_quarters"
+
+/area/ruin/lavaland/holdout/tcomms
+	name = "Site Telecommunications"
+	icon_state = "tcomsatcham"
+
+/area/ruin/lavaland/holdout/ramziflea
+	name = "Flea-class"
+	icon_state = "syndie-ship"
+
+/area/ruin/lavaland/holdout/ramzihq
+	name = "Ramzi Headquarters"
+	icon_state = "syndie-control"

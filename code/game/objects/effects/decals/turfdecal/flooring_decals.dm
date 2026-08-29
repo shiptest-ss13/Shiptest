@@ -1669,6 +1669,34 @@ TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 /obj/effect/turf_decal/etherbor/right
 	icon_state = "etherbor_right"
 
+//Axilai Orbital Works
+/obj/effect/turf_decal/axilai/left
+	icon_state = "axilai_left"
+
+/obj/effect/turf_decal/axilai/center
+	icon_state = "axilai_center"
+
+/obj/effect/turf_decal/axilai/right
+	icon_state = "axilai_right"
+
+/obj/effect/turf_decal/axilai/offset/upper_left
+	icon_state = "axilai_upper_left"
+
+/obj/effect/turf_decal/axilai/offset/lower_left
+	icon_state = "axilai_lower_left"
+
+/obj/effect/turf_decal/axilai/offset/upper_center
+	icon_state = "axilai_upper_center"
+
+/obj/effect/turf_decal/axilai/offset/lower_center
+	icon_state = "axilai_lower_center"
+
+/obj/effect/turf_decal/axilai/offset/upper_right
+	icon_state = "axilai_upper_right"
+
+/obj/effect/turf_decal/axilai/offset/lower_right
+	icon_state = "axilai_lower_right"
+
 //Hardline Salvage and Mining
 
 /obj/effect/turf_decal/hardline_small

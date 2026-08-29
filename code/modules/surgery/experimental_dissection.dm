@@ -70,7 +70,7 @@
 		if(H?.dna?.species)
 			if(isabductor(H))
 				cost = (MAX_DISSECTION_REWARD*24)
-			else if(iszombie(H) || isshadow(H) || isandroid(H))
+			else if(iszombie(H) || isandroid(H))
 				cost = (MAX_DISSECTION_REWARD*20)
 	else for(var/type in mob_mult_list) // THIS. ELSE IF(). ENDS. HERE.
 		if(istype(target, type))
