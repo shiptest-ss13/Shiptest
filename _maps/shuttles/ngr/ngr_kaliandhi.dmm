@@ -50,6 +50,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "aj" = (
@@ -1208,6 +1209,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/beige/half,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "fX" = (
@@ -2603,14 +2605,13 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "nP" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 9
+/obj/machinery/airalarm/directional/west,
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
+	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 8
+	dir = 9
 	},
-/obj/structure/table/reinforced,
-/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "nS" = (
@@ -3544,6 +3545,7 @@
 	pixel_x = 16;
 	pixel_y = 10
 	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/wood/birch,
 /area/ship/crew/dorm/commad)
 "tc" = (
@@ -4539,7 +4541,6 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
-/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "yP" = (
@@ -6608,6 +6609,7 @@
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/structure/rack,
 /obj/structure/bedsheetbin,
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "Kw" = (
@@ -7022,14 +7024,15 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 8
 	},
-/obj/machinery/camera/autoname/directional/west{
-	network = list("ngr_kali")
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
+	},
+/obj/structure/cabinet/fireaxe{
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -7347,22 +7350,13 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "NQ" = (
-/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/warning{
-	dir = 5
-	},
 /obj/structure/table/reinforced,
-/obj/structure/cabinet/fireaxe{
-	dir = 8;
-	pixel_x = 24
-	},
 /obj/machinery/coffeemaker/premium{
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/borderfloorblack,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "NR" = (
 /obj/effect/turf_decal/techfloor{
@@ -7787,6 +7781,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/borderfloorblack,
+/obj/machinery/camera/autoname/directional/north{
+	network = list("ngr_kali")
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Qn" = (
@@ -8043,17 +8040,6 @@
 "RP" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engines/port)
-"RV" = (
-/obj/docking_port/stationary{
-	dir = 2;
-	dwidth = 22;
-	height = 31;
-	width = 40;
-	name = "Kali-Andhi Secondary Gantry";
-	dheight = 1
-	},
-/turf/template_noop,
-/area/template_noop)
 "Sb" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden,
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -8401,12 +8387,6 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
 "Tx" = (
-/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/warning{
-	dir = 9
-	},
 /obj/structure/table/reinforced,
 /obj/item/storage/box/coffeepack/robusta{
 	pixel_x = 14;
@@ -8428,7 +8408,8 @@
 	pixel_x = -6;
 	pixel_y = -1
 	},
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/borderfloorblack,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "TN" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
@@ -9252,6 +9233,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
 "YJ" = (
@@ -9562,11 +9544,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "ZU" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 6
+/obj/effect/turf_decal/corner/opaque/tan/three_quarters{
+	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_ccw{
-	dir = 4
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -10857,7 +10839,7 @@ YE
 bx
 lN
 DP
-RV
+DP
 "}
 (40,1,1) = {"
 DP
