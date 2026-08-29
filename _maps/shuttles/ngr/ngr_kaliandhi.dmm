@@ -731,10 +731,13 @@
 /area/ship/engineering/engine)
 "dy" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/light/small/directional/south,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/structure/closet/wall/directional/south,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/soap/syndie,
+/obj/item/pushbroom,
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
 "dz" = (
@@ -9193,6 +9196,7 @@
 	dir = 8
 	},
 /obj/structure/closet/crate/trashcart,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/crew/janitor)
 "Yx" = (
