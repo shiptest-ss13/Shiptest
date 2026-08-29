@@ -965,12 +965,6 @@
 	icon_state = "wood-broken2"
 	},
 /area/ship/crew/dorm)
-"jm" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
-/turf/open/floor/engine/hull,
-/area/ship/engineering/engines/port)
 "jo" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/cable/pink{
@@ -1194,12 +1188,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/port)
-"lh" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
-/turf/open/floor/engine/hull,
-/area/ship/engineering/engines/starboard)
 "li" = (
 /turf/closed/wall,
 /area/ship/cargo/starboard)
@@ -2779,6 +2767,9 @@
 	dir = 4;
 	id = "madagascar_port_engine"
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "zQ" = (
@@ -3801,6 +3792,9 @@
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "madagascar_starboard_engine"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -5739,7 +5733,7 @@ qn
 qn
 LI
 DG
-jm
+DG
 DG
 tn
 vC
@@ -5747,7 +5741,7 @@ SI
 fH
 tn
 vB
-lh
+vB
 vB
 dc
 qn
