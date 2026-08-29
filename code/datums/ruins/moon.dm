@@ -14,3 +14,9 @@
 	description = "A makeshift ramzi hideout in a cave, holding a smaller garrison."
 	id = "moon_hideout"
 	suffix = "moon_hideout.dmm"
+
+/datum/map_template/ruin/moon/cybergrind
+	name = "Virtual Solutions Robotics Lab"
+	description = "A lunar robotics labratory formerly operated by Cybersun Industries' Virtual Solutions department, now lost to a malicious AI."
+	id = "moon_cybergrind"
+	suffix = "moon_cybergrind.dmm"
