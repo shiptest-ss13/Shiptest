@@ -314,13 +314,15 @@
 		manufacturer_prefix = "sharplite"
 	else if (our_gun.manufacturer == MANUFACTURER_PGF)
 		manufacturer_prefix = "etherbor"
+	else if (our_gun.manufacturer == MANUFACTURER_MINUTEMAN_LASER)
+		manufacturer_prefix = "clip"
 	else
 		current_ammotype = "fallback"
 
 	current_ammotype = lowertext(current_ammotype)
 
 	// A list of all ammotypes that have icons for them
-	if (!(current_ammotype in list("kill", "disable", "overcharge", "stun", "ion", "energy", "ar", "dmr")))
+	if (!(current_ammotype in list("kill", "disable", "overcharge", "stun", "ion", "energy", "ar", "dmr", "focus", "scatter")))
 		current_ammotype = "fallback"
 
 	button_icon_state = "[manufacturer_prefix]["_laser_"][current_ammotype]"
