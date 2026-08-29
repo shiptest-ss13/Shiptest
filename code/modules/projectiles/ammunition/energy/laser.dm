@@ -134,7 +134,7 @@
 /obj/item/ammo_casing/energy/laser/shotgun/drone
 	projectile_type = /obj/projectile/beam/weak/shotgun
 	pellets = 4
-  
+
 /obj/item/ammo_casing/energy/laser/clover
 	projectile_type = /obj/projectile/beam/laser/clover
 	select_name = "kill"
