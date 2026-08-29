@@ -59,7 +59,7 @@
 
 /obj/item/paper/fluff/ship/kaliandhi/teg
 	name = "Generator Manual"
-	desc = "A guide left by technicians at a Hardline-operated fleetyard on how to operate the TEG. Hopefully not too vague."
+	desc = "A guide left by technicians at a Hardline-operated fleetyard on how to operate the TEG."
 	default_raw_text = {"
 	The generator on the Mark 3 Kali-Andhi class destroyer is a more complex setup than most other ships. This guide describes solely the way our engineers have deemed to be most effective after fitting out the first ships of the class.
 	Skilled engineers are encouraged to make modifications to this configuration as they see fit, but are also encouraged to let their commanding officer know beforehand.
