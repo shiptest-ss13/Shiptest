@@ -1,6 +1,6 @@
 /obj/item/ammo_box/magazine/m45
 	name = "pistol magazine (.45)"
-	desc = "A 19-round single-stack magazine for the Candor pistol. These rounds do moderate damage, but struggle against armor."
+	desc = "A 10-round single-stack magazine for the Candor pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "candor_mag-8"
 	base_icon_state = "candor_mag"
 	ammo_type = /obj/item/ammo_casing/c45
