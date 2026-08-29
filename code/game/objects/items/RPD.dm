@@ -34,12 +34,13 @@ GLOBAL_LIST_INIT(atmos_pipe_recipes, list(
 		new /datum/pipe_info/pipe("Dual Port Air Vent",	/obj/machinery/atmospherics/components/binary/dp_vent_pump, TRUE),
 		new /datum/pipe_info/pipe("Manual Valve",		/obj/machinery/atmospherics/components/binary/valve, TRUE),
 		new /datum/pipe_info/pipe("Digital Valve",		/obj/machinery/atmospherics/components/binary/valve/digital, TRUE),
-		new /datum/pipe_info/pipe("Pressure Gate",		/obj/machinery/atmospherics/components/binary/pressure_valve, TRUE),
+		new /datum/pipe_info/pipe("Pressure Valve",		/obj/machinery/atmospherics/components/binary/pressure_valve, TRUE),
 		new /datum/pipe_info/pipe("Relief Valve (Binary)",		/obj/machinery/atmospherics/components/binary/relief_valve, TRUE), //WS Edit - Port of Relief Valves from Cit
 		new /datum/pipe_info/pipe("Relief Valve (Unary)",		/obj/machinery/atmospherics/components/unary/relief_valve, TRUE), //WS Edit - Port of Relief Valves from Cit
 		new /datum/pipe_info/pipe("Temperature Gate",	/obj/machinery/atmospherics/components/binary/temperature_gate, TRUE),
 		new /datum/pipe_info/pipe("Temperature Pump",	/obj/machinery/atmospherics/components/binary/temperature_pump, TRUE),
-		new /datum/pipe_info/meter("Meter"),
+		new /datum/pipe_info/meter("Pressure Gauge"),
+		new /datum/pipe_info/meter/temperature("Temperature Gauge"),
 	),
 	"Heat Exchange" = list(
 		new /datum/pipe_info/pipe("Pipe",				/obj/machinery/atmospherics/pipe/heat_exchanging/simple, FALSE),
@@ -151,7 +152,7 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 	return "makepipe=[id]&type=[dirtype]"
 
 /datum/pipe_info/meter
-	icon_state = "meter"
+	icon_state = "meter_pressure"
 	dirtype = PIPE_ONEDIR
 
 /datum/pipe_info/meter/New(label)
@@ -159,6 +160,9 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 
 /datum/pipe_info/meter/Params()
 	return "makemeter=[id]&type=[dirtype]"
+
+/datum/pipe_info/meter/temperature
+	icon_state = "meter_temp"
 
 /datum/pipe_info/disposal/New(label, obj/path, dt=PIPE_UNARY)
 	name = label
@@ -382,11 +386,15 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 				if(!can_make_pipe)
 					return ..()
 				playsound(get_turf(src), 'sound/machines/click.ogg', 50, TRUE)
-				if (recipe.type == /datum/pipe_info/meter)
+				if (istype(recipe ,/datum/pipe_info/meter))
 					to_chat(user, span_notice("You start building a meter..."))
 					if(do_after(user, atmos_build_speed, target = A))
 						activate()
-						var/obj/item/pipe_meter/PM = new /obj/item/pipe_meter(get_turf(A))
+						var/obj/item/pipe_meter/PM
+						if (recipe.type == /datum/pipe_info/meter/temperature)
+							PM = new /obj/item/pipe_meter/temperature(get_turf(A))
+						else
+							PM = new /obj/item/pipe_meter(get_turf(A))
 						PM.setAttachLayer(piping_layer)
 						if(mode & WRENCH_MODE)
 							PM.wrench_act(user, src)

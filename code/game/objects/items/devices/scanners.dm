@@ -360,6 +360,7 @@ GENE SCANNER
 
 		// Species and body temperature
 		render_list += "<span class='info ml-1'>Species: [HAS_TRAIT(H, TRAIT_GENEMODDED) ? "Modified " : ""][H.dna.species.name]</span>\n"
+		render_list += "<span class='info ml-1'>Core temperature: [round(H.coretemperature-T0C,0.1)] &deg;C ([round(H.coretemperature*1.8-459.67,0.1)] &deg;F)</span>\n"
 	render_list += "<span class='info ml-1'>Body temperature: [round(M.bodytemperature-T0C,0.1)] &deg;C ([round(M.bodytemperature*1.8-459.67,0.1)] &deg;F)</span>\n"
 
 	// Time of death
@@ -375,7 +376,7 @@ GENE SCANNER
 		for(var/obj/item/bodypart/wounded_part as anything in wounded_parts)
 			render_list += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
 			for(var/datum/wound/W as anything in wounded_part.wounds)
-				render_list += "<div class='ml-2'>Type: [W.name]\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.treat_text]</div>\n"
+				render_list += "<div class='ml-2'>[W.get_scanner_description()]</div>\n"
 			render_list += "</span>"
 
 	if(iscarbon(M))
@@ -465,7 +466,7 @@ GENE SCANNER
 	if(target.surgeries.len)
 		var/list/render_list = "<span class='boldannounce ml-1'>The patient is undergoing the following surgeries:</span><br>"
 		for(var/datum/surgery/procedure in target.surgeries)
-			render_list += "<span class='notice ml-1'>[capitalize(procedure.name)]: "
+			render_list += "<span class='notice ml-1'>[capitalize(procedure.name)] ([capitalize(parse_zone(procedure.location))]): "
 			var/datum/surgery_step/surgery_step = procedure.get_surgery_step()
 			var/chems_needed = surgery_step.get_chem_list()
 			var/alternative_step

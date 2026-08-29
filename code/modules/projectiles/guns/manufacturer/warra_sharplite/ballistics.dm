@@ -43,7 +43,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger)
 
 /obj/item/gun/ballistic/automatic/pistol/champion
 	name = "Advantage PHB Champion"
-	desc = "A large, burst-fire machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Chambered in 9mm."
+	desc = "A large machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Chambered in 9mm."
 	icon_state = "champion"
 	item_state = "champion"
 	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
@@ -85,7 +85,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger)
 
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
-	fire_delay = 0.4 SECONDS
+	fire_delay = 0.08 SECONDS
 
 	wear_minor_threshold = 240
 	wear_major_threshold = 720
@@ -407,7 +407,11 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
-		/obj/item/attachment/foldable_stock/resolution_inteq
+		/obj/item/attachment/foldable_stock/resolution_inteq,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/ammo_counter
 	)
 
 NO_MAG_GUN_HELPER(automatic/smg/resolution/inteq)
@@ -433,7 +437,7 @@ NO_MAG_GUN_HELPER(automatic/smg/resolution/inteq)
 
 /obj/item/gun/ballistic/shotgun/automatic/negotiator
 	name = "Advantage AST12 Negotiator"
-	desc = "A pump-action shotgun with a twin-tube design that allows the user to switch between two ammo types on demand, or simply double their available ammunition."
+	desc = "An automatic shotgun with a twin-tube design that allows the user to switch between two ammo types on demand, or simply double their available ammunition."
 
 	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'

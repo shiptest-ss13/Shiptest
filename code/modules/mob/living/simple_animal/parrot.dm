@@ -375,7 +375,7 @@
 /*
  * AI - Not really intelligent, but I'm calling it AI anyway.
  */
-/mob/living/simple_animal/parrot/Life()
+/mob/living/simple_animal/parrot/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	..()
 
 	//Sprite update for when a parrot gets pulled
@@ -936,7 +936,7 @@
 
 	. = ..()
 
-/mob/living/simple_animal/parrot/Polly/Life()
+/mob/living/simple_animal/parrot/Polly/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	if(!stat && SSticker.current_state == GAME_STATE_FINISHED && !memory_saved)
 		Write_Memory(FALSE)
 		memory_saved = TRUE
@@ -1019,15 +1019,4 @@
 			parrot_interest = null
 		else if(parrot_state == (PARROT_SWOOP | PARROT_ATTACK) && Adjacent(parrot_interest))
 			walk_to(src, parrot_interest, 0, parrot_speed)
-			Possess(parrot_interest)
 	..()
-
-/mob/living/simple_animal/parrot/Polly/ghost/proc/Possess(mob/living/carbon/human/H)
-	if(!ishuman(H))
-		return
-	var/datum/disease/parrot_possession/P = new
-	P.parrot = src
-	forceMove(H)
-	H.ForceContractDisease(P)
-	parrot_interest = null
-	H.visible_message(span_danger("[src] dive bombs into [H]'s chest and vanishes!"), span_userdanger("[src] dive bombs into your chest, vanishing! This can't be good!"))

@@ -187,3 +187,28 @@
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_LAVAPLANET_LIGHT
+
+/turf/open/floor/plasteel/mono/white/lavaland
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_color = COLOR_LAVAPLANET_LIGHT
+	planetary_atmos = TRUE
+
+/turf/open/floor/engine/hull/interior/lavaland
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_color = COLOR_LAVAPLANET_LIGHT
+	planetary_atmos = TRUE
+
+/turf/open/floor/plasteel/tech/grid/lavaland
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_color = COLOR_LAVAPLANET_LIGHT
+	planetary_atmos = TRUE
+
+/turf/open/floor/engine/hull/reinforced/lavaland
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_color = COLOR_LAVAPLANET_LIGHT
+	planetary_atmos = TRUE
+
+/turf/open/floor/plasteel/patterned/grid/dark/lavaland
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	light_color = COLOR_LAVAPLANET_LIGHT
+	planetary_atmos = TRUE

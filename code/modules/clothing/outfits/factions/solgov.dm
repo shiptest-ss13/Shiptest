@@ -63,16 +63,13 @@
 
 	id = /obj/item/card/id/solgov
 	uniform = /obj/item/clothing/under/solgov
-	suit = /obj/item/clothing/suit/armor/vest/solgov
 	ears = /obj/item/radio/headset/solgov/alt
-	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/solgov/sonnensoldner
 	r_pocket = null
 	l_pocket = null
 	shoes = /obj/item/clothing/shoes/workboots
 	back = /obj/item/storage/backpack
 	box = /obj/item/storage/box/survival
-	backpack_contents = list(/obj/item/crowbar/power)
 
 /datum/outfit/job/solgov/representative
 	name = "SolGov - Solarian Representative"

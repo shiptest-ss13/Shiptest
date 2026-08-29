@@ -13,12 +13,11 @@
 	visibility_flags = HIDDEN_PANDEMIC
 	bypasses_immunity = TRUE
 
-	stage1 = list(span_notice("You feel a dull pain in your chest."))
-	stage2 = list(span_notice("Your head begins to ache."))
-	stage3 = list(span_notice("Something moves underneath your skin."))
-	stage4 = list(span_warning("You feel something pressing against your skin!"))
-	stage5 = list(span_warning("Your skin begins to tear apart-!"))
-	new_form = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
+	var/stage1 = list(span_notice("You feel a dull pain in your chest."))
+	var/stage2 = list(span_notice("Your head begins to ache."))
+	var/stage3 = list(span_notice("Something moves underneath your skin."))
+	var/stage4 = list(span_warning("You feel something pressing against your skin!"))
+	var/stage5 = list(span_warning("Your skin begins to tear apart-!"))
 	COOLDOWN_DECLARE(warning_timer)
 	var/cooldown_time = 1 MINUTES
 
@@ -40,8 +39,10 @@
 			to_chat(affected_mob, pick(stage3))
 		if(4)
 			to_chat(affected_mob, pick(stage4))
+		if(5)
+			do_disease_transformation(affected_mob)
 
-/datum/disease/transformation/legionvirus/do_disease_transformation(mob/living/H)
+/datum/disease/transformation/legionvirus/proc/do_disease_transformation(mob/living/H)
 	if(stage5)
 		to_chat(affected_mob, pick(stage5))
 	H.visible_message(span_warning("[H] suddenly collapses, a pallid grey mass bursting from their body!"))

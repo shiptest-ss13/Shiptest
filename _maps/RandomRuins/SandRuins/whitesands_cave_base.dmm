@@ -644,7 +644,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "hw" = (
 /obj/effect/turf_decal/corner_techfloor_gray/full,
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /obj/item/paper{
@@ -927,7 +927,7 @@
 	icon_state = "floor3"
 	},
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/ruin/whitesands/cave_base/engi)
+/area/overmap_encounter/planetoid/cave/explored)
 "kQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
@@ -1092,7 +1092,7 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/ruin/whitesands/cave_base/engi)
+/area/overmap_encounter/planetoid/cave/explored)
 "mM" = (
 /obj/item/grenade/c4/cave_base,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
@@ -1297,7 +1297,7 @@
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 6
 	},
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1446,7 +1446,7 @@
 	pixel_x = 13
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -1470,7 +1470,7 @@
 	pixel_y = 20
 	},
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/ruin/whitesands/cave_base)
+/area/overmap_encounter/planetoid/cave/explored)
 "qH" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -2886,7 +2886,7 @@
 	},
 /obj/effect/turf_decal/industrial/outline/orange,
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/ruin/whitesands/cave_base)
+/area/overmap_encounter/planetoid/cave/explored)
 "EL" = (
 /turf/open/floor/plating/asteroid/whitesands/grass/dead,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -3364,7 +3364,7 @@
 /area/ruin/whitesands/cave_base)
 "IY" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -3867,7 +3867,7 @@
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 10
 	},
-/obj/structure/flippedtable,
+/obj/structure/barricade/directional/flippedtable,
 /obj/item/paper/crumpled{
 	pixel_x = 9;
 	pixel_y = 13
@@ -3967,7 +3967,7 @@
 	dir = 5
 	},
 /obj/structure/barricade/sandbags,
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -4149,7 +4149,7 @@
 	pixel_y = -3
 	},
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/ruin/whitesands/cave_base)
+/area/overmap_encounter/planetoid/cave/explored)
 "QZ" = (
 /obj/effect/turf_decal/corner_techfloor_gray/full{
 	dir = 4
@@ -4252,7 +4252,11 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/flippedtable{
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = -29;
+	name = "Mr. Television"
+	},
+/obj/structure/barricade/directional/flippedtable{
 	dir = 1
 	},
 /obj/machinery/computer/security/telescreen/entertainment/wall/directional/west,
@@ -4434,7 +4438,7 @@
 	dir = 9
 	},
 /obj/item/stack/ore/salvage/scrapmetal,
-/obj/structure/flippedtable{
+/obj/structure/barricade/directional/flippedtable{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
@@ -4654,7 +4658,7 @@
 	icon_state = "floor2"
 	},
 /turf/open/floor/concrete/slab_1/whitesands,
-/area/ruin/whitesands/cave_base)
+/area/overmap_encounter/planetoid/cave/explored)
 "Xf" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -5198,8 +5202,8 @@ mh
 tX
 HA
 Hw
-CP
-CP
+qR
+qR
 mh
 mh
 mh
@@ -5259,7 +5263,7 @@ tX
 tX
 bS
 mJ
-CP
+qR
 mh
 tX
 tX
@@ -5498,7 +5502,7 @@ zj
 HA
 ZN
 kN
-CP
+qR
 JD
 ns
 wh
@@ -5557,8 +5561,8 @@ tX
 tX
 tX
 mh
-CP
-CP
+qR
+qR
 Dz
 hx
 tX
@@ -6402,8 +6406,8 @@ Mi
 Mi
 tX
 mh
-od
-od
+qR
+qR
 qR
 mh
 mh
@@ -6462,7 +6466,7 @@ Mi
 Mi
 tX
 qR
-od
+qR
 QT
 ib
 tX
@@ -6701,7 +6705,7 @@ tX
 tX
 tX
 tX
-od
+qR
 qE
 bu
 UM
@@ -6761,8 +6765,8 @@ mh
 mh
 mh
 mh
-od
-od
+qR
+qR
 Fv
 tX
 tX
@@ -7530,8 +7534,8 @@ GH
 mP
 tX
 tX
-od
-od
+qR
+qR
 iX
 tX
 tX
@@ -7590,7 +7594,7 @@ tX
 RF
 mP
 tX
-od
+qR
 Xe
 ib
 UM
@@ -7770,7 +7774,7 @@ tX
 tX
 tX
 tX
-od
+qR
 EJ
 ib
 tX
@@ -7830,8 +7834,8 @@ mh
 hN
 tX
 tX
-od
-od
+qR
+qR
 mh
 zv
 zv

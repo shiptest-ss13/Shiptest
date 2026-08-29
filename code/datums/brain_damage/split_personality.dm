@@ -42,7 +42,7 @@
 	else
 		qdel(src)
 
-/datum/brain_trauma/severe/split_personality/on_life()
+/datum/brain_trauma/severe/split_personality/on_life(seconds_per_tick, times_fired)
 	if(owner.stat == DEAD)
 		if(current_controller != OWNER)
 			switch_personalities()
@@ -189,7 +189,7 @@
 	else
 		qdel(src)
 
-/datum/brain_trauma/severe/split_personality/brainwashing/on_life()
+/datum/brain_trauma/severe/split_personality/brainwashing/on_life(seconds_per_tick, times_fired)
 	return //no random switching
 
 /datum/brain_trauma/severe/split_personality/brainwashing/handle_hearing(datum/source, list/hearing_args)

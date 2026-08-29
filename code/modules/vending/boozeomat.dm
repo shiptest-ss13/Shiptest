@@ -62,10 +62,11 @@
 		/obj/item/reagent_containers/food/drinks/bottle/sososeta = 5,
 		/obj/item/reagent_containers/food/drinks/bottle = 15,
 		/obj/item/reagent_containers/food/drinks/bottle/small = 15,
-		/obj/item/garnish/olives = 10,
-		/obj/item/garnish/umbrellared = 10,
-		/obj/item/garnish/umbrellablue = 10,
-		/obj/item/garnish/umbrellagreen = 10
+		/obj/item/storage/box/straw = 2,
+		/obj/item/storage/box/garnish = 5,
+		/obj/item/garnish/olives = 5,
+		/obj/item/garnish/cherry = 5,
+		/obj/item/garnish/pineapples = 5,
 	)
 	contraband = list()
 	premium = list(

@@ -68,6 +68,29 @@
 	new /obj/item/gun/ballistic/shotgun/blasting_hammer(B)
 	new /obj/item/storage/box/ammo/a12g_blank(B)
 	return B
+
+/datum/blackmarket_item/weapon/hullpiercer
+	name = "Frontiersman Hullpiercer Axe"
+	desc = "An obnoxiously heavy battleaxe wielded by the most fearsome frontiersmen the fleet can find. We suggest buying a few combat pens to make sure you don't pull a muscle trying to lift this thing."
+	item = /obj/item/melee/axe/frontiersmen_axe
+
+	cost_min = 3500
+	cost_max = 5500
+	stock = 1
+	availability_prob = 40
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/trench_mace
+	name = "Frontiersman Trench Mace"
+	desc = "A makeshift mace made by the frontiersmen. Honestly? We've just got too many of these sitting around. They sting like a motherfucker, even if it's basically just a bunch of nails beat into an empty grenade."
+	item = /obj/item/melee/trench_club
+
+	cost_min = 1000
+	cost_max = 1750
+	stock_max = 2
+	availability_prob = 40
+
+
 /datum/blackmarket_item/weapon/powerfist
 	name = "Powerfist"
 	desc = "Lookin' to give a fisting someone'll remember? This electrically assisted powerfist'll slam 'em in the face hard enough they won't ever forget. Unless they black out an' forget it."
@@ -86,6 +109,16 @@
 	cost_max = 1750
 	stock = 1
 	availability_prob = 25
+
+/datum/blackmarket_item/weapon/podao
+	name = "Solarian Podao Replica"
+	desc = "Some historian kept bothering us about this kind of sword, saying its got unmatched cutting potential. After they graciously helped us test it, we can say it does a good chop! Two hands recommended. It's heavy."
+	item = /obj/item/melee/sword/podao
+
+	cost_min = 2000
+	cost_max = 3000
+	stock = 1
+	availability_prob = 20
 
 /datum/blackmarket_item/weapon/sabre
 	name = "SUNS Dueling Sabre"
@@ -147,7 +180,7 @@
 	if(mag_number > 0)
 		if(!mag_type)
 			var/obj/item/gun/case_gun = item
-			if(case_gun.default_ammo_type && !(case_gun.internal_cell || case_gun.internal_magazine))
+			if(case_gun.default_ammo_type && !case_gun.internal_magazine)
 				mag_type = case_gun.default_ammo_type
 			else
 				mag_number = 0

@@ -150,6 +150,9 @@
 #define COMSIG_ATOM_CREATEDBY_PROCESSING "atom_createdby_processing"
 ///when an atom is processed (mob/living/user, obj/item/I, list/atom/results)
 #define COMSIG_ATOM_PROCESSED "atom_processed"
+///from base of atom/CanAllowThrough(): (/atom/movable, border/dir)
+#define COMSIG_ATOM_TRY_ALLOW_THROUGH "atom_allow_through"
+
 
 ///from base of atom/screwdriver_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_SCREWDRIVER_ACT "atom_screwdriver_act"
@@ -589,6 +592,8 @@
 #define COMSIG_CARBON_HUG "carbon_hug"
 ///When a carbon mob is hugged, this is called on the carbon that is hugged. (mob/living/hugger)
 #define COMSIG_CARBON_HUGGED "carbon_hugged"
+///When a carbon mob is booped, this is called on the carbon that is booped. (mob/living/booper)
+#define COMSIG_CARBON_BOOP "carbon_booped"
 ///When a carbon mob is headpatted, this is called on the carbon that is headpatted. (mob/living/headpatter)
 #define COMSIG_CARBON_HEADPAT "carbon_headpatted"
 ///When a carbon slips. Called on /turf/open/handle_slip()

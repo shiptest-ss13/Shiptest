@@ -156,7 +156,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/electrolyzer_console, 17)
 /obj/machinery/atmospherics/components/unary/hydrogen_pump
 	name = "hydrogen pump"
 	desc = "Lets you use merits to buy hydrogen."
-	icon = 'icons/obj/atmos.dmi'
+	icon = 'icons/obj/atmospherics/port_atmos.dmi'
 	icon_state = "hydrogen_pump"
 
 	use_power = IDLE_POWER_USE

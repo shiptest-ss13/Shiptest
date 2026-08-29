@@ -334,7 +334,7 @@
 	armour_penetration = -20
 
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 
 	active_hitsound = 'sound/weapons/blade1.ogg'
 

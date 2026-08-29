@@ -5,10 +5,8 @@
 	metabolization_rate = 5 //fast rate so it disappears fast.
 	taste_description = "iron"
 	taste_mult = 1.3
-	glass_icon_state = "glass_red"
 	glass_name = "glass of tomato juice"
 	glass_desc = "Are you sure this is tomato juice?"
-	shot_glass_icon_state = "shotglassred"
 
 /datum/reagent/blood/expose_mob(mob/living/L, method=TOUCH, reac_volume)
 	if(data && data["viruses"])
@@ -96,7 +94,6 @@
 	color = "#CC4633"
 	description = "You don't even want to think about what's in here."
 	taste_description = "gross iron"
-	shot_glass_icon_state = "shotglassred"
 	material = /datum/material/meat
 
 /datum/reagent/vaccine
@@ -135,10 +132,8 @@
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen."
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
 	taste_description = "water"
-	glass_icon_state = "glass_clear"
 	glass_name = "glass of water"
 	glass_desc = "The father of all refreshments."
-	shot_glass_icon_state = "shotglassclear"
 
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs //WS Edit - IPCs
 
@@ -228,7 +223,6 @@
 	name = "Holy Water"
 	description = "Water blessed by some deity."
 	color = "#E0E8EF" // rgb: 224, 232, 239
-	glass_icon_state  = "glass_clear"
 	glass_name = "glass of holy water"
 	glass_desc = "A glass of holy water."
 	self_consuming = TRUE //divine intervention won't be limited by the lack of a liver
@@ -268,10 +262,8 @@
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
 	taste_description = "burning water"
 	var/cooling_temperature = 2
-	glass_icon_state = "glass_clear"
 	glass_name = "glass of oxygenated water"
 	glass_desc = "The father of all refreshments. Surely it tastes great, right?"
-	shot_glass_icon_state = "shotglassclear"
 
 /*
  *	Water reaction to turf
@@ -852,7 +844,6 @@
 	description = "Required for welders. Flammable."
 	color = "#660000" // rgb: 102, 0, 0
 	taste_description = "gross metal"
-	glass_icon_state = "dr_gibb_glass"
 	glass_name = "glass of welder fuel"
 	glass_desc = "Unless you're an industrial tool, this is probably not safe for consumption."
 	process_flags = ORGANIC | SYNTHETIC
@@ -898,7 +889,7 @@
 
 /datum/reagent/space_cleaner/ez_clean
 	name = "EZ Clean"
-	description = "A powerful, acidic cleaner sold by Waffle Co. Affects organic matter while leaving other objects unaffected."
+	description = "A powerful, acidic cleaner. Affects organic matter while leaving other objects unaffected."
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	taste_description = "acid"
 	robot_clean_power = 15
@@ -942,28 +933,6 @@
 	if(prob(50))
 		M.drowsyness = max(M.drowsyness, 3)
 	..()
-
-/datum/reagent/nanomachines
-	name = "Nanomachines"
-	description = "Microscopic construction robots."
-	color = "#535E66" // rgb: 83, 94, 102
-	can_synth = FALSE
-	taste_description = "sludge"
-
-/datum/reagent/nanomachines/expose_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
-	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
-		L.ForceContractDisease(new /datum/disease/transformation/robot(), FALSE, TRUE)
-
-/datum/reagent/xenomicrobes
-	name = "Xenomicrobes"
-	description = "Microbes with an entirely alien cellular structure."
-	color = "#535E66" // rgb: 83, 94, 102
-	can_synth = FALSE
-	taste_description = "sludge"
-
-/datum/reagent/xenomicrobes/expose_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
-	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
-		L.ForceContractDisease(new /datum/disease/transformation/xeno(), FALSE, TRUE)
 
 /datum/reagent/fungalspores
 	name = "Tubercle bacillus Cosmosis microbes"
@@ -2225,10 +2194,14 @@
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM // 5u (WOUND_DETERMINATION_CRITICAL) will last for ~17 ticks
 	self_consuming = TRUE
 	taste_description = "pure determination"
-	overdose_threshold = 45
+	overdose_threshold = 0
 	process_flags = ALL
 	/// Whether we've had at least WOUND_DETERMINATION_SEVERE (2.5u) of determination at any given time. No damage slowdown immunity or indication we're having a second wind if it's just a single moderate wound
 	var/significant = FALSE
+
+/datum/reagent/determination/on_mob_metabolize(mob/living/L)
+	. = ..()
+	ADD_TRAIT(L, TRAIT_NOSOFTCRIT, type)
 
 /datum/reagent/determination/on_mob_life(mob/living/carbon/M)
 	if(!significant && volume >= WOUND_DETERMINATION_SEVERE)
@@ -2246,6 +2219,8 @@
 	..()
 
 /datum/reagent/determination/on_mob_end_metabolize(mob/living/carbon/M)
+	REMOVE_TRAIT(M, TRAIT_NOSOFTCRIT, type)
+
 	if(significant)
 		var/stam_crash = 0
 		for(var/thing in M.all_wounds)
@@ -2299,19 +2274,13 @@
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
 	H.set_heartattack(TRUE)
 
-/datum/reagent/three_eye
-	name = "Three Eye"
-	taste_description = "liquid starlight"
+/datum/reagent/truesight
+	name = "Truesight"
+	taste_description = "warm static"
 	taste_mult = 100
-	description = "Out on the edge of human space, at the limits of scientific understanding and \
-	cultural taboo, people develop and dose themselves with substances that would curl the hair on \
-	a brinker's vatgrown second head. Three Eye is one of the most notorious narcotics to ever come \
-	out of the independent habitats, and it has about as much in common with recreational drugs as a \
-	Stok does with an Unathi strike trooper. It is equally effective on humans, Skrell, dionaea, and \
-	probably the Captain's cat, and distributing it will get you guaranteed jail time in every \
-	human territory."
+	description = "A scintillating powder made from grinding up the remnants of a static anomaly. You're not really going to take this, are you?"
 	reagent_state = LIQUID
-	color = "#ccccff"
+	color = "#000000" // evil and ominous
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 25
 	var/worthy = FALSE
@@ -2351,7 +2320,7 @@
 		"GET OUT GET OUT GET OUT GET OUT",
 		"NO MORE NO MORE NO MORE"
 	)
-/datum/reagent/three_eye/on_mob_metabolize(mob/living/L)
+/datum/reagent/truesight/on_mob_metabolize(mob/living/L)
 	. = ..()
 	L.add_client_colour(/datum/client_colour/thirdeye)
 	if(L.client?.holder) //You are worthy.
@@ -2362,7 +2331,7 @@
 		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)
 		return
 
-/datum/reagent/three_eye/on_mob_life(mob/living/carbon/M)
+/datum/reagent/truesight/on_mob_life(mob/living/carbon/M)
 	. = ..()
 	if(worthy)
 		return
@@ -2379,7 +2348,7 @@
 	if(prob(7))
 		to_chat(M, span_warning("[pick(dose_messages)]"))
 
-/datum/reagent/three_eye/overdose_start(mob/living/M)
+/datum/reagent/truesight/overdose_start(mob/living/M)
 	on_mob_metabolize(M) //set worthy
 	if(worthy)
 		overdosed = FALSE
@@ -2389,7 +2358,7 @@
 		var/mob/living/carbon/human/H = M
 		addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living, seizure)), rand(1 SECONDS, 5 SECONDS))
 
-/datum/reagent/three_eye/overdose_process(mob/living/M)
+/datum/reagent/truesight/overdose_process(mob/living/M)
 	. = ..()
 	if(worthy)
 		return
@@ -2400,7 +2369,7 @@
 	if(prob(7))
 		to_chat(M, span_danger("<font size = [rand(2,4)]>[pick(overdose_messages)]</font>"))
 
-/datum/reagent/three_eye/on_mob_end_metabolize(mob/living/L)
+/datum/reagent/truesight/on_mob_end_metabolize(mob/living/L)
 	. = ..()
 	L.remove_client_colour(/datum/client_colour/thirdeye)
 	if(overdosed && !worthy)
