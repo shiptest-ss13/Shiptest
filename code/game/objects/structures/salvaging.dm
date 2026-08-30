@@ -295,6 +295,9 @@
 		/obj/item/disk/holodisk = 20,
 		/obj/item/disk/plantgene = 20,
 
+		// research notes (now sellable)
+		/obj/item/documents/research = 5,
+
 		// computer parts
 		/obj/effect/spawner/random/salvage/part/modcomp/three = 60,
 		/obj/effect/spawner/random/salvage/part/modcomp/three = 60,
@@ -792,12 +795,13 @@
 	open = TRUE
 	icon_state = "safe-open"
 	desc = "A long-abandoned gun safe. It has been broken into, exposing its contents to the world."
+	density = FALSE
 	spawn_loot()
 	if(prob(10))
 		spawn_loot() // you may occasionally double-dip
 
 /obj/structure/rusted_gun_safe/proc/spawn_loot()
-	// spawn loot
+	// handle the primary drop
 	var/rarity = rand(1, 101)
 	switch(rarity)
 		if(1 to 60)
@@ -808,6 +812,11 @@
 			drop_rare()
 		if(101)
 			drop_weird()
+	// as well as secondary drops
+	if(prob(20))
+		new /obj/effect/spawner/random/entertainment/plushie(loc)
+	if(prob(50))
+		new /obj/item/spacecash/bundle/smallrand(loc)
 
 /obj/structure/rusted_gun_safe/deconstruct_act(mob/living/user, obj/item/tool)
 	if(..())
