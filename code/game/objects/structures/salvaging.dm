@@ -535,9 +535,8 @@
 	to_chat(user, span_warning("The floor bolts on this safe are completely corroded."))
 
 // common drop pool
-// contains unremarkable guns
 /obj/structure/rusted_gun_safe/proc/drop_common()
-	var/roll = rand(1,100)
+	var/roll = rand(1,135)
 	switch(roll)
 		if(1 to 5)
 			// e10
@@ -547,8 +546,8 @@
 		if(6 to 10)
 			// giant pile of E11s. at least the cells are good...
 			var/punishment = rand(5, 12)
-			for (i = 0, i < punishment, i++)
-				new /obj/item/gun/energy/laser/e11(loc)
+			for (var/i = 0, i < punishment, i++)
+				new /obj/item/gun/energy/e_gun/e11(loc)
 		if(11 to 15)
 			// volt
 			new /obj/item/gun/energy/sharplite/volt(loc)
@@ -590,8 +589,8 @@
 		if(56 to 60)
 			// illestren
 			new /obj/item/gun/ballistic/rifle/illestren(loc)
-			new /obj/item/ammo_box/magazone/illestren_a850r(loc)
-			new /obj/item/ammo_box/magazone/illestren_a850r(loc)
+			new /obj/item/ammo_box/magazine/illestren_a850r(loc)
+			new /obj/item/ammo_box/magazine/illestren_a850r(loc)
 		if(61 to 65)
 			// double barrel
 			new /obj/item/gun/ballistic/shotgun/doublebarrel(loc)
@@ -615,7 +614,7 @@
 		if(86 to 90)
 			// cm-70
 			new /obj/item/gun/ballistic/automatic/pistol/cm70(loc)
-			new /obj/item/ammo_box/magazine/m9mm_cm80(loc)
+			new /obj/item/ammo_box/magazine/m9mm_cm70(loc)
 		if(90 to 95)
 			// auto elite
 			new /obj/item/gun/ballistic/automatic/pistol/m20_auto_elite(loc)
@@ -626,87 +625,165 @@
 			new /obj/item/storage/box/ammo/a44roum(loc)
 		if(101 to 105)
 			// pounder
+			new /obj/item/gun/ballistic/automatic/smg/pounder(loc)
+			new /obj/item/ammo_box/magazine/c22lr_pounder_pan(loc)
 		if(106 to 110)
 			// spitter
+			new /obj/item/gun/ballistic/automatic/pistol/spitter(loc)
+			new /obj/item/ammo_box/magazine/spitter_9mm(loc)
 		if(111 to 115)
 			// resistor
+			new /obj/item/gun/energy/sharplite/surge/resistor(loc)
+			new /obj/item/stock_parts/cell/gun/sharplite(loc)
 		if(116 to 120)
 			// pistole c
+			new /obj/item/gun/ballistic/automatic/pistol/solgov/old(loc)
+			new /obj/item/ammo_box/magazine/pistol556mm(loc)
 		if(121 to 125)
 			// model h
+			new /obj/item/gun/ballistic/automatic/powered/gauss/modelh(loc)
+			new /obj/item/ammo_box/magazine/modelh(loc)
+		if(126 to 130)
+			// civvie thistle
+			new /obj/item/gun/energy/clover/pistol/thistle(loc)
+			new /obj/item/stock_parts/cell/gun/mini(loc)
+		if(131 to 135)
+			// clip nettle
+			new /obj/item/gun/energy/clover/pistol(loc)
+			new /obj/item/stock_parts/cell/gun/mini(loc)
 
 // uncommon drop pool
-// contains good or otherwise noteworthy guns
 /obj/structure/rusted_gun_safe/proc/drop_uncommon()
 	var/roll = rand(1,100)
 	switch(roll)
 		if(1 to 5)
 			// gaboon
+			new /obj/item/gun/ballistic/shotgun/gaboon(loc)
+			new /obj/item/storage/box/ammo/a12g_buckshot(loc)
 		if(6 to 10)
 			// scout
+			new /obj/item/gun/ballistic/rifle/scout(loc)
+			new /obj/item/ammo_box/a300(loc)
 		if(7 to 15)
 			// vickland
+			new /obj/item/gun/ballistic/automatic/marksman/vickland(loc)
+			new /obj/item/ammo_box/vickland_a8_50r(loc)
+			new /obj/item/ammo_box/vickland_a8_50r(loc)
 		if(16 to 20)
 			// skm-24
+			new /obj/item/gun/ballistic/automatic/assault/skm(loc)
+			new /obj/item/ammo_box/magazine/skm_762_40(loc)
 		if(21 to 25)
 			// normal hydra
+			new /obj/item/gun/ballistic/automatic/assault/hydra(loc)
+			new /obj/item/ammo_box/magazine/m556_42_hydra(loc)
 		if(26 to 30)
 			// hydra dmr
+			new /obj/item/gun/ballistic/automatic/assault/hydra/dmr(loc)
+			new /obj/item/ammo_box/magazine/m556_42_hydra/small(loc)
 		if(31 to 35)
 			// sidewinder
+			new /obj/item/gun/ballistic/automatic/smg/sidewinder(loc)
+			new /obj/item/ammo_box/magazine/m57_39_sidewinder(loc)
 		if(36 to 40)
 			// resolution
+			new /obj/item/gun/ballistic/automatic/smg/resolution(loc)
+			new /obj/item/ammo_box/magazine/wt550m9(loc)
 		if(41 to 45)
 			// firestorm
+			new /obj/item/gun/ballistic/automatic/smg/firestorm/pan(loc)
+			new /obj/item/ammo_box/magazine/c44_firestorm_mag/pan(loc)
 		if(46 to 50)
 			// rush
+			new /obj/item/gun/energy/sharplite/rush(loc)
+			new /obj/item/stock_parts/cell/gun/sharplite(loc)
 		if(56 to 60)
 			// surge
+			new /obj/item/gun/energy/sharplite/surge(loc)
+			new /obj/item/stock_parts/cell/gun/sharplite(loc)
 		if(61 to 65)
 			// sarissa
+			new /obj/item/gun/energy/sharplite/sarissa(loc)
+			new /obj/item/stock_parts/cell/gun/sharplite(loc)
 		if(66 to 70)
 			// cobra
+			new /obj/item/gun/ballistic/automatic/smg/cobra(loc)
+			new /obj/item/ammo_box/magazine/m45_cobra(loc)
 		if(71 to 75)
 			// bg-16
+			new /obj/item/gun/energy/kalix/pgf(loc)
+			new /obj/item/stock_parts/cell/gun/pgf(loc)
 		if(76 to 80)
 			// cm-5
+			new /obj/item/gun/ballistic/automatic/smg/cm5(loc)
+			new /obj/item/ammo_box/magazine/cm5_9mm(loc)
 		if(81 to 85)
 			// f4
+			new /obj/item/gun/ballistic/automatic/marksman/f4(loc)
+			new /obj/item/ammo_box/magazine/f4_308(loc)
+		if(86 to 90)
+			// clip faveleira
+			new /obj/item/gun/energy/clover/faveleira/clip(loc)
+			new /obj/item/stock_parts/cell/gun/upgraded(loc)
+		if(91 to 95)
+			// shillelagh
+			new /obj/item/gun/energy/clover(loc)
+			new /obj/item/stock_parts/cell/gun(loc)
+		if(96 to 100)
+			// bockadam
+			new /obj/item/gun/ballistic/shotgun/automatic/bulldog/bockadam(loc)
+			new /obj/item/ammo_box/magazine/m12g_bulldog(loc)
 
 // rare drop pool
-// everything in here is straight gasoline
 /obj/structure/rusted_gun_safe/proc/drop_rare()
-	var/roll = rand(1,50)
+	var/roll = rand(1,45)
 	switch(roll)
 		if(1 to 5)
-			// vickland
+			// invictus
+			new /obj/item/gun/ballistic/automatic/assault/invictus(loc)
+			new /obj/item/ammo_box/magazine/invictus_308_mag(loc)
 		if(6 to 10)
 			// hades
+			new /obj/item/gun/energy/sharplite/hades(loc)
+			new /obj/item/stock_parts/cell/gun/sharplite/plus(loc)
 		if(11 to 15)
 			// taipan
+			new /obj/item/gun/ballistic/automatic/marksman/taipan(loc)
+			new /obj/item/ammo_box/magazine/sniper_rounds(loc)
 		if(16 to 20)
 			// cm-40
+			new /obj/item/gun/ballistic/automatic/hmg/cm40(loc)
+			new /obj/item/ammo_box/magazine/cm40_762_40_box(loc)
 		if(21 to 25)
 			// hydra SAW
+			new /obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended(loc)
+			new /obj/item/ammo_box/magazine/m556_42_hydra/extended(loc)
 		if(26 to 30)
 			// VG-A5
+			new /obj/item/gun/energy/kalix/pgf/nock(loc)
+			new /obj/item/stock_parts/cell/gun/pgf(loc)
 		if(31 to 35)
 			// e-40
+			new /obj/item/gun/ballistic/automatic/assault/e40(loc)
+			new /obj/item/ammo_box/magazine/e40(loc)
+			new /obj/item/stock_parts/cell/gun(loc)
 		if(36 to 40)
 			// e-50
+			new /obj/item/gun/energy/laser/e50(loc)
+			new /obj/item/stock_parts/cell/gun/large(loc)
 		if(41 to 45)
 			// atelier
-		if(46 to 50)
+			new /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon(loc)
+			new /obj/item/storage/box/ammo/ferrorods(loc)
 
 // weird drop pool
-// contains weird stuff
 /obj/structure/rusted_gun_safe/proc/drop_weird()
 	var/roll = rand(1,10)
 	switch(roll)
-		if(1)
-			var/juckport = new /obj/item/spacecash/bundle/c1(loc)
+		if(1 to 5)
+			var/obj/item/juckport = new /obj/item/spacecash/bundle/c1(loc)
 			juckport.name = "the juckport"
-		if(2)
+		if(6 to 10)
 			new /obj/structure/rusted_gun_safe/matyroshka(loc)
 			visible_message(span_warning("Another safe falls out!"))
 
@@ -733,12 +810,23 @@
 			drop_weird()
 
 /obj/structure/rusted_gun_safe/deconstruct_act(mob/living/user, obj/item/tool)
-	if(open)
-		return FALSE
 	if(..())
 		return TRUE
+	if(open)
+		// lets you destroy the stupid thing
+		user.visible_message(
+			span_warning("[user] begins to cut \the [src] apart."),
+			span_notice("You start cutting \the [src] apart."))
+		if(tool.use_tool(src, user, 5 SECONDS))
+			user.visible_message(
+				span_warning("[user] successfully cuts \the [src] apart."),
+				span_notice("You successfully cut \the [src] apart."))
+			new /obj/item/stack/ore/salvage/scrapmetal/five(loc)
+			qdel(src)
+		return TRUE
+	// 3, 2, 1, let's see what comes out
 	user.visible_message(
-		span_warning("[user] begin to cut through the lock of \the [src]."),
+		span_warning("[user] begins to cut through the lock of \the [src]."),
 		span_notice("You start cutting through the lock of [src]."))
 	if(tool.use_tool(src, user, 45 SECONDS))
 		open_sesame()
