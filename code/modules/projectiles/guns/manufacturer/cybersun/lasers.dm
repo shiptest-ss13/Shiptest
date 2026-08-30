@@ -363,8 +363,8 @@
 
 	recoil = 1.5
 
-	spread = 12
-	spread_unwielded = 10
+	spread = 5
+	spread_unwielded = 20
 
 	///is the bipod deployed?
 	var/bipod_deployed = FALSE
@@ -373,7 +373,7 @@
 
 	///we add these two values to recoi/spread when we have the bipod deployed
 	var/deploy_recoil_bonus = -1
-	var/deploy_spread_bonus = -8
+	var/deploy_spread_bonus = -4
 
 	var/list/deployable_on_structures = list(
 		/obj/structure/table,
