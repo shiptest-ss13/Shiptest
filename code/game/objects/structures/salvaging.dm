@@ -98,7 +98,7 @@
 
 		// other fluff parts
 		/obj/effect/spawner/random/salvage/part/capacitor = 60,
-		/obj/item/gpu = 1,
+		/obj/item/gpu = 5,
 
 		// modcomp parts
 		/obj/effect/spawner/random/salvage/part/modcomp/three = 80,
@@ -171,7 +171,7 @@
 		/obj/effect/spawner/random/medical/chem_jug = 30,
 		/obj/effect/spawner/random/medical/prosthetic = 25,
 		/obj/effect/spawner/random/salvage/prolathe/gun = 5, //:flushed:
-		/obj/effect/spawner/random/salvage/prolathe/ammo = 10,
+		/obj/effect/spawner/random/salvage/prolathe/ammo = 5,
 
 		// part replacers
 		/obj/item/storage/part_replacer = 20,
@@ -224,7 +224,7 @@
 	)
 
 /obj/structure/salvageable/destructive_analyzer
-	name = "broken destructive analyzer"
+	name = "broken laboratory analyzer"
 	desc = "A hefty sample analysis machine containing very strong laser emitter. If this thing could power up, it would probably slice you in half. There could be something inside that's worth the risk..." //this ones pretty dangerous
 	icon_state = "wreck_d_analyzer"
 	salvageable_parts = list(
@@ -280,6 +280,7 @@
 	name = "broken server"
 	desc = "A nearly-destroyed server rack. Maybe there is still usable hardware inside?"
 	icon_state = "wreck_server"
+	var/safe = FALSE // a safe server does not spawn mobs
 	salvageable_parts = list(
 		// materials
 		/obj/item/stack/sheet/glass/two = 80,
@@ -297,7 +298,7 @@
 		// computer parts
 		/obj/effect/spawner/random/salvage/part/modcomp/three = 60,
 		/obj/effect/spawner/random/salvage/part/modcomp/three = 60,
-		/obj/item/gpu = 5,
+		/obj/item/gpu = 10,
 
 		// telecomms parts
 		/obj/effect/spawner/random/salvage/part/tcomms/three = 60,
@@ -305,6 +306,8 @@
 
 /obj/structure/salvageable/server/dismantle(mob/living/user)
 	. = ..()
+	if(safe)
+		return // no mobs for me
 	var/danger_level = rand(1,100)
 	switch(danger_level) //ever wanted the extreme danger of turn based rng but in space station 13?
 		if(1 to 45)
@@ -327,33 +330,8 @@
 
 			new /mob/living/simple_animal/bot/secbot/ed209/rockplanet(get_turf(src))
 
-/obj/structure/salvageable/safe_server //i am evil and horrible and i don't deserve to touch code
-	name = "broken server"
-	desc = "A nearly-destroyed server rack. Maybe there is still usable hardware inside?"
-	icon_state = "wreck_server"
-	salvageable_parts = list(
-		// materials
-		/obj/item/stack/sheet/glass/two = 80,
-		/obj/item/stack/cable_coil/cut = 80,
-		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
-		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
-		/obj/item/stack/ore/salvage/scrapbluespace = 60,
-
-		// disks
-		/obj/item/disk/tech_disk = 20,
-		/obj/item/disk/data = 20,
-		/obj/item/disk/holodisk = 20,
-		/obj/item/disk/plantgene = 20,
-
-		// computer parts
-		/obj/effect/spawner/random/salvage/part/modcomp/three = 60,
-		/obj/effect/spawner/random/salvage/part/modcomp/three = 60,
-		/obj/item/gpu = 5,
-
-		// telecomms parts
-		/obj/effect/spawner/random/salvage/part/tcomms/three = 60,
-		/obj/effect/spawner/random/salvage/part/tcomms/three = 60)
-
+/obj/structure/salvageable/server/safe
+	safe = TRUE
 /obj/structure/salvageable/seed
 	name = "ruined seed vendor"
 	desc = "This is where the seeds lived. Maybe you can still get some?"//megaseed voiceline reference
@@ -528,7 +506,7 @@
 /obj/item/stack/ore/salvage/scrapbluespace/five
 	amount = 5
 
-// gpu item. does nothing except sell for quite a lot
+// gpu item. does nothing except sell for money
 /obj/item/gpu
 	name = "high power GPU"
 	desc = "A large, powerful graphics card for use in high-end computer systems. It seems to be in pretty good condition, given its surroundings."
@@ -562,36 +540,186 @@
 	var/roll = rand(1,100)
 	switch(roll)
 		if(1 to 5)
-			new /obj/item/
+			// e10
+			new /obj/item/gun/energy/laser/e10(loc)
+			new /obj/item/stock_parts/cell/gun(loc)
+			new /obj/item/stock_parts/cell/gun(loc)
+		if(6 to 10)
+			// giant pile of E11s. at least the cells are good...
+			var/punishment = rand(5, 12)
+			for (i = 0, i < punishment, i++)
+				new /obj/item/gun/energy/laser/e11(loc)
+		if(11 to 15)
+			// volt
+			new /obj/item/gun/energy/sharplite/volt(loc)
+			new /obj/item/stock_parts/cell/gun/sharplite(loc)
+		if(16 to 20)
+			// indie ringneck
+			new /obj/item/gun/ballistic/automatic/pistol/ringneck/indie(loc)
+			new /obj/item/ammo_box/magazine/m10mm_ringneck(loc)
+		if(21 to 25)
+			// indie cobra (rather good for this pool!)
+			new /obj/item/gun/ballistic/automatic/smg/cobra/indie(loc)
+			new /obj/item/ammo_box/magazine/m45_cobra(loc)
+		if(26 to 30)
+			// viper and holster
+			new /obj/item/gun/ballistic/revolver/viper(loc)
+			new /obj/item/clothing/accessory/holster(loc)
+			new /obj/item/ammo_box/a357(loc)
+			new /obj/item/ammo_box/a357(loc)
+		if(31 to 35)
+			// mauler
+			new /obj/item/gun/ballistic/automatic/pistol/mauler(loc)
+			new /obj/item/ammo_box/magazine/m9mm_mauler/extended(loc)
+		if(36 to 40)
+			// semi auto mauler
+			new /obj/item/gun/ballistic/automatic/pistol/mauler/regular(loc)
+			new /obj/item/ammo_box/magazine/m9mm_mauler(loc)
+		if(41 to 45)
+			// cm357
+			new /obj/item/gun/ballistic/automatic/pistol/cm357(loc)
+			new /obj/item/ammo_box/magazine/cm357(loc)
+		if(46 to 50)
+			// podium
+			new /obj/item/gun/ballistic/automatic/pistol/podium(loc)
+			new /obj/item/ammo_box/magazine/m46_30_podium(loc)
+		if(51 to 55)
+			// asp
+			new /obj/item/gun/ballistic/automatic/pistol/asp(loc)
+			new /obj/item/ammo_box/magazine/m57_39_asp(loc)
+		if(56 to 60)
+			// illestren
+			new /obj/item/gun/ballistic/rifle/illestren(loc)
+			new /obj/item/ammo_box/magazone/illestren_a850r(loc)
+			new /obj/item/ammo_box/magazone/illestren_a850r(loc)
+		if(61 to 65)
+			// double barrel
+			new /obj/item/gun/ballistic/shotgun/doublebarrel(loc)
+			new /obj/item/storage/box/ammo/a12g_buckshot(loc)
+		if(66 to 70)
+			// conflagration
+			new /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration(loc)
+			new /obj/item/storage/box/ammo/a12g_buckshot(loc)
+		if(71 to 75)
+			// brimstone
+			new /obj/item/gun/ballistic/shotgun/brimstone(loc)
+			new /obj/item/storage/box/ammo/a12g_buckshot(loc)
+		if(76 to 80)
+			// slammer
+			new /obj/item/gun/ballistic/shotgun/automatic/slammer(loc)
+			new /obj/item/ammo_box/magazine/m12g_slammer(loc)
+		if(81 to 85)
+			// bg-12
+			new /obj/item/gun/energy/kalix(loc)
+			new /obj/item/stock_parts/cell/gun/kalix(loc)
+		if(86 to 90)
+			// cm-70
+			new /obj/item/gun/ballistic/automatic/pistol/cm70(loc)
+			new /obj/item/ammo_box/magazine/m9mm_cm80(loc)
+		if(90 to 95)
+			// auto elite
+			new /obj/item/gun/ballistic/automatic/pistol/m20_auto_elite(loc)
+			new /obj/item/ammo_box/magazine/m20_auto_elite(loc)
+		if(96 to 100)
+			// shadow
+			new /obj/item/gun/ballistic/revolver/shadow(loc)
+			new /obj/item/storage/box/ammo/a44roum(loc)
+		if(101 to 105)
+			// pounder
+		if(106 to 110)
+			// spitter
+		if(111 to 115)
+			// resistor
+		if(116 to 120)
+			// pistole c
+		if(121 to 125)
+			// model h
 
 // uncommon drop pool
-// contains noteworthy guns
+// contains good or otherwise noteworthy guns
 /obj/structure/rusted_gun_safe/proc/drop_uncommon()
 	var/roll = rand(1,100)
 	switch(roll)
 		if(1 to 5)
+			// gaboon
+		if(6 to 10)
+			// scout
+		if(7 to 15)
+			// vickland
+		if(16 to 20)
+			// skm-24
+		if(21 to 25)
+			// normal hydra
+		if(26 to 30)
+			// hydra dmr
+		if(31 to 35)
+			// sidewinder
+		if(36 to 40)
+			// resolution
+		if(41 to 45)
+			// firestorm
+		if(46 to 50)
+			// rush
+		if(56 to 60)
+			// surge
+		if(61 to 65)
+			// sarissa
+		if(66 to 70)
+			// cobra
+		if(71 to 75)
+			// bg-16
+		if(76 to 80)
+			// cm-5
+		if(81 to 85)
+			// f4
 
 // rare drop pool
-// contains rather good guns
+// everything in here is straight gasoline
 /obj/structure/rusted_gun_safe/proc/drop_rare()
-	var/roll = rand(1,100)
+	var/roll = rand(1,50)
 	switch(roll)
 		if(1 to 5)
+			// vickland
+		if(6 to 10)
+			// hades
+		if(11 to 15)
+			// taipan
+		if(16 to 20)
+			// cm-40
+		if(21 to 25)
+			// hydra SAW
+		if(26 to 30)
+			// VG-A5
+		if(31 to 35)
+			// e-40
+		if(36 to 40)
+			// e-50
+		if(41 to 45)
+			// atelier
+		if(46 to 50)
 
 // weird drop pool
 // contains weird stuff
 /obj/structure/rusted_gun_safe/proc/drop_weird()
-	var/roll = rand(1,100)
+	var/roll = rand(1,10)
 	switch(roll)
 		if(1)
-			var/juckport = new /obj/item/spacecash/bundle/c1
+			var/juckport = new /obj/item/spacecash/bundle/c1(loc)
 			juckport.name = "the juckport"
+		if(2)
+			new /obj/structure/rusted_gun_safe/matyroshka(loc)
+			visible_message(span_warning("Another safe falls out!"))
 
 
 /obj/structure/rusted_gun_safe/proc/open_sesame()
 	open = TRUE
 	icon_state = "safe-open"
 	desc = "A long-abandoned gun safe. It has been broken into, exposing its contents to the world."
+	spawn_loot()
+	if(prob(10))
+		spawn_loot() // you may occasionally double-dip
+
+/obj/structure/rusted_gun_safe/proc/spawn_loot()
 	// spawn loot
 	var/rarity = rand(1, 101)
 	switch(rarity)
@@ -622,3 +750,16 @@
 /obj/structure/rusted_gun_safe/ex_act(severity, target)
 	if(!open) // barely explosion resistant - use the mines!
 		open_sesame()
+
+// funny nested variant
+/obj/structure/rusted_gun_safe/matyroshka
+	name = "rusted gun safe...?"
+
+/obj/structure/rusted_gun_safe/matyroshka/spawn_loot()
+	var/roll = rand(1, 100)
+	switch(roll)
+		if(1 to 95)
+			new /obj/structure/rusted_gun_safe/matyroshka(loc)
+			visible_message(span_warning("Another safe falls out!"))
+		if(96 to 100)
+			drop_rare()

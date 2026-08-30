@@ -142,7 +142,7 @@
 // rare environmental storytelling elements
 /obj/effect/spawner/random/salvage/autolathe_weird
 	loot = list(
-		/obj/item/organ/tail/lizard = 15, // waaa
+		/obj/item/organ/tail/lizard = 16, // waaa
 		/obj/item/bodypart/l_arm = 1,
 		/obj/item/bodypart/r_arm = 1,
 		/obj/item/bodypart/l_arm/lizard = 1,
@@ -159,7 +159,7 @@
 		/obj/item/bodypart/r_arm/rachnid = 1,
 		/obj/item/bodypart/l_arm/ipc = 1,
 		/obj/item/bodypart/r_arm/ipc = 1,
-		/obj/effect/gibspawner/human = 15)
+		/obj/effect/gibspawner/human = 16)
 
 // all together now!
 /obj/effect/spawner/random/salvage/autolathe_junk
@@ -169,41 +169,32 @@
 		/obj/effect/spawner/random/salvage/autolathe_weird = 1)
 
 // BROKEN PROTOLATHE //
-// gun pool. sidearms / eoehomas
+// protolathe gun pool. all sidearms
 /obj/effect/spawner/random/salvage/prolathe/gun
 	icon_state = "laser_gun"
 	loot = list(
 		// eoehomas
-		/obj/item/gun/energy/laser/e10 = 5,
-		/obj/item/gun/energy/laser = 5, // this is an e20 believe it or not
+		/obj/item/gun/energy/laser/e10 = 10,
 		// sharplites
-		/obj/item/gun/energy/sharplite/ohm = 5,
-		/obj/item/gun/energy/sharplite/volt = 5,
+		/obj/item/gun/energy/sharplite/ohm = 10,
 		// advantage
 		/obj/item/gun/ballistic/automatic/pistol/challenger = 5,
 		/obj/item/gun/ballistic/automatic/pistol/champion = 5,
 		// scarborough
 		/obj/item/gun/ballistic/automatic/pistol/ringneck = 5,
-		/obj/item/gun/ballistic/automatic/pistol/ringneck/indie = 5,
-		// clip
-		/obj/item/gun/ballistic/automatic/pistol/cm70 = 5,
-		/obj/item/gun/ballistic/automatic/pistol/cm357 = 5)
+		/obj/item/gun/ballistic/automatic/pistol/ringneck/indie = 5)
 
 // mags for the guns you get out of protolathes
 /obj/effect/spawner/random/salvage/prolathe/ammo
 	icon_state = "rubbershot"
 	loot = list(
 		// energy
-		/obj/item/stock_parts/cell/gun = 5,
-		/obj/item/stock_parts/cell/gun/upgraded = 5,
-		/obj/item/stock_parts/cell/gun/sharplite = 5,
+		/obj/item/stock_parts/cell/gun = 10,
+		/obj/item/stock_parts/cell/gun/upgraded = 10,
 		/obj/item/stock_parts/cell/gun/sharplite/mini = 5,
-		/obj/item/stock_parts/cell/gun/sharplite/plus = 5,
 		// ballistic
 		/obj/item/ammo_box/magazine/co9mm = 5,
-		/obj/item/ammo_box/magazine/m10mm_ringneck = 5,
-		/obj/item/ammo_box/magazine/m9mm_cm70 = 5,
-		/obj/item/ammo_box/magazine/cm357 = 5)
+		/obj/item/ammo_box/magazine/m10mm_ringneck = 5)
 
 // DESTRUCTIVE ANALYZER //
 // loosely based on sciency objects people might want to analyze or research
