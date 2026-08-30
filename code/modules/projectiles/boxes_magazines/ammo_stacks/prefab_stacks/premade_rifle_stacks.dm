@@ -247,7 +247,7 @@
 
 /obj/item/storage/box/ammo/c320
 	name = "box of 3x20mm dart magazines"
-	desc = "A box of long 2x15mm dart magazines, for the Vector gauss rifle."
+	desc = "A box of long 3x20mm dart magazines, for the Vector gauss rifle."
 	icon_state = "3x20box"
 
 /obj/item/storage/box/ammo/c320/PopulateContents()
