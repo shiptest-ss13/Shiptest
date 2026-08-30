@@ -9560,10 +9560,15 @@
 /area/ship/crew/cryo)
 "ZU" = (
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters{
-	dir = 8
+	dir = 8;
+	layer = 2.029
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_ccw{
+	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 5
+	dir = 5;
+	layer = 2.030
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
