@@ -251,6 +251,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	var/bulb_vacuum_colour = "#4F82FF"	// colour of the light when air alarm is set to severe
 	var/bulb_vacuum_brightness = 8
 
+	var/slow = FALSE // whether we have a small delay before activation
+	var/setup = TRUE // prevents extra effects when seton() is called. toggled false after first seton() call.
+
 	var/constant_flickering = FALSE // Are we always flickering?
 	var/flicker_timer = null
 
@@ -275,7 +278,16 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/broken, 32)
 	bulb_colour = "#FFDDCC"
 	bulb_power = 0.8
 
+/obj/machinery/light/dim/slow
+	slow = TRUE
+
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/dim, 32)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/dim/slow, 32)
+
+/obj/machinery/light/slow
+	slow = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/slow, 32)
 
 // the smaller bulb light fixture
 
@@ -301,6 +313,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/broken, 28)
 	if(status != LIGHT_BROKEN)
 		break_light_tube(1)
 	return ..()
+
+/obj/machinery/light/small/slow
+	slow = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/slow, 28)
 
 /obj/machinery/light/built
 	icon_state = "tube-empty"
@@ -478,8 +495,25 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 
 // attempt to set the light's on/off status
 // will not switch on if broken/burned/empty
-/obj/machinery/light/proc/seton(s)
-	on = (s && status == LIGHT_OK)
+/obj/machinery/light/proc/seton(condition, is_slow, delay)
+	on = (condition && status == LIGHT_OK)
+	if(is_slow && !setup)
+		var/wait
+		if(delay)
+			wait = delay
+		else
+			var/area/place = get_area(src)
+			var/lights
+			for(var/thing in place)
+				if(istype(thing, /obj/machinery/light))
+					lights ++
+			wait = on ? rand(1, lights * 1.6) : 0
+		if(wait > 0)
+			addtimer(CALLBACK(src, PROC_REF(power_change), 0), wait) //Check for power again, in case something changes mid-sequence.
+			return
+	if(on && !setup)
+		playsound(src,pick('sound/machines/bulb_ting1.ogg','sound/machines/bulb_ting2.ogg'),20,TRUE)
+	setup = FALSE
 	update()
 
 /obj/machinery/light/get_cell()
@@ -830,9 +864,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 		return ..()
 
 // called when area power state changes
-/obj/machinery/light/power_change()
+/obj/machinery/light/power_change(delay = TRUE)
 	SHOULD_CALL_PARENT(FALSE)
-	seton(has_power())
+	seton(has_power(), delay)
 
 // called when on fire
 
