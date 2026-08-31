@@ -1,10 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ac" = (
-/obj/machinery/porta_turret/ruin/frontiersmen/heavy{
-	dir = 10
-	},
-/turf/closed/wall/r_wall/rust,
-/area/ship/bridge)
 "ch" = (
 /obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
@@ -132,6 +126,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "np" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/bridge)
+"nI" = (
+/obj/machinery/porta_turret/ruin/frontiersmen/heavy{
+	dir = 10
+	},
 /turf/closed/wall/r_wall/rust,
 /area/ship/bridge)
 "oc" = (
@@ -593,7 +593,7 @@
 /area/ship/bridge)
 "Uo" = (
 /obj/machinery/portable_atmospherics/canister/air{
-	filled = .9
+	filled = 0.9
 	},
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2,
 /obj/effect/turf_decal/techfloor{
@@ -673,7 +673,7 @@ oc
 Sl
 np
 dT
-ac
+nI
 dT
 dT
 dT
