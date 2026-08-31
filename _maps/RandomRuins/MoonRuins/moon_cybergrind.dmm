@@ -596,6 +596,7 @@
 /obj/item/ammo_box/magazine/m57_39_asp,
 /obj/item/storage/toolbox/ammo/c556,
 /obj/item/storage/toolbox/ammo/c57,
+/obj/item/storage/toolbox/ammo/frag,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/secdorm)
 "cs" = (
@@ -1504,6 +1505,7 @@
 /obj/effect/turf_decal/corner/transparent/lightgrey/half{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/reception)
 "fy" = (
@@ -2762,7 +2764,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/shell,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/reception)
@@ -3214,6 +3215,7 @@
 /obj/effect/turf_decal/corner/transparent/syndiered/bordercorner{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/reception)
 "kN" = (
@@ -3935,6 +3937,30 @@
 	light_on = 0
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/wall/red/directional/north{
+	name = "Gear Closet"
+	},
+/obj/item/clothing/suit/armor/vest/cybersun{
+	pixel_x = -7;
+	pixel_y = 2
+	},
+/obj/item/clothing/suit/armor/vest/cybersun{
+	pixel_x = -7;
+	pixel_y = -2
+	},
+/obj/item/storage/belt/military/cybersun,
+/obj/item/storage/belt/military/cybersun{
+	pixel_x = 0;
+	pixel_y = 4
+	},
+/obj/item/clothing/head/helmet/m10/cybersun{
+	pixel_x = 5;
+	pixel_y = -3
+	},
+/obj/item/clothing/head/helmet/m10/cybersun{
+	pixel_x = 5;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/secdorm)
 "nI" = (
@@ -4053,6 +4079,16 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/centralhallway)
+"ob" = (
+/obj/effect/turf_decal/corner/transparent/syndiered/border{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/moon/cybergrind/reception)
 "oc" = (
 /obj/effect/turf_decal/siding/wood/walnut,
 /obj/structure/chair/sofa/red/corpo/left/directional/north,
@@ -4496,6 +4532,21 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/wall/red/directional/south{
+	name = "Combat Aids"
+	},
+/obj/item/reagent_containers/hypospray/medipen/mammoth{
+	pixel_x = -10;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/hypospray/medipen/combat_drug{
+	pixel_x = 4;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/hypospray/medipen/combat_drug{
+	pixel_x = 8;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/secdorm)
 "pJ" = (
@@ -5135,6 +5186,7 @@
 /obj/machinery/light/directional/north{
 	light_on = 0
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/reception)
 "st" = (
@@ -5187,6 +5239,10 @@
 	pixel_x = 2
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/stamp/cybersun{
+	pixel_x = -7;
+	pixel_y = 1
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ruin/moon/cybergrind/directors)
 "sC" = (
@@ -5359,6 +5415,7 @@
 	icon_state = "floor3-old"
 	},
 /obj/item/stack/ore/salvage/scrapmetal,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/reception)
 "tn" = (
@@ -8283,6 +8340,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/hangar)
 "Eu" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/suns/dark/plain,
 /area/ruin/moon/cybergrind/reception)
 "Ez" = (
@@ -10837,6 +10895,7 @@
 /obj/machinery/light/directional/east{
 	light_on = 0
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/reception)
 "Ol" = (
@@ -11761,6 +11820,7 @@
 /obj/machinery/light/directional/south{
 	light_power = 0
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/reception)
 "RJ" = (
@@ -12505,6 +12565,7 @@
 /obj/machinery/light/directional/south{
 	light_on = 0
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/suns/dark/plain,
 /area/ruin/moon/cybergrind/reception)
 "UB" = (
@@ -12798,6 +12859,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-4"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/reception)
 "VL" = (
@@ -12957,6 +13019,7 @@
 	dir = 8
 	},
 /obj/item/ammo_casing/spent/slug/buck,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/reception)
 "WE" = (
@@ -13124,7 +13187,6 @@
 /obj/effect/turf_decal/corner/transparent/cybersunteal/border{
 	dir = 1
 	},
-/obj/machinery/telecomms/server/presets/cybersun,
 /obj/machinery/telecomms/server/presets/cybersun,
 /obj/machinery/door/window/southleft,
 /obj/machinery/light/directional/north{
@@ -13661,6 +13723,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/moon/cybergrind/directors)
+"Zk" = (
+/obj/effect/turf_decal/corner/transparent/syndiered/border,
+/obj/effect/turf_decal/corner/opaque/white/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/lightgrey/half{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/human/shell,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/moon/cybergrind/reception)
 "Zl" = (
 /obj/effect/turf_decal/trimline/transparent/syndiered/line,
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
@@ -16052,7 +16125,7 @@ El
 El
 El
 El
-do
+Yx
 Lk
 oT
 eB
@@ -17548,7 +17621,7 @@ UD
 UD
 UD
 Wr
-Qr
+ob
 fk
 QY
 Wr
@@ -18256,7 +18329,7 @@ RL
 cn
 Rc
 jo
-PW
+Zk
 Ro
 Wr
 Yx
