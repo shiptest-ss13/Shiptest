@@ -742,7 +742,7 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 
 //########### MISC ###########//
 
-/obj/item/gun/ballistic/shotgun/cm15
+/obj/item/gun/ballistic/shotgun/automatic/cm15
 	name = "\improper CM-15"
 	desc = "A large automatic shotgun used by CLIP. Generally employed by law enforcement and breaching specialists, and rarely by CLIP-BARD (typically with incendiary ammunition). Chambered in 12 gauge."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
@@ -803,10 +803,10 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 		)
 	)
 
-/obj/item/gun/ballistic/shotgun/cm15/no_mag
+/obj/item/gun/ballistic/shotgun/automatic/cm15/no_mag
 	default_ammo_type = FALSE
 
-/obj/item/gun/ballistic/shotgun/cm15/incendiary
+/obj/item/gun/ballistic/shotgun/automatic/cm15/incendiary
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g/incendiary
 
 
