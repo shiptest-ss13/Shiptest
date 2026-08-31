@@ -238,8 +238,8 @@
 	foodtypes = GRAIN | MEAT | DAIRY
 
 /obj/item/food/burger/rib
-	name = "mcrib"
-	desc = "An elusive rib shaped burger with limited availablity across the galaxy. Not as good as you remember it."
+	name = "rib sandwich"
+	desc = "A long hamburger with an imitiation of a shortrib, smothered in barbeque sauce and onions, of terran origin."
 	icon_state = "mcrib"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 2,
@@ -251,8 +251,8 @@
 	foodtypes = GRAIN | MEAT
 
 /obj/item/food/burger/mcguffin
-	name = "mcguffin"
-	desc = "A cheap and greasy imitation of an eggs benedict."
+	name = "breakfast sandwich"
+	desc = "A sliced intersolar muffin with a patty-shaped steamed and fried egg between, of terran origin."
 	icon_state = "mcguffin"
 	tastes = list("muffin" = 2, "bacon" = 3)
 	food_reagents = list(

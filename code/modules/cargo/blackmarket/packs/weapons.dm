@@ -83,7 +83,7 @@
 /datum/blackmarket_item/weapon/trench_mace
 	name = "Frontiersman Trench Mace"
 	desc = "A makeshift mace made by the frontiersmen. Honestly? We've just got too many of these sitting around. They sting like a motherfucker, even if it's basically just a bunch of nails beat into an empty grenade."
-	item = /obj/item/trench_club
+	item = /obj/item/melee/trench_club
 
 	cost_min = 1000
 	cost_max = 1750
@@ -180,7 +180,7 @@
 	if(mag_number > 0)
 		if(!mag_type)
 			var/obj/item/gun/case_gun = item
-			if(case_gun.default_ammo_type && !(case_gun.internal_cell || case_gun.internal_magazine))
+			if(case_gun.default_ammo_type && !case_gun.internal_magazine)
 				mag_type = case_gun.default_ammo_type
 			else
 				mag_number = 0
@@ -291,6 +291,26 @@
 	cost_max = 750
 	stock_max = 3
 	availability_prob = 40
+
+/datum/blackmarket_item/weapon/guncase/stingingnettle
+	name = "xPL-7 Stinging Nettle"
+	desc = "An 'off the streets' version of the PL-7 Nettle. Someone installed an electrowhatever chamber on the back, and now it fires like a machine pistol. I also took the liberty of painting over the atrocious paintjob of its previous owner, thank me later."
+	item = /obj/item/gun/energy/clover/pistol/auto
+
+	cost_min = 1500
+	cost_max = 2250
+	stock_max = 2
+	availability_prob = 30
+
+/datum/blackmarket_item/weapon/guncase/faveleira
+	name = "ECM-25 Faveleira"
+	desc = "A fancy Clover Photonics multi-mode energy scattergun, fresh and only lightly used from some poor mining team that bit off more than they could drill. Fun for all ranges. Uses Eoehoma cells, and comes with upgraded ones, you're welcome."
+	item = /obj/item/gun/energy/clover/faveleira/clip
+
+	cost_min = 3500
+	cost_max = 4500
+	stock_max = 2
+	availability_prob = 20
 
 /datum/blackmarket_item/weapon/guncase/cm23
 	name = "CM-23 pistol"
