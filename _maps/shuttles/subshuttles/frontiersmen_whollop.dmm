@@ -1,4 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ac" = (
+/obj/machinery/porta_turret/ruin/frontiersmen/heavy{
+	dir = 10
+	},
+/turf/closed/wall/r_wall/rust,
+/area/ship/bridge)
 "ch" = (
 /obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
@@ -151,8 +157,8 @@
 /obj/docking_port/mobile{
 	dir = 4;
 	name = "whollop shuttle";
-	port_direction = 2;
-	preferred_direction = 4
+	port_direction = 4;
+	preferred_direction = 2
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
@@ -667,7 +673,7 @@ oc
 Sl
 np
 dT
-np
+ac
 dT
 dT
 dT
