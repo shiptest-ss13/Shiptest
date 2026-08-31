@@ -460,6 +460,16 @@
 	name = "Haymaker-class Command Post"
 	prefix = "SV"
 
+/datum/map_template/shuttle/subshuttles/whollop
+	file_name = "frontiersmen_whollop"
+	name = "Whollop-class Smuggling Pod"
+	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/wholloppopulated
+	file_name = "frontiersmen_wholloppopulated"
+	name = "Whollop-class Smuggling Pod"
+	prefix = "SV"
+
 /datum/map_template/shuttle/subshuttles/skink
 	file_name = "warra_skink"
 	name = "Skink-class Cargo Runner"
