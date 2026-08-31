@@ -168,6 +168,7 @@
 		// we check the cell integrity, its its less than 20% we blow up. Or effectively, two uses of this will detonate the cell.
 		if(target.getOrganLoss(ORGAN_SLOT_STOMACH) > 80)
 			target.visible_message(span_bolddanger("[target]'s chest begins to smoke and hiss dangerously."),span_userdanger("<b>THERMAL RUNAWAY DETECTED. SYSTEM FAILURE IMMINIENT</b>"))
+			target.apply_status_effect(/datum/status_effect/cellsmoking, target)
 			do_after(target, 7 SECONDS, target, TRUE, FALSE)
 			playsound(target,'sound/effects/wounds/sizzle1.ogg',100)
 			explosion(target, 0,0.1,2,2,TRUE,FALSE,1)
