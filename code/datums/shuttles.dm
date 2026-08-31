@@ -465,8 +465,8 @@
 	name = "Whollop-class Smuggling Pod"
 	prefix = "SV"
 
-/datum/map_template/shuttle/subshuttles/wholloppopulated
-	file_name = "frontiersmen_wholloppopulated"
+/datum/map_template/shuttle/subshuttles/whollop_populated
+	file_name = "frontiersmen_whollop_populated"
 	name = "Whollop-class Smuggling Pod"
 	prefix = "SV"
 
