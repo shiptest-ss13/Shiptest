@@ -165,7 +165,7 @@
 	name = "marine raider suit"
 	desc = "Designed with mobility and full body protection in mind, the EVA capable 'Arawna' skirmisher suit has become the preferred armor configuration of the PGF Marine Raiders."
 	icon_state = "marineraidersuit"
-	item_state = "marineraidersuit"
+	item_state = "marineraider"
 	slowdown = 0
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 30, "bio" = 100, "rad" = 40, "fire" = 50, "acid" = 50, "wound" = 20)
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
@@ -209,7 +209,7 @@
 	name = "marine raider helmet"
 	desc = "Designed off of the AR-98 combat helmet, the 'Arawna' skirmisher helmet offers its user greater protection and range of movement than is offered by similar EVA capable helmets."
 	icon_state = "marineraiderhelmet"
-	item_state = "marineraiderhelmet"
+	item_state = "marineraiderhelm"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
 	can_flashlight = TRUE
 	flashlight_state = "helmet_flight_overlay"
@@ -437,20 +437,56 @@
 //Back
 /obj/item/storage/backpack/security/gezena
 	name = "PGFMC backpack"
-	desc = "An aqua-green backpack designed for use with PGFMC rigging, although it can still be worn on its own."
+	desc = "An aqua-green backpack designed for use with PGFMC combat rigging, although it can still be worn on its own."
 	icon_state = "pgfpack"
+	item_state = "pgfpack"
+	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/storage/backpack/satchel/sec/gezena
 	name = "PGFMC satchel"
-	desc = "An aqua-green satchel designed for use with PGFMC rigging, although it can still be worn on its own."
+	desc = "An aqua-green satchel designed for use with PGFMC combat rigging, although it can still be worn on its own."
 	icon_state = "satchel-pgf"
+	item_state = "satchel-pgf"
+	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/storage/backpack/messenger/sec/gezena
 	name = "PGFMC assault pack"
-	desc = "An aqua-green assault pack designed for use with PGFMC rigging, although it can still be worn on its own."
+	desc = "An aqua-green assault pack designed for use with PGFMC combat rigging, although it can still be worn on its own."
 	icon_state = "pgfassault"
+	item_state = "pgfassault"
+	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/storage/backpack/medic/gezena
+	name = "PGFAF trauma backpack"
+	desc = "A sterile white backpack designed for use with PGFAF medical rigging, although it can still be worn on its own."
+	icon_state = "pgfmedpack"
+	item_state = "pgfmedpack"
+	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/storage/backpack/satchel/med/gezena
+	name = "PGFAF trauma satchel"
+	desc = "A sterile white satchel designed for use with PGFAF medical rigging, although it can still be worn on its own."
+	icon_state = "satchel-pgf-med"
+	item_state = "satchel-pgf-med"
+	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/storage/backpack/messenger/med/gezena
+	name = "PGFAF trauma pack"
+	desc = "A sterile white trauma pack designed for use with PGFAF medical rigging, although it can still be worn on its own."
+	icon_state = "pgftrauma"
+	item_state = "pgftrauma"
+	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
 //Belt

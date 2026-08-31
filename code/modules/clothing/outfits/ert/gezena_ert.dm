@@ -148,11 +148,10 @@
 
 	l_pocket = /obj/item/storage/pouch/ammo/ewc6m
 
-	backpack = /obj/item/storage/backpack/medic
-	satchel = /obj/item/storage/backpack/satchel/med
+	backpack = /obj/item/storage/backpack/medic/gezena
+	satchel = /obj/item/storage/backpack/satchel/med/gezena
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	courierbag = /obj/item/storage/backpack/messenger/para
-	box = /obj/item/storage/box/survival/medical
+	courierbag = /obj/item/storage/backpack/messenger/med/gezena
 
 	backpack_contents = list(/obj/item/storage/firstaid/medical, /obj/item/grenade/smokebomb = 4, /obj/item/attachment/rail_light)
 
