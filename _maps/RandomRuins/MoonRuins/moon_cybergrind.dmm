@@ -293,6 +293,11 @@
 	},
 /turf/open/floor/plating/asteroid/desert,
 /area/ruin/moon/cybergrind/terrarium/simdome)
+"aU" = (
+/obj/structure/table/glass,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/west,
+/turf/open/floor/suns/dark/plain,
+/area/ruin/moon/cybergrind/directors)
 "aY" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/border{
 	dir = 4
@@ -361,7 +366,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/engineering)
 "bl" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice{
+	layer = 2.19
+	},
 /obj/structure/catwalk,
 /obj/structure/platform/ship_two/corner{
 	dir = 4
@@ -487,7 +494,9 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/moon/cybergrind/cargo)
 "bL" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice{
+	layer = 2.19
+	},
 /obj/structure/catwalk,
 /obj/structure/platform/ship_two/corner{
 	dir = 1
@@ -587,7 +596,9 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/reception)
 "cq" = (
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = "0"
+	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
@@ -616,6 +627,13 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/moon/cybergrind/northhallway)
+"cv" = (
+/obj/effect/turf_decal/corner/transparent/syndiered/border{
+	dir = 10
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/moon/cybergrind/reception)
 "cw" = (
 /obj/effect/turf_decal/corner/transparent/lightgrey/mono,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line,
@@ -750,6 +768,7 @@
 	icon_state = "0-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/terrarium/simdome)
 "cT" = (
@@ -962,21 +981,10 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/lab)
 "dz" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/structure/cable/cyan{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/shieldwallgen/atmos/strong{
-	id = "cybergrind_holo"
-	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 8;
-	id = "cybergrind_hangar"
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/moon/cybergrind/hangar)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/cybergrind/cargo)
 "dB" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "cybergrind_shutters";
@@ -1063,6 +1071,9 @@
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/pistol_steel,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
 "dP" = (
@@ -1160,6 +1171,21 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plating/asteroid/desert,
 /area/ruin/moon/cybergrind/terrarium/simdome)
+"eh" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/transparent/syndiered/border,
+/obj/item/ammo_casing/spent/rifle_steel,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/moon/cybergrind/northhallway)
 "el" = (
 /mob/living/simple_animal/hostile/human/shell,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -1447,6 +1473,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
 "fo" = (
@@ -1649,6 +1676,10 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/random{
+	pixel_x = 32;
+	pixel_y = 0
+	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ruin/moon/cybergrind/directors)
 "fS" = (
@@ -1734,6 +1765,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/blood/old,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/moon/cybergrind/directors)
 "gd" = (
@@ -1866,6 +1898,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/moon/cybergrind/northhallway)
+"gy" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/carpet/red,
+/area/ruin/moon/cybergrind/dormitory)
 "gB" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 6
@@ -1875,6 +1912,7 @@
 	icon_state = "xtracks"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/medbay)
 "gD" = (
@@ -2015,8 +2053,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/observatory)
 "gW" = (
-/obj/machinery/porta_turret/ship/hardliners{
-	faction = list("hostile","turret")
+/obj/machinery/porta_turret/ruin/hardliners{
+	faction = list("hostile");
+	dir = 8
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/cybergrind/decontam)
@@ -2043,6 +2082,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/medbay)
+"hd" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/carpet/red,
+/area/ruin/moon/cybergrind/secdorm)
 "he" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 10
@@ -2176,6 +2220,7 @@
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
 "hD" = (
@@ -2377,6 +2422,13 @@
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/northhallway)
+"ib" = (
+/obj/structure/chair/stool{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/suns/hatch/maple,
+/area/ruin/moon/cybergrind/atrium)
 "ic" = (
 /obj/machinery/modular_computer/console/preset/civilian,
 /turf/open/floor/suns/dark/plain,
@@ -2410,6 +2462,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/medbay)
 "in" = (
@@ -2723,6 +2776,7 @@
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/pistol_steel,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
 "jk" = (
@@ -2998,12 +3052,14 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/atrium)
 "jW" = (
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/carpet/red,
 /area/ruin/moon/cybergrind/directors)
 "jY" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /mob/living/simple_animal/hostile/human/shell,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/northhallway)
 "kb" = (
@@ -3190,6 +3246,7 @@
 /obj/effect/turf_decal/siding/wood/end/bamboo{
 	dir = 8
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/moon/cybergrind/secdorm)
 "kC" = (
@@ -3357,6 +3414,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/terrarium/simdome)
 "lt" = (
@@ -3385,6 +3443,7 @@
 	},
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/decontam)
 "ly" = (
@@ -3542,6 +3601,7 @@
 /obj/effect/turf_decal/corner/transparent/cybersunteal/border{
 	dir = 1
 	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/lab)
 "mg" = (
@@ -3720,6 +3780,14 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/west{
+	pixel_x = -32;
+	pixel_y = -7
+	},
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_x = -23;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/terrarium/simdome)
 "mW" = (
@@ -3834,6 +3902,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
 /obj/item/ammo_casing/spent/pistol_steel,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/atrium)
 "nr" = (
@@ -4065,10 +4134,10 @@
 /obj/effect/turf_decal/industrial/warning/fulltile{
 	color = "#FFFFFF"
 	},
-/obj/machinery/porta_turret/ship/hardliners{
-	faction = list("hostile","turret")
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/porta_turret/ruin/hardliners{
+	faction = list("hostile")
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
 "nZ" = (
@@ -4219,6 +4288,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/suns/hatch/ebony,
 /area/ruin/moon/cybergrind/directors)
 "oJ" = (
@@ -4238,6 +4308,7 @@
 /area/ruin/moon/cybergrind/reception)
 "oN" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/hangar)
 "oQ" = (
@@ -4302,8 +4373,8 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 9
 	},
-/obj/effect/anomaly/phantom,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/anomaly/phantom/planetary,
 /turf/open/floor/plasteel/mono,
 /area/ruin/moon/cybergrind/cargo)
 "oV" = (
@@ -4547,6 +4618,7 @@
 	pixel_x = 8;
 	pixel_y = -6
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/secdorm)
 "pJ" = (
@@ -4562,6 +4634,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/suns/hatch/walnut,
 /area/ruin/moon/cybergrind/dormitory)
 "pK" = (
@@ -4683,6 +4756,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/cybergrind/dormitory)
+"qe" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/carpet/red,
+/area/ruin/moon/cybergrind/directors)
 "qf" = (
 /obj/effect/decal/cleanable/blood/squirt,
 /obj/item/ammo_casing/spent/pistol_steel,
@@ -4738,6 +4816,7 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/decontam)
 "qB" = (
@@ -4882,6 +4961,7 @@
 	},
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
 "rj" = (
@@ -5132,16 +5212,15 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/cable/cyan{
-	icon_state = "0-1"
-	},
-/obj/machinery/power/shieldwallgen/atmos/strong{
-	dir = 1;
-	id = "cybergrind_holo"
-	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
 	id = "cybergrind_hangar"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	id = "cybergrind_holo"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/cybergrind/hangar)
@@ -5205,6 +5284,7 @@
 /area/ruin/moon/cybergrind/decontam)
 "sw" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/terrarium/simdome)
 "sx" = (
@@ -5227,7 +5307,9 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/moon/cybergrind/cargo)
 "sA" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice{
+	layer = 2.19
+	},
 /obj/structure/catwalk,
 /turf/open/floor/plating/asteroid/moon_coarse/dark/lit,
 /area/ruin/moon/cybergrind/exterior)
@@ -5835,6 +5917,11 @@
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/cybergrind/reception)
+"uO" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/carpet/red,
+/area/ruin/moon/cybergrind/dormitory)
 "uP" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	icon_state = "xttrails_1";
@@ -5884,14 +5971,14 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/reception)
 "uX" = (
-/obj/machinery/porta_turret/ship/hardliners{
-	dir = 4;
-	faction = list("hostile", "turret")
-	},
 /obj/effect/turf_decal/industrial/warning/fulltile{
 	color = "#FFFFFF"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/porta_turret/ruin/hardliners{
+	faction = list("hostile");
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/reception)
 "uY" = (
@@ -6240,6 +6327,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/aicore)
 "vS" = (
@@ -6283,7 +6371,6 @@
 	pixel_y = 27
 	},
 /obj/effect/turf_decal/borderfloorblack,
-/obj/structure/window/reinforced/tinted,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/moon/cybergrind/bathroom)
 "wb" = (
@@ -6294,6 +6381,10 @@
 	dir = 4
 	},
 /obj/structure/table/glass,
+/obj/structure/sign/poster/random{
+	pixel_x = -31;
+	pixel_y = 0
+	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/moon/cybergrind/secdorm)
 "wf" = (
@@ -6408,6 +6499,9 @@
 /area/ruin/moon/cybergrind/aicore)
 "wv" = (
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/bathroom)
 "ww" = (
@@ -6930,6 +7024,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/bathroom)
 "yC" = (
@@ -7248,6 +7345,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
+"zP" = (
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/carpet/red,
+/area/ruin/moon/cybergrind/dormitory)
 "zS" = (
 /obj/effect/turf_decal/box/white,
 /obj/structure/closet/mob_capture,
@@ -7505,8 +7606,8 @@
 /obj/effect/turf_decal/industrial/warning/fulltile{
 	color = "#FFFFFF"
 	},
-/obj/machinery/porta_turret/ship/hardliners{
-	faction = list("hostile","turret")
+/obj/machinery/porta_turret/ruin/hardliners{
+	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/medbay)
@@ -7590,6 +7691,7 @@
 "Bx" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/turf_decal/box/white,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/cybergrind/engineering)
 "By" = (
@@ -7651,6 +7753,10 @@
 	},
 /obj/structure/chair/sofa/red/corpo/right/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/random{
+	pixel_x = 32;
+	pixel_y = 0
+	},
 /turf/open/floor/suns/hatch/walnut,
 /area/ruin/moon/cybergrind/dormitory)
 "BI" = (
@@ -7667,6 +7773,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/moon/cybergrind/northhallway)
+"BJ" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1;
+	color = "#FFFFFF"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/moon/cybergrind/engineering)
 "BK" = (
 /obj/structure/chair/bench/red/directional/west{
 	pixel_x = 3;
@@ -7985,10 +8103,6 @@
 /area/ruin/moon/cybergrind/simdomeengi)
 "CQ" = (
 /obj/machinery/portable_atmospherics/canister/hydrogen,
-/obj/machinery/door/airlock/hatch{
-	dir = 4;
-	name = "Exterior Access"
-	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/cybergrind/cargo)
 "CR" = (
@@ -8218,6 +8332,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/suns/hatch/walnut,
 /area/ruin/moon/cybergrind/dormitory)
 "DW" = (
@@ -8302,6 +8417,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/aicore)
 "Er" = (
@@ -8647,6 +8763,7 @@
 	},
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/rifle_steel,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/observatory)
 "Fx" = (
@@ -8702,7 +8819,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/simdomeengi)
 "FS" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice{
+	layer = 2.19
+	},
 /obj/structure/catwalk,
 /obj/structure/platform/ship_two{
 	dir = 8
@@ -8925,6 +9044,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/robot_debris,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/lab)
 "GN" = (
@@ -9133,6 +9253,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/reception)
+"Hz" = (
+/obj/structure/table/glass,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/east,
+/turf/open/floor/suns/dark/plain,
+/area/ruin/moon/cybergrind/directors)
 "HB" = (
 /obj/effect/turf_decal/corner/opaque/white/half{
 	dir = 4
@@ -9146,6 +9271,14 @@
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/atrium)
+"HD" = (
+/obj/item/ammo_casing/spent/rifle_steel,
+/obj/item/ammo_casing/spent/rifle_steel,
+/obj/item/ammo_casing/spent/slug/buck,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/moon/cybergrind/observatory)
 "HF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -9421,12 +9554,16 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
 "IP" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/border{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/hangar)
 "IQ" = (
@@ -9450,6 +9587,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ruin/moon/cybergrind/directors)
 "Ja" = (
@@ -9595,6 +9733,14 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/lab)
+"Jz" = (
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/plasteel/tech,
+/area/ruin/moon/cybergrind/simdomeengi)
 "JF" = (
 /obj/effect/turf_decal/corner/transparent/lightgrey/mono,
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
@@ -9645,6 +9791,7 @@
 /obj/effect/turf_decal/siding/wood/mahogany{
 	dir = 9
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ruin/moon/cybergrind/directors)
 "JR" = (
@@ -9654,6 +9801,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
 "JT" = (
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/carpet/red,
 /area/ruin/moon/cybergrind/secdorm)
 "JX" = (
@@ -9702,6 +9850,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/reception)
+"Kf" = (
+/obj/effect/turf_decal/corner/opaque/white/half,
+/obj/effect/turf_decal/corner/transparent/lightgrey/half,
+/obj/effect/turf_decal/corner/transparent/cybersunteal/border{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/moon/cybergrind/lab)
 "Kg" = (
 /obj/structure/closet/secure_closet/cabinet{
 	anchored = 1
@@ -9840,6 +9997,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/closet/firecloset/wall/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/lab)
 "Kz" = (
@@ -10086,6 +10244,7 @@
 /obj/effect/turf_decal/corner/opaque/white/half,
 /obj/effect/turf_decal/corner/transparent/lightgrey/half,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/reception)
 "Lw" = (
@@ -10204,7 +10363,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/robot_debris,
+/obj/structure/closet/firecloset/wall/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/lab)
 "LK" = (
@@ -10225,6 +10384,7 @@
 "LP" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/northhallway)
 "LQ" = (
@@ -10250,6 +10410,9 @@
 /area/ruin/moon/cybergrind/lab)
 "LV" = (
 /obj/effect/decal/cleanable/blood/drip,
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/bathroom)
 "Mc" = (
@@ -10260,6 +10423,7 @@
 /area/ruin/moon/cybergrind/hangar)
 "Mi" = (
 /obj/structure/table/chem,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/suns/dark/plain,
 /area/ruin/moon/cybergrind/directors)
 "Mj" = (
@@ -10369,6 +10533,7 @@
 	},
 /mob/living/simple_animal/hostile/automated/agrav/cybersun,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/medbay)
 "ME" = (
@@ -10773,6 +10938,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/suns/hatch/ebony,
 /area/ruin/moon/cybergrind/directors)
 "NZ" = (
@@ -10784,6 +10950,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/lab)
+"Oa" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/suns/dark/plain,
+/area/ruin/moon/cybergrind/reception)
 "Oc" = (
 /obj/effect/turf_decal/trimline/transparent/syndiered/end{
 	dir = 4
@@ -10972,6 +11143,7 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/suns/hatch/walnut,
 /area/ruin/moon/cybergrind/dormitory)
 "OC" = (
@@ -11008,6 +11180,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plating,
 /area/ruin/moon/cybergrind/engineering)
 "OP" = (
@@ -11055,6 +11228,9 @@
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
 "OV" = (
@@ -11106,6 +11282,23 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/dormitory)
+"Pd" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	dir = 1;
+	id = "cybergrind_holo"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-1"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "cybergrind_hangar"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/moon/cybergrind/hangar)
 "Pe" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -11353,6 +11546,7 @@
 	icon_state = "gib5-old";
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/moon/cybergrind/secdorm)
 "PY" = (
@@ -11386,6 +11580,7 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/suns/hatch/walnut,
 /area/ruin/moon/cybergrind/dormitory)
 "Qc" = (
@@ -11544,7 +11739,6 @@
 	pixel_x = -27;
 	pixel_y = 9
 	},
-/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/bathroom)
 "QI" = (
@@ -11771,6 +11965,12 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/hangar)
+"Rw" = (
+/obj/effect/turf_decal/corner/transparent/syndiered/border,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/moon/cybergrind/dormitory)
 "Ry" = (
 /obj/effect/turf_decal/trimline/transparent/syndiered/end{
 	dir = 8
@@ -11995,6 +12195,7 @@
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/slug/buck,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/observatory)
 "Sp" = (
@@ -12093,6 +12294,7 @@
 	dir = 4
 	},
 /obj/item/stack/ore/salvage/scrapmetal,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/hangar)
 "SQ" = (
@@ -12244,10 +12446,13 @@
 /turf/open/water/beach/deep,
 /area/ruin/moon/cybergrind/terrarium)
 "Tx" = (
-/obj/structure/lattice,
-/obj/structure/catwalk,
-/turf/open/floor/plating/asteroid/moon_coarse/lit,
-/area/ruin/moon/cybergrind/exterior)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/contraband/lusty_xenomorph{
+	pixel_x = 0;
+	pixel_y = -32
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/moon/cybergrind/secdorm)
 "Ty" = (
 /obj/effect/turf_decal/trimline/transparent/syndiered/line,
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
@@ -12326,6 +12531,7 @@
 	},
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/dormitory)
 "TJ" = (
@@ -12446,6 +12652,10 @@
 "Uh" = (
 /obj/structure/dresser,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/random{
+	pixel_x = 0;
+	pixel_y = 32
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/moon/cybergrind/directors)
 "Ui" = (
@@ -12636,6 +12846,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/decontam)
+"UR" = (
+/obj/effect/turf_decal/corner/opaque/white/half,
+/obj/effect/turf_decal/corner/transparent/lightgrey/half,
+/obj/effect/turf_decal/trimline/opaque/syndiered/line,
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/moon/cybergrind/atrium)
 "US" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/moon/cybergrind/terrarium/simdome)
@@ -12739,7 +12956,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/simdomeengi)
 "Vs" = (
-/obj/effect/anomaly/tvstatic,
+/obj/effect/anomaly/tvstatic/blackbox,
 /turf/open/floor/plating/asteroid/desert,
 /area/ruin/moon/cybergrind/terrarium/simdome)
 "Vt" = (
@@ -12875,7 +13092,13 @@
 "VN" = (
 /obj/effect/mob_spawn/human/corpse/cybersun,
 /obj/effect/decal/cleanable/blood/old,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/carpet/red,
+/area/ruin/moon/cybergrind/dormitory)
+"VP" = (
+/obj/effect/turf_decal/corner/transparent/syndiered/border,
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/dormitory)
 "VT" = (
 /obj/structure/table/reinforced,
@@ -12891,6 +13114,7 @@
 	pixel_x = 7;
 	pixel_y = 3
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/secdorm)
 "VX" = (
@@ -13034,6 +13258,11 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/atrium)
+"WG" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/ruin/moon/cybergrind/terrarium/simdome)
 "WH" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/bordercorner{
 	dir = 4
@@ -13096,6 +13325,9 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
 "WU" = (
@@ -13209,6 +13441,7 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 6
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/simdomeengi)
 "Xq" = (
@@ -13337,6 +13570,14 @@
 	pixel_x = 22;
 	pixel_y = -8;
 	id = "cybergrind_cargo"
+	},
+/obj/machinery/firealarm/directional/east{
+	pixel_x = 32;
+	pixel_y = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/east{
+	pixel_x = 23;
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/cargo)
@@ -13973,6 +14214,7 @@
 /mob/living/simple_animal/hostile/human/shell,
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/rifle_steel,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/northhallway)
 
@@ -14420,10 +14662,10 @@ AY
 AY
 AY
 oS
-Tx
-Tx
 sA
-Tx
+sA
+sA
+sA
 bE
 AY
 AY
@@ -14710,7 +14952,7 @@ ep
 xS
 IL
 cR
-IL
+WG
 xS
 xS
 Yx
@@ -14935,7 +15177,7 @@ lU
 Xp
 lU
 vC
-lU
+Jz
 Ui
 GA
 rw
@@ -15357,17 +15599,17 @@ Yx
 Yx
 iP
 OQ
-Az
+zP
 Er
 cG
 iP
 Gj
 md
-Lb
+Rw
 iP
 ic
 PH
-HQ
+uO
 OQ
 iP
 Yx
@@ -15441,7 +15683,7 @@ EM
 iP
 Gj
 fT
-Yv
+VP
 iP
 EM
 Za
@@ -15819,8 +16061,8 @@ Cd
 Wi
 sP
 Lk
-qa
-qa
+hd
+Tx
 Lk
 Yx
 Yx
@@ -16147,7 +16389,7 @@ uH
 iP
 ic
 yr
-HQ
+gy
 Pp
 iP
 Yx
@@ -16251,7 +16493,7 @@ RZ
 oR
 Dt
 ZW
-js
+eh
 Dt
 Yx
 Yx
@@ -16264,7 +16506,7 @@ wl
 nP
 fg
 Rl
-Rl
+HD
 Ji
 CD
 iQ
@@ -16847,7 +17089,7 @@ zx
 zx
 zx
 wK
-bw
+UR
 VA
 Hn
 Pq
@@ -16929,7 +17171,7 @@ MC
 pC
 Cn
 OV
-IA
+ib
 lJ
 yQ
 yQ
@@ -16953,7 +17195,7 @@ Yx
 Yx
 nC
 TL
-TL
+aU
 XZ
 nC
 nC
@@ -17108,7 +17350,7 @@ Yx
 Yx
 Yx
 nC
-is
+qe
 is
 vJ
 Jc
@@ -17531,7 +17773,7 @@ Yx
 Yx
 Yx
 Hd
-cT
+dz
 XF
 eu
 Le
@@ -17577,7 +17819,7 @@ Yx
 Yx
 nC
 TL
-TL
+Hz
 me
 nC
 nC
@@ -17702,9 +17944,9 @@ tk
 fx
 wm
 eP
-AB
+cv
 ME
-Eu
+Oa
 Wr
 Wr
 Yx
@@ -18214,7 +18456,7 @@ yI
 Wo
 Wo
 iz
-mf
+Kf
 EU
 gR
 iG
@@ -18755,7 +18997,7 @@ Wo
 Gu
 Rq
 Va
-Fx
+BJ
 jO
 Wo
 Yx
@@ -19247,15 +19489,15 @@ AY
 Yx
 UD
 UD
-dz
-Qp
+UD
+sp
 Ni
 Qp
 Qp
 Qp
 Qp
-Qp
-sp
+Pd
+UD
 UD
 UD
 pY
@@ -19480,21 +19722,21 @@ AY
 AY
 AY
 oS
-Tx
-Tx
-Tx
 sA
 sA
 sA
 sA
 sA
-Tx
-Tx
-Tx
-Tx
-Tx
-Tx
-Tx
+sA
+sA
+sA
+sA
+sA
+sA
+sA
+sA
+sA
+sA
 nU
 AY
 AY

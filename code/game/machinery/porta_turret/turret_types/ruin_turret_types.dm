@@ -153,3 +153,41 @@
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser/sharplite
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 	max_integrity = 250
+
+/* Hardliners Derelict Turrets */
+
+/obj/machinery/porta_turret/ruin/hardliners
+	name = "Verdict Turret"
+	desc = "A turret traditionally found mounted on mercenary vessels in the frontier. Reported to be of good make by Turret Lover Monthly (December, 502FSC)"
+	stun_projectile = /obj/projectile/bullet/c57x39mm/rubber
+	stun_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
+	lethal_projectile = /obj/projectile/bullet/c57x39mm
+	lethal_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
+	faction = list(FACTION_HARDLINERS, FACTION_PLAYER_SYNDICATE, FACTION_TURRET)
+	shot_delay = 25
+	burst_delay = 5
+	burst_size = 4
+
+/obj/machinery/porta_turret/ruin/hardliners/light
+	name = "Discharge Turret"
+	desc = "A light turret typically found mounted on mercenary and independent vessels as a cheap, aftermarket modification." //do not put these on indie vessels
+	stun_projectile = /obj/projectile/bullet/c45/rubber
+	stun_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
+	lethal_projectile = /obj/projectile/bullet/c45
+	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
+	scan_range = 7
+	shot_delay = 12
+	burst_delay = 4
+	burst_size = 2
+
+/obj/machinery/porta_turret/ruin/hardliners/heavy
+	name = "Acquittal Turret"
+	desc = "A heavy turret often found mounted as an after-market modification on mercenary vessels."
+	stun_projectile = /obj/projectile/bullet/a308/rubber
+	stun_projectile_sound = 'sound/weapons/gun/rifle/f4.ogg'
+	lethal_projectile = /obj/projectile/bullet/a308
+	lethal_projectile_sound = 'sound/weapons/gun/rifle/f4.ogg'
+	scan_range = 14
+	shot_delay = 30
+	burst_delay = 3
+	burst_size = 2
