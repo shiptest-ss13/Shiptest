@@ -11,11 +11,11 @@ Ask ninjanomnom if they're around
 #define RAD_MOB_COEFFICIENT 0.20 // Radiation applied is multiplied by this
 #define RAD_MOB_SKIN_PROTECTION ((1/RAD_MOB_COEFFICIENT)+RAD_BACKGROUND_RADIATION)
 
-#define RAD_LOSS_PER_SECOND 0.25
-#define RAD_TOX_COEFFICIENT 0.04 // Toxin damage per second coefficient
+#define RAD_LOSS_PER_SECOND 5
+#define RAD_TOX_COEFFICIENT 0.01 // Toxin damage per second coefficient
 #define RAD_OVERDOSE_REDUCTION 0.000001 // Coefficient to the reduction in applied rads once the thing, usualy mob, has too much radiation
 // WARNING: This number is highly sensitive to change, graph is first for best results
-#define RAD_BURN_THRESHOLD 1000 // Applied radiation must be over this to burn
+#define RAD_BURN_THRESHOLD 10 // Applied radiation must be over this to burn
 //Holy shit test after you tweak anything it's said like 6 times in here
 //You probably want to plot any tweaks you make so you can see the curves visually
 #define RAD_BURN_LOG_BASE 1.1
@@ -23,20 +23,20 @@ Ask ninjanomnom if they're around
 #define RAD_BURN_CURVE(X) log(1+((X-RAD_BURN_THRESHOLD)/RAD_BURN_LOG_GRADIENT))/log(RAD_BURN_LOG_BASE)
 
 // How much stored radiation in a mob with no ill effects
-#define RAD_MOB_SAFE 500
+#define RAD_MOB_SAFE 1000
 // How much stored radiation to check for hair loss
-#define RAD_MOB_SICKNESS 800
+#define RAD_MOB_SICKNESS 1500
 // How much stored radiation to check for mutation
-#define RAD_MOB_MUTATE 1250
+#define RAD_MOB_MUTATE 5000
 // The amount of radiation to check for vomitting
-#define RAD_MOB_VOMIT 2000
+#define RAD_MOB_VOMIT 2500
 // Chance per second of vomitting
-#define RAD_MOB_VOMIT_PROB 0.5
+#define RAD_MOB_VOMIT_PROB 0.1
 
 // How much stored radiation to check for stunning
-#define RAD_MOB_KNOCKDOWN 2000
+#define RAD_MOB_KNOCKDOWN 3000
 // Chance of knockdown per second when over threshold
-#define RAD_MOB_KNOCKDOWN_PROB 0.5
+#define RAD_MOB_KNOCKDOWN_PROB 0.1
 // Amount of knockdown when it occurs
 #define RAD_MOB_KNOCKDOWN_AMOUNT 3
 

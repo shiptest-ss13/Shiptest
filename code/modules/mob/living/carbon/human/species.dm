@@ -1444,7 +1444,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * - times_fired: The number of times SSmobs has fired
  */
 /datum/species/proc/handle_mutations_and_radiation(mob/living/carbon/human/source, seconds_per_tick, times_fired)
-	if(HAS_TRAIT(source, TRAIT_RADIMMUNE))
+	if(HAS_TRAIT(source, TRAIT_RADIMMUNE) || HAS_TRAIT(source, TRAIT_RADRESISTANT))
 		source.radiation = 0
 		return TRUE
 
