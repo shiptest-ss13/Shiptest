@@ -49,7 +49,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dz" = (
 /obj/structure/grille,
@@ -253,7 +253,7 @@
 "oy" = (
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
-"pQ" = (
+"oU" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -274,6 +274,22 @@
 /obj/item/tank/internals/emergency_oxygen/double,
 /obj/item/tank/internals/emergency_oxygen/double,
 /turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
+"pQ" = (
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ql" = (
 /obj/docking_port/mobile{
@@ -504,22 +520,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
-"Ic" = (
-/obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 9
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -900,7 +900,7 @@ wu
 Rb
 nP
 is
-pQ
+oU
 bD
 Wc
 "}
@@ -917,7 +917,7 @@ Wc
 (6,1,1) = {"
 qO
 fe
-Ic
+pQ
 Ab
 gl
 fe
