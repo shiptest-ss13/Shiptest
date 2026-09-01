@@ -254,28 +254,6 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "oU" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/crate_shelf,
-/obj/structure/closet/crate/internals,
-/obj/item/clothing/suit/space/syndicate/surplus,
-/obj/item/clothing/suit/space/syndicate/surplus,
-/obj/item/clothing/head/helmet/space/syndicate/surplus,
-/obj/item/clothing/head/helmet/space/syndicate/surplus,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/tank/internals/emergency_oxygen/double,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
-"pQ" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -376,17 +354,25 @@
 /area/template_noop)
 "sI" = (
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "1-2"
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "grykecharger";
-	dir = 4
-	},
-/obj/structure/window/plasma/reinforced{
-	dir = 8
-	},
-/obj/machinery/power/smes/shuttle/precharged,
-/turf/open/floor/plating,
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/internals,
+/obj/item/clothing/suit/space/syndicate/surplus,
+/obj/item/clothing/suit/space/syndicate/surplus,
+/obj/item/clothing/head/helmet/space/syndicate/surplus,
+/obj/item/clothing/head/helmet/space/syndicate/surplus,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/tank/internals/emergency_oxygen/double,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "vV" = (
 /obj/machinery/porta_turret/ship/ngr/light{
@@ -522,6 +508,20 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"Ic" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "grykecharger";
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/machinery/power/smes/shuttle/precharged,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "Ir" = (
 /obj/machinery/airalarm/directional/east,
@@ -886,12 +886,12 @@ XO
 "}
 (3,1,1) = {"
 WW
-sI
+Ic
 WW
 LX
 mO
 WW
-sI
+Ic
 WW
 "}
 (4,1,1) = {"
@@ -900,7 +900,7 @@ wu
 Rb
 nP
 is
-oU
+sI
 bD
 Wc
 "}
@@ -917,7 +917,7 @@ Wc
 (6,1,1) = {"
 qO
 fe
-pQ
+oU
 Ab
 gl
 fe
