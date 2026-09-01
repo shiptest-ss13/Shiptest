@@ -75,7 +75,7 @@
 
 /datum/crafting_recipe/improvised_rifle
 	name = "Improvised Rifle"
-	result = /obj/item/gun/ballistic/rifle/polymer
+	result = /obj/item/gun/ballistic/rifle/polymer/empty
 	reqs = list(/obj/item/weaponcrafting/receiver = 1,
 				/obj/item/pipe = 1,
 				/obj/item/weaponcrafting/stock = 1,
