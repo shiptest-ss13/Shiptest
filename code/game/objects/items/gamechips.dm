@@ -54,31 +54,39 @@
 	icon_state = "nothing"
 	cut_overlays()
 	var/remaining_value = value
-	var/iteration = 0
+	var/iter_stack = 0
+	var/iter_single = 0
 	var/singles_only = TRUE /// only using this for sound/description
 	var/list/single_denominations = list(10000, 2500, 500, 100, 25, 5, 1)
 	var/list/stack_denominations = list(50000, 40000, 30000, 20000, 7500, 5000, 2000, 1500, 1000, 400, 300, 200, 75, 50, 20, 15, 10, 4, 3, 2)
-	for(var/i in stack_denominations)
-		while(remaining_value >= i && iteration < 50)
+	var/list/dual_denominations = list(50000, 40000, 30000, 20000, 10000, 7500, 5000, 2500, 2000, 1500, 1000, 500, 400, 300, 200, 100, 75, 50, 25, 20, 15, 10, 5, 4, 3, 2, 1)
+	var/list/used_denominations = list()
+
+	for(var/i in dual_denominations)
+		while(remaining_value >= i)
 			remaining_value -= i
-			iteration++
-			var/image/stack = image('icons/obj/economy.dmi', "chip[i]")
+			used_denominations.Add(i)
+
+	//have the transformations be applied globally, but prioritize
+	for(var/j in used_denominations)
+		if(stack_denominations.Find(j))
+			var/image/stack = image('icons/obj/economy.dmi', "chip[j]")
 			var/matrix/M = matrix()
-			M.Translate(rand(-6, 6), rand(-4, 8))
+			if(used_denominations.len > 1)
+				M.Translate((iter_stack*8)-8, rand(4, 5)) //stacks should go near the top //rand(-6, 6) //if only a single chip is spawned, don't translate it
 			stack.transform = M
 			overlays += stack
 			singles_only = FALSE
+			iter_stack += 1
 
-	if(remaining_value)
-		for(var/i in single_denominations)
-			while(remaining_value >= i && iteration < 50)
-				remaining_value -= i
-				iteration++
-				var/image/single = image('icons/obj/economy.dmi', "chip[i]")
-				var/matrix/M = matrix()
-				M.Translate(rand(-6, 6), rand(-4, 8))
-				single.transform = M
-				overlays += single
+		else if(single_denominations.Find(j))
+			var/image/single = image('icons/obj/economy.dmi', "chip[j]")
+			var/matrix/M = matrix()
+			if(used_denominations.len > 1)
+				M.Translate((iter_single*8)-4, -3) //single chips should go near the bottom
+			single.transform = M
+			overlays += single
+			iter_single += 1
 
 	if(singles_only)
 		if(value == 1)
