@@ -1,13 +1,13 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "bD" = (
+/obj/machinery/power/smes/engineering{
+	input_level = 10000
+	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/power/terminal{
-	dir = 8
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
-/obj/structure/cable,
-/obj/structure/chair/handrail{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "bJ" = (
@@ -33,7 +33,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "cT" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
@@ -42,12 +42,6 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -71,6 +65,15 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/computer/helm/viewscreen/directional/west{
+	pixel_x = -17;
+	pixel_y = -4
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ft" = (
@@ -81,19 +84,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
-"fB" = (
-/obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 6
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "gl" = (
@@ -113,9 +103,6 @@
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -126,27 +113,29 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_ccw,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
 	},
+/obj/effect/turf_decal/trimline/opaque/bar/warning,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "iL" = (
-/obj/machinery/power/shuttle/engine/electric{
-	pixel_x = 0;
-	pixel_y = 0
-	},
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "0-8"
 	},
-/turf/open/floor/engine/hull/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "grykecharger";
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "jx" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -166,10 +155,29 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "kD" = (
-/obj/machinery/light/floor{
-	icon_state = "floor-on"
+/obj/machinery/power/shuttle/engine/electric{
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/engine/hull/reinforced,
+/area/ship/bridge)
+"kI" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/maintenance_hatch,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "ly" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -198,15 +206,20 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/filled/line,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/chair/handrail{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/corner{
+	dir = 2
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/corner{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -227,33 +240,51 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_cw{
-	dir = 1;
-	pixel_y = -1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
+/obj/machinery/firealarm/directional/north{
+	pixel_x = 9;
+	pixel_y = 32
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
+/obj/machinery/light_switch{
+	pixel_x = -12;
+	pixel_y = 21
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = 0;
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/bridge)
-"ol" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/light/directional/south,
-/turf/open/floor/plating,
 /area/ship/bridge)
 "oy" = (
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "oU" = (
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/stairs{
+	dir = 2;
+	color = "#575757"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/button/door{
+	id = "grykecharger";
+	name = "Precharger Covers";
+	pixel_x = -23;
+	pixel_y = -8;
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"pQ" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -264,8 +295,19 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	icon_state = "1-4"
+/obj/machinery/button/shieldwallgen{
+	name = "Starboard Holofield";
+	id = "gryke_starboard_holo";
+	pixel_x = -22;
+	pixel_y = -2;
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "gryke_port";
+	name = "Port Door";
+	pixel_x = -22;
+	pixel_y = 6;
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -324,55 +366,48 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "rs" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/button/shieldwallgen{
-	id = "gryke_port_holo";
-	name = "Port Holofield";
-	pixel_x = 9;
-	pixel_y = 23
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
 	},
-/obj/machinery/button/door{
-	id = "gryke_port";
-	name = "Port Door";
-	pixel_x = 0;
-	pixel_y = 23
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
-"rS" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/power/smes/engineering{
-	input_level = 10000
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -23;
+	pixel_y = -9;
+	id = "gryke_lockdown";
+	name = "Aft Shutters";
+	req_access = list(1)
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"rS" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/item/radio/intercom/directional/east,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "sr" = (
 /turf/template_noop,
 /area/template_noop)
 "sI" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/power/terminal{
+	dir = 8
 	},
-/obj/structure/crate_shelf,
-/obj/structure/closet/crate/internals,
-/obj/item/clothing/suit/space/syndicate/surplus,
-/obj/item/clothing/suit/space/syndicate/surplus,
-/obj/item/clothing/head/helmet/space/syndicate/surplus,
-/obj/item/clothing/head/helmet/space/syndicate/surplus,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/tank/internals/emergency_oxygen/double,
-/turf/open/floor/plasteel/mono/dark,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "vV" = (
 /obj/machinery/porta_turret/ship/ngr/light{
@@ -382,22 +417,15 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "wu" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/chair/handrail,
-/turf/open/floor/plating,
+/obj/machinery/telecomms/relay/preset/ngr,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "wR" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_cw,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -405,6 +433,7 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/south,
+/obj/effect/turf_decal/trimline/opaque/bar/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "zW" = (
@@ -465,18 +494,26 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Cb" = (
-/obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 10
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/line,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "gryke_lockdown";
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "FG" = (
 /obj/structure/cable{
@@ -507,32 +544,49 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/button/shieldwallgen{
+	name = "Starboard Holofield";
+	id = "gryke_starboard_holo";
+	pixel_x = -22;
+	pixel_y = 2;
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "gryke_starboard";
+	name = "Starboard Door";
+	pixel_x = -22;
+	pixel_y = -7;
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ic" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor/preopen{
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/button/door{
 	id = "grykecharger";
-	dir = 4
+	name = "Precharger Covers";
+	pixel_x = -7;
+	pixel_y = 23
 	},
-/obj/structure/window/plasma/reinforced{
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/item/radio/intercom/directional/north{
+	pixel_x = 8;
+	pixel_y = 30
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Ir" = (
 /obj/machinery/airalarm/directional/east,
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/power/terminal,
-/obj/machinery/telecomms/relay/preset/ngr,
 /obj/machinery/light/directional/north,
-/turf/open/floor/plating,
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Jn" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -552,16 +606,21 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "LI" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/techfloor,
+/obj/structure/platform/ship{
+	dir = 1
+	},
+/obj/structure/cable/yellow,
+/obj/machinery/power/terminal,
+/obj/structure/closet/emcloset/wall/directional/east{
+	layer = 3.09
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "LX" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/filled/line{
-	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -569,19 +628,17 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/firealarm/directional/north{
-	pixel_x = 6;
-	pixel_y = 32
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
-/obj/machinery/button/door{
-	id = "grykecharger";
-	name = "Precharger Covers";
-	pixel_x = -4;
-	pixel_y = 23
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
-/obj/machinery/light_switch{
-	pixel_x = -12;
-	pixel_y = 21
+/obj/effect/turf_decal/trimline/opaque/bar/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -624,9 +681,6 @@
 /obj/effect/turf_decal/trimline/opaque/bar/corner{
 	dir = 2
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
@@ -647,31 +701,29 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "QE" = (
-/obj/machinery/computer/helm/viewscreen/directional/east,
-/obj/machinery/button/shieldwallgen{
-	name = "Starboard Holofield";
-	id = "gryke_starboard_holo";
-	pixel_x = -10;
-	pixel_y = -21;
-	dir = 1
-	},
-/obj/machinery/button/door{
-	id = "gryke_starboard";
-	name = "Starboard Door";
-	pixel_x = -2;
-	pixel_y = -21;
-	dir = 1
-	},
-/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/internals,
+/obj/item/clothing/suit/space/syndicate/surplus,
+/obj/item/clothing/suit/space/syndicate/surplus,
+/obj/item/clothing/head/helmet/space/syndicate/surplus,
+/obj/item/clothing/head/helmet/space/syndicate/surplus,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "QN" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_ccw{
-	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -691,33 +743,35 @@
 	pixel_x = -9;
 	pixel_y = 22
 	},
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
-"Rb" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/chair/handrail{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
-"Re" = (
-/obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 5
-	},
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
 	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"Re" = (
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "gryke_lockdown";
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "RF" = (
 /obj/machinery/porta_turret/ship/ngr/heavy{
@@ -838,9 +892,6 @@
 /obj/effect/turf_decal/trimline/opaque/bar/corner{
 	dir = 4
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
@@ -871,7 +922,7 @@ WW
 ql
 zW
 WW
-kD
+FG
 sr
 "}
 (2,1,1) = {"
@@ -881,43 +932,43 @@ WW
 QN
 wR
 WW
-FG
+iL
 XO
 "}
 (3,1,1) = {"
 WW
 Ic
-WW
+kI
 LX
 mO
-WW
-Ic
+oU
+sI
 WW
 "}
 (4,1,1) = {"
 WW
 wu
-Rb
+WW
 nP
 is
-sI
+LI
 bD
 Wc
 "}
 (5,1,1) = {"
 WW
-rs
-LI
+WW
+WW
 Re
 Cb
-LI
-ol
+WW
+WW
 Wc
 "}
 (6,1,1) = {"
 qO
-fe
-oU
+pQ
+rs
 Ab
 gl
 fe
@@ -926,7 +977,7 @@ jx
 "}
 (7,1,1) = {"
 mu
-fB
+cT
 cT
 YZ
 MM
