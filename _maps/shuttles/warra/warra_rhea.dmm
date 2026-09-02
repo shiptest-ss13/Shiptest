@@ -719,9 +719,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "cg" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering/engines/port)
 "ci" = (
@@ -1492,6 +1490,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/noticeboard/directional/east,
+/obj/item/seeds/coffee,
+/obj/item/seeds/coffee/robusta{
+	pixel_x = 4
+	},
 /turf/open/floor/suns/hatch/walnut,
 /area/ship/crew/breakroom/command)
 "fe" = (
@@ -1836,7 +1838,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 5
+	dir = 6
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -2139,7 +2141,8 @@
 /obj/structure/cable/white{
 	icon_state = "2-4"
 	},
-/obj/item/radio/intercom/directional/west,
+/obj/structure/noticeboard/directional/west,
+/obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "hk" = (
@@ -3487,6 +3490,7 @@
 	name = "Gas Harvester Temperature Gate 1"
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "lI" = (
@@ -3958,6 +3962,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 9
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "ns" = (
@@ -4894,6 +4901,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5{
 	dir = 9
+	},
+/obj/machinery/atmospherics/components/trinary/mixer{
+	dir = 1;
+	name = "Fuel Mixer"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -5978,7 +5989,9 @@
 /obj/structure/cable/white{
 	icon_state = "1-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 9
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
@@ -6708,7 +6721,7 @@
 	},
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
-	name = "Plasma to Thrusters"
+	name = "Plasma to Fuel Mix"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -6839,6 +6852,9 @@
 	},
 /obj/structure/cable/white{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 6
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
@@ -7877,6 +7893,7 @@
 /area/ship/cargo)
 "Bf" = (
 /obj/machinery/holopad/emergency/counselor,
+/obj/item/disk/holodisk/ship/rhea/affairs,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/law_office/affairs)
 "Bh" = (
@@ -8081,6 +8098,9 @@
 	name = "Gas Harvester Temperature Gate 1"
 	},
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden{
+	dir = 5
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Ch" = (
@@ -8214,9 +8234,7 @@
 /turf/open/floor/wood/birch,
 /area/ship/crew/dorm/commad/hos/director)
 "CD" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "r_star_plasma"
@@ -9606,6 +9624,7 @@
 /obj/item/pen{
 	pixel_y = -6
 	},
+/obj/item/paper/guides/jobs/engi/combustion_thruster,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/storage)
 "GH" = (
@@ -9921,6 +9940,7 @@
 /obj/item/folder/biscuit/unsealed/confidental,
 /obj/item/folder/biscuit/unsealed/confidental,
 /obj/item/folder/biscuit/unsealed/confidental,
+/obj/item/disk/holodisk/ship/rhea/affairs,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/law_office/affairs)
 "HE" = (
@@ -9971,6 +9991,7 @@
 	pixel_x = 18;
 	pixel_y = 12
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "HS" = (
@@ -12076,6 +12097,10 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "Oxygen to Fuel Mix"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Qk" = (
@@ -13979,9 +14004,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/dorm/captain)
 "Xk" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering/engines/starboard)
 "Xl" = (
@@ -14110,6 +14133,9 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "XF" = (
@@ -14753,9 +14779,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "ZP" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "r_port_plasma"

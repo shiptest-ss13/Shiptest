@@ -650,6 +650,63 @@
 			<b>RECIPIENT LEFT ROW. DONOR TOP ROW.</b>
 			"}
 
+// holodisks
+
+/datum/preset_holoimage/rheaaffairs
+	species_type = /datum/species/lizard
+	outfit_type = /datum/outfit/job/warra/lawyer
+
+
+/obj/item/disk/holodisk/ship/rhea/affairs
+	name = "holorecord disk - Corporate Representation"
+	preset_image_type = /datum/preset_holoimage/rheaaffairs
+	preset_record_text = {"
+	NAME MW Administrative Assistant
+	DELAY 10
+	SAY Greetings, welcome to your office. Make yourself comfortable and ready to listen...
+	DELAY 40
+	SAY ...ahem- I'm delivering the word of the day from management to you.
+	DELAY 40
+	SAY Pulling up my notes, here's where you are and what they want to hear from you...
+	SOUND keyboard
+	DELAY 50
+	SAY You're overseeing the operations of a Rhea-class, a vessel purpose-built for asset recovery.
+	DELAY 40
+	SAY This is a modern creation from Spaceworks, which means there's a keen interest in it's performance of that task.
+	DELAY 50
+	SAY Management wants you closely involved throughout the day to day happenings aboard.
+	DELAY 50
+	SAY Everything from documentation of asset recovery to staff satisfaction surveys.
+	DELAY 60
+	SAY The vessel itself aside, you'll be managing employee-related functions as per usual.
+	DELAY 50
+	SAY Larger workforces come with some cons, oft related to poor communication or conflict over a course of action.
+	DELAY 60
+	SAY It is your responsibility to minimize confusion and engage in workplace conflict resolution to mitigate these issues as they appear.
+	DELAY 50
+	SAY Early intervention is best. I encourage you to be comfortable in calling staff to your office when problematic behaviours occur.
+	DELAY 50
+	SAY A simple, respectful conversation can prevent weeks of complications from an unaddressed issue.
+	DELAY 60
+	SAY Onto our last point...
+	DELAY 40
+	SAY As one of four command staff typically assigned to a Rhea, you have access to certain areas most of the crew do not.
+	DELAY 50
+	SAY You act as a direct bridge of communication between the crew, the captain, and the company.
+	DELAY 50
+	SAY This does not give you the authority to overrule the decisions of the captain, who the company has entrusted to direct this vessel.
+	DELAY 50
+	SAY But you are encouraged to assist them in making informed decisions regarding their responsibilities, and offer assistance in command duties.
+	DELAY 60
+	SAY Alright. That's all we have to go over. You have a wide range of responsibilities and plenty of time to complete them.
+	DELAY 50
+	SAY Deadline for the reports is two months and you could be staffing upwards to weeks, so pick and choose what you'll spend your time on today wisely.
+	DELAY 60
+	SAY If anything changes someone will contact you over your fax or holopad, most likely. Farewell, be hearing from you soon.
+	DELAY 60
+	"}
+
+// corpse
 /obj/effect/mob_spawn/human/corpse/ship/warra/rhea/morgueminer
 	brute_damage = 148
 	oxy_damage = 52
