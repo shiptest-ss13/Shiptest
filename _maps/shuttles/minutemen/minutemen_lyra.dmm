@@ -3413,7 +3413,11 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/trimline/transparent/blue/filled,
 /obj/machinery/recharger{
-	pixel_x = 5;
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/machinery/recharger{
+	pixel_x = -6;
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -3664,6 +3668,7 @@
 /obj/item/clothing/head/clip/slouch/officer{
 	pixel_y = -7
 	},
+/obj/item/storage/guncase/ecm9,
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm/captain)
 "BC" = (
@@ -3976,10 +3981,6 @@
 /obj/item/storage/toolbox/ammo/c9mm{
 	pixel_x = -6;
 	pixel_y = -4
-	},
-/obj/item/storage/toolbox/ammo/c10mm{
-	pixel_x = -1;
-	pixel_y = -9
 	},
 /obj/structure/closet/secure_closet/armorycage{
 	name = "ammo locker";
@@ -5040,15 +5041,18 @@
 /area/ship/cargo)
 "Mo" = (
 /obj/structure/closet/secure_closet/armorycage,
-/obj/item/ammo_box/magazine/cm5_9mm,
-/obj/item/ammo_box/magazine/cm5_9mm,
 /obj/item/ammo_box/magazine/cm15_12g,
 /obj/item/ammo_box/magazine/cm15_12g,
-/obj/item/ammo_box/magazine/cm23,
-/obj/item/ammo_box/magazine/cm23,
 /obj/effect/turf_decal/spline/plain/opaque/blue,
-/obj/item/ammo_box/magazine/cm23,
 /obj/item/ammo_box/magazine/cm15_12g,
+/obj/item/stock_parts/cell/gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/ammo_box/magazine/cm5_9mm,
+/obj/item/ammo_box/magazine/cm5_9mm,
 /obj/item/ammo_box/magazine/cm5_9mm,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
@@ -5231,9 +5235,10 @@
 /obj/structure/guncloset,
 /obj/effect/turf_decal/spline/plain/opaque/blue,
 /obj/machinery/airalarm/directional/east,
-/obj/item/gun/ballistic/shotgun/cm15/no_mag,
+/obj/item/gun/ballistic/shotgun/automatic/cm15/no_mag,
+/obj/item/gun/energy/clover/pistol/clip,
+/obj/item/gun/energy/clover/clip,
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag,
-/obj/item/gun/ballistic/automatic/pistol/cm23/no_mag,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
 "NY" = (
