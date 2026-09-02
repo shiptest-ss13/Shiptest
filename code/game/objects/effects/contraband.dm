@@ -1261,6 +1261,16 @@
 	desc = "This poster depicts a PGF Marine Raider stalking a city skyline at night. \"Trained for infiltration, extraction, and all other matter of high risk mission, the PGF Marine Raiders are the best of the best. Do you have what it takes?\""
 	icon_state = "poster-pgf_raider"
 
+/obj/structure/sign/poster/pgf/juggernaut
+	name = "The Tool For the Job"
+	desc = "This poster depicts a PGF Marine in heavy armor looking out over a foggy mountaintop. \"Scalpel. Tweezers. Sledghammer. No matter the situation, the PGF Marines have the right tool for the job. Ready to put them to work?\""
+	icon_state = "poster-pgf_juggernaut"
+
+/obj/structure/sign/poster/pgf/dreadnaut
+	name = "See it for Yourself"
+	desc = "This poster depicts a PGF Sailor on an EVA mission in front of a cloudy nebula. \"The galaxy is a dangerous place, but in the PGFN, so are we. Ready to see it for yourself?\""
+	icon_state = "poster-pgf_dreadnaut"
+
 //PGF Mission Accomplished
 /obj/structure/sign/poster/pgf/mission_accomplished_1
 	name = "MISSION ACCOMPLISHED! 1"

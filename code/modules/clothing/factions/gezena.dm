@@ -151,6 +151,17 @@
 	. = ..()
 	allowed = GLOB.security_hardsuit_allowed
 
+/obj/item/clothing/suit/space/gezena/dreadnaut
+	name = "navy dreadnaut suit"
+	desc = "Designed to withstand all matter of spaceborne threat, the 'Tikaro' response suit offers a versatile blend of heavy protection against both enviromental and tactical hazards."
+	icon_state = "navyjuggernautsuit"
+	item_state = "navyjuggernaut"
+	slowdown = 1.25
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 80, "bio" = 100, "rad" = 80, "fire" = 100, "acid" = 80, "wound" = 50)
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+
 /obj/item/clothing/suit/space/gezena/marine
 	name = "marine vacuum suit"
 	desc = "Economical and mass produced for military service, the 'Lataka' combat suit is a trusted, if aging design, outshined by its more modern peers."
@@ -168,6 +179,17 @@
 	item_state = "marineraider"
 	slowdown = 0
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 30, "bio" = 100, "rad" = 40, "fire" = 50, "acid" = 50, "wound" = 20)
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+
+/obj/item/clothing/suit/space/gezena/marine/juggernaut
+	name = "marine juggernaut suit"
+	desc = "An angular mass of hardened plates and ballistic padding, the 'Sokhana' breacher suit provides its wearer with nothing short of the best protection that the PGFMC can offer on two legs."
+	icon_state = "marinejuggernautsuit"
+	item_state = "marinejuggernaut"
+	slowdown = 1.25
+	armor = list("melee" = 40, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 75, "acid" = 80, "wound" = 50)
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
@@ -190,6 +212,25 @@
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+
+/obj/item/clothing/head/helmet/space/gezena/dreadnaut
+	name = "navy dreadnaut helmet"
+	desc = "With a slim visor and generous face shield, the 'Tikaro' response helmet balances the high visibility PGFN helmets are reknowned for with well measured protection."
+	icon_state = "navyjuggernauthelmet"
+	item_state = "navyjuggernauthelm"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
+	can_flashlight = TRUE
+	flashlight_state = "helmet_flight_overlay"
+	content_overlays = FALSE
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 80, "bio" = 100, "rad" = 80, "fire" = 100, "acid" = 80, "wound" = 50)
+	supports_variations = SNOUTED_VARIATION | VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+	obj_flags = INFINITE_RESKIN
+	unique_reskin = list(,
+		"Standard" = "navyjuggernauthelmet",
+		"Medic" = "navyjuggernauthelmet_medic",
+	)
 
 /obj/item/clothing/head/helmet/space/gezena/marine
 	name = "marine vacuum helmet"
@@ -225,6 +266,28 @@
 		"Single Stripe" = "marineraiderhelmet_singlestripe",
 		"Double Stripe" = "marineraiderhelmet_doublestripe",
 		"Medic" = "marineraiderhelmet_medic",
+	)
+
+/obj/item/clothing/head/helmet/space/gezena/marine/juggernaut
+	name = "marine juggernaut helmet"
+	desc = "Forgoing a visor alltogether, the 'Sokhana' breacher helmet utilizes a suite of onboard sensors to display the user's enviroment onto the inside of its dense strike-face."
+	icon_state = "marinejuggernauthelmet"
+	item_state = "marinejuggernauthelm"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
+	can_flashlight = TRUE
+	flashlight_state = "helmet_flight_overlay"
+	content_overlays = FALSE
+	armor = list("melee" = 40, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 75, "acid" = 80, "wound" = 50)
+	supports_variations = SNOUTED_VARIATION | VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
+	obj_flags = INFINITE_RESKIN
+	unique_reskin = list(
+		"Standard" = "marinejuggernauthelmet",
+		"Follow Me" = "marinejuggernauthelmet_follow",
+		"Single Stripe" = "marinejuggernauthelmet_singlestripe",
+		"Double Stripe" = "marinejuggernauthelmet_doublestripe",
+		"Medic" = "marinejuggernauthelmet_medic",
 	)
 
 //Hats

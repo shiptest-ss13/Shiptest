@@ -1794,7 +1794,7 @@
 	pixel_y = -9
 	},
 /obj/effect/turf_decal/siding/black,
-/obj/structure/sign/poster/pgf/choose{
+/obj/structure/sign/poster/pgf/dreadnaut{
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/tech,
@@ -2858,9 +2858,6 @@
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical/surgery)
 "Aj" = (
-/obj/item/clothing/suit/space/gezena,
-/obj/item/clothing/head/helmet/space/gezena,
-/obj/item/tank/jetpack/oxygen/harness,
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 8
 	},
@@ -2871,6 +2868,9 @@
 	name = "EVA suit storage unit"
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/item/clothing/suit/space/gezena/dreadnaut,
+/obj/item/clothing/head/helmet/space/gezena/dreadnaut,
+/obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Al" = (

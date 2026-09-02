@@ -440,7 +440,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/range)
 "dk" = (
-/obj/machinery/airalarm/directional/west,
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 8
 	},
@@ -550,6 +549,10 @@
 /obj/item/clothing/head/gezena/flap/marine{
 	pixel_y = 11;
 	pixel_x = -8
+	},
+/obj/structure/sign/poster/pgf/juggernaut{
+	pixel_y = 0;
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -7235,6 +7238,7 @@
 /obj/item/clothing/under/gezena/marine,
 /obj/item/clothing/under/gezena/marine,
 /obj/item/clothing/under/gezena/marine,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "NU" = (
