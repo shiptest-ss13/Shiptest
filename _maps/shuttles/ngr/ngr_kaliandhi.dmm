@@ -1166,6 +1166,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
+"fm" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/corner/opaque/beige/half{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "fp" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -1818,6 +1829,12 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
+"ib" = (
+/obj/structure/chair/handrail{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "ih" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/techfloor{
@@ -2801,17 +2818,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
-"ot" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 6
-	},
-/obj/machinery/light/directional/east,
-/obj/effect/turf_decal/corner/opaque/beige/half{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/canteen)
 "ow" = (
 /obj/effect/turf_decal/industrial/outline{
 	color = "#791500"
@@ -2940,10 +2946,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
-"oR" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech,
-/area/ship/hallway/central)
 "oU" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3202,6 +3204,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "qa" = (
@@ -3800,14 +3805,6 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
-"ts" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/red/mono,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/security)
 "tt" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/structure/cable{
@@ -4124,6 +4121,16 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
+"uY" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 1
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "vc" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -5767,7 +5774,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/chair/plastic,
+/obj/structure/table,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Ev" = (
@@ -5849,6 +5856,16 @@
 	},
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
+"EO" = (
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "EU" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
@@ -5986,6 +6003,10 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering/engine)
+"FO" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "FP" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -6616,16 +6637,6 @@
 	pixel_y = 4
 	},
 /turf/open/floor/plastic,
-/area/ship/crew/canteen)
-"IM" = (
-/obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "IP" = (
 /obj/machinery/power/smes/shuttle/precharged,
@@ -7806,6 +7817,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"Og" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/red/mono,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security)
 "Oj" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -8930,24 +8949,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
-"Uc" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 10
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/warning,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
-/turf/open/floor/plasteel/tech,
-/area/ship/hallway/central)
 "Uh" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
 /obj/effect/turf_decal/industrial/warning{
@@ -9222,6 +9223,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "VP" = (
@@ -10106,6 +10110,24 @@
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
+"ZN" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/warning,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/chair/plastic,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "ZO" = (
 /obj/effect/turf_decal/siding/black{
 	dir = 4
@@ -11040,7 +11062,7 @@ Dc
 aM
 ai
 Vr
-IM
+EO
 vI
 NT
 NT
@@ -11074,7 +11096,7 @@ cB
 nG
 Qs
 SC
-ot
+fm
 lE
 mD
 pO
@@ -11136,7 +11158,7 @@ tp
 zR
 sz
 LL
-Id
+ib
 he
 fL
 AW
@@ -11236,7 +11258,7 @@ Id
 qc
 fL
 XK
-ts
+Og
 xb
 xb
 LV
@@ -11268,8 +11290,8 @@ nz
 rB
 fL
 Rj
-ts
-ts
+Og
+Og
 xb
 tm
 fP
@@ -11424,7 +11446,7 @@ hv
 HK
 bA
 Gs
-oR
+FO
 et
 QI
 Mw
@@ -11455,7 +11477,7 @@ bs
 fp
 Iw
 yb
-Gs
+uY
 Il
 ZD
 QI
@@ -11520,8 +11542,8 @@ yd
 yb
 yb
 Tf
-oR
-Et
+FO
+ZN
 RE
 DP
 DP
@@ -11552,8 +11574,8 @@ gP
 GY
 lR
 wh
-oR
-Uc
+FO
+Et
 RE
 DP
 DP
