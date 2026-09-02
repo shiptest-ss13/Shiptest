@@ -37,6 +37,7 @@
 		/obj/item/clothing/neck/stripedgreenscarf = 3,
 		/obj/item/clothing/neck/tie = 9,
 		/obj/item/clothing/under/pants/cargo = 4,
+		/obj/item/clothing/under/shorts/cargo = 4,
 		/obj/item/clothing/under/pants/jeans = 2,
 		/obj/item/clothing/under/pants/camo = 2,
 		/obj/item/clothing/under/pants/blackjeans = 2,
