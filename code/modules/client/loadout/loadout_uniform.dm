@@ -22,6 +22,10 @@
 	display_name = "cargo pants, recolorable"
 	path = /obj/item/clothing/under/pants/cargo
 
+/datum/gear/uniform/cargoshorts
+	display_name = "cargo shorts, recolorable"
+	path = /obj/item/clothing/under/shorts/cargo
+
 //Colored jumpsuits
 
 /datum/gear/uniform/color
@@ -123,8 +127,8 @@
 /datum/gear/uniform/suit
 	subtype_path = /datum/gear/uniform/suit
 
-/datum/gear/uniform/suit/amish
-	display_name = "suit, amish"
+/datum/gear/uniform/suit/formal
+	display_name = "suit, formal"
 	path = /obj/item/clothing/under/suit/sl
 
 /datum/gear/uniform/suit/white
