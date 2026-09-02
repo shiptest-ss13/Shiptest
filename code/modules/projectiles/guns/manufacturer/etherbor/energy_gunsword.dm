@@ -48,6 +48,7 @@
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
 	e_cost = 500 //25 shots per cell
 	delay = 1
+	select_name = "lethal"
 
 /obj/projectile/beam/hitscan/kalix
 	name = "concentrated energy beam"
@@ -87,7 +88,7 @@
 	projectile_type = /obj/projectile/beam/hitscan/kalix/nock
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
 	e_cost = 312 //10 bursts per cell
-	select_name = "kill"
+	select_name = "lethal"
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/nock
 	projectile_type = /obj/projectile/beam/hitscan/disabler
@@ -168,7 +169,7 @@
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/nock
 	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
 	e_cost = 250 //16 bursts per cell
-	select_name = "kill"
+	select_name = "lethal"
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/nock
 	projectile_type = /obj/projectile/beam/hitscan/disabler
@@ -288,6 +289,7 @@
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
 	e_cost = 500 //40 shots per cell
 	delay = 1
+	select_name = "lethal"
 
 /obj/item/gun/energy/kalix/pistol //blue
 	name = "\improper Etherbor SG-8"
@@ -340,6 +342,7 @@
 	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
 	e_cost = 1000 //12 shots per cell
 	delay = 0
+	select_name = "lethal"
 
 /obj/item/gun/energy/kalix/pistol/empty_cell
 	spawn_no_ammo = TRUE
@@ -417,7 +420,7 @@
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/pdw
 	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
 	e_cost = 765 //26 shots per cell
-	select_name = "kill"
+	select_name = "lethal"
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/pdw
 	projectile_type = /obj/projectile/beam/hitscan/disabler
