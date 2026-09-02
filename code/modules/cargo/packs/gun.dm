@@ -399,6 +399,77 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/energy/nettle
+	name = "ECM-7 'Nettle' Energy Pistol"
+	desc = "Contains a single ECM-7 Energy Pistol, a burst-fire pistol manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses Eoehoma mini cells."
+	cost = 1750
+	contains = list(/obj/item/storage/guncase/ecm7)
+	crate_name = "beam pistol crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/energy/nettle/indie
+	name = "PL-7 'Nettle' Energy Pistol"
+	desc = "Contains a single PL-7 Energy Pistol, a civilian grade, burst-fire pistol manufactured by Clover Photonics. Uses Eoehoma mini cells."
+	contains = list(/obj/item/storage/guncase/pl7)
+	faction_discount = 10
+	faction_locked = FALSE
+
+/datum/supply_pack/gun/energy/thistle
+	name = "ECM-9 'Thistle' Heavy Energy Pistol"
+	desc = "Contains a single ECM-9 Heavy Energy Pistol, a hard-hitting, armor piercing pistol manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses Eoehoma mini cells."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/ecm9)
+	crate_name = "beam pistol crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/energy/thistle/indie
+	name = "PL-9 'Thistle' Heavy Energy Pistol"
+	desc = "Contains a single PL-9 Heavy Energy Pistol, a civilian grade heavy pistol manufactured by Clover Photonics. Uses Eoehoma mini cells."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/pl9)
+	faction_discount = 10
+	faction_locked = FALSE
+
+/datum/supply_pack/gun/energy/shillelagh
+	name = "ECM-12 'Shillelagh' Energy SMG"
+	desc = "Contains a single ECM-12 Submachine Gun, a fast firing energy gun with improved anti-armor performance, manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses Eoehoma cells."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/ecm12)
+	crate_name = "beam smg crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/energy/shillelagh/indie
+	name = "PL-12 'Shillelagh' Energy SMG"
+	desc = "Contains a single PL-12 Submachine Gun, a civilian grade energy gun with a burst fire mode manufactured by Clover Photonics. Uses Eoehoma cells."
+	cost = 2000
+	contains = list(/obj/item/storage/guncase/pl12)
+	faction_discount = 10
+	faction_locked = FALSE
+
+/datum/supply_pack/gun/energy/faveleira
+	name = "ECM-25 'Faveleira' Energy Accelerating Scattergun"
+	desc = "Contains a single ECM-25 Energy Accelerating Scattergun, a flexible energy gun that can fire in diffuse shot or a focused blast, manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses Eoehoma cells."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/ecm25)
+	crate_name = "beam shotgun crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/energy/faveleira/indie
+	name = "PL-24 'Faveleira' Energy Scattergun"
+	desc = "Contains a single PL-24 Energy Scattergun, a civilian grade energy gun that fires a spread of energy bolts, manufactured by Clover Photonics. Uses Eoehoma cells."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/pl25)
+	faction_discount = 10
+	faction_locked = FALSE
+
 /*
 		Shotguns
 */
@@ -747,7 +818,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/hades
-	name = "AL655 Plasma Assault Rifle crate"
+	name = "AL655 'Hades' Plasma Assault Rifle crate"
 	desc = "Contains a high-energy, automatic plasma rifle. For Makosso-Warra employee use only."
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/hades)

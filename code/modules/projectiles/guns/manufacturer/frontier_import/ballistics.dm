@@ -215,7 +215,7 @@
 		/obj/item/ammo_box/magazine/c22lr_pounder_pan,
 	)
 	burst_size = 1
-	fire_delay = 0.05 SECONDS
+	fire_delay = 0.04 SECONDS
 	spread = 25
 	spread_unwielded = 50
 
@@ -494,13 +494,26 @@
 
 	cartridge_wording = "rocket"
 	empty_indicator = FALSE
-	sealed_magazine = TRUE
 	manufacturer = MANUFACTURER_IMPORT
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	has_safety = FALSE
 	safety = FALSE
 
 	safety_multiplier = 0
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot/eject_magazine(mob/user, display_message = TRUE)
+	if (!chambered)
+		to_chat(user, span_warning("It's spent!"))
+	else
+		to_chat(user, span_warning("You can't remove the rocket!"))
+	return
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot/insert_magazine(mob/user, display_message = TRUE)
+	if (!chambered)
+		to_chat(user, span_warning("It's spent!"))
+	else
+		to_chat(user, span_warning("You can't load this!"))
+	return
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot/hedp
 	name = "\improper Hammer-DP"

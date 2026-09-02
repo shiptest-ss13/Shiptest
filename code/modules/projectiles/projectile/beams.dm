@@ -110,6 +110,51 @@
 	damage = 40
 	speed = 1
 
+/obj/projectile/beam/laser/clover
+	icon_state = "clover_pulse_light"
+	damage = 20
+	armour_penetration = -10
+
+	light_color = COLOR_CYAN
+	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
+
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+
+/obj/projectile/beam/laser/clover/smg
+	damage = 20
+	armour_penetration = 0
+
+/obj/projectile/beam/laser/clover/magnum
+	icon_state = "clover_pulse"
+	damage = 25
+	armour_penetration = 0
+
+/obj/projectile/beam/laser/clover/highpower
+	icon_state = "clover_pulse"
+	damage = 35
+	armour_penetration = 0
+
+/obj/projectile/beam/laser/clover/shotgun
+	damage = 15
+	armour_penetration = -15
+
+	wound_bonus = -30
+
+	var/tile_dropoff = 2
+	var/ap_dropoff = 5
+	var/ap_dropoff_cutoff = -40
+
+/obj/projectile/beam/laser/clover/shotgun/Range() //10% loss per tile = max range of 10, generally
+	..()
+	if(damage > 0)
+		damage -= tile_dropoff
+	if(armour_penetration > ap_dropoff_cutoff)
+		armour_penetration -= ap_dropoff
+	if(accuracy_mod < 3)
+		accuracy_mod += 0.3
+	if(damage < 0 && stamina < 0)
+		qdel(src)
+
 /obj/projectile/beam/laser/eoehoma/heavy/on_hit(atom/target, blocked = FALSE)
 	..()
 	explosion(get_turf(loc),0,0,2,flame_range = 3, light_dam = 20, light_item_dam = 0)
@@ -253,6 +298,15 @@
 	icon_state = "sharplite_disabler"
 	light_color = COLOR_PALE_ORANGE
 	speed = 0.3
+
+/obj/projectile/beam/disabler/clover
+	icon_state = "clover_disabler"
+	light_color = COLOR_ORANGE
+
+/obj/projectile/beam/disabler/clover/weak
+	icon_state = "clover_disabler_light"
+	damage = 15
+	armour_penetration = -20
 
 /obj/projectile/beam/disabler/weak
 	damage = 15
