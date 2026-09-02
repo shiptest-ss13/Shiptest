@@ -255,7 +255,7 @@
 
 /obj/projectile/beam/hitscan/disabler
 	name = "disabler beam"
-	icon_state = "omnilaser"
+	icon_state = "beam_disabler"
 	hitscan = TRUE
 	range = 12
 	damage = 20

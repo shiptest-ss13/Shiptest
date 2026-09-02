@@ -235,7 +235,7 @@
 
 /obj/item/gun/energy/kalix/pgf
 	name = "\improper Etherbor BG-16"
-	desc = "Designed as the PGF armed forces primary close-combat weapon, the Etherbor BG-16 trades stability and power at range for an impressive shot capacity."
+	desc = "Designed as the PGF armed forces' primary close-combat weapon, the Etherbor BG-16 trades stability and power at range for an impressive shot capacity."
 	icon_state = "pgfgun"
 	item_state = "pgfgun"
 
@@ -596,10 +596,9 @@
 	delay = 6
 
 /obj/projectile/beam/hitscan/kalix/hunt
-	tracer_type = /obj/effect/projectile/tracer/pulse
-	muzzle_type = /obj/effect/projectile/muzzle/pulse
-	impact_type = /obj/effect/projectile/impact/pulse
-
+	tracer_type = /obj/effect/projectile/tracer/kalix_hunt
+	muzzle_type = /obj/effect/projectile/muzzle/kalix_hunt
+	impact_type = /obj/effect/projectile/impact/kalix_hunt
 	damage = 35
 	armour_penetration = 30
 	range = 20

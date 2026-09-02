@@ -39,6 +39,10 @@
 	name = "disabler"
 	icon_state = "beam_disabler"
 
+/obj/effect/projectile/tracer/disabler_heavy
+	name = "disabler"
+	icon_state = "beam_disabler_heavy"
+
 /obj/effect/projectile/tracer/xray
 	name = "\improper X-ray laser"
 	icon_state = "xray"
@@ -80,6 +84,9 @@
 
 /obj/effect/projectile/tracer/kalix_rifle
 	icon_state = "beam_kalix_rifle"
+
+/obj/effect/projectile/tracer/kalix_hunt
+	icon_state = "beam_kalix_hunt"
 
 /obj/effect/projectile/tracer/nock
 	icon_state = "beam_kalix_nock"
