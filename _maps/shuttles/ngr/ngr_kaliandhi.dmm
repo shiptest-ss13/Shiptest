@@ -850,6 +850,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/computer/helm/viewscreen/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "ep" = (
@@ -2890,6 +2891,7 @@
 	pixel_x = -7;
 	pixel_y = 5
 	},
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/plastic,
 /area/ship/crew/canteen)
 "oN" = (
@@ -3054,12 +3056,30 @@
 	name = "ammunition locker";
 	req_access = list(58)
 	},
-/obj/item/storage/toolbox/ammo/shotgun,
-/obj/item/storage/toolbox/ammo/c45,
-/obj/item/storage/toolbox/ammo/c556,
-/obj/item/storage/toolbox/ammo/c57,
-/obj/item/storage/toolbox/ammo/c57,
-/obj/item/storage/toolbox/ammo/c357,
+/obj/item/storage/toolbox/ammo/shotgun{
+	pixel_x = -7;
+	pixel_y = 10
+	},
+/obj/item/storage/toolbox/ammo/c45{
+	pixel_x = 7;
+	pixel_y = 8
+	},
+/obj/item/storage/toolbox/ammo/c556{
+	pixel_x = -8;
+	pixel_y = 3
+	},
+/obj/item/storage/toolbox/ammo/c57{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/item/storage/toolbox/ammo/c57{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/storage/toolbox/ammo/c357{
+	pixel_x = 8;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "pC" = (
@@ -8381,22 +8401,67 @@
 	name = "magazine locker";
 	req_access = list(58)
 	},
-/obj/item/ammo_box/magazine/m45_cobra,
-/obj/item/ammo_box/magazine/m45_cobra,
-/obj/item/ammo_box/magazine/m45_cobra,
-/obj/item/ammo_box/magazine/m12g_bulldog,
-/obj/item/ammo_box/magazine/m12g_bulldog,
-/obj/item/ammo_box/magazine/m12g_bulldog,
-/obj/item/ammo_box/magazine/m57_39_asp,
-/obj/item/ammo_box/magazine/m57_39_asp,
-/obj/item/ammo_box/magazine/m57_39_asp,
-/obj/item/ammo_box/magazine/m57_39_sidewinder,
-/obj/item/ammo_box/magazine/m57_39_sidewinder,
-/obj/item/ammo_box/magazine/m57_39_sidewinder,
+/obj/item/ammo_box/magazine/m45_cobra{
+	pixel_x = -3;
+	pixel_y = 10
+	},
+/obj/item/ammo_box/magazine/m45_cobra{
+	pixel_x = -3;
+	pixel_y = 9
+	},
+/obj/item/ammo_box/magazine/m45_cobra{
+	pixel_x = -2;
+	pixel_y = 7
+	},
+/obj/item/ammo_box/magazine/m12g_bulldog{
+	pixel_x = 9;
+	pixel_y = 4
+	},
+/obj/item/ammo_box/magazine/m12g_bulldog{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/obj/item/ammo_box/magazine/m12g_bulldog{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/obj/item/ammo_box/magazine/m57_39_asp{
+	pixel_x = 10;
+	pixel_y = -9
+	},
+/obj/item/ammo_box/magazine/m57_39_asp{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/obj/item/ammo_box/magazine/m57_39_asp{
+	pixel_x = 12;
+	pixel_y = -4
+	},
+/obj/item/ammo_box/magazine/m57_39_sidewinder{
+	pixel_x = 4;
+	pixel_y = -9
+	},
+/obj/item/ammo_box/magazine/m57_39_sidewinder{
+	pixel_x = 4;
+	pixel_y = -7
+	},
+/obj/item/ammo_box/magazine/m57_39_sidewinder{
+	pixel_x = 4;
+	pixel_y = -5
+	},
 /obj/machinery/airalarm/directional/south,
-/obj/item/ammo_box/magazine/m556_42_hydra/small,
-/obj/item/ammo_box/magazine/m556_42_hydra/small,
-/obj/item/ammo_box/magazine/m556_42_hydra/small,
+/obj/item/ammo_box/magazine/m556_42_hydra/small{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/obj/item/ammo_box/magazine/m556_42_hydra/small{
+	pixel_x = -9;
+	pixel_y = 2
+	},
+/obj/item/ammo_box/magazine/m556_42_hydra/small{
+	pixel_x = -7;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Se" = (
@@ -8955,6 +9020,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm/commad)
@@ -9728,6 +9797,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm/captain)
