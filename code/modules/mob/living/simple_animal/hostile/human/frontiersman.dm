@@ -346,13 +346,16 @@
 	casingtype = /obj/item/ammo_casing/c9mm
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/spitter
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/neutered
+	weapon_drop_chance = 0
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/internals
 	icon_state = "frontiersmanrangedelite_mask"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/neutered
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/internals/neutered
 	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space

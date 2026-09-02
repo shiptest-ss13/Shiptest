@@ -161,10 +161,7 @@
 	},
 /obj/structure/railing/thin,
 /obj/structure/barricade/directional/flippedtable,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
-	environment_smash = 0;
-	wander = 0
-	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/internals/neutered,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "nu" = (
@@ -489,10 +486,7 @@
 /obj/structure/barricade/directional/flippedtable{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
-	environment_smash = 0;
-	wander = 0
-	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/internals/neutered,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "GQ" = (
@@ -642,7 +636,7 @@
 /turf/closed/wall/r_wall/rust,
 /area/ship/bridge)
 "PY" = (
-/obj/machinery/power/cloak/advanced,
+/obj/machinery/power/cloak,
 /obj/machinery/light/dim/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
