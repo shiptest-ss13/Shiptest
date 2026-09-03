@@ -352,6 +352,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/observatory)
+"bh" = (
+/obj/machinery/door/airlock{
+	name = "Troubleshooter Dorm"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/moon/cybergrind/secdorm)
 "bj" = (
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 5
@@ -661,7 +673,8 @@
 /area/ruin/moon/cybergrind/dormitory)
 "cH" = (
 /obj/machinery/door/airlock{
-	dir = 4
+	dir = 4;
+	name = "Aide Dorm"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -721,12 +734,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -849,10 +856,10 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/heavy,
 /obj/effect/turf_decal/industrial/warning/fulltile{
 	color = "#FFFFFF"
 	},
-/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/secdorm)
 "dh" = (
@@ -1262,7 +1269,8 @@
 /area/ruin/moon/cybergrind/reception)
 "eB" = (
 /obj/machinery/door/airlock/security{
-	dir = 4
+	dir = 4;
+	name = "Troubleshooter Wing"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1561,6 +1569,18 @@
 /obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/suns/hatch/maple,
 /area/ruin/moon/cybergrind/atrium)
+"fC" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock{
+	name = "Staff Dorm"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/moon/cybergrind/dormitory)
 "fE" = (
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
 	dir = 8
@@ -1826,7 +1846,8 @@
 /area/ruin/moon/cybergrind/reception)
 "gs" = (
 /obj/machinery/door/airlock/command{
-	dir = 4
+	dir = 4;
+	name = "Directorate Dorms"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1846,7 +1867,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/directors)
 "gt" = (
-/obj/structure/door_assembly/door_assembly_vault,
+/obj/structure/door_assembly/door_assembly_vault{
+	name = "AI Core Double-Lock Door"
+	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
@@ -2130,7 +2153,7 @@
 "hh" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
-	name = "Exterior Access"
+	name = "Cargo Access"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -2254,7 +2277,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/mob/living/simple_animal/hostile/human/shell,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/simdomeengi)
@@ -2842,6 +2864,7 @@
 	},
 /obj/effect/turf_decal/corner/transparent/syndiered/border,
 /obj/item/ammo_casing/spent/rifle_steel,
+/mob/living/simple_animal/hostile/automated/hopper/coalition,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/northhallway)
 "jt" = (
@@ -2853,12 +2876,6 @@
 "jv" = (
 /obj/machinery/door/airlock/external{
 	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/reception)
@@ -3509,6 +3526,16 @@
 /obj/item/ammo_casing/spent/rifle_steel,
 /turf/open/floor/suns/hatch/maple,
 /area/ruin/moon/cybergrind/atrium)
+"lL" = (
+/obj/machinery/door/airlock/public{
+	name = "Hangar"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/moon/cybergrind/hangar)
 "lM" = (
 /obj/structure/aquarium/prefilled,
 /turf/open/floor/suns/dark/plain,
@@ -3906,7 +3933,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/atrium)
 "nr" = (
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	name = "Base Accessway"
+	},
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
@@ -4135,7 +4164,7 @@
 	color = "#FFFFFF"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/porta_turret/ruin/hardliners{
+/obj/machinery/porta_turret/ruin/hardliners/heavy{
 	faction = list("hostile")
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -4312,7 +4341,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/hangar)
 "oQ" = (
-/obj/machinery/door/airlock,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -4322,6 +4350,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock{
+	name = "Staff Dorm"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/dormitory)
 "oR" = (
@@ -4349,9 +4380,6 @@
 	},
 /area/ruin/moon/cybergrind/exterior)
 "oT" = (
-/obj/machinery/door/airlock/security{
-	dir = 4
-	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
@@ -4366,6 +4394,10 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/airlock/security{
+	dir = 4;
+	name = "Troubleshooter Wing"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/secdorm)
@@ -4713,6 +4745,7 @@
 	icon_state = "xtracks";
 	dir = 9
 	},
+/mob/living/simple_animal/hostile/human/shell,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/simdomeengi)
 "pY" = (
@@ -5630,6 +5663,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/moon/cybergrind/engineering)
+"tE" = (
+/obj/effect/turf_decal/corner/transparent/lightgrey/mono,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/shell,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/moon/cybergrind/lab)
 "tI" = (
 /obj/effect/turf_decal/corner/transparent/lightgrey/mono,
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
@@ -5743,7 +5782,8 @@
 /area/ruin/moon/cybergrind/atrium)
 "ui" = (
 /obj/machinery/door/airlock/security{
-	dir = 4
+	dir = 4;
+	name = "Armory"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -6057,7 +6097,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/dormitory)
 "vo" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	name = "Staff Dorm"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/firedoor/border_only{
@@ -6580,12 +6622,14 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/atrium)
 "wH" = (
-/obj/machinery/door/airlock,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/door/airlock{
+	name = "Troubleshooter Dorm"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/secdorm)
@@ -6895,6 +6939,28 @@
 /obj/effect/turf_decal/atmos/mix,
 /turf/open/floor/engine/air,
 /area/ruin/moon/cybergrind/engineering)
+"xP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/airlock/command{
+	dir = 4;
+	name = "Directorate Dorms"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/moon/cybergrind/directors)
 "xS" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/cybergrind/terrarium/simdome)
@@ -6938,10 +7004,6 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/observatory)
 "yn" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4;
-	name = "Exterior Access"
-	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
@@ -6956,6 +7018,10 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	name = "Cargo Access"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/cargo)
@@ -7016,7 +7082,8 @@
 /area/ruin/moon/cybergrind/cargo)
 "yB" = (
 /obj/machinery/door/airlock/public{
-	dir = 4
+	dir = 4;
+	name = "Bathroom"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -7118,12 +7185,6 @@
 /obj/machinery/door/airlock/external{
 	dir = 4
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/dormitory)
 "yQ" = (
@@ -7168,6 +7229,16 @@
 	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/moon/cybergrind/directors)
+"za" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "cybergrind_shutters";
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/structure/catwalk,
+/mob/living/simple_animal/hostile/automated/hopper/coalition,
+/turf/open/floor/plasteel/tech,
+/area/ruin/moon/cybergrind/atrium)
 "zb" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "cybergrind_shutters";
@@ -7376,7 +7447,9 @@
 /turf/open/floor/engine/o2,
 /area/ruin/moon/cybergrind/engineering)
 "Aa" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	name = "Development Director's Dorm"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/firedoor/border_only{
@@ -9026,10 +9099,14 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/lab)
 "GI" = (
-/obj/effect/turf_decal/rechargefloor,
-/mob/living/simple_animal/hostile/automated/bipedal,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/moon/cybergrind/centralhallway)
+/area/ruin/moon/cybergrind/reception)
 "GL" = (
 /obj/effect/turf_decal/corner/opaque/white/half{
 	dir = 4
@@ -9590,6 +9667,14 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ruin/moon/cybergrind/directors)
+"IT" = (
+/obj/machinery/shower{
+	pixel_y = 17
+	},
+/obj/effect/turf_decal/borderfloorblack,
+/mob/living/simple_animal/hostile/automated/hopper/coalition,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/moon/cybergrind/decontam)
 "Ja" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 6
@@ -9794,6 +9879,28 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ruin/moon/cybergrind/directors)
+"JQ" = (
+/obj/machinery/door/airlock/research{
+	dir = 4;
+	name = "Lab Access"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/moon/cybergrind/decontam)
 "JR" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/border{
 	dir = 4
@@ -10094,10 +10201,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/cybergrind/northhallway)
 "KV" = (
-/obj/machinery/door/airlock/public,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/door/airlock/public{
+	name = "Hangar"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/hangar)
@@ -10153,7 +10262,9 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	name = "Engineering"
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -10502,6 +10613,7 @@
 /area/ruin/moon/cybergrind/dormitory)
 "Mx" = (
 /obj/effect/turf_decal/siding/wood/bamboo,
+/mob/living/simple_animal/hostile/human/shell,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/moon/cybergrind/directors)
 "MB" = (
@@ -11690,6 +11802,11 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/northhallway)
+"Qu" = (
+/obj/effect/turf_decal/rechargefloor,
+/mob/living/simple_animal/hostile/automated/hopper/coalition,
+/turf/open/floor/plasteel/tech,
+/area/ruin/moon/cybergrind/centralhallway)
 "Qy" = (
 /obj/effect/turf_decal/corner/transparent/lightgrey/mono,
 /obj/structure/cable/cyan{
@@ -12032,6 +12149,16 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/secdorm)
+"RK" = (
+/obj/effect/turf_decal/corner/transparent/lightgrey/mono,
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/mob/living/simple_animal/hostile/automated/rover/coalition/dmr,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/moon/cybergrind/observatory)
 "RL" = (
 /obj/effect/turf_decal/corner/transparent/lightgrey/mono,
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
@@ -12376,6 +12503,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/shell,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/moon/cybergrind/directors)
 "Th" = (
@@ -12475,6 +12603,11 @@
 /obj/effect/turf_decal/radiation/white,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/engineering)
+"TB" = (
+/obj/effect/turf_decal/rechargefloor,
+/mob/living/simple_animal/hostile/automated/walkmine,
+/turf/open/floor/plasteel/tech,
+/area/ruin/moon/cybergrind/exterior)
 "TD" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/border,
 /obj/effect/turf_decal/corner/opaque/white/half{
@@ -12623,11 +12756,15 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
 "Uc" = (
-/obj/effect/turf_decal/rechargefloor,
+/obj/effect/turf_decal/corner/transparent/syndiered/border{
+	dir = 4
+	},
+/obj/item/ammo_casing/spent/rifle_steel,
+/obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/viscerator{
 	faction = list("hostile")
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/centralhallway)
 "Uf" = (
 /obj/structure/urinal{
@@ -12826,9 +12963,6 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/lab)
 "UN" = (
-/obj/machinery/door/airlock/research{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -12843,6 +12977,10 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/door/airlock/research{
+	dir = 4;
+	name = "Lab Access"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/decontam)
@@ -13033,14 +13171,15 @@
 /turf/open/floor/suns/hatch/bamboo,
 /area/ruin/moon/cybergrind/directors)
 "VF" = (
-/obj/machinery/door/airlock/command{
-	dir = 4
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/airlock/command{
+	dir = 4;
+	name = "Directorate Dorms"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/directors)
@@ -13529,7 +13668,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/atrium)
 "XD" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Sim Dome Airgap"
+	},
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
@@ -13550,6 +13691,7 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/automated/hopper/coalition,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/simdomeengi)
 "XF" = (
@@ -13691,6 +13833,18 @@
 /obj/effect/turf_decal/corner/transparent/syndiered/border,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/dormitory)
+"Yw" = (
+/obj/machinery/door/airlock{
+	name = "Assistant Development Director's Dorm"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/tech,
+/area/ruin/moon/cybergrind/directors)
 "Yx" = (
 /turf/closed/mineral/random/moon,
 /area/ruin/moon/cybergrind/exterior)
@@ -13709,7 +13863,8 @@
 /area/ruin/moon/cybergrind/directors)
 "YC" = (
 /obj/machinery/door/airlock/engineering{
-	dir = 4
+	dir = 4;
+	name = "Sim-Dome Accessway"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -13741,9 +13896,6 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/observatory)
 "YF" = (
-/obj/machinery/door/airlock/research{
-	dir = 4
-	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
@@ -13752,6 +13904,10 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/door/airlock/research{
+	dir = 4;
+	name = "Lab Access"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/cybergrind/decontam)
@@ -13943,7 +14099,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/mob/living/simple_animal/hostile/automated/rover/coalition/dmr,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/observatory)
 "Zi" = (
@@ -15122,7 +15277,7 @@ Nd
 Nd
 PZ
 PZ
-PZ
+TB
 Nd
 Nd
 Yx
@@ -15913,7 +16068,7 @@ Yx
 iP
 Rs
 pJ
-vo
+fC
 AO
 LQ
 Ty
@@ -16054,7 +16209,7 @@ xS
 Lk
 eW
 xl
-wH
+bh
 nI
 aN
 Cd
@@ -16075,7 +16230,7 @@ NW
 Xt
 qq
 Pe
-vo
+fC
 DV
 TR
 iP
@@ -16740,7 +16895,7 @@ EF
 yk
 SL
 tI
-yk
+RK
 iK
 yk
 KQ
@@ -16834,7 +16989,7 @@ xT
 fn
 dh
 FT
-dh
+Uc
 Xv
 wB
 jT
@@ -16865,7 +17020,7 @@ ZE
 yQ
 Yx
 Nd
-PZ
+TB
 Bw
 AY
 AY
@@ -16988,8 +17143,8 @@ Yx
 Yx
 Yx
 jk
+Qu
 eq
-GI
 jk
 Yx
 Hd
@@ -17066,8 +17221,8 @@ Yx
 Yx
 Yx
 jk
-Uc
 eq
+Qu
 jk
 Yx
 Hd
@@ -17204,7 +17359,7 @@ nC
 nC
 nC
 VF
-gs
+xP
 nC
 nC
 Yx
@@ -17401,7 +17556,7 @@ FJ
 yQ
 yQ
 Yn
-Yn
+za
 yQ
 yQ
 Yx
@@ -17446,7 +17601,7 @@ sv
 OS
 YF
 gW
-UN
+JQ
 sv
 Yx
 py
@@ -17666,7 +17821,7 @@ jW
 is
 dL
 Pb
-Aa
+Yw
 YK
 Td
 ub
@@ -17755,7 +17910,7 @@ NB
 lM
 nC
 sv
-Ll
+IT
 IB
 dm
 vO
@@ -17813,7 +17968,7 @@ Yk
 AY
 AY
 Bw
-PZ
+TB
 Nd
 Yx
 Yx
@@ -18017,7 +18172,7 @@ Rb
 YZ
 yK
 Xq
-KV
+lL
 kL
 NE
 Ke
@@ -18389,7 +18544,7 @@ to
 KS
 bC
 CY
-pn
+tE
 uD
 YR
 iz
@@ -19189,7 +19344,7 @@ zc
 BB
 UD
 Wr
-ZG
+GI
 jv
 Wr
 Wr
@@ -19478,7 +19633,7 @@ Yx
 Nd
 Nd
 PZ
-PZ
+TB
 PZ
 Nd
 Nd
