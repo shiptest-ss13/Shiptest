@@ -170,24 +170,11 @@
 
 	if(glunked && !actually_shoots)
 		desc += span_warning("\nIt appears to be irreparably broken.")
-	else
+	else if (glunked && actually_shoots)
 		desc += span_warning("\nIt appears to be extremely worn down.")
 
 	if(glunked)
-		var/index = "[REF(initial(icon))]-[initial(icon_state)]"
-		var/static/list/scuff_cache = list()
-		var/icon/scuff = scuff_cache[index]
-		if(!scuff) // we only need to generate each scuff overlay once
-			scuff = icon(initial(icon), initial(icon_state))
-			var/icon/temp = icon('icons/effects/item_damage.dmi', "itemdamaged")
-			temp.Scale(64, 32)
-			temp.Shift(EAST, 32) // we put two side by side so it fits on guns
-			temp.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_OVERLAY)
-			scuff.Blend("#fff", ICON_ADD)
-			scuff.Blend(temp, ICON_MULTIPLY)
-			scuff_cache[index] = scuff
-		var/mutable_appearance/scuff_instance = new(scuff)
-		add_overlay(scuff_instance)
+		glunkify()
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
@@ -247,6 +234,22 @@
 	if(muzzle_flash)
 		QDEL_NULL(muzzle_flash)
 	return ..()
+
+/obj/item/gun/proc/glunkify()
+	var/index = "[REF(initial(icon))]-[initial(icon_state)]"
+	var/static/list/scuff_cache = list()
+	var/icon/scuff = scuff_cache[index]
+	if(!scuff) // we only need to generate each scuff overlay once
+		scuff = icon(initial(icon), initial(icon_state))
+		var/icon/temp = icon('icons/effects/item_damage.dmi', "itemdamaged")
+		temp.Scale(64, 32)
+		temp.Shift(EAST, 32) // we put two side by side so it fits on guns
+		temp.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_OVERLAY)
+		scuff.Blend("#fff", ICON_ADD)
+		scuff.Blend(temp, ICON_MULTIPLY)
+		scuff_cache[index] = scuff
+	var/mutable_appearance/scuff_instance = new(scuff)
+	add_overlay(scuff_instance)
 
 /obj/item/gun/handle_atom_del(atom/A)
 	if(A == chambered)
