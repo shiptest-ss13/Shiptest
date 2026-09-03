@@ -59,6 +59,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/moon/bunker)
 "av" = (
@@ -275,9 +278,15 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/moon/bunker)
 "dM" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/pod/dark,
-/area/ruin/moon/bunker/armory)
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 9
+	},
+/obj/machinery/light/broken/directional/west,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/bunker/drone)
 "dP" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 5
@@ -293,6 +302,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/poddoor{
 	id = "bunkergate2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/bunker)
@@ -634,16 +652,6 @@
 "iJ" = (
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/bunker/armory)
-"iL" = (
-/obj/effect/turf_decal/spline/fancy/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ruin/moon/bunker/armory)
 "ja" = (
 /obj/structure/table,
 /obj/structure/bedsheetbin,
@@ -700,6 +708,9 @@
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
 	id = "bunkerholo2"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/bunker)
@@ -815,6 +826,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/bunker/dorms/two)
+"lo" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/rations,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/moon/bunker/cargo)
 "lx" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -831,6 +848,16 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/moon/bunker/dorms/lounge)
+"lE" = (
+/obj/effect/turf_decal/spline/fancy/opaque/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/bunker/cargo)
 "lF" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -899,10 +926,17 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker/engineering)
+"mi" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/bunker/engineering)
 "mn" = (
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/moon/bunker)
 "mr" = (
@@ -916,12 +950,6 @@
 /obj/effect/radiation,
 /turf/open/floor/plating/asteroid/moon/safe,
 /area/ruin/moon/bunker/engineering)
-"na" = (
-/obj/structure/crate_shelf,
-/obj/structure/closet/crate/rations,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/moon/bunker/cargo)
 "nd" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
@@ -933,10 +961,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker/engineering)
-"nn" = (
-/obj/machinery/light/broken/directional/east,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/moon/bunker/cargo)
 "nx" = (
 /obj/structure/closet/crate/secure/weapon{
 	name = "Ammo crate"
@@ -994,6 +1018,10 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/moon/bunker)
+"nU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/moon/bunker/cargo)
 "oa" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -1082,10 +1110,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/moon/bunker)
-"qh" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/bunker/engineering)
 "qi" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -1154,11 +1178,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/bunker/dorms/lounge)
-"qY" = (
-/obj/structure/chair/sofa/red/old/left/directional/west,
-/turf/open/floor/carpet/nanoweave,
-/area/ruin/moon/bunker/dorms/lounge)
-"rc" = (
+"qW" = (
 /obj/effect/turf_decal/spline/fancy/opaque/yellow{
 	dir = 8
 	},
@@ -1169,6 +1189,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker/cargo)
+"qY" = (
+/obj/structure/chair/sofa/red/old/left/directional/west,
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/moon/bunker/dorms/lounge)
 "rf" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
@@ -1287,6 +1311,12 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/poddoor{
 	id = "bunkergate"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/bunker)
@@ -1564,6 +1594,9 @@
 	dir = 8;
 	id = "bunkerholo"
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/bunker)
 "uW" = (
@@ -1593,6 +1626,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/bunker/dorms/lounge)
+"vw" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod/dark,
+/area/ruin/moon/bunker/armory)
 "vF" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -1608,7 +1645,14 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/machinery/light/small/directional/west,
+/obj/machinery/button/door{
+	id = "bunkershutter";
+	name = "Window Control";
+	pixel_x = -20;
+	pixel_y = -10;
+	dir = 4
+	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/moon/bunker)
 "vL" = (
@@ -1636,6 +1680,9 @@
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
 	id = "bunkerholo2"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/bunker)
@@ -1707,6 +1754,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/moon/bunker)
 "xr" = (
@@ -1976,6 +2026,10 @@
 "AE" = (
 /turf/open/floor/plating/asteroid/moon_coarse/lit,
 /area/ruin/moon/bunker/exterior)
+"AL" = (
+/obj/machinery/light/broken/directional/west,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/moon/bunker/cargo)
 "AQ" = (
 /obj/structure/guncloset,
 /obj/machinery/light/small/directional/east,
@@ -2194,6 +2248,9 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ruin/moon/bunker)
 "CS" = (
@@ -2217,15 +2274,6 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker/drone)
-"Di" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/moon/bunker)
 "Dj" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2254,14 +2302,6 @@
 "DJ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/bunker/bathroom)
-"DO" = (
-/obj/effect/turf_decal/borderfloorblack,
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 5
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ruin/moon/bunker/armory)
 "DT" = (
 /obj/machinery/washing_machine,
 /obj/machinery/light/small/directional/south,
@@ -2511,6 +2551,15 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/moon/bunker/armory)
+"Hd" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/moon/bunker)
 "Hf" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -2576,13 +2625,16 @@
 	pixel_x = -2;
 	pixel_y = 1
 	},
-/obj/machinery/light/directional/east,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/moon/bunker/armory)
 "HR" = (
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/bunker)
 "HS" = (
@@ -2832,6 +2884,9 @@
 	dir = 4;
 	id = "bunkerholo"
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/bunker)
 "Ln" = (
@@ -2950,6 +3005,9 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/moon/bunker)
 "Nv" = (
@@ -3113,18 +3171,19 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/moon/bunker)
-"Ps" = (
-/obj/effect/turf_decal/spline/fancy/opaque/yellow{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
-	dir = 4
+"Pr" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/bunker/cargo)
+/turf/open/floor/plasteel/dark,
+/area/ruin/moon/bunker/armory)
 "Py" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 6
@@ -3156,8 +3215,16 @@
 "PU" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "bunkershutter";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/moon/bunker)
+"Qe" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/bunker/cargo)
 "Qi" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -3370,6 +3437,16 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker)
+"Uc" = (
+/obj/effect/turf_decal/spline/fancy/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/moon/bunker/armory)
 "Ur" = (
 /obj/machinery/autolathe,
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
@@ -3394,8 +3471,8 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/noslip,
 /area/ruin/moon/bunker/bathroom)
-"UM" = (
-/obj/effect/decal/cleanable/dirt/dust,
+"US" = (
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/moon/bunker/cargo)
 "UU" = (
@@ -3408,10 +3485,6 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/moon/bunker/dorms/two)
-"UZ" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/bunker/cargo)
 "Ve" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -3480,6 +3553,9 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ruin/moon/bunker)
 "VS" = (
@@ -3571,10 +3647,6 @@
 "Xu" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/bunker/engineering)
-"XG" = (
-/obj/machinery/light/broken/directional/west,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/moon/bunker/cargo)
 "XI" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -3602,7 +3674,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/light/directional/west,
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/bunker/dorms/lounge)
 "Yx" = (
@@ -4070,7 +4142,7 @@ zn
 lZ
 Pz
 aS
-lZ
+dM
 bf
 LF
 TB
@@ -4571,7 +4643,7 @@ mV
 SE
 SE
 eg
-qh
+mi
 Vy
 ne
 Xu
@@ -4673,7 +4745,7 @@ rw
 rw
 rw
 lH
-Di
+Hd
 rw
 rw
 rw
@@ -4947,7 +5019,7 @@ uW
 LG
 cs
 eV
-XG
+AL
 oT
 Qm
 eV
@@ -5040,7 +5112,7 @@ bN
 cs
 ef
 oT
-UM
+nU
 Lw
 ef
 oT
@@ -5086,7 +5158,7 @@ IJ
 cs
 tu
 Rr
-na
+lo
 Qm
 eV
 Rr
@@ -5132,7 +5204,7 @@ EC
 lf
 Az
 jz
-rc
+qW
 Vv
 sD
 qj
@@ -5166,7 +5238,7 @@ ZS
 Ng
 cr
 cr
-dM
+vw
 ZS
 iu
 iu
@@ -5181,7 +5253,7 @@ ry
 ry
 Gk
 ry
-UZ
+Qe
 ry
 fO
 cs
@@ -5211,7 +5283,7 @@ iu
 ZS
 Fo
 Hb
-dM
+vw
 FC
 ZS
 iu
@@ -5227,7 +5299,7 @@ zs
 zs
 kK
 FT
-Ps
+lE
 QD
 fC
 io
@@ -5257,7 +5329,7 @@ ZS
 ZS
 cK
 cr
-dM
+vw
 cr
 ZS
 rw
@@ -5273,7 +5345,7 @@ Rr
 Rr
 Qm
 eV
-na
+lo
 Rr
 OJ
 cs
@@ -5319,7 +5391,7 @@ oT
 oT
 Lw
 ef
-UM
+nU
 oT
 sa
 io
@@ -5412,7 +5484,7 @@ oT
 Qm
 eV
 oT
-nn
+US
 Qm
 cs
 iu
@@ -5533,7 +5605,7 @@ Pd
 Pd
 Fw
 lG
-DO
+Pr
 Cm
 ZS
 tS
@@ -5577,7 +5649,7 @@ cB
 cB
 HP
 cB
-iL
+Uc
 lG
 TP
 EJ
