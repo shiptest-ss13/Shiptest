@@ -463,11 +463,13 @@
 /datum/map_template/shuttle/subshuttles/whollop
 	file_name = "frontiersmen_whollop"
 	name = "Whollop-class Smuggling Pod"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/whollop_populated
 	file_name = "frontiersmen_whollop_populated"
-	name = "Whollop-class Smuggling Pod"
+	name = "Whollop-class Smuggling Pod (Populated)"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/skink

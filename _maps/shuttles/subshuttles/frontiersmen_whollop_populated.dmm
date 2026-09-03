@@ -152,6 +152,17 @@
 	port_direction = 4;
 	preferred_direction = 2
 	},
+/obj/machinery/button/door{
+	id = "whollop_bay_doors";
+	name = "blast door control";
+	pixel_x = -8;
+	pixel_y = 23
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 8;
+	pixel_y = 23;
+	id = "whollop_holo"
+	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "mv" = (
@@ -262,6 +273,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/double/maint,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "tN" = (
@@ -276,17 +288,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/button/door{
-	id = "whollop_bay_doors";
-	name = "blast door control";
-	pixel_x = -8;
-	pixel_y = 23
-	},
-/obj/machinery/button/shieldwallgen{
-	pixel_x = 8;
-	pixel_y = 23;
-	id = "whollop_holo"
-	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/bridge)
 "wD" = (
@@ -407,6 +408,7 @@
 	layer = 2.43
 	},
 /obj/effect/turf_decal/techfloor,
+/obj/structure/bed/double/maint,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "CX" = (
@@ -451,7 +453,6 @@
 "DF" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/structure/crate_shelf,
-/obj/structure/closet/crate/rations,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/bridge)
 "Ey" = (
@@ -592,6 +593,11 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/structure/bed{
+	dir = 8;
+	icon_state = "dirty_mattress"
+	},
+/obj/item/bedsheet/grey,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Nl" = (
