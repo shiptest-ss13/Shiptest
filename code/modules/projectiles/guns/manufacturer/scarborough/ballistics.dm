@@ -975,7 +975,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m12g_bulldog,
 	)
-	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
+	fire_delay = 0.3 SECONDS
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	show_magazine_on_sprite = TRUE
 //	empty_indicator = TRUE
