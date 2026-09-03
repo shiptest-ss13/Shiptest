@@ -959,6 +959,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker/engineering)
 "nx" = (
@@ -1786,6 +1787,21 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker)
+"xz" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/table/reinforced,
+/obj/item/stock_parts/cell/hyper{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/obj/item/stock_parts/cell/hyper{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/bunker/engineering)
 "xD" = (
 /obj/effect/turf_decal/corner/transparent/grey/diagonal{
 	dir = 4
@@ -4645,7 +4661,7 @@ SE
 eg
 mi
 Vy
-ne
+xz
 Xu
 xy
 IJ
