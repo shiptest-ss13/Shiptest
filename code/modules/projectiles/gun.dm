@@ -252,8 +252,10 @@
 		zoom(user, user.dir, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 
 /obj/item/gun/attack(mob/M as mob, mob/user)
-	if(user.a_intent == INTENT_HARM || !actually_shoots) //Flogging
+	if(user.a_intent == INTENT_DISARM || !actually_shoots) //Flogging
 		return ..()
+	else
+		afterattack(M, user)
 	return
 
 //called after the gun has successfully fired its chambered ammo.
