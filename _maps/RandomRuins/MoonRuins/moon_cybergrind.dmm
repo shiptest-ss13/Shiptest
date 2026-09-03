@@ -923,9 +923,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/secdorm)
-"do" = (
-/turf/closed/mineral/random/moon,
-/area/space)
 "dp" = (
 /obj/effect/turf_decal/siding/wood/mahogany{
 	dir = 10
@@ -1439,7 +1436,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/observatory)
 "fj" = (
-/obj/effect/turf_decal/corner/transparent/cybersunteal/border,
 /obj/machinery/telecomms/server/presets/cybersun,
 /obj/machinery/door/window/northleft,
 /obj/machinery/light/directional/south{
@@ -2467,9 +2463,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/dormitory)
 "ii" = (
-/obj/structure/cable/cyan{
-	icon_state = "1-4"
-	},
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/rifle_steel,
@@ -2774,9 +2767,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-2"
 	},
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/rifle_steel,
@@ -3252,11 +3242,12 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/northhallway)
 "kw" = (
-/obj/effect/turf_decal/corner/transparent/cybersunteal/border{
-	dir = 10
-	},
-/obj/machinery/telecomms/server/presets/cybersun,
 /obj/machinery/door/window/northleft,
+/obj/machinery/blackbox_recorder{
+	name = "AI Output Log Recording Device";
+	desc = "Stores and Records the Petabytes of information from an AI's central processor, and stores it for analysis should it be required..";
+	empty = 1
+	},
 /turf/open/floor/circuit/telecomms,
 /area/ruin/moon/cybergrind/aicore)
 "kB" = (
@@ -3442,12 +3433,8 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/lab)
 "lu" = (
-/obj/effect/turf_decal/corner/transparent/cybersunteal/border,
 /obj/machinery/door/window/northleft,
-/obj/machinery/blackbox_recorder{
-	name = "AI Output Log Recording Device";
-	desc = "Stores and Records the Petabytes of information from an AI's central processor, and stores it for analysis should it be required.."
-	},
+/obj/machinery/telecomms/server/presets/cybersun,
 /turf/open/floor/circuit/telecomms,
 /area/ruin/moon/cybergrind/aicore)
 "lw" = (
@@ -4643,8 +4630,8 @@
 	pixel_y = -6
 	},
 /obj/item/reagent_containers/hypospray/medipen/combat_drug{
-	pixel_x = 4;
-	pixel_y = -6
+	pixel_x = 2;
+	pixel_y = -4
 	},
 /obj/item/reagent_containers/hypospray/medipen/combat_drug{
 	pixel_x = 8;
@@ -5162,14 +5149,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/observatory)
 "se" = (
-/obj/effect/turf_decal/corner/transparent/cybersunteal/border{
-	dir = 1
-	},
 /obj/machinery/door/window/southleft,
-/obj/machinery/blackbox_recorder{
-	name = "AI Output Log Recording Device";
-	desc = "Stores and Records the Petabytes of information from an AI's central processor, and stores it for analysis should it be required.."
-	},
+/obj/machinery/telecomms/server/presets/cybersun,
 /turf/open/floor/circuit/telecomms,
 /area/ruin/moon/cybergrind/aicore)
 "sf" = (
@@ -6131,6 +6112,9 @@
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/item/ammo_casing/spent/rifle_steel,
 /obj/effect/decal/cleanable/blood/drip,
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/aicore)
 "vu" = (
@@ -8491,6 +8475,10 @@
 	dir = 10
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/aicore)
 "Er" = (
@@ -8987,10 +8975,10 @@
 /turf/open/floor/suns/dark/plain,
 /area/ruin/moon/cybergrind/dormitory)
 "Gl" = (
-/obj/effect/mob_spawn/human/corpse/cybersun/troubleshooter/hardsuit,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor3-old"
 	},
+/obj/effect/mob_spawn/human/corpse/cybersun/troubleshooter/hardsuit/heavy,
 /turf/open/floor/plating/asteroid/desert,
 /area/ruin/moon/cybergrind/terrarium/simdome)
 "Gm" = (
@@ -10028,17 +10016,12 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/moon/cybergrind/lab)
 "Kl" = (
-/obj/effect/turf_decal/corner/transparent/cybersunteal/border{
-	dir = 5
+/obj/machinery/blackbox_recorder{
+	name = "AI Output Log Recording Device";
+	desc = "Stores and Records the Petabytes of information from an AI's central processor, and stores it for analysis should it be required.."
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable/cyan{
-	icon_state = "0-2"
-	},
-/obj/structure/window/reinforced/tinted{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono/dark,
+/obj/machinery/door/window/southleft,
+/turf/open/floor/circuit/telecomms,
 /area/ruin/moon/cybergrind/aicore)
 "Kn" = (
 /obj/effect/turf_decal/corner/transparent/lightgrey/mono,
@@ -10064,11 +10047,11 @@
 /area/ruin/moon/cybergrind/lab)
 "Kr" = (
 /obj/effect/decal/cleanable/glass,
-/obj/effect/turf_decal/corner/transparent/cybersunteal/border{
-	dir = 9
-	},
-/obj/machinery/telecomms/server/presets/cybersun,
 /obj/machinery/door/window/southleft,
+/obj/machinery/blackbox_recorder{
+	name = "AI Output Log Recording Device";
+	desc = "Stores and Records the Petabytes of information from an AI's central processor, and stores it for analysis should it be required.."
+	},
 /turf/open/floor/circuit/telecomms,
 /area/ruin/moon/cybergrind/aicore)
 "Kt" = (
@@ -12275,14 +12258,12 @@
 /turf/open/floor/suns/dark/plain,
 /area/ruin/moon/cybergrind/reception)
 "Sg" = (
-/obj/effect/turf_decal/corner/transparent/cybersunteal/border{
-	dir = 6
+/obj/machinery/blackbox_recorder{
+	name = "AI Output Log Recording Device";
+	desc = "Stores and Records the Petabytes of information from an AI's central processor, and stores it for analysis should it be required.."
 	},
-/obj/structure/window/reinforced/tinted{
-	dir = 8
-	},
-/obj/item/stack/ore/salvage/scrapmetal,
-/turf/open/floor/plasteel/mono/dark,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/circuit/telecomms,
 /area/ruin/moon/cybergrind/aicore)
 "Sj" = (
 /obj/effect/turf_decal/corner/transparent/lightgrey/mono,
@@ -13555,9 +13536,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/cybergrind/lab)
 "Xn" = (
-/obj/effect/turf_decal/corner/transparent/cybersunteal/border{
-	dir = 1
-	},
 /obj/machinery/telecomms/server/presets/cybersun,
 /obj/machinery/door/window/southleft,
 /obj/machinery/light/directional/north{
@@ -16670,8 +16648,8 @@ Xs
 Cf
 vV
 vT
-do
-do
+Yx
+Yx
 El
 uv
 jz

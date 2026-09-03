@@ -685,6 +685,17 @@
 	id_job = "Cybersun Troubleshooter"
 	outfit = /datum/outfit/cybersun/troubleshooter/hardsuit
 
+/datum/outfit/cybersun/troubleshooter/hardsuit/heavy
+	name = "Cybersun Heavy Hardsuited Troubleshooter Corpse"
+
+	suit = /obj/item/clothing/suit/space/hardsuit/collapsar
+	head = /obj/item/clothing/head/helmet/space/hardsuit/collapsar
+
+/obj/effect/mob_spawn/human/corpse/cybersun/troubleshooter/hardsuit/heavy
+	name = "Cybersun Heavy Hardsuited Troubleshooter Corpse"
+	id_job = "Cybersun Troubleshooter"
+	outfit = /datum/outfit/cybersun/troubleshooter/hardsuit/heavy
+
 /datum/outfit/cybersun/engineer
 	name = "Cybersun Engineer Corpse"
 
