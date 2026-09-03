@@ -771,7 +771,9 @@
 /area/ruin/rockplanet/oasis_stash/hut)
 "Hx" = (
 /obj/structure/flora/ash/garden/arid,
-/obj/item/restraints/legcuffs/beartrap,
+/obj/item/restraints/legcuffs/beartrap{
+	armed = 1
+	},
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Ih" = (
@@ -922,7 +924,9 @@
 	},
 /area/overmap_encounter/planetoid/cave/explored)
 "Nd" = (
-/obj/item/restraints/legcuffs/beartrap,
+/obj/item/restraints/legcuffs/beartrap{
+	armed = 1
+	},
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Ne" = (
