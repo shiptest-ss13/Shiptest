@@ -634,6 +634,16 @@
 "iJ" = (
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/bunker/armory)
+"iL" = (
+/obj/effect/turf_decal/spline/fancy/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/moon/bunker/armory)
 "ja" = (
 /obj/structure/table,
 /obj/structure/bedsheetbin,
@@ -669,16 +679,6 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/bunker/cargo)
-"jL" = (
-/obj/effect/turf_decal/spline/fancy/opaque/yellow{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker/cargo)
 "jP" = (
@@ -880,7 +880,7 @@
 	id = "killbutton";
 	dir = 4
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/bunker/armory)
 "lZ" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -912,20 +912,16 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/bunker)
-"mD" = (
-/obj/effect/turf_decal/spline/fancy/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ruin/moon/bunker/armory)
 "mV" = (
 /obj/effect/radiation,
 /turf/open/floor/plating/asteroid/moon/safe,
 /area/ruin/moon/bunker/engineering)
+"na" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/rations,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/moon/bunker/cargo)
 "nd" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
@@ -937,6 +933,10 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker/engineering)
+"nn" = (
+/obj/machinery/light/broken/directional/east,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/moon/bunker/cargo)
 "nx" = (
 /obj/structure/closet/crate/secure/weapon{
 	name = "Ammo crate"
@@ -1082,6 +1082,10 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/moon/bunker)
+"qh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/bunker/engineering)
 "qi" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -1154,18 +1158,23 @@
 /obj/structure/chair/sofa/red/old/left/directional/west,
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/moon/bunker/dorms/lounge)
+"rc" = (
+/obj/effect/turf_decal/spline/fancy/opaque/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/bunker/cargo)
 "rf" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker)
-"rh" = (
-/obj/structure/crate_shelf,
-/obj/structure/closet/crate/rations,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/moon/bunker/cargo)
 "rm" = (
 /obj/structure/chair/office{
 	dir = 8;
@@ -1441,10 +1450,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/bunker/armory)
-"tB" = (
-/obj/machinery/light/broken/directional/west,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/moon/bunker/cargo)
 "tJ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
@@ -1747,15 +1752,6 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/moon/bunker/bathroom)
-"xE" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/moon/bunker)
 "xI" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin{
@@ -1784,10 +1780,6 @@
 "xL" = (
 /turf/template_noop,
 /area/template_noop)
-"xP" = (
-/obj/machinery/light/broken/directional/east,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/moon/bunker/cargo)
 "xV" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner{
 	dir = 8
@@ -1856,17 +1848,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ruin/moon/bunker/drone)
-"yN" = (
-/obj/effect/turf_decal/spline/fancy/opaque/yellow{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/bunker/cargo)
 "zg" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 1
@@ -2236,6 +2217,15 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker/drone)
+"Di" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/moon/bunker)
 "Dj" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2264,6 +2254,14 @@
 "DJ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/bunker/bathroom)
+"DO" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/moon/bunker/armory)
 "DT" = (
 /obj/machinery/washing_machine,
 /obj/machinery/light/small/directional/south,
@@ -2280,10 +2278,6 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/moon/bunker/armory)
-"Eh" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ruin/moon/bunker/cargo)
 "Ep" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -2941,14 +2935,6 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/moon/bunker/armory)
-"Nh" = (
-/obj/effect/turf_decal/borderfloorblack,
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 5
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ruin/moon/bunker/armory)
 "Nk" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3129,10 +3115,16 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating/rust,
 /area/ruin/moon/bunker)
-"Pn" = (
+"Ps" = (
+/obj/effect/turf_decal/spline/fancy/opaque/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/bunker/engineering)
+/area/ruin/moon/bunker/cargo)
 "Py" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 6
@@ -3305,10 +3297,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker/cargo)
-"Tg" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/bunker/cargo)
 "Tj" = (
 /obj/structure/closet/crate/secure/weapon{
 	name = "Ammo crate"
@@ -3406,6 +3394,10 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/noslip,
 /area/ruin/moon/bunker/bathroom)
+"UM" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/moon/bunker/cargo)
 "UU" = (
 /obj/structure/chair/office{
 	dir = 8;
@@ -3416,6 +3408,10 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/moon/bunker/dorms/two)
+"UZ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/bunker/cargo)
 "Ve" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -3575,6 +3571,10 @@
 "Xu" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/bunker/engineering)
+"XG" = (
+/obj/machinery/light/broken/directional/west,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/moon/bunker/cargo)
 "XI" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -3715,6 +3715,13 @@
 /obj/structure/table/reinforced,
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/machinery/light/small/broken/directional/south,
+/obj/machinery/button/door{
+	id = "killbutton";
+	name = "Manual Drone Release";
+	pixel_x = -9;
+	pixel_y = -18;
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker)
 
@@ -4564,7 +4571,7 @@ mV
 SE
 SE
 eg
-Pn
+qh
 Vy
 ne
 Xu
@@ -4666,7 +4673,7 @@ rw
 rw
 rw
 lH
-xE
+Di
 rw
 rw
 rw
@@ -4940,7 +4947,7 @@ uW
 LG
 cs
 eV
-tB
+XG
 oT
 Qm
 eV
@@ -5033,7 +5040,7 @@ bN
 cs
 ef
 oT
-Eh
+UM
 Lw
 ef
 oT
@@ -5079,7 +5086,7 @@ IJ
 cs
 tu
 Rr
-rh
+na
 Qm
 eV
 Rr
@@ -5125,7 +5132,7 @@ EC
 lf
 Az
 jz
-yN
+rc
 Vv
 sD
 qj
@@ -5174,7 +5181,7 @@ ry
 ry
 Gk
 ry
-Tg
+UZ
 ry
 fO
 cs
@@ -5220,7 +5227,7 @@ zs
 zs
 kK
 FT
-jL
+Ps
 QD
 fC
 io
@@ -5266,7 +5273,7 @@ Rr
 Rr
 Qm
 eV
-rh
+na
 Rr
 OJ
 cs
@@ -5312,7 +5319,7 @@ oT
 oT
 Lw
 ef
-Eh
+UM
 oT
 sa
 io
@@ -5405,7 +5412,7 @@ oT
 Qm
 eV
 oT
-xP
+nn
 Qm
 cs
 iu
@@ -5526,7 +5533,7 @@ Pd
 Pd
 Fw
 lG
-Nh
+DO
 Cm
 ZS
 tS
@@ -5570,7 +5577,7 @@ cB
 cB
 HP
 cB
-mD
+iL
 lG
 TP
 EJ
