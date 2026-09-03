@@ -35,6 +35,7 @@
 
 	// FIRING //
 	var/actually_shoots = TRUE // is this gun real and not a dud
+	var/glunked = FALSE //controls whether the gun gets a glunked overlay. separate from actually_shoots.
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
@@ -166,6 +167,27 @@
 	build_firemodes()
 	if(slot_flags & ITEM_SLOT_SUITSTORE)
 		ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, REF(src))
+
+	if(glunked && !actually_shoots)
+		desc += span_warning("\nIt appears to be irreparably broken.")
+	else
+		desc += span_warning("\nIt appears to be extremely worn down.")
+
+	if(glunked)
+		var/index = "[REF(initial(icon))]-[initial(icon_state)]"
+		var/static/list/scuff_cache = list()
+		var/icon/scuff = scuff_cache[index]
+		if(!scuff) // we only need to generate each scuff overlay once
+			scuff = icon(initial(icon), initial(icon_state))
+			var/icon/temp = icon('icons/effects/item_damage.dmi', "itemdamaged")
+			temp.Scale(64, 32)
+			temp.Shift(EAST, 32) // we put two side by side so it fits on guns
+			temp.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_OVERLAY)
+			scuff.Blend("#fff", ICON_ADD)
+			scuff.Blend(temp, ICON_MULTIPLY)
+			scuff_cache[index] = scuff
+		var/mutable_appearance/scuff_instance = new(scuff)
+		add_overlay(scuff_instance)
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
