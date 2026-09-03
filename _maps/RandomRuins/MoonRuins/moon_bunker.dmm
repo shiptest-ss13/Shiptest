@@ -947,21 +947,6 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/bunker)
-"mv" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/table/reinforced,
-/obj/item/stock_parts/cell/hyper{
-	pixel_x = 7;
-	pixel_y = 4
-	},
-/obj/item/stock_parts/cell/hyper{
-	pixel_x = -5;
-	pixel_y = 4
-	},
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/bunker/engineering)
 "mV" = (
 /obj/effect/radiation,
 /turf/open/floor/plating/asteroid/moon/safe,
@@ -1876,7 +1861,7 @@
 /area/ruin/moon/bunker)
 "ym" = (
 /obj/machinery/door/airlock/grunge{
-	name = "EVA storage";
+	name = "EVA Storage";
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -2342,9 +2327,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/bunker/dorms/lounge)
 "Er" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -3373,6 +3355,21 @@
 /area/ruin/moon/bunker)
 "SE" = (
 /turf/open/floor/plating/asteroid/moon/safe,
+/area/ruin/moon/bunker/engineering)
+"SH" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/table/reinforced,
+/obj/item/stock_parts/cell/hyper{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/obj/item/stock_parts/cell/hyper{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker/engineering)
 "SJ" = (
 /obj/machinery/power/apc/auto_name/directional/north,
@@ -4663,7 +4660,7 @@ SE
 eg
 mi
 Vy
-mv
+SH
 Xu
 xy
 IJ
