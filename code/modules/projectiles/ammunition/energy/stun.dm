@@ -63,3 +63,24 @@
 	projectile_type = /obj/projectile/beam/disabler/weak/negative_ap/sharplite
 	e_cost = 330
 	delay = 0.13 SECONDS
+
+/obj/item/ammo_casing/energy/disabler/clover
+	projectile_type = /obj/projectile/beam/disabler/clover/weak
+	select_name  = "disable"
+	e_cost = 277
+	fire_sound = 'sound/weapons/taser.ogg'
+	harmful = FALSE
+	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
+
+/obj/item/ammo_casing/energy/disabler/clover/smg
+	projectile_type = /obj/projectile/beam/disabler/clover/weak
+	select_name  = "disable"
+	e_cost = 666
+	delay = 0.16 SECONDS
+	harmful = FALSE
+
+/obj/item/ammo_casing/energy/disabler/clover/magnum
+	projectile_type = /obj/projectile/beam/disabler/clover
+	select_name  = "disable"
+	e_cost = 625
+	harmful = FALSE
