@@ -86,11 +86,6 @@
 /area/ship/engineering/engine)
 "ap" = (
 /obj/structure/closet/wall/red/directional/west,
-/obj/item/gps,
-/obj/item/gps,
-/obj/item/gps,
-/obj/item/gps,
-/obj/item/gps,
 /obj/item/oxygen_candle{
 	pixel_x = -10
 	},
@@ -110,6 +105,18 @@
 /obj/item/storage/box/flares{
 	pixel_y = 8;
 	pixel_x = 5
+	},
+/obj/item/gps{
+	gpstag = "NGR1"
+	},
+/obj/item/gps{
+	gpstag = "NGR2"
+	},
+/obj/item/gps{
+	gpstag = "NGR3"
+	},
+/obj/item/gps{
+	gpstag = "NGR4"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
@@ -159,15 +166,6 @@
 "aM" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/toilet)
-"aO" = (
-/obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/structure/table,
-/obj/item/plate_shard{
-	pixel_x = 3;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/canteen)
 "aP" = (
 /obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/plating,
@@ -356,6 +354,10 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/electrical)
+"bR" = (
+/obj/effect/decal/cleanable/food/egg_smudge,
+/turf/open/floor/plastic,
+/area/ship/crew/canteen)
 "bT" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -5181,6 +5183,15 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
+"AY" = (
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/structure/table,
+/obj/item/plate_shard{
+	pixel_x = 3;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "Bb" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -6090,10 +6101,6 @@
 "FS" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
-"FT" = (
-/obj/effect/decal/cleanable/food/egg_smudge,
-/turf/open/floor/plastic,
-/area/ship/crew/canteen)
 "Gb" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/grille,
@@ -7135,6 +7142,11 @@
 	pixel_x = 2;
 	pixel_y = 10
 	},
+/obj/item/gps{
+	gpstag = "NGR_BRG1";
+	pixel_x = -10;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Ld" = (
@@ -8041,6 +8053,9 @@
 /obj/item/clothing/neck/shemagh/ngr,
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/item/gps{
+	gpstag = "NGR_WRK1"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -10088,6 +10103,9 @@
 	},
 /obj/item/storage/pouch/ammo,
 /obj/item/binoculars,
+/obj/item/gps{
+	gpstag = "NGR_LT1"
+	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/commad)
 "Zn" = (
@@ -10955,7 +10973,7 @@ eI
 xw
 ia
 oM
-FT
+bR
 UC
 UC
 UC
@@ -11082,7 +11100,7 @@ Mz
 aM
 WF
 kh
-aO
+AY
 gi
 Hx
 gq
