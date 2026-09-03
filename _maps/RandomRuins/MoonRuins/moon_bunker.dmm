@@ -618,6 +618,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/bunker/dorms/lounge)
 "hD" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/noslip,
 /area/ruin/moon/bunker/bathroom)
 "ib" = (
@@ -946,6 +947,21 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/bunker)
+"mv" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/table/reinforced,
+/obj/item/stock_parts/cell/hyper{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/obj/item/stock_parts/cell/hyper{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/bunker/engineering)
 "mV" = (
 /obj/effect/radiation,
 /turf/open/floor/plating/asteroid/moon/safe,
@@ -1787,21 +1803,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker)
-"xz" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/table/reinforced,
-/obj/item/stock_parts/cell/hyper{
-	pixel_x = 7;
-	pixel_y = 4
-	},
-/obj/item/stock_parts/cell/hyper{
-	pixel_x = -5;
-	pixel_y = 4
-	},
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/bunker/engineering)
 "xD" = (
 /obj/effect/turf_decal/corner/transparent/grey/diagonal{
 	dir = 4
@@ -3485,6 +3486,7 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/south,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/noslip,
 /area/ruin/moon/bunker/bathroom)
 "US" = (
@@ -4661,7 +4663,7 @@ SE
 eg
 mi
 Vy
-xz
+mv
 Xu
 xy
 IJ
