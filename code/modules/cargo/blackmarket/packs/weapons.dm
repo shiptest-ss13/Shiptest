@@ -334,6 +334,27 @@
 	stock_max = 2
 	availability_prob = 50
 
+/datum/blackmarket_item/weapon/guncase/lensman
+	name = "Lensman-5 Energy Magnum"
+	desc = "I got no clue what the secret of this lens is, but damn if it doesn't pack a punch. Fuckin great holdout weapon even if it looks dumb as fuck."
+	item = /obj/item/gun/energy/cybersun/troubleshooter/lensman
+	pair_item = list(/datum/blackmarket_item/ammo/cs_mini)
+	cost_min = 900
+	cost_max = 2100
+	stock_max = 2
+	availability_prob = 25
+
+/datum/blackmarket_item/weapon/guncase/opportunist
+	name = "Opportunist Lorentz Magnum"
+	desc = "This is the same type of gun that they were gonna use to kill Relisi Namosane back in 499 FSC. Fuckin doohickey if I've ever seen it. Either burns the cell out or fires fuckin lightning claps."
+
+	item = /obj/item/gun/energy/cybersun/lorentz/opportunist
+	pair_item = list(/datum/blackmarket_item/ammo/cs_cell)
+	cost_min = 1750
+	cost_max = 3500
+	stock_max = 2
+	availability_prob = 30
+
 /datum/blackmarket_item/weapon/guncase/cm5
 	name = "CM-5 SMG"
 	desc = "Now isn't this a good find? A whole League sub-machinegun, chambered in 9mm. We're pretty sure no one is gonna notice the pallet of these missing."
