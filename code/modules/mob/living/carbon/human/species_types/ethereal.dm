@@ -346,15 +346,15 @@
 			_human.clear_alert("ethereal_overcharge")
 
 /datum/species/elzuose/proc/discharge_process(mob/living/carbon/human/_human)
-	_human.visible_message(span_danger("[_human] begins to spark violently!"),_human,span_warning("You begin to lose control over your charge!"))
+	_human.visible_message(span_danger("[_human] begins to spark violently!"),span_warning("You begin to lose control over your charge!"))
 	var/static/mutable_appearance/overcharge //shameless copycode from lightning spell
 	overcharge = overcharge || mutable_appearance('icons/effects/effects.dmi', "electricity", EFFECTS_LAYER)
-	_human.add_overlay(overcharge)
+	do_sparks(8,FALSE,_human)
+	_human.adjust_timed_status_effect(5 SECONDS, /datum/status_effect/jitter)
 	if(do_after(_human, 50, _human, TRUE))
 		_human.flash_lighting_fx(5, 7, current_color)
 		var/obj/item/organ/stomach/ethereal/stomach = _human.getorganslot(ORGAN_SLOT_STOMACH)
 		playsound(_human, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
-		_human.cut_overlay(overcharge)
 		tesla_zap(_human, 2, (stomach.crystal_charge / ELZUOSE_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)
 		if(istype(stomach))
 			stomach.adjust_charge(ELZUOSE_CHARGE_FULL - stomach.crystal_charge)
