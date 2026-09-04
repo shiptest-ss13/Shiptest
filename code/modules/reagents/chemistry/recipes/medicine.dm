@@ -299,10 +299,6 @@
 	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/fuel/oil = 1, /datum/reagent/hydrogen = 1, /datum/reagent/diethylamine = 1)
 	mix_message = "The solution fizzes and gives off toxic fumes."
 
-/datum/chemical_reaction/pure_soulus_dust_hollow
-	results = list(/datum/reagent/medicine/soulus/pure = 20,)
-	required_reagents = list(/datum/reagent/medicine/soulus = 20, /datum/reagent/water/hollowwater = 10)
-
 /datum/chemical_reaction/pure_soulus_dust_holy
 	results = list(/datum/reagent/medicine/soulus/pure = 20,)
 	required_reagents = list(/datum/reagent/medicine/soulus = 20, /datum/reagent/water/holywater = 10)
