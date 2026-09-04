@@ -115,8 +115,13 @@
 
 /// Can this mine trigger on the passed movable?
 /obj/item/mine/proc/can_trigger(atom/movable/on_who)
+
 	if(triggered || !isturf(loc) || !armed || iseffect(on_who) || istype(on_who, /obj/item/mine))
 		return FALSE
+	if isitem(on_who)
+		var/obj/item/stupidthing = on_who
+		if(stupidthing.w_class < WEIGHT_CLASS_NORMAL)
+			return FALSE
 	return TRUE
 
 /// When something sets off a mine
