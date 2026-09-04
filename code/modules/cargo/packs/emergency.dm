@@ -86,7 +86,7 @@
 					/obj/item/clothing/suit/bio_suit,
 					/obj/item/clothing/gloves/nitrile,
 					/obj/item/storage/bag/bio,
-					/obj/item/reagent_containers/syringe/antiviral)
+					/obj/item/reagent_containers/syringe/antibiotics)
 	crate_name = "bio suit crate"
 	crate_type = /obj/structure/closet/crate/science
 

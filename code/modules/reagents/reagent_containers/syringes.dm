@@ -186,7 +186,7 @@
 	desc = "Contains charcoal."
 	list_reagents = list(/datum/reagent/medicine/charcoal = 15)
 
-/obj/item/reagent_containers/syringe/antiviral
+/obj/item/reagent_containers/syringe/antibiotics
 	name = "syringe (Broad-spectrum antibiotics)"
 	desc = "Contains specialized antibodies to treat infection and disease."
 	list_reagents = list(/datum/reagent/medicine/antibiotic = 15)

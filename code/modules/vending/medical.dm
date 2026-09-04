@@ -14,7 +14,7 @@
 		/obj/item/reagent_containers/pill/patch/indomide = 5,
 		/obj/item/reagent_containers/pill/patch/alvitane = 5,
 		/obj/item/reagent_containers/hypospray/medipen = 3,
-		/obj/item/reagent_containers/syringe/antiviral = 1,
+		/obj/item/reagent_containers/syringe/antibiotics = 1,
 		/obj/item/reagent_containers/glass/bottle/charcoal = 3,
 		/obj/item/reagent_containers/glass/bottle/epinephrine = 3,
 		/obj/item/reagent_containers/glass/bottle/morphine = 1,

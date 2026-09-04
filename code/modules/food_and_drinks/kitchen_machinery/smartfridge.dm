@@ -460,7 +460,7 @@
 
 /obj/machinery/smartfridge/chemistry/virology/preloaded
 	initial_contents = list(
-		/obj/item/reagent_containers/syringe/antiviral = 4,
+		/obj/item/reagent_containers/syringe/antibiotics = 4,
 		/obj/item/reagent_containers/glass/bottle/cold = 1,
 		/obj/item/reagent_containers/glass/bottle/flu_virion = 1,
 		/obj/item/reagent_containers/glass/bottle/mutagen = 1,
