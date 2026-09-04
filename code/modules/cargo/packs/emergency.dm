@@ -80,13 +80,13 @@
 
 /datum/supply_pack/emergency/bio
 	name = "Biological Emergency Crate"
-	desc = "This crate holds one full bio suit, a pair of latex gloves, a biohazard bag, and a spaceacillin syringe. Offers excellent protection from diseases and acid attacks alike."
+	desc = "This crate holds one full bio suit, a pair of latex gloves, a biohazard bag, and a syringe of Broad-spectrum antibiotics. Offers excellent protection from diseases and acid attacks alike."
 	cost = 1250
 	contains = list(/obj/item/clothing/head/bio_hood,
 					/obj/item/clothing/suit/bio_suit,
 					/obj/item/clothing/gloves/nitrile,
 					/obj/item/storage/bag/bio,
-					/obj/item/reagent_containers/syringe/antiviral)
+					/obj/item/reagent_containers/syringe/antibiotic)
 	crate_name = "bio suit crate"
 	crate_type = /obj/structure/closet/crate/science
 

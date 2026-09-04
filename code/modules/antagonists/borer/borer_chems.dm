@@ -17,9 +17,9 @@
 	chem_desc = "This keeps a host's temperature stable. High doses can allow short periods of unprotected EVA."
 	chemuse = 75
 
-/datum/borer_chem/spaceacillin
-	chem = /datum/reagent/medicine/spaceacillin
-	chemname = "spaceacillin"
+/datum/borer_chem/antibiotic
+	chem = /datum/reagent/medicine/antibiotic
+	chemname = "Broad-spectrum antibiotics"
 	chem_desc = "Prevents your host from spreading diseases, as well as cures some specific types of disease. Also known to hide borers from rudimentary health scans."
 	chemuse = 75
 	quantity = 5

@@ -1,6 +1,6 @@
 /datum/surgery/advanced/viral_bonding
 	name = "Viral Bonding"
-	desc = "A surgical procedure that forces a symbiotic relationship between a virus and its host. The patient must be dosed with spaceacillin, virus food, and formaldehyde."
+	desc = "A surgical procedure that forces a symbiotic relationship between a virus and its host. The patient must be dosed with Broad-spectrum antibiotics, virus food, and formaldehyde."
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
 				/datum/surgery_step/clamp_bleeders,
@@ -25,7 +25,7 @@
 		TOOL_WELDER = 40,
 		/obj/item = 20) // 30% success with any hot item.
 	time = 100
-	chems_needed = list(/datum/reagent/medicine/spaceacillin,/datum/reagent/consumable/virus_food,/datum/reagent/toxin/formaldehyde)
+	chems_needed = list(/datum/reagent/medicine/antibiotic,/datum/reagent/consumable/virus_food,/datum/reagent/toxin/formaldehyde)
 	experience_given = MEDICAL_SKILL_ADVANCED
 
 /datum/surgery_step/viral_bond/tool_check(mob/user, obj/item/tool)

@@ -668,7 +668,7 @@
 
 /datum/design/surgery/viral_bonding
 	name = "Viral Bonding"
-	desc = "A surgical procedure that forces a symbiotic relationship between a virus and its host. The patient must be dosed with spaceacillin, virus food, and formaldehyde."
+	desc = "A surgical procedure that forces a symbiotic relationship between a virus and its host. The patient must be dosed with Broad-spectrum antibiotics, virus food, and formaldehyde."
 	id = "surgery_viral_bond"
 	surgery = /datum/surgery/advanced/viral_bonding
 	research_icon_state = "surgery_chest"
