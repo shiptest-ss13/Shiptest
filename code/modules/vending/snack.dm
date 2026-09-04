@@ -1,7 +1,6 @@
 /obj/machinery/vending/snack
 	name = "\improper Getmore Chocolate Corp"
 	desc = "A snack machine courtesy of the RobustMore DrinkFoods LLC."
-	product_slogans = "Try our new nougat bar!;Twice the calories for half the price!"
 	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Have a snack.;Snacks are good for you!;Have something better! Get RobustMore!;Best quality snacks!;We love chocolate!;Try our new jerky!"
 	icon_state = "snack"
 	light_mask = "snack-light-mask"
