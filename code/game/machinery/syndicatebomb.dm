@@ -244,6 +244,14 @@
 	payload = /obj/item/bombcore/large
 	can_unanchor = FALSE
 
+/obj/machinery/syndicatebomb/live_fucking_bomb
+	name = "self destruct device"
+	desc = "Now you've done it you freak shit."
+
+/obj/machinery/syndicatebomb/live_fucking_bomb/Initialize()
+	. = ..()
+	activate() // :D
+
 ///Bomb Cores///
 
 /obj/item/bombcore
