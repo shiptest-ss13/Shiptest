@@ -93,7 +93,7 @@
 	fire_sound = 'sound/weapons/gun/pistol/cm70.ogg'
 
 	spread = 8
-	spread_unwielded = 20
+	spread_unwielded = 8
 
 	wear_minor_threshold = 240
 	wear_major_threshold = 720
