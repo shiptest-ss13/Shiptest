@@ -261,24 +261,6 @@
 	hairstyle = "Bald"
 	facial_hairstyle = "Shaved"
 
-/datum/outfit/cybersunmedicaldirectorcorpse
-	name = "Cybersun Medical Director Corpse"
-	uniform = /obj/item/clothing/under/cybersun/doctor
-	suit = /obj/item/clothing/suit/cybersun
-	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = /obj/item/clothing/gloves/nitrile/evil
-	ears = /obj/item/radio/headset/syndicate/cybersun
-	belt = /obj/item/gun/ballistic/automatic/pistol/challenger
-	head = /obj/item/clothing/head/soft/cybersun/medical
-	id = /obj/item/card/id
-
-/obj/effect/mob_spawn/human/corpse/cybersunmedicaldirector
-	name = "Cybersun Medical Director Corpse"
-	id_job = "Cybersun Medical Director"
-	outfit = /datum/outfit/cybersunmedicaldirectorcorpse
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
-
 /datum/outfit/cybersunfieldmediccorpse
 	name = "Cybersun Field Medic Corpse"
 	uniform = /obj/item/clothing/under/cybersun/medic
@@ -482,6 +464,7 @@
 	id_access_list = null
 
 /* PGF */
+
 /obj/effect/mob_spawn/human/corpse/pgf
 	name = "PGF Crewmate"
 	id_job = "Crewmate"
@@ -622,3 +605,123 @@
 	gloves = /obj/item/clothing/gloves/insulated
 	r_pocket = /obj/item/flashlight //backup
 
+/obj/effect/mob_spawn/human/corpse/ipcshell
+	mob_species = /datum/species/ipc
+	icon_state = "corpsehuman"
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
+
+/* Cybersun */
+
+/datum/outfit/cybersunmedicaldirectorcorpse
+	name = "Cybersun Medical Director Corpse"
+	uniform = /obj/item/clothing/under/cybersun/doctor
+	suit = /obj/item/clothing/suit/cybersun
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/nitrile/evil
+	ears = /obj/item/radio/headset/syndicate/cybersun
+	belt = /obj/item/gun/ballistic/automatic/pistol/challenger
+	head = /obj/item/clothing/head/soft/cybersun/medical
+	id = /obj/item/card/id
+
+/obj/effect/mob_spawn/human/corpse/cybersunmedicaldirector
+	name = "Cybersun Medical Director Corpse"
+	id_job = "Cybersun Medical Director"
+	outfit = /datum/outfit/cybersunmedicaldirectorcorpse
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
+
+/datum/outfit/cybersun
+	name = "Cybersun Aide Corpse"
+
+	uniform = /obj/item/clothing/under/cybersun/suit
+	shoes = /obj/item/clothing/shoes/laceup
+	id = /obj/item/card/id/syndicate_command
+	ears = /obj/item/radio/headset/syndicate/cybersun
+
+/obj/effect/mob_spawn/human/corpse/cybersun
+	name = "Cybersun Aide Corpse"
+	id_job = "Cybersun Aide"
+	outfit = /datum/outfit/cybersun
+
+/datum/outfit/cybersun/dev
+	name = "Cybersun Developer Corpse"
+
+	uniform = /obj/item/clothing/under/cybersun/suit
+	head = /obj/item/clothing/head/soft/cybersun
+
+/obj/effect/mob_spawn/human/corpse/cybersun/dev
+	name = "Cybersun Developer Corpse"
+	id_job = "Cybersun Developer"
+	outfit = /datum/outfit/cybersun/dev
+
+/datum/outfit/cybersun/troubleshooter
+	name = "Cybersun Troubleshooter Corpse"
+
+	uniform = /obj/item/clothing/under/cybersun/sneak
+	shoes = /obj/item/clothing/shoes/combat
+	head = /obj/item/clothing/head/helmet/bulletproof/x11/cybersun
+	suit = /obj/item/clothing/suit/armor/vest/cybersun
+	mask = /obj/item/clothing/mask/gas/cybersun
+
+	ears = /obj/item/radio/headset/syndicate/alt/cybersun
+
+	l_pocket = /obj/item/storage/pouch/medical
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/cybersun/troubleshooter
+	name = "Cybersun Developer Corpse"
+	id_job = "Cybersun Troubleshooter"
+	outfit = /datum/outfit/cybersun/troubleshooter
+
+/datum/outfit/cybersun/troubleshooter/hardsuit
+	name = "Cybersun Hardsuited Troubleshooter Corpse"
+
+	suit = /obj/item/clothing/suit/space/hardsuit/stealth/cybersun
+	head = /obj/item/clothing/head/helmet/space/hardsuit/stealth/cybersun
+
+/obj/effect/mob_spawn/human/corpse/cybersun/troubleshooter/hardsuit
+	name = "Cybersun Hardsuited Troubleshooter Corpse"
+	id_job = "Cybersun Troubleshooter"
+	outfit = /datum/outfit/cybersun/troubleshooter/hardsuit
+
+/datum/outfit/cybersun/troubleshooter/hardsuit/heavy
+	name = "Cybersun Heavy Hardsuited Troubleshooter Corpse"
+
+	suit = /obj/item/clothing/suit/space/hardsuit/collapsar
+	head = /obj/item/clothing/head/helmet/space/hardsuit/collapsar
+
+/obj/effect/mob_spawn/human/corpse/cybersun/troubleshooter/hardsuit/heavy
+	name = "Cybersun Heavy Hardsuited Troubleshooter Corpse"
+	id_job = "Cybersun Troubleshooter"
+	outfit = /datum/outfit/cybersun/troubleshooter/hardsuit/heavy
+
+/datum/outfit/cybersun/engineer
+	name = "Cybersun Engineer Corpse"
+
+	uniform = /obj/item/clothing/under/cybersun/coverall
+	shoes = /obj/item/clothing/shoes/workboots
+	head = /obj/item/clothing/head/soft/cybersun
+
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/cybersun/engineer
+	name = "Cybersun Engineer Corpse"
+	id_job = "Cybersun Engineer"
+	outfit = /datum/outfit/cybersun/engineer
+
+/datum/outfit/cybersun/director
+	name = "Cybersun V.S. Director Corpse"
+
+	uniform = /obj/item/clothing/under/cybersun/officer
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/cybersun
+	suit = /obj/item/clothing/suit/armor/cybersun
+
+	ears = /obj/item/radio/headset/syndicate/alt/cybersun
+	glasses = /obj/item/clothing/glasses/sunglasses
+
+/obj/effect/mob_spawn/human/corpse/cybersun/director
+	name = "Cybersun V.S. Director Corpse"
+	id_job = "Cybersun Director"
+	outfit = /datum/outfit/cybersun/director
