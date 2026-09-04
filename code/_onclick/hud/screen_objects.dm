@@ -505,8 +505,10 @@
 
 /atom/movable/screen/zone_sel/proc/get_zone_at(icon_x, icon_y)
 	switch(icon_y)
-		if(1 to 9) //Legs
+		if(1 to 9) //Legs and tail
 			switch(icon_x)
+				if(2 to 8)
+					return BODY_ZONE_TAIL
 				if(10 to 15)
 					return BODY_ZONE_R_LEG
 				if(17 to 22)

@@ -322,10 +322,9 @@
 	var/table_smacks_left = 3
 
 /obj/item/slapper/attack(mob/living/M, mob/living/carbon/human/user)
-	if(ishuman(M))
-		var/mob/living/carbon/human/L = M
-		if(L && L.dna && L.dna.species)
-			L.dna.species.stop_wagging_tail(M)
+	var/obj/item/bodypart/tail/target_tail = M.get_bodypart(BODY_ZONE_TAIL)
+	if(target_tail)
+		target_tail.set_wag(FALSE)
 	user.do_attack_animation(M)
 
 	var/slap_volume = 50

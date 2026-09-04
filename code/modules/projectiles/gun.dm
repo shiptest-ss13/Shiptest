@@ -864,7 +864,7 @@
 
 /obj/item/gun/proc/unsafe_shot(target)
 	if(chambered)
-		chambered.fire_casing(target,null, null, null, suppressed, ran_zone(BODY_ZONE_CHEST, 50), 0, src,TRUE)
+		chambered.fire_casing(target,null, null, null, suppressed, null, 0, src,TRUE)
 		playsound(src, fire_sound, 100, TRUE)
 
 /mob/living/proc/trip_with_gun(cause)

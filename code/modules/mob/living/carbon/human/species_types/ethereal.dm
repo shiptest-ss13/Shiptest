@@ -29,8 +29,8 @@
 	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 55
 
 	hair_alpha = 200
-	mutant_bodyparts = list("elzu_horns", "tail_elzu")
-	default_features = list("elzu_horns" = "None", "tail_elzu" = "None")
+	mutant_bodyparts = list("elzu_horns")
+	default_features = list("elzu_horns" = "None")
 	species_eye_path = 'icons/mob/ethereal_parts.dmi'
 
 	species_organs = list(
@@ -43,7 +43,6 @@
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/ethereal,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-		ORGAN_SLOT_TAIL = /obj/item/organ/tail/elzu,
 	)
 
 	species_limbs = list(
@@ -53,6 +52,7 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ethereal,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ethereal,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ethereal,
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/elzu,
 	)
 
 	prosthetic_style = /datum/sprite_accessory/body/prosthetic/elzuouse
@@ -209,8 +209,7 @@
 		body_part = _human.bodyparts[zone]
 		if(!body_part)
 			continue
-		body_part.species_color = fixed_mut_color
-		body_part.update_limb()
+		body_part.copy_from_human(_human)
 
 	_human.update_body()
 	_human.update_hair()
