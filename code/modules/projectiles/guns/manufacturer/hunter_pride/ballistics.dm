@@ -806,7 +806,7 @@ EMPTY_GUN_HELPER(rifle/illestren/factory)
 	cartridge_wording = "bullet"
 	can_be_sawn_off = TRUE
 
-	wield_slowdown = RIFLE_SLOWDOWN
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
 	wield_delay = 0.65 SECONDS
 
 	unique_attachments = list(
@@ -946,6 +946,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/winchester/absolution,
 	)
+	//had to add this because the absolution went off the flaming arrowbasetype and I don't intend to buff the abs
+	wield_slowdown = RIFLE_SLOWDOWN
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
