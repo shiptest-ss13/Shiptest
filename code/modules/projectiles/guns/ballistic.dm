@@ -384,6 +384,8 @@
 
 // ejects the provided casing from the gun into the world
 /obj/item/gun/ballistic/proc/eject_casing(mob/user, obj/item/ammo_casing/casing)
+	if(casing.caseless) //early return for caseless calibers
+		return
 	casing.forceMove(drop_location())
 	var/angle_of_movement = (rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
 	casing.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(350, 450) / 100, _vertical_velocity = rand(400, 450) / 100, _horizontal_friction = rand(20, 24) / 100, _z_gravity = PHYSICS_GRAV_STANDARD, _z_floor = 0, _angle_of_movement = angle_of_movement, _bounce_sound = casing.bounce_sfx_override)
