@@ -73,6 +73,18 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/improvised_rifle
+	name = "Improvised Rifle"
+	result = /obj/item/gun/ballistic/rifle/polymer/empty
+	reqs = list(/obj/item/weaponcrafting/receiver = 1,
+				/obj/item/pipe = 1,
+				/obj/item/weaponcrafting/stock = 1,
+				/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_SCREWDRIVER)
+	time = 100
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
 /datum/crafting_recipe/spear
 	name = "Spear"
 	result = /obj/item/melee/spear
@@ -106,6 +118,18 @@
 		/obj/item/grenade/chem_grenade = 2
 	)
 	parts = list(/obj/item/stock_parts/matter_bin = 1, /obj/item/grenade/chem_grenade = 2)
+	time = 50
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/dynamite
+	name = "Dynamite"
+	result = /obj/item/grenade/firecracker/dynamite
+	reqs = list(
+		/datum/reagent/gunpowder = 50,
+		/obj/item/paper = 4,
+		/obj/item/stack/cable_coil = 5
+	)
 	time = 50
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
