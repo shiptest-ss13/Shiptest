@@ -37,7 +37,7 @@
 		/obj/item/storage/pill_bottle/licarb = 4,
 		/obj/item/storage/pill_bottle/charcoal/less = 2,
 		/obj/item/reagent_containers/syringe/stasis = 4,
-		/obj/item/reagent_containers/syringe/antibiotics = 4,
+		/obj/item/reagent_containers/syringe/antibiotic = 4,
 		/obj/item/storage/pill_bottle/placebatol = 10,
 		/obj/item/reagent_containers/hypospray/medipen/placebatol = 10,
 		/obj/item/reagent_containers/inhaler_canister/placebatol = 10,
