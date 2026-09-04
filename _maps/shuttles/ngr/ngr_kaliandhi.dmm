@@ -5432,9 +5432,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
-"Cr" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/medical/morgue)
 "Cu" = (
 /obj/structure/dresser/wall/directional/west,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5863,6 +5860,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_x = 8;
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Ev" = (
@@ -10297,6 +10298,9 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/electrical)
+"ZR" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/medical/morgue)
 "ZS" = (
 /obj/structure/platform/military,
 /obj/effect/turf_decal/techfloor{
@@ -11264,7 +11268,7 @@ DP
 DP
 DP
 DP
-Cr
+ZR
 cf
 cf
 cf
