@@ -30,7 +30,8 @@
 		"Green" = "medigel_green",
 		"Red" = "medigel_red",
 		"Orange" = "medigel_orange",
-		"Purple" = "medigel_purple"
+		"Purple" = "medigel_purple",
+		"Cybersun" = "medigel_cybersun"
 	)
 
 /obj/item/reagent_containers/medigel/attack_self(mob/user)
@@ -101,3 +102,11 @@
 	current_skin = "Blue"
 	list_reagents = list(/datum/reagent/space_cleaner/sterilizine = 60)
 	custom_price = 175
+
+/obj/item/reagent_containers/medigel/advancedsterilizine
+	name = "advanced sterilizer gel"
+	desc = "Gel bottle loaded with a potent non-toxic sterilizer synthesized by Cybersun Industries. Useful in preparation for surgery. A label reads: <i>\"Apply directly to patient after initiating surgery.\"</i>"
+	icon_state = "advancedsterilizine"
+	current_skin = "Cybersun"
+	list_reagents = list(/datum/reagent/space_cleaner/sterilizine = 60)
+	custom_price = 200

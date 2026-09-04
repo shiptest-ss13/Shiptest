@@ -116,6 +116,19 @@
 	faction = /datum/faction/suns
 	faction_discount = 50 //this shouldnt be 3k but if it is...
 
+/datum/supply_pack/medical/surgery/cybersun
+	name = "Advanced Surgical Supplies Crate"
+	desc = "An advanced surgical self-sterilizing tray that includes state of the art surgical tools. Comes with a Sterilizine spray made by Cybersun Industries, a collapsible roller bed, and a spare silver sheet for a proper medical bay."
+	cost = 5000
+	contains = list(/obj/item/storage/case/surgery/cybersun,
+					/obj/item/reagent_containers/medigel/advancedsterilizine,
+					/obj/item/roller,
+					/obj/item/stack/sheet/mineral/silver)
+	crate_name = "surgical supplies crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 20
+	faction_locked = TRUE
+
 /datum/supply_pack/medical/filter
 	name = "Blood Filter Crate"
 	desc = "A tool for use in a surgery to filter toxins out of a patient."
@@ -129,6 +142,26 @@
 	cost = 2000
 	contains = list(/obj/item/disk/surgery/t2)
 	crate_name = "surgical supplies crate"
+
+/datum/supply_pack/medical/disk/t3
+	name = "Experimental Surgical Procedure Disk"
+	desc = "A disk containing Advanced T3 surgical procedures for wound tending. Requires an Operating Console."
+	cost = 4000
+	contains = list(/obj/item/disk/surgery/t3)
+	crate_name = "surgical supplies crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 20
+	faction_locked = TRUE
+
+/datum/supply_pack/medical/disk/cybersun
+	name = "Cybersun Surgical Procedure Disk"
+	desc = "A disk containing Advanced Cybersun-exclusive surgical procedures. Requires an Operating Console."
+	cost = 5000
+	contains = list(/obj/item/disk/surgery/cybersun)
+	crate_name = "surgical supplies crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 20
+	faction_locked = TRUE
 
 /datum/supply_pack/medical/console
 	name = "Operating Console Crate"

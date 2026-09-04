@@ -26,6 +26,12 @@
 	item_state = "case_surgery"
 	desc = "A large sterile tray with a lid for storing all of the tools you'd need for surgery."
 
+/obj/item/storage/case/surgery/cybersun
+	name = "cybersun surgical case"
+	icon_state = "case_surgery_cybersun"
+	item_state = "case_surgery_cybersun"
+	desc = "A large, advanced, self-sertilizing tray with a lid for storing precious tools needed for advanced surgical precedures."
+
 //Surgical Case
 /obj/item/storage/case/surgery/ComponentInitialize()
 	. = ..()
@@ -61,6 +67,18 @@
 		/obj/item/surgicaldrill = 1,
 		/obj/item/cautery = 1,
 		/obj/item/healthanalyzer = 1,
+		/obj/item/bonesetter = 1,
+	)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/case/surgery/cybersun/PopulateContents()
+	if(empty)
+		return
+	var/static/items_inside = list(
+		/obj/item/scalpel/advanced = 1,
+		/obj/item/retractor/advanced = 1,
+		/obj/item/surgicaldrill/advanced = 1,
+		/obj/item/healthanalyzer/advanced = 1,
 		/obj/item/bonesetter = 1,
 	)
 	generate_items_inside(items_inside,src)

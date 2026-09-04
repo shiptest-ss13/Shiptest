@@ -687,6 +687,19 @@
 			S.speed_modifier = max(0.2, S.speed_modifier)
 	..()
 
+/datum/reagent/space_cleaner/advancedsterilizine
+	name = "Advanced Sterilizine"
+	description = "Sterilizes wounds thoroughly in preparation for surgery."
+	color = "#D0EFEE" // space cleaner but lighter
+	taste_description = "bitterness"
+
+/datum/reagent/space_cleaner/advancedsterilizine/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
+	if(method in list(TOUCH, VAPOR, PATCH))
+		for(var/s in C.surgeries)
+			var/datum/surgery/S = s
+			S.speed_modifier = max(0.1, S.speed_modifier)
+	..()
+
 /datum/reagent/iron
 	name = "Iron"
 	description = "Pure iron is a metal."
