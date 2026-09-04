@@ -202,7 +202,7 @@
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	icon = 'icons/obj/clothing/suits/armor.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/armor.dmi'
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/riot
 	name = "riot suit"
