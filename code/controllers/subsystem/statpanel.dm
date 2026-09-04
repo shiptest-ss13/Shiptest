@@ -179,10 +179,11 @@ SUBSYSTEM_DEF(statpanels)
 		atoms_to_display += turf_content
 
 	/// Set the atoms we're meant to display
-	var/datum/object_window_info/obj_window = target.obj_window
-	obj_window.atoms_to_show = atoms_to_display
-	START_PROCESSING(SSobj_tab_items, obj_window)
-	refresh_client_obj_view(target)
+	var/datum/object_window_info/obj_window = target?.obj_window
+	if(obj_window)
+		obj_window?.atoms_to_show = atoms_to_display
+		START_PROCESSING(SSobj_tab_items, obj_window)
+		refresh_client_obj_view(target)
 
 /datum/controller/subsystem/statpanels/proc/refresh_client_obj_view(client/refresh)
 	var/list/turf_items = return_object_images(refresh)
