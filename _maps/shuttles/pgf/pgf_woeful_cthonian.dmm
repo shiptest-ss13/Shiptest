@@ -67,10 +67,6 @@
 /turf/open/floor/engine/air,
 /area/ship/engineering)
 "aX" = (
-/obj/item/storage/backpack/satchel/med{
-	pixel_x = 7;
-	pixel_y = -11
-	},
 /obj/item/storage/backpack/duffelbag/med{
 	pixel_x = -6;
 	pixel_y = -9
@@ -86,10 +82,6 @@
 /obj/item/clothing/head/gezena/flap/medic{
 	pixel_y = 4;
 	pixel_x = -9
-	},
-/obj/item/storage/belt/medical/gezena{
-	pixel_x = -9;
-	pixel_y = -6
 	},
 /obj/effect/turf_decal/borderfloor/cee,
 /obj/item/clothing/neck/cloak/gezena/med{
@@ -142,6 +134,22 @@
 	pixel_x = -3
 	},
 /obj/item/clothing/suit/armor/gezena/medic,
+/obj/item/storage/backpack/satchel/med/gezena{
+	pixel_x = -12;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/messenger/med/gezena{
+	pixel_x = 11;
+	pixel_y = -14
+	},
+/obj/item/storage/backpack/medic/gezena{
+	pixel_x = 1;
+	pixel_y = -12
+	},
+/obj/item/storage/belt/medical/gezena{
+	pixel_x = 0;
+	pixel_y = -8
+	},
 /obj/item/clothing/gloves/gezena{
 	pixel_y = -13
 	},
@@ -1786,7 +1794,7 @@
 	pixel_y = -9
 	},
 /obj/effect/turf_decal/siding/black,
-/obj/structure/sign/poster/pgf/choose{
+/obj/structure/sign/poster/pgf/dreadnaut{
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/tech,
@@ -2192,10 +2200,7 @@
 	pixel_x = 6;
 	pixel_y = -5
 	},
-/obj/item/storage/backpack/satchel/cap{
-	pixel_y = -3;
-	pixel_x = -8
-	},
+/obj/item/storage/backpack/satchel,
 /obj/item/storage/lockbox/medal{
 	pixel_y = -6;
 	pixel_x = null
@@ -2758,10 +2763,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "Af" = (
-/obj/item/storage/backpack/satchel/med{
-	pixel_x = 7;
-	pixel_y = -11
-	},
 /obj/item/storage/backpack/duffelbag/med{
 	pixel_x = -6;
 	pixel_y = -9
@@ -2769,10 +2770,6 @@
 /obj/item/clothing/shoes/combat/gezena{
 	pixel_x = 7;
 	pixel_y = -7
-	},
-/obj/item/storage/belt/medical/gezena{
-	pixel_x = -9;
-	pixel_y = -6
 	},
 /obj/effect/turf_decal/borderfloor/cee,
 /obj/item/clothing/neck/cloak/gezena/med{
@@ -2839,15 +2836,28 @@
 	pixel_x = -10;
 	pixel_y = -3
 	},
+/obj/item/storage/backpack/satchel/med/gezena{
+	pixel_x = -12;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/messenger/med/gezena{
+	pixel_x = 11;
+	pixel_y = -14
+	},
+/obj/item/storage/backpack/medic/gezena{
+	pixel_x = 1;
+	pixel_y = -12
+	},
+/obj/item/storage/belt/medical/gezena{
+	pixel_x = 0;
+	pixel_y = -8
+	},
 /obj/item/clothing/gloves/gezena{
 	pixel_y = -13
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical/surgery)
 "Aj" = (
-/obj/item/clothing/suit/space/gezena,
-/obj/item/clothing/head/helmet/space/gezena,
-/obj/item/tank/jetpack/oxygen/harness,
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 8
 	},
@@ -2858,6 +2868,9 @@
 	name = "EVA suit storage unit"
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/item/clothing/suit/space/gezena/dreadnaut,
+/obj/item/clothing/head/helmet/space/gezena/dreadnaut,
+/obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Al" = (
