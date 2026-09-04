@@ -116,6 +116,64 @@
 	var/datum/species/elzuose/_elzu = _human.dna.species
 	// this is healthy for elzu, they shouldnt be able to overcharge and get heart attacks from this
 	var/obj/item/organ/stomach/ethereal/stomach = _human.getorganslot(ORGAN_SLOT_STOMACH)
+	var/mob/living/carbon/target = owner.pulling
+
+	if((isipc(target) && owner.grab_state >= GRAB_AGGRESSIVE && owner.grab_state < GRAB_KILL)) //if you try to root while agggrabing a posi you'll charge from them
+		var/juice = target.nutrition
+		if(istype(stomach))
+			while(do_after(owner, 1.5 SECONDS, target = target)) //target = target, amazing.
+				//default charging while a positron has charge to drain
+				if(juice > 0)
+					target.adjust_nutrition(-40)
+					stomach.adjust_charge(112.5)
+					if(target.nutrition == 0 && target.stat != DEAD)
+						//If the posi is out of power we do a special message to both parties and stop channeling
+						to_chat(_human, span_notice("[target] is running out of charge; draining any more may prove fatal."))
+						to_chat(target, span_danger("NOTICE:POWER CRITICAL"))
+						return
+					if(target.nutrition == 0 && target.stat == DEAD)
+						to_chat(_human, span_notice("There is no power left in [target]"))
+						return
+					to_chat(_human, span_notice("You drain some charge from [target]"))
+					to_chat(target, span_warning("[_human] drains some charge from your internal machinery!"))
+
+				//Handles diablerizing positrons with no power left.
+				else
+					if(prob(33) && target.stat != DEAD)
+						target.death()
+						to_chat(_human, span_notice("You drain the very last bits of charge in [target]."))
+						stomach.adjust_charge(50)
+						return
+					else if(target.stat !=DEAD)
+						to_chat(_human, span_notice("You squeeze a bit more charge from the vital systems of [target]!"))
+						stomach.adjust_charge(10)
+						to_chat(target, span_danger("POWER CRITICAL. SYSTEM FAILURE IMMINENT. RECHARGE IMMEDIATELY."))
+					else
+						to_chat(_human, span_notice("There is no power left in [target]"))
+						return
+		return
+
+	if((isipc(target) && owner.grab_state >= GRAB_KILL))
+		if(stomach.crystal_charge < 666)
+			to_chat(_human, span_notice("You don't have enough charge to overload [target]"))
+			return
+		to_chat(_human, span_notice("You begin overloading [target]'s vital systems with your charge."))
+		to_chat(target, span_danger("SEVERE POWER SURGE DETECTED. SYSTEM DAMAGE IMMINENT."))
+		do_after(owner, 4 SECONDS, target = target)
+		if(istype(stomach))
+			stomach.adjust_charge(-666) //no its not just for fun that its this number. this is about 33% elzu charge.
+		target.apply_damage(99,BURN,BODY_ZONE_L_ARM,0,0,FALSE,70)
+		target.adjustOrganLoss(ORGAN_SLOT_STOMACH,70)
+		// we check the cell integrity, its its less than 20% we blow up. Or effectively, two uses of this will detonate the cell.
+		if(target.getOrganLoss(ORGAN_SLOT_STOMACH) > 80)
+			target.visible_message(span_bolddanger("[target]'s chest begins to smoke and hiss dangerously."),span_userdanger("<b>THERMAL RUNAWAY DETECTED. SYSTEM FAILURE IMMINIENT</b>"))
+			target.apply_status_effect(/datum/status_effect/cellsmoking, target)
+			do_after(target, 7 SECONDS, target, TRUE, FALSE)
+			playsound(target,'sound/effects/wounds/sizzle1.ogg',100)
+			explosion(target, 0,0.1,2,2,TRUE,FALSE,1)
+			target.apply_damage(150,BRUTE,BODY_ZONE_CHEST,0,FALSE,0,50)
+			qdel(target.getorganslot(ORGAN_SLOT_STOMACH))
+		return
 
 	if(_human.wear_suit && istype(_human.wear_suit, /obj/item/clothing))
 		var/obj/item/clothing/CS = _human.wear_suit
@@ -171,9 +229,12 @@
 	if(..())
 		var/mob/living/carbon/human/_human = owner
 		var/turf/terrain = get_turf(_human)
+		var/mob/living/carbon/target = owner.pulling
 		if(_human.has_status_effect(/datum/status_effect/rooted))
 			return FALSE
 		if(is_type_in_list(terrain, GOOD_SOIL))
+			return TRUE
+		if((isipc(target) && owner.grab_state >= GRAB_AGGRESSIVE))
 			return TRUE
 		for(var/atom/movable/thing in terrain.contents)
 			if(is_type_in_list(thing, list(/obj/machinery/hydroponics/wooden, /obj/machinery/hydroponics/soil)))
@@ -285,24 +346,24 @@
 			_human.clear_alert("ethereal_overcharge")
 
 /datum/species/elzuose/proc/discharge_process(mob/living/carbon/human/_human)
-	_human.visible_message(span_danger("[_human] begins to spark violently!"),_human,span_warning("You begin to lose control over your charge!"))
+	_human.visible_message(span_danger("[_human] begins to spark violently!"),span_warning("You begin to lose control over your charge!"))
 	var/static/mutable_appearance/overcharge //shameless copycode from lightning spell
 	overcharge = overcharge || mutable_appearance('icons/effects/effects.dmi', "electricity", EFFECTS_LAYER)
-	_human.add_overlay(overcharge)
+	do_sparks(8,FALSE,_human)
+	_human.adjust_timed_status_effect(5 SECONDS, /datum/status_effect/jitter)
 	if(do_after(_human, 50, _human, TRUE))
 		_human.flash_lighting_fx(5, 7, current_color)
 		var/obj/item/organ/stomach/ethereal/stomach = _human.getorganslot(ORGAN_SLOT_STOMACH)
 		playsound(_human, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
-		_human.cut_overlay(overcharge)
 		tesla_zap(_human, 2, (stomach.crystal_charge / ELZUOSE_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)
 		if(istype(stomach))
 			stomach.adjust_charge(ELZUOSE_CHARGE_FULL - stomach.crystal_charge)
-		to_chat(_human,span_warning("You violently discharge energy!"))
-		_human.visible_message(span_danger("[_human] violently discharges energy!"))
+		//to_chat(_human, span_warning("You violently discharge energy!"))
+		_human.visible_message(span_danger("[_human] violently discharges energy!"), span_warning("You violently discharge energy!"))
 		if(prob(10)) //chance of developing heart disease to dissuade overcharging oneself
 			var/datum/disease/D = new /datum/disease/heart_failure
 			_human.ForceContractDisease(D)
-			to_chat(_human, span_userdanger("You're pretty sure you just felt your heart stop for a second there."))
+			to_chat(_human, span_danger("You're pretty sure you just felt your heart stop for a second there."))
 			_human.playsound_local(_human, 'sound/effects/singlebeat.ogg', 100, 0)
 		_human.Paralyze(100)
 		return

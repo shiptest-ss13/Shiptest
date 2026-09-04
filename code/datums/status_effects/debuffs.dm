@@ -720,3 +720,19 @@
 	if(ishostile(owner))
 		var/mob/living/simple_animal/hostile/simple_owner = owner
 		simple_owner.ranged_cooldown_time /= 2.5
+
+//So particles judging from trickwine to put them on a mob they gotta be a status effect, and I figure positrons should smoke before their cells detonate. So here we are. This does nothing but make some fyi
+/datum/status_effect/cellsmoking
+	id = "cellsmoking"
+	duration = 10 SECONDS
+	tick_interval = 1 SECONDS
+	var/obj/effect/abstract/particle_holder/particle_generator
+
+/datum/status_effect/cellsmoking/on_apply()
+	. = ..()
+	particle_generator = new(owner, /particles/smoke/burning, PARTICLE_ATTACH_MOB)
+
+/datum/status_effect/cellsmoking/on_remove()
+	. = ..()
+	QDEL_NULL(particle_generator)
+
