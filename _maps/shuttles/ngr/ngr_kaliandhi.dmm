@@ -448,7 +448,9 @@
 	layer = 2.04
 	},
 /obj/structure/guncloset{
-	req_access = list(58)
+	req_access = list(58);
+	anchored = 1;
+	can_be_unanchored = 1
 	},
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/no_mag,
 /obj/item/gun/ballistic/automatic/smg/sidewinder/no_mag,
@@ -2705,9 +2707,6 @@
 /obj/structure/closet/firecloset/wall/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
-"no" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/medical/morgue)
 "nr" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4631,6 +4630,7 @@
 /obj/effect/turf_decal/trimline/opaque/tan/line{
 	dir = 1
 	},
+/obj/effect/spawner/random/vending/cola,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "xF" = (
@@ -5432,6 +5432,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
+"Cr" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/medical/morgue)
 "Cu" = (
 /obj/structure/dresser/wall/directional/west,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -6945,6 +6948,7 @@
 	},
 /obj/item/storage/pouch/squad,
 /obj/item/binoculars,
+/obj/item/clothing/mask/breath/ngr,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/commad)
 "Ke" = (
@@ -7514,6 +7518,8 @@
 /obj/item/storage/pouch/squad,
 /obj/item/storage/pouch/ammo,
 /obj/item/binoculars,
+/obj/item/clothing/mask/breath/ngr,
+/obj/item/clothing/mask/balaclava/ngr,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/captain)
 "Mw" = (
@@ -8921,6 +8927,7 @@
 /obj/effect/turf_decal/trimline/opaque/tan/line{
 	dir = 1
 	},
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "Tc" = (
@@ -10143,6 +10150,8 @@
 /obj/item/gps{
 	gpstag = "NGR_LT1"
 	},
+/obj/item/clothing/mask/breath/ngr,
+/obj/item/clothing/mask/balaclava/ngr,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/commad)
 "Zn" = (
@@ -11255,7 +11264,7 @@ DP
 DP
 DP
 DP
-no
+Cr
 cf
 cf
 cf
