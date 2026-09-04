@@ -3,6 +3,7 @@
  *		First Aid Kits
  * 		Pill Bottles
  *		Dice Pack (in a pill bottle)
+ *		Medical Restock Packs
  */
 
 /*
@@ -632,3 +633,80 @@
 /obj/item/storage/pill_bottle/rcyte/PopulateContents()
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/rcyte(src)
+
+/obj/item/storage/medpack
+	name = "medical pack"
+	desc = "a sealed, sterile-white plastic package"
+	icon = 'icons/obj/storage/medkit.dmi'
+	icon_state = "medpack"
+	item_state = "syringe_kit"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	resistance_flags = FLAMMABLE
+	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
+	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
+	var/emblem_icon_state = "null"
+	var/ration_overlay = "null"
+
+/obj/item/storage/medpack/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 4
+	STR.set_holdable(list(
+		/obj/item/stack/medical,
+		/obj/item/reagent_containers/hypospray/medipen))
+	STR.locked = TRUE
+	STR.locked_flavor = "seems to be sealed closed!"
+
+/obj/item/storage/medpack/proc/open_medpack(mob/user)
+	to_chat(user, span_notice("You tear open \the [src]."))
+	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
+	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SET_LOCKSTATE, FALSE)
+	desc += "\nIt's been opened. Let's get it all put away."
+
+/obj/item/storage/medpack/attack_self(mob/user)
+	var/locked = SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED)
+	if(locked)
+		open_medpack(user)
+		icon_state = "[icon_state]_open"
+	return ..()
+
+/obj/item/storage/medpack/sutures
+	name = "pack of medical sutures"
+	desc = "a sealed, sterile-white plastic package full of medical sutures."
+
+/obj/item/storage/medpack/sutures/PopulateContents()
+	var/static/items_inside = list(/obj/item/stack/medical/suture = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/medpack/mesh
+	name = "pack of regenerative mesh"
+	desc = "a sealed, sterile-white plastic package full of regenerative mesh."
+
+/obj/item/storage/medpack/mesh/PopulateContents()
+	var/static/items_inside = list(/obj/item/stack/medical/mesh = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/medpack/bruisepacks
+	name = "pack of bruise packs"
+	desc = "a sealed, sterile-white plastic package full of bruise packs."
+
+/obj/item/storage/medpack/mesh/PopulateContents()
+	var/static/items_inside = list(/obj/item/stack/medical/bruise_pack = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/medpack/gauze
+	name = "pack of medical gauze"
+	desc = "a sealed, sterile-white plastic package full of medical gauze."
+
+/obj/item/storage/medpack/gauze/PopulateContents()
+	var/static/items_inside = list(/obj/item/stack/medical/gauze = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/medpack/epipens
+	name = "pack of epinephrine autoinjectors"
+	desc = "a sealed, sterile-white plastic package full of epinephrine autoinjectors."
+
+/obj/item/storage/medpack/epipens/PopulateContents()
+	var/static/items_inside = list(/obj/item/reagent_containers/hypospray/medipen = 4)
+	generate_items_inside(items_inside,src)
