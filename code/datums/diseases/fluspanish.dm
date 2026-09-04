@@ -2,8 +2,8 @@
 	name = "Spanish inquisition Flu"
 	max_stages = 3
 	spread_text = "Airborne"
-	cure_text = "Spaceacillin & Anti-bodies to the common flu"
-	cures = list(/datum/reagent/medicine/spaceacillin)
+	cure_text = "Broad-spectrum antibiotics & Anti-bodies to the common flu"
+	cures = list(/datum/reagent/medicine/antibiotic)
 	cure_chance = 5
 	agent = "1nqu1s1t10n flu virion"
 	viable_mobtypes = list(/mob/living/carbon/human)

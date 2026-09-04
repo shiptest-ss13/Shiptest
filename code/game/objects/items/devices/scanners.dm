@@ -180,7 +180,7 @@ GENE SCANNER
 
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
-		if(C.has_brain_worms() && (!C.has_reagent(/datum/reagent/medicine/spaceacillin) || advanced))
+		if(C.has_brain_worms() && (!C.has_reagent(/datum/reagent/medicine/antibiotic) || advanced))
 			render_list += "[span_danger("Foreign organism detected in subject's cranium. Recommended treatment: Dosage of sucrose solution and removal of object via surgery.")]\n"
 
 	render_list += "[span_info("Analyzing results for [M]:")]\n<span class='info ml-1'>Overall status: [mob_status]</span>\n"

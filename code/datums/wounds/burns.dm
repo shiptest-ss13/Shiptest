@@ -56,7 +56,7 @@
 		return
 
 	if(victim.reagents)
-		if(victim.reagents.has_reagent(/datum/reagent/medicine/spaceacillin))
+		if(victim.reagents.has_reagent(/datum/reagent/medicine/antibiotic))
 			sanitization += 0.9
 		if(victim.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine))
 			sanitization += 0.9
