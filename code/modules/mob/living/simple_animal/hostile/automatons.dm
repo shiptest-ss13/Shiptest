@@ -321,3 +321,42 @@
 
 /mob/living/simple_animal/hostile/automated/walkmine/ramzi
 	faction = list("Ramzi Clique")
+
+// shotgun hoppers (To-do, make them "jump" around like the antlions do?)
+
+/mob/living/simple_animal/hostile/automated/hopper
+	name = "Al'sa CQB 'Hopper'"
+	desc = "A specialized drone made by the Al'sa Guild for quick skirmishes at close range, nicknamed 'Hopper' for its way of running. Sought after by both Makosso-Warra and the Coalition during the ICW, many were sold off and produced locally in the frontier."
+	health = 100
+	maxHealth = 100
+	armor = list("melee" = 35, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/drone
+	projectiletype = null
+	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
+	faction = list(FACTION_NEUTRAL)
+	icon_state = "hopper"
+	move_to_delay = 3
+	armour_penetration = -10
+	melee_damage_lower = 10
+	melee_damage_upper = 10
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kicked"
+	rapid = 2
+	rapid_fire_delay = 3
+	attack_sound = 'sound/weapons/genhit1.ogg'
+
+/mob/living/simple_animal/hostile/automated/hopper/Initialize()
+	. = ..()
+	AddElement(/datum/element/waddling)
+
+/mob/living/simple_animal/hostile/automated/hopper/warra
+	name = "Al'sa CQB 'Hopper'"
+	desc = "A specialized drone made by the Al'sa Guild for quick skirmishes at close range, nicknamed 'Hopper' for its way of running. Sought after by both Makosso-Warra and the Coalition during the ICW, many were sold off and produced locally in the frontier. This model is painted in the colors of Vigilitas Interstellar."
+	faction = list(ROLE_DEATHSQUAD)
+	icon_state = "hopper_warra"
+
+/mob/living/simple_animal/hostile/automated/hopper/coalition
+	name = "Al'sa CQB 'Hopper'"
+	desc = "A specialized drone made by the Al'sa Guild for quick skirmishes at close range, nicknamed 'Hopper' for its way of running. Sought after by both Makosso-Warra and the Coalition during the ICW, many were sold off and produced locally in the frontier. This model is painted in the colors of the Syndicate Coalition"
+	faction = list(FACTION_HOSTILE)
+	icon_state = "hopper_coalition"
