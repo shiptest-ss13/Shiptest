@@ -89,7 +89,7 @@
 		return PROCESS_KILL
 
 // Checks the cost. 0 cost items are skipped in export.
-/datum/export/proc/get_cost(amount, apply_elastic = TRUE, _amount = 0)
+/datum/export/proc/get_cost(amount, apply_elastic = TRUE)
 	if(apply_elastic && elasticity_coeff != 0)
 		// definite integral from (old amount sold) to (new amount sold) of the cost function.
 		// this applies even when the amount being sold is one unit, decreasing it slightly,
@@ -98,15 +98,13 @@
 		// We get the point at which the elasticity function reachs the sell floor
 		var/eq_point = INFINITY
 		if (sell_floor > 0)
-            eq_point = round(log(sell_floor*elasticity_coeff/(-true_cost*log(1-elasticity_coeff)))/log(1 - elasticity_coeff))
+			eq_point = round(log(sell_floor*elasticity_coeff/(-true_cost*log(1-elasticity_coeff)))/log(1 - elasticity_coeff))
 
-		return round(
-			true_cost * (1 - (1 - elasticity_coeff)**min(amount,eq_point))/elasticity_coeff + sell_floor * max(amount-eq_point,0)
-			+ 0.5
+		return round( \
+			true_cost * (1 - (1 - elasticity_coeff)**min(amount,eq_point))/elasticity_coeff + sell_floor * max(amount-eq_point,0) + 0.5 \
 		)
-l
 	else
-		return round(cost * amount, 1)
+		return round(cost * amount)
 
 // Checks the amount of exportable in object. Credits in the bill, sheets in the stack, etc.
 // Usually acts as a multiplier for a cost, so item that has 0 amount will be skipped in export.
