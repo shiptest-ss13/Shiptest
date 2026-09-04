@@ -260,6 +260,8 @@
 	health = 45
 	maxHealth = 45
 	move_to_delay = 2
+//If the walkmine explodes at all, or if it simply breaks apart upon death
+	var/explodes = TRUE
 //Distance at which walkmine will be allowed to explode
 	var/explode_distance = 2
 //Delay after explosion is triggered
@@ -298,11 +300,12 @@
 
 /mob/living/simple_animal/hostile/automated/walkmine/death()
 	. = ..()
-	visible_message(span_warning("[src] explodes!"))
-	explosion(get_turf(loc),mine_devastation,mine_heavy,mine_light,flame_range = mine_flame, adminlog = FALSE)
-	if(shrapnel_magnitude > 0)
-		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
-	SEND_SIGNAL(src, COMSIG_MOB_PELLETS)
+	if(explodes)
+		visible_message(span_warning("[src] explodes!"))
+		explosion(get_turf(loc),mine_devastation,mine_heavy,mine_light,flame_range = mine_flame, adminlog = FALSE)
+		if(shrapnel_magnitude > 0)
+			AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
+			SEND_SIGNAL(src, COMSIG_MOB_PELLETS)
 	qdel(src)
 
 /mob/living/simple_animal/hostile/automated/walkmine/Aggro()
@@ -321,6 +324,49 @@
 
 /mob/living/simple_animal/hostile/automated/walkmine/ramzi
 	faction = list("Ramzi Clique")
+
+/mob/living/simple_animal/hostile/automated/walkmine/radmine
+	name = "G-85W Fission Walkmine"
+	desc = "A walkmine design inspired by the G-85 Fission landmine. Instead of an explosive charge, this walkmine features a broad-spectrum ionizing radiation projector. If you can see ions fizzling in the air before you, you are far too close to it."
+	icon = 'icons/obj/landmine.dmi'
+	icon_state = "radmine"
+	light_color = "#1aec48"
+	light_range = 2
+	del_on_death = FALSE
+	ranged_cooldown_time = 0
+	vision_range = 12
+	rapid_fire_delay = 0 SECONDS
+	wander = 0
+	health = 45
+	maxHealth = 45
+	move_to_delay = 2
+	examine_text = "Printed on a side of the shell casing, you see a bold, yellow trefoil:<span style='color:yellow;font-size:30px'>☢️</span>."
+	var/effectrange = 1
+	var/death_effectrange = 3
+	var/irradiation_tries = 30
+//Explosion characteristics nullified (This isn't meant to explode)
+	explodes = FALSE
+
+/mob/living/simple_animal/hostile/automated/walkmine/radmine/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_RADIMMUNE, INNATE_TRAIT)
+
+/mob/living/simple_animal/hostile/automated/walkmine/radmine/OpenFire(atom/victim)
+	var/turf/spot = locate(rand(src.x-effectrange, src.x+effectrange), rand(src.y-effectrange, src.y+effectrange), src.z)
+	var/list/geiger_sounds = list('sound/items/geiger/med1.ogg', 'sound/items/geiger/med2.ogg', 'sound/items/geiger/med3.ogg', 'sound/items/geiger/med4.ogg', 'sound/items/geiger/high1.ogg', 'sound/items/geiger/high2.ogg', 'sound/items/geiger/high3.ogg', 'sound/items/geiger/high4.ogg')
+	playsound(src, pick(geiger_sounds), 80, FALSE) //picks a random medium-intensity radiation geiger counter sound to play when near a player
+	radiation_pulse(spot, 350, log=FALSE, can_contaminate=TRUE)
+
+/mob/living/simple_animal/hostile/automated/walkmine/radmine/death()
+	visible_message(span_warning("[src] breaks apart, causing a glowing metallic powder to spill from the carcass of the machine."))
+	var/turf/death_spot = get_turf(src)
+	var/list/cancer_circle = view(death_effectrange, death_spot)
+
+	for(var/obj/irradiate in cancer_circle)
+		radiation_pulse(irradiate, 750, log=FALSE, can_contaminate=TRUE)
+
+	REMOVE_TRAIT(src, TRAIT_RADIMMUNE, INNATE_TRAIT)
+	. = ..()
 
 // shotgun hoppers (To-do, make them "jump" around like the antlions do?)
 

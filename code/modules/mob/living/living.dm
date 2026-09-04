@@ -1217,9 +1217,16 @@
 	var/blocked = getarmor(null, "rad")
 
 	if(amount > RAD_BURN_THRESHOLD)
+		if(COOLDOWN_FINISHED(src, rad_burn_msg_cooldown))
+			if(HAS_TRAIT(src, TRAIT_RADRESISTANT))	//for IPCs
+				COOLDOWN_START(src, rad_burn_msg_cooldown, 5 SECONDS)
+				to_chat(src, span_warning("Internal error codes flash across your mind, indicating a potential component-level electrical fault."))
+			else
+				to_chat(src, span_warning("You feel fresh burns form across your skin."))
 		apply_damage(RAD_BURN_CURVE(amount), BURN, null, blocked)
 
-	apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
+	if(!HAS_TRAIT(src, TRAIT_RADRESISTANT))
+		apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
 
 /mob/living/anti_magic_check(magic = TRUE, holy = FALSE, tinfoil = FALSE, chargecost = 1, self = FALSE)
 	. = ..()
@@ -1546,6 +1553,9 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 	var/ssd_indicator = FALSE
 	var/ignore_SSD = FALSE
 	var/lastclienttime = 0
+
+///Rad burn message cooldown
+	COOLDOWN_DECLARE(rad_burn_msg_cooldown)
 
 /mob/living/proc/set_ssd_indicator(state)
 	if(state == ssd_indicator)
