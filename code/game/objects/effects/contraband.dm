@@ -1268,7 +1268,7 @@
 
 /obj/structure/sign/poster/pgf/dreadnaut
 	name = "See it for Yourself"
-	desc = "This poster depicts a PGF Sailor on an EVA mission in front of a cloudy nebula. \"The galaxy is a dangerous place, but in the PGFN, so are we. Ready to see it for yourself?\""
+	desc = "This poster depicts a PGF Sailor on an EVA mission in front of a cloudy nebula. \"The galaxy is dangerous, but in the PGFN, so are we. If we haven't been there? We're going. Ready to see it for yourself?\""
 	icon_state = "poster-pgf_dreadnaut"
 
 //PGF Mission Accomplished
