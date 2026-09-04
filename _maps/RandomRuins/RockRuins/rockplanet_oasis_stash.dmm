@@ -1,4 +1,9 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken5"
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "ac" = (
 /obj/item/flashlight/glowstick/red{
 	on = 1;
@@ -17,6 +22,12 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"aB" = (
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "aC" = (
 /obj/structure/flora/grass/rockplanet,
 /obj/structure/flora/grass/jungle,
@@ -26,7 +37,7 @@
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken7"
 	},
-/area/ruin/rockplanet/oasis_stash/hut)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "bd" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
@@ -100,10 +111,20 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "dm" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/stairs/wood/left{
 	dir = 4
 	},
-/area/ruin/rockplanet/oasis_stash/hut)
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"dp" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "ds" = (
 /obj/structure/flora/rock/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
@@ -166,10 +187,30 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"fc" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/overmap_encounter/planetoid/cave/explored)
+"fe" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken7"
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "fh" = (
 /obj/structure/bonfire,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
+"fv" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plating/asteroid/rockplanet/wet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "fy" = (
 /mob/living/simple_animal/hostile/human/frontier/hullpiercer{
 	wander = 0
@@ -207,6 +248,13 @@
 /obj/structure/flora/grass/rockplanet,
 /obj/structure/flora/rock/jungle,
 /turf/open/water/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"gE" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "gU" = (
 /obj/structure/flora/rock/jungle,
@@ -266,12 +314,6 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "iW" = (
 /obj/structure/table/wood,
-/obj/item/gun/ballistic/automatic/assault/skm/pirate{
-	pixel_x = -7;
-	pixel_y = 4;
-	actually_shoots = 0;
-	desc = "An SKM-24 in a state of shockingly poor repair: Several parts are missing and the 'grip' is improvised from scrap wood. It straight up doesn't work at all."
-	},
 /obj/item/screwdriver{
 	pixel_x = 20;
 	pixel_y = -2
@@ -279,6 +321,10 @@
 /obj/item/stack/ore/glass/rockplanet{
 	pixel_x = 4;
 	pixel_y = -2
+	},
+/obj/item/gun/ballistic/automatic/assault/skm/pirate{
+	pixel_x = -5;
+	pixel_y = 5
 	},
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken5"
@@ -306,7 +352,7 @@
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken6"
 	},
-/area/ruin/rockplanet/oasis_stash/hut)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "jB" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
@@ -337,6 +383,13 @@
 	icon_state = "redrock3"
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"kA" = (
+/obj/structure/flora/grass/jungle,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "kK" = (
 /obj/structure/flora/rock/pile/largejungle,
@@ -376,6 +429,15 @@
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken5"
 	},
+/area/overmap_encounter/planetoid/cave/explored)
+"ng" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
 "nq" = (
 /obj/structure/platform/wood/corner{
@@ -431,6 +493,12 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/oasis_stash/hut)
+"pw" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/overmap_encounter/planetoid/cave/explored)
 "pG" = (
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -477,6 +545,13 @@
 	icon_state = "wood-broken6"
 	},
 /area/overmap_encounter/planetoid/cave/explored)
+"rK" = (
+/obj/structure/flora/grass/jungle,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "rO" = (
 /turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -543,10 +618,17 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"tH" = (
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "uk" = (
 /obj/structure/closet/crate/secure/gear{
 	name = "substance crate";
-	desc = "A secure crate full of something real illegal."
+	desc = "A secure crate full of something real illegal.";
+	opened = 1
 	},
 /obj/item/reagent_containers/hypospray/medipen/mammoth,
 /obj/item/reagent_containers/hypospray/medipen/mammoth,
@@ -576,6 +658,14 @@
 "vm" = (
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"vU" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken5"
+	},
+/area/ruin/rockplanet/oasis_stash/hut)
 "wi" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
 	environment_smash = 0;
@@ -583,6 +673,12 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
+"wr" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "wB" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
@@ -590,6 +686,12 @@
 "wL" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/rockplanet/oasis_stash/hut)
+"xa" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "xo" = (
 /obj/structure/flora/rock/rockplanet{
 	icon_state = "redrock3"
@@ -654,6 +756,9 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "Az" = (
 /obj/structure/platform/wood,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "AE" = (
@@ -666,11 +771,18 @@
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken2"
 	},
-/area/ruin/rockplanet/oasis_stash/hut)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "BX" = (
 /obj/structure/flora/rock/pile/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/cave/explored)
+"CG" = (
+/obj/structure/flora/grass/rockplanet,
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plating/asteroid/rockplanet/wet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "CM" = (
 /obj/structure/flora/ash/garden/arid,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
@@ -706,6 +818,15 @@
 "Fh" = (
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"Fn" = (
+/obj/structure/cable{
+	icon_state = "9-10"
+	},
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "FD" = (
 /obj/effect/decal/cleanable/ash,
@@ -846,15 +967,16 @@
 /obj/machinery/deployable_turret/spotlight{
 	dir = 6
 	},
+/obj/structure/cable,
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken6"
 	},
-/area/ruin/rockplanet/oasis_stash/hut)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Kl" = (
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken"
 	},
-/area/ruin/rockplanet/oasis_stash/hut)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Km" = (
 /obj/item/stack/sheet/mineral/wood/twentyfive,
 /turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
@@ -913,15 +1035,42 @@
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
+"LN" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plating/asteroid/rockplanet/wet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "LQ" = (
 /obj/structure/flora/stump,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"Ma" = (
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Mh" = (
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken5"
 	},
 /area/overmap_encounter/planetoid/cave/explored)
+"ME" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken4"
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"MX" = (
+/obj/structure/flora/grass/jungle,
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Nd" = (
 /obj/item/restraints/legcuffs/beartrap{
 	armed = 1
@@ -929,10 +1078,13 @@
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Ne" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/stairs/wood/left{
 	dir = 1
 	},
-/area/ruin/rockplanet/oasis_stash/hut)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Ni" = (
 /obj/structure/safe/floor{
 	number_of_tumblers = 3
@@ -993,14 +1145,16 @@
 /obj/machinery/deployable_turret/spotlight{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken6"
 	},
-/area/ruin/rockplanet/oasis_stash/hut)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "OI" = (
-/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "2-8"
 	},
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken6"
@@ -1057,6 +1211,9 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "QF" = (
 /obj/structure/platform/wood/corner,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "QW" = (
@@ -1094,6 +1251,12 @@
 /obj/item/binoculars,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Sa" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "SF" = (
 /obj/structure/closet/crate/freezer,
 /obj/item/twenty_pounds_of_ice{
@@ -1115,10 +1278,21 @@
 /obj/machinery/porta_turret/ruin/frontiersmen/heavy{
 	dir = 10
 	},
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken7"
 	},
-/area/ruin/rockplanet/oasis_stash/hut)
+/area/overmap_encounter/planetoid/cave/explored)
+"Tm" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken7"
+	},
+/area/overmap_encounter/planetoid/cave/explored)
 "To" = (
 /obj/structure/flora/grass/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
@@ -1128,7 +1302,7 @@
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken7"
 	},
-/area/ruin/rockplanet/oasis_stash/hut)
+/area/overmap_encounter/planetoid/cave/explored)
 "TC" = (
 /turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -1224,6 +1398,9 @@
 /obj/structure/platform/wood/corner{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "WR" = (
@@ -1260,11 +1437,17 @@
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken4"
 	},
-/area/ruin/rockplanet/oasis_stash/hut)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "XR" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Ym" = (
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/overmap_encounter/planetoid/cave/explored)
 "YH" = (
 /obj/structure/platform/wood/corner{
 	dir = 4
@@ -1283,6 +1466,12 @@
 	dir = 6
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"ZG" = (
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "ZI" = (
 /obj/item/storage/fancy/cigarettes/cigpack_carp{
@@ -2334,7 +2523,7 @@ kO
 kO
 kO
 kO
-jm
+ra
 Tt
 yB
 yB
@@ -2402,7 +2591,7 @@ kO
 kO
 kO
 SU
-ex
+Mh
 yB
 yB
 yB
@@ -2469,7 +2658,7 @@ kO
 kO
 kO
 kO
-aE
+Tm
 yB
 yB
 yB
@@ -2536,7 +2725,7 @@ Lz
 yR
 sK
 ex
-yB
+pw
 yB
 yB
 qU
@@ -2600,9 +2789,9 @@ kO
 kO
 kO
 OI
-ex
-yB
-yB
+vU
+fc
+ng
 yB
 qU
 qU
@@ -2670,7 +2859,7 @@ EF
 yB
 yB
 yB
-yB
+Ym
 qU
 Xv
 qU
@@ -2738,7 +2927,7 @@ yB
 yB
 yB
 yB
-qU
+Ma
 qU
 qU
 qU
@@ -2806,7 +2995,7 @@ yB
 yB
 yB
 qU
-qU
+Ma
 qU
 qU
 qU
@@ -2874,7 +3063,7 @@ qU
 qU
 qU
 qU
-qU
+fv
 qU
 qU
 qU
@@ -3143,8 +3332,8 @@ vm
 vm
 vm
 Az
-ex
-XF
+ab
+ME
 aE
 AE
 vm
@@ -3276,9 +3465,9 @@ qU
 qU
 qU
 Xb
+ZG
 qU
-qU
-qU
+LN
 Xv
 qU
 qU
@@ -3344,8 +3533,8 @@ qY
 qU
 hL
 Xb
-Xb
-Xb
+Fn
+tH
 qU
 qU
 qU
@@ -3413,7 +3602,7 @@ hL
 Xb
 kK
 Xb
-Xb
+aB
 Xb
 qU
 qU
@@ -3481,7 +3670,7 @@ hL
 Xb
 Xb
 hL
-hL
+gE
 Xb
 Xb
 qU
@@ -3549,7 +3738,7 @@ Xb
 bF
 Xb
 Xb
-hL
+gE
 Xb
 qU
 qU
@@ -3617,7 +3806,7 @@ Xb
 kK
 Xb
 Xb
-Xv
+CG
 qU
 qU
 qU
@@ -3685,7 +3874,7 @@ Xb
 Xb
 ko
 Xv
-qU
+Ma
 Xb
 Xb
 Xb
@@ -3753,7 +3942,7 @@ qU
 qU
 Xv
 Xb
-Wy
+MX
 kR
 Xb
 Xb
@@ -3821,7 +4010,7 @@ qU
 Xb
 Xb
 Wy
-hL
+gE
 Xb
 Xb
 Xb
@@ -3889,7 +4078,7 @@ Xb
 Wn
 Wy
 hL
-Xb
+aB
 Xb
 Xb
 qU
@@ -3957,7 +4146,7 @@ Xb
 rX
 Xb
 Xb
-Xb
+aB
 Xb
 qU
 qU
@@ -4025,7 +4214,7 @@ Xb
 Xb
 kR
 rX
-hL
+dp
 Xb
 qU
 qU
@@ -4092,7 +4281,7 @@ Xb
 Xb
 kR
 kR
-Wy
+kA
 iu
 wL
 wB
@@ -4159,7 +4348,7 @@ bF
 Xb
 sQ
 kR
-Wy
+kA
 Xb
 wL
 Ho
@@ -4226,7 +4415,7 @@ Xb
 Xb
 Xb
 rX
-Xb
+xa
 iu
 wL
 wB
@@ -4293,7 +4482,7 @@ Xb
 Wy
 kR
 Xb
-Wy
+kA
 sQ
 Xb
 Im
@@ -4360,7 +4549,7 @@ hL
 Km
 dA
 Xb
-Xb
+xa
 Xb
 bF
 Xb
@@ -4427,7 +4616,7 @@ kR
 Km
 rQ
 Xb
-Wy
+kA
 Xb
 kK
 Xb
@@ -4494,7 +4683,7 @@ bF
 Xb
 tv
 uF
-Xb
+xa
 Dj
 Xb
 Xb
@@ -4561,8 +4750,8 @@ Xb
 Xb
 sQ
 hL
-Wy
-Xb
+rK
+Sa
 sI
 az
 qs
@@ -4629,7 +4818,7 @@ Xb
 Xb
 Wy
 sQ
-Xb
+xa
 jf
 Kl
 jm
@@ -4696,9 +4885,9 @@ Xb
 Xb
 Wy
 Xb
-kR
+wr
 Ne
-aE
+fe
 Ke
 AR
 IT
@@ -4765,7 +4954,7 @@ kR
 Wy
 kR
 bJ
-ex
+ab
 XF
 aE
 Ll
