@@ -78,6 +78,11 @@
 	icon_state = "compshorts"
 	supports_variations = DIGITIGRADE_VARIATION
 	unique_reskin = null
+	unique_reskin = list("black compression shorts" = "compshorts",
+						"red compression shorts" = "compshortsred",
+						"brown compression shorts" = "compshortsbrown",
+						"blue compression shorts" = "compshortsblue",
+							)
 
 /obj/item/clothing/under/shorts/explorer
 	name = "explorer shorts"

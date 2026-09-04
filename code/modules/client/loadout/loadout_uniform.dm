@@ -55,7 +55,7 @@
 	path = /obj/item/clothing/under/shorts/dolphin
 
 /datum/gear/uniform/compressionshorts
-	display_name = "compression shorts"
+	display_name = "compression shorts, colorable"
 	path = /obj/item/clothing/under/shorts/compression
 
 /datum/gear/uniform/jorts
