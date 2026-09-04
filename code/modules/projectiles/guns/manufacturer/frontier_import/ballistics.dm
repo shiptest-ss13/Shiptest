@@ -21,7 +21,7 @@
 	show_magazine_on_sprite = FALSE //hard coded
 
 	spread = 15
-	spread_unwielded = 30
+	spread_unwielded = 15
 	recoil = 1
 	recoil_unwielded = 3
 	safety_multiplier = 2 //this means its twice as safe right? //oh, god no.
@@ -135,7 +135,7 @@
 	manufacturer = MANUFACTURER_IMPORT
 
 	spread = 20
-	spread_unwielded = 35
+	spread_unwielded = 20
 	dual_wield_spread = 35
 	wield_slowdown = SMG_SLOWDOWN
 	wield_delay = 0.2 SECONDS

@@ -289,7 +289,7 @@
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
-	spread_unwielded = 5
+	spread_unwielded = 2
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(

@@ -90,7 +90,7 @@
 	var/randomspread = TRUE // do we have random spread. false for shotguns
 	var/spread	= 4 // wielded spread amount
 	var/spread_unwielded = 12 // unwielded spread amount
-	var/dual_wield_spread = 24 // dual wielding spread amount
+	var/dual_wield_spread = 6 // dual wielding spread amount
 
 	var/recoil = 0 // screen shake when fired
 	var/recoil_unwielded = 0 // screen shake when fired unwielded
