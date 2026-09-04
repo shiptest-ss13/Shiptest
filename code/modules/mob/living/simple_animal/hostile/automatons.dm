@@ -51,11 +51,12 @@
 	desc = "A military drone manufactured by Cybersun. Used extensively during the Inter-Corporate War, a large number have found themselves in disrepair and malfunctioning in the years since. The 5.7x39mm pistol on its gimbal is still active, however."
 	health = 60
 	maxHealth = 60
-	rapid = 3
+	rapid = 2
 	rapid_fire_delay = 3
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	casingtype = /obj/item/ammo_casing/c57x39mm
 	faction = list(FACTION_HOSTILE)
+	icon_state = "quadrotor_coalition"
 
 /mob/living/simple_animal/hostile/automated/quadrotor/cybersun/friendly
 	name = "Mr. Drone"
@@ -80,6 +81,7 @@
 	projectiletype = /obj/projectile/beam/laser/sharplite
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
+	icon_state = "quadrotor_warra"
 
 //rovers
 
