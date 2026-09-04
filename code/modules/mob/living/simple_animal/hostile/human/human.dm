@@ -94,7 +94,20 @@
 		dropped_gun.actually_shoots = FALSE
 		dropped_gun.desc += span_warning("\nIt appears to be irreparably broken.")
 		// broken overlay
-		dropped_gun.glunkify()
+		var/index = "[REF(initial(dropped_gun.icon))]-[initial(dropped_gun.icon_state)]"
+		var/static/list/scuff_cache = list()
+		var/icon/scuff = scuff_cache[index]
+		if(!scuff) // we only need to generate each scuff overlay once
+			scuff = icon(initial(dropped_gun.icon), initial(dropped_gun.icon_state))
+			var/icon/temp = icon('icons/effects/item_damage.dmi', "itemdamaged")
+			temp.Scale(64, 32)
+			temp.Shift(EAST, 32) // we put two side by side so it fits on guns
+			temp.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_OVERLAY)
+			scuff.Blend("#fff", ICON_ADD)
+			scuff.Blend(temp, ICON_MULTIPLY)
+			scuff_cache[index] = scuff
+		var/mutable_appearance/scuff_instance = new(scuff)
+		dropped_gun.add_overlay(scuff_instance)
 
 	// BALLISTICS - apply wear, mag drop chance, and empty the mag partially
 	if(istype(dropped_gun, /obj/item/gun/ballistic))
