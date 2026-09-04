@@ -28,7 +28,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	spread = 15
-	spread_unwielded = 35
+	spread_unwielded = 15
 	recoil = -2
 	recoil_unwielded = -2
 
