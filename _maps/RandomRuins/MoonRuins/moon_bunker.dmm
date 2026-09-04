@@ -717,7 +717,7 @@
 /area/ruin/moon/bunker)
 "kp" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1673,6 +1673,10 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/light/directional/south,
+/obj/item/storage/part_replacer{
+	pixel_x = -1;
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker/engineering)
 "wi" = (
@@ -3362,12 +3366,16 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/stock_parts/cell/hyper{
-	pixel_x = 7;
-	pixel_y = 4
+	pixel_x = 4;
+	pixel_y = 7
 	},
 /obj/item/stock_parts/cell/hyper{
-	pixel_x = -5;
-	pixel_y = 4
+	pixel_x = -9;
+	pixel_y = 5
+	},
+/obj/item/pipe_dispenser{
+	pixel_x = 12;
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/bunker/engineering)
