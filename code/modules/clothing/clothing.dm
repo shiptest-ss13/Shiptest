@@ -46,6 +46,8 @@
 	var/list/durability_list = list()
 	/// If this can be eaten by a moth
 	var/moth_edible = TRUE
+	/// shamelessly stolen from TG Code
+	var/obj/item/food/clothing/moth_snack
 
 	// Not used yet
 	/// Trait modification, lazylist of traits to add/take away, on equipment/drop in the correct slot
@@ -82,22 +84,42 @@
 		if(M.putItemFromInventoryInHandIfPossible(src, H.held_index, FALSE, TRUE))
 			add_fingerprint(usr)
 
-/obj/item/food/clothing // fuck you
+/obj/item/food/clothing // fuck you ʕ●.●ʔ
 	name = "temporary moth clothing snack item"
 	desc = "If you're reading this it means I messed up. This is related to moths eating clothes and I didn't know a better way to do it than making a new food object."
-	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	spawn_blacklisted = TRUE
+	bite_consumption = 0.5
+	food_reagents = list(/datum/reagent/consumable/nutriment/cloth_fibers = INFINITY)
 	tastes = list("dust" = 1, "lint" = 1)
 	foodtypes = CLOTH
+	/// A weak reference to the clothing that created us
+	var/datum/weakref/clothing
 
-/obj/item/clothing/attack(mob/M, mob/user, def_zone)
-	if(user.a_intent != INTENT_HARM && moth_edible && ismoth(M))
-		var/obj/item/food/clothing/clothing_as_food = new
-		clothing_as_food.name = name
-		if(clothing_as_food.attack(M, user, def_zone))
-			take_damage(15, sound_effect=FALSE)
-		qdel(clothing_as_food)
+/obj/item/food/clothing/make_edible()
+	. = ..()
+	AddComponent(/datum/component/edible, after_eat = CALLBACK(src, PROC_REF(after_eat)))
+
+/obj/item/food/clothing/proc/after_eat(mob/eater)
+	var/obj/item/clothing/resolved_clothing = clothing.resolve()
+	if (resolved_clothing)
+		resolved_clothing.take_damage(MOTH_EATING_CLOTHING_DAMAGE, sound_effect = FALSE, damage_flag = CONSUME)
 	else
+		qdel(src)
+
+/obj/item/clothing/attack(mob/living/target, mob/living/user, list/modifiers, list/attack_modifiers)
+	if(user.a_intent == INTENT_HARM || !ismoth(target) || !moth_edible)
 		return ..()
+	if((clothing_flags & THICKMATERIAL) || (resistance_flags & INDESTRUCTIBLE))
+		return ..()
+	if(isnull(moth_snack))
+		create_moth_snack()
+	moth_snack.attack(target, user, modifiers)
+
+/// Creates a food object in null space which we can eat and imagine we're eating this pair of shoes
+/obj/item/clothing/proc/create_moth_snack()
+	moth_snack = new
+	moth_snack.name = name
+	moth_snack.clothing = WEAKREF(src)
 
 /obj/item/clothing/attackby(obj/item/tool, mob/user, params)
 	if(tool.get_sharpness() && cuttable)
@@ -582,6 +604,13 @@
 		var/turf/T = get_turf(src)
 		//so the shred survives potential turf change from the explosion.
 		addtimer(CALLBACK_NEW(/obj/effect/decal/cleanable/shreds, list(T, name)), 1)
+		deconstruct(FALSE)
+	if(damage_flag == CONSUME) //This allows for moths to fully consume clothing, rather than damaging it like other sources like brute
+		var/turf/current_position = get_turf(src)
+		new /obj/effect/decal/cleanable/shreds(current_position, name)
+		if(isliving(loc))
+			var/mob/living/possessing_mob = loc
+			possessing_mob.visible_message(span_danger("[src] is consumed until naught but shreds remains!"), span_boldwarning("[src] falls apart into little bits!"))
 		deconstruct(FALSE)
 	else
 		..()
