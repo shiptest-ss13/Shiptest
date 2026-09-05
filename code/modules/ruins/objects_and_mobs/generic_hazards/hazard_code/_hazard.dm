@@ -45,6 +45,11 @@
 	//whether alarms like from trophy cases can set off this hazard
 	var/alarm_sensitive = FALSE
 
+	//Faction datum. By default, this faction is ignored by the hazard.
+	var/list/haz_faction
+	//If we want to only trigger the hazard for this faction, this is set to true.
+	var/invert_faction = FALSE
+
 /*
 procs used to set off effects
 */
@@ -149,17 +154,24 @@ evil 'code' that sets off the above procs. mappers beware!
 
 //contact checks, based on density.
 
-/obj/structure/hazard/proc/on_entered(datum/source, atom/movable/AM)
+/obj/structure/hazard/proc/on_entered(datum/source, atom/movable/target)
 	SIGNAL_HANDLER
 
-	if(!iseffect(AM) && on && !disabled)
-		var/target = AM
+	if(check_target(target))
 		contact(target)
 
-/obj/structure/hazard/Bumped(atom/movable/AM)
-	if(!iseffect(AM) && on && !disabled)
-		var/target = AM
+/obj/structure/hazard/Bumped(atom/movable/target)
+	if(check_target(target))
 		contact(target)
+
+/obj/structure/hazard/proc/check_target(target)
+	if(ismob(target) && haz_faction)
+		var/mob/target_mob = target
+		var/shared_faction = faction_check(haz_faction, target_mob.faction)
+		if(shared_faction == !invert_faction)
+			return FALSE
+	if(!iseffect(target) && on && !disabled)
+		return TRUE
 
 //attacked checks
 

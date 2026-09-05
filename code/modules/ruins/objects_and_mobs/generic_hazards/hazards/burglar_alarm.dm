@@ -1,3 +1,4 @@
+///Floor hazard which closes and locks all doors in an area when triggered.
 /obj/structure/hazard/floor/burglar_alarm
 	name = "burglar alarm"
 	desc = "Triggers an alarm when stepped upon."
@@ -7,17 +8,25 @@
 	light_color = "#D74722"
 	can_be_disabled = TRUE
 	disable_text = "unscrewing the panel and cutting the wires"
-	var/intruder_message = "INTRUDER DETECTED!"
+	var/intruder_message = "Intruder detected."
 	var/hatch_open = FALSE
+	var/language = /datum/language/galactic_common
+	///Links with the id/id_tag for shutters and airlocks respectively. Will open and lock linked doors.
+	var/door_id
 
-/obj/structure/hazard/floor/burglar_alarm/contact()
+/obj/structure/hazard/floor/burglar_alarm/contact(mob/target)
 	var/area/alarmed = get_area(src)
-	alarmed.burglaralert(src)
+	alarmed.burglaralert(src, door_id)
 	playsound(src, 'sound/machines/click.ogg', 60, TRUE)
 	playsound(src, 'sound/effects/alert.ogg', 50, TRUE)
-	say(intruder_message)
+	if(intruder_message)
+		say(intruder_message, FALSE, null, TRUE, language)
 	for(var/obj/structure/hazard/floor/burglar_alarm/alarms in alarmed)
 		alarms.disable()
+	for(var/mob/living/simple_animal/hostile/GUARDSINTRUDERHELP in alarmed)
+		if(!GUARDSINTRUDERHELP.search_alarms || GUARDSINTRUDERHELP.AIStatus == AI_OFF)
+			continue
+		GUARDSINTRUDERHELP.Goto(src,GUARDSINTRUDERHELP.move_to_delay,GUARDSINTRUDERHELP.minimum_distance) //Godspeed, simplemob pathfinding.
 
 /obj/structure/hazard/floor/burglar_alarm/update_appearance()
 	. = ..()
