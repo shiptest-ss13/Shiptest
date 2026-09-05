@@ -944,10 +944,6 @@
 /obj/effect/turf_decal/miskilamo_big/seven{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/lights{
-	lightswitch = 0;
-	delay = 50
-	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
 "ec" = (
@@ -1563,10 +1559,6 @@
 "gp" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/mapping_helpers/lights{
-	stagger = 1;
-	lightswitch = 0
-	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
 "gq" = (
@@ -8540,10 +8532,6 @@
 /obj/effect/turf_decal/corner/transparent/brown{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/lights{
-	flicker_chance = 25;
-	delay = 10
-	},
 /turf/open/floor/plasteel/mono,
 /area/outpost/crew/bar)
 "GY" = (
@@ -13240,21 +13228,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/outpost/crew/lounge)
-"ZN" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10
-	},
-/obj/effect/mapping_helpers/lights{
-	flicker_chance = 100;
-	stagger = 1;
-	lightswitch = 0
-	},
-/turf/open/floor/plasteel/dark,
-/area/outpost/hallway/central)
 "ZP" = (
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/vacant_rooms/office)
@@ -19253,7 +19226,7 @@ ks
 Co
 Tm
 RK
-ZN
+oX
 Hs
 sw
 sw
