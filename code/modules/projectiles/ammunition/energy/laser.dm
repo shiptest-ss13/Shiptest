@@ -268,7 +268,7 @@
 
 /obj/projectile/beam/hitscan/disabler
 	name = "disabler beam"
-	icon_state = "omnilaser"
+	icon_state = "beam_disabler"
 	hitscan = TRUE
 	range = 12
 	damage = 20
@@ -278,7 +278,6 @@
 	bullet_identifier = "disabler"
 	hitsound = 'sound/weapons/tap.ogg'
 	eyeblur = 0
-	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	tracer_type = /obj/effect/projectile/tracer/disabler
 	muzzle_type = /obj/effect/projectile/muzzle/disabler
 	impact_type = /obj/effect/projectile/impact/disabler
@@ -287,19 +286,23 @@
 
 	hitscan_light_intensity = 2
 	hitscan_light_range = 0.75
-	hitscan_light_color_override = COLOR_CYAN
+	hitscan_light_color_override = LIGHT_COLOR_YELLOW
 	muzzle_flash_intensity = 4
 	muzzle_flash_range = 2
-	muzzle_flash_color_override = COLOR_CYAN
+	muzzle_flash_color_override = LIGHT_COLOR_YELLOW
 	impact_light_intensity = 6
 	impact_light_range = 2.5
-	impact_light_color_override = COLOR_CYAN
+	impact_light_color_override = LIGHT_COLOR_YELLOW
 
 /obj/item/ammo_casing/energy/disabler/hitscan/heavy
 	projectile_type = /obj/projectile/beam/hitscan/disabler/heavy
 	e_cost = 666
 
 /obj/projectile/beam/hitscan/disabler/heavy
+	name = "heavy disabler beam"
+	tracer_type = /obj/effect/projectile/tracer/disabler_heavy
+	muzzle_type = /obj/effect/projectile/muzzle/disabler_heavy
+	impact_type = /obj/effect/projectile/impact/disabler_heavy
 	range = 15
 	damage = 30
 	armour_penetration = -10

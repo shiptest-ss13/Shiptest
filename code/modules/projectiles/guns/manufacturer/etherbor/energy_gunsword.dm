@@ -48,12 +48,13 @@
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
 	e_cost = 500 //25 shots per cell
 	delay = 1
+	select_name = "lethal"
 
 /obj/projectile/beam/hitscan/kalix
 	name = "concentrated energy beam"
-	tracer_type = /obj/effect/projectile/tracer/kalix
-	muzzle_type = /obj/effect/projectile/muzzle/kalix
-	impact_type = /obj/effect/projectile/impact/kalix
+	tracer_type = /obj/effect/projectile/tracer/kalix_rifle
+	muzzle_type = /obj/effect/projectile/muzzle/kalix_rifle
+	impact_type = /obj/effect/projectile/impact/kalix_rifle
 	hitscan_light_color_override = LIGHT_COLOR_ELECTRIC_CYAN
 	muzzle_flash_color_override = LIGHT_COLOR_ELECTRIC_CYAN
 	impact_light_color_override = LIGHT_COLOR_ELECTRIC_CYAN
@@ -73,6 +74,12 @@
 
 /obj/projectile/beam/hitscan/kalix/nock
 	name = "concentrated energy beam"
+	tracer_type = /obj/effect/projectile/tracer/nock
+	muzzle_type = /obj/effect/projectile/muzzle/nock
+	impact_type = /obj/effect/projectile/impact/nock
+	hitscan_light_color_override = LIGHT_COLOR_PURPLE
+	muzzle_flash_color_override = LIGHT_COLOR_PURPLE
+	impact_light_color_override = LIGHT_COLOR_PURPLE
 	damage_constant = 0.8
 	damage = 15
 	armour_penetration = -20
@@ -81,7 +88,7 @@
 	projectile_type = /obj/projectile/beam/hitscan/kalix/nock
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
 	e_cost = 312 //10 bursts per cell
-	select_name = "kill"
+	select_name = "lethal"
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/nock
 	projectile_type = /obj/projectile/beam/hitscan/disabler
@@ -148,6 +155,12 @@
 
 /obj/projectile/beam/hitscan/kalix/pgf/nock
 	name = "concentrated energy beam"
+	tracer_type = /obj/effect/projectile/tracer/nock
+	muzzle_type = /obj/effect/projectile/muzzle/nock
+	impact_type = /obj/effect/projectile/impact/nock
+	hitscan_light_color_override = LIGHT_COLOR_PURPLE
+	muzzle_flash_color_override = LIGHT_COLOR_PURPLE
+	impact_light_color_override = LIGHT_COLOR_PURPLE
 	damage_constant = 0.8
 	damage = 15
 	armour_penetration = -20
@@ -156,7 +169,7 @@
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/nock
 	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
 	e_cost = 250 //16 bursts per cell
-	select_name = "kill"
+	select_name = "lethal"
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/nock
 	projectile_type = /obj/projectile/beam/hitscan/disabler
@@ -223,7 +236,7 @@
 
 /obj/item/gun/energy/kalix/pgf
 	name = "\improper Etherbor BG-16"
-	desc = "Designed as the PGF armed forces primary close-combat weapon, the Etherbor BG-16 trades stability and power at range for an impressive shot capacity."
+	desc = "Designed as the PGF armed forces' primary close-combat weapon, the Etherbor BG-16 trades stability and power at range for an impressive shot capacity."
 	icon_state = "pgfgun"
 	item_state = "pgfgun"
 
@@ -264,9 +277,9 @@
 
 /obj/projectile/beam/hitscan/kalix/pgf
 	name = "concentrated energy beam"
-	tracer_type = /obj/effect/projectile/tracer/pgf
-	muzzle_type = /obj/effect/projectile/muzzle/pgf
-	impact_type = /obj/effect/projectile/impact/pgf
+	tracer_type = /obj/effect/projectile/tracer/pgf/rifle
+	muzzle_type = /obj/effect/projectile/muzzle/pgf/rifle
+	impact_type = /obj/effect/projectile/impact/pgf/rifle
 	hitscan_light_color_override = LIGHT_COLOR_ELECTRIC_GREEN
 	muzzle_flash_color_override = LIGHT_COLOR_ELECTRIC_GREEN
 	impact_light_color_override = LIGHT_COLOR_ELECTRIC_GREEN
@@ -276,6 +289,7 @@
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
 	e_cost = 500 //40 shots per cell
 	delay = 1
+	select_name = "lethal"
 
 /obj/item/gun/energy/kalix/pistol //blue
 	name = "\improper Etherbor SG-8"
@@ -316,6 +330,9 @@
 
 /obj/projectile/beam/hitscan/kalix/pistol
 	name = "concentrated energy beam"
+	tracer_type = /obj/effect/projectile/tracer/kalix
+	muzzle_type = /obj/effect/projectile/muzzle/kalix
+	impact_type = /obj/effect/projectile/impact/kalix
 	damage_constant = 0.7
 	damage = 25
 	armour_penetration = -10
@@ -325,6 +342,7 @@
 	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
 	e_cost = 1000 //12 shots per cell
 	delay = 0
+	select_name = "lethal"
 
 /obj/item/gun/energy/kalix/pistol/empty_cell
 	spawn_no_ammo = TRUE
@@ -391,6 +409,9 @@
 
 /obj/projectile/beam/hitscan/kalix/pgf/pdw
 	name = "concentrated energy beam"
+	tracer_type = /obj/effect/projectile/tracer/pgf/pdw
+	muzzle_type = /obj/effect/projectile/muzzle/pgf/pdw
+	impact_type = /obj/effect/projectile/impact/pgf/pdw
 	damage_constant = 0.9
 	damage = 20
 	ap_constant = 0.9
@@ -400,7 +421,7 @@
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/pdw
 	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
 	e_cost = 666 //30 shots per cell
-	select_name = "kill"
+	select_name = "lethal"
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/pdw
 	projectile_type = /obj/projectile/beam/hitscan/disabler
@@ -502,33 +523,35 @@
 	)
 
 /obj/item/ammo_casing/energy/pgf/assault
-	select_name  = "AR"
+	select_name  = "medium"
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/assault
 	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
 	e_cost = 666 //30 shots per cell
 	delay = 1
 
 /obj/projectile/beam/hitscan/kalix/pgf/assault
-	tracer_type = /obj/effect/projectile/tracer/pgf/rifle
-	muzzle_type = /obj/effect/projectile/muzzle/pgf/rifle
-	impact_type = /obj/effect/projectile/impact/pgf/rifle
+	tracer_type = /obj/effect/projectile/tracer/pgf/assault
+	muzzle_type = /obj/effect/projectile/muzzle/pgf/assault
+	impact_type = /obj/effect/projectile/impact/pgf/assault
 	damage = 25 //bar
 	armour_penetration = 20
 	range = 14
 	damage_constant = 0.9
 
 /obj/item/ammo_casing/energy/pgf/sniper
-	select_name  = "DMR"
+	select_name  = "heavy"
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/sniper
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	e_cost = 2000 //10 shots per cell
 	delay = 6
 
 /obj/projectile/beam/hitscan/kalix/pgf/sniper
-	tracer_type = /obj/effect/projectile/tracer/laser/emitter
-	muzzle_type = /obj/effect/projectile/muzzle/laser/emitter
-	impact_type = /obj/effect/projectile/impact/laser/emitter
-
+	tracer_type = /obj/effect/projectile/tracer/pgf/sniper
+	muzzle_type = /obj/effect/projectile/muzzle/pgf/sniper
+	impact_type = /obj/effect/projectile/impact/pgf/sniper
+	hitscan_light_color_override = COLOR_RED_LIGHT
+	muzzle_flash_color_override = COLOR_RED_LIGHT
+	impact_light_color_override = COLOR_RED_LIGHT
 	damage = 35
 	armour_penetration = 40
 	range = 20
@@ -577,10 +600,9 @@
 	delay = 6
 
 /obj/projectile/beam/hitscan/kalix/hunt
-	tracer_type = /obj/effect/projectile/tracer/pulse
-	muzzle_type = /obj/effect/projectile/muzzle/pulse
-	impact_type = /obj/effect/projectile/impact/pulse
-
+	tracer_type = /obj/effect/projectile/tracer/kalix_hunt
+	muzzle_type = /obj/effect/projectile/muzzle/kalix_hunt
+	impact_type = /obj/effect/projectile/impact/kalix_hunt
 	damage = 35
 	armour_penetration = 30
 	range = 20
