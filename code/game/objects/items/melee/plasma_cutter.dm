@@ -25,7 +25,7 @@
 
 	power_use_amount = POWER_CELL_USE_VERY_LOW
 
-	tool_behaviour = NONE
+	tool_behaviour = TOOL_DECONSTRUCT
 	wall_decon_damage = 200
 	toolspeed = 0.75
 
@@ -50,6 +50,7 @@
 			TOOL_DECONSTRUCT = GLOB.advanced_cutting_effect,
 			TOOL_WELDER = GLOB.cutting_effect,
 		)
+	ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, REF(src))
 
 /obj/item/plasmacutter/ComponentInitialize()
 	. = ..()
@@ -144,7 +145,10 @@
 
 	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
 		playsound(src, 'sound/weapons/saberoff.ogg', 20, TRUE)
-		attack_self()
+		if(!ismob(loc))
+			switched_off()
+			CRASH("[type] was still wielded while not being held by a mob!")
+		attack_self(loc)
 
 /obj/item/plasmacutter/use_tool(atom/target, mob/living/user, delay, amount=1, volume=0, datum/callback/extra_checks)
 	if(delay)

@@ -419,6 +419,15 @@
 	box = /obj/item/storage/box/survival/engineer
 	chameleon_extras = /obj/item/stamp/ce
 
+/datum/outfit/job/warra/ce/empty
+	name = "Makosso-Warra - Chief Engineer - Naked"
+	jobtype = /datum/job/chief_engineer
+	job_icon = "chiefengineer"
+
+	belt = null
+	dcoat = null
+	head = null
+
 // Atmos Tech
 /datum/outfit/job/warra/atmos
 	name = "Makosso-Warra - Atmos Tech"
@@ -794,6 +803,28 @@
 	glasses = /obj/item/clothing/glasses/welding
 
 	backpack_contents = list(/obj/item/weldingtool/hugetank)
+
+/datum/outfit/job/warra/roboticist/empty
+	name = "Makosso-Warra - Roboticist (Naked)"
+	id_assignment = "Roboticist"
+	job_icon = "roboticist"
+	jobtype = /datum/job/roboticist
+
+	uniform = /obj/item/clothing/under/warra/science/robotics
+	suit = null
+	glasses = null
+
+	backpack_contents = null
+
+//Salvager
+/datum/outfit/job/warra/salvager
+	name = "Makosso-Warra - Salvager"
+	id_assignment = "Salvager"
+	job_icon = "engineer"
+	jobtype = /datum/job/engineer
+
+	uniform = /obj/item/clothing/under/warra/science/robotics
+	ears = /obj/item/radio/headset/warra
 
 // Pilot. idk
 /datum/outfit/job/warra/pilot

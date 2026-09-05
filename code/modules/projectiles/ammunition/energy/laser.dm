@@ -131,6 +131,19 @@
 	e_cost = 1000
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/laser/shotgun/drone
+	projectile_type = /obj/projectile/beam/weak/shotgun
+	pellets = 4
+	firing_effect_type = null
+	heavy_metal = FALSE
+
+// so it doesnt drop cases, also apparently every fucking caseless gun runtimes and thats way past my ability
+
+/obj/item/ammo_casing/energy/laser/shotgun/drone/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, atom/fired_from)
+	. = ..()
+	if(.)
+		qdel(src)
+
 /obj/item/ammo_casing/energy/laser/clover
 	projectile_type = /obj/projectile/beam/laser/clover
 	select_name = "kill"

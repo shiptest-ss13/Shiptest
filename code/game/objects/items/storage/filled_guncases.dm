@@ -16,6 +16,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/candor
 	mag_type = /obj/item/ammo_box/magazine/m45
 
+/obj/item/storage/guncase/pistol/candor/factory
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/candor/factory
+	mag_type = /obj/item/ammo_box/magazine/m45
+
 /obj/item/storage/guncase/pistol/detective
 	gun_type = /obj/item/gun/ballistic/revolver/detective
 	mag_type = /obj/item/ammo_box/c38
@@ -32,6 +36,9 @@
 /obj/item/storage/guncase/doublebarrel
 	gun_type = /obj/item/gun/ballistic/shotgun/doublebarrel
 
+/obj/item/storage/guncase/doublebarrel/roumain
+	gun_type = /obj/item/gun/ballistic/shotgun/doublebarrel/roumain
+
 /obj/item/storage/guncase/brimstone
 	gun_type = /obj/item/gun/ballistic/shotgun/brimstone
 
@@ -39,8 +46,15 @@
 	gun_type = /obj/item/gun/ballistic/rifle/illestren
 	mag_type = /obj/item/ammo_box/magazine/illestren_a850r
 
+/obj/item/storage/guncase/illestren/factory
+	gun_type = /obj/item/gun/ballistic/rifle/illestren/factory
+	mag_type = /obj/item/ammo_box/magazine/illestren_a850r
+
 /obj/item/storage/guncase/beacon
 	gun_type = /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
+
+/obj/item/storage/guncase/beacon/factory
+	gun_type = /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory
 
 /obj/item/storage/guncase/scout
 	gun_type = /obj/item/gun/ballistic/rifle/scout
@@ -49,14 +63,24 @@
 /obj/item/storage/guncase/winchester
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow
 
+/obj/item/storage/guncase/winchester/factory
+	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/factory
+
 /obj/item/storage/guncase/conflagration
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration
 
 /obj/item/storage/guncase/absolution
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/absolution
 
+/obj/item/storage/guncase/absolution/factory
+	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/absolution/factory
+
 /obj/item/storage/guncase/pyre
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/pyre
+	mag_type = /obj/item/ammo_box/a4570/empty
+
+/obj/item/storage/guncase/pyre/factory
+	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/pyre/factory
 	mag_type = /obj/item/ammo_box/a4570/empty
 
 /obj/item/storage/guncase/firestorm
