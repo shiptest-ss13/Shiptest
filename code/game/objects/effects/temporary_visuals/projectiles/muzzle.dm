@@ -47,7 +47,7 @@
 	icon_state = "muzzle_kalix"
 
 /obj/effect/projectile/muzzle/nock
-	icon_state = "muzzle_nock"
+	icon_state = "muzzle_kalix_nock"
 
 /obj/effect/projectile/muzzle/kalix_hunt
 	icon_state = "muzzle_kalix_hunt"
