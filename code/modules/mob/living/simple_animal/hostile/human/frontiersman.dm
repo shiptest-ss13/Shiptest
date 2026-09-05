@@ -55,7 +55,7 @@
 
 /mob/living/simple_animal/hostile/human/frontier/junkie
 	name = "Frontiersman Junkie"
-	desc = "A member of the brutal Frontiersman terrorist fleet! This one froths at the mouth, loaded with combat stimulants and pale hands as he clenches a pair of brass knuckles."
+	desc = "A member of the brutal Frontiersman terrorist fleet! This one froths at the mouth, loaded with combat stimulants and pale hands as they clench a pair of brass knuckles."
 	icon_state = "frontiersmanmelee"
 	icon = 'icons/mob/simple_frontiersman.dmi'
 	speak_chance = 0
@@ -100,6 +100,8 @@
 	melee_damage_lower = 50
 	melee_damage_upper = 50
 	armour_penetration = 20
+	maxHealth = 250
+	health = 250
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 	attack_verb_continuous = "cleaved"
 	attack_verb_simple = "chopped"
@@ -344,13 +346,16 @@
 	casingtype = /obj/item/ammo_casing/c9mm
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/spitter
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/neutered
+	weapon_drop_chance = 0
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/internals
 	icon_state = "frontiersmanrangedelite_mask"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/neutered
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/internals/neutered
 	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space
@@ -402,6 +407,18 @@
 	r_hand = /obj/item/gun/ballistic/automatic/marksman/f4/indie
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/f3/neutered
+	weapon_drop_chance = 0
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/f3/internals
+	icon_state = "frontiersmanrangedmosin_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/f3/internals/neutered
+	weapon_drop_chance = 0
+
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/f3/sentry
 	vision_range = 14
@@ -411,6 +428,18 @@
 	wander = 0
 	retreat_distance = 0
 	environment_smash = 0
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/f3/sentry/neutered
+	weapon_drop_chance = 0
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/f3/sentry/internals
+	icon_state = "frontiersmanrangedmosin_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/f3/sentry/internals/neutered
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/wasp
 	name = "Frontiersman Stinger"
