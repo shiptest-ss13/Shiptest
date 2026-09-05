@@ -303,7 +303,7 @@
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
-	spread_unwielded = 5
+	spread_unwielded = 2
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -372,7 +372,7 @@
 	fire_delay = 0.5 SECONDS
 
 	spread = 9
-	spread_unwielded = 10
+	spread_unwielded = 9
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
@@ -414,6 +414,7 @@
 	impact_type = /obj/effect/projectile/impact/pgf/pdw
 	damage_constant = 0.9
 	damage = 20
+	ap_constant = 0.9
 	armour_penetration = 10
 
 /obj/item/ammo_casing/energy/kalix/pgf/pdw
