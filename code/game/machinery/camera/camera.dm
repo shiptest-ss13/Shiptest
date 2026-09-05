@@ -75,9 +75,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera, 16)
 			upgradeEmpProof()
 		else if(assembly.malf_xray_firmware_present) //if it was secretly upgraded via the MALF AI Upgrade Camera Network ability
 			upgradeEmpProof(TRUE)
-
-		if(assembly.proxy_module)
-			upgradeMotion()
 	else
 		assembly = new(src)
 		assembly.state = 4 //STATE_FINISHED
@@ -124,11 +121,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera, 16)
 		. += "It has an X-ray photodiode installed."
 	else
 		. += span_info("It can be upgraded with an X-ray photodiode with an <b>analyzer</b>.")
-	if(isMotion())
-		. += "It has a proximity sensor installed."
-	else
-		. += span_info("It can be upgraded with a <b>proximity sensor</b>.")
-
 	if(!status)
 		. += span_info("It's currently deactivated.")
 		if(!panel_open && powered())
@@ -225,9 +217,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera, 16)
 	if(choice == assembly.emp_module)
 		assembly.drop_upgrade(assembly.emp_module)
 		removeEmpProof()
-	if(choice == assembly.proxy_module)
-		assembly.drop_upgrade(assembly.proxy_module)
-		removeMotion()
 	I.play_tool_sound(src)
 	return TRUE
 
@@ -303,17 +292,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera, 16)
 				if(attacking_item.use_tool(src, user, 0, amount=1))
 					upgradeEmpProof(FALSE, TRUE)
 					to_chat(user, span_notice("You attach [attacking_item] into [assembly]'s inner circuits."))
-			else
-				to_chat(user, span_warning("[src] already has that upgrade!"))
-			return
-
-		else if(istype(attacking_item, /obj/item/assembly/prox_sensor))
-			if(!isMotion())
-				if(!user.temporarilyRemoveItemFromInventory(attacking_item))
-					return
-				upgradeMotion()
-				to_chat(user, span_notice("You attach [attacking_item] into [assembly]'s inner circuits."))
-				qdel(attacking_item)
 			else
 				to_chat(user, span_warning("[src] already has that upgrade!"))
 			return
