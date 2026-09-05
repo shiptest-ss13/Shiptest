@@ -3954,16 +3954,16 @@
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/medical)
 "nr" = (
-/obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
-	piping_layer = 1;
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 9
+	},
+/obj/machinery/atmospherics/components/trinary/filter/atmos/n2{
+	piping_layer = 1;
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -14125,16 +14125,16 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet)
 "XE" = (
-/obj/machinery/atmospherics/components/trinary/filter/atmos/n2{
-	piping_layer = 1;
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer4{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
 	dir = 4
+	},
+/obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
+	piping_layer = 1;
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
