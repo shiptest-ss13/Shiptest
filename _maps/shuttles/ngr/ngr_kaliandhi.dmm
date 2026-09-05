@@ -212,6 +212,7 @@
 	},
 /obj/effect/turf_decal/box/corners,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "bn" = (
@@ -871,6 +872,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/computer/helm/viewscreen/directional/west,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "ep" = (
@@ -1330,9 +1334,12 @@
 	icon_state = "volpump_on_map-2";
 	piping_layer = 1;
 	pixel_x = -5;
-	pixel_y = 0
+	pixel_y = 0;
+	name = "exhaust to external"
 	},
-/obj/machinery/atmospherics/components/binary/valve/on/layer5,
+/obj/machinery/atmospherics/components/binary/valve/on/layer5{
+	name = "waste to external"
+	},
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -2001,15 +2008,6 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/mono,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
-"iP" = (
-/obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_x = 4;
-	pixel_y = 6
-	},
-/obj/item/pen,
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
 "iQ" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
@@ -2024,6 +2022,9 @@
 /obj/item/tank/internals/oxygen,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/suit/space/hardsuit/mining/heavy/ngr,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "iV" = (
@@ -2281,6 +2282,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/dim/directional/south,
+/obj/item/analyzer{
+	pixel_x = -1;
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "kp" = (
@@ -2614,6 +2619,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "mD" = (
@@ -7061,13 +7067,13 @@
 /obj/effect/spawner/random/food_or_drink/shoalpockets,
 /obj/effect/spawner/random/food_or_drink/shoalpockets,
 /obj/item/storage/cans/sixbeer,
+/obj/item/pizzabox/margherita,
+/obj/item/pizzabox,
 /obj/structure/closet/secure_closet/freezer{
 	anchored = 1;
 	locked = 0;
 	name = "fridge"
 	},
-/obj/item/pizzabox/margherita,
-/obj/item/pizzabox,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
 "Kw" = (
@@ -7499,6 +7505,9 @@
 "Ml" = (
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -7992,11 +8001,12 @@
 	},
 /obj/machinery/camera/autoname/directional/south,
 /obj/structure/table/reinforced,
-/obj/item/analyzer{
-	pixel_x = 1;
-	pixel_y = 9
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/security/telescreen/entertainment{
+	dir = 4;
+	pixel_x = -5;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Op" = (
@@ -9005,6 +9015,13 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"Tm" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "To" = (
 /obj/structure/platform/industrial{
 	dir = 4
@@ -9245,6 +9262,9 @@
 	dir = 1;
 	pixel_x = 2;
 	pixel_y = 3
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -9502,6 +9522,9 @@
 	pixel_x = 5;
 	pixel_y = 5;
 	name = "Portside Holofield"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -10175,6 +10198,11 @@
 /area/ship/crew/dorm/commad)
 "Zn" = (
 /obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = 4;
+	pixel_y = 6
+	},
+/obj/item/pen,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Zo" = (
@@ -11870,7 +11898,7 @@ uJ
 CS
 HF
 EX
-Zn
+Tm
 FQ
 xt
 Cg
@@ -11904,7 +11932,7 @@ HF
 EX
 UW
 FQ
-iP
+Zn
 Cg
 DP
 DP
