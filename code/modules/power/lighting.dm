@@ -216,7 +216,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 0
 	active_power_usage = 0
-	power_channel = AREA_USAGE_LIGHT //Lights are calc'd via area so they dont need to be in the machine list
+	power_channel = AREA_USAGE_LIGHT //Lights are calc'd via area so they dont need to be in the machine list //What's calc short for
 	var/on = FALSE					// 1 if on, 0 if off
 	var/on_gs = FALSE
 	var/static_power_used = 0
@@ -224,11 +224,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	var/bulb_power = 1			// basically the alpha of the emitted light source
 	var/bulb_colour = "#f3fffa"	// default colour of the light
 	var/status = LIGHT_OK		// LIGHT_OK, _EMPTY, _BURNED or _BROKEN
-	var/flickering = FALSE
 	var/light_type = /obj/item/light/tube		// the type of light item
 	var/fitting = "tube"
 	var/switchcount = 0			// count of number of times switched on/off
-								// this is used to calc the probability the light burns out
+								// this is used to calc the probability the light burns out //What does calc mean
 
 	var/rigged = FALSE			// true if rigged to explode
 
@@ -251,16 +250,21 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	var/bulb_vacuum_colour = "#4F82FF"	// colour of the light when air alarm is set to severe
 	var/bulb_vacuum_brightness = 8
 
-	var/constant_flickering = FALSE // Are we always flickering?
+	///Are we always flickering?
+	var/constant_flickering = FALSE
 	var/flicker_timer = null
+	///True if the light is turned off mid-flickering
 	var/pause_flicker = FALSE
 
 	///wallmount trait
 	var/is_wallmounted = TRUE
 
-	var/delay = 5 ///Amount of delay in deciseconds for light to turn on.
-	var/stagger = FALSE ///If set, delay is randomised.
-	var/delay_timer ///Timer for toggle delay
+	///Amount of delay in deciseconds for light to turn on.
+	var/delay = 5
+	///If set, delay is randomised.
+	var/stagger = FALSE
+	///Timer for toggle delay
+	var/delay_timer
 
 /obj/machinery/light/Initialize(mapload)
 	. = ..()
@@ -660,7 +664,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 // if a light is turned off, it won't activate emergency power
 /obj/machinery/light/proc/turned_off()
 	var/area/A = get_area(src)
-	return !A.lightswitch && A.power_light || flickering || flicker_timer
+	return !A.lightswitch && A.power_light || flicker_timer
 
 // returns whether this light has power
 // true if area has power and lightswitch is on
@@ -724,22 +728,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 		flicker_timer = addtimer(CALLBACK(src, PROC_REF(flicker_pulse)), rand(0.5 SECONDS, 1 SECONDS), TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_OVERRIDE)
 		return
 	stop_flickering(TRUE)
-
-/obj/machinery/light/proc/flicker(amount = rand(10, 20))
-	set waitfor = 0
-	if(flickering)
-		return
-	flickering = 1
-	if(on && status == LIGHT_OK)
-		for(var/i = 0; i < amount; i++)
-			if(status != LIGHT_OK)
-				break
-			on = !on
-			update(0)
-			sleep(rand(5, 15))
-		on = (status == LIGHT_OK)
-		update(0)
-	flickering = 0
 
 // ai attack - make lights flicker, because why not
 
