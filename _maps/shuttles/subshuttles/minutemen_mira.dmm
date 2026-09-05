@@ -363,14 +363,6 @@
 /area/ship/bridge)
 "A" = (
 /obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_x = -1;
-	pixel_y = 5
-	},
-/obj/item/pen/fourcolor{
-	pixel_x = -2;
-	pixel_y = 7
-	},
 /obj/machinery/turretid/ship{
 	pixel_y = 26;
 	id = "glaucus_grid";
@@ -378,6 +370,7 @@
 	req_access = null;
 	req_access_txt = "48"
 	},
+/obj/machinery/fax/clip,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "B" = (
@@ -613,7 +606,18 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/fax/clip,
+/obj/item/paper_bin{
+	pixel_x = 8;
+	pixel_y = 5
+	},
+/obj/item/pen/fourcolor{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/obj/machinery/recharger{
+	pixel_x = -6;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "S" = (

@@ -18,7 +18,7 @@
 	wield_delay = 0.2 SECONDS
 	fire_delay = 0.2 SECONDS
 	spread = 5
-	spread_unwielded = 7
+	spread_unwielded = 5
 
 	wield_slowdown = PISTOL_SLOWDOWN
 	aimed_wield_slowdown = PISTOL_AIM_SLOWDOWN

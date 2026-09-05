@@ -57,7 +57,7 @@
 	name = "winchester internal magazine"
 	ammo_type = /obj/item/ammo_casing/c38
 	caliber = ".38"
-	max_ammo = 12
+	max_ammo = 18
 
 /obj/item/ammo_box/magazine/internal/shot/winchester/presawn
 	max_ammo = 7

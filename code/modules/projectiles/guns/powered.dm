@@ -1,4 +1,7 @@
+// subtype for all powered guns (gauss guns)
 /obj/item/gun/ballistic/automatic/powered
+	name = "powered gun"
+	desc = "oooooo you want to report this to a coder oooooo you want to file a bug report"
 	bad_type = /obj/item/gun/ballistic/automatic/powered
 	default_ammo_type = /obj/item/ammo_box/magazine/gauss
 	allowed_ammo_types = list(
@@ -12,6 +15,10 @@
 		/obj/item/stock_parts/cell/gun/upgraded/empty,
 	)
 	charge_sections = 3
+
+	var/obj/item/stock_parts/cell/gun/cell // type of cell we use
+	var/internal_cell = FALSE // can we remove the cell
+	var/unscrewing_time = 2 SECONDS // time to remove cell
 
 /obj/item/gun/ballistic/automatic/powered/Initialize()
 	. = ..()
