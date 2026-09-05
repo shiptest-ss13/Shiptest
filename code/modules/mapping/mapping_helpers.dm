@@ -553,3 +553,24 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 		qdel(src)
 	log_mapping("[src] at [x],[y] could not find a hostile human to neuter.")
 	qdel(src)
+
+/obj/effect/mapping_helpers/lights
+	name = "area light helper"
+	desc = "set: flicker chance, amount of toggle delay, random delay (stagger), light switch status. flicker_chance is set as a percentage, delay is set in deciseconds. if lightswitch = 0, lights are turned off."
+	late = TRUE
+	var/flicker_chance = 0
+	var/stagger = 0
+	var/delay = 0
+	var/lightswitch = 1
+
+/obj/effect/mapping_helpers/lights/LateInitialize()
+	var/area/area = get_area(src)
+	for(var/thing in area)
+		if(istype(thing, /obj/machinery/light))
+			var/obj/machinery/light/light = thing
+			if(prob(flicker_chance))
+				light.start_flickering()
+			light.stagger = stagger
+			light.delay = delay
+			area.lightswitch = lightswitch
+	qdel(src)

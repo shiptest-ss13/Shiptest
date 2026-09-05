@@ -39,8 +39,11 @@ GLOBAL_LIST_INIT(duplicate_forbidden_vars,list(
 			var/obj/machinery/M = O
 			M.power_change()
 			if(istype(O, /obj/machinery/button))
-				var/obj/machinery/button/B = O
+				var/obj/machinery/button/B = O // O M B N you're INCOMPREHENSIBLE
 				B.setup_device()
+			if(istype(O, /obj/machinery/light))
+				var/obj/machinery/light/light = O
+				LAZYCLEARLIST(light.light_sources)
 
 	if(holoitem)
 		O.flags_1 |= HOLOGRAM_1
