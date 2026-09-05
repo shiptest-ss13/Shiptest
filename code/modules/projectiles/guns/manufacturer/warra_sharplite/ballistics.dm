@@ -257,6 +257,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
 
+EMPTY_GUN_HELPER(revolver/rhino)
+
 /obj/item/gun/ballistic/automatic/smg/expedition
 	name = "\improper Advantage SGL9 Expedition"
 	desc = "A deceptively lightweight submachinegun. Its novel recoil compensation system almost eliminates recoil, and its compact size is well-suited for use aboard ships and stations."
