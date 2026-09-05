@@ -91,12 +91,6 @@
 			var/obj/machinery/camera/contained_camera = loc
 			contained_camera.removeEmpProof(malf_emp_firmware_present) //make sure we don't remove MALF upgrades
 
-	else if(A == proxy_module)
-		emp_module = null
-		if(istype(loc, /obj/machinery/camera))
-			var/obj/machinery/camera/contained_camera = loc
-			contained_camera.removeMotion()
-
 	return ..()
 
 
