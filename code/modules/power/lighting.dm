@@ -260,7 +260,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	var/is_wallmounted = TRUE
 
 	///Amount of delay in deciseconds for light to turn on.
-	var/delay = 5
+	var/delay = 2
 	///If set, delay is randomised.
 	var/stagger = FALSE
 	///Timer for toggle delay
