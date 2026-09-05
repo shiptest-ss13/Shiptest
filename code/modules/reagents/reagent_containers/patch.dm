@@ -60,3 +60,8 @@
 	name = "strider patch"
 	desc = "A patch made to give the user a burst of physical endurance."
 	list_reagents = list(/datum/reagent/drug/cinesia = 10, /datum/reagent/medicine/hadrakine = 5)
+
+/obj/item/reagent_containers/pill/patch/rezadone
+	name = "rezadone patch"
+	desc = "A patch of a rejuvinating agent, capable of de-husking a body."
+	list_reagents = list(/datum/reagent/medicine/rezadone = 5)
