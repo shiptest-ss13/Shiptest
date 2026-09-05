@@ -194,6 +194,14 @@
 	contains = list(/obj/item/storage/box/medigels)
 	crate_name = "empty medical gel crate"
 
+/datum/supply_pack/medical/rezadone_patch
+	name = "Rezadone Patch Single-Pack"
+	desc = "Contains a singular Rezadone patch for de-husking a patient."
+	cost = 800
+	contains = list(/obj/item/reagent_containers/pill/patch/rezadone)
+	crate_name = "rezadone patch crate"
+
+
 /* Hypospray supplies */
 
 /datum/supply_pack/medical/mkii_hypo
