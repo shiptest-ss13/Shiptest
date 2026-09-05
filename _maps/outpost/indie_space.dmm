@@ -944,6 +944,10 @@
 /obj/effect/turf_decal/miskilamo_big/seven{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/lights{
+	lightswitch = 0;
+	delay = 50
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
 "ec" = (
@@ -1559,6 +1563,10 @@
 "gp" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/mapping_helpers/lights{
+	stagger = 1;
+	lightswitch = 0
+	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
 "gq" = (
@@ -3507,6 +3515,18 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
+"nq" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/light_switch,
+/turf/open/floor/plasteel/mono{
+	dir = 1
+	},
+/area/outpost/cargo)
 "nr" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -4691,7 +4711,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/machinery/light/small/directional/west,
+/obj/machinery/light/small/directional/west{
+	constant_flickering = 1
+	},
 /obj/effect/decal/cleanable/wrapping,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
@@ -6626,6 +6648,17 @@
 /obj/effect/spawner/random/trash/decal,
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
+"zT" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/machinery/light_switch,
+/turf/open/floor/plasteel/dark,
+/area/outpost/hallway/central)
 "zU" = (
 /obj/machinery/airalarm/directional/east,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -7055,6 +7088,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/light_switch,
 /turf/open/floor/plasteel/mono,
 /area/outpost/crew/bar)
 "Br" = (
@@ -8505,6 +8539,10 @@
 /obj/effect/turf_decal/corner/opaque/black/half,
 /obj/effect/turf_decal/corner/transparent/brown{
 	dir = 4
+	},
+/obj/effect/mapping_helpers/lights{
+	flicker_chance = 25;
+	delay = 10
 	},
 /turf/open/floor/plasteel/mono,
 /area/outpost/crew/bar)
@@ -12886,6 +12924,7 @@
 /obj/effect/turf_decal/miskilamo_big/three{
 	dir = 4
 	},
+/obj/machinery/light_switch,
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
 "Yx" = (
@@ -13201,6 +13240,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/outpost/crew/lounge)
+"ZN" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/effect/mapping_helpers/lights{
+	flicker_chance = 100;
+	stagger = 1;
+	lightswitch = 0
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/hallway/central)
 "ZP" = (
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/vacant_rooms/office)
@@ -19076,7 +19130,7 @@ GL
 Co
 dE
 al
-oX
+zT
 lu
 sw
 JW
@@ -19199,7 +19253,7 @@ ks
 Co
 Tm
 RK
-oX
+ZN
 Hs
 sw
 sw
@@ -21514,7 +21568,7 @@ TB
 Zb
 xh
 PX
-PX
+nq
 Bb
 Ny
 TM
