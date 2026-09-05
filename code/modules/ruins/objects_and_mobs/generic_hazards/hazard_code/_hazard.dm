@@ -168,7 +168,7 @@ evil 'code' that sets off the above procs. mappers beware!
 	if(ismob(target) && haz_faction)
 		var/mob/target_mob = target
 		var/shared_faction = faction_check(haz_faction, target_mob.faction)
-		if(shared_faction && !invert_faction)
+		if(shared_faction == !invert_faction)
 			return FALSE
 	if(!iseffect(target) && on && !disabled)
 		return TRUE
