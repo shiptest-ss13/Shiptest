@@ -161,7 +161,7 @@
 				for(var/i = 0; i < amount; i++)
 					unprocessed_packs += pack
 
-			outpost_docked.market.make_order(usr, unprocessed_packs, return_crate_spawner())
+			outpost_docked.market.make_order(usr, unprocessed_packs, return_crate_spawner(), current_faction)
 
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])

@@ -33,7 +33,7 @@
 	valid_attachments = list()
 	slot_available = list()
 	fire_delay = 0.4 SECONDS
-	spread_unwielded = 15
+	spread_unwielded = 4
 	recoil = 0.5
 	recoil_unwielded = 2
 	semi_auto = FALSE
