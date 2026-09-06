@@ -51,6 +51,8 @@
 	var/obj/item/bodypart/part
 	for(var/body_zone in bodyparts)
 		part = bodyparts[body_zone]
+		if(!part)
+			continue
 		weighted_parts[body_zone] = part.body_weight
 	return pick_weight(weighted_parts)
 
