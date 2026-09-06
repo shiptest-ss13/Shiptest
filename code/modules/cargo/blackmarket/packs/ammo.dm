@@ -263,6 +263,17 @@
 	stock_max = 5
 	availability_prob = 0
 
+/datum/blackmarket_item/ammo/heater_mag
+	name = "Heater Casket Magazine"
+	desc = "50 rounds for when you really gotta stroke that flame."
+	item = /obj/item/ammo_box/magazine/spitter_9mm
+
+	cost_min = 900
+	cost_max = 1500
+	stock_min = 1
+	stock_max = 2
+	availability_prob = 20
+
 /datum/blackmarket_item/ammo/spitter_mag
 	name = "Spitter Magazine"
 	desc = "A 30 round 9mm magazine for the Spitter submachine gun."

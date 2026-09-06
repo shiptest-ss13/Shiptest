@@ -506,6 +506,14 @@
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/slammer
 	mag_type = /obj/item/ammo_box/magazine/m12g_slammer
 
+/obj/item/storage/guncase/heater
+	gun_type = /obj/item/gun/ballistic/automatic/smg/heater
+	mag_type = /obj/item/ammo_box/magazine/heater
+
+/obj/item/storage/guncase/scorcher
+	gun_type = /obj/item/gun/ballistic/automatic/smg/heater/scorcher
+	mag_type = /obj/item/ammo_box/magazine/heater
+
 /* Eoehoma */
 
 /obj/item/storage/guncase/energy/e10
