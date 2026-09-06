@@ -287,7 +287,7 @@ GLOBAL_LIST_INIT(immerse_ignored_movable, typecacheof(list(
 /datum/element/immerse/proc/on_spin_animation(atom/source, speed, loops, segments, segment)
 	SIGNAL_HANDLER
 	var/atom/movable/immerse_mask/immerse_mask = generated_visual_overlays[source]
-	immerse_mask.do_spin_animation(speed, loops, segments, -segment)
+	immerse_mask?.do_spin_animation(speed, loops, segments, -segment)
 
 /datum/element/immerse/proc/on_update_offsets(mob/living/source, new_x, new_y, new_w, new_z, animate)
 	SIGNAL_HANDLER
