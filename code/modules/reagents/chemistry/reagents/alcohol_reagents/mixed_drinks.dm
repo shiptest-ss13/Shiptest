@@ -311,7 +311,6 @@
 	boozepwr = 25
 	quality = DRINK_VERYGOOD
 	taste_description = "spicy toxins"
-	glass_icon_state = "toxinsspecialglass"
 	glass_name = "Toxins Special"
 	glass_desc = "Traditionally lit with a welder while the server is blindfolded, but you don't want to cause an ACTUAL accident here."
 
@@ -471,7 +470,7 @@
 	boozepwr = 70
 	quality = DRINK_NICE
 	taste_description = "soda"
-	glass_icon_state = "whiskeysodaglass2"
+	glass_icon_state = "whiskeysodaglass"
 	glass_name = "whiskey soda"
 	glass_desc = "Bitter and refreshing."
 
@@ -695,6 +694,7 @@
 	boozepwr = 50
 	quality = DRINK_GOOD
 	taste_description = "your brain coming out your nose"
+	glass_icon_state = "changelingsting"
 	glass_name = "Changeling Sting"
 	glass_desc = "Made by the superstitous. Keeps the changelings away... whereever they may be."
 
@@ -901,7 +901,6 @@
 	quality = DRINK_VERYGOOD
 	taste_description = "a numbing sensation"
 	metabolization_rate = 1 * REAGENTS_METABOLISM
-	glass_icon_state = "neurotoxinglass"
 	glass_name = "Neurotoxin"
 	glass_desc = "The story goes that this drink was made on a bet between Cybersun chemists, debating if a drink could be used to put down a suspected Makosso-Warra spy. While morphine wasn't <i>supposed</i> to be used, it put them down all the same."
 
@@ -1025,6 +1024,7 @@
 	boozepwr = 25
 	quality = DRINK_NICE
 	taste_description = "a slap on the face in the best possible way"
+	glass_icon_state = "stinger"
 	glass_name = "Stinger"
 	glass_desc = "A brandy-and-menthe mixed drink to end the day with. While often found in the hands of the upper class, there's nothing wrong with feeling a little fancy."
 
@@ -1071,7 +1071,6 @@
 	boozepwr = 40
 	taste_description = "stale bread with a staler aftertaste"
 	nutriment_factor = 2 * REAGENTS_METABOLISM
-	glass_icon_state = "squirt_cider"
 	glass_name = "Squirt Cider"
 	glass_desc = "Squirt cider will toughen you right up. Too bad about the musty aftertaste."
 
@@ -1129,7 +1128,6 @@
 	taste_description = "mint and chocolate"
 	boozepwr = 25
 	quality = DRINK_GOOD
-	glass_icon_state = "peppermint_patty"
 	glass_name = "Peppermint Patty"
 	glass_desc = "A boozy, minty hot cocoa that warms your belly on a cold night."
 
@@ -1654,6 +1652,7 @@
 	boozepwr = 40
 	quality = DRINK_VERYGOOD
 	taste_description = "an incoming bullet"
+	glass_icon_state = "shotinthedark"
 	glass_name = "Shot in the Dark"
 	glass_desc = "A specially made drink from the popular webseries RILENA: LMR. Contains traces of gold from the real bullet inside... which wouldn't make sense outside of the series it comes from."
 
@@ -1664,6 +1663,7 @@
 	boozepwr = 80
 	quality = DRINK_VERYGOOD
 	taste_description = "being shot in the head several times and then set on fire"
+	glass_icon_state = "bullethell"
 	glass_name = "Bullet Hell"
 	glass_desc = "A specially made drink from the popular webseries RILENA: LMR. Served in an oversized brass shell casing, since glass would probably melt from how intense it is."
 	accelerant_quality = 20
@@ -1675,6 +1675,7 @@
 	boozepwr = 10
 	quality = DRINK_GOOD
 	taste_description = "home, in a way that hurts"
+	glass_icon_state = "homesick"
 	glass_name = "Homesick"
 	glass_desc = "A specially made drink from the popular webseries RILENA: LMR. Ri's mother's favorite drink."
 

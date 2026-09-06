@@ -32,10 +32,10 @@
 	brute_damage = 140
 	burn_damage = 78
 	mob_gender = FEMALE
-	outfit = /datum/outfit/job/inteq/paramedic/tradepost
+	outfit = /datum/outfit/job/inteq/paramedic
 
 /obj/effect/mob_spawn/human/corpse/inteq/vanguard/tradepost
-	outfit = /datum/outfit/job/inteq/captain/tradepost
+	outfit = /datum/outfit/job/inteq/command/captain
 	mob_species = /datum/species/spider
 	gender = FEMALE
 
@@ -45,17 +45,4 @@
 /obj/effect/mob_spawn/human/corpse/indie/manager
 	outfit = /datum/outfit/job/independent/captain/manager
 	mob_species = /datum/species/elzuose
-	backpack_contents = null
-
-
-/datum/outfit/job/inteq/paramedic/tradepost
-	name = "Trade Post Corpsman"
-	belt = /obj/item/storage/belt/medical/webbing
-
-/datum/outfit/job/inteq/captain/tradepost
-	name = "Trade Post Vanguard"
-
-	r_pocket = null
-	l_pocket = null
-
 	backpack_contents = null

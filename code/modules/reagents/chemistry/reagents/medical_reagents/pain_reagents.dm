@@ -25,9 +25,9 @@
 	if(current_cycle >= 5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_light, name)
 	switch(current_cycle)
-		if(60)
+		if(375) // more than 30 units makes you sleepy
 			to_chat(M, span_warning("You feel drowsy..."))
-		if(61 to INFINITY)
+		if(376 to INFINITY)
 			M.drowsyness += 0.5 * seconds_per_tick
 	..()
 
@@ -72,12 +72,12 @@
 	if(current_cycle >= 5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name)
 	switch(current_cycle)
-		if(29)
+		if(50) // more than 10 units makes you sleepy
 			to_chat(M, span_warning("You start to feel tired..."))
-		if(30 to 59)
+		if(51 to 74)
 			M.drowsyness += 0.5 * seconds_per_tick
-		if(60 to INFINITY)
-			M.Sleeping(20 * seconds_per_tick)
+		if(75 to INFINITY)
+			M.Sleeping(20 * seconds_per_tick) // honk mimimi
 			. = 1
 	..()
 

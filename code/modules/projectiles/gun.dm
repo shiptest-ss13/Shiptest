@@ -1,6 +1,6 @@
 /obj/item/gun
 	name = "gun"
-	desc = "It's a gun. It's pretty terrible, though."
+	desc = "The very platonic ideal of a gun. Doesn't shoot, oddly enough. You get the feeling that you shouldn't be seeing this and should file a bug report."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "flatgun"
 	item_state = "gun"
@@ -21,333 +21,141 @@
 	attack_verb = list("struck", "hit", "bashed")
 	pickup_sound = 'sound/items/handling/gun_pickup.ogg'
 	drop_sound = 'sound/items/handling/gun_drop.ogg'
-	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
-	trigger_guard = TRIGGER_GUARD_NORMAL
-
+	trigger_guard = TRIGGER_GUARD_NORMAL // cruft?
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
 
-	///The manufacturer of this weapon. For flavor mostly. If none, this will not show.
-	var/manufacturer = MANUFACTURER_NONE
+	var/manufacturer = MANUFACTURER_NONE // manufacturer shown in examine text
 
-/*
- *  Muzzle
-*/
-	///Effect for the muzzle flash of the gun.
-	var/obj/effect/muzzle_flash/muzzle_flash
-
+	// MUZZLE FLASH //
+	var/obj/effect/muzzle_flash/muzzle_flash // effect to use
 	light_range = 3
 	light_color = COLOR_VERY_SOFT_YELLOW
 	light_on = FALSE
+	var/muzzleflash_iconstate // icon state to use
 
-	///Icon state of the muzzle flash effect.
-	var/muzzleflash_iconstate
-
-/*
- *  Firing
-*/
-	var/actually_shoots = TRUE //is this gun a brick and doesnt fire bullet
+	// FIRING //
+	var/actually_shoots = TRUE // is this gun real and not a dud
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
 	var/dry_fire_sound = 'sound/weapons/gun/general/dry_fire.ogg'
 	var/dry_fire_text = "click"
 
-/*
- *  Reloading
-*/
-	var/obj/item/ammo_casing/chambered = null
-	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
-	var/tac_reloads = TRUE
-	///If we have the 'snowflake mechanic,' how long should it take to reload?
+	// RELOADING //
+	var/obj/item/ammo_casing/chambered = null // round currently chambered
+	var/tac_reloads = TRUE // can we tactical reload this?
 	var/tactical_reload_delay = 1 SECONDS
+	var/default_ammo_type // magazine to spawn in the gun
+	var/allowed_ammo_types // types we're allowed to load
+	var/blacklisted_ammo_types // types we're not allowed to load
+	var/internal_magazine = FALSE // whether the mag/cell is removable or not
 
-//BALLISTIC
-	///Compatible magazines with the gun
-	var/default_ammo_type
-	///Allowed base types of magazines with the gun
-	var/allowed_ammo_types
-	///Incompatible magazines with the gun
-	var/blacklisted_ammo_types
-	///Whether the gun alarms when empty or not.
-	var/empty_alarm = FALSE
-	///Do we eject the magazine upon runing out of ammo?
-	var/empty_autoeject = FALSE
-	///Whether the gun supports multiple special mag types
-	var/special_mags = FALSE
-
-	///Actual magazine currently contained within the gun
-	var/obj/item/ammo_box/magazine/magazine
-	///whether the gun ejects the chambered casing
-	var/casing_ejector = TRUE
-	///Whether the gun has an internal magazine or a detatchable one. Overridden by BOLT_TYPE_NO_BOLT.
-	var/internal_magazine = FALSE
-	///Whether the gun *can* be reloaded
-	var/sealed_magazine = FALSE
-
-
-	///Phrasing of the magazine in examine and notification messages; ex: magazine, box, etx
-	var/magazine_wording = "magazine"
-	///Phrasing of the cartridge in examine and notification messages; ex: bullet, shell, dart, etc.
-	var/cartridge_wording = "bullet"
-
-	///sound when inserting magazine
+	// RELOADING - SOUNDS //
 	var/load_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg'
-	///sound when inserting an empty magazine
-	var/load_empty_sound = 'sound/weapons/gun/general/magazine_insert_empty.ogg'
-	///volume of loading sound
 	var/load_sound_volume = 40
-	///whether loading sound should vary
 	var/load_sound_vary = TRUE
-	///Sound of ejecting a magazine
 	var/eject_sound = 'sound/weapons/gun/general/magazine_remove_full.ogg'
-	///sound of ejecting an empty magazine
-	var/eject_empty_sound = 'sound/weapons/gun/general/magazine_remove_empty.ogg'
-	///volume of ejecting a magazine
-	var/eject_sound_volume = 40
-	///whether eject sound should vary
-	var/eject_sound_vary = TRUE
 
-//ENERGY
-	//What type of power cell this uses
-	var/obj/item/stock_parts/cell/gun/cell
-	//Can it be charged in a recharger?
-	var/can_charge = TRUE
-	var/selfcharge = FALSE
-	var/charge_timer = 0
-	var/charge_delay = 8
-	//whether the gun's cell drains the cyborg user's cell to recharge
-	var/use_cyborg_cell = FALSE
-	//Time it takes to unscrew the cell
-	var/unscrewing_time = 2 SECONDS
-
-	///if the gun's cell cannot be replaced
-	var/internal_cell = FALSE
-
-	var/list/ammo_type = list(/obj/item/ammo_casing/energy)
-	//The state of the select fire switch. Determines from the ammo_type list what kind of shot is fired next.
-	var/select = 1
-
-/*
- *  Operation
-*/
-	//whether or not a message is displayed when fired
-	var/suppressed = FALSE
+	// OPERATION //
+	var/suppressed = FALSE // should we not display messages and use different sfx
 	var/suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
 	var/suppressed_volume = 60
 
-	//true if the gun is wielded via twohanded component, shouldnt affect anything else
-	var/wielded = FALSE
-	//true if the gun is wielded after delay, should affects accuracy
-	var/wielded_fully = FALSE
-	///Slowdown for wielding
+	var/wielded = FALSE // are we holding in two hands, shouldn't affect stats
+	var/wielded_fully = FALSE // wield delay has passed, change our stats
 	var/wield_slowdown = 0.1
-	///slowdown for aiming whilst wielding
 	var/aimed_wield_slowdown = 0.1
-	///How long between wielding and firing in tenths of seconds
-	var/wield_delay	= 0.4 SECONDS
-	///Storing value for above
-	var/wield_time = 0
+	var/wield_delay	= 0.4 SECONDS // how long after wielding can we fire
+	var/wield_time = 0 // timer for above
 
-//Beam aim (does this need to charge up it's shots before firing)
+	// OPERATION - ENERGY //
+	// this var is used to select the ammo type for energy guns
+	// but is here because the e40 also uses it. fix this Later
+	var/select = 1 // what index of the ammo_type list are we firing?
+
+	// OPERATION - BEAM AIMING //
+	// if we have a beam aiming mode, these are used for it
 	var/aiming = FALSE
 	var/aiming_time = 12
 	var/aiming_time_fire_threshold = 5
 	var/aiming_time_left = 12
 	var/aiming_time_increase_user_movement = 3
 	var/aiming_time_increase_angle_multiplier = 0.1
-	var/list/obj/effect/projectile/tracer/current_tracers
 
-// BALLISTIC
-	///Whether the gun has to be racked each shot or not.
-	var/semi_auto = TRUE
-	///The bolt type of the gun, affects quite a bit of functionality, see gun.dm in defines for bolt types: BOLT_TYPE_STANDARD; BOLT_TYPE_LOCKING; BOLT_TYPE_OPEN; BOLT_TYPE_NO_BOLT
-	var/bolt_type = BOLT_TYPE_STANDARD
-	///Used for locking bolt and open bolt guns. Set a bit differently for the two but prevents firing when true for both.
-	var/bolt_locked = FALSE
-	///Phrasing of the bolt in examine and notification messages; ex: bolt, slide, etc.
-	var/bolt_wording = "bolt"
-	///length between individual racks
-	var/rack_delay = 5
-	///time of the most recent rack, used for cooldown purposes
-	var/recent_rack = 0
+	// WEAPON STATS //
+	var/weapon_weight = WEAPON_LIGHT // weight class of the weapon, for slowdown
+	var/projectile_damage_multiplier = 1 // modifier for projectile damage
+	var/pb_knockback = 0 // knockback to apply on point blank shots
 
-	///Whether the gun can be sawn off by sawing tools
-	var/can_be_sawn_off = FALSE
-	//description change if weapon is sawn-off
-	var/sawn_desc = null
-	var/sawn_off = FALSE
+	var/randomspread = TRUE // do we have random spread. false for shotguns
+	var/spread	= 4 // wielded spread amount
+	var/spread_unwielded = 12 // unwielded spread amount
+	var/dual_wield_spread = 24 // dual wielding spread amount
 
-	///sound of racking
-	var/rack_sound = 'sound/weapons/gun/general/bolt_rack.ogg'
-	///volume of racking
-	var/rack_sound_volume = 60
-	///whether racking sound should vary
-	var/rack_sound_vary = TRUE
-	///sound of when the bolt is locked back manually
-	var/lock_back_sound = 'sound/weapons/gun/general/slide_lock_1.ogg'
-	///volume of lock back
-	var/lock_back_sound_volume = 60
-	///whether lock back varies
-	var/lock_back_sound_vary = TRUE
+	var/recoil = 0 // screen shake when fired
+	var/recoil_unwielded = 0 // screen shake when fired unwielded
+	var/recoil_backtime_multiplier = 2 // multiplier on the time for recoil to return to normal
+	var/recoil_deviation = 22.5 // max variance the recoil direction can have
 
-	///sound of dropping the bolt or releasing a slide
-	var/bolt_drop_sound = 'sound/weapons/gun/general/bolt_drop.ogg'
-	///volume of bolt drop/slide release
-	var/bolt_drop_sound_volume = 60
-	///empty alarm sound (if enabled)
-	var/empty_alarm_sound = 'sound/weapons/gun/general/empty_alarm.ogg'
-	///empty alarm volume sound
-	var/empty_alarm_volume = 70
-	///whether empty alarm sound varies
-	var/empty_alarm_vary = TRUE
+	var/min_recoil = 0 // recoil is always at least this
+	var/min_recoil_aimed = 0 // do we have a min recoil while aiming
 
-/*
- *  Stats
-*/
-	var/weapon_weight = WEAPON_LIGHT
-	//Alters projectile damage multiplicatively based on this value. Use it for "better" or "worse" weapons that use the same ammo.
-	var/projectile_damage_multiplier = 1
-	//Speed someone can be flung if its point blank
-	var/pb_knockback = 0
+	var/gunslinger_recoil_bonus = 0 // recoil adjustment for gunslinger quirk
+	var/gunslinger_spread_bonus = 0 // spread adjustment for gunslinger quirk
 
-	//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
-	var/randomspread = TRUE
-	///How much the bullet scatters when fired while wielded.
-	var/spread	= 4
-	///How much the bullet scatters when fired while unwielded.
-	var/spread_unwielded = 12
-	//additional spread when dual wielding
-	var/dual_wield_spread = 24
+	var/burst_size = 3 // shots per burst for burst firing
+	var/burst_delay = 0.15 SECONDS // delay between shots in a burst
+	var/fire_delay = 0.2 SECONDS // delay between shots or between bursts
+	var/currently_firing_burst = FALSE // are we currently firing a burst?
+	var/current_cooldown = 0 // current firing cooldown, affected by lag
 
+	// OVERLAYS //
+	var/ammo_x_offset = 0 // ammo counter sprite x offset
+	var/ammo_y_offset = 0 // ammo counter sprite y offset
 
-	///Screen shake when the weapon is fired while wielded.
-	var/recoil = 0
-	///Screen shake when the weapon is fired while unwielded.
-	var/recoil_unwielded = 0
-	///a multiplier of the duration the recoil takes to go back to normal view, this is (recoil*recoil_backtime_multiplier)+1
-	var/recoil_backtime_multiplier = 2
-	///this is how much deviation the gun recoil can have, recoil pushes the screen towards the reverse angle you shot + some deviation which this is the max.
-	var/recoil_deviation = 22.5
+	// OVERLAYS - ENERGY & POWERED //
+	var/automatic_charge_overlays = TRUE // do we handle overlays with base update_appearance()?
+	var/shaded_charge = FALSE // do we have multiple "charged" states
+	var/charge_sections = 4 // number of charge states
+	var/modifystate = FALSE // does the overlay change based on the ammo type?
 
-	///Used if the guns recoil is lower then the min, it clamps the highest recoil
-	var/min_recoil = 0
-	///if we want a min recoil (or lack of it) whilst aiming
-	var/min_recoil_aimed = 0
-
-	var/gunslinger_recoil_bonus = 0
-	var/gunslinger_spread_bonus = 0
-
-	/// how many shots per burst, Ex: most machine pistols, M90, some ARs are 3rnd burst, while others like the GAR and laser minigun are 2 round burst.
-	var/burst_size = 3
-	///The rate of fire when firing in a burst. Not the delay between bursts
-	var/burst_delay = 0.15 SECONDS
-	///The rate of fire when firing full auto and semi auto, and between bursts; for bursts its fire delay + burst_delay after every burst
-	var/fire_delay = 0.2 SECONDS
-	//Prevent the weapon from firing again while already firing
-	var/firing_burst = 0
-
-/*
- *  Overlay
-*/
-	///Used for positioning ammo count overlay on sprite
-	var/ammo_x_offset = 0
-	var/ammo_y_offset = 0
-
-//BALLISTIC
-	///Whether the sprite has a visible magazine or not
-	var/mag_display = FALSE
-	///Whether the sprite has a visible ammo display or not
-	var/mag_display_ammo = FALSE
-	///Whether the sprite has a visible indicator for being empty or not.
-	var/empty_indicator = FALSE
-	///Whether the sprite has a visible magazine or not
-	var/show_magazine_on_sprite = FALSE
-	///Do we show how much ammo is left on the sprite? In increments of 20.
-	var/show_ammo_capacity_on_magazine_sprite = FALSE
-	///Whether the sprite has a visible ammo display or not
-	var/show_magazine_on_sprite_ammo = FALSE
-	///Whether the gun supports multiple special mag types
-	var/unique_mag_sprites_for_variants = FALSE
-
-//ENERGY
-	//Do we handle overlays with base update_appearance()?
-	var/automatic_charge_overlays = TRUE
-	var/charge_sections = 4
-	//if this gun uses a stateful charge bar for more detail
-	var/shaded_charge = FALSE
-	//Modifies WHOS state //im SOMEWHAT this is wether or not the overlay changes based on the ammo type selected
-	var/modifystate = TRUE
-
-/*
- *  Attachment
-*/
-	///The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED.
-	var/list/valid_attachments = list()
-	///The types of attachments that are unique to this gun. Adds it to the base valid_attachments list. So if this gun takes a special stock, add it here.
-	var/list/unique_attachments = list()
-	///The types of attachments that aren't allowed. Removes it from the base valid_attachments list.
-	var/list/refused_attachments
-	///Number of attachments that can fit on a given slot
-	var/list/slot_available = ATTACHMENT_DEFAULT_SLOT_AVAILABLE
-	///Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
-	var/list/slot_offsets = list()
+	// ATTACHMENTS //
+	var/list/valid_attachments = list() // list of valid attachment types
+	var/list/unique_attachments = list() // attachments specific to this gun
+	var/list/refused_attachments // list of disallowed attachments
+	var/list/slot_available = ATTACHMENT_DEFAULT_SLOT_AVAILABLE // what attachment slots this gun has
+	var/list/slot_offsets = list() // offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
 	var/underbarrel_prefix = "" // so the action has the right icon for underbarrel gun
 
-/*
- *  Zooming
-*/
-	///Whether the gun generates a Zoom action on creation
-	var/zoomable = TRUE
-	//Zoom toggle
-	var/zoomed = FALSE
-	///Distance in TURFs to move the user's screen forward (the "zoom" effect)
-	var/zoom_amt = 3
-	var/zoom_out_amt = 0
-	var/datum/action/toggle_scope_zoom/azoom
+	// ZOOMING //
+	var/zoomable = TRUE // can this gun zoom in?
+	var/zoomed = FALSE // are we currently zoomed in?
+	var/zoom_amt = 3 // how far forward to zoom
+	var/zoom_out_amt = 0 // how far to expand the view when zoomed
+	var/datum/action/toggle_scope_zoom/azoom // zoom action button
 
-/*
- * Safety
-*/
-	///Does this gun have a saftey and thus can toggle it?
-	var/has_safety = FALSE
-	///If the saftey on? If so, we can't fire the weapon
-	var/safety = FALSE
-	///The wording of safety. Useful for guns that have a non-standard safety system, like a revolver
-	var/safety_wording = "safety"
-	///multiplier for this gun's misfire chances. Closer to 0 is better.
-	var/safety_multiplier = 1
+	// SAFETY //
+	var/has_safety = FALSE // do we even have a safety
+	var/safety = FALSE // is the safety currently on
+	var/safety_wording = "safety" // word to use to refer to the safety
+	var/safety_multiplier = 1 // misfire chance multiplier. higher = more
 
-/*
- *  Spawn Info (Stuff that becomes useless onces the gun is spawned, mostly here for mappers)
-*/
-	///Attachments spawned on initialization. Should also be in valid attachments or it SHOULD(once i add that) fail
-	var/list/default_attachments = list()
+	// SPAWN INFO //
+	// for giving mappers control over guns. only affects init
+	var/list/default_attachments = list() // attachments to spawn with
+	var/spawn_no_ammo = FALSE // should we spawn with no ammo
 
-//ENERGY
-	//set to true so the gun is given an empty cell
-	var/spawn_no_ammo = FALSE
+	// FIRE MODE SELECTION //
+	var/default_firemode = FIREMODE_SEMIAUTO // fire mode to spawn with
+	var/firemode_index // currently selected fire mode
 
-// Need to sort
-	///trigger guard on the weapon. Used for hulk mutations and ashies. I honestly dont know how usefult his is, id avoid touching it
-	trigger_guard = TRIGGER_GUARD_NORMAL
-
-	/// after initializing, we set the firemode to this
-	var/default_firemode = FIREMODE_SEMIAUTO
-	///Firemode index, due to code shit this is the currently selected firemode
-	var/firemode_index
-	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
+	// firemodes we can use. add or subtract to this list as applicable
+	// NOTE: if FIREMODE_FULLAUTO is here, we get the autofire component on init. if FIREMODE_AIMED is here we get the beam aim component.
 	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO, FIREMODE_AIMED)
-	/// A acoc list that determines the names of firemodes. Use if you wanna be weird and set the name of say, FIREMODE_OTHER to "Underbarrel grenade launcher" for example.
+	// assoc list that gives each fire mode a name to use
 	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire", FIREMODE_AIMED = "charged")
-	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
-	var/fire_select_icon_state_prefix = ""
-	///If true, we put "safety_" before fire_select_icon_state_prefix's prefix. ex. "safety_laser_single"
-	var/adjust_fire_select_icon_state_on_safety = FALSE
-
-	///Are we firing a burst? If so, dont fire again until burst is done
-	var/currently_firing_burst = FALSE
-	///This prevents gun from firing until the coodown is done, affected by lag
-	var/current_cooldown = 0
+	var/fire_select_icon_state_prefix = "" // BASICALLY: the little button you select firing modes from? this is just the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
+	var/adjust_fire_select_icon_state_on_safety = FALSE // if we should add "safety_" as an icon prefix if the gun is on safety
 
 /obj/item/gun/Initialize(mapload, spawn_empty)
 	. = ..()
@@ -356,8 +164,6 @@
 	muzzle_flash = new(src, muzzleflash_iconstate)
 	build_zooming()
 	build_firemodes()
-	if(sawn_off)
-		sawoff(forced = TRUE)
 	if(slot_flags & ITEM_SLOT_SUITSTORE)
 		ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, REF(src))
 
@@ -390,9 +196,8 @@
 			user,
 			IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE,
 			TRUE,
-			CALLBACK(src, PROC_REF(is_wielded))
-			)
-			)
+			CALLBACK(src, PROC_REF(is_wielded))))
+
 			wielded_fully = TRUE
 			return TRUE
 	else
@@ -408,18 +213,17 @@
 	if(azoom)
 		azoom.Remove(user)
 
+/// check if we are wielded or not
 /obj/item/gun/proc/is_wielded()
 	return wielded
 
 /obj/item/gun/Destroy()
-	if(chambered) //Not all guns are chambered (EMP'ed energy guns etc)
+	if(chambered)
 		QDEL_NULL(chambered)
 	if(azoom)
 		QDEL_NULL(azoom)
 	if(muzzle_flash)
 		QDEL_NULL(muzzle_flash)
-	if(magazine)
-		QDEL_NULL(magazine)
 	return ..()
 
 /obj/item/gun/handle_atom_del(atom/A)
@@ -479,18 +283,15 @@
 	return ..()
 
 /obj/item/gun/proc/fire_gun(atom/target, mob/living/user, flag, params)
-	if(!actually_shoots)// this gun doesn't actually fire bullets. Dont shoot.
+	if(!actually_shoots) // you got the dud
+		balloon_alert(user, "broken!")
 		return
-	//No target? Why are we even firing anyways...
-	if(!target)
+	if(!target) // we have no target
 		return
-	//If we are burst firing, don't fire, obviously
-	if(currently_firing_burst)
+	if(currently_firing_burst) // we're mid burst
 		return
-
 	if(SEND_SIGNAL(user, COMSIG_MOB_TRYING_TO_FIRE_GUN, src, target, flag, params) & COMPONENT_CANCEL_GUN_FIRE)
 		return
-
 	if(SEND_SIGNAL(src, COMSIG_GUN_TRY_FIRE, user, target, flag, params) & COMPONENT_CANCEL_GUN_FIRE)
 		return
 
@@ -546,11 +347,11 @@
 	if(weapon_weight == WEAPON_VERY_HEAVY && (!wielded_fully))
 		to_chat(user, span_warning("You need a fully secure grip to fire [src]!"))
 		return
-
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
 		to_chat(user, span_warning("You need a more secure grip to fire [src]!"))
 		return
-	//If we have the pacifist trait and a chambered round, don't fire. Honestly, pacifism quirk is pretty stupid, and as such we check again in process_fire() anyways
+
+	// don't shoot if we're pacifist. however since pacifism is stupid we also check again in process_fire because Lol Lmao
 	if(chambered)
 		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 			if(chambered.harmful) // Is the bullet chambered harmful?
@@ -581,10 +382,11 @@
 	return process_fire(target, user, TRUE, params, null, bonus_spread)
 
 /obj/item/gun/proc/process_other(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
-	return //use this for 'underbarrels!!
+	return // used for oddball guns like the e40
 
 /obj/item/gun/proc/process_other_two(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
-	return //reserved in case another fire mode is needed, if you need special behavior, put it here then call process_fire, or call process_fire and have the special behavior there
+	return // reserved in case another fire mode is needed, if you need special behavior, put it here then call process_fire, or call process_fire and have the special behavior there
+	// whatever the fuck that means
 
 /**
  * Handles everything involving firing.
@@ -599,9 +401,10 @@
  * * zone_override - The bodypart we attempt to hit, sometimes hits another.
  * * bonus_spread - Adds this value to spread, in this case used by dual wielding.
  * * burst_firing - Not to be confused with currently_firing_burst. This var is TRUE when we are doing a burst except for the first shot in a burst, as to override the spam burst checks.
- * * spread_override - Bullet spread is forcibly set to this. This is usually because of bursts attempting to share the same burst trajectory.
+ * * spread_override - Bullet spread is forcibly set to this. This is because of bursts attempting to share the same burst trajectory.
  * * iteration - Which shot in a burst are we in.
  */
+
 /obj/item/gun/proc/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
 	//OKAY, this prevents us from firing until our cooldown is done
 	if(!burst_firing) //if we're firing a burst, dont interfere to avoid issues
@@ -614,7 +417,7 @@
 		currently_firing_burst = FALSE
 		return FALSE
 
-	//special hahnding for burst firing
+	//special handling for burst firing
 	if(burst_firing)
 		if(!user || !currently_firing_burst)
 			currently_firing_burst = FALSE
@@ -625,9 +428,9 @@
 				currently_firing_burst = FALSE
 				return FALSE
 
-	//Do we have a round? If not, stop the whole chain, and if we do, check if the gun is chambered. Pacisim is pretty lame anyways.
+	// do we have a round? if not, stop the whole chain. check for pacifism again because Lol Lmao
 	if(chambered)
-		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
+		if(HAS_TRAIT(user, TRAIT_PACIFISM))
 			if(chambered.harmful) // Is the bullet chambered harmful?
 				to_chat(user, span_warning("[src] is lethally chambered! You don't want to risk harming anyone..."))
 				currently_firing_burst = FALSE //no burst 4 u
@@ -643,11 +446,10 @@
 	if(burst_firing && !randomspread)
 		bonus_spread += burst_size * iteration
 
-	//override spread? usually happens only in bursts
+	// if we have override (set in bursting) use that, otherwise get a new spread angle
 	if(spread_override && !randomspread)
 		sprd = spread_override
 	else
-		//Calculate spread
 		sprd = calculate_spread(user, bonus_spread)
 
 	before_firing(target,user)
@@ -657,7 +459,7 @@
 		currently_firing_burst = FALSE
 		return FALSE
 	//Are we PBing someone? If so, set pointblank to TRUE
-	shoot_live_shot(user, (get_dist(user, target) <= 1), target, message) //Making sure whether the target is in vicinity for the pointblank shot
+	shoot_live_shot(user, (get_dist(user, target) <= 1), target, message)
 
 	//process the chamber...
 	process_chamber(shooter = user)
@@ -697,16 +499,17 @@
 		return
 	to_chat(user, span_danger("Safeties are active on the [src]! Turn them off to fire!"))
 
-
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
 	var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
 	var/muzzle_angle = Get_Angle(get_turf(src), pbtarget)
 
 	user.changeNext_move(clamp(fire_delay, 0, CLICK_CD_RANGE))
 
+	// do muzzle flash
 	if(muzzle_flash && !muzzle_flash.applied)
 		handle_muzzle_flash(user, muzzle_angle)
 
+	// do recoil
 	if(wielded_fully)
 		simulate_recoil(user, recoil, actual_angle)
 	else if(!wielded_fully)
@@ -716,6 +519,7 @@
 			recoil_temp += shield.recoil_bonus
 		simulate_recoil(user, recoil_temp, actual_angle)
 
+	// handle sound and messages
 	if(suppressed)
 		playsound(user, suppressed_sound, suppressed_volume, vary_fire_sound, ignore_walls = FALSE, extrarange = SILENCED_SOUND_EXTRARANGE, falloff_distance = 0)
 	else
@@ -723,23 +527,26 @@
 		if(message)
 			if(pointblank)
 				user.visible_message(
-						span_danger("[user] fires [src] point blank at [pbtarget]!"),
-						span_danger("You fire [src] point blank at [pbtarget]!"),
-						span_hear("You hear a gunshot!"), COMBAT_MESSAGE_RANGE, pbtarget
+					span_danger("[user] fires [src] point blank at [pbtarget]!"),
+					span_danger("You fire [src] point blank at [pbtarget]!"),
+					span_hear("You hear a gunshot!"), COMBAT_MESSAGE_RANGE, pbtarget
 				)
 				to_chat(pbtarget, span_userdanger("[user] fires [src] point blank at you!"))
-				if(pb_knockback > 0 && ismob(pbtarget))
-					var/mob/PBT = pbtarget
-					var/atom/throw_target = get_edge_target_turf(PBT, user.dir)
-					PBT.throw_at(throw_target, pb_knockback, 2)
 			else
 				user.visible_message(
-						span_danger("[user] fires [src]!"),
-						blind_message = span_hear("You hear a gunshot!"),
-						vision_distance = COMBAT_MESSAGE_RANGE,
-						ignored_mobs = user
+					span_danger("[user] fires [src]!"),
+					blind_message = span_hear("You hear a gunshot!"),
+					vision_distance = COMBAT_MESSAGE_RANGE,
+					ignored_mobs = user
 				)
 
+	// handle point blank knockback
+	if(pointblank && pb_knockback > 0 && ismob(pbtarget))
+		var/mob/PBT = pbtarget
+		var/atom/throw_target = get_edge_target_turf(PBT, user.dir)
+		PBT.throw_at(throw_target, pb_knockback, 2)
+
+	// handle lesbian interaction
 	//cloudy sent a meme in the discord. i dont know if its true, but i made this piece of code in honor of it
 	var/mob/living/carbon/human/living_human = user
 	if(istype(living_human))
@@ -750,7 +557,6 @@
 
 		if(current_month == JUNE)
 			return //if it isn't june, don't do this easter egg
-
 		if(!findtext(bian, living_human.generic_adjective))
 			return //dont bother if we already are affected by it
 
@@ -1221,50 +1027,3 @@
 	var/safety_prefix = "[our_gun.adjust_fire_select_icon_state_on_safety ? "[our_gun.safety ? "safety_" : ""]" : ""]"
 	button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
 	return ..()
-
-GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
-	/obj/item/plasmacutter,
-	/obj/item/melee/energy,
-	/obj/item/gear_handle/anglegrinder,
-	/obj/item/hatchet,
-	)))
-
-///Handles all the logic of sawing off guns,
-/obj/item/gun/proc/try_sawoff(mob/user, obj/item/saw)
-	if(!saw.get_sharpness() || !is_type_in_typecache(saw, GLOB.gun_saw_types) && saw.tool_behaviour != TOOL_SAW) //needs to be sharp. Otherwise turned off eswords can cut this.
-		return
-	if(sawn_off)
-		to_chat(user, span_warning("\The [src] is already shortened!"))
-		return
-	user.changeNext_move(CLICK_CD_MELEE)
-	user.visible_message(span_notice("[user] begins to shorten \the [src]."), span_notice("You begin to shorten \the [src]..."))
-
-	//if there's any live ammo inside the gun, makes it go off
-	if(blow_up(user))
-		user.visible_message(span_danger("\The [src] goes off!"), span_danger("\The [src] goes off in your face!"))
-		return
-
-	if(do_after(user, 30, target = src))
-		user.visible_message(span_notice("[user] shortens \the [src]!"), span_notice("You shorten \the [src]."))
-		sawoff(user, saw)
-
-///Used on init or try_sawoff
-/obj/item/gun/proc/sawoff(forced = FALSE)
-	if(sawn_off && !forced)
-		return
-	name = "sawn-off [src.name]"
-	desc = sawn_desc
-	w_class = WEIGHT_CLASS_NORMAL
-	item_state = "gun"
-	slot_flags &= ~ITEM_SLOT_BACK	//you can't sling it on your back
-	slot_flags |= ITEM_SLOT_BELT		//but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
-	recoil = SAWN_OFF_RECOIL
-	sawn_off = TRUE
-	update_appearance()
-	return TRUE
-
-///used for sawing guns, causes the gun to fire without the input of the user
-/obj/item/gun/proc/blow_up(mob/user)
-	return
-
-/// AIMING BEAM BEHAVIOR

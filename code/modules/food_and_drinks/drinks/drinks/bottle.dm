@@ -25,6 +25,7 @@
 
 	pickup_sound =  'sound/items/handling/bottle_pickup.ogg'
 	drop_sound = 'sound/items/handling/bottle_drop.ogg'
+	custom_materials = list(/datum/material/glass = 400)
 	var/const/duration = 1.3 SECONDS //Directly relates to the 'knockdown' duration. Lowered by armor (i.e. helmets)
 	isGlass = TRUE
 	foodtype = ALCOHOL

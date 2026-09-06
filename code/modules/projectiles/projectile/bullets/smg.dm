@@ -10,7 +10,7 @@
 /obj/projectile/bullet/c57x39mm/hp
 	name = "5.7x39mm hollow point bullet"
 	damage = 30
-	armour_penetration = -10
+	armour_penetration = -20
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/c57x39mm/ap
@@ -51,7 +51,7 @@
 /obj/projectile/bullet/c46x30mm/hp
 	name = "4.6x30mm HP bullet"
 	damage = 30
-	armour_penetration = -10
+	armour_penetration = -20
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/c46x30mm/rubber
@@ -90,7 +90,7 @@
 /obj/projectile/bullet/c556mm/hp
 	name = "5.56mm HITP hollow point bullet"
 	damage = 30
-	armour_penetration = -10
+	armour_penetration = -20
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/c556mm/rubber

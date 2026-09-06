@@ -112,6 +112,10 @@
 	if(panel_open) //Can't insert objects when its screwed open
 		return TRUE
 
+	if(istype(attack_item, /obj/item/coffee_cartridge) && !(attack_item.item_flags & ABSTRACT))
+		balloon_alert(user, "this doesn't take cartridges!")
+		return TRUE
+
 	if(istype(attack_item, /obj/item/reagent_containers/glass/coffeepot) && !(attack_item.item_flags & ABSTRACT) && attack_item.is_open_container())
 		var/obj/item/reagent_containers/glass/coffeepot/new_pot = attack_item
 		if(!user.transferItemToLoc(new_pot, src))

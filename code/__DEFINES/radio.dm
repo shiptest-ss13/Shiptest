@@ -22,8 +22,8 @@
 #define RADIO_TOKEN_NGR ":f"
 
 #define RADIO_CHANNEL_SUNS "SUNS"
-#define RADIO_KEY_SUNS "q"
-#define RADIO_TOKEN_SUNS ":q"
+#define RADIO_KEY_SUNS "u"
+#define RADIO_TOKEN_SUNS ":u"
 
 #define RADIO_CHANNEL_CENTCOM "CentCom"
 #define RADIO_KEY_CENTCOM "e"

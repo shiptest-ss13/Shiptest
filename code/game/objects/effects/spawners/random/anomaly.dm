@@ -7,7 +7,6 @@
 		/obj/effect/anomaly/grav/planetary,
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/pyro/planetary,
-		/obj/effect/anomaly/vortex/planetary,
 		/obj/effect/anomaly/grav/high/planetary,
 		/obj/effect/anomaly/heartbeat/planetary,
 		/obj/effect/anomaly/sparkler/planetary,
@@ -36,7 +35,6 @@
 		/obj/effect/anomaly/bluespace/planetary,
 		/obj/effect/anomaly/flux/planetary,
 		/obj/effect/anomaly/grav/planetary,
-		/obj/effect/anomaly/vortex/planetary,
 		/obj/effect/anomaly/grav/high/planetary,
 		/obj/effect/anomaly/heartbeat/planetary,
 		/obj/effect/anomaly/tvstatic/planetary,
@@ -129,7 +127,6 @@
 		/obj/effect/anomaly/grav/planetary,
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/pyro/planetary,
-		/obj/effect/anomaly/vortex/planetary,
 		/obj/effect/anomaly/grav/high/planetary,
 		/obj/effect/anomaly/heartbeat/planetary,
 		/obj/effect/anomaly/sparkler/planetary,
@@ -161,7 +158,6 @@
 		/obj/effect/anomaly/grav/planetary,
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/pyro/planetary,
-		/obj/effect/anomaly/vortex/planetary,
 		/obj/effect/anomaly/plasmasoul/planetary,
 	)
 
@@ -179,7 +175,6 @@
 		/obj/effect/anomaly/bluespace/planetary,
 		/obj/effect/anomaly/grav/planetary,
 		/obj/effect/anomaly/hallucination/planetary,
-		/obj/effect/anomaly/vortex/planetary,
 		/obj/effect/anomaly/grav/high/planetary,
 		/obj/effect/anomaly/plasmasoul/planetary,
 		/obj/effect/anomaly/phantom/planetary,
@@ -196,7 +191,6 @@
 /obj/effect/spawner/random/anomaly/waste
 	name = "Waste anomaly spawner"
 	loot = list(
-		/obj/effect/anomaly/vortex/planetary,
 		/obj/effect/anomaly/heartbeat/planetary,
 		/obj/effect/anomaly/veins/planetary,
 		/obj/effect/anomaly/plasmasoul/planetary,

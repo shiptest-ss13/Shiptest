@@ -42,3 +42,10 @@
 	description = "Frontiersmen have dug in like ticks to the planet's surface."
 	id = "rockplanet_somme"
 	suffix = "rockplanet_somme.dmm"
+
+/datum/map_template/ruin/rockplanet/ngr_mining_colony
+	name = "Abandoned New Gorlex Mining Colony"
+	description = "A New Gorlex Republic mining colony evacuated following anomalous fauna behaviour and composition, holding Ramzi Clique prisoners at the time of its abandonment."
+	id = "rockplanet_ngr_mining_colony"
+	suffix = "rockplanet_ngr_mining_colony.dmm"
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)

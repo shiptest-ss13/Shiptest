@@ -313,7 +313,7 @@
 
 /datum/design/plasticducky
 	name = "Rubber Ducky"
-	desc = "The classic Makosso-Warra design for competitively priced bath based duck toys. No need for fancy Waffle co. rubber, buy Plastic Ducks today!"
+	desc = "The classic Makosso-Warra design for competitively priced bath based duck toys."
 	id = "plasticducky"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/plastic = 1000)
