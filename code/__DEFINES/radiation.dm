@@ -11,7 +11,7 @@ Ask ninjanomnom if they're around
 #define RAD_MOB_COEFFICIENT 0.20 // Radiation applied is multiplied by this
 #define RAD_MOB_SKIN_PROTECTION ((1/RAD_MOB_COEFFICIENT)+RAD_BACKGROUND_RADIATION)
 
-#define RAD_LOSS_PER_SECOND 5
+#define RAD_LOSS_PER_SECOND 0.25
 #define RAD_TOX_COEFFICIENT 0.01 // Toxin damage per second coefficient
 #define RAD_OVERDOSE_REDUCTION 0.000001 // Coefficient to the reduction in applied rads once the thing, usualy mob, has too much radiation
 // WARNING: This number is highly sensitive to change, graph is first for best results
