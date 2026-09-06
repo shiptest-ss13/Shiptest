@@ -120,7 +120,7 @@
 		return FALSE
 	if isitem(on_who)
 		var/obj/item/stupidthing = on_who
-		if(stupidthing.w_class < WEIGHT_CLASS_NORMAL)
+		if(stupidthing.w_class < WEIGHT_CLASS_SMALL)
 			return FALSE
 	return TRUE
 
