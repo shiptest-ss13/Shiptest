@@ -198,6 +198,72 @@
 	. = ..()
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
 
+/obj/item/gun/ballistic/automatic/smg/heater
+	name = "\improper Heater"
+	desc = "A popular Personal Defense Weapon originating from the shoal. Essentially a more expensive, compact spitter with a closed bolt design, It is notably more accurate while suffering from increased recoil due to its lack of stock. "
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	icon_state = "heater"
+	item_state = "heater"
+	w_class = WEIGHT_CLASS_NORMAL
+	spread = 6
+	wield_delay = 0.2 SECONDS
+	fire_delay = 0.12 SECONDS
+	recoil = 0.5
+	recoil_unwielded = 4
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+	default_ammo_type = /obj/item/ammo_box/magazine/heater
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/heater,
+	)
+	wear_rate = 1.5
+	fire_sound = 'sound/weapons/gun/smg/resolution.ogg'
+
+	load_sound = 'sound/weapons/gun/smg/cm5_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/smg/cm5_reload.ogg'
+	eject_sound = 'sound/weapons/gun/smg/cm5_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/smg/cm5_unload.ogg'
+
+	unique_mag_sprites_for_variants = TRUE
+	manufacturer = MANUFACTURER_IMPORT
+
+NO_MAG_GUN_HELPER(automatic/smg/heater)
+
+/obj/item/gun/ballistic/automatic/smg/heater/scorcher
+	name = "\improper Scorcher"
+	desc = "A Frontiersmen modified heater, with a flamethrower and fuel tank bolted onto it. A stock has been fitted on to help control recoil, at the cost of increasing its size."
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	icon_state = "scorcher"
+	item_state = "scorcher"
+	w_class = WEIGHT_CLASS_BULKY
+	spread = 6
+	recoil = 0.1
+
+
+	default_attachments = list(/obj/item/attachment/gun/flamethrower/scorcher)
+	unique_attachments = list(/obj/item/attachment/gun/flamethrower/scorcher)
+
+/obj/item/ammo_box/magazine/heater
+	name = "Heater magazine (5.7mm)"
+	desc = "A 30-round magazine designed for the Heater PDW."
+	icon_state = "heater_mag-1"
+	base_icon_state = "heater_mag"
+	ammo_type = /obj/item/ammo_casing/c57x39mm
+	caliber = "5.7x39mm"
+	max_ammo = 30
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/heater/extended
+	name = "Heater casket magazine (5.7mm)"
+	desc = "A 50-round casket magazine designed for the Heater PDW."
+	icon_state = "heater_extended_mag-1"
+	base_icon_state = "heater_extended_mag"
+	max_ammo = 50
 
 /obj/item/gun/ballistic/automatic/smg/pounder
 	name = "Pounder"

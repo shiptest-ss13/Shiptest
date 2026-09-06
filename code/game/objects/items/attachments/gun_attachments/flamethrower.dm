@@ -89,3 +89,7 @@
 	icon = 'icons/obj/chemical/hypovial.dmi'
 	icon_state = "hypovial"
 	volume = 20
+
+/obj/item/attachment/gun/flamethrower/scorcher
+	size_mod = 0
+	attach_features_flags = ATTACH_NO_SPRITE
