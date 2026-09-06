@@ -1216,14 +1216,16 @@
 
 	var/blocked = getarmor(null, "rad")
 
-	if(amount > RAD_BURN_THRESHOLD)
+	if(amount > RAD_BURN_THRESHOLD && (blocked != 100))
 		if(COOLDOWN_FINISHED(src, rad_burn_msg_cooldown))
-			if(HAS_TRAIT(src, TRAIT_RADRESISTANT))	//for IPCs
-				COOLDOWN_START(src, rad_burn_msg_cooldown, 5 SECONDS)
-				to_chat(src, span_warning("Internal error codes flash across your mind, indicating a potential component-level electrical fault."))
-			else
-				to_chat(src, span_warning("You feel fresh burns form across your skin."))
-		apply_damage(RAD_BURN_CURVE(amount), BURN, null, blocked)
+			if((RAD_BURN_CURVE(amount) * (100-blocked)/100) >= 0.4)
+				if(HAS_TRAIT(src, TRAIT_RADRESISTANT))	//for IPCs
+					COOLDOWN_START(src, rad_burn_msg_cooldown, 7 SECONDS)
+					to_chat(src, span_warning("Internal error codes flash across your mind, indicating a potential component-level electrical fault."))
+				else
+					COOLDOWN_START(src, rad_burn_msg_cooldown, 7 SECONDS)
+					to_chat(src, span_warning("You feel a wave of heat pass over you as fresh welts form across your skin."))
+				apply_damage(RAD_BURN_CURVE(amount), BURN, null, blocked)
 
 	if(!HAS_TRAIT(src, TRAIT_RADRESISTANT))
 		apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)

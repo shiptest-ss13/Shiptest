@@ -19,7 +19,7 @@ Ask ninjanomnom if they're around
 //Holy shit test after you tweak anything it's said like 6 times in here
 //You probably want to plot any tweaks you make so you can see the curves visually
 #define RAD_BURN_LOG_BASE 1.1
-#define RAD_BURN_LOG_GRADIENT 10000
+#define RAD_BURN_LOG_GRADIENT 1000
 #define RAD_BURN_CURVE(X) log(1+((X-RAD_BURN_THRESHOLD)/RAD_BURN_LOG_GRADIENT))/log(RAD_BURN_LOG_BASE)
 
 // How much stored radiation in a mob with no ill effects
