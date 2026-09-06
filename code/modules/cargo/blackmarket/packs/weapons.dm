@@ -468,10 +468,10 @@
 	name = "Scorcher PDW"
 	desc = "Ever wanna light a bitch up in both ways? Well we got you covered! My Guy bolted some flamethrower parts on a heater, now it spews fire AND lead."
 	item = /obj/item/gun/ballistic/automatic/smg/heater/scorcher
-	pair_item = list(/datum/blackmarket_item/ammo/heater)
+
 
 	cost_min = 3250
-	cost_max = 4500
+	cost_max = 4250
 	stock_min = 1
 	stock_max = 2
 	availability_prob = 20
