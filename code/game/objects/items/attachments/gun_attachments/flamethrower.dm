@@ -90,6 +90,21 @@
 	icon_state = "hypovial"
 	volume = 20
 
+/obj/item/reagent_containers/glass/beaker/flamethrower_underbarrel/scorcher
+
+	volume = 40
+
 /obj/item/attachment/gun/flamethrower/scorcher
 	size_mod = 0
 	attach_features_flags = ATTACH_NO_SPRITE
+
+/obj/item/attachment/gun/flamethrower/scorcher/Initialize()
+	. = ..()
+	attached_flamethrower = new /obj/item/flamethrower/underbarrel/scorcher(src)
+
+/obj/item/flamethrower/underbarrel/scorcher
+	create_full = TRUE
+
+/obj/item/flamethrower/underbarrel/scorcher/Initialize(mapload)
+	. = ..()
+	beaker = new /obj/item/reagent_containers/glass/beaker/flamethrower_underbarrel/scorcher(src)
