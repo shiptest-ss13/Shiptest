@@ -3264,11 +3264,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/computer/processing_unit_console/directional/east{
-	pixel_x = 17;
-	pixel_y = -32;
-	dist = 2
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "LM" = (
@@ -3630,6 +3625,10 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/decal/cleanable/oil/streak,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/processing_unit_console/directional/east{
+	dx = 1;
+	dy = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "QV" = (
