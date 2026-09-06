@@ -61,11 +61,6 @@
 /area/ship/cargo)
 "aD" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/table{
-	dir = 1;
-	pixel_x = 3;
-	pixel_y = 6
-	},
 /obj/machinery/light/small/directional/north,
 /obj/machinery/button/door{
 	pixel_x = -8;
@@ -81,6 +76,10 @@
 	dir = 2;
 	normaldoorcontrol = 1;
 	specialfunctions = 4
+	},
+/obj/item/modular_computer/laptop{
+	pixel_x = 0;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -1554,7 +1553,11 @@
 	pixel_x = 7;
 	pixel_y = 5
 	},
-/obj/machinery/light/directional/south,
+/obj/machinery/light/directional/south{
+	pixel_x = 0;
+	pixel_y = -38
+	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "sb" = (
@@ -1778,6 +1781,8 @@
 	pixel_x = -9;
 	pixel_y = -8
 	},
+/obj/item/computer_hardware/card_slot,
+/obj/item/modular_computer/tablet,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "tM" = (
