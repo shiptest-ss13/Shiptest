@@ -77,9 +77,10 @@
 	normaldoorcontrol = 1;
 	specialfunctions = 4
 	},
-/obj/item/modular_computer/laptop{
-	pixel_x = 0;
-	pixel_y = 6
+/obj/item/radio/intercom/table{
+	dir = 1;
+	pixel_x = 4;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -993,6 +994,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -10;
+	pixel_y = -32
+	},
+/obj/structure/chair/office{
+	dir = 4
+	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/captain)
@@ -1553,11 +1561,7 @@
 	pixel_x = 7;
 	pixel_y = 5
 	},
-/obj/machinery/light/directional/south{
-	pixel_x = 0;
-	pixel_y = -38
-	},
-/obj/item/radio/intercom/directional/south,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "sb" = (
@@ -1781,7 +1785,6 @@
 	pixel_x = -9;
 	pixel_y = -8
 	},
-/obj/item/computer_hardware/card_slot,
 /obj/item/modular_computer/tablet,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -3208,11 +3211,10 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "NY" = (
-/obj/structure/dresser{
-	dir = 8;
-	pixel_x = 6
+/obj/structure/dresser/wall/directional/north,
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 8
 	},
-/obj/machinery/firealarm/directional/north,
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
