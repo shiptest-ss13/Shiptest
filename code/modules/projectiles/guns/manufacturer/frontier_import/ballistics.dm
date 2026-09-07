@@ -218,7 +218,7 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/heater,
 	)
-	wear_rate = 1.5
+	wear_rate = 1.25
 	fire_sound = 'sound/weapons/gun/smg/resolution.ogg'
 
 	load_sound = 'sound/weapons/gun/smg/cm5_reload.ogg'
