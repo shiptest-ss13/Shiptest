@@ -48,9 +48,11 @@
 
 /datum/faction/syndicate // probably cruft but its actually used in some cargo orders so it stays for now
 	name = FACTION_SYNDICATE
+	parent_faction = /datum/faction/syndicate
 	prefixes = PREFIX_SYNDICATE
 	color = "#B22C20"
 	allowed_factions = list(/datum/faction/ngr,/datum/faction/cybersun,/datum/faction/hardliners)
+	wiki_hidden = TRUE
 
 /datum/faction/ngr
 	name = FACTION_NGR
@@ -74,9 +76,11 @@
 
 /datum/faction/scarborough
 	name = "Scarborough Arms"
+	parent_faction = /datum/faction/scarborough
 	prefixes = PREFIX_NONE
 	color = "#B22C20"
 	allowed_factions = list(/datum/faction/ngr,/datum/faction/cybersun,/datum/faction/hardliners)
+	wiki_hidden = TRUE
 
 /datum/faction/solgov
 	name = FACTION_SOLCON
