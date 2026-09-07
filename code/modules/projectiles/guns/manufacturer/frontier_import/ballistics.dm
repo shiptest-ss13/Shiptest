@@ -200,7 +200,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/heater
 	name = "\improper Heater"
-	desc = "A popular Personal Defense Weapon originating from the Shoal. Essentially a more expensive, compact spitter with a closed bolt design, It is notably more accurate while suffering from increased recoil due to its lack of stock. "
+	desc = "A popular Personal Defense Weapon originating from the Shoal. Essentially a more expensive, compact spitter with a closed bolt design. It is notably more accurate while suffering from increased recoil due to its lack of stock. "
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
