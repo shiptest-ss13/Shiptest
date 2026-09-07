@@ -189,7 +189,7 @@
 	icon_state = "marinejuggernautsuit"
 	item_state = "marinejuggernaut"
 	slowdown = 1.25
-	armor = list("melee" = 40, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 75, "acid" = 80, "wound" = 50)
+	armor = list("melee" = 40, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 40, "bio" = 100, "rad" = 60, "fire" = 75, "acid" = 80, "wound" = 50)
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
@@ -205,9 +205,6 @@
 	item_state = "navyspacehelm"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
 	can_flashlight = TRUE
-	flags_inv = HIDEHAIR
-	flashlight_state = "helmet_flight_overlay"
-	content_overlays = FALSE
 	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 10)
 	w_class = WEIGHT_CLASS_NORMAL
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
@@ -221,9 +218,6 @@
 	item_state = "navyjuggernauthelm"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
 	can_flashlight = TRUE
-	flags_inv = HIDEHAIR
-	flashlight_state = "helmet_flight_overlay"
-	content_overlays = FALSE
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 80, "bio" = 100, "rad" = 80, "fire" = 100, "acid" = 80, "wound" = 50)
 	supports_variations = SNOUTED_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -241,9 +235,6 @@
 	item_state = "marinespacehelm"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
 	can_flashlight = TRUE
-	flags_inv = HIDEHAIR
-	flashlight_state = "helmet_flight_overlay"
-	content_overlays = FALSE
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -256,9 +247,6 @@
 	item_state = "marineraiderhelm"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
 	can_flashlight = TRUE
-	flags_inv = HIDEHAIR
-	flashlight_state = "helmet_flight_overlay"
-	content_overlays = FALSE
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 40, "fire" = 50, "acid" = 50, "wound" = 20)
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -279,10 +267,7 @@
 	item_state = "marinejuggernauthelm"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
 	can_flashlight = TRUE
-	flags_inv = HIDEHAIR
-	flashlight_state = "helmet_flight_overlay"
-	content_overlays = FALSE
-	armor = list("melee" = 40, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 75, "acid" = 80, "wound" = 50)
+	armor = list("melee" = 40, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 40, "bio" = 100, "rad" = 60, "fire" = 75, "acid" = 80, "wound" = 50)
 	supports_variations = SNOUTED_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
