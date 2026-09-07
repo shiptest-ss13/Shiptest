@@ -216,7 +216,7 @@
 
 /datum/supply_pack/medical/mkiii_hypo/cybersun
 	desc = "Contains a mk.III Cybersun Hypospray, for on the field medical care. Comes with an assortment of Ready-To-Go Vials"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 
 /datum/supply_pack/medical/vials
 	faction = /datum/faction/warra

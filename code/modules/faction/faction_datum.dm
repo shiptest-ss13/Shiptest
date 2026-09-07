@@ -51,28 +51,34 @@
 	parent_faction = /datum/faction/syndicate
 	prefixes = PREFIX_SYNDICATE
 	color = "#B22C20"
+	allowed_factions = list(/datum/faction/ngr,/datum/faction/cybersun,/datum/faction/hardliners)
 
-/datum/faction/syndicate/ngr
+/datum/faction/ngr
 	name = FACTION_NGR
 	short_name = "NGR"
+	parent_faction = /datum/faction/ngr
 	prefixes = PREFIX_NGR
 	color = "#C59973"
 
-/datum/faction/syndicate/cybersun
+/datum/faction/cybersun
 	name = FACTION_CYBERSUN
+	parent_faction = /datum/faction/cybersun
 	prefixes = PREFIX_CYBERSUN
 	color = "#4C9C9C"
 
-/datum/faction/syndicate/hardliners
+/datum/faction/hardliners
 	name = FACTION_HARDLINERS
+	parent_faction = /datum/faction/hardliners
 	prefixes = PREFIX_HARDLINERS
 	check_prefix = FALSE
 	color = "#97150B"
 
-/datum/faction/syndicate/scarborough
+/datum/faction/scarborough
 	name = "Scarborough Arms"
+	parent_faction = /datum/faction/scarborough
 	prefixes = PREFIX_NONE
-	allowed_factions = list(/datum/faction/syndicate)
+	color = "#B22C20"
+	allowed_factions = list(/datum/faction/ngr,/datum/faction/cybersun,/datum/faction/hardliners)
 
 /datum/faction/solgov
 	name = FACTION_SOLCON
