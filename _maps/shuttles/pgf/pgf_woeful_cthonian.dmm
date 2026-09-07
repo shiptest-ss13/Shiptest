@@ -234,12 +234,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "cth_engi";
 	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering)
@@ -284,12 +284,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "cth_engi";
 	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering)
@@ -1077,6 +1077,9 @@
 	},
 /obj/item/radio/intercom/directional/south{
 	pixel_x = -4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -2478,12 +2481,12 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "cth_engi";
 	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering)
@@ -2946,12 +2949,12 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "cth_engi";
 	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering)
@@ -5015,6 +5018,9 @@
 	pixel_x = -1;
 	id = "cth_engi";
 	name = "shutter control"
+	},
+/obj/structure/window/reinforced{
+	dir = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
