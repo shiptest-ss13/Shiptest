@@ -142,6 +142,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"cN" = (
+/obj/structure/catwalk,
+/obj/structure/marker_beacon{
+	picked_color = "Burgundy"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "cO" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -820,6 +827,12 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
+"pU" = (
+/obj/structure/marker_beacon{
+	picked_color = "Lime"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "qa" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/hallway/central)
@@ -1206,12 +1219,12 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/table,
 /obj/item/clothing/glasses/welding{
-	pixel_x = 2;
-	pixel_y = 1
+	pixel_x = 6;
+	pixel_y = 4
 	},
 /obj/item/clothing/gloves/insulated{
 	pixel_x = 0;
-	pixel_y = 14
+	pixel_y = 22
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_x = -26;
@@ -1220,6 +1233,10 @@
 /obj/machinery/firealarm/directional/west{
 	pixel_y = -7;
 	pixel_x = -33
+	},
+/obj/item/melee/sledgehammer{
+	pixel_x = 0;
+	pixel_y = 12
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1288,13 +1305,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"yo" = (
-/obj/structure/catwalk,
-/obj/structure/marker_beacon{
-	picked_color = "Burgundy"
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "yu" = (
 /obj/effect/turf_decal/trimline/transparent/green/filled/warning,
 /obj/effect/turf_decal/corner/transparent/green/bordercorner{
@@ -1357,12 +1367,6 @@
 "yH" = (
 /turf/closed/wall,
 /area/ship/cargo)
-"yI" = (
-/obj/structure/marker_beacon{
-	picked_color = "Burgundy"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "zc" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
@@ -1522,6 +1526,12 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"BC" = (
+/obj/structure/marker_beacon{
+	picked_color = "Burgundy"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "BJ" = (
 /obj/effect/turf_decal/trimline/transparent/green/filled/warning,
 /obj/effect/decal/cleanable/dirt,
@@ -2432,12 +2442,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
-"QO" = (
-/obj/structure/marker_beacon{
-	picked_color = "Lime"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "Ri" = (
 /obj/structure/chair/sofa/olive/old/directional/east{
 	name = "old ratty tactical sofa";
@@ -2956,7 +2960,7 @@ Vh
 (3,1,1) = {"
 Vh
 Vh
-yI
+BC
 Az
 si
 ck
@@ -2987,7 +2991,7 @@ PU
 TB
 cW
 Vh
-yo
+cN
 "}
 (5,1,1) = {"
 Wj
@@ -3275,7 +3279,7 @@ Qx
 Kw
 AT
 Vh
-yo
+cN
 "}
 (21,1,1) = {"
 Vh
@@ -3353,7 +3357,7 @@ Vh
 Vh
 Vh
 Vh
-yI
+BC
 OA
 MJ
 aY
@@ -3362,7 +3366,7 @@ Ev
 oo
 rs
 Vs
-QO
+pU
 Vh
 Vh
 Vh
