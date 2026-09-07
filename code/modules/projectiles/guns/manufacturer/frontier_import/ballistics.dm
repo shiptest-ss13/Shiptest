@@ -228,6 +228,13 @@
 
 	unique_mag_sprites_for_variants = TRUE
 	manufacturer = MANUFACTURER_IMPORT
+	slot_available = list(ATTACHMENT_SLOT_GRIP)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_GRIP = list(
+			"x" = 28,
+			"y" = 14,
+		),
+	)
 
 NO_MAG_GUN_HELPER(automatic/smg/heater)
 
