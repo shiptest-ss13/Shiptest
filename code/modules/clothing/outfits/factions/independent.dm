@@ -148,7 +148,7 @@
 	name = "Independent - Captain (Mercenary)"
 
 	uniform = /obj/item/clothing/under/syndicate
-	head = /obj/item/clothing/head/beret
+	head = /obj/item/clothing/head/beret/color/red
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/armor/vest
@@ -159,6 +159,18 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
+
+/datum/outfit/job/independent/captain/merc/naked
+	name = "Independent - Captain (Naked Mercenary)"
+
+	uniform = /obj/item/clothing/under/syndicate
+	head = null
+	gloves = null
+	shoes = /obj/item/clothing/shoes/sneakers/brown
+	suit = null
+
+	accessory = null
+	backpack_contents = null
 
 /datum/outfit/job/independent/captain/western
 	name = "Independent - Captain (Western)"
@@ -424,7 +436,7 @@
 	head = null
 	suit = null
 	dcoat = null
-
+	l_pocket = null
 
 /datum/outfit/job/independent/security/pirate
 	name = "Independent - Security Officer (Pirate)"
