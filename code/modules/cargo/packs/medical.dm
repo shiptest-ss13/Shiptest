@@ -68,6 +68,12 @@
 	cost = 100
 	contains = list(/obj/item/reagent_containers/inhaler_canister/salbutamol)
 
+/datum/supply_pack/medical/dehusk_single
+	name = "High-Strength Synthflesh Spray Single-Pack"
+	desc = "Contains one single-shot spray bottle with synthflesh, intended to be used for severe body water loss."
+	cost = 800
+	contains = list(/obj/item/reagent_containers/spray/dehusk)
+
 /*
 		Tools
 */

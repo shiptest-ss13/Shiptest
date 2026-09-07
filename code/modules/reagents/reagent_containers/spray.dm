@@ -349,3 +349,17 @@
 		"Blue" = "sprayer_med_blue"
 	)
 	unique_reskin_changes_inhand = TRUE
+
+/obj/item/reagent_containers/spray/dehusk
+	name = "flesh replacement spray bottle"
+	desc = "A pre-filled, single-shot, high-strength synthflesh spray capable of restoring a body's water content after severe, extensive burns. A bolded label on the bottle states, '<b>APPLY ONLY AFTER TREATMENT OF TISSUE DAMAGE</b>'."
+	icon = 'icons/obj/chemical/medicine.dmi'
+	icon_state = "sprayer_med_yellow"
+	item_state = "sprayer_med_yellow"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	spray_range = 1
+	stream_range = 1
+	volume = 100
+	list_reagents = list(/datum/reagent/medicine/synthflesh = 100)
+	amount_per_transfer_from_this = 100
