@@ -113,22 +113,24 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 5
 	},
-/obj/machinery/washing_machine{
-	pixel_x = 4;
-	pixel_y = 13;
-	density = 0;
-	should_we_be_dense = 0
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 20;
 	pixel_y = -10
 	},
+/obj/machinery/washing_machine{
+	pixel_x = -1;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "ca" = (
 /obj/structure/table,
+/obj/item/toy/cards/deck{
+	pixel_x = -1;
+	pixel_y = 6
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "ck" = (
@@ -243,19 +245,6 @@
 /area/ship/cargo)
 "ec" = (
 /turf/closed/wall/r_wall/yesdiag,
-/area/ship/security/armory)
-"ek" = (
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "s";
-	pixel_x = 10;
-	pixel_y = -5
-	},
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "t";
-	pixel_x = 8;
-	pixel_y = -21
-	},
-/turf/closed/wall/r_wall,
 /area/ship/security/armory)
 "eK" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
@@ -377,53 +366,17 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/north,
 /obj/structure/chair/handrail,
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = -5;
+	pixel_y = 26
+	},
+/obj/machinery/firealarm/directional/north{
+	pixel_x = 5;
+	pixel_y = 31
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
-"fA" = (
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "r";
-	pixel_x = 9;
-	pixel_y = -5
-	},
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "i";
-	pixel_x = 7;
-	pixel_y = -19
-	},
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "k";
-	pixel_x = 8;
-	pixel_y = -35
-	},
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "f";
-	pixel_x = 9;
-	pixel_y = -74
-	},
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "a";
-	pixel_x = 10;
-	pixel_y = -90
-	},
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "e";
-	pixel_x = 9;
-	pixel_y = -51
-	},
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "e";
-	pixel_x = 10;
-	pixel_y = -122
-	},
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "c";
-	pixel_x = 8;
-	pixel_y = -106
-	},
-/turf/closed/wall/r_wall,
-/area/ship/security/armory)
 "fH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate{
@@ -477,7 +430,7 @@
 "hd" = (
 /obj/structure/catwalk,
 /obj/structure/marker_beacon{
-	picked_color = "Burgundy"
+	picked_color = "Teal"
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -562,6 +515,10 @@
 	pixel_x = -8;
 	pixel_y = 8
 	},
+/obj/machinery/recharger{
+	pixel_x = 4;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "ke" = (
@@ -612,17 +569,14 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "lP" = (
-/obj/structure/grille,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "me" = (
@@ -904,7 +858,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "qz" = (
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
@@ -936,6 +892,7 @@
 	pixel_y = -20;
 	dir = 1
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "rk" = (
@@ -1239,6 +1196,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/fax/indie,
 /obj/effect/turf_decal/industrial/warning/corner,
+/obj/machinery/computer/security/telescreen/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "vT" = (
@@ -1254,9 +1212,9 @@
 /turf/closed/wall/rust,
 /area/ship/bridge)
 "wg" = (
-/obj/machinery/computer/security/retro,
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/modular_computer/console/preset/command,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "wo" = (
@@ -1406,7 +1364,7 @@
 /area/ship/bridge)
 "yG" = (
 /obj/structure/falsewall,
-/turf/closed/wall/rust,
+/turf/open/floor/plating,
 /area/ship/security/armory)
 "yH" = (
 /turf/closed/wall,
@@ -1422,9 +1380,9 @@
 	id = "fragboat_kitchen";
 	name = "Window Control"
 	},
-/obj/item/trash/sosjerky{
-	pixel_y = 6;
-	pixel_x = 3
+/obj/machinery/jukebox/boombox{
+	pixel_x = 1;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -1498,6 +1456,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "zK" = (
+/obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Ah" = (
@@ -1694,7 +1653,6 @@
 /obj/item/folder/yellow,
 /obj/item/modular_computer/tablet/preset/cheap,
 /obj/item/modular_computer/tablet/preset/cheap,
-/obj/item/computer_hardware/card_slot,
 /obj/item/pen,
 /obj/item/pen,
 /obj/machinery/light/small/directional/south,
@@ -1860,10 +1818,6 @@
 /obj/structure/cable/pink{
 	icon_state = "6-10"
 	},
-/obj/structure/closet/crate/bin{
-	pixel_x = 6;
-	pixel_y = 9
-	},
 /obj/item/plate_shard{
 	icon_state = "plate_shard3";
 	pixel_x = -3;
@@ -1882,6 +1836,7 @@
 	pixel_y = -10
 	},
 /obj/item/trash/boritos,
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "FV" = (
@@ -2165,21 +2120,13 @@
 	pixel_x = -4;
 	pixel_y = -3
 	},
-/obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_x = 9;
-	pixel_y = -3
-	},
 /obj/item/clothing/suit/armor/vest/alt{
 	pixel_x = 9;
-	pixel_y = -7
-	},
-/obj/item/clothing/head/helmet/bulletproof/x11{
-	pixel_x = 7;
-	pixel_y = 7
+	pixel_y = -10
 	},
 /obj/item/clothing/head/helmet/m10{
 	pixel_x = 7;
-	pixel_y = 11
+	pixel_y = 7
 	},
 /obj/item/clothing/gloves/fingerless{
 	pixel_x = -7;
@@ -2200,6 +2147,14 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
+	},
+/obj/item/clothing/head/helmet/m10{
+	pixel_x = 7;
+	pixel_y = 10
+	},
+/obj/item/clothing/suit/armor/vest{
+	pixel_x = 9;
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -2349,6 +2304,7 @@
 /obj/structure/chair/handrail{
 	dir = 4
 	},
+/obj/machinery/advanced_airlock_controller/internal/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "NE" = (
@@ -2385,7 +2341,8 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/item/ammo_casing/spent/rifle_brass,
+/obj/structure/closet/crate/rations,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "OA" = (
@@ -2743,6 +2700,7 @@
 	pixel_y = 9
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Uv" = (
@@ -2809,23 +2767,23 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/tray{
 	pixel_y = 4;
-	pixel_x = 5
+	pixel_x = 1
 	},
 /obj/item/cigbutt/cigarbutt{
-	pixel_x = 12;
-	pixel_y = 8
+	pixel_x = 7;
+	pixel_y = 10
 	},
 /obj/item/cigbutt{
-	pixel_x = 8;
+	pixel_x = 3;
 	pixel_y = 5
 	},
 /obj/item/cigbutt{
-	pixel_x = -2;
+	pixel_x = -4;
 	pixel_y = 14
 	},
 /obj/item/cigbutt/cigarbutt{
-	pixel_x = 3;
-	pixel_y = 5
+	pixel_x = -1;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -2885,14 +2843,9 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 5
 	},
-/obj/structure/closet/crate/rations,
-/obj/machinery/firealarm/directional/north{
-	pixel_x = 5;
-	pixel_y = 32
-	},
-/obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = -5;
-	pixel_y = 25
+/obj/machinery/washing_machine{
+	pixel_x = -1;
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -3040,7 +2993,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ZH" = (
-/obj/machinery/computer/crew/retro,
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/button/door{
 	pixel_x = 5;
@@ -3058,6 +3010,7 @@
 	pixel_x = 0;
 	pixel_y = 34
 	},
+/obj/machinery/computer/crew,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 
@@ -3517,8 +3470,8 @@ Vh
 Vh
 Vh
 ec
-ek
-fA
+rk
+rk
 Li
 Vs
 Li
