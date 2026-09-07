@@ -10,7 +10,7 @@
 		"NATURAL_AGGRESSIVE"
 	],
 	"map_short_name": "Larnaca-class",
-	"description": "The Larnaca-Class is a Miskilamo Spacefaring hull originally marketed as a 'do it all generalist.' but horrifically poor sales and an overproduction of hulls lead detractors to label it as Miski's E-11 - But, a short series of modifications later, the hulls were marketed to and became prolific in the Independent Mercenary market. Comfortable crew conditions, a decent-for-its-size armory & all the 'tactical' dressings a Mercenary could ask for, with no questions asked from the dealer. Larnaca-Class are often found creeping across planets, hunting for bounty targets. Or lounging around, waiting for a profitable mark to be posted on one of the many contracting networks.",
+	"description": "The Larnaca-Class is a Miskilamo Spacefaring hull originally marketed as a 'do it all generalist.' But horrifically poor sales and an overproduction of hulls lead detractors to label it as Miski's E-11 - But, a short series of modifications later, the hulls were marketed to and became prolific in the Independent Mercenary market. Comfortable crew conditions, a decent-for-its-size armory & all the 'tactical' dressings a Mercenary could ask for, with no questions asked from the dealer. Larnaca-Class are often found creeping across planets, hunting for bounty targets. Or lounging around, waiting for a profitable mark to be posted on one of the many contracting networks.",
 	"tags": [
 		"Combat",
 		"RP Focus"
@@ -20,16 +20,16 @@
 	"starting_funds": 1500,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/independent/captain/merc/naked",
+			"outfit": "/datum/outfit/job/independent/captain/merc/naked/gown",
 			"officer": true,
 			"slots": 1
 		},
 		"Mechanic": {
-			"outfit": "/datum/outfit/job/independent/engineer",
+			"outfit": "/datum/outfit/job/independent/engineer/gown",
 			"slots": 1
 		},
 		"Crewman": {
-			"outfit": "/datum/outfit/job/independent/assistant",
+			"outfit": "/datum/outfit/job/independent/assistant/gown",
 			"slots": 2
 		}
 	},
