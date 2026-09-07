@@ -1214,7 +1214,9 @@
 "wg" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/modular_computer/console/preset/command,
+/obj/machinery/modular_computer/console/preset/command{
+	icon_state = "computer-left"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "wo" = (
@@ -3010,7 +3012,9 @@
 	pixel_x = 0;
 	pixel_y = 34
 	},
-/obj/machinery/computer/crew,
+/obj/machinery/computer/crew{
+	icon_state = "computer-right"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 
