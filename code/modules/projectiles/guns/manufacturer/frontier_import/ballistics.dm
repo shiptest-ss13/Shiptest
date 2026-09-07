@@ -200,7 +200,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/heater
 	name = "\improper Heater"
-	desc = "A popular Personal Defense Weapon originating from the Shoal. Essentially a more expensive, compact spitter with a closed bolt design. It is notably more accurate while suffering from increased recoil due to its lack of stock. "
+	desc = "A popular Personal Defense Weapon originating from the Shoal. Essentially a more expensive, compact Spitter with a closed bolt design. It is notably more accurate while suffering from increased recoil due to its lack of stock. "
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
@@ -233,7 +233,7 @@ NO_MAG_GUN_HELPER(automatic/smg/heater)
 
 /obj/item/gun/ballistic/automatic/smg/heater/scorcher
 	name = "\improper Scorcher"
-	desc = "A Frontiersmen modified heater, with a flamethrower and fuel tank bolted onto it. A stock has been fitted on to help control recoil, at the cost of increasing its size."
+	desc = "A Frontiersmen-modified heater, with a flamethrower and fuel tank bolted onto it. A stock has been fitted on to help control recoil, at the cost of increasing its size."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
