@@ -206,7 +206,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/cm357)
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/cm5.ogg'
 	manufacturer = MANUFACTURER_MINUTEMAN
-
+	fire_delay = 0.9 SECONDS // despite being 1 fire delay previously, it fucking rounds up to 1.5. This makes it ACTUALLY ONE
 	spread = 3
 	spread_unwielded = 7
 
