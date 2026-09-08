@@ -72,6 +72,18 @@
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
 	unique_reskin = null
 
+/obj/item/clothing/under/shorts/compression
+	name = "compression shorts"
+	desc = "Short shorts made for blistering hot days and athletic use."
+	icon_state = "compshorts"
+	supports_variations = DIGITIGRADE_VARIATION
+	unique_reskin = null
+	unique_reskin = list("black compression shorts" = "compshorts",
+						"red compression shorts" = "compshortsred",
+						"brown compression shorts" = "compshortsbrown",
+						"blue compression shorts" = "compshortsblue",
+							)
+
 /obj/item/clothing/under/shorts/explorer
 	name = "explorer shorts"
 	desc = "Bright khaki short shorts for higher humidity, hot planets."
