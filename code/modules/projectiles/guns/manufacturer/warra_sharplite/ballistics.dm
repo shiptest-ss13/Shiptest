@@ -267,7 +267,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	icon_state = "expedition"
 	item_state = "expedition"
 	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_expedition
-	spread = 3
+	spread = 4
 	fire_delay = 0.09 SECONDS // despite being 1 fire delay previously, it fucking rounds up to 1.5. This makes it ACTUALLY ONE
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m9mm_expedition,
