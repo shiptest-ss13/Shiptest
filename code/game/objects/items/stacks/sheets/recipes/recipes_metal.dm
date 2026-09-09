@@ -1,6 +1,8 @@
 GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("stool", /obj/structure/chair/stool, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("stool (greyscale)", /obj/structure/chair/stool/greyscale, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("bar stool", /obj/structure/chair/stool/bar, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("bar stool (greyscale)", /obj/structure/chair/stool/bar/greyscale, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe_list("beds", list( \
 		new/datum/stack_recipe("bed", /obj/structure/bed, 2, one_per_turf = TRUE, on_floor = TRUE), \
@@ -21,6 +23,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("blue bench chair", /obj/structure/chair/bench/blue, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("red bench chair", /obj/structure/chair/bench/red, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("olive bench chair", /obj/structure/chair/bench/olive, 2, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("white bench chair", /obj/structure/chair/bench/white, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
 	new/datum/stack_recipe_list("comfy chairs", list( \
 		new/datum/stack_recipe("purple comfy chair", /obj/structure/chair/comfy/purple, 2, one_per_turf = TRUE, on_floor = TRUE), \
@@ -30,6 +33,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("blue comfy chair", /obj/structure/chair/comfy/blue, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("red comfy chair", /obj/structure/chair/comfy/red, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("olive comfy chair", /obj/structure/chair/comfy/olive, 2, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("white comfy chair", /obj/structure/chair/comfy/white, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
 	new/datum/stack_recipe_list("comfy chairs (old)", list( \
 		new/datum/stack_recipe("old purple comfy chair", /obj/structure/chair/comfy/purple/old, 2, one_per_turf = TRUE, on_floor = TRUE), \
@@ -39,6 +43,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("old blue comfy chair", /obj/structure/chair/comfy/blue/old, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("old red comfy chair", /obj/structure/chair/comfy/red/old, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("old olive comfy chair", /obj/structure/chair/comfy/olive/old, 2, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("old white comfy chair", /obj/structure/chair/comfy/white/old, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
 	new/datum/stack_recipe_list("comfy chairs (old - alt)", list( \
 		new/datum/stack_recipe("old purple comfy chair (alt)", /obj/structure/chair/comfy/purple/old/alt, 2, one_per_turf = TRUE, on_floor = TRUE), \
@@ -48,6 +53,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("old blue comfy chair (alt)", /obj/structure/chair/comfy/blue/old/alt, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("old red comfy chair (alt)", /obj/structure/chair/comfy/red/old/alt, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("old olive comfy chair (alt)", /obj/structure/chair/comfy/olive/old/alt, 2, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("old white comfy chair (alt)", /obj/structure/chair/comfy/white/old/alt, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
 	new/datum/stack_recipe_list("comfy chairs (corpo)", list( \
 		new/datum/stack_recipe("purple corpo chair", /obj/structure/chair/comfy/purple/corpo, 2, one_per_turf = TRUE, on_floor = TRUE), \
@@ -57,6 +63,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("blue corpo chair", /obj/structure/chair/comfy/blue/corpo, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("red corpo chair", /obj/structure/chair/comfy/red/corpo, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("olive corpo chair", /obj/structure/chair/comfy/olive/corpo, 2, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("white corpo chair", /obj/structure/chair/comfy/white/corpo, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
 	new/datum/stack_recipe_list("sofas", list( \
 		// New brown Sofa
@@ -95,6 +102,12 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("olive sofa (right)", /obj/structure/chair/sofa/olive/right, 1, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("olive sofa (corner)", /obj/structure/chair/sofa/olive/corner, 1, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("olive sofa (internal corner)", /obj/structure/chair/sofa/olive/internal_corner, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		// New white Sofa
+		new/datum/stack_recipe("white sofa (middle)", /obj/structure/chair/sofa/white, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("white sofa (left)", /obj/structure/chair/sofa/white/left, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("white sofa (right)", /obj/structure/chair/sofa/white/right, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("white sofa (corner)", /obj/structure/chair/sofa/white/corner, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("white sofa (internal corner)", /obj/structure/chair/sofa/white/internal_corner, 1, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
 	new/datum/stack_recipe_list("sofas (old)", list(
 		// Old brown Sofa
@@ -133,6 +146,12 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("old olive sofa (right)", /obj/structure/chair/sofa/olive/old/right, 1, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("old olive sofa (corner)", /obj/structure/chair/sofa/olive/old/corner, 1, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("old olive sofa (internal corner)", /obj/structure/chair/sofa/olive/old/internal_corner, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		// Old white Sofa
+		new/datum/stack_recipe("old white sofa (middle)", /obj/structure/chair/sofa/white/old, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("old white sofa (left)", /obj/structure/chair/sofa/white/old/left, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("old white sofa (right)", /obj/structure/chair/sofa/white/old/right, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("old white sofa (corner)", /obj/structure/chair/sofa/white/old/corner, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("old white sofa (internal corner)", /obj/structure/chair/sofa/white/old/internal_corner, 1, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
 	new/datum/stack_recipe_list("sofas (corpo)", list(
 		// Corpo brown Sofa
@@ -171,6 +190,12 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("corpo olive sofa (right)", /obj/structure/chair/sofa/olive/corpo/right, 1, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("corpo olive sofa (corner)", /obj/structure/chair/sofa/olive/corpo/corner, 1, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("corpo olive sofa (internal corner)", /obj/structure/chair/sofa/olive/corpo/internal_corner, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		// Corpo white Sofa
+		new/datum/stack_recipe("corpo white sofa (middle)", /obj/structure/chair/sofa/white/corpo, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("corpo white sofa (left)", /obj/structure/chair/sofa/white/corpo/left, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("corpo white sofa (right)", /obj/structure/chair/sofa/white/corpo/right, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("corpo white sofa (corner)", /obj/structure/chair/sofa/white/corpo/corner, 1, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("corpo white sofa (internal corner)", /obj/structure/chair/sofa/white/corpo/internal_corner, 1, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
 	null, \
 	new/datum/stack_recipe("ore box", /obj/structure/ore_box, 4, time = 5 SECONDS, one_per_turf = TRUE, on_floor = TRUE),\

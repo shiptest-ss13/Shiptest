@@ -660,7 +660,7 @@
 
 	if(isobj(target) && !istype(target, /obj/effect/decal/cleanable/crayon/gang) && !istype(target, /obj/item/clothing))
 		if(actually_paints)
-			if(color_hex2num(paint_color) < 350 && !istype(target, /obj/structure/window) && !istype(target, /obj/effect/decal/cleanable/crayon)) //Colors too dark are rejected
+			if(color_hex2num(paint_color) < 200 && !istype(target, /obj/structure/window) && !istype(target, /obj/effect/decal/cleanable/crayon)) //Colors too dark are rejected
 				to_chat(usr, span_warning("A color that dark on an object like this? Surely not..."))
 				return FALSE
 			target.add_atom_colour(paint_color, WASHABLE_COLOUR_PRIORITY)

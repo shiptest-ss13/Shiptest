@@ -308,6 +308,11 @@
 	icon_state = "purple_carpet_tile"
 	turf_type = /turf/open/floor/carpet/nanoweave/purple
 
+/obj/item/stack/tile/carpet/nanoweave/green
+	name = "nanoweave carpet (green)"
+	icon_state = "green_carpet_tile"
+	turf_type = /turf/open/floor/carpet/nanoweave/green
+
 /obj/item/stack/tile/carpet/nanoweave/orange
 	name = "nanoweave carpet (orange)"
 	icon_state = "orange_carpet_tile"
