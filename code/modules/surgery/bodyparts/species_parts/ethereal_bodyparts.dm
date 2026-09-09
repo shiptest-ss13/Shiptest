@@ -58,20 +58,19 @@
 	desc = "A detached Elzuose's tail. You probably shouldn't plant this."
 	icon_state = "elzuose_tail"
 	limb_id = SPECIES_ELZUOSE
+	examine_id = SPECIES_ELZUOSE
 	uses_mutcolor = TRUE
 	body_weight = 8
 	can_thump = TRUE
 
 /obj/item/bodypart/tail/elzu/bifurcated
 	name = "bifurcated elzuose tail"
-	examine_id = "bifurcated " + SPECIES_ELZUOSE
 	icon_state = "bifurcated_elzuose_tail"
 	limb_id = "bifurcated_" + SPECIES_ELZUOSE
 	can_thump = FALSE
 
 /obj/item/bodypart/tail/elzu/stubby
 	name = "stubby elzuose tail"
-	examine_id = "stubby " + SPECIES_ELZUOSE
 	icon_state = "stubby_elzuose_tail"
 	limb_id = "stubby_" + SPECIES_ELZUOSE
 	body_weight = 4
@@ -79,18 +78,15 @@
 
 /obj/item/bodypart/tail/elzu/curled
 	name = "curled elzuose tail"
-	examine_id = "curled " + SPECIES_ELZUOSE
 	icon_state = "curled_elzuose_tail"
 	limb_id = "curled_" + SPECIES_ELZUOSE
 
 /obj/item/bodypart/tail/elzu/pine
 	name = "pine elzuose tail"
-	examine_id = "pine " + SPECIES_ELZUOSE
 	icon_state = "pine_elzuose_tail"
 	limb_id = "pine_" + SPECIES_ELZUOSE
 
 /obj/item/bodypart/tail/elzu/medium
 	name = "medium elzuose tail"
-	examine_id = "medium " + SPECIES_ELZUOSE
 	icon_state = "medium_elzuose_tail"
 	limb_id = "medium_" + SPECIES_ELZUOSE
