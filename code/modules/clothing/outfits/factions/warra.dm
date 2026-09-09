@@ -71,7 +71,6 @@
 	neck = null
 	l_hand = null
 	belt = null
-	backpack_contents = null
 
 /datum/outfit/job/warra/captain/ns/empty
 	name = "Makosso-Warra - Captain (N+S Logistics) (Naked)"
@@ -125,7 +124,6 @@
 	gloves = null
 	neck = null
 	belt = null
-	backpack_contents = null
 
 /datum/outfit/job/warra/captain/centcom
 	name = "Makosso-Warra - Captain (Central Command)"

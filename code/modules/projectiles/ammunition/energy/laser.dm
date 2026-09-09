@@ -136,6 +136,7 @@
 	pellets = 4
 	firing_effect_type = null
 	heavy_metal = FALSE
+	caseless = TRUE
 
 // so it doesnt drop cases, also apparently every fucking caseless gun runtimes and thats way past my ability
 

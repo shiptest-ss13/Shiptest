@@ -2882,13 +2882,13 @@
 	pixel_x = -6;
 	pixel_y = 8
 	},
-/obj/item/stock_parts/cell/gun/sharplite/empty{
-	pixel_x = 11;
-	pixel_y = 6
+/obj/item/stock_parts/cell/gun/mini{
+	pixel_x = 8;
+	pixel_y = 5
 	},
-/obj/item/stock_parts/cell/gun/sharplite/empty{
-	pixel_x = 9;
-	pixel_y = -3
+/obj/item/stock_parts/cell/gun/mini{
+	pixel_x = 8;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -3845,9 +3845,9 @@
 	pixel_x = -4;
 	pixel_y = 0
 	},
-/obj/item/gun/energy/sharplite/rush{
-	pixel_x = -1;
-	pixel_y = 7
+/obj/item/gun/energy/clover{
+	pixel_x = 0;
+	pixel_y = 8
 	},
 /obj/item/gun/ballistic/shotgun/flamingarrow/presawn/empty{
 	pixel_x = 0;
@@ -6905,7 +6905,7 @@
 /obj/item/clothing/under/shorts/explorer,
 /obj/item/clothing/suit/toggle/hazard,
 /obj/item/clothing/suit/toggle/chorejacket,
-/obj/structure/sign/poster/radio/icf{
+/obj/structure/sign/poster/radio/random{
 	pixel_x = 0;
 	pixel_y = -32
 	},
@@ -7671,8 +7671,8 @@
 /area/ship/cargo)
 "Uf" = (
 /obj/machinery/holopad/emergency/command,
-/obj/effect/turf_decal/box{
-	light_color = "#60869b"
+/obj/effect/turf_decal/box/white{
+	color = "#2270d0"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
