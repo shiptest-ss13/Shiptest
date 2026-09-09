@@ -28,8 +28,7 @@
 	min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 10)
 	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 55
 
-	hair_color = "fixedmutcolor"
-	hair_alpha = 140
+	hair_alpha = 200
 	mutant_bodyparts = list("elzu_horns", "tail_elzu")
 	default_features = list("elzu_horns" = "None", "tail_elzu" = "None")
 	species_eye_path = 'icons/mob/ethereal_parts.dmi'

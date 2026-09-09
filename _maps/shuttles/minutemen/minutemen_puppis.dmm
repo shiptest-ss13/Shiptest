@@ -1160,11 +1160,13 @@
 /area/ship/security/armory)
 "mo" = (
 /obj/effect/turf_decal/industrial/warning/green/fulltile,
-/obj/structure/rack,
-/obj/item/gun_maint_kit{
-	pixel_x = 1;
-	pixel_y = 1
+/obj/machinery/suit_storage_unit/inherit/industrial{
+	req_access_txt = "1";
+	name = "minuteman suit storage unit"
 	},
+/obj/item/clothing/suit/space/hardsuit/clip_patroller,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -1662,6 +1664,10 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/spline/plain/opaque/blue{
 	dir = 8
+	},
+/obj/item/storage/backpack/duffelbag/sec{
+	pixel_x = 4;
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -2766,12 +2772,12 @@
 /area/ship/crew/ccommons)
 "DB" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/backpack/duffelbag/sec{
-	pixel_x = 4;
-	pixel_y = 11
-	},
 /obj/effect/turf_decal/spline/plain/opaque/blue{
 	dir = 8
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = 0;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -3358,6 +3364,10 @@
 	id = "pup_armory"
 	},
 /obj/machinery/light/directional/south,
+/obj/item/gun/energy/clover/clip{
+	pixel_x = 0;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "KM" = (
@@ -3801,10 +3811,6 @@
 	pixel_y = 8
 	},
 /obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -8;
-	pixel_y = -9
-	},
-/obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = -7
 	},
 /obj/item/ammo_box/magazine/cm23{
@@ -3813,6 +3819,17 @@
 	},
 /obj/item/ammo_box/magazine/cm23{
 	pixel_x = 12;
+	pixel_y = -4
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -7
+	},
+/obj/item/stock_parts/cell/gun/upgraded{
+	pixel_x = -5;
+	pixel_y = -4
+	},
+/obj/item/stock_parts/cell/gun/upgraded{
+	pixel_x = -5;
 	pixel_y = -4
 	},
 /turf/open/floor/plasteel/tech/grid,

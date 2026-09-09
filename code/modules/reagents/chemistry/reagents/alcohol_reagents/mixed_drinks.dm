@@ -694,6 +694,7 @@
 	boozepwr = 50
 	quality = DRINK_GOOD
 	taste_description = "your brain coming out your nose"
+	glass_icon_state = "changelingsting"
 	glass_name = "Changeling Sting"
 	glass_desc = "Made by the superstitous. Keeps the changelings away... whereever they may be."
 
@@ -1023,6 +1024,7 @@
 	boozepwr = 25
 	quality = DRINK_NICE
 	taste_description = "a slap on the face in the best possible way"
+	glass_icon_state = "stinger"
 	glass_name = "Stinger"
 	glass_desc = "A brandy-and-menthe mixed drink to end the day with. While often found in the hands of the upper class, there's nothing wrong with feeling a little fancy."
 
@@ -1650,6 +1652,7 @@
 	boozepwr = 40
 	quality = DRINK_VERYGOOD
 	taste_description = "an incoming bullet"
+	glass_icon_state = "shotinthedark"
 	glass_name = "Shot in the Dark"
 	glass_desc = "A specially made drink from the popular webseries RILENA: LMR. Contains traces of gold from the real bullet inside... which wouldn't make sense outside of the series it comes from."
 
@@ -1660,6 +1663,7 @@
 	boozepwr = 80
 	quality = DRINK_VERYGOOD
 	taste_description = "being shot in the head several times and then set on fire"
+	glass_icon_state = "bullethell"
 	glass_name = "Bullet Hell"
 	glass_desc = "A specially made drink from the popular webseries RILENA: LMR. Served in an oversized brass shell casing, since glass would probably melt from how intense it is."
 	accelerant_quality = 20
@@ -1671,6 +1675,7 @@
 	boozepwr = 10
 	quality = DRINK_GOOD
 	taste_description = "home, in a way that hurts"
+	glass_icon_state = "homesick"
 	glass_name = "Homesick"
 	glass_desc = "A specially made drink from the popular webseries RILENA: LMR. Ri's mother's favorite drink."
 

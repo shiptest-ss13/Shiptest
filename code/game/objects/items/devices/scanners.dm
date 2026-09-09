@@ -466,7 +466,7 @@ GENE SCANNER
 	if(target.surgeries.len)
 		var/list/render_list = "<span class='boldannounce ml-1'>The patient is undergoing the following surgeries:</span><br>"
 		for(var/datum/surgery/procedure in target.surgeries)
-			render_list += "<span class='notice ml-1'>[capitalize(procedure.name)]: "
+			render_list += "<span class='notice ml-1'>[capitalize(procedure.name)] ([capitalize(parse_zone(procedure.location))]): "
 			var/datum/surgery_step/surgery_step = procedure.get_surgery_step()
 			var/chems_needed = surgery_step.get_chem_list()
 			var/alternative_step

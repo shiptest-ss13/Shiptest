@@ -4567,10 +4567,6 @@
 /turf/closed/wall,
 /area/ruin/wasteplanet/recycle_bay/salvage_bay)
 "EO" = (
-/obj/machinery/computer/processing_unit_console/directional/west{
-	input_dir = 2;
-	machinedir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
@@ -4579,6 +4575,9 @@
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 10
+	},
+/obj/machinery/computer/processing_unit_console/directional/west{
+	dy = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/salvage_bay)

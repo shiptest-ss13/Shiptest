@@ -204,20 +204,26 @@
 	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
 
-/obj/item/clothing/suit/space/hardsuit/bomb/ngr
-	name = "NGR EOD hardsuit"
+/obj/item/clothing/suit/space/hardsuit/ngrheavy
+	name = "NGR Heavy EOD hardsuit"
+	desc = "A heavily modified EOD hardsuit produced by the NGR. Aiming to make a more dual purpose armor, these models have been outfitted with extremely thick plate to double as combat hardsuits."
 	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
 	icon_state = "hardsuit-ngreod"
 	hardsuit_type = "ngreod"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/bomb/ngr
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ngrheavy
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
+	slowdown = 1.25
+	supports_variations = DIGITIGRADE_VARIATION
 
-/obj/item/clothing/head/helmet/space/hardsuit/bomb/ngr
+/obj/item/clothing/head/helmet/space/hardsuit/ngrheavy
 	name = "NGR EOD hardsuit helmet"
 	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
 	icon_state = "hardsuit0-ngreod"
 	hardsuit_type = "ngreod"
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
+	desc = "A heavily modified EOD hardsuit helmet produced by the NGR. There are reinforcements made all across the helm, along with a wider visor."
 
 /obj/item/clothing/suit/space/hardsuit/mining/heavy/ngr
 	name = "NGR mining hardsuit"
@@ -434,6 +440,11 @@
 	icon = 'icons/obj/clothing/faction/ngr/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'
 	supports_variations = null
+
+	unique_reskin = list(
+		"Black" = "ngr_droppouch",
+		"Beige" = "ngr_droppouchalt"
+	)
 
 /obj/item/storage/belt/security/webbing/ngr/alt/pilot/PopulateContents()
 	for(var/i in 1 to 2)

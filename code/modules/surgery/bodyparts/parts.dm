@@ -404,3 +404,13 @@
 	can_be_disabled = FALSE
 	max_damage = 100
 	animal_origin = ALIEN_BODYPART
+
+/obj/item/bodypart/leg/left/hooves
+	name = "hooved left leg"
+	icon_state = "human_l_leg_digitigrade"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/hooves
+	name = "hooved right leg"
+	icon_state = "human_r_leg_digitigrade"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE

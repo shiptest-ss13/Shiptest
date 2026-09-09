@@ -1695,11 +1695,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/computer/processing_unit_console/directional/north{
-	machinedir = 1;
-	pixel_x = 32;
-	pixel_y = 17
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
 	},
@@ -5996,6 +5991,10 @@
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
+	},
+/obj/machinery/computer/processing_unit_console/directional/north{
+	dy = 1;
+	dx = -1
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
@@ -12148,7 +12147,6 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/cryo)
 "zX" = (
-/obj/item/clothing/suit/space/hardsuit/bomb/ngr,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/structure/railing,
 /obj/structure/railing{
@@ -12158,6 +12156,7 @@
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/tank/internals/emergency_oxygen/double,
 /obj/machinery/light/directional/west,
+/obj/item/clothing/suit/space/hardsuit/ngrheavy,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/security/armory)
 "zY" = (
