@@ -35,6 +35,7 @@
 	minimum_distance = 4
 	casingtype = /obj/projectile/bullet/c45
 	deathmessage = "falls to the ground, sparking as its rotors grind to a halt."
+	is_flying_animal = TRUE
 
 /mob/living/simple_animal/hostile/automated/quadrotor/frontiersman
 	name = "Gremlin Drone"
