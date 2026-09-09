@@ -46,7 +46,7 @@
 	var/alarm_sensitive = FALSE
 
 	//Faction datum. By default, this faction is ignored by the hazard.
-	var/list/haz_faction
+	var/list/hazard_faction
 	//If we want to only trigger the hazard for this faction, this is set to true.
 	var/invert_faction = FALSE
 
@@ -165,9 +165,9 @@ evil 'code' that sets off the above procs. mappers beware!
 		contact(target)
 
 /obj/structure/hazard/proc/check_target(target)
-	if(ismob(target) && haz_faction)
+	if(ismob(target) && hazard_faction)
 		var/mob/target_mob = target
-		var/shared_faction = faction_check(haz_faction, target_mob.faction)
+		var/shared_faction = faction_check(hazard_faction, target_mob.faction)
 		if(shared_faction == !invert_faction)
 			return FALSE
 	if(!iseffect(target) && on && !disabled)
