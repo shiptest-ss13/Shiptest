@@ -535,13 +535,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "ke" = (
-/obj/effect/turf_decal/corner/transparent/green/border{
-	dir = 4
-	},
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 4;
-	layer = 2.030
-	},
 /obj/item/plate_shard{
 	icon_state = "plate_shard5"
 	},
@@ -550,7 +543,13 @@
 	pixel_x = -3;
 	pixel_y = -6
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4;
+	layer = 2.030
+	},
+/obj/effect/turf_decal/corner/transparent/green/border{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "lq" = (
@@ -1338,9 +1337,6 @@
 /area/ship/hallway/central)
 "yu" = (
 /obj/effect/turf_decal/trimline/transparent/green/filled/warning,
-/obj/effect/turf_decal/corner/transparent/green/bordercorner{
-	dir = 4
-	},
 /obj/effect/turf_decal/borderfloorblack/corner{
 	layer = 2.030;
 	dir = 4
@@ -1389,6 +1385,9 @@
 /obj/item/clothing/under/rank/command/captain/suit,
 /obj/item/clothing/gloves/color/white,
 /obj/item/storage/backpack/captain,
+/obj/effect/turf_decal/corner/transparent/green/bordercorner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "yG" = (
