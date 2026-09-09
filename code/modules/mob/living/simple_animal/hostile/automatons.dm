@@ -52,7 +52,7 @@
 	desc = "A military drone manufactured by Cybersun. Used extensively during the Inter-Corporate War, a large number have found themselves in disrepair and malfunctioning in the years since. The 5.7x39mm pistol on its gimbal is still active, however."
 	health = 60
 	maxHealth = 60
-	rapid = 2
+	rapid = 1
 	rapid_fire_delay = 3
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	casingtype = /obj/item/ammo_casing/c57x39mm
@@ -67,7 +67,7 @@
 /mob/living/simple_animal/hostile/automated/quadrotor/cybersun/ramzi
 	name = "Y-10-RC Drone"
 	desc = "A military drone design adapted by Ramzi's Clique for reconnaissance and fast response. The ten-millimeter machinepistol on its gimbal mount tracks your movements."
-	rapid = 2
+	rapid = 1
 	rapid_fire_delay = 3
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	casingtype = /obj/item/ammo_casing/c10mm
