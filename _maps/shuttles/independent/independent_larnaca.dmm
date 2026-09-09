@@ -712,7 +712,12 @@
 	},
 /obj/machinery/light/small/directional/west{
 	pixel_x = -29;
-	pixel_y = -12
+	pixel_y = 10
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = -10
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -751,17 +756,8 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "pk" = (
-/obj/structure/sink{
-	pixel_x = 0;
-	pixel_y = 18
-	},
-/obj/structure/mirror{
-	pixel_y = 34
-	},
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/cryopod/retro/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
 "pl" = (
@@ -809,25 +805,23 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "pK" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
-/obj/machinery/light_switch{
-	pixel_x = -10;
-	pixel_y = 22
+/obj/effect/turf_decal/steeldecal/steel_decals10,
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 4
 	},
-/obj/item/radio{
-	pixel_x = 7;
-	pixel_y = 18
+/obj/machinery/shower{
+	dir = 8
 	},
-/obj/item/radio{
-	pixel_x = 6;
-	pixel_y = 12
+/obj/machinery/door/window/westright,
+/obj/structure/closet/wall/directional/south{
+	name = "Toiletries"
 	},
-/obj/item/radio{
-	pixel_x = 7;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/patterned,
+/obj/effect/decal/cleanable/glass,
+/obj/item/towel,
+/obj/item/towel,
+/obj/item/soap,
+/obj/item/soap,
+/turf/open/floor/plasteel/freezer,
 /area/ship/hallway/central)
 "qa" = (
 /turf/closed/wall/r_wall/rust,
@@ -1495,8 +1489,23 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Ah" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/south,
+/obj/machinery/light/small/directional/south{
+	pixel_x = -9;
+	pixel_y = -28
+	},
+/obj/machinery/button/door{
+	id = "fragboat_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = 8
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "Ak" = (
@@ -1872,26 +1881,33 @@
 	},
 /obj/item/trash/boritos,
 /obj/structure/closet/crate/bin,
+/obj/machinery/light_switch{
+	pixel_x = -10;
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "FV" = (
-/obj/effect/turf_decal/steeldecal/steel_decals10,
-/obj/effect/turf_decal/steeldecal/steel_decals10{
-	dir = 4
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/machinery/light_switch{
+	pixel_x = -10;
+	pixel_y = 22
 	},
-/obj/machinery/shower{
-	dir = 8
+/obj/item/radio{
+	pixel_x = 7;
+	pixel_y = 18
 	},
-/obj/machinery/door/window/westright,
-/obj/structure/closet/wall/directional/south{
-	name = "Toiletries"
+/obj/item/radio{
+	pixel_x = 6;
+	pixel_y = 12
 	},
-/obj/effect/decal/cleanable/glass,
-/obj/item/towel,
-/obj/item/towel,
-/obj/item/soap,
-/obj/item/soap,
-/turf/open/floor/plasteel/freezer,
+/obj/item/radio{
+	pixel_x = 7;
+	pixel_y = 6
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plasteel/patterned,
 /area/ship/crew)
 "Gg" = (
 /turf/closed/wall,
@@ -2685,10 +2701,20 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "TV" = (
-/obj/machinery/cryopod{
+/obj/structure/sink{
+	pixel_x = 4;
+	pixel_y = 18
+	},
+/obj/structure/mirror{
+	pixel_y = 36;
+	pixel_x = 4
+	},
+/obj/structure/toilet{
+	pixel_y = 3;
+	pixel_x = -8;
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "Um" = (
 /obj/effect/turf_decal/corner/opaque/black{
@@ -3009,21 +3035,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "YQ" = (
-/obj/structure/toilet{
-	pixel_y = 15;
-	pixel_x = 0
+/obj/machinery/cryopod{
+	dir = 4
 	},
-/obj/machinery/button/door{
-	id = "fragboat_bathroom";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	name = "Bathroom Lock";
-	dir = 1;
-	pixel_y = -21;
-	pixel_x = 8
+/obj/effect/turf_decal/techfloor{
+	dir = 8
 	},
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "YU" = (
 /turf/closed/wall,
