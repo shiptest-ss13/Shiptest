@@ -229,9 +229,9 @@
 
 	unique_mag_sprites_for_variants = TRUE
 	manufacturer = MANUFACTURER_IMPORT
-	slot_available = list(ATTACHMENT_SLOT_RAIL)
+	slot_available = list(ATTACHMENT_SLOT_RAIL = 1)
 	slot_offsets = list(
-		ATTACHMENT_SLOT_GRIP = list(
+		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 28,
 			"y" = 14,
 		),
