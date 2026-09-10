@@ -95,21 +95,21 @@
 
 /obj/item/ammo_box/magazine/m9mm_mauler
 	name = "mauler pistol magazine (9mm)"
-	desc = "A 8-round magazine designed for the Mauler pistol."
+	desc = "A 10-round magazine designed for the Mauler pistol."
 	icon_state = "mauler_mag-1"
 	base_icon_state = "mauler_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
-	max_ammo = 8
+	max_ammo = 10
 
 /obj/item/ammo_box/magazine/m9mm_mauler/extended
 	name = "mauler machine pistol extended magazine (9mm)"
-	desc = "A 12-round magazine designed for the Mauler machine pistol."
+	desc = "A 18-round magazine designed for the Mauler machine pistol."
 	icon_state = "mauler_extended_mag-1"
 	base_icon_state = "mauler_extended_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
-	max_ammo = 12
+	max_ammo = 18
 
 /obj/item/ammo_box/magazine/m9mm_mauler/update_icon_state()
 	. = ..()
