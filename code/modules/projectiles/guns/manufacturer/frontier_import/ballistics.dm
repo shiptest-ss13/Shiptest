@@ -212,8 +212,8 @@
 	wield_delay = 0.2 SECONDS
 	fire_delay = 0.12 SECONDS
 	recoil = 0.5
-	recoil_unwielded = 2
-	spread_unwielded = 6
+	recoil_unwielded = 2.5
+	spread_unwielded = 8
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
 	default_ammo_type = /obj/item/ammo_box/magazine/heater
 	allowed_ammo_types = list(
