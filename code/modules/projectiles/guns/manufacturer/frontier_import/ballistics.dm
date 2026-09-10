@@ -208,11 +208,12 @@
 	icon_state = "heater"
 	item_state = "heater"
 	w_class = WEIGHT_CLASS_NORMAL
-	spread = 6
+	spread = 4
 	wield_delay = 0.2 SECONDS
 	fire_delay = 0.12 SECONDS
 	recoil = 0.5
-	recoil_unwielded = 4
+	recoil_unwielded = 2
+	spread_unwielded = 6
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
 	default_ammo_type = /obj/item/ammo_box/magazine/heater
 	allowed_ammo_types = list(
@@ -248,7 +249,6 @@ NO_MAG_GUN_HELPER(automatic/smg/heater)
 	icon_state = "scorcher"
 	item_state = "scorcher"
 	w_class = WEIGHT_CLASS_BULKY
-	spread = 6
 	recoil = 0.1
 
 
