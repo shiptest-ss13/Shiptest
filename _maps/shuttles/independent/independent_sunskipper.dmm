@@ -3170,15 +3170,15 @@
 /area/ship/crew/canteen)
 "zU" = (
 /obj/structure/table/glass,
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = -6;
+	pixel_y = 7
+	},
 /obj/item/paper/crumpled{
 	pixel_y = 4;
 	pixel_x = 19;
 	name = "crumpled advertisement";
-	desc = "Beneath the mess of crinkled lines and cigarette burns, there is an ad for a rival Sunskipper boasting their "competitiveprices"."
-	},
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = -6;
-	pixel_y = 7
+	desc = "Beneath the mess of crinkled lines and cigarette burns, there is an ad for a rival Sunskipper boasting their competitive prices."
 	},
 /turf/open/floor/carpet/nanoweave/green,
 /area/ship/crew/dorm)
