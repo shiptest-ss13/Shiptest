@@ -249,7 +249,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	dry_fire_sound = 'sound/weapons/gun/revolver/dry_fire.ogg'
 
 	spread = 0
-	spread_unwielded = 12
+	spread_unwielded = 0
 	recoil = 1
 	recoil_unwielded = 3
 

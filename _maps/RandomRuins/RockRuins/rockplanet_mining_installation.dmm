@@ -2046,11 +2046,11 @@
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "ln" = (
-/obj/machinery/computer/processing_unit_console/directional/north{
-	machinedir = 2
-	},
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/railing,
+/obj/machinery/computer/processing_unit_console/directional/north{
+	dy = -4
+	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/refinery)
 "lo" = (

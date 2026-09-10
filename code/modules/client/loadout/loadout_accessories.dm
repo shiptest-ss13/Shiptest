@@ -99,11 +99,7 @@
 
 /datum/gear/accessory/gloves/armwarmers
 	display_name = "arm warmers"
-	path = /obj/item/clothing/gloves/armwarmer
-
-/datum/gear/accessory/gloves/stripedwarmers
-	display_name = "striped arm warmers"
-	path = /obj/item/clothing/gloves/armwarmer/striped
+	path = /obj/item/clothing/gloves/armwarmers
 
 /datum/gear/accessory/gloves/white
 	display_name = "gloves, white"

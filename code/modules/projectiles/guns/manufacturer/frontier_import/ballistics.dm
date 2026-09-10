@@ -21,7 +21,7 @@
 	show_magazine_on_sprite = FALSE //hard coded
 
 	spread = 15
-	spread_unwielded = 30
+	spread_unwielded = 15
 	recoil = 1
 	recoil_unwielded = 3
 	safety_multiplier = 2 //this means its twice as safe right? //oh, god no.
@@ -135,7 +135,7 @@
 	manufacturer = MANUFACTURER_IMPORT
 
 	spread = 20
-	spread_unwielded = 35
+	spread_unwielded = 20
 	dual_wield_spread = 35
 	wield_slowdown = SMG_SLOWDOWN
 	wield_delay = 0.2 SECONDS
@@ -494,13 +494,26 @@
 
 	cartridge_wording = "rocket"
 	empty_indicator = FALSE
-	sealed_magazine = TRUE
 	manufacturer = MANUFACTURER_IMPORT
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	has_safety = FALSE
 	safety = FALSE
 
 	safety_multiplier = 0
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot/eject_magazine(mob/user, display_message = TRUE)
+	if (!chambered)
+		to_chat(user, span_warning("It's spent!"))
+	else
+		to_chat(user, span_warning("You can't remove the rocket!"))
+	return
+
+/obj/item/gun/ballistic/rocketlauncher/oneshot/insert_magazine(mob/user, display_message = TRUE)
+	if (!chambered)
+		to_chat(user, span_warning("It's spent!"))
+	else
+		to_chat(user, span_warning("You can't load this!"))
+	return
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot/hedp
 	name = "\improper Hammer-DP"

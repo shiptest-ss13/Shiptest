@@ -92,6 +92,7 @@
 	desc = "Contains a Candor pistol, the trusty sidearm of any spacer, produced by Hunter's Pride and chambered in .45 ACP."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/candor)
+	contains_factional = list(/obj/item/storage/guncase/pistol/candor/factory)
 	faction = /datum/faction/srm
 
 /datum/supply_pack/gun/asp
@@ -399,6 +400,77 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/energy/nettle
+	name = "ECM-7 'Nettle' Energy Pistol"
+	desc = "Contains a single ECM-7 Energy Pistol, a burst-fire pistol manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses Eoehoma mini cells."
+	cost = 1750
+	contains = list(/obj/item/storage/guncase/ecm7)
+	crate_name = "beam pistol crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/energy/nettle/indie
+	name = "PL-7 'Nettle' Energy Pistol"
+	desc = "Contains a single PL-7 Energy Pistol, a civilian grade, burst-fire pistol manufactured by Clover Photonics. Uses Eoehoma mini cells."
+	contains = list(/obj/item/storage/guncase/pl7)
+	faction_discount = 10
+	faction_locked = FALSE
+
+/datum/supply_pack/gun/energy/thistle
+	name = "ECM-9 'Thistle' Heavy Energy Pistol"
+	desc = "Contains a single ECM-9 Heavy Energy Pistol, a hard-hitting, armor piercing pistol manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses Eoehoma mini cells."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/ecm9)
+	crate_name = "beam pistol crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/energy/thistle/indie
+	name = "PL-9 'Thistle' Heavy Energy Pistol"
+	desc = "Contains a single PL-9 Heavy Energy Pistol, a civilian grade heavy pistol manufactured by Clover Photonics. Uses Eoehoma mini cells."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/pl9)
+	faction_discount = 10
+	faction_locked = FALSE
+
+/datum/supply_pack/gun/energy/shillelagh
+	name = "ECM-12 'Shillelagh' Energy SMG"
+	desc = "Contains a single ECM-12 Submachine Gun, a fast firing energy gun with improved anti-armor performance, manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses Eoehoma cells."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/ecm12)
+	crate_name = "beam smg crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/energy/shillelagh/indie
+	name = "PL-12 'Shillelagh' Energy SMG"
+	desc = "Contains a single PL-12 Submachine Gun, a civilian grade energy gun with a burst fire mode manufactured by Clover Photonics. Uses Eoehoma cells."
+	cost = 2000
+	contains = list(/obj/item/storage/guncase/pl12)
+	faction_discount = 10
+	faction_locked = FALSE
+
+/datum/supply_pack/gun/energy/faveleira
+	name = "ECM-25 'Faveleira' Energy Accelerating Scattergun"
+	desc = "Contains a single ECM-25 Energy Accelerating Scattergun, a flexible energy gun that can fire in diffuse shot or a focused blast, manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses Eoehoma cells."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/ecm25)
+	crate_name = "beam shotgun crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/energy/faveleira/indie
+	name = "PL-24 'Faveleira' Energy Scattergun"
+	desc = "Contains a single PL-24 Energy Scattergun, a civilian grade energy gun that fires a spread of energy bolts, manufactured by Clover Photonics. Uses Eoehoma cells."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/pl25)
+	faction_discount = 10
+	faction_locked = FALSE
+
 /*
 		Shotguns
 */
@@ -408,6 +480,7 @@
 	desc = "For when you need to deal with 2 drunkards the old-fashioned way. Contains a double-barreled shotgun, favored by Bartenders. Warranty voided if sawed off."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/doublebarrel)
+	contains_factional = list(/obj/item/storage/guncase/doublebarrel/roumain)
 	crate_name = "shotgun crate"
 	faction = /datum/faction/srm
 
@@ -683,6 +756,7 @@
 	desc = "Contains an antiquated lever action rifle intended for hunting wildlife. Chambered in .38 rounds."
 	cost = 750
 	contains = list(/obj/item/storage/guncase/winchester)
+	contains_factional = list(/obj/item/storage/guncase/winchester/factory)
 	crate_name = "rifle crate"
 	faction = /datum/faction/srm
 	faction_discount = 20
@@ -692,6 +766,7 @@
 	desc = "Contains a powerful lever-action rifle for hunting larger wildlife. Chambered in .357."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/absolution)
+	contains_factional = list(/obj/item/storage/guncase/absolution/factory)
 	crate_name = "shotguns crate"
 	faction = /datum/faction/srm
 
@@ -700,6 +775,7 @@
 	desc = "Contains a devastating but unwieldy lever-action rifle for annihilating larger wildlife. Chambered in .45-70."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/pyre)
+	contains_factional = list(/obj/item/storage/guncase/pyre/factory)
 	crate_name = "rifle crate"
 	faction = /datum/faction/srm
 
@@ -708,6 +784,7 @@
 	desc = "Contains an expertly made bolt action rifle intended for hunting wildlife. Chambered in 8x50mmR rounds."
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/illestren)
+	contains_factional = list(/obj/item/storage/guncase/illestren/factory)
 	crate_name = "rifle crate"
 	faction = /datum/faction/srm
 
@@ -716,6 +793,7 @@
 	desc = "Contains a single shot break action rifle to hunt wildlife that annoys you in particular. Chambered in devastating .45-70 rounds. Warranty voided if sawed off."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/beacon)
+	contains_factional = list(/obj/item/storage/guncase/beacon/factory)
 	crate_name = "rifle crate"
 	faction = /datum/faction/srm
 

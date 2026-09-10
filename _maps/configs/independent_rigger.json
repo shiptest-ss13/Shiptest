@@ -18,38 +18,39 @@
 		"Medical",
 		"Generalist"
 	],
+	"starting_funds": 2500,
 	"map_path": "_maps/shuttles/independent/independent_rigger.dmm",
 	"token_icon_state": "ship_mid_generic",
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/independent/captain/western",
+			"outfit": "/datum/outfit/job/independent/captain/gown",
 			"officer": true,
 			"slots": 1
 		},
 		"First Mate": {
-			"outfit": "/datum/outfit/job/independent/hop/western",
+			"outfit": "/datum/outfit/job/independent/hop/gown",
 			"officer": true,
 			"slots": 1
 		},
 		"Ship's Doctor": {
-			"outfit": "/datum/outfit/job/independent/doctor",
+			"outfit": "/datum/outfit/job/independent/doctor/gown",
 			"slots": 1
 		},
 		"Machinist's Mate": {
-			"outfit": "/datum/outfit/job/independent/engineer",
+			"outfit": "/datum/outfit/job/independent/engineer/gown",
 			"slots": 1
 		},
 		"Asteroid Miner": {
-			"outfit": "/datum/outfit/job/independent/miner",
+			"outfit": "/datum/outfit/job/independent/miner/gown",
 			"slots": 1
 		},
 		"Security Detail": {
-			"outfit": "/datum/outfit/job/independent/security/western",
+			"outfit": "/datum/outfit/job/independent/security/merc",
 			"slots": 1
 		},
 		"Deckhand": {
-			"outfit": "/datum/outfit/job/independent/assistant",
+			"outfit": "/datum/outfit/job/independent/assistant/gown",
 			"slots": 2
 		}
 	},

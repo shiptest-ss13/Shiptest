@@ -91,7 +91,9 @@
 		return FALSE
 
 	apply_modifiers(gun, user, TRUE)
-	gun_cell = gun.cell
+	if(istype(gun, /obj/item/gun/energy))
+		var/obj/item/gun/energy/egun = gun
+		gun_cell = egun.cell
 	playsound(src.loc, 'sound/weapons/gun/pistol/mag_insert_alt.ogg', 75, 1)
 	return TRUE
 

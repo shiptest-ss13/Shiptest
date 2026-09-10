@@ -220,7 +220,7 @@
 /obj/item/reagent_containers/hypospray/medipen/oculine
 	name = "oculine autoinjector"
 	desc = "An autoinjector designed to promote the repair of the cornea and the retina after damage."
-	list_reagents = list(/datum/reagent/medicine/inacusiate = 10)
+	list_reagents = list(/datum/reagent/medicine/oculine = 10)
 	custom_price = 100
 
 /obj/item/reagent_containers/hypospray/medipen/inacusiate

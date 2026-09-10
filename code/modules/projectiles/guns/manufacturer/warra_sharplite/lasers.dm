@@ -23,7 +23,6 @@
 
 	modifystate = TRUE
 	ammo_x_offset = 2
-	dual_wield_spread = 60
 	wield_slowdown = LASER_RIFLE_SLOWDOWN
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 	w_class = WEIGHT_CLASS_NORMAL
@@ -56,7 +55,7 @@
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 4
-	spread_unwielded = 8
+	spread_unwielded = 4
 
 	muzzleflash_iconstate = "muzzle_flash_sharplite"
 

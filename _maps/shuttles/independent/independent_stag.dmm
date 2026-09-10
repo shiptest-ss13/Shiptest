@@ -1915,8 +1915,14 @@
 	dir = 4;
 	id = "stagarmory"
 	},
-/obj/item/stock_parts/cell/gun/sharplite/mini,
-/obj/item/stock_parts/cell/gun/sharplite/mini,
+/obj/item/stock_parts/cell/gun/mini{
+	pixel_x = 0;
+	pixel_y = 2
+	},
+/obj/item/stock_parts/cell/gun/mini{
+	pixel_x = 0;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "sY" = (
@@ -2094,14 +2100,11 @@
 	dir = 4;
 	id = "stagarmory"
 	},
-/obj/item/gun/energy/sharplite/ohm/empty_cell{
-	pixel_x = 1;
-	pixel_y = -7
-	},
 /obj/item/gun/energy/kalix/empty_cell{
 	pixel_y = 9
 	},
-/obj/item/gun/energy/laser/wasp/empty_cell,
+/obj/item/gun/energy/clover,
+/obj/item/gun/energy/clover/pistol,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "uF" = (
@@ -3853,15 +3856,15 @@
 	pixel_x = 2;
 	pixel_y = -6
 	},
-/obj/item/stock_parts/cell/gun{
-	pixel_x = 9;
-	pixel_y = 11
-	},
-/obj/item/stock_parts/cell/gun{
-	pixel_x = 8;
+/obj/item/radio/command,
+/obj/item/stock_parts/cell/gun/mini{
+	pixel_x = 3;
 	pixel_y = 7
 	},
-/obj/item/radio/command,
+/obj/item/stock_parts/cell/gun/mini{
+	pixel_x = 7;
+	pixel_y = 0
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/captain)
 "Mf" = (
@@ -4091,10 +4094,7 @@
 	pixel_x = -32;
 	pixel_y = 2
 	},
-/obj/item/gun/energy/laser/e10/empty_cell{
-	pixel_x = 2;
-	pixel_y = 7
-	},
+/obj/item/gun/energy/clover/pistol/thistle,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
 "Od" = (
