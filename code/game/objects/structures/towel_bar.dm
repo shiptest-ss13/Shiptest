@@ -1,8 +1,8 @@
 /obj/structure/towel_bar
 	name = "towel bar"
 	desc = "A small rod from which towels can be hung upon."
-	icon = 'icons/obj/wallmounts/extinguisher_cabinet.dmi'
-	icon_state = "towel_bar"
+	icon = 'icons/obj/wallmounts/towel_holder.dmi'
+	icon_state = "towel-bar-empty"
 	anchored = TRUE
 	density = FALSE
 	max_integrity = 200
@@ -25,6 +25,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/towel_bar, 23)
 		setDir(ndir)
 	else
 		stored_towel = new /obj/item/towel(src)
+		icon_state = "towel-bar-full"
 	update_appearance()
 
 /obj/structure/towel_bar/Destroy()
@@ -49,13 +50,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/towel_bar, 23)
 				return
 			stored_towel = I
 			to_chat(user, span_notice("You hang [I] on [src]."))
+			icon_state = "towel-bar-full"
 			update_appearance()
 			return TRUE
 	else
 		return ..()
 
 
-/obj/structure/extinguisher_cabinet/attack_hand(mob/user)
+/obj/structure/towel_bar/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
@@ -63,4 +65,25 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/towel_bar, 23)
 		user.put_in_hands(stored_towel)
 		to_chat(user, span_notice("You take [stored_towel] from [src]."))
 		stored_towel = null
+		icon_state = "towel-bar-empty"
 		update_appearance()
+
+/obj/structure/towel_bar/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		if(disassembled)
+			new /obj/item/wallframe/towel_bar(loc)
+		else
+			new /obj/item/stack/sheet/metal (loc, 2)
+		if(stored_towel)
+			stored_towel.forceMove(loc)
+			stored_towel = null
+	qdel(src)
+
+/obj/item/wallframe/towel_bar
+	name = "disassembled towel bar"
+	desc = "Do It Yourself installation kit with a metal rod, fixtures to keep it in place on a wall of your choosing, and a set of screws. Make sure there aren't any extra parts lying around when you're done!"
+	icon_state = "extinguisher"
+	result_path = /obj/structure/towel_bar
+	pixel_shift = 28
+	inverse_pixel_shift = TRUE
+	inverse = TRUE
