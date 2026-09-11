@@ -1,7 +1,7 @@
 /obj/item/gun/ballistic/bow
 	autowiki_hidden = TRUE //the bows and therefore arrows are apparently due for a rework and are unobtainable atm?
-	name = "longbow"
-	desc = "A modern rendition of a prehistoric weapon. Chambered in 30x750 caseless - that is to say, it fires arrows."
+	name = "HP Longbow"
+	desc = "A modern rendition of a prehistoric weapon, built by Hunter's Pride. Chambered in 30x750 caseless - that is to say, it fires arrows."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "bow"
 	item_state = "pipebow"
@@ -43,7 +43,6 @@
 		if(!drawn)
 			playsound(src, 'sound/weapons/bowdraw.ogg', 75, 0)
 		drawn = !drawn
-		wield_slowdown = drawn ? 1 : 0.1
 	update_appearance()
 
 /obj/item/gun/ballistic/bow/afterattack(atom/target, mob/living/user, flag, params, passthrough = FALSE)
@@ -63,7 +62,7 @@
 
 /obj/item/storage/bag/quiver
 	name = "quiver"
-	desc = "A quiver made from the hide of some animal. Used to hold arrows."
+	desc = "A sturdy leather quiver. Used to hold arrows."
 	icon_state = "quiver"
 	item_state = "harpoon_quiver"
 	var/arrow_path = /obj/item/ammo_casing/caseless/arrow
