@@ -372,6 +372,12 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "fx" = (
@@ -1052,15 +1058,15 @@
 /turf/closed/wall/r_wall/yesdiag,
 /area/ship/engineering/engine)
 "tY" = (
-/obj/machinery/door/airlock{
-	name = "Restroom";
-	id_tag = "fragboat_bathroom"
-	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock{
+	dir = 1;
+	name = "Cryo Room"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "uj" = (
@@ -1480,6 +1486,22 @@
 /obj/item/clothing/under/shorts/cargo{
 	pixel_x = -12;
 	pixel_y = -9
+	},
+/obj/item/storage/backpack/satchel{
+	pixel_x = 0;
+	pixel_y = -3
+	},
+/obj/item/storage/backpack/satchel{
+	pixel_x = 0;
+	pixel_y = -3
+	},
+/obj/item/storage/backpack/messenger{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/storage/backpack/messenger{
+	pixel_x = 4;
+	pixel_y = -4
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
@@ -2701,17 +2723,21 @@
 /area/ship/engineering/engine)
 "TV" = (
 /obj/structure/sink{
-	pixel_x = 4;
+	pixel_x = 3;
 	pixel_y = 18
 	},
 /obj/structure/mirror{
 	pixel_y = 36;
-	pixel_x = 4
+	pixel_x = 3
 	},
 /obj/structure/toilet{
 	pixel_y = 3;
 	pixel_x = -8;
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_x = 12;
+	pixel_y = 24
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
@@ -2876,9 +2902,14 @@
 /area/ship/crew)
 "Va" = (
 /obj/machinery/door/airlock{
-	dir = 1;
-	name = "Cryo Room"
+	name = "Restroom";
+	id_tag = "fragboat_bathroom"
 	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Vh" = (
