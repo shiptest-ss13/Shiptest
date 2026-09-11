@@ -1010,6 +1010,8 @@
 		else
 			draw_color_overlay_secondary = source.dna.features["mcolor2"]
 
+	use_damage_color = spec.use_damage_color
+
 	if(!should_draw_greyscale)
 		draw_color = null
 		return
