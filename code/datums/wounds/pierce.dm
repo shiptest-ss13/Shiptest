@@ -286,7 +286,7 @@
 
 /datum/wound_pregen_data/flesh_pierce/open_puncture/eye/get_threshold_for(obj/item/bodypart/part, attack_direction, damage_source)
 	var/obj/item/clothing/eye_protection = part.owner?.get_item_by_slot(ITEM_SLOT_EYES)
-	if(isclothing(eye_protection) && (eye_protection.clothing_flags & SEALS_EYES))
+	if(isclothing(eye_protection) && (eye_protection.flags_cover & SEALS_EYES))
 		return threshold_minimum * 2 // this must result in a threshold equal to or higher than a critical pierce wound
 	return ..()
 
