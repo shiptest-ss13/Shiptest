@@ -116,7 +116,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/structure/closet/crate/secure/weapon,
+/obj/structure/closet/crate/secure/weapon{
+	req_ship_access = 1
+	},
 /obj/item/clothing/suit/armor/vest/security{
 	pixel_x = -8;
 	pixel_y = -2
@@ -131,6 +133,9 @@
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/storage/box/ammo/c10mm,
 /obj/machinery/light/floor,
+/obj/item/flashlight/seclite,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/storage/belt/military,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "n" = (
@@ -152,12 +157,14 @@
 	pixel_y = 24;
 	pixel_x = -7;
 	name = "Shuttle Doors";
-	id = "starchaser_blast_doors"
+	id = "starchaser_blast_doors";
+	req_ship_access = 1
 	},
 /obj/machinery/button/shieldwallgen{
 	pixel_y = 24;
 	id = "starchaser_holo";
-	pixel_x = 2
+	pixel_x = 2;
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -325,7 +332,8 @@
 	name = "Engine Shutters";
 	id = "starchaser_engines";
 	dir = 1;
-	pixel_x = -7
+	pixel_x = -7;
+	req_ship_access = 1
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/telecomms_floor,
