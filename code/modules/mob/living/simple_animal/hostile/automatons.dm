@@ -279,6 +279,7 @@
 	attack_verb_simple = "smash"
 	attack_sound = 'sound/weapons/genhit1.ogg'
 	faction = list(ROLE_DEATHSQUAD)
+	on_aggro_say = list("Intruder detected. Suppressing.", "Aggressor is non-complaint, Engaging.", "Stop Resisting.")
 
 /mob/living/simple_animal/hostile/automated/walkmine
 	name = "G-80W Walkmine"
