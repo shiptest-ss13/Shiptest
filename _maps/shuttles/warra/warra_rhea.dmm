@@ -4563,8 +4563,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
 	},
 /obj/structure/cable/white{
 	icon_state = "2-8"
@@ -12293,9 +12293,6 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/engineering/storage)
 "QQ" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/commad/hos/director)
 "QS" = (
