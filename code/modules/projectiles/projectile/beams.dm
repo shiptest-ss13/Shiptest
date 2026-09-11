@@ -146,7 +146,7 @@
 	damage = 15
 
 /obj/projectile/beam/weak/shotgun
-	damage = 22
+	damage = 20
 	armour_penetration = -10
 	var/tile_dropoff = 1
 	var/ap_dropoff = 5
