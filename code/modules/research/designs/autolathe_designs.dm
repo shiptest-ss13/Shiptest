@@ -489,6 +489,22 @@
 	build_path = /obj/item/reagent_containers/food/drinks/modglass/large
 	category = list("initial", "Dinnerware")
 
+/datum/design/mug
+	name = "Mug"
+	id = "mug"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=400)
+	build_path = /obj/item/reagent_containers/food/drinks/mug
+	category = list("initial", "Dinnerware")
+
+/datum/design/teacup
+	name = "Teacup"
+	id = "teacup"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=300)
+	build_path = /obj/item/reagent_containers/food/drinks/teacup
+	category = list("initial", "Dinnerware")
+
 /datum/design/glassbottle
 	name = "Glass Bottle"
 	id = "glass_bottle"
