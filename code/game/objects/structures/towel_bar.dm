@@ -82,8 +82,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/towel_bar, 23)
 /obj/item/wallframe/towel_bar
 	name = "disassembled towel bar"
 	desc = "Do It Yourself installation kit with a metal rod, fixtures to keep it in place on a wall of your choosing, and a set of screws. Make sure there aren't any extra parts lying around when you're done!"
-	icon_state = "extinguisher"
+	icon_state = "towel-bar"
 	result_path = /obj/structure/towel_bar
-	pixel_shift = 28
-	inverse_pixel_shift = TRUE
-	inverse = TRUE
+	pixel_shift = 20
+	inverse_pixel_shift = FALSE
+	inverse = FALSE
