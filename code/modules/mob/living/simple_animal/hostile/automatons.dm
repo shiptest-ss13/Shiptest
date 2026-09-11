@@ -280,6 +280,7 @@
 	attack_sound = 'sound/weapons/genhit1.ogg'
 	faction = list(ROLE_DEATHSQUAD)
 	on_aggro_say = list("Intruder detected. Suppressing.", "Aggressor is non-complaint, Engaging.", "Stop Resisting.")
+	aggro_say_chance = 60
 
 /mob/living/simple_animal/hostile/automated/boxer/AttackingTarget()
 	. = ..()
