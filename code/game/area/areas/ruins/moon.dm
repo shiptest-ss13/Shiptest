@@ -1,3 +1,50 @@
+// bunker
+
+/area/ruin/moon/bunker
+	name = "bunker"
+	icon_state = "hallC"
+
+/area/ruin/moon/bunker/exterior
+	name = "Bunker Exterior"
+	ambience_index = AMBIENCE_SPACE
+	sound_environment = SOUND_AREA_SPACE
+	light_range = 2
+	light_power = 1
+	light_color = "#FFFFFF"
+	icon_state = "green"
+
+/area/ruin/moon/bunker/dorms/one
+	name = "Bunker Dorms One"
+
+/area/ruin/moon/bunker/dorms/two
+	name = "Bunker Dorms Two"
+
+/area/ruin/moon/bunker/engineering
+	name = "Bunker Engineering"
+	icon_state = "engine"
+
+/area/ruin/moon/bunker/drone
+	name = "Bunker Droneroom"
+	icon_state = "security"
+
+/area/ruin/moon/bunker/armory
+	name = "Bunker Armory"
+	icon_state = "security"
+
+/area/ruin/moon/bunker/bathroom
+	name = "Bunker Washroom"
+	icon_state = "toilet"
+
+/area/ruin/moon/bunker/dorms/lounge
+	name = "Bunker Lounge"
+	icon_state = "blue"
+
+/area/ruin/moon/bunker/cargo
+	name = "Food Storage"
+	icon_state = "cargo_warehouse"
+
+// moonbase
+
 /area/ruin/moon/moonbase
 	name = "CLIP-MELD Moonbase"
 
