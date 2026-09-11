@@ -146,6 +146,7 @@
 	bolt_type = BOLT_TYPE_NO_BOLT
 	tac_reloads = FALSE
 	w_class = WEIGHT_CLASS_TINY
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 
 /obj/item/gun/ballistic/automatic/pistol/derringer/get_ammo(countchambered = FALSE, countempties = TRUE)
 	var/boolets = 0 //legacy var name maturity
