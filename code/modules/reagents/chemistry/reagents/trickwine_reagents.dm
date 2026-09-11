@@ -80,7 +80,7 @@
 /datum/reagent/consumable/ethanol/trickwine/ash_wine/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
 	var/high_message = pick("You feel far more devoted to the cause.", "You feel like you should go on a hunt.")
 	var/cleanse_message = pick("Divine light purifies you.", "You are purged of foul spirts.")
-	M.adjustToxLoss(-.5 * seconds_per_tick)
+	M.adjustToxLoss(-0.5 * seconds_per_tick)
 	if(SPT_PROB(5, seconds_per_tick))
 		to_chat(M, span_notice("[high_message]"))
 	if(M.faction && ("roumain" in M.faction))
