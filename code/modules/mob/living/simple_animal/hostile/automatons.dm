@@ -254,7 +254,7 @@
 
 /mob/living/simple_animal/hostile/automated/boxer
 	name = "B.A.P II 'Boxer'"
-	desc = "A cheaper, easier to produce version of the Bipedal Assault Platform, the B.A.P II was made to focus on a brawling, frontline role. With some structure stripped down and its weaponry downgraded to a deterrent plasma stream, it is able to perform far more aggressively and fast compared to its predecessor."
+	desc = "A cheaper, easier to produce version of the Bipedal Assault Platform, the B.A.P II was made to focus on a brawling, frontline role. With some structure stripped down and its weaponry downgraded to a deterrent plasma stream, it is able to perform far more aggressively compared to its predecessor."
 	icon_state = "boxer"
 	environment_smash = ENVIRONMENT_SMASH_WALLS
 	mob_size = MOB_SIZE_LARGE
