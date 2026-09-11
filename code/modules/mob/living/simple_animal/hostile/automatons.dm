@@ -248,6 +248,34 @@
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
+//boxer
+
+/mob/living/simple_animal/hostile/automated/boxer
+	name = "B.A.P II 'Boxer'"
+	desc = "A cheaper, easier to produce version of the Bipedal Assault Platform, the B.A.P II was made to focus on a brawling, frontline role. With some structure stripped down and its weaponry downgraded to a deterrent plasma stream, it is able to perform far more aggressively and fast compared to its predecessor."
+	icon_state = "boxer"
+	environment_smash = ENVIRONMENT_SMASH_WALLS
+	mob_size = MOB_SIZE_LARGE
+	health = 200
+	maxHealth = 200
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+	move_to_delay = 5
+	speed = 5
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
+	projectiletype = /obj/projectile/beam/chaff
+	rapid = 7
+	rapid_fire_delay = 1
+	spread = 30
+	stat_attack = HARD_CRIT
+	deathmessage = "collapses as its visor goes dark."
+	shoot_point_blank = FALSE
+	armour_penetration = 20
+	melee_damage_lower = 35
+	melee_damage_upper = 35
+	attack_verb_continuous = "smashes"
+	attack_verb_simple = "smash"
+	attack_sound = 'sound/weapons/genhit1.ogg'
 
 /mob/living/simple_animal/hostile/automated/walkmine
 	name = "G-80W Walkmine"
