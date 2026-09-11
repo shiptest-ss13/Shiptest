@@ -271,7 +271,7 @@
 	cost_min = 900
 	cost_max = 1500
 	stock_min = 1
-	stock_max = 2
+	stock_max = 3
 	availability_prob = 20
 
 /datum/blackmarket_item/ammo/spitter_mag
