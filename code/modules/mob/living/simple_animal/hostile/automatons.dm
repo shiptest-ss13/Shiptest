@@ -281,6 +281,14 @@
 	faction = list(ROLE_DEATHSQUAD)
 	on_aggro_say = list("Intruder detected. Suppressing.", "Aggressor is non-complaint, Engaging.", "Stop Resisting.")
 
+/mob/living/simple_animal/hostile/automated/boxer/AttackingTarget()
+	. = ..()
+	if(isliving(target))
+		var/mob/living/bonk = target
+		if(!bonk.anchored)
+			var/atom/throw_target = get_edge_target_turf(bonk, src.dir)
+			bonk.throw_at(throw_target, rand(1,3), 2, src, gentle = TRUE)
+
 /mob/living/simple_animal/hostile/automated/walkmine
 	name = "G-80W Walkmine"
 	desc = "An unconventional modification of the traditional G-80P Bouncer. Famously dubbed, 'a proactive solution to unsavory intruders', use of the Walkmine was banned in most jurisdictions following the Inter-Corporate War."
