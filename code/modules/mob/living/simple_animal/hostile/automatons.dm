@@ -79,7 +79,9 @@
 	health = 60
 	maxHealth = 60
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
-	projectiletype = /obj/projectile/beam/laser/sharplite
+	projectiletype = /obj/projectile/beam/chaff
+	rapid = 7
+	rapid_fire_delay = 1
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
 	icon_state = "quadrotor_warra"
@@ -259,23 +261,24 @@
 	health = 200
 	maxHealth = 200
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
-	move_to_delay = 5
+	move_to_delay = 4
 	speed = 5
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	projectiletype = /obj/projectile/beam/chaff
-	rapid = 7
+	rapid = 6
 	rapid_fire_delay = 1
 	spread = 30
 	stat_attack = HARD_CRIT
 	deathmessage = "collapses as its visor goes dark."
 	shoot_point_blank = FALSE
 	armour_penetration = 20
-	melee_damage_lower = 35
-	melee_damage_upper = 35
+	melee_damage_lower = 40
+	melee_damage_upper = 40
 	attack_verb_continuous = "smashes"
 	attack_verb_simple = "smash"
 	attack_sound = 'sound/weapons/genhit1.ogg'
+	faction = list(ROLE_DEATHSQUAD)
 
 /mob/living/simple_animal/hostile/automated/walkmine
 	name = "G-80W Walkmine"
