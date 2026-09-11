@@ -101,12 +101,12 @@
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine
 	name = "Wine of Ice"
-	description = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
+	description = "A specialized brew utilized by members of the Saint-Roumain Militia, mixed with a set of medicinal herbs that help treat burns."
 	color = "#C0F1EE"
 	boozepwr = 70
 	taste_description = "a weighty meat, undercut by a mild pepper."
 	glass_name = "Wine of Ice"
-	glass_desc = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
+	glass_desc = "A specialized brew utilized by members of the Saint-Roumain Militia, mixed with a set of medicinal herbs that help treat burns."
 	breakaway_flask_icon_state = "baflaskicewine"
 	buff_effect = /datum/status_effect/trickwine/buff/ice
 
@@ -126,12 +126,12 @@
 
 /datum/reagent/consumable/ethanol/trickwine/shock_wine
 	name = "Lightning's Blessing"
-	description = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey. Known to have a shocking effect when thrown"
+	description = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey."
 	color = "#FEFEB8"
 	boozepwr = 50
 	taste_description = "a sharp and unrelenting citrus"
 	glass_name = "Lightning's Blessing"
-	glass_desc = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey. Known to have a shocking effect when thrown"
+	glass_desc = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey."
 	breakaway_flask_icon_state = "baflaskshockwine"
 	buff_effect = /datum/status_effect/trickwine/buff/shock
 
@@ -148,12 +148,12 @@
 
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine
 	name = "Hearthflame"
-	description = "A fiery brew utilized by members of the Saint-Roumain Militia, engineered to heat the body and cauterize wounds. Goes out in a blaze of glory when thrown."
+	description = "A fiery brew utilized by members of the Saint-Roumain Militia, engineered to heat the body and staunch wounds."
 	color = "#FEE185"
 	boozepwr = 70
 	taste_description = "apple cut apart by tangy pricks"
 	glass_name = "Hearthflame"
-	glass_desc = "A fiery brew utilized by members of the Saint-Roumain Militia, engineered to heat the body and cauterize wounds. Goes out in a blaze of glory when thrown."
+	glass_desc = "A fiery brew utilized by members of the Saint-Roumain Militia, engineered to heat the body and staunch wounds."
 	breakaway_flask_icon_state = "baflaskhearthwine"
 	buff_effect = /datum/status_effect/trickwine/buff/hearth
 	/// While this reagent is in our bloodstream, we reduce all bleeding by this factor
@@ -215,12 +215,12 @@
 
 /datum/reagent/consumable/ethanol/trickwine/force_wine
 	name = "Knifepoint liquor"
-	description = "Immensely alcoholic roumian beverage, traditionally used as a disinfectant and painkiller."
+	description = "Immensely alcoholic Roumian beverage, occasionally used as a disinfectant and painkiller when proper medicine is not available. Hunter doctors do not reccomend any more than a thimbleful"
 	color = "#709AAF"
 	boozepwr = 170
 	taste_description = "chemical numbness"
-	glass_name = "Forcewine"
-	glass_desc = "Roumian wine"
+	glass_name = "Knifepoint"
+	glass_desc = "Immensely alcoholic Roumian beverage, occasionally used as a disinfectant and painkiller when proper medicine is not available. Hunter doctors do not reccomend any more than a thimbleful"
 	breakaway_flask_icon_state = "baflaskforcewine"
 	buff_effect = /datum/status_effect/trickwine/buff/force
 
@@ -245,13 +245,13 @@
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine
 	name = "Prismwine"
-	description = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to defend against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
+	description = "A glittering liquid that seems to always refract light passing through it into a rainbow."
 	color = "#F0F0F0"
 	boozepwr = 50
 	quality = FOOD_AMAZING
 	taste_description = "the reflective quality of meditation"
 	glass_name = "Prismwine"
-	glass_desc = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to defend against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
+	glass_desc = "A glittering liquid that seems to always refract light passing through it into a rainbow."
 	breakaway_flask_icon_state = "baflaskprismwine"
 	buff_effect = /datum/status_effect/trickwine/buff/prism
 

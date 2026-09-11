@@ -81,4 +81,4 @@
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine
 	name = "Vintage Saint-Roumain Prismwine"
 	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/prism_wine = 45, /datum/reagent/consumable/ethanol/gin = 5)
-	desc = "Prismwine is a rather unremarkable roumian beverage."
+	desc = "Faint rainbows are cast on the surface around this bottle of clear sparkling liquid. Prismwine is not known for any particular practical effect, but it is pleasant to look at and drink leading to a popularity both in and outside the SRM."
