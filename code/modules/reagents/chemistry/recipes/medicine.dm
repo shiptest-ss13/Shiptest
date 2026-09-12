@@ -211,8 +211,8 @@
 
 /// status chems
 
-/datum/chemical_reaction/spaceacillin
-	results = list(/datum/reagent/medicine/spaceacillin = 2)
+/datum/chemical_reaction/antibiotic
+	results = list(/datum/reagent/medicine/antibiotic = 2)
 	required_reagents = list(/datum/reagent/cryptobiolin = 1, /datum/reagent/medicine/epinephrine = 1)
 
 /datum/chemical_reaction/synaptizine
