@@ -202,7 +202,7 @@
 /datum/blackmarket_item/weapon/guncase/derringer
 	name = "Derringer"
 	desc = "A concealable handgun small enough to hide nearly anywhere. Uses .38 revolver rounds."
-	item = /obj/item/gun/ballistic/derringer
+	item = /obj/item/gun/ballistic/automatic/pistol/derringer
 	gun_unloaded = FALSE
 	mag_number = 0
 
@@ -214,7 +214,7 @@
 /datum/blackmarket_item/weapon/guncase/syndi_derringer
 	name = ".357 Derringer"
 	desc = "A concealable hangun with a tasteful red and black paintjob, which makes it slightly more noticeable. Chambered in .357, so you actually have a chance at killing something."
-	item = /obj/item/gun/ballistic/derringer/traitor
+	item = /obj/item/gun/ballistic/automatic/pistol/derringer/traitor
 	pair_item = list(/datum/blackmarket_item/ammo/a357_box)
 	gun_unloaded = FALSE
 	mag_number = 0

@@ -6,7 +6,7 @@
 	gun_type = /obj/item/gun/ballistic/revolver/firebrand
 
 /obj/item/storage/guncase/pistol/derringer
-	gun_type = /obj/item/gun/ballistic/derringer
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/derringer
 
 /obj/item/storage/guncase/pistol/montagne
 	gun_type = /obj/item/gun/ballistic/revolver/montagne
