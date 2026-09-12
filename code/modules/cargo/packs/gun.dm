@@ -448,9 +448,9 @@
 /datum/supply_pack/gun/energy/shillelagh/indie
 	name = "PL-12 'Shillelagh' Energy SMG"
 	desc = "Contains a single PL-12 Submachine Gun, a civilian grade energy gun with a burst fire mode manufactured by Clover Photonics. Uses Eoehoma cells."
-	cost = 2000
+	cost = 3000
 	contains = list(/obj/item/storage/guncase/pl12)
-	faction_discount = 10
+	faction_discount = 0
 	faction_locked = FALSE
 
 /datum/supply_pack/gun/energy/faveleira
