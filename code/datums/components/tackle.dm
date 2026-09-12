@@ -290,9 +290,10 @@
 			defense_mod += 2
 
 		if(islizard(T))
-			if(!T.getorganslot(ORGAN_SLOT_TAIL)) // lizards without tails are off-balance
+			var/obj/item/bodypart/tail/lizard_tail = T.get_bodypart(BODY_ZONE_TAIL)
+			if(!lizard_tail) // lizards without tails are off-balance
 				defense_mod -= 1
-			else if(T.dna.species.is_wagging_tail()) // lizard tail wagging is robust and can swat away assailants!
+			else if(lizard_tail.wagging) // lizard tail wagging is robust and can swat away assailants!
 				defense_mod += 1
 
 	// OF-FENSE
@@ -434,7 +435,7 @@
 		if(68 to 85)
 			user.visible_message(span_danger("[user] slams hard into [hit], knocking [user.p_them()] senseless!"), span_userdanger("You slam hard into [hit], knocking yourself senseless!"))
 			user.adjustStaminaLoss(30)
-			user.apply_damage(10, BRUTE, ran_zone(BODY_ZONE_HEAD))
+			user.apply_damage(10, BRUTE, user.run_zone(BODY_ZONE_HEAD))
 			user.confused += 10
 			user.Knockdown(30)
 			shake_camera(user, 3, 4)
@@ -442,7 +443,7 @@
 		if(1 to 67)
 			user.visible_message(span_danger("[user] slams into [hit]!"), span_userdanger("You slam into [hit]!"))
 			user.adjustStaminaLoss(20)
-			user.apply_damage(10, BRUTE, ran_zone(BODY_ZONE_HEAD))
+			user.apply_damage(10, BRUTE, user.run_zone(BODY_ZONE_HEAD))
 			user.Knockdown(30)
 			shake_camera(user, 2, 2)
 

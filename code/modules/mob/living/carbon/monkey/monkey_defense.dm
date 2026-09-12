@@ -8,7 +8,7 @@
 /mob/living/carbon/monkey/attack_paw(mob/living/M)
 	if(..()) //successful monkey bite.
 		var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
+		var/obj/item/bodypart/affecting = get_bodypart(run_zone(dam_zone))
 		if(!affecting)
 			affecting = get_bodypart(BODY_ZONE_CHEST)
 		if(M.limb_destroyer)
@@ -22,7 +22,7 @@
 		var/damage = rand(1, 3)
 		if(stat != DEAD)
 			L.amount_grown = min(L.amount_grown + damage, L.max_grown)
-			var/obj/item/bodypart/affecting = get_bodypart(ran_zone(L.zone_selected))
+			var/obj/item/bodypart/affecting = get_bodypart(run_zone(L.zone_selected))
 			if(!affecting)
 				affecting = get_bodypart(BODY_ZONE_CHEST)
 			apply_damage(damage, BRUTE, affecting)
@@ -52,7 +52,7 @@
 						visible_message(span_danger("[M] knocks [name] out!"), \
 										span_userdanger("[M] knocks you out!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), 5, M)
 						to_chat(M, span_danger("You knock [name] out!"))
-				var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
+				var/obj/item/bodypart/affecting = get_bodypart(run_zone(M.zone_selected))
 				if(!affecting)
 					affecting = get_bodypart(BODY_ZONE_CHEST)
 				apply_damage(damage, BRUTE, affecting)
@@ -83,7 +83,7 @@
 									span_userdanger("[M] slashes you!"), span_hear("You hear a sickening sound of a slice!"), COMBAT_MESSAGE_RANGE, M)
 					to_chat(M, span_danger("You slash [name]!"))
 
-				var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
+				var/obj/item/bodypart/affecting = get_bodypart(run_zone(M.zone_selected))
 				log_combat(M, src, "attacked")
 				if(!affecting)
 					affecting = get_bodypart(BODY_ZONE_CHEST)
@@ -124,7 +124,7 @@
 		var/dam_zone = dismembering_strike(user, pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
 		if(!dam_zone) //Dismemberment successful
 			return TRUE
-		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
+		var/obj/item/bodypart/affecting = get_bodypart(run_zone(dam_zone))
 		if(!affecting)
 			affecting = get_bodypart(BODY_ZONE_CHEST)
 		apply_damage(damage, user.melee_damage_type, affecting)
@@ -136,7 +136,7 @@
 		var/dam_zone = dismembering_strike(M, pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
 		if(!dam_zone) //Dismemberment successful
 			return TRUE
-		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
+		var/obj/item/bodypart/affecting = get_bodypart(run_zone(dam_zone))
 		if(!affecting)
 			affecting = get_bodypart(BODY_ZONE_CHEST)
 		apply_damage(damage, M.melee_damage_type, affecting)
@@ -149,7 +149,7 @@
 		var/dam_zone = dismembering_strike(M, pick(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
 		if(!dam_zone) //Dismemberment successful
 			return 1
-		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
+		var/obj/item/bodypart/affecting = get_bodypart(run_zone(dam_zone))
 		if(!affecting)
 			affecting = get_bodypart(BODY_ZONE_CHEST)
 		apply_damage(damage, BRUTE, affecting)

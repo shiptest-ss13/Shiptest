@@ -24,11 +24,15 @@
 	if(!istype(female))
 		female = list()
 
-	for(var/path in subtypesof(prototype))
+	for(var/datum/sprite_accessory/path as anything in subtypesof(prototype))
 		if(roundstart)
 			var/datum/sprite_accessory/P = path
 			if(initial(P.locked))
 				continue
+
+		if(!path::name)
+			continue
+
 		var/datum/sprite_accessory/D = new path()
 
 		if(D.icon_state)
