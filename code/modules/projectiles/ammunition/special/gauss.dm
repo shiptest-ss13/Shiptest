@@ -68,3 +68,23 @@
 	auto_rotate = TRUE
 	energy_cost = 1500
 	stack_size = 5
+
+/obj/item/ammo_casing/caseless/gauss/tavsha
+	name = "2x15mm Tav'Sha gauss dart"
+	desc = "A small magnetic dart."
+	caliber = "dart"
+	icon_state = "gauss-lance"
+	projectile_type = /obj/projectile/bullet/gauss/tavsha
+	auto_rotate = FALSE
+	stack_size = 30
+	energy_cost = 0
+
+/obj/item/ammo_casing/caseless/gauss/deusha
+	name = "3x20mm Deu'Sha gauss dart"
+	desc = "A small magnetic dart."
+	caliber = "dart"
+	icon_state = "gauss-lance"
+	projectile_type = /obj/projectile/bullet/gauss/deusha
+	auto_rotate = FALSE
+	stack_size = 30
+	energy_cost = 0

@@ -1275,7 +1275,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 	fire_delay = 0.25 SECONDS
 
-	spread = 3
+	spread = 1
 	spread_unwielded = 20
 
 	recoil = 1

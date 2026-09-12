@@ -461,3 +461,20 @@
 /obj/item/storage/belt/military/cybersun/bulldog/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/m12g_bulldog(src)
+
+/obj/item/storage/belt/military/cybersun/convergence/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_box/magazine/cs_gauss(src)
+
+/obj/item/storage/belt/military/cybersun/vector/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_box/magazine/cs_gauss/rifle(src)
+
+/obj/item/storage/belt/military/cybersun/cells/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/stock_parts/cell/gun/cybersun(src)
+
+/obj/item/storage/belt/military/cybersun/opportunist/PopulateContents()
+	new /obj/item/gun/energy/cybersun/lorentz/opportunist(src)
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/cell/gun/cybersun(src)
