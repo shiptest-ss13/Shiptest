@@ -121,8 +121,7 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 
 /obj/projectile/beam/laser/clover/smg
-	damage = 20
-	armour_penetration = 10
+	damage = 25
 
 /obj/projectile/beam/laser/clover/magnum
 	icon_state = "clover_pulse"
