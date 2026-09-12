@@ -18,7 +18,6 @@
 	faction = list(FACTION_RAMZI)
 	loot = list()
 	check_friendly_fire = TRUE
-	dodging = TRUE
 	rapid_melee = 2
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi
 
