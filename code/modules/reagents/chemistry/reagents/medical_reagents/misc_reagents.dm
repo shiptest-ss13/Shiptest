@@ -11,6 +11,7 @@
 	color = "#E0BB00" //golden for the gods
 	can_synth = FALSE
 	taste_description = "badmins"
+	autowiki_hidden = TRUE
 
 /datum/reagent/medicine/adminordrazine/on_mob_life(mob/living/carbon/M)
 	M.reagents.remove_all_type(/datum/reagent/toxin, 5*REM, 0, 1)
