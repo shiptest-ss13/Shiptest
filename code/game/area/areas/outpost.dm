@@ -269,3 +269,7 @@
 	power_equip = TRUE // provided begrudgingly, mostly for mappers
 	power_light = TRUE
 	power_environ = TRUE
+
+/area/hangar/weather
+	allow_weather = TRUE
+
