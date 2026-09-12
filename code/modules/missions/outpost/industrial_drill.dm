@@ -41,7 +41,8 @@
 
 /datum/mission/acquire/industrial_drill/Destroy()
 	. = ..()
-	recall_bound(mission_drill, FALSE)
+	if(mission_drill) //a check to prevent runtimes from an attempt to delete a mission drill that was never spawned in
+		recall_bound(mission_drill, FALSE)
 
 //unfortunately: the behavior for normal mission drills is different than what I want.
 /obj/machinery/drill/sampler_mission
