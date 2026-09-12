@@ -523,6 +523,12 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "SV"
 
+/datum/map_template/shuttle/subshuttles/starchaser
+	file_name = "independent_starchaser"
+	name = "Starchaser-class Delivery Shuttle"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "SV"
+
 /datum/map_template/shuttle/subshuttles/flail
 	file_name = "independent_flail"
 	name = "Flail-class Modified Boarder"
