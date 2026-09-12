@@ -91,7 +91,7 @@
 		return
 
 	var/obj/item/clothing/eye_protection = owner.get_item_by_slot(ITEM_SLOT_EYES)
-	if(isclothing(eye_protection) && (eye_protection.clothing_flags & SEALS_EYES))
+	if(isclothing(eye_protection) && (eye_protection.flags_cover & SEALS_EYES))
 		to_chat(source, span_notice("[proj] strikes your [eye_protection.name]!"))
 		return // you'll shoot your eye out!
 
