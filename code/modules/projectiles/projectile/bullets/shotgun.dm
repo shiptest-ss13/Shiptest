@@ -131,3 +131,4 @@
 	damage = 30
 	range = 2
 	armour_penetration = -70
+	bullet_identifier = "\improper shockwave"
