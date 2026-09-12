@@ -254,7 +254,7 @@
 
 /datum/blackmarket_item/ammo/mauler_mag
 	name = "Mauler Magazine"
-	desc = "A 12 round 9mm magazine for the Mauler machine pistol."
+	desc = "A 18 round 9mm magazine for the Mauler machine pistol."
 	item = /obj/item/ammo_box/magazine/m9mm_mauler/extended
 
 	cost_min = 150

@@ -5225,6 +5225,17 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/glass/reinforced,
 /area/outpost/crew/bar/cybersun_outpost)
+"mk" = (
+/obj/effect/turf_decal/trimline/opaque/orange/arrow_ccw{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/arrow_ccw,
+/obj/machinery/computer/processing_unit_console/directional/east{
+	dx = 7;
+	dy = 1
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/outpost/cargo/smeltery)
 "ml" = (
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 6
@@ -10449,6 +10460,10 @@
 /obj/effect/turf_decal/trimline/opaque/orange/arrow_cw{
 	dir = 1
 	},
+/obj/machinery/computer/processing_unit_console/directional/east{
+	dx = 7;
+	dy = -1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)
 "zq" = (
@@ -10604,10 +10619,6 @@
 /obj/machinery/conveyor/auto{
 	id = "outpost2";
 	dir = 8
-	},
-/obj/machinery/computer/processing_unit_console/directional/east{
-	pixel_x = 17;
-	pixel_y = 32
 	},
 /turf/open/floor/plating,
 /area/outpost/cargo/smeltery)
@@ -13441,10 +13452,6 @@
 	id = "outpost1";
 	dir = 8
 	},
-/obj/machinery/computer/processing_unit_console/directional/east{
-	pixel_x = 17;
-	pixel_y = -32
-	},
 /turf/open/floor/plating,
 /area/outpost/cargo/smeltery)
 "GA" = (
@@ -13947,7 +13954,9 @@
 /area/outpost/security/checkpoint)
 "HS" = (
 /obj/machinery/computer/processing_unit_console/directional/east{
-	name = "micro-furnace controller"
+	name = "micro-furnace controller";
+	dx = -1;
+	dy = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)
@@ -34392,7 +34401,7 @@ nr
 sf
 he
 Gz
-wo
+mk
 xC
 sF
 xI

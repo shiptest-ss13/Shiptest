@@ -4823,10 +4823,10 @@
 /turf/open/water/beach/deep/outpost,
 /area/outpost/external)
 "pI" = (
-/obj/machinery/computer/processing_unit_console/directional/south{
-	machinedir = 8
-	},
 /obj/effect/turf_decal/box,
+/obj/machinery/computer/processing_unit_console/directional/south{
+	dx = -1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)
 "pK" = (
@@ -14246,8 +14246,8 @@
 /area/outpost/hallway/starboard)
 "Ud" = (
 /obj/effect/turf_decal/box,
-/obj/machinery/computer/electrolyzer_console/directional/south{
-	density = 0
+/obj/machinery/computer/processing_unit_console/directional/south{
+	dx = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)
