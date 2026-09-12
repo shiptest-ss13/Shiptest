@@ -627,12 +627,13 @@
 
 /datum/supply_pack/gun/resolution
 	name = "PD46 Resolution PDW Crate"
-	desc = "Contains a compact automatic personal defense weapon chambered in 4.6x30mm."
+	desc = "Contains a compact automatic personal defense weapon chambered in 4.6x30mm. For MW employee use only."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/wt550)
 	crate_name = "PDW crate"
-	faction_discount = 10
+	faction_discount = 0
 	faction = /datum/faction/warra
+	faction_locked = TRUE
 
 /datum/supply_pack/gun/bdm50
 	name = "BDM-50 'Akita' PDW Crate"
