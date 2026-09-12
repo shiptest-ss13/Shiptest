@@ -31,7 +31,7 @@
 	radio = /obj/item/radio/headset/silicon/ai
 	native_fov = null
 	var/battery = 200 //emergency power if the AI's APC is off
-	var/list/network = list("ss13")
+	var/list/network = list("ship")
 	var/obj/machinery/camera/current
 	var/list/connected_robots = list()
 	var/aiRestorePowerRoutine = POWER_RESTORATION_OFF

@@ -113,6 +113,7 @@ export const CameraConsoleContent = (props, context) => {
         />
         <Button icon="add" ml={1} onClick={() => act('set_network')} />
         <Button icon="refresh" onClick={() => act('refresh')} />
+        <Button icon="signal" onClick={() => act('sync')} />
       </Flex.Item>
       <Flex.Item>
         <Input

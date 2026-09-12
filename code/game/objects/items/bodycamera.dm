@@ -7,7 +7,8 @@
 	icon_state = "bodycamera-off"
 	resistance_flags = FIRE_PROOF //double check that this flag works for fireproof objects
 	var/list/network = list("default")
-	var/c_tag = "Body Camera"
+	var/mapload_network = "ship"
+	var/c_tag = ""
 	var/c_tag_addition = ""
 	var/status = FALSE
 	var/start_active = FALSE //If it ignores the random chance to start broken on round start
@@ -24,15 +25,28 @@
 
 /obj/item/bodycamera/Initialize()
 	. = ..()
-	for(var/i in network)
-		network -= i
-		network += lowertext(i)
+	// If a mapload_network is specified, this sets the network to the mapload default
+	if(!link_to_shuttle_network())
+		for(var/i in network)
+			network -= i
+			network += lowertext(i)
 
 	tracker = new /datum/movement_detector(src, CALLBACK(src, PROC_REF(obj_move)))
 	GLOB.cameranet.cameras += src
 	GLOB.cameranet.addCamera(src)
-	c_tag = random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
-	name = "body camera - (" + c_tag + ")"
+
+	if(!broadcast_camera)
+		if(c_tag == "")
+			c_tag = random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
+
+		// If the c_tag is changed in a map before initialization, the camera will gain that c_tag instead of a random string
+		if(name == "body camera")
+			name = "body camera - (" + c_tag + ")"
+
+		// If the name of the camera is changed directly, it'll keep that name, instead, and it'll set the c_tag as the name. Be careful to avoid c_tag collisions!
+		else
+			c_tag = name
+
 	update_appearance()
 
 /obj/item/bodycamera/Destroy()
@@ -41,6 +55,15 @@
 	GLOB.cameranet.cameras -= src
 	qdel(tracker)
 	return ..()
+
+/obj/item/bodycamera/proc/link_to_shuttle_network()
+	var/area/ship/current_ship_area = get_area(src)
+	if(istype(current_ship_area) && current_ship_area.mobile_port)
+		var/obj/docking_port/mobile/port = current_ship_area.mobile_port
+		network[1] = "[REF(port)][mapload_network]"
+		return TRUE
+	else
+		return FALSE
 
 /obj/item/bodycamera/examine(mob/user)
 	. += ..()
@@ -74,11 +97,11 @@
 /obj/item/bodycamera/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
 	var/obj/item/multitool/M = I
-	var/list/choice_list = list("Modify the camera tag", "Change the camera network", "Save the network to the multitool buffer", "Transfer the buffered network to the camera")
+	var/list/choice_list = list("Modify the camera nametag", "Change the camera network", "Sync the network to the ship", "Save the network to the multitool buffer", "Transfer the buffered network to the camera")
 	var/choice = tgui_input_list(user, "Select an option", "Advanced Camera Configuration", choice_list)
 
 	switch(choice)
-		if("Modify the camera tag")
+		if("Modify the camera nametag")
 			c_tag_addition = stripped_input(user, "Set a nametag for this camera. Ensure that it is no bigger than 32 characters long.", "Nametag Setup", max_length = 32)
 			set_name(c_tag_addition)
 			to_chat(user, span_notice("You set [src] nametag to '[c_tag]'."))
@@ -86,6 +109,12 @@
 		if("Change the camera network")
 			network[1] = stripped_input(user, "Tune [src] to a specific network. Enter the network name and ensure that it is no bigger than 32 characters long. Network names are case sensitive.", "Network Tuning", max_length = 32)
 			to_chat(user, span_notice("You set [src] to transmit across the '[network[1]]' network."))
+
+		if("Sync the network to the ship")
+			if(link_to_shuttle_network())
+				to_chat(user, span_notice("You sync the camera to the ship's network."))
+			else
+				to_chat(user, span_notice("ERROR: You must be within a ship to link to its network."))
 
 		if("Save the network to the multitool buffer")
 			M.buffer = network[1]
@@ -104,16 +133,22 @@
 	if(broadcast_camera)
 		return
 
-	var/list/choice_list = list("Modify the camera tag", "Change the camera network")
+	var/list/choice_list = list("Modify the camera nametag", "Sync the network to the ship", "Change the camera network directly")
 	var/choice = tgui_input_list(user, "Select an option", "Camera Configuration", choice_list)
 
 	switch(choice)
-		if("Modify the camera tag")
+		if("Modify the camera nametag")
 			c_tag_addition = stripped_input(user, "Set a nametag for this camera. Ensure that it is no bigger than 32 characters long.", "Nametag Setup", max_length = 32)
 			set_name(c_tag_addition)
 			to_chat(user, span_notice("You set [src] nametag to '[c_tag]'."))
 
-		if("Change the camera network")
+		if("Sync the network to the ship")
+			if(link_to_shuttle_network())
+				to_chat(user, span_notice("You sync the camera to the ship's network."))
+			else
+				to_chat(user, span_notice("ERROR: You must be within a ship to link to its network."))
+
+		if("Change the camera network directly")
 			network[1] = stripped_input(user, "Tune [src] to a specific network. Enter the network name and ensure that it is no bigger than 32 characters long. Network names are case sensitive.", "Network Tuning", max_length = 32)
 			to_chat(user, span_notice("You set [src] to transmit across the '[network[1]]' network."))
 
@@ -249,8 +284,10 @@
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	RegisterSignal(radio, COMSIG_RADIO_NEW_FREQUENCY, PROC_REF(adjust_name))
-	c_tag = "Broadcast Camera - " + random_string(6, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
-	name = c_tag
+	if(c_tag == "")
+		c_tag = "Broadcast Camera - " + random_string(6, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
+	if(name != "broadcast camera")
+		name = c_tag
 	update_appearance()
 
 /obj/item/bodycamera/broadcast_camera/Destroy()
