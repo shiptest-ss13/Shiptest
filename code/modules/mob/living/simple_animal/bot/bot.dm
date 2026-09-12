@@ -178,6 +178,7 @@
 	if(path_hud)
 		path_hud.add_to_hud(src)
 		path_hud.add_hud_to(src)
+	ADD_TRAIT(src, TRAIT_RADIMMUNE, INNATE_TRAIT)
 
 
 /mob/living/simple_animal/bot/Destroy()
@@ -199,6 +200,7 @@
 	return TRUE
 
 /mob/living/simple_animal/bot/death(gibbed)
+	REMOVE_TRAIT(src, TRAIT_RADIMMUNE, INNATE_TRAIT)
 	explode()
 	..()
 
