@@ -93,6 +93,9 @@
 	damage = 35
 
 /obj/projectile/beam/hitscan/kalix/faveleira
+	tracer_type = /obj/effect/projectile/tracer/kalix_hunt
+	muzzle_type = /obj/effect/projectile/muzzle/kalix_hunt
+	impact_type = /obj/effect/projectile/impact/kalix_hunt
 	damage = 35
 	armour_penetration = 30
 	damage_constant = 0.95
