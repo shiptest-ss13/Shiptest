@@ -43,6 +43,8 @@
 	/// The mapzone used by the outpost level and hangars. Using a single mapzone means networked radio messages.
 	var/datum/map_zone/mapzone
 	var/list/datum/hangar_shaft/shaft_datums = list()
+	///The border size to use. It's recommended to always have this set to at least one. Make sure your map has the borders mapped in, and that they match this number.
+	var/border_size = QUADRANT_SIZE_BORDER
 	///The weather the virtual z will have. If null, the outpost will have no weather.
 	var/datum/weather_controller/weather_controller_type
 
@@ -217,14 +219,16 @@
 		name,
 		main_level_ztraits,
 		mapzone,
-		QUADRANT_MAP_SIZE,
-		QUADRANT_MAP_SIZE,
+		main_template.width,
+		main_template.height,
 		ALLOCATION_QUADRANT,
 		QUADRANT_MAP_SIZE
 	)
-	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
+	vlevel.reserve_margin(border_size)
 
-	main_template.load(vlevel.get_unreserved_bottom_left_turf())
+	var/turf/spawn_turf = locate(vlevel.low_x,vlevel.low_y,vlevel.z_value)
+
+	main_template.load(spawn_turf)
 
 	if(weather_controller_type)
 		new weather_controller_type(mapzone)
