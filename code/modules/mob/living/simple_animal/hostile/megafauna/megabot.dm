@@ -25,7 +25,7 @@
 	melee_damage_lower = 50
 	melee_damage_upper = 50
 
-	speed = 3
+	speed = 4
 	move_to_delay = 3
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
