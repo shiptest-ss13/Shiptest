@@ -74,6 +74,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/forcecrit = 0
 	var/num_shards = 7
 	var/list/pinned_mobs = list()
+	//What language do we use when speaking? Default is common, but you should be able to change this for clipships and such.
+	var/speak_in = /datum/language/galactic_common
 
 	/**
 	* List of products this machine sells
@@ -96,8 +98,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	*/
 	var/list/premium 	= list()
 
-	///String of slogans separated by semicolons, optional
-	var/product_slogans = ""
 	///String of small ad messages in the vending screen - random chance
 	var/product_ads = ""
 
@@ -189,8 +189,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 	if(restock_hourly)
 		addtimer(CALLBACK(src, PROC_REF(refill_inventory_full)), 60 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
-
-	slogan_list = splittext(product_slogans, ";")
 	// So not all machines speak at the exact same time.
 	// The first time this machine says something will be at slogantime + this random value,
 	// so if slogantime is 10 minutes, it will say it at somewhere between 10 and 20 minutes after the machine is crated.
@@ -783,7 +781,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				message_admins("Vending machine exploit attempted by [ADMIN_LOOKUPFLW(usr)]!")
 				return
 			if (R.amount <= 0 && R.max_amount >= 0)
-				say("Sold out of [R.name].")
+				speak("Sold out of [R.name].")
 				flick(icon_deny,src)
 				vend_ready = TRUE
 				return
@@ -792,18 +790,18 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				var/obj/item/card/bank/C = H.get_bankcard()
 
 				if(!C)
-					say("No card found.")
+					speak("No card found.")
 					flick(icon_deny,src)
 					vend_ready = TRUE
 					return
 				else if (!C.registered_account && !mining_point_vendor)
-					say("No account found.")
+					speak("No account found.")
 					flick(icon_deny,src)
 					vend_ready = TRUE
 					return
 				if(mining_point_vendor)
 					if(price_to_use > C.mining_points)
-						say("You do not possess the funds to purchase [R.name].")
+						speak("You do not possess the funds to purchase [R.name].")
 						flick(icon_deny,src)
 						vend_ready = TRUE
 						return
@@ -813,7 +811,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 					if(coin_records.Find(R) || hidden_records.Find(R))
 						price_to_use = R.custom_premium_price ? R.custom_premium_price : extra_price
 					if(price_to_use && !account.has_money(price_to_use))
-						say("You do not possess the funds to purchase [R.name].")
+						speak("You do not possess the funds to purchase [R.name].")
 						flick(icon_deny,src)
 						vend_ready = TRUE
 						return
@@ -821,7 +819,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 					SSblackbox.record_feedback("amount", "vending_spent", price_to_use)
 					log_econ("[price_to_use] credits were inserted into [src] by [H] to buy [R].")
 			if(last_shopper != REF(usr) || purchase_message_cooldown < world.time)
-				say("Thank you for shopping with [src]!")
+				speak("Thank you for shopping with [src]!")
 				purchase_message_cooldown = world.time + 5 SECONDS
 				last_shopper = REF(usr)
 			use_power(5)
@@ -847,12 +845,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	if(seconds_electrified > MACHINE_NOT_ELECTRIFIED)
 		seconds_electrified--
 
-	//Pitch to the people!  Really sell it!
-	if(last_slogan + slogan_delay <= world.time && slogan_list.len > 0 && !shut_up && SPT_PROB(2.5, seconds_per_tick))
-		var/slogan = pick(slogan_list)
-		speak(slogan)
-		last_slogan = world.time
-
 	if(shoot_inventory && SPT_PROB(shoot_inventory_chance, seconds_per_tick))
 		throw_item()
 /**
@@ -869,7 +861,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	if(!message)
 		return
 
-	say(message, language=/datum/language/galactic_common)
+	say(message,FALSE,null,TRUE,speak_in)
 
 /obj/machinery/vending/power_change()
 	. = ..()
@@ -975,10 +967,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/custom/canLoadItem(obj/item/I, mob/user)
 	. = FALSE
 	if(loaded_items >= max_loaded_items)
-		say("There are too many items in stock.")
+		speak("There are too many items in stock.")
 		return
 	if(istype(I, /obj/item/stack))
-		say("Loose items may cause problems, try use it inside wrapping paper.")
+		speak("Loose items may cause problems, try use it inside wrapping paper.")
 		return
 	if(I.custom_price)
 		return TRUE
@@ -1027,12 +1019,12 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				var/obj/item/card/bank/C = H.get_bankcard()
 
 				if(!C)
-					say("No card found.")
+					speak("No card found.")
 					flick(icon_deny,src)
 					vend_ready = TRUE
 					return
 				else if (!C.registered_account)
-					say("No account found.")
+					speak("No account found.")
 					flick(icon_deny,src)
 					vend_ready = TRUE
 					return
@@ -1064,14 +1056,14 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 						loaded_items--
 						use_power(5)
 						if(last_shopper != REF(usr) || purchase_message_cooldown < world.time)
-							say("Thank you for buying local and purchasing [S]!")
+							speak("Thank you for buying local and purchasing [S]!")
 							purchase_message_cooldown = world.time + 5 SECONDS
 							last_shopper = REF(usr)
 						vend_ready = TRUE
 						updateUsrDialog()
 						return
 					else
-						say("You do not possess the funds to purchase this.")
+						speak("You do not possess the funds to purchase this.")
 			vend_ready = TRUE
 
 /obj/machinery/vending/custom/attackby(obj/item/I, mob/user, params)
@@ -1083,7 +1075,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			C = H.get_bankcard(TRUE)
 			if(C?.registered_account)
 				private_a = C.registered_account
-				say("\The [src] has been linked to [C].")
+				speak("\The [src] has been linked to [C].")
 
 	if(compartmentLoadAccessCheck(user))
 		if(istype(I, /obj/item/pen))
