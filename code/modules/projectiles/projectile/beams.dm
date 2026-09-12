@@ -122,17 +122,17 @@
 
 /obj/projectile/beam/laser/clover/smg
 	damage = 20
-	armour_penetration = 0
+	armour_penetration = 10
 
 /obj/projectile/beam/laser/clover/magnum
 	icon_state = "clover_pulse"
 	damage = 25
-	armour_penetration = 0
+	armour_penetration = 20
 
 /obj/projectile/beam/laser/clover/highpower
 	icon_state = "clover_pulse"
 	damage = 35
-	armour_penetration = 0
+	armour_penetration = 10
 
 /obj/projectile/beam/laser/clover/shotgun
 	damage = 15
@@ -142,7 +142,7 @@
 
 	var/tile_dropoff = 2
 	var/ap_dropoff = 5
-	var/ap_dropoff_cutoff = -40
+	var/ap_dropoff_cutoff = -30
 
 /obj/projectile/beam/laser/clover/shotgun/Range() //10% loss per tile = max range of 10, generally
 	..()
