@@ -422,7 +422,7 @@ NO_MAG_GUN_HELPER(automatic/m15)
 
 	unique_reskin = list(\
 		"Wood" = "buckmaster",
-		"Polymer" = "buckmaster_clip",
+		"Polymer" = "buckmasterclip"
 		)
 	unique_reskin_changes_inhand = TRUE
 
