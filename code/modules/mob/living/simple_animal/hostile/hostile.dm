@@ -87,7 +87,7 @@
 	walk(src, 0)
 	return ..()
 
-/mob/living/simple_animal/hostile/Life()
+/mob/living/simple_animal/hostile/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	if(!.) //dead
 		walk(src, 0) //stops walking
@@ -144,8 +144,8 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/bullet_act(obj/projectile/P)
-	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client)
-		if(P.firer && get_dist(src, P.firer) <= aggro_vision_range)
+	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client && P.suppressed != SUPPRESSED_EXTREME)
+		if(P.firer && (get_dist(src, P.firer) <= aggro_vision_range))
 			FindTarget(list(P.firer), 1)
 		Goto(P.starting, move_to_delay, 3)
 	return ..()

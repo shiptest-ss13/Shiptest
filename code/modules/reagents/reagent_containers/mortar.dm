@@ -8,6 +8,7 @@ to accommodate additional materials.
 	desc = "An ancient, simple tool used in conjunction with a mortar to grind or juice items."
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/obj/chemical/mortar.dmi'
+	world_file = 'icons/obj/chemical/mortar_world.dmi'
 	icon_state = "pestle"
 	force = 7
 
@@ -15,6 +16,7 @@ to accommodate additional materials.
 	name = "mortar"
 	desc = "A specially formed bowl of ancient design. It is possible to crush or juice items placed in it using a pestle; however the process, unlike modern methods, is slow and physically exhausting. Alt click to eject the item."
 	icon = 'icons/obj/chemical/mortar.dmi'
+	world_file = 'icons/obj/chemical/mortar_world.dmi'
 	icon_state = "mortar_wood"
 	fill_icon_state = "mortar"
 	fill_icon_thresholds = list(1, 20, 40, 80, 100)

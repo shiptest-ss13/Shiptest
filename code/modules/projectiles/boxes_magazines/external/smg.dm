@@ -1,10 +1,10 @@
 /obj/item/ammo_box/magazine/smgm10mm
-	name = "Mongrel magazine (10x22mm)"
+	name = "Mongrel magazine (10mm)"
 	desc = "A 24-round magazine for the SKM-44v. These rounds do moderate damage, but struggle against armor."
 	icon_state = "mongrel_mag-24"
 	base_icon_state = "mongrel_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10x22mm"
+	caliber = "10mm"
 	max_ammo = 24
 
 /obj/item/ammo_box/magazine/smgm10mm/update_icon_state()
@@ -15,7 +15,7 @@
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/smgm10mm/rubber
-	name = "SMG magazine (10x22mm rubber)"
+	name = "SMG magazine (10mm rubber)"
 	desc = "A 24-round magazine for the SkM-44(k). These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
 	ammo_type = /obj/item/ammo_casing/c10mm/rubber
 

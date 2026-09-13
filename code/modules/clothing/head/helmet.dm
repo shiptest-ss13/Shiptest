@@ -204,6 +204,7 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 	supports_variations = KEPORI_VARIATION
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list(
 		"None" = "helmetalt",
 		"Desert" = "helmetalt_desert",
@@ -236,6 +237,7 @@
 	alt_toggle_message = "You push the visor up on"
 	can_toggle = TRUE
 	armor = list("melee" = 40, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 20)
+	can_flashlight = TRUE
 	slowdown = 0.1
 	flags_inv = HIDEEARS|HIDEFACE
 	strip_delay = 80
@@ -245,6 +247,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	dog_fashion = null
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list(
 		"None" = "riot",
 		"Desert" = "riot_desert",
@@ -471,6 +474,8 @@
 	dog_fashion = null
 	supports_variations = null
 	content_overlays = TRUE
+
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list(
 		"None" = "m10helm",
 		"Desert" = "m10helm_desert",
@@ -486,6 +491,7 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 	supports_variations = null
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list(
 		"None" = "x11helm",
 		"Desert" = "x11helm_desert",

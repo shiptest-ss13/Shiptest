@@ -93,6 +93,7 @@
 
 /obj/item/trash/can
 	name = "crushed can"
+	icon = 'icons/obj/drinks/sodacan_crushed.dmi'
 	icon_state = "cola"
 	resistance_flags = NONE
 	grind_results = list(/datum/reagent/aluminium = 10)

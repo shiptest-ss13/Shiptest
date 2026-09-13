@@ -5,7 +5,7 @@
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "orebox"
 	name = "ore box"
-	desc = "A heavy wooden box, which can be filled with a lot of ores."
+	desc = "A heavy metal box, which can be filled with a lot of ores."
 	density = TRUE
 	pressure_resistance = 5*ONE_ATMOSPHERE
 
@@ -26,7 +26,7 @@
 	if(I.use_tool(src, user, 50, volume=50))
 		user.visible_message(span_notice("[user] pries \the [src] apart."),
 			span_notice("You pry apart \the [src]."),
-			span_hear("You hear splitting wood."))
+			span_hear("You hear metal creaking."))
 		deconstruct(TRUE, user)
 	return TRUE
 
@@ -92,8 +92,8 @@
 			to_chat(usr, span_notice("You open the release hatch on the box.."))
 
 /obj/structure/ore_box/deconstruct(disassembled = TRUE, mob/user)
-	var/obj/item/stack/sheet/mineral/wood/WD = new (loc, 4)
+	var/obj/item/stack/sheet/metal/new_sheet = new (loc, 4)
 	if(user)
-		WD.add_fingerprint(user)
+		new_sheet.add_fingerprint(user)
 	dump_box_contents()
 	qdel(src)

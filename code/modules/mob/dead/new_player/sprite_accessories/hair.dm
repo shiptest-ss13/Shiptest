@@ -266,6 +266,10 @@
 	name = "Kusanagi Hair (Ponytail)"
 	icon_state = "hair_kusanagipony"
 
+/datum/sprite_accessory/hair/long
+	name = "Long Hair"
+	icon_state = "hair_long"
+
 /datum/sprite_accessory/hair/longhalf
 	name = "Long Half"
 	icon_state = "hair_longhalf"
@@ -413,6 +417,10 @@
 /datum/sprite_accessory/hair/ponytailrat
 	name = "Ponytail (Rat)"
 	icon_state = "hair_ponytailrat"
+
+/datum/sprite_accessory/hair/wavytail
+	name = "Ponytail (Wavy)"
+	icon_state = "hair_wavytail"
 
 /datum/sprite_accessory/hair/ponytailwisp
 	name = "Ponytail (Wisp)"

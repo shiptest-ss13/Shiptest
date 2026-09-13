@@ -107,27 +107,37 @@ JUNGLE_TURF_HELPER(carpet/royalblack)
 JUNGLE_TURF_HELPER(pod)
 
 JUNGLE_TURF_HELPER(plasteel)
+JUNGLE_TURF_HELPER(plasteel/mono)
 JUNGLE_TURF_HELPER(plasteel/dark)
+JUNGLE_TURF_HELPER(plasteel/mono/dark)
 JUNGLE_TURF_HELPER(plasteel/white)
 
-JUNGLE_TURF_HELPER(plasteel/tech/grid)
-JUNGLE_TURF_HELPER(plasteel/mono/dark)
-
+JUNGLE_TURF_HELPER(plasteel/patterned)
+JUNGLE_TURF_HELPER(plasteel/patterned/cargo_one)
+JUNGLE_TURF_HELPER(plasteel/patterned/ridged)
+JUNGLE_TURF_HELPER(plasteel/patterned/grid)
+JUNGLE_TURF_HELPER(plasteel/patterned/grid/dark)
 JUNGLE_TURF_HELPER(plasteel/patterned/brushed)
 
 JUNGLE_TURF_HELPER(plasteel/freezer)
+JUNGLE_TURF_HELPER(plastic)
+
+JUNGLE_TURF_HELPER(plasteel/tech)
+JUNGLE_TURF_HELPER(plasteel/tech/techmaint)
+JUNGLE_TURF_HELPER(plasteel/tech/grid)
+
+JUNGLE_TURF_HELPER(mineral/titanium/tiled)
 
 JUNGLE_TURF_HELPER(plasteel/stairs)
 JUNGLE_TURF_HELPER(plasteel/stairs/wood)
 
-
 JUNGLE_TURF_HELPER(wood)
-
 JUNGLE_TURF_HELPER(wood/maple)
 JUNGLE_TURF_HELPER(wood/ebony)
 JUNGLE_TURF_HELPER(wood/mahogany)
 
 JUNGLE_TURF_HELPER(engine/hull/interior)
+JUNGLE_TURF_HELPER(engine/hull/reinforced)
 
 //cementcrete
 

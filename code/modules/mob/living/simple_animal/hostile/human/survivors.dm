@@ -85,7 +85,7 @@
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/hunter
 	name = "Hermit Hunter"
-	desc ="A wild-eyed figure. Watch out- he has a shotgun, and he remembers just enough of his old life to use it!"
+	desc ="A wild-eyed figure. Watch out- he has a rifle, and he remembers just enough of his old life to use it!"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/ballistic/rifle/polymer
 
@@ -147,7 +147,7 @@
 	rapid_fire_delay = 5
 	projectiletype = /obj/projectile/beam/laser/sharplite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
-	r_hand = /obj/item/gun/energy/sharplite/x12
+	r_hand = /obj/item/gun/energy/sharplite/volt
 	retreat_distance = 2
 	minimum_distance = 2
 
@@ -163,7 +163,7 @@
 	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/sharplite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
-	r_hand = /obj/item/gun/energy/sharplite/l305
+	r_hand = /obj/item/gun/energy/sharplite/rush
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/energy/sarissa
 	name = "Hermit Sharpshooter"
@@ -173,7 +173,7 @@
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	projectiletype = /obj/projectile/beam/laser/sharplite/sniper
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
-	r_hand = /obj/item/gun/energy/sharplite/al607
+	r_hand = /obj/item/gun/energy/sharplite/sarissa
 	vision_range = 14
 	aggro_vision_range = 14
 	minimum_distance = 14
@@ -391,6 +391,37 @@
 		return
 	H.faction |= list(FACTION_ANTAG_HERMITS)
 
+/mob/living/simple_animal/hostile/human/hermit/swampboss
+	name = "Hermit Warlord"
+	desc = "A figure covered in dirty Roumainist plate, slinging around a pristine HP Pyre. They carry the weapon with finesse, though they are still clearly high off their mind."
+	rapid = 3
+	rapid_fire_delay = 5
+	ranged = 1
+	retreat_distance = 3
+	minimum_distance = 5
+	icon_state = "survivor_base"
+	casingtype = /obj/item/ammo_casing/a4570
+	l_hand = /obj/item/gun/ballistic/shotgun/flamingarrow/pyre/factory
+	projectilesound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/swampboss
+	armor_base = /obj/item/clothing/suit/armor/roumain/plate/medium
+	weapon_drop_chance = 100
+
+/datum/outfit/swampboss
+	name = "Hermit Warlord"
+	uniform = /obj/item/clothing/under/pants/camo
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	suit = /obj/item/clothing/suit/armor/roumain/plate/medium
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+	belt = /obj/item/storage/belt/security/military/frontiersmen
+	gloves = /obj/item/clothing/gloves/fingerless
+	head = /obj/item/clothing/head/boonie/brown
+	mask = /obj/item/clothing/mask/gas/explorer
+
+/obj/effect/mob_spawn/human/corpse/damaged/swampboss
+	name = "Hermit Warlord"
+	outfit = /datum/outfit/swampboss
+
 /mob/living/simple_animal/hostile/human/hermit/ranged/energy/bodyguard
 	name = "The Bouncer"
 	desc = "A giant of a man clad in a reinforced survival suit, he seems ready to blast any tresspasser to bits at a moment's notice."
@@ -404,7 +435,7 @@
 	minimum_distance = 7
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/bodyguard
-	r_hand = /obj/item/gun/energy/sharplite/al655
+	r_hand = /obj/item/gun/energy/sharplite/hades
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security
 	speak_emote = list("exhales.","rolls their shoulders.")
 	emote_hear = list("grunts.","cracks their knuckles.")
@@ -456,7 +487,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	suit = /obj/item/clothing/suit/warra/vest
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
-	gloves = /obj/item/clothing/gloves/color/yellow
+	gloves = /obj/item/clothing/gloves/insulated
 	head = /obj/item/clothing/head/hardhat/warra
 	belt = /obj/item/storage/belt/utility/full/engi
 	mask = /obj/item/clothing/mask/breath

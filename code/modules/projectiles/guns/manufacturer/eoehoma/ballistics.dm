@@ -212,6 +212,9 @@
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
+/obj/item/ammo_box/magazine/e40/empty
+	start_empty = TRUE
+
 //laser
 
 /obj/item/gun/energy/laser/e40_laser_secondary

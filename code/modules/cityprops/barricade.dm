@@ -5,7 +5,7 @@
 	icon = 'icons/obj/city/barricades.dmi'
 	icon_state = "concrete_0"
 	max_integrity = 500
-	proj_pass_rate = 20
+	pass_chance = 20
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
 	climbable = TRUE
 	layer = BELOW_OBJ_LAYER

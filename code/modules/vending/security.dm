@@ -26,9 +26,9 @@
 	extra_price = 700
 
 	var/voucher_items = list(
-		"SL X12 Variable Energy Carbine" = /obj/item/gun/energy/sharplite/x12,
-		"L305 Tactical Plasma Gun" = /obj/item/gun/energy/sharplite/l305,
-		"E-SL x46 Variable Energy Blaster" = /obj/item/gun/energy/sharplite/x46)
+		"SL X12 Variable Energy Carbine" = /obj/item/gun/energy/sharplite/volt,
+		"L305 Tactical Plasma Gun" = /obj/item/gun/energy/sharplite/rush,
+		"E-SL x46 Variable Energy Blaster" = /obj/item/gun/energy/sharplite/amperage)
 
 /obj/machinery/vending/security/pre_throw(obj/item/I)
 	if(istype(I, /obj/item/grenade))
@@ -104,7 +104,7 @@
 	contraband = list()
 	premium = list()
 	voucher_items = list(
-		"Tactical Energy Gun" = /obj/item/gun/energy/sharplite/al655,
+		"Tactical Energy Gun" = /obj/item/gun/energy/sharplite/hades,
 		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/m11)
 
 /obj/machinery/vending/security/marine/syndicate
@@ -154,10 +154,10 @@
 		)
 
 	voucher_items = list(
-		"SL AL655 Assault Plasma Rifle" = /obj/item/gun/energy/sharplite/al655,
-		"SL X12 Variable Energy Carbine" = /obj/item/gun/energy/sharplite/x12,
-		"L305 Tactical Plasma Gun" = /obj/item/gun/energy/sharplite/l305,
-		"SL X46 Variable Energy Blaster" = /obj/item/gun/energy/sharplite/x46)
+		"SL AL655 Assault Plasma Rifle" = /obj/item/gun/energy/sharplite/hades,
+		"SL X12 Variable Energy Carbine" = /obj/item/gun/energy/sharplite/volt,
+		"L305 Tactical Plasma Gun" = /obj/item/gun/energy/sharplite/rush,
+		"SL X46 Variable Energy Blaster" = /obj/item/gun/energy/sharplite/amperage)
 /obj/item/gun_voucher
 	name = "security weapon voucher"
 	desc = "A token used to redeem guns from the SecTech vendor."

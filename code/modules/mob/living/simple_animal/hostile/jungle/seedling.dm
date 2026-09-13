@@ -124,15 +124,6 @@
 		combatant_state = SEEDLING_STATE_WARMUP
 		walk(src,0)
 		update_icons()
-		var/target_dist = get_dist(src,target)
-		var/living_target_check = isliving(target)
-		if(living_target_check)
-			if(target_dist > 7)//Offscreen check
-				SolarBeamStartup(target)
-				return
-			if(get_dist(src,target) >= 4 && prob(40))
-				SolarBeamStartup(target)
-				return
 		addtimer(CALLBACK(src, PROC_REF(Volley)), 5)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/SolarBeamStartup(mob/living/living_target)//It's more like requiem than final spark

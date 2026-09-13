@@ -52,6 +52,9 @@
 	///Maximum stack size of ammunition
 	var/stack_size = 15
 
+	///If the caliber is caseless or not
+	var/caseless = FALSE
+
 /obj/item/ammo_casing/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/pen))
 		if(!user.is_literate())
@@ -190,6 +193,10 @@
 	. = ..()
 
 /obj/item/ammo_casing/proc/on_eject(atom/shooter)
+	if(caseless) //early return for caseless rounds
+		return
+	if(QDELETED(src))
+		return
 	forceMove(drop_location()) //Eject casing onto ground.
 	pixel_x = rand(-4, 4)
 	pixel_y = rand(-4, 4)

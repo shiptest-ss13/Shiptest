@@ -33,7 +33,7 @@
 	/// What type of reagent this fish needs to be fed.
 	var/food = /datum/reagent/consumable/nutriment
 	/// How often the fish needs to be fed
-	var/feeding_frequency = 30 MINUTES
+	var/feeding_frequency = 60 MINUTES
 	/// Time of last feedeing
 	var/last_feeding
 

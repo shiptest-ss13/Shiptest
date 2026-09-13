@@ -1,8 +1,7 @@
 #define JUMP_STATE_OFF 0
 #define JUMP_STATE_CHARGING 1
-#define JUMP_STATE_IONIZING 2
-#define JUMP_STATE_FIRING 3
-#define JUMP_STATE_FINALIZED 4
+#define JUMP_STATE_FIRING 2
+#define JUMP_STATE_FINALIZED 3
 #define JUMP_CHARGE_DELAY (7 SECONDS)
 #define JUMP_CHARGEUP_TIME (20 SECONDS)
 
@@ -66,14 +65,15 @@
 	if(current_ship.docked_to || current_ship.docking)
 		say("Bluespace Jump Calibration detected interference in the local area.")
 		return
-	message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
+
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGEUP_TIME, TIMER_STOPPABLE)
 	if(new_system)
 		priority_announce("Bluespace jump calibration to destination [new_system.name] initialized. Calibration completion in [JUMP_CHARGEUP_TIME/10] seconds.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
 		jump_destination = new_system
 		jump_coords = newpos
 	else
-		priority_announce("Bluespace jump calibration initialized. Exitting Frontier. Calibration completion in [JUMP_CHARGEUP_TIME/10] seconds.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+		priority_announce("Bluespace jump calibration initialized. Exiting Frontier. Calibration completion in [JUMP_CHARGEUP_TIME/10] seconds.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+		message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
 
 	calibrating = TRUE
 	return TRUE
@@ -91,7 +91,7 @@
 /obj/machinery/computer/helm/proc/cancel_jump()
 	if(!calibrating)
 		return
-	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
+	say("Exiting jump sequence.")
 	jump_state = JUMP_STATE_OFF
 	calibrating = FALSE
 	jump_coords = null
@@ -101,36 +101,44 @@
 	switch(jump_state)
 		if(JUMP_STATE_OFF)
 			jump_state = JUMP_STATE_CHARGING
-			SStgui.close_uis(src)
 		if(JUMP_STATE_CHARGING)
-			jump_state = JUMP_STATE_IONIZING
-			priority_announce("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
-		if(JUMP_STATE_IONIZING)
 			jump_state = JUMP_STATE_FIRING
-			priority_announce("Bluespace Ionization finalized; preparing to fire Bluespace Pylon.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
+			say("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.")
 		if(JUMP_STATE_FIRING)
 			jump_state = JUMP_STATE_FINALIZED
-			priority_announce("Bluespace Pylon launched.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightning_chargeup.ogg', zlevel = virtual_z())
+			say("Bluespace Ionization finalized; Firing Bluespace Pylon.")
 			addtimer(CALLBACK(src, PROC_REF(do_jump)), 10 SECONDS)
 			return
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGE_DELAY, TIMER_STOPPABLE)
 
 /obj/machinery/computer/helm/proc/do_jump()
-	if(jump_destination)
-		priority_announce("Bluespace Jump Initiated. Welcome to [jump_destination.name].", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
-	else
-		priority_announce("Bluespace Jump Initiated.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
 	if(!jump_destination)
 		qdel(current_ship)
 		return
+
 	if(jump_coords)
 		current_ship.move_overmaps(jump_destination, jump_coords["x"], jump_coords["y"])
 	else
 		current_ship.move_overmaps(jump_destination)
+
+	var/quote
+	if(jump_destination.entry_quotes.len)
+		quote = pick(jump_destination.entry_quotes)
+	for(var/mob/looker as anything in GLOB.player_list)
+		if(current_ship.shuttle_port.is_in_shuttle_bounds(looker))
+			jump_announcement(jump_destination ? "Bluespace Jump Completed. Welcome to [jump_destination.name]" : "Bluespace Jump Completed", quote, current_ship.name, looker)
+
 	jump_destination = null
 	jump_state = JUMP_STATE_OFF
 	jump_coords = null
 	calibrating = FALSE
+
+/obj/machinery/computer/helm/proc/jump_announcement(message, quote, title = "Attention:", mob/living/target)
+	if(!message)
+		return
+	target.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[jump_destination.name] [jump_destination.faction ? "([jump_destination.faction.name]-controlled)" : ""]</u></span><br>[station_time_timestamp("hh:mm")][quote ? "<br><i>\"[quote]\"</i>" : ""]")
+	to_chat(target, "[span_minorannounce("<font color = red>[title]</font color><BR>[message]")]<BR>")
+	SEND_SOUND(target, sound('sound/effects/overmap/jump.ogg', volume = 50))
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	if(!viewer)
@@ -200,6 +208,8 @@
 	if(!current_ship)
 		return
 
+	var/datum/overmap_star_system/current_overmap = current_ship.current_overmap
+
 	.["calibrating"] = calibrating
 	.["canRename"] = COOLDOWN_FINISHED(current_ship, rename_cooldown)
 	.["otherInfo"] = list()
@@ -213,7 +223,7 @@
 		var/available_dock = FALSE
 
 		//Even if its full or incompatible with us, it should still show up.
-		if(object in current_ship.current_overmap.overmap_container[current_ship.x][current_ship.y])
+		if(object in current_overmap.overmap_container[current_ship.x][current_ship.y])
 			available_dock = TRUE
 
 		//Detect any ships in this location we can dock to
@@ -239,7 +249,7 @@
 	.["docking"] = current_ship.docking
 	.["docked"] = current_ship.docked_to
 	.["heading"] = dir2text(current_ship.get_heading()) || "None"
-	.["sector"] = current_ship.current_overmap.name
+	.["sector"] = current_overmap.name
 	.["speed"] = current_ship.get_speed()
 	.["eta"] = current_ship.get_eta()
 	.["estThrust"] = current_ship.est_thrust
@@ -248,10 +258,32 @@
 	.["burnDirection"] = current_ship.burn_direction
 	.["burnPercentage"] = current_ship.burn_percentage
 	.["cloaked"] = HAS_TRAIT_FROM(current_ship, TRAIT_CLOAKED, SHIPMODULE_CLOAKING)
+	.["outposts"] = list()
+	.["jump_points"] = list()
+	.["jumpable"] = current_overmap.can_jump_to
+	.["facts"] = current_overmap.fun_facts
 
 	var/obj/machinery/power/cloak/cloaking_system = current_ship.ship_modules[SHIPMODULE_CLOAKING]
 	if(cloaking_system)
 		.["cloakChargePercent"] = 100 * cloaking_system.current_charge / max(cloaking_system.max_charge, 1)
+
+	for(var/datum/overmap/jump_point/point as anything in current_overmap.jump_points)
+		var/list/point_data
+		point_data = list(
+			name = point.name,
+			x = point.x,
+			y = point.y,
+		)
+		.["jump_points"] += list(point_data)
+
+	for(var/datum/overmap/outpost/target_outpost as anything in current_overmap.outposts)
+		var/list/outpost_data
+		outpost_data = list(
+			name = target_outpost.name,
+			x = target_outpost.x,
+			y = target_outpost.y,
+		)
+		.["outposts"] += list(outpost_data)
 
 	for(var/datum/weakref/engine in current_ship.shuttle_port.engine_list)
 		var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()
@@ -286,7 +318,7 @@
 		prefixed = current_ship.name,
 		class = current_ship.source_template.name,
 		mass = current_ship.shuttle_port.turf_count,
-		sensor_range = 4
+		sensor_range = current_ship.sensor_range
 	)
 	.["hasCloaking"] = !isnull(current_ship.ship_modules[SHIPMODULE_CLOAKING])
 	.["canFly"] = TRUE
@@ -507,11 +539,12 @@
 		say("[src] is currently locked; please insert your key to continue.")
 		playsound(src, 'sound/machines/buzz-two.ogg')
 	return TRUE
-
+//
 /obj/machinery/computer/helm/viewscreen
 	name = "ship viewscreen"
-	icon_state = "wallconsole"
-	icon_screen = "wallconsole_navigation"
+	icon = 'icons/obj/machines/wallconsole.dmi'
+	icon_state = "wallmonitor"
+	icon_screen = "wallmonitor_navigation"
 	icon_keyboard = null
 	layer = SIGN_LAYER
 	density = FALSE
@@ -520,6 +553,7 @@
 
 /obj/machinery/computer/helm/viewscreen/computer
 	name = "viewscreen console"
+	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "oldcomp"
 	icon_screen = "oldcomp_retro_rnd"
 	density = TRUE
@@ -528,7 +562,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/helm/viewscreen, 17)
 
 #undef JUMP_STATE_OFF
 #undef JUMP_STATE_CHARGING
-#undef JUMP_STATE_IONIZING
 #undef JUMP_STATE_FIRING
 #undef JUMP_STATE_FINALIZED
 #undef JUMP_CHARGE_DELAY

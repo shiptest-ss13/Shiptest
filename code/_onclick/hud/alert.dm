@@ -243,6 +243,11 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 	desc = "The air around you is hazardously thick. A fire suit would protect you."
 	icon_state = "highpressure"
 
+/atom/movable/screen/alert/badpressure
+	name = "Bad Pressure"
+	desc = "The air pressure around you is hazardous. Try moving somewhere else."
+	icon_state = "lowpressure"
+
 /atom/movable/screen/alert/blind
 	name = "Blind"
 	desc = "You can't see! This may be caused by a genetic defect, eye trauma, being unconscious, \

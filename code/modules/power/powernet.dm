@@ -15,6 +15,8 @@
 	var/netexcess = 0			// excess power on the powernet (typically avail-load)///////
 	var/delayedload = 0			// load applied to powernet between power ticks.
 
+	var/static_load = 0
+
 /datum/powernet/New()
 	SSmachines.powernets += src
 
@@ -23,7 +25,7 @@
 	for(var/obj/structure/cable/C in cables)
 		cables -= C
 		C.powernet = null
-	for(var/obj/machinery/power/M in nodes)
+	for(var/obj/machinery/M in nodes)
 		nodes -= M
 		M.powernet = null
 
@@ -56,7 +58,7 @@
 //remove a power machine from the current powernet
 //if the powernet is then empty, delete it
 //Warning : this proc DON'T check if the machine exists
-/datum/powernet/proc/remove_machine(obj/machinery/power/M)
+/datum/powernet/proc/remove_machine(obj/machinery/M)
 	nodes -=M
 	M.powernet = null
 	if(is_empty())//the powernet is now empty...
@@ -65,7 +67,7 @@
 
 //add a power machine to the current powernet
 //Warning : this proc DON'T check if the machine exists
-/datum/powernet/proc/add_machine(obj/machinery/power/M)
+/datum/powernet/proc/add_machine(obj/machinery/M)
 	if(M.powernet)// if M already has a powernet...
 		if(M.powernet == src)
 			return
@@ -77,8 +79,14 @@
 //handles the power changes in the powernet
 //called every ticks by the powernet controller
 /datum/powernet/proc/reset()
+	load += static_load
 	//see if there's a surplus of power remaining in the powernet and stores unused power in the SMES
+	var/last_excess = netexcess
 	netexcess = avail - load
+
+	if(netexcess != last_excess)
+		for(var/obj/machinery/machine in nodes)
+			machine.power_change()
 
 	if(netexcess > 100 && nodes && nodes.len)		// if there was excess power last cycle
 		for(var/obj/machinery/power/smes/S in nodes)	// find the SMESes in the network

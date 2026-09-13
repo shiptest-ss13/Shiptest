@@ -146,8 +146,8 @@
 /obj/effect/turf_decal/corner/transparent/lightgrey/half{
 	dir = 8
 	},
-/obj/structure/sign/departments/cargo{
-	pixel_x = 28
+/obj/machinery/holosign/cs_outpost_cargo{
+	pixel_x = 27
 	},
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
@@ -384,13 +384,7 @@
 /area/hangar)
 "sr" = (
 /obj/structure/chair/sofa/red/corpo/left/directional/south,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 28;
-	icon_state = "frame"
-	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 27
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north,
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
 "sy" = (
@@ -695,8 +689,8 @@
 /obj/structure/railing/thin{
 	dir = 1
 	},
-/obj/structure/sign/departments/cargo{
-	pixel_x = 28
+/obj/machinery/holosign/cs_outpost_cargo{
+	pixel_x = 27
 	},
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
@@ -836,6 +830,16 @@
 	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
+/area/hangar)
+"Se" = (
+/obj/effect/turf_decal/siding/wood/bamboo{
+	dir = 4
+	},
+/obj/structure/chair/bench/red/directional/west,
+/obj/machinery/holosign/cs_outpost_lift{
+	pixel_x = 27
+	},
+/turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
 "Sg" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
@@ -4566,7 +4570,7 @@ Wk
 kc
 dr
 Ub
-pr
+Se
 pr
 Gl
 Md

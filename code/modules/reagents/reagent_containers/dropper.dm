@@ -1,6 +1,7 @@
 /obj/item/reagent_containers/dropper
 	name = "dropper"
 	desc = "A dropper. Holds up to 5 units."
+	world_file = 'icons/obj/chemical/beakers_world.dmi'
 	icon = 'icons/obj/chemical/beakers.dmi'
 	icon_state = "dropper0"
 	amount_per_transfer_from_this = 5
@@ -84,7 +85,7 @@
 
 /obj/item/reagent_containers/dropper/update_overlays()
 	. = ..()
-	if(!reagents.total_volume)
+	if(!reagents || !reagents.total_volume)
 		return
 	var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "dropper")
 	filling.color = mix_color_from_reagents(reagents.reagent_list)

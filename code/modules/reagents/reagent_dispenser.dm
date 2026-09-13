@@ -148,7 +148,7 @@
 /obj/structure/reagent_dispensers/water_cooler
 	name = "liquid cooler"
 	desc = "A machine that dispenses liquid to drink."
-	icon = 'icons/obj/vending.dmi'
+	icon = 'icons/obj/structures/watercooler.dmi'
 	icon_state = "water_cooler"
 	anchored = TRUE
 	tank_volume = 500
@@ -174,6 +174,11 @@
 	var/obj/item/reagent_containers/food/drinks/sillycup/S = new(get_turf(src))
 	user.put_in_hands(S)
 	paper_cups--
+
+/obj/structure/reagent_dispensers/water_cooler/bullet_act(obj/projectile/hitting_projectile)
+	. = ..()
+	if(istype(hitting_projectile, /obj/projectile/kiss) && paper_cups < src::paper_cups)
+		flick("water_cooler_easteregg", src)
 
 /obj/structure/reagent_dispensers/beerkeg
 	name = "beer keg"

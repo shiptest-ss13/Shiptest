@@ -118,6 +118,8 @@
 
 /obj/machinery/deployable_turret/spotlight/proc/toggle_power(status_to_set)
 	var/force_off
+	if(!linked_searchlight)
+		return
 	if(machine_stat & (NOPOWER|BROKEN))
 		. = FALSE
 		force_off = TRUE
@@ -402,3 +404,27 @@
 		return
 
 	add_overlay("[base_icon_state][light_state]")
+
+
+/obj/structure/fluff/arrowsong
+	name = "Welcome sign"
+	desc = "Welcome to the Refinery Platform, Arrowsong! Base Population: 250."
+	icon = 'icons/obj/city/city_props_48x48.dmi'
+	icon_state = "arrowsong_pop"
+	pixel_x = -8
+	pixel_z = 8
+	layer = SIGN_LAYER
+
+/obj/structure/fluff/arrowsong/wall
+	icon_state = "arrowsong_pop_wall"
+	pixel_x = -8
+	pixel_z = 8
+
+/obj/structure/fluff/arrowsong_big
+	name = "Welcome sign"
+	desc = "Welcome to the Refinery Platform, Arrowsong! Base Population: 250."
+	icon = 'icons/obj/city/city_props_64x64.dmi'
+	icon_state = "arrowsong_pop_big"
+	pixel_x = -16
+	pixel_z = 8
+	layer = SIGN_LAYER

@@ -61,6 +61,7 @@
 	damage = 40
 	damage_type = BRUTE
 	nodamage = FALSE
+	flag = ENERGY
 	temperature = 0
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/GiveTarget(new_target)
@@ -195,10 +196,6 @@
 	else
 		icon_state = "basilisk_whitesands_dead"
 
-/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/heat
-	name = "glowing basilisk"
-	projectiletype = /obj/projectile/temp/basilisk/heated
-
 //Watcher
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher
 	name = "watcher"
@@ -240,7 +237,7 @@
 		visible_message(span_warning("The focusing diamond in [src]'s eye looks intact!"))
 	..()
 
-/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/Life()
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	if(stat == CONSCIOUS)
 		consume_bait()

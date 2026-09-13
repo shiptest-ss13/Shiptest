@@ -220,7 +220,7 @@
 /obj/item/reagent_containers/hypospray/medipen/oculine
 	name = "oculine autoinjector"
 	desc = "An autoinjector designed to promote the repair of the cornea and the retina after damage."
-	list_reagents = list(/datum/reagent/medicine/inacusiate = 10)
+	list_reagents = list(/datum/reagent/medicine/oculine = 10)
 	custom_price = 100
 
 /obj/item/reagent_containers/hypospray/medipen/inacusiate
@@ -395,7 +395,7 @@
 	desc = "An epinephrine medipen with extra coagulant and antibiotics to help stabilize bad cuts and burns."
 	volume = 15
 	amount_per_transfer_from_this = 15
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 12, /datum/reagent/medicine/chitosan = 2.5, /datum/reagent/medicine/spaceacillin = 0.5)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 12, /datum/reagent/medicine/chitosan = 2.5, /datum/reagent/medicine/antibiotic = 0.5)
 
 /obj/item/reagent_containers/hypospray/medipen/blood_loss
 	name = "hypovolemic-response autoinjector"
@@ -703,7 +703,7 @@
 	custom_price = 500
 	volume = 35
 	amount_per_transfer_from_this = 36
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 5.5, /datum/reagent/medicine/hunter_extract = 3, /datum/reagent/drug/methamphetamine = 2, /datum/reagent/medicine/morphine = 0.5, /datum/reagent/medicine/leporazine = 6, /datum/reagent/medicine/salglu_solution = 8, /datum/reagent/medicine/ysiltane = 5, /datum/reagent/medicine/silfrine = 5)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 5.5, /datum/reagent/medicine/hunter_extract = 3, /datum/reagent/drug/rahkrahene = 2, /datum/reagent/medicine/morphine = 0.5, /datum/reagent/medicine/leporazine = 6, /datum/reagent/medicine/salglu_solution = 8, /datum/reagent/medicine/ysiltane = 5, /datum/reagent/medicine/silfrine = 5)
 
 #undef HYPO_SPRAY
 #undef HYPO_INJECT

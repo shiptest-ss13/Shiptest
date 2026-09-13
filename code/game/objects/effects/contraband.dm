@@ -1160,6 +1160,39 @@
 	desc = "A RILENA: LMR poster split in two to represent the series' disregard for conventional timeline aspects."
 	icon_state = "poster-rilena_timeline"
 
+//Etherbor Corporate Posters.
+/obj/structure/sign/poster/etherbor
+	poster_item_name = "etherbor poster"
+	poster_item_desc = "A poster that is produced by Etherbor Industries. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_icon_state = "rolled_legit"
+
+/obj/structure/sign/poster/etherbor/random
+	name = "random official poster"
+	random_basetype = /obj/structure/sign/poster/etherbor
+	icon_state = "poster-etherbor_random"
+	never_random = TRUE
+	random_type = POSTER_SUBTYPES
+
+/obj/structure/sign/poster/etherbor/civilian
+	name = "Etherbor Industries Beam Weapons"
+	desc = "A poster depicting a selection Etherbor Industries' line of civilian beam weapons. \"Flexible, Reliable, Etherbor\""
+	icon_state = "poster-etherbor_civ"
+
+/obj/structure/sign/poster/etherbor/military
+	name = "Etherbor Industries Beam Weapons"
+	desc = "A poster depicting a selection Etherbor Industries' line of military beam weapons. \"Flexible, Reliable, Etherbor\""
+	icon_state = "poster-etherbor_mil"
+
+/obj/structure/sign/poster/etherbor/corporate
+	name = "Etherbor Industries"
+	desc = "A poster depicting the logo of Etherbor Industries. \"Flexible, Reliable, Etherbor\""
+	icon_state = "poster-etherbor_logo"
+
+/obj/structure/sign/poster/etherbor/gay
+	name = "Etherbor Industries"
+	desc = "A poster depicting the logo of Etherbor Industries on a striking rainbow backdrop. \"Fleixble, Reliable, Etherbor\""
+	icon_state = "poster-etherbor_rainbow"
+
 //PGF recruitment diversity posters.
 /obj/structure/sign/poster/pgf
 	poster_item_name = "pgf poster"
@@ -1222,6 +1255,21 @@
 	name = "In It Together"
 	desc = "This poster depicts a trio of PGF sailors. \"All together now!\""
 	icon_state = "poster-pgf_together"
+
+/obj/structure/sign/poster/pgf/raider
+	name = "PGF Marine Raiders"
+	desc = "This poster depicts a PGF Marine Raider stalking a city skyline at night. \"Trained for infiltration, extraction, and all other matter of high risk mission, the PGF Marine Raiders are the best of the best. Do you have what it takes?\""
+	icon_state = "poster-pgf_raider"
+
+/obj/structure/sign/poster/pgf/juggernaut
+	name = "The Tool For the Job"
+	desc = "This poster depicts a PGF Marine in heavy armor looking out over a foggy mountaintop. \"Scalpel. Tweezers. Sledghammer. No matter the situation, the PGF Marines have the right tool for the job. Ready to put them to work?\""
+	icon_state = "poster-pgf_juggernaut"
+
+/obj/structure/sign/poster/pgf/dreadnaut
+	name = "See it for Yourself"
+	desc = "This poster depicts a PGF Sailor on an EVA mission in front of a cloudy nebula. \"The galaxy is dangerous, but in the PGFN, so are we. If we haven't been there? We're going. Ready to see it for yourself?\""
+	icon_state = "poster-pgf_dreadnaut"
 
 //PGF Mission Accomplished
 /obj/structure/sign/poster/pgf/mission_accomplished_1

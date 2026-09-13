@@ -277,6 +277,16 @@
 /datum/action/item_action/activate_injector
 	name = "Activate Injector"
 
+/datum/action/item_action/activate_suit_injector
+	name = "Activate Injector System"
+	icon_icon = 'icons/obj/syringe.dmi'
+	button_icon_state = "syringe_15"
+
+/datum/action/item_action/activate_suit_injector/Trigger()
+	if(istype(target, /obj/item/clothing/suit/space/hardsuit/esh))
+		var/obj/item/clothing/suit/space/hardsuit/esh/esh_hardsuit = target
+		esh_hardsuit.check_inject(owner)
+
 /datum/action/item_action/toggle_helmet_light
 	name = "Toggle Helmet Light"
 
@@ -717,6 +727,10 @@
 
 /datum/action/small_sprite/megafauna/legion
 	small_icon_state = "mega_legion"
+
+/datum/action/small_sprite/megafauna/megabot
+	small_icon = 'icons/mob/aibots.dmi'
+	small_icon_state = "makosso_bipedal"
 
 /datum/action/small_sprite/megafauna/spacedragon
 	small_icon = 'icons/mob/carp.dmi'

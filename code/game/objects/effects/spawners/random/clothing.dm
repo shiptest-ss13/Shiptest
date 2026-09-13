@@ -11,13 +11,12 @@
 		/obj/item/clothing/gloves/color/orange,
 		/obj/item/clothing/gloves/color/red,
 		/obj/item/clothing/gloves/color/blue,
-		/obj/item/clothing/gloves/color/purple,
+		/obj/item/clothing/gloves/color/lightpurple,
 		/obj/item/clothing/gloves/color/green,
 		/obj/item/clothing/gloves/color/grey,
 		/obj/item/clothing/gloves/color/light_brown,
 		/obj/item/clothing/gloves/color/brown,
 		/obj/item/clothing/gloves/color/white,
-		/obj/item/clothing/gloves/color/rainbow
 	)
 
 /obj/effect/spawner/random/clothing/costume

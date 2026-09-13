@@ -10,12 +10,6 @@
 	description = "A CLIP-LAND research facility overtaken by ramzi, and excavating out the remainder of a cave to establish a base."
 	suffix = "lavaland_surface_dynamite_hole.dmm"
 
-/datum/map_template/ruin/lavaland/buried_shrine
-	name = "Buried Shrine"
-	id = "buried_shrine"
-	description = "An ancient temple belonging to some long-gone inhabitants, wrecked and buried by the volcanic activity of it's home planet."
-	suffix = "lavaland_surface_buried_shrine.dmm"
-
 /datum/map_template/ruin/lavaland/wrecked_factory
 	name = "Wrecked Factory"
 	id = "wreck_factory"
@@ -34,3 +28,8 @@
 	description = "An abandoned Cybersun listening post. Seems like the Ramzi Clique has an interest in the site."
 	suffix = "lavaland_abandonedlisteningpost.dmm"
 
+/datum/map_template/ruin/lavaland/hardliner_holdout
+	name = "Hardliner's Last Stand"
+	description = "Ramzi have laid siege to a Hardliner outpost with hefty automated defences."
+	id = "hardliner_holdout"
+	suffix = "lavaland_hardliner_holdout.dmm"

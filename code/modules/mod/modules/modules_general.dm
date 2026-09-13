@@ -230,7 +230,7 @@
 	incompatible_modules = list(/obj/item/mod/module/thermal_regulator)
 	cooldown_time = 0.5 SECONDS
 	/// The temperature we are regulating to.
-	var/temperature_setting = BODYTEMP_NORMAL
+	var/temperature_setting = HUMAN_BODYTEMP_NORMAL
 	/// Minimum temperature we can set.
 	var/min_temp = 293.15
 	/// Maximum temperature we can set.

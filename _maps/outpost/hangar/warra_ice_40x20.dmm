@@ -644,6 +644,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
+"vi" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
+/obj/machinery/holosign/random{
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/tech/warra_outpost/lit,
+/area/hangar)
 "wH" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
@@ -872,6 +881,9 @@
 /obj/structure/chair{
 	dir = 4
 	},
+/obj/structure/sign/departments/cargo/warra{
+	pixel_y = 29
+	},
 /turf/open/floor/plasteel/tech/grid/warra_outpost/lit,
 /area/hangar)
 "LS" = (
@@ -921,7 +933,7 @@
 /turf/open/floor/plasteel/patterned/brushed/warra_outpost/lit,
 /area/hangar)
 "PM" = (
-/obj/structure/sign/departments/cargo,
+/obj/structure/sign/departments/cargo/warra,
 /turf/closed/indestructible/titanium/nodiagnonal,
 /area/hangar)
 "Qu" = (
@@ -3141,7 +3153,7 @@ aY
 aY
 aY
 ab
-PM
+ab
 Lx
 TN
 CZ
@@ -3225,7 +3237,7 @@ aY
 aY
 aY
 ab
-po
+vi
 AT
 eN
 XC

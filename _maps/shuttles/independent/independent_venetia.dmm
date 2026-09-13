@@ -751,7 +751,7 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/gun/energy/sharplite/x12/inteq{
+/obj/item/gun/energy/sharplite/volt/inteq{
 	pixel_y = -6
 	},
 /obj/item/gun/ballistic/automatic/smg/resolution/inteq,
@@ -1273,26 +1273,6 @@
 	pixel_x = 4;
 	pixel_y = 8
 	},
-/obj/item/storage/belt/security/webbing/inteq{
-	pixel_x = -8
-	},
-/obj/item/storage/belt/security/webbing/inteq{
-	pixel_x = -8
-	},
-/obj/item/storage/belt/security/webbing/inteq/alt{
-	pixel_x = 4;
-	pixel_y = -2
-	},
-/obj/item/storage/belt/security/webbing/inteq/alt{
-	pixel_x = 4;
-	pixel_y = -2
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_y = -8
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_y = -8
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
@@ -1391,7 +1371,7 @@
 /obj/item/gear_pack/anglegrinder,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/electrical,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/storage/belt/utility,
 /obj/item/clothing/under/rank/engineering/engineer/hazard,
 /obj/item/clothing/head/hardhat/weldhat/orange,
@@ -1493,10 +1473,6 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 33;
-	pixel_x = 7
-	},
 /obj/item/radio/intercom/directional/north{
 	pixel_x = 3;
 	pixel_y = 30
@@ -1534,6 +1510,10 @@
 	pixel_x = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north{
+	pixel_x = 4;
+	pixel_y = 37
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/security/armory)
 "pr" = (
@@ -2290,7 +2270,7 @@
 /obj/item/gear_pack/anglegrinder,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/electrical,
-/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/insulated,
 /obj/item/storage/belt/utility,
 /obj/item/clothing/under/rank/engineering/engineer/hazard,
 /obj/item/clothing/head/hardhat/weldhat/orange,
@@ -3209,7 +3189,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/sign/warning/electricshock{
-	pixel_y = 24;
+	pixel_y = 30;
 	pixel_x = 8;
 	layer = 3.201
 	},
@@ -3363,19 +3343,9 @@
 	dir = 6
 	},
 /obj/machinery/light/small/directional/east,
-/obj/structure/closet/secure_closet{
-	name = "uniform closet"
+/obj/structure/closet/faction/inteq/secure/merc/enforcer/prefilled{
+	anchored = 1
 	},
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/clothing/under/syndicate/inteq,
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt,
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq,
-/obj/item/clothing/mask/balaclava/inteq,
-/obj/item/clothing/head/soft/inteq,
-/obj/item/clothing/head/beret/sec/inteq,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/storage/backpack/messenger/inteq,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "JK" = (
@@ -3551,14 +3521,12 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "KU" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 26
-	},
 /obj/structure/platform/wood{
 	dir = 1;
 	layer = 2.8
 	},
 /obj/structure/chair/sofa/brown,
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/north,
 /turf/open/floor/carpet/green,
 /area/ship/crew/canteen/kitchen)
 "KV" = (
@@ -3572,7 +3540,7 @@
 /area/ship/hallway/central)
 "KX" = (
 /obj/structure/sign/warning/electricshock{
-	pixel_y = 8
+	pixel_y = 14
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security/armory)
@@ -4062,7 +4030,9 @@
 "RT" = (
 /obj/structure/railing/thin,
 /obj/structure/table/wood/reinforced,
-/obj/structure/noticeboard/directional/east,
+/obj/structure/noticeboard/directional/east{
+	pixel_y = 7
+	},
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
 	},
@@ -4226,20 +4196,10 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 5
 	},
-/obj/structure/closet/secure_closet{
-	name = "uniform closet"
-	},
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/clothing/under/syndicate/inteq,
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt,
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq,
-/obj/item/clothing/mask/balaclava/inteq,
-/obj/item/clothing/head/soft/inteq,
-/obj/item/clothing/head/beret/sec/inteq,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/storage/backpack/messenger/inteq,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/faction/inteq/secure/merc/enforcer/prefilled{
+	anchored = 1
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "Um" = (
@@ -4255,6 +4215,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/machinery/emergency_panel,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "Us" = (

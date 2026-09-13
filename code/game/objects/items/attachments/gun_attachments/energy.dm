@@ -3,7 +3,7 @@
 	desc = "Pew pew laser beam. You probably shouldnt be seeing this."
 	underbarrel_prefix = "laser_"
 	icon_state = "energy"
-	weapon_type = /obj/item/gun/energy/sharplite/x12
+	weapon_type = /obj/item/gun/energy/sharplite/volt
 	var/automatic_charge_overlays = TRUE
 	allow_hand_interaction = TRUE
 
@@ -46,7 +46,8 @@
 	return examine_list
 
 /obj/item/attachment/gun/energy/get_cell()
-	return attached_gun.cell
+	var/obj/item/gun/energy/e_gun = attached_gun
+	return e_gun.cell
 
 /obj/item/attachment/gun/energy/e_gun
 	name = "underbarrel energy gun"

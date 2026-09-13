@@ -350,6 +350,11 @@
 			update_pull_movespeed()
 
 		set_pull_offsets(M, state)
+	else
+		// We already know it's an object since it's not a mob so no need to typecheck
+		var/obj/O = AM
+		if (O.density || O.drag_slowdown)
+			face_mouse = FALSE
 
 //mob verbs are a lot faster than object verbs
 //for more info on why this is not atom/pull, see examinate() in mob.dm
@@ -368,6 +373,8 @@
 	..()
 	update_pull_movespeed()
 	update_pull_hud_icon()
+	if(a_intent == INTENT_HARM)
+		face_mouse = TRUE
 
 /mob/living/verb/stop_pulling1()
 	set name = "Stop Pulling"
@@ -1015,7 +1022,7 @@
 		if(has_gravity == 1)
 			clear_alert("gravity")
 		else
-			if(has_gravity >= GRAVITY_DAMAGE_TRESHOLD)
+			if(has_gravity >= GRAVITY_DAMAGE_THRESHOLD)
 				throw_alert("gravity", /atom/movable/screen/alert/veryhighgravity)
 			else
 				throw_alert("gravity", /atom/movable/screen/alert/highgravity)
@@ -1365,12 +1372,12 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 * Handles effects happening when mob is on normal fire
 *
 * Vars:
-* * delta_time
+* * seconds_per_tick
 * * times_fired
 * * fire_handler: Current fire status effect that called the proc
 */
 
-/mob/living/proc/on_fire_stack(delta_time, datum/status_effect/fire_handler/fire_stacks/fire_handler)
+/mob/living/proc/on_fire_stack(seconds_per_tick, datum/status_effect/fire_handler/fire_stacks/fire_handler)
 	return
 
 //Mobs on Fire end

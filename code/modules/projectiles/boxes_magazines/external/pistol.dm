@@ -1,11 +1,11 @@
 /obj/item/ammo_box/magazine/m45
 	name = "pistol magazine (.45)"
-	desc = "An 8-round single-stack magazine for the Candor pistol. These rounds do moderate damage, but struggle against armor."
+	desc = "A 10-round single-stack magazine for the Candor pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "candor_mag-8"
 	base_icon_state = "candor_mag"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
-	max_ammo = 8
+	max_ammo = 10
 
 /obj/item/ammo_box/magazine/m45/empty
 	start_empty = TRUE
@@ -13,17 +13,17 @@
 
 /obj/item/ammo_box/magazine/m45/hp
 	name = "pistol magazine (.45 HP)"
-	desc= "An 8-round single-stack magazine for the Candor pistol. These hollow point rounds do incredible damage against soft targets, but are nearly ineffective against armored ones."
+	desc= "A 10-round single-stack magazine for the Candor pistol. These hollow point rounds do incredible damage against soft targets, but are nearly ineffective against armored ones."
 	ammo_type = /obj/item/ammo_casing/c45/hp
 
 /obj/item/ammo_box/magazine/m45/ap
 	name = "pistol magazine (.45 AP)"
-	desc= "An 8-round single-stack magazine for the Candor pistol. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
+	desc= "A 10-round single-stack magazine for the Candor pistol. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
 	ammo_type = /obj/item/ammo_casing/c45/ap
 
 /obj/item/ammo_box/magazine/m45/rubber
 	name = "pistol magazine (.45 rubber)"
-	desc = "An 8-round single-stack magazine for the Candor pistol. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
+	desc = "A 10-round single-stack magazine for the Candor pistol. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
 	ammo_type = /obj/item/ammo_casing/c45/rubber
 
 /obj/item/ammo_box/magazine/m45/update_icon_state()
@@ -66,12 +66,12 @@
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/zip_ammo_9mm
-	name = "budget pistol magazine (9x18mm)"
-	desc = "A cheaply-made, 8-round surplus magazine that fits standard-issue 9x18mm pistols. These rounds do okay damage, but struggle against armor."
+	name = "budget pistol magazine (9mm)"
+	desc = "A cheaply-made, 8-round surplus magazine that fits standard-issue 9mm pistols. These rounds do okay damage, but struggle against armor."
 	icon_state = "zip_mag-1"
 	base_icon_state = "zip_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm/surplus
-	caliber = "9x18mm"
+	caliber = "9mm"
 	max_ammo = 8
 	custom_materials = list(/datum/material/iron = 20000)
 

@@ -37,6 +37,10 @@
 	display_name = "beret, recolorable"
 	path = /obj/item/clothing/head/beret/color
 
+/datum/gear/hat/beret/aclf
+	display_name = "ACLF beret"
+	path = /obj/item/clothing/head/beret/aclf
+
 /datum/gear/hat/beret/departmental
 	display_name = "beret, departmental"
 	path = /obj/item/clothing/head/beret/grey
@@ -160,6 +164,10 @@
 /datum/gear/hat/flap
 	display_name = "flap cap, recolorable"
 	path = /obj/item/clothing/head/flap
+
+/datum/gear/hat/boonie
+	display_name = "boonie, recolorable"
+	path = /obj/item/clothing/head/boonie
 
 /datum/gear/hat/sunhat
 	display_name = "sun hat"

@@ -1,0 +1,48 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Stag-class Salvage Rig",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "Hardline Salvage and Mining",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL",
+		"NATURAL_AGGRESSIVE"
+	],
+	"map_short_name": "Stag-class",
+	"map_path": "_maps/shuttles/independent/independent_stag.dmm",
+	"token_icon_state": "ship_mid_generic",
+	"description": "The Stag-class, recently commissioned in 500 FSC by Hardline Salvage and Mining, is designed to exploit the abundance of war-time era derelicts in the Frontier. Stag-class vessels are equipped with turbine generators to supply sufficient power and thrust for long distance ventures from the Core, and moderate crew accommodation to keep its members in healthy working condition. The vessel has generous amounts of hauling and shipbreaking equipment, ensuring its well-earned salvage is quickly and efficiently cut up and secured.",
+	"tags": [
+		"Salvage",
+		"Engineering"
+	],
+	"starting_funds": 2000,
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"First Mate": {
+			"outfit": "/datum/outfit/job/independent/hop",
+			"officer": true,
+			"slots": 1
+		},
+		"Salvage Technician": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 2
+		},
+		"Security Detail": {
+			"outfit": "/datum/outfit/job/independent/security/disarmed",
+			"slots": 2
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

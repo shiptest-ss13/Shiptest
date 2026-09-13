@@ -13,14 +13,14 @@
 	result = /obj/item/reagent_containers/food/drinks/bottle/lizardwine
 	category = CAT_DRINK
 
-/datum/crafting_recipe/moonshinejug
-	name = "Moonshine Jug"
+/datum/crafting_recipe/chemshinejug
+	name = "Chemshine Jug"
 	time = 30
 	reqs = list(
 		/obj/item/reagent_containers/food/drinks/bottle = 1,
-		/datum/reagent/consumable/ethanol/moonshine = 100
+		/datum/reagent/consumable/ethanol/chemshine = 100
 	)
-	result = /obj/item/reagent_containers/food/drinks/bottle/moonshine
+	result = /obj/item/reagent_containers/food/drinks/bottle/chemshine
 	category = CAT_DRINK
 
 /datum/crafting_recipe/hoochbottle

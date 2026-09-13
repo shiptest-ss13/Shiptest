@@ -28,7 +28,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	spread = 15
-	spread_unwielded = 35
+	spread_unwielded = 15
 	recoil = -2
 	recoil_unwielded = -2
 
@@ -395,7 +395,7 @@ NO_MAG_GUN_HELPER(automatic/m15)
 	icon_state = "buckmaster"
 	item_state = "buckmaster"
 
-	fire_delay = 0.5 SECONDS
+	fire_delay = 0.3 SECONDS
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/buckmaster
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/buckmaster,

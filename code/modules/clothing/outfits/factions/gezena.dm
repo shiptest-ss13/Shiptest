@@ -59,10 +59,10 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 
-	backpack = /obj/item/storage/backpack/medic
-	satchel = /obj/item/storage/backpack/satchel/med
+	backpack = /obj/item/storage/backpack/medic/gezena
+	satchel = /obj/item/storage/backpack/satchel/med/gezena
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	courierbag = /obj/item/storage/backpack/messenger/med
+	courierbag = /obj/item/storage/backpack/messenger/med/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/security
@@ -94,10 +94,10 @@
 	job_icon = "paramedic"
 
 	neck = /obj/item/clothing/neck/cloak/gezena/med
-	backpack = /obj/item/storage/backpack/medic
-	satchel = /obj/item/storage/backpack/satchel/med
+	backpack = /obj/item/storage/backpack/medic/gezena
+	satchel = /obj/item/storage/backpack/satchel/med/gezena
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	courierbag = /obj/item/storage/backpack/messenger/para
+	courierbag = /obj/item/storage/backpack/messenger/med/gezena
 
 /datum/outfit/job/gezena/cmo
 	name = "PGF - Medical Officer"
@@ -108,10 +108,10 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 
-	backpack = /obj/item/storage/backpack/medic
-	satchel = /obj/item/storage/backpack/satchel/med
+	backpack = /obj/item/storage/backpack/medic/gezena
+	satchel = /obj/item/storage/backpack/satchel/med/gezena
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	courierbag = /obj/item/storage/backpack/messenger/med
+	courierbag = /obj/item/storage/backpack/messenger/med/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/hos
@@ -187,9 +187,8 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena
 	belt = /obj/item/storage/belt/sabre/pgf
-	r_hand = /obj/item/gun/energy/kalix/nock
 	mask = /obj/item/clothing/mask/breath/pgfmask/navy
-	glasses = /obj/item/clothing/glasses/safety
+	glasses = /obj/item/clothing/glasses/sunglasses/ballistic
 
 /datum/outfit/job/gezena/engineer/geared
 	name = "PGF - Navy Engineer - Equipped"
@@ -217,14 +216,14 @@
 	uniform = /obj/item/clothing/under/gezena
 	suit = /obj/item/clothing/suit/armor/gezena/medic
 	head = /obj/item/clothing/head/gezena/medic
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	gloves = /obj/item/clothing/gloves/nitrile/blue
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 
-	backpack = /obj/item/storage/backpack/medic
-	satchel = /obj/item/storage/backpack/satchel/med
+	backpack = /obj/item/storage/backpack/medic/gezena
+	satchel = /obj/item/storage/backpack/satchel/med/gezena
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	courierbag = /obj/item/storage/backpack/messenger/med
+	courierbag = /obj/item/storage/backpack/messenger/med/gezena
 
 /datum/outfit/job/gezena/security/geared
 	name = "PGF - Marine - Equipped"
@@ -238,7 +237,6 @@
 	gloves = /obj/item/clothing/gloves/gezena/marine
 	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena
-	r_hand = /obj/item/gun/energy/kalix/pgf/medium
 	mask = /obj/item/clothing/mask/breath/pgfmask
 	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
@@ -258,7 +256,6 @@
 	gloves = /obj/item/clothing/gloves/gezena/marine
 	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena/engi
-	r_hand = /obj/item/gun/energy/kalix/pgf/nock
 	mask = /obj/item/clothing/mask/breath/pgfmask
 	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
@@ -279,7 +276,6 @@
 	gloves = /obj/item/clothing/gloves/gezena/marine
 	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena/command
-	r_hand = /obj/item/gun/energy/kalix/pgf/heavy
 	mask = /obj/item/clothing/mask/breath/pgfmask
 	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
@@ -300,14 +296,13 @@
 	gloves = /obj/item/clothing/gloves/gezena/marine
 	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena/med
-	r_hand = /obj/item/gun/energy/kalix/pgf
 	mask = /obj/item/clothing/mask/breath/pgfmask
 	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
-	backpack = /obj/item/storage/backpack/medic
-	satchel = /obj/item/storage/backpack/satchel/med
+	backpack = /obj/item/storage/backpack/medic/gezena
+	satchel = /obj/item/storage/backpack/satchel/med/gezena
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	courierbag = /obj/item/storage/backpack/messenger/para
+	courierbag = /obj/item/storage/backpack/messenger/med/gezena
 
 /datum/outfit/job/gezena/hop/geared
 	name = "PGF - Naval Bridge Officer - Equipped"
@@ -320,7 +315,6 @@
 	gloves = /obj/item/clothing/gloves/gezena
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/command
-	r_hand = /obj/item/gun/energy/kalix/pgf
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap
@@ -338,6 +332,7 @@
 	gloves = /obj/item/clothing/gloves/gezena/captain
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/captain
+	belt = /obj/item/storage/belt/sabre/pgf
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap

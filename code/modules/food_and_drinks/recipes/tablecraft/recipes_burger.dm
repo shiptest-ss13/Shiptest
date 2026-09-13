@@ -165,7 +165,7 @@
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/ribburger
-	name = "McRib"
+	name = "Rib Burger"
 	reqs = list(
 		/obj/item/food/bbqribs = 1, //The sauce is already included in the ribs
 		/obj/item/food/onion_slice = 1, //feel free to remove if too burdensome.
@@ -175,7 +175,7 @@
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/mcguffin
-	name = "McGuffin"
+	name = "Breakfast Sandwich"
 	reqs = list(
 		/obj/item/food/friedegg = 1,
 		/obj/item/food/meat/bacon = 2,

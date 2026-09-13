@@ -88,11 +88,11 @@
 	icon_state = "blackpants"
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
-/obj/item/clothing/under/pants/tan
-	name = "tan pants"
-	desc = "Some tan pants. You look like a white collar worker with these on."
-	icon_state = "khaki"
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
+/obj/item/clothing/under/pants/brown
+	name = "brown jeans"
+	desc = "Some brown jeans. You look like a white collar worker with these on."
+	icon_state = "brownjeans"
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/pants/track
 	name = "track pants"

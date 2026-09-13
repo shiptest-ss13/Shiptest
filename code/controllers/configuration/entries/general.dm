@@ -116,7 +116,7 @@
 	min_val = 0
 
 /datum/config_entry/number/vote_period  // length of voting period (deciseconds, default 1 minute)
-	config_entry_value = 600
+	config_entry_value = 3 MINUTES
 	integer = FALSE
 	min_val = 0
 

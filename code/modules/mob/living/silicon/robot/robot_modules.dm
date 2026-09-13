@@ -941,7 +941,7 @@
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/melee/energy/sword/cyborg,
 		/obj/item/gun/energy/printer,
-		/obj/item/gun/ballistic/revolver/grenadelauncher/cyborg,
+		/obj/item/gun/ballistic/rocketlauncher/mako/light,
 		/obj/item/card/emag/borg,
 		/obj/item/crowbar/cyborg,
 		/obj/item/extinguisher/mini,

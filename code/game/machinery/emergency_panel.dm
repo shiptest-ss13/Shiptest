@@ -11,6 +11,8 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	clicksound = "terminal_type"
 	use_power = NO_POWER_USE // signal distress regardless of power
+	plane = FLOOR_PLANE
+	layer = LOW_OBJ_LAYER
 
 	// inserted ship key
 	var/obj/item/key/ship/ship_key
@@ -29,14 +31,14 @@
 	if(ship_key)
 		. += span_notice("There's a key inserted in the panel. You can Alt-Click to take it.")
 
-/obj/machinery/emergency_panel/update_appearance()
-	. = ..()
-	if(hatch_open)
-		icon_state = "panel_open"
+/obj/machinery/emergency_panel/update_icon_state()
 	if(ship_key)
-		icon_state = "panel_open_key"
+		icon_state = "[initial(icon_state)]_open_key"
+	else if(hatch_open)
+		icon_state = "[initial(icon_state)]_open"
 	else
-		icon_state = "panel"
+		icon_state = initial(icon_state)
+	return ..()
 
 /obj/machinery/emergency_panel/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
@@ -74,6 +76,7 @@
 		ship_key = key
 	else
 		. = ..()
+	update_appearance()
 
 /obj/machinery/emergency_panel/attack_hand(mob/living/user)
 	. = ..()
@@ -88,11 +91,14 @@
 
 	switch(alert(user, "Are you sure you want to create a distress signal?",, "Yes", "No"))
 		if("Yes")
-			create_distress_beacon(get_overmap_location())
+			create_distress_beacon(linked_ship)
 			playsound(src, 'sound/machines/triple_beep.ogg', 50, FALSE)
 			to_chat(user, span_warning("Distress signal broadcasted."))
 			distress_cooldown = world.time + EMERGENCY_PANEL_COOLDOWN
 		else
 			return
+
+/obj/machinery/emergency_panel/dark
+	icon_state = "panel-dark"
 
 #undef EMERGENCY_PANEL_COOLDOWN

@@ -4,7 +4,7 @@
 //########### PISTOLS ###########//
 /obj/item/gun/ballistic/automatic/pistol/ringneck
 	name = "PC-76 \"Ringneck\""
-	desc = "A compact handgun used by most Syndicate-affiliated groups. Small enough to conceal in most pockets, making it popular for covert elements and simply as a compact defensive weapon. Chambered in 10x22mm."
+	desc = "A compact handgun used by most Syndicate-affiliated groups. Small enough to conceal in most pockets, making it popular for covert elements and simply as a compact defensive weapon. Chambered in 10mm."
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
@@ -53,14 +53,14 @@
 
 
 	spread = 6 //becuase its compact, spread is slightly worse
-	spread_unwielded = 9
+	spread_unwielded = 6
 	recoil_unwielded = 2
 
 NO_MAG_GUN_HELPER(automatic/pistol/ringneck)
 
 /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
 	name = "Ringneck-76"
-	desc = "A service handgun popular among law enforcement, mercenaries, and independent spacers with discerning tastes. Chambered in 10x22mm."
+	desc = "A service handgun popular among law enforcement, mercenaries, and independent spacers with discerning tastes. Chambered in 10mm."
 
 	icon_state = "ringneck76"
 	item_state = "sa_indie"
@@ -68,20 +68,20 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck)
 	w_class = WEIGHT_CLASS_NORMAL
 
 	spread = 5 //this one is normal sized, thus in theory its better, in theory at least
-	spread_unwielded = 7
+	spread_unwielded = 5
 	recoil_unwielded = 3
 
 NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
 
 
 /obj/item/ammo_box/magazine/m10mm_ringneck
-	name = "Ringneck pistol magazine (10x22mm)"
-	desc = "An 8-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
+	name = "Ringneck pistol magazine (10mm)"
+	desc = "An 10-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "ringneck_mag-1"
 	base_icon_state = "ringneck_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10x22mm"
-	max_ammo = 8
+	caliber = "10mm"
+	max_ammo = 10
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m10mm_ringneck/empty
@@ -184,7 +184,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	fire_delay = 0.35 SECONDS
 
 	spread = 3
-	spread_unwielded = 8
+	spread_unwielded = 3
 	recoil = 1
 	recoil_unwielded = 2
 
@@ -193,6 +193,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 /obj/item/gun/ballistic/revolver/viper/no_mag
 	spawn_no_ammo = TRUE
+
+EMPTY_GUN_HELPER(revolver/viper)
 
 /obj/item/gun/ballistic/revolver/viper/indie
 	name = "Viper-23"
@@ -212,7 +214,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake
 	name = "MP-84 \"Rattlesnake\""
-	desc = "A machine pistol, once used by Syndicate infiltrators and special forces during the ICW. Still used by specialists in former Syndicate factions. Chambered in 9x18mm."
+	desc = "A machine pistol, once used by Syndicate infiltrators and special forces during the ICW. Still used by specialists in former Syndicate factions. Chambered in 9mm."
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
@@ -262,18 +264,18 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
-	fire_delay = 0.4 SECONDS
+	fire_delay = 0.07 SECONDS
 	wear_minor_threshold = 240
 	wear_major_threshold = 720
 	wear_maximum = 1200
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
 NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake/inteq
 	name = "MP-84m Kingsnake"
-	desc = "A machine pistol obtained from Syndicate stockpiles and lightly modified to Inteq standards. Generally issued only to specialists. Chambered in 9x18mm."
+	desc = "A machine pistol obtained from Syndicate stockpiles and lightly modified to Inteq standards. Generally issued only to specialists. Chambered in 9mm."
 
 	icon_state = "rattlesnake_inteq"
 	item_state = "rattlesnake_inteq"
@@ -282,7 +284,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth
 	name = "MP-84m Cottonmouth"
-	desc = "A machine pistol obtained from Marauder stockpiles and heavily modified by elements of the Ramzi Clique to accept a larger calibre, with a few largely-ignored drawbacks of 2-round burst and magazine capacity. Chambered in 10x22mm."
+	desc = "A machine pistol obtained from Marauder stockpiles and heavily modified by elements of the Ramzi Clique to accept a larger calibre, with a few largely-ignored drawbacks of 2-round burst and magazine capacity. Chambered in 10mm."
 
 	icon_state = "cottonmouth"
 	item_state = "cottonmouth"
@@ -297,18 +299,18 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	wear_rate = 1.5
 
 	recoil = 0.5
-	recoil_unwielded = 3
 	burst_size = 2
-	burst_delay = 0.1 SECONDS
-	fire_delay = 0.4 SECONDS
+	burst_delay = 0.07 SECONDS
+	fire_delay = 0.1 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 
 /obj/item/ammo_box/magazine/m9mm_rattlesnake
-	name = "Rattlesnake magazine (9x18mm)"
+	name = "Rattlesnake magazine (9mm)"
 	desc = "A long, 18-round double-stack magazine designed for the Rattlesnake machine pistol. These rounds do okay damage, but struggle against armor."
 	icon_state = "rattlesnake_mag_18"
 	base_icon_state = "rattlesnake_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9x18mm"
+	caliber = "9mm"
 	max_ammo = 18
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
@@ -320,12 +322,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m10mm_cottonmouth
-	name = "Cottonmouth magazine (10x22mm)"
+	name = "Cottonmouth magazine (10mm)"
 	desc = "A long, 14-round double-stack magazine designed for the Cottonmouth modified machine pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "rattlesnake_mag_18"
 	base_icon_state = "rattlesnake_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10x22mm"
+	caliber = "10mm"
 	max_ammo = 14
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
@@ -388,7 +390,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	spread = -2
 	recoil = -2
 	recoil_unwielded = -2
-	spread_unwielded = 0
+	spread_unwielded = -2
 	wield_slowdown = 0
 
 NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
@@ -972,7 +974,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m12g_bulldog,
 	)
-	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
+	fire_delay = 0.3 SECONDS
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	show_magazine_on_sprite = TRUE
 //	empty_indicator = TRUE

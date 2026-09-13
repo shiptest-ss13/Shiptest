@@ -5,9 +5,10 @@
 
 /obj/item/reagent_containers/glass/rag
 	name = "damp rag"
-	desc = "For cleaning up messes, you suppose."
+	desc = "A rag that can clean dirty surfaces and absorb fluids."
 	w_class = WEIGHT_CLASS_TINY
-	icon = 'icons/obj/toy.dmi'
+	icon = 'icons/obj/item/rag.dmi'
+	//world_file = 'icons/obj/item/rag_world.dmi'
 	icon_state = "rag"
 	item_flags = NOBLUDGEON
 	reagent_flags = OPENCONTAINER

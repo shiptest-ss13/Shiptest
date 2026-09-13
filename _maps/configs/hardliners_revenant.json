@@ -1,0 +1,48 @@
+{
+	"faction": "/datum/faction/syndicate/hardliners",
+	"prefix": "ISV",
+	"manufacturer": "Kasagi-Fischer Partnership",
+	"namelists": [
+		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"WEAPONS"
+	],
+	"map_name": "Revenant-class Heavy Tug",
+	"map_short_name": "Revenant-class",
+	"description": "An unstandardized model of independent vessel conversions, Revenant-class vessels are more of a show of independency from Cybersun's tight hold on the Hardliners. Often made to fly under the radar and blend in with civilian vessels, many of these ships are designed to fall back on old roots of Mining, Demolition work and Scrapping. While these vessels tend to have modest living conditions, the lack of Cybersun funding and less outward recognition leads to the vessels being slightly underequipped compared to other counterparts.",
+	"tags": [
+		"RP Focus",
+		"mining"
+	],
+	"map_path": "_maps/shuttles/hardliner/hardliners_revenant.dmm",
+	"map_id": "hardliners_revenant",
+	"limit": 1,
+	"tranist_y_offset": -11,
+	"starting_funds": 1500,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/gorlex/stripped",
+			"officer": true,
+			"slots": 1
+		},
+		"Foreman": {
+			"outfit": "/datum/outfit/job/syndicate/ce/hardliner",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex/stripped",
+			"slots": 1
+		},
+		"Wrecker": {
+			"outfit": "/datum/outfit/job/syndicate/miner/gorlex/stripped",
+			"slots": 2
+		},
+		"Junior Agent": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

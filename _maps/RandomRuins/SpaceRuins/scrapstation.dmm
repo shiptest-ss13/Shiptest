@@ -2835,8 +2835,9 @@
 /obj/machinery/door/window/southleft{
 	dir = 4
 	},
-/obj/machinery/mineral/processing_unit_console{
-	pixel_y = 30
+/obj/machinery/computer/processing_unit_console/directional/north{
+	dy = -3;
+	dx = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
@@ -8090,9 +8091,7 @@
 /area/ruin/space)
 "SG" = (
 /obj/effect/turf_decal/etherbor/center,
-/obj/structure/flippedtable{
-	icon_state = "wood_table"
-	},
+/obj/structure/barricade/directional/flippedtable/wood,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/squirt{
 	dir = 9
@@ -8168,9 +8167,7 @@
 /area/ruin/space/has_grav/powered/ramzi_station)
 "SU" = (
 /obj/effect/turf_decal/etherbor/right,
-/obj/structure/flippedtable{
-	icon_state = "wood_table"
-	},
+/obj/structure/barricade/directional/flippedtable/wood,
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 4

@@ -90,6 +90,7 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/frontier
 	name = "reinforced fur coat"
@@ -301,6 +302,12 @@
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/spitter_9mm(src)
 	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/security/military/frontiersmen/spitter_with_ammo/PopulateContents()
+	for(var/i in 1 to 3)
+		new /obj/item/ammo_box/magazine/spitter_9mm(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/gun/ballistic/automatic/pistol/spitter(src)
 
 /obj/item/storage/belt/security/military/frontiersmen/flamer/PopulateContents()
 	for(var/i in 1 to 4)

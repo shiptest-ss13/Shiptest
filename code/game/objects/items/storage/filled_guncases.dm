@@ -16,6 +16,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/candor
 	mag_type = /obj/item/ammo_box/magazine/m45
 
+/obj/item/storage/guncase/pistol/candor/factory
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/candor/factory
+	mag_type = /obj/item/ammo_box/magazine/m45
+
 /obj/item/storage/guncase/pistol/detective
 	gun_type = /obj/item/gun/ballistic/revolver/detective
 	mag_type = /obj/item/ammo_box/c38
@@ -32,6 +36,9 @@
 /obj/item/storage/guncase/doublebarrel
 	gun_type = /obj/item/gun/ballistic/shotgun/doublebarrel
 
+/obj/item/storage/guncase/doublebarrel/roumain
+	gun_type = /obj/item/gun/ballistic/shotgun/doublebarrel/roumain
+
 /obj/item/storage/guncase/brimstone
 	gun_type = /obj/item/gun/ballistic/shotgun/brimstone
 
@@ -39,8 +46,15 @@
 	gun_type = /obj/item/gun/ballistic/rifle/illestren
 	mag_type = /obj/item/ammo_box/magazine/illestren_a850r
 
+/obj/item/storage/guncase/illestren/factory
+	gun_type = /obj/item/gun/ballistic/rifle/illestren/factory
+	mag_type = /obj/item/ammo_box/magazine/illestren_a850r
+
 /obj/item/storage/guncase/beacon
 	gun_type = /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
+
+/obj/item/storage/guncase/beacon/factory
+	gun_type = /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory
 
 /obj/item/storage/guncase/scout
 	gun_type = /obj/item/gun/ballistic/rifle/scout
@@ -49,14 +63,24 @@
 /obj/item/storage/guncase/winchester
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow
 
+/obj/item/storage/guncase/winchester/factory
+	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/factory
+
 /obj/item/storage/guncase/conflagration
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration
 
 /obj/item/storage/guncase/absolution
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/absolution
 
+/obj/item/storage/guncase/absolution/factory
+	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/absolution/factory
+
 /obj/item/storage/guncase/pyre
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/pyre
+	mag_type = /obj/item/ammo_box/a4570/empty
+
+/obj/item/storage/guncase/pyre/factory
+	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/pyre/factory
 	mag_type = /obj/item/ammo_box/a4570/empty
 
 /obj/item/storage/guncase/firestorm
@@ -251,6 +275,9 @@
 	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/gar
 	mag_type = /obj/item/ammo_box/magazine/gar
 
+/obj/item/storage/guncase/railgun
+	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+
 /* VI */
 
 /obj/item/storage/guncase/pistol/commander
@@ -267,45 +294,45 @@
 /* Sharplite */
 
 /obj/item/storage/guncase/pistol/miniegun
-	gun_type = /obj/item/gun/energy/sharplite/x26
+	gun_type = /obj/item/gun/energy/sharplite/ohm
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/mini
 
 /obj/item/storage/guncase/energy
 	mag_type = /obj/item/stock_parts/cell/gun
 
 /obj/item/storage/guncase/energy/laser
-	gun_type = /obj/item/gun/energy/sharplite/l201/l204
+	gun_type = /obj/item/gun/energy/sharplite/surge/resistor
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/l201
-	gun_type = /obj/item/gun/energy/sharplite/l201
+	gun_type = /obj/item/gun/energy/sharplite/surge
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/egun
-	gun_type = /obj/item/gun/energy/sharplite/x12
+	gun_type = /obj/item/gun/energy/sharplite/volt
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/ultima
-	gun_type = /obj/item/gun/energy/sharplite/x46
+	gun_type = /obj/item/gun/energy/sharplite/amperage
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/etar
-	gun_type = /obj/item/gun/energy/sharplite/l305
+	gun_type = /obj/item/gun/energy/sharplite/rush
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/al607
-	gun_type = /obj/item/gun/energy/sharplite/al607
+	gun_type = /obj/item/gun/energy/sharplite/sarissa
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 /obj/item/storage/guncase/energy/iongun
 	gun_type = /obj/item/gun/energy/ionrifle
 
 /obj/item/storage/guncase/hades
-	gun_type = /obj/item/gun/energy/sharplite/al655
+	gun_type = /obj/item/gun/energy/sharplite/hades
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 /obj/item/storage/guncase/x01
-	gun_type = /obj/item/gun/energy/sharplite/x01
+	gun_type = /obj/item/gun/energy/sharplite/yari
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 /* Old MW */
@@ -357,7 +384,7 @@
 	mag_type = /obj/item/ammo_box/magazine/f4_308
 
 /obj/item/storage/guncase/cm15
-	gun_type = /obj/item/gun/ballistic/shotgun/cm15
+	gun_type = /obj/item/gun/ballistic/shotgun/automatic/cm15
 	mag_type = /obj/item/ammo_box/magazine/cm15_12g
 
 /obj/item/storage/guncase/cm24
@@ -371,6 +398,44 @@
 /obj/item/storage/guncase/cm40
 	gun_type = /obj/item/gun/ballistic/automatic/hmg/cm40
 	mag_type = /obj/item/ammo_box/magazine/cm40_762_40_box
+
+/* Clover */
+
+/obj/item/storage/guncase/ecm7
+	gun_type = /obj/item/gun/energy/clover/pistol/clip
+	mag_type = /obj/item/stock_parts/cell/gun/mini
+
+/obj/item/storage/guncase/pl7
+	gun_type = /obj/item/gun/energy/clover/pistol
+	mag_type = /obj/item/stock_parts/cell/gun/mini
+
+/obj/item/storage/guncase/stingingnettle
+	gun_type = /obj/item/gun/energy/clover/pistol/auto
+	mag_type = /obj/item/stock_parts/cell/gun/mini
+
+/obj/item/storage/guncase/ecm9
+	gun_type = /obj/item/gun/energy/clover/pistol/thistle/clip
+	mag_type = /obj/item/stock_parts/cell/gun/mini
+
+/obj/item/storage/guncase/pl9
+	gun_type = /obj/item/gun/energy/clover/pistol/thistle
+	mag_type = /obj/item/stock_parts/cell/gun/mini
+
+/obj/item/storage/guncase/ecm12
+	gun_type = /obj/item/gun/energy/clover/clip
+	mag_type = /obj/item/stock_parts/cell/gun/upgraded
+
+/obj/item/storage/guncase/pl12
+	gun_type = /obj/item/gun/energy/clover
+	mag_type = /obj/item/stock_parts/cell/gun
+
+/obj/item/storage/guncase/ecm25
+	gun_type = /obj/item/gun/energy/clover/faveleira/clip
+	mag_type = /obj/item/stock_parts/cell/gun/upgraded
+
+/obj/item/storage/guncase/pl25
+	gun_type = /obj/item/gun/energy/clover/faveleira
+	mag_type = /obj/item/stock_parts/cell/gun
 
 /* Inteq */
 
@@ -411,11 +476,11 @@
 	mag_type = /obj/item/ammo_box/magazine/f90
 
 /obj/item/storage/guncase/cadejo
-	gun_type = /obj/item/gun/energy/sharplite/x12/inteq
+	gun_type = /obj/item/gun/energy/sharplite/volt/inteq
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/barghest
-	gun_type = /obj/item/gun/energy/sharplite/al655/inteq
+	gun_type = /obj/item/gun/energy/sharplite/hades/inteq
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 /obj/item/storage/guncase/bdm50

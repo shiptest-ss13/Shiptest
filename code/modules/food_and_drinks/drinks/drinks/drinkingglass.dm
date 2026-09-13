@@ -3,7 +3,12 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass
 	name = "drinking glass"
 	desc = "Your standard drinking glass."
-	icon_state = "glass_empty"
+	lefthand_file = 'icons/obj/drinks/drinks_lefthand.dmi'
+	righthand_file = 'icons/obj/drinks/drinks_righthand.dmi'
+	//world_file = 'icons/obj/drinks/drinks_world.dmi'
+	icon_state = "glass"
+	item_state = "glass"
+	fill_icon_thresholds = list(1, 20, 50, 70, 90)
 	amount_per_transfer_from_this = 10
 	volume = 50
 	custom_materials = list(/datum/material/glass=500)
@@ -25,39 +30,13 @@
 		if(R.glass_icon_state)
 			icon_state = R.glass_icon_state
 		else
-			var/mutable_appearance/reagent_overlay = mutable_appearance(icon, "glassoverlay")
-			icon_state = "glass_empty"
-			reagent_overlay.color = mix_color_from_reagents(reagents.reagent_list)
-			add_overlay(reagent_overlay)
+			icon_state = src::icon_state
+			update_appearance()
 	else
-		icon_state = "glass_empty"
+		name = src::name
+		desc = src::desc
+		icon_state = src::icon_state
 		renamedByPlayer = FALSE //so new drinks can rename the glass
-
-/obj/item/reagent_containers/food/drinks/beaglemug
-	name = "beagle mug"
-	desc = "A beloved edifice of a Dog, now as a mug!"
-	icon_state = "beaglemug"
-	amount_per_transfer_from_this = 10
-	volume = 30
-	custom_materials = list(/datum/material/glass=500)
-	max_integrity = 20
-	spillable = TRUE
-	resistance_flags = ACID_PROOF
-	obj_flags = UNIQUE_RENAME
-	drop_sound = 'sound/items/handling/drinkglass_drop.ogg'
-	pickup_sound =  'sound/items/handling/drinkglass_pickup.ogg'
-	custom_price = 15
-
-/obj/item/reagent_containers/food/drinks/beaglemug/on_reagent_change(changetype)
-	cut_overlays()
-	if(reagents.reagent_list.len)
-		var/mutable_appearance/reagent_overlay = mutable_appearance(icon, "beaglemug_overlay")
-		icon_state = "beaglemug"
-		reagent_overlay.color = mix_color_from_reagents(reagents.reagent_list)
-		add_overlay(reagent_overlay)
-	else
-		icon_state = "beaglemug"
-		renamedByPlayer = FALSE
 
 //Shot glasses!//
 //  This lets us add shots in here instead of lumping them in with drinks because >logic  //
@@ -70,8 +49,10 @@
 	name = "shot glass"
 	desc = "A shot glass - the universal symbol for bad decisions."
 	icon_state = "shotglass"
+	item_state = "shotglass"
 	gulp_size = 15
 	amount_per_transfer_from_this = 15
+	fill_icon_thresholds = list(1, 30, 60, 90)
 	possible_transfer_amounts = list()
 	volume = 15
 	custom_materials = list(/datum/material/glass=100)
@@ -80,28 +61,20 @@
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/on_reagent_change(changetype)
 	cut_overlays()
-
-	gulp_size = max(round(reagents.total_volume / 15), 15)
-
-	if (reagents.reagent_list.len > 0)
-		var/datum/reagent/largest_reagent = reagents.get_master_reagent()
-		name = "filled [initial(src.name)]"
-		desc = filled_desc
-
-		if(largest_reagent.shot_glass_icon_state)
-			icon_state = largest_reagent.shot_glass_icon_state
+	if(reagents.reagent_list.len)
+		var/datum/reagent/R = reagents.get_master_reagent()
+		if(!renamedByPlayer)
+			desc = R.glass_desc
+		if(R.shot_glass_icon_state)
+			icon_state = R.shot_glass_icon_state
 		else
-			icon_state = "shotglassclear"
-			var/mutable_appearance/shot_overlay = mutable_appearance(icon, "shotglassoverlay")
-			shot_overlay.color = mix_color_from_reagents(reagents.reagent_list)
-			add_overlay(shot_overlay)
-
-
+			icon_state = src::icon_state
+			update_appearance()
 	else
-		icon_state = "shotglass"
-		name = initial(src.name)
-		desc = initial(src.desc)
-		return
+		desc = src::desc
+		icon_state = src::icon_state
+		renamedByPlayer = FALSE //so new drinks can rename the glass
+
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass/commemorative
 	name = "commemorative shot glass"
@@ -128,7 +101,7 @@
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/bridge_bunny
 	name = "Bridge Bunny"
-	list_reagents = list(/datum/reagent/consumable/ethanol/sidecar = 50)
+	list_reagents = list(/datum/reagent/consumable/ethanol/bridge_bunny = 50)
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/gorlex_surprise
 	name = "Gorlex Surprise"

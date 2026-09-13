@@ -30,8 +30,11 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/damaged)
 	del_on_death = TRUE
 
-	unsuitable_atmos_damage = 15
+	unsuitable_atmos_damage = 7.5
 	minbodytemp = 180
+
+	minimum_pressure = HAZARD_LOW_PRESSURE
+	maximum_pressure = HAZARD_HIGH_PRESSURE
 	status_flags = CANPUSH
 
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -81,6 +84,57 @@
 		armor = instance.armor
 		qdel(instance)
 
+// applies special stuff to guns that are dropped, which are very special indeed
+/mob/living/simple_animal/hostile/human/proc/modify_dropped_gun(obj/item/gun/dropped_gun)
+	var/good = TRUE
+	// break gun and apply broken overlay
+	if(!prob(weapon_drop_chance)) // you got the dud!
+		good = FALSE
+		visible_message(span_danger("[src]'s [dropped_gun.name] is destroyed as they collapse!"))
+		dropped_gun.actually_shoots = FALSE
+		dropped_gun.desc += span_warning("\nIt appears to be irreparably broken.")
+		// broken overlay
+		dropped_gun.glunkify()
+
+	// BALLISTICS - apply wear, mag drop chance, and empty the mag partially
+	if(istype(dropped_gun, /obj/item/gun/ballistic))
+		var/obj/item/gun/ballistic/cosmetic_damage = dropped_gun
+		cosmetic_damage.gun_wear = rand(cosmetic_damage.wear_minor_threshold, cosmetic_damage.wear_maximum) //my free gun... it's bowowken...
+		if(!prob(weapon_drop_chance) && !cosmetic_damage.internal_magazine)
+			qdel(cosmetic_damage.magazine)
+			cosmetic_damage.magazine = null
+		if(cosmetic_damage.magazine)
+			for(var/i = 0, i < rand(0, cosmetic_damage.magazine.max_ammo), i++)
+				qdel(cosmetic_damage.magazine.get_round()) // feels kludgy but like. how else
+				cosmetic_damage.magazine.update_ammo_count()
+		cosmetic_damage.update_appearance()
+
+	// ENERGY - drain cell a random amount, cell drop chance
+	if(istype(dropped_gun, /obj/item/gun/energy))
+		var/obj/item/gun/energy/lazor = dropped_gun
+		if(lazor.cell)
+			lazor.cell.charge = rand(0, lazor.cell.maxcharge)
+			lazor.update_appearance()
+			if(!good) // undamaged guns never have dud cells
+				lazor.cell.name = "dented [lazor.cell.name]"
+				lazor.cell.desc += " It doesn't seem to be in the greatest condition..."
+				if(!prob(weapon_drop_chance))
+					lazor.cell.rigged = TRUE // smiles warmly
+					lazor.cell.show_rigged = FALSE
+
+// handles behavior for either dropping the held item or damaging it
+/mob/living/simple_animal/hostile/human/proc/handle_hand_item_destruction(obj/hand)
+	if(!hand) // wow look nothing
+		return
+	if(ispath(hand, /obj/item/gun)) // we always drop guns, the drop chance just makes them functional
+		var/obj/item/gun/dropped_gun = new hand(loc)
+		modify_dropped_gun(dropped_gun)
+	else // for melee weapons and stuff they just explode into dust
+		if(prob(weapon_drop_chance))
+			new hand(loc)
+		else
+			visible_message(span_danger("[src]'s [hand.name] is destroyed as they collapse!"))
+
 /mob/living/simple_animal/hostile/human/drop_loot()
 	. = ..()
 	if(QDELING(src))
@@ -89,21 +143,8 @@
 		return
 	if(mob_spawner)
 		new mob_spawner(loc, mob_species)
-	if(r_hand && weapon_drop_chance)
-		if(prob(weapon_drop_chance))
-			var/obj/item/gun/ballistic/cosmetic_damage = new r_hand(loc)
-			if(istype(cosmetic_damage))
-				cosmetic_damage.gun_wear = rand(cosmetic_damage.wear_minor_threshold, cosmetic_damage.wear_maximum) //my free gun... it's bowowken...
-		else
-			visible_message(span_danger("[src]'s [r_hand.name] is destroyed as they collapse!"))
-	if(l_hand && weapon_drop_chance)
-		if(prob(weapon_drop_chance))
-			var/obj/item/gun/ballistic/cosmetic_damage = new l_hand(loc)
-			if(istype(cosmetic_damage))
-				cosmetic_damage.gun_wear = rand(cosmetic_damage.wear_minor_threshold, cosmetic_damage.wear_maximum)
-		else
-			visible_message(span_danger("[src]'s [l_hand.name] is destroyed as they collapse!"))
-
+	handle_hand_item_destruction(l_hand)
+	handle_hand_item_destruction(r_hand)
 
 /mob/living/simple_animal/hostile/human/vv_edit_var(var_name, var_value)
 	switch(var_name)

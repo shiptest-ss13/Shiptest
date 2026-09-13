@@ -117,7 +117,6 @@
 /obj/item/food/grown/sososi,
 /obj/item/food/grown/sososi,
 /obj/item/food/grown/dote_berries{
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /obj/item/food/grown/dote_berries{
@@ -627,6 +626,7 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/east,
+/obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/south,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm)
 "dJ" = (
@@ -1331,10 +1331,10 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_y = -1
 	},
-/obj/item/clothing/gloves/color/yellow{
+/obj/item/clothing/gloves/insulated{
 	pixel_y = 4
 	},
 /obj/machinery/power/terminal,
@@ -1428,7 +1428,7 @@
 	pixel_y = -4;
 	pixel_x = 5
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/evil{
+/obj/item/clothing/gloves/nitrile/evil{
 	pixel_y = -9;
 	pixel_x = 5
 	},
@@ -1548,7 +1548,7 @@
 	pixel_y = -3;
 	pixel_x = 4
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/evil{
+/obj/item/clothing/gloves/nitrile/evil{
 	pixel_y = -9;
 	pixel_x = 5
 	},
@@ -2713,7 +2713,7 @@
 	pixel_x = 1;
 	pixel_y = 9
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/evil{
+/obj/item/clothing/gloves/nitrile/evil{
 	pixel_x = 4;
 	pixel_y = 3
 	},
@@ -3405,7 +3405,7 @@
 	id = "cwin7";
 	name = "shutter control"
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/evil{
+/obj/item/clothing/gloves/nitrile/evil{
 	pixel_x = 5;
 	pixel_y = 5
 	},
@@ -3682,10 +3682,6 @@
 	},
 /obj/structure/railing/thin{
 	layer = 4.12
-	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = -26;
-	pixel_x = 30
 	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm)
@@ -5434,6 +5430,10 @@
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
+/obj/machinery/emergency_panel{
+	pixel_x = -8;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "Rw" = (
@@ -5620,7 +5620,7 @@
 	},
 /obj/item/storage/belt/medical,
 /obj/item/autosurgeon/cmo,
-/obj/item/clothing/gloves/color/latex/nitrile/evil{
+/obj/item/clothing/gloves/nitrile/evil{
 	pixel_y = 4;
 	pixel_x = 5
 	},

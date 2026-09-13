@@ -53,7 +53,7 @@
 
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
-	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/captain)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/volt, /obj/item/stamp/captain)
 
 /datum/outfit/job/solgov/sonnensoldner
 	name = "SolGov - Sonnensöldner"
@@ -63,16 +63,13 @@
 
 	id = /obj/item/card/id/solgov
 	uniform = /obj/item/clothing/under/solgov
-	suit = /obj/item/clothing/suit/armor/vest/solgov
 	ears = /obj/item/radio/headset/solgov/alt
-	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/solgov/sonnensoldner
 	r_pocket = null
 	l_pocket = null
 	shoes = /obj/item/clothing/shoes/workboots
 	back = /obj/item/storage/backpack
 	box = /obj/item/storage/box/survival
-	backpack_contents = list(/obj/item/crowbar/power)
 
 /datum/outfit/job/solgov/representative
 	name = "SolGov - Solarian Representative"
@@ -115,7 +112,7 @@
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
-	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/officer)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/volt, /obj/item/stamp/officer)
 
 /datum/outfit/job/solgov/doctor
 	name = "SolGov - Medical Doctor"

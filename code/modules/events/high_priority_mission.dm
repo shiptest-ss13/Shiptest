@@ -15,12 +15,16 @@
 	var/datum/overmap/outpost/target_outpost
 
 /datum/round_event/high_priority_mission/announce()
-	priority_announce("[target_outpost.main_template.outpost_administrator] has issued a series of high priority missions. Details are available at [target_outpost].", "[target_outpost] Mission Program", null, sender_override = "[target_outpost] Communications")
+	priority_announce("[target_outpost.outpost_administrator] has issued a series of high priority missions. Details are available at [target_outpost].", "[target_outpost] Mission Program", null, sender_override = "[target_outpost] Communications")
 
 /datum/round_event/high_priority_mission/setup()
 	target_outpost = pick(SSovermap.outposts)
 	for(var/i = 0, i<3, i++)
-		var/high_priority = SSmissions.get_weighted_mission_type()
+		var/high_priority = SSmissions.get_weighted_mission_type(target_outpost.get_mission_sector())
+		if(!high_priority)
+			stack_trace("[src] could not find any valid missions while attempting to create a high priority mission at [target_outpost]!")
+			return FALSE
+
 		var/datum/mission/M = new high_priority(target_outpost)
 
 		LAZYINSERT(target_outpost.missions, 1, M)

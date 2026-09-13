@@ -565,7 +565,12 @@
 
 /obj/item/toy/crayon/spraycan
 	name = "spray can"
+	desc = "A metallic container containing spraypaint. The contained fluids deplete as it's sprayed, so it requires replacement when it's fully used up."
+
 	icon_state = "spraycan"
+
+	icon = 'icons/obj/item/spraycan.dmi'
+	//world_file = 'icons/obj/world/spraycan.dmi'
 
 	icon_capped = "spraycan_cap"
 	icon_uncapped = "spraycan"
@@ -575,8 +580,8 @@
 	item_state = "spraycan"
 	lefthand_file = 'icons/mob/inhands/equipment/hydroponics_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/hydroponics_righthand.dmi'
-	desc = "A metallic container containing tasty paint."
 
+	charges = 80
 	custom_materials = list(/datum/material/iron = 100, /datum/material/glass = 100) // WS Edit - Item Materials
 
 	instant = TRUE
@@ -598,8 +603,8 @@
 	. = ..()
 	// If default crayon red colour, pick a more fun spraycan colour
 	if(!paint_color)
-		paint_color = pick("#DA0000","#FF9300","#FFF200","#A8E61D","#00B7EF",
-		"#DA00FF")
+		paint_color = pick("#b22c20","#d99e50","#f0db65","#579e60","#307db9",
+		"#a548b1")
 	refill()
 	update_appearance()
 
@@ -683,7 +688,7 @@
 /obj/item/toy/crayon/spraycan/update_overlays()
 	. = ..()
 	if(use_overlays)
-		var/mutable_appearance/spray_overlay = mutable_appearance('icons/obj/crayons.dmi', "[is_capped ? "spraycan_cap_colors" : "spraycan_colors"]")
+		var/mutable_appearance/spray_overlay = mutable_appearance(icon, "[is_capped ? "spraycan_cap_colors" : "spraycan_colors"]")
 		spray_overlay.color = paint_color
 		. += spray_overlay
 
@@ -714,9 +719,9 @@
 /obj/item/toy/crayon/spraycan/hellcan
 	name = "hellcan"
 	desc = "This spraycan doesn't seem to be filled with paint..."
-	icon_state = "deathcan2_cap"
-	icon_capped = "deathcan2_cap"
-	icon_uncapped = "deathcan2"
+	icon_state = "deathcan_cap"
+	icon_capped = "deathcan_cap"
+	icon_uncapped = "deathcan"
 	use_overlays = FALSE
 
 	volume_multiplier = 25
