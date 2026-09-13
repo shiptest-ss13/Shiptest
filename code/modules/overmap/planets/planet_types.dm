@@ -11,6 +11,8 @@
 	var/mapgen = null
 	///The fallback turf if mapgen fails.
 	var/default_baseturf = null
+	///Baseturfs for ruins, used to replace hazardous planetgen turfs, if it spawns over any.
+	var/ruin_baseturf = null
 	///The gravity we set. If higher than 1, slowdown effects will be applied
 	var/gravity = 0
 	///The weather we set when we are used
@@ -42,6 +44,7 @@
 	color = COLOR_ORANGE
 	mapgen = /datum/map_generator/planet_generator/lava
 	default_baseturf = /turf/open/floor/plating/asteroid/basalt/lava
+	ruin_baseturf = /turf/open/floor/plating/asteroid/basalt
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
