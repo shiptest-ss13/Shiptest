@@ -122,7 +122,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-<<<<<<< HEAD
 /datum/crafting_recipe/dynamite
 	name = "Dynamite"
 	result = /obj/item/grenade/firecracker/dynamite
