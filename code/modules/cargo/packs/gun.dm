@@ -43,6 +43,15 @@
 	contains = list(/obj/item/storage/guncase/pistol/commander)
 	faction = /datum/faction/warra
 	faction_discount = 20
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/challengerpersonal
+	name = "CA9 Challenger Personal Pistol Crate"
+	desc = "Contains a double stacked Challenger Personal pistol, produced by Makosso-Warra Advantage for civilian markets. Chambered in 9mm."
+	cost = 750
+	contains = list(/obj/item/storage/guncase/pistol/challengerpersonal)
+	faction = /datum/faction/warra
+	faction_discount = 0
 
 /datum/supply_pack/gun/ringneck
 	name = "Ringneck Pistol Crate"
@@ -612,8 +621,18 @@
 	contains = list(/obj/item/storage/guncase/vector)
 	crate_name = "SMG crate"
 	faction = /datum/faction/warra
-	faction_discount = 0
+	faction_discount = 5
 	faction_locked = TRUE
+
+/datum/supply_pack/gun/expeditiondefender
+	name = "SGP9 Expedition Defender SMG Crate"
+	desc = "Contains a Expedition Defender SMG produced by Makosso-Warra Advantage for civilian markets. Chambered in 9mm."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/expeditiondefender)
+	crate_name = "SMG crate"
+	faction = /datum/faction/warra
+	faction_discount = 0
+
 
 /datum/supply_pack/gun/mongrel
 	name = "SKM-44v Mongrel SMG Crate"
