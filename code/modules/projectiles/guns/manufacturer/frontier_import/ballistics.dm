@@ -220,7 +220,7 @@
 		/obj/item/ammo_box/magazine/heater,
 	)
 	wear_rate = 1.25
-	fire_sound = 'sound/weapons/gun/smg/resolution.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/skm_smg.ogg'
 
 	load_sound = 'sound/weapons/gun/smg/cm5_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/smg/cm5_reload.ogg'
