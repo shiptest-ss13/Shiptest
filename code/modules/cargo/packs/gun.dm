@@ -1109,10 +1109,10 @@
 
 /datum/supply_pack/gun/vector/export
 	name = "Director Gauss Rifle"
-	desc = "Contains an SG90 Vector gauss rifle, made as a compromise between a gauss marksman rifle and the SG95 Vector. Takes 3x20mm Deu'Sha magazines."
+	desc = "Contains an SG95 Director gauss rifle, made as a compromise between a gauss marksman rifle and the SG95 Vector. Takes 3x20mm Deu'Sha magazines."
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/vector/export)
-	crate_name = "amend crate"
+	crate_name = "director crate"
 	faction = /datum/faction/syndicate/cybersun
 	faction_locked = FALSE
 

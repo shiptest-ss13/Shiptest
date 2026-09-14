@@ -51,7 +51,8 @@
 
 /obj/item/gun/ballistic/cs_gauss/examine(mob/user)
 	. = ..()
-	. += span_notice("You can <b>Right-Click</b> a mob to lock it as a target!")
+	if(smart_lock)
+		. += span_notice("You can <b>Right-Click</b> a mob to lock it as a target!")
 
 /obj/item/gun/ballistic/cs_gauss/update_overlays()
 	. = ..()
@@ -72,6 +73,7 @@
 		current_target = WEAKREF(locate(/mob/living) in get_turf(target))
 		if(current_target)
 			balloon_alert(user, "target locked")
+			playsound(src, 'sound/items/deconstruct.ogg', 50, FALSE)
 			lock_loss = 0
 			START_PROCESSING(SSfastprocess, src)
 		else
@@ -83,6 +85,7 @@
 	else if(ismob(target))
 		current_target = WEAKREF(target)
 		balloon_alert(user, "target locked")
+		playsound(src, 'sound/items/deconstruct.ogg', 50, FALSE)
 		lock_loss = 0
 		START_PROCESSING(SSfastprocess, src)
 
@@ -118,6 +121,11 @@
 			chambered.BB.accuracy_mod = 3
 	. = ..()
 
+/obj/item/gun/ballistic/cs_gauss/rack(mob/user, chamber_new_round)
+	if(chambered)
+		to_chat(user, span_notice("[src] is already primed!"))
+		return FALSE
+	. = ..()
 
 /obj/item/gun/ballistic/cs_gauss/rectifier
 	name = "\improper SG27 Rectifier"
