@@ -35,6 +35,7 @@
 	minimum_distance = 4
 	casingtype = /obj/projectile/bullet/c45
 	deathmessage = "falls to the ground, sparking as its rotors grind to a halt."
+	is_flying_animal = TRUE
 
 /mob/living/simple_animal/hostile/automated/quadrotor/frontiersman
 	name = "Gremlin Drone"
@@ -51,11 +52,12 @@
 	desc = "A military drone manufactured by Cybersun. Used extensively during the Inter-Corporate War, a large number have found themselves in disrepair and malfunctioning in the years since. The 5.7x39mm pistol on its gimbal is still active, however."
 	health = 60
 	maxHealth = 60
-	rapid = 3
+	rapid = 1
 	rapid_fire_delay = 3
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	casingtype = /obj/item/ammo_casing/c57x39mm
 	faction = list(FACTION_HOSTILE)
+	icon_state = "quadrotor_coalition"
 
 /mob/living/simple_animal/hostile/automated/quadrotor/cybersun/friendly
 	name = "Mr. Drone"
@@ -65,7 +67,7 @@
 /mob/living/simple_animal/hostile/automated/quadrotor/cybersun/ramzi
 	name = "Y-10-RC Drone"
 	desc = "A military drone design adapted by Ramzi's Clique for reconnaissance and fast response. The ten-millimeter machinepistol on its gimbal mount tracks your movements."
-	rapid = 2
+	rapid = 1
 	rapid_fire_delay = 3
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	casingtype = /obj/item/ammo_casing/c10mm
@@ -77,9 +79,12 @@
 	health = 60
 	maxHealth = 60
 	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
-	projectiletype = /obj/projectile/beam/laser/sharplite
+	projectiletype = /obj/projectile/beam/chaff
+	rapid = 7
+	rapid_fire_delay = 1
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
+	icon_state = "quadrotor_warra"
 
 //rovers
 
@@ -245,6 +250,45 @@
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
+//boxer
+
+/mob/living/simple_animal/hostile/automated/boxer
+	name = "B.A.P II 'Boxer'"
+	desc = "A cheaper, easier to produce version of the Bipedal Assault Platform, the B.A.P II was made to focus on a brawling, frontline role. With some structure stripped down and its weaponry downgraded to a deterrent plasma stream, it is able to perform far more aggressively compared to its predecessor."
+	icon_state = "boxer"
+	environment_smash = ENVIRONMENT_SMASH_WALLS
+	mob_size = MOB_SIZE_LARGE
+	health = 200
+	maxHealth = 200
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+	move_to_delay = 4
+	speed = 5
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
+	projectiletype = /obj/projectile/beam/chaff
+	rapid = 6
+	rapid_fire_delay = 1
+	spread = 30
+	stat_attack = HARD_CRIT
+	deathmessage = "collapses as its visor goes dark."
+	shoot_point_blank = FALSE
+	armour_penetration = 20
+	melee_damage_lower = 40
+	melee_damage_upper = 40
+	attack_verb_continuous = "smashes"
+	attack_verb_simple = "smash"
+	attack_sound = 'sound/weapons/genhit1.ogg'
+	faction = list(ROLE_DEATHSQUAD)
+	on_aggro_say = list("Intruder detected. Suppressing.", "Aggressor is non-complaint, Engaging.", "Stop Resisting.")
+	aggro_say_chance = 60
+
+/mob/living/simple_animal/hostile/automated/boxer/AttackingTarget()
+	. = ..()
+	if(isliving(target))
+		var/mob/living/bonk = target
+		if(!bonk.anchored)
+			var/atom/throw_target = get_edge_target_turf(bonk, src.dir)
+			bonk.throw_at(throw_target, rand(1,3), 2, src, gentle = TRUE)
 
 /mob/living/simple_animal/hostile/automated/walkmine
 	name = "G-80W Walkmine"

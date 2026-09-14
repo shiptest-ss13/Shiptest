@@ -221,6 +221,14 @@
 /obj/projectile/beam/weaker
 	damage = 10
 
+/obj/projectile/beam/chaff
+	icon_state = "sharplite_laser_light"
+	damage = 5
+	speed = 0.3
+	light_color = COLOR_BLUE_LIGHT
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
+
 /obj/projectile/beam/weak/low_range
 	damage = 10
 	range = 9
