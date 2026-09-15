@@ -124,6 +124,12 @@
 	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? null : 0]"
 	return ..()
 
+/obj/item/reagent_containers/hypospray/medipen/Initialize(mapload, vol)
+	. = ..()
+	if(!reagents || !reagents.reagent_list.len) //maploaded used up reagents
+		update_icon_state()
+		update_appearance()
+
 /obj/item/reagent_containers/hypospray/medipen/examine()
 	. = ..()
 	if(reagents && reagents.reagent_list.len)
