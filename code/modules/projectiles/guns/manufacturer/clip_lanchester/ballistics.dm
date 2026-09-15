@@ -206,8 +206,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/cm357)
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/cm5.ogg'
 	manufacturer = MANUFACTURER_MINUTEMAN
-
-	spread = 3
+	fire_delay = 0.09 SECONDS // despite being 1 fire delay previously, it fucking rounds up to 1.5. This makes it ACTUALLY ONE
+	spread = 4
 	spread_unwielded = 7
 
 	valid_attachments = CLIP_ATTACHMENTS
