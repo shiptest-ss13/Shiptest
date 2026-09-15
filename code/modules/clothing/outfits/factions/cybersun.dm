@@ -50,6 +50,17 @@
 	alt_uniform = /obj/item/clothing/under/cybersun/sneak
 	head = /obj/item/clothing/head/soft/cybersun
 
+/datum/outfit/job/cybersun/troubleshooter
+	name = "Cybersun - Troubleshooter"
+	id_assignment = "Troubleshooter"
+
+	jobtype = /datum/job/officer
+	job_icon = "securityofficer"
+
+	uniform = /obj/item/clothing/under/cybersun/suit
+	alt_uniform = /obj/item/clothing/under/cybersun/sneak
+	head = /obj/item/clothing/head/soft/cybersun
+
 /datum/outfit/job/cybersun/paramedic
 	name = "Cybersun - Trauma Team"
 	id_assignment = "Trauma Team Technician"
