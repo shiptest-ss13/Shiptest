@@ -284,8 +284,16 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/challenger
 	mag_type = /obj/item/ammo_box/magazine/co9mm
 
+/obj/item/storage/guncase/pistol/challengerpersonal
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/challenger/indie
+	mag_type = /obj/item/ammo_box/magazine/co9mm
+
 /obj/item/storage/guncase/vector
 	gun_type = /obj/item/gun/ballistic/automatic/smg/expedition
+	mag_type = /obj/item/ammo_box/magazine/m9mm_expedition
+
+/obj/item/storage/guncase/expeditiondefender
+	gun_type = /obj/item/gun/ballistic/automatic/smg/expedition/indie
 	mag_type = /obj/item/ammo_box/magazine/m9mm_expedition
 
 /obj/item/storage/guncase/cycler

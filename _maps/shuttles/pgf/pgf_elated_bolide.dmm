@@ -231,6 +231,10 @@
 	pixel_y = -11;
 	pixel_x = 11
 	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_x = 0;
+	pixel_y = -8
+	},
 /obj/item/clothing/gloves/color/white{
 	pixel_y = -7
 	},
@@ -436,7 +440,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/range)
 "dk" = (
-/obj/machinery/airalarm/directional/west,
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 8
 	},
@@ -546,6 +549,10 @@
 /obj/item/clothing/head/gezena/flap/marine{
 	pixel_y = 11;
 	pixel_x = -8
+	},
+/obj/structure/sign/poster/pgf/juggernaut{
+	pixel_y = 0;
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -4609,10 +4616,6 @@
 	pixel_y = 3;
 	pixel_x = -11
 	},
-/obj/item/storage/backpack/satchel/med{
-	pixel_x = 8;
-	pixel_y = -6
-	},
 /obj/item/clothing/neck/stethoscope{
 	pixel_y = -7
 	},
@@ -4626,10 +4629,6 @@
 /obj/item/clothing/suit/armor/gezena/medic{
 	pixel_y = -5;
 	pixel_x = -6
-	},
-/obj/item/storage/belt/medical/gezena{
-	pixel_x = -3;
-	pixel_y = -5
 	},
 /obj/item/clothing/head/gezena/medic{
 	pixel_y = 13;
@@ -4646,13 +4645,33 @@
 	pixel_x = -12;
 	pixel_y = -20
 	},
-/obj/item/sensor_device{
-	pixel_y = -4;
-	pixel_x = 8
+/obj/item/storage/backpack/messenger/med/gezena{
+	pixel_x = 10;
+	pixel_y = -15
+	},
+/obj/item/storage/backpack/satchel/med/gezena{
+	pixel_x = -10;
+	pixel_y = -14
+	},
+/obj/item/storage/backpack/medic/gezena{
+	pixel_x = 0;
+	pixel_y = -13
+	},
+/obj/item/storage/belt/medical/gezena{
+	pixel_x = -1;
+	pixel_y = -9
 	},
 /obj/item/pinpointer/crew{
 	pixel_y = -6;
 	pixel_x = -8
+	},
+/obj/item/sensor_device{
+	pixel_y = -4;
+	pixel_x = 8
+	},
+/obj/item/storage/backpack/duffelbag/med{
+	pixel_y = -19;
+	pixel_x = 0
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
@@ -6200,10 +6219,7 @@
 	pixel_y = -10;
 	pixel_x = null
 	},
-/obj/item/storage/backpack/satchel/cap{
-	pixel_y = -9;
-	pixel_x = -8
-	},
+/obj/item/storage/backpack/satchel,
 /obj/item/storage/backpack/duffelbag/captain{
 	pixel_x = 6;
 	pixel_y = -10
@@ -7222,6 +7238,7 @@
 /obj/item/clothing/under/gezena/marine,
 /obj/item/clothing/under/gezena/marine,
 /obj/item/clothing/under/gezena/marine,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "NU" = (

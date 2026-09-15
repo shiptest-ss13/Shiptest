@@ -30,6 +30,7 @@
 	light_color = COLOR_SOFT_RED
 	ricochets_max = 50	//Honk!
 	ricochet_chance = 90
+	ricochet_incidence_leeway = 75
 	reflectable = REFLECT_NORMAL
 
 /obj/projectile/beam/throw_atom_into_space()
@@ -219,6 +220,14 @@
 
 /obj/projectile/beam/weaker
 	damage = 10
+
+/obj/projectile/beam/chaff
+	icon_state = "sharplite_laser_light"
+	damage = 5
+	speed = 0.3
+	light_color = COLOR_BLUE_LIGHT
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
 
 /obj/projectile/beam/weak/low_range
 	damage = 10
