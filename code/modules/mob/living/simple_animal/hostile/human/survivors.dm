@@ -193,6 +193,7 @@
 	casingtype = /obj/item/ammo_casing/c46x30mm/tesla
 	r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	aggro_vision_range = 7
 
 //survivor corpses
 
