@@ -13,7 +13,6 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier
 	r_hand = /obj/item/melee/knife/survival
-	dodging = TRUE
 
 /mob/living/simple_animal/hostile/human/frontier/civilian
 	name = "Frontiersman Doorguard"
@@ -45,7 +44,6 @@
 	armour_penetration = 20
 	r_hand = /obj/item/melee/trench_club
 	sharpness = SHARP_NONE
-	dodging = TRUE
 
 /mob/living/simple_animal/hostile/human/frontier/mace/internals
 	icon_state = "frontiersmanmelee_mask"
@@ -65,7 +63,6 @@
 	l_hand = /obj/item/brass_knuckles
 	r_hand = null
 	sharpness = SHARP_NONE
-	dodging = TRUE
 
 /mob/living/simple_animal/hostile/human/frontier/junkie/internals
 	icon_state = "frontiersmanmelee_mask"
