@@ -38,6 +38,13 @@
 	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/effect/spawner/random/minebot)
 	projectiletype = /obj/projectile/kinetic/miner/weak
 
+/mob/living/simple_animal/hostile/abandoned_minebot/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_RADIMMUNE, INNATE_TRAIT)
+
+/mob/living/simple_animal/hostile/abandoned_minebot/death(gibbed)
+	REMOVE_TRAIT(src, TRAIT_RADIMMUNE, INNATE_TRAIT)
+	. = ..()
 
 /obj/projectile/kinetic/miner/weak
 	damage = 15
