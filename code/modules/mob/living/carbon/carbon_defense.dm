@@ -74,7 +74,7 @@
 		var/zone_hit_chance = 80
 		if(body_position == LYING_DOWN) // half as likely to hit a different zone if they're on the ground
 			zone_hit_chance += 10
-		affecting = get_bodypart(ran_zone(user.zone_selected, zone_hit_chance))
+		affecting = get_bodypart(run_zone(user.zone_selected, zone_hit_chance))
 
 	if(!affecting) //missing limb? we select the first bodypart (you can never have zero, because of chest)
 		affecting = get_first_available_bodypart()
@@ -249,7 +249,7 @@
 		return dam_zone
 	var/obj/item/bodypart/affecting
 	if(dam_zone && attacker.client)
-		affecting = get_bodypart(ran_zone(dam_zone))
+		affecting = get_bodypart(run_zone(dam_zone))
 	else
 		var/list/things_to_ruin = shuffle(get_all_bodyparts())
 		for(var/obj/item/bodypart/bodypart as anything in things_to_ruin)
@@ -874,10 +874,11 @@
 	if(check_concealment(P))
 		return BULLET_ACT_FORCE_PIERCE
 	var/armor = run_armor_check(def_zone, P.flag, P.armour_penetration, silent = TRUE)
-	var/on_hit_state = P.on_hit(src, armor, piercing_hit)
+	var/limb_to_hit = run_zone(def_zone, P.get_accuracy(src))
+	var/on_hit_state = P.on_hit(src, armor, piercing_hit, limb_to_hit)
 	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK && !QDELETED(src)) //QDELETED literally just for the instagib rifle. Yeah.
 		var/attack_direction = get_dir(P.starting, src)
-		apply_damage(P.damage, P.damage_type, def_zone, armor, sharpness = P.sharpness, attack_direction = attack_direction)
+		apply_damage(P.damage, P.damage_type, limb_to_hit, armor, sharpness = P.sharpness, attack_direction = attack_direction)
 		var/impact_intensity = (P.damage/8) * impact_effect
 		recoil_camera(src, clamp((P.damage-armor)/4,0.5,10), clamp((P.damage-armor)/4,0.5,10), impact_intensity, P.Angle)
 		apply_effects(P.stun, P.knockdown, P.unconscious, P.irradiate, P.slur, P.stutter, P.eyeblur, P.drowsy, armor, P.stamina, P.jitter, P.paralyze, P.immobilize)
