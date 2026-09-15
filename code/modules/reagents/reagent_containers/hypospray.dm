@@ -16,6 +16,14 @@
 #define COMBAT_SELF_SPRAY 0
 #define COMBAT_SELF_INJECT 0
 
+#define SPENT_PEN_HELPER(pen_path) \
+	/obj/item/reagent_containers/hypospray/##pen_path/empty { \
+		list_reagents = list(); \
+	/obj/item/reagent_containers/hypospray/##pen_path/empty/Initialize(mapload, vol) \
+		. = ..(); \
+		name = "spent [name]"; \
+	}
+
 /obj/item/reagent_containers/hypospray
 	name = "hypospray"
 	desc = "The hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
@@ -123,12 +131,6 @@
 /obj/item/reagent_containers/hypospray/medipen/update_icon_state()
 	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? null : 0]"
 	return ..()
-
-/obj/item/reagent_containers/hypospray/medipen/Initialize(mapload, vol)
-	. = ..()
-	if(!reagents || !reagents.reagent_list.len) //maploaded used up reagents
-		update_icon_state()
-		update_appearance()
 
 /obj/item/reagent_containers/hypospray/medipen/examine()
 	. = ..()
