@@ -543,7 +543,10 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "df" = (
-/obj/effect/turf_decal/isf_small,
+/obj/machinery/porta_turret/ship/cybersun/heavy{
+	id = "cirrus_grid"
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "dh" = (
@@ -1138,6 +1141,14 @@
 /obj/effect/turf_decal/siding/wood/maple,
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
+"gU" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
+/obj/machinery/porta_turret/ship/cybersun/heavy{
+	dir = 1;
+	id = "cirrus_grid"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "gZ" = (
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
@@ -1229,6 +1240,11 @@
 /obj/structure/cable/cyan,
 /turf/open/floor/plating,
 /area/ship/crew/dorm/commad)
+"hT" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/effect/turf_decal/isf_small/left,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "hZ" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 6
@@ -1245,22 +1261,16 @@
 	dir = 6
 	},
 /obj/structure/closet/wall/red/directional/north,
-/obj/item/storage/guncase/c20r{
-	pixel_y = 10
+/obj/item/storage/guncase/galvanizer{
+	pixel_y = 7
 	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = 6
+/obj/item/stock_parts/cell/gun/cybersun{
+	pixel_y = -4;
+	pixel_x = -6
 	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = -5
-	},
-/obj/item/storage/box/ammo/c45_rubber{
-	pixel_x = 6;
-	pixel_y = -5
-	},
-/obj/item/storage/box/ammo/c45_rubber{
-	pixel_x = -5;
-	pixel_y = -5
+/obj/item/stock_parts/cell/gun/cybersun{
+	pixel_y = -4;
+	pixel_x = 9
 	},
 /obj/item/melee/energy/flyssa,
 /turf/open/floor/plasteel/mono/white,
@@ -1408,10 +1418,6 @@
 	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/commad)
-"iB" = (
-/obj/effect/turf_decal/isf_small/left,
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "iP" = (
 /obj/structure/closet/secure_closet/medical3{
 	name = "medical technician's closet";
@@ -2395,6 +2401,15 @@
 	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ship/hallway/aft)
+"pz" = (
+/obj/machinery/light/directional/west,
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
+/obj/machinery/porta_turret/ship/cybersun/light{
+	id = "cirrus_grid";
+	dir = 1
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "pD" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Engineering Compartment";
@@ -2529,6 +2544,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/equip)
+"rh" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
+/obj/machinery/porta_turret/ship/cybersun/heavy{
+	id = "cirrus_grid"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "rq" = (
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
@@ -2784,6 +2806,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
+"tx" = (
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/effect/turf_decal/isf_small/right,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "tJ" = (
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
@@ -3237,13 +3265,6 @@
 /obj/item/clipboard,
 /obj/item/pen/edagger,
 /obj/item/pen/edagger,
-/obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag{
-	name = "PC-82 'Himejoshi'";
-	desc = "A limited production run of the 'Himehabu' catered towards Cybersun Executives. It has an engraving of two women kissing each other across the handle."
-	},
-/obj/item/ammo_box/magazine/m22lr_himehabu,
-/obj/item/ammo_box/magazine/m22lr_himehabu,
-/obj/item/ammo_box/magazine/m22lr_himehabu,
 /obj/machinery/button/door{
 	pixel_y = 21;
 	pixel_x = 8;
@@ -3253,6 +3274,19 @@
 /obj/item/reagent_containers/food/drinks/bottle/fernet,
 /obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl,
 /obj/effect/turf_decal/siding/wood/maple,
+/obj/item/gun/energy/cybersun/troubleshooter/bridge_safe,
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/stock_parts/cell/gun/cybersun/mini{
+	pixel_y = -8;
+	pixel_x = -5
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
 "yM" = (
@@ -3752,16 +3786,23 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
+"Du" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/effect/turf_decal/isf_small,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Dy" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm)
 "DB" = (
 /obj/machinery/light/directional/west,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer4{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/violet/hidden{
 	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
+/obj/machinery/atmospherics/pipe/simple/violet/hidden/layer4,
+/obj/machinery/porta_turret/ship/cybersun/light{
+	id = "cirrus_grid"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines/starboard)
@@ -4052,6 +4093,13 @@
 "Gy" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/storage/equip)
+"GB" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer4{
+	dir = 1
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "GR" = (
 /obj/effect/turf_decal/siding/wood/bamboo,
 /obj/machinery/firealarm/directional/west,
@@ -4103,10 +4151,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
-"Hj" = (
-/obj/effect/turf_decal/isf_small/right,
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "Hp" = (
 /obj/structure/chair/bench/blue/directional/west{
 	pixel_x = 4
@@ -4494,22 +4538,11 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
 	},
-/obj/item/storage/guncase/c20r{
-	pixel_y = 10
+/obj/item/storage/guncase/vector{
+	pixel_y = 6
 	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = 4
-	},
-/obj/item/storage/box/ammo/c45_ap{
-	pixel_x = -5
-	},
-/obj/item/storage/box/ammo/c45_rubber{
-	pixel_x = 4;
-	pixel_y = -5
-	},
-/obj/item/storage/box/ammo/c45_rubber{
-	pixel_x = -5;
-	pixel_y = -5
+/obj/item/storage/box/ammo/c320{
+	pixel_y = -4
 	},
 /obj/item/melee/energy/flyssa,
 /turf/open/floor/plasteel/mono/white,
@@ -5352,6 +5385,14 @@
 "QB" = (
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"QH" = (
+/obj/machinery/porta_turret/ship/cybersun/heavy{
+	dir = 1;
+	id = "cirrus_grid"
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "QM" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -6172,6 +6213,10 @@
 /obj/effect/turf_decal/siding/wood/maple{
 	dir = 1
 	},
+/obj/machinery/turretid/ship{
+	pixel_y = 3;
+	id = "cirrus_grid"
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
 "WG" = (
@@ -6629,8 +6674,8 @@ Yj
 Yj
 Yj
 cs
-gj
-iB
+hT
+QB
 jg
 fR
 fR
@@ -6647,7 +6692,7 @@ fR
 fR
 fR
 gj
-QB
+QH
 YL
 cs
 Yj
@@ -6656,7 +6701,7 @@ Yj
 Yj
 Yj
 cs
-gj
+Du
 df
 jg
 fR
@@ -6683,8 +6728,8 @@ Yj
 Yj
 Yj
 cs
-Un
-Hj
+tx
+QB
 qM
 fR
 fR
@@ -7182,7 +7227,7 @@ QB
 (26,1,1) = {"
 fR
 YL
-dP
+pz
 PT
 il
 IK
@@ -7203,7 +7248,7 @@ UK
 PN
 Mc
 DB
-gj
+GB
 fR
 "}
 (27,1,1) = {"
@@ -7590,7 +7635,7 @@ fR
 fR
 fR
 gj
-QB
+gU
 YL
 Pg
 mT
@@ -7604,7 +7649,7 @@ Kw
 qa
 YJ
 gj
-QB
+rh
 YL
 fR
 fR
