@@ -10,6 +10,7 @@
 	var/include_dense = FALSE //whether it includes dense tiles in possible teleport locations
 	var/sound1 = 'sound/weapons/zapbang.ogg'
 	var/sound2 = 'sound/weapons/zapbang.ogg'
+	var/tele_channel = TELEPORT_CHANNEL_MAGIC
 
 /obj/effect/proc_holder/spell/targeted/turf_teleport/cast(list/targets,mob/user = usr)
 	playsound(get_turf(user), sound1, 50,TRUE)
@@ -40,5 +41,20 @@
 		if(!picked || !isturf(picked))
 			return
 
-		if(do_teleport(user, picked, channel = TELEPORT_CHANNEL_MAGIC))
+		if(do_teleport(user, picked, channel = tele_channel))
 			playsound(get_turf(user), sound1, 50,TRUE)
+
+/obj/effect/proc_holder/spell/targeted/turf_teleport/jumper
+	name = "Jump"
+	desc = "Let yourself drift momentarily through the currents of bluespace."
+	clothes_req = FALSE
+	charge_max = 5
+	inner_tele_radius = 0
+	outer_tele_radius = 6
+	range = -1
+	include_user = TRUE
+	action_icon = 'icons/effects/anomalies.dmi'
+	action_icon_state = "bluespace"
+	tele_channel = TELEPORT_CHANNEL_BLUESPACE
+	sound1 = 'sound/magic/blink.ogg'
+	sound2 = 'sound/magic/blink.ogg'

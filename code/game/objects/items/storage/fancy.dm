@@ -374,6 +374,13 @@
 	base_icon_state = "shadyjim"
 	spawn_type = /obj/item/clothing/mask/cigarette/rollie/mindbreaker
 
+/obj/item/storage/fancy/cigarettes/cigpack_anomaly
+	name = "anomaly pack"
+	desc = "Straight Tecetian Space Blaster."
+	icon_state = "shadyjim"
+	base_icon_state = "shadyjim"
+	spawn_type = /obj/item/clothing/mask/cigarette/rollie/anomalous
+
 /obj/item/storage/fancy/rollingpapers
 	name = "rolling paper pack"
 	desc = "A pack of Makosso-Warra brand rolling papers."
