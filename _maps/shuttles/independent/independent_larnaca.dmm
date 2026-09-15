@@ -783,10 +783,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall/med/directional/south{
-	name = "Medical Cabinet";
-	icon_door = "med_wall_door"
-	},
 /obj/item/storage/firstaid/regular{
 	pixel_x = 6;
 	pixel_y = 6
@@ -807,6 +803,7 @@
 	pixel_x = -4;
 	pixel_y = -2
 	},
+/obj/structure/closet/wall/white/med/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "pK" = (
@@ -905,14 +902,15 @@
 	pixel_x = -4;
 	pixel_y = 3
 	},
-/obj/item/ammo_box/magazine/skm_46_30,
-/obj/item/ammo_box/magazine/skm_46_30,
 /obj/machinery/light_switch{
 	pixel_x = -10;
 	pixel_y = -20;
 	dir = 1
 	},
 /obj/machinery/light/small/directional/south,
+/obj/item/ammo_box/magazine/heater,
+/obj/item/ammo_box/magazine/heater,
+/obj/item/ammo_box/magazine/heater,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "rk" = (
@@ -2003,14 +2001,14 @@
 	pixel_x = 0;
 	pixel_y = 2
 	},
-/obj/item/gun/ballistic/automatic/smg/skm_carbine{
-	pixel_x = 2;
-	pixel_y = -5
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable/pink{
 	icon_state = "0-8"
+	},
+/obj/item/gun/ballistic/automatic/smg/heater/no_mag{
+	pixel_x = 2;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
