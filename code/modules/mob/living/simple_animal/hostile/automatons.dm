@@ -360,3 +360,105 @@
 	desc = "A specialized drone made by the Al'sa Guild for quick skirmishes at close range, nicknamed 'Hopper' for its way of running. Sought after by both Makosso-Warra and the Coalition during the ICW, many were sold off and produced locally in the frontier. This model is painted in the colors of the Syndicate Coalition"
 	faction = list(FACTION_HOSTILE)
 	icon_state = "hopper_coalition"
+
+// tripods
+
+/mob/living/simple_animal/hostile/automated/tripod
+	name = "Sav'cla 'Helper'"
+	desc = "Originally designed and manufactured by the Al'Sa Guild as a general 'Helper' drone, the Sav'Cla is unique thanks to its top of the line optical sensor suite. What made it a great helper around the home has made it a great war machine when rewired. Sye-Port Industrial has manufactured these conversions en masse for decades, making them a common sight on the Frontier."
+	icon_state = "tripod"
+	health = 100
+	maxHealth = 100
+	armor = list("melee" = 10, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+	ranged = FALSE
+	minimum_distance = 7
+	vision_range = 12
+	aggro_vision_range = 14
+	move_to_delay = 5
+	faction = list(FACTION_NEUTRAL)
+	armour_penetration = -10
+	melee_damage_lower = 10
+	melee_damage_upper = 10
+	attack_verb_continuous = "claws"
+	attack_verb_simple = "clawed"
+	attack_sound = 'sound/weapons/bladeslice.ogg'
+
+/mob/living/simple_animal/hostile/automated/tripod/MoveToTarget(list/possible_targets)//Step 5, handle movement between us and our target. Edited to give firing a delay
+	stop_automated_movement = 1
+	if(!target || !CanAttack(target))
+		LoseTarget()
+		return 0
+	var/atom/target_from = GET_TARGETS_FROM(src)
+	if(target in possible_targets)
+		var/turf/T = get_turf(src)
+		if(target.virtual_z() != T.virtual_z())
+			LoseTarget()
+			return 0
+		var/target_distance = get_dist(target_from,target)
+		if(ranged) //We ranged? Shoot at em
+			if(!target.Adjacent(target_from) && ranged_cooldown <= world.time) //But make sure they're not in range for a melee attack and our range attack is off cooldown
+				target.do_alert_animation() // We give the target MGS Alert! Warning, and add a 1.5 second delay to firing. Value should be adjusted through testing
+				addtimer(CALLBACK(src, PROC_REF(OpenFire), target), 15, TIMER_STOPPABLE)
+		if(!Process_Spacemove()) //Drifting
+			walk(src,0)
+			return 1
+		if(retreat_distance != null) //If we have a retreat distance, check if we need to run from our target
+			if(target_distance <= retreat_distance) //If target's closer than our retreat distance, run
+				walk_away(src,target,retreat_distance,move_to_delay)
+			else
+				Goto(target,move_to_delay,minimum_distance) //Otherwise, get to our minimum distance so we chase them
+		else
+			Goto(target,move_to_delay,minimum_distance)
+		if(target)
+			if(isturf(target_from.loc) && target.Adjacent(target_from)) //If they're next to us, attack
+				if(ranged && shoot_point_blank && ranged_cooldown <= world.time)
+					OpenFire(target)
+				else
+					MeleeAction()
+			else
+				if(rapid_melee > 1 && target_distance <= melee_queue_distance)
+					MeleeAction(FALSE)
+				in_melee = FALSE //If we're just preparing to strike do not enter sidestep mode
+			return 1
+		return 0
+	LoseTarget()
+	return 0
+
+/mob/living/simple_animal/hostile/automated/tripod/pgf
+	name = "Sav'sha'bore 'Beam Drone'"
+	desc = "A Sye-Port Industrial converted Sav'cla drone sporting 'demilitarized' weaponry. Clad in PGF-colored plating, it turns its heavy beam rifle in your direction."
+	icon_state = "tripod_pgf"
+	ranged = TRUE
+	armor = list("melee" = 25, "bullet" = 30, "laser" = 30, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+	casingtype = null
+	projectiletype = /obj/projectile/beam/hitscan/kalix/pgf/sniper
+	projectilesound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+	faction = list(FACTION_HOSTILE)
+
+/mob/living/simple_animal/hostile/automated/tripod/warra
+	name = "Sav'sha'kosso 'Plasma Drone'"
+	desc = "A Sye-Port Industrial converted Sav'cla drone sporting 'demilitarized' weaponry. Clad in VI-colored plating, it turns its heavy plasma rifle in your direction."
+	icon_state = "tripod_warra"
+	ranged = TRUE
+	armor = list("melee" = 25, "bullet" = 30, "laser" = 30, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+	casingtype = null
+	projectiletype = /obj/projectile/beam/laser/sharplite/sniper
+	projectilesound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+	faction = list(ROLE_DEATHSQUAD)
+
+/mob/living/simple_animal/hostile/automated/tripod/ramzi
+	name = "Sav'sha'syn 'Gun Drone'"
+	desc = "A Sye-Port Industrial converted Sav'cla drone. Its plating seems rusted and worn; its optical sensor suite flickers as it points its heavy rifle at you."
+	icon_state = "tripod_ramzi"
+	ranged = TRUE
+	armor = list("melee" = 25, "bullet" = 30, "laser" = 30, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+	casingtype = /obj/item/ammo_casing/a65clip
+	projectiletype = /obj/projectile/bullet/a65clip
+	projectilesound = 'sound/weapons/gun/sniper/cmf90.ogg'
+	faction = list(FACTION_RAMZI)
+
+/mob/living/simple_animal/hostile/automated/tripod/ramzi/taipan
+	desc = "A Sye-Port Industrial converted Sav'cla drone. Its plating seems rusted and worn; its motors loudly whine as it turns the very heavy rifle towards you."
+	casingtype = /obj/item/ammo_casing/p50
+	projectiletype = /obj/projectile/bullet/p50
+	projectilesound = 'sound/weapons/gun/sniper/shot.ogg'
