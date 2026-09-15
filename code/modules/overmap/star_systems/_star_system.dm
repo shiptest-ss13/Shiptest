@@ -393,6 +393,54 @@
 	*/
 
 /**
+ * Strips and replaces hazardous baseturfs out from under a ruin, if baseturf is defined. Otherwise does nothing.
+ */
+/proc/sanitize_ruin_baseturfs(list/bounds, turf/safe_baseturf)
+	var/static/list/forbidden_baseturfs = typecacheof(list(
+		/turf/open/lava,
+		/turf/open/chasm,
+		/turf/open/openspace,
+	))
+
+	if(!length(bounds) || isnull(safe_baseturf))
+		return
+	if(!ispath(safe_baseturf, /turf))
+		CRASH("sanitize_ruin_baseturfs called with a non-turf safe_baseturf: [safe_baseturf]")
+
+	var/turf/lower = locate(bounds[MAP_MINX], bounds[MAP_MINY], bounds[MAP_MINZ])
+	var/turf/upper = locate(bounds[MAP_MAXX], bounds[MAP_MAXY], bounds[MAP_MAXZ])
+	if(!lower || !upper)
+		return
+
+	for(var/turf/checking as anything in block(lower, upper))
+		CHECK_TICK
+
+		if(is_type_in_typecache(checking, forbidden_baseturfs))
+			continue
+
+		var/list/old_stack = islist(checking.baseturfs) ? checking.baseturfs : list(checking.baseturfs)
+
+		var/needs_cleaning = FALSE
+		for(var/turf/entry as anything in old_stack)
+			if(!is_type_in_typecache(entry, forbidden_baseturfs))
+				continue
+			needs_cleaning = TRUE
+			break
+		if(!needs_cleaning)
+			continue
+
+		// don't edit old stack directly you'll blow everything up
+		var/list/new_stack = list()
+		for(var/turf/entry as anything in old_stack)
+			if(!is_type_in_typecache(entry, forbidden_baseturfs))
+				new_stack += entry
+
+		if(length(new_stack))
+			checking.baseturfs = baseturfs_string_list(list(safe_baseturf) + new_stack, checking)
+		else
+			checking.assemble_baseturfs(safe_baseturf)
+
+/**
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
  * * on_planet - If the encounter should be on a generated planet. Required, as it will be otherwise inaccessible.
  * * ruin_type - The type of ruin to spawn, or null if none should be placed.
@@ -440,7 +488,9 @@
 			vlevel.high_y-used_ruin.height-6 - vlevel.reserved_margin,
 			vlevel.z_value
 		)
-		used_ruin.load(ruin_turf)
+		var/list/ruin_bounds = used_ruin.load(ruin_turf)
+		if(ruin_bounds)
+			sanitize_ruin_baseturfs(ruin_bounds, dynamic_datum.ruin_baseturf)
 		ruin_turfs[used_ruin.name] = ruin_turf
 		ruin_templates[used_ruin.name] = used_ruin
 
@@ -1036,4 +1086,3 @@
 			new_obj.interference_power = current_data["interference_power"]
 
 		new_obj.alter_token_appearance()
-

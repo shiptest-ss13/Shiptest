@@ -50,6 +50,8 @@
 	var/datum/map_generator/mapgen = /datum/map_generator/single_turf/space
 	/// The turf used as the backup baseturf for any reservations created by this datum. Should not be null.
 	var/turf/default_baseturf = /turf/open/space
+	/// Override turf beneath a ruin's floors, that replaces hazardous turfs if it spawns over any with sanitize_ruin_baseturfs.
+	var/turf/ruin_baseturf = null
 
 	///The default gravity the virtual z will have
 	var/gravity = 0
@@ -211,6 +213,7 @@
 
 	ruin_type = planet.ruin_type
 	default_baseturf = planet.default_baseturf
+	ruin_baseturf = planet.ruin_baseturf
 	gravity = planet.gravity
 	token_icon_state = planet.icon_state
 	mapgen = planet.mapgen
