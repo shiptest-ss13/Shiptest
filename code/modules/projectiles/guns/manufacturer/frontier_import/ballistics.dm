@@ -21,7 +21,7 @@
 	show_magazine_on_sprite = FALSE //hard coded
 
 	spread = 15
-	spread_unwielded = 30
+	spread_unwielded = 15
 	recoil = 1
 	recoil_unwielded = 3
 	safety_multiplier = 2 //this means its twice as safe right? //oh, god no.
@@ -95,21 +95,21 @@
 
 /obj/item/ammo_box/magazine/m9mm_mauler
 	name = "mauler pistol magazine (9mm)"
-	desc = "A 8-round magazine designed for the Mauler pistol."
+	desc = "A 10-round magazine designed for the Mauler pistol."
 	icon_state = "mauler_mag-1"
 	base_icon_state = "mauler_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
-	max_ammo = 8
+	max_ammo = 10
 
 /obj/item/ammo_box/magazine/m9mm_mauler/extended
 	name = "mauler machine pistol extended magazine (9mm)"
-	desc = "A 12-round magazine designed for the Mauler machine pistol."
+	desc = "A 18-round magazine designed for the Mauler machine pistol."
 	icon_state = "mauler_extended_mag-1"
 	base_icon_state = "mauler_extended_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
-	max_ammo = 12
+	max_ammo = 18
 
 /obj/item/ammo_box/magazine/m9mm_mauler/update_icon_state()
 	. = ..()
@@ -135,7 +135,7 @@
 	manufacturer = MANUFACTURER_IMPORT
 
 	spread = 20
-	spread_unwielded = 35
+	spread_unwielded = 20
 	dual_wield_spread = 35
 	wield_slowdown = SMG_SLOWDOWN
 	wield_delay = 0.2 SECONDS

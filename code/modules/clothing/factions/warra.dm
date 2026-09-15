@@ -59,8 +59,8 @@
 	item_state = "whitecloth"
 
 /obj/item/clothing/under/warra/science/robotics
-	name = "robotics jumpsuit"
-	desc = "A cheap black jumpsuit with blue arm flashes. Expendable armor against oil and sparks, issued en masse to Makosso-Warra robotics technicians."
+	name = "technician jumpsuit"
+	desc = "A cheap black jumpsuit with blue arm flashes. Expendable armor against oil and sparks, issued en masse to Makosso-Warra technicians."
 	icon_state = "robotics"
 	item_state = "blackcloth"
 

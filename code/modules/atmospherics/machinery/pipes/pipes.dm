@@ -92,10 +92,8 @@
 	var/turf/T = loc
 	for(var/obj/machinery/meter/meter in T)
 		if(meter.target == src)
-			var/obj/item/pipe_meter/PM = new (T)
-			meter.transfer_fingerprints_to(PM)
-			qdel(meter)
-	. = ..()
+			meter.deconstruct()
+	return ..()
 
 /obj/machinery/atmospherics/pipe/update_icon()
 	. = ..()
