@@ -164,7 +164,7 @@
 	icon_state = "volcanic_sand"
 	item_state = "volcanic_sand"
 	singular_name = "volcanic ash pile"
-	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/toxin/lava_microbe = 1, /datum/reagent/ash = 8.5)
+	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/ash = 10)
 
 /obj/item/stack/ore/glass/whitesands
 	name = "white sand pile"
