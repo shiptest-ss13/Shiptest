@@ -204,6 +204,8 @@ GLOBAL_LIST_INIT(immerse_ignored_movable, typecacheof(list(
 
 /// Generate a mask filter mutable to use as render_source for the alpha filter based on provided width, height and immersion state
 /datum/element/immerse/proc/generate_immerse_mask(width, height, is_below_water)
+	if (!width || !height)
+		return
 	var/clean_height = height
 	width = ceil(width / ICON_SIZE_X) * ICON_SIZE_X
 	height = ceil(height / ICON_SIZE_Y) * ICON_SIZE_Y
@@ -287,7 +289,7 @@ GLOBAL_LIST_INIT(immerse_ignored_movable, typecacheof(list(
 /datum/element/immerse/proc/on_spin_animation(atom/source, speed, loops, segments, segment)
 	SIGNAL_HANDLER
 	var/atom/movable/immerse_mask/immerse_mask = generated_visual_overlays[source]
-	immerse_mask.do_spin_animation(speed, loops, segments, -segment)
+	immerse_mask?.do_spin_animation(speed, loops, segments, -segment)
 
 /datum/element/immerse/proc/on_update_offsets(mob/living/source, new_x, new_y, new_w, new_z, animate)
 	SIGNAL_HANDLER

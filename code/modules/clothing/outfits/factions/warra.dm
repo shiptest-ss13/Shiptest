@@ -71,7 +71,6 @@
 	neck = null
 	l_hand = null
 	belt = null
-	backpack_contents = null
 
 /datum/outfit/job/warra/captain/ns/empty
 	name = "Makosso-Warra - Captain (N+S Logistics) (Naked)"
@@ -125,7 +124,6 @@
 	gloves = null
 	neck = null
 	belt = null
-	backpack_contents = null
 
 /datum/outfit/job/warra/captain/centcom
 	name = "Makosso-Warra - Captain (Central Command)"
@@ -207,6 +205,19 @@
 	implants = list(/obj/item/implant/mindshield)
 
 	chameleon_extras = list(/obj/item/gun/energy/sharplite/yari, /obj/item/stamp/hos)
+
+/datum/outfit/job/warra/hos/empty
+	name = "Makosso-Warra - Head of Security (Naked)"
+
+	belt = null
+	suit = null
+	alt_suit = null
+	gloves = null
+	head = null
+	glasses = null
+	r_pocket = null
+	l_pocket = null
+	backpack_contents = null
 
 /datum/outfit/job/warra/hos/vi
 	name = "Makosso-Warra - Vigilitas Sergeant"
