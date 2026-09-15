@@ -464,6 +464,18 @@
 	stock_max = 3
 	availability_prob = 50
 
+/datum/blackmarket_item/weapon/guncase/scorcher
+	name = "Scorcher PDW"
+	desc = "Ever wanna light a bitch up in both ways? Well we got you covered! My Guy bolted some flamethrower parts on a heater, now it spews fire AND lead."
+	item = /obj/item/gun/ballistic/automatic/smg/heater/scorcher
+
+
+	cost_min = 3250
+	cost_max = 4250
+	stock_min = 1
+	stock_max = 2
+	availability_prob = 20
+
 /datum/blackmarket_item/weapon/guncase/spitter
 	name = "Spitter Submachine Gun"
 	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the other hand? Let's just say the bereaved will be wanting a closed-casket funeral. Chambered in 9mm."
