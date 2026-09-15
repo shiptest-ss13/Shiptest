@@ -9,6 +9,7 @@
 	density = FALSE
 	opacity = FALSE
 	var/deconstructible = TRUE
+	var/deconstructible_loot = /obj/item/stack/sheet/metal
 
 /obj/structure/fluff/attackby(obj/item/I, mob/living/user, params)
 	if(I.tool_behaviour == TOOL_WRENCH && deconstructible)
@@ -17,7 +18,7 @@
 		if(I.use_tool(src, user, 50))
 			user.visible_message(span_notice("[user] disassembles [src]!"), span_notice("You break down [src] into scrap metal."))
 			playsound(user, 'sound/items/deconstruct.ogg', 50, TRUE)
-			new/obj/item/stack/sheet/metal(drop_location())
+			new deconstructible_loot(drop_location())
 			qdel(src)
 		return
 	..()
@@ -260,7 +261,8 @@
 	canSmoothWith = list(SMOOTH_GROUP_HEDGE_FLUFF)
 	density = TRUE
 	anchored = TRUE
-	deconstructible = FALSE
+	deconstructible = TRUE
+	deconstructible_loot = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/fluff/hedge/opaque //useful for mazes and such
 	opacity = TRUE
