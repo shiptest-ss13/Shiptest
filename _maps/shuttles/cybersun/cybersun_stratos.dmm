@@ -85,14 +85,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "bA" = (
-/turf/open/floor/suns/hatch/mahogany,
+/turf/open/floor/carpet/red,
 /area/ship/crew/crewthree)
 "bF" = (
-/obj/machinery/modular_computer/console/preset/civilian{
-	name = "high-specification gaming computer";
-	dir = 1
+/obj/effect/turf_decal/siding/wood/end/mahogany{
+	dir = 8
 	},
-/turf/open/floor/suns/hatch/mahogany,
+/turf/open/floor/suns/dark/plain,
 /area/ship/crew/crewtwo)
 "bI" = (
 /obj/effect/turf_decal/siding/wood/bamboo{
@@ -549,6 +548,7 @@
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
 "ik" = (
+/obj/machinery/holopad/secret,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew)
 "im" = (
@@ -825,6 +825,10 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"lC" = (
+/obj/machinery/holopad/secret,
+/turf/open/floor/suns/hatch/mahogany,
+/area/ship/crew/crewthree)
 "lD" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/suns/hatch/mahogany,
@@ -1129,6 +1133,9 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
+"pn" = (
+/turf/open/floor/carpet/red,
+/area/ship/crew/crewtwo)
 "pq" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1470,6 +1477,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
+"tJ" = (
+/obj/machinery/holopad/secret,
+/turf/open/floor/suns/hatch/mahogany,
+/area/ship/crew/crewtwo)
 "tK" = (
 /obj/effect/turf_decal/atmos/mix,
 /turf/open/floor/engine/hydrogen_fuel,
@@ -1795,7 +1806,10 @@
 	name = "Ms. Computer";
 	dir = 1
 	},
-/turf/open/floor/suns/hatch/mahogany,
+/obj/effect/turf_decal/siding/wood/mahogany{
+	dir = 9
+	},
+/turf/open/floor/suns/dark/plain,
 /area/ship/crew)
 "yN" = (
 /obj/structure/chair/comfy/shuttle{
@@ -2240,7 +2254,14 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Fv" = (
-/turf/open/floor/suns/hatch/mahogany,
+/obj/machinery/modular_computer/console/preset/civilian{
+	name = "high-specification gaming computer";
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/end/mahogany{
+	dir = 4
+	},
+/turf/open/floor/suns/dark/plain,
 /area/ship/crew/crewtwo)
 "Fx" = (
 /obj/structure/table/chem,
@@ -2630,6 +2651,15 @@
 "Ky" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet)
+"KA" = (
+/obj/machinery/modular_computer/console/preset/civilian{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/end/mahogany{
+	dir = 1
+	},
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/crewthree)
 "KD" = (
 /obj/effect/turf_decal/industrial/warning/cee,
 /obj/structure/cable/cyan,
@@ -3034,6 +3064,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
+"Qg" = (
+/turf/open/floor/carpet/red,
+/area/ship/crew)
 "Qk" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -3041,6 +3074,10 @@
 	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/ccommons)
+"Qv" = (
+/obj/effect/turf_decal/siding/wood/end/mahogany,
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/crewthree)
 "Qy" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -3878,7 +3915,7 @@ fh
 fh
 Zu
 oM
-Fv
+pn
 bF
 Zu
 yY
@@ -3907,8 +3944,8 @@ rq
 fh
 fh
 Zu
-Fv
-Fv
+pn
+pn
 Fv
 Zu
 og
@@ -3939,7 +3976,7 @@ uE
 Zu
 Fb
 Xr
-Fv
+tJ
 Zu
 tu
 tK
@@ -4177,8 +4214,8 @@ rq
 rq
 rq
 gD
-ik
-ik
+Qg
+Qg
 yD
 gD
 ea
@@ -4208,16 +4245,16 @@ rq
 rq
 gD
 XU
-ik
+Qg
 gD
 gD
 cE
 Sv
 uE
 xu
-bA
-bA
-bA
+lC
+KA
+Qv
 xu
 Wm
 NO
