@@ -373,7 +373,7 @@
 	desc = "A specialized drone made by the Al'sa Guild for quick skirmishes at close range, nicknamed 'Hopper' for its way of running. Sought after by both Makosso-Warra and the Coalition during the ICW, many were sold off and produced locally in the frontier."
 	health = 100
 	maxHealth = 100
-	armor = list("melee" = 35, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
 	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/drone
 	projectiletype = null
 	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
@@ -381,12 +381,11 @@
 	icon_state = "hopper"
 	move_to_delay = 3
 	armour_penetration = -10
-	melee_damage_lower = 10
-	melee_damage_upper = 10
+	melee_damage_lower = 12
+	melee_damage_upper = 12
 	attack_verb_continuous = "kicks"
 	attack_verb_simple = "kicked"
-	rapid = 2
-	rapid_fire_delay = 3
+	rapid = 1
 	attack_sound = 'sound/weapons/genhit1.ogg'
 
 /mob/living/simple_animal/hostile/automated/hopper/Initialize()
