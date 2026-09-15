@@ -98,6 +98,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	*/
 	var/list/premium 	= list()
 
+	///String of slogans separated by semicolons, optional
+	var/product_slogans = ""
 	///String of small ad messages in the vending screen - random chance
 	var/product_ads = ""
 
@@ -189,6 +191,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 	if(restock_hourly)
 		addtimer(CALLBACK(src, PROC_REF(refill_inventory_full)), 60 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+
+	slogan_list = splittext(product_slogans, ";")
 	// So not all machines speak at the exact same time.
 	// The first time this machine says something will be at slogantime + this random value,
 	// so if slogantime is 10 minutes, it will say it at somewhere between 10 and 20 minutes after the machine is crated.
@@ -844,6 +848,12 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 	if(seconds_electrified > MACHINE_NOT_ELECTRIFIED)
 		seconds_electrified--
+
+	//Pitch to the people!  Really sell it!
+	if(last_slogan + slogan_delay <= world.time && slogan_list.len > 0 && !shut_up && !all_items_free && SPT_PROB(2.5, seconds_per_tick))
+		var/slogan = pick(slogan_list)
+		speak(slogan)
+		last_slogan = world.time
 
 	if(shoot_inventory && SPT_PROB(shoot_inventory_chance, seconds_per_tick))
 		throw_item()

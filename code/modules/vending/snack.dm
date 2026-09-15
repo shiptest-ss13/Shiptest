@@ -1,7 +1,8 @@
 /obj/machinery/vending/snack
-	name = "\improper Getmore Chocolate Corp"
-	desc = "A snack machine courtesy of the RobustMore DrinkFoods LLC."
-	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Have a snack.;Snacks are good for you!;Have something better! Get RobustMore!;Best quality snacks!;We love chocolate!;Try our new jerky!"
+	name = "\improper Vending Machine"
+	desc = "A snack machine, you don't recognize the manufacturer."
+	product_slogans = "Authentic snacks from Riso-Teceti, CLIP and more!;Too busy to cook? We've got you covered."
+	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Have a snack.;Snacks are good for you!;Best quality snacks!;We love chocolate!;Try our new jerky!"
 	icon_state = "snack"
 	light_mask = "snack-light-mask"
 	products = list(
@@ -25,7 +26,7 @@
 	input_display_header = "Chef's Food Selection"
 
 /obj/item/vending_refill/snack
-	machine_name = "RobustMore DrinkFoods LLC"
+	machine_name = "Snack Machine Refill"
 
 /obj/machinery/vending/snack/blue
 	icon_state = "snackblue"
