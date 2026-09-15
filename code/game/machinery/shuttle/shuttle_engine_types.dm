@@ -224,6 +224,7 @@
 
 // This thruster is the same as a standard thruster, but it starts with T3 parts
 /obj/machinery/power/shuttle/engine/electric/premium
+	name = "high-spec ion thruster"
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/electric/premium
 
 /obj/machinery/power/smes/shuttle
