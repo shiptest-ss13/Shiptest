@@ -141,16 +141,6 @@
 	desc = "It's a small world after all."
 	add_mutations = list(DWARFISM)
 
-/obj/item/dnainjector/antitour
-	name = "\improper DNA injector (Anti-Tour.)"
-	desc = "Will cure Tourette's."
-	remove_mutations = list(TOURETTES)
-
-/obj/item/dnainjector/tourmut
-	name = "\improper DNA injector (Tour.)"
-	desc = "Gives you a nasty case of Tourette's."
-	add_mutations = list(TOURETTES)
-
 /obj/item/dnainjector/stuttmut
 	name = "\improper DNA injector (Stutt.)"
 	desc = "Makes you s-s-stuttterrr."
@@ -212,14 +202,6 @@
 /obj/item/dnainjector/chameleonmut
 	name = "\improper DNA injector (Chameleon)"
 	add_mutations = list(CHAMELEON)
-
-/obj/item/dnainjector/antiwacky
-	name = "\improper DNA injector (Anti-Wacky)"
-	remove_mutations = list(WACKY)
-
-/obj/item/dnainjector/wackymut
-	name = "\improper DNA injector (Wacky)"
-	add_mutations = list(WACKY)
 
 /obj/item/dnainjector/antimute
 	name = "\improper DNA injector (Anti-Mute)"

@@ -38,6 +38,30 @@
 	unit_name = "ion thruster board"
 	export_types = list(/obj/item/circuitboard/machine/shuttle/engine/electric)
 
+/datum/export/thruster_plasma
+	cost = 500
+	desc = "One set of circuits and controllers for a plasma thruster."
+	unit_name = "plasma thruster board"
+	export_types = list(/obj/item/circuitboard/machine/shuttle/engine/plasma)
+
+/datum/export/thruster_combustion
+	cost = 500
+	desc = "One set of circuits and controllers for a combustion thruster."
+	unit_name = "combustion thruster board"
+	export_types = list(/obj/item/circuitboard/machine/shuttle/engine/fire)
+
+/datum/export/pacman
+	cost = 500
+	desc = "A control board for a PACMAN portable generator."
+	unit_name = "PACMAN board"
+	export_types = list(/obj/item/circuitboard/machine/pacman)
+
+/datum/export/smes
+	cost = 500
+	desc = "A control board for a SMES power storage unit."
+	unit_name = "SMES board"
+	export_types = list(/obj/item/circuitboard/machine/smes)
+
 //Computer Tablets and Parts
 /datum/export/modular_part
 	cost = 15

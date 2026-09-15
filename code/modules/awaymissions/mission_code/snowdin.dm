@@ -66,49 +66,9 @@
 			if(L)
 				L.adjust_fire_stacks(20) //dipping into a stream of plasma would probably make you more flammable than usual
 				L.adjust_bodytemperature(-rand(10,20)) //its cold, man
-				if(ishuman(L))//are they a carbon?
-					var/list/plasma_parts = list()//a list of the organic parts to be turned into plasma limbs
-					var/list/robo_parts = list()//keep a reference of robotic parts so we know if we can turn them into a plasmaman
-					var/mob/living/carbon/human/PP = L
-					var/S = PP.dna.species
-					if(istype(S, /datum/species/plasmaman) || istype(S, /datum/species/android)) //ignore plasmamen/robotic species
-						continue
-
-					var/obj/item/bodypart/limb
-					for(var/zone in PP.bodyparts)
-						limb = PP.bodyparts[zone]
-						if(!limb)
-							continue
-						if(IS_ORGANIC_LIMB(limb) && limb.limb_id != "plasmaman") //getting every organic, non-plasmaman limb (augments/androids are immune to this)
-							plasma_parts += limb
-						if(!IS_ORGANIC_LIMB(limb))
-							robo_parts += limb
-
-					if(prob(35)) //checking if the delay is over & if the victim actually has any parts to nom
-						PP.adjustToxLoss(15)
-						PP.adjustFireLoss(25)
-						if(plasma_parts.len)
-							var/obj/item/bodypart/NB = pick(plasma_parts) //using the above-mentioned list to get a choice of limbs for dismember() to use
-							NB.limb_id = "plasmaman" //change the species_id of the limb to that of a plasmaman
-							NB.static_icon = 'icons/mob/species/plasmaman/bodyparts.dmi'
-							NB.no_update = TRUE
-							NB.change_bodypart_status()
-							PP.force_scream()
-							if(!HAS_TRAIT(PP, TRAIT_ANALGESIA))
-								PP.visible_message(
-									span_warning("[L] screams in pain as [L.p_their()] [NB] melts down to the bone!"),
-									span_userdanger("You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!"))
-							else
-								PP.visible_message(
-									span_warning("[L] lets out panicked gasps as [L.p_their()] [NB] melts down to the bone!"),
-									span_userdanger("You gasp in shock as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!"))
-						if(!plasma_parts.len && !robo_parts.len) //a person with no potential organic limbs left AND no robotic limbs, time to turn them into a plasmaman
-							PP.ignite_mob()
-							PP.set_species(/datum/species/plasmaman)
-							PP.visible_message(
-								span_warning("[L] bursts into a brilliant purple flame as [L.p_their()] entire body is that of a skeleton!"),
-								span_userdanger("Your senses numb as all of your remaining flesh is turned into a purple slurry, sloshing off your body and leaving only your bones to show in a vibrant purple!"))
-
+				if(prob(35)) //used to be used to slowly convert limbs, I'm not changing the mechnical function outside of removing limb/species conversion, so plasma just kinda random crits now lol.
+					L.adjustToxLoss(15)
+					L.adjustFireLoss(25)
 
 /obj/vehicle/ridden/lavaboat/plasma
 	name = "plasma boat"

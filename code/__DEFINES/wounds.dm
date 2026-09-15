@@ -78,12 +78,12 @@
 
 
 // ~random wound balance defines
-/// how quickly sanitization removes infestation and decays per tick
-#define WOUND_BURN_SANITIZATION_RATE 0.30
-/// how much blood you can lose per tick per slash max.
-#define WOUND_SLASH_MAX_BLOODFLOW 6
-/// dead people don't bleed, but they can clot! this is the minimum amount of clotting per tick on dead people, so even critical cuts will slowly clot in dead people
-#define WOUND_SLASH_DEAD_CLOT_MIN 0.05
+/// how quickly sanitization removes infestation and decays per second
+#define WOUND_BURN_SANITIZATION_RATE 0.15
+/// how much blood you can lose per second per slash max.
+#define WOUND_SLASH_MAX_BLOODFLOW 3
+/// dead people don't bleed, but they can clot! this is the minimum amount of clotting per second on dead people, so even critical cuts will slowly clot in dead people
+#define WOUND_SLASH_DEAD_CLOT_MIN 0.025
 /// if we suffer a bone wound to the head that creates brain traumas, the timer for the trauma cycle is +/- by this percent (0-100)
 #define WOUND_BONE_HEAD_TIME_VARIANCE 20
 /// charge drain per severity level

@@ -273,6 +273,7 @@
 	volume = 10
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list()
+	custom_materials = list(/datum/material/plastic = 50)
 	possible_states = list(
 		/datum/reagent/consumable/ketchup = list("condi_ketchup", "Ketchup", "A packet of ketchup. The old standby, given by the fistful."),
 		/datum/reagent/consumable/capsaicin = list("condi_hotsauce", "Hotsauce", "A packet of hotsauce. Good for spicing up food."),

@@ -79,8 +79,12 @@
 /obj/machinery/camera/motion/thunderdome
 	name = "entertainment camera"
 	network = list("thunder")
-	c_tag = "Arena"
+	c_tag = "Arena 1"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF | FREEZE_PROOF
+
+/obj/machinery/camera/motion/thunderdome/secondary
+	c_tag = "Arena 2"
+
 
 /obj/machinery/camera/motion/thunderdome/Initialize()
 	. = ..()

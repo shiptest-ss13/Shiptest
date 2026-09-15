@@ -98,3 +98,5 @@
 	)
 	can_be_sawn_off = FALSE
 	manufacturer = MANUFACTURER_NONE
+
+EMPTY_GUN_HELPER(rifle/polymer)

@@ -11,7 +11,7 @@
 	potency = 30
 	icon_dead = "wheat-dead"
 	mutatelist = list(/obj/item/seeds/wheat/oat, /obj/item/seeds/wheat/meat)
-	reagents_add = list(/datum/reagent/consumable/nutriment = 0.04)
+	reagents_add = list(/datum/reagent/consumable/nutriment = 0.27)
 
 /obj/item/food/grown/wheat
 	seed = /obj/item/seeds/wheat

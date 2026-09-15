@@ -210,6 +210,11 @@
 /obj/machinery/button/door/indestructible
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
+/obj/machinery/button/door/hazard
+	name = "door button"
+	icon_state = "launcher"
+	skin = "launcher"
+
 /obj/machinery/button/door/setup_device()
 	if(!device)
 		if(normaldoorcontrol)

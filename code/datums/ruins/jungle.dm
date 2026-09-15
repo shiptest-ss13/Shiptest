@@ -11,12 +11,12 @@
 	suffix = "jungle_syndicate.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 
-/datum/map_template/ruin/jungle/interceptor
-	name = "Old Crashed Interceptor"
-	id = "crashedcondor"
-	description = "An overgrown crashed Condor Class, a forgotten remnant of the Corporate Wars."
-	suffix = "jungle_interceptor.dmm"
-	ruin_tags = list(RUIN_TAG_NO_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
+/datum/map_template/ruin/jungle/swampfever
+	name = "Raided SRM Bog"
+	id = "swampfever"
+	description = "A raided SRM compound overtaken by a large number of hermits. They Ate Them."
+	suffix = "jungle_swampfever.dmm"
+	ruin_tags = list(RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 
 /datum/map_template/ruin/jungle/airbase
 	name = "Abandoned Airbase"

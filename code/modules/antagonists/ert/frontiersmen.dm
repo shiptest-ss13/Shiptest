@@ -68,3 +68,8 @@
 	name = "Frontiersmen Sentry"
 	outfit = /datum/outfit/job/frontiersmen/ert/sentry
 	role = "Sentinel"
+
+/datum/antagonist/ert/frontier/hullpiercer
+	name = "Frontiersmen Hullpiercer"
+	outfit = /datum/outfit/job/frontiersmen/ert/hullpiercer
+	role = "Hullpiercer"

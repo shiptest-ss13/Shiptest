@@ -158,8 +158,8 @@
 		generator_type = CONFIG_GET(string/overmap_generator_type)
 	if(!size)
 		size = CONFIG_GET(number/overmap_size)
-	if(!max_overmap_dynamic_events)
-		max_overmap_dynamic_events = isnull(max_overmap_dynamic_events)
+	if(isnull(max_overmap_dynamic_events))
+		max_overmap_dynamic_events = CONFIG_GET(number/max_overmap_dynamic_events)
 
 
 	overmap_container = new/list(size, size, 0)
@@ -1036,7 +1036,4 @@
 			new_obj.interference_power = current_data["interference_power"]
 
 		new_obj.alter_token_appearance()
-
-	//https://github.com/BeeStation/NSV13/blob/5f66318e4560efa01ac839b48e9e9929f52d7275/nsv13/code/controllers/subsystem/starsystem.dm#L140
-	//https://github.com/tgstation/tgstation/blob/d7eada0ebcf4ad37dca2283b201823e47a154fb5/code/modules/mob/living/basic/pets/parrot/poly.dm#L130
 

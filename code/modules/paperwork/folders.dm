@@ -15,6 +15,8 @@
 		/obj/item/documents,
 		/obj/item/disk,
 		/obj/item/tape,
+		/obj/item/spacecash/bundle,
+		/obj/item/holochip,
 	))
 
 /obj/item/folder/Initialize()

@@ -163,6 +163,21 @@
 		return
 	..()
 
+/obj/item/food/scotchegg
+	name = "scotch egg"
+	desc = "A boiled egg wrapped in a delicious, seasoned meatball."
+	icon = 'icons/obj/food/egg.dmi'
+	icon_state = "scotchegg"
+	//filling_color = "#FFFFF0"
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment/protein = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 2,
+		/datum/reagent/consumable/nutriment = 2
+	)
+	w_class = WEIGHT_CLASS_SMALL
+	tastes = list("egg" = 1, "meat" = 1)
+	foodtypes = MEAT | BREAKFAST
+
 /obj/item/food/benedict
 	name = "eggs benedict"
 	desc = "A popular breakfast meal consisting of a solarian muffin with ham, a poached egg, and hollaindaise. Technically, this is a meal with two eggs involved."

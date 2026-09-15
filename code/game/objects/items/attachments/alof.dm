@@ -1,3 +1,4 @@
+// TODO is this thing even obtainable
 /obj/item/attachment/alof
 	name = "alof tube"
 	desc = "An antiquated spring operated magazine attachment for the HP Beacon. Has a capacity of three rounds."
@@ -33,11 +34,13 @@
 
 /obj/item/attachment/alof/on_unique_action(obj/item/gun/gun, mob/user, obj/item)
 	. = ..()
-	if(gun.bolt_locked)
-		var/obj/item/ammo_casing/casing_to_insert = mag.get_round(TRUE)
-		if(gun.magazine.give_round(casing_to_insert,TRUE))
-			mag.stored_ammo -= casing_to_insert
-			to_chat(user,span_notice("\The [src] automatically loads another round into \the [gun]!"))
+	if(istype(gun, /obj/item/gun/ballistic))
+		var/obj/item/gun/ballistic/ballistic_gun = gun
+		if(ballistic_gun.bolt_locked)
+			var/obj/item/ammo_casing/casing_to_insert = mag.get_round(TRUE)
+			if(ballistic_gun.magazine.give_round(casing_to_insert,TRUE))
+				mag.stored_ammo -= casing_to_insert
+				to_chat(user,span_notice("\The [src] automatically loads another round into \the [gun]!"))
 
 /obj/item/ammo_box/magazine/internal/shot/alof
 	name = "alof tube internal magazine"

@@ -1,5 +1,43 @@
+/datum/outfit/job/inteq/ert/honorable_vanguard
+	name = "ERT - IRMG Honorable Vanguard"
+	id_assignment = "Honorable Vanguard"
+	jobtype = /datum/job/ert/commander
+
+	head = /obj/item/clothing/head/beret/sec/hos/inteq/honorable
+	uniform = /obj/item/clothing/under/syndicate/inteq/honorable
+	suit = /obj/item/clothing/suit/armor/hos/inteq/honorable
+	gloves = /obj/item/clothing/gloves/combat
+	shoes = /obj/item/clothing/shoes/combat
+	ears = /obj/item/radio/headset/inteq/alt/captain
+	belt = /obj/item/storage/belt/military/assault
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/m20_auto_elite/inteq
+	l_pocket = /obj/item/ammo_box/magazine/m20_auto_elite
+	r_pocket = /obj/item/ammo_box/magazine/m20_auto_elite
+
+/datum/outfit/job/inteq/ert/honor_guard
+	name = "ERT - IRMG Honor Guard"
+	id_assignment = "Guardsman"
+	jobtype = /datum/job/ert/commander
+	job_icon = "inteq"
+
+	uniform = /obj/item/clothing/under/syndicate/inteq
+	suit = /obj/item/clothing/suit/armor/vest/marine
+	belt = /obj/item/storage/belt/military/assault/commander
+	gloves = /obj/item/clothing/gloves/color/white
+	shoes = /obj/item/clothing/shoes/combat
+	head = /obj/item/clothing/head/beret/sec/hos/inteq/honorable
+	mask = /obj/item/clothing/mask/balaclava/inteq
+	ears = /obj/item/radio/headset/inteq/captain
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	r_pocket = /obj/item/restraints/handcuffs
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/challenger/inteq
+
+	backpack_contents = list(/obj/item/gun/energy/taser)
+
 /datum/outfit/job/inteq/ert
-	name = "ERT - Inteq Rifleman"
+	name = "ERT - IRMG Rifleman"
 	id_assignment = "Enforcer"
 	jobtype = /datum/job/ert/sec
 	job_icon = "securityofficer"
@@ -22,7 +60,7 @@
 	r_pocket = /obj/item/flashlight/seclite
 
 /datum/outfit/job/inteq/ert/eva
-	name = "ERT - Inteq Rifleman (EVA)"
+	name = "ERT - IRMG Rifleman (EVA)"
 
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
@@ -30,20 +68,20 @@
 
 
 /datum/outfit/job/inteq/ert/shotgun
-	name = "ERT - Inteq Shotgunner"
+	name = "ERT - IRMG Shotgunner"
 
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq
 	belt = /obj/item/storage/belt/security/webbing/inteq/alt/bulldog
 
 /datum/outfit/job/inteq/ert/shotgun/eva
-	name = "ERT - Inteq Shotgunner (EVA)"
+	name = "ERT - IRMG Shotgunner (EVA)"
 
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 /datum/outfit/job/inteq/ert/engineer
-	name = "ERT - Inteq Artificer"
+	name = "ERT - IRMG Artificer"
 	id_assignment = "Artificer"
 	jobtype = /datum/job/ert/engi
 	job_icon = "stationengineer"
@@ -57,13 +95,13 @@
 	backpack_contents = list(/obj/item/ammo_box/magazine/co9mm=2)
 
 /datum/outfit/job/inteq/ert/engineer/eva
-	name = "ERT - Inteq Artificer (EVA)"
+	name = "ERT - IRMG Artificer (EVA)"
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 /datum/outfit/job/inteq/ert/medic
-	name = "ERT - Inteq Corpsman"
+	name = "ERT - IRMG Corpsman"
 	id_assignment = "Corpsman"
 	jobtype = /datum/job/ert/med
 	job_icon = "paramedic"
@@ -77,7 +115,7 @@
 	backpack_contents = list(/obj/item/storage/firstaid/medical=1)
 
 /datum/outfit/job/inteq/ert/medic/eva
-	name = "ERT - Inteq Corpsman (EVA)"
+	name = "ERT - IRMG Corpsman (EVA)"
 
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
@@ -85,7 +123,7 @@
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 /datum/outfit/job/inteq/ert/leader
-	name = "ERT - Inteq Vanguard"
+	name = "ERT - IRMG Vanguard"
 	id_assignment = "Vanguard"
 	jobtype = /datum/job/ert/commander
 	job_icon = "headofsecurity"
@@ -101,35 +139,14 @@
 	backpack_contents = list(/obj/item/megaphone/sec)
 
 /datum/outfit/job/inteq/ert/leader/eva
-	name = "ERT - Inteq Vanguard (EVA)"
+	name = "ERT - IRMG Vanguard (EVA)"
 
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
-/datum/outfit/job/inteq/ert/honor_guard
-	name = "ERT - Inteq Honor Guard"
-	id_assignment = "Guardsman"
-	jobtype = /datum/job/ert/commander
-	job_icon = "inteq"
-
-	uniform = /obj/item/clothing/under/syndicate/inteq
-	suit = /obj/item/clothing/suit/armor/vest/marine
-	belt = /obj/item/storage/belt/military/assault/commander
-	gloves = /obj/item/clothing/gloves/color/white
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/beret/sec/hos/inteq/honorable
-	mask = /obj/item/clothing/mask/balaclava/inteq
-	ears = /obj/item/radio/headset/inteq/captain
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
-	r_pocket = /obj/item/restraints/handcuffs
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/challenger/inteq
-
-	backpack_contents = list(/obj/item/gun/energy/taser)
-
-
 /datum/outfit/job/inteq/ert/inspector
-	name = "ERT - Inteq Mothership Investigator"
+	name = "ERT - IRMG Mothership Investigator"
 	id_assignment = "Investigator"
 	jobtype = /datum/job/ert/commander
 	job_icon = "inteq"

@@ -614,3 +614,46 @@
 /obj/structure/curtain/cloth/fancy
 	icon_type = "cur_fancy"
 	icon_state = "cur_fancy-open"
+
+/obj/structure/curtain/thin
+	name = "thin curtains"
+	layer = WALL_OBJ_LAYER
+	desc = "Thin curtains used to separate debris and obfuscate vision while allowing easy passage."
+	icon_type = "curtain_thin"
+	icon_state = "curtain_thin-open"
+
+/obj/structure/curtain/thin/Initialize()
+	. = ..()
+	if(dir == 1)
+		layer = SIGN_LAYER
+
+/obj/structure/curtain/thin/toggle()
+	open = !open
+	if(open)
+		density = FALSE
+		set_opacity(FALSE)
+	else
+		if(opaque_closed)
+			set_opacity(TRUE)
+
+	if(dir == 1)
+		layer = SIGN_LAYER
+
+	update_appearance()
+
+/obj/structure/curtain/thin/cloth
+	color = null
+	alpha = 255
+	opaque_closed = TRUE
+
+/obj/structure/curtain/thin/cloth/grey
+	color = "#696969"
+
+/obj/structure/curtain/thin/plastic
+	name = "plastic strip curtains"
+	desc = "Plastic strip curtains used to separate debris, muffle noise, and control temperature while allowing easy passage."
+	color = null
+	alpha = 255
+	icon = 'icons/obj/structures/plasticflaps.dmi'
+	icon_type = "plastic_thin"
+	icon_state = "plastic_thin-open"

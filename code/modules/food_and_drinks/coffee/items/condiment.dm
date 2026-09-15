@@ -39,6 +39,7 @@
 	spillable = FALSE
 	///variable to tell if the bottle can be refilled
 	cap_on = TRUE
+	custom_materials = list(/datum/material/glass = 400)
 
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/examine(mob/user)
 	. = ..()

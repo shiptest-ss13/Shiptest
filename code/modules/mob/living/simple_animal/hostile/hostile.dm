@@ -87,7 +87,7 @@
 	walk(src, 0)
 	return ..()
 
-/mob/living/simple_animal/hostile/Life()
+/mob/living/simple_animal/hostile/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	if(!.) //dead
 		walk(src, 0) //stops walking

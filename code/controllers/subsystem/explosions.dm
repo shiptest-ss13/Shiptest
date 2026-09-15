@@ -204,7 +204,7 @@ SUBSYSTEM_DEF(explosions)
 		cap_multiplier = 1
 
 	if(!ignorecap)
-		devastation_range = min(GLOB.MAX_EX_DEVESTATION_RANGE * cap_multiplier, devastation_range)
+		devastation_range = min(GLOB.MAX_EX_DEVASTATION_RANGE * cap_multiplier, devastation_range)
 		heavy_impact_range = min(GLOB.MAX_EX_HEAVY_RANGE * cap_multiplier, heavy_impact_range)
 		light_impact_range = min(GLOB.MAX_EX_LIGHT_RANGE * cap_multiplier, light_impact_range)
 		flash_range = min(GLOB.MAX_EX_FLASH_RANGE * cap_multiplier, flash_range)

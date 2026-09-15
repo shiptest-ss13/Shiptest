@@ -315,3 +315,36 @@
 	name = "black long gloves"
 	icon_state = "longglovesblack"
 	current_skin = "black long gloves"
+
+//armwarmers
+
+/obj/item/clothing/gloves/armwarmers
+	name = "arm warmers"
+	desc = "Fingerless arm warmers that reach past your elbows."
+	cold_protection = HANDS|ARMS
+	transfer_prints = TRUE
+	strip_delay = 40
+	equip_delay_other = 20
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	custom_price = 75
+	undyeable = TRUE
+	icon = 'icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/hands.dmi'
+	icon_state = "armwarmers"
+	item_state = "armwarmers"
+	unique_reskin = list(
+		"black arm warmers" = "armwarmers",
+		"white arm warmers" = "armwarmerswhite",
+		"striped arm warmers" = "armwarmersstriped",
+	)
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/gloves/armwarmers/white
+	name = "white arm warmers"
+	icon_state = "armwarmerswhite"
+	current_skin = "white arm warmers"
+
+/obj/item/clothing/gloves/armwarmers/striped
+	name = "striped arm warmers"
+	icon_state = "armwarmersstriped"
+	current_skin = "striped arm warmers"

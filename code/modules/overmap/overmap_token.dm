@@ -103,7 +103,7 @@
 /obj/overmap/proc/update_screen()
 	if(render_map)
 		var/list/visible_turfs = list()
-		for(var/turf/T in view(4, get_turf(src)))
+		for(var/turf/T in view(parent.sensor_range, get_turf(src)))
 			visible_turfs += T
 
 		var/list/bbox = get_bbox_of_atoms(visible_turfs)

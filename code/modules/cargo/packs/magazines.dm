@@ -8,8 +8,8 @@
 /* VI */
 
 /datum/supply_pack/magazine/co9mm_mag
-	name = "9mm Commander Magazine Crate"
-	desc = "Contains a 9mm magazine for the standard-issue Commander pistol, with a capacity of twelve rounds."
+	name = "9mm Pistol Magazine Crate"
+	desc = "Contains a 9mm magazine for the Challenger and Champion pistols, with a capacity of twelve rounds."
 	contains = list(/obj/item/ammo_box/magazine/co9mm/empty)
 	cost = 150
 	faction = /datum/faction/warra
@@ -390,11 +390,26 @@
 
 /* energy weapons */
 
+/datum/supply_pack/magazine/miniguncell
+	name = "Eoehoma-style Mini Power Cell"
+	desc = "Contains a Clover Photonics copy of an Eoehoma Mini Cell, compatable with systems that use Eoehoma Mini-style cells."
+	contains = list(/obj/item/stock_parts/cell/gun/mini)
+	cost = 200
+
 /datum/supply_pack/magazine/guncell
 	name = "Eoehoma-style Power Cell"
-	desc = "Contains a weapon power cell built to be compatible with Eoehoma weapons, and systems that still use Eoehoma's style of cell."
+	desc = "Contains a Clover Photonics copy of an Eoehoma cell, compatible with Eoehoma weapons, and systems that still use Eoehoma-style cells."
 	contains = list(/obj/item/stock_parts/cell/gun)
 	cost = 500
+
+/datum/supply_pack/magazine/upgradedguncellclip
+	name = "High-Capacity Eoehoma-style Power Cell"
+	desc = "Contains a Clover Photonics copy of a High-Cap Eoehoma cell, compatible with Eoehoma weapons, and systems that still use Eoehoma-style cells."
+	contains = list(/obj/item/stock_parts/cell/gun/upgraded)
+	cost = 800
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/magazine/solgovcell
 	name = "SolCon Weapon Cell Crate"

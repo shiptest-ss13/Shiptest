@@ -418,6 +418,10 @@
 	name = "Ponytail (Rat)"
 	icon_state = "hair_ponytailrat"
 
+/datum/sprite_accessory/hair/wavytail
+	name = "Ponytail (Wavy)"
+	icon_state = "hair_wavytail"
+
 /datum/sprite_accessory/hair/ponytailwisp
 	name = "Ponytail (Wisp)"
 	icon_state = "hair_ponytailwisp"

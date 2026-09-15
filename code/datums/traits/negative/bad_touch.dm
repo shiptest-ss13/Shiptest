@@ -9,11 +9,11 @@
 	medical_record_text = "Patient has disdain for being touched. Potentially has undiagnosed haphephobia."
 
 /datum/quirk/bad_touch/add()
-	RegisterSignals(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HUGGED, COMSIG_CARBON_HEADPAT), PROC_REF(uncomfortable_touch))
+	RegisterSignals(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HUGGED, COMSIG_CARBON_HEADPAT, COMSIG_CARBON_BOOP), PROC_REF(uncomfortable_touch))
 
 /datum/quirk/bad_touch/remove()
 	if(quirk_holder)
-		UnregisterSignal(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HUGGED, COMSIG_CARBON_HEADPAT))
+		UnregisterSignal(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HUGGED, COMSIG_CARBON_HEADPAT, COMSIG_CARBON_BOOP))
 
 /datum/quirk/bad_touch/proc/uncomfortable_touch()
 	SIGNAL_HANDLER

@@ -579,7 +579,7 @@
 
 #undef LUNG_CAPACITY_ALERT_BUFFER
 
-/obj/item/organ/lungs/on_life()
+/obj/item/organ/lungs/on_life(seconds_per_tick, times_fired)
 	. = ..()
 	if(failed && !(organ_flags & ORGAN_FAILING))
 		failed = FALSE

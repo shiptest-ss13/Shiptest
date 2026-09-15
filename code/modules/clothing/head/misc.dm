@@ -19,7 +19,7 @@
 
 /obj/item/clothing/head/that
 	name = "top-hat"
-	desc = "It's an amish looking hat."
+	desc = "A formal, old-fashioned piece of Solarian headwear."
 	icon_state = "tophat"
 	item_state = "that"
 	dog_fashion = /datum/dog_fashion/head
@@ -305,3 +305,36 @@
 	name = "brown cat motorcycle helmet"
 	icon_state = "motocatbrown"
 	current_skin = "brown cat motorcycle helmet"
+
+/obj/item/clothing/head/boonie
+	name = "Boonie hat"
+	desc = "A popular hat in hot tropical climates, offering good protection from sun and rain."
+	icon_state = "boonie"
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	cuttable = TRUE
+	clothamnt = 2
+	unique_reskin = list(
+		"black boonie" = "boonie",
+		"brown boonie" = "booniebrown",
+		"beige boonie" = "booniebeige",
+		"olive boonie" = "boonieolive",
+		"navy boonie" = "boonienavy"
+	)
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/head/boonie/brown
+	name = "brown boonie"
+	current_skin = "brown boonie"
+
+/obj/item/clothing/head/boonie/beige
+	name = "beige boonie"
+	current_skin = "beige boonie"
+
+/obj/item/clothing/head/boonie/olive
+	name = "olive boonie"
+	current_skin = "olive boonie"
+
+/obj/item/clothing/head/boonie/navy
+	name = "navy boonie"
+	current_skin = "navy boonie"

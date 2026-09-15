@@ -22,7 +22,7 @@
 	attack_verb_simple = "slash"
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	atmos_requirements = IMMUNE_ATMOS_REQS
-	unsuitable_atmos_damage = 10
+	unsuitable_atmos_damage = 5
 	stat_attack = HARD_CRIT
 	faction = list("skeleton")
 	see_in_dark = 8
