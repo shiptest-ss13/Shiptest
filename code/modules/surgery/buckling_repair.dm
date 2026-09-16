@@ -1,4 +1,3 @@
-#warn add ipc specific painshit
 /datum/surgery/repair_buckled_frame
 	name = "Repair Buckled Plating"
 	desc = "Replaces a buckled external plating on a robotic limb."

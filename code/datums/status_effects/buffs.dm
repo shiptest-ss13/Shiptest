@@ -318,6 +318,10 @@
 	if(istype(owner, /mob/living/carbon/human))
 		var/mob/living/carbon/human/target_human = owner
 		target_human.coretemperature = target_human.get_body_temp_normal()
+		if(target_human.pain_controller)
+			target_human.cause_pain(BODY_ZONES_LIMBS, -15)
+			target_human.cause_pain(BODY_ZONE_CHEST, -20)
+			target_human.cause_pain(BODY_ZONE_HEAD, -10) // heals 90 pain total
 	return TRUE
 
 /datum/status_effect/regenerative_core/on_remove()

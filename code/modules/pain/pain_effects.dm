@@ -1,15 +1,6 @@
 #warn demodularize before merge
 // -- Pain effects - mood, modifiers, statuses. --
 
-/atom/movable/screen/fullscreen/pain
-	icon = 'icons/hud/screen_full.dmi'
-	icon_state = "painoverlay"
-	layer = UI_DAMAGE_LAYER
-
-/mob/living/carbon/proc/flash_pain_overlay(severity = 1, time = 10)
-	overlay_fullscreen("pain", /atom/movable/screen/fullscreen/pain, severity)
-	clear_fullscreen("pain", time)
-
 /datum/movespeed_modifier/pain
 	id = MOVESPEED_ID_PAIN
 	movetypes = GROUND

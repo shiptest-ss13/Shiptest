@@ -26,6 +26,7 @@
 	bite_consumption_mod = 3
 	foodtypes = VEGETABLES | GROSS
 	distill_reagent = /datum/reagent/consumable/ethanol/vermouth
+	juice_results = list(/datum/reagent/medicine/painkiller/morphine = 0)
 
 // Lily
 /obj/item/seeds/poppy/lily
@@ -43,6 +44,7 @@
 	name = "lily"
 	desc = "A beautiful orange flower."
 	icon_state = "lily"
+	juice_results = null
 
 	//Spacemans's Trumpet
 /obj/item/seeds/poppy/lily/trumpet
@@ -102,6 +104,7 @@
 	desc = "A beautiful blue flower."
 	icon_state = "geranium"
 	filling_color = "#008B8B"
+	juice_results = null
 
 // Harebell
 /obj/item/seeds/harebell

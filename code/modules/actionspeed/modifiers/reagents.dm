@@ -9,6 +9,9 @@
 /datum/actionspeed_modifier/drugs/shoalmix
 	multiplicative_slowdown = -0.4
 
+/datum/actionspeed_modifier/drugs/golem
+	multiplicative_slowdown = 0.2
+
 /datum/actionspeed_modifier/drugs/cytodron
 	multiplicative_slowdown = -0.1
 

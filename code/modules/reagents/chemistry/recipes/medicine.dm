@@ -245,6 +245,10 @@
 	required_reagents = list(/datum/reagent/fuel/oil = 1, /datum/reagent/carbon = 1, /datum/reagent/bromine = 1, /datum/reagent/diethylamine = 1, /datum/reagent/consumable/ethanol = 1)
 	mix_message = "The mixture dries into a pale blue powder."
 
+/datum/chemical_reaction/medicine/dimenhydrinate
+	results = list(/datum/reagent/medicine/dimenhydrinate = 3)
+	required_reagents = list(/datum/reagent/medicine/diphenhydramine = 1, /datum/reagent/nitrogen = 1, /datum/reagent/chlorine = 1)
+
 /datum/chemical_reaction/lithium_carbonate
 	results = list(/datum/reagent/medicine/lithium_carbonate = 3)
 	required_reagents = list(/datum/reagent/lithium = 1, /datum/reagent/carbon = 1, /datum/reagent/water = 1)
@@ -306,3 +310,49 @@
 /datum/chemical_reaction/chartreuse
 	results = list(/datum/reagent/medicine/chartreuse = 10)
 	required_reagents = list(/datum/reagent/medicine/puce_essence = 5, /datum/reagent/consumable/tinlux = 5, /datum/reagent/consumable/entpoly = 1)
+
+/* painstuff */
+
+/datum/chemical_reaction/medicine/ondansetron
+	results = list(/datum/reagent/medicine/ondansetron = 3)
+	required_reagents = list(/datum/reagent/fuel/oil = 1, /datum/reagent/nitrogen = 1, /datum/reagent/oxygen = 1)
+	required_catalysts = list(/datum/reagent/consumable/ethanol = 3)
+
+/datum/chemical_reaction/medicine/aspirin
+	results = list(/datum/reagent/medicine/painkiller/aspirin = 3)
+	required_reagents = list(/datum/reagent/medicine/syndric_sap = 1, /datum/reagent/acetone = 1, /datum/reagent/oxygen = 1)
+	required_catalysts = list(/datum/reagent/toxin/acid = 1)
+
+/datum/chemical_reaction/medicine/paracetamol
+	results = list(/datum/reagent/medicine/painkiller/paracetamol = 5)
+	required_reagents = list(/datum/reagent/phenol = 1, /datum/reagent/acetone = 1, /datum/reagent/hydrogen = 1, /datum/reagent/oxygen = 1, /datum/reagent/toxin/acid/nitracid = 1)
+	//look up manufacturing process here
+	required_temp = 480
+
+/datum/chemical_reaction/medicine/ibuprofen
+	results = list(/datum/reagent/medicine/painkiller/ibuprofen = 5)
+	required_reagents = list(/datum/reagent/propionic_acid = 1, /datum/reagent/phenol = 1, /datum/reagent/oxygen = 1, /datum/reagent/hydrogen = 1)
+
+/datum/chemical_reaction/propionic_acid
+	results = list(/datum/reagent/propionic_acid = 3)
+	required_reagents = list(/datum/reagent/carbon = 1, /datum/reagent/oxygen = 1, /datum/reagent/hydrogen = 1)
+	required_catalysts = list(/datum/reagent/toxin/acid = 1)
+	is_cold_recipe = TRUE
+	required_temp = 250
+
+/datum/chemical_reaction/medicine/aspirin_para_coffee
+	results = list(/datum/reagent/medicine/painkiller/aspirin_para_coffee = 3)
+	required_reagents = list(/datum/reagent/medicine/painkiller/aspirin = 1, /datum/reagent/medicine/painkiller/paracetamol = 1, /datum/reagent/consumable/coffee = 1)
+
+
+/datum/chemical_reaction/medicine/ibaltifen
+	results = list(/datum/reagent/medicine/painkiller/specialized/ibaltifen = 3)
+	required_reagents = list(/datum/reagent/propionic_acid = 1, /datum/reagent/chlorine = 1, /datum/reagent/copper = 1)
+	required_catalysts = list(/datum/reagent/medicine/c2/libital = 1)
+
+
+/datum/chemical_reaction/medicine/anurifen
+	results = list(/datum/reagent/medicine/painkiller/specialized/anurifen = 3)
+	required_reagents = list(/datum/reagent/propionic_acid= 1, /datum/reagent/fluorine = 1, /datum/reagent/phosphorus = 1)
+	required_catalysts = list(/datum/reagent/medicine/c2/aiuri = 1)
+

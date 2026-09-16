@@ -561,11 +561,42 @@
 #warn 2 injectors, golem (focused on this), assault pack (golem + shoalmix)
 /datum/reagent/drug/golem
 	name = "Golem"
-	description = ""
-	reagent_state = SOLID
+	description = "A potent analgesiac originally discovered in a deep sea Ryuunusukan fish. Effectively nulls errant nerve signals, extremely uncomfortable, yet great for combat."
+	reagent_state = LIQUID
 	color = "#bd6c0f"
 	overdose_threshold = 16
 	metabolization_rate = 0.2
 	taste_description = "wet clay"
-	pain_modifier = 0
+	pain_modifier = 0.05
 
+/datum/reagent/drug/golem/on_mob_metabolize(mob/living/L)
+	..()
+	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_bad, name)
+
+	//color the world grey
+
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/golem)
+	L.add_actionspeed_modifier(/datum/actionspeed_modifier/drugs/golem)
+
+	if(ishuman(L))
+		var/mob/living/carbon/human/fentenstein = L
+		fentenstein.physiology.damage_resistance += 20
+		fentenstein.recoil_effect *= 0.6
+		fentenstein.impact_effect /= 2
+
+/datum/reagent/drug/golem/on_mob_end_metabolize(mob/living/L)
+	..()
+
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/golem)
+	L.remove_actionspeed_modifier(/datum/actionspeed_modifier/drugs/golem)
+
+	if(ishuman(L))
+		var/mob/living/carbon/human/fentenstein = L
+		fentenstein.physiology.damage_resistance -= 20
+		fentenstein.recoil_effect /= 0.6
+		fentenstein.impact_effect *= 2
+
+/datum/reagent/drug/golem/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
+	..()
+	//some stamina damage
+	//

@@ -33,6 +33,10 @@
 	multiplicative_slowdown = -0.4
 	conflicts_with = MOVE_CONFLICT_DRUG
 
+/datum/movespeed_modifier/reagent/golem
+	multiplicative_slowdown = 0.2
+	conflicts_with = MOVE_CONFLICT_DRUG
+
 /datum/movespeed_modifier/reagent/cytodron
 	multiplicative_slowdown = -0.1
 

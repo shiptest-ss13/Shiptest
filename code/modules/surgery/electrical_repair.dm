@@ -1,4 +1,3 @@
-#warn add ipc specific painshit
 /// Minimum temperature to melt the solder.
 #define SOLDER_MELTING_POINT 600
 
@@ -74,6 +73,8 @@
 		span_notice("[user] starts replacing the electronic components inside [target]'s [parse_zone(target_zone)] with [tool]..."),
 		span_notice("[user] starts replacing the electronic components inside [target]'s [parse_zone(target_zone)]...")
 	)
+	give_surgery_pain(target, "Your [parse_zone(target_zone)] is weakened by the removal of the capacitor!", TRUE, target_zone)
+
 /datum/surgery_step/replace_capacitor/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	if(surgery.operated_wound)
 		qdel(tool)
@@ -100,6 +101,8 @@
 		span_notice("[user] starts replacing the wires inside [target]'s [parse_zone(target_zone)] with [tool]..."),
 		span_notice("[user] starts replacing the wires inside [target]'s [parse_zone(target_zone)]...")
 	)
+	give_surgery_pain(target, "The nerves in your [parse_zone(target_zone)] are tugged and snipped at!", TRUE, target_zone)
+
 
 /datum/surgery_step/replace_wiring/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	. = ..()
@@ -141,6 +144,8 @@
 			span_notice("[user] starts heating the solder inside [target]'s [parse_zone(target_zone)] with [tool]..."),
 			span_notice("[user] starts heating the solder inside [target]'s [parse_zone(target_zone)]...")
 		)
+		give_surgery_pain(target, "The solder inside [parse_zone(target_zone)] begins to seep!", TRUE, target_zone)
+
 
 /datum/surgery_step/solder_wiring/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	if(surgery.operated_wound)

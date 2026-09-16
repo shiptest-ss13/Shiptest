@@ -2053,17 +2053,6 @@
 	H.visible_message("<b>[H]</b> suddenly transforms!")
 	randomize_human(H)
 
-/datum/reagent/magillitis
-	name = "Magillitis"
-	description = "An experimental serum that causes rapid muscular growth in Hominidae. Side effects may include hypertrichosis, violent outbursts, and an unending affinity for bananas."
-	reagent_state = LIQUID
-	color = "#00f041"
-
-/datum/reagent/magillitis/on_mob_life(mob/living/carbon/M)
-	..()
-	if((ismonkey(M) || ishuman(M)) && current_cycle >= 10)
-		M.gorillize()
-
 /datum/reagent/space_cleaner/ez_clean
 	name = "EZ Clean"
 	description = "A powerful, acidic cleaner. Affects organic matter while leaving other objects unaffected."
@@ -2082,6 +2071,13 @@
 	if((method == TOUCH || method == VAPOR) && !issilicon(M))
 		M.adjustBruteLoss(1.5)
 		M.adjustFireLoss(1.5)
+
+// Component in ibuprofen.
+/datum/reagent/propionic_acid
+	name = "Propionic Acid"
+	description = "A pungent liquid that's often used in preservatives and synthesizing of other chemicals."
+	reagent_state = LIQUID
+	color = "#c7a9c9"
 
 // ANOMALY CHEMS //
 // Gravitational anomaly

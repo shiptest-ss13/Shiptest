@@ -55,7 +55,7 @@
 	glass_desc = "Mildly sweet, but it won't actually improve your eyesight all that much beyond the baseline..."
 
 /datum/reagent/consumable/carrotjuice/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_blurriness(-1)
+	metabolizer.adjust_eye_blur(-1)
 	metabolizer.adjust_blindness(-1)
 	switch(current_cycle)
 		if(1 to 20)

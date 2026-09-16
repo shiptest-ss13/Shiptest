@@ -139,7 +139,7 @@
 			F.fry(volume)
 			F.reagents.add_reagent(/datum/reagent/consumable/cooking_oil, reac_volume)
 
-/datum/reagent/consumable/cooking_oil/expose_mob(mob/living/burn_victim, method = TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+/datum/reagent/consumable/cooking_oil/expose_mob(mob/living/carbon/burn_victim, method = TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(!istype(burn_victim))
 		return
 	var/boiling = FALSE
@@ -157,7 +157,7 @@
 		burn_victim.visible_message(span_warning("The boiling oil sizzles as it covers [burn_victim]!"), \
 		span_userdanger("You're covered in boiling oil!"))
 		if(FryLoss)
-			burn_victim.force_scream()
+			burn_victim.pain_emote("scream", 3 SECONDS)
 		playsound(burn_victim, 'sound/machines/fryer/deep_fryer_emerge.ogg', 25, TRUE)
 		ADD_TRAIT(burn_victim, TRAIT_OIL_FRIED, "cooking_oil_react")
 		addtimer(CALLBACK(burn_victim, TYPE_PROC_REF(/mob/living, unfry_mob)), 3)

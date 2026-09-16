@@ -53,15 +53,6 @@
 		var/mob/living/carbon/carbon_owner = owner
 		carbon_owner.cause_pain(BODY_ZONES_ALL, -1.5)
 
-// Regen cores.
-/datum/status_effect/regenerative_core/on_apply()
-	. = ..()
-	var/mob/living/carbon/human/human_owner = owner
-	if(istype(human_owner) && human_owner.pain_controller)
-		human_owner.cause_pain(BODY_ZONES_LIMBS, -15)
-		human_owner.cause_pain(BODY_ZONE_CHEST, -20)
-		human_owner.cause_pain(BODY_ZONE_HEAD, -10) // heals 90 pain total
-
 // Falling? Hurts!
 /mob/living/carbon/human/ZImpactDamage(turf/T, levels)
 	var/is_freerunner = HAS_TRAIT(src, TRAIT_FREERUNNING)

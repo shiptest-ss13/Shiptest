@@ -52,9 +52,38 @@
 		M.drowsyness += 0.5 * seconds_per_tick
 	M.adjust_timed_status_effect(-12 SECONDS, STATUS_EFFECT_JITTER)
 	holder.remove_reagent(/datum/reagent/toxin/histamine,3)
-	M.adjust_disgust(-3 * REM * delta_time)
+	M.adjust_disgust(-3 * REM * seconds_per_tick)
 	..()
 
+// Diphenhydramine can be upgraded into Dimenhydrinate, less good against allergens but better against nausea
+/datum/reagent/medicine/dimenhydrinate
+	name = "Dimenhydrinate"
+	description = "Helps combat nausea and motion sickness."
+	reagent_state = LIQUID
+	color = "#98ffee"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/dimenhydrinate/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	. = ..()
+	M.adjust_disgust(-8 * REM * seconds_per_tick)
+	if(M.nutrition > NUTRITION_LEVEL_FULL - 25) // Boosts hunger to a bit, assuming you've been vomiting
+		M.adjust_nutrition(2 * HUNGER_FACTOR * REM * seconds_per_tick)
+
+// Good against nausea, easier to make than Dimenhydrinate
+/datum/reagent/medicine/ondansetron
+	name = "Ondansetron"
+	description = "Prevents nausea and vomiting."
+	reagent_state = LIQUID
+	color = "#74d3ff"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/ondansetron/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	. = ..()
+	if(SPT_PROB(8, seconds_per_tick))
+		M.drowsyness++
+	if(SPT_PROB(15, seconds_per_tick) && M.get_bodypart_pain(BODY_ZONE_HEAD) <= PAIN_HEAD_MAX / 4)
+		M.cause_pain(BODY_ZONE_HEAD, 4)
+	M.adjust_disgust(-10 * REM * seconds_per_tick)
 
 /datum/reagent/medicine/haloperidol
 	name = "Haloperidol"

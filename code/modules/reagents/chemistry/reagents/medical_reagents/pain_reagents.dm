@@ -2,7 +2,7 @@
 /datum/reagent/medicine/painkiller
 	name = "prescription painkiller"
 
-/datum/reagent/medicine/painkiller/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+/datum/reagent/medicine/painkiller/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	. = ..()
 
 	// Painkillers make you numb.
@@ -22,7 +22,7 @@
 			highest_boozepwr = alcohol.boozepwr
 
 	if(highest_boozepwr > 0)
-		M.apply_damage(round(highest_boozepwr / 33, 0.5) * REM * delta_time, TOX)
+		M.apply_damage(round(highest_boozepwr / 33, 0.5) * REM * seconds_per_tick, TOX)
 		. = TRUE
 
 // A subtype of painkillers that will heal pain better
@@ -37,7 +37,7 @@
 	/// What type of wound are we looking for? If our bodypart has this wound, it will be 1.5x more effective
 	var/wound_type_to_look_for
 
-/datum/reagent/medicine/painkiller/specialized/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+/datum/reagent/medicine/painkiller/specialized/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	. = ..()
 	if(!M.pain_controller)
 		return
@@ -46,7 +46,7 @@
 		if(part.bodytype & BODYPART_ROBOTIC)
 			continue
 
-		var/final_pain_heal_amount = -1 * pain_heal_amount * REM * delta_time
+		var/final_pain_heal_amount = -1 * pain_heal_amount * REM * seconds_per_tick
 		if(pain_type_to_look_for && (part.last_received_pain_type != pain_type_to_look_for))
 			final_pain_heal_amount *= 0.1
 		if(wound_type_to_look_for && (locate(wound_type_to_look_for) in part.wounds))
@@ -65,45 +65,96 @@
 	overdose_threshold = 25
 	pain_modifier = 0.8
 
-/datum/reagent/medicine/painkiller/aspirin/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+/datum/reagent/medicine/painkiller/sydrin/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	// Not good at headaches, but very good at treating everything else.
-	M.adjustBruteLoss(-0.1 * REM * delta_time, FALSE)
-	M.adjustFireLoss(-0.05 * REM * delta_time, FALSE)
+	M.adjustBruteLoss(-0.1 * REM * seconds_per_tick, FALSE)
+	M.adjustFireLoss(-0.05 * REM * seconds_per_tick, FALSE)
 	// Numbers seem low, but our metabolism is very slow
-	M.cause_pain(BODY_ZONE_HEAD, -0.02 * REM * delta_time)
-	M.cause_pain(BODY_ZONES_LIMBS, -0.04 * REM * delta_time)
-	M.cause_pain(BODY_ZONE_CHEST, -0.08 * REM * delta_time)
+	M.cause_pain(BODY_ZONE_HEAD, -0.02 * REM * seconds_per_tick)
+	M.cause_pain(BODY_ZONES_LIMBS, -0.04 * REM * seconds_per_tick)
+	M.cause_pain(BODY_ZONE_CHEST, -0.08 * REM * seconds_per_tick)
 	// Okay at fevers.
-	M.adjust_bodytemperature(-15 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time, M.get_body_temp_normal())
-	if(M.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(33, delta_time))
-		M.adjust_disgust(1.5 * REM * delta_time)
+	M.adjust_bodytemperature(-15 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * seconds_per_tick, M.get_body_temp_normal())
+	if(M.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(33, seconds_per_tick))
+		M.adjust_disgust(1.5 * REM * seconds_per_tick)
 
 	..()
 	return TRUE
 
-/datum/reagent/medicine/painkiller/aspirin/overdose_process(mob/living/carbon/M, delta_time, times_fired)
+/datum/reagent/medicine/painkiller/sydrin/overdose_process(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(!istype(M))
 		return
 
 	// On overdose, heat up the body...
-	M.adjust_bodytemperature(30 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time)
+	M.adjust_bodytemperature(30 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * seconds_per_tick)
 	// Causes sickness...
-	M.apply_damage(1 * REM * delta_time, TOX)
-	if(M.disgust < 100 && SPT_PROB(75, delta_time))
-		M.adjust_disgust(3 * REM * delta_time)
+	M.apply_damage(1 * REM * seconds_per_tick, TOX)
+	if(M.disgust < 100 && SPT_PROB(75, seconds_per_tick))
+		M.adjust_disgust(3 * REM * seconds_per_tick)
 	// ...Hallucinations after a while...
-	if(current_cycle >= 15 && SPT_PROB(50, delta_time))
-		M.hallucination = clamp(M.hallucination + 3 * REM * delta_time, 0, 20)
+	if(current_cycle >= 15 && SPT_PROB(50, seconds_per_tick))
+		M.hallucination = clamp(M.hallucination + 3 * REM * seconds_per_tick, 0, 20)
 	// ...Dizziness after a longer while...
-	if(current_cycle >= 20 && SPT_PROB(25, delta_time))
-		M.dizziness = clamp(M.dizziness + (1 * REM * delta_time), 0, 5)
+	if(current_cycle >= 20 && SPT_PROB(25, seconds_per_tick))
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+
 	// ...And finally, confusion
-	if(current_cycle >= 25 && SPT_PROB(15, delta_time))
-		M.set_confusion(clamp(M.get_confusion() + 2, 1, 6))
+	//if(current_cycle >= 25 && SPT_PROB(15, seconds_per_tick))
+	//	M.set_confusion(clamp(M.get_confusion() + 2, 1, 6))
 
 	..()
 	return TRUE
 
+// Sydrin. The more intense over the counter painkiller. Mostly targets the chest and limbs.
+// Use healing chest and limb pain primarily.
+/datum/reagent/medicine/painkiller/sydrin
+	name = "Sydrin"
+	description = "A medication that combats pain and fever. Can cause mild nausea. Overdosing is toxic, and causes high body temperature, sickness, hallucinations, dizziness, and confusion."
+	reagent_state = LIQUID
+	color = "#321652"
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	overdose_threshold = 25
+	pain_modifier = 0.8
+
+/datum/reagent/medicine/painkiller/sydrin/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	// Not good at headaches, but very good at treating everything else.
+	M.adjustBruteLoss(-0.1 * REM * seconds_per_tick, FALSE)
+	M.adjustFireLoss(-0.05 * REM * seconds_per_tick, FALSE)
+	// Numbers seem low, but our metabolism is very slow
+	M.cause_pain(BODY_ZONE_HEAD, -0.08 * REM * seconds_per_tick)
+	M.cause_pain(BODY_ZONES_LIMBS, -0.04 * REM * seconds_per_tick)
+	M.cause_pain(BODY_ZONE_CHEST, -0.02 * REM * seconds_per_tick)
+	// Okay at fevers.
+	M.adjust_bodytemperature(-15 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * seconds_per_tick, M.get_body_temp_normal())
+	if(M.disgust < DISGUST_LEVEL_GROSS && SPT_PROB(33, seconds_per_tick))
+		M.adjust_disgust(1.5 * REM * seconds_per_tick)
+
+	..()
+	return TRUE
+
+/datum/reagent/medicine/painkiller/sydrin/overdose_process(mob/living/carbon/M, seconds_per_tick, times_fired)
+	if(!istype(M))
+		return
+
+	// On overdose, heat up the body...
+	M.adjust_bodytemperature(30 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * seconds_per_tick)
+	// Causes sickness...
+	M.apply_damage(1 * REM * seconds_per_tick, TOX)
+	if(M.disgust < 100 && SPT_PROB(75, seconds_per_tick))
+		M.adjust_disgust(3 * REM * seconds_per_tick)
+	// ...Hallucinations after a while...
+	if(current_cycle >= 15 && SPT_PROB(50, seconds_per_tick))
+		M.hallucination = clamp(M.hallucination + 3 * REM * seconds_per_tick, 0, 20)
+	// ...Dizziness after a longer while...
+	if(current_cycle >= 20 && SPT_PROB(25, seconds_per_tick))
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+
+	// ...And finally, confusion
+	//if(current_cycle >= 25 && SPT_PROB(15, seconds_per_tick))
+	//	M.set_confusion(clamp(M.get_confusion() + 2, 1, 6))
+
+	..()
+	return TRUE
 
 #warn shipfluff
 // Paracetamol. Okay at headaches, okay at everything else, bad at fevers, less disgust.
@@ -117,31 +168,31 @@
 	overdose_threshold = 25
 	pain_modifier = 0.6
 
-/datum/reagent/medicine/painkiller/paracetamol/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+/datum/reagent/medicine/painkiller/paracetamol/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	// Good general painkiller.
 	// Numbers seem lowish, but our metabolism is very slow
-	M.adjustBruteLoss(-0.05 * REM * delta_time, FALSE)
-	M.adjustFireLoss(-0.05 * REM * delta_time, FALSE)
-	M.adjustToxLoss(-0.05 * REM * delta_time, FALSE)
-	M.cause_pain(BODY_ZONES_ALL, -0.05 * REM * delta_time)
+	M.adjustBruteLoss(-0.05 * REM * seconds_per_tick, FALSE)
+	M.adjustFireLoss(-0.05 * REM * seconds_per_tick, FALSE)
+	M.adjustToxLoss(-0.05 * REM * seconds_per_tick, FALSE)
+	M.cause_pain(BODY_ZONES_ALL, -0.05 * REM * seconds_per_tick)
 	// Not very good at treating fevers.
-	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time, M.get_body_temp_normal())
+	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * seconds_per_tick, M.get_body_temp_normal())
 	// Causes liver damage - higher dosages causes more liver damage.
-	M.adjustOrganLoss(ORGAN_SLOT_LIVER, volume / 30 * REM * delta_time)
-	if(M.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(66 * max(1 - creation_purity, 0.5), delta_time))
-		M.adjust_disgust(1.2 * REM * delta_time)
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, volume / 30 * REM * seconds_per_tick)
+	if(M.disgust < DISGUST_LEVEL_VERYGROSS && SPT_PROB(45, seconds_per_tick))
+		M.adjust_disgust(1.2 * REM * seconds_per_tick)
 
 	..()
 	return TRUE
 
-/datum/reagent/medicine/painkiller/paracetamol/overdose_process(mob/living/carbon/M, delta_time, times_fired)
+/datum/reagent/medicine/painkiller/paracetamol/overdose_process(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(!istype(M))
 		return
 
 	// On overdose, cause sickness and liver damage.
-	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 2 * REM * delta_time)
-	if(M.disgust < 100 && SPT_PROB(100 * max(1 - creation_purity, 0.5), delta_time))
-		M.adjust_disgust(3 * REM * delta_time)
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 2 * REM * seconds_per_tick)
+	if(M.disgust < 100 && SPT_PROB(75, seconds_per_tick))
+		M.adjust_disgust(3 * REM * seconds_per_tick)
 
 	return ..()
 
@@ -157,15 +208,15 @@
 	pain_modifier = 0.75
 	harmful = TRUE
 
-/datum/reagent/medicine/painkiller/aspirin_para_coffee/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+/datum/reagent/medicine/painkiller/aspirin_para_coffee/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	// Heals all pain a bit if in low dosage.
 	if(volume <= 10)
 		// Number looks high, compared to other painkillers,
 		// but we have a comparatively much higher metabolism than them.
-		M.cause_pain(BODY_ZONES_ALL, -0.8 * REM * delta_time)
+		M.cause_pain(BODY_ZONES_ALL, -0.8 * REM * seconds_per_tick)
 	// Mildly toxic in higher dosages.
-	else if(SPT_PROB(volume * 3, delta_time))
-		M.apply_damage(3 * REM * delta_time, TOX)
+	else if(SPT_PROB(volume * 3, seconds_per_tick))
+		M.apply_damage(3 * REM * seconds_per_tick, TOX)
 		. = TRUE
 
 	..()
@@ -260,17 +311,17 @@
 				M.emote("yawn")
 
 		if(30 to 45) // 5u to 7.5u
-			if(M.drowsyness <= 3 && SPT_PROB(33, delta_time))
-				M.adjust_drowsiness(1 * REM * delta_time)
+			if(M.drowsyness <= 3 && SPT_PROB(33, seconds_per_tick))
+				M.adjust_drowsiness(1 * REM * seconds_per_tick)
 
 		if(46 to 60) // 7.5u to 10u
-			if(M.drowsyness <= 6 && SPT_PROB(66, delta_time))
-				M.adjust_drowsiness(1 * REM * delta_time)
+			if(M.drowsyness <= 6 && SPT_PROB(66, seconds_per_tick))
+				M.adjust_drowsiness(1 * REM * seconds_per_tick)
 
 		if(60 to INFINITY) //10u onward
 			if(M.drowsyness <= 9)
-				M.adjust_drowsiness(1 * REM * delta_time)
-			M.Sleeping(4 SECONDS * REM * delta_time)
+				M.adjust_drowsiness(1 * REM * seconds_per_tick)
+			M.Sleeping(4 SECONDS * REM * seconds_per_tick)
 
 /datum/reagent/medicine/painkiller/morphine/overdose_start(mob/living/M)
 	. = ..()
@@ -426,10 +477,10 @@
 	pain_type_to_look_for = BRUTE
 	wound_type_to_look_for = /datum/wound/blunt
 
-/datum/reagent/medicine/painkiller/specialized/ibaltifen/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+/datum/reagent/medicine/painkiller/specialized/ibaltifen/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	// a bit of libital influence
-	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 0.5 * REM * delta_time)
-	M.adjustBruteLoss(-0.33 * REM * delta_time)
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 0.5 * REM * seconds_per_tick)
+	M.adjustBruteLoss(-0.33 * REM * seconds_per_tick)
 	..()
 	return TRUE
 
@@ -445,10 +496,10 @@
 	pain_type_to_look_for = BURN
 	wound_type_to_look_for = /datum/wound/burn
 
-/datum/reagent/medicine/painkiller/specialized/anurifen/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+/datum/reagent/medicine/painkiller/specialized/anurifen/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	// a bit of aiuri influence
-	M.adjustOrganLoss(ORGAN_SLOT_EYES, 0.4 * REM * delta_time)
-	M.adjustFireLoss(-0.25 * REM * delta_time)
+	M.adjustOrganLoss(ORGAN_SLOT_EYES, 0.4 * REM * seconds_per_tick)
+	M.adjustFireLoss(-0.25 * REM * seconds_per_tick)
 	..()
 	return TRUE
 

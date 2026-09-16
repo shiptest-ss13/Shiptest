@@ -319,3 +319,4 @@
 		return HUMAN_HEIGHT_DWARF
 
 	return mob_height
+

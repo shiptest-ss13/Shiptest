@@ -125,7 +125,7 @@
 	pain_limb_modifier = 0.75
 
 /obj/item/reagent_containers/pill/aspirin
-	name = "aspirin pill"
+	name = "syndrin pill"
 	desc = "Used to treat moderate pain and fever. Metabolizes slowly. Best at treating chest pain."
 	icon_state = "pill7"
 	list_reagents = list(/datum/reagent/medicine/painkiller/aspirin = 10) // Lasts ~4 minutes, heals ~20 pain in chest (lower in other parts)
@@ -399,15 +399,15 @@
 
 	var/target_temp = wearer.get_body_temp_normal(apply_change = FALSE)
 	if(wearer.bodytemperature > target_temp)
-		wearer.adjust_bodytemperature(-12 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time, target_temp)
+		wearer.adjust_bodytemperature(-12 * TEMPERATURE_DAMAGE_COEFFICIENT * delta_time, target_temp)
 	else if(wearer.bodytemperature < (target_temp + 1))
-		wearer.adjust_bodytemperature(12 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time, 0, target_temp)
+		wearer.adjust_bodytemperature(12 * TEMPERATURE_DAMAGE_COEFFICIENT * delta_time, 0, target_temp)
 	if(ishuman(wearer))
 		var/mob/living/carbon/human/human_wearer = wearer
 		if(human_wearer.coretemperature > target_temp)
-			human_wearer.adjust_coretemperature(-12 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time, target_temp)
+			human_wearer.adjust_coretemperature(-12 * TEMPERATURE_DAMAGE_COEFFICIENT * delta_time, target_temp)
 		else if(human_wearer.coretemperature < (target_temp + 1))
-			human_wearer.adjust_coretemperature(12 * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time, 0, target_temp)
+			human_wearer.adjust_coretemperature(12 * TEMPERATURE_DAMAGE_COEFFICIENT * delta_time, 0, target_temp)
 
 /obj/item/shock_blanket/emergency
 	desc = "An emergency variant shock blanket intended to be placed in medkits for field treatment. Faster to apply to patients, but more restrictive to movement."

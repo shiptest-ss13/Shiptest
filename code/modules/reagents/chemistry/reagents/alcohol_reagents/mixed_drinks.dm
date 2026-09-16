@@ -1546,7 +1546,7 @@
 		if(5 to 40)
 			soul_poster.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 			if(SPT_PROB(5, seconds_per_tick) && !soul_poster.eye_blurry)
-				soul_poster.blur_eyes(6)
+				soul_poster.set_eye_blur_if_lower(6 SECONDS)
 				to_chat(soul_poster, span_warning("That outline is so distracting, it's hard to look at anything else!"))
 		if(40 to 100)
 			soul_poster.set_dizzy_if_lower(20 SECONDS)

@@ -101,7 +101,7 @@
 	var/overdose_bleed_modifier = 0.3
 	var/brute_damage_modifier = 1.5
 
-/datum/reagent/medicine/hadrakine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+/datum/reagent/medicine/hadrakine/expose_mob(mob/living/carbon/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		if(method in list(INGEST, VAPOR, INJECT))
 			M.adjustToxLoss(0.5*reac_volume)
@@ -110,7 +110,7 @@
 		else if(M.getBruteLoss())
 			M.adjustBruteLoss(-reac_volume)
 			var/pain_points = M.adjustStaminaLoss(reac_volume*4)
-			M.force_pain_noise(pain_points)
+			M.sharp_pain(BODY_ZONES_ALL,pain_points, BRUTE, reac_volume*2 SECONDS)
 			if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, span_danger("You feel your bruises healing! It stings like hell!"))
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
@@ -168,13 +168,13 @@
 	color = "#725cfd"
 	overdose_threshold = 20
 
-/datum/reagent/medicine/silfrine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+/datum/reagent/medicine/silfrine/expose_mob(mob/living/carbon/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		var/mob/living/carbon/paper_cut_victim = M
 		if(method in list(INGEST, INJECT, PATCH))
 			if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, span_boldwarning("Your body ignites in pain as nerves are rapidly reformed, and flesh is freshly knit!"))
-				M.force_pain_noise(reac_volume*6)
+				M.sharp_pain(BODY_ZONES_ALL, reac_volume*6, BRUTE, reac_volume*6 SECONDS)
 				M.adjustStaminaLoss(reac_volume*4)
 			for(var/owie in paper_cut_victim.all_wounds)
 				var/datum/wound/paper_cut = owie
@@ -205,7 +205,7 @@
 		var/mob/living/carbon/idiot = M
 		idiot.sharp_pain(BODY_ZONES_ALL, 100, BRUTE, 60 SECONDS)
 
-/datum/reagent/medicine/silfrine/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+/datum/reagent/medicine/silfrine/overdose_process(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(SPT_PROB(5, seconds_per_tick))
 		if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
 			to_chat(M, span_danger("You feel your flesh twisting as it tries to grow around non-existent wounds!"))
@@ -254,7 +254,7 @@
 	..()
 	. = 1
 
-/datum/reagent/medicine/alvitane/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+/datum/reagent/medicine/alvitane/expose_mob(mob/living/carbon/M, method=TOUCH, reac_volume, show_message = 1)
 	M.adjustFireLoss(-reac_volume/2)
 	M.pain_emote("wince", 5 SECONDS)
 	M.adjustStaminaLoss(reac_volume/2)
@@ -572,7 +572,7 @@
 
 	if (current_cycle > secondary_overdose_effect_cycle_threshold)
 		if (SPT_PROB(30, seconds_per_tick))
-			carbon_mob.set_blurriness(max(carbon_mob.eye_blurry, min(carbon_mob.eye_blurry + 3, 15)))
+			carbon_mob.adjust_eye_blur_up_to(3, 15)
 		if (carbon_mob.getStaminaLoss() < maximum_od_stamina_damage)
 			carbon_mob.adjustStaminaLoss(seconds_per_tick)
 
@@ -698,7 +698,7 @@
 	var/power = -0.000015 * (M.bodytemperature ** 2) + 3 * seconds_per_tick
 
 	M.set_pain_mod(type, 0.5) // Heal pain faster
-	M.cause_pain(BODY_ZONES_ALL, -0.25 * power * REM * delta_time)
+	M.cause_pain(BODY_ZONES_ALL, -0.25 * power * REM * seconds_per_tick)
 	if(M.bodytemperature < T0C)
 		M.adjustOxyLoss(-3 * power, 0)
 		M.adjustBruteLoss(-power, 0)
@@ -786,7 +786,6 @@
 	..()
 	. = 1
 
-#warn fluff this shit up better use the purple hive eyes screen overlay
 /datum/reagent/medicine/stimulants
 	name = "Indoril Stimulant"
 	description = "Increases stun resistance and movement speed in addition to restoring minor damage and weakness. Overdose causes weakness and toxin damage."

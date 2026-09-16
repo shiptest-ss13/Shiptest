@@ -196,6 +196,7 @@
 	display_results(user, target, span_notice("You begin to replace [target]'s [parse_zone(target_zone)] with [tool]..."),
 		span_notice("[user] begins to replace [target]'s [parse_zone(target_zone)] with [tool]."),
 		span_notice("[user] begins to replace [target]'s [parse_zone(target_zone)]."))
+	give_surgery_pain(target, "You feel sensation begin to flow as synthetic nerves are connected to your [parse_zone(target_zone)]", TRUE, target_zone)
 
 /datum/surgery_step/add_prosthetic/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(HAS_TRAIT(tool, TRAIT_NODROP))
@@ -238,6 +239,7 @@
 			"[user] begins cutting the plating off of [target]'s [parse_zone(target_zone)] with [tool]...",
 			"[user] begins cutting the plating off of [target]'s [parse_zone(target_zone)]...",
 		)
+		give_surgery_pain(target, "You feel cutting as metal plating is peeled from your [parse_zone(target_zone)]!", TRUE, target_zone)
 
 /datum/surgery_step/add_plating
 	name = "add new plating"

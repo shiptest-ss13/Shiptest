@@ -1297,3 +1297,20 @@
 		)
 
 	return GLOB.fire_appearances[fire_icon]
+
+
+/**
+ * Getter for temperature limits
+ * this one does cold
+ */
+
+/mob/living/carbon/proc/get_body_temp_cold_damage_limit()
+	return dna.species.bodytemp_cold_damage_limit
+
+/**
+ * Getter for temperature limits
+ * this one does hot
+ */
+
+/mob/living/carbon/proc/get_body_temp_heat_damage_limit()
+	return dna.species.bodytemp_heat_damage_limit

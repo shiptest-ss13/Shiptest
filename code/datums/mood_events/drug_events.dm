@@ -74,6 +74,11 @@
 	mood_change = 9
 	timeout = 3 MINUTES
 
+/datum/mood_event/narcotic_bad
+	description = span_nicegreen("I can't feel anything! This body is a prison!")
+	mood_change = -6
+	timeout = 3 MINUTES
+
 /datum/mood_event/stimulant_light
 	description = span_nicegreen("I feel so light. So productive!")
 	mood_change = 2

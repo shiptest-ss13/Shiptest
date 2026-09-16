@@ -1,5 +1,3 @@
-#warn ipc 'pain'
-
 /datum/surgery/repair_heat_warp
 	name = "Repair Deformed Chassis"
 	desc = "Replaces the heat-warped plating and frame of a robotic limb."
