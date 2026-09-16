@@ -26,17 +26,15 @@ Ask ninjanomnom if they're around
 #define RAD_MOB_SAFE 1000
 // How much stored radiation to check for hair loss
 #define RAD_MOB_SICKNESS 1500
-// How much stored radiation to check for mutation
-#define RAD_MOB_MUTATE 5000
 // The amount of radiation to check for vomitting
 #define RAD_MOB_VOMIT 2500
 // Chance per second of vomitting
-#define RAD_MOB_VOMIT_PROB 0.1
+#define RAD_MOB_VOMIT_PROB 0.25
 
 // How much stored radiation to check for stunning
 #define RAD_MOB_KNOCKDOWN 3000
 // Chance of knockdown per second when over threshold
-#define RAD_MOB_KNOCKDOWN_PROB 0.1
+#define RAD_MOB_KNOCKDOWN_PROB 0.25
 // Amount of knockdown when it occurs
 #define RAD_MOB_KNOCKDOWN_AMOUNT 3
 

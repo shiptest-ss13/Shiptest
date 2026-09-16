@@ -473,10 +473,8 @@
 			return 0.5
 		if(RAD_MOB_SAFE to RAD_MOB_KNOCKDOWN)
 			return 0.75
-		if(RAD_MOB_KNOCKDOWN to RAD_MOB_MUTATE)
-			return 1
 		else
-			return 1.5
+			return 1
 
 /datum/symptom/heal/radiation/Heal(mob/living/carbon/M, datum/disease/advance/A, actual_power)
 	var/heal_amt = actual_power
