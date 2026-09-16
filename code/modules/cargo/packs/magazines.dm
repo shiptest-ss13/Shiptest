@@ -258,6 +258,12 @@
 	contains = list(/obj/item/ammo_box/magazine/skm_762_40/empty)
 	cost = 300
 
+/datum/supply_pack/magazine/heater
+	name = "Heater Magazine Crate"
+	desc = "Contains a 30-round 5.7 magazine for the Heater."
+	contains = list(/obj/item/ammo_box/magazine/heater)
+	cost = 300
+
 /datum/supply_pack/magazine/skm_ammo_extended
 	name = "SKM Extended Magazine Crate"
 	desc = "Contains a 7.62x40mm magazine for the SKM rifles, with a capacity of fourty rounds."
@@ -390,11 +396,26 @@
 
 /* energy weapons */
 
+/datum/supply_pack/magazine/miniguncell
+	name = "Eoehoma-style Mini Power Cell"
+	desc = "Contains a Clover Photonics copy of an Eoehoma Mini Cell, compatable with systems that use Eoehoma Mini-style cells."
+	contains = list(/obj/item/stock_parts/cell/gun/mini)
+	cost = 200
+
 /datum/supply_pack/magazine/guncell
 	name = "Eoehoma-style Power Cell"
-	desc = "Contains a weapon power cell built to be compatible with Eoehoma weapons, and systems that still use Eoehoma's style of cell."
+	desc = "Contains a Clover Photonics copy of an Eoehoma cell, compatible with Eoehoma weapons, and systems that still use Eoehoma-style cells."
 	contains = list(/obj/item/stock_parts/cell/gun)
 	cost = 500
+
+/datum/supply_pack/magazine/upgradedguncellclip
+	name = "High-Capacity Eoehoma-style Power Cell"
+	desc = "Contains a Clover Photonics copy of a High-Cap Eoehoma cell, compatible with Eoehoma weapons, and systems that still use Eoehoma-style cells."
+	contains = list(/obj/item/stock_parts/cell/gun/upgraded)
+	cost = 800
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/magazine/solgovcell
 	name = "SolCon Weapon Cell Crate"

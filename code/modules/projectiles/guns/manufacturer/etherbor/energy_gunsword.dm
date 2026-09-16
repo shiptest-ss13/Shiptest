@@ -289,7 +289,7 @@
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
-	spread_unwielded = 5
+	spread_unwielded = 2
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -354,7 +354,7 @@
 	fire_delay = 0.5 SECONDS
 
 	spread = 9
-	spread_unwielded = 10
+	spread_unwielded = 9
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
@@ -393,18 +393,19 @@
 	name = "concentrated energy beam"
 	damage_constant = 0.9
 	damage = 20
+	ap_constant = 0.9
 	armour_penetration = 10
 
 /obj/item/ammo_casing/energy/kalix/pgf/pdw
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/pdw
 	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
-	e_cost = 765 //26 shots per cell
+	e_cost = 666 //30 shots per cell
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/pdw
 	projectile_type = /obj/projectile/beam/hitscan/disabler
 	fire_sound = 'sound/weapons/taser2.ogg'
-	e_cost = 765 //26 shots per cell
+	e_cost = 666 //30 shots per cell
 	select_name = "disable"
 
 /obj/item/gun/energy/kalix/pgf/pdw/empty_cell
