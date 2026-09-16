@@ -574,3 +574,16 @@
 	throw_speed = 2
 	throw_range = 5
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/glassvase
+	name = "glass vase"
+	desc = "An opaque, rounded vessel housing assorted glass flowers. Delicate, but long lasting."
+	icon = 'icons/obj/items.dmi'
+	icon_state = "glassvase"
+	custom_materials = list(/datum/material/glass = 200)
+
+	unique_reskin = list(
+		"glass peony vase" = "glassvase_peony",
+		"glass geranium vase" = "glassvase_geranium",
+		"glass sunflower vase" = "glassvase"
+		)

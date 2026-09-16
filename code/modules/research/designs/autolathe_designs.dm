@@ -255,6 +255,14 @@
 	build_path = /obj/item/clothing/ears/earmuffs
 	category = list("initial", "Misc")
 
+/datum/design/glassvase
+	name = "Glass Vase"
+	id = "glassvase"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 200)
+	build_path = /obj/item/glassvase
+	category = list("initial", "Misc")
+
 /datum/design/pipe_painter
 	name = "Pipe Painter"
 	id = "pipe_painter"
