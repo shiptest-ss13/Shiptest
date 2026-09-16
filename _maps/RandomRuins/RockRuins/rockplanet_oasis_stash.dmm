@@ -88,7 +88,8 @@
 	pixel_x = -7;
 	pixel_y = -3
 	},
-/turf/open/floor/plating/asteroid/rockplanet/wet)
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/ruin/rockplanet/oasis_stash/hut)
 "ce" = (
 /obj/structure/flora/rock/pile/rockplanet,
 /obj/item/storage/box/ammo/a4570_explosive{
@@ -146,7 +147,8 @@
 	pixel_x = 1;
 	pixel_y = -7
 	},
-/turf/open/floor/plating/asteroid/rockplanet/wet)
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/ruin/rockplanet/oasis_stash/hut)
 "dZ" = (
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 8;
@@ -164,7 +166,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/asteroid/rockplanet/wet)
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/ruin/rockplanet/oasis_stash)
 "eG" = (
 /obj/machinery/power/floodlight,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
@@ -483,7 +486,8 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "ps" = (
 /obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/rockplanet/lit)
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/oasis_stash/hut)
 "pG" = (
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -503,7 +507,8 @@
 /turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "pQ" = (
-/turf/open/floor/plating/asteroid/rockplanet/wet)
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/ruin/rockplanet/oasis_stash/hut)
 "qd" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/cable{
@@ -531,7 +536,8 @@
 	pixel_x = -6;
 	pixel_y = 3
 	},
-/turf/open/floor/plating/asteroid/rockplanet/wet)
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/ruin/rockplanet/oasis_stash/hut)
 "qU" = (
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -581,7 +587,8 @@
 /obj/structure/cable,
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken6"
-	})
+	},
+/area/ruin/rockplanet/oasis_stash)
 "sQ" = (
 /obj/structure/flora/stump,
 /turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
@@ -658,9 +665,14 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "wB" = (
 /obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/dirt/grass/rockplanet)
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
+/area/ruin/rockplanet/oasis_stash/hut)
 "wL" = (
-/turf/closed/wall/mineral/wood)
+/turf/closed/wall/mineral/wood,
+/area/ruin/rockplanet/oasis_stash/hut)
+"xj" = (
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/ruin/rockplanet/oasis_stash)
 "xo" = (
 /obj/structure/flora/rock/rockplanet{
 	icon_state = "redrock3"
@@ -704,7 +716,8 @@
 	},
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken5"
-	})
+	},
+/area/ruin/rockplanet/oasis_stash)
 "yU" = (
 /mob/living/simple_animal/hostile/human/frontier/junkie/internals{
 	wander = 0
@@ -760,7 +773,8 @@
 /mob/living/simple_animal/hostile/human/frontier/junkie/internals{
 	wander = 0
 	},
-/turf/open/floor/plating/asteroid/rockplanet/wet)
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/ruin/rockplanet/oasis_stash/hut)
 "BX" = (
 /obj/structure/flora/rock/pile/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
@@ -873,7 +887,8 @@
 	vision_range = 20;
 	environment_smash = 0
 	},
-/turf/open/floor/plating/asteroid/dirt/grass/rockplanet)
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
+/area/ruin/rockplanet/oasis_stash/hut)
 "Hx" = (
 /obj/structure/flora/ash/garden/arid,
 /obj/item/restraints/legcuffs/beartrap{
@@ -899,7 +914,8 @@
 	vision_range = 20;
 	environment_smash = 0
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit)
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/ruin/rockplanet/oasis_stash/hut)
 "Im" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/grass/jungle,
@@ -1018,7 +1034,8 @@
 	},
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken5"
-	})
+	},
+/area/ruin/rockplanet/oasis_stash)
 "LF" = (
 /obj/effect/mob_spawn/human/miner,
 /obj/effect/decal/cleanable/blood{
@@ -1130,7 +1147,8 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plating/asteroid/rockplanet/wet)
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/ruin/rockplanet/oasis_stash)
 "OR" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
 	wander = 0
@@ -1363,7 +1381,8 @@
 	on = 1;
 	icon_state = "lantern-on"
 	},
-/turf/open/floor/plating/asteroid/rockplanet/wet)
+/turf/open/floor/plating/asteroid/rockplanet/wet,
+/area/ruin/rockplanet/oasis_stash/hut)
 "Wx" = (
 /turf/closed/wall/mineral/wood,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -2705,7 +2724,7 @@ kO
 Lz
 yR
 sK
-pQ
+xj
 Ya
 yB
 yB
