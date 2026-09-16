@@ -204,6 +204,19 @@
 	tastes = list("donut" = 3, "matcha" = 1)
 	is_decorated = TRUE
 
+/obj/item/food/donut/laugh
+	name = "sweet pea donut"
+	desc = "Goes great with a bottle of Bastion Bourbon!"
+	icon_state = "donut_laugh"
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/consumable/sugar = 3,
+		/datum/reagent/consumable/laughsyrup = 3,
+		/datum/reagent/consumable/sprinkles = 1
+	)
+	tastes = list("donut" = 3, "fizzy tutti frutti" = 1)
+	is_decorated = TRUE
+
 //////////////////////JELLY DONUTS/////////////////////////
 
 /obj/item/food/donut/jelly
@@ -343,6 +356,20 @@
 	tastes = list("jelly" = 1, "donut" = 3, "matcha" = 1)
 	is_decorated = TRUE
 
+/obj/item/food/donut/jelly/laugh
+	name = "sweet pea jelly donut"
+	desc = "Goes great with a bottle of Bastion Bourbon!"
+	icon_state = "jelly_laugh"
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/consumable/sugar = 3,
+		/datum/reagent/consumable/laughsyrup = 3,
+		/datum/reagent/consumable/sprinkles = 1,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
+	tastes = list("jelly" = 1, "donut" = 3, "fizzy tutti frutti" = 1)
+	is_decorated = TRUE
+
 //////////////////////////SLIME DONUTS/////////////////////////
 
 /obj/item/food/donut/jelly/slimejelly
@@ -462,6 +489,20 @@
 		/datum/reagent/consumable/nutriment/vitamin = 1
 	)
 	tastes = list("jelly" = 1, "donut" = 3, "matcha" = 1)
+	is_decorated = TRUE
+
+/obj/item/food/donut/jelly/slimejelly/laugh
+	name = "sweet pea jelly donut"
+	desc = "Goes great with a bottle of Bastion Bourbon!"
+	icon_state = "jelly_laugh"
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/consumable/sugar = 3,
+		/datum/reagent/consumable/laughsyrup = 3,
+		/datum/reagent/consumable/sprinkles = 1,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
+	tastes = list("jelly" = 1, "donut" = 3, "fizzy tutti frutti" = 1)
 	is_decorated = TRUE
 
 #undef DONUT_SPRINKLE_CHANCE

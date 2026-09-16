@@ -393,6 +393,29 @@
 		/obj/item/melee/knife/kitchen = 10,
 	)
 
+/obj/structure/salvageable/turret
+	name = "destroyed turret"
+	desc = "A long-deserviced automated twin-barrel ballistic turret. Layers of dust coat its cracked lens. Some of its parts might still be useful."
+	icon_state = "syndie_broken"
+	icon = 'icons/obj/turrets.dmi'
+	salvageable_parts = list(
+		/obj/item/shard = 80,
+		/obj/item/ammo_casing/spent/rifle_steel = 80,
+		/obj/item/ammo_casing/spent/rifle_steel = 80,
+		/obj/item/stack/cable_coil/cut = 80,
+		/obj/item/stack/cable_coil/cut = 80,
+		/obj/item/stack/ore/salvage/scrapgold/five = 60,
+		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
+		/obj/item/stack/ore/salvage/scrapplasma = 60,
+		/obj/item/stack/ore/salvage/scrapuranium = 60,
+		/obj/item/circuitboard/machine/turret = 55,
+		/obj/effect/spawner/random/salvage/part/scanning = 50,
+		/obj/effect/spawner/random/salvage/part/scanning = 50,
+		/obj/item/weaponcrafting/receiver = 40,
+		/obj/effect/spawner/random/salvage_laser = 40,
+		/obj/item/storage/toolbox/ammo = 40,
+	)
+
 //scrap item, mostly for fluff
 /obj/item/stack/ore/salvage
 	name = "salvage"

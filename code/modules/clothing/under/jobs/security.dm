@@ -276,6 +276,7 @@
 	icon_state = "camo"
 	item_state = "fatigues"
 
+	obj_flags = INFINITE_RESKIN
 	unique_reskin = list("Urban" = "camo",
 		"Desert" = "camo_desert",
 		"Woodland" = "camo_woodland",
@@ -284,6 +285,7 @@
 		)
 	supports_variations = DIGITIGRADE_VARIATION
 	roll_down = TRUE
+	roll_sleeves = FALSE
 
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()

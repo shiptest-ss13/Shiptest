@@ -15,7 +15,7 @@
 	var/poison_amount = 5
 	slot = ORGAN_SLOT_STOMACH_AID
 
-/obj/item/organ/cyberimp/chest/nutriment/on_life()
+/obj/item/organ/cyberimp/chest/nutriment/on_life(seconds_per_tick, times_fired)
 	if(synthesizing)
 		return
 
@@ -55,7 +55,7 @@
 	COOLDOWN_DECLARE(reviver_cooldown)
 
 
-/obj/item/organ/cyberimp/chest/reviver/on_life()
+/obj/item/organ/cyberimp/chest/reviver/on_life(seconds_per_tick, times_fired)
 	if(reviving)
 		switch(owner.stat)
 			if(UNCONSCIOUS, HARD_CRIT)

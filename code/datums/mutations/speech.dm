@@ -7,32 +7,9 @@
 	quality = MINOR_NEGATIVE
 	text_gain_indication = span_danger("You feel nervous.")
 
-/datum/mutation/human/nervousness/on_life()
-	if(prob(10))
+/datum/mutation/human/nervousness/on_life(seconds_per_tick, times_fired)
+	if(SPT_PROB(5, seconds_per_tick))
 		owner.stuttering = max(10, owner.stuttering)
-
-
-/datum/mutation/human/wacky
-	name = "Wacky"
-	desc = "You are not a clown. You are the entire circus."
-	quality = MINOR_NEGATIVE
-	text_gain_indication = span_sans("You feel an off sensation in your voicebox.")
-	text_lose_indication = span_notice("The off sensation passes.")
-
-/datum/mutation/human/wacky/on_acquiring(mob/living/carbon/human/owner)
-	if(..())
-		return
-	RegisterSignal(owner, COMSIG_MOB_SAY, PROC_REF(handle_speech))
-
-/datum/mutation/human/wacky/on_losing(mob/living/carbon/human/owner)
-	if(..())
-		return
-	UnregisterSignal(owner, COMSIG_MOB_SAY)
-
-/datum/mutation/human/wacky/proc/handle_speech(datum/source, list/speech_args)
-	SIGNAL_HANDLER
-
-	speech_args[SPEECH_SPANS] |= SPAN_SANS
 
 /datum/mutation/human/mute
 	name = "Mute"

@@ -112,6 +112,7 @@
 		return
 	deltimer(next_phase_timer)
 	completed = TRUE
+	SStgui.close_uis(src)
 	if(user)
 		UnregisterSignal(user, list(COMSIG_MOB_CLICKON, COMSIG_MOVABLE_MOVED))
 		REMOVE_TRAIT(user, TRAIT_GONE_FISHING, REF(src))

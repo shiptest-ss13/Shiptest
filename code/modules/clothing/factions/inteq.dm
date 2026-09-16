@@ -158,7 +158,7 @@
 	item_state = "hood_inteq_alt"
 
 /obj/item/clothing/suit/toggle/flight/inteq
-	name = "Inteq Pilot Jacket"
+	name = "inteq pilot jacket"
 	desc = "A standard-issue flight jacket for subshuttle pilots. Lined with fur for any cold occasion."
 	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
@@ -284,7 +284,7 @@
 	icon_state = "hardsuit1-pointman"
 	hardsuit_type = "pointman"
 	full_retraction = TRUE
-	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION | SNOUTED_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/inteq
 	name = "elite rampart hardsuit helmet"
@@ -323,6 +323,8 @@
 	resistance_flags = FIRE_PROOF
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 	slowdown = 0.2
+	kepori_override_icon = 'icons/mob/clothing/suits/spacesuits_kepori.dmi'
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/inteq/pilot
 	name = "inteq pilot helmet"
@@ -338,6 +340,8 @@
 	visor_flags = STOPSPRESSUREDAMAGE | ALLOWINTERNALS | FLASH_PROTECTION_WELDER
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
+	kepori_override_icon = 'icons/mob/clothing/head/spacesuits_kepori.dmi'
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION
 
 	up = FALSE
 	actions_types = list(/datum/action/item_action/toggle_helmet)
@@ -505,7 +509,7 @@
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 
 /obj/item/clothing/mask/balaclava/inteq
-	name = "Inteq combat balaclava"
+	name = "inteq combat balaclava"
 	desc = "A surprisingly advanced balaclava. While it doesn't muffle your voice, it has a mouthpiece for internals. Comfy to boot! This one is a variataion commonly used by the IRMG to protect it's members idenites."
 	icon = 'icons/obj/clothing/faction/inteq/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/mask.dmi'

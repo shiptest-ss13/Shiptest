@@ -4,6 +4,7 @@
 	icon = 'icons/obj/flipped_tables.dmi'
 	icon_state = "table"
 	var/obj/structure/table/table_type = /obj/structure/table
+	pass_chance = 25
 
 /obj/structure/barricade/directional/flippedtable/Initialize(mapload)
 	. = ..()

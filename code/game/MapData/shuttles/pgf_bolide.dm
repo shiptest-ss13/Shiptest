@@ -289,9 +289,9 @@
 			2. <b>TITLES AND CALLSIGNS</b>:
 			Small units are often assigned simple callsigns for ease of communication and organization. These identifiers can vary or may not be used at all. Thusly, it is important to coordinate how your unit will be structured as well as ensure all participating parties are coordinated and aware.<br>
 			<b>Some common titles include:</b><br>
-			- “Command/Overwatch” = Refers to the collective command structure over your unit, most commonly referring to executive command staff.<br>
-			- “Actual” = The individual at the top of the unit’s command hierarchy.<br>
-			- “Lead” = An individual assigned to lead a section of the unit who may not be at the top of the unit’s command hierarchy.<br><br>
+			- “Command/Overwatch” = Refers to the staff overseeing and directing your mission.<br>
+			- “Actual” = The individual at the top of the unit’s command hierarchy. Such as the captain of a ship or the leader of a platoon.<br>
+			- “Lead” = An individual assigned to lead a section of the unit who may not be at the top of the unit’s command hierarchy. Such as a squad or fireteam leader <br><br>
 			3. <b>PROFESSIONALISM</b>:
 			During periods of heightened stress, it is easy for even veteran personnel to lose their composure or allow emotion to influence their decisionmaking temporarily. This loss of composure can negatively affect the efficiency of radio communications in any number of ways and must be consciously avoided.<br>
 			<b>Notable examples to avoid:</b><br>
@@ -303,7 +303,9 @@
 			<b>"{#1 Intended recipient}, this is {#2 Identity of sender}, {#2.5 optional intent} {#3 intended message}, {#4 disposition}"</b><br><br>
 			For the sake of simplicity in this refresher, a brief radio conversation between a squad leader, Porter Lead, and their commanding officer, Baron Actual, is simulated below.<br>
 			<hr>
-			<b>(Porter Lead)</b> "<b>{#1}</b> Baron Actual, this is <b>{#2}</b> Porter Lead. <b>{#3}</b> Hostile compound is now clear. <b>{#4}</b> Awaiting orders, over."<br><br>
+			<b>(Porter Lead)</b> "<b>{#1}</b> Baron Actual, <b>{#2}</b> Porter Lead. b>{#4}</b> Over."<br><br>
+			<b>(Baron Actual)</b> "<b>{#1}</b> Porter Lead, this is <b>{#2}</b> Baron Actual. {#3}</b> Go ahead. <b>{#4}</b> Over."<br><br>
+			<b>(Porter Lead)</b> "<b>{#1}</b> Baron Actual, <b>{#3}</b> hostile compound is now clear. <b>{#4}</b> Awaiting orders, over."<br><br>
 			<b>(Baron Actual)</b> "<b>{#1}</b> Porter Lead, <b>{#2}</b> Baron Actual. <b>{#2.5}</b> Interrogative. <b>{#3}</b> How many casualties? <b>{#4}</b> Over."<br><br>
 			<b>(Porter Lead)</b> "<b>{#3}</b> Six hostile casualties. <b>{#4}</b> Break."<br><br>
 			<b>(Porter Lead)</b> "<b>{#3}</b> One friendly casualty. <b>{#4}</b> Over."<br><br>
@@ -311,7 +313,7 @@
 			<b>(Porter Lead)</b> "<b>{#2.5}</b> Wilco. <b>{#3}</b> Evacuating casualty and establishing a perimeter. <b>{#4}</b> Over."<br><br>
 			<b>(Baron Actual)</b> "<b>{#3}</b> Roger. <b>{#4}</b> Out."<br>
 			<hr>
-			Remember, clarity and efficiency are always of the utmost priority. The presented pattern serves as a proven and effective baseline which may be streamlined or amplified based on your situation and needs.<br><br>
+			Remember, clarity and efficiency are always of the utmost priority. The presented pattern serves as a proven and effective baseline but is not absolute. Communications detail should be streamlined or amplified based on your scale, situation, and needs.<br><br>
 			<font face="serif" size="3"><u>PHONETIC ALPHABET:</u><br>
 			<table><tbody><tr><td>A -</td><td>Alpha</td><td>N -</td><td>November</td></tr><tr><td>B -</td><td>Bravo</td><td>O -</td><td>Oscar</td></tr><tr><td>C -</td><td>Charlie</td><td>P -</td><td>Papa</td></tr><tr><td>D -</td><td>Delta</td><td>Q -</td><td>Quebec</td></tr><tr><td>E -</td><td>Echo</td><td>R -</td><td>Romeo</td></tr><tr><td>F -</td><td>Foxtrot</td><td>S -</td><td>Sierra</td></tr><tr><td>G -</td><td>Golf</td><td>T -</td><td>Tango</td></tr><tr><td>H -</td><td>Hotel</td><td>U -</td><td>Uniform</td></tr><tr><td>I -</td><td>India</td><td>V -</td><td>Victor</td></tr><tr><td>J -</td><td>Juliet</td><td>W -</td><td>Whiskey</td></tr><tr><td>K -</td><td>Kilo</td><td>X -</td><td>X-ray</td></tr><tr><td>L -</td><td>Lima</td><td>Y -</td><td>Yankee</td></tr><tr><td>M -</td><td>Mike</td><td>Z -</td><td>Zulu</td></tr></tbody></table>
 			"}

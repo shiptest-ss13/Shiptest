@@ -24,21 +24,6 @@
 	message = "grumbles!"
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/carbon/human/handshake
-	key = "handshake"
-	message = "shakes their own hands."
-	message_param = "shakes hands with %t."
-	hands_use_check = TRUE
-	emote_type = EMOTE_AUDIBLE
-
-/datum/emote/living/carbon/human/hug
-	key = "hug"
-	key_third_person = "hugs"
-	message = "hugs themself."
-	message_param = "hugs %t."
-	hands_use_check = TRUE
-	emote_type = EMOTE_AUDIBLE
-
 /datum/emote/living/carbon/human/mumble
 	key = "mumble"
 	key_third_person = "mumbles"

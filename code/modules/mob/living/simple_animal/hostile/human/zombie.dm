@@ -66,3 +66,38 @@
 	attack_verb_continuous = "lashes"
 	attack_verb_simple = "lash"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
+
+/mob/living/simple_animal/hostile/human/shell
+	name = "Shell"
+	desc = "A blank, factory-default IPC shell. It stands with its limbs hung limp, moving as if on strings like a puppet. Behind its optical sensors you can see a deep and desperate hunger."
+	icon = 'icons/mob/simple_human.dmi'
+	icon_state = "faceless"
+	icon_living = "faceless"
+	faction = list(FACTION_HOSTILE)
+	speak_chance = 30
+	stat_attack = UNCONSCIOUS
+	harm_intent_damage = 5
+	melee_damage_lower = 20
+	melee_damage_upper = 20
+	del_on_death = TRUE
+	attack_verb_continuous = "bashes"
+	attack_verb_simple = "bash"
+	a_intent = INTENT_HARM
+	del_on_death = TRUE
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	footstep_type = FOOTSTEP_MOB_SHOE
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ipcshell
+	loot = list(/obj/effect/decal/cleanable/robot_debris)
+	speech_span = SPAN_ROBOT
+	human_loot = FALSE
+
+	speak = list("Hello?","Goodbye.","Help! Please!","Don't Shoot, I'm Human!","Please!","Release Us!","Remain Calm","Do Not Panic","Evacuate Immediately","Die.","It's Gone Rogue!","There's So Much Blood...","Oh Stars, is that a Body?!","It Hurts...")
+	speak_emote = list("speaks", "intones", "murmurs","cries")
+	emote_hear = list("places its hands to its sensors.","raises its hands to the air","clutches its chest","sobs","cries out incoherently")
+
+/mob/living/simple_animal/hostile/human/shell/Initialize()
+	. = ..()
+
+	name = "Shell-[random_string(3, list("0","1","2","3","4","5","6","7","8","9"))]"
+

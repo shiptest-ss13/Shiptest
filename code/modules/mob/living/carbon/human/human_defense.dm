@@ -126,6 +126,15 @@
 		if(shield_result == -1)
 			return -1
 
+	if(back && istype(back, /obj/item/shield))
+		var/obj/item/shield/turtle = back
+		var/final_block_chance = turtle.block_chance - (clamp((armour_penetration - turtle.armour_penetration)/2,0,100)) + block_chance_modifier
+		var/shield_result = turtle.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type)
+		if(shield_result >= 1)
+			return TRUE
+		if(shield_result == -1)
+			return -1
+
 	if(wear_suit)
 		var/final_block_chance = wear_suit.block_chance - (clamp((armour_penetration - wear_suit.armour_penetration)/2,0,100)) + block_chance_modifier
 		if(wear_suit.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
@@ -1029,12 +1038,12 @@
  * Used by fire code to damage worn items.
  *
  * Arguments:
- * - delta_time
+ * - seconds_per_tick
  * - stacks: Current amount of firestacks
  *
  */
 
-/mob/living/carbon/human/proc/burn_clothing(delta_time, stacks)
+/mob/living/carbon/human/proc/burn_clothing(seconds_per_tick, stacks)
 	var/list/burning_items = list()
 	var/obscured = check_obscured_slots(TRUE)
 	//HEAD//
@@ -1079,7 +1088,7 @@
 		burning_items |= leg_clothes
 
 	for(var/obj/item/burning in burning_items)
-		burning.fire_act((stacks * 25 * delta_time)) //damage taken is reduced to 2% of this value by fire_act()
+		burning.fire_act((stacks * 25 * seconds_per_tick)) //damage taken is reduced to 2% of this value by fire_act()
 
 /mob/living/carbon/get_fire_overlay(stacks, on_fire)
 	var/fire_icon = "[dna?.species.fire_overlay || "human"]_[stacks > MOB_BIG_FIRE_STACK_THRESHOLD ? "big_fire" : "small_fire"]"
@@ -1094,10 +1103,10 @@
 
 	return GLOB.fire_appearances[fire_icon]
 
-/mob/living/carbon/human/on_fire_stack(delta_time, datum/status_effect/fire_handler/fire_stacks/fire_handler)
+/mob/living/carbon/human/on_fire_stack(seconds_per_tick, datum/status_effect/fire_handler/fire_stacks/fire_handler)
 	SEND_SIGNAL(src, COMSIG_HUMAN_BURNING)
-	burn_clothing(delta_time, fire_handler.stacks)
+	burn_clothing(seconds_per_tick, fire_handler.stacks)
 	var/no_protection = FALSE
 	if(dna && dna.species)
 		no_protection = dna.species.handle_fire(src, no_protection)
-	fire_handler.harm_human(delta_time, no_protection)
+	fire_handler.harm_human(seconds_per_tick, no_protection)

@@ -45,7 +45,7 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 /datum/cargo_market/proc/cycle_stock()
 	return
 
-/datum/cargo_market/proc/make_order(mob/user, list/unprocessed_packs, atom/landing_zone)
+/datum/cargo_market/proc/make_order(mob/user, list/unprocessed_packs, atom/landing_zone, datum/faction/our_faction)
 	while(unprocessed_packs.len > 0)
 		var/datum/supply_pack/initial_pack = unprocessed_packs[1]
 		if(initial_pack.no_bundle)
@@ -62,14 +62,14 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 			unprocessed_packs -= current_pack
 
 		if(combo_packs.len == 1) // No items could be bundled with the initial pack, make a single order
-			send_order(user, list(initial_pack), landing_zone)
+			send_order(user, list(initial_pack), landing_zone, our_faction)
 			unprocessed_packs -= initial_pack
 			continue
 
-		send_order(user, combo_packs, landing_zone)
+		send_order(user, combo_packs, landing_zone, our_faction)
 		unprocessed_packs -= combo_packs
 
-/datum/cargo_market/proc/send_order(mob/user, list/packs, atom/landing_zone)
+/datum/cargo_market/proc/send_order(mob/user, list/packs, atom/landing_zone, datum/faction/our_faction)
 	var/rank = "*None Provided*"
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -78,7 +78,7 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 		rank = "Silicon"
 	//Including the ship bank account means you cant open the crate lol
 	//var/datum/supply_order/SO = new(packs, name, rank, user.ckey, charge_account, market = current_market)
-	var/datum/supply_order/order = new(packs, user, rank, user.ckey, market = src, landing_zone = landing_zone)
+	var/datum/supply_order/order = new(packs, user, rank, user.ckey, market = src, landing_zone = landing_zone, our_faction = our_faction)
 	SScargo.queue_item(order)
 	return TRUE
 

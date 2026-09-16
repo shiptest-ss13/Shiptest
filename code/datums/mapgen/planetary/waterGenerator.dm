@@ -134,5 +134,5 @@
 	)
 
 /datum/biome/cave/waterplanet/fault
-	open_turf_types = list(/turf/open/lava = 5, /turf/open/water/stormy_planet_underground = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/waterplanet = 5, /turf/open/water/stormy_planet_underground = 1) ///i'll make this a new hazard to replace the lava in a follow-up -aquidu, 8/8/2026
 	mob_spawn_chance = 0

@@ -79,9 +79,9 @@
 		BIOME_HOT_CAVE = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/cave/snow/thawed,
 			BIOME_LOW_HUMIDITY = /datum/biome/cave/snow/thawed,
-			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/volcanic/lava/plasma,
-			BIOME_HIGH_HUMIDITY = /datum/biome/cave/volcanic/lava,
-			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/volcanic/lava/total
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/volcanic/plasma/less,
+			BIOME_HIGH_HUMIDITY = /datum/biome/cave/volcanic/plasma,
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/volcanic/plasma/total
 		)
 	)
 
@@ -312,19 +312,19 @@
 	)
 	feature_spawn_chance = 0.2
 
-/datum/biome/cave/volcanic/lava
+/datum/biome/cave/volcanic/plasma
 	open_turf_types = list(
-		/turf/open/lava/smooth = 10,
+		/turf/open/lava/plasma/ice_moon = 10,
 		/turf/open/floor/plating/asteroid/icerock/smooth = 1
 	)
 
-/datum/biome/cave/volcanic/lava/total
+/datum/biome/cave/volcanic/plasma/less
 	open_turf_types = list(
-		/turf/open/lava/smooth = 1
+		/turf/open/lava/plasma/ice_moon = 7,
+		/turf/open/floor/plating/asteroid/icerock/smooth = 1
 	)
 
-/datum/biome/cave/volcanic/lava/plasma
+/datum/biome/cave/volcanic/plasma/total
 	open_turf_types = list(
-		/turf/open/lava/plasma = 7,
-		/turf/open/floor/plating/asteroid/icerock/smooth = 1
+		/turf/open/lava/plasma/ice_moon = 1
 	)

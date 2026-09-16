@@ -33,7 +33,6 @@
 		/obj/item/lighter = 3,
 		/obj/item/storage/box/matches = 3,
 		/obj/item/reagent_containers/syringe/contraband/space_drugs = 1,
-		/obj/item/reagent_containers/syringe/contraband/crank = 1,
 		/obj/item/inhaler/rahkrahene = 1,
 		/obj/item/reagent_containers/syringe/contraband/mammoth = 1,
 		/obj/item/reagent_containers/syringe/contraband/morphine = 1,

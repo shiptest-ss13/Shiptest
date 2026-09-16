@@ -279,8 +279,31 @@
 	trash_type = /obj/item/popsicle_stick
 	w_class = WEIGHT_CLASS_SMALL
 	foodtypes = DAIRY | SUGAR
-	///T his is the edible part of the popsicle.
-	var/overlay_state = "creamsicle_o"
+
+	var/overlay_state = "creamsicle_o" ///This is the edible part of the popsicle.
+	var/bite_states = 4 //This value value is used for correctly setting the bite_consumption to ensure every bite changes the sprite. Do not set to zero.
+	var/bitecount = 0
+
+
+/obj/item/food/popsicle/Initialize(mapload)
+	. = ..()
+	bite_consumption = reagents.total_volume / bite_states
+	update_icon() // make sure the popsicle overlay is primed so it's not just a stick until you start eating it
+
+/obj/item/food/popsicle/make_edible()
+	. = ..()
+	AddComponent(/datum/component/edible, after_eat = CALLBACK(src, PROC_REF(after_bite)))
+
+/obj/item/food/popsicle/update_overlays()
+	. = ..()
+	if(!bitecount)
+		. += initial(overlay_state)
+		return
+	. += "[initial(overlay_state)]_[min(bitecount, 3)]"
+
+/obj/item/food/popsicle/proc/after_bite(mob/living/eater, mob/living/feeder, bitecount)
+	src.bitecount = bitecount
+	update_appearance()
 
 /obj/item/popsicle_stick
 	name = "popsicle stick"

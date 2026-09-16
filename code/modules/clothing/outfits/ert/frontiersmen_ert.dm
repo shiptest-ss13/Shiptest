@@ -298,3 +298,15 @@
 	l_hand = /obj/item/gun/ballistic/automatic/hmg/shredder // this doesnt even fit on the suit storage slot
 
 	backpack_contents = list(/obj/item/ammo_box/magazine/m12_shredder=2,/obj/item/ammo_box/a357=2,/obj/item/grenade/frag=1,/obj/item/radio=1)
+
+/datum/outfit/job/frontiersmen/ert/hullpiercer
+	name = "ERT - Frontiersman Hullpiercer"
+
+	head = /obj/item/clothing/head/helmet/frontier
+	mask = /obj/item/clothing/mask/balaclava
+	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	suit_store = /obj/item/melee/axe/frontiersmen_axe
+	gloves = /obj/item/clothing/gloves/combat
+	belt = /obj/item/storage/belt/security/military/frontiersmen/spitter_with_ammo
+
+	backpack_contents = list(/obj/item/reagent_containers/hypospray/medipen/mammoth=3,/obj/item/grenade/smokebomb=1,/obj/item/radio=1)

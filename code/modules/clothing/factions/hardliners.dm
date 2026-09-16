@@ -36,6 +36,14 @@
 //Unarmored suits//
 ///////////////////
 
+/obj/item/clothing/suit/toggle/hardliners
+	name = "hardliner leather jacket"
+	desc = "A cropped, sturdy leather jacket with hardliner iconography emblazoned on its back."
+	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
+	icon_state = "hlcoat"
+	icon_state = "hlcoat"
+
 /obj/item/clothing/suit/hardliners //Ideally, the basic suit model here should be turned into a placeholder model, and this item have "smock" or "apron" added on the end.
 	name = "white smock"
 	desc = "A plain-white surgical smock typically worn by both Hardliners and Cybersun staff. Even mercenaries need medical attention!"
@@ -165,7 +173,7 @@
 	icon = 'icons/obj/clothing/faction/hardliners/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/head.dmi'
 	hardsuit_type = "hl"
-	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION | SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/syndi/hl
 	name = "white-red hardsuit"

@@ -46,7 +46,8 @@
 	return examine_list
 
 /obj/item/attachment/gun/energy/get_cell()
-	return attached_gun.cell
+	var/obj/item/gun/energy/e_gun = attached_gun
+	return e_gun.cell
 
 /obj/item/attachment/gun/energy/e_gun
 	name = "underbarrel energy gun"

@@ -17,6 +17,9 @@
 	//TODO: Deprecate contains in favor of item
 	var/list/contains = null
 
+	// if not null, overrides the contains list when the faction matches
+	var/list/contains_factional = null
+
 	/*
 	/// Path to or the item itself what this entry is for, this should be set even if you override spawn_item to spawn your item.
 	var/item
@@ -102,11 +105,15 @@
 	fill(C)
 	return C
 
-/datum/supply_pack/proc/fill(obj/structure/closet/crate/C)
+/datum/supply_pack/proc/fill(obj/structure/closet/crate/C, datum/faction/F = null)
 	if (admin_spawned)
 		for(var/item in contains)
 			var/atom/A = new item(C)
 			A.flags_1 |= ADMIN_SPAWNED_1
 	else
-		for(var/item in contains)
-			new item(C)
+		if (contains_factional && F ? faction.allowed_faction(F) : FALSE)
+			for(var/item in contains_factional)
+				new item(C)
+		else
+			for(var/item in contains)
+				new item(C)

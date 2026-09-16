@@ -364,6 +364,9 @@
 	icon_state = "stairs-wood-r"
 	base_icon_state = "stairs-wood-r"
 
+/turf/open/floor/plasteel/stairs/dark
+	color = COLOR_FLOORTILE_GRAY
+
 /turf/open/floor/plasteel/rockvault
 	icon_state = "rockvault"
 	base_icon_state = "rockvault"

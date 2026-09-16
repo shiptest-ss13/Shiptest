@@ -64,6 +64,7 @@
 /obj/item/folder/documents/syndicate/ngr
 	document = /obj/item/documents/syndicate/ngr
 	icon_state = "folder_ngr"
+	desc = "A folder stamped \"Top Secret - Property of the New Gorlex Republic.\""
 
 /obj/item/folder/documents/solgov
 	document = /obj/item/documents/solgov

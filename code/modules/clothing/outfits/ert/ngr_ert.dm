@@ -339,7 +339,7 @@
 	uniform = /obj/item/clothing/under/syndicate/ngr
 	accessory = /obj/item/clothing/accessory/holster/ringneck
 	gloves = /obj/item/clothing/gloves/insulated
-	suit = /obj/item/clothing/suit/space/hardsuit/bomb/ngr
+	suit = /obj/item/clothing/suit/space/hardsuit/ngrheavy
 	belt = /obj/item/storage/belt/utility/full/ert
 	shoes = /obj/item/clothing/shoes/combat
 	suit_store = null

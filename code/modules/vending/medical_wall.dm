@@ -38,7 +38,7 @@
 		/obj/item/storage/pill_bottle/licarb = 4,
 		/obj/item/storage/pill_bottle/charcoal/less = 2,
 		/obj/item/reagent_containers/syringe/stasis = 4,
-		/obj/item/reagent_containers/syringe/antiviral = 4,
+		/obj/item/reagent_containers/syringe/antibiotic = 4,
 		/obj/item/shock_blanket/emergency = 2,
 		/obj/item/temperature_pack/cold = 1,
 		/obj/item/temperature_pack/heat = 1,

@@ -24,7 +24,7 @@
 	species_pain_mod = 0.9
 	var/web_cooldown = 30
 	var/web_ready = TRUE
-	var/spinner_rate = 75
+	var/spinner_rate = 15
 
 	species_organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
@@ -52,12 +52,6 @@
 	if(unique)
 		return random_unique_spider_name()
 	return spider_name()
-
-/datum/species/spider/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
-	if(chem.type == /datum/reagent/toxin/pestkiller)
-		H.adjustToxLoss(3)
-		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
-	return ..()
 
 /mob/living/carbon/human/species/spider
 	race = /datum/species/spider
@@ -106,10 +100,10 @@
 		to_chat(H, span_warning("There's already a web here!"))
 		return
 	// Should have some minimum amount of food before trying to activate
-	var/nutrition_threshold = NUTRITION_LEVEL_FED
+	var/nutrition_threshold = NUTRITION_LEVEL_HUNGRY
 	if (H.nutrition >= nutrition_threshold)
 		to_chat(H, "<i>You begin spinning some web...</i>")
-		if(!do_after(H, 10 SECONDS, T, hidden = TRUE))
+		if(!do_after(H, 2.5 SECONDS, T, hidden = TRUE))
 			to_chat(H, span_warning("Your web spinning was interrupted!"))
 			return
 		if(prob(75))
@@ -120,7 +114,7 @@
 		to_chat(H, "<i>You weave a web on the ground with your spinneret!</i>")
 
 	else
-		to_chat(H, span_warning("You're too hungry to spin web right now, eat something first!"))
+		to_chat(H, span_warning("You're too hungry to spin a web right now, eat something first!"))
 		return
 /*
 	This took me far too long to figure out so I'm gonna document it here.
@@ -138,7 +132,7 @@
 	if(E.web_ready == FALSE)
 		to_chat(H, span_warning("You need to wait awhile to regenerate web fluid."))
 		return
-	var/nutrition_threshold = NUTRITION_LEVEL_FED
+	var/nutrition_threshold = NUTRITION_LEVEL_HUNGRY
 	if (H.nutrition >= nutrition_threshold)
 		to_chat(H, "<span class='warning'>You pull out a strand from your spinneret, ready to wrap a target. <BR> \
 		(Press ALT+CLICK or MMB on the target to start wrapping.)</span>")
@@ -146,7 +140,7 @@
 		RegisterSignals(H, list(COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON), PROC_REF(cocoonAtom))
 		return
 	else
-		to_chat(H, span_warning("You're too hungry to spin web right now, eat something first!"))
+		to_chat(H, span_warning("You're too hungry to spin a web right now, eat something first!"))
 		return
 
 /datum/action/innate/spin_cocoon/proc/cocoonAtom(mob/living/carbon/human/species/spider/H, atom/movable/A)
@@ -181,6 +175,7 @@
 			H.visible_message(span_danger("[H] wraps [A] into a large cocoon!"))
 			return
 		else
+			C.icon_state = pick("cocoon1", "cocoon2","cocoon3")
 			A.forceMove(C)
 			H.visible_message(span_danger("[H] wraps [A] into a cocoon!"))
 			return

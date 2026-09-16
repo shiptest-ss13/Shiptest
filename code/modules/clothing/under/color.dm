@@ -245,3 +245,57 @@
 	name = "maroon jumpskirt"
 	icon_state = "maroon_skirt"
 	item_state = "r_suit"
+
+/obj/item/clothing/under/shortjumpsuit
+	name = "short jumpsuit"
+	desc = "A shortened down jumpsuit, for when sleeves are optional."
+	dying_key = DYE_REGISTRY_UNDER
+	roll_down = TRUE
+	icon = 'icons/obj/clothing/under/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/color.dmi'
+	supports_variations = DIGITIGRADE_VARIATION
+	icon_state = "shortjump"
+	item_state = "shortjump"
+	unique_reskin = list("black short jumpsuit" = "shortjumpblack",
+						"grey short jumpsuit" = "shortjumpgrey",
+						"navy short jumpsuit" = "shortjumpblue",
+						"green short jumpsuit" = "shortjumpgreen",
+						"maroon short jumpsuit" = "shortjumpred",
+						"white short jumpsuit" = "shortjumpwhite",
+						"brown short jumpsuit" = "shortjumpbrown",
+						"khaki short jumpsuit" = "shortjump"
+						)
+
+/obj/item/clothing/under/shortjumpsuit/black
+	name = "black short jumpsuit"
+	current_skin = "black short jumpsuit"
+
+
+/obj/item/clothing/under/shortjumpsuit/grey
+	name = "grey short jumpsuit"
+	current_skin = "grey short jumpsuit"
+
+
+/obj/item/clothing/under/shortjumpsuit/navy
+	name = "navy short jumpsuit"
+	current_skin = "navy short jumpsuit"
+
+
+/obj/item/clothing/under/shortjumpsuit/green
+	name = "green short jumpsuit"
+	current_skin = "green short jumpsuit"
+
+
+/obj/item/clothing/under/shortjumpsuit/maroon
+	name = "maroon short jumpsuit"
+	current_skin = "maroon short jumpsuit"
+
+
+/obj/item/clothing/under/shortjumpsuit/white
+	name = "white short jumpsuit"
+	current_skin = "white short jumpsuit"
+
+
+/obj/item/clothing/under/shortjumpsuit/brown
+	name = "brown short jumpsuit"
+	current_skin = "brown short jumpsuit"

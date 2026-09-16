@@ -267,11 +267,11 @@
 	list_reagents = list(/datum/reagent/medicine/potass_iodide = 15)
 	rename_with_volume = TRUE
 
-/obj/item/reagent_containers/pill/three_eye
+/obj/item/reagent_containers/pill/truesight
 	name = "peculiar pill"
 	desc = "I don't like this..."
 	icon_state = "pill_threeeye"
-	list_reagents = list(/datum/reagent/three_eye = 25)
+	list_reagents = list(/datum/reagent/truesight = 25)
 
 /obj/item/reagent_containers/pill/finobranc
 	name = "finobranc tablet"

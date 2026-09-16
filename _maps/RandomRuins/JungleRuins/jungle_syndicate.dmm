@@ -198,7 +198,6 @@
 	},
 /obj/structure/filingcabinet{
 	pixel_x = -10;
-	pixel_y = 0;
 	density = 0
 	},
 /turf/open/floor/wood/walnut,
@@ -304,7 +303,6 @@
 	pixel_y = 3
 	},
 /obj/item/pen{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /turf/open/floor/wood/walnut,
@@ -860,7 +858,7 @@
 /turf/open/floor/plating/jungleplanet{
 	icon_state = "plating_rust"
 	},
-/area/ruin/jungle/syndifort/jerry)
+/area/overmap_encounter/planetoid/jungle/explored)
 "nT" = (
 /obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/siding/wood/walnut{
@@ -1181,7 +1179,6 @@
 "qV" = (
 /obj/machinery/light/small/directional/west,
 /obj/item/attachment/rail_light{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -1611,9 +1608,7 @@
 /turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort/storage)
 "xA" = (
-/obj/effect/turf_decal/siding/wood/walnut{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/item/radio/intercom/directional/south,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
@@ -1738,7 +1733,7 @@
 /turf/open/floor/plating/jungleplanet{
 	icon_state = "plating_rust"
 	},
-/area/ruin/jungle/syndifort)
+/area/overmap_encounter/planetoid/jungle/explored)
 "yJ" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/asteroid/dirt/jungle,
@@ -1755,7 +1750,6 @@
 	},
 /obj/item/radio/intercom/directional/south,
 /obj/item/chair{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /turf/open/floor/plasteel/dark,
@@ -1893,9 +1887,7 @@
 /area/ruin/jungle/syndifort)
 "AJ" = (
 /obj/effect/spawner/bunk_bed,
-/obj/effect/turf_decal/siding/wood/walnut{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/structure/sign/poster/rilena/random{
 	pixel_x = 32
 	},
@@ -2252,9 +2244,7 @@
 /obj/effect/spawner/bunk_bed{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood/walnut{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/syndifort/dorms)
@@ -2280,11 +2270,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/wooden,
 /obj/item/pickaxe/mini{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/item/shovel{
-	pixel_x = 0;
 	pixel_y = -6
 	},
 /obj/item/hatchet/wooden,
@@ -2515,7 +2503,7 @@
 /turf/open/floor/plating/jungleplanet{
 	icon_state = "plating_rust"
 	},
-/area/ruin/jungle/syndifort/medical)
+/area/overmap_encounter/planetoid/jungle/explored)
 "LO" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2638,7 +2626,7 @@
 /turf/open/floor/plating/jungleplanet{
 	icon_state = "plating_rust"
 	},
-/area/ruin/jungle/syndifort)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ol" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -2665,12 +2653,10 @@
 	dir = 10
 	},
 /obj/item/cutting_board{
-	pixel_x = -1;
-	pixel_y = 0
+	pixel_x = -1
 	},
 /obj/structure/table/reinforced,
 /obj/item/food/grown/potato{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/item/melee/knife{
@@ -2729,8 +2715,7 @@
 	dir = 8
 	},
 /obj/item/chair{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/jungle/syndifort/canteen)
@@ -2743,7 +2728,6 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "OW" = (
 /obj/item/analyzer{
-	pixel_x = 0;
 	pixel_y = 7
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2796,9 +2780,7 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Qf" = (
-/obj/effect/turf_decal/siding/wood/walnut{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/effect/turf_decal/siding/wood/corner/walnut{
 	dir = 4
 	},
@@ -3031,9 +3013,7 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Uj" = (
-/obj/effect/turf_decal/siding/wood/walnut{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood/walnut,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /obj/item/paper_bin{
@@ -3379,10 +3359,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/north,
-/obj/item/ammo_box/magazine/m45_cobra{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/item/ammo_box/magazine/m45_cobra,
 /obj/item/ammo_box/magazine/m45_cobra{
 	pixel_x = -12;
 	pixel_y = 5
@@ -3418,9 +3395,7 @@
 /obj/item/radio/intercom/directional/north,
 /obj/machinery/nuclearbomb/beer{
 	desc = "A Corporate War-era atomic bomb, stripped of its payload and filled with booze. Its control panel lights are dimly flickering, a beer-tap next to them.";
-	name = "syndicate beer keg";
-	pixel_x = 0;
-	pixel_y = 0
+	name = "syndicate beer keg"
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass{
 	pixel_x = 3;
@@ -3524,7 +3499,6 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "ZL" = (
 /obj/item/wrench/syndie{
-	pixel_x = 0;
 	pixel_y = 12
 	},
 /obj/item/weldingtool/largetank{

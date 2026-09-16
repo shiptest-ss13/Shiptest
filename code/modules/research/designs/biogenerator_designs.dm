@@ -175,5 +175,5 @@
 	id = "seaweedsheet"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 60)
-	build_path = /obj/item/food/grown/seaweed
+	build_path = /obj/item/food/grown/seaweed/sheet
 	category = list("initial","Food")

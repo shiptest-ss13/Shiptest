@@ -143,6 +143,16 @@
 /obj/item/tank/internals/emergency_oxygen/double/empty/populate_gas()
 	return
 
+//old-style one
+
+/obj/item/tank/internals/emergency_oxygen/low_capacity
+	name = "emergency oxygen tank"
+	desc = "An outdated pattern of oxygen tank, used for emergencies. Contains very little oxygen, so try to conserve it until you actually need it."
+	w_class = WEIGHT_CLASS_TINY
+	icon_state = "emergency"
+	force = 3 //really small cheapo one
+	volume = 0.5 // old old thing
+
 // *
 // * GENERIC
 // *

@@ -104,7 +104,7 @@
 
 /datum/component/ammo_hud/Initialize()
 	. = ..()
-	if(!istype(parent, /obj/item/gun) && !istype(parent, /obj/item/weldingtool))
+	if(!istype(parent, /obj/item/gun))
 		return COMPONENT_INCOMPATIBLE
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(wake_up))
 

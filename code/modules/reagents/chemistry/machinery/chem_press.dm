@@ -31,8 +31,8 @@
 
 /obj/machinery/chem_press/examine(mob/user)
 	. = ..()
-	. += span_notice("There's a <b>small screw</b> that can <b>help</b> to adjust the pill size.")
-	. += span_notice("There's a small dial you could <b>push</b> with a <b>screwdriver</b> to adjust the pill color.")
+	. += span_notice("Left click with a <b>screwdriver</b> to adjust the pill size.")
+	. += span_notice("Right click with a <b>screwdriver</b> to adjust the pill color.")
 	if(!bottle)
 		. += span_notice("The <b>pill bottle</b> slot is empty.")
 	if(!beaker)

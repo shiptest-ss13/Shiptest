@@ -14,7 +14,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "af" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -52,7 +52,6 @@
 "ap" = (
 /obj/structure/table/reinforced,
 /obj/item/cutting_board{
-	pixel_x = 0;
 	pixel_y = 2
 	},
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
@@ -112,7 +111,6 @@
 /obj/structure/filingcabinet/chestdrawer/wheeled,
 /obj/machinery/light/small/directional/west,
 /obj/machinery/button/door{
-	pixel_x = 0;
 	pixel_y = 22;
 	name = "lockdown override (WARNING)";
 	id = "vigilockdown"
@@ -147,8 +145,7 @@
 /area/ruin/space/has_grav/deepstorage/lobby)
 "bi" = (
 /obj/machinery/defibrillator_mount/loaded{
-	pixel_x = 26;
-	pixel_y = 0
+	pixel_x = 26
 	},
 /obj/structure/table/optable,
 /turf/open/floor/plasteel/showroomfloor,
@@ -215,7 +212,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "bF" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 5
@@ -262,7 +259,7 @@
 /area/ruin/space/has_grav/deepstorage/lobby)
 "bL" = (
 /turf/closed/wall/mineral/titanium,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "bT" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -283,7 +280,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "cd" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 8
@@ -389,7 +386,7 @@
 /obj/structure/lattice,
 /obj/item/stack/tile/plasteel/dark,
 /turf/open/space/basic,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "cI" = (
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/space/has_grav/deepstorage/cargo)
@@ -668,7 +665,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "ey" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 10
@@ -966,7 +963,7 @@
 /area/ruin/space/has_grav/deepstorage/security/office)
 "go" = (
 /turf/open/floor/plating/asteroid/moon,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "gu" = (
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/machinery/light/directional/south,
@@ -1153,12 +1150,10 @@
 "hB" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_x = 7;
-	pixel_y = 0
+	pixel_x = 7
 	},
 /obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -1409,7 +1404,6 @@
 	},
 /obj/machinery/button/door{
 	pixel_x = -20;
-	pixel_y = 0;
 	id = "vigiturret1";
 	dir = 4;
 	name = "turret release"
@@ -1455,7 +1449,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "iE" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 6
@@ -1486,7 +1480,7 @@
 "iJ" = (
 /obj/item/stack/ore/salvage/scraptitanium/five,
 /turf/open/space/basic,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "iL" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/opaque/vired/line,
@@ -1571,7 +1565,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/moon,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "jr" = (
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1651,12 +1645,10 @@
 "jG" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/bag/tray/cafeteria{
-	pixel_x = 0;
 	pixel_y = -3
 	},
 /obj/item/storage/bag/tray/cafeteria,
 /obj/item/storage/bag/tray/cafeteria{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
@@ -1707,7 +1699,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "jU" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 6
@@ -1795,10 +1787,9 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "kA" = (
 /obj/structure/filingcabinet/chestdrawer{
-	pixel_x = 0;
 	pixel_y = 18
 	},
 /turf/open/floor/carpet/red,
@@ -1857,7 +1848,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating/asteroid/moon,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "ld" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 6
@@ -1967,7 +1958,6 @@
 	pixel_y = 4
 	},
 /obj/item/reagent_containers/glass/rag{
-	pixel_x = 0;
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel,
@@ -2011,7 +2001,6 @@
 "mi" = (
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/button/door{
-	pixel_x = 0;
 	pixel_y = 22;
 	name = "lockdown override (WARNING)";
 	id = "vigilockdown"
@@ -2122,7 +2111,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "nc" = (
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 1
@@ -2271,7 +2260,6 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = 0;
 	pixel_y = -22;
 	id = "Vishitter";
 	normaldoorcontrol = 1;
@@ -2400,6 +2388,9 @@
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/engineering)
+"pe" = (
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/space)
 "pf" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -2433,7 +2424,7 @@
 /obj/structure/lattice,
 /obj/item/stack/cable_coil/cut/red,
 /turf/open/space/basic,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "po" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -2493,7 +2484,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "pH" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -2790,7 +2781,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "rI" = (
 /obj/machinery/power/terminal,
 /obj/structure/railing{
@@ -2831,7 +2822,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "rS" = (
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 1
@@ -2923,7 +2914,7 @@
 /area/ruin/space/has_grav/deepstorage/overwatch)
 "sL" = (
 /turf/closed/mineral,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "sN" = (
 /obj/structure/crate_shelf/built{
 	capacity = 2
@@ -3183,8 +3174,7 @@
 "uy" = (
 /obj/structure/sink/kitchen{
 	dir = 8;
-	pixel_x = 2;
-	pixel_y = 0
+	pixel_x = 2
 	},
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /turf/open/floor/plasteel,
@@ -3283,13 +3273,13 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "uR" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating/asteroid/moon,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "uT" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2{
 	dir = 1
@@ -3337,7 +3327,7 @@
 "vb" = (
 /obj/structure/girder,
 /turf/open/floor/engine/hull/reinforced,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "vc" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -3488,7 +3478,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "wk" = (
 /obj/structure/catwalk/over,
 /obj/structure/cable/yellow{
@@ -3502,7 +3492,7 @@
 "wl" = (
 /obj/item/stack/rods/ten,
 /turf/open/floor/plating/asteroid/moon,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "wp" = (
 /obj/structure/barricade/directional/flippedtable{
 	dir = 4
@@ -3524,7 +3514,6 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = 0;
 	pixel_y = -20;
 	id = "frontiepod1"
 	},
@@ -3538,7 +3527,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "wx" = (
 /obj/effect/decal/cleanable/glass/plastitanium,
 /obj/item/shard/plastitanium{
@@ -3581,7 +3570,6 @@
 /area/ruin/space/has_grav/deepstorage/cargo)
 "wH" = (
 /obj/machinery/shower{
-	pixel_x = 0;
 	pixel_y = 15
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central1{
@@ -3650,7 +3638,7 @@
 "xh" = (
 /obj/item/stack/tile/plasteel/dark,
 /turf/open/space/basic,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "xj" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
@@ -3816,7 +3804,7 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/power/rtg,
 /turf/open/floor/plating/airless,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "yp" = (
 /obj/structure/chair/office,
 /turf/open/floor/carpet/blue,
@@ -3895,7 +3883,6 @@
 	dir = 1
 	},
 /obj/structure/mirror{
-	pixel_x = 0;
 	pixel_y = -26
 	},
 /obj/effect/turf_decal/siding/thinplating{
@@ -4017,7 +4004,6 @@
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_x = -21;
-	pixel_y = 0;
 	id = "frontiepod2"
 	},
 /turf/open/floor/plasteel/tech/techmaint/airless,
@@ -4219,7 +4205,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "AP" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -4259,12 +4245,10 @@
 "AT" = (
 /obj/structure/closet/crate/internals,
 /obj/item/tank/internals/emergency_oxygen/engi{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /obj/item/tank/internals/emergency_oxygen/engi{
-	pixel_x = 7;
-	pixel_y = 0
+	pixel_x = 7
 	},
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/tank/jetpack/oxygen,
@@ -4332,9 +4316,7 @@
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/white/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/white/corner,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -4380,17 +4362,14 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "BA" = (
 /obj/item/gun/energy/e_gun/e11/empty_cell,
 /turf/open/space/basic,
 /area/ruin/space/has_grav/deepstorage/security/office)
 "BG" = (
 /obj/structure/table/reinforced,
-/obj/item/wallframe/intercom/table{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/item/wallframe/intercom/table,
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/deepstorage/security/office)
 "BI" = (
@@ -4475,7 +4454,7 @@
 "Ck" = (
 /obj/item/stack/ore/salvage/scrapmetal/ten,
 /turf/open/space/basic,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "Cn" = (
 /obj/structure/table/glass,
 /obj/item/toy/cards/deck/kotahi{
@@ -4508,7 +4487,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "Cw" = (
 /obj/structure/barricade/directional/flippedtable{
 	dir = 4
@@ -4524,11 +4503,11 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "CJ" = (
 /obj/structure/girder,
 /turf/open/space/basic,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "CM" = (
 /obj/effect/turf_decal/trimline/opaque/warrablue/arrow_cw{
 	dir = 4
@@ -4560,7 +4539,7 @@
 "CT" = (
 /obj/effect/mob_spawn/human/corpse/vigilitas_private,
 /turf/open/space/basic,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "CW" = (
 /obj/structure/table/glass,
 /obj/item/toy/cards/deck{
@@ -4606,15 +4585,12 @@
 /obj/effect/turf_decal/siding/yellow,
 /obj/structure/rack,
 /obj/item/clothing/gloves/insulated{
-	pixel_x = 0;
 	pixel_y = 9
 	},
 /obj/item/clothing/gloves/insulated{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/item/clothing/gloves/insulated{
-	pixel_x = 0;
 	pixel_y = -1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -4635,6 +4611,9 @@
 /obj/structure/lattice,
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/space/deepstorage)
+"DD" = (
+/turf/closed/wall/r_wall,
+/area/ruin/space)
 "DH" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "gibbl2"
@@ -4738,7 +4717,6 @@
 	dir = 10
 	},
 /obj/machinery/button/door{
-	pixel_x = 0;
 	pixel_y = 22;
 	id = "vicargodoor";
 	name = "cargo blasts"
@@ -4833,7 +4811,7 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/cable,
 /turf/open/floor/plating/airless,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "Fi" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
 	dir = 1;
@@ -4900,7 +4878,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "FO" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -4992,7 +4970,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "Gq" = (
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -5216,8 +5194,7 @@
 "HA" = (
 /obj/structure/chair/sofa/blue/corpo/right/directional/east,
 /obj/structure/sign/warra/vigilitas{
-	pixel_x = -30;
-	pixel_y = 0
+	pixel_x = -30
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/space/has_grav/deepstorage/crewquarters)
@@ -5254,10 +5231,7 @@
 	pixel_x = 7;
 	pixel_y = 7
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/item/ammo_box/magazine/wt550m9{
 	pixel_x = -16;
 	pixel_y = -5
@@ -5326,12 +5300,10 @@
 "Ia" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_x = -6;
-	pixel_y = 0
+	pixel_x = -6
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -5466,7 +5438,7 @@
 "IU" = (
 /obj/item/stack/rods/ten,
 /turf/open/space/basic,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "IW" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -5611,19 +5583,16 @@
 "JR" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/item/pen{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/deepstorage/security)
 "JW" = (
 /obj/structure/sign/poster/contraband/eoehoma{
-	pixel_x = 31;
-	pixel_y = 0
+	pixel_x = 31
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/has_grav/deepstorage/crewquarters)
@@ -5712,7 +5681,6 @@
 	dir = 1
 	},
 /obj/structure/mirror{
-	pixel_x = 0;
 	pixel_y = -26
 	},
 /obj/effect/turf_decal/siding/thinplating{
@@ -5765,7 +5733,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "KB" = (
 /obj/structure/chair{
 	dir = 1
@@ -5787,7 +5755,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "KM" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -5862,7 +5830,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "Ld" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -6027,9 +5995,7 @@
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/white/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/white/corner,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
@@ -6089,6 +6055,10 @@
 "LU" = (
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/space/has_grav/deepstorage/engineering)
+"LY" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/ruin/space)
 "Mc" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -6123,7 +6093,7 @@
 	icon_state = "2-9"
 	},
 /turf/open/floor/plating/asteroid/moon,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "Mv" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/siding/white{
@@ -6199,7 +6169,6 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = 0;
 	pixel_y = -20;
 	id = "frontiepod3"
 	},
@@ -6315,6 +6284,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/security/office)
+"Nt" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space)
 "Nx" = (
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/bathroom)
@@ -6401,7 +6373,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "NW" = (
 /obj/machinery/camera/autoname/directional/north,
 /turf/open/space/basic,
@@ -6413,6 +6385,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/engineering)
+"Oc" = (
+/obj/effect/mob_spawn/human/corpse/frontier/space,
+/turf/open/space/basic,
+/area/ruin/space)
 "Ol" = (
 /obj/item/stack/tile/plasteel,
 /turf/open/floor/engine/hull/reinforced,
@@ -6424,8 +6400,7 @@
 	},
 /obj/item/radio/intercom/wideband/table,
 /obj/item/wallframe/intercom/table{
-	pixel_x = 19;
-	pixel_y = 0
+	pixel_x = 19
 	},
 /obj/machinery/airalarm/directional/south,
 /obj/structure/cable{
@@ -6495,7 +6470,6 @@
 	pixel_y = 4
 	},
 /obj/item/cigbutt{
-	pixel_x = 0;
 	pixel_y = 7
 	},
 /obj/effect/decal/cleanable/ash,
@@ -6609,7 +6583,6 @@
 /obj/structure/filingcabinet/chestdrawer{
 	dir = 8;
 	pixel_x = 10;
-	pixel_y = 0;
 	density = 0
 	},
 /obj/machinery/light/directional/east,
@@ -6747,8 +6720,7 @@
 	dir = 6
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = 6;
-	pixel_y = 32
+	pixel_x = 6
 	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/arrow_cw{
 	dir = 1
@@ -6887,7 +6859,7 @@
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating/airless,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "QR" = (
 /obj/machinery/door/airlock/public{
 	name = "Toilet";
@@ -6924,7 +6896,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "QY" = (
 /turf/closed/wall,
 /area/ruin/space/shuttle2)
@@ -7222,7 +7194,6 @@
 	},
 /obj/structure/noticeboard/directional/south,
 /obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders{
-	pixel_x = 0;
 	pixel_y = -18
 	},
 /turf/open/floor/plasteel/mono,
@@ -7336,7 +7307,7 @@
 /obj/structure/lattice,
 /obj/effect/gibspawner/human,
 /turf/open/space/basic,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "Uq" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -7546,7 +7517,7 @@
 /area/ruin/space/deepstorage)
 "Wa" = (
 /turf/closed/wall,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "We" = (
 /obj/structure/chair/bench/blue/directional/east,
 /turf/open/floor/plasteel/dark,
@@ -7591,8 +7562,7 @@
 "Wx" = (
 /obj/structure/dresser{
 	dir = 8;
-	pixel_x = 7;
-	pixel_y = 0
+	pixel_x = 7
 	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/mono,
@@ -7665,7 +7635,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "WZ" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -7676,7 +7646,7 @@
 "Xa" = (
 /obj/structure/grille,
 /turf/open/floor/plating/airless,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "Xf" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -7819,7 +7789,6 @@
 "XG" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
-	pixel_x = 0;
 	pixel_y = 6;
 	on = 1
 	},
@@ -7910,7 +7879,7 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "Yf" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -7932,7 +7901,7 @@
 "Yk" = (
 /obj/structure/frame/machine,
 /turf/open/space/basic,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "Ym" = (
 /obj/effect/turf_decal/siding/thinplating/dark/end,
 /obj/structure/cable{
@@ -7965,7 +7934,6 @@
 "Yp" = (
 /obj/effect/spawner/bunk_bed,
 /obj/structure/sign/poster/contraband/lusty_xenomorph{
-	pixel_x = 0;
 	pixel_y = 33
 	},
 /turf/open/floor/carpet/red,
@@ -7978,7 +7946,7 @@
 	icon_state = "1-6"
 	},
 /turf/open/floor/plating/asteroid/moon,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "Yx" = (
 /obj/effect/turf_decal/trimline/opaque/vired/line,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -8124,7 +8092,7 @@
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating/airless,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "ZF" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -8159,7 +8127,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space/deepstorage)
+/area/ruin/space)
 "ZM" = (
 /obj/machinery/iv_drip,
 /turf/open/floor/plasteel/showroomfloor,
@@ -9567,7 +9535,7 @@ bL
 nn
 rB
 FK
-EH
+LY
 Ya
 nn
 jP
@@ -9653,7 +9621,7 @@ nn
 pn
 Yk
 jP
-EH
+LY
 bL
 nn
 iJ
@@ -9732,13 +9700,13 @@ nn
 nn
 IU
 nn
-EH
+LY
 nn
 Un
-EH
+LY
 nn
 nn
-EH
+LY
 nn
 nn
 nn
@@ -9814,11 +9782,11 @@ bL
 wi
 pA
 Kz
-EH
+LY
 pA
 nn
-EH
-EH
+LY
+LY
 nn
 CT
 nn
@@ -9840,9 +9808,9 @@ go
 go
 sL
 sL
-Xn
-Xn
-Xn
+DD
+DD
+DD
 nn
 nn
 nn
@@ -9901,7 +9869,7 @@ nn
 iJ
 nn
 bX
-EH
+LY
 nn
 nn
 nn
@@ -9922,8 +9890,8 @@ go
 go
 go
 sL
-Dp
-Dp
+Nt
+Nt
 Xa
 nn
 nn
@@ -9978,7 +9946,7 @@ bL
 pA
 nn
 pA
-EH
+LY
 nn
 nn
 wr
@@ -10053,7 +10021,7 @@ Bv
 nn
 nn
 nn
-EH
+LY
 nn
 nn
 bL
@@ -10066,7 +10034,7 @@ pA
 ad
 WY
 Wa
-EH
+LY
 nn
 nn
 nn
@@ -10086,8 +10054,8 @@ sL
 jn
 go
 sL
-Dp
-Dp
+Nt
+Nt
 Xa
 nn
 nn
@@ -10135,8 +10103,8 @@ nn
 nn
 nn
 nn
-EH
-EH
+LY
+LY
 nn
 iJ
 Wa
@@ -10148,7 +10116,7 @@ mZ
 mZ
 Wa
 Wa
-EH
+LY
 nn
 nn
 nn
@@ -10163,14 +10131,14 @@ nn
 nn
 sL
 sL
-Xn
+DD
 sL
 ev
 sL
 sL
-Xn
-Xn
-Xn
+DD
+DD
+DD
 nn
 nn
 nn
@@ -10245,11 +10213,11 @@ nn
 nn
 nn
 sL
-Xn
-Dp
+DD
+Nt
 ev
-Dp
-Xn
+Nt
+DD
 sL
 sL
 nn
@@ -10308,8 +10276,8 @@ Lb
 CB
 nn
 Wa
-ZR
-ZR
+pe
+pe
 vb
 nn
 nn
@@ -10327,11 +10295,11 @@ nn
 nn
 nn
 nn
-Xn
-Dp
+DD
+Nt
 ZK
-Dp
-Xn
+Nt
+DD
 sL
 sL
 nn
@@ -10394,7 +10362,7 @@ nn
 nn
 nn
 nn
-dP
+Oc
 nn
 nn
 nn
@@ -10409,11 +10377,11 @@ nn
 nn
 nn
 nn
-Xn
+DD
 Xa
 Xa
 Xa
-Xn
+DD
 sL
 nn
 nn
@@ -10800,7 +10768,7 @@ nn
 nn
 nn
 nn
-dP
+Oc
 nn
 nn
 nn
@@ -11625,11 +11593,11 @@ nn
 nn
 nn
 sL
-Xn
+DD
 Xa
 Xa
 Xa
-Xn
+DD
 nn
 nn
 nn
@@ -11707,11 +11675,11 @@ nn
 nn
 sL
 sL
-Xn
-Dp
+DD
+Nt
 AN
-Dp
-Xn
+Nt
+DD
 sL
 nn
 nn
@@ -11789,11 +11757,11 @@ nn
 nn
 sL
 sL
-Xn
+DD
 sL
 ev
 sL
-Xn
+DD
 sL
 sL
 nn
@@ -11871,11 +11839,11 @@ nn
 nn
 sL
 sL
-Xn
+DD
 sL
 jn
 sL
-Xn
+DD
 go
 sL
 go
@@ -13174,10 +13142,10 @@ sL
 sL
 go
 go
-Xn
-Xn
-Xn
-Xn
+DD
+DD
+DD
+DD
 nn
 nn
 nn
@@ -13258,7 +13226,7 @@ Yu
 go
 sL
 sL
-Dp
+Nt
 Xa
 nn
 nn
@@ -13422,7 +13390,7 @@ go
 go
 sL
 sL
-Dp
+Nt
 Xa
 nn
 nn
@@ -13502,10 +13470,10 @@ go
 go
 go
 go
-Xn
-Xn
-Xn
-Xn
+DD
+DD
+DD
+DD
 nn
 nn
 nn

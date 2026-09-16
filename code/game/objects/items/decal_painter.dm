@@ -7,10 +7,10 @@
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
 	drop_sound = 'sound/items/handling/device_drop.ogg'
 	icon_state = "floor_sprayer"
-	desc = "An airlock painter, reprogramed to use a different style of paint in order to apply decals for floor tiles as well, in addition to repainting doors. Decals break when the floor tiles are removed. Use it inhand to change the design, and Ctrl-Click to switch to decal-painting mode."
+	desc = "An advanced autopainter capable of applying decorative finishes to standard floor tiles. These finishes are removed when the floor tile is pried up. Use it inhand to change the design."
 
 	var/floor_icon
-	var/floor_state = "steel"
+	var/floor_state = "tiled_gray"
 	var/floor_dir = SOUTH
 
 	item_state = "electronic"
@@ -18,9 +18,11 @@
 	var/list/allowed_directions = list("south")
 
 	var/static/list/allowed_states = list(
-		"steel", "dark", "white", "freezer", "tile_full", "cargo_one_full",
-		"kafel_full", "monotile", "grid", "ridged", "stairs",
-		"stairs-l", "stairs-m", "stairs-r", "stairs-old", "stairs-t", "stairs-b"
+		"tiled_gray", "tiled_dark", "tiled_light", "tile_full",
+		"kafel_full", "ridged", "grid", "grid_dark",
+		"monotile_gray", "monotile_dark", "monotile_light", "cargo_one_full",
+		"stairs", "stairs-l", "stairs-m", "stairs-r",
+		"stairs-old", "stairs-t", "stairs-b"
 	)
 
 	var/static/list/floor_four_dirs = list(
@@ -34,7 +36,7 @@
 
 	var/turf/open/floor/plasteel/F = A
 	if(!istype(F) || istype(F, /turf/open/floor/plasteel/tech))
-		to_chat(user, span_warning("\The [src] can only be used on plasteel flooring."))
+		to_chat(user, span_warning("\The [src] can only be used on standard metal floor tiles."))
 		return
 
 	F.icon_state = floor_state
@@ -135,7 +137,7 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "decal_sprayer"
 	item_state = "decalsprayer"
-	desc = "An airlock painter, reprogramed to use a different style of paint in order to apply decals for floor tiles. Decals break when the floor tiles are removed. Use it inhand to change the design."
+	desc = "An advanced autopainter for applying decals to floor tiles. These decals are removed when the floor tile is pried up. Use it inhand to change the design."
 	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=500)
 
 	var/decal_icon
@@ -192,6 +194,102 @@
 	"trimline_arrow_cw_fill","trimline_arrow_ccw_fill","trimline_warn","trimline_warn_fill"
 	)
 
+	// preset colors matching color defines used in mapping
+	var/list/preset_colors = list(
+
+		// grayscale colors
+		"White"                    = COLOR_WHITE,
+		"Off-White"                = COLOR_OFF_WHITE,
+		"Silver"                   = COLOR_SILVER,
+		"Gray"                     = COLOR_GRAY,
+		"Gray (Very Light)"        = COLOR_VERY_LIGHT_GRAY,
+		"Gray (Floor Tile)"        = COLOR_FLOORTILE_GRAY,
+		"Gray (Monotile)"          = COLOR_MONOTILE,
+		"Gray (Dark Tile)"         = COLOR_TILE_DARK_GRAY,
+		"Black"                    = COLOR_BLACK,
+		"Black (Almost)"           = COLOR_ALMOST_BLACK,
+		"Black (Half-transparent)" = COLOR_HALF_TRANSPARENT_BLACK,
+
+		// reds
+		"Red"               = COLOR_RED,
+		"Red (Mostly Pure)" = COLOR_MOSTLY_PURE_RED,
+		"Red (Dark)"        = COLOR_DARK_RED,
+		"Red (Light)"       = COLOR_RED_LIGHT,
+		"Red (Vivid)"       = COLOR_VIVID_RED,
+		"Red (Grayish)"     = COLOR_LIGHT_GRAYISH_RED,
+		"Red (Soft)"        = COLOR_SOFT_RED,
+		"Red (Bubblegum)"   = COLOR_BUBBLEGUM_RED,
+		"Red (Gray)"        = COLOR_RED_GRAY,
+		"Red (Pale Gray)"   = COLOR_PALE_RED_GRAY,
+		"Maroon"            = COLOR_MAROON,
+
+		// oranges
+		"Orange"                 = COLOR_ORANGE,
+		"Orange (Tan)"           = COLOR_TAN_ORANGE,
+		"Orange (Bright)"        = COLOR_BRIGHT_ORANGE,
+		"Orange (Light)"         = COLOR_LIGHT_ORANGE,
+		"Orange (Pale)"          = COLOR_PALE_ORANGE,
+		"Orange (Dark)"          = COLOR_DARK_ORANGE,
+		"Orange (Moderate Dark)" = COLOR_DARK_MODERATE_ORANGE,
+
+		// yellows
+		"Yellow"             = COLOR_YELLOW,
+		"Yellow (Vivid)"     = COLOR_VIVID_YELLOW,
+		"Yellow (Very Soft)" = COLOR_VERY_SOFT_YELLOW,
+		"Yellow (Warning)"   = COLOR_WARNING,
+
+		// greens
+		"Green"                = COLOR_GREEN,
+		"Green (Gray)"         = COLOR_GREEN_GRAY,
+		"Green (Pale Gray)"    = COLOR_PALE_GREEN_GRAY,
+		"Olive"                = COLOR_OLIVE,
+		"Lime (Vibrant)"       = COLOR_VIBRANT_LIME,
+		"Lime"                 = COLOR_LIME,
+		"Lime (Very Pale)"     = COLOR_VERY_PALE_LIME_GREEN,
+		"Lime (Very Dark)"     = COLOR_VERY_DARK_LIME_GREEN,
+		"Lime (Moderate Dark)" = COLOR_DARK_MODERATE_LIME_GREEN,
+
+		// blues
+		"Blue"             = COLOR_BLUE,
+		"Blue (Bright)"    = COLOR_BRIGHT_BLUE,
+		"Blue (Moderate)"  = COLOR_MODERATE_BLUE,
+		"Blue (Light)"     = COLOR_BLUE_LIGHT,
+		"Blue (Navy)"      = COLOR_NAVY,
+		"Blue (Gray)"      = COLOR_BLUE_GRAY,
+		"Blue (Pale Gray)" = COLOR_PALE_BLUE_GRAY,
+		"Cyan"             = COLOR_CYAN,
+		"Cyan (Dark)"      = COLOR_DARK_CYAN,
+		"Teal"             = COLOR_TEAL,
+
+		// pinks and purples
+		"Pink"               = COLOR_PINK,
+		"Pink (Mostly Pure)" = COLOR_MOSTLY_PURE_PINK,
+		"Pink (Faded)"       = COLOR_FADED_PINK,
+		"Magenta"            = COLOR_MAGENTA,
+		"Magenta (Strong)"   = COLOR_STRONG_MAGENTA,
+		"Purple"             = COLOR_PURPLE,
+		"Purple (Dark)"      = COLOR_DARK_PURPLE,
+		"Purple (Gray)"      = COLOR_PURPLE_GRAY,
+		"Purple (Pale Gray)" = COLOR_PALE_PURPLE_GRAY,
+		"Violet"             = COLOR_VIOLET,
+		"Violet (Strong)"    = COLOR_STRONG_VIOLET,
+
+		// browns
+		"Beige"      = COLOR_BEIGE,
+		"Brown"      = COLOR_BROWN,
+		"Dark Brown" = COLOR_DARK_BROWN,
+
+		// wood colors
+		"Wood (Generic)"   = WOOD_COLOR_GENERIC,
+		"Wood (Rich)"      = WOOD_COLOR_RICH,
+		"Wood (Pale)"      = WOOD_COLOR_PALE,
+		"Wood (Pale 2)"    = WOOD_COLOR_PALE2,
+		"Wood (Pale 3)"    = WOOD_COLOR_PALE3,
+		"Wood (Black)"     = WOOD_COLOR_BLACK,
+		"Wood (Chocolate)" = WOOD_COLOR_CHOCOLATE,
+		"Wood (Yellow)"    = WOOD_COLOR_YELLOW,
+		)
+
 /obj/item/decal_painter/afterattack(atom/A, mob/user, proximity, params)
 	if(!proximity)
 		return
@@ -234,7 +332,8 @@
 		</center>
 		<div class='statusDisplay'>Direction: [dir2text(decal_dir)]</div>
 		<center>
-			<a href="byond://?src=[UID()];choose_color=1">Choose Color</a>
+			<a href="byond://?src=[UID()];choose_color=1">Custom Color</a>
+			<a href="byond://?src=[UID()];choose_color_preset=1">Preset Colors</a>
 		</center>
 	"}
 
@@ -286,6 +385,11 @@
 			var/chosen_colour = input(usr, "", "Choose Color", decal_color) as color|null
 			if (!isnull(chosen_colour) && usr.canUseTopic(src, BE_CLOSE, ismonkey(usr)))
 				decal_color = chosen_colour
+	if(href_list["choose_color_preset"])
+		if(!(color_disallowed.Find(decal_state)))
+			var/preset = input("Please choose a color preset.", "[src]") as null|anything in preset_colors
+			if(preset)
+				decal_color = preset_colors[preset]
 
 
 	decal_icon = icon('icons/turf/decals/decals.dmi', decal_state, decal_dir)

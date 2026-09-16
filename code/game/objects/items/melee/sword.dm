@@ -53,6 +53,7 @@
 	name = "scrap sword"
 	desc = "A jagged and painful weapon only effective on targets without an armour"
 	icon_state = "machete"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	force = 24
 	throwforce = 10
 	armour_penetration = -35
@@ -64,6 +65,7 @@
 	icon_state = "machete"
 	base_icon_state = "machete"
 	supports_variations = VOX_VARIATION
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	force = 23
 	throwforce = 15
 	max_integrity = 300
@@ -118,7 +120,7 @@
 	icon_state = "podao"
 	item_state = "podao"
 	base_icon_state = "podao"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	force = 25
 	throwforce = 10
 	armour_penetration = 30
@@ -270,7 +272,6 @@
 		/datum/reagent/toxin = 10,
 		/datum/reagent/toxin/mindbreaker = 10,
 		/datum/reagent/drug/space_drugs = 10,
-		/datum/reagent/drug/crank = 5,
 		/datum/reagent/drug/rahkrahene = 5,
 		/datum/reagent/drug/mammoth = 5,
 		/datum/reagent/drug/aranesp = 5,

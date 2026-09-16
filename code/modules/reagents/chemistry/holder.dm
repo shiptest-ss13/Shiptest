@@ -385,7 +385,7 @@
  * * can_overdose - Allows overdosing
  * * liverless - Stops reagents that aren't set as [/datum/reagent/var/self_consuming] from metabolizing
  */
-/datum/reagents/proc/metabolize(mob/living/carbon/C, can_overdose = FALSE, liverless = FALSE)
+/datum/reagents/proc/metabolize(mob/living/carbon/C, seconds_per_tick, times_fired, can_overdose = FALSE, liverless = FALSE)
 	var/list/cached_reagents = reagent_list
 	if(C)
 		expose_temperature(C.bodytemperature, 0.25)
@@ -410,8 +410,8 @@
 							need_mob_update += R.overdose_start(C)
 							log_game("[key_name(C)] has started overdosing on [R.name] at [R.volume] units.")
 					if(R.overdosed)
-						need_mob_update += R.overdose_process(C)
-				need_mob_update += R.on_mob_life(C)
+						need_mob_update += R.overdose_process(C, seconds_per_tick, times_fired)
+				need_mob_update += R.on_mob_life(C, seconds_per_tick, times_fired)
 
 	if(C && need_mob_update) //some of the metabolized reagents had effects on the mob that requires some updates.
 		C.updatehealth()
