@@ -669,9 +669,6 @@
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 8
 	},
-/obj/structure/closet/wall/med/directional/east{
-	name = "Emergency Medical Supplies"
-	},
 /obj/item/storage/firstaid/regular{
 	pixel_x = -6;
 	pixel_y = 3
@@ -705,6 +702,9 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
+	},
+/obj/structure/closet/wall/white/directional/east{
+	name = "Emergency Medical Supplies"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
