@@ -1073,17 +1073,17 @@
 /area/ship/crew/canteen)
 "jq" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/glass/mortar/mushroom{
-	pixel_x = 4;
-	pixel_y = 7
-	},
-/obj/item/cigbutt/cigarbutt{
-	pixel_x = 9;
-	pixel_y = 14
-	},
 /obj/item/cigbutt{
 	pixel_y = 5;
 	pixel_x = -10
+	},
+/obj/item/ashtray{
+	pixel_x = 3;
+	pixel_y = 7
+	},
+/obj/item/cigbutt/cigarbutt{
+	pixel_x = 8;
+	pixel_y = 11
 	},
 /turf/open/floor/carpet/nanoweave/green,
 /area/ship/crew/dorm)
@@ -1442,6 +1442,9 @@
 	pixel_y = -9;
 	pixel_x = -6
 	},
+/obj/item/clothing/under/shorts/pencilskirt{
+	pixel_x = -6
+	},
 /obj/item/storage/backpack/satchel/leather,
 /turf/open/floor/suns/hatch{
 	color = "#543C30"
@@ -1545,6 +1548,9 @@
 /obj/item/clothing/shoes/heels{
 	pixel_y = -9;
 	pixel_x = -6
+	},
+/obj/item/clothing/under/shorts/pencilskirt{
+	pixel_x = 6
 	},
 /obj/item/storage/backpack/satchel/leather,
 /turf/open/floor/suns/hatch{
@@ -5074,6 +5080,9 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 1;
 	layer = 2.045
+	},
+/obj/structure/towel_bar/directional/south{
+	pixel_y = 17
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/toilet)

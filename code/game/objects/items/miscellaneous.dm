@@ -587,3 +587,9 @@
 		"glass geranium vase" = "glassvase_geranium",
 		"glass sunflower vase" = "glassvase"
 		)
+
+/obj/item/ashtray
+	name = "ashtray"
+	desc = "Coated in the smell of cheap nicotine and bad habits. Keep away from asthmatics."
+	icon = 'icons/obj/items.dmi'
+	icon_state = "ashtray"
