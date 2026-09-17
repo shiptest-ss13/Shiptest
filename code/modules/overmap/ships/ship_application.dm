@@ -1,8 +1,11 @@
 /datum/ship_application
 	/// The ship this application is linked to.
 	var/datum/overmap/ship/controlled/parent_ship
-	/// The applicant's new player mob. We keep track of it to send them an update message if they haven't joined a ship yet.
+	/// The applicant's new player mob. Kept so we can cancel the fill-out if they leave the lobby mid-write.
 	var/mob/dead/new_player/app_mob
+	/// String of the applicant's actual ckey. We'll use this later to reference the client, so we can
+	/// send the notification regardless of mob status. Not using app_key because that can be faked.
+	var/app_ckey
 	/// Whether to expose the user's key to the application recipient. Even if this is false, we still store apps using the key.
 	var/show_key = FALSE
 	/// The character name of the applicant at the time they applied. Isn't involved in the application logic,
@@ -21,6 +24,7 @@
 	app_mob = applicant
 	app_name = app_mob.client?.prefs.real_name
 	app_key = app_mob.client?.holder?.fakekey ? app_mob.client.holder.fakekey : applicant.key
+	app_ckey = applicant.ckey
 	parent_ship = parent
 
 	// these are registered so we can cancel the application fill-out if the ship
@@ -33,9 +37,10 @@
 	SStgui.close_uis(src)
 	if(status != SHIP_APPLICATION_UNFINISHED && status != SHIP_APPLICATION_CANCELLED)
 		LAZYREMOVE(parent_ship.applications, ckey(app_key))
-		if(app_mob)
-			SEND_SOUND(app_mob, sound('sound/misc/server-ready.ogg', volume=50))
-			to_chat(app_mob, span_warning("Your application to [parent_ship] has been deleted."), MESSAGE_TYPE_INFO)
+		var/client/app_client = get_applicant_client()
+		if(app_client)
+			SEND_SOUND(app_client, sound('sound/misc/server-ready.ogg', volume=50))
+			to_chat(app_client, span_warning("Your application to [parent_ship] has been deleted."), MESSAGE_TYPE_INFO)
 	app_mob = null
 	parent_ship = null
 	. = ..()
@@ -65,6 +70,10 @@
 			"<a href=?src=[REF(src)];application_accept=1>(ACCEPT)</a> / <a href=?src=[REF(src)];application_deny=1>(DENY)</a></span>"
 		to_chat(parent_ship.owner_mob, message, MESSAGE_TYPE_INFO)
 	return TRUE
+
+/// Returns the applicant's client, if they're still connected.
+/datum/ship_application/proc/get_applicant_client()
+	return GLOB.directory[app_ckey]
 
 /datum/ship_application/proc/applicant_deleting()
 	SIGNAL_HANDLER
@@ -141,13 +150,16 @@
 	if(parent_ship.owner_act)
 		parent_ship.owner_act.check_blinking()
 
-	if(!app_mob)
+	var/client/app_client = get_applicant_client()
+	if(!app_client)
 		return
 
 	switch(status)
 		if(SHIP_APPLICATION_ACCEPTED)
-			to_chat(app_mob, span_notice("Your application to [parent_ship] was accepted!"), MESSAGE_TYPE_INFO)
-			SEND_SOUND(app_mob, sound('sound/misc/server-ready.ogg', volume=50))
+			// they may have gone off to observe while waiting, in which case they need to come back to join
+			var/lobby_hint = isnewplayer(app_client.mob) ? null : " Return to the lobby to join."
+			to_chat(app_client, span_notice("Your application to [parent_ship] was accepted![lobby_hint]"), MESSAGE_TYPE_INFO)
+			SEND_SOUND(app_client, sound('sound/misc/server-ready.ogg', volume=50))
 		if(SHIP_APPLICATION_DENIED)
-			to_chat(app_mob, span_warning("Your application to [parent_ship] was denied!"), MESSAGE_TYPE_INFO)
-			SEND_SOUND(app_mob, sound('sound/machines/buzz-sigh.ogg', volume=50))
+			to_chat(app_client, span_warning("Your application to [parent_ship] was denied!"), MESSAGE_TYPE_INFO)
+			SEND_SOUND(app_client, sound('sound/machines/buzz-sigh.ogg', volume=50))
