@@ -237,6 +237,12 @@
 	id = INCINERATOR_ATMOS_AUXVENT
 	req_one_access = list(ACCESS_ATMOSPHERICS, ACCESS_MAINT_TUNNELS)
 
+//very common var edit //to-do: update paths this
+/obj/machinery/button/door/bolts
+	name = "door lock"
+	desc = "A remote control for the bolts on a door"
+	normaldoorcontrol = TRUE
+	specialfunctions = 4
 
 /obj/machinery/button/massdriver
 	name = "mass driver button"
