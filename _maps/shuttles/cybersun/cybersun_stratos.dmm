@@ -531,8 +531,8 @@
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/canteen/kitchen)
 "hN" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plasteel/mono/dark,
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "hP" = (
 /obj/effect/spawner/bunk_bed{
@@ -549,6 +549,16 @@
 /area/ship/bridge)
 "ik" = (
 /obj/machinery/holopad/secret,
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew)
 "im" = (
@@ -1367,9 +1377,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/engine)
 "rJ" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "rL" = (
 /obj/effect/turf_decal/trimline/transparent/syndiered/line,
@@ -1479,6 +1488,16 @@
 /area/ship/crew/ccommons)
 "tJ" = (
 /obj/machinery/holopad/secret,
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/corner,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/crewtwo)
 "tK" = (
@@ -1956,6 +1975,7 @@
 /area/ship/engineering/engine)
 "AI" = (
 /obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
 "AR" = (
@@ -1970,6 +1990,7 @@
 "AW" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Bc" = (
@@ -2191,6 +2212,10 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
+"Eh" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/engineering/engine)
 "EA" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
@@ -3902,7 +3927,7 @@ og
 og
 og
 og
-og
+TD
 og
 pu
 rU
@@ -4012,7 +4037,7 @@ uE
 uE
 uE
 og
-hN
+Eh
 cU
 Mb
 hN
@@ -4563,8 +4588,8 @@ Hm
 Hm
 Kp
 fh
-Vn
-Vn
+rq
+rq
 rq
 rq
 "}
@@ -4594,7 +4619,7 @@ zq
 Kp
 fh
 fh
-Vn
+rq
 rq
 rq
 "}
@@ -4804,7 +4829,7 @@ zq
 Kp
 fh
 fh
-Vn
+rq
 rq
 rq
 "}
@@ -4833,8 +4858,8 @@ vF
 vF
 Kp
 fh
-Vn
-Vn
+rq
+rq
 rq
 rq
 "}
