@@ -149,6 +149,7 @@
 		. += "[base_icon_state || initial(icon_state)][bipod_deployed ? "_deployed" : "_undeployed"]"
 
 /obj/item/gun/ballistic/automatic/hmg/solar //This thing fires a 5.56 equivalent, that's an LMG, not an HMG, get out
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "\improper Solar"
 	desc = "A TerraGov LMG-169 designed in 169 FS, nicknamed 'Solar.' A inscription reads: 'PROPERTY OF TERRAGOV', with 'TERRAGOV' poorly scribbled out, and replaced by 'SOLAR ARMORIES'. Chambered in 4.73×33mm caseless ammunition."
 	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
@@ -172,5 +173,3 @@
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	manufacturer = MANUFACTURER_SOLARARMORIES
-
-

@@ -38,6 +38,7 @@
 	var/delay = 25
 
 /obj/item/gun/energy/beam_rifle/debug
+	autowiki_hidden = TRUE //not obtainable afaik
 	delay = 0
 	default_ammo_type = /obj/item/stock_parts/cell/infinite
 	allowed_ammo_types = list(

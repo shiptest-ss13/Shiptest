@@ -100,6 +100,7 @@
 	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/automatic/assault/skm/pirate
+	autowiki_hidden = TRUE //not obtainable: referenced nowhere in code or maps
 	name = "\improper Chopper"
 	desc = "An SKM-24 in a state of shockingly poor repair: Several parts are missing and the 'grip' is improvised from scrap wood. It's a miracle it still works at all. Chambered in 7.62x40mm CLIP."
 

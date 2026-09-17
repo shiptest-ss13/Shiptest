@@ -234,6 +234,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/cm357)
 NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/gun/ballistic/automatic/smg/cm5/rubber
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/cm5_9mm/rubber
 
 /obj/item/ammo_box/magazine/cm5_9mm
@@ -808,6 +809,7 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/shotgun/automatic/cm15/incendiary
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g/incendiary
 
 

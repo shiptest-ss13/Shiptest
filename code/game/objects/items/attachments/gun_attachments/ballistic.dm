@@ -72,6 +72,7 @@
 	allow_hand_interaction = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/himehabu/underbarrel
+	autowiki_hidden = TRUE //underbarrel
 	name = "PC-22 \"Hognose\""
 	desc = "You shouldn't be seeing this."
 	default_ammo_type = /obj/item/ammo_box/magazine/m22lr_himehabu/hognose
@@ -86,4 +87,3 @@
 
 /obj/item/ammo_box/magazine/m22lr_himehabu/hognose/empty
 	start_empty = TRUE
-
