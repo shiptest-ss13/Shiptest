@@ -278,5 +278,6 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("chest press", /obj/structure/weightmachine/stacklifter, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("bench press", /obj/structure/weightmachine/weightlifter, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
+	new/datum/stack_recipe("rolling table", /obj/structure/table/rolling, 5, time = 25, one_per_turf = FALSE, on_floor = TRUE), \
 	new/datum/stack_recipe("shower", /obj/machinery/shower, 3, time = 25)
 ))

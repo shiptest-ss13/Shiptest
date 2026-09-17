@@ -10,7 +10,7 @@
 	anchored = TRUE
 	climbable = TRUE
 	//stack material which is dropped upon deconstruction adn it's ammount
-	var/buildstack = /obj/item/stack/rods
+	var/buildstacktype = /obj/item/stack/rods
 	var/buildstackamount = 3
 
 /obj/structure/railing/Initialize()
@@ -62,32 +62,25 @@
 			to_chat(user, span_warning("[src] is already in good condition!"))
 		return
 
-/obj/structure/railing/wirecutter_act(mob/living/user, obj/item/I)
-	. = ..()
-	if(!anchored)
-		to_chat(user, span_warning("You cut apart the railing."))
-		new buildstack(loc, buildstackamount)
-		I.play_tool_sound(src, 100)
-		deconstruct()
-		return TRUE
-
-/obj/structure/railing/deconstruct_act(mob/living/user, obj/item/I)
-	. = ..()
-	if(.)
-		return FALSE
-	if(!I.tool_start_check(user, src, amount=0))
-		return FALSE
-	if (I.use_tool(src, user, 3 SECONDS, volume=0))
-		to_chat(user, span_warning("You cut apart the railing."))
-		deconstruct()
-		return TRUE
-
-/obj/structure/railing/deconstruct(disassembled)
-	. = ..()
-	if(!loc) //quick check if it's qdeleted already.
+/obj/structure/railing/attackby(obj/item/I, mob/living/user, params)
+	if(I.tool_behaviour == TOOL_WIRECUTTER)
+		to_chat(user, span_notice("You start cutting apart [src]..."))
+		I.play_tool_sound(src)
+		if(I.use_tool(src, user, 30))
+			playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
+			deconstruct(TRUE)
 		return
+
+/obj/structure/railing/deconstruct()
 	if(!(flags_1 & NODECONSTRUCT_1))
-		qdel(src)
+		if(buildstacktype)
+			new buildstacktype(loc,buildstackamount)
+		else
+			for(var/i in custom_materials)
+				var/datum/material/M = i
+				new M.sheet_type(loc, FLOOR(custom_materials[M] / MINERAL_MATERIAL_AMOUNT, 1))
+	..()
+
 ///Implements behaviour that makes it possible to unanchor the railing.
 /obj/structure/railing/wrench_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -156,12 +149,12 @@
 /obj/structure/railing/wood
 	name = "wooden railing"
 	icon_state = "wood_railing_thin"
-	buildstack = /obj/item/stack/sheet/mineral/wood
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/railing/corner/wood
 	name = "wooden railing"
 	icon_state = "wood_corners_thin"
-	buildstack = /obj/item/stack/sheet/mineral/wood
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/railing/modern
 	name = "modern railing"

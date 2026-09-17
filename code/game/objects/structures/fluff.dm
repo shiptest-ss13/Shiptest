@@ -16,7 +16,7 @@
 		user.visible_message(span_notice("[user] starts disassembling [src]..."), span_notice("You start disassembling [src]..."))
 		I.play_tool_sound(src)
 		if(I.use_tool(src, user, 50))
-			user.visible_message(span_notice("[user] disassembles [src]!"), span_notice("You break down [src] into scrap metal."))
+			user.visible_message(span_notice("[user] disassembles [src]!"), span_notice("You break down [src] into spare materials."))
 			playsound(user, 'sound/items/deconstruct.ogg', 50, TRUE)
 			new deconstructible_loot(drop_location())
 			qdel(src)

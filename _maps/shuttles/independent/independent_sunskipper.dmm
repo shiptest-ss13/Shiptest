@@ -353,6 +353,11 @@
 /obj/effect/turf_decal/corner/transparent/grey/diagonal{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	pixel_y = -9;
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "cX" = (
@@ -395,6 +400,13 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
+"dz" = (
+/obj/structure/marker_beacon{
+	picked_color = "Violet"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "dA" = (
 /obj/effect/turf_decal/corner/transparent/grey/diagonal{
 	dir = 4
@@ -633,9 +645,6 @@
 /obj/item/folder/blue,
 /obj/item/folder/blue,
 /obj/item/folder/blue,
-/obj/item/spacecash/bundle/c1000{
-	pixel_y = -7
-	},
 /obj/item/pen,
 /obj/item/pen,
 /obj/item/pen,
@@ -724,16 +733,16 @@
 	req_ship_access = 1
 	},
 /obj/item/paper_bin/bundlenatural{
-	pixel_y = -2;
+	pixel_y = -11;
 	pixel_x = -5
-	},
-/obj/item/pen/fountain{
-	pixel_y = -2;
-	pixel_x = -6
 	},
 /obj/item/flashlight/lamp/green{
 	pixel_y = 5;
 	pixel_x = 8
+	},
+/obj/item/glassvase{
+	pixel_x = -10;
+	pixel_y = 12
 	},
 /turf/open/floor/suns/hatch/walnut,
 /area/ship/crew/office/lobby)
@@ -757,6 +766,10 @@
 	pixel_x = 8;
 	pixel_y = -7
 	},
+/obj/effect/turf_decal/siding/black{
+	layer = 2.050;
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "gx" = (
@@ -765,6 +778,10 @@
 	pixel_y = -1
 	},
 /obj/structure/table/wood,
+/obj/item/phone{
+	pixel_x = 8;
+	pixel_y = 7
+	},
 /turf/open/floor/suns/hatch/walnut,
 /area/ship/crew/office/lobby)
 "gJ" = (
@@ -1180,7 +1197,7 @@
 /obj/effect/turf_decal/corner/transparent/green/border{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/neutral/line{
+/obj/effect/turf_decal/trimline/opaque/neutral/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
@@ -1482,6 +1499,7 @@
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	dir = 9
 	},
+/obj/effect/turf_decal/siding/black/corner,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "lP" = (
@@ -1768,6 +1786,7 @@
 	color = "#777777"
 	},
 /obj/structure/fluff/hedge/opaque,
+/obj/machinery/light/floor,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "nB" = (
@@ -1996,22 +2015,30 @@
 /obj/item/bedsheet/double/black{
 	pixel_x = -3
 	},
+/obj/item/crowbar,
+/obj/item/paper/fluff{
+	pixel_x = 1;
+	pixel_y = -3;
+	default_raw_text = "check undr th <br>carpetf<br><br>17 38 23";
+	name = "sloppily written note";
+	desc = "Dear god, the handwriting on this is awful... Several stains cover the page. "
+	},
 /turf/open/floor/carpet/green,
 /area/ship/bridge)
 "pB" = (
 /turf/closed/wall/r_wall/yesdiag,
 /area/ship/engineering/communications)
 "pE" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/chair/handrail{
 	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "pS" = (
@@ -2052,6 +2079,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
+	},
+/obj/effect/spawner/random/trash/graffiti{
+	pixel_x = 19
 	},
 /turf/open/floor/suns/hatch/walnut,
 /area/ship/crew/canteen)
@@ -2277,6 +2307,14 @@
 /obj/effect/turf_decal/corner/transparent/bar/border{
 	dir = 4
 	},
+/obj/item/trash/candle{
+	pixel_y = 23;
+	pixel_x = 2
+	},
+/obj/item/candle{
+	pixel_x = 8;
+	pixel_y = 27
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "rH" = (
@@ -2305,7 +2343,7 @@
 	dir = 8
 	},
 /turf/open/floor/wood/ebony,
-/area/ship/crew/toilet)
+/area/ship/crew/canteen)
 "rQ" = (
 /obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -2340,7 +2378,7 @@
 /obj/effect/turf_decal/corner/transparent/green/border{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/neutral/line{
+/obj/effect/turf_decal/trimline/opaque/neutral/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
@@ -2582,7 +2620,6 @@
 /obj/effect/turf_decal/siding/wood/ebony{
 	dir = 4
 	},
-/obj/structure/fluff/hedge,
 /obj/structure/railing/wood{
 	color = "#777777";
 	dir = 6
@@ -2593,6 +2630,7 @@
 	layer = 2.8
 	},
 /obj/machinery/light/floor,
+/obj/structure/fluff/hedge,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "uq" = (
@@ -2727,6 +2765,19 @@
 /obj/structure/cable/green{
 	icon_state = "1-8"
 	},
+/obj/structure/safe/floor{
+	number_of_tumblers = 3;
+	tumblers = list(17,38,23)
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_y = -7
+	},
+/obj/item/paper/paperslip{
+	name = "The Secret Ingredient";
+	default_raw_text = "Love. <br><br><br>Also, a fuckton of salt. If anyone asks, we have a copyright. <br> - Management"
+	},
+/obj/item/reagent_containers/food/drinks/flask,
+/obj/item/reagent_containers/food/drinks/bottle/vodka,
 /turf/open/floor/carpet/green,
 /area/ship/bridge)
 "vE" = (
@@ -3013,6 +3064,9 @@
 /obj/effect/turf_decal/trimline/opaque/neutral/warning{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/black/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "yg" = (
@@ -3162,14 +3216,13 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen/kitchen)
 "zJ" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/airalarm/directional/east,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "zK" = (
@@ -3353,7 +3406,7 @@
 /obj/effect/turf_decal/corner/transparent/green/border{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/neutral/warning{
+/obj/effect/turf_decal/trimline/opaque/neutral/line{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
@@ -3368,6 +3421,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/effect/spawner/random/trash/graffiti,
 /turf/open/floor/suns/hatch/walnut,
 /area/ship/crew/canteen)
 "BH" = (
@@ -3380,6 +3434,20 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/suns/hatch/walnut,
 /area/ship/crew/hydroponics)
+"BS" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/corner/transparent/green{
+	dir = 5
+	},
+/obj/effect/turf_decal/corner/transparent/green{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/neutral/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/black/corner,
+/turf/open/floor/plasteel/mono/white,
+/area/ship/crew/canteen/kitchen)
 "BV" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -3422,14 +3490,14 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "Ce" = (
-/obj/effect/turf_decal/corner/transparent/grey/diagonal{
-	dir = 4
+/obj/structure/table/wood,
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_y = 7;
+	pixel_x = 13
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/turf/closed/wall,
-/area/ship/crew/office/lobby)
+/obj/item/toy/crayon/spraycan,
+/turf/open/floor/suns/hatch/ebony,
+/area/ship/crew/canteen)
 "Co" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -3503,6 +3571,11 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/storage)
+"Da" = (
+/obj/structure/chair/sofa/red/corpo/left/directional/north,
+/obj/effect/spawner/random/trash/graffiti,
+/turf/open/floor/suns/hatch/ebony,
+/area/ship/crew/canteen)
 "Db" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -3585,9 +3658,6 @@
 	},
 /obj/effect/turf_decal/corner/transparent/grey/diagonal{
 	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -3988,6 +4058,10 @@
 /obj/structure/sign/poster/contraband/diet_guide{
 	pixel_y = -31
 	},
+/obj/effect/turf_decal/siding/black{
+	layer = 2.050;
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "Gk" = (
@@ -4257,25 +4331,25 @@
 	dir = 8
 	},
 /obj/structure/closet/wall/directional/west{
-	name = "Spare Decor"
+	name = "Cleaning Supplies"
 	},
-/obj/item/storage/fancy/candle_box{
-	pixel_x = -10;
-	pixel_y = 4
-	},
-/obj/item/storage/fancy/candle_box{
-	pixel_x = -10;
-	pixel_y = -4
-	},
-/obj/item/lighter/enigma{
-	pixel_y = -6;
-	pixel_x = -10
-	},
-/obj/item/toy/crayon/spraycan,
 /obj/effect/turf_decal/siding/black{
 	layer = 2.060;
 	dir = 8
 	},
+/obj/item/mop{
+	pixel_y = 10
+	},
+/obj/item/pushbroom,
+/obj/item/reagent_containers/glass/bucket{
+	pixel_x = 10;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 6;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "Is" = (
@@ -4374,6 +4448,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/office/lobby)
 "Ji" = (
@@ -4450,7 +4527,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/office/lobby)
@@ -4531,10 +4608,12 @@
 /area/ship/crew/canteen)
 "KJ" = (
 /obj/machinery/advanced_airlock_controller/directional/east{
-	pixel_y = 8
+	pixel_y = 16
 	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -4558,6 +4637,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	dir = 1
+	},
+/obj/effect/turf_decal/siding/black{
+	layer = 2.050
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
@@ -4615,6 +4697,11 @@
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
+	},
+/obj/item/paper{
+	pixel_y = -1;
+	pixel_x = 8;
+	default_raw_text = "Don't forget to add our frequencies to the machinery! Wouldn't want to lose contact with our delivery shuttle again, no? <br> - Management"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/communications)
@@ -4782,6 +4869,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/black{
+	layer = 2.050
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "Me" = (
@@ -4793,6 +4883,13 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/suns/hatch/walnut,
+/area/ship/crew/canteen)
+"Mk" = (
+/obj/effect/turf_decal/siding/wood/ebony,
+/obj/structure/sign/painting/library{
+	pixel_x = -32
+	},
+/turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "Mr" = (
 /turf/closed/wall/r_wall,
@@ -5025,6 +5122,9 @@
 	id = "sunskipper_holo";
 	req_ship_access = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/office/lobby)
 "OC" = (
@@ -5136,11 +5236,11 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "PR" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/chair/handrail{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "PV" = (
@@ -5197,10 +5297,10 @@
 	layer = 2.02
 	},
 /obj/effect/turf_decal/industrial/outline,
-/obj/structure/table/rolling,
 /obj/effect/turf_decal/siding/black{
 	layer = 2.060
 	},
+/obj/machinery/processor,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "Qw" = (
@@ -5452,15 +5552,15 @@
 /obj/effect/turf_decal/corner/transparent/bar/border{
 	dir = 4
 	},
-/obj/item/candle{
-	pixel_x = -3;
-	pixel_y = 8
-	},
-/obj/item/trash/candle{
-	pixel_y = 8;
-	pixel_x = 4
-	},
 /obj/machinery/computer/security/telescreen/entertainment/wall/directional/north,
+/obj/item/storage/fancy/candle_box{
+	pixel_y = 2;
+	pixel_x = -3
+	},
+/obj/item/lighter/enigma{
+	pixel_y = -12;
+	pixel_x = -8
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "Tl" = (
@@ -5617,7 +5717,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/office/lobby)
@@ -5728,10 +5828,6 @@
 	icon_state = "2-8"
 	},
 /obj/structure/table/wood,
-/obj/item/phone{
-	pixel_x = -1;
-	pixel_y = 7
-	},
 /turf/open/floor/suns/hatch/walnut,
 /area/ship/crew/office/lobby)
 "VP" = (
@@ -5778,6 +5874,10 @@
 	pixel_y = 3
 	},
 /obj/item/folder,
+/obj/item/pen/fountain{
+	pixel_y = -1;
+	pixel_x = -5
+	},
 /turf/open/floor/suns/hatch/walnut,
 /area/ship/crew/office/lobby)
 "Wd" = (
@@ -5873,6 +5973,10 @@
 	pixel_y = 9;
 	dir = 4
 	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/bridge_bunny{
+	pixel_x = 10;
+	pixel_y = 35
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "Xb" = (
@@ -5937,6 +6041,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/structure/table/rolling,
+/obj/item/trash/tray,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "Yg" = (
@@ -5975,7 +6081,8 @@
 /obj/structure/closet/cabinet{
 	name = "wardrobe";
 	pixel_y = 12;
-	pixel_x = 1
+	pixel_x = 1;
+	density = 0
 	},
 /obj/structure/dresser/wall/directional/east,
 /obj/item/clothing/accessory/waistcoat{
@@ -6582,7 +6689,7 @@ LV
 MD
 ow
 tv
-ye
+BS
 zo
 Mc
 bW
@@ -6658,7 +6765,7 @@ rt
 rt
 rt
 rt
-ke
+dz
 Tc
 zS
 jT
@@ -6846,12 +6953,12 @@ oh
 bq
 Di
 OC
-Fg
-Fg
+wh
+wh
 rI
-Fg
-Fg
-iH
+wh
+wh
+VE
 Li
 rt
 rt
@@ -6878,7 +6985,7 @@ hf
 wh
 um
 aE
-aW
+Mk
 Wv
 VE
 rt
@@ -7043,8 +7150,8 @@ gn
 tE
 mb
 kb
-gn
-tE
+Ce
+Da
 mb
 OP
 oU
@@ -7108,7 +7215,7 @@ yK
 VW
 fn
 UW
-Ce
+TR
 tp
 rt
 rt
@@ -7165,8 +7272,8 @@ gs
 VO
 iI
 OI
-yT
 Od
+yT
 te
 Bb
 rt
@@ -7194,8 +7301,8 @@ Qw
 yG
 jJ
 Hr
-yT
 Od
+yT
 te
 Bb
 wZ
@@ -7223,8 +7330,8 @@ qF
 rp
 dW
 aQ
-yT
 Od
+yT
 te
 Bb
 rt
