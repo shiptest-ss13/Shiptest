@@ -1283,13 +1283,13 @@
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "um" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/transparent/bottlegreen/full,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -2275,14 +2275,14 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/canteen)
 "LR" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/transparent/bottlegreen/full,
 /obj/structure/chair/handrail,
 /obj/machinery/light_switch{
 	pixel_x = -10;
 	pixel_y = 20
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -2305,6 +2305,8 @@
 /turf/open/floor/plating,
 /area/ship/medical)
 "Mq" = (
+/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
+/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -2312,8 +2314,6 @@
 	color = "#a3a2a0";
 	dir = 9
 	},
-/obj/effect/turf_decal/corner/transparent/bottlegreen/full,
-/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "My" = (
