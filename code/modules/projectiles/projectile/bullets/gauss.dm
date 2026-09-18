@@ -85,8 +85,8 @@
 	icon_state = "gauss-pellet"
 	bullet_identifier = "dart"
 
-	damage = 6
-	armour_penetration = 10
+	damage = 8
+	armour_penetration = 30
 
 	homing_turn_speed = 7
 	homing_inaccuracy_min = 0
@@ -104,8 +104,8 @@
 	icon_state = "gauss-pellet"
 	bullet_identifier = "dart"
 
-	damage = 9
-	armour_penetration = 10
+	damage = 10
+	armour_penetration = 40
 
 	homing_turn_speed = 4
 	homing_inaccuracy_min = 0
