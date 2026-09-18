@@ -2,7 +2,8 @@
 "ac" = (
 /obj/structure/catwalk,
 /obj/effect/landmark/subship{
-	subship_template = /datum/map_template/shuttle/subshuttles/starchaser
+	subship_template = /datum/map_template/shuttle/subshuttles/starchaser;
+	name = "Sunskipper Subshuttle Dock"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/hangar)
@@ -332,15 +333,23 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/structure/curtain/cloth{
-	color = "#99BB76"
-	},
 /obj/machinery/door/airlock{
 	dir = 4;
 	name = "Kitchen"
 	},
+/obj/structure/curtain/cloth{
+	color = "#4f744a"
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen/kitchen)
+"cM" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/turf/open/floor/suns/hatch/ebony,
+/area/ship/crew/canteen)
 "cO" = (
 /obj/structure/chair/sofa/red/corpo/corner/directional/north,
 /turf/open/floor/suns/hatch/ebony,
@@ -564,6 +573,7 @@
 /obj/machinery/door/poddoor{
 	id = "skipper_hangar"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/engine/hull/interior,
 /area/ship/crew/office/lobby)
 "ff" = (
@@ -1018,7 +1028,7 @@
 	dir = 8
 	},
 /obj/structure/curtain/cloth{
-	color = "#99BB76"
+	color = "#4f744a"
 	},
 /obj/machinery/door/airlock{
 	dir = 4;
@@ -1101,6 +1111,10 @@
 /obj/item/cigbutt/cigarbutt{
 	pixel_x = 8;
 	pixel_y = 11
+	},
+/obj/item/lighter/enigma{
+	pixel_y = 8;
+	pixel_x = -23
 	},
 /turf/open/floor/carpet/nanoweave/green,
 /area/ship/crew/dorm)
@@ -2500,6 +2514,7 @@
 /obj/machinery/door/poddoor{
 	id = "sunskipper_entrance"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/engine/hull/interior,
 /area/ship/crew/office/lobby)
 "to" = (
@@ -2631,6 +2646,9 @@
 	},
 /obj/machinery/light/floor,
 /obj/structure/fluff/hedge,
+/obj/structure/sign/departments/restroom{
+	pixel_x = -32
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "uq" = (
@@ -2774,7 +2792,7 @@
 	},
 /obj/item/paper/paperslip{
 	name = "The Secret Ingredient";
-	default_raw_text = "Love. <br><br><br>Also, a fuckton of salt. If anyone asks, we have a copyright. <br> - Management"
+	default_raw_text = "Love. <br><br><br>Also, a fuckton of salt. If anyone asks, we have a copyright. <br><br> - Management"
 	},
 /obj/item/reagent_containers/food/drinks/flask,
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
@@ -2818,6 +2836,7 @@
 /obj/machinery/door/poddoor{
 	id = "sunskipper_entrance"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/engine/hull/interior,
 /area/ship/crew/office/lobby)
 "wl" = (
@@ -2866,7 +2885,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/structure/curtain/cloth/fancy,
+/obj/structure/curtain/cloth{
+	color = "#4f744a"
+	},
 /turf/open/floor/suns/hatch/walnut,
 /area/ship/crew/canteen)
 "wH" = (
@@ -3334,6 +3355,9 @@
 /obj/item/reagent_containers/condiment/saltshaker{
 	pixel_y = 16;
 	pixel_x = -3
+	},
+/obj/structure/sign/painting/library{
+	pixel_y = 32
 	},
 /turf/open/floor/suns/hatch{
 	color = "#543C30"
@@ -3977,6 +4001,7 @@
 /obj/machinery/door/poddoor{
 	id = "sunskipper_entrance"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/engine/hull/interior,
 /area/ship/crew/office/lobby)
 "FL" = (
@@ -4425,10 +4450,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "IZ" = (
-/obj/machinery/door/airlock{
-	dir = 1;
-	name = "Staff Lounge"
-	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -4436,6 +4457,14 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock{
+	dir = 1;
+	name = "Staff Lounge"
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "Jd" = (
@@ -4660,6 +4689,7 @@
 /obj/machinery/door/poddoor{
 	id = "skipper_hangar"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/engine/hull/interior,
 /area/ship/crew/office/lobby)
 "Lc" = (
@@ -4701,7 +4731,7 @@
 /obj/item/paper{
 	pixel_y = -1;
 	pixel_x = 8;
-	default_raw_text = "Don't forget to add our frequencies to the machinery! Wouldn't want to lose contact with our delivery shuttle again, no? <br> - Management"
+	default_raw_text = "Don't forget to add our frequencies to the machinery! Wouldn't want to lose contact with our delivery shuttle again, no? <br><br> - Management"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/communications)
@@ -4886,9 +4916,7 @@
 /area/ship/crew/canteen)
 "Mk" = (
 /obj/effect/turf_decal/siding/wood/ebony,
-/obj/structure/sign/painting/library{
-	pixel_x = -32
-	},
+/obj/machinery/computer/security/telescreen/entertainment/wall/directional/west,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "Mr" = (
@@ -4990,7 +5018,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/structure/curtain/cloth/fancy,
+/obj/structure/curtain/cloth{
+	color = "#4f744a"
+	},
 /turf/open/floor/suns/hatch/walnut,
 /area/ship/crew/canteen)
 "Nh" = (
@@ -5095,7 +5125,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "Ov" = (
-/obj/machinery/modular_computer/console/preset/monitoring{
+/obj/machinery/computer/crew{
 	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -5107,23 +5137,13 @@
 /obj/effect/turf_decal/corner/transparent/grey/diagonal{
 	dir = 4
 	},
-/obj/machinery/button/door{
-	pixel_y = -4;
-	pixel_x = 24;
-	dir = 8;
-	id = "sunskipper_entrance";
-	name = "Entrance Blast Doors";
-	req_ship_access = 1
-	},
-/obj/machinery/button/shieldwallgen{
-	pixel_y = 4;
-	pixel_x = 24;
-	dir = 8;
-	id = "sunskipper_holo";
-	req_ship_access = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
+	},
+/obj/machinery/firealarm/directional/east,
+/obj/structure/extinguisher_cabinet/directional/east{
+	pixel_y = 11;
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/office/lobby)
@@ -5157,7 +5177,6 @@
 /obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
-/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/office/lobby)
 "OP" = (
@@ -5557,10 +5576,6 @@
 	pixel_y = 2;
 	pixel_x = -3
 	},
-/obj/item/lighter/enigma{
-	pixel_y = -12;
-	pixel_x = -8
-	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "Tl" = (
@@ -5718,6 +5733,21 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_y = -21;
+	pixel_x = 2;
+	dir = 1;
+	id = "sunskipper_holo";
+	req_ship_access = 1
+	},
+/obj/machinery/button/door{
+	pixel_y = -21;
+	pixel_x = -7;
+	dir = 1;
+	id = "sunskipper_entrance";
+	name = "Entrance Blast Doors";
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/office/lobby)
@@ -6041,8 +6071,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/structure/table/rolling,
-/obj/item/trash/tray,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "Yg" = (
@@ -6163,6 +6191,18 @@
 	},
 /obj/structure/chair/comfy/red/corpo/directional/east,
 /turf/open/floor/suns/hatch/ebony,
+/area/ship/crew/canteen)
+"YQ" = (
+/obj/effect/turf_decal/siding/wood/walnut,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/table/rolling,
+/obj/item/trash/tray,
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "YS" = (
 /obj/structure/platform/industrial_alt{
@@ -6294,6 +6334,7 @@
 	pixel_y = 3
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/suns/hatch/walnut,
 /area/ship/crew/office/lobby)
 
@@ -6949,8 +6990,8 @@ Nh
 Nh
 KH
 pq
-oh
-bq
+YQ
+cM
 Di
 OC
 wh

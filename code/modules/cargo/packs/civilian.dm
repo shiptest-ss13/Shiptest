@@ -313,7 +313,7 @@
 /datum/supply_pack/civilian/roulette
 	name = "Roulette Table"
 	desc = "Go all in with this premium, computerized roulette table! Requires a valid cash card to play."
-	cost = 5000
+	cost = 1000
 	contains = list(/obj/machinery/roulette)
 	crate_name = "roulette table crate"
 
