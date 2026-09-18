@@ -884,14 +884,10 @@
 	color = "#777777";
 	layer = 2.85
 	},
-/obj/structure/table/glass,
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -3
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 6
 	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = 3
-	},
-/turf/open/floor/suns/hatch/ebony,
+/turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "hJ" = (
 /obj/effect/turf_decal/ihejirika_small,
@@ -1802,13 +1798,6 @@
 /obj/structure/fluff/hedge/opaque,
 /obj/machinery/light/floor,
 /turf/open/floor/wood/ebony,
-/area/ship/crew/canteen)
-"nB" = (
-/obj/structure/railing/wood{
-	color = "#777777"
-	},
-/obj/structure/chair/comfy/red/corpo/directional/west,
-/turf/open/floor/suns/hatch/ebony,
 /area/ship/crew/canteen)
 "nF" = (
 /obj/effect/turf_decal/siding/wood/walnut,
@@ -2734,9 +2723,6 @@
 	color = "#777777";
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood/ebony{
-	dir = 8
-	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "vh" = (
@@ -2863,9 +2849,6 @@
 "wB" = (
 /obj/structure/railing/corner/wood{
 	color = "#777777"
-	},
-/obj/effect/turf_decal/siding/wood/ebony{
-	dir = 4
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
@@ -3018,8 +3001,8 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "xA" = (
-/obj/effect/turf_decal/siding/wood/corner/ebony{
-	dir = 8
+/obj/structure/chair/stool/bar{
+	dir = 1
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
@@ -3702,9 +3685,10 @@
 /turf/open/floor/suns/hatch/ebony,
 /area/ship/crew/canteen)
 "DK" = (
-/obj/effect/turf_decal/siding/wood/ebony,
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/security/telescreen/entertainment/wall/directional/north,
+/obj/effect/turf_decal/siding/wood/corner/ebony{
+	dir = 8
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "DP" = (
@@ -5523,14 +5507,10 @@
 /obj/structure/railing/wood{
 	color = "#777777"
 	},
-/obj/structure/table/glass,
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -3
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 8
 	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = 3
-	},
-/turf/open/floor/suns/hatch/ebony,
+/turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "SB" = (
 /obj/effect/turf_decal/siding/wood/walnut{
@@ -6189,8 +6169,7 @@
 /obj/structure/railing/wood{
 	color = "#777777"
 	},
-/obj/structure/chair/comfy/red/corpo/directional/east,
-/turf/open/floor/suns/hatch/ebony,
+/turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "YQ" = (
 /obj/effect/turf_decal/siding/wood/walnut,
@@ -6899,8 +6878,8 @@ tK
 zv
 EE
 Cy
-aW
-nB
+Nh
+YM
 XW
 Wf
 oh
@@ -6957,7 +6936,7 @@ hU
 ou
 qN
 oK
-Nh
+xA
 Nh
 KH
 Eb
@@ -6986,7 +6965,7 @@ IO
 ou
 jf
 oK
-Nh
+xA
 Nh
 KH
 pq
@@ -7015,7 +6994,7 @@ zi
 to
 Aj
 Jn
-qk
+xA
 wB
 sj
 Eb
@@ -7044,7 +7023,7 @@ wh
 Tf
 rB
 Xb
-aW
+Nh
 YM
 cm
 Eb
@@ -7073,7 +7052,7 @@ Mz
 kS
 kS
 kS
-aW
+qk
 hG
 nF
 bR
