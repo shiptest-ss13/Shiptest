@@ -99,7 +99,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	zoom_amt = DMR_ZOOM
-	zoom_out_amt = -1
+	zoom_out_amt = 0
 
 	recoil = 1
 
@@ -264,7 +264,6 @@
 //flare pistol
 /obj/item/gun/energy/cybersun/lorentz/opportunist
 	name = "\improper LS209 Opportunist"
-	//rewrite
 	desc = "A bulky brute of revolver intended to neutralize any threat in close range. Lorentz mode rapidly ionizes air and fills it with plasma to melt through targets, while plasma flare dumps the entire plasma cell into one ferocious shot."
 
 	w_class = WEIGHT_CLASS_NORMAL

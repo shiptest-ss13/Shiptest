@@ -51,7 +51,7 @@
 
 /obj/item/gun/ballistic/cs_gauss/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/ammo_hud/cybersun) // at long last... the ammo counter on the side of the sprite is functional...
+	AddComponent(/datum/component/ammo_hud/cybersun)
 
 /obj/item/gun/ballistic/cs_gauss/examine(mob/user)
 	. = ..()
