@@ -25,7 +25,7 @@
 	melee_damage_lower = 50
 	melee_damage_upper = 50
 
-	speed = 1
+	speed = 4
 	move_to_delay = 3
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
@@ -122,6 +122,8 @@
 			spread_shot()
 		if(prob(20))
 			plant_mine()
+		if(prob(20))
+			charge()
 
 /mob/living/simple_animal/hostile/megafauna/megabot/proc/burst_shot()
 	casingtype = /obj/item/ammo_casing/energy/laser/assault/sharplite/megabot
