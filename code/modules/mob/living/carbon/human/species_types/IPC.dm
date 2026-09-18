@@ -241,9 +241,9 @@
 			if(A.crystal_charge == 0)
 				to_chat(H, span_warning("[A] is completely drained!"))
 				break
-			siphon_amt = A.crystal_charge <= (2 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) ? A.crystal_charge : (2 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+			siphon_amt = A.crystal_charge <= (8 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) ? A.crystal_charge : (8 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 			A.adjust_charge(-1 * siphon_amt)
-			H.nutrition += (siphon_amt)
+			H.nutrition += (siphon_amt/4)
 			if(H.nutrition > NUTRITION_LEVEL_WELL_FED)
 				to_chat(H, span_notice("You are now fully charged."))
 				break
