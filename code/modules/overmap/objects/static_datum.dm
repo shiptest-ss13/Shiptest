@@ -100,6 +100,7 @@
 			if(dock_requester.shuttle_port.is_in_shuttle_bounds(Mob))
 				Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp("hh:mm")]")
 				playsound(Mob, landing_sound, 50)
+				Mob.add_memory("Landed at [planet_name] at [station_time_timestamp("hh:mm")]")
 
 
 /datum/overmap/static_object/post_undocked(datum/overmap/dock_requester)
