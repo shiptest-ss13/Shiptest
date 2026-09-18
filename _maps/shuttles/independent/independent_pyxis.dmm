@@ -30,6 +30,10 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 10;
+	pixel_y = 20
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "aT" = (
@@ -223,6 +227,11 @@
 	req_ship_access = 1
 	},
 /obj/item/tank/internals/emergency_oxygen,
+/obj/machinery/light_switch{
+	pixel_x = -19;
+	pixel_y = -11;
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "ew" = (
@@ -677,6 +686,9 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/closet/emcloset/wall/directional/west,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "jI" = (
@@ -1154,6 +1166,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "sN" = (
@@ -1184,6 +1199,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light_switch{
+	pixel_x = -19;
+	pixel_y = -7;
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines/port)
 "th" = (
@@ -1292,6 +1312,11 @@
 	pixel_y = -19;
 	req_ship_access = 1
 	},
+/obj/machinery/light_switch{
+	pixel_x = 9;
+	pixel_y = -19;
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "us" = (
@@ -1365,6 +1390,7 @@
 	icon_state = "computer-left"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "vY" = (
@@ -2118,6 +2144,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	pixel_x = -10;
+	pixel_y = -19;
+	dir = 1
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "JA" = (
@@ -2249,6 +2280,10 @@
 	},
 /obj/effect/turf_decal/corner/transparent/bottlegreen/full,
 /obj/structure/chair/handrail,
+/obj/machinery/light_switch{
+	pixel_x = -10;
+	pixel_y = 20
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "LU" = (
@@ -2334,6 +2369,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/advanced_airlock_controller/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "Nw" = (
@@ -2533,6 +2569,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_x = -9;
+	pixel_y = -19;
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -2847,6 +2888,10 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 9;
+	pixel_y = 19
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "VR" = (
@@ -3011,10 +3056,6 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "ZY" = (
-/obj/structure/closet/secure_closet/medical3{
-	populate = 0;
-	anchored = 1
-	},
 /obj/item/storage/backpack/duffelbag/med,
 /obj/item/storage/backpack/medic,
 /obj/item/storage/backpack/satchel/med,
