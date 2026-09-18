@@ -38,7 +38,7 @@
 	if(status != SHIP_APPLICATION_UNFINISHED && status != SHIP_APPLICATION_CANCELLED)
 		LAZYREMOVE(parent_ship.applications, ckey(app_key))
 		var/client/app_client = get_applicant_client()
-		if(app_client)
+		if(app_client && applicant_can_act(app_client))
 			SEND_SOUND(app_client, sound('sound/misc/server-ready.ogg', volume=50))
 			to_chat(app_client, span_warning("Your application to [parent_ship] has been deleted."), MESSAGE_TYPE_INFO)
 	app_mob = null
@@ -71,9 +71,13 @@
 		to_chat(parent_ship.owner_mob, message, MESSAGE_TYPE_INFO)
 	return TRUE
 
-/// Returns the applicant's client, if they're still connected.
 /datum/ship_application/proc/get_applicant_client()
 	return GLOB.directory[app_ckey]
+
+/// Only notify if they're in lobby or observing.
+/// Assumes otherwise that they've already spawned in and shouldn't be notified anymore
+/datum/ship_application/proc/applicant_can_act(client/app_client)
+	return isnewplayer(app_client.mob) || isobserver(app_client.mob)
 
 /datum/ship_application/proc/applicant_deleting()
 	SIGNAL_HANDLER
@@ -151,7 +155,7 @@
 		parent_ship.owner_act.check_blinking()
 
 	var/client/app_client = get_applicant_client()
-	if(!app_client)
+	if(!app_client || !applicant_can_act(app_client))
 		return
 
 	switch(status)
