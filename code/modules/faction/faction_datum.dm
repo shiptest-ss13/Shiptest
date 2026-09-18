@@ -72,7 +72,10 @@
 /datum/faction/syndicate/scarborough
 	name = "Scarborough Arms"
 	prefixes = PREFIX_NONE
-	allowed_factions = list(/datum/faction/syndicate)
+	allowed_factions = list(
+		/datum/faction/syndicate/ngr,
+		/datum/faction/syndicate/hardliners
+	)
 
 /datum/faction/solgov
 	name = FACTION_SOLCON

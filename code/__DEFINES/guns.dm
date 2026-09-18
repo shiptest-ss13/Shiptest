@@ -83,6 +83,7 @@
 #define MANUFACTURER_PGF "the Etherbor Industries emblem"
 #define MANUFACTURER_IMPORT "Lanchester Import Co."
 #define MANUFACTURER_SERENE "the Serene Outdoors logo"
+#define MANUFACTURER_CYBERSUN "the Tadeusz Armory logo"
 
 // Misfire chances if the gun's safety is off
 #define GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW 5

@@ -226,6 +226,10 @@
 			oth_h = "[prefix]h9"
 	hud.set_hud(backing_color, oth_o, oth_t, oth_h, indicator)
 
+/datum/component/ammo_hud/cybersun
+	prefix = "cybersun_"
+
+
 /datum/component/ammo_hud/laser/cybersun
 	prefix = "cybersun_"
 
@@ -338,3 +342,4 @@
 	backing_color = "#ff0000ff"
 	prefix = null
 	indicator = "bullet"
+
