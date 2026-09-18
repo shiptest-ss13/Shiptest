@@ -114,7 +114,7 @@
 		STOP_PROCESSING(SSfastprocess, src)
 
 /obj/item/gun/ballistic/cs_gauss/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread, burst_firing, spread_override, iteration)
-	if(current_target)
+	if(current_target && chambered)
 		if(!prob(lock_loss) || !lock_loss)
 			chambered.BB.homing = TRUE
 			chambered.BB.homing_target = current_target.resolve()
@@ -158,9 +158,9 @@
 	vary_fire_sound = TRUE
 
 	///How much the bullet scatters when fired while wielded.
-	spread	= 8
+	spread	= 6
 	///How much the bullet scatters when fired while unwielded.
-	spread_unwielded = 16
+	spread_unwielded = 12
 	//additional spread when dual wielding
 	dual_wield_spread = 24
 
@@ -174,13 +174,13 @@
 
 
 	///How much the bullet scatters when fired while wielded.
-	spread = 6
+	spread = 3
 	///How much the bullet scatters when fired while unwielded.
-	spread_unwielded = 8
+	spread_unwielded = 6
 	//additional spread when dual wielding
-	dual_wield_spread = 24
+	dual_wield_spread = 12
 
-	ammo_counter = FALSE
+	ammo_counter = TRUE
 	smart_lock = FALSE
 
 NO_MAG_GUN_HELPER(cs_gauss/rectifier)
@@ -227,10 +227,10 @@ NO_MAG_GUN_HELPER(cs_gauss/rectifier/export)
 	name = "\improper SG48 Divergence"
 	desc = "A mildly more accurate version of the SG49 Convergence, manufactured for public sale. The targetting computer is removed and power used for it is redirected to the accelerator, leading to sustained, semi-accurate low calibre fire."
 
-	spread = 6
+	spread = 4
 	spread_unwielded = 12
 
-	ammo_counter = FALSE
+	ammo_counter = TRUE
 	smart_lock = FALSE
 
 NO_MAG_GUN_HELPER(cs_gauss/convergence)
@@ -286,7 +286,7 @@ NO_MAG_GUN_HELPER(cs_gauss/convergence/export)
 	burst_delay = 0.15
 	burst_size = 6
 
-	ammo_counter = FALSE
+	ammo_counter = TRUE
 	smart_lock = FALSE
 
 NO_MAG_GUN_HELPER(cs_gauss/vector)
