@@ -186,7 +186,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		drop_location = pick(adjacent_turfs)
 	for(var/vein_content_count in 1 to vein_class)
 		var/picked = pick(vein_contents)
-		new picked(drop_location,round(rand(drop_rate_amount_min,drop_rate_amount_max)*multiplier))
+		new picked(drop_location,round(rand(drop_rate_amount_min,drop_rate_amount_max)*multiplier, 1))
 
 /obj/structure/vein/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
