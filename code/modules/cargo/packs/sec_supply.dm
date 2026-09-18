@@ -226,7 +226,7 @@
 	cost = 1500
 	contains = list(/obj/item/melee/energy/flyssa)
 	crate_name = "energy flyssa crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -236,7 +236,7 @@
 	cost = 1500
 	contains = list(/obj/item/melee/energy/flyssa)
 	crate_name = "energy flyssa crate"
-	faction = /datum/faction/syndicate/hardliners
+	faction = /datum/faction/hardliners
 	faction_discount = -50
 	faction_locked = TRUE
 
@@ -247,7 +247,7 @@
 	contains = list(/obj/item/flamethrower/full)
 	crate_name = "flamethrower crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_discount = 20
 
 /datum/supply_pack/sec_supply/frag_grenade
@@ -265,7 +265,7 @@
 	contains = list(/obj/item/storage/backpack/duffelbag/syndie/c4)
 	crate_name = "demolitions charge crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_discount = 10
 
 /datum/supply_pack/sec_supply/halberd
@@ -326,7 +326,7 @@
 	cost = 500
 	contains = list(/obj/item/storage/belt/military/cybersun)
 	crate_name = "webbing crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -338,7 +338,7 @@
 	cost = 300
 	contains = list(/obj/item/storage/belt/security/webbing/hardliners)
 	crate_name = "webbing crate"
-	faction = /datum/faction/syndicate/hardliners
+	faction = /datum/faction/hardliners
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -374,7 +374,7 @@
 	cost = 300
 	contains = list(/obj/item/storage/belt/security/webbing/ngr)
 	crate_name = "webbing crate"
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_discount = 0
 	faction_locked = TRUE
 

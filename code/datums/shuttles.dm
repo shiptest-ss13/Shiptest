@@ -432,7 +432,7 @@
 /datum/map_template/shuttle/subshuttles/runner
 	file_name = "syndicate_runner"
 	name = "Runner-class Ambulance"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 	name_categories = list("GENERAL", "SPACE")
@@ -471,7 +471,7 @@
 /datum/map_template/shuttle/subshuttles/nimbus
 	file_name = "cybersun_nimbus"
 	name = "Nimbus-class Executive Courier"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	prefix = "CSSV"
 	manufacturer = "ISF Spacecraft"
 	name_categories = list("NATURAL_AGGRESSIVE")
@@ -479,7 +479,7 @@
 /datum/map_template/shuttle/subshuttles/bambulance
 	file_name = "cybersun_bambulance"
 	name = "Gauze-class Ambulance Pod"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/cybersun
 	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 
@@ -513,7 +513,7 @@
 /datum/map_template/shuttle/subshuttles/karst
 	file_name = "ngr_karst"
 	name = "Karst-class Drop Pod"
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	token_icon_state = "ship_tiny_generic"
 	prefix = "NGRV"
 
