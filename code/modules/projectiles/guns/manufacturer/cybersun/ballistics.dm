@@ -30,8 +30,8 @@
 	/// Highest wear value so the gun doesn't end up completely irreperable
 	wear_maximum = 480
 
-	//might just turn this off
-	wear_rate = 0.5
+	//might just turn this off //yea its gonna be off
+	wear_rate = 0
 
 	ammo_counter = TRUE
 
@@ -48,6 +48,10 @@
 	var/datum/weakref/current_target = null
 	//how fuzzy our smart lock is. Basically a flat chance our shots won't home.
 	var/lock_loss = 0
+
+/obj/item/gun/ballistic/cs_gauss/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/ammo_hud/cybersun) // at long last... the ammo counter on the side of the sprite is functional...
 
 /obj/item/gun/ballistic/cs_gauss/examine(mob/user)
 	. = ..()
