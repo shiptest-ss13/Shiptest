@@ -41,7 +41,7 @@
 	icon_state = "lava"
 	color = COLOR_ORANGE
 	mapgen = /datum/map_generator/planet_generator/lava
-	default_baseturf = /turf/open/floor/plating/asteroid/basalt/lava
+	default_baseturf = /turf/open/floor/plating/asteroid/basalt
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
