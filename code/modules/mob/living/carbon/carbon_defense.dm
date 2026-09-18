@@ -305,34 +305,18 @@
 			target_disposal_bin = locate(/obj/machinery/disposal/bin) in target_shove_turf.contents
 			shove_blocked = TRUE
 
-	if(target.IsKnockdown() && !target.IsParalyzed())
-		target.Paralyze(SHOVE_CHAIN_PARALYZE)
-		target.visible_message(span_danger("[name] kicks [target.name] onto [target.p_their()] side!"),
-						span_userdanger("You're kicked onto your side by [name]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
-		to_chat(src, span_danger("You kick [target.name] onto [target.p_their()] side!"))
-		addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living, SetKnockdown), 0), SHOVE_CHAIN_PARALYZE)
-		log_combat(src, target, "kicks", "onto their side (paralyzing)")
-
 	if(shove_blocked && !target.is_shove_knockdown_blocked() && !target.buckled)
-		var/directional_blocked = FALSE
 		if(shove_dir in GLOB.cardinals) //Directional checks to make sure that we're not shoving through a windoor or something like that
 			var/target_turf = get_turf(target)
 			for(var/obj/obj_content in target_turf)
 				if(obj_content.flags_1 & ON_BORDER_1 && obj_content.dir == shove_dir && obj_content.density)
-					directional_blocked = TRUE
 					break
 			if(target_turf != target_shove_turf) //Make sure that we don't run the exact same check twice on the same tile
 				for(var/obj/obj_content in target_shove_turf)
 					if(obj_content.flags_1 & ON_BORDER_1 && obj_content.dir == turn(shove_dir, 180) && obj_content.density)
-						directional_blocked = TRUE
 						break
-		if((!target_table && !target_collateral_carbon && !target_disposal_bin) || directional_blocked)
-			target.Knockdown(SHOVE_KNOCKDOWN_SOLID)
-			target.visible_message(span_danger("[name] shoves [target.name], knocking [target.p_them()] down!"),
-							span_userdanger("You're knocked down from a shove by [name]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
-			to_chat(src, span_danger("You shove [target.name], knocking [target.p_them()] down!"))
-			log_combat(src, target, "shoved", "knocking them down")
-		else if(target_table)
+
+		if(target_table)
 			target.Knockdown(SHOVE_KNOCKDOWN_TABLE)
 			target.visible_message(span_danger("[name] shoves [target.name] onto \the [target_table]!"),
 							span_userdanger("You're shoved onto \the [target_table] by [name]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
