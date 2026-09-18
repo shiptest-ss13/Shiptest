@@ -420,6 +420,12 @@ NO_MAG_GUN_HELPER(automatic/m15)
 	valid_attachments = SERENE_ATTACHMENTS
 	slot_available = SERENE_ATTACH_SLOTS
 
+	unique_reskin = list(\
+		"Wood" = "buckmaster",
+		"Polymer" = "buckmasterclip"
+		)
+	unique_reskin_changes_inhand = TRUE
+
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 45,
