@@ -153,6 +153,10 @@
 		/obj/item/storage/box/rndmed
 	)
 
+/obj/effect/spawner/random/circuit
+	icon_state = "circuit"
+
+// MACHINE BOARDS
 /obj/effect/spawner/random/circuit/machine/common
 	loot = list(
 			/obj/item/circuitboard/machine/autolathe = 5,
@@ -181,56 +185,59 @@
 			/obj/item/circuitboard/machine/smes = 5,
 		)
 
-/obj/effect/spawner/random/circuit
-	icon_state = "circuit"
-
 /obj/effect/spawner/random/circuit/machine/rare
 	loot = list(
-			/obj/item/circuitboard/aicore = 5,
-			/obj/item/circuitboard/machine/chem_dispenser = 5,
 			/obj/item/circuitboard/machine/rad_collector = 5,
 			/obj/item/circuitboard/machine/launchpad = 5,
 			/obj/item/circuitboard/machine/shuttle/engine/electric = 5,
 			/obj/item/circuitboard/machine/shuttle/smes = 5,
 		)
 
+/obj/effect/spawner/random/circuit/machine/mixed
+	loot = list(
+		/obj/effect/spawner/random/circuit/machine/common = 95,
+		/obj/effect/spawner/random/circuit/machine/rare = 5)
+
+// MECH BOARDS
 /obj/effect/spawner/random/circuit/machine/mech
 	loot = list(
-			/obj/item/circuitboard/mecha/ripley/main = 100,
-			/obj/item/circuitboard/mecha/ripley/peripherals = 100,
-			/obj/item/circuitboard/mecha/odysseus/main = 25,
-			/obj/item/circuitboard/mecha/odysseus/peripherals = 25,
-			/obj/item/circuitboard/mecha/gygax/main = 20,
-			/obj/item/circuitboard/mecha/gygax/peripherals = 20,
-			/obj/item/circuitboard/mecha/gygax/targeting = 20,
-			/obj/item/circuitboard/mecha/durand/main = 20,
-			/obj/item/circuitboard/mecha/durand/peripherals = 20,
-			/obj/item/circuitboard/mecha/durand/targeting = 20,
-		)
+		/obj/item/circuitboard/mecha/ripley/main = 100,
+		/obj/item/circuitboard/mecha/ripley/peripherals = 100,
+		/obj/item/circuitboard/mecha/odysseus/main = 25,
+		/obj/item/circuitboard/mecha/odysseus/peripherals = 25,
+		/obj/item/circuitboard/mecha/gygax/main = 20,
+		/obj/item/circuitboard/mecha/gygax/peripherals = 20,
+		/obj/item/circuitboard/mecha/gygax/targeting = 20,
+		/obj/item/circuitboard/mecha/durand/main = 20,
+		/obj/item/circuitboard/mecha/durand/peripherals = 20,
+		/obj/item/circuitboard/mecha/durand/targeting = 20)
 
-//COMPUTER
+// COMPUTER BOARDS
 /obj/effect/spawner/random/circuit/computer/common
 	loot = list(
-			/obj/item/circuitboard/computer/aifixer = 5,
-			/obj/item/circuitboard/computer/arcade/amputation = 5,
-			/obj/item/circuitboard/computer/arcade/battle = 5,
-			/obj/item/circuitboard/computer/arcade/orion_trail = 5,
-			/obj/item/circuitboard/computer/atmos_alert = 5,
-			/obj/item/circuitboard/computer/card = 5,
-			/obj/item/circuitboard/computer/launchpad_console = 5,
-			/obj/item/circuitboard/computer/mech_bay_power_console = 5,
-			/obj/item/circuitboard/computer/pandemic = 5,
-			/obj/item/circuitboard/computer/powermonitor/secret = 5,
-			/obj/item/circuitboard/computer/stationalert = 5,
-			/obj/item/circuitboard/computer/teleporter = 5,
-			/obj/item/circuitboard/computer/operating = 5,
-			/obj/item/circuitboard/computer/crew = 5,
-			/obj/item/circuitboard/computer/scan_consolenew = 5,
-		)
+		/obj/item/circuitboard/computer/aifixer = 5,
+		/obj/item/circuitboard/computer/arcade/amputation = 5,
+		/obj/item/circuitboard/computer/arcade/battle = 5,
+		/obj/item/circuitboard/computer/arcade/orion_trail = 5,
+		/obj/item/circuitboard/computer/atmos_alert = 5,
+		/obj/item/circuitboard/computer/card = 5,
+		/obj/item/circuitboard/computer/launchpad_console = 5,
+		/obj/item/circuitboard/computer/mech_bay_power_console = 5,
+		/obj/item/circuitboard/computer/pandemic = 5,
+		/obj/item/circuitboard/computer/powermonitor/secret = 5,
+		/obj/item/circuitboard/computer/stationalert = 5,
+		/obj/item/circuitboard/computer/teleporter = 5,
+		/obj/item/circuitboard/computer/operating = 5,
+		/obj/item/circuitboard/computer/crew = 5,
+		/obj/item/circuitboard/computer/scan_consolenew = 5)
 
 /obj/effect/spawner/random/circuit/computer/rare
 	loot = list(
-			/obj/item/circuitboard/computer/cargo = 5,
-			/obj/item/circuitboard/computer/shuttle/helm = 5,
-			/obj/item/circuitboard/computer/med_data = 5,
-		)
+		/obj/item/circuitboard/computer/cargo = 5,
+		/obj/item/circuitboard/computer/shuttle/helm = 5,
+		/obj/item/circuitboard/computer/med_data = 5)
+
+/obj/effect/spawner/random/circuit/computer/mixed
+	loot = list(
+		/obj/effect/spawner/random/circuit/computer/common = 95,
+		/obj/effect/spawner/random/circuit/computer/rare = 5)
