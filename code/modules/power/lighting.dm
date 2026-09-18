@@ -216,7 +216,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 0
 	active_power_usage = 0
-	power_channel = AREA_USAGE_LIGHT //Lights are calc'd via area so they dont need to be in the machine list
+	power_channel = AREA_USAGE_LIGHT //Lights are calc'd via area so they dont need to be in the machine list //What's calc short for
 	var/on = FALSE					// 1 if on, 0 if off
 	var/on_gs = FALSE
 	var/static_power_used = 0
@@ -224,11 +224,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	var/bulb_power = 1			// basically the alpha of the emitted light source
 	var/bulb_colour = "#f3fffa"	// default colour of the light
 	var/status = LIGHT_OK		// LIGHT_OK, _EMPTY, _BURNED or _BROKEN
-	var/flickering = FALSE
 	var/light_type = /obj/item/light/tube		// the type of light item
 	var/fitting = "tube"
 	var/switchcount = 0			// count of number of times switched on/off
-								// this is used to calc the probability the light burns out
+								// this is used to calc the probability the light burns out //What does calc mean
 
 	var/rigged = FALSE			// true if rigged to explode
 
@@ -251,11 +250,21 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	var/bulb_vacuum_colour = "#4F82FF"	// colour of the light when air alarm is set to severe
 	var/bulb_vacuum_brightness = 8
 
-	var/constant_flickering = FALSE // Are we always flickering?
+	///Are we always flickering?
+	var/constant_flickering = FALSE
 	var/flicker_timer = null
+	///True if the light is turned off mid-flickering
+	var/pause_flicker = FALSE
 
 	///wallmount trait
 	var/is_wallmounted = TRUE
+
+	///Amount of delay in deciseconds for light to turn on.
+	var/delay = 2
+	///If set, delay is randomised.
+	var/stagger = FALSE
+	///Timer for toggle delay
+	var/delay_timer
 
 /obj/machinery/light/Initialize(mapload)
 	. = ..()
@@ -356,6 +365,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 /obj/machinery/light/LateInitialize()
 	. = ..()
 	var/area/A = get_area(src.loc)
+	if(A.area_flags & STAGGER_LIGHTS)
+		stagger = TRUE
 	switch(fitting)
 		if("tube")
 			brightness = 8
@@ -478,9 +489,39 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 
 // attempt to set the light's on/off status
 // will not switch on if broken/burned/empty
-/obj/machinery/light/proc/seton(s)
-	on = (s && status == LIGHT_OK)
+/obj/machinery/light/proc/seton(condition)
+	on = (condition && status == LIGHT_OK)
+	if(delay_timer)
+		deltimer(delay_timer)
+		delay_timer = null
+	if(on)
+		if(delay > 0)
+			delay_timer = addtimer(CALLBACK(src, PROC_REF(turnon)), delay, TIMER_STOPPABLE)
+			return
+		turnon()
+		return
 	update()
+
+///Not for actually turning the light on (use seton() For That)
+/obj/machinery/light/proc/turnon()
+	if(!on) //Why are we here
+		return
+	playsound(src,pick('sound/machines/bulb_ting1.ogg','sound/machines/bulb_ting2.ogg'),10,TRUE, -4)
+	update()
+
+///Called when we foo bar or something idk
+/obj/machinery/light/proc/set_stagger(rand, amount)
+	var/wait
+	if(!rand)
+		wait = amount
+	else
+		var/area/place = get_area(src)
+		var/lights
+		for(var/thing in place)
+			if(istype(thing, /obj/machinery/light))
+				lights ++
+		wait = rand(1, lights * 1.6)
+	return delay = wait
 
 /obj/machinery/light/get_cell()
 	return cell
@@ -623,7 +664,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 // if a light is turned off, it won't activate emergency power
 /obj/machinery/light/proc/turned_off()
 	var/area/A = get_area(src)
-	return !A.lightswitch && A.power_light || flickering
+	return !A.lightswitch && A.power_light || flicker_timer
 
 // returns whether this light has power
 // true if area has power and lightswitch is on
@@ -652,53 +693,41 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 	return TRUE
 
 /obj/machinery/light/proc/start_flickering()
-	on = FALSE
-	update(FALSE, TRUE, FALSE)
-
 	constant_flickering = TRUE
 
-	flicker_timer = addtimer(CALLBACK(src, PROC_REF(flicker_on)), rand(0.5 SECONDS, 1 SECONDS), TIMER_STOPPABLE)
+	if(has_power())
+		pause_flicker = FALSE
+		on = FALSE
+		update(0)
+		flicker_timer = addtimer(CALLBACK(src, PROC_REF(flicker_pulse)), rand(0.5 SECONDS, 1 SECONDS), TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_OVERRIDE)
 
-/obj/machinery/light/proc/stop_flickering()
-	constant_flickering = FALSE
-
+/obj/machinery/light/proc/stop_flickering(pause)
 	if(flicker_timer)
 		deltimer(flicker_timer)
 		flicker_timer = null
+		pause_flicker = TRUE
 
-	seton(has_power())
+	if(!pause)
+		constant_flickering = FALSE
+		seton(has_power())
 
-/obj/machinery/light/proc/alter_flicker(enable = TRUE)
-	if(!constant_flickering)
+/obj/machinery/light/proc/alter_flicker()
+	if(!constant_flickering || pause_flicker)
 		return
 	if(has_power())
-		on = enable
-		update(FALSE, TRUE, FALSE)
-
-/obj/machinery/light/proc/flicker_on()
-	alter_flicker(TRUE)
-	flicker_timer = addtimer(CALLBACK(src, PROC_REF(flicker_off)), rand(0.5 SECONDS, 1 SECONDS), TIMER_STOPPABLE)
-
-/obj/machinery/light/proc/flicker_off()
-	alter_flicker(FALSE)
-	flicker_timer = addtimer(CALLBACK(src, PROC_REF(flicker_on)), rand(0.5 SECONDS, 5 SECONDS), TIMER_STOPPABLE)
-
-
-/obj/machinery/light/proc/flicker(amount = rand(10, 20))
-	set waitfor = 0
-	if(flickering)
-		return
-	flickering = 1
-	if(on && status == LIGHT_OK)
-		for(var/i = 0; i < amount; i++)
-			if(status != LIGHT_OK)
-				break
-			on = !on
-			update(0)
-			sleep(rand(5, 15))
-		on = (status == LIGHT_OK)
+		on = !on
+		if(on)
+			playsound(src,pick('sound/machines/bulb_ting1.ogg','sound/machines/bulb_ting2.ogg'),10,TRUE, -8)
 		update(0)
-	flickering = 0
+	else
+		pause_flicker = TRUE
+
+/obj/machinery/light/proc/flicker_pulse()
+	alter_flicker()
+	if(!pause_flicker)
+		flicker_timer = addtimer(CALLBACK(src, PROC_REF(flicker_pulse)), rand(0.5 SECONDS, 1 SECONDS), TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_OVERRIDE)
+		return
+	stop_flickering(TRUE)
 
 // ai attack - make lights flicker, because why not
 
@@ -832,6 +861,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 // called when area power state changes
 /obj/machinery/light/power_change()
 	SHOULD_CALL_PARENT(FALSE)
+	if(stagger)
+		set_stagger(TRUE)
+	if(constant_flickering)
+		start_flickering()
 	seton(has_power())
 
 // called when on fire
