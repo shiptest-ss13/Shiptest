@@ -9643,11 +9643,8 @@
 /turf/open/water/csoutpost,
 /area/outpost/crew/bar/cybersun_outpost)
 "xn" = (
-/obj/structure/bed/roller{
-	name = "Mr. Stretcher"
-	},
 /obj/machinery/light/directional/east,
-/obj/effect/turf_decal/box/white,
+/obj/machinery/autodoc,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/medical)
 "xo" = (
@@ -11722,13 +11719,13 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/recycling)
 "Cu" = (
-/obj/structure/chair/bench/blue/directional/south,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_y = 30
 	},
+/obj/machinery/autodoc,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/medical)
 "Cv" = (
@@ -16051,18 +16048,7 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/outpost/external)
 "MC" = (
-/obj/machinery/vending/wallmed{
-	pixel_y = 26
-	},
-/obj/structure/table,
-/obj/item/storage/firstaid{
-	pixel_y = 10;
-	pixel_x = -4
-	},
-/obj/item/storage/firstaid{
-	pixel_y = 3;
-	pixel_x = -4
-	},
+/obj/machinery/autodoc_vendor,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/medical)
 "MD" = (

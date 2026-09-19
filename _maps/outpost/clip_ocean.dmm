@@ -4492,7 +4492,7 @@
 /area/outpost/exterior/ocean)
 "oN" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
-/obj/machinery/medical_kiosk,
+/obj/machinery/autodoc,
 /turf/open/floor/plasteel/white,
 /area/outpost/medical)
 "oP" = (
@@ -4951,14 +4951,8 @@
 /area/outpost/external)
 "qh" = (
 /obj/effect/turf_decal/corner/transparent/blue/mono,
-/obj/structure/rack,
-/obj/item/newspaper{
-	pixel_x = -4
-	},
-/obj/item/newspaper{
-	pixel_x = 7
-	},
 /obj/machinery/camera/autoname/directional/north,
+/obj/machinery/autodoc_vendor,
 /turf/open/floor/plasteel/mono/white,
 /area/outpost/medical)
 "qi" = (
@@ -13173,9 +13167,8 @@
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/operations)
 "QH" = (
-/obj/structure/table/chem,
-/obj/item/stack/medical/gauze/five,
 /obj/effect/turf_decal/corner/transparent/blue/mono,
+/obj/machinery/autodoc,
 /turf/open/floor/plasteel/mono/white,
 /area/outpost/medical)
 "QI" = (
@@ -15503,6 +15496,7 @@
 	pixel_x = 26
 	},
 /obj/effect/turf_decal/corner/transparent/blue/mono,
+/obj/item/stack/medical/gauze/five,
 /turf/open/floor/plasteel/mono/white,
 /area/outpost/medical)
 "XT" = (
