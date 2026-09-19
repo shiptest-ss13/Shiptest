@@ -540,8 +540,13 @@
 /obj/effect/turf_decal/borderfloorblack/cee{
 	dir = 8
 	},
-/obj/machinery/microwave{
-	pixel_y = 6
+/obj/machinery/jukebox/boombox{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/item/table_bell{
+	pixel_x = 8;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
@@ -1199,6 +1204,14 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/neutral/warning{
 	dir = 4
+	},
+/obj/effect/turf_decal/trimline/transparent/green/filled/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/black/corner{
+	color = "#839C67";
+	layer = 2.060;
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
@@ -1870,13 +1883,11 @@
 /obj/effect/turf_decal/borderfloorblack/cee{
 	dir = 4
 	},
-/obj/item/table_bell{
-	pixel_x = 8;
-	pixel_y = -1
-	},
-/obj/machinery/jukebox/boombox{
-	pixel_x = -4;
-	pixel_y = 5
+/obj/item/fish_feed{
+	pixel_y = 5;
+	name = "fish food?";
+	desc = "A surprisingly heavy can of... What might be fish feed. It has a pungent odor.";
+	pixel_x = -1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
@@ -2380,6 +2391,14 @@
 /obj/effect/turf_decal/trimline/opaque/neutral/warning{
 	dir = 4
 	},
+/obj/effect/turf_decal/trimline/transparent/green/filled/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/black/corner{
+	color = "#839C67";
+	layer = 2.060;
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "sj" = (
@@ -2467,20 +2486,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
-"sX" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/transparent/green/filled/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/black/corner{
-	color = "#839C67";
-	layer = 2.060;
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono,
-/area/ship/crew/canteen/kitchen)
 "tc" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -2518,23 +2523,6 @@
 "tp" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/office/lobby)
-"tv" = (
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/transparent/green/filled/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/black/corner{
-	color = "#839C67";
-	layer = 2.060;
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono,
-/area/ship/crew/canteen/kitchen)
 "tA" = (
 /obj/effect/turf_decal/corner/transparent/grey/diagonal{
 	dir = 4
@@ -3083,19 +3071,13 @@
 /obj/effect/turf_decal/corner/opaque/black/half,
 /obj/structure/table/reinforced,
 /obj/item/paper/fluff{
-	pixel_x = -6;
+	pixel_x = 16;
 	pixel_y = 3;
 	default_raw_text = "for the love of god, <b>PLEASE</b> keep Muffin fed. there was an incident last week when one of the waiters fucked up and forgot to feed it. needless to say, the guys out now on workers comp. <br><br>p.s, dont ask me whats in that can";
 	name = "incredibly important note"
 	},
-/obj/item/fish_feed{
-	pixel_y = 5;
-	name = "fish food?";
-	desc = "A surprisingly heavy can of... What might be fish feed. It has a pungent odor.";
-	pixel_x = 9
-	},
 /obj/item/pen{
-	pixel_x = -8
+	pixel_x = 11
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
@@ -3418,6 +3400,14 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/green/border{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding{
+	dir = 8;
+	color = "#839C67";
+	layer = 2.060
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
@@ -3812,11 +3802,12 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/storage)
 "Ex" = (
-/obj/machinery/vending/dinnerware{
-	pixel_x = -5
+/obj/structure/table/reinforced,
+/obj/machinery/microwave{
+	pixel_y = 6
 	},
-/obj/effect/turf_decal/corner/transparent/green/border{
-	dir = 8
+/obj/effect/turf_decal/borderfloorblack/cee{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
@@ -4914,7 +4905,7 @@
 	color = "#839C67"
 	},
 /obj/machinery/light/directional/east,
-/obj/machinery/seed_extractor,
+/obj/machinery/chem_master/condimaster,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/hydroponics)
 "Mx" = (
@@ -5212,7 +5203,7 @@
 	dir = 1;
 	layer = 2.060
 	},
-/obj/machinery/chem_master/condimaster,
+/obj/machinery/vending/dinnerware,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "Pn" = (
@@ -5789,6 +5780,7 @@
 /obj/effect/turf_decal/siding/black/corner{
 	dir = 4
 	},
+/obj/item/storage/bag/plants/portaseeder,
 /obj/item/shovel/spade{
 	pixel_y = 7;
 	pixel_x = 2
@@ -6748,9 +6740,9 @@ LJ
 Gq
 Fh
 xx
-sX
+MD
 Ex
-tv
+Wm
 Md
 Ic
 BY
