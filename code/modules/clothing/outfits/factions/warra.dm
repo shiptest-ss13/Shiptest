@@ -71,7 +71,6 @@
 	neck = null
 	l_hand = null
 	belt = null
-	backpack_contents = null
 
 /datum/outfit/job/warra/captain/ns/empty
 	name = "Makosso-Warra - Captain (N+S Logistics) (Naked)"
@@ -125,7 +124,6 @@
 	gloves = null
 	neck = null
 	belt = null
-	backpack_contents = null
 
 /datum/outfit/job/warra/captain/centcom
 	name = "Makosso-Warra - Captain (Central Command)"
@@ -207,6 +205,19 @@
 	implants = list(/obj/item/implant/mindshield)
 
 	chameleon_extras = list(/obj/item/gun/energy/sharplite/yari, /obj/item/stamp/hos)
+
+/datum/outfit/job/warra/hos/empty
+	name = "Makosso-Warra - Head of Security (Naked)"
+
+	belt = null
+	suit = null
+	alt_suit = null
+	gloves = null
+	head = null
+	glasses = null
+	r_pocket = null
+	l_pocket = null
+	backpack_contents = null
 
 /datum/outfit/job/warra/hos/vi
 	name = "Makosso-Warra - Vigilitas Sergeant"
@@ -418,6 +429,15 @@
 
 	box = /obj/item/storage/box/survival/engineer
 	chameleon_extras = /obj/item/stamp/ce
+
+/datum/outfit/job/warra/ce/empty
+	name = "Makosso-Warra - Chief Engineer - Naked"
+	jobtype = /datum/job/chief_engineer
+	job_icon = "chiefengineer"
+
+	belt = null
+	dcoat = null
+	head = null
 
 // Atmos Tech
 /datum/outfit/job/warra/atmos
@@ -794,6 +814,28 @@
 	glasses = /obj/item/clothing/glasses/welding
 
 	backpack_contents = list(/obj/item/weldingtool/hugetank)
+
+/datum/outfit/job/warra/roboticist/empty
+	name = "Makosso-Warra - Roboticist (Naked)"
+	id_assignment = "Roboticist"
+	job_icon = "roboticist"
+	jobtype = /datum/job/roboticist
+
+	uniform = /obj/item/clothing/under/warra/science/robotics
+	suit = null
+	glasses = null
+
+	backpack_contents = null
+
+//Salvager
+/datum/outfit/job/warra/salvager
+	name = "Makosso-Warra - Salvager"
+	id_assignment = "Salvager"
+	job_icon = "engineer"
+	jobtype = /datum/job/engineer
+
+	uniform = /obj/item/clothing/under/warra/science/robotics
+	ears = /obj/item/radio/headset/warra
 
 // Pilot. idk
 /datum/outfit/job/warra/pilot

@@ -208,7 +208,6 @@
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	baseturfs = /turf/open/lava/plasma/ice_moon
 	planetary_atmos = TRUE
-	light_color = COLOR_ICEPLANET_LIGHT
 
 /turf/open/lava/plasma/ice_moon/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS

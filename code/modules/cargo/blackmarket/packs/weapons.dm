@@ -202,7 +202,7 @@
 /datum/blackmarket_item/weapon/guncase/derringer
 	name = "Derringer"
 	desc = "A concealable handgun small enough to hide nearly anywhere. Uses .38 revolver rounds."
-	item = /obj/item/gun/ballistic/derringer
+	item = /obj/item/gun/ballistic/automatic/pistol/derringer
 	gun_unloaded = FALSE
 	mag_number = 0
 
@@ -214,7 +214,7 @@
 /datum/blackmarket_item/weapon/guncase/syndi_derringer
 	name = ".357 Derringer"
 	desc = "A concealable hangun with a tasteful red and black paintjob, which makes it slightly more noticeable. Chambered in .357, so you actually have a chance at killing something."
-	item = /obj/item/gun/ballistic/derringer/traitor
+	item = /obj/item/gun/ballistic/automatic/pistol/derringer/traitor
 	pair_item = list(/datum/blackmarket_item/ammo/a357_box)
 	gun_unloaded = FALSE
 	mag_number = 0
@@ -291,6 +291,26 @@
 	cost_max = 750
 	stock_max = 3
 	availability_prob = 40
+
+/datum/blackmarket_item/weapon/guncase/stingingnettle
+	name = "xPL-7 Stinging Nettle"
+	desc = "An 'off the streets' version of the PL-7 Nettle. Someone installed an electrowhatever chamber on the back, and now it fires like a machine pistol. I also took the liberty of painting over the atrocious paintjob of its previous owner, thank me later."
+	item = /obj/item/gun/energy/clover/pistol/auto
+
+	cost_min = 1500
+	cost_max = 2250
+	stock_max = 2
+	availability_prob = 30
+
+/datum/blackmarket_item/weapon/guncase/faveleira
+	name = "ECM-25 Faveleira"
+	desc = "A fancy Clover Photonics multi-mode energy scattergun, fresh and only lightly used from some poor mining team that bit off more than they could drill. Fun for all ranges. Uses Eoehoma cells, and comes with upgraded ones, you're welcome."
+	item = /obj/item/gun/energy/clover/faveleira/clip
+
+	cost_min = 3500
+	cost_max = 4500
+	stock_max = 2
+	availability_prob = 20
 
 /datum/blackmarket_item/weapon/guncase/cm23
 	name = "CM-23 pistol"
@@ -443,6 +463,18 @@
 	cost_max = 1000
 	stock_max = 3
 	availability_prob = 50
+
+/datum/blackmarket_item/weapon/guncase/scorcher
+	name = "Scorcher PDW"
+	desc = "Ever wanna light a bitch up in both ways? Well we got you covered! My Guy bolted some flamethrower parts on a heater, now it spews fire AND lead."
+	item = /obj/item/gun/ballistic/automatic/smg/heater/scorcher
+
+
+	cost_min = 3250
+	cost_max = 4250
+	stock_min = 1
+	stock_max = 2
+	availability_prob = 20
 
 /datum/blackmarket_item/weapon/guncase/spitter
 	name = "Spitter Submachine Gun"

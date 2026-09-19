@@ -112,7 +112,7 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/Aggro()
 	vision_range = aggro_vision_range
 	handle_preattack()
-	if(icon_state != icon_aggro)
+	if(icon_state != icon_aggro && stat != DEAD)
 		icon_state = icon_aggro
 
 /mob/living/simple_animal/hostile/asteroid/goliath/pup
