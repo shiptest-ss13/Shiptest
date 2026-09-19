@@ -489,7 +489,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 			return
 
 		else if(revved)
-			end_message = "Revival failed, stopping procedure. [proc_disk.cost ? "A voucher will be dispensed as compensation." : ""]"
+			end_message = "Revival failed, stopping procedure. [proc_disk.cost ? "Dispensing voucher as compensation." : ""]"
 			voucher = TRUE
 			end_sound = 'sound/machines/defib_failed.ogg'
 	addtimer(CALLBACK(src, PROC_REF(end_procedure)), delay)
@@ -648,7 +648,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 		cost = base_cost
 	return cost
 
-/obj/machinery/autodoc/attackby(obj/item/thing, mob/user, params)
+/obj/machinery/autodoc_vendor/attackby(obj/item/thing, mob/user, params)
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(istype(thing, /obj/item/autodoc_voucher))
 		var/obj/item/autodoc_voucher/voucher = thing
