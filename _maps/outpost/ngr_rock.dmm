@@ -1410,6 +1410,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/chair/bench/grey/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "cV" = (
@@ -2144,10 +2145,10 @@
 /obj/effect/turf_decal/corner/opaque/beige{
 	dir = 1
 	},
-/obj/structure/chair/bench/grey/directional/west,
 /obj/machinery/vending/wallmed{
 	pixel_x = 26
 	},
+/obj/structure/curtain/thin/cloth/grey,
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "eD" = (
@@ -3309,6 +3310,17 @@
 	},
 /turf/open/floor/plasteel/stairs,
 /area/outpost/cargo)
+"hm" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/beige/half{
+	dir = 8
+	},
+/obj/machinery/autodoc,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/tech,
+/area/outpost/medical)
 "ho" = (
 /obj/effect/turf_decal/corner/opaque/beige/half{
 	dir = 8
@@ -3785,17 +3797,6 @@
 "is" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/outpost/hallway/aft)
-"it" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/beige/half{
-	dir = 8
-	},
-/obj/machinery/autodoc,
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/tech,
-/area/outpost/medical)
 "iu" = (
 /obj/effect/decal/fakelattice,
 /obj/structure/hazard/spray/steam/transparent_safe,
@@ -14266,6 +14267,7 @@
 /obj/effect/turf_decal/trimline/opaque/black/warning{
 	dir = 8
 	},
+/obj/structure/curtain/thin/cloth/grey,
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "EJ" = (
@@ -31823,7 +31825,7 @@ aS
 Xe
 YF
 nE
-it
+hm
 eB
 kS
 Dz

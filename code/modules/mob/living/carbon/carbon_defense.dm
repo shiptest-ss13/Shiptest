@@ -768,7 +768,6 @@
 	if(check_slot)
 		missing_organs &= check_slot
 	for(var/slot in missing_organs)
-		var/obj/item/organ/organ = missing_organs[slot]
 		if(slot in internal_organs_slot)
 			missing_organs -= slot
 		else

@@ -31,9 +31,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	icon = 'icons/obj/machines/borgcharger.dmi'
 	icon_state = "borgcharger0"
 	density = TRUE
-	use_power = IDLE_POWER_USE
-	idle_power_usage = IDLE_DRAW_LOW
-	active_power_usage = ACTIVE_DRAW_MEDIUM
+	use_power = ACTIVE_DRAW_MEDIUM
 	occupant_typecache = /mob/living/carbon
 	processing_flags = START_PROCESSING_MANUALLY
 
@@ -41,6 +39,8 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 
 	///Used to check whether the machine is actively working.
 	var/operating = FALSE
+	///Whether we're dispensing compensation.
+	var/voucher = FALSE
 	///Toggled on when post_procedure is called. This only exists so damage applied at this point isn't factored into operation length.
 	var/post_procedure = FALSE
 	///Message once operation has ended.
@@ -69,6 +69,16 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	illustration = "autodoc"
 	var/heal_flags = 0
 	var/uses = 0
+	var/cost = 0 //Amount of credits spent to print the disk. Used by vouchers.
+
+/obj/item/disk/autodoc/Initialize(mapload, flags, init_uses, init_cost)
+	. = ..()
+	if(flags)
+		heal_flags = flags
+	if(init_uses)
+		uses = init_uses
+	if(init_cost)
+		cost = init_cost
 
 /obj/item/disk/autodoc/test
 	name = "everything disk"
@@ -100,6 +110,26 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 		flag_list += span_boldnotice("Resuscitation")
 	return english_list(flag_list, null, span_notice(", "))
 
+/obj/item/autodoc_voucher
+	name = "\proper refund voucher"
+	desc = "A voucher printed as compensation for a failed AutoDoc procedure. Insert into your nearest AutoDoc vendor."
+	icon = 'icons/obj/bureaucracy.dmi'
+	icon_state = "paperbiscuit"
+	throwforce = 0
+	w_class = WEIGHT_CLASS_TINY
+	pressure_resistance = 0
+	resistance_flags = FLAMMABLE
+	max_integrity = 130
+	pickup_sound = 'sound/items/handling/paper_pickup.ogg'
+	drop_sound = 'sound/items/handling/paper_drop.ogg'
+	var/refund_amount = 0
+
+/obj/item/autodoc_voucher/Initialize(mapload, amount)
+	. = ..()
+	if(amount)
+		refund_amount = amount
+
+//Examines
 /obj/item/disk/autodoc/examine()
 	. = ..()
 	if(heal_flags)
@@ -108,6 +138,10 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 		. += span_info("It has 0 uses left.")
 	else
 		. += span_info("It has [uses] uses left.")
+
+/obj/item/autodoc_voucher/examine(mob/user)
+	. = ..()
+	. += span_notice("This voucher can be redeemed for [span_boldnotice("[refund_amount]")] credits.")
 
 /obj/machinery/autodoc/examine(mob/user)
 	. = ..()
@@ -129,6 +163,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 
 //Insert procedure disk
 /obj/machinery/autodoc/attackby(obj/item/thing, mob/user, params)
+	user.changeNext_move(CLICK_CD_MELEE)
 	if(istype(thing, /obj/item/disk/autodoc))
 		if(proc_disk)
 			to_chat(user, span_warning("Remove the other procedure disk first!"))
@@ -454,7 +489,8 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 			return
 
 		else if(revved)
-			end_message = "Revival failed, stopping procedure. A voucher will be dispensed as compensation." //There is no voucher.
+			end_message = "Revival failed, stopping procedure. [proc_disk.cost ? "A voucher will be dispensed as compensation." : ""]"
+			voucher = TRUE
 			end_sound = 'sound/machines/defib_failed.ogg'
 	addtimer(CALLBACK(src, PROC_REF(end_procedure)), delay)
 
@@ -464,6 +500,10 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	end_processing()
 	if(patient && IS_IN_STASIS(patient))
 		patient.remove_status_effect(STATUS_EFFECT_STASIS, STASIS_MACHINE_EFFECT)
+	if(voucher && proc_disk.cost)
+		new /obj/item/autodoc_voucher(get_turf(src), proc_disk.cost / 2)
+		playsound(src, 'sound/items/taperecorder/taperecorder_print.ogg', 30, FALSE)
+	voucher = FALSE
 	operating = FALSE
 	post_procedure = FALSE
 	playsound(src, end_sound, 100)
@@ -486,6 +526,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "robotics"
 	density = TRUE
+	use_power = IDLE_POWER_USE
 	///Times printed disk can be used.
 	var/uses = 1
 	///Procedures on our printed disk. All = 128.
@@ -580,12 +621,10 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 			var/canafford = text2num(params["canafford"])
 			if(canafford && heal_flags > 0) //If we're too poor or no flags are toggled, skip this part.
 				custom_clicksound = 'sound/machines/pda_button1.ogg'
-				var/obj/item/disk/autodoc/printed_disk = new /obj/item/disk/autodoc(get_turf(src))
+				var/obj/item/disk/autodoc/printed_disk = new /obj/item/disk/autodoc(get_turf(src), heal_flags, uses, cost) //Generate a proc disk with our selected uses and procedures.
 				var/mob/living/carbon/human/carbon = usr
 				var/obj/item/card/bank/card = carbon.get_bankcard()
 
-				printed_disk.heal_flags = heal_flags
-				printed_disk.uses = uses //Generate a proc disk with our selected uses and procedures.
 				if(card)
 					var/datum/bank_account/account = card.registered_account
 					account.adjust_money(-cost, CREDIT_LOG_VENDOR_PURCHASE)
@@ -608,3 +647,16 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	else
 		cost = base_cost
 	return cost
+
+/obj/machinery/autodoc/attackby(obj/item/thing, mob/user, params)
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(istype(thing, /obj/item/autodoc_voucher))
+		var/obj/item/autodoc_voucher/voucher = thing
+		if(voucher.refund_amount > 0)
+			qdel(voucher)
+			new /obj/item/spacecash/bundle(get_turf(src), voucher.refund_amount)
+			playsound(src, pick('sound/machines/coindrop.ogg', 'sound/machines/coindrop2.ogg'), 40, TRUE)
+		else
+			to_chat(user, span_warning("You try inserting the voucher into [src], but the machine rejects it!"))
+	else
+		return ..()
