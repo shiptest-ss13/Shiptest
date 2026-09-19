@@ -460,8 +460,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/command/glass{
-	name = "Bridge";
-	req_access_txt = "20"
+	name = "Bridge"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "sunskipper_bridge_lockdown";
@@ -2223,8 +2222,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
-	dir = 4;
-	req_access_txt = "20"
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -2751,7 +2749,6 @@
 	},
 /obj/machinery/door/airlock/command{
 	name = "Bridge";
-	req_access_txt = "20";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -5487,8 +5484,8 @@
 	icon_state = "0-5"
 	},
 /obj/structure/closet/crate/secure/plasma{
-	req_access_txt = "10";
-	name = "fuel crate"
+	name = "fuel crate";
+	req_ship_access = 1
 	},
 /obj/item/stack/sheet/mineral/uranium/ten,
 /obj/structure/extinguisher_cabinet/directional/south{

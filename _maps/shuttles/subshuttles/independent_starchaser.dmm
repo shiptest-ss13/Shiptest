@@ -194,7 +194,10 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "u" = (
-/obj/machinery/power/smes/engineering,
+/obj/machinery/power/smes/engineering{
+	input_level = 5000;
+	output_level = 15000
+	},
 /obj/structure/cable/pink{
 	icon_state = "0-2"
 	},
