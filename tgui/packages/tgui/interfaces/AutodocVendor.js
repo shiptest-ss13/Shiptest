@@ -20,7 +20,6 @@ export const AutodocVendor = (props, context) => {
     do_brute,
     do_burn,
     do_tox,
-    do_oxy,
     do_clone,
 
     do_organs,
@@ -31,7 +30,6 @@ export const AutodocVendor = (props, context) => {
   let toggle_brute = heal_flags & do_brute ? 1 : 0;
   let toggle_burn = heal_flags & do_burn ? 1 : 0;
   let toggle_tox = heal_flags & do_tox ? 1 : 0;
-  let toggle_oxy = heal_flags & do_oxy ? 1 : 0;
   let toggle_clone = heal_flags & do_clone ? 1 : 0;
 
   let toggle_wounds = heal_flags & do_wounds ? 1 : 0;
@@ -105,18 +103,6 @@ export const AutodocVendor = (props, context) => {
                     'toggle': toggle_tox,
                     'flag': do_tox,
                     'adjustcost': cost_basic,
-                  })
-                }
-              />
-              <Button
-                content="Respiratory Damage"
-                icon={toggle_oxy ? 'toggle-on' : 'toggle-off'}
-                color={toggle_oxy ? 'green' : 'red'}
-                onClick={() =>
-                  act('toggle-procedure', {
-                    'toggle': toggle_oxy,
-                    'flag': do_oxy,
-                    'adjustcost': cost_oxy,
                   })
                 }
               />

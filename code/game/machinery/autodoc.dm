@@ -72,7 +72,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 
 /obj/item/disk/autodoc/test
 	name = "everything disk"
-	heal_flags = DO_BRUTE | DO_BURN | DO_TOX | DO_OXY | DO_CLONE | DO_WOUNDS | DO_ORGANS | DO_REVIVE //collect my flags
+	heal_flags = DO_BRUTE | DO_BURN | DO_TOX | DO_REPLACE | DO_CLONE | DO_WOUNDS | DO_ORGANS | DO_REVIVE //collect my flags
 	uses = 100
 
 //Examine behaviour
@@ -88,8 +88,6 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 		flag_list += span_boldnotice("Burn Treatment")
 	if(heal_flags & DO_TOX)
 		flag_list += span_boldnotice("Toxin Purge")
-	if(heal_flags & DO_OXY)
-		flag_list += span_boldnotice("Respiratory Damage")
 	if(heal_flags & DO_CLONE)
 		flag_list += span_boldnotice("Cellular Damage")
 	if(heal_flags & DO_WOUNDS)
@@ -362,12 +360,6 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 		total_damage += patient.getToxLoss() + patient.radiation / 2
 		. = TRUE
 
-	if(proc_disk.heal_flags & DO_OXY && patient.getOxyLoss() > 0)
-		if(operating)
-			patient.adjustOxyLoss(heal_amount * seconds_per_tick)
-		total_damage += patient.getOxyLoss()
-		. = TRUE
-
 	if(proc_disk.heal_flags & DO_CLONE && patient.getCloneLoss() > 0)
 		if(operating)
 			patient.adjustCloneLoss(heal_amount * seconds_per_tick)
@@ -393,12 +385,12 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	//If patient has a ckey, and revive() is called successfully, do a bunch of things I stole from defib code.
 	if(patient)
 		playsound(src, 'sound/machines/defib_zap.ogg', 50, FALSE)
-		if(patient.mind && patient.revive())
+		if(patient.mind)
+			patient.revive()
 			patient.set_heartattack(FALSE)
 			patient.emote("gasp")
 			patient.set_timed_status_effect(200 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
-			patient.adjustOxyLoss(30)
-			patient.adjustStaminaLoss(40)
+			patient.adjustOxyLoss(60)
 			SEND_SIGNAL(occupant, COMSIG_LIVING_MINOR_SHOCK)
 			say("Rescusitation successful.")
 			if (patient.health > HEALTH_THRESHOLD_FULLCRIT) //Call me when you can be awake and unconscious at the same time. This will always be true unless the patient has prosthetics.
@@ -511,7 +503,6 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	var/cost_basic = 250
 	var/cost_complex = 500
 	var/cost_organs = 800
-	var/cost_oxy = 100
 
 /obj/machinery/autodoc_vendor/ui_interact(mob/user, datum/tgui/ui)
 	if(machine_stat & BROKEN)
@@ -539,12 +530,10 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	data["cost_basic"] = cost_basic
 	data["cost_complex"] = cost_complex
 	data["cost_organs"] = cost_organs
-	data["cost_oxy"] = cost_oxy
 
 	data["do_brute"] = DO_BRUTE
 	data["do_burn"] = DO_BURN
 	data["do_tox"] = DO_TOX
-	data["do_oxy"] = DO_OXY
 	data["do_clone"] = DO_CLONE
 
 	data["do_organs"] = DO_ORGANS
