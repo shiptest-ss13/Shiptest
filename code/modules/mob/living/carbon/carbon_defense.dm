@@ -772,8 +772,6 @@
 		if(slot in internal_organs_slot)
 			missing_organs -= slot
 		else
-			to_chat(world, "slot: [slot], organ: [organ]")
-	to_chat(world, "found [length(missing_organs)]")
 	if(count)
 		return length(missing_organs)
 	return missing_organs

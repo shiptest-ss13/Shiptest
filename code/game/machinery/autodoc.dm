@@ -415,11 +415,9 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 			for(var/slot in patient.get_missing_organs(vitals))
 				if(patient.dna.species.prosthetic_style && (slot in patient.dna.species.prosthetic_style.replacement_organs)) //If we can't get a prosthetic, don't add the organ to our replacement list.
 					LAZYADD(replacing_organs, slot)
-					to_chat(world, span_notice("added [slot] to replace list"))
 		if(patient.get_missing_limbs())
 			for(var/slot in patient.get_missing_limbs())
 				LAZYADD(replacing_limbs, slot)
-				to_chat(world, span_notice("added [slot] to replace list"))
 	var/replace_list = replacing_organs + replacing_limbs
 	return replace_list
 
@@ -435,12 +433,10 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 			var/obj/item/organ/new_organ = patient.new_organ(missing_organ, TRUE, patient.dna.species)
 			new_organ.Insert(patient, TRUE, FALSE)
 			LAZYREMOVE(replacing_organs, missing_organ) //Insert the new organ into the patient, and remove it from the to-do list.
-			to_chat(world, "missing organ: [missing_organ]")
 		else if(replacing_limbs)
 			var/missing_limb = pick(replacing_limbs)
 			patient.regenerate_limb(missing_limb, robotic = TRUE)
 			LAZYREMOVE(replacing_limbs, missing_limb) //Insert the new organ into the patient, and remove it from the to-do list.
-			to_chat(world, "missing limb: [missing_limb]")
 		playsound(src, pick('sound/surgery/organ1.ogg','sound/surgery/organ2.ogg'), 30, FALSE)
 		addtimer(CALLBACK(src, PROC_REF(post_procedure)), post_delay)
 		return
@@ -474,8 +470,6 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	if(occupant)
 		patient = occupant
 	end_processing()
-	LAZYCLEARLIST(replacing_organs)
-	LAZYCLEARLIST(replacing_limbs)
 	if(patient && IS_IN_STASIS(patient))
 		patient.remove_status_effect(STATUS_EFFECT_STASIS, STASIS_MACHINE_EFFECT)
 	operating = FALSE
