@@ -114,7 +114,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	name = "\proper refund voucher"
 	desc = "A voucher printed as compensation for a failed AutoDoc procedure. Insert into your nearest AutoDoc vendor."
 	icon = 'icons/obj/bureaucracy.dmi'
-	icon_state = "paperbiscuit"
+	icon_state = "paperbiscuit_cracked"
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
 	pressure_resistance = 0
@@ -128,6 +128,12 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	. = ..()
 	if(amount)
 		refund_amount = amount
+	update_icon()
+
+/obj/item/autodoc_voucher/update_overlays()
+	. = ..()
+	if(refund_amount)
+		. += "paperbiscuit_paper"
 
 //Examines
 /obj/item/disk/autodoc/examine()
@@ -336,6 +342,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	patient.apply_status_effect(STATUS_EFFECT_STASIS, STASIS_MACHINE_EFFECT)
 	patient.extinguish_mob()
 	say("Commencing operation. Estimated time to completion: [get_operation_length()].")
+	update_icon()
 	begin_processing()
 
 //Calculate total length of procedure in minutes & seconds.
@@ -621,7 +628,7 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 			var/canafford = text2num(params["canafford"])
 			if(canafford && heal_flags > 0) //If we're too poor or no flags are toggled, skip this part.
 				custom_clicksound = 'sound/machines/pda_button1.ogg'
-				var/obj/item/disk/autodoc/printed_disk = new /obj/item/disk/autodoc(get_turf(src), heal_flags, uses, cost) //Generate a proc disk with our selected uses and procedures.
+				var/obj/item/disk/autodoc/printed_disk = new /obj/item/disk/autodoc(get_turf(src), heal_flags, uses, free ? cost : 0) //Generate a proc disk with our selected uses and procedures.
 				var/mob/living/carbon/human/carbon = usr
 				var/obj/item/card/bank/card = carbon.get_bankcard()
 
