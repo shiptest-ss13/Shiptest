@@ -745,9 +745,8 @@
 //Return health excluding prosthetics / robotic limbs.
 /mob/living/carbon/get_organic_health()
 	. = health
-	var/obj/item/bodypart/limb
-	for (var/zone in bodyparts)
-		limb = bodyparts[zone]
+	for(var/zone in bodyparts)
+		var/obj/item/bodypart/limb = bodyparts[zone]
 		if(!limb)
 			continue
 		if(!IS_ORGANIC_LIMB(limb))
@@ -755,13 +754,29 @@
 
 //Return true if we have an organic limb.
 /mob/living/carbon/proc/check_organic_parts()
-	var/obj/item/bodypart/limb
-	for (var/zone in bodyparts)
-		limb = bodyparts[zone]
+	for(var/zone in bodyparts)
+		var/obj/item/bodypart/limb = bodyparts[zone]
 		if(!limb)
 			continue
 		if(IS_ORGANIC_LIMB(limb))
 			return TRUE
+
+/mob/living/carbon/proc/get_missing_organs(vitals, count, list/check_slot)
+	var/list/missing_organs = internal_organs_slot ^ dna.species.species_organs
+	if(vitals)
+		check_slot = list(ORGAN_SLOT_BRAIN, ORGAN_SLOT_HEART, ORGAN_SLOT_LUNGS, ORGAN_SLOT_LIVER, ORGAN_SLOT_STOMACH)
+	if(check_slot)
+		missing_organs &= check_slot
+	for(var/slot in missing_organs)
+		var/obj/item/organ/organ = missing_organs[slot]
+		if(slot in internal_organs_slot)
+			missing_organs -= slot
+		else
+			to_chat(world, "slot: [slot], organ: [organ]")
+	to_chat(world, "found [length(missing_organs)]")
+	if(count)
+		return length(missing_organs)
+	return missing_organs
 
 /mob/living/carbon/grabbedby(mob/living/carbon/user, supress_message = FALSE)
 	if(user != src)

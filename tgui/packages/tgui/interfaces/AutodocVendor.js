@@ -24,6 +24,7 @@ export const AutodocVendor = (props, context) => {
     do_clone,
 
     do_organs,
+    do_replace,
     do_wounds,
     do_revive,
   } = data;
@@ -35,6 +36,7 @@ export const AutodocVendor = (props, context) => {
 
   let toggle_wounds = heal_flags & do_wounds ? 1 : 0;
   let toggle_organs = heal_flags & do_organs ? 1 : 0;
+  let toggle_replace = heal_flags & do_replace ? 1 : 0;
   let toggle_revive = heal_flags & do_revive ? 1 : 0;
 
   let canAfford;
@@ -44,7 +46,7 @@ export const AutodocVendor = (props, context) => {
     canAfford = 0;
   }
   return (
-    <Window width={270} height={500}>
+    <Window width={290} height={500}>
       <Window.Content>
         {!free && (
           <Section title="User">
@@ -83,7 +85,7 @@ export const AutodocVendor = (props, context) => {
                 }
               />
               <Button
-                content="Burns"
+                content="Burn Treatment"
                 icon={toggle_burn ? 'toggle-on' : 'toggle-off'}
                 color={toggle_burn ? 'green' : 'red'}
                 onClick={() =>
@@ -143,13 +145,25 @@ export const AutodocVendor = (props, context) => {
                 }
               />
               <Button
-                content="Organ Damage"
+                content="Organ Repair"
                 icon={toggle_organs ? 'toggle-on' : 'toggle-off'}
                 color={toggle_organs ? 'green' : 'red'}
                 onClick={() =>
                   act('toggle-procedure', {
                     'toggle': toggle_organs,
                     'flag': do_organs,
+                    'adjustcost': cost_organs,
+                  })
+                }
+              />
+              <Button
+                content="Prosthetic Replacement"
+                icon={toggle_replace ? 'toggle-on' : 'toggle-off'}
+                color={toggle_replace ? 'green' : 'red'}
+                onClick={() =>
+                  act('toggle-procedure', {
+                    'toggle': toggle_replace,
+                    'flag': do_replace,
                     'adjustcost': cost_organs,
                   })
                 }
