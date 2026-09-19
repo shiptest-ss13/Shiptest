@@ -1752,7 +1752,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/wood/walnut,
-/area/ship/bridge)
+/area/ship/crew/dorm/captain)
 "nh" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1763,6 +1763,9 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
+"ni" = (
+/turf/closed/wall/r_wall/yesdiag,
+/area/ship/crew/dorm/captain)
 "nj" = (
 /obj/structure/railing/wood{
 	color = "#777777";
@@ -1863,6 +1866,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/black/half{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/hydroponics)
@@ -2027,7 +2033,7 @@
 	desc = "Dear god, the handwriting on this is awful... Several stains cover the page. "
 	},
 /turf/open/floor/carpet/green,
-/area/ship/bridge)
+/area/ship/crew/dorm/captain)
 "pB" = (
 /turf/closed/wall/r_wall/yesdiag,
 /area/ship/engineering/communications)
@@ -2552,7 +2558,7 @@
 	},
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
-/area/ship/bridge)
+/area/ship/crew/dorm/captain)
 "tE" = (
 /obj/structure/chair/sofa/red/corpo/left/directional/north,
 /turf/open/floor/suns/hatch/ebony,
@@ -2783,7 +2789,7 @@
 /obj/item/reagent_containers/food/drinks/flask,
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /turf/open/floor/carpet/green,
-/area/ship/bridge)
+/area/ship/crew/dorm/captain)
 "vE" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/platform/industrial_alt{
@@ -2900,7 +2906,7 @@
 /turf/open/floor/suns/hatch{
 	color = "#543C30"
 	},
-/area/ship/bridge)
+/area/ship/crew/dorm/captain)
 "wO" = (
 /obj/effect/turf_decal/siding/wood/corner/walnut{
 	dir = 1
@@ -4502,7 +4508,7 @@
 	pixel_y = -1
 	},
 /turf/open/floor/wood/walnut,
-/area/ship/bridge)
+/area/ship/crew/dorm/captain)
 "JF" = (
 /obj/machinery/power/ship_gravity,
 /obj/structure/cable/green{
@@ -4905,7 +4911,7 @@
 /area/ship/crew/canteen)
 "Mr" = (
 /turf/closed/wall/r_wall,
-/area/ship/bridge)
+/area/ship/crew/dorm/captain)
 "Mt" = (
 /obj/effect/turf_decal/industrial/outline{
 	color = "#839C67"
@@ -5988,7 +5994,7 @@
 	pixel_y = 35
 	},
 /turf/open/floor/wood/walnut,
-/area/ship/bridge)
+/area/ship/crew/dorm/captain)
 "Xb" = (
 /obj/effect/turf_decal/siding/black/corner{
 	layer = 2.045;
@@ -6035,6 +6041,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
+"XI" = (
+/turf/closed/wall,
+/area/ship/crew/dorm/captain)
 "XQ" = (
 /obj/effect/turf_decal/siding/wood/ebony{
 	dir = 4
@@ -6131,7 +6140,7 @@
 	pixel_y = 7
 	},
 /turf/open/floor/wood/walnut,
-/area/ship/bridge)
+/area/ship/crew/dorm/captain)
 "YA" = (
 /obj/machinery/door/airlock{
 	dir = 1;
@@ -6429,7 +6438,7 @@ fz
 Mr
 Mr
 Mr
-oL
+ni
 rt
 rt
 "}
@@ -6455,7 +6464,7 @@ bd
 ci
 me
 PV
-xF
+XI
 Jp
 WU
 Mr
@@ -6513,7 +6522,7 @@ Mt
 ci
 ci
 LZ
-xF
+XI
 Yx
 pu
 tC

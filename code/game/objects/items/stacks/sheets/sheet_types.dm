@@ -129,6 +129,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("drying rack", /obj/machinery/smartfridge/drying_rack, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("sauna oven", /obj/structure/sauna_oven, 15, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("hedge", /obj/structure/fluff/hedge, 5, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("hedge (opaque)", /obj/structure/fluff/hedge/opaque, 5, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("wooden barrel", /obj/structure/fermenting_barrel, 8, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("dog bed", /obj/structure/bed/dogbed, 10, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("dresser", /obj/structure/dresser, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
