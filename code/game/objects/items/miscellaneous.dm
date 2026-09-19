@@ -593,3 +593,4 @@
 	desc = "Coated in the smell of cheap nicotine and bad habits. Keep away from asthmatics."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "ashtray"
+	custom_materials = list(/datum/material/iron = 200)

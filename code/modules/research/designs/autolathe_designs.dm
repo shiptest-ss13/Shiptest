@@ -263,6 +263,14 @@
 	build_path = /obj/item/glassvase
 	category = list("initial", "Misc")
 
+/datum/design/ashtray
+	name = "Ashtray"
+	id = "ashtray"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 200)
+	build_path = /obj/item/ashtray
+	category = list("initial", "Misc")
+
 /datum/design/pipe_painter
 	name = "Pipe Painter"
 	id = "pipe_painter"
