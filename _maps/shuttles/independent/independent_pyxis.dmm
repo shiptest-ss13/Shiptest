@@ -195,6 +195,34 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"dr" = (
+/obj/effect/turf_decal/trimline/transparent/white/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/structure/closet/wall/directional/east{
+	pixel_y = 0;
+	name = "garden closet";
+	pixel_x = 27
+	},
+/obj/item/reagent_containers/spray/pestspray{
+	pixel_y = -7;
+	pixel_x = 10
+	},
+/obj/item/shovel/spade{
+	pixel_y = 3;
+	pixel_x = 3
+	},
+/obj/item/cultivator{
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "dJ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/computer/helm{
@@ -603,11 +631,28 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/machinery/washing_machine{
-	pixel_x = 9;
-	pixel_y = -1
+/obj/structure/closet/wall/directional/east{
+	name = "cleaning supplies"
 	},
-/obj/machinery/light/small/directional/east,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/storage/bag/trash,
+/obj/item/reagent_containers/glass/rag{
+	pixel_y = -7;
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_y = -6;
+	pixel_x = 8
+	},
+/obj/item/mop{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/item/pushbroom,
+/obj/item/plunger{
+	pixel_y = 6;
+	pixel_x = -6
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "iB" = (
@@ -811,6 +856,16 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"lu" = (
+/obj/structure/closet/wall/directional/west,
+/obj/item/plate/large,
+/obj/item/plate/large,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/reagent_containers/glass/beaker/large,
+/turf/open/floor/wood/ebony,
+/area/ship/crew/canteen)
 "lv" = (
 /obj/structure/closet/wall/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1248,12 +1303,15 @@
 	icon_state = "1-4"
 	},
 /obj/structure/cable,
-/obj/structure/closet/crate/trashcart/laundry,
 /obj/machinery/button/door{
 	name = "engine shutters";
 	pixel_y = -21;
 	dir = 1;
 	id = "bunnyengine2"
+	},
+/obj/machinery/washing_machine{
+	pixel_x = -6;
+	pixel_y = -2
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -2568,6 +2626,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/closet/crate/trashcart/laundry,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "QB" = (
@@ -2589,44 +2648,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
-"QZ" = (
-/obj/effect/turf_decal/trimline/transparent/white/filled/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
-/obj/structure/closet/wall/directional/east{
-	pixel_y = 0;
-	name = "garden closet";
-	pixel_x = 27
-	},
-/obj/item/reagent_containers/spray/pestspray{
-	pixel_y = -7;
-	pixel_x = 10
-	},
-/obj/item/shovel/spade{
-	pixel_y = 3;
-	pixel_x = 3
-	},
-/obj/item/cultivator{
-	pixel_y = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
-"Ra" = (
-/obj/structure/closet/wall/directional/west,
-/obj/item/plate/large,
-/obj/item/plate/large,
-/obj/item/plate,
-/obj/item/plate,
-/obj/item/plate,
-/obj/item/reagent_containers/glass/beaker/large,
-/turf/open/floor/wood/ebony,
-/area/ship/crew/canteen)
 "Rd" = (
 /obj/effect/turf_decal/trimline/transparent/white/filled/line{
 	dir = 8
@@ -3020,23 +3041,6 @@
 "Xj" = (
 /obj/item/radio/intercom/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wall/directional/east{
-	name = "cleaning supplies"
-	},
-/obj/item/pushbroom,
-/obj/item/reagent_containers/spray/cleaner{
-	pixel_y = -6;
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/glass/rag{
-	pixel_y = -7;
-	pixel_x = 4
-	},
-/obj/item/plunger{
-	pixel_y = 6;
-	pixel_x = -6
-	},
-/obj/item/storage/bag/trash,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -3046,12 +3050,9 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 4
 	},
-/obj/item/mop{
-	pixel_x = -4;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/glass/bucket,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/light/small/directional/east,
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Xk" = (
@@ -3162,7 +3163,7 @@ Ly
 Ly
 mt
 HL
-Ra
+lu
 IC
 qx
 hL
@@ -3282,7 +3283,7 @@ aT
 oC
 mt
 tL
-QZ
+dr
 Av
 tr
 Xv
