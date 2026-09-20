@@ -1013,6 +1013,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"nE" = (
+/obj/structure/closet/wall/directional/west,
+/obj/item/plate/large,
+/obj/item/plate/large,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/reagent_containers/glass/beaker/large,
+/turf/open/floor/wood/ebony,
+/area/ship/crew/canteen)
 "nJ" = (
 /obj/structure/crate_shelf,
 /obj/machinery/light/directional/north,
@@ -1189,6 +1199,42 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
+"sw" = (
+/obj/effect/turf_decal/trimline/transparent/white/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/structure/closet/wall/directional/east{
+	pixel_y = 0;
+	name = "garden closet";
+	pixel_x = 27
+	},
+/obj/item/reagent_containers/spray/pestspray{
+	pixel_y = -7;
+	pixel_x = 10
+	},
+/obj/item/shovel/spade{
+	pixel_y = 3;
+	pixel_x = 3
+	},
+/obj/item/cultivator{
+	pixel_y = 1
+	},
+/obj/item/seeds/coffee{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/item/storage/box/coffeepack/arabica{
+	pixel_x = 0;
+	pixel_y = -4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "sN" = (
 /obj/item/wrench/medical,
 /obj/item/tank/internals/anesthetic,
@@ -1540,13 +1586,6 @@
 	pixel_y = -6;
 	id = "bunnycargo";
 	name = "cargo doors"
-	},
-/obj/machinery/button/shieldwallgen{
-	dir = 4;
-	pixel_x = -20;
-	pixel_y = 5;
-	name = "cargo field";
-	id = "bunnyfield"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 4;
@@ -1913,16 +1952,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
-"EW" = (
-/obj/structure/closet/wall/directional/west,
-/obj/item/plate/large,
-/obj/item/plate/large,
-/obj/item/plate,
-/obj/item/plate,
-/obj/item/plate,
-/obj/item/reagent_containers/glass/beaker/large,
-/turf/open/floor/wood/ebony,
-/area/ship/crew/canteen)
 "EX" = (
 /obj/structure/railing/thin{
 	dir = 8
@@ -1975,42 +2004,6 @@
 /obj/effect/turf_decal/corner/transparent/navyblue/full,
 /obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
-"FU" = (
-/obj/effect/turf_decal/trimline/transparent/white/filled/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
-/obj/structure/closet/wall/directional/east{
-	pixel_y = 0;
-	name = "garden closet";
-	pixel_x = 27
-	},
-/obj/item/reagent_containers/spray/pestspray{
-	pixel_y = -7;
-	pixel_x = 10
-	},
-/obj/item/shovel/spade{
-	pixel_y = 3;
-	pixel_x = 3
-	},
-/obj/item/cultivator{
-	pixel_y = 1
-	},
-/obj/item/seeds/coffee{
-	pixel_x = -8;
-	pixel_y = 4
-	},
-/obj/item/storage/box/coffeepack/arabica{
-	pixel_x = 0;
-	pixel_y = -4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -3171,7 +3164,7 @@ Ly
 Ly
 mt
 HL
-EW
+nE
 IC
 qx
 hL
@@ -3291,7 +3284,7 @@ aT
 oC
 mt
 tL
-FU
+sw
 Av
 tr
 Xv
