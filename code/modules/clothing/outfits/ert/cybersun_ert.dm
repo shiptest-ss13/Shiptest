@@ -23,7 +23,7 @@
 
 	backpack_contents = list(
 		/obj/item/grenade/smokebomb = 2,
-		/obj/item/grenade/frag = 1,
+		/obj/item/grenade/lorentz = 1,
 		/obj/item/melee/knife/combat = 1,
 		/obj/item/radio = 1,
 		/obj/item/bodycamera = 1

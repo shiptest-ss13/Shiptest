@@ -258,6 +258,17 @@
 	crate_name = "frag grenade crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
 
+/datum/supply_pack/sec_supply/lorentz_grenade
+	name = "Lorentz Grenade Crate"
+	desc = "Contains one lorentz grenade. Better not let it go off in your hands."
+	cost = 300
+	contains = list(/obj/item/grenade/lorentz)
+	crate_name = "lorentz grenade crate"
+	crate_type = /obj/structure/closet/crate/secure/weapon
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/sec_supply/c4duffel
 	name = "C-4 Demolitions Charge Crate"
 	desc = "Contains a duffel of C-4 demolitions charges, for use in scrapping and demolitions of large-scale structures."
