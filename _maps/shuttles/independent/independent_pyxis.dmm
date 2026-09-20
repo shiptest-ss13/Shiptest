@@ -195,34 +195,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"dr" = (
-/obj/effect/turf_decal/trimline/transparent/white/filled/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
-/obj/structure/closet/wall/directional/east{
-	pixel_y = 0;
-	name = "garden closet";
-	pixel_x = 27
-	},
-/obj/item/reagent_containers/spray/pestspray{
-	pixel_y = -7;
-	pixel_x = 10
-	},
-/obj/item/shovel/spade{
-	pixel_y = 3;
-	pixel_x = 3
-	},
-/obj/item/cultivator{
-	pixel_y = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
 "dJ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/computer/helm{
@@ -856,16 +828,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
-"lu" = (
-/obj/structure/closet/wall/directional/west,
-/obj/item/plate/large,
-/obj/item/plate/large,
-/obj/item/plate,
-/obj/item/plate,
-/obj/item/plate,
-/obj/item/reagent_containers/glass/beaker/large,
-/turf/open/floor/wood/ebony,
-/area/ship/crew/canteen)
 "lv" = (
 /obj/structure/closet/wall/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1795,6 +1757,16 @@
 /obj/item/tank/internals/emergency_oxygen,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"Cr" = (
+/obj/structure/closet/wall/directional/west,
+/obj/item/plate/large,
+/obj/item/plate/large,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/reagent_containers/glass/beaker/large,
+/turf/open/floor/wood/ebony,
+/area/ship/crew/canteen)
 "Cu" = (
 /obj/structure/chair{
 	dir = 8
@@ -1875,6 +1847,34 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"Ep" = (
+/obj/effect/turf_decal/trimline/transparent/white/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/structure/closet/wall/directional/east{
+	pixel_y = 0;
+	name = "garden closet";
+	pixel_x = 27
+	},
+/obj/item/reagent_containers/spray/pestspray{
+	pixel_y = -7;
+	pixel_x = 10
+	},
+/obj/item/shovel/spade{
+	pixel_y = 3;
+	pixel_x = 3
+	},
+/obj/item/cultivator{
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "Et" = (
 /obj/structure/table,
 /obj/item/food/grilled_cheese_sandwich{
@@ -2299,6 +2299,14 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/firealarm/directional/north{
+	pixel_x = 8;
+	pixel_y = 32
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = -4;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "Ly" = (
@@ -2517,14 +2525,7 @@
 	dir = 5
 	},
 /obj/structure/cable,
-/obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = 6;
-	pixel_y = -23
-	},
-/obj/machinery/firealarm/directional/south{
-	pixel_x = -7;
-	pixel_y = -32
-	},
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "OC" = (
@@ -3052,7 +3053,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/light/small/directional/east,
-/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Xk" = (
@@ -3163,7 +3163,7 @@ Ly
 Ly
 mt
 HL
-lu
+Cr
 IC
 qx
 hL
@@ -3283,7 +3283,7 @@ aT
 oC
 mt
 tL
-dr
+Ep
 Av
 tr
 Xv
