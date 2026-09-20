@@ -80,7 +80,7 @@
 
 /obj/structure/closet/supplypod/centcompod/generic
 	desc = "A non-descript supply pod."
-	var/style = STYLE_STANDARD
+	style = STYLE_STANDARD
 
 /obj/structure/closet/supplypod/Initialize(mapload, customStyle = FALSE)
 	. = ..()
