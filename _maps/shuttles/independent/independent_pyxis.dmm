@@ -34,6 +34,7 @@
 	pixel_x = 10;
 	pixel_y = 20
 	},
+/obj/machinery/hydroponics/wooden,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "aT" = (
@@ -1559,6 +1560,7 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
+/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "yz" = (
@@ -1846,7 +1848,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "bunnylock";
+	id = "bunnybay";
 	pixel_x = 18;
 	dir = 8;
 	name = "Cargo Shutters";
@@ -2002,6 +2004,7 @@
 	pixel_x = -8;
 	pixel_y = 1
 	},
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Hi" = (
@@ -2069,6 +2072,11 @@
 /obj/item/reagent_containers/condiment/milk,
 /obj/item/reagent_containers/condiment/milk,
 /obj/item/storage/fancy/egg_box,
+/obj/item/food/grown/refa_li,
+/obj/item/food/grown/refa_li,
+/obj/item/reagent_containers/condiment/tiris_milk,
+/obj/item/reagent_containers/condiment/tiris_sale,
+/obj/item/reagent_containers/condiment/tiris_sele,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "HT" = (
@@ -2581,6 +2589,44 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"QZ" = (
+/obj/effect/turf_decal/trimline/transparent/white/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/structure/closet/wall/directional/east{
+	pixel_y = 0;
+	name = "garden closet";
+	pixel_x = 27
+	},
+/obj/item/reagent_containers/spray/pestspray{
+	pixel_y = -7;
+	pixel_x = 10
+	},
+/obj/item/shovel/spade{
+	pixel_y = 3;
+	pixel_x = 3
+	},
+/obj/item/cultivator{
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
+"Ra" = (
+/obj/structure/closet/wall/directional/west,
+/obj/item/plate/large,
+/obj/item/plate/large,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/reagent_containers/glass/beaker/large,
+/turf/open/floor/wood/ebony,
+/area/ship/crew/canteen)
 "Rd" = (
 /obj/effect/turf_decal/trimline/transparent/white/filled/line{
 	dir = 8
@@ -3116,7 +3162,7 @@ Ly
 Ly
 mt
 HL
-hx
+Ra
 IC
 qx
 hL
@@ -3236,7 +3282,7 @@ aT
 oC
 mt
 tL
-Tv
+QZ
 Av
 tr
 Xv
