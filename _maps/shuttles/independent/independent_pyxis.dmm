@@ -1474,14 +1474,6 @@
 /obj/structure/closet/crate/engineering{
 	name = "emergency disembarkation supplies"
 	},
-/obj/item/pickaxe{
-	pixel_x = -5;
-	pixel_y = 1
-	},
-/obj/item/pickaxe{
-	pixel_x = 5;
-	pixel_y = -1
-	},
 /obj/item/oxygen_candle{
 	pixel_x = -8;
 	pixel_y = -4
@@ -1505,6 +1497,11 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/item/trench_tool{
+	pixel_x = -7;
+	pixel_y = 3
+	},
+/obj/item/trench_tool,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "wm" = (
