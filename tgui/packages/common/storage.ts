@@ -35,13 +35,6 @@ const testHubStorage = testGeneric(
   () => window.hubStorage && !!window.hubStorage.getItem
 );
 
-// TODO: Remove with 516
-// prettier-ignore
-const testIndexedDb = testGeneric(() => (
-  (window.indexedDB || window.msIndexedDB)
-  && !!(window.IDBTransaction || window.msIDBTransaction)
-));
-
 class MemoryBackend implements StorageBackend {
   private store: Record<string, any>;
   public impl: StorageImplementation;
