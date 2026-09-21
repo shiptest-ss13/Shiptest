@@ -277,7 +277,7 @@ NO_MAG_GUN_HELPER(cs_gauss/convergence/export)
 
 	fire_delay = 0.1
 	burst_delay = 0.1
-	burst_size = 4
+	burst_size = 5
 
 /obj/item/gun/ballistic/cs_gauss/vector/export
 	name = "\improper SG90 Director"

@@ -105,7 +105,7 @@
 	bullet_identifier = "dart"
 
 	damage = 10
-	armour_penetration = 40
+	armour_penetration = 35
 
 	homing_turn_speed = 4
 	homing_inaccuracy_min = 0
@@ -114,4 +114,4 @@
 	ricochets_max = 0
 	range = 30
 	light_system = 0
-	speed = BULLET_SPEED_HANDGUN
+	speed = BULLET_SPEED_SHOTGUN
