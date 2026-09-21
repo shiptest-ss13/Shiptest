@@ -378,7 +378,7 @@
 	for(var/letter in GLOB.alphabet)
 		navbar += "<a href='byond://?_src_=holder;[HrefToken()];showmessages=[letter]'>[letter]</a>"
 	navbar += "<a href='byond://?_src_=holder;[HrefToken()];showmemo=1'>Memos</a><a href='byond://?_src_=holder;[HrefToken()];showwatch=1'>Watchlist</a>"
-	navbar += "<br><form method='GET' name='search' action='?'>\
+	navbar += "<br><form method='GET' name='search' action='byond://?'>\
 	<input type='hidden' name='_src_' value='holder'>\
 	[HrefTokenFormField()]\
 	<input type='text' name='searchmessages' value='[index]'>\

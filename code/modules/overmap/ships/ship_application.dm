@@ -62,7 +62,7 @@
 		SEND_SOUND(parent_ship.owner_mob, sound('sound/misc/server-ready.ogg', volume=50))
 		var/message = \
 			"<span class='looc'>[app_name] [show_key ? "([app_key]) " : null]applied to your ship: [app_msg]\n" + \
-			"<a href=?src=[REF(src)];application_accept=1>(ACCEPT)</a> / <a href=?src=[REF(src)];application_deny=1>(DENY)</a></span>"
+			"<a href='byond://?src=[REF(src)];application_accept=1'>(ACCEPT)</a> / <a href='byond://?src=[REF(src)];application_deny=1'>(DENY)</a></span>"
 		to_chat(parent_ship.owner_mob, message, MESSAGE_TYPE_INFO)
 	return TRUE
 

@@ -411,7 +411,7 @@ Nothing else in the console has ID requirements.
 	var/list/l = list()
 	l += ui_protolathe_header()
 
-	l += "<form name='search' action='?src=[REF(src)]'>\
+	l += "<form name='search' action='byond://?src=[REF(src)]'>\
 	<input type='hidden' name='src' value='[REF(src)]'>\
 	<input type='hidden' name='search' value='to_search'>\
 	<input type='hidden' name='type' value='proto'>\
@@ -508,7 +508,7 @@ Nothing else in the console has ID requirements.
 	l += ui_circuit_header()
 	l += "<h3>Circuit Imprinter Menu:</h3>"
 
-	l += "<form name='search' action='?src=[REF(src)]'>\
+	l += "<form name='search' action='byond://?src=[REF(src)]'>\
 	<input type='hidden' name='src' value='[REF(src)]'>\
 	<input type='hidden' name='search' value='to_search'>\
 	<input type='hidden' name='type' value='imprint'>\
@@ -803,7 +803,7 @@ Nothing else in the console has ID requirements.
 			l += "[node.description]"
 			for(var/i in node.design_ids)
 				var/datum/design/D = SSresearch.techweb_design_by_id(i)
-				l += "<span data-tooltip='[D.name]' onclick='location=\"?src=[REF(src)];view_design=[i];back_screen=[screen]\"'>[D.icon_html(usr)]</span>[RDSCREEN_NOBREAK]"
+				l += "<span data-tooltip='[D.name]' onclick='location=\"byond://?src=[REF(src)];view_design=[i];back_screen=[screen]\"'>[D.icon_html(usr)]</span>[RDSCREEN_NOBREAK]"
 	l += "</div>[RDSCREEN_NOBREAK]"
 	return l
 
