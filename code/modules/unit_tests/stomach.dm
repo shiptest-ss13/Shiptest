@@ -17,7 +17,7 @@
 	//Give them meth and let it kick in
 	pill.reagents.add_reagent(meth, initial(meth.metabolization_rate) * 1.9)
 	pill.attack(human, human)
-	human.Life()
+	human.Life(SSMOBS_DT)
 
 	TEST_ASSERT(human.reagents.has_reagent(meth), "Human body does not have meth after life tick")
 	TEST_ASSERT(human.has_movespeed_modifier(/datum/movespeed_modifier/reagent/methamphetamine), "Human consumed meth, but did not gain movespeed modifier")

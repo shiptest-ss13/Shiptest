@@ -126,6 +126,13 @@
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/a556_42(src)
 
+/obj/item/storage/toolbox/ammo/c556hp/PopulateContents()
+	name = "ammo can (5.56x42mm CLIP)"
+	icon_state = "ammobox_556"
+	current_skin = "5.56x42mm CLIP"
+	for (var/i in 1 to 4)
+		new /obj/item/storage/box/ammo/a556_42/hp(src)
+
 /obj/item/storage/toolbox/ammo/c556hitp/PopulateContents()
 	name = "ammo can (5.56 HITP)"
 	icon_state = "ammobox_556"

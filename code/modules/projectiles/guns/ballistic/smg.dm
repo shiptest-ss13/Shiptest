@@ -25,6 +25,7 @@
 	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
 	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
+	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
 
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 16

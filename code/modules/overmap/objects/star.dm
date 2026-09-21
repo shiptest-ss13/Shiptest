@@ -35,7 +35,7 @@
 	///The minimum spawn range of the random events.
 	var/eventspawn_min_range = 1
 	///The maximum spawn range of the random events.
-	var/eventspawn_max_range = 2
+	var/eventspawn_max_range = 1
 
 
 	///The minimum lifespan of the random events
@@ -45,12 +45,17 @@
 	///cooldown declare to store this value
 	COOLDOWN_DECLARE(event_spawn_cd)
 
+	///automatic addition to the sector's fun fact list (if it exists)
+	var/factoid
+
 
 /datum/overmap/star/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	var/name = gen_star_name()
 	SSpoints_of_interest.make_point_of_interest(token)
 	Rename(name)
 	alter_token_appearance()
+	if(factoid)
+		current_overmap.fun_facts += factoid
 	START_PROCESSING(SSprocessing, src)
 
 /datum/overmap/star/Destroy(force, ...)
@@ -319,6 +324,8 @@
 
 	eventspawn_cooldown_min = (4 SECONDS)
 	eventspawn_cooldown_max = (8 SECONDS)
+
+	factoid = "Do not enter the event horizon"
 
 /datum/overmap/star/singularity/alter_token_appearance()
 	. = ..()

@@ -161,14 +161,14 @@
 				for(var/i = 0; i < amount; i++)
 					unprocessed_packs += pack
 
-			outpost_docked.market.make_order(usr, unprocessed_packs, return_crate_spawner())
+			outpost_docked.market.make_order(usr, unprocessed_packs, return_crate_spawner(), current_faction)
 
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
 			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
 			var/datum/overmap/ship/controlled/ship = D.current_ship
 			var/datum/overmap/outpost/outpost = ship.docked_to
-			if(!istype(outpost) || mission.source_outpost != outpost) // important to check these to prevent href fuckery
+			if(!istype(outpost)) // important to check these to prevent href fuckery
 				return
 			if(!mission.accepted)
 				if(LAZYLEN(ship.missions) >= ship.max_missions)

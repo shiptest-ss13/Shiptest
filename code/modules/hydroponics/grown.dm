@@ -223,10 +223,10 @@
 
 /obj/item/food/grown/on_grind(simulated=FALSE)
 	. = list()
-	var/nutriment = reagents.get_reagent_amount(/datum/reagent/consumable/nutriment)
-	if(grind_results && grind_results.len)
+	var/nutri_amount = reagents.get_reagent_amount(/datum/reagent/consumable/nutriment)
+	if(grind_results?.len)
 		for(var/reagent_type in grind_results)
-			.[grind_results[reagent_type]] = nutriment
+			.[reagent_type] = nutri_amount
 		if(!simulated)
 			reagents.del_reagent(/datum/reagent/consumable/nutriment)
 			reagents.del_reagent(/datum/reagent/consumable/nutriment/vitamin)

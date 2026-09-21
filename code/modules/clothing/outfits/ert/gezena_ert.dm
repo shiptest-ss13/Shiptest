@@ -37,6 +37,18 @@
 	suit = /obj/item/clothing/suit/space/gezena/marine
 	head = /obj/item/clothing/head/helmet/space/gezena/marine
 
+/datum/outfit/job/gezena/ert/eva/raider
+	name = "ERT - PGF Marine Rifleman (RAIDER)"
+
+	suit = /obj/item/clothing/suit/space/gezena/marine/raider
+	head = /obj/item/clothing/head/helmet/space/gezena/marine/raider
+
+/datum/outfit/job/gezena/ert/eva/juggernaut
+	name = "ERT - PGF Marine Rifleman (JUGGERNAUT)"
+
+	suit = /obj/item/clothing/suit/space/gezena/marine/juggernaut
+	head = /obj/item/clothing/head/helmet/space/gezena/marine/juggernaut
+
 //Marine Heavy Rifleman
 /datum/outfit/job/gezena/ert/gunner
 	name = "ERT - PGF Marine Heavy Rifleman"
@@ -48,6 +60,18 @@
 
 	suit = /obj/item/clothing/suit/space/gezena/marine
 	head = /obj/item/clothing/head/helmet/space/gezena/marine
+
+/datum/outfit/job/gezena/ert/gunner/eva/raider
+	name = "ERT - PGF Marine Heavy Rifleman (RAIDER)"
+
+	suit = /obj/item/clothing/suit/space/gezena/marine/raider
+	head = /obj/item/clothing/head/helmet/space/gezena/marine/raider
+
+/datum/outfit/job/gezena/ert/gunner/eva/juggernaut
+	name = "ERT - PGF Marine Heavy Rifleman (JUGGERNAUT)"
+
+	suit = /obj/item/clothing/suit/space/gezena/marine/juggernaut
+	head = /obj/item/clothing/head/helmet/space/gezena/marine/juggernaut
 
 //Marine Marksman
 /datum/outfit/job/gezena/ert/marksman
@@ -62,6 +86,18 @@
 
 	suit = /obj/item/clothing/suit/space/gezena/marine
 	head = /obj/item/clothing/head/helmet/space/gezena/marine
+
+/datum/outfit/job/gezena/ert/marksman/eva/raider
+	name = "ERT - PGF Marine Marksman (RAIDER)"
+
+	suit = /obj/item/clothing/suit/space/gezena/marine/raider
+	head = /obj/item/clothing/head/helmet/space/gezena/marine/raider
+
+/datum/outfit/job/gezena/ert/marksman/eva/juggernaut
+	name = "ERT - PGF Marine Marksman (JUGGERNAUT)"
+
+	suit = /obj/item/clothing/suit/space/gezena/marine/juggernaut
+	head = /obj/item/clothing/head/helmet/space/gezena/marine/juggernaut
 
 //Marine Anti Tank
 /datum/outfit/job/gezena/ert/anti_tank
@@ -85,6 +121,18 @@
 	suit = /obj/item/clothing/suit/space/gezena/marine
 	head = /obj/item/clothing/head/helmet/space/gezena/marine
 
+/datum/outfit/job/gezena/ert/anti_tank/eva/raider
+	name = "ERT - PGF Marine Anti Tank (RAIDER)"
+
+	suit = /obj/item/clothing/suit/space/gezena/marine/raider
+	head = /obj/item/clothing/head/helmet/space/gezena/marine/raider
+
+/datum/outfit/job/gezena/ert/anti_tank/eva/juggernaut
+	name = "ERT - PGF Marine Anti Tank (JUGGERNAUT)"
+
+	suit = /obj/item/clothing/suit/space/gezena/marine/juggernaut
+	head = /obj/item/clothing/head/helmet/space/gezena/marine/juggernaut
+
 //Marine Pioneer
 /datum/outfit/job/gezena/ert/engineer
 	name = "ERT - PGF Marine Pioneer"
@@ -104,6 +152,18 @@
 	suit = /obj/item/clothing/suit/space/gezena/marine
 	head = /obj/item/clothing/head/helmet/space/gezena/marine
 
+/datum/outfit/job/gezena/ert/engineer/eva/raider
+	name = "ERT - PGF Marine Pioneer (RAIDER)"
+
+	suit = /obj/item/clothing/suit/space/gezena/marine/raider
+	head = /obj/item/clothing/head/helmet/space/gezena/marine/raider
+
+/datum/outfit/job/gezena/ert/engineer/eva/juggernaut
+	name = "ERT - PGF Marine Pioneer (JUGGERNAUT)"
+
+	suit = /obj/item/clothing/suit/space/gezena/marine/juggernaut
+	head = /obj/item/clothing/head/helmet/space/gezena/marine/juggernaut
+
 //Marine Corpsman
 /datum/outfit/job/gezena/ert/medic
 	name = "ERT - PGF Marine Corpsman"
@@ -118,11 +178,10 @@
 
 	l_pocket = /obj/item/storage/pouch/ammo/ewc6m
 
-	backpack = /obj/item/storage/backpack/medic
-	satchel = /obj/item/storage/backpack/satchel/med
+	backpack = /obj/item/storage/backpack/medic/gezena
+	satchel = /obj/item/storage/backpack/satchel/med/gezena
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	courierbag = /obj/item/storage/backpack/messenger/para
-	box = /obj/item/storage/box/survival/medical
+	courierbag = /obj/item/storage/backpack/messenger/med/gezena
 
 	backpack_contents = list(/obj/item/storage/firstaid/medical, /obj/item/grenade/smokebomb = 4, /obj/item/attachment/rail_light)
 
@@ -131,6 +190,18 @@
 
 	suit = /obj/item/clothing/suit/space/gezena/marine
 	head = /obj/item/clothing/head/helmet/space/gezena/marine
+
+/datum/outfit/job/gezena/ert/medic/eva/raider
+	name = "ERT - PGF Marine Corpsman (RAIDER)"
+
+	suit = /obj/item/clothing/suit/space/gezena/marine/raider
+	head = /obj/item/clothing/head/helmet/space/gezena/marine/raider
+
+/datum/outfit/job/gezena/ert/medic/eva/juggernaut
+	name = "ERT - PGF Marine Corpsman (JUGGERNAUT)"
+
+	suit = /obj/item/clothing/suit/space/gezena/marine/juggernaut
+	head = /obj/item/clothing/head/helmet/space/gezena/marine/juggernaut
 
 //Leader
 /datum/outfit/job/gezena/ert/leader
@@ -154,6 +225,19 @@
 
 	suit = /obj/item/clothing/suit/space/gezena/marine
 	head = /obj/item/clothing/head/helmet/space/gezena/marine
+
+/datum/outfit/job/gezena/ert/leader/eva/raider
+	name = "ERT - PGF Marine Squad Leader (RAIDER)"
+
+	suit = /obj/item/clothing/suit/space/gezena/marine/raider
+	head = /obj/item/clothing/head/helmet/space/gezena/marine/raider
+
+/datum/outfit/job/gezena/ert/leader/eva/juggernaut
+	name = "ERT - PGF Marine Squad Leader (JUGGERNAUT)"
+
+	suit = /obj/item/clothing/suit/space/gezena/marine/juggernaut
+	head = /obj/item/clothing/head/helmet/space/gezena/marine/juggernaut
+
 
 //Navy Trooper
 /datum/outfit/job/gezena/ert/trooper
@@ -189,6 +273,12 @@
 
 	suit = /obj/item/clothing/suit/space/gezena
 	head = /obj/item/clothing/head/helmet/space/gezena
+
+/datum/outfit/job/gezena/ert/trooper/eva/dreadnaut
+	name = "ERT - PGF Navy Security Trooper (DREADNAUT)"
+
+	suit = /obj/item/clothing/suit/space/gezena/dreadnaut
+	head = /obj/item/clothing/head/helmet/space/gezena/dreadnaut
 
 //Inspector
 /datum/outfit/job/gezena/ert/inspector

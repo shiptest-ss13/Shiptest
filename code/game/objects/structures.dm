@@ -19,10 +19,16 @@
 	var/climb_stun = 0
 
 	var/broken = 0 //similar to machinery's stat BROKEN
-	///The chance of a projectile to pass through the structure
-	var/passchance = 0
 	///If projectiles are allowed to pass through a structure at all
 	var/pass_through = FALSE
+	///The chance of a projectile to pass through the structure. Lower number means less projectiles pass through
+	var/pass_chance = 0
+	///If this is directional cover and blocks one direction. eg. flipped tables
+	var/directional_cover = FALSE
+	///check if the turf the incoming thing is coming from the same type of cover object on it. If it is, let it through.
+	var/continuous_cover = FALSE
+	///if continuous cover is enabled, is there other types this cover should let things through from?
+	var/allowed_in_from
 
 /obj/structure/Initialize()
 	if (!armor)
@@ -35,6 +41,8 @@
 			icon_state = ""
 	if(climbable)
 		AddElement(/datum/element/climbable, climb_time, climb_stun)
+	if(pass_through)
+		AddComponent(/datum/component/cover, pass_chance, directional_cover, continuous_cover, allowed_in_from)
 	GLOB.cameranet.updateVisibility(src)
 
 /obj/structure/Destroy()
@@ -57,18 +65,6 @@
 		return
 	if (O.loc != src.loc)
 		step(O, get_dir(O, src))
-
-/obj/structure/CanAllowThrough(atom/movable/mover, border_dir)
-	. = ..()
-	if(istype(mover, /obj/projectile) && pass_through)
-		var/obj/projectile/proj = mover
-		if(proj.firer && Adjacent(proj.firer))
-			return TRUE
-		if(prob(passchance))
-			return TRUE
-		return FALSE
-	if((mover.pass_flags & PASSGRILLE) && pass_through)
-		return prob(passchance)
 
 /obj/structure/examine(mob/user)
 	. = ..()

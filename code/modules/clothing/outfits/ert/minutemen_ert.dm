@@ -119,7 +119,7 @@
 	glasses = /obj/item/clothing/glasses/hud/health/night
 	mask = /obj/item/clothing/mask/gas/clip
 	suit = /obj/item/clothing/suit/bio_suit/bard/medium
-	suit_store = /obj/item/gun/ballistic/shotgun/cm15/incendiary
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/cm15/incendiary
 	belt = /obj/item/storage/belt/military/clip/alt/cm15_inc
 	shoes = /obj/item/clothing/shoes/jackboots/knife
 

@@ -185,6 +185,15 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/crewfive
 	name = "Crew Quarters 5"
 
+/area/ship/crew/command
+	name = "Command Quarters"
+
+/area/ship/crew/breakroom
+	name = "Break Room"
+
+/area/ship/crew/breakroom/command
+	name = "Command Break Room"
+
 /area/ship/crew/specialized
 	name = "???"
 
@@ -228,6 +237,21 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/dorm/commad
 	name = "Command Quarters"
 
+/area/ship/crew/dorm/commad/affairs
+	name = "Internal Affairs Agent's Quarters"
+
+/area/ship/crew/dorm/commad/cmo
+	name = "Chief Medical Officer's Quarters"
+
+/area/ship/crew/dorm/commad/cmo/director
+	name = "Medical Director's Quarters"
+
+/area/ship/crew/dorm/commad/hos
+	name = "Head of Security's Quarters"
+
+/area/ship/crew/dorm/commad/hos/director
+	name = "Security Director's Quarters"
+
 /area/ship/crew/toilet
 	name = "Restroom"
 	icon_state = "toilet"
@@ -237,6 +261,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship/crew/toilet/three
 	name = "Restroom 3"
+
+/area/ship/crew/toilet/showers
+	name = "Showers"
 
 /area/ship/crew/canteen
 	name = "Canteen"
@@ -274,6 +301,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "law"
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
 
+/area/ship/crew/law_office/affairs
+	name = "Internal Affairs Office"
+	icon_state = "law"
+
 /area/ship/crew/solgov
 	name = "SolGov Consulate"
 	icon_state = "solgov"
@@ -304,6 +335,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "janitor"
 	sound_environment = SOUND_AREA_SMALL_ENCLOSED
 
+/area/ship/crew/smoking
+	name = "Smoking Room"
+
 /// Medical Bay ///
 /area/ship/medical
 	name = "Infirmary"
@@ -325,6 +359,24 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship/medical/psych
 	name = "Psych's Office"
+
+/area/ship/medical/recovery
+	name = "Recovery Room"
+
+/area/ship/medical/recovery/recoveryone
+	name = "Recovery Room 1"
+
+/area/ship/medical/recovery/recoverytwo
+	name = "Recovery Room 2"
+
+/area/ship/medical/storage
+	name = "Medical Storage"
+
+/area/ship/medical/cmo
+	name = "Chief Medical Officer's Office"
+
+/area/ship/medical/cmo/director
+	name = "Medical Director's Office"
 
 /// Science Lab ///
 /area/ship/science
@@ -442,6 +494,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/ship/security/dock
 	name = "Shuttle Dock"
+	icon_state = "security"
+
+/area/ship/security/hos
+	name = "Head of Security's Office"
+	icon_state = "security"
+
+/area/ship/security/hos/director
+	name = "Security Director's Office"
 	icon_state = "security"
 
 /// Cargo Bay ///

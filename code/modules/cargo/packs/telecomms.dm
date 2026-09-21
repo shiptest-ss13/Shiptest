@@ -160,5 +160,5 @@
 	desc = "A radio packet inspection system. Accesses logs stored on radio servers and prints them in a sapient-readable format."
 	cost = 1000
 	contains = list(
-		/obj/item/circuitboard/computer/message_monitor
+		/obj/item/circuitboard/computer/comm_server
 	)

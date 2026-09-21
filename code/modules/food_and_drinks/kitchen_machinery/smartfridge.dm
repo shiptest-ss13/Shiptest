@@ -460,7 +460,7 @@
 
 /obj/machinery/smartfridge/chemistry/virology/preloaded
 	initial_contents = list(
-		/obj/item/reagent_containers/syringe/antiviral = 4,
+		/obj/item/reagent_containers/syringe/antibiotic = 4,
 		/obj/item/reagent_containers/glass/bottle/cold = 1,
 		/obj/item/reagent_containers/glass/bottle/flu_virion = 1,
 		/obj/item/reagent_containers/glass/bottle/mutagen = 1,
@@ -515,3 +515,10 @@
 		/obj/item/reagent_containers/blood/elzuose = 1,
 		/obj/item/reagent_containers/blood/synthetic = 1,
 		/obj/item/reagent_containers/blood/random = 5)
+
+/obj/machinery/smartfridge/bloodbank/preloaded/less
+	initial_contents = list(
+		/obj/item/reagent_containers/blood/OMinus = 2,
+		/obj/item/reagent_containers/blood/lizard = 1,
+		/obj/item/reagent_containers/blood/elzuose = 1,
+		/obj/item/reagent_containers/blood/synthetic = 1,)

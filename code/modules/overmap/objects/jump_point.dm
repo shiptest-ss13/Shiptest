@@ -14,54 +14,68 @@
 
 	///Direction we are facing, used for token mostly
 	var/dir
-	///The currently linked jump point
-	var/datum/overmap/jump_point/destination
+
+	///the overmap that this jump point wants to traverse to
+	var/datum/overmap_star_system/target_overmap
+	///A linked jump point for bi-directional movement.
+	//'linking' jump points will make them attempt to jump out over each other, otherwise it'll attempt to find a jump location from target_overmap
+	var/datum/overmap/jump_point/target_jump_point
 
 
-/datum/overmap/jump_point/Initialize(position, datum/overmap_star_system/system_spawned_in, _other_point, ...)
+/datum/overmap/jump_point/Initialize(position, datum/overmap_star_system/system_spawned_in, datum/overmap_star_system/target_system, _other_point, ...)
 	. = ..()
+	target_overmap = target_system
+	name = "[target_overmap] [pick("Passage", "Corridor", "Tunnel", "Gallery", "Breezeway")]"
+	system_spawned_in.jump_points += src
 	if(_other_point)
 		link_points(_other_point)
 
 /datum/overmap/jump_point/proc/link_points(other_point)
-	destination = other_point
-	destination.destination = src
+	target_jump_point = other_point
+	target_jump_point.target_jump_point = src
 
-	RegisterSignal(destination, COMSIG_OVERMAP_MOVED, PROC_REF(alter_token_appearance))
-	destination.RegisterSignal(src, COMSIG_OVERMAP_MOVED, PROC_REF(alter_token_appearance))
+	target_jump_point.name = name
+
+	RegisterSignal(target_jump_point, COMSIG_OVERMAP_MOVED, PROC_REF(alter_token_appearance))
+	target_jump_point.RegisterSignal(src, COMSIG_OVERMAP_MOVED, PROC_REF(alter_token_appearance))
 
 	alter_token_appearance()
-	destination.alter_token_appearance()
+	target_jump_point.alter_token_appearance()
 
 /datum/overmap/jump_point/get_jump_to_turf()
-	return get_turf(destination.token)
+	if(target_jump_point)
+		return get_turf(target_jump_point.token)
+	//go to the star.
+	return get_turf(target_overmap.overmap_objects[1]?:token)
 
 /datum/overmap/jump_point/alter_token_appearance()
 	..()
 	if(current_overmap.override_object_colors)
 		token.color = current_overmap.primary_color
 	current_overmap.post_edit_token_state(src)
-	if(destination)
-		desc = "A specific point in this system where you are able to bluespace 'jump' to one specific system."
+	desc = "A break in the local space-time where you can safely enter the Frontier's unstable Bluespace."
+	if(target_overmap)
 		desc += {"
 		[span_boldnotice("Destination information:")]
-		[span_bold("System: ")][destination.current_overmap]
-		[span_bold("Location: ")]X[destination.x]/Y[destination.y]
+		[span_bold("System: ")][target_overmap.name]
+		[target_jump_point ? span_bold("Location: ") + "[target_jump_point.x] by [target_jump_point.y]" : ""]
 		"}
 	token.setDir(dir)
 
 
+
 /datum/overmap/jump_point/handle_interaction_on_target(mob/living/user, datum/overmap/interactor, choice)
-	if(!destination)
+	if(!target_overmap)
 		qdel(src)
 		return INTERACTION_OVERMAP_SELECTED
+	var/list/destination = target_jump_point ? list("x" = target_jump_point.x, "y" = target_jump_point.y) : target_overmap.get_overmap_edge(REVERSE_DIR(dir))
 	switch(choice)
 		if(INTERACTION_OVERMAP_JUMPTO)
-			if(tgui_alert(user, "Do you want to bluespace jump to [destination.current_overmap.name]? Your ship will NOT be removed from the round and you will have to stay near [name] doing this.", "Jump Confirmation", list("Yes", "No")) != "Yes")
+			if(tgui_alert(user, "Do you want to bluespace jump to [target_overmap]? You will have to stay near [name] while jumping.", "Jump Confirmation", list("Yes", "No")) != "Yes")
 				return
 			RegisterSignal(interactor, COMSIG_OVERMAP_MOVED, PROC_REF(ship_moved))
 			RegisterSignal(interactor, COMSIG_OVERMAP_MOVE_SYSTEMS, PROC_REF(ship_jumped))
-			SEND_SIGNAL(interactor, COMSIG_OVERMAP_CALIBRATE_JUMP, destination.current_overmap, destination.x, destination.y)
+			SEND_SIGNAL(interactor, COMSIG_OVERMAP_CALIBRATE_JUMP, target_overmap, destination["x"], destination["y"])
 
 			return INTERACTION_OVERMAP_SELECTED
 	return ..()

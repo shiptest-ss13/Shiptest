@@ -133,7 +133,7 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 
 	list(//food
 		/obj/item/reagent_containers/food/drinks/beer = 1,
-		/obj/item/reagent_containers/food/drinks/coffee = 1,
+		/obj/item/reagent_containers/food/drinks/coffee/empty = 1,
 		) = 1,
 
 	list(//misc
@@ -168,7 +168,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 		/obj/item/grenade/iedcasing/spawned = 1,
 		/obj/item/melee/baton/cattleprod = 1,
 		/obj/item/throwing_star = 1,
-		/obj/item/gun/ballistic/derringer = 1,
+		/obj/item/gun/ballistic/automatic/pistol/derringer = 1,
 		) = 8,
 
 	list(//equipment

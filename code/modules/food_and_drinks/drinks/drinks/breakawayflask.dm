@@ -1,6 +1,7 @@
 /obj/item/reagent_containers/food/drinks/breakawayflask
 	name = "breakaway flask"
 	desc = "A special flask designed to stabilize Illestren Bacterium and shatter violently on contact."
+	icon = 'icons/obj/drinks/trickwine.dmi'
 	icon_state = "breakawayflask"
 	item_state = "breakawayflask"
 	w_class = WEIGHT_CLASS_SMALL

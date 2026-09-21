@@ -1,7 +1,7 @@
 #define BLOOD_DRIP_RATE_MOD 90 //Greater number means creating blood drips more often while bleeding
 
 // Takes care blood loss and regeneration
-/mob/living/carbon/human/handle_blood()
+/mob/living/carbon/human/handle_blood(seconds_per_tick, times_fired)
 
 	if((NOBLOOD in dna.species.species_traits) || HAS_TRAIT(src, TRAIT_NOBLEED) || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		return
@@ -26,45 +26,49 @@
 
 		if(satiety > 80)
 			nutrition_ratio *= 1.25
-		adjust_nutrition(-nutrition_ratio * HUNGER_FACTOR)
-		blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * nutrition_ratio)
+		adjust_nutrition(-nutrition_ratio * HUNGER_FACTOR * seconds_per_tick)
+		blood_volume = min(blood_volume + (BLOOD_REGEN_FACTOR * nutrition_ratio * seconds_per_tick), BLOOD_VOLUME_NORMAL)
 
-	if(blood_volume < BLOOD_VOLUME_NORMAL && HAS_TRAIT(src, TRAIT_NOHUNGER)) //blood regen for non eaters
-		blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * 1.25) //assumes best nutrition conditions for non eaters because they don't eat
+	//blood regen for non eaters
+	if(blood_volume < BLOOD_VOLUME_NORMAL && HAS_TRAIT(src, TRAIT_NOHUNGER))
+		//assumes best nutrition conditions for non eaters because they don't eat
+		blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * 1.25)
+
 
 	//Effects of bloodloss
 	var/word = pick("dizzy","woozy","faint")
 	switch(blood_volume)
 		if(BLOOD_VOLUME_EXCESS to BLOOD_VOLUME_MAX_LETHAL)
-			if(prob(15))
+			if(SPT_PROB(7.5, seconds_per_tick))
 				to_chat(src, span_userdanger("Blood starts to tear your skin apart. You're going to burst!"))
+				//why do we still have this
 				inflate_gib()
 
 		if(BLOOD_VOLUME_MAXIMUM to BLOOD_VOLUME_EXCESS)
-			if(prob(10))
+			if(SPT_PROB(5, seconds_per_tick))
 				to_chat(src, span_warning("You feel terribly bloated."))
 
 		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
-			if(prob(1))
+			if(SPT_PROB(2.5, seconds_per_tick))
 				to_chat(src, span_warning("You feel [word]."))
 			if(oxyloss < 20)
-				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+				adjustOxyLoss(round(0.005 * (BLOOD_VOLUME_NORMAL - blood_volume) * seconds_per_tick, 1))
 
 		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
 			if(eye_blurry < 50)
 				adjust_blurriness(5)
 			if(oxyloss < 40)
-				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+				adjustOxyLoss(round(0.01 * (BLOOD_VOLUME_NORMAL - blood_volume) * seconds_per_tick, 1))
 			else
-				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.01, 1))
-			if(prob(10))
+				adjustOxyLoss(round(0.005 * (BLOOD_VOLUME_NORMAL - blood_volume) * seconds_per_tick, 1))
+			if(SPT_PROB(5, seconds_per_tick))
 				Unconscious(rand(2 SECONDS,6 SECONDS))
 				to_chat(src, span_warning("You feel very [word]."))
 
 		if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
 			adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
 			adjustToxLoss(2)
-			if(prob(15))
+			if(SPT_PROB(7.5, seconds_per_tick))
 				Unconscious(rand(2 SECONDS,6 SECONDS))
 				to_chat(src, span_warning("You feel extremely [word]."))
 
@@ -81,7 +85,7 @@
 		if(!iter_part)
 			continue
 		var/iter_bleed_rate = iter_part.get_part_bleed_rate()
-		temp_bleed += iter_bleed_rate
+		temp_bleed += iter_bleed_rate * seconds_per_tick
 		iter_part.generic_bleedstacks = max(0, iter_part.generic_bleedstacks - 1)
 		if(iter_part.update_part_wound_overlay())
 			update_bleed_icons = TRUE

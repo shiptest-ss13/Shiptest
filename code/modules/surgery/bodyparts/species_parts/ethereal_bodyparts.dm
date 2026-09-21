@@ -37,3 +37,17 @@
 	icon_state = "elzuose_r_leg"
 	limb_id = SPECIES_ELZUOSE
 	uses_mutcolor = TRUE
+
+/obj/item/bodypart/leg/left/ethereal/digitigrade
+	icon = 'icons/mob/species/ethereal/bodyparts.dmi'
+	icon_state = "elzuose_l_leg_digitigrade"
+	limb_id = SPECIES_ELZUOSE
+	uses_mutcolor = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/ethereal/digitigrade
+	icon = 'icons/mob/species/ethereal/bodyparts.dmi'
+	icon_state = "elzuose_r_leg_digitigrade"
+	limb_id = SPECIES_ELZUOSE
+	uses_mutcolor = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE

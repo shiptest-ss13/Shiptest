@@ -4,7 +4,7 @@
 
 /obj/machinery/air_sensor
 	name = "gas sensor"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/atmospherics/air_sensor.dmi'
 	icon_state = "gsensor1"
 	resistance_flags = FIRE_PROOF
 	interacts_with_air = TRUE

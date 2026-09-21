@@ -118,8 +118,8 @@
 //fucking gezena
 
 /datum/supply_pack/spacesuits/spacesuit/pgf
-	name = "Rakalla Navy Utility Space Suit Crate"
-	desc = "Contains one Rakalla Utility Suit. The aging but beloved workhorse of Navy space operations."
+	name = "Rakalla Navy Utility Suit Crate"
+	desc = "Contains one Rakalla utility suit. The aging but beloved workhorse of Navy space operations."
 	cost = 600
 	contains = list(/obj/item/clothing/suit/space/gezena,
 					/obj/item/clothing/head/helmet/space/gezena)
@@ -128,13 +128,46 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/spacesuit/pgf/dreadnaut
+	name = "Tikaro Navy Dreadnaut Suit Crate"
+	desc = "Contains one Tikaro response suit. The Navy's best answer to any danger."
+	cost = 4000
+	contains = list(/obj/item/clothing/suit/space/gezena/dreadnaut,
+					/obj/item/clothing/head/helmet/space/gezena/dreadnaut)
+	crate_name = "tikaro suit crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/spacesuits/spacesuit/pgf/marine
-	name = "Lataka Marine Combat Space Suit Crate"
-	desc = "Contains one Lataka Combat Suit. The backbone of any Marine Corps space assault."
+	name = "Lataka Marine Vacuum Suit Crate"
+	desc = "Contains one Lataka combat suit. The backbone of any Marine Corps space assault."
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/space/gezena/marine,
 					/obj/item/clothing/head/helmet/space/gezena/marine)
 	crate_name = "lataka suit crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/spacesuit/pgf/marine/raider
+	name = "Arawna Marine Raider Suit Crate"
+	desc = "Contains one Arawna skirmisher suit. The preferred armor of the Marine Raiders."
+	cost = 3000
+	contains = list(/obj/item/clothing/suit/space/gezena/marine/raider,
+					/obj/item/clothing/head/helmet/space/gezena/marine/raider)
+	crate_name = "arawna suit crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/spacesuit/pgf/marine/juggernaut
+	name = "Sokhana Marine Juggernaut Suit Crate"
+	desc = "Contains one Sokhana breacher suit. The PGFMC's walking hammer."
+	cost = 5000
+	contains = list(/obj/item/clothing/suit/space/gezena/marine/juggernaut,
+					/obj/item/clothing/head/helmet/space/gezena/marine/juggernaut)
+	crate_name = "sokhana suit crate"
 	faction = /datum/faction/pgf
 	faction_discount = 0
 	faction_locked = TRUE
@@ -159,6 +192,14 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/security/independent)
 	crate_name = "security hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/spacesuits/esh_hardsuit
+	name = "ESH Hardsuit Crate"
+	desc = "Contains one ESH hardsuit, to provide the best protection against the elements. MediPen not included for injector module."
+	cost = 2250
+	contains = list(/obj/item/clothing/suit/space/hardsuit/esh)
+	crate_name = "ESH hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
 
 /datum/supply_pack/spacesuits/eod_hardsuit
 	name = "EOD Hardsuit Crate"
@@ -270,6 +311,8 @@
 	desc = "Cybersuns all-rounder combat hardsuit, this collapsar variant is in the colors of the trauma team."
 	cost = 5000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/collapsar/paramed)
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/syndicate/cybersun
 	crate_name = "Collapsar hardsuit crate"
 	faction_discount = 0
 	faction_locked = TRUE
@@ -464,11 +507,11 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/eod_ngr
-	name = "NGR EOD Hardsuit Crate"
-	desc = "Contains one EOD hardsuit, to provide safety with explosives."
-	cost = 2000
-	contains = list(/obj/item/clothing/suit/space/hardsuit/bomb/ngr)
-	crate_name = "EOD hardsuit crate"
+	name = "NGR Heavy EOD Hardsuit Crate"
+	desc = "Contains one heavy EOD hardsuit, modified with thicker plating for more than just ordinance disposal."
+	cost = 5000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/ngrheavy)
+	crate_name = "heavy EOD hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 	faction = /datum/faction/syndicate/ngr
 	faction_discount = 0

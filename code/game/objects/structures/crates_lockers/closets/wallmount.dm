@@ -16,7 +16,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/red, 27)
 
 /obj/structure/closet/wall/eng
 	icon_state = "engi_wall"
-	icon_door = "sec_wall"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/eng, 27)
 
@@ -39,15 +38,17 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/white, 27)
 /obj/structure/closet/wall/white/chem
 	icon_door = "chemical_wall"
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/chem, 27)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/white/chem, 27)
 
 /obj/structure/closet/wall/white/med
 	icon_door = "med_wall"
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/med, 27)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/white/med, 27)
 
 /obj/structure/closet/wall/freezer
 	icon_state = "freezer_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/freezer, 27)
 
 //special
 

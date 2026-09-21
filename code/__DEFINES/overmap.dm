@@ -21,26 +21,25 @@
 //Amount of times the overmap generator will attempt to place something before giving up
 #define MAX_OVERMAP_PLACEMENT_ATTEMPTS 5
 
-//I belive these are redundant now? No reason to use these, maybe remove?
+
 //Possible dynamic encounter types
-#define DYNAMIC_WORLD_LAVA "lava" //base planets
+#define DYNAMIC_WORLD_LAVA "lava"
 #define DYNAMIC_WORLD_ICE "ice"
 #define DYNAMIC_WORLD_SAND "sand"
 #define DYNAMIC_WORLD_JUNGLE "jungle"
+#define DYNAMIC_WORLD_ROCKPLANET "rock"
+#define DYNAMIC_WORLD_BEACHPLANET "beach"
+#define DYNAMIC_WORLD_WASTEPLANET "waste"
+#define DYNAMIC_WORLD_MOON "moon"
 
-#define DYNAMIC_WORLD_ROCKPLANET "rockplanet" //wacky planets
-#define DYNAMIC_WORLD_BEACHPLANET "beachplanet"
-#define DYNAMIC_WORLD_WASTEPLANET "wasteplanet"
-
+//spawnable but unused dynamic encounter types
 #define DYNAMIC_WORLD_WATERPLANET "waterplanet" //minor planets
 #define DYNAMIC_WORLD_DESERT "desertplanet"
 #define DYNAMIC_WORLD_SHROUDED "shroudedplanet"
 #define DYNAMIC_WORLD_BATTLEFIELD "battlefieldplanet"
-#define DYNAMIC_WORLD_BLOBPLANET "blobplanet"
 #define DYNAMIC_WORLD_SNOWBALL "snowball"
 #define DYNAMIC_WORLD_DUSTBALL "dustball"
 #define DYNAMIC_WORLD_SUPERFLAT "superflat"
-#define DYNAMIC_WORLD_MOON "moon"
 
 #define DYNAMIC_WORLD_REEBE "reebe" //celestial bodies
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
@@ -83,6 +82,8 @@
 
 // The filepath used to store the admin-controlled next round outpost map override.
 #define SAFEZONE_OVERRIDE_FILEPATH "data/safezone_override.json"
+//filepath used to store the admin-controlled wilderness overrides
+#define WILDERNESS_OVERRIDE_FILEPATH "data/wildzone_override.json"
 
 // Converts ores to colors, meant for examining planets on the overmap
 #define ORES_TO_COLORS_LIST list(\
@@ -105,7 +106,7 @@
 //Used by empty space
 #define INTERACTION_OVERMAP_SETSIGNALSPRITE "Set Signal Appearance"
 //Used by jump points
-#define INTERACTION_OVERMAP_JUMPTO "Bluespace Jump to Target System"
+#define INTERACTION_OVERMAP_JUMPTO "Jump to Next System?"
 
 //Used to end an interaction if a target object has them
 #define INTERACTION_OVERMAP_SELECTED "ERROR" //use this to end the interaction without failing

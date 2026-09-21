@@ -27,6 +27,9 @@
 	tastes = list("apple" = 1)
 	distill_reagent = /datum/reagent/consumable/ethanol/hcider
 
+/obj/item/food/grown/apple/make_processable()
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/garnish/apple, 3, 3 SECONDS, table_required = TRUE)
+
 // Gold Apple
 /obj/item/seeds/apple/gold
 	name = "pack of golden apple seeds"

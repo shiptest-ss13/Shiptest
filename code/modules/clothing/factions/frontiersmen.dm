@@ -303,6 +303,12 @@
 		new /obj/item/ammo_box/magazine/spitter_9mm(src)
 	new /obj/item/grenade/frag(src)
 
+/obj/item/storage/belt/security/military/frontiersmen/spitter_with_ammo/PopulateContents()
+	for(var/i in 1 to 3)
+		new /obj/item/ammo_box/magazine/spitter_9mm(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/gun/ballistic/automatic/pistol/spitter(src)
+
 /obj/item/storage/belt/security/military/frontiersmen/flamer/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/glass/beaker/large/napalm(src)

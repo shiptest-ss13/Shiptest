@@ -52,6 +52,15 @@
 	stock_max = 6
 	availability_prob = 50
 
+/datum/blackmarket_item/consumable/anomaly_pack
+	name = "The Anomaly Pack"
+	desc = "Listen. Limited time offer. I've got some ultra-premium smokes for a buyer with taste. Stuff's from another dimension. Serious offers only."
+	item = /obj/item/storage/fancy/cigarettes/cigpack_anomaly
+
+	cost_min = 1000
+	cost_max = 2000
+	availability_prob = 20
+
 /datum/blackmarket_item/consumable/trickwine
 	name = "Trickwine"
 	desc = "The SRM keeps the recipes for their trickwines closely guarded. The Hunters carrying those bottles? Less so."

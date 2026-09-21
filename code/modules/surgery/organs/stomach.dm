@@ -1,5 +1,5 @@
 //The contant in the rate of reagent transfer on life ticks
-#define STOMACH_METABOLISM_CONSTANT 0.5
+#define STOMACH_METABOLISM_CONSTANT 0.25
 
 /obj/item/organ/stomach
 	name = "stomach"
@@ -27,7 +27,7 @@
 	var/disgust_metabolism = 1
 
 	///The rate that the stomach will transfer reagents to the body
-	var/metabolism_efficiency = 0.1 // the lowest we should go is 0.05
+	var/metabolism_efficiency = 0.05 // the lowest we should go is 0.05
 
 /obj/item/organ/stomach/Initialize()
 	. = ..()
@@ -35,13 +35,13 @@
 	if(!reagents)
 		create_reagents(reagent_vol)
 
-/obj/item/organ/stomach/on_life()
+/obj/item/organ/stomach/on_life(seconds_per_tick, times_fired)
 	. = ..()
 	//Manage species digestion
 	if(istype(owner, /mob/living/carbon/human))
-		var/mob/living/carbon/human/humi = owner
+		var/mob/living/carbon/human/target_human = owner
 		if(!(organ_flags & ORGAN_FAILING))
-			humi.dna.species.handle_digestion(humi)
+			target_human.dna.species.handle_digestion(target_human, seconds_per_tick, times_fired)
 
 	var/mob/living/carbon/body = owner
 
@@ -51,11 +51,11 @@
 
 		// If the reagent does not metabolize then it will sit in the stomach
 		// This has an effect on items like plastic causing them to take up space in the stomach
-		if(!(bit.metabolization_rate > 0))
+		if(bit.metabolization_rate <= 0)
 			continue
 
 		//Ensure that the the minimum is equal to the metabolization_rate of the reagent if it is higher then the STOMACH_METABOLISM_CONSTANT
-		var/amount_min = max(bit.metabolization_rate, STOMACH_METABOLISM_CONSTANT)
+		var/rate_min = max(bit.metabolization_rate, STOMACH_METABOLISM_CONSTANT)
 		//Do not transfer over more then we have
 		var/amount_max = bit.volume
 
@@ -66,9 +66,9 @@
 			amount_max = max(amount_max - amount_food, 0)
 
 		// Transfer the amount of reagents based on volume with a min amount of 1u
-		var/amount = min(round(metabolism_efficiency * bit.volume, 0.1) + amount_min, amount_max)
+		var/amount = min((round(metabolism_efficiency * amount_max, 0.05) + rate_min) * seconds_per_tick, amount_max)
 
-		if(!(amount > 0))
+		if(amount <= 0)
 			continue
 
 		// transfer the reagents over to the body at the rate of the stomach metabolim
@@ -78,7 +78,7 @@
 
 	//Handle disgust
 	if(body)
-		handle_disgust(body)
+		handle_disgust(body, seconds_per_tick, times_fired)
 
 	//If the stomach is not damaged exit out
 	if(damage < low_threshold)
@@ -91,13 +91,13 @@
 		return
 
 	//The stomach is damaged has nutriment but low on theshhold, low prob of vomit
-	if(prob(damage * 0.025 * nutri.volume * nutri.volume))
+	if(SPT_PROB(damage * 0.0125 * nutri.volume * nutri.volume, seconds_per_tick))
 		body.vomit(damage)
 		to_chat(body, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!"))
 		return
 
 	// the chance of vomitng is now high
-	if(damage > high_threshold && prob(damage * 0.1 * nutri.volume * nutri.volume))
+	if(damage > high_threshold && SPT_PROB(damage * 0.05 * nutri.volume * nutri.volume, seconds_per_tick))
 		body.vomit(damage)
 		to_chat(body, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!"))
 
@@ -174,7 +174,7 @@
 	desc = "A crystal-like organ that stores the electric charge of elzuosa."
 	var/crystal_charge = ELZUOSE_CHARGE_FULL
 
-/obj/item/organ/stomach/ethereal/on_life()
+/obj/item/organ/stomach/ethereal/on_life(seconds_per_tick, times_fired)
 	..()
 	adjust_charge(-ELZUOSE_CHARGE_FACTOR)
 
@@ -212,7 +212,7 @@
 	desc = "A basic device designed to mimic the functions of a human stomach"
 	organ_flags = ORGAN_SYNTHETIC
 	maxHealth = STANDARD_ORGAN_THRESHOLD * 0.5
-	metabolism_efficiency = 0.07 // not as good at digestion
+	metabolism_efficiency = 0.035 // not as good at digestion
 	var/emp_vulnerability = 80 //Chance of permanent effects if emp-ed.
 
 /obj/item/organ/stomach/cybernetic/tier2
@@ -222,7 +222,7 @@
 	maxHealth = 1.5 * STANDARD_ORGAN_THRESHOLD
 	disgust_metabolism = 2
 	emp_vulnerability = 40
-	metabolism_efficiency = 0.14
+	metabolism_efficiency = 0.07
 
 /obj/item/organ/stomach/cybernetic/tier3
 	name = "upgraded cybernetic stomach"
@@ -231,7 +231,7 @@
 	maxHealth = 2 * STANDARD_ORGAN_THRESHOLD
 	disgust_metabolism = 3
 	emp_vulnerability = 20
-	metabolism_efficiency = 0.2
+	metabolism_efficiency = 0.1
 
 /obj/item/organ/stomach/cybernetic/emp_act(severity)
 	. = ..()

@@ -100,10 +100,6 @@
 	name = "ICW Base Cybersun Wing"
 	icon_state = "blue"
 
-/area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS
-	name = "ICW Base TURRETS"
-	icon_state = "red"
-
 //Salvage Facility
 
 /area/ruin/wasteplanet/facility

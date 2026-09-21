@@ -47,7 +47,6 @@
 	pixel_y = 3
 	},
 /obj/item/ammo_box/magazine/m17{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/item/ammo_box/magazine/illestren_a850r{
@@ -167,7 +166,6 @@
 	pixel_x = -28
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel,
@@ -205,8 +203,7 @@
 	pixel_y = -19
 	},
 /obj/machinery/firealarm/directional/south{
-	pixel_x = -6;
-	pixel_y = -32
+	pixel_x = -6
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -230,7 +227,6 @@
 "bn" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/effect/turf_decal/corner/transparent/beige/full,
@@ -295,7 +291,6 @@
 	pixel_y = 18
 	},
 /obj/structure/mirror{
-	pixel_x = 0;
 	pixel_y = 34
 	},
 /obj/item/storage/pill_bottle/happy{
@@ -439,8 +434,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/west,
 /obj/machinery/firealarm/directional/south{
-	pixel_x = -6;
-	pixel_y = -32
+	pixel_x = -6
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = 7;
@@ -580,7 +574,6 @@
 	pixel_y = 10
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = -2
 	},
 /obj/machinery/light_switch{
@@ -701,8 +694,7 @@
 	pixel_y = 3
 	},
 /obj/item/tank/internals/oxygen{
-	pixel_x = -10;
-	pixel_y = 0
+	pixel_x = -10
 	},
 /obj/item/clothing/head/helmet/space/eva{
 	pixel_x = 11;
@@ -764,6 +756,10 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/emergency_panel{
+	pixel_x = -8;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "fs" = (
@@ -970,7 +966,6 @@
 	pixel_y = 16
 	},
 /obj/item/clothing/neck/shemagh/olive{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /obj/item/clothing/neck/shemagh/olive{
@@ -1031,8 +1026,7 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/south{
-	pixel_x = 6;
-	pixel_y = -31
+	pixel_x = 6
 	},
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet,
@@ -1167,7 +1161,6 @@
 	pixel_y = -1
 	},
 /obj/item/stack/sheet/plastic/five{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1191,7 +1184,6 @@
 	pixel_y = 8
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -32;
 	pixel_y = -2
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
@@ -1248,12 +1240,10 @@
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/medical,
 /obj/item/storage/firstaid/regular{
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /obj/item/storage/firstaid/regular{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/item/roller,
 /obj/item/clothing/gloves/nitrile/blue,
@@ -1501,8 +1491,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm/directional/south{
-	pixel_x = 8;
-	pixel_y = -32
+	pixel_x = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = -4;
@@ -1672,8 +1661,7 @@
 /obj/structure/table,
 /obj/item/radio/intercom/wideband/table{
 	dir = 1;
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1699,8 +1687,7 @@
 /obj/machinery/light/small/directional/east,
 /obj/item/radio/intercom/table{
 	dir = 1;
-	pixel_x = -13;
-	pixel_y = 0
+	pixel_x = -13
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -1730,7 +1717,6 @@
 "GM" = (
 /obj/structure/filingcabinet/double/grey{
 	pixel_x = -10;
-	pixel_y = 0;
 	dir = 4;
 	density = 0
 	},
@@ -1739,10 +1725,7 @@
 /obj/item/pen,
 /obj/item/pen,
 /obj/item/modular_computer/tablet/preset/cheap,
-/obj/item/modular_computer/tablet/preset/cheap{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/item/modular_computer/tablet/preset/cheap,
 /obj/effect/turf_decal/corner/transparent/green{
 	dir = 9
 	},
@@ -2023,8 +2006,7 @@
 	pixel_y = 9
 	},
 /obj/item/kitchen/rollingpin{
-	pixel_x = -8;
-	pixel_y = 0
+	pixel_x = -8
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
@@ -2040,7 +2022,6 @@
 	},
 /obj/structure/sink/kitchen{
 	dir = 4;
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /turf/open/floor/plasteel,
@@ -2175,10 +2156,6 @@
 	pixel_x = 6;
 	pixel_y = 7
 	},
-/obj/machinery/emergency_panel{
-	pixel_x = -10;
-	pixel_y = 2
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "UY" = (
@@ -2264,7 +2241,6 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /mob/living/basic/cockroach,
 /obj/item/radio/intercom/directional/east{
-	pixel_x = 31;
 	pixel_y = 7
 	},
 /turf/open/floor/plating,

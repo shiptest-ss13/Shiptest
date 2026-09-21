@@ -187,7 +187,6 @@
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	baseturfs = /turf/open/lava/plasma/ice_moon
 	planetary_atmos = TRUE
-	light_color = COLOR_ICEPLANET_LIGHT
 
 /turf/open/lava/plasma/ice_moon/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
@@ -201,6 +200,12 @@ ICE_TURF_HELPER(wood/ebony)
 ICE_TURF_HELPER(plasteel/stairs)
 ICE_TURF_HELPER(plasteel/stairs/wood)
 
+ICE_TURF_HELPER(plasteel/dark)
+ICE_TURF_HELPER(plating/rust)
+ICE_TURF_HELPER(plasteel/tech)
+ICE_TURF_HELPER(plasteel/tech/techmaint)
+ICE_TURF_HELPER(pod/dark)
+
 //cementcrete
 
 ICE_TURF_HELPER(concrete)
@@ -211,3 +216,58 @@ ICE_TURF_HELPER(concrete/slab_4)
 ICE_TURF_HELPER(concrete/tiles)
 ICE_TURF_HELPER(concrete/reinforced)
 ICE_TURF_HELPER(concrete/pavement)
+
+/turf/open/floor/wood/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	slowdown = 0
+
+/turf/open/floor/wood/ebony/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	slowdown = 0
+
+/turf/open/floor/plasteel/stairs/wood/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	slowdown = 0
+
+/turf/open/floor/plating/rust/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+
+/turf/open/floor/plasteel/tech/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+
+/turf/open/floor/pod/dark/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+
+/turf/open/floor/plasteel/tech/techmaint/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+
+/turf/open/floor/plasteel/dark/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+
+/turf/open/floor/plasteel/stairs/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+
+/turf/open/floor/plasteel/patterned/brushed/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+
+

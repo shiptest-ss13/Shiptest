@@ -43,18 +43,18 @@
 	gas_type = GAS_PLASMA
 
 /obj/machinery/atmospherics/components/unary/tank/fuel
-	icon_state = "orange"
+	icon_state = "red"
 
 /obj/machinery/atmospherics/components/unary/tank/fuel/New()
 	..()
 	var/datum/gas_mixture/air_contents = airs[1]
 	air_contents.set_moles(GAS_O2, AIR_CONTENTS * 0.3)
-	air_contents.set_moles(GAS_PLASMA, AIR_CONTENTS * 0.6)
+	air_contents.set_moles(GAS_HYDROGEN, AIR_CONTENTS * 0.6)
 
 /obj/machinery/atmospherics/components/unary/tank/oxygen
 	icon_state = "blue"
 	gas_type = GAS_O2
 
 /obj/machinery/atmospherics/components/unary/tank/nitrogen
-	icon_state = "red"
+	icon_state = "green"
 	gas_type = GAS_N2

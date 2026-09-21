@@ -46,8 +46,6 @@
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap_black_bg"
 
-	can_be_selected_randomly = FALSE //this overmap does not play well without the filter
-
 /datum/overmap_star_system/qud //hi lamb
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#b1c9c3"
@@ -79,8 +77,6 @@
 
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap_black_bg"
-
-	can_be_selected_randomly = FALSE //this overmap does not play well without the filter
 
 /datum/overmap_star_system/amber_term/post_edit_token_state(datum/overmap/datum_to_edit)
 	datum_to_edit.token.remove_filter("gloweffect")

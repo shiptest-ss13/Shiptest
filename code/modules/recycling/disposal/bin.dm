@@ -368,15 +368,17 @@
 	if(machine_stat & NOPOWER || panel_open)
 		return
 
-	//check for items in disposal - occupied light
-	if(contents.len > 0)
-		. += "dispover-full"
-		SSvis_overlays.add_vis_overlay(src, icon, "dispover-full", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
 
 	//charging and ready light
 	if(pressure_charging)
 		. += "dispover-charge"
 		SSvis_overlays.add_vis_overlay(src, icon, "dispover-charge-glow", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
+
+	//check for items in disposal - occupied light
+	else if(contents.len > 0)
+		. += "dispover-full"
+		SSvis_overlays.add_vis_overlay(src, icon, "dispover-full", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
+
 	else if(full_pressure)
 		. += "dispover-ready"
 		SSvis_overlays.add_vis_overlay(src, icon, "dispover-ready-glow", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)

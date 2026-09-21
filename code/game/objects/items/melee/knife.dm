@@ -22,6 +22,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	tool_behaviour = TOOL_KNIFE
 	demolition_mod = 0.75
+	bad_type = /obj/item/melee/knife
 
 /obj/item/melee/knife/ComponentInitialize()
 	. = ..()
@@ -164,9 +165,9 @@
 /obj/item/melee/knife/switchblade
 	name = "switchblade"
 	icon_state = "switchblade"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	world_file = null
+	item_state = "switchblade"
+	lefthand_file = 'icons/mob/inhands/weapons/knifes_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/knifes_righthand.dmi'
 	desc = "A sharp, concealable, spring-loaded knife."
 	flags_1 = CONDUCT_1
 	force = 3

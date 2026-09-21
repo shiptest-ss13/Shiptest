@@ -30,7 +30,6 @@
 
 	actually_shoots = FALSE
 	door_breaching_weapon = FALSE //this doesn't breach doors. it OBLITERATES THEM
-	ignores_wear = TRUE
 	manufacturer = null
 	gunslinger_recoil_bonus = 0
 	wield_slowdown = 0
@@ -50,6 +49,9 @@
 /obj/item/gun/ballistic/shotgun/blasting_hammer/Initialize(mapload, spawn_empty)
 	. = ..()
 	update_appearance()
+
+/obj/item/gun/ballistic/shotgun/blasting_hammer/fire_gun(atom/target, mob/living/user, flag, params)
+	return // actually_shoot FALSE stops it from shooting but this disables the balloon alert
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/pre_attack(atom/A, mob/living/user, params)
 	if(charging)
@@ -78,7 +80,7 @@
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = 30)
+	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = 40)
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/on_wield(obj/item/source, mob/user, instant)
 	. = ..()
@@ -141,6 +143,15 @@
 		demolition_mod = 10
 	else
 		demolition_mod = initial(demolition_mod)
+
+/obj/item/gun/ballistic/shotgun/blasting_hammer/afterattack(atom/A, mob/user, proximity)
+	. = ..()
+	if(!proximity)
+		return
+	if(HAS_TRAIT(src, TRAIT_WIELDED)) //destroys windows and grilles in one hit
+		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille))
+			var/obj/structure/W = A
+			W.atom_destruction("axe")
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/update_icon_state()
 	. = ..()

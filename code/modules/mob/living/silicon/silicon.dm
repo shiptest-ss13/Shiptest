@@ -389,7 +389,7 @@
 /mob/living/silicon/get_inactive_held_item()
 	return FALSE
 
-/mob/living/silicon/handle_high_gravity(gravity)
+/mob/living/silicon/handle_high_gravity(gravity, seconds_per_tick, times_fired)
 	return
 
 /mob/living/silicon/on_floored_start()

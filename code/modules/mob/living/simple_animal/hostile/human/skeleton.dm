@@ -15,12 +15,14 @@
 	melee_damage_upper = 15
 	minbodytemp = 0
 	maxbodytemp = 1500
+	minimum_pressure = 0
+	maximum_pressure = INFINITY
 	healable = 0 //they're skeletons how would bruise packs help them??
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	atmos_requirements = IMMUNE_ATMOS_REQS
-	unsuitable_atmos_damage = 10
+	unsuitable_atmos_damage = 5
 	stat_attack = HARD_CRIT
 	faction = list("skeleton")
 	see_in_dark = 8

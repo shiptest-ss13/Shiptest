@@ -91,7 +91,7 @@
 		return
 
 	var/obj/item/clothing/eye_protection = owner.get_item_by_slot(ITEM_SLOT_EYES)
-	if(isclothing(eye_protection) && (eye_protection.clothing_flags & SEALS_EYES))
+	if(isclothing(eye_protection) && (eye_protection.flags_cover & SEALS_EYES))
 		to_chat(source, span_notice("[proj] strikes your [eye_protection.name]!"))
 		return // you'll shoot your eye out!
 
@@ -147,7 +147,7 @@
 	owner.cure_blind(EYE_SCARRING_TRAIT)
 	owner.update_body()
 
-/obj/item/organ/eyes/on_life()
+/obj/item/organ/eyes/on_life(seconds_per_tick, times_fired)
 	..()
 	var/mob/living/carbon/C = owner
 	//various degrees of "oh fuck my eyes", from "point a laser at your eye" to "staring at the Sun" intensities

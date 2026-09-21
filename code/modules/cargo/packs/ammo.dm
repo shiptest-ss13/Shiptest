@@ -400,7 +400,7 @@
 	contains = list(/obj/item/storage/box/ammo/a308/hp)
 	cost = 230 //TTD 270
 
-/* 7.5x64 */
+/* 6.5mm */
 
 /datum/supply_pack/ammo/a65clip_box
 	name = "6.5mm CLIP Ammo Box Crate"

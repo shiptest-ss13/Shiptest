@@ -1,6 +1,13 @@
 /// This divisor controls how fast body temperature changes to match the environment
-#define BODYTEMP_DIVISOR 8
-
+#define BODYTEMP_DIVISOR 16
+/**
+ * Handles the biological and general over-time processes of the mob.
+ *
+ *
+ * Arguments:
+ * - seconds_per_tick: How many seconds between ticks
+ * - times_fired: The number of times SSmobs has fired
+ */
 /mob/living/proc/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	set waitfor = FALSE
 	set invisibility = 0
@@ -26,7 +33,7 @@
 
 		if(stat != DEAD)
 			//Mutations and radiation
-			handle_mutations_and_radiation()
+			handle_mutations_and_radiation(seconds_per_tick, times_fired)
 
 		if(stat != DEAD)
 			//Breathing, if applicable
@@ -41,18 +48,18 @@
 
 		if(stat != DEAD)
 			//Random events (vomiting etc)
-			handle_random_events()
+			handle_random_events(seconds_per_tick, times_fired)
 
 		//Handle temperature/pressure differences between body and environment
 		var/datum/gas_mixture/environment = loc.return_air()
 		if(environment)
-			handle_environment(environment)
+			handle_environment(environment, seconds_per_tick, times_fired)
 
-		handle_gravity()
+		handle_gravity(seconds_per_tick, times_fired)
 
 		if(stat != DEAD)
-			handle_traits() // eye, ear, brain damages
-			handle_status_effects() //all special effects, stun, knockdown, jitteryness, hallucination, sleeping, etc
+			handle_traits(seconds_per_tick, times_fired) // eye, ear, brain damages
+			handle_status_effects(seconds_per_tick, times_fired) //all special effects, stun, knockdown, jitteryness, hallucination, sleeping, etc
 
 	handle_wounds(seconds_per_tick, times_fired)
 
@@ -66,54 +73,55 @@
 	SEND_SIGNAL(src, COMSIG_LIVING_HANDLE_BREATHING, seconds_per_tick, times_fired)
 	return
 
-/mob/living/proc/handle_mutations_and_radiation()
+/mob/living/proc/handle_mutations_and_radiation(seconds_per_tick, times_fired)
 	radiation = 0 //so radiation don't accumulate in simple animals
 	return
 
 /mob/living/proc/handle_diseases(seconds_per_tick, times_fired)
 	return
 
-/mob/living/proc/handle_wounds()
+/mob/living/proc/handle_wounds(seconds_per_tick, times_fired)
 	return
 
-/mob/living/proc/handle_random_events()
+/mob/living/proc/handle_random_events(seconds_per_tick, times_fired)
 	return
 
 // Base mob environment handler for body temperature
-/mob/living/proc/handle_environment(datum/gas_mixture/environment)
+/mob/living/proc/handle_environment(datum/gas_mixture/environment, seconds_per_tick, times_fired)
 	var/loc_temp = get_temperature(environment)
+	var/temp_delta = loc_temp - bodytemperature
 
-	if(loc_temp < bodytemperature) // it is cold here
+	if(temp_delta < 0) // it is cold here
 		if(!on_fire) // do not reduce body temp when on fire
-			adjust_bodytemperature(max((loc_temp - bodytemperature) / BODYTEMP_DIVISOR, HUMAN_BODYTEMP_COOLING_MAX))
+			adjust_bodytemperature(max(max(temp_delta / BODYTEMP_DIVISOR, HUMAN_BODYTEMP_COOLING_MAX) * seconds_per_tick, temp_delta))
 	else // this is a hot place
-		adjust_bodytemperature(min((loc_temp - bodytemperature) / BODYTEMP_DIVISOR, HUMAN_BODYTEMP_HEATING_MAX))
+		adjust_bodytemperature(min(min(temp_delta / BODYTEMP_DIVISOR, HUMAN_BODYTEMP_HEATING_MAX) * seconds_per_tick, temp_delta))
 
 //this updates all special effects: knockdown, druggy, stuttering, etc..
 /mob/living/proc/handle_status_effects()
 	if(confused)
 		confused = max(0, confused - 1)
 
-/mob/living/proc/handle_traits()
+/mob/living/proc/handle_traits(seconds_per_tick, times_fire)
 	//Eyes
 	if(eye_blind)	//blindness, heals slowly over time
 		if(HAS_TRAIT_FROM(src, TRAIT_BLIND, EYES_COVERED)) //covering your eyes heals blurry eyes faster
-			adjust_blindness(-3)
+			adjust_blindness(-1.5 * seconds_per_tick)
 		else if(!stat && !(HAS_TRAIT(src, TRAIT_BLIND)))
-			adjust_blindness(-1)
+			adjust_blindness(-0.5 * seconds_per_tick)
 	else if(eye_blurry)			//blurry eyes heal slowly
-		adjust_blurriness(-1)
+		adjust_blurriness(-0.5 * seconds_per_tick)
 
 /mob/living/proc/update_damage_hud()
 	return
 
-/mob/living/proc/handle_gravity()
+/mob/living/proc/handle_gravity(seconds_per_tick, times_fired)
 	var/gravity = has_gravity()
 	update_gravity(gravity)
 
 	if(gravity > STANDARD_GRAVITY)
 		gravity_animate()
-		handle_high_gravity(gravity)
+		handle_high_gravity(gravity, seconds_per_tick, times_fired)
 
 /mob/living/proc/gravity_animate()
 	if(!get_filter("gravity"))
@@ -125,9 +133,11 @@
 	sleep(10)
 	animate(get_filter("gravity"), y = 0, time = 10)
 
-/mob/living/proc/handle_high_gravity(gravity)
-	if(gravity >= GRAVITY_DAMAGE_TRESHOLD) //Aka gravity values of 3 or more
-		var/grav_stregth = gravity - GRAVITY_DAMAGE_TRESHOLD
-		adjustBruteLoss(min(grav_stregth,3))
+/mob/living/proc/handle_high_gravity(gravity, seconds_per_tick, times_fired)
+	if(gravity < GRAVITY_DAMAGE_THRESHOLD) //Aka gravity values of 3 or more
+		return
+
+	var/grav_strength = gravity - GRAVITY_DAMAGE_THRESHOLD
+	adjustBruteLoss(min(GRAVITY_DAMAGE_SCALING * grav_strength, GRAVITY_DAMAGE_MAXIMUM) * seconds_per_tick)
 
 #undef BODYTEMP_DIVISOR

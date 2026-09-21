@@ -5,6 +5,11 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	var/projectile_block_chance = 0
 
+/obj/item/melee/Initialize()
+	. = ..()
+	if(slot_flags & ITEM_SLOT_SUITSTORE)
+		ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, REF(src))
+
 //cruft
 /obj/item/melee/proc/check_martial_counter(mob/living/carbon/human/target, mob/living/carbon/human/user)
 	if(target.check_block())

@@ -1,7 +1,7 @@
 /obj/projectile/bullet/slug
 	name = "12g shotgun slug"
 	damage = 40
-	armour_penetration = 0
+	armour_penetration = 10
 	speed = BULLET_SPEED_SHOTGUN
 	bullet_identifier = "large slug"
 
@@ -122,7 +122,7 @@
 /obj/projectile/bullet/pellet/buckshot/twobore
 	name = "two-bore pellet"
 	damage = 30
-	armour_penetration = 5
+	armour_penetration = 20
 	tile_dropoff = 3
 	bullet_identifier = "massive pellet"
 

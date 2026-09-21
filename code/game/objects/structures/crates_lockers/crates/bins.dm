@@ -34,6 +34,17 @@
 	else
 		return ..()
 
+/obj/structure/closet/crate/bin/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+	if(opened && isitem(AM))
+		if(prob(75))
+			AM.forceMove(src.loc)
+			visible_message(span_notice("[AM] lands in [src]."))
+		else
+			visible_message(span_notice("[AM] bounces off of [src]'s rim!"))
+			return ..()
+	else
+		return ..()
+
 /obj/structure/closet/crate/bin/proc/do_animate()
 	playsound(loc, open_sound, 15, TRUE, -3)
 	flick("animate_largebins", src)
