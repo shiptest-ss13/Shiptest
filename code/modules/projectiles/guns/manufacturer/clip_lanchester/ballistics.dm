@@ -69,7 +69,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/cm70
 	name = "CM-70 machine pistol"
-	desc = "A compact machine pistol designed to rapidly fire 3-round bursts. Popular with officers and certain special units, the CM-70 is incredibly dangerous at close range. Chambered in 9mm."
+	desc = "A compact machine pistol designed to rapidly fire 9mm ammo. Popular with officers and certain special units, the CM-70 is incredibly dangerous at close range. Chambered in 9mm."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
@@ -82,8 +82,8 @@
 	)
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
-	fire_delay = 0.4 SECONDS
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	fire_delay = 0.07 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 	manufacturer = MANUFACTURER_MINUTEMAN
 
@@ -93,7 +93,7 @@
 	fire_sound = 'sound/weapons/gun/pistol/cm70.ogg'
 
 	spread = 8
-	spread_unwielded = 20
+	spread_unwielded = 8
 
 	wear_minor_threshold = 240
 	wear_major_threshold = 720
@@ -742,7 +742,7 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 
 //########### MISC ###########//
 
-/obj/item/gun/ballistic/shotgun/cm15
+/obj/item/gun/ballistic/shotgun/automatic/cm15
 	name = "\improper CM-15"
 	desc = "A large automatic shotgun used by CLIP. Generally employed by law enforcement and breaching specialists, and rarely by CLIP-BARD (typically with incendiary ammunition). Chambered in 12 gauge."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
@@ -755,9 +755,10 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
-
+	fire_delay = 0.3 SECONDS
 	manufacturer = MANUFACTURER_MINUTEMAN
-
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_FULLAUTO = "auto")
 	weapon_weight = WEAPON_MEDIUM
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g
 	allowed_ammo_types = list(
@@ -803,10 +804,10 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 		)
 	)
 
-/obj/item/gun/ballistic/shotgun/cm15/no_mag
+/obj/item/gun/ballistic/shotgun/automatic/cm15/no_mag
 	default_ammo_type = FALSE
 
-/obj/item/gun/ballistic/shotgun/cm15/incendiary
+/obj/item/gun/ballistic/shotgun/automatic/cm15/incendiary
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g/incendiary
 
 

@@ -207,7 +207,7 @@
 	// Uses "default" hangars (indie_space).
 
 /datum/overmap/outpost/warra_ice
-	token_icon_state = "station_asteroid"
+	token_icon_state = "station_planet"
 	main_template = /datum/map_template/outpost/warra_ice
 	elevator_template = /datum/map_template/outpost/elevator_ice
 	faction = FACTION_WARRA
@@ -237,7 +237,7 @@
 	)
 
 /datum/overmap/outpost/ngr_rock
-	token_icon_state = "station_asteroid"
+	token_icon_state = "station_planet"
 	main_template = /datum/map_template/outpost/ngr_rock
 	elevator_template = /datum/map_template/outpost/elevator_rock
 	weather_controller_type = /datum/weather_controller/rockplanet_safe

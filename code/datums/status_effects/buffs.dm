@@ -315,6 +315,9 @@
 	owner.adjustFireLoss(-20)
 	owner.remove_CC()
 	owner.bodytemperature = owner.get_body_temp_normal()
+	if(istype(owner, /mob/living/carbon/human))
+		var/mob/living/carbon/human/target_human = owner
+		target_human.coretemperature = target_human.get_body_temp_normal()
 	return TRUE
 
 /datum/status_effect/regenerative_core/on_remove()

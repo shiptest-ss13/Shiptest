@@ -25,7 +25,7 @@
 	turns_per_move = 2
 
 
-/mob/living/simple_animal/beachcarp/Life()
+/mob/living/simple_animal/beachcarp/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	..()
 	//CARP movement
 	if(!ckey && !stat)

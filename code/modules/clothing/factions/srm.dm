@@ -200,7 +200,7 @@
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 75, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 100, "wound" = 50)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/roumain/elite
 	slowdown = 1.25
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/security/roumain/elite
 	name = "Raska combat hardsuit helmet"

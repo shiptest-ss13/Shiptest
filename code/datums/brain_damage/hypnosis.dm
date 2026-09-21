@@ -42,7 +42,7 @@
 	owner.clear_alert("hypnosis")
 	..()
 
-/datum/brain_trauma/hypnosis/on_life()
+/datum/brain_trauma/hypnosis/on_life(seconds_per_tick, times_fired)
 	..()
 	if(prob(2))
 		switch(rand(1,2))

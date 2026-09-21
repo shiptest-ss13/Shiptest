@@ -106,7 +106,6 @@
 	dir = 1
 	},
 /obj/structure/sign/warning{
-	pixel_x = 0;
 	pixel_y = -24
 	},
 /turf/open/floor/concrete/slab_4,
@@ -135,6 +134,7 @@
 /area/ruin/beach/gunsmith/workshop)
 "bq" = (
 /obj/machinery/porta_turret/ruin/ramzi/light,
+/obj/structure/cable,
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/beach/gunsmith)
 "bv" = (
@@ -398,7 +398,6 @@
 	},
 /obj/structure/bedsheetbin{
 	pixel_y = 15;
-	pixel_x = 0;
 	layer = 3.1
 	},
 /obj/effect/turf_decal/techfloor{
@@ -435,7 +434,6 @@
 	},
 /obj/item/plate/large{
 	layer = 2.8;
-	pixel_x = 0;
 	pixel_y = 1
 	},
 /turf/open/floor/wood/ebony,
@@ -810,7 +808,6 @@
 	dir = 1
 	},
 /obj/structure/sign/warning/nosmoking/burnt{
-	pixel_x = 0;
 	pixel_y = 30
 	},
 /obj/machinery/autolathe,
@@ -1252,16 +1249,13 @@
 	pixel_y = 4
 	},
 /obj/item/reagent_containers/condiment/mayonnaise{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/item/reagent_containers/condiment/hotsauce{
 	pixel_x = -5;
 	pixel_y = 3
 	},
-/obj/effect/turf_decal/siding/wood/ebony{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood/ebony,
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/kitchen)
 "lO" = (
@@ -1281,7 +1275,6 @@
 "ml" = (
 /obj/structure/hazard_shutoff/electrical_shutoff{
 	id = "engineeringmoat";
-	pixel_x = 0;
 	pixel_y = 10
 	},
 /obj/structure/cable{
@@ -1640,7 +1633,6 @@
 	},
 /obj/item/storage/toolbox/syndicate,
 /obj/item/storage/toolbox/syndicate{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /obj/item/storage/box/stockparts/t2{
@@ -1653,7 +1645,6 @@
 "pA" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/item/storage/toolbox/electrical{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /obj/item/storage/toolbox/mechanical{
@@ -1998,8 +1989,7 @@
 	pixel_y = -11
 	},
 /obj/item/clothing/mask/breath/facemask{
-	pixel_x = -9;
-	pixel_y = 0
+	pixel_x = -9
 	},
 /obj/item/clothing/mask/breath/facemask{
 	pixel_x = -9;
@@ -2195,9 +2185,7 @@
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "vI" = (
-/obj/effect/turf_decal/siding/wood/ebony{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood/ebony,
 /obj/effect/turf_decal/siding/wood/corner/ebony{
 	dir = 4
 	},
@@ -2243,8 +2231,7 @@
 	pixel_y = 4
 	},
 /obj/item/storage/box/coffeepack/robusta{
-	pixel_x = 10;
-	pixel_y = 0
+	pixel_x = 10
 	},
 /obj/effect/turf_decal/siding/wood/end/ebony{
 	dir = 8
@@ -2319,11 +2306,9 @@
 "wZ" = (
 /obj/structure/rack,
 /obj/item/gun_maint_kit{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /obj/item/gun_maint_kit{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -2350,8 +2335,7 @@
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/secure/weapon,
 /obj/item/clothing/suit/space/syndicate/ramzi/surplus{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/item/clothing/suit/space/syndicate/ramzi/surplus{
 	pixel_x = 5;
@@ -2479,7 +2463,6 @@
 /obj/structure/salvageable/machine,
 /obj/structure/hazard_shutoff/electrical_shutoff{
 	id = "bunkermoat";
-	pixel_x = 0;
 	pixel_y = 9
 	},
 /turf/open/floor/concrete/slab_1,
@@ -2516,7 +2499,6 @@
 	dir = 4
 	},
 /obj/structure/sign/warning{
-	pixel_x = 0;
 	pixel_y = -24
 	},
 /turf/open/floor/concrete/slab_4,
@@ -2683,8 +2665,7 @@
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/secure/weapon,
 /obj/item/ammo_box/magazine/boomslang/empty{
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /obj/item/ammo_box/magazine/boomslang/empty{
 	pixel_x = -4;
@@ -2700,7 +2681,6 @@
 "AC" = (
 /obj/structure/table/wood,
 /obj/item/radio/intercom/directional/east{
-	pixel_x = 31;
 	pixel_y = -6
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
@@ -2737,7 +2717,6 @@
 "Bv" = (
 /obj/structure/table/wood,
 /obj/item/radio/intercom/directional/east{
-	pixel_x = 31;
 	pixel_y = 6
 	},
 /turf/open/floor/carpet/green,
@@ -2756,8 +2735,7 @@
 	pixel_y = 11
 	},
 /obj/item/documents/syndicate/ngr{
-	pixel_x = 1;
-	pixel_y = 0
+	pixel_x = 1
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
@@ -3075,7 +3053,6 @@
 /area/ruin/beach/gunsmith)
 "EE" = (
 /obj/structure/toilet{
-	pixel_x = 0;
 	pixel_y = 20
 	},
 /obj/structure/cable{
@@ -3275,8 +3252,7 @@
 	pixel_y = -6
 	},
 /obj/item/clothing/head/helmet/m10/ramzi{
-	pixel_x = 3;
-	pixel_y = 0
+	pixel_x = 3
 	},
 /obj/item/clothing/head/helmet/m10/ramzi{
 	pixel_x = 3;
@@ -3920,8 +3896,7 @@
 	default_raw_text = "hey love. remember to be a little more careful moving the bookcase for the stash. gonna have to get rei to fix the floorboards again"
 	},
 /obj/item/desk_flag/trans{
-	pixel_x = -9;
-	pixel_y = 0
+	pixel_x = -9
 	},
 /obj/machinery/light/directional/south,
 /turf/open/floor/wood/ebony,
@@ -4055,11 +4030,9 @@
 /obj/structure/closet/crate/freezer,
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /turf/open/floor/concrete/slab_1,
@@ -4103,7 +4076,6 @@
 	pixel_y = 4
 	},
 /obj/item/stack/ore/salvage/scrapmetal{
-	pixel_x = 0;
 	pixel_y = 13
 	},
 /obj/item/weaponcrafting/stock{
@@ -4218,9 +4190,7 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith/workshop)
 "Te" = (
-/obj/effect/turf_decal/siding/wood/ebony{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood/ebony,
 /obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
@@ -4246,12 +4216,10 @@
 	dir = 1
 	},
 /obj/structure/filingcabinet/double{
-	pixel_x = 0;
 	pixel_y = 19;
 	density = 0
 	},
 /obj/item/clipboard{
-	pixel_x = 0;
 	pixel_y = 2
 	},
 /turf/open/floor/wood/ebony,
@@ -4317,7 +4285,6 @@
 	dir = 5
 	},
 /obj/structure/sign/warning/incident{
-	pixel_x = 0;
 	pixel_y = 31
 	},
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer/beach,

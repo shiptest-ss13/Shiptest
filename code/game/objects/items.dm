@@ -368,7 +368,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/examine(mob/user)
 	. = ..()
 
-	if(unique_reskin && !current_skin)
+	if((unique_reskin && !current_skin) || (unique_reskin && (obj_flags & INFINITE_RESKIN)))
 		. += span_notice("<b>Alt-click</b> it to reskin it.")
 
 	. += span_notice("[gender == PLURAL ? "They are" : "It is"] a <b>[weightclass2text(w_class)]</b> item.")

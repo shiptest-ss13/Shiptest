@@ -201,10 +201,6 @@
 	name = "Atmospherics Shed"
 	icon_state = "atmos"
 
-/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room
-	name = "Mineshaft Prep Room"
-	icon_state = "mining"
-
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft
 	name = "Abandoned Mineshaft"
 	icon_state = "mining"

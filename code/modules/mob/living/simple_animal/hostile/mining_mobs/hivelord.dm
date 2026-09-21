@@ -240,7 +240,7 @@
 	addtimer(CALLBACK(src, PROC_REF(death)), 5 SECONDS)
 	AddComponent(/datum/component/swarming)
 
-/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/Life()
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	if(stat == DEAD || !isturf(loc))
 		return
@@ -302,7 +302,7 @@
 	malignance.cure()
 	..()
 
-/obj/item/organ/legion_skull/on_life()
+/obj/item/organ/legion_skull/on_life(seconds_per_tick, times_fired)
 	. = ..()
 	skull_check()
 
@@ -317,7 +317,7 @@
 	if(!malignance)
 		malignance = new()
 		malignance.infect(owner, FALSE)
-	if(owner.has_reagent(/datum/reagent/medicine/synaptizine, needs_metabolizing = TRUE) || owner.reagents.has_reagent(/datum/reagent/medicine/spaceacillin, needs_metabolizing = TRUE))
+	if(owner.has_reagent(/datum/reagent/medicine/synaptizine, needs_metabolizing = TRUE) || owner.reagents.has_reagent(/datum/reagent/medicine/antibiotic, needs_metabolizing = TRUE))
 		if(isnull(timeleft(malignance_tracker))) //ruhehehehehe
 			malignance_countdown = min(malignance_countdown + 1 SECONDS, initial(malignance_countdown)) //slightly improve our resistance to dying so we don't turn the second a treatment runs out
 			return

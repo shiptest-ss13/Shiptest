@@ -70,7 +70,7 @@
 	QDEL_NULL(active_trauma)
 	return ..()
 
-/datum/wound/blunt/bone/handle_process(delta_time, times_fired)
+/datum/wound/blunt/bone/handle_process(seconds_per_tick, times_fired)
 	. = ..()
 
 	if(!victim || IS_IN_STASIS(victim))
