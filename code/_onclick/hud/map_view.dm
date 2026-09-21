@@ -33,6 +33,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/map_view)
 	assigned_map = map_key
 	set_position(1, 1)
 
+	plane_masters = list()
 	for(var/plane in subtypesof(/atom/movable/screen/plane_master))
 		var/atom/movable/screen/instance = new plane()
 		if (!render_lighting && instance.plane == LIGHTING_PLANE)

@@ -82,7 +82,7 @@
 		var/size_x = bbox[3] - bbox[1] + 1
 		var/size_y = bbox[4] - bbox[2] + 1
 
-		cam_screen?.vis_contents = visible_turfs
+		cam_screen?.show_camera(visible_turfs, size_x, size_y)
 		return TRUE
 
 /obj/overmap/proc/choose_token(mob/user)

@@ -190,16 +190,17 @@
 		if(length(concurrent_users) == 1 && is_living)
 			playsound(src, 'sound/machines/terminal_on.ogg', 25, FALSE)
 			use_power(active_power_usage)
-		// Register map objects
-		if(current_ship)
-			current_ship.token.cam_screen.display_to_client(user.client)
-			if(current_ship.cloaked_image)
-				user.client.images += current_ship.cloaked_image
-			current_ship.token.update_screen()
 
 		// Open UI
 		ui = new(user, src, "HelmConsole", name)
 		ui.open()
+
+		// Register map objects
+		if(current_ship)
+			current_ship.token.cam_screen.display_to(user, ui.window)
+			if(current_ship.cloaked_image)
+				user.client.images += current_ship.cloaked_image
+			current_ship.token.update_screen()
 
 /obj/machinery/computer/helm/ui_data(mob/user)
 	. = list()
@@ -465,7 +466,7 @@
 	concurrent_users -= user_ref
 	// Unregister map objects
 	if(current_ship)
-		current_ship.token.cam_screen.hide_from_client(user.client)
+		current_ship.token.cam_screen.hide_from(user)
 		if(current_ship.burn_direction > BURN_NONE && !length(concurrent_users) && !viewer && is_living) // If accelerating with nobody else to stop it
 			say("Pilot absence detected, engaging acceleration safeties.")
 			current_ship.change_heading(BURN_NONE)
