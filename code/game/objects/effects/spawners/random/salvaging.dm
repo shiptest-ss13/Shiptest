@@ -164,8 +164,8 @@
 // all together now!
 /obj/effect/spawner/random/salvage/autolathe_junk
 	loot = list(
-		/obj/effect/spawner/random/salvage/autolathe_common = 190,
-		/obj/effect/spawner/random/salvage/autolathe_rare = 10,
+		/obj/effect/spawner/random/salvage/autolathe_common = 180,
+		/obj/effect/spawner/random/salvage/autolathe_rare = 20,
 		/obj/effect/spawner/random/salvage/autolathe_weird = 1)
 
 // BROKEN PROTOLATHE //

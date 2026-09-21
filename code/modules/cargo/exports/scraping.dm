@@ -70,7 +70,7 @@
 	export_types = list(/obj/item/computer_hardware)
 
 /datum/export/gpu
-	cost = 400
+	cost = 500
 	desc = "High performance graphics cards are a rarity out here. We'll pay a premium for any you can get your hands on."
 	unit_name = "GPU"
 	export_types = list(/obj/item/gpu)

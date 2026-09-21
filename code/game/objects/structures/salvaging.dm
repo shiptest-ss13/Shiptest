@@ -54,13 +54,19 @@
 	desc = "An unrecognizable hunk of destroyed machinery. Despite the damage, there may be something worthwhile within..."
 	icon_state = "wreck_pda"
 	salvageable_parts = list(
-		// material components
+		// scrap
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/sheet/glass = 50,
 		/obj/item/stack/ore/salvage/scrapgold/five = 60,
 		/obj/item/stack/ore/salvage/scrapgold = 50,
+		/obj/item/stack/ore/salvage/scraptitanium/five = 60,
+		/obj/item/stack/ore/salvage/scraptitanium = 50,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
-		/obj/item/stack/ore/salvage/scrapmetal = 20,
+		/obj/item/stack/ore/salvage/scrapmetal = 50,
+		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
+		/obj/item/stack/ore/salvage/scrapuranium = 50,
+		/obj/item/stack/ore/salvage/scrapsilver/five = 60,
+		/obj/item/stack/ore/salvage/scrapsilver = 50,
 		/obj/item/stack/cable_coil/cut = 80,
 		/obj/item/stack/cable_coil/cut = 80,
 
@@ -74,31 +80,34 @@
 		/obj/effect/spawner/random/salvage/part/manipulator = 40,
 		/obj/effect/spawner/random/salvage/part/manipulator = 40,
 		/obj/effect/spawner/random/salvage/part/laser = 40,
-		/obj/effect/spawner/random/salvage/part/laser = 40)
+		/obj/effect/spawner/random/salvage/part/laser = 40,
+	)
 
 // GENERIC COMPUTER //
-// the main thing is computer boards here. some modcomp parts for flavor
+// the main thing is computer boards here. some mats and modcomp parts for flavor
 /obj/structure/salvageable/computer
 	name = "broken computer"
 	desc = "The remnants of a particularly unlucky computer. If you're lucky, there may still be working parts inside."
 	icon_state = "computer_broken"
 	frame_type = /obj/structure/frame/computer/retro
 	salvageable_parts = list(
-		// material components
+		// scrap
 		/obj/item/stack/sheet/glass/two = 80,
-		/obj/item/stack/ore/salvage/scrapsilver/five = 90,
-		/obj/item/stack/ore/salvage/scrapgold/five = 60,
+		/obj/item/stack/ore/salvage/scrapsilver/five = 80,
+		/obj/item/stack/ore/salvage/scrapsilver = 20,
+		/obj/item/stack/ore/salvage/scrapsilver = 20,
+		/obj/item/stack/ore/salvage/scrapgold/five = 80,
 		/obj/item/stack/ore/salvage/scrapgold/ = 20,
 		/obj/item/stack/ore/salvage/scrapgold/ = 20,
-		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
+		/obj/item/stack/ore/salvage/scrapmetal/five = 80,
 		/obj/item/stack/ore/salvage/scrapmetal/ = 20,
 		/obj/item/stack/ore/salvage/scrapmetal/ = 20,
 		/obj/item/stack/cable_coil/cut = 60,
 		/obj/item/stack/cable_coil/cut = 60,
 
-		// other fluff parts
+		// other parts
 		/obj/effect/spawner/random/salvage/part/capacitor = 60,
-		/obj/item/gpu = 5,
+		/obj/item/gpu = 10, // gaming pc
 
 		// modcomp parts
 		/obj/effect/spawner/random/salvage/part/modcomp/three = 80,
@@ -106,63 +115,76 @@
 		/obj/effect/spawner/random/salvage/part/modcomp = 20,
 
 		// and the main attraction, our circuit board
-		/obj/effect/spawner/random/circuit/computer/mixed = 75
+		/obj/effect/spawner/random/circuit/computer/mixed = 75,
 	)
 
-// AUTOLATHE
-// contains a decent amount of mats and some lathe garbage
+// AUTOLATHE //
+// contains lots of common mats, and some lathe junk
 /obj/structure/salvageable/autolathe
 	name = "broken autolathe"
 	desc = "Older models of autolathe were notorious for suffering mechanical failures. Oftentimes, it was cheaper and easier to just buy another than try to fix it. Maybe there's something of worth still jammed inside?"
 	icon_state = "wreck_autolathe"
 	salvageable_parts = list(
-		// materials for the "frame"
+		// scrap
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 80,
-		/obj/item/stack/ore/salvage/scraptitanium/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
+		/obj/item/stack/ore/salvage/scrapmetal = 40,
 
 		// stuff used to build autolathes
-		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
-		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
-		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
-		/obj/effect/spawner/random/salvage/part/manipulator = 30,
-		/obj/item/circuitboard/machine/autolathe = 35,
+		/obj/effect/spawner/random/salvage/part/matter_bin = 50,
+		/obj/effect/spawner/random/salvage/part/matter_bin = 50,
+		/obj/effect/spawner/random/salvage/part/matter_bin = 50,
+		/obj/effect/spawner/random/salvage/part/manipulator = 50,
+		/obj/item/circuitboard/machine/autolathe = 25,
 
 		// lathe junk - what was jammed inside?
 		/obj/effect/spawner/random/salvage/autolathe_junk = 80,
 		/obj/effect/spawner/random/salvage/autolathe_junk = 30,
 		/obj/effect/spawner/random/salvage/autolathe_junk = 10,
 
-		// lathe reserves (more substantial mats)
-		/obj/item/stack/sheet/metal/five = 10,
-		/obj/item/stack/sheet/metal/five = 10,
-		/obj/item/stack/sheet/glass/five = 10,
-		/obj/item/stack/sheet/glass/five = 10,
-		/obj/item/stack/sheet/plastic/five = 10,
-		/obj/item/stack/sheet/plasteel/five = 10,
-		/obj/item/stack/sheet/mineral/silver/five = 10,
-		/obj/item/stack/sheet/mineral/gold/five = 10,
-		/obj/item/stack/sheet/mineral/plasma/five = 10,
-		/obj/item/stack/sheet/mineral/uranium/five = 5,
-		/obj/item/stack/sheet/mineral/diamond/five = 1)
+		// lathe reserves - low value
+		/obj/item/stack/sheet/metal/five = 80,
+		/obj/item/stack/sheet/metal/twenty = 20,
+		/obj/item/stack/sheet/glass/five = 80,
+		/obj/item/stack/sheet/glass/twenty = 20,
+		/obj/item/stack/sheet/plastic/five = 80,
+		/obj/item/stack/sheet/plastic/twenty = 20,
 
+		// lathe reserves - high value
+		/obj/item/stack/sheet/mineral/silver/five = 20,
+		/obj/item/stack/sheet/mineral/silver/five = 20,
+		/obj/item/stack/sheet/mineral/gold/five = 20,
+		/obj/item/stack/sheet/mineral/gold/five = 20,
+		/obj/item/stack/sheet/mineral/plasma/five = 20,
+		/obj/item/stack/sheet/mineral/plasma/five = 20,
+		/obj/item/stack/sheet/mineral/uranium/five = 20,
+		/obj/item/stack/sheet/mineral/uranium/five = 20,
+		/obj/item/stack/sheet/mineral/diamond/five = 10,
+		/obj/item/stack/sheet/mineral/diamond/five = 10,
+	)
+
+// ASSEMBLER //
+// contains more of the rare materials, some stock parts, and a couple nice goodie pools
 /obj/structure/salvageable/protolathe
 	name = "broken assembler"
 	desc = "A high-end fabrication machine for producing specialized components. Or, at least it used to be. You may be able to find something of worth within the wreckage."
 	icon_state = "wreck_protolathe"
 	salvageable_parts = list(
-		// materials
+		// scrap
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 80,
 		/obj/item/stack/ore/salvage/scrapplasma/five = 60,
+		/obj/item/stack/ore/salvage/scrapgold/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
+		/obj/item/stack/ore/salvage/scrapbluespace/five = 60,
+		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
 
 		// stock parts
-		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
-		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
-		/obj/effect/spawner/random/salvage/part/manipulator = 30,
-		/obj/effect/spawner/random/salvage/part/manipulator = 30,
+		/obj/effect/spawner/random/salvage/part/matter_bin = 50,
+		/obj/effect/spawner/random/salvage/part/matter_bin = 50,
+		/obj/effect/spawner/random/salvage/part/manipulator = 50,
+		/obj/effect/spawner/random/salvage/part/manipulator = 50,
 
 		// protolathe loot pool spawns
 		/obj/effect/spawner/random/medical/surgery_tool = 55,
@@ -180,18 +202,29 @@
 		// mop meme
 		/obj/item/mop/advanced = 1, // the holy grail
 
-		// material reserves
-		/obj/item/stack/sheet/metal/five = 15,
-		/obj/item/stack/sheet/glass/five = 15,
-		/obj/item/stack/sheet/plastic/five = 15,
-		/obj/item/stack/sheet/plasteel/five = 15,
-		/obj/item/stack/sheet/mineral/silver/five = 15,
-		/obj/item/stack/sheet/mineral/gold/five = 15,
-		/obj/item/stack/sheet/mineral/plasma/five = 10,
-		/obj/item/stack/sheet/mineral/uranium/five = 5,
-		/obj/item/stack/sheet/mineral/diamond/five = 1,
+		// material reserves - low value
+		/obj/item/stack/sheet/metal/five = 40,
+		/obj/item/stack/sheet/metal/five = 40,
+		/obj/item/stack/sheet/glass/five = 40,
+		/obj/item/stack/sheet/glass/five = 40,
+		/obj/item/stack/sheet/plastic/five = 40,
+		/obj/item/stack/sheet/plastic/five = 40,
+
+		// material reserves - high value
+		/obj/item/stack/sheet/mineral/silver/five = 40,
+		/obj/item/stack/sheet/mineral/silver/five = 40,
+		/obj/item/stack/sheet/mineral/gold/five = 40,
+		/obj/item/stack/sheet/mineral/gold/five = 40,
+		/obj/item/stack/sheet/mineral/plasma/five = 40,
+		/obj/item/stack/sheet/mineral/plasma/five = 40,
+		/obj/item/stack/sheet/mineral/uranium/five = 40,
+		/obj/item/stack/sheet/mineral/uranium/five = 40,
+		/obj/item/stack/sheet/mineral/diamond/five = 20,
+		/obj/item/stack/sheet/mineral/diamond/five = 20,
 	)
 
+// CIRCUIT IMPRINTER //
+// Contains machineboards and a pittance of mats.
 /obj/structure/salvageable/circuit_imprinter
 	name = "broken circuit imprinter"
 	desc = "A machine that, at one point, was able to engrave circuit boards. Maybe you can find a few boards inside that aren't broken."
@@ -200,29 +233,28 @@
 		// materials
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 80,
-		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
-		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
-		/obj/item/stack/ore/salvage/scrapbluespace = 60,
+		/obj/item/stack/ore/salvage/scrapuranium/five = 40,
+		/obj/item/stack/ore/salvage/scrapuranium/five = 40,
+		/obj/item/stack/ore/salvage/scrapmetal/five = 40,
+		/obj/item/stack/ore/salvage/scrapmetal/five = 40,
+		/obj/item/stack/ore/salvage/scrapgold/five = 40,
+		/obj/item/stack/ore/salvage/scrapgold/five = 40,
+		/obj/item/stack/ore/salvage/scrapbluespace/five = 40,
+		/obj/item/stack/ore/salvage/scrapbluespace/five = 40,
 
 		// stock parts
-		/obj/effect/spawner/random/salvage/part/matter_bin = 40,
-		/obj/effect/spawner/random/salvage/part/manipulator = 30,
+		/obj/effect/spawner/random/salvage/part/matter_bin = 50,
+		/obj/effect/spawner/random/salvage/part/manipulator = 50,
 
 		// circuit pools
 		/obj/item/stack/circuit_stack = 50,
 		/obj/effect/spawner/random/circuit/machine/mech = 45,
 		/obj/effect/spawner/random/circuit/machine/mixed = 60,
 		/obj/effect/spawner/random/circuit/machine/mixed = 60,
-
-		// material reserves
-		/obj/item/stack/sheet/metal/five = 15,
-		/obj/item/stack/sheet/glass/five = 15,
-		/obj/item/stack/sheet/mineral/silver/five = 15,
-		/obj/item/stack/sheet/mineral/gold/five = 15,
-		/obj/item/stack/sheet/bluespace_crystal/five = 5,
-		/obj/item/stack/sheet/mineral/diamond/five = 1,
 	)
 
+// LABORATORY ANALYZER //
+// dangerous! but worthwhile
 /obj/structure/salvageable/destructive_analyzer
 	name = "broken laboratory analyzer"
 	desc = "A hefty sample analysis machine containing very strong laser emitter. If this thing could power up, it would probably slice you in half. There could be something inside that's worth the risk..." //this ones pretty dangerous
@@ -231,25 +263,24 @@
 		// materials
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 80,
-		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
-		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
-		/obj/item/stack/ore/salvage/scrapplasma = 60,
+		/obj/item/stack/ore/salvage/scrapuranium/five = 40,
+		/obj/item/stack/ore/salvage/scrapuranium/five = 40,
+		/obj/item/stack/ore/salvage/scrapmetal/five = 40,
+		/obj/item/stack/ore/salvage/scrapmetal/five = 40,
+		/obj/item/stack/ore/salvage/scraptitanium/five = 40,
+		/obj/item/stack/ore/salvage/scraptitanium/five = 40,
+		/obj/item/stack/ore/salvage/scrapplasma/five = 40,
+		/obj/item/stack/ore/salvage/scrapplasma/five = 40,
+		/obj/item/stack/ore/salvage/scrapbluespace/five = 40,
+		/obj/item/stack/ore/salvage/scrapbluespace/five = 40,
 
 		// stock parts
-		/obj/effect/spawner/random/salvage/part/scanning = 40,
-		/obj/effect/spawner/random/salvage/part/laser = 30,
-		/obj/effect/spawner/random/salvage/part/manipulator = 30,
+		/obj/effect/spawner/random/salvage/part/scanning = 50,
+		/obj/effect/spawner/random/salvage/part/laser = 50,
+		/obj/effect/spawner/random/salvage/part/manipulator = 50,
 
 		// special destructive analyzer pool
-		/obj/effect/spawner/random/salvage/analyzer = 65,
-
-		// material reserves
-		/obj/item/stack/sheet/metal/five = 15,
-		/obj/item/stack/sheet/glass/five = 15,
-		/obj/item/stack/sheet/mineral/silver/five = 15,
-		/obj/item/stack/sheet/mineral/gold/five = 15,
-		/obj/item/stack/sheet/bluespace_crystal/five = 5,
-		/obj/item/stack/sheet/mineral/diamond/five = 1,
+		/obj/effect/spawner/random/salvage/analyzer = 80,
 	)
 
 /obj/structure/salvageable/destructive_analyzer/dismantle(mob/living/user)
@@ -285,9 +316,10 @@
 		// materials
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 80,
-		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
-		/obj/item/stack/ore/salvage/scrapbluespace = 60,
+		/obj/item/stack/ore/salvage/scrapgold/five = 60,
+		/obj/item/stack/ore/salvage/scrapbluespace/five = 60,
+		/obj/item/stack/ore/salvage/scraptitanium/five = 60,
 
 		// disks (for fluff)
 		/obj/item/disk/tech_disk = 20,
@@ -296,16 +328,17 @@
 		/obj/item/disk/plantgene = 20,
 
 		// research notes (now sellable)
-		/obj/item/documents/research = 5,
+		/obj/item/documents/research = 10,
 
 		// computer parts
 		/obj/effect/spawner/random/salvage/part/modcomp/three = 60,
 		/obj/effect/spawner/random/salvage/part/modcomp/three = 60,
-		/obj/item/gpu = 10,
+		/obj/item/gpu = 20,
 
 		// telecomms parts
 		/obj/effect/spawner/random/salvage/part/tcomms/three = 60,
-		/obj/effect/spawner/random/salvage/part/tcomms/three = 60)
+		/obj/effect/spawner/random/salvage/part/tcomms/three = 60,
+	)
 
 /obj/structure/salvageable/server/dismantle(mob/living/user)
 	. = ..()
@@ -335,6 +368,9 @@
 
 /obj/structure/salvageable/server/safe
 	safe = TRUE
+
+// SEED VENDOR //
+// Contains seeds.
 /obj/structure/salvageable/seed
 	name = "ruined seed vendor"
 	desc = "This is where the seeds lived. Maybe you can still get some?"//megaseed voiceline reference
@@ -373,6 +409,8 @@
 			audible_message(span_danger("A bundle of vines unfurls from inside the [src]!"))
 			new /mob/living/simple_animal/hostile/venus_human_trap(get_turf(src))
 
+// KITCHEN VENDOR //
+// Has various kitchen items.
 /obj/structure/salvageable/kitchenvend
 	name = "broken-down kitchen vendor"
 	desc = "A ruined kitchen vending machine. Some of its contents might still be intact."
@@ -393,6 +431,8 @@
 		/obj/item/melee/knife/kitchen = 10,
 	)
 
+// TURRET //
+// Scrap metal and gun parts.
 /obj/structure/salvageable/turret
 	name = "destroyed turret"
 	desc = "A long-deserviced automated twin-barrel ballistic turret. Layers of dust coat its cracked lens. Some of its parts might still be useful."
@@ -416,7 +456,7 @@
 		/obj/item/storage/toolbox/ammo = 40,
 	)
 
-//scrap item, mostly for fluff
+// SCRAP ORE ITEMS //
 /obj/item/stack/ore/salvage
 	name = "salvage"
 	icon = 'icons/obj/salvage_structure.dmi'
