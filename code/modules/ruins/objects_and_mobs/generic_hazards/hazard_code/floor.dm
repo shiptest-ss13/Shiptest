@@ -51,11 +51,13 @@ ids don't work for slipping
 /obj/structure/hazard/floor/proc/launch_sequence()
 	visible_message(span_warning(launch_warning))
 	icon_state = initial(icon_state) + "-launch"
-	sleep(10)
+	addtimer(CALLBACK(PROC_REF(launch)), 10 SECONDS)
+
+/obj/structure/hazard/floor/proc/launch()
 	visible_message(span_danger("[src] flies upwards!"))
 	animate(src, pixel_z = 32, time = 1)
 	var/list/targets = list() //so we don't lose moving targets and leave them upwards.
-	for(var/obj/target in src.loc)
+	for(var/obj/item/target in src.loc)
 		if(target == src)
 			continue
 		targets += target
@@ -68,10 +70,12 @@ ids don't work for slipping
 			victim.Paralyze(20)
 			victim.apply_damage(launcher_damage, BRUTE, pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG), spread_damage = TRUE)
 			victim.AddElement(/datum/element/squish, 5 SECONDS)
-	sleep(1)
+	addtimer(CALLBACK(PROC_REF(land), targets), 1 SECONDS)
+
+/obj/structure/hazard/floor/proc/land(list/targets)
 	animate(src, pixel_z = 0, time = 4)
 	var/gong = FALSE
-	for(var/target in targets)
+	for(var/atom/movable/target as anything in targets)
 		animate(target, pixel_z = 0, time = 4)
 		if(istype(target, /mob/living/carbon))
 			var/mob/living/carbon/victim = target
