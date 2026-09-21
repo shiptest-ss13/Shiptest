@@ -32,7 +32,7 @@ const testGeneric = (testFn: () => boolean) => (): boolean => {
 };
 
 const testHubStorage = testGeneric(
-  () => window.hubStorage && !!window.hubStorage.getItem,
+  () => window.hubStorage && !!window.hubStorage.getItem
 );
 
 // TODO: Remove with 516
@@ -180,7 +180,7 @@ class StorageProxy implements StorageBackend {
 
   constructor() {
     this.backendPromise = (async () => {
-      if (!Byond.TRIDENT && Byond.storageCdn && !window.hubStorage) {
+      if (Byond.storageCdn && !window.hubStorage) {
         const iframe = new IFrameIndexedDbBackend();
         await iframe.ready();
 
@@ -194,7 +194,11 @@ class StorageProxy implements StorageBackend {
               setTimeout(() => {
                 const hub = new HubStorageBackend();
 
-                for (const setting of ['panel-settings', 'chat-state', 'chat-messages']) {
+                for (const setting of [
+                  'panel-settings',
+                  'chat-state',
+                  'chat-messages',
+                ]) {
                   hub
                     .get(setting)
                     .then((settings) => iframe.set(setting, settings));
@@ -228,7 +232,7 @@ class StorageProxy implements StorageBackend {
         return new HubStorageBackend();
       }
       console.warn(
-        'No supported storage backend found. Using in-memory storage.',
+        'No supported storage backend found. Using in-memory storage.'
       );
       return new MemoryBackend();
     })();
