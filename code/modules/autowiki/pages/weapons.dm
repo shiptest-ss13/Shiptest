@@ -180,9 +180,17 @@
 		ATTACHMENT_SLOT_STOCK,
 	)
 
+	if (!gun.slot_available)
+		return "None"
+
+	// list the slot even if its pre occupied
+	var/list/counts = gun.slot_available.Copy()
+	for (var/obj/item/attachment/fitted in gun)
+		counts[fitted.slot] += 1
+
 	var/list/slots = list()
 	for (var/slot in order)
-		var/count = gun.slot_available[slot]
+		var/count = counts[slot]
 		if (!count)
 			continue
 		slots += count > 1 ? "[capitalize(slot)] &times; [count]" : capitalize(slot)
