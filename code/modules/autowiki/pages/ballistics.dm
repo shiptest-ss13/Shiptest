@@ -16,7 +16,7 @@
 		if (size)
 			sizes |= size
 
-	// internal mag gun things
+	// nothing declared, so fall back to whatever it happens to be loaded with
 	if (!length(sizes) && gun.magazine?.max_ammo)
 		sizes += gun.magazine.max_ammo
 

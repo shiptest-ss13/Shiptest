@@ -264,26 +264,26 @@
 	return cost
 
 /datum/autowiki/weapons/proc/cost_label(gun_type)
-	var/list/purchase = purchase(gun_type)
-	if (!purchase)
+	var/list/deal = purchase(gun_type)
+	if (!deal)
 		return "N/A"
 
-	var/cost = effective_cost(purchase)
+	var/cost = effective_cost(deal)
 	var/list/lines = list("[cost]")
 
-	if (purchase["locked"] && purchase["faction"])
-		lines += "[purchase["faction"]] only"
+	if (deal["locked"] && deal["faction"])
+		lines += "[deal["faction"]] only"
 
 	// show both prices if faction discount is available for non faction locked weapon
-	else if (purchase["discount"] && purchase["faction"])
-		var/discounted = round(cost - cost * purchase["discount"] / 100)
-		lines += "[discounted] for [purchase["faction"]]"
+	else if (deal["discount"] && deal["faction"])
+		var/discounted = round(cost - cost * deal["discount"] / 100)
+		lines += "[discounted] for [deal["faction"]]"
 
 	return length(lines) > 1 ? stack(lines) : lines[1]
 
 /datum/autowiki/weapons/proc/cost_sort(gun_type)
-	var/list/purchase = purchase(gun_type)
-	return purchase ? effective_cost(purchase) : 0
+	var/list/deal = purchase(gun_type)
+	return deal ? effective_cost(deal) : 0
 
 // some real nonsense to get sensible faction labels for supply pack restrictions
 /datum/autowiki/weapons/proc/faction_label(faction_type)
