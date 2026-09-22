@@ -48,7 +48,7 @@
 
 		var/description = escape_value(format_text(description(attachment)))
 
-		// the nine folding stocks differ only in which gun they are sprited for
+		// dedupes some attachments that are mostly identical
 		var/dedupe_key = "[list2params(details)][description]"
 		if (dedupe_key in seen_rows)
 			qdel(attachment)
