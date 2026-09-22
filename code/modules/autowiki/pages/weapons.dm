@@ -253,15 +253,15 @@
 
 	return purchases[gun_type]
 
-// get discounted price if available
-/datum/autowiki/weapons/proc/effective_cost(list/purchase)
-	var/cost = purchase["cost"]
-	var/discount = purchase["discount"]
+/datum/autowiki/weapons/proc/discounted(cost, discount)
+	return round(cost - cost * discount / 100)
 
-	if (purchase["locked"] && purchase["faction"] && discount)
-		return round(cost - cost * discount / 100)
+// a locked pack can only be bought by the faction it is locked to, so only get its discounted price
+/datum/autowiki/weapons/proc/effective_cost(list/deal)
+	if (deal["locked"] && deal["faction"] && deal["discount"])
+		return discounted(deal["cost"], deal["discount"])
 
-	return cost
+	return deal["cost"]
 
 /datum/autowiki/weapons/proc/cost_label(gun_type)
 	var/list/deal = purchase(gun_type)
@@ -276,8 +276,7 @@
 
 	// show both prices if faction discount is available for non faction locked weapon
 	else if (deal["discount"] && deal["faction"])
-		var/discounted = round(cost - cost * deal["discount"] / 100)
-		lines += "[discounted] for [deal["faction"]]"
+		lines += "[discounted(cost, deal["discount"])] for [deal["faction"]]"
 
 	return length(lines) > 1 ? stack(lines) : lines[1]
 
