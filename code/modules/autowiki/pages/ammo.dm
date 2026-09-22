@@ -5,18 +5,16 @@
 	var/caliber = initial(casing_type.caliber)
 	var/list/parts = splittext("[casing_type]", "/")
 
-	var/base_index = 0
-	var/path_so_far = ""
-	for (var/i in 2 to length(parts))
-		path_so_far += "/[parts[i]]"
-		var/obj/item/ammo_casing/ancestor = text2path(path_so_far)
-		if (!ispath(ancestor, /obj/item/ammo_casing))
-			continue
-		if (initial(ancestor.caliber) == caliber)
-			base_index = i
-			break
+	// climb to the shallowest ancestor still chambered the same, so the name is only the
+	// part of the path that distinguishes this round from the plain one
+	var/obj/item/ammo_casing/base = casing_type
+	var/obj/item/ammo_casing/ancestor = type2parent(base)
+	while (ispath(ancestor, /obj/item/ammo_casing) && initial(ancestor.caliber) == caliber)
+		base = ancestor
+		ancestor = type2parent(base)
 
-	if (!base_index || base_index >= length(parts))
+	var/base_index = length(splittext("[base]", "/"))
+	if (base_index >= length(parts))
 		return "Standard"
 
 	var/name = format_text(initial(casing_type.name))

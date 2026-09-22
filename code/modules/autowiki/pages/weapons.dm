@@ -167,7 +167,7 @@
 
 // autowiki icon file name handling to deal with nonsense around weapons/ammo
 /datum/autowiki/weapons/proc/icon_name(atom_path)
-	var/trimmed = replacetext("[atom_path]", "/obj/item/", "")
+	var/trimmed = replacetext("[atom_path]", "[/obj/item]/", "")
 	return SANITIZE_FILENAME(replacetext(trimmed, "/", "_"))
 
 // gun attachment slots
