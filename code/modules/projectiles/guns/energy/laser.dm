@@ -79,6 +79,7 @@
 	shaded_charge = FALSE
 
 /obj/item/gun/energy/laser/cyborg
+	autowiki_hidden = TRUE //borg module
 	can_charge = FALSE
 	desc = "An energy-based laser gun that draws power from the cyborg's internal energy cell directly. So this is what freedom looks like?"
 	use_cyborg_cell = TRUE
