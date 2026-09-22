@@ -162,6 +162,15 @@
 
 	return fits["[attachment_path]"]
 
+
+// nuke attachments first or getflaticon explodes and returns just black pixels
+/datum/autowiki/weapons/proc/gun_icon(obj/item/gun/gun)
+	for (var/obj/item/attachment/fitted in gun)
+		qdel(fitted)
+	gun.update_appearance()
+
+	return getFlatIcon(gun, no_anim = TRUE)
+
 // autowiki icon file name handling to deal with nonsense around weapons/ammo
 /datum/autowiki/weapons/proc/icon_name(atom_path)
 	var/trimmed = replacetext("[atom_path]", "[/obj/item]/", "")

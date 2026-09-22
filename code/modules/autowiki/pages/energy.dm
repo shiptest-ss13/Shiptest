@@ -67,7 +67,7 @@
 		seen_rows += dedupe_key
 
 		var/filename = icon_name(gun.type)
-		upload_icon(getFlatIcon(gun, no_anim = TRUE), filename)
+		upload_icon(gun_icon(gun), filename)
 
 		var/bolded_cell = escape_value(cell_summary(gun, bold_default = TRUE))
 		var/bolded_lenses = escape_value(lens_summary(gun, bold_default = TRUE))
