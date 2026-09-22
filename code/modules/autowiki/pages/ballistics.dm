@@ -58,13 +58,7 @@
 	var/list/seen_rows = list()
 
 	for (var/gun_path in sortList(subtypesof(/obj/item/gun/ballistic), /proc/cmp_typepaths_asc))
-		var/obj/item/gun/ballistic/gun_type = gun_path
-
-		if (gun_type == initial(gun_type.bad_type) || initial(gun_type.autowiki_hidden))
-			continue
-
-		// dont put weird shit like ballistic hammer
-		if (!initial(gun_type.actually_shoots))
+		if (!listable_gun(gun_path))
 			continue
 
 		var/obj/item/gun/ballistic/gun = new gun_path

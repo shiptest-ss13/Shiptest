@@ -132,10 +132,7 @@
 		fits = list()
 
 		for (var/gun_path in subtypesof(/obj/item/gun/ballistic) + subtypesof(/obj/item/gun/energy))
-			var/obj/item/gun/gun_type = gun_path
-			if (gun_type == initial(gun_type.bad_type) || initial(gun_type.autowiki_hidden))
-				continue
-			if (!initial(gun_type.actually_shoots))
+			if (!listable_gun(gun_path))
 				continue
 
 			var/obj/item/gun/gun = new gun_path
@@ -374,3 +371,11 @@
 
 	var/list/sorted = sortList(labels)
 	return sorted.Join(", ")
+
+// whether a gun belongs in the autowiki at all
+/datum/autowiki/weapons/proc/listable_gun(obj/item/gun/gun_type)
+	if (gun_type == initial(gun_type.bad_type))
+		return FALSE
+	if (initial(gun_type.autowiki_hidden))
+		return FALSE
+	return initial(gun_type.actually_shoots)
