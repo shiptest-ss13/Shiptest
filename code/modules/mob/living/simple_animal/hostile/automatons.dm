@@ -441,8 +441,11 @@
 		var/target_distance = get_dist(target_from,target)
 		if(ranged) //We ranged? Shoot at em
 			if(!target.Adjacent(target_from) && ranged_cooldown <= world.time) //But make sure they're not in range for a melee attack and our range attack is off cooldown
-				target.do_alert_animation() // We give the target MGS Alert! Warning, and add a 1.5 second delay to firing. Value should be adjusted through testing
-				addtimer(CALLBACK(src, PROC_REF(OpenFire), target), 15, TIMER_STOPPABLE)
+				if(target_distance > 9) // Only give a warning if they're a fair distance away, otherwise it's fairgame
+					target.do_alert_animation() // We give the target MGS Alert! Warning, and add a 1.5 second delay to firing. Value should be adjusted through testing
+					addtimer(CALLBACK(src, PROC_REF(OpenFire), target), 15, TIMER_STOPPABLE)
+				else
+					OpenFire(target)
 		if(!Process_Spacemove()) //Drifting
 			walk(src,0)
 			return 1
