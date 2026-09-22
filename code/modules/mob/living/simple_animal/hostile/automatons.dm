@@ -418,7 +418,7 @@
 	minimum_distance = 7
 	vision_range = 12
 	aggro_vision_range = 14
-	move_to_delay = 5
+	move_to_delay = 8
 	faction = list(FACTION_NEUTRAL)
 	armour_penetration = -10
 	melee_damage_lower = 10
@@ -427,7 +427,7 @@
 	attack_verb_simple = "clawed"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 
-/mob/living/simple_animal/hostile/automated/tripod/MoveToTarget(list/possible_targets)//Step 5, handle movement between us and our target. Edited to give firing a delay
+/mob/living/simple_animal/hostile/automated/tripod/MoveToTarget(list/possible_targets)//Step 5, handle movement between us and our target. Edited to give firing a delay if the target is too far
 	stop_automated_movement = 1
 	if(!target || !CanAttack(target))
 		LoseTarget()
@@ -441,7 +441,7 @@
 		var/target_distance = get_dist(target_from,target)
 		if(ranged) //We ranged? Shoot at em
 			if(!target.Adjacent(target_from) && ranged_cooldown <= world.time) //But make sure they're not in range for a melee attack and our range attack is off cooldown
-				if(target_distance > 9) // Only give a warning if they're a fair distance away, otherwise it's fairgame
+				if(target_distance > 7) // Only give a warning if they're a fair distance away, otherwise it's fairgame
 					target.do_alert_animation() // We give the target MGS Alert! Warning, and add a 1.5 second delay to firing. Value should be adjusted through testing
 					addtimer(CALLBACK(src, PROC_REF(OpenFire), target), 15, TIMER_STOPPABLE)
 				else
@@ -482,6 +482,15 @@
 	projectilesound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	faction = list(FACTION_HOSTILE)
 
+/mob/living/simple_animal/hostile/automated/tripod/pgf/sentry
+	vision_range = 14
+	aggro_vision_range = 14
+	minimum_distance = 14
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
+
 /mob/living/simple_animal/hostile/automated/tripod/warra
 	name = "Sav'sha'kosso 'Plasma Drone'"
 	desc = "A Sye-Port Industrial converted Sav'cla drone sporting 'demilitarized' weaponry. Clad in VI-colored plating, it turns its heavy plasma rifle in your direction."
@@ -492,6 +501,15 @@
 	projectiletype = /obj/projectile/beam/laser/sharplite/sniper
 	projectilesound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	faction = list(ROLE_DEATHSQUAD)
+
+/mob/living/simple_animal/hostile/automated/tripod/warra/sentry
+	vision_range = 14
+	aggro_vision_range = 14
+	minimum_distance = 14
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
 
 /mob/living/simple_animal/hostile/automated/tripod/ramzi
 	name = "Sav'sha'syn 'Gun Drone'"
@@ -504,8 +522,17 @@
 	projectilesound = 'sound/weapons/gun/sniper/cmf90.ogg'
 	faction = list(FACTION_RAMZI)
 
+/mob/living/simple_animal/hostile/automated/tripod/ramzi/sentry
+	vision_range = 14
+	aggro_vision_range = 14
+	minimum_distance = 14
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
+
 /mob/living/simple_animal/hostile/automated/tripod/ramzi/taipan
-	desc = "A Sye-Port Industrial converted Sav'cla drone. Its plating seems rusted and worn; its motors loudly whine as it turns the very heavy rifle towards you."
+	desc = "A Sye-Port Industrial converted Sav'cla drone. Its plating seems rusted and worn; its motors loudly whine as it turns the huge rifle towards you."
 	casingtype = /obj/item/ammo_casing/p50
 	projectiletype = /obj/projectile/bullet/p50
 	projectilesound = 'sound/weapons/gun/sniper/shot.ogg'
