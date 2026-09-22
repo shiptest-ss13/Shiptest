@@ -44,7 +44,7 @@
 	treat_text = "Recommend replacement of internal electronics and wiring."
 	examine_desc = "is twitching and emitting electrical arcs"
 	occur_text = "arcs as its electronics short out"
-	threshold_penalty = 40
+	threshold_penalty = 30
 	sound_effect = 'sound/machines/defib_zap.ogg'
 	disabling = TRUE
 	processes = TRUE
