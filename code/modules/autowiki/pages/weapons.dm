@@ -185,15 +185,27 @@
 
 	// list the slot even if its pre occupied
 	var/list/counts = gun.slot_available.Copy()
+	var/list/occupied = list()
 	for (var/obj/item/attachment/fitted in gun)
 		counts[fitted.slot] += 1
+
+		// something that cannot be taken off leaves a slot the reader can never use,
+		// unlike a fitted underbarrel, which they can remove and replace
+		if (!(fitted.attach_features_flags & (ATTACH_REMOVABLE_HAND|ATTACH_REMOVABLE_TOOL)))
+			occupied[fitted.slot] = TRUE
 
 	var/list/slots = list()
 	for (var/slot in order)
 		var/count = counts[slot]
 		if (!count)
 			continue
-		slots += count > 1 ? "[capitalize(slot)] &times; [count]" : capitalize(slot)
+
+		var/label = capitalize(slot)
+		if (count > 1)
+			label += " &times; [count]"
+		if (occupied[slot])
+			label += " (fitted)"
+		slots += label
 
 	return length(slots) ? slots.Join(", ") : "None"
 
