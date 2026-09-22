@@ -627,6 +627,20 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"gr" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 6
+	},
+/obj/machinery/suit_storage_unit/inherit/industrial{
+	name = "marine's suit storage unit";
+	req_access_txt = "1"
+	},
+/obj/item/tank/internals/oxygen/red,
+/obj/item/clothing/mask/breath/pgfmask,
+/obj/item/clothing/suit/space/gezena/marine/raider,
+/obj/item/clothing/head/helmet/space/gezena/marine/raider,
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/cargo)
 "gw" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/tank/internals/oxygen/red,
@@ -4655,7 +4669,7 @@ SU
 CH
 wy
 hp
-cx
+gr
 CH
 yE
 sB

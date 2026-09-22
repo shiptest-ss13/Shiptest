@@ -41,7 +41,7 @@
 /obj/machinery/atmospherics/components/trinary/filter/atmos/n2{
 	dir = 4;
 	piping_layer = 2;
-	name = "oxygen pump";
+	name = "oxygen siphon";
 	on = 0
 	},
 /turf/open/floor/plating,
@@ -339,6 +339,10 @@
 	pixel_x = -1;
 	pixel_y = -10
 	},
+/obj/item/radio/headset/pgf/alt{
+	pixel_x = 2;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "by" = (
@@ -409,6 +413,7 @@
 	icon_state = "computer-left"
 	},
 /obj/effect/turf_decal/techfloor,
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge/cool)
 "cl" = (
@@ -441,6 +446,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/techfloor/orange,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "c-sun_hallway_shut"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "cF" = (
@@ -736,6 +744,19 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
+"eI" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/green/line{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/central)
 "eJ" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/light/floor,
@@ -1236,22 +1257,6 @@
 /obj/item/clothing/glasses/sunglasses/pgf{
 	pixel_y = 1;
 	pixel_x = -6
-	},
-/obj/item/radio/headset/pgf/alt{
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/obj/item/radio/headset/pgf/alt{
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/obj/item/radio/headset/pgf/alt{
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/obj/item/radio/headset/pgf/alt{
-	pixel_x = 2;
-	pixel_y = 2
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
@@ -5573,6 +5578,14 @@
 	layer = 2.901
 	},
 /obj/effect/turf_decal/industrial/hatch/red,
+/obj/machinery/button/door{
+	id = "c-sun_hallway_shut";
+	name = "Hallway Shutters";
+	pixel_x = 6;
+	pixel_y = -22;
+	dir = 1;
+	req_ship_access = 1
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/hallway/central)
 "CK" = (
@@ -5802,7 +5815,6 @@
 /obj/item/storage/backpack/duffelbag/med{
 	pixel_y = 8
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/suit/toggle/gezena/marine{
 	pixel_x = 5;
@@ -5869,6 +5881,10 @@
 /obj/item/healthanalyzer{
 	pixel_x = 1;
 	pixel_y = -5
+	},
+/obj/item/radio/headset/pgf/alt{
+	pixel_x = 2;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -7311,7 +7327,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
@@ -7322,6 +7337,14 @@
 	dir = 1
 	},
 /obj/structure/chair/handrail,
+/obj/machinery/button/door{
+	id = "c-sun_hallway_shut";
+	name = "Hallway Shutters";
+	pixel_x = 6;
+	pixel_y = 22;
+	dir = 2;
+	req_ship_access = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "KD" = (
@@ -7538,11 +7561,6 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "LA" = (
-/mob/living/simple_animal/pet/dog/pug{
-	pixel_y = 11;
-	name = "Jumbo";
-	desc = "Despite drawing the genetic short straw, Jumbo is an inspiration to every enlisted Gezenan to share a hull with them. Just a few more years."
-	},
 /obj/structure/bed/dogbed{
 	pixel_y = 4;
 	pixel_x = 2
@@ -7550,6 +7568,9 @@
 /obj/effect/turf_decal/corner/opaque/navyblue/diagonal,
 /obj/effect/turf_decal/siding/white{
 	dir = 10
+	},
+/mob/living/simple_animal/pet/dog/pug/crying{
+	dir = 2
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/canteen)
@@ -9120,6 +9141,10 @@
 	pixel_x = 2;
 	pixel_y = -7
 	},
+/obj/item/radio/headset/pgf/alt{
+	pixel_x = 2;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "SJ" = (
@@ -10654,6 +10679,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/techfloor/orange,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "c-sun_hallway_shut"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "Zg" = (
@@ -11618,7 +11646,7 @@ Ny
 Ny
 wR
 wR
-ry
+eI
 Zp
 CE
 rh
