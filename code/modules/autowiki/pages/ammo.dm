@@ -74,9 +74,6 @@
 	if (variance > 0)
 		effects += "Scatter [variance]&deg;"
 
-	if (initial(casing_type.harmful) == FALSE)
-		effects += "Non-lethal"
-
 	return length(effects) ? effects.Join(", ") : "N/A"
 
 /datum/autowiki/weapons/ammo/proc/acronym_case(segment, source_name)
