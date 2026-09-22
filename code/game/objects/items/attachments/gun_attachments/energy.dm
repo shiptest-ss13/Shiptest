@@ -1,4 +1,5 @@
 /obj/item/attachment/gun/energy
+	bad_type = /obj/item/attachment/gun/energy
 	name = "underbarrel e-gun"
 	desc = "Pew pew laser beam. You probably shouldnt be seeing this."
 	underbarrel_prefix = "laser_"

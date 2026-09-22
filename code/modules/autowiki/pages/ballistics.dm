@@ -1,61 +1,14 @@
-/datum/autowiki/ballistics
+/datum/autowiki/weapons/ballistics
 	page = "Template:Autowiki/Content/Ballistics"
 
-/proc/autowiki_manufacturer_name(raw)
-	var/static/list/names = list(
-		MANUFACTURER_SHARPLITE = "Sharplite Defense",
-		MANUFACTURER_SHARPLITE_NEW = "Makosso-Warra-Sharplite",
-		MANUFACTURER_HUNTERSPRIDE = "Hunter's Pride",
-		MANUFACTURER_SOLARARMORIES = "Solarbundswaffenkammer",
-		MANUFACTURER_SCARBOROUGH = "Scarborough Arms",
-		MANUFACTURER_EOEHOMA = "Eoehoma Firearms",
-		MANUFACTURER_WARRA_OLD = "Makosso-Warra (old)",
-		MANUFACTURER_WARRA = "Makosso-Warra",
-		MANUFACTURER_VIGILITAS = "Makosso-Warra Advantage",
-		MANUFACTURER_INTEQ = "Inteq Risk Management Group",
-		MANUFACTURER_MINUTEMAN = "Lanchester City Firearms Plant",
-		MANUFACTURER_MINUTEMAN_LASER = "Clover Photonics",
-		MANUFACTURER_PGF = "Etherbor Industries",
-		MANUFACTURER_IMPORT = "Lanchester Import Co.",
-		MANUFACTURER_SERENE = "Serene Outdoors",
-	)
-
-	if (!raw)
-		return "Unbranded"
-
-	return names[raw] || raw
-
-/proc/autowiki_firemode_summary(obj/item/gun/gun)
-	var/static/list/labels = list(
-		FIREMODE_SEMIAUTO = "Semi-auto",
-		FIREMODE_BURST = "Burst",
-		FIREMODE_FULLAUTO = "Full-auto",
-		FIREMODE_AIMED = "Aimed",
-		FIREMODE_OTHER = "Other",
-		FIREMODE_OTHER_TWO = "Other 2",
-	)
-
-	var/static/list/stock_names
-	if (!stock_names)
-		var/obj/item/gun/reference = new
-		stock_names = reference.gun_firenames.Copy()
-		qdel(reference)
-
-	var/list/modes = list()
-	for (var/mode in gun.gun_firemodes)
-		var/named = gun.gun_firenames[mode]
-
-		//special case handling for weapons with special fire modes like e40
-		var/label = (named && named != stock_names[mode]) ? capitalize(named) : (labels[mode] || mode)
-		if (mode == FIREMODE_BURST && gun.burst_size > 1)
-			label += " ([gun.burst_size])"
-		modes += label
-
-	return length(modes) ? modes.Join(", ") : "N/A"
-
-// Every distinct magazine capacity the gun accepts, smallest first.
-/datum/autowiki/ballistics/proc/capacity_sizes(obj/item/gun/ballistic/gun)
+/datum/autowiki/weapons/ballistics/proc/capacity_sizes(obj/item/gun/ballistic/gun)
 	var/list/sizes = list()
+
+	// dont need to check further if it has an internal mag
+	if (gun.internal_magazine)
+		if (gun.magazine?.max_ammo)
+			sizes += gun.magazine.max_ammo
+		return sizes
 
 	for (var/mag_path in gun.allowed_ammo_types)
 		var/obj/item/ammo_box/mag = mag_path
@@ -70,26 +23,36 @@
 	sortTim(sizes, /proc/cmp_numeric_asc)
 	return sizes
 
-/datum/autowiki/ballistics/proc/capacity_summary(obj/item/gun/ballistic/gun)
+/datum/autowiki/weapons/ballistics/proc/capacity_summary(obj/item/gun/ballistic/gun, bold_default = FALSE)
 	var/list/sizes = capacity_sizes(gun)
 
 	var/list/carried = list()
 	for (var/obj/item/gun/energy/secondary in gun)
-		var/list/lenses = autowiki_lens_entries(secondary)
+		var/list/lenses = lens_entries(secondary)
 		if (length(lenses))
 			carried += "Energy: [lenses.Join("; ")]"
 
 	if (!length(sizes))
-		return length(carried) ? autowiki_stack(carried) : "N/A"
+		return length(carried) ? stack(carried) : "N/A"
 
-	var/suffix = length(carried) ? autowiki_stack(carried) : ""
-	return "[sizes.Join(" / ")][suffix]"
+	// get default capacity too
+	var/obj/item/ammo_box/standard = initial(gun.default_ammo_type)
+	var/default_size = standard ? initial(standard.max_ammo) : 0
 
-/datum/autowiki/ballistics/proc/capacity_sort(obj/item/gun/ballistic/gun)
+	var/list/labels = list()
+	for (var/size in sizes)
+		// only worth marking when there is something to tell it apart from
+		var/mark = bold_default && length(sizes) > 1 && size == default_size
+		labels += mark ? "'''[size]'''" : "[size]"
+
+	var/suffix = length(carried) ? stack(carried) : ""
+	return "[labels.Join(" / ")][suffix]"
+
+/datum/autowiki/weapons/ballistics/proc/capacity_sort(obj/item/gun/ballistic/gun)
 	var/list/sizes = capacity_sizes(gun)
 	return length(sizes) ? sizes[1] : 0
 
-/datum/autowiki/ballistics/generate()
+/datum/autowiki/weapons/ballistics/generate()
 	var/list/tables = list()
 
 	var/list/seen_rows = list()
@@ -123,8 +86,8 @@
 				if (caliber)
 					break
 
-		var/manufacturer = autowiki_manufacturer_name(gun.manufacturer)
-		var/label = caliber ? escape_value(autowiki_caliber_label(caliber)) : null
+		var/manufacturer = manufacturer_name(gun.manufacturer)
+		var/label = caliber ? escape_value(caliber_label(caliber)) : null
 
 		var/list/details = list(
 			"icon" = "",
@@ -132,15 +95,16 @@
 			"ammo" = label || "N/A",
 			"cost" = "",
 			"cost_sort" = "",
-			"firemodes" = autowiki_firemode_summary(gun),
+			"firemodes" = firemode_summary(gun),
 			"capacity" = capacity_summary(gun),
 			"capacity_sort" = capacity_sort(gun),
+			"slots" = escape_value(slot_summary(gun)),
 			"spread" = gun.spread,
 			"spread_unwielded" = gun.spread_unwielded,
 			"firedelay" = gun.fire_delay / 10,
 		)
 
-		var/description = escape_value(format_text(gun.desc))
+		var/description = escape_value(format_text(description(gun)))
 
 		var/dedupe_key = "[manufacturer][list2params(details)]"
 		if (dedupe_key in seen_rows)
@@ -148,13 +112,16 @@
 			continue
 		seen_rows += dedupe_key
 
-		var/filename = autowiki_icon_name(gun.type)
+		var/filename = icon_name(gun.type)
 		upload_icon(getFlatIcon(gun, no_anim = TRUE), filename)
+
+		var/bolded_capacity = capacity_summary(gun, bold_default = TRUE)
 		qdel(gun)
 
 		details["icon"] = filename
-		details["cost"] = autowiki_cost_label(gun_path)
-		details["cost_sort"] = autowiki_cost_sort(gun_path)
+		details["capacity"] = bolded_capacity
+		details["cost"] = cost_label(gun_path)
+		details["cost_sort"] = cost_sort(gun_path)
 		details["description"] = description
 
 		var/list/rows = tables[manufacturer]

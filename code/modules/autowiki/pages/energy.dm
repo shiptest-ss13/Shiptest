@@ -1,51 +1,11 @@
-/datum/autowiki/energy
+/datum/autowiki/weapons/energy
 	page = "Template:Autowiki/Content/EnergyWeapons"
 
-/proc/autowiki_lens_entries(obj/item/gun/energy/gun)
-	var/list/entries = list()
-	var/list/charges = list()
-	for (var/cell_path in gun.allowed_ammo_types)
-		var/obj/item/stock_parts/cell/candidate = cell_path
-		if (findtext("[cell_path]", "/empty"))
-			continue
-		var/charge = initial(candidate.maxcharge)
-		if (charge)
-			charges |= charge
+/datum/autowiki/weapons/energy/proc/lens_summary(obj/item/gun/energy/gun, bold_default = FALSE)
+	var/list/entries = lens_entries(gun, bold_default)
+	return length(entries) ? stack(entries) : "N/A"
 
-	if (!length(charges) && gun.cell?.maxcharge)
-		charges += gun.cell.maxcharge
-
-	sortTim(charges, /proc/cmp_numeric_asc)
-
-	for (var/obj/item/ammo_casing/energy/lens in gun.ammo_type)
-		var/label = capitalize(lens.select_name || format_text(lens.name))
-
-		var/obj/projectile/shot = lens.projectile_type
-		var/list/facts = list()
-		if (ispath(shot, /obj/projectile))
-			var/damage = initial(shot.damage)
-			var/pellets = lens.pellets
-			facts += "[damage][pellets > 1 ? " &times; [pellets]" : ""] [initial(shot.damage_type)]"
-			if (initial(shot.armour_penetration))
-				facts += "[initial(shot.armour_penetration)] AP"
-			if (initial(shot.stamina))
-				facts += "[initial(shot.stamina)] stamina"
-
-		if (lens.e_cost > 0 && length(charges))
-			var/list/counts = list()
-			for (var/charge in charges)
-				counts |= round(charge / lens.e_cost)
-			facts += "[counts.Join(" / ")] shots"
-
-		entries += length(facts) ? "'''[label]''': [facts.Join(", ")]" : "'''[label]'''"
-
-	return entries
-
-/proc/autowiki_lens_summary(obj/item/gun/energy/gun)
-	var/list/entries = autowiki_lens_entries(gun)
-	return length(entries) ? autowiki_stack(entries) : "N/A"
-
-/datum/autowiki/energy/proc/cell_summary(obj/item/gun/energy/gun)
+/datum/autowiki/weapons/energy/proc/cell_summary(obj/item/gun/energy/gun, bold_default = FALSE)
 	var/list/names = list()
 
 	for (var/cell_path in gun.allowed_ammo_types)
@@ -57,9 +17,19 @@
 		if (label)
 			names |= label
 
-	return length(names) ? autowiki_stack(names) : "N/A"
+	if (!length(names))
+		return "N/A"
 
-/datum/autowiki/energy/generate()
+	// check default cell
+	var/obj/item/stock_parts/cell/standard = initial(gun.default_ammo_type)
+	var/default_label = standard ? capitalize(format_text(initial(standard.name))) : null
+
+	if (bold_default && length(names) > 1 && (default_label in names))
+		names[names.Find(default_label)] = "'''[default_label]'''"
+
+	return stack(names)
+
+/datum/autowiki/weapons/energy/generate()
 	var/list/tables = list()
 	var/list/seen_rows = list()
 
@@ -77,7 +47,7 @@
 		if (QDELETED(gun))
 			continue
 
-		var/manufacturer = autowiki_manufacturer_name(gun.manufacturer)
+		var/manufacturer = manufacturer_name(gun.manufacturer)
 
 		var/list/details = list(
 			"icon" = "",
@@ -85,14 +55,15 @@
 			"cell" = escape_value(cell_summary(gun)),
 			"cost" = "",
 			"cost_sort" = "",
-			"firemodes" = autowiki_firemode_summary(gun),
-			"lenses" = escape_value(autowiki_lens_summary(gun)),
+			"firemodes" = firemode_summary(gun),
+			"lenses" = escape_value(lens_summary(gun)),
+			"slots" = escape_value(slot_summary(gun)),
 			"spread" = gun.spread,
 			"spread_unwielded" = gun.spread_unwielded,
 			"firedelay" = gun.fire_delay / 10,
 		)
 
-		var/description = escape_value(format_text(gun.desc))
+		var/description = escape_value(format_text(description(gun)))
 
 		var/dedupe_key = "[manufacturer][list2params(details)]"
 		if (dedupe_key in seen_rows)
@@ -100,13 +71,18 @@
 			continue
 		seen_rows += dedupe_key
 
-		var/filename = autowiki_icon_name(gun.type)
+		var/filename = icon_name(gun.type)
 		upload_icon(getFlatIcon(gun, no_anim = TRUE), filename)
+
+		var/bolded_cell = cell_summary(gun, bold_default = TRUE)
+		var/bolded_lenses = escape_value(lens_summary(gun, bold_default = TRUE))
 		qdel(gun)
 
 		details["icon"] = filename
-		details["cost"] = autowiki_cost_label(gun_path)
-		details["cost_sort"] = autowiki_cost_sort(gun_path)
+		details["cell"] = bolded_cell
+		details["lenses"] = bolded_lenses
+		details["cost"] = cost_label(gun_path)
+		details["cost_sort"] = cost_sort(gun_path)
 		details["description"] = description
 
 		var/list/rows = tables[manufacturer]

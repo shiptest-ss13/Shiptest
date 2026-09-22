@@ -1,7 +1,7 @@
-/datum/autowiki/ammo
+/datum/autowiki/weapons/ammo
 	page = "Template:Autowiki/Content/Ammo"
 
-/datum/autowiki/ammo/proc/round_type(obj/item/ammo_casing/casing_type)
+/datum/autowiki/weapons/ammo/proc/round_type(obj/item/ammo_casing/casing_type)
 	var/caliber = initial(casing_type.caliber)
 	var/list/parts = splittext("[casing_type]", "/")
 
@@ -27,7 +27,7 @@
 
 	return pretty.Join(" ")
 
-/datum/autowiki/ammo/proc/effects_summary(obj/item/ammo_casing/casing_type, obj/projectile/projectile_type)
+/datum/autowiki/weapons/ammo/proc/effects_summary(obj/item/ammo_casing/casing_type, obj/projectile/projectile_type)
 	var/list/effects = list()
 
 	if (ispath(projectile_type, /obj/projectile/bullet/incendiary))
@@ -79,7 +79,7 @@
 
 	return length(effects) ? effects.Join(", ") : "N/A"
 
-/datum/autowiki/ammo/proc/acronym_case(segment, source_name)
+/datum/autowiki/weapons/ammo/proc/acronym_case(segment, source_name)
 	var/static/list/known = list(
 		"ap" = "AP",
 		"hp" = "HP",
@@ -102,7 +102,7 @@
 	return capitalize(segment)
 
 // Grab the player-facing name if suitable.
-/datum/autowiki/ammo/proc/round_label(obj/item/ammo_casing/casing_type, variant)
+/datum/autowiki/weapons/ammo/proc/round_label(obj/item/ammo_casing/casing_type, variant)
 	var/label = format_text(initial(casing_type.name))
 	var/caliber = initial(casing_type.caliber)
 
@@ -122,7 +122,7 @@
 	return "[variant] ([label])"
 
 // no point showing the casing/bullet. box image is probably more helpful
-/datum/autowiki/ammo/proc/box_for_casing(casing_type)
+/datum/autowiki/weapons/ammo/proc/box_for_casing(casing_type)
 	var/static/list/boxes
 
 	if (isnull(boxes))
@@ -149,7 +149,7 @@
 
 	return boxes[casing_type]
 
-/datum/autowiki/ammo/generate()
+/datum/autowiki/weapons/ammo/generate()
 	var/list/rows = list()
 	var/list/seen_rows = list()
 
@@ -169,7 +169,7 @@
 
 		var/pellets = initial(casing_type.pellets)
 		var/damage = initial(projectile_type.damage)
-		var/caliber = autowiki_caliber_label(initial(casing_type.caliber))
+		var/caliber = caliber_label(initial(casing_type.caliber))
 
 		var/damage_type = initial(projectile_type.damage_type)
 		var/damage_suffix = damage_type == BRUTE ? "" : " [damage_type]"
@@ -179,7 +179,7 @@
 		var/obj/item/box_type = box_for_casing(casing_type)
 		var/box_name = ""
 		if (box_type)
-			box_name = autowiki_icon_name(box_type)
+			box_name = icon_name(box_type)
 			var/obj/item/box = new box_type
 			upload_icon(getFlatIcon(box, no_anim = TRUE), box_name)
 			qdel(box)
