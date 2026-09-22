@@ -379,3 +379,10 @@
 	if (initial(gun_type.autowiki_hidden))
 		return FALSE
 	return initial(gun_type.actually_shoots)
+
+// jam spread and recoil into a single cell
+/datum/autowiki/weapons/proc/stance_cell(spread, recoil)
+	if (!recoil)
+		return "[spread] spread"
+
+	return stack(list("[spread] spread", "[recoil] recoil"))

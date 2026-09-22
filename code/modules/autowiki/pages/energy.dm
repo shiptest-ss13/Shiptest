@@ -53,8 +53,8 @@
 			"firemodes" = firemode_summary(gun),
 			"lenses" = escape_value(lens_summary(gun)),
 			"slots" = escape_value(slot_summary(gun)),
-			"spread" = gun.spread,
-			"spread_unwielded" = gun.spread_unwielded,
+			"spread" = stance_cell(gun.spread, gun.recoil),
+			"spread_unwielded" = stance_cell(gun.spread_unwielded, gun.recoil_unwielded),
 			"firedelay" = gun.fire_delay / 10,
 		)
 
