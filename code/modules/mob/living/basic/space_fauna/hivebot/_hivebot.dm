@@ -147,6 +147,7 @@
 /mob/living/basic/hivebot/core //slave to the system
 	name = "core hivebot"
 	desc = "A massive, alien tower of metal and circuitry. Eyes adorn its body, each one casting a ray of electronic light in myriad directions. Slaved to its whim is a scrapped turret mounting, angrily glancing at the world around it."
+	icon = 'icons/mob/hivebot_core.dmi'
 	icon_state = "core"
 	icon_living = "core"
 	icon_dead = "core"
