@@ -1,3 +1,10 @@
+	//Basic procedures = Brute, Burn, etc.
+	//Complex procedures = Revival, Wounds, and Clone (is that even used anywhere?)
+	//Organ repair has a higher cost to incentivise prosthetic use. Oxygen recovery is cheaper because it's Ephemeral.
+	#define COST_BASIC = 250
+	#define COST_COMPLEX = 500
+	#define COST_ORGANS = 800
+
 //Primary machine. This is where our patient and procedure disk goes.
 /obj/machinery/autodoc
 	name = "\improper Autodoc"
@@ -126,7 +133,7 @@
 
 /obj/item/autodoc_voucher/examine(mob/user)
 	. = ..()
-	. += span_notice("This voucher can be redeemed for [span_boldnotice("[refund_amount]")] credits.")
+	. += span_notice("It can be redeemed for [span_boldnotice("[refund_amount]")] credits.")
 
 /obj/machinery/autodoc/examine(mob/user)
 	. = ..()
@@ -489,14 +496,20 @@
 	if(patient && IS_IN_STASIS(patient))
 		patient.remove_status_effect(STATUS_EFFECT_STASIS, STASIS_MACHINE_EFFECT)
 	if(voucher && proc_disk.cost)
-		new /obj/item/autodoc_voucher(get_turf(src), proc_disk.cost / 2)
-		playsound(src, 'sound/items/taperecorder/taperecorder_print.ogg', 30, FALSE)
-	voucher = FALSE
+		var/refund_amount = COST_COMPLEX / 2
+		if(proc_disk.uses > 1)
+			refund_amount = COST_COMPLEX / (0.8 * proc_disk.uses)
+		print_voucher(round(refund_amount))
 	operating = FALSE
 	post_procedure = FALSE
 	playsound(src, end_sound, 100)
 	say("[end_message]")
 	open_machine()
+
+/obj/machinery/autodoc/proc/print_voucher(amount)
+	new /obj/item/autodoc_voucher(get_turf(src), amount)
+	playsound(src, 'sound/items/taperecorder/taperecorder_print.ogg', 30, FALSE)
+	voucher = FALSE
 
 /obj/effect/spawner/structure/aaaaa
 	name = "debug autodoc spawner"
@@ -526,13 +539,6 @@
 	///Whether we're ignoring cost.
 	var/free = FALSE
 
-	//Basic procedures = Brute, Burn, etc.
-	//Complex procedures = Revival, Wounds, and Clone (is that even used anywhere?)
-	//Organ repair has a higher cost to incentivise prosthetic use. Oxygen recovery is cheaper because it's Ephemeral.
-	var/cost_basic = 250
-	var/cost_complex = 500
-	var/cost_organs = 800
-
 /obj/machinery/autodoc_vendor/ui_interact(mob/user, datum/tgui/ui)
 	if(machine_stat & BROKEN)
 		return
@@ -556,9 +562,9 @@
 			data["user"]["name"] = card.registered_account.account_holder
 			data["user"]["cash"] = card.registered_account.account_balance
 
-	data["cost_basic"] = cost_basic
-	data["cost_complex"] = cost_complex
-	data["cost_organs"] = cost_organs
+	data["cost_basic"] = COST_BASIC
+	data["cost_complex"] = COST_COMPLEX
+	data["cost_organs"] = COST_ORGANS
 
 	data["do_brute"] = DO_BRUTE
 	data["do_burn"] = DO_BURN
@@ -609,7 +615,7 @@
 			var/canafford = text2num(params["canafford"])
 			if(canafford && heal_flags > 0) //If we're too poor or no flags are toggled, skip this part.
 				custom_clicksound = 'sound/machines/pda_button1.ogg'
-				var/obj/item/disk/autodoc/printed_disk = new /obj/item/disk/autodoc(get_turf(src), heal_flags, uses, free ? cost : 0) //Generate a proc disk with our selected uses and procedures.
+				var/obj/item/disk/autodoc/printed_disk = new /obj/item/disk/autodoc(get_turf(src), heal_flags, uses, free ? 0 : cost) //Generate a proc disk with our selected uses and procedures.
 				var/mob/living/carbon/human/carbon = usr
 				var/obj/item/card/bank/card = carbon.get_bankcard()
 
@@ -638,13 +644,26 @@
 
 /obj/machinery/autodoc_vendor/attackby(obj/item/thing, mob/user, params)
 	user.changeNext_move(CLICK_CD_MELEE)
+	if(istype(thing, /obj/item/disk/autodoc))
+		var/obj/item/disk/autodoc/proc_disk = thing
+		if(proc_disk.uses <= 0)
+			qdel(proc_disk)
+			playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 40, TRUE)
+			to_chat(user, span_notice("You insert [proc_disk] into [src]'s return slot."))
+		else
+			to_chat(user, span_warning("That disk still has [span_boldwarning("[proc_disk.uses]")] uses!"))
 	if(istype(thing, /obj/item/autodoc_voucher))
 		var/obj/item/autodoc_voucher/voucher = thing
 		if(voucher.refund_amount > 0)
 			qdel(voucher)
 			new /obj/item/spacecash/bundle(get_turf(src), voucher.refund_amount)
 			playsound(src, pick('sound/machines/coindrop.ogg', 'sound/machines/coindrop2.ogg'), 40, TRUE)
+			to_chat(user, span_notice("You insert [voucher] into [src]."))
 		else
 			to_chat(user, span_warning("You try inserting the voucher into [src], but the machine rejects it!"))
 	else
 		return ..()
+
+/obj/machinery/autodoc_vendor/examine(mob/user)
+	. = ..()
+	. += span_notice("[src] has a return slot for discarding used disks.")
