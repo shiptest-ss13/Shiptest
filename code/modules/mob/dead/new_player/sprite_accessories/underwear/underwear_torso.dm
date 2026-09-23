@@ -77,7 +77,7 @@
 
 /datum/sprite_accessory/undershirt/spaghettichoker
 	name = "Spaghetti Top (choker)"
-	icon_state = "spaghettichoker"
+	icon_state = "spaghetti_choker"
 
 /datum/sprite_accessory/undershirt/onepiece
 	name = "One Piece Swimsuit"
