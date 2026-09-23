@@ -3558,7 +3558,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/communications)
 "CT" = (
-/obj/machinery/smartfridge/food,
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
 	dir = 1
 	},
@@ -3566,6 +3565,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/structure/closet/secure_closet/freezer/meat/open,
+/obj/item/food/fishmeat,
+/obj/item/food/fishmeat,
+/obj/item/food/fishmeat,
+/obj/item/food/fishmeat,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/chicken,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/storage)
 "Da" = (
@@ -5442,14 +5450,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/closet/secure_closet/freezer/meat/open,
-/obj/item/food/meat/slab/chicken,
-/obj/item/food/meat/slab/chicken,
-/obj/item/food/meat/slab/chicken,
-/obj/item/food/fishmeat,
-/obj/item/food/fishmeat,
-/obj/item/food/fishmeat,
-/obj/item/food/fishmeat,
+/obj/machinery/smartfridge/food,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/storage)
 "Sf" = (
