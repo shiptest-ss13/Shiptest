@@ -289,20 +289,38 @@
 
 	return deal["cost"]
 
+/datum/autowiki/weapons/proc/black_market_odds(gun_type)
+	var/static/list/stocked
+
+	if (isnull(stocked))
+		stocked = list()
+
+		for (var/entry_path in subtypesof(/datum/blackmarket_item))
+			var/datum/blackmarket_item/entry = new entry_path
+			if (ispath(entry.item, /obj/item/gun))
+				stocked[entry.item] = entry.availability_prob
+			qdel(entry)
+
+	return stocked[gun_type]
+
 /datum/autowiki/weapons/proc/cost_label(gun_type)
 	var/list/deal = purchase(gun_type)
-	if (!deal)
-		return "N/A"
 
-	var/cost = effective_cost(deal)
-	var/list/lines = list("[cost]")
+	var/cost = deal ? effective_cost(deal) : 0
+	var/list/lines = list(deal ? "[cost]" : "N/A")
 
-	if (deal["locked"] && deal["faction"])
-		lines += "[deal["faction"]] only"
+	if (deal)
+		if (deal["locked"] && deal["faction"])
+			lines += "[deal["faction"]] only"
 
-	// show both prices if faction discount is available for non faction locked weapon
-	else if (deal["discount"] && deal["faction"])
-		lines += "[discounted(cost, deal["discount"])] for [deal["faction"]]"
+		// show both prices if faction discount is available for non faction locked weapon
+		else if (deal["discount"] && deal["faction"])
+			lines += "[discounted(cost, deal["discount"])] for [deal["faction"]]"
+
+	// zero is the placeholder entry typed to the abstract gun path
+	var/odds = black_market_odds(gun_type)
+	if (odds)
+		lines += "Black market, [odds]% chance"
 
 	return length(lines) > 1 ? stack(lines) : lines[1]
 
