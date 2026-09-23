@@ -9644,7 +9644,10 @@
 /area/outpost/crew/bar/cybersun_outpost)
 "xn" = (
 /obj/machinery/light/directional/east,
-/obj/machinery/autodoc,
+/obj/machinery/autodoc/dark,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 10
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/medical)
 "xo" = (
@@ -11725,7 +11728,10 @@
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_y = 30
 	},
-/obj/machinery/autodoc,
+/obj/machinery/autodoc/dark,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 10
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/medical)
 "Cv" = (
@@ -16049,6 +16055,9 @@
 /area/outpost/external)
 "MC" = (
 /obj/machinery/autodoc_vendor,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 10
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/medical)
 "MD" = (

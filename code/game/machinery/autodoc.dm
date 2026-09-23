@@ -39,7 +39,7 @@
 
 /obj/machinery/autodoc/dark
 	base_icon_state = "autodoc-dark"
-	icon_state = "autodoc_dark0"
+	icon_state = "autodoc-dark0"
 
 //Procedure disk. Purchased from an autodoc vendor, lists available procedures as heal flags.
 /obj/item/disk/autodoc
@@ -421,6 +421,10 @@
 //Update replacing organs list.
 /obj/machinery/autodoc/proc/get_replacements(vitals)
 	var/mob/living/carbon/patient = occupant
+	if(replacing_organs) //Clear existing lists to quell duplicates.
+		LAZYCLEARLIST(replacing_organs)
+	if(replacing_limbs)
+		LAZYCLEARLIST(replacing_limbs)
 	if(patient)
 		if(patient.get_missing_organs(vitals)) //Check whether we're missing organs
 			for(var/slot in patient.get_missing_organs(vitals))
