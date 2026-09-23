@@ -1,9 +1,9 @@
-	//Basic procedures = Brute, Burn, etc.
-	//Complex procedures = Revival, Wounds, and Clone (is that even used anywhere?)
-	//Organ repair has a higher cost to incentivise prosthetic use. Oxygen recovery is cheaper because it's Ephemeral.
-	#define COST_BASIC = 250
-	#define COST_COMPLEX = 500
-	#define COST_ORGANS = 800
+//Basic procedures = Brute, Burn, etc.
+//Complex procedures = Revival, Wounds, and Clone (is that even used anywhere?)
+//Organ repair has a higher cost to incentivise prosthetic use. Oxygen recovery is cheaper because it's Ephemeral.
+#define COST_BASIC 250
+#define COST_COMPLEX 500
+#define COST_ORGANS 800
 
 //Primary machine. This is where our patient and procedure disk goes.
 /obj/machinery/autodoc
@@ -667,3 +667,7 @@
 /obj/machinery/autodoc_vendor/examine(mob/user)
 	. = ..()
 	. += span_notice("[src] has a return slot for discarding used disks.")
+
+#undef COST_BASIC
+#undef COST_COMPLEX
+#undef COST_ORGANS
