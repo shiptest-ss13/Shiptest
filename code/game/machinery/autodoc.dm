@@ -1,35 +1,10 @@
-/*
-The goal: A machine at the Outpost that allows players without an onboard doctor to get back into the round when they’ve been killed, and no medships are in the game.
-
-I think it would be something like 1,000 credits, just a bit more than a current defib, and doesn’t price medships out of the round.
-
-It would involve a 1-2 tile machine in the outpost medbay. This machine would, at the least, fix all brute/bruise on a patient and revive them.
-I can see arguments for it being more comprehensive and curing husking or organ damage or wounds. I think there should be things it can’t do, like fixing broken limbs, to keep medical gameplay relevant.
-
-The process would take about 1-3 minutes. Long enough to feel like a wait, not long enough to meaningfully add to time out of the round.
-
-There would be a minimal speech interface (like phrases coming up for treatments, etc). Other elements could be more or less complex
-I think it would be best to make one without worrying too much about balance, and then tweak time, prices, services provided, etc. as needed
-Ideally for coding ease, it would be very simple, not even interface with tgui
-Perhaps punchcards for different services could be bought from a vendor and used to select treatments
-
-I think ideally, the niche that medships serve with an autodoc present is turning ruin failures into a situation where players can continue attempting a ruin, where as an autodoc usually means you are retreating
--Ficrab (Ideas Guy)
-*/
-
-/*TO-DO:
--Create procedure disk vendor, work out pricing. Bonus points if you can pay extra for more uses. Idk how to do that with regular vendor UI.
--Map changes
--Voucher system (low priority. Would be funny.)
--Sound stuff
-*/
-
 //Primary machine. This is where our patient and procedure disk goes.
 /obj/machinery/autodoc
 	name = "\improper Autodoc"
 	desc = "Waow just like Fallout New Vegas"
-	icon = 'icons/obj/machines/borgcharger.dmi'
-	icon_state = "borgcharger0"
+	icon = 'icons/obj/machines/autodoc.dmi'
+	icon_state = "autodoc0"
+	base_icon_state = "autodoc"
 	density = TRUE
 	use_power = ACTIVE_DRAW_MEDIUM
 	occupant_typecache = /mob/living/carbon
@@ -61,6 +36,10 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 	var/list/replacing_limbs
 	///Total damage calculated by heal_tick()
 	var/total_damage = 0
+
+/obj/machinery/autodoc/dark
+	base_icon_state = "autodoc-dark"
+	icon_state = "autodoc_dark0"
 
 //Procedure disk. Purchased from an autodoc vendor, lists available procedures as heal flags.
 /obj/item/disk/autodoc
@@ -276,10 +255,8 @@ I think ideally, the niche that medships serve with an autodoc present is turnin
 		subset -= occupant
 
 /obj/machinery/autodoc/update_icon_state()
-	if(!is_operational)
-		icon_state = "borgcharger-u[state_open ? 0 : 1]"
-		return ..()
-	icon_state = "borgcharger[state_open ? 0 : (operating ? 1 : 2)]"
+	//Open: autodoc0 Closed: autodoc1 Closed & Operating: autodoc2
+	icon_state = "[base_icon_state][state_open ? 0 : (operating ? 2 : 1)]"
 	return ..()
 
 //Operation procs
