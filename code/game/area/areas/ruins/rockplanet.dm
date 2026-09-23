@@ -158,13 +158,9 @@
 	name = "Dropship"
 	icon_state = "green"
 
-//River Valley Stash
+//Oasis Stash
 
-/area/ruin/rockplanet/river_valley_stash/shuttle
-	name = "Frontiersmen Shuttle"
-	icon_state = "shuttle"
-
-/area/ruin/rockplanet/river_valley_stash/hut
+/area/ruin/rockplanet/oasis_stash/hut
 	name = "Frontiersmen Hut"
 	icon_state = "red"
 
