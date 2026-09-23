@@ -497,8 +497,8 @@
 		patient.remove_status_effect(STATUS_EFFECT_STASIS, STASIS_MACHINE_EFFECT)
 	if(voucher && proc_disk.cost)
 		var/refund_amount = COST_COMPLEX / 2
-		if(proc_disk.uses > 1)
-			refund_amount = COST_COMPLEX / (0.8 * proc_disk.uses)
+		if(proc_disk.uses > 0)
+			refund_amount = COST_COMPLEX / (proc_disk.uses + 1)
 		print_voucher(round(refund_amount))
 	operating = FALSE
 	post_procedure = FALSE
@@ -661,8 +661,7 @@
 			to_chat(user, span_notice("You insert [voucher] into [src]."))
 		else
 			to_chat(user, span_warning("You try inserting the voucher into [src], but the machine rejects it!"))
-	else
-		return ..()
+	return ..()
 
 /obj/machinery/autodoc_vendor/examine(mob/user)
 	. = ..()
