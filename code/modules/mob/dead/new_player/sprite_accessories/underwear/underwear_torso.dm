@@ -19,6 +19,10 @@
 	name = "Bra (Alt)"
 	icon_state = "bra_alt"
 
+/datum/sprite_accessory/undershirt/chokerbra
+	name = "Bra (choker)"
+	icon_state = "bra_choker"
+
 /datum/sprite_accessory/undershirt/sportsbra
 	name = "Sports Bra"
 	icon_state = "bra_sports"
@@ -63,9 +67,17 @@
 	name = "Camisole (sleeved)"
 	icon_state = "camisleeve"
 
+/datum/sprite_accessory/undershirt/camisleeve
+	name = "Camisole (choker)"
+	icon_state = "camisol_choker"
+
 /datum/sprite_accessory/undershirt/spaghettitop
 	name = "Spaghetti Top"
 	icon_state = "spaghettitop"
+
+/datum/sprite_accessory/undershirt/spaghettichoker
+	name = "Spaghetti Top (choker)"
+	icon_state = "spaghettichoker"
 
 /datum/sprite_accessory/undershirt/onepiece
 	name = "One Piece Swimsuit"
@@ -78,11 +90,6 @@
 /datum/sprite_accessory/undershirt/onepiece_compression
 	name = "One Piece Compression Top"
 	icon_state = "compone"
-
-/datum/sprite_accessory/undershirt/beekini
-	name = "Bee-Kini Top"
-	icon_state = "beekini"
-	use_static = TRUE
 
 /datum/sprite_accessory/undershirt/tshirt
 	name = "T-Shirt (Greyscale)"
