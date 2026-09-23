@@ -69,7 +69,7 @@
 
 /datum/sprite_accessory/undershirt/camisleeve
 	name = "Camisole (choker)"
-	icon_state = "camisol_choker"
+	icon_state = "camisole_choker"
 
 /datum/sprite_accessory/undershirt/spaghettitop
 	name = "Spaghetti Top"
