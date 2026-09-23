@@ -40,11 +40,11 @@
 
 /obj/item/ammo_box/magazine/cs_gauss
 	name = "gauss box (2x15mm Tav'Sha)"
-	desc = "A stamped 60-round magazine combined with a limited-use cell. \"PLEASE RECYCLE ME :)\" is engraved into the flip-side. 2x15mm Tav'Sha does low damage and relies on volume of fire."
+	desc = "A stamped 50-round magazine combined with a limited-use cell. \"PLEASE RECYCLE ME :)\" is engraved into the flip-side. 2x15mm Tav'Sha does low damage and relies on volume of fire."
 	icon_state = "convergence_mag"
 	ammo_type = /obj/item/ammo_casing/caseless/gauss/tavsha
 	caliber = "no"
-	max_ammo = 60
+	max_ammo = 50
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	sealed = TRUE
 	quick_empty = FALSE

@@ -85,7 +85,7 @@
 	icon_state = "gauss-pellet"
 	bullet_identifier = "dart"
 
-	damage = 8
+	damage = 7
 	armour_penetration = 30
 
 	homing_turn_speed = 7

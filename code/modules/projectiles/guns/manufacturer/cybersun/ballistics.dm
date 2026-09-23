@@ -202,11 +202,12 @@ NO_MAG_GUN_HELPER(cs_gauss/rectifier/export)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/cybersun/onmob.dmi'
 
 	w_class = WEIGHT_CLASS_BULKY
-	default_ammo_type = /obj/item/ammo_box/magazine/cs_gauss
+	weapon_weight = WEAPON_MEDIUM
 
 	wear_minor_threshold = 240
 	wear_major_threshold = 380
 
+	default_ammo_type = /obj/item/ammo_box/magazine/cs_gauss
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/cs_gauss,
 	)
@@ -252,9 +253,9 @@ NO_MAG_GUN_HELPER(cs_gauss/convergence/export)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/cybersun/onmob.dmi'
 
 	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_MEDIUM
+
 	default_ammo_type = /obj/item/ammo_box/magazine/cs_gauss/rifle
-
-
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/cs_gauss/rifle,
 	)
