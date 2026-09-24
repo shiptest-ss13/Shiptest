@@ -516,7 +516,7 @@
 	recoil_unwielded = 20
 
 	aiming_time = 50
-	aiming_time_fire_threshold = 50
+	aiming_time_fire_threshold = 5
 
 	fire_sound_volume = 100
 
