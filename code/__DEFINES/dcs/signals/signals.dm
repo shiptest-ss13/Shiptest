@@ -229,35 +229,13 @@
 #define COMSIG_ENTER_AREA "enter_area"
 //from base of area/Exited(): (/area). Sent to "area-sensitive" movables, see __DEFINES/traits.dm for info.
 #define COMSIG_EXIT_AREA "exit_area"
-//from base of atom/Click(): (location, control, params, mob/user)
-#define COMSIG_CLICK "atom_click"
-//from base of atom/ShiftClick(): (/mob)
-#define COMSIG_CLICK_SHIFT "shift_click"
-//Allows the user to examinate regardless of client.eye.
-	#define COMPONENT_ALLOW_EXAMINATE 1
-//from base of atom/CtrlClickOn(): (/mob)
-#define COMSIG_CLICK_CTRL "ctrl_click"
-///from base of atom/AltClick(): (/mob)
-#define COMSIG_CLICK_ALT "alt_click"
-	#define COMPONENT_CANCEL_CLICK_ALT (1<<0)
-///from base of atom/alt_click_secondary(): (/mob)
-#define COMSIG_CLICK_ALT_SECONDARY "alt_click_secondary"
-	#define COMPONENT_CANCEL_CLICK_ALT_SECONDARY (1<<0)
-//from base of atom/CtrlShiftClick(/mob)
-#define COMSIG_CLICK_CTRL_SHIFT "ctrl_shift_click"
-///from base of atom/CtrlShiftRightClick(/mob)
-#define COMSIG_CLICK_CTRL_SHIFT_RIGHT "ctrl_shift_right_click"
+
 /// from mob/ver/do_unique_action
 #define COMSIG_CLICK_UNIQUE_ACTION "unique_action"
 	#define OVERRIDE_UNIQUE_ACTION 1
 /// from mob/ver/do_unique_action
 #define COMSIG_CLICK_SECONDARY_ACTION "secondary_action"
 	#define OVERRIDE_SECONDARY_ACTION 1
-//from base of atom/MouseDrop(): (/atom/over, /mob/user)
-#define COMSIG_MOUSEDROP_ONTO "mousedrop_onto"
-	#define COMPONENT_NO_MOUSEDROP 1
-//from base of atom/MouseDrop_T: (/atom/from, /mob/user)
-#define COMSIG_MOUSEDROPPED_ONTO "mousedropped_onto"
 
 ///from base of area/proc/power_change(): ()
 #define COMSIG_AREA_POWER_CHANGE "area_power_change"
