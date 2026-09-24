@@ -5,7 +5,7 @@
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "random"
 
-/datum/action/item_action/chameleon/drone/randomise/Trigger()
+/datum/action/item_action/chameleon/drone/randomise/Trigger(trigger_flags)
 	if(!IsAvailable())
 		return
 
@@ -34,7 +34,7 @@
 	if (istype(target, /obj/item/clothing/mask/chameleon/drone))
 		button_icon_state = "drone_camogear_mask"
 
-/datum/action/item_action/chameleon/drone/togglehatmask/Trigger()
+/datum/action/item_action/chameleon/drone/togglehatmask/Trigger(trigger_flags)
 	if(!IsAvailable())
 		return
 
@@ -90,7 +90,7 @@
 		sortTim(standard_outfit_options, /proc/cmp_text_asc)
 	outfit_options = standard_outfit_options
 
-/datum/action/chameleon_outfit/Trigger()
+/datum/action/chameleon_outfit/Trigger(trigger_flags)
 	return select_outfit(owner)
 
 /datum/action/chameleon_outfit/proc/select_outfit(mob/user)
@@ -188,8 +188,8 @@
 	..()
 
 /datum/action/item_action/chameleon/change/proc/initialize_disguises()
-	if(button)
-		button.name = "Change [chameleon_name] Appearance"
+	name = "Change [chameleon_name] Appearance"
+	UpdateButtons()
 
 	chameleon_blacklist |= typecacheof(target.type)
 	for(var/V in typesof(chameleon_type))
@@ -235,7 +235,7 @@
 		update_item(picked_item)
 		var/obj/item/thing = target
 		thing.update_slot_icon()
-	UpdateButtonIcon()
+	UpdateButtons()
 
 /datum/action/item_action/chameleon/change/proc/update_item(obj/item/picked_item)
 	target.name = initial(picked_item.name)
@@ -251,7 +251,7 @@
 			CL.flags_cover = initial(PCL.flags_cover)
 	target.icon = initial(picked_item.icon)
 
-/datum/action/item_action/chameleon/change/Trigger()
+/datum/action/item_action/chameleon/change/Trigger(trigger_flags)
 	if(!IsAvailable())
 		return
 
@@ -471,9 +471,9 @@
 	var/datum/action/item_action/chameleon/change/chameleon_action = locate() in actions
 	chameleon_action.random_look()
 	var/datum/action/item_action/chameleon/drone/togglehatmask/togglehatmask_action = new(src)
-	togglehatmask_action.UpdateButtonIcon()
+	togglehatmask_action.UpdateButtons()
 	var/datum/action/item_action/chameleon/drone/randomise/randomise_action = new(src)
-	randomise_action.UpdateButtonIcon()
+	randomise_action.UpdateButtons()
 
 /obj/item/clothing/mask/chameleon
 	name = "gas mask"
@@ -526,9 +526,9 @@
 	var/datum/action/item_action/chameleon/change/chameleon_action = locate() in actions
 	chameleon_action.random_look()
 	var/datum/action/item_action/chameleon/drone/togglehatmask/togglehatmask_action = new(src)
-	togglehatmask_action.UpdateButtonIcon()
+	togglehatmask_action.UpdateButtons()
 	var/datum/action/item_action/chameleon/drone/randomise/randomise_action = new(src)
-	randomise_action.UpdateButtonIcon()
+	randomise_action.UpdateButtons()
 
 /obj/item/clothing/mask/chameleon/drone/attack_self(mob/user)
 	to_chat(user, span_notice("[src] does not have a voice changer."))

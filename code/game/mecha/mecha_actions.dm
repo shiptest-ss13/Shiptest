@@ -60,7 +60,7 @@
 	button_icon_state = "mech_internals_[chassis.use_internal_tank ? "on" : "off"]"
 	chassis.occupant_message(span_notice("Now taking air from [chassis.use_internal_tank?"internal airtank":"environment"]."))
 	chassis.log_message("Now taking air from [chassis.use_internal_tank?"internal airtank":"environment"].", LOG_MECHA)
-	UpdateButtonIcon()
+	UpdateButtons()
 
 /datum/action/innate/mecha/mech_cycle_equip
 	name = "Cycle Equipment"
@@ -83,7 +83,7 @@
 		chassis.occupant_message(span_notice("You select [chassis.selected]."))
 		send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
 		button_icon_state = "mech_cycle_equip_on"
-		UpdateButtonIcon()
+		UpdateButtons()
 		chassis.equipment_check()
 		return
 	var/number = 0
@@ -100,7 +100,7 @@
 				button_icon_state = "mech_cycle_equip_on"
 			send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
 			chassis.equipment_check()
-			UpdateButtonIcon()
+			UpdateButtons()
 			return
 
 
@@ -119,7 +119,7 @@
 	chassis.set_light_on(chassis.lights)
 	chassis.occupant_message(span_notice("Toggled lights [chassis.lights?"on":"off"]."))
 	chassis.log_message("Toggled lights [chassis.lights?"on":"off"].", LOG_MECHA)
-	UpdateButtonIcon()
+	UpdateButtons()
 
 /datum/action/innate/mecha/mech_view_stats
 	name = "View Stats"
@@ -150,7 +150,7 @@
 
 	occupant_message(span_notice("Toggled strafing mode [strafe?"on":"off"]."))
 	log_message("Toggled strafing mode [strafe?"on":"off"].", LOG_MECHA)
-	strafing_action.UpdateButtonIcon()
+	strafing_action.UpdateButtons()
 
 //////////////////////////////////////// Specific Ability Actions  ///////////////////////////////////////////////
 //Need to be granted by the mech type, Not default abilities.
@@ -186,7 +186,7 @@
 		chassis.step_in = initial(chassis.step_in)
 		chassis.update_part_values()
 		chassis.occupant_message(span_notice("You disable leg actuators overload."))
-	UpdateButtonIcon()
+	UpdateButtons()
 
 /datum/action/innate/mecha/mech_charge_mode
 	name = "Charge"
@@ -233,7 +233,7 @@
 			SEND_SOUND(owner, sound('sound/mecha/imag_enh.ogg',volume=50))
 		else
 			owner.client.view_size.zoomIn()
-		UpdateButtonIcon()
+		UpdateButtons()
 
 /datum/action/innate/mecha/mech_switch_damtype
 	name = "Reconfigure arm microtool arrays"
@@ -256,7 +256,7 @@
 	chassis.damtype = new_damtype
 	button_icon_state = "mech_damtype_[new_damtype]"
 	playsound(src, 'sound/mecha/mechmove01.ogg', 50, TRUE)
-	UpdateButtonIcon()
+	UpdateButtons()
 
 /datum/action/innate/mecha/mech_toggle_phasing
 	name = "Toggle Phasing"
@@ -268,4 +268,4 @@
 	chassis.phasing = !chassis.phasing
 	button_icon_state = "mech_phasing_[chassis.phasing ? "on" : "off"]"
 	chassis.occupant_message("<font color=\"[chassis.phasing?"#00f\">En":"#f00\">Dis"]abled phasing.</font>")
-	UpdateButtonIcon()
+	UpdateButtons()

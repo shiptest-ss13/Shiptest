@@ -118,7 +118,7 @@
 	if(attach_features_flags & ATTACH_TOGGLE)
 		INVOKE_ASYNC(src, PROC_REF(do_toggle), parent, holder, user)
 		holder.update_icon()
-		attachment_toggle_action.UpdateButtonIcon()
+		attachment_toggle_action.UpdateButtons()
 
 /datum/component/attachment/proc/do_toggle(obj/item/parent, obj/item/holder, mob/user)
 	if(on_toggle)
@@ -133,7 +133,7 @@
 	if(attach_features_flags & ATTACH_AMMOMODE)
 		INVOKE_ASYNC(src, PROC_REF(do_ammo), parent, holder, user)
 		holder.update_icon()
-		attachment_ammo_action.UpdateButtonIcon()
+		attachment_ammo_action.UpdateButtons()
 
 /datum/component/attachment/proc/do_ammo(obj/item/parent, obj/item/holder, mob/user)
 	if(on_toggle_ammo)
@@ -287,7 +287,6 @@
 
 /datum/action/attachment/New(Target)
 	..()
-	button.name = name
 	icon_icon = target.icon
 	button_icon_state = target.icon_state
 
@@ -295,7 +294,8 @@
 	. = ..()
 	gun = null
 
-/datum/action/attachment/UpdateButtonIcon()
+/datum/action/attachment/UpdateButtons()
+
 	icon_icon = target.icon
 	button_icon_state = target.icon_state
 	..()
@@ -325,11 +325,11 @@
 	. = ..()
 	name = "Toggle [target.name]"
 
-/datum/action/attachment/toggle/Trigger()
+/datum/action/attachment/toggle/Trigger(trigger_flags)
 	..()
 	SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE, gun, owner)
 
-/datum/action/attachment/toggle/UpdateButtonIcon()
+/datum/action/attachment/toggle/UpdateButtons()
 	icon_icon = target.icon
 	button_icon_state = target.icon_state
 	..()
@@ -337,7 +337,7 @@
 /datum/action/attachment/ammo
 	name = "Toggle Energy Mode"
 
-/datum/action/attachment/ammo/Trigger()
+/datum/action/attachment/ammo/Trigger(trigger_flags)
 	. = ..()
 	SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE_AMMO, gun, owner)
 

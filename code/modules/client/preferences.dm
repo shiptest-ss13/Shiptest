@@ -28,7 +28,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/UI_style = null
 	var/outline_enabled = TRUE
 	var/outline_color = COLOR_BLUE_GRAY
-	var/buttons_locked = FALSE
 	var/hotkeys = TRUE
 
 	///Runechat preference. If true, certain messages will be displayed on the map, not ust on the chat area. Boolean.
@@ -1086,7 +1085,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Outline:</b> <a href='byond://?_src_=prefs;preference=outline_enabled'>[outline_enabled ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>Outline Color:</b> <span style='border:1px solid #161616; background-color: [outline_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=outline_color'>Change</a><BR>"
 			dat += "<br>"
-			dat += "<b>Action Buttons:</b> <a href='byond://?_src_=prefs;preference=action_buttons'>[(buttons_locked) ? "Locked In Place" : "Unlocked"]</a><br>"
 			dat += "<b>Hotkey mode:</b> <a href='byond://?_src_=prefs;preference=hotkeys'>[(hotkeys) ? "Hotkeys" : "Default"]</a><br>"
 			dat += "<br>"
 			dat += "<b>PDA Color:</b> <span style='border:1px solid #161616; background-color: [pda_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=pda_color;task=input'>Change</a><BR>"
@@ -2577,8 +2575,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("see_rc_emotes")
 					see_rc_emotes = !see_rc_emotes
 
-				if("action_buttons")
-					buttons_locked = !buttons_locked
 				if("tgui_fancy")
 					tgui_fancy = !tgui_fancy
 				if("outline_enabled")

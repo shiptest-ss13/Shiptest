@@ -27,7 +27,7 @@
 	parent_ship = null
 	. = ..()
 
-/datum/action/ship_owner/Trigger()
+/datum/action/ship_owner/Trigger(trigger_flags)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -54,7 +54,7 @@
 		if(FALSE)
 			background_icon_state = ACTION_BUTTON_DEFAULT_BACKGROUND
 			button_icon_state = "ship_owner_0"
-	UpdateButtonIcon()
+	UpdateButtons()
 
 /datum/action/ship_owner/ui_state(mob/user)
 	return GLOB.always_state

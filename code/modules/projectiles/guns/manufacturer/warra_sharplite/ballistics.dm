@@ -507,7 +507,7 @@ NO_MAG_GUN_HELPER(automatic/smg/resolution/inteq)
 /datum/action/item_action/toggle_tube
 	name = "Toggle Tube"
 
-/datum/action/item_action/toggle_tube/Trigger()
+/datum/action/item_action/toggle_tube/Trigger(trigger_flags)
 	if(istype(target, /obj/item/gun/ballistic/shotgun/automatic/negotiator))
 		var/obj/item/gun/ballistic/shotgun/automatic/negotiator/shotty = target
 		shotty.toggle_tube(owner)

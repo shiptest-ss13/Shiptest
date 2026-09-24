@@ -66,7 +66,7 @@
 			hood.forceMove(src)
 		for(var/X in actions)
 			var/datum/action/A = X
-			A.UpdateButtonIcon()
+			A.UpdateButtons()
 
 /obj/item/clothing/suit/hooded/update_appearance(updates)
 	if(suittoggled)
@@ -96,7 +96,7 @@
 				H.regenerate_icons()
 				for(var/X in actions)
 					var/datum/action/A = X
-					A.UpdateButtonIcon()
+					A.UpdateButtons()
 	else
 		remove_hood()
 
@@ -172,7 +172,7 @@
 	usr.update_inv_wear_suit()
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 /obj/item/clothing/suit/toggle/examine(mob/user)
 	. = ..()
