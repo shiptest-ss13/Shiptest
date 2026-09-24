@@ -40,7 +40,6 @@
 	var/fire_sound_volume = 50
 	var/dry_fire_sound = 'sound/weapons/gun/general/dry_fire.ogg'
 	var/dry_fire_text = "click"
-	var/allow_fire = TRUE //temporary variable that switches when attempting to bash an enemy on disarm intent
 
 	// RELOADING //
 	var/obj/item/ammo_casing/chambered = null // round currently chambered
@@ -279,8 +278,6 @@
 	return
 
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
-	if(!allow_fire) //prevents firing the gun when you don't want the gun to fire
-		return
 	if(fire_gun(target, user, flag, params))
 		return TRUE
 	return ..()
