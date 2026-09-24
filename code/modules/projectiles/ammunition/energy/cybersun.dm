@@ -52,6 +52,16 @@
 	e_cost = 1000
 	projectile_type = /obj/projectile/beam/lorentz/mg
 
+/obj/item/ammo_casing/energy/lorentz/heavy
+	name = "lorentz annihilation lens"
+	caliber = "lorentz"
+	projectile_type = /obj/projectile/beam/lorentz
+	e_cost = 6000
+
+	select_name = "lorentz"
+	fire_sound = 'sound/weapons/gun/cybersun/lorentz.ogg'
+	delay = 1 SECONDS
+
 //if you use this on a weapon that's not made for it bad things will happen
 //for cybersun/lorentz use ONLY
 /obj/item/ammo_casing/energy/flare
@@ -62,3 +72,8 @@
 	select_name = "flare"
 	fire_sound = 'sound/weapons/gun/cybersun/plasmaflare.ogg'
 	delay = 20
+
+//if you use this i will kill you
+/obj/item/ammo_casing/energy/flare/heavy
+	name = "heavy plasma flare lens"
+	projectile_type = /obj/projectile/beam/flare/heavy

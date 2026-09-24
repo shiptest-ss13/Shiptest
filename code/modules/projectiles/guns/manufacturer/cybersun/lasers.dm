@@ -474,3 +474,53 @@
 
 /obj/item/gun/energy/cybersun/lorentz/catalyzer/empty_cell
 	spawn_no_ammo = TRUE
+
+//fuck your shit smooth off son
+/obj/item/gun/energy/cybersun/lorentz/magnetron
+	name = "\improper LS2K Lorentz Magnetron Annihiliation Rifle"
+	desc = "Held to be the largest that Lorentz Force based plasma rifles can be made while still being (theoretically) man-portable, the LS2K is a massive assembly centered around a massive plasma cell and supercapacitors. A charge-up is required to fire it in either operation mode. More typically found mounted on G/Carriers under use by Cybersun Troubleshooters, although the occasional piece is deployed in the field for close-quarters anti-armor. Flare mode is known to puncture hulls when fired from a fresh cell."
+
+	icon_state = "magnetron"
+	item_state = "magnetron"
+
+	latch_icon_state = "latch"
+	latch_icon = 'icons/obj/guns/cell_latch.dmi'
+
+	ammo_type = list(/obj/item/ammo_casing/energy/lorentz/heavy, /obj/item/ammo_casing/energy/flare/heavy)
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun/cybersun/heavy
+
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/cybersun/heavy,
+		/obj/item/stock_parts/cell/gun/cybersun/heavy/empty,
+	)
+
+	always_show_latch = FALSE
+
+	slowdown = 1
+	drag_slowdown = 1
+
+	weapon_weight = WEAPON_VERY_HEAVY
+	w_class = WEIGHT_CLASS_BULKY
+
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+
+	gun_firemodes = list(FIREMODE_AIMED)
+	default_firemode = FIREMODE_AIMED
+
+	wield_delay = 2 SECONDS
+
+	wield_slowdown = LASER_CANNON_SLOWDOWN
+
+	recoil = 2
+	recoil_unwielded = 20
+
+	aiming_time = 50
+	aiming_time_fire_threshold = 50
+
+	fire_sound_volume = 100
+
+	zoomable = TRUE
+	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_out_amt = 5
+

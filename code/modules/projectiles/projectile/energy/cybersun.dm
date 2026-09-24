@@ -126,10 +126,15 @@
 /obj/projectile/beam/lorentz/mg
 	range = 12
 
+/obj/projectile/beam/lorentz/heavy
+	range = 20
+
+
 /obj/projectile/beam/flare
 	name = "plasma flare"
 	icon_state = ""
 	pass_flags = PASSTABLE | PASSGRILLE
+	projectile_piercing = PASSGLASS
 
 	hitsound = 'sound/weapons/gun/cybersun/plasmaflareimpact.ogg'
 	hitsound_non_living = 'sound/weapons/gun/cybersun/plasmaflareimpact.ogg'
@@ -177,3 +182,10 @@
 		var/atom/throw_target = get_edge_target_turf(target, dir)
 		if(!exploded.anchored)
 			exploded.throw_at(throw_target, round(damage/35), round(damage/35)*2, gentle = TRUE)
+
+/obj/projectile/beam/flare/heavy
+	pass_flags = PASSTABLE | PASSGRILLE
+	projectile_piercing = PASSGLASS | PASSCLOSEDTURF | PASSMOB
+	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_WALLS | PROJECTILE_BONUS_DAMAGE_RWALLS | PROJECTILE_BONUS_DAMAGE_MINERALS
+	wall_damage_override = 1000
+	range = 9

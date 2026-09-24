@@ -145,7 +145,7 @@
 	var/nodamage = FALSE //Determines if the projectile will skip any damage inflictions
 	var/flag = "bullet" //Defines what armor to use when it hits things.  Must be set to bullet, laser, energy,or bomb
 	var/projectile_type = /obj/projectile
-	var/range = 50 //This will de-increment every step. When 0, it will deletze the projectile.
+	var/range = 50 //This will de-increment every step. When 0, it will delete the projectile.
 	var/decayedRange			//stores original range
 	var/reflect_range_decrease = 5			//amount of original range that falls off when reflecting, so it doesn't go forever
 	var/reflectable = NONE // Can it be reflected or not?
