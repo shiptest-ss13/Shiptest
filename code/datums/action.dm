@@ -731,13 +731,13 @@
 	//return PreActivate(owner)
 
 /// Intercepts client owner clicks to activate the ability
-/datum/action/cooldown/proc/InterceptClickOn(mob/living/caller, params, atom/target)
+/datum/action/cooldown/proc/InterceptClickOn(mob/living/clicker, params, atom/target)
 	if(!IsAvailable())
 		return FALSE
 	if(!target)
 		return FALSE
 	//PreActivate(target)
-	caller.click_intercept = null
+	clicker.click_intercept = null
 	return TRUE
 
 /// For signal calling
