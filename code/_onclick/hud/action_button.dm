@@ -77,6 +77,7 @@
 		old_object.MouseExited(over_location, over_control, params)
 
 	last_hovored_ref = WEAKREF(over_object)
+	//SOMETHING is fucking feeding nulls into this and I can't figure out how aside from it's related to UI elements (presumably nullspaced). I'm assuming its related to us not having plane masters yet. Yet.
 	over_object?.MouseEntered(over_location, over_control, params)
 
 /atom/movable/screen/movable/action_button/MouseEntered(location, control, params)
