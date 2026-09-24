@@ -166,11 +166,14 @@
 	if(attach_features_flags & ATTACH_TOGGLE)
 		holder.actions += list(attachment_toggle_action)
 		attachment_toggle_action.gun = holder
-		attachment_toggle_action.Grant(user)
+		if(user)
+			attachment_toggle_action.Grant(user)
+
 	if(attach_features_flags & ATTACH_AMMOMODE)
 		holder.actions += list(attachment_ammo_action)
 		attachment_ammo_action.gun = holder
-		attachment_ammo_action.Grant(user)
+		if(user)
+			attachment_ammo_action.Grant(user)
 
 	return TRUE
 
@@ -295,7 +298,6 @@
 	gun = null
 
 /datum/action/attachment/UpdateButtons()
-
 	icon_icon = target.icon
 	button_icon_state = target.icon_state
 	..()
