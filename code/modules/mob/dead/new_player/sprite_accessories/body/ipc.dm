@@ -160,7 +160,7 @@
 /datum/sprite_accessory/body/ipc_chassis/lanchesterworker
 	name = "HARDLINE 'Longshore'"
 	desc = "HARDLINE's only frame. It's based on a Lanchester Mechanics frame with custom plating, intended to help with internal shipbuilding. However, its\
-	\nspecialization has made it popular outside the company's production lines, and is commonly sold in volume as a side-buisness for HARDLINE."
+	\nspecialization has made it popular outside the company's production lines, and is commonly sold in volume as a side-business for HARDLINE."
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterworker,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/lanchesterworker,
