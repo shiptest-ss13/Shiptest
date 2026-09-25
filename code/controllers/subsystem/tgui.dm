@@ -42,6 +42,9 @@ SUBSYSTEM_DEF(tgui)
 		return
 
 	if(CONFIG_GET(string/asset_transport) == "webroot")
+		//So we can ensure that the webroot transport is actually initialized. Won't hurt if it already is.
+		SSassets.OnConfigLoad()
+
 		var/datum/asset_transport/webroot/webroot = SSassets.transport
 
 		var/datum/asset_cache_item/item = webroot.register_asset("iframe.html", file("tgui/public/iframe.html"))
