@@ -38,6 +38,10 @@
 					var/datum/ship_application/app = new(spawnee, target)
 					if(app.get_user_response())
 						to_chat(spawnee, span_notice("Ship application sent. You will be notified if the application is accepted."))
+					else if(QDELETED(target))
+						to_chat(spawnee, span_warning("[target] no longer exists, application cancelled."))
+					else if(!target.has_applications_open())
+						to_chat(spawnee, span_warning("[target] stopped accepting applications before submission."))
 					else
 						to_chat(spawnee, span_notice("Application cancelled, or there was an error sending the application."))
 					return

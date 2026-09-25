@@ -46,6 +46,10 @@
 	while(status == SHIP_APPLICATION_UNFINISHED)
 		stoplag(1)
 
+	// short circuit to cancel if the ship is no longer accepting applications
+	if(!QDELETED(parent_ship) && !parent_ship.has_applications_open())
+		status = SHIP_APPLICATION_CANCELLED
+
 	if(status == SHIP_APPLICATION_CANCELLED)
 		qdel(src)
 		return FALSE
