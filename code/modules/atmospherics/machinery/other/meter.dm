@@ -174,7 +174,8 @@
 
 /obj/machinery/meter/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		new decon_path(loc)
+		var/atom/decon_result = new decon_path(loc)
+		transfer_fingerprints_to(decon_result)
 	qdel(src)
 
 /obj/machinery/meter/interact(mob/user)

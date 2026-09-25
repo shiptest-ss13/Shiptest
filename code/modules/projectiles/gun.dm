@@ -35,6 +35,7 @@
 
 	// FIRING //
 	var/actually_shoots = TRUE // is this gun real and not a dud
+	var/glunked = FALSE //controls whether the gun gets a glunked overlay. separate from actually_shoots.
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
@@ -90,7 +91,7 @@
 	var/randomspread = TRUE // do we have random spread. false for shotguns
 	var/spread	= 4 // wielded spread amount
 	var/spread_unwielded = 12 // unwielded spread amount
-	var/dual_wield_spread = 24 // dual wielding spread amount
+	var/dual_wield_spread = 6 // dual wielding spread amount
 
 	var/recoil = 0 // screen shake when fired
 	var/recoil_unwielded = 0 // screen shake when fired unwielded
@@ -167,6 +168,14 @@
 	if(slot_flags & ITEM_SLOT_SUITSTORE)
 		ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, REF(src))
 
+	if(glunked && !actually_shoots)
+		desc += span_warning("\nIt appears to be irreparably broken.")
+	else if (glunked && actually_shoots)
+		desc += span_warning("\nIt appears to be extremely worn down.")
+
+	if(glunked)
+		glunkify()
+
 /obj/item/gun/ComponentInitialize()
 	. = ..()
 	var/list/attachment_list = valid_attachments
@@ -226,6 +235,22 @@
 		QDEL_NULL(muzzle_flash)
 	return ..()
 
+/obj/item/gun/proc/glunkify()
+	var/index = "[REF(initial(icon))]-[initial(icon_state)]"
+	var/static/list/scuff_cache = list()
+	var/icon/scuff = scuff_cache[index]
+	if(!scuff) // we only need to generate each scuff overlay once
+		scuff = icon(initial(icon), initial(icon_state))
+		var/icon/temp = icon('icons/effects/item_damage.dmi', "itemdamaged")
+		temp.Scale(64, 32)
+		temp.Shift(EAST, 32) // we put two side by side so it fits on guns
+		temp.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_OVERLAY)
+		scuff.Blend("#fff", ICON_ADD)
+		scuff.Blend(temp, ICON_MULTIPLY)
+		scuff_cache[index] = scuff
+	var/mutable_appearance/scuff_instance = new(scuff)
+	add_overlay(scuff_instance)
+
 /obj/item/gun/handle_atom_del(atom/A)
 	if(A == chambered)
 		chambered = null
@@ -252,7 +277,7 @@
 		zoom(user, user.dir, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 
 /obj/item/gun/attack(mob/M as mob, mob/user)
-	if(user.a_intent == INTENT_HARM || !actually_shoots) //Flogging
+	if(user.a_intent == INTENT_DISARM || !actually_shoots) //lets you beat up someone without shooting them
 		return ..()
 	return
 
@@ -299,7 +324,7 @@
 	if(flag)
 		if(target in user.contents) //can't shoot stuff inside us.
 			return
-		if(!ismob(target) || user.a_intent == INTENT_HARM) //melee attack
+		if(!ismob(target) || user.a_intent == INTENT_DISARM) //melee attack
 			return
 		if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH) //so we can't shoot ourselves (unless mouth selected)
 			return

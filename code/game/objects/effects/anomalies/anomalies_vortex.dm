@@ -63,6 +63,9 @@
 			if(EXPLODE_LIGHT)
 				SSexplosions.lowturf += T
 
+/obj/effect/anomaly/vortex/ex_act(severity, target)
+	return FALSE // to prevent blowing oneself up
+
 /obj/effect/anomaly/vortex/planetary
 	immortal = TRUE
 	immobile = TRUE
