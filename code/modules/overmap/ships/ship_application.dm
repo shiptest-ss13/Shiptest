@@ -23,6 +23,9 @@
 	app_key = app_mob.client?.holder?.fakekey ? app_mob.client.holder.fakekey : applicant.key
 	parent_ship = parent
 
+	// register immediately so we can track the individual application for its entire lifespan
+	LAZYSET(parent_ship.applications, ckey(app_key), src)
+
 	// these are registered so we can cancel the application fill-out if the ship
 	// gets deleted before the application is finalized, or the character spawns in.
 	// your currently-open tgui windows don't get removed if you spawn into a body
@@ -31,8 +34,9 @@
 
 /datum/ship_application/Destroy()
 	SStgui.close_uis(src)
-	if(status != SHIP_APPLICATION_UNFINISHED && status != SHIP_APPLICATION_CANCELLED)
+	if(!isnull(parent_ship) && src == LAZYACCESS(parent_ship.applications, ckey(app_key)))
 		LAZYREMOVE(parent_ship.applications, ckey(app_key))
+	if(status != SHIP_APPLICATION_UNFINISHED && status != SHIP_APPLICATION_CANCELLED)
 		if(app_mob)
 			SEND_SOUND(app_mob, sound('sound/misc/server-ready.ogg', volume=50))
 			to_chat(app_mob, span_warning("Your application to [parent_ship] has been deleted."), MESSAGE_TYPE_INFO)
@@ -55,11 +59,6 @@
 		return FALSE
 
 	// we are now ready to finalize
-	// unregister the ship qdel signal -- we add ourselves to the ship's applications, and it qdels us
-	// when it deletes, so we don't need to worry about that anymore. we keep the applicant deletion signal
-	UnregisterSignal(parent_ship, COMSIG_QDELETING)
-	LAZYSET(parent_ship.applications, ckey(app_key), src)
-
 	if(parent_ship.owner_mob != null)
 		// don't need to use check_blinking, because it DAMN well better be blinking now that we exist
 		parent_ship.owner_act.set_blinking(TRUE)
@@ -81,6 +80,8 @@
 // the applicant is in the midst of writing their application
 /datum/ship_application/proc/important_deleting_during_apply()
 	SIGNAL_HANDLER
+	if(status != SHIP_APPLICATION_UNFINISHED)
+		return
 	UnregisterSignal(parent_ship, COMSIG_QDELETING)
 	UnregisterSignal(app_mob, COMSIG_QDELETING)
 	status = SHIP_APPLICATION_CANCELLED
@@ -127,7 +128,13 @@
 // Topic() for when the ship owner clicks on approve/deny in their chat window
 /datum/ship_application/Topic(href, href_list)
 	. = ..()
+	if(QDELETED(src) || QDELETED(parent_ship))
+		to_chat(usr, span_warning("That application no longer exists."), MESSAGE_TYPE_INFO)
+		return
 	if(usr != parent_ship.owner_mob)
+		return
+	if(src != LAZYACCESS(parent_ship.applications, ckey(app_key)))
+		to_chat(usr, span_warning("That application is no longer valid."), MESSAGE_TYPE_INFO)
 		return
 
 	if(href_list["application_accept"])

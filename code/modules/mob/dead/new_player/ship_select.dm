@@ -46,6 +46,12 @@
 						to_chat(spawnee, span_notice("Application cancelled, or there was an error sending the application."))
 					return
 				switch(current_application.status)
+					if(SHIP_APPLICATION_UNFINISHED)
+						alert(spawnee, "You already have an application window open for this ship!")
+						return
+					if(SHIP_APPLICATION_CANCELLED)
+						alert(spawnee, "Your previous application is still closing. Please try again.")
+						return
 					if(SHIP_APPLICATION_ACCEPTED)
 						to_chat(spawnee, span_notice("Your ship application was accepted, continuing..."))
 					if(SHIP_APPLICATION_PENDING)

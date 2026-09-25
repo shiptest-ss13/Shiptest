@@ -27,6 +27,13 @@ export const ShipSelect = (props, context) => {
   const templates = data.templates || [];
 
   const [currentTab, setCurrentTab] = useLocalState(context, 'tab', 1);
+
+  const [selectedShipName, setSelectedShipName] = useLocalState(
+    context,
+    'selectedShipName',
+    null
+  );
+
   const [selectedShipRef, setSelectedShipRef] = useLocalState(
     context,
     'selectedShipRef',
@@ -116,6 +123,7 @@ export const ShipSelect = (props, context) => {
                         }
                         onClick={() => {
                           setSelectedShipRef(ship.ref);
+                          setSelectedShipName(ship.name);
                           setCurrentTab(2);
                           const newTab = {
                             name: 'Job Select',
@@ -148,7 +156,7 @@ export const ShipSelect = (props, context) => {
         )}
         {currentTab === 2 && !selectedShip && (
           <Section
-            title="Ship Details"
+            title={`Ship Details - ${decodeHtmlEntities(selectedShipName)}`}
             buttons={
               <Button
                 content="Back"
