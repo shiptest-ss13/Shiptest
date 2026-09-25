@@ -2,8 +2,8 @@
 	name = "The Flu"
 	max_stages = 3
 	spread_text = "Airborne"
-	cure_text = "Spaceacillin"
-	cures = list(/datum/reagent/medicine/spaceacillin)
+	cure_text = "Broad-spectrum antibiotics"
+	cures = list(/datum/reagent/medicine/antibiotic)
 	cure_chance = 5
 	agent = "H13N1 flu virion"
 	viable_mobtypes = list(/mob/living/carbon/human)

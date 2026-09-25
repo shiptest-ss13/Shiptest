@@ -254,7 +254,7 @@
 
 /datum/blackmarket_item/ammo/mauler_mag
 	name = "Mauler Magazine"
-	desc = "A 12 round 9mm magazine for the Mauler machine pistol."
+	desc = "A 18 round 9mm magazine for the Mauler machine pistol."
 	item = /obj/item/ammo_box/magazine/m9mm_mauler/extended
 
 	cost_min = 150
@@ -262,6 +262,17 @@
 	stock_min = 3
 	stock_max = 5
 	availability_prob = 0
+
+/datum/blackmarket_item/ammo/heater_mag
+	name = "Heater Casket Magazine"
+	desc = "50 rounds for when you really gotta stroke that flame."
+	item = /obj/item/ammo_box/magazine/heater/extended
+
+	cost_min = 900
+	cost_max = 1500
+	stock_min = 1
+	stock_max = 3
+	availability_prob = 20
 
 /datum/blackmarket_item/ammo/spitter_mag
 	name = "Spitter Magazine"

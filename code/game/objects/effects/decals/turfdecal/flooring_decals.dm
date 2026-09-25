@@ -225,6 +225,22 @@ TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 /obj/effect/turf_decal/industrial/warning/green/fulltile
 	icon_state = "stripefulltile_green"
 
+/obj/effect/turf_decal/industrial/warning/orange
+	name = "hazard stripes"
+	color = "#eeac2e"
+
+/obj/effect/turf_decal/industrial/warning/orange/corner
+	icon_state = "stripecorner"
+
+/obj/effect/turf_decal/industrial/warning/orange/full
+	icon_state = "stripefull"
+
+/obj/effect/turf_decal/industrial/warning/orange/cee
+	icon_state = "stripecee"
+
+/obj/effect/turf_decal/industrial/warning/orange/fulltile
+	icon_state = "stripefulltile"
+
 /obj/effect/turf_decal/industrial/custodial
 	name = "custodial stripes"
 	icon_state = "stripe"
