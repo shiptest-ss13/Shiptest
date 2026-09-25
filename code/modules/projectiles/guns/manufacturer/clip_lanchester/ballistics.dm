@@ -501,6 +501,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	fire_sound = 'sound/weapons/gun/rifle/cm82.ogg'
 	icon_state = "cm82"
 	item_state = "cm82"
+	manufacturer = MANUFACTURER_MINUTEMAN
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
@@ -553,12 +554,16 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 
 	icon_state = "cm24"
 	item_state = "cm24"
-	manufacturer = MANUFACTURER_NONE
+	manufacturer = MANUFACTURER_MINUTEMAN //only until we init so that this goes to lanchester city firearms plant in autowiki
 
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
 
 NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
+
+/obj/item/gun/ballistic/automatic/assault/skm/cm24/Initialize(mapload, spawn_empty)
+	. = ..()
+	manufacturer = MANUFACTURER_NONE // back to the status quo
 
 /obj/item/gun/ballistic/automatic/hmg/cm40
 	name = "\improper CM-40"
@@ -809,5 +814,3 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 
 /obj/item/gun/ballistic/shotgun/automatic/cm15/incendiary
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g/incendiary
-
-
