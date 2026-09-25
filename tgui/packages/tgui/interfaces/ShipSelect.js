@@ -167,8 +167,8 @@ export const ShipSelect = (props, context) => {
             }
           >
             <NoticeBox>
-              This ship is no longer accepting new crew. It may have closed
-              its applications, or ceased to exist.
+              This ship is no longer accepting new crew. It may have closed its
+              applications, or ceased to exist.
             </NoticeBox>
           </Section>
         )}
