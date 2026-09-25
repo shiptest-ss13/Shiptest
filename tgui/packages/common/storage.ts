@@ -10,6 +10,7 @@ export const IMPL_MEMORY = 0;
 export const IMPL_HUB_STORAGE = 1;
 export const IMPL_IFRAME_INDEXED_DB = 2;
 export const IMPL_INDEXED_DB = 3;
+export const IMPL_LOCAL_STORAGE = 4;
 
 const INDEXED_DB_VERSION = 1;
 const INDEXED_DB_NAME = 'tgui';
@@ -22,7 +23,8 @@ type StorageImplementation =
   | typeof IMPL_MEMORY
   | typeof IMPL_HUB_STORAGE
   | typeof IMPL_IFRAME_INDEXED_DB
-  | typeof IMPL_INDEXED_DB;
+  | typeof IMPL_INDEXED_DB
+  | typeof IMPL_LOCAL_STORAGE;
 
 type StorageBackend = {
   impl: StorageImplementation;
@@ -54,6 +56,15 @@ const testHubStorage = testGeneric(
 const testIndexedDb = testGeneric(() => (
   (window.indexedDB || window.msIndexedDB)
   && !!(window.IDBTransaction || window.msIDBTransaction)
+));
+
+// TODO: Also remove with 516
+// Localstorage can sometimes throw an error, even if DOM storage is not
+// disabled in IE11 settings.
+// See: https://superuser.com/questions/1080011
+// prettier-ignore
+const testLocalStorage = testGeneric(() => (
+  !!(window.localStorage && window.localStorage.getItem)
 ));
 
 const STORAGE_CDN_TIMEOUT = 5000;
@@ -111,6 +122,33 @@ class MemoryBackend implements StorageBackend {
 
   async clear(): Promise<void> {
     this.store = {};
+  }
+}
+
+class LocalStorageBackend implements StorageBackend {
+  public impl: StorageImplementation;
+
+  constructor() {
+    this.impl = IMPL_LOCAL_STORAGE;
+  }
+
+  async get(key: string): Promise<any> {
+    const value = localStorage.getItem(key);
+    if (typeof value === 'string') {
+      return JSON.parse(value);
+    }
+  }
+
+  async set(key: string, value: any): Promise<void> {
+    localStorage.setItem(key, JSON.stringify(value));
+  }
+
+  async remove(key: string): Promise<void> {
+    localStorage.removeItem(key);
+  }
+
+  async clear(): Promise<void> {
+    localStorage.clear();
   }
 }
 
@@ -293,7 +331,7 @@ class StorageProxy implements StorageBackend {
 
   constructor() {
     this.backendPromise = (async () => {
-      // TODO: Remove with 516
+      // TODO: Remove all this with 516
       if (Byond.TRIDENT) {
         if (testIndexedDb()) {
           try {
@@ -302,8 +340,19 @@ class StorageProxy implements StorageBackend {
             return backend;
           } catch {}
         }
+        this.log(
+          'warn',
+          'Failed to init indexedDB for 515, falling back to local storage'
+        );
 
-        this.log('warn', 'Enabling memory as last resort for 515');
+        if (testLocalStorage()) {
+          return new LocalStorageBackend();
+        }
+
+        this.log(
+          'warn',
+          'Failed to init localstorage for 515, enabling memory as last resort'
+        );
         return new MemoryBackend();
       }
 
