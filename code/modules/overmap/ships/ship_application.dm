@@ -38,8 +38,7 @@
 
 /datum/ship_application/Destroy()
 	SStgui.close_uis(src)
-	if(!isnull(parent_ship) && src == LAZYACCESS(parent_ship.applications, ckey(app_key)))
-		LAZYREMOVE(parent_ship.applications, ckey(app_key))
+	LAZYREMOVE(parent_ship.applications, ckey(app_key))
 	// an application the player never finished sending isn't worth telling them about
 	if(status != SHIP_APPLICATION_UNFINISHED && status != SHIP_APPLICATION_CANCELLED)
 		var/client/app_client = get_applicant_client()
