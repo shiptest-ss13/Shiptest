@@ -431,3 +431,74 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/olive/corpo/left, 0)
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/olive/corpo/right, 0)
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/olive/corpo/corner, 0)
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/olive/corpo/internal_corner, 0)
+
+// white, new
+
+/obj/structure/chair/sofa/white
+	icon_state = "white_sofa_middle"
+
+/obj/structure/chair/sofa/white/left
+	icon_state = "white_sofa_end_left"
+
+/obj/structure/chair/sofa/white/right
+	icon_state = "white_sofa_end_right"
+
+/obj/structure/chair/sofa/white/corner
+	icon_state = "white_sofa_corner"
+
+/obj/structure/chair/sofa/white/internal_corner
+	icon_state = "white_sofa_internalcorner"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white/left, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white/right, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white/corner, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white/internal_corner, 0)
+
+// white, old
+
+/obj/structure/chair/sofa/white/old
+	name = "old ratty sofa"
+	icon_state = "white_oldsofa_middle"
+
+/obj/structure/chair/sofa/white/old/left
+	icon_state = "white_oldsofa_end_left"
+
+/obj/structure/chair/sofa/white/old/right
+	icon_state = "white_oldsofa_end_right"
+
+/obj/structure/chair/sofa/white/old/corner
+	icon_state = "white_oldsofa_corner"
+
+/obj/structure/chair/sofa/white/old/internal_corner
+	icon_state = "white_oldsofa_internalcorner"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white/old, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white/old/left, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white/old/right, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white/old/corner, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white/old/internal_corner, 0)
+
+// white, corpo
+
+/obj/structure/chair/sofa/white/corpo
+	name = "corporate sofa"
+	icon_state = "white_corpsofa_middle"
+
+/obj/structure/chair/sofa/white/corpo/left
+	icon_state = "white_corpsofa_end_left"
+
+/obj/structure/chair/sofa/white/corpo/right
+	icon_state = "white_corpsofa_end_right"
+
+/obj/structure/chair/sofa/white/corpo/corner
+	icon_state = "white_corpsofa_corner"
+
+/obj/structure/chair/sofa/white/corpo/internal_corner
+	icon_state = "white_corpsofa_internalcorner"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white/corpo, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white/corpo/left, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white/corpo/right, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white/corpo/corner, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/white/corpo/internal_corner, 0)
