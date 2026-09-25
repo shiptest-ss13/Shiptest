@@ -15,7 +15,8 @@
       const MAX_MESSAGES = 1000;
 
       const dbPromise = new Promise((resolve, reject) => {
-        const indexedDB = window.indexedDB;
+        //TODO: Remove latter with 516
+        const indexedDB = window.indexedDB || window.msIndexedDB;
         const req = indexedDB.open(INDEXED_DB_NAME, INDEXED_DB_VERSION);
         req.onupgradeneeded = (event) => {
           try {
