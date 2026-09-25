@@ -102,7 +102,7 @@ class IFrameIndexedDbBackend implements StorageBackend {
       };
       const timeout = setTimeout(
         () => resolveReady(false),
-        STORAGE_CDN_TIMEOUT,
+        STORAGE_CDN_TIMEOUT
       );
 
       fetch(Byond.storageCdn, { method: 'HEAD' })
@@ -180,6 +180,7 @@ class StorageProxy implements StorageBackend {
   public diagnostics: StorageDiagnostic[] = [];
 
   private log(level: StorageDiagnostic['level'], message: string) {
+    console.error(message);
     this.diagnostics.push({ level, message });
   }
 
@@ -198,12 +199,15 @@ class StorageProxy implements StorageBackend {
 
           const iframeHasPersistedStorage = (
             await Promise.all(
-              persistedStorageKeys.map((setting) => iframe.get(setting)),
+              persistedStorageKeys.map((setting) => iframe.get(setting))
             )
           ).some((settings) => settings !== undefined);
 
           if (!iframeHasPersistedStorage) {
-            this.log('info', 'No existing iframe data, migrating from byondstorage');
+            this.log(
+              'info',
+              'No existing iframe data, migrating from byondstorage'
+            );
             const hubStorageWasEnabled = testHubStorage();
             if (!hubStorageWasEnabled) {
               Byond.winset(null, 'browser-options', '+byondstorage');
@@ -216,7 +220,7 @@ class StorageProxy implements StorageBackend {
                     // created, so we have to wait a little bit before using it.
                     setTimeout(resolve, 1);
                   },
-                  { once: true },
+                  { once: true }
                 );
               });
             }
@@ -235,9 +239,12 @@ class StorageProxy implements StorageBackend {
                     this.log('info', `Migrated '${setting}' from byondstorage`);
                   }
                 } catch {
-                  this.log('warn', `Failed to migrate '${setting}' from byondstorage`);
+                  this.log(
+                    'warn',
+                    `Failed to migrate '${setting}' from byondstorage`
+                  );
                 }
-              }),
+              })
             );
 
             if (!hubStorageWasEnabled) {
@@ -250,13 +257,16 @@ class StorageProxy implements StorageBackend {
           return iframe;
         }
 
-        this.log('warn', `Iframe storage failed to load from ${Byond.storageCdn}`);
+        this.log(
+          'warn',
+          `Iframe storage failed to load from ${Byond.storageCdn}`
+        );
         iframe.destroy();
       } else {
         this.log('info', 'No storage CDN configured');
       }
 
-      if (testHubStorage()) {
+      if (testHubStorage() && !Byond.TRIDENT) {
         this.log('warn', 'Falling back to hubStorage (byondstorage)');
         return new HubStorageBackend();
       }

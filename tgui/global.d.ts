@@ -200,4 +200,8 @@ interface Window {
   hubStorage: Storage;
   domainStorage: Storage;
   serverStorage: Storage;
+  
+  // IE IndexedDB stuff.
+  msIndexedDB: IDBFactory;
+  msIDBTransaction: IDBTransaction;
 }

@@ -29,7 +29,7 @@
         }
 
         return new Promise((resolve, reject) => {
-          //TODO: Remove this swith 516
+          //TODO: Remove this with 516
           const indexedDB = window.indexedDB || window.msIndexedDB;
           const req = indexedDB.open(INDEXED_DB_NAME, INDEXED_DB_VERSION);
           req.onupgradeneeded = (event) => {
