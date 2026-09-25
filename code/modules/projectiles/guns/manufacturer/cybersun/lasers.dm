@@ -519,7 +519,7 @@
 	spread = 0
 
 	aiming_time = 50
-	aiming_time_fire_threshold = 5
+	aiming_time_fire_threshold = 10
 
 	fire_sound_volume = 100
 
