@@ -6,12 +6,23 @@
  * @license MIT
  */
 
+export const IMPL_MEMORY = 0;
 export const IMPL_HUB_STORAGE = 1;
 export const IMPL_IFRAME_INDEXED_DB = 2;
+export const IMPL_INDEXED_DB = 3;
+
+const INDEXED_DB_VERSION = 1;
+const INDEXED_DB_NAME = 'tgui';
+const INDEXED_DB_STORE_NAME = 'storage-v1';
+
+const READ_ONLY = 'readonly';
+const READ_WRITE = 'readwrite';
 
 type StorageImplementation =
+  | typeof IMPL_MEMORY
   | typeof IMPL_HUB_STORAGE
-  | typeof IMPL_IFRAME_INDEXED_DB;
+  | typeof IMPL_IFRAME_INDEXED_DB
+  | typeof IMPL_INDEXED_DB;
 
 type StorageBackend = {
   impl: StorageImplementation;
@@ -37,6 +48,13 @@ const testGeneric = (testFn: () => boolean) => (): boolean => {
 const testHubStorage = testGeneric(
   () => window.hubStorage && !!window.hubStorage.getItem
 );
+
+// TODO: Remove with 516
+// prettier-ignore
+const testIndexedDb = testGeneric(() => (
+  (window.indexedDB || window.msIndexedDB)
+  && !!(window.IDBTransaction || window.msIDBTransaction)
+));
 
 const STORAGE_CDN_TIMEOUT = 5000;
 const persistedStorageKeys = ['panel-settings', 'chat-state', 'chat-messages'];
@@ -67,6 +85,95 @@ class HubStorageBackend implements StorageBackend {
 
   async clear(): Promise<void> {
     window.hubStorage.clear();
+  }
+}
+
+class MemoryBackend implements StorageBackend {
+  private store: Record<string, any>;
+  public impl: StorageImplementation;
+
+  constructor() {
+    this.impl = IMPL_MEMORY;
+    this.store = {};
+  }
+
+  async get(key: string): Promise<any> {
+    return this.store[key];
+  }
+
+  async set(key: string, value: any): Promise<void> {
+    this.store[key] = value;
+  }
+
+  async remove(key: string): Promise<void> {
+    this.store[key] = undefined;
+  }
+
+  async clear(): Promise<void> {
+    this.store = {};
+  }
+}
+
+class IndexedDbBackend implements StorageBackend {
+  public impl: StorageImplementation;
+  public dbPromise: Promise<IDBDatabase>;
+
+  constructor() {
+    this.impl = IMPL_INDEXED_DB;
+    this.dbPromise = new Promise((resolve, reject) => {
+      const indexedDB = window.indexedDB || window.msIndexedDB;
+      const req = indexedDB.open(INDEXED_DB_NAME, INDEXED_DB_VERSION);
+      req.onupgradeneeded = () => {
+        try {
+          req.result.createObjectStore(INDEXED_DB_STORE_NAME);
+        } catch (err) {
+          reject(
+            new Error(
+              'Failed to upgrade IDB: ' +
+                (err instanceof Error ? err.message : String(err))
+            )
+          );
+        }
+      };
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => {
+        reject(new Error('Failed to open IDB: ' + req.error));
+      };
+    });
+  }
+
+  private async getStore(mode: IDBTransactionMode): Promise<IDBObjectStore> {
+    const db = await this.dbPromise;
+    return db
+      .transaction(INDEXED_DB_STORE_NAME, mode)
+      .objectStore(INDEXED_DB_STORE_NAME);
+  }
+
+  async get(key: string): Promise<any> {
+    const store = await this.getStore(READ_ONLY);
+    return new Promise((resolve, reject) => {
+      const req = store.get(key);
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+  }
+
+  async set(key: string, value: any): Promise<void> {
+    // NOTE: We deliberately make this operation transactionless
+    const store = await this.getStore(READ_WRITE);
+    store.put(value, key);
+  }
+
+  async remove(key: string): Promise<void> {
+    // NOTE: We deliberately make this operation transactionless
+    const store = await this.getStore(READ_WRITE);
+    store.delete(key);
+  }
+
+  async clear(): Promise<void> {
+    // NOTE: We deliberately make this operation transactionless
+    const store = await this.getStore(READ_WRITE);
+    store.clear();
   }
 }
 
@@ -186,6 +293,20 @@ class StorageProxy implements StorageBackend {
 
   constructor() {
     this.backendPromise = (async () => {
+      // TODO: Remove with 516
+      if (Byond.TRIDENT) {
+        if (testIndexedDb()) {
+          try {
+            const backend = new IndexedDbBackend();
+            await backend.dbPromise;
+            return backend;
+          } catch {}
+        }
+
+        this.log('warn', 'Enabling memory as last resort for 515');
+        return new MemoryBackend();
+      }
+
       // Prefer the configured iframe storage when available. hubStorage may
       // already be enabled by another window/server, but the iframe origin is
       // the server-configured storage boundary.
@@ -266,7 +387,7 @@ class StorageProxy implements StorageBackend {
         this.log('info', 'No storage CDN configured');
       }
 
-      if (testHubStorage() && !Byond.TRIDENT) {
+      if (testHubStorage()) {
         this.log('warn', 'Falling back to hubStorage (byondstorage)');
         return new HubStorageBackend();
       }
