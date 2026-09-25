@@ -25,6 +25,7 @@
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
 
 	var/manufacturer = MANUFACTURER_NONE // manufacturer shown in examine text
+	var/autowiki_hidden = FALSE
 
 	// MUZZLE FLASH //
 	var/obj/effect/muzzle_flash/muzzle_flash // effect to use

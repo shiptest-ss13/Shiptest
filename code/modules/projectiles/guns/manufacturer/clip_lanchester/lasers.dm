@@ -38,6 +38,7 @@
 	manufacturer = MANUFACTURER_MINUTEMAN_LASER
 
 /obj/item/gun/energy/kalix/clip/old
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "ECM-1"
 	desc = "This is either a flawless replica, or a genuine example of the colonial-era laser weaponry issued to Free Zohil forces in CLIP's founding years. Over a hundred years old, and especially difficult to source replacement parts for, but still deadly. Kept around for ceremonial use in the CLIP Minutemen, and, rarely, for influential members of all divisions."
 
@@ -65,6 +66,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix)
 
 /obj/item/gun/energy/laser/e50/clip
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	name = "ECM-50 \"Pyracanth\""
 	desc = "An extensive modification of the Eoehoma E-50 Emitter by Clover Photonics, customized for CLIP-BARD to fight Xenofauna. Sacrifices some of the E-50's raw power for vastly improved energy efficiency, while preserving its incendiary side-effects."
 

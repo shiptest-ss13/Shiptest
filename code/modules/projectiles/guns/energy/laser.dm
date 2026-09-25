@@ -36,6 +36,7 @@
 	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/laser/retro
+	autowiki_hidden = TRUE //not obtainable afaik
 	name ="SL L104"
 	desc = "An antiquated model of the basic lasergun, no longer used or sold by Sharplite. Nevertheless, the sheer popularity of this model makes it a somewhat common sight to this day."
 
@@ -71,12 +72,14 @@
 	selfcharge = FALSE
 
 /obj/item/gun/energy/laser/captain/scattershot
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "scatter shot laser rifle"
 	desc = "An industrial-grade heavy-duty laser rifle with a modified laser lens to scatter its shot into multiple smaller lasers. The inner-core can self-charge for theoretically infinite use."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser/slug)
 	shaded_charge = FALSE
 
 /obj/item/gun/energy/laser/cyborg
+	autowiki_hidden = TRUE //borg module
 	can_charge = FALSE
 	desc = "An energy-based laser gun that draws power from the cyborg's internal energy cell directly. So this is what freedom looks like?"
 	use_cyborg_cell = TRUE
@@ -92,6 +95,7 @@
 	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/laser/scatter/shotty
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "energy shotgun"
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "cshotgun"
@@ -163,6 +167,7 @@
 	ammo_x_offset = 2
 	selfcharge = TRUE
 	manufacturer = MANUFACTURER_NONE
+	autowiki_hidden = TRUE //laser tag who cares
 
 /obj/item/gun/energy/laser/bluetag/hitscan
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/bluetag/hitscan)
@@ -176,11 +181,13 @@
 	ammo_x_offset = 2
 	selfcharge = TRUE
 	manufacturer = MANUFACTURER_NONE
+	autowiki_hidden = TRUE //laser tag who cares
 
 /obj/item/gun/energy/laser/redtag/hitscan
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/redtag/hitscan)
 
 /obj/item/gun/energy/laser/hitscanpistol
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "experimental laser gun"
 	desc = "A highly experimental laser gun, with unknown inner workings. It has no markings besides a \"GROUP A\" inscription on the barrel."
 	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'

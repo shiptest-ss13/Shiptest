@@ -19,6 +19,10 @@
 	var/total_output = ""
 
 	for (var/datum/autowiki/autowiki_type as anything in subtypesof(/datum/autowiki))
+		// an abstract parent exists to share helpers between a family of pages, not to be one
+		if (!initial(autowiki_type.page))
+			continue
+
 		var/datum/autowiki/autowiki = new autowiki_type
 		var/output = autowiki.generate()
 

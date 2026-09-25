@@ -187,4 +187,4 @@
 		/obj/item/ammo_box/magazine/internal/derr357,
 	)
 
-EMPTY_GUN_HELPER(derringer)
+EMPTY_GUN_HELPER(automatic/pistol/derringer)
