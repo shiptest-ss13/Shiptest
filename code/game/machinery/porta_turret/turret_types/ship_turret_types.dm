@@ -446,7 +446,7 @@
 
 /obj/machinery/porta_turret/ship/cybersun/light
 	name = "MT44 Photino Turret"
-	desc = "The lightest turret produced by Tadeusz Armory, an ionization beamer is melded with an advanced targetting system to swat everything from asteroids to anarchists."
+	desc = "The lightest turret produced by Tadeusz Armory, an ionization beamer is melded with an advanced targetting system to swat everything from asteroids to overly spirited anarchists."
 
 	integrity_failure = 0.4
 	max_integrity = 150
@@ -476,7 +476,7 @@
 
 	shot_delay = 20
 	scan_range = 10
-	burst_size = 3
+	burst_size = 2
 	burst_delay = 0.25 SECONDS
 	spread = 5
 
@@ -492,7 +492,7 @@
 	lethal_projectile_sound = 'sound/weapons/gun/cybersun/gauss2.ogg'
 
 	scan_range = 10
-	burst_size = 6
+	burst_size = 4
 	burst_delay = 1
 	spread = 5
 

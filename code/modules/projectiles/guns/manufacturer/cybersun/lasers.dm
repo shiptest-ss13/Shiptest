@@ -516,6 +516,8 @@
 	recoil = 2
 	recoil_unwielded = 20
 
+	spread = 0
+
 	aiming_time = 50
 	aiming_time_fire_threshold = 5
 
