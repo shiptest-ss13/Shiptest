@@ -13,12 +13,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "aD" = (
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
 /obj/machinery/power/terminal{
 	dir = 1
-	},
-/obj/structure/railing{
-	dir = 8
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
@@ -26,15 +25,15 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "aE" = (
-/obj/effect/turf_decal/siding/wood/ebony{
-	dir = 1
-	},
 /obj/machinery/light/small/directional/north,
 /obj/machinery/light_switch{
 	pixel_x = 10;
 	pixel_y = 20
 	},
 /obj/machinery/hydroponics/wooden,
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 5
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "aT" = (
@@ -145,6 +144,10 @@
 	pixel_x = -6;
 	pixel_y = 8
 	},
+/obj/item/clothing/under/suit/charcoal{
+	pixel_x = -8;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cz" = (
@@ -235,6 +238,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
+"ev" = (
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 4
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/crew/canteen)
 "ew" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -459,14 +468,6 @@
 	pixel_x = -1;
 	pixel_y = -2
 	},
-/obj/item/storage/firstaid/advanced{
-	pixel_x = -1;
-	pixel_y = -2
-	},
-/obj/item/storage/firstaid/brute{
-	pixel_x = -9;
-	pixel_y = -3
-	},
 /obj/item/storage/firstaid/brute{
 	pixel_x = -9;
 	pixel_y = -3
@@ -478,10 +479,6 @@
 /obj/item/storage/firstaid/regular{
 	pixel_x = -4;
 	pixel_y = -9
-	},
-/obj/item/storage/firstaid/fire{
-	pixel_x = 4;
-	pixel_y = -10
 	},
 /obj/item/storage/firstaid/fire{
 	pixel_x = 4;
@@ -542,6 +539,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
@@ -878,6 +878,9 @@
 	pixel_x = -10;
 	pixel_y = -12
 	},
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "lU" = (
@@ -892,6 +895,9 @@
 	},
 /obj/machinery/firealarm/directional/north{
 	pixel_x = -1
+	},
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 8
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
@@ -1621,7 +1627,7 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
-/obj/machinery/holopad/secure,
+/obj/machinery/holopad,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "yz" = (
@@ -1835,11 +1841,11 @@
 /area/ship/cargo)
 "Dr" = (
 /obj/structure/chair/sofa/blue/corpo/right,
-/obj/item/clothing/head/hairbow/darkblue{
-	pixel_x = 5;
-	pixel_y = 7
-	},
 /obj/machinery/light/small/directional/west,
+/obj/item/clothing/head/hairbow/darkblue{
+	pixel_x = -6;
+	pixel_y = 0
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "Du" = (
@@ -2160,7 +2166,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "In" = (
-/obj/structure/dresser/wall/directional/south,
+/obj/effect/turf_decal/siding/wood/ebony{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner/ebony{
+	dir = 1
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "IC" = (
@@ -2216,6 +2227,9 @@
 /obj/machinery/light_switch{
 	pixel_x = -10;
 	pixel_y = -19;
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
 /turf/open/floor/wood/ebony,
@@ -2296,9 +2310,6 @@
 /area/ship/medical)
 "KQ" = (
 /obj/machinery/power/smes/engineering,
-/obj/structure/railing{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -3246,8 +3257,8 @@ va
 mt
 mt
 aE
-hx
-hx
+ev
+ev
 UC
 LM
 Qt
