@@ -130,6 +130,7 @@
 	damage = 75
 	armour_penetration = 20
 	range = 20
+	projectile_piercing = PASSGLASS
 
 
 /obj/projectile/beam/flare
