@@ -7,6 +7,7 @@ import {
   Table,
   LabeledList,
   Collapsible,
+  NoticeBox,
 } from '../components';
 import { Window } from '../layouts';
 import { createSearch, decodeHtmlEntities } from 'common/string';
@@ -145,7 +146,25 @@ export const ShipSelect = (props, context) => {
             </Table>
           </Section>
         )}
-        {currentTab === 2 && (
+        {currentTab === 2 && !selectedShip && (
+          <Section
+            title="Ship Details"
+            buttons={
+              <Button
+                content="Back"
+                onClick={() => {
+                  setCurrentTab(1);
+                }}
+              />
+            }
+          >
+            <NoticeBox>
+              This ship is no longer accepting new crew. It may have closed
+              its applications, or ceased to exist.
+            </NoticeBox>
+          </Section>
+        )}
+        {currentTab === 2 && !!selectedShip && (
           <>
             <Section
               title={`Ship Details - ${decodeHtmlEntities(selectedShip.name)}`}
