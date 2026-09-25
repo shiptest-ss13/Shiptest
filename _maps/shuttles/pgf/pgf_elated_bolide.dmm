@@ -362,7 +362,6 @@
 	dir = 4;
 	wire_compatible = 1;
 	id = "bolide_grid";
-	on = 0;
 	req_access = list(0)
 	},
 /obj/effect/turf_decal/borderfloor{
@@ -408,7 +407,6 @@
 	dir = 4;
 	wire_compatible = 1;
 	id = "bolide_grid";
-	on = 0;
 	req_access = list(0)
 	},
 /turf/open/floor/plasteel/patterned/ridged,
@@ -1135,10 +1133,6 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
-"eo" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering)
 "ep" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 1
@@ -7360,11 +7354,13 @@
 /obj/effect/turf_decal/corner/opaque/navyblue/diagonal,
 /obj/effect/turf_decal/siding/black,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
 /obj/machinery/light/directional/south,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/ccommons)
 "BO" = (
@@ -8339,8 +8335,9 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "EY" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/medical/recovery)
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering)
 "Fd" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/light/floor,
@@ -10642,6 +10639,9 @@
 /obj/structure/noticeboard/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
+"Os" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/medical/recovery)
 "Ou" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
@@ -13717,7 +13717,6 @@
 "Zp" = (
 /obj/machinery/atmospherics/pipe/manifold4w/orange/hidden,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -13726,6 +13725,9 @@
 	},
 /obj/machinery/meter/atmos,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Zs" = (
@@ -14405,7 +14407,7 @@ TU
 Zs
 Zs
 ZB
-eo
+EY
 Zs
 au
 au
@@ -15247,7 +15249,7 @@ vb
 nL
 uB
 El
-EY
+Os
 FT
 RN
 mu
@@ -15399,7 +15401,7 @@ WI
 VW
 uB
 nA
-EY
+Os
 IL
 BZ
 eG
