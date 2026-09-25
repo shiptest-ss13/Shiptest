@@ -455,6 +455,9 @@
 			click_turf.Click(click_turf, control, list2params(modifiers))
 	. = 1
 
+/atom/movable/screen/click_catcher/MouseMove(location, control, params)
+	return
+
 /// MouseWheelOn
 /mob/proc/MouseWheelOn(atom/A, delta_x, delta_y, params)
 	return

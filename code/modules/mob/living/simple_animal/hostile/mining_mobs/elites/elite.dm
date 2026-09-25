@@ -71,6 +71,15 @@ While using this makes the system rely on OnFire, it still gives options for tim
 	var/chosen_message
 	var/chosen_attack_num = 0
 
+/datum/action/innate/elite_attack/CreateButton()
+	var/atom/movable/screen/movable/action_button/button = ..()
+	button.maptext = ""
+	button.maptext_x = 8
+	button.maptext_y = 0
+	button.maptext_width = 24
+	button.maptext_height = 12
+	return button
+
 /datum/action/innate/elite_attack/Grant(mob/living/L)
 	if(!istype(L, /mob/living/simple_animal/hostile/asteroid/elite))
 		return FALSE

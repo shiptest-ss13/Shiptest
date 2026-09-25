@@ -917,7 +917,7 @@
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
 
-/datum/action/toggle_scope_zoom/Trigger()
+/datum/action/toggle_scope_zoom/Trigger(trigger_flags)
 	if(!istype(target, /obj/item/gun) || !..())
 		return
 
@@ -1000,7 +1000,7 @@
 			if(gun_firemodes[i] == FIREMODE_AIMED)
 				SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AIMEDFIRE)
 			if(our_action)
-				our_action.UpdateButtonIcon()
+				our_action.UpdateButtons()
 			return
 
 	firemode_index = 1
@@ -1042,9 +1042,9 @@
 	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 	update_appearance()
 	for(var/datum/action/current_action as anything in actions)
-		current_action.UpdateButtonIcon()
+		current_action.UpdateButtons()
 
-/datum/action/item_action/toggle_firemode/UpdateButtonIcon(status_only = FALSE, force = FALSE)
+/datum/action/item_action/toggle_firemode/UpdateButtons(status_only = FALSE, force = FALSE)
 	var/obj/item/gun/our_gun = target
 
 	var/current_firemode = our_gun.gun_firemodes[our_gun.firemode_index]

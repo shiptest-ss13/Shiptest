@@ -172,7 +172,7 @@
 /datum/action/item_action/ramzislayer_charge
 	name = "Charge"
 
-/datum/action/item_action/ramzislayer_charge/Trigger()
+/datum/action/item_action/ramzislayer_charge/Trigger(trigger_flags)
 	if(istype(target, /obj/item/gun/ballistic/shotgun/blasting_hammer))
 		var/obj/item/gun/ballistic/shotgun/blasting_hammer/hammer = target
 		hammer.toggle_charge(owner)

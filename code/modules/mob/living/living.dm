@@ -717,7 +717,7 @@
 		if(mind)
 			for(var/S in mind.spell_list)
 				var/obj/effect/proc_holder/spell/spell = S
-				spell.updateButtonIcon()
+				spell.UpdateButtons()
 		if(excess_healing)
 			INVOKE_ASYNC(src, PROC_REF(emote), "gasp")
 			log_combat(src, src, "revived")
