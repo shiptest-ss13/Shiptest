@@ -55,7 +55,7 @@
 /obj/item/ammo_casing/energy/lorentz/heavy
 	name = "lorentz annihilation lens"
 	caliber = "lorentz"
-	projectile_type = /obj/projectile/beam/lorentz
+	projectile_type = /obj/projectile/beam/lorentz/heavy
 	e_cost = 6000
 
 	select_name = "lorentz"

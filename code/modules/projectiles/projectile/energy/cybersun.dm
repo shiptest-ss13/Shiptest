@@ -127,6 +127,8 @@
 	range = 12
 
 /obj/projectile/beam/lorentz/heavy
+	damage = 75
+	armour_penetration = 20
 	range = 20
 
 
@@ -188,4 +190,4 @@
 	projectile_piercing = PASSGLASS | PASSCLOSEDTURF | PASSMOB
 	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_WALLS | PROJECTILE_BONUS_DAMAGE_RWALLS | PROJECTILE_BONUS_DAMAGE_MINERALS
 	wall_damage_override = 1000
-	range = 9
+	range = 12
