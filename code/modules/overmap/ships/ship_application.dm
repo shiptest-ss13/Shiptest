@@ -14,18 +14,22 @@
 	/// The applicant's key. Comparisons are done using ckeys to ensure consistence, but we store the key so
 	/// that if we send it in the application message it's in a format that might be more familiar to the recipient.
 	var/app_key
+	/// Name of the role the applicant picked when they applied. Display only, they still pick their role
+	/// freely after being accepted, but this is informative for the cap still
+	var/app_job
 	/// The extra message sent by the applicant.
 	var/app_msg
 	/// The application's status -- whether or not it has been accepted, rejected, or hasn't been answered yet.
 	var/status = SHIP_APPLICATION_UNFINISHED
 
-/datum/ship_application/New(mob/dead/new_player/applicant, datum/overmap/ship/controlled/parent)
+/datum/ship_application/New(mob/dead/new_player/applicant, datum/overmap/ship/controlled/parent, datum/job/applied_job)
 	// If the admin is in stealth mode, we use their fakekey.
 	app_mob = applicant
 	app_name = app_mob.client?.prefs.real_name
 	app_key = app_mob.client?.holder?.fakekey ? app_mob.client.holder.fakekey : applicant.key
 	app_ckey = applicant.ckey
 	parent_ship = parent
+	app_job = applied_job?.name
 
 	// these are registered so we can cancel the application fill-out if the ship
 	// gets deleted before the application is finalized, or the character spawns in.
