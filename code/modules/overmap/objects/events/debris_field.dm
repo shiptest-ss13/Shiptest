@@ -13,7 +13,7 @@
 
 	var/blocks_sight = TRUE
 
-	empty_space_mapgen = /datum/map_generator/planet_generator/asteroid
+	empty_space_mapgen = /datum/map_generator/planet_generator/debris
 
 	spread_types = list(
 		/datum/overmap/event/meteor/debris = 40,
