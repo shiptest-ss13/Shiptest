@@ -7146,8 +7146,6 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -7157,6 +7155,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-9"
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 1
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "AN" = (
@@ -8336,6 +8338,9 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
+"EY" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/medical/recovery)
 "Fd" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/light/floor,
@@ -10637,9 +10642,6 @@
 /obj/structure/noticeboard/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
-"Os" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/medical/recovery)
 "Ou" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
@@ -13722,8 +13724,8 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/meter/atmos,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Zs" = (
@@ -15245,7 +15247,7 @@ vb
 nL
 uB
 El
-Os
+EY
 FT
 RN
 mu
@@ -15397,7 +15399,7 @@ WI
 VW
 uB
 nA
-Os
+EY
 IL
 BZ
 eG
