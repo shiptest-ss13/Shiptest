@@ -217,7 +217,6 @@
 					visible_message(span_danger("[user] grabs [src] aggressively!"), \
 									span_userdanger("[user] grabs you aggressively!"), span_hear("You hear aggressive shuffling!"), null, user)
 					to_chat(user, span_danger("You grab [src] aggressively!"))
-				drop_all_held_items()
 				stop_pulling()
 				log_combat(user, src, "grabbed", addition="aggressive grab[add_log]")
 			if(GRAB_NECK)
@@ -225,6 +224,7 @@
 				visible_message(span_danger("[user] grabs [src] by the neck!"),\
 								span_userdanger("[user] grabs you by the neck!"), span_hear("You hear aggressive shuffling!"), null, user)
 				to_chat(user, span_danger("You grab [src] by the neck!"))
+				drop_all_held_items()
 				if(!buckled && !density)
 					Move(user.loc)
 			if(GRAB_KILL)
