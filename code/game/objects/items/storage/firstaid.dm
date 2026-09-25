@@ -689,7 +689,7 @@
 	name = "pack of bruise packs"
 	desc = "a sealed, sterile-white plastic package full of bruise packs."
 
-/obj/item/storage/medpack/mesh/PopulateContents()
+/obj/item/storage/medpack/bruisepacks/PopulateContents()
 	var/static/items_inside = list(/obj/item/stack/medical/bruise_pack = 4)
 	generate_items_inside(items_inside,src)
 
