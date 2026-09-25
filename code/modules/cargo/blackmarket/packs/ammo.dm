@@ -101,6 +101,28 @@
 	stock_max = 6
 	availability_prob = 0
 
+/datum/blackmarket_item/ammo/cs_mini
+	name = "Cybersun Micro Cell"
+	desc = "A micro plasma cell for use in the Lensman-5"
+	item = /obj/item/stock_parts/cell/gun/cybersun/mini
+
+	cost_min = 200
+	cost_max = 500
+	stock_min = 2
+	stock_max = 6
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/cs_cell
+	name = "Cybersun Plasma Cell"
+	desc = "A plasma cell for usage in the opportunist revolver."
+	item = /obj/item/stock_parts/cell/gun/cybersun
+
+	cost_min = 400
+	cost_max = 800
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 0
+
 /datum/blackmarket_item/ammo/model_h_mag
 	name = "Model H Magazine"
 	desc = "A 10 round magazine for Model H slug pistol."

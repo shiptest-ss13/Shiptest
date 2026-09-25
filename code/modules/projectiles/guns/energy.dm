@@ -60,6 +60,12 @@
 	// LATCHING //
 	var/latch_closed = TRUE
 	var/latch_toggle_delay = 0.6 SECONDS
+	///latch icon state(for overriding)
+	var/latch_icon_state = "latch"
+	///do we always show the latch? For snowflaked latches i.e. cybersun weapons
+	var/always_show_latch = FALSE
+	//file to pull the latch icon from
+	var/latch_icon = 'icons/obj/guns/cell_latch.dmi'
 
 	// RELOADING - ENERGY //
 	var/obj/item/stock_parts/cell/gun/cell // type of cell we use
@@ -314,6 +320,8 @@
 		manufacturer_prefix = "sharplite"
 	else if (our_gun.manufacturer == MANUFACTURER_PGF)
 		manufacturer_prefix = "etherbor"
+	else if (our_gun.manufacturer == MANUFACTURER_CYBERSUN)
+		manufacturer_prefix = "cybersun"
 	else if (our_gun.manufacturer == MANUFACTURER_MINUTEMAN_LASER)
 		manufacturer_prefix = "clip"
 	else
@@ -322,7 +330,7 @@
 	current_ammotype = lowertext(current_ammotype)
 
 	// A list of all ammotypes that have icons for them
-	if (!(current_ammotype in list("kill", "disable", "overcharge", "stun", "ion", "energy", "ar", "dmr", "focus", "scatter")))
+	if (!(current_ammotype in list("kill", "disable", "overcharge", "stun", "ion", "energy", "ar", "dmr", "flare", "lorentz", "ionization", "focus", "scatter")))
 		current_ammotype = "fallback"
 
 	button_icon_state = "[manufacturer_prefix]["_laser_"][current_ammotype]"
@@ -361,24 +369,24 @@
 	. = ..()
 	if(!automatic_charge_overlays || QDELETED(src))
 		return
-	// Every time I see code this "flexible", a kitten fucking dies //it got worse
+	// Every time I see code this "flexible", a kitten fucking dies //it got worse //help
 	//todo: refactor this a bit to allow showing of charge on a gun's cell
 	var/overlay_icon_state = "[icon_state]_charge"
 	var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]
 	var/ratio = get_charge_ratio()
-	if(ismob(loc) && !internal_magazine)
+	if((ismob(loc) && !internal_magazine) || always_show_latch)
 		var/mutable_appearance/latch_overlay
-		latch_overlay = mutable_appearance('icons/obj/guns/cell_latch.dmi')
+		latch_overlay = mutable_appearance(latch_icon)
 		if(latch_closed)
 			if(cell)
-				latch_overlay.icon_state = "latch-on-full"
+				latch_overlay.icon_state = "[latch_icon_state]-on-full"
 			else
-				latch_overlay.icon_state = "latch-on-empty"
+				latch_overlay.icon_state = "[latch_icon_state]-on-empty"
 		else
 			if(cell)
-				latch_overlay.icon_state = "latch-off-full"
+				latch_overlay.icon_state = "[latch_icon_state]-off-full"
 			else
-				latch_overlay.icon_state = "latch-off-empty"
+				latch_overlay.icon_state = "[latch_icon_state]-off-empty"
 		. += latch_overlay
 	if(cell)
 		. += "[icon_state]_cell"
