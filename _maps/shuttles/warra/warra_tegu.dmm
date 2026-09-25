@@ -1642,8 +1642,7 @@
 	dir = 4
 	},
 /obj/machinery/computer/processing_unit_console/directional/south{
-	output_dir = 1;
-	machinedir = 8
+	dx = -1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
@@ -2052,6 +2051,7 @@
 /obj/item/storage/backpack/messenger,
 /obj/item/storage/backpack/duffelbag,
 /obj/item/clothing/under/warra/supply/qm,
+/obj/item/clothing/suit/toggle/chorejacket/warra,
 /obj/item/clothing/head/hardhat/orange,
 /obj/item/clothing/head/warra/cap/supply,
 /obj/item/clipboard,
