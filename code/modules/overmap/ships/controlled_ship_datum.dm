@@ -183,7 +183,7 @@
 	job_holder_refs.Cut()
 	job_slots.Cut()
 	blacklisted.Cut()
-	for(var/a_key in applications?.Copy()) // .Copy() so it doesnt shift during iteration because of removals
+	for(var/a_key in applications)
 		if(isnull(applications[a_key]))
 			continue
 		// it handles removal itself
