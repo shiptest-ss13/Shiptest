@@ -1136,8 +1136,9 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "eo" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/medical/recovery)
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering)
 "ep" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 1
@@ -2395,18 +2396,14 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/green,
 /obj/effect/turf_decal/trimline/opaque/green/warning,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "jQ" = (
@@ -3206,6 +3203,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "ma" = (
@@ -5804,6 +5803,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
 "vR" = (
@@ -6125,6 +6125,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
 "wS" = (
@@ -8335,10 +8336,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
-"EY" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering)
 "Fd" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/light/floor,
@@ -10640,6 +10637,9 @@
 /obj/structure/noticeboard/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
+"Os" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/medical/recovery)
 "Ou" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
@@ -11652,6 +11652,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "SD" = (
@@ -13447,6 +13449,8 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/ccommons)
 "YU" = (
@@ -14399,7 +14403,7 @@ TU
 Zs
 Zs
 ZB
-EY
+eo
 Zs
 au
 au
@@ -15241,7 +15245,7 @@ vb
 nL
 uB
 El
-eo
+Os
 FT
 RN
 mu
@@ -15393,7 +15397,7 @@ WI
 VW
 uB
 nA
-eo
+Os
 IL
 BZ
 eG
