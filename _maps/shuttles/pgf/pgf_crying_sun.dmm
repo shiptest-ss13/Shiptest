@@ -3788,17 +3788,24 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/box/corners,
-/obj/structure/table,
-/obj/item/food/ration/snack/channeler_meat_candy{
-	pixel_x = -3;
-	pixel_y = 7
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle/empty{
-	pixel_y = 10;
-	pixel_x = 7
+/obj/structure/table{
+	pixel_x = 0;
+	pixel_y = 0
 	},
 /obj/item/toy/cards/deck{
 	pixel_y = -1
+	},
+/obj/machinery/recharger{
+	pixel_x = 7;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/empty{
+	pixel_y = 14;
+	pixel_x = -8
+	},
+/obj/item/food/ration/snack/channeler_meat_candy{
+	pixel_x = -3;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
