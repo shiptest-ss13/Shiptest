@@ -1,49 +1,45 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "as" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"bJ" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/corner,
-/obj/structure/railing/thin{
-	dir = 9
-	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"bZ" = (
-/obj/structure/railing/thin{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 6
-	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"cC" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+/obj/effect/turf_decal/trimline/transparent/blue/filled/corner{
 	dir = 8
 	},
 /obj/structure/railing/thin{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"bJ" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 4
+	},
+/turf/open/floor/hangar/clip_outpost/lit{
+	light_power = 0.7;
+	color = "#999999"
+	},
+/area/hangar/weather)
+"bZ" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
+/obj/structure/railing/thin{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"cC" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 1
+	},
+/obj/structure/railing/thin,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
 "dh" = (
 /obj/machinery/conveyor/auto/outpost{
 	dir = 10
 	},
 /turf/open/floor/pod/dark,
-/area/hangar)
+/area/hangar/weather)
 "dH" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 6
-	},
-/obj/machinery/light/floor,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/turf/closed/indestructible/edge,
+/area/space)
 "eb" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/hangar)
@@ -51,14 +47,14 @@
 /obj/machinery/conveyor/auto/outpost,
 /obj/structure/plasticflaps/outpost,
 /turf/open/floor/pod/dark,
-/area/hangar)
+/area/hangar/weather)
 "fx" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	color = "#999999";
 	layer = 2
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/weather)
 "fL" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	color = "#999999";
@@ -66,42 +62,34 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/weather)
 "gM" = (
-/obj/structure/platform/industrial_alt/indestructible{
-	dir = 9
-	},
-/turf/open/floor/hangar/clipoutpost{
-	color = "#999999";
-	light_power = 0.7
-	},
-/area/hangar)
-"hd" = (
-/obj/structure/catwalk/over,
-/turf/open/water/beach/deep/outpost,
-/area/hangar)
-"hp" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/obj/structure/railing/thin{
-	dir = 1
-	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"hy" = (
-/obj/structure/railing/thin{
-	dir = 1
-	},
-/obj/structure/chair/bench/blue/directional/north{
-	dir = 2
-	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"jC" = (
 /obj/structure/railing/thin{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"hd" = (
+/obj/structure/catwalk/over,
+/turf/open/water/beach/deep/outpost,
+/area/hangar/weather)
+"hp" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 4
+	},
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"hy" = (
+/obj/effect/landmark/outpost/shaft_number,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"jC" = (
+/obj/structure/chair/bench/blue/directional/south,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
 "jE" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	color = "#999999";
@@ -109,31 +97,35 @@
 	dir = 8
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/weather)
 "kt" = (
-/turf/open/floor/hangar/clipoutpost{
-	color = "#999999";
-	light_power = 0.7
+/obj/structure/platform/industrial_alt/indestructible,
+/turf/open/floor/hangar/clip_outpost/lit{
+	light_power = 0.7;
+	color = "#999999"
 	},
-/area/hangar)
+/area/hangar/weather)
 "kC" = (
-/obj/effect/landmark/outpost/shaft_number,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 10
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
 "ll" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 8
+	dir = 1
 	},
-/obj/structure/railing/thin/corner,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
 "lw" = (
 /obj/structure/plasticflaps/outpost,
 /obj/machinery/conveyor/auto/outpost{
 	dir = 8
 	},
 /turf/open/floor/pod/dark,
-/area/hangar)
+/area/hangar/weather)
 "lO" = (
 /obj/structure/plasticflaps/outpost,
 /obj/machinery/conveyor/auto/outpost{
@@ -141,32 +133,26 @@
 	verted = -1
 	},
 /turf/open/floor/pod/dark,
-/area/hangar)
+/area/hangar/weather)
 "mf" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk/over,
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
-"mu" = (
-/obj/structure/platform/industrial_alt/indestructible,
-/obj/structure/fluff/arrowsong_big,
-/turf/open/floor/hangar/clipoutpost{
-	color = "#999999";
-	light_power = 0.7
-	},
-/area/hangar)
+/area/hangar/weather)
 "mz" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 9
+	},
 /obj/machinery/light/floor,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
 "nK" = (
 /obj/machinery/conveyor/auto/outpost{
 	dir = 6;
 	verted = -1
 	},
 /turf/open/floor/pod/dark,
-/area/hangar)
+/area/hangar/weather)
 "oF" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -176,35 +162,22 @@
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "oM" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/effect/decal/fakelattice,
-/turf/open/floor/hangar/clipoutpost,
-/area/hangar)
+/obj/structure/catwalk/over,
+/turf/open/floor/hangar/clip_outpost/lit,
+/area/hangar/weather)
 "oS" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 1
-	},
-/obj/machinery/light/floor,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/turf/open/floor/hangar/clip_outpost/lit,
+/area/hangar/weather)
 "pH" = (
-/obj/structure/platform/industrial_alt/indestructible{
-	dir = 5
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 4
 	},
-/turf/open/floor/hangar/clipoutpost{
-	color = "#999999";
-	light_power = 0.7
-	},
-/area/hangar)
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
 "qA" = (
-/obj/structure/railing/thin{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/hangar/clip_outpost/lit,
+/area/hangar/weather)
 "qD" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	color = "#999999";
@@ -213,44 +186,54 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk/over,
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/weather)
 "rb" = (
-/turf/open/floor/hangar/clipoutpost,
-/area/hangar)
+/obj/structure/marker_beacon{
+	picked_color = "Teal"
+	},
+/turf/open/floor/hangar/clip_outpost/lit,
+/area/hangar/weather)
 "rh" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/obj/structure/railing/thin/corner{
+/obj/structure/rack,
+/obj/item/weldingtool/mini{
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/item/clothing/head/welding{
+	pixel_x = 9;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"ri" = (
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"rN" = (
+/obj/structure/railing/thin{
 	dir = 1
+	},
+/obj/structure/rack,
+/obj/item/clothing/neck/poncho/darkblue,
+/obj/item/clothing/neck/poncho/darkblue{
+	pixel_x = -9;
+	pixel_y = 0
+	},
+/obj/item/clothing/neck/poncho/darkblue{
+	pixel_x = 9;
+	pixel_y = 0
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"tr" = (
+/obj/structure/railing/thin{
+	dir = 8
 	},
 /obj/effect/turf_decal/corner_steel_grid{
-	dir = 4
-	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"ri" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 1
-	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"rN" = (
-/obj/structure/platform/industrial_alt/indestructible{
 	dir = 6
 	},
-/turf/open/floor/hangar/clipoutpost{
-	color = "#999999";
-	light_power = 0.7
-	},
-/area/hangar)
-"tr" = (
-/obj/structure/platform/industrial_alt/corner/indestructible{
-	dir = 4
-	},
-/turf/open/floor/hangar/clipoutpost{
-	color = "#999999";
-	light_power = 0.7
-	},
-/area/hangar)
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
 "tt" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	color = "#999999";
@@ -258,7 +241,7 @@
 	dir = 9
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/weather)
 "tL" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -277,14 +260,14 @@
 	dir = 10
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/weather)
 "tX" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	color = "#999999";
 	layer = 2
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/weather)
 "ug" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	color = "#999999";
@@ -292,56 +275,332 @@
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/weather)
 "vd" = (
-/obj/structure/platform/industrial_alt/corner/indestructible{
-	dir = 8
+/obj/effect/turf_decal/trimline/transparent/blue/filled/corner,
+/obj/structure/railing/thin{
+	dir = 9
 	},
-/turf/open/floor/hangar/clipoutpost{
-	color = "#999999";
-	light_power = 0.7
-	},
-/area/hangar)
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
 "vD" = (
-/obj/structure/platform/industrial_alt/indestructible,
-/turf/open/floor/hangar/clipoutpost{
-	color = "#999999";
-	light_power = 0.7
-	},
-/area/hangar)
-"vI" = (
-/obj/structure/rack,
-/obj/item/weldingtool/mini{
-	pixel_x = -3;
-	pixel_y = 4
-	},
-/obj/item/clothing/head/welding{
-	pixel_x = 9;
-	pixel_y = 0
-	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"vO" = (
-/obj/structure/platform/industrial_alt/corner/indestructible{
+/obj/structure/railing/thin{
 	dir = 1
 	},
-/turf/open/floor/hangar/clipoutpost{
-	color = "#999999";
-	light_power = 0.7
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"vI" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"vO" = (
+/obj/structure/platform/industrial_alt/corner/indestructible{
+	dir = 4
 	},
-/area/hangar)
+/turf/open/floor/hangar/clip_outpost/lit{
+	light_power = 0.7;
+	color = "#999999"
+	},
+/area/hangar/weather)
 "vR" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 4
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/weather)
 "wr" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/light/directional/north,
 /turf/open/floor/pod/dark,
-/area/hangar)
+/area/hangar/weather)
 "xJ" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/corner{
+	dir = 4
+	},
+/obj/structure/railing/thin{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"zs" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	color = "#999999";
+	layer = 2;
+	dir = 8
+	},
+/turf/open/water/beach/deep/outpost,
+/area/hangar/weather)
+"zF" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 8
+	},
+/obj/structure/railing/thin/corner,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"Aq" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
+/turf/open/floor/pod/dark,
+/area/hangar/weather)
+"AD" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/hangar/weather)
+"AY" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 9
+	},
+/turf/open/floor/hangar/clip_outpost/lit{
+	light_power = 0.7;
+	color = "#999999"
+	},
+/area/hangar/weather)
+"Bv" = (
+/obj/effect/landmark/outpost/elevator_machine{
+	shaft = "1"
+	},
+/obj/machinery/elevator_call_button{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"CI" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"CM" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	color = "#999999";
+	layer = 2;
+	dir = 4
+	},
+/turf/open/water/beach/deep/outpost,
+/area/hangar/weather)
+"Dz" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 8
+	},
+/turf/open/water/beach/deep/outpost,
+/area/hangar/weather)
+"DR" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 6
+	},
+/turf/open/floor/hangar/clip_outpost/lit{
+	light_power = 0.7;
+	color = "#999999"
+	},
+/area/hangar/weather)
+"ED" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	color = "#999999";
+	layer = 2;
+	dir = 6
+	},
+/turf/open/water/beach/deep/outpost,
+/area/hangar/weather)
+"EL" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/fakelattice,
+/turf/open/floor/hangar/clip_outpost/lit,
+/area/hangar/weather)
+"Fu" = (
+/obj/structure/railing/thin,
+/obj/structure/chair/bench/blue/directional/north,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"FP" = (
+/turf/open/floor/plasteel/elevatorshaft,
+/area/hangar)
+"Gz" = (
+/obj/structure/platform/industrial_alt/corner/indestructible{
+	dir = 4
+	},
+/turf/open/water/beach/deep/outpost,
+/area/hangar/weather)
+"HN" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 5
+	},
+/turf/open/floor/hangar/clip_outpost/lit{
+	light_power = 0.7;
+	color = "#999999"
+	},
+/area/hangar/weather)
+"HY" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
+/obj/structure/railing/thin/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"HZ" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	color = "#999999";
+	layer = 2;
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment,
+/obj/structure/catwalk/over,
+/turf/open/water/beach/deep/outpost,
+/area/hangar/weather)
+"IT" = (
+/obj/structure/platform/industrial_alt/corner/indestructible,
+/turf/open/floor/hangar/clip_outpost/lit{
+	light_power = 0.7;
+	color = "#999999"
+	},
+/area/hangar/weather)
+"Jn" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 8
+	},
+/turf/open/floor/hangar/clip_outpost/lit{
+	light_power = 0.7;
+	color = "#999999"
+	},
+/area/hangar/weather)
+"Kj" = (
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/hangar/weather)
+"Kr" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"Kt" = (
+/obj/effect/landmark/outpost/elevator{
+	shaft = "1"
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/hangar)
+"Ku" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 1
+	},
+/turf/open/floor/hangar/clip_outpost/lit{
+	light_power = 0.7;
+	color = "#999999"
+	},
+/area/hangar/weather)
+"KM" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 8
+	},
+/obj/structure/railing/thin/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"LI" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 10
+	},
+/turf/open/floor/hangar/clip_outpost/lit{
+	light_power = 0.7;
+	color = "#999999"
+	},
+/area/hangar/weather)
+"Mz" = (
+/obj/effect/landmark/outpost/hangar_numbers,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"Ny" = (
+/obj/machinery/disposal/deliveryChute{
+	dir = 1
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/turf/open/floor/pod/dark,
+/area/hangar/weather)
+"Ob" = (
+/turf/open/water/beach/deep/outpost,
+/area/hangar/weather)
+"Op" = (
+/obj/structure/platform/industrial_alt/corner/indestructible{
+	dir = 1
+	},
+/turf/open/floor/hangar/clip_outpost/lit{
+	light_power = 0.7;
+	color = "#999999"
+	},
+/area/hangar/weather)
+"OC" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 4
+	},
+/obj/structure/platform/industrial_alt/indestructible{
+	color = "#999999";
+	layer = 2;
+	dir = 1
+	},
+/turf/open/water/beach/deep/outpost,
+/area/hangar/weather)
+"Pf" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 6
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"Pj" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	color = "#999999";
+	layer = 2;
+	dir = 10
+	},
+/turf/open/water/beach/deep/outpost,
+/area/hangar/weather)
+"PS" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"Qm" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	color = "#999999";
+	layer = 2
+	},
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 4
+	},
+/turf/open/water/beach/deep/outpost,
+/area/hangar/weather)
+"Qu" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"Qw" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"RM" = (
+/obj/machinery/conveyor/auto/outpost,
+/obj/effect/landmark/outpost/hangar_crate_spawner,
+/turf/open/floor/pod/dark,
+/area/hangar/weather)
+"RY" = (
 /obj/structure/railing/thin,
 /obj/structure/rack,
 /obj/item/clothing/neck/poncho/darkblue{
@@ -354,283 +613,17 @@
 	pixel_y = 0
 	},
 /obj/machinery/light/directional/east,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"zs" = (
-/obj/structure/platform/industrial_alt/indestructible{
-	color = "#999999";
-	layer = 2;
-	dir = 8
-	},
-/turf/open/water/beach/deep/outpost,
-/area/hangar)
-"zF" = (
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"Aq" = (
-/obj/machinery/conveyor/auto/outpost{
-	dir = 8
-	},
-/turf/open/floor/pod/dark,
-/area/hangar)
-"AD" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/closed/indestructible/plastitanium/nodiagnonal,
-/area/hangar)
-"AY" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 8
-	},
-/obj/structure/railing/thin/corner{
-	dir = 4
-	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"CI" = (
-/obj/structure/railing/thin{
-	dir = 1
-	},
-/obj/structure/chair/bench/blue/directional/south,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"CM" = (
-/obj/structure/platform/industrial_alt/indestructible{
-	color = "#999999";
-	layer = 2;
-	dir = 4
-	},
-/turf/open/water/beach/deep/outpost,
-/area/hangar)
-"Dz" = (
-/obj/structure/platform/industrial_alt/indestructible{
-	dir = 8
-	},
-/turf/open/water/beach/deep/outpost,
-/area/hangar)
-"DR" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/decal/fakelattice,
-/turf/open/floor/hangar/clipoutpost,
-/area/hangar)
-"ED" = (
-/obj/structure/platform/industrial_alt/indestructible{
-	color = "#999999";
-	layer = 2;
-	dir = 6
-	},
-/turf/open/water/beach/deep/outpost,
-/area/hangar)
-"EL" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"Fu" = (
-/obj/effect/landmark/outpost/elevator_machine{
-	shaft = "1"
-	},
-/obj/machinery/elevator_call_button{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"FP" = (
-/turf/open/floor/plasteel/elevatorshaft,
-/area/hangar)
-"Gz" = (
-/obj/structure/platform/industrial_alt/corner/indestructible{
-	dir = 4
-	},
-/turf/open/water/beach/deep/outpost,
-/area/hangar)
-"HN" = (
-/obj/effect/landmark/outpost/hangar_dock,
-/turf/open/floor/hangar/clipoutpost,
-/area/hangar)
-"HY" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/corner{
-	dir = 8
-	},
-/obj/structure/railing/thin{
-	dir = 4
-	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"HZ" = (
-/obj/structure/platform/industrial_alt/indestructible{
-	color = "#999999";
-	layer = 2;
-	dir = 1
-	},
-/obj/structure/disposalpipe/segment,
-/obj/structure/catwalk/over,
-/turf/open/water/beach/deep/outpost,
-/area/hangar)
-"IT" = (
-/obj/structure/platform/industrial_alt/indestructible{
-	dir = 4
-	},
-/turf/open/floor/hangar/clipoutpost{
-	color = "#999999";
-	light_power = 0.7
-	},
-/area/hangar)
-"Jn" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 4
-	},
-/obj/structure/railing/thin{
-	dir = 8
-	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"Kr" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 9
-	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"Kt" = (
-/obj/effect/landmark/outpost/elevator{
-	shaft = "1"
-	},
-/turf/open/floor/plasteel/elevatorshaft,
-/area/hangar)
-"Ku" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 1
-	},
-/obj/structure/railing/thin,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"KM" = (
-/obj/structure/platform/industrial_alt/indestructible{
-	dir = 10
-	},
-/turf/open/floor/hangar/clipoutpost{
-	color = "#999999";
-	light_power = 0.7
-	},
-/area/hangar)
-"LI" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 8
-	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"Mz" = (
-/obj/structure/railing/thin{
-	dir = 1
-	},
-/obj/structure/rack,
-/obj/item/clothing/neck/poncho/darkblue,
-/obj/item/clothing/neck/poncho/darkblue{
-	pixel_x = -9;
-	pixel_y = 0
-	},
-/obj/item/clothing/neck/poncho/darkblue{
-	pixel_x = 9;
-	pixel_y = 0
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"Ny" = (
-/obj/machinery/disposal/deliveryChute{
-	dir = 1
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/turf/open/floor/pod/dark,
-/area/hangar)
-"Ob" = (
-/turf/open/water/beach/deep/outpost,
-/area/hangar)
-"Op" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"OC" = (
-/obj/structure/platform/industrial_alt/indestructible{
-	dir = 4
-	},
-/obj/structure/platform/industrial_alt/indestructible{
-	color = "#999999";
-	layer = 2;
-	dir = 1
-	},
-/turf/open/water/beach/deep/outpost,
-/area/hangar)
-"Pf" = (
-/obj/structure/platform/industrial_alt/corner/indestructible,
-/turf/open/floor/hangar/clipoutpost{
-	color = "#999999";
-	light_power = 0.7
-	},
-/area/hangar)
-"Pj" = (
-/obj/structure/platform/industrial_alt/indestructible{
-	color = "#999999";
-	layer = 2;
-	dir = 10
-	},
-/turf/open/water/beach/deep/outpost,
-/area/hangar)
-"PS" = (
-/obj/structure/marker_beacon{
-	picked_color = "Teal"
-	},
-/turf/open/floor/hangar/clipoutpost,
-/area/hangar)
-"Qm" = (
-/obj/structure/platform/industrial_alt/indestructible{
-	color = "#999999";
-	layer = 2
-	},
-/obj/structure/platform/industrial_alt/indestructible{
-	dir = 4
-	},
-/turf/open/water/beach/deep/outpost,
-/area/hangar)
-"Qu" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/hangar/clipoutpost,
-/area/hangar)
-"Qw" = (
-/obj/structure/chair/bench/blue/directional/south,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"RM" = (
-/obj/machinery/conveyor/auto/outpost,
-/obj/effect/landmark/outpost/hangar_crate_spawner,
-/turf/open/floor/pod/dark,
-/area/hangar)
-"RY" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/corner{
-	dir = 1
-	},
-/obj/structure/railing/thin{
-	dir = 6
-	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
 "So" = (
-/obj/structure/railing/thin,
-/obj/structure/chair/bench/blue/directional/north,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 8
+	},
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
 "Sp" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 4
@@ -642,20 +635,30 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/hangar)
+/area/hangar/weather)
 "Tb" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/corner{
-	dir = 4
+/obj/structure/platform/industrial_alt/corner/indestructible{
+	dir = 8
 	},
+/turf/open/floor/hangar/clip_outpost/lit{
+	light_power = 0.7;
+	color = "#999999"
+	},
+/area/hangar/weather)
+"Tg" = (
 /obj/structure/railing/thin{
-	dir = 10
+	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/obj/structure/chair/bench/blue/directional/south,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
 "Ua" = (
-/obj/effect/landmark/outpost/hangar_numbers,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 5
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
 "UQ" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	color = "#999999";
@@ -663,121 +666,127 @@
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/weather)
 "UU" = (
-/obj/structure/platform/industrial_alt/indestructible{
+/turf/open/floor/hangar/clip_outpost/lit{
+	light_power = 0.7;
+	color = "#999999"
+	},
+/area/hangar/weather)
+"UX" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/corner{
 	dir = 1
 	},
-/turf/open/floor/hangar/clipoutpost{
-	color = "#999999";
-	light_power = 0.7
+/obj/structure/railing/thin{
+	dir = 6
 	},
-/area/hangar)
-"UX" = (
-/obj/structure/platform/industrial_alt/indestructible{
-	dir = 8
-	},
-/turf/open/floor/hangar/clipoutpost{
-	color = "#999999";
-	light_power = 0.7
-	},
-/area/hangar)
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
 "WQ" = (
 /obj/structure/sign/departments/cargo,
 /turf/closed/indestructible/plastitanium/nodiagnonal,
-/area/hangar)
+/area/hangar/weather)
 "XE" = (
-/obj/structure/catwalk/over,
-/turf/open/floor/hangar/clipoutpost,
-/area/hangar)
-"YJ" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 9
-	},
-/obj/machinery/light/floor,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"Zd" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"Zf" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 10
+/obj/effect/decal/fakelattice,
+/turf/open/floor/hangar/clip_outpost/lit,
+/area/hangar/weather)
+"YJ" = (
+/obj/structure/railing{
+	dir = 8
 	},
-/obj/machinery/light/floor,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
+"Zd" = (
+/obj/effect/landmark/outpost/hangar_dock,
+/turf/open/floor/hangar/clip_outpost/lit,
+/area/hangar/weather)
+"Zf" = (
+/obj/structure/railing/thin{
+	dir = 1
+	},
+/obj/structure/chair/bench/blue/directional/north{
+	dir = 2
+	},
+/turf/open/floor/plasteel/dark/clip_outpost/lit,
+/area/hangar/weather)
 "ZP" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/weather)
 "ZS" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 9
 	},
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
+/area/hangar/weather)
 "ZV" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 5
+/obj/structure/platform/industrial_alt/indestructible,
+/obj/structure/fluff/arrowsong_big,
+/turf/open/floor/hangar/clip_outpost/lit{
+	light_power = 0.7;
+	color = "#999999"
 	},
-/obj/machinery/light/floor,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
+/area/hangar/weather)
 
 (1,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
 "}
 (2,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -823,8 +832,10 @@ Ob
 Ob
 Ob
 Ob
+dH
 "}
 (3,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -870,8 +881,10 @@ Ob
 Ob
 Ob
 Ob
+dH
 "}
 (4,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -917,8 +930,10 @@ Ob
 Ob
 Ob
 Ob
+dH
 "}
 (5,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -964,8 +979,10 @@ Ob
 Ob
 Ob
 Ob
+dH
 "}
 (6,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1011,8 +1028,10 @@ Ob
 Ob
 Ob
 Ob
+dH
 "}
 (7,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1058,8 +1077,59 @@ Ob
 Ob
 Ob
 Ob
+dH
 "}
 (8,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(9,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1105,55 +1175,10 @@ Ob
 Ob
 Ob
 Ob
-"}
-(9,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-fx
-Pf
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-IT
-vd
-kt
-fL
-Ob
-Ob
-Ob
-Ob
-Ob
+dH
 "}
 (10,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1164,43 +1189,45 @@ Ob
 Ob
 Ob
 fx
-vD
+IT
 bJ
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
+bJ
 Tb
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (11,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1211,43 +1238,45 @@ Ob
 Ob
 Ob
 fx
-vD
+kt
+vd
 hp
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+hp
+xJ
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (12,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1258,43 +1287,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
-Qu
-YJ
-LI
-LI
-LI
-LI
-LI
-LI
-LI
-LI
-LI
-LI
-LI
-LI
-LI
-LI
-LI
-LI
-LI
-LI
-LI
-LI
-Zf
-Qu
+kt
+bZ
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (13,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1305,43 +1336,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-HN
-Op
-Qu
+kt
+bZ
+qA
+mz
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+kC
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (14,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1352,43 +1385,45 @@ Ob
 Ob
 Ob
 fx
-vD
+kt
+bZ
 qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+Zd
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (15,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1399,43 +1434,45 @@ Ob
 Ob
 Ob
 fx
+kt
 vD
-hp
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (16,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1446,43 +1483,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
 oS
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-mz
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (17,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1493,43 +1532,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+kt
+bZ
+qA
+ll
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+vI
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (18,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1540,43 +1581,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (19,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1587,43 +1630,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (20,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1634,43 +1679,45 @@ Ob
 Ob
 Ob
 fx
-vD
+kt
+bZ
 qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (21,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1681,43 +1728,45 @@ Ob
 Ob
 Ob
 fx
+kt
 vD
-hp
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (22,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1728,43 +1777,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
 oS
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-mz
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (23,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1775,43 +1826,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+kt
+bZ
+qA
+ll
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+vI
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (24,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1822,43 +1875,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (25,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1869,43 +1924,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (26,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1916,43 +1973,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (27,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -1963,43 +2022,45 @@ Ob
 Ob
 Ob
 fx
-vD
+kt
+bZ
 qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (28,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2010,43 +2071,45 @@ Ob
 Ob
 Ob
 fx
+kt
 vD
-hp
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (29,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2057,43 +2120,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
 oS
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-mz
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (30,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2104,43 +2169,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+kt
+bZ
+qA
+ll
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+vI
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (31,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2151,43 +2218,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (32,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2198,43 +2267,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (33,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2245,43 +2316,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (34,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2292,43 +2365,45 @@ Ob
 Ob
 Ob
 fx
-vD
+kt
+bZ
 qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (35,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2339,43 +2414,45 @@ Ob
 Ob
 Ob
 fx
+kt
 vD
-hp
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (36,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2386,43 +2463,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (37,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2433,43 +2512,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
 oS
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-mz
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (38,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2480,43 +2561,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+kt
+bZ
+qA
+ll
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+vI
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (39,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2527,43 +2610,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (40,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2574,43 +2659,45 @@ Ob
 Ob
 Ob
 fx
-vD
+kt
+bZ
 qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (41,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2621,43 +2708,45 @@ Ob
 Ob
 Ob
 fx
+kt
 vD
-hp
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (42,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2668,43 +2757,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (43,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2715,43 +2806,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (44,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2762,43 +2855,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (45,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2809,43 +2904,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
 oS
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-mz
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (46,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2856,43 +2953,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+kt
+bZ
+qA
+ll
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+vI
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (47,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2903,43 +3002,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
+kt
+bZ
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (48,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2950,43 +3051,45 @@ Ob
 Ob
 Ob
 fx
-vD
+kt
+bZ
 qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (49,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -2997,372 +3100,45 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
-Ku
-UU
 kt
-fL
-Ob
-Ob
-Ob
-Ob
-Ob
-"}
-(50,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
-Ku
-UU
-kt
-fL
-Ob
-Ob
-Ob
-Ob
-Ob
-"}
-(51,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
-Ku
-UU
-kt
-fL
-Ob
-Ob
-Ob
-Ob
-Ob
-"}
-(52,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
-Ku
-UU
-kt
-fL
-Ob
-Ob
-Ob
-Ob
-Ob
-"}
-(53,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-fx
-vD
-hp
-Qu
-oS
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
-Ku
-UU
-kt
-fL
-Ob
-Ob
-Ob
-Ob
-Ob
-"}
-(54,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-mz
-Qu
-Ku
-UU
-kt
-fL
-Ob
-Ob
-Ob
-Ob
-Ob
-"}
-(55,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
-Ku
-UU
-kt
-fL
-Ob
-Ob
-Ob
-Ob
-Ob
-"}
-(56,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-fx
 vD
 qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
-(57,1,1) = {"
+(50,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -3373,231 +3149,538 @@ Ob
 Ob
 Ob
 fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
-Ku
-UU
 kt
-fL
-Ob
-Ob
-Ob
-Ob
-Ob
-"}
-(58,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
-Ku
-UU
-kt
-fL
-Ob
-Ob
-Ob
-Ob
-Ob
-"}
-(59,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-fx
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
-Ku
-UU
-kt
-fL
-Ob
-Ob
-Ob
-Ob
-Ob
-"}
-(60,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-tX
-CM
-ED
-vD
-hp
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
-Ku
-UU
-kt
-fL
-Ob
-Ob
-Ob
-Ob
-Ob
-"}
-(61,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-tX
-ED
-Pf
-IT
-rN
-hp
+bZ
+qA
 Qu
 oS
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
-(62,1,1) = {"
+(51,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+fx
+kt
+bZ
+qA
+Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
+Ku
+UU
+fL
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(52,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+fx
+kt
+bZ
+qA
+Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
+Ku
+UU
+fL
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(53,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+fx
+kt
+bZ
+qA
+Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
+Ku
+UU
+fL
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(54,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+fx
+kt
+bZ
+qA
+ll
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
+Ku
+UU
+fL
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(55,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+fx
+kt
+bZ
+qA
+Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+vI
+qA
+cC
+Ku
+UU
+fL
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(56,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+fx
+kt
+bZ
+qA
+Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
+Ku
+UU
+fL
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(57,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+fx
+kt
+vD
+qA
+Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
+Ku
+UU
+fL
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(58,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+fx
+kt
+bZ
+qA
+Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
+Ku
+UU
+fL
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(59,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+fx
+kt
+bZ
+qA
+Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
+Ku
+UU
+fL
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(60,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+fx
+kt
+bZ
+qA
+Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
+Ku
+UU
+fL
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(61,1,1) = {"
+dH
+Ob
+Ob
+Ob
 Ob
 Ob
 Ob
@@ -3606,515 +3689,632 @@ tX
 CM
 ED
 kt
-vD
-eb
 bZ
-rh
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
+"}
+(62,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+tX
+ED
+IT
+bJ
+DR
+bZ
+qA
+ll
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
+Ku
+UU
+fL
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
 "}
 (63,1,1) = {"
+dH
 Ob
 Ob
 Ob
 Ob
-fx
-kt
-kt
-kt
-vD
-eb
-wr
-as
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
-Ku
+tX
+CM
+ED
 UU
 kt
+Kj
+tr
+HY
+qA
+Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
+Ku
+UU
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (64,1,1) = {"
+dH
 Ob
 Ob
 Ob
 Ob
 fx
-Pf
-IT
-IT
-rN
-eb
-Aq
-as
-Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
-Ku
+UU
+UU
 UU
 kt
+Kj
+wr
+Kr
+qA
+Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
+Ku
+UU
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (65,1,1) = {"
+dH
 Ob
 Ob
 Ob
 Ob
 fx
-vD
-eb
-eb
-eb
-eb
+IT
+bJ
+bJ
+DR
+Kj
 Aq
-as
+Kr
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (66,1,1) = {"
+dH
 Ob
 Ob
 Ob
 Ob
 fx
-vD
-eb
+kt
+Kj
+Kj
+Kj
+Kj
+Aq
+Kr
+qA
+Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
+Ku
+UU
+fL
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(67,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+fx
+kt
+Kj
 lO
 ep
 ep
 dh
-as
-Qu
-ri
-PS
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-PS
-Op
-Qu
-Ku
-UU
-kt
-fL
-Ob
-Ob
-Ob
-Ob
-Ob
-"}
-(67,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-fx
-vD
-eb
-lw
-eb
-WQ
 Kr
-EL
+qA
 Qu
-ri
 rb
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
 rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (68,1,1) = {"
+dH
 Ob
 Ob
 Ob
 Ob
 fx
-vD
-eb
-nK
-Sp
-eb
+kt
+Kj
+lw
+Kj
+WQ
+YJ
 Qw
-mz
+qA
 Qu
-ri
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Op
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (69,1,1) = {"
+dH
 Ob
 Ob
 Ob
 Ob
 fx
-vD
-eb
-eb
-AD
-eb
+kt
+Kj
+nK
+Sp
+Kj
+jC
 vI
-Op
+qA
 Qu
-ZV
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-dH
-Qu
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+PS
+qA
+cC
 Ku
 UU
-kt
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (70,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+fx
+kt
+Kj
+Kj
+AD
+Kj
+rh
+PS
+qA
+Ua
+pH
+pH
+pH
+pH
+pH
+pH
+pH
+pH
+pH
+pH
+pH
+pH
+pH
+pH
+pH
+pH
+pH
+pH
+pH
+pH
+Pf
+qA
+cC
+Ku
+UU
+fL
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(71,1,1) = {"
+dH
 mf
 mf
 mf
 mf
 qD
-vD
-eb
+kt
+Kj
 RM
 Ny
-eb
-Qw
-Op
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
-Qu
+Kj
+jC
+PS
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+qA
+cC
 Ku
 UU
-kt
 HZ
 mf
 mf
 mf
 mf
 mf
-"}
-(71,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-fx
-vD
-eb
-eb
-eb
-eb
-jC
-HY
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-AY
-LI
-Zf
-Qu
-YJ
-LI
-ll
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-RY
-UU
-kt
-fL
-Ob
-Ob
-Ob
-Ob
-Ob
+dH
 "}
 (72,1,1) = {"
+dH
 Ob
 Ob
 Ob
 Ob
 fx
-vO
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
+kt
+Kj
+Kj
+Kj
+Kj
+gM
+as
+So
+So
+So
+So
+So
+So
+So
+So
 KM
 CI
 kC
-Op
-Qu
-ri
+qA
+mz
+CI
 zF
 So
-gM
+So
+So
+So
+So
+So
+So
+So
+So
 UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-UX
-tr
-kt
+Ku
+UU
 fL
 Ob
 Ob
 Ob
 Ob
 Ob
+dH
 "}
 (73,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+fx
+Op
+Jn
+Jn
+Jn
+Jn
+Jn
+Jn
+Jn
+Jn
+Jn
+Jn
+Jn
+Jn
+Jn
+LI
+Tg
+hy
+PS
+qA
+Qu
+ri
+Fu
+AY
+Jn
+Jn
+Jn
+Jn
+Jn
+Jn
+Jn
+Jn
+Jn
+vO
+UU
+fL
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(74,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -4134,15 +4334,15 @@ zs
 zs
 zs
 Pj
-mu
-hy
-Ua
-Op
+ZV
+Zf
+Mz
+PS
+qA
 Qu
 ri
-zF
-So
-UU
+Fu
+Ku
 tt
 zs
 zs
@@ -4160,8 +4360,10 @@ Ob
 Ob
 Ob
 Ob
+dH
 "}
-(74,1,1) = {"
+(75,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -4181,15 +4383,15 @@ Ob
 Ob
 Ob
 fx
-vD
-Mz
-zF
-Op
-Qu
+kt
+rN
 ri
-Fu
-xJ
-UU
+PS
+qA
+Qu
+Bv
+RY
+Ku
 fL
 Ob
 Ob
@@ -4207,8 +4409,10 @@ Ob
 Ob
 Ob
 Ob
+dH
 "}
-(75,1,1) = {"
+(76,1,1) = {"
+dH
 vR
 vR
 vR
@@ -4228,7 +4432,7 @@ vR
 vR
 vR
 Qm
-rN
+DR
 eb
 eb
 tL
@@ -4236,7 +4440,7 @@ tL
 tL
 eb
 eb
-pH
+HN
 OC
 vR
 vR
@@ -4254,28 +4458,30 @@ vR
 vR
 vR
 vR
+dH
 "}
-(76,1,1) = {"
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
+(77,1,1) = {"
+dH
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
 oF
 FP
 FP
@@ -4283,93 +4489,48 @@ FP
 FP
 Kt
 oF
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-DR
-"}
-(77,1,1) = {"
-hd
 XE
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-hd
 XE
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-oF
-FP
-FP
-FP
-FP
-FP
-oF
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-hd
 XE
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-hd
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+dH
 "}
 (78,1,1) = {"
-Ob
-rb
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-rb
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
+dH
+hd
+oM
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+oM
+hd
+hd
+hd
+hd
+hd
+hd
+hd
 oF
 FP
 FP
@@ -4377,46 +4538,48 @@ FP
 FP
 FP
 oF
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-rb
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+oM
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+dH
 "}
 (79,1,1) = {"
-hd
-XE
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-XE
-hd
-hd
-hd
-hd
-hd
-hd
-hd
+dH
+Ob
+oS
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+oS
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
 oF
 FP
 FP
@@ -4424,46 +4587,48 @@ FP
 FP
 FP
 oF
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-XE
-hd
-hd
-hd
-hd
-hd
-hd
-hd
-hd
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+oS
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
 "}
 (80,1,1) = {"
+dH
+hd
 oM
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+hd
 oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
+hd
+hd
+hd
+hd
+hd
+hd
+hd
 oF
 FP
 FP
@@ -4471,26 +4636,77 @@ FP
 FP
 FP
 oF
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+hd
 oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
-oM
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+hd
+dH
 "}
 (81,1,1) = {"
+dH
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+oF
+FP
+FP
+FP
+FP
+FP
+oF
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+EL
+dH
+"}
+(82,1,1) = {"
+dH
 Dz
 Dz
 Dz
@@ -4536,8 +4752,10 @@ Dz
 Dz
 Dz
 Dz
+dH
 "}
-(82,1,1) = {"
+(83,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -4583,55 +4801,10 @@ Ob
 Ob
 Ob
 Ob
-"}
-(83,1,1) = {"
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
-Ob
+dH
 "}
 (84,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -4677,8 +4850,10 @@ Ob
 Ob
 Ob
 Ob
+dH
 "}
 (85,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -4724,8 +4899,10 @@ Ob
 Ob
 Ob
 Ob
+dH
 "}
 (86,1,1) = {"
+dH
 Ob
 Ob
 Ob
@@ -4771,4 +4948,103 @@ Ob
 Ob
 Ob
 Ob
+dH
+"}
+(87,1,1) = {"
+dH
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+Ob
+dH
+"}
+(88,1,1) = {"
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
+dH
 "}
