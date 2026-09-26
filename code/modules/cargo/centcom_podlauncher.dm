@@ -53,7 +53,6 @@
 	// Stuff needed to render the map
 	var/map_name
 	var/atom/movable/screen/map_view/camera/cam_screen
-	var/list/cam_plane_masters
 	var/tabIndex = 1
 	var/render_lighting = FALSE
 
@@ -489,9 +488,7 @@
 
 /datum/centcom_podlauncher/ui_close(mob/user) //Uses the destroy() proc. When the user closes the UI, we clean up the temp_pod and supplypod_selector variables.
 	QDEL_NULL(temp_pod)
-	user.client?.clear_map(map_name)
 	QDEL_NULL(cam_screen)
-	QDEL_LIST(cam_plane_masters)
 	qdel(src)
 
 /datum/centcom_podlauncher/proc/setupViewPod()
