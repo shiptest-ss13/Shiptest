@@ -274,8 +274,10 @@ EMPTY_GUN_HELPER(revolver/rhino)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
 	icon_state = "expedition"
 	item_state = "expedition"
+	manufacturer = MANUFACTURER_VIGILITAS
 	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_expedition
-	spread = 3
+	spread = 4
+	fire_delay = 0.09 SECONDS // despite being 1 fire delay previously, it fucking rounds up to 1.5. This makes it ACTUALLY ONE
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m9mm_expedition,
 	) //you guys remember when the autorifle was chambered in 9mm
@@ -333,6 +335,7 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 	desc = "The civilian import of the Expedition, marketed to private police forces and well-off bounty hunters. Retains most of its novel features aside from the rail mount."
 	icon_state = "civpedition"
 	item_state = "civpedition"
+	manufacturer = MANUFACTURER_VIGILITAS
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1
 	)
@@ -463,7 +466,7 @@ NO_MAG_GUN_HELPER(automatic/smg/resolution/inteq)
 
 	icon_state = "negotiator"
 	item_state = "negotiator"
-
+	manufacturer = MANUFACTURER_VIGILITAS
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/tube/rubbershot
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/tube,

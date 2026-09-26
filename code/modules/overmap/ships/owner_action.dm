@@ -112,6 +112,7 @@
 			ref = REF(app),
 			key = (app.show_key ? app.app_key : "<Empty>"),
 			name = app.app_name,
+			job = app.app_job,
 			text = app.app_msg,
 			status = app.status
 		))
