@@ -132,7 +132,7 @@
 	if(check_streak(A,D))
 		return 1
 	log_combat(A, D, "punched")
-	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected))
+	var/obj/item/bodypart/affecting = D.get_bodypart(D.run_zone(A.zone_selected))
 	var/armor_block = D.run_armor_check(affecting, "melee")
 	var/picked_hit_type = pick("punch", "kick")
 	var/bonus_damage = 0
@@ -155,7 +155,7 @@
 /datum/martial_art/krav_maga/disarm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(check_streak(A,D))
 		return 1
-	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected))
+	var/obj/item/bodypart/affecting = D.get_bodypart(D.run_zone(A.zone_selected))
 	var/armor_block = D.run_armor_check(affecting, "melee")
 	if(D.body_position == STANDING_UP)
 		D.visible_message(span_danger("[A] reprimands [D]!"), \
