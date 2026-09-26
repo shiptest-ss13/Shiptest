@@ -104,6 +104,19 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/structure/filingcabinet/double{
+	dir = 8;
+	pixel_x = 11;
+	pixel_y = 0;
+	density = 0
+	},
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "cs" = (
@@ -394,6 +407,10 @@
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 6
+	},
+/obj/item/clipboard{
+	pixel_x = -13;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -997,6 +1014,7 @@
 	pixel_x = 2;
 	pixel_y = 1
 	},
+/obj/item/reagent_containers/medigel/sterilizine,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "nC" = (
@@ -1665,6 +1683,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
 /obj/machinery/airalarm/directional/west,
+/obj/item/pen,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "zg" = (
@@ -2641,7 +2660,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/structure/closet/crate/trashcart/laundry,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "QB" = (
@@ -3067,6 +3086,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/light/small/directional/east,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Xk" = (
