@@ -358,12 +358,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "bv" = (
-/obj/machinery/porta_turret/ship/pgf/light{
-	dir = 4;
-	wire_compatible = 1;
-	id = "bolide_grid";
-	req_access = list(0)
-	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
@@ -403,12 +397,6 @@
 /area/ship/crew/toilet)
 "bG" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/porta_turret/ship/pgf/light{
-	dir = 4;
-	wire_compatible = 1;
-	id = "bolide_grid";
-	req_access = list(0)
-	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "bI" = (
@@ -1133,6 +1121,10 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"eo" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering)
 "ep" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 1
@@ -8335,9 +8327,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "EY" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering)
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/medical/recovery)
 "Fd" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/light/floor,
@@ -10414,6 +10405,9 @@
 	},
 /obj/machinery/light/floor,
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/porta_turret/ship/pgf/light{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "Nu" = (
@@ -10639,9 +10633,6 @@
 /obj/structure/noticeboard/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
-"Os" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/medical/recovery)
 "Ou" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
@@ -13938,6 +13929,11 @@
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 5
 	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -11
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "ZT" = (
@@ -14407,7 +14403,7 @@ TU
 Zs
 Zs
 ZB
-EY
+eo
 Zs
 au
 au
@@ -15249,7 +15245,7 @@ vb
 nL
 uB
 El
-Os
+EY
 FT
 RN
 mu
@@ -15401,7 +15397,7 @@ WI
 VW
 uB
 nA
-Os
+EY
 IL
 BZ
 eG
