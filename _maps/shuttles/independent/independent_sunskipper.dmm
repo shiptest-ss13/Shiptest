@@ -1478,6 +1478,9 @@
 	pixel_x = -6
 	},
 /obj/item/storage/backpack/satchel/leather,
+/obj/item/clothing/neck/tie{
+	pixel_y = 13
+	},
 /turf/open/floor/suns/hatch{
 	color = "#543C30"
 	},
@@ -1586,6 +1589,9 @@
 	pixel_x = 6
 	},
 /obj/item/storage/backpack/satchel/leather,
+/obj/item/clothing/neck/tie{
+	pixel_y = 13
+	},
 /turf/open/floor/suns/hatch{
 	color = "#543C30"
 	},
@@ -3907,6 +3913,9 @@
 	pixel_x = -3;
 	pixel_y = 3
 	},
+/obj/item/reagent_containers/condiment/soysauce{
+	pixel_x = 2
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen/kitchen)
 "Fi" = (
@@ -4319,6 +4328,9 @@
 /obj/item/reagent_containers/condiment/bbqsauce{
 	pixel_x = -3;
 	pixel_y = 3
+	},
+/obj/item/reagent_containers/condiment/soysauce{
+	pixel_x = 2
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen/kitchen)
@@ -5656,12 +5668,17 @@
 /obj/machinery/computer/helm/viewscreen/directional/north{
 	pixel_y = 21
 	},
-/obj/item/clothing/neck/tie{
-	pixel_y = 13
-	},
 /obj/item/toy/plush/moth/punished{
 	pixel_x = 4;
 	pixel_y = 8
+	},
+/obj/item/clothing/suit/apron{
+	pixel_x = -9;
+	pixel_y = 12
+	},
+/obj/item/clothing/suit/apron{
+	pixel_x = -9;
+	pixel_y = 7
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/crewtwo)

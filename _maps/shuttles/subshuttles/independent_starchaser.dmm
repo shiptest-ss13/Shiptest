@@ -185,10 +185,13 @@
 /obj/effect/turf_decal/corner/transparent/grey/diagonal{
 	dir = 4
 	},
-/obj/structure/cable/pink{
-	icon_state = "2-5"
-	},
 /obj/structure/cable/green{
+	icon_state = "1-10"
+	},
+/obj/structure/cable/pink{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/pink{
 	icon_state = "1-10"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -212,18 +215,12 @@
 	dir = 10
 	},
 /obj/structure/cable/pink{
-	icon_state = "1-10"
-	},
-/obj/structure/cable/pink{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "z" = (
 /obj/structure/cable/pink,
-/obj/structure/cable/pink{
-	icon_state = "1-8"
-	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
 	id = "starchaser_holo";
@@ -239,9 +236,6 @@
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "A" = (
-/obj/structure/cable/pink{
-	icon_state = "0-4"
-	},
 /obj/structure/cable/green{
 	icon_state = "2-5"
 	},
@@ -253,17 +247,20 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
 	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	preferred_direction = 4;
-	port_direction = 8;
-	name = "Starchaser-class Delivery Shuttle";
-	launch_status = 0
-	},
 /obj/machinery/door/poddoor/preopen{
 	id = "starchaser_blast_doors"
 	},
 /obj/machinery/door/firedoor/heavy,
+/obj/structure/cable/pink{
+	icon_state = "0-5"
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	preferred_direction = 8;
+	port_direction = 8;
+	name = "Starchaser-class Delivery Shuttle";
+	launch_status = 0
+	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "F" = (
@@ -353,6 +350,9 @@
 	},
 /obj/structure/cable/pink{
 	icon_state = "5-8"
+	},
+/obj/structure/cable/pink{
+	icon_state = "2-5"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
