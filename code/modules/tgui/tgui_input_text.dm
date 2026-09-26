@@ -32,9 +32,9 @@
 	if(!user.client.prefs.tgui_input)
 		if(encode)
 			if(multiline)
-				return stripped_multiline_input(user, message, title, default, PREVENT_CHARACTER_TRIM_LOSS(max_length))
+				return stripped_multiline_input(user, message, title, default, PREVENT_CHARACTER_TRIM_LOSS(max_length || MAX_MESSAGE_LEN))
 			else
-				return stripped_input(user, message, title, default, PREVENT_CHARACTER_TRIM_LOSS(max_length))
+				return stripped_input(user, message, title, default, PREVENT_CHARACTER_TRIM_LOSS(max_length || MAX_MESSAGE_LEN))
 		else
 			if(multiline)
 				return input(user, message, title, default) as message|null
