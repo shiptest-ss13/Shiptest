@@ -35,6 +35,7 @@
 	wield_slowdown = 0
 	zoomable = FALSE
 	ammo_counter = TRUE
+	weapon_weight = WEAPON_HEAVY
 
 	valid_attachments = list()
 	unique_attachments = list()
@@ -94,12 +95,11 @@
 	if(!..())
 		return FALSE
 	if(HAS_TRAIT(src, TRAIT_WIELDED) && chambered.BB)
-		expend_round(target, user)
 		return TRUE
 	else
 		return FALSE
 
-/obj/item/gun/ballistic/shotgun/blasting_hammer/proc/expend_round(target, mob/living/user)
+/obj/item/gun/ballistic/shotgun/blasting_hammer/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread, burst_firing, spread_override, iteration)
 	if(!chambered.BB)
 		return
 	if(!istype(chambered, /obj/item/ammo_casing/shotgun/blank)) //loading a live round into your hammer when it has nowhere to go is a bad idea.

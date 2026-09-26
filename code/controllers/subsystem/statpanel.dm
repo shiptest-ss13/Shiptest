@@ -91,7 +91,7 @@ SUBSYSTEM_DEF(statpanels)
 #if MIN_COMPILER_VERSION > 515
 	#warn 516 is most certainly out of beta, remove this beta notice if you haven't already
 #endif
-	var/static/list/beta_notice = list("", "You are on the BYOND 516, various UIs and such may be broken!", "Please report issues, and switch back to BYOND 515 if things are causing too many issues for you.")
+	var/static/list/beta_notice = list("", "You are on BYOND 516, various UIs and such may be broken!", "Please report issues, and switch back to BYOND 515 if things are causing too many issues for you.")
 	if(!global_data)//statbrowser hasnt fired yet and we were called from immediate_send_stat_data()
 		return
 
@@ -180,6 +180,11 @@ SUBSYSTEM_DEF(statpanels)
 
 	/// Set the atoms we're meant to display
 	var/datum/object_window_info/obj_window = target.obj_window
+
+	//TODO: find out what actually causes this
+	if(!target.obj_window)
+		target.obj_window = new(target)
+
 	obj_window.atoms_to_show = atoms_to_display
 	START_PROCESSING(SSobj_tab_items, obj_window)
 	refresh_client_obj_view(target)

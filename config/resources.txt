@@ -37,3 +37,17 @@
 # if you want to test this locally, you simpily run the `localhost-asset-webroot-server.py` python3 script to host assets stored in `data/asset-store/` via http://localhost:58715/
 #ASSET_CDN_URL http://localhost:58715/
 
+# CDN webservers must provide CORS headers, or TGUI will break and not be able to load all elements. The following example is for IIS:
+# <add name="Access-Control-Allow-Origin" value="*" />
+# <add name="Vary" value="Origin" />
+# <add name="Access-Control-Allow-Methods" value="GET, POST, OPTIONS" />
+# <add name="Access-Control-Max-Age" value="0" />
+
+# If configured, this allows server operators to define the persistent origin used for clientside
+# storage. This must host the same file as available in tgui/public/iframe.html. This is also hosted
+# on the GitHub Pages site for the /tg/station repository, so does not need to be configured.
+# If multiple servers use the same domain name, clientside features such as message saving
+# and chat tabs will be persistent across both.
+# If this setting is not configured, but the webroot CDN is, that will be used instead of GitHub Pages.
+# If this setting is mpty, and the webroot CDN is disabled, byondstorage will be used.
+# STORAGE_CDN_IFRAME https://tgstation.github.io/byond-client-storage/iframe.html
