@@ -564,25 +564,18 @@
 /area/ship/crew/dorm)
 "hY" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch{
-	pixel_x = 13;
-	pixel_y = 10
-	},
-/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch{
-	pixel_x = 13;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch{
-	pixel_x = 3;
-	pixel_y = 8
+/obj/structure/sink/kitchen/counter{
+	dir = 1;
+	pixel_x = 8;
+	pixel_y = 16
 	},
 /obj/item/reagent_containers/food/drinks/soda_cans/lunapunch{
 	pixel_x = -9;
-	pixel_y = 4
+	pixel_y = 12
 	},
-/obj/item/reagent_containers/glass/rag{
-	pixel_x = 2;
-	pixel_y = -1
+/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch{
+	pixel_x = -5;
+	pixel_y = 7
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
@@ -898,6 +891,18 @@
 /obj/effect/turf_decal/siding/wood/ebony{
 	dir = 1
 	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_x = 6;
+	pixel_y = -3
+	},
+/obj/item/storage/backpack/satchel/kitbag{
+	pixel_x = -9;
+	pixel_y = -7
+	},
+/obj/item/storage/backpack/satchel/kitbag{
+	pixel_x = -10;
+	pixel_y = -5
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "lU" = (
@@ -1045,6 +1050,10 @@
 /obj/item/plate,
 /obj/item/plate,
 /obj/item/reagent_containers/glass/beaker/large,
+/obj/item/storage/box/coffeepack/arabica{
+	pixel_x = 0;
+	pixel_y = -4
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "nJ" = (
@@ -1254,9 +1263,9 @@
 	pixel_x = -8;
 	pixel_y = 4
 	},
-/obj/item/storage/box/coffeepack/arabica{
-	pixel_x = 0;
-	pixel_y = -4
+/obj/item/reagent_containers/glass/bottle/killer/weedkiller{
+	pixel_x = 10;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -1377,6 +1386,10 @@
 	pixel_y = 8
 	},
 /obj/item/kitchen/rollingpin,
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 2;
+	pixel_y = -1
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "um" = (
