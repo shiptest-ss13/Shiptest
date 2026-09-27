@@ -325,7 +325,6 @@ class StorageProxy implements StorageBackend {
   public diagnostics: StorageDiagnostic[] = [];
 
   private log(level: StorageDiagnostic['level'], message: string) {
-    console.error(message);
     this.diagnostics.push({ level, message });
   }
 
