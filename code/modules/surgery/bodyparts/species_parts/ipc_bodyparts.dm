@@ -9,6 +9,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	robotic_overlay_type = "robotic"
 	biological_state = BIO_ROBOTIC
 
 	light_brute_msg = "scratched"
@@ -28,6 +29,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	robotic_overlay_type = "robotic"
 	biological_state = BIO_ROBOTIC
 
 	light_brute_msg = "scratched"
@@ -46,6 +48,7 @@
 	dynamic_rename = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	robotic_overlay_type = "robotic"
 	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	light_brute_msg = "scratched"
@@ -64,6 +67,7 @@
 	dynamic_rename = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	robotic_overlay_type = "robotic"
 	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	light_brute_msg = "scratched"
@@ -82,6 +86,7 @@
 	dynamic_rename = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	robotic_overlay_type = "robotic"
 	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	light_brute_msg = "scratched"
@@ -100,6 +105,7 @@
 	dynamic_rename = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	robotic_overlay_type = "robotic"
 	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	light_brute_msg = "scratched"

@@ -23,6 +23,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	robotic_overlay_type = "robotic"
 	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	brute_reduction = 5
@@ -49,6 +50,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	robotic_overlay_type = "robotic"
 	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	brute_reduction = 5
@@ -75,6 +77,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	robotic_overlay_type = "robotic"
 	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	brute_reduction = 5
@@ -101,6 +104,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	robotic_overlay_type = "robotic"
 	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	brute_reduction = 5
@@ -126,6 +130,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	robotic_overlay_type = "robotic"
 	biological_state = BIO_ROBOTIC
 
 	brute_reduction = 5
@@ -229,6 +234,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	robotic_overlay_type = "robotic"
 	biological_state = BIO_ROBOTIC
 
 	brute_reduction = 5
@@ -436,52 +442,62 @@
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
 	acceptable_bodytype = BODYTYPE_KEPORI
+	robotic_overlay_type = null
 
 /obj/item/bodypart/head/robot/kepori
 	name = "prosthetic kepori head"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 /obj/item/bodypart/l_arm/robot/kepori
 	name = "prosthetic kepori left arm"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 /obj/item/bodypart/r_arm/robot/kepori
 	name = "prosthetic kepori right arm"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 /obj/item/bodypart/leg/left/robot/kepori
 	name = "prosthetic kepori left leg"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 /obj/item/bodypart/leg/right/robot/kepori
 	name = "prosthetic kepori right leg"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 //Surplus Kepori Robotic
 /obj/item/bodypart/l_arm/robot/surplus/kepori
 	name = "surplus prosthetic kepori left arm"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 /obj/item/bodypart/r_arm/robot/surplus/kepori
 	name = "surplus prosthetic kepori right arm"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 /obj/item/bodypart/leg/left/robot/surplus/kepori
 	name = "surplus prosthetic kepori left leg"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 /obj/item/bodypart/leg/right/robot/surplus/kepori
 	name = "surplus prosthetic kepori right leg"
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 
 // Vox Robotic
@@ -491,53 +507,62 @@
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
 	acceptable_bodytype = BODYTYPE_VOX
+	robotic_overlay_type = null
 
 /obj/item/bodypart/head/robot/vox
 	name = "prosthetic vox head"
 	is_dimorphic = TRUE
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 /obj/item/bodypart/l_arm/robot/vox
 	name = "prosthetic vox left arm"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
-
+	robotic_overlay_type = null
 /obj/item/bodypart/r_arm/robot/vox
 	name = "prosthetic vox right arm"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 /obj/item/bodypart/leg/left/robot/vox
 	name = "prosthetic vox left leg"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 /obj/item/bodypart/leg/right/robot/vox
 	name = "prosthetic vox right leg"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 // Surplus Vox Robotic
 /obj/item/bodypart/l_arm/robot/surplus/vox
 	name = "surplus prosthetic vox left arm"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 /obj/item/bodypart/r_arm/robot/surplus/vox
 	name = "surplus prosthetic vox right arm"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 /obj/item/bodypart/leg/left/robot/surplus/vox
 	name = "surplus prosthetic vox left leg"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 /obj/item/bodypart/leg/right/robot/surplus/vox
 	name = "surplus prosthetic vox right leg"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+	robotic_overlay_type = null
 
 //Human Robotic
 /obj/item/bodypart/chest/robot/human
