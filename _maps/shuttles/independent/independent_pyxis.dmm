@@ -704,6 +704,9 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/light/directional/east,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "jA" = (
@@ -1004,6 +1007,7 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "nd" = (
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "ng" = (
@@ -2295,6 +2299,9 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Ks" = (
