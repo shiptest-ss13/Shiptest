@@ -2452,7 +2452,7 @@
 /obj/item/spacecash/bundle/c500,
 /obj/item/spacecash/bundle/c500,
 /obj/item/spacecash/bundle/c200,
-/obj/item/gun/ballistic/derringer/traitor,
+/obj/item/gun/ballistic/automatic/pistol/derringer/traitor,
 /obj/item/ammo_casing/a357/hp,
 /obj/item/ammo_casing/a357/hp,
 /obj/item/spacecash/bundle/c200,
@@ -3087,7 +3087,7 @@
 	},
 /obj/structure/table/greyscale,
 /obj/item/cutting_board,
-/obj/item/melee/knife,
+/obj/item/melee/knife/kitchen,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
@@ -4567,10 +4567,6 @@
 /turf/closed/wall,
 /area/ruin/wasteplanet/recycle_bay/salvage_bay)
 "EO" = (
-/obj/machinery/computer/processing_unit_console/directional/west{
-	input_dir = 2;
-	machinedir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
@@ -4579,6 +4575,9 @@
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 10
+	},
+/obj/machinery/computer/processing_unit_console/directional/west{
+	dy = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/salvage_bay)
@@ -5762,7 +5761,7 @@
 /area/ruin/wasteplanet/recycle_bay/eva)
 "MK" = (
 /obj/structure/table,
-/obj/structure/closet/wall/med/directional/south,
+/obj/structure/closet/wall/white/med/directional/south,
 /obj/item/reagent_containers/syringe/contraband/morphine,
 /obj/item/reagent_containers/syringe/contraband/morphine,
 /obj/item/storage/firstaid/regular,

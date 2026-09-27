@@ -180,19 +180,42 @@
 	crate_type = /obj/structure/closet/crate/large
 	no_bundle = TRUE
 
-/datum/supply_pack/medical/epipen_crate
-	name = "Bulk Epipen Crate"
-	desc = "Contains a spare box of epinephrine medipens, for when the going gets tough."
-	cost = 600
-	contains = list(/obj/item/storage/box/medipens)
-	crate_name = "epinephrine medipen crate"
-
 /datum/supply_pack/medical/medigel_crate
 	name = "Empty Medical Gel Crate"
 	desc = "Contains a box of seven empty medical gels, for applying your own chemical mixes."
 	cost = 700
 	contains = list(/obj/item/storage/box/medigels)
 	crate_name = "empty medical gel crate"
+
+/datum/supply_pack/medical/sutures
+	name = "Medical Suture Pack"
+	desc = "Contains a pack of sutures, for refilling medical kits, or simply building up a stock."
+	cost = 400
+	contains = list(/obj/item/storage/medpack/sutures)
+
+/datum/supply_pack/medical/bruise
+	name = "Bruise Pack Pack"
+	desc = "Contains a pack of bruise packs, for refilling medical kits, or simply building up a stock."
+	cost = 200
+	contains = list(/obj/item/storage/medpack/bruisepacks)
+
+/datum/supply_pack/medical/mesh
+	name = "Regenerative Mesh Pack"
+	desc = "Contains a pack of regenerative mesh, for refilling medical kits, or simply building up a stock."
+	cost = 200
+	contains = list(/obj/item/storage/medpack/mesh)
+
+/datum/supply_pack/medical/gauze
+	name = "Medical Gauze Pack"
+	desc = "Contains a pack of medical gauze, for refilling medical kits, or simply building up a stock."
+	cost = 300
+	contains = list(/obj/item/storage/medpack/gauze)
+
+/datum/supply_pack/medical/epipens
+	name = "Epinephrine Autoinjector Pack"
+	desc = "Contains a pack of epinephrine autoinjectors, for refilling medical kits, or simply building up a stock."
+	cost = 300
+	contains = list(/obj/item/storage/medpack/epipens)
 
 /* Hypospray supplies */
 

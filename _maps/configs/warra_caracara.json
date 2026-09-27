@@ -1,0 +1,45 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Caracara-class Salvaging Vessel",
+	"faction": "/datum/faction/warra",
+	"prefix": "MWSV",
+	"manufacturer": "Makosso-Warra Spaceworks",
+	"description": "The Caracara-class was among the first post-ICW hulls designed by Makosso-Warra. Faced with tremendous public relations (and profit) loss, the Caracara was assembled as a cheap, easy-to-fabricate salvaging ship to capitalise on the now scrap-rich frontier. There has been a major push from the Frontier Relations office to make the Caracara the new face of Makosso-Warra, symbolising their new-age commitment to cleaning up the damages of the past - though despite the peaceful propagandizing, fears over claimjumpers lead to the posting of a Vigilitas Security Officer on almost every vessel of the class.",
+	"tags": [
+		"Salvage",
+		"RP Focus"
+	],
+	"namelists": [
+		"MAKOSSO-WARRA",
+		"SPACE",
+		"BEASTS"
+	],
+	"map_short_name": "Caracara-class",
+	"map_path": "_maps/shuttles/warra/warra_caracara.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/warra/captain/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Engineering Director": {
+			"outfit": "/datum/outfit/job/warra/ce/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Security Officer": {
+			"outfit": "/datum/outfit/job/warra/security/empty",
+			"slots": 1
+		},
+		"Salvage Technician": {
+			"outfit": "/datum/outfit/job/warra/engineer/empty",
+			"slots": 2
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/warra/assistant/empty",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

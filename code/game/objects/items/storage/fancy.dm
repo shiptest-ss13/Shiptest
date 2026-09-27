@@ -374,6 +374,13 @@
 	base_icon_state = "shadyjim"
 	spawn_type = /obj/item/clothing/mask/cigarette/rollie/mindbreaker
 
+/obj/item/storage/fancy/cigarettes/cigpack_anomaly
+	name = "anomaly pack"
+	desc = "Straight Tecetian Space Blaster."
+	icon_state = "shadyjim"
+	base_icon_state = "shadyjim"
+	spawn_type = /obj/item/clothing/mask/cigarette/rollie/anomalous
+
 /obj/item/storage/fancy/rollingpapers
 	name = "rolling paper pack"
 	desc = "A pack of Makosso-Warra brand rolling papers."
@@ -405,13 +412,13 @@
 	name = "\improper Robust packet"
 	desc = "Smoked by the robust."
 	icon_state = "robust"
-	spawn_type = /obj/item/gun/ballistic/derringer/traitor
+	spawn_type = /obj/item/gun/ballistic/automatic/pistol/derringer/traitor
 
 /obj/item/storage/fancy/cigarettes/derringer/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-	STR.set_holdable(list(/obj/item/clothing/mask/cigarette, /obj/item/lighter, /obj/item/gun/ballistic/derringer, /obj/item/ammo_casing/a357))
+	STR.set_holdable(list(/obj/item/clothing/mask/cigarette, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol/derringer, /obj/item/ammo_casing/a357))
 
 /obj/item/storage/fancy/cigarettes/derringer/AltClick(mob/living/carbon/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -438,7 +445,7 @@
 	name = "\improper Robust Gold packet"
 	desc = "Smoked by the truly robust."
 	icon_state = "robustg"
-	spawn_type = /obj/item/gun/ballistic/derringer/gold
+	spawn_type = /obj/item/gun/ballistic/automatic/pistol/derringer/gold
 
 /////////////
 //CIGAR BOX//

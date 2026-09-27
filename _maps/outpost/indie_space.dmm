@@ -2777,12 +2777,12 @@
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/central)
 "kT" = (
-/obj/machinery/computer/processing_unit_console/directional/north{
-	machinedir = 2
-	},
 /obj/structure/railing,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 5
+	},
+/obj/machinery/computer/processing_unit_console/directional/north{
+	dy = -1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
