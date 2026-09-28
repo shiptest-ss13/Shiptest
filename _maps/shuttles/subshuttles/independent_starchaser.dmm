@@ -12,7 +12,7 @@
 	layer = 2.045
 	},
 /obj/structure/cable/pink{
-	icon_state = "2-8"
+	icon_state = "2-4"
 	},
 /obj/structure/table/reinforced,
 /obj/item/radio{
@@ -189,10 +189,7 @@
 	icon_state = "1-10"
 	},
 /obj/structure/cable/pink{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/pink{
-	icon_state = "1-10"
+	icon_state = "2-5"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -210,13 +207,16 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "y" = (
-/obj/machinery/holopad,
 /obj/effect/turf_decal/siding/black{
 	dir = 10
 	},
 /obj/structure/cable/pink{
 	icon_state = "1-2"
 	},
+/obj/structure/cable/pink{
+	icon_state = "1-10"
+	},
+/obj/machinery/holopad,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "z" = (
@@ -233,6 +233,9 @@
 	id = "starchaser_blast_doors"
 	},
 /obj/machinery/door/firedoor/heavy,
+/obj/structure/cable/pink{
+	icon_state = "1-8"
+	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "A" = (
@@ -252,7 +255,7 @@
 	},
 /obj/machinery/door/firedoor/heavy,
 /obj/structure/cable/pink{
-	icon_state = "0-5"
+	icon_state = "0-4"
 	},
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
@@ -350,9 +353,6 @@
 	},
 /obj/structure/cable/pink{
 	icon_state = "5-8"
-	},
-/obj/structure/cable/pink{
-	icon_state = "2-5"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
