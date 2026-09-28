@@ -324,7 +324,8 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/collapsar
 	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/suits.dmi'
-	supports_variations = DIGITIGRADE_VARIATION
+	kepori_override_icon = 'icons/mob/clothing/suits/spacesuits_kepori.dmi'
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/collapsar
 	name = "\improper Collapsar assault hardsuit helmet"
@@ -334,6 +335,8 @@
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 30)
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
+	kepori_override_icon = 'icons/mob/clothing/head/spacesuits_kepori.dmi'
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/collapsar/paramed
 	name = "\improper Collapsar retrieval hardsuit"
@@ -343,6 +346,8 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/collapsar/paramed
 	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/suits.dmi'
+	kepori_override_icon = 'icons/mob/clothing/suits/spacesuits_kepori.dmi'
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/collapsar/paramed
 	name = "\improper Collapsar retrieval hardsuit helmet"
@@ -350,6 +355,8 @@
 	hardsuit_type = "collapsmed"
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
+	kepori_override_icon = 'icons/mob/clothing/head/spacesuits_kepori.dmi'
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION
 
 //Cybersun Hardsuit
 /obj/item/clothing/suit/space/hardsuit/syndi/cybersun
@@ -363,6 +370,7 @@
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/suits.dmi'
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun
 	name = "neutron-star combat hardsuit helmet"
@@ -373,6 +381,8 @@
 	armor = list("melee" = 30, "bullet" = 35, "laser" = 60, "energy" = 60, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
+	kepori_override_icon = 'icons/mob/clothing/head/spacesuits_kepori.dmi'
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION
 
 //Cybersun Medical Techinician Hardsuit
 /obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed
@@ -386,6 +396,8 @@
 	jetpack = null
 	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/suits.dmi'
+	kepori_override_icon = 'icons/mob/clothing/suits/spacesuits_kepori.dmi'
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun/paramed
 	name = "cybersun medical technician hardsuit helmet"
@@ -396,6 +408,8 @@
 	armor = list("melee" = 25, "bullet" = 35, "laser" = 40, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
+	kepori_override_icon = 'icons/mob/clothing/head/spacesuits_kepori.dmi'
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION
 
 //Cybersun infiltrator hardsuit
 /obj/item/clothing/suit/space/hardsuit/stealth/cybersun
@@ -406,6 +420,8 @@
 	icon_state = "hardsuit-cyberstealth"
 	hardsuit_type = "cyberstealth"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/stealth/cybersun
+	kepori_override_icon = 'icons/mob/clothing/suits/spacesuits_kepori.dmi'
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/stealth/cybersun
 	name = "\improper Magnetar hardsuit helmet"
@@ -414,7 +430,8 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
 	icon_state = "hardsuit0-cyberstealth"
 	hardsuit_type = "cyberstealth"
-	supports_variations = SNOUTED_VARIATION
+	kepori_override_icon = 'icons/mob/clothing/head/spacesuits_kepori.dmi'
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION
 
 //mask
 

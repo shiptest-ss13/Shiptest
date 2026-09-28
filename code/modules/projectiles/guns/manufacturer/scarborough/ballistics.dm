@@ -344,6 +344,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 
 	icon_state = "himehabu"
 	item_state = "sa_generic"
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'

@@ -3823,7 +3823,6 @@
 	req_access_txt = "20";
 	icon_state = "solgov_wall"
 	},
-/obj/item/stock_parts/cell/gun/sharplite,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
@@ -4961,7 +4960,6 @@
 /area/ship/bridge)
 "WB" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/bomb,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
@@ -4969,6 +4967,7 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable/green,
 /obj/item/tank/jetpack/carbondioxide,
+/obj/item/clothing/suit/space/hardsuit/esh,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/captain)
 "WF" = (

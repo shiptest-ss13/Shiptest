@@ -9,14 +9,14 @@
 	stack_size = 20
 
 /obj/item/ammo_casing/c57x39mm/ap
-	name = "5.7x39mm armor piercing bullet casing"
-	desc = "A 5.7x39mm armour-piercing bullet casing."
+	name = "5.7x39mm armor-piercing bullet casing"
+	desc = "A 5.7x39mm armor-piercing bullet casing."
 	bullet_skin = "ap"
 	projectile_type = /obj/projectile/bullet/c57x39mm/ap
 
 /obj/item/ammo_casing/c57x39mm/hp
-	name = "5.7x39mm hollow point bullet casing"
-	desc = "A 5.7x39mm armour-piercing bullet casing."
+	name = "5.7x39mm hollow-point bullet casing"
+	desc = "A 5.7x39mm hollow-point bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/c57x39mm/hp
 
@@ -38,7 +38,7 @@
 
 /obj/item/ammo_casing/c46x30mm/recycled
 	name = "4.6x30mm recycled bullet casing"
-	desc = "A 4.6x30mm bullet casing."
+	desc = "A 4.6x30mm recycled bullet casing."
 	bullet_skin = "surplus"
 	caliber = "4.6x30mm"
 	projectile_type = /obj/projectile/bullet/c46x30mm/recycled
@@ -52,8 +52,8 @@
 	projectile_type = /obj/projectile/bullet/c46x30mm/ap
 
 /obj/item/ammo_casing/c46x30mm/hp
-	name = "4.6x30mm HP bullet casing"
-	desc = "A 4.6x30mm HP bullet casing."
+	name = "4.6x30mm hollow-point bullet casing"
+	desc = "A 4.6x30mm hollow-point bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/c46x30mm/hp
 
@@ -65,7 +65,7 @@
 
 /obj/item/ammo_casing/c46x30mm/tesla
 	name = "4.6x30mm tesla flux casing"
-	desc = "A 4.6x30mm rubber bullet casing."
+	desc = "A 4.6x30mm tesla flux bullet casing."
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/energy/tesla/explosive
 
@@ -100,8 +100,8 @@
 	projectile_type = /obj/projectile/bullet/c556mm/ap
 
 /obj/item/ammo_casing/caseless/c556mm/hp
-	name = "5.56mm HITP caseless hollow point round"
-	desc = "A 5.56mm HITP caseless hollow point round."
+	name = "5.56mm HITP caseless hollow-point round"
+	desc = "A 5.56mm HITP caseless hollow-point round."
 	projectile_type = /obj/projectile/bullet/c556mm/hp
 
 /obj/item/ammo_casing/caseless/c556mm/rubbershot

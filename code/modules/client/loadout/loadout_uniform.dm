@@ -339,3 +339,7 @@
 /datum/gear/uniform/miniskirt
 	display_name = "mini skirt (colorable)"
 	path = /obj/item/clothing/under/shorts/miniskirt
+
+/datum/gear/uniform/pencilskirt
+	display_name = "pencil skirt (recolorable)"
+	path = /obj/item/clothing/under/shorts/pencilskirt

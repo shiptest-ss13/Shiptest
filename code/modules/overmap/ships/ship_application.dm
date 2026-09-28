@@ -1,8 +1,11 @@
 /datum/ship_application
 	/// The ship this application is linked to.
 	var/datum/overmap/ship/controlled/parent_ship
-	/// The applicant's new player mob. We keep track of it to send them an update message if they haven't joined a ship yet.
+	/// The applicant's new player mob. Kept so we can cancel the fill-out if they leave the lobby mid-write.
 	var/mob/dead/new_player/app_mob
+	/// String of the applicant's actual ckey. We'll use this later to reference the client, so we can
+	/// send the notification regardless of mob status. Not using app_key because that can be faked.
+	var/app_ckey
 	/// Whether to expose the user's key to the application recipient. Even if this is false, we still store apps using the key.
 	var/show_key = FALSE
 	/// The character name of the applicant at the time they applied. Isn't involved in the application logic,
@@ -11,17 +14,22 @@
 	/// The applicant's key. Comparisons are done using ckeys to ensure consistence, but we store the key so
 	/// that if we send it in the application message it's in a format that might be more familiar to the recipient.
 	var/app_key
+	/// Name of the role the applicant picked when they applied. Display only, they still pick their role
+	/// freely after being accepted, but this is informative for the cap still
+	var/app_job
 	/// The extra message sent by the applicant.
 	var/app_msg
 	/// The application's status -- whether or not it has been accepted, rejected, or hasn't been answered yet.
 	var/status = SHIP_APPLICATION_UNFINISHED
 
-/datum/ship_application/New(mob/dead/new_player/applicant, datum/overmap/ship/controlled/parent)
+/datum/ship_application/New(mob/dead/new_player/applicant, datum/overmap/ship/controlled/parent, datum/job/applied_job)
 	// If the admin is in stealth mode, we use their fakekey.
 	app_mob = applicant
 	app_name = app_mob.client?.prefs.real_name
 	app_key = app_mob.client?.holder?.fakekey ? app_mob.client.holder.fakekey : applicant.key
+	app_ckey = applicant.ckey
 	parent_ship = parent
+	app_job = applied_job?.name
 
 	// these are registered so we can cancel the application fill-out if the ship
 	// gets deleted before the application is finalized, or the character spawns in.
@@ -33,9 +41,10 @@
 	SStgui.close_uis(src)
 	if(status != SHIP_APPLICATION_UNFINISHED && status != SHIP_APPLICATION_CANCELLED)
 		LAZYREMOVE(parent_ship.applications, ckey(app_key))
-		if(app_mob)
-			SEND_SOUND(app_mob, sound('sound/misc/server-ready.ogg', volume=50))
-			to_chat(app_mob, span_warning("Your application to [parent_ship] has been deleted."), MESSAGE_TYPE_INFO)
+		var/client/app_client = get_applicant_client()
+		if(app_client && applicant_can_act(app_client))
+			SEND_SOUND(app_client, sound('sound/misc/server-ready.ogg', volume=50))
+			to_chat(app_client, span_warning("Your application to [parent_ship] has been deleted."), MESSAGE_TYPE_INFO)
 	app_mob = null
 	parent_ship = null
 	. = ..()
@@ -65,6 +74,14 @@
 			"<a href=?src=[REF(src)];application_accept=1>(ACCEPT)</a> / <a href=?src=[REF(src)];application_deny=1>(DENY)</a></span>"
 		to_chat(parent_ship.owner_mob, message, MESSAGE_TYPE_INFO)
 	return TRUE
+
+/datum/ship_application/proc/get_applicant_client()
+	return GLOB.directory[app_ckey]
+
+/// Only notify if they're in lobby or observing.
+/// Assumes otherwise that they've already spawned in and shouldn't be notified anymore
+/datum/ship_application/proc/applicant_can_act(client/app_client)
+	return isnewplayer(app_client.mob) || isobserver(app_client.mob)
 
 /datum/ship_application/proc/applicant_deleting()
 	SIGNAL_HANDLER
@@ -141,13 +158,16 @@
 	if(parent_ship.owner_act)
 		parent_ship.owner_act.check_blinking()
 
-	if(!app_mob)
+	var/client/app_client = get_applicant_client()
+	if(!app_client || !applicant_can_act(app_client))
 		return
 
 	switch(status)
 		if(SHIP_APPLICATION_ACCEPTED)
-			to_chat(app_mob, span_notice("Your application to [parent_ship] was accepted!"), MESSAGE_TYPE_INFO)
-			SEND_SOUND(app_mob, sound('sound/misc/server-ready.ogg', volume=50))
+			// they may have gone off to observe while waiting, in which case they need to come back to join
+			var/lobby_hint = isnewplayer(app_client.mob) ? null : " Return to the lobby to join."
+			to_chat(app_client, span_notice("Your application to [parent_ship] was accepted![lobby_hint]"), MESSAGE_TYPE_INFO)
+			SEND_SOUND(app_client, sound('sound/misc/server-ready.ogg', volume=50))
 		if(SHIP_APPLICATION_DENIED)
-			to_chat(app_mob, span_warning("Your application to [parent_ship] was denied!"), MESSAGE_TYPE_INFO)
-			SEND_SOUND(app_mob, sound('sound/machines/buzz-sigh.ogg', volume=50))
+			to_chat(app_client, span_warning("Your application to [parent_ship] was denied!"), MESSAGE_TYPE_INFO)
+			SEND_SOUND(app_client, sound('sound/machines/buzz-sigh.ogg', volume=50))

@@ -277,7 +277,7 @@
 		zoom(user, user.dir, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 
 /obj/item/gun/attack(mob/M as mob, mob/user)
-	if(user.a_intent == INTENT_HARM || !actually_shoots) //Flogging
+	if(user.a_intent == INTENT_DISARM || !actually_shoots) //lets you beat up someone without shooting them
 		return ..()
 	return
 
@@ -324,7 +324,7 @@
 	if(flag)
 		if(target in user.contents) //can't shoot stuff inside us.
 			return
-		if(!ismob(target) || user.a_intent == INTENT_HARM) //melee attack
+		if(!ismob(target) || user.a_intent == INTENT_DISARM) //melee attack
 			return
 		if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH) //so we can't shoot ourselves (unless mouth selected)
 			return

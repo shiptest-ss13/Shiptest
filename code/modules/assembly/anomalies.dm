@@ -49,7 +49,7 @@
 	name = "\improper bluespace anomaly core"
 	desc = "The stabilized core of a bluespace anomaly. It keeps phasing in and out of view."
 	icon_state = "anomaly core"
-	grind_results = list(/datum/reagent/bluespace = 25)
+	grind_results = list(/datum/reagent/jumper = 20)
 
 /obj/item/assembly/signaler/anomaly/bluespace/anomaly_core_detonation()
 	//just teleports people
@@ -63,7 +63,7 @@
 	name = "\improper flux anomaly core"
 	desc = "The stabilized core of a flux anomaly. Touching it makes your skin tingle."
 	icon_state = "flux core"
-	grind_results = list(/datum/reagent/teslium = 15)
+	grind_results = list(/datum/reagent/teslium = 50)
 
 /obj/item/assembly/signaler/anomaly/flux/anomaly_core_detonation()
 	//zap
@@ -76,7 +76,7 @@
 	name = "\improper gravitational anomaly core"
 	desc = "The stabilized core of a gravitational anomaly. It feels much heavier than it looks."
 	icon_state = "grav core"
-	grind_results = list(/datum/reagent/gravitum = 20, /datum/reagent/liquid_dark_matter = 10)
+	grind_results = list(/datum/reagent/gravitum = 20)
 
 /obj/item/assembly/signaler/anomaly/grav/anomaly_core_detonation()
 	//throngles u cutely
@@ -90,13 +90,13 @@
 	name = "\improper hallucination anomaly core"
 	desc = "The stabilized core of a hallucination anomaly. It's never entirely there."
 	icon_state = "hallucination_core"
-	grind_results = list(/datum/reagent/toxin/mindbreaker = 20) //LSD orb
+	grind_results = list(/datum/reagent/fairydust = 15) // super LSD orb
 
 ///Heartbeat Anomaly
 /obj/item/assembly/signaler/anomaly/heartbeat
 	name = "\improper heartbeat anomaly core"
 	desc = "The stabilized core of a heartbeat anomaly. Pulses of heat run across its shell."
-	grind_results = list(/datum/reagent/uranium/radium = 30, /datum/reagent/uranium = 20)
+	grind_results = list(/datum/reagent/heartbeat = 15) // this stuff is pretty good so
 
 /obj/item/assembly/signaler/anomaly/heartbeat/anomaly_core_detonation()
 	visible_message(span_warning("[src] expands and throbs, before shattering into dozens of fragments!"))
@@ -109,7 +109,7 @@
 	name = "\improper melter anomaly core"
 	desc = "The stabilized core of a melter anomaly. It sizzles and crackles."
 	icon_state = "pyro core"
-	grind_results = list(/datum/reagent/toxin/acid/nitracid = 10, /datum/reagent/toxin/acid/fluacid = 10, /datum/reagent/toxin/acid = 10) //soup
+	grind_results = list(/datum/reagent/toxin/acid/melter = 30) // soup
 
 /obj/item/assembly/signaler/anomaly/melter/anomaly_core_detonation()
 	visible_message(span_warning("[src] melts into a glowing residue!"))
@@ -120,7 +120,7 @@
 /obj/item/assembly/signaler/anomaly/phantom
 	name = "\improper phantom anomaly core"
 	desc = "The stabilized core of a phantom anomaly. It quietly screams."
-	grind_results = list(/datum/reagent/blood = 20)
+	grind_results = list(/datum/reagent/phantom = 20, /datum/reagent/blood = 20)
 
 /obj/item/assembly/signaler/anomaly/phantom/anomaly_core_detonation()
 	playsound(src,'sound/hallucinations/far_noise.ogg', 100, 0, 50, TRUE, TRUE)
@@ -144,7 +144,7 @@
 /obj/item/assembly/signaler/anomaly/plasmasoul
 	name = "\improper plasmasoul anomaly core"
 	desc = "The stabilized core of a plasmasoul anomaly. The air around it hisses."
-	grind_results = list(/datum/reagent/toxin/plasma = 50)
+	grind_results = list(/datum/reagent/plasmasoul = 10) // enough for you and a friend
 
 /obj/item/assembly/signaler/anomaly/plasmasoul/anomaly_core_detonation()
 	visible_message(span_warning("[src] rapidly delaminates into plasma!"))
@@ -155,7 +155,7 @@
 /obj/item/assembly/signaler/anomaly/pulsar
 	name = "\improper pulsar anomaly core"
 	desc = "The stabilized core of a pulsar anomaly. Electromagnetic crackles come off it."
-	grind_results = list(/datum/reagent/iron = 25, /datum/reagent/uranium = 25)
+	grind_results = list(/datum/reagent/iron = 25, /datum/reagent/uranium = 25) // emp
 
 /obj/item/assembly/signaler/anomaly/pulsar/anomaly_core_detonation()
 	visible_message(span_warning("[src] gives off one last pulse as it melts!"))
@@ -167,7 +167,7 @@
 	name = "\improper plasmaball anomaly core"
 	desc = "The stabilized core of a plasmaball anomaly. It almost burns to touch."
 	icon_state = "pyro core"
-	grind_results = list(/datum/reagent/clf3 = 25, /datum/reagent/toxin/plasma = 15)
+	grind_results = list(/datum/reagent/clf3 = 50, /datum/reagent/toxin/plasma = 50)
 
 //glorified molotov
 /obj/item/assembly/signaler/anomaly/pyro/anomaly_core_detonation()
@@ -195,7 +195,7 @@
 /obj/item/assembly/signaler/anomaly/tvstatic
 	name = "\improper static anomaly core"
 	desc = "The stabilized core of a static anomaly. Your head hurts just staring at it"
-	grind_results = list(/datum/reagent/truesight = 5)
+	grind_results = list(/datum/reagent/truesight = 15)
 
 /obj/item/assembly/signaler/anomaly/tvstatic/anomaly_core_detonation()
 	visible_message(span_warning("[src] withdraws into itself, one last message escaping it!"))
@@ -211,7 +211,7 @@
 	name = "\improper transfusion anomaly core"
 	desc = "The stabilized core of a tranfusion anomaly. Crimson slowly seeps out of the containment unit."
 	icon_state = "pyro core"
-	grind_results = list(/datum/reagent/toxin/heparin = 15, /datum/reagent/blood = 35)
+	grind_results = list(/datum/reagent/transfusion = 15, /datum/reagent/blood = 35)
 	var/blood_stored
 	var/blood_max
 

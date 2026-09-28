@@ -707,7 +707,7 @@
 	slowdown = 1
 	armor = list("melee" = 30, "bullet" = 40, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80, "wound" = 40)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/bomb
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/bomb/Initialize()
 	. = ..()
