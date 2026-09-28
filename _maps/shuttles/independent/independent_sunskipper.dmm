@@ -2050,6 +2050,7 @@
 	name = "sloppily written note";
 	desc = "Dear god, the handwriting on this is awful... Several stains cover the page. "
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm/captain)
 "pB" = (
@@ -3984,7 +3985,7 @@
 /obj/machinery/button/door{
 	pixel_y = 23;
 	pixel_x = -11;
-	id = "sunskipper_botany_lockdown";
+	id = "sunskipper_botany_shutters";
 	name = "Hydroponics Window Shutters"
 	},
 /turf/open/floor/suns/hatch/walnut,
@@ -6026,6 +6027,13 @@
 	id = "sunskipper_caproom_lockdown";
 	name = "Captain's Bedroom Shutters";
 	dir = 4
+	},
+/obj/item/paper/fluff{
+	pixel_x = -3;
+	pixel_y = 35;
+	default_raw_text = "check undr th <br>carpetf<br><br>17 38 23";
+	name = "sloppily written note";
+	desc = "Dear god, the handwriting on this is awful... Several stains cover the page. "
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
