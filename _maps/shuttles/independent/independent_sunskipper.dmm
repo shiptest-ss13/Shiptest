@@ -123,7 +123,7 @@
 	},
 /obj/machinery/light_switch{
 	pixel_x = -9;
-	pixel_y = 20
+	pixel_y = 21
 	},
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable/orange{
@@ -253,6 +253,14 @@
 /obj/structure/bed/bunk/top{
 	layer = 2.98
 	},
+/obj/machinery/button/door{
+	pixel_y = 25;
+	pixel_x = -8;
+	id = "sunskipper_dorm1_lockdown";
+	name = "Dorm Window Shutters";
+	normaldoorcontrol = 1;
+	specialfunctions = 4
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/crewtwo)
 "ca" = (
@@ -314,10 +322,10 @@
 /area/ship/crew/canteen)
 "cI" = (
 /obj/structure/grille,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "sunskipper_crew_shutters"
-	},
 /obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "sunskipper_dorm1_lockdown"
+	},
 /turf/open/floor/plating,
 /area/ship/crew/crewtwo)
 "cJ" = (
@@ -361,11 +369,6 @@
 /obj/structure/chair/bench/beige/directional/west,
 /obj/effect/turf_decal/corner/transparent/grey/diagonal{
 	dir = 4
-	},
-/obj/machinery/light_switch{
-	pixel_x = 20;
-	pixel_y = -9;
-	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
@@ -583,7 +586,7 @@
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = -9;
-	pixel_y = -20
+	pixel_y = -17
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -616,7 +619,7 @@
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 9;
-	pixel_y = -20
+	pixel_y = -17
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -798,7 +801,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central2,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/light_switch{
-	pixel_x = 20;
+	pixel_x = 18;
 	pixel_y = 9;
 	dir = 8
 	},
@@ -1931,6 +1934,14 @@
 	layer = 2.98;
 	dir = 4
 	},
+/obj/machinery/button/door{
+	pixel_y = 25;
+	pixel_x = 8;
+	id = "sunskipper_dorm2_lockdown";
+	name = "Dorm Window Shutters";
+	normaldoorcontrol = 1;
+	specialfunctions = 4
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/crewthree)
 "oD" = (
@@ -2304,13 +2315,13 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable/green,
 /obj/machinery/light_switch{
-	pixel_x = 20;
+	pixel_x = 18;
 	pixel_y = -9;
 	dir = 8
 	},
 /obj/machinery/button/door{
 	pixel_y = 11;
-	pixel_x = 22;
+	pixel_x = 20;
 	dir = 8;
 	id = "dorm1";
 	name = "Door Lock";
@@ -2483,6 +2494,14 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
+"sK" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "sunskipper_caproom_lockdown"
+	},
+/obj/structure/window/reinforced/fulltile,
+/turf/open/floor/plating,
+/area/ship/crew/dorm/captain)
 "sR" = (
 /obj/structure/marker_beacon{
 	picked_color = "Yellow"
@@ -2542,10 +2561,10 @@
 /area/ship/crew/canteen)
 "tC" = (
 /obj/structure/grille,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "sunskipper_crew_shutters"
-	},
 /obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "sunskipper_caproom_lockdown"
+	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm/captain)
 "tE" = (
@@ -3286,6 +3305,10 @@
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
+/obj/item/stack/sheet/metal/ten{
+	pixel_x = 3;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "Aj" = (
@@ -3381,14 +3404,9 @@
 /area/ship/bridge)
 "Bx" = (
 /obj/machinery/light_switch{
-	pixel_x = 20;
+	pixel_x = 21;
 	pixel_y = 9;
 	dir = 8
-	},
-/obj/item/radio/intercom/directional/east{
-	pixel_y = -5;
-	name = "doorbell intercom";
-	frequency = 1453
 	},
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/corner/opaque/neutral/half{
@@ -3411,6 +3429,11 @@
 	dir = 8;
 	color = "#839C67";
 	layer = 2.060
+	},
+/obj/item/radio/intercom/directional/east{
+	pixel_y = -3;
+	name = "doorbell intercom";
+	frequency = 1453
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
@@ -3505,8 +3528,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sunskipper_crew_shutters";
-	name = "Bridge Lockdown"
+	id = "sunskipper_bridge_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -3782,6 +3804,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/item/seeds/cocoapod/vanillapod,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/hydroponics)
 "Eo" = (
@@ -3829,7 +3852,7 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sunskipper_crew_shutters";
+	id = "sunskipper_botany_shutters";
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -3948,7 +3971,7 @@
 	},
 /obj/machinery/light_switch{
 	pixel_x = 9;
-	pixel_y = 20
+	pixel_y = 21
 	},
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
@@ -3961,6 +3984,12 @@
 	},
 /obj/item/storage/bag/plants{
 	pixel_y = 9
+	},
+/obj/machinery/button/door{
+	pixel_y = 23;
+	pixel_x = -11;
+	id = "sunskipper_botany_lockdown";
+	name = "Hydroponics Window Shutters"
 	},
 /turf/open/floor/suns/hatch/walnut,
 /area/ship/crew/hydroponics)
@@ -4039,12 +4068,12 @@
 "FQ" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "sunskipper_crew_shutters";
-	dir = 8
-	},
 /obj/structure/cable/orange{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "sunskipper_botany_shutters";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/crew/hydroponics)
@@ -4144,7 +4173,7 @@
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 9;
-	pixel_y = -20
+	pixel_y = -17
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -4193,7 +4222,7 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/light_switch{
-	pixel_x = 20;
+	pixel_x = 18;
 	pixel_y = -9;
 	dir = 8
 	},
@@ -4274,13 +4303,13 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable/green,
 /obj/machinery/light_switch{
-	pixel_x = -20;
+	pixel_x = -18;
 	pixel_y = -9;
 	dir = 4
 	},
 /obj/machinery/button/door{
 	pixel_y = 11;
-	pixel_x = -22;
+	pixel_x = -20;
 	dir = 4;
 	id = "dorm2";
 	name = "Door Lock";
@@ -4751,7 +4780,7 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/light_switch{
 	pixel_x = -9;
-	pixel_y = 20
+	pixel_y = 21
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -5450,8 +5479,8 @@
 /obj/machinery/button/door{
 	pixel_y = -12;
 	pixel_x = 6;
-	id = "sunskipper_crew_shutters";
-	name = "Staff Window Shutters";
+	id = "sunskipper_bridge_shutters";
+	name = "Bridge Window Shutters";
 	dir = 4
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -5651,8 +5680,7 @@
 "Uq" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sunskipper_crew_shutters";
-	name = "Bridge Lockdown"
+	id = "sunskipper_bridge_shutters"
 	},
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
@@ -5683,13 +5711,13 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/crewtwo)
 "UD" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "sunskipper_crew_shutters"
+/obj/machinery/light_switch{
+	pixel_x = 18;
+	pixel_y = 8;
+	dir = 8
 	},
-/turf/open/floor/plating,
-/area/ship/crew/crewtwo)
+/turf/open/floor/wood/ebony,
+/area/ship/crew/canteen)
 "UG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -5849,7 +5877,7 @@
 "VP" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/light_switch{
-	pixel_x = 20;
+	pixel_x = 18;
 	pixel_y = -9;
 	dir = 8
 	},
@@ -5868,7 +5896,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/light_switch{
-	pixel_x = -20;
+	pixel_x = -18;
 	pixel_y = -9;
 	dir = 4
 	},
@@ -5880,7 +5908,7 @@
 "VW" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/light_switch{
-	pixel_x = -20;
+	pixel_x = -18;
 	pixel_y = -9;
 	dir = 4
 	},
@@ -5988,13 +6016,20 @@
 	dir = 4
 	},
 /obj/machinery/light_switch{
-	pixel_x = -20;
+	pixel_x = -18;
 	pixel_y = 9;
 	dir = 4
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/bridge_bunny{
 	pixel_x = 10;
 	pixel_y = 35
+	},
+/obj/machinery/button/door{
+	pixel_y = -11;
+	pixel_x = -20;
+	id = "sunskipper_caproom_lockdown";
+	name = "Captain's Bedroom Shutters";
+	dir = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
@@ -6298,7 +6333,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sunskipper_crew_shutters"
+	id = "sunskipper_dorm2_lockdown"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/crewthree)
@@ -6499,7 +6534,7 @@ tc
 wM
 ne
 vy
-tC
+sK
 Bb
 rt
 "}
@@ -6645,7 +6680,7 @@ kD
 rv
 lP
 wO
-UD
+cI
 rt
 "}
 (12,1,1) = {"
@@ -6831,7 +6866,7 @@ Tc
 dD
 cR
 Kj
-Nh
+UD
 aW
 tM
 MN

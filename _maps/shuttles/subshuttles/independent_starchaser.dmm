@@ -94,7 +94,7 @@
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = -9;
-	pixel_y = -20
+	pixel_y = -17
 	},
 /obj/structure/cable/pink,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -199,7 +199,7 @@
 "u" = (
 /obj/machinery/power/smes/engineering{
 	input_level = 5000;
-	output_level = 15000
+	output_level = 20000
 	},
 /obj/structure/cable/pink{
 	icon_state = "0-2"
@@ -375,6 +375,7 @@
 	},
 /obj/item/storage/box/flares,
 /obj/effect/mapping_helpers/crate_shelve,
+/obj/item/pickaxe/emergency,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 

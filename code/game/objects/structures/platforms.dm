@@ -150,14 +150,23 @@
 	density = FALSE
 	climbable = FALSE
 
-/obj/structure/platform/attackby(obj/item/I, mob/living/user, params)
-	..()
-	add_fingerprint(user)
+/obj/structure/platform/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(.)
+		return FALSE
+	if(!I.tool_start_check(user, src, amount=0))
+		return FALSE
+	if(I.use_tool(src, user, 3 SECONDS, volume=0))
+		to_chat(user, span_warning("You cut apart the platform."))
+		deconstruct()
+		return TRUE
 
-	if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP)
+/obj/structure/platform/welder_act(mob/living/user, obj/item/I, list/modifiers)
+	if(user.a_intent == INTENT_HELP)
+		. = ..()
 		if(atom_integrity < max_integrity)
 			if(!I.tool_start_check(user, src, amount=0))
-				return
+				return COMPONENT_BLOCK_TOOL_ATTACK
 
 			to_chat(user, span_notice("You begin repairing [src]..."))
 			if(I.use_tool(src, user, 40, volume=50))
@@ -165,16 +174,18 @@
 				to_chat(user, span_notice("You repair [src]."))
 		else
 			to_chat(user, span_warning("[src] is already in good condition!"))
-		return
+		return COMPONENT_BLOCK_TOOL_ATTACK
 
-/obj/structure/platform/attackby(obj/item/I, mob/living/user, params)
-	if(I.tool_behaviour == TOOL_WRENCH && deconstructible)
+/obj/structure/platform/wrench_act(mob/living/user, obj/item/I, list/modifiers)
+	if(deconstructible)
+		. = ..()
 		to_chat(user, span_notice("You start disassembling [src]..."))
 		I.play_tool_sound(src)
 		if(I.use_tool(src, user, 30))
 			playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 			deconstruct(TRUE)
-		return
+		return COMPONENT_BLOCK_TOOL_ATTACK
+	return COMPONENT_BLOCK_TOOL_ATTACK
 
 /obj/structure/platform/deconstruct()
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -185,13 +196,6 @@
 				var/datum/material/M = i
 				new M.sheet_type(loc, FLOOR(custom_materials[M] / MINERAL_MATERIAL_AMOUNT, 1))
 	..()
-
-/obj/structure/platform/deconstruct(disassembled)
-	. = ..()
-	if(!loc) //quick check if it's qdeleted already.
-		return
-	if(!(flags_1 & NODECONSTRUCT_1))
-		qdel(src)
 
 /obj/structure/platform/CanPass(atom/movable/mover, border_dir)
 	. = ..()

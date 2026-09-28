@@ -49,7 +49,21 @@
 	..()
 	add_fingerprint(user)
 
-	if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP)
+/obj/structure/railing/deconstruct()
+	if(!loc)
+		return
+	if(!(flags_1 & NODECONSTRUCT_1))
+		if(buildstacktype)
+			new buildstacktype(loc,buildstackamount)
+		else
+			for(var/i in custom_materials)
+				var/datum/material/M = i
+				new M.sheet_type(loc, FLOOR(custom_materials[M] / MINERAL_MATERIAL_AMOUNT, 1))
+	..()
+
+/obj/structure/railing/welder_act(mob/living/user, obj/item/I, list/modifiers)
+	if(user.a_intent == INTENT_HELP)
+		. = ..()
 		if(atom_integrity < max_integrity)
 			if(!I.tool_start_check(user, src, amount=0))
 				return
@@ -60,26 +74,16 @@
 				to_chat(user, span_notice("You repair [src]."))
 		else
 			to_chat(user, span_warning("[src] is already in good condition!"))
-		return
+		return COMPONENT_BLOCK_TOOL_ATTACK
 
-/obj/structure/railing/attackby(obj/item/I, mob/living/user, params)
-	if(I.tool_behaviour == TOOL_WIRECUTTER)
-		to_chat(user, span_notice("You start cutting apart [src]..."))
-		I.play_tool_sound(src)
-		if(I.use_tool(src, user, 30))
-			playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
-			deconstruct(TRUE)
-		return
-
-/obj/structure/railing/deconstruct()
-	if(!(flags_1 & NODECONSTRUCT_1))
-		if(buildstacktype)
-			new buildstacktype(loc,buildstackamount)
-		else
-			for(var/i in custom_materials)
-				var/datum/material/M = i
-				new M.sheet_type(loc, FLOOR(custom_materials[M] / MINERAL_MATERIAL_AMOUNT, 1))
-	..()
+/obj/structure/railing/wirecutter_act(mob/living/user, obj/item/I)
+	. = ..()
+	to_chat(user, span_notice("You start cutting apart [src]..."))
+	I.play_tool_sound(src)
+	if(I.use_tool(src, user, 30))
+		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
+		deconstruct(TRUE)
+	return COMPONENT_BLOCK_TOOL_ATTACK
 
 ///Implements behaviour that makes it possible to unanchor the railing.
 /obj/structure/railing/wrench_act(mob/living/user, obj/item/I)
