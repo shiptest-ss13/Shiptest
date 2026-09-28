@@ -457,9 +457,9 @@
 /datum/supply_pack/gun/energy/shillelagh/indie
 	name = "PL-12 'Shillelagh' Energy SMG"
 	desc = "Contains a single PL-12 Submachine Gun, a civilian grade energy gun with a burst fire mode manufactured by Clover Photonics. Uses Eoehoma cells."
-	cost = 2000
+	cost = 3000
 	contains = list(/obj/item/storage/guncase/pl12)
-	faction_discount = 10
+	faction_discount = 0
 	faction_locked = FALSE
 
 /datum/supply_pack/gun/energy/faveleira
@@ -643,6 +643,13 @@
 	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
+
+/datum/supply_pack/gun/heater
+	name = "Heater PDW Crate"
+	desc = "Contains a compact automatic personal defense weapon chambered in 5.7mm."
+	cost = 3500
+	contains = list(/obj/item/storage/guncase/heater)
+	crate_name = "PDW crate"
 
 /datum/supply_pack/gun/resolution
 	name = "PD46 Resolution PDW Crate"

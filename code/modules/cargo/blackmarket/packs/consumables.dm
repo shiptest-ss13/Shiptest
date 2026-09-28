@@ -55,6 +55,7 @@
 /datum/blackmarket_item/consumable/anomaly_pack
 	name = "The Anomaly Pack"
 	desc = "Listen. Limited time offer. I've got some ultra-premium smokes for a buyer with taste. Stuff's from another dimension. Serious offers only."
+	item = /obj/item/storage/fancy/cigarettes/cigpack_anomaly
 
 	cost_min = 1000
 	cost_max = 2000

@@ -5235,11 +5235,11 @@
 	dir = 8;
 	id = "cybergrind_hangar"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	id = "cybergrind_holo"
-	},
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "cybergrind_holo"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/cybergrind/hangar)
@@ -11379,16 +11379,16 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	dir = 1;
-	id = "cybergrind_holo"
-	},
 /obj/structure/cable/cyan{
 	icon_state = "0-1"
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
 	id = "cybergrind_hangar"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 1;
+	id = "cybergrind_holo"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/cybergrind/hangar)
