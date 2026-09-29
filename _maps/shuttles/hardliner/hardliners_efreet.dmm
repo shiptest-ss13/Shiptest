@@ -132,7 +132,10 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "efreetstar"
+	id = "efreetport"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
@@ -237,7 +240,10 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "dD" = (
-/obj/machinery/telecomms/relay/preset/cybersun,
+/obj/machinery/power/cloak,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
 "dK" = (
@@ -331,7 +337,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark/end{
 	dir = 4
 	},
-/obj/item/clothing/suit/space/hardsuit/stealth/hardliners,
+/obj/item/clothing/suit/space/syndicate/white_red,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "eH" = (
@@ -534,9 +541,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
-/obj/item/ammo_box/magazine/m12g_bulldog,
-/obj/item/ammo_box/magazine/m12g_bulldog,
-/obj/item/ammo_box/magazine/m12g_bulldog,
 /obj/item/ammo_box/magazine/m57_39_asp{
 	pixel_x = 9;
 	pixel_y = -5
@@ -549,16 +553,16 @@
 	pixel_x = 9;
 	pixel_y = -5
 	},
-/obj/item/ammo_box/magazine/m9mm_rattlesnake{
-	pixel_x = -12;
+/obj/item/ammo_box/magazine/m45_cobra{
+	pixel_x = -4;
 	pixel_y = -2
 	},
-/obj/item/ammo_box/magazine/m9mm_rattlesnake{
-	pixel_x = -11;
+/obj/item/ammo_box/magazine/m45_cobra{
+	pixel_x = -3;
 	pixel_y = -2
 	},
-/obj/item/ammo_box/magazine/m9mm_rattlesnake{
-	pixel_x = -11;
+/obj/item/ammo_box/magazine/m45_cobra{
+	pixel_x = -3;
 	pixel_y = -2
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -1152,11 +1156,9 @@
 	pixel_x = -2
 	},
 /obj/item/clothing/gloves/combat,
-/obj/item/storage/box/ammo/a357,
 /obj/item/megaphone,
 /obj/item/clothing/under/syndicate/hardliners/jumpsuit,
 /obj/item/clothing/suit/armor/hardliners/sergeant,
-/obj/item/storage/guncase/pistol/a357,
 /obj/item/melee/energy/flyssa,
 /obj/item/storage/belt/security/webbing/hardliners,
 /obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
@@ -1176,6 +1178,15 @@
 /obj/item/clothing/head/helmet/hardliners{
 	pixel_x = 6;
 	pixel_y = 9
+	},
+/obj/item/storage/guncase/rattlesnake,
+/obj/item/storage/box/ammo/c9mm_ap{
+	pixel_x = -8;
+	pixel_y = -1
+	},
+/obj/item/storage/box/ammo/c9mm_ap{
+	pixel_x = -8;
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
@@ -1528,6 +1539,9 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
 "xo" = (
@@ -1824,10 +1838,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
-/obj/item/gun/ballistic/shotgun/automatic/bulldog/no_mag,
 /obj/item/gun/ballistic/automatic/pistol/asp/no_mag,
-/obj/item/gun/ballistic/automatic/pistol/rattlesnake/no_mag,
 /obj/machinery/light/small/directional/south,
+/obj/item/gun/ballistic/automatic/smg/cobra/no_mag,
+/obj/item/gun/ballistic/shotgun/gaboon/empty,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "CM" = (
@@ -2143,7 +2157,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark/end{
 	dir = 8
 	},
-/obj/item/clothing/suit/space/hardsuit/stealth/hardliners,
+/obj/item/clothing/suit/space/syndicate/white_red,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "GB" = (
@@ -2329,20 +2344,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
-"Jf" = (
-/obj/machinery/power/smes/shuttle/precharged,
-/obj/structure/window/plasma/reinforced{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "efreetport"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/engines)
 "Jo" = (
 /obj/structure/curtain/thin{
 	dir = 1
@@ -2479,6 +2480,9 @@
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "efreetport"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
@@ -3383,11 +3387,11 @@
 	pixel_x = 5;
 	pixel_y = -6
 	},
-/obj/item/storage/toolbox/ammo/c9mm{
-	pixel_x = -6;
-	pixel_y = -6
-	},
 /obj/item/storage/toolbox/ammo/c57,
+/obj/item/storage/toolbox/ammo/c45{
+	pixel_x = -6;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "WJ" = (
@@ -3463,6 +3467,9 @@
 /area/ship/cargo)
 "XZ" = (
 /obj/machinery/power/shuttle/engine/electric,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines)
 "Yc" = (
@@ -3692,13 +3699,13 @@ Ri
 Ri
 ds
 KU
-Jf
-Jf
+ch
+ch
 ds
 tU
 Gc
 ds
-ch
+KU
 ch
 ch
 ds
