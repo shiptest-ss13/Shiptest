@@ -424,13 +424,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
-"fT" = (
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/computer/transponder{
-	icon_state = "transponder-left"
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/bridge)
 "gH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -1173,24 +1166,12 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
 "tc" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/computer/transponder{
+	icon_state = "transponder-left"
 	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/line{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/newscaster/directional/north,
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
 "td" = (
 /obj/structure/closet/syndicate/personal{
 	name = "Captain's closet";
@@ -1472,6 +1453,25 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/engineering/engines)
+"vr" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/newscaster/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "vy" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1695,6 +1695,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light/small/directional/east,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "zn" = (
@@ -1818,6 +1819,16 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
+"BA" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/closet/crate/radiation{
+	name = "fuel crate"
+	},
+/obj/item/stack/sheet/mineral/uranium/ten,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "BS" = (
 /obj/effect/turf_decal/borderfloorwhite,
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
@@ -3505,16 +3516,6 @@
 /obj/structure/crate_shelf,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"WW" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/structure/closet/crate/radiation{
-	name = "fuel crate"
-	},
-/obj/item/stack/sheet/mineral/uranium/ten,
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
 "Xq" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -4081,7 +4082,7 @@ Pc
 zB
 oG
 ba
-WW
+BA
 Tl
 RV
 BS
@@ -4363,7 +4364,7 @@ ol
 td
 Em
 pB
-tc
+vr
 pQ
 HY
 Yc
@@ -4452,7 +4453,7 @@ Ri
 Ri
 sf
 Ds
-fT
+tc
 ma
 yr
 Cd
