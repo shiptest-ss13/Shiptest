@@ -1836,6 +1836,11 @@
 	pixel_x = 4;
 	pixel_y = 9
 	},
+/obj/structure/sink/counter{
+	dir = 8;
+	pixel_x = -6;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "BA" = (
@@ -2125,12 +2130,7 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "FK" = (
-/obj/structure/table/reinforced,
-/obj/structure/sink/counter{
-	dir = 1;
-	pixel_x = -6;
-	pixel_y = 2
-	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "FL" = (
