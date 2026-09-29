@@ -455,6 +455,7 @@
 		else
 			REMOVE_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_TAIL)
 			RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_TAIL), PROC_REF(on_owner_paralysis_gain))
+		RegisterSignals(owner, list(SIGNAL_ADDTRAIT(TRAIT_INCAPACITATED), COMSIG_MOB_DEATH), PROC_REF(on_owner_incapacitated))
 	if(.)
 		var/mob/living/carbon/old_owner = .
 		if(HAS_TRAIT(old_owner, TRAIT_PARALYSIS_TAIL))
@@ -463,6 +464,7 @@
 				REMOVE_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_TAIL)
 		else
 			UnregisterSignal(old_owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_TAIL))
+		UnregisterSignal(old_owner, list(SIGNAL_ADDTRAIT(TRAIT_INCAPACITATED), COMSIG_MOB_DEATH))
 
 ///Reacts to the owner gaining the TRAIT_PARALYSIS_TAIL trait.
 /obj/item/bodypart/tail/proc/on_owner_paralysis_gain(mob/living/carbon/source)
@@ -477,6 +479,10 @@
 	REMOVE_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_TAIL)
 	UnregisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_TAIL))
 	RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_TAIL), PROC_REF(on_owner_paralysis_gain))
+
+/obj/item/bodypart/tail/proc/on_owner_incapacitated(mob/living/carbon/source)
+	SIGNAL_HANDLER
+	set_wag(FALSE)
 
 /obj/item/bodypart/tail/set_disabled(new_disabled)
 	if(..())
