@@ -15,8 +15,8 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/computer/helm/viewscreen/computer{
-	pixel_x = 1;
-	pixel_y = 8
+	pixel_x = 0;
+	pixel_y = 13
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -281,16 +281,6 @@
 "dM" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/external/dark)
-"ee" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/structure/closet/crate/radiation{
-	name = "fuel crate"
-	},
-/obj/item/stack/sheet/mineral/uranium/ten,
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
 "em" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -434,6 +424,13 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
+"fT" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/computer/transponder{
+	icon_state = "transponder-left"
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
 "gH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -1620,13 +1617,6 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
-"xp" = (
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/computer/transponder{
-	icon_state = "transponder-left"
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/bridge)
 "xs" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -3515,6 +3505,16 @@
 /obj/structure/crate_shelf,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"WW" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/closet/crate/radiation{
+	name = "fuel crate"
+	},
+/obj/item/stack/sheet/mineral/uranium/ten,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "Xq" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -4081,7 +4081,7 @@ Pc
 zB
 oG
 ba
-ee
+WW
 Tl
 RV
 BS
@@ -4452,7 +4452,7 @@ Ri
 Ri
 sf
 Ds
-xp
+fT
 ma
 yr
 Cd
