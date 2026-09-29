@@ -118,7 +118,7 @@
 	if(include_subtypes && is_type_in_typecache(O, exclude_types))
 		return FALSE
 	var/amount = get_amount(O)
-	if(amount)
+	if(!amount)
 		return FALSE
 	if(!get_cost(amount, apply_elastic))
 		return FALSE
