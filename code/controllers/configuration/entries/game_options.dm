@@ -318,7 +318,7 @@
 /datum/config_entry/number/bombcap/ValidateAndSet(str_val)
 	. = ..()
 	if(.)
-		GLOB.MAX_EX_DEVESTATION_RANGE = round(config_entry_value / 4)
+		GLOB.MAX_EX_DEVASTATION_RANGE = round(config_entry_value / 4)
 		GLOB.MAX_EX_HEAVY_RANGE = round(config_entry_value / 2)
 		GLOB.MAX_EX_LIGHT_RANGE = config_entry_value
 		GLOB.MAX_EX_FLASH_RANGE = config_entry_value

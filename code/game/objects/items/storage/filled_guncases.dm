@@ -6,7 +6,7 @@
 	gun_type = /obj/item/gun/ballistic/revolver/firebrand
 
 /obj/item/storage/guncase/pistol/derringer
-	gun_type = /obj/item/gun/ballistic/derringer
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/derringer
 
 /obj/item/storage/guncase/pistol/montagne
 	gun_type = /obj/item/gun/ballistic/revolver/montagne
@@ -284,8 +284,16 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/challenger
 	mag_type = /obj/item/ammo_box/magazine/co9mm
 
+/obj/item/storage/guncase/pistol/challengerpersonal
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/challenger/indie
+	mag_type = /obj/item/ammo_box/magazine/co9mm
+
 /obj/item/storage/guncase/vector
 	gun_type = /obj/item/gun/ballistic/automatic/smg/expedition
+	mag_type = /obj/item/ammo_box/magazine/m9mm_expedition
+
+/obj/item/storage/guncase/expeditiondefender
+	gun_type = /obj/item/gun/ballistic/automatic/smg/expedition/indie
 	mag_type = /obj/item/ammo_box/magazine/m9mm_expedition
 
 /obj/item/storage/guncase/cycler
@@ -505,6 +513,14 @@
 /obj/item/storage/guncase/slammer
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/slammer
 	mag_type = /obj/item/ammo_box/magazine/m12g_slammer
+
+/obj/item/storage/guncase/heater
+	gun_type = /obj/item/gun/ballistic/automatic/smg/heater
+	mag_type = /obj/item/ammo_box/magazine/heater
+
+/obj/item/storage/guncase/scorcher
+	gun_type = /obj/item/gun/ballistic/automatic/smg/heater/scorcher
+	mag_type = /obj/item/ammo_box/magazine/heater
 
 /* Eoehoma */
 

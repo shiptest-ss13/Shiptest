@@ -41,6 +41,12 @@
 
 NO_MAG_GUN_HELPER(automatic/pistol/challenger)
 
+/obj/item/gun/ballistic/automatic/pistol/challenger/indie
+	name = "Advantage CA9 Challenger Personal"
+	desc = "The civilian import version of the challenger. A popular first pick for gun owners due to its low price point, forgiving recoil, and generous mag capacity for its class."
+	icon_state = "challengerp"
+	item_state = "warra_civ"
+
 /obj/item/gun/ballistic/automatic/pistol/champion
 	name = "Advantage PHB Champion"
 	desc = "A large machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Chambered in 9mm."
@@ -268,8 +274,10 @@ EMPTY_GUN_HELPER(revolver/rhino)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
 	icon_state = "expedition"
 	item_state = "expedition"
+	manufacturer = MANUFACTURER_VIGILITAS
 	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_expedition
-	spread = 3
+	spread = 4
+	fire_delay = 0.09 SECONDS // despite being 1 fire delay previously, it fucking rounds up to 1.5. This makes it ACTUALLY ONE
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m9mm_expedition,
 	) //you guys remember when the autorifle was chambered in 9mm
@@ -321,6 +329,16 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 	name = "expedition submachinegun magazine (9mm rubber)"
 	desc = "A 30-round magazine for the Expedition submachine gun. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
+
+/obj/item/gun/ballistic/automatic/smg/expedition/indie
+	name = "\improper Advantage SGP9 Expedition Defender"
+	desc = "The civilian import of the Expedition, marketed to private police forces and well-off bounty hunters. Retains most of its novel features aside from the rail mount."
+	icon_state = "civpedition"
+	item_state = "civpedition"
+	manufacturer = MANUFACTURER_VIGILITAS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1
+	)
 
 // /obj/item/gun/ballistic/automatic/smg/resolution
 /obj/item/gun/ballistic/automatic/smg/resolution
@@ -448,7 +466,7 @@ NO_MAG_GUN_HELPER(automatic/smg/resolution/inteq)
 
 	icon_state = "negotiator"
 	item_state = "negotiator"
-
+	manufacturer = MANUFACTURER_VIGILITAS
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/tube/rubbershot
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/tube,

@@ -64,7 +64,9 @@
 	var/lose_patience_timer_id //id for a timer to call LoseTarget(), used to stop mobs fixating on a target they can't reach
 	var/lose_patience_timeout = 300 //30 seconds by default, so there's no major changes to AI behaviour, beyond actually bailing if stuck forever
 
-///When a target is found, will the mob attempt to charge at it's target?
+	///If true, mob will attempt to pathfind to burglar alarms in their area when triggered.
+	var/search_alarms = FALSE
+	///When a target is found, will the mob attempt to charge at it's target?
 	var/charger = FALSE
 	///Tracks if the target is actively charging.
 	var/charge_state = FALSE
