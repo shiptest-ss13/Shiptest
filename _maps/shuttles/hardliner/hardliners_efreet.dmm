@@ -1830,6 +1830,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
+"Bx" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/condiment/ketchup{
+	pixel_x = 4;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/canteen)
 "BA" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -2118,9 +2126,10 @@
 /area/ship/bridge)
 "FK" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/condiment/ketchup{
-	pixel_x = 4;
-	pixel_y = 9
+/obj/structure/sink/counter{
+	dir = 1;
+	pixel_x = -6;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
@@ -2413,10 +2422,6 @@
 /obj/item/storage/belt/utility,
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/glasses/welding,
-/obj/effect/turf_decal/industrial/warning{
-	color = "#FFFFFF";
-	dir = 4
-	},
 /obj/item/clothing/suit/toggle/hardliners,
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -3153,15 +3158,6 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"SS" = (
-/obj/structure/table/reinforced,
-/obj/structure/sink/counter{
-	dir = 1;
-	pixel_x = -6;
-	pixel_y = 2
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/canteen)
 "SV" = (
 /obj/machinery/modular_computer/console/preset/command{
 	icon_state = "computer-right";
@@ -4301,7 +4297,7 @@ Mk
 mL
 Ih
 Ih
-SS
+FK
 vI
 Ri
 Ri
@@ -4324,7 +4320,7 @@ pQ
 rV
 gH
 sG
-FK
+Bx
 vI
 Ri
 dM
