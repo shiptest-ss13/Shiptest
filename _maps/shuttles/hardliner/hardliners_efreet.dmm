@@ -483,12 +483,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "iq" = (
-/obj/machinery/computer/cargo{
-	dir = 8;
-	icon_state = "computer-left"
-	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 4
+	},
+/obj/machinery/computer/helm{
+	dir = 8;
+	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -1734,10 +1734,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
 "zW" = (
-/obj/machinery/emergency_panel/dark{
-	pixel_x = 8;
-	pixel_y = -8
-	},
 /obj/machinery/light/small/directional/north{
 	pixel_x = 12;
 	pixel_y = 28
@@ -1746,6 +1742,9 @@
 	pixel_x = -2;
 	pixel_y = 22;
 	id = "Bansheeturrets"
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -2512,8 +2511,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/armory)
 "JT" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
+/obj/machinery/emergency_panel/dark{
+	pixel_x = 8;
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -3158,12 +3158,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines)
 "Td" = (
-/obj/machinery/computer/helm{
-	dir = 8;
-	icon_state = "computer-right"
-	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 4
+	},
+/obj/machinery/computer/cargo{
+	dir = 8;
+	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
