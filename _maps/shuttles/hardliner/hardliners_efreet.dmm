@@ -2118,10 +2118,9 @@
 /area/ship/bridge)
 "FK" = (
 /obj/structure/table/reinforced,
-/obj/structure/sink/counter{
-	dir = 1;
-	pixel_x = -6;
-	pixel_y = 2
+/obj/item/reagent_containers/condiment/ketchup{
+	pixel_x = 4;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
@@ -2618,7 +2617,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/machinery/light/small/directional/north,
 /obj/structure/table/reinforced,
 /obj/item/analyzer{
 	pixel_x = 3;
@@ -3155,6 +3153,15 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"SS" = (
+/obj/structure/table/reinforced,
+/obj/structure/sink/counter{
+	dir = 1;
+	pixel_x = -6;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/canteen)
 "SV" = (
 /obj/machinery/modular_computer/console/preset/command{
 	icon_state = "computer-right";
@@ -3192,14 +3199,6 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/crew/dorm)
-"Tj" = (
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/condiment/ketchup{
-	pixel_x = 4;
-	pixel_y = 9
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/canteen)
 "Tl" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -4302,7 +4301,7 @@ Mk
 mL
 Ih
 Ih
-FK
+SS
 vI
 Ri
 Ri
@@ -4325,7 +4324,7 @@ pQ
 rV
 gH
 sG
-Tj
+FK
 vI
 Ri
 dM
