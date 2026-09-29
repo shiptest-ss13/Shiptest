@@ -544,7 +544,7 @@
 /area/ship/cargo)
 "je" = (
 /mob/living/simple_animal/hostile/automated/quadrotor/cybersun/friendly{
-	name = "Muffin";
+	name = "Crab";
 	faction = list("neutral");
 	ranged = 0
 	},
@@ -648,14 +648,6 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
-"lg" = (
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/condiment/ketchup{
-	pixel_x = 4;
-	pixel_y = 9
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/canteen)
 "lv" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
@@ -3200,6 +3192,14 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/crew/dorm)
+"Tj" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/condiment/ketchup{
+	pixel_x = 4;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/canteen)
 "Tl" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -4325,7 +4325,7 @@ pQ
 rV
 gH
 sG
-lg
+Tj
 vI
 Ri
 dM
