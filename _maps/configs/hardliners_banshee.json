@@ -3,26 +3,24 @@
 	"faction": "/datum/faction/syndicate/hardliners",
 	"prefix": "ISV",
 	"manufacturer": "ISF Spacecraft",
-	"map_name": "Y450-H Banshee-class Salvage Clipper",
+	"map_name": "Y300-L Efreet-class Converted Dropship",
 	"namelists": [
 		"GORLEX",
 		"NATURAL_AGGRESSIVE",
 		"BEASTS",
 		"WEAPONS"
 	],
-	"map_short_name": "Banshee-class",
-	"description": "A drastic refit of an ICW-era Cybersun yacht into a salvage vessel. While the Banshee retains most of the original exterior, its interior houses an exosuit-based Hardliner salvage team and all the facilities they could need. Though somewhat dated, it functions well as a sleeper ship that could easily be mistaken for any other civilian vessel.",
+	"map_short_name": "Efreet-class",
+	"description": "a drastic refit based on the Gravastar-class hull, the Efreet-class is a standardized modernization shared between many different hardliner groups. Gravistar-class hulls handed to the fledging Hardliner groups were deemed inefficient by captains due to their age, resulting in the creation of the new Efreet-class. A simple conversion of aging systems and application of exterior armor paired with weapon mounts satisfied the children of Gorlex, a brutally dark exterior to remind them of their history. the Efreet quickly gained fame among Hardliners due to its advanced cloaking, when an undetectable fleet of Efreets razed a notorious independent company's mining operation to the ground.",
 	"tags": [
-		"Salvage",
 		"Combat",
-		"Engineering",
-		"Generalist"
+		"Response"
 	],
-	"map_path": "_maps/shuttles/hardliner/hardliners_banshee.dmm",
-	"tranist_x_offset": -30,
-	"tranist_y_offset": -5,
-	"map_id": "hardliners_banshee",
-	"limit": 1,
+	"map_path": "_maps/shuttles/hardliner/hardliners_efreet.dmm",
+	"tranist_x_offset": 10,
+	"tranist_y_offset": -15,
+	"map_id": "hardliners_efreet",
+	"limit": 2,
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/syndicate/captain/gorlex",
@@ -33,8 +31,8 @@
 			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex",
 			"slots": 1
 		},
-		"Wrecker": {
-			"outfit": "/datum/outfit/job/syndicate/miner/gorlex",
+		"Trooper": {
+			"outfit": "/datum/outfit/job/syndicate/security/gorlex",
 			"slots": 2
 		},
 		"Junior Wrecker": {
