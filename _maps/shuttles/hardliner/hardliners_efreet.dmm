@@ -315,6 +315,8 @@
 	name = "medical supplies"
 	},
 /obj/item/clothing/gloves/nitrile/evil,
+/obj/item/clothing/head/hardliners,
+/obj/item/clothing/suit/hardliners,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "er" = (
@@ -494,6 +496,7 @@
 /area/ship/bridge)
 "is" = (
 /obj/machinery/griddle,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "iK" = (
@@ -540,7 +543,12 @@
 /turf/open/floor/plating/airless,
 /area/ship/cargo)
 "je" = (
-/obj/structure/closet/crate/bin,
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun/friendly{
+	name = "Muffin";
+	faction = list("neutral");
+	ranged = 0
+	},
+/obj/structure/bed/dogbed,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "ji" = (
@@ -640,6 +648,14 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
+"lg" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/condiment/ketchup{
+	pixel_x = 4;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/canteen)
 "lv" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
@@ -1001,10 +1017,14 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "qc" = (
-/obj/structure/sink/kitchen{
-	dir = 4
-	},
-/obj/machinery/light/directional/west,
+/obj/structure/closet/wall/directional/west,
+/obj/item/plate/large,
+/obj/item/plate/large,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/plate/small,
+/obj/item/plate/small,
+/obj/item/reagent_containers/glass/beaker/large,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "qp" = (
@@ -2106,6 +2126,11 @@
 /area/ship/bridge)
 "FK" = (
 /obj/structure/table/reinforced,
+/obj/structure/sink/counter{
+	dir = 1;
+	pixel_x = -6;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "FL" = (
@@ -4300,7 +4325,7 @@ pQ
 rV
 gH
 sG
-FK
+lg
 vI
 Ri
 dM
