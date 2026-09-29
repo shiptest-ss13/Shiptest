@@ -47,7 +47,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "bh" = (
-/obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/button/door{
 	id = "efreetbridgewindow";
@@ -70,13 +69,12 @@
 	pixel_x = 20;
 	dir = 8
 	},
-/obj/item/paper_bin{
-	pixel_x = -8;
-	pixel_y = 4
+/obj/structure/table/emptycomputer{
+	icon_state = "emptycomputer-right"
 	},
-/obj/item/pen{
-	pixel_x = -8;
-	pixel_y = 4
+/obj/item/reagent_containers/food/drinks/coffee/large/empty{
+	pixel_x = -7;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -428,6 +426,16 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
+"gG" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/closet/crate/radiation{
+	name = "fuel crate"
+	},
+/obj/item/stack/sheet/mineral/uranium/ten,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "gH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -623,25 +631,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
-"kw" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/line{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/newscaster/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "kC" = (
@@ -1081,6 +1070,10 @@
 /area/ship/engineering/engines)
 "ro" = (
 /obj/structure/table/reinforced,
+/obj/structure/sign/poster/contraband/radiofreefrontier{
+	pixel_x = -27;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "rx" = (
@@ -1512,6 +1505,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/structure/sign/poster/contraband/have_a_puff{
+	pixel_x = 0;
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -2152,15 +2149,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"Gh" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/item/modular_computer/laptop/preset/civilian/rilena{
-	pixel_x = 2;
-	pixel_y = 7
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/bridge)
 "Gi" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner{
@@ -2227,6 +2215,10 @@
 	},
 /obj/item/clothing/suit/space/syndicate/white_red,
 /obj/item/clothing/head/helmet/space/syndicate/white_red,
+/obj/structure/sign/poster/contraband/aclf{
+	pixel_x = 0;
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "GB" = (
@@ -2349,6 +2341,10 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
+	},
+/obj/structure/sign/poster/contraband/gec{
+	pixel_x = 28;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
@@ -2961,16 +2957,13 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
-"Qt" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
+"Qs" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/computer/transponder{
+	icon_state = "transponder-left"
 	},
-/obj/structure/closet/crate/radiation{
-	name = "fuel crate"
-	},
-/obj/item/stack/sheet/mineral/uranium/ten,
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
 "QD" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -2985,6 +2978,25 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
+"QO" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/newscaster/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "Rh" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 1
@@ -4073,7 +4085,7 @@ Pc
 zB
 oG
 ba
-Qt
+gG
 Tl
 RV
 BS
@@ -4355,7 +4367,7 @@ ol
 td
 Em
 pB
-kw
+QO
 pQ
 HY
 Yc
@@ -4444,7 +4456,7 @@ Ri
 Ri
 sf
 Ds
-Gh
+Qs
 ma
 yr
 Cd
