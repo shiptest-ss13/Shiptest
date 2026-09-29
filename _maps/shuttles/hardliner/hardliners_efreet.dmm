@@ -8,18 +8,15 @@
 	},
 /area/ship/bridge)
 "aB" = (
-/obj/machinery/photocopier{
-	pixel_y = -4
-	},
 /obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/turretid/ship{
-	pixel_x = 5;
-	pixel_y = 22;
-	id = "Bansheeturrets"
-	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/computer/helm/viewscreen/computer{
+	pixel_x = 1;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -284,6 +281,16 @@
 "dM" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/external/dark)
+"ee" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/closet/crate/radiation{
+	name = "fuel crate"
+	},
+/obj/item/stack/sheet/mineral/uranium/ten,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "em" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1029,6 +1036,14 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/item/paper_bin{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_x = -8;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "qC" = (
@@ -1161,15 +1176,24 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
 "tc" = (
-/obj/effect/turf_decal/techfloor{
+/obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/structure/closet/crate/radiation{
-	name = "fuel crate"
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 1
 	},
-/obj/item/stack/sheet/mineral/uranium/ten,
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/newscaster/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "td" = (
 /obj/structure/closet/syndicate/personal{
 	name = "Captain's closet";
@@ -1596,6 +1620,13 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
+"xp" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/computer/transponder{
+	icon_state = "transponder-left"
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
 "xs" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -1719,6 +1750,11 @@
 /obj/machinery/light/small/directional/north{
 	pixel_x = 12;
 	pixel_y = 28
+	},
+/obj/machinery/turretid/ship{
+	pixel_x = -2;
+	pixel_y = 22;
+	id = "Bansheeturrets"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -3142,13 +3178,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"Tm" = (
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/computer/transponder{
-	icon_state = "transponder-left"
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/bridge)
 "Tp" = (
 /obj/machinery/door/airlock/command/glass{
 	name = "Bridge";
@@ -3231,7 +3260,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "UA" = (
-/obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
@@ -3244,13 +3272,8 @@
 	pixel_x = 18;
 	pixel_y = 10
 	},
-/obj/item/paper_bin{
-	pixel_x = -8;
-	pixel_y = 4
-	},
-/obj/item/pen{
-	pixel_x = -8;
-	pixel_y = 4
+/obj/machinery/photocopier{
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -3324,25 +3347,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
-"Vb" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/line{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/newscaster/directional/north,
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
 "Vh" = (
 /obj/machinery/computer/crew{
 	icon_state = "computer-left";
@@ -4077,7 +4081,7 @@ Pc
 zB
 oG
 ba
-tc
+ee
 Tl
 RV
 BS
@@ -4359,7 +4363,7 @@ ol
 td
 Em
 pB
-Vb
+tc
 pQ
 HY
 Yc
@@ -4448,7 +4452,7 @@ Ri
 Ri
 sf
 Ds
-Tm
+xp
 ma
 yr
 Cd
