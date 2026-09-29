@@ -271,3 +271,10 @@ ICE_TURF_HELPER(concrete/pavement)
 	light_color = COLOR_ICEPLANET_LIGHT
 
 
+/turf/open/water/iceplanet
+	name = "cold water"
+	desc = "Frozen ice eventually gives way to flowing water when heat is applied. That must be the case here too."
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+	color = "#072A6C"
