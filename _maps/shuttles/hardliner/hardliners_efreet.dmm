@@ -296,7 +296,7 @@
 /obj/structure/cable,
 /obj/machinery/button/door{
 	id = "efreetstar";
-	name = "Airlock shutters";
+	name = "engine shutters";
 	pixel_x = 1;
 	pixel_y = -20;
 	dir = 1;
@@ -2070,7 +2070,7 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/button/door{
 	id = "efreetairlockwindow";
-	name = "engine shutters";
+	name = "Airlock shutters";
 	pixel_x = 1;
 	pixel_y = -20;
 	dir = 1;
@@ -2715,7 +2715,7 @@
 	},
 /obj/machinery/button/door{
 	id = "efreetport";
-	name = "Airlock shutters";
+	name = "engine shutters";
 	pixel_x = 1;
 	pixel_y = -20;
 	dir = 1;
@@ -2980,6 +2980,24 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
+/area/ship/engineering/engines)
+"Pu" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "efreetstar"
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
 "PD" = (
 /obj/effect/turf_decal/industrial/hatch{
@@ -3294,6 +3312,23 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"Uf" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "efreetstar"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/engines)
 "UA" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -3844,9 +3879,9 @@ ds
 tU
 Gc
 ds
-KU
-ch
-ch
+Pu
+Uf
+Uf
 ds
 qp
 jY
