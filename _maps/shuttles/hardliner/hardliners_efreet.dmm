@@ -271,13 +271,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
-"dK" = (
-/obj/machinery/porta_turret/ship/hardliners/heavy{
-	dir = 8;
-	id = "Bansheeturrets"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/external/dark)
 "dM" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/external/dark)
@@ -642,12 +635,18 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/engineering/engines)
 "kO" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/effect/turf_decal/industrial/hatch{
+	layer = 2.030
 	},
-/obj/item/radio/intercom/directional/west,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
+/obj/machinery/porta_turret/ship/hardliners{
+	dir = 9;
+	id = "Bansheeturrets"
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
+	dir = 1
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "lv" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
@@ -699,7 +698,14 @@
 /turf/template_noop,
 /area/template_noop)
 "mo" = (
+/obj/effect/turf_decal/industrial/hatch{
+	layer = 2.030
+	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/machinery/porta_turret/ship/hardliners{
+	dir = 10;
+	id = "Bansheeturrets"
+	},
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 4
 	},
@@ -3762,7 +3768,6 @@ Ri
 Ri
 Ri
 Ri
-Ri
 mi
 Ri
 Ri
@@ -3775,7 +3780,6 @@ Ri
 Ri
 "}
 (2,1,1) = {"
-Ri
 Ri
 Ri
 Ri
@@ -3802,7 +3806,6 @@ Ri
 Ri
 Ri
 Ri
-Ri
 ds
 XZ
 XZ
@@ -3821,7 +3824,6 @@ Ri
 Ri
 "}
 (4,1,1) = {"
-Ri
 Ri
 Ri
 Ri
@@ -3847,8 +3849,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
-sf
+kO
 ds
 jJ
 QD
@@ -3867,7 +3868,6 @@ Ri
 Ri
 "}
 (6,1,1) = {"
-Ri
 Ri
 Ri
 ds
@@ -3891,7 +3891,6 @@ Ri
 "}
 (7,1,1) = {"
 Ri
-dK
 Ri
 ds
 qs
@@ -3910,12 +3909,11 @@ Le
 wW
 ds
 Ri
-dK
+Ri
 "}
 (8,1,1) = {"
 Ri
-dM
-ED
+Ri
 ds
 xf
 ou
@@ -3932,13 +3930,12 @@ Mq
 nN
 In
 ds
-UM
-dM
+Ri
+Ri
 "}
 (9,1,1) = {"
 Ri
-dM
-ED
+Ri
 ds
 dD
 Lk
@@ -3955,13 +3952,12 @@ sa
 EG
 Mp
 ds
-qp
-dM
+Ri
+Ri
 "}
 (10,1,1) = {"
 Ri
-dM
-ED
+Ri
 ds
 ds
 ds
@@ -3978,14 +3974,13 @@ ds
 ds
 ds
 ds
-qp
-dM
+Ri
+Ri
 "}
 (11,1,1) = {"
 Ri
-dM
-ED
-JE
+Ri
+Ri
 sT
 NU
 Ov
@@ -4000,15 +3995,14 @@ ep
 IP
 tX
 CM
-JE
-qp
-dM
+Ri
+Ri
+Ri
 "}
 (12,1,1) = {"
 Ri
 Ri
-ED
-JE
+Ri
 sT
 ns
 Yq
@@ -4023,12 +4017,11 @@ fL
 SC
 zq
 CM
-JE
-qp
+Ri
+Ri
 Ri
 "}
 (13,1,1) = {"
-Ri
 Ri
 sT
 sT
@@ -4053,7 +4046,6 @@ Ri
 (14,1,1) = {"
 Ri
 iR
-kO
 ck
 Cw
 nB
@@ -4075,7 +4067,6 @@ Ri
 "}
 (15,1,1) = {"
 Lv
-zB
 zB
 YN
 MM
@@ -4099,7 +4090,6 @@ Ri
 (16,1,1) = {"
 Ri
 Pc
-zB
 oG
 ba
 BA
@@ -4120,7 +4110,6 @@ se
 Ri
 "}
 (17,1,1) = {"
-Ri
 Ri
 sT
 sT
@@ -4143,7 +4132,6 @@ Cf
 Ri
 "}
 (18,1,1) = {"
-Ri
 Ri
 VE
 sT
@@ -4168,7 +4156,6 @@ Ri
 (19,1,1) = {"
 Ri
 Ri
-Ri
 sT
 sT
 GR
@@ -4191,7 +4178,6 @@ Ri
 (20,1,1) = {"
 Ri
 Ri
-Ri
 ED
 tR
 eH
@@ -4212,7 +4198,6 @@ Ri
 Ri
 "}
 (21,1,1) = {"
-Ri
 Ri
 Ri
 ED
@@ -4238,7 +4223,6 @@ Ri
 Ri
 Ri
 Ri
-Ri
 JE
 eH
 Lr
@@ -4258,7 +4242,6 @@ Ri
 Ri
 "}
 (23,1,1) = {"
-Ri
 Ri
 Ri
 Ri
@@ -4284,7 +4267,6 @@ Ri
 Ri
 Ri
 Ri
-Ri
 eH
 Gt
 vZ
@@ -4304,7 +4286,6 @@ Ri
 Ri
 "}
 (25,1,1) = {"
-Ri
 Ri
 dM
 Ri
@@ -4328,7 +4309,6 @@ Ri
 "}
 (26,1,1) = {"
 Ri
-Ri
 dM
 LD
 eH
@@ -4350,7 +4330,6 @@ dM
 Ri
 "}
 (27,1,1) = {"
-Ri
 Ri
 dM
 sf
@@ -4374,7 +4353,6 @@ Ri
 "}
 (28,1,1) = {"
 Ri
-Ri
 dM
 sf
 UM
@@ -4396,7 +4374,6 @@ dM
 Ri
 "}
 (29,1,1) = {"
-Ri
 Ri
 bV
 dM
@@ -4421,7 +4398,6 @@ Ri
 (30,1,1) = {"
 Ri
 Ri
-Ri
 dM
 UM
 pB
@@ -4444,7 +4420,6 @@ Ri
 (31,1,1) = {"
 Ri
 Ri
-Ri
 dM
 UM
 pB
@@ -4465,7 +4440,6 @@ Ri
 Ri
 "}
 (32,1,1) = {"
-Ri
 Ri
 Ri
 cO
@@ -4494,7 +4468,6 @@ Ri
 Ri
 Ri
 Ri
-Ri
 Ds
 bh
 ca
@@ -4511,7 +4484,6 @@ Ri
 Ri
 "}
 (34,1,1) = {"
-Ri
 Ri
 Ri
 Ri
@@ -4541,7 +4513,6 @@ Ri
 Ri
 Ri
 Ri
-Ri
 Ds
 iq
 Td
@@ -4557,7 +4528,6 @@ Ri
 Ri
 "}
 (36,1,1) = {"
-Ri
 Ri
 Ri
 Ri
