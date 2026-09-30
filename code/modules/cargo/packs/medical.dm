@@ -275,8 +275,8 @@
 	faction_discount = 50
 
 /datum/supply_pack/medical/vials/empty_vial
-	name = "Small Empty Vials Box"
-	desc = "Contains seven empty small hypospray vials, for usage in a Hypospray."
+	name = "Empty Vials Box"
+	desc = "Contains seven empty hypospray vials, for usage in a Hypospray."
 	cost = 100
 	contains = list(
 		/obj/item/storage/box/vials)

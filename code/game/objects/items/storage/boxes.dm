@@ -351,7 +351,7 @@
 
 /obj/item/storage/box/vials
 	name = "box of hypospray vials"
-	desc = "A box full of small hypospray vials."
+	desc = "A box full of hypospray vials."
 	illustration = "writing"
 
 /obj/item/storage/box/vials/PopulateContents()
