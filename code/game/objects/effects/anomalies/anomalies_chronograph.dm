@@ -1,27 +1,26 @@
-
 /datum/status_effect/accelerando
-
-
-
-/datum/status_effect/accelerando
-	concealment_power = 25
 	alert_type = /atom/movable/screen/alert/status_effect/cloaked
 	tick_interval = 3
+	duration = -1
 	//how close to the chronograph are we?
 	var/source_anomaly
+
+/datum/status_effect/accelerando/on_creation(mob/living/new_owner, _duration = 10 SECONDS)
+	duration = _duration
+	return ..()
 
 /datum/status_effect/accelerando/on_apply()
 	. = ..()
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
-	owner.add_filter("cloak_distort", 1, displacement_map_filter(icon=icon('icons/effects/effects.dmi', "static_base"), size = 0))
-	animate(owner.get_filter("cloak_distort"), 20, size = 4)
+	owner.add_filter("chronoblur", 1, angular_blur_filter(3, 3, 8))
+	animate(owner.get_filter("chronoblur"), 20, size = 8)
 
 /datum/status_effect/accelerando/cloaked/tick()
 	owner.alpha = max(min_alpha, owner.alpha - 25)
 	if(prob(20))
-		if(!owner.get_filter("cloak_distort"))
-			owner.add_filter("cloak_distort", 1, displacement_map_filter(icon=icon('icons/effects/effects.dmi', "static_base"), size = 0))
-		animate(owner.get_filter("cloak_distort"), 5, size = rand(-4,4))
+		if(!owner.get_filter("chronoblur"))
+			owner.add_filter("chronoblur", 1, angular_blur_filter(3, 3, 16))
+		animate(owner.get_filter("chronoblur"), 5, size = rand(-4,4))
 
 /datum/status_effect/accelerando/cloaked/proc/on_move()
 	SIGNAL_HANDLER
@@ -39,25 +38,25 @@
 /atom/movable/screen/alert/status_effect/accelerando
 	name = "Accelerando"
 	desc = "Out of sync. Out of time. Yet you're still here?"
-	icon_state = "concealed"
+	icon_state = ""
 
-/atom/movable/warp_effect
+/atom/movable/chrono_effect
 	appearance_flags = PIXEL_SCALE|LONG_GLIDE // no tile bound so you can see it around corners and so
 	icon = 'icons/effects/light_overlays/light_352.dmi'
 	icon_state = "light"
 	pixel_x = -176
 	pixel_y = -176
 
-/obj/effect/anomaly/grav
+/obj/effect/anomaly/chronograph
 	name = "chronograph"
-	icon_state = "gravity"
+	icon_state = "chronograph"
 	desc = "Time beats forward at greater and greater speeds. The accelerando of life is constant. Here it drives reality."
 	density = FALSE
 	core = /obj/item/assembly/signaler/anomaly/grav
-	effectrange = 4
-	var/boing = 0
+	effectrange = 6
+	pulse_delay = 1 SECOND
 	///Warp effect holder for displacement filter to "pulse" the anomaly
-	var/atom/movable/warp_effect/warp
+	var/atom/movable/chrono_effect/chrono
 
 /obj/effect/anomaly/grav/Initialize(mapload, new_lifespan, drops_core)
 	. = ..()
@@ -66,90 +65,24 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/effect/anomaly/grav/anomalyEffect()
-	..()
-	boing = 1
-	for(var/obj/O in orange(effectrange, src))
-		if(!O.anchored)
-			step_towards(O,src)
-	for(var/mob/living/Mob in range(0, src))
-		gravShock(Mob)
-	for(var/mob/living/Mob in orange(effectrange, src))
-		if(!Mob.mob_negates_gravity())
-			step_towards(Mob,src)
-	for(var/obj/O in range(0,src))
-		if(!O.anchored)
-			if(isturf(O.loc))
-				var/turf/T = O.loc
-				if(T.intact && HAS_TRAIT(O, TRAIT_T_RAY_VISIBLE))
-					continue
-			var/mob/living/target = locate() in view(effectrange,src)
-			if(target && !target.stat)
-				O.throw_at(target, 5, 10)
+/obj/effect/anomaly/chronograph/anomalyEffect()
+	. = ..()
+	for(var/mob/living/old in orange(effectrange, src))
+		//closer is better
+		var/effect_power = -(get_dist(old, src)) + effectrange
+		old.adjust_timed_status_effect(effect_power * 3, /datum/status_effect/accelerando, effect_power*30)
 
-	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
-		return
-
-	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
-	for(var/mob/living/carbon/carbon in orange(effectrange/2, src))
-		var/target_armor = carbon.run_armor_check(attack_flag = "melee")
-		carbon.apply_damage(15, BRUTE, spread_damage = TRUE, wound_bonus = target_armor, bare_wound_bonus = 0, sharpness = 0)
-
-/obj/effect/anomaly/grav/proc/on_entered(datum/source, atom/movable/AM)
+/obj/effect/anomaly/chronograph/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 
-	gravShock(AM)
 
-/obj/effect/anomaly/grav/Bump(atom/A)
-	gravShock(A)
-
-/obj/effect/anomaly/grav/Bumped(atom/movable/AM)
-	gravShock(AM)
-
-/obj/effect/anomaly/grav/proc/gravShock(mob/living/Guy)
-	if(boing && isliving(Guy) && !Guy.stat)
-		Guy.Paralyze(40)
-		var/atom/target = get_edge_target_turf(Guy, get_dir(src, get_step_away(Guy, src)))
-		Guy.throw_at(target, 5, 1)
-		boing = 0
-		if(iscarbon(Guy))
-			for(var/mob/living/carbon/carbon in range(0,src))
-				var/target_armor = carbon.run_armor_check(attack_flag = "melee")
-				carbon.apply_damage(15, BRUTE, spread_damage = TRUE, wound_bonus = target_armor, bare_wound_bonus = 0, sharpness = 0)
+/obj/effect/anomaly/chronograph/Bump(atom/A)
 
 
-/obj/effect/anomaly/grav/high
-	effectrange = 5
-	var/datum/proximity_monitor/advanced/gravity/grav_field
-
-/obj/effect/anomaly/grav/high/Initialize(mapload, new_lifespan)
-	. = ..()
-	grav_field = new(src, effectrange, TRUE, 2)
-
-/obj/effect/anomaly/grav/high/Destroy()
-	QDEL_NULL(grav_field)
-	. = ..()
-
-///Bigger, meaner, immortal gravity anomaly. although this is just the super grav anomaly but bigger and shattering move force
-/obj/effect/anomaly/grav/high/big
-	immortal = TRUE
-	effectrange = 7
-	move_force = MOVE_FORCE_OVERPOWERING
-
-/obj/effect/anomaly/grav/high/big/Initialize(mapload, new_lifespan, drops_core)
-	. = ..()
-
-	transform *= 1.5
+/obj/effect/anomaly/chronograph/Bumped(atom/movable/AM)
 
 
-/obj/effect/anomaly/grav/planetary
-	immortal = TRUE
-	immobile = TRUE
 
-/obj/effect/anomaly/grav/high/planetary
-	immortal = TRUE
-	immobile = TRUE
-
-/obj/effect/anomaly/grav/high/big/planetary
+/obj/effect/anomaly/chronograph/planetary
 	immortal = TRUE
 	immobile = TRUE
