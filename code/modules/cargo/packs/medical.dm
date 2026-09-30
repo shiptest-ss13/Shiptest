@@ -94,7 +94,7 @@
 /datum/supply_pack/medical/iv_drip
 	name = "IV Drip Crate"
 	desc = "Contains a single IV drip for administering blood to patients."
-	cost = 1000
+	cost = 200
 	contains = list(/obj/machinery/iv_drip)
 	crate_name = "iv drip crate"
 
@@ -183,9 +183,16 @@
 /datum/supply_pack/medical/medigel_crate
 	name = "Empty Medical Gel Crate"
 	desc = "Contains a box of seven empty medical gels, for applying your own chemical mixes."
-	cost = 700
+	cost = 210
 	contains = list(/obj/item/storage/box/medigels)
 	crate_name = "empty medical gel crate"
+
+/datum/supply_pack/medical/inhalers
+	name = "Empty Inhaler Crate"
+	desc = "Contains an inhaler, capable of administering short bursts of aerosolized chemicals."
+	cost = 50
+	contains = list(/obj/item/inhaler)
+	crate_name = "empty inhaler crate"
 
 /datum/supply_pack/medical/sutures
 	name = "Medical Suture Pack"
@@ -241,16 +248,46 @@
 	desc = "Contains a mk.III Cybersun Hypospray, for on the field medical care. Comes with an assortment of Ready-To-Go Vials"
 	faction = /datum/faction/syndicate/cybersun
 
+/datum/supply_pack/medical/mkii_hypo_standalone
+	name = "mk.II Hypospray kit"
+	desc = "Contains a standalone Matahari Pharmaceutical Hypospray, for on the field medical care."
+	cost = 600
+	contains = list(/obj/item/hypospray/mkii)
+	crate_name = "mk.II hypospray crate"
+	faction = /datum/faction/warra
+
+/datum/supply_pack/medical/mkiii_hypo_standalone
+	name = "mk.III Hypospray kit"
+	desc = "Contains a standalone Matahari Pharmaceutical mk.III Hypospray, for on the field medical care."
+	cost = 1250
+	contains = list(/obj/item/hypospray/mkii/mkiii/empty)
+	crate_name = "mk.III hypospray crate"
+	faction = /datum/faction/warra
+	faction_locked = TRUE
+	faction_discount = 0
+
+/datum/supply_pack/medical/mkiii_hypo/cybersun
+	desc = "Contains a standalone mk.III Cybersun Hypospray, for on the field medical care."
+	faction = /datum/faction/syndicate/cybersun
+
 /datum/supply_pack/medical/vials
 	faction = /datum/faction/warra
 	faction_discount = 50
 
 /datum/supply_pack/medical/vials/empty_vial
-	name = "Empty Vial Crate"
-	desc = "Contains one empty hypospray vial, for usage in a Hypospray."
-	cost = 200
+	name = "Small Empty Vials Box"
+	desc = "Contains seven empty small hypospray vials, for usage in a Hypospray."
+	cost = 100
 	contains = list(
-		/obj/item/reagent_containers/glass/bottle/vial/small)
+		/obj/item/storage/box/vials)
+	crate_name = "empty vial crate"
+
+/datum/supply_pack/medical/vials/empty_vial_large
+	name = "Large Empty Vials Box"
+	desc = "Contains seven empty large hypospray vials, for usage in a mk.III Hypospray."
+	cost = 400
+	contains = list(
+		/obj/item/storage/box/vials_large)
 	crate_name = "empty vial crate"
 
 /datum/supply_pack/medical/vials/indo_vial
