@@ -83,6 +83,15 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/vox,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/vox,
 	)
+	replacement_organs = list(
+		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs/cybernetic,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/robotic/vox,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/cybernetic,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/robot,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/cybernetic,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/cybernetic,
+	)
 	allowed_species = list(/datum/species/vox)
 	bodytype = BODYTYPE_VOX
 

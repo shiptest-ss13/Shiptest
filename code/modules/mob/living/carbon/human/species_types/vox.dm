@@ -58,6 +58,8 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/vox,
 	)
 
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/vox
+
 	var/datum/action/innate/tail_hold/tail_action
 
 	var/static/list/allergy_reactions = list(
