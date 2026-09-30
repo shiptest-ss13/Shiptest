@@ -271,6 +271,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
+"dK" = (
+/obj/effect/turf_decal/industrial/hatch{
+	layer = 2.030
+	},
+/obj/machinery/porta_turret/ship/hardliners{
+	dir = 9;
+	id = "Bansheeturrets"
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/half,
+/obj/effect/turf_decal/spline/plain/opaque/syndiered{
+	dir = 1
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "dM" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/external/dark)
@@ -529,12 +543,15 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "iR" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/docking_port/stationary{
+	dwidth = 15;
+	height = 60;
+	width = 30;
+	dheight = 1;
+	name = "Efreet Landing Bridge Dock"
 	},
-/turf/open/floor/plating/airless,
-/area/ship/cargo)
+/turf/template_noop,
+/area/template_noop)
 "je" = (
 /mob/living/simple_animal/hostile/automated/quadrotor/cybersun/friendly{
 	name = "Crab";
@@ -635,18 +652,16 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/engineering/engines)
 "kO" = (
-/obj/effect/turf_decal/industrial/hatch{
-	layer = 2.030
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/machinery/porta_turret/ship/hardliners{
-	dir = 9;
-	id = "Bansheeturrets"
+/obj/item/radio/intercom/directional/west{
+	pixel_x = -31;
+	pixel_y = 1
 	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
-	dir = 1
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
+/turf/open/floor/plating/airless,
+/area/ship/cargo)
 "lv" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
@@ -701,7 +716,6 @@
 /obj/effect/turf_decal/industrial/hatch{
 	layer = 2.030
 	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /obj/machinery/porta_turret/ship/hardliners{
 	dir = 10;
 	id = "Bansheeturrets"
@@ -709,6 +723,10 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 4
 	},
+/obj/effect/turf_decal/corner/opaque/syndiered/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/plain/opaque/syndiered,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "mz" = (
@@ -2656,16 +2674,6 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/armory)
-"Lv" = (
-/obj/docking_port/stationary{
-	dwidth = 30;
-	height = 60;
-	width = 60;
-	dheight = 1;
-	name = "Efreet Landing Bridge Dock"
-	},
-/turf/template_noop,
-/area/template_noop)
 "LC" = (
 /obj/structure/toilet{
 	pixel_x = 4;
@@ -3783,7 +3791,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+ED
 Ri
 Ri
 Ri
@@ -3796,7 +3804,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+qp
 Ri
 Ri
 Ri
@@ -3805,7 +3813,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+ED
 ds
 XZ
 XZ
@@ -3818,7 +3826,7 @@ XZ
 XZ
 XZ
 ds
-Ri
+qp
 Ri
 Ri
 Ri
@@ -3826,8 +3834,8 @@ Ri
 (4,1,1) = {"
 Ri
 Ri
-Ri
-Ri
+sf
+ED
 ds
 KU
 ch
@@ -3840,16 +3848,16 @@ KU
 ch
 ch
 ds
-Ri
-Ri
+qp
+jY
 Ri
 Ri
 "}
 (5,1,1) = {"
 Ri
 Ri
-Ri
-kO
+sf
+dK
 ds
 jJ
 QD
@@ -3863,7 +3871,7 @@ zl
 em
 ds
 mo
-Ri
+jY
 Ri
 Ri
 "}
@@ -4045,7 +4053,7 @@ Ri
 "}
 (14,1,1) = {"
 Ri
-iR
+kO
 ck
 Cw
 nB
@@ -4066,7 +4074,7 @@ Cf
 Ri
 "}
 (15,1,1) = {"
-Lv
+iR
 zB
 YN
 MM
