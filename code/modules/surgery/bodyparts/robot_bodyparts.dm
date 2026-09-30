@@ -521,6 +521,7 @@
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
 	robotic_overlay_type = null
+
 /obj/item/bodypart/r_arm/robot/vox
 	name = "prosthetic vox right arm"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
