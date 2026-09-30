@@ -675,6 +675,15 @@
 	build_path = /obj/item/reagent_containers/glass/bottle/vial/large
 	category = list("initial", "Medical", "Medical Designs")
 
+/datum/design/inhaler_caniser
+	name = "Inhaler Canister"
+	id = "inhaler_canister"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 200)
+	build_path = /obj/item/reagent_containers/inhaler_canister
+	category = list("initial", "Medical", "Medical Designs")
+
+
 /datum/design/chemical_bottle
 	name = "Bottle"
 	id = "bottle"
