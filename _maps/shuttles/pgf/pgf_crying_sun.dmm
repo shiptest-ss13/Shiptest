@@ -87,7 +87,8 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/engine/hull,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
 /area/ship/external/dark)
 "aE" = (
 /obj/machinery/light/directional/east,
@@ -9188,6 +9189,10 @@
 /obj/item/radio/headset/pgf/alt{
 	pixel_x = 2;
 	pixel_y = 2
+	},
+/obj/item/storage/toolbox/explosives{
+	pixel_y = 1;
+	pixel_x = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
