@@ -66,7 +66,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix)
 
 /obj/item/gun/energy/laser/e50/clip
-	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	name = "ECM-50 \"Pyracanth\""
 	desc = "An extensive modification of the Eoehoma E-50 Emitter by Clover Photonics, customized for CLIP-BARD to fight Xenofauna. Sacrifices some of the E-50's raw power for vastly improved energy efficiency, while preserving its incendiary side-effects."
 
