@@ -2431,6 +2431,15 @@
 	pixel_x = 11;
 	pixel_y = 20
 	},
+/obj/machinery/button/door{
+	id = "efreetrest";
+	name = "bathroom lock";
+	dir = 4;
+	pixel_x = -21;
+	pixel_y = -10;
+	normaldoorcontrol = 1;
+	specialfunctions = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet)
 "HY" = (
@@ -2865,17 +2874,19 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "NG" = (
-/obj/machinery/button/door{
-	id = "efreetrest";
-	name = "bathroom lock";
-	dir = 8;
-	pixel_x = 21;
-	pixel_y = 9;
-	normaldoorcontrol = 1;
-	specialfunctions = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
+	},
+/obj/structure/closet/secure_closet/wall/directional/east,
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 5;
+	pixel_y = 11
+	},
+/obj/item/mop/advanced,
+/obj/item/towel,
+/obj/item/towel{
+	pixel_x = 8;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet)
