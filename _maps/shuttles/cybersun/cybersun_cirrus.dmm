@@ -428,64 +428,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals6,
-/obj/structure/closet/crate/freezer{
-	name = "chemical cooler"
-	},
-/obj/item/reagent_containers/glass/chem_jug/carbon{
-	pixel_y = 7;
-	pixel_x = 5
-	},
-/obj/item/reagent_containers/glass/chem_jug/chlorine{
-	pixel_y = 7;
-	pixel_x = 1
-	},
-/obj/item/reagent_containers/glass/chem_jug/copper{
-	pixel_y = 7;
-	pixel_x = -3
-	},
-/obj/item/reagent_containers/glass/chem_jug/fluorine{
-	pixel_y = 7;
-	pixel_x = -7
-	},
-/obj/item/reagent_containers/glass/chem_jug/hydrogen{
-	pixel_y = 7;
-	pixel_x = -11
-	},
-/obj/item/reagent_containers/glass/chem_jug/iodine{
-	pixel_x = 5
-	},
-/obj/item/reagent_containers/glass/chem_jug/lithium{
-	pixel_x = 1
-	},
-/obj/item/reagent_containers/glass/chem_jug/mercury{
-	pixel_x = -3
-	},
-/obj/item/reagent_containers/glass/chem_jug/nitrogen{
-	pixel_x = -7
-	},
-/obj/item/reagent_containers/glass/chem_jug/oxygen{
-	pixel_x = -11
-	},
-/obj/item/reagent_containers/glass/chem_jug/phosphorus{
-	pixel_x = 5;
-	pixel_y = -7
-	},
-/obj/item/reagent_containers/glass/chem_jug/potassium{
-	pixel_y = -7;
-	pixel_x = 1
-	},
-/obj/item/reagent_containers/glass/chem_jug/radium{
-	pixel_y = -7;
-	pixel_x = -3
-	},
-/obj/item/reagent_containers/glass/chem_jug/sodium{
-	pixel_y = -7;
-	pixel_x = -7
-	},
-/obj/item/reagent_containers/glass/chem_jug/sulfur{
-	pixel_y = -7;
-	pixel_x = -11
-	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/medical)
 "cM" = (
@@ -2207,9 +2149,6 @@
 /obj/effect/turf_decal/steeldecal/steel_decals6{
 	dir = 4
 	},
-/obj/structure/crate_shelf{
-	capacity = 2
-	},
 /obj/machinery/light/directional/east,
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -2323,8 +2262,8 @@
 /area/ship/crew/dorm)
 "oj" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
-/obj/machinery/smartfridge/chemistry,
 /obj/machinery/light/directional/east,
+/obj/machinery/smartfridge/chemistry/preloaded/jugs,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "om" = (
