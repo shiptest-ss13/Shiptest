@@ -11,9 +11,6 @@
 	anchored = TRUE
 	climbable = TRUE
 	climb_time = 4 SECONDS
-	var/buildstacktype = /obj/item/stack/sheet/metal
-	var/buildstackamount = 2
-	var/deconstructible = TRUE
 
 /obj/structure/platform/Initialize()
 	. = ..()
@@ -41,7 +38,6 @@
 	icon_state = "platform"
 	climbable = FALSE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	deconstructible = FALSE
 
 /obj/structure/platform/industrial
 	icon_state = "industrial_platform"
@@ -63,14 +59,12 @@
 	icon_state = "industrial2_platform"
 	climbable = FALSE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	deconstructible = FALSE
 
 /obj/structure/platform/industrial_alt/corner/indestructible
 	icon_state = "ind2_platform_corners"
 	density = FALSE
 	climbable = FALSE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	deconstructible = FALSE
 
 /obj/structure/platform/military
 	icon_state = "military_platform"
@@ -107,7 +101,6 @@
 /obj/structure/platform/ship_three/indestructible
 	climbable = FALSE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	deconstructible = FALSE
 
 /obj/structure/platform/ship_three/indestructible/CanPass(atom/movable/mover, border_dir)
 	. = ..()
@@ -119,7 +112,6 @@
 	density = FALSE
 	climbable = FALSE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	deconstructible = FALSE
 
 /obj/structure/platform/ship_four
 	icon_state = "ship4_platform"
@@ -133,7 +125,6 @@
 	name = "wooden platform"
 	icon_state = "wood_platform"
 	resistance_flags = FLAMMABLE
-	buildstacktype = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/platform/wood/corner
 	icon_state = "wood_platform_corners"
@@ -162,8 +153,8 @@
 		return TRUE
 
 /obj/structure/platform/welder_act(mob/living/user, obj/item/I, list/modifiers)
+	. = ..()
 	if(user.a_intent == INTENT_HELP)
-		. = ..()
 		if(atom_integrity < max_integrity)
 			if(!I.tool_start_check(user, src, amount=0))
 				return COMPONENT_BLOCK_TOOL_ATTACK
@@ -177,25 +168,17 @@
 		return COMPONENT_BLOCK_TOOL_ATTACK
 
 /obj/structure/platform/wrench_act(mob/living/user, obj/item/I, list/modifiers)
-	if(deconstructible)
-		. = ..()
+	. = ..()
+	if(flags_1 & NODECONSTRUCT_1)
+		return
+	else
 		to_chat(user, span_notice("You start disassembling [src]..."))
 		I.play_tool_sound(src)
-		if(I.use_tool(src, user, 30))
+		if(I.use_tool(src, user, 15 SECONDS))
 			playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 			deconstruct(TRUE)
 		return COMPONENT_BLOCK_TOOL_ATTACK
 	return COMPONENT_BLOCK_TOOL_ATTACK
-
-/obj/structure/platform/deconstruct()
-	if(!(flags_1 & NODECONSTRUCT_1))
-		if(buildstacktype)
-			new buildstacktype(loc,buildstackamount)
-		else
-			for(var/i in custom_materials)
-				var/datum/material/M = i
-				new M.sheet_type(loc, FLOOR(custom_materials[M] / MINERAL_MATERIAL_AMOUNT, 1))
-	..()
 
 /obj/structure/platform/CanPass(atom/movable/mover, border_dir)
 	. = ..()

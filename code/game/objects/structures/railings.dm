@@ -62,8 +62,8 @@
 	..()
 
 /obj/structure/railing/welder_act(mob/living/user, obj/item/I, list/modifiers)
+	. = ..()
 	if(user.a_intent == INTENT_HELP)
-		. = ..()
 		if(atom_integrity < max_integrity)
 			if(!I.tool_start_check(user, src, amount=0))
 				return
@@ -76,11 +76,31 @@
 			to_chat(user, span_warning("[src] is already in good condition!"))
 		return COMPONENT_BLOCK_TOOL_ATTACK
 
+/obj/structure/railing/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(.)
+		return FALSE
+	if(!I.tool_start_check(user, src, amount=0))
+		return FALSE
+	if (I.use_tool(src, user, 3 SECONDS, volume=0))
+		to_chat(user, span_warning("You cut apart the railing."))
+		deconstruct()
+		return TRUE
+
+/obj/structure/railing/deconstruct(disassembled)
+	. = ..()
+	if(!loc) //quick check if it's qdeleted already.
+		return
+	if(!(flags_1 & NODECONSTRUCT_1))
+		qdel(src)
+
 /obj/structure/railing/wirecutter_act(mob/living/user, obj/item/I)
 	. = ..()
+	if(flags_1 & NODECONSTRUCT_1)
+		return
 	to_chat(user, span_notice("You start cutting apart [src]..."))
 	I.play_tool_sound(src)
-	if(I.use_tool(src, user, 30))
+	if(I.use_tool(src, user, 3 SECONDS))
 		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 		deconstruct(TRUE)
 	return COMPONENT_BLOCK_TOOL_ATTACK
