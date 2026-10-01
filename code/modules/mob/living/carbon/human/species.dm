@@ -1994,7 +1994,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else
 			target_human.throw_alert("tempfeel", /atom/movable/screen/alert/chilly)
 
-	// We are not to hot or cold, remove status and moods
+	// We are not too hot or cold, remove status and moods
 	else
 		target_human.clear_alert("tempfeel")
 		target_human.clear_alert("tempdamage")

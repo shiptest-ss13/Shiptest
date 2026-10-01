@@ -130,6 +130,15 @@
 	light_range = 2
 	light_power = 1
 
+
+/turf/open/floor/plating/asteroid/icerock/temperate
+	initial_gas_mix = "o2=22;n2=82;TEMP=272"
+
+/turf/open/floor/plating/asteroid/icerock/temperate/lit
+	light_range = 2
+	light_power = 1
+	light_color = "#1B1D2E"
+
 /turf/open/floor/plating/asteroid/icerock/cracked
 	floor_variance = 0
 	icon_state = "icemoon_ground_cracked"
@@ -218,19 +227,19 @@ ICE_TURF_HELPER(concrete/reinforced)
 ICE_TURF_HELPER(concrete/pavement)
 
 /turf/open/floor/wood/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	slowdown = 0
 
 /turf/open/floor/wood/ebony/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	slowdown = 0
 
 /turf/open/floor/plasteel/stairs/wood/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	slowdown = 0

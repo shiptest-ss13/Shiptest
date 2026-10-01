@@ -5,12 +5,13 @@
 // will always spawn at the items location.
 /////////////////////////////////////////////
 
-/proc/do_sparks(n, c, source)
+/proc/do_sparks(n, c, source, type = /datum/effect_system/spark_spread)
 	// n - number of sparks
 	// c - cardinals, bool, do the sparks only move in cardinal directions?
 	// source - source of the sparks.
+	// subtype of sparks to use
 
-	var/datum/effect_system/spark_spread/sparks = new
+	var/datum/effect_system/spark_spread/sparks = new type
 	sparks.set_up(n, c, source)
 	sparks.autocleanup = TRUE
 	sparks.start()
@@ -52,9 +53,22 @@
 /datum/effect_system/spark_spread
 	effect_type = /obj/effect/particle_effect/sparks
 
+/obj/effect/particle_effect/sparks/quantum
+	name = "quantum sparks"
+	icon_state = "quantum_sparks"
+	light_color = LIGHT_COLOR_SLIME_LAMP
+
+
 /datum/effect_system/spark_spread/quantum
 	effect_type = /obj/effect/particle_effect/sparks/quantum
 
+/obj/effect/particle_effect/sparks/blue
+	name = "blue sparks"
+	icon_state = "blue_sparks"
+	light_color = LIGHT_COLOR_LIGHT_CYAN
+
+/datum/effect_system/spark_spread/blue
+	effect_type = /obj/effect/particle_effect/sparks/blue
 
 //electricity
 
@@ -62,9 +76,8 @@
 	name = "lightning"
 	icon_state = "electricity"
 
-/obj/effect/particle_effect/sparks/quantum
-	name = "quantum sparks"
-	icon_state = "quantum_sparks"
-
 /datum/effect_system/lightning_spread
 	effect_type = /obj/effect/particle_effect/sparks/electricity
+
+
+

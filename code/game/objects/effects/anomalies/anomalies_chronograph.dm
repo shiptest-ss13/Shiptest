@@ -1,52 +1,3 @@
-/datum/status_effect/accelerando
-	alert_type = /atom/movable/screen/alert/status_effect/cloaked
-	tick_interval = 3
-	duration = -1
-	//how close to the chronograph are we?
-	var/source_anomaly
-
-/datum/status_effect/accelerando/on_creation(mob/living/new_owner, _duration = 10 SECONDS)
-	duration = _duration
-	return ..()
-
-/datum/status_effect/accelerando/on_apply()
-	. = ..()
-	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
-	owner.add_filter("chronoblur", 1, angular_blur_filter(3, 3, 8))
-	animate(owner.get_filter("chronoblur"), 20, size = 8)
-
-/datum/status_effect/accelerando/cloaked/tick()
-	owner.alpha = max(min_alpha, owner.alpha - 25)
-	if(prob(20))
-		if(!owner.get_filter("chronoblur"))
-			owner.add_filter("chronoblur", 1, angular_blur_filter(3, 3, 16))
-		animate(owner.get_filter("chronoblur"), 5, size = rand(-4,4))
-
-/datum/status_effect/accelerando/cloaked/proc/on_move()
-	SIGNAL_HANDLER
-
-	owner.alpha = min(255, owner.alpha + 15)
-
-/datum/status_effect/accelerando/cloaked/on_remove()
-	if(..())
-		return
-	owner.alpha = 255
-	animate(owner.get_filter("cloak_distort"), 20, size = 0)
-	addtimer(CALLBACK(owner, PROC_REF(remove_filter), "cloak_distort"), 20)
-	UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
-
-/atom/movable/screen/alert/status_effect/accelerando
-	name = "Accelerando"
-	desc = "Out of sync. Out of time. Yet you're still here?"
-	icon_state = ""
-
-/atom/movable/chrono_effect
-	appearance_flags = PIXEL_SCALE|LONG_GLIDE // no tile bound so you can see it around corners and so
-	icon = 'icons/effects/light_overlays/light_352.dmi'
-	icon_state = "light"
-	pixel_x = -176
-	pixel_y = -176
-
 /obj/effect/anomaly/chronograph
 	name = "chronograph"
 	icon_state = "chronograph"
@@ -54,7 +5,9 @@
 	density = FALSE
 	core = /obj/item/assembly/signaler/anomaly/grav
 	effectrange = 6
-	pulse_delay = 1 SECOND
+	pulse_delay = 1 SECONDS
+	light_range = 6
+	light_color = LIGHT_COLOR_LIGHT_CYAN
 	///Warp effect holder for displacement filter to "pulse" the anomaly
 	var/atom/movable/chrono_effect/chrono
 
@@ -67,21 +20,21 @@
 
 /obj/effect/anomaly/chronograph/anomalyEffect()
 	. = ..()
+
+	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
+		return
+
 	for(var/mob/living/old in orange(effectrange, src))
 		//closer is better
 		var/effect_power = -(get_dist(old, src)) + effectrange
-		old.adjust_timed_status_effect(effect_power * 3, /datum/status_effect/accelerando, effect_power*30)
-
-/obj/effect/anomaly/chronograph/proc/on_entered(datum/source, atom/movable/AM)
-	SIGNAL_HANDLER
-
-
-/obj/effect/anomaly/chronograph/Bump(atom/A)
-
-
-/obj/effect/anomaly/chronograph/Bumped(atom/movable/AM)
-
-
+		message_admins("[effect_power] power placed")
+		//prevents runtime @ max distance
+		if(effect_power)
+			old.adjust_timed_status_effect(effect_power * 1 SECONDS, /datum/status_effect/accelerando, effect_power*30 SECONDS)
+			if(prob(10))
+				var/timestring = pick("Time begins to slip through your hands", "The world feels that much slower.", "No one else will be as fast as you now.", "Your moments have become something more.", "Seconds turn to hours", "Every instant is eternity")
+				to_chat(old, span_warning(timestring))
+		do_sparks(6, TRUE, old, /datum/effect_system/spark_spread/blue)
 
 /obj/effect/anomaly/chronograph/planetary
 	immortal = TRUE
