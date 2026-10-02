@@ -721,7 +721,7 @@
 		var/mob/living/simple_animal/hostile/simple_owner = owner
 		simple_owner.ranged_cooldown_time /= 2.5
 
-//So particles judging from trickwine to put them on a mob they gotta be a status effect, and I figure positrons should smoke before their cells detonate. So here we are. This does nothing but make some fyi
+//Holder effect for posi smoking vfx
 /datum/status_effect/cellsmoking
 	id = "cellsmoking"
 	duration = 10 SECONDS
