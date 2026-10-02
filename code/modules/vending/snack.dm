@@ -1,5 +1,5 @@
 /obj/machinery/vending/snack
-	name = "\improper Vending Machine"
+	name = "\improper Snack Vending Machine"
 	desc = "A snack machine, you don't recognize the manufacturer."
 	product_slogans = "Authentic snacks from Riso-Teceti, CLIP and more!;Too busy to cook? We've got you covered."
 	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Have a snack.;Snacks are good for you!;Best quality snacks!;We love chocolate!;Try our new jerky!"
