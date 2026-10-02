@@ -47,3 +47,9 @@
 	suffix = "wasteplanet_recyclebay.dmm"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
 
+/datum/map_template/ruin/wasteplanet/smugglerbunker
+	name = "Smuggler's Bunker"
+	description = "Once-thought abandoned, a smuggler's outpost has cropped up in the remains of an old ICW-era marauder bunker. They have access to all of the facilities. Vital signs are unknown. This is an active dumping site."
+	id = "wasteplanet_smugglerbunker"
+	suffix = "wasteplanet_smugglerbunker.dmm"
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
