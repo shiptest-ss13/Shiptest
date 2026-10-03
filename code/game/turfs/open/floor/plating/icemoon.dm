@@ -201,6 +201,10 @@
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = FALSE
 
+
+ICE_TURF_HELPER(plating/asteroid/dirt/grass/dark)
+ICE_TURF_HELPER(plating/asteroid/dirt)
+
 //put ur turf helpers here.
 
 ICE_TURF_HELPER(wood)

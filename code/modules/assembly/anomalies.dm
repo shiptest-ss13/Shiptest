@@ -277,3 +277,16 @@
 	new /obj/effect/particle_effect/sparks/quantum(loc)
 	visible_message(span_warning("[src] shakes violently and - hey, where'd it go?"))
 	..()
+
+///Chronograph Anomaly
+/obj/item/assembly/signaler/anomaly/chrono
+	name = "\improper chronopgraph anomaly core"
+	desc = "The stabilized core of a gravitational anomaly. Stolen time flows from within it."
+	icon_state = "grav core"
+	grind_results = list(/datum/reagent/drug/chrono = 15)
+
+/obj/item/assembly/signaler/anomaly/grav/anomaly_core_detonation()
+	//THE WORLD
+	new /obj/effect/timestop(get_turf(user), 3, 60 SECONDS)
+
+	..()
