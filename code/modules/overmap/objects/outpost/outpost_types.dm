@@ -205,6 +205,7 @@
 	outpost_name = "Installation Trifuge"
 	outpost_administrator = "Caldwell"
 	// Uses "default" hangars (indie_space).
+	border_size = 1
 
 /datum/overmap/outpost/warra_ice
 	token_icon_state = "station_planet"
@@ -263,6 +264,7 @@
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
 	)
+	border_size = 1
 
 /datum/overmap/outpost/clip_ocean
 	token_icon_state = "station_planet"
@@ -291,6 +293,7 @@
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost
 	)
+	border_size = 2
 
 /datum/overmap/outpost/cybersun_gas_giant
 	token_icon_state = "station_floating_gas_giant"
@@ -318,6 +321,8 @@
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/cybersun_outpost_exterior
 	)
+
+	border_size = 1
 
 	outpost_name = "Thousand Eyed Perch"
 	outpost_administrator = "Cybersun Frontier Developments"
