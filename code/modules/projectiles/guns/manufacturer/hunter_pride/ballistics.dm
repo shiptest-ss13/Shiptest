@@ -659,6 +659,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 
 //Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
+	autowiki_hidden = TRUE //admin only?
 	name = "HP Huntsman"
 	desc = "A comically huge double-barreled rifle replete with brass inlays depicting flames and naturalistic scenes, clearly meant for the nastiest monsters the Frontier has to offer. If you want an intact trophy, don't aim for the head. Chambered in two-bore."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
@@ -1133,6 +1134,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 //pre sawn off beacon
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	name = "HP Beacon"
 	sawn_desc= "A break-action pistol chambered in .45-70. A bit difficult to aim."
 	sawn_off = TRUE

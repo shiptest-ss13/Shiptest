@@ -38,6 +38,7 @@
 	manufacturer = MANUFACTURER_MINUTEMAN_LASER
 
 /obj/item/gun/energy/kalix/clip/old
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "ECM-1"
 	desc = "This is either a flawless replica, or a genuine example of the colonial-era laser weaponry issued to Free Zohil forces in CLIP's founding years. Over a hundred years old, and especially difficult to source replacement parts for, but still deadly. Kept around for ceremonial use in the CLIP Minutemen, and, rarely, for influential members of all divisions."
 
