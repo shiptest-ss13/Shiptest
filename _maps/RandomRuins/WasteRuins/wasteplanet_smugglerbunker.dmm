@@ -222,6 +222,8 @@
 /area/ruin/wasteplanet/smugglerbunker/exterior)
 "bq" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/pilot,
+/obj/item/clothing/head/helmet/space/pilot,
 /obj/item/tank/internals/oxygen/yellow,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/wasteplanet/smugglerbunker)
@@ -1866,12 +1868,6 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
-	},
-/obj/docking_port/mobile{
-	dir = 4;
-	name = "whollop shuttle";
-	port_direction = 4;
-	preferred_direction = 2
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -6997,8 +6993,6 @@
 /area/ruin/wasteplanet/smugglerbunker/killroom)
 "XV" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/suit/space/pilot,
-/obj/item/clothing/head/helmet/space/pilot,
 /obj/item/tank/internals/oxygen/yellow,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/wasteplanet/smugglerbunker)
@@ -7855,7 +7849,7 @@ au
 aG
 Ir
 sV
-bq
+XV
 WS
 sV
 iY
@@ -8489,7 +8483,7 @@ Av
 EL
 sV
 rg
-XV
+bq
 sV
 an
 iN
