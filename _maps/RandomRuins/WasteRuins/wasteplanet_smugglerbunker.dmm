@@ -221,8 +221,10 @@
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/smugglerbunker/exterior)
 "bq" = (
-/turf/closed/indestructible/plastitanium/nodiagnonal,
-/area/ruin/wasteplanet/smugglerbunker/armory)
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/tank/internals/oxygen/yellow,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/wasteplanet/smugglerbunker)
 "bs" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 8
@@ -2868,6 +2870,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/mecha/working/ripley/cargo{
+	name = "APLU 'Big Girl'"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/cargo)
 "sq" = (
@@ -3769,7 +3774,6 @@
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "yt" = (
 /obj/effect/turf_decal/rechargefloor,
-/obj/mecha/working/ripley/cargo,
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/smugglerbunker/lab)
@@ -4689,9 +4693,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker)
-"Fn" = (
-/turf/closed/indestructible/plastitanium/nodiagnonal,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
 "Fo" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -4819,11 +4820,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/checkpoint)
-"Gx" = (
-/obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/tank/internals/oxygen/yellow,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/wasteplanet/smugglerbunker)
 "GF" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 6
@@ -5420,7 +5416,7 @@
 /obj/machinery/button/door/hazard{
 	dir = 1;
 	name = "Burglar Alarms";
-	id = list=("closedrobots","wastearmory");
+	id = "wastearmory";
 	pixel_x = 1;
 	pixel_y = 7
 	},
@@ -7859,7 +7855,7 @@ au
 aG
 Ir
 sV
-Gx
+bq
 WS
 sV
 iY
@@ -9141,7 +9137,7 @@ YX
 Nz
 wK
 wK
-Fn
+wK
 as
 as
 as
@@ -9196,7 +9192,7 @@ DB
 Kv
 gZ
 yV
-Fn
+wK
 dP
 ED
 KF
@@ -9251,7 +9247,7 @@ ir
 wK
 XR
 aO
-Fn
+wK
 dP
 dP
 TQ
@@ -9306,7 +9302,7 @@ sS
 wK
 of
 WV
-Fn
+wK
 ds
 dP
 dP
@@ -9356,12 +9352,12 @@ pA
 wK
 wK
 wK
-bq
-bq
-Fn
-Fn
-Fn
-Fn
+BS
+BS
+wK
+wK
+wK
+wK
 vz
 vz
 uF
