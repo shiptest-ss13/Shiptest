@@ -136,7 +136,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	. = ..()
 	generation = gen
 	if(is_team_borer)
-		notify_ghosts("A cortical borer has been created in [get_area(src)]!", enter_link = "<a href=?src=[text_ref(src)];ghostjoin=1>(Click to enter)</a>", source = src, action = NOTIFY_ATTACK)
+		notify_ghosts("A cortical borer has been created in [get_area(src)]!", enter_link = "<a href='byond://?src=[text_ref(src)];ghostjoin=1'>(Click to enter)</a>", source = src, action = NOTIFY_ATTACK)
 	var/numeral = rand(1000, 9999)
 	real_name = "Cortical Borer [numeral]"
 	truename = "[borer_names[min(generation, borer_names.len)]] [numeral]"

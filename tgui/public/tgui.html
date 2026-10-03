@@ -4,9 +4,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta charset="utf-8">
 
-<!-- Inlined metadata -->
-<meta id="tgui:windowId" content="[tgui:windowId]">
-<meta id="tgui:strictMode" content="[tgui:strictMode]">
+    <!-- Inlined metadata -->
+    <meta id="tgui:windowId" content="[tgui:windowId]" />
+    <meta id="tgui:strictMode" content="[tgui:strictMode]" />
+    <meta id="tgui:storagecdn" content="[tgui:storagecdn]" />
 
 <!-- Early setup -->
 <script type="text/javascript">
@@ -39,6 +40,7 @@
 
   // Expose inlined metadata
   Byond.windowId = parseMetaTag('tgui:windowId');
+  Byond.storageCdn = parseMetaTag('tgui:storagecdn');
 
   // Backwards compatibility
   window.__windowId__ = Byond.windowId;
@@ -353,6 +355,37 @@
 
   Byond.loadCss = function (url, sync) {
     loadAsset({ url: url, sync: sync, type: 'css' });
+  };
+
+  Byond.saveBlob = function (blob, filename, ext) {
+    if (window.navigator.msSaveBlob) {
+      window.navigator.msSaveBlob(blob, filename);
+    } else if (window.showSaveFilePicker) {
+      var accept = {};
+      accept[blob.type] = [ext];
+
+      var opts = {
+        suggestedName: filename,
+        types: [
+          {
+            description: 'SS13 file',
+            accept: accept,
+          },
+        ],
+      };
+
+      window
+        .showSaveFilePicker(opts)
+        .then(function (file) {
+          return file.createWritable();
+        })
+        .then(function (file) {
+          return file.write(blob).then(function () {
+            return file.close();
+          });
+        })
+        .catch(function () {});
+    }
   };
 })();
 
