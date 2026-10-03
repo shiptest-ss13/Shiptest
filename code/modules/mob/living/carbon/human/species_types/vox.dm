@@ -3,7 +3,6 @@
 	name = "\improper Vox"
 	id = SPECIES_VOX
 	default_color = "6060FF"
-	inherent_traits = list(TRAIT_TAILED,)
 	species_age_max = 280
 	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None")
@@ -56,9 +55,10 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/vox,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/vox,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/vox,
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/vox,
 	)
 
-	var/datum/action/innate/tail_hold/tail_action
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/vox
 
 	var/static/list/allergy_reactions = list(
 		"Your beak itches.",
@@ -111,17 +111,11 @@
 	C.pixel_x = C.base_pixel_x
 	C.update_hands_on_rotate()
 
-	tail_action = new
-	tail_action.Grant(C)
-
 /datum/species/vox/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
 	C.base_pixel_x += 9
 	C.pixel_x = C.base_pixel_x
 	C.stop_updating_hands()
-
-	if(tail_action)
-		QDEL_NULL(tail_action)
 
 /datum/species/vox/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(allergic_to[chem.type]) //Is_type_in_typecache is BAD.
@@ -143,90 +137,3 @@
 		return list(list("x" = 18, "y" = 2), list("x" = 21, "y" = -1))
 	if(dir & WEST)
 		return list(list("x" = -5, "y" = -1), list("x" = -1, "y" = 2))
-
-/datum/action/innate/tail_hold
-	name = "Tail Hold"
-	desc = "Store an item in your tail's grip."
-	button_icon_state = "tail_hold"
-	var/obj/item/held_item
-	var/mutable_appearance/held_item_overlay
-
-	var/static/list/offsets = list(\
-		"north" = list("x" = -11, "y" = 3),
-		"east" = list("x" = -15, "y" = 0),
-		"south" = list("x" = -10, "y" = 0),
-		"west" = list("x" = 30, "y" = 0)
-	)
-
-/datum/action/innate/tail_hold/Destroy()
-	if(held_item)
-		held_item.forceMove(get_turf(owner))
-		held_item = null
-
-	handle_sprite_magic()
-	UnregisterSignal(owner, COMSIG_ATOM_EXAMINE)
-	return ..()
-
-/datum/action/innate/tail_hold/Grant(mob/M)
-	. = ..()
-	RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, PROC_REF(handle_sprite_magic), override = TRUE)
-
-/datum/action/innate/tail_hold/Trigger()
-	var/mob/living/carbon/human/H = owner
-	if(held_item)
-		if(!H.put_in_hands(held_item))
-			held_item.forceMove(get_turf(owner))
-		held_item = null
-		handle_sprite_magic()
-		UnregisterSignal(owner, COMSIG_ATOM_EXAMINE)
-
-	else
-		var/obj/item/I = H.get_active_held_item()
-		if(I && I.w_class <= WEIGHT_CLASS_SMALL)
-			if(H.temporarilyRemoveItemFromInventory(I, FALSE, FALSE))
-				held_item = I
-				to_chat(H,span_notice("You move \the [I] into your tail's grip."))
-				RegisterSignal(owner, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
-				handle_sprite_magic(force = TRUE)
-				return
-
-		to_chat(H, span_warning("You are unable to hold that item in your tail!"))
-
-/datum/action/innate/tail_hold/proc/on_examine(datum/source, mob/user, list/examine_list)
-	var/mob/living/carbon/human/H = owner
-	if(held_item)
-		examine_list += span_notice("[capitalize(H.p_they())] [H.p_are()] holding \a [held_item] in [H.p_their()] tail.")
-
-/datum/action/innate/tail_hold/proc/handle_sprite_magic(mob/M, olddir, newdir, force = FALSE)
-	if(!held_item)
-		if(held_item_overlay)
-			owner.cut_overlay(held_item_overlay)
-			held_item_overlay = null
-		return
-
-	if(olddir == newdir && !force)
-		return
-
-	newdir ||= owner.dir
-
-	newdir = normalize_dir_to_cardinals(newdir)
-
-	owner.cut_overlay(held_item_overlay)
-	var/dirtext = dir2text(newdir)
-	var/icon_file = held_item.lefthand_file
-
-	switch(newdir)
-		if(EAST, SOUTH)
-			icon_file = held_item.lefthand_file
-		if(WEST, NORTH)
-			icon_file = held_item.righthand_file
-
-	var/mutable_appearance/new_overlay = mutable_appearance(icon_file, held_item.item_state, HANDS_LAYER)
-
-	new_overlay = center_image(new_overlay, held_item.inhand_x_dimension, held_item.inhand_y_dimension)
-
-	new_overlay.pixel_x = offsets[dirtext]["x"]
-	new_overlay.pixel_y = offsets[dirtext]["y"]
-
-	held_item_overlay = new_overlay
-	owner.add_overlay(new_overlay)

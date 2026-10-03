@@ -260,10 +260,11 @@ Like its parent but can be applied to carbon mobs instead of clothing items
 	var/obj/item/bodypart/affecting
 	for(var/zone in wielder.bodyparts)
 		affecting = wielder.bodyparts[zone]
-		if(affecting.body_part == LEG_RIGHT || affecting.body_part == LEG_LEFT)
-			if(!affecting.bodypart_disabled)
-				FP.species_types |= affecting.limb_id
-				break
+		if(!(affecting.body_part & LEG_LEFT|LEG_RIGHT))
+			continue
+		if(!affecting.bodypart_disabled)
+			FP.species_types |= affecting.limb_id
+			break
 
 
 /datum/component/bloodysoles/feet/is_obscured()

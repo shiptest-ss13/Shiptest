@@ -242,7 +242,7 @@
 	if(casingtype)
 		var/obj/item/ammo_casing/casing = new casingtype(startloc)
 		playsound(src, projectilesound, 100, TRUE)
-		casing.fire_casing(marker, src, null, null, null, ran_zone(), rand(-spread, spread),  src)
+		casing.fire_casing(marker, src, null, null, null, null, rand(-spread, spread),  src)
 		if(eject_casing)
 			casing.on_eject(src)
 		else
