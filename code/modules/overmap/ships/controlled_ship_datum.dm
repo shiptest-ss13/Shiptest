@@ -337,6 +337,10 @@
 /datum/overmap/ship/controlled/proc/is_join_option()
 	return (length(shuttle_port.spawn_points) >= 1) && (length(job_slots) >= 1) && join_mode != SHIP_JOIN_MODE_CLOSED
 
+// check if its still taking applications
+/datum/overmap/ship/controlled/proc/has_applications_open()
+	return is_join_option() && join_mode == SHIP_JOIN_MODE_APPLY
+
 /datum/overmap/ship/controlled/proc/get_application(mob/applicant)
 	var/index_key = applicant.client?.holder?.fakekey ? applicant.client.holder.fakekey : applicant.key
 	return LAZYACCESS(applications, ckey(index_key))
@@ -627,4 +631,3 @@
 
 	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
 	return TRUE
-
