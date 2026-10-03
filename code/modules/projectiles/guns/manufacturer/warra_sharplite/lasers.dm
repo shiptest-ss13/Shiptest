@@ -326,6 +326,7 @@
 	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/sharplite/amperage/zeta
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "\improper SL X-45"
 	desc = "A very old looking X-46, it has no stock or much decoration, and it is from before... Hey! What's this screen next to the mode select button?"
 

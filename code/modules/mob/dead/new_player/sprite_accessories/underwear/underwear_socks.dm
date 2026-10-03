@@ -33,16 +33,6 @@
 	name = "Striped Thigh-Highs (Greyscale)"
 	icon_state = "striped_thigh"
 
-/datum/sprite_accessory/socks/bee_knee
-	name = "Bee Knee-Highs"
-	icon_state = "knee_bee"
-	use_static = TRUE
-
-/datum/sprite_accessory/socks/bee_thigh
-	name = "Bee Thigh-Highs"
-	icon_state = "thigh_bee"
-	use_static = TRUE
-
 /datum/sprite_accessory/socks/inteq
 	name = "Inteq Thigh-Highs"
 	icon_state = "inteq"
