@@ -925,14 +925,6 @@
 	build_path = /obj/item/storage/box/ammo/c10mm_surplus
 	category = list("initial", "Security", "Ammo")
 
-/datum/design/c45_surplus
-	name = "Ammo Box (.45 surplus)"
-	id = "c45-surplus"
-	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 16000)
-	build_path = /obj/item/storage/box/ammo/c45_surplus
-	category = list("initial", "Security", "Ammo")
-
 /datum/design/c9mm_surplus
 	name = "Ammo Box (9mm surplus)"
 	id = "c9mm-surplus"
