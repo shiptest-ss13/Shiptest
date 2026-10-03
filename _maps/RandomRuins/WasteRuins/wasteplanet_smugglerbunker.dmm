@@ -115,12 +115,10 @@
 	color = "#920C0C";
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 10
-	},
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 4
 	},
+/obj/effect/turf_decal/corner/opaque/syndiered,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker)
 "aM" = (
@@ -140,19 +138,16 @@
 	},
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/armory)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "aV" = (
 /obj/effect/turf_decal/industrial/warning{
 	color = "#FFFFFF";
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 1
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/cargo)
 "aW" = (
 /turf/open/floor/plating/asteroid/wasteplanet{
@@ -427,7 +422,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "cp" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/effect/decal/cleanable/dirt,
@@ -711,19 +706,12 @@
 	},
 /area/ruin/wasteplanet/smugglerbunker/exterior)
 "dM" = (
-/obj/effect/turf_decal/industrial/warning{
-	color = "#920C0C";
-	dir = 8
+/obj/effect/turf_decal/rechargefloor,
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun/ramzi{
+	faction = list("hostile");
+	wander = 0
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 1
-	},
-/obj/machinery/light/floor,
-/obj/effect/turf_decal/borderfloorblack{
-	layer = 2.030;
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker)
 "dP" = (
 /turf/closed/mineral/random/wasteplanet,
@@ -1087,9 +1075,6 @@
 	color = "#FFFFFF";
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1100,7 +1085,7 @@
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/cargo)
 "fz" = (
 /turf/open/floor/plating/asteroid/wasteplanet{
@@ -1174,9 +1159,6 @@
 	dir = 8;
 	light_color = "#BF4040"
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1189,7 +1171,7 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "fT" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -1314,16 +1296,16 @@
 	},
 /area/ruin/wasteplanet/smugglerbunker/exterior)
 "gK" = (
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 9
-	},
 /obj/effect/turf_decal/industrial/warning{
 	color = "#920C0C";
 	dir = 1
 	},
 /obj/effect/turf_decal/borderfloorblack/corner,
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "gL" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 10
@@ -1391,7 +1373,7 @@
 /obj/effect/turf_decal/borderfloorblack/corner,
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/armory)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "hj" = (
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
@@ -1445,10 +1427,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/smugglerbunker/exterior)
 "ht" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 4;
-	color = "#FFFFFF"
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
 	},
@@ -1480,14 +1458,6 @@
 /mob/living/simple_animal/hostile/automated/tripod,
 /turf/closed/mineral/random/wasteplanet,
 /area/ruin/wasteplanet/smugglerbunker/exterior)
-"hO" = (
-/obj/effect/turf_decal/rechargefloor,
-/mob/living/simple_animal/hostile/automated/rover/coalition/ramzi{
-	faction = list("hostile");
-	wander = 0
-	},
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
 "hS" = (
 /obj/effect/turf_decal/road/line/opaque/yellow{
 	dir = 1;
@@ -1528,7 +1498,7 @@
 	},
 /obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "iF" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/wasteplanet/smugglerbunker/dorms)
@@ -1569,7 +1539,7 @@
 	wander = 0
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "iS" = (
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/internals,
@@ -1596,6 +1566,10 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/mob/living/simple_animal/hostile/automated/rover/coalition/ramzi{
+	faction = list("hostile");
+	wander = 0
+	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/smugglerbunker/engineering)
 "je" = (
@@ -1605,7 +1579,7 @@
 	wander = 0
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "jj" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -1885,10 +1859,6 @@
 /turf/open/floor/engine/hull/interior,
 /area/ruin/wasteplanet/smugglerbunker/exterior)
 "kR" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 4;
-	color = "#920C0C"
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
 	},
@@ -2002,7 +1972,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "lD" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/techfloor{
@@ -2015,6 +1985,20 @@
 /obj/item/clothing/glasses/welding{
 	pixel_x = 0;
 	pixel_y = 1
+	},
+/obj/machinery/button{
+	pixel_x = 10;
+	pixel_y = 9;
+	dir = 8;
+	id = "radlockdown";
+	name = "Radiation Shutters"
+	},
+/obj/machinery/button{
+	pixel_x = 10;
+	pixel_y = 3;
+	dir = 8;
+	id = "radroom";
+	name = "Isotope Room"
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/smugglerbunker/engineering)
@@ -2079,14 +2063,14 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "lQ" = (
 /obj/effect/turf_decal/rechargefloor,
 /mob/living/simple_animal/hostile/automated/hopper/coalition{
 	wander = 0
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "lV" = (
 /obj/effect/turf_decal/corner/transparent/grey/diagonal{
 	dir = 4
@@ -2250,12 +2234,17 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "mX" = (
-/obj/effect/turf_decal/rechargefloor,
-/mob/living/simple_animal/hostile/automated/agrav/cybersun{
-	wander = 0
+/obj/effect/turf_decal/spline/fancy/opaque/yellow,
+/obj/effect/turf_decal/spline/fancy/opaque/yellow{
+	dir = 1
 	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/warning,
+/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/cargo)
 "nc" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -2292,9 +2281,6 @@
 	color = "#920C0C";
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 1
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030;
 	dir = 4
@@ -2306,7 +2292,6 @@
 	color = "#FFFFFF";
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered,
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030;
 	dir = 8
@@ -2333,7 +2318,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker)
 "nD" = (
-/obj/structure/fluff/vehicle/crane/cranecargo,
+/obj/structure/fluff/vehicle/crane/cranecargo{
+	on = 0
+	},
 /obj/effect/turf_decal/road/line/opaque/yellow{
 	dir = 2
 	},
@@ -2341,18 +2328,6 @@
 	icon_state = "pavement_2"
 	},
 /area/ruin/wasteplanet/smugglerbunker/exterior)
-"nH" = (
-/obj/effect/turf_decal/spline/fancy/opaque/yellow,
-/obj/effect/turf_decal/spline/fancy/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/warning,
-/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
-	dir = 1
-	},
-/obj/machinery/firealarm/directional/south,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/cargo)
 "nJ" = (
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 4
@@ -2370,7 +2345,7 @@
 "nK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "nO" = (
 /obj/structure/closet/secure_closet/engineering_welding,
@@ -2411,7 +2386,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/armory)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "oj" = (
 /obj/machinery/door/window/eastleft,
 /turf/open/floor/plasteel/freezer,
@@ -2429,15 +2404,12 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4
+	dir = 4;
+	id = "radlockdown"
 	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/smugglerbunker/engineering)
 "os" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 8;
-	color = "#920C0C"
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
 	},
@@ -2468,7 +2440,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "oA" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning,
 /obj/effect/turf_decal/spline/fancy/opaque/yellow,
@@ -2518,27 +2490,21 @@
 	color = "#FFFFFF";
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 1
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "oW" = (
 /obj/effect/turf_decal/industrial/warning{
 	color = "#FFFFFF";
 	dir = 2
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 8
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1;
 	layer = 2.030
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "oZ" = (
 /obj/effect/turf_decal/road/line/opaque/yellow{
@@ -2560,13 +2526,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/cargo)
-"pc" = (
-/obj/effect/turf_decal/siding/black{
-	dir = 8
-	},
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/dorms)
 "pd" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 4
@@ -2711,17 +2670,6 @@
 	icon_state = "pavement_2"
 	},
 /area/ruin/wasteplanet/smugglerbunker/exterior)
-"qy" = (
-/obj/effect/turf_decal/industrial/warning{
-	color = "#920C0C";
-	dir = 8
-	},
-/obj/effect/turf_decal/borderfloorblack{
-	layer = 2.030;
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker)
 "qz" = (
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech/grid,
@@ -2760,10 +2708,6 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/radiation)
 "qW" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 1;
-	color = "#FFFFFF"
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
 	},
@@ -2803,13 +2747,12 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/wasteplanet/smugglerbunker)
 "rh" = (
-/obj/effect/turf_decal/rechargefloor,
-/mob/living/simple_animal/hostile/automated/quadrotor/cybersun/ramzi{
-	faction = list("hostile");
-	wander = 0
+/obj/effect/turf_decal/siding/black{
+	dir = 8
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/smugglerbunker/dorms)
 "ro" = (
 /mob/living/simple_animal/hostile/automated/walkmine/ramzi{
 	faction = list("hostile")
@@ -2823,15 +2766,13 @@
 	color = "#920C0C";
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 6
-	},
 /obj/machinery/airalarm/directional/east,
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 8
 	},
+/obj/effect/turf_decal/corner/opaque/syndiered,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "rz" = (
 /obj/effect/turf_decal/industrial/warning{
 	color = "#FFFFFF";
@@ -2847,7 +2788,7 @@
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "rB" = (
 /obj/machinery/door/poddoor/shutters{
@@ -2858,7 +2799,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "rD" = (
 /obj/effect/turf_decal/industrial/warning{
 	color = "#920C0C";
@@ -2872,7 +2813,7 @@
 	layer = 2.030
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "rF" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 6
@@ -3087,7 +3028,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "sV" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/wasteplanet/smugglerbunker)
@@ -3107,7 +3048,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "sY" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3174,7 +3115,7 @@
 	layer = 2.030
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "tr" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -3313,20 +3254,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/cargo)
-"tN" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 8;
-	color = "#FFFFFF"
-	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 10
-	},
-/obj/effect/turf_decal/borderfloorblack{
-	layer = 2.030;
-	dir = 1
-	},
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/lab)
 "tO" = (
 /obj/structure/crate_shelf,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -3339,7 +3266,7 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "ug" = (
 /obj/structure/closet,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -3357,7 +3284,7 @@
 	},
 /obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "uw" = (
 /obj/structure/railing/thick/corner{
 	dir = 8
@@ -3455,13 +3382,10 @@
 	color = "#FFFFFF";
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 8
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "uZ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3525,9 +3449,6 @@
 	color = "#920C0C";
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
@@ -3535,7 +3456,7 @@
 	layer = 2.030
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "vQ" = (
 /obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
@@ -3563,13 +3484,10 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "wn" = (
 /obj/effect/turf_decal/industrial/warning{
 	color = "#FFFFFF";
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -3602,9 +3520,6 @@
 	color = "#920C0C";
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -3612,7 +3527,7 @@
 	layer = 2.030
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "wK" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/wasteplanet/smugglerbunker/killroom)
@@ -3808,7 +3723,7 @@
 	},
 /obj/structure/catwalk,
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "yi" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/machinery/griddle,
@@ -3956,7 +3871,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/armory)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "yW" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -4040,7 +3955,7 @@
 /obj/item/radio/headset/alt,
 /obj/item/clothing/glasses/welding,
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "zS" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "bunkernorthgate2"
@@ -4130,7 +4045,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "AI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -4244,7 +4159,8 @@
 /area/ruin/wasteplanet/smugglerbunker/radiation)
 "BI" = (
 /obj/machinery/door/poddoor/shutters{
-	dir = 4
+	dir = 4;
+	id = "radroom"
 	},
 /obj/effect/turf_decal/industrial/radiation/fulltile,
 /obj/structure/cable/yellow{
@@ -4282,9 +4198,6 @@
 /area/ruin/wasteplanet/smugglerbunker/armory)
 "BU" = (
 /obj/structure/closet/crate/secure/weapon,
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 9
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
@@ -4296,8 +4209,11 @@
 /obj/item/attachment/silencer,
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip,
 /obj/effect/mob_spawn/human/corpse/ipcshell,
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "BY" = (
 /obj/structure/platform/industrial{
 	dir = 1
@@ -4316,7 +4232,7 @@
 	},
 /obj/structure/catwalk,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/wasteplanet/smugglerbunker)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "Cu" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -4452,12 +4368,8 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "DC" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 2;
-	color = "#FFFFFF"
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 6
 	},
@@ -4465,6 +4377,7 @@
 	dir = 8;
 	layer = 2.030
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker)
 "DE" = (
@@ -4653,7 +4566,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "EL" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 6
@@ -4739,28 +4652,18 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "Fk" = (
-/obj/effect/turf_decal/industrial/warning{
-	color = "#920C0C";
-	dir = 1
+/obj/effect/turf_decal/rechargefloor,
+/mob/living/simple_animal/hostile/automated/agrav/cybersun{
+	wander = 0
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 1
-	},
-/obj/effect/turf_decal/borderfloorblack{
-	layer = 2.030
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker)
 "Fn" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/ruin/wasteplanet/smugglerbunker/killroom)
 "Fo" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 4;
-	color = "#FFFFFF"
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
 	},
@@ -4872,7 +4775,8 @@
 	dir = 6
 	},
 /mob/living/simple_animal/hostile/automated/rover/coalition/dmr/ramzi{
-	faction = list("hostile")
+	faction = list("hostile");
+	wander = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker)
@@ -4927,7 +4831,9 @@
 "GS" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
-/obj/machinery/door/poddoor/shutters/preopen,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "radlockdown"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -4948,7 +4854,7 @@
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "Hk" = (
 /obj/effect/turf_decal/road/line/opaque/yellow{
 	dir = 4
@@ -4992,17 +4898,7 @@
 	wander = 0
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker)
-"HL" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/light/directional/east,
-/turf/open/floor/plating,
-/area/ruin/wasteplanet/smugglerbunker)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "HN" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
@@ -5130,10 +5026,6 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "IU" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 8;
-	color = "#FFFFFF"
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/yellow{
 	dir = 1
 	},
@@ -5303,9 +5195,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/dorms)
 "Kc" = (
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 6
-	},
 /obj/effect/turf_decal/industrial/warning{
 	color = "#FFFFFF";
 	dir = 1
@@ -5313,7 +5202,8 @@
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/obj/effect/turf_decal/corner/opaque/syndiered,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "Kk" = (
 /obj/machinery/door/poddoor{
@@ -5368,7 +5258,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/wasteplanet/smugglerbunker/armory)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "Ky" = (
 /obj/effect/turf_decal/road/line/opaque/yellow{
 	dir = 2
@@ -5445,20 +5335,6 @@
 /obj/machinery/washing_machine,
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/smugglerbunker/dorms)
-"KX" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 2;
-	color = "#FFFFFF"
-	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 10
-	},
-/obj/effect/turf_decal/borderfloorblack{
-	layer = 2.030;
-	dir = 1
-	},
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/lab)
 "Lc" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -5570,7 +5446,8 @@
 /area/ruin/wasteplanet/smugglerbunker/medbay)
 "Lv" = (
 /obj/machinery/door/poddoor/shutters{
-	dir = 4
+	dir = 4;
+	id = "radroom"
 	},
 /obj/effect/turf_decal/industrial/radiation/fulltile,
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -5652,10 +5529,6 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "Mh" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 1;
-	color = "#FFFFFF"
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
 	},
@@ -5690,7 +5563,8 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4
+	dir = 4;
+	id = "radlockdown"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5840,7 +5714,7 @@
 	faction = list("hostile","turret")
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/wasteplanet/smugglerbunker/armory)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "NG" = (
 /obj/structure/table/reinforced,
 /obj/item/mecha_parts/part/gygax_left_arm{
@@ -5994,7 +5868,8 @@
 /area/ruin/wasteplanet/smugglerbunker/exterior)
 "Pc" = (
 /obj/machinery/porta_turret/ruin/ramzi/light{
-	dir = 9
+	dir = 9;
+	faction = list("hostile")
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/wasteplanet/smugglerbunker/lab)
@@ -6232,7 +6107,6 @@
 	color = "#FFFFFF";
 	dir = 2
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -6244,7 +6118,7 @@
 	dir = 1;
 	layer = 2.030
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "QB" = (
 /obj/structure/hazard/floor/burglar_alarm{
@@ -6271,12 +6145,12 @@
 	color = "#FFFFFF";
 	dir = 2
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 6
-	},
 /obj/machinery/firealarm/directional/east,
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "Rr" = (
 /obj/effect/turf_decal/rechargefloor,
 /mob/living/simple_animal/hostile/automated/bipedal{
@@ -6511,10 +6385,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/smugglerbunker/dorms/lounge)
-"TO" = (
-/obj/effect/turf_decal/rechargefloor,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker)
 "TQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -6586,10 +6456,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
-	},
-/mob/living/simple_animal/hostile/automated/rover/coalition/ramzi{
-	faction = list("hostile");
-	wander = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/smugglerbunker/engineering)
@@ -6865,14 +6731,6 @@
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030
 	},
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 1;
-	color = "#920C0C"
-	},
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 4;
-	color = "#920C0C"
-	},
 /obj/structure/sign/warning{
 	pixel_x = 0;
 	pixel_y = 32
@@ -6881,7 +6739,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "Wn" = (
 /obj/effect/turf_decal/spline/fancy/opaque/yellow{
 	dir = 1
@@ -6933,10 +6791,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/dorms)
 "WH" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 4;
-	color = "#FFFFFF"
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 6
 	},
@@ -6997,7 +6851,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/armory)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "WX" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/closet/secure_closet/freezer/fridge{
@@ -7105,7 +6959,7 @@
 	pixel_y = 22
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/armory)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "XV" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /turf/open/floor/mineral/plastitanium/red,
@@ -7139,12 +6993,10 @@
 	color = "#920C0C";
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 6
-	},
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 8
 	},
+/obj/effect/turf_decal/corner/opaque/syndiered,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker)
 "Yw" = (
@@ -7265,7 +7117,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "Zb" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 1
@@ -7329,7 +7181,9 @@
 "Zt" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
-/obj/machinery/door/poddoor/shutters/preopen,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "radlockdown"
+	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/smugglerbunker/engineering)
 "Zw" = (
@@ -7371,9 +7225,6 @@
 	color = "#920C0C";
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 8
-	},
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030;
@@ -7403,7 +7254,7 @@
 "ZW" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "ZX" = (
 /obj/machinery/porta_turret/ruin/ramzi/light{
 	faction = list("hostile","turret")
@@ -8197,7 +8048,7 @@ rd
 iF
 Mk
 te
-pc
+rh
 bl
 qG
 Zz
@@ -8244,8 +8095,8 @@ bh
 lu
 dP
 sV
-sV
-sV
+wK
+wK
 sV
 Ze
 Vp
@@ -8265,12 +8116,12 @@ gj
 pK
 dS
 UA
-sV
-sV
-sV
-sV
-sV
-sV
+wK
+wK
+wK
+wK
+wK
+wK
 sV
 eE
 eE
@@ -8320,12 +8171,12 @@ UA
 yI
 hv
 UA
-TO
-TO
+Th
+Th
 HE
-sV
-TO
-TO
+wK
+Th
+Th
 sV
 sV
 sV
@@ -8378,12 +8229,12 @@ UA
 yc
 yc
 yc
-sV
+wK
 yc
 yc
 sV
-iQ
-je
+Fk
+dM
 sV
 sV
 ZX
@@ -8431,10 +8282,10 @@ xw
 bE
 os
 ns
-qy
+ns
 ZF
 sV
-dM
+ZF
 aL
 sV
 MW
@@ -8464,9 +8315,9 @@ aW
 dP
 ds
 ds
-sV
-sV
-sV
+wK
+wK
+wK
 kR
 Vw
 iF
@@ -8519,10 +8370,10 @@ bw
 dP
 dP
 dP
-sV
+wK
 je
 Cd
-Fk
+Ox
 Ll
 bE
 bE
@@ -8537,7 +8388,7 @@ Gk
 fH
 sY
 Qf
-HL
+Qf
 Qf
 lZ
 tm
@@ -8574,7 +8425,7 @@ dE
 fO
 dP
 dP
-sV
+wK
 lQ
 Cd
 Ox
@@ -8591,8 +8442,8 @@ Qf
 Qf
 FU
 ho
-DF
-sV
+DC
+vU
 DF
 DC
 wn
@@ -8629,7 +8480,7 @@ dP
 bT
 ds
 ds
-sV
+wK
 iQ
 Cd
 Yo
@@ -8646,7 +8497,7 @@ DF
 DF
 bH
 EL
-vU
+sV
 as
 as
 as
@@ -8981,7 +8832,7 @@ VO
 Qt
 KQ
 BK
-KX
+jA
 LT
 Fo
 so
@@ -9027,11 +8878,11 @@ UQ
 UQ
 UQ
 UQ
-wK
+BS
 ZW
 zR
 Hi
-wK
+BS
 ht
 Jh
 Jh
@@ -9079,7 +8930,7 @@ Bz
 OJ
 wK
 Th
-rh
+je
 CK
 gK
 uh
@@ -9099,7 +8950,7 @@ TV
 xG
 jN
 tO
-nH
+mX
 LT
 LT
 ds
@@ -9134,7 +8985,7 @@ Bz
 LG
 wK
 Th
-rh
+je
 OS
 rD
 wf
@@ -9146,7 +8997,7 @@ rz
 mU
 mU
 PA
-tN
+jA
 LT
 qW
 yy
@@ -9249,9 +9100,9 @@ wK
 Wg
 YX
 Nz
-BS
-BS
-bq
+wK
+wK
+Fn
 as
 as
 as
@@ -9299,14 +9150,14 @@ Bz
 eE
 eE
 wK
-mX
+iQ
 wT
 vI
 DB
 Kv
 gZ
 yV
-bq
+Fn
 dP
 ED
 KF
@@ -9358,10 +9209,10 @@ Rr
 wT
 tq
 ir
-BS
+wK
 XR
 aO
-bq
+Fn
 dP
 dP
 TQ
@@ -9409,14 +9260,14 @@ eE
 aY
 bw
 wK
-hO
+HE
 wT
 rt
 sS
-BS
+wK
 of
 WV
-bq
+Fn
 ds
 dP
 dP
@@ -9466,12 +9317,12 @@ pA
 wK
 wK
 wK
+bq
+bq
 Fn
 Fn
-bq
-bq
-bq
-bq
+Fn
+Fn
 vz
 vz
 uF
