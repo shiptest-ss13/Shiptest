@@ -12,8 +12,8 @@
 		"..burn bright, burn fast..",
 	)
 
-	size = 20
-	max_overmap_dynamic_events = 7
+	size = 30
+	max_overmap_dynamic_events = 20
 	///Bool for if the system is unique, and should only be spawned once during overmap gen
 	var/unique_system = FALSE
 
@@ -88,7 +88,7 @@
 
 /datum/overmap_star_system/wilderness/singularity
 	startype = /datum/overmap/star/singularity
-	dynamic_probabilities = list(
+/*	dynamic_probabilities = list(
 		DYNAMIC_WORLD_LAVA = 15,
 		DYNAMIC_WORLD_ICE = 40,
 		DYNAMIC_WORLD_SAND = 30,
@@ -99,6 +99,7 @@
 		DYNAMIC_WORLD_SPACERUIN = 20,
 		DYNAMIC_WORLD_MOON = 25
 	)
+*/
 	event_probabilities = list(
 		/datum/overmap/event/nebula = 60,
 		/datum/overmap/event/meteor/minor = 45,
@@ -152,7 +153,7 @@
 
 /datum/overmap_star_system/wilderness/temperate
 	startype = /datum/overmap/star/medium
-	dynamic_probabilities = list(
+/*	dynamic_probabilities = list(
 		DYNAMIC_WORLD_LAVA = 30,
 		DYNAMIC_WORLD_ICE = 20,
 		DYNAMIC_WORLD_SAND = 30,
@@ -163,6 +164,7 @@
 		DYNAMIC_WORLD_SPACERUIN = 20,
 		DYNAMIC_WORLD_MOON = 20
 	)
+*/
 	event_probabilities = list(
 		/datum/overmap/event/wormhole = 10,
 		/datum/overmap/event/electric/minor = 45,
@@ -225,7 +227,7 @@
 
 /datum/overmap_star_system/wilderness/warzone
 	startype = /datum/overmap/star/medium/orange
-	dynamic_probabilities = list(
+/*	dynamic_probabilities = list(
 		DYNAMIC_WORLD_LAVA = 20,
 		DYNAMIC_WORLD_ICE = 20,
 		DYNAMIC_WORLD_SAND = 30,
@@ -236,6 +238,7 @@
 		DYNAMIC_WORLD_SPACERUIN = 20,
 		DYNAMIC_WORLD_MOON = 20
 	)
+*/
 	event_probabilities = list(
 		/datum/overmap/event/nebula = 60,
 		/datum/overmap/event/electric/minor = 45,
@@ -305,7 +308,7 @@
 	unique_system = TRUE
 
 /datum/overmap_star_system/wilderness/anomaly
-	dynamic_probabilities = list(
+/*	dynamic_probabilities = list(
 		DYNAMIC_WORLD_LAVA = 40,
 		DYNAMIC_WORLD_ICE = 25,
 		DYNAMIC_WORLD_SAND = 25,
@@ -316,6 +319,7 @@
 		DYNAMIC_WORLD_SPACERUIN = 15,
 		DYNAMIC_WORLD_MOON = 5
 	)
+*/
 	event_probabilities = list(
 		/datum/overmap/event/nebula = 60,
 		/datum/overmap/event/electric/minor = 45,
@@ -341,7 +345,7 @@
 	)
 
 /datum/overmap_star_system/wilderness/terraforming
-	dynamic_probabilities = list(
+/*	dynamic_probabilities = list(
 		DYNAMIC_WORLD_LAVA = 30,
 		DYNAMIC_WORLD_ICE = 20,
 		DYNAMIC_WORLD_SAND = 30,
@@ -352,6 +356,7 @@
 		DYNAMIC_WORLD_SPACERUIN = 15,
 		DYNAMIC_WORLD_MOON = 15
 	)
+*/
 	entry_quotes = list(
 		"..just a few more years..",
 		"..progress interrupted..",
@@ -401,7 +406,7 @@
 
 /datum/overmap_star_system/wilderness/supergiant
 	startype = /datum/overmap/star/giant
-	dynamic_probabilities = list(
+/*	dynamic_probabilities = list(
 		DYNAMIC_WORLD_LAVA = 40,
 		DYNAMIC_WORLD_ICE = 15,
 		DYNAMIC_WORLD_SAND = 15,
@@ -412,6 +417,7 @@
 		DYNAMIC_WORLD_SPACERUIN = 30,
 		DYNAMIC_WORLD_MOON = 20
 	)
+*/
 	event_probabilities = list(
 		/datum/overmap/event/nebula = 60,
 		/datum/overmap/event/flare/minor = 20,
@@ -436,7 +442,7 @@
 
 /datum/overmap_star_system/wilderness/frozen
 	startype = /datum/overmap/star/dwarf/white
-	dynamic_probabilities = list(
+/*	dynamic_probabilities = list(
 		DYNAMIC_WORLD_LAVA = 5,
 		DYNAMIC_WORLD_ICE = 40,
 		DYNAMIC_WORLD_SAND = 30,
@@ -447,7 +453,7 @@
 		DYNAMIC_WORLD_SPACERUIN = 15,
 		DYNAMIC_WORLD_MOON = 15
 	)
-
+*/
 	event_probabilities = list(
 		//ice field
 		/datum/overmap/event/wormhole = 5,
