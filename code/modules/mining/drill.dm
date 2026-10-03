@@ -353,7 +353,7 @@
 /obj/machinery/drill/proc/mine_success()
 	var/sensor_rating
 	for(var/obj/item/stock_parts/scanning_module/sensor in component_parts)
-		sensor_rating = round(sqrt(sensor.rating))
+		sensor_rating = sqrt(sensor.rating)
 	our_vein.drop_ore(sensor_rating, src)
 
 //Overly long proc to handle the unique properties for each malfunction type

@@ -134,7 +134,7 @@
 	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_IMPORT
 
-	spread = 20
+	spread = 15
 	spread_unwielded = 20
 	dual_wield_spread = 35
 	wield_slowdown = SMG_SLOWDOWN

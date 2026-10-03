@@ -35,25 +35,25 @@
 	id = ICEMOON_DEFAULT_ATMOS
 
 	base_gases = list(
-		GAS_O2=5,
-		GAS_N2=10,
+		GAS_O2=10,
+		GAS_N2=40,
 	)
 	normal_gases = list(
-		GAS_O2=10,
-		GAS_ARGON=15,
+		GAS_O2=1,
+		GAS_N2=4,
 	)
 	restricted_gases = list(
-		GAS_AMMONIA=0.2,
-		GAS_CO2=0.1,
+		GAS_O3=0.1,
+		GAS_AMMONIA=0.1,
 	)
-	restricted_chance = 50
+	restricted_chance = 10
 
-	minimum_pressure = HAZARD_LOW_PRESSURE + 10
-	maximum_pressure = LAVALAND_EQUIPMENT_EFFECT_PRESSURE - 1
+	minimum_pressure = 101.3
+	maximum_pressure = 135.7
 
 
-	minimum_temp = 200 //fucking cold to
-	maximum_temp = 240 //still cold
+	minimum_temp = 250 //both should be breathable?
+	maximum_temp = 260
 
 /datum/atmosphere/shrouded
 	id = SHROUDED_DEFAULT_ATMOS
