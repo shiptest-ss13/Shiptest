@@ -1618,11 +1618,15 @@
 	pixel_x = 7
 	},
 /obj/machinery/light/directional/north,
-/obj/item/clothing/suit/armor/captaincoat{
+/obj/item/clothing/suit/space/pilot{
+	pixel_x = -6;
+	pixel_y = -3;
+	name = "torn pilot space suit";
+	desc = "A lightweight, unarmored space suit designed for exosuit and shuttle pilots. Special attachment points make mounting and dismounting from exosuits much easier. This one has multiple tears and GSWs. May still function."
+	},
+/obj/item/clothing/head/helmet/space/pilot{
 	pixel_x = -5;
-	pixel_y = 0;
-	name = "torn captain's fur coat";
-	desc = "A long, stiff commanding coat, meant for frigid conditions. There are noticeable gashes all across it."
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/medbay)
@@ -2581,6 +2585,10 @@
 	dir = 8;
 	icon_state = "road_line_edge"
 	},
+/obj/effect/turf_decal/stairs{
+	dir = 5;
+	color = "#474747"
+	},
 /turf/open/floor/concrete/pavement/wasteplanet{
 	icon_state = "pavement_2"
 	},
@@ -2753,6 +2761,9 @@
 	id = "bunkersouthgate1";
 	name = "Bunker Internal Gate"
 	},
+/obj/item/clothing/suit/space/pilot,
+/obj/item/clothing/head/helmet/space/pilot,
+/obj/item/tank/internals/oxygen/yellow,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/wasteplanet/smugglerbunker)
 "rh" = (
@@ -3276,6 +3287,13 @@
 	dir = 1;
 	welded = 1
 	},
+/obj/item/storage/belt/security/webbing/ramzi/alt,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/mask/gas/ramzi,
+/obj/item/clothing/under/syndicate/gorlex,
+/obj/item/clothing/under/syndicate/gorlex,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/dorms/one)
 "uh" = (
@@ -3578,6 +3596,10 @@
 /obj/effect/turf_decal/road/line/opaque/yellow{
 	dir = 2;
 	icon_state = "road_line_edge"
+	},
+/obj/effect/turf_decal/stairs{
+	dir = 5;
+	color = "#474747"
 	},
 /turf/open/floor/concrete/pavement/wasteplanet{
 	icon_state = "pavement_2"
@@ -4443,6 +4465,7 @@
 /obj/item/storage/belt/sabre/solgov,
 /obj/item/melee/sword/sabre/solgov,
 /obj/item/folder/documents/solgov,
+/obj/item/clothing/mask/gas/suns,
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/smugglerbunker/exterior)
 "DU" = (
@@ -4796,6 +4819,11 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/checkpoint)
+"Gx" = (
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/tank/internals/oxygen/yellow,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/wasteplanet/smugglerbunker)
 "GF" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 6
@@ -4859,6 +4887,9 @@
 	color = "#FFFFFF"
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/engineer,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/clothing/head/helmet/space/light/engineer,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/wasteplanet/smugglerbunker/armory)
 "Hk" = (
@@ -6535,6 +6566,10 @@
 	dir = 1;
 	welded = 1
 	},
+/obj/item/clothing/under/syndicate/gorlex,
+/obj/item/clothing/under/syndicate/gorlex,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/dorms/two)
 "UQ" = (
@@ -6833,6 +6868,9 @@
 	pixel_y = -22;
 	name = "Bunker North Internal Holo"
 	},
+/obj/item/clothing/suit/space/pilot,
+/obj/item/clothing/head/helmet/space/pilot,
+/obj/item/tank/internals/oxygen/yellow,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/wasteplanet/smugglerbunker)
 "WV" = (
@@ -6963,6 +7001,9 @@
 /area/ruin/wasteplanet/smugglerbunker/killroom)
 "XV" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/pilot,
+/obj/item/clothing/head/helmet/space/pilot,
+/obj/item/tank/internals/oxygen/yellow,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/wasteplanet/smugglerbunker)
 "XW" = (
@@ -7249,6 +7290,8 @@
 /area/ruin/wasteplanet/smugglerbunker/checkpoint)
 "ZW" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/clothing/suit/space/hardsuit/stealth/ramzi,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/wasteplanet/smugglerbunker/armory)
 "ZX" = (
@@ -7816,7 +7859,7 @@ au
 aG
 Ir
 sV
-XV
+Gx
 WS
 sV
 iY
