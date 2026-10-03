@@ -78,6 +78,19 @@
 /obj/effect/projectile/tracer/gauss
 	icon_state = "hc_gauss"
 
+//Cybersun
+/obj/effect/projectile/tracer/ionization
+	icon_state = "ionization"
+
+/obj/effect/projectile/tracer/ionization/sniper
+	icon_state = "ionization_sniper"
+
+/obj/effect/projectile/tracer/lorentz
+	icon_state = "lorentz"
+
+/obj/effect/projectile/tracer/flare
+	icon_state = "flare"
+
 //kalixcian civilian//
 /obj/effect/projectile/tracer/kalix
 	icon_state = "beam_kalix"
