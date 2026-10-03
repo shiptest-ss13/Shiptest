@@ -81,7 +81,7 @@
 	cost = 500
 	contains = list(/obj/item/trench_tool)
 	crate_name = "mining crate"
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_discount = 20
 
 /datum/supply_pack/tools/entrenching_gezena
@@ -187,7 +187,7 @@
 	cost = 1500
 	contains = list(/obj/item/melee/sledgehammer/gorlex)
 	crate_name = "sledgehammer crate"
-	faction = /datum/faction/syndicate/ngr
+	faction = /datum/faction/ngr
 	faction_locked = TRUE
 	faction_discount = 0
 

@@ -34,7 +34,7 @@
 	cost = 500
 	contains = list(/obj/item/attachment/energy_bayonet)
 	crate_name = "bayonet crate"
-	faction = /datum/faction/syndicate/scarborough
+	faction = /datum/faction/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
