@@ -2482,7 +2482,8 @@
 "mU" = (
 /obj/machinery/suit_storage_unit/inherit/locked{
 	req_access_txt = "1";
-	name = "marine's suit storage unit"
+	name = "marine's suit storage unit";
+	req_ship_access = 1
 	},
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/suit/space/gezena/marine,
@@ -2663,7 +2664,8 @@
 /obj/machinery/suit_storage_unit/inherit/locked{
 	req_access_txt = "1";
 	name = "marine's specialist storage unit";
-	pixel_y = 0
+	pixel_y = 0;
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
@@ -6475,7 +6477,8 @@
 "GK" = (
 /obj/machinery/suit_storage_unit/inherit/locked{
 	req_access_txt = "1";
-	name = "marine's suit storage unit"
+	name = "marine's suit storage unit";
+	req_ship_access = 1
 	},
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/suit/space/gezena/marine,
@@ -7864,7 +7867,8 @@
 "MW" = (
 /obj/machinery/suit_storage_unit/inherit/locked{
 	req_access_txt = "1";
-	name = "marine's suit storage unit"
+	name = "marine's suit storage unit";
+	req_ship_access = 1
 	},
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/suit/space/gezena/marine,
@@ -8209,7 +8213,8 @@
 "OG" = (
 /obj/machinery/suit_storage_unit/inherit/locked{
 	req_access_txt = "1";
-	name = "marine's suit storage unit"
+	name = "marine's suit storage unit";
+	req_ship_access = 1
 	},
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/suit/space/gezena/marine,
@@ -9252,7 +9257,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/suit_storage_unit/inherit/industrial/locked{
 	req_access_txt = "10";
-	name = "engineer's suit storage unit"
+	name = "engineer's suit storage unit";
+	req_ship_access = 1
 	},
 /obj/machinery/button/door{
 	id = "c-sun_engi window";

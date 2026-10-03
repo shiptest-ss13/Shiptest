@@ -1800,7 +1800,8 @@
 "hW" = (
 /obj/machinery/suit_storage_unit/inherit/industrial/locked{
 	req_access_txt = "10";
-	name = "engineer's suit storage unit"
+	name = "engineer's suit storage unit";
+	req_ship_access = 1
 	},
 /obj/item/clothing/suit/space/gezena,
 /obj/item/tank/jetpack/oxygen,
@@ -3336,7 +3337,8 @@
 "mB" = (
 /obj/machinery/suit_storage_unit/inherit/industrial/locked{
 	req_access_txt = "10";
-	name = "engineer's suit storage unit"
+	name = "engineer's suit storage unit";
+	req_ship_access = 1
 	},
 /obj/item/clothing/suit/space/gezena,
 /obj/item/tank/jetpack/oxygen,
@@ -3542,7 +3544,8 @@
 /obj/machinery/suit_storage_unit/inherit/locked{
 	req_access_txt = "1";
 	name = "marine's specialist storage unit";
-	pixel_y = 2
+	pixel_y = 2;
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
@@ -5091,7 +5094,8 @@
 /obj/machinery/suit_storage_unit/inherit/locked{
 	req_access_txt = "1";
 	name = "marine's suit storage unit";
-	pixel_y = 3
+	pixel_y = 3;
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
@@ -5400,7 +5404,8 @@
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 5;
 	pixel_x = 0;
-	pixel_y = 0
+	pixel_y = 0;
+	req_ship_access = 1
 	},
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/mask/breath/pgfmask,
@@ -9679,7 +9684,8 @@
 /obj/machinery/suit_storage_unit/inherit/locked{
 	req_access_txt = "1";
 	name = "marine's suit storage unit";
-	pixel_y = 3
+	pixel_y = 3;
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
@@ -10088,13 +10094,13 @@
 /obj/item/clothing/suit/space/gezena/marine,
 /obj/item/clothing/head/helmet/space/gezena/marine,
 /obj/machinery/light/directional/south,
-/obj/machinery/suit_storage_unit/inherit/locked{
-	req_access_txt = "1";
-	name = "marine's suit storage unit"
-	},
 /obj/structure/sign/flag/gezena{
 	dir = 4;
 	pixel_x = -30
+	},
+/obj/machinery/suit_storage_unit/inherit/locked{
+	req_access_txt = "1";
+	name = "marine's suit storage unit"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
@@ -10516,7 +10522,8 @@
 /obj/machinery/suit_storage_unit/inherit/locked{
 	req_access_txt = "1";
 	name = "marine's specialist storage unit";
-	pixel_y = 0
+	pixel_y = 0;
+	req_ship_access = 1
 	},
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/mask/breath/pgfmask,
@@ -11037,7 +11044,8 @@
 /obj/machinery/suit_storage_unit/inherit/industrial{
 	name = "marine's heavy suit storage unit";
 	req_access_txt = "1";
-	pixel_y = 1
+	pixel_y = 1;
+	req_ship_access = 1
 	},
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/mask/breath/pgfmask,
@@ -11615,14 +11623,15 @@
 /obj/item/clothing/suit/space/gezena/marine,
 /obj/item/clothing/head/helmet/space/gezena/marine,
 /obj/machinery/light/directional/north,
-/obj/machinery/suit_storage_unit/inherit/locked{
-	req_access_txt = "1";
-	name = "marine's suit storage unit";
-	pixel_y = 3
-	},
 /obj/structure/sign/flag/gezena{
 	dir = 4;
 	pixel_x = -30
+	},
+/obj/machinery/suit_storage_unit/inherit/locked{
+	req_access_txt = "1";
+	name = "marine's suit storage unit";
+	pixel_y = 3;
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
