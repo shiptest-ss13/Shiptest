@@ -4,13 +4,6 @@
 	prefix = "_maps/RandomRuins/WasteRuins/"
 	ruin_type = RUINTYPE_WASTE
 
-/datum/map_template/ruin/wasteplanet/abandoned_mechbay
-	name = "Abandoned Exosuit Bay"
-	description = "A military base formerly used for staging 4 exosuits and crew. God knows what's in it now."
-	id = "abandoned_mechbay"
-	suffix = "wasteplanet_abandoned_mechbay.dmm"
-	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
-
 /datum/map_template/ruin/wasteplanet/tradepost
 	name = "Ruined Tradepost"
 	description = "Formerly a functioning, if not thriving tradepost. Now a graveyard of Inteq soldiers and hivebots."
