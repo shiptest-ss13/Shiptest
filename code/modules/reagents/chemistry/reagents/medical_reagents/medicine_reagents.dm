@@ -614,7 +614,7 @@
 	. = ..()
 
 /datum/reagent/medicine/anti_rad/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.radiation -= M.radiation - rand(25 * seconds_per_tick, 75 * seconds_per_tick)
+	M.radiation = max(M.radiation - rand(25 * seconds_per_tick, 75 * seconds_per_tick), 0)
 	M.adjust_disgust(2 * REM * seconds_per_tick)
 	..()
 	. = 1
@@ -934,4 +934,3 @@
 	M.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/dizziness, max_duration = 20 SECONDS)
 	..()
-

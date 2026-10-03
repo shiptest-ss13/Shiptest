@@ -37,7 +37,11 @@
 
 /obj/effect/projectile/tracer/disabler
 	name = "disabler"
-	icon_state = "beam_omni"
+	icon_state = "beam_disabler"
+
+/obj/effect/projectile/tracer/disabler_heavy
+	name = "disabler"
+	icon_state = "beam_disabler_heavy"
 
 /obj/effect/projectile/tracer/xray
 	name = "\improper X-ray laser"
@@ -71,14 +75,34 @@
 /obj/effect/projectile/tracer/wormhole
 	icon_state = "wormhole_g"
 
+/obj/effect/projectile/tracer/gauss
+	icon_state = "hc_gauss"
+
+//kalixcian civilian//
 /obj/effect/projectile/tracer/kalix
 	icon_state = "beam_kalix"
 
-/obj/effect/projectile/tracer/pgf
+/obj/effect/projectile/tracer/kalix_rifle
+	icon_state = "beam_kalix_rifle"
+
+/obj/effect/projectile/tracer/kalix_hunt
+	icon_state = "beam_kalix_hunt"
+
+/obj/effect/projectile/tracer/nock
+	icon_state = "beam_kalix_nock"
+
+//pgf military//
+/obj/effect/projectile/tracer/pgf ///currently unused, for a theoretical military pistol
 	icon_state = "beam_pgf"
 
 /obj/effect/projectile/tracer/pgf/rifle
 	icon_state = "beam_pgf_rifle"
 
-/obj/effect/projectile/tracer/gauss
-	icon_state = "hc_gauss"
+/obj/effect/projectile/tracer/pgf/pdw
+	icon_state = "beam_pgf_pdw"
+
+/obj/effect/projectile/tracer/pgf/assault
+	icon_state = "beam_pgf_assault"
+
+/obj/effect/projectile/tracer/pgf/sniper
+	icon_state = "beam_pgf_sniper"
