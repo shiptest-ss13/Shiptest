@@ -324,7 +324,9 @@
 "bO" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "wasteviewingports"
+	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/smugglerbunker/controlroom)
 "bP" = (
@@ -706,12 +708,16 @@
 	},
 /area/ruin/wasteplanet/smugglerbunker/exterior)
 "dM" = (
-/obj/effect/turf_decal/rechargefloor,
-/mob/living/simple_animal/hostile/automated/quadrotor/cybersun/ramzi{
-	faction = list("hostile");
-	wander = 0
+/obj/effect/turf_decal/industrial/warning{
+	color = "#920C0C";
+	dir = 8
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker)
 "dP" = (
 /turf/closed/mineral/random/wasteplanet,
@@ -1458,6 +1464,14 @@
 /mob/living/simple_animal/hostile/automated/tripod,
 /turf/closed/mineral/random/wasteplanet,
 /area/ruin/wasteplanet/smugglerbunker/exterior)
+"hO" = (
+/obj/effect/turf_decal/rechargefloor,
+/mob/living/simple_animal/hostile/automated/rover/coalition/ramzi{
+	faction = list("hostile");
+	wander = 0
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "hS" = (
 /obj/effect/turf_decal/road/line/opaque/yellow{
 	dir = 1;
@@ -1539,7 +1553,7 @@
 	wander = 0
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker)
 "iS" = (
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/internals,
@@ -1579,7 +1593,7 @@
 	wander = 0
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker)
 "jj" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -1980,22 +1994,22 @@
 	},
 /obj/item/storage/toolbox/syndicate{
 	pixel_x = 3;
-	pixel_y = -8
+	pixel_y = -2
 	},
 /obj/item/clothing/glasses/welding{
 	pixel_x = 0;
-	pixel_y = 1
+	pixel_y = 7
 	},
 /obj/machinery/button{
 	pixel_x = 10;
-	pixel_y = 9;
+	pixel_y = 20;
 	dir = 8;
 	id = "radlockdown";
 	name = "Radiation Shutters"
 	},
 /obj/machinery/button{
 	pixel_x = 10;
-	pixel_y = 3;
+	pixel_y = 13;
 	dir = 8;
 	id = "radroom";
 	name = "Isotope Room"
@@ -2234,17 +2248,12 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "mX" = (
-/obj/effect/turf_decal/spline/fancy/opaque/yellow,
-/obj/effect/turf_decal/spline/fancy/opaque/yellow{
-	dir = 1
+/obj/effect/turf_decal/rechargefloor,
+/mob/living/simple_animal/hostile/automated/agrav/cybersun{
+	wander = 0
 	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/warning,
-/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
-	dir = 1
-	},
-/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/cargo)
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "nc" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -2747,12 +2756,13 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/wasteplanet/smugglerbunker)
 "rh" = (
-/obj/effect/turf_decal/siding/black{
-	dir = 8
+/obj/effect/turf_decal/rechargefloor,
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun/ramzi{
+	faction = list("hostile");
+	wander = 0
 	},
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/dorms)
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "ro" = (
 /mob/living/simple_animal/hostile/automated/walkmine/ramzi{
 	faction = list("hostile")
@@ -3156,13 +3166,6 @@
 	pixel_y = 7;
 	id = "bunkernorthgate1";
 	name = "Bunker North External Gate"
-	},
-/obj/machinery/button/door{
-	pixel_x = -17;
-	pixel_y = 3;
-	name = "Door Bolt";
-	id = "secroom";
-	dir = 1
 	},
 /obj/machinery/button/shieldwallgen{
 	pixel_x = 11;
@@ -4654,11 +4657,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/armory)
 "Fk" = (
-/obj/effect/turf_decal/rechargefloor,
-/mob/living/simple_animal/hostile/automated/agrav/cybersun{
-	wander = 0
+/obj/effect/turf_decal/industrial/warning{
+	color = "#920C0C";
+	dir = 1
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030
+	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker)
 "Fn" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
@@ -4891,14 +4897,18 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/controlroom)
-"HE" = (
-/obj/effect/turf_decal/rechargefloor,
-/mob/living/simple_animal/hostile/automated/rover/coalition/ramzi{
-	faction = list("hostile");
-	wander = 0
+"HL" = (
+/obj/effect/turf_decal/spline/fancy/opaque/yellow,
+/obj/effect/turf_decal/spline/fancy/opaque/yellow{
+	dir = 1
 	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/warning,
+/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/cargo)
 "HN" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
@@ -5349,7 +5359,7 @@
 "Lh" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	pixel_x = 0;
+	pixel_x = 8;
 	pixel_y = 7;
 	dir = 1;
 	id = "wasteviewingports";
@@ -5357,28 +5367,21 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = 8;
+	pixel_x = 15;
 	pixel_y = 7;
 	id = "internalwindows";
 	name = "Control Room Internal Windows"
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = -8;
-	pixel_y = -1;
-	id = "closedrobots","wastearmory";
-	name = "Armory Button (DANGER)"
-	},
-/obj/machinery/button/door{
-	dir = 1;
-	pixel_x = 0;
+	pixel_x = 8;
 	pixel_y = -1;
 	id = "cargobay";
 	name = "Cargo Bay"
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = 8;
+	pixel_x = 15;
 	pixel_y = -1;
 	id = "mechbay";
 	name = "Mech Bay"
@@ -5386,9 +5389,18 @@
 /obj/machinery/button/door/hazard{
 	dir = 1;
 	name = "Burglar Alarms";
-	id = "disablealarm";
-	pixel_x = -8;
+	id = list=("closedrobots","wastearmory");
+	pixel_x = 1;
 	pixel_y = 7
+	},
+/obj/machinery/button/door{
+	pixel_x = 1;
+	pixel_y = -1;
+	name = "Door Bolt";
+	id = "secroom";
+	dir = 1;
+	specialfunctions = 4;
+	normaldoorcontrol = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/controlroom)
@@ -5535,9 +5547,9 @@
 /obj/effect/turf_decal/corner/opaque/syndiered,
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_x = -21;
+	pixel_x = -22;
 	pixel_y = 5;
-	id = "cargobay";
+	id = "bay";
 	name = "Cargo Bay"
 	},
 /obj/machinery/airalarm/directional/south,
@@ -5747,7 +5759,6 @@
 	name = "gear locker";
 	icon_state = "sec_wall";
 	icon_door = "sec_wall";
-	req_access_txt = "1";
 	dir = 4;
 	pixel_x = 32;
 	pixel_y = 0
@@ -5776,16 +5787,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/cargo)
-"Ox" = (
-/obj/effect/turf_decal/industrial/warning{
-	color = "#920C0C";
-	dir = 1
-	},
-/obj/effect/turf_decal/borderfloorblack{
-	layer = 2.030
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker)
 "OD" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output{
 	dir = 8
@@ -7221,17 +7222,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/dorms)
 "ZF" = (
-/obj/effect/turf_decal/industrial/warning{
-	color = "#920C0C";
+/obj/effect/turf_decal/siding/black{
 	dir = 8
 	},
-/obj/machinery/light/floor,
-/obj/effect/turf_decal/borderfloorblack{
-	layer = 2.030;
-	dir = 4
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker)
+/area/ruin/wasteplanet/smugglerbunker/dorms)
 "ZS" = (
 /obj/structure/girder/reinforced,
 /obj/item/stack/sheet/mineral/plastitanium,
@@ -8040,15 +8036,15 @@ bi
 ZX
 sV
 sV
-je
-iQ
+rh
+mX
 sV
 qz
 rd
 iF
 Mk
 te
-rh
+ZF
 bl
 qG
 Zz
@@ -8173,7 +8169,7 @@ hv
 UA
 Th
 Th
-HE
+hO
 wK
 Th
 Th
@@ -8233,8 +8229,8 @@ wK
 yc
 yc
 sV
-Fk
-dM
+iQ
+je
 sV
 sV
 ZX
@@ -8283,9 +8279,9 @@ bE
 os
 ns
 ns
-ZF
+dM
 sV
-ZF
+dM
 aL
 sV
 MW
@@ -8371,9 +8367,9 @@ dP
 dP
 dP
 wK
-je
+rh
 Cd
-Ox
+Fk
 Ll
 bE
 bE
@@ -8428,7 +8424,7 @@ dP
 wK
 lQ
 Cd
-Ox
+Fk
 dT
 lx
 Qf
@@ -8481,7 +8477,7 @@ bT
 ds
 ds
 wK
-iQ
+mX
 Cd
 Yo
 sO
@@ -8930,7 +8926,7 @@ Bz
 OJ
 wK
 Th
-je
+rh
 CK
 gK
 uh
@@ -8950,7 +8946,7 @@ TV
 xG
 jN
 tO
-mX
+HL
 LT
 LT
 ds
@@ -8985,7 +8981,7 @@ Bz
 LG
 wK
 Th
-je
+rh
 OS
 rD
 wf
@@ -9150,7 +9146,7 @@ Bz
 eE
 eE
 wK
-iQ
+mX
 wT
 vI
 DB
@@ -9260,7 +9256,7 @@ eE
 aY
 bw
 wK
-HE
+hO
 wT
 rt
 sS
