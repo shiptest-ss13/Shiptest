@@ -103,7 +103,7 @@
 	var/obj/item/bodypart/iter_part
 	for(var/zone in bodyparts)
 		iter_part = bodyparts[zone]
-		if(iter_part)
+		if(!iter_part)
 			continue
 		if(iter_part.update_part_wound_overlay())
 			update_bleed_icons = TRUE
