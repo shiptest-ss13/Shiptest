@@ -60,7 +60,6 @@
 /mob/living/simple_animal/hostile/statue/Initialize(mapload, mob/living/creator)
 	. = ..()
 	// Give spells
-	mob_spell_list += new /obj/effect/proc_holder/spell/aoe_turf/flicker_lights(src)
 	mob_spell_list += new /obj/effect/proc_holder/spell/aoe_turf/blindness(src)
 	mob_spell_list += new /obj/effect/proc_holder/spell/targeted/night_vision(src)
 
@@ -166,21 +165,6 @@
 	return . - creator
 
 // Statue powers
-
-// Flicker lights
-/obj/effect/proc_holder/spell/aoe_turf/flicker_lights
-	name = "Flicker Lights"
-	desc = "You will trigger a large amount of lights around you to flicker."
-
-	charge_max = 300
-	clothes_req = 0
-	range = 14
-
-/obj/effect/proc_holder/spell/aoe_turf/flicker_lights/cast(list/targets,mob/user = usr)
-	for(var/turf/T in targets)
-		for(var/obj/machinery/light/L in T)
-			L.flicker()
-	return
 
 //Blind AOE
 /obj/effect/proc_holder/spell/aoe_turf/blindness
