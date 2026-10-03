@@ -40,9 +40,9 @@
 	belt = /obj/item/gun/ballistic/automatic/pistol/candor/factory
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/vickland
 
-	l_pocket = /obj/item/ammo_box/magazine/m45
+	l_pocket = /obj/item/ammo_box/magazine/m44
 
-	backpack_contents = list(/obj/item/ammo_box/vickland_a8_50r = 6, /obj/item/storage/box/ammo/a8_50r, /obj/item/ammo_box/magazine/m45 = 2)
+	backpack_contents = list(/obj/item/ammo_box/vickland_a8_50r = 6, /obj/item/storage/box/ammo/a8_50r, /obj/item/ammo_box/magazine/m44 = 2)
 
 /datum/outfit/job/roumain/ert/scout
 	name = "ERT - Saint-Roumain Hunter (Scout)" // scout and detective special

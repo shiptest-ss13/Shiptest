@@ -89,9 +89,9 @@
 /obj/machinery/porta_turret/ship/ngr/light
 	name = "Sonoran Turret"
 	desc = "A light turret manufactured by the New Gorlex Republic for its ships and installations. Proudly manufactured within the Nation, using locally produced munitions!"
-	stun_projectile = /obj/projectile/bullet/c45/rubber
+	stun_projectile = /obj/projectile/bullet/c10mm/rubber
 	stun_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
-	lethal_projectile = /obj/projectile/bullet/c45
+	lethal_projectile = /obj/projectile/bullet/c10mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	scan_range = 7
 	shot_delay = 12
@@ -127,9 +127,9 @@
 /obj/machinery/porta_turret/ship/hardliners/light
 	name = "Discharge Turret" //prime candidate to be a weird cybersun electro-gun toy.
 	desc = "A light turret typically found mounted on mercenary and independent vessels as a cheap, aftermarket modification." //do not put these on indie vessels
-	stun_projectile = /obj/projectile/bullet/c45/rubber
+	stun_projectile = /obj/projectile/bullet/c10mm/rubber
 	stun_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
-	lethal_projectile = /obj/projectile/bullet/c45
+	lethal_projectile = /obj/projectile/bullet/c10mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	scan_range = 7
 	shot_delay = 12
@@ -168,9 +168,9 @@
 /obj/machinery/porta_turret/ship/ramzi/light
 	name = "Strike Turret"
 	desc = "A light turret manufactured by the Gorlex Marauders during the ICW. Most surviving examples are poorly maintained."
-	stun_projectile = /obj/projectile/bullet/c45/rubber
+	stun_projectile = /obj/projectile/bullet/c10mm/rubber
 	stun_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
-	lethal_projectile = /obj/projectile/bullet/c45
+	lethal_projectile = /obj/projectile/bullet/c10mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	scan_range = 8
 	shot_delay = 16

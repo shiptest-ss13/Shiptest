@@ -107,9 +107,9 @@
 			for(var/i in 1 to loops)
 				var/ammotype = pick(list(
 					/obj/item/storage/box/ammo/a8_50r,
-					/obj/item/storage/box/ammo/c45,
+					/obj/item/storage/box/ammo/a44roum,
 					/obj/item/storage/box/ammo/a357,
-					/obj/item/storage/box/ammo/c45,
+					/obj/item/storage/box/ammo/a44roum,
 					/obj/item/storage/box/ammo/a4570,
 					/obj/item/stock_parts/cell/gun/mini))
 				if(istype(back, /obj/item/storage/backpack))
