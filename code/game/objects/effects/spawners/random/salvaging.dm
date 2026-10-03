@@ -128,7 +128,6 @@
 		/obj/item/storage/box/ammo/c22lr/surplus = 2,
 		/obj/item/storage/box/ammo/c10mm_surplus = 2,
 		/obj/item/storage/box/ammo/c9mm_surplus = 2,
-		/obj/item/storage/box/ammo/c45_surplus = 2,
 
 		// big tools
 		/obj/item/hatchet = 10,
