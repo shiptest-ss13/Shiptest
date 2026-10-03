@@ -1444,7 +1444,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * - times_fired: The number of times SSmobs has fired
  */
 /datum/species/proc/handle_mutations_and_radiation(mob/living/carbon/human/source, seconds_per_tick, times_fired)
-	if(HAS_TRAIT(source, TRAIT_RADIMMUNE))
+	if(HAS_TRAIT(source, TRAIT_RADIMMUNE) || HAS_TRAIT(source, TRAIT_RADROBOTIC))
 		source.radiation = 0
 		return TRUE
 
@@ -1460,12 +1460,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		source.vomit(10, TRUE)
 
 	/*
-	if(radiation > RAD_MOB_MUTATE && SPT_PROB(RAD_MOB_MUTATE_PROB, seconds_per_tick))
-		to_chat(source, "<span class='danger'>You mutate!</span>")
-		source.easy_randmut(NEGATIVE + MINOR_NEGATIVE)
-		source.emote("gasp")
-		source.domutcheck()
-
 	if(radiation > RAD_MOB_HAIRLOSS && SPT_PROB(RAD_MOB_HAIRLOSS_PROB, seconds_per_tick))
 		if(!(source.hairstyle == "Bald") && (HAIR in species_traits))
 			to_chat(source, "<span class='danger'>Your hair starts to fall out in clumps...</span>")
