@@ -1,4 +1,5 @@
 /obj/item/ammo_casing/caseless/arrow
+	autowiki_hidden = TRUE //the bows and therefore arrows are apparently due for a rework and are unobtainable atm?
 	name = "arrow"
 	desc = "An arrow made of... something. It's hella sharp."
 	projectile_type = /obj/projectile/bullet/reusable/arrow

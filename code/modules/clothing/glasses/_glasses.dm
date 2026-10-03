@@ -301,6 +301,7 @@
 	desc = "Protects the eyes from bright flashes; approved by the mad scientist association."
 	icon_state = "welding-g"
 	item_state = "welding-g"
+	alternate_worn_layer = FACEMASK_LAYER
 	actions_types = list(/datum/action/item_action/toggle)
 	flash_protect = FLASH_PROTECTION_WELDER
 	custom_materials = list(/datum/material/iron = 250)

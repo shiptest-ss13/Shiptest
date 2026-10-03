@@ -119,6 +119,10 @@
 	display_name = "chore jacket, riso-teceian"
 	path = /obj/item/clothing/suit/toggle/chorejacket/teceti
 
+/datum/gear/suit/chorejacketmiski
+	display_name = "chore jacket, miskilamao"
+	path = /obj/item/clothing/suit/toggle/chorejacket/miski
+
 /datum/gear/suit/chorejacket
 	display_name = "chore jacket, colorable"
 	path = /obj/item/clothing/suit/toggle/chorejacket
