@@ -222,6 +222,7 @@
 		ALLOCATION_FREE,
 		QUADRANT_MAP_SIZE*2
 	)
+
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
 
 	main_template.load(vlevel.get_unreserved_bottom_left_turf())
