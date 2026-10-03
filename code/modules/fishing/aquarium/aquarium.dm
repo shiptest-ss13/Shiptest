@@ -277,3 +277,12 @@
 	new /obj/item/fish/trout(src)
 	new /obj/item/fish/trout(src)
 	new /obj/item/fish/catfish(src)
+
+/obj/structure/aquarium/sunskipper/Initialize(mapload)
+	. = ..()
+
+	new /obj/item/aquarium_prop/rocks(src)
+	new /obj/item/aquarium_prop/seaweed(src)
+	new /obj/item/aquarium_prop/castle(src)
+
+	new /obj/item/fish/emulsijack(src)

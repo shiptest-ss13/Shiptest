@@ -221,6 +221,25 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/olive/old, 0)
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/olive/old/alt, 0)
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/olive/corpo, 0)
 
+// White
+
+/obj/structure/chair/comfy/white
+	icon_state = "imaginos_white"
+
+/obj/structure/chair/comfy/white/old
+	icon_state = "old_white"
+
+/obj/structure/chair/comfy/white/old/alt
+	icon_state = "old_white_alt"
+
+/obj/structure/chair/comfy/white/corpo
+	icon_state = "corp_white"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/white, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/white/old, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/white/old/alt, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/white/corpo, 0)
+
 // Benches - No armrests
 
 // Base type - DO NOT USE!
@@ -268,3 +287,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/bench/red, 0)
 	icon_state = "bench_olive"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/bench/olive, 0)
+
+/obj/structure/chair/bench/white
+	icon_state = "bench_white"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/bench/white, 0)
