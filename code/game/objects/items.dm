@@ -579,12 +579,16 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	return ITALICS | REDUCE_RANGE
 
 /obj/item/proc/dropped(mob/user, silent = FALSE)
-	SHOULD_CALL_PARENT(1)
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.Remove(user)
+	SHOULD_CALL_PARENT(TRUE)
+
+	if(user)
+		for(var/X in actions)
+			var/datum/action/A = X
+			A.Remove(user)
+
 	if(item_flags & DROPDEL)
 		qdel(src)
+
 	item_flags &= ~IN_INVENTORY
 	SEND_SIGNAL(src, COMSIG_ITEM_DROPPED,user)
 	remove_outline()

@@ -397,7 +397,7 @@
 			hood.forceMove(src)
 		for(var/X in actions)
 			var/datum/action/A = X
-			A.UpdateButtonIcon()
+			A.UpdateButtons()
 
 /obj/item/clothing/neck/poncho/update_appearance(updates)
 	if(ponchotoggled)
@@ -429,7 +429,7 @@
 				H.regenerate_icons()
 				for(var/X in actions)
 					var/datum/action/A = X
-					A.UpdateButtonIcon()
+					A.UpdateButtons()
 	else
 		remove_hood()
 
