@@ -629,6 +629,7 @@
 	shot.firer = src
 	shot.fired_from = src
 	shot.fire()
+	return shot
 
 /obj/machinery/porta_turret/proc/set_target(atom/movable/target = null)
 	if(current_target)

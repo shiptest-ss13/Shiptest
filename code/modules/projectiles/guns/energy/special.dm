@@ -58,6 +58,7 @@
 		. += "decloner_spin"
 
 /obj/item/gun/energy/floragun
+	autowiki_hidden = TRUE //botany tool, not a weapon
 	name = "floral somatoray"
 	desc = "A tool that discharges controlled radiation which induces mutation in plant cells."
 	icon_state = "flora"
@@ -69,6 +70,7 @@
 	shaded_charge = TRUE
 
 /obj/item/gun/energy/meteorgun
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "meteor gun"
 	desc = "For the love of god, make sure you're aiming this the right way!"
 	icon_state = "meteor_gun"
@@ -92,6 +94,7 @@
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/gun/energy/mindflayer
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "\improper Mind Flayer"
 	desc = "A prototype weapon recovered from the ruins of Research-Station Epsilon."
 	icon_state = "xray"
@@ -127,6 +130,7 @@
 	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/wormhole_projector
+	autowiki_hidden = TRUE //not a weapon
 	name = "bluespace wormhole projector"
 	desc = "A projector that emits high density quantum-coupled bluespace beams." //WS Edit - Any anomaly core for phazons
 	ammo_type = list(/obj/item/ammo_casing/energy/wormhole, /obj/item/ammo_casing/energy/wormhole/orange)
@@ -198,6 +202,7 @@
 /* 3d printer 'pseudo guns' for borgs */
 
 /obj/item/gun/energy/printer
+	autowiki_hidden = TRUE //not a handheld weapon i dont want this i think
 	name = "integrated SAW-80 LMG"
 	desc = "A modified Hydra-80 SAW integrated directly into the Assault platform, with a built-in ammo printer pulling directly from the internal cell."
 	icon_state = "hydra_lmg"
@@ -272,6 +277,7 @@
 	desc = "A weapon that can only be used to its full potential by the truly robust."
 
 /obj/item/gun/energy/laser/instakill
+	autowiki_hidden = TRUE //admin item
 	name = "instakill rifle"
 	icon_state = "instagib"
 	item_state = "instagib"
@@ -298,6 +304,7 @@
 	return
 
 /obj/item/gun/energy/gravity_gun
+	autowiki_hidden = TRUE //not a weapon
 	name = "one-point gravitational manipulator"
 	desc = "An experimental, multi-mode device that fires bolts of Zero-Point Energy, causing local distortions in gravity. Requires an anomaly core to function." //WS Edit - Any anomaly core for phazons
 	ammo_type = list(/obj/item/ammo_casing/energy/gravity/repulse, /obj/item/ammo_casing/energy/gravity/attract, /obj/item/ammo_casing/energy/gravity/chaos)
