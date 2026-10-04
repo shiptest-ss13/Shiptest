@@ -193,6 +193,14 @@
 	crate_name = "security hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 
+/datum/supply_pack/spacesuits/sec_hardsuit_bundle
+	name = "Bullshark Marine Hardsuit Crate"
+	desc = "Contains one marine hardsuit for heavy EVA operations."
+	cost = 4000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security/independent/heavy)
+	crate_name = "marine hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
 /datum/supply_pack/spacesuits/esh_hardsuit
 	name = "ESH Hardsuit Crate"
 	desc = "Contains one ESH hardsuit, to provide the best protection against the elements. MediPen not included for injector module."
