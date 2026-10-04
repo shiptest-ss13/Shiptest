@@ -1124,7 +1124,7 @@
 	icon_state = "hardsuit-indieheavy"
 	item_state = "hardsuit-indieheavy"
 	hardsuit_type = "indieheavy"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/heavy
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 30, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 35)
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION
 
