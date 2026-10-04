@@ -1,0 +1,63 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Rhea-class Recovery Vessel",
+	"prefix": "MWSV",
+	"manufacturer": "Makosso-Warra Spaceworks",
+	"faction": "/datum/faction/warra",
+	"namelists": [
+		"MAKOSSO-WARRA",
+		"SPACE",
+		"MYTHOLOGICAL"
+	],
+	"map_short_name": "Rhea-class",
+	"map_path": "_maps/shuttles/warra/warra_rhea.dmm",
+	"token_icon_state": "ship_big_generic",
+	"description": "A modern production of MW Spaceworks designed in FS-502, subsequently entering production and service in the years 506 to 507. The Rhea-class is a purpose-built asset recovery vessel staffed by a crew of aspiring explorers, engineers, doctors, managers, and contracted security. Harbouring a comparatively large crew and driving purpose to the edges of known space, the Rhea can spend upwards of three weeks adrift when at maximum supply capacity, with potential for longer periods by utilizing resources on local celestial bodies. Featuring generous medical and security sections, the Rhea is particularly adept at reclaiming assets and decedents from abandoned 'corporate alliance' sites by force when necessary, relinquishing the infrastructure to the whims of the universe or MW reclaimer vessels. The onboard incinerator allows for easy disposal of unwanted items, biohazards, and final disposition of decedents recovered from swept sites. This hull is perhaps best known by it's rivals as a sign of MW's continued interest in the Frontier, cutting opportunities from opportunists looking to exploit the assets the corporations left behind.",
+	"tags": ["Generalist", "Medical", "Security"],
+	"limit": 1,
+	"tranist_x_offset": -20,
+	"starting_funds": 3000,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/warra/captain/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Security Director": {
+			"outfit": "/datum/outfit/job/warra/hos/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Director": {
+			"outfit": "/datum/outfit/job/warra/cmo/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Internal Affairs Agent": {
+			"outfit": "/datum/outfit/job/warra/lawyer/corporaterepresentative",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/warra/doctor/empty",
+			"slots": 1
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/warra/paramedic/empty",
+			"slots": 1
+		},
+		"Security Guard": {
+			"outfit": "/datum/outfit/job/warra/security/empty",
+			"slots": 2
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/warra/engineer/empty",
+			"slots": 2
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/warra/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

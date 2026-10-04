@@ -22,16 +22,17 @@
 	RegisterSignal(target, COMSIG_ATOM_ATTACK_HAND, PROC_REF(attack_hand))
 	RegisterSignal(target, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
 	RegisterSignal(target, COMSIG_MOUSEDROPPED_ONTO, PROC_REF(mousedrop_receive))
+	RegisterSignal(target, COMSIG_CLICK_CTRL_SHIFT, PROC_REF(ctrl_shift_click))
 	ADD_TRAIT(target, TRAIT_CLIMBABLE, type)
 
 /datum/element/climbable/Detach(datum/target)
-	UnregisterSignal(target, list(COMSIG_ATOM_ATTACK_HAND, COMSIG_ATOM_EXAMINE, COMSIG_MOUSEDROPPED_ONTO, COMSIG_ATOM_BUMPED))
+	UnregisterSignal(target, list(COMSIG_ATOM_ATTACK_HAND, COMSIG_ATOM_EXAMINE, COMSIG_MOUSEDROPPED_ONTO, COMSIG_CLICK_CTRL_SHIFT, COMSIG_ATOM_BUMPED))
 	REMOVE_TRAIT(target, TRAIT_CLIMBABLE, type)
 	return ..()
 
 /datum/element/climbable/proc/on_examine(atom/source, mob/user, list/examine_texts)
 	SIGNAL_HANDLER
-	examine_texts += span_notice("[source] looks climbable.")
+	examine_texts += span_notice("[source] looks climbable, <b>Ctrl-Shift-click</b> to climb.")
 
 /datum/element/climbable/proc/can_climb(atom/source, mob/user)
 	if (!user.CanReach(source))
@@ -126,4 +127,11 @@
 	var/mob/living/living_target = dropped_atom
 	if(living_target.mobility_flags & MOBILITY_MOVE)
 		INVOKE_ASYNC(src, PROC_REF(climb_structure), climbed_thing, living_target, params)
+	return TRUE
+
+/datum/element/climbable/proc/ctrl_shift_click(atom/climbed_thing, mob/living/user, params)
+	SIGNAL_HANDLER
+
+	if(user.mobility_flags & MOBILITY_MOVE)
+		INVOKE_ASYNC(src, PROC_REF(climb_structure), climbed_thing, user, params)
 	return TRUE

@@ -60,6 +60,7 @@
 		/obj/item/clothing/under/color = 9,
 		/obj/item/clothing/under/color/jumpskirt = 9,
 		/obj/item/clothing/under/shortjumpsuit = 6,
+		/obj/item/clothing/under/shorts/pencilskirt = 6,
 		/obj/item/clothing/under/shorts/skirt = 6,
 		/obj/item/clothing/under/shorts/miniskirt = 6,
 		/obj/item/clothing/under/dress/skirt/color = 2,

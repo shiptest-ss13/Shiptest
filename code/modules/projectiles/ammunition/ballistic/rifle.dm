@@ -9,14 +9,14 @@
 	stack_size = 10
 
 /obj/item/ammo_casing/a8_50r/hp
-	name = "8x50mmR hollow point bullet casing"
-	desc = "A 8x50mmR hollow point bullet casing."
+	name = "8x50mmR hollow-point bullet casing"
+	desc = "A 8x50mmR hollow-point bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/a8_50r/hp
 
 /obj/item/ammo_casing/a8_50r/match
 	name = "8x50mmR match bullet casing"
-	desc = "A 8x50mmR hollow point bullet casing."
+	desc = "A 8x50mmR match bullet casing."
 	bullet_skin = "ap"
 	projectile_type = /obj/projectile/bullet/a8_50r/match
 
@@ -53,14 +53,14 @@
 	stack_size = 15
 
 /obj/item/ammo_casing/a556_42/hp
-	name = "5.56x42mm CLIP HP bullet casing"
-	desc = "A 5.56x42mm CLIP hollow point bullet casing."
+	name = "5.56x42mm CLIP hollow-point bullet casing"
+	desc = "A 5.56x42mm CLIP hollow-point bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/a556_42/hp
 
 /obj/item/ammo_casing/a556_42/ap
-	name = "5.56x42mm CLIP bullet casing"
-	desc = "A 5.56x42mm CLIP bullet casing."
+	name = "5.56x42mm CLIP armor-piercing bullet casing"
+	desc = "A 5.56x42mm CLIP armor-piercing bullet casing."
 	bullet_skin = "ap"
 	projectile_type = /obj/projectile/bullet/a556_42/ap
 
@@ -81,14 +81,14 @@
 	stack_size = 15
 
 /obj/item/ammo_casing/a762_40/hp
-	name = "7.62x40mm CLIP HP bullet casing"
-	desc = "A 7.62x40mm CLIP HP bullet casing."
+	name = "7.62x40mm CLIP hollow-point bullet casing"
+	desc = "A 7.62x40mm CLIP hollow-point bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/a762_40/hp
 
 /obj/item/ammo_casing/a762_40/ap
-	name = "7.62x40mm CLIP AP bullet casing"
-	desc = "A 7.62x40mm CLIP AP bullet casing."
+	name = "7.62x40mm CLIP armor-piercing bullet casing"
+	desc = "A 7.62x40mm CLIP armor-piercing bullet casing."
 	bullet_skin = "ap"
 	projectile_type = /obj/projectile/bullet/a762_40/ap
 
@@ -109,14 +109,14 @@
 	stack_size = 10
 
 /obj/item/ammo_casing/a308/ap
-	name = ".308 AP bullet casing"
-	desc = "A .308 AP bullet casing."
+	name = ".308 armor-piercing bullet casing"
+	desc = "A .308 armor-piercing bullet casing."
 	bullet_skin = "ap"
 	projectile_type = /obj/projectile/bullet/a308/ap
 
 /obj/item/ammo_casing/a308/hp
-	name = ".308 HP bullet casing"
-	desc = "A .308 HP bullet casing."
+	name = ".308 hollow-point bullet casing"
+	desc = "A .308 hollow-point bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/a308/hp
 

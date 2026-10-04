@@ -323,6 +323,8 @@
 	resistance_flags = FIRE_PROOF
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 	slowdown = 0.2
+	kepori_override_icon = 'icons/mob/clothing/suits/spacesuits_kepori.dmi'
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/inteq/pilot
 	name = "inteq pilot helmet"
@@ -338,6 +340,8 @@
 	visor_flags = STOPSPRESSUREDAMAGE | ALLOWINTERNALS | FLASH_PROTECTION_WELDER
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
+	kepori_override_icon = 'icons/mob/clothing/head/spacesuits_kepori.dmi'
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION
 
 	up = FALSE
 	actions_types = list(/datum/action/item_action/toggle_helmet)

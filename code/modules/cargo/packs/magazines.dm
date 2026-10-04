@@ -258,6 +258,12 @@
 	contains = list(/obj/item/ammo_box/magazine/skm_762_40/empty)
 	cost = 300
 
+/datum/supply_pack/magazine/heater
+	name = "Heater Magazine Crate"
+	desc = "Contains a 30-round 5.7 magazine for the Heater."
+	contains = list(/obj/item/ammo_box/magazine/heater)
+	cost = 300
+
 /datum/supply_pack/magazine/skm_ammo_extended
 	name = "SKM Extended Magazine Crate"
 	desc = "Contains a 7.62x40mm magazine for the SKM rifles, with a capacity of fourty rounds."

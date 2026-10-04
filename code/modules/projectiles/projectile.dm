@@ -529,7 +529,7 @@
 		return TRUE
 	if(!isliving(target))
 		if(isturf(target))		// non dense turfs
-			return FALSE
+			return can_hit_turfs && direct_target
 		if(target.layer < PROJECTILE_HIT_THRESHHOLD_LAYER)
 			return FALSE
 		else if(!direct_target)		// non dense objects do not get hit unless specifically clicked

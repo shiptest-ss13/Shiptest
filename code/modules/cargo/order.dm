@@ -21,7 +21,9 @@
 	var/method = SHIPPING_METHOD_HANGER
 	var/atom/landing_zone
 
-/datum/supply_order/New(list/supply_packs = list(), orderer, orderer_rank, orderer_ckey, paying_account, datum/cargo_market/market, atom/landing_zone)
+	var/datum/faction/orderer_faction
+
+/datum/supply_order/New(list/supply_packs = list(), orderer, orderer_rank, orderer_ckey, paying_account, datum/cargo_market/market, atom/landing_zone, datum/faction/our_faction)
 	src.supply_packs = supply_packs
 	src.orderer = orderer
 	src.orderer_rank = orderer_rank
@@ -29,6 +31,7 @@
 	src.paying_account = paying_account
 	src.market = market
 	src.landing_zone = landing_zone
+	src.orderer_faction = our_faction
 	if(src.market)
 		id = src.market.ordernum++
 	for(var/datum/supply_pack/pack in src.supply_packs)
@@ -123,6 +126,6 @@
 		ordering_ship_name = current_ship_area.mobile_port.current_ship.name
 
 	for(var/datum/supply_pack/filling_pack in supply_packs)
-		filling_pack.fill(order_crate)
+		filling_pack.fill(order_crate, src.orderer_faction)
 	generateManifest(order_crate, account_holder, ordering_ship_name)
 	return order_crate
