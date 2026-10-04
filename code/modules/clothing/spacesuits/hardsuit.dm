@@ -1120,7 +1120,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/security/independent/heavy
 	name = "Bullshark marine hardsuit"
-	desc = "An outdated heavy hardsuit originating from Lanchester. Due to its obsolete thick plating for an open-market approved hardsuit, it finds itself in many mercenary groups and police teams focusing on EVA operations."
+	desc = "An outdated heavy hardsuit originating from Lanchester. Due to its thick plating for an open-market approved hardsuit, it finds itself in many mercenary groups and police teams focusing on EVA operations."
 	icon_state = "hardsuit-indieheavy"
 	item_state = "hardsuit-indieheavy"
 	hardsuit_type = "indieheavy"
