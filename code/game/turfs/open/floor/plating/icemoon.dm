@@ -290,4 +290,4 @@ ICE_TURF_HELPER(concrete/pavement)
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	light_color = COLOR_ICEPLANET_LIGHT
-	color = "#072A6C"
+	color = "#41a3ff"

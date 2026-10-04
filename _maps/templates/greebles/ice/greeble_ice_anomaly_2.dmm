@@ -11,6 +11,13 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/asteroid/icerock,
 /area/template_noop)
+"h" = (
+/obj/structure/flora/ausbushes/reedbush{
+	pixel_x = -3;
+	pixel_y = -7
+	},
+/turf/open/water/iceplanet,
+/area/template_noop)
 "j" = (
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/plating/asteroid/icerock,
@@ -42,7 +49,10 @@
 /turf/open/floor/plating/asteroid/icerock,
 /area/template_noop)
 "D" = (
-/obj/structure/flora/ausbushes/reedbush,
+/obj/structure/flora/ausbushes/reedbush{
+	pixel_x = 5;
+	pixel_y = 12
+	},
 /turf/open/water/iceplanet,
 /area/template_noop)
 "E" = (
@@ -53,11 +63,32 @@
 /obj/structure/flora/rock/pile,
 /turf/open/floor/plating/ice/iceberg,
 /area/template_noop)
+"H" = (
+/obj/structure/flora/ausbushes{
+	pixel_x = 2;
+	pixel_y = -5
+	},
+/turf/open/floor/plating/asteroid/dirt/iceplanet,
+/area/template_noop)
 "I" = (
 /turf/open/water/iceplanet,
 /area/template_noop)
 "J" = (
 /obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/dirt/iceplanet,
+/area/template_noop)
+"L" = (
+/obj/structure/flora/ausbushes/pointybush{
+	pixel_x = -1;
+	pixel_y = 13
+	},
+/turf/open/floor/plating/asteroid/dirt/iceplanet,
+/area/template_noop)
+"N" = (
+/obj/structure/flora/ausbushes{
+	pixel_x = 4;
+	pixel_y = 3
+	},
 /turf/open/floor/plating/asteroid/dirt/iceplanet,
 /area/template_noop)
 "O" = (
@@ -68,8 +99,18 @@
 /turf/open/water/iceplanet,
 /area/template_noop)
 "W" = (
-/obj/structure/flora/rock,
+/obj/structure/flora/rock{
+	pixel_x = -6;
+	pixel_y = 8
+	},
 /turf/open/water/iceplanet,
+/area/template_noop)
+"X" = (
+/obj/structure/flora/ausbushes{
+	pixel_x = 2;
+	pixel_y = 5
+	},
+/turf/open/floor/plating/asteroid/dirt/iceplanet,
 /area/template_noop)
 "Y" = (
 /turf/template_noop,
@@ -164,11 +205,11 @@ Y
 Y
 B
 z
-D
+h
 I
 I
 I
-z
+H
 B
 Y
 Y
@@ -221,11 +262,11 @@ Y
 Y
 m
 E
-z
+N
 I
 I
 I
-z
+X
 B
 Y
 "}
@@ -239,7 +280,7 @@ B
 J
 I
 I
-b
+L
 B
 Y
 "}

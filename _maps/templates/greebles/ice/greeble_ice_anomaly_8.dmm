@@ -2,8 +2,50 @@
 "a" = (
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/template_noop)
+"e" = (
+/obj/structure/flora/rock/pile/icy{
+	pixel_x = 7;
+	pixel_y = -6
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/template_noop)
+"k" = (
+/obj/structure/flora/rock/pile/icy{
+	pixel_x = 14;
+	pixel_y = 9
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/template_noop)
+"l" = (
+/obj/structure/flora/rock/pile/icy{
+	pixel_x = 14;
+	pixel_y = 16
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/template_noop)
+"m" = (
+/obj/structure/flora/rock/pile/icy{
+	pixel_x = 11;
+	pixel_y = 4
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/template_noop)
+"o" = (
+/obj/structure/flora/rock/pile/icy{
+	pixel_x = 2;
+	pixel_y = 8
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/template_noop)
 "t" = (
 /turf/template_noop,
+/area/template_noop)
+"x" = (
+/obj/structure/flora/rock/pile/icy{
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
 /area/template_noop)
 "C" = (
 /turf/closed/indestructible/rock/snow,
@@ -12,14 +54,21 @@
 /turf/closed/mineral/random/snow,
 /area/template_noop)
 "F" = (
-/obj/structure/flora/rock/pile/icy,
+/obj/structure/flora/rock/pile/icy{
+	pixel_x = -2;
+	pixel_y = 7
+	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/template_noop)
-"I" = (
-/turf/open/space/basic,
 /area/template_noop)
 "V" = (
 /obj/effect/anomaly/grav/planetary,
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/template_noop)
+"W" = (
+/obj/structure/flora/rock/pile/icy{
+	pixel_x = 6;
+	pixel_y = 7
+	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/template_noop)
 
@@ -45,7 +94,7 @@ t
 D
 D
 D
-F
+o
 a
 a
 t
@@ -72,7 +121,7 @@ t
 t
 D
 D
-F
+W
 a
 a
 a
@@ -105,8 +154,8 @@ a
 C
 C
 a
-a
-a
+k
+l
 a
 a
 a
@@ -119,7 +168,7 @@ D
 a
 C
 a
-a
+e
 V
 a
 a
@@ -135,7 +184,7 @@ a
 a
 a
 a
-a
+x
 a
 a
 C
@@ -165,7 +214,7 @@ D
 C
 C
 C
-F
+m
 a
 C
 C
@@ -206,7 +255,7 @@ t
 (13,1,1) = {"
 t
 t
-I
+t
 D
 D
 D

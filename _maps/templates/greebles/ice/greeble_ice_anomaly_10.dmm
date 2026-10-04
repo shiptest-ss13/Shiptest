@@ -3,7 +3,17 @@
 /turf/closed/mineral/random/snow,
 /area/template_noop)
 "e" = (
-/obj/effect/decal/remains/human,
+/obj/effect/decal/remains/human{
+	pixel_x = 6;
+	pixel_y = -7
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/template_noop)
+"g" = (
+/obj/structure/flora/rock/pile/icy{
+	pixel_x = 10;
+	pixel_y = 7
+	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/template_noop)
 "h" = (
@@ -25,11 +35,31 @@
 /obj/effect/anomaly/grav/high/big/planetary,
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/template_noop)
+"y" = (
+/obj/structure/flora/rock/pile/icy{
+	pixel_y = -4
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/template_noop)
 "L" = (
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/template_noop)
+"N" = (
+/obj/structure/flora/rock/icy{
+	pixel_x = 2;
+	pixel_y = 6
+	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/template_noop)
 "P" = (
 /turf/template_noop,
+/area/template_noop)
+"U" = (
+/obj/structure/flora/rock/icy{
+	pixel_x = -2;
+	pixel_y = 10
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
 /area/template_noop)
 "Z" = (
 /obj/structure/flora/rock/icy,
@@ -87,7 +117,7 @@ P
 P
 L
 L
-Z
+N
 L
 L
 a
@@ -133,7 +163,7 @@ a
 a
 L
 L
-r
+y
 L
 a
 L
@@ -151,7 +181,7 @@ a
 L
 L
 a
-Z
+U
 L
 a
 a
@@ -223,7 +253,7 @@ L
 a
 a
 a
-r
+g
 L
 L
 L

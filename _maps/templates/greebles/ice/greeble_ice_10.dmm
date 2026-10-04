@@ -22,7 +22,10 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/template_noop)
 "G" = (
-/obj/structure/flora/rock/icy,
+/obj/structure/flora/rock/icy{
+	pixel_x = 2;
+	pixel_y = 4
+	},
 /obj/item/food/grown/poppy/lily{
 	pixel_y = 4;
 	pixel_x = 5
@@ -30,7 +33,9 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/template_noop)
 "Q" = (
-/obj/structure/flora/rock/icy,
+/obj/structure/flora/rock/icy{
+	pixel_y = -2
+	},
 /obj/item/food/grown/poppy{
 	pixel_x = 4;
 	pixel_y = 3
