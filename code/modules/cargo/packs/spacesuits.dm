@@ -193,7 +193,7 @@
 	crate_name = "security hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 
-/datum/supply_pack/spacesuits/sec_hardsuit_bundle
+/datum/supply_pack/spacesuits/indie_heavy
 	name = "Bullshark Marine Hardsuit Crate"
 	desc = "Contains one marine hardsuit for heavy EVA operations."
 	cost = 4000
