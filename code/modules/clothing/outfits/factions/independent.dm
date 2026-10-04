@@ -386,10 +386,9 @@
 	name = "Independent - Mercenary XO (Naked)"
 	id_assignment = "Lieutenant"
 
-	ears = null
-	uniform = /obj/item/clothing/under/syndicate
-	shoes = /obj/item/clothing/shoes/combat
-	suit = null
+
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	shoes = /obj/item/clothing/shoes/sandal/slippers
 
 // Roboticist
 
