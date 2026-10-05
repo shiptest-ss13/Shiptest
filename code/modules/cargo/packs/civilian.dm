@@ -308,7 +308,7 @@
 	desc = "Contains a single piano for the somberly tempered."
 	cost = 500
 	contains = list(/obj/structure/musician/piano/unanchored)
-	crate_name = "big band musical instruments crate"
+	crate_name = "piano crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
 /datum/supply_pack/civilian/jukebox
