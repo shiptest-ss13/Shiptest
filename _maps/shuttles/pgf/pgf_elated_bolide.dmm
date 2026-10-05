@@ -3148,6 +3148,22 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/toilet)
+"lK" = (
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/green/line{
+	dir = 1
+	},
+/obj/structure/closet/crate/bin{
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/central)
 "lO" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 1
@@ -3993,6 +4009,9 @@
 	},
 /obj/item/clothing/neck/stethoscope,
 /obj/item/clothing/suit/armor/gezena/medic,
+/obj/item/flashlight/pen{
+	pixel_x = 11
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "oW" = (
@@ -10203,12 +10222,6 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/communications)
-"Me" = (
-/obj/structure/closet/crate/bin{
-	pixel_y = 4
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/storage/eva)
 "Mj" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -10627,6 +10640,20 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"NW" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/airalarm/directional/east,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering/engines/port)
 "NX" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 4
@@ -11001,20 +11028,6 @@
 	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/canteen/kitchen)
-"PF" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/airalarm/directional/east,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering/engines/port)
 "PG" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/stand_clear,
@@ -12433,22 +12446,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/cic)
-"UE" = (
-/obj/machinery/light/directional/north,
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/green{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/green/line{
-	dir = 1
-	},
-/obj/structure/closet/crate/bin{
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
 "UH" = (
 /obj/effect/turf_decal/siding/wood/walnut,
 /obj/effect/turf_decal/siding/wood/walnut{
@@ -13292,6 +13289,12 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/canteen)
+"XZ" = (
+/obj/structure/closet/crate/bin{
+	pixel_y = 4
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/storage/eva)
 "Yd" = (
 /obj/structure/closet/secure_closet/armorycage{
 	anchored = 1;
@@ -14223,7 +14226,7 @@ Wg
 On
 lw
 Pu
-PF
+NW
 MF
 Ed
 QG
@@ -14781,7 +14784,7 @@ AW
 (19,1,1) = {"
 AW
 TU
-Me
+XZ
 AQ
 YC
 OY
@@ -15327,7 +15330,7 @@ HX
 nY
 Rr
 qd
-UE
+lK
 uB
 Rf
 wz
