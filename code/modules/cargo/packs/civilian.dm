@@ -1,4 +1,4 @@
-`/datum/supply_pack/civilian
+/datum/supply_pack/civilian
 	category = "Civilian & Decoration"
 	crate_name = "civilian supply crate"
 	crate_type = /obj/structure/closet/crate/wooden
