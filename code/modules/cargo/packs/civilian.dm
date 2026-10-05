@@ -303,6 +303,14 @@
 	contains = list(/obj/item/stack/tile/noslip/thirty)
 	crate_name = "high-traction floor tiles crate"
 
+/datum/supply_pack/civilian/bigband
+	name = "Piano crate"
+	desc = "Contains a single piano for the somberly tempered."
+	cost = 500
+	contains = list(/obj/structure/musician/piano/unanchored)
+	crate_name = "big band musical instruments crate"
+	crate_type = /obj/structure/closet/crate/wooden
+
 /datum/supply_pack/civilian/jukebox
 	name = "Jukebox"
 	desc = "Things a bit dull in the workplace? How about jamming out to some tunes!"
