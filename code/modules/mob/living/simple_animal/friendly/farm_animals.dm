@@ -256,10 +256,11 @@
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
 	response_disarm_simple = "gently push aside"
-	response_harm_continuous = "scratches"
-	response_harm_simple = "scratch"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
 	attack_verb_continuous = "scratches"
 	attack_verb_simple = "scratch"
+	attack_sound = 'sound/weapons/slash.ogg'
 	health = 25
 	maxHealth = 25
 	var/eggsleft = 0
