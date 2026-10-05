@@ -1,4 +1,4 @@
-/datum/supply_pack/civilian
+`/datum/supply_pack/civilian
 	category = "Civilian & Decoration"
 	crate_name = "civilian supply crate"
 	crate_type = /obj/structure/closet/crate/wooden
@@ -303,7 +303,7 @@
 	contains = list(/obj/item/stack/tile/noslip/thirty)
 	crate_name = "high-traction floor tiles crate"
 
-/datum/supply_pack/civilian/bigband
+/datum/supply_pack/civilian/pianocrate
 	name = "Piano crate"
 	desc = "Contains a single piano for the somberly tempered."
 	cost = 500
