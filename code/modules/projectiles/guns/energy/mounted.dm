@@ -1,4 +1,5 @@
 /obj/item/gun/energy/e_gun/advtaser/mounted
+	autowiki_hidden = TRUE //cyborg arm module, not a carryable weapon
 	name = "mounted taser"
 	desc = "An arm mounted dual-mode weapon that fires electrodes and disabler shots."
 	icon = 'icons/obj/items_cyborg.dmi'
@@ -14,6 +15,7 @@
 	..()
 
 /obj/item/gun/energy/laser/mounted
+	autowiki_hidden = TRUE //cyborg arm module, not a carryable weapon
 	name = "mounted laser"
 	desc = "An arm mounted cannon that fires lethal lasers."
 	icon = 'icons/obj/items_cyborg.dmi'
