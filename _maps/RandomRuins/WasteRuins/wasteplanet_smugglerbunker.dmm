@@ -194,6 +194,13 @@
 	pixel_y = 28
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
+/obj/machinery/button{
+	pixel_x = 22;
+	pixel_y = -9;
+	dir = 8;
+	id = "radroom";
+	name = "Isotope Room"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/smugglerbunker/radiation)
 "bg" = (
@@ -427,6 +434,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/armory)
 "cp" = (
@@ -630,11 +638,6 @@
 	pixel_y = 23;
 	name = "emergency shower";
 	desc = "An emergency shower used for quickly flushing hazardous products from the body and extinguishing small fires."
-	},
-/mob/living/simple_animal/hostile/automated/tripod{
-	name = "Wet Sav'cla 'Helper'";
-	desc = "Originally designed and manufactured by the Al'Sa Guild as a general 'Helper' drone, the Sav'Cla is unique thanks to its top of the line optical sensor suite. What made it a great helper around the home has made it a great war machine when rewired. Sye-Port Industrial has manufactured these conversions en masse for decades, making them a common sight on the Frontier. This one is soaked in water.";
-	wander = 0
 	},
 /turf/open/floor/noslip,
 /area/ruin/wasteplanet/smugglerbunker/checkpoint)
@@ -1517,6 +1520,24 @@
 /obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/armory)
+"iE" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/curtain/thin/plastic{
+	dir = 4;
+	pixel_x = 9;
+	pixel_y = 0
+	},
+/obj/machinery/shower{
+	dir = 4;
+	pixel_x = -2;
+	pixel_y = 0
+	},
+/obj/structure/sign/warning/gasmask{
+	pixel_x = 0;
+	pixel_y = 25
+	},
+/turf/open/floor/noslip,
+/area/ruin/wasteplanet/smugglerbunker)
 "iF" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/wasteplanet/smugglerbunker/dorms)
@@ -1551,10 +1572,25 @@
 	icon_state = "conc_slab_1"
 	},
 /area/ruin/wasteplanet/smugglerbunker/exterior)
+"iO" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 5
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030
+	},
+/obj/machinery/button/door{
+	pixel_x = 9;
+	pixel_y = 21;
+	id = "cargobay";
+	name = "Cargo Bay"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/smugglerbunker/cargo)
 "iQ" = (
 /obj/effect/turf_decal/rechargefloor,
 /mob/living/simple_animal/hostile/automated/agrav/cybersun{
-	wander = 0
+	search_alarms = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker)
@@ -1594,7 +1630,7 @@
 /obj/effect/turf_decal/rechargefloor,
 /mob/living/simple_animal/hostile/automated/quadrotor/cybersun/ramzi{
 	faction = list("hostile");
-	wander = 0
+	search_alarms = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker)
@@ -1643,6 +1679,14 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/smugglerbunker/dorms/lounge)
+"jt" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "controlroomwindows"
+	},
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/smugglerbunker/controlroom)
 "jA" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 10
@@ -1772,6 +1816,16 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/smugglerbunker/cargo)
+"jP" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "killroom"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/wasteplanet/smugglerbunker/armory)
 "kb" = (
 /obj/machinery/holosign/evacuation{
 	pixel_x = -32;
@@ -2009,13 +2063,6 @@
 	id = "radlockdown";
 	name = "Radiation Shutters"
 	},
-/obj/machinery/button{
-	pixel_x = 10;
-	pixel_y = 13;
-	dir = 8;
-	id = "radroom";
-	name = "Isotope Room"
-	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/smugglerbunker/engineering)
 "lF" = (
@@ -2083,10 +2130,10 @@
 "lQ" = (
 /obj/effect/turf_decal/rechargefloor,
 /mob/living/simple_animal/hostile/automated/hopper/coalition{
-	wander = 0
+	search_alarms = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker)
 "lV" = (
 /obj/effect/turf_decal/corner/transparent/grey/diagonal{
 	dir = 4
@@ -2252,7 +2299,7 @@
 "mX" = (
 /obj/effect/turf_decal/rechargefloor,
 /mob/living/simple_animal/hostile/automated/agrav/cybersun{
-	wander = 0
+	search_alarms = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/killroom)
@@ -2884,7 +2931,7 @@
 /area/ruin/wasteplanet/smugglerbunker)
 "sr" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	name = "bunkermedbayshutter"
+	id = "bunkermedbayshutter"
 	},
 /obj/machinery/door/airlock/science/glass,
 /obj/structure/cable{
@@ -3152,60 +3199,39 @@
 "tt" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	pixel_x = -10;
-	pixel_y = -1;
+	pixel_x = 1;
+	pixel_y = 7;
 	id = "bunkersouthgate1";
 	name = "Bunker South Internal Gate";
 	dir = 1
 	},
 /obj/machinery/button/door{
-	pixel_x = -3;
-	pixel_y = -1;
+	pixel_x = 9;
+	pixel_y = 7;
 	id = "bunkersouthgate2";
 	name = "Bunker South External Gate";
 	dir = 1
 	},
-/obj/machinery/button/door{
-	dir = 1;
-	pixel_x = -10;
-	pixel_y = 7;
-	id = "bunkernorthgate2";
-	name = "Bunker North Internal Gate"
-	},
-/obj/machinery/button/door{
-	dir = 1;
-	pixel_x = -3;
-	pixel_y = 7;
-	id = "bunkernorthgate1";
-	name = "Bunker North External Gate"
-	},
 /obj/machinery/button/shieldwallgen{
-	pixel_x = 11;
+	pixel_x = 9;
 	pixel_y = -1;
 	id = "bunkersouthholo1";
 	name = "Bunker South External Holo";
 	dir = 1
 	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = -6;
+	pixel_y = 3;
+	id = "controlroomwindows";
+	name = "Control Room Windows"
+	},
 /obj/machinery/button/shieldwallgen{
-	pixel_x = 4;
+	pixel_x = 1;
 	pixel_y = -1;
 	id = "bunkersouthholo2";
 	name = "Bunker South Internal Holo";
 	dir = 1
-	},
-/obj/machinery/button/shieldwallgen{
-	dir = 1;
-	id = "bunkernorthholo2";
-	pixel_x = 4;
-	pixel_y = 7;
-	name = "Bunker North Internal Holo"
-	},
-/obj/machinery/button/shieldwallgen{
-	dir = 1;
-	id = "bunkernorthholo1";
-	pixel_x = 11;
-	pixel_y = 7;
-	name = "Bunker North External Holo"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/controlroom)
@@ -3873,6 +3899,11 @@
 	desc = "An emergency shower used for quickly flushing hazardous products from the body and extinguishing small fires."
 	},
 /obj/structure/curtain/thin/plastic,
+/mob/living/simple_animal/hostile/automated/tripod{
+	name = "Wet Sav'cla 'Helper'";
+	desc = "Originally designed and manufactured by the Al'Sa Guild as a general 'Helper' drone, the Sav'Cla is unique thanks to its top of the line optical sensor suite. What made it a great helper around the home has made it a great war machine when rewired. Sye-Port Industrial has manufactured these conversions en masse for decades, making them a common sight on the Frontier. This one is soaked in water.";
+	wander = 0
+	},
 /turf/open/floor/noslip,
 /area/ruin/wasteplanet/smugglerbunker/checkpoint)
 "yV" = (
@@ -4132,6 +4163,14 @@
 /obj/machinery/power/apc/auto_name/directional/north{
 	start_charge = 0
 	},
+/obj/machinery/button/door{
+	pixel_x = 10;
+	pixel_y = 22;
+	name = "Door Bolt";
+	id = "secroom";
+	specialfunctions = 4;
+	normaldoorcontrol = 1
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/smugglerbunker/controlroom)
 "Bl" = (
@@ -4257,6 +4296,14 @@
 	},
 /obj/structure/catwalk,
 /turf/open/floor/plasteel/tech/grid,
+/area/ruin/wasteplanet/smugglerbunker)
+"Cm" = (
+/obj/effect/turf_decal/rechargefloor,
+/mob/living/simple_animal/hostile/automated/quadrotor/cybersun/ramzi{
+	faction = list("hostile");
+	search_alarms = 1
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/killroom)
 "Cu" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -4265,9 +4312,17 @@
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030
 	},
-/obj/structure/sign/warning/gasmask{
-	pixel_x = 0;
-	pixel_y = 25
+/obj/machinery/button/door{
+	pixel_x = -1;
+	pixel_y = 23;
+	id = "bunkernorthgate2";
+	name = "Bunker North Internal Gate"
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "bunkernorthholo2";
+	pixel_x = -9;
+	pixel_y = 23;
+	name = "Bunker North Internal Holo"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker)
@@ -4440,7 +4495,9 @@
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/smugglerbunker/exterior)
 "DO" = (
-/mob/living/simple_animal/hostile/automated/tripod,
+/mob/living/simple_animal/hostile/automated/tripod{
+	faction = list("hostile")
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/smugglerbunker/cargo)
 "DT" = (
@@ -4914,9 +4971,30 @@
 	dir = 8;
 	welded = 1
 	},
-/obj/item/blackmarket_uplink{
-	pixel_x = 5;
-	pixel_y = 7
+/obj/item/folder{
+	pixel_x = 0;
+	pixel_y = 5
+	},
+/obj/item/folder/blue{
+	pixel_x = 0;
+	pixel_y = 2
+	},
+/obj/item/folder/documents/syndicate/blue{
+	pixel_x = 0;
+	pixel_y = -1;
+	name = "folder - MANIFEST LOG"
+	},
+/obj/item/pen{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/pen/red{
+	pixel_x = -4;
+	pixel_y = 6
+	},
+/obj/item/pen/blue{
+	pixel_x = -2;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/controlroom)
@@ -4945,7 +5023,7 @@
 /area/ruin/wasteplanet/smugglerbunker/exterior)
 "HT" = (
 /obj/machinery/door/airlock/grunge{
-	name = "Control Room";
+	name = "Checkpoint and Control Room";
 	id_tag = "secroom"
 	},
 /obj/structure/cable{
@@ -5176,7 +5254,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	name = "bunkermedbayshutter"
+	id = "bunkermedbayshutter"
 	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/smugglerbunker/medbay)
@@ -5209,6 +5287,23 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/dorms)
+"JT" = (
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 10
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 1
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = 9;
+	pixel_y = -21;
+	id = "cargobay";
+	name = "Cargo Bay"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/wasteplanet/smugglerbunker/lab)
 "JV" = (
 /obj/structure/platform/industrial{
 	dir = 8
@@ -5236,6 +5331,13 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered,
+/obj/machinery/button/door{
+	pixel_x = 22;
+	pixel_y = 10;
+	dir = 8;
+	id = "killroom";
+	name = "Secure Storage"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "Kk" = (
@@ -5381,50 +5483,6 @@
 /area/ruin/wasteplanet/smugglerbunker/checkpoint)
 "Lh" = (
 /obj/structure/table/reinforced,
-/obj/machinery/button/door{
-	pixel_x = 8;
-	pixel_y = 7;
-	dir = 1;
-	id = "wasteviewingports";
-	name = "Viewing Ports"
-	},
-/obj/machinery/button/door{
-	dir = 1;
-	pixel_x = 15;
-	pixel_y = 7;
-	id = "internalwindows";
-	name = "Control Room Internal Windows"
-	},
-/obj/machinery/button/door{
-	dir = 1;
-	pixel_x = 8;
-	pixel_y = -1;
-	id = "cargobay";
-	name = "Cargo Bay"
-	},
-/obj/machinery/button/door{
-	dir = 1;
-	pixel_x = 15;
-	pixel_y = -1;
-	id = "mechbay";
-	name = "Mech Bay"
-	},
-/obj/machinery/button/door/hazard{
-	dir = 1;
-	name = "Burglar Alarms";
-	id = "wastearmory";
-	pixel_x = 1;
-	pixel_y = 7
-	},
-/obj/machinery/button/door{
-	pixel_x = 1;
-	pixel_y = -1;
-	name = "Door Bolt";
-	id = "secroom";
-	dir = 1;
-	specialfunctions = 4;
-	normaldoorcontrol = 1
-	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/controlroom)
 "Ll" = (
@@ -5634,6 +5692,10 @@
 	pixel_x = 6;
 	pixel_y = 0
 	},
+/obj/item/blackmarket_uplink{
+	pixel_x = 5;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/smugglerbunker/dorms)
 "MW" = (
@@ -5698,10 +5760,10 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/borderfloorblack/corner,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
 	dir = 8
 	},
-/obj/effect/turf_decal/borderfloorblack/corner,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker)
 "Nu" = (
@@ -5933,6 +5995,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/smugglerbunker/engineering)
+"Py" = (
+/mob/living/basic/hivebot/core,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/smugglerbunker/exterior)
 "Pz" = (
 /obj/machinery/door/poddoor{
 	id = "bunkersouthgate2"
@@ -6169,16 +6235,22 @@
 	color = "#FFFFFF";
 	dir = 2
 	},
-/obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 4
+	},
+/obj/machinery/button/door{
+	pixel_x = 22;
+	pixel_y = -9;
+	dir = 8;
+	id = "killroom";
+	name = "Secure Storage"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/armory)
 "Rr" = (
 /obj/effect/turf_decal/rechargefloor,
 /mob/living/simple_animal/hostile/automated/bipedal{
-	wander = 0
+	search_alarms = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/killroom)
@@ -6312,6 +6384,13 @@
 /obj/structure/sign/warning/smoking/circle{
 	pixel_x = -22;
 	pixel_y = 8
+	},
+/obj/machinery/button/door{
+	pixel_x = -22;
+	pixel_y = -9;
+	dir = 4;
+	id = "wasteviewingports";
+	name = "Viewing Ports"
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/smugglerbunker/dorms/lounge)
@@ -6778,14 +6857,13 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "Wp" = (
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 5
+/obj/effect/turf_decal/rechargefloor,
+/mob/living/simple_animal/hostile/automated/rover/coalition/ramzi{
+	faction = list("hostile");
+	search_alarms = 1
 	},
-/obj/effect/turf_decal/borderfloorblack{
-	layer = 2.030
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/smugglerbunker/cargo)
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "WA" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -6848,7 +6926,7 @@
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = -7;
+	pixel_x = 1;
 	pixel_y = -22;
 	id = "bunkernorthgate2";
 	name = "Bunker North Internal Gate"
@@ -6856,7 +6934,7 @@
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
 	id = "bunkernorthholo2";
-	pixel_x = 1;
+	pixel_x = 9;
 	pixel_y = -22;
 	name = "Bunker North Internal Holo"
 	},
@@ -6994,6 +7072,18 @@
 "XV" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/tank/internals/oxygen/yellow,
+/obj/machinery/button/shieldwallgen{
+	id = "bunkernorthholo1";
+	pixel_x = 10;
+	pixel_y = 22;
+	name = "Bunker North External Holo"
+	},
+/obj/machinery/button/door{
+	pixel_x = 2;
+	pixel_y = 22;
+	id = "bunkernorthgate1";
+	name = "Bunker North External Gate"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/wasteplanet/smugglerbunker)
 "XW" = (
@@ -7422,7 +7512,7 @@ dP
 bi
 bi
 dP
-bi
+ds
 bi
 bi
 bi
@@ -7480,7 +7570,7 @@ dP
 dP
 dP
 dP
-bi
+ds
 bi
 bi
 bi
@@ -7852,7 +7942,7 @@ sV
 XV
 WS
 sV
-iY
+iE
 iY
 IB
 IB
@@ -8069,7 +8159,7 @@ bi
 ZX
 sV
 sV
-rh
+Cm
 mX
 sV
 qz
@@ -8344,9 +8434,9 @@ aW
 dP
 ds
 ds
-wK
-wK
-wK
+sV
+sV
+sV
 kR
 Vw
 iF
@@ -8399,8 +8489,8 @@ bw
 dP
 dP
 dP
-wK
-rh
+sV
+je
 Cd
 Fk
 Ll
@@ -8454,7 +8544,7 @@ dE
 fO
 dP
 dP
-wK
+sV
 lQ
 Cd
 Fk
@@ -8509,8 +8599,8 @@ dP
 bT
 ds
 ds
-wK
-mX
+sV
+iQ
 Cd
 Yo
 sO
@@ -8649,7 +8739,7 @@ uJ
 PY
 Bl
 Lh
-bO
+jt
 cZ
 bO
 kT
@@ -8861,9 +8951,9 @@ VO
 Qt
 KQ
 BK
-jA
+JT
 LT
-Fo
+iO
 so
 tL
 fL
@@ -8966,7 +9056,7 @@ uh
 EF
 EY
 BU
-rB
+jP
 oU
 Jh
 Qm
@@ -9083,7 +9173,7 @@ IJ
 Ym
 Gj
 LT
-Wp
+Fo
 WA
 Qr
 SI
@@ -9289,7 +9379,7 @@ eE
 aY
 bw
 wK
-hO
+Wp
 wT
 rt
 sS
@@ -9414,7 +9504,7 @@ dP
 zM
 fp
 fq
-bI
+Py
 dP
 dP
 bM
