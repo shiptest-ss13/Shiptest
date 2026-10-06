@@ -120,7 +120,10 @@
 		if (toConstruct)
 			if(material.get_amount() < 1)
 				to_chat(user, span_warning("You need one [material.name] sheet to do this!"))
-				return
+				return FALSE
+			if(locate(toConstruct in loc))
+				to_chat(user, span_warning("A [toConstruct] already exists here!"))
+				return FALSE
 			to_chat(user, span_notice("You start adding [material] to [src]..."))
 			if(do_after(user, 20, target = src) && material.use(1))
 				make_new_table(toConstruct)
