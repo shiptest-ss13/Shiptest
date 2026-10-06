@@ -872,6 +872,7 @@
 	canSmoothWith = null
 	anchored = TRUE
 	can_flip = FALSE
+	density = FALSE
 
 /obj/structure/table/endtable/examine(mob/user)
 	. = ..()
@@ -880,7 +881,13 @@
 /obj/structure/table/endtable/AltClick(mob/user)
 	. = ..()
 	if(isliving(user))
-		var/x = clamp(input(user, "Choose your X coordinate", "Pick a location", 0) as num, -8, 8)
-		var/y = clamp(input(user, "Choose your y coordinate", "Pick a location", 0) as num, -8, 8)
+		var/x = clamp(input(user, "Choose your X coordinate: Valid Range (-8, 8)", "Pick a location", 0) as num, -8, 8)
+		var/y = clamp(input(user, "Choose your y coordinate: Valid Range (0, 16)", "Pick a location", 0) as num, 0, 16)
 		pixel_x = x
 		pixel_y = y
+
+/obj/structure/table/endtable/AfterPutItemOnTable(obj/item/I, mob/living/user)
+	. = ..()
+	//recenter objects since we can move this around
+	I.pixel_x += pixel_x
+	I.pixel_y += pixel_y
