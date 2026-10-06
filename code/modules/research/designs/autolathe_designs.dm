@@ -893,6 +893,14 @@
 	build_path = /obj/item/weaponcrafting/receiver
 	category = list("initial", "Security")
 
+/datum/design/ammo_box
+	name = "Ammo Box (Empty)"
+	id = "ammo-box"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 500)
+	build_path = /obj/item/storage/box/ammo/empty
+	category = list("initial", "Security", "Ammo")
+
 /datum/design/c38_surplus
 	name = "Ammo Box (.38 surplus)"
 	id = "c38_surplus"

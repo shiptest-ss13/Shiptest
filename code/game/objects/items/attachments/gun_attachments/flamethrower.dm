@@ -95,6 +95,7 @@
 	volume = 40
 
 /obj/item/attachment/gun/flamethrower/scorcher
+	autowiki_hidden = TRUE //integral to scorcher
 	size_mod = 0
 	attach_features_flags = ATTACH_NO_SPRITE
 
