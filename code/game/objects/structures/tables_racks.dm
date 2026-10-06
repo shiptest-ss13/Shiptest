@@ -861,3 +861,26 @@
 	smoothing_groups = null
 	canSmoothWith = null
 	can_flip = FALSE
+
+/obj/structure/table/endtable
+	name = "wooden end table"
+	desc = "A small wooden table perfect for next to beds and the side of sofas."
+	icon = 'icons/obj/structures/end_table.dmi'
+	icon_state = "end_table"
+	smoothing_flags = null
+	smoothing_groups = null
+	canSmoothWith = null
+	anchored = TRUE
+	can_flip = FALSE
+
+/obj/structure/table/endtable/examine(mob/user)
+	. = ..()
+	. += span_notice("You could shift this table by <b>Alt+Clicking</b> it!")
+
+/obj/structure/table/endtable/AltClick(mob/user)
+	. = ..()
+	if(isliving(user))
+		var/x = clamp(input(user, "Choose your X coordinate", "Pick a location", 0) as num, -8, 8)
+		var/y = clamp(input(user, "Choose your y coordinate", "Pick a location", 0) as num, -8, 8)
+		pixel_x = x
+		pixel_y = y
