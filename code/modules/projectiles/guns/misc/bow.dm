@@ -16,6 +16,7 @@
 	bolt_type = BOLT_TYPE_NO_BOLT
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 	has_safety = FALSE
+	safety = FALSE
 	gun_firemodes = list(FIREMODE_SEMIAUTO) // like I fucking guess bro
 	default_firemode = FIREMODE_SEMIAUTO
 
@@ -23,10 +24,34 @@
 	attack_verb = list("whipped", "cracked")
 
 	weapon_weight = WEAPON_HEAVY
-	wield_slowdown = 0.1
 	w_class = WEIGHT_CLASS_BULKY
 
-	var/drawn = FALSE
+	wield_delay = 0.4 SECONDS
+	wield_slowdown = 0.1
+
+	// BOW VARS //
+	var/drawn = FALSE // is the bow drawn
+	var/drawn_fully = FALSE // is the bow drawn all the way
+	var/draw_time = 1 SECONDS // time to draw the bow all the way
+	var/draw_slowdown = 0.5 // slowdown during draw
+	var/draw_hold_time = 10 SECONDS // how long can we hold a drawn bow before letting go
+
+/obj/item/gun/ballistic/bow/Initialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ITEM_DROPPED, PROC_REF(on_drop))
+
+/obj/item/gun/ballistic/bow/proc/update_draw_slowdown(mob/living/user)
+	if(drawn)
+		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bow, multiplicative_slowdown = draw_slowdown)
+	else
+		user.remove_movespeed_modifier(/datum/movespeed_modifier/bow)
+
+/obj/item/gun/ballistic/bow/proc/on_drop(datum/source, mob/living/user)
+	if(drawn)
+		discharge()
+	drawn = FALSE
+	drawn_fully = FALSE
+	update_draw_slowdown(user)
 
 /obj/item/gun/ballistic/bow/update_icon_state()
 	. = ..()
@@ -39,13 +64,24 @@
 		chambered = magazine.get_round(TRUE)
 		chambered.forceMove(src)
 
+/obj/item/gun/ballistic/bow/proc/on_draw(mob/user)
+	if(do_after(user, draw_time, user,
+		IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE, TRUE))
+		drawn_fully = TRUE
+
 /obj/item/gun/ballistic/bow/unique_action(mob/living/user)
 	if(chambered)
 		to_chat(user, span_notice("You [drawn ? "release" : "draw"] [src]'s string."))
 		if(!drawn)
 			playsound(src, 'sound/weapons/bowdraw.ogg', 75, 0)
+			INVOKE_ASYNC(src, PROC_REF(on_draw), user)
+		else
+			drawn_fully = FALSE
 		drawn = !drawn
-	update_appearance()
+		update_draw_slowdown(user)
+		update_appearance()
+	else
+		to_chat(user, span_warning("Load the bow first!"))
 
 /obj/item/gun/ballistic/bow/afterattack(atom/target, mob/living/user, flag, params, passthrough = FALSE)
 	if(!chambered)
@@ -56,8 +92,13 @@
 	if(!drawn)
 		to_chat(user, span_warning("The bow needs to be drawn first!"))
 		return
+	if(!drawn_fully)
+		to_chat(user, span_warning("The bow needs to be fully drawn first!"))
+		return
 	drawn = FALSE
-	. = ..() //fires, removing the arrow
+	update_draw_slowdown(user)
+	. = ..()
+	chambered = null //hatred
 	update_appearance()
 
 /obj/item/gun/ballistic/bow/shoot_with_empty_chamber(mob/living/user)
