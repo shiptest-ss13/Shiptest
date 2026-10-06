@@ -67,7 +67,7 @@
 	name = "Camisole (sleeved)"
 	icon_state = "camisleeve"
 
-/datum/sprite_accessory/undershirt/camisleeve
+/datum/sprite_accessory/undershirt/camisolechoker
 	name = "Camisole (choker)"
 	icon_state = "camisole_choker"
 
