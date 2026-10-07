@@ -75,7 +75,7 @@
 
 	muzzleflash_iconstate = ""
 
-/obj/item/gun/energy/cybersun/troubleshooter/empty_cell
+/obj/item/gun/energy/cybersun/trouble/empty_cell
 	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/cybersun/troubleshooter/bridge_safe/Initialize(mapload, spawn_empty)
@@ -108,7 +108,7 @@
 
 	muzzleflash_iconstate = ""
 
-/obj/item/gun/energy/cybersun/troubleshooter/lensman/empty_cell
+/obj/item/gun/energy/cybersun/trouble/empty_cell
 	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/cybersun/galvanizer
@@ -526,3 +526,4 @@
 	zoomable = TRUE
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 5
+
