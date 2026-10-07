@@ -134,7 +134,8 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
+	dir = 8;
+	welded = 1
 	},
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/dark,
@@ -194,12 +195,12 @@
 	pixel_y = 28
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
-/obj/machinery/button{
-	pixel_x = 22;
-	pixel_y = -9;
+/obj/machinery/button/door{
 	dir = 8;
+	pixel_x = 23;
+	pixel_y = -5;
 	id = "radroom";
-	name = "Isotope Room"
+	name = "Isotope Chamber"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/smugglerbunker/radiation)
@@ -332,14 +333,6 @@
 	icon_state = "conc_slab_1"
 	},
 /area/ruin/wasteplanet/smugglerbunker/exterior)
-"bO" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "wasteviewingports"
-	},
-/turf/open/floor/plating,
-/area/ruin/wasteplanet/smugglerbunker/controlroom)
 "bP" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1298,6 +1291,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "gI" = (
@@ -1598,6 +1594,15 @@
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/internals,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/clothing/mask/gas/ramzi,
+/obj/item/clothing/mask/gas/ramzi,
+/obj/item/clothing/mask/gas/ramzi,
+/obj/item/clothing/suit/space/pilot/orange,
+/obj/item/clothing/head/helmet/space/pilot,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/smugglerbunker/cargo)
 "iY" = (
@@ -1869,6 +1874,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "ku" = (
@@ -1997,8 +2005,8 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	dir = 8;
-	id = "internalwindows"
+	id = "controlroomwindows";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/smugglerbunker/controlroom)
@@ -2056,12 +2064,12 @@
 	pixel_x = 0;
 	pixel_y = 7
 	},
-/obj/machinery/button{
-	pixel_x = 10;
-	pixel_y = 20;
+/obj/machinery/button/door{
 	dir = 8;
+	pixel_x = 10;
+	pixel_y = 17;
 	id = "radlockdown";
-	name = "Radiation Shutters"
+	name = "Radiation Lockdown"
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/smugglerbunker/engineering)
@@ -3362,8 +3370,8 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	dir = 8;
-	id = "internalwindows"
+	id = "controlroomwindows";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/smugglerbunker/controlroom)
@@ -4035,6 +4043,23 @@
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/medical,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/item/storage/firstaid/ancient{
+	pixel_x = -4;
+	pixel_y = 1
+	},
+/obj/item/storage/firstaid/brute{
+	pixel_x = 5;
+	pixel_y = 1
+	},
+/obj/item/storage/firstaid/fire{
+	pixel_x = 5;
+	pixel_y = -4
+	},
+/obj/item/storage/firstaid/o2{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/storage/firstaid/toxin,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/smugglerbunker/cargo)
 "Ai" = (
@@ -4212,13 +4237,13 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/wasteplanet/smugglerbunker/radiation)
 "BI" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
 	id = "radroom"
-	},
-/obj/effect/turf_decal/industrial/radiation/fulltile,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/radiation)
@@ -4510,7 +4535,6 @@
 	pixel_y = 7
 	},
 /obj/item/storage/belt/sabre/solgov,
-/obj/item/melee/sword/sabre/solgov,
 /obj/item/folder/documents/solgov,
 /obj/item/clothing/mask/gas/suns,
 /turf/open/floor/plasteel/tech,
@@ -4628,7 +4652,7 @@
 /turf/open/floor/plating/wasteplanet/rust,
 /area/ruin/wasteplanet/smugglerbunker/exterior)
 "ED" = (
-/obj/machinery/ntnet_relay,
+/obj/machinery/telecomms/relay/preset/syndicate,
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/smugglerbunker/exterior)
 "EF" = (
@@ -4958,8 +4982,7 @@
 	pixel_y = 0
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8;
-	welded = 1
+	dir = 8
 	},
 /obj/item/folder{
 	pixel_x = 0;
@@ -5133,10 +5156,6 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 8
 	},
-/obj/effect/turf_decal/borderfloorblack{
-	layer = 2.030;
-	dir = 5
-	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning{
 	dir = 1
 	},
@@ -5149,6 +5168,7 @@
 	pixel_x = -32;
 	pixel_y = 6
 	},
+/obj/effect/turf_decal/borderfloorblack/corner,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "Ja" = (
@@ -5173,7 +5193,7 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/smugglerbunker/engineering)
 "Jh" = (
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "Jp" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -5451,6 +5471,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 6
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "KU" = (
@@ -5528,11 +5552,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/medbay)
 "Lv" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
 	id = "radroom"
 	},
-/obj/effect/turf_decal/industrial/radiation/fulltile,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/radiation)
 "LG" = (
@@ -6150,7 +6174,7 @@
 /area/ruin/wasteplanet/smugglerbunker/dorms)
 "Qm" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "Qo" = (
 /obj/structure/cable{
@@ -6179,6 +6203,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning{
 	dir = 8
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
@@ -6772,10 +6799,7 @@
 	pixel_x = 9;
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/borderfloorblack{
-	layer = 2.030;
-	dir = 10
-	},
+/obj/effect/turf_decal/borderfloorblack/corner,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
 "VR" = (
@@ -6843,6 +6867,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning{
 	dir = 1
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
@@ -8674,9 +8701,9 @@ GT
 kb
 YW
 pe
-bO
+jt
 cZ
-bO
+jt
 kT
 ec
 FD
@@ -8731,7 +8758,7 @@ Bl
 Lh
 jt
 cZ
-bO
+jt
 kT
 dK
 ro
@@ -8784,9 +8811,9 @@ NN
 Hx
 Fz
 tt
-bO
+jt
 aq
-bO
+jt
 kT
 gi
 cJ
