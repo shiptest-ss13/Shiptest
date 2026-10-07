@@ -260,8 +260,12 @@
 			// eyes
 			//resolve the file against the state we actually end up drawing, or a species whose sheet
 			//only covers half of these ends up asking human_face.dmi for a state it doesn't have
-			var/eye_state = eyes ? eyes.eye_icon_state : "eyes_missing"
-			var/sclera_state = eyes?.sclera_icon_state
+			var/eye_state = "eyes_missing"
+			var/sclera_state
+			if(eyes)
+				eye_state = eyes.eye_icon_state
+				sclera_state = eyes.sclera_icon_state
+
 			var/image/eyes_overlay = image(resolve_eye_icon(species_eye_path, eye_state), eye_state, -BODY_LAYER, SOUTH)
 			var/mutable_appearance/sclera_overlay = mutable_appearance(resolve_eye_icon(species_eye_path, sclera_state), "", -BODY_LAYER, SOUTH)
 
