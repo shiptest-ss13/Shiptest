@@ -1740,9 +1740,9 @@
 	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
-\\ Custom Humaniform
+// Custom Humaniform
 
-/obj/item/bodypart/head/ipc/humaniformc
+/obj/item/bodypart/head/ipc/chumaniform
 	name = "\improper Custom 'Humaniform' head"
 	examine_id = "\improper Custom 'Humaniform'"
 	icon_state = "chumanipc_head"
@@ -1751,4 +1751,3 @@
 	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	
