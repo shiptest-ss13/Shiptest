@@ -599,6 +599,9 @@
 	to_chat(L, span_boldwarning("Tempo has exited your system! You're in sync with the world again!"))
 
 /datum/reagent/drug/chrono/proc/rewind(mob/living/rewindee)
+	//already fired & not overdosing
+	if(!return_turf)
+		return
 	var/turf/where_are_we = get_turf(rewindee)
 	if(!where_are_we)
 		//we aren't
