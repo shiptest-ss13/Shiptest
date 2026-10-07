@@ -209,7 +209,6 @@
 		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 1,
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 1,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 5,
-
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
