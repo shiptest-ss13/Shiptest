@@ -542,6 +542,7 @@ NO_MAG_GUN_HELPER(automatic/smg/heater)
 	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/extended
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/drum
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot
@@ -589,6 +590,7 @@ NO_MAG_GUN_HELPER(automatic/smg/heater)
 	return
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot/hedp
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	name = "\improper Hammer-DP"
 	desc = "A disposable rocket-propelled grenade launcher loaded with an HEDP shell for Direct Penetration of your target."
 

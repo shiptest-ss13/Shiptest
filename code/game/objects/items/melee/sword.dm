@@ -127,7 +127,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 	block_chance = 10
 	max_integrity = 200
-	attack_cooldown = 10
+	attack_cooldown = HEAVY_WEAPON_CD
 
 /obj/item/melee/sword/podao/ComponentInitialize()
 	. = ..()
