@@ -279,6 +279,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 28)
 /obj/machinery/airalarm/Initialize(mapload)
 	. = ..()
 	set_frequency(frequency)
+	ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
 
 /obj/machinery/airalarm/examine(mob/user)
 	. = ..()
@@ -921,6 +922,17 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 28)
 				return
 
 	return ..()
+
+/obj/machinery/airalarm/bullet_act(obj/projectile/hitting_projectile)
+	if(prob(50))
+		visible_message(span_warning("[src] lets out a plume of smoke as it's shot!"), vision_distance = 3)
+		playsound(src, 'sound/effects/smoke.ogg', 50, TRUE, -3)
+		var/datum/effect_system/smoke_spread/bad/smoke = new
+		smoke.set_up(4, src)
+		smoke.start()
+		del(smoke)
+	. = ..()
+
 
 /obj/machinery/airalarm/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	if((buildstage == 0) && (the_rcd.upgrade & RCD_UPGRADE_SIMPLE_CIRCUITS))

@@ -23,11 +23,6 @@
 
 	burn_mod = 0.66
 	repair_amount = 0
-	//mining projectiles do extra damage
-	extra_dam_proj = list(
-		/obj/projectile/kinetic,
-		/obj/projectile/destabilizer,
-		/obj/projectile/plasma)
 
 /turf/closed/wall/concrete/Initialize(mapload, ...)
 	. = ..()
@@ -123,13 +118,13 @@
 /turf/closed/wall/concrete/try_decon(obj/item/W, mob/user, turf/T)
 	return null
 
-/turf/closed/wall/concrete/get_item_damage(obj/item/I, mob/user, t_min = min_dam)
-	t_min = min_dam / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
+/turf/closed/wall/concrete/get_item_damage(obj/item/I, mob/user, t_min = minimum_damage)
+	t_min = minimum_damage / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
 	. = .. ()
 
 
-/turf/closed/wall/concrete/get_proj_damage(obj/projectile/P, t_min = min_dam)
-	t_min = min_dam / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
+/turf/closed/wall/concrete/get_proj_damage(obj/projectile/P, t_min = minimum_damage)
+	t_min = minimum_damage / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
 	. = ..()
 
 /turf/closed/wall/concrete/reinforced
@@ -144,7 +139,7 @@
 	explosion_block = 4 // good for bunkers
 	girder_type = /obj/structure/girder
 
-	min_dam = 13
+	minimum_damage = 13
 	max_integrity = 1300
 	time_to_harden = 60 SECONDS
 

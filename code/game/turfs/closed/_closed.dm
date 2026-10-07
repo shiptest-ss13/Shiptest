@@ -18,11 +18,13 @@
 	// The wall will ignore damage from weak items, depending on their
 	// force, damage type, tool behavior, and sharpness. This is the minimum
 	// amount of force that a blunt, brute item must have to damage the wall.
-	var/min_dam = 0
+	var/minimum_damage = 0
+	//multiplier for how much brute damage is taken. Applied before after minimum_damage calculations but after demolition mod
 	var/brute_mod = 1
+	//multiplier for how much burn damage is taken. Applied before after minimum_damage calculations but after demolition mod
 	var/burn_mod = 1
-	// Projectiles that do extra damage to the wall
-	var/list/extra_dam_proj
+	// Does this wall have innate damage reduction? Applied after all other calculations
+	var/damage_reduction = 0
 
 	var/mob_smash_flags
 	var/proj_bonus_damage_flags
@@ -100,6 +102,7 @@
 // negative values reduce integrity, positive values increase integrity.
 // Devastate forces a devestate, safe decon prevents it.
 /turf/closed/proc/alter_integrity(damage, mob/user, devastate = FALSE, safe_decon = FALSE)
+	damage = min(0, damage_reduction)
 	atom_integrity += damage
 	if(atom_integrity >= max_integrity)
 		atom_integrity = max_integrity
@@ -135,25 +138,38 @@
 /turf/closed/proc/update_stats()
 	update_appearance()
 
-/turf/closed/bullet_act(obj/projectile/P)
+/turf/closed/bullet_act(obj/projectile/impacting)
 	. = ..()
-	var/dam = get_proj_damage(P)
-	var/shooter = P.firer
+	var/shooter = impacting.firer
+
+	var/turf/victim_turf = impacting.loc
+	if(!isclosedturf(victim_turf))
+		var/turf/open/interceptor = victim_turf
+		//GET BEHIND ME MS REINFORCED WALL
+		if(interceptor.check_projectile_intercept(impacting))
+			return
+
+	var/dam = get_proj_damage(impacting)
 	if(!dam)
 		return
-	if(P.suppressed < SUPPRESSED_VERY)
-		visible_message(span_danger("[src] is hit by \a [P]!"), null, null, COMBAT_MESSAGE_RANGE)
+	if(impacting.suppressed < SUPPRESSED_VERY)
+		visible_message(span_danger("[src] is hit by \a [impacting]!"), null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src))
 		add_dent(WALL_DENT_SHOT)
 		alter_integrity(-dam, shooter)
 
-/turf/closed/proc/get_item_damage(obj/item/used_item, mob/user, t_min = min_dam)
+/turf/closed/proc/get_item_damage(obj/item/used_item, mob/user, t_min = minimum_damage)
 	used_item.closed_turf_attack(src,user)
 	var/damage = used_item.force * used_item.demolition_mod
+	switch(used_item.damtype)
+		if(BRUTE)
+			damage *= brute_mod
+		if(BURN)
+			damage *= burn_mod
 	// if dam is below t_min, then the hit has no effect
 	return (damage < t_min ? 0 : damage)
 
-/turf/closed/proc/get_proj_damage(obj/projectile/P, t_min = min_dam)
+/turf/closed/proc/get_proj_damage(obj/projectile/P, t_min = minimum_damage)
 	var/dam = P.damage * P.demolition_mod
 	if(proj_bonus_damage_flags & P.wall_damage_flags)
 		dam = P.wall_damage_override

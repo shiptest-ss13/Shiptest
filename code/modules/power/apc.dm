@@ -308,6 +308,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 24)
 
 	make_terminal()
 
+	ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
+
 	addtimer(CALLBACK(src, PROC_REF(update)), 5)
 
 /obj/machinery/power/apc/examine(mob/user)
@@ -717,6 +719,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 24)
 		wires.interact(user)
 	else
 		return ..()
+
+/obj/machinery/power/apc/bullet_act(obj/projectile/hitting_projectile)
+	if(prob(50))
+		do_sparks(4, TRUE, src)
+	. = ..()
 
 /obj/machinery/power/apc/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	if(the_rcd.upgrade & RCD_UPGRADE_SIMPLE_CIRCUITS)

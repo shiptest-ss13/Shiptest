@@ -385,15 +385,19 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen, 17)
 	icon = 'icons/obj/machines/television.dmi'
 	icon_state = "crt_grey"
 	icon_screen = "crt_nobroadcast"
+	base_icon_state = "crt_grey"
+	integrity_failure = 0.7 // durable but they're still a TV
 	network = list("IntraNet")
 	density = TRUE
 	circuit = null
 	interaction_flags_atom = NONE  // interact() is called by BigClick()
+	always_break = TRUE
 	var/icon_state_off = "crt_nobroadcast"
 	var/icon_state_on = "crt_live"
 
 /obj/machinery/computer/security/telescreen/entertainment/beige
 	icon_state = "crt_beige"
+	base_icon_state = "crt_beige"
 
 /obj/machinery/computer/security/telescreen/entertainment/Initialize()
 	. = ..()
@@ -410,6 +414,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen, 17)
 	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom, interact), usr)
 
 /obj/machinery/computer/security/telescreen/entertainment/proc/notify(on, string="IntraNet is proud to present the latest in unique content!")
+	if(machine_stat & BROKEN)
+		return
 	if(on && icon_screen == icon_state_off)
 		say(string)
 		icon_screen = icon_state_on
@@ -418,18 +424,59 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen, 17)
 		icon_screen = icon_state_off
 		update_appearance()
 
+/obj/machinery/computer/security/telescreen/entertainment/update_appearance(updates)
+	if(machine_stat & BROKEN)
+		icon_state = "[base_icon_state]_broken"
+		icon_screen = null
+	else
+		icon_state = base_icon_state
+	. = ..()
+
+
+/obj/machinery/computer/security/telescreen/entertainment/attackby(obj/item/I, mob/living/user, params)
+	if(machine_stat & BROKEN)
+		if(istype(I, /obj/item/stack/sheet/glass))
+			var/obj/item/stack/our_glass = I
+			if(our_glass.tool_use_check(user, src, 2) && do_after(user, 5 SECONDS, src))
+				visible_message(span_notice("[user] replaces the broken screen on [src]!"))
+				repair_damage(500)
+	. = ..()
+
+
+/obj/machinery/computer/security/telescreen/entertainment/screwdriver_act(mob/living/user, obj/item/I)
+	if(user.a_intent == INTENT_HELP)
+		if(!(machine_stat & BROKEN) && do_after(user, 3 SECONDS))
+			I.play_tool_sound(user, 20)
+			visible_message(span_notice("[user] tightens up the screen on [src]."))
+			repair_damage(20)
+			return TRUE
+	return ..()
+
+/obj/machinery/computer/security/telescreen/entertainment/atom_break(damage_flag)
+	new /obj/effect/decal/cleanable/glass(loc)
+	do_sparks(3, FALSE, src)
+	//null out screens so no weird overlays
+	return ..()
+
+
 /obj/machinery/computer/security/telescreen/entertainment/wall
 	desc = "A tube television tuned to some over-the-air channel. Often there isn't much, but this can pickup broadcast cameras across the sector. It looks secure, yet you worry it could fall and make a hole."
 	icon_state = "crt_grey_wall"
+	base_icon_state = "crt_grey_wall"
 	icon_screen = "crt_wall_nobroadcast"
 	density = FALSE
 	icon_state_off = "crt_wall_nobroadcast"
 	icon_state_on = "crt_wall_live"
 
+/obj/machinery/computer/security/telescreen/entertainment/wall/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
+
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/entertainment/wall, 24)
 
 /obj/machinery/computer/security/telescreen/entertainment/wall/beige
 	icon_state = "crt_beige_wall"
+	base_icon_state = "crt_beige_wall"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/entertainment/wall/beige, 24)
 
