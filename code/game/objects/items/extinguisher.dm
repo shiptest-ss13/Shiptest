@@ -177,7 +177,7 @@
 		atom_integrity = 1 //so the bullet actually explodes it.
 		playsound(src, 'sound/effects/smoke.ogg', 50, TRUE, -3)
 		var/datum/effect_system/smoke_spread/bad/smoke = new
-		smoke.set_up(3, get_turf(src))
+		smoke.set_up(2, get_turf(src))
 		smoke.start()
 		qdel(smoke)
 	. = ..()

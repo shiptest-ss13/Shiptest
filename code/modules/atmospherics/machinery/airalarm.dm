@@ -928,7 +928,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 28)
 		visible_message(span_warning("[src] lets out a plume of smoke as it's shot!"), vision_distance = 3)
 		playsound(src, 'sound/effects/smoke.ogg', 50, TRUE, -3)
 		var/datum/effect_system/smoke_spread/bad/smoke = new
-		smoke.set_up(4, src)
+		smoke.set_up(3, src)
 		smoke.start()
 		del(smoke)
 	. = ..()
