@@ -133,39 +133,3 @@
 	default_attachments = list(/obj/item/attachment/foldable_stock/inteq)
 
 NO_MAG_GUN_HELPER(automatic/smg/skm_carbine/inteq)
-
-//TODO: REMOVE
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
-	name = "\improper Makosso-Warra Saber SMG"
-	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
-	icon = 'icons/obj/guns/projectile.dmi'
-	icon_state = "saber"
-	item_state = "gun"
-
-	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_expedition
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m9mm_expedition,
-	)
-
-	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
-
-	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
-	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
-
-	spread = 7
-	spread_unwielded = 10
-
-	recoil = 0
-	recoil_unwielded = 4
-
-	wield_delay = 0.4 SECONDS
-
-	unique_attachments = list(
-		/obj/item/attachment/foldable_stock
-	)
-	default_attachments = list(/obj/item/attachment/foldable_stock)
-	bolt_type = BOLT_TYPE_LOCKING
-	show_magazine_on_sprite = TRUE
-	manufacturer = MANUFACTURER_WARRA_OLD

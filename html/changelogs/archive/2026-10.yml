@@ -1,0 +1,61 @@
+2026-10-01:
+  Breakingzap:
+  - bugfix: Blank shotgun shells no longer cause damage via pellet, they do however
+      still do damage if you are too close.
+  - bugfix: Execution code checks the bullet you are shooting for its ability to kill
+      people. previously the last round in a magazine could not execute.
+  WaaaWaaaWeee:
+  - rscadd: Adds chemical jug compatibility for smart chemical fridge. Replaces usual
+      smart chemical fridges on Cirrus and Atira with jug loaded ones, while removing
+      jug spam from them.
+  cablefish:
+  - rscadd: The loot pools for waste planet scrappables have been greatly expanded.
+  - rscadd: New "rusted gun safe" that can be found on waste planets.
+  - rscdel: The Saber SMG is no more.
+  - bugfix: Map loading should be ever so slightly faster.
+  - rscadd: Adds a bunch of new guestbook adjectives.
+  - rscadd: You can now print empty ammo boxes from the autolathe.
+  generalthrax:
+  - bugfix: Sleeved Camisole can be selected again
+  zimon9:
+  - bugfix: fixes two runtime sources
+2026-10-02:
+  Aquidu:
+  - imageadd: New icons for PGF hitscan lasers added
+2026-10-03:
+  generalthrax:
+  - rscdel: Harrier removed from the game
+  - bugfix: You can no longer get into the lawnmower room on Agni
+  prodirus:
+  - bugfix: Emergency Radiation Purgant should no longer add rads if your radiation
+      level is too low.
+  thearbiber:
+  - rscadd: Stag bridge adjustment
+2026-10-04:
+  Erika, Apogee, sprites by thearbiber:
+  - rscadd: Cybersun Guns, see github
+  - rscadd: Cybersun outfits have been updated for cybersun guns. Troubleshooters
+      get their doohickeys while trauma team is "practical" and "uses regular guns
+      because they aren't a bunch of lame smelly losers"
+  - rscadd: Cybersun Turrets
+  - code_imp: energy weapons can now have custom latches
+  - code_imp: magazines can now be 'sealed'
+  prodirus:
+  - rscadd: Autowiki generation for weapons, ammo and attachments.
+  thearbiber:
+  - rscadd: tracksuit open state adjustment
+2026-10-05:
+  NovyNovatic:
+  - rscadd: doofus to outpost food vendor
+2026-10-07:
+  '@zimon9, @Erikafox ':
+  - bugfix: fixed autoinjector sprites not updating upon mapload
+  - bugfix: cap overlay layering inhand icon for reagent containers
+  - rscadd: reagent pen helper tool
+  Breakingzap:
+  - rscdel: Ship vending machines recognize that they are objects and have no right
+      to speak unless spoken to. (Some outpost vending machines can still talk)
+  - rscadd: Vending machines can now speak more than galactic common (only when spoken
+      to first)
+  EmptyLullaby:
+  - rscadd: piano crate

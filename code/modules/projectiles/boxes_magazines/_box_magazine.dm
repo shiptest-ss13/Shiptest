@@ -31,6 +31,8 @@
 	var/instant_load = FALSE
 	///Whether the magazine should start with nothing in it
 	var/start_empty = FALSE
+	///whether the magazine can be re/unloaded
+	var/sealed = FALSE
 	///cost of all the bullets in the magazine/box
 	var/list/bullet_cost
 	///cost of the materials in the magazine/box itself
@@ -120,6 +122,8 @@
 
 ///Whether or not the box can be loaded, used in overrides
 /obj/item/ammo_box/proc/can_load(mob/user)
+	if(sealed)
+		return FALSE
 	return TRUE
 
 /obj/item/ammo_box/attackby(obj/item/attacking_obj, mob/user, params, silent = FALSE, replace_spent = FALSE)
@@ -181,6 +185,8 @@
 	return
 
 /obj/item/ammo_box/attack_self(mob/user)
+	if(sealed)
+		return
 	var/obj/item/ammo_casing/A = get_round()
 	if(!A)
 		return
