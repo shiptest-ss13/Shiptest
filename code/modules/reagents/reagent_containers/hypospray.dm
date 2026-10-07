@@ -466,6 +466,9 @@
 	spray_self = DELUXE_SELF_SPRAY
 	inject_self = DELUXE_SELF_INJECT
 
+/obj/item/hypospray/mkii/mkiii/empty
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/large
+
 /obj/item/hypospray/mkii/mkiii/combat
 	name = "combat hypospray mk.II"
 	desc = "A combat-ready deluxe hypospray that acts almost instantly. It can be tactically reloaded by using a vial on it."
