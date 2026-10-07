@@ -35,6 +35,7 @@
 
 	custom_overlay_icon = 'icons/mob/species/vox/vox_overlays.dmi'
 	damage_overlay_type = "vox"
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/vox
 	fire_overlay = "generic"
 
 	species_organs = list(
@@ -57,8 +58,6 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/vox,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/vox,
 	)
-
-	prosthetic_style = /datum/sprite_accessory/body/prosthetic/vox
 
 	var/datum/action/innate/tail_hold/tail_action
 

@@ -46,5 +46,5 @@
 	icon_state = "kepori_r_leg"
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_KEPORI
-	bodytype = BODYTYPE_KEPORI | BODYTYPE_ORGANIC
 	dmg_overlay_icon = 'icons/mob/species/kepori/kepori_overlays.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ORGANIC
