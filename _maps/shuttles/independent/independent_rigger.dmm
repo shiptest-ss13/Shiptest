@@ -2264,14 +2264,12 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/east,
-/obj/machinery/button/door{
-	dir = 1;
-	id = "rigg_bathroom";
-	name = "Bathroom Lock";
-	normaldoorcontrol = 1;
-	pixel_x = -10;
-	pixel_y = -21;
-	specialfunctions = 4
+/obj/machinery/power/apc/auto_name/directional/south{
+	pixel_x = -9;
+	pixel_y = -25
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/toilet)
@@ -6743,18 +6741,12 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/security)
 "Or" = (
-/obj/effect/turf_decal/corner/opaque/black/diagonal{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/window/reinforced/spawner/east{
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/curtain/thin{
 	pixel_x = 0;
-	pixel_y = 0
+	pixel_y = -1
 	},
-/obj/machinery/power/apc/auto_name/directional/west,
-/turf/open/floor/plasteel,
+/turf/open/floor/noslip,
 /area/ship/crew/toilet)
 "Ov" = (
 /turf/open/floor/plasteel/mono/dark,
@@ -8161,17 +8153,26 @@
 	dir = 4
 	},
 /obj/structure/mirror{
-	pixel_x = 4;
+	pixel_x = 8;
 	pixel_y = -25
 	},
 /obj/structure/sink/kitchen/counter{
 	dir = 1;
-	pixel_x = 4;
+	pixel_x = 8;
 	pixel_y = -1;
 	name = "bathroom sink"
 	},
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "4-8"
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "rigg_bathroom";
+	name = "Bathroom Lock";
+	normaldoorcontrol = 1;
+	pixel_x = -4;
+	pixel_y = -21;
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/toilet)
