@@ -7,8 +7,8 @@
 
 //Primary machine. This is where our patient and procedure disk goes.
 /obj/machinery/autodoc
-	name = "\improper Autodoc"
-	desc = "Waow just like Fallout New Vegas"
+	name = "\improper AutoDoc Type 499"
+	desc = "A Cybersun Biodynamics Autonomous Doctor Unit Type 499 or AutoDoc®. This specific model relies on proprietary holophotonic memory crystals to supply instructions. Inside, surgical instruments hang limp like marionettes."
 	icon = 'icons/obj/machines/autodoc.dmi'
 	icon_state = "autodoc0"
 	base_icon_state = "autodoc"
@@ -43,15 +43,22 @@
 	var/list/replacing_limbs
 	///Total damage calculated by heal_tick()
 	var/total_damage = 0
+	///Whether the machine is borked. Prints garbled error messages.
+	var/broken = FALSE
 
 /obj/machinery/autodoc/dark
 	base_icon_state = "autodoc-dark"
 	icon_state = "autodoc-dark0"
 
+/obj/machinery/autodoc/old
+	name = "AutoDoc Type 485"
+	desc = "A Cybersun Biodynamics Autonomous Doctor Unit Type 485 or AutoDoc®. This ICW-era model doesn't seem to accept holophotonic crystals. It's been a decade since Biodynamics last offered service contracts on these."
+	broken = TRUE
+
 //Procedure disk. Purchased from an autodoc vendor, lists available procedures as heal flags.
 /obj/item/disk/autodoc
 	name = "generic autodoc procedure"
-	desc = "Waow just like Falout New Vegas"
+	desc = "A 5-D Holophotonic AutoDoc® Programming Crystal encoding proprietary operating instructions for an AutoDoc®. Biodynamic's decision to move away from traditional magnetic storage devices in 499 in favor of Gezenan holophotonic crystals sparked short-lived rumors of a schism with Virtual Solutions."
 	illustration = "autodoc"
 	var/heal_flags = 0
 	var/uses = 0
@@ -65,11 +72,6 @@
 		uses = init_uses
 	if(init_cost)
 		cost = init_cost
-
-/obj/item/disk/autodoc/test
-	name = "everything disk"
-	heal_flags = DO_BRUTE | DO_BURN | DO_TOX | DO_REPLACE | DO_CLONE | DO_WOUNDS | DO_ORGANS | DO_REVIVE //collect my flags
-	uses = 100
 
 //Examine behaviour
 
@@ -137,6 +139,8 @@
 
 /obj/machinery/autodoc/examine(mob/user)
 	. = ..()
+	if(broken)
+		return
 	var/mob/living/carbon/patient = occupant
 	if(proc_disk)
 		if(proc_disk.heal_flags && operating)
@@ -156,7 +160,7 @@
 //Insert procedure disk
 /obj/machinery/autodoc/attackby(obj/item/thing, mob/user, params)
 	user.changeNext_move(CLICK_CD_MELEE)
-	if(istype(thing, /obj/item/disk/autodoc))
+	if(istype(thing, /obj/item/disk/autodoc) && !broken)
 		if(proc_disk)
 			to_chat(user, span_warning("Remove the other procedure disk first!"))
 		else
@@ -232,11 +236,13 @@
 					end_sound = 'sound/machines/defib_success.ogg'
 					end_procedure()
 
-		if(can_operate())
+		if(can_operate() && !broken)
 			to_chat(user, span_notice("You start turning [src] on."))
 			if(do_after(user, 20, target = src, extra_checks = CALLBACK(src, PROC_REF(can_operate))))
 				begin_procedure()
 		else
+			if(broken)
+				error_message = Gibberish(error_message, TRUE, 50)
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 30, TRUE)
 			say("ERROR: [error_message]")
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
@@ -511,26 +517,18 @@
 	playsound(src, 'sound/items/taperecorder/taperecorder_print.ogg', 30, FALSE)
 	voucher = FALSE
 
-/obj/effect/spawner/structure/aaaaa
-	name = "debug autodoc spawner"
-	icon = 'icons/obj/machines/borgcharger.dmi'
-	icon_state = "borgcharger0"
-	spawn_list = list(/obj/machinery/autodoc, /obj/item/disk/autodoc/test, /obj/item/melee/sledgehammer/gorlex, /obj/effect/mob_spawn/human/corpse, /obj/effect/mob_spawn/human/corpse/damaged)
-
-
 //												Now entering: Vendor Hell												//
-//to-do: procedure list doesnt wrap nicely
 
 /obj/machinery/autodoc_vendor
 	name = "autodoc vendor"
-	desc = "vends autodocs"
+	desc = "Encodes operating instructions onto blank discs."
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "robotics"
 	density = TRUE
 	use_power = IDLE_POWER_USE
 	///Times printed disk can be used.
 	var/uses = 1
-	///Procedures on our printed disk. All = 128.
+	///Procedures on our printed disk.
 	var/heal_flags = 0
 	///Total cost to print
 	var/cost = 0
