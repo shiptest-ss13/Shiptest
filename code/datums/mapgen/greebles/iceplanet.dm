@@ -44,6 +44,12 @@
 			/obj/effect/greeble_spawner/iceplanet/fourtytwo = 5,
 			/obj/effect/greeble_spawner/iceplanet/fourtythree = 5,
 			/obj/effect/greeble_spawner/iceplanet/fourtyfour = 5,
+			/obj/effect/greeble_spawner/iceplanet/fourtyfive = 5,
+			/obj/effect/greeble_spawner/iceplanet/fourtysix = 5,
+			/obj/effect/greeble_spawner/iceplanet/fourtyseven = 5,
+			/obj/effect/greeble_spawner/iceplanet/fourtyeight = 5,
+			/obj/effect/greeble_spawner/iceplanet/fourtynine = 5,
+			/obj/effect/greeble_spawner/iceplanet/fifty = 5,
 		)
 
 /obj/effect/greeble_spawner/iceplanet
@@ -421,27 +427,27 @@
 	mappath = "_maps/templates/greebles/ice/greeble_ice_44.dmm"
 	description = "Snow castle!!"
 
-/datum/map_template/greeble/iceplanet/thirtysix
+/datum/map_template/greeble/iceplanet/fourtyfive
 	name = "Ice Greeble 45"
 	mappath = "_maps/templates/greebles/ice/greeble_ice_45.dmm"
 	description = "Trees and a ledge"
 
-/datum/map_template/greeble/iceplanet/thirtyseven
+/datum/map_template/greeble/iceplanet/fourtysix
 	name = "Ice Greeble 46"
 	mappath = "_maps/templates/greebles/ice/greeble_ice_46.dmm"
 	description = "Lobster tree"
 
-/datum/map_template/greeble/iceplanet/thirtyeight
+/datum/map_template/greeble/iceplanet/fourtyseven
 	name = "Ice Greeble 47"
 	mappath = "_maps/templates/greebles/ice/greeble_ice_47.dmm"
 	description = "Ice fishin'"
 
-/datum/map_template/greeble/iceplanet/thirtynine
+/datum/map_template/greeble/iceplanet/fourtyeight
 	name = "Ice Greeble 48"
 	mappath = "_maps/templates/greebles/ice/greeble_ice_48.dmm"
 	description = "This is how they make Frontiersmen Cubes"
 
-/datum/map_template/greeble/iceplanet/fourty
+/datum/map_template/greeble/iceplanet/fourtynine
 	name = "Ice Greeble 49"
 	mappath = "_maps/templates/greebles/ice/greeble_ice_49.dmm"
 	description = "Puce Crystal Growth ASMR"
