@@ -113,8 +113,6 @@
 	var/dmg_overlay_type
 	///the path for dmg overlay icons.
 	var/dmg_overlay_icon = 'icons/mob/dam_mob.dmi'
-	/// dmg overlays for robots/synthetic parts specifically
-	var/robotic_overlay_type
 	/// If we're bleeding, which icon are we displaying on this part
 	var/bleed_overlay_icon
 
@@ -1018,8 +1016,10 @@
 	else if(animal_origin == MONKEY_BODYPART) //currently monkeys are the only non human mob to have damage overlays.
 		dmg_overlay_type = animal_origin
 
-	if(!IS_ORGANIC_LIMB(src) && !isnull(robotic_overlay_type))
-		dmg_overlay_type = robotic_overlay_type
+	if(!IS_ORGANIC_LIMB(src))
+		//species without robotic_* states in their dmg_overlay_icon simply draw nothing,
+		//which is how kepori and vox opt out until someone sprites them
+		dmg_overlay_type = "robotic"
 
 	if(dropping_limb)
 		no_update = TRUE //when attached, the limb won't be affected by the appearance changes of its mob owner.
