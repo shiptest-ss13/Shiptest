@@ -48,26 +48,6 @@
 		to_chat(user, span_notice("You push \the [src] out of the way."))
 		ear_prot.protection_amount = 0
 	user.update_inv_ears()
-	adjust_hearing(user)
-
-/obj/item/clothing/ears/earmuffs/equipped(mob/user, slot)
-	. = ..()
-	if(ishuman(user) && slot == ITEM_SLOT_EARS && adjusted)
-		ADD_TRAIT(user, TRAIT_DEAF, CLOTHING_TRAIT)
-
-/obj/item/clothing/ears/earmuffs/dropped(mob/user)
-	. = ..()
-	REMOVE_TRAIT(user, TRAIT_DEAF, CLOTHING_TRAIT)
-
-/obj/item/clothing/ears/earmuffs/proc/adjust_hearing(mob/living/user)
-	if(ishuman(user))
-		var/mob/living/carbon/human/our_guy = user
-		if(our_guy.ears == src)
-			if(adjusted)
-				ADD_TRAIT(user, TRAIT_DEAF, CLOTHING_TRAIT)
-			else
-				REMOVE_TRAIT(user, TRAIT_DEAF, CLOTHING_TRAIT)
-
 
 /obj/item/clothing/ears/headlamp
 	name = "headlamp"

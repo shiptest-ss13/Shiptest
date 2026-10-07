@@ -224,6 +224,8 @@ EMPTY_GUN_HELPER(revolver/viper)
 	icon_state = "rattlesnake"
 	item_state = "rattlesnake"
 
+	manufacturer = MANUFACTURER_SCARBOROUGH
+
 	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m9mm_rattlesnake,
@@ -344,6 +346,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 
 	icon_state = "himehabu"
 	item_state = "sa_generic"
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
@@ -875,6 +878,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 
 
 /obj/item/gun/ballistic/automatic/assault/hydra/lmg/casket_mag
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/casket
 
 /obj/item/gun/ballistic/automatic/assault/hydra/dmr
@@ -1054,6 +1058,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	)
 
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/drum
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog/drum
 
 NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)

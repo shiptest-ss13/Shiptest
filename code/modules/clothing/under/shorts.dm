@@ -169,6 +169,46 @@
 	name = "pink mini skirt"
 	icon_state = "miniskirtpink"
 
+/obj/item/clothing/under/shorts/pencilskirt
+	name = "pencil skirt"
+	desc = "A form-fitting skirt, perfect for a day at the office."
+	icon_state = "pencilskirt"
+	supports_variations = DIGITIGRADE_VARIATION
+	unique_reskin = list("black pencil skirt" = "pencilskirt",
+						"burgundy pencil skirt" = "pencilskirtred",
+						"white pencil skirt" = "pencilskirtwhite",
+						"navy pencil skirt" = "pencilskirtnavy",
+						"tan pencil skirt" = "pencilskirttan",
+						"brown pencil skirt" = "pencilskirtbrown",
+						"olive pencil skirt" = "pencilskirtolive",
+							)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/under/shorts/pencilskirt/red
+	name = "burgundy pencil skirt"
+	icon_state = "pencilskirtred"
+
+/obj/item/clothing/under/shorts/pencilskirt/white
+	name = "white pencil skirt"
+	icon_state = "pencilskirtwhite"
+
+/obj/item/clothing/under/shorts/pencilskirt/navy
+	name = "navy pencil skirt"
+	icon_state = "pencilskirtnavy"
+
+/obj/item/clothing/under/shorts/pencilskirt/tan
+	name = "tan pencil skirt"
+	icon_state = "pencilskirttan"
+
+/obj/item/clothing/under/shorts/pencilskirt/brown
+	name = "brown pencil skirt"
+	icon_state = "pencilskirtbrown"
+
+/obj/item/clothing/under/shorts/pencilskirt/olive
+	name = "olive pencil skirt"
+	icon_state = "pencilskirtolive"
+
 /obj/item/clothing/under/shorts/cargo
 	name = "cargo shorts"
 	desc = "A pocket for every need on a hot day."

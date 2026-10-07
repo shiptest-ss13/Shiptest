@@ -202,7 +202,7 @@
 /datum/blackmarket_item/weapon/guncase/derringer
 	name = "Derringer"
 	desc = "A concealable handgun small enough to hide nearly anywhere. Uses .38 revolver rounds."
-	item = /obj/item/gun/ballistic/derringer
+	item = /obj/item/gun/ballistic/automatic/pistol/derringer
 	gun_unloaded = FALSE
 	mag_number = 0
 
@@ -214,7 +214,7 @@
 /datum/blackmarket_item/weapon/guncase/syndi_derringer
 	name = ".357 Derringer"
 	desc = "A concealable hangun with a tasteful red and black paintjob, which makes it slightly more noticeable. Chambered in .357, so you actually have a chance at killing something."
-	item = /obj/item/gun/ballistic/derringer/traitor
+	item = /obj/item/gun/ballistic/automatic/pistol/derringer/traitor
 	pair_item = list(/datum/blackmarket_item/ammo/a357_box)
 	gun_unloaded = FALSE
 	mag_number = 0
@@ -333,6 +333,27 @@
 	cost_max = 2100
 	stock_max = 2
 	availability_prob = 50
+
+/datum/blackmarket_item/weapon/guncase/lensman
+	name = "Lensman-5 Energy Magnum"
+	desc = "I got no clue what the secret of this lens is, but damn if it doesn't pack a punch. Fuckin great holdout weapon even if it looks dumb as fuck."
+	item = /obj/item/gun/energy/cybersun/troubleshooter/lensman
+	pair_item = list(/datum/blackmarket_item/ammo/cs_mini)
+	cost_min = 900
+	cost_max = 2100
+	stock_max = 2
+	availability_prob = 25
+
+/datum/blackmarket_item/weapon/guncase/opportunist
+	name = "Opportunist Lorentz Magnum"
+	desc = "This is the same type of gun that they were gonna use to kill Relisi Namosane back in 499 FSC. Fuckin doohickey if I've ever seen it. Either burns the cell out or fires fuckin lightning claps."
+
+	item = /obj/item/gun/energy/cybersun/lorentz/opportunist
+	pair_item = list(/datum/blackmarket_item/ammo/cs_cell)
+	cost_min = 1750
+	cost_max = 3500
+	stock_max = 2
+	availability_prob = 30
 
 /datum/blackmarket_item/weapon/guncase/cm5
 	name = "CM-5 SMG"
@@ -463,6 +484,18 @@
 	cost_max = 1000
 	stock_max = 3
 	availability_prob = 50
+
+/datum/blackmarket_item/weapon/guncase/scorcher
+	name = "Scorcher PDW"
+	desc = "Ever wanna light a bitch up in both ways? Well we got you covered! My Guy bolted some flamethrower parts on a heater, now it spews fire AND lead."
+	item = /obj/item/gun/ballistic/automatic/smg/heater/scorcher
+
+
+	cost_min = 3250
+	cost_max = 4250
+	stock_min = 1
+	stock_max = 2
+	availability_prob = 20
 
 /datum/blackmarket_item/weapon/guncase/spitter
 	name = "Spitter Submachine Gun"
