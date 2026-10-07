@@ -44,6 +44,9 @@
 	var/turf/deploy_location = get_turf(src)
 	var/status = template.check_deploy(deploy_location)
 
+	//greeble loading debugging
+	//message_admins("[src] loaded [status] @ [ADMIN_COORDJMP(loc)]")
+
 	if(status != SHELTER_DEPLOY_ALLOWED)
 		qdel(src)
 		return
@@ -65,19 +68,24 @@
 	. = ..()
 	//Prevent creating a type cache list EVERY time we spawn a greeble
 	if(!types_cached)
-		banned_areas = typecacheof(/area/ship, /area/ruin)
+		banned_areas = typecacheof(list(
+			/area/ship,
+			/area/ruin,
+			/area/overmap_encounter/planetoid/cave/explored
+			))
 		blacklisted_turfs = typecacheof(list(
 			/turf/closed,
-			/area/overmap_encounter/planetoid/cave/explored,
 			/turf/open/indestructible,
 		))
 		whitelisted_turfs = typecacheof(/turf/closed/mineral)
+		//try to keep this list more permissive.
 		banned_objects = typecacheof(list(
 			/obj/structure/stone_tile,
 			/obj/structure/vein/classfour,
 			/obj/structure/vein/ice/classfour,
 			/obj/structure/vein/jungle/classfour,
 			/obj/structure/vein/moon/classfour,
+			/obj/effect/anomaly
 		))
 		types_cached = TRUE
 

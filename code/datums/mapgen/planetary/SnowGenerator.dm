@@ -1,5 +1,5 @@
 /datum/map_generator/planet_generator/snow
-	mountain_height = 0.45
+	mountain_height = 55
 	perlin_zoom = 55
 
 	initial_closed_chance = 45
@@ -110,11 +110,11 @@
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 		/obj/effect/spawner/random/snow_monkey_pack = 5,
 	)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 1
 	feature_spawn_list = list(
-		/obj/effect/spawner/random/greeble/iceplanet/anomaly = 25,
+		/obj/effect/spawner/random/greeble/iceplanet/anomaly = 20,
 		/obj/effect/spawner/random/greeble/iceplanet = 80,
-		/obj/structure/spawner/burrow/ice_planet = 80,
+		/obj/structure/spawner/burrow/ice_planet = 40,
 		/obj/structure/vein/ice = 25,
 		/obj/structure/vein/ice/classtwo = 50,
 		/obj/structure/vein/ice/classtwo/rare = 10,
@@ -165,14 +165,14 @@
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/snow/lit = 1
 	)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 1
 	feature_spawn_list = list(
-		/obj/effect/spawner/random/greeble/iceplanet = 2,
-		/obj/structure/spawner/burrow/ice_planet = 4,
+		/obj/effect/spawner/random/greeble/iceplanet = 6,
+		/obj/structure/spawner/burrow/ice_planet = 2,
 		/obj/structure/statue/snow/snowman = 3,
 		/obj/structure/statue/snow/snowlegion = 1,
-		/obj/structure/vein/ice = 3,
-		/obj/structure/vein/ice/classtwo = 4,
+		/obj/structure/vein/ice = 2,
+		/obj/structure/vein/ice/classtwo = 3,
 		/obj/structure/vein/ice/classthree = 1,
 	)
 	mob_spawn_list = list(
