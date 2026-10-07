@@ -603,9 +603,9 @@
 	if(!where_are_we)
 		//we aren't
 		return
+
 	var/mob/living/carbon/human/emergency_homunculus = new /mob/living/carbon/human(where_are_we)
 	emergency_homunculus.forceMove(where_are_we)
-	emergency_homunculus.dust()
 	rewindee.revive(TRUE, FALSE)
 
 	if(overdosed)
@@ -614,6 +614,8 @@
 		rewindee.forceMove(old_turf)
 	else
 		rewindee.forceMove(return_turf)
+
+	emergency_homunculus.dust()
 
 	if(overdosed)
 		return
