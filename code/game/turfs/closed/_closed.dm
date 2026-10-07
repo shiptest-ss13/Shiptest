@@ -102,7 +102,8 @@
 // negative values reduce integrity, positive values increase integrity.
 // Devastate forces a devestate, safe decon prevents it.
 /turf/closed/proc/alter_integrity(damage, mob/user, devastate = FALSE, safe_decon = FALSE)
-	damage = min(0, damage_reduction)
+	if(damage <= 0)
+		damage = min(0, damage - damage_reduction)
 	atom_integrity += damage
 	if(atom_integrity >= max_integrity)
 		atom_integrity = max_integrity
