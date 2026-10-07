@@ -599,8 +599,12 @@
 	to_chat(L, span_boldwarning("Tempo has exited your system! You're in sync with the world again!"))
 
 /datum/reagent/drug/chrono/proc/rewind(mob/living/rewindee)
-	var/mob/living/carbon/human/emergency_homunculus = new /mob/living/carbon/human(get_turf(rewindee))
-	emergency_homunculus.forceMove(get_turf(rewindee))
+	var/turf/where_are_we = get_turf(rewindee)
+	if(!where_are_we)
+		//we aren't
+		return
+	var/mob/living/carbon/human/emergency_homunculus = new /mob/living/carbon/human(where_are_we)
+	emergency_homunculus.forceMove(where_are_we)
 	emergency_homunculus.dust()
 	rewindee.revive(TRUE, FALSE)
 
