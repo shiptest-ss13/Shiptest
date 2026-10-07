@@ -206,7 +206,7 @@
 
 /// Handles weapon condition. Returning TRUE prevents process_chamber from automatically loading a new round
 /obj/item/gun/ballistic/proc/condition_check(from_firing = TRUE, atom/shooter)
-	if(bolt_type == BOLT_TYPE_NO_BOLT || !from_firing || !magazine.ammo_count(FALSE)) //The revolver is one of the most reliable firearms ever designed, as long as you don't need to fire any more than six bullets at something. Which, of course, you do not.
+	if(bolt_type == BOLT_TYPE_NO_BOLT || !from_firing || !magazine?.ammo_count(FALSE)) //The revolver is one of the most reliable firearms ever designed, as long as you don't need to fire any more than six bullets at something. Which, of course, you do not.
 		return FALSE
 	last_jam++
 	if(gun_wear < wear_minor_threshold)
