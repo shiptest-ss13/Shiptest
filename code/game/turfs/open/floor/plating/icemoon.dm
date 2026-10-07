@@ -291,3 +291,9 @@ ICE_TURF_HELPER(concrete/pavement)
 	planetary_atmos = TRUE
 	light_color = COLOR_ICEPLANET_LIGHT
 	color = "#41a3ff"
+
+/turf/open/water/iceplanet/deep
+	color = "#4566ad"
+	light_color = LIGHT_COLOR_DARK_BLUE
+	immerse_overlay = "immerse_deep"
+	is_swimming_tile = TRUE

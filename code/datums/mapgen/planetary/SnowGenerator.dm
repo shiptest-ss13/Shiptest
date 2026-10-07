@@ -112,8 +112,8 @@
 	)
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(
-		/obj/effect/spawner/random/anomaly/ice = 12,
-		/obj/effect/spawner/random/anomaly/big = 1,
+		/obj/effect/spawner/random/greeble/iceplanet/anomaly = 25,
+		/obj/effect/spawner/random/greeble/iceplanet = 80,
 		/obj/structure/spawner/burrow/ice_planet = 80,
 		/obj/structure/vein/ice = 25,
 		/obj/structure/vein/ice/classtwo = 50,
@@ -126,7 +126,7 @@
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/snow/lit = 25
 	)
-	flora_spawn_list = list(	
+	flora_spawn_list = list(
 		/obj/structure/flora/grass/both = 1,
 	)
 	flora_spawn_chance = 30
@@ -167,6 +167,7 @@
 	)
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(
+		/obj/effect/spawner/random/greeble/iceplanet = 2,
 		/obj/structure/spawner/burrow/ice_planet = 4,
 		/obj/structure/statue/snow/snowman = 3,
 		/obj/structure/statue/snow/snowlegion = 1,
@@ -210,8 +211,7 @@
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
-		/obj/effect/spawner/random/anomaly/ice = 100,
-		/obj/effect/spawner/random/anomaly/big = 1,
+		/obj/effect/spawner/random/greeble/iceplanet/anomaly = 100
 		/obj/structure/spawner/burrow/ice_planet/hard = 600,
 		/obj/structure/vein/ice = 300,
 		/obj/structure/vein/ice/classtwo = 500,
