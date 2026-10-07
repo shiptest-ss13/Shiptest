@@ -211,7 +211,7 @@
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
-		/obj/effect/spawner/random/greeble/iceplanet/anomaly = 100
+		/obj/effect/spawner/random/greeble/iceplanet/anomaly = 100,
 		/obj/structure/spawner/burrow/ice_planet/hard = 600,
 		/obj/structure/vein/ice = 300,
 		/obj/structure/vein/ice/classtwo = 500,

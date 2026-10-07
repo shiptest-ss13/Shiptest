@@ -285,8 +285,7 @@
 	icon_state = "grav core"
 	grind_results = list(/datum/reagent/drug/chrono = 15)
 
-/obj/item/assembly/signaler/anomaly/grav/anomaly_core_detonation()
+/obj/item/assembly/signaler/anomaly/chrono/anomaly_core_detonation()
 	//THE WORLD
-	new /obj/effect/timestop(get_turf(user), 3, 60 SECONDS)
-
+	new /obj/effect/timestop(get_turf(src), 3, 60 SECONDS)
 	..()

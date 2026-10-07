@@ -580,10 +580,6 @@
 	//return here when things're metabolized or they die
 	var/turf/return_turf = null
 
-/datum/reagent/drug/chrono/Destroy()
-	. = ..()
-	qdel(emergency_homunculus)
-
 /datum/reagent/drug/chrono/on_mob_metabolize(mob/living/L)
 	..()
 	do_sparks(3, TRUE, L, /datum/effect_system/spark_spread/blue)
@@ -603,10 +599,6 @@
 	to_chat(L, span_boldwarning("Tempo has exited your system! You're in sync with the world again!"))
 
 /datum/reagent/drug/chrono/proc/rewind(mob/living/rewindee)
-	//we've already rewound on this dose
-	if(!emergency_homunculus)
-		return FALSE
-
 	var/mob/living/carbon/human/emergency_homunculus = new /mob/living/carbon/human(get_turf(rewindee))
 	emergency_homunculus.forceMove(get_turf(rewindee))
 	emergency_homunculus.dust()

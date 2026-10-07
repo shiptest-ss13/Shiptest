@@ -1,7 +1,7 @@
 /atom/movable/screen/alert/status_effect/accelerando
 	name = "Accelerando"
 	desc = "Out of sync. Out of time. Yet you're still here?"
-	icon_state = ""
+	icon_state = "accelerando"
 
 /datum/status_effect/accelerando
 	alert_type = /atom/movable/screen/alert/status_effect/accelerando
