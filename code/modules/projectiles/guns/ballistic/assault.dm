@@ -121,16 +121,6 @@
 	item_state = "skm_inteq"
 	manufacturer = MANUFACTURER_INTEQ
 
-/obj/item/gun/ballistic/automatic/assault/cm82
-	name = "\improper CM-16"
-	desc = "The standard-issue rifle of CLIP and an extensively modified reproduction of the P-16. Chambered in 5.56mm."
-	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
-	icon_state = "cm16"
-	item_state = "cm16"
-
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese
 	name = "\improper Swiss Cheese"
 	desc = "An ancient longarm famous for its boxy, modular design. Mass produced by the Terran Confederation in ages past, these often mutiple century old designs have survied due to their sheer ruggedness. The DMA on this unit is sadly broken, but these rifles are known for their excellent burst fire. Uses 5.56mm ammunition for Matter mode."
