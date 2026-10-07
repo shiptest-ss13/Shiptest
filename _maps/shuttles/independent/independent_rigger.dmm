@@ -2258,19 +2258,12 @@
 	dir = 4
 	},
 /obj/structure/toilet{
-	pixel_x = 2;
+	pixel_x = 4;
 	pixel_y = 0;
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/east,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/south{
-	pixel_x = -9;
-	pixel_y = -24
-	},
 /turf/open/floor/plasteel,
 /area/ship/crew/toilet)
 "od" = (
@@ -6456,7 +6449,7 @@
 "Ly" = (
 /obj/machinery/shower{
 	pixel_x = 0;
-	pixel_y = 22
+	pixel_y = 23
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/closet/wall/directional/east{
@@ -6745,6 +6738,11 @@
 /obj/structure/curtain/thin{
 	pixel_x = 0;
 	pixel_y = -1
+	},
+/obj/structure/sink/kitchen{
+	pixel_x = 0;
+	pixel_y = 20;
+	name = "sink"
 	},
 /turf/open/floor/noslip,
 /area/ship/crew/toilet)
@@ -8152,27 +8150,21 @@
 /obj/effect/turf_decal/corner/opaque/black/diagonal{
 	dir = 4
 	},
-/obj/structure/mirror{
-	pixel_x = 8;
-	pixel_y = -25
-	},
-/obj/structure/sink/kitchen/counter{
-	dir = 1;
-	pixel_x = 8;
-	pixel_y = -1;
-	name = "bathroom sink"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/button/door{
 	dir = 1;
 	id = "rigg_bathroom";
 	name = "Bathroom Lock";
 	normaldoorcontrol = 1;
-	pixel_x = -4;
+	pixel_x = 11;
 	pixel_y = -21;
 	specialfunctions = 4
+	},
+/obj/machinery/power/apc/auto_name/directional/south{
+	pixel_x = 0;
+	pixel_y = -24
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/toilet)
