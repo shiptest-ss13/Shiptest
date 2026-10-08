@@ -235,3 +235,7 @@
 /area/ruin/wasteplanet/smugglerbunker/killroom
 	name = "Bunker Safe Storage"
 	icon_state = "security"
+
+/area/ruin/wasteplanet/smugglerbunker/killroom/drones
+	name = "Drone Rooms"
+	icon_state = "security"

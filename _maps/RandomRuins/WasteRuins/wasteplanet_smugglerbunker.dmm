@@ -233,6 +233,20 @@
 /obj/item/clothing/suit/space/pilot,
 /obj/item/clothing/head/helmet/space/pilot,
 /obj/item/tank/internals/oxygen/yellow,
+/obj/machinery/button/shieldwallgen{
+	dir = 1;
+	id = "bunkersouthholo1";
+	pixel_x = -9;
+	pixel_y = -22;
+	name = "Bunker North Internal Holo"
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = -1;
+	pixel_y = -22;
+	id = "bunkersouthgate2";
+	name = "Bunker North Internal Gate"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/wasteplanet/smugglerbunker)
 "bs" = (
@@ -712,11 +726,11 @@
 	color = "#920C0C";
 	dir = 8
 	},
-/obj/machinery/light/floor,
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030;
 	dir = 4
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker)
 "dP" = (
@@ -1474,7 +1488,7 @@
 	wander = 0
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/killroom/drones)
 "hS" = (
 /obj/effect/turf_decal/road/line/opaque/yellow{
 	dir = 1;
@@ -1879,6 +1893,9 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/lab)
+"km" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/wasteplanet/smugglerbunker/killroom/drones)
 "ku" = (
 /obj/structure/sign/warning/vacuum{
 	pixel_x = 0;
@@ -1969,6 +1986,9 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/wasteplanet/smugglerbunker/bathroom)
+"kX" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/wasteplanet/smugglerbunker/killroom)
 "lh" = (
 /obj/machinery/door/airlock{
 	dir = 1;
@@ -2219,14 +2239,18 @@
 "mE" = (
 /obj/structure/dresser/wall/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 19;
-	pixel_y = -6
+/obj/machinery/button/door{
+	pixel_x = 22;
+	pixel_y = -6;
+	name = "Door Bolt";
+	id = "dorm2";
+	specialfunctions = 4;
+	normaldoorcontrol = 1;
+	dir = 8
 	},
-/obj/machinery/firealarm/directional/east{
-	pixel_x = 32;
-	pixel_y = 2
+/obj/item/clothing/shoes/sandal/slippers{
+	pixel_x = -9;
+	pixel_y = -13
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/dorms/two)
@@ -2826,7 +2850,7 @@
 	wander = 0
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/killroom/drones)
 "ro" = (
 /mob/living/simple_animal/hostile/automated/walkmine/ramzi{
 	faction = list("hostile")
@@ -3319,6 +3343,15 @@
 /obj/item/clothing/under/syndicate/gorlex,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 9
+	},
+/obj/machinery/firealarm/directional/east{
+	pixel_x = 32;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/dorms/one)
 "uh" = (
@@ -3520,6 +3553,9 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/wasteplanet/smugglerbunker)
+"vZ" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/wasteplanet/smugglerbunker/radiation)
 "wf" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -3741,8 +3777,8 @@
 /area/ruin/wasteplanet/smugglerbunker/exterior)
 "xT" = (
 /obj/effect/turf_decal/rechargefloor,
-/mob/living/simple_animal/bot/cleanbot/medbay,
 /obj/machinery/airalarm/directional/east,
+/mob/living/simple_animal/bot/cleanbot,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/medbay)
 "xV" = (
@@ -3773,7 +3809,7 @@
 	},
 /obj/structure/catwalk,
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/killroom/drones)
 "yi" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/machinery/griddle,
@@ -4095,6 +4131,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker)
 "Ay" = (
@@ -4233,6 +4270,9 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/radiation)
+"Bx" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/wasteplanet/smugglerbunker/medbay)
 "Bz" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/wasteplanet/smugglerbunker/radiation)
@@ -4319,7 +4359,7 @@
 	search_alarms = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/killroom/drones)
 "Cu" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -4360,7 +4400,7 @@
 	},
 /obj/structure/catwalk,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/killroom/drones)
 "CO" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/structure/cable{
@@ -4899,17 +4939,28 @@
 	icon_state = "pavement_2"
 	},
 /area/ruin/wasteplanet/smugglerbunker/exterior)
+"GI" = (
+/obj/effect/turf_decal/rechargefloor,
+/mob/living/simple_animal/hostile/automated/agrav/cybersun{
+	search_alarms = 1
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/wasteplanet/smugglerbunker/killroom/drones)
 "GK" = (
 /obj/structure/dresser/wall/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 21;
-	pixel_y = -5
+/obj/machinery/button/door{
+	pixel_x = 22;
+	pixel_y = -6;
+	name = "Door Bolt";
+	id = "dorm1";
+	specialfunctions = 4;
+	normaldoorcontrol = 1;
+	dir = 8
 	},
-/obj/machinery/firealarm/directional/east{
-	pixel_x = 32;
-	pixel_y = 2
+/obj/item/clothing/shoes/sandal/slippers{
+	pixel_x = -5;
+	pixel_y = -11
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/dorms/one)
@@ -5559,6 +5610,9 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/smugglerbunker/radiation)
+"LA" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/wasteplanet/smugglerbunker/engineering)
 "LG" = (
 /obj/effect/turf_decal/atmos/air{
 	dir = 8
@@ -5658,6 +5712,21 @@
 	dir = 1
 	},
 /obj/structure/closet/crate/trashcart/laundry,
+/obj/item/blackmarket_uplink{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/clothing/under/rank/medical/gown,
+/obj/item/clothing/under/rank/medical/gown,
+/obj/item/clothing/shoes/sandal/slippers,
+/obj/item/clothing/under/overalls,
+/obj/item/clothing/under/overalls,
+/obj/item/clothing/under/overalls/black,
+/obj/item/clothing/under/overalls/brown,
+/obj/item/clothing/under/overalls/olive,
+/obj/item/clothing/under/overalls/olive,
+/obj/item/clothing/suit/toggle/chorejacket/miski,
+/obj/item/clothing/suit/toggle/chorejacket,
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/smugglerbunker/dorms)
 "Mm" = (
@@ -5705,10 +5774,6 @@
 /obj/item/reagent_containers/glass/rag{
 	pixel_x = 6;
 	pixel_y = 0
-	},
-/obj/item/blackmarket_uplink{
-	pixel_x = 5;
-	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/smugglerbunker/dorms)
@@ -5932,7 +5997,7 @@
 	id = "openrobots"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/killroom/drones)
 "OW" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 10
@@ -6105,8 +6170,7 @@
 /obj/item/storage/backpack/satchel/flat,
 /mob/living/simple_animal/hostile/automated/hopper{
 	name = "Smuggler's Al'sa CQB 'Hopper'";
-	desc = "A specialized drone made by the Al'sa Guild for quick skirmishes at close range, nicknamed 'Hopper' for its way of running. Sought after by both Makosso-Warra and the Coalition during the ICW, many were sold off and produced locally in the frontier. This one is slightly modified and seems to have been the bouncer for a now-crushed smuggler.";
-	faction = list("hostile")
+	desc = "A specialized drone made by the Al'sa Guild for quick skirmishes at close range, nicknamed 'Hopper' for its way of running. Sought after by both Makosso-Warra and the Coalition during the ICW, many were sold off and produced locally in the frontier. This one is slightly modified and seems to have been the bouncer for a now-crushed smuggler."
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/smugglerbunker/exterior)
@@ -6144,6 +6208,9 @@
 	icon_state = "conc_slab_1"
 	},
 /area/ruin/wasteplanet/smugglerbunker/exterior)
+"Qe" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/wasteplanet/smugglerbunker/killroom/drones)
 "Qf" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -6475,7 +6542,7 @@
 "Th" = (
 /obj/effect/turf_decal/rechargefloor,
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/wasteplanet/smugglerbunker/killroom)
+/area/ruin/wasteplanet/smugglerbunker/killroom/drones)
 "Tm" = (
 /obj/machinery/light/directional,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -6658,6 +6725,15 @@
 /obj/item/clothing/under/syndicate/gorlex,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
+/obj/machinery/firealarm/directional/east{
+	pixel_x = 32;
+	pixel_y = 2
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 19;
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/smugglerbunker/dorms/two)
 "UQ" = (
@@ -8177,7 +8253,7 @@ ZX
 sV
 sV
 Cm
-mX
+GI
 sV
 qz
 rd
@@ -8231,8 +8307,8 @@ bh
 lu
 dP
 sV
-wK
-wK
+km
+km
 sV
 Ze
 Vp
@@ -8252,12 +8328,12 @@ gj
 pK
 dS
 UA
-wK
-wK
-wK
-wK
-wK
-wK
+km
+km
+km
+km
+km
+km
 sV
 eE
 eE
@@ -8310,7 +8386,7 @@ UA
 Th
 Th
 hO
-wK
+km
 Th
 Th
 sV
@@ -8365,7 +8441,7 @@ UA
 yc
 yc
 yc
-wK
+km
 yc
 yc
 sV
@@ -8421,7 +8497,7 @@ ns
 ns
 dM
 sV
-dM
+ns
 aL
 sV
 MW
@@ -9007,9 +9083,9 @@ hj
 pS
 Mo
 op
-pS
+LA
 Jc
-UQ
+Bx
 UQ
 UQ
 UQ
@@ -9062,9 +9138,9 @@ PE
 iG
 JV
 fk
-Bz
+vZ
 OJ
-wK
+Qe
 Th
 rh
 CK
@@ -9117,9 +9193,9 @@ dH
 mB
 ml
 Dr
-Bz
+vZ
 LG
-wK
+Qe
 Th
 rh
 OS
@@ -9172,9 +9248,9 @@ Lv
 BI
 Lv
 Bz
-Bz
+vZ
 OD
-wK
+Qe
 Th
 Th
 OS
@@ -9227,9 +9303,9 @@ Bv
 TR
 mD
 qU
-Bz
-pS
-wK
+vZ
+LA
+kX
 wK
 wK
 wK
