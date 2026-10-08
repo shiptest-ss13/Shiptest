@@ -614,7 +614,7 @@
 /datum/blackmarket_item/weapon/guncase/invictus_old
 	name = "Old Model Invictus"
 	desc = "Found some croaked hunters who were straight up skeletons with these laying by 'em. Kinda old, kicks like a mule but damn does it put holes through EVERYTHING."
-	item = /obj/item/gun/ballistic/automatic/invictus/old
+	item = /obj/item/gun/ballistic/automatic/assault/invictus/old
 
 	cost_min = 5500
 	cost_max = 6500
