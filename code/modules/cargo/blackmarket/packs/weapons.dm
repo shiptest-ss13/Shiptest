@@ -611,6 +611,16 @@
 	availability_prob = 15
 	spawn_weighting = FALSE
 
+/datum/blackmarket_item/weapon/guncase/invictus_old
+	name = "Old Model Invictus"
+	desc = "Found some croaked hunters who were straight up skeletons with these laying by 'em. Kinda old, kicks like a mule but damn does it put holes through EVERYTHING."
+	item = /obj/item/gun/ballistic/automatic/invictus/old
+
+	cost_min = 5500
+	cost_max = 6500
+	stock_max = 2
+	availability_prob = 15
+
 /datum/blackmarket_item/weapon/guncase/rail_cannon
 	name = "Model 'Atelier' Railgun"
 	desc = "If you ask me, warfare boils down to basically throwing rocks as fast and hard as possible. This thing might not be fast, but it's certainly hard as hell. Chambered in ferromagnetic rods to put a baseball sized hole in your unlucky victim."
