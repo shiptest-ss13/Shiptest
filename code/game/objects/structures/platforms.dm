@@ -178,7 +178,6 @@
 			playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 			deconstruct(TRUE)
 		return COMPONENT_BLOCK_TOOL_ATTACK
-	return COMPONENT_BLOCK_TOOL_ATTACK
 
 /obj/structure/platform/CanPass(atom/movable/mover, border_dir)
 	. = ..()
