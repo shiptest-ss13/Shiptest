@@ -36,7 +36,6 @@
 	var/time_left_in_seconds = (duration - world.time) / 10
 
 	var/power = time_left_in_seconds / 10
-	message_admins("[time_left_in_seconds] left, power at [power]")
 	if(power > 4)
 		animate(owner.get_filter("chronoblur"), 5, x = rand(-2, 2), y = rand(-2, 2))
 		intensity = 0

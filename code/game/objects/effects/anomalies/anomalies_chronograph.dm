@@ -27,7 +27,6 @@
 	for(var/mob/living/old in orange(effectrange, src))
 		//closer is better
 		var/effect_power = -(get_dist(old, src)) + effectrange
-		message_admins("[effect_power] power placed")
 		//prevents runtime @ max distance
 		if(effect_power)
 			old.adjust_timed_status_effect(effect_power * 1 SECONDS, /datum/status_effect/accelerando, effect_power*30 SECONDS)
