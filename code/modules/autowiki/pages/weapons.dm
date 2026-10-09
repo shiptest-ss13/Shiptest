@@ -18,6 +18,7 @@
 		MANUFACTURER_PGF = "Etherbor Industries",
 		MANUFACTURER_IMPORT = "Lanchester Import Co.",
 		MANUFACTURER_SERENE = "Serene Outdoors",
+		MANUFACTURER_CYBERSUN = "Tadeusz Armory",
 	)
 
 	if (!raw)
@@ -103,7 +104,7 @@
 				if (count in seen)
 					continue
 				seen += count
-				var/mark = bold_default && length(charges) > 1 && charge == default_charge
+				var/mark = bold_default && charge == default_charge
 				counts += mark ? "'''[count]'''" : "[count]"
 			facts += "[counts.Join(" / ")] shots"
 

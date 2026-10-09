@@ -47,3 +47,27 @@
 2026-10-05:
   NovyNovatic:
   - rscadd: doofus to outpost food vendor
+2026-10-07:
+  '@zimon9, @Erikafox ':
+  - bugfix: fixed autoinjector sprites not updating upon mapload
+  - bugfix: cap overlay layering inhand icon for reagent containers
+  - rscadd: reagent pen helper tool
+  Breakingzap:
+  - rscdel: Ship vending machines recognize that they are objects and have no right
+      to speak unless spoken to. (Some outpost vending machines can still talk)
+  - rscadd: Vending machines can now speak more than galactic common (only when spoken
+      to first)
+  EmptyLullaby:
+  - rscadd: piano crate
+2026-10-08:
+  generalthrax:
+  - rscdel: Broken and unused CM-16 removed
+  prodirus:
+  - bugfix: adds manufacturer to Cybersun ballistic weapons.
+  - bugfix: repaths some of the Cybersun lasers to point at valid variants
+  - rscadd: Corpses now have species appropriate names.
+  thearbiber:
+  - bugfix: tracksuit toggle being reverted sprite wise
+  - rscadd: the Efreet-class
+  - rscadd: restyles ISF hardliner hulls
+  - rscdel: the Banshee-class

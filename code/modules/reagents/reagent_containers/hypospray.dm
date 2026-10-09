@@ -16,6 +16,14 @@
 #define COMBAT_SELF_SPRAY 0
 #define COMBAT_SELF_INJECT 0
 
+#define SPENT_PEN_HELPER(pen_path) \
+	/obj/item/reagent_containers/hypospray/##pen_path/empty { \
+		list_reagents = list(); \
+	/obj/item/reagent_containers/hypospray/##pen_path/empty/Initialize(mapload, vol) \
+		. = ..(); \
+		name = "spent [name]"; \
+	}
+
 /obj/item/reagent_containers/hypospray
 	name = "hypospray"
 	desc = "The hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
@@ -457,6 +465,9 @@
 	spray_wait = DELUXE_WAIT_SPRAY
 	spray_self = DELUXE_SELF_SPRAY
 	inject_self = DELUXE_SELF_INJECT
+
+/obj/item/hypospray/mkii/mkiii/empty
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/large
 
 /obj/item/hypospray/mkii/mkiii/combat
 	name = "combat hypospray mk.II"
