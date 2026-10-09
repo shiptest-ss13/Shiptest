@@ -243,7 +243,7 @@
 /mob/living/simple_animal/hostile/human/bullet_act(obj/projectile/projectile)
 	shake_animation(projectile.damage)
 	if(projectile.damage_type == BRUTE)
-		roll_for_bleeding(projectile.damage, projectile.wound_bonus, projectile.bare_wound_bonus, projectile.sharpness, projectile.flag, projectile.armour_penetration, projectile.dir)
+		roll_for_bleeding(projectile.damage, projectile.wound_bonus, projectile.bare_wound_bonus, projectile.sharpness, projectile.flag, projectile.armour_penetration, get_dir(projectile.starting, src))
 	return ..()
 
 /mob/living/simple_animal/hostile/human/proc/spray_blood(splatter_direction, splatter_strength = 3)
