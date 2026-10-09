@@ -186,64 +186,61 @@
 		outfit = new /datum/outfit
 	return ..()
 
-/obj/effect/mob_spawn/human/equip(mob/living/carbon/human/mob)
+/obj/effect/mob_spawn/human/equip(mob/living/carbon/human/H)
 	if(mob_species)
-		mob.set_species(mob_species)
-		// replace mob name with species specific name if possible
-		if(!mob_name)
-			mob.fully_replace_character_name(null, mob.dna.species.random_name(mob.gender, TRUE))
+		H.set_species(mob_species)
 	if(husk)
-		mob.Drain()
+		H.Drain()
 	else //Because for some reason I can't track down, things are getting turned into husks even if husk = false. It's in some damage proc somewhere.
-		mob.cure_husk()
-	mob.underwear = "Nude"
-	mob.undershirt = "Nude"
-	mob.socks = "Nude"
+		H.cure_husk()
+	H.underwear = "Nude"
+	H.undershirt = "Nude"
+	H.socks = "Nude"
 	if(hairstyle)
-		mob.hairstyle = hairstyle
+		H.hairstyle = hairstyle
 	else
-		mob.hairstyle = random_hairstyle(mob.gender)
+		H.hairstyle = random_hairstyle(H.gender)
 	if(facial_hairstyle)
-		mob.facial_hairstyle = facial_hairstyle
+		H.facial_hairstyle = facial_hairstyle
 	else
-		mob.facial_hairstyle = random_facial_hairstyle(mob.gender)
+		H.facial_hairstyle = random_facial_hairstyle(H.gender)
 	if(skin_tone)
-		mob.skin_tone = skin_tone
+		H.skin_tone = skin_tone
 	else
-		mob.skin_tone = random_skin_tone()
-	mob.update_hair()
-	mob.update_body()
+		H.skin_tone = random_skin_tone()
+	H.update_hair()
+	H.update_body()
 	if(outfit)
 		var/static/list/slots = list("uniform", "r_hand", "l_hand", "suit", "shoes", "gloves", "ears", "glasses", "mask", "head", "belt", "r_pocket", "l_pocket", "back", "id", "neck", "backpack_contents", "suit_store")
 		for(var/slot in slots)
-			var/slot_value = vars[slot]
-			if(!isnum(slot_value))
-				outfit.vars[slot] = slot_value
-		mob.equipOutfit(outfit)
+			var/T = vars[slot]
+			if(!isnum(T))
+				outfit.vars[slot] = T
+		H.equipOutfit(outfit)
 		if(disable_pda)
 			// We don't want corpse PDAs to show up in the messenger list.
-			var/obj/item/pda/PDA = locate(/obj/item/pda) in mob
+			var/obj/item/pda/PDA = locate(/obj/item/pda) in H
 			if(PDA)
 				PDA.toff = TRUE
 		if(disable_sensors)
 			// Using crew monitors to find corpses while creative makes finding certain ruins too easy.
-			var/obj/item/clothing/under/uniform = mob.w_uniform
-			if(istype(uniform))
-				uniform.sensor_mode = NO_SENSORS
+			var/obj/item/clothing/under/C = H.w_uniform
+			if(istype(C))
+				C.sensor_mode = NO_SENSORS
 
 
-	var/obj/item/card/id/id_card = mob.get_idcard()
-	if(id_card)
-		if(mob.age)
-			id_card.registered_age = mob.age
+	var/obj/item/card/id/W = H.get_idcard()
+	if(W)
+		if(H.age)
+			W.registered_age = H.age
 		if(id_access_list)
-			if(!islist(id_card.access))
-				id_card.access = list()
-			id_card.access |= id_access_list
+			if(!islist(W.access))
+				W.access = list()
+			W.access |= id_access_list
 		if(id_job)
-			id_card.assignment = id_job
-		id_card.registered_name = mob.real_name
-		id_card.update_label()
+			W.assignment = id_job
+		W.registered_name = H.real_name
+		W.update_label()
 
 //Instant version - use when spawning corpses during runtime
 /obj/effect/mob_spawn/human/corpse

@@ -349,25 +349,6 @@
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/syringe(src)
 
-/obj/item/storage/box/vials
-	name = "box of hypospray vials"
-	desc = "A box full of hypospray vials."
-	illustration = "writing"
-
-/obj/item/storage/box/vials/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/glass/bottle/vial/small
-
-/obj/item/storage/box/vials_large
-	name = "box of large hypospray vials"
-	desc = "A box full of large hypospray vials."
-	illustration = "writing"
-
-/obj/item/storage/box/vials_large/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/glass/bottle/vial/large
-
-
 /obj/item/storage/box/syringes/variety
 	name = "syringe variety box"
 

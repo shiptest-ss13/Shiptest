@@ -651,14 +651,6 @@
 	build_path = /obj/item/storage/pill_bottle
 	category = list("initial", "Medical", "Medical Designs")
 
-/datum/design/hypospray_vial_tiny
-	name = "Hypospray Vial"
-	id = "vial_tiny"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/glass = 250)
-	build_path = /obj/item/reagent_containers/glass/bottle/vial/tiny
-	category = list("initial", "Medical", "Medical Designs")
-
 /datum/design/hypospray_vial
 	name = "Hypospray Vial"
 	id = "vial"
@@ -666,23 +658,6 @@
 	materials = list(/datum/material/plastic = 100, /datum/material/glass = 500)
 	build_path = /obj/item/reagent_containers/glass/bottle/vial/small
 	category = list("initial", "Medical", "Medical Designs")
-
-/datum/design/hypospray_vial_large
-	name = "Hypospray Vial"
-	id = "vial_large"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/silver = 200, /datum/material/glass = 1000)
-	build_path = /obj/item/reagent_containers/glass/bottle/vial/large
-	category = list("initial", "Medical", "Medical Designs")
-
-/datum/design/inhaler_caniser
-	name = "Inhaler Canister"
-	id = "inhaler_canister"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 200)
-	build_path = /obj/item/reagent_containers/inhaler_canister
-	category = list("initial", "Medical", "Medical Designs")
-
 
 /datum/design/chemical_bottle
 	name = "Bottle"

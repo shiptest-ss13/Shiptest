@@ -191,16 +191,6 @@
 	faction_locked = TRUE
 	faction_discount = 0
 
-/datum/supply_pack/tools/breachinghammer_hardliner
-	name = "Breaching Sledgehammer Crate"
-	desc = "Contains a Breaching Sledgehammer obtained through intelligence channels. Capable of wrecking hull and flesh with ease."
-	cost = 1500
-	contains = list(/obj/item/melee/sledgehammer/gorlex)
-	crate_name = "sledgehammer crate"
-	faction = /datum/faction/syndicate/hardliners
-	faction_locked = TRUE
-	faction_discount = 0
-
 /*
 		Liquid tanks
 */

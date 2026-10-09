@@ -224,8 +224,6 @@ EMPTY_GUN_HELPER(revolver/viper)
 	icon_state = "rattlesnake"
 	item_state = "rattlesnake"
 
-	manufacturer = MANUFACTURER_SCARBOROUGH
-
 	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m9mm_rattlesnake,

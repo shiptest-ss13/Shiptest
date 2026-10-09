@@ -38,7 +38,6 @@
 	desc = "A large hammer used by the Gorlex Marauder splinters. As powerful as a weapon as it is a shipbreaking and mining tool."
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	toolspeed = 0.5
-	attack_cooldown = HEAVY_WEAPON_CD
 	wall_decon_damage = MINERAL_WALL_INTEGRITY
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 

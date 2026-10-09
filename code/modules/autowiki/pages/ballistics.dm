@@ -42,7 +42,7 @@
 	var/list/labels = list()
 	for (var/size in sizes)
 		// only worth marking when there is something to tell it apart from
-		var/mark = bold_default && size == default_size
+		var/mark = bold_default && length(sizes) > 1 && size == default_size
 		labels += mark ? "'''[size]'''" : "[size]"
 
 	var/suffix = length(carried) ? stack(carried) : ""

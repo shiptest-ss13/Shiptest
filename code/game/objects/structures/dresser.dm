@@ -108,7 +108,7 @@
 	icon = 'icons/obj/structures/dresser.dmi'
 	icon_state = "walldresser"
 	density = FALSE
-	anchored = TRUE
+	anchored = FALSE
 
 	obj_flags = CAN_BE_HIT
 

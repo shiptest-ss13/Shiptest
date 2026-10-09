@@ -38,8 +38,6 @@
 	//shameless asset reuse
 	fire_select_icon_state_prefix = "lance_"
 
-	manufacturer = MANUFACTURER_CYBERSUN
-
 	bad_type = /obj/item/gun/ballistic/cs_gauss
 
 	valid_attachments = list()

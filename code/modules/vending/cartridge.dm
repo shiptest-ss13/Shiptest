@@ -2,6 +2,7 @@
 /obj/machinery/vending/cart
 	name = "\improper PTech"
 	desc = "Cartridges for PDAs."
+	product_slogans = "Carts to go!"
 	icon_state = "cart"
 	icon_deny = "cart-deny"
 	products = list(/obj/item/cartridge/medical = 10,
