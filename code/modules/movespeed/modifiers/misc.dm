@@ -6,4 +6,5 @@
 	blacklisted_movetypes = (FLYING|FLOATING)
 
 /datum/movespeed_modifier/chronograph
-	variable = TRUE
+	variable = FALSE
+	multiplicative_slowdown = -0.55

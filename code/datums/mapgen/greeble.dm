@@ -85,7 +85,8 @@
 			/obj/structure/vein/ice/classfour,
 			/obj/structure/vein/jungle/classfour,
 			/obj/structure/vein/moon/classfour,
-			/obj/effect/anomaly
+			/obj/effect/anomaly,
+			/obj/docking_port
 		))
 		types_cached = TRUE
 

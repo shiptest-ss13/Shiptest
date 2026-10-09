@@ -290,17 +290,27 @@
 	cost_min = 800
 	cost_max = 1600
 	stock_max = 8
-	availability_prob = 10
+	availability_prob = 15
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/consumable/elaborate_suicide
 	name = "Perfect Kiss"
 	desc = "I was standing around thinking about the weather and one of my buds came by. He was totally armed but who gives a fuck. We went out even though it was totally fine where I was. Turns out he got a whole shipment of these things. Flat out? They kill you. But they don't kill you for a few minutes. You just keep rewinding back to where you started."
-	item = /obj/item/reagent_containers/hypospray/medipen/chrono
+	item = /obj/item/reagent_containers/hypospray/medipen/chrono/fatal
 	cost_min = 1500
 	cost_max = 1500
 	stock_max = 1
 	availability_prob = 5
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/consumable/assault_pack
+	name = "Assault Pack"
+	desc = "We got a hold of these off some researchers headin back to the Perch.. Don't tell the Watcher bout it though. They won't believe you anyways. Especially without bodies. These injectors though? I haven't seen someone go through as much as someone on this did since Krititirawk dosed up on shoalmix at the club."
+	item = /obj/item/reagent_containers/hypospray/medipen/assault_pack
+	cost_min = 800
+	cost_max = 2400
+	stock_max = 1
+	availability_prob = 10
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/consumable/mammoth

@@ -4,6 +4,7 @@
 	icon_state = "accelerando"
 
 /datum/status_effect/accelerando
+	id = "accelerando"
 	alert_type = /atom/movable/screen/alert/status_effect/accelerando
 	tick_interval = 5
 	duration = STATUS_EFFECT_AUTO_TICK
@@ -15,14 +16,13 @@
 
 /datum/status_effect/accelerando/on_creation(mob/living/new_owner, _duration = 10 SECONDS)
 	duration = _duration
-
 	return ..()
 
 /datum/status_effect/accelerando/on_apply()
 	. = ..()
 	owner.add_filter("chronoblur", 1, motion_blur_filter(0, 0))
 	owner.overlay_fullscreen("anomaly", /atom/movable/screen/fullscreen/chronograph)
-	owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/chronograph, FALSE, 0)
+	owner.add_movespeed_modifier(/datum/movespeed_modifier/chronograph, FALSE, 0)
 	owner.visible_message(span_notice("[owner] is moving outside of local space/time!"), span_warning("The pondering nature of reality becomes obvious as you desynchronize from time!"))
 	//once i get actionspeed modifiers in this'll need to be converted. It works for now
 	if(ishuman(owner))
@@ -40,9 +40,7 @@
 		animate(owner.get_filter("chronoblur"), 5, x = rand(-2, 2), y = rand(-2, 2))
 		intensity = 0
 
-	owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/chronograph, FALSE, max(-2,-round(power/9, 1)))
-
-	//don't run the rest for nonhumans
+	//don't run the est for nonhumans
 	if(!ishuman(owner))
 		return
 	var/mob/living/carbon/human/beached = owner
@@ -93,7 +91,7 @@
 		owner.overlay_fullscreen("death", /atom/movable/screen/fullscreen/chronograph_death)
 		addtimer(CALLBACK(owner, TYPE_PROC_REF(/mob, clear_fullscreen), "death", 10 SECONDS), 3 SECONDS)
 		addtimer(CALLBACK(owner, TYPE_PROC_REF(/mob, dust)), 3 SECONDS)
-		do_sparks(12, TRUE, owner, /datum/effect_system/spark_spread/blue)
+		do_sparks(12, FALSE, owner, /datum/effect_system/spark_spread/blue)
 		return
 
 	if(intensity >= 2)
@@ -101,8 +99,9 @@
 		owner.confused += 20
 
 	if(intensity >= 4)
-		owner.adjust_disgust(75) //WHY IS EVERYTHING SO SLOW
+		owner.adjust_disgust(150)
 		owner.confused += 20
+		owner.Paralyze(10)
 
 /datum/status_effect/accelerando/get_examine_text()
 	if(fatal)

@@ -577,55 +577,16 @@
 	overdose_threshold = 16
 	metabolization_rate = 0.1
 	taste_description = "the edge of time"
-	//return here when things're metabolized or they die
-	var/turf/return_turf = null
+	autowiki_hidden = TRUE
 
-/datum/reagent/drug/chrono/on_mob_metabolize(mob/living/L)
-	..()
-	do_sparks(3, TRUE, L, /datum/effect_system/spark_spread/blue)
-	if(!ishuman(L))
-		return
-	var/mob/living/carbon/human/juiced = L
-	RegisterSignal(juiced, COMSIG_LIVING_DEATH, PROC_REF(rewind))
-	SSpoints_of_interest.make_point_of_interest(juiced)
-	notify_ghosts("[juiced] just ingested Tempo! Let's see how that works out for them.")
-	return_turf = get_turf(juiced)
-	if(!return_turf)
-		CRASH("Someone drank Tempo in nullspace")
+/datum/reagent/drug/chrono/expose_mob(mob/living/M, method, reac_volume, show_message, touch_protection)
+	. = ..()
+	//180 seconds right before you get the overdose
+	M.set_timed_status_effect(reac_volume*12 SECONDS, /datum/status_effect/rewind)
 
 /datum/reagent/drug/chrono/on_mob_end_metabolize(mob/living/L)
 	..()
-	rewind(L)
-	to_chat(L, span_boldwarning("Tempo has exited your system! You're in sync with the world again!"))
-
-/datum/reagent/drug/chrono/proc/rewind(mob/living/rewindee)
-	//already fired & not overdosing
-	if(!return_turf)
-		return
-	var/turf/where_are_we = get_turf(rewindee)
-	if(!where_are_we)
-		//we aren't
-		return
-
-	var/mob/living/carbon/human/emergency_homunculus = new /mob/living/carbon/human(where_are_we)
-	emergency_homunculus.forceMove(where_are_we)
-	rewindee.revive(TRUE, FALSE)
-
-	if(overdosed)
-		var/old_turf = return_turf
-		return_turf = get_turf(emergency_homunculus)
-		rewindee.forceMove(old_turf)
-	else
-		rewindee.forceMove(return_turf)
-
-	emergency_homunculus.dust()
-
-	if(overdosed)
-		return
-
-	rewindee.reagents.remove_reagent(/datum/reagent/drug/chrono, volume)
 
 /datum/reagent/drug/chrono/overdose_start(mob/living/metabolizer)
-	SEND_SIGNAL(metabolizer, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/overdose, name)
-	to_chat(metabolizer, custom_boxed_message("blue_box center", span_userdanger("You are going to die. \nThere is nothing you can about it.\nDo what needs to be done.\nPlay what needs to be played.\nYou have three minutes.")))
 	metabolizer.set_timed_status_effect(180 SECONDS, /datum/status_effect/accelerando/fatal)
+	metabolizer.apply_status_effect(/datum/status_effect/rewind/fatal, 180 SECONDS)
