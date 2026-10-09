@@ -15,6 +15,8 @@
 	var/projectile_type = null
 	/// Caliber string, used to determine if the casing can be loaded into specific guns or magazines.
 	var/caliber = null
+	/// Flags if it should be hidden in autowiki
+	var/autowiki_hidden = FALSE
 	/// Used for pacifism checks. Set to FALSE if the bullet is non-lethal and pacifists should be able to fire.
 	var/harmful = TRUE
 	/// String, used to determine the appearance of the bullet on the casing sprite if the casing is filled.
@@ -51,6 +53,9 @@
 	var/obj/item/ammo_box/magazine/stack_type = /obj/item/ammo_box/magazine/ammo_stack
 	///Maximum stack size of ammunition
 	var/stack_size = 15
+
+	///If the caliber is caseless or not
+	var/caseless = FALSE
 
 /obj/item/ammo_casing/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/pen))
@@ -190,9 +195,11 @@
 	. = ..()
 
 /obj/item/ammo_casing/proc/on_eject(atom/shooter)
-	forceMove(drop_location()) //Eject casing onto ground.
+	if(caseless) //early return for caseless rounds
+		return
 	if(QDELETED(src))
 		return
+	forceMove(drop_location()) //Eject casing onto ground.
 	pixel_x = rand(-4, 4)
 	pixel_y = rand(-4, 4)
 	pixel_z = 8 //bounce time

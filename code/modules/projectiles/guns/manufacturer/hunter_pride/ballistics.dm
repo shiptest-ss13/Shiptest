@@ -13,7 +13,6 @@
 	icon_state = "montagne"
 	item_state = "hp_generic"
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	spread_unwielded = 8
 	recoil = 0
 
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
@@ -47,7 +46,7 @@ EMPTY_GUN_HELPER(revolver/montagne)
 	gate_loaded = TRUE
 	fire_delay = 0.6 SECONDS
 	wield_slowdown = HEAVY_REVOLVER_SLOWDOWN
-	spread_unwielded = 20
+	spread_unwielded = 6
 	spread = 6
 	recoil = 2
 	recoil_unwielded = 4
@@ -113,7 +112,6 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 	unique_reskin_changes_inhand = TRUE
 
 	recoil = 0
-	spread_unwielded = 8
 
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
 	. = ..()
@@ -661,6 +659,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 
 //Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
+	autowiki_hidden = TRUE //admin only?
 	name = "HP Huntsman"
 	desc = "A comically huge double-barreled rifle replete with brass inlays depicting flames and naturalistic scenes, clearly meant for the nastiest monsters the Frontier has to offer. If you want an intact trophy, don't aim for the head. Chambered in two-bore."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
@@ -806,7 +805,7 @@ EMPTY_GUN_HELPER(rifle/illestren/factory)
 	cartridge_wording = "bullet"
 	can_be_sawn_off = TRUE
 
-	wield_slowdown = RIFLE_SLOWDOWN
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
 	wield_delay = 0.65 SECONDS
 
 	unique_attachments = list(
@@ -946,6 +945,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/winchester/absolution,
 	)
+	//had to add this because the absolution went off the flaming arrowbasetype and I don't intend to buff the abs
+	wield_slowdown = RIFLE_SLOWDOWN
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -1133,6 +1134,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 //pre sawn off beacon
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	name = "HP Beacon"
 	sawn_desc= "A break-action pistol chambered in .45-70. A bit difficult to aim."
 	sawn_off = TRUE
@@ -1275,7 +1277,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 	fire_delay = 0.25 SECONDS
 
-	spread = 3
+	spread = 1
 	spread_unwielded = 20
 
 	recoil = 1

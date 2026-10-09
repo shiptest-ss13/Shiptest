@@ -72,6 +72,10 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/process_flags = ORGANIC
 	///How good of an accelerant is this reagent
 	var/accelerant_quality = 0
+	///If we don't show this on the autowiki reagents list, for things like Adminordrazine
+	var/autowiki_hidden = FALSE
+	///Path of the abstract parent type, to avoid doing stuff for things like /datum/reagent/drug
+	var/bad_type = /datum/reagent
 
 	///The section of the autowiki chem table this reagent will be under
 	var/category = "Misc"

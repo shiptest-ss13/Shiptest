@@ -24,6 +24,7 @@
 /obj/machinery/defibrillator_mount/loaded/Initialize() //loaded subtype for mapping use
 	. = ..()
 	defib = new/obj/item/defibrillator/loaded(src)
+	RegisterSignal(defib, COMSIG_ATOM_UPDATE_APPEARANCE, PROC_REF(defib_update_appearance))
 
 /obj/machinery/defibrillator_mount/Destroy()
 	if(defib)

@@ -30,7 +30,7 @@
 	. = ..()
 	if(!labelled)
 		if(blood_type)
-			name = "blood pack[blood_type ? " - [unique_blood ? blood_type : blood_type.name]" : null]"
+			name = "blood pack[blood_type ? " - [unique_blood ? blood_type : blood_type]" : null]"
 		else
 			name = "blood pack"
 

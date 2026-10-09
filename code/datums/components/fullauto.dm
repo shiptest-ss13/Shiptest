@@ -59,6 +59,10 @@
 /datum/component/automatic_fire/proc/autofire_on(client/usercli)
 	SIGNAL_HANDLER
 
+	if(isgun(parent))
+		var/obj/item/gun/stinky = parent
+		if(!stinky.actually_shoots)
+			return // NO
 	if(autofire_stat != AUTOFIRE_STAT_IDLE)
 		return
 	autofire_stat = AUTOFIRE_STAT_ALERT

@@ -1189,7 +1189,9 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "il" = (
 /obj/effect/turf_decal/borderfloor/full,
-/mob/living/simple_animal/hostile/automated/walkmine/makosso,
+/mob/living/simple_animal/hostile/automated/walkmine/makosso{
+	search_alarms = 1
+	},
 /obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/floor/plasteel/patterned/grid/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/warehouse_1)
@@ -1508,7 +1510,9 @@
 /turf/open/floor/plasteel/jungleplanet/interior,
 /area/ruin/jungle/depot/canteen)
 "ki" = (
-/mob/living/simple_animal/hostile/automated/bipedal/makosso,
+/mob/living/simple_animal/hostile/automated/bipedal/makosso{
+	search_alarms = 1
+	},
 /obj/effect/turf_decal/rechargefloor,
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3748,8 +3752,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "depot-robo";
-	close_exception = 1
+	id = "depot-robo"
 	},
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/engine/hull/reinforced/jungleplanet/interior,
@@ -4941,14 +4944,15 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/structure/hazard/floor/burglar_alarm{
-	id = "depot_alarms"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/hazard/floor/burglar_alarm{
+	id = "depot_alarms";
+	door_id = "depot-robo"
+	},
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "IW" = (
@@ -5138,8 +5142,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "depot-robo";
-	close_exception = 1
+	id = "depot-robo"
 	},
 /turf/open/floor/engine/hull/reinforced/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
@@ -6127,6 +6130,10 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
+/obj/structure/hazard/floor/burglar_alarm{
+	id = "depot_alarms";
+	door_id = "depot-robo"
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
@@ -6607,7 +6614,8 @@
 	dir = 1
 	},
 /obj/structure/hazard/floor/burglar_alarm{
-	id = "depot_alarms"
+	id = "depot_alarms";
+	door_id = "depot-robo"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -7120,10 +7128,11 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 10
 	},
-/obj/structure/hazard/floor/burglar_alarm{
-	id = "depot_alarms"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/hazard/floor/burglar_alarm{
+	id = "depot_alarms";
+	door_id = "depot-robo"
+	},
 /turf/open/floor/plasteel/dark/jungleplanet/interior,
 /area/ruin/jungle/depot/offices)
 "XT" = (

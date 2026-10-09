@@ -53,7 +53,7 @@
 
 
 	spread = 6 //becuase its compact, spread is slightly worse
-	spread_unwielded = 9
+	spread_unwielded = 6
 	recoil_unwielded = 2
 
 NO_MAG_GUN_HELPER(automatic/pistol/ringneck)
@@ -68,7 +68,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck)
 	w_class = WEIGHT_CLASS_NORMAL
 
 	spread = 5 //this one is normal sized, thus in theory its better, in theory at least
-	spread_unwielded = 7
+	spread_unwielded = 5
 	recoil_unwielded = 3
 
 NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
@@ -76,12 +76,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
 
 /obj/item/ammo_box/magazine/m10mm_ringneck
 	name = "Ringneck pistol magazine (10mm)"
-	desc = "An 8-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
+	desc = "An 10-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "ringneck_mag-1"
 	base_icon_state = "ringneck_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
-	max_ammo = 8
+	max_ammo = 10
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m10mm_ringneck/empty
@@ -184,7 +184,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	fire_delay = 0.35 SECONDS
 
 	spread = 3
-	spread_unwielded = 8
+	spread_unwielded = 3
 	recoil = 1
 	recoil_unwielded = 2
 
@@ -223,6 +223,8 @@ EMPTY_GUN_HELPER(revolver/viper)
 
 	icon_state = "rattlesnake"
 	item_state = "rattlesnake"
+
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	allowed_ammo_types = list(
@@ -299,7 +301,6 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	wear_rate = 1.5
 
 	recoil = 0.5
-	recoil_unwielded = 3
 	burst_size = 2
 	burst_delay = 0.07 SECONDS
 	fire_delay = 0.1 SECONDS
@@ -345,6 +346,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 
 	icon_state = "himehabu"
 	item_state = "sa_generic"
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
@@ -391,7 +393,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	spread = -2
 	recoil = -2
 	recoil_unwielded = -2
-	spread_unwielded = 0
+	spread_unwielded = -2
 	wield_slowdown = 0
 
 NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
@@ -876,6 +878,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 
 
 /obj/item/gun/ballistic/automatic/assault/hydra/lmg/casket_mag
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/casket
 
 /obj/item/gun/ballistic/automatic/assault/hydra/dmr
@@ -975,7 +978,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m12g_bulldog,
 	)
-	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
+	fire_delay = 0.3 SECONDS
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	show_magazine_on_sprite = TRUE
 //	empty_indicator = TRUE
@@ -1055,6 +1058,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	)
 
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/drum
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog/drum
 
 NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)

@@ -16,6 +16,14 @@
 #define COMBAT_SELF_SPRAY 0
 #define COMBAT_SELF_INJECT 0
 
+#define SPENT_PEN_HELPER(pen_path) \
+	/obj/item/reagent_containers/hypospray/##pen_path/empty { \
+		list_reagents = list(); \
+	/obj/item/reagent_containers/hypospray/##pen_path/empty/Initialize(mapload, vol) \
+		. = ..(); \
+		name = "spent [name]"; \
+	}
+
 /obj/item/reagent_containers/hypospray
 	name = "hypospray"
 	desc = "The hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
@@ -220,7 +228,7 @@
 /obj/item/reagent_containers/hypospray/medipen/oculine
 	name = "oculine autoinjector"
 	desc = "An autoinjector designed to promote the repair of the cornea and the retina after damage."
-	list_reagents = list(/datum/reagent/medicine/inacusiate = 10)
+	list_reagents = list(/datum/reagent/medicine/oculine = 10)
 	custom_price = 100
 
 /obj/item/reagent_containers/hypospray/medipen/inacusiate
@@ -395,7 +403,7 @@
 	desc = "An epinephrine medipen with extra coagulant and antibiotics to help stabilize bad cuts and burns."
 	volume = 15
 	amount_per_transfer_from_this = 15
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 12, /datum/reagent/medicine/chitosan = 2.5, /datum/reagent/medicine/spaceacillin = 0.5)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 12, /datum/reagent/medicine/chitosan = 2.5, /datum/reagent/medicine/antibiotic = 0.5)
 
 /obj/item/reagent_containers/hypospray/medipen/blood_loss
 	name = "hypovolemic-response autoinjector"
@@ -457,6 +465,9 @@
 	spray_wait = DELUXE_WAIT_SPRAY
 	spray_self = DELUXE_SELF_SPRAY
 	inject_self = DELUXE_SELF_INJECT
+
+/obj/item/hypospray/mkii/mkiii/empty
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/large
 
 /obj/item/hypospray/mkii/mkiii/combat
 	name = "combat hypospray mk.II"
