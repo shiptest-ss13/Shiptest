@@ -57,13 +57,11 @@
 
 	///Steals the armor datum from this type of armor
 	var/obj/item/clothing/armor_base
-	///The kind of blood the simplemob bleeds
+	///The kind of blood the simplemob bleeds. Can be used to override mob_species blood.
 	var/datum/blood_type/blood_type
-	///Name of a blood type to bleed instead of mob_species' one, like "Coolant" for IPC shells
-	var/forced_blood_type
-	///How long the mob keeps leaving drips after it was last cut or shot
+	///How long the mob keeps leaving drips after it was damaged
 	var/bleeding_duration = 15 SECONDS
-	///Cooldown for how long the mob keeps leaving drips after it was last cut or shot
+	///Cooldown for how long the mob keeps leaving drips after it was damaged
 	COOLDOWN_DECLARE(bleeding_cooldown)
 
 /mob/living/simple_animal/hostile/human/Initialize(mapload)
@@ -87,10 +85,13 @@
 			var/obj/item/gun/our_gun = l_hand
 			spread = our_gun.spread
 
-	// bleed what our species would, like coolant for synthetics, so blood we leave is the right colour
-	var/datum/species/species_path = mob_species
-	var/our_blood_type = forced_blood_type || (ispath(species_path) ? initial(species_path.exotic_bloodtype) : null)
-	blood_type = our_blood_type ? get_blood_type(our_blood_type) : random_blood_type()
+	var/blood_type_name
+	if(ispath(blood_type, /datum/blood_type))
+		blood_type_name = initial(blood_type.name)
+	else if(ispath(mob_species, /datum/species))
+		var/datum/species/species_path = mob_species
+		blood_type_name = initial(species_path.exotic_bloodtype)
+	blood_type = get_blood_type(blood_type_name) || random_blood_type()
 
 	if(ispath(armor_base, /obj/item/clothing))
 		//sigh. if only we could get the initial() value of list vars
