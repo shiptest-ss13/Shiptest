@@ -61,9 +61,9 @@
 	var/datum/blood_type/blood_type
 	///Name of a blood type to bleed instead of mob_species' one, like "Coolant" for IPC shells
 	var/forced_blood_type
-	///How long the mob keeps leaving drips after its last bleeding wound
+	///How long the mob keeps leaving drips after it was last cut or shot
 	var/bleeding_duration = 15 SECONDS
-	///Cooldown for how long the mob keeps leaving drips after its last bleeding wound
+	///Cooldown for how long the mob keeps leaving drips after it was last cut or shot
 	COOLDOWN_DECLARE(bleeding_cooldown)
 
 /mob/living/simple_animal/hostile/human/Initialize(mapload)
@@ -111,55 +111,30 @@
 /mob/living/simple_animal/hostile/human/proc/is_bleeding()
 	return blood_volume && stat != DEAD && health < maxHealth * 0.5 && !COOLDOWN_FINISHED(src, bleeding_cooldown)
 
-// Rolls for bleeding the way a carbon's wound roll does, see /obj/item/bodypart/proc/check_wounding(). No real wounds, so it's much cheaper
-/mob/living/simple_animal/hostile/human/proc/roll_for_bleeding(damage, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, armor_flag = MELEE, armour_penetration = 0, attack_direction)
+/mob/living/simple_animal/hostile/human/proc/roll_for_bleeding(damage, wound_bonus = 0, sharpness = SHARP_NONE, armor_flag = MELEE, armour_penetration = 0, attack_direction)
 	if(!blood_volume || !sharpness)
 		return
 	var/armor_value = run_armor_check(null, armor_flag, armour_penetration = armour_penetration, silent = TRUE)
-	var/wound_damage = damage * (100 - armor_value) / 100
-	if(wound_damage < WOUND_MINIMUM_DAMAGE)
+	var/damage_taken = damage * (100 - armor_value) / 100
+	if(damage_taken < WOUND_MINIMUM_DAMAGE)
 		return
-	var/wound_armor = get_armor_rating(WOUND)
-	var/injury_roll = rand(1, round(min(wound_damage, WOUND_MAX_CONSIDERED_DAMAGE)) ** WOUND_DAMAGE_EXPONENT) + wound_bonus - wound_armor
-	if(!wound_armor)
-		injury_roll += bare_wound_bonus
-	// the bleeding wounds a player would get from this, most severe first, as list(wound type = severity)
-	var/static/list/slash_wounds = list(
-		/datum/wound/slash/flesh/critical = WOUND_SEVERITY_CRITICAL,
-		/datum/wound/slash/flesh/severe = WOUND_SEVERITY_SEVERE,
-		/datum/wound/slash/flesh/moderate = WOUND_SEVERITY_MODERATE,
-	)
-	var/static/list/pierce_wounds = list(
-		/datum/wound/pierce/bleed/critical = WOUND_SEVERITY_CRITICAL,
-		/datum/wound/pierce/bleed/severe = WOUND_SEVERITY_SEVERE,
-		/datum/wound/pierce/bleed/moderate = WOUND_SEVERITY_MODERATE,
-	)
-	var/list/possible_wounds
-	switch(sharpness)
-		if(SHARP_EDGED)
-			possible_wounds = slash_wounds
-		if(SHARP_POINTY)
-			possible_wounds = pierce_wounds
-	for(var/wound_type in possible_wounds)
-		var/datum/wound_pregen_data/wound_data = SSwounds.pregen_data[wound_type]
-		if(wound_data && injury_roll >= wound_data.threshold_minimum)
-			spray_blood(attack_direction || pick(GLOB.alldirs), possible_wounds[wound_type])
-			COOLDOWN_START(src, bleeding_cooldown, bleeding_duration)
-			return
+	COOLDOWN_START(src, bleeding_cooldown, bleeding_duration)
+	if(prob((damage_taken ** WOUND_DAMAGE_EXPONENT) + wound_bonus))
+		spray_blood(attack_direction || pick(GLOB.alldirs), clamp(round(damage_taken / 10), 1, 3))
 
 /mob/living/simple_animal/hostile/human/attack_animal(mob/living/simple_animal/attacker)
 	. = ..()
 	if(!. || attacker.melee_damage_type != BRUTE)
 		return
 	var/damage = (attacker.melee_damage_lower + attacker.melee_damage_upper) / 2
-	roll_for_bleeding(damage, attacker.wound_bonus, attacker.bare_wound_bonus, attacker.sharpness, MELEE, attacker.armour_penetration, get_dir(attacker, src))
+	roll_for_bleeding(damage, attacker.wound_bonus, attacker.sharpness, MELEE, attacker.armour_penetration, get_dir(attacker, src))
 	if(prob(33)) // same prob as in /mob/living/attacked_by()
 		add_splatter_floor(get_turf(src))
 
 /mob/living/simple_animal/hostile/human/attacked_by(obj/item/attacking_item, mob/living/user)
 	. = ..()
 	if(attacking_item.force >= force_threshold && attacking_item.damtype == BRUTE)
-		roll_for_bleeding(attacking_item.force, attacking_item.wound_bonus, attacking_item.bare_wound_bonus, attacking_item.get_sharpness(), MELEE, attacking_item.armour_penetration, get_dir(user, src))
+		roll_for_bleeding(attacking_item.force, attacking_item.wound_bonus, attacking_item.get_sharpness(), MELEE, attacking_item.armour_penetration, get_dir(user, src))
 
 /mob/living/simple_animal/hostile/human/get_blood_dna_list()
 	if(get_blood_id() != /datum/reagent/blood)
@@ -243,7 +218,7 @@
 /mob/living/simple_animal/hostile/human/bullet_act(obj/projectile/projectile)
 	shake_animation(projectile.damage)
 	if(projectile.damage_type == BRUTE)
-		roll_for_bleeding(projectile.damage, projectile.wound_bonus, projectile.bare_wound_bonus, projectile.sharpness, projectile.flag, projectile.armour_penetration, get_dir(projectile.starting, src))
+		roll_for_bleeding(projectile.damage, projectile.wound_bonus, projectile.sharpness, projectile.flag, projectile.armour_penetration, get_dir(projectile.starting, src))
 	return ..()
 
 /mob/living/simple_animal/hostile/human/proc/spray_blood(splatter_direction, splatter_strength = 3)
