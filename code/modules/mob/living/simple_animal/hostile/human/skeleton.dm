@@ -6,6 +6,7 @@
 	icon_dead = "skeleton"
 	gender = NEUTER
 	mob_biotypes = MOB_UNDEAD|MOB_HUMANOID
+	blood_volume = 0 // bones dont bleed lmao
 	speak_emote = list("rattles")
 	emote_see = list("rattles")
 	maxHealth = 40

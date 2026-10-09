@@ -73,6 +73,7 @@
 	icon = 'icons/mob/simple_human.dmi'
 	icon_state = "faceless"
 	icon_living = "faceless"
+	forced_blood_type = "Coolant" // an IPC shell, so it leaks coolant like IPCs do
 	faction = list(FACTION_HOSTILE)
 	speak_chance = 30
 	stat_attack = UNCONSCIOUS
