@@ -445,6 +445,14 @@
 	gun_type = /obj/item/gun/energy/clover/faveleira
 	mag_type = /obj/item/stock_parts/cell/gun
 
+/obj/item/storage/guncase/ecm20
+	gun_type = /obj/item/gun/energy/clover/maguey/clip
+	mag_type = /obj/item/stock_parts/cell/gun
+
+/obj/item/storage/guncase/pl20
+	gun_type = /obj/item/gun/energy/clover/maguey
+	mag_type = /obj/item/stock_parts/cell/gun
+
 /* Inteq */
 
 /obj/item/storage/guncase/skm_inteq

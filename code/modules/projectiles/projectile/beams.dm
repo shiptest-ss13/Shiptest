@@ -111,6 +111,11 @@
 	damage = 40
 	speed = 1
 
+/obj/projectile/beam/laser/eoehoma/heavy/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(get_turf(loc),0,0,2,flame_range = 3, light_dam = 20, light_item_dam = 0)
+	return BULLET_ACT_HIT
+
 /obj/projectile/beam/laser/clover
 	icon_state = "clover_pulse_light"
 	damage = 20
@@ -126,13 +131,25 @@
 
 /obj/projectile/beam/laser/clover/magnum
 	icon_state = "clover_pulse"
-	damage = 25
-	armour_penetration = 20
+	damage = 35
+	armour_penetration = 10
 
 /obj/projectile/beam/laser/clover/highpower
 	icon_state = "clover_pulse"
-	damage = 35
+	damage = 25
 	armour_penetration = 10
+
+/obj/projectile/beam/laser/clover/overcharge
+	icon_state = "clover_pulse_heavy"
+	damage = 40
+	armour_penetration = 0
+	speed = 0.6
+
+/obj/projectile/beam/laser/clover/overcharge/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(get_turf(loc),0,0,2,flame_range = 2, light_dam = 10, light_item_dam = 0)
+	return BULLET_ACT_HIT
+
 
 /obj/projectile/beam/laser/clover/shotgun
 	damage = 15
@@ -154,11 +171,6 @@
 		accuracy_mod += 0.3
 	if(damage < 0 && stamina < 0)
 		qdel(src)
-
-/obj/projectile/beam/laser/eoehoma/heavy/on_hit(atom/target, blocked = FALSE)
-	..()
-	explosion(get_turf(loc),0,0,2,flame_range = 3, light_dam = 20, light_item_dam = 0)
-	return BULLET_ACT_HIT
 
 /obj/projectile/beam/laser/assault
 	icon_state = "heavylaser"

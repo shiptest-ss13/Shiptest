@@ -312,6 +312,16 @@
 	stock_max = 2
 	availability_prob = 20
 
+/datum/blackmarket_item/weapon/guncase/maguey
+	name = "ECM-20 Maguey"
+	desc = "No fuckin' clue how someone got their hands on one of these. An original production Clover Photonics ECM-20 Electroplasma Assault Rifle, with the overcharge function still intact. They only made a couple hundred of these before CLIP said no thanks. Uses Eoehoma cells - I reccomend stocking up."
+	item = /obj/item/gun/energy/clover/maguey/clip
+
+	cost_min = 4500
+	cost_max = 5500
+	stock_max = 2
+	availability_prob = 20
+
 /datum/blackmarket_item/weapon/guncase/cm23
 	name = "CM-23 pistol"
 	desc = "The service pistol of the Confederated League. Chambered in 10mm and fresh off a crashed clipper. We made sure to scratch the ID off this time."

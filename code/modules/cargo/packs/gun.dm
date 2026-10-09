@@ -480,6 +480,15 @@
 	faction_discount = 10
 	faction_locked = FALSE
 
+/datum/supply_pack/gun/energy/maguey
+	name = "PL-20 'Maguey' Energy Repeater"
+	desc = "Contains a single PL-20 Energy Repeater, a powerful pulsed-plasma automatic rifle, manufactured by Clover Photonics. Uses Eoehoma cells."
+	cost = 5000
+	contains = list(/obj/item/storage/guncase/pl20)
+	faction = /datum/faction/clip
+	faction_discount = 10
+	faction_locked = FALSE
+
 /*
 		Shotguns
 */

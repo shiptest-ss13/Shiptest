@@ -133,10 +133,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/smg, /obj/item/ammo_casing/energy/disabler/clover/smg)
 
 	modifystate = TRUE
-
 	manufacturer = MANUFACTURER_MINUTEMAN_LASER
-
-	modifystate = FALSE
 	weapon_weight = WEAPON_MEDIUM
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
@@ -268,6 +265,7 @@
 	recoil_unwielded = 3
 
 	w_class = WEIGHT_CLASS_BULKY
+	modifystate = FALSE
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/shotgun)
@@ -290,3 +288,34 @@
 	item_state = "ecm25"
 	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/shotgun, /obj/item/ammo_casing/energy/laser/clover/beam)
+
+/obj/item/gun/energy/clover/maguey
+	name = "PL-20 \"Maguey\""
+	desc = "A midweight energy assault rifle, with a focus on reliability and low cost, compared to its contemporaries. The firearm is classified as a 'Energy Repeater' to get around automatic weapon sales restrictions in most jurisdictions."
+	icon_state = "pl20"
+	item_state = "pl20"
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun
+
+	wield_delay = 0.7 SECONDS
+	wield_slowdown = LASER_RIFLE_SLOWDOWN
+
+	fire_delay = 0.16 SECONDS
+	spread = 2
+	spread_unwielded = 20
+
+	recoil = 0.5
+	recoil_unwielded = 2
+
+	w_class = WEIGHT_CLASS_BULKY
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/highpower)
+
+/obj/item/gun/energy/clover/maguey/clip
+	name = "ECM-20 \"Maguey\""
+	desc = "A rare, original production-model ECM-20, produced in small numbers for trials and examination as a potential replacement to CLIP's current service rifle. The ECM-20 boasts accurate electroplasma fire, a high recycling rate, and the ability to fire an overcharged explosive burst mimicking a grenade launcher."
+	icon_state = "ecm20"
+	item_state = "ecm20"
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/highpower, /obj/item/ammo_casing/energy/laser/clover/overcharge)
