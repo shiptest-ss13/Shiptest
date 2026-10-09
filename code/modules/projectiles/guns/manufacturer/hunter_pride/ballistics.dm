@@ -764,13 +764,13 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 16,
+			"x" = 11,
 			"y" = 22,
 		),
 		)
 
 	w_class = WEIGHT_CLASS_BULKY
-	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN
+	wield_slowdown = SMG_SLOWDOWN
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
 	spread = 6
 	force = 15
