@@ -591,6 +591,14 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/cinder
+	name = "Cinder Shotgun Crate"
+	desc = "Contains an unwieldy, and large four-gauge shotgun produced by Hunter's Pride. Holds a shotgun tube of four rounds."
+	cost = 4000
+	contains =list(/obj/item/storage/guncase/cinder/factory)
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
 /*
 		SMGs
 */

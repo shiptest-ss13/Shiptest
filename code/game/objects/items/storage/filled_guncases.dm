@@ -42,6 +42,12 @@
 /obj/item/storage/guncase/brimstone
 	gun_type = /obj/item/gun/ballistic/shotgun/brimstone
 
+/obj/item/storage/guncase/cinder/factory
+	gun_type = /obj/item/gun/ballistic/rifle/cinder/factory
+
+/obj/item/storage/guncase/cinder
+	gun_type = /obj/item/gun/ballistic/rifle/cinder
+
 /obj/item/storage/guncase/illestren
 	gun_type = /obj/item/gun/ballistic/rifle/illestren
 	mag_type = /obj/item/ammo_box/magazine/illestren_a850r
