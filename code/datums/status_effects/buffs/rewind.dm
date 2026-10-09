@@ -73,7 +73,7 @@
 	owner.play_screen_text(quip, /atom/movable/screen/text/screen_text/short)
 	owner.revive(TRUE, FALSE)
 
-	log_combat(user, null, "was revived by Tempo")
+	log_combat(owner, null, "was revived by Tempo")
 
 	owner.Paralyze(5, TRUE)
 
