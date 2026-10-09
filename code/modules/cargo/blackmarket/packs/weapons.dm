@@ -632,7 +632,7 @@
 	cost_min = 3500
 	cost_max = 5000
 	stock = 1
-	availability_prob = 100
+	availability_prob = 20
 /// mecha equipment
 
 /datum/blackmarket_item/weapon/mecha_syringe_gun

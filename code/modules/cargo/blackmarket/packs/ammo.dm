@@ -441,7 +441,7 @@
 	cost_max = 1500
 	stock_min = 2
 	stock_max = 4
-	availability_prob = 100
+	availability_prob = 40
 
 /datum/blackmarket_item/ammo/a4gteargas
 	name = "4-Gauge Teargas Shells"
@@ -450,4 +450,4 @@
 	cost_max = 1500
 	stock_min = 1
 	stock_max = 3
-	availability_prob = 100
+	availability_prob = 30
