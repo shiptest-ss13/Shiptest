@@ -34,7 +34,7 @@
 	ammo_type = /obj/item/ammo_casing/c10mm/ap
 
 /obj/item/storage/box/ammo/c10mm_ap
-	name = "box of AP 10mm ammo"
+	name = "box of armor-piercing 10mm ammo"
 	desc = "A box of 10mm armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "10mmbox-ap"
 
@@ -48,8 +48,8 @@
 	ammo_type = /obj/item/ammo_casing/c10mm/hp
 
 /obj/item/storage/box/ammo/c10mm_hp
-	name = "box of HP 10mm ammo"
-	desc = "A box of 10mm hollow point ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	name = "box of hollow-point 10mm ammo"
+	desc = "A box of 10mm hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "10mmbox-hp"
 
 /obj/item/storage/box/ammo/c10mm_hp/PopulateContents()
@@ -107,7 +107,7 @@
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
 
 /obj/item/storage/box/ammo/c9mm_ap
-	name = "box of AP 9mm ammo"
+	name = "box of armor-piercing 9mm ammo"
 	desc = "A box of 9mm armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "9mmbox-ap"
 
@@ -121,8 +121,8 @@
 	ammo_type = /obj/item/ammo_casing/c9mm/hp
 
 /obj/item/storage/box/ammo/c9mm_hp
-	name = "box of HP 9mm ammo"
-	desc = "A box of 9mm hollow point ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	name = "box of hollow-point 9mm ammo"
+	desc = "A box of 9mm hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "9mmbox-hp"
 
 /obj/item/storage/box/ammo/c9mm_hp/PopulateContents()
@@ -252,8 +252,8 @@
 	max_ammo = 25
 
 /obj/item/storage/box/ammo/c22lr/ap
-	name = "box of .22 LR AP ammo"
-	desc = "A box of standard .22 LR AP ammo, designed to penetrate through armor at the cost of total damage."
+	name = "box of armor-piercing .22 LR  ammo"
+	desc = "A box of .22 LR armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "22lrbox-ap"
 
 /obj/item/storage/box/ammo/c22lr/ap/PopulateContents()
@@ -266,8 +266,8 @@
 	max_ammo = 25
 
 /obj/item/storage/box/ammo/c22lr/hp
-	name = "box of .22 LR HP ammo"
-	desc = "A box of standard .22 LR HP ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	name = "box of hollow-point .22 LR ammo"
+	desc = "A box of .22 LR hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "22lrbox-hp"
 
 /obj/item/storage/box/ammo/c22lr/hp/PopulateContents()
@@ -281,7 +281,7 @@
 
 /obj/item/storage/box/ammo/c22lr/rubber
 	name = "box of .22 LR rubber ammo"
-	desc = "A box of standard .22 LR rubber ammo."
+	desc = "A box of .22 LR rubber ammo."
 	icon_state = "22lrbox-rubbershot"
 
 /obj/item/storage/box/ammo/c22lr/rubber/PopulateContents()
@@ -309,7 +309,7 @@
 
 /obj/item/storage/box/ammo/a357_match
 	name = "box of match .357 ammo"
-	desc = "A box of match .357 ammo."
+	desc = "A box of match-grade .357 ammo."
 	icon_state = "357box-match"
 
 /obj/item/storage/box/ammo/a357_match/PopulateContents()
@@ -321,8 +321,8 @@
 	ammo_type = /obj/item/ammo_casing/a357/hp
 
 /obj/item/storage/box/ammo/a357_hp
-	name = "box of HP .357 ammo"
-	desc = "A box of hollow point .357 ammo."
+	name = "box of hollow-point .357 ammo"
+	desc = "A box of .357 hollow-point ammo."
 	icon_state = "357box-hp"
 
 /obj/item/storage/box/ammo/a357_hp/PopulateContents()
@@ -363,7 +363,7 @@
 	ammo_type = /obj/item/ammo_casing/a4570/hp
 
 /obj/item/storage/box/ammo/a4570_hp
-	name = "box of HP .45-70 ammo"
+	name = "box of hollow-point .45-70 ammo"
 	desc = "A 12-round ammo box for .45-70 revolvers. These hollow point rounds do legendary damage against soft targets, but are nearly ineffective against armored ones."
 	icon_state = "4570-hp"
 
@@ -486,8 +486,8 @@
 	ammo_type = /obj/item/ammo_casing/a44roum/hp
 
 /obj/item/storage/box/ammo/a44roum_hp
-	name = "box of HP .44 roumain ammo"
-	desc = "A box of .44 roumain hollowpoint ammo, designed to disable targets without causing serious damage."
+	name = "box of hollow-point .44 roumain ammo"
+	desc = "A box of .44 roumain hollow-point ammo, designed to disable targets without causing serious damage."
 	icon_state = "a44roum-hp"
 
 /obj/item/storage/box/ammo/a44roum_hp/PopulateContents()

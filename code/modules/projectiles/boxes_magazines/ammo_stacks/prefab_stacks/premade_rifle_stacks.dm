@@ -5,7 +5,7 @@
 	max_ammo = 10
 
 /obj/item/storage/box/ammo/a8_50r
-	name = "box of 8x50mm ammo"
+	name = "box of 8x50mmR ammo"
 	desc = "A box of standard 8x50mm ammo."
 	icon_state = "8x50mmbox"
 
@@ -18,8 +18,8 @@
 	ammo_type = /obj/item/ammo_casing/a8_50r/hp
 
 /obj/item/storage/box/ammo/a8_50r/hp
-	name = "box of HP 8x50mm ammo"
-	desc = "A box of hollow point 8x50mm ammo, designed to cause massive damage at the cost of armor penetration."
+	name = "box of hollow-point 8x50mmR ammo"
+	desc = "A box of hollow-point 8x50mm ammo, designed to cause massive damage at the cost of armor penetration."
 	icon_state = "8x50mmbox-hp"
 
 /obj/item/storage/box/ammo/a8_50r/hp/PopulateContents()
@@ -32,8 +32,8 @@
 	max_ammo = 10
 
 /obj/item/storage/box/ammo/a8_50r/match
-	name = "box of 8x50mm match ammo"
-	desc = "A box of standard 8x50mm ammo."
+	name = "box of 8x50mmR match ammo"
+	desc = "A box of match-grade 8x50mmR ammo."
 	icon_state = "8x50mmbox-match"
 
 /obj/item/storage/box/ammo/a8_50r/match/PopulateContents()
@@ -46,8 +46,8 @@
 	max_ammo = 10
 
 /obj/item/storage/box/ammo/a8_50r/trac
-	name = "box of 8x50mm trac ammo"
-	desc = "A box of 8x50mm trackers."
+	name = "box of 8x50mmR trac ammo"
+	desc = "A box of 8x50mmR trackers."
 	icon_state = "8x50mmbox-trac"
 
 /obj/item/storage/box/ammo/a8_50r/trac/PopulateContents()
@@ -76,8 +76,8 @@
 	max_ammo = 15
 
 /obj/item/storage/box/ammo/a556_42/hp
-	name = "box of 5.56x42mm CLIP HP ammo"
-	desc = "A box of standard 5.56x42mm CLIP HP ammo."
+	name = "box of hollow-point 5.56x42mm CLIP ammo"
+	desc = "A box of 5.56x42mm CLIP hollow-point ammo."
 	icon_state = "a556_42box_big-hp"
 
 /obj/item/storage/box/ammo/a556_42/hp/PopulateContents()
@@ -90,8 +90,8 @@
 	max_ammo = 15
 
 /obj/item/storage/box/ammo/a556_42/ap
-	name = "box of 5.56x42mm CLIP AP ammo"
-	desc = "A box of standard 5.56x42mm CLIP AP ammo."
+	name = "box of armor-piercing 5.56x42mm CLIP ammo"
+	desc = "A box of standard 5.56x42mm CLIP armor-piercing ammo."
 	icon_state = "a556_42box_big-ap"
 
 /obj/item/storage/box/ammo/a556_42/ap/PopulateContents()
@@ -123,8 +123,8 @@
 	max_ammo = 15
 
 /obj/item/storage/box/ammo/a762_40/hp
-	name = "box of 7.62x40mm CLIP Hollow Point ammo"
-	desc = "A box of standard 7.62x40mm CLIP Hollow Point ammo."
+	name = "box of hollow-point 7.62x40mm CLIP ammo"
+	desc = "A box of standard 7.62x40mm CLIP hollow-point ammo."
 	icon_state = "a762_40box_big-hp"
 
 /obj/item/storage/box/ammo/a762_40/hp/PopulateContents()
@@ -137,8 +137,8 @@
 	max_ammo = 15
 
 /obj/item/storage/box/ammo/a762_40/ap
-	name = "box of 7.62x40mm CLIP Armour Piercing ammo"
-	desc = "A box of standard 7.62x40mm CLIP Armour Piercing ammo."
+	name = "box of armor-piercing 7.62x40mm CLIP  ammo"
+	desc = "A box of standard 7.62x40mm CLIP armor-piercing ammo."
 	icon_state = "a762_40box_big-ap"
 
 /obj/item/storage/box/ammo/a762_40/ap/PopulateContents()
@@ -151,7 +151,7 @@
 	max_ammo = 15
 
 /obj/item/storage/box/ammo/a762_40/rubber
-	name = "box of 7.62x40mm CLIP rubber ammo"
+	name = "box of rubber 7.62x40mm CLIP ammo"
 	desc = "A box of standard 7.62x40mm CLIP rubber ammo."
 	icon_state = "a762_40box_big-rubbershot"
 
@@ -184,8 +184,8 @@
 	max_ammo = 10
 
 /obj/item/storage/box/ammo/a308/hp
-	name = "box of .308 HP ammo"
-	desc = "A box of standard .308 HP ammo."
+	name = "box of hollow-point .308 ammo"
+	desc = "A box of .308 hollow-point ammo."
 	icon_state = "a308box-hp-hp"
 
 /obj/item/storage/box/ammo/a308/hp/PopulateContents()
@@ -198,8 +198,8 @@
 	max_ammo = 10
 
 /obj/item/storage/box/ammo/a308/ap
-	name = "box of .308 AP ammo"
-	desc = "A box of standard .308 AP ammo."
+	name = "box of armor-piercing .308 ammo"
+	desc = "A box of .308 armor-piercing ammo."
 	icon_state = "a308box-hp-ap"
 
 /obj/item/storage/box/ammo/a308/ap/PopulateContents()
