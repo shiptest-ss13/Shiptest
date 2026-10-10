@@ -96,7 +96,7 @@
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/pouch/ammo/cobra/PopulateContents()
-	var/static/items_inside = list(/obj/item/ammo_box/magazine/m45_cobra = 3)
+	var/static/items_inside = list(/obj/item/ammo_box/magazine/m10_cobra = 3)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/pouch/ammo/ewc6m/PopulateContents()

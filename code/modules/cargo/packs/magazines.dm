@@ -31,10 +31,10 @@
 	faction_discount = 20
 	faction = /datum/faction/srm
 
-/datum/supply_pack/magazine/m45_mag
-	name = ".45 ACP Candor Magazine Crate"
-	desc = "Contains a .45 ACP magazine for the Candor pistol, with a capacity of eight rounds."
-	contains = list(/obj/item/ammo_box/magazine/m45/empty)
+/datum/supply_pack/magazine/m44_mag
+	name = ".44 Roumain Candor Magazine Crate"
+	desc = "Contains a .44 Roumain magazine for the Candor pistol, with a capacity of eight rounds."
+	contains = list(/obj/item/ammo_box/magazine/m44/empty)
 	cost = 100
 	faction = /datum/faction/srm
 
@@ -161,11 +161,11 @@
 	cost = 300
 	faction = /datum/faction/syndicate/scarborough
 
-/datum/supply_pack/magazine/c45_cobra_mag
+/datum/supply_pack/magazine/c10_cobra_mag
 	name = "Cobra Magazine Crate"
-	desc = "Contains a .45 magazine for the Cobra-20, with a capacity of 24 rounds."
+	desc = "Contains a 10mm magazine for the Cobra-20, with a capacity of 24 rounds."
 	cost = 300
-	contains = list(/obj/item/ammo_box/magazine/m45_cobra/empty)
+	contains = list(/obj/item/ammo_box/magazine/m10_cobra/empty)
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/short_hydra_mag

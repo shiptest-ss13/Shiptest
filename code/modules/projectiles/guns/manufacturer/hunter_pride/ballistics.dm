@@ -204,7 +204,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 
 /obj/item/gun/ballistic/automatic/pistol/candor
 	name = "\improper Candor"
-	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .45."
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .44 Roumain."
 	icon_state = "candor"
 	item_state = "hp_generic"
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
@@ -212,9 +212,9 @@ EMPTY_GUN_HELPER(revolver/detective)
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
 
-	default_ammo_type = /obj/item/ammo_box/magazine/m45
+	default_ammo_type = /obj/item/ammo_box/magazine/m44
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m45,
+		/obj/item/ammo_box/magazine/m44,
 	)
 	fire_sound = 'sound/weapons/gun/pistol/candor.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
@@ -248,7 +248,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 NO_MAG_GUN_HELPER(automatic/pistol/candor)
 
 /obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
-	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .44."
 	item_state = "hp_generic_fresh"
 	wear_rate = 0.6 //factory guns are now OBJECTIVELY better. if they happen to be candors.
 
@@ -260,7 +260,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 /obj/item/gun/ballistic/automatic/pistol/candor/phenex
 	name = "\improper HP Phenex"
-	desc = "A uniquely modified version of the Candor, famously created by Hunter's Pride. Named after the daemonic Phoenix of legend that the Ashen Huntsman had once slain, this hell-kissed weapon is more visually intimidating than its original counterpart, but mechanically acts the same. Chambered in .45."
+	desc = "A uniquely modified version of the Candor, famously created by Hunter's Pride. Named after the daemonic Phoenix of legend that the Ashen Huntsman had once slain, this hell-kissed weapon is more visually intimidating than its original counterpart, but mechanically acts the same. Chambered in .44."
 	icon_state = "phenex"
 	item_state = "hp_phenex"
 
