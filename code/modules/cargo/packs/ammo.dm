@@ -36,7 +36,7 @@
 
 /datum/supply_pack/ammo/c9mm_ammo_box
 	name = "9mm Ammo Box Crate"
-	desc = "Contains a 60-round 9mm ammo box for pistols and SMGs such as the Commander or Sabre."
+	desc = "Contains a 60-round 9mm ammo box for pistols and SMGs such as the Challenger or Expedition."
 	contains = list(/obj/item/storage/box/ammo/c9mm)
 	cost = 200 //6 ammo efficiency at 20 damage
 
