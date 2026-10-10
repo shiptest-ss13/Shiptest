@@ -163,7 +163,7 @@
 
 /datum/supply_pack/ammo/c46x30mm_boxcrate
 	name = "4.6x30mm Ammo Box Crate"
-	desc = "Contains an 80-round 4.6x30mm ammo box for PDWs such as the Resolution and the SKM-24."
+	desc = "Contains an 80-round 4.6x30mm ammo box for PDWs such as the Resolution and the SKM-24v."
 	contains = list(/obj/item/storage/box/ammo/c46x30mm)
 	cost = 295 //5.4 ammo efficiency at 20 damage
 
