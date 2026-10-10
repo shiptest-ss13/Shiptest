@@ -620,6 +620,18 @@
 		/obj/item/food/meat/slab/miras
 	)
 
+/datum/supply_pack/food/ingredients_basic/miraseggs
+	name = "Miras Eggs Crate"
+	desc = "An assortment of eggs from a small tecetian game animal."
+	cost = 100
+	contains = list(
+		/obj/item/food/mirasegg,
+		/obj/item/food/mirasegg,
+		/obj/item/food/mirasegg,
+		/obj/item/food/mirasegg,
+		/obj/item/food/mirasegg
+	)
+
 /datum/supply_pack/food/ingredients_basic/tiris
 	name = "Tiris Meat Crate"
 	desc = "The meat of a tecetian herd animal."
