@@ -101,3 +101,31 @@
 				make_new_table(toConstruct)
 	else
 		return ..()
+
+/obj/structure/table_frame/end_table
+	name = "end table frame"
+	desc = "Four legs holding up a frame for a small end table. "
+	icon_state = "end_frame"
+	framestack = /obj/item/stack/sheet/mineral/wood
+	framestackamount = 2
+	resistance_flags = FLAMMABLE
+
+/obj/structure/table_frame/end_table/attackby(obj/item/I, mob/user, params)
+	if (istype(I, /obj/item/stack))
+		var/obj/item/stack/material = I
+		var/toConstruct // stores the table variant
+		if(istype(I, /obj/item/stack/sheet/mineral/wood))
+			toConstruct = /obj/structure/table/endtable
+
+		if (toConstruct)
+			if(material.get_amount() < 1)
+				to_chat(user, span_warning("You need one [material.name] sheet to do this!"))
+				return FALSE
+			if(locate(toConstruct in loc))
+				to_chat(user, span_warning("A [toConstruct] already exists here!"))
+				return FALSE
+			to_chat(user, span_notice("You start adding [material] to [src]..."))
+			if(do_after(user, 20, target = src) && material.use(1))
+				make_new_table(toConstruct)
+	else
+		return ..()
