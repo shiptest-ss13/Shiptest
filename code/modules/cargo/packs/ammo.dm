@@ -184,7 +184,7 @@
 
 /datum/supply_pack/ammo/c57x39mm_boxcrate
 	name = "5.7x39mm Ammo Box Crate"
-	desc = "Contains one 80-round 5.7x39mm ammo box for PDWs such as the Sidewinder and the Asp."
+	desc = "Contains one 80-round 5.7x39mm ammo box for PDWs such as the Sidewinder and the Heater."
 	contains = list(/obj/item/storage/box/ammo/c57x39)
 	cost = 295 //5.4 ammo efficiency at 20 damage
 
