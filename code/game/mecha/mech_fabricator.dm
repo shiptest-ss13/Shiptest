@@ -122,7 +122,7 @@
 	output += "<a href='byond://?src=[REF(src)];command=change_screen;screen=direction'>Outputting: [uppertext(dir2text(output_direction))]</a>"
 	output += "<a href='byond://?src=[REF(src)];command=change_screen;screen=main'>Main Screen</a>"
 	output += "</div>"
-	output += "<form name='search' action='?src=[REF(src)]'>\
+	output += "<form name='search' action='byond://?src=[REF(src)]'>\
 	<input type='hidden' name='src' value='[REF(src)]'>\
 	<input type='hidden' name='command' value='search'>\
 	<input type='text' name='to_search'>\
