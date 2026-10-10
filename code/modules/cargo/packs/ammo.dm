@@ -274,7 +274,7 @@
 
 /datum/supply_pack/ammo/a762_ammo_box
 	name = "7.62x40mm CLIP Ammo Box Crate"
-	desc = "Contains one 60-round 7.62x40mm CLIP ammo box for various rifles, such as the SKM-44."
+	desc = "Contains one 60-round 7.62x40mm CLIP ammo box for various rifles, such as the SKM-24."
 	contains = list(/obj/item/storage/box/ammo/a762_40)
 	cost = 360 //5 ammo efficiency at 30 damage
 
