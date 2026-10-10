@@ -29,6 +29,7 @@
 
 	loot = list(/obj/effect/mob_spawn/human/corpse/damaged)
 	del_on_death = TRUE
+	blood_volume = BLOOD_VOLUME_NORMAL // so getting shot sprays blood like it does for players. need this for get_blood_id()
 
 	unsuitable_atmos_damage = 7.5
 	minbodytemp = 180
@@ -56,6 +57,12 @@
 
 	///Steals the armor datum from this type of armor
 	var/obj/item/clothing/armor_base
+	///The kind of blood the simplemob bleeds. Can be used to override mob_species blood.
+	var/datum/blood_type/blood_type
+	///How long the mob keeps leaving drips after it was damaged
+	var/bleeding_duration = 15 SECONDS
+	///Cooldown for how long the mob keeps leaving drips after it was damaged
+	COOLDOWN_DECLARE(bleeding_cooldown)
 
 /mob/living/simple_animal/hostile/human/Initialize(mapload)
 	. = ..()
@@ -78,11 +85,62 @@
 			var/obj/item/gun/our_gun = l_hand
 			spread = our_gun.spread
 
+	var/blood_type_name
+	if(ispath(blood_type, /datum/blood_type))
+		blood_type_name = initial(blood_type.name)
+	else if(ispath(mob_species, /datum/species))
+		var/datum/species/species_path = mob_species
+		blood_type_name = initial(species_path.exotic_bloodtype)
+	blood_type = get_blood_type(blood_type_name) || random_blood_type()
+
 	if(ispath(armor_base, /obj/item/clothing))
 		//sigh. if only we could get the initial() value of list vars
 		var/obj/item/clothing/instance = new armor_base()
 		armor = instance.armor
 		qdel(instance)
+
+/mob/living/simple_animal/hostile/human/Moved(atom/old_loc, movement_dir, Forced = FALSE, list/old_locs)
+	. = ..()
+	if(is_bleeding() && isturf(loc) && prob(40))
+		add_splatter_floor(loc, TRUE)
+
+/mob/living/simple_animal/hostile/human/Life(seconds_per_tick = SSMOBS_DT, times_fired)
+	. = ..()
+	if(is_bleeding() && isturf(loc) && prob(20))
+		add_splatter_floor(loc, TRUE)
+
+/mob/living/simple_animal/hostile/human/proc/is_bleeding()
+	return blood_volume && stat != DEAD && health < maxHealth * 0.5 && !COOLDOWN_FINISHED(src, bleeding_cooldown)
+
+/mob/living/simple_animal/hostile/human/proc/roll_for_bleeding(damage, wound_bonus = 0, sharpness = SHARP_NONE, armor_flag = MELEE, armour_penetration = 0, attack_direction)
+	if(!blood_volume || !sharpness)
+		return
+	var/armor_value = run_armor_check(null, armor_flag, armour_penetration = armour_penetration, silent = TRUE)
+	var/damage_taken = damage * (100 - armor_value) / 100
+	if(damage_taken < WOUND_MINIMUM_DAMAGE)
+		return
+	COOLDOWN_START(src, bleeding_cooldown, bleeding_duration)
+	if(prob((damage_taken ** WOUND_DAMAGE_EXPONENT) + wound_bonus))
+		spray_blood(attack_direction || pick(GLOB.alldirs), clamp(round(damage_taken / 10), 1, 3))
+
+/mob/living/simple_animal/hostile/human/attack_animal(mob/living/simple_animal/attacker)
+	. = ..()
+	if(!. || attacker.melee_damage_type != BRUTE)
+		return
+	var/damage = (attacker.melee_damage_lower + attacker.melee_damage_upper) / 2
+	roll_for_bleeding(damage, attacker.wound_bonus, attacker.sharpness, MELEE, attacker.armour_penetration, get_dir(attacker, src))
+	if(prob(33)) // same prob as in /mob/living/attacked_by()
+		add_splatter_floor(get_turf(src))
+
+/mob/living/simple_animal/hostile/human/attacked_by(obj/item/attacking_item, mob/living/user)
+	. = ..()
+	if(attacking_item.force >= force_threshold && attacking_item.damtype == BRUTE)
+		roll_for_bleeding(attacking_item.force, attacking_item.wound_bonus, attacking_item.get_sharpness(), MELEE, attacking_item.armour_penetration, get_dir(user, src))
+
+/mob/living/simple_animal/hostile/human/get_blood_dna_list()
+	if(get_blood_id() != /datum/reagent/blood)
+		return
+	return list("[real_name] DNA" = blood_type)
 
 // applies special stuff to guns that are dropped, which are very special indeed
 /mob/living/simple_animal/hostile/human/proc/modify_dropped_gun(obj/item/gun/dropped_gun)
@@ -160,15 +218,17 @@
 
 /mob/living/simple_animal/hostile/human/bullet_act(obj/projectile/projectile)
 	shake_animation(projectile.damage)
-	if(projectile.damage_type==BRUTE)
-		if(prob((projectile.damage + projectile.wound_bonus)-(armor.bullet - projectile.armour_penetration)))
-			spray_blood(projectile.dir, rand(1,3))
+	if(projectile.damage_type == BRUTE)
+		roll_for_bleeding(projectile.damage, projectile.wound_bonus, projectile.sharpness, projectile.flag, projectile.armour_penetration, get_dir(projectile.starting, src))
 	return ..()
 
 /mob/living/simple_animal/hostile/human/proc/spray_blood(splatter_direction, splatter_strength = 3)
-	if(!isturf(loc))
+	if(!isturf(loc) || !blood_volume)
 		return
-	new /obj/effect/decal/cleanable/blood(loc)
+	var/obj/effect/decal/cleanable/blood/pool = new(loc)
+	pool.transfer_mob_blood_dna(src)
 	var/obj/effect/decal/cleanable/blood/hitsplatter/our_splatter = new(loc)
+	our_splatter.blood_dna_info = get_blood_dna_list()
+	our_splatter.transfer_mob_blood_dna(src)
 	var/turf/targ = get_ranged_target_turf(src, splatter_direction, splatter_strength)
 	INVOKE_ASYNC(our_splatter, TYPE_PROC_REF(/obj/effect/decal/cleanable/blood/hitsplatter, fly_towards), targ, splatter_strength)
