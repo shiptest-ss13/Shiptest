@@ -200,7 +200,7 @@
 	contains = list(/obj/item/storage/box/ammo/c57x39/hp)
 	cost = 370
 
-/* 12 Gauge */
+/* shotgun shells */
 
 /datum/supply_pack/ammo/buckshot
 	name = "Buckshot Crate"
@@ -249,6 +249,24 @@
 	desc = "Contains a box of 32 shells filled with an electromagnetic payload. No damage but EMPs the target."
 	cost = 800
 	contains = list(/obj/item/storage/box/ammo/a12g_ion)
+
+/datum/supply_pack/ammo/fourborebuckshot
+	name = "Four Bore Buckshot Crate"
+	desc = "Contains a box of 32 4-gauge buckshot shells. For when you really need more bang for your buck."
+	cost = 500
+	contains = list(/obj/item/storage/box/ammo/a4g_buckshot)
+
+/datum/supply_pack/ammo/fourboreslug
+	name = "Four Bore Slug Crate"
+	desc = "Contains a box of 32 4-gauge slugs. They are rated to render a ship's engine inoperable in one shot."
+	cost = 600
+	contains = list(/obj/item/storage/box/ammo/a4g_slug)
+
+/datum/supply_pack/ammo/fourboreshrapnel
+	name = "Four Bore Shrapnel Crate"
+	desc = "Contains a box of 32 4-gauge shrapnel shells. Fitted to hold 16 normal buckshot pellets. Beware of its higher spread."
+	cost = 550
+	contains = list(/obj/item/storage/box/ammo/a4g_shrapnel)
 
 /* .45-70 */
 

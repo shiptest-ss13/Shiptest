@@ -189,3 +189,69 @@
 	transform = matrix(2, 0, 0, 0, 2, 0)
 
 	wear_modifier = 1
+
+/obj/item/ammo_casing/shotgun/buckshot/fourbore
+	autowiki_hidden = TRUE
+	name = "four-bore shell"
+	desc = "A massive four-bore shell."
+	icon_state = "fourbore"
+	caliber = "fourbore"
+	projectile_type = /obj/projectile/bullet/pellet/fourbore
+	pellets = 8
+	variance = 20
+	transform = matrix(1, 0, 0, 0, 1, 0)
+
+	wear_modifier = 1
+
+/obj/item/ammo_casing/shotgun/fourbore
+	autowiki_hidden = TRUE
+	name = "four-bore shotgun slug"
+	desc = "A hefty four-bore lead-steel alloyed slug capable of wrecking a ship's engine with one round."
+	icon_state = "fourboreslug"
+	caliber = "fourbore"
+	custom_materials = list(/datum/material/iron=4000)
+	projectile_type = /obj/projectile/bullet/slug/fourbore
+	transform = matrix(1, 0, 0, 0, 1, 0)
+
+
+	wear_modifier = 1
+
+/obj/item/ammo_casing/shotgun/buckshot/fourbore/shrapnel
+	autowiki_hidden = TRUE
+	name = "four-bore shrapnel shell"
+	desc = "A four-bore shrapnel shell. Rated for extreme close quarters environments. Use on soft-body targets only."
+	icon_state = "fourboreshrapnel"
+	caliber = "fourbore"
+	projectile_type = /obj/projectile/bullet/pellet/fourbore/shrapnel
+	pellets = 16
+	variance = 30
+	transform = matrix(1, 0, 0, 0, 1, 0)
+
+
+	wear_modifier = 1
+
+/obj/item/ammo_casing/shotgun/fourbore/flashbang
+	autowiki_hidden = TRUE
+	name = "four-bore flashbang shell"
+	desc = "A four-bore flashbang shell. Often utilized by SWAT breaching teams to quickly clear a room."
+	icon_state = "fourboreflashbang"
+	caliber = "fourbore"
+	custom_materials = list(/datum/material/iron=4000)
+	projectile_type = /obj/projectile/bullet/slug/fourbore/flashbang
+	transform = matrix(1, 0, 0, 0, 1, 0)
+
+
+	wear_modifier = 1
+
+/obj/item/ammo_casing/shotgun/fourbore/teargas
+	autowiki_hidden = TRUE
+	name = "four-bore teargas shell"
+	desc = "A four-bore teargas shell. Commonly seen in riot suppression and control. However, it is not uncommon to see them used by policing forces to dissipate a rowdy croud."
+	icon_state = "fourboreteargas"
+	caliber = "fourbore"
+	custom_materials = list(/datum/material/iron=4000)
+	projectile_type = /obj/projectile/bullet/slug/fourbore/teargas
+	transform = matrix(1, 0, 0, 0, 1, 0)
+
+
+	wear_modifier = 1
