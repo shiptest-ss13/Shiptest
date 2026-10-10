@@ -109,6 +109,7 @@
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 		/obj/effect/spawner/random/snow_monkey_pack = 5,
+		/mob/living/simple_animal/hostile/retaliate/chicken/awebo = 15,
 	)
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(
@@ -183,6 +184,7 @@
 		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 1,
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 1,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 5,
+		/mob/living/simple_animal/hostile/retaliate/chicken/awebo = 5,
 	)
 	mob_spawn_chance = 1
 

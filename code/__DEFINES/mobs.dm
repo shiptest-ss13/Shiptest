@@ -319,8 +319,6 @@
 /// the mob won't slip if the turf has the TRAIT_TURF_IGNORE_SLIPPERY trait.
 #define SLIPPERY_TURF (1<<5)
 
-#define MAX_CHICKENS 50
-
 ///Flags used by the flags parameter of electrocute act.
 
 ///Makes it so that the shock doesn't take gloves into account.
