@@ -706,7 +706,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	attack_verb = list("bludgeoned", "smashed")
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder
 	allowed_ammo_types = list(
-		/obj/item/ammo_casing/shotgun/fourbore,
+		/obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder,
 	)
 
 	unique_attachments = list(
@@ -753,7 +753,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	attack_verb = list("bludgeoned", "smashed")
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder
 	allowed_ammo_types = list(
-		/obj/item/ammo_casing/shotgun/fourbore,
+		/obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder,
 	)
 
 	unique_attachments = list(

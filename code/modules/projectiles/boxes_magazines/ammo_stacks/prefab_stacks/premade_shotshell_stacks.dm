@@ -194,10 +194,10 @@
 
 /obj/item/storage/box/ammo/a4g_flashbang/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/flashbang/fourbore = 4)
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/flashbang = 4)
 	generate_items_inside(items_inside,src)
 
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/flashbang/fourbore
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/flashbang
 	ammo_type = /obj/item/ammo_casing/shotgun/fourbore/flashbang
 
 /obj/item/storage/box/ammo/a4g_gas
@@ -207,8 +207,8 @@
 
 /obj/item/storage/box/ammo/a4g_gas/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/teargas/fourbore = 4)
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/teargas = 4)
 	generate_items_inside(items_inside,src)
 
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/teargas/fourbore
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/teargas
 	ammo_type = /obj/item/ammo_casing/shotgun/fourbore/teargas
