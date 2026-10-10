@@ -1010,8 +1010,7 @@
 /mob/living/proc/resist_restraints()
 	return
 
-/mob/living/proc/get_visible_name()
-	return name
+
 
 /mob/living/update_gravity(has_gravity)
 	. = ..()
