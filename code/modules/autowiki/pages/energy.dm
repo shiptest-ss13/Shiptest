@@ -24,7 +24,7 @@
 	var/obj/item/stock_parts/cell/standard = initial(gun.default_ammo_type)
 	var/default_label = standard ? capitalize(format_text(initial(standard.name))) : null
 
-	if (bold_default && length(names) > 1 && (default_label in names))
+	if (bold_default && (default_label in names))
 		names[names.Find(default_label)] = "'''[default_label]'''"
 
 	return stack(names)
