@@ -733,8 +733,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	bolt_drop_sound = 'sound/weapons/gun/shotgun/quadinsert.ogg'
 
 	can_be_sawn_off = FALSE
-	fire_sound_volume = 30
-	rack_sound_volume = 20
+	fire_sound_volume = 50
+	rack_sound_volume = 30
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
@@ -781,8 +781,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	bolt_drop_sound = 'sound/weapons/gun/shotgun/quadinsert.ogg'
 
 	can_be_sawn_off = FALSE
-	fire_sound_volume = 30
-	rack_sound_volume = 20
+	fire_sound_volume = 50
+	rack_sound_volume = 30
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
