@@ -171,7 +171,7 @@
 	. = ..()
 	RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, PROC_REF(handle_sprite_magic), override = TRUE)
 
-/datum/action/innate/tail_hold/Trigger()
+/datum/action/innate/tail_hold/Trigger(trigger_flags)
 	var/mob/living/carbon/human/H = owner
 	if(held_item)
 		if(!H.put_in_hands(held_item))

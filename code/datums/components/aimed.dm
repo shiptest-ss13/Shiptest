@@ -217,7 +217,9 @@
 	mouse_status = AIMEDFIRE_MOUSEUP
 	process_aim()
 	if(aiming_time_left <= aiming_time_fire_threshold && !shot_canceled)
-		process_shot()
+		var/atom/target = shooter.client.mouse_object_ref?.resolve()
+		if(target)
+			process_shot()
 	if(aimedfire_stat == AIMEDFIRE_STAT_AIMING)
 		stop_aiming()
 	return COMPONENT_CLIENT_MOUSEUP_INTERCEPT
@@ -313,7 +315,9 @@
 	else
 		P.color = rgb(0, 255, 0)
 	var/turf/curloc = get_turf(parent)
-	var/turf/targloc = get_turf(shooter.client.mouseObject)
+
+	var/atom/target_atom = shooter.client.mouse_object_ref?.resolve()
+	var/turf/targloc = get_turf(target_atom)
 	if(!istype(targloc))
 		if(!istype(curloc))
 			return
