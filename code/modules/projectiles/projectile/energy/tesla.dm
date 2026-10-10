@@ -32,7 +32,7 @@
 	power = 5000
 
 /obj/projectile/energy/tesla/explosive/on_hit(atom/target)
-	explosion(get_turf(loc),0,0,0,flame_range = 3)
+	explosion(get_turf(loc),0,0,0,flame_range = 0)
 	. = ..()
 
 /obj/projectile/energy/tesla_cannon
