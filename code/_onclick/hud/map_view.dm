@@ -39,7 +39,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/map_view)
 		if (!render_lighting && instance.plane == LIGHTING_PLANE)
 			instance.alpha = 100
 		instance.assigned_map = map_key
-		instance.del_on_map_removal = TRUE
+		instance.del_on_map_removal = FALSE
 		instance.set_position(1, 1)
 		plane_masters += instance
 
