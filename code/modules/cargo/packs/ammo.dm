@@ -260,7 +260,7 @@
 
 /datum/supply_pack/ammo/a4570_match
 	name = ".45-70 Match Crate"
-	desc = "Contains a 24-round ammo box containing devastatingly powerful .45-70 caliber ammunition, that travels faster, pierces armor better, and ricochets off targets."
+	desc = "Contains a 24-round ammo box containing devastatingly powerful .45-70 caliber ammunition, that travels faster, pierces armor better, and ricochets off walls."
 	contains = list(/obj/item/storage/box/ammo/a4570_match)
 	cost = 235
 
