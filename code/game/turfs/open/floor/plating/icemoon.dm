@@ -1,3 +1,20 @@
+///Use this to define a new ruinturf and associated subtypes easily.
+///Planetary types should still be explicitly defined for description fluff
+#define ICE_TURF_HELPER(turf_type)									\
+	/turf/open/floor/##turf_type/iceplanet {						\
+		baseturfs = /turf/open/floor/plating/asteroid/icerock;		\
+		initial_gas_mix = ICEMOON_DEFAULT_ATMOS;					\
+		planetary_atmos = TRUE;										\
+		light_color = COLOR_ICEPLANET_LIGHT;						\
+	}																\
+	/turf/open/floor/##turf_type/iceplanet/lit {					\
+		light_power = 0.8;											\
+		light_range = 2;											\
+	}																\
+	/turf/open/floor/##turf_type/iceplanet/interior {				\
+		planetary_atmos = FALSE;									\
+	}
+
 /turf/open/floor/plating/asteroid/snow
 	gender = PLURAL
 	name = "snow"
@@ -55,12 +72,6 @@
 	. = ..()
 	ScrapeAway()
 
-/turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/openspace/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-
-	slowdown = 0
-
 /turf/open/floor/plating/asteroid/snow/lit
 	light_range = 2
 	light_power = 1
@@ -68,21 +79,6 @@
 
 /turf/open/floor/plating/asteroid/snow/airless
 	initial_gas_mix = AIRLESS_ATMOS
-
-/turf/open/floor/plating/asteroid/snow/temperatre
-	initial_gas_mix = "o2=22;n2=82;TEMP=272"
-	baseturfs = /turf/open/floor/plating/asteroid/icerock/temperate
-
-/turf/open/floor/plating/asteroid/snow/temperatre/lit
-	initial_gas_mix = "o2=22;n2=82;TEMP=272"
-	baseturfs = /turf/open/floor/plating/asteroid/icerock/temperate
-	light_range = 2
-	light_power = 1
-	light_color = "#1B1D2E"
-
-/turf/open/floor/plating/asteroid/snow/atmosphere
-	initial_gas_mix = FROZEN_ATMOS
-	planetary_atmos = FALSE
 
 /turf/open/floor/plating/asteroid/snow/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
@@ -93,14 +89,6 @@
 /turf/open/floor/plating/asteroid/snow/safe/lit
 	light_range = 2
 	light_power = 0.6
-
-/turf/open/floor/plating/asteroid/snow/under
-	icon_state = "snow_dug"
-	planetary_atmos = TRUE
-
-/turf/open/floor/plating/asteroid/snow/under/lit
-	light_range = 2
-	light_power = 1
 
 /turf/open/floor/plating/asteroid/icerock
 	gender = PLURAL
@@ -142,6 +130,15 @@
 	light_range = 2
 	light_power = 1
 
+
+/turf/open/floor/plating/asteroid/icerock/temperate
+	initial_gas_mix = "o2=22;n2=82;TEMP=272"
+
+/turf/open/floor/plating/asteroid/icerock/temperate/lit
+	light_range = 2
+	light_power = 1
+	light_color = "#1B1D2E"
+
 /turf/open/floor/plating/asteroid/icerock/cracked
 	floor_variance = 0
 	icon_state = "icemoon_ground_cracked"
@@ -165,15 +162,6 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	dug = TRUE
-
-/turf/open/floor/plating/asteroid/icerock/temperate
-	initial_gas_mix = "o2=22;n2=82;TEMP=272"
-
-/turf/open/floor/plating/asteroid/icerock/temperate/lit
-	initial_gas_mix = "o2=22;n2=82;TEMP=272"
-	light_range = 2
-	light_power = 1
-	light_color = "#1B1D2E"
 
 /turf/open/floor/plating/asteroid/iceberg
 	gender = PLURAL
@@ -213,107 +201,59 @@
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = FALSE
 
-//TODO: SUPER LEGACY,  REMOVE
-
-/turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120"
-
-//TODO: SUPER LEGACY, REMOVE AS WELL
-/turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+/turf/open/floor/plating/ice/icemoon
+	baseturfs = /turf/open/floor/plating/ice/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
-	slowdown = 0
+	light_color = COLOR_ICEPLANET_LIGHT
+	light_power = 0.8
+	light_range = 2
 
-/turf/open/floor/plating/asteroid/snow/ice/burn_tile()
-	return FALSE
+ICE_TURF_HELPER(plating/asteroid/dirt/grass/dark)
+ICE_TURF_HELPER(plating/asteroid/dirt)
+
+//put ur turf helpers here.
+
+ICE_TURF_HELPER(wood)
+ICE_TURF_HELPER(wood/ebony)
+
+ICE_TURF_HELPER(plasteel/stairs)
+ICE_TURF_HELPER(plasteel/stairs/wood)
+
+ICE_TURF_HELPER(plasteel/dark)
+ICE_TURF_HELPER(plating/rust)
+ICE_TURF_HELPER(plasteel/tech)
+ICE_TURF_HELPER(plasteel/tech/techmaint)
+ICE_TURF_HELPER(pod/dark)
+
+//cementcrete
+
+ICE_TURF_HELPER(concrete)
+ICE_TURF_HELPER(concrete/slab_1)
+ICE_TURF_HELPER(concrete/slab_2)
+ICE_TURF_HELPER(concrete/slab_3)
+ICE_TURF_HELPER(concrete/slab_4)
+ICE_TURF_HELPER(concrete/tiles)
+ICE_TURF_HELPER(concrete/reinforced)
+ICE_TURF_HELPER(concrete/pavement)
 
 /turf/open/floor/wood/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	slowdown = 0
 
 /turf/open/floor/wood/ebony/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	slowdown = 0
 
 /turf/open/floor/plasteel/stairs/wood/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	slowdown = 0
-
-//concrete
-
-/turf/open/floor/concrete/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_ICEPLANET_LIGHT
-	slowdown = 0
-
-/turf/open/floor/concrete/icemoon/lit
-	light_range = 2
-	light_power = 1
-
-/turf/open/floor/concrete/slab_1/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_ICEPLANET_LIGHT
-	slowdown = 0
-
-/turf/open/floor/concrete/slab_1/icemoon/lit
-	light_range = 2
-	light_power = 1
-
-/turf/open/floor/concrete/slab_2/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_ICEPLANET_LIGHT
-	slowdown = 0
-
-/turf/open/floor/concrete/slab_2/icemoon/lit
-	light_range = 2
-	light_power = 1
-
-/turf/open/floor/concrete/slab_3/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_ICEPLANET_LIGHT
-	slowdown = 0
-
-/turf/open/floor/concrete/slab_3/icemoon/lit
-	light_range = 2
-	light_power = 1
-
-/turf/open/floor/concrete/slab_4/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_ICEPLANET_LIGHT
-	slowdown = 0
-
-/turf/open/floor/concrete/slab_4/icemoon/lit
-	light_range = 2
-	light_power = 1
-
-/turf/open/floor/concrete/pavement/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_ICEPLANET_LIGHT
-	slowdown = 0
-
-/turf/open/floor/concrete/pavement/icemoon/lit
-	light_range = 2
-	light_power = 1
 
 /turf/open/floor/plating/rust/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
@@ -351,3 +291,16 @@
 	light_color = COLOR_ICEPLANET_LIGHT
 
 
+/turf/open/water/iceplanet
+	name = "cold water"
+	desc = "Frozen ice eventually gives way to flowing water when heat is applied. That must be the case here too."
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+	color = "#41a3ff"
+
+/turf/open/water/iceplanet/deep
+	color = "#4566ad"
+	light_color = LIGHT_COLOR_DARK_BLUE
+	immerse_overlay = "immerse_deep"
+	is_swimming_tile = TRUE

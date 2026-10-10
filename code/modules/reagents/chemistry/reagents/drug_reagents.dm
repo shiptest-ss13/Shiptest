@@ -568,3 +568,25 @@
 		overdoser.blur_eyes(rand(5,12))
 	if(SPT_PROB(5, seconds_per_tick))
 		overdoser.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1)
+
+/datum/reagent/drug/chrono
+	name = "Tempo"
+	description = "And so we spun forward through the piece, sight-reading through our lives without a care. In the end we'd snap back to where we had been, and the music would begin anew."
+	reagent_state = LIQUID
+	color = "#719ddf"
+	overdose_threshold = 16
+	metabolization_rate = 0.1
+	taste_description = "the edge of time"
+	autowiki_hidden = TRUE
+
+/datum/reagent/drug/chrono/expose_mob(mob/living/M, method, reac_volume, show_message, touch_protection)
+	. = ..()
+	//180 seconds right before you get the overdose
+	M.set_timed_status_effect(reac_volume*12 SECONDS, /datum/status_effect/rewind)
+
+/datum/reagent/drug/chrono/on_mob_end_metabolize(mob/living/L)
+	..()
+
+/datum/reagent/drug/chrono/overdose_start(mob/living/metabolizer)
+	metabolizer.set_timed_status_effect(180 SECONDS, /datum/status_effect/accelerando/fatal)
+	metabolizer.apply_status_effect(/datum/status_effect/rewind/fatal, 180 SECONDS)
