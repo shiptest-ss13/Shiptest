@@ -291,7 +291,7 @@
 
 /obj/item/gun/energy/clover/maguey
 	name = "PL-20 \"Maguey\""
-	desc = "A midweight energy assault rifle, with a focus on reliability and low cost, compared to its contemporaries. The firearm is classified as a 'Energy Repeater' to get around automatic weapon sales restrictions in most jurisdictions."
+	desc = "A midweight pulsed-energy assault rifle that traces its heritage back to Eoehoma's E-40 energy rifle. The firearm is classified as a 'Energy Repeater' to get around automatic weapon sales restrictions in most jurisdictions."
 	icon_state = "pl20"
 	item_state = "pl20"
 
@@ -314,8 +314,39 @@
 
 /obj/item/gun/energy/clover/maguey/clip
 	name = "ECM-20 \"Maguey\""
-	desc = "A rare, original production-model ECM-20, produced in small numbers for trials and examination as a potential replacement to CLIP's current service rifle. The ECM-20 boasts accurate electroplasma fire, a high recycling rate, and the ability to fire an overcharged explosive burst mimicking a grenade launcher."
+	desc = "A rare, original production-model ECM-20, produced in small numbers for trials and examination as a potential replacement to CLIP's current service rifle. The ECM-20 boasts accurate electroplasma fire, a fast recycling rate, and the ability to fire an overcharged explosive burst mimicking a grenade launcher."
 	icon_state = "ecm20"
 	item_state = "ecm20"
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/highpower, /obj/item/ammo_casing/energy/laser/clover/overcharge)
+
+/obj/item/gun/energy/clover/maguey/clip/inteq
+	name = "PP25 \"Nahual\""
+	desc = "A Clover Photonics energy-based assault rifle, refitted for Inteq service. Well-fit to deliver a storm of accurate electroplasma fire, or alternatively lob high-energy 'overcharge' shots to devestate clustered targets. Uses Eoehoma Cells."
+	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
+	icon_state = "ecm20_inteq"
+	item_state = "ecm20_inteq"
+
+	wield_delay = 0.4 SECONDS
+
+	spread = 7
+	spread_unwielded = 20
+
+	recoil = 1
+	recoil_unwielded = 2
+
+	w_class = WEIGHT_CLASS_NORMAL
+
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_STOCK = 1,
+	)
+
+	unique_attachments = list(
+		/obj/item/attachment/foldable_stock/nahual
+	)
+	default_attachments = list(/obj/item/attachment/foldable_stock/nahual)

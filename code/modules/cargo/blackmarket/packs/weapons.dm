@@ -319,8 +319,8 @@
 
 	cost_min = 4500
 	cost_max = 5500
-	stock_max = 2
-	availability_prob = 20
+	stock_max = 1
+	availability_prob = 10
 
 /datum/blackmarket_item/weapon/guncase/cm23
 	name = "CM-23 pistol"

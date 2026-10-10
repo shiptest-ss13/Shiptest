@@ -147,7 +147,7 @@
 
 /obj/projectile/beam/laser/clover/overcharge/on_hit(atom/target, blocked = FALSE)
 	..()
-	explosion(get_turf(loc),0,0,2,flame_range = 2, light_dam = 10, light_item_dam = 0)
+	explosion(get_turf(loc),0,0,3,flame_range = 2, light_dam = 20, light_item_dam = 0)
 	return BULLET_ACT_HIT
 
 
