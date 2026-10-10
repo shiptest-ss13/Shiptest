@@ -294,7 +294,7 @@
 
 /datum/supply_pack/ammo/a556_ammo_box
 	name = "5.56x42mm CLIP Ammo Box Crate"
-	desc = "Contains one 60-round 5.56x42mm CLIP ammo box for most newer rifles, such as the Hydra or CM-16"
+	desc = "Contains one 60-round 5.56x42mm CLIP ammo box for most newer rifles, such as the Hydra or CM-82"
 	contains = list(/obj/item/storage/box/ammo/a556_42)
 	cost = 300 //5 ammo efficiency at 25 damage
 
