@@ -15,7 +15,7 @@
 
 /datum/supply_pack/ammo/c22lr
 	name = ".22 LR Ammo Box Crate"
-	desc = "Contains a 100-round .22 LR ammo box for weapons such as the Pounder or Himehabu."
+	desc = "Contains a 100-round .22 LR ammo box for weapons such as the Sporter or Himehabu."
 	contains = list(/obj/item/storage/box/ammo/c22lr)
 	cost = 250 //8 ammo efficiency at 20 damage
 
