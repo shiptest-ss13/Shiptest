@@ -384,7 +384,7 @@
 
 /datum/supply_pack/ammo/a308_ammo_box
 	name = ".308 Ammo Box Crate"
-	desc = "Contains a 30-round .308 ammo box for DMRs such as the SsG-04 and CM-GAL-S."
+	desc = "Contains a 30-round .308 ammo box for DMRs such as the SsG-04 and CM-F4."
 	contains = list(/obj/item/storage/box/ammo/a308)
 	cost = 185 //4.8 ammo efficiency at 30 damage //TTD 35 damage 215 cr DMR buff
 
