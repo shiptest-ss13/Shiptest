@@ -1410,6 +1410,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/chair/bench/grey/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "cV" = (
@@ -1882,16 +1883,8 @@
 /turf/open/floor/concrete/pavement/ngr_outpost_outside,
 /area/outpost/exterior/rock)
 "eh" = (
-/obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/mono,
-/obj/item/radio/intercom/wideband/table{
-	dir = 4;
-	pixel_y = 5
-	},
-/obj/item/radio/intercom/table{
-	dir = 4;
-	pixel_y = -8
-	},
+/obj/machinery/autodoc_vendor,
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "ei" = (
@@ -2152,8 +2145,10 @@
 /obj/effect/turf_decal/corner/opaque/beige{
 	dir = 1
 	},
-/obj/structure/chair/bench/grey/directional/west,
-/obj/machinery/light/directional/east,
+/obj/machinery/vending/wallmed{
+	pixel_x = 26
+	},
+/obj/structure/curtain/thin/cloth/grey,
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "eD" = (
@@ -3315,6 +3310,17 @@
 	},
 /turf/open/floor/plasteel/stairs,
 /area/outpost/cargo)
+"hm" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/beige/half{
+	dir = 8
+	},
+/obj/machinery/light/directional/east,
+/obj/machinery/autodoc/dark,
+/turf/open/floor/plasteel/tech,
+/area/outpost/medical)
 "ho" = (
 /obj/effect/turf_decal/corner/opaque/beige/half{
 	dir = 8
@@ -4426,7 +4432,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "jQ" = (
@@ -9170,6 +9175,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/chair/bench/grey/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "tG" = (
@@ -12299,6 +12305,10 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband/table{
+	pixel_y = 3;
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "Ar" = (
@@ -14034,6 +14044,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/corner/opaque/beige,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "Eo" = (
@@ -14256,6 +14267,7 @@
 /obj/effect/turf_decal/trimline/opaque/black/warning{
 	dir = 8
 	},
+/obj/structure/curtain/thin/cloth/grey,
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "EJ" = (
@@ -21756,6 +21768,10 @@
 	pixel_y = 3;
 	pixel_x = -8
 	},
+/obj/item/radio/intercom/table{
+	pixel_y = 3;
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "Vy" = (
@@ -23216,8 +23232,8 @@
 /obj/machinery/camera/directional/north{
 	network = list("1000eye")
 	},
-/obj/structure/chair/bench/grey/directional/west,
 /obj/machinery/newscaster/directional/north,
+/obj/machinery/autodoc/dark,
 /turf/open/floor/plasteel/tech,
 /area/outpost/medical)
 "YG" = (
@@ -31809,7 +31825,7 @@ aS
 Xe
 YF
 nE
-nE
+hm
 eB
 kS
 Dz
