@@ -180,16 +180,6 @@
 /turf/open/floor/plating/ice/burn_tile()
 	return
 
-/turf/open/floor/plating/ice/iceberg
-	name = "cracked ice floor"
-	desc = "A sheet of solid ice. It looks cracked, yet still slippery."
-
-/turf/open/floor/plating/ice/iceberg/lit
-	light_range = 2
-	light_power = 1
-/turf/open/floor/plating/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-
 /turf/open/floor/plating/ice/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
