@@ -480,6 +480,15 @@
 	faction_discount = 10
 	faction_locked = FALSE
 
+/datum/supply_pack/gun/energy/maguey
+	name = "PL-20 'Maguey' Energy Repeater"
+	desc = "Contains a single PL-20 Energy Repeater, a powerful pulsed-plasma automatic rifle, manufactured by Clover Photonics. Uses Eoehoma cells."
+	cost = 5000
+	contains = list(/obj/item/storage/guncase/pl20)
+	faction = /datum/faction/clip
+	faction_discount = 10
+	faction_locked = FALSE
+
 /*
 		Shotguns
 */
@@ -861,11 +870,11 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/barghest
-	name = "PP20 'Barghest' Plasma Assault Rifle Crate"
+/datum/supply_pack/gun/nahual
+	name = "PP25 'Nahual' Pulsed Plasma Assault Rifle Crate"
 	desc = "Contains a high-energy, automatic plasma rifle. Refitted for IRMG use."
 	cost = 5000
-	contains = list(/obj/item/storage/guncase/barghest)
+	contains = list(/obj/item/storage/guncase/nahual)
 	crate_name = "laser crate"
 	faction = /datum/faction/inteq
 	faction_discount = 0
