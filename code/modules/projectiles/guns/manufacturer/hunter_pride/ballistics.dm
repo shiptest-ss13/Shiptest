@@ -693,6 +693,101 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	gun_firemodes = list(FIREMODE_SEMIAUTO) //no dual burst for you
 	default_firemode = FIREMODE_SEMIAUTO
 
+/obj/item/gun/ballistic/rifle/cinder/factory//it uses bolt action mechanics, but for all intents and purposes, is a SHOTGUN! It's just that the pump is probably heavy enough to warrant turning it into a bolt action mechanically
+	autowiki_hidden = TRUE //
+	name = "HP Cinder"
+	desc = "A large, and bulky pump-action shotgun holding four rounds. Manufactured by Hunter's Pride, and used on hunts within the Saint Roumain Militia where normal shot will not easily take down their quarry."
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+	icon_state = "cinder_factory"
+	item_state = "cinder_factory"
+	attack_verb = list("bludgeoned", "smashed")
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder,
+	)
+
+	unique_attachments = list(
+		/obj/item/attachment/scope,
+	)
+	slot_available = list(		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 16,
+			"y" = 22,
+		),
+		)
+
+	w_class = WEIGHT_CLASS_BULKY
+	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	force = 15
+	recoil = 3
+	pb_knockback = 10
+	fire_sound = 'sound/weapons/gun/shotgun/quadfire.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/quadrack.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/shotgun/quadinsert.ogg'
+
+	can_be_sawn_off = FALSE
+	fire_sound_volume = 30
+	rack_sound_volume = 20
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+/obj/item/gun/ballistic/rifle/cinder
+	autowiki_hidden = TRUE //
+	name = "HP Cinder"
+	desc = "A large, and bulky pump-action shotgun holding four rounds. Manufactured by Hunter's Pride, and used on hunts within the Saint Roumain Militia where normal shot will not easily take down their quarry. This one is noticably missing its stock, and your arms figuratively warn you of using this shotgun."
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+	icon_state = "cinder"
+	item_state = "cinder"
+	attack_verb = list("bludgeoned", "smashed")
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/boltaction/fourbore/cinder,
+	)
+
+	unique_attachments = list(
+		/obj/item/attachment/scope,
+	)
+	slot_available = list(		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 11,
+			"y" = 22,
+		),
+		)
+
+	w_class = WEIGHT_CLASS_BULKY
+	wield_slowdown = SMG_SLOWDOWN
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+	spread = 6
+	force = 15
+	recoil = 4
+	pb_knockback = 10
+	fire_sound = 'sound/weapons/gun/shotgun/quadfire.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/quadrack.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/shotgun/quadinsert.ogg'
+
+	can_be_sawn_off = FALSE
+	fire_sound_volume = 30
+	rack_sound_volume = 20
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
 /// Rifles
 
 /obj/item/gun/ballistic/rifle/illestren

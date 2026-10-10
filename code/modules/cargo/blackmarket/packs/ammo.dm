@@ -432,3 +432,24 @@
 	stock_min = 3
 	stock_max = 6
 	availability_prob = 0
+
+
+/datum/blackmarket_item/ammo/a4gflashbang
+	name = "4-Gauge Flashbang Shells"
+	desc = "We founda box of these bad boys when we raided a PD. Look like bigger shells than twelve gauge. Bet they're just as potent as real flashbangs too."
+	item = /obj/item/storage/box/ammo/a4g_flashbang
+	cost_min = 1000
+	cost_max = 1500
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 40
+
+/datum/blackmarket_item/ammo/a4gteargas
+	name = "4-Gauge Teargas Shells"
+	desc = "We staged a prison breakout. Managed to raid the armoury while we were at it. Found these bad boys, don't got a use for 'em."
+	item = /obj/item/storage/box/ammo/a4g_gas
+	cost_min = 1000
+	cost_max = 1500
+	stock_min = 1
+	stock_max = 3
+	availability_prob = 30
