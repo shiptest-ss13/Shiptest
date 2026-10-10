@@ -418,7 +418,7 @@
 
 /datum/supply_pack/ammo/a858
 	name = "8x58mm Ammo Box Crate"
-	desc = "Contains a 20-round 8x58mm ammo box for Solarian-manufactured sniper rifles, such as the SSG-69."
+	desc = "Contains a 20-round 8x58mm ammo box for Solarian-manufactured sniper rifles, such as the SSG-669C."
 	contains = list(/obj/item/storage/box/ammo/a858)
 	cost = 200 //4 ammo efficiency at 40 damage //TTD 225
 
