@@ -11,7 +11,8 @@
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial{
 	name = "marine's suit storage unit";
-	req_access_txt = "1"
+	req_access_txt = "1";
+	req_ship_access = 1
 	},
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/suit/space/gezena/marine,
@@ -155,7 +156,8 @@
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial{
 	name = "marine's suit storage unit";
-	req_access_txt = "1"
+	req_access_txt = "1";
+	req_ship_access = 1
 	},
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/suit/space/gezena/marine,
@@ -627,6 +629,21 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"gr" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 6
+	},
+/obj/machinery/suit_storage_unit/inherit/industrial{
+	name = "marine's specialist storage unit";
+	req_access_txt = "1";
+	req_ship_access = 1
+	},
+/obj/item/tank/internals/oxygen/red,
+/obj/item/clothing/mask/breath/pgfmask,
+/obj/item/clothing/suit/space/gezena/marine/raider,
+/obj/item/clothing/head/helmet/space/gezena/marine/raider,
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/cargo)
 "gw" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/tank/internals/oxygen/red,
@@ -1628,7 +1645,8 @@
 /obj/machinery/suit_storage_unit/inherit/industrial/locked{
 	req_access_txt = "10";
 	name = "engineer's suit storage unit";
-	pixel_x = 2
+	pixel_x = 2;
+	req_ship_access = 1
 	},
 /obj/item/tank/jetpack/oxygen,
 /obj/item/clothing/suit/space/gezena,
@@ -4655,7 +4673,7 @@ SU
 CH
 wy
 hp
-cx
+gr
 CH
 yE
 sB
