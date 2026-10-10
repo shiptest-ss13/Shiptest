@@ -5,6 +5,7 @@
 	uses_mutcolor = TRUE
 	is_dimorphic = FALSE
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ORGANIC
+	dmg_overlay_icon = 'icons/mob/species/kepori/kepori_overlays.dmi'
 
 /obj/item/bodypart/chest/kepori
 	icon = 'icons/mob/species/kepori/bodyparts.dmi'
@@ -13,6 +14,7 @@
 	limb_id = SPECIES_KEPORI
 	is_dimorphic = FALSE
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ORGANIC
+	dmg_overlay_icon = 'icons/mob/species/kepori/kepori_overlays.dmi'
 	acceptable_bodytype = BODYTYPE_KEPORI
 
 /obj/item/bodypart/l_arm/kepori
@@ -21,6 +23,7 @@
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_KEPORI
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ORGANIC
+	dmg_overlay_icon = 'icons/mob/species/kepori/kepori_overlays.dmi'
 
 /obj/item/bodypart/r_arm/kepori
 	icon = 'icons/mob/species/kepori/bodyparts.dmi'
@@ -28,6 +31,7 @@
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_KEPORI
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ORGANIC
+	dmg_overlay_icon = 'icons/mob/species/kepori/kepori_overlays.dmi'
 
 /obj/item/bodypart/leg/left/kepori
 	icon = 'icons/mob/species/kepori/bodyparts.dmi'
@@ -35,10 +39,12 @@
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_KEPORI
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ORGANIC
+	dmg_overlay_icon = 'icons/mob/species/kepori/kepori_overlays.dmi'
 
 /obj/item/bodypart/leg/right/kepori
 	icon = 'icons/mob/species/kepori/bodyparts.dmi'
 	icon_state = "kepori_r_leg"
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_KEPORI
+	dmg_overlay_icon = 'icons/mob/species/kepori/kepori_overlays.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ORGANIC

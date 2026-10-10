@@ -35,6 +35,7 @@
 
 	custom_overlay_icon = 'icons/mob/species/vox/vox_overlays.dmi'
 	damage_overlay_type = "vox"
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/vox
 	fire_overlay = "generic"
 
 	species_organs = list(

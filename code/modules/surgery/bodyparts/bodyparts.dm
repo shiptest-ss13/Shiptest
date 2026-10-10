@@ -1017,6 +1017,8 @@
 		dmg_overlay_type = animal_origin
 
 	if(!IS_ORGANIC_LIMB(src))
+		//species without robotic_* states in their dmg_overlay_icon simply draw nothing,
+		//which is how kepori and vox opt out until someone sprites them
 		dmg_overlay_type = "robotic"
 
 	if(dropping_limb)

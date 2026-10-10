@@ -73,8 +73,8 @@
 
 	prosthetic_style = /datum/sprite_accessory/body/prosthetic/kepori
 
-	//I'm not emotionally prepared to spend ten more hours splicing overlays together
-	damage_overlay_type = ""
+	damage_overlay_type = "kepori"
+	custom_overlay_icon = 'icons/mob/species/kepori/kepori_overlays.dmi'
 
 /datum/species/kepori/New()
 	. = ..()

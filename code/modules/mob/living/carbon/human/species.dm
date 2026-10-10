@@ -664,12 +664,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					var/eye_state = HD.eye_state_override || eyes.eye_icon_state
 					var/icon_cache_key = "[eye_state]-[eyes.sclera_icon_state]-[id]-[eyes.scarring]"
 					if(!masked_eye_icons_cache[icon_cache_key])
-						if(iskepori(H)) // Kepori need sclera but don't fit the normal silhouette, so this needs changing. Make better later.
-							eye_icon = icon('icons/mob/species/kepori/kepori_eyes.dmi', eye_state)
-							sclera_icon = icon('icons/mob/species/kepori/kepori_eyes.dmi', eyes.sclera_icon_state)
-						else
-							eye_icon = icon(species_eye_path || 'icons/mob/human_face.dmi', eye_state)
-							sclera_icon = icon('icons/mob/human_face.dmi', eyes.sclera_icon_state)
+						//the sclera has to come from the same file as the eyes, or a species whose sprites
+						//aren't standard humanoids gets the human sclera (usually in the wrong position)
+						eye_icon = icon(resolve_eye_icon(species_eye_path, eye_state), eye_state)
+						sclera_icon = icon(resolve_eye_icon(species_eye_path, eyes.sclera_icon_state), eyes.sclera_icon_state)
 
 						if(eyes.scarring & RIGHT_EYE_SCAR)
 							var/icon/right_scar_mask = icon('icons/mob/eye_masks.dmi', "right_eye")
