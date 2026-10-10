@@ -123,7 +123,7 @@
 
 /datum/supply_pack/ammo/a357_ammo_box
 	name = ".357 Ammo Box Crate"
-	desc = "Contains a 48-round .357 ammo box for revolvers such as the Viper and the HP Firebrand."
+	desc = "Contains a 48-round .357 ammo box for revolvers such as the Viper and the HP Absolution."
 	contains = list(/obj/item/storage/box/ammo/a357)
 	cost = 255 //5.6 ammo efficiency at 30 damage //TTD: boost this to 300 if revolvers get 35 damage
 
