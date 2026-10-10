@@ -67,6 +67,7 @@
 #define HAND_RIGHT (1<<10)
 #define HANDS (HAND_LEFT | HAND_RIGHT)
 #define NECK (1<<11)
+#define TAIL (1<<12)
 #define FULL_BODY (~0)
 
 //defines for the index of hands

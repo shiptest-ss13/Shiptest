@@ -143,7 +143,7 @@
 			target.gib()
 	else
 		//drill makes a hole
-		var/obj/item/bodypart/target_part = target.get_bodypart(ran_zone(BODY_ZONE_CHEST))
+		var/obj/item/bodypart/target_part = target.get_bodypart(target.run_zone(BODY_ZONE_CHEST))
 		target.apply_damage(10, BRUTE, BODY_ZONE_CHEST, target.run_armor_check(target_part, "melee"))
 
 		//blood splatters

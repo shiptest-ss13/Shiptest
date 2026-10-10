@@ -5,7 +5,6 @@
 	name = "repair hairline fracture"
 	steps = list(/datum/surgery_step/incise, /datum/surgery_step/repair_hairline_fracture, /datum/surgery_step/close)
 	target_mobtypes = list(/mob/living/carbon/human)
-	possible_locs = list(BODY_ZONE_R_ARM,BODY_ZONE_L_ARM,BODY_ZONE_R_LEG,BODY_ZONE_L_LEG,BODY_ZONE_CHEST,BODY_ZONE_HEAD)
 	requires_real_bodypart = TRUE
 	targetable_wound = /datum/wound/blunt/bone/severe
 
@@ -19,7 +18,6 @@
 	name = "repair compound fracture"
 	steps = list(/datum/surgery_step/incise, /datum/surgery_step/retract_skin, /datum/surgery_step/clamp_bleeders, /datum/surgery_step/reset_compound_fracture, /datum/surgery_step/repair_compound_fracture, /datum/surgery_step/close)
 	target_mobtypes = list(/mob/living/carbon/human)
-	possible_locs = list(BODY_ZONE_R_ARM,BODY_ZONE_L_ARM,BODY_ZONE_R_LEG,BODY_ZONE_L_LEG,BODY_ZONE_CHEST,BODY_ZONE_HEAD)
 	requires_real_bodypart = TRUE
 	targetable_wound = /datum/wound/blunt/bone/critical
 
