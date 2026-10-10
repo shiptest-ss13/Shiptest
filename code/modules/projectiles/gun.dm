@@ -527,7 +527,7 @@
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
 	var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
-	var/muzzle_angle = Get_Angle(get_turf(src), pbtarget)
+	var/muzzle_angle = get_angle(get_turf(src), pbtarget)
 
 	user.changeNext_move(clamp(fire_delay, 0, CLICK_CD_RANGE))
 

@@ -30,7 +30,7 @@
 	break_sound = 'sound/effects/break_stone.ogg'
 	hitsound_type = PROJECTILE_HITSOUND_STONE
 
-	min_dam = 5
+	minimum_damage = 20
 	max_integrity = MINERAL_WALL_INTEGRITY
 	brute_mod = 1
 	burn_mod = 1

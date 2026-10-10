@@ -90,7 +90,7 @@
 
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
 	max_integrity = 150
-	min_dam = 5
+	minimum_damage = 15
 
 /turf/closed/wall/mineral/sandstone/yesdiag
 	icon_state = "sandstone_wall-255"
@@ -233,7 +233,7 @@
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
 	max_integrity = 75
 	burn_mod = 3
-	min_dam = 3
+	minimum_damage = 8
 
 /turf/closed/wall/mineral/wood/yesdiag
 	icon_state = "wood_wall-255"
@@ -275,6 +275,8 @@
 
 	max_integrity = 300
 
+	minimum_damage = 10
+
 /turf/closed/wall/mineral/iron/yesdiag
 	icon_state = "iron_wall-255"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
@@ -305,7 +307,7 @@
 	max_integrity = 50
 	burn_mod = 3
 	brute_mod = 1.5
-	min_dam = 1
+	minimum_damage = 1
 
 /turf/closed/wall/mineral/snow/yesdiag
 	icon_state = "snow_wall-255"
@@ -343,6 +345,10 @@
 	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+
+	minimum_damage = 25
+
+	burn_mod = 0.75
 
 	max_integrity = 450
 
@@ -425,6 +431,11 @@
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
 
 	max_integrity = 500
+
+	minimum_damage = 30
+
+	burn_mod = 0.9
+	brute_mod = 0.9
 
 /turf/closed/wall/mineral/plastitanium/nodiagonal
 	icon = 'icons/turf/walls/plastitanium_wall.dmi'

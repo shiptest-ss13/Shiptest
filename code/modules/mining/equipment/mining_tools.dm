@@ -18,7 +18,7 @@
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 	attack_verb = list("hit", "pierced", "sliced", "attacked")
 	wall_decon_damage = MINERAL_WALL_INTEGRITY
-	demolition_mod = 1.15
+	demolition_mod = 1.25
 
 /obj/item/pickaxe/rusted
 	name = "rusty pickaxe"

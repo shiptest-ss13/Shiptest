@@ -348,13 +348,13 @@
 	for(var/mob/living/L in range(ricochet_auto_aim_range, src.loc))
 		if(L.stat == DEAD || !isInSight(src, L) || L == firer)
 			continue
-		var/our_angle = abs(closer_angle_difference(Angle, Get_Angle(src.loc, L.loc)))
+		var/our_angle = abs(closer_angle_difference(Angle, get_angle(src.loc, L.loc)))
 		if(our_angle < best_angle)
 			best_angle = our_angle
 			unlucky_sob = L
 
 	if(unlucky_sob)
-		setAngle(Get_Angle(src, unlucky_sob.loc))
+		setAngle(get_angle(src, unlucky_sob.loc))
 
 /obj/projectile/proc/store_hitscan_collision(datum/point/pcache)
 	beam_segments[beam_index] = pcache
@@ -720,7 +720,7 @@
 			qdel(src)
 			return
 		var/turf/target = locate(clamp(starting + xo, 1, world.maxx), clamp(starting + yo, 1, world.maxy), starting.z)
-		setAngle(Get_Angle(src, target))
+		setAngle(get_angle(src, target))
 	original_angle = Angle
 	if(!nondirectional_sprite)
 		var/matrix/M = new
@@ -1052,3 +1052,6 @@
 ///Checks if the projectile can embed into someone
 /obj/projectile/proc/can_embed_into(atom/hit)
 	return embedding && shrapnel_type && iscarbon(hit) && !HAS_TRAIT(hit, TRAIT_PIERCEIMMUNE)
+
+/obj/projectile/get_demolition_damage()
+	return demolition_mod * damage

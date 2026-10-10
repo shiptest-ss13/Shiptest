@@ -50,7 +50,7 @@
 	smoothing_flags = SMOOTH_BITMASK
 	hardness = 45
 	max_integrity = 300
-	min_dam = 5
+	minimum_damage = 10
 
 /turf/closed/wall/rust/yesdiag
 	icon_state = "rusty_wall-255"
@@ -65,7 +65,7 @@
 	smoothing_flags = SMOOTH_BITMASK
 	hardness = 15
 	atom_integrity = 1000
-	min_dam = 5
+	minimum_damage = 10
 
 /turf/closed/wall/r_wall/rust/yesdiag
 	icon_state = "rusty_reinforced_wall-255"
