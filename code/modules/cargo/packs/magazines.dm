@@ -476,7 +476,7 @@
 	contains = list(/obj/item/stock_parts/cell/gun/sharplite)
 	faction = /datum/faction/warra
 	faction_discount = 25 /*300 credits*/
-	cost = 400
+	cost = 500
 
 /datum/supply_pack/magazine/tinyguncell
 	name = "Sharplite Mini Power Cell"
@@ -490,7 +490,7 @@
 	name = "Sharplite Plus Proprietary Weapon Cell"
 	desc = "Contains an upgraded weapon cell, compatible with most Sharplite models. For MW use only."
 	contains = list(/obj/item/stock_parts/cell/gun/sharplite/plus)
-	cost = 750
+	cost = 900
 	faction = /datum/faction/warra
 	faction_discount = 0
 	faction_locked = TRUE
@@ -499,7 +499,7 @@
 	name = "Sharplite Plus Proprietary Weapon Cell"
 	desc = "Contains an upgraded weapon cell, compatible with most Sharplite models."
 	contains = list(/obj/item/stock_parts/cell/gun/sharplite/plus)
-	cost = 750
+	cost = 900
 	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
