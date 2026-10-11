@@ -522,6 +522,8 @@
 		layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
 	ADD_TRAIT(src, TRAIT_PULL_BLOCKED, LYING_DOWN_TRAIT)
 	density = FALSE // We lose density and stop bumping passable dense things.
+	if(HAS_TRAIT(src, TRAIT_FLIP_ON_LYING))
+		set_flipped(TRUE)
 	if(HAS_TRAIT(src, TRAIT_FLOORED) && !(dir & (NORTH|SOUTH)))
 		setDir(pick(NORTH, SOUTH)) // We are and look helpless.
 	if(rotate_on_lying)
@@ -534,6 +536,8 @@
 		layer = initial(layer)
 	density = initial(density) // We were prone before, so we become dense and things can bump into us again.
 	REMOVE_TRAIT(src, TRAIT_PULL_BLOCKED, LYING_DOWN_TRAIT)
+	if(HAS_TRAIT(src, TRAIT_FLIP_ON_LYING))
+		set_flipped(FALSE)
 	remove_offsets(LYING_DOWN_TRAIT)
 
 
@@ -812,7 +816,8 @@
 
 /mob/living/Move(atom/newloc, direct, glide_size_override)
 	if(lying_angle != 0)
-		lying_angle_on_movement(direct)
+		if(!HAS_TRAIT(src, TRAIT_FLIP_ON_LYING))
+			lying_angle_on_movement(direct)
 	if (buckled && buckled.loc != newloc) //not updating position
 		if (!buckled.anchored)
 			return buckled.Move(newloc, direct, glide_size)
@@ -1611,6 +1616,20 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		update_transform()
 		lying_prev = lying_angle
 
+/**
+* Flips a mob over by mirroring their sprite upside-down, for species that look funny if you rotate them 90 degrees for lying down.
+*
+* arguments:
+* * new_flipped (bool) The new flipped state for the mob, either true or false
+ */
+/mob/living/proc/set_flipped(new_flipped)
+	to_chat(src, "flipped = [flipped]")
+	to_chat(src, "new_flipped = [new_flipped]")
+	if(new_flipped == flipped)
+		return
+	. = new_flipped
+	flipped = new_flipped
+	update_transform(do_flip = TRUE)
 
 /**
  * add_body_temperature_change Adds modifications to the body temperature
@@ -1834,7 +1853,8 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 			else // Forcing to a lying position.
 				ADD_TRAIT(src, TRAIT_FLOORED, BUCKLED_TRAIT)
 				set_body_position(LYING_DOWN)
-				set_lying_angle(buckled.buckle_lying)
+				if(!HAS_TRAIT(src, TRAIT_FLIP_ON_LYING))
+					set_lying_angle(buckled.buckle_lying)
 	else
 		//REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, BUCKLED_TRAIT)      // WS Edit - Can use buttons in chairs again
 		REMOVE_TRAIT(src, TRAIT_FLOORED, BUCKLED_TRAIT)

@@ -1290,7 +1290,7 @@
 
 /// Special carbon interaction on lying down, to transform its sprite by a rotation.
 /mob/living/carbon/proc/lying_angle_on_lying_down(new_lying_angle)
-	if(!new_lying_angle)
+	if(!new_lying_angle && !HAS_TRAIT(src, TRAIT_FLIP_ON_LYING))
 		set_lying_angle(pick(90, 270))
 	else
 		set_lying_angle(new_lying_angle)

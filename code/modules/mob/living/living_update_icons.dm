@@ -2,7 +2,7 @@
  * Called whenever the mob is to be resized or when lying/standing up for carbons.
  * IMPORTANT: Multiple animate() calls do not stack well, so try to do them all at once if you can.
  */
-/mob/living/proc/update_transform(resize = RESIZE_DEFAULT_SIZE)
+/mob/living/proc/update_transform(resize = RESIZE_DEFAULT_SIZE, do_flip = FALSE)
 	var/matrix/ntransform = matrix(transform)
 	var/current_translate = get_transform_translation_size(current_size)
 	var/final_dir = dir
@@ -40,6 +40,11 @@
 		// and update the new translation
 		if(is_vertical && new_translation)
 			ntransform.Translate(0, new_translation)
+
+	if(do_flip == TRUE)
+		to_chat(src, "mob [src.name] of type [src.type] has been flipped")
+		changed = TRUE
+		ntransform.Scale(1, -1)
 
 	if(!changed) //Nothing has been changed, nothing has to be done.
 		return FALSE

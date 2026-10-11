@@ -326,6 +326,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_COLORBLIND "colorblind"
 /// You've got a tail.
 #define TRAIT_TAILED "tailed"
+/// You flip over when you lie down.
+#define TRAIT_FLIP_ON_LYING "flip_on_lying"
 
 /* Traits for ventcrawling.
  * Both give access to ventcrawling, but *_NUDE requires the user to be
