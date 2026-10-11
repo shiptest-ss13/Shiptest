@@ -63,7 +63,7 @@
 /obj/item/ammo_casing/energy/disabler/clover/smg
 	projectile_type = /obj/projectile/beam/disabler/clover/weak
 	select_name  = "disable"
-	e_cost = 666
+	e_cost = 500
 	delay = 0.16 SECONDS
 	harmful = FALSE
 

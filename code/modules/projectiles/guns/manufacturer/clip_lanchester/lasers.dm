@@ -106,7 +106,7 @@
 /obj/item/ammo_casing/energy/laser/clover/beam
 	projectile_type = /obj/projectile/beam/hitscan/kalix/faveleira
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
-	e_cost = 2500
+	e_cost = 1666
 	delay = 1 SECONDS
 	select_name = "focus"
 
@@ -141,7 +141,7 @@
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
-	recoil = 0
+	recoil = 0.5
 	recoil_unwielded = 1
 	fire_delay = 0.16 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
@@ -185,6 +185,7 @@
 	fire_delay = 0.6 SECONDS
 	spread = 6
 	spread_unwielded = 9
+	recoil = 0
 
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -272,6 +273,14 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/shotgun)
 
+	default_ammo_type = /obj/item/stock_parts/cell/gun/heavy
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/heavy,
+		/obj/item/stock_parts/cell/gun/heavy/empty,
+		/obj/item/stock_parts/cell/gun/heavy/upgraded,
+		/obj/item/stock_parts/cell/gun/heavy/upgraded/empty,
+	)
+
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 36,
@@ -288,5 +297,4 @@
 	desc = "Clover Photonic's latest product, the ECM-25 can switch between a diffuse scattershot mode, with all five lenses firing independently. Or in a 'concentrated' mode to release a hypervelocity bolt of plasma. Uses Eoehoma cells."
 	icon_state = "ecm25"
 	item_state = "ecm25"
-	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/shotgun, /obj/item/ammo_casing/energy/laser/clover/beam)
