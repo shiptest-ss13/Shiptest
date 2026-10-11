@@ -250,6 +250,7 @@
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	casingtype = null
 	faction = list(ROLE_DEATHSQUAD)
+
 //boxer
 
 /mob/living/simple_animal/hostile/automated/boxer
@@ -289,6 +290,12 @@
 		if(!bonk.anchored)
 			var/atom/throw_target = get_edge_target_turf(bonk, src.dir)
 			bonk.throw_at(throw_target, rand(1,3), 2, src, gentle = TRUE)
+
+/mob/living/simple_animal/hostile/automated/boxer/crap
+	name = "Degraded B.A.P II 'Boxer'"
+	desc = "A cheaper, easier to produce version of the Bipedal Assault Platform, the B.A.P II was made to focus on a brawling, frontline role. This one appears to be in terrible condition."
+	health = 60
+	maxHealth = 60
 
 /mob/living/simple_animal/hostile/automated/walkmine
 	name = "G-80W Walkmine"

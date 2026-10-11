@@ -364,7 +364,7 @@
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message(span_danger("You hear as buzz from the [src] as an abandoned security bot rolls out from the [src]!!"))
 
-			new /mob/living/simple_animal/hostile/automated/bipedal(get_turf(src))
+			new /mob/living/simple_animal/hostile/automated/boxer/crap(get_turf(src))
 
 /obj/structure/salvageable/server/safe
 	safe = TRUE
@@ -866,7 +866,7 @@
 		if(21 to 25)
 			// boxer bap
 			playsound(src, 'sound/effects/bang.ogg', 100, FALSE, FALSE)
-			new /mob/living/simple_animal/hostile/automated/boxer(loc)
+			new /mob/living/simple_animal/hostile/automated/boxer/crap(loc)
 		if(26 to 30)
 			// quad rotor drone
 			new /mob/living/simple_animal/hostile/automated/quadrotor(loc)
