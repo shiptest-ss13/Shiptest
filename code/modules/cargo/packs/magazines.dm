@@ -437,6 +437,30 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/magazine/heavyguncell
+	name = "Clover Heavy Power Cell"
+	desc = "Contains a Clover Photonics heavy Eoehoma cell, compatible with Clover Photonic's heavier entries."
+	contains = list(/obj/item/stock_parts/cell/gun/heavy)
+	cost = 900
+
+/datum/supply_pack/magazine/heavyupgradedguncellclip
+	name = "High-Capacity Clover Heavy Power Cell"
+	desc = "Contains a Clover Photonics High-Cap heavy Eoehoma cell, compatible with Clover Photonic's heavier entries."
+	contains = list(/obj/item/stock_parts/cell/gun/heavy/upgraded)
+	cost = 1200
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/magazine/heavyupgradedguncellinteq
+	name = "High-Capacity Clover Heavy Power Cell"
+	desc = "Contains a Clover Photonics High-Cap heavy Eoehoma cell, compatible with Clover Photonic's heavier entries."
+	contains = list(/obj/item/stock_parts/cell/gun/heavy/upgraded)
+	cost = 1400
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/magazine/solgovcell
 	name = "SolCon Weapon Cell Crate"
 	desc = "Contains a Solarian weapon cell, compatible with Solarian gauss weaponry."
@@ -480,6 +504,23 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/magazine/warra_heavy_guncell
+	name = "Sharplite Heavy Power Cell"
+	desc = "Contains a proprietary heavy weapon cell, compatible with most Sharplite heavy energy weapons."
+	contains = list(/obj/item/stock_parts/cell/gun/sharplite/heavy)
+	faction = /datum/faction/warra
+	faction_discount = 15 /*680 credits*/
+	cost = 800
+
+/datum/supply_pack/magazine/upgraded_heavy_guncell
+	name = "Sharplite Super Proprietary Heavy Weapon Cell"
+	desc = "Contains an upgraded weapon cell, compatible with the heaviest Sharplite models. For MW use only."
+	contains = list(/obj/item/stock_parts/cell/gun/sharplite/heavy/plus)
+	cost = 1200
+	faction = /datum/faction/warra
+	faction_discount = 0
+	faction_locked = TRUE
+
 /* etherbor */
 
 /datum/supply_pack/magazine/kalixcell
@@ -515,7 +556,7 @@
 	cost = 300
 
 /datum/supply_pack/magazine/cybersun_cell/heavy
-	name = "Heavy Cybersun Plasma  Cell"
+	name = "Heavy Cybersun Plasma Cell"
 	desc = "Contains the heaviest plasma cell manufactured by Cybersun. Perfect for heavy weaponry."
 	contains = list(/obj/item/stock_parts/cell/gun/cybersun/heavy)
 	cost = 1500
