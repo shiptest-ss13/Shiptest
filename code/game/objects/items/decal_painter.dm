@@ -156,7 +156,7 @@
 	"spline_plain_full","solarpanel","shutoff","traction","manydot",
 	"techfloor_edges","techfloor_corners","techfloororange_edges","techfloororange_corners",
 	"manydot_tiled","pryhole","corner_white","corner_oldtile","corner_kafel",
-	"corner_techfloor_gray","corner_techfloor_grid","steel_grid","steel_decals1","steel_decals2",
+	"corner_techfloor_gray","corner_techfloor_grid", "half-stair", "half-stair-wood", "steel_grid","steel_decals1","steel_decals2",
 	"steel_decals3","steel_decals4","steel_decals5","steel_decals6","steel_decals7",
 	"steel_decals8","steel_decals9","steel_decals10","steel_decals_central1","steel_decals_central2",
 	"steel_decals_central3","steel_decals_central4","steel_decals_central5","steel_decals_central_6","steel_decals_central7",

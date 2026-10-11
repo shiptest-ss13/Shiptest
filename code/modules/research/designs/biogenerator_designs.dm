@@ -34,6 +34,22 @@
 	make_reagents = list(/datum/reagent/consumable/cream = 10)
 	category = list("initial","Food")
 
+/datum/design/honey
+	name = "10u Honey"
+	id = "honey"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass= 30)
+	make_reagents = list(/datum/reagent/consumable/honey = 10)
+	category = list("initial","Food")
+
+/datum/design/salt
+	name = "10u Salt"
+	id = "salt"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass= 25)
+	make_reagents = list(/datum/reagent/consumable/sodiumchloride = 10)
+	category = list("initial","Food")
+
 /datum/design/black_pepper
 	name = "10u Black Pepper"
 	id = "black_pepper"

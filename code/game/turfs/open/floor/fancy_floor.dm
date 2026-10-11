@@ -396,6 +396,13 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_NWORANGE)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_NWORANGE)
 
+/turf/open/floor/carpet/nanoweave/green
+	name = "nanoweave carpet (green)"
+	icon = 'icons/turf/floors/nanoweave_green.dmi'
+	floor_tile = /obj/item/stack/tile/carpet/nanoweave/green
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_NWGREEN)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_NWGREEN)
+
 //*****Airless versions of most of the above.*****
 /turf/open/floor/carpet/airless
 	initial_gas_mix = AIRLESS_ATMOS
