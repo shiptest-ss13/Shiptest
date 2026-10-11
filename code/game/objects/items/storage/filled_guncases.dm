@@ -439,11 +439,11 @@
 
 /obj/item/storage/guncase/ecm25
 	gun_type = /obj/item/gun/energy/clover/faveleira/clip
-	mag_type = /obj/item/stock_parts/cell/gun/upgraded
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
 
 /obj/item/storage/guncase/pl25
 	gun_type = /obj/item/gun/energy/clover/faveleira
-	mag_type = /obj/item/stock_parts/cell/gun
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
 
 /* Inteq */
 

@@ -252,7 +252,7 @@
 
 /obj/item/gun/energy/clover/faveleira
 	name = "PL-24 \"Faveleira\""
-	desc = "An older model of the ECM-25. The PL-24 lacks the concentrated fire feature, but still makes for a dependable energy-based scattergun. Uses Eoehoma cells"
+	desc = "An older model of the ECM-25. The PL-24 lacks the concentrated fire feature, but still makes for a dependable energy-based scattergun. Uses Eoehoma heavy cells"
 	icon_state = "pl25"
 	item_state = "pl25"
 
@@ -294,7 +294,7 @@
 
 /obj/item/gun/energy/clover/faveleira/clip
 	name = "ECM-25 \"Faveleira\""
-	desc = "Clover Photonic's latest product, the ECM-25 can switch between a diffuse scattershot mode, with all five lenses firing independently. Or in a 'concentrated' mode to release a hypervelocity bolt of plasma. Uses Eoehoma cells."
+	desc = "Clover Photonic's latest product, the ECM-25 can switch between a diffuse scattershot mode, with all five lenses firing independently. Or in a 'concentrated' mode to release a hypervelocity bolt of plasma. Uses Eoehoma heavy cells."
 	icon_state = "ecm25"
 	item_state = "ecm25"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/clover/shotgun, /obj/item/ammo_casing/energy/laser/clover/beam)
