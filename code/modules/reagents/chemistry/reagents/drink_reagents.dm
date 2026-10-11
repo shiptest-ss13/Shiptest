@@ -42,7 +42,7 @@
 
 /datum/reagent/consumable/limejuice/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(metabolizer.getToxLoss() && prob(20))
-		metabolizer.adjustToxLoss(-1*REM, 0)
+		metabolizer.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
 		. = 1
 	..()
 
@@ -89,7 +89,7 @@
 	glass_desc = "Berry juice. Technically a fruit punch all on its own!"
 
 /datum/reagent/consumable/poisonberryjuice/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjustToxLoss(0.5 * seconds_per_tick, 0)
+	metabolizer.adjustToxLoss(1 * REM * seconds_per_tick, 0)
 	. = 1
 	..()
 
@@ -366,7 +366,7 @@
 	metabolizer.drowsyness = max(0,metabolizer.drowsyness-1)
 	metabolizer.AdjustSleeping(-40)
 	if(metabolizer.getToxLoss() && prob(20))
-		metabolizer.adjustToxLoss(-1, 0)
+		metabolizer.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
 	..()
 	. = 1

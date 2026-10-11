@@ -32,8 +32,8 @@
 	M.drowsyness = 0
 	M.slurring = 0
 	M.confused = 0
-	M.reagents.remove_all_type(/datum/reagent/consumable/ethanol, 3*REM, 0, 1)
-	M.adjustToxLoss(-0.1 * REM * seconds_per_tick, 0)
+	M.reagents.remove_all_type(/datum/reagent/consumable/ethanol, 3 * REM * seconds_per_tick, 0, 1)
+	M.adjustToxLoss(-0.2 * REM * seconds_per_tick, 0)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.adjust_drunk_effect(-5 * seconds_per_tick)
@@ -71,8 +71,8 @@
 	if (M.hallucination >= 5)
 		M.hallucination -= 2.5 * seconds_per_tick
 	if(SPT_PROB(10, seconds_per_tick))
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.5 * REM * seconds_per_tick, 50)
-	M.adjustStaminaLoss(1.25 * REM * seconds_per_tick, 0)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1 * REM * seconds_per_tick, 50)
+	M.adjustStaminaLoss(2.5 * REM * seconds_per_tick, 0)
 	..()
 	return TRUE
 
@@ -98,7 +98,7 @@
 	if(!overdosed) // We do not want any effects on OD
 		overdose_threshold = overdose_threshold + rand(-10,10)/10 // for extra fun
 		M.AdjustAllImmobility(-5)
-		M.adjustStaminaLoss(-0.25 * REM * seconds_per_tick, 0)
+		M.adjustStaminaLoss(-0.5 * REM * seconds_per_tick, 0)
 		M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, max_duration = 20 SECONDS)
 		metabolization_rate = 0.01 * REM * rand(5,20) // randomizes metabolism between 0.02 and 0.08 per tick
 		. = TRUE
@@ -281,7 +281,7 @@
 			M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 
 	M.AdjustAllImmobility(-20)
-	M.adjustStaminaLoss(-0.5 * REM * seconds_per_tick, FALSE)
+	M.adjustStaminaLoss(-1 * REM * seconds_per_tick, FALSE)
 	..()
 	return TRUE
 

@@ -118,6 +118,7 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 
 /// Called from [/datum/reagents/proc/metabolize]
 /datum/reagent/proc/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	SHOULD_CALL_PARENT(TRUE)
 	current_cycle++
 	holder.remove_reagent(type, metabolization_rate * M.metabolism_efficiency * seconds_per_tick) //By default it slowly disappears.
 	return

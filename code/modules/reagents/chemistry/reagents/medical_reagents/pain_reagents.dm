@@ -154,8 +154,8 @@
 
 /datum/reagent/medicine/mine_salve/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
 	C.set_screwyhud(SCREWYHUD_HEALTHY)
-	C.adjustBruteLoss(-0.125 * REM * seconds_per_tick, 0)
-	C.adjustFireLoss(-0.125 * REM * seconds_per_tick, 0)
+	C.adjustBruteLoss(-0.25 * REM * seconds_per_tick, 0)
+	C.adjustFireLoss(-0.25 * REM * seconds_per_tick, 0)
 	..()
 	return TRUE
 

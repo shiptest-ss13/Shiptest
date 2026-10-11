@@ -41,7 +41,7 @@
 	var/obj/item/organ/ears/ears = M.getorganslot(ORGAN_SLOT_EARS)
 	if(!ears)
 		return
-	ears.adjustEarDamage(-2 * REM * seconds_per_tick)
+	ears.adjustEarDamage(-4 * REM * seconds_per_tick)
 	return ..()
 
 /datum/reagent/medicine/mannitol
@@ -50,7 +50,7 @@
 	color = "#A0A0A0" //mannitol is light grey, neurine is lighter grey
 
 /datum/reagent/medicine/mannitol/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
-	C.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1 * REM * seconds_per_tick)
+	C.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2 * REM * seconds_per_tick)
 	..()
 
 /datum/reagent/medicine/neurine
@@ -100,7 +100,7 @@
 	..()
 
 /datum/reagent/medicine/silibinin/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -1 * seconds_per_tick)//Add a chance to cure liver trauma once implemented.
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -2 * seconds_per_tick)//Add a chance to cure liver trauma once implemented.
 	..()
 	. = 1
 
@@ -137,10 +137,10 @@
 	H.adjustOrganLoss(ORGAN_SLOT_STOMACH,0.125 * seconds_per_tick)
 	if(H.health <= HEALTH_THRESHOLD_CRIT && H.health > H.crit_threshold) //we cannot save someone above our raised crit threshold.
 
-		H.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
-		H.adjustBruteLoss(-1 * REM * seconds_per_tick, 0)
-		H.adjustFireLoss(-1 * REM * seconds_per_tick, 0)
-		H.adjustOxyLoss(-3 * REM * seconds_per_tick, 0)
+		H.adjustToxLoss(-2 * REM * seconds_per_tick, 0)
+		H.adjustBruteLoss(-2 * REM * seconds_per_tick, 0)
+		H.adjustFireLoss(-2 * REM * seconds_per_tick, 0)
+		H.adjustOxyLoss(-6 * REM * seconds_per_tick, 0)
 
 		H.losebreath = 0
 

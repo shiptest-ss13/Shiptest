@@ -49,17 +49,17 @@
 		to_chat(metabolizer, span_notice("[smoke_message]"))
 	SEND_SIGNAL(metabolizer, COMSIG_ADD_MOOD_EVENT, "smoked", /datum/mood_event/smoked, name)
 	metabolizer.remove_status_effect(/datum/status_effect/jitter)
-	metabolizer.AdjustStun(-5)
-	metabolizer.AdjustKnockdown(-5)
-	metabolizer.AdjustUnconscious(-5)
-	metabolizer.AdjustParalyzed(-5)
-	metabolizer.AdjustImmobilized(-5)
+	metabolizer.AdjustStun(-5 * REM * seconds_per_tick)
+	metabolizer.AdjustKnockdown(-5 * REM * seconds_per_tick)
+	metabolizer.AdjustUnconscious(-5 * REM * seconds_per_tick)
+	metabolizer.AdjustParalyzed(-5 * REM * seconds_per_tick)
+	metabolizer.AdjustImmobilized(-5 * REM * seconds_per_tick)
 	..()
 	. = 1
 
 /datum/reagent/drug/nicotine/overdose_process(mob/living/carbon/overdoser, seconds_per_tick, times_fired)
-	overdoser.adjustToxLoss(0.1*REM, 0)
-	overdoser.adjustOxyLoss(1.1*REM, 0)
+	overdoser.adjustToxLoss(0.1 * REM * seconds_per_tick, 0)
+	overdoser.adjustOxyLoss(1.1 * REM * seconds_per_tick, 0)
 	..()
 	. = 1
 
@@ -110,7 +110,7 @@
 	if(SPT_PROB(17, seconds_per_tick))
 		overdoser.visible_message(span_danger("[overdoser]'s hands flip out and flail everywhere!"))
 		overdoser.drop_all_held_items()
-	overdoser.adjustToxLoss(1, 0)
+	overdoser.adjustToxLoss(1 * REM * seconds_per_tick, 0)
 	overdoser.adjustOrganLoss(ORGAN_SLOT_HEART, pick(0.5, 0.6, 0.7, 0.8, 0.9, 1))
 	..()
 	. = 1

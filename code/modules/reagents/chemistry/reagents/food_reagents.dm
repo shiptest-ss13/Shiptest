@@ -346,7 +346,7 @@
 
 /datum/reagent/drug/mushroomhallucinogen
 	name = "Mushroom Hallucinogen"
-	description = "A strong hallucinogenic drug derived from certain species of mushroometabolizer."
+	description = "A strong hallucinogenic drug derived from certain species of mushroom."
 	color = "#E700E7" // rgb: 231, 0, 231
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	taste_description = "mushroom"
@@ -538,10 +538,10 @@
 /datum/reagent/consumable/honey/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	holder.add_reagent(/datum/reagent/consumable/sugar,3)
 	if(prob(55))
-		metabolizer.adjustBruteLoss(-1*REM, 0)
-		metabolizer.adjustFireLoss(-1*REM, 0)
-		metabolizer.adjustOxyLoss(-1*REM, 0)
-		metabolizer.adjustToxLoss(-1*REM, 0)
+		metabolizer.adjustBruteLoss(-1 * REM * seconds_per_tick, 0)
+		metabolizer.adjustFireLoss(-1 * REM * seconds_per_tick, 0)
+		metabolizer.adjustOxyLoss(-1 * REM * seconds_per_tick, 0)
+		metabolizer.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
 	..()
 
 /datum/reagent/consumable/honey/expose_mob(mob/living/M, method=TOUCH, reac_volume)
@@ -628,8 +628,8 @@
 	if(prob(20))
 		metabolizer.losebreath += 4
 		metabolizer.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM, 150)
-		metabolizer.adjustToxLoss(3*REM,0)
-		metabolizer.adjustStaminaLoss(10*REM,0)
+		metabolizer.adjustToxLoss(3 * REM * seconds_per_tick,0)
+		metabolizer.adjustStaminaLoss(10 * REM * seconds_per_tick,0)
 		metabolizer.blur_eyes(5)
 		. = TRUE
 	..()
@@ -673,8 +673,8 @@
 
 /datum/reagent/consumable/vitfro/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(prob(80))
-		metabolizer.adjustBruteLoss(-1*REM, 0)
-		metabolizer.adjustFireLoss(-1*REM, 0)
+		metabolizer.adjustBruteLoss(-1 * REM * seconds_per_tick, 0)
+		metabolizer.adjustFireLoss(-1 * REM * seconds_per_tick, 0)
 		. = TRUE
 	..()
 
@@ -787,7 +787,7 @@
 /datum/reagent/consumable/pyre_elementum/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	metabolizer.adjust_bodytemperature(2 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, metabolizer.get_body_temp_normal(), FALSE)		// Doesn't kill you like capsaicin
 	if(!ingested)							// Unless you didn't eat it
-		metabolizer.adjustFireLoss(0.25*REM, 0)
+		metabolizer.adjustFireLoss(0.25 * REM * seconds_per_tick, 0)
 	..()
 
 /datum/reagent/consumable/pyre_elementum/on_mob_end_metabolize(mob/living/M)
@@ -803,9 +803,9 @@
 
 /datum/reagent/consumable/fervor/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(prob(80))
-		metabolizer.adjustBruteLoss(-2*REM, 0)
-		metabolizer.adjustFireLoss(-2*REM, 0)
-	metabolizer.adjustStaminaLoss(-5*REM, 0)
+		metabolizer.adjustBruteLoss(-2 * REM * seconds_per_tick, 0)
+		metabolizer.adjustFireLoss(-2 * REM * seconds_per_tick, 0)
+	metabolizer.adjustStaminaLoss(-5 * REM * seconds_per_tick, 0)
 	..()
 
 /datum/reagent/consumable/cheese_spread

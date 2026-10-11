@@ -68,9 +68,9 @@
 
 /datum/reagent/medicine/puce_essence/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(SPT_PROB(50, seconds_per_tick))
-		M.adjustToxLoss(-0.5 * REM * seconds_per_tick, 0)
+		M.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
 	else
-		M.adjustCloneLoss(-0.5 * REM * seconds_per_tick, 0)
+		M.adjustCloneLoss(-1 * REM * seconds_per_tick, 0)
 	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
 		M.reagents.remove_reagent(R.type, 0.125 * seconds_per_tick)
 	if(holder.has_reagent(/datum/reagent/medicine/soulus))				// No, you can't chemstack with soulus dust
@@ -99,7 +99,7 @@
 
 /datum/reagent/medicine/chartreuse/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)	// Yes, you can chemstack with soulus dust
 	if(SPT_PROB(50, seconds_per_tick))
-		M.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
+		M.adjustToxLoss(-2 * REM * seconds_per_tick, 0)
 		M.adjustCloneLoss(-1 * REM * seconds_per_tick, 0)
 	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
 		M.reagents.remove_reagent(R.type, 0.5 * seconds_per_tick)
@@ -129,22 +129,22 @@
 
 /datum/reagent/medicine/earthsblood/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(current_cycle <= 25) //10u has to be processed before u get into THE FUN ZONE
-		M.adjustBruteLoss(-0.5 * REM * seconds_per_tick, 0)
-		M.adjustFireLoss(-0.5 * REM * seconds_per_tick, 0)
-		M.adjustOxyLoss(-0.25 * REM * seconds_per_tick, 0)
-		M.adjustToxLoss(-0.25 * REM * seconds_per_tick, 0)
-		M.adjustCloneLoss(-0.05 * REM * seconds_per_tick, 0)
-		M.adjustStaminaLoss(-0.25 * REM * seconds_per_tick, 0)
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.5 * REM * seconds_per_tick, 150) //This does, after all, come from ambrosia, and the most powerful ambrosia in existence, at that!
+		M.adjustBruteLoss(-1 * REM * seconds_per_tick, 0)
+		M.adjustFireLoss(-1 * REM * seconds_per_tick, 0)
+		M.adjustOxyLoss(-0.5 * REM * seconds_per_tick, 0)
+		M.adjustToxLoss(-0.5 * REM * seconds_per_tick, 0)
+		M.adjustCloneLoss(-0.1 * REM * seconds_per_tick, 0)
+		M.adjustStaminaLoss(-0.5 * REM * seconds_per_tick, 0)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1 * REM * seconds_per_tick, 150) //This does, after all, come from ambrosia, and the most powerful ambrosia in existence, at that!
 	else
-		M.adjustBruteLoss(-2.5 * REM * seconds_per_tick, 0) //slow to start, but very quick healing once it gets going
-		M.adjustFireLoss(-2.5 * REM * seconds_per_tick, 0)
-		M.adjustOxyLoss(-1.5 * REM * seconds_per_tick, 0)
-		M.adjustToxLoss(-1.5 * REM * seconds_per_tick, 0)
-		M.adjustCloneLoss(-0.5 * REM * seconds_per_tick, 0)
-		M.adjustStaminaLoss(-1.5 * REM * seconds_per_tick, 0)
+		M.adjustBruteLoss(-5 * REM * seconds_per_tick, 0) //slow to start, but very quick healing once it gets going
+		M.adjustFireLoss(-5 * REM * seconds_per_tick, 0)
+		M.adjustOxyLoss(-3 * REM * seconds_per_tick, 0)
+		M.adjustToxLoss(-2 * REM * seconds_per_tick, 0)
+		M.adjustCloneLoss(-1 * REM * seconds_per_tick, 0)
+		M.adjustStaminaLoss(-3 * REM * seconds_per_tick, 0)
 		M.adjust_timed_status_effect(3 SECONDS, /datum/status_effect/jitter, 30 SECONDS)
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1 * REM * seconds_per_tick, 150)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2 * REM * seconds_per_tick, 150)
 	M.druggy = min(max(0, M.druggy + 10), 15) //See above
 	..()
 	. = 1
@@ -160,9 +160,9 @@
 /datum/reagent/medicine/earthsblood/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	M.hallucination = min(max(0, M.hallucination + 5), 60)
 	if(current_cycle > 25)
-		M.adjustToxLoss(2 * REM * seconds_per_tick, 0)
+		M.adjustToxLoss(4 * REM * seconds_per_tick, 0)
 		if(current_cycle > 100) //podpeople get out reeeeeeeeeeeeeeeeeeeee
-			M.adjustToxLoss(3 * REM * seconds_per_tick, 0)
+			M.adjustToxLoss(6 * REM * seconds_per_tick, 0)
 	if(iscarbon(M))
 		var/mob/living/carbon/hippie = M
 		hippie.gain_trauma(/datum/brain_trauma/severe/pacifism)

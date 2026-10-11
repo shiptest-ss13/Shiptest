@@ -212,7 +212,7 @@
 	..()
 
 /datum/reagent/toxin/zombiepowder/expose_mob(mob/living/exposed_mob, method=TOUCH, reac_volume)
-	exposed_mob.adjustOxyLoss(0.5*REM, 0)
+	exposed_mob.adjustOxyLoss(0.5, 0)
 	if(method == INGEST)
 		var/datum/reagent/toxin/zombiepowder/zombiepowder = exposed_mob.reagents.has_reagent(/datum/reagent/toxin/zombiepowder)
 		if(istype(zombiepowder))
@@ -250,7 +250,7 @@
 	..()
 
 /datum/reagent/toxin/ghoulpowder/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjustOxyLoss(1*REM, 0)
+	metabolizer.adjustOxyLoss(1 * REM * seconds_per_tick, 0)
 	..()
 	. = 1
 
@@ -368,7 +368,7 @@
 			. = 1
 		if(51 to INFINITY)
 			metabolizer.Sleeping(40)
-			metabolizer.adjustToxLoss((current_cycle - 50)*REM, 0)
+			metabolizer.adjustToxLoss((current_cycle - 50) * REM * seconds_per_tick, 0)
 			. = 1
 	..()
 
@@ -484,8 +484,8 @@
 	..()
 
 /datum/reagent/toxin/histamine/overdose_process(mob/living/overdoser, seconds_per_tick)
-	overdoser.adjustOxyLoss(1*REM, 0)
-	overdoser.adjustToxLoss(1*REM, 0)
+	overdoser.adjustOxyLoss(1 * REM * seconds_per_tick, 0)
+	overdoser.adjustToxLoss(1 * REM * seconds_per_tick, 0)
 	overdoser.adjust_lung_inflammation(histamine_OD_inflammation * SSMOBS_DT * REM)
 	if (SPT_PROB(15, seconds_per_tick))
 		to_chat(overdoser, span_boldwarning("You feel your neck swelling, squeezing on your windpipe more and more!"))
@@ -517,8 +517,8 @@
 	toxpwr = 0
 
 /datum/reagent/toxin/venom/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	toxpwr = 0.2*volume
-	metabolizer.adjustBruteLoss((0.3*volume)*REM, 0)
+	toxpwr = 0.1*volume
+	metabolizer.adjustBruteLoss((0.3*volume) * REM * seconds_per_tick, 0)
 	. = 1
 	if(prob(15))
 		holder.add_reagent(/datum/reagent/toxin/histamine, pick(5,10))
@@ -540,7 +540,7 @@
 	if(prob(8))
 		to_chat(metabolizer, span_danger("You feel horrendously weak!"))
 		metabolizer.Stun(40)
-		metabolizer.adjustToxLoss(2*REM, 0)
+		metabolizer.adjustToxLoss(2 * REM * seconds_per_tick, 0)
 	return ..()
 
 /datum/reagent/toxin/bad_food
@@ -645,7 +645,7 @@
 /datum/reagent/toxin/sodium_thiopental/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(current_cycle >= 10)
 		metabolizer.Sleeping(40)
-	metabolizer.adjustStaminaLoss(10*REM, 0)
+	metabolizer.adjustStaminaLoss(10 * REM * seconds_per_tick, 0)
 	..()
 	return TRUE
 
@@ -690,7 +690,7 @@
 
 /datum/reagent/toxin/lipolicide/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(metabolizer.nutrition <= NUTRITION_LEVEL_STARVING)
-		metabolizer.adjustToxLoss(1*REM, 0)
+		metabolizer.adjustToxLoss(1 * REM * seconds_per_tick, 0)
 	metabolizer.adjust_nutrition(-3) // making the chef more valuable, one meme trap at a time
 	metabolizer.overeatduration = 0
 	return ..()
@@ -743,7 +743,7 @@
 /datum/reagent/toxin/curare/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(current_cycle >= 11)
 		metabolizer.Paralyze(60)
-	metabolizer.adjustOxyLoss(1*REM, 0)
+	metabolizer.adjustOxyLoss(1 * REM * seconds_per_tick, 0)
 	. = 1
 	..()
 
