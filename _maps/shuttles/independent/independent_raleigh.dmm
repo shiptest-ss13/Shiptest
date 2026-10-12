@@ -3466,8 +3466,9 @@
 /obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/components/unary/tank/air{
+	initialize_directions = 1;
 	dir = 1;
-	initialize_directions = 1
+	piping_layer = 2
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)

@@ -25,6 +25,7 @@
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
 
 	var/manufacturer = MANUFACTURER_NONE // manufacturer shown in examine text
+	var/autowiki_hidden = FALSE
 
 	// MUZZLE FLASH //
 	var/obj/effect/muzzle_flash/muzzle_flash // effect to use
@@ -670,6 +671,7 @@
 #define BRAINS_BLOWN_THROW_SPEED 1
 
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
+	var/killspeople = TRUE
 	if(!ishuman(user) || !ishuman(target))
 		return
 
@@ -700,6 +702,9 @@
 
 	current_cooldown = FALSE
 
+	if(chambered.BB.nodamage || !chambered.BB.damage || chambered.BB.damage_type == STAMINA)
+		killspeople = FALSE
+
 	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
 
 	if(chambered && chambered.BB && can_trigger_gun(user))
@@ -712,11 +717,11 @@
 		if(brain_to_blast)
 
 			//Check if the projectile is actually damaging and not of type STAMINA
-			if(chambered.BB.nodamage || !chambered.BB.damage || chambered.BB.damage_type == STAMINA)
+				//Remove brain of the mob shot
+			if(killspeople)
+				brain_to_blast.Remove(target)
+			else
 				return
-
-			//Remove brain of the mob shot
-			brain_to_blast.Remove(target)
 
 			var/turf/splat_turf = get_turf(target)
 			//Move the brain of the person shot to selected turf

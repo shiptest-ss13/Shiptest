@@ -7,6 +7,7 @@ import {
   Table,
   LabeledList,
   Collapsible,
+  NoticeBox,
 } from '../components';
 import { Window } from '../layouts';
 import { createSearch, decodeHtmlEntities } from 'common/string';
@@ -26,6 +27,13 @@ export const ShipSelect = (props, context) => {
   const templates = data.templates || [];
 
   const [currentTab, setCurrentTab] = useLocalState(context, 'tab', 1);
+
+  const [selectedShipName, setSelectedShipName] = useLocalState(
+    context,
+    'selectedShipName',
+    null
+  );
+
   const [selectedShipRef, setSelectedShipRef] = useLocalState(
     context,
     'selectedShipRef',
@@ -115,6 +123,7 @@ export const ShipSelect = (props, context) => {
                         }
                         onClick={() => {
                           setSelectedShipRef(ship.ref);
+                          setSelectedShipName(ship.name);
                           setCurrentTab(2);
                           const newTab = {
                             name: 'Job Select',
@@ -145,7 +154,25 @@ export const ShipSelect = (props, context) => {
             </Table>
           </Section>
         )}
-        {currentTab === 2 && (
+        {currentTab === 2 && !selectedShip && (
+          <Section
+            title={`Ship Details - ${decodeHtmlEntities(selectedShipName)}`}
+            buttons={
+              <Button
+                content="Back"
+                onClick={() => {
+                  setCurrentTab(1);
+                }}
+              />
+            }
+          >
+            <NoticeBox>
+              This ship is no longer accepting new crew. It may have closed its
+              applications, or ceased to exist.
+            </NoticeBox>
+          </Section>
+        )}
+        {currentTab === 2 && !!selectedShip && (
           <>
             <Section
               title={`Ship Details - ${decodeHtmlEntities(selectedShip.name)}`}

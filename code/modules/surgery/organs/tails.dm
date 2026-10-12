@@ -9,15 +9,26 @@
 	var/tail_type = "None"
 	var/tail_trait = null
 
-/obj/item/organ/tail/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+/obj/item/organ/tail/Insert(mob/living/carbon/human/source, special = 0, drop_if_replaced = TRUE)
 	..()
 	if(tail_trait)
 		ADD_TRAIT(owner, tail_trait, ORGAN_TRAIT)
+	RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_INCAPACITATED), PROC_REF(on_owner_incapacitated))
 
-/obj/item/organ/tail/Remove(mob/living/carbon/human/H,  special = 0)
+/obj/item/organ/tail/Remove(mob/living/carbon/human/source,  special = 0)
 	..()
-	if(H && H.dna && H.dna.species)
-		H.dna.species.stop_wagging_tail(H)
+	if(source)
+		UnregisterSignal(source, SIGNAL_ADDTRAIT(TRAIT_INCAPACITATED))
+	if(source && source.dna && source.dna.species)
+		source.dna.species.stop_wagging_tail(source)
+
+// stop wagging when incapped
+/obj/item/organ/tail/proc/on_owner_incapacitated(mob/living/carbon/human/source)
+	SIGNAL_HANDLER
+
+	if(!ishuman(source) || !source.dna?.species?.is_wagging_tail())
+		return
+	source.dna.species.stop_wagging_tail(source)
 
 /obj/item/organ/tail/cat
 	name = "cat tail"
