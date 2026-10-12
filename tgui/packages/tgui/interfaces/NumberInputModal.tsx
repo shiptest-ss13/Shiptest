@@ -46,7 +46,7 @@ export const NumberInputModal = (props, context) => {
       {timeout && <Loader value={timeout} />}
       <Window.Content
         onKeyDown={(event: InfernoKeyboardEvent<HTMLDivElement>) => {
-          const keyCode = window.event ? event.which : event.keyCode;
+          const keyCode = event.key;
           if (keyCode === KEY.Enter) {
             act('submit', { entry: value });
           }
