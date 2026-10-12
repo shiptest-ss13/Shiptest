@@ -405,7 +405,7 @@ class ChatRenderer {
           if (!Element) {
             logger.error(
               `Error: unknown chat component "${targetName}" in message`,
-              message,
+              message
             );
             childNode.removeAttribute('data-component');
             continue;
