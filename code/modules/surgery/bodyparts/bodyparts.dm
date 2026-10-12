@@ -20,6 +20,8 @@
 
 	///Whether the clothing being worn forces the limb into being "squished" to plantigrade/standard humanoid compliance
 	var/plantigrade_forced = FALSE
+	///Whether the limb is of the digitigrade_clawed type
+	var/digitigrade_clawed = FALSE
 	///Whether the limb is husked
 	var/is_husked = FALSE
 	///This is effectively the icon_state prefix for limbs.
@@ -1089,6 +1091,8 @@
 		limb.icon_state += "_[limb_gender]"
 	if(bodytype & BODYTYPE_DIGITIGRADE && !plantigrade_forced)
 		limb.icon_state += "_digitigrade"
+		if(digitigrade_clawed)
+			limb.icon_state += "_clawed"
 
 	if(!icon_exists(limb.icon, limb.icon_state))
 		limb_stacktrace("Limb generated with nonexistant icon. File: [limb.icon] | State: [limb.icon_state]", GLOB.Debug) //If you *really* want more of these, you can set the *other* global debug flag manually.
