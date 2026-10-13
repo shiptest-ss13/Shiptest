@@ -408,6 +408,14 @@
 	stock_max = 5
 	availability_prob = 60
 
+/datum/blackmarket_item/weapon/guncase/gouger
+	name = "Gouger Heavy Carbine"
+	desc = "Gougar? No, it's Gouger. Like gouging your eyes out, dumbass. Anyway. Our guys made 'em in-house and they sell like fuckin' hotcakes to the people who like a fuckin' hard hitting rifle."
+	cost_min = 2000
+	cost_max = 3000
+	stock_max = 3
+	availability_prob = 40
+
 /datum/blackmarket_item/weapon/guncase/model_h
 	name = "Model H"
 	desc = "A Model H slug pistol. The H stands for Hurt. Chambered in ferromagnetic slugs."

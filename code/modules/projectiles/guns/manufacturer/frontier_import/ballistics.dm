@@ -681,3 +681,81 @@ NO_MAG_GUN_HELPER(automatic/smg/heater)
 
 /obj/item/ammo_box/magazine/m12g_slammer/empty
 	start_empty = TRUE
+
+/obj/item/gun/ballistic/rifle/illestren/gouger
+	name = "Gouger"
+	desc = "A Frontiersman-modified variant of the tried-and-true Illestren. Due to its shortened barrel, it has a lower effective range. Its short-gas-stroke piston renders the once-manually operated rifle into a fast firing semi-automatic 'heavy carbine'. It loads through the bottom. Chambered in 8x50mmR."
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
+	icon_state = "gouger"
+	item_state = "gouger"
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	default_ammo_type = /obj/item/ammo_box/magazine/illestren_a850r
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/illestren_a850r,
+	)
+
+	semi_auto = TRUE
+	fire_delay = 0.8 SECONDS
+
+	fire_sound = 'sound/weapons/gun/rifle/mosin.ogg'
+	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/rifle/bolt_in.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/vickland_unload.ogg'
+
+	wear_rate = 1.5
+
+	spread_unwielded = 25
+	spread = 3
+	recoil = 1
+	recoil_unwielded = 4
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 43,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 40,
+			"y" = 15,
+		),
+	)
+
+/obj/item/gun/ballistic/rifle/illestren/gouger/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", spread_override = 0)
+	. = ..()
+	if(!chambered && (!magazine || !magazine.ammo_count()))
+		bolt_locked = TRUE
+		if(magazine)
+			eject_magazine(user, TRUE)
+		update_appearance()
+
+/obj/item/gun/ballistic/rifle/illestren/gouger/insert_magazine(mob/user, obj/item/ammo_box/magazine/AM)
+	. = ..()
+	if(. && !chambered)
+		bolt_locked = FALSE
+		chamber_round()
+		if(bolt_drop_sound)
+			playsound(src, bolt_drop_sound, 70, TRUE)
+		update_appearance()
+
+/obj/item/gun/ballistic/rifle/illestren/gouger/update_icon_state()
+	if(bolt_locked || (!chambered && !magazine))
+		icon_state = "gouger_bolt_locked"
+	else
+		icon_state = "gouger_bolt"
+	return ..()
+
+
+/obj/item/gun/ballistic/rifle/illestren/gouger/empty
+	default_ammo_type = FALSE
+
