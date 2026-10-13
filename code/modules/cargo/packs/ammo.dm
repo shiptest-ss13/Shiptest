@@ -256,7 +256,7 @@
 	name = ".45-70 Ammo Box Crate"
 	desc = "Contains a 24-round box containing devastatingly powerful .45-70 caliber ammunition."
 	contains = list(/obj/item/storage/box/ammo/a4570)
-	cost = 190 //5.6 ammo efficiency at 45 damage
+	cost = 175 //5.6 ammo efficiency at 45 damage
 
 /datum/supply_pack/ammo/a4570_match
 	name = ".45-70 Match Crate"
@@ -268,7 +268,7 @@
 	name = ".45-70 Hollow Point Ammo Box Crate"
 	desc = "Contains a 24-round box containing devastatingly powerful .45-70 hollow point caliber ammunition."
 	contains = list(/obj/item/storage/box/ammo/a4570_hp)
-	cost = 260
+	cost = 235
 
 /* 7.62 */
 
