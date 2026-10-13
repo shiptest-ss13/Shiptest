@@ -255,6 +255,22 @@
 	build_path = /obj/item/clothing/ears/earmuffs
 	category = list("initial", "Misc")
 
+/datum/design/glassvase
+	name = "Glass Vase"
+	id = "glassvase"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 200)
+	build_path = /obj/item/glassvase
+	category = list("initial", "Misc")
+
+/datum/design/ashtray
+	name = "Ashtray"
+	id = "ashtray"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 200)
+	build_path = /obj/item/ashtray
+	category = list("initial", "Misc")
+
 /datum/design/pipe_painter
 	name = "Pipe Painter"
 	id = "pipe_painter"
@@ -487,6 +503,22 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/glass=500, /datum/material/silver=100)
 	build_path = /obj/item/reagent_containers/food/drinks/modglass/large
+	category = list("initial", "Dinnerware")
+
+/datum/design/mug
+	name = "Mug"
+	id = "mug"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=400)
+	build_path = /obj/item/reagent_containers/food/drinks/mug
+	category = list("initial", "Dinnerware")
+
+/datum/design/teacup
+	name = "Teacup"
+	id = "teacup"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=300)
+	build_path = /obj/item/reagent_containers/food/drinks/teacup
 	category = list("initial", "Dinnerware")
 
 /datum/design/glassbottle
