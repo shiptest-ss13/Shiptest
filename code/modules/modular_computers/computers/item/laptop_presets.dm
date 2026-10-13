@@ -28,7 +28,21 @@
 	icon_state_powered = "laptop_rilena"
 	icon_state_unpowered = "laptop-off_rilena"
 	icon_state_closed = "laptop-closed_rilena"
+	icon_state_menu = "menu_rilena"
 
 /obj/item/modular_computer/laptop/preset/civilian/rilena/install_programs()
 	//var/obj/item/computer_hardware/hard_drive/hard_drive = all_components[MC_HDD]
 	//hard_drive.store_file(new/datum/computer_file/program/rilena()) //temporarily disabling this so it doesn't ruin anything
+
+/obj/item/modular_computer/laptop/preset/civilian/coalition
+	name = "Coalition laptop"
+	desc = "A sleek scarlet-red laptop. Use this carefully - she was designed for important work."
+	icon_state = "laptop-closed_coalition"
+	icon_state_powered = "laptop_coalition"
+	icon_state_unpowered = "laptop-off_coalition"
+	icon_state_closed = "laptop-closed_coalition"
+	icon_state_menu = "menu_cybersun"
+
+/obj/item/modular_computer/laptop/preset/civilian/coalition/install_programs()
+	var/obj/item/computer_hardware/hard_drive/hard_drive = all_components[MC_HDD]
+	hard_drive.store_file(new/datum/computer_file/program/radar/fission360())
