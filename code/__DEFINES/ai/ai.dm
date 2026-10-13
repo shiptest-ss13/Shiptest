@@ -3,6 +3,8 @@
 
 #define AI_STATUS_ON 1
 #define AI_STATUS_OFF 2
+///Asleep because there's no players on our virtual z-level to notice us, woken when one arrives. See /datum/ai_controller/proc/check_should_sleep()
+#define AI_STATUS_IDLE 3
 
 
 ///Monkey checks

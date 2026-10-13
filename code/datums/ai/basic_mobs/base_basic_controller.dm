@@ -15,6 +15,8 @@
 
 /datum/ai_controller/basic_controller/able_to_run()
 	. = ..()
+	if(!.)
+		return FALSE // paused, see PauseAi()
 	if(isliving(pawn))
 		var/mob/living/living_pawn = pawn
 		if(IS_DEAD_OR_INCAP(living_pawn))

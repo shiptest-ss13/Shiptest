@@ -11,6 +11,8 @@ SUBSYSTEM_DEF(ai_controllers)
 	var/list/ai_subtrees = list()
 	///List of all ai controllers currently running
 	var/list/active_ai_controllers = list()
+	///AI controllers that are asleep because nobody's around, as list("virtual z" = list(controllers))
+	var/list/list/sleeping_ai_by_virtual_level = list()
 
 /datum/controller/subsystem/ai_controllers/Initialize(timeofday)
 	setup_subtrees()
@@ -27,7 +29,13 @@ SUBSYSTEM_DEF(ai_controllers)
 		if(!COOLDOWN_FINISHED(ai_controller, failed_planning_cooldown))
 			continue
 
-		if(!LAZYLEN(ai_controller.current_behaviors))
+		if(ai_controller.able_to_plan())
 			ai_controller.SelectBehaviors(wait * 0.1)
 			if(!LAZYLEN(ai_controller.current_behaviors)) //Still no plan
 				COOLDOWN_START(ai_controller, failed_planning_cooldown, AI_FAILED_PLANNING_COOLDOWN)
+				ai_controller.check_should_sleep() // nothing to do, so if nobody's around, sleep until someone is
+
+/// Wakes up the AI asleep on a virtual z-level, as a player's arrived there.
+/datum/controller/subsystem/ai_controllers/proc/wake_virtual_level(virtual_level)
+	for(var/datum/ai_controller/sleeping_controller as anything in LAZYACCESS(sleeping_ai_by_virtual_level, "[virtual_level]"))
+		sleeping_controller.check_should_sleep()

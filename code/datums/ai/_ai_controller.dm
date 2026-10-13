@@ -21,6 +21,14 @@ multiple modular subtrees with behaviors
 	var/ai_traits = NONE
 	///Current actions being performed by the AI.
 	var/list/current_behaviors
+	///Behaviors picked by the planning pass in progress, as list(behavior = TRUE), so ones that weren't picked again can be cancelled. See SelectBehaviors()
+	var/list/planned_behaviors
+	///While we're asleep, the virtual z-level we're filed under to be woken when a player arrives, see check_should_sleep()
+	var/sleeping_on_virtual_level
+	///Access the AI's pawn can open doors with, like list(ACCESS_SYNDICATE). Null for none. See get_access()
+	var/list/door_access
+	///The ID card holding door_access, kept in nullspace so it can never be dropped or looted, made the first time it's needed
+	var/obj/item/card/id/door_access_card
 	///Current actions and their respective last time ran as an assoc list.
 	var/list/behavior_cooldowns = list()
 	///Current status of AI (OFF/ON)
@@ -71,6 +79,7 @@ multiple modular subtrees with behaviors
 	PossessPawn(new_pawn)
 
 /datum/ai_controller/Destroy(force, ...)
+	QDEL_NULL(door_access_card)
 	set_ai_status(AI_STATUS_OFF)
 	UnpossessPawn(FALSE)
 	ai_movement.stop_moving_towards(src)
@@ -177,6 +186,7 @@ multiple modular subtrees with behaviors
 /datum/ai_controller/process(seconds_per_tick)
 	if(!able_to_run())
 		walk(pawn, 0) //stop moving
+		ai_movement.stop_moving_towards(src) // and our ai_movement too, or it keeps moving us
 		return //this should remove them from processing in the future through event-based stuff.
 	if(!LAZYLEN(current_behaviors) && idle_behavior)
 		idle_behavior.perform_idle_behavior(seconds_per_tick, src) //Do some stupid shit while we have nothing to do
@@ -220,6 +230,15 @@ multiple modular subtrees with behaviors
 			ProcessBehavior(action_seconds_per_tick, current_behavior)
 			return
 
+///Whether we can plan right now: when we've nothing to do, or what we're doing allows planning while it runs
+/datum/ai_controller/proc/able_to_plan()
+	if(QDELETED(pawn))
+		return FALSE
+	for(var/datum/ai_behavior/current_behavior as anything in current_behaviors)
+		if(!(current_behavior.behavior_flags & AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION))
+			return FALSE
+	return TRUE
+
 ///This is where you decide what actions are taken by the AI.
 /datum/ai_controller/proc/SelectBehaviors(seconds_per_tick)
 	SHOULD_NOT_SLEEP(TRUE) //Fuck you don't sleep in procs like this.
@@ -227,11 +246,24 @@ multiple modular subtrees with behaviors
 		return FALSE
 
 	LAZYINITLIST(current_behaviors)
+	// what we were already doing, so anything the plan doesn't pick again can be cancelled
+	var/list/previous_behaviors = current_behaviors.Copy()
+	planned_behaviors = list()
 
 	if(LAZYLEN(planning_subtrees))
 		for(var/datum/ai_planning_subtree/subtree as anything in planning_subtrees)
 			if(subtree.SelectBehaviors(src, seconds_per_tick) == SUBTREE_RETURN_FINISH_PLANNING)
 				break
+
+	for(var/datum/ai_behavior/previous_behavior as anything in previous_behaviors)
+		if(planned_behaviors[previous_behavior] || !(previous_behavior in current_behaviors))
+			continue // still in the plan, or it finished on its own while we planned
+		var/list/arguments = list(src, FALSE)
+		var/list/stored_arguments = behavior_args[previous_behavior.type]
+		if(stored_arguments)
+			arguments += stored_arguments
+		previous_behavior.finish_action(arglist(arguments))
+	planned_behaviors = null
 
 ///This proc handles changing ai status, and starts/stops processing if required.
 /datum/ai_controller/proc/set_ai_status(new_ai_status)
@@ -239,14 +271,45 @@ multiple modular subtrees with behaviors
 		return FALSE //no change
 
 	ai_status = new_ai_status
+	stop_sleeping()
 	switch(ai_status)
 		if(AI_STATUS_ON)
 			SSai_controllers.active_ai_controllers += src
 			START_PROCESSING(SSai_behaviors, src)
-		if(AI_STATUS_OFF)
+		if(AI_STATUS_OFF, AI_STATUS_IDLE)
 			STOP_PROCESSING(SSai_behaviors, src)
 			SSai_controllers.active_ai_controllers -= src
 			CancelActions()
+	if(ai_status == AI_STATUS_IDLE)
+		sleeping_on_virtual_level = "[pawn.virtual_z()]"
+		LAZYADDASSOCLIST(SSai_controllers.sleeping_ai_by_virtual_level, sleeping_on_virtual_level, src)
+
+/**
+ * Goes to sleep and stops processing if there's no players on our virtual z-level, or wakes up if there are.
+ * Checked when we've nothing to do, and when our mob changes z-level
+ */
+/datum/ai_controller/proc/check_should_sleep()
+	if(ai_status == AI_STATUS_OFF || QDELETED(pawn))
+		return // a player's in control, or we've been switched off
+	var/virtual_level = pawn.virtual_z()
+	if(!virtual_level)
+		return
+	if(length(LAZYACCESS(SSmobs.players_by_virtual_z, "[virtual_level]")))
+		set_ai_status(AI_STATUS_ON)
+	else if(ai_status != AI_STATUS_IDLE)
+		set_ai_status(AI_STATUS_IDLE)
+	else if(sleeping_on_virtual_level != "[virtual_level]")
+		// already asleep, but we've moved to another empty level, so be filed under that one instead
+		stop_sleeping()
+		sleeping_on_virtual_level = "[virtual_level]"
+		LAZYADDASSOCLIST(SSai_controllers.sleeping_ai_by_virtual_level, sleeping_on_virtual_level, src)
+
+/// Takes us off the list of sleeping AI for our virtual z-level
+/datum/ai_controller/proc/stop_sleeping()
+	if(!sleeping_on_virtual_level)
+		return
+	LAZYREMOVEASSOC(SSai_controllers.sleeping_ai_by_virtual_level, sleeping_on_virtual_level, src)
+	sleeping_on_virtual_level = null
 
 /datum/ai_controller/proc/PauseAi(time)
 	paused_until = world.time + time
@@ -256,11 +319,16 @@ multiple modular subtrees with behaviors
 	var/datum/ai_behavior/behavior = GET_AI_BEHAVIOR(behavior_type)
 	if(!behavior)
 		CRASH("Behavior [behavior_type] not found.")
+	if(behavior in current_behaviors)
+		// already doing it, so keep it going rather than setting it up again, and don't let the planning pass cancel it
+		LAZYSET(planned_behaviors, behavior, TRUE)
+		return
 	var/list/arguments = args.Copy()
 	arguments[1] = src
 	if(!behavior.setup(arglist(arguments)))
 		return
 	LAZYADD(current_behaviors, behavior)
+	LAZYSET(planned_behaviors, behavior, TRUE)
 	arguments.Cut(1, 2)
 	if(length(arguments))
 		behavior_args[behavior_type] = arguments
@@ -307,11 +375,17 @@ multiple modular subtrees with behaviors
 	SIGNAL_HANDLER
 	UnregisterSignal(pawn, COMSIG_MOB_LOGOUT)
 	set_ai_status(AI_STATUS_ON) //Can't do anything while player is connected
+	check_should_sleep() // they might have left us somewhere nobody is
 	RegisterSignal(pawn, COMSIG_MOB_LOGIN, PROC_REF(on_sentience_gained))
 
 /// Use this proc to define how your controller defines what access the pawn has for the sake of pathfinding, likely pointing to whatever ID slot is relevant
 /datum/ai_controller/proc/get_access()
-	return
+	if(!length(door_access))
+		return
+	if(QDELETED(door_access_card))
+		door_access_card = new // in nullspace, out of reach of anyone who'd want to take it
+	door_access_card.access = door_access.Copy()
+	return door_access_card
 
 ///Returns the minimum required distance to preform one of our current behaviors. Honestly this should just be cached or something but fuck you
 /datum/ai_controller/proc/get_minimum_distance()

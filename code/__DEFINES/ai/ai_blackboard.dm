@@ -92,4 +92,4 @@
 ///the hivebot partner we will go communicate with
 #define BB_HIVE_PARTNER "BB_hive_partner"
 ///Our source hive. We try to defend this.
-#define BB_HIVE_SOURCE "BB_hive_partner"
+#define BB_HIVE_SOURCE "BB_hive_source"

@@ -130,9 +130,10 @@
 	return TRUE
 
 /mob/living/basic/bullet_act(obj/projectile/Proj, def_zone, piercing_hit = FALSE)
-	apply_damage(Proj.damage, Proj.damage_type)
-	Proj.on_hit(src, 0, piercing_hit)
-	return BULLET_ACT_HIT
+	. = ..()
+	// so things like ai_retaliate know we've been shot at, as bullet_act() doesn't send it.
+	if(!QDELETED(src))
+		SEND_SIGNAL(src, COMSIG_ATOM_BULLET_ACT, Proj, def_zone)
 
 /mob/living/basic/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM, origin)
 	if(origin && istype(origin, /datum/spacevine_mutation) && isvineimmune(src))
