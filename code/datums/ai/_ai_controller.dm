@@ -64,6 +64,8 @@ multiple modular subtrees with behaviors
 	// The variables below are fucking stupid and should be put into the blackboard at some point.
 	///A list for the path we're currently following, if we're using JPS pathing
 	var/list/movement_path
+	///TRUE while a path for us is being worked out in the background, see /datum/ai_movement/jps/proc/calculate_path()
+	var/calculating_path = FALSE
 	///Cooldown for JPS movement, how often we're allowed to try making a new path
 	COOLDOWN_DECLARE(repath_cooldown)
 	///AI paused time
@@ -196,7 +198,12 @@ multiple modular subtrees with behaviors
 		CancelActions()
 		return
 
-	for(var/datum/ai_behavior/current_behavior as anything in current_behaviors)
+	// every behavior that's ready gets to go this tick, so we can do things like shoot while we move, rather than one thing at a time
+	for(var/datum/ai_behavior/current_behavior as anything in current_behaviors.Copy())
+		if(!(current_behavior in current_behaviors))
+			continue // finished, or cancelled by another behavior, earlier this tick
+		if(QDELETED(pawn))
+			return
 
 		// Convert the current behaviour action cooldown to realtime seconds from deciseconds.current_behavior
 		// Then pick the max of this and the seconds_per_tick passed to ai_controller.process()
@@ -206,7 +213,7 @@ multiple modular subtrees with behaviors
 		if(current_behavior.behavior_flags & AI_BEHAVIOR_REQUIRE_MOVEMENT) //Might need to move closer
 			if(!current_movement_target)
 				stack_trace("[pawn] wants to perform action type [current_behavior.type] which requires movement, but has no current movement target!")
-				return //This can cause issues, so don't let these slide.
+				continue
 			if(current_behavior.required_distance >= get_dist(pawn, current_movement_target)) ///Are we close enough to engage?
 				if(ai_movement.moving_controllers[src] == current_movement_target) //We are close enough, if we're moving stop.
 					ai_movement.stop_moving_towards(src)
@@ -214,7 +221,7 @@ multiple modular subtrees with behaviors
 				if(behavior_cooldowns[current_behavior] > world.time) //Still on cooldown
 					continue
 				ProcessBehavior(action_seconds_per_tick, current_behavior)
-				return
+				continue
 
 			else if(ai_movement.moving_controllers[src] != current_movement_target) //We're too far, if we're not already moving start doing it.
 				ai_movement.start_moving_towards(src, current_movement_target, current_behavior.required_distance) //Then start moving
@@ -223,12 +230,10 @@ multiple modular subtrees with behaviors
 				if(behavior_cooldowns[current_behavior] > world.time) //Still on cooldown
 					continue
 				ProcessBehavior(action_seconds_per_tick, current_behavior)
-				return
 		else //No movement required
 			if(behavior_cooldowns[current_behavior] > world.time) //Still on cooldown
 				continue
 			ProcessBehavior(action_seconds_per_tick, current_behavior)
-			return
 
 ///Whether we can plan right now: when we've nothing to do, or what we're doing allows planning while it runs
 /datum/ai_controller/proc/able_to_plan()

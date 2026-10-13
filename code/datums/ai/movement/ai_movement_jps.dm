@@ -48,7 +48,7 @@
 			generate_path = TRUE
 
 		if(generate_path)
-			if(!COOLDOWN_FINISHED(controller, repath_cooldown))
+			if(controller.calculating_path || !COOLDOWN_FINISHED(controller, repath_cooldown))
 				continue
 			controller.pathing_attempts++
 			if(controller.pathing_attempts >= max_pathing_attempts)
@@ -56,7 +56,19 @@
 				continue
 
 			COOLDOWN_START(controller, repath_cooldown, 2 SECONDS)
-			controller.movement_path = get_path_to(movable_pawn, controller.current_movement_target, AI_MAX_PATH_LENGTH, minimum_distance, id=controller.get_access())
+			// get_path_to() can sleep, so work it out in the background rather than holding up everyone else's movement
+			controller.calculating_path = TRUE
+			INVOKE_ASYNC(src, PROC_REF(calculate_path), controller, controller.current_movement_target, minimum_distance)
+
+/// Works out a path for controller to target in the background, using it if they're still headed there once it's done
+/datum/ai_movement/jps/proc/calculate_path(datum/ai_controller/controller, atom/target, minimum_distance)
+	var/list/new_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = controller.get_access())
+	if(QDELETED(controller))
+		return
+	controller.calculating_path = FALSE
+	if(QDELETED(controller.pawn) || moving_controllers[controller] != target || controller.current_movement_target != target)
+		return // we've moved on to something else while we worked it out
+	controller.movement_path = new_path
 
 /datum/ai_movement/jps/start_moving_towards(datum/ai_controller/controller, atom/current_movement_target)
 	controller.movement_path = null

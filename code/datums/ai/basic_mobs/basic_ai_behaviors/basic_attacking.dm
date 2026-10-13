@@ -57,13 +57,23 @@
 	var/burst_interval = 0.2 SECONDS
 	///do we care about avoiding friendly fire?
 	var/avoid_friendly_fire =  FALSE
+	///If TRUE, we walk into range of our target before shooting. If FALSE, we stand still and shoot whatever's within required_distance,
+	///leaving movement to something like the maintain_distance subtree, for mobs that skirmish
+	var/moves_into_range = TRUE
+
+/datum/ai_behavior/basic_ranged_attack/New()
+	. = ..()
+	if(!moves_into_range)
+		behavior_flags &= ~(AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_MOVE_AND_PERFORM)
+		behavior_flags |= AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION // so whatever's moving us keeps getting planned while we shoot
 
 /datum/ai_behavior/basic_ranged_attack/setup(datum/ai_controller/controller, target_key, targetting_datum_key, hiding_location_key)
 	. = ..()
 	var/atom/target = controller.blackboard[hiding_location_key] || controller.blackboard[target_key]
 	if(QDELETED(target))
 		return FALSE
-	set_movement_target(controller, target)
+	if(moves_into_range)
+		set_movement_target(controller, target)
 
 /datum/ai_behavior/basic_ranged_attack/perform(seconds_per_tick, datum/ai_controller/controller, target_key, targetting_datum_key, hiding_location_key)
 	var/mob/living/basic/basic_mob = controller.pawn

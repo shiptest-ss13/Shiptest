@@ -32,7 +32,7 @@
 	if(!filtered_targets.len)
 		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
-	var/atom/target = pick(filtered_targets)
+	var/atom/target = pick_final_target(controller, filtered_targets)
 	controller.set_blackboard_key(target_key, target)
 
 	var/atom/potential_hiding_location = targetting_datum.find_hidden_mobs(living_mob, target)
@@ -41,3 +41,18 @@
 		controller.set_blackboard_key(hiding_location_key, potential_hiding_location)
 
 	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
+
+/// Picks which of the targets we could attack to go for. Override it for smarter choices, like threats before people who are already down
+/datum/ai_behavior/find_potential_targets/proc/pick_final_target(datum/ai_controller/controller, list/filtered_targets)
+	// the nearest, picking at random between any as near as each other, so a group doesn't all go for the same one
+	var/atom/pawn = controller.pawn
+	var/nearest_distance = INFINITY
+	var/list/nearest_targets = list()
+	for(var/atom/possible_target as anything in filtered_targets)
+		var/distance = get_dist(pawn, possible_target)
+		if(distance < nearest_distance)
+			nearest_distance = distance
+			nearest_targets = list(possible_target)
+		else if(distance == nearest_distance)
+			nearest_targets += possible_target
+	return pick(nearest_targets)
