@@ -1982,7 +1982,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 /// Proc to append behavior to the condition of being floored. Called when the condition starts.
 /mob/living/proc/on_floored_start()
 	if(body_position == STANDING_UP) //force them on the ground
-		set_lying_angle(pick(90, 270))
+		set_lying_angle()
 		set_body_position(LYING_DOWN)
 		on_fall()
 

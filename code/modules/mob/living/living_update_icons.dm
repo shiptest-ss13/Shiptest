@@ -42,7 +42,6 @@
 			ntransform.Translate(0, new_translation)
 
 	if(do_flip == TRUE)
-		to_chat(src, "mob [src.name] of type [src.type] has been flipped")
 		changed = TRUE
 		ntransform.Scale(1, -1)
 
