@@ -420,7 +420,6 @@
 	icon_state = "human_l_leg_digitigrade_clawed"
 	digitigrade_clawed = TRUE
 	overlay_icon_state = TRUE
-	overlay_use_primary_color = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/clawed
@@ -428,5 +427,4 @@
 	icon_state = "human_r_leg_digitigrade_clawed"
 	digitigrade_clawed = TRUE
 	overlay_icon_state = TRUE
-	overlay_use_primary_color = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_DIGITIGRADE

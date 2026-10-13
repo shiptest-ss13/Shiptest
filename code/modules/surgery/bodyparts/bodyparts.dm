@@ -1003,7 +1003,8 @@
 			species_color = H.dna.features["mcolor"]
 
 		if(overlay_icon_state || overlay2_icon_state)
-			species_secondary_color = H.dna.features["mcolor2"]
+			if(!digitigrade_clawed)
+				species_secondary_color = H.dna.features["mcolor2"]
 
 		UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
 

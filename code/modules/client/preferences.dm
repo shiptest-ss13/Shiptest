@@ -2892,6 +2892,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_part.species_color = features["mcolor"]
 				if(new_part.overlay_icon_state || new_part.overlay2_icon_state)
 					new_part.species_secondary_color = features["mcolor2"]
+				if(new_part.digitigrade_clawed)
+					new_part.species_secondary_color = hair_color
 				new_part.replace_limb(character, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 
