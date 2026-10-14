@@ -873,6 +873,11 @@
 	anchored = TRUE
 	can_flip = FALSE
 	density = FALSE
+	buildstack = /obj/item/stack/sheet/mineral/wood
+	framestack = /obj/item/stack/sheet/mineral/wood
+	framestackamount = 1
+	buildstackamount = 1
+	frame = /obj/structure/table_frame/end_table
 
 /obj/structure/table/endtable/examine(mob/user)
 	. = ..()

@@ -107,7 +107,7 @@
 	desc = "Four legs holding up a frame for a small end table. "
 	icon_state = "end_frame"
 	framestack = /obj/item/stack/sheet/mineral/wood
-	framestackamount = 2
+	framestackamount = 1
 	resistance_flags = FLAMMABLE
 
 /obj/structure/table_frame/end_table/attackby(obj/item/I, mob/user, params)
