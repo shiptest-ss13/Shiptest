@@ -82,6 +82,10 @@
 	STR.max_combined_w_class = 100
 	STR.set_holdable(list(/obj/item/stack/sheet))
 
+/obj/structure/material_crate/examine(mob/user)
+	. = ..()
+	. += span_notice("You could open this by <b>Alt-clicking</b> it!")
+
 /obj/structure/material_crate/plastit
 	icon_state = "matbox_plastitanium"
 
