@@ -121,7 +121,7 @@
 			if(material.get_amount() < 1)
 				to_chat(user, span_warning("You need one [material.name] sheet to do this!"))
 				return FALSE
-			if(locate(toConstruct in loc))
+			if(locate(toConstruct) in loc)
 				to_chat(user, span_warning("A [toConstruct] already exists here!"))
 				return FALSE
 			to_chat(user, span_notice("You start adding [material] to [src]..."))
