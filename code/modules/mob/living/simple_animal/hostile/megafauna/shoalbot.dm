@@ -130,16 +130,16 @@ AI attacks
 	else
 		if(prob(50))
 			if(prob(50))
-				playsound(source,'sound/effects/gravityblast.ogg', 200, TRUE)
+				playsound(src,'sound/effects/gravityblast.ogg', 200, TRUE)
 				INVOKE_ASYNC(src, PROC_REF(blasts), target, GLOB.cardinals)
 			else
-				playsound(source,'sound/effects/gravityblast.ogg', 200, TRUE)
+				playsound(src,'sound/effects/gravityblast.ogg', 200, TRUE)
 				INVOKE_ASYNC(src, PROC_REF(blasts), target, GLOB.diagonals)
 		else if(prob(50))
-			playsound(source,'sound/effects/gravityblast.ogg', 200, TRUE)
+			playsound(src,'sound/effects/gravityblast.ogg', 200, TRUE)
 			blink(target)
 		else if(prob(50))
-			playsound(source,'sound/effects/gravityblast.ogg', 200, TRUE)
+			playsound(src,'sound/effects/gravityblast.ogg', 200, TRUE)
 			melee_blast(target)
 		else
 			doubleblast()
@@ -186,7 +186,6 @@ AI attacks
 		new /obj/effect/temp_visual/shoalbot/telegraph/diagonal(T, src)
 	else
 		new /obj/effect/temp_visual/shoalbot/telegraph(T, src)
-	//playsound(T,'sound/effects/gravityblast.ogg', 200, TRUE)
 	SLEEP_CHECK_DEATH(2)
 	new /obj/effect/temp_visual/shoalbot/blast(T, src, FALSE)
 	for(var/d in directions)
@@ -420,7 +419,6 @@ AI attacks
 	var/turf/T = get_turf(src)
 	if(!T)
 		return
-	//playsound(T,'sound/effects/gravityblast.ogg', 125, TRUE, -5) //make a sound
 	sleep(6) //wait a little
 	bursting = TRUE
 	do_damage(T) //do damage and mark us as bursting
