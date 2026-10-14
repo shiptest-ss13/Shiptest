@@ -106,28 +106,6 @@
 	else
 		..()
 
-/mob/living/simple_animal/hostile/megafauna/AttackingTarget()
-	if(recovery_time >= world.time)
-		return
-	. = ..()
-	if(. && isliving(target))
-		var/mob/living/L = target
-		if(L.stat != DEAD)
-			if(!client && ranged && ranged_cooldown <= world.time)
-				OpenFire()
-		else if(can_gib)
-			devour(L)
-
-/mob/living/simple_animal/hostile/megafauna/proc/devour(mob/living/L)
-	if(!L)
-		return FALSE
-	visible_message(
-		span_danger("[src] devours [L]!"),
-		span_userdanger("You feast on [L], restoring your health!"))
-	adjustBruteLoss(-L.maxHealth/2)
-	L.gib()
-	return TRUE
-
 /mob/living/simple_animal/hostile/megafauna/ex_act(severity, target)
 	switch (severity)
 		if (EXPLODE_DEVASTATE)
@@ -178,55 +156,6 @@
 	var/mob/living/simple_animal/hostile/megafauna/fauna = owner
 	fauna.chosen_attack = chosen_attack_num
 	to_chat(fauna, chosen_message)
-
-/mob/living/simple_animal/hostile/megafauna
-	var/list/enemies = list()
-
-/mob/living/simple_animal/hostile/megafauna/Found(atom/A)
-	if(isliving(A))
-		var/mob/living/L = A
-		if(!L.stat)
-			return L
-		else
-			enemies -= L
-	else if(ismecha(A))
-		var/obj/mecha/M = A
-		if(M.occupant)
-			return A
-
-/mob/living/simple_animal/hostile/megafauna/ListTargets()
-	if(!enemies.len)
-		return list()
-	var/list/see = ..()
-	see &= enemies // Remove all entries that aren't in enemies
-	return see
-
-/mob/living/simple_animal/hostile/megafauna/proc/Retaliate()
-	var/list/around = view(src, vision_range)
-
-	for(var/atom/A as anything in around)
-		if(A == src)
-			continue
-		if(isliving(A))
-			var/mob/living/M = A
-			if(faction_check_mob(M) && attack_same || !faction_check_mob(M))
-				enemies |= M
-			if(ismegafauna(M))
-				var/mob/living/simple_animal/hostile/megafauna/boss = M
-				if(faction_check_mob(boss) && !attack_same && !boss.attack_same)
-					boss.enemies |= enemies
-		else if(ismecha(A))
-			var/obj/mecha/M = A
-			if(M.occupant)
-				enemies |= M
-				enemies |= M.occupant
-
-	return 0
-
-/mob/living/simple_animal/hostile/megafauna/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
-	. = ..()
-	if(. > 0 && stat == CONSCIOUS)
-		Retaliate()
 
 /mob/living/simple_animal/hostile/megafauna/proc/shoot_projectile(turf/marker, set_angle)
 	if(!isnum(set_angle) && (!marker || marker == loc))
