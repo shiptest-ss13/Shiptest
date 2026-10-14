@@ -68,7 +68,19 @@
 /datum/config_entry/string/server_desc/ValidateAndSet(str_val)
 	return (length(str_val) < 1024) && ..()
 
+/datum/config_entry/string/ss13hub_name
+
 /// Whether or not clients are allowed to auth with SS13Hub.
 /datum/config_entry/flag/ss13hub_auth
 	protection = CONFIG_ENTRY_LOCKED
 	config_entry_value = FALSE
+
+/// If users are to connect to a different IP than the one the hub is communicating to, specify with this
+/datum/config_entry/string/ss13hub_addr
+	protection = CONFIG_ENTRY_LOCKED
+
+/datum/config_entry/flag/ss13relay
+	config_entry_value = FALSE
+
+/datum/config_entry/string/ss13relay_secret
+	protection = CONFIG_ENTRY_HIDDEN | CONFIG_ENTRY_LOCKED

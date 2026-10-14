@@ -9,8 +9,8 @@
 #define SS13LIB_PLAYER_COUNT GLOB.clients.len
 #define SS13LIB_PLAYER_LIMIT CONFIG_GET(number/extreme_popcap)
 
-#define SS13LIB_SERVER_DISPLAY_NAME (CONFIG_GET(string/servername) || "Shiptest")
-#define SS13LIB_CONNECTION_ADDRESS CONFIG_GET(string/server)
+#define SS13LIB_SERVER_DISPLAY_NAME (CONFIG_GET(string/ss13hub_name) || CONFIG_GET(string/servername) || "Shiptest")
+#define SS13LIB_CONNECTION_ADDRESS (CONFIG_GET(string/ss13hub_addr) || CONFIG_GET(string/server))
 #define SS13LIB_REGION CONFIG_GET(string/server_region)
 #define SS13LIB_SERVER_LANGUAGE CONFIG_GET(string/server_language)
 #define SS13LIB_SERVER_TAGS CONFIG_GET(str_list/server_tags)
@@ -54,3 +54,6 @@
 #else
 #define SS13LIB_ENGINE "byond"
 #endif
+
+#define SS13LIB_RELAY_ENABLED CONFIG_GET(flag/ss13relay)
+#define SS13LIB_RELAY_SECRET CONFIG_GET(string/ss13relay_secret)
