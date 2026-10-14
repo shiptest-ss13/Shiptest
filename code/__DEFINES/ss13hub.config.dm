@@ -51,7 +51,7 @@
 	if(CONFIG_GET(flag/usewhitelist))
 		return list("link" = list("type" = "discord", "link" = CONFIG_GET(string/discordurl)))
 
-#define SS13LIB_WHITELISTED CONFIG_GET(world.__ss13lib_build_whitelisted())
+#define SS13LIB_WHITELISTED (world.__ss13lib_build_whitelisted())
 #define SS13LIB_TERMS_OF_SERVICE CONFIG_GET(string/termsofserviceurl)
 
 #define SS13LIB_ROUND_MAP_NAME SSovermap ? SSovermap.get_main_outpost() : "initializing"
