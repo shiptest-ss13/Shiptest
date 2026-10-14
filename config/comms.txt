@@ -52,3 +52,15 @@
 #SERVER_TAGS total conversion
 #SERVER_TAGS 18+
 
+## The address clients should connect to, if different from the one used to communicate with SS13hub.
+#SS13HUB_ADDR 127.0.0.1
+
+## The name that should be announced to SS13hub, if different from the main server name.
+#SS13HUB_NAME Shiptest
+
+## Whether the SS13 relay over Steam UDP is enabled. See <https://github.com/spacestation13/ss13lib/tree/main#relay-support-optional>.
+#SS13RELAY TRUE
+
+## The secret that's the same as the one set on the relay sidecar.
+#SS13RELAY_SECRET yourSecretHere
+
