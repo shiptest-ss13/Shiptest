@@ -130,12 +130,16 @@ AI attacks
 	else
 		if(prob(50))
 			if(prob(50))
+				playsound(source,'sound/effects/gravityblast.ogg', 200, TRUE)
 				INVOKE_ASYNC(src, PROC_REF(blasts), target, GLOB.cardinals)
 			else
+				playsound(source,'sound/effects/gravityblast.ogg', 200, TRUE)
 				INVOKE_ASYNC(src, PROC_REF(blasts), target, GLOB.diagonals)
 		else if(prob(50))
+			playsound(source,'sound/effects/gravityblast.ogg', 200, TRUE)
 			blink(target)
 		else if(prob(50))
+			playsound(source,'sound/effects/gravityblast.ogg', 200, TRUE)
 			melee_blast(target)
 		else
 			doubleblast()
