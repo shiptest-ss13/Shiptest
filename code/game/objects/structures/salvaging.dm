@@ -846,8 +846,15 @@
 
 // evil drop pool
 /obj/structure/rusted_gun_safe/proc/drop_evil()
-	var/roll = rand(1,40)
 	playsound(src, 'sound/machines/chime.ogg', 100, FALSE, FALSE) // wuh oh
+	do_sparks(4, TRUE, src)
+	Shake(5, 5, 4 SECONDS)
+	visible_message(span_warning("Something stirs to life inside [src]!"))
+	addtimer(CALLBACK(src, PROC_REF(deploy_evil)), 4 SECONDS)
+
+// spawn our mob
+/obj/structure/rusted_gun_safe/proc/deploy_evil()
+	var/roll = rand(1,40)
 	switch(roll)
 		if(1 to 5)
 			// walkmine swarm
