@@ -484,7 +484,7 @@
 
 
 /obj/item/mine/pressure/explosive/fire
-	name = "\improper G-82 Incindeary"
+	name = "\improper G-82 Incendiary"
 	desc = "An anti-infantry explosive produced during the corporate wars. Transforms into superheated slag and a ball of fire on detonation. "
 
 	range_flame = 6
