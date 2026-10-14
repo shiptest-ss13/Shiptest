@@ -371,6 +371,7 @@
 	desc = "Walking ordinance making use of a flame projecter, a G-82 Incendiary mine seated at its base, and a mechanically pressurized bag filled with a mixture of gasoline, plasma, and napalm. Sometimes captured and used for impromptu cooking."
 	icon_state = "mine_walker-incendiary"
 	light_color = "#f89421"
+	move_to_delay = 5
 
 	mine_heavy = 0
 	mine_light = 2
