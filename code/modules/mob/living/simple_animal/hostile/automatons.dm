@@ -366,6 +366,36 @@
 /mob/living/simple_animal/hostile/automated/walkmine/ramzi
 	faction = list("Ramzi Clique")
 
+/mob/living/simple_animal/hostile/automated/walkmine/incendiary
+	name = "G-82 Incendiary Walkmine"
+	desc = "Walking ordinance making use of a flame projecter, a G-82 Incendiary mine seated at its base, and a mechanically pressurized bag filled with a mixture of gasoline, plasma, and napalm. Sometimes captured and used for impromptu cooking."
+	icon_state = "mine_walker-incendiary"
+	light_color = "#f89421"
+	move_to_delay = 5
+
+	mine_heavy = 0
+	mine_light = 2
+	mine_flame = 6
+
+	shrapnel_type = /obj/projectile/bullet/shrapnel/hot
+	shrapnel_magnitude = 4
+
+	projectilesound = 'sound/weapons/gun/flamethrower/flamethrower1.ogg'
+
+/mob/living/simple_animal/hostile/automated/walkmine/incendiary/OpenFire(atom/victim)
+	var/turf/T = get_ranged_target_turf_direct(src, target, 4)
+	var/list/burn_turfs = getline(src, T) - get_turf(src)
+	visible_message(span_danger("<b>[src]</b> fires a jet of hot flame at [target.name]!"))
+	playsound(src, projectilesound, 100, TRUE)
+	fire_line(src, burn_turfs, "flamethrower", TRUE, 10)
+	ranged_cooldown = world.time + ranged_cooldown_time
+
+/mob/living/simple_animal/hostile/automated/walkmine/incendiary/death()
+	for(var/turf/T in view(4,src))
+		T.ignite_turf(15, "#fc7b48")
+		new /obj/effect/hotspot(T)
+	. = ..()
+
 // shotgun hoppers (To-do, make them "jump" around like the antlions do?)
 
 /mob/living/simple_animal/hostile/automated/hopper

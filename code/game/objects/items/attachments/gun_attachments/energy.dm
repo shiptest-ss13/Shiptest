@@ -1,4 +1,5 @@
 /obj/item/attachment/gun/energy
+	bad_type = /obj/item/attachment/gun/energy
 	name = "underbarrel e-gun"
 	desc = "Pew pew laser beam. You probably shouldnt be seeing this."
 	underbarrel_prefix = "laser_"
@@ -55,6 +56,7 @@
 	weapon_type = /obj/item/gun/energy/e_gun/underbarrel
 
 /obj/item/gun/energy/e_gun/underbarrel
+	autowiki_hidden = TRUE //attachment
 	name = "underbarrel energy gun"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/underbarrel, /obj/item/ammo_casing/energy/laser/underbarrel)
 	spawn_no_ammo = TRUE
@@ -67,6 +69,7 @@
 	attach_features_flags = ATTACH_REMOVABLE_HAND
 
 /obj/item/gun/energy/laser/e50/clip/underbarrel
+	autowiki_hidden = TRUE //attachment
 	name = "underbarrel energy cannon"
 	desc = "Watch out, its hot."
 	default_ammo_type = /obj/item/stock_parts/cell/gun

@@ -100,6 +100,7 @@
 	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/automatic/assault/skm/pirate
+	autowiki_hidden = TRUE //not obtainable: referenced nowhere in code or maps
 	name = "\improper Chopper"
 	desc = "An SKM-24 in a state of shockingly poor repair: Several parts are missing and the 'grip' is improvised from scrap wood. It's a miracle it still works at all. Chambered in 7.62x40mm CLIP."
 
@@ -120,16 +121,6 @@
 	icon_state = "skm_inteq"
 	item_state = "skm_inteq"
 	manufacturer = MANUFACTURER_INTEQ
-
-/obj/item/gun/ballistic/automatic/assault/cm82
-	name = "\improper CM-16"
-	desc = "The standard-issue rifle of CLIP and an extensively modified reproduction of the P-16. Chambered in 5.56mm."
-	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/clip_lanchester/onmob.dmi'
-	icon_state = "cm16"
-	item_state = "cm16"
 
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese
 	name = "\improper Swiss Cheese"

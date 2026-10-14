@@ -751,6 +751,7 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "dC" = (
@@ -1046,8 +1047,8 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew)
 "eQ" = (
@@ -2052,9 +2053,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wall/white/med/directional/east{
-	icon_door = "med_wall"
-	},
 /obj/item/storage/firstaid/brute{
 	pixel_x = 8;
 	pixel_y = -5
@@ -2072,6 +2070,9 @@
 	pixel_y = 9
 	},
 /obj/structure/table/chem,
+/obj/structure/closet/secure_closet/wall/directional/east{
+	icon_door = "med_wall"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "mB" = (
@@ -2242,6 +2243,10 @@
 	pixel_x = 6;
 	pixel_y = -33
 	},
+/obj/item/bikehorn/rubberducky{
+	pixel_x = 7;
+	pixel_y = 15
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/ccommons)
 "nY" = (
@@ -2254,17 +2259,26 @@
 /obj/effect/turf_decal/corner/opaque/black/diagonal{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/east,
 /obj/structure/toilet{
-	pixel_x = 2;
+	pixel_x = 4;
 	pixel_y = 0;
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "0-8"
+/obj/machinery/light/small/directional/east{
+	pixel_x = 28;
+	pixel_y = 6
 	},
-/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/sink/kitchen/counter{
+	dir = 1;
+	name = "sink";
+	pixel_x = -11;
+	pixel_y = -1
+	},
+/obj/structure/mirror{
+	pixel_x = -11;
+	pixel_y = -25
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/toilet)
 "od" = (
@@ -2595,7 +2609,7 @@
 	pixel_x = -7;
 	pixel_y = 2
 	},
-/obj/item/stack/sheet/glass/two{
+/obj/item/stack/sheet/glass{
 	pixel_x = 7;
 	pixel_y = 2
 	},
@@ -2770,11 +2784,8 @@
 	dir = 3
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/sign/warning/nosmoking/circle{
-	pixel_x = 24;
-	pixel_y = 1
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering/hallway/aft)
 "rk" = (
@@ -2882,13 +2893,13 @@
 	pixel_x = -6;
 	pixel_y = 8
 	},
-/obj/item/stock_parts/cell/gun/mini{
-	pixel_x = 8;
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 10;
 	pixel_y = 5
 	},
-/obj/item/stock_parts/cell/gun/mini{
+/obj/item/stock_parts/cell/gun{
 	pixel_x = 8;
-	pixel_y = -6
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -3329,13 +3340,13 @@
 	pixel_x = 4;
 	pixel_y = 3
 	},
-/obj/structure/closet/wall/white/med/directional/east{
-	icon_door = "med_wall"
-	},
 /obj/structure/table/chem,
 /obj/item/storage/box/gloves{
 	pixel_x = -3;
 	pixel_y = 3
+	},
+/obj/structure/closet/secure_closet/wall/directional/east{
+	icon_door = "med_wall"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
@@ -3384,6 +3395,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "vt" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "vw" = (
@@ -4089,7 +4101,9 @@
 /obj/structure/table/reinforced{
 	name = "kitchen counter"
 	},
-/obj/structure/closet/wall/directional/east,
+/obj/structure/closet/wall/directional/east{
+	name = "Shower Supply Closet"
+	},
 /obj/machinery/airalarm/directional/north,
 /obj/item/clothing/suit/hazardvest{
 	pixel_y = 5;
@@ -4263,7 +4277,6 @@
 	name = "stale cheesy nachos";
 	desc = "A tortilla shredded into pieces and fried, and served with a coating of queso cheese. It's been left out for a while..."
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/computer/security/telescreen/entertainment/wall/beige/directional/west{
 	pixel_x = -24;
 	pixel_y = 0
@@ -4625,10 +4638,6 @@
 /area/ship/security)
 "BZ" = (
 /obj/effect/turf_decal/industrial/traffic,
-/obj/structure/closet/emcloset/wall/directional/west{
-	pixel_x = -30;
-	pixel_y = 3
-	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Cc" = (
@@ -4798,7 +4807,6 @@
 	pixel_y = 2
 	},
 /obj/structure/table/wood/reinforced,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/jukebox/boombox{
 	pixel_x = 0;
 	pixel_y = 6
@@ -5262,7 +5270,6 @@
 	pixel_y = 0
 	},
 /obj/machinery/light/directional/west,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "Fm" = (
@@ -5349,7 +5356,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "FO" = (
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/black{
 	dir = 6
 	},
@@ -6457,14 +6464,26 @@
 "Ly" = (
 /obj/machinery/shower{
 	pixel_x = 0;
-	pixel_y = 22
+	pixel_y = 23
 	},
-/obj/structure/chair/handrail{
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/closet/wall/directional/east{
+	name = "Shower Supply Closet";
+	pixel_x = 27;
+	pixel_y = 6
+	},
+/obj/item/soap{
+	pixel_x = -1;
+	pixel_y = 7
+	},
+/obj/structure/curtain/thin{
 	pixel_x = 0;
 	pixel_y = -1
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/curtain/thin,
+/obj/item/towel{
+	pixel_x = 1;
+	pixel_y = -3
+	},
 /turf/open/floor/noslip,
 /area/ship/crew/toilet)
 "LE" = (
@@ -6703,8 +6722,8 @@
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 4
 	},
-/obj/item/clothing/suit/armor/vest/alt{
-	pixel_x = -4;
+/obj/item/clothing/suit/armor/vest{
+	pixel_x = -5;
 	pixel_y = -2
 	},
 /obj/item/clothing/glasses/safety{
@@ -6730,28 +6749,10 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/security)
 "Or" = (
-/obj/machinery/light/small/directional/north{
-	pixel_x = 0;
-	pixel_y = 30
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/curtain/thin,
-/obj/structure/closet/wall/directional/west{
-	name = "Shower Supply Closet";
-	pixel_x = -31;
-	pixel_y = 0
-	},
-/obj/item/towel{
-	pixel_x = -3;
-	pixel_y = -3
-	},
-/obj/item/bikehorn/rubberducky{
-	pixel_x = 3;
-	pixel_y = -6
-	},
-/obj/item/soap{
-	pixel_x = -1;
-	pixel_y = 7
+/obj/structure/curtain/thin{
+	pixel_x = 0;
+	pixel_y = -1
 	},
 /turf/open/floor/noslip,
 /area/ship/crew/toilet)
@@ -7201,9 +7202,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Rg" = (
-/obj/structure/closet/emcloset/wall/directional/west{
-	pixel_x = -30;
-	pixel_y = 0
+/obj/structure/sign/warning/nosmoking/circle{
+	pixel_x = -24;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/hallway/aft)
@@ -7267,6 +7268,7 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 10
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "RW" = (
@@ -7361,10 +7363,9 @@
 	pixel_x = 0;
 	pixel_y = -12
 	},
-/obj/item/storage/guncase/pistol/candor{
+/obj/item/storage/guncase/pistol/candor/factory{
 	pixel_x = 0;
-	pixel_y = -7;
-	mag_count = 3
+	pixel_y = -7
 	},
 /obj/structure/closet/secure_closet/wall/directional/north{
 	name = "captain's locker";
@@ -7911,7 +7912,7 @@
 	},
 /obj/item/stock_parts/cell/high{
 	pixel_x = 5;
-	pixel_y = -4
+	pixel_y = -5
 	},
 /obj/structure/table,
 /obj/machinery/newscaster/directional/east{
@@ -8153,33 +8154,25 @@
 "XX" = (
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = -11;
+	pixel_x = -10;
 	pixel_y = -20
+	},
+/obj/effect/turf_decal/corner/opaque/black/diagonal{
+	dir = 4
 	},
 /obj/machinery/button/door{
 	dir = 1;
 	id = "rigg_bathroom";
 	name = "Bathroom Lock";
 	normaldoorcontrol = 1;
-	pixel_x = 11;
+	pixel_x = 10;
 	pixel_y = -21;
 	specialfunctions = 4
 	},
-/obj/effect/turf_decal/corner/opaque/black/diagonal{
-	dir = 4
-	},
-/obj/structure/mirror{
-	pixel_x = 0;
-	pixel_y = -25
-	},
-/obj/structure/sink/kitchen/counter{
-	dir = 1;
-	pixel_x = 0;
-	pixel_y = -1
-	},
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/crew/toilet)
 "XZ" = (
@@ -8357,6 +8350,7 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew)
 "ZF" = (

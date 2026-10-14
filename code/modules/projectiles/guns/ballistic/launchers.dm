@@ -2,6 +2,7 @@
 //Put handheld rocket launchers here if someone ever decides to make something so hilarious ~Paprika
 
 /obj/item/gun/ballistic/revolver/grenadelauncher//this is only used for underbarrel grenade launchers at the moment, but admins can still spawn it if they feel like being assholes
+	autowiki_hidden = TRUE //not obtainable afaik
 	desc = "A break-action, single-shot grenade launcher. A compact way to deliver a big boom."
 	name = "grenade launcher"
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
@@ -104,6 +105,7 @@ GLOBAL_LIST_INIT(rpg_scrawlings, list(
 	return //too difficult to remove the rocket with TK
 
 /obj/item/gun/ballistic/rocketlauncher/solgov
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "Panzerfaust XII"
 	desc = "The standard recoiless rifle of the Solarian Confederation. Barely varies from previous models."
 
