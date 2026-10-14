@@ -47,15 +47,19 @@
 #define SS13LIB_ENGINE_MAX_VERSION CONFIG_GET(string/client_max_version_full)
 #define SS13LIB_ENGINE_BLACKLISTED_VERSIONS CONFIG_GET(str_list/client_blacklisted_versions)
 
-#define SS13LIB_WHITELISTED CONFIG_GET(flag/usewhitelist)
+/world/proc/__ss13lib_build_whitelisted()
+	if(CONFIG_GET(flag/usewhitelist))
+		return list("link" = list("type" = "discord", "link" = CONFIG_GET(string/discordurl)))
+
+#define SS13LIB_WHITELISTED CONFIG_GET(world.__ss13lib_build_whitelisted())
 #define SS13LIB_TERMS_OF_SERVICE CONFIG_GET(string/termsofserviceurl)
 
-#define SS13LIB_ROUND_MAP_NAME GLOB.station_name
+#define SS13LIB_ROUND_MAP_NAME SSovermap ? SSovermap.get_main_outpost() : "initializing"
 //#define SS13LIB_ROUND_STARTED_AT_BYOND SSticker?.round_start_time
 #define SS13LIB_ROUND_STARTED_AT_UNIX SSticker?.round_start_unix
 #define SS13LIB_ROUND_SECURITY_LEVEL get_security_level()
 #define SS13LIB_ROUND_ID GLOB.round_id
-#define SS13LIB_ROUND_GAMEMODE "secret"
+#define SS13LIB_ROUND_GAMEMODE "shiptest"
 #define SS13LIB_ROUND_STATE SSticker ? SSticker.get_ss13hub_status() : "initializing"
 
 #define SS13LIB_CLIENT_INFO(X) X.hub_info

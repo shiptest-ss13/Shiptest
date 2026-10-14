@@ -230,6 +230,9 @@
 /datum/config_entry/string/wikiurl
 	config_entry_value = "https://shiptest.net/wiki/"
 
+/datum/config_entry/string/forumurl
+	config_entry_value = "https://forums.shiptest.net/"
+
 /datum/config_entry/string/loreurl
 	config_entry_value = "https://shiptest.net/wiki/Lore_Primer"
 
