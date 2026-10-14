@@ -1,7 +1,6 @@
 /obj/item/ammo_casing/caseless/arrow
-	autowiki_hidden = TRUE //the bows and therefore arrows are apparently due for a rework and are unobtainable atm?
 	name = "arrow"
-	desc = "A long rod of wood with a sharpened metal tip."
+	desc = "A finely crafted wooden arrow."
 	projectile_type = /obj/projectile/bullet/reusable/arrow
 	caliber = "arrow"
 	icon_state = "arrow"
@@ -10,3 +9,7 @@
 	firing_effect_type = null
 	flags_1 = NONE
 	heavy_metal = FALSE
+	auto_rotate = FALSE
+	can_cookoff = FALSE
+	stack_type = null
+	w_class = WEIGHT_CLASS_SMALL
