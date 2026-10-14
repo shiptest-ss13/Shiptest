@@ -37,7 +37,7 @@
 	recoil = 1
 	recoil_unwielded = 4
 	spread = 6
-	spread_unwielded = 12
+	spread_unwielded = 6
 	fire_select_icon_state_prefix = "slug_"
 
 	//gauss doesn't explode so there's not light.

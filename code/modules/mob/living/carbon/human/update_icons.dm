@@ -1006,10 +1006,6 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 	//eg: ammo counters, primed grenade flashes, etc.
 	var/list/worn_overlays = worn_overlays(isinhands, file2use)
 	if(length(worn_overlays))
-		if (width != 32 || height != 32)
-			for (var/image/overlay in worn_overlays)
-				overlay.pixel_x -= standing.pixel_x
-				overlay.pixel_y -= standing.pixel_y
 		standing.overlays += worn_overlays
 
 	//Handle held offsets

@@ -40,8 +40,8 @@
 	return ..()
 
 /datum/mission/acquire/industrial_drill/Destroy()
-	. = ..()
-	recall_bound(mission_drill, FALSE)
+	mission_drill = null
+	return . = ..()
 
 //unfortunately: the behavior for normal mission drills is different than what I want.
 /obj/machinery/drill/sampler_mission

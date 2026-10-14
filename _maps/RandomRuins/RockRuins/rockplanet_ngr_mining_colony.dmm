@@ -490,7 +490,7 @@
 "bF" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/structure/closet/wall/med/directional/east,
+/obj/structure/closet/wall/white/med/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/ngrcolony/mine_supplies)
 "bG" = (
@@ -8151,8 +8151,7 @@
 	dir = 4
 	},
 /obj/machinery/computer/processing_unit_console/directional/south{
-	machinedir = 1;
-	dist = 2
+	dy = 2
 	},
 /obj/effect/turf_decal/borderfloorblack/corner{
 	layer = 2.030;

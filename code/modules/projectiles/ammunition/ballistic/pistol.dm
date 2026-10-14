@@ -21,8 +21,8 @@
 	projectile_type = /obj/projectile/bullet/c10mm/ap
 
 /obj/item/ammo_casing/c10mm/hp
-	name = "10mm hollow point bullet casing"
-	desc = "A 10mm hollow point bullet casing."
+	name = "10mm hollow-point bullet casing"
+	desc = "A 10mm hollow-point bullet casing."
 	projectile_type = /obj/projectile/bullet/c10mm/hp
 	bullet_skin = "hollow"
 
@@ -56,8 +56,8 @@
 	projectile_type = /obj/projectile/bullet/c9mm/ap
 
 /obj/item/ammo_casing/c9mm/hp
-	name = "9mm hollow point bullet casing"
-	desc = "A 9mm hollow point bullet casing."
+	name = "9mm hollow-point bullet casing"
+	desc = "A 9mm hollow-point bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/c9mm/hp
 
@@ -91,8 +91,8 @@
 	projectile_type =/obj/projectile/bullet/c45/ap
 
 /obj/item/ammo_casing/c45/hp
-	name = ".45 hollow point bullet casing"
-	desc = "A .45 hollow point bullet casing."
+	name = ".45 hollow-point bullet casing"
+	desc = "A .45 hollow-point bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/c45/hp
 
@@ -119,19 +119,19 @@
 	wear_modifier = 2
 
 /obj/item/ammo_casing/c22lr/hp
-	name = ".22 LR HP bullet casing"
-	desc = "A .22 LR bullet HP casing."
+	name = ".22 LR hollow-point bullet casing"
+	desc = "A .22 LR hollow-point bullet casing."
 	projectile_type = /obj/projectile/bullet/c22lr/hp
 	bullet_skin = "hollow"
 
 /obj/item/ammo_casing/c22lr/ap
-	name = ".22 LR AP bullet casing"
-	desc = "A .22 LR bullet casing."
+	name = ".22 LR armor-percing bullet casing"
+	desc = "A .22 LR armor-piercing bullet casing."
 	projectile_type = /obj/projectile/bullet/c22lr/ap
 	bullet_skin = "ap"
 
 /obj/item/ammo_casing/c22lr/rubber
 	name = ".22 LR rubber bullet casing"
-	desc = "A .22 LR bullet casing."
+	desc = "A .22 LR rubber bullet casing."
 	projectile_type = /obj/projectile/bullet/c22lr/rubber
 	bullet_skin = "rubber"

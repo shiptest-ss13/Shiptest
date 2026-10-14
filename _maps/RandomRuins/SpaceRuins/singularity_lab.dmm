@@ -2446,8 +2446,9 @@
 	pixel_x = -11;
 	pixel_y = 13
 	},
-/obj/machinery/computer/processing_unit_console/directional/north{
-	machinedir = 9
+/obj/machinery/computer/processing_unit_console/directional/west{
+	dx = -1;
+	dy = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -4204,10 +4205,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "rn" = (
-/obj/machinery/computer/processing_unit_console/directional/north{
-	machinedir = 9
-	},
 /obj/structure/extinguisher_cabinet/directional/south,
+/obj/machinery/computer/processing_unit_console/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "rp" = (

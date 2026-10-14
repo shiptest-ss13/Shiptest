@@ -1861,7 +1861,7 @@
 /area/outpost/hallway/port)
 "hK" = (
 /obj/structure/rack,
-/obj/effect/spawner/random/salvage_laser,
+/obj/effect/spawner/random/salvage/part/laser,
 /obj/effect/spawner/random/salvage/part/capacitor,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
@@ -2777,12 +2777,12 @@
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/central)
 "kT" = (
-/obj/machinery/computer/processing_unit_console/directional/north{
-	machinedir = 2
-	},
 /obj/structure/railing,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 5
+	},
+/obj/machinery/computer/processing_unit_console/directional/north{
+	dy = -1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)

@@ -179,6 +179,7 @@
 	wear_modifier = 2
 
 /obj/item/ammo_casing/shotgun/buckshot/twobore
+	autowiki_hidden = TRUE //twobore only, admeme i think?
 	name = "two-bore shell"
 	desc = "A massive fucking two-bore shell."
 	caliber = "twobore"

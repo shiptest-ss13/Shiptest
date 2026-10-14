@@ -1488,8 +1488,6 @@
 /obj/structure/closet/wall/blue/directional/north{
 	name = "Captain's locker"
 	},
-/obj/item/gun/energy/laser/e10,
-/obj/item/stock_parts/cell/gun/upgraded,
 /obj/item/storage/backpack/duffelbag,
 /obj/item/megaphone/command,
 /obj/item/clothing/head/hardhat/weldhat/white,
@@ -1857,6 +1855,11 @@
 	},
 /obj/effect/turf_decal/corner/transparent/green/border{
 	dir = 4
+	},
+/obj/item/storage/guncase/stingingnettle{
+	pixel_x = -6;
+	pixel_y = 2;
+	mag_count = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
