@@ -410,7 +410,7 @@
 		radiation_pulse(irradiate, 750, log=FALSE, can_contaminate=TRUE)
 
 	REMOVE_TRAIT(src, TRAIT_RADIMMUNE, INNATE_TRAIT)
-  
+
 /mob/living/simple_animal/hostile/automated/walkmine/incendiary
 	name = "G-82 Incendiary Walkmine"
 	desc = "Walking ordinance making use of a flame projecter, a G-82 Incendiary mine seated at its base, and a mechanically pressurized bag filled with a mixture of gasoline, plasma, and napalm. Sometimes captured and used for impromptu cooking."
