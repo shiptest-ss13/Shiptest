@@ -33,7 +33,7 @@
 	projectilesound = 'sound/weapons/gun/pistol/candor.ogg'
 	retreat_distance = 3
 	minimum_distance = 4
-	casingtype = /obj/projectile/bullet/c45
+	casingtype = /obj/projectile/bullet/c10mm
 	deathmessage = "falls to the ground, sparking as its rotors grind to a halt."
 	is_flying_animal = TRUE
 

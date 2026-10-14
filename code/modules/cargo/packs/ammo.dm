@@ -93,32 +93,6 @@
 	contains = list(/obj/item/storage/box/ammo/c10mm_rubber)
 	cost = 210
 
-/* .45 */
-
-/datum/supply_pack/ammo/c45_ammo_box
-	name = ".45 Ammo Box Crate"
-	desc = "Contains a 48-round .45 box for pistols and SMGs like the Candor or the C-20r."
-	contains = list(/obj/item/storage/box/ammo/c45)
-	cost = 210 //5.7 ammo efficiency at 25 damage
-
-/datum/supply_pack/ammo/c45ap_ammo_box
-	name = ".45 AP Ammo Box Crate"
-	desc = "Contains a 48-round .45 box loaded with armor piercing ammo."
-	contains = list(/obj/item/storage/box/ammo/c45_ap)
-	cost = 260
-
-/datum/supply_pack/ammo/c45hp_ammo_box
-	name = ".45 HP Ammo Box Crate"
-	desc = "Contains a 48-round .45 box loaded with hollow point ammo, great against unarmored targets."
-	contains = list(/obj/item/storage/box/ammo/c45_hp)
-	cost = 260
-
-/datum/supply_pack/ammo/c45mmrubber_ammo_box
-	name = ".45 Rubber Ammo Box Crate"
-	desc = "Contains a 48-round .45 box loaded with less-than-lethal rubber rounds."
-	contains = list(/obj/item/storage/box/ammo/c45_rubber)
-	cost = 210
-
 /* .357 */
 
 /datum/supply_pack/ammo/a357_ammo_box
