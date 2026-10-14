@@ -75,7 +75,7 @@
 				brute_overlay.color = limb.damage_color
 			damage_overlay.add_overlay(brute_overlay)
 		if(limb.burnstate)
-			var/image/burn_overlay = image(limb.dmg_overlay_icon, "[limb.dmg_overlay_type]_[limb.body_zone]_[limb.burnstate]0")
+			var/image/burn_overlay = image(limb.dmg_overlay_icon, "[limb.dmg_overlay_type]_[limb.body_zone]_0[limb.burnstate]")
 			damage_overlay.add_overlay(burn_overlay)
 
 	apply_overlay(DAMAGE_LAYER)

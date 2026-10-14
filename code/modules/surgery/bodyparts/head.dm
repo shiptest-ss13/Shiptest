@@ -51,6 +51,8 @@
 	var/greyscale_eyes = TRUE
 	///Sprite to override the one used by the eye organ
 	var/eye_state_override
+	///The owner species' eye sheet, cached here so a severed head still knows where its eyes came from
+	var/species_eye_path
 
 /obj/item/bodypart/head/Destroy()
 	QDEL_NULL(brainmob) //order is sensitive, see warning in handle_atom_del() below
@@ -157,6 +159,8 @@
 		var/mob/living/carbon/human/H = limb_owner
 		var/datum/species/S = H.dna.species
 
+		species_eye_path = S.species_eye_path
+
 		//Facial hair
 		if(H.facial_hairstyle && (FACEHAIR in S.species_traits))
 			facial_hairstyle = H.facial_hairstyle
@@ -254,18 +258,24 @@
 				. += lips_overlay
 
 			// eyes
-			var/mutable_appearance/sclera_overlay = mutable_appearance('icons/mob/human_face.dmi', "", -BODY_LAYER, SOUTH)
-			var/image/eyes_overlay = image('icons/mob/human_face.dmi', "eyes_missing", -BODY_LAYER, SOUTH)
+			//resolve the file against the state we actually end up drawing, or a species whose sheet
+			//only covers half of these ends up asking human_face.dmi for a state it doesn't have
+			var/eye_state = "eyes_missing"
+			var/sclera_state
+			if(eyes)
+				eye_state = eyes.eye_icon_state
+				sclera_state = eyes.sclera_icon_state
+
+			var/image/eyes_overlay = image(resolve_eye_icon(species_eye_path, eye_state), eye_state, -BODY_LAYER, SOUTH)
+			var/mutable_appearance/sclera_overlay = mutable_appearance(resolve_eye_icon(species_eye_path, sclera_state), "", -BODY_LAYER, SOUTH)
 
 			. += eyes_overlay
 			if(eyes)
 				. += sclera_overlay
-			if(eyes)
-				eyes_overlay.icon_state = eyes.eye_icon_state
 				if(eyes.eye_color)
 					eyes_overlay.color = "#" + eyes.eye_color
-				if(eyes.sclera_icon_state)
-					sclera_overlay.icon_state = eyes.sclera_icon_state
+				if(sclera_state)
+					sclera_overlay.icon_state = sclera_state
 					if(eyes.sclera_color)
 						sclera_overlay.color = "#" + eyes.sclera_color
 
