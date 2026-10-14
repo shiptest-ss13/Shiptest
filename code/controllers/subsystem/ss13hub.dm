@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(ss13hub)
 	name = "SS13hub Comms"
-	wait = 30 SECONDS
+	wait = 5 MINUTES
 	init_stage = INITSTAGE_EARLY
 	runlevels = RUNLEVEL_LOBBY | RUNLEVEL_SETUP | RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 

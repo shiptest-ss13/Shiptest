@@ -15,11 +15,33 @@
 #define SS13LIB_SERVER_LANGUAGE CONFIG_GET(string/server_language)
 #define SS13LIB_SERVER_TAGS CONFIG_GET(str_list/server_tags)
 #define SS13LIB_SERVER_DESCRIPTION CONFIG_GET(string/server_desc)
-#define SS13LIB_SERVER_LINKS list(list("type" = "web", "link"= CONFIG_GET(string/weburl)), \
-									list("type" = "wiki", "link" = CONFIG_GET(string/wikiurl)), \
-									list("type" = "github", "link" = CONFIG_GET(string/githuburl)), \
-									list("type" = "rules", "link" = CONFIG_GET(string/rulesurl)), \
-									list("type" = "discord", "link" = CONFIG_GET(string/discordurl)))
+
+#define SS13LIB_SERVER_LINKS (world.__ss13lib_build_server_links())
+
+/world/proc/__ss13lib_build_server_links()
+	var/list/links = list()
+
+	var/link_check = CONFIG_GET(string/weburl)
+	if(link_check)
+		links[++links.len] = list("type" = "web", "link" = link_check)
+
+	link_check = CONFIG_GET(string/wikiurl)
+	if(link_check)
+		links[++links.len] = list("type" = "wiki", "link" = link_check)
+
+	link_check = CONFIG_GET(string/forumurl)
+	if(link_check)
+		links[++links.len] = list("type" = "forum", "link" = link_check)
+
+	link_check = CONFIG_GET(string/githuburl)
+	if(link_check)
+		links[++links.len] = list("type" = "github", "link" = link_check)
+
+	link_check = CONFIG_GET(string/discordurl)
+	if(link_check)
+		links[++links.len] = list("type" = "discord", "link" = link_check)
+
+	return links
 
 #define SS13LIB_ENGINE_MIN_VERSION "[CONFIG_GET(number/client_error_version)].[CONFIG_GET(number/client_error_build)]"
 #define SS13LIB_ENGINE_MAX_VERSION CONFIG_GET(string/client_max_version_full)
