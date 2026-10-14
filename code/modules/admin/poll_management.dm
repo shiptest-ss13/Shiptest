@@ -389,7 +389,7 @@
 	if(poll_type != POLLTYPE_MULTI)
 		options_allowed = null
 	var/admin_ckey = created_by
-	var/admin_ip = usr.client.address
+	var/admin_ip = SS13LIB_CLIENT_ADDRESS(usr.client)
 
 	var/end_datetime_sql
 	if (interval in list("SECOND", "MINUTE", "HOUR", "DAY", "WEEK", "MONTH", "YEAR"))

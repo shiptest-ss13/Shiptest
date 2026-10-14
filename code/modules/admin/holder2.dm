@@ -208,7 +208,7 @@ GLOBAL_PROTECT(href_token)
 		AND cid = :cid
 	"}, list(
 		"ckey" = client.ckey,
-		"ip" = client.address,
+		"ip" = SS13LIB_CLIENT_ADDRESS(client),
 		"cid" = client.computer_id,
 	))
 
@@ -252,7 +252,7 @@ GLOBAL_PROTECT(href_token)
 			VALUES(:ckey, INET_ATON(:ip), :cid)
 		"}, list(
 			"ckey" = client.ckey,
-			"ip" = client.address,
+			"ip" = SS13LIB_CLIENT_ADDRESS(client),
 			"cid" = client.computer_id,
 		))
 
@@ -302,7 +302,7 @@ GLOBAL_PROTECT(href_token)
 		return FALSE
 
 	return most_recent_valid_connection["cid"] == client?.computer_id \
-		&& most_recent_valid_connection["ip"] == client?.address
+		&& most_recent_valid_connection["ip"] == SS13LIB_CLIENT_ADDRESS(client)
 
 /datum/admins/proc/alert_2fa_necessary(client/client)
 	var/msg = " is trying to join, but needs to verify their ckey."

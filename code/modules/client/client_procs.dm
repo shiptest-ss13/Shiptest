@@ -280,7 +280,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			var/client/C = I
 			if(C.key && (C.key != key))
 				var/matches
-				if((C.address == address))
+				if((SS13LIB_CLIENT_ADDRESS(C) == address))
 					matches += "IP ([address])"
 				if((C.computer_id == computer_id))
 					if(matches)

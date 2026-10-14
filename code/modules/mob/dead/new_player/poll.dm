@@ -397,7 +397,7 @@
 		"poll_id" = sql_poll_id,
 		"option_id" = option.option_id,
 		"ckey" = ckey,
-		"ip" = client.address,
+		"ip" = SS13LIB_CLIENT_ADDRESS(client),
 		"admin_rank" = admin_rank,
 	))
 	if(!query_vote_option.warn_execute())
@@ -428,7 +428,7 @@
 		"vote_id" = vote_id,
 		"poll_id" = sql_poll_id,
 		"ckey" = ckey,
-		"ip" = client.address,
+		"ip" = SS13LIB_CLIENT_ADDRESS(client),
 		"reply_text" = reply_text,
 		"admin_rank" = admin_rank,
 	))
@@ -474,7 +474,7 @@
 			"pollid" = sql_poll_id,
 			"optionid" = option.option_id,
 			"ckey" = ckey,
-			"ip" = client.address,
+			"ip" = SS13LIB_CLIENT_ADDRESS(client),
 			"adminrank" = admin_rank,
 			"rating" = href_list[h]
 		))
@@ -513,7 +513,7 @@
 			"pollid" = sql_poll_id,
 			"optionid" = option.option_id,
 			"ckey" = ckey,
-			"ip" = client.address,
+			"ip" = SS13LIB_CLIENT_ADDRESS(client),
 			"adminrank" = admin_rank
 		))
 	/*with revoting and poll editing possible there can be an edge case where a poll is changed to allow less multiple choice options than a user has already voted on
@@ -554,7 +554,7 @@
 			"pollid" = sql_poll_id,
 			"optionid" = option.option_id,
 			"ckey" = ckey,
-			"ip" = client.address,
+			"ip" = SS13LIB_CLIENT_ADDRESS(client),
 			"adminrank" = admin_rank
 		))
 	//IRV results are calculated based on id order, we delete all of a user's votes to avoid potential errors caused by revoting and option editing

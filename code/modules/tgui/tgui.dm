@@ -239,7 +239,7 @@
 		),
 		"client" = list(
 			"ckey" = user.client.ckey,
-			"address" = user.client.address,
+			"address" = SS13LIB_CLIENT_ADDRESS(user.client),
 			"computer_id" = user.client.computer_id,
 		),
 		"user" = list(

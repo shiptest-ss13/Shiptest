@@ -423,7 +423,7 @@
 				qdel(query_check_adminban_count)
 				return
 		qdel(query_check_adminban_count)
-	var/admin_ip = usr.client.address
+	var/admin_ip = SS13LIB_CLIENT_ADDRESS(usr.client)
 	var/admin_cid = usr.client.computer_id
 	duration = text2num(duration)
 	if (!(interval in list("SECOND", "MINUTE", "HOUR", "DAY", "WEEK", "MONTH", "YEAR")))
@@ -494,7 +494,7 @@
 	if(roles_to_ban[1] == "Server" && AH)
 		AH.resolve()
 	for(var/client/i in GLOB.clients - C)
-		if(i.address == player_ip || i.computer_id == player_cid)
+		if(SS13LIB_CLIENT_ADDRESS(i) == player_ip || i.computer_id == player_cid)
 			build_ban_cache(i)
 			to_chat(i, span_boldannounce("You have been [applies_to_admins ? "admin " : ""]banned by [usr.client.key] from [roles_to_ban[1] == "Server" ? "the server" : " Roles: [roles_to_ban.Join(", ")]"].\nReason: [reason]</span><br>[span_danger("This ban is [isnull(duration) ? "permanent." : "temporary, it will be removed in [time_message]."] The round ID is [GLOB.round_id].")]<br><span class='danger'>To appeal this ban go to [appeal_url]"), confidential = TRUE)
 			if(GLOB.admin_datums[i.ckey] || GLOB.deadmins[i.ckey])
@@ -664,7 +664,7 @@
 			unbanned_computerid = :admin_cid,
 			unbanned_round_id = :round_id
 		WHERE id = :ban_id
-	"}, list("ban_id" = ban_id, "admin_ckey" = usr.client.ckey, "admin_ip" = usr.client.address, "admin_cid" = usr.client.computer_id, "round_id" = GLOB.round_id))
+	"}, list("ban_id" = ban_id, "admin_ckey" = usr.client.ckey, "admin_ip" = SS13LIB_CLIENT_ADDRESS(usr.client), "admin_cid" = usr.client.computer_id, "round_id" = GLOB.round_id))
 	if(!query_unban.warn_execute())
 		qdel(query_unban)
 		return
@@ -676,7 +676,7 @@
 		build_ban_cache(C)
 		to_chat(C, span_boldannounce("[usr.client.key] has removed a ban from [role] for your key."), confidential = TRUE)
 	for(var/client/i in GLOB.clients - C)
-		if(i.address == player_ip || i.computer_id == player_cid)
+		if(SS13LIB_CLIENT_ADDRESS(i) == player_ip || i.computer_id == player_cid)
 			build_ban_cache(i)
 			to_chat(i, span_boldannounce("[usr.client.key] has removed a ban from [role] for your IP or CID."), confidential = TRUE)
 	unban_panel(player_key, admin_key, player_ip, player_cid, page)
@@ -808,7 +808,7 @@
 		build_ban_cache(C)
 		to_chat(C, span_boldannounce("[usr.client.key] has edited the [changes_keys_text] of a ban for your key."), confidential = TRUE)
 	for(var/client/i in GLOB.clients - C)
-		if(i.address == old_ip || i.computer_id == old_cid)
+		if(SS13LIB_CLIENT_ADDRESS(i) == old_ip || i.computer_id == old_cid)
 			build_ban_cache(i)
 			to_chat(i, span_boldannounce("[usr.client.key] has edited the [changes_keys_text] of a ban for your IP or CID."), confidential = TRUE)
 	unban_panel(player_key, null, null, null, page)

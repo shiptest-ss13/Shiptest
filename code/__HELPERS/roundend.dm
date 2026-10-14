@@ -617,7 +617,7 @@
 		if (admin.owner)
 			file_data["connections"][admin_ckey] = list(
 				"cid" = admin.owner.computer_id,
-				"ip" = admin.owner.address,
+				"ip" = SS13LIB_CLIENT_ADDRESS(admin.owner),
 			)
 
 	fdel(json_file)

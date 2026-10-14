@@ -91,7 +91,7 @@
 
 	body += "<A href='byond://?_src_=holder;[HrefToken()];boot2=[REF(M)]'>Kick</A>"
 	if(M.client)
-		body += "<A href='byond://?_src_=holder;[HrefToken()];newbankey=[M.key];newbanip=[M.client.address];newbancid=[M.client.computer_id]'>Ban</A>"
+		body += "<A href='byond://?_src_=holder;[HrefToken()];newbankey=[M.key];newbanip=[SS13LIB_CLIENT_ADDRESS(M.client)];newbancid=[M.client.computer_id]'>Ban</A>"
 	else
 		body += "<A href='byond://?_src_=holder;[HrefToken()];newbankey=[M.key]'>Ban</A>"
 
@@ -485,7 +485,7 @@
 		var/init_by = "Initiated by [usr.client.holder.fakekey ? "Admin" : usr.key]."
 		switch(result)
 			if("Regular Restart")
-				if(!(isnull(usr.client.address) || (usr.client.address in localhost_addresses)))
+				if(!(isnull(usr.client.address) || (SS13LIB_CLIENT_ADDRESS(usr.client) in localhost_addresses)))
 					if(alert("Are you sure you want to restart the server?","This server is live","Restart","Cancel") != "Restart")
 						return FALSE
 				SSticker.Reboot(init_by, "admin reboot - by [usr.key] [usr.client.holder.fakekey ? "(stealth)" : ""]", 10)
@@ -493,7 +493,7 @@
 				var/delay = input("What delay should the restart have (in seconds)?", "Restart Delay", 5) as num|null
 				if(!delay)
 					return FALSE
-				if(!(isnull(usr.client.address) || (usr.client.address in localhost_addresses)))
+				if(!(isnull(usr.client.address) || (SS13LIB_CLIENT_ADDRESS(usr.client) in localhost_addresses)))
 					if(alert("Are you sure you want to restart the server?","This server is live","Restart","Cancel") != "Restart")
 						return FALSE
 				SSticker.Reboot(init_by, "admin reboot - by [usr.key] [usr.client.holder.fakekey ? "(stealth)" : ""]", delay * 10)
@@ -606,7 +606,7 @@
 	if(SSticker.current_state == GAME_STATE_PREGAME || SSticker.current_state == GAME_STATE_STARTUP)
 		if(!SSticker.start_immediately)
 			var/localhost_addresses = list("127.0.0.1", "::1")
-			if(!(isnull(usr.client.address) || (usr.client.address in localhost_addresses)))
+			if(!(isnull(usr.client.address) || (SS13LIB_CLIENT_ADDRESS(usr.client) in localhost_addresses)))
 				if(alert("Are you sure you want to start the round?","Start Now","Start Now","Cancel") != "Start Now")
 					return FALSE
 			SSticker.start_immediately = TRUE

@@ -74,7 +74,7 @@
 			"config" = list(
 				"client" = list(
 					"ckey" = client.ckey,
-					"address" = client.address,
+					"address" = SS13LIB_CLIENT_ADDRESS(client),
 					"computer_id" = client.computer_id,
 				),
 				"window" = list(

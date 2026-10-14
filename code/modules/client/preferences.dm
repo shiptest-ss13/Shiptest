@@ -1609,7 +1609,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /datum/preferences/proc/process_link(mob/user, list/href_list)
 	if(href_list["bancheck"])
-		var/list/ban_details = is_banned_from_with_details(user.ckey, user.client.address, user.client.computer_id, href_list["bancheck"])
+		var/list/ban_details = is_banned_from_with_details(user.ckey, SS13LIB_CLIENT_ADDRESS(user.client), user.client.computer_id, href_list["bancheck"])
 		var/admin = FALSE
 		if(GLOB.admin_datums[user.ckey] || GLOB.deadmins[user.ckey])
 			admin = TRUE
