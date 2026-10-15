@@ -22,7 +22,7 @@
 	var/sheet_amount = 2
 	var/obj/girder_type = /obj/structure/girder
 
-	minimum_damage = 20
+	minimum_damage = 15
 	max_integrity = 400
 	brute_mod = 1
 	burn_mod = 1
