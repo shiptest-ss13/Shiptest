@@ -6,13 +6,54 @@
 ///Asleep because there's no players on our virtual z-level to notice us, woken when one arrives. See /datum/ai_controller/proc/check_should_sleep()
 #define AI_STATUS_IDLE 3
 
-
 ///Monkey checks
 #define SHOULD_RESIST(source) (source.on_fire || source.buckled || HAS_TRAIT(source, TRAIT_RESTRAINED) || (source.pulledby && source.pulledby.grab_state > GRAB_PASSIVE))
 #define IS_DEAD_OR_INCAP(source) (source.incapacitated() || source.stat)
 
 ///For JPS pathing, the maximum length of a path we'll try to generate. Should be modularized depending on what we're doing later on
 #define AI_MAX_PATH_LENGTH 30 // 30 is possibly overkill since by default we lose interest after 14 tiles of distance, but this gives wiggle room for weaving around obstacles
+
+///Whether mover's close enough to target for something needing to be within distance of it. Being within reach, 1, means actually being able to reach them,
+///not just being a tile away with a wall or window between, see /atom/proc/Adjacent()
+#define AI_IN_RANGE(mover, target, distance) (get_dist(mover, target) <= (distance) && ((distance) != 1 || (target).Adjacent(mover)))
+
+///Notes something controller decided, for admins working out what a mob's up to, if they're logging its decisions. Costs nothing if they're not, see /datum/ai_controller/proc/log_decision()
+#define AI_LOG_DECISION(controller, text) if((controller)?.logging_decisions) { (controller).log_decision(text) }
+///How often AI with nobody alive on its virtual z-level to see it plans and acts, rather than every tick, see /datum/ai_controller/var/low_priority
+#define AI_LOW_PRIORITY_INTERVAL (1 SECONDS)
+
+///How many decisions a controller remembers while logging them
+#define AI_DECISION_LOG_LENGTH 20
+
+// Conditions a planning subtree's guard can need or be blocked by
+///We've a current target that's still around
+#define AI_CONDITION_HAS_TARGET (1<<0)
+///We can see our current target
+#define AI_CONDITION_TARGET_SEEN (1<<1)
+///We've lost sight of our current target. Neither this nor AI_CONDITION_TARGET_SEEN if nothing's keeping track
+#define AI_CONDITION_TARGET_LOST (1<<2)
+///Our current target's within reach
+#define AI_CONDITION_TARGET_ADJACENT (1<<3)
+///We're taking cover from being shot at
+#define AI_CONDITION_IN_COVER (1<<4)
+///We're fighting from behind cover, or hiding from someone dug in
+#define AI_CONDITION_FIGHTING_FROM_COVER (1<<5)
+///We're going around something in the way of our shot
+#define AI_CONDITION_FLANKING (1<<6)
+///We're moving somewhere better to shoot from
+#define AI_CONDITION_REPOSITIONING (1<<7)
+///We're backing off after getting a hit in
+#define AI_CONDITION_FALLING_BACK (1<<8)
+///We're heading somewhere we can breathe
+#define AI_CONDITION_SEEKING_SAFETY (1<<9)
+///Where we're standing isn't safe for us, like vacuum or a fire
+#define AI_CONDITION_UNSAFE_SPOT (1<<10)
+///We've a ranged attack
+#define AI_CONDITION_HAS_RANGED_ATTACK (1<<11)
+///Our nerve's gone and we're falling back
+#define AI_CONDITION_BROKEN (1<<12)
+///We're reloading
+#define AI_CONDITION_RELOADING (1<<13)
 
 ///Cooldown on planning if planning failed last time
 #define AI_FAILED_PLANNING_COOLDOWN 1.5 SECONDS

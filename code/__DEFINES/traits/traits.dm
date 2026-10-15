@@ -561,5 +561,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// If this movable is currently treading in a turf with the immerse element.
 #define TRAIT_IMMERSED "immersed"
 
+/// lets AI open and path through doors, even if they can't open doors normally
+#define TRAIT_AI_OPENS_DOORS "ai_opens_doors"
+/// AI that comes looking when it hears enemy gunfire
+#define TRAIT_AI_HEARS_GUNFIRE "ai_hears_gunfire"
+
 /// Trait applied by element
 #define ELEMENT_TRAIT(source) "element_trait_[source]"

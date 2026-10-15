@@ -1,8 +1,9 @@
-// Generic movement behaviors, for going somewhere, keeping a distance from something, or running from it
+// generic movement behaviors, for going somewhere, keeping a distance from something, or running from it
 
-/// Goes to whatever's in a blackboard key, succeeding once we're there
+// goes to whatever's in a blackboard key, succeeding once we're there
 /datum/ai_behavior/travel_towards
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
+	required_distance = 0 // right onto it
 	action_cooldown = 0
 	//If TRUE, clears the blackboard key once we've arrived or given up
 	var/clear_target = FALSE
@@ -23,11 +24,6 @@
 	if(clear_target)
 		controller.clear_blackboard_key(target_key)
 
-/// As travel_towards, but stopping a tile short, for things we can't stand on top of, like mobs
-/datum/ai_behavior/travel_towards/adjacent
-	required_distance = 1
-
-/// Takes a step away from whatever's in a blackboard key, to the free tile next to us that's furthest from them. Fails if there isn't one, like when we're cornered
 /datum/ai_behavior/step_away
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
 	required_distance = 0
@@ -60,7 +56,6 @@
 	. = ..()
 	controller.ai_movement.stop_moving_towards(controller)
 
-/// Moves towards whatever's in a blackboard key until we're within range of them, and can see them
 /datum/ai_behavior/pursue_to_range
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_MOVE_AND_PERFORM | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
 	action_cooldown = 0
@@ -84,7 +79,6 @@
 	. = ..()
 	controller.ai_movement.stop_moving_towards(controller)
 
-/// Runs from whatever's in a blackboard key until we're flee_distance away from them, picking somewhere further off each time we get where we were going
 /datum/ai_behavior/run_away_from_target
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_MOVE_AND_PERFORM | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
 	required_distance = 0
@@ -109,7 +103,6 @@
 	. = ..()
 	controller.ai_movement.stop_moving_towards(controller)
 
-/// Picks somewhere to run to, straight away from target if we can, or off to the side if that's blocked. Returns FALSE if there's nowhere
 /datum/ai_behavior/run_away_from_target/proc/plot_path_away(datum/ai_controller/controller, atom/target, flee_distance)
 	var/turf/our_turf = get_turf(controller.pawn)
 	var/away_angle = get_angle(target, our_turf)
@@ -120,3 +113,67 @@
 		set_movement_target(controller, destination)
 		return TRUE
 	return FALSE
+
+/datum/ai_behavior/face_target
+	action_cooldown = 1 SECONDS
+
+/datum/ai_behavior/face_target/perform(seconds_per_tick, datum/ai_controller/controller, target_key)
+	var/atom/target = controller.blackboard[target_key]
+	if(QDELETED(target))
+		return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED
+	var/mob/living/living_pawn = controller.pawn
+	living_pawn.face_atom(target)
+	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
+
+/datum/ai_behavior/take_cover
+	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
+	required_distance = 0
+	action_cooldown = 0
+	var/search_range = 3
+	//how long we wait before looking again, if there was nowhere to hide
+	var/failed_search_cooldown = 2 SECONDS
+
+/datum/ai_behavior/take_cover/setup(datum/ai_controller/controller, danger_key)
+	. = ..()
+	var/turf/danger = get_turf(controller.blackboard[danger_key])
+	if(!danger)
+		return FALSE
+	var/turf/cover = find_hiding_spot(controller.pawn, danger, search_range, exclude = controller.blackboard[BB_BASIC_MOB_BAD_COVER_TURF])
+	if(!cover)
+		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_HIDE_SEARCH, world.time + failed_search_cooldown)
+		return FALSE
+	controller.set_blackboard_key(BB_BASIC_MOB_COVER_TURF, cover)
+	set_movement_target(controller, cover)
+
+/datum/ai_behavior/take_cover/perform(seconds_per_tick, datum/ai_controller/controller, danger_key)
+	return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_SUCCEEDED // made it, see /datum/ai_controller/process()
+
+/datum/ai_behavior/take_cover/finish_action(datum/ai_controller/controller, succeeded, danger_key)
+	. = ..()
+	controller.ai_movement.stop_moving_towards(controller)
+	if(!succeeded)
+		controller.clear_blackboard_key(BB_BASIC_MOB_COVER_TURF)
+
+/datum/ai_behavior/find_firing_line
+	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_MOVE_AND_PERFORM | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
+	required_distance = 1
+	action_cooldown = 0
+
+/datum/ai_behavior/find_firing_line/setup(datum/ai_controller/controller, target_key, pass_flags)
+	. = ..()
+	var/atom/target = controller.blackboard[target_key]
+	if(QDELETED(target))
+		return FALSE
+	set_movement_target(controller, target)
+
+/datum/ai_behavior/find_firing_line/perform(seconds_per_tick, datum/ai_controller/controller, target_key, pass_flags)
+	var/atom/target = controller.blackboard[target_key]
+	if(QDELETED(target))
+		return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED
+	if(get_mob_shot_blocker(controller.pawn, target))
+		return AI_BEHAVIOR_DELAY // not there yet
+	return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_SUCCEEDED
+
+/datum/ai_behavior/find_firing_line/finish_action(datum/ai_controller/controller, succeeded, target_key, pass_flags)
+	. = ..()
+	controller.ai_movement.stop_moving_towards(controller)

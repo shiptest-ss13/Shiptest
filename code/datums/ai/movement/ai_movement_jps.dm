@@ -30,20 +30,20 @@
 				if(iter_behavior.required_distance < minimum_distance)
 					minimum_distance = iter_behavior.required_distance
 
-		if(get_dist(movable_pawn, controller.current_movement_target) <= minimum_distance)
+		if(AI_IN_RANGE(movable_pawn, controller.current_movement_target, minimum_distance))
 			continue
 
 		var/generate_path = FALSE // set to TRUE when we either have no path, or we failed a step
 		if(length(controller.movement_path))
 			var/turf/next_step = controller.movement_path[1]
+			var/turf/old_turf = get_turf(movable_pawn)
 			movable_pawn.Move(next_step)
-
-			// this check if we're on exactly the next tile may be overly brittle for dense pawns who may get bumped slightly
-			// to the side while moving but could maybe still follow their path without needing a whole new path
-			if(get_turf(movable_pawn) == next_step)
+			var/turf/new_turf = get_turf(movable_pawn)
+			if(new_turf == next_step)
 				controller.movement_path.Cut(1,2)
-			else
+			else if(new_turf == old_turf || get_dist(new_turf, next_step) > 1)
 				generate_path = TRUE
+			// otherwise we went somewhere else but are still right by our next step, like swerving while dodging, so carry on from here
 		else
 			generate_path = TRUE
 
@@ -58,7 +58,9 @@
 			COOLDOWN_START(controller, repath_cooldown, 2 SECONDS)
 			// get_path_to() can sleep, so work it out in the background rather than holding up everyone else's movement
 			controller.calculating_path = TRUE
-			INVOKE_ASYNC(src, PROC_REF(calculate_path), controller, controller.current_movement_target, minimum_distance)
+			// a tile away but out of reach, like with a wall or window between, so find our way right to them, stopping once we can reach them
+			var/path_distance = (minimum_distance == 1 && get_dist(movable_pawn, controller.current_movement_target) <= 1) ? 0 : minimum_distance
+			INVOKE_ASYNC(src, PROC_REF(calculate_path), controller, controller.current_movement_target, path_distance)
 
 /// Works out a path for controller to target in the background, using it if they're still headed there once it's done
 /datum/ai_movement/jps/proc/calculate_path(datum/ai_controller/controller, atom/target, minimum_distance)

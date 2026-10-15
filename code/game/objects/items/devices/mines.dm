@@ -652,7 +652,7 @@
 /obj/item/mine/proximity/spawner/manhack
 	name = "\improper P-83 Lacerator"
 	desc = "An anti-infantry device produced during the corporate wars. The explosive payload has been swapped out for 'viscerator'-type antipersonnel drones."
-	spawn_type = /mob/living/simple_animal/hostile/viscerator
+	spawn_type = /mob/living/basic/viscerator
 
 
 

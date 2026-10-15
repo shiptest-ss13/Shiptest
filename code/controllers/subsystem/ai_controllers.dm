@@ -9,10 +9,14 @@ SUBSYSTEM_DEF(ai_controllers)
 
 	///List of all ai_subtree singletons, key is the typepath while assigned value is a newly created instance of the typepath. See setup_subtrees()
 	var/list/ai_subtrees = list()
+	///List of all ai_sensor singletons, as list(typepath = instance), see /datum/ai_controller/var/sensors
+	var/list/ai_sensors = list()
 	///List of all ai controllers currently running
 	var/list/active_ai_controllers = list()
 	///AI controllers that are asleep because nobody's around, as list("virtual z" = list(controllers))
 	var/list/list/sleeping_ai_by_virtual_level = list()
+	///If FALSE, AI that nobody alive can see thinks just as often as AI that someone can
+	var/low_priority_enabled = TRUE
 
 /datum/controller/subsystem/ai_controllers/Initialize(timeofday)
 	setup_subtrees()
@@ -23,9 +27,21 @@ SUBSYSTEM_DEF(ai_controllers)
 	for(var/subtree_type in subtypesof(/datum/ai_planning_subtree))
 		var/datum/ai_planning_subtree/subtree = new subtree_type
 		ai_subtrees[subtree_type] = subtree
+	ai_sensors = list()
+	for(var/sensor_type in subtypesof(/datum/ai_sensor))
+		ai_sensors[sensor_type] = new sensor_type
 
 /datum/controller/subsystem/ai_controllers/fire(resumed)
+	var/list/watched_levels = list() // whether there's anyone alive on each virtual z-level, worked out once each fire
 	for(var/datum/ai_controller/ai_controller as anything in active_ai_controllers)
+		var/virtual_level = "[ai_controller.pawn?.virtual_z()]"
+		if(isnull(watched_levels[virtual_level]))
+			watched_levels[virtual_level] = length(LAZYACCESS(SSmobs.players_by_virtual_z, virtual_level)) > 0
+		ai_controller.low_priority = low_priority_enabled && !watched_levels[virtual_level]
+		if(ai_controller.low_priority)
+			if(world.time < ai_controller.next_low_priority_plan)
+				continue
+			ai_controller.next_low_priority_plan = world.time + AI_LOW_PRIORITY_INTERVAL
 		if(!COOLDOWN_FINISHED(ai_controller, failed_planning_cooldown))
 			continue
 

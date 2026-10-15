@@ -23,6 +23,8 @@
 	var/obj/item/gun/ballistic/foulmouth = fired_from
 	if(istype(foulmouth))
 		foulmouth.adjust_wear(wear_modifier)
+	if(user)
+		alert_ai_to_gunfire(user, quiet, istype(src, /obj/item/ammo_casing/energy), fired_from)
 	update_appearance()
 	return TRUE
 

@@ -1,8 +1,6 @@
 /datum/ai_behavior/find_potential_targets
 	action_cooldown = 2 SECONDS
-	/// How far can we see stuff?
 	var/vision_range = 9
-	/// Static typecache list of potentially dangerous objs
 	var/static/list/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha))
 
 /datum/ai_behavior/find_potential_targets/perform(seconds_per_tick, datum/ai_controller/controller, target_key, targetting_datum_key, hiding_location_key)
@@ -13,10 +11,11 @@
 	if(!targetting_datum)
 		CRASH("No target datum was supplied in the blackboard for [controller.pawn]")
 
-	potential_targets = hearers(vision_range, controller.pawn) - living_mob //Remove self, so we don't suicide
+	var/our_vision_range = controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || vision_range
+	potential_targets = hearers(our_vision_range, controller.pawn) - living_mob //Remove self, so we don't suicide
 
-	for(var/HM in typecache_filter_list(range(vision_range, living_mob), hostile_machines)) //Can we see any hostile machines?
-		if(can_see(living_mob, HM, vision_range))
+	for(var/HM in typecache_filter_list(range(our_vision_range, living_mob), hostile_machines)) //Can we see any hostile machines?
+		if(can_see(living_mob, HM, our_vision_range))
 			potential_targets += HM
 
 	if(!potential_targets.len)
@@ -25,7 +24,7 @@
 	var/list/filtered_targets = list()
 
 	for(var/atom/pot_target in potential_targets)
-		if(targetting_datum.can_attack(living_mob, pot_target))//Can we attack it?
+		if(targetting_datum.can_attack(living_mob, pot_target))
 			filtered_targets += pot_target
 			continue
 
@@ -42,14 +41,27 @@
 
 	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
-/// Picks which of the targets we could attack to go for. Override it for smarter choices, like threats before people who are already down
 /datum/ai_behavior/find_potential_targets/proc/pick_final_target(datum/ai_controller/controller, list/filtered_targets)
-	// the nearest, picking at random between any as near as each other, so a group doesn't all go for the same one
-	var/atom/pawn = controller.pawn
+	var/atom/attacker = controller.blackboard[BB_BASIC_MOB_SHOT_BY] // a mob, or something like a turret
+	if(attacker && (attacker in filtered_targets) && !is_downed(attacker) && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < 5 SECONDS)
+		return attacker
+	var/list/standing_targets = list()
+	for(var/atom/possible_target as anything in filtered_targets)
+		if(!is_downed(possible_target))
+			standing_targets += possible_target
+	return get_nearest_of(controller.pawn, length(standing_targets) ? standing_targets : filtered_targets)
+
+/proc/is_downed(atom/thing)
+	if(!isliving(thing))
+		return FALSE
+	var/mob/living/living_thing = thing
+	return living_thing.stat != CONSCIOUS
+
+/proc/get_nearest_of(atom/source, list/candidates)
 	var/nearest_distance = INFINITY
 	var/list/nearest_targets = list()
-	for(var/atom/possible_target as anything in filtered_targets)
-		var/distance = get_dist(pawn, possible_target)
+	for(var/atom/possible_target as anything in candidates)
+		var/distance = get_dist(source, possible_target)
 		if(distance < nearest_distance)
 			nearest_distance = distance
 			nearest_targets = list(possible_target)

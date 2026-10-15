@@ -294,6 +294,10 @@
 				if(iscarbon(L))
 					var/mob/living/carbon/carbon_target = L
 					splatter_color = carbon_target.dna.blood_type.color
+				else // simplemobs can bleed other colours too, like human mobs of other species
+					var/list/blood_dna = L.get_blood_dna_list()
+					if(length(blood_dna))
+						splatter_color = get_blood_dna_color(blood_dna)
 				new /obj/effect/temp_visual/dir_setting/bloodsplatter(target_loca, splatter_dir, splatter_color)
 			if(prob(33))
 				L.add_splatter_floor(target_loca)
