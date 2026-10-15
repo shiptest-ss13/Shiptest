@@ -30,7 +30,7 @@
 	desc = "Most industrial groups in the Frontier require bulk quantities of iron and are willing to pay the going market rate for consistent deliveries. This mission fulfills one such contract."
 	container_type = /obj/structure/material_crate/iron
 	objective_type = /obj/item/stack/sheet/plasteel
-	weight = 6
+	weight = 10
 
 /datum/mission/acquire/material/iron/get_material_value(amount)
 	//amount = iron IEV * amount
@@ -40,7 +40,7 @@
 	desc = "Starship-ready titanium plating is in high demand in the Frontier, with the most active buyer being the Clover Corporation. An open purchasing channel is maintained with all major outposts."
 	container_type = /obj/structure/material_crate/titanium
 	objective_type = /obj/item/stack/sheet/plasteel
-	weight = 6
+	weight = 10
 
 /datum/mission/acquire/material/titanium/get_material_value(amount)
 	//amount = titanium IEV * amount
@@ -59,7 +59,7 @@
 	desc = "The New Gorlex Republic often purchases bulk quantity of refined plastitanium to fuel the expansion of its fleets. Several such contracts are up today."
 	container_type = /obj/structure/material_crate/plastit
 	objective_type = /obj/item/stack/sheet/mineral/plastitanium
-	weight = 6
+	weight = 8
 
 /datum/mission/acquire/material/plastitanium/get_material_value(amount)
 	//amount = plasma IEV + titanium IEV * amount
