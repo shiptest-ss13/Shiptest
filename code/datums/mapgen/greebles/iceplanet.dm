@@ -60,6 +60,7 @@
 			/obj/effect/greeble_spawner/iceplanet/fiftyeight = 5,
 			/obj/effect/greeble_spawner/iceplanet/fiftynine = 5,
 			/obj/effect/greeble_spawner/iceplanet/sixty = 5,
+			/obj/effect/greeble_spawner/iceplanet/lossberg = 5,
 		)
 
 /obj/effect/greeble_spawner/iceplanet
