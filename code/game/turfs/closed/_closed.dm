@@ -187,7 +187,7 @@
 	//you can never get more damage from this.
 	damage = damage - max(damage_reduction - impacting_projectile.armour_penetration, 0)
 	// if dam is below turf_minimum_damage, then the hit has no effect
-	return (dam < turf_minimum_damage ? 0 : dam)
+	return (damage < turf_minimum_damage ? 0 : damage)
 
 /turf/closed/ex_act(severity, target)
 	if(target == src || !density)

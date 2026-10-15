@@ -359,7 +359,7 @@
 	effect_type = /obj/effect/particle_effect/smoke/transparent/concrete
 
 /obj/effect/particle_effect/smoke/transparent/concrete
-	color = COLOR_GREY
+	color = COLOR_GRAY
 	opaque = FALSE
 	alpha = 5
 
