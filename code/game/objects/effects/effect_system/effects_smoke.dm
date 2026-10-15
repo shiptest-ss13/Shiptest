@@ -353,7 +353,7 @@
 /obj/effect/particle_effect/smoke/transparent/sandbag
 	color = LIGHT_COLOR_YELLOW
 	opaque = FALSE
-	alpha = 5
+	alpha = 10
 
 /datum/effect_system/smoke_spread/transparent/concrete
 	effect_type = /obj/effect/particle_effect/smoke/transparent/concrete
@@ -361,7 +361,7 @@
 /obj/effect/particle_effect/smoke/transparent/concrete
 	color = COLOR_GRAY
 	opaque = FALSE
-	alpha = 5
+	alpha = 10
 
 /proc/do_smoke(range=0, location=null, smoke_type=/obj/effect/particle_effect/smoke)
 	var/datum/effect_system/smoke_spread/smoke = new
