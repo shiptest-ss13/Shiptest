@@ -1862,13 +1862,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"CF" = (
-/obj/structure/sign/poster/clip/clover{
-	pixel_x = 1;
-	pixel_y = -31
-	},
-/turf/template_noop,
-/area/template_noop)
 "CY" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -3191,6 +3184,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/transparent/navyblue/mono,
+/obj/structure/sign/poster/clip/clover{
+	pixel_x = 1;
+	pixel_y = -31
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "ZY" = (
@@ -3711,7 +3708,7 @@ yI
 Qo
 GJ
 xL
-CF
+tN
 tN
 tN
 Nw
