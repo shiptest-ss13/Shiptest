@@ -174,7 +174,7 @@
 /datum/supply_pack/medical/rezadone_bottle
 	name = "Rezadone Bottle Crate"
 	desc = "Contains one bottle of rezadone, used to restore dermal husking and extreme infections."
-	cost = 1250
+	cost = 1000
 	contains = list(/obj/item/reagent_containers/glass/bottle/rezadone)
 
 /datum/supply_pack/medical/salglucanister

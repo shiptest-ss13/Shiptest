@@ -41,7 +41,7 @@
 
 /obj/item/reagent_containers/glass/bottle/rezadone
 	name = "rezadone bottle"
-	desc = "A small bottle of rezadone. A dosage label states: Dose of 10 units at once for extreme infection. Dose of 5u at once for dermal husking."
+	desc = "A small bottle of rezadone. A dosage label states: Dose of 10 units at once for extreme infection. Dose of 5u at once for dermal husking. Keep under 30 units."
 	list_reagents = list(/datum/reagent/medicine/rezadone = 30)
 
 /obj/item/reagent_containers/glass/bottle/morphine
