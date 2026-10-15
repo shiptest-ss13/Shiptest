@@ -50,6 +50,16 @@
 			/obj/effect/greeble_spawner/iceplanet/fourtyeight = 5,
 			/obj/effect/greeble_spawner/iceplanet/fourtynine = 5,
 			/obj/effect/greeble_spawner/iceplanet/fifty = 5,
+			/obj/effect/greeble_spawner/iceplanet/fiftyone = 5,
+			/obj/effect/greeble_spawner/iceplanet/fiftytwo = 5,
+			/obj/effect/greeble_spawner/iceplanet/fiftythree = 5,
+			/obj/effect/greeble_spawner/iceplanet/fiftyfour = 5,
+			/obj/effect/greeble_spawner/iceplanet/fiftyfive = 5,
+			/obj/effect/greeble_spawner/iceplanet/fiftysix = 5,
+			/obj/effect/greeble_spawner/iceplanet/fiftyseven = 5,
+			/obj/effect/greeble_spawner/iceplanet/fiftyeight = 5,
+			/obj/effect/greeble_spawner/iceplanet/fiftynine = 5,
+			/obj/effect/greeble_spawner/iceplanet/sixty = 5,
 		)
 
 /obj/effect/greeble_spawner/iceplanet
