@@ -118,14 +118,25 @@
 		return FALSE
 	return controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != FALSE
 
+// whether we know who we're up against: we can see them, or did until a moment ago, see AI_FIGHT_MEMORY
+/datum/component/ai_callouts/proc/in_fight()
+	if(sees_target())
+		return TRUE
+	var/mob/living/basic/basic_mob = parent
+	return basic_mob.ai_controller && AI_RECENTLY_SAW_ENEMY(basic_mob.ai_controller, AI_FIGHT_MEMORY)
+
 /datum/component/ai_callouts/proc/on_shot(datum/source, obj/projectile/projectile)
 	SIGNAL_HANDLER
-	if(!sees_target()) // getting hurt by someone we can see is on_hurt()'s
-		speak_about(AI_CALLOUT_TAKING_FIRE)
+	if(in_fight()) // getting hurt by someone we know about is on_hurt()'s
+		return
+	var/atom/shooter = projectile.firer
+	if(isatom(shooter) && can_see(parent, shooter, hearing_range))
+		return // or someone else we can see plain as day
+	speak_about(AI_CALLOUT_TAKING_FIRE)
 
 /datum/component/ai_callouts/proc/on_hurt(datum/source, damage, damagetype, def_zone)
 	SIGNAL_HANDLER
-	if(damage > 0 && sees_target())
+	if(damage > 0 && in_fight())
 		speak_about(AI_CALLOUT_HURT)
 
 /datum/component/ai_callouts/proc/on_our_projectile_hit(datum/source, atom/movable/firer, atom/hit_target, angle)

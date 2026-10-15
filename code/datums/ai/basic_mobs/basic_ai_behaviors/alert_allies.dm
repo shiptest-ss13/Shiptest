@@ -12,7 +12,7 @@
 	var/atom/target = controller.blackboard[target_key]
 	if(QDELETED(target))
 		return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED
-	var/turf/seen_at = controller.blackboard[BB_BASIC_MOB_LAST_SEEN_TURF] || get_turf(target)
+	var/turf/seen_at = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF] || get_turf(target)
 	if(controller.blackboard[BB_BASIC_MOB_SUMMONS_BACKUP])
 		// like the simplemobs that summoned backup, see /mob/living/simple_animal/hostile/proc/summon_backup()
 		living_pawn.do_alert_animation()

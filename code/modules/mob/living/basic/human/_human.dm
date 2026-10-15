@@ -78,6 +78,8 @@
 	var/ranged_cooldown = 3 SECONDS
 	/// How far off the mob's shots stray, overriding their gun's. Null to go by their gun
 	var/spread
+	/// inherent aim spread, in degrees either way, on top of gun spread
+	var/aim_spread = 2
 	/// If TRUE, the mob sprays fire with a flamethrower rather than firing a gun
 	var/fires_flames = FALSE
 	/// If TRUE, the mob holds their fire when one of theirs is in the way
@@ -240,6 +242,7 @@
 	var/shot_spread = spread
 	if(isnull(shot_spread))
 		shot_spread = gun_type ? initial(gun_type.spread) : 2
+	shot_spread = max(shot_spread, 0) + aim_spread
 	AddComponent(/datum/component/ranged_attacks, casing_type, projectile_type, projectile_sound, burst_shots, burst_interval, ranged_cooldown, shot_spread)
 	if(gun_type)
 		AddComponent(/datum/component/ai_magazine, gun_type) // for reloading

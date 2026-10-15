@@ -30,7 +30,7 @@
 // goes after target that mob learns about without direct confirmation
 /datum/ai_controller/proc/learn_of_target(atom/target, turf/seen_at, how)
 	set_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET, target)
-	set_blackboard_key(BB_BASIC_MOB_LAST_SEEN_TARGET, target)
+	set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TARGET, target)
 	if(how == AI_LEARNED_TOLD)
 		set_blackboard_key(BB_BASIC_MOB_TOLD_ABOUT_TARGET, TRUE)
 	else
@@ -43,10 +43,10 @@
 	if(ai_status == AI_STATUS_IDLE)
 		set_ai_status(AI_STATUS_ON)
 	if(can_see(pawn, target))
-		clear_blackboard_key(BB_BASIC_MOB_LAST_SEEN_TIME) // they're right there, so spot them the usual way
-		clear_blackboard_key(BB_BASIC_MOB_LAST_SEEN_TURF)
+		clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME) // they're right there, so spot them the usual way
+		clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF)
 		return TRUE
 	set_blackboard_key(BB_BASIC_MOB_TARGET_IN_SIGHT, FALSE)
-	set_blackboard_key(BB_BASIC_MOB_LAST_SEEN_TURF, seen_at)
-	set_blackboard_key(BB_BASIC_MOB_LAST_SEEN_TIME, world.time)
+	set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF, seen_at)
+	set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME, world.time)
 	return FALSE

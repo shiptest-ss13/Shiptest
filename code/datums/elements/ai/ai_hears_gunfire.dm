@@ -55,8 +55,8 @@
 	var/atom/current_target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(current_target == shooter)
 		return // already on them
-	if(!QDELETED(current_target) && controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != FALSE)
-		return // busy with someone we can see
+	if(!QDELETED(current_target) && (controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != FALSE || AI_RECENTLY_SAW_ENEMY(controller, AI_FIGHT_MEMORY)))
+		return // busy with someone we can see, or just could
 	var/datum/targetting_datum/targetting_datum = controller.blackboard[BB_TARGETTING_DATUM]
 	if(!targetting_datum?.can_attack(listener, shooter))
 		return // one of ours, or someone we wouldn't fight anyway

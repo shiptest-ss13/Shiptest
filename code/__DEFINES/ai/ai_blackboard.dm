@@ -59,14 +59,16 @@
 
 ///Targetting subtrees
 #define BB_BASIC_MOB_CURRENT_TARGET "BB_basic_current_target"
-///Where we last saw our current target
-#define BB_BASIC_MOB_LAST_SEEN_TURF "BB_basic_last_seen_turf"
-///When we last saw our current target, as a world.time
-#define BB_BASIC_MOB_LAST_SEEN_TIME "BB_basic_last_seen_time"
+///Where we think our current target is: where we last saw them, or were told, heard or guessed they are
+#define BB_BASIC_MOB_LAST_KNOWN_TURF "BB_basic_last_known_turf"
+///When we last had word of where our current target is, by seeing them, being told, hearing them, or still searching, as a world.time. We give up on them once it's too long ago
+#define BB_BASIC_MOB_LAST_KNOWN_TIME "BB_basic_last_known_time"
+///When we last actually had eyes on whoever we were fighting, as a world.time. Unlike BB_BASIC_MOB_LAST_KNOWN_TIME, being told or hearing about them doesn't count, and it outlasts switching targets.
+#define BB_BASIC_MOB_LAST_SAW_ENEMY_TIME "BB_basic_last_saw_enemy_time"
 ///TRUE while we can see our current target, FALSE while they're out of sight
 #define BB_BASIC_MOB_TARGET_IN_SIGHT "BB_basic_target_in_sight"
-///Who BB_BASIC_MOB_LAST_SEEN_TURF and BB_BASIC_MOB_LAST_SEEN_TIME are about, so switching targets starts afresh
-#define BB_BASIC_MOB_LAST_SEEN_TARGET "BB_basic_last_seen_target"
+///Who BB_BASIC_MOB_LAST_KNOWN_TURF and BB_BASIC_MOB_LAST_KNOWN_TIME are about, so switching targets starts fresh
+#define BB_BASIC_MOB_LAST_KNOWN_TARGET "BB_basic_last_known_target"
 ///A SEARCH_STYLE_ define for how we look for a target we've lost sight of, overriding the search_lost_target subtree's own
 #define BB_BASIC_MOB_SEARCH_STYLE "BB_basic_search_style"
 ///Where we live and go back to once there's nothing to do

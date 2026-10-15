@@ -91,7 +91,7 @@
 		P.yo = target.y - startloc.y
 		P.xo = target.x - startloc.x
 		P.original = target
-		P.preparePixelProjectile(target, firer)
+		P.preparePixelProjectile(target, firer, spread = rand(-spread, spread))
 		P.fire()
 		alert_ai_to_gunfire(firer, SUPPRESSED_NONE, FALSE, firer) // casings do this themselves
 

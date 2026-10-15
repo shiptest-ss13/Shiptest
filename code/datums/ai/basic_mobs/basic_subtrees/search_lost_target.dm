@@ -20,8 +20,8 @@
 
 /datum/ai_planning_subtree/search_lost_target/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
-	var/turf/last_seen_turf = controller.blackboard[BB_BASIC_MOB_LAST_SEEN_TURF]
-	if(!last_seen_turf)
+	var/turf/last_known_turf = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
+	if(!last_known_turf)
 		return
 	if((controller.get_conditions() & AI_CONDITION_IN_COVER) || world.time < controller.blackboard[BB_BASIC_MOB_TRADING_FIRE_UNTIL])
 		return SUBTREE_RETURN_FINISH_PLANNING
@@ -30,15 +30,15 @@
 	call_out_search(controller, style)
 	switch(style)
 		if(SEARCH_STYLE_INVESTIGATE)
-			if(!can_see_spot(controller, last_seen_turf))
-				controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_LAST_SEEN_TURF)
+			if(!can_see_spot(controller, last_known_turf))
+				controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_LAST_KNOWN_TURF)
 			else
 				sweep(controller) // or if there's nowhere to sweep, we watch from here to see if they turn up, until track_target gives up on them
 		if(SEARCH_STYLE_HOLD)
-			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_LAST_SEEN_TURF)
+			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_LAST_KNOWN_TURF)
 		if(SEARCH_STYLE_SUPPRESS)
-			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_LAST_SEEN_TURF)
-			controller.queue_behavior(suppress_behavior, BB_BASIC_MOB_LAST_SEEN_TURF)
+			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_LAST_KNOWN_TURF)
+			controller.queue_behavior(suppress_behavior, BB_BASIC_MOB_LAST_KNOWN_TURF)
 	return SUBTREE_RETURN_FINISH_PLANNING // searching, so don't go after them blind
 
 /datum/ai_planning_subtree/search_lost_target/proc/pick_style(datum/ai_controller/controller)
@@ -91,7 +91,7 @@
 	if(isnull(pause_until))
 		// just got here, so stop and look around for a moment
 		controller.set_blackboard_key(BB_BASIC_MOB_SWEEP_PAUSE_UNTIL, world.time + sweep_pause_time)
-		controller.set_blackboard_key(BB_BASIC_MOB_LAST_SEEN_TIME, world.time) // still looking, so don't give up yet
+		controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME, world.time) // still looking, so don't give up yet
 		controller.pawn.setDir(pick(GLOB.cardinals))
 		return
 	if(world.time < pause_until)
@@ -110,8 +110,8 @@
 			continue
 		controller.set_blackboard_key(BB_BASIC_MOB_SWEEP_SPOTS_LEFT, spots_left - 1)
 		controller.clear_blackboard_key(BB_BASIC_MOB_SWEEP_PAUSE_UNTIL)
-		controller.set_blackboard_key(BB_BASIC_MOB_LAST_SEEN_TURF, next_spot)
-		controller.set_blackboard_key(BB_BASIC_MOB_LAST_SEEN_TIME, world.time)
+		controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF, next_spot)
+		controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME, world.time)
 		return
 	controller.clear_blackboard_key(BB_BASIC_MOB_SWEEP_CENTER) // nowhere left to look
 

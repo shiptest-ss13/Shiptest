@@ -21,8 +21,8 @@
 		// they can't see us, so keep our heads down, finishing getting where we were going first
 		if(fallback && our_turf != fallback)
 			controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_FALLBACK_TURF)
-		else if(controller.blackboard[BB_BASIC_MOB_LAST_SEEN_TURF])
-			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_LAST_SEEN_TURF)
+		else if(controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF])
+			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_LAST_KNOWN_TURF)
 		return SUBTREE_RETURN_FINISH_PLANNING
 	if(cover_fire_behavior && (conditions & AI_CONDITION_HAS_RANGED_ATTACK))
 		controller.queue_behavior(cover_fire_behavior, BB_BASIC_MOB_CURRENT_TARGET, BB_TARGETTING_DATUM, BB_BASIC_MOB_CURRENT_TARGET_HIDING_LOCATION)

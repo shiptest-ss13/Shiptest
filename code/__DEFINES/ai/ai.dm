@@ -3,7 +3,7 @@
 
 #define AI_STATUS_ON 1
 #define AI_STATUS_OFF 2
-///Asleep because there's no players on our virtual z-level to notice us, woken when one arrives. See /datum/ai_controller/proc/check_should_sleep()
+///Asleep because there's no players on our virtual z-level to notice us, woken when one arrives
 #define AI_STATUS_IDLE 3
 
 ///Monkey checks
@@ -17,9 +17,9 @@
 ///not just being a tile away with a wall or window between, see /atom/proc/Adjacent()
 #define AI_IN_RANGE(mover, target, distance) (get_dist(mover, target) <= (distance) && ((distance) != 1 || (target).Adjacent(mover)))
 
-///Notes something controller decided, for admins working out what a mob's up to, if they're logging its decisions. Costs nothing if they're not, see /datum/ai_controller/proc/log_decision()
+///Notes something controller decided, for admins working out what a mob's up to, if they're logging its decisions. Costs nothing if they're not
 #define AI_LOG_DECISION(controller, text) if((controller)?.logging_decisions) { (controller).log_decision(text) }
-///How often AI with nobody alive on its virtual z-level to see it plans and acts, rather than every tick, see /datum/ai_controller/var/low_priority
+///How often AI with nobody alive on its virtual z-level to see it plans and acts, rather than every tick
 #define AI_LOW_PRIORITY_INTERVAL (1 SECONDS)
 
 ///How many decisions a controller remembers while logging them

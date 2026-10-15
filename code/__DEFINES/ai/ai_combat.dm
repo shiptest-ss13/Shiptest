@@ -54,6 +54,11 @@
 ///Whether controller's mob is feeling morale, one of the AI_MORALE_ defines
 #define AI_MORALE_IS(controller, morale) (controller.blackboard[BB_BASIC_MOB_MORALE] == morale && controller.blackboard[BB_BASIC_MOB_MORALE_UNTIL] > world.time)
 
+///How long after losing sight of whoever we were fighting we still count as mid-fight, so someone ducking behind cover isn't a stranger again
+#define AI_FIGHT_MEMORY (10 SECONDS)
+///Whether controller's mob had eyes on someone it was fighting within memory
+#define AI_RECENTLY_SAW_ENEMY(controller, memory) (!isnull(controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME]) && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME] < (memory))
+
 // Things a mob can call out in a fight
 ///Spotted someone for itself, rather than being told about them
 #define AI_CALLOUT_SPOTTED "spotted"

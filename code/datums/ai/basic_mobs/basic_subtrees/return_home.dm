@@ -26,7 +26,7 @@
 		return // someone's shooting at us, so deal with that first
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(!QDELETED(target))
-		var/fighting = controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != FALSE // TRUE, or not tracked at all
+		var/fighting = controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != FALSE || AI_RECENTLY_SAW_ENEMY(controller, AI_FIGHT_MEMORY) // TRUE, or not tracked at all, or they've only just ducked out of sight
 		if(home_distance <= (fighting ? leash_distance * 2 : leash_distance))
 			return // close enough to keep going after them
 		AI_LOG_DECISION(controller, "return_home: [home_distance] tiles from home, too far to keep chasing")

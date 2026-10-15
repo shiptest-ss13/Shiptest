@@ -15,8 +15,10 @@
 	var/hold_duration = 10 SECONDS
 	//this close or closer, and we don't go around, we just step somewhere we can shoot from
 	var/minimum_distance = 2
-	//how far we look for somewhere to get an angle on someone dug in behind cover
+	//how far around them we look for somewhere to get an angle on them from
 	var/angle_search_range = 6
+	//how far from where we are we'll go to get that angle
+	var/max_flank_distance = 12
 
 /datum/ai_planning_subtree/flank/on_skipped(datum/ai_controller/controller)
 	end_flank(controller)
@@ -52,25 +54,32 @@
 			controller.set_blackboard_key(target_key, clear_target)
 			return
 		flanking = decide_to_flank(controller, target, must_go_around)
-		AI_LOG_DECISION(controller, "flank: [blocker || "their cover"] is in the way of [target], [flanking ? "going around" : "staying put"][must_go_around ? ", as we can't shoot through it" : ""]")
+		// make sure its actually a valid flank angle
+		var/turf/angle_turf = flanking ? find_angle_on(controller, target, pass_flags) : null
+		flanking = !!angle_turf
+		AI_LOG_DECISION(controller, "flank: [blocker || "their cover"] is in the way of [target], [flanking ? "going round to [angle_turf]" : "staying put"][must_go_around ? ", as we can't shoot through it" : ""]")
 		controller.set_blackboard_key(BB_BASIC_MOB_FLANKING, flanking)
 		controller.set_blackboard_key(BB_BASIC_MOB_FLANK_RECONSIDER_AT, world.time + (flanking ? flank_duration : hold_duration))
+		controller.set_blackboard_key(BB_BASIC_MOB_FLANK_TURF, angle_turf)
 		if(flanking)
 			ai_callout(controller.pawn, AI_CALLOUT_FLANKING)
 			controller.queue_behavior(/datum/ai_behavior/alert_allies, target_key)
-	if(flanking && blocker)
-		controller.queue_behavior(/datum/ai_behavior/find_firing_line, target_key, pass_flags)
-		return SUBTREE_RETURN_FINISH_PLANNING
 	if(flanking)
-		// there's no getting past their cover by walking at them, so go somewhere it doesn't cover them from
+		// go somewhere what's in the way doesn't cover them from
+		var/turf/their_turf = get_turf(target)
+		var/turf/our_turf = get_turf(controller.pawn)
 		var/turf/angle_turf = controller.blackboard[BB_BASIC_MOB_FLANK_TURF]
-		if(!angle_turf || get_turf(controller.pawn) == angle_turf || cover_between(get_turf(target), angle_turf))
+		if(our_turf == angle_turf && blocker && is_door(blocker))
+			// we've come round behind them, so through the door at them
+			controller.queue_behavior(/datum/ai_behavior/find_firing_line, target_key, pass_flags)
+			return SUBTREE_RETURN_FINISH_PLANNING
+		if(!angle_turf || our_turf == angle_turf || !still_an_angle(angle_turf, their_turf, pass_flags))
 			angle_turf = find_angle_on(controller, target, pass_flags)
 			if(!angle_turf)
-				end_flank(controller) // nowhere to get an angle from, so stay put
+				end_flank(controller) // nowhere to get an angle from any more, so stay put
 				return
 			controller.set_blackboard_key(BB_BASIC_MOB_FLANK_TURF, angle_turf)
-			AI_LOG_DECISION(controller, "flank: going round to [angle_turf] to get an angle on [target] behind their cover")
+			AI_LOG_DECISION(controller, "flank: going round to [angle_turf] to get an angle on [target]")
 		controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_FLANK_TURF)
 		return SUBTREE_RETURN_FINISH_PLANNING
 	// otherwise we're not going around. Our attack holds its fire while it's blocked, see has_clear_shot(), and reposition might find us an angle
@@ -115,18 +124,73 @@
 	controller.clear_blackboard_key(BB_BASIC_MOB_FLANK_TURF)
 
 
+/**
+ * The nearest spot around target we could get an angle on them from: a clear shot their cover doesn't stop,
+ * or round behind them, at least side-on to where we are, with only a door between us, so we can go through it at them.
+ * Nowhere straight through whatever's in our way counts, as that's just walking into their line of fire
+ */
 /datum/ai_planning_subtree/flank/proc/find_angle_on(datum/ai_controller/controller, atom/target, pass_flags)
 	var/mob/living/living_pawn = controller.pawn
 	var/turf/our_turf = get_turf(living_pawn)
 	var/turf/their_turf = get_turf(target)
+	// which way we're attacking them from, so we can tell which spots are round the back
+	var/from_x = our_turf.x - their_turf.x
+	var/from_y = our_turf.y - their_turf.y
+	var/list/reachable_without_passing_them // worked out only if we need it, as it's a fair bit of work
 	var/turf/best_turf
 	var/best_distance = INFINITY
-	for(var/turf/open/candidate in range(angle_search_range, our_turf))
+	for(var/turf/open/candidate in range(angle_search_range, their_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate_distance >= best_distance || get_dist(candidate, their_turf) <= minimum_distance || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate))
+		if(candidate_distance >= best_distance || candidate_distance > max_flank_distance || get_dist(candidate, their_turf) <= minimum_distance || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate))
 			continue
-		if(cover_between(their_turf, candidate) || get_shot_blocker(candidate, their_turf, pass_flags = pass_flags) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
+		if(cover_between(their_turf, candidate) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
 			continue
+		var/atom/blocker = get_shot_blocker(candidate, their_turf, pass_flags = pass_flags)
+		if(blocker)
+			if(!is_door(blocker))
+				continue
+			var/round_the_back = (candidate.x - their_turf.x) * from_x + (candidate.y - their_turf.y) * from_y <= 0
+			if(!round_the_back)
+				continue
+			// and there's a way round that doesn't go right past them, like when they're in an airlock with doors both ends
+			reachable_without_passing_them ||= get_reachable_turfs(our_turf, their_turf, max_flank_distance * 2)
+			if(!reachable_without_passing_them[candidate])
+				continue
 		best_turf = candidate
 		best_distance = candidate_distance
 	return best_turf
+
+// every spot we could walk to from start within max_steps without going through avoid, doors and all, as list(turf = TRUE)
+/datum/ai_planning_subtree/flank/proc/get_reachable_turfs(turf/start, turf/avoid, max_steps)
+	var/list/reachable = list()
+	reachable[start] = TRUE
+	var/list/frontier = list(start)
+	for(var/step in 1 to max_steps)
+		var/list/next_frontier = list()
+		for(var/turf/from_turf as anything in frontier)
+			for(var/direction in GLOB.cardinals)
+				var/turf/next_turf = get_step(from_turf, direction)
+				if(!next_turf || reachable[next_turf] || next_turf == avoid || !walkable_for_flank(next_turf))
+					continue
+				reachable[next_turf] = TRUE
+				next_frontier += next_turf
+		if(!length(next_frontier))
+			break
+		frontier = next_frontier
+	return reachable
+
+// whether we could walk through spot, if we opened any door on it
+/datum/ai_planning_subtree/flank/proc/walkable_for_flank(turf/spot)
+	if(!isopenturf(spot) || spot.density)
+		return FALSE
+	for(var/obj/thing in spot)
+		if(thing.density && !is_door(thing))
+			return FALSE
+	return TRUE
+
+// whether angle_turf still gets us at them, as they move about: no cover between, and nothing but a door in the way, see find_angle_on()
+/datum/ai_planning_subtree/flank/proc/still_an_angle(turf/angle_turf, turf/their_turf, pass_flags)
+	if(cover_between(their_turf, angle_turf))
+		return FALSE
+	var/atom/blocker = get_shot_blocker(angle_turf, their_turf, pass_flags = pass_flags)
+	return !blocker || is_door(blocker)

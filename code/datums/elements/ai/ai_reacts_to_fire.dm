@@ -29,8 +29,8 @@
 	var/atom/current_target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(current_target == shooter)
 		if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == FALSE)
-			controller.set_blackboard_key(BB_BASIC_MOB_LAST_SEEN_TURF, shot_from) // a fresher idea of where they are
-			controller.set_blackboard_key(BB_BASIC_MOB_LAST_SEEN_TIME, world.time)
+			controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF, shot_from) // a fresher idea of where they are
+			controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME, world.time)
 		return
 	if(!QDELETED(current_target) && controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != FALSE)
 		return // busy with someone we can see

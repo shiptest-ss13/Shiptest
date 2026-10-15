@@ -80,6 +80,8 @@
 	var/mob/living/basic/basic_mob = parent
 	if(!spot || (locate(/mob/living) in spot))
 		return FALSE
+	if(spot.is_blocked_turf(TRUE, basic_mob))
+		return FALSE // or a diagonal dodge into a wall would still take its first half, like a step back the way we came in a corridor
 	swerving = TRUE
 	. = basic_mob.Move(spot, get_dir(basic_mob, spot))
 	swerving = FALSE
