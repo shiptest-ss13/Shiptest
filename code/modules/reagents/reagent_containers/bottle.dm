@@ -41,27 +41,27 @@
 
 /obj/item/reagent_containers/glass/bottle/rezadone
 	name = "rezadone bottle"
-	desc = "A small bottle of rezadone."
+	desc = "A small bottle of rezadone. A dosage label states: Dose of 10 units at once for extreme infection. Dose of 5u at once for dermal husking."
 	list_reagents = list(/datum/reagent/medicine/rezadone = 30)
 
 /obj/item/reagent_containers/glass/bottle/morphine
 	name = "morphine bottle"
-	desc = "A small bottle of morphine."
+	desc = "A small bottle of morphine. A dosage label states: Dosage must remain under 30 units."
 	list_reagents = list(/datum/reagent/medicine/morphine = 30)
 
 /obj/item/reagent_containers/glass/bottle/dimorlin
 	name = "dimorlin bottle"
-	desc = "A small bottle of dimorlin. Apply one dose at a time."
+	desc = "A small bottle of dimorlin. A dosage label states: Apply one dose under 15 units at a time."
 	list_reagents = list(/datum/reagent/medicine/dimorlin = 30)
 
 /obj/item/reagent_containers/glass/bottle/tramal
 	name = "tramal bottle"
-	desc = "A small bottle of tramal."
+	desc = "A small bottle of tramal. A dosage label states: Dosage must remain under 35 units."
 	list_reagents = list(/datum/reagent/medicine/tramal = 30)
 
 /obj/item/reagent_containers/glass/bottle/chitosan
 	name = "chitosan bottle"
-	desc = "A small bottle of chitosan."
+	desc = "A small bottle of chitosan. A dosage label states: Dosage must remain under 20 units. Overdosing will cause extreme blood clotting and possible brain damage."
 	list_reagents = list(/datum/reagent/medicine/chitosan = 30)
 
 /obj/item/reagent_containers/glass/bottle/painkiller_booze
@@ -209,7 +209,7 @@
 
 /obj/item/reagent_containers/glass/bottle/atropine
 	name = "atropine bottle"
-	desc = "A small bottle of atropine."
+	desc = "A small bottle of atropine. A dosage label states: Dose must remain under 35 units."
 	list_reagents = list(/datum/reagent/medicine/atropine = 30)
 
 /obj/item/reagent_containers/glass/bottle/romerol
@@ -414,19 +414,19 @@
 
 /obj/item/reagent_containers/glass/bottle/dexalin
 	name = "dexalin bottle"
-	desc = "A small bottle. Contains dexalin, used to treat minor oxygen deprivation."
+	desc = "A small bottle. Contains dexalin, used to treat minor oxygen deprivation. A dosage label states: Dose must remain under 30 units."
 	volume = 50
 	list_reagents = list(/datum/reagent/medicine/dexalin = 50)
 
 /obj/item/reagent_containers/glass/bottle/gjalrazine
 	name = "gjalrazine bottle"
-	desc = "A small bottle. Contains gjalrazine, used to treat major toxic damage."
+	desc = "A small bottle. Contains gjalrazine, used to treat major toxic damage. A dosage label states: Dose must remain under 12 units."
 	volume = 50
 	list_reagents = list(/datum/reagent/medicine/gjalrazine = 50)
 
 /obj/item/reagent_containers/glass/bottle/cureall
 	name = "cureall bottle"
-	desc = "A small bottle. Contains cureall, used to treat small amounts of brute, burn, and toxins."
+	desc = "A small bottle. Contains cureall, used to treat small amounts of brute, burn, and toxins. A dosage label states: Dose must remain under 30 units."
 	volume = 50
 	list_reagents = list(/datum/reagent/medicine/cureall = 50)
 
