@@ -1,0 +1,8 @@
+author: iamthesilly
+changes:
+  - {balance: "The TEG's efficiency scaling now reaches usable levels at around the
+      peak burn temperatures of common fuels (hydrogen, methane)"}
+  - {balance: Significantly reduced plasma's burn temperature}
+  - {bugfix: Fixed an infinite temperature cascade when burning plasma under 
+      certain conditions}
+delete-after: true

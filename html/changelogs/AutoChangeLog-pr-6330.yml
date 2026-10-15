@@ -1,0 +1,9 @@
+author: iamthesilly
+changes:
+  - {refactor: Tails are now a targetable bodypart}
+  - {code_imp: All bodyparts now have a "bodypart weight" which determines its 
+      chance to get hit and the share of damage received from sources that apply
+      across all limbs}
+  - {imageadd: Vox and Kepori tails are now separate from the chest sprite}
+  - {bugfix: Fixed paraplegics being able to use the *thump emote}
+delete-after: true
