@@ -344,7 +344,7 @@
 	burst_shots = 3
 	icon_state = "syndicate_smg"
 	icon_living = "syndicate_smg"
-	casing_type = /obj/item/ammo_casing/c45
+	casing_type = /obj/item/ammo_casing/c10mm
 	projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	l_hand =/obj/item/gun/ballistic/automatic/smg/cobra
 
@@ -420,7 +420,7 @@
 	name = "Ramzi Clique Commander"
 	desc = "A deserter from the Gorlex Marauders turned pirate, clad in well-maintained officer garbs. They cradle a lightweight submachinegun in their hands, sweeping it side-to-side."
 	burst_shots = 3
-	casing_type = /obj/item/ammo_casing/c45
+	casing_type = /obj/item/ammo_casing/c10mm
 	projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	l_hand =/obj/item/gun/ballistic/automatic/smg/cobra
 
@@ -621,7 +621,7 @@
 	l_hand = /obj/item/gun/ballistic/automatic/smg/cobra
 	projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	burst_shots = 3
-	casing_type = /obj/item/ammo_casing/c45
+	casing_type = /obj/item/ammo_casing/c10mm
 
 /mob/living/basic/human/ramzi/ranged/space/smg
 	name = "Ramzi Clique Commando"
@@ -631,7 +631,7 @@
 	l_hand = /obj/item/gun/ballistic/automatic/smg/cobra
 	projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	burst_shots = 3
-	casing_type = /obj/item/ammo_casing/c45
+	casing_type = /obj/item/ammo_casing/c10mm
 
 /mob/living/basic/human/ramzi/ranged/space/smg/sidewinder
 	desc = "A deserter from the Gorlex Marauders turned pirate. Green hardsuit optics glint as they sweep their PDW across the room, scanning for threats."

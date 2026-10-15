@@ -98,7 +98,7 @@
 
 /datum/supply_pack/gun/candors
 	name = "Candor Pistol Crate"
-	desc = "Contains a Candor pistol, the trusty sidearm of any spacer, produced by Hunter's Pride and chambered in .45 ACP."
+	desc = "Contains a Candor pistol, the trusty sidearm of any spacer, produced by Hunter's Pride and chambered in .44 Roumain."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/candor)
 	contains_factional = list(/obj/item/storage/guncase/pistol/candor/factory)

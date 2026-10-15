@@ -86,7 +86,7 @@
 	belt = /obj/item/storage/belt/utility/full
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cobra
 
-	backpack_contents = list(/obj/item/ammo_box/magazine/m45_cobra = 2)
+	backpack_contents = list(/obj/item/ammo_box/magazine/m10_cobra = 2)
 
 /datum/outfit/job/syndicate/ert/hardliner/medic
 	name = "ERT - Syndicate Hardliner Medic"
@@ -140,7 +140,7 @@
 	belt = /obj/item/storage/belt/medical/webbing/combat
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ngr
 
-	backpack_contents = list(/obj/item/ammo_box/magazine/m45_cobra = 3, /obj/item/defibrillator/compact/combat/loaded, /obj/item/reagent_containers/hypospray/combat)
+	backpack_contents = list(/obj/item/ammo_box/magazine/m10_cobra = 3, /obj/item/defibrillator/compact/combat/loaded, /obj/item/reagent_containers/hypospray/combat)
 
 /datum/outfit/job/syndicate/ert/ramzi/leader
 	name = "ERT - Ramzi Clique Cell Leader"

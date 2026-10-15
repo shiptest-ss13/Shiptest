@@ -1,32 +1,27 @@
-/obj/item/ammo_box/magazine/m45
-	name = "pistol magazine (.45)"
+/obj/item/ammo_box/magazine/m44
+	name = "pistol magazine (.44)"
 	desc = "A 10-round single-stack magazine for the Candor pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "candor_mag-8"
 	base_icon_state = "candor_mag"
-	ammo_type = /obj/item/ammo_casing/c45
-	caliber = ".45"
+	ammo_type = /obj/item/ammo_casing/a44roum
+	caliber = ".44 Roumain"
 	max_ammo = 10
 
-/obj/item/ammo_box/magazine/m45/empty
+/obj/item/ammo_box/magazine/m44/empty
 	start_empty = TRUE
 
 
-/obj/item/ammo_box/magazine/m45/hp
-	name = "pistol magazine (.45 HP)"
+/obj/item/ammo_box/magazine/m44/hp
+	name = "pistol magazine (.44 HP)"
 	desc= "A 10-round single-stack magazine for the Candor pistol. These hollow point rounds do incredible damage against soft targets, but are nearly ineffective against armored ones."
-	ammo_type = /obj/item/ammo_casing/c45/hp
+	ammo_type = /obj/item/ammo_casing/a44roum/hp
 
-/obj/item/ammo_box/magazine/m45/ap
-	name = "pistol magazine (.45 AP)"
-	desc= "A 10-round single-stack magazine for the Candor pistol. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
-	ammo_type = /obj/item/ammo_casing/c45/ap
-
-/obj/item/ammo_box/magazine/m45/rubber
-	name = "pistol magazine (.45 rubber)"
+/obj/item/ammo_box/magazine/m44/rubber
+	name = "pistol magazine (.44 rubber)"
 	desc = "A 10-round single-stack magazine for the Candor pistol. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
-	ammo_type = /obj/item/ammo_casing/c45/rubber
+	ammo_type = /obj/item/ammo_casing/a44roum/rubber
 
-/obj/item/ammo_box/magazine/m45/update_icon_state()
+/obj/item/ammo_box/magazine/m44/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[min(ammo_count(), 8)]"
 
