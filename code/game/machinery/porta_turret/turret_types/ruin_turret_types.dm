@@ -27,9 +27,9 @@
 /obj/machinery/porta_turret/ruin/ramzi/light
 	name = "Strike Turret"
 	desc = "A light turret manufactured by the Gorlex Marauders during the ICW. Most surviving examples are poorly maintained."
-	stun_projectile = /obj/projectile/bullet/c45/rubber
+	stun_projectile = /obj/projectile/bullet/c10mm/rubber
 	stun_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
-	lethal_projectile = /obj/projectile/bullet/c45
+	lethal_projectile = /obj/projectile/bullet/c10mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	scan_range = 8
 	shot_delay = 16
@@ -171,9 +171,9 @@
 /obj/machinery/porta_turret/ruin/hardliners/light
 	name = "Discharge Turret"
 	desc = "A light turret typically found mounted on mercenary and independent vessels as a cheap, aftermarket modification." //do not put these on indie vessels
-	stun_projectile = /obj/projectile/bullet/c45/rubber
+	stun_projectile = /obj/projectile/bullet/c10mm/rubber
 	stun_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
-	lethal_projectile = /obj/projectile/bullet/c45
+	lethal_projectile = /obj/projectile/bullet/c10mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/cobra.ogg'
 	scan_range = 7
 	shot_delay = 12

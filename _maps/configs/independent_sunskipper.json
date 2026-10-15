@@ -7,11 +7,13 @@
 	"namelists": ["CRUISE", "NATURAL"],
 	"map_short_name": "Sunskipper-class",
 	"map_path": "_maps/shuttles/independent/independent_sunskipper.dmm",
-	"description": "The Sunskipper-class is a state-of-the-art culinary vessel found in the frontier. It's name is a wordplay between a Kalixcian species of butterfly and ship's unique solar-powered batteries. The Sunskipper is welcomed with open arms by weary spacers of greater paycheks, who are fatigued by the monotony of their everyday meals. The ship features a self-sustaining kitchen with hydroponics and a large, deluxe dining hall, designed to serve starved travelers. It also comes with a fully-stocked bar area that allows them to drink their troubles away, if even for a brief moment.",
+	"description": "The Sunskipper-class is a state-of-the-art culinary vessel found in the frontier. It's name is a wordplay between a Kalixcian species of butterfly and the ship's unique venue, overlooking the stars from nearly all angles. Equipped with a subshuttle and telecommunications, it acts as a versatile mix of productivity and leisure — allowing staff to collect their groceries the old fashioned way, or to simply pick up guests. The Sunskipper is welcomed with open arms by weary spacers of greater paycheks, who are fatigued by the monotony of their everyday meals. The ship features a self-sustaining kitchen with hydroponics and a large, deluxe dining hall, designed to serve starved travelers. It also comes with a fully-stocked bar area that allows them to drink their troubles away, if even for a brief moment.",
 	"tags": [
 		"RP Focus",
 		"Service",
-		"Specialist"
+		"Specialist",
+		"Telecomms",
+		"Subshuttle"
 	],
 	"tranist_x_offset": -35,
 	"tranist_y_offset": -25,
@@ -34,6 +36,10 @@
 		"Waiter": {
 			"outfit": "/datum/outfit/job/independent/assistant/waiter",
 			"slots": 2
+		},
+		"Bouncer": {
+			"outfit": "/datum/outfit/job/independent/security/disarmed",
+			"slots": 1
 		}
 	},
 	"enabled": true
