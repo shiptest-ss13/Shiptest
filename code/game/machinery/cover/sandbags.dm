@@ -36,7 +36,7 @@
 	if(bag_damage >= 48)
 		playsound(src, 'sound/effects/sandbag_break.ogg', 50)
 		if(prob(50))
-			var/datum/effect_system/smoke_spread/transparent/sandbag/bagsmoke = new()
+			var/datum/effect_system/smoke_spread/transparent/sandbag/bagsmoke = new(loc)
 			bagsmoke.set_up(2)
 			bagsmoke.start()
 		effective_bags--

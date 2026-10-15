@@ -93,8 +93,8 @@
 /turf/closed/wall/concrete/bullet_act(obj/projectile/impacting)
 	. = ..()
 	if(prob(25))
-		var/datum/effect_system/smoke_spread/transparent/concrete/smokepuff = new()
-		smokepuff.set_up(2)
+		var/datum/effect_system/smoke_spread/transparent/concrete/smokepuff = new(impacting.loc)
+		smokepuff.set_up(1)
 		smokepuff.start()
 
 /turf/closed/wall/concrete/alter_integrity(damage)
