@@ -25,7 +25,8 @@
 
 	mob_smash_flags = ENVIRONMENT_SMASH_RWALLS
 	proj_bonus_damage_flags = PROJECTILE_BONUS_DAMAGE_RWALLS
-	minimum_damage = 35
+	minimum_damage = 20
+	damage_reduction = 20
 
 /turf/closed/wall/r_wall/yesdiag
 	icon_state = "reinforced_wall-255"

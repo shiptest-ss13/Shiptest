@@ -90,10 +90,17 @@
 	// explosion block is diminished on a damaged / soft wall
 	explosion_block = (atom_integrity / max_integrity) * harden_lvl * initial(explosion_block)
 
+/turf/closed/wall/concrete/bullet_act(obj/projectile/impacting)
+	. = ..()
+	if(prob(25))
+		var/datum/effect_system/smoke_spread/transparent/concrete/smokepuff = new()
+		smokepuff.set_up(2)
+		smokepuff.start()
+
 /turf/closed/wall/concrete/alter_integrity(damage)
 	// 8x as vulnerable when unhardened
 	if(damage < 0)
-		damage *= 1 + 7*(1-harden_lvl)
+		damage *= 1 + 7 * (1-harden_lvl)
 	.= ..()
 
 /turf/closed/wall/concrete/mech_melee_attack(obj/mecha/M)

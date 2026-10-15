@@ -102,8 +102,6 @@
 // negative values reduce integrity, positive values increase integrity.
 // Devastate forces a devestate, safe decon prevents it.
 /turf/closed/proc/alter_integrity(damage, mob/user, devastate = FALSE, safe_decon = FALSE)
-	if(damage <= 0)
-		damage = min(0, damage - damage_reduction)
 	atom_integrity += damage
 	if(atom_integrity >= max_integrity)
 		atom_integrity = max_integrity
@@ -159,7 +157,7 @@
 		add_dent(WALL_DENT_SHOT)
 		alter_integrity(-dam, shooter)
 
-/turf/closed/proc/get_item_damage(obj/item/used_item, mob/user, t_min = minimum_damage)
+/turf/closed/proc/get_item_damage(obj/item/used_item, mob/user, turf_minimum_damage = minimum_damage)
 	used_item.closed_turf_attack(src,user)
 	var/damage = used_item.force * used_item.demolition_mod
 	switch(used_item.damtype)
@@ -167,23 +165,29 @@
 			damage *= brute_mod
 		if(BURN)
 			damage *= burn_mod
-	// if dam is below t_min, then the hit has no effect
-	return (damage < t_min ? 0 : damage)
+	//AP can bypass turf reduction, but can also cause an attack to bounce off.
+	//you can never get more damage from this.
+	damage = damage - max(damage_reduction - used_item.armour_penetration, 0)
+	// if damage is below turf_minimum_damage, then the hit has no effect
+	return (damage < turf_minimum_damage ? 0 : damage)
 
-/turf/closed/proc/get_proj_damage(obj/projectile/P, t_min = minimum_damage)
-	var/dam = P.damage * P.demolition_mod
-	if(proj_bonus_damage_flags & P.wall_damage_flags)
-		dam = P.wall_damage_override
+/turf/closed/proc/get_proj_damage(obj/projectile/impacting_projectile, turf_minimum_damage = minimum_damage)
+	var/damage = impacting_projectile.damage * impacting_projectile.demolition_mod
+	if(proj_bonus_damage_flags & impacting_projectile.wall_damage_flags)
+		damage = impacting_projectile.wall_damage_override
 	else
-		switch(P.damage_type)
+		switch(impacting_projectile.damage_type)
 			if(BRUTE)
-				dam *= brute_mod
+				damage *= brute_mod
 			if(BURN)
-				dam *= burn_mod
+				damage *= burn_mod
 			else
 				return 0
-	// if dam is below t_min, then the hit has no effect
-	return (dam < t_min ? 0 : dam)
+	//AP can bypass turf reduction, but can also cause an attack to bounce off.
+	//you can never get more damage from this.
+	damage = damage - max(damage_reduction - impacting_projectile.armour_penetration, 0)
+	// if dam is below turf_minimum_damage, then the hit has no effect
+	return (dam < turf_minimum_damage ? 0 : dam)
 
 /turf/closed/ex_act(severity, target)
 	if(target == src || !density)
