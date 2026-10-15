@@ -2405,6 +2405,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/cargo/smeltery)
 "agJ" = (
@@ -4366,6 +4367,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
 "amG" = (
@@ -5514,6 +5518,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
 "aqs" = (
@@ -6568,7 +6575,10 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/aft)
 "atE" = (
-/obj/machinery/mineral/electrolyzer_unloader,
+/obj/machinery/mineral/electrolyzer_unloader{
+	input_dir = 2;
+	output_dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/cargo/smeltery)
 "atF" = (
@@ -9274,6 +9284,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono{
 	dir = 1
@@ -15171,6 +15184,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
 "aSb" = (
@@ -15708,6 +15724,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
 /turf/open/floor/plasteel/mono{
 	dir = 1
 	},
@@ -16972,6 +16991,9 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
