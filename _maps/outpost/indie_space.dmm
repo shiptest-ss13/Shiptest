@@ -4926,11 +4926,7 @@
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/port)
 "aoz" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10;
-	layer = 2.030
-	},
-/obj/effect/turf_decal/trimline/transparent/green/filled/warning,
+/obj/effect/turf_decal/trimline/transparent/green/filled/line,
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/port)
 "aoB" = (
@@ -6646,15 +6642,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/hallway/starboard)
-"atN" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10;
-	layer = 2.030
-	},
-/obj/effect/turf_decal/trimline/transparent/green/filled/warning,
-/obj/effect/turf_decal/industrial/caution,
-/turf/open/floor/plasteel/dark,
-/area/outpost/hallway/port)
 "atP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/corner/transparent/lightgrey{
@@ -14719,19 +14706,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/mono,
 /area/outpost/crew/bar)
-"aRb" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/landmark/outpost/elevator_machine{
-	shaft = "2"
-	},
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/plating,
-/area/outpost/hallway/port)
 "aRc" = (
 /obj/structure/falsewall/reinforced,
 /turf/open/floor/plating,
@@ -17629,19 +17603,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/central)
-"aZj" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 1
-	},
-/obj/effect/landmark/outpost/elevator_machine{
-	shaft = "2"
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/plating,
-/area/outpost/hallway/port)
 "aZk" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 4
@@ -27440,7 +27401,7 @@ aFr
 aEY
 aSD
 aoz
-aZj
+aLL
 aFT
 aFT
 aFT
@@ -27562,8 +27523,8 @@ atc
 aak
 avp
 ayY
-atN
-aZj
+aoz
+aLL
 aFT
 aFT
 aFT
@@ -27686,7 +27647,7 @@ aFr
 aEY
 atp
 aoz
-aRb
+aLL
 aFT
 aFT
 aFT
