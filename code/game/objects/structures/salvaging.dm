@@ -353,14 +353,7 @@
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message(span_danger("You hear a buzz from the [src] and a voice,"))
 			new /mob/living/simple_animal/bot/medbot/rockplanet(get_turf(src))
-
-		if(95 to 100)
-			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
-			audible_message(span_danger("You hear a buzz from the [src] and a voice,"))
-
-			new /mob/living/simple_animal/bot/firebot/rockplanet(get_turf(src))
-
-		if(90 to 94)
+		if(90 to 100)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message(span_danger("You hear as buzz from the [src] as an abandoned security bot rolls out from the [src]!!"))
 
