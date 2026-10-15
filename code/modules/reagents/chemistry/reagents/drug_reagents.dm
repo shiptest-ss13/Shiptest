@@ -578,6 +578,7 @@
 	metabolization_rate = 0.1
 	taste_description = "the edge of time"
 	autowiki_hidden = TRUE
+	can_synth = FALSE
 
 /datum/reagent/drug/chrono/expose_mob(mob/living/M, method, reac_volume, show_message, touch_protection)
 	. = ..()

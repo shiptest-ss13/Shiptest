@@ -202,6 +202,39 @@
 /obj/effect/greeble_spawner/iceplanet/fifty
 	template = /datum/map_template/greeble/iceplanet/fifty
 
+/obj/effect/greeble_spawner/iceplanet/fiftyone
+	template = /datum/map_template/greeble/iceplanet/fiftyone
+
+/obj/effect/greeble_spawner/iceplanet/fiftytwo
+	template = /datum/map_template/greeble/iceplanet/fiftytwo
+
+/obj/effect/greeble_spawner/iceplanet/fiftythree
+	template = /datum/map_template/greeble/iceplanet/fiftythree
+
+/obj/effect/greeble_spawner/iceplanet/fiftyfour
+	template = /datum/map_template/greeble/iceplanet/fiftyfour
+
+/obj/effect/greeble_spawner/iceplanet/fiftyfive
+	template = /datum/map_template/greeble/iceplanet/fiftyfive
+
+/obj/effect/greeble_spawner/iceplanet/fiftysix
+	template = /datum/map_template/greeble/iceplanet/fiftysix
+
+/obj/effect/greeble_spawner/iceplanet/fiftyseven
+	template = /datum/map_template/greeble/iceplanet/fiftyseven
+
+/obj/effect/greeble_spawner/iceplanet/fiftyeight
+	template = /datum/map_template/greeble/iceplanet/fiftyeight
+
+/obj/effect/greeble_spawner/iceplanet/fiftynine
+	template = /datum/map_template/greeble/iceplanet/fiftynine
+
+/obj/effect/greeble_spawner/iceplanet/sixty
+	template = /datum/map_template/greeble/iceplanet/sixty
+
+/obj/effect/greeble_spawner/iceplanet/lossberg
+	template = /datum/map_template/greeble/iceplanet/lossberg
+
 /datum/map_template/greeble/iceplanet
 	name = "Ice Greeble 1"
 	mappath = "_maps/templates/greebles/ice/greeble_ice_1.dmm"
@@ -456,6 +489,61 @@
 	name = "Ice Greeble 50"
 	mappath = "_maps/templates/greebles/ice/greeble_ice_50.dmm"
 	description = "monkey"
+
+/datum/map_template/greeble/iceplanet/fiftyone
+	name = "Ice Greeble 51"
+	mappath = "_maps/templates/greebles/ice/greeble_ice_51.dmm"
+	description = "wolfsnowtree"
+
+/datum/map_template/greeble/iceplanet/fiftytwo
+	name = "Ice Greeble 52"
+	mappath = "_maps/templates/greebles/ice/greeble_ice_52.dmm"
+	description = "snow insert"
+
+/datum/map_template/greeble/iceplanet/fiftythree
+	name = "Ice Greeble 53"
+	mappath = "_maps/templates/greebles/ice/greeble_ice_53.dmm"
+	description = "the nefarious snowmen abuse poor tree sprites to hide"
+
+/datum/map_template/greeble/iceplanet/fiftyfour
+	name = "Ice Greeble 54"
+	mappath = "_maps/templates/greebles/ice/greeble_ice_54.dmm"
+	description = "spice geyser"
+
+/datum/map_template/greeble/iceplanet/fiftyfive
+	name = "Ice Greeble 55"
+	mappath = "_maps/templates/greebles/ice/greeble_ice_55.dmm"
+	description = "plasma lake"
+
+/datum/map_template/greeble/iceplanet/fiftysix
+	name = "Ice Greeble 56"
+	mappath = "_maps/templates/greebles/ice/greeble_ice_56.dmm"
+	description = "ice sample"
+
+/datum/map_template/greeble/iceplanet/fiftyseven
+	name = "Ice Greeble 57"
+	mappath = "_maps/templates/greebles/ice/greeble_ice_57.dmm"
+	description = "THEYRE EATING THE MONKEY"
+
+/datum/map_template/greeble/iceplanet/fiftyeight
+	name = "Ice Greeble 58"
+	mappath = "_maps/templates/greebles/ice/greeble_ice_58.dmm"
+	description = "another lobster lake"
+
+/datum/map_template/greeble/iceplanet/fiftynine
+	name = "Ice Greeble 59"
+	mappath = "_maps/templates/greebles/ice/greeble_ice_59.dmm"
+	description = "literally just ice"
+
+/datum/map_template/greeble/iceplanet/sixty
+	name = "Ice Greeble 60"
+	mappath = "_maps/templates/greebles/ice/greeble_ice_60.dmm"
+	description = "more ice"
+
+/datum/map_template/greeble/iceplanet/lossberg
+	name = "Lossberg"
+	mappath = "_maps/templates/greebles/ice/lossberg.dmm"
+	description = "is this loss"
 
 /* Anomaly Greebles
 1/2/3 - chronograph

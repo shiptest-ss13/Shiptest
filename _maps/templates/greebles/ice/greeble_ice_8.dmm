@@ -2,38 +2,38 @@
 "bi" = (
 /obj/structure/flora/rock/icy,
 /turf/open/floor/plating/ice/icemoon,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "cd" = (
 /obj/item/food/badrecipe,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "dN" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "splatter6"
 	},
 /turf/open/floor/plating/ice/icemoon,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "fB" = (
 /obj/structure/ore_box,
 /obj/effect/decal/cleanable/blood/gibs/down,
 /turf/open/floor/plating/ice/icemoon,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "fI" = (
 /turf/closed/indestructible/rock/snow,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "iK" = (
 /obj/item/food/badrecipe,
 /obj/effect/decal/cleanable/blood/gibs/down,
 /obj/item/stack/sheet/bone,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "jj" = (
 /obj/effect/decal/cleanable/blood/gibs/down,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "jx" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "gibdown1"
@@ -41,16 +41,16 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "lj" = (
 /obj/structure/flora/grass/brown,
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/template_noop)
 "lp" = (
 /obj/item/stack/sheet/bone,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "mo" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "gibbl5"
@@ -58,15 +58,15 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "mI" = (
 /obj/item/food/badrecipe,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "splatter6"
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "oo" = (
 /obj/structure/flora/rock/icy,
 /turf/open/floor/plating/asteroid/icerock/lit,
@@ -76,18 +76,26 @@
 	icon_state = "splatter2"
 	},
 /turf/open/floor/plating/ice/icemoon,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "pS" = (
 /obj/item/mining_scanner,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
+"sr" = (
+/mob/living/basic/bear/polar,
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "sJ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/template_noop)
+"sW" = (
+/obj/structure/flora/rock/icy,
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "ts" = (
 /obj/item/stack/sheet/mineral/wood,
 /turf/open/floor/plating/asteroid/icerock/lit,
@@ -100,17 +108,21 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "ub" = (
 /turf/open/floor/plating/ice/icemoon,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
+"vu" = (
+/obj/structure/table_frame/wood,
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "vO" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "splatter3"
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "xg" = (
 /mob/living/basic/bear/polar,
 /obj/effect/decal/cleanable/blood{
@@ -119,14 +131,18 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "gibup1"
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
+"yz" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "yQ" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "splatter4"
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "zt" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -147,12 +163,15 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "splatter3"
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "Dv" = (
 /obj/structure/table_frame/wood,
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/template_noop)
+"DT" = (
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "Ek" = (
 /obj/item/grown/log/tree{
 	pixel_x = -8
@@ -175,22 +194,26 @@
 	pixel_x = 4;
 	pixel_y = 14
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "ET" = (
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner/armored,
 /obj/effect/decal/cleanable/blood/gibs/up,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
+"FF" = (
+/obj/item/stack/sheet/mineral/wood,
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "HR" = (
 /obj/structure/barricade/directional/flippedtable/wood{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "HY" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/asteroid/icerock/lit,
@@ -202,44 +225,44 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "splatter6"
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "ID" = (
 /obj/structure/barricade/directional/flippedtable/wood{
 	dir = 4
 	},
 /obj/structure/barricade/directional/flippedtable/wood,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "Jx" = (
 /turf/template_noop,
 /area/template_noop)
 "JI" = (
 /obj/item/food/badrecipe,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "Kl" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "Kv" = (
 /obj/structure/bonfire,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "KH" = (
 /obj/structure/vein/ice/classfour,
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "LV" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/gibs/torso,
 /obj/effect/decal/cleanable/blood/gibs/core,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "LW" = (
 /obj/structure/flora/stump,
 /turf/open/floor/plating/asteroid/snow/lit,
@@ -251,13 +274,13 @@
 /obj/effect/decal/cleanable/blood/squirt{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "MS" = (
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner/armored,
 /obj/effect/decal/cleanable/blood/gibs/up,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "MW" = (
 /mob/living/basic/bear/polar,
 /turf/open/floor/plating/asteroid/icerock/lit,
@@ -265,13 +288,13 @@
 "Nc" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/crude,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "PI" = (
 /obj/effect/decal/cleanable/blood/gibs/up,
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner/armored,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "Qk" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -280,11 +303,11 @@
 /obj/effect/decal/cleanable/blood/squirt{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "Qo" = (
 /turf/closed/mineral/random/snow,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "Qq" = (
 /obj/structure/flora/grass/green,
 /turf/open/floor/plating/asteroid/snow/lit,
@@ -292,20 +315,20 @@
 "Rz" = (
 /obj/structure/flora/rock/pile/icy,
 /obj/item/stack/sheet/bone,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "Sh" = (
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/template_noop)
 "Sx" = (
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "Tu" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "splatter1"
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "Uh" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "splatter5"
@@ -313,24 +336,24 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "splatter3"
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "Uy" = (
 /obj/structure/flora/rock/pile/icy,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "UK" = (
 /obj/item/gun/energy/sharplite/ohm/empty_cell,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "VI" = (
 /obj/structure/barricade/wooden/crude,
 /obj/structure/barricade/wooden,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "WL" = (
 /turf/closed/mineral/ice,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "WR" = (
 /obj/structure/table/wood,
 /obj/item/food/meat/rawcutlet/bear,
@@ -343,16 +366,16 @@
 	pixel_y = -5;
 	name = "meat knife"
 	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "Xp" = (
 /obj/structure/barricade/wooden/crude,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/cave/explored)
 "YZ" = (
 /obj/structure/flora/rock/icy,
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "ZH" = (
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/template_noop)
@@ -461,10 +484,10 @@ Qo
 Qo
 Qo
 Qo
-fI
-fI
-fI
-fI
+Qo
+Qo
+Qo
+Qo
 Qo
 Qo
 Qo
@@ -492,9 +515,9 @@ Qo
 Qo
 Qo
 Qo
-fI
-fI
-fI
+Qo
+Qo
+Qo
 Qo
 WL
 WL
@@ -518,8 +541,8 @@ Qo
 Qo
 Qo
 Qo
-fI
-fI
+Qo
+Qo
 Qo
 Qo
 Qo
@@ -548,9 +571,9 @@ Jx
 Qo
 Qo
 Qo
-fI
-fI
-fI
+Qo
+Qo
+Qo
 Qo
 Qo
 Qo
@@ -578,10 +601,10 @@ ZH
 Qo
 Qo
 Qo
-fI
-fI
-fI
-fI
+Qo
+Qo
+Qo
+Qo
 Qo
 WL
 WL
@@ -608,25 +631,25 @@ ZH
 (9,1,1) = {"
 Qo
 Qo
-fI
-fI
-fI
 Qo
 Qo
+Qo
+Qo
+Qo
 WL
 WL
 WL
 WL
 WL
 WL
-Sh
+DT
 tG
 JI
 MS
-MW
+sr
 mI
-Sh
-Sh
+DT
+DT
 VI
 Xp
 Xp
@@ -639,9 +662,9 @@ ZH
 (10,1,1) = {"
 Qo
 Qo
-fI
-fI
-fI
+Qo
+Qo
+Qo
 Qo
 WL
 WL
@@ -649,7 +672,7 @@ WL
 WL
 WL
 WL
-Sh
+DT
 Rz
 jx
 CO
@@ -657,8 +680,8 @@ Kv
 Uh
 jj
 Rz
-Sh
-Sh
+DT
+DT
 VI
 VI
 Qo
@@ -670,30 +693,30 @@ ZH
 (11,1,1) = {"
 Qo
 Qo
-fI
-fI
-fI
+Qo
+Qo
+Qo
 Qo
 WL
 WL
 WL
 WL
 WL
-Sh
-Sh
+DT
+DT
 pS
 ET
 cd
 xg
 JI
-oo
+sW
 JI
-Sh
-Sh
-Sh
+DT
+DT
+DT
 Qo
 Qo
-fI
+Qo
 Qo
 Qo
 Jx
@@ -701,30 +724,30 @@ Jx
 (12,1,1) = {"
 Qo
 Qo
-fI
-fI
-fI
+Qo
+Qo
+Qo
 Qo
 WL
 WL
 WL
 WL
-Sh
-Sh
-Sh
+DT
+DT
+DT
 ub
 ub
 vO
 iK
 UK
-Sh
-Sh
-Sh
-Sh
-Sh
+DT
+DT
+DT
+DT
+DT
 Qo
-fI
-fI
+Qo
+Qo
 Qo
 Qo
 Jx
@@ -733,29 +756,29 @@ Jx
 Qo
 Qo
 Qo
-fI
+Qo
 Qo
 WL
 WL
 WL
 WL
-Sh
-Sh
-Sh
+DT
+DT
+DT
 ub
 fB
 ub
 dN
 ub
-Sh
+DT
 ub
 ub
 ub
 ub
 Uy
 Qo
-fI
-fI
+Qo
+Qo
 Qo
 Qo
 Jx
@@ -770,7 +793,7 @@ WL
 WL
 WL
 WL
-Sh
+DT
 Uy
 ub
 oB
@@ -785,8 +808,8 @@ ub
 WL
 WL
 Qo
-fI
-fI
+Qo
+Qo
 Qo
 Qo
 Jx
@@ -801,8 +824,8 @@ WL
 WL
 WL
 WL
-Sh
-Sh
+DT
+DT
 ub
 ub
 ub
@@ -817,7 +840,7 @@ WL
 WL
 WL
 Qo
-fI
+Qo
 Qo
 Jx
 Jx
@@ -832,7 +855,7 @@ WL
 WL
 WL
 WL
-Sh
+DT
 ub
 ub
 ub
@@ -862,9 +885,9 @@ WL
 WL
 WL
 WL
-Sh
-Sh
-Sh
+DT
+DT
+DT
 ub
 ub
 Sx
@@ -894,8 +917,8 @@ WL
 WL
 WL
 WL
-Sh
-Sh
+DT
+DT
 ub
 ub
 bi
@@ -926,8 +949,8 @@ WL
 WL
 WL
 WL
-Sh
-oo
+DT
+sW
 ub
 ub
 oB
@@ -940,8 +963,8 @@ WL
 WL
 WL
 Qo
-fI
-fI
+Qo
+Qo
 Qo
 Jx
 Jx
@@ -957,9 +980,9 @@ WL
 WL
 WL
 WL
-Sh
-Sh
-Sh
+DT
+DT
+DT
 ub
 ub
 ub
@@ -971,8 +994,8 @@ WL
 WL
 Qo
 Qo
-fI
-fI
+Qo
+Qo
 Jx
 Jx
 Jx
@@ -990,7 +1013,7 @@ WL
 WL
 yQ
 Uy
-Sh
+DT
 ub
 ub
 ub
@@ -1000,10 +1023,10 @@ WL
 WL
 WL
 Qo
-fI
-fI
-fI
-fI
+Qo
+Qo
+Qo
+Qo
 Qo
 Jx
 Jx
@@ -1020,8 +1043,8 @@ WL
 WL
 WL
 WL
-Sh
-MW
+DT
+sr
 jj
 ub
 ub
@@ -1031,10 +1054,10 @@ ub
 WL
 WL
 Qo
-fI
-fI
-fI
-fI
+Qo
+Qo
+Qo
+Qo
 Qo
 Jx
 Jx
@@ -1058,13 +1081,13 @@ Kl
 IA
 Kl
 Qk
-HY
+yz
 WL
 Qo
-fI
-fI
-fI
-fI
+Qo
+Qo
+Qo
+Qo
 Qo
 Qo
 Qo
@@ -1085,17 +1108,17 @@ WL
 Qo
 Qo
 Qo
-Sh
-Sh
-Dv
+DT
+DT
+vu
 Me
 HR
 Qo
 Qo
-fI
-fI
-fI
-fI
+Qo
+Qo
+Qo
+Qo
 Qo
 Qo
 Qo
@@ -1118,15 +1141,15 @@ Qo
 Qo
 Qo
 Qo
-ts
+FF
 Me
 Nc
 Qo
 Qo
-fI
-fI
-fI
-fI
+Qo
+Qo
+Qo
+Qo
 Qo
 Qo
 Jx
@@ -1156,9 +1179,9 @@ zt
 Qo
 Qo
 Qo
-fI
-fI
-fI
+Qo
+Qo
+Qo
 Qo
 Jx
 Jx
@@ -1187,9 +1210,9 @@ MW
 Qo
 Qo
 Qo
-fI
-fI
-fI
+Qo
+Qo
+Qo
 Qo
 Jx
 Jx

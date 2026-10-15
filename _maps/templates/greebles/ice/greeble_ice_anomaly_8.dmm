@@ -8,35 +8,38 @@
 	pixel_y = -6
 	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
+"j" = (
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/overmap_encounter/planetoid/cave/explored)
 "k" = (
 /obj/structure/flora/rock/pile/icy{
 	pixel_x = 14;
 	pixel_y = 9
 	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "l" = (
 /obj/structure/flora/rock/pile/icy{
 	pixel_x = 14;
 	pixel_y = 16
 	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "m" = (
 /obj/structure/flora/rock/pile/icy{
 	pixel_x = 11;
 	pixel_y = 4
 	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "o" = (
 /obj/structure/flora/rock/pile/icy{
 	pixel_x = 2;
 	pixel_y = 8
 	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "t" = (
 /turf/template_noop,
 /area/template_noop)
@@ -46,13 +49,10 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/template_noop)
-"C" = (
-/turf/closed/indestructible/rock/snow,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "D" = (
 /turf/closed/mineral/random/snow,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "F" = (
 /obj/structure/flora/rock/pile/icy{
 	pixel_x = -2;
@@ -63,14 +63,14 @@
 "V" = (
 /obj/effect/anomaly/grav/planetary,
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 "W" = (
 /obj/structure/flora/rock/pile/icy{
 	pixel_x = 6;
 	pixel_y = 7
 	},
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/template_noop)
+/area/overmap_encounter/planetoid/cave/explored)
 
 (1,1,1) = {"
 t
@@ -107,10 +107,10 @@ t
 t
 t
 t
-a
-a
-a
-a
+j
+j
+j
+j
 D
 D
 t
@@ -122,11 +122,11 @@ t
 D
 D
 W
-a
-a
-a
-C
-C
+j
+j
+j
+D
+D
 D
 D
 t
@@ -137,12 +137,12 @@ D
 D
 D
 D
-C
-C
-a
-C
-C
-C
+D
+D
+j
+D
+D
+D
 D
 D
 t
@@ -150,14 +150,14 @@ t
 (6,1,1) = {"
 D
 D
-a
-C
-C
-a
+j
+D
+D
+j
 k
 l
-a
-a
+j
+j
 a
 t
 t
@@ -165,14 +165,14 @@ t
 (7,1,1) = {"
 t
 D
-a
-C
-a
+j
+D
+j
 e
 V
-a
-a
-C
+j
+j
+D
 F
 t
 t
@@ -181,14 +181,14 @@ t
 t
 t
 a
-a
-a
-a
+j
+j
+j
 x
-a
-a
-C
-C
+j
+j
+D
+D
 D
 t
 "}
@@ -196,14 +196,14 @@ t
 t
 D
 D
-C
-C
-a
-a
-a
-a
-C
-C
+D
+D
+j
+j
+j
+j
+D
+D
 D
 D
 "}
@@ -211,13 +211,13 @@ D
 t
 D
 D
-C
-C
-C
+D
+D
+D
 m
-a
-C
-C
+j
+D
+D
 D
 D
 t
@@ -227,11 +227,11 @@ t
 D
 D
 D
-C
-C
-C
-a
-C
+D
+D
+D
+j
+D
 D
 D
 t
@@ -243,8 +243,8 @@ t
 D
 D
 D
-C
-C
+D
+D
 a
 D
 D

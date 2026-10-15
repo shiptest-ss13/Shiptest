@@ -86,10 +86,10 @@
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/template_noop)
 "gg" = (
-/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/ore/salvage/scrapsilver,
 /obj/effect/decal/cleanable/shreds,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "gk" = (
@@ -100,7 +100,6 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-5"
 	},
-/obj/machinery/light/floor,
 /obj/structure/sign/clip{
 	pixel_x = 27
 	},
@@ -497,7 +496,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
-/obj/machinery/light/small/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4{
 	dir = 1
 	},
@@ -507,18 +505,19 @@
 	pixel_x = 8;
 	pixel_y = -3
 	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "Ju" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 9
 	},
-/obj/machinery/light/small/directional/south,
 /obj/machinery/power/port_gen/pacman/super{
 	anchored = 1
 	},
 /obj/structure/cable/green,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/overmap_encounter/planetoid/cave/explored)
 "Pq" = (
@@ -546,9 +545,9 @@
 /obj/structure/cable/orange{
 	icon_state = "6-8"
 	},
-/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "UV" = (

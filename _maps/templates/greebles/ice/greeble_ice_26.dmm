@@ -68,7 +68,6 @@
 	pixel_y = -8;
 	dir = 8
 	},
-/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/machinery/coffeemaker{
 	pixel_y = 8
@@ -78,6 +77,7 @@
 	pixel_y = -2
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/overmap_encounter/planetoid/cave/explored)
 "i" = (
@@ -289,17 +289,16 @@
 "D" = (
 /obj/machinery/washing_machine,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/wallframe/airalarm{
 	pixel_y = -10;
 	pixel_x = -6
 	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plasteel/patterned,
 /area/overmap_encounter/planetoid/cave/explored)
 "E" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/rods{
 	pixel_x = -7;
@@ -312,6 +311,7 @@
 /obj/item/stack/sheet/metal{
 	pixel_x = -8
 	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/carpet,
 /area/overmap_encounter/planetoid/cave/explored)
 "F" = (
@@ -398,9 +398,9 @@
 /obj/structure/chair,
 /obj/structure/cable,
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
-/obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/gibspawner/human/bodypartless,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/overmap_encounter/planetoid/cave/explored)
 "R" = (

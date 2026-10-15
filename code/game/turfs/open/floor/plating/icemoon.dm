@@ -201,6 +201,13 @@
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = FALSE
 
+/turf/open/floor/plating/asteroid/basalt/iceplanet
+	baseturfs = /turf/open/floor/plating/ice/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_ICEPLANET_LIGHT
+
+
 /turf/open/floor/plating/ice/icemoon
 	baseturfs = /turf/open/floor/plating/ice/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS

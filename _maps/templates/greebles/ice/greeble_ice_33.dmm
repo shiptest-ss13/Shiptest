@@ -54,15 +54,11 @@
 /turf/open/floor/plasteel/mono/white,
 /area/overmap_encounter/planetoid/cave/explored)
 "ik" = (
-/obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/mask/gas/syndicate/voicechanger,
-/obj/item/tank/jetpack/carbondioxide,
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 6
 	},
-/obj/item/clothing/suit/space/syndicate/white_red,
-/obj/item/clothing/head/helmet/space/syndicate/white_red,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/suit_storage_unit/open,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "iy" = (
@@ -104,12 +100,12 @@
 	dir = 9
 	},
 /obj/structure/reagent_dispensers/water_cooler,
-/obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stamp{
 	pixel_x = 3;
 	pixel_y = 10
 	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/overmap_encounter/planetoid/cave/explored)
 "oL" = (
@@ -314,7 +310,7 @@
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 4
 	},
-/obj/machinery/light/directional/west,
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/overmap_encounter/planetoid/cave/explored)
 "Dr" = (
@@ -349,8 +345,8 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "Gz" = (
 /obj/effect/turf_decal/techfloor,
-/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/overmap_encounter/planetoid/cave/explored)
 "GJ" = (
@@ -407,8 +403,8 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/mono/white,
 /area/overmap_encounter/planetoid/cave/explored)
 "Nb" = (
@@ -425,9 +421,8 @@
 	open = 0;
 	req_access_txt = "3"
 	},
-/obj/machinery/light/directional/east,
-/obj/item/gun/ballistic/automatic/smg/cobra/no_mag,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "Nj" = (
