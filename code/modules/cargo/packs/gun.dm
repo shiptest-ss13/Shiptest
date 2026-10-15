@@ -853,7 +853,7 @@
 
 /datum/supply_pack/gun/hades
 	name = "AL655 'Hades' Plasma Assault Rifle crate"
-	desc = "Contains a high-energy, automatic plasma rifle. For Makosso-Warra employee use only."
+	desc = "Contains a high-energy, automatic plasma rifle. For Makosso-Warra employee use only. Uses Sharplite Heavy cells"
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/hades)
 	crate_name = "laser crate"
@@ -1045,7 +1045,7 @@
 
 /datum/supply_pack/gun/al607
 	name = "AL607 'Sarissa' Plasma Accelerator"
-	desc = "Contains a AL607 Laser Sniper. For Makosso-Warra employee use only."
+	desc = "Contains a AL607 Laser Sniper. For Makosso-Warra employee use only. Uses Sharplite Heavy cells."
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/energy/al607)
 	crate_name = "sniper rifle crate"
