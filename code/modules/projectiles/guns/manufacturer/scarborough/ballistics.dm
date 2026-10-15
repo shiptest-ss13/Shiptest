@@ -224,6 +224,8 @@ EMPTY_GUN_HELPER(revolver/viper)
 	icon_state = "rattlesnake"
 	item_state = "rattlesnake"
 
+	manufacturer = MANUFACTURER_SCARBOROUGH
+
 	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m9mm_rattlesnake,
@@ -344,6 +346,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 
 	icon_state = "himehabu"
 	item_state = "sa_generic"
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
@@ -414,7 +417,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 
 /obj/item/gun/ballistic/automatic/smg/cobra
 	name = "C-20r \"Cobra\""
-	desc = "A bullpup submachine gun with an integrated suppressor, heavily used by Syndicate strike teams during the ICW. Still sees widespread use by the descendants of the Gorlex Marauders. Chambered in .45."
+	desc = "A bullpup submachine gun with an integrated suppressor, heavily used by Syndicate strike teams during the ICW. Still sees widespread use by the descendants of the Gorlex Marauders. Chambered in 10mm."
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
@@ -424,9 +427,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 
 	spread = 3
 
-	default_ammo_type = /obj/item/ammo_box/magazine/m45_cobra
+	default_ammo_type = /obj/item/ammo_box/magazine/m10_cobra
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m45_cobra,
+		/obj/item/ammo_box/magazine/m10_cobra,
 	)
 
 	fire_sound = 'sound/weapons/gun/smg/cobra.ogg'
@@ -463,7 +466,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 
 /obj/item/gun/ballistic/automatic/smg/cobra/indie
 	name = "Cobra-20"
-	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia. Only became popular after the end of the ICW. Chambered in .45."
+	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia. Only became popular after the end of the ICW. Chambered in 10mm."
 	icon_state = "cobra20"
 	item_state = "cobra20"
 
@@ -482,22 +485,22 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 
 
-/obj/item/ammo_box/magazine/m45_cobra
+/obj/item/ammo_box/magazine/m10_cobra
 
-/obj/item/ammo_box/magazine/m45_cobra
-	name = "Cobra magazine (.45)"
+/obj/item/ammo_box/magazine/m10_cobra
+	name = "Cobra magazine (10mm)"
 	desc = "A 24-round magazine for the Cobra submachine gun. These rounds do moderate damage, but struggle against armor."
 	icon_state = "cobra_mag-24"
 	base_icon_state = "cobra_mag"
-	ammo_type = /obj/item/ammo_casing/c45
-	caliber = ".45"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
 	max_ammo = 24
 
-/obj/item/ammo_box/magazine/m45_cobra/update_icon_state()
+/obj/item/ammo_box/magazine/m10_cobra/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[round(ammo_count(),2)]"
 
-/obj/item/ammo_box/magazine/m45_cobra/empty
+/obj/item/ammo_box/magazine/m10_cobra/empty
 	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/smg/sidewinder
@@ -875,6 +878,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 
 
 /obj/item/gun/ballistic/automatic/assault/hydra/lmg/casket_mag
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/casket
 
 /obj/item/gun/ballistic/automatic/assault/hydra/dmr
@@ -1054,6 +1058,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	)
 
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/drum
+	autowiki_hidden = TRUE //ERT loadout only, which is an admin-summoned event
 	default_ammo_type = /obj/item/ammo_box/magazine/m12g_bulldog/drum
 
 NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)

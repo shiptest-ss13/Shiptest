@@ -72,8 +72,3 @@
 /datum/sprite_accessory/underwear/catgirl
 	name = "Catgirl Panties (Greyscale)"
 	icon_state = "panties_cat"
-
-/datum/sprite_accessory/underwear/beekini
-	name = "Bee-Kini Bottoms"
-	icon_state = "beekini"
-	use_static = TRUE

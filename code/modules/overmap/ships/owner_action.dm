@@ -105,6 +105,9 @@
 	.["applications"] = list()
 	for(var/a_key as anything in parent_ship.applications)
 		var/datum/ship_application/app = parent_ship.applications[a_key]
+		// don't show unfinished applications
+		if(app.status == SHIP_APPLICATION_UNFINISHED || app.status == SHIP_APPLICATION_CANCELLED)
+			continue
 		if(app.status == SHIP_APPLICATION_PENDING)
 			.["pending"] = TRUE
 		.["applications"] += list(list(
@@ -112,6 +115,7 @@
 			ref = REF(app),
 			key = (app.show_key ? app.app_key : "<Empty>"),
 			name = app.app_name,
+			job = app.app_job,
 			text = app.app_msg,
 			status = app.status
 		))

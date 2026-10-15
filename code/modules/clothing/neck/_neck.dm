@@ -7,6 +7,7 @@
 	equip_delay_other = 40
 	cuttable = TRUE
 	clothamnt = 1
+	blood_overlay_type = "mask"
 	greyscale_colors = list(list(15, 20), list(16, 21), list(14, 19))
 	greyscale_icon_state = "scarf"
 
@@ -17,7 +18,7 @@
 			if(damaged_clothes)
 				. += mutable_appearance('icons/effects/item_damage.dmi', "damagedmask")
 			if(HAS_BLOOD_DNA(src))
-				. += mutable_appearance('icons/effects/blood.dmi', "maskblood")
+				. += setup_blood_overlay()
 
 /obj/item/clothing/neck/tie
 	name = "tie"
