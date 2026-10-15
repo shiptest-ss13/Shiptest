@@ -12,7 +12,9 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/uniforms.dmi'
 
 	roll_sleeves = TRUE
-	supports_variations = DIGITIGRADE_VARIATION
+	kepori_override_icon = 'icons/mob/clothing/faction/ngr/kepori.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox.dmi'
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/under/syndicate/ngr/fatigues
 	name = "\improper NGR fatigues"
@@ -36,7 +38,6 @@
 	desc = "A button-up in a tasteful black with beige pants, used by officers of the New Gorlex Republic."
 	icon_state = "ngr_officer"
 	item_state = "ngr_officer"
-	supports_variations = DIGITIGRADE_VARIATION
 
 	roll_sleeves = TRUE
 
@@ -90,6 +91,9 @@
 	icon_state = "ngr_apron"
 	item_state = "redcloth"
 	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
+	kepori_override_icon = 'icons/mob/clothing/faction/ngr/kepori.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox.dmi'
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/suit/hazardvest/ngr
 	name = "blood-red hazard vest"
@@ -125,6 +129,9 @@
 	item_state = "armor"
 	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/ngr/kepori.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox.dmi'
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | KEPORI_VARIATION | VOX_VARIATION
 	blood_overlay_type = "armor"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10) // 5. additional. bullet armor.
 
@@ -134,6 +141,9 @@
 	body_parts_covered = CHEST|GROIN
 	icon_state = "ngr_lieutenant"
 	item_state = "ngr_lieutenant"
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+	kepori_override_icon = null
+	vox_override_icon = null
 	blood_overlay_type = "coat"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
@@ -158,7 +168,9 @@
 	item_state = "hardsuit1-ngr"
 	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox_head.dmi'
 	hardsuit_type = "ngr"
+	supports_variations = VOX_VARIATION | SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/syndi/ngr
 	name = "beige-red hardsuit"
@@ -169,10 +181,11 @@
 	hardsuit_type = "ngr"
 	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ngr
 	jetpack = null
 	greyscale_colors = list("#33353a", "#d9ad82", "#8c1a34")
-	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/ngr
 	name = "elite beige-red hardsuit helmet"
@@ -224,6 +237,7 @@
 	hardsuit_type = "ngreod"
 	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80, "wound" = 50)
 	desc = "A heavily modified EOD hardsuit helmet produced by the NGR. There are reinforcements made all across the helm, along with a wider visor."
+	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/mining/heavy/ngr
 	name = "NGR mining hardsuit"
@@ -249,7 +263,7 @@
 	hardsuit_type = "ngrminer"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
-	supports_variations = null
+	supports_variations = SNOUTED_VARIATION
 
 /////////
 //Hats//
@@ -261,6 +275,9 @@
 	icon_state = "ngr_garrison"
 	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/ngr/kepori.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox.dmi'
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/head/ngr/flap
 	name = "beige flap cap"
@@ -271,6 +288,8 @@
 	name = "blood-red surgical cap"
 	desc = "A surgical cap used by field medics of the New Gorlex Republic's 2nd Battlegroup."
 	icon_state = "ngr_surgery"
+	vox_override_icon = null
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/hardhat/ngr
 	name = "blood-red hard hat"
@@ -278,17 +297,23 @@
 	icon_state = "ngr_hardhat"
 	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+	vox_override_icon = null
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/hardhat/ngr/foreman
 	name = "beige hard hat"
 	desc = "A beige hardhat used exclusively by the Foreman of the New Gorlex Republic."
 	icon_state = "ngr_foreman"
+	vox_override_icon = null
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/ngr/peaked
 	name = "2nd Battlegroup peaked cap"
 	desc = "A cap worn by officers of the New Gorlex Republic's 2nd Battlegroup."
 	icon_state = "ngr_officer"
 	item_state = "ngr_officer"
+	vox_override_icon = null
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/ngr
 	name = "\improper NGR X-11 helmet"
@@ -334,6 +359,8 @@
 	item_state = "ngr_balaclava"
 	icon = 'icons/obj/clothing/faction/ngr/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/mask.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/ngr/kepori.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox.dmi'
 
 /obj/item/clothing/mask/breath/ngr
 	name = "NGR face mask"
@@ -368,12 +395,14 @@
 	item_state = "ngr_webbing"
 	icon = 'icons/obj/clothing/faction/ngr/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'
-	supports_variations = KEPORI_VARIATION
+	kepori_override_icon = 'icons/mob/clothing/faction/ngr/kepori.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox.dmi'
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/storage/belt/security/webbing/ngr/cobra/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/m45_cobra(src)
+		new /obj/item/ammo_box/magazine/m10_cobra(src)
 	new /obj/item/grenade/frag(src)
 	new /obj/item/grenade/smokebomb(src)
 
@@ -439,7 +468,6 @@
 	item_state = "ngr_droppouch"
 	icon = 'icons/obj/clothing/faction/ngr/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'
-	supports_variations = null
 
 	unique_reskin = list(
 		"Black" = "ngr_droppouch",
@@ -461,3 +489,6 @@
 	item_state = "ngr_webbing_tan"
 	icon = 'icons/obj/clothing/faction/ngr/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/ngr/kepori.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/ngr/vox.dmi'
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION

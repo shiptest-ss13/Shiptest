@@ -602,7 +602,7 @@
 		if(21 to 25)
 			// indie cobra (rather good for this pool!)
 			new /obj/item/gun/ballistic/automatic/smg/cobra/indie(loc)
-			new /obj/item/ammo_box/magazine/m45_cobra(loc)
+			new /obj/item/ammo_box/magazine/m10_cobra(loc)
 		if(26 to 30)
 			// viper and holster
 			new /obj/item/gun/ballistic/revolver/viper(loc)
@@ -751,7 +751,7 @@
 		if(66 to 70)
 			// cobra
 			new /obj/item/gun/ballistic/automatic/smg/cobra(loc)
-			new /obj/item/ammo_box/magazine/m45_cobra(loc)
+			new /obj/item/ammo_box/magazine/m10_cobra(loc)
 		if(71 to 75)
 			// bg-16
 			new /obj/item/gun/energy/kalix/pgf(loc)
