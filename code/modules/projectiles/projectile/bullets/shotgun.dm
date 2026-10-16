@@ -132,3 +132,76 @@
 	range = 2
 	armour_penetration = -70
 	bullet_identifier = "\improper shockwave"
+
+/obj/projectile/bullet/pellet/fourbore
+	name = "four-bore pellet"
+	damage = 20
+	armour_penetration = 10
+	bullet_identifier = "huge pellet"
+	tile_dropoff = 3
+
+/obj/projectile/bullet/pellet/fourbore/shrapnel
+	name = "four-bore shrapnel pellet"
+	damage = 13
+	armour_penetration = -10
+	bullet_identifier = "small pellet"
+
+
+/obj/projectile/bullet/slug/fourbore
+	name = "four-bore shotgun slug"
+	damage = 50
+	armour_penetration = 20
+	speed = BULLET_SPEED_SHOTGUN
+	bullet_identifier = "huge slug"
+	wall_damage_override = 400
+	demolition_mod = 5
+	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_WALLS | PROJECTILE_BONUS_DAMAGE_RWALLS
+
+/obj/projectile/bullet/slug/fourbore/flashbang
+	name = "four-bore flashbang shell"
+	damage = 25
+	speed = BULLET_SPEED_SHOTGUN
+	bullet_identifier = "huge shell"
+	wall_damage_override = null
+	demolition_mod = 0
+	var/flashbang_range = 4;
+/obj/projectile/bullet/slug/fourbore/flashbang/on_hit(atom/target, blocked = 0)
+	var/turf/flashbang_turf = get_turf(target) || get_turf(src)
+	if(flashbang_turf)
+		do_sparks(rand(5, 9), FALSE, src)
+		playsound(flashbang_turf, 'sound/weapons/flashbang.ogg', 100, TRUE, 8, 0.9)
+	new /obj/effect/dummy/lighting_obj(flashbang_turf, flashbang_range + 2, 4, COLOR_WHITE, 2)
+	for(var/mob/living/M in get_hearers_in_view(flashbang_range, flashbang_turf))
+		M.flash_act(1, 1)
+	return ..()
+
+
+/obj/projectile/bullet/slug/fourbore/teargas
+	name = "four-bore teargas shell"
+	damage = 25
+	speed = BULLET_SPEED_SHOTGUN
+	bullet_identifier = "huge shell"
+	wall_damage_override = null
+	demolition_mod = 0
+/obj/projectile/bullet/slug/fourbore/teargas/on_hit(atom/target, blocked = 0)
+	var/turf/target_turf = get_turf(target) || get_turf(src)
+	if(!target_turf)
+		return
+	if(target_turf.density)
+		var/atom/origin = firer || starting
+		if(origin)
+			target_turf = get_step_towards(target_turf, origin)
+	var/obj/item/grenade/chem_grenade/G = new(target_turf)
+	G.stage = GRENADE_READY
+	var/obj/item/reagent_containers/glass/beaker/large/B1 = new(G)
+	var/obj/item/reagent_containers/glass/beaker/large/B2 = new(G)
+	//This is like 1/8 of a normal teargas grenade btw
+	B1.reagents.add_reagent(/datum/reagent/consumable/condensedcapsaicin, 4)
+	B1.reagents.add_reagent(/datum/reagent/potassium, 2)
+	B2.reagents.add_reagent(/datum/reagent/phosphorus, 2)
+	B2.reagents.add_reagent(/datum/reagent/consumable/sugar, 2)
+	G.beakers += B1
+	G.beakers += B2
+	G.prime()
+	return ..()
+
