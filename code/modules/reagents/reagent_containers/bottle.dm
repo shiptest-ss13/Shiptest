@@ -239,74 +239,74 @@
 	name = "romerol bottle"
 	desc = "A small bottle of Romerol."
 	list_reagents = list(/datum/reagent/romerol = 30)
-	label = "A brightly colored label, with many warning labels states: DO NOT INGEST UNDER ANY CIRCUMSTANCES."
+	label = "A brightly colored label, with many warning symbols states: DO NOT INGEST UNDER ANY CIRCUMSTANCES."
 
 /obj/item/reagent_containers/glass/bottle/random_virus
 	name = "Experimental disease culture bottle"
 	desc = "A small bottle. Contains an untested viral culture in synthblood medium."
 	spawned_disease = /datum/disease/advance/random
-	label = "A brightly colored label, with many warning labels states: VIRAL CULTURE. DO NOT INGEST."
+	label = "A brightly colored label states: VIRAL CULTURE. DO NOT INGEST."
 
 /obj/item/reagent_containers/glass/bottle/cold
 	name = "Rhinovirus culture bottle"
 	desc = "A small bottle. Contains XY-rhinovirus culture in synthblood medium."
 	spawned_disease = /datum/disease/advance/cold
-	label = "A brightly colored label, with many warning labels states: VIRAL CULTURE. DO NOT INGEST."
+	label = "A brightly colored label states: VIRAL CULTURE. DO NOT INGEST."
 
 /obj/item/reagent_containers/glass/bottle/flu_virion
 	name = "Flu virion culture bottle"
 	desc = "A small bottle. Contains H13N1 flu virion culture in synthblood medium."
 	spawned_disease = /datum/disease/advance/flu
-	label = "A brightly colored label, with many warning labels states: VIRAL CULTURE. DO NOT INGEST."
+	label = "A brightly colored label states: VIRAL CULTURE. DO NOT INGEST."
 
 /obj/item/reagent_containers/glass/bottle/retrovirus
 	name = "Retrovirus culture bottle"
 	desc = "A small bottle. Contains a retrovirus culture in a synthblood medium."
 	spawned_disease = /datum/disease/dna_retrovirus
-	label = "A brightly colored label, with many warning labels states: VIRAL CULTURE. DO NOT INGEST."
+	label = "A brightly colored label states: VIRAL CULTURE. DO NOT INGEST."
 
 /obj/item/reagent_containers/glass/bottle/gbs
 	name = "GBS culture bottle"
 	desc = "A small bottle. Contains Gravitokinetic Bipotential SADS+ culture in synthblood medium."//Or simply - General BullShit
 	amount_per_transfer_from_this = 5
 	spawned_disease = /datum/disease/gbs
-	label = "A brightly colored label, with many warning labels states: VIRAL CULTURE. DO NOT INGEST."
+	label = "A brightly colored label states: VIRAL CULTURE. DO NOT INGEST."
 
 /obj/item/reagent_containers/glass/bottle/fake_gbs
 	name = "GBS culture bottle"
 	desc = "A small bottle. Contains Gravitokinetic Bipotential SADS- culture in synthblood medium."//Or simply - General BullShit
 	spawned_disease = /datum/disease/fake_gbs
-	label = "A brightly colored label, with many warning labels states: VIRAL CULTURE. DO NOT INGEST."
+	label = "A brightly colored label states: VIRAL CULTURE. DO NOT INGEST."
 
 /obj/item/reagent_containers/glass/bottle/brainrot
 	name = "Brainrot culture bottle"
 	desc = "A small bottle. Contains Cryptococcus Cosmosis culture in synthblood medium."
 	spawned_disease = /datum/disease/brainrot
-	label = "A brightly colored label, with many warning labels states: VIRAL CULTURE. DO NOT INGEST."
+	label = "A brightly colored label states: VIRAL CULTURE. DO NOT INGEST."
 
 /obj/item/reagent_containers/glass/bottle/magnitis
 	name = "Magnitis culture bottle"
 	desc = "A small bottle. Contains a small dosage of Fukkos Miracos."
 	spawned_disease = /datum/disease/magnitis
-	label = "A brightly colored label, with many warning labels states: VIRAL CULTURE. DO NOT INGEST."
+	label = "A brightly colored label states: VIRAL CULTURE. DO NOT INGEST."
 
 /obj/item/reagent_containers/glass/bottle/anxiety
 	name = "Severe Anxiety culture bottle"
 	desc = "A small bottle. Contains a sample of Lepidopticides."
 	spawned_disease = /datum/disease/anxiety
-	label = "A brightly colored label, with many warning labels states: VIRAL CULTURE. DO NOT INGEST."
+	label = "A brightly colored label states: VIRAL CULTURE. DO NOT INGEST."
 
 /obj/item/reagent_containers/glass/bottle/fluspanish
 	name = "Spanish flu culture bottle"
 	desc = "A small bottle. Contains a sample of Inquisitius."
 	spawned_disease = /datum/disease/fluspanish
-	label = "A brightly colored label, with many warning labels states: VIRAL CULTURE. DO NOT INGEST."
+	label = "A brightly colored label states: VIRAL CULTURE. DO NOT INGEST."
 
 /obj/item/reagent_containers/glass/bottle/tuberculosis
 	name = "Fungal Tuberculosis culture bottle"
 	desc = "A small bottle. Contains a sample of Fungal Tubercle bacillus."
 	spawned_disease = /datum/disease/tuberculosis
-	label = "A brightly colored label, with many warning labels states: VIRAL CULTURE. DO NOT INGEST."
+	label = "A brightly colored label states: VIRAL CULTURE. DO NOT INGEST."
 
 /obj/item/reagent_containers/glass/bottle/tuberculosiscure
 	name = "BVAK bottle"
