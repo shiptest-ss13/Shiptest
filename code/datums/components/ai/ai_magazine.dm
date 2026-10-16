@@ -12,6 +12,10 @@
 	var/single_load_time = 0.5 SECONDS
 	var/last_shot_time = 0
 	var/reloading = FALSE //so we dont try to shoot during a reload
+	//bumped whenever a reload starts or is broken off, so the timers of one we broke off know they're stale
+	var/reload_id = 0
+	//for single loaders, from when we count rounds going in between fights, see top_off()
+	var/topped_off_since = 0
 	var/magazine_name = "magazine"
 	var/weapon_name = "weapon"
 
@@ -41,13 +45,18 @@
 /datum/component/ai_magazine/proc/on_pre_fire(mob/living/basic/source, atom/target)
 	SIGNAL_HANDLER
 	if(reloading)
-		return COMPONENT_CANCEL_RANGED_ATTACK
+		if(!single_loads || shots_left <= 0)
+			return COMPONENT_CANCEL_RANGED_ATTACK
+		// loading a round at a time, so we break off to fire what's in, as a player would
+		reload_id++
+		reloading = FALSE
 	top_off()
 	if(shots_left <= 0)
 		start_reload()
 		return COMPONENT_CANCEL_RANGED_ATTACK
 	shots_left--
 	last_shot_time = world.time
+	topped_off_since = world.time
 	if(cycle_sound)
 		addtimer(CALLBACK(src, PROC_REF(play_if_alive), cycle_sound), 0.4 SECONDS)
 	if(shots_left <= 0)
@@ -61,9 +70,15 @@
 /datum/component/ai_magazine/proc/top_off()
 	if(!single_loads || reloading || shots_left >= magazine_size)
 		return
-	var/loading_time = world.time - last_shot_time - 2 SECONDS
-	if(loading_time > 0)
-		shots_left = min(magazine_size, shots_left + round(loading_time / single_load_time))
+	// a couple of seconds after our last shot, we start feeding rounds in between fights
+	var/loading_time = world.time - max(topped_off_since, last_shot_time + 2 SECONDS)
+	if(loading_time <= 0)
+		return
+	var/rounds = min(magazine_size - shots_left, round(loading_time / single_load_time))
+	if(rounds <= 0)
+		return
+	shots_left += rounds
+	topped_off_since = max(topped_off_since, last_shot_time + 2 SECONDS) + rounds * single_load_time // so these rounds aren't counted again
 
 /datum/component/ai_magazine/proc/start_reload(tactical = FALSE)
 	var/mob/living/basic/basic_mob = parent
@@ -73,12 +88,13 @@
 	if(shots_left >= magazine_size)
 		return FALSE
 	reloading = TRUE
+	reload_id++
 	var/this_reload_time = reload_time
 	if(single_loads)
-		// a round at a time, each one heard going in, so players can count them
+		// a round at a time, each one heard going in, so players can count them, and each one ready to fire once it's in
 		var/rounds_to_load = magazine_size - max(shots_left, 0)
 		this_reload_time = rounds_to_load * single_load_time
-		addtimer(CALLBACK(src, PROC_REF(load_round), rounds_to_load), single_load_time)
+		addtimer(CALLBACK(src, PROC_REF(load_round), rounds_to_load, reload_id), single_load_time)
 	else
 		playsound(basic_mob, tactical ? eject_sound : eject_empty_sound, 50, TRUE)
 	if(!tactical)
@@ -88,21 +104,27 @@
 		basic_mob.visible_message(span_notice("[basic_mob] starts topping off [basic_mob.p_their()] [weapon_name]."))
 	else
 		basic_mob.visible_message(span_notice("[basic_mob] starts swapping out [basic_mob.p_their()] [magazine_name]."))
-	addtimer(CALLBACK(src, PROC_REF(finish_reload), tactical), this_reload_time)
+	addtimer(CALLBACK(src, PROC_REF(finish_reload), tactical, reload_id), this_reload_time)
 	return TRUE
 
-/datum/component/ai_magazine/proc/finish_reload(tactical = FALSE)
+/datum/component/ai_magazine/proc/finish_reload(tactical = FALSE, id)
+	if(id != reload_id)
+		return // we broke it off to fire
 	reloading = FALSE
 	shots_left = magazine_size
+	topped_off_since = world.time
 	if(!single_loads)
 		play_if_alive(reload_sound)
 	if(chamber_sound && !tactical)
 		addtimer(CALLBACK(src, PROC_REF(play_if_alive), chamber_sound), 0.4 SECONDS)
 
-/datum/component/ai_magazine/proc/load_round(rounds_left)
+/datum/component/ai_magazine/proc/load_round(rounds_left, id)
+	if(id != reload_id)
+		return // we broke it off to fire
 	play_if_alive(reload_sound)
+	shots_left = min(magazine_size, shots_left + 1)
 	if(rounds_left > 1)
-		addtimer(CALLBACK(src, PROC_REF(load_round), rounds_left - 1), single_load_time)
+		addtimer(CALLBACK(src, PROC_REF(load_round), rounds_left - 1, id), single_load_time)
 
 /datum/component/ai_magazine/proc/play_if_alive(sound)
 	var/mob/living/basic/basic_mob = parent

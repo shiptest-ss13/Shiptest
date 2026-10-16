@@ -95,9 +95,9 @@
 	if(!spot || (locate(/mob/living) in spot))
 		return FALSE
 	if(spot.is_blocked_turf(TRUE, basic_mob) || is_ai_hazard_turf(spot))
-		return FALSE // or a diagonal dodge into a wall would still take its first half, like a step back the way we came in a corridor
+		return FALSE // cancel the entire dodge if it can't complete the full move, so it doesnt do a half move
 	swerving = TRUE
 	if(basic_mob.ai_controller)
-		basic_mob.set_glide_size(DELAY_TO_GLIDE_SIZE(basic_mob.ai_controller.movement_delay)) // as smooth as our walking, see /datum/ai_movement/jps
+		basic_mob.set_glide_size(DELAY_TO_GLIDE_SIZE(basic_mob.ai_controller.movement_delay)) // movement smoothing hopefully?
 	. = basic_mob.Move(spot, get_dir(basic_mob, spot))
 	swerving = FALSE

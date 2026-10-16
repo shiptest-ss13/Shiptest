@@ -67,6 +67,8 @@
 #define BB_BASIC_MOB_LAST_SAW_ENEMY_TIME "BB_basic_last_saw_enemy_time"
 ///Each enemy we've had eyes on, and when we last did, as list(enemy = world.time), so someone ducking in and out of cover isn't news each time
 #define BB_BASIC_MOB_SEEN_ENEMIES "BB_basic_seen_enemies"
+///Until when we hold off attacking, having only just spotted someone new, so we don't open up the instant they come into view
+#define BB_BASIC_MOB_REACT_AT "BB_basic_react_at"
 ///TRUE while we can see our current target, FALSE while they're out of sight
 #define BB_BASIC_MOB_TARGET_IN_SIGHT "BB_basic_target_in_sight"
 ///Who BB_BASIC_MOB_LAST_KNOWN_TURF and BB_BASIC_MOB_LAST_KNOWN_TIME are about, so switching targets starts fresh

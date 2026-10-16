@@ -7,6 +7,9 @@
 	var/spotted_memory = 30 SECONDS
 	//for those who fight up close, how long after losing sight of someone we can still follow where they go, see follow_footsteps()
 	var/footsteps_time = 3 SECONDS
+	//how long we take to react to someone new before we attack, picked between these so a group doesn't all open up at once
+	var/reaction_time_min = 0.5 SECONDS
+	var/reaction_time_max = 1 SECONDS
 
 /datum/ai_sensor/track_target/sense(datum/ai_controller/controller, seconds_per_tick)
 	var/atom/target = controller.blackboard[target_key]
@@ -26,6 +29,7 @@
 		if((isnull(last_saw_them) || world.time - last_saw_them > spotted_memory) && !controller.blackboard[BB_BASIC_MOB_TOLD_ABOUT_TARGET])
 			ai_callout(controller.pawn, AI_CALLOUT_SPOTTED) // nobody told us about them, so it's news to the group
 			AI_LOG_DECISION(controller, "track_target: spotted [target]")
+			controller.set_blackboard_key(BB_BASIC_MOB_REACT_AT, world.time + rand(reaction_time_min, reaction_time_max)) // a moment to take it in
 		controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_SEEN_ENEMIES, target, world.time)
 		controller.clear_blackboard_key(BB_BASIC_MOB_TOLD_ABOUT_TARGET) // we know about them for ourselves now
 		clear_search(controller)

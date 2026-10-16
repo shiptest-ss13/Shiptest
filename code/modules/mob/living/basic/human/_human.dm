@@ -81,7 +81,7 @@
 	/// How far off the mob's shots stray, overriding their gun's. Null to go by their gun
 	var/spread
 	/// inherent aim spread, in degrees either way, on top of gun spread
-	var/aim_spread = 2
+	var/aim_spread = 5
 	/// If TRUE, the mob sprays fire with a flamethrower rather than firing a gun
 	var/fires_flames = FALSE
 	/// If TRUE, the mob holds their fire when one of theirs is in the way

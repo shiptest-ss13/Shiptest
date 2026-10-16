@@ -544,7 +544,6 @@
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan their surroundings with a dirty beige submachinegun - finger on the trigger."
 	l_hand = /obj/item/gun/ballistic/automatic/smg/cobra/indie
 	burst_shots = 4 //true to the gun
-	spread = 3
 
 /mob/living/basic/human/ramzi/ranged/engineer
 	name = "Ramzi Clique Combat Engineer"

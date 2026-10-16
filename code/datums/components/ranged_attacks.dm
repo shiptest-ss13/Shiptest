@@ -146,6 +146,8 @@
 			player_follow_ups_owed-- // still gone, so a player doesn't get it as a free shot later
 		return
 	var/atom/target = target_ref?.resolve()
+	if(!firer.client && target && !has_clear_shot(firer, target))
+		return // no more clear shot so stop shooting
 	firer.RangedAttack(target || fallback_turf)
 
 /datum/component/ranged_attacks/proc/try_start_volley(blind_fire = FALSE)
