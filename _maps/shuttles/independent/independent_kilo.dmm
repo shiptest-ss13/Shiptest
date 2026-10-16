@@ -1869,7 +1869,10 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/south,
-/obj/structure/towel_bar/directional/north,
+/obj/structure/towel_bar{
+	pixel_x = 0;
+	pixel_y = 19
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew)
 "MY" = (
@@ -1880,10 +1883,6 @@
 /obj/machinery/airalarm/directional/south,
 /obj/effect/turf_decal/siding/wood/walnut{
 	dir = 6
-	},
-/obj/item/towel{
-	pixel_x = 9;
-	pixel_y = 11
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
