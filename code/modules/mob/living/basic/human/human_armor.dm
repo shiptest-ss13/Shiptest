@@ -1,34 +1,38 @@
-/*
- * Human NPCs are armoured like players: each body part by whatever the clothes they'd leave behind as a corpse cover it with,
- * a vest on the chest, a helmet on the head, a hardsuit nearly everywhere, adding up like a player's do, see /mob/living/carbon/human/proc/checkarmor().
- * Worked out once for each corpse spawner and shared, see get_spawner_zone_armor(). Humans without a corpse fall back to armor_base, all over
- */
 
 /mob/living/basic/human
-	///How each body part is armoured, as list(body zone = /datum/armor), shared by every human dressed the same way. Null to use our armor all over
-	var/list/zone_armor
-	///The hit we're taking right now, so our armour goes by where it's landing, for hits that don't say, like melee, and our injuries agree, see begin_hit()
 	var/datum/incoming_hit/incoming_hit
 
-/// Armours each body part by what our corpse is wearing on it, if we have one, unless we're armored_all_over
-/mob/living/basic/human/proc/setup_zone_armor()
+/mob/living/basic/human/proc/setup_body_armor()
 	if(mob_spawner && !armored_all_over)
-		zone_armor = get_spawner_zone_armor(mob_spawner)
+		armor = get_spawner_body_armor(mob_spawner)
 
-/mob/living/basic/human/getarmor(def_zone, type)
-	if(!zone_armor)
-		return ..()
-	var/datum/armor/part_armor = zone_armor[check_zone(def_zone || incoming_hit?.zone || BODY_ZONE_CHEST)]
-	return part_armor ? part_armor.getRating(type) : 0
-
-/// Picks where a hit that doesn't say lands, like a mob's attack would, mostly the chest
 /mob/living/basic/human/proc/pick_hit_zone()
-	return pick_weight(list(BODY_ZONE_HEAD = 4, BODY_ZONE_CHEST = 64, BODY_ZONE_L_ARM = 8, BODY_ZONE_R_ARM = 8, BODY_ZONE_L_LEG = 8, BODY_ZONE_R_LEG = 8))
+	return pick_weight(GLOB.ai_hit_zone_weights)
 
-/**
- * How each body part of someone dressed by this corpse spawner is armoured by their clothes, as list(body zone = /datum/armor).
- * Worked out once for each spawner, by making each piece of its outfit to see what it covers, and remembered
- */
+// how often each body part gets hit by attacks that don't aim
+GLOBAL_LIST_INIT(ai_hit_zone_weights, list(BODY_ZONE_HEAD = 4, BODY_ZONE_CHEST = 64, BODY_ZONE_L_ARM = 8, BODY_ZONE_R_ARM = 8, BODY_ZONE_L_LEG = 8, BODY_ZONE_R_LEG = 8))
+
+// average the armour from a spawner's outfit over the entire body
+/proc/get_spawner_body_armor(spawner_type)
+	var/static/list/armor_by_spawner = list()
+	if(armor_by_spawner[spawner_type])
+		return armor_by_spawner[spawner_type]
+	var/list/zone_armor = get_spawner_zone_armor(spawner_type)
+	var/total_weight = 0
+	for(var/zone in GLOB.ai_hit_zone_weights)
+		total_weight += GLOB.ai_hit_zone_weights[zone]
+	var/list/averaged = list()
+	for(var/zone in GLOB.ai_hit_zone_weights)
+		var/datum/armor/part_armor = zone_armor[zone]
+		var/list/part_ratings = part_armor.getList()
+		for(var/armor_type in part_ratings)
+			averaged[armor_type] += part_ratings[armor_type] * GLOB.ai_hit_zone_weights[zone] / total_weight
+	for(var/armor_type in averaged)
+		averaged[armor_type] = round(averaged[armor_type])
+	var/datum/armor/body_armor = getArmor(arglist(averaged))
+	armor_by_spawner[spawner_type] = body_armor
+	return body_armor
+
 /proc/get_spawner_zone_armor(spawner_type)
 	var/static/list/armor_by_spawner = list()
 	if(armor_by_spawner[spawner_type])
@@ -54,7 +58,6 @@
 	armor_by_spawner[spawner_type] = zone_armor
 	return zone_armor
 
-/// The clothing typepaths a corpse spawner dresses its corpse in: its outfit's, with any the spawner itself overrides
 /proc/get_spawner_clothing(spawner_type)
 	var/obj/effect/mob_spawn/human/spawner = spawner_type
 	var/datum/outfit/outfit = initial(spawner.outfit)
@@ -100,3 +103,27 @@
 		total += initial(worn.slowdown)
 	slowdown_by_spawner[spawner_type] = total
 	return total
+
+/proc/spawner_has_flashlight(spawner_type)
+	var/static/list/flashlight_by_spawner = list()
+	if(!isnull(flashlight_by_spawner[spawner_type]))
+		return flashlight_by_spawner[spawner_type]
+	var/obj/effect/mob_spawn/human/spawner = spawner_type
+	var/outfit_type = initial(spawner.outfit)
+	var/datum/outfit/outfit = ispath(outfit_type, /datum/outfit) ? new outfit_type : null
+	var/list/carried = list(
+		initial(spawner.belt) == -1 ? outfit?.belt : initial(spawner.belt),
+		initial(spawner.r_pocket) == -1 ? outfit?.r_pocket : initial(spawner.r_pocket),
+		initial(spawner.l_pocket) == -1 ? outfit?.l_pocket : initial(spawner.l_pocket),
+		initial(spawner.suit_store) == -1 ? outfit?.suit_store : initial(spawner.suit_store),
+	)
+	if(islist(outfit?.backpack_contents))
+		carried += outfit.backpack_contents
+	qdel(outfit)
+	var/found = FALSE
+	for(var/item_type in carried)
+		if(ispath(item_type, /obj/item/flashlight) || ispath(item_type, /obj/item/attachment/rail_light))
+			found = TRUE
+			break
+	flashlight_by_spawner[spawner_type] = found
+	return found

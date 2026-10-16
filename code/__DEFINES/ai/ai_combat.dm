@@ -33,6 +33,18 @@
 	/datum/ai_planning_subtree/basic_melee_attack_subtree, \
 	/datum/ai_planning_subtree/idle_chatter
 
+// The most shots a mob will put into something in its way, like a window, to shoot through it, see worth_shooting_through()
+#define AI_MAX_SHOTS_THROUGH_COVER 10
+
+// How near someone we gave up on getting to has to be for us to check if there's a straight way to them now, see /datum/ai_controller/proc/is_ignoring()
+#define AI_IGNORE_RECHECK_RANGE 8
+
+// The least of its usual range a sound carries for AI, however thin the air, as they'd still see the flash or feel it through the floor, see get_heard_distance()
+#define AI_MINIMUM_SOUND_FACTOR 0.1
+
+// How long after last firing at someone a mob's aim on them stays settled, after which its next volley at them counts as first contact again, see /datum/component/ranged_attacks/proc/fire_volley()
+#define AI_AIM_SETTLED_MEMORY (8 SECONDS)
+
 // The range a mob fights at from range, unless it or its controller sets its own
 #define AI_DEFAULT_RETREAT_DISTANCE 3
 #define AI_DEFAULT_ENGAGE_DISTANCE 6

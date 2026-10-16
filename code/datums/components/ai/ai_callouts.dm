@@ -81,7 +81,7 @@
 	var/obj/item/organ/tongue/voice
 	var/hearing_range = 7
 	//each wall reduces the range by this many tiles
-	var/wall_penalty = 5
+	var/wall_penalty = AI_HEARING_WALL_PENALTY
 	var/list/line_cooldowns
 	//the last someone going down we called out so we don't call out the same thing twice
 	var/last_downed_callout

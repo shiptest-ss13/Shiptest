@@ -27,6 +27,9 @@
 		if(!reloading || QDELETED(target) || controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == FALSE || target.Adjacent(controller.pawn))
 			leave_cover(controller) // it's been quiet a while, so carry on as usual
 			return
+		var/turf/fighting_spot = controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]
+		if(fighting_spot && get_turf(controller.pawn) == fighting_spot && cover_facing(fighting_spot, target))
+			return // reloading behind the sandbags we're fighting from does us fine, rather than giving them up
 		// not being shot at, but we've an empty gun and someone who can see us, so get out of their sight while we reload
 		danger = get_turf(target)
 		danger_key = BB_BASIC_MOB_CURRENT_TARGET
@@ -88,11 +91,11 @@
 	if(!fights_from_partial_cover || (controller.get_conditions() & (AI_CONDITION_HAS_TARGET | AI_CONDITION_HAS_RANGED_ATTACK)) != (AI_CONDITION_HAS_TARGET | AI_CONDITION_HAS_RANGED_ATTACK))
 		return FALSE
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+	var/turf/fighting_spot = controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]
+	if(fighting_spot && cover_facing(fighting_spot, danger) && cover_facing(fighting_spot, target))
+		return TRUE // whoever's shooting, it's from the side our cover's on, so we hold
 	if(controller.blackboard[BB_BASIC_MOB_SHOT_BY] != target)
 		return FALSE
-	var/turf/fighting_spot = controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]
-	if(fighting_spot && cover_between(fighting_spot, target))
-		return TRUE
 	if(world.time < controller.blackboard[BB_BASIC_MOB_NEXT_COVER_SEARCH])
 		return FALSE
 	fighting_spot = find_fighting_cover_spot(controller.pawn, target, partial_cover_range, get_ai_shot_pass_flags(controller.pawn))

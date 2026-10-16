@@ -21,6 +21,7 @@
 	)
 	planning_subtrees = list(
 		AI_HUMAN_PLANNING_OPENING,
+		/datum/ai_planning_subtree/ambush_dug_in,
 		/datum/ai_planning_subtree/wait_out_unreachable,
 		/datum/ai_planning_subtree/sequence/melee_approach,
 		AI_HUMAN_MELEE_PLANNING_CLOSING,

@@ -9,6 +9,8 @@
 	var/attacker_memory = 2 SECONDS
 	//how much closer someone else has to be than who we're fighting before we turn on them instead, so we don't flit between two at much the same range
 	var/closer_switch_margin = 3
+	//how recently we have to have seen someone still on their feet to go after them, rather than finishing off whoever we've downed
+	var/recent_enemy_memory = 5 SECONDS
 
 /datum/ai_sensor/update_combat_targets/sense(datum/ai_controller/controller, seconds_per_tick)
 	var/mob/living/living_pawn = controller.pawn
@@ -32,21 +34,53 @@
 
 /datum/ai_sensor/update_combat_targets/proc/find_candidates(datum/ai_controller/controller, datum/targetting_datum/targetting_datum)
 	var/mob/living/living_pawn = controller.pawn
+	var/turf/our_turf = get_turf(living_pawn)
+	if(!our_turf)
+		return list()
 	var/our_vision_range = controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || vision_range
 	. = list()
 	for(var/mob/living/someone in hearers(our_vision_range, living_pawn))
-		if(someone != living_pawn && targetting_datum.can_attack(living_pawn, someone) && ai_can_see(living_pawn, someone, our_vision_range)) // not anyone hidden in the dark
-			. += someone
+		if(someone == living_pawn || controller.is_ignoring(someone) || !targetting_datum.can_attack(living_pawn, someone))
+			continue
+		var/turf/their_turf = get_turf(someone)
+		if(ai_too_dark_to_see(living_pawn, someone, their_turf, get_dist(our_turf, their_turf), our_vision_range))
+			continue // hidden in the dark
+		. += someone
 	// turrets and mechas
-	var/turf/our_turf = get_turf(living_pawn)
-	if(!our_turf)
-		return
-	for(var/list/machines as anything in list(GLOB.porta_turrets, GLOB.mechas_list))
-		for(var/atom/machine as anything in machines)
-			if(machine.z != our_turf.z || get_dist(our_turf, machine) > our_vision_range)
-				continue
-			if(ai_can_see(living_pawn, machine, our_vision_range) && targetting_datum.can_attack(living_pawn, machine))
-				. += machine
+	for(var/atom/machine as anything in get_machines_on_z(our_turf.z))
+		if(get_dist(our_turf, machine) > our_vision_range)
+			continue
+		if(!controller.is_ignoring(machine) && ai_can_see(living_pawn, machine, our_vision_range) && targetting_datum.can_attack(living_pawn, machine))
+			. += machine
+
+// turrets and mechas on z_level, worked out once a tick for everyone looking, rather than each of us going through every one there is
+/datum/ai_sensor/update_combat_targets/proc/get_machines_on_z(z_level)
+	var/static/list/machines_by_z = list()
+	var/static/cache_time = -1
+	if(cache_time != world.time)
+		machines_by_z.Cut()
+		cache_time = world.time
+		for(var/list/machines as anything in list(GLOB.porta_turrets, GLOB.mechas_list))
+			for(var/atom/machine as anything in machines)
+				var/turf/machine_turf = get_turf(machine)
+				if(machine_turf)
+					LAZYADD(machines_by_z["[machine_turf.z]"], machine)
+	return machines_by_z["[z_level]"] || list()
+
+// someone we've seen in the last recent_enemy_memory who's still on their feet and fair game, other than exclude, the most recently seen, or null
+/datum/ai_sensor/update_combat_targets/proc/get_recent_enemy(datum/ai_controller/controller, atom/exclude, datum/targetting_datum/targetting_datum)
+	var/list/seen_enemies = controller.blackboard[BB_BASIC_MOB_SEEN_ENEMIES]
+	var/atom/best
+	var/best_time = world.time - recent_enemy_memory
+	for(var/atom/enemy as anything in seen_enemies)
+		var/seen_at = seen_enemies[enemy]
+		if(enemy == exclude || seen_at <= best_time || QDELETED(enemy) || is_downed(enemy) || enemy.z != controller.pawn.z)
+			continue
+		if(!targetting_datum?.can_attack(controller.pawn, enemy))
+			continue
+		best = enemy
+		best_time = seen_at
+	return best
 
 /datum/ai_sensor/update_combat_targets/proc/pick_target(datum/ai_controller/controller, atom/target, target_unseen, list/candidates)
 	var/mob/living/living_pawn = controller.pawn
@@ -77,6 +111,11 @@
 		return target
 	if(nearest)
 		return nearest
+	if(target_down)
+		// nobody else in view, but someone still up we saw a moment ago, like round a corner, beats finishing off who we've downed
+		var/atom/still_up = get_recent_enemy(controller, target, controller.blackboard[BB_TARGETTING_DATUM])
+		if(still_up)
+			return still_up
 	if(!target && length(candidates))
 		return get_nearest_of(living_pawn, candidates) // only those who are down, for mobs that finish people off
 	return target

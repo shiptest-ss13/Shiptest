@@ -1,5 +1,6 @@
 ///////////////Base mob////////////
 /mob/living/basic/human/ramzi
+
 	name = "Ramzi Clique Initiate"
 	desc = "A deserter from the Gorlex Marauders turned pirate. Unfortunately for them, this one is unarmed."
 	icon_state = "syndicate"
@@ -14,7 +15,7 @@
 	rapid_melee = 2
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi
 	callout_set = /datum/ai_callout_set/human/ramzi
-
+	flashlight_chance = 50
 	armor_base = /obj/item/clothing/suit/armor/vest/syndie
 
 /mob/living/basic/human/ramzi/space

@@ -19,6 +19,8 @@
 	var/angle_search_range = 6
 	//how far from where we are we'll go to get that angle
 	var/max_flank_distance = 12
+	//if TRUE, we don't go round them while we're fighting from cover that faces them, waiting for a shot instead
+	var/holds_good_cover = FALSE
 
 /datum/ai_planning_subtree/flank/on_skipped(datum/ai_controller/controller)
 	end_flank(controller)
@@ -39,10 +41,14 @@
 		end_flank(controller)
 		return
 	var/must_go_around = blocker && (is_door(blocker) || !worth_shooting_through(controller.pawn, blocker, projectile_type))
+	if(holds_good_cover && !controller.blackboard[BB_BASIC_MOB_FLANKING])
+		var/turf/fighting_spot = controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]
+		if(fighting_spot && get_turf(controller.pawn) == fighting_spot && cover_facing(fighting_spot, target))
+			return // we keep our cover and wait for a shot
 	if(AI_MORALE_IS(controller, AI_MORALE_WARY))
 		// an ally just died nearby, so stay put rather than pushing round to wherever got them
 		end_flank(controller)
-		ai_callout(controller.pawn, AI_CALLOUT_HOLDING)
+		ai_callout(controller.pawn, AI_CALLOUT_WARY) // why we're not going round
 		return // dont shoot while blocked
 	var/flanking = controller.blackboard[BB_BASIC_MOB_FLANKING]
 	if(isnull(flanking) || world.time >= controller.blackboard[BB_BASIC_MOB_FLANK_RECONSIDER_AT] || (must_go_around && !flanking))
@@ -88,20 +94,27 @@
 	var/mob/living/living_pawn = controller.pawn
 	var/allies_keeping_them_busy = 0
 	var/allies_going_around = 0
+	var/better_flankers = 0 // flanker prio
+	var/our_priority = controller.blackboard[BB_BASIC_MOB_FLANK_PRIORITY] || 0
 	for(var/mob/living/ally as anything in get_ai_allies_in_range(living_pawn, ally_range))
 		var/datum/ai_controller/ally_controller = ally.ai_controller
 		if(ally_controller.blackboard[target_key] != target)
 			continue
 		if(ally_controller.blackboard[BB_BASIC_MOB_FLANKING])
 			allies_going_around++
-		else if(ally_controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT])
+			continue
+		if(ally_controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT])
 			allies_keeping_them_busy++
+		if((ally_controller.blackboard[BB_BASIC_MOB_FLANK_PRIORITY] || 0) > our_priority)
+			better_flankers++
 	var/fighting_them = allies_going_around + allies_keeping_them_busy + 1 // and us
 	var/max_flankers = max(1, round(fighting_them * max_flanker_fraction))
 	if(allies_going_around >= max_flankers)
 		return FALSE // leave enough keeping them busy
 	if(must_go_around)
 		return TRUE // an obvious way through, or no point staying
+	if(better_flankers >= max_flankers - allies_going_around)
+		return FALSE
 	return prob((allies_keeping_them_busy || AI_MORALE_IS(controller, AI_MORALE_EMBOLDENED)) ? supported_flank_chance : flank_chance)
 
 /datum/ai_planning_subtree/flank/proc/find_clear_target(datum/ai_controller/controller, atom/target, pass_flags)

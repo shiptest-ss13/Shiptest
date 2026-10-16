@@ -82,6 +82,8 @@
 	var/spread
 	/// inherent aim spread, in degrees either way, on top of gun spread
 	var/aim_spread = 5
+	/// Extra spread on our first volley at someone, before we've settled our aim on them
+	var/first_contact_spread = 10
 	/// If TRUE, the mob sprays fire with a flamethrower rather than firing a gun
 	var/fires_flames = FALSE
 	/// If TRUE, the mob holds their fire when one of theirs is in the way
@@ -97,6 +99,8 @@
 	var/sidesteps = 1
 	/// If FALSE, the mob never loses their nerve and falls back, however bad it gets
 	var/morale_breaks = TRUE
+	/// Chance we carry a flashlight for fighting in the dark, unless our outfit already has one
+	var/flashlight_chance = 10
 	/// How much the mob moves about in a fight, an AI_MOBILITY_ define. Null to go by their gun: light pistols dart about, heavy weapons hold their ground, see pick_mobility()
 	var/mobility
 	/// Chance to block a projectile, like with a shield
@@ -154,11 +158,11 @@
 		var/obj/item/clothing/instance = new armor_base()
 		armor = instance.armor
 		qdel(instance)
-	setup_zone_armor()
+	setup_body_armor()
 	if(in_hardsuit)
 		ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 		set_light(4)
-	pressure_sealed = in_hardsuit || minimum_survivable_temperature <= 0 || (mob_spawner && spawner_is_pressure_sealed(mob_spawner))
+	pressure_sealed = in_hardsuit || (mob_spawner && spawner_is_pressure_sealed(mob_spawner)) // a gas mask gives us air, not pressure, so it takes a suit and helmet like a player
 	if(mob_spawner && spawner_has_jetpack(mob_spawner))
 		ai_controller?.set_blackboard_key(BB_BASIC_MOB_CAN_CROSS_SPACE, TRUE)
 	if(length(loot))
@@ -197,6 +201,21 @@
 	var/obj/item/weapon = get_melee_weapon()
 	return ispath(weapon, /obj/item) && heavy_weapons[weapon]
 
+
+// who flanks first based on archetype
+/mob/living/basic/human/proc/get_flank_priority()
+	if(!casing_type && !projectile_type)
+		return 0
+	if(istype(ai_controller, /datum/ai_controller/basic_controller/human/ranged/rusher))
+		return 5
+	if(istype(ai_controller, /datum/ai_controller/basic_controller/human/ranged/gunslinger))
+		return 4
+	if(istype(ai_controller, /datum/ai_controller/basic_controller/human/ranged/suppressor))
+		return 2
+	if(istype(ai_controller, /datum/ai_controller/basic_controller/human/ranged/marksman))
+		return 1
+	return 3
+
 // pick ranged archetype based on weapon used
 /mob/living/basic/human/proc/pick_ranged_controller()
 	var/obj/item/gun/gun_type = get_gun_type()
@@ -208,6 +227,9 @@
 		return /datum/ai_controller/basic_controller/human/ranged/rusher // shotguns, laser ones too
 	if(ispath(gun_type, /obj/item/gun/ballistic/automatic/pistol) || ispath(gun_type, /obj/item/gun/ballistic/revolver))
 		return /datum/ai_controller/basic_controller/human/ranged/gunslinger
+	if(ispath(gun_type, /obj/item/gun/energy) && initial(gun_type.w_class) <= WEIGHT_CLASS_SMALL)
+		return /datum/ai_controller/basic_controller/human/ranged/gunslinger
+
 	return /datum/ai_controller/basic_controller/human/ranged
 
 /mob/living/basic/human/proc/setup_melee()
@@ -262,7 +284,7 @@
 	if(isnull(shot_spread))
 		shot_spread = gun_type ? initial(gun_type.spread) : 2
 	shot_spread = max(shot_spread, 0) + aim_spread
-	AddComponent(/datum/component/ranged_attacks, casing_type, projectile_type, projectile_sound, burst_shots, burst_interval, ranged_cooldown, shot_spread)
+	AddComponent(/datum/component/ranged_attacks, casing_type, projectile_type, projectile_sound, burst_shots, burst_interval, ranged_cooldown, shot_spread, first_contact_spread)
 	if(gun_type)
 		AddComponent(/datum/component/ai_magazine, gun_type) // for reloading
 
@@ -315,6 +337,11 @@
 	AddElement(/datum/element/ai_reacts_to_harm)
 	AddElement(/datum/element/ai_hears_gunfire)
 	AddComponent(/datum/component/ai_morale, morale_breaks)
+	if(!in_hardsuit && see_in_dark < AI_NIGHT_VISION) // hardsuits have a light of their own
+		if(mob_spawner && spawner_has_flashlight(mob_spawner))
+			AddComponent(/datum/component/ai_flashlight) // our corpse carries it already
+		else if(prob(flashlight_chance))
+			AddComponent(/datum/component/ai_flashlight, drops_on_death = TRUE)
 	if(isnull(mobility))
 		mobility = pick_mobility()
 	// fighting up close with something light, like a knife, we keep up the pressure by sidestepping around them between blows
@@ -327,6 +354,8 @@
 	if(!ai_controller)
 		return
 	ai_controller.set_blackboard_key(BB_TARGET_MINIMUM_STAT, stat_attack)
+	ai_controller.set_blackboard_key(BB_BASIC_MOB_CAN_CLIMB, TRUE) // over sandbags and the like, as players can
+	ai_controller.set_blackboard_key(BB_BASIC_MOB_FLANK_PRIORITY, get_flank_priority())
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_MOBILITY, mobility)
 	if(mobility == AI_MOBILITY_HIGH && (casing_type || projectile_type))
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_HIT_AND_RUN, TRUE) // dart in for a few shots, then back off and come again
@@ -439,7 +468,6 @@
 				var/obj/item/clothing/temp = new var_value
 				armor = temp.armor
 				qdel(temp)
-				zone_armor = null // what we were set to wear, all over, rather than our outfit's
 				datum_flags |= DF_VAR_EDITED
 				return TRUE
 			return FALSE

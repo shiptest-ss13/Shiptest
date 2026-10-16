@@ -9,6 +9,7 @@
 		BB_TARGETTING_DATUM = new /datum/targetting_datum/basic,
 		BB_BASIC_MOB_RETREAT_DISTANCE = 5,
 		BB_BASIC_MOB_ENGAGE_DISTANCE = 8,
+		BB_BASIC_MOB_HOLDS_POSITION = TRUE,
 	)
 	planning_subtrees = list(
 		AI_HUMAN_PLANNING_OPENING,
@@ -22,6 +23,7 @@
 /datum/ai_planning_subtree/flank/marksman
 	flank_chance = 0
 	supported_flank_chance = 20
+	holds_good_cover = TRUE
 
 /datum/ai_planning_subtree/search_lost_target/marksman
 	search_style = SEARCH_STYLE_HOLD
@@ -61,9 +63,13 @@
 		AI_HUMAN_PLANNING_OPENING,
 		/datum/ai_planning_subtree/group/cover,
 		/datum/ai_planning_subtree/flank,
+		/datum/ai_planning_subtree/fighting_cover/when_outmatched,
 		/datum/ai_planning_subtree/search_lost_target/human,
 		AI_HUMAN_RANGED_PLANNING_CLOSING,
 	)
+
+/datum/ai_planning_subtree/fighting_cover/when_outmatched
+	fights_from_cover_unprovoked = FALSE
 
  // would rather dig in behind cover and lay down fire
 /datum/ai_controller/basic_controller/human/ranged/suppressor
@@ -91,6 +97,8 @@
 	)
 	planning_subtrees = list(
 		AI_HUMAN_PLANNING_OPENING,
+		/datum/ai_planning_subtree/ambush_dug_in/brute,
+		/datum/ai_planning_subtree/smash_towards_target,
 		/datum/ai_planning_subtree/wait_out_unreachable,
 		/datum/ai_planning_subtree/search_lost_target/human,
 		/datum/ai_planning_subtree/taunt,

@@ -1,4 +1,5 @@
 /mob/living/basic/human/frontier
+
 	name = "Frontiersman Shank"
 	desc = "A member of the brutal Frontiersman terrorist fleet! This one clutches a wicked-looking knife in nimble fingers, eager to relieve you of your innards."
 	icon_state = "frontiersmanmelee"
@@ -12,6 +13,7 @@
 	r_hand = /obj/item/melee/knife/survival
 	dodging = TRUE
 	callout_set = /datum/ai_callout_set/human/frontier
+	flashlight_chance = 30
 
 /mob/living/basic/human/frontier/civilian
 	noncombatant = TRUE

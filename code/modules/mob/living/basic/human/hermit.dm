@@ -1,4 +1,5 @@
 /mob/living/basic/human/hermit
+
 	name = "Whitesands Inhabitant"
 	desc = "If you can read this, yell at a coder!"
 	icon_state = "survivor_base"
@@ -8,7 +9,7 @@
 	armor_base = /obj/item/clothing/suit/hooded/survivor
 	faction = list(FACTION_ANTAG_HERMITS)
 	callout_set = /datum/ai_callout_set/human/hermit
-	// the same mix of species as the hermit corpses they leave, see /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	// the same mix of species as the hermit corpses they leaves, otherwise theres a mismatch sometimes
 	species_weights = list(
 		/datum/species/human = 50,
 		/datum/species/lizard = 20,
@@ -16,7 +17,7 @@
 		/datum/species/moth = 10,
 		/datum/species/spider = 10,
 	)
-
+	flashlight_chance = 15
 	speak_chance = 20
 	speak_emote = list("breathes heavily", "growls", "sharply inhales")
 	emote_hear = list("murmers.","grumbles.","whimpers.")

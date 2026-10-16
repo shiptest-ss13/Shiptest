@@ -42,11 +42,13 @@
 	if(!no_shot && (distance < fight_range[1] || distance > fight_range[2]))
 		return // closing in or backing off, see maintain_distance
 	var/urgent = no_shot || (is_doorway(our_turf) && blocking_an_ally(living_pawn, our_turf, target)) || ally_in_the_way(living_pawn, our_turf, target)
+	var/under_fire = world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < under_fire_time
+	if(controller.blackboard[BB_BASIC_MOB_HOLDS_POSITION] && !urgent && !under_fire)
+		return // we've a shot from here, so we keep still and take it
 	if(world.time < controller.blackboard[BB_BASIC_MOB_NEXT_REPOSITION] && (!urgent || world.time < controller.blackboard[BB_BASIC_MOB_REPOSITION_FAILED_UNTIL]))
 		if(no_shot)
 			work_towards_firing_line(controller, target, distance) // we looked just now and there was nowhere, so keep at it
 		return
-	var/under_fire = world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < under_fire_time
 	var/list/interval = (under_fire ? under_fire_intervals : intervals)[get_mobility(controller)]
 	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_REPOSITION, world.time + rand(interval[1], interval[2]))
 	var/turf/new_spot = find_new_spot(controller, target, fight_range)

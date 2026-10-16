@@ -57,6 +57,8 @@ multiple modular subtrees with behaviors
 	var/movement_target_source
 	///Stored arguments for behaviors given during their initial creation
 	var/list/behavior_args = list()
+	///For behaviors that move us to what's in their first blackboard key, what that held when they set up, as REF() text, so we set them up again if it changes for queue_behavior()
+	var/list/behavior_setup_refs
 	///How each behavior last ended on its own, as list(behavior type = TRUE if it succeeded, FALSE if it failed)
 	var/list/behavior_outcomes
 	///How many behaviors have refused to start this planning pass, so a subtree that finishes planning without managing to start anything lets the next one have a go
@@ -435,7 +437,7 @@ multiple modular subtrees with behaviors
 	if(behavior in current_behaviors)
 		var/list/new_arguments = args.Copy(2)
 		var/list/old_arguments = behavior_args[behavior_type] || list()
-		if(new_arguments ~= old_arguments)
+		if(new_arguments ~= old_arguments && !moving_to_stale(behavior, new_arguments))
 			// already doing it, so keep it going rather than setting it up again, and don't let the planning pass cancel it
 			LAZYSET(planned_behaviors, behavior, TRUE)
 			return TRUE
@@ -454,7 +456,16 @@ multiple modular subtrees with behaviors
 		behavior_args[behavior_type] = arguments
 	else
 		behavior_args -= behavior_type
+	if((behavior.behavior_flags & AI_BEHAVIOR_REQUIRE_MOVEMENT) && length(arguments) && istext(arguments[1]))
+		LAZYSET(behavior_setup_refs, behavior_type, REF(blackboard[arguments[1]]))
 	return TRUE
+
+/// Whether the blackboard key a movement behaviour got its target from has changed since it was set up, so queue_behavior() sets it up again
+/datum/ai_controller/proc/moving_to_stale(datum/ai_behavior/behavior, list/arguments)
+	if(!(behavior.behavior_flags & AI_BEHAVIOR_REQUIRE_MOVEMENT) || !length(arguments) || !istext(arguments[1]))
+		return FALSE
+	var/setup_ref = LAZYACCESS(behavior_setup_refs, behavior.type)
+	return !isnull(setup_ref) && setup_ref != REF(blackboard[arguments[1]])
 
 /datum/ai_controller/proc/ProcessBehavior(seconds_per_tick, datum/ai_behavior/behavior)
 	var/list/arguments = list(seconds_per_tick, src)

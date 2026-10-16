@@ -103,15 +103,15 @@
 		AI_CALLOUT_SUPPRESSING = list("Keep shooting!", "Pin them down!", "Shoot! Keep shooting!", "Don't let them move!"),
 		AI_CALLOUT_DEATH_RATTLE = list("Finally... quiet...", "Should've... left... this rock...", "No....", "The sand... is warm...", "Home..."),
 		AI_CALLOUT_RELOADING = list("Reloading!", "Need a second!", "Hold on, hold on!", "Bullets, where are my bullets?!"),
-		AI_CALLOUT_HEARD_GUNFIRE = list("Gunfire! Someone's out there!", "Hear that? Go look!", "Noise! Out there!", "Someone's shooting near camp!"),
+		AI_CALLOUT_HEARD_GUNFIRE = list("Gunfire! Someone's out there!", "Hear that? Go look!", "Noise! Out there!", "Someone's shooting near!"),
 		AI_CALLOUT_PUSHING = list("Drive them out!", "Get them!", "Chase them out!", "Run them down!"),
 		AI_CALLOUT_FALLING_BACK = list("Back! Get back!", "Too close!", "Away! Away!", "Back to camp!"),
 		AI_CALLOUT_WARY = list("Careful... they're dangerous.", "Keep your heads down!", "Stay hidden, they're strong!", "Don't let them see you!"),
 		AI_CALLOUT_EMBOLDENED = list("They're weak! Drive them off!", "This is our home!", "They're running! Chase them!", "Our ground! Ours!"),
 		AI_CALLOUT_TAUNT = list("This is our land!" = 3, "You won't take anything from us!" = 3, "Get off our rock!" = 3, "HAHAHAHA!" = 1, "Nothing here for you!" = 3, "Leave! Leave now!" = 3),
 		AI_CALLOUT_MELEE = list("Get out! Get out!", "Off our land!", "HAHAHA!", "Mine! Mine!", "Go away!"),
-		AI_CALLOUT_BROKEN = list("Scatter! Scatter!", "Run! Hide!", "We can't stop them!", "Into the dunes!", "Hide! Everyone hide!"),
-		AI_CALLOUT_RALLIED = list("Come back! Hold together!", "We stand together or we die out here!", "Back! Come back to camp!", "Together! Stay together!"),
+		AI_CALLOUT_BROKEN = list("Scatter! Scatter!", "Run! Hide!", "We can't stop them!", "Let's get outta here!", "Hide! Everyone hide!"),
+		AI_CALLOUT_RALLIED = list("Come back! Hold together!", "We stand together or we die out here!", "Alright, let's go!", "Together! Stay together!"),
 	)
 	morale_lines = list(
 		AI_MORALE_BROKEN = list(

@@ -44,8 +44,8 @@
 			controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF, shot_from) // a fresher idea of where they are
 			controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME, world.time)
 		return
-	if(!QDELETED(current_target) && controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != FALSE)
-		return // busy with someone we can see
+	if(!QDELETED(current_target) && controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE && !controller.blackboard[BB_BASIC_MOB_TOLD_ABOUT_TARGET])
+		return
 	var/datum/targetting_datum/targetting_datum = controller.blackboard[BB_TARGETTING_DATUM]
 	if(!targetting_datum?.can_attack(source, shooter))
 		return

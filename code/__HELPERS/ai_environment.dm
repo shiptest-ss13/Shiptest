@@ -49,3 +49,47 @@
 		var/turf/open/lava/lava_spot = spot
 		return !lava_spot.is_safe()
 	return FALSE
+
+// whether breaking blocker would make our environment unsafe
+/proc/breaking_would_vent(mob/living/basic/basic_mob, atom/blocker)
+	var/turf/blocker_turf = get_turf(blocker)
+	if(!blocker_turf || !is_environment_safe_for(basic_mob, get_turf(basic_mob)))
+		return FALSE
+	var/list/sides = list()
+	if(blocker.flags_1 & ON_BORDER_1)
+		var/turf/across = get_step(blocker_turf, blocker.dir)
+		if(!across || blocker.CanAtmosPass(across))
+			return FALSE // it's not holding back any air
+		sides += blocker_turf
+		sides += across
+	else
+		for(var/direction in GLOB.cardinals)
+			var/turf/beside = get_step(blocker_turf, direction)
+			if(isopenturf(beside) && !blocker.CanAtmosPass(beside))
+				sides += beside
+	for(var/turf/side as anything in sides)
+		if(isopenturf(side) && !is_environment_safe_for(basic_mob, side))
+			return TRUE
+	return FALSE
+
+// whether vacuum can't hurt us
+/proc/ai_unbothered_by_vacuum(atom/movable/mover)
+	var/mob/living/basic/basic_mob = mover
+	if(!istype(basic_mob))
+		return FALSE
+	var/mob/living/basic/human/human_mob = basic_mob
+	if(istype(human_mob) && !human_mob.pressure_sealed)
+		return FALSE
+	var/list/needs = basic_mob.habitable_atmos
+	if(basic_mob.unsuitable_atmos_damage && length(needs) && (needs["min_oxy"] || needs["min_tox"] || needs["min_plas"] || needs["min_n2"] || needs["min_co2"]))
+		return FALSE // needs something to breathe
+	return !basic_mob.unsuitable_cold_damage || basic_mob.minimum_survivable_temperature <= TCMB
+
+// whether mover can let the air out, for prying airlocks
+/proc/ai_fine_venting(atom/movable/mover, range = 7)
+	if(!ai_unbothered_by_vacuum(mover))
+		return FALSE
+	for(var/mob/living/ally as anything in get_ai_allies_in_range(mover, range))
+		if(!ai_unbothered_by_vacuum(ally))
+			return FALSE
+	return TRUE

@@ -24,6 +24,10 @@
 	COOLDOWN_DECLARE(fire_cooldown)
 	/// With a player at the controls, how many more shots of their current burst are still to come, which the cooldown lets through
 	var/player_follow_ups_owed = 0
+	/// Extra spread on the AI's first volley at someone, before it's settled its aim
+	var/first_contact_spread = 0
+	/// Until when our shots get first_contact_spread, for the rest of that first volley
+	var/unsettled_until = 0
 
 /datum/component/ranged_attacks/Initialize(
 	casing_type,
@@ -32,7 +36,8 @@
 	burst_shots,
 	burst_intervals = 0.2 SECONDS,
 	cooldown_time,
-	spread = 2
+	spread = 2,
+	first_contact_spread = 0
 )
 	. = ..()
 	if(!isbasicmob(parent))
@@ -43,6 +48,7 @@
 	src.projectile_type = projectile_type
 	src.cooldown_time = cooldown_time
 	src.spread = spread
+	src.first_contact_spread = first_contact_spread
 
 	if(!needs_ammo)
 		return
@@ -73,17 +79,18 @@
 	controller?.set_blackboard_key(BB_BASIC_MOB_SHOTS_FIRED, controller.blackboard[BB_BASIC_MOB_SHOTS_FIRED] + 1)
 	controller?.set_blackboard_key(BB_BASIC_MOB_LAST_FIRED_AT, target)
 	controller?.set_blackboard_key(BB_BASIC_MOB_LAST_FIRED_TIME, world.time)
-	INVOKE_ASYNC(src, PROC_REF(async_fire_ranged_attack), firer, target, modifiers)
+	var/shot_spread = spread + (!firer.client && world.time <= unsettled_until ? first_contact_spread : 0)
+	INVOKE_ASYNC(src, PROC_REF(async_fire_ranged_attack), firer, target, modifiers, shot_spread)
 
 
-/datum/component/ranged_attacks/proc/async_fire_ranged_attack(mob/living/basic/firer, atom/target, modifiers)
+/datum/component/ranged_attacks/proc/async_fire_ranged_attack(mob/living/basic/firer, atom/target, modifiers, shot_spread = spread)
 	var/turf/startloc = get_turf(firer)
 	firer.face_atom(target) // turn to whatever we're shooting at, rather than wherever we happened to be facing
 
 	if(casing_type)
 		var/obj/item/ammo_casing/casing = new casing_type(startloc)
 		playsound(firer, projectile_sound, 100, TRUE)
-		casing.fire_casing(target, firer, null, null, null, null, rand(-spread, spread), firer)
+		casing.fire_casing(target, firer, null, null, null, null, rand(-shot_spread, shot_spread), firer)
 		casing.on_eject(firer)
 
 	else if(projectile_type)
@@ -95,7 +102,7 @@
 		P.yo = target.y - startloc.y
 		P.xo = target.x - startloc.x
 		P.original = target
-		P.preparePixelProjectile(target, firer, spread = rand(-spread, spread))
+		P.preparePixelProjectile(target, firer, spread = rand(-shot_spread, shot_spread))
 		P.fire()
 		alert_ai_to_gunfire(firer, SUPPRESSED_NONE, FALSE, firer) // casings do this themselves
 
@@ -133,6 +140,9 @@
 	var/mob/living/basic/firer = parent
 	var/volley_shots = get_burst_shots() || shots
 	var/volley_interval = burst_shots ? burst_intervals : interval
+	var/datum/ai_controller/controller = firer.ai_controller
+	if(first_contact_spread && controller && (controller.blackboard[BB_BASIC_MOB_LAST_FIRED_AT] != target || world.time - controller.blackboard[BB_BASIC_MOB_LAST_FIRED_TIME] > AI_AIM_SETTLED_MEMORY))
+		unsettled_until = world.time + (volley_shots - 1) * volley_interval // for the duration of this volley minus the first
 	firer.RangedAttack(target)
 	var/turf/fallback_turf = get_turf(target)
 	for(var/shot in 2 to volley_shots)

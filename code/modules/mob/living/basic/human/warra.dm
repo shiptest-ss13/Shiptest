@@ -12,6 +12,7 @@
 	armor_base = /obj/item/clothing/suit/armor/warra
 	dodging = TRUE
 	callout_set = /datum/ai_callout_set/human/vigilitas
+	flashlight_chance = 50
 
 /* ranged guys */
 
@@ -168,4 +169,3 @@
 	projectile_type = null
 	projectile_sound = 'sound/weapons/gun/laser/sharplite-fire_light.ogg'
 	r_hand = /obj/item/gun/energy/sharplite/amperage
-

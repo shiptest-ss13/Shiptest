@@ -32,6 +32,10 @@
 	controller.set_blackboard_key(hiding_location_key, hiding_target)
 
 	var/atom/hit_target = hiding_target || target //Slap it!
+	if(controller.current_movement_target != hit_target)
+		// who we're after changed since we set off, like after downing someone, but we're queued the same, so we'd still be walking to them
+		set_movement_target(controller, hit_target)
+		return AI_BEHAVIOR_INSTANT
 	if(!isturf(basic_mob.loc) || !hit_target.Adjacent(basic_mob))
 		return AI_BEHAVIOR_DELAY
 	basic_mob.melee_attack(hit_target)
@@ -224,7 +228,7 @@
 		return FALSE
 	if(ranged_attack.effective_range && get_dist(basic_mob, spot) > ranged_attack.effective_range)
 		return FALSE // it wouldn't reach
-	var/atom/blocker = get_shot_blocker(get_turf(basic_mob), spot, pass_flags = ranged_attack.get_pass_flags())
+	var/atom/blocker = get_shot_blocker(get_turf(basic_mob), spot, pass_flags = ranged_attack.get_pass_flags()) || get_tile_shot_blocker(spot, ranged_attack.get_pass_flags())
 	if(blocker && shot_wasted_on(basic_mob, blocker, ranged_attack))
 		return FALSE // something's in the way we'd only be shooting
 	// not just up to where we're aiming, as the shot carries on past it

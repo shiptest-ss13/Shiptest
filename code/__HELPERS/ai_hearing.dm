@@ -6,7 +6,7 @@
 	var/heard_distance = get_dist(source, listener)
 	if(through_air && heard_distance > 1) // right by it, we hear it whatever the air, as players do
 		// never quite nothing, as up close we'd still see the flash or feel it through the floor
-		distance *= max(get_sound_pressure_factor(get_turf(source), get_turf(listener)), 0.25)
+		distance *= max(get_sound_pressure_factor(get_turf(source), get_turf(listener)), AI_MINIMUM_SOUND_FACTOR)
 	if(heard_distance > distance)
 		return null
 	for(var/turf/line_turf as anything in get_line(source, listener))
@@ -23,10 +23,10 @@
 	if(!source_air || !listener_air)
 		return 0 // space
 	var/pressure = min(source_air.return_pressure(), listener_air.return_pressure())
-	// thin air only makes things quieter, not inaudible, so it's only near vacuum that sound stops carrying, from the pressure that hurts players down to where players hear nothing
-	if(pressure >= HAZARD_LOW_PRESSURE)
+	// fading from normal air down to where players hear nothing, as /proc/playsound() does for players
+	if(pressure >= ONE_ATMOSPHERE)
 		return 1
-	return max((pressure - SOUND_MINIMUM_PRESSURE) / (HAZARD_LOW_PRESSURE - SOUND_MINIMUM_PRESSURE), 0)
+	return max((pressure - SOUND_MINIMUM_PRESSURE) / (ONE_ATMOSPHERE - SOUND_MINIMUM_PRESSURE), 0)
 
 /proc/get_ai_allies_in_range(mob/living/source, range)
 	. = list()

@@ -168,6 +168,26 @@
 #define BB_BASIC_MOB_WAIT_TURF "BB_basic_wait_turf"
 ///When we next look for somewhere to wait out of sight of someone we can't get to
 #define BB_BASIC_MOB_NEXT_WAIT_SEARCH "BB_basic_next_wait_search"
+///What we're breaking through to get at someone we've no other way to, like a window
+#define BB_BASIC_MOB_SMASH_TARGET "BB_basic_smash_target"
+///Where we're waiting out of sight of someone dug in, and until when
+#define BB_BASIC_MOB_AMBUSH_TURF "BB_basic_ambush_turf"
+#define BB_BASIC_MOB_AMBUSH_UNTIL "BB_basic_ambush_until"
+///When we'd next set an ambush, after the last
+#define BB_BASIC_MOB_NEXT_AMBUSH "BB_basic_next_ambush"
+///If TRUE, we climb over things in our way, like sandbags and tables, when there's no way round
+#define BB_BASIC_MOB_CAN_CLIMB "BB_basic_can_climb"
+///How keen we are to be the one who flanks, higher goes first
+#define BB_BASIC_MOB_FLANK_PRIORITY "BB_basic_flank_priority"
+///If TRUE, we stay put while we've a clear shot, rather than moving about between shots
+#define BB_BASIC_MOB_HOLDS_POSITION "BB_basic_holds_position"
+///What we last started climbing, and when, so we give up on a climb that isn't working
+#define BB_BASIC_MOB_CLIMBING "BB_basic_climbing"
+#define BB_BASIC_MOB_CLIMBING_SINCE "BB_basic_climbing_since"
+///When we started waiting on someone we've no way to
+#define BB_BASIC_MOB_UNREACHABLE_SINCE "BB_basic_unreachable_since"
+///Those we gave up on getting to, as list(target = until when we leave them be)
+#define BB_BASIC_MOB_IGNORED_TARGETS "BB_basic_ignored_targets"
 ///What our movement last gave up on finding a way to
 #define BB_BASIC_MOB_NO_PATH_TO "BB_basic_no_path_to"
 ///When our movement gave up on finding a way to BB_BASIC_MOB_NO_PATH_TO, as a world.time

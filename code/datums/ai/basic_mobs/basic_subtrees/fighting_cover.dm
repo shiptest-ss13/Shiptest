@@ -22,8 +22,8 @@
 		if(world.time >= hiding_until)
 			leave_fighting_cover(controller) // we've waited them out long enough, so have another look
 			fighting_cover = null
-	else if(fighting_cover && !cover_between(fighting_cover, target))
-		controller.clear_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF) // they've moved, so it's not covering us from them anymore
+	else if(fighting_cover && !cover_facing(fighting_cover, target))
+		controller.clear_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF) // they've come round it, so it's not covering us from them anymore
 		fighting_cover = null
 	if(fighting_cover)
 		if(get_turf(controller.pawn) != fighting_cover)
@@ -43,7 +43,10 @@
 	if(!entrenched && !recently_hurt && !fights_from_cover_unprovoked)
 		return
 	if(cover_between(our_turf, target) && !blocker)
-		return // already as good as it gets
+		// already as good as it gets, and remember it so you don't immediately wander off
+		controller.set_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF, our_turf)
+		AI_LOG_DECISION(controller, "fighting_cover: already behind cover from [target], fighting from here")
+		return
 	if(world.time < controller.blackboard[BB_BASIC_MOB_NEXT_COVER_SEARCH])
 		return
 	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_COVER_SEARCH, world.time + search_interval)

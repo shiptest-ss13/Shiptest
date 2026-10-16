@@ -193,8 +193,6 @@
 		ai_callout(living_parent, callout)
 		return
 	switch(morale)
-		if(AI_MORALE_WARY)
-			ai_callout(living_parent, AI_CALLOUT_WARY)
 		if(AI_MORALE_EMBOLDENED)
 			ai_callout(living_parent, AI_CALLOUT_EMBOLDENED)
 		if(AI_MORALE_BROKEN)
@@ -206,9 +204,13 @@
 	var/datum/targetting_datum/targetting_datum = living_parent.ai_controller?.blackboard[BB_TARGETTING_DATUM]
 	var/our_side = 1
 	var/their_side = 0
-	for(var/mob/living/someone in view(vision_range, living_parent))
+	var/turf/our_turf = get_turf(living_parent)
+	for(var/mob/living/someone in hearers(vision_range, living_parent)) // only mobs, rather than everything in view
 		if(someone == living_parent || someone.stat != CONSCIOUS)
 			continue
+		var/turf/their_turf = get_turf(someone)
+		if(ai_too_dark_to_see(living_parent, someone, their_turf, get_dist(our_turf, their_turf), vision_range))
+			continue // we can't make them out, whichever side they're on
 		if(living_parent.faction_check_mob(someone))
 			our_side++
 		else if(targetting_datum?.can_attack(living_parent, someone) && is_against_us(someone))

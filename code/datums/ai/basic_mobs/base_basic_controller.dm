@@ -29,7 +29,23 @@
 	movement_delay = basic_mob.cached_multiplicative_slowdown
 
 // goes after target that mob learns about without direct confirmation
+// whether we gave up on getting to them lately, unless they've just shot at us
+/datum/ai_controller/proc/is_ignoring(atom/target)
+	var/ignore_until = LAZYACCESS(blackboard[BB_BASIC_MOB_IGNORED_TARGETS], target)
+	if(!ignore_until || world.time >= ignore_until)
+		return FALSE
+	if(blackboard[BB_BASIC_MOB_SHOT_BY] == target && world.time - blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < 2 SECONDS)
+		return FALSE
+	// a way's opened up, like the window's gone or they've come round it. Only the straight line, as pathing every look would cost too much
+	var/turf/their_turf = get_turf(target)
+	if(their_turf && their_turf.z == pawn.z && get_dist(pawn, their_turf) <= AI_IGNORE_RECHECK_RANGE && can_walk_straight_to(pawn, their_turf))
+		remove_thing_from_blackboard_key(BB_BASIC_MOB_IGNORED_TARGETS, target)
+		return FALSE
+	return TRUE
+
 /datum/ai_controller/proc/learn_of_target(atom/target, turf/seen_at, how)
+	if(how != AI_LEARNED_SHOT && is_ignoring(target))
+		return FALSE // we know there's no getting to them
 	set_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET, target)
 	set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TARGET, target)
 	if(how == AI_LEARNED_TOLD)

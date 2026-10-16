@@ -78,6 +78,7 @@
 
 /datum/ai_planning_subtree/search_lost_target/proc/should_hang_back(datum/ai_controller/controller)
 	if(AI_MORALE_IS(controller, AI_MORALE_WARY))
+		ai_callout(controller.pawn, AI_CALLOUT_WARY) // why we're not going after them
 		return TRUE // an ally just died nearby, so don't walk into whatever got them
 	if(world.time < controller.blackboard[BB_BASIC_MOB_HIDING_FROM_ENTRENCHED_UNTIL])
 		return TRUE // they're dug in behind cover we can't match, so don't walk back into their line of fire

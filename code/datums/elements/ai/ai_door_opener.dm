@@ -33,13 +33,12 @@
 		if(firelock.density && !firelock.welded && !firelock.operating && !DOING_INTERACTION_WITH_TARGET(source, firelock))
 			INVOKE_ASYNC(src, PROC_REF(pry_firelock), source, firelock)
 
-// pry a firelock open, as long as the firelock isnt holding pressure
 /datum/element/ai_door_opener/proc/pry_firelock(mob/living/source, obj/machinery/door/firedoor/firelock)
-	if(firelock.is_holding_pressure())
+	if(firelock.is_holding_pressure() && !ai_fine_venting(source))
 		return
 	if(!do_after(source, 3 SECONDS, firelock))
 		return
-	if(!firelock.density || firelock.welded || firelock.operating || firelock.is_holding_pressure())
+	if(!firelock.density || firelock.welded || firelock.operating || (firelock.is_holding_pressure() && !ai_fine_venting(source)))
 		return // things changed while we were at it
 	firelock.emergency_close_timer = world.time + 6 SECONDS // so it doesn't snap shut again instantly
 	firelock.open()
@@ -52,7 +51,6 @@
 		return // things changed while we were at it
 	door.open(2)
 
-// whether it can force a door open
 /datum/element/ai_door_opener/proc/can_force(obj/machinery/door/door)
 	if(door.welded)
 		return FALSE
