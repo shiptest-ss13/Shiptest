@@ -82,6 +82,13 @@
 	affecting_areas.Cut()
 	return ..()
 
+/obj/machinery/door/firedoor/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if(!density)
+		return TRUE
+	if((flags_1 & ON_BORDER_1) && !(to_dir & dir))
+		return TRUE // an edge firelock only closes off the edge it's on
+	return requester && HAS_TRAIT(requester, TRAIT_AI_OPENS_DOORS) && !welded && !is_holding_pressure()
+
 /obj/machinery/door/firedoor/Bumped(atom/movable/AM)
 	if(panel_open || operating || welded || (machine_stat & NOPOWER))
 		return

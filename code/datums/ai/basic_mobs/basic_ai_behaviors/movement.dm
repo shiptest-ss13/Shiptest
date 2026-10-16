@@ -39,7 +39,7 @@
 	var/best_distance = get_dist(our_turf, target)
 	for(var/direction in GLOB.alldirs)
 		var/turf/next_turf = get_step(our_turf, direction)
-		if(!next_turf || next_turf.is_blocked_turf(TRUE, controller.pawn))
+		if(!next_turf || next_turf.is_blocked_turf(TRUE, controller.pawn) || is_ai_hazard_turf(next_turf))
 			continue
 		var/distance = get_dist(next_turf, target)
 		if(distance > best_distance)
@@ -71,7 +71,7 @@
 	var/atom/target = controller.blackboard[target_key]
 	if(QDELETED(target))
 		return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED
-	if(get_dist(controller.pawn, target) <= range && can_see(controller.pawn, target, range))
+	if(get_dist(controller.pawn, target) <= range && ai_can_see(controller.pawn, target, range))
 		return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_SUCCEEDED
 	return AI_BEHAVIOR_INSTANT // keep closing in
 
@@ -108,7 +108,7 @@
 	var/away_angle = get_angle(target, our_turf)
 	for(var/angle_offset in list(0, 45, -45, 90, -90))
 		var/turf/destination = get_turf_in_angle(away_angle + angle_offset, our_turf, flee_distance)
-		if(!destination || destination == our_turf || destination.density)
+		if(!destination || destination == our_turf || destination.density || is_ai_hazard_turf(destination))
 			continue
 		set_movement_target(controller, destination)
 		return TRUE

@@ -149,7 +149,7 @@
 	var/list/peek_turfs = list()
 	for(var/direction in GLOB.alldirs)
 		var/turf/candidate = get_step(cover, direction)
-		if(!candidate || candidate.is_blocked_turf(TRUE, controller.pawn) || is_doorway(candidate))
+		if(!candidate || candidate.is_blocked_turf(TRUE, controller.pawn) || is_doorway(candidate) || !ai_can_stand_on(controller.pawn, candidate))
 			continue
 		if(!get_shot_blocker(candidate, aim))
 			peek_turfs += candidate

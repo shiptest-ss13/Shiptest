@@ -74,3 +74,29 @@
 	for(var/item_type in slots)
 		if(ispath(item_type, /obj/item/clothing))
 			. += item_type
+
+/proc/spawner_has_jetpack(spawner_type)
+	var/obj/effect/mob_spawn/human/spawner = spawner_type
+	var/datum/outfit/outfit = initial(spawner.outfit)
+	var/back = initial(spawner.back) == -1 && ispath(outfit) ? initial(outfit.back) : initial(spawner.back)
+	return ispath(back, /obj/item/tank/jetpack)
+
+/proc/spawner_is_pressure_sealed(spawner_type)
+	var/obj/effect/mob_spawn/human/spawner = spawner_type
+	var/datum/outfit/outfit = initial(spawner.outfit)
+	var/obj/item/clothing/suit = initial(spawner.suit) == -1 && ispath(outfit) ? initial(outfit.suit) : initial(spawner.suit)
+	var/obj/item/clothing/head = initial(spawner.head) == -1 && ispath(outfit) ? initial(outfit.head) : initial(spawner.head)
+	if(!ispath(suit, /obj/item/clothing) || !ispath(head, /obj/item/clothing))
+		return FALSE
+	return (initial(suit.clothing_flags) & STOPSPRESSUREDAMAGE) && (initial(head.clothing_flags) & STOPSPRESSUREDAMAGE)
+
+// how much a corpse spawner's outfit slows whoever wears it, all its clothes together
+/proc/get_spawner_slowdown(spawner_type)
+	var/static/list/slowdown_by_spawner = list()
+	if(!isnull(slowdown_by_spawner[spawner_type]))
+		return slowdown_by_spawner[spawner_type]
+	var/total = 0
+	for(var/obj/item/clothing/worn as anything in get_spawner_clothing(spawner_type))
+		total += initial(worn.slowdown)
+	slowdown_by_spawner[spawner_type] = total
+	return total

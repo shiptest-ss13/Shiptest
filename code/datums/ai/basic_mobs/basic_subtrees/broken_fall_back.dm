@@ -59,7 +59,7 @@
 		var/best_distance = -1
 		for(var/direction in GLOB.alldirs)
 			var/turf/open/candidate = get_step(nearest_ally, direction)
-			if(!istype(candidate) || candidate.is_blocked_turf(TRUE, living_pawn))
+			if(!istype(candidate) || candidate.is_blocked_turf(TRUE, living_pawn) || !ai_can_stand_on(living_pawn, candidate))
 				continue
 			var/candidate_distance = get_dist(candidate, threat_turf)
 			if(candidate_distance > best_distance)

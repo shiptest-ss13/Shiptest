@@ -25,7 +25,6 @@
 	icon_living = "syndicate_space"
 	minimum_survivable_temperature = 0
 	maximum_survivable_temperature = 1000
-	speed = 4 // a little slower than usual, in a hardsuit
 
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space
 
@@ -186,7 +185,6 @@
 	icon_living = "syndicate_space_knife"
 	minimum_survivable_temperature = 0
 	maximum_survivable_temperature = 1000
-	speed = 4 // a little slower than usual, in a hardsuit
 	projectile_deflect_chance = 0
 
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space
@@ -252,8 +250,8 @@
 	desc = "Wicked knifepoint tracks your every impulse. Clean, black-red armor plate glides across itself, bereft of all sound or resistance."
 	icon_state = "syndicate_stormtrooper_knife"
 	icon_living = "syndicate_stormtrooper_knife"
-	maxHealth = 175
-	health = 175
+	maxHealth = 200
+	health = 200
 	projectile_deflect_chance = 0
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
@@ -266,8 +264,8 @@
 	desc = "Wicked knifepoint tracks your every impulse. Clean, black-red armor plate glides across itself, bereft of all sound or resistance."
 	icon_state = "syndicate_stormtrooper_knife"
 	icon_living = "syndicate_stormtrooper_knife"
-	maxHealth = 175
-	health = 175
+	maxHealth = 200
+	health = 200
 	projectile_deflect_chance = 0
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
@@ -566,7 +564,6 @@
 	habitable_atmos = IMMUNE_ATMOS_REQS
 	minimum_survivable_temperature = 0
 	maximum_survivable_temperature = 1000
-	speed = 4 // a little slower than usual, in a hardsuit
 	burst_shots = 2
 	projectile_sound = 'sound/weapons/gun/pistol/asp.ogg'
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
@@ -606,7 +603,6 @@
 	habitable_atmos = IMMUNE_ATMOS_REQS
 	minimum_survivable_temperature = 0
 	maximum_survivable_temperature = 1000
-	speed = 4 // a little slower than usual, in a hardsuit
 	projectile_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	burst_shots = 1
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/ringneck
@@ -824,41 +820,3 @@
 
 /mob/living/basic/human/ramzi/civilian/runt/flapcap
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour/flapcap
-
-/datum/ai_callout_set/human/ramzi
-	lines = list(
-		AI_CALLOUT_SPOTTED = list("Fresh meat!", "Someone's come to die!", "Intruders! Gut them!"),
-		AI_CALLOUT_TAKING_FIRE = list("Who's shooting?!", "Find that shooter!"),
-		AI_CALLOUT_HURT = list("Is that all you've got?!", "You'll pay for that!", "Argh!"),
-		AI_CALLOUT_TARGET_DOWN = list("They're on the floor!", "One down!", "Weak."),
-		AI_CALLOUT_TARGET_KILLED = list("Too weak to keep breathing.", "Strip them later.", "That's what you get."),
-		AI_CALLOUT_ALLY_DOWN = list("One less share to split.", "Should've been faster.", "They were weak anyway."),
-		AI_CALLOUT_LOST_THEM = list("Where'd the coward go?!", "Running won't save you!"),
-		AI_CALLOUT_FLANKING = list("I'll take them from the side!", "Going around!"),
-		AI_CALLOUT_HOLDING = list("Let them come to us!", "Stay put!"),
-		AI_CALLOUT_SUPPRESSING = list("Light them up!", "Keep their heads down!"),
-		AI_CALLOUT_DEATH_RATTLE = list("Nobody's... taking me alive...", "Heh... at least... I died free...", "Should've... been stronger..."),
-		AI_CALLOUT_RELOADING = list("Reloading!", "Cover me! Or don't, see if I care!"),
-		AI_CALLOUT_HEARD_GUNFIRE = list("Gunfire! Someone wants to die!", "Shots! Go see who's poking around!"),
-		AI_CALLOUT_PUSHING = list("Push in! Kill them!", "Moving up!"),
-		AI_CALLOUT_FALLING_BACK = list("Back off!", "Too close!"),
-		AI_CALLOUT_WARY = list("Watch it, this one bites!", "Stay down, they're no pushover!"),
-		AI_CALLOUT_EMBOLDENED = list("They're breaking! Finish them!", "They're weak! Push!"),
-		AI_CALLOUT_TAUNT = list("Nobody's coming to save you!", "If you can't keep it, it isn't yours!", "Come on, then!", "FUCK YOU!!"),
-		AI_CALLOUT_MELEE = list("Bleed for me!", "I'll gut you!", "Squeal!", "Stay down, meat!"),
-		AI_CALLOUT_BROKEN = list("Screw this, I'm out!", "Every one for themselves!", "I'm not dying for a share!", "Run! They're too strong!"),
-		AI_CALLOUT_RALLIED = list("Fine! Let's finish this!", "Get back here, cowards! We're not done!"),
-	)
-	morale_lines = list(
-		AI_MORALE_BROKEN = list(
-			AI_CALLOUT_HURT = list("Get me out of here!", "Somebody help me, damn it!"),
-			AI_CALLOUT_RELOADING = list("I'm empty! Cover me, damn it!"),
-			AI_CALLOUT_ALLY_DOWN = list("Another one gone! Run!", "They're butchering us!"),
-		),
-		AI_MORALE_EMBOLDENED = list(
-			AI_CALLOUT_TAUNT = list("Who's next?!", "The strong take everything!"),
-		),
-		AI_MORALE_WARY = list(
-			AI_CALLOUT_TAUNT = list("Come out and fight, coward!"),
-		),
-	)

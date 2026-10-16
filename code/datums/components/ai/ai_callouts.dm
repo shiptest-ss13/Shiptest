@@ -4,18 +4,25 @@
 	var/list/lines = list()
 	// variants for morale versions
 	var/list/morale_lines = list()
+	// what tells the group something is said near enough always, the rest less often, as our pool of lines is small and they'd soon wear thin
 	var/list/chances = list(
 		AI_CALLOUT_SPOTTED = 100,
-		AI_CALLOUT_TARGET_KILLED = 100,
-		AI_CALLOUT_SUPPRESSING = 100,
 		AI_CALLOUT_HEARD_GUNFIRE = 100,
-		AI_CALLOUT_FLANKING = 100,
-		AI_CALLOUT_WARY = 100,
-		AI_CALLOUT_EMBOLDENED = 100,
 		AI_CALLOUT_BROKEN = 100,
-		AI_CALLOUT_RALLIED = 100,
-		AI_CALLOUT_TAUNT = 15, // rolled every couple of seconds in a fight, so it's low
-		AI_CALLOUT_MELEE = 20, // every blow, so it's low too
+		AI_CALLOUT_TARGET_KILLED = 75,
+		AI_CALLOUT_FLANKING = 60,
+		AI_CALLOUT_RALLIED = 60,
+		AI_CALLOUT_SUPPRESSING = 50,
+		AI_CALLOUT_WARY = 50,
+		AI_CALLOUT_EMBOLDENED = 50,
+		AI_CALLOUT_TARGET_DOWN = 35,
+		AI_CALLOUT_HOLDING = 35,
+		AI_CALLOUT_PUSHING = 35,
+		AI_CALLOUT_FALLING_BACK = 35,
+		AI_CALLOUT_DEATH_RATTLE = 35,
+		AI_CALLOUT_HURT = 25,
+		AI_CALLOUT_TAUNT = 10, // rolled every couple of seconds in a fight, so it's low
+		AI_CALLOUT_MELEE = 10, // every blow, so it's low too
 	)
 	//chance to say something for events not in chances
 	var/default_chance = 50
@@ -118,7 +125,7 @@
 		return FALSE
 	return controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != FALSE
 
-// whether we know who we're up against: we can see them, or did until a moment ago, see AI_FIGHT_MEMORY
+// whether we know who we're up against, can see them or recently enough to have in memory
 /datum/component/ai_callouts/proc/in_fight()
 	if(sees_target())
 		return TRUE
@@ -130,7 +137,7 @@
 	if(in_fight()) // getting hurt by someone we know about is on_hurt()'s
 		return
 	var/atom/shooter = projectile.firer
-	if(isatom(shooter) && can_see(parent, shooter, hearing_range))
+	if(isatom(shooter) && ai_can_see(parent, shooter, hearing_range))
 		return // or someone else we can see plain as day
 	speak_about(AI_CALLOUT_TAKING_FIRE)
 
@@ -142,12 +149,12 @@
 /datum/component/ai_callouts/proc/on_our_projectile_hit(datum/source, atom/movable/firer, atom/hit_target, angle)
 	SIGNAL_HANDLER
 	// projectiles tell us they've hit before the damage lands, so see how they're doing a moment later
-	if(isliving(hit_target) && !is_ally(hit_target))
+	if(isliving(hit_target) && !is_ally(hit_target) && ai_is_person(hit_target))
 		addtimer(CALLBACK(src, PROC_REF(call_out_downed), WEAKREF(hit_target), REF(hit_target)), 1)
 
 /datum/component/ai_callouts/proc/on_our_melee_hit(datum/source, atom/hit_target, result)
 	SIGNAL_HANDLER
-	if(!isliving(hit_target) || is_ally(hit_target))
+	if(!isliving(hit_target) || is_ally(hit_target) || !ai_is_person(hit_target))
 		return
 	var/mob/living/victim = hit_target
 	if(victim.stat == CONSCIOUS)
@@ -190,7 +197,7 @@
 	var/victim_id = REF(victim)
 	watch_downed_victim(null)
 	var/mob/living/basic/basic_mob = parent
-	if(basic_mob.stat != CONSCIOUS || !can_see(basic_mob, victim, hearing_range))
+	if(basic_mob.stat != CONSCIOUS || !ai_can_see(basic_mob, victim, hearing_range))
 		return
 	INVOKE_ASYNC(src, PROC_REF(call_out_downed), victim_ref, victim_id)
 
@@ -234,27 +241,46 @@
 	// how long a callout goes on cooldown for a group
 	var/static/list/group_line_cooldowns = list(
 		AI_CALLOUT_SPOTTED = 15 SECONDS,
-		AI_CALLOUT_TARGET_DOWN = 10 SECONDS,
-		AI_CALLOUT_TARGET_KILLED = 10 SECONDS,
+		AI_CALLOUT_TARGET_DOWN = 20 SECONDS,
+		AI_CALLOUT_TARGET_KILLED = 20 SECONDS,
 		AI_CALLOUT_ALLY_DOWN = 10 SECONDS,
-		AI_CALLOUT_LOST_THEM = 15 SECONDS,
-		AI_CALLOUT_HOLDING = 20 SECONDS,
-		AI_CALLOUT_SUPPRESSING = 10 SECONDS,
+		AI_CALLOUT_LOST_THEM = 20 SECONDS,
+		AI_CALLOUT_HOLDING = 30 SECONDS,
+		AI_CALLOUT_SUPPRESSING = 20 SECONDS,
 		AI_CALLOUT_RELOADING = 6 SECONDS,
 		AI_CALLOUT_HEARD_GUNFIRE = 15 SECONDS,
-		AI_CALLOUT_FLANKING = 15 SECONDS,
-		AI_CALLOUT_UNSAFE_ENVIRONMENT = 15 SECONDS,
-		AI_CALLOUT_WARY = 15 SECONDS,
-		AI_CALLOUT_EMBOLDENED = 15 SECONDS,
+		AI_CALLOUT_FLANKING = 25 SECONDS,
+		AI_CALLOUT_BAD_AIR = 15 SECONDS,
+		AI_CALLOUT_TOO_HOT = 15 SECONDS,
+		AI_CALLOUT_TOO_COLD = 15 SECONDS,
+		AI_CALLOUT_WARY = 30 SECONDS,
+		AI_CALLOUT_EMBOLDENED = 30 SECONDS,
 		AI_CALLOUT_BROKEN = 6 SECONDS, // a few voices when a group breaks, not every one of them
-		AI_CALLOUT_RALLIED = 15 SECONDS,
-		AI_CALLOUT_PUSHING = 15 SECONDS,
-		AI_CALLOUT_FALLING_BACK = 15 SECONDS,
-		AI_CALLOUT_TAUNT = 12 SECONDS,
+		AI_CALLOUT_RALLIED = 30 SECONDS,
+		AI_CALLOUT_PUSHING = 25 SECONDS,
+		AI_CALLOUT_FALLING_BACK = 25 SECONDS,
+		AI_CALLOUT_TAUNT = 25 SECONDS,
+		AI_CALLOUT_MELEE = 8 SECONDS,
+	)
+	// what we'd only say about people
+	var/static/list/about_people = list(
+		AI_CALLOUT_SPOTTED = TRUE,
+		AI_CALLOUT_LOST_THEM = TRUE,
+		AI_CALLOUT_TAUNT = TRUE,
+		AI_CALLOUT_MELEE = TRUE,
+		AI_CALLOUT_FLANKING = TRUE,
+		AI_CALLOUT_PUSHING = TRUE,
+		AI_CALLOUT_SUPPRESSING = TRUE,
+		AI_CALLOUT_TARGET_DOWN = TRUE,
+		AI_CALLOUT_TARGET_KILLED = TRUE,
 	)
 	var/mob/living/basic/basic_mob = parent
 	if(basic_mob.stat != CONSCIOUS || basic_mob.client)
 		return FALSE
+	if(about_people[event])
+		var/atom/target = basic_mob.ai_controller?.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+		if(target && !ai_is_person(target))
+			return FALSE
 	var/datum/ai_callout_set/callouts = get_ai_callout_set(callout_set)
 	var/lines
 	var/datum/ai_controller/controller = basic_mob.ai_controller
@@ -310,3 +336,12 @@
 		for(var/datum/component/ai_callouts/ally as anything in get_allies_in_earshot())
 			LAZYSET(ally.line_cooldowns, event, world.time + group_cooldown)
 	return TRUE
+
+/// check if the thing is a person/human
+/proc/ai_is_person(atom/thing)
+	if(ismecha(thing))
+		return TRUE
+	var/mob/living/someone = thing
+	if(!istype(someone))
+		return FALSE
+	return ishuman(someone) || istype(someone, /mob/living/basic/human) || someone.client

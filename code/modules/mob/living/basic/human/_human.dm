@@ -15,7 +15,7 @@
 	maxHealth = 100
 	health = 100
 	// about as quick as the hostile simplehumans they replace, which chased at 0.3 seconds a tile
-	speed = 3
+	speed = 1 // a touch quicker than a running player, see RUN_DELAY, so they can be run down, plus whatever our outfit slows us by, see Initialize()
 
 	melee_damage_lower = 10
 	melee_damage_upper = 10
@@ -63,6 +63,8 @@
 	var/list/loot
 	/// If TRUE, we're sealed in a hardsuit: we can walk in space, and its lights are on
 	var/in_hardsuit = FALSE
+	/// If TRUE, immune to low pressure/space. basicmobs don't breathe so this only is fine
+	var/pressure_sealed = FALSE
 
 	/// What the mob's gun fires, if they have one. Use only one of this or projectile_type
 	var/obj/item/ammo_casing/casing_type
@@ -89,8 +91,8 @@
 	var/rapid_melee = 1
 	/// If TRUE, the mob swerves as they close in and sidestep around who they're fighting in melee
 	var/dodging = FALSE
-	/// With dodging, the chance for each step towards our target to swerve instead
-	var/dodge_chance = 30
+	/// With dodging, the chance for each step towards our target to swerve instead. Off by default, as swerving only slows closing in
+	var/dodge_chance = 0
 	/// With dodging, how many times we sidestep between each melee attack
 	var/sidesteps = 1
 	/// If FALSE, the mob never loses their nerve and falls back, however bad it gets
@@ -136,6 +138,13 @@
 
 /mob/living/basic/human/Initialize(mapload)
 	. = ..()
+	// what we wear and carry slows us as much as it would a player: a hardsuit, or a heavy gun held ready, see /obj/item/gun/var/wield_slowdown
+	var/extra_slowdown = mob_spawner ? get_spawner_slowdown(mob_spawner) : 0
+	var/obj/item/gun/gun_type = get_gun_type()
+	if(gun_type)
+		extra_slowdown += initial(gun_type.wield_slowdown)
+	if(extra_slowdown)
+		set_varspeed(speed + extra_slowdown)
 	if(mob_spawner)
 		if(!mob_species)
 			mob_species = pick_weight(species_weights)
@@ -149,6 +158,9 @@
 	if(in_hardsuit)
 		ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 		set_light(4)
+	pressure_sealed = in_hardsuit || minimum_survivable_temperature <= 0 || (mob_spawner && spawner_is_pressure_sealed(mob_spawner))
+	if(mob_spawner && spawner_has_jetpack(mob_spawner))
+		ai_controller?.set_blackboard_key(BB_BASIC_MOB_CAN_CROSS_SPACE, TRUE)
 	if(length(loot))
 		AddElement(/datum/element/death_drops, string_list(loot))
 	setup_blood()
@@ -157,7 +169,14 @@
 	setup_weapon()
 	setup_ai()
 
-// Picks our AI from what we're holding, unless manually defined
+/mob/living/basic/human/Life(seconds_per_tick = SSMOBS_DT, times_fired)
+	. = ..()
+	if(stat == DEAD || pressure_sealed || !isturf(loc))
+		return
+	var/datum/gas_mixture/air = loc.return_air()
+	if((air ? air.return_pressure() : 0) < HAZARD_LOW_PRESSURE)
+		adjustBruteLoss(LOW_PRESSURE_DAMAGE)
+
 /mob/living/basic/human/InitializeAIController()
 	if(!ai_controller)
 		if(noncombatant)
@@ -265,9 +284,35 @@
 		return l_hand
 	return null
 
+// lets them get shoved
+/mob/living/basic/human/attack_hand(mob/living/carbon/human/user, list/modifiers)
+	if(user.a_intent != INTENT_DISARM || stat != CONSCIOUS || user == src)
+		return ..()
+	var/turf/old_turf = loc
+	. = ..()
+	if(stat != CONSCIOUS)
+		return
+	if(loc == old_turf)
+		Stun(1.5 SECONDS) // up against something, so we're sent reeling
+		return
+	if(!has_movespeed_modifier(/datum/movespeed_modifier/shove))
+		add_movespeed_modifier(/datum/movespeed_modifier/shove)
+		addtimer(CALLBACK(src, PROC_REF(clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH)
+
+/mob/living/basic/human/proc/clear_shove_slowdown()
+	remove_movespeed_modifier(/datum/movespeed_modifier/shove)
+
+/mob/living/basic/human/MobBump(mob/bumped)
+	if(!client && !noncombatant)
+		return TRUE
+	return ..()
+
 /mob/living/basic/human/proc/setup_ai()
 	AddElement(/datum/element/ai_door_opener)
-	AddElement(/datum/element/ai_reacts_to_fire)
+	if(!noncombatant)
+		ADD_TRAIT(src, TRAIT_NOMOBSWAP, INNATE_TRAIT)
+		status_flags &= ~CANPUSH
+	AddElement(/datum/element/ai_reacts_to_harm)
 	AddElement(/datum/element/ai_hears_gunfire)
 	AddComponent(/datum/component/ai_morale, morale_breaks)
 	if(isnull(mobility))

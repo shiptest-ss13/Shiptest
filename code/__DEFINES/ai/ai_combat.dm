@@ -88,8 +88,19 @@
 #define AI_CALLOUT_HEARD_GUNFIRE "heard gunfire"
 ///Going around something between it and its target
 #define AI_CALLOUT_FLANKING "flanking"
-///Getting out of air it can't breathe, or heat or cold that's hurting it
-#define AI_CALLOUT_UNSAFE_ENVIRONMENT "unsafe environment"
+///Getting out of air we can't breathe, or vacuum and too little air without a sealed suit
+#define AI_CALLOUT_BAD_AIR "bad air"
+///Getting out of somewhere too hot for us
+#define AI_CALLOUT_TOO_HOT "too hot"
+///Getting out of somewhere too cold for us
+#define AI_CALLOUT_TOO_COLD "too cold"
+
+///The air's no good, or there's next to none of it
+#define AI_ENVIRONMENT_UNBREATHABLE "unbreathable"
+///Hot enough to hurt us
+#define AI_ENVIRONMENT_TOO_HOT "too hot"
+///Cold enough to hurt us
+#define AI_ENVIRONMENT_TOO_COLD "too cold"
 ///Now and then while fighting someone it can see
 #define AI_CALLOUT_TAUNT "taunt"
 ///Now and then as it lands a blow on someone, who's still standing
@@ -115,6 +126,11 @@
 #define GUNFIRE_ALERT_COOLDOWN (2 SECONDS)
 ///Each wall between an AI mob and something it's trying to hear counts as this many more tiles of distance
 #define AI_HEARING_WALL_PENALTY 3
+
+///Below this much light, as from /turf/proc/get_lumcount(), AI only makes someone out up close, see ai_can_see(). The same as shadowpeople count as dark
+#define AI_DARKNESS_THRESHOLD SHADOW_SPECIES_LIGHT_THRESHOLD
+///With at least this see_in_dark, AI sees in the dark as well as the light
+#define AI_NIGHT_VISION 8
 
 ///What AI assumes other people's shots get through, when working out if it's safe somewhere. Lasers that pass glass are the worst case, so glass is never cover. See is_spot_safe_from()
 #define AI_THREAT_SHOT_PASS_FLAGS (PASSTABLE | PASSGLASS | PASSGRILLE)

@@ -38,7 +38,7 @@
  * Note that this can only be used inside the [datum/pathfind][pathfind datum] since it uses variables from said datum
  * If you really want to optimize things, optimize this, cuz this gets called a lot
  */
-#define CAN_STEP(cur_turf, next) (next && !next.density && cur_turf.Adjacent(next) && !(simulated_only && SSpathfinder.space_type_cache[next.type]) && !cur_turf.LinkBlockedWithAccess(next,requester, id) && (next != avoid))
+#define CAN_STEP(cur_turf, next) (next && !next.density && cur_turf.Adjacent(next) && !(simulated_only && SSpathfinder.space_type_cache[next.type] && !(locate(/obj/structure/lattice) in next)) && !cur_turf.LinkBlockedWithAccess(next,requester, id) && (next != avoid) && !(avoid_hazards && is_ai_hazard_turf(next)))
 /// Another helper macro for JPS, for telling when a node has forced neighbors that need expanding
 #define STEP_NOT_HERE_BUT_THERE(cur_turf, dirA, dirB) ((!CAN_STEP(cur_turf, get_step(cur_turf, dirA)) && CAN_STEP(cur_turf, get_step(cur_turf, dirB))))
 
@@ -114,6 +114,8 @@
 	var/simulated_only
 	/// A specific turf we're avoiding, like if a mulebot is being blocked by someone t-posing in a doorway we're trying to get through
 	var/turf/avoid
+	/// If TRUE, we don't route over hazards like chasms or lava
+	var/avoid_hazards = FALSE
 
 /datum/pathfind/New(atom/movable/requester, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid)
 	src.requester = requester
@@ -125,6 +127,8 @@
 	src.mintargetdist = mintargetdist
 	src.simulated_only = simulated_only
 	src.avoid = avoid
+	var/mob/living/living_requester = requester
+	avoid_hazards = istype(living_requester) && living_requester.ai_controller && !living_requester.client
 
 /// The proc you use to run the search, returns a list with the steps to the destination if one is available, or nothing if one couldn't be found
 /datum/pathfind/proc/search()
@@ -333,7 +337,14 @@
 			return TRUE
 
 	for(var/obj/machinery/door/window/iter_windoor in src)
-		if(!iter_windoor.CanAStarPass(ID, actual_dir))
+		if(!iter_windoor.CanAStarPass(ID, actual_dir, requester))
+			return TRUE
+
+	// anything else on an edge of the tile we're leaving that stops us stepping off that way, like a platform, a railing or an edge firelock
+	for(var/obj/iter_border in src)
+		if(!(iter_border.flags_1 & ON_BORDER_1) || istype(iter_border, /obj/structure/window) || istype(iter_border, /obj/machinery/door/window))
+			continue
+		if(!iter_border.CanAStarPass(ID, actual_dir, requester))
 			return TRUE
 
 	var/reverse_dir = get_dir(destination_turf, src)

@@ -124,11 +124,7 @@
 	controller.clear_blackboard_key(BB_BASIC_MOB_FLANK_TURF)
 
 
-/**
- * The nearest spot around target we could get an angle on them from: a clear shot their cover doesn't stop,
- * or round behind them, at least side-on to where we are, with only a door between us, so we can go through it at them.
- * Nowhere straight through whatever's in our way counts, as that's just walking into their line of fire
- */
+// determine if its a good angle to flank
 /datum/ai_planning_subtree/flank/proc/find_angle_on(datum/ai_controller/controller, atom/target, pass_flags)
 	var/mob/living/living_pawn = controller.pawn
 	var/turf/our_turf = get_turf(living_pawn)
@@ -141,7 +137,7 @@
 	var/best_distance = INFINITY
 	for(var/turf/open/candidate in range(angle_search_range, their_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate_distance >= best_distance || candidate_distance > max_flank_distance || get_dist(candidate, their_turf) <= minimum_distance || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate))
+		if(candidate_distance >= best_distance || candidate_distance > max_flank_distance || get_dist(candidate, their_turf) <= minimum_distance || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
 			continue
 		if(cover_between(their_turf, candidate) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
 			continue
@@ -153,7 +149,7 @@
 			if(!round_the_back)
 				continue
 			// and there's a way round that doesn't go right past them, like when they're in an airlock with doors both ends
-			reachable_without_passing_them ||= get_reachable_turfs(our_turf, their_turf, max_flank_distance * 2)
+			reachable_without_passing_them ||= get_reachable_turfs(our_turf, their_turf, max_flank_distance * 2, controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE])
 			if(!reachable_without_passing_them[candidate])
 				continue
 		best_turf = candidate
@@ -161,7 +157,7 @@
 	return best_turf
 
 // every spot we could walk to from start within max_steps without going through avoid, doors and all, as list(turf = TRUE)
-/datum/ai_planning_subtree/flank/proc/get_reachable_turfs(turf/start, turf/avoid, max_steps)
+/datum/ai_planning_subtree/flank/proc/get_reachable_turfs(turf/start, turf/avoid, max_steps, can_cross_space = FALSE)
 	var/list/reachable = list()
 	reachable[start] = TRUE
 	var/list/frontier = list(start)
@@ -170,7 +166,7 @@
 		for(var/turf/from_turf as anything in frontier)
 			for(var/direction in GLOB.cardinals)
 				var/turf/next_turf = get_step(from_turf, direction)
-				if(!next_turf || reachable[next_turf] || next_turf == avoid || !walkable_for_flank(next_turf))
+				if(!next_turf || reachable[next_turf] || next_turf == avoid || !walkable_for_flank(next_turf, can_cross_space))
 					continue
 				reachable[next_turf] = TRUE
 				next_frontier += next_turf
@@ -180,15 +176,15 @@
 	return reachable
 
 // whether we could walk through spot, if we opened any door on it
-/datum/ai_planning_subtree/flank/proc/walkable_for_flank(turf/spot)
-	if(!isopenturf(spot) || spot.density)
-		return FALSE
+/datum/ai_planning_subtree/flank/proc/walkable_for_flank(turf/spot, can_cross_space = FALSE)
+	if(!isopenturf(spot) || spot.density || (!can_cross_space && is_bare_space(spot)))
+		return FALSE // our pathfinding won't take us across space, without something like a jetpack
 	for(var/obj/thing in spot)
 		if(thing.density && !is_door(thing))
 			return FALSE
 	return TRUE
 
-// whether angle_turf still gets us at them, as they move about: no cover between, and nothing but a door in the way, see find_angle_on()
+// whether angle_turf still gets us at them, as they move about
 /datum/ai_planning_subtree/flank/proc/still_an_angle(turf/angle_turf, turf/their_turf, pass_flags)
 	if(cover_between(their_turf, angle_turf))
 		return FALSE

@@ -8,6 +8,9 @@
 	var/swerving = FALSE
 	// cooldown for jinking, so we don't jink every shot
 	COOLDOWN_DECLARE(jink_cooldown)
+	//after swerving or jinking, how long we keep straight on before we will again, so we make ground between them
+	var/straight_run_time = 1.5 SECONDS
+	COOLDOWN_DECLARE(straight_run)
 
 /datum/component/ai_dodging/Initialize(dodge_chance = 30, sidesteps = 1, jink_chance = 0)
 	. = ..()
@@ -28,13 +31,21 @@
 
 /datum/component/ai_dodging/proc/on_pre_move(mob/living/basic/source, atom/newloc)
 	SIGNAL_HANDLER
-	if(swerving || source.moving_diagonally || !isturf(source.loc) || !isturf(newloc) || !prob(dodge_chance))
+	if(swerving || source.moving_diagonally || !isturf(source.loc) || !isturf(newloc) || !COOLDOWN_FINISHED(src, straight_run) || !prob(dodge_chance))
 		return NONE
 	var/atom/target = source.ai_controller?.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(QDELETED(target) || source.Adjacent(target) || get_dist(newloc, target) >= get_dist(source, target))
 		return NONE // only while we're closing in on them
 	var/move_dir = get_dir(source.loc, newloc)
-	return dodge_to(get_step(source.loc, turn(move_dir, pick(45, -45)))) ? COMPONENT_MOVABLE_BLOCK_PRE_MOVE : NONE // if we couldn't swerve that way, we just carry on
+	var/our_distance = get_dist(source, target)
+	for(var/angle in shuffle(list(45, -45)))
+		var/turf/swerve_spot = get_step(source.loc, turn(move_dir, angle))
+		if(!swerve_spot || get_dist(swerve_spot, target) >= our_distance)
+			continue // a swerve that doesn't get us any closer only slows us down
+		if(dodge_to(swerve_spot))
+			COOLDOWN_START(src, straight_run, straight_run_time)
+			return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
+	return NONE // if we couldn't swerve, we just carry on
 
 /datum/component/ai_dodging/proc/queue_sidesteps(atom/target, window)
 	if(sidesteps > 1)
@@ -59,7 +70,7 @@
 // jinks to one side when we're shot, across the line of fire, so the next shot's more likely to miss
 /datum/component/ai_dodging/proc/on_shot(mob/living/basic/source, obj/projectile/projectile)
 	SIGNAL_HANDLER
-	if(!jink_chance || !COOLDOWN_FINISHED(src, jink_cooldown) || !prob(jink_chance))
+	if(!jink_chance || !COOLDOWN_FINISHED(src, jink_cooldown) || !COOLDOWN_FINISHED(src, straight_run) || !prob(jink_chance))
 		return
 	var/turf/shot_from = get_turf(projectile.starting)
 	if(!shot_from || !isturf(source.loc) || source.stat != CONSCIOUS || source.incapacitated())
@@ -71,8 +82,11 @@
 	var/shot_dir = get_dir(shot_from, source)
 	if(!shot_dir)
 		return
-	for(var/angle in shuffle(list(90, -90)) + shuffle(list(45, -45)))
+	// if we can't go straight across, we go across and forward if we're closing in to hit them, or across and back if we fight from range
+	var/list/diagonals = source.GetComponent(/datum/component/ranged_attacks) ? list(45, -45) : list(135, -135)
+	for(var/angle in shuffle(list(90, -90)) + shuffle(diagonals))
 		if(dodge_to(get_step(source, turn(shot_dir, angle))))
+			COOLDOWN_START(src, straight_run, straight_run_time)
 			break
 
 // Returns TRUE if we dodge successfully (nothing blocked us)
@@ -80,8 +94,10 @@
 	var/mob/living/basic/basic_mob = parent
 	if(!spot || (locate(/mob/living) in spot))
 		return FALSE
-	if(spot.is_blocked_turf(TRUE, basic_mob))
+	if(spot.is_blocked_turf(TRUE, basic_mob) || is_ai_hazard_turf(spot))
 		return FALSE // or a diagonal dodge into a wall would still take its first half, like a step back the way we came in a corridor
 	swerving = TRUE
+	if(basic_mob.ai_controller)
+		basic_mob.set_glide_size(DELAY_TO_GLIDE_SIZE(basic_mob.ai_controller.movement_delay)) // as smooth as our walking, see /datum/ai_movement/jps
 	. = basic_mob.Move(spot, get_dir(basic_mob, spot))
 	swerving = FALSE

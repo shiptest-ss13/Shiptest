@@ -1,7 +1,8 @@
 /// The subsystem used to tick [/datum/ai_movement] instances. Handling the movement of individual AI instances
 PROCESSING_SUBSYSTEM_DEF(ai_movement)
 	name = "AI movement"
-	flags = SS_KEEP_TIMING|SS_BACKGROUND
+	// every tick, like player input, see SSinput, so AI steps land as evenly as a player's and glide as smoothly
+	flags = SS_TICKER|SS_KEEP_TIMING
 	priority = FIRE_PRIORITY_NPC_MOVEMENT
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 	init_order = INIT_ORDER_AI_MOVEMENT

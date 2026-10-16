@@ -3,6 +3,8 @@
  */
 /datum/ai_movement/jps
 	max_pathing_attempts = 4
+	//this close, with nothing in the way, we step straight at where we're going rather than pathing, see try_direct_step()
+	var/direct_step_range = 8
 
 ///Put your movement behavior in here!
 /datum/ai_movement/jps/process(seconds_per_tick)
@@ -10,9 +12,12 @@
 		if(!controller.able_to_run())
 			stop_moving_towards(controller)
 			continue
-		if(!COOLDOWN_FINISHED(controller, movement_cooldown))
+		var/step_due = controller.movement_cooldown
+		if(step_due > world.time)
 			continue
-		COOLDOWN_START(controller, movement_cooldown, controller.movement_delay)
+		// the next step from when this one was due, not from now, as we only get a look in every so often, and rounding up to that every step
+		// had us moving a good deal slower than our speed. Unless we've been stood a while, as we'd make it up in a dash
+		controller.movement_cooldown = (world.time - step_due <= controller.movement_delay ? step_due : world.time) + controller.movement_delay
 
 		var/atom/movable/movable_pawn = controller.pawn
 		if(!isturf(movable_pawn.loc)) //No moving if not on a turf
@@ -33,17 +38,29 @@
 		if(AI_IN_RANGE(movable_pawn, controller.current_movement_target, minimum_distance))
 			continue
 
+		if(try_direct_step(controller, movable_pawn))
+			continue
+
 		var/generate_path = FALSE // set to TRUE when we either have no path, or we failed a step
+		var/turf/blocked_turf // where someone's standing in our way, like an ally in a corridor, so we look for a way round them
 		if(length(controller.movement_path))
 			var/turf/next_step = controller.movement_path[1]
 			var/turf/old_turf = get_turf(movable_pawn)
-			movable_pawn.Move(next_step)
+			take_step(controller, movable_pawn, next_step)
 			var/turf/new_turf = get_turf(movable_pawn)
 			if(new_turf == next_step)
 				controller.movement_path.Cut(1,2)
+				controller.pathing_attempts = 0
+				COOLDOWN_RESET(controller, repath_cooldown)
 			else if(new_turf == old_turf || get_dist(new_turf, next_step) > 1)
 				generate_path = TRUE
-			// otherwise we went somewhere else but are still right by our next step, like swerving while dodging, so carry on from here
+				if(new_turf == old_turf)
+					for(var/mob/living/blocker in next_step)
+						if(blocker.density && blocker != controller.current_movement_target)
+							blocked_turf = next_step
+							break
+			else if(length(controller.movement_path) >= 2 && new_turf.Adjacent(controller.movement_path[2]))
+				controller.movement_path.Cut(1,2)
 		else
 			generate_path = TRUE
 
@@ -52,6 +69,9 @@
 				continue
 			controller.pathing_attempts++
 			if(controller.pathing_attempts >= max_pathing_attempts)
+				AI_LOG_DECISION(controller, "movement: no way to [controller.current_movement_target] at [AREACOORD(controller.current_movement_target)] after [max_pathing_attempts] tries, giving up on what we were doing")
+				controller.set_blackboard_key(BB_BASIC_MOB_NO_PATH_TO, controller.current_movement_target)
+				controller.set_blackboard_key(BB_BASIC_MOB_NO_PATH_SINCE, world.time)
 				controller.CancelActions()
 				continue
 
@@ -60,11 +80,58 @@
 			controller.calculating_path = TRUE
 			// a tile away but out of reach, like with a wall or window between, so find our way right to them, stopping once we can reach them
 			var/path_distance = (minimum_distance == 1 && get_dist(movable_pawn, controller.current_movement_target) <= 1) ? 0 : minimum_distance
-			INVOKE_ASYNC(src, PROC_REF(calculate_path), controller, controller.current_movement_target, path_distance)
+			// if someone's in our way, a way round them. If there isn't one, we wait behind them until they move or we run out of tries and give up
+			INVOKE_ASYNC(src, PROC_REF(calculate_path), controller, controller.current_movement_target, path_distance, blocked_turf)
 
-/// Works out a path for controller to target in the background, using it if they're still headed there once it's done
-/datum/ai_movement/jps/proc/calculate_path(datum/ai_controller/controller, atom/target, minimum_distance)
-	var/list/new_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = controller.get_access())
+// if we can go directly go directly
+/datum/ai_movement/jps/proc/try_direct_step(datum/ai_controller/controller, atom/movable/movable_pawn)
+	var/turf/our_turf = get_turf(movable_pawn)
+	var/turf/goal_turf = get_turf(controller.current_movement_target)
+	if(!our_turf || !goal_turf || goal_turf.z != our_turf.z || get_dist(our_turf, goal_turf) > direct_step_range)
+		return FALSE
+	if(!direct_line_clear(controller, movable_pawn, our_turf, goal_turf))
+		return FALSE // something in the way, so we find our way round it
+	var/turf/next_step = get_step_towards(movable_pawn, goal_turf)
+	if(!next_step || (next_step != goal_turf && !direct_line_clear(controller, movable_pawn, next_step, goal_turf)))
+		return FALSE // edge case L shaped things mitigation
+	take_step(controller, movable_pawn, next_step)
+	if(get_turf(movable_pawn) == our_turf)
+		return FALSE
+	controller.movement_path = null // whatever path we had is behind us now
+	controller.pathing_attempts = 0
+	COOLDOWN_RESET(controller, repath_cooldown)
+	return TRUE
+
+// whether we could walk straight from start to finish, used by try_direct_step()
+/datum/ai_movement/jps/proc/direct_line_clear(datum/ai_controller/controller, atom/movable/movable_pawn, turf/start, turf/finish)
+	var/can_cross_space = controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE]
+	var/turf/previous = start
+	for(var/turf/line_turf as anything in get_line(start, finish))
+		if(line_turf == start)
+			continue
+		if(line_turf.is_blocked_turf(TRUE, movable_pawn) || is_ai_hazard_turf(line_turf) || (!can_cross_space && is_bare_space(line_turf)))
+			return FALSE
+		if(line_turf.x != previous.x && line_turf.y != previous.y)
+			var/turf/first_side = locate(line_turf.x, previous.y, line_turf.z)
+			var/turf/second_side = locate(previous.x, line_turf.y, line_turf.z)
+			if(first_side?.is_blocked_turf(TRUE, movable_pawn) && second_side?.is_blocked_turf(TRUE, movable_pawn))
+				return FALSE
+		previous = line_turf
+	return TRUE
+
+// smooth steps, hopefully
+/datum/ai_movement/jps/proc/take_step(datum/ai_controller/controller, atom/movable/movable_pawn, turf/next_step)
+	var/step_dir = get_dir(movable_pawn, next_step)
+	var/step_delay = controller.movement_delay * ((NSCOMPONENT(step_dir) && EWCOMPONENT(step_dir)) ? SQRT_2 : 1)
+	movable_pawn.set_glide_size(DELAY_TO_GLIDE_SIZE(step_delay))
+	movable_pawn.Move(next_step, step_dir)
+	if(get_turf(movable_pawn) != next_step)
+		return FALSE
+	controller.movement_cooldown += step_delay - controller.movement_delay // the extra a diagonal takes
+	return TRUE
+
+/datum/ai_movement/jps/proc/calculate_path(datum/ai_controller/controller, atom/target, minimum_distance, turf/avoid)
+	var/list/new_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = controller.get_access(), simulated_only = !controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE], exclude = avoid)
 	if(QDELETED(controller))
 		return
 	controller.calculating_path = FALSE

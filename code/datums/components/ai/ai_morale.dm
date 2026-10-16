@@ -99,9 +99,11 @@
 	var/mob/living/living_parent = parent
 	if(!isliving(victim) || victim == living_parent || living_parent.stat != CONSCIOUS)
 		return
+	if(!victim.mind && !victim.ai_controller && !isanimal(victim))
+		return // no the fresh spawn corpse isnt a kill
 	if(victim.z != living_parent.z || get_dist(victim, living_parent) > vision_range)
 		return // nowhere near
-	if(living_parent.faction_check_mob(victim) || !can_see(living_parent, victim, vision_range))
+	if(living_parent.faction_check_mob(victim) || !ai_can_see(living_parent, victim, vision_range))
 		return // friendly
 	embolden()
 
@@ -167,7 +169,10 @@
 	var/datum/ai_controller/controller = living_parent.ai_controller
 	if(!controller || living_parent.stat != CONSCIOUS || AI_MORALE_IS(controller, AI_MORALE_BROKEN))
 		return
-	if(outnumber_them())
+	var/list/sides = count_sides()
+	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+	var/anyone_left = sides[2] > 0 || (!QDELETED(target) && !is_downed(target))
+	if(anyone_left && sides[1] > sides[2])
 		set_morale(AI_MORALE_EMBOLDENED, emboldened_duration)
 	else if(AI_MORALE_IS(controller, AI_MORALE_WARY))
 		controller.clear_blackboard_key(BB_BASIC_MOB_MORALE)
@@ -194,10 +199,6 @@
 			ai_callout(living_parent, AI_CALLOUT_EMBOLDENED)
 		if(AI_MORALE_BROKEN)
 			ai_callout(living_parent, AI_CALLOUT_BROKEN, interrupt = TRUE)
-
-/datum/component/ai_morale/proc/outnumber_them()
-	var/list/sides = count_sides()
-	return sides[1] > sides[2]
 
 // counting allies and enemies, including self
 /datum/component/ai_morale/proc/count_sides()

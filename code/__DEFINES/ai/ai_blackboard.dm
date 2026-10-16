@@ -65,6 +65,8 @@
 #define BB_BASIC_MOB_LAST_KNOWN_TIME "BB_basic_last_known_time"
 ///When we last actually had eyes on whoever we were fighting, as a world.time. Unlike BB_BASIC_MOB_LAST_KNOWN_TIME, being told or hearing about them doesn't count, and it outlasts switching targets.
 #define BB_BASIC_MOB_LAST_SAW_ENEMY_TIME "BB_basic_last_saw_enemy_time"
+///Each enemy we've had eyes on, and when we last did, as list(enemy = world.time), so someone ducking in and out of cover isn't news each time
+#define BB_BASIC_MOB_SEEN_ENEMIES "BB_basic_seen_enemies"
 ///TRUE while we can see our current target, FALSE while they're out of sight
 #define BB_BASIC_MOB_TARGET_IN_SIGHT "BB_basic_target_in_sight"
 ///Who BB_BASIC_MOB_LAST_KNOWN_TURF and BB_BASIC_MOB_LAST_KNOWN_TIME are about, so switching targets starts fresh
@@ -77,8 +79,12 @@
 #define BB_BASIC_MOB_TOLD_ABOUT_TARGET "BB_basic_told_about_target"
 ///Who we've already told our allies about, so we only call it out once per target
 #define BB_BASIC_MOB_ALERTED_ABOUT "BB_basic_alerted_about"
-///When we were last shot at, as a world.time, see /datum/element/ai_reacts_to_fire
+///When we were last shot at, as a world.time
 #define BB_BASIC_MOB_LAST_SHOT_TIME "BB_basic_last_shot_time"
+///When anything last hurt us, shots, blows, bites or otherwise, as a world.time
+#define BB_BASIC_MOB_LAST_HURT_TIME "BB_basic_last_hurt_time"
+///TRUE if we can get about in open space, like with a jetpack, so our pathfinding takes us across it
+#define BB_BASIC_MOB_CAN_CROSS_SPACE "BB_basic_can_cross_space"
 ///Where the last shot at us came from
 #define BB_BASIC_MOB_SHOT_FROM "BB_basic_shot_from"
 ///Where we're taking cover. While set, the cover subtree is in charge of where we stand
@@ -124,6 +130,8 @@
 #define BB_BASIC_MOB_NEXT_APPROACH_SEARCH "BB_basic_next_approach_search"
 ///When we can next take a swing at whoever's cornered us while we're running from them
 #define BB_BASIC_MOB_NEXT_LASH_OUT "BB_basic_next_lash_out"
+///Who we're lashing out at, our target or anyone else of theirs right on top of us
+#define BB_BASIC_MOB_LASH_OUT_TARGET "BB_basic_lash_out_target"
 ///Since when our target's been within reach. Null while they're not, so reactions to them getting close can wait a moment
 #define BB_BASIC_MOB_TARGET_ADJACENT_SINCE "BB_basic_target_adjacent_since"
 ///When a gunner next thinks about shoving whoever's right next to us away, to get room to shoot
@@ -154,6 +162,18 @@
 #define BB_BASIC_MOB_NEXT_COVER_SEARCH "BB_basic_next_cover_search"
 ///When we next look for somewhere to hide, after looking and finding nowhere
 #define BB_BASIC_MOB_NEXT_HIDE_SEARCH "BB_basic_next_hide_search"
+///Where we wait out of sight of someone we can't get to, like out in open spac
+#define BB_BASIC_MOB_WAIT_TURF "BB_basic_wait_turf"
+///When we next look for somewhere to wait out of sight of someone we can't get to
+#define BB_BASIC_MOB_NEXT_WAIT_SEARCH "BB_basic_next_wait_search"
+///What our movement last gave up on finding a way to
+#define BB_BASIC_MOB_NO_PATH_TO "BB_basic_no_path_to"
+///When our movement gave up on finding a way to BB_BASIC_MOB_NO_PATH_TO, as a world.time
+#define BB_BASIC_MOB_NO_PATH_SINCE "BB_basic_no_path_since"
+///A safe spot we couldn't find our way to, so we don't keep picking it
+#define BB_BASIC_MOB_BAD_SAFE_TURF "BB_basic_bad_safe_turf"
+///How many times we look for a safe spot before giving up for a while
+#define BB_BASIC_MOB_SAFETY_FAILURES "BB_basic_safety_failures"
 ///How many shots we've fired, ever, so subtrees can count how many since something happened
 #define BB_BASIC_MOB_SHOTS_FIRED "BB_basic_shots_fired"
 ///When we last hit someone in melee

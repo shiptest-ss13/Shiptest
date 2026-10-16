@@ -15,6 +15,8 @@
 /proc/alert_ai_to_gunfire(mob/living/shooter, suppression, is_laser, atom/fired_from)
 	if(!istype(shooter) || suppression >= SUPPRESSED_VERY)
 		return
+	if(!suppression)
+		ai_reveal_in_dark(shooter, 2 SECONDS) // the muzzle flash gives them away, 2 seconds so it doesnt hide between ai thinking ticks
 	// guns say how loud they are. Mobs shooting without one go by what they're firing
 	var/obj/item/gun/gun = fired_from
 	if(!istype(gun))

@@ -11,6 +11,8 @@
 	var/linger_duration = 0
 	//how far away we can see them from, to linger
 	var/linger_range = 9
+	//if we start out in bare space, how far we look for somewhere with footing to call home instead, as we couldn't path back to space
+	var/home_search_range = 7
 
 /datum/ai_planning_subtree/return_home/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
@@ -19,7 +21,10 @@
 		return
 	var/turf/home = controller.blackboard[BB_BASIC_MOB_HOME_TURF]
 	if(!home || home.z != our_turf.z || get_dist(our_turf, home) > give_up_distance)
-		controller.set_blackboard_key(BB_BASIC_MOB_HOME_TURF, our_turf) // first time, or home's somewhere we can't sensibly get back to
+		// first time, or home's somewhere we can't sensibly get back to
+		var/turf/new_home = pick_home(our_turf, controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE])
+		if(new_home)
+			controller.set_blackboard_key(BB_BASIC_MOB_HOME_TURF, new_home)
 		return
 	var/home_distance = get_dist(our_turf, home)
 	if(world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < under_fire_time)
@@ -44,9 +49,22 @@
 	var/mob/living/downed = controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET]
 	if(!downed)
 		return FALSE
-	if(!linger_duration || QDELETED(downed) || world.time - controller.blackboard[BB_BASIC_MOB_DOWNED_AT] >= linger_duration || !can_see(controller.pawn, downed, linger_range))
+	if(!linger_duration || QDELETED(downed) || world.time - controller.blackboard[BB_BASIC_MOB_DOWNED_AT] >= linger_duration || !ai_can_see(controller.pawn, downed, linger_range))
 		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET)
 		controller.clear_blackboard_key(BB_BASIC_MOB_DOWNED_AT)
 		return FALSE
 	controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_DOWNED_TARGET)
 	return TRUE
+
+/datum/ai_planning_subtree/return_home/proc/pick_home(turf/our_turf, can_cross_space = FALSE)
+	if(can_cross_space || !is_bare_space(our_turf))
+		return our_turf
+	var/turf/best_turf
+	var/best_distance = INFINITY
+	for(var/turf/open/candidate in range(home_search_range, our_turf))
+		var/candidate_distance = get_dist(our_turf, candidate)
+		if(candidate_distance >= best_distance || candidate.density || is_bare_space(candidate))
+			continue
+		best_turf = candidate
+		best_distance = candidate_distance
+	return best_turf

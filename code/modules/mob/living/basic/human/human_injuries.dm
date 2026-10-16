@@ -135,7 +135,8 @@
 	if(hit.armor_flag == MELEE && prob(25 + hit.damage * 2) && prob(hit.damage * 2))
 		bloody_clothes(hit.zone)
 	if(hit.armor_flag == BULLET || hit.sharpness)
-		spray_blood(hit.direction || pick(GLOB.alldirs), rand(1, 3))
+		if(prob(amount))
+			spray_blood(hit.direction || pick(GLOB.alldirs), rand(1, 3))
 		bloody_clothes(hit.zone)
 
 // ---------- blood ----------

@@ -37,7 +37,7 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_MOVE_FLYING, ROUNDSTART_TRAIT)
 	AddComponent(/datum/component/swarming)
-	AddElement(/datum/element/ai_reacts_to_fire)
+	AddElement(/datum/element/ai_reacts_to_harm)
 	AddElement(/datum/element/ai_hears_gunfire)
 
 /mob/living/basic/viscerator/death(gibbed)
@@ -45,10 +45,6 @@
 		visible_message(span_danger("[src] is smashed into pieces!"))
 	return ..()
 
-/**
- * Viscerators: a swarm of blades that goes after whoever it sees, or hears shooting, or shoots it, and hunts down anyone who slips out of sight.
- * No cover, morale or callouts, being machines. They can't open doors
- */
 /datum/ai_controller/basic_controller/viscerator
 	blackboard = list(
 		BB_TARGETTING_DATUM = new /datum/targetting_datum/basic,

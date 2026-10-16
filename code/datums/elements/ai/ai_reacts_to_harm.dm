@@ -1,17 +1,29 @@
-//for reacting to getting shot at, even from out of sight
-/datum/element/ai_reacts_to_fire
+//for reacting to getting shot at, even from out of sight, and to getting hurt at all, like something mauling us
+/datum/element/ai_reacts_to_harm
 
-/datum/element/ai_reacts_to_fire/Attach(datum/target)
+/datum/element/ai_reacts_to_harm/Attach(datum/target)
 	. = ..()
 	if(!ismob(target))
 		return ELEMENT_INCOMPATIBLE
 	RegisterSignal(target, COMSIG_ATOM_BULLET_ACT, PROC_REF(on_shot))
+	RegisterSignal(target, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(on_hurt))
 
-/datum/element/ai_reacts_to_fire/Detach(datum/source, ...)
+/datum/element/ai_reacts_to_harm/Detach(datum/source, ...)
 	. = ..()
-	UnregisterSignal(source, COMSIG_ATOM_BULLET_ACT)
+	UnregisterSignal(source, list(COMSIG_ATOM_BULLET_ACT, COMSIG_MOB_APPLY_DAMAGE))
 
-/datum/element/ai_reacts_to_fire/proc/on_shot(mob/source, obj/projectile/projectile)
+// anything hurting us wakes us up and has us look about for whoever it is straight away
+/datum/element/ai_reacts_to_harm/proc/on_hurt(mob/source, damage, damagetype, def_zone)
+	SIGNAL_HANDLER
+	var/datum/ai_controller/controller = source.ai_controller
+	if(!controller || damage <= 0 || source.stat == DEAD)
+		return
+	controller.set_blackboard_key(BB_BASIC_MOB_LAST_HURT_TIME, world.time)
+	controller.clear_blackboard_key(BB_BASIC_MOB_NEXT_THREAT_CHECK)
+	if(controller.ai_status == AI_STATUS_IDLE)
+		controller.set_ai_status(AI_STATUS_ON)
+
+/datum/element/ai_reacts_to_harm/proc/on_shot(mob/source, obj/projectile/projectile)
 	SIGNAL_HANDLER
 	var/datum/ai_controller/controller = source.ai_controller
 	if(!controller || !projectile.starting)
@@ -25,7 +37,7 @@
 	controller.set_blackboard_key(BB_BASIC_MOB_SHOT_BY, shooter)
 	go_after_shooter(source, controller, shooter, shot_from)
 
-/datum/element/ai_reacts_to_fire/proc/go_after_shooter(mob/source, datum/ai_controller/controller, atom/shooter, turf/shot_from)
+/datum/element/ai_reacts_to_harm/proc/go_after_shooter(mob/source, datum/ai_controller/controller, atom/shooter, turf/shot_from)
 	var/atom/current_target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(current_target == shooter)
 		if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == FALSE)
@@ -37,5 +49,5 @@
 	var/datum/targetting_datum/targetting_datum = controller.blackboard[BB_TARGETTING_DATUM]
 	if(!targetting_datum?.can_attack(source, shooter))
 		return
-	AI_LOG_DECISION(controller, "ai_reacts_to_fire: [shooter] shot us from [shot_from], going after them")
+	AI_LOG_DECISION(controller, "ai_reacts_to_harm: [shooter] shot us from [shot_from], going after them")
 	controller.learn_of_target(shooter, shot_from, AI_LEARNED_SHOT)

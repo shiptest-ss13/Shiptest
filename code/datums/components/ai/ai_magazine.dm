@@ -155,9 +155,11 @@
 		capacity = ballistic_gun.magazine?.max_ammo || 0
 	else if(istype(gun, /obj/item/gun/energy))
 		var/obj/item/gun/energy/energy_gun = gun
-		var/obj/item/ammo_casing/energy/shot = length(energy_gun.ammo_type) ? energy_gun.ammo_type[energy_gun.select] : null
-		if(energy_gun.cell && shot?.e_cost)
-			capacity = round(energy_gun.cell.maxcharge / shot.e_cost)
+		var/highest_cost = 0
+		for(var/obj/item/ammo_casing/energy/shot in energy_gun.ammo_type)
+			highest_cost = max(highest_cost, shot.e_cost)
+		if(energy_gun.cell && highest_cost)
+			capacity = round(energy_gun.cell.maxcharge / highest_cost)
 	qdel(gun)
 	capacity_by_type[gun_type] = capacity
 	return capacity

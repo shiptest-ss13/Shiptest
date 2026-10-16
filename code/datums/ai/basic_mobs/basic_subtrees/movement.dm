@@ -32,7 +32,7 @@
 	if(distance < closest)
 		call_out_move(controller, AI_CALLOUT_FALLING_BACK)
 		controller.queue_behavior(/datum/ai_behavior/step_away, target_key)
-	else if(distance > furthest || !can_see(controller.pawn, target, furthest))
+	else if(distance > furthest || !ai_can_see(controller.pawn, target, furthest))
 		if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != FALSE)
 			call_out_move(controller, AI_CALLOUT_PUSHING) // walking up on someone we can't see isn't much of a push
 		controller.queue_behavior(/datum/ai_behavior/pursue_to_range, target_key, furthest)

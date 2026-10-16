@@ -21,6 +21,10 @@
 			var/atom/second_side = get_tile_shot_blocker(locate(previous.x, sample.y, start.z), pass_flags)
 			if(first_side && second_side)
 				return first_side
+		else
+			var/atom/edge_door = get_edge_door_blocker(previous, sample, pass_flags)
+			if(edge_door)
+				return edge_door
 		previous = sample
 		if(sample == start || sample == finish)
 			continue
@@ -39,6 +43,18 @@
 		if(!thing.density || (thing.flags_1 & ON_BORDER_1) || (thing.pass_flags_self & pass_flags) || is_cover(thing))
 			continue
 		return thing
+	return null
+
+// a closed door on the edge between from_turf and to_turf that'd stop the shot, like an edge firelock. other edge things are cover, see get_tile_shot_blocker()
+/proc/get_edge_door_blocker(turf/from_turf, turf/to_turf, pass_flags)
+	var/crossing = get_dir(from_turf, to_turf)
+	for(var/obj/machinery/door/door in from_turf)
+		if(door.density && (door.flags_1 & ON_BORDER_1) && (door.dir & crossing) && (door.opacity || !(pass_flags & PASSGLASS)))
+			return door
+	var/reverse = REVERSE_DIR(crossing)
+	for(var/obj/machinery/door/door in to_turf)
+		if(door.density && (door.flags_1 & ON_BORDER_1) && (door.dir & reverse) && (door.opacity || !(pass_flags & PASSGLASS)))
+			return door
 	return null
 
 /proc/is_spot_safe_from(turf/spot, turf/danger)
@@ -69,7 +85,7 @@
 	var/best_distance = INFINITY
 	for(var/turf/open/candidate in range(range, our_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate == exclude || candidate_distance >= best_distance || candidate.is_blocked_turf(TRUE, mover) || is_doorway(candidate))
+		if(candidate == exclude || candidate_distance >= best_distance || candidate.is_blocked_turf(TRUE, mover) || is_doorway(candidate) || !ai_can_stand_on(mover, candidate))
 			continue
 		if(!is_spot_safe_from(candidate, danger) || !can_walk_straight_to(mover, candidate))
 			continue
@@ -114,6 +130,8 @@
 /proc/worth_shooting_through(mob/living/shooter, atom/blocker, obj/projectile/projectile_type)
 	if(!isobj(blocker) || !projectile_type)
 		return FALSE // walls and the like, or we're not firing anything that'd break it
+	if(is_door(blocker))
+		return FALSE // there's a quicker way through a door than shooting it down, see /datum/element/ai_door_opener
 	var/obj/blocking_obj = blocker
 	var/damage_per_shot = initial(projectile_type.damage)
 	if(damage_per_shot <= 0 || (blocking_obj.resistance_flags & INDESTRUCTIBLE))
@@ -156,7 +174,7 @@
 	var/best_distance = INFINITY
 	for(var/turf/open/candidate in range(range, our_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate_distance >= best_distance || ally_turfs[candidate] || candidate.is_blocked_turf(TRUE, fighter) || is_doorway(candidate) || !cover_between(candidate, threat))
+		if(candidate_distance >= best_distance || ally_turfs[candidate] || candidate.is_blocked_turf(TRUE, fighter) || is_doorway(candidate) || !cover_between(candidate, threat) || !ai_can_stand_on(fighter, candidate))
 			continue
 		if(!can_walk_straight_to(fighter, candidate))
 			continue
@@ -205,3 +223,33 @@
 	var/atom/blocker = get_shot_blocker(start, finish, pass_flags = get_ai_shot_pass_flags(shooter))
 	blockers_by_shooter[shooter_ref] = list(world.time, start, finish, blocker ? WEAKREF(blocker) : null)
 	return blocker
+
+/proc/ai_can_see(atom/viewer, atom/target, range = 9)
+	var/turf/viewer_turf = get_turf(viewer)
+	var/turf/target_turf = get_turf(target)
+	if(!viewer_turf || !target_turf || viewer_turf.z != target_turf.z)
+		return FALSE
+	var/distance = get_dist(viewer_turf, target_turf)
+	if(distance > range)
+		return FALSE
+	if(viewer_turf == target_turf)
+		return TRUE
+	if(distance > max(2, round(range / 3)) && target_turf.get_lumcount() < AI_DARKNESS_THRESHOLD && !ai_revealed_in_dark(target))
+		// only for those with human eyes, as robots like hivebots and beasts like carp get by in the dark, and plenty of planets are dark a lot of the time
+		var/mob/living/basic/human/human_viewer = viewer
+		if(istype(human_viewer) && human_viewer.see_in_dark < AI_NIGHT_VISION)
+			return FALSE // too dark to make them out from here
+	return viewer in hearers(range, target)
+
+
+GLOBAL_LIST_EMPTY(ai_revealed_in_dark)
+
+/proc/ai_reveal_in_dark(atom/thing, duration)
+	if(length(GLOB.ai_revealed_in_dark) > 200) // forget those long since hidden again, so this doesn't grow forever
+		for(var/old_ref in GLOB.ai_revealed_in_dark)
+			if(GLOB.ai_revealed_in_dark[old_ref] < world.time)
+				GLOB.ai_revealed_in_dark -= old_ref
+	GLOB.ai_revealed_in_dark[REF(thing)] = world.time + duration
+
+/proc/ai_revealed_in_dark(atom/thing)
+	return GLOB.ai_revealed_in_dark[REF(thing)] > world.time

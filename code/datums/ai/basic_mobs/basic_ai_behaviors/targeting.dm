@@ -14,8 +14,8 @@
 	var/our_vision_range = controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || vision_range
 	potential_targets = hearers(our_vision_range, controller.pawn) - living_mob //Remove self, so we don't suicide
 
-	for(var/HM in typecache_filter_list(range(our_vision_range, living_mob), hostile_machines)) //Can we see any hostile machines?
-		if(can_see(living_mob, HM, our_vision_range))
+	for(var/HM in typecache_filter_list(range(our_vision_range, living_mob), hostile_machines))
+		if(ai_can_see(living_mob, HM, our_vision_range))
 			potential_targets += HM
 
 	if(!potential_targets.len)

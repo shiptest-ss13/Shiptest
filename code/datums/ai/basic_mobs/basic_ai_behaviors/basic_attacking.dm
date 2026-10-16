@@ -99,14 +99,17 @@
 	var/atom/hiding_target = targetting_datum.find_hidden_mobs(basic_mob, target) //If this is valid, theyre hidden in something!
 	var/atom/final_target = hiding_target ? hiding_target : target
 
-	if(!can_see(basic_mob, final_target, required_distance))
+	// as far as we can see, for those with a longer sight than our attack's usual reach, like marksmen, or they'd spot someone they'd never shoot at
+	if(!ai_can_see(basic_mob, final_target, max(required_distance, controller.blackboard[BB_BASIC_MOB_VISION_RANGE])))
 		return AI_BEHAVIOR_DELAY
 	if(holds_fire_when_blocked && !has_clear_shot(basic_mob, final_target))
 		return AI_BEHAVIOR_DELAY // we can see them, but they're tucked away where we'd only hit the wall
 
 	if((avoid_friendly_fire || controller.blackboard[BB_BASIC_MOB_AVOID_FRIENDLY_FIRE]) && check_friendly_in_path(basic_mob, target, targetting_datum))
-		adjust_position(basic_mob, target)
-		return AI_BEHAVIOR_INSTANT
+		if(COOLDOWN_FINISHED(controller, movement_cooldown))
+			COOLDOWN_START(controller, movement_cooldown, controller.movement_delay)
+			adjust_position(basic_mob, target)
+		return AI_BEHAVIOR_DELAY
 
 	controller.set_blackboard_key(hiding_location_key, hiding_target)
 
@@ -145,7 +148,7 @@
 		var/turf/target_turf = get_step(our_turf, direction)
 		if(isnull(target_turf))
 			continue
-		if(target_turf.is_blocked_turf() || get_dist(target_turf, target) > get_dist(living_pawn, target))
+		if(target_turf.is_blocked_turf() || is_ai_hazard_turf(target_turf) || get_dist(target_turf, target) > get_dist(living_pawn, target))
 			continue
 		possible_turfs += target_turf
 
@@ -229,21 +232,32 @@
 
 
 /proc/ai_lash_out(datum/ai_controller/controller, interval = 2 SECONDS)
-	if(!(controller.get_conditions() & AI_CONDITION_TARGET_ADJACENT) || !isturf(controller.pawn.loc))
+	if(!isturf(controller.pawn.loc) || world.time < controller.blackboard[BB_BASIC_MOB_NEXT_LASH_OUT])
 		return FALSE
-	if(!ai_target_close_for(controller, 1.5 SECONDS))
-		return FALSE // give them a moment, so someone closing in with a melee weapon gets to use it
-	if(world.time < controller.blackboard[BB_BASIC_MOB_NEXT_LASH_OUT])
-		return FALSE
-	var/queued
-	if(controller.blackboard[BB_BASIC_MOB_SHOVES_WHEN_CORNERED] && isliving(controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]))
-		queued = controller.queue_behavior(/datum/ai_behavior/shove_away, BB_BASIC_MOB_CURRENT_TARGET)
+	var/atom/lash_target
+	if(controller.get_conditions() & AI_CONDITION_TARGET_ADJACENT)
+		if(!ai_target_close_for(controller, 1 SECONDS))
+			return FALSE // give them a moment, so someone closing in with a melee weapon gets to use it
+		lash_target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	else
-		queued = controller.queue_behavior(/datum/ai_behavior/basic_melee_attack, BB_BASIC_MOB_CURRENT_TARGET, BB_TARGETTING_DATUM, BB_BASIC_MOB_CURRENT_TARGET_HIDING_LOCATION)
+		// not who we're running from, but someone else of theirs right on top of us, so them
+		var/datum/targetting_datum/targetting_datum = controller.blackboard[BB_TARGETTING_DATUM]
+		for(var/mob/living/someone in orange(1, controller.pawn))
+			if(someone.Adjacent(controller.pawn) && targetting_datum?.can_attack(controller.pawn, someone))
+				lash_target = someone
+				break
+	if(!lash_target)
+		return FALSE
+	controller.set_blackboard_key(BB_BASIC_MOB_LASH_OUT_TARGET, lash_target)
+	var/queued
+	if(controller.blackboard[BB_BASIC_MOB_SHOVES_WHEN_CORNERED] && isliving(lash_target))
+		queued = controller.queue_behavior(/datum/ai_behavior/shove_away, BB_BASIC_MOB_LASH_OUT_TARGET)
+	else
+		queued = controller.queue_behavior(/datum/ai_behavior/basic_melee_attack, BB_BASIC_MOB_LASH_OUT_TARGET, BB_TARGETTING_DATUM, BB_BASIC_MOB_CURRENT_TARGET_HIDING_LOCATION)
 	if(!queued)
 		return FALSE
 	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_LASH_OUT, world.time + interval)
-	AI_LOG_DECISION(controller, "lashing out at [controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]], who's right on top of us")
+	AI_LOG_DECISION(controller, "lashing out at [lash_target], who's right on top of us")
 	return TRUE
 
 /proc/ai_target_close_for(datum/ai_controller/controller, duration)

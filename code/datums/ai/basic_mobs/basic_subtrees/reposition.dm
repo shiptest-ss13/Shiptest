@@ -5,9 +5,9 @@
 	blocking_conditions = AI_CONDITION_TARGET_ADJACENT | AI_CONDITION_FLANKING | AI_CONDITION_SEEKING_SAFETY | AI_CONDITION_FALLING_BACK
 	var/target_key = BB_BASIC_MOB_CURRENT_TARGET
 	//how long we stay put between moves, picked at random between these so a group doesn't all move at once, for each AI_MOBILITY_ from low to high
-	var/list/intervals = list(list(3 SECONDS, 5 SECONDS), list(1 SECONDS, 2.5 SECONDS), list(0.5 SECONDS, 1.2 SECONDS))
+	var/list/intervals = list(list(2.5 SECONDS, 4 SECONDS), list(1 SECONDS, 2.5 SECONDS), list(0.5 SECONDS, 1.2 SECONDS))
 	//similar to intervals, but while we're being shot at out in the open, so we don't stand there and take it
-	var/list/under_fire_intervals = list(list(1.5 SECONDS, 2.5 SECONDS), list(0.6 SECONDS, 1.2 SECONDS), list(0.4 SECONDS, 0.8 SECONDS))
+	var/list/under_fire_intervals = list(list(1.2 SECONDS, 2 SECONDS), list(0.6 SECONDS, 1.2 SECONDS), list(0.4 SECONDS, 0.8 SECONDS))
 	//gow far we move each time, at most, for each AI_MOBILITY_ from low to high
 	var/list/step_ranges = list(2, 2, 3)
 	//how long being shot counts as being under fire
@@ -86,7 +86,7 @@
 	var/to_target_y = their_turf.y - our_turf.y
 	var/to_target_length = max(1, sqrt(to_target_x ** 2 + to_target_y ** 2))
 	for(var/turf/open/candidate in range(step_ranges[get_mobility(controller)], our_turf))
-		if(candidate == our_turf || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate))
+		if(candidate == our_turf || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
 			continue
 		var/candidate_distance = get_dist(candidate, their_turf)
 		if(candidate_distance < fight_range[1] || candidate_distance > fight_range[2])
@@ -94,9 +94,9 @@
 		if(!can_walk_straight_to(living_pawn, candidate) || get_shot_blocker(candidate, their_turf, pass_flags = pass_flags) || ally_in_the_way(living_pawn, candidate, target))
 			continue
 		spots += candidate
-		// how much of the step is towards or away from them, rather than across: 0 for straight across, 1 for straight at or away
 		var/step_x = candidate.x - our_turf.x
 		var/step_y = candidate.y - our_turf.y
+		// how directly this step goes towards or away from them: 0 is a pure sidestep across their line of fire, 1 is straight at or away from them
 		var/along = abs(step_x * to_target_x + step_y * to_target_y) / (to_target_length * max(1, sqrt(step_x ** 2 + step_y ** 2)))
 		if(along <= 0.5)
 			sideways_spots += candidate
@@ -114,7 +114,7 @@
 	var/nearest_distance = INFINITY
 	for(var/turf/open/candidate in range(wider_search_range, our_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate == our_turf || candidate == their_turf || candidate_distance > nearest_distance || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate))
+		if(candidate == our_turf || candidate == their_turf || candidate_distance > nearest_distance || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
 			continue
 		if(get_shot_blocker(candidate, their_turf, pass_flags = pass_flags) || ally_in_the_way(living_pawn, candidate, target))
 			continue

@@ -17,6 +17,8 @@
 	var/sweep_spots = 3
 	//how long we stop and look around at each spot
 	var/sweep_pause_time = 3 SECONDS
+	//how long after losing sight of someone we saw we carry on as we were, without calling it or starting a search, as they've likely only ducked out of view
+	var/lost_grace = 3 SECONDS
 
 /datum/ai_planning_subtree/search_lost_target/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
@@ -26,11 +28,21 @@
 	if((controller.get_conditions() & AI_CONDITION_IN_COVER) || world.time < controller.blackboard[BB_BASIC_MOB_TRADING_FIRE_UNTIL])
 		return SUBTREE_RETURN_FINISH_PLANNING
 	var/style = pick_style(controller)
+	// those who fight up close go right to where they last saw them, like the corner they went round, as watching it from a few tiles off does us no good
+	var/go_there = !can_see_spot(controller, last_known_turf) || (!controller.pawn.GetComponent(/datum/component/ranged_attacks) && get_turf(controller.pawn) != last_known_turf)
+	var/last_saw_them = controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME]
+	if(!isnull(last_saw_them) && world.time - last_saw_them < lost_grace)
+		// they've only just slipped out of view, so no fuss yet: after them if that's how we'll search, or watching where they went
+		if(style == SEARCH_STYLE_INVESTIGATE && go_there)
+			controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_LAST_KNOWN_TURF)
+		else
+			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_LAST_KNOWN_TURF)
+		return SUBTREE_RETURN_FINISH_PLANNING
 	controller.set_blackboard_key(BB_BASIC_MOB_ACTIVE_SEARCH_STYLE, style)
 	call_out_search(controller, style)
 	switch(style)
 		if(SEARCH_STYLE_INVESTIGATE)
-			if(!can_see_spot(controller, last_known_turf))
+			if(go_there)
 				controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_LAST_KNOWN_TURF)
 			else
 				sweep(controller) // or if there's nowhere to sweep, we watch from here to see if they turn up, until track_target gives up on them
@@ -45,6 +57,10 @@
 	// covering where they went, with fire if we can
 	var/hang_back_style = controller.pawn.GetComponent(/datum/component/ranged_attacks) ? SEARCH_STYLE_SUPPRESS : SEARCH_STYLE_HOLD
 	var/style = controller.blackboard[BB_BASIC_MOB_SEARCH_STYLE]
+	if(!style && !controller.pawn.GetComponent(/datum/component/ranged_attacks))
+		// up close is all we've got, so we keep after them to where we last saw them, unless that's somewhere we can't go
+		var/turf/last_known_turf = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
+		return (last_known_turf && !ai_can_stand_on(controller.pawn, last_known_turf)) ? SEARCH_STYLE_HOLD : SEARCH_STYLE_INVESTIGATE
 	if(!style)
 		style = controller.blackboard[BB_BASIC_MOB_PICKED_SEARCH_STYLE]
 		if(!style)
@@ -65,6 +81,12 @@
 		return TRUE // an ally just died nearby, so don't walk into whatever got them
 	if(world.time < controller.blackboard[BB_BASIC_MOB_HIDING_FROM_ENTRENCHED_UNTIL])
 		return TRUE // they're dug in behind cover we can't match, so don't walk back into their line of fire
+	var/turf/last_known_turf = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
+	if(last_known_turf && !ai_can_stand_on(controller.pawn, last_known_turf))
+		return TRUE // they were somewhere we can't go, like out in open space, so watch for them coming back instead
+	var/turf/fighting_cover = controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]
+	if(fighting_cover && get_turf(controller.pawn) == fighting_cover && cover_between(fighting_cover, controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]))
+		return TRUE // we're behind good cover facing where they went, so let them come back to us rather than giving it up
 	var/mob/living/living_pawn = controller.pawn
 	if(cautious_health_fraction && living_pawn.health < living_pawn.maxHealth * cautious_health_fraction)
 		return TRUE // too hurt to go chasing them
@@ -81,7 +103,7 @@
 
 /datum/ai_planning_subtree/search_lost_target/proc/can_see_spot(datum/ai_controller/controller, turf/spot)
 	var/turf/our_turf = get_turf(controller.pawn)
-	return our_turf == spot || (get_dist(our_turf, spot) <= investigate_distance && can_see(our_turf, spot, investigate_distance))
+	return our_turf == spot || (get_dist(our_turf, spot) <= investigate_distance && ai_can_see(controller.pawn, spot, investigate_distance))
 
 /datum/ai_planning_subtree/search_lost_target/proc/sweep(datum/ai_controller/controller)
 	var/turf/center = controller.blackboard[BB_BASIC_MOB_SWEEP_CENTER]

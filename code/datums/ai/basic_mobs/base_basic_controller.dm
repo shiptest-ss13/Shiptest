@@ -9,6 +9,7 @@
 	update_speed(basic_mob)
 
 	RegisterSignal(basic_mob, POST_BASIC_MOB_UPDATE_VARSPEED, PROC_REF(update_speed))
+	RegisterSignal(basic_mob, COMSIG_MOB_MOVESPEED_UPDATED, PROC_REF(update_speed))
 
 	return ..() //Run parent at end
 
@@ -42,7 +43,7 @@
 	clear_blackboard_key(BB_BASIC_MOB_SEARCH_CALLED_OUT)
 	if(ai_status == AI_STATUS_IDLE)
 		set_ai_status(AI_STATUS_ON)
-	if(can_see(pawn, target))
+	if(ai_can_see(pawn, target, blackboard[BB_BASIC_MOB_VISION_RANGE] || 9))
 		clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME) // they're right there, so spot them the usual way
 		clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF)
 		return TRUE

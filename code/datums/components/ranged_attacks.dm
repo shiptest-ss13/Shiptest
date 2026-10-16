@@ -22,6 +22,8 @@
 	var/needs_ammo = TRUE
 	/// Tracks time between shots
 	COOLDOWN_DECLARE(fire_cooldown)
+	/// With a player at the controls, how many more shots of their current burst are still to come, which the cooldown lets through
+	var/player_follow_ups_owed = 0
 
 /datum/component/ranged_attacks/Initialize(
 	casing_type,
@@ -63,6 +65,8 @@
 
 /datum/component/ranged_attacks/proc/fire_ranged_attack(mob/living/basic/firer, atom/target, modifiers)
 	SIGNAL_HANDLER
+	if(firer.client && !player_volley(firer, target))
+		return // the AI paces its own volleys, see /datum/ai_behavior/basic_ranged_attack, but a player could otherwise fire as fast as they click
 	if(SEND_SIGNAL(firer, COMSIG_BASICMOB_PRE_RANGED_ATTACK, target) & COMPONENT_CANCEL_RANGED_ATTACK)
 		return // like when we're reloading
 	var/datum/ai_controller/controller = firer.ai_controller
@@ -95,6 +99,22 @@
 		P.fire()
 		alert_ai_to_gunfire(firer, SUPPRESSED_NONE, FALSE, firer) // casings do this themselves
 
+// player controlled nonsense
+/datum/component/ranged_attacks/proc/player_volley(mob/living/basic/firer, atom/target)
+	if(player_follow_ups_owed > 0)
+		player_follow_ups_owed--
+		return TRUE
+	if(!COOLDOWN_FINISHED(src, fire_cooldown))
+		return FALSE
+	COOLDOWN_START(src, fire_cooldown, cooldown_time || 1 SECONDS)
+	var/extra_shots = (get_burst_shots() || 1) - 1
+	if(extra_shots > 0)
+		player_follow_ups_owed = extra_shots
+		var/turf/fallback_turf = get_turf(target)
+		for(var/shot in 1 to extra_shots)
+			addtimer(CALLBACK(src, PROC_REF(fire_follow_up_shot), WEAKREF(target), fallback_turf), shot * burst_intervals)
+	return TRUE
+
 /datum/component/ranged_attacks/proc/get_projectile_type()
 	if(projectile_type)
 		return projectile_type
@@ -108,11 +128,7 @@
 /datum/component/ranged_attacks/proc/ready_to_fire()
 	return !cooldown_time || COOLDOWN_FINISHED(src, fire_cooldown)
 
-/**
- * Fires a volley at target: the first shot now, and the rest of our burst after it, at target while it's still about, or where it was if not.
- * At them rather than the spot they were on, as shots fly over anyone lying down unless they're aimed right at them.
- * shots and interval are for mobs that don't have a burst of their own, see get_burst_shots(). Doesn't check we're ready, see try_start_volley()
- */
+// start fire a volley or burst of shots
 /datum/component/ranged_attacks/proc/fire_volley(atom/target, shots = 1, interval = 0.2 SECONDS)
 	var/mob/living/basic/firer = parent
 	var/volley_shots = get_burst_shots() || shots
@@ -122,10 +138,12 @@
 	for(var/shot in 2 to volley_shots)
 		addtimer(CALLBACK(src, PROC_REF(fire_follow_up_shot), WEAKREF(target), fallback_turf), (shot - 1) * volley_interval)
 
-/// One of the follow-up shots of a volley, see fire_volley()
+// one of the follow-up shots of a volley after its started
 /datum/component/ranged_attacks/proc/fire_follow_up_shot(datum/weakref/target_ref, turf/fallback_turf)
 	var/mob/living/basic/firer = parent
-	if(QDELETED(firer) || firer.stat == DEAD)
+	if(QDELETED(firer) || firer.stat == DEAD || firer.incapacitated())
+		if(player_follow_ups_owed > 0)
+			player_follow_ups_owed-- // still gone, so a player doesn't get it as a free shot later
 		return
 	var/atom/target = target_ref?.resolve()
 	firer.RangedAttack(target || fallback_turf)
