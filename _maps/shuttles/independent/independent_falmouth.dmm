@@ -332,7 +332,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "fa" = (
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
@@ -775,6 +777,11 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "falmouth_windows";
+	name = "Blast Shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "kV" = (
@@ -948,6 +955,14 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable/pink{
 	icon_state = "0-2"
+	},
+/obj/item/clipboard{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/hand_labeler{
+	pixel_x = -4;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -1269,6 +1284,7 @@
 	pixel_x = -3;
 	pixel_y = 11
 	},
+/obj/item/melee/knife/survival,
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
 "qQ" = (
@@ -1459,7 +1475,8 @@
 	},
 /obj/effect/turf_decal/trimline/transparent/inteqbrown/filled/corner,
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse{
-	dir = 8
+	dir = 8;
+	piping_layer = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -1710,6 +1727,11 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "falmouth_windows";
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -2013,6 +2035,25 @@
 /obj/structure/cable/pink,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
+"BH" = (
+/obj/effect/turf_decal/trimline/transparent/green/filled/line,
+/obj/structure/filingcabinet/double{
+	dir = 8;
+	pixel_x = 10;
+	pixel_y = 0;
+	density = 0
+	},
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/fore)
 "BI" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 8
@@ -2136,6 +2177,7 @@
 /obj/item/gun/energy/laser/wasp,
 /obj/item/gun/ballistic/automatic/pistol/mauler/regular,
 /obj/item/gun/energy/laser/e10,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/hallway/fore)
 "Ek" = (
@@ -3016,6 +3058,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass/twenty,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "PX" = (
@@ -4395,7 +4439,7 @@ cc
 gm
 zo
 dy
-FX
+BH
 hR
 fE
 cq
