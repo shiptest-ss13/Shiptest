@@ -15,6 +15,10 @@
 	multiplicative_slowdown = 1
 	variable = TRUE
 
+/datum/movespeed_modifier/bow
+	multiplicative_slowdown = 1
+	variable = TRUE
+
 /datum/movespeed_modifier/aiming
 	multiplicative_slowdown = 0
 	variable = TRUE
