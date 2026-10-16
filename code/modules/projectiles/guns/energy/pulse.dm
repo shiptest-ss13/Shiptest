@@ -82,6 +82,7 @@
 	charge_sections = 4
 
 /obj/item/gun/energy/pulse/destroyer
+	autowiki_hidden = TRUE //not obtainable afaik
 	name = "pulse destroyer"
 	desc = "A heavy-duty energy rifle built for pure destruction."
 	spawn_blacklisted = TRUE

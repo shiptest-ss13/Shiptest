@@ -1,0 +1,41 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/independent",
+	"prefix": "IMV",
+	"manufacturer": "Lanchester Shipyards",
+	"map_name": "Pyxis-class Ambulance Craft",
+	"namelists": [
+		"NATURAL"
+	],
+	"map_short_name": "Pyxis-class",
+	"description": "Originally a prototype gunship design for CLIP-MM, the predecessor to the Pyxis faced many undesirable issues, such as poor heat ventilation and crashes in planetary atmospheres caused by an oversized weapon mount. The design was swiftly denied by the Minutemen, driving Lanchester Shipyards to extensively refit the design by cutting out most unnecessary systems and internals. Now, the modern Pyxis-class is a modular hullform serving a variety of purposes across the civilian sector, including mobile ambulances to transport and tend to the wounded.",
+	"tags": [
+		"RP Focus",
+		"Medical"
+	],
+	"starting_funds": 3000,
+	"map_path": "_maps/shuttles/independent/independent_pyxis.dmm",
+	"limit": 1,
+	"tranist_x_offset": -20,
+	"tranist_y_offset": -25,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain/gown",
+			"officer": true,
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/independent/engineer/gown",
+			"slots": 1
+		},
+		"Doctor": {
+			"outfit": "/datum/outfit/job/independent/doctor/gown",
+			"slots": 1
+		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/independent/assistant/gown",
+			"slots": 1
+		}
+	},
+	"enabled":true
+}
