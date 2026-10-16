@@ -762,6 +762,22 @@
 /area/ship/bridge)
 "kk" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/trashcart/laundry{
+	name = "cleaning cart"
+	},
+/obj/item/mop,
+/obj/item/reagent_containers/glass/bucket{
+	pixel_x = -7;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 6;
+	pixel_y = -7
+	},
+/obj/item/pushbroom{
+	pixel_x = 2;
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "ku" = (
@@ -1277,27 +1293,12 @@
 	pixel_y = 16;
 	pixel_x = 12
 	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 7;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
-"pF" = (
-/obj/effect/turf_decal/trimline/transparent/green/filled/line,
-/obj/structure/filingcabinet/double{
-	dir = 8;
-	pixel_x = 10;
-	pixel_y = 0;
-	density = 0
-	},
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/pen,
-/obj/item/pen,
-/obj/item/pen,
-/obj/item/pen,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/fore)
 "pP" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
@@ -2462,6 +2463,25 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
+"HS" = (
+/obj/effect/turf_decal/trimline/transparent/green/filled/line,
+/obj/structure/filingcabinet/double{
+	dir = 8;
+	pixel_x = 10;
+	pixel_y = 0;
+	density = 0
+	},
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/fore)
 "HZ" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/siding/thinplating{
@@ -3708,9 +3728,9 @@ cq
 cq
 cq
 cq
+cq
+cq
 Se
-cq
-cq
 cq
 cq
 cq
@@ -4492,7 +4512,7 @@ cc
 gm
 zo
 dy
-pF
+HS
 hR
 fE
 cq
