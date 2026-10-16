@@ -344,7 +344,7 @@
 	reagent_weight = 2
 
 /datum/reagent/medicine/ysiltane/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	if(current_cycle > 2 && current_cycle <= 6)
+	if(current_time > 4 && current_time <= 12)
 		M.adjustFireLoss(-5 * REM * seconds_per_tick, 0)
 	M.adjustFireLoss(-1 * REM * seconds_per_tick, 0)
 	M.adjustStaminaLoss(0.5 * REM * seconds_per_tick, 0)
@@ -510,7 +510,7 @@
 	/// The decrement we will apply to the received_pressure_mult of our targets lungs.
 	var/pressure_mult_increment = 0.4
 	/// After this many cycles of overdose, we activate secondary effects.
-	var/secondary_overdose_effect_cycle_threshold = 40
+	var/secondary_overdose_effect_seconds_threshold = 80
 	/// We stop increasing stamina damage once we reach this number.
 	var/maximum_od_stamina_damage = 80
 
@@ -569,7 +569,7 @@
 			carbon_mob.breathe(seconds_per_tick, times_fired)
 			to_chat(affected_mob, span_danger("Your diaphram spasms and you unintentionally take a breath!"))
 
-	if (current_cycle > secondary_overdose_effect_cycle_threshold)
+	if (current_time > secondary_overdose_effect_seconds_threshold)
 		if (SPT_PROB(30, seconds_per_tick))
 			carbon_mob.set_blurriness(max(carbon_mob.eye_blurry, min(carbon_mob.eye_blurry + 3, 15)))
 		if (carbon_mob.getStaminaLoss() < maximum_od_stamina_damage)
@@ -689,19 +689,19 @@
 	if ishuman(M)
 		M.apply_status_effect(/datum/status_effect/synthflesh)
 
-/datum/reagent/medicine/synthflesh/on_mob_life(mob/living/carbon/human/M)
+/datum/reagent/medicine/synthflesh/on_mob_life(mob/living/carbon/human/M, seconds_per_tick, times_fired)
 	var/mob/living/carbon/human/subject = M
-	switch(src.current_cycle)
-		if(-INFINITY to 50)
-			if(prob(1))
+	switch(src.current_time)
+		if(-INFINITY to 100)
+			if(SPT_PROB(0.5, seconds_per_tick))
 				to_chat(M, span_danger("You feel your flesh move on its own."))
-		if(50 to 100)
-			if(prob(5))
+		if(100 to 200)
+			if(SPT_PROB(2.5, seconds_per_tick))
 				M.vomit(0,TRUE,FALSE,1,FALSE, FALSE, FALSE,)
 				SEND_SIGNAL(subject, COMSIG_ADD_MOOD_EVENT, "Synthflesh Blood", /datum/mood_event/synthfleshminor) //Excess synthflesh is exhaled as blood, no mechanical effect but its fun(?)
 				subject.visible_message("<span class='warning'>[subject] coughs up some blood!")
-		if(100 to INFINITY) //This is the part where we "Overdose" not really dangerous but it rapidly clears synthflesh, because we're already at a 4x incoming damage mult and 10 damage healed a tick.
-			if(prob(5))
+		if(200 to INFINITY) //This is the part where we "Overdose" not really dangerous but it rapidly clears synthflesh, because we're already at a 4x incoming damage mult and 10 damage healed a tick.
+			if(SPT_PROB(2.5,seconds_per_tick))
 				subject.visible_message("<span class='boldwarning'>[subject] suddenly coughs up chunks of flesh!")
 				to_chat(M, span_userdanger("You throw up a mass of what looks like minced meat and blood!"))
 				SEND_SIGNAL(subject, COMSIG_ADD_MOOD_EVENT, "Synthflesh OD", /datum/mood_event/synthfleshOD)

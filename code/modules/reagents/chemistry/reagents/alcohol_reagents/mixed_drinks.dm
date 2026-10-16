@@ -856,11 +856,11 @@
 	if (!M.slurring)
 		M.slurring = 1
 	M.slurring += 3 * REM * seconds_per_tick
-	switch(current_cycle)
-		if(51 to 200)
+	switch(current_time)
+		if(101 to 400)
 			M.Sleeping(10 SECONDS)
 			. = 1
-		if(201 to INFINITY)
+		if(400 to INFINITY)
 			M.AdjustSleeping(4 SECONDS * REM * seconds_per_tick)
 			M.adjustToxLoss(2 * REM * seconds_per_tick, 0)
 			. = 1
@@ -878,17 +878,17 @@
 
 /datum/reagent/consumable/ethanol/gargle_blaster/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	M.set_timed_status_effect(3 SECONDS, /datum/status_effect/dizziness, TRUE)
-	switch(current_cycle)
-		if(15 to 45)
+	switch(current_time)
+		if(40 to 90)
 			if(!M.slurring)
 				M.slurring = 1
 			M.slurring += 3 * REM * seconds_per_tick
-		if(45 to 55)
+		if(90 to 110)
 			if(SPT_PROB(25, seconds_per_tick))
 				M.confused = max(M.confused+3,0)
-		if(55 to 200)
+		if(110 to 400)
 			M.set_drugginess(55) // 1 minute 50
-		if(200 to INFINITY)
+		if(400 to INFINITY)
 			M.adjustToxLoss(2 * REM * seconds_per_tick, 0)
 			. = 1
 	..()
@@ -915,14 +915,14 @@
 		M.adjustStaminaLoss(10)
 		M.drop_all_held_items()
 		to_chat(M, span_notice("You can't feel your hands!"))
-	if(current_cycle > 5)
+	if(current_time > 10)
 		if(SPT_PROB(10, seconds_per_tick))
 			var/t = pickt()
 			ADD_TRAIT(M, t, type)
 			M.adjustStaminaLoss(10)
-		if(current_cycle > 30)
+		if(current_time > 60)
 			M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2 * REM * seconds_per_tick)
-			if(current_cycle > 50 && SPT_PROB(7.5, seconds_per_tick))
+			if(current_time > 100 && SPT_PROB(7.5, seconds_per_tick))
 				if(!M.undergoing_cardiac_arrest() && M.can_heartattack())
 					M.set_heartattack(TRUE)
 					if(M.stat == CONSCIOUS)
@@ -953,21 +953,21 @@
 /datum/reagent/consumable/ethanol/hippies_delight/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if (!M.slurring)
 		M.slurring = 1
-	switch(current_cycle)
-		if(1 to 5)
-			M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+	switch(current_time)
+		if(1 to 10)
+			M.set_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(30) // 1 minute
-		if(5 to 20)
-			M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-			M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		if(10 to 40)
+			M.set_timed_status_effect(40 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+			M.set_timed_status_effect(40 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(45) // 1 minute 30
-		if (20 to 200)
-			M.set_timed_status_effect(80 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-			M.set_timed_status_effect(80 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		if (40 to 400)
+			M.set_timed_status_effect(80 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+			M.set_timed_status_effect(80 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(60) // 2 minutes
-		if(200 to INFINITY)
-			M.set_timed_status_effect(120 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-			M.set_timed_status_effect(120 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		if(400 to INFINITY)
+			M.set_timed_status_effect(120 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+			M.set_timed_status_effect(120 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(75) /// 2 minutes 30
 			if(SPT_PROB(15, seconds_per_tick))
 				M.adjustToxLoss(2, 0)
@@ -1542,22 +1542,22 @@
 	glass_desc = "Tastes better than it looks."
 
 /datum/reagent/consumable/ethanol/spriters_bane/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
-	switch(current_cycle)
-		if(5 to 40)
+	switch(current_time)
+		if(10 to 80)
 			C.set_timed_status_effect(6 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 			if(SPT_PROB(5, seconds_per_tick) && !C.eye_blurry)
 				C.blur_eyes(6)
 				to_chat(C, span_warning("That outline is so distracting, it's hard to look at anything else!"))
-		if(40 to 100)
-			C.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		if(80 to 200)
+			C.set_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			if(prob(15))
 				new /datum/hallucination/hudscrew(C)
-		if(100 to INFINITY)
+		if(200 to INFINITY)
 			if(SPT_PROB(5, seconds_per_tick) && !C.eye_blind)
 				C.blind_eyes(6)
 				to_chat(C, span_userdanger("Your vision fades as your eyes are outlined in black!"))
 			else
-				C.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+				C.set_timed_status_effect(40 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/ethanol/spriters_bane/expose_atom(atom/A, volume)

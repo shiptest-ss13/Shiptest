@@ -57,11 +57,11 @@
 /datum/reagent/consumable/carrotjuice/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	metabolizer.adjust_blurriness(-1 * REM * seconds_per_tick)
 	metabolizer.adjust_blindness(-1 * REM * seconds_per_tick)
-	switch(current_cycle)
-		if(1 to 20)
+	switch(current_time)
+		if(1 to 40)
 			EMPTY_BLOCK_GUARD //nothing
-		if(21 to INFINITY)
-			if(SPT_PROB(current_cycle-10, seconds_per_tick))
+		if(40 to INFINITY)
+			if(SPT_PROB(current_time/2-10, seconds_per_tick))
 				metabolizer.cure_nearsighted(list(EYE_DAMAGE))
 	..()
 	return

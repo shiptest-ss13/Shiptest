@@ -190,7 +190,8 @@
 	taste_mult = 4
 	can_synth = FALSE
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
-	var/yuck_cycle = 0 //! The `current_cycle` when puking starts.
+	var/yuck_time = 0 //! The `current_time` when puking starts.
+	var/puke_times = 0
 
 /datum/reagent/yuck/on_mob_add(mob/living/L)
 	if(HAS_TRAIT(L, TRAIT_NOHUNGER)) //they can't puke
@@ -199,26 +200,27 @@
 #define YUCK_PUKE_CYCLES 3 		// every X cycle is a puke
 #define YUCK_PUKES_TO_STUN 3 	// hit this amount of pukes in a row to start stunning
 /datum/reagent/yuck/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
-	if(!yuck_cycle)
+	if(!yuck_time)
 		if(SPT_PROB(4, seconds_per_tick))
 			var/dread = pick("Something is moving in your stomach...", \
 				"A wet growl echoes from your stomach...", \
 				"For a moment you feel like your surroundings are moving, but it's your stomach...")
 			to_chat(C, span_userdanger("[dread]"))
-			yuck_cycle = current_cycle
+			yuck_time = current_time
 	else
-		var/yuck_cycles = current_cycle - yuck_cycle
-		if(yuck_cycles % YUCK_PUKE_CYCLES == 0)
-			if(yuck_cycles >= YUCK_PUKE_CYCLES * YUCK_PUKES_TO_STUN)
+		if(current_time >= yuck_time)
+			puke_times++
+			if(puke_times >= YUCK_PUKES_TO_STUN)
 				holder.remove_reagent(type, 5)
-			C.vomit(rand(14, 26), stun = yuck_cycles >= YUCK_PUKE_CYCLES * YUCK_PUKES_TO_STUN)
+			C.vomit(rand(14, 26), stun = puke_times >= YUCK_PUKES_TO_STUN)
+			yuck_time = current_time + 8
 	if(holder)
 		return ..()
 #undef YUCK_PUKE_CYCLES
 #undef YUCK_PUKES_TO_STUN
 
 /datum/reagent/yuck/on_mob_end_metabolize(mob/living/L)
-	yuck_cycle = 0 // reset vomiting
+	yuck_time = 0 // reset vomiting
 	return ..()
 
 /datum/reagent/yuck/on_transfer(atom/A, method=TOUCH, trans_volume)
@@ -745,7 +747,7 @@
 	color = "#0000CC"
 	taste_description = "fizzling blue"
 	material = /datum/material/bluespace
-	var/start_cycle = 10
+	var/start_time = 20
 	var/teleport_prob = 15
 
 	process_flags = ORGANIC | SYNTHETIC
@@ -756,10 +758,10 @@
 	..()
 
 /datum/reagent/bluespace/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	if(current_cycle > start_cycle && prob(teleport_prob))
+	if(current_time > start_time && prob(teleport_prob))
 		to_chat(M, span_warning("You feel unstable..."))
 		M.adjust_timed_status_effect(2 SECONDS * REM * seconds_per_tick, /datum/status_effect/jitter, max_duration = 40 SECONDS)
-		current_cycle = 1
+		start_time = current_time + 20
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, bluespace_shuffle)), 30)
 	..()
 
@@ -1486,9 +1488,9 @@
 
 /datum/reagent/cement/on_mob_life(mob/living/carbon/M)
 	. = ..()
-	if(prob(min(current_cycle/2, 5)))
+	if(prob(min(current_time/4, 5)))
 		M.adjustToxLoss(potency)
-	if(prob(min(current_cycle/4, 10)))
+	if(prob(min(current_time/8, 10)))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN,potency)
 
 /datum/reagent/cement/hexement
@@ -1566,9 +1568,9 @@
 
 /datum/reagent/asphalt/on_mob_life(mob/living/carbon/M)
 	. = ..()
-	if(prob(min(current_cycle/2, 5)))
+	if(prob(min(current_time/4, 5)))
 		M.adjustToxLoss(2)
-	if(prob(min(current_cycle/4, 10)))
+	if(prob(min(current_time/8, 10)))
 		M.adjustOrganLoss(ORGAN_SLOT_STOMACH,3)
 
 // CLEANERS, SMOKES, AND FOAMS //
@@ -2040,7 +2042,7 @@
 
 /datum/reagent/magillitis/on_mob_life(mob/living/carbon/M)
 	..()
-	if((ismonkey(M) || ishuman(M)) && current_cycle >= 10)
+	if((ismonkey(M) || ishuman(M)) && current_time >= 20)
 		M.gorillize()
 
 /datum/reagent/space_cleaner/ez_clean
@@ -2201,9 +2203,9 @@
 			idiot.hud_used.plane_masters["[FLOOR_PLANE]"],
 			idiot.hud_used.plane_masters["[GAME_PLANE]"],
 			idiot.hud_used.plane_masters["[LIGHTING_PLANE]"])
-		var/rot = 90 * (current_cycle % 4);
+		var/rot = 45 * (current_time % 8);
 		for(var/plane in screens)
-			animate(plane, transform = matrix(rot, MATRIX_ROTATE), time = 20, easing = QUAD_EASING)
+			animate(plane, transform = matrix(rot, MATRIX_ROTATE), time = seconds_per_tick SECONDS, easing = QUAD_EASING)
 	..()
 
 /datum/reagent/fairydust/on_mob_metabolize(mob/living/carbon/idiot)

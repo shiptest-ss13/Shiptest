@@ -17,7 +17,7 @@
 	bad_type = /datum/reagent/consumable
 
 /datum/reagent/consumable/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	current_cycle++
+	current_time += seconds_per_tick
 	if(ishuman(metabolizer))
 		var/mob/living/carbon/human/H = metabolizer
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
@@ -236,24 +236,24 @@
 
 /datum/reagent/consumable/frostoil/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	var/cooling = 0
-	switch(current_cycle)
-		if(1 to 15)
+	switch(current_time)
+		if(1 to 30)
 			cooling = -10 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 				holder.remove_reagent(/datum/reagent/consumable/capsaicin, 5)
 			if(isslime(metabolizer))
 				cooling = -rand(1,2)
-		if(15 to 25)
+		if(30 to 50)
 			cooling = -20 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(isslime(metabolizer))
 				cooling = -rand(2,4)
-		if(25 to 35)
+		if(50 to 70)
 			cooling = -30 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(prob(1))
 				metabolizer.emote("shiver")
 			if(isslime(metabolizer))
 				cooling = -rand(4,8)
-		if(35 to INFINITY)
+		if(70 to INFINITY)
 			cooling = -40 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(prob(5))
 				metabolizer.emote("shiver")
@@ -354,15 +354,15 @@
 /datum/reagent/drug/mushroomhallucinogen/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(!metabolizer.slurring)
 		metabolizer.slurring = 1
-	switch(current_cycle)
-		if(1 to 5)
+	switch(current_time)
+		if(1 to 10)
 			metabolizer.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			metabolizer.set_drugginess(30) // 1 minute
-		if(5 to 10)
+		if(10 to 20)
 			metabolizer.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 			metabolizer.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			metabolizer.set_drugginess(35) // 1 minute 10
-		if (10 to INFINITY)
+		if (20 to INFINITY)
 			metabolizer.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 			metabolizer.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			metabolizer.set_drugginess(40) // 1 minute 20
@@ -622,7 +622,7 @@
 	taste_description = "bitter mushroom"
 
 /datum/reagent/consumable/entpoly/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	if(current_cycle >= 10)
+	if(current_time >= 20)
 		metabolizer.Unconscious(4 SECONDS, 0)
 		. = 1
 	if(SPT_PROB(10, seconds_per_tick))

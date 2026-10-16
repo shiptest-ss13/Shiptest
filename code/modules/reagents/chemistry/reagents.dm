@@ -42,8 +42,8 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/reagent_state = LIQUID
 	/// special data associated with this like viruses etc
 	var/list/data
-	/// increments everytime on_mob_life is called
-	var/current_cycle = 0
+	/// number of seconds that the reagent ticked increments everytime on_mob_life is called
+	var/current_time = 0
 	///pretend this is moles
 	var/volume = 0
 	/// color it looks in containers etc
@@ -118,7 +118,7 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 
 /// Called from [/datum/reagents/proc/metabolize]
 /datum/reagent/proc/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	current_cycle++
+	current_time += seconds_per_tick
 	holder.remove_reagent(type, metabolization_rate * M.metabolism_efficiency * seconds_per_tick) //By default it slowly disappears.
 	return
 

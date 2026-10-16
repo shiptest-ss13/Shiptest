@@ -11,6 +11,7 @@
 	color = "#34eeee"
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	overdose_threshold = 35
+	var/shown_warn_message = FALSE
 
 /datum/reagent/medicine/tramal/on_mob_metabolize(mob/living/L)
 	..()
@@ -22,13 +23,13 @@
 	..()
 
 /datum/reagent/medicine/tramal/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	if(current_cycle >= 5)
+	if(current_time >= 10)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_light, name)
-	switch(current_cycle)
-		if(375) // more than 30 units makes you sleepy
+	if(current_time > 750)
+		if(!shown_warn_message)
 			to_chat(M, span_warning("You feel drowsy..."))
-		if(376 to INFINITY)
-			M.drowsyness += 0.5 * seconds_per_tick
+			shown_warn_message = TRUE
+		M.drowsyness += 0.5 * seconds_per_tick
 	..()
 
 /datum/reagent/medicine/tramal/overdose_start(mob/living/M)
@@ -48,6 +49,7 @@
 	color = "#A9FBFB"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
+	var/shown_warn_message = FALSE
 
 /datum/reagent/medicine/morphine/on_mob_metabolize(mob/living/L)
 	..()
@@ -69,14 +71,15 @@
 	..()
 
 /datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	if(current_cycle >= 5)
+	if(current_time >= 10)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name)
-	switch(current_cycle)
-		if(50) // more than 10 units makes you sleepy
-			to_chat(M, span_warning("You start to feel tired..."))
-		if(51 to 74)
+	switch(current_time)
+		if(101 to 150)
+			if(!shown_warn_message)
+				to_chat(M, span_warning("You start to feel tired..."))
+				shown_warn_message = TRUE
 			M.drowsyness += 0.5 * seconds_per_tick
-		if(75 to INFINITY)
+		if(150 to INFINITY)
 			M.Sleeping(2 SECONDS * seconds_per_tick) // honk mimimi
 			. = 1
 	..()
@@ -127,7 +130,7 @@
 
 /datum/reagent/medicine/dimorlin/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
 	C.set_screwyhud(SCREWYHUD_HEALTHY)
-	if(current_cycle >= 3)
+	if(current_time >= 6)
 		SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
 	..()
 
@@ -212,7 +215,7 @@
 	REMOVE_TRAIT(L, TRAIT_NOHARDCRIT, type)
 
 /datum/reagent/medicine/carfencadrizine/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	if(current_cycle >= 3)
+	if(current_time >= 6)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
 
 	if(M.health <= M.crit_threshold)

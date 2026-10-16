@@ -128,7 +128,7 @@
 	overdose_threshold = 25
 
 /datum/reagent/medicine/earthsblood/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	if(current_cycle <= 25) //10u has to be processed before u get into THE FUN ZONE
+	if(current_time <= 50) //10u has to be processed before u get into THE FUN ZONE
 		M.adjustBruteLoss(-1 * REM * seconds_per_tick, 0)
 		M.adjustFireLoss(-1 * REM * seconds_per_tick, 0)
 		M.adjustOxyLoss(-0.5 * REM * seconds_per_tick, 0)
@@ -159,9 +159,9 @@
 
 /datum/reagent/medicine/earthsblood/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	M.hallucination = min(max(0, M.hallucination + 5), 60)
-	if(current_cycle > 25)
+	if(current_time > 50)
 		M.adjustToxLoss(4 * REM * seconds_per_tick, 0)
-		if(current_cycle > 100) //podpeople get out reeeeeeeeeeeeeeeeeeeee
+		if(current_time > 100) //podpeople get out reeeeeeeeeeeeeeeeeeeee
 			M.adjustToxLoss(6 * REM * seconds_per_tick, 0)
 	if(iscarbon(M))
 		var/mob/living/carbon/hippie = M

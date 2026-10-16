@@ -10,13 +10,13 @@
 
 /datum/reagent/medicine/bonefixingjuice/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
 	var/mob/living/carbon/C = M
-	switch(current_cycle)
-		if(1 to 10)
+	switch(current_time)
+		if(1 to 20)
 			if(C.drowsyness < 10)
 				C.drowsyness += 2
-		if(11 to 30)
+		if(20 to 60)
 			C.adjustStaminaLoss(2.5 * seconds_per_tick)
-		if(31 to INFINITY)
+		if(60 to INFINITY)
 			C.AdjustSleeping(4 SECONDS)
 			//formerly everything-fixing juice
 			for(var/datum/wound/blunt/bone/broken_bone in C.all_wounds)
