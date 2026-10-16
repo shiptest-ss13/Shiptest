@@ -38,7 +38,7 @@
 	mouse_opacity = MOUSE_OPACITY_ICON
 	deathsound = 'sound/magic/repulse.ogg'
 	deathmessage = "'s lights flicker, before its top part falls down."
-	loot_drop = /obj/item/clothing/accessory/pandora_hope
+	loot_drop = /obj/item/mob_trophy/obol
 
 	attack_action_types = list(/datum/action/innate/elite_attack/singular_shot,
 								/datum/action/innate/elite_attack/magic_box,
@@ -183,21 +183,3 @@
 	damage = 20
 	monster_damage_boost = FALSE
 
-//Pandora's loot: Hope
-/obj/item/clothing/accessory/pandora_hope
-	name = "Hope"
-	desc = "Found at the bottom of Pandora. After all the evil was released, this was the only thing left inside."
-	icon = 'icons/obj/lavaland/elite_trophies.dmi'
-	icon_state = "hope"
-	resistance_flags = FIRE_PROOF
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
-
-/obj/item/clothing/accessory/pandora_hope/on_uniform_equip(obj/item/clothing/under/U, user)
-	var/mob/living/L = user
-	if(L && L.mind)
-		SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "hope_lavaland", /datum/mood_event/hope_lavaland)
-
-/obj/item/clothing/accessory/pandora_hope/on_uniform_dropped(obj/item/clothing/under/U, user)
-	var/mob/living/L = user
-	if(L && L.mind)
-		SEND_SIGNAL(L, COMSIG_CLEAR_MOOD_EVENT, "hope_lavaland")

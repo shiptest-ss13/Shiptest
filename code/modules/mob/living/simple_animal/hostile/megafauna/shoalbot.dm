@@ -61,7 +61,9 @@ AI attacks
 	deathsound = 'sound/magic/repulse.ogg'
 	attack_action_types = list(
 		/datum/action/innate/megafauna_attack/blink,
-		/datum/action/innate/megafauna_attack/cross_blasts)
+		/datum/action/innate/megafauna_attack/cross_blasts,
+		/datum/action/innate/megafauna_attack/double_blast,
+		/datum/action/innate/megafauna_attack/expanding_blast)
 
 	pixel_x = -16
 	base_pixel_x = -16
@@ -178,15 +180,6 @@ AI attacks
 
 /mob/living/simple_animal/hostile/megafauna/shoalbot/proc/blasts(mob/victim, list/directions = GLOB.cardinals) //fires cross blasts with a delay
 	var/turf/T = get_turf(victim)
-	if(!T)
-		return
-	if(directions == GLOB.cardinals)
-		new /obj/effect/temp_visual/shoalbot/telegraph/cardinal(T, src)
-	else if(directions == GLOB.diagonals)
-		new /obj/effect/temp_visual/shoalbot/telegraph/diagonal(T, src)
-	else
-		new /obj/effect/temp_visual/shoalbot/telegraph(T, src)
-	SLEEP_CHECK_DEATH(2)
 	new /obj/effect/temp_visual/shoalbot/blast(T, src, FALSE)
 	for(var/d in directions)
 		INVOKE_ASYNC(src, PROC_REF(blast_wall), T, d)
@@ -196,14 +189,10 @@ AI attacks
 		return
 	var/turf/T = get_turf(victim)
 	var/turf/source = get_turf(src)
-	new /obj/effect/temp_visual/shoalbot/telegraph(T, src)
-	new /obj/effect/temp_visual/shoalbot/telegraph(source, src)
 	playsound(T,'sound/magic/wand_teleport.ogg', 200, TRUE)
 	playsound(source,'sound/machines/airlockopen.ogg', 200, TRUE)
 	blinking = TRUE
 	SLEEP_CHECK_DEATH(2) //short delay before we start...
-	new /obj/effect/temp_visual/shoalbot/telegraph/teleport(T, src)
-	new /obj/effect/temp_visual/shoalbot/telegraph/teleport(source, src)
 	for(var/t in RANGE_TURFS(1, T))
 		var/obj/effect/temp_visual/shoalbot/blast/B = new(t, src, FALSE)
 		B.damage = 30
@@ -244,7 +233,6 @@ AI attacks
 	var/turf/T = get_turf(victim)
 	if(!T)
 		return
-	new /obj/effect/temp_visual/shoalbot/telegraph(T, src)
 	SLEEP_CHECK_DEATH(2)
 	for(var/t in RANGE_TURFS(1, T))
 		new /obj/effect/temp_visual/shoalbot/blast(t, src, FALSE)
@@ -366,27 +354,6 @@ AI attacks
 	if(ismineralturf(loc))
 		var/turf/closed/mineral/M = loc
 		M.gets_drilled(caster)
-
-/obj/effect/temp_visual/shoalbot/telegraph
-	icon = 'icons/effects/96x96.dmi'
-	icon_state = "shoalbot_telegraph"
-	pixel_x = -32
-	pixel_y = -32
-	duration = 3
-
-/obj/effect/temp_visual/shoalbot/telegraph/diagonal
-	icon_state = "shoalbot_telegraph_diagonal"
-
-/obj/effect/temp_visual/shoalbot/telegraph/cardinal
-	icon_state = "shoalbot_telegraph_cardinal"
-
-/obj/effect/temp_visual/shoalbot/telegraph/teleport
-	icon_state = "shoalbot_telegraph_teleport"
-	duration = 9
-
-/obj/effect/temp_visual/shoalbot/telegraph/edge
-	icon_state = "shoalbot_telegraph_edge"
-	duration = 40
 
 /obj/effect/temp_visual/shoalbot/blast
 	icon_state = "shoalbot_blast"
