@@ -634,6 +634,17 @@
 	availability_prob = 15
 	spawn_weighting = FALSE
 
+/datum/blackmarket_item/weapon/guncase/cinder
+	name = "HP Cinder"
+	desc = "My buddy Keith shot this shotgun one handed. Lemme tell ya, broken bones throughout his arm. If you want a streetsweeper with enough oomfh to blow a fist-sized hole right through a guy when you board their ship, you're in luck."
+	item = /obj/item/gun/ballistic/rifle/cinder
+	pair_item = list(/obj/item/storage/box/ammo/a4g_buckshot, /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/flashbang, /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/teargas)
+
+	cost_min = 4000
+	cost_max = 6000
+	stock = 1
+	availability_prob = 15
+
 /// mecha equipment
 
 /datum/blackmarket_item/weapon/mecha_syringe_gun
