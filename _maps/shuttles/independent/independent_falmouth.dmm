@@ -722,6 +722,25 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"jO" = (
+/obj/effect/turf_decal/trimline/transparent/green/filled/line,
+/obj/structure/filingcabinet/double{
+	dir = 8;
+	pixel_x = 10;
+	pixel_y = 0;
+	density = 0
+	},
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/fore)
 "kf" = (
 /obj/structure/safe/floor{
 	number_of_tumblers = 3;
@@ -1016,7 +1035,6 @@
 /obj/item/stock_parts/cell/gun,
 /obj/item/stock_parts/cell/gun,
 /obj/item/ammo_box/magazine/m9mm_mauler/extended,
-/obj/item/ammo_box/magazine/m9mm_mauler,
 /obj/structure/sign/poster/contraband/eoehoma{
 	pixel_x = -31;
 	pixel_y = 2
@@ -2764,25 +2782,6 @@
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /turf/open/floor/plating,
 /area/ship/crew/dorm/captain)
-"Mn" = (
-/obj/effect/turf_decal/trimline/transparent/green/filled/line,
-/obj/structure/filingcabinet/double{
-	dir = 8;
-	pixel_x = 10;
-	pixel_y = 0;
-	density = 0
-	},
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/pen,
-/obj/item/pen,
-/obj/item/pen,
-/obj/item/pen,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/fore)
 "Mv" = (
 /obj/effect/turf_decal/corner/transparent/tan/full,
 /obj/effect/turf_decal/trimline/transparent/inteqbrown/filled/line{
@@ -4435,7 +4434,7 @@ cc
 gm
 zo
 dy
-Mn
+jO
 hR
 fE
 cq
