@@ -464,7 +464,7 @@
 
 /datum/supply_pack/gun/energy/faveleira
 	name = "ECM-25 'Faveleira' Energy Accelerating Scattergun"
-	desc = "Contains a single ECM-25 Energy Accelerating Scattergun, a flexible energy gun that can fire in diffuse shot or a focused blast, manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses Eoehoma cells."
+	desc = "Contains a single ECM-25 Energy Accelerating Scattergun, a flexible energy gun that can fire in diffuse shot or a focused blast, manufactured by Clover Photonics for use by CLIP Workers & Minutemen. Uses Eoehoma heavy cells."
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/ecm25)
 	crate_name = "beam shotgun crate"
@@ -474,7 +474,7 @@
 
 /datum/supply_pack/gun/energy/faveleira/indie
 	name = "PL-24 'Faveleira' Energy Scattergun"
-	desc = "Contains a single PL-24 Energy Scattergun, a civilian grade energy gun that fires a spread of energy bolts, manufactured by Clover Photonics. Uses Eoehoma cells."
+	desc = "Contains a single PL-24 Energy Scattergun, a civilian grade energy gun that fires a spread of energy bolts, manufactured by Clover Photonics. Uses Eoehoma heavy cells."
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/pl25)
 	faction_discount = 10
@@ -862,7 +862,7 @@
 
 /datum/supply_pack/gun/hades
 	name = "AL655 'Hades' Plasma Assault Rifle crate"
-	desc = "Contains a high-energy, automatic plasma rifle. For Makosso-Warra employee use only."
+	desc = "Contains a high-energy, automatic plasma rifle. For Makosso-Warra employee use only. Uses Sharplite Heavy cells"
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/hades)
 	crate_name = "laser crate"
@@ -1054,7 +1054,7 @@
 
 /datum/supply_pack/gun/al607
 	name = "AL607 'Sarissa' Plasma Accelerator"
-	desc = "Contains a AL607 Laser Sniper. For Makosso-Warra employee use only."
+	desc = "Contains a AL607 Laser Sniper. For Makosso-Warra employee use only. Uses Sharplite Heavy cells."
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/energy/al607)
 	crate_name = "sniper rifle crate"

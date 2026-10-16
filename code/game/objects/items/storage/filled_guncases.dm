@@ -337,14 +337,14 @@
 
 /obj/item/storage/guncase/energy/al607
 	gun_type = /obj/item/gun/energy/sharplite/sarissa
-	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite/heavy
 
 /obj/item/storage/guncase/energy/iongun
 	gun_type = /obj/item/gun/energy/ionrifle
 
 /obj/item/storage/guncase/hades
 	gun_type = /obj/item/gun/energy/sharplite/hades
-	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite/heavy
 
 /obj/item/storage/guncase/x01
 	gun_type = /obj/item/gun/energy/sharplite/yari
@@ -446,11 +446,11 @@
 
 /obj/item/storage/guncase/ecm25
 	gun_type = /obj/item/gun/energy/clover/faveleira/clip
-	mag_type = /obj/item/stock_parts/cell/gun/upgraded
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
 
 /obj/item/storage/guncase/pl25
 	gun_type = /obj/item/gun/energy/clover/faveleira
-	mag_type = /obj/item/stock_parts/cell/gun
+	mag_type = /obj/item/stock_parts/cell/gun/heavy
 
 /* Inteq */
 
@@ -496,7 +496,7 @@
 
 /obj/item/storage/guncase/barghest
 	gun_type = /obj/item/gun/energy/sharplite/hades/inteq
-	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite/heavy
 
 /obj/item/storage/guncase/bdm50
 	gun_type = /obj/item/gun/ballistic/automatic/smg/resolution/inteq
