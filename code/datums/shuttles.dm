@@ -442,7 +442,7 @@
 	name = "Nail-class Boarding Vessel"
 	faction = /datum/faction/pgf
 	token_icon_state = "ship_tiny_generic"
-	prefix = "PGF"
+	prefix = "PGFMC"
 
 /datum/map_template/shuttle/subshuttles/tanto
 	file_name = "independent_tanto"
