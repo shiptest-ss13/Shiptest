@@ -46,8 +46,12 @@ EMPTY_GUN_HELPER(revolver/montagne)
 	gate_loaded = TRUE
 	fire_delay = 0.6 SECONDS
 	wield_slowdown = HEAVY_REVOLVER_SLOWDOWN
+
+	zoom_amt = 4 //You can put attachments on but you can't take them off, this bakes the function of allowing the revolver to be a long ranged sidearm into the gun without needing an attachment
+	aimed_wield_slowdown = 0.2
+
 	spread_unwielded = 6
-	spread = 6
+	spread = 1
 	recoil = 2
 	recoil_unwielded = 4
 
