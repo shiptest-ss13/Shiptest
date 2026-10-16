@@ -23,7 +23,7 @@
 	/obj/item/reagent_containers/glass/bottle/examine(mob/user)
 		. = ..()
 		if(!isnull(label))
-			to_chat(user, boxed_message(label))
+			to_chat(user, custom_boxed_message("red_box center", span_red((span_bold(label)))))
 
 /obj/item/reagent_containers/glass/bottle/epinephrine
 	name = "epinephrine bottle"
