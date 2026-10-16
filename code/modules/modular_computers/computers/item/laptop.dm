@@ -10,7 +10,7 @@
 	display_overlays = FALSE
 	custom_materials = list(/datum/material/iron = 10000, /datum/material/glass = 1000) // WS Edit - Item Materials
 
-	//world_file = 'icons/obj/modular_laptop_world.dmi'
+	world_file = 'icons/obj/modular_laptop_world.dmi'
 
 	hardware_flag = PROGRAM_LAPTOP
 	max_hardware_size = 2
