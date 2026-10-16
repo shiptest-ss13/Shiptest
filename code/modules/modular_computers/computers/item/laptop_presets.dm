@@ -35,8 +35,8 @@
 	//hard_drive.store_file(new/datum/computer_file/program/rilena()) //temporarily disabling this so it doesn't ruin anything
 
 /obj/item/modular_computer/laptop/preset/civilian/coalition
-	name = "Coalition laptop"
-	desc = "A sleek scarlet-red laptop. Use this carefully - she was designed for important work."
+	name = "scarlet laptop"
+	desc = "A popular laptop model produced by Cybersun Virtual Solutions at the height of the Inter-Corporate War. This particular model runs on CYSUN-OS version 7.0, famed for its stability and quality user-interface."
 	icon_state = "laptop-closed_coalition"
 	icon_state_powered = "laptop_coalition"
 	icon_state_unpowered = "laptop-off_coalition"
