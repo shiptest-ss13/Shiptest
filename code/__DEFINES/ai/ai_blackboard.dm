@@ -73,8 +73,6 @@
 #define BB_BASIC_MOB_TARGET_IN_SIGHT "BB_basic_target_in_sight"
 ///Who BB_BASIC_MOB_LAST_KNOWN_TURF and BB_BASIC_MOB_LAST_KNOWN_TIME are about, so switching targets starts fresh
 #define BB_BASIC_MOB_LAST_KNOWN_TARGET "BB_basic_last_known_target"
-///A SEARCH_STYLE_ define for how we look for a target we've lost sight of, overriding the search_lost_target subtree's own
-#define BB_BASIC_MOB_SEARCH_STYLE "BB_basic_search_style"
 ///Where we live and go back to once there's nothing to do
 #define BB_BASIC_MOB_HOME_TURF "BB_basic_home_turf"
 ///TRUE while all we know about our target is what an ally told us, so we don't pass it on and set off a chain of alerts. Cleared once we see them ourselves
@@ -164,7 +162,7 @@
 #define BB_BASIC_MOB_NEXT_COVER_SEARCH "BB_basic_next_cover_search"
 ///When we next look for somewhere to hide, after looking and finding nowhere
 #define BB_BASIC_MOB_NEXT_HIDE_SEARCH "BB_basic_next_hide_search"
-///Where we wait out of sight of someone we can't get to, like out in open spac
+///Where we wait out of sight of someone we can't get to, like out in open space
 #define BB_BASIC_MOB_WAIT_TURF "BB_basic_wait_turf"
 ///When we next look for somewhere to wait out of sight of someone we can't get to
 #define BB_BASIC_MOB_NEXT_WAIT_SEARCH "BB_basic_next_wait_search"

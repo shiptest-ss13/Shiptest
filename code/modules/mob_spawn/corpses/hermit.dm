@@ -3,17 +3,19 @@
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	outfit = /datum/outfit/hermit
 
+// the species hermits are, as list(species path = weight). hermit mobs share it, so they're the same species as the corpse they leave
+GLOBAL_LIST_INIT(hermit_species_weights, list(
+	/datum/species/human = 50,
+	/datum/species/lizard = 20,
+	/datum/species/elzuose = 10,
+	/datum/species/moth = 10,
+	/datum/species/spider = 10,
+))
+
 // this shit sucks man
 
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands/Initialize(mapload, species) //everything here should equal out to 100 for the sake of my sanity.
-	mob_species = species || pick_weight(list(
-			/datum/species/human = 50,
-			/datum/species/lizard = 20,
-			/datum/species/elzuose = 10,
-			/datum/species/moth = 10,
-			/datum/species/spider = 10,
-		)
-	)
+	mob_species = species || pick_weight(GLOB.hermit_species_weights)
 
 	outfit = pick_weight(list(
 			/datum/outfit/hermit = 24,

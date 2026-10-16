@@ -1,7 +1,7 @@
 
 /datum/ai_sensor/track_target
 	var/target_key = BB_BASIC_MOB_CURRENT_TARGET
-	var/vision_range = 9
+	var/vision_range = AI_DEFAULT_VISION_RANGE
 	var/forget_time = 20 SECONDS
 	//how long since we last saw someone before seeing them again is news worth calling out
 	var/spotted_memory = 30 SECONDS

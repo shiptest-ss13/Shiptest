@@ -84,7 +84,6 @@
 	icon_state = "warrarangedsmg"
 	icon_living = "warrarangedsmg"
 	burst_shots = 5
-	burst_interval = 0.2 SECONDS
 	casing_type = null
 	projectile_type = /obj/projectile/beam/weak/sharplite
 	r_hand = /obj/item/gun/energy/sharplite/rush
@@ -112,7 +111,6 @@
 	projectile_sound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 
 /mob/living/basic/human/warra/ranged/trooper/shotgun/space
-	name = "\improper Vigilitas Pointman"
 	desc = "A member of Vigilitas Interstellar, clad in white-striped hardsuit. They confidently aim around their shotgun, ready to burn away any trespassers."
 	icon_state = "warra_shotgun"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/hos

@@ -114,6 +114,7 @@
 	var/can_cross_space = controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE]
 	// as our pathfinding does, see /datum/pathfind/proc/bad_air_at()
 	var/avoid_bad_air = isbasicmob(movable_pawn) && is_environment_safe_for(movable_pawn, start)
+	var/access = controller.get_access()
 	var/turf/previous = start
 	for(var/turf/line_turf as anything in get_line(start, finish))
 		if(line_turf == start)
@@ -123,7 +124,7 @@
 		if(avoid_bad_air && !is_environment_safe_for(movable_pawn, line_turf))
 			return FALSE
 		// each step the way our pathfinding would judge it, so edges count, like a platform's raised side or a railing, not just what's on the tiles
-		if(previous.LinkBlockedWithAccess(line_turf, movable_pawn, controller.get_access()))
+		if(previous.LinkBlockedWithAccess(line_turf, movable_pawn, access))
 			return FALSE
 		if(line_turf.x != previous.x && line_turf.y != previous.y)
 			var/turf/first_side = locate(line_turf.x, previous.y, line_turf.z)

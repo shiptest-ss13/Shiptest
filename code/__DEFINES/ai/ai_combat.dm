@@ -106,13 +106,6 @@
 #define AI_CALLOUT_TOO_HOT "too hot"
 ///Getting out of somewhere too cold for us
 #define AI_CALLOUT_TOO_COLD "too cold"
-
-///The air's no good, or there's next to none of it
-#define AI_ENVIRONMENT_UNBREATHABLE "unbreathable"
-///Hot enough to hurt us
-#define AI_ENVIRONMENT_TOO_HOT "too hot"
-///Cold enough to hurt us
-#define AI_ENVIRONMENT_TOO_COLD "too cold"
 ///Now and then while fighting someone it can see
 #define AI_CALLOUT_TAUNT "taunt"
 ///Now and then as it lands a blow on someone, who's still standing
@@ -127,6 +120,13 @@
 #define AI_CALLOUT_WARY "wary"
 ///Just turned emboldened, as its side put someone down and has the numbers
 #define AI_CALLOUT_EMBOLDENED "emboldened"
+
+///The air's no good, or there's next to none of it
+#define AI_ENVIRONMENT_UNBREATHABLE "unbreathable"
+///Hot enough to hurt us
+#define AI_ENVIRONMENT_TOO_HOT "too hot"
+///Cold enough to hurt us
+#define AI_ENVIRONMENT_TOO_COLD "too cold"
 
 // How far AI with /datum/element/ai_hears_gunfire hears gunshots, in tiles, before walls muffle them. Guns can set their own, see gunfire_hearing_range and suppressed_gunfire_hearing_range
 #define GUNFIRE_HEARING_RANGE 12
@@ -143,6 +143,8 @@
 #define AI_DARKNESS_THRESHOLD SHADOW_SPECIES_LIGHT_THRESHOLD
 ///With at least this see_in_dark, AI sees in the dark as well as the light
 #define AI_NIGHT_VISION 8
+///How far AI sees, unless its sensor or BB_BASIC_MOB_VISION_RANGE says otherwise
+#define AI_DEFAULT_VISION_RANGE 9
 
 ///What AI assumes other people's shots get through, when working out if it's safe somewhere. Lasers that pass glass are the worst case, so glass is never cover. See is_spot_safe_from()
 #define AI_THREAT_SHOT_PASS_FLAGS (PASSTABLE | PASSGLASS | PASSGRILLE)

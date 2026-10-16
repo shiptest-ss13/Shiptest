@@ -13,7 +13,7 @@
 		BB_BASIC_MOB_MORALE,
 	)
 	ai_movement = /datum/ai_movement/jps
-	idle_behavior = /datum/idle_behavior/idle_random_walk
+	idle_behavior = /datum/idle_behavior/idle_random_walk/human
 	// who we're fighting, then whether we can see them, before we plan anything
 	sensors = list(
 		/datum/ai_sensor/update_combat_targets,

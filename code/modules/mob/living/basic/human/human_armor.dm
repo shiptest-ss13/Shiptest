@@ -1,7 +1,3 @@
-
-/mob/living/basic/human
-	var/datum/incoming_hit/incoming_hit
-
 /mob/living/basic/human/proc/setup_body_armor()
 	if(mob_spawner && !armored_all_over)
 		armor = get_spawner_body_armor(mob_spawner)
@@ -58,72 +54,14 @@ GLOBAL_LIST_INIT(ai_hit_zone_weights, list(BODY_ZONE_HEAD = 4, BODY_ZONE_CHEST =
 	armor_by_spawner[spawner_type] = zone_armor
 	return zone_armor
 
-/proc/get_spawner_clothing(spawner_type)
-	var/obj/effect/mob_spawn/human/spawner = spawner_type
-	var/datum/outfit/outfit = initial(spawner.outfit)
-	// the spawner's own slot vars are -1 when it leaves that slot to the outfit
-	var/list/slots = list(
-		initial(spawner.uniform) == -1 && ispath(outfit) ? initial(outfit.uniform) : initial(spawner.uniform),
-		initial(spawner.suit) == -1 && ispath(outfit) ? initial(outfit.suit) : initial(spawner.suit),
-		initial(spawner.head) == -1 && ispath(outfit) ? initial(outfit.head) : initial(spawner.head),
-		initial(spawner.mask) == -1 && ispath(outfit) ? initial(outfit.mask) : initial(spawner.mask),
-		initial(spawner.gloves) == -1 && ispath(outfit) ? initial(outfit.gloves) : initial(spawner.gloves),
-		initial(spawner.shoes) == -1 && ispath(outfit) ? initial(outfit.shoes) : initial(spawner.shoes),
-		initial(spawner.neck) == -1 && ispath(outfit) ? initial(outfit.neck) : initial(spawner.neck),
-		initial(spawner.belt) == -1 && ispath(outfit) ? initial(outfit.belt) : initial(spawner.belt),
-		initial(spawner.back) == -1 && ispath(outfit) ? initial(outfit.back) : initial(spawner.back),
-	)
-	. = list()
-	for(var/item_type in slots)
-		if(ispath(item_type, /obj/item/clothing))
-			. += item_type
-
-/proc/spawner_has_jetpack(spawner_type)
-	var/obj/effect/mob_spawn/human/spawner = spawner_type
-	var/datum/outfit/outfit = initial(spawner.outfit)
-	var/back = initial(spawner.back) == -1 && ispath(outfit) ? initial(outfit.back) : initial(spawner.back)
-	return ispath(back, /obj/item/tank/jetpack)
-
-/proc/spawner_is_pressure_sealed(spawner_type)
-	var/obj/effect/mob_spawn/human/spawner = spawner_type
-	var/datum/outfit/outfit = initial(spawner.outfit)
-	var/obj/item/clothing/suit = initial(spawner.suit) == -1 && ispath(outfit) ? initial(outfit.suit) : initial(spawner.suit)
-	var/obj/item/clothing/head = initial(spawner.head) == -1 && ispath(outfit) ? initial(outfit.head) : initial(spawner.head)
-	if(!ispath(suit, /obj/item/clothing) || !ispath(head, /obj/item/clothing))
-		return FALSE
-	return (initial(suit.clothing_flags) & STOPSPRESSUREDAMAGE) && (initial(head.clothing_flags) & STOPSPRESSUREDAMAGE)
-
-// how much a corpse spawner's outfit slows whoever wears it, all its clothes together
-/proc/get_spawner_slowdown(spawner_type)
-	var/static/list/slowdown_by_spawner = list()
-	if(!isnull(slowdown_by_spawner[spawner_type]))
-		return slowdown_by_spawner[spawner_type]
-	var/total = 0
-	for(var/obj/item/clothing/worn as anything in get_spawner_clothing(spawner_type))
-		total += initial(worn.slowdown)
-	slowdown_by_spawner[spawner_type] = total
-	return total
-
-/proc/spawner_has_flashlight(spawner_type)
-	var/static/list/flashlight_by_spawner = list()
-	if(!isnull(flashlight_by_spawner[spawner_type]))
-		return flashlight_by_spawner[spawner_type]
-	var/obj/effect/mob_spawn/human/spawner = spawner_type
-	var/outfit_type = initial(spawner.outfit)
-	var/datum/outfit/outfit = ispath(outfit_type, /datum/outfit) ? new outfit_type : null
-	var/list/carried = list(
-		initial(spawner.belt) == -1 ? outfit?.belt : initial(spawner.belt),
-		initial(spawner.r_pocket) == -1 ? outfit?.r_pocket : initial(spawner.r_pocket),
-		initial(spawner.l_pocket) == -1 ? outfit?.l_pocket : initial(spawner.l_pocket),
-		initial(spawner.suit_store) == -1 ? outfit?.suit_store : initial(spawner.suit_store),
-	)
-	if(islist(outfit?.backpack_contents))
-		carried += outfit.backpack_contents
-	qdel(outfit)
-	var/found = FALSE
-	for(var/item_type in carried)
-		if(ispath(item_type, /obj/item/flashlight) || ispath(item_type, /obj/item/attachment/rail_light))
-			found = TRUE
-			break
-	flashlight_by_spawner[spawner_type] = found
-	return found
+// the armour a piece of clothing of this type has, made once per type
+/proc/get_clothing_armor(clothing_type)
+	var/static/list/armor_by_type = list()
+	if(armor_by_type[clothing_type])
+		return armor_by_type[clothing_type]
+	//sigh. if only we could get the initial() value of list vars
+	var/obj/item/clothing/clothing = new clothing_type
+	var/datum/armor/clothing_armor = clothing.armor
+	qdel(clothing)
+	armor_by_type[clothing_type] = clothing_armor
+	return clothing_armor

@@ -23,6 +23,7 @@
 
 /mob/living/basic/human
 	blood_volume = BLOOD_VOLUME_NORMAL // so getting shot sprays blood like it does for players. need this for get_blood_id()
+	var/datum/incoming_hit/incoming_hit
 	var/datum/blood_type/blood_type
 	var/list/bloodied_clothing_kinds
 	var/list/bloody_clothing_overlays
@@ -140,10 +141,6 @@
 		bloody_clothes(hit.zone)
 
 // ---------- blood ----------
-
-/mob/living/basic/human/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change = TRUE)
-	. = ..()
-	face_target_while_moving()
 
 /mob/living/basic/human/proc/spray_blood(splatter_direction, splatter_strength = 3)
 	if(!isturf(loc) || !blood_volume)

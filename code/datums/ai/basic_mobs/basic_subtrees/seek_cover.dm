@@ -17,8 +17,7 @@
 
 /datum/ai_planning_subtree/seek_cover/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
-	var/datum/component/ai_magazine/magazine = controller.pawn.GetComponent(/datum/component/ai_magazine)
-	var/reloading = magazine?.reloading
+	var/reloading = !!(controller.get_conditions() & AI_CONDITION_RELOADING)
 	var/danger_key = BB_BASIC_MOB_SHOT_FROM
 	var/last_shot_time = controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME]
 	var/turf/danger = controller.blackboard[BB_BASIC_MOB_SHOT_FROM]

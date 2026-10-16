@@ -59,7 +59,7 @@
 	var/turf/our_turf = get_turf(basic_mob)
 	var/turf/best_turf
 	var/best_distance = INFINITY
-	for(var/turf/open/candidate in range(search_range, our_turf))
+	for(var/turf/open/candidate in RANGE_TURFS(search_range, our_turf))
 		var/distance = get_dist(our_turf, candidate)
 		if(distance >= best_distance || (exclude && get_dist(candidate, exclude) <= 3) || candidate.is_blocked_turf(TRUE, basic_mob)) // not by somewhere we couldn't get to, as its neighbours likely aren't any easier
 			continue

@@ -13,7 +13,6 @@
 	casing_type = /obj/item/ammo_casing/shotgun/pulseslug
 	r_hand = /obj/item/gun/ballistic/automatic/hmg/shredder
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals/ice_lodge
-	armor_base = /obj/item/clothing/suit/armor/vest/marine/frontier
 	weapon_drop_chance = 0
 	mob_species = /datum/species/vox
 

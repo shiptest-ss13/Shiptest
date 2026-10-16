@@ -1,3 +1,6 @@
+// everyone with the element, so gunfire only has to check them rather than everything in range. ELEMENT_DETACH takes them off when they're deleted
+GLOBAL_LIST_EMPTY(ai_gunfire_listeners)
+
 /datum/element/ai_hears_gunfire
 	element_flags = ELEMENT_DETACH
 
@@ -6,9 +9,11 @@
 	if(!isliving(target))
 		return ELEMENT_INCOMPATIBLE
 	ADD_TRAIT(target, TRAIT_AI_HEARS_GUNFIRE, ELEMENT_TRAIT(type))
+	GLOB.ai_gunfire_listeners |= target
 
 /datum/element/ai_hears_gunfire/Detach(datum/source, ...)
 	REMOVE_TRAIT(source, TRAIT_AI_HEARS_GUNFIRE, ELEMENT_TRAIT(type))
+	GLOB.ai_gunfire_listeners -= source
 	return ..()
 
 // edit GUNFIRE_ALERT_COOLDOWN if we need to tweak how often it checks
@@ -42,8 +47,9 @@
 			if(old_alert[1] < world.time)
 				last_alert_by_shooter -= old_ref
 	last_alert_by_shooter[shooter_ref] = list(world.time + GUNFIRE_ALERT_COOLDOWN, origin, hearing_range)
-	for(var/mob/living/listener in range(hearing_range, origin))
-		if(listener == shooter || !HAS_TRAIT(listener, TRAIT_AI_HEARS_GUNFIRE))
+	for(var/mob/living/listener as anything in GLOB.ai_gunfire_listeners)
+		// only those out on a turf, like range() would give us, so not someone shut in a locker
+		if(listener == shooter || QDELETED(listener) || !isturf(listener.loc) || listener.z != origin.z || get_dist(origin, listener) > hearing_range || !HAS_TRAIT(listener, TRAIT_AI_HEARS_GUNFIRE))
 			continue
 		var/heard_distance = get_heard_distance(origin, listener, hearing_range, AI_HEARING_WALL_PENALTY)
 		if(!isnull(heard_distance))
@@ -72,13 +78,3 @@
 	controller.set_blackboard_key(BB_BASIC_MOB_SWEEP_RADIUS, max(inaccuracy, 2))
 	controller.clear_blackboard_key(BB_BASIC_MOB_SWEEP_SPOTS_LEFT)
 	controller.clear_blackboard_key(BB_BASIC_MOB_SWEEP_PAUSE_UNTIL)
-
-// fuzz sound origin so they dont always home in the direct location. can be in a wall but thats intentional
-/proc/guess_sound_origin(turf/origin, inaccuracy, somewhere_to_stand = FALSE)
-	if(inaccuracy < 1)
-		return origin
-	for(var/attempt in 1 to 5)
-		var/turf/guess = locate(origin.x + rand(-inaccuracy, inaccuracy), origin.y + rand(-inaccuracy, inaccuracy), origin.z)
-		if(guess && (!somewhere_to_stand || (isopenturf(guess) && !guess.is_blocked_turf(TRUE))))
-			return guess
-	return origin

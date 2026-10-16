@@ -62,14 +62,11 @@
 		return FALSE
 	if(light.on)
 		return TRUE // our own light brightens where we are, so we don't go by that once it's on, or it'd flicker off and on
-	if(is_dark(get_turf(parent)))
+	if(ai_is_dark(get_turf(parent)))
 		return TRUE
-	if(!QDELETED(target) && is_dark(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE ? get_turf(target) : controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]))
+	if(!QDELETED(target) && ai_is_dark(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE ? get_turf(target) : controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]))
 		return TRUE // they're in the dark, or wherever we're going to look for them is
-	return shot_lately && is_dark(controller.blackboard[BB_BASIC_MOB_SHOT_FROM])
-
-/datum/component/ai_flashlight/proc/is_dark(turf/spot)
-	return isturf(spot) && spot.get_lumcount() < AI_DARKNESS_THRESHOLD
+	return shot_lately && ai_is_dark(controller.blackboard[BB_BASIC_MOB_SHOT_FROM])
 
 /datum/component/ai_flashlight/proc/on_shot_at(datum/source)
 	SIGNAL_HANDLER

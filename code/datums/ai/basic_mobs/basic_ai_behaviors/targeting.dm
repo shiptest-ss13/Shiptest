@@ -1,6 +1,8 @@
 /datum/ai_behavior/find_potential_targets
 	action_cooldown = 2 SECONDS
+	/// How far can we see stuff?
 	var/vision_range = 9
+	/// Static typecache list of potentially dangerous objs
 	var/static/list/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha))
 
 /datum/ai_behavior/find_potential_targets/perform(seconds_per_tick, datum/ai_controller/controller, target_key, targetting_datum_key, hiding_location_key)
@@ -14,7 +16,7 @@
 	var/our_vision_range = controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || vision_range
 	potential_targets = hearers(our_vision_range, controller.pawn) - living_mob //Remove self, so we don't suicide
 
-	for(var/HM in typecache_filter_list(range(our_vision_range, living_mob), hostile_machines))
+	for(var/HM in typecache_filter_list(range(our_vision_range, living_mob), hostile_machines)) //Can we see any hostile machines?
 		if(ai_can_see(living_mob, HM, our_vision_range))
 			potential_targets += HM
 
@@ -24,7 +26,7 @@
 	var/list/filtered_targets = list()
 
 	for(var/atom/pot_target in potential_targets)
-		if(targetting_datum.can_attack(living_mob, pot_target))
+		if(targetting_datum.can_attack(living_mob, pot_target))//Can we attack it?
 			filtered_targets += pot_target
 			continue
 
@@ -50,21 +52,3 @@
 		if(!is_downed(possible_target))
 			standing_targets += possible_target
 	return get_nearest_of(controller.pawn, length(standing_targets) ? standing_targets : filtered_targets)
-
-/proc/is_downed(atom/thing)
-	if(!isliving(thing))
-		return FALSE
-	var/mob/living/living_thing = thing
-	return living_thing.stat != CONSCIOUS
-
-/proc/get_nearest_of(atom/source, list/candidates)
-	var/nearest_distance = INFINITY
-	var/list/nearest_targets = list()
-	for(var/atom/possible_target as anything in candidates)
-		var/distance = get_dist(source, possible_target)
-		if(distance < nearest_distance)
-			nearest_distance = distance
-			nearest_targets = list(possible_target)
-		else if(distance == nearest_distance)
-			nearest_targets += possible_target
-	return pick(nearest_targets)

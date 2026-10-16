@@ -1,6 +1,6 @@
 /datum/idle_behavior/idle_random_walk
 	///Chance that the mob random walks per second
-	var/walk_chance = 10
+	var/walk_chance = 25
 
 /datum/idle_behavior/idle_random_walk/perform_idle_behavior(seconds_per_tick, datum/ai_controller/controller)
 	. = ..()
@@ -12,3 +12,7 @@
 		if(destination && is_ai_hazard_turf(destination))
 			return // don't wander off into a chasm or lava
 		living_pawn.Move(destination, move_dir)
+
+// human NPCs mill about less, so they're not forever shuffling round their posts
+/datum/idle_behavior/idle_random_walk/human
+	walk_chance = 10

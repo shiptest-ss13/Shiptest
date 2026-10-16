@@ -302,8 +302,7 @@ multiple modular subtrees with behaviors
 		if(current_behavior.behavior_flags & AI_BEHAVIOR_REQUIRE_MOVEMENT) //Might need to move closer
 			if(!current_movement_target)
 				// lost it somehow, so end it, rather than having it wait for a target forever. If we still want it, we'll plan it again and it'll set one up
-				var/list/finish_arguments = list(src, FALSE) + (behavior_args[current_behavior.type] || list())
-				current_behavior.finish_action(arglist(finish_arguments))
+				finish_behavior(current_behavior)
 				continue
 			if(AI_IN_RANGE(pawn, current_movement_target, current_behavior.required_distance)) ///Are we close enough to engage?
 				if(ai_movement.moving_controllers[src] == current_movement_target) //We are close enough, if we're moving stop.
@@ -366,11 +365,7 @@ multiple modular subtrees with behaviors
 	for(var/datum/ai_behavior/previous_behavior as anything in previous_behaviors)
 		if(planned_behaviors[previous_behavior] || !(previous_behavior in current_behaviors))
 			continue // still in the plan, or it finished on its own while we planned
-		var/list/arguments = list(src, FALSE)
-		var/list/stored_arguments = behavior_args[previous_behavior.type]
-		if(stored_arguments)
-			arguments += stored_arguments
-		previous_behavior.finish_action(arglist(arguments))
+		finish_behavior(previous_behavior)
 	planned_behaviors = null
 
 ///This proc handles changing ai status, and starts/stops processing if required.
@@ -442,8 +437,7 @@ multiple modular subtrees with behaviors
 			LAZYSET(planned_behaviors, behavior, TRUE)
 			return TRUE
 		// doing it with something else, like walking somewhere else, so stop and start over
-		var/list/finish_arguments = list(src, FALSE) + old_arguments
-		behavior.finish_action(arglist(finish_arguments))
+		finish_behavior(behavior)
 	var/list/arguments = args.Copy()
 	arguments[1] = src
 	if(!behavior.setup(arglist(arguments)))
@@ -500,11 +494,15 @@ multiple modular subtrees with behaviors
 		return
 	for(var/i in current_behaviors)
 		var/datum/ai_behavior/current_behavior = i
-		var/list/arguments = list(src, FALSE)
-		var/list/stored_arguments = behavior_args[current_behavior.type]
-		if(stored_arguments)
-			arguments += stored_arguments
-		current_behavior.finish_action(arglist(arguments))
+		finish_behavior(current_behavior)
+
+/// Ends behavior, passing along the arguments it was queued with, like if we've given up on it or are doing something else instead
+/datum/ai_controller/proc/finish_behavior(datum/ai_behavior/behavior, succeeded = FALSE)
+	var/list/arguments = list(src, succeeded)
+	var/list/stored_arguments = behavior_args[behavior.type]
+	if(stored_arguments)
+		arguments += stored_arguments
+	behavior.finish_action(arglist(arguments))
 
 /datum/ai_controller/proc/on_sentience_gained()
 	SIGNAL_HANDLER
@@ -526,8 +524,48 @@ multiple modular subtrees with behaviors
 		return
 	if(QDELETED(door_access_card))
 		door_access_card = new // in nullspace, out of reach of anyone who'd want to take it
-	door_access_card.access = door_access.Copy()
+		door_access_card.access = door_access.Copy()
 	return door_access_card
+
+// whether we gave up on getting to them lately, unless they've just shot at us
+/datum/ai_controller/proc/is_ignoring(atom/target)
+	var/ignore_until = LAZYACCESS(blackboard[BB_BASIC_MOB_IGNORED_TARGETS], target)
+	if(!ignore_until || world.time >= ignore_until)
+		return FALSE
+	if(blackboard[BB_BASIC_MOB_SHOT_BY] == target && world.time - blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < 2 SECONDS)
+		return FALSE
+	// a way's opened up, like the window's gone or they've come round it. Only the straight line, as pathing every look would cost too much
+	var/turf/their_turf = get_turf(target)
+	if(their_turf && their_turf.z == pawn.z && get_dist(pawn, their_turf) <= AI_IGNORE_RECHECK_RANGE && can_walk_straight_to(pawn, their_turf))
+		remove_thing_from_blackboard_key(BB_BASIC_MOB_IGNORED_TARGETS, target)
+		return FALSE
+	return TRUE
+
+// goes after target that mob learns about without direct confirmation
+/datum/ai_controller/proc/learn_of_target(atom/target, turf/seen_at, how)
+	if(how != AI_LEARNED_SHOT && is_ignoring(target))
+		return FALSE // we know there's no getting to them
+	set_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET, target)
+	set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TARGET, target)
+	if(how == AI_LEARNED_TOLD)
+		set_blackboard_key(BB_BASIC_MOB_TOLD_ABOUT_TARGET, TRUE)
+	else
+		clear_blackboard_key(BB_BASIC_MOB_TOLD_ABOUT_TARGET) // we know it for ourselves
+	if(how == AI_LEARNED_HEARD)
+		set_blackboard_key(BB_BASIC_MOB_HEARD_TARGET, TRUE)
+	else
+		clear_blackboard_key(BB_BASIC_MOB_HEARD_TARGET)
+	clear_blackboard_key(BB_BASIC_MOB_SEARCH_CALLED_OUT)
+	if(ai_status == AI_STATUS_IDLE)
+		set_ai_status(AI_STATUS_ON)
+	if(ai_can_see(pawn, target, blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE))
+		clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME) // they're right there, so spot them the usual way
+		clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF)
+		return TRUE
+	set_blackboard_key(BB_BASIC_MOB_TARGET_IN_SIGHT, FALSE)
+	set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF, seen_at)
+	set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME, world.time)
+	return FALSE
 
 ///Returns the minimum required distance to preform one of our current behaviors. Honestly this should just be cached or something but fuck you
 /datum/ai_controller/proc/get_minimum_distance()
@@ -795,16 +833,21 @@ multiple modular subtrees with behaviors
 		var/list/next_to_clear = remove_queue[index]
 		for(var/inner_value in next_to_clear)
 			var/associated_value = next_to_clear[inner_value]
-
+			// We are a lists of lists, add the next value to the queue so we can handle references in there
+			// (But we only need to bother checking the list if it's not empty.)
 			if(islist(inner_value) && length(inner_value))
 				UNTYPED_LIST_ADD(remove_queue, inner_value)
 
+			// We found the value that's been deleted. Clear it out from this list
 			else if(inner_value == source)
 				next_to_clear -= inner_value
 
+			// We are an assoc lists of lists, the list at the next value so we can handle references in there
+			// (But again, we only need to bother checking the list if it's not empty.)
 			if(islist(associated_value) && length(associated_value))
 				UNTYPED_LIST_ADD(remove_queue, associated_value)
 
+			// We found the value that's been deleted, it was an assoc value. Clear it out entirely
 			else if(associated_value == source)
 				next_to_clear -= inner_value
 

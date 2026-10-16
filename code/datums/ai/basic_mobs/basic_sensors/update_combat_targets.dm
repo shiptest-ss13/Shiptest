@@ -1,6 +1,6 @@
 /datum/ai_sensor/update_combat_targets
 	var/target_key = BB_BASIC_MOB_CURRENT_TARGET
-	var/vision_range = 9
+	var/vision_range = AI_DEFAULT_VISION_RANGE
 	//how often we look for someone when we've nobody to fight
 	var/idle_search_interval = 1 SECONDS
 	//how often we look for someone better while we're fighting someone we can see.
@@ -26,7 +26,7 @@
 	if(!target_unseen && world.time < controller.blackboard[BB_BASIC_MOB_NEXT_THREAT_CHECK])
 		return
 	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_THREAT_CHECK, world.time + (target ? fighting_search_interval : idle_search_interval))
-	var/atom/best = pick_target(controller, target, target_unseen, find_candidates(controller, targetting_datum))
+	var/atom/best = pick_target(controller, target, target_unseen, find_candidates(controller, targetting_datum), targetting_datum)
 	if(!best || best == target)
 		return
 	AI_LOG_DECISION(controller, "update_combat_targets: [target ? "switching from [target] to [best]" : "going after [best]"]")
@@ -82,21 +82,22 @@
 		best_time = seen_at
 	return best
 
-/datum/ai_sensor/update_combat_targets/proc/pick_target(datum/ai_controller/controller, atom/target, target_unseen, list/candidates)
+/datum/ai_sensor/update_combat_targets/proc/pick_target(datum/ai_controller/controller, atom/target, target_unseen, list/candidates, datum/targetting_datum/targetting_datum)
 	var/mob/living/living_pawn = controller.pawn
 	var/target_down = target && is_downed(target)
+	var/target_in_reach = target && !target_down && target.Adjacent(living_pawn)
 	// prio someone coming next to us with a melee weapon
-	if(!(target && !target_down && target.Adjacent(living_pawn) && isliving(target) && holds_melee_weapon(target)))
+	if(!(target_in_reach && isliving(target) && holds_melee_weapon(target)))
 		for(var/mob/living/candidate in candidates)
 			if(candidate != target && !is_downed(candidate) && candidate.Adjacent(living_pawn) && holds_melee_weapon(candidate))
 				return candidate
 	var/atom/attacker = controller.blackboard[BB_BASIC_MOB_SHOT_BY] // a mob, or something like a turret
 	if(attacker && attacker != target && (attacker in candidates) && !is_downed(attacker) && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < attacker_memory)
 		// ai cheese prevention
-		var/fighting_in_reach = target && !target_down && target.Adjacent(living_pawn) && !living_pawn.GetComponent(/datum/component/ranged_attacks)
+		var/fighting_in_reach = target_in_reach && !living_pawn.GetComponent(/datum/component/ranged_attacks)
 		if(!fighting_in_reach)
 			return attacker
-	if(world.time - controller.blackboard[BB_BASIC_MOB_LAST_HURT_TIME] < attacker_memory && !(target && !target_down && target.Adjacent(living_pawn)))
+	if(world.time - controller.blackboard[BB_BASIC_MOB_LAST_HURT_TIME] < attacker_memory && !target_in_reach)
 		for(var/atom/candidate as anything in candidates)
 			if(candidate != target && !is_downed(candidate) && candidate.Adjacent(living_pawn))
 				return candidate
@@ -113,7 +114,7 @@
 		return nearest
 	if(target_down)
 		// nobody else in view, but someone still up we saw a moment ago, like round a corner, beats finishing off who we've downed
-		var/atom/still_up = get_recent_enemy(controller, target, controller.blackboard[BB_TARGETTING_DATUM])
+		var/atom/still_up = get_recent_enemy(controller, target, targetting_datum)
 		if(still_up)
 			return still_up
 	if(!target && length(candidates))

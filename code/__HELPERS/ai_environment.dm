@@ -14,7 +14,7 @@
 	var/list/needs = basic_mob.habitable_atmos
 	if(basic_mob.unsuitable_atmos_damage && length(needs))
 		if(!air)
-			if(needs["min_oxy"] || needs["min_tox"] || needs["min_plas"] || needs["min_n2"] || needs["min_co2"])
+			if(ai_needs_to_breathe(basic_mob))
 				return AI_ENVIRONMENT_UNBREATHABLE
 		else
 			var/static/list/gas_by_need = list("oxy" = GAS_O2, "plas" = GAS_PLASMA, "tox" = GAS_PLASMA, "n2" = GAS_N2, "co2" = GAS_CO2)
@@ -30,6 +30,11 @@
 	if(basic_mob.unsuitable_heat_damage && temperature > basic_mob.maximum_survivable_temperature)
 		return AI_ENVIRONMENT_TOO_HOT
 	return null
+
+// whether basic_mob needs some gas or other in the air, so no air at all hurts it
+/proc/ai_needs_to_breathe(mob/living/basic/basic_mob)
+	var/list/needs = basic_mob.habitable_atmos
+	return basic_mob.unsuitable_atmos_damage && length(needs) && (needs["min_oxy"] || needs["min_tox"] || needs["min_plas"] || needs["min_n2"] || needs["min_co2"])
 
 /proc/ai_can_stand_on(mob/living/mover, turf/spot)
 	if(is_bare_space(spot) && !mover.ai_controller?.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE])
@@ -80,8 +85,7 @@
 	var/mob/living/basic/human/human_mob = basic_mob
 	if(istype(human_mob) && !human_mob.pressure_sealed)
 		return FALSE
-	var/list/needs = basic_mob.habitable_atmos
-	if(basic_mob.unsuitable_atmos_damage && length(needs) && (needs["min_oxy"] || needs["min_tox"] || needs["min_plas"] || needs["min_n2"] || needs["min_co2"]))
+	if(ai_needs_to_breathe(basic_mob))
 		return FALSE // needs something to breathe
 	return !basic_mob.unsuitable_cold_damage || basic_mob.minimum_survivable_temperature <= TCMB
 

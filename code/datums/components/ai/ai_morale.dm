@@ -6,7 +6,7 @@
 	//How far allies hear us die, in open air
 	var/hearing_range = 7
 	//radius to look for allies to count
-	var/vision_range = 9
+	var/vision_range = AI_DEFAULT_VISION_RANGE
 	//if FALSE, we never break morale
 	var/can_break = TRUE
 	//how long we stay broken before rallying
@@ -69,18 +69,13 @@
 /datum/component/ai_morale/proc/on_our_projectile_hit(datum/source, atom/movable/firer, atom/hit_target, angle)
 	SIGNAL_HANDLER
 	// projectiles tell us they've hit before the damage lands, so see how they're doing a moment later
-	if(isliving(hit_target) && !is_ally(hit_target))
+	if(isliving(hit_target) && !ai_is_ally(parent, hit_target))
 		addtimer(CALLBACK(src, PROC_REF(check_downed_ref), WEAKREF(hit_target)), 1)
 
 /datum/component/ai_morale/proc/on_our_melee_hit(datum/source, atom/hit_target, result)
 	SIGNAL_HANDLER
-	if(isliving(hit_target) && !is_ally(hit_target))
+	if(isliving(hit_target) && !ai_is_ally(parent, hit_target))
 		check_downed_ref(WEAKREF(hit_target))
-
-// whether we hit one of our own, which is nothing to be heartened by
-/datum/component/ai_morale/proc/is_ally(mob/living/victim)
-	var/mob/living/living_parent = parent
-	return victim == living_parent || living_parent.faction_check_mob(victim)
 
 // need this when checking other mobs since they get deleted on death, so we can't check them directly
 /datum/component/ai_morale/proc/check_downed_ref(datum/weakref/victim_ref)

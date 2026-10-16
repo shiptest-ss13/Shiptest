@@ -2,25 +2,19 @@
 
 	name = "Whitesands Inhabitant"
 	desc = "If you can read this, yell at a coder!"
-	icon_state = "survivor_base"
-	icon_living = "survivor_base"
-	habitable_atmos = list("min_oxy" = 1, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 999, "min_n2" = 0, "max_n2" = 0)
+	habitable_atmos = list("min_oxy" = 1, "max_oxy" = 0, "min_plas" = 0, "max_plas" = 0, "min_co2" = 0, "max_co2" = 999, "min_n2" = 0, "max_n2" = 0)
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	armor_base = /obj/item/clothing/suit/hooded/survivor
-	faction = list(FACTION_ANTAG_HERMITS)
 	callout_set = /datum/ai_callout_set/human/hermit
-	// the same mix of species as the hermit corpses they leaves, otherwise theres a mismatch sometimes
-	species_weights = list(
-		/datum/species/human = 50,
-		/datum/species/lizard = 20,
-		/datum/species/elzuose = 10,
-		/datum/species/moth = 10,
-		/datum/species/spider = 10,
-	)
 	flashlight_chance = 15
 	speak_chance = 20
 	speak_emote = list("breathes heavily", "growls", "sharply inhales")
 	emote_hear = list("murmers.","grumbles.","whimpers.")
+
+/mob/living/basic/human/hermit/Initialize(mapload)
+	// the same mix of species as the hermit corpses they leave, otherwise theres a mismatch sometimes
+	species_weights = GLOB.hermit_species_weights
+	return ..()
 
 /mob/living/basic/human/hermit/survivor
 	name = "Hermit Wanderer"

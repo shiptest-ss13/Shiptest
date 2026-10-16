@@ -29,7 +29,7 @@
 		return SUBTREE_RETURN_FINISH_PLANNING
 	var/style = pick_style(controller)
 	// those who fight up close go right to where they last saw them, like the corner they went round, as watching it from a few tiles off does us no good
-	var/go_there = !can_see_spot(controller, last_known_turf) || (!controller.pawn.GetComponent(/datum/component/ranged_attacks) && get_turf(controller.pawn) != last_known_turf)
+	var/go_there = !can_see_spot(controller, last_known_turf) || (!(controller.get_conditions() & AI_CONDITION_HAS_RANGED_ATTACK) && get_turf(controller.pawn) != last_known_turf)
 	var/last_saw_them = controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME]
 	if(!isnull(last_saw_them) && world.time - last_saw_them < lost_grace)
 		// they've only just slipped out of view, so no fuss yet: after them if that's how we'll search, or watching where they went
@@ -54,20 +54,18 @@
 	return SUBTREE_RETURN_FINISH_PLANNING // searching, so don't go after them blind
 
 /datum/ai_planning_subtree/search_lost_target/proc/pick_style(datum/ai_controller/controller)
-	// covering where they went, with fire if we can
-	var/hang_back_style = controller.pawn.GetComponent(/datum/component/ranged_attacks) ? SEARCH_STYLE_SUPPRESS : SEARCH_STYLE_HOLD
-	var/style = controller.blackboard[BB_BASIC_MOB_SEARCH_STYLE]
-	if(!style && !controller.pawn.GetComponent(/datum/component/ranged_attacks))
+	if(!(controller.get_conditions() & AI_CONDITION_HAS_RANGED_ATTACK))
 		// up close is all we've got, so we keep after them to where we last saw them, unless that's somewhere we can't go
 		var/turf/last_known_turf = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
 		return (last_known_turf && !ai_can_stand_on(controller.pawn, last_known_turf)) ? SEARCH_STYLE_HOLD : SEARCH_STYLE_INVESTIGATE
+	// covering where they went, with fire
+	var/hang_back_style = SEARCH_STYLE_SUPPRESS
+	var/style = controller.blackboard[BB_BASIC_MOB_PICKED_SEARCH_STYLE]
 	if(!style)
-		style = controller.blackboard[BB_BASIC_MOB_PICKED_SEARCH_STYLE]
-		if(!style)
-			style = length(search_style_weights) ? pick_weight(search_style_weights) : search_style
-			if(style == SEARCH_STYLE_INVESTIGATE && splits_search_roles && ally_already_searching(controller))
-				style = hang_back_style // someone's already gone after them, so cover them instead. Decided once, so we don't all swap back and forth
-			controller.set_blackboard_key(BB_BASIC_MOB_PICKED_SEARCH_STYLE, style)
+		style = length(search_style_weights) ? pick_weight(search_style_weights) : search_style
+		if(style == SEARCH_STYLE_INVESTIGATE && splits_search_roles && ally_already_searching(controller))
+			style = hang_back_style // someone's already gone after them, so cover them instead. Decided once, so we don't all swap back and forth
+		controller.set_blackboard_key(BB_BASIC_MOB_PICKED_SEARCH_STYLE, style)
 	if(AI_MORALE_IS(controller, AI_MORALE_EMBOLDENED))
 		style = SEARCH_STYLE_INVESTIGATE
 	else if(style == SEARCH_STYLE_INVESTIGATE && should_hang_back(controller))

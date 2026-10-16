@@ -140,7 +140,7 @@
 	if(.)
 		return
 	// AI that opens doors can get through
-	return HAS_TRAIT(requester, TRAIT_AI_OPENS_DOORS) && can_open(requester)
+	return requester && HAS_TRAIT(requester, TRAIT_AI_OPENS_DOORS) && can_open(requester)
 
 #undef CUT_TIME
 #undef CLIMB_TIME

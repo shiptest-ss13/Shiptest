@@ -45,7 +45,7 @@
 	var/our_distance = get_dist(our_turf, their_turf)
 	var/turf/best_turf
 	var/best_distance = our_distance - minimum_progress + 1
-	for(var/turf/open/candidate in range(bound_range, our_turf))
+	for(var/turf/open/candidate in RANGE_TURFS(bound_range, our_turf))
 		var/candidate_distance = get_dist(candidate, their_turf)
 		if(candidate_distance >= best_distance || candidate_distance < 1 || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
 			continue

@@ -77,7 +77,7 @@
 		var/turf/angle_turf = controller.blackboard[BB_BASIC_MOB_FLANK_TURF]
 		if(our_turf == angle_turf && blocker && is_door(blocker))
 			// we've come round behind them, so through the door at them
-			controller.queue_behavior(/datum/ai_behavior/find_firing_line, target_key, pass_flags)
+			controller.queue_behavior(/datum/ai_behavior/find_firing_line, target_key)
 			return SUBTREE_RETURN_FINISH_PLANNING
 		if(!angle_turf || our_turf == angle_turf || !still_an_angle(angle_turf, their_turf, pass_flags))
 			angle_turf = find_angle_on(controller, target, pass_flags)
@@ -148,7 +148,7 @@
 	var/list/reachable_without_passing_them // worked out only if we need it, as it's a fair bit of work
 	var/turf/best_turf
 	var/best_distance = INFINITY
-	for(var/turf/open/candidate in range(angle_search_range, their_turf))
+	for(var/turf/open/candidate in RANGE_TURFS(angle_search_range, their_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
 		if(candidate_distance >= best_distance || candidate_distance > max_flank_distance || get_dist(candidate, their_turf) <= minimum_distance || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
 			continue

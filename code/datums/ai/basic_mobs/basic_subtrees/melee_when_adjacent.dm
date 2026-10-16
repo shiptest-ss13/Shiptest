@@ -42,19 +42,11 @@
 	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_SHOVE_CHECK, world.time + shove_interval)
 	return melee_threat || prob(shove_chance)
 
-// whether someone's holding something they could do real harm with up close, that isn't a gun
-/proc/holds_melee_weapon(mob/living/someone)
-	for(var/obj/item/held in someone.held_items)
-		if(!isgun(held) && held.force >= 10)
-			return TRUE
-	return FALSE
-
 // whether we could shoot target right now instead
 /datum/ai_planning_subtree/melee_when_adjacent/proc/can_shoot_now(datum/ai_controller/controller, atom/target)
 	var/datum/component/ranged_attacks/ranged_attack = controller.pawn.GetComponent(/datum/component/ranged_attacks)
 	if(!ranged_attack?.ready_to_fire())
 		return FALSE
-	var/datum/component/ai_magazine/magazine = controller.pawn.GetComponent(/datum/component/ai_magazine)
-	if(magazine?.reloading)
+	if(controller.get_conditions() & AI_CONDITION_RELOADING)
 		return FALSE
 	return has_clear_shot(controller.pawn, target)

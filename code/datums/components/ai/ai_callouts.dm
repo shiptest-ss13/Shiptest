@@ -149,23 +149,18 @@
 /datum/component/ai_callouts/proc/on_our_projectile_hit(datum/source, atom/movable/firer, atom/hit_target, angle)
 	SIGNAL_HANDLER
 	// projectiles tell us they've hit before the damage lands, so see how they're doing a moment later
-	if(isliving(hit_target) && !is_ally(hit_target) && ai_is_person(hit_target))
+	if(isliving(hit_target) && !ai_is_ally(parent, hit_target) && ai_is_person(hit_target))
 		addtimer(CALLBACK(src, PROC_REF(call_out_downed), WEAKREF(hit_target), REF(hit_target)), 1)
 
 /datum/component/ai_callouts/proc/on_our_melee_hit(datum/source, atom/hit_target, result)
 	SIGNAL_HANDLER
-	if(!isliving(hit_target) || is_ally(hit_target) || !ai_is_person(hit_target))
+	if(!isliving(hit_target) || ai_is_ally(parent, hit_target) || !ai_is_person(hit_target))
 		return
 	var/mob/living/victim = hit_target
 	if(victim.stat == CONSCIOUS)
 		speak_about(AI_CALLOUT_MELEE) // still up, so something to go with the blow
 		return
 	call_out_downed(WEAKREF(hit_target), REF(hit_target))
-
-// whether we hit one of our own, which is nothing to shout about
-/datum/component/ai_callouts/proc/is_ally(mob/living/victim)
-	var/mob/living/living_parent = parent
-	return victim == living_parent || living_parent.faction_check_mob(victim)
 
 /datum/component/ai_callouts/proc/call_out_downed(datum/weakref/victim_ref, victim_id)
 	var/mob/living/victim = victim_ref?.resolve()
@@ -215,9 +210,12 @@
 	for(var/datum/component/ai_callouts/ally as anything in get_allies_in_earshot())
 		ally.speak_about(AI_CALLOUT_ALLY_DOWN)
 
-/datum/component/ai_callouts/proc/get_allies_in_earshot()
+// allies_in_earshot is get_ai_allies_in_earshot() if we've already got it to hand
+/datum/component/ai_callouts/proc/get_allies_in_earshot(list/allies_in_earshot)
 	. = list()
-	for(var/mob/living/ally as anything in get_ai_allies_in_earshot(parent, hearing_range, wall_penalty))
+	if(isnull(allies_in_earshot))
+		allies_in_earshot = get_ai_allies_in_earshot(parent, hearing_range, wall_penalty)
+	for(var/mob/living/ally as anything in allies_in_earshot)
 		var/datum/component/ai_callouts/ally_callouts = ally.GetComponent(/datum/component/ai_callouts)
 		if(ally_callouts)
 			. += ally_callouts
@@ -327,13 +325,15 @@
 		show_last_words_over_corpse(line, spans)
 	else
 		INVOKE_ASYNC(basic_mob, TYPE_PROC_REF(/atom/movable, say), message, null, spans)
+	var/list/allies_in_earshot
 	if(event == AI_CALLOUT_TARGET_DOWN || event == AI_CALLOUT_TARGET_KILLED)
-		for(var/mob/living/ally as anything in get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty))
+		allies_in_earshot = get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty)
+		for(var/mob/living/ally as anything in allies_in_earshot)
 			ai_embolden(ally)
 	var/group_cooldown = group_line_cooldowns[event]
 	if(group_cooldown)
 		LAZYSET(line_cooldowns, event, world.time + group_cooldown) // so we don't repeat ourselves either
-		for(var/datum/component/ai_callouts/ally as anything in get_allies_in_earshot())
+		for(var/datum/component/ai_callouts/ally as anything in get_allies_in_earshot(allies_in_earshot))
 			LAZYSET(ally.line_cooldowns, event, world.time + group_cooldown)
 	return TRUE
 

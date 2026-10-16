@@ -153,18 +153,13 @@
 		if(!mob_species)
 			mob_species = pick_weight(species_weights)
 		apply_dynamic_human_appearance(src, species_path = mob_species, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand, seed = rand(1, 3))
-	if(ispath(armor_base, /obj/item/clothing))
-		//sigh. if only we could get the initial() value of list vars
-		var/obj/item/clothing/instance = new armor_base()
-		armor = instance.armor
-		qdel(instance)
+	if(ispath(armor_base, /obj/item/clothing) && (!mob_spawner || armored_all_over)) // otherwise setup_body_armor() dresses us in our corpse's outfit instead
+		armor = get_clothing_armor(armor_base)
 	setup_body_armor()
 	if(in_hardsuit)
 		ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 		set_light(4)
 	pressure_sealed = in_hardsuit || (mob_spawner && spawner_is_pressure_sealed(mob_spawner)) // a gas mask gives us air, not pressure, so it takes a suit and helmet like a player
-	if(mob_spawner && spawner_has_jetpack(mob_spawner))
-		ai_controller?.set_blackboard_key(BB_BASIC_MOB_CAN_CROSS_SPACE, TRUE)
 	if(length(loot))
 		AddElement(/datum/element/death_drops, string_list(loot))
 	setup_blood()
@@ -196,9 +191,10 @@
 		return /datum/ai_controller/basic_controller/human/brute
 	return /datum/ai_controller/basic_controller/human
 
-/mob/living/basic/human/proc/has_heavy_melee_weapon()
+/mob/living/basic/human/proc/has_heavy_melee_weapon(obj/item/weapon)
 	var/static/list/heavy_weapons = typecacheof(list(/obj/item/melee/sledgehammer, /obj/item/melee/axe, /obj/item/melee/boarding_axe, /obj/item/melee/trench_club))
-	var/obj/item/weapon = get_melee_weapon()
+	if(isnull(weapon))
+		weapon = get_melee_weapon()
 	return ispath(weapon, /obj/item) && heavy_weapons[weapon]
 
 
@@ -243,12 +239,12 @@
 		wound_bonus = initial(weapon.wound_bonus)
 	if(!bare_wound_bonus)
 		bare_wound_bonus = initial(weapon.bare_wound_bonus)
-	if(attack_sound == initial(attack_sound))
+	if(attack_sound == /mob/living/basic/human::attack_sound) // the root's, so a subtype's own sound stays
 		if(initial(weapon.hitsound))
 			attack_sound = initial(weapon.hitsound)
 		else if(ispath(weapon, /obj/item/gun))
 			attack_sound = 'sound/weapons/genhit1.ogg' // bashing them with it
-	if(attack_verb_continuous != initial(attack_verb_continuous))
+	if(attack_verb_continuous != /mob/living/basic/human::attack_verb_continuous)
 		return
 	switch(weapon_sharpness)
 		if(SHARP_POINTY)
@@ -344,8 +340,9 @@
 			AddComponent(/datum/component/ai_flashlight, drops_on_death = TRUE)
 	if(isnull(mobility))
 		mobility = pick_mobility()
+	var/obj/item/melee_weapon = get_melee_weapon()
 	// fighting up close with something light, like a knife, we keep up the pressure by sidestepping around them between blows
-	var/light_melee_fighter = !noncombatant && !(casing_type || projectile_type || fires_flames) && get_melee_weapon() && !has_heavy_melee_weapon()
+	var/light_melee_fighter = !noncombatant && !(casing_type || projectile_type || fires_flames) && melee_weapon && !has_heavy_melee_weapon(melee_weapon)
 	if(dodging || light_melee_fighter || mobility == AI_MOBILITY_HIGH)
 		AddComponent(/datum/component/ai_dodging, dodge_chance, sidesteps, mobility == AI_MOBILITY_HIGH ? 50 : 25)
 	if(callout_set || (length(on_aggro_say) && aggro_say_chance))
@@ -355,6 +352,8 @@
 		return
 	ai_controller.set_blackboard_key(BB_TARGET_MINIMUM_STAT, stat_attack)
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_CAN_CLIMB, TRUE) // over sandbags and the like, as players can
+	if(mob_spawner && spawner_has_jetpack(mob_spawner))
+		ai_controller.set_blackboard_key(BB_BASIC_MOB_CAN_CROSS_SPACE, TRUE)
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_FLANK_PRIORITY, get_flank_priority())
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_MOBILITY, mobility)
 	if(mobility == AI_MOBILITY_HIGH && (casing_type || projectile_type))
@@ -375,7 +374,6 @@
 			ai_controller.set_blackboard_key(BB_BASIC_MOB_IDLE_EMOTES, string_list(emote_hear | emote_see))
 	if(check_friendly_fire)
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_AVOID_FRIENDLY_FIRE, TRUE)
-	var/obj/item/melee_weapon = get_melee_weapon()
 	if(melee_weapon && !ispath(melee_weapon, /obj/item/gun))
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_PREFERS_MELEE, TRUE) // a blade as well as a gun, so up close we'd rather use that
 	if(!wander)
@@ -465,9 +463,7 @@
 	switch(var_name)
 		if(NAMEOF(src, armor_base))
 			if(ispath(var_value, /obj/item/clothing))
-				var/obj/item/clothing/temp = new var_value
-				armor = temp.armor
-				qdel(temp)
+				armor = get_clothing_armor(var_value)
 				datum_flags |= DF_VAR_EDITED
 				return TRUE
 			return FALSE
@@ -485,6 +481,10 @@
 	qdel(gun)
 	attachments_by_type[gun_type] = attachments
 	return attachments
+
+/mob/living/basic/human/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change = TRUE)
+	. = ..()
+	face_target_while_moving()
 
 /mob/living/basic/human/proc/face_target_while_moving()
 	if(noncombatant || !ai_controller)

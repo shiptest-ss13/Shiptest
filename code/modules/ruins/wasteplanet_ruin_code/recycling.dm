@@ -21,7 +21,7 @@
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
 	engage_distance = 2
-	burst_interval = 6
+	burst_interval = 0.6 SECONDS
 	retreat_distance = 2
 	vision_range = 12
 	weapon_drop_chance = 100

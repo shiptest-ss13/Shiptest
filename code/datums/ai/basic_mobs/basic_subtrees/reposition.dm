@@ -8,7 +8,7 @@
 	var/list/intervals = list(list(2.5 SECONDS, 4 SECONDS), list(1 SECONDS, 2.5 SECONDS), list(0.5 SECONDS, 1.2 SECONDS))
 	//similar to intervals, but while we're being shot at out in the open, so we don't stand there and take it
 	var/list/under_fire_intervals = list(list(1.2 SECONDS, 2 SECONDS), list(0.6 SECONDS, 1.2 SECONDS), list(0.4 SECONDS, 0.8 SECONDS))
-	//gow far we move each time, at most, for each AI_MOBILITY_ from low to high
+	//how far we move each time, at most, for each AI_MOBILITY_ from low to high
 	var/list/step_ranges = list(2, 2, 3)
 	//how long being shot counts as being under fire
 	var/under_fire_time = 4 SECONDS
@@ -41,7 +41,7 @@
 	var/no_shot = !has_clear_shot(living_pawn, target)
 	if(!no_shot && (distance < fight_range[1] || distance > fight_range[2]))
 		return // closing in or backing off, see maintain_distance
-	var/urgent = no_shot || (is_doorway(our_turf) && blocking_an_ally(living_pawn, our_turf, target)) || ally_in_the_way(living_pawn, our_turf, target)
+	var/urgent = no_shot || (is_doorway(our_turf) && blocking_an_ally(living_pawn, our_turf, target)) || ally_in_line_of_fire(living_pawn, our_turf, get_turf(target))
 	var/under_fire = world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < under_fire_time
 	if(controller.blackboard[BB_BASIC_MOB_HOLDS_POSITION] && !urgent && !under_fire)
 		return // we've a shot from here, so we keep still and take it
@@ -71,7 +71,7 @@
 /datum/ai_planning_subtree/reposition/proc/work_towards_firing_line(datum/ai_controller/controller, atom/target, distance)
 	if(distance <= approach_distance || AI_MORALE_IS(controller, AI_MORALE_WARY))
 		return FALSE
-	controller.queue_behavior(/datum/ai_behavior/find_firing_line, target_key, get_ai_shot_pass_flags(controller.pawn))
+	controller.queue_behavior(/datum/ai_behavior/find_firing_line, target_key)
 	return TRUE
 
 /datum/ai_planning_subtree/reposition/proc/get_mobility(datum/ai_controller/controller)
@@ -87,13 +87,13 @@
 	var/to_target_x = their_turf.x - our_turf.x
 	var/to_target_y = their_turf.y - our_turf.y
 	var/to_target_length = max(1, sqrt(to_target_x ** 2 + to_target_y ** 2))
-	for(var/turf/open/candidate in range(step_ranges[get_mobility(controller)], our_turf))
+	for(var/turf/open/candidate in RANGE_TURFS(step_ranges[get_mobility(controller)], our_turf))
 		if(candidate == our_turf || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
 			continue
 		var/candidate_distance = get_dist(candidate, their_turf)
 		if(candidate_distance < fight_range[1] || candidate_distance > fight_range[2])
 			continue
-		if(!can_walk_straight_to(living_pawn, candidate) || get_shot_blocker(candidate, their_turf, pass_flags = pass_flags) || ally_in_the_way(living_pawn, candidate, target))
+		if(!can_walk_straight_to(living_pawn, candidate) || get_shot_blocker(candidate, their_turf, pass_flags = pass_flags) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
 			continue
 		spots += candidate
 		var/step_x = candidate.x - our_turf.x
@@ -114,11 +114,11 @@
 	var/pass_flags = get_ai_shot_pass_flags(living_pawn)
 	var/list/nearest_spots = list()
 	var/nearest_distance = INFINITY
-	for(var/turf/open/candidate in range(wider_search_range, our_turf))
+	for(var/turf/open/candidate in RANGE_TURFS(wider_search_range, our_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
 		if(candidate == our_turf || candidate == their_turf || candidate_distance > nearest_distance || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
 			continue
-		if(get_shot_blocker(candidate, their_turf, pass_flags = pass_flags) || ally_in_the_way(living_pawn, candidate, target))
+		if(get_shot_blocker(candidate, their_turf, pass_flags = pass_flags) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
 			continue
 		if(candidate_distance < nearest_distance)
 			nearest_distance = candidate_distance
@@ -138,6 +138,3 @@
 		if(ally.Adjacent(living_pawn) || (our_turf in get_line(ally_turf, their_turf)))
 			return TRUE
 	return FALSE
-
-/datum/ai_planning_subtree/reposition/proc/ally_in_the_way(mob/living/living_pawn, turf/spot, atom/target)
-	return ally_in_line_of_fire(living_pawn, spot, get_turf(target))

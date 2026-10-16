@@ -28,6 +28,10 @@
 		return 1
 	return max((pressure - SOUND_MINIMUM_PRESSURE) / (ONE_ATMOSPHERE - SOUND_MINIMUM_PRESSURE), 0)
 
+// whether victim is source or one of their own, don't celebrate
+/proc/ai_is_ally(mob/living/source, mob/living/victim)
+	return victim == source || source.faction_check_mob(victim)
+
 /proc/get_ai_allies_in_range(mob/living/source, range)
 	. = list()
 	for(var/mob/living/ally in range(range, source))
@@ -39,3 +43,13 @@
 	for(var/mob/living/ally as anything in get_ai_allies_in_range(source, range))
 		if(!isnull(get_heard_distance(source, ally, range, wall_penalty, through_air = FALSE))) // over the radio, so the air doesn't matter
 			. += ally
+
+// fuzz sound origin so they dont always home in the direct location. can be in a wall but thats intentional
+/proc/guess_sound_origin(turf/origin, inaccuracy, somewhere_to_stand = FALSE)
+	if(inaccuracy < 1)
+		return origin
+	for(var/attempt in 1 to 5)
+		var/turf/guess = locate(origin.x + rand(-inaccuracy, inaccuracy), origin.y + rand(-inaccuracy, inaccuracy), origin.z)
+		if(guess && (!somewhere_to_stand || (isopenturf(guess) && !guess.is_blocked_turf(TRUE))))
+			return guess
+	return origin

@@ -33,7 +33,7 @@
 			AI_LOG_DECISION(controller, "ambush_dug_in: waited long enough for [target]")
 			end_ambush(controller)
 			return
-		if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE && !get_dug_in_cover(target, our_turf))
+		if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE && !cover_between(their_turf, our_turf))
 			AI_LOG_DECISION(controller, "ambush_dug_in: [target]'s come out from behind their cover")
 			end_ambush(controller)
 			return
@@ -45,7 +45,7 @@
 		return SUBTREE_RETURN_FINISH_PLANNING
 	if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != TRUE || world.time < controller.blackboard[BB_BASIC_MOB_NEXT_AMBUSH] || !can_shoot_at_range(target))
 		return // only a gun makes it a killing ground
-	var/obj/cover = get_dug_in_cover(target, our_turf)
+	var/obj/cover = cover_between(their_turf, our_turf)
 	if(!cover)
 		return
 	var/mob/living/basic/basic_mob = controller.pawn
@@ -75,21 +75,3 @@
 // brutes break through most cover rather than waiting
 /datum/ai_planning_subtree/ambush_dug_in/brute
 	quick_hits = 8
-
-// the cover target's dug in behind, facing us from where we are, like with sandbags in front of them
-/proc/get_dug_in_cover(atom/target, turf/our_turf)
-	var/turf/their_turf = get_turf(target)
-	var/list/line = get_line(their_turf, our_turf)
-	if(length(line) < 3)
-		return null // right up against them, so there's nothing between
-	var/towards = get_dir(their_turf, our_turf)
-	for(var/obj/thing in their_turf)
-		if((thing.flags_1 & ON_BORDER_1) && (thing.dir & towards) && is_cover(thing))
-			return thing
-	var/turf/in_front = line[2]
-	for(var/obj/thing in in_front)
-		if(!is_cover(thing))
-			continue
-		if(!(thing.flags_1 & ON_BORDER_1) || (thing.dir & (towards | REVERSE_DIR(towards))))
-			return thing
-	return null

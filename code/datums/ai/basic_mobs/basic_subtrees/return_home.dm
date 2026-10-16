@@ -61,7 +61,7 @@
 		return our_turf
 	var/turf/best_turf
 	var/best_distance = INFINITY
-	for(var/turf/open/candidate in range(home_search_range, our_turf))
+	for(var/turf/open/candidate in RANGE_TURFS(home_search_range, our_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
 		if(candidate_distance >= best_distance || candidate.density || is_bare_space(candidate))
 			continue
