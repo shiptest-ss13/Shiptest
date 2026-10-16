@@ -110,7 +110,7 @@
 /obj/machinery/door/airlock/command{
 	dir = 4;
 	name = "Bridge";
-	req_access_txt = "19"
+	id_tag = "falmouth_bridgedoor"
 	},
 /obj/structure/cable/pink{
 	icon_state = "4-8"
@@ -585,6 +585,15 @@
 /obj/machinery/recharger{
 	pixel_x = 4;
 	pixel_y = 3
+	},
+/obj/machinery/button/door{
+	pixel_x = 19;
+	pixel_y = 9;
+	dir = 8;
+	id = "falmouth_bridgedoor";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bridge Bolt"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/hallway/fore)
@@ -1417,6 +1426,9 @@
 	icon_state = "1-6"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/pink{
+	icon_state = "1-5"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "sx" = (
@@ -1512,6 +1524,9 @@
 /obj/item/reagent_containers/food/drinks/soda_cans/lunapunch{
 	pixel_x = -2;
 	pixel_y = 6
+	},
+/obj/structure/cable/pink{
+	icon_state = "0-8"
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken5"
@@ -2235,6 +2250,15 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	pixel_x = 6;
+	pixel_y = -19;
+	dir = 1;
+	id = "falmouth_bridgedoor";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bridge Bolt"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ft" = (
@@ -2393,25 +2417,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
-"HQ" = (
-/obj/effect/turf_decal/trimline/transparent/green/filled/line,
-/obj/structure/filingcabinet/double{
-	dir = 8;
-	pixel_x = 10;
-	pixel_y = 0;
-	density = 0
-	},
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/pen,
-/obj/item/pen,
-/obj/item/pen,
-/obj/item/pen,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/fore)
 "HZ" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/siding/thinplating{
@@ -2431,6 +2436,9 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/north,
+/obj/structure/cable/pink{
+	icon_state = "4-10"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Io" = (
@@ -3289,6 +3297,25 @@
 "TL" = (
 /turf/closed/wall/r_wall,
 /area/ship/hallway/central)
+"TN" = (
+/obj/effect/turf_decal/trimline/transparent/green/filled/line,
+/obj/structure/filingcabinet/double{
+	dir = 8;
+	pixel_x = 10;
+	pixel_y = 0;
+	density = 0
+	},
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/fore)
 "TW" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
@@ -4436,7 +4463,7 @@ cc
 gm
 zo
 dy
-HQ
+TN
 hR
 fE
 cq
