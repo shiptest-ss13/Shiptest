@@ -14,7 +14,7 @@
 
 /datum/reagent/consumable/orangejuice/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(metabolizer.getOxyLoss() && SPT_PROB(15, seconds_per_tick))
-		metabolizer.adjustOxyLoss(-0.5 * seconds_per_tick, 0)
+		metabolizer.adjustOxyLoss(-1 * REM * seconds_per_tick, 0)
 		. = 1
 	..()
 
@@ -41,8 +41,8 @@
 	glass_desc = "A glass of intensely sour lime juice. You wonder to yourself: how much do you really need to ward off scurvy for it to come to this point?"
 
 /datum/reagent/consumable/limejuice/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	if(metabolizer.getToxLoss() && prob(20))
-		metabolizer.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
+	if(metabolizer.getToxLoss() && SPT_PROB(10, seconds_per_tick))
+		metabolizer.adjustToxLoss(-1, 0)
 		. = 1
 	..()
 
@@ -55,8 +55,8 @@
 	glass_desc = "Mildly sweet, but it won't actually improve your eyesight all that much beyond the baseline..."
 
 /datum/reagent/consumable/carrotjuice/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_blurriness(-1)
-	metabolizer.adjust_blindness(-1)
+	metabolizer.adjust_blurriness(-1 * REM * seconds_per_tick)
+	metabolizer.adjust_blindness(-1 * REM * seconds_per_tick)
 	switch(current_cycle)
 		if(1 to 20)
 			EMPTY_BLOCK_GUARD //nothing
@@ -166,7 +166,7 @@
 
 /datum/reagent/consumable/milk/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(metabolizer.getBruteLoss() && SPT_PROB(10, seconds_per_tick))
-		metabolizer.heal_bodypart_damage(0.5 * seconds_per_tick ,0, 0)
+		metabolizer.heal_bodypart_damage(1, 0, 0)
 		. = 1
 	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 1 * seconds_per_tick)
@@ -182,12 +182,12 @@
 
 /datum/reagent/consumable/tiris_milk/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(metabolizer.getBruteLoss() && SPT_PROB(10, seconds_per_tick))
-		metabolizer.heal_bodypart_damage(0.5 * seconds_per_tick ,0, 0)
+		metabolizer.heal_bodypart_damage(1, 0, 0)
 		. = 1
 	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
-		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 1 * seconds_per_tick)
+		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2 * REM * seconds_per_tick)
 	if(holder.has_reagent(/datum/reagent/consumable/refa_li))
-		holder.remove_reagent(/datum/reagent/consumable/refa_li, 1 * seconds_per_tick)
+		holder.remove_reagent(/datum/reagent/consumable/refa_li, 2 * REM * seconds_per_tick)
 	..()
 
 /datum/reagent/consumable/soymilk
@@ -229,13 +229,13 @@
 	glass_desc = "Black coffee, served straight. It'll be pretty bitter without anything else in it!"
 
 /datum/reagent/consumable/coffee/overdose_process(mob/living/overdoser, seconds_per_tick, times_fired)
-	overdoser.set_timed_status_effect(5 SECONDS * REM * seconds_per_tick, /datum/status_effect/jitter, only_if_higher = TRUE)
+	overdoser.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/coffee/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
-	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3)
-	metabolizer.AdjustSleeping(-40)
+	metabolizer.adjust_timed_status_effect(-10 SECONDS * REM * seconds_per_tick, /datum/status_effect/dizziness)
+	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3 * REM * seconds_per_tick)
+	metabolizer.AdjustSleeping(-4 SECONDS * REM * seconds_per_tick)
 	//310.15 is the normal bodytemp.
 	metabolizer.adjust_bodytemperature(1.5 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, 0, metabolizer.get_body_temp_normal(), FALSE)
 	if(holder.has_reagent(/datum/reagent/consumable/frostoil))
@@ -260,12 +260,12 @@
 	glass_desc = "There's a latent desire to drink this out of a teacup, but there's no time for teatime out here."
 
 /datum/reagent/consumable/tea/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-4 SECONDS, /datum/status_effect/dizziness)
+	metabolizer.adjust_timed_status_effect(-4 SECONDS * REM * seconds_per_tick, /datum/status_effect/dizziness)
 	metabolizer.drowsyness = max(0,metabolizer.drowsyness-1)
-	metabolizer.adjust_timed_status_effect(-6 SECONDS * REM, /datum/status_effect/jitter)
-	metabolizer.AdjustSleeping(-20)
+	metabolizer.adjust_timed_status_effect(-6 SECONDS * REM * seconds_per_tick, /datum/status_effect/jitter)
+	metabolizer.AdjustSleeping(-2 SECONDS * REM * seconds_per_tick)
 	if(metabolizer.getToxLoss() && SPT_PROB(10, seconds_per_tick))
-		metabolizer.adjustToxLoss(-0.5 * seconds_per_tick, 0)
+		metabolizer.adjustToxLoss(-1, 0)
 	metabolizer.adjust_bodytemperature(2 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, metabolizer.get_body_temp_normal(), FALSE)
 	..()
 	. = 1
@@ -317,13 +317,13 @@
 	glass_desc = "Iced black coffee. It's still going to be pretty bitter on its own, though!"
 
 /datum/reagent/consumable/icecoffee/overdose_process(mob/living/M)
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/icecoffee/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
-	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3)
-	metabolizer.AdjustSleeping(-40)
+	metabolizer.adjust_timed_status_effect(-10 SECONDS * REM * seconds_per_tick, /datum/status_effect/dizziness)
+	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3 * REM * seconds_per_tick)
+	metabolizer.AdjustSleeping(-4 SECONDS * REM * seconds_per_tick)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
 	..()
 	. = 1
@@ -340,15 +340,15 @@
 	glass_desc = "The wonders of fusion mixed into a cup of coffee, resulting in an extremely hot-cold drink."
 
 /datum/reagent/consumable/hot_ice_coffee/overdose_process(mob/living/overdoser)
-	overdoser.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	overdoser.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/hot_ice_coffee/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
-	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3)
+	metabolizer.adjust_timed_status_effect(-10 SECONDS * REM * seconds_per_tick, /datum/status_effect/dizziness)
+	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3 * REM * seconds_per_tick)
 	metabolizer.AdjustSleeping(-60)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
-	metabolizer.adjustToxLoss(1*REM, 0)
+	metabolizer.adjustToxLoss(1 * REM * seconds_per_tick, 0)
 	..()
 	. = TRUE
 
@@ -363,10 +363,10 @@
 
 /datum/reagent/consumable/icetea/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	metabolizer.adjust_timed_status_effect(-4 SECONDS, /datum/status_effect/dizziness)
-	metabolizer.drowsyness = max(0,metabolizer.drowsyness-1)
-	metabolizer.AdjustSleeping(-40)
-	if(metabolizer.getToxLoss() && prob(20))
-		metabolizer.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
+	metabolizer.drowsyness = max(0,metabolizer.drowsyness-1 * REM * seconds_per_tick)
+	metabolizer.AdjustSleeping(-4 SECONDS)
+	if(metabolizer.getToxLoss() && SPT_PROB(10, seconds_per_tick))
+		metabolizer.adjustToxLoss(-1, 0)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
 	..()
 	. = 1
@@ -380,7 +380,7 @@
 	glass_desc = "A carbonated cola. You should drink it before it gets flat!"
 
 /datum/reagent/consumable/space_cola/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.drowsyness = max(0,metabolizer.drowsyness-5)
+	metabolizer.drowsyness = max(0,metabolizer.drowsyness-5 * REM * seconds_per_tick)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
 	..()
 
@@ -402,10 +402,10 @@
 	..()
 
 /datum/reagent/consumable/crosstalk/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	metabolizer.adjust_timed_status_effect(1 SECONDS, /datum/status_effect/dizziness, 2 SECONDS)
+	metabolizer.set_timed_status_effect(4 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+	metabolizer.adjust_timed_status_effect(1 SECONDS * REM * seconds_per_tick, /datum/status_effect/dizziness, 2 SECONDS)
 	metabolizer.drowsyness = 0
-	metabolizer.AdjustSleeping(-40)
+	metabolizer.AdjustSleeping(-4 SECONDS)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal())
 	..()
 
@@ -418,10 +418,10 @@
 	glass_desc = "A glass of Comet Trail. Taste the stars!"
 
 /datum/reagent/consumable/comet_trail/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.drowsyness = max(0,metabolizer.drowsyness-7)
-	metabolizer.AdjustSleeping(-20)
+	metabolizer.drowsyness = max(0,metabolizer.drowsyness-7 * REM * seconds_per_tick)
+	metabolizer.AdjustSleeping(-2 SECONDS)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
-	metabolizer.set_timed_status_effect(1 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	metabolizer.set_timed_status_effect(1 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 	. = 1
 
@@ -434,7 +434,7 @@
 	glass_desc = "A cup of fizzy Tadrixx. It smells sweet."
 
 /datum/reagent/consumable/tadrixx/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.drowsyness = max(0,metabolizer.drowsyness-6)
+	metabolizer.drowsyness = max(0,metabolizer.drowsyness-6 * REM * seconds_per_tick)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
 	..()
 
@@ -460,7 +460,7 @@
 	glass_desc = "A glass of Molten Bubbles. The spices tickle your nose."
 
 /datum/reagent/consumable/molten/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.heal_bodypart_damage(1,1,0)
+	metabolizer.heal_bodypart_damage(1 * REM * seconds_per_tick ,1 * REM * seconds_per_tick,0)
 	if(metabolizer.bodytemperature > metabolizer.get_body_temp_normal(apply_change=FALSE))
 		metabolizer.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(apply_change=FALSE), FALSE)
 	else if(metabolizer.bodytemperature < (metabolizer.get_body_temp_normal(apply_change=FALSE) + 1))
@@ -539,8 +539,8 @@
 	glass_desc = "Soda water. You feel like you should add something to this..."
 
 /datum/reagent/consumable/sodawater/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
-	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3)
+	metabolizer.adjust_timed_status_effect(-10 SECONDS * REM * seconds_per_tick, /datum/status_effect/dizziness)
+	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3 * REM * seconds_per_tick)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
 	..()
 
@@ -554,8 +554,8 @@
 
 /datum/reagent/consumable/tonic/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	metabolizer.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
-	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3)
-	metabolizer.AdjustSleeping(-40)
+	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3 * REM * seconds_per_tick)
+	metabolizer.AdjustSleeping(-4 SECONDS * seconds_per_tick)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
 	..()
 	. = 1
@@ -573,7 +573,7 @@
 	metabolizer.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	metabolizer.adjust_timed_status_effect(2 SECONDS, /datum/status_effect/dizziness, 20 SECONDS)
 	metabolizer.drowsyness = 0
-	metabolizer.AdjustSleeping(-40)
+	metabolizer.AdjustSleeping(-4 SECONDS * REM * seconds_per_tick)
 	metabolizer.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
 	..()
 
@@ -615,11 +615,11 @@
 
 /datum/reagent/consumable/soy_latte/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	metabolizer.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
-	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3)
+	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3 * REM * seconds_per_tick)
 	metabolizer.set_sleeping(0)
 	metabolizer.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, metabolizer.get_body_temp_normal(), FALSE)
-	if(metabolizer.getBruteLoss() && prob(20))
-		metabolizer.heal_bodypart_damage(1,0, 0)
+	if(metabolizer.getBruteLoss() && SPT_PROB(10, seconds_per_tick))
+		metabolizer.heal_bodypart_damage(1*REM * seconds_per_tick,0, 0)
 	..()
 	. = 1
 
@@ -638,12 +638,12 @@
 	..()
 
 /datum/reagent/consumable/cafe_latte/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
-	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3)
+	metabolizer.adjust_timed_status_effect(-10 SECONDS * REM * seconds_per_tick, /datum/status_effect/dizziness)
+	metabolizer.drowsyness = max(0,metabolizer.drowsyness-3 * REM * seconds_per_tick)
 	metabolizer.set_sleeping(0)
 	metabolizer.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, metabolizer.get_body_temp_normal(), FALSE)
-	if(metabolizer.getBruteLoss() && prob(20))
-		metabolizer.heal_bodypart_damage(1,0, 0)
+	if(metabolizer.getBruteLoss() && prob(10))
+		metabolizer.heal_bodypart_damage(1 * REM * seconds_per_tick,0, 0)
 	..()
 	. = 1
 
@@ -658,12 +658,12 @@
 	glass_desc = "A homemade curative. Helps the body heal with the nutrition density, but it leaves a gnawing hunger afterwards."
 
 /datum/reagent/consumable/doctor_delight/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjustBruteLoss(-0.25 * seconds_per_tick, FALSE)
-	metabolizer.adjustFireLoss(-0.25 * seconds_per_tick, FALSE)
-	metabolizer.adjustToxLoss(-0.25 * seconds_per_tick, FALSE)
-	metabolizer.adjustOxyLoss(-0.25 * seconds_per_tick, FALSE)
+	metabolizer.adjustBruteLoss(-0.25 * REM * seconds_per_tick, FALSE)
+	metabolizer.adjustFireLoss(-0.25 * REM * seconds_per_tick, FALSE)
+	metabolizer.adjustToxLoss(-0.25 * REM * seconds_per_tick, FALSE)
+	metabolizer.adjustOxyLoss(-0.25 * REM * seconds_per_tick, FALSE)
 	if(metabolizer.nutrition && (metabolizer.nutrition - 2 > 0))
-		metabolizer.adjust_nutrition(-0.5 * seconds_per_tick)
+		metabolizer.adjust_nutrition(-1 * REM * seconds_per_tick)
 	..()
 	return TRUE
 
@@ -792,7 +792,7 @@
 
 /datum/reagent/consumable/hot_coco/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(metabolizer.getBruteLoss() && SPT_PROB(10, seconds_per_tick))
-		metabolizer.heal_bodypart_damage(1,0, 0)
+		metabolizer.heal_bodypart_damage(1 * REM * seconds_per_tick,0, 0)
 		. = 1
 	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
@@ -909,8 +909,8 @@
 	glass_name = "glass of aloe juice"
 	glass_desc = "Juiced aloe vera. It's an acquired taste."
 
-/datum/reagent/consumable/aloejuice/on_mob_life(mob/living/metabolizer)
-	if(metabolizer.getToxLoss() && prob(30))
+/datum/reagent/consumable/aloejuice/on_mob_life(mob/living/metabolizer, seconds_per_tick, times_fired)
+	if(metabolizer.getToxLoss() && SPT_PROB(30, seconds_per_tick))
 		metabolizer.adjustToxLoss(-1, 0)
 	..()
 	. = TRUE

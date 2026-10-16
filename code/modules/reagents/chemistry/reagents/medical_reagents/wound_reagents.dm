@@ -17,11 +17,13 @@
 		if(11 to 30)
 			C.adjustStaminaLoss(2.5 * seconds_per_tick)
 		if(31 to INFINITY)
-			C.AdjustSleeping(40)
+			C.AdjustSleeping(4 SECONDS)
 			//formerly everything-fixing juice
 			for(var/datum/wound/blunt/bone/broken_bone in C.all_wounds)
 				broken_bone.remove_wound()
 			for(var/obj/item/organ/O in C.internal_organs)
-				O.damage = 0
-			holder.remove_reagent(/datum/reagent/medicine/bonefixingjuice, 10)
+				if(O.organ_flags & ORGAN_SYNTHETIC)
+					continue
+				O.setOrganDamage(0)
+			holder.remove_reagent(/datum/reagent/medicine/bonefixingjuice, volume)
 	..()

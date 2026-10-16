@@ -107,15 +107,15 @@
 
 /datum/reagent/medicine/rezadone/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	M.setCloneLoss(0)
-	M.heal_bodypart_damage(1, 1)
+	M.heal_bodypart_damage(1 * REM * seconds_per_tick, 1)
 	REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC)
 	..()
 	. = 1
 
 /datum/reagent/medicine/rezadone/overdose_process(mob/living/M, seconds_per_tick, times_fired)
-	M.adjustToxLoss(1, 0)
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+	M.adjustToxLoss(1 * REM * seconds_per_tick, 0)
+	M.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(10 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 	. = 1
 
@@ -140,7 +140,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 
 /datum/reagent/medicine/insulin/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	if(M.AdjustSleeping(-20 * seconds_per_tick * REM))
+	if(M.AdjustSleeping(-2 SECONDS * seconds_per_tick * REM))
 		. = 1
 	holder.remove_reagent(/datum/reagent/consumable/sugar, 3)
 	..()
@@ -159,10 +159,10 @@
 
 /datum/reagent/medicine/changelingadrenaline/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	..()
-	M.AdjustAllImmobility(-20)
+	M.AdjustAllImmobility(-2 SECONDS)
 	M.adjustStaminaLoss(-5 * seconds_per_tick, 0)
-	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+	M.set_timed_status_effect(20 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	return TRUE
 
 /datum/reagent/medicine/changelingadrenaline/on_mob_metabolize(mob/living/L)
@@ -198,7 +198,7 @@
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/changelinghaste)
 	..()
 
-/datum/reagent/medicine/changelinghaste/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(2, 0)
+/datum/reagent/medicine/changelinghaste/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	M.adjustToxLoss(1 * seconds_per_tick, 0)
 	..()
 	return TRUE

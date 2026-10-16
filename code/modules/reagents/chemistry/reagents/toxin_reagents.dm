@@ -52,8 +52,8 @@
 		expose_target.domutcheck()
 	..()
 
-/datum/reagent/toxin/mutagen/on_mob_life(mob/living/carbon/C)
-	C.apply_effect(5,EFFECT_IRRADIATE,0)
+/datum/reagent/toxin/mutagen/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
+	C.apply_effect(5 * REM * seconds_per_tick,EFFECT_IRRADIATE,0)
 	return ..()
 
 /datum/reagent/toxin/mutagen/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -76,10 +76,10 @@
 	process_flags = ORGANIC | SYNTHETIC
 	accelerant_quality = 10
 
-/datum/reagent/toxin/plasma/on_mob_life(mob/living/carbon/C)
+/datum/reagent/toxin/plasma/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
 	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
-		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
-	C.adjustPlasma(20)
+		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2 * REM * seconds_per_tick)
+	C.adjustPlasma(20 * REM * seconds_per_tick)
 	return ..()
 
 /datum/reagent/toxin/plasma/on_temp_change()
@@ -130,7 +130,7 @@
 
 /datum/reagent/toxin/hot_ice/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
-		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
+		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2 * REM * seconds_per_tick)
 	metabolizer.adjustPlasma(20)
 	metabolizer.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, metabolizer.get_body_temp_normal(), FALSE)
 	if(ishuman(metabolizer))
@@ -145,15 +145,15 @@
 	toxpwr = 0
 	taste_description = "acid"
 
-/datum/reagent/toxin/lexorin/on_mob_life(mob/living/carbon/C)
+/datum/reagent/toxin/lexorin/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
 	. = TRUE
 
 	if(HAS_TRAIT(C, TRAIT_NOBREATH))
 		. = FALSE
 
 	if(.)
-		C.adjustOxyLoss(5, 0)
-		C.losebreath += 2
+		C.adjustOxyLoss(5 * REM * seconds_per_tick, 0)
+		C.losebreath += 2 * REM * seconds_per_tick
 		if(prob(20))
 			C.emote("gasp")
 	..()
@@ -169,7 +169,7 @@
 /datum/reagent/toxin/slimejelly/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(prob(10))
 		to_chat(metabolizer, span_danger("Your insides are burning!"))
-		metabolizer.adjustToxLoss(rand(20,60)*REM, 0)
+		metabolizer.adjustToxLoss(rand(20,60) * REM * seconds_per_tick, 0)
 		. = 1
 	else if(prob(40))
 		metabolizer.heal_bodypart_damage(5*REM)
@@ -333,7 +333,7 @@
 /datum/reagent/toxin/spore/on_mob_life(mob/living/carbon/C)
 	C.damageoverlaytemp = 60
 	C.update_damage_hud()
-	C.blur_eyes(3)
+	C.blur_eyes(3) // set 6 seconds
 	return ..()
 
 /datum/reagent/toxin/spore_burning
@@ -364,10 +364,10 @@
 			metabolizer.confused += 2
 			metabolizer.drowsyness += 2
 		if(10 to 50)
-			metabolizer.Sleeping(40)
+			metabolizer.Sleeping(4 SECONDS)
 			. = 1
 		if(51 to INFINITY)
-			metabolizer.Sleeping(40)
+			metabolizer.Sleeping(4 SECONDS)
 			metabolizer.adjustToxLoss((current_cycle - 50) * REM * seconds_per_tick, 0)
 			. = 1
 	..()
@@ -384,10 +384,10 @@
 /datum/reagent/toxin/fakebeer/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	switch(current_cycle)
 		if(1 to 50)
-			metabolizer.Sleeping(40)
+			metabolizer.Sleeping(4 SECONDS)
 		if(51 to INFINITY)
-			metabolizer.Sleeping(40)
-			metabolizer.adjustToxLoss((current_cycle - 50)*REM, 0)
+			metabolizer.Sleeping(4 SECONDS)
+			metabolizer.adjustToxLoss((current_cycle - 50) * REM * seconds_per_tick, 0)
 	return ..()
 
 /datum/reagent/toxin/coffeepowder
@@ -414,7 +414,7 @@
 	taste_description = "silence"
 
 /datum/reagent/toxin/mutetoxin/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.silent = max(metabolizer.silent, 3)
+	metabolizer.silent = max(metabolizer.silent, 3) // set to six seconds
 	..()
 
 /datum/reagent/toxin/staminatoxin
@@ -426,8 +426,8 @@
 	toxpwr = 0
 
 /datum/reagent/toxin/staminatoxin/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjustStaminaLoss(REM * data, 0)
-	data = max(data - 1, 3)
+	metabolizer.adjustStaminaLoss(data * REM * seconds_per_tick, 0)
+	data = max(data - 0.5*seconds_per_tick, 3)
 	..()
 	. = 1
 
@@ -441,7 +441,7 @@
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 
 /datum/reagent/toxin/polonium/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.radiation += 4
+	metabolizer.radiation += 4 * REM * seconds_per_tick
 	..()
 
 /datum/reagent/toxin/histamine
@@ -467,7 +467,7 @@
 			to_chat(metabolizer, span_warning("You find yourself wheezing a little harder as your neck swells..."))
 		metabolizer.adjust_lung_inflammation(histamine_inflammation * seconds_per_tick * REM)
 
-	if(prob(10))
+	if(SPT_PROB(5, seconds_per_tick))
 		switch(rand(1,4))
 			if(1)
 				to_chat(metabolizer, span_danger("You can barely see!"))
@@ -486,7 +486,7 @@
 /datum/reagent/toxin/histamine/overdose_process(mob/living/overdoser, seconds_per_tick)
 	overdoser.adjustOxyLoss(1 * REM * seconds_per_tick, 0)
 	overdoser.adjustToxLoss(1 * REM * seconds_per_tick, 0)
-	overdoser.adjust_lung_inflammation(histamine_OD_inflammation * SSMOBS_DT * REM)
+	overdoser.adjust_lung_inflammation(histamine_OD_inflammation * SSMOBS_DT * REM * seconds_per_tick)
 	if (SPT_PROB(15, seconds_per_tick))
 		to_chat(overdoser, span_boldwarning("You feel your neck swelling, squeezing on your windpipe more and more!"))
 	..()
@@ -502,7 +502,7 @@
 	toxpwr = 0.5
 
 /datum/reagent/toxin/formaldehyde/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	if(prob(5) && metabolizer.has_reagent(/datum/reagent/toxin/formaldehyde, 5.1)) //Okay in theory you can't get histamine unless you have over 5 units of formal in your blood
+	if(SPT_PROB(2.5, seconds_per_tick) && metabolizer.has_reagent(/datum/reagent/toxin/formaldehyde, 5.1)) //Okay in theory you can't get histamine unless you have over 5 units of formal in your blood
 		holder.add_reagent(/datum/reagent/toxin/histamine, pick(5,15))
 		holder.remove_reagent(/datum/reagent/toxin/formaldehyde, 1.2)
 	else
@@ -520,7 +520,7 @@
 	toxpwr = 0.1*volume
 	metabolizer.adjustBruteLoss((0.3*volume) * REM * seconds_per_tick, 0)
 	. = 1
-	if(prob(15))
+	if(SPT_PROB(7.5, seconds_per_tick))
 		holder.add_reagent(/datum/reagent/toxin/histamine, pick(5,10))
 		metabolizer.reagents.remove_reagent(/datum/reagent/toxin/venom, 1.1)
 	else
@@ -535,12 +535,12 @@
 	toxpwr = 0.625
 
 /datum/reagent/toxin/cyanide/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	if(prob(5))
+	if(SPT_PROB(2.5, seconds_per_tick))
 		metabolizer.losebreath += 1
-	if(prob(8))
+	if(SPT_PROB(4, seconds_per_tick))
 		to_chat(metabolizer, span_danger("You feel horrendously weak!"))
-		metabolizer.Stun(40)
-		metabolizer.adjustToxLoss(2 * REM * seconds_per_tick, 0)
+		metabolizer.Stun(4 SECONDS)
+		metabolizer.adjustToxLoss(2, 0)
 	return ..()
 
 /datum/reagent/toxin/bad_food
@@ -566,19 +566,19 @@
 		expose_target.reagents?.add_reagent(/datum/reagent/toxin/itching_powder, reac_volume)
 
 /datum/reagent/toxin/itching_powder/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	if(prob(15))
+	if(SPT_PROB(7.5, seconds_per_tick))
 		to_chat(metabolizer, span_danger("You scratch at your head."))
 		metabolizer.adjustBruteLoss(0.2*REM, 0)
 		. = 1
-	if(prob(15))
+	if(SPT_PROB(7.5, seconds_per_tick))
 		to_chat(metabolizer, span_danger("You scratch at your leg."))
 		metabolizer.adjustBruteLoss(0.2*REM, 0)
 		. = 1
-	if(prob(15))
+	if(SPT_PROB(7.5, seconds_per_tick))
 		to_chat(metabolizer, span_danger("You scratch at your armetabolizer."))
 		metabolizer.adjustBruteLoss(0.2*REM, 0)
 		. = 1
-	if(prob(3))
+	if(SPT_PROB(1.5, seconds_per_tick))
 		holder.add_reagent(/datum/reagent/toxin/histamine,rand(1,3))
 		metabolizer.reagents.remove_reagent(/datum/reagent/toxin/itching_powder,1.2)
 		return
@@ -593,12 +593,12 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	toxpwr = 2.5
 
-/datum/reagent/toxin/initropidril/on_mob_life(mob/living/carbon/C)
-	if(prob(25))
+/datum/reagent/toxin/initropidril/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
+	if(SPT_PROB(12.5,seconds_per_tick))
 		var/picked_option = rand(1,3)
 		switch(picked_option)
 			if(1)
-				C.Paralyze(60)
+				C.Paralyze(6 SECONDS)
 				. = TRUE
 			if(2)
 				C.losebreath += 10
@@ -627,9 +627,9 @@
 
 /datum/reagent/toxin/pancuronium/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(current_cycle >= 10)
-		metabolizer.Stun(40)
+		metabolizer.Stun(4 SECONDS)
 		. = TRUE
-	if(prob(20))
+	if(SPT_PROB(10, seconds_per_tick))
 		metabolizer.losebreath += 4
 	..()
 
@@ -644,7 +644,7 @@
 
 /datum/reagent/toxin/sodium_thiopental/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(current_cycle >= 10)
-		metabolizer.Sleeping(40)
+		metabolizer.Sleeping(4 SECONDS)
 	metabolizer.adjustStaminaLoss(10 * REM * seconds_per_tick, 0)
 	..()
 	return TRUE
@@ -660,7 +660,7 @@
 
 /datum/reagent/toxin/sulfonal/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(current_cycle >= 22)
-		metabolizer.Sleeping(40)
+		metabolizer.Sleeping(4 SECONDS)
 	return ..()
 
 /datum/reagent/toxin/amanitin
@@ -691,7 +691,7 @@
 /datum/reagent/toxin/lipolicide/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(metabolizer.nutrition <= NUTRITION_LEVEL_STARVING)
 		metabolizer.adjustToxLoss(1 * REM * seconds_per_tick, 0)
-	metabolizer.adjust_nutrition(-3) // making the chef more valuable, one meme trap at a time
+	metabolizer.adjust_nutrition(-3 * REM * seconds_per_tick) // making the chef more valuable, one meme trap at a time
 	metabolizer.overeatduration = 0
 	return ..()
 
@@ -725,9 +725,9 @@
 			if(R != src)
 				C.reagents.remove_reagent(R.type,1)
 
-/datum/reagent/toxin/spewium/overdose_process(mob/living/carbon/C)
+/datum/reagent/toxin/spewium/overdose_process(mob/living/carbon/C, seconds_per_tick, times_fired)
 	. = ..()
-	if(current_cycle >=33 && prob(15))
+	if(current_cycle >=33 && SPT_PROB_RATE(7.5, seconds_per_tick))
 		C.spew_organ()
 		C.vomit(0, TRUE, TRUE, 4)
 		to_chat(C, span_userdanger("You feel something lumpy come up as you vomit."))
@@ -742,7 +742,7 @@
 
 /datum/reagent/toxin/curare/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(current_cycle >= 11)
-		metabolizer.Paralyze(60)
+		metabolizer.Paralyze(6 SECONDS)
 	metabolizer.adjustOxyLoss(1 * REM * seconds_per_tick, 0)
 	. = 1
 	..()
@@ -777,7 +777,7 @@
 	if(holder.has_reagent(/datum/reagent/medicine/calomel) || holder.has_reagent(/datum/reagent/medicine/pen_acid))
 		remove_amt = 0.5
 	for(var/datum/reagent/medicine/R in metabolizer.reagents.reagent_list)
-		metabolizer.reagents.remove_reagent(R.type,remove_amt)
+		metabolizer.reagents.remove_reagent(R.type,remove_amt * REM * seconds_per_tick)
 	return ..()
 
 //ACID
@@ -832,7 +832,7 @@
 	acidpwr = 42.0
 
 /datum/reagent/toxin/acid/fluacid/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjustFireLoss(current_cycle/10, 0)
+	metabolizer.adjustFireLoss(current_cycle * REM * seconds_per_tick/10, 0)
 	. = 1
 	..()
 
@@ -851,7 +851,7 @@
 	acidpwr = 5.0
 
 /datum/reagent/toxin/acid/nitracid/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjustFireLoss(current_cycle/15, FALSE) //here you go nervar
+	metabolizer.adjustFireLoss(current_cycle * REM * seconds_per_tick /15, FALSE) //here you go nervar
 	. = TRUE
 	..()
 
@@ -868,9 +868,9 @@
 /datum/reagent/toxin/delayed/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(current_cycle > delay)
 		holder.remove_reagent(type, actual_metaboliztion_rate * metabolizer.metabolism_efficiency)
-		metabolizer.adjustToxLoss(actual_toxpwr*REM, 0)
+		metabolizer.adjustToxLoss(actual_toxpwr * REM * seconds_per_tick, 0)
 		if(prob(10))
-			metabolizer.Paralyze(20)
+			metabolizer.Paralyze(2 SECONDS)
 		. = 1
 	..()
 
@@ -884,7 +884,7 @@
 	overdose_threshold = 50
 
 /datum/reagent/toxin/bonehurtingjuice/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjustStaminaLoss(7.5, 0)
+	metabolizer.adjustStaminaLoss(7.5 * REM * seconds_per_tick, 0)
 	if(prob(20))
 		switch(rand(1, 2))
 			if(1)
@@ -916,7 +916,7 @@
 	taste_description = "tannin"
 
 /datum/reagent/toxin/bungotoxin/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjustOrganLoss(ORGAN_SLOT_HEART, 3)
+	metabolizer.adjustOrganLoss(ORGAN_SLOT_HEART, 3 * REM * seconds_per_tick)
 	metabolizer.confused = metabolizer.get_timed_status_effect_duration(/datum/status_effect/dizziness) //add a tertiary effect here if this is isn't an effective poison.
 	if(current_cycle >= 12 && prob(8))
 		var/tox_message = pick("You feel your heart spasm in your chest.", "You feel faint.","You feel you need to catch your breath.","You feel a prickle of pain in your chest.")
@@ -934,9 +934,9 @@
 	taste_description = "sugary sweetness"
 
 /datum/reagent/toxin/leadacetate/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
-	metabolizer.adjustOrganLoss(ORGAN_SLOT_EARS,1)
-	metabolizer.adjustOrganLoss(ORGAN_SLOT_BRAIN,1)
-	if(prob(1))
+	metabolizer.adjustOrganLoss(ORGAN_SLOT_EARS,1 * REM * seconds_per_tick)
+	metabolizer.adjustOrganLoss(ORGAN_SLOT_BRAIN,1 * REM * seconds_per_tick)
+	if(SPT_PROB(0.5, seconds_per_tick))
 		to_chat(metabolizer, span_notice("Ah, what was that? You thought you heard something..."))
 		metabolizer.confused += 5
 	return ..()
@@ -964,7 +964,7 @@
 	M.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	if(!M.confused)
 		M.confused = 1
-	M.confused = max(M.confused, 20)
+	M.confused = max(M.confused, 20) // 40 seconds
 	..()
 
 /datum/reagent/impedrezene
@@ -973,10 +973,10 @@
 	color = "#E07DDD" // pink = happy = dumb
 	taste_description = "numbness"
 
-/datum/reagent/impedrezene/on_mob_life(mob/living/carbon/M)
+/datum/reagent/impedrezene/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	if(prob(80))
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
+	if(SPT_PROB(80, seconds_per_tick))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	if(prob(50))
 		M.drowsyness = max(M.drowsyness, 3)
 	..()

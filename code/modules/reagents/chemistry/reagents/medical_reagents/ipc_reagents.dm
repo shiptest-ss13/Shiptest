@@ -30,8 +30,8 @@
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -3 * REM * seconds_per_tick)
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
-		if(prob(30) && C.has_trauma_type(BRAIN_TRAUMA_SPECIAL))
+		if(SPT_PROB(15, seconds_per_tick) && C.has_trauma_type(BRAIN_TRAUMA_SPECIAL))
 			C.cure_trauma_type(BRAIN_TRAUMA_SPECIAL)
-		if(prob(10) && C.has_trauma_type(BRAIN_TRAUMA_MILD))
+		if(SPT_PROB(5, seconds_per_tick) && C.has_trauma_type(BRAIN_TRAUMA_MILD))
 			C.cure_trauma_type(BRAIN_TRAUMA_MILD)
 	..()

@@ -37,8 +37,8 @@
 
 /datum/reagent/medicine/tramal/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	if(SPT_PROB(17, seconds_per_tick))
-		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		M.set_timed_status_effect(4 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(4 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/morphine
@@ -77,7 +77,7 @@
 		if(51 to 74)
 			M.drowsyness += 0.5 * seconds_per_tick
 		if(75 to INFINITY)
-			M.Sleeping(20 * seconds_per_tick) // honk mimimi
+			M.Sleeping(2 SECONDS * seconds_per_tick) // honk mimimi
 			. = 1
 	..()
 
@@ -88,8 +88,8 @@
 /datum/reagent/medicine/morphine/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	if(SPT_PROB(17, seconds_per_tick))
 		M.drop_all_held_items()
-		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		M.set_timed_status_effect(4 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(4 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/dimorlin
@@ -140,7 +140,7 @@
 		M.losebreath++
 		M.adjustOxyLoss(4, 0)
 	if(SPT_PROB(10, seconds_per_tick))
-		M.AdjustUnconscious(20)
+		M.AdjustUnconscious(2 SECONDS)
 	if(SPT_PROB(2.5, seconds_per_tick))
 		M.adjustOrganLoss(ORGAN_SLOT_EYES, 5)
 	..()

@@ -15,7 +15,7 @@
 	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
 	if (!eyes)
 		return
-	eyes.applyOrganDamage(-1 * seconds_per_tick)
+	eyes.applyOrganDamage(-2 * REM * seconds_per_tick)
 	if(HAS_TRAIT_FROM(M, TRAIT_BLIND, EYE_DAMAGE))
 		if(SPT_PROB(10, seconds_per_tick))
 			to_chat(M, span_warning("Your vision slowly returns..."))
@@ -60,7 +60,7 @@
 
 /datum/reagent/medicine/neurine/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
 	if(holder.has_reagent(/datum/reagent/consumable/ethanol/neurotoxin))
-		holder.remove_reagent(/datum/reagent/consumable/ethanol/neurotoxin, 5)
+		holder.remove_reagent(/datum/reagent/consumable/ethanol/neurotoxin, 2.5 * seconds_per_tick)
 	if(SPT_PROB(7.5, seconds_per_tick))
 		C.cure_trauma_type(resilience = TRAUMA_RESILIENCE_BASIC)
 	..()
@@ -100,7 +100,7 @@
 	..()
 
 /datum/reagent/medicine/silibinin/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -2 * seconds_per_tick)//Add a chance to cure liver trauma once implemented.
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -2 * REM * seconds_per_tick) //Add a chance to cure liver trauma once implemented.
 	..()
 	. = 1
 

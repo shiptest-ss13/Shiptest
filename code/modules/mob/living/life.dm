@@ -98,9 +98,9 @@
 		adjust_bodytemperature(min(min(temp_delta / BODYTEMP_DIVISOR, HUMAN_BODYTEMP_HEATING_MAX) * seconds_per_tick, temp_delta))
 
 //this updates all special effects: knockdown, druggy, stuttering, etc..
-/mob/living/proc/handle_status_effects()
+/mob/living/proc/handle_status_effects(seconds_per_tick, times_fired)
 	if(confused)
-		confused = max(0, confused - 1)
+		confused = max(0, confused - 0.5 * seconds_per_tick)
 
 /mob/living/proc/handle_traits(seconds_per_tick, times_fire)
 	//Eyes

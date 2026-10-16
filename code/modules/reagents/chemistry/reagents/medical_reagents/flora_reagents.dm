@@ -39,8 +39,8 @@
 
 
 /datum/reagent/medicine/polypyr/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired) //I wanted a collection of small positive effects, this is as hard to obtain as coniine after all.
-	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -0.125 * seconds_per_tick)
-	M.adjustBruteLoss(-0.25 * seconds_per_tick, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -0.25 * REM * seconds_per_tick)
+	M.adjustBruteLoss(-0.5 * REM * seconds_per_tick, 0)
 	..()
 	. = 1
 
@@ -191,12 +191,12 @@
 	metabolization_rate = 0.15 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 
-/datum/reagent/medicine/neoxanthin/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/neoxanthin/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(prob(80))
-		M.adjustToxLoss(-1*REM, 0)
+		M.adjustToxLoss(-1 * REM * seconds_per_tick, 0)
 	..()
 
-/datum/reagent/medicine/neoxanthin/overdose_process(mob/living/carbon/M)
-	if(prob(30))
+/datum/reagent/medicine/neoxanthin/overdose_process(mob/living/carbon/M, seconds_per_tick, times_fired)
+	if(SPT_PROB(15, seconds_per_tick))
 		M.vomit()
 	..()

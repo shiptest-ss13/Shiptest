@@ -43,17 +43,17 @@
 	glass_desc = "A spiritually-taxing drink from the Shoal. Numerous warnings about this drink tell you to not drink too much, lest you incur some sort of wrath... or an overdose of a psychoactive lichen."
 
 /datum/reagent/consumable/ethanol/vimukti/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.drowsyness = max(0,M.drowsyness-7)
-	M.AdjustSleeping(-20 * seconds_per_tick)
+	M.drowsyness = max(0,M.drowsyness-7 * REM * seconds_per_tick)
+	M.AdjustSleeping(-4 SECONDS * REM * seconds_per_tick)
 	M.adjust_bodytemperature(-0.5 * TEMPERATURE_DAMAGE_COEFFICIENT * seconds_per_tick, M.get_body_temp_normal(), FALSE)
 	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE) && !isvox(M))
-		M.set_timed_status_effect(5 SECONDS * REM * seconds_per_tick, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	return ..()
 
 /datum/reagent/consumable/ethanol/vimukti/overdose_start(mob/living/M)
 	to_chat(M, span_userdanger("Your entire body violently jitters as you start to feel queasy. You really shouldn't have drank all of that [name]!"))
-	M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.Stun(15)
+	M.set_timed_status_effect(40 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.Stun(1.5 SECONDS)
 
 /datum/reagent/consumable/ethanol/vimukti/overdose_process(mob/living/M, seconds_per_tick, times_fired)
 	if(SPT_PROB(4, seconds_per_tick) && iscarbon(M))
@@ -101,7 +101,7 @@
 
 /datum/reagent/consumable/ethanol/bilk/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(M.getBruteLoss() && SPT_PROB(5, seconds_per_tick))
-		M.heal_bodypart_damage(0.5 * seconds_per_tick * REM)
+		M.heal_bodypart_damage(0.5 * REM * seconds_per_tick)
 		. = 1
 	return ..() || .
 
@@ -226,7 +226,7 @@
 	glass_desc = "You won't be turning any screws with this, but you're far from lamenting that."
 
 /datum/reagent/consumable/ethanol/screwdrivercocktail/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.radiation = max(M.radiation - (2.5 * seconds_per_tick * times_fired), 0)
+	M.radiation = max(M.radiation - (2.5 * REM * seconds_per_tick), 0)
 	return ..()
 
 /datum/reagent/consumable/ethanol/booger
@@ -251,7 +251,7 @@
 
 /datum/reagent/consumable/ethanol/bloody_mary/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
 	if(C.blood_volume < BLOOD_VOLUME_NORMAL)
-		C.blood_volume = min(BLOOD_VOLUME_NORMAL, C.blood_volume + (1.5 * seconds_per_tick)) //Bloody Mary quickly restores blood loss.
+		C.blood_volume = min(BLOOD_VOLUME_NORMAL, C.blood_volume + (3 * REM * seconds_per_tick)) //Bloody Mary quickly restores blood loss.
 	..()
 
 /datum/reagent/consumable/ethanol/brave_bull
@@ -315,7 +315,7 @@
 	glass_desc = "Traditionally lit with a welder while the server is blindfolded, but you don't want to cause an ACTUAL accident here."
 
 /datum/reagent/consumable/ethanol/toxins_special/on_mob_life(mob/living/M, seconds_per_tick, times_fired)
-	M.adjust_bodytemperature(0.5 * seconds_per_tick * REM * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal() + 20, FALSE) //310.15 is the normal bodytemp.
+	M.adjust_bodytemperature(1 * seconds_per_tick * REM * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal() + 20, FALSE) //310.15 is the normal bodytemp.
 	return ..()
 
 /datum/reagent/consumable/ethanol/beepsky_smash
@@ -485,7 +485,7 @@
 	glass_desc = "Vodka, cream, and ice. No actual antifreeze included, of course."
 
 /datum/reagent/consumable/ethanol/antifreeze/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.adjust_bodytemperature(0.5 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal() + 20, FALSE) //310.15 is the normal bodytemp.
+	M.adjust_bodytemperature(1 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal() + 20, FALSE) //310.15 is the normal bodytemp.
 	return ..()
 
 /datum/reagent/consumable/ethanol/barefoot
@@ -502,7 +502,7 @@
 	if(ishuman(M)) //Barefoot causes the imbiber to quickly regenerate brute trauma if they're not wearing shoes.
 		var/mob/living/carbon/human/H = M
 		if(!H.shoes)
-			H.adjustBruteLoss(-1.5*REM*seconds_per_tick, 0)
+			H.adjustBruteLoss(-3*REM*seconds_per_tick, 0)
 			. = 1
 	return ..() || .
 
@@ -590,7 +590,7 @@
 	glass_desc = "Vodka with capsaicin for the extra feeling of intense warmth. Difficult to take large swallows."
 
 /datum/reagent/consumable/ethanol/sbiten/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.adjust_bodytemperature(0.5 * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, 0 , M.dna.species.bodytemp_heat_damage_limit, FALSE) //310.15 is the normal bodytemp.
+	M.adjust_bodytemperature(1 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, 0 , M.dna.species.bodytemp_heat_damage_limit, FALSE) //310.15 is the normal bodytemp.
 	return ..()
 
 /datum/reagent/consumable/ethanol/red_mead
@@ -624,7 +624,7 @@
 	glass_desc = "Iced beer, served in a chilled glass. It's cold enough to leave a trail in the air."
 
 /datum/reagent/consumable/ethanol/iced_beer/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.adjust_bodytemperature(-0.5 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, T0C, FALSE) //310.15 is the normal bodytemp.
+	M.adjust_bodytemperature(-1 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, T0C, FALSE) //310.15 is the normal bodytemp.
 	return ..()
 
 /datum/reagent/consumable/ethanol/grog
@@ -820,12 +820,12 @@
 	glass_desc = "An aromatic beverage, served piping hot. According to folktales, it can almost wake the dead."
 
 /datum/reagent/consumable/ethanol/hearty_punch/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	if(M.health <= 0)
-		M.adjustBruteLoss(-1.5 * seconds_per_tick, 0)
-		M.adjustFireLoss(-1.5 * seconds_per_tick, 0)
-		M.adjustCloneLoss(-2.5 * seconds_per_tick, 0)
-		M.adjustOxyLoss(-2 * seconds_per_tick, 0)
-		M.adjustToxLoss(-1.5 * seconds_per_tick, 0)
+	if(M.health <= 0) // Barman one glass of atropine please
+		M.adjustBruteLoss(-3 * REM * seconds_per_tick, 0)
+		M.adjustFireLoss(-3 * REM * seconds_per_tick, 0)
+		M.adjustCloneLoss(-5 * REM * seconds_per_tick, 0)
+		M.adjustOxyLoss(-4 * REM * seconds_per_tick, 0)
+		M.adjustToxLoss(-3 * REM * seconds_per_tick, 0)
 		. = 1
 	return ..() || .
 
@@ -848,21 +848,21 @@
 	glass_name = "Atomic Bomb"
 	glass_desc = "Devastating to you and everyone around you, especially if you get drunk enough from it."
 
-/datum/reagent/consumable/ethanol/atomicbomb/on_mob_life(mob/living/carbon/M)
-	M.set_drugginess(50)
+/datum/reagent/consumable/ethanol/atomicbomb/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	M.set_drugginess(50) // 1 minute 20
 	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
 		M.confused = max(M.confused+2,0)
 		M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	if (!M.slurring)
 		M.slurring = 1
-	M.slurring += 3
+	M.slurring += 3 * REM * seconds_per_tick
 	switch(current_cycle)
 		if(51 to 200)
-			M.Sleeping(100)
+			M.Sleeping(10 SECONDS)
 			. = 1
 		if(201 to INFINITY)
-			M.AdjustSleeping(40)
-			M.adjustToxLoss(2, 0)
+			M.AdjustSleeping(4 SECONDS * REM * seconds_per_tick)
+			M.adjustToxLoss(2 * REM * seconds_per_tick, 0)
 			. = 1
 	..()
 
@@ -882,14 +882,14 @@
 		if(15 to 45)
 			if(!M.slurring)
 				M.slurring = 1
-			M.slurring += 3
+			M.slurring += 3 * REM * seconds_per_tick
 		if(45 to 55)
 			if(SPT_PROB(25, seconds_per_tick))
 				M.confused = max(M.confused+3,0)
 		if(55 to 200)
-			M.set_drugginess(55)
+			M.set_drugginess(55) // 1 minute 50
 		if(200 to INFINITY)
-			M.adjustToxLoss(1 * seconds_per_tick, 0)
+			M.adjustToxLoss(2 * REM * seconds_per_tick, 0)
 			. = 1
 	..()
 
@@ -908,20 +908,20 @@
 	return (pick(TRAIT_PARALYSIS_L_ARM,TRAIT_PARALYSIS_R_ARM,TRAIT_PARALYSIS_R_LEG,TRAIT_PARALYSIS_L_LEG))
 
 /datum/reagent/consumable/ethanol/neurotoxin/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.set_drugginess(50)
+	M.set_drugginess(50) // 1 minute 40
 	M.set_timed_status_effect(2 SECONDS, /datum/status_effect/jitter, TRUE)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.5*REM*seconds_per_tick, 150)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1 * REM * seconds_per_tick, 150)
 	if(SPT_PROB(10, seconds_per_tick))
-		M.adjustStaminaLoss(5 * seconds_per_tick)
+		M.adjustStaminaLoss(10)
 		M.drop_all_held_items()
 		to_chat(M, span_notice("You can't feel your hands!"))
 	if(current_cycle > 5)
 		if(SPT_PROB(10, seconds_per_tick))
 			var/t = pickt()
 			ADD_TRAIT(M, t, type)
-			M.adjustStaminaLoss(5 * seconds_per_tick)
+			M.adjustStaminaLoss(10)
 		if(current_cycle > 30)
-			M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
+			M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2 * REM * seconds_per_tick)
 			if(current_cycle > 50 && SPT_PROB(7.5, seconds_per_tick))
 				if(!M.undergoing_cardiac_arrest() && M.can_heartattack())
 					M.set_heartattack(TRUE)
@@ -956,21 +956,21 @@
 	switch(current_cycle)
 		if(1 to 5)
 			M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-			M.set_drugginess(30)
+			M.set_drugginess(30) // 1 minute
 		if(5 to 20)
 			M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 			M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-			M.set_drugginess(45)
+			M.set_drugginess(45) // 1 minute 30
 		if (20 to 200)
 			M.set_timed_status_effect(80 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 			M.set_timed_status_effect(80 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-			M.set_drugginess(60)
+			M.set_drugginess(60) // 2 minutes
 		if(200 to INFINITY)
 			M.set_timed_status_effect(120 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 			M.set_timed_status_effect(120 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-			M.set_drugginess(75)
-			if(prob(30))
-				M.adjustToxLoss(1 * seconds_per_tick, 0)
+			M.set_drugginess(75) /// 2 minutes 30
+			if(SPT_PROB(15, seconds_per_tick))
+				M.adjustToxLoss(2, 0)
 				. = 1
 	..()
 
@@ -1056,11 +1056,11 @@
 
 /datum/reagent/consumable/ethanol/bastion_bourbon/on_mob_life(mob/living/L, seconds_per_tick, times_fired)
 	if(L.health > 0)
-		L.adjustBruteLoss(-0.5 * seconds_per_tick)
-		L.adjustFireLoss(-0.5 * seconds_per_tick)
-		L.adjustToxLoss(-0.25 * seconds_per_tick)
-		L.adjustOxyLoss(-1.5 * seconds_per_tick)
-		L.adjustStaminaLoss(-2.5 * seconds_per_tick)
+		L.adjustBruteLoss(-1 * REM * seconds_per_tick)
+		L.adjustFireLoss(-1 * REM * seconds_per_tick)
+		L.adjustToxLoss(-0.5 * REM * seconds_per_tick)
+		L.adjustOxyLoss(-3 * REM * seconds_per_tick)
+		L.adjustStaminaLoss(-5 * REM * seconds_per_tick)
 		. = TRUE
 	..()
 
@@ -1075,7 +1075,7 @@
 	glass_desc = "Squirt cider will toughen you right up. Too bad about the musty aftertaste."
 
 /datum/reagent/consumable/ethanol/squirt_cider/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.satiety += 2.5 * seconds_per_tick //for context, vitamins give 30 satiety per tick
+	M.satiety += 5 * REM * seconds_per_tick //for context, vitamins give 30 satiety per tick
 	..()
 	. = TRUE
 
@@ -1103,7 +1103,7 @@
 	glass_desc = "If you can't mix a Sugar Rush, you can't tend bar."
 
 /datum/reagent/consumable/ethanol/sugar_rush/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.satiety -= 5 * seconds_per_tick //junky as hell! a whole glass will keep you from being able to eat junk food
+	M.satiety -= 10 * REM * seconds_per_tick //junky as hell! a whole glass will keep you from being able to eat junk food
 	..()
 	. = TRUE
 
@@ -1133,7 +1133,7 @@
 
 /datum/reagent/consumable/ethanol/peppermint_patty/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	M.apply_status_effect(/datum/status_effect/throat_soothed)
-	M.adjust_bodytemperature(0.5 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
+	M.adjust_bodytemperature(1 * REM * seconds_per_tick * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
 	..()
 
 /datum/reagent/consumable/ethanol/alexander
@@ -1202,14 +1202,14 @@
 	..()
 	if(L.IsSleeping())
 		if(L.getBruteLoss() && L.getFireLoss()) //If you are damaged by both types, slightly increased healing but it only heals one. The more the merrier wink wink.
-			if(SPT_PROB(25, seconds_per_tick))
-				L.adjustBruteLoss(-0.125 * seconds_per_tick)
+			if(prob(50))
+				L.adjustBruteLoss(-0.25 * REM * seconds_per_tick)
 			else
-				L.adjustFireLoss(-0.125 * seconds_per_tick)
+				L.adjustFireLoss(-0.25 * REM * seconds_per_tick)
 		else if(L.getBruteLoss()) //If you have only one, it still heals but not as well.
-			L.adjustBruteLoss(-0.1 * seconds_per_tick)
+			L.adjustBruteLoss(-0.2 * REM * seconds_per_tick)
 		else if(L.getFireLoss())
-			L.adjustFireLoss(-0.1 * seconds_per_tick)
+			L.adjustFireLoss(-0.2 * REM * seconds_per_tick)
 
 /datum/reagent/consumable/ethanol/kamikaze
 	name = "Mothball"
@@ -1244,8 +1244,8 @@
 
 /datum/reagent/consumable/ethanol/fernet/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(0.5*REM*seconds_per_tick, 0)
-	M.adjust_nutrition(-2.5 * seconds_per_tick)
+		M.adjustToxLoss(1*REM*seconds_per_tick, 0)
+	M.adjust_nutrition(-5 * REM * seconds_per_tick)
 	M.overeatduration = 0
 	return ..()
 
@@ -1261,8 +1261,8 @@
 
 /datum/reagent/consumable/ethanol/fernet_cola/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(0.25*REM*seconds_per_tick, 0)
-	M.adjust_nutrition(-1.5 * seconds_per_tick)
+		M.adjustToxLoss(0.5 * REM * seconds_per_tick, 0)
+	M.adjust_nutrition(-3 * REM * seconds_per_tick)
 	M.overeatduration = 0
 	return ..()
 
@@ -1277,7 +1277,7 @@
 	glass_desc = "A glass of Fanciulli: a Manhattan with fernet mixed in. Bitter enough to knock some sense into your drunk self."
 
 /datum/reagent/consumable/ethanol/fanciulli/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
-	M.adjust_nutrition(-2.5 * seconds_per_tick)
+	M.adjust_nutrition(-5 * REM * seconds_per_tick)
 	M.overeatduration = 0
 	return ..()
 
@@ -1472,8 +1472,8 @@
 	glass_name = "glass of pruno"
 	glass_desc = "Fermented prison wine made from fruit, sugar, and despair."
 
-/datum/reagent/consumable/ethanol/pruno/on_mob_life(mob/living/carbon/M)
-	M.adjust_disgust(5)
+/datum/reagent/consumable/ethanol/pruno/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	M.adjust_disgust(5 * REM * seconds_per_tick)
 	..()
 
 /datum/reagent/consumable/ethanol/ginger_amaretto
@@ -1523,11 +1523,11 @@
 		to_chat(M, span_notice("[drink_message]"))
 	if(SPT_PROB(7.5, seconds_per_tick))
 		holder.add_reagent(/datum/reagent/consumable/nutriment, 1)
-	M.AdjustStun(-0.5)
-	M.AdjustKnockdown(-0.5)
-	M.AdjustUnconscious(-0.5)
-	M.AdjustParalyzed(-0.5)
-	M.AdjustImmobilized(-0.5)
+	M.AdjustStun(-0.5 * REM * seconds_per_tick)
+	M.AdjustKnockdown(-0.5 * REM * seconds_per_tick)
+	M.AdjustUnconscious(-0.5 * REM * seconds_per_tick)
+	M.AdjustParalyzed(-0.5 * REM * seconds_per_tick)
+	M.AdjustImmobilized(-0.5 * REM * seconds_per_tick)
 	..()
 
 /datum/reagent/consumable/ethanol/spriters_bane
@@ -1544,7 +1544,7 @@
 /datum/reagent/consumable/ethanol/spriters_bane/on_mob_life(mob/living/carbon/C, seconds_per_tick, times_fired)
 	switch(current_cycle)
 		if(5 to 40)
-			C.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+			C.set_timed_status_effect(6 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 			if(SPT_PROB(5, seconds_per_tick) && !C.eye_blurry)
 				C.blur_eyes(6)
 				to_chat(C, span_warning("That outline is so distracting, it's hard to look at anything else!"))
@@ -1723,19 +1723,19 @@
 	glass_icon_state = "royal_battery_acid"
 	var/toxpwr = 0.5
 
-/datum/reagent/consumable/ethanol/royal_battery_acid/on_mob_life(mob/living/carbon/drinking_mob)
+/datum/reagent/consumable/ethanol/royal_battery_acid/on_mob_life(mob/living/carbon/drinking_mob, seconds_per_tick, times_fired)
 	if(iselzuose(drinking_mob))
 		var/mob/living/carbon/drinking_carbon = drinking_mob
 		var/obj/item/organ/stomach/ethereal/stomach = drinking_carbon.getorganslot(ORGAN_SLOT_STOMACH)
 		if(istype(stomach))
-			stomach.adjust_charge((volume * toxpwr) * REM * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+			stomach.adjust_charge((volume * toxpwr) * REM * seconds_per_tick * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 		return ..()
 
 	if(isvox(drinking_mob))
 		return ..()
 
 	if(toxpwr)
-		drinking_mob.adjustToxLoss(toxpwr*REM, 0)
+		drinking_mob.adjustToxLoss(toxpwr * REM * seconds_per_tick, 0)
 		. = TRUE
 		return ..()
 

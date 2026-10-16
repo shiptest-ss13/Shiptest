@@ -108,11 +108,11 @@
 	to_chat(M, span_userdanger("You feel awfully out of breath and jittery!"))
 	metabolization_rate = 0.025 * REM // sets metabolism to 0.01 per tick on overdose
 
-/datum/reagent/medicine/modafinil/on_mob_life(mob/living/carbon/metabolizer, delta_time, times_fired)
+/datum/reagent/medicine/modafinil/on_mob_life(mob/living/carbon/metabolizer, seconds_per_tick, times_fired)
 	if(!overdosed) // We do not want any effects on OD
-		overdose_threshold = overdose_threshold + ((rand(-10, 10) / 10) * REM * delta_time) // for extra fun
-		metabolizer.AdjustAllImmobility(-5 * REM * delta_time)
-		metabolizer.adjustStaminaLoss(-0.5 * REM * delta_time, 0)
+		overdose_threshold = overdose_threshold + ((rand(-10, 10) / 10) * REM * seconds_per_tick) // for extra fun
+		metabolizer.AdjustAllImmobility(-5 * REM * seconds_per_tick)
+		metabolizer.adjustStaminaLoss(-0.5 * REM * seconds_per_tick, 0)
 		metabolizer.adjust_timed_status_effect(1 SECONDS, /datum/status_effect/jitter)
 		metabolization_rate = 0.005 * REAGENTS_METABOLISM * rand(5, 20) // randomizes metabolism between 0.02 and 0.08 per second
 		. = TRUE
@@ -148,7 +148,7 @@
 			M.adjustOxyLoss(0.1 * REM * seconds_per_tick, 0)
 			M.adjustStaminaLoss(0.1 * REM * seconds_per_tick, 0)
 		if(82 to INFINITY)
-			M.Sleeping(100 * REM * seconds_per_tick)
+			M.Sleeping(10 SECONDS)
 			M.adjustOxyLoss(1.5 * REM * seconds_per_tick, 0)
 			M.adjustStaminaLoss(1.5 * REM * seconds_per_tick, 0)
 	..()

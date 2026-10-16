@@ -123,7 +123,7 @@
 		holder.add_reagent(/datum/reagent/consumable/sugar, 1)
 		holder.remove_reagent(/datum/reagent/medicine/salglu_solution, 0.5)
 	if(SPT_PROB(17, seconds_per_tick))
-		M.adjustBruteLoss(0.5 * REM * seconds_per_tick, FALSE, FALSE, BODYTYPE_ORGANIC)
-		M.adjustFireLoss(0.5 * REM * seconds_per_tick, FALSE, FALSE, BODYTYPE_ORGANIC)
+		M.adjustBruteLoss(0.5, FALSE, FALSE, BODYTYPE_ORGANIC)
+		M.adjustFireLoss(0.5, FALSE, FALSE, BODYTYPE_ORGANIC)
 		. = TRUE
 	..()
