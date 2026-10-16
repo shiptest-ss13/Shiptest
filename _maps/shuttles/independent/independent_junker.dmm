@@ -1213,9 +1213,6 @@
 /turf/open/floor/plastic,
 /area/ship/crew/canteen/kitchen)
 "we" = (
-/mob/living/simple_animal/bot/firebot/rockplanet{
-	icon_state = "firebot1"
-	},
 /obj/structure/sign/warning/chemdiamond{
 	pixel_y = 32
 	},
@@ -1236,6 +1233,7 @@
 	},
 /obj/item/card/id/captains_spare,
 /obj/item/circuitboard/machine/autolathe/reployer,
+/mob/living/simple_animal/hostile/automated/walkmine/incendiary,
 /turf/open/floor/plating/rust,
 /area/ship/engineering/electrical)
 "wi" = (
