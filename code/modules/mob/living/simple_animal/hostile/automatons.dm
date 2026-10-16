@@ -543,7 +543,7 @@
 /mob/living/simple_animal/hostile/automated/tripod/ramzi
 	name = "Sav'sha'syn 'Gun Drone'"
 	desc = "A Sye-Port Industrial converted Sav'cla drone. Its plating seems rusted and worn; its optical sensor suite flickers as it points its heavy rifle at you."
-	icon_state = "tripod_ramzi"
+	icon_state = "tripod_clique"
 	ranged = TRUE
 	armor = list("melee" = 25, "bullet" = 30, "laser" = 30, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
 	casingtype = /obj/item/ammo_casing/a65clip
