@@ -39,13 +39,12 @@
 	var/atom/blocker = get_mob_shot_blocker(controller.pawn, target)
 	// they're dug in behind cover, or we're getting hurt through something we can't shoot back through, like lasers through glass
 	var/entrenched = cover_between(their_turf, our_turf) || (recently_hurt && blocker && !worth_shooting_through(controller.pawn, blocker, projectile_type))
-	// only worth the trouble when we're outmatched like that, or we're getting hurt out in the open
-	if(!entrenched && !recently_hurt && !fights_from_cover_unprovoked)
-		return
 	if(cover_between(our_turf, target) && !blocker)
 		// already as good as it gets, and remember it so you don't immediately wander off
 		controller.set_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF, our_turf)
 		AI_LOG_DECISION(controller, "fighting_cover: already behind cover from [target], fighting from here")
+		return
+	if(!entrenched && !recently_hurt && !fights_from_cover_unprovoked)
 		return
 	if(world.time < controller.blackboard[BB_BASIC_MOB_NEXT_COVER_SEARCH])
 		return

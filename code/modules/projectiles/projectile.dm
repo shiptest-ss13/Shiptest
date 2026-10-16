@@ -578,6 +578,7 @@
 				continue
 			misser.playsound_local(get_turf(src), near_miss_sound, 100, FALSE)
 			misser.shake_animation(damage)
+			SEND_SIGNAL(misser, COMSIG_LIVING_NEAR_MISS, src)
 
 
 /**

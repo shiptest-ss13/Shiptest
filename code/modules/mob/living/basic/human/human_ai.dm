@@ -32,7 +32,7 @@
 		AI_HUMAN_PLANNING_OPENING,
 		/datum/ai_planning_subtree/group/cover,
 		/datum/ai_planning_subtree/flank,
-		/datum/ai_planning_subtree/fighting_cover,
+		/datum/ai_planning_subtree/fighting_cover/when_outmatched,
 		/datum/ai_planning_subtree/search_lost_target/human,
 		AI_HUMAN_RANGED_PLANNING_CLOSING,
 	)

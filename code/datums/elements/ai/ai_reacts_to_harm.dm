@@ -7,10 +7,11 @@
 		return ELEMENT_INCOMPATIBLE
 	RegisterSignal(target, COMSIG_ATOM_BULLET_ACT, PROC_REF(on_shot))
 	RegisterSignal(target, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(on_hurt))
+	RegisterSignal(target, COMSIG_LIVING_NEAR_MISS, PROC_REF(on_near_miss))
 
 /datum/element/ai_reacts_to_harm/Detach(datum/source, ...)
 	. = ..()
-	UnregisterSignal(source, list(COMSIG_ATOM_BULLET_ACT, COMSIG_MOB_APPLY_DAMAGE))
+	UnregisterSignal(source, list(COMSIG_ATOM_BULLET_ACT, COMSIG_MOB_APPLY_DAMAGE, COMSIG_LIVING_NEAR_MISS))
 
 // anything hurting us wakes us up and has us look about for whoever it is straight away
 /datum/element/ai_reacts_to_harm/proc/on_hurt(mob/source, damage, damagetype, def_zone)
@@ -28,6 +29,26 @@
 	var/datum/ai_controller/controller = source.ai_controller
 	if(!controller || !projectile.starting)
 		return
+	controller.clear_blackboard_key(BB_BASIC_MOB_SHOT_NEAR_MISS) // it hit us
+	shot_at(source, controller, projectile)
+
+// a shot going close past us, which tells us we're being shot at as much as one hitting us does
+/datum/element/ai_reacts_to_harm/proc/on_near_miss(mob/source, obj/projectile/projectile)
+	SIGNAL_HANDLER
+	var/datum/ai_controller/controller = source.ai_controller
+	if(!controller || source.stat == DEAD || !projectile.starting || controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] == world.time)
+		return // the same shot passes us a tile at a time, or it's hit us just now
+	var/atom/shooter = projectile.firer
+	var/mob/living/living_source = source
+	if(shooter == source || (istype(living_source) && isliving(shooter) && living_source.faction_check_mob(shooter)))
+		return // one of ours, missing whoever they were shooting at
+	controller.set_blackboard_key(BB_BASIC_MOB_SHOT_NEAR_MISS, TRUE)
+	if(controller.ai_status == AI_STATUS_IDLE)
+		controller.set_ai_status(AI_STATUS_ON)
+	shot_at(source, controller, projectile)
+
+// what we know from being shot at, hit or not: when, where from, and by who
+/datum/element/ai_reacts_to_harm/proc/shot_at(mob/source, datum/ai_controller/controller, obj/projectile/projectile)
 	var/turf/shot_from = get_turf(projectile.starting)
 	controller.set_blackboard_key(BB_BASIC_MOB_LAST_SHOT_TIME, world.time)
 	controller.set_blackboard_key(BB_BASIC_MOB_SHOT_FROM, shot_from)

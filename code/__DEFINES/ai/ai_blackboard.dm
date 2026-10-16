@@ -177,6 +177,8 @@
 #define BB_BASIC_MOB_CAN_CLIMB "BB_basic_can_climb"
 ///How keen we are to be the one who flanks, higher goes first
 #define BB_BASIC_MOB_FLANK_PRIORITY "BB_basic_flank_priority"
+///TRUE if the last shot at us went close by rather than hitting
+#define BB_BASIC_MOB_SHOT_NEAR_MISS "BB_basic_shot_near_miss"
 ///If TRUE, we stay put while we've a clear shot, rather than moving about between shots
 #define BB_BASIC_MOB_HOLDS_POSITION "BB_basic_holds_position"
 ///What we last started climbing, and when, so we give up on a climb that isn't working

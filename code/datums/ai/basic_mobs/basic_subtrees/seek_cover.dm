@@ -62,8 +62,8 @@
 		controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_COVER_TURF)
 
 /datum/ai_planning_subtree/seek_cover/proc/react_to_shot(datum/ai_controller/controller, turf/danger, turf/our_turf, reloading)
-	if(our_turf == controller.blackboard[BB_BASIC_MOB_COVER_TURF])
-		// we got hit sitting in the cover we picked, so it isn't covering us, whatever it looked like
+	if(our_turf == controller.blackboard[BB_BASIC_MOB_COVER_TURF] && !controller.blackboard[BB_BASIC_MOB_SHOT_NEAR_MISS])
+		// we got hit sitting in the cover we picked, so it isn't covering us, whatever it looked like. One going past is what cover's for
 		controller.set_blackboard_key(BB_BASIC_MOB_BAD_COVER_TURF, our_turf)
 		AI_LOG_DECISION(controller, "seek_cover: got shot in our cover at [our_turf], so it's no good")
 		controller.clear_blackboard_key(BB_BASIC_MOB_COVER_TURF)

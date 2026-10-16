@@ -104,6 +104,7 @@
 /datum/component/ai_callouts/RegisterWithParent()
 	. = ..()
 	RegisterSignal(parent, COMSIG_ATOM_BULLET_ACT, PROC_REF(on_shot))
+	RegisterSignal(parent, COMSIG_LIVING_NEAR_MISS, PROC_REF(on_shot))
 	RegisterSignal(parent, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(on_hurt))
 	RegisterSignal(parent, COMSIG_PROJECTILE_ON_HIT, PROC_REF(on_our_projectile_hit))
 	RegisterSignal(parent, COMSIG_HOSTILE_POST_ATTACKINGTARGET, PROC_REF(on_our_melee_hit))
@@ -112,7 +113,7 @@
 
 /datum/component/ai_callouts/UnregisterFromParent()
 	. = ..()
-	UnregisterSignal(parent, list(COMSIG_ATOM_BULLET_ACT, COMSIG_MOB_APPLY_DAMAGE, COMSIG_PROJECTILE_ON_HIT, COMSIG_HOSTILE_POST_ATTACKINGTARGET, COMSIG_BASICMOB_PRE_DEATH, COMSIG_LIVING_DEATH))
+	UnregisterSignal(parent, list(COMSIG_ATOM_BULLET_ACT, COMSIG_LIVING_NEAR_MISS, COMSIG_MOB_APPLY_DAMAGE, COMSIG_PROJECTILE_ON_HIT, COMSIG_HOSTILE_POST_ATTACKINGTARGET, COMSIG_BASICMOB_PRE_DEATH, COMSIG_LIVING_DEATH))
 	watch_downed_victim(null)
 
 /datum/component/ai_callouts/proc/sees_target()
@@ -137,6 +138,8 @@
 	if(in_fight()) // getting hurt by someone we know about is on_hurt()'s
 		return
 	var/atom/shooter = projectile.firer
+	if(isliving(shooter) && ai_is_ally(parent, shooter))
+		return // ignore friendly fire
 	if(isatom(shooter) && ai_can_see(parent, shooter, hearing_range))
 		return // or someone else we can see plain as day
 	speak_about(AI_CALLOUT_TAKING_FIRE)
