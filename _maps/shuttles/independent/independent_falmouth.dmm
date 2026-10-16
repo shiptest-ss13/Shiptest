@@ -1272,17 +1272,48 @@
 	pixel_y = -7;
 	pixel_x = -23
 	},
+/obj/structure/sink/kitchen{
+	dir = 1;
+	pixel_y = 16;
+	pixel_x = 12
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
+"pF" = (
+/obj/effect/turf_decal/trimline/transparent/green/filled/line,
+/obj/structure/filingcabinet/double{
+	dir = 8;
+	pixel_x = 10;
+	pixel_y = 0;
+	density = 0
+	},
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/fore)
 "pP" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/white,
-/obj/structure/sink/kitchen{
-	dir = 1;
-	pixel_y = 11;
-	pixel_x = 4
+/obj/item/cutting_board{
+	pixel_x = 1;
+	pixel_y = 4
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_x = 4;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -3172,25 +3203,6 @@
 "Rm" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/engineering/engines/starboard)
-"Rs" = (
-/obj/effect/turf_decal/trimline/transparent/green/filled/line,
-/obj/structure/filingcabinet/double{
-	dir = 8;
-	pixel_x = 10;
-	pixel_y = 0;
-	density = 0
-	},
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/pen,
-/obj/item/pen,
-/obj/item/pen,
-/obj/item/pen,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/fore)
 "Rv" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -4480,7 +4492,7 @@ cc
 gm
 zo
 dy
-Rs
+pF
 hR
 fE
 cq
