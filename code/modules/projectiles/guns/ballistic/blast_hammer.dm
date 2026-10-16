@@ -179,6 +179,7 @@
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/ramzislayer //Admin item. Don't actually map this anywhere.
 	name = "ramzislayers hammer"
+	autowiki_hidden = TRUE
 	desc = "Despite what the name may imply, not this is not a hammer for killing Ramzi. It's a hammer for Ramzi to kill you with."
 	actions_types = list(/datum/action/item_action/ramzislayer_charge)
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/blasting_hammer/ramzislayer

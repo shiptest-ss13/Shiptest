@@ -23,3 +23,7 @@
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/foam_darts/riot = 4)
 	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/ammo/empty
+	name = "ammo box"
+	icon_state = "generic-ammo"

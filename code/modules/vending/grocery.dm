@@ -46,6 +46,7 @@
 		/obj/item/food/meat/slab/miras = 10,
 		/obj/item/food/meat/slab/remes = 10,
 		/obj/item/food/meat/slab/tiris = 10,
+		/obj/item/food/meat/slab/dofitis = 10,
 		/obj/item/food/grown/dote_berries = 20,
 		/obj/item/food/grown/dotu_fime = 15,
 		/obj/item/food/grown/fara_li = 15,
