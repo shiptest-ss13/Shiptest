@@ -51,25 +51,6 @@
 	icon_state = "wood-broken3"
 	},
 /area/ship/hallway/fore)
-"aM" = (
-/obj/effect/turf_decal/trimline/transparent/green/filled/line,
-/obj/structure/filingcabinet/double{
-	dir = 8;
-	pixel_x = 10;
-	pixel_y = 0;
-	density = 0
-	},
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/pen,
-/obj/item/pen,
-/obj/item/pen,
-/obj/item/pen,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/fore)
 "aQ" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/siding/thinplating{
@@ -388,6 +369,10 @@
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
 /obj/effect/turf_decal/siding/white{
 	dir = 1
+	},
+/obj/item/food/grilled_cheese_sandwich{
+	pixel_x = 0;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -3187,6 +3172,25 @@
 "Rm" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/engineering/engines/starboard)
+"Rs" = (
+/obj/effect/turf_decal/trimline/transparent/green/filled/line,
+/obj/structure/filingcabinet/double{
+	dir = 8;
+	pixel_x = 10;
+	pixel_y = 0;
+	density = 0
+	},
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/fore)
 "Rv" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -4476,7 +4480,7 @@ cc
 gm
 zo
 dy
-aM
+Rs
 hR
 fE
 cq
