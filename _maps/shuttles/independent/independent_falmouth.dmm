@@ -722,25 +722,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"jO" = (
-/obj/effect/turf_decal/trimline/transparent/green/filled/line,
-/obj/structure/filingcabinet/double{
-	dir = 8;
-	pixel_x = 10;
-	pixel_y = 0;
-	density = 0
-	},
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/folder,
-/obj/item/pen,
-/obj/item/pen,
-/obj/item/pen,
-/obj/item/pen,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/fore)
 "kf" = (
 /obj/structure/safe/floor{
 	number_of_tumblers = 3;
@@ -1032,8 +1013,6 @@
 /obj/item/stock_parts/cell/gun,
 /obj/item/stock_parts/cell/gun,
 /obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
 /obj/item/ammo_box/magazine/m9mm_mauler/extended,
 /obj/structure/sign/poster/contraband/eoehoma{
 	pixel_x = -31;
@@ -1046,6 +1025,10 @@
 /obj/item/storage/toolbox/ammo/c9mm{
 	pixel_x = -7;
 	pixel_y = -4
+	},
+/obj/item/storage/toolbox/ammo/shotgun{
+	pixel_x = 0;
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/hallway/fore)
@@ -2172,8 +2155,8 @@
 /obj/item/gun/energy/e_gun/e11,
 /obj/item/gun/energy/laser/wasp,
 /obj/item/gun/ballistic/automatic/pistol/mauler/regular,
-/obj/item/gun/energy/laser/e10,
 /obj/machinery/light/small/directional/west,
+/obj/item/gun/ballistic/shotgun/doublebarrel,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/hallway/fore)
 "Ek" = (
@@ -2410,6 +2393,25 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
+"HQ" = (
+/obj/effect/turf_decal/trimline/transparent/green/filled/line,
+/obj/structure/filingcabinet/double{
+	dir = 8;
+	pixel_x = 10;
+	pixel_y = 0;
+	density = 0
+	},
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/fore)
 "HZ" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/siding/thinplating{
@@ -4434,7 +4436,7 @@ cc
 gm
 zo
 dy
-jO
+HQ
 hR
 fE
 cq
