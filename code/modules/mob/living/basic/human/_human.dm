@@ -9,7 +9,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	basic_mob_flags = DEL_ON_DEATH
 	faction = list(FACTION_ANTAG_HERMITS)
-	// picked from what we're holding, see InitializeAIController()
+	// picked from what we're holding
 	ai_controller = null
 
 	maxHealth = 100
@@ -40,7 +40,7 @@
 	var/datum/weakref/corpse_ref
 	/// Path of the species we base the mob's visuals off of, and talk like. Picked at random when we have a mob_spawner but no species
 	var/datum/species/mob_species
-	/// The species we might be, as list(species path = weight), when our type doesn't set mob_species. Our corpse is the same species, see drop_human_loot()
+	/// The species we might be, as list(species path = weight), when our type doesn't set mob_species. Our corpse is the same species
 	var/list/species_weights = list(
 		/datum/species/lizard = 28,
 		/datum/species/human = 22,
@@ -124,7 +124,7 @@
 	var/noncombatant = FALSE
 	/// Typepath of the /datum/ai_callout_set the mob says things from in a fight. Null to stay quiet
 	var/callout_set = /datum/ai_callout_set/human
-	/// Lines the mob might shout when they pick a fight with someone, for one-off characters set up on a map. Said when we spot them, in place of our callout set's lines for it, see /datum/component/ai_callouts
+	/// Lines the mob might shout when they pick a fight with someone, for one-off characters set up on a map. Said when we spot them, in place of our callout set's lines for it
 	var/list/on_aggro_say
 	/// Chance to shout one of on_aggro_say each time
 	var/aggro_say_chance = 0
@@ -132,7 +132,7 @@
 	var/alert_range
 	/// If TRUE, the mob makes a show of calling allies to a fight, with a "!" over its head and a chime
 	var/summons_backup = FALSE
-	/// Things the mob says now and then while there's nobody to fight, see /datum/ai_planning_subtree/idle_chatter
+	/// Things the mob says now and then while there's nobody to fight
 	var/list/speak
 	/// Emotes the mob does now and then while there's nobody to fight, heard and seen, like "grumbles."
 	var/list/emote_hear
@@ -142,7 +142,7 @@
 
 /mob/living/basic/human/Initialize(mapload)
 	. = ..()
-	// what we wear and carry slows us as much as it would a player: a hardsuit, or a heavy gun held ready, see /obj/item/gun/var/wield_slowdown
+	// what we wear and carry slows us as much as it would a player: a hardsuit, or a heavy gun held ready
 	var/extra_slowdown = mob_spawner ? get_spawner_slowdown(mob_spawner) : 0
 	var/obj/item/gun/gun_type = get_gun_type()
 	if(gun_type)
@@ -206,7 +206,7 @@
 		return 5
 	if(istype(ai_controller, /datum/ai_controller/basic_controller/human/ranged/gunslinger))
 		return 4
-	if(istype(ai_controller, /datum/ai_controller/basic_controller/human/ranged/suppressor))
+	if(istype(ai_controller, /datum/ai_controller/basic_controller/human/ranged/support_gunner))
 		return 2
 	if(istype(ai_controller, /datum/ai_controller/basic_controller/human/ranged/marksman))
 		return 1
@@ -216,7 +216,7 @@
 /mob/living/basic/human/proc/pick_ranged_controller()
 	var/obj/item/gun/gun_type = get_gun_type()
 	if(ispath(gun_type, /obj/item/gun/ballistic/automatic/hmg))
-		return /datum/ai_controller/basic_controller/human/ranged/suppressor
+		return /datum/ai_controller/basic_controller/human/ranged/support_gunner
 	if(ispath(gun_type, /obj/item/gun/ballistic/rifle) || (ispath(gun_type, /obj/item/gun) && initial(gun_type.zoom_amt) >= DMR_ZOOM))
 		return /datum/ai_controller/basic_controller/human/ranged/marksman
 	if(ispath(casing_type, /obj/item/ammo_casing) && initial(casing_type.pellets) > 1)

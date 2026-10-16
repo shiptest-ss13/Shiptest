@@ -56,7 +56,7 @@
 
 /datum/component/ai_morale/proc/on_ally_died()
 	LAZYADD(ally_deaths, world.time)
-	if(!check_breaking())
+	if(!try_break())
 		become_wary()
 
 /datum/component/ai_morale/proc/on_shot_at(datum/source)
@@ -64,30 +64,30 @@
 	if(!COOLDOWN_FINISHED(src, break_check_cooldown))
 		return
 	COOLDOWN_START(src, break_check_cooldown, break_check_interval)
-	check_breaking()
+	try_break()
 
 /datum/component/ai_morale/proc/on_our_projectile_hit(datum/source, atom/movable/firer, atom/hit_target, angle)
 	SIGNAL_HANDLER
 	// projectiles tell us they've hit before the damage lands, so see how they're doing a moment later
 	if(isliving(hit_target) && !ai_is_ally(parent, hit_target))
-		addtimer(CALLBACK(src, PROC_REF(check_downed_ref), WEAKREF(hit_target)), 1)
+		addtimer(CALLBACK(src, PROC_REF(embolden_if_downed_ref), WEAKREF(hit_target)), 1)
 
 /datum/component/ai_morale/proc/on_our_melee_hit(datum/source, atom/hit_target, result)
 	SIGNAL_HANDLER
 	if(isliving(hit_target) && !ai_is_ally(parent, hit_target))
-		check_downed_ref(WEAKREF(hit_target))
+		embolden_if_downed_ref(WEAKREF(hit_target))
 
 // need this when checking other mobs since they get deleted on death, so we can't check them directly
-/datum/component/ai_morale/proc/check_downed_ref(datum/weakref/victim_ref)
+/datum/component/ai_morale/proc/embolden_if_downed_ref(datum/weakref/victim_ref)
 	var/mob/living/victim = victim_ref?.resolve()
 	if(QDELETED(victim))
-		embolden()
+		try_embolden()
 		return
-	check_downed(victim)
+	embolden_if_downed(victim)
 
-/datum/component/ai_morale/proc/check_downed(mob/living/victim)
+/datum/component/ai_morale/proc/embolden_if_downed(mob/living/victim)
 	if(isliving(victim) && victim.stat != CONSCIOUS)
-		embolden()
+		try_embolden()
 
 /datum/component/ai_morale/proc/on_someone_died(datum/source, mob/living/victim, gibbed)
 	SIGNAL_HANDLER
@@ -100,7 +100,7 @@
 		return // nowhere near
 	if(living_parent.faction_check_mob(victim) || !ai_can_see(living_parent, victim, vision_range))
 		return // friendly
-	embolden()
+	try_embolden()
 
 /datum/component/ai_morale/proc/become_wary()
 	var/mob/living/living_parent = parent
@@ -108,7 +108,7 @@
 		return // already worse than that
 	set_morale(AI_MORALE_WARY, wary_duration)
 
-/datum/component/ai_morale/proc/check_breaking()
+/datum/component/ai_morale/proc/try_break()
 	var/mob/living/living_parent = parent
 	var/datum/ai_controller/controller = living_parent.ai_controller
 	if(!can_break || !controller || living_parent.stat != CONSCIOUS)
@@ -159,14 +159,14 @@
 	ally_deaths = null
 	set_morale(AI_MORALE_WARY, wary_duration, AI_CALLOUT_RALLIED)
 
-/datum/component/ai_morale/proc/embolden()
+/datum/component/ai_morale/proc/try_embolden()
 	var/mob/living/living_parent = parent
 	var/datum/ai_controller/controller = living_parent.ai_controller
 	if(!controller || living_parent.stat != CONSCIOUS || AI_MORALE_IS(controller, AI_MORALE_BROKEN))
 		return
 	var/list/sides = count_sides()
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
-	var/anyone_left = sides[2] > 0 || (!QDELETED(target) && !is_downed(target))
+	var/anyone_left = sides[2] > 0 || (!QDELETED(target) && !ai_is_downed(target))
 	if(anyone_left && sides[1] > sides[2])
 		set_morale(AI_MORALE_EMBOLDENED, emboldened_duration)
 	else if(AI_MORALE_IS(controller, AI_MORALE_WARY))
@@ -222,6 +222,6 @@
 	return their_target == living_parent || living_parent.faction_check_mob(their_target)
 
 // emboldens someone at good news, like hearing an ally call out downing someone
-/proc/ai_embolden(mob/living/listener)
+/proc/ai_try_embolden(mob/living/listener)
 	var/datum/component/ai_morale/morale = listener.GetComponent(/datum/component/ai_morale)
-	morale?.embolden()
+	morale?.try_embolden()

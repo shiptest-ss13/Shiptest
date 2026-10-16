@@ -33,17 +33,7 @@
 	var/turf/next_step = get_step_towards(pawn, destination)
 	if(!next_step)
 		return FALSE
-	return next_step.is_blocked_turf(TRUE, pawn) || get_edge_blocker(pawn, get_dir(pawn, next_step))
-
-// cursed edge blockers
-/proc/get_edge_blocker(atom/movable/mover, direction)
-	var/turf/our_turf = get_turf(mover)
-	for(var/obj/thing in our_turf)
-		if(!(thing.flags_1 & ON_BORDER_1) || !thing.density || !(thing.dir & direction))
-			continue
-		if(!thing.CanAStarPass(null, direction, mover))
-			return thing
-	return null
+	return next_step.is_blocked_turf(TRUE, pawn) || get_edge_movement_blocker(pawn, get_dir(pawn, next_step))
 
 /datum/ai_behavior/attack_obstructions/smash_structures
 	// keep planning while we smash, or something we can't break would have us hitting it forever, ignoring everything else
@@ -52,7 +42,7 @@
 	action_cooldown = 1 SECONDS
 
 /datum/ai_behavior/attack_obstructions/smash_structures/attack_in_direction(datum/ai_controller/controller, mob/living/basic/basic_mob, direction)
-	var/obj/edge_blocker = get_edge_blocker(basic_mob, direction)
+	var/obj/edge_blocker = get_edge_movement_blocker(basic_mob, direction)
 	if(edge_blocker && can_smash_object(basic_mob, edge_blocker))
 		basic_mob.melee_attack(edge_blocker)
 		return TRUE
@@ -61,7 +51,7 @@
 /datum/ai_behavior/attack_obstructions/smash_structures/can_smash_object(mob/living/basic/basic_mob, obj/object)
 	if(!(isstructure(object) || ismachinery(object)) || !object.density)
 		return FALSE
-	if(is_cover(object) && using_as_cover(basic_mob, object))
+	if(ai_is_cover(object) && using_as_cover(basic_mob, object))
 		return FALSE // not the sandbags we're sheltering behind
 	return ..()
 
@@ -70,7 +60,7 @@
 	var/datum/ai_controller/controller = basic_mob.ai_controller
 	if(!controller)
 		return FALSE
-	for(var/key in list(BB_BASIC_MOB_COVER_TURF, BB_BASIC_MOB_FIGHTING_COVER_TURF))
+	for(var/key in list(BB_BASIC_MOB_TAKING_COVER_TURF, BB_BASIC_MOB_FIGHTING_COVER_TURF))
 		var/turf/cover_spot = controller.blackboard[key]
 		if(cover_spot && get_dist(cover_spot, object) <= 1)
 			return TRUE

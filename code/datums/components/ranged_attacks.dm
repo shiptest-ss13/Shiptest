@@ -71,8 +71,8 @@
 
 /datum/component/ranged_attacks/proc/fire_ranged_attack(mob/living/basic/firer, atom/target, modifiers)
 	SIGNAL_HANDLER
-	if(firer.client && !player_volley(firer, target))
-		return // the AI paces its own volleys, see /datum/ai_behavior/basic_ranged_attack, but a player could otherwise fire as fast as they click
+	if(firer.client && !try_player_volley(firer, target))
+		return // the AI paces its own volleys, but a player could otherwise fire as fast as they click
 	if(SEND_SIGNAL(firer, COMSIG_BASICMOB_PRE_RANGED_ATTACK, target) & COMPONENT_CANCEL_RANGED_ATTACK)
 		return // like when we're reloading
 	var/datum/ai_controller/controller = firer.ai_controller
@@ -107,7 +107,7 @@
 		alert_ai_to_gunfire(firer, SUPPRESSED_NONE, FALSE, firer) // casings do this themselves
 
 // player controlled nonsense
-/datum/component/ranged_attacks/proc/player_volley(mob/living/basic/firer, atom/target)
+/datum/component/ranged_attacks/proc/try_player_volley(mob/living/basic/firer, atom/target)
 	if(player_follow_ups_owed > 0)
 		player_follow_ups_owed--
 		return TRUE

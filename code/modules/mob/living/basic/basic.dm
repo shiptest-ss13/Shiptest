@@ -177,7 +177,7 @@
 		return FALSE //but more importantly return before attack_animal called
 	var/result = target.attack_basic_mob(src)
 	SEND_SIGNAL(src, COMSIG_HOSTILE_POST_ATTACKINGTARGET, target, result)
-	ai_controller?.set_blackboard_key(BB_BASIC_MOB_LAST_MELEE_HIT, world.time) // for AI that backs off after a hit, see /datum/ai_planning_subtree/maintain_distance
+	ai_controller?.set_blackboard_key(BB_BASIC_MOB_LAST_MELEE_HIT_TIME, world.time) // for AI that backs off after a hit, see /datum/ai_planning_subtree/maintain_distance
 	return result
 
 /mob/living/basic/set_varspeed(var_value)

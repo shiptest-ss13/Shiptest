@@ -61,15 +61,15 @@
 #define BB_BASIC_MOB_CURRENT_TARGET "BB_basic_current_target"
 ///Where we think our current target is: where we last saw them, or were told, heard or guessed they are
 #define BB_BASIC_MOB_LAST_KNOWN_TURF "BB_basic_last_known_turf"
-///When we last had word of where our current target is, by seeing them, being told, hearing them, or still searching, as a world.time. We give up on them once it's too long ago
+///When we last had word of where our current target is, either first or secondhand, as a world.time. We give up on them once it's too long ago
 #define BB_BASIC_MOB_LAST_KNOWN_TIME "BB_basic_last_known_time"
 ///When we last actually had eyes on whoever we were fighting, as a world.time. Unlike BB_BASIC_MOB_LAST_KNOWN_TIME, being told or hearing about them doesn't count, and it outlasts switching targets.
 #define BB_BASIC_MOB_LAST_SAW_ENEMY_TIME "BB_basic_last_saw_enemy_time"
 ///Each enemy we've had eyes on, and when we last did, as list(enemy = world.time), so someone ducking in and out of cover isn't news each time
 #define BB_BASIC_MOB_SEEN_ENEMIES "BB_basic_seen_enemies"
 ///Until when we hold off attacking, having only just spotted someone new, so we don't open up the instant they come into view
-#define BB_BASIC_MOB_REACT_AT "BB_basic_react_at"
-///TRUE while we can see our current target, FALSE while they're out of sight
+#define BB_BASIC_MOB_HOLD_FIRE_UNTIL "BB_basic_hold_fire_until"
+///TRUE while we can see our current target, FALSE while they're out of sight, null when we're not tracking them, like with no target
 #define BB_BASIC_MOB_TARGET_IN_SIGHT "BB_basic_target_in_sight"
 ///Who BB_BASIC_MOB_LAST_KNOWN_TURF and BB_BASIC_MOB_LAST_KNOWN_TIME are about, so switching targets starts fresh
 #define BB_BASIC_MOB_LAST_KNOWN_TARGET "BB_basic_last_known_target"
@@ -88,28 +88,27 @@
 ///Where the last shot at us came from
 #define BB_BASIC_MOB_SHOT_FROM "BB_basic_shot_from"
 ///Where we're taking cover. While set, the cover subtree is in charge of where we stand
-#define BB_BASIC_MOB_COVER_TURF "BB_basic_cover_turf"
+#define BB_BASIC_MOB_TAKING_COVER_TURF "BB_basic_taking_cover_turf"
 ///Where we're stepping out of cover to fire from, while we do
 #define BB_BASIC_MOB_PEEK_TURF "BB_basic_peek_turf"
 ///When we'll top up our magazine, now that the fighting's died down
 #define BB_BASIC_MOB_TACTICAL_RELOAD_AT "BB_basic_tactical_reload_at"
 ///TRUE once we've called out searching for our target, so we only say it once each time we lose them
 #define BB_BASIC_MOB_SEARCH_CALLED_OUT "BB_basic_search_called_out"
-///When we'll next try a taunt, see /datum/ai_planning_subtree/taunt
+///When we'll next try a taunt
 #define BB_BASIC_MOB_NEXT_TAUNT "BB_basic_next_taunt"
-///Whether we're closing in on or backing off from our target, so we only call it out when that changes
-#define BB_BASIC_MOB_RANGE_MOVE "BB_basic_range_move"
+///The last closing in or backing off callout we made, as an AI_CALLOUT_ define, so we only call it out when that changes
+#define BB_BASIC_MOB_LAST_RANGE_CALLOUT "BB_basic_last_range_callout"
 ///TRUE while all we know about our target is gunfire we heard
 #define BB_BASIC_MOB_HEARD_TARGET "BB_basic_heard_target"
 ///Where we're sweeping around while looking for someone we only heard, how far out, how many more spots we'll check, and when we stop looking around the current one.
-///See /datum/ai_planning_subtree/search_lost_target
 #define BB_BASIC_MOB_SWEEP_CENTER "BB_basic_sweep_center"
 #define BB_BASIC_MOB_SWEEP_RADIUS "BB_basic_sweep_radius"
 #define BB_BASIC_MOB_SWEEP_SPOTS_LEFT "BB_basic_sweep_spots_left"
 #define BB_BASIC_MOB_SWEEP_PAUSE_UNTIL "BB_basic_sweep_pause_until"
-///Whether we decided to go around what's blocking our shot at our target, and when we'll think again. Null while our line's clear, see /datum/ai_planning_subtree/flank
+///Whether we decided to go around what's blocking our shot at our target, and when we'll think again. Null while our line's clear
 #define BB_BASIC_MOB_FLANKING "BB_basic_flanking"
-#define BB_BASIC_MOB_FLANK_RECONSIDER_AT "BB_basic_flank_reconsider_at"
+#define BB_BASIC_MOB_NEXT_FLANK_DECISION "BB_basic_next_flank_decision"
 ///Where we're going around to, to get an angle on someone dug in behind cover
 #define BB_BASIC_MOB_FLANK_TURF "BB_basic_flank_turf"
 ///What we say and emote now and then while there's nobody to fight, as lists, and the chance each 2 seconds
@@ -123,7 +122,7 @@
 ///What we last fired at, a mob or a spot we fired at blind, and when, so we keep facing it as we move between shots
 #define BB_BASIC_MOB_LAST_FIRED_AT "BB_basic_last_fired_at"
 #define BB_BASIC_MOB_LAST_FIRED_TIME "BB_basic_last_fired_time"
-///Where we're falling back to while our nerve's gone, see /datum/ai_planning_subtree/broken_fall_back
+///Where we're falling back to while our nerve's gone
 #define BB_BASIC_MOB_FALLBACK_TURF "BB_basic_fallback_turf"
 ///Where we're working our way in to next, out of their line of fire, and when we'll next look for one with nowhere to go. Usually for melee mobs
 #define BB_BASIC_MOB_APPROACH_TURF "BB_basic_approach_turf"
@@ -138,13 +137,13 @@
 #define BB_BASIC_MOB_NEXT_SHOVE_CHECK "BB_basic_next_shove_check"
 ///If TRUE, we've nothing in our hands, so we shove whoever's cornered us out of the way rather than swinging at them
 #define BB_BASIC_MOB_SHOVES_WHEN_CORNERED "BB_basic_shoves_when_cornered"
-///How we're feeling about the fight, an AI_MORALE_ define, and until when. Check it with AI_MORALE_IS()
+///How we're feeling about the fight, an AI_MORALE_ define, and until when.
 #define BB_BASIC_MOB_MORALE "BB_basic_morale"
 #define BB_BASIC_MOB_MORALE_UNTIL "BB_basic_morale_until"
 ///Who last shot at us
 #define BB_BASIC_MOB_SHOT_BY "BB_basic_shot_by"
-///BB_BASIC_MOB_LAST_SHOT_TIME when we last decided how to react to being shot, so we decide once per shot
-#define BB_BASIC_MOB_SHOT_HANDLED "BB_basic_shot_handled"
+///When we last decided how to react to being shot, so we decide once per shot
+#define BB_BASIC_MOB_LAST_HANDLED_SHOT_TIME "BB_basic_last_handled_shot_time"
 ///Until when we're standing our ground and firing back rather than taking cover
 #define BB_BASIC_MOB_TRADING_FIRE_UNTIL "BB_basic_trading_fire_until"
 ///Somewhere we thought was cover, until we got shot there, so we don't go back to it
@@ -153,7 +152,7 @@
 #define BB_BASIC_MOB_COVER_CHECKED_AT "BB_basic_cover_checked_at"
 #define BB_BASIC_MOB_COVER_CHECKED_FROM "BB_basic_cover_checked_from"
 ///When we next look around for who we should be fighting
-#define BB_BASIC_MOB_NEXT_THREAT_CHECK "BB_basic_next_threat_check"
+#define BB_BASIC_MOB_NEXT_TARGET_SEARCH "BB_basic_next_target_search"
 ///Where we're fighting from, behind cover like sandbags or out of sight of a target dug in behind theirs
 #define BB_BASIC_MOB_FIGHTING_COVER_TURF "BB_basic_fighting_cover_turf"
 ///Until when we're keeping out of sight of a target dug in behind cover we can't match, rather than walking back into their line of fire
@@ -194,15 +193,15 @@
 #define BB_BASIC_MOB_NO_PATH_SINCE "BB_basic_no_path_since"
 ///A safe spot we couldn't find our way to, so we don't keep picking it
 #define BB_BASIC_MOB_BAD_SAFE_TURF "BB_basic_bad_safe_turf"
-///How many times we look for a safe spot before giving up for a while
+///How many times in a row we've looked for a safe spot and found none, giving up for a while once it's too many
 #define BB_BASIC_MOB_SAFETY_FAILURES "BB_basic_safety_failures"
 ///How many shots we've fired, ever, so subtrees can count how many since something happened
 #define BB_BASIC_MOB_SHOTS_FIRED "BB_basic_shots_fired"
 ///When we last hit someone in melee
-#define BB_BASIC_MOB_LAST_MELEE_HIT "BB_basic_last_melee_hit"
+#define BB_BASIC_MOB_LAST_MELEE_HIT_TIME "BB_basic_last_melee_hit_time"
 ///With hit and run, BB_BASIC_MOB_SHOTS_FIRED when we got in close, and until when we're backing off again
 #define BB_BASIC_MOB_SHOTS_AT_CLOSE_IN "BB_basic_shots_at_close_in"
-#define BB_BASIC_MOB_FALLING_BACK_UNTIL "BB_basic_falling_back_until"
+#define BB_BASIC_MOB_BACKING_OFF_UNTIL "BB_basic_backing_off_until"
 ///The search style we picked when we lost sight of our target, kept until we find them or give up
 #define BB_BASIC_MOB_PICKED_SEARCH_STYLE "BB_basic_picked_search_style"
 ///How we're searching right now, after anything that changes our mind, so allies can tell who's already gone after them
@@ -227,16 +226,16 @@
 ///Somewhere nearby that's safe for us to stand, while where we are isn't, and when we'll next look for one
 #define BB_BASIC_MOB_SAFE_TURF "BB_basic_safe_turf"
 #define BB_BASIC_MOB_NEXT_SAFETY_SEARCH "BB_basic_next_safety_search"
-///Where we're moving to between shots, and when we'll next move, see /datum/ai_planning_subtree/reposition
+///Where we're moving to between shots, and when we'll next move
 #define BB_BASIC_MOB_REPOSITION_TURF "BB_basic_reposition_turf"
 #define BB_BASIC_MOB_NEXT_REPOSITION "BB_basic_next_reposition"
-///Until when we don't hurry to look for somewhere to shoot from again, after looking and finding nowhere,
+///Until when we don't hurry to look for somewhere to shoot from again, after looking and finding nowhere
 #define BB_BASIC_MOB_REPOSITION_FAILED_UNTIL "BB_basic_reposition_failed_until"
 ///When we give up getting to BB_BASIC_MOB_REPOSITION_TURF, like if there's no way there after all
-#define BB_BASIC_MOB_REPOSITION_UNTIL "BB_basic_reposition_until"
+#define BB_BASIC_MOB_REPOSITION_GIVE_UP_AT "BB_basic_reposition_give_up_at"
 ///How much we move about in a fight, an AI_MOBILITY_ define. Null for normal
 #define BB_BASIC_MOB_MOBILITY "BB_basic_mobility"
-///If TRUE, we dart in for a few shots then back off for a moment, whatever our maintain_distance subtree says, see its hit_and_run
+///If TRUE, we dart in for a few shots then back off for a moment, whatever our maintain_distance subtree says
 #define BB_BASIC_MOB_HIT_AND_RUN "BB_basic_hit_and_run"
 #define BB_BASIC_MOB_CURRENT_TARGET_HIDING_LOCATION "BB_basic_current_target_hiding_location"
 #define BB_TARGETTING_DATUM "targetting_datum"

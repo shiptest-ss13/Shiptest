@@ -20,7 +20,7 @@
 	if(!controller || damage <= 0 || source.stat == DEAD)
 		return
 	controller.set_blackboard_key(BB_BASIC_MOB_LAST_HURT_TIME, world.time)
-	controller.clear_blackboard_key(BB_BASIC_MOB_NEXT_THREAT_CHECK)
+	controller.clear_blackboard_key(BB_BASIC_MOB_NEXT_TARGET_SEARCH)
 	if(controller.ai_status == AI_STATUS_IDLE)
 		controller.set_ai_status(AI_STATUS_ON)
 

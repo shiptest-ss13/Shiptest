@@ -3,9 +3,9 @@
  */
 /datum/ai_movement/jps
 	max_pathing_attempts = 4
-	//this close, with nothing in the way, we step straight at where we're going rather than pathing, see try_direct_step()
+	//this close, with nothing in the way, we step straight at where we're going rather than pathing
 	var/direct_step_range = 8
-	//how long we keep trying to climb the same thing before we give up on it, see try_climb()
+	//how long we keep trying to climb the same thing before we give up on it
 	var/climb_give_up_time = 5 SECONDS
 
 ///Put your movement behavior in here!
@@ -145,7 +145,7 @@
 	controller.movement_cooldown += step_delay - controller.movement_delay // the extra a diagonal takes
 	return TRUE
 
-// climbs whatever's stopping us stepping onto next_step, if we can, the way a player does, see /datum/element/climbable. TRUE if we've started
+// climbs whatever's stopping us stepping onto next_step, if we can, the way a player does. TRUE if we've started
 /datum/ai_movement/jps/proc/try_climb(datum/ai_controller/controller, atom/movable/movable_pawn, turf/next_step)
 	if(!controller.blackboard[BB_BASIC_MOB_CAN_CLIMB] || !isliving(movable_pawn) || get_dist(movable_pawn, next_step) != 1)
 		return FALSE

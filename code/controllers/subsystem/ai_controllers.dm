@@ -9,7 +9,7 @@ SUBSYSTEM_DEF(ai_controllers)
 
 	///List of all ai_subtree singletons, key is the typepath while assigned value is a newly created instance of the typepath. See setup_subtrees()
 	var/list/ai_subtrees = list()
-	///List of all ai_sensor singletons, as list(typepath = instance), see /datum/ai_controller/var/sensors
+	///List of all ai_sensor singletons, as list(typepath = instance)
 	var/list/ai_sensors = list()
 	///List of all ai controllers currently running
 	var/list/active_ai_controllers = list()

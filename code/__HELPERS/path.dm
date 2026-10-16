@@ -15,7 +15,7 @@
  * * id: An ID card representing what access we have and what doors we can open. Its location relative to the pathing atom is irrelevant
  * * simulated_only: Whether we consider turfs without atmos simulation (AKA do we want to ignore space)
  * * exclude: If we want to avoid a specific turf, like if we're a mulebot who already got blocked by some turf
- * * climbing: If TRUE, we can go over things we could climb, like sandbags, tables and railings, see /datum/element/climbable
+ * * climbing: If TRUE, we can go over things we could climb, like sandbags, tables and railings
  */
 /proc/get_path_to(requester, end, max_distance = 30, mintargetdist, id=null, simulated_only = TRUE, turf/exclude, climbing = FALSE)
 	if(!requester || !get_turf(end))
@@ -121,7 +121,7 @@
 	var/avoid_hazards = FALSE
 	/// If TRUE, we can go over things we could climb, like sandbags
 	var/climbing = FALSE
-	/// If TRUE, we don't route through air that'd hurt us, like a vented room behind a door, see bad_air_at()
+	/// If TRUE, we don't route through air that'd hurt us, like a vented room behind a door
 	var/avoid_bad_air = FALSE
 	/// What bad_air_at() made of each turf it's looked at, as it's asked about the same ones a lot
 	var/list/bad_air_cache

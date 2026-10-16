@@ -76,7 +76,7 @@
 	if(!shot_from || !isturf(source.loc) || source.stat != CONSCIOUS || source.incapacitated())
 		return
 	var/datum/ai_controller/controller = source.ai_controller
-	if(controller && (source.loc == controller.blackboard[BB_BASIC_MOB_COVER_TURF] || source.loc == controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]))
+	if(controller && (source.loc == controller.blackboard[BB_BASIC_MOB_TAKING_COVER_TURF] || source.loc == controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]))
 		return // we'd only be jinking out of our cover
 	COOLDOWN_START(src, jink_cooldown, 1 SECONDS)
 	var/shot_dir = get_dir(shot_from, source)

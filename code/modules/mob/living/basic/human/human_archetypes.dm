@@ -26,7 +26,7 @@
 	holds_good_cover = TRUE
 
 /datum/ai_planning_subtree/search_lost_target/marksman
-	search_style = SEARCH_STYLE_HOLD
+	search_style = AI_SEARCH_STYLE_HOLD
 	cautious_health_fraction = 0.5
 
 //rush em down, get in close
@@ -48,7 +48,7 @@
 	supported_flank_chance = 80
 
 /datum/ai_planning_subtree/search_lost_target/rusher
-	search_style = SEARCH_STYLE_INVESTIGATE
+	search_style = AI_SEARCH_STYLE_INVESTIGATE
 	cautious_health_fraction = 0.15
 
 // dip n diving hit n runners
@@ -72,19 +72,19 @@
 	fights_from_cover_unprovoked = FALSE
 
  // would rather dig in behind cover and lay down fire
-/datum/ai_controller/basic_controller/human/ranged/suppressor
+/datum/ai_controller/basic_controller/human/ranged/support_gunner
 	planning_subtrees = list(
 		AI_HUMAN_PLANNING_OPENING,
 		/datum/ai_planning_subtree/group/cover,
 		/datum/ai_planning_subtree/sequence/suppress_dug_in,
 		/datum/ai_planning_subtree/flank,
 		/datum/ai_planning_subtree/fighting_cover,
-		/datum/ai_planning_subtree/search_lost_target/suppressor,
+		/datum/ai_planning_subtree/search_lost_target/support_gunner,
 		AI_HUMAN_RANGED_PLANNING_CLOSING,
 	)
 
-/datum/ai_planning_subtree/search_lost_target/suppressor
-	search_style = SEARCH_STYLE_SUPPRESS
+/datum/ai_planning_subtree/search_lost_target/support_gunner
+	search_style = AI_SEARCH_STYLE_SUPPRESS
 	cautious_health_fraction = 0.4
 	splits_search_roles = TRUE
 

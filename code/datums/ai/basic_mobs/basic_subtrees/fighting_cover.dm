@@ -1,11 +1,11 @@
 // fighting from behind cover like sandbags/flipped tables
 /datum/ai_planning_subtree/fighting_cover
 	required_conditions = AI_CONDITION_HAS_TARGET | AI_CONDITION_HAS_RANGED_ATTACK
-	blocking_conditions = AI_CONDITION_IN_COVER | AI_CONDITION_FLANKING
+	blocking_conditions = AI_CONDITION_TAKING_COVER | AI_CONDITION_FLANKING
 	var/target_key = BB_BASIC_MOB_CURRENT_TARGET
 	var/search_range = 3
 	var/search_interval = 4 SECONDS
-	var/hurt_memory = 5 SECONDS
+	var/shot_at_memory = 5 SECONDS
 	var/hide_duration = 15 SECONDS
 	var/fights_from_cover_unprovoked = TRUE // FALSE to only bother once we're getting hurt or the enemy is dug in
 
@@ -35,16 +35,16 @@
 	var/turf/their_turf = get_turf(target)
 	var/obj/projectile/projectile_type = ranged_attack.get_projectile_type()
 	var/pass_flags = ranged_attack.get_pass_flags()
-	var/recently_hurt = world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < hurt_memory
-	var/atom/blocker = get_mob_shot_blocker(controller.pawn, target)
+	var/recently_shot_at = world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < shot_at_memory
+	var/atom/blocker = get_cached_shot_blocker(controller.pawn, target)
 	// they're dug in behind cover, or we're getting hurt through something we can't shoot back through, like lasers through glass
-	var/entrenched = cover_between(their_turf, our_turf) || (recently_hurt && blocker && !worth_shooting_through(controller.pawn, blocker, projectile_type))
+	var/entrenched = cover_between(their_turf, our_turf) || (recently_shot_at && blocker && !worth_shooting_through(controller.pawn, blocker, projectile_type))
 	if(cover_between(our_turf, target) && !blocker)
 		// already as good as it gets, and remember it so you don't immediately wander off
 		controller.set_blackboard_key(BB_BASIC_MOB_FIGHTING_COVER_TURF, our_turf)
 		AI_LOG_DECISION(controller, "fighting_cover: already behind cover from [target], fighting from here")
 		return
-	if(!entrenched && !recently_hurt && !fights_from_cover_unprovoked)
+	if(!entrenched && !recently_shot_at && !fights_from_cover_unprovoked)
 		return
 	if(world.time < controller.blackboard[BB_BASIC_MOB_NEXT_COVER_SEARCH])
 		return

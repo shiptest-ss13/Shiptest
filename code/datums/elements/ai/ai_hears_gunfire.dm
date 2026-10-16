@@ -16,22 +16,22 @@ GLOBAL_LIST_EMPTY(ai_gunfire_listeners)
 	GLOB.ai_gunfire_listeners -= source
 	return ..()
 
-// edit GUNFIRE_ALERT_COOLDOWN if we need to tweak how often it checks
+// edit AI_GUNFIRE_ALERT_COOLDOWN if we need to tweak how often it checks
 /proc/alert_ai_to_gunfire(mob/living/shooter, suppression, is_laser, atom/fired_from)
 	if(!istype(shooter) || suppression >= SUPPRESSED_VERY)
 		return
 	if(!suppression)
-		ai_reveal_in_dark(shooter, 2 SECONDS) // the muzzle flash gives them away, 2 seconds so it doesnt hide between ai thinking ticks
+		ai_mark_revealed_in_dark(shooter, 2 SECONDS) // the muzzle flash gives them away, 2 seconds so it doesnt hide between ai thinking ticks
 	// guns say how loud they are. Mobs shooting without one go by what they're firing
 	var/obj/item/gun/gun = fired_from
 	if(!istype(gun))
 		gun = null
-	var/hearing_range = gun ? gun.gunfire_hearing_range : (is_laser ? LASER_HEARING_RANGE : GUNFIRE_HEARING_RANGE)
+	var/hearing_range = gun ? gun.gunfire_hearing_range : (is_laser ? AI_LASER_HEARING_RANGE : AI_GUNFIRE_HEARING_RANGE)
 	if(suppression)
 		if(!isnull(gun?.suppressed_gunfire_hearing_range))
 			hearing_range = gun.suppressed_gunfire_hearing_range // like a built-in suppressor that's quieter than most
 		else
-			hearing_range = hearing_range ? max(1, round(hearing_range / SUPPRESSED_HEARING_REDUCTION)) : 0 // quieter, but only a gun that's silent anyway is silent suppressed
+			hearing_range = hearing_range ? max(1, round(hearing_range / AI_SUPPRESSED_HEARING_REDUCTION)) : 0 // quieter, but only a gun that's silent anyway is silent suppressed
 	var/turf/origin = get_turf(shooter)
 	if(!origin || hearing_range < 1)
 		return
@@ -46,7 +46,7 @@ GLOBAL_LIST_EMPTY(ai_gunfire_listeners)
 			var/list/old_alert = last_alert_by_shooter[old_ref]
 			if(old_alert[1] < world.time)
 				last_alert_by_shooter -= old_ref
-	last_alert_by_shooter[shooter_ref] = list(world.time + GUNFIRE_ALERT_COOLDOWN, origin, hearing_range)
+	last_alert_by_shooter[shooter_ref] = list(world.time + AI_GUNFIRE_ALERT_COOLDOWN, origin, hearing_range)
 	for(var/mob/living/listener as anything in GLOB.ai_gunfire_listeners)
 		// only those out on a turf, like range() would give us, so not someone shut in a locker
 		if(listener == shooter || QDELETED(listener) || !isturf(listener.loc) || listener.z != origin.z || get_dist(origin, listener) > hearing_range || !HAS_TRAIT(listener, TRAIT_AI_HEARS_GUNFIRE))

@@ -34,11 +34,11 @@
 			INVOKE_ASYNC(src, PROC_REF(pry_firelock), source, firelock)
 
 /datum/element/ai_door_opener/proc/pry_firelock(mob/living/source, obj/machinery/door/firedoor/firelock)
-	if(firelock.is_holding_pressure() && !ai_fine_venting(source))
+	if(firelock.is_holding_pressure() && !ai_safe_to_vent(source))
 		return
 	if(!do_after(source, 3 SECONDS, firelock))
 		return
-	if(!firelock.density || firelock.welded || firelock.operating || (firelock.is_holding_pressure() && !ai_fine_venting(source)))
+	if(!firelock.density || firelock.welded || firelock.operating || (firelock.is_holding_pressure() && !ai_safe_to_vent(source)))
 		return // things changed while we were at it
 	firelock.emergency_close_timer = world.time + 6 SECONDS // so it doesn't snap shut again instantly
 	firelock.open()

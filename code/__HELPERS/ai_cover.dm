@@ -47,11 +47,11 @@
 			return thing
 	return null
 
-// whether thing, standing on its tile rather than an edge, stops a shot with pass_flags. cover's shot over rather than through, see cover_between()
+// whether thing stops a shot with pass_flags
 /proc/blocks_shot_on_tile(obj/thing, pass_flags)
-	return thing.density && !(thing.flags_1 & ON_BORDER_1) && !(thing.pass_flags_self & pass_flags) && !is_cover(thing)
+	return thing.density && !(thing.flags_1 & ON_BORDER_1) && !(thing.pass_flags_self & pass_flags) && !ai_is_cover(thing)
 
-// a closed door or a window on the edge between from_turf and to_turf that'd stop the shot, like an edge firelock, or a directional window to a shot that can't pass glass. other edge things are cover, see get_tile_shot_blocker()
+// more edge blocker handling
 /proc/get_edge_shot_blocker(turf/from_turf, turf/to_turf, pass_flags)
 	var/crossing = get_dir(from_turf, to_turf)
 	var/reverse = REVERSE_DIR(crossing)
@@ -81,7 +81,7 @@
 	return get_shot_blocker(danger, spot, across_x, across_y) && get_shot_blocker(danger, spot, -across_x, -across_y)
 
 // whether this is cover that blocks most shots from anyone not right behind it, like sandbags or barricades
-/proc/is_cover(atom/thing)
+/proc/ai_is_cover(atom/thing)
 	if(!isobj(thing))
 		return FALSE
 	var/obj/cover = thing
@@ -108,7 +108,7 @@
 	var/best_distance = INFINITY
 	for(var/turf/open/candidate in range(range, our_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate == exclude || candidate_distance >= best_distance || candidate.is_blocked_turf(TRUE, mover) || is_doorway(candidate) || !ai_can_stand_on(mover, candidate))
+		if(candidate == exclude || candidate_distance >= best_distance || candidate.is_blocked_turf(TRUE, mover) || ai_is_doorway(candidate) || !ai_can_stand_on(mover, candidate))
 			continue
 		if(!is_spot_safe_from(candidate, danger) || !can_walk_straight_to(mover, candidate))
 			continue
@@ -123,7 +123,7 @@
 				return TRUE
 	return FALSE
 
-/proc/can_shoot_at_range(atom/target)
+/proc/target_can_shoot_back(atom/target)
 	if(!ismob(target))
 		return TRUE // turrets and mechs
 	var/mob/target_mob = target
@@ -133,13 +133,13 @@
 	var/datum/component/ranged_attacks/ranged_attack = shooter.GetComponent(/datum/component/ranged_attacks)
 	return ranged_attack ? ranged_attack.get_pass_flags() : PASSTABLE
 
-/proc/is_door(atom/thing)
+/proc/ai_is_door(atom/thing)
 	return istype(thing, /obj/machinery/door) || istype(thing, /obj/structure/mineral_door) || istype(thing, /obj/structure/fence/door)
 
 // so it avoids standing in doorways
-/proc/is_doorway(turf/spot)
+/proc/ai_is_doorway(turf/spot)
 	for(var/atom/thing as anything in spot)
-		if(is_door(thing))
+		if(ai_is_door(thing))
 			return TRUE
 	return FALSE
 
@@ -149,13 +149,12 @@
 	var/closest = isnull(retreat_distance) ? AI_DEFAULT_RETREAT_DISTANCE : retreat_distance
 	return list(closest, max(closest, isnull(engage_distance) ? AI_DEFAULT_ENGAGE_DISTANCE : engage_distance))
 
-// only shoot at something that blocks but it can destroy within a few shots, and no more than a magazine (grilles, non reinforced glass etc).
-// Counts everything else on its tile that'd stop the shot too, like the grille under a window
+// only shoot at something that blocks but it can destroy quickly
 /proc/worth_shooting_through(mob/living/shooter, atom/blocker, obj/projectile/projectile_type)
 	if(!isobj(blocker) || !projectile_type)
 		return FALSE // walls and the like, or we're not firing anything that'd break it
 	if(breaking_would_vent(shooter, blocker))
-		return FALSE // like a window onto space, when we've no suit
+		return FALSE // dont vent if we cant survive it!!!
 	var/shots_needed = shots_to_break(blocker, projectile_type)
 	if(isnull(shots_needed))
 		return FALSE
@@ -170,10 +169,10 @@
 	var/datum/component/ai_magazine/magazine = shooter.GetComponent(/datum/component/ai_magazine)
 	return shots_needed <= min(AI_MAX_SHOTS_THROUGH_COVER, magazine?.magazine_size || AI_MAX_SHOTS_THROUGH_COVER)
 
-// how many shots of projectile_type it'd take to break thing as it is now, after its armour, the way /obj/bullet_act() does it. Null if we can't or shouldn't
+// how many shots it'd take to break thing as it is now, after its armour, the way /obj/bullet_act() does it. Null if we can't or shouldn't
 /proc/shots_to_break(obj/thing, obj/projectile/projectile_type)
-	if(is_door(thing))
-		return null // there's a quicker way through a door than shooting it down, see /datum/element/ai_door_opener
+	if(ai_is_door(thing))
+		return null // there's a quicker way through a door than shooting it down
 	if(thing.resistance_flags & INDESTRUCTIBLE)
 		return null
 	var/damage_type = initial(projectile_type.damage_type)
@@ -187,9 +186,7 @@
 		return null
 	return CEILING(thing.atom_integrity / damage_per_shot, 1)
 
-// whether the cover at spot is still on the side threat's coming from, like the sandbags in front of us when they walk right up to them,
-// even if it wouldn't stop their shots from that close. For staying in cover we've already got, rather than giving it up whenever they close in.
-// cover_between() is for picking new cover, as it needs the cover squarely between us
+// wheter a cover is facing/still between the mob and target
 /proc/cover_facing(turf/spot, atom/threat)
 	var/turf/threat_turf = get_turf(threat)
 	if(!spot || !threat_turf || spot == threat_turf || spot.z != threat_turf.z)
@@ -197,14 +194,14 @@
 	var/towards = get_dir(spot, threat_turf)
 	var/list/facing_dirs = list(towards, turn(towards, 45), turn(towards, -45))
 	for(var/obj/thing in spot)
-		if((thing.flags_1 & ON_BORDER_1) && is_cover(thing) && (thing.dir & towards))
+		if((thing.flags_1 & ON_BORDER_1) && ai_is_cover(thing) && (thing.dir & towards))
 			return TRUE
 	for(var/facing_dir in facing_dirs)
 		var/turf/beside = get_step(spot, facing_dir)
 		if(!beside || beside == threat_turf)
 			continue
 		for(var/obj/thing in beside)
-			if(!is_cover(thing))
+			if(!ai_is_cover(thing))
 				continue
 			// a flipped table only covers us if its raised edge is between us
 			if(!(thing.flags_1 & ON_BORDER_1) || (thing.dir & REVERSE_DIR(get_dir(spot, beside))))
@@ -219,13 +216,13 @@
 		return null // they're right next to it, so cover's no use
 	var/towards = get_dir(spot, threat_turf)
 	for(var/obj/thing in spot)
-		if((thing.flags_1 & ON_BORDER_1) && (thing.dir & towards) && is_cover(thing))
+		if((thing.flags_1 & ON_BORDER_1) && (thing.dir & towards) && ai_is_cover(thing))
 			return thing
 	var/turf/in_front = line[2]
 	for(var/obj/thing in in_front)
-		if(!is_cover(thing))
+		if(!ai_is_cover(thing))
 			continue
-		// a flipped table only stops shots crossing its raised edge, on whichever side of the tile that is
+		// a flipped table only stops shots crossing its raised edge
 		if(!(thing.flags_1 & ON_BORDER_1) || (thing.dir & (towards | REVERSE_DIR(towards))))
 			return thing
 	return null
@@ -246,7 +243,7 @@
 	var/best_distance = INFINITY
 	for(var/turf/open/candidate in range(range, our_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate_distance >= best_distance || ally_turfs[candidate] || candidate.is_blocked_turf(TRUE, fighter) || is_doorway(candidate) || !cover_between(candidate, threat) || !ai_can_stand_on(fighter, candidate))
+		if(candidate_distance >= best_distance || ally_turfs[candidate] || candidate.is_blocked_turf(TRUE, fighter) || ai_is_doorway(candidate) || !cover_between(candidate, threat) || !ai_can_stand_on(fighter, candidate))
 			continue
 		if(!can_walk_straight_to(fighter, candidate))
 			continue
@@ -268,14 +265,14 @@
 	var/turf/finish = get_turf(target)
 	if(!start || !finish)
 		return FALSE
-	var/atom/blocker = get_mob_shot_blocker(shooter, target)
+	var/atom/blocker = get_cached_shot_blocker(shooter, target)
 	if(!blocker)
 		return TRUE
 	var/datum/component/ranged_attacks/ranged_attack = shooter.GetComponent(/datum/component/ranged_attacks)
 	return ranged_attack && worth_shooting_through(shooter, blocker, ranged_attack.get_projectile_type())
 
 // use this instead of get_shot_blocker() to cache the answer for a shooter, so it doesn't have to recalc every shot
-/proc/get_mob_shot_blocker(mob/living/shooter, atom/target)
+/proc/get_cached_shot_blocker(mob/living/shooter, atom/target)
 	// each shooter's last answer, as list(when, from, to, weakref to what's in the way or null)
 	var/static/list/blockers_by_shooter = list()
 	var/turf/start = get_turf(shooter)

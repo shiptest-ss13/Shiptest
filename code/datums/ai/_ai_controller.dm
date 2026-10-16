@@ -21,9 +21,9 @@ multiple modular subtrees with behaviors
 	var/ai_traits = NONE
 	///Current actions being performed by the AI.
 	var/list/current_behaviors
-	///Behaviors picked by the planning pass in progress, as list(behavior = TRUE), so ones that weren't picked again can be cancelled. See SelectBehaviors()
+	///Behaviors picked by the planning pass in progress, as list(behavior = TRUE), so ones that weren't picked again can be cancelled.
 	var/list/planned_behaviors
-	///Blackboard keys that make us plan again straight away when something changes them, rather than waiting until we'd next plan anyway, see interrupt_planning()
+	///Blackboard keys that make us plan again straight away when something changes them, rather than waiting until we'd next plan anyway
 	var/list/interrupt_keys
 	///TRUE while we're working out a plan, so what we change while planning doesn't interrupt it
 	var/planning = FALSE
@@ -32,7 +32,7 @@ multiple modular subtrees with behaviors
 	///While low_priority, when we next get to plan, and to act
 	var/next_low_priority_plan = 0
 	var/next_low_priority_action = 0
-	///If TRUE, we keep a log of what we decide, for admins working out what a mob's up to, see log_decision(). Off unless an admin turns it on
+	///If TRUE, we keep a log of what we decide, for admins working out what a mob's up to. Off unless an admin turns it on
 	var/logging_decisions = FALSE
 	///The last few things we decided, oldest first, while logging_decisions
 	var/list/decision_log
@@ -41,9 +41,9 @@ multiple modular subtrees with behaviors
 	///The record of the plan we're working out right now, while logging_decisions, and how many groups deep we are
 	var/list/current_plan_record
 	var/plan_depth = 0
-	///While we're asleep, the virtual z-level we're filed under to be woken when a player arrives, see check_should_sleep()
+	///While we're asleep, the virtual z-level we're filed under to be woken when a player arrives
 	var/sleeping_on_virtual_level
-	///Access the AI's pawn can open doors with, like list(ACCESS_SYNDICATE). Null for none. See get_access()
+	///Access the AI's pawn can open doors with, like list(ACCESS_SYNDICATE). Null for none.
 	var/list/door_access
 	///The ID card holding door_access, kept in nullspace so it can never be dropped or looted, made the first time it's needed
 	var/obj/item/card/id/door_access_card
@@ -57,7 +57,7 @@ multiple modular subtrees with behaviors
 	var/movement_target_source
 	///Stored arguments for behaviors given during their initial creation
 	var/list/behavior_args = list()
-	///For behaviors that move us to what's in their first blackboard key, what that held when they set up, as REF() text, so we set them up again if it changes for queue_behavior()
+	///For behaviors that move us to what's in their first blackboard key, what that held when they set up, so we set them up again if it changes for queue_behavior()
 	var/list/behavior_setup_refs
 	///How each behavior last ended on its own, as list(behavior type = TRUE if it succeeded, FALSE if it failed)
 	var/list/behavior_outcomes
@@ -96,7 +96,7 @@ multiple modular subtrees with behaviors
 	// The variables below are fucking stupid and should be put into the blackboard at some point.
 	///A list for the path we're currently following, if we're using JPS pathing
 	var/list/movement_path
-	///TRUE while a path for us is being worked out in the background, see /datum/ai_movement/jps/proc/calculate_path()
+	///TRUE while a path for us is being worked out in the background
 	var/calculating_path = FALSE
 	///Cooldown for JPS movement, how often we're allowed to try making a new path
 	COOLDOWN_DECLARE(repath_cooldown)
@@ -301,7 +301,7 @@ multiple modular subtrees with behaviors
 
 		if(current_behavior.behavior_flags & AI_BEHAVIOR_REQUIRE_MOVEMENT) //Might need to move closer
 			if(!current_movement_target)
-				// lost it somehow, so end it, rather than having it wait for a target forever. If we still want it, we'll plan it again and it'll set one up
+				// lost it somehow, so end it, rather than having it wait for a target forever
 				finish_behavior(current_behavior)
 				continue
 			if(AI_IN_RANGE(pawn, current_movement_target, current_behavior.required_distance)) ///Are we close enough to engage?
@@ -528,7 +528,7 @@ multiple modular subtrees with behaviors
 	return door_access_card
 
 // whether we gave up on getting to them lately, unless they've just shot at us
-/datum/ai_controller/proc/is_ignoring(atom/target)
+/datum/ai_controller/proc/check_still_ignoring(atom/target)
 	var/ignore_until = LAZYACCESS(blackboard[BB_BASIC_MOB_IGNORED_TARGETS], target)
 	if(!ignore_until || world.time >= ignore_until)
 		return FALSE
@@ -543,7 +543,7 @@ multiple modular subtrees with behaviors
 
 // goes after target that mob learns about without direct confirmation
 /datum/ai_controller/proc/learn_of_target(atom/target, turf/seen_at, how)
-	if(how != AI_LEARNED_SHOT && is_ignoring(target))
+	if(how != AI_LEARNED_SHOT && check_still_ignoring(target))
 		return FALSE // we know there's no getting to them
 	set_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET, target)
 	set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TARGET, target)
@@ -857,51 +857,6 @@ multiple modular subtrees with behaviors
 #undef CLEAR_AI_DATUM_TARGET
 #undef TRAIT_AI_TRACKING
 
-/datum/ai_controller/vv_get_dropdown()
-	. = ..()
-	VV_DROPDOWN_OPTION(VV_HK_AI_STATE, "Show AI State")
-	VV_DROPDOWN_OPTION(VV_HK_AI_LOG_DECISIONS, "Toggle AI Decision Logging")
-	VV_DROPDOWN_OPTION(VV_HK_AI_TREE, "Show AI Tree")
-
-/datum/ai_controller/vv_do_topic(list/href_list)
-	. = ..()
-	if(href_list[VV_HK_AI_STATE] && check_rights(R_DEBUG))
-		to_chat(usr, span_notice(get_debug_state()))
-	if(href_list[VV_HK_AI_TREE] && check_rights(R_DEBUG))
-		to_chat(usr, span_notice(get_debug_tree()))
-	if(href_list[VV_HK_AI_LOG_DECISIONS] && check_rights(R_DEBUG))
-		to_chat(usr, span_notice("[pawn] [toggle_decision_logging() ? "is now" : "is no longer"] logging its AI decisions."))
-
-/// A readout of what the mob's doing and its knowledge
-/datum/ai_controller/proc/get_debug_state()
-	var/static/list/status_names = list("[AI_STATUS_ON]" = "on", "[AI_STATUS_OFF]" = "off", "[AI_STATUS_IDLE]" = "asleep")
-	. = list("<b>AI state of [pawn] ([type])</b>")
-	. += "Status: [status_names["[ai_status]"] || ai_status][low_priority ? ", low priority (nobody alive on its z-level, so it only thinks every [AI_LOW_PRIORITY_INTERVAL / 10] seconds)" : ""][able_to_plan() ? "" : ", <b>can't plan</b> until what it's doing finishes"]"
-	var/list/behavior_lines = list()
-	for(var/datum/ai_behavior/behavior as anything in current_behaviors)
-		var/list/arguments = behavior_args[behavior.type]
-		behavior_lines += "[behavior.type][length(arguments) ? " ([arguments.Join(", ")])" : ""][behavior.behavior_flags & AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION ? "" : " <b>blocks planning</b>"]"
-	. += "Doing: [length(behavior_lines) ? behavior_lines.Join("; ") : "nothing"]"
-	. += "Moving to: [current_movement_target ? debug_describe(current_movement_target) : "nowhere"][calculating_path ? ", working out a path" : ""][length(movement_path) ? ", [length(movement_path)] steps left" : ""]"
-	pawn_conditions = null // as things are now, rather than as of our last plan
-	. += "Conditions: [ai_conditions_to_text(get_conditions()) || "none"]"
-	if(logging_decisions)
-		. += "<b>Last plan:</b>"
-		for(var/line in last_plan)
-			. += "&nbsp;&nbsp;[line]"
-		. += "<b>Recent decisions:</b>"
-		for(var/line in decision_log)
-			. += "&nbsp;&nbsp;[line]"
-	else
-		. += "<i>Not logging decisions. Turn on Toggle AI Decision Logging to see what it plans and decides.</i>"
-	. += "<b>Blackboard:</b>"
-	for(var/key in blackboard)
-		var/value = blackboard[key]
-		if(isnull(value))
-			continue
-		. += "&nbsp;&nbsp;[key]: [debug_describe(value)]"
-	return jointext(., "<br>")
-
 /**
  * The AI_CONDITION_* flags true for us right now, for our planning subtrees' guards
  * Those about our mob are worked out once each plan, and those going by the blackboard again whenever it's changed, like when an earlier subtree takes cover
@@ -939,99 +894,20 @@ multiple modular subtrees with behaviors
 			. |= AI_CONDITION_TARGET_LOST
 		if(target.Adjacent(pawn))
 			. |= AI_CONDITION_TARGET_ADJACENT
-	if(blackboard[BB_BASIC_MOB_COVER_TURF])
-		. |= AI_CONDITION_IN_COVER
+	if(blackboard[BB_BASIC_MOB_TAKING_COVER_TURF])
+		. |= AI_CONDITION_TAKING_COVER
 	if(blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF])
 		. |= AI_CONDITION_FIGHTING_FROM_COVER
 	if(blackboard[BB_BASIC_MOB_FLANKING])
 		. |= AI_CONDITION_FLANKING
 	if(blackboard[BB_BASIC_MOB_REPOSITION_TURF])
 		. |= AI_CONDITION_REPOSITIONING
-	if(world.time < blackboard[BB_BASIC_MOB_FALLING_BACK_UNTIL])
-		. |= AI_CONDITION_FALLING_BACK
+	if(world.time < blackboard[BB_BASIC_MOB_BACKING_OFF_UNTIL])
+		. |= AI_CONDITION_BACKING_OFF
 	if(blackboard[BB_BASIC_MOB_SAFE_TURF])
 		. |= AI_CONDITION_SEEKING_SAFETY
 	if(AI_MORALE_IS(src, AI_MORALE_BROKEN))
 		. |= AI_CONDITION_BROKEN
-
-/// AI_CONDITION_* flags as text
-/proc/ai_conditions_to_text(conditions)
-	var/static/list/condition_names = list(
-		"has target" = AI_CONDITION_HAS_TARGET,
-		"target seen" = AI_CONDITION_TARGET_SEEN,
-		"target lost" = AI_CONDITION_TARGET_LOST,
-		"target adjacent" = AI_CONDITION_TARGET_ADJACENT,
-		"in cover" = AI_CONDITION_IN_COVER,
-		"fighting from cover" = AI_CONDITION_FIGHTING_FROM_COVER,
-		"flanking" = AI_CONDITION_FLANKING,
-		"repositioning" = AI_CONDITION_REPOSITIONING,
-		"falling back" = AI_CONDITION_FALLING_BACK,
-		"seeking safety" = AI_CONDITION_SEEKING_SAFETY,
-		"unsafe spot" = AI_CONDITION_UNSAFE_SPOT,
-		"has ranged attack" = AI_CONDITION_HAS_RANGED_ATTACK,
-		"broken" = AI_CONDITION_BROKEN,
-		"reloading" = AI_CONDITION_RELOADING,
-	)
-	var/list/names = list()
-	for(var/name in condition_names)
-		if(conditions & condition_names[name])
-			names += name
-	return names.Join(", ")
-
-/**
- * How we decide what to do, for admins: our senses, then each planning subtree in the order it gets its say, with its guard,
- * and whether that guard would let it plan right now. The first to take over planning stops the rest, so read it top to bottom
- */
-/datum/ai_controller/proc/get_debug_tree()
-	pawn_conditions = null // as things are now, rather than as of our last plan
-	var/current_conditions = get_conditions()
-	. = list("<b>AI tree of [pawn] ([type])</b>")
-	. += "Conditions now: [ai_conditions_to_text(current_conditions) || "none"]"
-	. += "<b>Senses</b>, every plan:"
-	for(var/datum/ai_sensor/sensor as anything in sensors)
-		. += "&nbsp;&nbsp;[sensor.type]"
-	if(!length(sensors))
-		. += "&nbsp;&nbsp;none"
-	. += "<b>Planning</b>, top to bottom:"
-	. += describe_subtrees(planning_subtrees, current_conditions, 1)
-	. += "Then, with nothing to do: [idle_behavior ? idle_behavior.type : "nothing"]"
-	return jointext(., "<br>")
-
-/// Lines for the AI tree view about each of subtrees, depth levels in, with its guard and whether it'd plan right now, and what's in any groups among them
-/datum/ai_controller/proc/describe_subtrees(list/subtrees, current_conditions, depth)
-	. = list()
-	var/indent = ""
-	for(var/level in 1 to depth)
-		indent += "&nbsp;&nbsp;&nbsp;&nbsp;"
-	var/index = 0
-	for(var/datum/ai_planning_subtree/subtree as anything in subtrees)
-		index++
-		var/list/guard = list()
-		if(subtree.required_conditions)
-			guard += "needs [ai_conditions_to_text(subtree.required_conditions)]"
-		if(subtree.blocking_conditions)
-			guard += "not while [ai_conditions_to_text(subtree.blocking_conditions)]"
-		var/passes = subtree.guard_passes(current_conditions)
-		. += "[indent][index]. [passes ? "" : "<s>"][subtree.type][passes ? "" : "</s>"][length(guard) ? " ([guard.Join("; ")])" : ""][passes ? "" : ", <i>skipped now</i>"]"
-		for(var/line in subtree.describe_for_tree(src))
-			. += "[indent]&nbsp;&nbsp;&nbsp;&nbsp;[line]"
-		var/list/children = subtree.get_child_subtrees()
-		if(length(children))
-			. += describe_subtrees(children, current_conditions, depth + 1)
-
-/// Describes a blackboard value for get_debug_state(): atoms by name and where they are, times as how long ago or from now
-/datum/ai_controller/proc/debug_describe(value)
-	if(isatom(value))
-		var/atom/thing = value
-		var/turf/where = get_turf(thing)
-		return "[thing] ([thing.type])[where ? " at [where.x],[where.y]" : ""][where && get_turf(pawn) ? ", [get_dist(pawn, where)] tiles away" : ""]"
-	if(islist(value))
-		var/list/value_list = value
-		return "list of [length(value_list)]"
-	if(isdatum(value))
-		var/datum/thing = value
-		return "[thing.type]"
-	return "[value]"
 
 /// Plans again straight away when one of our interrupt_keys changes, rather than waiting until we'd next plan anyway, so we react to things like a target turning up or getting shot at once
 /datum/ai_controller/proc/on_interrupt_key_changed(datum/source)
@@ -1050,17 +926,3 @@ multiple modular subtrees with behaviors
 	AI_LOG_DECISION(src, "something changed, so planning again now")
 	COOLDOWN_RESET(src, failed_planning_cooldown)
 	SelectBehaviors(SSai_controllers.wait * 0.1)
-
-/// Notes something we decided, for admins working out what we're up to. Use AI_LOG_DECISION(), which skips this when nobody's logging
-/datum/ai_controller/proc/log_decision(text)
-	LAZYADD(decision_log, "[round(world.time / 10, 0.1)]s: [text]")
-	if(length(decision_log) > AI_DECISION_LOG_LENGTH)
-		decision_log.Cut(1, 2)
-
-/// Starts or stops logging what we decide, for admins, see log_decision()
-/datum/ai_controller/proc/toggle_decision_logging()
-	logging_decisions = !logging_decisions
-	if(!logging_decisions)
-		decision_log = null
-		last_plan = null
-	return logging_decisions

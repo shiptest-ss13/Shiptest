@@ -96,7 +96,7 @@
 	. = ..()
 	end_hit()
 
-// Basic mobs keep all their damage as one number, so we note what kind it was and where as we take it, for the corpse we leave, see wound_corpse()
+// Basic mobs keep all their damage as one number, so we note what kind it was and where as we take it, for the corpse we leave
 
 /mob/living/basic/human/adjustBruteLoss(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()

@@ -1,7 +1,7 @@
 // flanking if we cant get a direct line of fire, or they're dug in behind cover like sandbags, which only covers them from the one side
 /datum/ai_planning_subtree/flank
 	required_conditions = AI_CONDITION_HAS_TARGET | AI_CONDITION_TARGET_SEEN | AI_CONDITION_HAS_RANGED_ATTACK
-	blocking_conditions = AI_CONDITION_IN_COVER
+	blocking_conditions = AI_CONDITION_TAKING_COVER
 	var/target_key = BB_BASIC_MOB_CURRENT_TARGET
 	//the chance to go around something we could shoot through anyway, when no ally is keeping them busy
 	var/flank_chance = 10
@@ -34,13 +34,13 @@
 		return
 	var/obj/projectile/projectile_type = ranged_attack.get_projectile_type()
 	var/pass_flags = ranged_attack.get_pass_flags()
-	var/atom/blocker = get_mob_shot_blocker(controller.pawn, target)
+	var/atom/blocker = get_cached_shot_blocker(controller.pawn, target)
 	// cover like sandbags doesn't block our shots, so it's no blocker, but most of them will hit it rather than them
 	var/dug_in = !blocker && cover_between(get_turf(target), controller.pawn)
 	if(!blocker && !dug_in)
 		end_flank(controller)
 		return
-	var/must_go_around = blocker && (is_door(blocker) || !worth_shooting_through(controller.pawn, blocker, projectile_type))
+	var/must_go_around = blocker && (ai_is_door(blocker) || !worth_shooting_through(controller.pawn, blocker, projectile_type))
 	if(holds_good_cover && !controller.blackboard[BB_BASIC_MOB_FLANKING])
 		var/turf/fighting_spot = controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]
 		if(fighting_spot && get_turf(controller.pawn) == fighting_spot && cover_facing(fighting_spot, target))
@@ -51,7 +51,7 @@
 		ai_callout(controller.pawn, AI_CALLOUT_WARY) // why we're not going round
 		return // dont shoot while blocked
 	var/flanking = controller.blackboard[BB_BASIC_MOB_FLANKING]
-	if(isnull(flanking) || world.time >= controller.blackboard[BB_BASIC_MOB_FLANK_RECONSIDER_AT] || (must_go_around && !flanking))
+	if(isnull(flanking) || world.time >= controller.blackboard[BB_BASIC_MOB_NEXT_FLANK_DECISION] || (must_go_around && !flanking))
 		var/atom/clear_target = find_clear_target(controller, target, pass_flags)
 		if(clear_target)
 			// someone else we can actually hit, so go for them instead
@@ -65,7 +65,7 @@
 		flanking = !!angle_turf
 		AI_LOG_DECISION(controller, "flank: [blocker || "their cover"] is in the way of [target], [flanking ? "going round to [angle_turf]" : "staying put"][must_go_around ? ", as we can't shoot through it" : ""]")
 		controller.set_blackboard_key(BB_BASIC_MOB_FLANKING, flanking)
-		controller.set_blackboard_key(BB_BASIC_MOB_FLANK_RECONSIDER_AT, world.time + (flanking ? flank_duration : hold_duration))
+		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_FLANK_DECISION, world.time + (flanking ? flank_duration : hold_duration))
 		controller.set_blackboard_key(BB_BASIC_MOB_FLANK_TURF, angle_turf)
 		if(flanking)
 			ai_callout(controller.pawn, AI_CALLOUT_FLANKING)
@@ -75,7 +75,7 @@
 		var/turf/their_turf = get_turf(target)
 		var/turf/our_turf = get_turf(controller.pawn)
 		var/turf/angle_turf = controller.blackboard[BB_BASIC_MOB_FLANK_TURF]
-		if(our_turf == angle_turf && blocker && is_door(blocker))
+		if(our_turf == angle_turf && blocker && ai_is_door(blocker))
 			// we've come round behind them, so through the door at them
 			controller.queue_behavior(/datum/ai_behavior/find_firing_line, target_key)
 			return SUBTREE_RETURN_FINISH_PLANNING
@@ -88,7 +88,7 @@
 			AI_LOG_DECISION(controller, "flank: going round to [angle_turf] to get an angle on [target]")
 		controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_FLANK_TURF)
 		return SUBTREE_RETURN_FINISH_PLANNING
-	// otherwise we're not going around. Our attack holds its fire while it's blocked, see has_clear_shot(), and reposition might find us an angle
+	// otherwise we're not going around. Our attack holds its fire while it's blocked, and reposition might find us an angle
 
 /datum/ai_planning_subtree/flank/proc/decide_to_flank(datum/ai_controller/controller, atom/target, must_go_around)
 	var/mob/living/living_pawn = controller.pawn
@@ -125,7 +125,7 @@
 	var/turf/our_turf = get_turf(living_pawn)
 	var/list/clear_targets = list()
 	for(var/mob/living/someone in hearers(ally_range, living_pawn))
-		if(someone == living_pawn || someone == target || is_downed(someone) || !targetting_datum.can_attack(living_pawn, someone))
+		if(someone == living_pawn || someone == target || ai_is_downed(someone) || !targetting_datum.can_attack(living_pawn, someone))
 			continue
 		if(!get_shot_blocker(our_turf, get_turf(someone), pass_flags = pass_flags))
 			clear_targets += someone
@@ -133,7 +133,7 @@
 
 /datum/ai_planning_subtree/flank/proc/end_flank(datum/ai_controller/controller)
 	controller.clear_blackboard_key(BB_BASIC_MOB_FLANKING)
-	controller.clear_blackboard_key(BB_BASIC_MOB_FLANK_RECONSIDER_AT)
+	controller.clear_blackboard_key(BB_BASIC_MOB_NEXT_FLANK_DECISION)
 	controller.clear_blackboard_key(BB_BASIC_MOB_FLANK_TURF)
 
 
@@ -150,13 +150,13 @@
 	var/best_distance = INFINITY
 	for(var/turf/open/candidate in RANGE_TURFS(angle_search_range, their_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate_distance >= best_distance || candidate_distance > max_flank_distance || get_dist(candidate, their_turf) <= minimum_distance || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
+		if(candidate_distance >= best_distance || candidate_distance > max_flank_distance || get_dist(candidate, their_turf) <= minimum_distance || candidate.is_blocked_turf(TRUE, living_pawn) || ai_is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
 			continue
 		if(cover_between(their_turf, candidate) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
 			continue
 		var/atom/blocker = get_shot_blocker(candidate, their_turf, pass_flags = pass_flags)
 		if(blocker)
-			if(!is_door(blocker))
+			if(!ai_is_door(blocker))
 				continue
 			var/round_the_back = (candidate.x - their_turf.x) * from_x + (candidate.y - their_turf.y) * from_y <= 0
 			if(!round_the_back)
@@ -193,7 +193,7 @@
 	if(!isopenturf(spot) || spot.density || (!can_cross_space && is_bare_space(spot)))
 		return FALSE // our pathfinding won't take us across space, without something like a jetpack
 	for(var/obj/thing in spot)
-		if(thing.density && !is_door(thing))
+		if(thing.density && !ai_is_door(thing))
 			return FALSE
 	return TRUE
 
@@ -202,4 +202,4 @@
 	if(cover_between(their_turf, angle_turf))
 		return FALSE
 	var/atom/blocker = get_shot_blocker(angle_turf, their_turf, pass_flags = pass_flags)
-	return !blocker || is_door(blocker)
+	return !blocker || ai_is_door(blocker)

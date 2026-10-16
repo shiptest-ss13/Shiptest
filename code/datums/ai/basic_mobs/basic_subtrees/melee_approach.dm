@@ -18,7 +18,7 @@
 
 /datum/ai_planning_subtree/sequence/melee_approach/can_start(datum/ai_controller/controller)
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
-	if(get_dist(controller.pawn, target) <= charge_distance || !can_shoot_at_range(target))
+	if(get_dist(controller.pawn, target) <= charge_distance || !target_can_shoot_back(target))
 		return FALSE // close enough to rush them, or they've nothing to shoot us with on the way
 	if(world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] >= quiet_time)
 		return FALSE // they're not shooting at us, so go for them
@@ -47,7 +47,7 @@
 	var/best_distance = our_distance - minimum_progress + 1
 	for(var/turf/open/candidate in RANGE_TURFS(bound_range, our_turf))
 		var/candidate_distance = get_dist(candidate, their_turf)
-		if(candidate_distance >= best_distance || candidate_distance < 1 || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
+		if(candidate_distance >= best_distance || candidate_distance < 1 || candidate.is_blocked_turf(TRUE, living_pawn) || ai_is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
 			continue
 		if(!cover_between(candidate, target) && !is_spot_safe_from(candidate, their_turf))
 			continue

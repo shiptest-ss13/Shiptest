@@ -1,8 +1,7 @@
 // repositioning during a fight, to get a better shot or avoid being shot at
 /datum/ai_planning_subtree/reposition
-	// in /datum/ai_planning_subtree/group/positioning, which checks we've a target and aren't in cover
 	required_conditions = AI_CONDITION_TARGET_SEEN
-	blocking_conditions = AI_CONDITION_TARGET_ADJACENT | AI_CONDITION_FLANKING | AI_CONDITION_SEEKING_SAFETY | AI_CONDITION_FALLING_BACK
+	blocking_conditions = AI_CONDITION_TARGET_ADJACENT | AI_CONDITION_FLANKING | AI_CONDITION_SEEKING_SAFETY | AI_CONDITION_BACKING_OFF
 	var/target_key = BB_BASIC_MOB_CURRENT_TARGET
 	//how long we stay put between moves, picked at random between these so a group doesn't all move at once, for each AI_MOBILITY_ from low to high
 	var/list/intervals = list(list(2.5 SECONDS, 4 SECONDS), list(1 SECONDS, 2.5 SECONDS), list(0.5 SECONDS, 1.2 SECONDS))
@@ -32,7 +31,7 @@
 	var/mob/living/living_pawn = controller.pawn
 	var/turf/our_turf = get_turf(living_pawn)
 	var/turf/going_to = controller.blackboard[BB_BASIC_MOB_REPOSITION_TURF]
-	if(going_to && our_turf != going_to && world.time < controller.blackboard[BB_BASIC_MOB_REPOSITION_UNTIL])
+	if(going_to && our_turf != going_to && world.time < controller.blackboard[BB_BASIC_MOB_REPOSITION_GIVE_UP_AT])
 		controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_REPOSITION_TURF)
 		return
 	controller.clear_blackboard_key(BB_BASIC_MOB_REPOSITION_TURF)
@@ -40,8 +39,8 @@
 	var/distance = get_dist(our_turf, target)
 	var/no_shot = !has_clear_shot(living_pawn, target)
 	if(!no_shot && (distance < fight_range[1] || distance > fight_range[2]))
-		return // closing in or backing off, see maintain_distance
-	var/urgent = no_shot || (is_doorway(our_turf) && blocking_an_ally(living_pawn, our_turf, target)) || ally_in_line_of_fire(living_pawn, our_turf, get_turf(target))
+		return // closing in or backing off
+	var/urgent = no_shot || (ai_is_doorway(our_turf) && blocking_an_ally(living_pawn, our_turf, target)) || ally_in_line_of_fire(living_pawn, our_turf, get_turf(target))
 	var/under_fire = world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < under_fire_time
 	if(controller.blackboard[BB_BASIC_MOB_HOLDS_POSITION] && !urgent && !under_fire)
 		return // we've a shot from here, so we keep still and take it
@@ -63,7 +62,7 @@
 			AI_LOG_DECISION(controller, "reposition: no shot at [target] and nowhere near to get one, working towards them")
 		return
 	controller.set_blackboard_key(BB_BASIC_MOB_REPOSITION_TURF, new_spot)
-	controller.set_blackboard_key(BB_BASIC_MOB_REPOSITION_UNTIL, world.time + reposition_timeout)
+	controller.set_blackboard_key(BB_BASIC_MOB_REPOSITION_GIVE_UP_AT, world.time + reposition_timeout)
 	AI_LOG_DECISION(controller, "reposition: moving to [new_spot][no_shot ? " to get a shot" : (urgent ? ", out of a doorway or an ally's way" : "")]")
 	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_REPOSITION_TURF)
 
@@ -88,7 +87,7 @@
 	var/to_target_y = their_turf.y - our_turf.y
 	var/to_target_length = max(1, sqrt(to_target_x ** 2 + to_target_y ** 2))
 	for(var/turf/open/candidate in RANGE_TURFS(step_ranges[get_mobility(controller)], our_turf))
-		if(candidate == our_turf || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
+		if(candidate == our_turf || candidate.is_blocked_turf(TRUE, living_pawn) || ai_is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
 			continue
 		var/candidate_distance = get_dist(candidate, their_turf)
 		if(candidate_distance < fight_range[1] || candidate_distance > fight_range[2])
@@ -116,7 +115,7 @@
 	var/nearest_distance = INFINITY
 	for(var/turf/open/candidate in RANGE_TURFS(wider_search_range, our_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate == our_turf || candidate == their_turf || candidate_distance > nearest_distance || candidate.is_blocked_turf(TRUE, living_pawn) || is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
+		if(candidate == our_turf || candidate == their_turf || candidate_distance > nearest_distance || candidate.is_blocked_turf(TRUE, living_pawn) || ai_is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
 			continue
 		if(get_shot_blocker(candidate, their_turf, pass_flags = pass_flags) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
 			continue

@@ -1,6 +1,6 @@
-// Helpers for AI picking who to fight and how, like who's nearest, who's down, and lashing out at whoever's right on top of us
+// Helpers for AI picking who to fight and how
 
-/proc/is_downed(atom/thing)
+/proc/ai_is_downed(atom/thing)
 	if(!isliving(thing))
 		return FALSE
 	var/mob/living/living_thing = thing
@@ -18,7 +18,6 @@
 			nearest_targets += possible_target
 	return pick(nearest_targets)
 
-// whether someone's holding something they could do real harm with up close, that isn't a gun
 /proc/holds_melee_weapon(mob/living/someone)
 	for(var/obj/item/held in someone.held_items)
 		if(!isgun(held) && held.force >= 10)
@@ -38,7 +37,7 @@
 		return FALSE
 	var/atom/lash_target
 	if(controller.get_conditions() & AI_CONDITION_TARGET_ADJACENT)
-		if(!ai_target_close_for(controller, 1 SECONDS))
+		if(!ai_target_adjacent_long_enough(controller, 1 SECONDS))
 			return FALSE // give them a moment, so someone closing in with a melee weapon gets to use it
 		lash_target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	else
@@ -62,7 +61,7 @@
 	AI_LOG_DECISION(controller, "lashing out at [lash_target], who's right on top of us")
 	return TRUE
 
-/proc/ai_target_close_for(datum/ai_controller/controller, duration)
+/proc/ai_target_adjacent_long_enough(datum/ai_controller/controller, duration)
 	var/adjacent_since = controller.blackboard[BB_BASIC_MOB_TARGET_ADJACENT_SINCE]
 	if(isnull(adjacent_since))
 		return TRUE

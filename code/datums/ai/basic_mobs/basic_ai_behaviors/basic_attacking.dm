@@ -18,8 +18,8 @@
 	set_movement_target(controller, target)
 
 /datum/ai_behavior/basic_melee_attack/perform(seconds_per_tick, datum/ai_controller/controller, target_key, targetting_datum_key, hiding_location_key)
-	if(world.time < controller.blackboard[BB_BASIC_MOB_REACT_AT])
-		return AI_BEHAVIOR_INSTANT // only just spotted them, see /datum/ai_sensor/track_target
+	if(world.time < controller.blackboard[BB_BASIC_MOB_HOLD_FIRE_UNTIL])
+		return AI_BEHAVIOR_INSTANT // only just spotted them
 	var/mob/living/basic/basic_mob = controller.pawn
 	//targetting datum will kill the action if not real anymore
 	var/atom/target = controller.blackboard[target_key]
@@ -98,7 +98,7 @@
 		set_movement_target(controller, target)
 
 /datum/ai_behavior/basic_ranged_attack/perform(seconds_per_tick, datum/ai_controller/controller, target_key, targetting_datum_key, hiding_location_key)
-	if(world.time < controller.blackboard[BB_BASIC_MOB_REACT_AT])
+	if(world.time < controller.blackboard[BB_BASIC_MOB_HOLD_FIRE_UNTIL])
 		return AI_BEHAVIOR_INSTANT // only just spotted them
 	var/mob/living/basic/basic_mob = controller.pawn
 	//targetting datum will kill the action if not real anymore

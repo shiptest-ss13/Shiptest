@@ -31,7 +31,7 @@
 		give_up_on(controller, target)
 		return SUBTREE_RETURN_FINISH_PLANNING
 	var/turf/wait_turf = controller.blackboard[BB_BASIC_MOB_WAIT_TURF]
-	if(!wait_turf && can_shoot_at_range(target) && world.time >= controller.blackboard[BB_BASIC_MOB_NEXT_WAIT_SEARCH])
+	if(!wait_turf && target_can_shoot_back(target) && world.time >= controller.blackboard[BB_BASIC_MOB_NEXT_WAIT_SEARCH])
 		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_WAIT_SEARCH, world.time + search_interval)
 		wait_turf = find_hiding_spot(controller.pawn, their_turf, search_range)
 		if(wait_turf)
@@ -43,7 +43,7 @@
 		controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_CURRENT_TARGET)
 	return SUBTREE_RETURN_FINISH_PLANNING
 
-// leave them be for a while, as there's no getting to them, see /datum/ai_controller/proc/is_ignoring()
+// leave them be for a while, as there's no getting to them, see /datum/ai_controller/proc/check_still_ignoring()
 /datum/ai_planning_subtree/wait_out_unreachable/proc/give_up_on(datum/ai_controller/controller, atom/target)
 	AI_LOG_DECISION(controller, "wait_out_unreachable: no way to [target] for [give_up_time / 10] seconds, leaving them be for [ignore_time / 10]")
 	controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_IGNORED_TARGETS, target, world.time + ignore_time)

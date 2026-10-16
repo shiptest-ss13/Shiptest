@@ -1,6 +1,6 @@
 /datum/ai_planning_subtree/search_lost_target
 	required_conditions = AI_CONDITION_HAS_TARGET | AI_CONDITION_TARGET_LOST
-	var/search_style = SEARCH_STYLE_INVESTIGATE
+	var/search_style = AI_SEARCH_STYLE_INVESTIGATE
 	// for if we're picking between different search styles
 	var/list/search_style_weights
 	//below this share of our health, we hang back rather than going after them. 0 to always go after them
@@ -11,12 +11,12 @@
 	var/ally_range = 9
 	//how close we get to where we're looking, once we can see it, rather than walking right onto it and into whoever's there
 	var/investigate_distance = 3
-	//what we fire at where they were with SEARCH_STYLE_SUPPRESS
+	//what we fire at where they were with AI_SEARCH_STYLE_SUPPRESS
 	var/datum/ai_behavior/fire_at_position/suppress_behavior = /datum/ai_behavior/fire_at_position
 	//how many more spots we check around where we heard someone, after the first
 	var/sweep_spots = 3
 	//how long we stop and look around at each spot
-	var/sweep_pause_time = 3 SECONDS
+	var/sweep_pause_time = 2 SECONDS
 	//how long after losing sight of someone we saw we carry on as we were, without calling it or starting a search, as they've likely only ducked out of view
 	var/lost_grace = 3 SECONDS
 
@@ -25,7 +25,7 @@
 	var/turf/last_known_turf = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
 	if(!last_known_turf)
 		return
-	if((controller.get_conditions() & AI_CONDITION_IN_COVER) || world.time < controller.blackboard[BB_BASIC_MOB_TRADING_FIRE_UNTIL])
+	if((controller.get_conditions() & AI_CONDITION_TAKING_COVER) || world.time < controller.blackboard[BB_BASIC_MOB_TRADING_FIRE_UNTIL])
 		return SUBTREE_RETURN_FINISH_PLANNING
 	var/style = pick_style(controller)
 	// those who fight up close go right to where they last saw them, like the corner they went round, as watching it from a few tiles off does us no good
@@ -33,7 +33,7 @@
 	var/last_saw_them = controller.blackboard[BB_BASIC_MOB_LAST_SAW_ENEMY_TIME]
 	if(!isnull(last_saw_them) && world.time - last_saw_them < lost_grace)
 		// they've only just slipped out of view, so no fuss yet: after them if that's how we'll search, or watching where they went
-		if(style == SEARCH_STYLE_INVESTIGATE && go_there)
+		if(style == AI_SEARCH_STYLE_INVESTIGATE && go_there)
 			controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_LAST_KNOWN_TURF)
 		else
 			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_LAST_KNOWN_TURF)
@@ -41,14 +41,14 @@
 	controller.set_blackboard_key(BB_BASIC_MOB_ACTIVE_SEARCH_STYLE, style)
 	call_out_search(controller, style)
 	switch(style)
-		if(SEARCH_STYLE_INVESTIGATE)
+		if(AI_SEARCH_STYLE_INVESTIGATE)
 			if(go_there)
 				controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_LAST_KNOWN_TURF)
 			else
 				sweep(controller) // or if there's nowhere to sweep, we watch from here to see if they turn up, until track_target gives up on them
-		if(SEARCH_STYLE_HOLD)
+		if(AI_SEARCH_STYLE_HOLD)
 			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_LAST_KNOWN_TURF)
-		if(SEARCH_STYLE_SUPPRESS)
+		if(AI_SEARCH_STYLE_SUPPRESS)
 			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_LAST_KNOWN_TURF)
 			controller.queue_behavior(suppress_behavior, BB_BASIC_MOB_LAST_KNOWN_TURF)
 	return SUBTREE_RETURN_FINISH_PLANNING // searching, so don't go after them blind
@@ -57,26 +57,27 @@
 	if(!(controller.get_conditions() & AI_CONDITION_HAS_RANGED_ATTACK))
 		// up close is all we've got, so we keep after them to where we last saw them, unless that's somewhere we can't go
 		var/turf/last_known_turf = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
-		return (last_known_turf && !ai_can_stand_on(controller.pawn, last_known_turf)) ? SEARCH_STYLE_HOLD : SEARCH_STYLE_INVESTIGATE
+		return (last_known_turf && !ai_can_stand_on(controller.pawn, last_known_turf)) ? AI_SEARCH_STYLE_HOLD : AI_SEARCH_STYLE_INVESTIGATE
 	// covering where they went, with fire
-	var/hang_back_style = SEARCH_STYLE_SUPPRESS
+	var/hang_back_style = AI_SEARCH_STYLE_SUPPRESS
 	var/style = controller.blackboard[BB_BASIC_MOB_PICKED_SEARCH_STYLE]
 	if(!style)
 		style = length(search_style_weights) ? pick_weight(search_style_weights) : search_style
-		if(style == SEARCH_STYLE_INVESTIGATE && splits_search_roles && ally_already_searching(controller))
+		if(style == AI_SEARCH_STYLE_INVESTIGATE && splits_search_roles && ally_already_searching(controller))
 			style = hang_back_style // someone's already gone after them, so cover them instead. Decided once, so we don't all swap back and forth
 		controller.set_blackboard_key(BB_BASIC_MOB_PICKED_SEARCH_STYLE, style)
 	if(AI_MORALE_IS(controller, AI_MORALE_EMBOLDENED))
-		style = SEARCH_STYLE_INVESTIGATE
-	else if(style == SEARCH_STYLE_INVESTIGATE && should_hang_back(controller))
+		style = AI_SEARCH_STYLE_INVESTIGATE
+	else if(style == AI_SEARCH_STYLE_INVESTIGATE && should_hang_back(controller))
 		style = hang_back_style
-	if(style == SEARCH_STYLE_SUPPRESS && controller.blackboard[BB_BASIC_MOB_HEARD_TARGET])
-		style = SEARCH_STYLE_HOLD // all we've got is a noise, so watch it rather than firing blind at it
+		if(AI_MORALE_IS(controller, AI_MORALE_WARY))
+			ai_callout(controller.pawn, AI_CALLOUT_WARY) // why we're not going after them
+	if(style == AI_SEARCH_STYLE_SUPPRESS && controller.blackboard[BB_BASIC_MOB_HEARD_TARGET])
+		style = AI_SEARCH_STYLE_HOLD // all we've got is a noise, so watch it rather than firing blind at it
 	return style
 
 /datum/ai_planning_subtree/search_lost_target/proc/should_hang_back(datum/ai_controller/controller)
 	if(AI_MORALE_IS(controller, AI_MORALE_WARY))
-		ai_callout(controller.pawn, AI_CALLOUT_WARY) // why we're not going after them
 		return TRUE // an ally just died nearby, so don't walk into whatever got them
 	if(world.time < controller.blackboard[BB_BASIC_MOB_HIDING_FROM_ENTRENCHED_UNTIL])
 		return TRUE // they're dug in behind cover we can't match, so don't walk back into their line of fire
@@ -96,7 +97,7 @@
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	for(var/mob/living/ally as anything in get_ai_allies_in_range(living_pawn, ally_range))
 		var/datum/ai_controller/ally_controller = ally.ai_controller
-		if(ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET] == target && ally_controller.blackboard[BB_BASIC_MOB_ACTIVE_SEARCH_STYLE] == SEARCH_STYLE_INVESTIGATE)
+		if(ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET] == target && ally_controller.blackboard[BB_BASIC_MOB_ACTIVE_SEARCH_STYLE] == AI_SEARCH_STYLE_INVESTIGATE)
 			return TRUE
 	return FALSE
 
@@ -145,9 +146,9 @@
 	if(controller.blackboard[BB_BASIC_MOB_TOLD_ABOUT_TARGET])
 		return // whoever told us has already said something
 	switch(style)
-		if(SEARCH_STYLE_INVESTIGATE)
+		if(AI_SEARCH_STYLE_INVESTIGATE)
 			ai_callout(controller.pawn, controller.blackboard[BB_BASIC_MOB_HEARD_TARGET] ? AI_CALLOUT_HEARD_GUNFIRE : AI_CALLOUT_LOST_THEM)
-		if(SEARCH_STYLE_HOLD)
+		if(AI_SEARCH_STYLE_HOLD)
 			ai_callout(controller.pawn, AI_CALLOUT_HOLDING)
-		if(SEARCH_STYLE_SUPPRESS)
+		if(AI_SEARCH_STYLE_SUPPRESS)
 			ai_callout(controller.pawn, AI_CALLOUT_SUPPRESSING)

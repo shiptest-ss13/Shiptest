@@ -1,4 +1,4 @@
-// Hermits' corpses and their outfits, see /mob/living/basic/human/hermit
+// Hermits' corpses and their outfits
 
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	outfit = /datum/outfit/hermit

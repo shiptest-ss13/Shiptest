@@ -1,4 +1,4 @@
-// Branches of the plan, subtrees that belong together, see /datum/ai_planning_subtree/group
+// Branches of the plan, subtrees that belong together
 
 /**
  * Where we stand while fighting from range, once nothing more pressing has our position in hand, like cover:
@@ -6,8 +6,8 @@
  */
 /datum/ai_planning_subtree/group/positioning
 	required_conditions = AI_CONDITION_HAS_TARGET
-	// in cover from being shot at, or fighting from behind it, see seek_cover and fighting_cover
-	blocking_conditions = AI_CONDITION_IN_COVER | AI_CONDITION_FIGHTING_FROM_COVER
+	// in cover from being shot at, or fighting from behind it
+	blocking_conditions = AI_CONDITION_TAKING_COVER | AI_CONDITION_FIGHTING_FROM_COVER
 	subtrees = list(
 		/datum/ai_planning_subtree/reposition,
 		/datum/ai_planning_subtree/maintain_distance,

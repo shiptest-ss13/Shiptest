@@ -17,11 +17,11 @@
 /datum/ai_planning_subtree/proc/on_skipped(datum/ai_controller/controller)
 	return
 
-///The subtrees inside us, if we're a group, see /datum/ai_planning_subtree/group
+///The subtrees inside us, if we're a group
 /datum/ai_planning_subtree/proc/get_child_subtrees()
 	return null
 
-///Extra lines about us for the AI tree view, like the steps of a sequence, see /datum/ai_controller/proc/get_debug_tree()
+///Extra lines about us for the AI tree view, like the steps of a sequence
 /datum/ai_planning_subtree/proc/describe_for_tree(datum/ai_controller/controller)
 	return null
 
@@ -39,10 +39,10 @@
 /**
  * A branch of the plan: subtrees that only matter together, under a guard of their own on top of theirs, see required_conditions,
  * planning in order like a controller's own list does, see /datum/ai_controller/proc/run_subtrees(). When our guard stops us, each of them tidies up after itself,
- * see on_skipped(), and if one of them takes over planning, so do we. Groups can hold groups
+ * and if one of them takes over planning, so do we. Groups can hold groups
  */
 /datum/ai_planning_subtree/group
-	///The subtree types in us, in order. Swapped for their shared instances the first time we're used, like a controller's
+	///The subtree types in us, in order. Swapped for their shared instances the first time we're used
 	var/list/subtrees
 
 /datum/ai_planning_subtree/group/get_child_subtrees()

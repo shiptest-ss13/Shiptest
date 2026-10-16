@@ -25,8 +25,8 @@
 
 /datum/component/ai_flashlight/RegisterWithParent()
 	. = ..()
-	RegisterSignal(parent, COMSIG_LIVING_LIFE, PROC_REF(check_light))
-	RegisterSignal(parent, COMSIG_AI_BLACKBOARD_KEY_SET(BB_BASIC_MOB_CURRENT_TARGET), PROC_REF(check_light))
+	RegisterSignal(parent, COMSIG_LIVING_LIFE, PROC_REF(update_flashlight))
+	RegisterSignal(parent, COMSIG_AI_BLACKBOARD_KEY_SET(BB_BASIC_MOB_CURRENT_TARGET), PROC_REF(update_flashlight))
 	RegisterSignal(parent, COMSIG_AI_BLACKBOARD_KEY_SET(BB_BASIC_MOB_LAST_SHOT_TIME), PROC_REF(on_shot_at))
 	RegisterSignal(parent, COMSIG_LIVING_DEATH, PROC_REF(on_death))
 
@@ -39,23 +39,23 @@
 		COMSIG_LIVING_DEATH,
 	))
 
-/datum/component/ai_flashlight/proc/check_light(datum/source)
+/datum/component/ai_flashlight/proc/update_flashlight(datum/source)
 	SIGNAL_HANDLER
 	if(!light)
 		return
 	var/mob/living/basic/basic_mob = parent
 	var/datum/ai_controller/controller = basic_mob.ai_controller
 	if(basic_mob.client || !controller || basic_mob.stat != CONSCIOUS)
-		set_on(FALSE) // whoever's in control can see to it themselves
+		set_light_on(FALSE) // whoever's in control can see to it themselves
 		return
-	if(need_light(controller))
+	if(needs_light(controller))
 		last_needed = world.time
-		set_on(TRUE)
+		set_light_on(TRUE)
 	else if(light.on && world.time - last_needed > quiet_time)
-		set_on(FALSE)
+		set_light_on(FALSE)
 
 // fighting or looking for someone, and somewhere it matters is dark, like where we are, or where they are or were last
-/datum/component/ai_flashlight/proc/need_light(datum/ai_controller/controller)
+/datum/component/ai_flashlight/proc/needs_light(datum/ai_controller/controller)
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	var/shot_lately = world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < quiet_time
 	if(QDELETED(target) && !shot_lately)
@@ -72,7 +72,7 @@
 	SIGNAL_HANDLER
 	var/mob/living/basic/basic_mob = parent
 	var/datum/ai_controller/controller = basic_mob.ai_controller
-	check_light()
+	update_flashlight()
 	if(!light?.on || controller?.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE)
 		return // we can see who we're fighting, so we face them as we fight
 	var/turf/shot_from = controller?.blackboard[BB_BASIC_MOB_SHOT_FROM]
@@ -81,19 +81,19 @@
 
 /datum/component/ai_flashlight/proc/on_death(datum/source)
 	SIGNAL_HANDLER
-	set_on(FALSE)
+	set_light_on(FALSE)
 	var/turf/our_turf = get_turf(parent)
 	if(!drops_on_death || !our_turf)
 		return
 	var/mob/living/basic/human/human_mob = parent
 	var/mob/living/carbon/human/corpse = istype(human_mob) ? human_mob.corpse_ref?.resolve() : null
-	if(!stow_on(corpse))
+	if(!stow_on_corpse(corpse))
 		light.forceMove(our_turf)
 	light = null
 	qdel(src)
 
 // puts the light on the corpse we left, where they'd have carried it: a pocket, else their belt, else their bag. FALSE if there's no room anywhere
-/datum/component/ai_flashlight/proc/stow_on(mob/living/carbon/human/corpse)
+/datum/component/ai_flashlight/proc/stow_on_corpse(mob/living/carbon/human/corpse)
 	if(QDELETED(corpse))
 		return FALSE
 	for(var/pocket_slot in list(ITEM_SLOT_RPOCKET, ITEM_SLOT_LPOCKET))
@@ -104,7 +104,7 @@
 			return TRUE
 	return FALSE
 
-/datum/component/ai_flashlight/proc/set_on(turn_on)
+/datum/component/ai_flashlight/proc/set_light_on(turn_on)
 	if(light.on == turn_on)
 		return
 	light.on = turn_on

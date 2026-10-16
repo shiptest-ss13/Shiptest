@@ -10,7 +10,7 @@
 	var/cycle_sound
 	var/single_loads = FALSE
 	var/single_load_time = 0.5 SECONDS
-	var/last_shot_time = 0
+	var/last_fired_time = 0
 	var/reloading = FALSE //so we dont try to shoot during a reload
 	//bumped whenever a reload starts or is broken off, so the timers of one we broke off know they're stale
 	var/reload_id = 0
@@ -55,7 +55,7 @@
 		start_reload()
 		return COMPONENT_CANCEL_RANGED_ATTACK
 	shots_left--
-	last_shot_time = world.time
+	last_fired_time = world.time
 	topped_off_since = world.time
 	if(cycle_sound)
 		addtimer(CALLBACK(src, PROC_REF(play_if_alive), cycle_sound), 0.4 SECONDS)
@@ -71,14 +71,14 @@
 	if(!single_loads || reloading || shots_left >= magazine_size)
 		return
 	// a couple of seconds after our last shot, we start feeding rounds in between fights
-	var/loading_time = world.time - max(topped_off_since, last_shot_time + 2 SECONDS)
+	var/loading_time = world.time - max(topped_off_since, last_fired_time + 2 SECONDS)
 	if(loading_time <= 0)
 		return
 	var/rounds = min(magazine_size - shots_left, round(loading_time / single_load_time))
 	if(rounds <= 0)
 		return
 	shots_left += rounds
-	topped_off_since = max(topped_off_since, last_shot_time + 2 SECONDS) + rounds * single_load_time // so these rounds aren't counted again
+	topped_off_since = max(topped_off_since, last_fired_time + 2 SECONDS) + rounds * single_load_time // so these rounds aren't counted again
 
 /datum/component/ai_magazine/proc/start_reload(tactical = FALSE)
 	var/mob/living/basic/basic_mob = parent

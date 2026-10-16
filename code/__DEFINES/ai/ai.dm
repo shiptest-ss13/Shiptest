@@ -13,11 +13,10 @@
 ///For JPS pathing, the maximum length of a path we'll try to generate. Should be modularized depending on what we're doing later on
 #define AI_MAX_PATH_LENGTH 30 // 30 is possibly overkill since by default we lose interest after 14 tiles of distance, but this gives wiggle room for weaving around obstacles
 
-///Whether mover's close enough to target for something needing to be within distance of it. Being within reach, 1, means actually being able to reach them,
-///not just being a tile away with a wall or window between, see /atom/proc/Adjacent()
+///Whether mobs's close enough to target for something needing to be within distance of it.
 #define AI_IN_RANGE(mover, target, distance) (get_dist(mover, target) <= (distance) && ((distance) != 1 || (target).Adjacent(mover)))
 
-///Notes something controller decided, for admins working out what a mob's up to, if they're logging its decisions. Costs nothing if they're not
+///Notes something controller decided, for debugging mob behaviour, logging needs to be enabled per mob for perf reasons
 #define AI_LOG_DECISION(controller, text) if((controller)?.logging_decisions) { (controller).log_decision(text) }
 ///How often AI with nobody alive on its virtual z-level to see it plans and acts, rather than every tick
 #define AI_LOW_PRIORITY_INTERVAL (1 SECONDS)
@@ -35,7 +34,7 @@
 ///Our current target's within reach
 #define AI_CONDITION_TARGET_ADJACENT (1<<3)
 ///We're taking cover from being shot at
-#define AI_CONDITION_IN_COVER (1<<4)
+#define AI_CONDITION_TAKING_COVER (1<<4)
 ///We're fighting from behind cover, or hiding from someone dug in
 #define AI_CONDITION_FIGHTING_FROM_COVER (1<<5)
 ///We're going around something in the way of our shot
@@ -43,8 +42,8 @@
 ///We're moving somewhere better to shoot from
 #define AI_CONDITION_REPOSITIONING (1<<7)
 ///We're backing off after getting a hit in
-#define AI_CONDITION_FALLING_BACK (1<<8)
-///We're heading somewhere we can breathe
+#define AI_CONDITION_BACKING_OFF (1<<8)
+///We're heading somewhere the environment won't hurt us
 #define AI_CONDITION_SEEKING_SAFETY (1<<9)
 ///Where we're standing isn't safe for us, like vacuum or a fire
 #define AI_CONDITION_UNSAFE_SPOT (1<<10)

@@ -325,7 +325,7 @@
 		step_towards(src,target_turf)
 		sleep(2) // Will be resolved pending Potato's moveloop rework
 		if(QDELETED(src))
-			return // landed on a wall or window, see Bump()
+			return // landed on a wall or window
 		for(var/atom/iter_atom in get_turf(src))
 			if(hit_endpoint)
 				return

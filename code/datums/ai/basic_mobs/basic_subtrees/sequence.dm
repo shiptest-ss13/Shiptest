@@ -11,15 +11,15 @@
 	//blackboard keys for which step we're on and since when, and when we can next start
 	var/step_key
 	var/step_started_key
-	var/next_start_key
-	var/ready_at_key
+	var/cooldown_until_key
+	var/start_delay_until_key
 
 /datum/ai_planning_subtree/sequence/New()
 	. = ..()
 	step_key = "BB_sequence_step_[type]"
 	step_started_key = "BB_sequence_step_started_[type]"
-	next_start_key = "BB_sequence_next_start_[type]"
-	ready_at_key = "BB_sequence_ready_at_[type]"
+	cooldown_until_key = "BB_sequence_cooldown_until_[type]"
+	start_delay_until_key = "BB_sequence_start_delay_until_[type]"
 	var/list/step_instances = list()
 	for(var/step_type in steps)
 		step_instances += new step_type
@@ -38,7 +38,7 @@
 	return
 
 /datum/ai_planning_subtree/sequence/on_skipped(datum/ai_controller/controller)
-	controller.clear_blackboard_key(ready_at_key) // our guard has to hold for start_delay again before we start
+	controller.clear_blackboard_key(start_delay_until_key) // our guard has to hold for start_delay again before we start
 	if(controller.blackboard[step_key])
 		end_sequence(controller, FALSE, "our guard stopped us")
 
@@ -46,9 +46,9 @@
 /datum/ai_planning_subtree/sequence/proc/delay_passed(datum/ai_controller/controller)
 	if(!start_delay)
 		return TRUE
-	var/ready_at = controller.blackboard[ready_at_key]
+	var/ready_at = controller.blackboard[start_delay_until_key]
 	if(isnull(ready_at))
-		controller.set_blackboard_key(ready_at_key, world.time + rand(start_delay, max(start_delay, start_delay_max)))
+		controller.set_blackboard_key(start_delay_until_key, world.time + rand(start_delay, max(start_delay, start_delay_max)))
 		return FALSE
 	return world.time >= ready_at
 
@@ -58,10 +58,10 @@
 		return
 	var/step_index = controller.blackboard[step_key]
 	if(!step_index)
-		if(world.time < controller.blackboard[next_start_key] || !delay_passed(controller) || !can_start(controller))
+		if(world.time < controller.blackboard[cooldown_until_key] || !delay_passed(controller) || !can_start(controller))
 			return
 		if(!on_start(controller))
-			controller.clear_blackboard_key(ready_at_key) // try again after another delay
+			controller.clear_blackboard_key(start_delay_until_key) // try again after another delay
 			return
 		AI_LOG_DECISION(controller, "[type]: starting")
 		step_index = 1
@@ -95,8 +95,8 @@
 /datum/ai_planning_subtree/sequence/proc/end_sequence(datum/ai_controller/controller, finished, reason)
 	controller.clear_blackboard_key(step_key)
 	controller.clear_blackboard_key(step_started_key)
-	controller.clear_blackboard_key(ready_at_key)
-	controller.set_blackboard_key(next_start_key, world.time + cooldown)
+	controller.clear_blackboard_key(start_delay_until_key)
+	controller.set_blackboard_key(cooldown_until_key, world.time + cooldown)
 	on_end(controller, finished)
 	AI_LOG_DECISION(controller, "[type]: [finished ? "finished" : "giving up"], [reason]")
 
@@ -106,10 +106,10 @@
 	for(var/index in 1 to length(steps))
 		var/datum/ai_sequence_step/listed_step = steps[index]
 		. += "[index == current_index ? "<b>&gt;</b> " : ""]step [index]: [listed_step.describe()]"
-	if(!current_index && world.time < controller.blackboard[next_start_key])
-		. += "cooling down for [round((controller.blackboard[next_start_key] - world.time) / 10, 0.1)]s"
-	else if(!current_index && world.time < controller.blackboard[ready_at_key])
-		. += "starting in [round((controller.blackboard[ready_at_key] - world.time) / 10, 0.1)]s"
+	if(!current_index && world.time < controller.blackboard[cooldown_until_key])
+		. += "cooling down for [round((controller.blackboard[cooldown_until_key] - world.time) / 10, 0.1)]s"
+	else if(!current_index && world.time < controller.blackboard[start_delay_until_key])
+		. += "starting in [round((controller.blackboard[start_delay_until_key] - world.time) / 10, 0.1)]s"
 
 /datum/ai_sequence_step
 	var/datum/ai_behavior/behavior_type

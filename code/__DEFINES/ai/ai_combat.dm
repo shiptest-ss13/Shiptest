@@ -1,12 +1,12 @@
-// Defines for how AI-controlled basic mobs fight:
+// Defines for how AI-controlled basic mobs fight
 
 // How a mob looks for a target it's lost sight of
 ///Walk to where we last saw them
-#define SEARCH_STYLE_INVESTIGATE "investigate"
+#define AI_SEARCH_STYLE_INVESTIGATE "investigate"
 ///Stay put and watch where we last saw them
-#define SEARCH_STYLE_HOLD "hold"
+#define AI_SEARCH_STYLE_HOLD "hold"
 ///Stay put and fire at where we last saw them
-#define SEARCH_STYLE_SUPPRESS "suppress"
+#define AI_SEARCH_STYLE_SUPPRESS "suppress"
 
 // The start and end every human NPC's plan shares, so a subtree all of them need goes in once
 ///Getting out of bad air, heading home, calling out what we've seen, and falling back when our nerve's gone, before anything else
@@ -33,16 +33,16 @@
 	/datum/ai_planning_subtree/basic_melee_attack_subtree, \
 	/datum/ai_planning_subtree/idle_chatter
 
-// The most shots a mob will put into something in its way, like a window, to shoot through it, see worth_shooting_through()
+// The most shots a mob will put into something in its way, like a window, to shoot through it
 #define AI_MAX_SHOTS_THROUGH_COVER 10
 
-// How near someone we gave up on getting to has to be for us to check if there's a straight way to them now, see /datum/ai_controller/proc/is_ignoring()
+// How near someone we gave up on getting to has to be for us to check if there's a straight way to them now
 #define AI_IGNORE_RECHECK_RANGE 8
 
-// The least of its usual range a sound carries for AI, however thin the air, as they'd still see the flash or feel it through the floor, see get_heard_distance()
+// The least of its usual range a sound carries for AI, even with no air
 #define AI_MINIMUM_SOUND_FACTOR 0.1
 
-// How long after last firing at someone a mob's aim on them stays settled, after which its next volley at them counts as first contact again, see /datum/component/ranged_attacks/proc/fire_volley()
+// How long after last firing at someone a mob's aim on them stays settled, after which its next volley at them counts as first contact again
 #define AI_AIM_SETTLED_MEMORY (8 SECONDS)
 
 // The range a mob fights at from range, unless it or its controller sets its own
@@ -110,7 +110,7 @@
 #define AI_CALLOUT_TAUNT "taunt"
 ///Now and then as it lands a blow on someone, who's still standing
 #define AI_CALLOUT_MELEE "melee"
-///Lost its nerve and is falling back, see AI_MORALE_BROKEN
+///Lost its nerve and is falling back
 #define AI_CALLOUT_BROKEN "broken"
 ///Pulled itself together after breaking
 #define AI_CALLOUT_RALLIED "rallied"
@@ -128,25 +128,25 @@
 ///Cold enough to hurt us
 #define AI_ENVIRONMENT_TOO_COLD "too cold"
 
-// How far AI with /datum/element/ai_hears_gunfire hears gunshots, in tiles, before walls muffle them. Guns can set their own, see gunfire_hearing_range and suppressed_gunfire_hearing_range
-#define GUNFIRE_HEARING_RANGE 12
+// How far AI with /datum/element/ai_hears_gunfire hears gunshots, in tiles. Walls can muffle sounds. Guns can set their own, see gunfire_hearing_range and suppressed_gunfire_hearing_range
+#define AI_GUNFIRE_HEARING_RANGE 12
 ///Lasers are quieter than an unsuppressed gunshot
-#define LASER_HEARING_RANGE 7
-///Suppressed shots carry this many times less far
-#define SUPPRESSED_HEARING_REDUCTION 3
+#define AI_LASER_HEARING_RANGE 7
+///Suppressed shots carry this many times less far, as a divisor
+#define AI_SUPPRESSED_HEARING_REDUCTION 3
 ///A shooter firing from the same spot, no louder, alerts mobs at most this often, so automatic fire isn't a scan per shot
-#define GUNFIRE_ALERT_COOLDOWN (2 SECONDS)
+#define AI_GUNFIRE_ALERT_COOLDOWN (2 SECONDS)
 ///Each wall between an AI mob and something it's trying to hear counts as this many more tiles of distance
 #define AI_HEARING_WALL_PENALTY 3
 
-///Below this much light, as from /turf/proc/get_lumcount(), AI only makes someone out up close, see ai_can_see(). The same as shadowpeople count as dark
+///Below this much light, as from /turf/proc/get_lumcount(), AI only makes someone out up close, see ai_can_see()
 #define AI_DARKNESS_THRESHOLD SHADOW_SPECIES_LIGHT_THRESHOLD
 ///With at least this see_in_dark, AI sees in the dark as well as the light
 #define AI_NIGHT_VISION 8
 ///How far AI sees, unless its sensor or BB_BASIC_MOB_VISION_RANGE says otherwise
 #define AI_DEFAULT_VISION_RANGE 9
 
-///What AI assumes other people's shots get through, when working out if it's safe somewhere. Lasers that pass glass are the worst case, so glass is never cover. See is_spot_safe_from()
+///What AI assumes other people's shots get through, when working out if it's safe somewhere. Lasers that pass glass are the worst case, so glass is never cover.
 #define AI_THREAT_SHOT_PASS_FLAGS (PASSTABLE | PASSGLASS | PASSGRILLE)
 
 // How AI learnt about a target it can't see yet

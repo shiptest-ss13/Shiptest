@@ -146,18 +146,18 @@
 	if(!cover)
 		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_HIDE_SEARCH, world.time + failed_search_cooldown)
 		return FALSE
-	controller.set_blackboard_key(BB_BASIC_MOB_COVER_TURF, cover)
+	controller.set_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF, cover)
 	set_movement_target(controller, cover)
 
 /datum/ai_behavior/take_cover/perform(seconds_per_tick, datum/ai_controller/controller, danger_key)
-	return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_SUCCEEDED // made it, see /datum/ai_controller/process()
+	return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_SUCCEEDED
 
 /datum/ai_behavior/take_cover/finish_action(datum/ai_controller/controller, succeeded, danger_key)
 	. = ..()
 	if(controller.movement_target_source == type)
 		controller.ai_movement.stop_moving_towards(controller)
 	if(!succeeded)
-		controller.clear_blackboard_key(BB_BASIC_MOB_COVER_TURF)
+		controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF)
 
 /datum/ai_behavior/find_firing_line
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_MOVE_AND_PERFORM | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
@@ -175,7 +175,7 @@
 	var/atom/target = controller.blackboard[target_key]
 	if(QDELETED(target))
 		return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED
-	if(get_mob_shot_blocker(controller.pawn, target))
+	if(get_cached_shot_blocker(controller.pawn, target))
 		return AI_BEHAVIOR_DELAY // not there yet
 	return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_SUCCEEDED
 

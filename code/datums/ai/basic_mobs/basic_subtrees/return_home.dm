@@ -36,7 +36,7 @@
 			return // close enough to keep going after them
 		AI_LOG_DECISION(controller, "return_home: [home_distance] tiles from home, too far to keep chasing")
 		controller.clear_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET) // they've led us too far, so let them go
-	if(home_distance <= home_range || lingering(controller))
+	if(home_distance <= home_range || try_linger_over_downed(controller))
 		return
 	var/mob/living/basic/basic_mob = controller.pawn
 	if(istype(basic_mob) && !is_environment_safe_for(basic_mob, home))
@@ -45,7 +45,7 @@
 	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_HOME_TURF)
 
 // stay near someone we've down, guarding them while they're in view
-/datum/ai_planning_subtree/return_home/proc/lingering(datum/ai_controller/controller)
+/datum/ai_planning_subtree/return_home/proc/try_linger_over_downed(datum/ai_controller/controller)
 	var/mob/living/downed = controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET]
 	if(!downed)
 		return FALSE

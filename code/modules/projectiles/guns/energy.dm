@@ -1,7 +1,7 @@
 // subtype for all energy guns
 /obj/item/gun/energy
 	name = "energy gun"
-	gunfire_hearing_range = LASER_HEARING_RANGE
+	gunfire_hearing_range = AI_LASER_HEARING_RANGE
 	desc = "A profoundly boring and basic energy-based gun. You get the feeling you shouldn't be seeing this and should file a bug report."
 	icon = 'icons/obj/guns/energy.dmi'
 	icon_state = "laser"

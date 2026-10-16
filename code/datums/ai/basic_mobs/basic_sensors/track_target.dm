@@ -5,7 +5,7 @@
 	var/forget_time = 20 SECONDS
 	//how long since we last saw someone before seeing them again is news worth calling out
 	var/spotted_memory = 30 SECONDS
-	//for those who fight up close, how long after losing sight of someone we can still follow where they go, see follow_footsteps()
+	//for those who fight up close, how long after losing sight of someone we can still follow where they go
 	var/footsteps_time = 3 SECONDS
 	//how long we take to react to someone new before we attack, picked between these so a group doesn't all open up at once
 	var/reaction_time_min = 0.5 SECONDS
@@ -30,11 +30,11 @@
 			ai_callout(controller.pawn, AI_CALLOUT_SPOTTED) // nobody told us about them, so it's news to the group
 			AI_LOG_DECISION(controller, "track_target: spotted [target]")
 			if(!AI_RECENTLY_SAW_ENEMY(controller, 5 SECONDS))
-				controller.set_blackboard_key(BB_BASIC_MOB_REACT_AT, world.time + rand(reaction_time_min, reaction_time_max)) // a moment to take it in
+				controller.set_blackboard_key(BB_BASIC_MOB_HOLD_FIRE_UNTIL, world.time + rand(reaction_time_min, reaction_time_max)) // a moment to take it in
 		controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_SEEN_ENEMIES, target, world.time)
 		controller.clear_blackboard_key(BB_BASIC_MOB_TOLD_ABOUT_TARGET) // we know about them for ourselves now
 		clear_search(controller)
-		if(is_downed(target) && controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET] != target)
+		if(ai_is_downed(target) && controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET] != target)
 			controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET, target)
 			controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_AT, world.time)
 		controller.set_blackboard_key(BB_BASIC_MOB_TARGET_IN_SIGHT, TRUE)

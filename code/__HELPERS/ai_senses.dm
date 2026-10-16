@@ -16,9 +16,9 @@
 
 // whether it's too dark for viewer to make out target from distance tiles off, for when we already know there's a line of sight, like from hearers()
 /proc/ai_too_dark_to_see(atom/viewer, atom/target, turf/target_turf, distance, range)
-	if(distance <= max(2, round(range / 3)) || !ai_is_dark(target_turf) || ai_revealed_in_dark(target))
+	if(distance <= max(2, round(range / 3)) || !ai_is_dark(target_turf) || is_ai_revealed_in_dark(target))
 		return FALSE
-	// only for those with human eyes, as robots like hivebots and beasts like carp get by in the dark, and plenty of planets are dark a lot of the time
+	// humans only, others can see in dark mostly i guess
 	var/mob/living/basic/human/human_viewer = viewer
 	return istype(human_viewer) && human_viewer.see_in_dark < AI_NIGHT_VISION
 
@@ -39,14 +39,14 @@
 
 GLOBAL_LIST_EMPTY(ai_revealed_in_dark)
 
-/proc/ai_reveal_in_dark(atom/thing, duration)
+/proc/ai_mark_revealed_in_dark(atom/thing, duration)
 	if(length(GLOB.ai_revealed_in_dark) > 200) // forget those long since hidden again, so this doesn't grow forever
 		for(var/old_ref in GLOB.ai_revealed_in_dark)
 			if(GLOB.ai_revealed_in_dark[old_ref] < world.time)
 				GLOB.ai_revealed_in_dark -= old_ref
 	GLOB.ai_revealed_in_dark[REF(thing)] = world.time + duration
 
-/proc/ai_revealed_in_dark(atom/thing)
+/proc/is_ai_revealed_in_dark(atom/thing)
 	return GLOB.ai_revealed_in_dark[REF(thing)] > world.time
 
 // whether spot is dark enough that AI only makes out what's there up close

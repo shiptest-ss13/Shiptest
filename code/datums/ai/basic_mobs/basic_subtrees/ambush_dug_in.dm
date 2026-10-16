@@ -43,7 +43,7 @@
 		else
 			controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_LAST_KNOWN_TURF)
 		return SUBTREE_RETURN_FINISH_PLANNING
-	if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != TRUE || world.time < controller.blackboard[BB_BASIC_MOB_NEXT_AMBUSH] || !can_shoot_at_range(target))
+	if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != TRUE || world.time < controller.blackboard[BB_BASIC_MOB_NEXT_AMBUSH] || !target_can_shoot_back(target))
 		return // only a gun makes it a killing ground
 	var/obj/cover = cover_between(their_turf, our_turf)
 	if(!cover)

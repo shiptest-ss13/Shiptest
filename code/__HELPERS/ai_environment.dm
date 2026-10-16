@@ -90,10 +90,20 @@
 	return !basic_mob.unsuitable_cold_damage || basic_mob.minimum_survivable_temperature <= TCMB
 
 // whether mover can let the air out, for prying airlocks
-/proc/ai_fine_venting(atom/movable/mover, range = 7)
+/proc/ai_safe_to_vent(atom/movable/mover, range = 7)
 	if(!ai_unbothered_by_vacuum(mover))
 		return FALSE
 	for(var/mob/living/ally as anything in get_ai_allies_in_range(mover, range))
 		if(!ai_unbothered_by_vacuum(ally))
 			return FALSE
 	return TRUE
+
+// cursed edge blockers
+/proc/get_edge_movement_blocker(atom/movable/mover, direction)
+	var/turf/our_turf = get_turf(mover)
+	for(var/obj/thing in our_turf)
+		if(!(thing.flags_1 & ON_BORDER_1) || !thing.density || !(thing.dir & direction))
+			continue
+		if(!thing.CanAStarPass(null, direction, mover))
+			return thing
+	return null

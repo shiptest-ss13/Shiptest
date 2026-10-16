@@ -37,7 +37,7 @@
 	var/list/fight_range = get_ai_fight_range(controller)
 	if(fight_range[1] <= 1)
 		return FALSE
-	if(!melee_threat && !ai_target_close_for(controller, shove_grace))
+	if(!melee_threat && !ai_target_adjacent_long_enough(controller, shove_grace))
 		return FALSE // someone with a weapon up close gets pushed off straight away, anyone else only once they've hung about
 	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_SHOVE_CHECK, world.time + shove_interval)
 	return melee_threat || prob(shove_chance)

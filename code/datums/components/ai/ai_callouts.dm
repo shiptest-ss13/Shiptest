@@ -332,7 +332,7 @@
 	if(event == AI_CALLOUT_TARGET_DOWN || event == AI_CALLOUT_TARGET_KILLED)
 		allies_in_earshot = get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty)
 		for(var/mob/living/ally as anything in allies_in_earshot)
-			ai_embolden(ally)
+			ai_try_embolden(ally)
 	var/group_cooldown = group_line_cooldowns[event]
 	if(group_cooldown)
 		LAZYSET(line_cooldowns, event, world.time + group_cooldown) // so we don't repeat ourselves either
@@ -340,7 +340,7 @@
 			LAZYSET(ally.line_cooldowns, event, world.time + group_cooldown)
 	return TRUE
 
-/// check if the thing is a person/human
+/// whether thing is someone worth calling out like a person: humans and human NPCs, anyone a player's controlling, and mechs, as there's someone inside
 /proc/ai_is_person(atom/thing)
 	if(ismecha(thing))
 		return TRUE

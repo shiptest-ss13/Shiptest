@@ -33,24 +33,24 @@
 		danger = get_turf(target)
 		danger_key = BB_BASIC_MOB_CURRENT_TARGET
 	var/turf/our_turf = get_turf(controller.pawn)
-	if(danger_key == BB_BASIC_MOB_SHOT_FROM && controller.blackboard[BB_BASIC_MOB_SHOT_HANDLED] != last_shot_time)
-		controller.set_blackboard_key(BB_BASIC_MOB_SHOT_HANDLED, last_shot_time)
+	if(danger_key == BB_BASIC_MOB_SHOT_FROM && controller.blackboard[BB_BASIC_MOB_LAST_HANDLED_SHOT_TIME] != last_shot_time)
+		controller.set_blackboard_key(BB_BASIC_MOB_LAST_HANDLED_SHOT_TIME, last_shot_time)
 		react_to_shot(controller, danger, our_turf, reloading)
 	if(!reloading && world.time < controller.blackboard[BB_BASIC_MOB_TRADING_FIRE_UNTIL])
 		// standing our ground. Our attack fires at them if we can see them, otherwise we fire back where the shots are coming from
-		controller.clear_blackboard_key(BB_BASIC_MOB_COVER_TURF)
+		controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF)
 		if(controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] != TRUE)
 			controller.queue_behavior(fire_back_behavior, BB_BASIC_MOB_SHOT_FROM)
 		return
-	var/turf/cover = controller.blackboard[BB_BASIC_MOB_COVER_TURF]
+	var/turf/cover = controller.blackboard[BB_BASIC_MOB_TAKING_COVER_TURF]
 	if(!cover || !cover_still_safe(controller, cover, danger))
 		if(!reloading && fight_from_partial_cover(controller, danger))
-			controller.clear_blackboard_key(BB_BASIC_MOB_COVER_TURF) // fighting_cover has where we stand
+			controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF) // fighting_cover has where we stand
 			return
 		if(our_turf != controller.blackboard[BB_BASIC_MOB_BAD_COVER_TURF] && is_spot_safe_from(our_turf, danger))
-			controller.set_blackboard_key(BB_BASIC_MOB_COVER_TURF, our_turf) // already safe where we are
+			controller.set_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF, our_turf) // already safe where we are
 			return
-		controller.clear_blackboard_key(BB_BASIC_MOB_COVER_TURF)
+		controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF)
 		if(world.time < controller.blackboard[BB_BASIC_MOB_NEXT_HIDE_SEARCH])
 			return // we looked just now and there was nowhere to hide
 		AI_LOG_DECISION(controller, "seek_cover: exposed to [get_turf(controller.blackboard[danger_key])], looking for cover")
@@ -59,14 +59,14 @@
 	if(controller.blackboard[BB_BASIC_MOB_PEEK_TURF])
 		return // stepping out to fire back
 	if(our_turf != cover)
-		controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_COVER_TURF)
+		controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_TAKING_COVER_TURF)
 
 /datum/ai_planning_subtree/seek_cover/proc/react_to_shot(datum/ai_controller/controller, turf/danger, turf/our_turf, reloading)
-	if(our_turf == controller.blackboard[BB_BASIC_MOB_COVER_TURF] && !controller.blackboard[BB_BASIC_MOB_SHOT_NEAR_MISS])
+	if(our_turf == controller.blackboard[BB_BASIC_MOB_TAKING_COVER_TURF] && !controller.blackboard[BB_BASIC_MOB_SHOT_NEAR_MISS])
 		// we got hit sitting in the cover we picked, so it isn't covering us, whatever it looked like. One going past is what cover's for
 		controller.set_blackboard_key(BB_BASIC_MOB_BAD_COVER_TURF, our_turf)
 		AI_LOG_DECISION(controller, "seek_cover: got shot in our cover at [our_turf], so it's no good")
-		controller.clear_blackboard_key(BB_BASIC_MOB_COVER_TURF)
+		controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF)
 		controller.clear_blackboard_key(BB_BASIC_MOB_COVER_CHECKED_AT)
 	if(reloading || controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == TRUE)
 		return // nothing to fire back with, or we can see them and our attack's already on it
@@ -81,7 +81,7 @@
 		AI_LOG_DECISION(controller, "seek_cover: firing back at [danger] on the way to cover")
 
 /datum/ai_planning_subtree/seek_cover/proc/leave_cover(datum/ai_controller/controller)
-	controller.clear_blackboard_key(BB_BASIC_MOB_COVER_TURF)
+	controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF)
 	controller.clear_blackboard_key(BB_BASIC_MOB_BAD_COVER_TURF)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TRADING_FIRE_UNTIL)
 
@@ -117,7 +117,7 @@
 
 // peek out to shoot
 /datum/ai_planning_subtree/sequence/peek
-	required_conditions = AI_CONDITION_IN_COVER | AI_CONDITION_HAS_RANGED_ATTACK
+	required_conditions = AI_CONDITION_TAKING_COVER | AI_CONDITION_HAS_RANGED_ATTACK
 	blocking_conditions = AI_CONDITION_RELOADING
 	finishes_planning = FALSE
 	// how long we sit in cover between peeks, random so a group doesn't all pop out at once
@@ -130,7 +130,7 @@
 	)
 
 /datum/ai_planning_subtree/sequence/peek/can_start(datum/ai_controller/controller)
-	return get_turf(controller.pawn) == controller.blackboard[BB_BASIC_MOB_COVER_TURF] // only from our cover, once we're in it
+	return get_turf(controller.pawn) == controller.blackboard[BB_BASIC_MOB_TAKING_COVER_TURF] // only from our cover, once we're in it
 
 /datum/ai_planning_subtree/sequence/peek/on_start(datum/ai_controller/controller)
 	var/turf/peek_turf = find_peek_turf(controller)
@@ -143,7 +143,7 @@
 	controller.clear_blackboard_key(BB_BASIC_MOB_PEEK_TURF)
 
 /datum/ai_planning_subtree/sequence/peek/proc/find_peek_turf(datum/ai_controller/controller)
-	var/turf/cover = controller.blackboard[BB_BASIC_MOB_COVER_TURF]
+	var/turf/cover = controller.blackboard[BB_BASIC_MOB_TAKING_COVER_TURF]
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	var/turf/aim = (!QDELETED(target) && get_turf(target)) || controller.blackboard[BB_BASIC_MOB_SHOT_FROM]
 	if(!cover || !aim)
@@ -151,7 +151,7 @@
 	var/list/peek_turfs = list()
 	for(var/direction in GLOB.alldirs)
 		var/turf/candidate = get_step(cover, direction)
-		if(!candidate || candidate.is_blocked_turf(TRUE, controller.pawn) || is_doorway(candidate) || !ai_can_stand_on(controller.pawn, candidate))
+		if(!candidate || candidate.is_blocked_turf(TRUE, controller.pawn) || ai_is_doorway(candidate) || !ai_can_stand_on(controller.pawn, candidate))
 			continue
 		if(!get_shot_blocker(candidate, aim))
 			peek_turfs += candidate
@@ -174,5 +174,5 @@
 
 /datum/ai_sequence_step/peek_return
 	behavior_type = /datum/ai_behavior/travel_towards
-	behavior_arguments = list(BB_BASIC_MOB_COVER_TURF)
+	behavior_arguments = list(BB_BASIC_MOB_TAKING_COVER_TURF)
 	timeout = 3 SECONDS
