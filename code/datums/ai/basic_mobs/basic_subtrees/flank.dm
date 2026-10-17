@@ -32,7 +32,6 @@
 	if(get_dist(controller.pawn, target) <= minimum_distance)
 		end_flank(controller) // too close to go around
 		return
-	var/obj/projectile/projectile_type = ranged_attack.get_projectile_type()
 	var/pass_flags = ranged_attack.get_pass_flags()
 	var/atom/blocker = get_cached_shot_blocker(controller.pawn, target)
 	// cover like sandbags doesn't block our shots, so it's no blocker, but most of them will hit it rather than them
@@ -40,18 +39,17 @@
 	if(!blocker && !dug_in)
 		end_flank(controller)
 		return
-	var/must_go_around = blocker && (ai_is_door(blocker) || !worth_shooting_through(controller.pawn, blocker, projectile_type))
-	if(holds_good_cover && !controller.blackboard[BB_BASIC_MOB_FLANKING])
-		var/turf/fighting_spot = controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]
-		if(fighting_spot && get_turf(controller.pawn) == fighting_spot && cover_facing(fighting_spot, target))
-			return // we keep our cover and wait for a shot
+	var/must_go_around = blocker && (ai_is_door(blocker) || !worth_shooting_through(controller.pawn, blocker, ranged_attack.get_projectile_type()))
+	if(holds_good_cover && !controller.blackboard[BB_BASIC_MOB_FLANKING] && ai_holding_cover_against(controller, target))
+		return // we keep our cover and wait for a shot
 	if(AI_MORALE_IS(controller, AI_MORALE_WARY))
 		// an ally just died nearby, so stay put rather than pushing round to wherever got them
 		end_flank(controller)
 		ai_callout(controller.pawn, AI_CALLOUT_WARY) // why we're not going round
 		return // dont shoot while blocked
 	var/flanking = controller.blackboard[BB_BASIC_MOB_FLANKING]
-	if(isnull(flanking) || world.time >= controller.blackboard[BB_BASIC_MOB_NEXT_FLANK_DECISION] || (must_go_around && !flanking))
+	// a cleared decision time counts as up, so we decide straight away if we've not yet
+	if(world.time >= controller.blackboard[BB_BASIC_MOB_NEXT_FLANK_DECISION] || (must_go_around && !flanking))
 		var/atom/clear_target = find_clear_target(controller, target, pass_flags)
 		if(clear_target)
 			// someone else we can actually hit, so go for them instead
@@ -59,36 +57,45 @@
 			AI_LOG_DECISION(controller, "flank: [target] is blocked, switching to [clear_target], who we can hit")
 			controller.set_blackboard_key(target_key, clear_target)
 			return
-		flanking = decide_to_flank(controller, target, must_go_around)
-		// make sure its actually a valid flank angle
-		var/turf/angle_turf = flanking ? find_angle_on(controller, target, pass_flags) : null
-		flanking = !!angle_turf
-		AI_LOG_DECISION(controller, "flank: [blocker || "their cover"] is in the way of [target], [flanking ? "going round to [angle_turf]" : "staying put"][must_go_around ? ", as we can't shoot through it" : ""]")
-		controller.set_blackboard_key(BB_BASIC_MOB_FLANKING, flanking)
-		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_FLANK_DECISION, world.time + (flanking ? flank_duration : hold_duration))
-		controller.set_blackboard_key(BB_BASIC_MOB_FLANK_TURF, angle_turf)
-		if(flanking)
-			ai_callout(controller.pawn, AI_CALLOUT_FLANKING)
-			controller.queue_behavior(/datum/ai_behavior/alert_allies, target_key)
-	if(flanking)
-		// go somewhere what's in the way doesn't cover them from
-		var/turf/their_turf = get_turf(target)
-		var/turf/our_turf = get_turf(controller.pawn)
-		var/turf/angle_turf = controller.blackboard[BB_BASIC_MOB_FLANK_TURF]
-		if(our_turf == angle_turf && blocker && ai_is_door(blocker))
-			// we've come round behind them, so through the door at them
-			controller.queue_behavior(/datum/ai_behavior/find_firing_line, target_key)
-			return SUBTREE_RETURN_FINISH_PLANNING
-		if(!angle_turf || our_turf == angle_turf || !still_an_angle(angle_turf, their_turf, pass_flags))
-			angle_turf = find_angle_on(controller, target, pass_flags)
-			if(!angle_turf)
-				end_flank(controller) // nowhere to get an angle from any more, so stay put
-				return
-			controller.set_blackboard_key(BB_BASIC_MOB_FLANK_TURF, angle_turf)
-			AI_LOG_DECISION(controller, "flank: going round to [angle_turf] to get an angle on [target]")
-		controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_FLANK_TURF)
+		flanking = reconsider_flank(controller, target, blocker, must_go_around, pass_flags)
+	if(flanking && continue_flank(controller, target, blocker, pass_flags))
 		return SUBTREE_RETURN_FINISH_PLANNING
 	// otherwise we're not going around. Our attack holds its fire while it's blocked, and reposition might find us an angle
+
+// whether to go round them or stay put, for a while. Returns whether we're going round
+/datum/ai_planning_subtree/flank/proc/reconsider_flank(datum/ai_controller/controller, atom/target, atom/blocker, must_go_around, pass_flags)
+	var/flanking = decide_to_flank(controller, target, must_go_around)
+	// make sure its actually a valid flank angle
+	var/turf/angle_turf = flanking ? find_angle_on(controller, target, pass_flags) : null
+	flanking = !!angle_turf
+	AI_LOG_DECISION(controller, "flank: [blocker || "their cover"] is in the way of [target], [flanking ? "going round to [angle_turf]" : "staying put"][must_go_around ? ", as we can't shoot through it" : ""]")
+	controller.set_blackboard_key(BB_BASIC_MOB_FLANKING, flanking)
+	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_FLANK_DECISION, world.time + (flanking ? flank_duration : hold_duration))
+	controller.set_blackboard_key(BB_BASIC_MOB_FLANK_TURF, angle_turf)
+	if(flanking)
+		ai_callout(controller.pawn, AI_CALLOUT_FLANKING)
+		controller.queue_behavior(/datum/ai_behavior/alert_allies, target_key)
+	return flanking
+
+// heading round to our angle on them. Returns TRUE if we queued something to get us there, FALSE if there's nowhere left to go
+/datum/ai_planning_subtree/flank/proc/continue_flank(datum/ai_controller/controller, atom/target, atom/blocker, pass_flags)
+	// go somewhere what's in the way doesn't cover them from
+	var/turf/their_turf = get_turf(target)
+	var/turf/our_turf = get_turf(controller.pawn)
+	var/turf/angle_turf = controller.blackboard[BB_BASIC_MOB_FLANK_TURF]
+	if(our_turf == angle_turf && blocker && ai_is_door(blocker))
+		// we've come round behind them, so through the door at them
+		controller.queue_behavior(/datum/ai_behavior/find_firing_line, target_key)
+		return TRUE
+	if(!angle_turf || our_turf == angle_turf || !still_an_angle(angle_turf, their_turf, pass_flags))
+		angle_turf = find_angle_on(controller, target, pass_flags)
+		if(!angle_turf)
+			end_flank(controller) // nowhere to get an angle from any more, so stay put
+			return FALSE
+		controller.set_blackboard_key(BB_BASIC_MOB_FLANK_TURF, angle_turf)
+		AI_LOG_DECISION(controller, "flank: going round to [angle_turf] to get an angle on [target]")
+	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_FLANK_TURF)
+	return TRUE
 
 /datum/ai_planning_subtree/flank/proc/decide_to_flank(datum/ai_controller/controller, atom/target, must_go_around)
 	var/mob/living/living_pawn = controller.pawn
@@ -150,7 +157,7 @@
 	var/best_distance = INFINITY
 	for(var/turf/open/candidate in RANGE_TURFS(angle_search_range, their_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate_distance >= best_distance || candidate_distance > max_flank_distance || get_dist(candidate, their_turf) <= minimum_distance || candidate.is_blocked_turf(TRUE, living_pawn) || ai_is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
+		if(candidate_distance >= best_distance || candidate_distance > max_flank_distance || get_dist(candidate, their_turf) <= minimum_distance || !ai_can_take_spot(living_pawn, candidate))
 			continue
 		if(cover_between(their_turf, candidate) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
 			continue

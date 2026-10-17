@@ -387,6 +387,11 @@ multiple modular subtrees with behaviors
 		sleeping_on_virtual_level = "[pawn.virtual_z()]"
 		LAZYADDASSOCLIST(SSai_controllers.sleeping_ai_by_virtual_level, sleeping_on_virtual_level, src)
 
+// starts processing again if we'd gone to sleep, but leaves us be if we've been switched off or a player's in control
+/datum/ai_controller/proc/wake_up()
+	if(ai_status == AI_STATUS_IDLE)
+		set_ai_status(AI_STATUS_ON)
+
 /**
  * Goes to sleep and stops processing if there's no players on our virtual z-level, or wakes up if there are.
  * Checked when we've nothing to do, and when our mob changes z-level
@@ -396,8 +401,7 @@ multiple modular subtrees with behaviors
 		return // a player's in control, or we've been switched off
 	var/atom/target = blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(!QDELETED(target))
-		if(ai_status == AI_STATUS_IDLE)
-			set_ai_status(AI_STATUS_ON)
+		wake_up()
 		return // in the middle of a fight, so see it through even if there's nobody around to watch
 	var/virtual_level = pawn.virtual_z()
 	if(!virtual_level)
@@ -556,8 +560,7 @@ multiple modular subtrees with behaviors
 	else
 		clear_blackboard_key(BB_BASIC_MOB_HEARD_TARGET)
 	clear_blackboard_key(BB_BASIC_MOB_SEARCH_CALLED_OUT)
-	if(ai_status == AI_STATUS_IDLE)
-		set_ai_status(AI_STATUS_ON)
+	wake_up()
 	if(ai_can_see(pawn, target, blackboard[BB_BASIC_MOB_VISION_RANGE] || AI_DEFAULT_VISION_RANGE))
 		clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME) // they're right there, so spot them the usual way
 		clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF)

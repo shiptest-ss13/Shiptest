@@ -37,33 +37,34 @@
 	controller.clear_blackboard_key(BB_BASIC_MOB_REPOSITION_TURF)
 	var/list/fight_range = get_ai_fight_range(controller)
 	var/distance = get_dist(our_turf, target)
-	var/no_shot = !has_clear_shot(living_pawn, target)
-	if(!no_shot && (distance < fight_range[1] || distance > fight_range[2]))
+	var/has_shot = has_clear_shot(living_pawn, target)
+	if(has_shot && (distance < fight_range[1] || distance > fight_range[2]))
 		return // closing in or backing off
-	var/urgent = no_shot || (ai_is_doorway(our_turf) && blocking_an_ally(living_pawn, our_turf, target)) || ally_in_line_of_fire(living_pawn, our_turf, get_turf(target))
+	var/urgent = !has_shot || (ai_is_doorway(our_turf) && blocking_an_ally(living_pawn, our_turf, target)) || ally_in_line_of_fire(living_pawn, our_turf, get_turf(target))
 	var/under_fire = world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < under_fire_time
 	if(controller.blackboard[BB_BASIC_MOB_HOLDS_POSITION] && !urgent && !under_fire)
 		return // we've a shot from here, so we keep still and take it
 	if(world.time < controller.blackboard[BB_BASIC_MOB_NEXT_REPOSITION] && (!urgent || world.time < controller.blackboard[BB_BASIC_MOB_REPOSITION_FAILED_UNTIL]))
-		if(no_shot)
+		if(!has_shot)
 			work_towards_firing_line(controller, target, distance) // we looked just now and there was nowhere, so keep at it
 		return
 	var/list/interval = (under_fire ? under_fire_intervals : intervals)[get_mobility(controller)]
-	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_REPOSITION, world.time + rand(interval[1], interval[2]))
+	var/next_reposition = world.time + rand(interval[1], interval[2])
 	var/turf/new_spot = find_new_spot(controller, target, fight_range)
-	if(!new_spot && no_shot)
+	if(!new_spot && !has_shot)
 		new_spot = find_new_spot(controller, target, list(1, INFINITY)) // anywhere we'd have a shot from will do
-	if(!new_spot && no_shot)
+	if(!new_spot && !has_shot)
 		new_spot = find_wider_spot(controller, target) // somewhere further, that we'd have to find our way to
 	if(!new_spot)
 		controller.set_blackboard_key(BB_BASIC_MOB_REPOSITION_FAILED_UNTIL, world.time + failed_search_cooldown)
-		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_REPOSITION, max(controller.blackboard[BB_BASIC_MOB_NEXT_REPOSITION], world.time + failed_search_cooldown))
-		if(no_shot && work_towards_firing_line(controller, target, distance))
+		controller.set_blackboard_key(BB_BASIC_MOB_NEXT_REPOSITION, max(next_reposition, world.time + failed_search_cooldown))
+		if(!has_shot && work_towards_firing_line(controller, target, distance))
 			AI_LOG_DECISION(controller, "reposition: no shot at [target] and nowhere near to get one, working towards them")
 		return
+	controller.set_blackboard_key(BB_BASIC_MOB_NEXT_REPOSITION, next_reposition)
 	controller.set_blackboard_key(BB_BASIC_MOB_REPOSITION_TURF, new_spot)
 	controller.set_blackboard_key(BB_BASIC_MOB_REPOSITION_GIVE_UP_AT, world.time + reposition_timeout)
-	AI_LOG_DECISION(controller, "reposition: moving to [new_spot][no_shot ? " to get a shot" : (urgent ? ", out of a doorway or an ally's way" : "")]")
+	AI_LOG_DECISION(controller, "reposition: moving to [new_spot][!has_shot ? " to get a shot" : (urgent ? ", out of a doorway or an ally's way" : "")]")
 	controller.queue_behavior(/datum/ai_behavior/travel_towards, BB_BASIC_MOB_REPOSITION_TURF)
 
 // nowhere close by to shoot from, so work our way towards them until we've a line, like going around them would. Returns TRUE if we are
@@ -87,7 +88,7 @@
 	var/to_target_y = their_turf.y - our_turf.y
 	var/to_target_length = max(1, sqrt(to_target_x ** 2 + to_target_y ** 2))
 	for(var/turf/open/candidate in RANGE_TURFS(step_ranges[get_mobility(controller)], our_turf))
-		if(candidate == our_turf || candidate.is_blocked_turf(TRUE, living_pawn) || ai_is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
+		if(candidate == our_turf || !ai_can_take_spot(living_pawn, candidate))
 			continue
 		var/candidate_distance = get_dist(candidate, their_turf)
 		if(candidate_distance < fight_range[1] || candidate_distance > fight_range[2])
@@ -97,7 +98,7 @@
 		spots += candidate
 		var/step_x = candidate.x - our_turf.x
 		var/step_y = candidate.y - our_turf.y
-		// how directly this step goes towards or away from them: 0 is a pure sidestep across their line of fire, 1 is straight at or away from them
+		// how directly this step goes towards or away from them: 0 is a pure sidestep across their line of fire, 1 is straight at or away from them.
 		var/along = abs(step_x * to_target_x + step_y * to_target_y) / (to_target_length * max(1, sqrt(step_x ** 2 + step_y ** 2)))
 		if(along <= 0.5)
 			sideways_spots += candidate
@@ -115,7 +116,7 @@
 	var/nearest_distance = INFINITY
 	for(var/turf/open/candidate in RANGE_TURFS(wider_search_range, our_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate == our_turf || candidate == their_turf || candidate_distance > nearest_distance || candidate.is_blocked_turf(TRUE, living_pawn) || ai_is_doorway(candidate) || !ai_can_stand_on(living_pawn, candidate))
+		if(candidate == our_turf || candidate == their_turf || candidate_distance > nearest_distance || !ai_can_take_spot(living_pawn, candidate))
 			continue
 		if(get_shot_blocker(candidate, their_turf, pass_flags = pass_flags) || ally_in_line_of_fire(living_pawn, candidate, their_turf))
 			continue

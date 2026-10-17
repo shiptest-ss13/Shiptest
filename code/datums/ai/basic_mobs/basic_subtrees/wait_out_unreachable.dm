@@ -10,8 +10,7 @@
 	var/ignore_time = 20 SECONDS
 
 /datum/ai_planning_subtree/wait_out_unreachable/on_skipped(datum/ai_controller/controller)
-	controller.clear_blackboard_key(BB_BASIC_MOB_WAIT_TURF)
-	controller.clear_blackboard_key(BB_BASIC_MOB_UNREACHABLE_SINCE)
+	forget_wait(controller)
 
 /datum/ai_planning_subtree/wait_out_unreachable/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
 	. = ..()
@@ -21,8 +20,7 @@
 	if(no_way_to_them && can_walk_straight_to(controller.pawn, their_turf))
 		no_way_to_them = FALSE // there's nothing between us, so whatever our movement made of it, we can get to them
 	if(!their_turf || (!no_way_to_them && ai_can_stand_on(controller.pawn, their_turf)))
-		controller.clear_blackboard_key(BB_BASIC_MOB_WAIT_TURF)
-		controller.clear_blackboard_key(BB_BASIC_MOB_UNREACHABLE_SINCE)
+		forget_wait(controller)
 		return // we can get to them, so we go for them
 	var/unreachable_since = controller.blackboard[BB_BASIC_MOB_UNREACHABLE_SINCE]
 	if(isnull(unreachable_since))
@@ -43,10 +41,14 @@
 		controller.queue_behavior(/datum/ai_behavior/face_target, BB_BASIC_MOB_CURRENT_TARGET)
 	return SUBTREE_RETURN_FINISH_PLANNING
 
+// forget where we were waiting them out and since when
+/datum/ai_planning_subtree/wait_out_unreachable/proc/forget_wait(datum/ai_controller/controller)
+	controller.clear_blackboard_key(BB_BASIC_MOB_WAIT_TURF)
+	controller.clear_blackboard_key(BB_BASIC_MOB_UNREACHABLE_SINCE)
+
 // leave them be for a while, as there's no getting to them, see /datum/ai_controller/proc/check_still_ignoring()
 /datum/ai_planning_subtree/wait_out_unreachable/proc/give_up_on(datum/ai_controller/controller, atom/target)
 	AI_LOG_DECISION(controller, "wait_out_unreachable: no way to [target] for [give_up_time / 10] seconds, leaving them be for [ignore_time / 10]")
 	controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_IGNORED_TARGETS, target, world.time + ignore_time)
-	controller.clear_blackboard_key(BB_BASIC_MOB_UNREACHABLE_SINCE)
-	controller.clear_blackboard_key(BB_BASIC_MOB_WAIT_TURF)
+	forget_wait(controller)
 	controller.clear_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET)

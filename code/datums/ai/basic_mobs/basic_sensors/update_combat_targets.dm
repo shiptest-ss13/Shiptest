@@ -82,15 +82,26 @@
 		best_time = seen_at
 	return best
 
+// the first of candidates right next to us that's still up and isn't target
+/datum/ai_sensor/update_combat_targets/proc/find_adjacent_candidate(mob/living/living_pawn, list/candidates, atom/target, needs_melee_weapon = FALSE)
+	for(var/atom/candidate as anything in candidates)
+		if(needs_melee_weapon && !isliving(candidate))
+			continue
+		if(candidate == target || ai_is_downed(candidate) || !candidate.Adjacent(living_pawn))
+			continue
+		if(!needs_melee_weapon || holds_melee_weapon(candidate))
+			return candidate
+	return null
+
 /datum/ai_sensor/update_combat_targets/proc/pick_target(datum/ai_controller/controller, atom/target, target_unseen, list/candidates, datum/targetting_datum/targetting_datum)
 	var/mob/living/living_pawn = controller.pawn
 	var/target_down = target && ai_is_downed(target)
 	var/target_in_reach = target && !target_down && target.Adjacent(living_pawn)
 	// prio someone coming next to us with a melee weapon
 	if(!(target_in_reach && isliving(target) && holds_melee_weapon(target)))
-		for(var/mob/living/candidate in candidates)
-			if(candidate != target && !ai_is_downed(candidate) && candidate.Adjacent(living_pawn) && holds_melee_weapon(candidate))
-				return candidate
+		var/mob/living/armed_up_close = find_adjacent_candidate(living_pawn, candidates, target, needs_melee_weapon = TRUE)
+		if(armed_up_close)
+			return armed_up_close
 	var/atom/attacker = controller.blackboard[BB_BASIC_MOB_SHOT_BY] // a mob, or something like a turret
 	if(attacker && attacker != target && (attacker in candidates) && !ai_is_downed(attacker) && world.time - controller.blackboard[BB_BASIC_MOB_LAST_SHOT_TIME] < attacker_memory)
 		// ai cheese prevention
@@ -98,9 +109,9 @@
 		if(!fighting_in_reach)
 			return attacker
 	if(world.time - controller.blackboard[BB_BASIC_MOB_LAST_HURT_TIME] < attacker_memory && !target_in_reach)
-		for(var/atom/candidate as anything in candidates)
-			if(candidate != target && !ai_is_downed(candidate) && candidate.Adjacent(living_pawn))
-				return candidate
+		var/atom/up_close = find_adjacent_candidate(living_pawn, candidates, target)
+		if(up_close)
+			return up_close
 	var/list/standing = list()
 	for(var/atom/candidate as anything in candidates)
 		if(!ai_is_downed(candidate))

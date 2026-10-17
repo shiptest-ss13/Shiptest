@@ -19,7 +19,7 @@
 	if(!isbasicmob(target))
 		return ELEMENT_INCOMPATIBLE
 
-	// checking for null rather than falsy, as 0 is a real temperature, like for mobs that are fine in space
+	// checking for null rather than falsy, as 0 is a real temperature
 	if(!isnull(min_body_temp))
 		src.min_body_temp = min_body_temp
 	if(!isnull(max_body_temp))

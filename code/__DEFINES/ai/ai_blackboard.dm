@@ -71,6 +71,8 @@
 #define BB_BASIC_MOB_HOLD_FIRE_UNTIL "BB_basic_hold_fire_until"
 ///TRUE while we can see our current target, FALSE while they're out of sight, null when we're not tracking them, like with no target
 #define BB_BASIC_MOB_TARGET_IN_SIGHT "BB_basic_target_in_sight"
+///What we watched our target shut themselves in, like a locker, so we still know they're in there
+#define BB_BASIC_MOB_TARGET_HIDING_IN "BB_basic_target_hiding_in"
 ///Who BB_BASIC_MOB_LAST_KNOWN_TURF and BB_BASIC_MOB_LAST_KNOWN_TIME are about, so switching targets starts fresh
 #define BB_BASIC_MOB_LAST_KNOWN_TARGET "BB_basic_last_known_target"
 ///Where we live and go back to once there's nothing to do

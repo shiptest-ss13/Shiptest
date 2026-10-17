@@ -54,10 +54,8 @@
 
 /datum/ai_behavior/smash_obstacle/setup(datum/ai_controller/controller, target_key)
 	. = ..()
-	var/obj/target = controller.blackboard[target_key]
-	if(QDELETED(target))
+	if(!move_to_key(controller, target_key))
 		return FALSE
-	set_movement_target(controller, target)
 
 /datum/ai_behavior/smash_obstacle/perform(seconds_per_tick, datum/ai_controller/controller, target_key)
 	var/mob/living/basic/basic_mob = controller.pawn

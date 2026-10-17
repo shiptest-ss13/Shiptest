@@ -80,13 +80,7 @@
 // need this when checking other mobs since they get deleted on death, so we can't check them directly
 /datum/component/ai_morale/proc/embolden_if_downed_ref(datum/weakref/victim_ref)
 	var/mob/living/victim = victim_ref?.resolve()
-	if(QDELETED(victim))
-		try_embolden()
-		return
-	embolden_if_downed(victim)
-
-/datum/component/ai_morale/proc/embolden_if_downed(mob/living/victim)
-	if(isliving(victim) && victim.stat != CONSCIOUS)
+	if(QDELETED(victim) || (isliving(victim) && victim.stat != CONSCIOUS))
 		try_embolden()
 
 /datum/component/ai_morale/proc/on_someone_died(datum/source, mob/living/victim, gibbed)
@@ -133,9 +127,13 @@
 	if(!why)
 		return FALSE
 	AI_LOG_DECISION(controller, "ai_morale: breaking, [why]")
+	stay_broken()
+	return TRUE
+
+// broken for another broken_duration, then we see if we can rally
+/datum/component/ai_morale/proc/stay_broken()
 	set_morale(AI_MORALE_BROKEN, broken_duration + 1 SECONDS)
 	addtimer(CALLBACK(src, PROC_REF(try_rally)), broken_duration, TIMER_UNIQUE|TIMER_OVERRIDE)
-	return TRUE
 
 /datum/component/ai_morale/proc/badly_outnumbered(list/sides)
 	var/mob/living/living_parent = parent
@@ -153,8 +151,7 @@
 	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(!QDELETED(target) && badly_outnumbered(count_sides()))
 		AI_LOG_DECISION(controller, "ai_morale: still badly outnumbered, staying broken")
-		set_morale(AI_MORALE_BROKEN, broken_duration + 1 SECONDS)
-		addtimer(CALLBACK(src, PROC_REF(try_rally)), broken_duration, TIMER_UNIQUE|TIMER_OVERRIDE)
+		stay_broken()
 		return
 	ally_deaths = null
 	set_morale(AI_MORALE_WARY, wary_duration, AI_CALLOUT_RALLIED)

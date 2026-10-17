@@ -21,8 +21,7 @@
 		return
 	controller.set_blackboard_key(BB_BASIC_MOB_LAST_HURT_TIME, world.time)
 	controller.clear_blackboard_key(BB_BASIC_MOB_NEXT_TARGET_SEARCH)
-	if(controller.ai_status == AI_STATUS_IDLE)
-		controller.set_ai_status(AI_STATUS_ON)
+	controller.wake_up()
 
 /datum/element/ai_reacts_to_harm/proc/on_shot(mob/source, obj/projectile/projectile)
 	SIGNAL_HANDLER
@@ -43,8 +42,7 @@
 	if(shooter == source || (istype(living_source) && isliving(shooter) && living_source.faction_check_mob(shooter)))
 		return // one of ours, missing whoever they were shooting at
 	controller.set_blackboard_key(BB_BASIC_MOB_SHOT_NEAR_MISS, TRUE)
-	if(controller.ai_status == AI_STATUS_IDLE)
-		controller.set_ai_status(AI_STATUS_ON)
+	controller.wake_up()
 	shot_at(source, controller, projectile)
 
 // what we know from being shot at, hit or not: when, where from, and by who

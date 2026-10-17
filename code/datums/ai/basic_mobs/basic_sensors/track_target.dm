@@ -23,25 +23,11 @@
 	if(controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TARGET] != target)
 		forget_target(controller) // someone new, so what we knew about the last one doesn't count
 		controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TARGET, target)
-	if(ai_can_see(controller.pawn, target, controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || vision_range))
-		// news, unless we've seen them lately, like someone popping back out of cover, or we switched to someone else and back
-		var/last_saw_them = LAZYACCESS(controller.blackboard[BB_BASIC_MOB_SEEN_ENEMIES], target)
-		if((isnull(last_saw_them) || world.time - last_saw_them > spotted_memory) && !controller.blackboard[BB_BASIC_MOB_TOLD_ABOUT_TARGET])
-			ai_callout(controller.pawn, AI_CALLOUT_SPOTTED) // nobody told us about them, so it's news to the group
-			AI_LOG_DECISION(controller, "track_target: spotted [target]")
-			if(!AI_RECENTLY_SAW_ENEMY(controller, 5 SECONDS))
-				controller.set_blackboard_key(BB_BASIC_MOB_HOLD_FIRE_UNTIL, world.time + rand(reaction_time_min, reaction_time_max)) // a moment to take it in
-		controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_SEEN_ENEMIES, target, world.time)
-		controller.clear_blackboard_key(BB_BASIC_MOB_TOLD_ABOUT_TARGET) // we know about them for ourselves now
-		clear_search(controller)
-		if(ai_is_downed(target) && controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET] != target)
-			controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET, target)
-			controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_AT, world.time)
-		controller.set_blackboard_key(BB_BASIC_MOB_TARGET_IN_SIGHT, TRUE)
-		controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF, get_turf(target))
-		controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME, world.time)
-		controller.set_blackboard_key(BB_BASIC_MOB_LAST_SAW_ENEMY_TIME, world.time)
+	var/our_vision_range = controller.blackboard[BB_BASIC_MOB_VISION_RANGE] || vision_range
+	if(ai_can_see(controller.pawn, target, our_vision_range) || watched_them_hide(controller, target, our_vision_range))
+		on_target_seen(controller, target)
 		return
+	controller.clear_blackboard_key(BB_BASIC_MOB_TARGET_HIDING_IN)
 	controller.set_blackboard_key(BB_BASIC_MOB_TARGET_IN_SIGHT, FALSE)
 	var/last_known_time = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TIME]
 	if(isnull(last_known_time))
@@ -53,6 +39,43 @@
 		forget_target(controller)
 	else
 		follow_footsteps(controller, target)
+
+
+// saw the target get into a locker/crate etc
+/datum/ai_sensor/track_target/proc/watched_them_hide(datum/ai_controller/controller, atom/target, our_vision_range)
+	var/datum/targetting_datum/targetting_datum = controller.blackboard[BB_TARGETTING_DATUM]
+	var/atom/hiding_in = targetting_datum?.find_hidden_mobs(controller.pawn, target)
+	if(!hiding_in || !ai_can_see(controller.pawn, hiding_in, our_vision_range))
+		return FALSE
+	if(controller.blackboard[BB_BASIC_MOB_TARGET_HIDING_IN] == hiding_in)
+		return TRUE // still in there, and we've not taken our eyes off it
+	var/last_saw_them = LAZYACCESS(controller.blackboard[BB_BASIC_MOB_SEEN_ENEMIES], target)
+	var/turf/last_known_turf = controller.blackboard[BB_BASIC_MOB_LAST_KNOWN_TURF]
+	if(isnull(last_saw_them) || world.time - last_saw_them > footsteps_time || !last_known_turf || get_dist(last_known_turf, hiding_in) > 1)
+		return FALSE // we didn't see them get in
+	AI_LOG_DECISION(controller, "track_target: watched [target] hide in [hiding_in]")
+	controller.set_blackboard_key(BB_BASIC_MOB_TARGET_HIDING_IN, hiding_in)
+	return TRUE
+
+// they're in sight, so we know where they are, and if it's news, we tell the group
+/datum/ai_sensor/track_target/proc/on_target_seen(datum/ai_controller/controller, atom/target)
+	// news, unless we've seen them lately, like someone popping back out of cover, or we switched to someone else and back
+	var/last_saw_them = LAZYACCESS(controller.blackboard[BB_BASIC_MOB_SEEN_ENEMIES], target)
+	if((isnull(last_saw_them) || world.time - last_saw_them > spotted_memory) && !controller.blackboard[BB_BASIC_MOB_TOLD_ABOUT_TARGET])
+		ai_callout(controller.pawn, AI_CALLOUT_SPOTTED) // nobody told us about them, so it's news to the group
+		AI_LOG_DECISION(controller, "track_target: spotted [target]")
+		if(!AI_RECENTLY_SAW_ENEMY(controller, 5 SECONDS))
+			controller.set_blackboard_key(BB_BASIC_MOB_HOLD_FIRE_UNTIL, world.time + rand(reaction_time_min, reaction_time_max)) // a moment to take it in
+	controller.set_blackboard_key_assoc_lazylist(BB_BASIC_MOB_SEEN_ENEMIES, target, world.time)
+	controller.clear_blackboard_key(BB_BASIC_MOB_TOLD_ABOUT_TARGET) // we know about them for ourselves now
+	clear_search(controller)
+	if(ai_is_downed(target) && controller.blackboard[BB_BASIC_MOB_DOWNED_TARGET] != target)
+		controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_TARGET, target)
+		controller.set_blackboard_key(BB_BASIC_MOB_DOWNED_AT, world.time)
+	controller.set_blackboard_key(BB_BASIC_MOB_TARGET_IN_SIGHT, TRUE)
+	controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF, get_turf(target))
+	controller.set_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME, world.time)
+	controller.set_blackboard_key(BB_BASIC_MOB_LAST_SAW_ENEMY_TIME, world.time)
 
 // a bit of cheating for melee mobs to chase people out of sight, as if theyre following footsteps
 /datum/ai_sensor/track_target/proc/follow_footsteps(datum/ai_controller/controller, atom/target)
@@ -72,6 +95,7 @@
 
 /datum/ai_sensor/track_target/proc/forget_target(datum/ai_controller/controller)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TARGET_IN_SIGHT)
+	controller.clear_blackboard_key(BB_BASIC_MOB_TARGET_HIDING_IN)
 	controller.clear_blackboard_key(BB_BASIC_MOB_TARGET_ADJACENT_SINCE)
 	controller.clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TURF)
 	controller.clear_blackboard_key(BB_BASIC_MOB_LAST_KNOWN_TIME)

@@ -10,6 +10,7 @@
 		BB_BASIC_MOB_RETREAT_DISTANCE = 5,
 		BB_BASIC_MOB_ENGAGE_DISTANCE = 8,
 		BB_BASIC_MOB_HOLDS_POSITION = TRUE,
+		BB_BASIC_MOB_FLANK_PRIORITY = 1,
 	)
 	planning_subtrees = list(
 		AI_HUMAN_PLANNING_OPENING,
@@ -35,6 +36,7 @@
 		BB_TARGETTING_DATUM = new /datum/targetting_datum/basic,
 		BB_BASIC_MOB_RETREAT_DISTANCE = 0,
 		BB_BASIC_MOB_ENGAGE_DISTANCE = 2,
+		BB_BASIC_MOB_FLANK_PRIORITY = 5,
 	)
 	planning_subtrees = list(
 		AI_HUMAN_PLANNING_OPENING,
@@ -58,6 +60,7 @@
 		BB_BASIC_MOB_RETREAT_DISTANCE = 1,
 		BB_BASIC_MOB_ENGAGE_DISTANCE = 3,
 		BB_BASIC_MOB_HIT_AND_RUN = TRUE,
+		BB_BASIC_MOB_FLANK_PRIORITY = 4,
 	)
 	planning_subtrees = list(
 		AI_HUMAN_PLANNING_OPENING,
@@ -73,6 +76,10 @@
 
  // would rather dig in behind cover and lay down fire
 /datum/ai_controller/basic_controller/human/ranged/support_gunner
+	blackboard = list(
+		BB_TARGETTING_DATUM = new /datum/targetting_datum/basic,
+		BB_BASIC_MOB_FLANK_PRIORITY = 2,
+	)
 	planning_subtrees = list(
 		AI_HUMAN_PLANNING_OPENING,
 		/datum/ai_planning_subtree/group/cover,

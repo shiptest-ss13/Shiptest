@@ -26,9 +26,8 @@
 		if(!reloading || QDELETED(target) || controller.blackboard[BB_BASIC_MOB_TARGET_IN_SIGHT] == FALSE || target.Adjacent(controller.pawn))
 			leave_cover(controller) // it's been quiet a while, so carry on as usual
 			return
-		var/turf/fighting_spot = controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]
-		if(fighting_spot && get_turf(controller.pawn) == fighting_spot && cover_facing(fighting_spot, target))
-			return // reloading behind the sandbags we're fighting from does us fine, rather than giving them up
+		if(ai_holding_cover_against(controller, target))
+			return // don't give up good cover
 		// not being shot at, but we've an empty gun and someone who can see us, so get out of their sight while we reload
 		danger = get_turf(target)
 		danger_key = BB_BASIC_MOB_CURRENT_TARGET
@@ -151,7 +150,7 @@
 	var/list/peek_turfs = list()
 	for(var/direction in GLOB.alldirs)
 		var/turf/candidate = get_step(cover, direction)
-		if(!candidate || candidate.is_blocked_turf(TRUE, controller.pawn) || ai_is_doorway(candidate) || !ai_can_stand_on(controller.pawn, candidate))
+		if(!candidate || !ai_can_take_spot(controller.pawn, candidate))
 			continue
 		if(!get_shot_blocker(candidate, aim))
 			peek_turfs += candidate

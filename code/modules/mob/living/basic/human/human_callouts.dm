@@ -161,6 +161,8 @@
 		),
 	)
 
+
+// ---------- VI ----------
 // VI Security: guards, mall cops and armored delivery. By the book, mostly, and not paid enough for this
 /datum/ai_callout_set/human/vigilitas
 	lines = list(
@@ -200,7 +202,7 @@
 		),
 	)
 
-// VI Crisis Reaction Units: a tactical response team, part SWAT and part well-armed firefighters
+// VI Crisis Reaction Units: a tactical response team, part SWAT
 /datum/ai_callout_set/human/vigilitas/crisis
 	lines = list(
 		AI_CALLOUT_SPOTTED = list("Contact! Hostile in sight!", "Crisis Reaction, show me your hands!", "Hostile on site, engaging!", "Visual on a hostile!", "Hostile contact, weapons free!"),

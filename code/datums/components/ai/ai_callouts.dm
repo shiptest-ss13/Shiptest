@@ -239,6 +239,92 @@
 			listener.create_chat_message(corpse, /datum/language/galactic_common, heard_line, spans + list("italics"))
 
 /datum/component/ai_callouts/proc/speak_about(event, last_words = FALSE, interrupt = FALSE)
+	var/mob/living/basic/basic_mob = parent
+	if(basic_mob.stat != CONSCIOUS || basic_mob.client)
+		return FALSE
+	var/line = pick_line(event, last_words, interrupt)
+	if(!line)
+		return FALSE
+	COOLDOWN_START(src, speech_cooldown, 5 SECONDS)
+	say_line(line, last_words)
+	var/list/allies_in_earshot
+	if(event == AI_CALLOUT_TARGET_DOWN || event == AI_CALLOUT_TARGET_KILLED)
+		allies_in_earshot = get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty)
+		for(var/mob/living/ally as anything in allies_in_earshot)
+			ai_try_embolden(ally)
+	share_line_cooldown(event, allies_in_earshot)
+	return TRUE
+
+// what we'd say about event right now, or null if we'd keep quiet
+/datum/component/ai_callouts/proc/pick_line(event, last_words = FALSE, interrupt = FALSE)
+	// what we'd only say about people
+	var/static/list/about_people = list(
+		AI_CALLOUT_SPOTTED = TRUE,
+		AI_CALLOUT_LOST_THEM = TRUE,
+		AI_CALLOUT_TAUNT = TRUE,
+		AI_CALLOUT_MELEE = TRUE,
+		AI_CALLOUT_FLANKING = TRUE,
+		AI_CALLOUT_PUSHING = TRUE,
+		AI_CALLOUT_SUPPRESSING = TRUE,
+		AI_CALLOUT_TARGET_DOWN = TRUE,
+		AI_CALLOUT_TARGET_KILLED = TRUE,
+	)
+	var/mob/living/basic/basic_mob = parent
+	if(about_people[event])
+		var/atom/target = basic_mob.ai_controller?.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+		if(target && !ai_is_person(target))
+			return null
+	var/datum/ai_callout_set/callouts = get_ai_callout_set(callout_set)
+	var/lines
+	var/datum/ai_controller/controller = basic_mob.ai_controller
+	var/morale = controller?.blackboard[BB_BASIC_MOB_MORALE]
+	if(morale && AI_MORALE_IS(controller, morale))
+		var/list/mood_lines = callouts.morale_lines[morale]
+		lines = mood_lines?[event] // how we'd say it in this mood, if we've a line for that
+	lines ||= callouts.lines[event]
+	var/chance = callouts.chances[event]
+	var/own_lines = event == AI_CALLOUT_SPOTTED && length(spotted_lines)
+	if(own_lines)
+		lines = spotted_lines
+		chance = spotted_chance
+	if(!lines || (!last_words && !interrupt && !COOLDOWN_FINISHED(src, speech_cooldown)))
+		return null
+	if(!own_lines && world.time < LAZYACCESS(line_cooldowns, event))
+		return null // someone in earshot's just said it
+	if(!prob(isnull(chance) ? callouts.default_chance : chance))
+		return null
+	return islist(lines) ? pick_weight_recursive(lines) : lines
+
+// actually says line, in our voice, or whispers it if it's our last words
+/datum/component/ai_callouts/proc/say_line(line, last_words = FALSE)
+	var/mob/living/basic/basic_mob = parent
+	var/datum/ai_callout_set/callouts = get_ai_callout_set(callout_set)
+	var/list/speech_args = list(line, null, list(), null, /datum/language/galactic_common)
+	if(voice.modifies_speech)
+		voice.handle_speech(basic_mob, speech_args)
+	line = speech_args[SPEECH_MESSAGE]
+	var/list/spans = speech_args[SPEECH_SPANS]
+	var/verb = callouts.say_verb
+	if(!verb)
+		if(last_words)
+			verb = voice.whisper_mod
+		else
+			switch(copytext_char(line, -1))
+				if("!")
+					verb = voice.exclaim_mod
+				if("?")
+					verb = voice.ask_mod
+				else
+					verb = voice.say_mod
+	var/message = "[verb]*[line]"
+	if(last_words)
+		INVOKE_ASYNC(basic_mob, TYPE_PROC_REF(/mob, whisper), message, null, spans)
+		show_last_words_over_corpse(line, spans)
+	else
+		INVOKE_ASYNC(basic_mob, TYPE_PROC_REF(/atom/movable, say), message, null, spans)
+
+// puts event on cooldown for us and everyone in earshot, so the group doesn't all say it at once. allies_in_earshot is get_ai_allies_in_earshot() if we've already got it to hand
+/datum/component/ai_callouts/proc/share_line_cooldown(event, list/allies_in_earshot)
 	// how long a callout goes on cooldown for a group
 	var/static/list/group_line_cooldowns = list(
 		AI_CALLOUT_SPOTTED = 15 SECONDS,
@@ -263,82 +349,12 @@
 		AI_CALLOUT_TAUNT = 25 SECONDS,
 		AI_CALLOUT_MELEE = 8 SECONDS,
 	)
-	// what we'd only say about people
-	var/static/list/about_people = list(
-		AI_CALLOUT_SPOTTED = TRUE,
-		AI_CALLOUT_LOST_THEM = TRUE,
-		AI_CALLOUT_TAUNT = TRUE,
-		AI_CALLOUT_MELEE = TRUE,
-		AI_CALLOUT_FLANKING = TRUE,
-		AI_CALLOUT_PUSHING = TRUE,
-		AI_CALLOUT_SUPPRESSING = TRUE,
-		AI_CALLOUT_TARGET_DOWN = TRUE,
-		AI_CALLOUT_TARGET_KILLED = TRUE,
-	)
-	var/mob/living/basic/basic_mob = parent
-	if(basic_mob.stat != CONSCIOUS || basic_mob.client)
-		return FALSE
-	if(about_people[event])
-		var/atom/target = basic_mob.ai_controller?.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
-		if(target && !ai_is_person(target))
-			return FALSE
-	var/datum/ai_callout_set/callouts = get_ai_callout_set(callout_set)
-	var/lines
-	var/datum/ai_controller/controller = basic_mob.ai_controller
-	var/morale = controller?.blackboard[BB_BASIC_MOB_MORALE]
-	if(morale && AI_MORALE_IS(controller, morale))
-		var/list/mood_lines = callouts.morale_lines[morale]
-		lines = mood_lines?[event] // how we'd say it in this mood, if we've a line for that
-	lines ||= callouts.lines[event]
-	var/chance = callouts.chances[event]
-	var/own_lines = event == AI_CALLOUT_SPOTTED && length(spotted_lines)
-	if(own_lines)
-		lines = spotted_lines
-		chance = spotted_chance
-	if(!lines || (!last_words && !interrupt && !COOLDOWN_FINISHED(src, speech_cooldown)))
-		return FALSE
-	if(!own_lines && world.time < LAZYACCESS(line_cooldowns, event))
-		return FALSE // someone in earshot's just said it
-	if(!prob(isnull(chance) ? callouts.default_chance : chance))
-		return FALSE
-	var/line = islist(lines) ? pick_weight_recursive(lines) : lines
-	if(!line)
-		return FALSE
-	COOLDOWN_START(src, speech_cooldown, 5 SECONDS)
-	var/list/speech_args = list(line, null, list(), null, /datum/language/galactic_common)
-	if(voice.modifies_speech)
-		voice.handle_speech(basic_mob, speech_args)
-	line = speech_args[SPEECH_MESSAGE]
-	var/list/spans = speech_args[SPEECH_SPANS]
-	var/verb = callouts.say_verb
-	if(!verb)
-		if(last_words)
-			verb = voice.whisper_mod
-		else
-			switch(copytext_char(line, -1))
-				if("!")
-					verb = voice.exclaim_mod
-				if("?")
-					verb = voice.ask_mod
-				else
-					verb = voice.say_mod
-	var/message = "[verb]*[line]"
-	if(last_words)
-		INVOKE_ASYNC(basic_mob, TYPE_PROC_REF(/mob, whisper), message, null, spans)
-		show_last_words_over_corpse(line, spans)
-	else
-		INVOKE_ASYNC(basic_mob, TYPE_PROC_REF(/atom/movable, say), message, null, spans)
-	var/list/allies_in_earshot
-	if(event == AI_CALLOUT_TARGET_DOWN || event == AI_CALLOUT_TARGET_KILLED)
-		allies_in_earshot = get_ai_allies_in_earshot(basic_mob, hearing_range, wall_penalty)
-		for(var/mob/living/ally as anything in allies_in_earshot)
-			ai_try_embolden(ally)
 	var/group_cooldown = group_line_cooldowns[event]
-	if(group_cooldown)
-		LAZYSET(line_cooldowns, event, world.time + group_cooldown) // so we don't repeat ourselves either
-		for(var/datum/component/ai_callouts/ally as anything in get_allies_in_earshot(allies_in_earshot))
-			LAZYSET(ally.line_cooldowns, event, world.time + group_cooldown)
-	return TRUE
+	if(!group_cooldown)
+		return
+	LAZYSET(line_cooldowns, event, world.time + group_cooldown) // so we don't repeat ourselves either
+	for(var/datum/component/ai_callouts/ally as anything in get_allies_in_earshot(allies_in_earshot))
+		LAZYSET(ally.line_cooldowns, event, world.time + group_cooldown)
 
 /// whether thing is someone worth calling out like a person: humans and human NPCs, anyone a player's controlling, and mechs, as there's someone inside
 /proc/ai_is_person(atom/thing)

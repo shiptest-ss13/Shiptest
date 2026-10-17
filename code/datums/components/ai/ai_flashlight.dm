@@ -1,8 +1,4 @@
-/**
- * A flashlight for AI humans without a light of their own, switched on when they're fighting or looking for someone in the dark, and off once it's been quiet a while.
- * It's an ordinary flashlight carried in the mob, so it casts a beam the way they face like a player's does, and lights up what it shines on for their eyes too, see ai_can_see().
- * Shot at from the dark, they turn it towards where it came from
- */
+/// Flashlights for AI, used when its dark, turns it off when nothing is happening. Should case same cone as a player's flashlight, and is used for AI vision in dark.
 /datum/component/ai_flashlight
 	var/obj/item/flashlight/light
 	//how long after the last sign of a fight we keep it on

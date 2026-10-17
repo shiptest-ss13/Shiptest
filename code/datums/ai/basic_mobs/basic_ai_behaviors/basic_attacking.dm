@@ -39,6 +39,10 @@
 		return AI_BEHAVIOR_INSTANT
 	if(!isturf(basic_mob.loc) || !hit_target.Adjacent(basic_mob))
 		return AI_BEHAVIOR_DELAY
+	var/obj/structure/closet/hiding_closet = hit_target
+	if(istype(hiding_closet) && !hiding_closet.opened && hiding_closet.can_open(basic_mob))
+		hiding_closet.open(basic_mob) // just open it if you can
+		return AI_BEHAVIOR_DELAY
 	basic_mob.melee_attack(hit_target)
 	// more hits spread over the time until our next attack, for mobs that hit fast, each only if they're still in reach
 	var/hits = controller.blackboard[BB_BASIC_MOB_MELEE_HITS] || 1

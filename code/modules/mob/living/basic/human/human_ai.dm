@@ -28,6 +28,10 @@
 	)
 
 /datum/ai_controller/basic_controller/human/ranged
+	blackboard = list(
+		BB_TARGETTING_DATUM = new /datum/targetting_datum/basic,
+		BB_BASIC_MOB_FLANK_PRIORITY = 3, // who flanks first, higher goes before lower
+	)
 	planning_subtrees = list(
 		AI_HUMAN_PLANNING_OPENING,
 		/datum/ai_planning_subtree/group/cover,

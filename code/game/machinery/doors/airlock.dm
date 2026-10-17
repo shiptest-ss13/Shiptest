@@ -1381,6 +1381,7 @@
 	qdel(assembly)
 
 /obj/machinery/door/airlock/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	//Airlock is passable if it is open (!density), bot has access, mob has trait, and is not bolted shut or powered off)
 	if(!density)
 		return TRUE
 	if(hasPower())

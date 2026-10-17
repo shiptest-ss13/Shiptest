@@ -1,11 +1,4 @@
-/*
- * How human NPCs show their injuries. They don't have body parts or wounds like players do, so we keep track of where hits land instead,
- * for the corpse we leave, which shows them the way a player's body does, see wound_corpse().
- * A bullet, cut or stab that gets through sprays blood the way it came from, and blood gets on the clothes where it hit,
- * in the colour of our own blood, see blood_type. It's cosmetic, as we've no blood to lose.
- *
- * Each way of being hit notes the hit as it lands, see begin_hit(), and everything else follows from the damage it does, see note_damage()
- */
+/// How human npcs show injuries. Basicmobs don't have the full health system a carbon would. They don't drop a normal body too so we record the damage taken and replay it on the body created after death
 
 /datum/incoming_hit
 	var/zone 	// body zone hit

@@ -1,29 +1,35 @@
 // generic movement behaviors, for going somewhere, keeping a distance from something, or running from it
 
+// sets us moving towards whatever's in target_key. FALSE if there's nothing there to go to
+/datum/ai_behavior/proc/move_to_key(datum/ai_controller/controller, target_key)
+	var/atom/target = controller.blackboard[target_key]
+	if(QDELETED(target))
+		return FALSE
+	set_movement_target(controller, target)
+	return TRUE
+
+// stops us moving, unless something else has taken over our movement since
+/datum/ai_behavior/proc/stop_our_movement(datum/ai_controller/controller)
+	if(controller.movement_target_source == type)
+		controller.ai_movement.stop_moving_towards(controller)
+
 // goes to whatever's in a blackboard key, succeeding once we're there
 /datum/ai_behavior/travel_towards
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
 	required_distance = 0 // right onto it
 	action_cooldown = 0
-	//If TRUE, clears the blackboard key once we've arrived or given up
-	var/clear_target = FALSE
 
 /datum/ai_behavior/travel_towards/setup(datum/ai_controller/controller, target_key)
 	. = ..()
-	var/atom/target = controller.blackboard[target_key]
-	if(QDELETED(target))
+	if(!move_to_key(controller, target_key))
 		return FALSE
-	set_movement_target(controller, target)
 
 /datum/ai_behavior/travel_towards/perform(seconds_per_tick, datum/ai_controller/controller, target_key)
 	return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_SUCCEEDED // only performed once we're within required_distance
 
 /datum/ai_behavior/travel_towards/finish_action(datum/ai_controller/controller, succeeded, target_key)
 	. = ..()
-	if(controller.movement_target_source == type)
-		controller.ai_movement.stop_moving_towards(controller)
-	if(clear_target)
-		controller.clear_blackboard_key(target_key)
+	stop_our_movement(controller)
 
 /datum/ai_behavior/step_away
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
@@ -55,8 +61,7 @@
 
 /datum/ai_behavior/step_away/finish_action(datum/ai_controller/controller, succeeded, target_key)
 	. = ..()
-	if(controller.movement_target_source == type)
-		controller.ai_movement.stop_moving_towards(controller)
+	stop_our_movement(controller)
 
 /datum/ai_behavior/pursue_to_range
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_MOVE_AND_PERFORM | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
@@ -64,10 +69,8 @@
 
 /datum/ai_behavior/pursue_to_range/setup(datum/ai_controller/controller, target_key, range)
 	. = ..()
-	var/atom/target = controller.blackboard[target_key]
-	if(QDELETED(target))
+	if(!move_to_key(controller, target_key))
 		return FALSE
-	set_movement_target(controller, target)
 
 /datum/ai_behavior/pursue_to_range/perform(seconds_per_tick, datum/ai_controller/controller, target_key, range)
 	var/atom/target = controller.blackboard[target_key]
@@ -79,8 +82,7 @@
 
 /datum/ai_behavior/pursue_to_range/finish_action(datum/ai_controller/controller, succeeded, target_key, range)
 	. = ..()
-	if(controller.movement_target_source == type)
-		controller.ai_movement.stop_moving_towards(controller)
+	stop_our_movement(controller)
 
 /datum/ai_behavior/run_away_from_target
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_MOVE_AND_PERFORM | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
@@ -104,8 +106,7 @@
 
 /datum/ai_behavior/run_away_from_target/finish_action(datum/ai_controller/controller, succeeded, target_key, flee_distance)
 	. = ..()
-	if(controller.movement_target_source == type)
-		controller.ai_movement.stop_moving_towards(controller)
+	stop_our_movement(controller)
 
 /datum/ai_behavior/run_away_from_target/proc/plot_path_away(datum/ai_controller/controller, atom/target, flee_distance)
 	var/turf/our_turf = get_turf(controller.pawn)
@@ -154,8 +155,7 @@
 
 /datum/ai_behavior/take_cover/finish_action(datum/ai_controller/controller, succeeded, danger_key)
 	. = ..()
-	if(controller.movement_target_source == type)
-		controller.ai_movement.stop_moving_towards(controller)
+	stop_our_movement(controller)
 	if(!succeeded)
 		controller.clear_blackboard_key(BB_BASIC_MOB_TAKING_COVER_TURF)
 
@@ -166,10 +166,8 @@
 
 /datum/ai_behavior/find_firing_line/setup(datum/ai_controller/controller, target_key)
 	. = ..()
-	var/atom/target = controller.blackboard[target_key]
-	if(QDELETED(target))
+	if(!move_to_key(controller, target_key))
 		return FALSE
-	set_movement_target(controller, target)
 
 /datum/ai_behavior/find_firing_line/perform(seconds_per_tick, datum/ai_controller/controller, target_key)
 	var/atom/target = controller.blackboard[target_key]
@@ -181,5 +179,4 @@
 
 /datum/ai_behavior/find_firing_line/finish_action(datum/ai_controller/controller, succeeded, target_key)
 	. = ..()
-	if(controller.movement_target_source == type)
-		controller.ai_movement.stop_moving_towards(controller)
+	stop_our_movement(controller)

@@ -198,20 +198,6 @@
 	return ispath(weapon, /obj/item) && heavy_weapons[weapon]
 
 
-// who flanks first based on archetype
-/mob/living/basic/human/proc/get_flank_priority()
-	if(!casing_type && !projectile_type)
-		return 0
-	if(istype(ai_controller, /datum/ai_controller/basic_controller/human/ranged/rusher))
-		return 5
-	if(istype(ai_controller, /datum/ai_controller/basic_controller/human/ranged/gunslinger))
-		return 4
-	if(istype(ai_controller, /datum/ai_controller/basic_controller/human/ranged/support_gunner))
-		return 2
-	if(istype(ai_controller, /datum/ai_controller/basic_controller/human/ranged/marksman))
-		return 1
-	return 3
-
 // pick ranged archetype based on weapon used
 /mob/living/basic/human/proc/pick_ranged_controller()
 	var/obj/item/gun/gun_type = get_gun_type()
@@ -326,6 +312,12 @@
 	return ..()
 
 /mob/living/basic/human/proc/setup_ai()
+	setup_ai_components()
+	if(!ai_controller)
+		return
+	setup_ai_blackboard()
+
+/mob/living/basic/human/proc/setup_ai_components()
 	AddElement(/datum/element/ai_door_opener)
 	if(!noncombatant)
 		ADD_TRAIT(src, TRAIT_NOMOBSWAP, INNATE_TRAIT)
@@ -348,13 +340,14 @@
 	if(callout_set || (length(on_aggro_say) && aggro_say_chance))
 		// on_aggro_say is what we shout on spotting someone, in place of our callout set's lines for it, rather than as well
 		AddComponent(/datum/component/ai_callouts, callout_set || /datum/ai_callout_set, mob_species, length(on_aggro_say) && aggro_say_chance ? on_aggro_say : null, aggro_say_chance)
-	if(!ai_controller)
-		return
+
+/mob/living/basic/human/proc/setup_ai_blackboard()
 	ai_controller.set_blackboard_key(BB_TARGET_MINIMUM_STAT, stat_attack)
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_CAN_CLIMB, TRUE) // over sandbags and the like, as players can
 	if(mob_spawner && spawner_has_jetpack(mob_spawner))
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_CAN_CROSS_SPACE, TRUE)
-	ai_controller.set_blackboard_key(BB_BASIC_MOB_FLANK_PRIORITY, get_flank_priority())
+	if(!casing_type && !projectile_type)
+		ai_controller.set_blackboard_key(BB_BASIC_MOB_FLANK_PRIORITY, 0) // melee and flamers, the archetypes on the blackboard are for who flanks first with a gun
 	ai_controller.set_blackboard_key(BB_BASIC_MOB_MOBILITY, mobility)
 	if(mobility == AI_MOBILITY_HIGH && (casing_type || projectile_type))
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_HIT_AND_RUN, TRUE) // dart in for a few shots, then back off and come again
@@ -374,6 +367,7 @@
 			ai_controller.set_blackboard_key(BB_BASIC_MOB_IDLE_EMOTES, string_list(emote_hear | emote_see))
 	if(check_friendly_fire)
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_AVOID_FRIENDLY_FIRE, TRUE)
+	var/obj/item/melee_weapon = get_melee_weapon()
 	if(melee_weapon && !ispath(melee_weapon, /obj/item/gun))
 		ai_controller.set_blackboard_key(BB_BASIC_MOB_PREFERS_MELEE, TRUE) // a blade as well as a gun, so up close we'd rather use that
 	if(!wander)

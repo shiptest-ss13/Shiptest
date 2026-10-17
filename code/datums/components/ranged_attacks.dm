@@ -117,9 +117,7 @@
 	var/extra_shots = (get_burst_shots() || 1) - 1
 	if(extra_shots > 0)
 		player_follow_ups_owed = extra_shots
-		var/turf/fallback_turf = get_turf(target)
-		for(var/shot in 1 to extra_shots)
-			addtimer(CALLBACK(src, PROC_REF(fire_follow_up_shot), WEAKREF(target), fallback_turf), shot * burst_intervals)
+		schedule_follow_ups(target, extra_shots, burst_intervals)
 	return TRUE
 
 /datum/component/ranged_attacks/proc/get_projectile_type()
@@ -144,9 +142,13 @@
 	if(first_contact_spread && controller && (controller.blackboard[BB_BASIC_MOB_LAST_FIRED_AT] != target || world.time - controller.blackboard[BB_BASIC_MOB_LAST_FIRED_TIME] > AI_AIM_SETTLED_MEMORY))
 		unsettled_until = world.time + (volley_shots - 1) * volley_interval // for the duration of this volley minus the first
 	firer.RangedAttack(target)
+	schedule_follow_ups(target, volley_shots - 1, volley_interval)
+
+// the rest of a volley after its first shot, one every interval, at where target was now if they're gone by then
+/datum/component/ranged_attacks/proc/schedule_follow_ups(atom/target, count, interval)
 	var/turf/fallback_turf = get_turf(target)
-	for(var/shot in 2 to volley_shots)
-		addtimer(CALLBACK(src, PROC_REF(fire_follow_up_shot), WEAKREF(target), fallback_turf), (shot - 1) * volley_interval)
+	for(var/shot in 1 to count)
+		addtimer(CALLBACK(src, PROC_REF(fire_follow_up_shot), WEAKREF(target), fallback_turf), shot * interval)
 
 // one of the follow-up shots of a volley after its started
 /datum/component/ranged_attacks/proc/fire_follow_up_shot(datum/weakref/target_ref, turf/fallback_turf)

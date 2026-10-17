@@ -19,7 +19,7 @@
 	var/armour_penetration = 0
 	///Damage type of a simple mob's melee attack, should it do damage.
 	var/melee_damage_type = BRUTE
-	///How much wounding power it has
+	///How much bare wounding power it has
 	var/wound_bonus = 0
 	///How much more wounding power it has against bare skin
 	var/bare_wound_bonus = 0

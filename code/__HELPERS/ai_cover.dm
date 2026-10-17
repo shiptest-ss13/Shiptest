@@ -108,7 +108,7 @@
 	var/best_distance = INFINITY
 	for(var/turf/open/candidate in range(range, our_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate == exclude || candidate_distance >= best_distance || candidate.is_blocked_turf(TRUE, mover) || ai_is_doorway(candidate) || !ai_can_stand_on(mover, candidate))
+		if(candidate == exclude || candidate_distance >= best_distance || !ai_can_take_spot(mover, candidate))
 			continue
 		if(!is_spot_safe_from(candidate, danger) || !can_walk_straight_to(mover, candidate))
 			continue
@@ -142,6 +142,10 @@
 		if(ai_is_door(thing))
 			return TRUE
 	return FALSE
+
+// whether mob could go stand on spot, not blocked, not in a doorway, and nothing there that'd hurt it
+/proc/ai_can_take_spot(mob/living/mover, turf/spot)
+	return !spot.is_blocked_turf(TRUE, mover) && !ai_is_doorway(spot) && ai_can_stand_on(mover, spot)
 
 /proc/get_ai_fight_range(datum/ai_controller/controller)
 	var/retreat_distance = controller.blackboard[BB_BASIC_MOB_RETREAT_DISTANCE]
@@ -208,6 +212,11 @@
 				return TRUE
 	return FALSE
 
+// whether the mob's stood on the fighting cover it picked, and that cover still faces threat
+/proc/ai_holding_cover_against(datum/ai_controller/controller, atom/threat)
+	var/turf/fighting_spot = controller.blackboard[BB_BASIC_MOB_FIGHTING_COVER_TURF]
+	return fighting_spot && get_turf(controller.pawn) == fighting_spot && cover_facing(fighting_spot, threat)
+
 // the cover between spot and threat, if there is any, so threat's shots at spot would mostly hit it, while ours from spot go over it. for sandbags and flipped tables and such
 /proc/cover_between(turf/spot, atom/threat)
 	var/turf/threat_turf = get_turf(threat)
@@ -243,7 +252,7 @@
 	var/best_distance = INFINITY
 	for(var/turf/open/candidate in range(range, our_turf))
 		var/candidate_distance = get_dist(our_turf, candidate)
-		if(candidate_distance >= best_distance || ally_turfs[candidate] || candidate.is_blocked_turf(TRUE, fighter) || ai_is_doorway(candidate) || !cover_between(candidate, threat) || !ai_can_stand_on(fighter, candidate))
+		if(candidate_distance >= best_distance || ally_turfs[candidate] || !cover_between(candidate, threat) || !ai_can_take_spot(fighter, candidate))
 			continue
 		if(!can_walk_straight_to(fighter, candidate))
 			continue

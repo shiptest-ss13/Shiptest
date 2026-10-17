@@ -180,10 +180,12 @@
 	return null
 
 /datum/ai_movement/jps/proc/calculate_path(datum/ai_controller/controller, atom/target, minimum_distance, turf/avoid)
-	var/list/new_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = controller.get_access(), simulated_only = !controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE], exclude = avoid)
+	var/access = controller.get_access()
+	var/ground_only = !controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE]
+	var/list/new_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = access, simulated_only = ground_only, exclude = avoid)
 	if(!length(new_path) && controller.blackboard[BB_BASIC_MOB_CAN_CLIMB] && !QDELETED(controller.pawn))
 		// no way round, so over, like sandbags piled in a doorway. Only once there's no other way, as climbing's slow
-		new_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = controller.get_access(), simulated_only = !controller.blackboard[BB_BASIC_MOB_CAN_CROSS_SPACE], exclude = avoid, climbing = TRUE)
+		new_path = get_path_to(controller.pawn, target, AI_MAX_PATH_LENGTH, minimum_distance, id = access, simulated_only = ground_only, exclude = avoid, climbing = TRUE)
 	if(QDELETED(controller))
 		return
 	controller.calculating_path = FALSE
