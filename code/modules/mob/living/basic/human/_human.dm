@@ -146,15 +146,15 @@
 /mob/living/basic/human/Initialize(mapload)
 	. = ..()
 	// what we wear and carry slows us as much as it would a player: a hardsuit, or a heavy gun held ready
-	var/extra_slowdown = mob_spawner ? get_spawner_slowdown(mob_spawner) : 0
+	var/move_delay = speed + (mob_spawner ? get_spawner_slowdown(mob_spawner) : 0)
 	var/obj/item/gun/gun_type = get_gun_type()
-	if(!gun_type)
-		// those who fight up close have to catch people, so armour never slows them to a running player's pace, a bit quicker so they can close the gap
-		extra_slowdown = min(extra_slowdown, max(0, AI_MELEE_MAX_MOVE_DELAY - speed))
 	if(gun_type)
-		extra_slowdown += initial(gun_type.wield_slowdown)
-	if(extra_slowdown)
-		set_varspeed(speed + extra_slowdown)
+		move_delay += initial(gun_type.wield_slowdown)
+	else
+		// those who fight up close have to catch people, so they're always a bit quicker than a running player, armour and all
+		move_delay = min(move_delay, AI_MELEE_MAX_MOVE_DELAY)
+	if(move_delay != speed)
+		set_varspeed(move_delay)
 	if(mob_spawner)
 		if(!mob_species)
 			mob_species = pick_weight(species_weights)
@@ -325,6 +325,11 @@
 	if(!client && !noncombatant)
 		return TRUE
 	return ..()
+
+// actually go fast
+/mob/living/basic/human/update_move_intent_slowdown()
+	remove_movespeed_modifier(/datum/movespeed_modifier/config_walk_run/walk)
+	remove_movespeed_modifier(/datum/movespeed_modifier/config_walk_run/run)
 
 /mob/living/basic/human/proc/setup_ai()
 	setup_ai_components()

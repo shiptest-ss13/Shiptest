@@ -13,6 +13,7 @@
 #define AI_HUMAN_PLANNING_OPENING \
 	/datum/ai_planning_subtree/flee_explosives, \
 	/datum/ai_planning_subtree/seek_safe_environment, \
+	/datum/ai_planning_subtree/investigate_noise, \
 	/datum/ai_planning_subtree/return_home/human, \
 	/datum/ai_planning_subtree/call_allies, \
 	/datum/ai_planning_subtree/broken_fall_back/human
@@ -149,9 +150,11 @@
 #define AI_MELEE_MAX_MOVE_DELAY 1.2
 // The least fuse a grenade can have left for AI to try throwing it back, rather than it going off in their hand
 #define AI_THROW_BACK_MINIMUM_FUSE (1.5 SECONDS)
-// How far AI hears an explosion, in tiles, before adding twice its biggest blast range, and how close to it someone has to be for AI to go looking for them
+// How far AI hears an explosion, in tiles, before adding twice its biggest blast range
 #define AI_EXPLOSION_HEARING_RANGE 12
-#define AI_EXPLOSION_SUSPECT_RANGE 4
+// How long AI goes looking for a noise it heard before giving up, and how far from home it'll go to, unless it has a leash of its own
+#define AI_NOISE_MEMORY (20 SECONDS)
+#define AI_NOISE_LEASH_DISTANCE 15
 
 ///Below this much light, as from /turf/proc/get_lumcount(), AI only makes someone out up close, see ai_can_see()
 #define AI_DARKNESS_THRESHOLD SHADOW_SPECIES_LIGHT_THRESHOLD

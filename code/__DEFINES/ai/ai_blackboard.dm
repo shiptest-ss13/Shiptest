@@ -75,6 +75,10 @@
 #define BB_BASIC_MOB_TARGET_SINCE "BB_basic_target_since"
 ///The live explosive we're running from, like a primed grenade
 #define BB_BASIC_MOB_FLEEING_EXPLOSIVE "BB_basic_fleeing_explosive"
+///Where we heard a noise with nobody to blame, like an explosion, near as we can tell, until when we look for it, and until when we look around once we're there
+#define BB_BASIC_MOB_NOISE_TURF "BB_basic_noise_turf"
+#define BB_BASIC_MOB_NOISE_UNTIL "BB_basic_noise_until"
+#define BB_BASIC_MOB_NOISE_LOOK_UNTIL "BB_basic_noise_look_until"
 ///Percent chance we throw a grenade by us back rather than running from it, and TRUE while we're going to
 #define BB_BASIC_MOB_THROW_BACK_CHANCE "BB_basic_throw_back_chance"
 #define BB_BASIC_MOB_THROWING_BACK "BB_basic_throwing_back"
