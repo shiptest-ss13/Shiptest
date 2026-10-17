@@ -57,14 +57,33 @@
 
 /datum/ai_planning_subtree/seek_safe_environment/proc/find_safe_turf(mob/living/basic/basic_mob, turf/exclude)
 	var/turf/our_turf = get_turf(basic_mob)
+	var/list/taken_turfs = list()
+	for(var/mob/living/ally as anything in get_ai_allies_in_range(basic_mob, search_range))
+		taken_turfs[get_turf(ally)] = TRUE
+		var/turf/ally_safe_turf = ally.ai_controller.blackboard[BB_BASIC_MOB_SAFE_TURF]
+		if(ally_safe_turf)
+			taken_turfs[ally_safe_turf] = TRUE
 	var/turf/best_turf
-	var/best_distance = INFINITY
+	var/best_score = INFINITY
 	for(var/turf/open/candidate in RANGE_TURFS(search_range, our_turf))
-		var/distance = get_dist(our_turf, candidate)
-		if(distance >= best_distance || (exclude && get_dist(candidate, exclude) <= 3) || candidate.is_blocked_turf(TRUE, basic_mob)) // not by somewhere we couldn't get to, as its neighbours likely aren't any easier
+		var/score = get_dist(our_turf, candidate)
+		if(score >= best_score || taken_turfs[candidate] || (exclude && get_dist(candidate, exclude) <= 3) || candidate.is_blocked_turf(TRUE, basic_mob)) // not by somewhere we couldn't get to, as its neighbours likely aren't any easier
 			continue
+		if(ai_is_doorway(candidate))
+			continue
+		if(next_to_doorway(candidate))
+			score += 2
+			if(score >= best_score)
+				continue
 		if(!is_environment_safe_for(basic_mob, candidate))
 			continue
 		best_turf = candidate
-		best_distance = distance
+		best_score = score
 	return best_turf
+
+/datum/ai_planning_subtree/seek_safe_environment/proc/next_to_doorway(turf/spot)
+	for(var/direction in GLOB.cardinals)
+		var/turf/beside = get_step(spot, direction)
+		if(beside && ai_is_doorway(beside))
+			return TRUE
+	return FALSE

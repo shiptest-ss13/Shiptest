@@ -60,6 +60,8 @@
 				continue // swatting it aside, so we wait for that rather than looking for another way round
 			if(new_turf == old_turf && try_climb(controller, movable_pawn, next_step))
 				continue // over whatever's in the way, like a player would, rather than looking for another way round
+			if(new_turf == old_turf && ask_ally_to_make_way(controller, movable_pawn, next_step))
+				continue // they've stepped aside, so we carry on through rather than looking for another way round
 			if(new_turf == old_turf)
 				bump_door_in_the_way(movable_pawn, next_step)
 			if(new_turf == next_step)
@@ -236,6 +238,45 @@
 	if(HAS_TRAIT(climber, TRAIT_FREERUNNING))
 		duration *= 0.8
 	return duration * climber.do_after_coefficent() + structure.climb_stun
+
+// one of ours is stood where we're stepping, so we ask them to step aside, as a player would. TRUE if they did
+/datum/ai_movement/jps/proc/ask_ally_to_make_way(datum/ai_controller/controller, atom/movable/mover, turf/next_step)
+	var/mob/living/living_mover = mover
+	if(!istype(living_mover))
+		return FALSE
+	for(var/mob/living/ally in next_step)
+		if(!ally.density || ally == controller.current_movement_target || ally.client || ally.stat != CONSCIOUS || !ally.ai_controller || !living_mover.faction_check_mob(ally))
+			continue
+		return make_way(ally, mover, next_step)
+	return FALSE
+
+// has ally step off spot for mover, if they're not busy: off to the side of mover's way first, then on ahead of them. TRUE if they moved
+/datum/ai_movement/jps/proc/make_way(mob/living/ally, atom/movable/mover, turf/spot)
+	var/datum/ai_controller/ally_controller = ally.ai_controller
+	if(LAZYLEN(ally.do_afters) || ally.buckled || ally.anchored || !(ally.mobility_flags & MOBILITY_MOVE))
+		return FALSE
+	if(length(ally_controller.movement_path) && ally_controller.ai_movement?.moving_controllers[ally_controller])
+		return FALSE // on their way somewhere themselves, so they'll be out of it soon enough
+	var/atom/ally_target = ally_controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
+	if(!QDELETED(ally_target))
+		return FALSE // in a fight, so they're stood where they mean to be, and we go round
+	if(world.time < ally_controller.blackboard[BB_BASIC_MOB_MADE_WAY_UNTIL])
+		return FALSE // only just did, so we don't shuffle them about all day
+	var/turf/mover_turf = get_turf(mover)
+	var/step_dir = get_dir(mover_turf, spot)
+	for(var/direction in list(turn(step_dir, 90), turn(step_dir, -90), turn(step_dir, 45), turn(step_dir, -45), step_dir))
+		var/turf/aside = get_step(spot, direction)
+		if(!aside || aside == mover_turf || aside.is_blocked_turf(TRUE, ally) || (locate(/mob/living) in aside) || !ai_can_stand_on(ally, aside))
+			continue
+		if(spot.LinkBlockedWithAccess(aside, ally))
+			continue
+		ally.set_glide_size(DELAY_TO_GLIDE_SIZE(ally_controller.movement_delay))
+		if(!ally.Move(aside, direction))
+			continue
+		ally_controller.set_blackboard_key(BB_BASIC_MOB_MADE_WAY_UNTIL, world.time + 2 SECONDS)
+		AI_LOG_DECISION(ally_controller, "movement: stepped aside to [aside] to let [mover] through")
+		return TRUE
+	return FALSE
 
 // the climbable thing in the way of stepping from where mover is onto next_step, like sandbags on it or a railing on the edge between
 /datum/ai_movement/jps/proc/get_climb_blocker(atom/movable/mover, turf/next_step)

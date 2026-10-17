@@ -86,6 +86,8 @@
 #define BB_BASIC_MOB_THROW_BACK_AT "BB_basic_throw_back_at"
 ///If TRUE, we stick with who we're after for a moment like those who fight up close do, for those who rush in with a gun
 #define BB_BASIC_MOB_STICKS_TO_TARGET "BB_basic_sticks_to_target"
+///Until when we won't step aside again for one of ours who wants past, as a world.time
+#define BB_BASIC_MOB_MADE_WAY_UNTIL "BB_basic_made_way_until"
 ///What we watched our target shut themselves in, like a locker, so we still know they're in there
 #define BB_BASIC_MOB_TARGET_HIDING_IN "BB_basic_target_hiding_in"
 ///Who BB_BASIC_MOB_LAST_KNOWN_TURF and BB_BASIC_MOB_LAST_KNOWN_TIME are about, so switching targets starts fresh
