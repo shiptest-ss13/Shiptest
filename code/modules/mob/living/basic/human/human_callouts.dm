@@ -170,6 +170,23 @@
 		),
 	)
 
+	// the Supercollider, stimmed up and half feral, in it for the hurting
+/datum/ai_callout_set/human/ramzi/supercollider
+	lines = list(
+		AI_CALLOUT_SPOTTED = list("There you are!", "I see you...", "Mine! That one's mine!", "Come here! Come HERE!", "Oh, you'll do nicely!"),
+		AI_CALLOUT_TAUNT = list("Run! I like it when they run!", "Hold still!", "I can hear your heart going!", "Nowhere left to hide!", "I'm going to break every bone you've got!"),
+		AI_CALLOUT_MELEE = list("CRACK!", "Again! AGAIN!", "Break!", "Hah!", "Scream for me!"),
+		AI_CALLOUT_HURT = list("More! Give me more!", "That tickles!", "Hah! Is that it?!", "I don't feel a thing!", "Yes! YES!"),
+		AI_CALLOUT_TARGET_DOWN = list("Get up! I'm not done!", "Down you go!", "Crawl! Go on, crawl!", "Not yet, not yet..."),
+		AI_CALLOUT_TARGET_KILLED = list("Too quick...", "Next!", "Broke that one.", "Who's next?!", "Aw, it stopped moving."),
+		AI_CALLOUT_ALLY_DOWN = list("Weak!", "More for me!", "Should've been faster!", "Their loss!"),
+		AI_CALLOUT_LOST_THEM = list("Come out, come out!", "I'll find you!", "I can smell you!", "Hiding won't save you!"),
+		AI_CALLOUT_PUSHING = list("Here I come!", "Coming for you!", "Out of my way!", "RAAAAH!", "MOTHERFUCCCKKKEERR!!!"),
+		AI_CALLOUT_GRENADE = list("Ooh, a loud one!", "Fireworks!", "Hah, boom!"),
+		AI_CALLOUT_DEATH_RATTLE = list("Not... done...", "More...", "Hah... hah...", "Worth it..."),
+	)
+
+
 
 // ---------- VI ----------
 // VI Security: guards, mall cops and armored delivery. By the book, mostly, and not paid enough for this
@@ -258,20 +275,4 @@
 		AI_MORALE_EMBOLDENED = list(
 			AI_CALLOUT_TAUNT = list("This won't take long.", "Clean this up."),
 		),
-	)
-
-// the Supercollider, stimmed up and half feral, in it for the hurting more than the job
-/datum/ai_callout_set/human/ramzi/supercollider
-	lines = list(
-		AI_CALLOUT_SPOTTED = list("There you are!", "I see you...", "Mine! That one's mine!", "Come here! Come HERE!", "Oh, you'll do nicely!"),
-		AI_CALLOUT_TAUNT = list("Run! I like it when they run!", "Hold still!", "I can hear your heart going!", "Nowhere left to hide!", "I'm going to break every bone you've got!"),
-		AI_CALLOUT_MELEE = list("CRACK!", "Again! AGAIN!", "Break!", "Hah!", "Scream for me!"),
-		AI_CALLOUT_HURT = list("More! Give me more!", "That tickles!", "Hah! Is that it?!", "I don't feel a thing!", "Yes! YES!"),
-		AI_CALLOUT_TARGET_DOWN = list("Get up! I'm not done!", "Down you go!", "Crawl! Go on, crawl!", "Not yet, not yet..."),
-		AI_CALLOUT_TARGET_KILLED = list("Too quick...", "Next!", "Broke that one.", "Who's next?!", "Aw, it stopped moving."),
-		AI_CALLOUT_ALLY_DOWN = list("Weak!", "More for me!", "Should've been faster!", "Their loss!"),
-		AI_CALLOUT_LOST_THEM = list("Come out, come out!", "I'll find you!", "I can smell you!", "Hiding won't save you!"),
-		AI_CALLOUT_PUSHING = list("Here I come!", "Coming for you!", "Out of my way!", "RAAAAH!"),
-		AI_CALLOUT_GRENADE = list("Ooh, a loud one!", "Fireworks!", "Hah, boom!"),
-		AI_CALLOUT_DEATH_RATTLE = list("Not... done...", "More...", "Hah... hah...", "Worth it..."),
 	)

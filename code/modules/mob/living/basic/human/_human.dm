@@ -149,8 +149,8 @@
 	var/extra_slowdown = mob_spawner ? get_spawner_slowdown(mob_spawner) : 0
 	var/obj/item/gun/gun_type = get_gun_type()
 	if(!gun_type)
-		// those who fight up close have to catch people, so armour never slows them below a running player
-		extra_slowdown = min(extra_slowdown, max(0, CONFIG_GET(number/movedelay/run_delay) - speed))
+		// those who fight up close have to catch people, so armour never slows them to a running player's pace, a bit quicker so they can close the gap
+		extra_slowdown = min(extra_slowdown, max(0, AI_MELEE_MAX_MOVE_DELAY - speed))
 	if(gun_type)
 		extra_slowdown += initial(gun_type.wield_slowdown)
 	if(extra_slowdown)

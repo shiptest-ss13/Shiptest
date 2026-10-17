@@ -145,6 +145,8 @@
 #define AI_HEARING_WALL_PENALTY 3
 // How many shots an AI with an automatic gun fires in a volley, if its type doesn't ask for more
 #define AI_AUTOMATIC_BURST_SHOTS 4
+// Melee mobs should move barely slower than a running player at most
+#define AI_MELEE_MAX_MOVE_DELAY 1.2
 // The least fuse a grenade can have left for AI to try throwing it back, rather than it going off in their hand
 #define AI_THROW_BACK_MINIMUM_FUSE (1.5 SECONDS)
 // How far AI hears an explosion, in tiles, before adding twice its biggest blast range, and how close to it someone has to be for AI to go looking for them
