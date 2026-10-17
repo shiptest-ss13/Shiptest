@@ -347,6 +347,22 @@
 /obj/effect/particle_effect/smoke/transparent/cigarette
 	alpha = 5
 
+/datum/effect_system/smoke_spread/transparent/sandbag
+	effect_type = /obj/effect/particle_effect/smoke/transparent/sandbag
+
+/obj/effect/particle_effect/smoke/transparent/sandbag
+	color = LIGHT_COLOR_YELLOW
+	opaque = FALSE
+	alpha = 10
+
+/datum/effect_system/smoke_spread/transparent/concrete
+	effect_type = /obj/effect/particle_effect/smoke/transparent/concrete
+
+/obj/effect/particle_effect/smoke/transparent/concrete
+	color = COLOR_GRAY
+	opaque = FALSE
+	alpha = 10
+
 /proc/do_smoke(range=0, location=null, smoke_type=/obj/effect/particle_effect/smoke)
 	var/datum/effect_system/smoke_spread/smoke = new
 	smoke.effect_type = smoke_type

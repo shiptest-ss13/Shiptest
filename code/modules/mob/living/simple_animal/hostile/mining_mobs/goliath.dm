@@ -415,9 +415,9 @@
 	else
 		visible_message(span_warning("[src] expels it's matter, releasing a spray of crystalline shards!"))
 		playsound(loc, 'sound/effects/bamf.ogg', 100, TRUE)
-		shoot_projectile(Get_Angle(src,target) + 10)
-		shoot_projectile(Get_Angle(src,target))
-		shoot_projectile(Get_Angle(src,target) - 10)
+		shoot_projectile(get_angle(src,target) + 10)
+		shoot_projectile(get_angle(src,target))
+		shoot_projectile(get_angle(src,target) - 10)
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/proc/spray_of_crystals()
 	spiral_attack_inprogress = TRUE

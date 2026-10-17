@@ -170,6 +170,18 @@
 			if(precision)
 				the_targets -= my_target
 
+/obj/item/extinguisher/bullet_act(obj/projectile/hitting_projectile)
+	if(hitting_projectile.damage_type == BRUTE && prob(hitting_projectile.get_demolition_damage()))
+		visible_message(span_danger("\The [src] ruptures!"))
+		chem_splash(get_turf(src), 2, list(reagents))
+		atom_integrity = 1 //so the bullet actually explodes it.
+		playsound(src, 'sound/effects/smoke.ogg', 50, TRUE, -3)
+		var/datum/effect_system/smoke_spread/bad/smoke = new
+		smoke.set_up(2, get_turf(src))
+		smoke.start()
+		qdel(smoke)
+	. = ..()
+
 //Chair movement loop
 /obj/item/extinguisher/proc/move_chair(obj/B, movementdirection, repetition=0)
 	step(B, movementdirection)

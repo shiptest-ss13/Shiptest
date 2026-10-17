@@ -305,7 +305,7 @@
 	var/obj/projectile/projectile_being_shot = new projectile_to_shoot(get_turf(src))
 	projectile_being_shot.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
 	projectile_being_shot.firer = src
-	projectile_being_shot.fire(Get_Angle(src,target))
+	projectile_being_shot.fire(get_angle(src,target))
 
 /obj/structure/salvageable/server
 	name = "broken server"
