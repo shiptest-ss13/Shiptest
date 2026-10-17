@@ -231,3 +231,21 @@
 	)
 	tastes = list("custard" = 1)
 	foodtypes = MEAT | VEGETABLES
+
+/obj/item/food/egg/small ///made this for the awebo bird but could be reused for other small birds added in the future?
+	name = "small egg"
+	desc = "An egg smaller than the average one sold in markets. Presumably from a bird smaller than a chicken."
+	icon = 'icons/obj/food/egg.dmi'
+	icon_state = "egg"
+	item_state = "egg"
+	food_reagents = list(
+		/datum/reagent/consumable/eggyolk = 3,
+		/datum/reagent/consumable/eggwhite = 2,
+	)
+	microwaved_type = /obj/item/food/boiledegg ///cooking it completely changes the contents anyway so i think it's fine if it gets the same stats as usual once it's cooked. it's just a poor source of egg chems
+	foodtypes = MEAT | RAW
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/food/egg/small/Initialize()
+	. = ..()
+	transform = transform.Scale (0.5, 0.5) ///this is lazy but i don't wanna sprite more stuff
