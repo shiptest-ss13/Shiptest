@@ -649,6 +649,27 @@
 	color = "#D3B913"
 	taste_description = "sweetness"
 
+/datum/reagent/space_cleaner/sterilizine
+	name = "Sterilizine"
+	description = "Sterilizes wounds in preparation for surgery."
+	color = "#D0EFEE" // space cleaner but lighter
+	taste_description = "bitterness"
+	var/surgery_speed_modifier = 0.2
+
+/datum/reagent/space_cleaner/sterilizine/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
+	if(method in list(TOUCH, VAPOR, PATCH))
+		for(var/s in C.surgeries)
+			var/datum/surgery/S = s
+			S.speed_modifier = max(surgery_speed_modifier, S.speed_modifier)
+	..()
+
+/datum/reagent/space_cleaner/sterilizine/purifadine
+	name = "Purifadine"
+	description = "Completely sterilizes a wound for surgery. If there is no access to a sterile operating room, this is the next best thing to use in the field."
+	color = "#D0EFEE" // space cleaner but lighter
+	taste_description = "bitterness"
+	surgery_speed_modifier = 0.1
+
 /datum/reagent/iron
 	name = "Iron"
 	description = "Pure iron is a metal."
